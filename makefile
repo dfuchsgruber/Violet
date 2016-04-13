@@ -23,8 +23,10 @@ attack_split:
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o "build/attack_split.o" "build/physisch_speziell.o"
 
 abilities_items: choice_items hidden_abilities
-	$(AS) "src/abilities_items/end_of_turn_abilities.asm" -o "build/abit_eot_abilities.o"
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o "build/abit.o" "build/abit_eot_abilities.o" "build/choice_item.o" "build/abit_hidab.o"
+	$(CC) $(CFLAGS4) "src/abilities_items/after_attack.asm" -o "build/abit_aat_abilities.o"
+	$(CC) $(CFLAGS4) "src/abilities_items/end_of_turn_abilities.asm" -o "build/abit_eot_abilities.o"
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o "build/abit.o" "build/abit_eot_abilities.o" "build/choice_item.o" "build/abit_hidab.o" "build/abit_aat_abilities.o"
+	
 	
 hidden_abilities:
 	$(CC) $(CFLAGS3) "src/abilities_items/hidden_ability/get_pokemons_ability.c" -o "build/abit_hidab_getpokeab.o"

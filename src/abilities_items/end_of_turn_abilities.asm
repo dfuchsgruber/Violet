@@ -1,5 +1,3 @@
-@insert at 0x1A378 via bx_r0.bin (00 48 00 47 XX XX XX XX)
-@these abilities are executed at end of each turn (such as speed boost, expidermis etc)
 
 .align 2
 .thumb
