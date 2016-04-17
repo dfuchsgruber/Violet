@@ -1,5 +1,7 @@
+
+
 typedef struct trainer{
-	u8 field_0;
+	u8 struct_info;
 	u8 trainerclass;
 	u8 field_1;
 	u8 field_2;

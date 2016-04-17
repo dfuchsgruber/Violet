@@ -5,5 +5,5 @@
 .include "patches/hooks.asm"
 
 .org 0x091A8000
-.importobj "build/linked.o"
+.importobj "bld/linked.o"
 .close

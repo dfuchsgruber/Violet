@@ -1,4 +1,4 @@
-#define ASDF 88
+#define ASDF 10
 
 
 .align 2
@@ -23,7 +23,6 @@
 
 .thumb_func
 after_attack_abilities:
-ldr r1, =ASDF
 ldr r0, =0x02023D6B	@attacker
 ldrb r0, [r0]
 mov r1, #0x58
@@ -43,7 +42,7 @@ beq end_lorb
 @now we must check weather the attack succeded
 ldr r0, =0x02023DCC	@attack result
 ldrb r1, [r0]
-mov r0, #0x29
+mov r0, #ASDF
 and r0, r1
 cmp r0, #0
 bne end_lorb
