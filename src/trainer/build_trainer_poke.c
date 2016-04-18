@@ -10,6 +10,7 @@
 #include <stdbool.h>
 #include "../header/unaligned_types.h"
 #include "../header/pokemon.h"
+#include "../header/map.h"
 
 typedef struct build_field{
 	u8 build : 5;
