@@ -89,6 +89,10 @@ evolution_table equ 0x9195500
 	.word 0x088FAEA0
 	.pool
 	
+.org 0x08000652
+	mov r0, #0
+	.pool
+	
 	
 //misc
 .org 0x080C9D84
