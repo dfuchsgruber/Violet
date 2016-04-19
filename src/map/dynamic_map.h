@@ -1,0 +1,1 @@
+#define FLAG_LOAD_DMAP 0x922

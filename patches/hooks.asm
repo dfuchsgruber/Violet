@@ -192,3 +192,10 @@ evolution_table equ 0x9195500
 	ldr r1, = physical_special_item_load| 1
 	bx r1
 	.pool
+	
+	
+//dynamic maps
+.org 0x08055258
+	ldr r2, =get_map_events | 1
+	bx r2
+	.pool

@@ -173,7 +173,7 @@ typedef struct mapheader{
 
 //Simply a index based list of mapheaders
 typedef struct mapbank{
-	mapheader *maps;
+	mapheader **maps;
 }mapbank;
 
 
@@ -225,6 +225,7 @@ typedef struct wild_pokemon_data{
 	wild_pokemon_habitat *rod;
 	
 }wild_pokemon_data;
+
 
 mapbank **mapbank_table_ptr = (mapbank**) 0x0805526C;
 mapfooter **main_map_table_ptr = (mapfooter**) 0x080551B4;

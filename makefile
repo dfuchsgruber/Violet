@@ -37,10 +37,11 @@ $(COBJS): $(BLDPATH)/%.o: %.c
 
 
 build:  $(ASOBJS1) $(ASOBJS2) $(COBJS)
-	$(info $(ASOBJS1) $(ASOBJS2) $(COBJS))
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o "bld/linked.o" $(ASOBJS1) $(ASOBJS2) $(COBJS)
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS)
 	$(ARS) patches.asm
-	$(NM) "bld/linked.o" -n -g --defined-only
+	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
+	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
+	cat $(BLDPATH)/__symbols.sym
 		
 clean:
 	rm -rf $(BLDPATH)
