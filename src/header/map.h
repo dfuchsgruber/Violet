@@ -1,3 +1,6 @@
+#include "types.h"
+#include "mapevents.h"
+
 #define WEATHER_INSIDE 0
 #define WEATHER_SUNNY_CLOUDS 1
 #define WEATHER_NORMAL 2
@@ -19,6 +22,10 @@
 
 #define MAP_FLASH_NONE 0
 #define MAP_FLASH_DARK_FLASHABLE 1
+#ifndef H_MAP
+
+#define H_MAP
+
 #define MAP_FLASH_DARK_NOT_FLASHABLE 2
 
 #define MAP_BATTLE_STYLE_RANDOM 0
@@ -88,75 +95,19 @@ typedef struct mapfooter{
 	u32 width;
 	u32 height;
 	u16 *border_blocks;
-	map_data *map;
+	map_block *map;
 	void *tileset1;
 	void *tileset2;
+	u8 border_width;
+	u8 border_height;
+	u16 padding;
 }mapfooter;
 
-
-typedef struct map_event_person{
-	u8 target_index; //scripts use this as target reference
-	u8 overworld_index; //the picture to be displayed
-	u8 field_2;
-	u8 field_3;
-	s16 x;
-	s16 y;
-	u8 field_8;
-	u8 facing;
-	u8 behavior;
-	u8 field_B;
-	u8 is_trainer : 1;
-	u8 padding : 7;
-	u8 field_D;
-	u16 alert_radius;
-	u8 *script;
-	u16 flag;
-	u8 field_16;
-	u8 field_17;
-	
-}map_event_person;
-
-typedef struct map_event_warp{
-	s16 x;
-	s16 y;
-	u8 field_4;
-	u8 target_warp_id;
-	u8 target_map;
-	u8 target_bank;
-}map_event_warp;
-
-typedef struct map_event_script{ //TODO
-	s16 x;
-	s16 y;
-	u8 unkown[8];
-	u8 *script;
-}map_event_script;
-
-typedef struct map_event_singpost{ //TODO
-	s16 x;
-	s16 y;
-	u8 level;
-	u8 type;
-	u8 field_6;
-	u8 field_7;
-	u8 *script;
-}map_event_signpost;
-
-typedef struct map_events{
-	u8 person_cnt;
-	u8 warp_cnt;
-	u8 script_cnt;
-	u8 singpost_cnt;
-	map_event_person *persons;
-	map_event_warp *warps;
-	map_event_script *scripts;
-	map_event_signpost *singposts;
-}map_events;
 
 //Map header data 
 typedef struct mapheader{
 	mapfooter *footer;
-	void *events;
+	map_events *events;
 	void *levelscripts;
 	map_connections *connections;
 	u16 music;
@@ -175,6 +126,26 @@ typedef struct mapheader{
 typedef struct mapbank{
 	mapheader **maps;
 }mapbank;
+
+typedef struct map_dynamic_data {
+	
+	u32 width;
+	u32 height;
+	map_block *blocks;
+} map_dynamic_data;
+
+typedef struct footer_dynamic_data{
+	
+	mapfooter *footer;
+	void *event_header;
+	
+}footer_dynamic_data;
+
+
+footer_dynamic_data *foot_ddata = (footer_dynamic_data*)0x02036DFC;
+
+
+map_dynamic_data *map_ddata = (map_dynamic_data*) 0x03004F90;
 
 
 typedef struct wild_pokemon_entry{
@@ -227,5 +198,7 @@ typedef struct wild_pokemon_data{
 }wild_pokemon_data;
 
 
+
 mapbank **mapbank_table_ptr = (mapbank**) 0x0805526C;
-mapfooter **main_map_table_ptr = (mapfooter**) 0x080551B4;
+mapfooter ***main_map_table_ptr = (mapfooter***) 0x080551B4;
+#endif

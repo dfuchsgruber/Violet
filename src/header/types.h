@@ -1,6 +1,8 @@
 #ifndef TYPES_H_
 #define TYPES_H_
 
+#define NULL 0
+
 typedef     unsigned char           u8;
 typedef     unsigned short int      u16;
 typedef     unsigned int            u32;

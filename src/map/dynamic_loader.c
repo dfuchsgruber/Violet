@@ -13,14 +13,37 @@
 #include "../header/map.h"
 #include "dynamic_map.h"
 
-mapheader *get_map_events(u8 bank, u8 map);
+extern mapheader *compute_dungeon_header();
+extern void compute_dungeon_blocks();
 
-mapheader *get_map_events(u8 bank, u8 map){
-	if(checkflag(FLAG_LOAD_DMAP)){
-		return (mapheader*) 0x835053C;
+mapheader *get_mapheader(u8 bank, u8 map);
+mapfooter *get_mapfooter();
+bool is_dungeon_map(u8 bank, u8 map);
+
+mapheader *get_mapheader(u8 bank, u8 map){
+	if(is_dungeon_map(bank, map)){
+		//return (mapheader*)0x8350558;
+		return compute_dungeon_header();
 	}else{
 		return ((*mapbank_table_ptr)[bank]).maps[map];
-		
-		
 	}
+}
+
+mapfooter *get_mapfooter(){
+	
+	if(is_dungeon_map( (*save1)->bank, (*save1)->map)){
+		compute_dungeon_blocks();
+		return &(dmem->footer);
+	}
+	
+	//return standard map header
+	u16 current_footer = (*save1)->current_footer_id;
+	if (current_footer){
+		return ((*main_map_table_ptr)[current_footer - 1]);
+	}
+	return (mapfooter*)0;
+}
+
+bool is_dungeon_map(u8 bank, u8 map){
+	return ((checkflag(FLAG_LOAD_DMAP)) && map == 10 && bank == 0);
 }

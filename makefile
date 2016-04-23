@@ -9,7 +9,6 @@ ARS=@armipsd
 ASFLAGS=-mthumb
 
 CFLAGS=-c -std=gnu11 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2
-CFLAGSAS=-c -std=gnu11 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -x assembler
 LDFLAGS=-z muldefs
 
 BLDPATH= bld
@@ -25,11 +24,11 @@ COBJS= $(CSRC:%.c=$(BLDPATH)/%.o)
 
 $(ASOBJS1): $(BLDPATH)/%.o: %.asm
 	$(shell mkdir -p $(dir $@))
-	$(CC) $(CFLAGSAS) $< -o $@
+	$(CC) $(CFLAGS) -x assembler  $< -o $@
 
 $(ASOBJS2): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
-	$(CC) $(CFLAGSAS) $< -o $@
+	$(CC) $(CFLAGS) -x assembler  $< -o $@
 	
 $(COBJS): $(BLDPATH)/%.o: %.c
 	$(shell mkdir -p $(dir $@))

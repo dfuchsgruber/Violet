@@ -82,3 +82,8 @@ void set_block_id (s16 x, s16 y, u16 block);
 void special_x8E_update_map_graphics();
 u16 random_change_seed();
 
+
+
+//
+u32 __umod (u32 dividend, u32 divisor);
+
