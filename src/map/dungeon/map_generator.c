@@ -33,6 +33,7 @@ static map_connections null_connections = {0, NULL};
 
 mapheader *compute_dungeon_header(){
 	
+	(*save1)->flash_circle_size = 2;
 	
 	if (dflags->header_initialized){
 		return &(dmem->dhead);
@@ -44,12 +45,12 @@ mapheader *compute_dungeon_header(){
 		dungeon_generator *generator = &(dmem->dgen);
 		//generator->initial_seed = random_change_seed() | ((u32)(random_change_seed() << 16));
 		generator->seed = generator->initial_seed;
-		generator->width = 25;
-		generator->height = 25;
-		generator->rooms_per_line = 3;
-		generator->rooms_per_row = 3;
-		generator->room_frequency = 0x30;
-		generator->min_rooms = 6;
+		generator->width = 65;
+		generator->height = 65;
+		generator->rooms_per_line = 6;
+		generator->rooms_per_row = 6;
+		generator->room_frequency = 0x80;
+		generator->min_rooms = 8;
 		
 		//We make the mapheader
 		dmem->dhead.footer = compute_dungeon_footer(generator);
@@ -59,7 +60,7 @@ mapheader *compute_dungeon_header(){
 		dmem->dhead.music = 0x136;
 		dmem->dhead.map_index = 0x1c1; //test index
 		dmem->dhead.name_bank = 0xc4; //test namebank
-		dmem->dhead.flash = 0;
+		dmem->dhead.flash = 2;
 		dmem->dhead.weather = WEATHER_INSIDE;
 		dmem->dhead.type = 0;
 		dmem->dhead.show_name = 0;
@@ -71,12 +72,13 @@ mapheader *compute_dungeon_header(){
 	}
 }
 
+static u16 border [4] = {0x32A, 0x32b, 0x32c, 0x32d};
 
 mapfooter *compute_dungeon_footer(dungeon_generator *d){
 	
 	dmem->footer.width = d->width;
 	dmem->footer.height = d->height;
-	dmem->footer.border_blocks = (u16*) 0x0871D104;
+	dmem->footer.border_blocks = &border;
 	dmem->footer.map = (map_block*)0x892AD80;
 	dmem->footer.tileset1 = (void*) 0x082D49B8;
 	dmem->footer.tileset2 = (void*) 0x082D4B20;

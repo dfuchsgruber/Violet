@@ -59,6 +59,6 @@ typedef struct map_events{
 	map_event_person *persons;
 	map_event_warp *warps;
 	map_event_script *scripts;
-	map_event_signpost *singposts;
+	map_event_signpost *signposts;
 }map_events;
 #endif

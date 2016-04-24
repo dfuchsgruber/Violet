@@ -14,7 +14,9 @@ typedef struct room {
 	s16 connector_y;
 	bool expanded;
 	bool presence;
-	u8 area;
+	u8 roomx;
+	u8 roomy;
+	u8 region;
 }room;
 
 typedef struct dungeon_generator {
@@ -29,6 +31,9 @@ typedef struct dungeon_generator {
 	u8 room_frequency; //is devided by 256
 	u8 min_rooms;
 	room *rooms;
+	u8 regions;
+	u8 *dbuf;
+	
 	
 }dungeon_generator;
 

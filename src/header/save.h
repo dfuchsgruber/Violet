@@ -11,7 +11,7 @@ typedef struct saveblock1 {
 	u8 bank;
 	u8 map;
 	u8 unkown[0x2A];
-	u8 flash_circle_siize;
+	u8 flash_circle_size;
 	u8 field_31;
 	u16 current_footer_id;
 	//TODO
@@ -25,6 +25,8 @@ typedef struct dungeon_memory{
 	mapheader dhead;
 	mapfooter footer;
 	dungeon_generator dgen;
+	map_events devents;
+	map_event_warp ladder;
 	
 }dungeon_memory;
 
