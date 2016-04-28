@@ -12,7 +12,22 @@
 .thumb_func
 tile_step:
 
+ldr r0, =0x50E2
+bl vardecrypt
+ldrh r1, [r0]
+cmp r1, #250
+bge skip_inc
+add r1, #1
+strh r1, [r0]
+skip_inc:
+
 bl do_fata_morgana
+
+
+bl dungeon_crash
+cmp r0, #0
+bne ret_1
+
 
 sub sp, #0x4
 mov r0, sp
@@ -120,26 +135,25 @@ bne end_main
 @partial script, sound only
 ldr r0, =0x88FB1A6
 bl script_init
-b end_main
+b ret_1
 
 entire_script:
 ldr r0, = 0x88F5B89
 bl script_init
-
+b ret_1
 end_main:
-ldr r0, =0x50E2
-bl vardecrypt
-ldrh r1, [r0]
-cmp r1, #250
-bge skip_inc
-add r1, #1
-strh r1, [r0]
-skip_inc:
+
 bl safari_do_step
 lsl r0, #0x18
 lsr r0, #0x18
 ldr r1, =0x0806d68d
 bx r1
+
+
+
+ret_1:
+ldr r0, =0x00806D695
+bx r0
 
 script_init:
 ldr r1, =0x08069AD5

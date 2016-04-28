@@ -99,3 +99,7 @@ get_current_tile_position = 0x0805C539;
 get_block_id = 0x08058E49;
 set_block_id = 0x08058FA5;
 special_x8E_update_map_graphics =0x0805A685;
+get_block_info_behaviour = 0x08058F79;
+warp_setup = 0x080553AD;
+warp_setup_callbacks = 0x0807E39D;
+script_wait_for_warp = 0x08055A05;

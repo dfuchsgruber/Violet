@@ -55,7 +55,7 @@ typedef struct map_events{
 	u8 person_cnt;
 	u8 warp_cnt;
 	u8 script_cnt;
-	u8 singpost_cnt;
+	u8 signpost_cnt;
 	map_event_person *persons;
 	map_event_warp *warps;
 	map_event_script *scripts;

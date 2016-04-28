@@ -214,3 +214,7 @@ evolution_table equ 0x9195500
 	ldr r0, =reset_mapchanges_hook | 1
 	bx r0
 	.pool
+	
+.org (0x0815FCC0 + (0x16 * 4))
+	.word special_dungeon_warpback | 1
+	.pool

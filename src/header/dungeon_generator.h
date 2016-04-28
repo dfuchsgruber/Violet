@@ -12,7 +12,7 @@ typedef struct room {
 	s16 y;
 	s16 connector_x;
 	s16 connector_y;
-	bool expanded;
+	bool is_person_located;
 	bool presence;
 	u8 roomx;
 	u8 roomy;
@@ -20,8 +20,15 @@ typedef struct room {
 }room;
 
 typedef struct dungeon_generator {
+	
 	u32 seed;
 	u32 initial_seed;
+	
+	u8 from_bank;
+	u8 from_map;
+	s16 from_x;
+	s16 from_y;
+	u8 facing;
 	
 	map_data *map;
 	u16 width;

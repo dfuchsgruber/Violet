@@ -81,9 +81,10 @@ u16 get_block_id (s16 x, s16 y);
 void set_block_id (s16 x, s16 y, u16 block);
 void special_x8E_update_map_graphics();
 u16 random_change_seed();
-
-
-
+u16 get_block_info_behaviour (s16 x, s16 y);
+void warp_setup (u8 bank, u8 map, u8 exit, s16 x, s16 y);
+void warp_setup_callbacks();
+void script_wait_for_warp();
 //
 u32 __umod (u32 dividend, u32 divisor);
 

@@ -5,24 +5,6 @@
 #include "../../header/romfuncs.h"
 #include <stdbool.h>
 
-/**Map header data 
-typedef struct mapheader{
-	mapfooter *footer;
-	void *events;
-	void *levelscripts;
-	map_connections *connections;
-	u16 music;
-	u16 map_index; //main table is used when map is loaded
-	u8 name_bank;
-	u8 flash;
-	u8 weather;
-	u8 type;
-	u16 field_18;
-	u8 show_name;
-	u8 battle_style;
-	
-}mapheader;
-**/
 
 mapheader *compute_dungeon_header();
 mapfooter *compute_dungeon_footer();
@@ -55,6 +37,7 @@ mapheader *compute_dungeon_header(){
 		//We make the mapheader
 		dmem->dhead.footer = compute_dungeon_footer(generator);
 		dmem->dhead.events = compute_dungeon_events();
+		
 		dmem->dhead.levelscripts = (void*)0x871A220;
 		dmem->dhead.connections = &null_connections;
 		dmem->dhead.music = 0x136;
@@ -78,17 +61,18 @@ mapfooter *compute_dungeon_footer(dungeon_generator *d){
 	
 	dmem->footer.width = d->width;
 	dmem->footer.height = d->height;
-	dmem->footer.border_blocks = &border;
+	dmem->footer.border_blocks = border;
 	dmem->footer.map = (map_block*)0x892AD80;
-	dmem->footer.tileset1 = (void*) 0x082D49B8;
-	dmem->footer.tileset2 = (void*) 0x082D4B20;
+	dmem->footer.tileset1 = (tileset*) 0x082D49B8;
+	dmem->footer.tileset2 = (tileset*) 0x082D4B20;
 	dmem->footer.border_width = 2;
 	dmem->footer.border_height = 2;
 	return &(dmem->footer);
 	
 }
 
-static map_event_warp nullwarp = {0, 0, 0, 0, 0, 0};
+/**
+static map_event_warp nullwarp = {1, 1, 0, 0, 0, 0};
 static map_events nullevents = {
 	0, 1, 0, 0,
 	NULL,
@@ -96,10 +80,50 @@ static map_events nullevents = {
 	NULL,
 	NULL
 };
+**/
 
 map_events *compute_dungeon_events(){
+	
+	dmem->ladder.x = 0;
+	dmem->ladder.y = 0;
+	dmem->ladder.field_4 = 0;
+	dmem->ladder.target_warp_id = 0;
+	dmem->ladder.target_map = 3;
+	dmem->ladder.target_bank = 3;
+	
+	dmem->devents.person_cnt = 5;
+	dmem->devents.warp_cnt = 1;
+	dmem->devents.script_cnt = 0;
+	dmem->devents.signpost_cnt = 0;
+	dmem->devents.persons = dmem->dpers;
+	dmem->devents.warps = &(dmem->ladder);
+	dmem->devents.scripts = NULL;
+	dmem->devents.signposts = NULL;
+	
+	int i;
+	for (i = 0; i < 5; i++){
+		dmem->dpers[i].target_index = (u8)i;
+		dmem->dpers[i].overworld_index = 92;
+		dmem->dpers[i].field_2 = 0;
+		dmem->dpers[i].field_3 = 0;
+		dmem->dpers[i].x = 0;
+		dmem->dpers[i].y = 0;
+		dmem->dpers[i].field_8 = 0;
+		dmem->dpers[i].facing = 0;
+		dmem->dpers[i].behavior = 0;
+		dmem->dpers[i].field_B = 0;
+		dmem->dpers[i].is_trainer = 0;
+		dmem->dpers[i].padding = 0;
+		dmem->dpers[i].field_D = 0;
+		dmem->dpers[i].alert_radius = 0;
+		dmem->dpers[i].script = NULL;
+		dmem->dpers[i].flag = 0;
+		dmem->dpers[i].field_16 = 0;
+		dmem->dpers[i].field_17 = 0;
+	}
 	//For now we return a static event list
-	//return (map_events*) 0x0876D920;
-	return &nullevents;
+	//return (map_events*) 0x087198A4;
+	return &(dmem->devents);
+	//return &nullevents;
 }
 

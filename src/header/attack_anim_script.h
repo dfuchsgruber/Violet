@@ -1,3 +1,5 @@
+#ifndef H_ATTACK_ANIM_SCRIPT
+#define H_ATTACK_ANIM_SCRIPT
 #include "types.h"
 #include "unaligned_types.h"
 
@@ -16,7 +18,7 @@
 #define AS_DISABLE_BLD 0xD
 #define AS_CALL(a) 0xE, UA_WORD(a)
 #define AS_RETURN 0xF
-
+#endif
 
 
 

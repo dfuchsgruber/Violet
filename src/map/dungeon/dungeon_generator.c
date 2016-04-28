@@ -3,6 +3,10 @@
 #include "../../header/types.h"
 #include "../../header/save.h"
 #include "../../header/romfuncs.h"
+#include "../../header/item.h"
+#include "../../header/overworld_script.h"
+
+#define SIMPLE_GIVEITEM_SCRIPT(item) O_SCRIPT_COPYVARIFNOTZERO(0x8000, item), O_SCRIPT_COPYVARIFNOTZERO(0x8001, 1), O_SCRIPT_CALLSTD(1), O_SCRIPT_END
 
 typedef struct neighbours{
 	u8 down;
@@ -23,7 +27,7 @@ void compute_dungeon_blocks();
 void compute_dungeon_rooms(dungeon_generator *d);
 void compute_dungeon_paths(dungeon_generator *d);
 void compute_dungeon_tiles(dungeon_generator *d);
-void compute_dungeon_events(dungeon_generator *d);
+void relocate_dungeon_events(dungeon_generator *d);
 
 void set_block(s16 x, s16 y, dungeon_generator *d);
 bool get_block(s16 x, s16 y, dungeon_generator *d);
@@ -35,6 +39,69 @@ void dungeon_connect_rooms(u8 first, u8 second, dungeon_generator *d);
 u32 random_next32 (dungeon_generator *d);
 u16 random_next16 (dungeon_generator *d);
 u8 random_next8 (dungeon_generator *d);
+
+
+//item scripts
+static u8 dungeon_item_scripts_orbs [][13] = {
+	
+	//Nature orbs (10 items)
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_ANGR_ORB_P)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_ANGR_ORB_N)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_VERT_ORB_P)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_VERT_ORB_N)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_INIT_ORB_P)},
+	
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_INIT_ORB_N)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SPA_ORB_P)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SPA_ORB_N)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SPV_ORB_P)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SPV_ORB_N)},
+	
+	
+};
+
+static u8 dungeon_item_script_heartscale [13] = {SIMPLE_GIVEITEM_SCRIPT(ITEM_HERZSCHUPPE)};
+
+static u8 dungeon_item_scripts_fossils [][13] = {
+	//Fossils
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_HELIXFOSSIL)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_DOMFOSSIL)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_KLAUENFOSSIL)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_WURZELFOSSIL)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_ALTBERNSTEIN)}
+};
+
+static u8 dungeon_item_scripts_evolution_stones [][13] = {
+	
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_FEUERSTEIN)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_WASSERSTEIN)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_BLATTSTEIN)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_MONDSTEIN)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SONNENSTEIN)},
+	
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_FINSTERSTEIN)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_LEUCHTSTEIN)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_FUNKELSTEIN)}
+};
+
+static u8 dungeon_item_scripts_common [][13] = {
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_AETHER)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_ELIXIER)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_STERNENSTAUB)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_FLUCHTSEIL)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_EWIGSTEIN)}
+};
+
+static u8 dungeon_item_scripts_rare [][13] = {
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SONDERBONBON)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SPIRITKERN)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_SCHUETZER)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_METALLMANTEL)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_TOP_AETHER)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_TOP_ELIXIER)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_STERNENSTUECK)},
+	{SIMPLE_GIVEITEM_SCRIPT(ITEM_NUGGET)}
+};
 
 
 
@@ -79,6 +146,7 @@ void compute_dungeon_rooms(dungeon_generator *d){
 			d->rooms[i].connector_y = (s16)(d->rooms[i].y + (int)__umod(random_next8(d), (u32)(d->rooms[i].height)));
 				
 			d->rooms[i].region = (u8)rooms_built;
+			d->rooms[i].is_person_located = false;
 			
 			//decide weather to build a room
 			if (random_next8(d) <= d->room_frequency){
@@ -345,22 +413,38 @@ void compute_dungeon_tiles(dungeon_generator *d){
 	
 }
 
-void compute_dungeon_events(dungeon_generator *d){
+void relocate_dungeon_events(dungeon_generator *d){
 	
-	return;
+	u32 rooms_max = (u32)(d->rooms_per_line * d->rooms_per_row);
+	
+	//we find fitting rooms for events (rooms with sizes > 1){
+	u32 i;
+	int candidates = 0;
+	for (i = 0; i < rooms_max; i++){
+		if (d->rooms[i].presence && d->rooms[i].width > 1 && d->rooms[i].height > 1){
+			candidates++;
+		}
+	}
+	if (!candidates){return;}
 	
 	//setting up a warp
-	u32 rooms_max = (u32)(d->rooms_per_line * d->rooms_per_row);
+	
 	u32 entrance;
 	do{
 		entrance = __umod(random_next8(d), rooms_max);
-	}while(d->rooms[entrance].presence && d->rooms[entrance].width > 1 && d->rooms[entrance].height > 1); //pick a real room
+	}while(!(d->rooms[entrance].presence && d->rooms[entrance].width > 1 && d->rooms[entrance].height > 1)); //pick a real room
 	
-	while(true){}
 	
 	//now we pick a random position that is not at rooms border
-	s16 x = (s16)((u32)d->rooms[entrance].x + __umod(random_next8(d), (u32)(d->rooms[entrance].width - 2)));
-	s16 y = (s16)((u32)d->rooms[entrance].y + __umod(random_next8(d), (u32)(d->rooms[entrance].height - 2)));
+	d->rooms[entrance].is_person_located = true;
+	s16 x = d->rooms[entrance].x; //+ __umod(random_next8(d), (u32)(d->rooms[entrance].width - 2)));
+	s16 y = d->rooms[entrance].y; //+ __umod(random_next8(d), (u32)(d->rooms[entrance].height - 2)));
+	
+	s16 x_rel = (s16)(__umod(random_next8(d), (u32)((d->rooms[entrance].width-2))) + 1);
+	s16 y_rel = (s16)(__umod(random_next8(d), (u32)((d->rooms[entrance].height-2))) + 1);
+	
+	x = (s16) (x + x_rel);
+	y = (s16) (y + y_rel);
 	
 	dmem->ladder.x = x;
 	dmem->ladder.y = y;
@@ -369,6 +453,54 @@ void compute_dungeon_events(dungeon_generator *d){
 	dmem->ladder.target_map = 3;
 	dmem->ladder.target_bank = 3;
 	
+	candidates --;
+	
+	
+	
+	for (i = 0; i < rooms_max - 1 && i < 5 && candidates; i++){ //we locate persons in rooms that were not picked
+		if (random_next8(d) >= 0x60){ // 160 / 256 chance that an item will be spawned
+			u32 picked;
+			do{
+				picked = __umod(random_next8(d), rooms_max);
+			}while(d->rooms[picked].is_person_located ||
+				(!(d->rooms[picked].presence && d->rooms[picked].width > 1 && d->rooms[picked].height > 1)));
+			
+			x = d->rooms[picked].x;
+			y = d->rooms[picked].y;
+			
+			x_rel = (s16)(d->rooms[picked].width/2);
+			y_rel = (s16)(d->rooms[picked].height/2);
+			
+			dmem->dpers[i].flag = (u16)(i+0x13); //use dynamic flags 0x13 - 0x18
+			dmem->dpers[i].x = (s16)(x + x_rel);
+			dmem->dpers[i].y = (s16)(y + y_rel);
+			
+			//setting up a random script for the item
+			u8 r = random_next8(d);
+			if (r < 0x50){ // 0 - 0x4F is a nature item
+				dmem->dpers[i].script = dungeon_item_scripts_orbs[__umod(random_next8(d), 10)];
+			}else if (r < 0x90){ // 0x50 - 0x8F is a common item
+				dmem->dpers[i].script = dungeon_item_scripts_common[__umod(random_next8(d), 5)];			
+			}else if (r < 0xC0){ // 0x90 - 0xBF is heartscale
+				dmem->dpers[i].script = dungeon_item_script_heartscale;
+			}else if (r < 0xD8){ // 0xC0 - 0xD7 is evolution stone
+				dmem->dpers[i].script = dungeon_item_scripts_evolution_stones[__umod(random_next8(d), 8)];
+			}else if (r < 0xF0){ // 0xD8 - 0xEF is rare item
+				dmem->dpers[i].script = dungeon_item_scripts_rare[__umod(random_next8(d), 8)];
+			}else{ //0xF0 - 0xEF is a fossil
+				dmem->dpers[i].script = dungeon_item_scripts_fossils[__umod(random_next8(d), 5)];
+			}
+			
+			candidates --;
+			
+			
+		}else{
+			dmem->dpers[i].flag = 0x820;
+		}
+		
+	}
+	
+	//set_block_id((s16)(x+7), (s16)(y+7), 0x285);
 	
 }
 
@@ -391,8 +523,10 @@ void compute_dungeon_blocks(){
 	compute_dungeon_rooms(d);
 	compute_dungeon_paths(d);
 	compute_dungeon_tiles(d);
-	//compute_dungeon_events(d);
+	relocate_dungeon_events(d);
 	
+	free(d->dbuf);
+	free(d->rooms);
 	
 	foot_ddata->footer = &(dmem->footer);
 	//special_x8E_update_map_graphics();

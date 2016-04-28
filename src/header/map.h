@@ -1,5 +1,9 @@
+#ifndef H_MAP
+#define H_MAP
+
 #include "types.h"
 #include "mapevents.h"
+#include "tile.h"
 
 #define WEATHER_INSIDE 0
 #define WEATHER_SUNNY_CLOUDS 1
@@ -22,9 +26,7 @@
 
 #define MAP_FLASH_NONE 0
 #define MAP_FLASH_DARK_FLASHABLE 1
-#ifndef H_MAP
 
-#define H_MAP
 
 #define MAP_FLASH_DARK_NOT_FLASHABLE 2
 
@@ -90,14 +92,25 @@ typedef struct map_tileset{
 	
 }map_tileset;
 
+
+typedef struct tileset {
+	
+	void *field_0;
+	void *field_1;
+	void *field_2;
+	void *field_3;
+	block_data *data;
+	
+} tileset;
+
 //The actual map data
 typedef struct mapfooter{
 	u32 width;
 	u32 height;
 	u16 *border_blocks;
 	map_block *map;
-	void *tileset1;
-	void *tileset2;
+	tileset *tileset1;
+	tileset *tileset2;
 	u8 border_width;
 	u8 border_height;
 	u16 padding;

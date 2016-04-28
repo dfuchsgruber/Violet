@@ -21,12 +21,13 @@ typedef struct saveblock1 {
 
 typedef struct dungeon_memory{
 	
-	dungeon_data ddata;
+	//dungeon_data ddata;
 	mapheader dhead;
 	mapfooter footer;
 	dungeon_generator dgen;
 	map_events devents;
 	map_event_warp ladder;
+	map_event_person dpers[5];
 	
 }dungeon_memory;
 
