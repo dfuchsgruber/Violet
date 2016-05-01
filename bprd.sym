@@ -103,3 +103,4 @@ get_block_info_behaviour = 0x08058F79;
 warp_setup = 0x080553AD;
 warp_setup_callbacks = 0x0807E39D;
 script_wait_for_warp = 0x08055A05;
+script_halt = 0x08069B19;

@@ -15,7 +15,7 @@ static map_connections null_connections = {0, NULL};
 
 mapheader *compute_dungeon_header(){
 	
-	(*save1)->flash_circle_size = 2;
+	(*save1)->flash_circle_size = 1;
 	
 	if (dflags->header_initialized){
 		return &(dmem->dhead);
@@ -40,9 +40,8 @@ mapheader *compute_dungeon_header(){
 		
 		dmem->dhead.levelscripts = (void*)0x871A220;
 		dmem->dhead.connections = &null_connections;
-		dmem->dhead.music = 0x136;
+		dmem->dhead.music = 0x14b;
 		dmem->dhead.map_index = 0x1c1; //test index
-		dmem->dhead.name_bank = 0xc4; //test namebank
 		dmem->dhead.flash = 2;
 		dmem->dhead.weather = WEATHER_INSIDE;
 		dmem->dhead.type = 0;

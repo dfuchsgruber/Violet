@@ -215,6 +215,11 @@ evolution_table equ 0x9195500
 	bx r0
 	.pool
 	
-.org (0x0815FCC0 + (0x16 * 4))
+.org (0x0815F914 + (0x8e * 4))
 	.word special_dungeon_warpback | 1
+	.pool
+	
+.org 0x806D154
+	ldr r0, =hook_get_behavior_script | 1
+	bx r0
 	.pool

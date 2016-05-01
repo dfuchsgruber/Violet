@@ -397,14 +397,19 @@ void compute_dungeon_tiles(dungeon_generator *d){
 	for (x = 0; x < d->width; x++){
 		for (y = 0; y < d->height; y++){
 			u16 block;
+			u8 r = random_next8(d);
 			if (get_block(x, y, d)){
-				block = 0x2D9;
-			}else{
-				u8 r = random_next8(d);
-				if (r < 0x10){
-					block = (u16)(0xE82 + (r&1 ? 1 : 0));
+				if (r&31){
+					block = 0x2D9;
 				}else{
-					block = (u16)(0x32A + __umod(random_next8(d), 8));
+					block = (u16)(0x338 + ((r >> 5) & 3));
+				}
+				
+			}else{
+				if (r < 0x10){
+					block = (u16)((r&2 ? 0xE82 : 0xF36) + (r&1 ? 1 : 0));
+				}else{
+					block = (u16)(0x32A + __umod(random_next8(d), 12));
 				}
 			}
 			set_block_id((s16)(x+7), (s16)(y+7), block);

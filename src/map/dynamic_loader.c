@@ -45,5 +45,5 @@ mapfooter *get_mapfooter(){
 }
 
 bool is_dungeon_map(u8 bank, u8 map){
-	return ((checkflag(FLAG_LOAD_DMAP)) && map == 10 && bank == 0);
+	return ((checkflag(FLAG_LOAD_DMAP)));// && map == 10 && bank == 0);
 }

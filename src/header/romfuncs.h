@@ -85,6 +85,7 @@ u16 get_block_info_behaviour (s16 x, s16 y);
 void warp_setup (u8 bank, u8 map, u8 exit, s16 x, s16 y);
 void warp_setup_callbacks();
 void script_wait_for_warp();
+void script_halt();
 //
 u32 __umod (u32 dividend, u32 divisor);
 
