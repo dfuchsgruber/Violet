@@ -104,3 +104,4 @@ warp_setup = 0x080553AD;
 warp_setup_callbacks = 0x0807E39D;
 script_wait_for_warp = 0x08055A05;
 script_halt = 0x08069B19;
+__sqrt = 0x081E7A85;

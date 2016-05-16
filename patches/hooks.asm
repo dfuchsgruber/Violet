@@ -1,5 +1,6 @@
 
 evolution_table equ 0x9195500
+special_table equ 0x0815FCC0
 
 //mega evolution
 .org 0x0802E3D0
@@ -221,5 +222,14 @@ evolution_table equ 0x9195500
 	
 .org 0x806D154
 	ldr r0, =hook_get_behavior_script | 1
+	bx r0
+	.pool
+	
+.org (special_table + (0xC * 4))
+	.word special_addkarma_wrap | 1
+	.pool
+	
+.org 0x0802596C
+	ldr r0, =hook_price_money | 1
 	bx r0
 	.pool

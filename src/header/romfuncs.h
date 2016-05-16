@@ -88,4 +88,4 @@ void script_wait_for_warp();
 void script_halt();
 //
 u32 __umod (u32 dividend, u32 divisor);
-
+int __sqrt(int x);
