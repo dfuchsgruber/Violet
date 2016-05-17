@@ -233,3 +233,18 @@ special_table equ 0x0815FCC0
 	ldr r0, =hook_price_money | 1
 	bx r0
 	.pool
+	
+.org 0x08021b60
+	ldr r2, =hook_exp | 1
+	bx r2
+	.pool
+	
+.org 0x0809a9f0
+	ldr r1, =hook_item_prices | 1
+	bx r1
+	.pool
+	
+.org 0x080C6F38
+	ldr r0, =hook_trainer_items | 1
+	bx r0
+	.pool
