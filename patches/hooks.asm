@@ -229,6 +229,10 @@ special_table equ 0x0815FCC0
 	.word special_addkarma_wrap | 1
 	.pool
 	
+.org (special_table +(0x16 * 4))
+	.word special_get_rtc | 1
+	.pool
+	
 .org 0x0802596C
 	ldr r0, =hook_price_money | 1
 	bx r0

@@ -1,3 +1,4 @@
+
 @0806D154 via r0
 
 .align 2
@@ -14,6 +15,12 @@ lsr r4, r1, #0x18
 lsl r2, #0x18
 lsr r5, r2, #0x18
 
+cmp r4, #0xB2
+beq trigger_tv
+
+cmp r4, #0xB3
+beq trigger_trash
+
 ldr r0, =0x924
 bl _checkflag
 cmp r0, #0
@@ -27,9 +34,19 @@ ret:
 ldr r0, =0x0806D15F
 bx r0
 
+trigger_trash:
+ldr r0, =0x08839144
+b ret_s
+
+trigger_tv:
+cmp r5, #2
+bne ret
+ldr r0, =script_tv
+b ret_s
 
 trigger_dungeon_entry:
-adr r0, script_d_entry
+ldr r0, =script_d_entry
+ret_s:
 pop {r4-r5}
 pop {r1}
 bx r1
@@ -78,6 +95,12 @@ sden:
 .byte 0x2
 
 
+script_tv:
+.byte 0x23
+.word load_tv_text	@callasm load tv text
+.byte 0x9
+.byte 0x3	@callstd 3
+.byte 2
 
 
 

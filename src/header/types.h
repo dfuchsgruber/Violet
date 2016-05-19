@@ -2,6 +2,8 @@
 #define TYPES_H_
 
 #define NULL 0
+#define LOW 0
+#define HIGH 1
 
 typedef     unsigned char           u8;
 typedef     unsigned short int      u16;
