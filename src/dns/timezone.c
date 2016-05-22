@@ -10,7 +10,6 @@ mapheader *get_mapheader(u8 bank, u8 map);
 void update_timezone();
 
 void callback_switch_timezone(){
-	
 	update_timezone();
 	set_callback1((void*)0x08056829); //return to normal map reload
 	
@@ -27,10 +26,12 @@ void update_timezone(){
 	if (is_inside_map(bank, map)){
 		*vardecrypt(VAR_TIMEZONE) = 0;
 	}else{
-	
 		if (stamp.hour >= 22 || stamp.hour <= 6){
-			
 			*vardecrypt(VAR_TIMEZONE) = 1; //night
+		}else if(stamp.hour <= 8){
+			*vardecrypt(VAR_TIMEZONE) = 2; //morning
+		}else if(stamp.hour >= 20){
+			*vardecrypt(VAR_TIMEZONE) = 3; //evening
 		}else{
 			*vardecrypt(VAR_TIMEZONE) = 0;
 		}

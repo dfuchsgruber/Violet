@@ -14,10 +14,21 @@ void dns_apply_shaders(u16 start_col, u16 col_cnt){
 		u16 o = 0;
 		u8 alpha = 0;
 		switch(timezone){
-			case 1:{
+			case 1:{ //night
 				alpha = 9;
 				o = 0x2c20;
 				break;
+			}
+			case 2:{ //morning
+				alpha = 4;
+				o = 0x301f;
+				break;
+			}
+			case 3:{ //evening
+				alpha = 3;
+				o = 0x00bf;
+				break;
+				
 			}
 		}
 		
