@@ -1,19 +1,34 @@
 #include "../header/types.h"
 #include "../header/romfuncs.h"
-#include "rtc.h"
+#include "../header/rtc.h"
 
-void rtc_read(rtc_timestamp *s);
-void rtc_send_byte(u8 byte);
-void gpio_set_data(bool sck, bool sio, bool cs);
-u8 rtc_read_byte();
-void special_get_rtc();
-void rtc_chip_wait();
-u8 to_dec(u8 value);
 
-void special_get_rtc(){
+
+static gpio *gpios = (gpio *)0x080000C4;
+
+u16 special_get_rtc(){
 	
-	rtc_timestamp *s = (rtc_timestamp*)vardecrypt(0x8000);
-	rtc_read(s);
+	rtc_timestamp stamp = {0, 0, 0, 0, 0, 0 ,0};
+	rtc_read(&stamp);
+	switch(*vardecrypt(0x8004)){
+		
+		case 0:
+			return stamp.year;
+		case 1:
+			return stamp.month;
+		case 2:
+			return stamp.day;
+		case 3:
+			return stamp.day_of_week;
+		case 4:
+			return stamp.hour;
+		case 5:
+			return stamp.minute;
+		case 6:
+			return stamp.second;
+		default:
+			return NULL;
+	}
 	
 }
 

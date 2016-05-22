@@ -95,10 +95,13 @@ typedef struct map_tileset{
 
 typedef struct tileset {
 	
-	void *field_0;
-	void *field_1;
-	void *field_2;
-	void *field_3;
+	u8 field_0;
+	u8 palette_state;
+	u8 field_2;
+	u8 field_3;
+	void *field_4;
+	void *palette;
+	void *field_C;
 	block_data *data;
 	
 } tileset;

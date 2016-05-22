@@ -75,7 +75,10 @@ void cmdx21_song (memory* mem);
 void cmdx22_cry (memory* mem);
 
 
+int *testsym;
+
 void init_anim_engine(){
+	*testsym = 0;
 	u8 callback_id = spawn_big_callback((void*)callback, 0);
 	u32 callback_offset = (u32)(0x03004FE0 + 0x28*callback_id);
 	

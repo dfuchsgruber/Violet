@@ -4,6 +4,8 @@
 #ifndef RTC
 #define RTC
 
+#define VAR_TIMEZONE 0x50DF
+
 typedef struct rtc_timestamp{
 	
 	u8 year;
@@ -24,6 +26,12 @@ typedef struct gpio {
 	
 }gpio;
 
-static gpio *gpios = (gpio *)0x080000C4;
+void rtc_read(rtc_timestamp *s);
+void rtc_send_byte(u8 byte);
+void gpio_set_data(bool sck, bool sio, bool cs);
+u8 rtc_read_byte();
+u16 special_get_rtc();
+void rtc_chip_wait();
+u8 to_dec(u8 value);
 
 #endif
