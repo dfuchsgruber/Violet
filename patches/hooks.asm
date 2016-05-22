@@ -271,3 +271,8 @@ special_table equ 0x0815FCC0
 .org 0x08056824
 	.word callback_switch_timezone | 1
 	.pool
+	
+.org 0x08056758
+	ldr r0, =hook_update_timezone | 1
+	bx r0
+	.pool
