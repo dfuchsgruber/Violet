@@ -276,3 +276,14 @@ special_table equ 0x0815FCC0
 	ldr r0, =hook_update_timezone | 1
 	bx r0
 	.pool
+	
+.org 0x0800F1E4
+	ldr r1, =battle_bg_load | 1
+	bx r1
+	.pool
+
+.org 0x08059AE4
+	ldr r0, =hook_tile_init | 1
+	bx r0
+	.pool
+	

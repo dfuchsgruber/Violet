@@ -18,5 +18,7 @@ typedef union color{
 }color;
 
 color alpha_blend (color original, color overlay, u8 alpha);
+color color_multiply (color original, color overlay);
+color blend_multiply (color original, color overlay, u8 alpha );
 
 #endif

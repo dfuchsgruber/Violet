@@ -1,3 +1,7 @@
+
+#ifndef HBATTLE
+#define HBATTLE
+
 typedef struct battler {
 	u16 species;
 	u16 stats[5];
@@ -24,9 +28,19 @@ typedef struct battler {
 	u32 tid;	
 } battler;
 
+typedef struct battle_bg{
+	void *tileset;
+	void *tilemap;
+	void *animset;
+	void *animmap;
+	void *palette;
+}battle_bg;
+
 u16 can_mega_evolve(battler *b);
 
 battler* battlers = (battler*)0x02023BE4;
 u8 *attack_targets = (u8*)0x02023BD6;
 u8 *battler_oams = (u8*)0x02023D44;
 u8 *battler_cnt = (u8*)0x02023BCC;
+
+#endif
