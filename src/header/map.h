@@ -218,5 +218,5 @@ typedef struct wild_pokemon_data{
 
 mapbank **mapbank_table_ptr = (mapbank**) 0x0805526C;
 mapfooter ***main_map_table_ptr = (mapfooter***) 0x080551B4;
-static tileset *tilesets = (tileset*)0x082D49B8;
+tileset *tilesets = (tileset*)0x082D49B8;
 #endif

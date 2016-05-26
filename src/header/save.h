@@ -28,6 +28,7 @@ typedef struct dungeon_memory{
 	map_events devents;
 	map_event_warp ladder;
 	map_event_person dpers[5];
+	u8 trash_flags[16];
 	
 }dungeon_memory;
 

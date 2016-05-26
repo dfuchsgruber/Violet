@@ -33,6 +33,7 @@ u16 read_param(memory* mem);
 void render_tbox(u8 cbid);
 void obj_move (u8 cbid);
 void fade (u8 cb_id);
+void callback_maintain();
 
 
 /**
@@ -73,6 +74,7 @@ void cmdx1F_invertcolors (memory* mem);
 void cmdx20_sound (memory* mem);
 void cmdx21_song (memory* mem);
 void cmdx22_cry (memory* mem);
+void cmdx23_maintain();
 
 
 int *testsym;
@@ -147,7 +149,8 @@ void execute_frame (memory* mem){
 								cmdx1F_invertcolors,
 								cmdx20_sound,
 								cmdx21_song,
-								cmdx22_cry
+								cmdx22_cry,
+								cmdx23_maintain
 								};
 	u8 cmd_id = read_byte(mem);
 	
@@ -749,3 +752,6 @@ void cmdx22_cry (memory* mem){
 	cry(pokeid, feature);
 }
 
+void cmdx23_maintain(){
+	set_callback1(callback_maintain);
+}

@@ -14,6 +14,8 @@ lsl r1, #0x18
 lsr r4, r1, #0x18
 lsl r2, #0x18
 lsr r5, r2, #0x18
+ldr r0, =0x020370D4
+strh r5, [r0]
 
 cmp r4, #0xB2
 beq trigger_tv
@@ -35,7 +37,9 @@ ldr r0, =0x0806D15F
 bx r0
 
 trigger_trash:
-ldr r0, =0x08839144
+mov r0, r5
+bl generate_trash_item
+ldr r0, =0x089279D4
 b ret_s
 
 trigger_tv:

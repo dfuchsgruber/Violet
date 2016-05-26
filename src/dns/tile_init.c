@@ -8,12 +8,15 @@
 
 void tile_init(mapfooter *foot){
 	
-	if (foot->tileset1 == &tilesets[0] && *vardecrypt(VAR_TIMEZONE) == 1){
-		//Tileset1 = 0
+	if (*vardecrypt(VAR_TIMEZONE) == 1){
+		
 		u16 *pal_save_copy = (u16*) 0x020371F8;
-		pal_save_copy[0x21] = 0x33BF;
-		pal_save_copy[0x22] = 0x33BF;
-		pal_save_copy[0x25] = 0x333E;
+		
+		if (foot->tileset1 == &tilesets[0]){
+			//Tileset1 = 0
+			pal_save_copy[0x21] = 0x377D;
+			pal_save_copy[0x22] = 0x377D;
+			pal_save_copy[0x25] = 0x1ABB;
+		}
 	}
-	
 }

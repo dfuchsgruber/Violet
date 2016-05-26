@@ -49,8 +49,7 @@ color dns_get_over(){
 }
 
 void dns_apply_shaders(u16 start_col, u16 col_cnt){
-	
-	
+		
 	if(*vardecrypt(VAR_TIMEZONE)){
 		dns_blend_colors(start_col, col_cnt, dns_get_over(), dns_get_alpha());
 	}
