@@ -1,24 +1,16 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/oams.h"
-#include "../header/callbacks.h"
-#include "../header/battle.h"
-#include "../header/basestats.h"
-#include "../header/trainer.h"
-#include "../header/item.h"
-#include "../header/save.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "trainer.h"
+#include "item.h"
+#include "save.h"
 #include <stdbool.h>
-#include "../header/unaligned_types.h"
+#include "unaligned_types.h"
 
 
-#define DESERT_MAP 21
-#define DESERT_BANK 3
-
-
-typedef struct morgana_anim {
-	u16 blocks[4];
-	u16 walkfield;
-} morgana_anim;
 
 static morgana_anim anims[36] = {
 	{{0x320, 0x322, 0x324, 0x326}, 0x0},
@@ -61,9 +53,6 @@ static morgana_anim anims[36] = {
 	{{0x3ae, 0x3ac, 0x3aa, 0x3a8}, 0x0},
 	{{0x3af, 0x3ad, 0x3ab, 0x3a9}, 0x0}
 };
-
-void do_fata_morgana ();
-
 
 void do_fata_morgana(){
 	

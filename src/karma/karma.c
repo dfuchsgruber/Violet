@@ -1,10 +1,7 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/karma.h"
-
-
-extern int signum(int i);
-extern int abs(int i);
+#include "types.h"
+#include "romfuncs.h"
+#include "karma.h"
+#include "math.h"
 
 u16 addkarma(u16 *value){
 	s16 v = (s16)(*value);

@@ -1,3 +1,6 @@
+#ifndef H_ABILITIES
+#define H_ABILITIES
+
 #define ABILITY_NONE 0x0
 #define DUFTNOTE 0x1
 #define NIESEL 0x2
@@ -108,3 +111,10 @@
 #define ALLROUNDER 0x6b
 #define HITZEWAHN 0x6c
 #define GIFTWAHN 0x6d
+
+
+u8 get_pokemons_ability(pokemon *poke);
+
+u8 write_ability_into_dbuf (pokemon *poke);
+
+#endif

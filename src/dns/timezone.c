@@ -1,13 +1,11 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/rtc.h"
-#include "../header/map.h"
-#include "../header/color.h"
-#include "../header/save.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "rtc.h"
+#include "map.h"
+#include "color.h"
+#include "save.h"
+#include "dns.h"
 
-bool is_inside_map(u8 bank, u8 map);
-mapheader *get_mapheader(u8 bank, u8 map);
-void update_timezone();
 
 void callback_switch_timezone(){
 	update_timezone();

@@ -1,5 +1,5 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
+#include "types.h"
+#include "romfuncs.h"
 
 int modify_exp (int exp){
 	

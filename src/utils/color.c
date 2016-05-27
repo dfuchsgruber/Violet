@@ -1,22 +1,6 @@
-#include "../header/types.h"
-#include "../header/color.h"
+#include "types.h"
+#include "color.h"
 
-
-int abs (int i){
-	if (i < 0){
-		return -i;
-	}
-	return i;
-}
-
-int signum (int i){
-	if (i < 0){
-		return -1;
-	}else if (i > 0){
-		return 1;
-	}
-	return 0;
-}
 
 color alpha_blend (color original, color overlay, u8 alpha){
 	

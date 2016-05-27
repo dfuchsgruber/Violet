@@ -1,15 +1,8 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/save.h"
-#include "../header/item.h"
-
-void special_set_trashflag();
-void generate_trash_item(u8 facing);
-bool check_trashflag(u8 facing);
-void set_trashflag(u8 facing);
-int get_trash_hash_by_facing(u8 facing, int m);
-int hash_trash(s16 x, s16 y, u8 map, u8 bank, int m);
-void new_trash_vector();
+#include "types.h"
+#include "romfuncs.h"
+#include "save.h"
+#include "item.h"
+#include "tile.h"
 
 void generate_trash_item(u8 facing){
 	
@@ -101,6 +94,14 @@ void new_trash_vector(){
 	do {val = (u32)(random_change_seed() | (random_change_seed() << 16));} while(!val);
 	*vardecrypt(0x50DE) = (u16)val;
 	*vardecrypt(0x50DD) = (u16)(val >> 16);
+	
+}
+
+void reset_trash_flags(){
+	int i;
+	for (i = 0; i < 16; i++){
+		dmem->trash_flags[i] = 0;
+	}
 	
 }
 

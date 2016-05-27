@@ -1,17 +1,9 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/battle.h"
-#include "../header/basestats.h"
-#include "../header/trainer.h"
-#include "../header/item.h"
-
-typedef struct trainer_items{
-	
-	u16 items[4];
-	u8 cnt;
-	
-}trainer_items;
-
+#include "types.h"
+#include "romfuncs.h"
+#include "battle.h"
+#include "basestats.h"
+#include "trainer.h"
+#include "item.h"
 
 
 void load_trainer_items (trainer_items *t_items){

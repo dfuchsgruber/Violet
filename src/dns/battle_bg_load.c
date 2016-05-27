@@ -1,13 +1,12 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/rtc.h"
-#include "../header/map.h"
-#include "../header/color.h"
-#include "../header/save.h"
-#include "../header/battle.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "rtc.h"
+#include "map.h"
+#include "color.h"
+#include "save.h"
+#include "battle.h"
+#include "dns.h"
 
-color dns_get_over();
-u8 dns_get_alpha();
 
 void battle_bg_load(u8 bg_id){
 	

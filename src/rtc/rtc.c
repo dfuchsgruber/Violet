@@ -1,6 +1,6 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/rtc.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "rtc.h"
 
 
 

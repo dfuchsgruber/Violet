@@ -1,17 +1,12 @@
-#include "../../header/dungeon_generator.h"
-#include "../../header/map.h"
-#include "../../header/types.h"
-#include "../../header/save.h"
-#include "../../header/romfuncs.h"
-#include "../../header/item.h"
-#include "../../header/overworld_script.h"
-#include "../dynamic_map.h"
+#include "dungeon_generator.h"
+#include "map.h"
+#include "types.h"
+#include "save.h"
+#include "romfuncs.h"
+#include "item.h"
+#include "overworld_script.h"
+#include "dungeon_generator.h"
 
-extern bool is_dungeon_map(u8 bank, u8 map);
-
-bool dungeon_crash();
-bool special_dungeon_warpback();
-void dungeon_store_current_pos();
 
 static u8 earthquake_script [] = {
 	O_SCRIPT_SETVAR(0x8004, 3),
@@ -28,10 +23,10 @@ bool dungeon_crash(){
 	
 	s16 coordinates[2];
 	get_current_tile_position(&coordinates[0], &coordinates[1]);
-	if (is_dungeon_map((*save1)->bank,(*save1)->map)){	
+	if (is_dungeon_map()){	
 		if (((*vardecrypt(0x50E1))++ >= 2*(dmem->dgen.width + dmem->dgen.height)) ||
 			get_block_info_behaviour(coordinates[0], coordinates[1]) == 0xB0){
-			//init_script((void*)0x8719D01);
+	        init_script((void*)0x8719D01);
 			clearflag(FLAG_LOAD_DMAP);
 			init_script(&earthquake_script);
 			return true;
@@ -49,8 +44,6 @@ bool special_dungeon_warpback(){
 	clearflag(0x910);
 	return true;
 }
-
-int asdf(){return 1;}
 
 void dungeon_store_current_pos(){
 	u8 bank = (*save1)->bank;

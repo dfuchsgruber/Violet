@@ -1,27 +1,18 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/oams.h"
-#include "../header/callbacks.h"
-#include "../header/battle.h"
-#include "../header/mega.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "mega.h"
 #include <stdbool.h>
 
-#define TAG 0x134F
-
-extern bool can_player_trigger_mega();
-
-u16 can_mega_evolve(battler *b);
-mega_table_entry *get_mega_if_can_mega_evolve(battler *b);
-void icon_callback(oam_object *self);
-void mega_show_icon();
-
 static sprite icon_sprite = {0x400, 0xC000, 0x400, 0};
-static graphic icon_graphic = {(void*)0x93Da730, 0x800, TAG};
-static graphic regent_graphic = {(void*)0x93dab30, 0x800, TAG+1};
+static graphic icon_graphic = {(void*)0x93Da730, 0x800, MEGA_ICON_TAG};
+static graphic regent_graphic = {(void*)0x93dab30, 0x800, MEGA_ICON_TAG+1};
 
 static oam_template icon_template = {
-	TAG,
-	TAG,
+	MEGA_ICON_TAG,
+	MEGA_ICON_TAG,
 	&icon_sprite,
 	(frame**)0x08231Bc0,
 	(graphic*)0,
@@ -30,8 +21,8 @@ static oam_template icon_template = {
 };
 
 static oam_template icon_template_reg = {
-	TAG+1,
-	TAG+1,
+	MEGA_ICON_TAG+1,
+	MEGA_ICON_TAG+1,
 	&icon_sprite,
 	(frame**)0x08231Bc0,
 	(graphic*)0,
@@ -53,7 +44,7 @@ void mega_show_icon(){
 		
 		u32 *palette = (mega_entry->regent == 1) ? (u32*)(0x93dab00) : (u32*)(0x93da700);
 		graphic *g = (mega_entry->regent == 1) ? &regent_graphic : &icon_graphic;
-		u16 paltag = (mega_entry->regent == 1) ? (u16)(TAG+1) : TAG;
+		u16 paltag = (mega_entry->regent == 1) ? (u16)(MEGA_ICON_TAG+1) : MEGA_ICON_TAG;
 		oam_template *temp = (mega_entry->regent == 1) ? &icon_template_reg : &icon_template;
 		
 		u8 palid = get_obj_pal_by_tag(paltag);

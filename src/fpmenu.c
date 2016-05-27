@@ -1,6 +1,7 @@
-#include "header/types.h"
-#include "header/romfuncs.h"
-#include "header/oams.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "fpmenu.h"
 
 #define bgset 0x93c1b00
 #define bgmap 0x93c2700
@@ -10,66 +11,13 @@
 #define arrowleft 0x93c2a40
 #define arrowpal 0x93c2aa0
 
-typedef struct memory {
-	u8 status;
-	u8 current_slot;
-	u8 current_stat;
-	u8 oam_pokepic;
-	u8 oam_arrowup;
-	u8 oam_arrowdown;
-	u8 oam_arrowleft;
-	u8 oam_arrowright;
-	u8 animation_cb;
-	u8 tb_name;
-	u8 tb_level;
-	u8 tb_fpused;
-	u8 tb_hp;
-	u8 tb_atk;
-	u8 tb_def;
-	u8 tb_int;
-	u8 tb_satk;
-	u8 tb_sdef;
-	u8 tb_currentstat;
-	u8 tb_availible;
-	u8 tb_used;
-	u8 tb_bonus;
-	u8 delay;
-	u8 poke_anim_mode;
-	u8 color_anim_mode;
-	u8 color_anim_intensity;
-	u8 color_anim_delay;
-	u8 arrow_anim_mode;
-	u8 arrow_anim_cnt;
-	u8 arrow_anim_delay;
-	u16 redraw_request;
-	u16 pokepic_start_tile;
-	u16 last_pressed_key;
-	u32 *bgtileset;
-	u32 *bgtilemap;
-	u32 *bg0set;
-	u32 *bg0map;
-	
-} memory;
 
-
-
-
-//funcs
-void fp_callback();
-u8 setup_textbox(u8 bgid, u8 x, u8 y, u8 w, u8 h, u8 palID, u16 startTile);
-void fp_display_box(u8 boxid, u8 font, u8 unkown, u8 border_distance, u8 line_distance_u, u8 line_distance_l, u8*font_col_map, u8 display_all_boxes, u8*text);
-void fp_load_stat(void*pokemon_offset, u8 requested_stat, memory* mem);
-void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, memory* mem);
-void fp_load_stats (void*pokemon_offset, u8 requested_stat, memory* mem);
-void fp_do_color_animation(memory* mem);
-void fp_do_arrow_animation(memory* mem);
-u32 get_fp_used (void* pokeoffset);
 
 //function to initalize the callback1
 void init_fp_menu(u8 id){
-	//initializing memory for the callback (32 bytes)
-	*((u32*)0x020370D0) = malloc(sizeof(memory));
-	memory *mem = *((memory**)0x020370D0);
+	//initializing fp_memory for the callback (32 bytes)
+	*((u32*)0x020370D0) = malloc(sizeof(fp_memory));
+	fp_memory *mem = *((fp_memory**)0x020370D0);
 	mem->status = 0;//default state 0
 	mem->oam_pokepic = 0xFF;
 	mem->current_stat = 0x0;
@@ -94,7 +42,7 @@ void fp_callback(){
 	//waiting for end of the fading
 	u8* fading_flags = (u8*)(0x02037AB8+0x7);
 	if (((*fading_flags)&0x80) == 0){
-		memory *mem = *((memory**)0x020370D0);
+		fp_memory *mem = *((fp_memory**)0x020370D0);
 		switch (mem->status){
 			case 0:{
 			//status 0 -- initializing components
@@ -397,7 +345,7 @@ void fp_display_box(u8 boxid, u8 font, u8 unkown, u8 border_distance, u8 line_di
 }
 
 //loads all stat-related values of a pokemon
-void fp_load_stats(void*pokemon_offset, u8 requested_stat, memory* mem){
+void fp_load_stats(void*pokemon_offset, u8 requested_stat, fp_memory* mem){
 	if (requested_stat < 6){
 		
 		bool isEgg = (bool)(get_pokemons_attribute(pokemon_offset, 0x2D, 0) & 1);
@@ -459,7 +407,7 @@ void fp_load_stats(void*pokemon_offset, u8 requested_stat, memory* mem){
 }
 
 //loads a stat of a certain pokemon
-void fp_load_stat(void*pokemon_offset, u8 requested_stat, memory* mem){
+void fp_load_stat(void*pokemon_offset, u8 requested_stat, fp_memory* mem){
 	//0,1,2,3,4,5 = hp,atk,def,int,satk,sdef
 	if (requested_stat < 6){
 	
@@ -534,7 +482,7 @@ void fp_load_stat(void*pokemon_offset, u8 requested_stat, memory* mem){
 }
 
 //loads a pokemon including a stat with animation
-void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, memory* mem){
+void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, fp_memory* mem){
 	//0,1,2,3,4,5 = hp,atk,def,int,satk,sdef
 	if (requested_stat < 6){
 		
@@ -602,7 +550,7 @@ void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, memory* mem){
 }
 
 //does the color animation
-void fp_do_color_animation(memory* mem){
+void fp_do_color_animation(fp_memory* mem){
 	u16 colors[] = {0x372a, 0x31df, 0x4Dcd, 0x7FB7, 0x439F, 0x3212};
 	//*((u16*)0x020370D4) = colors[mem->current_stat];
 	if (mem->color_anim_delay == 0){
@@ -624,7 +572,7 @@ void fp_do_color_animation(memory* mem){
 }
 
 //does arrow animations
-void fp_do_arrow_animation(memory* mem){
+void fp_do_arrow_animation(fp_memory* mem){
 	//getting the oams of the arrows
 	if (mem->arrow_anim_delay == 0){
 		oam_object* oam_up = (oam_object*)(0x0202063C+(0x44*mem->oam_arrowup));

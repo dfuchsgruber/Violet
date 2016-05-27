@@ -1,27 +1,20 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/oams.h"
-#include "../header/callbacks.h"
-#include "../header/battle.h"
-#include "../header/basestats.h"
-#include "../header/trainer.h"
-#include "../header/item.h"
-#include "../header/save.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "trainer.h"
+#include "item.h"
+#include "save.h"
 #include <stdbool.h>
-#include "../header/unaligned_types.h"
-#include "../header/pokemon.h"
-#include "../header/map.h"
-#include "dynamic_map.h"
-
-extern mapheader *compute_dungeon_header();
-extern void compute_dungeon_blocks();
-
-mapheader *get_mapheader(u8 bank, u8 map);
-mapfooter *get_mapfooter();
-bool is_dungeon_map(u8 bank, u8 map);
+#include "unaligned_types.h"
+#include "pokemon.h"
+#include "map.h"
+#include "dungeon_generator.h"
 
 mapheader *get_mapheader(u8 bank, u8 map){
-	if(is_dungeon_map(bank, map)){
+	if(is_dungeon_map()){
 		//return (mapheader*)0x8350558;
 		return compute_dungeon_header();
 	}else{
@@ -31,7 +24,7 @@ mapheader *get_mapheader(u8 bank, u8 map){
 
 mapfooter *get_mapfooter(){
 	
-	if(is_dungeon_map( (*save1)->bank, (*save1)->map)){
+	if(is_dungeon_map()){
 		compute_dungeon_blocks();
 		return &(dmem->footer);
 	}
@@ -44,6 +37,6 @@ mapfooter *get_mapfooter(){
 	return (mapfooter*)0;
 }
 
-bool is_dungeon_map(u8 bank, u8 map){
+bool is_dungeon_map(){
 	return ((checkflag(FLAG_LOAD_DMAP)));// && map == 10 && bank == 0);
 }

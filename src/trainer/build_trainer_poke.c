@@ -1,35 +1,17 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/oams.h"
-#include "../header/callbacks.h"
-#include "../header/battle.h"
-#include "../header/basestats.h"
-#include "../header/trainer.h"
-#include "../header/item.h"
-#include "../header/save.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "trainer.h"
+#include "item.h"
+#include "save.h"
 #include <stdbool.h>
-#include "../header/unaligned_types.h"
-#include "../header/pokemon.h"
-#include "../header/map.h"
+#include "unaligned_types.h"
+#include "pokemon.h"
+#include "map.h"
 
-typedef struct build_field{
-	u8 build : 5;
-	u8 ability : 1;
-	u8 hability : 1;
-	u8 shinyness : 1;
-	
-}build_field;
-
-typedef struct build{
-	u8 nature : 5;
-	u8 evs[6];
-	u16 prefered_item;
-} build;
-
-union union_build_field{
-	u8 value;
-	build_field bitfield;
-};
 
 static u8 ev_finals[6] = {0x16, 0x17, 0x18, 0x21, 0x2F, 0x30};
 
@@ -55,8 +37,6 @@ static build builds [14] = {
 	
 };
 
-
-void build_trainer_poke(union union_build_field field, pokemon *poke);
 
 
 void build_trainer_poke(union union_build_field field, pokemon *poke){

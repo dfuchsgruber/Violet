@@ -1,17 +1,12 @@
-#include "../../header/types.h"
-#include "../../header/romfuncs.h"
-#include "../../header/oams.h"
-#include "../../header/callbacks.h"
-#include "../../header/battle.h"
-#include "../../header/basestats.h"
-#include "../../header/mega.h"
-#include "../../header/superstate.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "mega.h"
+#include "superstate.h"
 #include <stdbool.h>
-
-
-void spawn_trigger_cb();
-void trigger_cb(u8 self);
-
 
 void spawn_trigger_cb(){
 	if (!is_function_listed_as_callback(trigger_cb)){

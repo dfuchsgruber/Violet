@@ -1,6 +1,6 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/karma.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "karma.h"
 
 
 int modify_price_money(int price_money){

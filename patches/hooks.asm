@@ -211,6 +211,7 @@ special_table equ 0x0815FCC0
 	bx r0
 	.pool
 	
+	
 .org 0x08058A58
 	ldr r0, =reset_mapchanges_hook | 1
 	bx r0
@@ -237,6 +238,10 @@ special_table equ 0x0815FCC0
 	.word special_set_trashflag | 1
 	.pool
 	
+.org (special_table +(0x18 * 4))
+	.word reset_trash_flags
+	.pool
+
 .org 0x0802596C
 	ldr r0, =hook_price_money | 1
 	bx r0

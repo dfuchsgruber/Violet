@@ -1,91 +1,26 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/oams.h"
-#include "../header/callbacks.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
 #include <stdbool.h>
+#include "anim_engine.h"
 
 
-typedef struct memory {
-	
-	u16 current_frame;
-	u32 current_programm;
-	u8 link_numbers;
-	u8 callback_id;
-	bool active;
-	u32 links [8];
-	u16 lframes [8];
-	u16 vars[16];
-} memory;
 
-typedef void (*cmd)(memory* mem);
 
 /**
 / Method to initalize the callback
 **/
-extern void init_anim_engine();
-void callback(u8 callback_id);
-void execute_frame(memory* mem);
-u8 read_byte(memory* mem);
-u16 read_unaligned_hword_read_only(memory*mem);
-u32 read_unaligned_word (memory* mem);
-u16 read_unaligned_hword (memory* mem);
-u16 read_param(memory* mem);
-void render_tbox(u8 cbid);
-void obj_move (u8 cbid);
-void fade (u8 cb_id);
-void callback_maintain();
 
 
-/**
-/ Command Functions
-**/
-void cmdx00_end(memory* mem);
-void cmdx01_call(memory* mem);
-void cmdx02_jump(memory* mem);
-void cmdx03_oam_new(memory* mem);
-void cmdx04_oam_delete(memory* mem);
-void cmdx05_oam_vram_load(memory* mem);
-void cmdx06_oam_vram_free(memory* mem);
-void cmdx07_oam_despawn(memory* mem);
-void cmdx08_spawn_callback(memory* mem);
-void cmdx09_bg_reset(memory* mem);
-void cmdx0A_bg_setup(memory* mem);
-void cmdx0B_bg_sync_and_show(memory* mem);
-void cmdx0C_bg_hide(memory* mem);
-void cmdx0D_bg_display_sync();
-void cmdx0E_bg_override(memory* mem);
-void cmdx0F_load_obj_pal (memory* mem);
-void cmdx10_free_obj_pal(memory* mem);
-void cmdx11_get_io(memory* mem);
-void cmdx12_set_io_to_var(memory* mem);
-void cmdx13_set_io_to_value(memory*mem);
-void cmdx14_prepare_tbox (memory*mem);
-void cmdx15_display_text_inst (memory*mem);
-void cmdx16_clear_textbox (memory*mem);
-void cmdx17_display_rendered_tbox (memory*mem);
-void cmdx18_rendered_tbox_event (memory* mem);
-void cmdx19_objmove (memory* mem);
-extern void anim_engine_cmdx1A(memory* mem);
-void cmdx1B_gfx_anim_set(memory*mem);
-void cmdx1C_rs_anim_set (memory*mem);
-void cmdx1D_loadpal (memory*mem);
-void cmdx1E_fade (memory*mem);
-void cmdx1F_invertcolors (memory* mem);
-void cmdx20_sound (memory* mem);
-void cmdx21_song (memory* mem);
-void cmdx22_cry (memory* mem);
-void cmdx23_maintain();
 
-
-int *testsym;
 
 void init_anim_engine(){
-	*testsym = 0;
 	u8 callback_id = spawn_big_callback((void*)callback, 0);
 	u32 callback_offset = (u32)(0x03004FE0 + 0x28*callback_id);
 	
-	(*((u32*)(callback_offset+0xC))) = (u32)(malloc_fill(sizeof(memory)));
-	memory* mem = (*((memory**)(callback_offset+0xC)));
+	(*((u32*)(callback_offset+0xC))) = (u32)(malloc_fill(sizeof(ae_memory)));
+	ae_memory* mem = (*((ae_memory**)(callback_offset+0xC)));
 	
 	//initalising values
 	mem->current_programm = *((u32*)0x03000f14);
@@ -95,7 +30,7 @@ void init_anim_engine(){
 
 void callback(u8 callback_id){
 	
-	memory* mem = *((memory**)(0x03004FE0 + 0x28*callback_id+ + 0xC));	
+	ae_memory* mem = *((ae_memory**)(0x03004FE0 + 0x28*callback_id+ + 0xC));	
 	
 	//programm read loop
 	u16 keyframe = read_unaligned_hword_read_only (mem);
@@ -113,9 +48,9 @@ void callback(u8 callback_id){
 	mem->current_frame = (u16)(mem->current_frame+1);
 }
 
-void execute_frame (memory* mem){
+void execute_frame (ae_memory* mem){
 	
-	static cmd cmdTable[] = {	cmdx00_end, 
+	static ae_cmd cmdTable[] = {cmdx00_end, 
 								cmdx01_call, 
 								cmdx02_jump,
 								cmdx03_oam_new,
@@ -166,13 +101,13 @@ void execute_frame (memory* mem){
 / Read functions
 **/
 
-u8 read_byte (memory* mem){
+u8 read_byte (ae_memory* mem){
 	u8 result = (*((u8*)(mem->current_programm)));
 	mem->current_programm = (u32)(mem->current_programm+1);
 	return result;
 }
 
-u16 read_param (memory*mem){
+u16 read_param (ae_memory*mem){
 	u16 result = read_unaligned_hword(mem);
 	if ((u16)(result-0x8000) < 0x10){
 		
@@ -184,7 +119,7 @@ u16 read_param (memory*mem){
 	return result;
 }
 
-u32 read_unaligned_word (memory* mem){
+u32 read_unaligned_word (ae_memory* mem){
 	u32 result = (u32)(*((u8*)mem->current_programm));
 	result = (u32)(result + (u32)((*(u8*)(mem->current_programm +1))<<0x8));
 	result = (u32)(result + (u32)((*(u8*)(mem->current_programm +2))<<0x10));
@@ -193,14 +128,14 @@ u32 read_unaligned_word (memory* mem){
 	return result;
 }
 
-u16 read_unaligned_hword_read_only (memory* mem){
+u16 read_unaligned_hword_read_only (ae_memory* mem){
 	
 	u16 result = (u16)(*((u8*)mem->current_programm));
 	result = (u16)(result + (u16)((*(u8*)(mem->current_programm +1))<<0x8));
 	return result;
 }
 
-u16 read_unaligned_hword (memory*mem){
+u16 read_unaligned_hword (ae_memory*mem){
 	
 	u16 result = (u16)*((u8*)mem->current_programm);
 	result = (u16)(result + (u32)((*(u8*)(mem->current_programm +1))<<0x8));
@@ -211,7 +146,7 @@ u16 read_unaligned_hword (memory*mem){
 
 
 
-void cmdx00_end(memory* mem){
+void cmdx00_end(ae_memory* mem){
 	if (mem->link_numbers == 0){
 		//there are no links left -> engine is shut down
 		mem->active = false;
@@ -224,7 +159,7 @@ void cmdx00_end(memory* mem){
 	}
 }
 
-void cmdx01_call(memory* mem){
+void cmdx01_call(ae_memory* mem){
 	u32 subscript = read_unaligned_word(mem);
 	u16 new_frame = read_unaligned_hword(mem);
 	
@@ -241,12 +176,12 @@ void cmdx01_call(memory* mem){
 	}
 }
 
-void cmdx02_jump(memory* mem){
+void cmdx02_jump(ae_memory* mem){
 	mem->current_programm = read_unaligned_word(mem);
 	mem->current_frame = read_unaligned_hword(mem);
 }
 
-void cmdx03_oam_new(memory* mem){
+void cmdx03_oam_new(ae_memory* mem){
 	oam_template* template = (oam_template*)(read_unaligned_word(mem));
 	s16 x = (s16)(read_unaligned_hword(mem));
 	s16 y = (s16)(read_unaligned_hword(mem));
@@ -264,7 +199,7 @@ void cmdx03_oam_new(memory* mem){
 	}
 }
 
-void cmdx04_oam_delete(memory* mem){
+void cmdx04_oam_delete(ae_memory* mem){
 	
 	u16 id = read_unaligned_hword(mem);
 	
@@ -274,14 +209,14 @@ void cmdx04_oam_delete(memory* mem){
 	clear_oam_entry ((oam_object*)(id*0x44+0x0202063c));
 }
 
-void cmdx05_oam_vram_load(memory* mem){
+void cmdx05_oam_vram_load(ae_memory* mem){
 	graphic* resource = (graphic*)read_unaligned_word(mem);
 				
 	//allocating vram
 	load_and_alloc_obj_vram_lz77(resource);
 }
 
-void cmdx06_oam_vram_free(memory* mem){
+void cmdx06_oam_vram_free(ae_memory* mem){
 	u16 oam_id = read_param(mem);
 				
 	//*((u16*)0x020370d0)=oam_id;
@@ -293,13 +228,13 @@ void cmdx06_oam_vram_free(memory* mem){
 	free_obj_vram_by_object(oam);
 }
 
-void cmdx07_oam_despawn(memory* mem){
+void cmdx07_oam_despawn(ae_memory* mem){
 	u8 oam_id = (u8)read_param(mem);
 	oam_object* oam = (oam_object*)(oam_id*0x44+0x0202063c);
 	oam_despawn(oam);
 }
 
-void cmdx08_spawn_callback(memory* mem){
+void cmdx08_spawn_callback(ae_memory* mem){
 	void* function = (void*)read_unaligned_word(mem);
 	u8 priority = read_byte(mem);
 	u8 length = read_byte(mem);
@@ -314,21 +249,21 @@ void cmdx08_spawn_callback(memory* mem){
 	}
 }
 
-void cmdx09_bg_reset(memory* mem){
+void cmdx09_bg_reset(ae_memory* mem){
 	bg_reset(read_byte(mem));
 }
 
-void cmdx0A_bg_setup(memory* mem){
+void cmdx0A_bg_setup(ae_memory* mem){
 	//command 0xA: bg_setup
 	bg_setup(read_byte(mem), (void*)read_unaligned_word(mem), read_byte(mem));
 }
 
-void cmdx0B_bg_sync_and_show(memory* mem){
+void cmdx0B_bg_sync_and_show(ae_memory* mem){
 	//command 0xB: bg_sync_and_display
 	bg_sync_display_and_show (read_byte(mem));
 }
 
-void cmdx0C_bg_hide(memory* mem){
+void cmdx0C_bg_hide(ae_memory* mem){
 	//command 0xC: bg_hide
 	bg_hide(read_byte(mem));
 }
@@ -338,7 +273,7 @@ void cmdx0D_bg_display_sync(){
 	bg_display_sync();
 }
 
-void cmdx0E_bg_override(memory* mem){
+void cmdx0E_bg_override(ae_memory* mem){
 	//Command 0xE: bg_override_tilemap
 	u8 bgid = read_byte(mem);
 	void* graphic = (void*)read_unaligned_word(mem);
@@ -353,7 +288,7 @@ void cmdx0E_bg_override(memory* mem){
 	free(buffer);
 }
 
-void cmdx0F_load_obj_pal(memory* mem){
+void cmdx0F_load_obj_pal(ae_memory* mem){
 	
 	u8 palid = allocate_obj_pal(read_unaligned_hword(mem));
 	void* pal = (void*)read_unaligned_word(mem);
@@ -369,11 +304,11 @@ void cmdx0F_load_obj_pal(memory* mem){
 	}
 }
 
-void cmdx10_free_obj_pal(memory* mem){
+void cmdx10_free_obj_pal(ae_memory* mem){
 	free_obj_pal (read_unaligned_hword(mem));
 }
 
-void cmdx11_get_io(memory*mem){
+void cmdx11_get_io(ae_memory*mem){
 	u16 var = (u16)(read_unaligned_hword(mem)-0x8000);
 	u16 ioreg = read_unaligned_hword(mem);
 	if (var<0x10){
@@ -382,7 +317,7 @@ void cmdx11_get_io(memory*mem){
 	}
 }
 
-void cmdx12_set_io_to_var(memory*mem){
+void cmdx12_set_io_to_var(ae_memory*mem){
 	u16 var = (u16)(read_unaligned_hword(mem)-0x8000);
 	u16 ioreg = read_unaligned_hword(mem);
 	if (var<0x10){
@@ -390,13 +325,13 @@ void cmdx12_set_io_to_var(memory*mem){
 	}
 }
 
-void cmdx13_set_io_to_value(memory*mem){
+void cmdx13_set_io_to_value(ae_memory*mem){
 	u16 val = read_unaligned_hword(mem);
 	u16 ioreg = read_unaligned_hword(mem);
 	set_io(ioreg, val);
 }
 
-void cmdx14_prepare_tbox(memory*mem){
+void cmdx14_prepare_tbox(ae_memory*mem){
 	u16 target_var = (u16)(read_unaligned_hword(mem)-0x8000);
 	u8 bgid = read_byte(mem);
 	u8 x = read_byte(mem);
@@ -417,7 +352,7 @@ void cmdx14_prepare_tbox(memory*mem){
 	
 }
 
-void cmdx15_display_text_inst (memory* mem){
+void cmdx15_display_text_inst (ae_memory* mem){
 	u8 boxid = (u8)read_param(mem);
 	u8 font_id = read_byte(mem);
 	u8 unkown = read_byte(mem);
@@ -439,14 +374,14 @@ void cmdx15_display_text_inst (memory* mem){
 	
 }
 
-void cmdx16_clear_textbox (memory* mem){
+void cmdx16_clear_textbox (ae_memory* mem){
 	u8 boxid = (u8)read_param(mem);
 	flush_tbox(boxid, 0);
 	free_tbox(boxid);
 	bg_copy_vram(0, bg_get_tilemap(0), 0x800, 0x0, 0x2);
 }
 
-void cmdx17_display_rendered_tbox (memory*mem){
+void cmdx17_display_rendered_tbox (ae_memory*mem){
 	
 	//reading all params
 	u16 target_var = (u16)(read_unaligned_hword(mem)-0x8000);
@@ -579,7 +514,7 @@ void render_tbox(u8 cb_id){
 	}
 }
 
-void cmdx18_rendered_tbox_event (memory* mem){
+void cmdx18_rendered_tbox_event (ae_memory* mem){
 	u8 target_cb = (u8)(read_param(mem));
 	u8 event = (u8) (0x8 << read_byte(mem));
 	
@@ -588,7 +523,7 @@ void cmdx18_rendered_tbox_event (memory* mem){
 	*flags = (u8)((*flags)|event);
 }
 
-void cmdx19_objmove(memory* mem){
+void cmdx19_objmove(ae_memory* mem){
 	u8 oam_id = (u8)read_param(mem);
 	u16 duration = read_unaligned_hword(mem);
 	s16 x = (s16)(read_unaligned_hword(mem));
@@ -633,7 +568,7 @@ void obj_move(u8 cbid){
 	}
 }
 
-void cmdx1B_gfx_anim_set (memory* mem){
+void cmdx1B_gfx_anim_set (ae_memory* mem){
 	u16 oam_id = read_param(mem);
 	u8 anim_id = read_byte(mem);
 	
@@ -644,7 +579,7 @@ void cmdx1B_gfx_anim_set (memory* mem){
 	
 }
 
-void cmdx1C_rs_anim_set (memory* mem){
+void cmdx1C_rs_anim_set (ae_memory* mem){
 	u16 oam_id = read_param(mem);
 	u8 anim_id = read_byte(mem);
 	
@@ -653,7 +588,7 @@ void cmdx1C_rs_anim_set (memory* mem){
 	
 }
 
-void cmdx1D_loadpal (memory* mem){
+void cmdx1D_loadpal (ae_memory* mem){
 	void* pal = (void*)read_unaligned_word(mem);
 	u16 destcol = read_unaligned_hword(mem);
 	u16 bytecount = read_unaligned_hword(mem);
@@ -668,7 +603,7 @@ void cmdx1D_loadpal (memory* mem){
 	}
 }
 
-void cmdx1E_fade (memory* mem){
+void cmdx1E_fade (ae_memory* mem){
 	u16 color = read_unaligned_hword(mem);
 	u16 dcol = read_unaligned_hword(mem);
 	u16 ncol = read_unaligned_hword(mem);
@@ -716,7 +651,7 @@ void fade (u8 cb_id){
 	
 }
 
-void cmdx1F_invertcolors (memory* mem){
+void cmdx1F_invertcolors (ae_memory* mem){
 	u16 startcol = read_unaligned_hword(mem);
 	u16 ncol = read_unaligned_hword(mem);
 	if (ncol != 0){
@@ -735,18 +670,18 @@ void cmdx1F_invertcolors (memory* mem){
 	}
 }
 
-void cmdx20_sound (memory* mem){
+void cmdx20_sound (ae_memory* mem){
 	u16 soundid = read_unaligned_hword(mem);
 	sound(soundid);
 }
 
-void cmdx21_song (memory* mem){
+void cmdx21_song (ae_memory* mem){
 	u16 songid = read_unaligned_hword(mem);
 	u8 feature = read_byte(mem);
 	playsong1(songid, feature);
 }
 
-void cmdx22_cry (memory* mem){
+void cmdx22_cry (ae_memory* mem){
 	u16 pokeid = read_unaligned_hword(mem);
 	u8 feature = read_byte(mem);
 	cry(pokeid, feature);

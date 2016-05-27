@@ -1,3 +1,5 @@
+#ifndef H_POKEMON
+#define H_POKEMON
 
 #define LANGUAGE_JAP 0x201
 #define LANGUAGE_ENG 0x202
@@ -142,3 +144,4 @@ union u_pid {
 pokemon *player_pokemon = (pokemon*)0x02024284;
 pokemon *opponent_pokemon = (pokemon*)0x0202402C;
 
+#endif

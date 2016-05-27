@@ -1,12 +1,9 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/rtc.h"
-#include "../header/map.h"
-#include "../header/color.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "rtc.h"
+#include "color.h"
+#include "dns.h"
 
-void dns_blend_colors(u16 start_col, u16 col_cnt, color overlay, u8 alpha);
-color dns_get_over();
-u8 dns_get_alpha();
 
 
 u8 dns_get_alpha(){

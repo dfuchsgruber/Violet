@@ -1,17 +1,12 @@
-#include "../../header/types.h"
-#include "../../header/romfuncs.h"
-#include "../../header/oams.h"
-#include "../../header/callbacks.h"
-#include "../../header/battle.h"
-#include "../../header/basestats.h"
-#include "../../header/mega.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "mega.h"
 #include <stdbool.h>
 
-
-
-void symbol_callback(oam_object *self);
-//extern void spawn_trigger_cb();
-extern void restore_trigger_cbs();
 
 static sprite final_oam = {
 	0x0, 0x4000, 0x0, 0x0

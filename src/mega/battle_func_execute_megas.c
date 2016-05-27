@@ -1,19 +1,12 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/oams.h"
-#include "../header/callbacks.h"
-#include "../header/battle.h"
-#include "../header/basestats.h"
-#include "../header/mega.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "mega.h"
 #include <stdbool.h>
 
-extern void cb_mega_anim(u8 self);
-extern u16 can_mega_evolve (battler *b);
-
-bool can_player_trigger_mega();
-void* get_pokemon_offset_by_index(u8 index);
-void battle_cb_do_megas ();
-mega_table_entry* get_mega_if_can_mega_evolve(battler *b);
 
 void trigger_opponents_mega(){
 	u8 pokemon_in_battle = *((u8*)0x02023BCC);

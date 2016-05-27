@@ -1,11 +1,10 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "tile.h"
 
 
 //Text format :=...Es laufen [XXX]:YYYYYYY....
 //Beispiel: Es läuft eine Doku: Blablabla
-
-u8 *get_tv_text();
 
 void load_tv_text(){
 	

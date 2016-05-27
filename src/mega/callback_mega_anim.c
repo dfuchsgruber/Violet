@@ -1,23 +1,15 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
-#include "../header/oams.h"
-#include "../header/callbacks.h"
-#include "../header/battle.h"
-#include "../header/basestats.h"
-#include "../header/trainer.h"
-#include "../header/item.h"
-#include "../header/mega.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "trainer.h"
+#include "item.h"
+#include "mega.h"
 #include <stdbool.h>
-#include "../header/unaligned_types.h"
+#include "unaligned_types.h"
 
-
-extern u8 *attack_anim_mega;
-extern u8 *attack_anim_groudon;
-extern u8 *attack_anim_kyogre;
-extern u8 *attack_anim_rayquaza;
-
-void cb_mega_anim(u8 self);
-extern void call_attack_anim_by_offset(u8 user_index, u8 unkown, u8* script);
 
 static u8* react_str = (u8*)0x88F704E;
 static u8* opp_str = (u8*)0x88F70A4; //" (Gegner)

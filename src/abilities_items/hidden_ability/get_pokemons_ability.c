@@ -1,19 +1,15 @@
-#include "../../header/types.h"
-#include "../../header/romfuncs.h"
-#include "../../header/oams.h"
-#include "../../header/callbacks.h"
-#include "../../header/battle.h"
-#include "../../header/basestats.h"
-#include "../../header/trainer.h"
-#include "../../header/item.h"
-#include "../../header/save.h"
+#include "types.h"
+#include "romfuncs.h"
+#include "oams.h"
+#include "callbacks.h"
+#include "battle.h"
+#include "basestats.h"
+#include "trainer.h"
+#include "item.h"
+#include "save.h"
 #include <stdbool.h>
-#include "../../header/unaligned_types.h"
-#include "../../header/pokemon.h"
-
-
-u8 get_pokemons_ability(pokemon *poke);
-u8 write_ability_into_dbuf (pokemon *poke);
+#include "unaligned_types.h"
+#include "pokemon.h"
 
 
 u8 get_pokemons_ability (pokemon *poke){

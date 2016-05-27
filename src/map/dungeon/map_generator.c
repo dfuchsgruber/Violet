@@ -1,14 +1,9 @@
-#include "../../header/dungeon_generator.h"
-#include "../../header/map.h"
-#include "../../header/save.h"
-#include "../../header/types.h"
-#include "../../header/romfuncs.h"
+#include "dungeon_generator.h"
+#include "map.h"
+#include "save.h"
+#include "types.h"
+#include "romfuncs.h"
 #include <stdbool.h>
-
-
-mapheader *compute_dungeon_header();
-mapfooter *compute_dungeon_footer();
-map_events *compute_dungeon_events();
 
 
 static map_connections null_connections = {0, NULL};

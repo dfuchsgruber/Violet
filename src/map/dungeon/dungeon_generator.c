@@ -1,45 +1,11 @@
-#include "../../header/dungeon_generator.h"
-#include "../../header/map.h"
-#include "../../header/types.h"
-#include "../../header/save.h"
-#include "../../header/romfuncs.h"
-#include "../../header/item.h"
-#include "../../header/overworld_script.h"
-
-#define SIMPLE_GIVEITEM_SCRIPT(item) O_SCRIPT_COPYVARIFNOTZERO(0x8000, item), O_SCRIPT_COPYVARIFNOTZERO(0x8001, 1), O_SCRIPT_CALLSTD(1), O_SCRIPT_END
-
-typedef struct neighbours{
-	u8 down;
-	u8 up;
-	u8 left;
-	u8 right;
-} neighbours;
-
-union union_neighbours{
-	neighbours n;
-	u32 value;
-};
-
-extern int abs (int i);
-extern int signum (int i);
-
-void compute_dungeon_blocks();
-void compute_dungeon_rooms(dungeon_generator *d);
-void compute_dungeon_paths(dungeon_generator *d);
-void compute_dungeon_tiles(dungeon_generator *d);
-void relocate_dungeon_events(dungeon_generator *d);
-
-void set_block(s16 x, s16 y, dungeon_generator *d);
-bool get_block(s16 x, s16 y, dungeon_generator *d);
-
-void dungeon_room_get_neighbours (union union_neighbours *drn, union union_neighbours *npn, dungeon_generator *d, u32 current_room);
-u8 dungeon_pick_room (union union_neighbours n, dungeon_generator *d);
-void dungeon_connect_rooms(u8 first, u8 second, dungeon_generator *d);
-
-u32 random_next32 (dungeon_generator *d);
-u16 random_next16 (dungeon_generator *d);
-u8 random_next8 (dungeon_generator *d);
-
+#include "dungeon_generator.h"
+#include "map.h"
+#include "types.h"
+#include "save.h"
+#include "romfuncs.h"
+#include "item.h"
+#include "overworld_script.h"
+#include "math.h"
 
 //item scripts
 static u8 dungeon_item_scripts_orbs [][13] = {

@@ -1,5 +1,4 @@
-#include "../header/types.h"
-#include "../header/romfuncs.h"
+
 
 #ifndef RTC
 #define RTC
