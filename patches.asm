@@ -3,7 +3,8 @@
 .open "C:/Users/Domi/Dropbox/Pokémon Violet/Pokemon Violet.gba",0x08000000
 
 .include "patches/hooks.asm"
+.include "patches/music.asm"
 
-.org 0x091A8000
+.org 0x09680000
 .importobj "bld/linked.o"
 .close
