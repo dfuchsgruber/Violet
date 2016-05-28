@@ -16,7 +16,7 @@ BLDPATH= bld
 ASSRC1= $(shell find src -type f -name '*.asm')
 ASSRC2= $(shell find src -type f -name '*.s')
 CSRC= $(shell find src -type f -name '*.c')
-MIDSRC= $(shell find mus -type f -name '*.mid')
+MIDSRC= $(shell find asset/mus -type f -name '*.mid')
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
@@ -44,10 +44,16 @@ $(MIDAS): $(BLDPATH)/%.s: %.mid
 	
 $(MIDOBJS): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) $< mus/voice.s -o $@
+	$(AS) $(ASFLAGS) $< -o $@
 
-build:  $(ASOBJS1) $(ASOBJS2) $(COBJS) $(MIDOBJS)
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(MIDOBJS)
+music: $(MIDOBJS)
+	$(shell mkdir -p $(BLDPATH)/asset/mus)
+	$(AS) $(ASFLAGS) -o $(BLDPATH)/asset/mus/voice.o asset/mus/voice.s
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/mus/voice.o $(MIDOBJS)
+	#BUILT MUSIC
+	
+build:  $(ASOBJS1) $(ASOBJS2) $(COBJS) music
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset/mus.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
 	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
