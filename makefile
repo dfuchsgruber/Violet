@@ -11,18 +11,23 @@ ASFLAGS=-mthumb
 MIDFLAGS=-V92
 CFLAGS=-c -std=gnu11 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/
 LDFLAGS=-z muldefs
+GRITFLAGS=-gu32 -fa -ftc
 
 BLDPATH= bld
-ASSRC1= $(shell find src -type f -name '*.asm')
-ASSRC2= $(shell find src -type f -name '*.s')
-CSRC= $(shell find src -type f -name '*.c')
-MIDSRC= $(shell find asset/mus -type f -name '*.mid')
+ASSRC1= $(shell find src -type f -iname '*.asm')
+ASSRC2= $(shell find src -type f -iname '*.s')
+CSRC= $(shell find src -type f -iname '*.c')
+MIDSRC= $(shell find asset/mus -type f -iname '*.mid')
+GFXSRC= $(shell find asset/gfx -type f -iname '*.png')
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
 COBJS= $(CSRC:%.c=$(BLDPATH)/%.o)
+	
 MIDAS= $(MIDSRC:%.mid=$(BLDPATH)/%.s)
 MIDOBJS= $(MIDAS:%.s=$(BLDPATH)/%.o)
+	
+GFXC= $(BLDPATH)/asset/gfx/gfx.c
 
 .PHONY: build clean
 
@@ -34,26 +39,37 @@ $(ASOBJS2): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@
 	
-$(COBJS): $(BLDPATH)/%.o: %.c
+$(COBJS): $(BLDPATH)/%.o: %.c asset
 	$(shell mkdir -p $(dir $@))
 	$(CC) $(CFLAGS) $< -o $@
 	
 $(MIDAS): $(BLDPATH)/%.s: %.mid
 	$(shell mkdir -p $(dir $@))
-	$(MID2AGB) $(MIDFLAGS) -G$(shell echo "$<" | sed -n 's?.*\/vcg\(.*\)\/.*?\1?p') $< $@
+	$(MID2AGB) $(MIDFLAGS) -G$(shell echo "$<" | sed -n 's?.*\/vcg\(.*\)\/.*?\1?p') $< $@ > /dev/null
 	
 $(MIDOBJS): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) $< -o $@
+	$(AS) $(ASFLAGS) $< -o $@	
+	
+$(GFXC): $(GFXSRC)
+	$(shell mkdir -p $(dir $(GFXC)))
+	$(GRIT) $(GFXSRC) $(GRITFLAGS) -o $(GFXC)
+	mv -f $(subst .c,.h,$(GFXC)) include/gfx.h
+
+asset: gfx music
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/gfx/gfx.o $(BLDPATH)/asset/mus.o
+
+gfx: $(GFXC)
+	$(shell mkdir -p $(BLDPATH)/asset/gfx)
+	$(CC) $(CFLAGS) -o $(BLDPATH)/asset/gfx/gfx.o $(GFXC)
 
 music: $(MIDOBJS)
 	$(shell mkdir -p $(BLDPATH)/asset/mus)
 	$(AS) $(ASFLAGS) -o $(BLDPATH)/asset/mus/voice.o asset/mus/voice.s
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/mus/voice.o $(MIDOBJS)
-	#BUILT MUSIC
 	
-build:  $(ASOBJS1) $(ASOBJS2) $(COBJS) music
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset/mus.o
+build:  $(ASOBJS1) $(ASOBJS2) $(COBJS)
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
 	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
