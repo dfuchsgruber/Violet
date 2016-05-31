@@ -14,5 +14,9 @@ special_table equ 0x0815FCC0
 	.pool
 	
 .org (special_table +(0x18 * 4))
-	.word reset_trash_flags
+	.word reset_trash_flags | 1
 	.pool
+
+.org (special_table +(0x19 *4))
+        .word init_anim_engine_by_table | 1
+        .pool
