@@ -1,7 +1,6 @@
 #ifndef H_ANIM_ENGINE
 #define H_ANIM_ENGINE
 
-
 typedef struct ae_memory {
 	
 	u16 current_frame;
@@ -16,19 +15,21 @@ typedef struct ae_memory {
 
 typedef void (*ae_cmd)(ae_memory* mem);
 
-extern void init_anim_engine();
-void callback(u8 callback_id);
-void execute_frame(ae_memory* mem);
-u8 read_byte(ae_memory* mem);
-u16 read_unaligned_hword_read_only(ae_memory*mem);
-u32 read_unaligned_word (ae_memory* mem);
-u16 read_unaligned_hword (ae_memory* mem);
-u16 read_param(ae_memory* mem);
-void render_tbox(u8 cbid);
-void obj_move (u8 cbid);
-void fade (u8 cb_id);
-void callback_maintain();
+extern void **anim_script_table;
 
+void init_anim_engine_by_table();
+void init_anim_engine(void *script);
+void anim_engine_callback(u8 callback_id);
+void anim_engine_execute_frame(ae_memory* mem);
+u8 anim_engine_read_byte(ae_memory* mem);
+u16 anim_engine_get_hword(ae_memory*mem);
+u32 anim_engine_read_word (ae_memory* mem);
+u16 anim_engine_read_hword (ae_memory* mem);
+u16 anim_engine_read_param(ae_memory* mem);
+void anim_engine_tbox_renderer(u8 cbid);
+void anim_engine_obj_mover (u8 cbid);
+void anim_engine_fader (u8 cb_id);
+void callback_maintain();
 /**
 / Command Functions
 **/
@@ -68,7 +69,7 @@ void cmdx20_sound (ae_memory* mem);
 void cmdx21_song (ae_memory* mem);
 void cmdx22_cry (ae_memory* mem);
 void cmdx23_maintain();
-
+void cmdx24_script_notify();
 
 
 #endif

@@ -7,7 +7,7 @@ NM=@arm-none-eabi-nm
 ARS=@armipsd
 MID2AGB=@mid2agb
 
-ASFLAGS=-mthumb
+ASFLAGS=-mthumb -Iinclude/
 MIDFLAGS=-V92
 CFLAGS=-c -std=gnu11 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/
 LDFLAGS=-z muldefs

@@ -1,4 +1,4 @@
-#define ASDF 10
+
 
 
 .align 2
@@ -42,7 +42,7 @@ beq end_lorb
 @now we must check weather the attack succeded
 ldr r0, =0x02023DCC	@attack result
 ldrb r1, [r0]
-mov r0, #ASDF
+mov r0, #10
 and r0, r1
 cmp r0, #0
 bne end_lorb

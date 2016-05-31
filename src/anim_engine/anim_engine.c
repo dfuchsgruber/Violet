@@ -12,34 +12,37 @@
 / Method to initalize the callback
 **/
 
+void init_anim_engine_by_table(){
+    u16 index = *vardecrypt(0x8004);
+    init_anim_engine(&anim_script_table[index]);
+}
 
 
-
-void init_anim_engine(){
-	u8 callback_id = spawn_big_callback((void*)callback, 0);
+void init_anim_engine(void *script){
+	u8 callback_id = spawn_big_callback((void*)anim_engine_callback, 0);
 	u32 callback_offset = (u32)(0x03004FE0 + 0x28*callback_id);
 	
 	(*((u32*)(callback_offset+0xC))) = (u32)(malloc_fill(sizeof(ae_memory)));
 	ae_memory* mem = (*((ae_memory**)(callback_offset+0xC)));
 	
 	//initalising values
-	mem->current_programm = *((u32*)0x03000f14);
+	mem->current_programm = ((u32)script);
 	mem->callback_id = callback_id;
 	mem->active = true;
 }
 
-void callback(u8 callback_id){
+void anim_engine_callback(u8 callback_id){
 	
 	ae_memory* mem = *((ae_memory**)(0x03004FE0 + 0x28*callback_id+ + 0xC));	
 	
 	//programm read loop
-	u16 keyframe = read_unaligned_hword_read_only (mem);
+	u16 keyframe = anim_engine_get_hword (mem);
 	while (keyframe == (mem->current_frame) && mem->active){
 		
 		//execution of the command with the related frame
 		mem->current_programm = (u32)(mem->current_programm+2);
-		execute_frame(mem);
-		keyframe = read_unaligned_hword_read_only (mem);
+		anim_engine_execute_frame(mem);
+		keyframe = anim_engine_get_hword (mem);
 	}
 	if ((mem->active)==false){
 		free(mem);
@@ -48,7 +51,7 @@ void callback(u8 callback_id){
 	mem->current_frame = (u16)(mem->current_frame+1);
 }
 
-void execute_frame (ae_memory* mem){
+void anim_engine_execute_frame (ae_memory* mem){
 	
 	static ae_cmd cmdTable[] = {cmdx00_end, 
 								cmdx01_call, 
@@ -85,13 +88,14 @@ void execute_frame (ae_memory* mem){
 								cmdx20_sound,
 								cmdx21_song,
 								cmdx22_cry,
-								cmdx23_maintain
+								cmdx23_maintain,
+                                                                cmdx24_script_notify
 								};
-	u8 cmd_id = read_byte(mem);
+	u8 cmd_id = anim_engine_read_byte(mem);
 	
 	while (cmd_id != 0xFF){
 		cmdTable[cmd_id](mem);
-		cmd_id = read_byte(mem);
+		cmd_id = anim_engine_read_byte(mem);
 	}
 }
 
@@ -101,14 +105,14 @@ void execute_frame (ae_memory* mem){
 / Read functions
 **/
 
-u8 read_byte (ae_memory* mem){
+u8 anim_engine_read_byte (ae_memory* mem){
 	u8 result = (*((u8*)(mem->current_programm)));
 	mem->current_programm = (u32)(mem->current_programm+1);
 	return result;
 }
 
-u16 read_param (ae_memory*mem){
-	u16 result = read_unaligned_hword(mem);
+u16 anim_engine_read_param (ae_memory*mem){
+	u16 result = anim_engine_read_hword(mem);
 	if ((u16)(result-0x8000) < 0x10){
 		
 		result = mem->vars[(u16)(result-0x8000)];
@@ -119,7 +123,7 @@ u16 read_param (ae_memory*mem){
 	return result;
 }
 
-u32 read_unaligned_word (ae_memory* mem){
+u32 anim_engine_read_word (ae_memory* mem){
 	u32 result = (u32)(*((u8*)mem->current_programm));
 	result = (u32)(result + (u32)((*(u8*)(mem->current_programm +1))<<0x8));
 	result = (u32)(result + (u32)((*(u8*)(mem->current_programm +2))<<0x10));
@@ -128,14 +132,14 @@ u32 read_unaligned_word (ae_memory* mem){
 	return result;
 }
 
-u16 read_unaligned_hword_read_only (ae_memory* mem){
+u16 anim_engine_get_hword (ae_memory* mem){
 	
 	u16 result = (u16)(*((u8*)mem->current_programm));
 	result = (u16)(result + (u16)((*(u8*)(mem->current_programm +1))<<0x8));
 	return result;
 }
 
-u16 read_unaligned_hword (ae_memory*mem){
+u16 anim_engine_read_hword (ae_memory*mem){
 	
 	u16 result = (u16)*((u8*)mem->current_programm);
 	result = (u16)(result + (u32)((*(u8*)(mem->current_programm +1))<<0x8));
@@ -160,8 +164,8 @@ void cmdx00_end(ae_memory* mem){
 }
 
 void cmdx01_call(ae_memory* mem){
-	u32 subscript = read_unaligned_word(mem);
-	u16 new_frame = read_unaligned_hword(mem);
+	u32 subscript = anim_engine_read_word(mem);
+	u16 new_frame = anim_engine_read_hword(mem);
 	
 	if (mem->link_numbers<8){
 		
@@ -177,16 +181,16 @@ void cmdx01_call(ae_memory* mem){
 }
 
 void cmdx02_jump(ae_memory* mem){
-	mem->current_programm = read_unaligned_word(mem);
-	mem->current_frame = read_unaligned_hword(mem);
+	mem->current_programm = anim_engine_read_word(mem);
+	mem->current_frame = anim_engine_read_hword(mem);
 }
 
 void cmdx03_oam_new(ae_memory* mem){
-	oam_template* template = (oam_template*)(read_unaligned_word(mem));
-	s16 x = (s16)(read_unaligned_hword(mem));
-	s16 y = (s16)(read_unaligned_hword(mem));
-	u8 unkown = read_byte(mem);
-	u16 target = (u16)(read_unaligned_hword(mem)-0x8000);
+	oam_template* template = (oam_template*)(anim_engine_read_word(mem));
+	s16 x = (s16)(anim_engine_read_hword(mem));
+	s16 y = (s16)(anim_engine_read_hword(mem));
+	u8 unkown = anim_engine_read_byte(mem);
+	u16 target = (u16)(anim_engine_read_hword(mem)-0x8000);
 	
 	//mem->vars[2] = target;
 	//while(true){}
@@ -201,7 +205,7 @@ void cmdx03_oam_new(ae_memory* mem){
 
 void cmdx04_oam_delete(ae_memory* mem){
 	
-	u16 id = read_unaligned_hword(mem);
+	u16 id = anim_engine_read_hword(mem);
 	
 	if (id >= 0x8000){
 		id = mem->vars[id-0x8000];
@@ -210,14 +214,14 @@ void cmdx04_oam_delete(ae_memory* mem){
 }
 
 void cmdx05_oam_vram_load(ae_memory* mem){
-	graphic* resource = (graphic*)read_unaligned_word(mem);
+	graphic* resource = (graphic*)anim_engine_read_word(mem);
 				
 	//allocating vram
 	load_and_alloc_obj_vram_lz77(resource);
 }
 
 void cmdx06_oam_vram_free(ae_memory* mem){
-	u16 oam_id = read_param(mem);
+	u16 oam_id = anim_engine_read_param(mem);
 				
 	//*((u16*)0x020370d0)=oam_id;
 	//while (true){}
@@ -229,15 +233,15 @@ void cmdx06_oam_vram_free(ae_memory* mem){
 }
 
 void cmdx07_oam_despawn(ae_memory* mem){
-	u8 oam_id = (u8)read_param(mem);
+	u8 oam_id = (u8)anim_engine_read_param(mem);
 	oam_object* oam = (oam_object*)(oam_id*0x44+0x0202063c);
 	oam_despawn(oam);
 }
 
 void cmdx08_spawn_callback(ae_memory* mem){
-	void* function = (void*)read_unaligned_word(mem);
-	u8 priority = read_byte(mem);
-	u8 length = read_byte(mem);
+	void* function = (void*)anim_engine_read_word(mem);
+	u8 priority = anim_engine_read_byte(mem);
+	u8 length = anim_engine_read_byte(mem);
 	
 	u8 cbid = spawn_big_callback(function, priority);
 	big_callback* callback = (big_callback*)(0x03004FE0+cbid*0x28);
@@ -245,27 +249,27 @@ void cmdx08_spawn_callback(ae_memory* mem){
 	//Adding params to the ram
 	int i;
 	for (i = 0; i<length; i++){
-		callback->params[i] = read_unaligned_hword(mem);
+		callback->params[i] = anim_engine_read_hword(mem);
 	}
 }
 
 void cmdx09_bg_reset(ae_memory* mem){
-	bg_reset(read_byte(mem));
+	bg_reset(anim_engine_read_byte(mem));
 }
 
 void cmdx0A_bg_setup(ae_memory* mem){
 	//command 0xA: bg_setup
-	bg_setup(read_byte(mem), (void*)read_unaligned_word(mem), read_byte(mem));
+	bg_setup(anim_engine_read_byte(mem), (void*)anim_engine_read_word(mem), anim_engine_read_byte(mem));
 }
 
 void cmdx0B_bg_sync_and_show(ae_memory* mem){
 	//command 0xB: bg_sync_and_display
-	bg_sync_display_and_show (read_byte(mem));
+	bg_sync_display_and_show (anim_engine_read_byte(mem));
 }
 
 void cmdx0C_bg_hide(ae_memory* mem){
 	//command 0xC: bg_hide
-	bg_hide(read_byte(mem));
+	bg_hide(anim_engine_read_byte(mem));
 }
 
 void cmdx0D_bg_display_sync(){
@@ -275,11 +279,11 @@ void cmdx0D_bg_display_sync(){
 
 void cmdx0E_bg_override(ae_memory* mem){
 	//Command 0xE: bg_override_tilemap
-	u8 bgid = read_byte(mem);
-	void* graphic = (void*)read_unaligned_word(mem);
-	u16 size = read_unaligned_hword(mem);
-	u16 start = read_unaligned_hword(mem);
-	u8 mode = read_byte(mem);
+	u8 bgid = anim_engine_read_byte(mem);
+	void* graphic = (void*)anim_engine_read_word(mem);
+	u16 size = anim_engine_read_hword(mem);
+	u16 start = anim_engine_read_hword(mem);
+	u8 mode = anim_engine_read_byte(mem);
 	
 	
 	void* buffer = (void*)malloc(size);
@@ -290,9 +294,9 @@ void cmdx0E_bg_override(ae_memory* mem){
 
 void cmdx0F_load_obj_pal(ae_memory* mem){
 	
-	u8 palid = allocate_obj_pal(read_unaligned_hword(mem));
-	void* pal = (void*)read_unaligned_word(mem);
-	u8 mode = read_byte(mem);
+	u8 palid = allocate_obj_pal(anim_engine_read_hword(mem));
+	void* pal = (void*)anim_engine_read_word(mem);
+	u8 mode = anim_engine_read_byte(mem);
 	if (palid!=0xFF){
 		if (mode == 0){
 			//copy only
@@ -305,12 +309,12 @@ void cmdx0F_load_obj_pal(ae_memory* mem){
 }
 
 void cmdx10_free_obj_pal(ae_memory* mem){
-	free_obj_pal (read_unaligned_hword(mem));
+	free_obj_pal (anim_engine_read_hword(mem));
 }
 
 void cmdx11_get_io(ae_memory*mem){
-	u16 var = (u16)(read_unaligned_hword(mem)-0x8000);
-	u16 ioreg = read_unaligned_hword(mem);
+	u16 var = (u16)(anim_engine_read_hword(mem)-0x8000);
+	u16 ioreg = anim_engine_read_hword(mem);
 	if (var<0x10){
 		mem->vars[var] = get_io(ioreg);
 		
@@ -318,28 +322,28 @@ void cmdx11_get_io(ae_memory*mem){
 }
 
 void cmdx12_set_io_to_var(ae_memory*mem){
-	u16 var = (u16)(read_unaligned_hword(mem)-0x8000);
-	u16 ioreg = read_unaligned_hword(mem);
+	u16 var = (u16)(anim_engine_read_hword(mem)-0x8000);
+	u16 ioreg = anim_engine_read_hword(mem);
 	if (var<0x10){
 		set_io(ioreg, mem->vars[var]);
 	}
 }
 
 void cmdx13_set_io_to_value(ae_memory*mem){
-	u16 val = read_unaligned_hword(mem);
-	u16 ioreg = read_unaligned_hword(mem);
+	u16 val = anim_engine_read_hword(mem);
+	u16 ioreg = anim_engine_read_hword(mem);
 	set_io(ioreg, val);
 }
 
 void cmdx14_prepare_tbox(ae_memory*mem){
-	u16 target_var = (u16)(read_unaligned_hword(mem)-0x8000);
-	u8 bgid = read_byte(mem);
-	u8 x = read_byte(mem);
-	u8 y = read_byte(mem);
-	u8 w = read_byte(mem);
-	u8 h = read_byte(mem);
-	u8 palID = read_byte(mem);
-	u16 startTile = read_unaligned_hword(mem);
+	u16 target_var = (u16)(anim_engine_read_hword(mem)-0x8000);
+	u8 bgid = anim_engine_read_byte(mem);
+	u8 x = anim_engine_read_byte(mem);
+	u8 y = anim_engine_read_byte(mem);
+	u8 w = anim_engine_read_byte(mem);
+	u8 h = anim_engine_read_byte(mem);
+	u8 palID = anim_engine_read_byte(mem);
+	u16 startTile = anim_engine_read_hword(mem);
 	if (target_var < 0x10){
 		u8 boxdata[8];
 		translate_text_data_into_box(boxdata, bgid, x, y, w, h, palID, startTile);
@@ -353,16 +357,16 @@ void cmdx14_prepare_tbox(ae_memory*mem){
 }
 
 void cmdx15_display_text_inst (ae_memory* mem){
-	u8 boxid = (u8)read_param(mem);
-	u8 font_id = read_byte(mem);
-	u8 unkown = read_byte(mem);
-	u8 border_distance = read_byte(mem);
-	u8 line_distance_u = read_byte(mem);
-	u8 line_distance_l = read_byte(mem);
-	u8* font_map = (u8*)read_unaligned_word(mem);
-	u8 display_flag = read_byte(mem);
-	u8* string = (u8*)read_unaligned_word(mem);
-	u8 bgid = read_byte(mem);
+	u8 boxid = (u8)anim_engine_read_param(mem);
+	u8 font_id = anim_engine_read_byte(mem);
+	u8 unkown = anim_engine_read_byte(mem);
+	u8 border_distance = anim_engine_read_byte(mem);
+	u8 line_distance_u = anim_engine_read_byte(mem);
+	u8 line_distance_l = anim_engine_read_byte(mem);
+	u8* font_map = (u8*)anim_engine_read_word(mem);
+	u8 display_flag = anim_engine_read_byte(mem);
+	u8* string = (u8*)anim_engine_read_word(mem);
+	u8 bgid = anim_engine_read_byte(mem);
 	
 	//decrypting string
 	u8* ram_buffer = (u8*)0x02021D18;
@@ -375,7 +379,7 @@ void cmdx15_display_text_inst (ae_memory* mem){
 }
 
 void cmdx16_clear_textbox (ae_memory* mem){
-	u8 boxid = (u8)read_param(mem);
+	u8 boxid = (u8)anim_engine_read_param(mem);
 	flush_tbox(boxid, 0);
 	free_tbox(boxid);
 	bg_copy_vram(0, bg_get_tilemap(0), 0x800, 0x0, 0x2);
@@ -384,25 +388,25 @@ void cmdx16_clear_textbox (ae_memory* mem){
 void cmdx17_display_rendered_tbox (ae_memory*mem){
 	
 	//reading all params
-	u16 target_var = (u16)(read_unaligned_hword(mem)-0x8000);
-	u8 boxid = (u8)read_param(mem);
-	u8 text_speed = read_byte(mem);
-	u8 font_id = read_byte(mem);
-	u8 unkown = read_byte(mem);
-	u8 border_distance = read_byte(mem);
-	u8 line_distance_u = read_byte(mem);
-	u8 line_distance_l = read_byte(mem);
-	u8* font_map = (u8*)read_unaligned_word(mem);
-	u8 display_flag = read_byte(mem);
-	u8* string = (u8*)read_unaligned_word(mem);
-	u8 bgid = read_byte(mem);
+	u16 target_var = (u16)(anim_engine_read_hword(mem)-0x8000);
+	u8 boxid = (u8)anim_engine_read_param(mem);
+	u8 text_speed = anim_engine_read_byte(mem);
+	u8 font_id = anim_engine_read_byte(mem);
+	u8 unkown = anim_engine_read_byte(mem);
+	u8 border_distance = anim_engine_read_byte(mem);
+	u8 line_distance_u = anim_engine_read_byte(mem);
+	u8 line_distance_l = anim_engine_read_byte(mem);
+	u8* font_map = (u8*)anim_engine_read_word(mem);
+	u8 display_flag = anim_engine_read_byte(mem);
+	u8* string = (u8*)anim_engine_read_word(mem);
+	u8 bgid = anim_engine_read_byte(mem);
 	
 	if (target_var < 0x10){
 		//decrypting string
 		u8* buffer = (u8*)malloc (0x400);
 		string_decrypt(buffer, string);
 		
-		u8 cbid = spawn_big_callback(render_tbox, 0);
+		u8 cbid = spawn_big_callback(anim_engine_tbox_renderer, 0);
 		mem->vars[target_var] = cbid;
 		int callback = 0x03004FE0 + 0x28*cbid;
 		
@@ -425,7 +429,7 @@ void cmdx17_display_rendered_tbox (ae_memory*mem){
 	}
 }
 
-void render_tbox(u8 cb_id){
+void anim_engine_tbox_renderer(u8 cb_id){
 	
 	int callback = 0x03004FE0 + 0x28*cb_id;
 	u8* boxid =(u8*)(callback+0x8);
@@ -515,8 +519,8 @@ void render_tbox(u8 cb_id){
 }
 
 void cmdx18_rendered_tbox_event (ae_memory* mem){
-	u8 target_cb = (u8)(read_param(mem));
-	u8 event = (u8) (0x8 << read_byte(mem));
+	u8 target_cb = (u8)(anim_engine_read_param(mem));
+	u8 event = (u8) (0x8 << anim_engine_read_byte(mem));
 	
 	int callback = (0x03004FE0 + 0x28*target_cb);
 	u8* flags = (u8*)(callback+0x19); //0,1,2 = wait n,p,end ; 3,4,5 = allowed n,p,end 
@@ -524,10 +528,10 @@ void cmdx18_rendered_tbox_event (ae_memory* mem){
 }
 
 void cmdx19_objmove(ae_memory* mem){
-	u8 oam_id = (u8)read_param(mem);
-	u16 duration = read_unaligned_hword(mem);
-	s16 x = (s16)(read_unaligned_hword(mem));
-	s16 y = (s16)(read_unaligned_hword(mem));
+	u8 oam_id = (u8)anim_engine_read_param(mem);
+	u16 duration = anim_engine_read_hword(mem);
+	s16 x = (s16)(anim_engine_read_hword(mem));
+	s16 y = (s16)(anim_engine_read_hword(mem));
 	
 	if (duration == 0){
 		oam_object* oam = (oam_object*)(0x0202063c+oam_id*0x44);
@@ -535,7 +539,7 @@ void cmdx19_objmove(ae_memory* mem){
 		oam-> y = (u16)(oam->y + y);
 	}else{
 		//spawn a new callback
-		u8 cbid = spawn_big_callback(obj_move, 1);
+		u8 cbid = spawn_big_callback(anim_engine_obj_mover, 1);
 		big_callback* cb = (big_callback*)(0x03004FE0 + cbid*0x28);
 		cb->params[0] = oam_id;
 		cb->params[1] = (u16)x;
@@ -545,7 +549,7 @@ void cmdx19_objmove(ae_memory* mem){
 	}
 }
 
-void obj_move(u8 cbid){
+void anim_engine_obj_mover(u8 cbid){
 	big_callback* cb = (big_callback*)(0x03004FE0 + cbid*0x28);
 	u8 oam_id = (u8)(cb->params[0]);
 	oam_object* oam = (oam_object*)(0x0202063c+oam_id*0x44);
@@ -569,8 +573,8 @@ void obj_move(u8 cbid){
 }
 
 void cmdx1B_gfx_anim_set (ae_memory* mem){
-	u16 oam_id = read_param(mem);
-	u8 anim_id = read_byte(mem);
+	u16 oam_id = anim_engine_read_param(mem);
+	u8 anim_id = anim_engine_read_byte(mem);
 	
 	oam_object* oam = (oam_object*)(oam_id*0x44 + 0x0202063c);
 	oam->anim_number = anim_id;
@@ -580,8 +584,8 @@ void cmdx1B_gfx_anim_set (ae_memory* mem){
 }
 
 void cmdx1C_rs_anim_set (ae_memory* mem){
-	u16 oam_id = read_param(mem);
-	u8 anim_id = read_byte(mem);
+	u16 oam_id = anim_engine_read_param(mem);
+	u8 anim_id = anim_engine_read_byte(mem);
 	
 	oam_object* oam = (oam_object*)(oam_id*0x44 + 0x0202063c);
 	rotscal_new_animation (oam, anim_id);
@@ -589,10 +593,10 @@ void cmdx1C_rs_anim_set (ae_memory* mem){
 }
 
 void cmdx1D_loadpal (ae_memory* mem){
-	void* pal = (void*)read_unaligned_word(mem);
-	u16 destcol = read_unaligned_hword(mem);
-	u16 bytecount = read_unaligned_hword(mem);
-	u8 cflag = read_byte(mem);	//compressed flag: if 0x1 data is compressed
+	void* pal = (void*)anim_engine_read_word(mem);
+	u16 destcol = anim_engine_read_hword(mem);
+	u16 bytecount = anim_engine_read_hword(mem);
+	u8 cflag = anim_engine_read_byte(mem);	//compressed flag: if 0x1 data is compressed
 	
 	if (cflag != 0x0){
 		//lz77
@@ -604,11 +608,11 @@ void cmdx1D_loadpal (ae_memory* mem){
 }
 
 void cmdx1E_fade (ae_memory* mem){
-	u16 color = read_unaligned_hword(mem);
-	u16 dcol = read_unaligned_hword(mem);
-	u16 ncol = read_unaligned_hword(mem);
-	u16 duration = read_byte(mem);
-	u8 bfade_flag = read_byte(mem);
+	u16 color = anim_engine_read_hword(mem);
+	u16 dcol = anim_engine_read_hword(mem);
+	u16 ncol = anim_engine_read_hword(mem);
+	u16 duration = anim_engine_read_hword(mem);
+	u8 bfade_flag = anim_engine_read_byte(mem);
 	
 	
 	
@@ -621,7 +625,7 @@ void cmdx1E_fade (ae_memory* mem){
 		}
 	}else{
 		//initing a callback
-		u8 cb_id = spawn_big_callback(fade, 1);
+		u8 cb_id = spawn_big_callback(anim_engine_fader, 1);
 		big_callback* cb = (big_callback*)(0x03004FE0 + cb_id*0x28);
 		cb->params[0] = color;
 		cb->params[1] = dcol;
@@ -632,7 +636,7 @@ void cmdx1E_fade (ae_memory* mem){
 	}	
 }
 
-void fade (u8 cb_id){
+void anim_engine_fader (u8 cb_id){
 	//fading callback
 	big_callback* cb = (big_callback*)(0x03004FE0 + cb_id*0x28);
 	cb->params[4] = (u16)((cb->params[4])+1); //current frame
@@ -652,8 +656,8 @@ void fade (u8 cb_id){
 }
 
 void cmdx1F_invertcolors (ae_memory* mem){
-	u16 startcol = read_unaligned_hword(mem);
-	u16 ncol = read_unaligned_hword(mem);
+	u16 startcol = anim_engine_read_hword(mem);
+	u16 ncol = anim_engine_read_hword(mem);
 	if (ncol != 0){
 		u16* palcopyram = (u16*)0x020371F8;
 		u16* palram = (u16*)0x020375F8;
@@ -671,22 +675,26 @@ void cmdx1F_invertcolors (ae_memory* mem){
 }
 
 void cmdx20_sound (ae_memory* mem){
-	u16 soundid = read_unaligned_hword(mem);
+	u16 soundid = anim_engine_read_hword(mem);
 	sound(soundid);
 }
 
 void cmdx21_song (ae_memory* mem){
-	u16 songid = read_unaligned_hword(mem);
-	u8 feature = read_byte(mem);
+	u16 songid = anim_engine_read_hword(mem);
+	u8 feature = anim_engine_read_byte(mem);
 	playsong1(songid, feature);
 }
 
 void cmdx22_cry (ae_memory* mem){
-	u16 pokeid = read_unaligned_hword(mem);
-	u8 feature = read_byte(mem);
+	u16 pokeid = anim_engine_read_hword(mem);
+	u8 feature = anim_engine_read_byte(mem);
 	cry(pokeid, feature);
 }
 
 void cmdx23_maintain(){
 	set_callback1(callback_maintain);
+}
+
+void cmdx24_script_notify(){
+    *((bool*)0x03000EA8) = false;
 }
