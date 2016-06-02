@@ -16,7 +16,7 @@
 //function to initalize the callback1
 void init_fp_menu(u8 id){
 	//initializing fp_memory for the callback (32 bytes)
-	*((u32*)0x020370D0) = malloc(sizeof(fp_memory));
+	*((void**)0x020370D0) = malloc(sizeof(fp_memory));
 	fp_memory *mem = *((fp_memory**)0x020370D0);
 	mem->status = 0;//default state 0
 	mem->oam_pokepic = 0xFF;

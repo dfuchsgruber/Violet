@@ -105,4 +105,6 @@ warp_setup_callbacks = 0x0807E39D;
 script_wait_for_warp = 0x08055A05;
 script_halt = 0x08069B19;
 __sqrt = 0x081E7A85;
-testsym = 0x08303030;
+dma3_controller_reset = 0x0806FE3D;
+bghscrollset = 0x08001BA1;
+bgvscrollset = 0x08001D19;

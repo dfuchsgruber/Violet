@@ -21,4 +21,7 @@ color alpha_blend (color original, color overlay, u8 alpha);
 color color_multiply (color original, color overlay);
 color blend_multiply (color original, color overlay, u8 alpha );
 
+color *pal_restore = (color*)0x020371F8;
+color *pals = (color*)0x020375F8;
+
 #endif

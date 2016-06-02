@@ -1,6 +1,7 @@
 #ifndef H_ANIM_ENGINE
 #define H_ANIM_ENGINE
 
+
 typedef struct ae_memory {
 	
 	u16 current_frame;
@@ -12,6 +13,41 @@ typedef struct ae_memory {
 	u16 lframes [8];
 	u16 vars[16];
 } ae_memory;
+
+typedef struct text_render_flags_s{
+    u8 linebreak : 1;
+    u8 paragraph : 1;
+    u8 end : 1;
+    u8 free : 1;
+    u8 pass_linebreak : 1;
+    u8 pass_paragraph : 1;
+    u8 pass_end : 1;
+    u8 pass_free : 1;
+} text_render_flags_s;
+
+typedef union text_render_flags{
+    u8 value;
+    text_render_flags_s flags;
+} text_render_flags;
+
+typedef struct aetr_memory {
+    u8 *o_text;
+    u8 *source;
+    u8 *destination;
+    text_render_flags flags;
+    u16 delay_timer;
+    u16 delay;
+    u8 *color_map;
+    u8 boxid;
+    u8 font;
+    u8 unkown;
+    u8 border_distance;
+    u8 line_distance_u;
+    u8 line_distance_l;
+    u8 display_flag;
+    u8 bg_id;
+    
+} aetr_memory;
 
 typedef void (*ae_cmd)(ae_memory* mem);
 
@@ -26,7 +62,8 @@ u16 anim_engine_get_hword(ae_memory*mem);
 u32 anim_engine_read_word (ae_memory* mem);
 u16 anim_engine_read_hword (ae_memory* mem);
 u16 anim_engine_read_param(ae_memory* mem);
-void anim_engine_tbox_renderer(u8 cbid);
+//void anim_engine_tbox_renderer(u8 cbid);
+void anim_engine_text_renderer(u8 self);
 void anim_engine_obj_mover (u8 cbid);
 void anim_engine_fader (u8 cb_id);
 void callback_maintain();
@@ -59,7 +96,7 @@ void cmdx16_clear_textbox (ae_memory*mem);
 void cmdx17_display_rendered_tbox (ae_memory*mem);
 void cmdx18_rendered_tbox_event (ae_memory* mem);
 void cmdx19_objmove (ae_memory* mem);
-extern void anim_engine_cmdx1A(ae_memory* mem);
+void anim_engine_cmdx1A(ae_memory* mem);
 void cmdx1B_gfx_anim_set(ae_memory*mem);
 void cmdx1C_rs_anim_set (ae_memory*mem);
 void cmdx1D_loadpal (ae_memory*mem);
@@ -70,6 +107,17 @@ void cmdx21_song (ae_memory* mem);
 void cmdx22_cry (ae_memory* mem);
 void cmdx23_maintain();
 void cmdx24_script_notify();
-
+void cmdx25_oam_reset();
+void cmdx26_callback_reset(ae_memory *mem);
+void cmdx27_dma3_controller_reset();
+void anim_engine_bg_free_task(u8 self);
+void cmdx28_bg_scroll_reset();
+void cmdx29_bg_vmap_init(ae_memory *mem);
+void cmdx2A_bg_vmap_drop(ae_memory *mem);
+void cmdx2B_bg_scroll(ae_memory *mem);
+void anim_engine_bg_scroller(u8 self);
+void cmdx2C_mapreload();
+void cmdx2D_force_pals_to_black();
+void ae_mapreloader();
 
 #endif

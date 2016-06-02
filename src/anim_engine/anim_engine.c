@@ -4,7 +4,8 @@
 #include "callbacks.h"
 #include <stdbool.h>
 #include "anim_engine.h"
-
+#include "superstate.h"
+#include "color.h"
 
 
 
@@ -54,43 +55,52 @@ void anim_engine_callback(u8 callback_id){
 void anim_engine_execute_frame (ae_memory* mem){
 	
 	static ae_cmd cmdTable[] = {cmdx00_end, 
-								cmdx01_call, 
-								cmdx02_jump,
-								cmdx03_oam_new,
-								cmdx04_oam_delete,
-								cmdx05_oam_vram_load,
-								cmdx06_oam_vram_free,
-								cmdx07_oam_despawn,
-								cmdx08_spawn_callback,
-								cmdx09_bg_reset,
-								cmdx0A_bg_setup,
-								cmdx0B_bg_sync_and_show,
-								cmdx0C_bg_hide,
-								cmdx0D_bg_display_sync,
-								cmdx0E_bg_override,
-								cmdx0F_load_obj_pal,
-								cmdx10_free_obj_pal,
-								cmdx11_get_io,
-								cmdx12_set_io_to_var,
-								cmdx13_set_io_to_value,
-								cmdx14_prepare_tbox,
-								cmdx15_display_text_inst,
-								cmdx16_clear_textbox,
-								cmdx17_display_rendered_tbox,
-								cmdx18_rendered_tbox_event,
-								cmdx19_objmove,
-								anim_engine_cmdx1A, // cmd_x1A_callasm function in Assembler Code
-								cmdx1B_gfx_anim_set,
-								cmdx1C_rs_anim_set,
-								cmdx1D_loadpal,
-								cmdx1E_fade,
-								cmdx1F_invertcolors,
-								cmdx20_sound,
-								cmdx21_song,
-								cmdx22_cry,
-								cmdx23_maintain,
-                                                                cmdx24_script_notify
-								};
+                                    cmdx01_call, 
+                                    cmdx02_jump,
+                                    cmdx03_oam_new,
+                                    cmdx04_oam_delete,
+                                    cmdx05_oam_vram_load,
+                                    cmdx06_oam_vram_free,
+                                    cmdx07_oam_despawn,
+                                    cmdx08_spawn_callback,
+                                    cmdx09_bg_reset,
+                                    cmdx0A_bg_setup,
+                                    cmdx0B_bg_sync_and_show,
+                                    cmdx0C_bg_hide,
+                                    cmdx0D_bg_display_sync,
+                                    cmdx0E_bg_override,
+                                    cmdx0F_load_obj_pal,
+                                    cmdx10_free_obj_pal,
+                                    cmdx11_get_io,
+                                    cmdx12_set_io_to_var,
+                                    cmdx13_set_io_to_value,
+                                    cmdx14_prepare_tbox,
+                                    cmdx15_display_text_inst,
+                                    cmdx16_clear_textbox,
+                                    cmdx17_display_rendered_tbox,
+                                    cmdx18_rendered_tbox_event,
+                                    cmdx19_objmove,
+                                    anim_engine_cmdx1A, // cmd_x1A_callasm function in Assembler Code
+                                    cmdx1B_gfx_anim_set,
+                                    cmdx1C_rs_anim_set,
+                                    cmdx1D_loadpal,
+                                    cmdx1E_fade,
+                                    cmdx1F_invertcolors,
+                                    cmdx20_sound,
+                                    cmdx21_song,
+                                    cmdx22_cry,
+                                    cmdx23_maintain,
+                                    cmdx24_script_notify,
+                                    cmdx25_oam_reset,
+                                    cmdx26_callback_reset,
+                                    cmdx27_dma3_controller_reset,
+                                    cmdx28_bg_scroll_reset,
+                                    cmdx29_bg_vmap_init,
+                                    cmdx2A_bg_vmap_drop,
+                                    cmdx2B_bg_scroll,
+                                    cmdx2C_mapreload,
+                                    cmdx2D_force_pals_to_black
+        };
 	u8 cmd_id = anim_engine_read_byte(mem);
 	
 	while (cmd_id != 0xFF){
@@ -254,6 +264,11 @@ void cmdx08_spawn_callback(ae_memory* mem){
 }
 
 void cmdx09_bg_reset(ae_memory* mem){
+        //first we drop the tilemaps to prevent memory leaks
+        free(bg_get_tilemap(0));
+        free(bg_get_tilemap(1));
+        free(bg_get_tilemap(2));
+        free(bg_get_tilemap(3));
 	bg_reset(anim_engine_read_byte(mem));
 }
 
@@ -285,11 +300,16 @@ void cmdx0E_bg_override(ae_memory* mem){
 	u16 start = anim_engine_read_hword(mem);
 	u8 mode = anim_engine_read_byte(mem);
 	
-	
-	void* buffer = (void*)malloc(size);
+	void* buffer = malloc(size);
+        
 	lz77uncompwram (graphic, buffer);
 	bg_copy_vram(bgid, buffer, size, start, mode);
-	free(buffer);
+	
+        //spawn a free function for the memory block associated with the graphic
+        int cid = spawn_big_callback(anim_engine_bg_free_task, 0);
+        big_callbacks[cid].params[0] = 4;
+        big_callbacks[cid].params[1] = (u16)(int)buffer;
+        big_callbacks[cid].params[2] = (u16)((int)buffer >> 16);
 }
 
 void cmdx0F_load_obj_pal(ae_memory* mem){
@@ -400,35 +420,109 @@ void cmdx17_display_rendered_tbox (ae_memory*mem){
 	u8 display_flag = anim_engine_read_byte(mem);
 	u8* string = (u8*)anim_engine_read_word(mem);
 	u8 bgid = anim_engine_read_byte(mem);
+        u8 initial_flags = anim_engine_read_byte(mem);
 	
 	if (target_var < 0x10){
-		//decrypting string
-		u8* buffer = (u8*)malloc (0x400);
-		string_decrypt(buffer, string);
-		
-		u8 cbid = spawn_big_callback(anim_engine_tbox_renderer, 0);
-		mem->vars[target_var] = cbid;
-		int callback = 0x03004FE0 + 0x28*cbid;
-		
-		*((u8*)(callback+0x8)) = boxid;
-		*((u8*)(callback+0x9)) = text_speed;
-		*((u8*)(callback+0xa)) = font_id;
-		*((u8*)(callback+0xb)) = unkown;
-		*((u8*)(callback+0xc)) = border_distance;
-		*((u8*)(callback+0xd)) = line_distance_u;
-		*((u8*)(callback+0xe)) = line_distance_l;
-		*((u8*)(callback+0xf)) = display_flag;
-		*((u8**)(callback+0x10)) = font_map;
-		*((u8**)(callback+0x14)) = buffer;
-		//*((u8**)(callback+0x18)) = buffer;
-		*((u8*)(callback+0x18)) = 0x0; // delay count
-		*((u8*)(callback+0x19)) = 0x0; // flags
-		*((u16*)(callback+0x1A)) = 0x0; //current position
-		*((u8**)(callback+0x1C)) = buffer; //reference to the reseource
-		*((u8*)(callback+0x20)) = bgid;
+            
+            
+            aetr_memory *trmem = (aetr_memory*)malloc(sizeof(aetr_memory));
+            u8 *buf = (u8*)malloc(0x800);
+            string_decrypt(buf, string); //decrypting buffer directives ([player] etc)
+            u8 self = spawn_big_callback(anim_engine_text_renderer, 0);
+            mem->vars[target_var] = self;
+            
+            big_callbacks[self].params[0] = (u16)(int)trmem;
+            big_callbacks[self].params[1] = (u16)((int)trmem>>16);
+            
+            trmem->bg_id = bgid;
+            trmem->border_distance = border_distance;
+            trmem->boxid = boxid;
+            trmem->color_map = font_map;
+            trmem->delay = text_speed;
+            trmem->delay_timer = 0;
+            trmem->destination = (u8*)0x02021D18;
+            trmem->display_flag = display_flag;
+            trmem->flags.value = initial_flags;
+            trmem->font = font_id;
+            trmem->line_distance_l = line_distance_l;
+            trmem->line_distance_u = line_distance_u;
+            trmem->o_text = buf;
+            trmem->source = buf;
+            trmem->unkown = unkown;
+            anim_engine_text_renderer(self);
 	}
 }
 
+
+void anim_engine_text_renderer(u8 self){
+    
+    aetr_memory *mem = (aetr_memory*)(big_callbacks[self].params[0] + (big_callbacks[self].params[1]<<16));
+    if (mem->delay_timer){
+        mem->delay_timer--;
+        return;
+    }
+    mem->delay_timer = mem->delay;
+    //read next char
+    u8 c = *(mem->source);
+    switch(c){
+        case 0xFF:{
+            //end of text, renderer despawn
+            if(!mem->flags.flags.pass_end){
+                if (mem->flags.flags.end){
+                    mem->flags.flags.end = 0;
+                }else{
+                    return; //no token for line break, so we wait
+                }
+            }
+            //despawn
+            flush_tbox(mem->boxid, 0);
+            free_tbox(mem->boxid);
+            bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
+            free(mem->o_text);
+            free(mem);
+            remove_big_callback(self);
+            return;
+        }
+        case 0xFB:{
+            //new paragraph / box
+            if(!mem->flags.flags.pass_paragraph){
+                if (mem->flags.flags.paragraph){
+                    mem->flags.flags.paragraph = 0;
+                }else{
+                    return; //no token for new paragraph, so we wait
+                }
+            }
+            mem->destination = (u8*)0x02021D18; //reset of destination buffer, so next chars are append to front
+            break;
+        }
+        case 0xFE:{
+            //linebreak
+            if(!mem->flags.flags.pass_linebreak){
+                if (mem->flags.flags.linebreak){
+                    mem->flags.flags.linebreak = 0;
+                }else{
+                    return; //no token for line break, so we wait
+                }
+            }
+            //fallthrough
+        }
+        default:{
+            //normal char append
+            *mem->destination++ = c;
+            *mem->destination = 0xFF;
+            
+            //draw the text
+            fill_box_bg(mem->boxid, 0);
+            void *src = (void*)0x02021D18;
+            display_tbox_transbg(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, src);
+            bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
+            break;
+        }
+    }
+    mem->source++;
+    
+}
+/**
 void anim_engine_tbox_renderer(u8 cb_id){
 	
 	int callback = 0x03004FE0 + 0x28*cb_id;
@@ -455,7 +549,7 @@ void anim_engine_tbox_renderer(u8 cb_id){
 		//delay is over -> render text
 		
 		//check for halt flags
-		if ((((*flags)&0x1)!= 0x0) && (((*flags)&0x8)!= 0x0)){
+		if ((((*flags)&0x1)) && (((*flags)&0x8)!= 0x0)){
 			//wait n is set but we have token
 			*flags = (u8)((*flags)&0xF6);
 		}
@@ -517,14 +611,20 @@ void anim_engine_tbox_renderer(u8 cb_id){
 		*delay_cnt = (u8)(*delay_cnt-1);
 	}
 }
+**/
 
 void cmdx18_rendered_tbox_event (ae_memory* mem){
-	u8 target_cb = (u8)(anim_engine_read_param(mem));
-	u8 event = (u8) (0x8 << anim_engine_read_byte(mem));
-	
+	u8 self = (u8)(anim_engine_read_param(mem));
+	u8 event = (u8) (anim_engine_read_byte(mem));
+        
+        aetr_memory *trmem = (aetr_memory*)(big_callbacks[self].params[0] + (big_callbacks[self].params[1]<<16));
+        trmem->flags.value |= (u8)(1 << event);
+        
+        /**
 	int callback = (0x03004FE0 + 0x28*target_cb);
 	u8* flags = (u8*)(callback+0x19); //0,1,2 = wait n,p,end ; 3,4,5 = allowed n,p,end 
 	*flags = (u8)((*flags)|event);
+        **/
 }
 
 void cmdx19_objmove(ae_memory* mem){
@@ -593,18 +693,23 @@ void cmdx1C_rs_anim_set (ae_memory* mem){
 }
 
 void cmdx1D_loadpal (ae_memory* mem){
-	void* pal = (void*)anim_engine_read_word(mem);
+	void *pal = (void*)anim_engine_read_word(mem);
 	u16 destcol = anim_engine_read_hword(mem);
 	u16 bytecount = anim_engine_read_hword(mem);
 	u8 cflag = anim_engine_read_byte(mem);	//compressed flag: if 0x1 data is compressed
-	
-	if (cflag != 0x0){
-		//lz77
-		load_comp_pal_into_RAM(pal, destcol, bytecount);
-	}else{
-		//not lz77
-		load_uncomp_pal_into_RAM(pal, destcol, bytecount);
-	}
+	u8 force = anim_engine_read_byte(mem);
+        
+        if (cflag){
+            void *nbuf = (void*)0x02037ACC;
+            lz77uncompwram(pal, nbuf);
+            pal = nbuf;
+        }
+        
+        cpuset(pal, &pal_restore[destcol], bytecount>>1);
+        if (force){
+            cpuset(pal, &pals[destcol], bytecount>>1);
+        }
+        
 }
 
 void cmdx1E_fade (ae_memory* mem){
@@ -612,47 +717,54 @@ void cmdx1E_fade (ae_memory* mem){
 	u16 dcol = anim_engine_read_hword(mem);
 	u16 ncol = anim_engine_read_hword(mem);
 	u16 duration = anim_engine_read_hword(mem);
-	u8 bfade_flag = anim_engine_read_byte(mem);
-	
-	
-	
-	if (duration == 0){
-		//instant fade
-		if (bfade_flag == 0){
-			color_blend(dcol, ncol, 0x10, color);
-		}else{
-			color_blend(dcol, ncol, 0x0, color);
-		}
-	}else{
-		//initing a callback
-		u8 cb_id = spawn_big_callback(anim_engine_fader, 1);
-		big_callback* cb = (big_callback*)(0x03004FE0 + cb_id*0x28);
-		cb->params[0] = color;
-		cb->params[1] = dcol;
-		cb->params[2] = ncol;
-		cb->params[3] = duration;
-		cb->params[4] = 0x0; //current frame
-		cb->params[5] = bfade_flag;
-	}	
+	u8 from_intensity = anim_engine_read_byte(mem);
+        u8 to_intensity = anim_engine_read_byte(mem);
+        
+        //initing a callback
+        u8 cb_id = spawn_big_callback(anim_engine_fader, 0);
+        big_callbacks[cb_id].params[0] = color;
+        big_callbacks[cb_id].params[1] = dcol;
+        big_callbacks[cb_id].params[2] = ncol;
+        big_callbacks[cb_id].params[3] = duration;
+        big_callbacks[cb_id].params[4] = 0; //current frame
+        big_callbacks[cb_id].params[5] = from_intensity;
+        big_callbacks[cb_id].params[6] = to_intensity;
+        
+        anim_engine_fader(cb_id);
+		
 }
 
 void anim_engine_fader (u8 cb_id){
-	//fading callback
-	big_callback* cb = (big_callback*)(0x03004FE0 + cb_id*0x28);
-	cb->params[4] = (u16)((cb->params[4])+1); //current frame
-	
-	u8 current_intensity = (u8)((cb->params[4]*0x10)/(cb->params[3]));
-	
-	if (cb->params[5] != 0){
-		current_intensity = (u8)(0x10-current_intensity);
-	}
-	
-	color_blend (cb->params[1], cb->params[2], current_intensity, cb->params[0]);
-	
-	if (cb->params[4] == cb->params[3]){
-		remove_big_callback(cb_id);
-	}
-	
+    
+    u16 duration = big_callbacks[cb_id].params[3];
+    u16 current_frame = big_callbacks[cb_id].params[4]++;
+    u8 intensity;
+    if (duration){
+    
+        int d = big_callbacks[cb_id].params[6] - big_callbacks[cb_id].params[5];
+        d *= current_frame;
+        d /= duration;
+        intensity = (u8)(d + big_callbacks[cb_id].params[5]);
+        
+    }else{
+       //Instant palload
+        intensity = (u8)big_callbacks[cb_id].params[6];
+    }
+    
+    //now we do the fading loop
+    int c = big_callbacks[cb_id].params[1];
+    int max = big_callbacks[cb_id].params[2] + c;
+    color over = {big_callbacks[cb_id].params[0]};
+    while(c < max){    
+        color b = pal_restore[c];
+        color n = alpha_blend(b, over, intensity);
+        pals[c] = n;
+        c++;
+    }
+    
+    if (current_frame >= duration){
+        remove_big_callback(cb_id);
+    }
 }
 
 void cmdx1F_invertcolors (ae_memory* mem){
@@ -693,8 +805,127 @@ void cmdx22_cry (ae_memory* mem){
 
 void cmdx23_maintain(){
 	set_callback1(callback_maintain);
+        super->callbacks[3] = NULL;
 }
 
 void cmdx24_script_notify(){
     *((bool*)0x03000EA8) = false;
+}
+
+void cmdx25_oam_reset(){
+    oam_reset();
+}
+
+void cmdx26_callback_reset(ae_memory *mem){
+    //we must not remove the engine callback
+    u8 self = mem->callback_id;
+    u8 i;
+    for (i = 0; i < 0x10; i++){
+        if (i != self){
+            remove_big_callback(i);
+        }
+    }
+}
+
+void cmdx27_dma3_controller_reset(){
+    dma3_controller_reset();
+}
+
+void cmdx28_bg_scroll_reset(){
+    int i;
+    for (i = 0; i < 4; i++){
+        bghscrollset((u8)i, 0, 0); 
+        bgvscrollset((u8)i, 0, 0);
+    }
+}
+
+void cmdx29_bg_vmap_init(ae_memory *mem){
+    u8 bg_id = anim_engine_read_byte(mem);
+    u16 size = anim_engine_read_hword(mem);
+    void *map = malloc_fill(size);
+    bg_set_tilemap(bg_id, map);
+    bg_copy_vram(bg_id, map, size,0, 2);
+}
+
+void cmdx2A_bg_vmap_drop(ae_memory *mem){
+    u8 bg_id = anim_engine_read_byte(mem);
+    free(bg_get_tilemap(bg_id));
+    bg_set_tilemap(bg_id, NULL);
+}
+
+void cmdx2B_bg_scroll(ae_memory *mem){
+    u8 bg_id = anim_engine_read_byte(mem);
+    u16 duration = anim_engine_read_hword(mem);
+    u16 hfrom = get_io((u16)(0x10 + bg_id*4));
+    u16 vfrom = get_io((u16)(0x12 + bg_id*4));
+    u16 hdelta = anim_engine_read_hword(mem);
+    u16 vdelta = anim_engine_read_hword(mem);
+    u8 self = spawn_big_callback(anim_engine_bg_scroller, 0);
+    big_callbacks[self].params[0] = bg_id;
+    big_callbacks[self].params[1] = duration;
+    big_callbacks[self].params[2] = hdelta;
+    big_callbacks[self].params[3] = vdelta;
+    big_callbacks[self].params[4] = hfrom;
+    big_callbacks[self].params[5] = vfrom;
+    big_callbacks[self].params[6] = 0;
+    anim_engine_bg_scroller(self);
+}
+
+void anim_engine_bg_scroller(u8 self){
+    u8 bg_id = (u8)big_callbacks[self].params[0];
+    u16 duration = big_callbacks[self].params[1];
+    u16 current_frame = big_callbacks[self].params[6]++;
+    s16 hdelta = (s16)big_callbacks[self].params[2];
+    s16 vdelta = (s16)big_callbacks[self].params[3];
+    u16 hfrom = big_callbacks[self].params[4];
+    u16 vfrom = big_callbacks[self].params[5];
+    if (duration){
+        
+        int hc = (current_frame * hdelta) / duration;
+        int vc = (current_frame * vdelta) / duration;
+        set_io((u16)(0x10+bg_id*4), (u16)(hfrom + hc));
+        set_io((u16)(0x12+bg_id*4), (u16)(vfrom + vc));
+        
+    }else{
+        set_io((u16)(0x10+bg_id*4), (u16)(hfrom + hdelta));
+        set_io((u16)(0x12+bg_id*4), (u16)(vfrom + vdelta));
+    }
+    
+    if (duration < current_frame){
+        remove_big_callback(self);
+    }
+}
+
+void ae_mapreloader(){
+    cb1handling();
+    if((*((u8*)0x02037AB8+7)) & 0x80){
+        return;
+    }
+    int i;
+    for (i = 0; i < 512; i++){
+        pal_restore[i].value = 0x0;
+        pals[i].value = 0x0;
+    }
+    map_reload();
+}
+
+void cmdx2C_mapreload(){
+    init_fadescreen(1, 0);
+    super->callbacks[1] = ae_mapreloader;
+}
+
+void cmdx2D_force_pals_to_black(){
+    int i;
+    for (i = 0; i < 512; i++){
+        pal_restore[i].value = 0;
+        pals[i].value = 0;
+    }
+}
+
+void anim_engine_bg_free_task(u8 self){
+    if(!--big_callbacks[self].params[0]){
+        void *memory = (void*)(big_callbacks[self].params[1] + (big_callbacks[self].params[2] << 16));
+        free(memory);
+        remove_big_callback(self);
+    }
 }
