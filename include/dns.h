@@ -16,4 +16,5 @@ void callback_switch_timezone();
 void update_timezone();
 bool is_inside_map(u8 bank, u8 map);
 
+u8 *built_in_shaders = (u8*)0x02036E28;
 #endif

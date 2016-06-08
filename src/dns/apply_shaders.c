@@ -61,12 +61,14 @@ void dns_apply_shaders(u16 start_col, u16 col_cnt){
 void dns_blend_colors(u16 start_col, u16 col_cnt, color overlay, u8 alpha){
 	
 	u16 *pal_save_copy = (u16*) 0x020371F8;
+        
 	u16 end_col = (u16)(start_col + col_cnt);
 	while(start_col < end_col){
 		u16 original = pal_save_copy[start_col];
 		color c_original = {original};
 		color new = blend_multiply(c_original, overlay, alpha);
 		pal_save_copy[start_col] = new.value;
+                pals[start_col] = new;
 		start_col++;
 	}
 }
