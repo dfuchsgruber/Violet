@@ -18,4 +18,9 @@ typedef     signed long long int    s64;
 typedef     float                   f32;
 typedef     double                  f64;
 
+typedef struct pair{
+    u16 id;
+    u16 value;
+}pair;
+
 #endif

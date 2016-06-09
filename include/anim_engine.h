@@ -1,6 +1,7 @@
 #ifndef H_ANIM_ENGINE
 #define H_ANIM_ENGINE
 
+#include <stdbool.h>
 
 typedef struct ae_memory {
 	

@@ -14,5 +14,5 @@
 .include "patches/specials.asm"
 .include "patches/karma.asm"
 .include "patches/dns.asm"
-
-	
+.include "patches/music_code.asm"
+.include "patches/gfx.asm"
