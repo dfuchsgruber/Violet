@@ -92,3 +92,7 @@ void bgvscrollset(u8 bgid, int x, int y);
 //
 u32 __umod (u32 dividend, u32 divisor);
 int __sqrt(int x);
+script npc_get_script (u8 npc_id);
+u16 trainer_get_unaligned_hword (void *src);
+u16 trainer_get_flag();
+bool get_npc_id_by_overworld(u8 overworld_id, u8 map, u8 bank, u8 *result);

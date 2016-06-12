@@ -108,3 +108,7 @@ __sqrt = 0x081E7A85;
 dma3_controller_reset = 0x0806FE3D;
 bghscrollset = 0x08001BA1;
 bgvscrollset = 0x08001D19;
+npc_get_script = 0x0805FC39;
+trainer_get_unaligned_hword = 0x0808000D;
+trainer_get_flag = 0x0808001D;
+get_npc_id_by_overworld = 0x0805DF85;

@@ -23,4 +23,7 @@ typedef struct pair{
     u16 value;
 }pair;
 
+typedef u8* script;
+typedef u8* pstring;
+
 #endif

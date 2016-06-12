@@ -20,3 +20,13 @@ special_table equ 0x0815FCC0
 .org (special_table +(0x19 *4))
         .word init_anim_engine_by_table | 1
         .pool
+
+.org (special_table + (0x1A * 4))
+        .word special_prepeare_player_facing | 1
+        .pool
+
+// NOTE !!!!!!!!!! AFTER 0x1B THERE IS NOT ANYMORE FREE SPECIAL SPACE! !!!!!!!!!!!!!!!!!
+
+.org (special_table +(0x36 *4))
+        .word special_x36_check_loaded_trainerflag | 1
+        .pool

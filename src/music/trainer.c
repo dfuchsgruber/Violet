@@ -10,6 +10,7 @@
 #include "music.h"
 #include "battle.h"
 #include "romfuncs.h"
+#include "npc.h"
 
 u16 get_encounter_music_by_trainer_id(u16 trainer_id){
     if (trainers[trainer_id].trainerclass == TRAINERCLASS_TEAM_VIOLET){
@@ -32,6 +33,8 @@ pair trainer_music_table [] = {
 };
 
 u16 battle_get_music(){
+    u16 battle_music = *vardecrypt(VAR_BATTLE_MUSIC);
+    if (battle_music) return battle_music;
     if (battle_flags->trainer_battle){
         //scan a lo_table
         int i = 0;

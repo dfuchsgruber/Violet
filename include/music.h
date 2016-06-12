@@ -12,6 +12,8 @@
 #include "types.h"
 #include "anim_engine.h"
 
+#define VAR_BATTLE_MUSIC 0x50DC
+
 #define MUS_VIOLET_ENCOUNTER 274
 #define MUS_GYMLEADER_BATTLE 0x128
 #define MUS_TRAINER_BATTLE 0x129

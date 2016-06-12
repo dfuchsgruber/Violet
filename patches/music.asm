@@ -160,3 +160,7 @@ music_table equ 0x9194500
 .org music_table + 8*358
     .word mus_dimensional_traveler
     .word 0
+
+.org music_table + 8*359
+    .word mus_queen_of_darkness_battle
+    .word 0
