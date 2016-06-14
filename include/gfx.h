@@ -9,7 +9,7 @@
 //	+ regular map (flat), lz77 compressed, 32x64 
 //	Total size: 40 + 2340 + 856 = 3236
 //
-//	Time-stamp: 2016-06-12, 13:44:01
+//	Time-stamp: 2016-06-14, 21:09:36
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -41,7 +41,7 @@ extern const unsigned short gfx_albusfrontalPal[20];
 //	+ regular map (flat), lz77 compressed, 32x21 
 //	Total size: 40 + 3872 + 1004 = 4916
 //
-//	Time-stamp: 2016-06-12, 13:44:01
+//	Time-stamp: 2016-06-14, 21:09:36
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -73,7 +73,7 @@ extern const unsigned short gfx_efounder_backgroundPal[20];
 //	+ regular map (flat), lz77 compressed, 32x64 
 //	Total size: 40 + 2452 + 836 = 3328
 //
-//	Time-stamp: 2016-06-12, 13:44:01
+//	Time-stamp: 2016-06-14, 21:09:37
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -105,7 +105,7 @@ extern const unsigned short gfx_faunfrontalPal[20];
 //	+ regular map (flat), lz77 compressed, 32x64 
 //	Total size: 40 + 3440 + 988 = 4468
 //
-//	Time-stamp: 2016-06-12, 13:44:01
+//	Time-stamp: 2016-06-14, 21:09:37
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -136,7 +136,7 @@ extern const unsigned short gfx_luciusfrontalPal[20];
 //	+ 64 tiles not compressed
 //	Total size: 32 + 2048 = 2080
 //
-//	Time-stamp: 2016-06-12, 13:44:01
+//	Time-stamp: 2016-06-14, 21:09:37
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -164,7 +164,7 @@ extern const unsigned short gfx_trainer_albusPal[16];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 700 = 740
 //
-//	Time-stamp: 2016-06-12, 13:44:01
+//	Time-stamp: 2016-06-14, 21:09:37
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -192,7 +192,7 @@ extern const unsigned short gfx_trainer_revo_fPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 760 = 800
 //
-//	Time-stamp: 2016-06-12, 13:44:01
+//	Time-stamp: 2016-06-14, 21:09:37
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //

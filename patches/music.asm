@@ -164,3 +164,7 @@ music_table equ 0x9194500
 .org music_table + 8*359
     .word mus_queen_of_darkness_battle
     .word 0
+
+.org music_table + 8*360
+    .word mus_consuming_darkness
+    .word 0

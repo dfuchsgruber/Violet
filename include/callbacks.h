@@ -2,7 +2,7 @@
 
 typedef struct big_callback{
 	
-	void* function;
+	void (*function)(u8 self);
 	u8 active_state;
 	u8 u1;
 	u8 u2;

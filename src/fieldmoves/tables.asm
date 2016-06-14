@@ -1,6 +1,7 @@
 @// Tables pasted from the ROM
 
 .global table_pokemenu_opts
+.global pokemenu_opts
 
 .align 4
 table_pokemenu_opts:
@@ -68,6 +69,8 @@ pokemenu_opts:  @format : string, function pointer
     .word 0x81245f5
     .word 0x8247b12
     .word 0x81245f5
+    .word 0x8247b12  @experimantal lockduft clone
+    .word 0x81245f5
 
 .global table_field_moves
 
@@ -88,4 +91,60 @@ field_moves:
     .hword 0xd0
     .hword 0x87
     .hword 0xe6
-    .hword 0xc
+    .hword 0xd1  @experimantal lockduft clone
+    .hword 0xFFFF
+
+.global table_field_move_descriptions
+.global field_move_descriptions
+
+.align 4
+table_field_move_descriptions:
+    .word field_move_descriptions
+
+field_move_descriptions:
+.word 0x84174f2
+.word 0x8417493
+.word 0x84174ab
+.word 0x84174db
+.word 0x84174c5
+.word 0x8417508
+.word 0x8417522
+.word 0x8417573
+.word 0x8417543
+.word 0x8417569
+.word 0x8417569
+.word 0x8417554
+.word 0x8417554 @experimantal lockduft clone
+
+.global table_outdoor_move_initializers
+
+.align 4
+    .word table_outdoor_move_initializers
+
+table_outdoor_move_initializers:
+.word 0x80c9ce5
+.word 0xd
+.word 0x80979b1
+.word 0x7
+.word 0x8124add
+.word 0xd
+.word 0x80d0995
+.word 0xd
+.word 0x81249e9
+.word 0x8
+.word 0x80c9b91
+.word 0xd
+.word 0x8124b49
+.word 0xd
+.word 0x80f6985
+.word 0xd
+.word 0x80c9c31
+.word 0xd
+.word 0x80e58a9
+.word 0x10
+.word 0x80e58a9
+.word 0x10
+.word 0x80de2ed
+.word 0xd
+.word 0x80de2ed @this is experminatal lockduft clone
+.word 0xd

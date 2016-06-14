@@ -16,3 +16,4 @@
 .include "patches/dns.asm"
 .include "patches/music_code.asm"
 .include "patches/gfx.asm"
+.include "patches/fieldmoves.asm"
