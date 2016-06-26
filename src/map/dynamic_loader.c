@@ -26,7 +26,7 @@ mapfooter *get_mapfooter(){
 	
 	if(is_dungeon_map()){
 		compute_dungeon_blocks();
-		return &(dmem->footer);
+		return &(cmem->footer);
 	}
 	
 	//return standard map header

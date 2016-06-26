@@ -12,6 +12,8 @@
 .thumb_func
 tile_step:
 
+bl update_a_vector
+
 ldr r0, =0x50E2
 bl vardecrypt
 ldrh r1, [r0]

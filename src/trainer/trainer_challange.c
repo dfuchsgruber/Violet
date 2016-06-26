@@ -10,7 +10,7 @@ void special_prepeare_player_facing(){
     get_current_tile_position(&coordinates[0], &coordinates[1]);
     u8 pers_id = (u8)(*vardecrypt(0x800F)); //Get LASTTALKED
     u8 npc_id;
-    if (get_npc_id_by_overworld(pers_id, (*save1)->map, (*save1)->bank, &npc_id)){
+    if (!get_npc_id_by_overworld(pers_id, (*save1)->map, (*save1)->bank, &npc_id)){
         s16 npc_x = npcs[npc_id].dest_x;
         s16 npc_y = npcs[npc_id].dest_y;
         u8 facing = 0;
@@ -28,6 +28,8 @@ void special_prepeare_player_facing(){
             facing = 1;
         }
         *vardecrypt(0x800D) = (u16)(0xFE00 | facing); //pseudo movement code : FACING, 0xFE
+    }else{
+         *vardecrypt(0x800D) = 0xFE;
     }
 }
 

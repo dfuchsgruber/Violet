@@ -79,6 +79,7 @@ void pokemenu_opt_outdoor_move(u8 callback_self){
                                     string = 13; //Hier nicht einsetzbar
                                 }
                             }
+                            pokemenu_opts_clear_pokemenu_and_printstr(string);
                         }
                         big_callbacks[callback_self].function = pokemenu_task_wait_for_keypress_and_return_to_select;
                     }

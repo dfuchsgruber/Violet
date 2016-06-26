@@ -1,6 +1,14 @@
 	
 special_table equ 0x0815FCC0
 
+.org (special_table + (0x6 * 4))
+        .word spawn_mugshot | 1
+        .pool
+
+.org (special_table + (0x7 * 4))
+        .word clear_mugshot | 1
+        .pool
+
 .org (special_table + (0xC * 4))
 	.word special_addkarma_wrap | 1
 	.pool

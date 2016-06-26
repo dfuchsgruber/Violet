@@ -4,6 +4,7 @@
 
 .include "patches/hooks.asm"
 .include "patches/music.asm"
+.include "patches/overworld.asm"
 
 .org 0x09680000
 .importobj "bld/linked.o"

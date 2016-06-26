@@ -62,6 +62,6 @@ battler* battlers = (battler*)0x02023BE4;
 u8 *attack_targets = (u8*)0x02023BD6;
 u8 *battler_oams = (u8*)0x02023D44;
 u8 *battler_cnt = (u8*)0x02023BCC;
-u8 *trainer_id = (u8*)0x020386AE;
+u16 *trainer_id = (u16*)0x020386AE;
 
 #endif

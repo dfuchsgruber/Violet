@@ -37,8 +37,8 @@ void generate_trash_item(u8 facing);
 bool check_trashflag(u8 facing);
 void set_trashflag(u8 facing);
 int get_trash_hash_by_facing(u8 facing, int m);
-int hash_trash(s16 x, s16 y, u8 map, u8 bank, int m);
-void new_trash_vector();
+int a_hash(s16 x, s16 y, u8 map, u8 bank, int m);
+void new_a_vector();
 
 void load_tv_text();
 u8 *get_tv_text();

@@ -24,7 +24,7 @@ bool dungeon_crash(){
 	s16 coordinates[2];
 	get_current_tile_position(&coordinates[0], &coordinates[1]);
 	if (is_dungeon_map()){	
-		if (((*vardecrypt(0x50E1))++ >= 2*(dmem->dgen.width + dmem->dgen.height)) ||
+		if (((*vardecrypt(0x50E1))++ >= 2*(cmem->dgen.width + cmem->dgen.height)) ||
 			get_block_info_behaviour(coordinates[0], coordinates[1]) == 0xB0){
 	        init_script((void*)0x8719D01);
 			clearflag(FLAG_LOAD_DMAP);
@@ -37,7 +37,7 @@ bool dungeon_crash(){
 
 bool special_dungeon_warpback(){
 	
-	warp_setup(dmem->dgen.from_bank, dmem->dgen.from_map, 0xFF, dmem->dgen.from_x, dmem->dgen.from_y);
+	warp_setup(cmem->dgen.from_bank, cmem->dgen.from_map, 0xFF, cmem->dgen.from_x, cmem->dgen.from_y);
 	warp_setup_callbacks();
 	script_wait_for_warp();
 	script_halt();
@@ -48,11 +48,11 @@ bool special_dungeon_warpback(){
 void dungeon_store_current_pos(){
 	u8 bank = (*save1)->bank;
 	u8 map = (*save1)->map;
-	dmem->dgen.from_bank = bank;
-	dmem->dgen.from_map = map;
-	dmem->dgen.from_x = (*save1)->x;
-	dmem->dgen.from_y = (*save1)->y;
-	dmem->dgen.facing = (u8)(*vardecrypt(0x800C));
-	dmem->dhead.name_bank = ((*mapbank_table_ptr)[bank]).maps[map]->name_bank;
-	dmem->dgen.initial_seed = (u32)(random_change_seed() | (random_change_seed() << 16));
+	cmem->dgen.from_bank = bank;
+	cmem->dgen.from_map = map;
+	cmem->dgen.from_x = (*save1)->x;
+	cmem->dgen.from_y = (*save1)->y;
+	cmem->dgen.facing = (u8)(*vardecrypt(0x800C));
+	cmem->dhead.name_bank = ((*mapbank_table_ptr)[bank]).maps[map]->name_bank;
+	cmem->dgen.initial_seed = (u32)(random_change_seed() | (random_change_seed() << 16));
 }

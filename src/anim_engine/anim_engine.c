@@ -15,11 +15,12 @@
 
 void init_anim_engine_by_table(){
     u16 index = *vardecrypt(0x8004);
-    init_anim_engine(&anim_script_table[index]);
+    init_anim_engine(anim_script_table[index]);
 }
 
 
 void init_anim_engine(void *script){
+    
 	u8 callback_id = spawn_big_callback((void*)anim_engine_callback, 0);
 	u32 callback_offset = (u32)(0x03004FE0 + 0x28*callback_id);
 	

@@ -17,7 +17,7 @@ static oam_template icon_template = {
 	(frame**)0x08231Bc0,
 	(graphic*)0,
 	(rotscale_frame**)0x08231Bcc,
-	(u32*)icon_callback
+	icon_callback
 };
 
 static oam_template icon_template_reg = {
@@ -27,7 +27,7 @@ static oam_template icon_template_reg = {
 	(frame**)0x08231Bc0,
 	(graphic*)0,
 	(rotscale_frame**)0x08231Bcc,
-	(u32*)icon_callback
+	icon_callback
 };
 
 

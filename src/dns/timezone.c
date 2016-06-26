@@ -15,8 +15,6 @@ void callback_switch_timezone(){
 
 void update_timezone(){
 	
-	return;
-	
 	rtc_timestamp stamp = {0, 0, 0, 0, 0, 0 ,0};
 	rtc_read(&stamp);
 	

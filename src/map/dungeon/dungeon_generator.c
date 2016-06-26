@@ -5,7 +5,7 @@
 #include "romfuncs.h"
 #include "item.h"
 #include "overworld_script.h"
-#include "math.h"
+#include "utils.h"
 
 //item scripts
 static u8 dungeon_item_scripts_orbs [][13] = {
@@ -417,12 +417,12 @@ void relocate_dungeon_events(dungeon_generator *d){
 	x = (s16) (x + x_rel);
 	y = (s16) (y + y_rel);
 	
-	dmem->ladder.x = x;
-	dmem->ladder.y = y;
-	dmem->ladder.field_4 = 0;
-	dmem->ladder.target_warp_id = 3;
-	dmem->ladder.target_map = 3;
-	dmem->ladder.target_bank = 3;
+	cmem->ladder.x = x;
+	cmem->ladder.y = y;
+	cmem->ladder.field_4 = 0;
+	cmem->ladder.target_warp_id = 3;
+	cmem->ladder.target_map = 3;
+	cmem->ladder.target_bank = 3;
 	
 	candidates --;
 	
@@ -442,31 +442,31 @@ void relocate_dungeon_events(dungeon_generator *d){
 			x_rel = (s16)(d->rooms[picked].width/2);
 			y_rel = (s16)(d->rooms[picked].height/2);
 			
-			dmem->dpers[i].flag = (u16)(i+0x13); //use dynamic flags 0x13 - 0x18
-			dmem->dpers[i].x = (s16)(x + x_rel);
-			dmem->dpers[i].y = (s16)(y + y_rel);
+			cmem->dpers[i].flag = (u16)(i+0x13); //use dynamic flags 0x13 - 0x18
+			cmem->dpers[i].x = (s16)(x + x_rel);
+			cmem->dpers[i].y = (s16)(y + y_rel);
 			
 			//setting up a random script for the item
 			u8 r = random_next8(d);
 			if (r < 0x50){ // 0 - 0x4F is a nature item
-				dmem->dpers[i].script = dungeon_item_scripts_orbs[__umod(random_next8(d), 10)];
+				cmem->dpers[i].script = dungeon_item_scripts_orbs[__umod(random_next8(d), 10)];
 			}else if (r < 0x90){ // 0x50 - 0x8F is a common item
-				dmem->dpers[i].script = dungeon_item_scripts_common[__umod(random_next8(d), 5)];			
+				cmem->dpers[i].script = dungeon_item_scripts_common[__umod(random_next8(d), 5)];			
 			}else if (r < 0xC0){ // 0x90 - 0xBF is heartscale
-				dmem->dpers[i].script = dungeon_item_script_heartscale;
+				cmem->dpers[i].script = dungeon_item_script_heartscale;
 			}else if (r < 0xD8){ // 0xC0 - 0xD7 is evolution stone
-				dmem->dpers[i].script = dungeon_item_scripts_evolution_stones[__umod(random_next8(d), 8)];
+				cmem->dpers[i].script = dungeon_item_scripts_evolution_stones[__umod(random_next8(d), 8)];
 			}else if (r < 0xF0){ // 0xD8 - 0xEF is rare item
-				dmem->dpers[i].script = dungeon_item_scripts_rare[__umod(random_next8(d), 8)];
+				cmem->dpers[i].script = dungeon_item_scripts_rare[__umod(random_next8(d), 8)];
 			}else{ //0xF0 - 0xEF is a fossil
-				dmem->dpers[i].script = dungeon_item_scripts_fossils[__umod(random_next8(d), 5)];
+				cmem->dpers[i].script = dungeon_item_scripts_fossils[__umod(random_next8(d), 5)];
 			}
 			
 			candidates --;
 			
 			
 		}else{
-			dmem->dpers[i].flag = 0x820;
+			cmem->dpers[i].flag = 0x820;
 		}
 		
 	}
@@ -479,12 +479,12 @@ void compute_dungeon_blocks(){
 	
 	if (dflags->blocks_initialized){
 		//The blocks were already loaded, so we use the same seed
-		dmem->dgen.seed = dmem->dgen.initial_seed;
+		cmem->dgen.seed = cmem->dgen.initial_seed;
 	}
 	
 	dflags->blocks_initialized = 1;
 	
-	dungeon_generator *d = &(dmem->dgen);
+	dungeon_generator *d = &(cmem->dgen);
 	
 	//build a buffer of flags that state if a tile is enabled or not
 	d->dbuf = malloc_fill((u32)((d->width) * (d->height) / 8));
@@ -499,7 +499,7 @@ void compute_dungeon_blocks(){
 	free(d->dbuf);
 	free(d->rooms);
 	
-	foot_ddata->footer = &(dmem->footer);
+	foot_ddata->footer = &(cmem->footer);
 	//special_x8E_update_map_graphics();
 	
 }

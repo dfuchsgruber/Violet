@@ -25,6 +25,5 @@ typedef struct pair{
 
 typedef u8* script;
 typedef u8* pstring;
-typedef void* function;
 
 #endif

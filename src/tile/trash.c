@@ -3,6 +3,8 @@
 #include "save.h"
 #include "item.h"
 #include "tile.h"
+#include "rtc.h"
+
 
 void generate_trash_item(u8 facing){
 	
@@ -34,14 +36,14 @@ bool check_trashflag(u8 facing){
 	
 	int hashflag = get_trash_hash_by_facing(facing, 127);
 	int mask = 1 << (hashflag & 7);
-	int value = dmem->trash_flags[hashflag >> 3] & mask;
+	int value = cmem->trash_flags[hashflag >> 3] & mask;
 	return value != 0;
 }
 
 void set_trashflag(u8 facing){
 	int hashflag = get_trash_hash_by_facing(facing, 127);
 	u8 mask = (u8) (1 << (hashflag & 7));
-	dmem->trash_flags[hashflag >> 3] |= mask;
+	cmem->trash_flags[hashflag >> 3] |= mask;
 }
 
 
@@ -63,45 +65,47 @@ int get_trash_hash_by_facing(u8 facing, int m){
 			pos[0]++;
 			break;
 	}
-	return hash_trash(pos[0], pos[1], (*save1)->map,(*save1)->bank, m);
+	return a_hash(pos[0], pos[1], (*save1)->map,(*save1)->bank, m);
 }
 
 /**
 * returns hash value of trash from 0 to m-1
 **/
-int hash_trash(s16 x, s16 y, u8 map, u8 bank, int m){
-	
-	//First we get the a-vector
-	u8 a[4];
-	
-	u16 a_component_0 = *vardecrypt(0x50DE);
-	u16 a_component_1 = *vardecrypt(0x50DD);
-	
-	a[0] = (u8)a_component_0;
-	a[1] = (u8)(a_component_0 >> 8);
-	a[2] = (u8)a_component_1;
-	a[3] = (u8)(a_component_1 >> 8);
-	
-	int h = (x * a[0]) + (y * a[1]) + (map * a[2]) + (bank * a[3]);
+int a_hash(s16 x, s16 y, u8 map, u8 bank, int m){
+
+	int h = (x * cmem->a_vector[0]) + (y * cmem->a_vector[1]) + (map * cmem->a_vector[2]) + (bank * cmem->a_vector[3]);
 	return (int)__umod((u32)h, (u32)m);
 	
 	
 }
 
-void new_trash_vector(){
+void new_a_vector(){
 	
-	u32 val;
-	do {val = (u32)(random_change_seed() | (random_change_seed() << 16));} while(!val);
-	*vardecrypt(0x50DE) = (u16)val;
-	*vardecrypt(0x50DD) = (u16)(val >> 16);
+    int i;
+    for(i = 0; i < 4; i++){
+        cmem->a_vector[i] = (u8)random_change_seed();
+    }
+    rtc_read(&(cmem->a_gen_time));
 	
 }
 
 void reset_trash_flags(){
 	int i;
 	for (i = 0; i < 16; i++){
-		dmem->trash_flags[i] = 0;
+		cmem->trash_flags[i] = 0;
 	}
 	
+}
+
+void update_a_vector(){
+    rtc_timestamp current_time;
+    rtc_read(&current_time);
+    
+    int day_difference = (current_time.year * 365 + current_time.month * 30 + current_time.day) -
+    (cmem->a_gen_time.year * 365 + cmem->a_gen_time.month * 30 + cmem->a_gen_time.day);
+    if (day_difference >= 14){
+        new_a_vector();
+        reset_trash_flags();
+    }
 }
 

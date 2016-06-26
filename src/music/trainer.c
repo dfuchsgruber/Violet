@@ -49,5 +49,5 @@ u16 battle_get_music(){
     if(battle_flags->flag_C || battle_flags->flag_D){
         return MUS_WILDBATTLE;
     }
-    return NULL;
+    return MUS_WILDBATTLE;
 }

@@ -19,6 +19,7 @@ ASSRC2= $(shell find src -type f -iname '*.s')
 CSRC= $(shell find src -type f -iname '*.c')
 MIDSRC= $(shell find asset/mus -type f -iname '*.mid')
 GFXSRC= $(shell find asset/gfx -type f -iname '*.png')
+GFXSRC2 = $(shell find asset/gfx -type f -iname '*.bmp')
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)

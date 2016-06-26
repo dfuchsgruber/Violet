@@ -2,6 +2,7 @@
 #include "romfuncs.h"
 #include "oams.h"
 #include "fpmenu.h"
+#include "utils.h"
 
 #define bgset 0x93c1b00
 #define bgmap 0x93c2700
@@ -118,10 +119,10 @@ void fp_callback(){
 				graphic graphic_arrow = {(void*)arrowup,0x80,0x1338};
 				graphic graphic_arrow2 = {(void*)arrowleft,0x80,0x1339};
 				
-				oam_template arrow_template_up ={0x1338, 0xFFFF, &arrow_up_final_oam, (frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, (u32*)0x0800758D};
-				oam_template arrow_template_down ={0x1338, 0xFFFF, &arrow_down_final_oam, (frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, (u32*)0x0800758D};
-				oam_template arrow_template_left ={0x1339, 0xFFFF, &arrow_left_final_oam, (frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, (u32*)0x0800758D};
-				oam_template arrow_template_right ={0x1339, 0xFFFF, &arrow_right_final_oam, (frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, (u32*)0x0800758D};
+				oam_template arrow_template_up ={0x1338, 0xFFFF, &arrow_up_final_oam, (frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, oam_null_callback};
+				oam_template arrow_template_down ={0x1338, 0xFFFF, &arrow_down_final_oam, (frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, oam_null_callback};
+				oam_template arrow_template_left ={0x1339, 0xFFFF, &arrow_left_final_oam, (frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, oam_null_callback};
+				oam_template arrow_template_right ={0x1339, 0xFFFF, &arrow_right_final_oam, (frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, oam_null_callback};
 				
 				load_and_alloc_obj_vram_lz77(&graphic_arrow);
 				load_and_alloc_obj_vram_lz77(&graphic_arrow2);
@@ -512,7 +513,7 @@ void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, fp_memory* mem){
 			//initialize pokepic 
 			sprite s = {0,0xc000, 0x0, 0x0};
 			graphic g = {(void*)(*((u32*)(0x08234F7C+(spezies<<3)))),0x800,0x1337};
-			oam_template template = {0x1337, 0xFFFF, &s, (frame**)0x08231Bc0, &g, (rotscale_frame**)0x08231Bcc, (u32*)0x0800758D};
+			oam_template template = {0x1337, 0xFFFF, &s, (frame**)0x08231Bc0, &g, (rotscale_frame**)0x08231Bcc, oam_null_callback};
 			mem->pokepic_start_tile = load_and_alloc_obj_vram_lz77(&g);
 			mem->oam_pokepic = generate_oam_forward_search(&template, 64, 56, 0);
 			

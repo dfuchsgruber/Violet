@@ -2,6 +2,8 @@
 #define HSAVE
 #include "map.h"
 #include "dungeon_generator.h"
+#include "rtc.h"
+#include "pokepad.h"
 
 
 typedef struct saveblock1 {
@@ -19,7 +21,7 @@ typedef struct saveblock1 {
 	
 }saveblock1;
 
-typedef struct dungeon_memory{
+typedef struct custom_memory{
 	
 	//dungeon_data ddata;
 	mapheader dhead;
@@ -28,12 +30,17 @@ typedef struct dungeon_memory{
 	map_events devents;
 	map_event_warp ladder;
 	map_event_person dpers[5];
+        
+        //trash memory (generall a vector memory)
 	u8 trash_flags[16];
+        rtc_timestamp a_gen_time;
+        u8 a_vector[4];
+        pokepad_memory *pad_mem;
 	
-}dungeon_memory;
+}custom_memory;
 
 
 saveblock1 **save1 = (saveblock1**)0x03004F58;
-dungeon_memory *dmem = (dungeon_memory*)0x0203C610;
+custom_memory *cmem = (custom_memory*)0x0203C610;
 
 #endif

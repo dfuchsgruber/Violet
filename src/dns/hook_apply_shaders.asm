@@ -46,7 +46,7 @@ bl dns_apply_shaders
 
 
 no_dns_shader2:
-ldr r0, =0x080598D7
+ldr r0, =0x08059953
 bx r0
 
 .thumb_func

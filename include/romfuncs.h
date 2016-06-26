@@ -1,9 +1,11 @@
+#ifndef H_ROMFUNCS
+#define H_ROMFUNCS
 #include <stdbool.h>
 
 //static functions in ROM
 u8 get_item_effect_param (u16 item_id);
 void init_fadescreen(u8 type, u8 unkown);
-void set_callback1(void* function);
+void set_callback1(void (*function)());
 void *malloc(u32 size);
 void oam_reset();
 void setflag(u16 flag);
@@ -106,3 +108,10 @@ void pokemenu_task_wait_for_keypress_and_return_to_select(u8 self);
 void pokemenu_init_textrenderer(u8 *text, u8 unkown);
 void pokemenu_task_wait_for_textrenderer(u8 self);
 void surfer_init_proper_error_message();
+void script_resume();
+u8 get_current_weather();
+void save_increment_key(u8 key);
+void rain_sound_fadeout();
+void startmenu_close();
+
+#endif

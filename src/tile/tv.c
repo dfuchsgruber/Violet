@@ -4,7 +4,7 @@
 
 
 //Text format :=...Es laufen [XXX]:YYYYYYY....
-//Beispiel: Es läuft eine Doku: Blablabla
+//Beispiel: Es laeuft eine Doku: Blablabla
 
 void load_tv_text(){
 	
@@ -20,7 +20,7 @@ u8 *get_tv_text(){
 		return (u8*)0x08927118; //Sendung Uli und Klaus
 	}
 	if (story_prog < 0x15){
-		return (u8*)0x089273CA; //Nachrichten: Primus entführt
+		return (u8*)0x089273CA; //Nachrichten: Primus entfï¿½hrt
 	}
 	if (story_prog < 0x1D){
 		return (u8*)0x08927535; //History-Doku: Atkania Reportage
