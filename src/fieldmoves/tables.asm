@@ -146,5 +146,5 @@ table_outdoor_move_initializers:
 .word 0x10
 .word 0x80de2ed
 .word 0xd
-.word 0x80de2ed @this is experminatal lockduft clone
+.word 0x80f6985 @this is experminatal lockduft clone
 .word 0xd

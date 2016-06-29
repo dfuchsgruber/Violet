@@ -12,7 +12,13 @@ typedef struct saveblock1 {
 	s16 y;
 	u8 bank;
 	u8 map;
-	u8 unkown[0x2A];
+        u8 unkown_0[0x16];
+        s8 healingplace_bank;
+        u8 healingplace_map;
+	u8 unkown_1[0x6];
+        u8 last_outdoor_bank;
+        u8 last_outdoor_map;
+        u8 unkown[0xA];
 	u8 flash_circle_size;
 	u8 field_31;
 	u16 current_footer_id;

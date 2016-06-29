@@ -17,3 +17,8 @@
 
 .org 0x08122208
     .word field_move_descriptions
+
+.org 0x081245F4
+    ldr r1, =pokemenu_opt_outdoor_move | 1
+    bx r1
+    .pool

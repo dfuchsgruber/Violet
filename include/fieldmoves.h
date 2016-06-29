@@ -40,10 +40,10 @@ typedef struct s_pokemenu_state{
 
 typedef struct outdoor_move{
     bool (*init_func)();
-    int not_usable_msg;
+    u32 not_usable_msg;
 }outdoor_move;
 
-extern outdoor_move *table_outdoor_move_initializers;
+extern outdoor_move table_outdoor_move_initializers[];
 
 s_pokemenu_state *pokemenu_state = (s_pokemenu_state*)0x0203B09C;
 

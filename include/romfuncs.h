@@ -113,5 +113,11 @@ u8 get_current_weather();
 void save_increment_key(u8 key);
 void rain_sound_fadeout();
 void startmenu_close();
+u8 pokemenu_get_selected_poke_index();
+void pokemenu_fade_and_execute_callback(u8 self);
+void pokemenu_prepeare_softboiled (u8 self);
+void pokemenu_init_fly ();
+void map_load_namespace(pstring text, u8 namespace_id);
+void pokemenu_print_string_as_yes_no(u8 self);
 
 #endif
