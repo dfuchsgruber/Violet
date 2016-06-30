@@ -69,8 +69,8 @@ pokemenu_opts:  @format : string, function pointer
     .word 0x81245f5
     .word 0x8247b12
     .word 0x81245f5
-    .word 0x8247b12  @experimantal lockduft clone
-    .word 0x81245f5
+    @.word 0x8247b12  @experimantal lockduft clone
+    @.word 0x81245f5
 
 .global table_field_moves
 
@@ -91,7 +91,7 @@ field_moves:
     .hword 0xd0
     .hword 0x87
     .hword 0xe6
-    .hword 0xd1  @experimantal lockduft clone
+    @.hword 0xd1  @experimantal lockduft clone
     .hword 0xFFFF
 
 .global table_field_move_descriptions
@@ -114,7 +114,7 @@ field_move_descriptions:
 .word 0x8417569
 .word 0x8417569
 .word 0x8417554
-.word 0x8417554 @experimantal lockduft clone
+@.word 0x8417554 @experimantal lockduft clone
 
 .global table_outdoor_move_initializers
 
@@ -146,5 +146,5 @@ table_outdoor_move_initializers:
 .word 0x10
 .word 0x80de2ed
 .word 0xd
-.word 0x80f6985 @this is experminatal lockduft clone
-.word 0xd
+@.word 0x80f6985 @
+@.word 0xd

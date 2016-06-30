@@ -29,6 +29,25 @@ overworld_sprite ow_igva = {
     ROTSCALE_TABLE_NULL
 };
 
+static graphic overworld_sprite_bbship_sprites[] = {
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0},
+    {&gfx_ow_bbshipTiles, 0x1000, 0}
+};
+
+overworld_sprite ow_bbship = {
+    0xFFFF, 0x1100+0x15, 0x11FF, 0x1000,
+    128, 64, 0x1A, 0x0, 0x0, 0x0,
+    OW_FINAL_OAM_128_64, OW_FORMATION_128_64,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_bbship_sprites,
+    ROTSCALE_TABLE_NULL
+};
 
 
 

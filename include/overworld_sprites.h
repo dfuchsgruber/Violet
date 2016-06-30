@@ -15,8 +15,12 @@
 
 //We define the constant offsets for things we know
 #define OW_ANIM_STANDARD_NPC (void*)0x083A322C
+
 #define OW_FORMATION_16_32 (void*)0x083A3660
+#define OW_FORMATION_128_64 (void*)0x083A3914
+
 #define OW_FINAL_OAM_16_32 (sprite*)0x083A35D4
+#define OW_FINAL_OAM_128_64 (sprite*)0x083A35A4
 
 typedef struct overworld_sprite{
     
