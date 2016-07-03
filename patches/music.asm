@@ -168,3 +168,7 @@ music_table equ 0x9194500
 .org music_table + 8*360
     .word mus_consuming_darkness
     .word 0
+
+.org music_table + 8*361
+    .word mus_blackbeard
+    .word 0
