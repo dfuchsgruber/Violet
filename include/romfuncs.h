@@ -1,6 +1,7 @@
 #ifndef H_ROMFUNCS
 #define H_ROMFUNCS
 #include <stdbool.h>
+#include "romfuncs.h"
 
 //static functions in ROM
 u8 get_item_effect_param (u16 item_id);
@@ -119,5 +120,7 @@ void pokemenu_prepeare_softboiled (u8 self);
 void pokemenu_init_fly ();
 void map_load_namespace(pstring text, u8 namespace_id);
 void pokemenu_print_string_as_yes_no(u8 self);
-
+void npc_applymovement(u8 npc_id, u8 map, u8 bank, u8 *moves);
+void big_callback_set_int(u8 callback, u8 var, int value);
+int big_callback_get_int(u8 callback, u8 var);
 #endif

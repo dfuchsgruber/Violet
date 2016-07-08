@@ -134,3 +134,6 @@ pokemenu_prepeare_softboiled = 0x080E5901;
 pokemenu_init_fly = 0x080C50B1;
 map_load_namespace = 0x080C4FB1;
 pokemenu_print_string_as_yes_no = 0x08124815;
+npc_applymovement = 0x0809754D;
+big_callback_set_int = 0x0807764D;
+big_callback_get_int = 0x08077685;

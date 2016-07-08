@@ -32,8 +32,19 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x1A * 4))
         .word special_prepeare_player_facing | 1
         .pool
+.org (special_table + (0x1B * 4))
+        .word special_move_npc_to_player | 1
+        .pool
 
 // NOTE !!!!!!!!!! AFTER 0x1B THERE IS NOT ANYMORE FREE SPECIAL SPACE! !!!!!!!!!!!!!!!!!
+
+
+/// From 0x24 to (inclusvie) 0x26 are 3 free nullsub specials
+.org (special_table + (0x24 * 4))
+        .word 0 // replace with real special 0x24
+        .pool
+
+/// From 0x2B are 7 free specials
 
 .org (special_table +(0x36 *4))
         .word special_x36_check_loaded_trainerflag | 1

@@ -4,6 +4,9 @@
 #include "save.h"
 #include "npc.h"
 #include "romfuncs.h"
+#include "data_structures.h"
+
+
 
 void special_prepeare_player_facing(){
     s16 coordinates [2];

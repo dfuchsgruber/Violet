@@ -65,6 +65,7 @@ typedef struct npc{
 }npc;
 
 npc *npcs = (npc*)0x02036E38;
+u8 *player_npc = (u8*)0x02037078;
 
 #endif	/* NPC_H */
 

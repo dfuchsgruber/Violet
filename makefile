@@ -6,6 +6,7 @@ CC=@arm-none-eabi-gcc
 NM=@arm-none-eabi-nm
 ARS=@armipsd
 MID2AGB=@mid2agb
+STR2S=@python str2s.py
 
 ASFLAGS=-mthumb -Iinclude/
 MIDFLAGS=-V92
