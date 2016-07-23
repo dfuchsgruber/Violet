@@ -137,3 +137,7 @@ pokemenu_print_string_as_yes_no = 0x08124815;
 npc_applymovement = 0x0809754D;
 big_callback_set_int = 0x0807764D;
 big_callback_get_int = 0x08077685;
+npc_is_tile_blocked = 0x080636AD;
+tile_get_coordinates_player_is_facing = 0x0805C4F5;
+map_get_tile_level = 0x08058D45;
+get_playerfacing = 0x0805C6C5;

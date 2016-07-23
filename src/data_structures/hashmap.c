@@ -3,10 +3,10 @@
 #include "stdbool.h"
 #include "data_structures.h"
 
-hashmap *init_hashmap(int buckets){
+
+hashmap *hashmap_init(int buckets){
     hashmap *map = (hashmap*)malloc(sizeof(hashmap));
-    map->size = 0;
-    map->buckets = (dyn_arr*)malloc_fill(sizeof(dyn_arr)*buckets);
+    map->buckets = (dyn_arr**)malloc_fill(sizeof(dyn_arr*)*(u32)buckets);
     map->map_size = buckets;
     int i;
     for(i = 0; i < 4; i++){
@@ -15,27 +15,31 @@ hashmap *init_hashmap(int buckets){
     return map;
 }
 
-void free_hashmap(hashmap *map){
+void hashmap_free(hashmap *map){
     int i;
-    for(i = 0; i < map; i++){
+    for(i = 0; i < map->map_size; i++){
         if(map->buckets[i]){
             dyn_arr_free(map->buckets[i]);
         }
     }
+    free(map->buckets);
     free(map);
 }
 
-int hash(u32 key, hashmap *map){
+int hashmap_hash(u32 key, hashmap *map){
     int hash = 0;
     int i;
     for (i = 0; i < 4; i++){
-        hash += ((key & (0xFF<<i*8)) >> (i * 8)) * map->a[i];
+        int key_8 = (int)(key & (u32)(0xFF<<i*8));
+        key_8 = (key_8 >> (i*8));
+        hash += key_8 * map->a[i];
     }
-    return __umod(hash, map->map_size);
+    
+    return (int)__umod((u32)hash, (u32)map->map_size);
 }
 
-bool contains(u32 key, hashmap *map){
-    int bucket = hash(key, map);
+bool hashmap_contains(u32 key, hashmap *map){
+    int bucket = hashmap_hash(key, map);
     if (map->buckets[bucket]){
         int i;
         for (i = 0; i < map->buckets[bucket]->size; i++){
@@ -46,19 +50,57 @@ bool contains(u32 key, hashmap *map){
     return false;
 }
 
-void put(u32 key, int value, hashmap *map){
-    int bucket = hash(key, map);
-    if (!map->buckets[bucket]){
-        map->buckets[bucket] = dyn_arr_init(1);
-        map->buckets[bucket]->array[0].key = key;
-        map->buckets[bucket]->array[0].value = value;
-        return;
-    }
-    int i;
-    for (i = 0; i < map->buckets[bucket]->size; i++){
-        if (map->buckets[bucket]->array[i].key == key){
-            map->buckets[bucket]->array[i].value = value;
-            return;
+int hashmap_get(u32 key, hashmap *map){
+    int bucket = hashmap_hash(key, map);
+    if (map->buckets[bucket]){
+        int i;
+        for (i = 0; i < map->buckets[bucket]->size; i++){
+            if (map->buckets[bucket]->array[i].key == key)
+                return map->buckets[bucket]->array[i].value;
         }
     }
+    return NULL;
+}
+
+void hashmap_put(u32 key, int value, hashmap *map){
+    int bucket = hashmap_hash(key, map);
+    if (hashmap_contains(key, map)){
+        
+        int i;
+        for (i = 0; i < map->buckets[bucket]->size; i++){
+            if (map->buckets[bucket]->array[i].key == key)
+                map->buckets[bucket]->array[i].value = value;
+        }
+    }
+   
+    //Value is not in hashmap
+    if (!map->buckets[bucket]){
+        map->buckets[bucket] = dyn_arr_init(1);
+    }
+    int index = map->buckets[bucket]->size;
+    dyn_arr_resize(index+1, map->buckets[bucket]);
+    map->buckets[bucket]->array[index].key = key;
+    map->buckets[bucket]->array[index].value = value;
+}
+
+int hashmap_remove(u32 key, hashmap *map){
+    
+    int bucket = hashmap_hash(key, map);
+    if (map->buckets[bucket]){
+        int i;
+        for (i = 0; i < map->buckets[bucket]->size; i++){
+            if (map->buckets[bucket]->array[i].key == key){
+                int value = map->buckets[bucket]->array[i].value;
+                memcopy(&map->buckets[bucket]->array[i], &map->buckets[bucket]->array[i+1], (u32)(map->buckets[bucket]->array_size-i-1)* (sizeof(dyn_arr_node)));
+                if(map->buckets[bucket]->size-1){
+                    dyn_arr_resize(map->buckets[bucket]->size-1, map->buckets[bucket]);
+                    return value;
+                }else{
+                    dyn_arr_free(map->buckets[bucket]);
+                    map->buckets[bucket] = NULL;
+                }
+            }
+        }
+    }
+    return 0;
 }

@@ -2,12 +2,13 @@
 #define H_ROMFUNCS
 #include <stdbool.h>
 #include "romfuncs.h"
+#include "stddef.h"
 
 //static functions in ROM
 u8 get_item_effect_param (u16 item_id);
 void init_fadescreen(u8 type, u8 unkown);
 void set_callback1(void (*function)());
-void *malloc(u32 size);
+void *malloc(size_t size);
 void oam_reset();
 void setflag(u16 flag);
 void clearflag(u16 flag);
@@ -42,7 +43,7 @@ void color_blend(u16 color_id_to_blend, u16 color_count, u8 intesity, u16 color_
 void remove_big_callback(u8 cbid);
 void init_script(void* script);
 u8 spawn_big_callback(void*function, u8 priority);
-void* malloc_fill(u32 size);
+void* malloc_fill(size_t size);
 u8 allocate_rotscale();
 void set_rotscale_param (u8 id, u16 v0, u16 v1, u16 v2, u16 v3);
 void pokemenu_free();
@@ -123,4 +124,7 @@ void pokemenu_print_string_as_yes_no(u8 self);
 void npc_applymovement(u8 npc_id, u8 map, u8 bank, u8 *moves);
 void big_callback_set_int(u8 callback, u8 var, int value);
 int big_callback_get_int(u8 callback, u8 var);
+void tile_get_coordinates_player_is_facing(s16 *x, s16 *y);
+u8 map_get_tile_level(s16 x, s16 y);
+u8 get_playerfacing();
 #endif

@@ -12,35 +12,10 @@
 
 
 
-dyn_arr *dyn_arr_init(int size){
-    dyn_arr *arr = (dyn_arr*)malloc(sizeof(dyn_arr));
-    arr->array = (dyn_arr_node*)malloc_fill(sizeof(dyn_arr_node)*size);
-    arr->array_size = size;
-    arr->size = 0;
-    return arr;
-}
 
-void dyn_arr_free(dyn_arr *arr){
-    free(arr->array);
-    free(arr);
-}
 
 /**
- * Swaps to elements inside the heap array
- * @param a
- * @param b
- * @param array
- */
-void dyn_arr_swap(int a, int b, dyn_arr_node *array){
-    dyn_arr_node *tmp = (dyn_arr_node*)malloc(sizeof(dyn_arr_node));
-    memcopy(tmp, &array[a], sizeof(dyn_arr_node));
-    memcopy (&array[a], &array[b], sizeof(dyn_arr_node));
-    memcopy (&array[b], tmp, sizeof(dyn_arr_node));
-    free(tmp);
-}
-
-/**
- * Restores heap invariance of heap at root position = a
+ * Restores heap invariance of heap at root position (sift downn)
  * @param a
  * @param heap
  */
@@ -50,41 +25,18 @@ void binary_heap_heapify(int a, dyn_arr *heap){
         int min = i;
         int left = 2*i + 1;
         int right = 2*i + 2;
-        if (left < heap->array_size && heap->array[left].key < heap->array[min].key)
+        if (left < heap->size && heap->array[left].key < heap->array[min].key)
             min = left;
-        if (right < heap->array_size && heap->array[right].key < heap->array[min].key)
+        if (right < heap->size && heap->array[right].key < heap->array[min].key)
             min = right;
         if (min == i)
             break;
         dyn_arr_swap(i, min, heap->array);
+        i = min;
     }while(true);
 }
 
-/**
- * Resizes the array if overhead is too great or the array is too short
- * @param size
- * @param heap
- */
-void dyn_arr_resize(int size, dyn_arr *heap){
-    dyn_arr_node *array_x;
-    if (size > heap->array_size){
-        array_x = (dyn_arr_node*)malloc_fill(sizeof(dyn_arr_node)*heap->array_size * 2);
-        memcopy(array_x, heap->array, sizeof(dyn_arr_node)*heap->size);
-        heap->array_size *= 2;
-        heap->size = size;
-    }else if(size <= heap->array_size / 2){
-        array_x = (dyn_arr_node*)malloc_fill(sizeof(dyn_arr_node)*heap->array_size / 2);
-        memcopy(array_x, heap->array, sizeof(dyn_arr_node)*size);
-        heap->array_size /= 2;
-        heap->size = size;
-    }else{
-        heap->size = size;
-        return;
-    }
-    //if we have reached this point we need to change the array references
-    free(heap->array);
-    heap->array = array_x;
-}
+
 
 /**
  * Decreases a key for a node in the heap
@@ -121,12 +73,23 @@ void binary_heap_insert(u32 key, int value, dyn_arr *heap){
 
 /**
  * Removes a node from the binary heap
- * @param i
+ * @param i index to remove from
  * @param heap
- * @return 
+ * @return the key that was removed
  */
-dyn_arr_node *binary_heap_remove(int i, dyn_arr *heap){
-    
+int binary_heap_remove(int i, dyn_arr *heap){
+    int last = heap->size-1;
+    int value = heap->array[i].value;
+    dyn_arr_swap(i, last, heap->array);
+    dyn_arr_resize(last, heap);
+    if (i != last){
+        if(i == 0 || heap->array[i].key > heap->array[(i-1)/2].key){
+            binary_heap_heapify(i, heap);
+        }else{
+            binary_heap_decrease_key(i, heap->array, heap->array[i].key);
+        }
+    }
+    return value;
 }
 
 

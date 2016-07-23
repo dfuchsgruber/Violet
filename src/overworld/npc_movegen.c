@@ -12,32 +12,39 @@
 #include "romfuncs.h"
 #include "overworld.h"
 #include "callbacks.h"
+#include "data_structures.h"
 
 void special_move_npc_to_player(){
     s16 pos[2];
-    get_current_tile_position(&pos[0], &pos[1]);
+    tile_get_coordinates_player_is_facing(&pos[0], &pos[1]);
     u8 target = (u8)*vardecrypt(0x8004);
-    move_npc_to(target, (bool)vardecrypt(0x8005), pos[0], pos[1]);
+    move_npc_to(target, pos[0], pos[1]);
 }
 
-void move_npc_to(u8 ow_id, bool horizontal_first, s16 dest_x, s16 dest_y){
+static u8 facings[] = {0xFF, 0x1, 0x0, 0x3, 0x2};
+
+void move_npc_to(u8 ow_id, s16 dest_x, s16 dest_y){
     
     u8 npc_id;
     if (get_npc_id_by_overworld(ow_id, (*save1)->map, (*save1)->bank, &npc_id))
         return;
     
+    /**
     s16 x_from = npcs[npc_id].dest_x;
     s16 y_from = npcs[npc_id].dest_y;
+    **/
+    u8 *dyn_move = (u8*)malloc(256); //dynamic space for movement list
     
-    int total_tiles = abs(dest_x-x_from) + abs(dest_y-y_from);
-    u8 *dyn_move = (u8*)malloc(total_tiles + 1); //dynamic space for movement list
+    int path_len = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id]);
     
+    dyn_move[path_len++] = facings[get_playerfacing()-1];
+    dyn_move[path_len++] = 0xFE;
     
-    //Now we generate a move list
+    /**Now we generate a move list
     int processed = 0;
     processed += move_npc_to_player_movegen(horizontal_first ? x_from : y_from, horizontal_first ? dest_x : dest_y, dyn_move, horizontal_first, processed);
     processed += move_npc_to_player_movegen(horizontal_first ? y_from : x_from, horizontal_first ? dest_y : dest_x, dyn_move, !horizontal_first, processed);
-    dyn_move[processed] = 0xFE; //end if movements
+    **/
     
     npc_applymovement(ow_id, (*save1)->map, (*save1)->bank, dyn_move);
     /*

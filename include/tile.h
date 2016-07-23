@@ -6,6 +6,23 @@
 
 #include <stdbool.h>
 
+#include "anim_engine.h"
+
+#define DIR_NONE 0
+#define DIR_DOWN 1
+#define DIR_UP 2
+#define DIR_LEFT 3
+#define DIR_RIGHT 4
+#define DIR_DIANW 5
+#define DIR_DIANE 6
+#define DIR_DIASE 7
+#define DIR_DIASW 8
+
+typedef struct {
+    s16 x;
+    s16 y;
+} coordinate;
+
 typedef struct bdata{
 	
 		u32 behavior : 9;
@@ -42,5 +59,7 @@ void new_a_vector();
 
 void load_tv_text();
 u8 *get_tv_text();
+
+coordinate *walking_directions = (coordinate*)0x083A638C;
 
 #endif
