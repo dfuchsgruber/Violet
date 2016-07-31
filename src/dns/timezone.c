@@ -42,3 +42,7 @@ bool is_inside_map(u8 bank, u8 map){
 	u8 type = head->type;
 	return (type == 4) || (type == 8) || (type == 9);
 }
+
+bool dns_on(){
+    return !((*save2)->sound_state);
+}

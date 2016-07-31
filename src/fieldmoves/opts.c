@@ -14,6 +14,7 @@
 #include "pstring.h"
 #include "map.h"
 
+
 void pokemenu_build_opt_by_pokemon(pokemon *base, u8 index){
     pokemenu_opt_state *opt_state = pokemenu_state->opt_state;
     opt_state->opt_cnt = 0;

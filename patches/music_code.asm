@@ -12,3 +12,9 @@ bx r1
 ldr r0, =battle_get_music | 1
 bx r0
 .pool
+
+//@Always enable stereo as desired sound
+.org 0x080ECA76
+    mov r0, #0x1
+.org 0x08088C82
+    mov r0, #0x1

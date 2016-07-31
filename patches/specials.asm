@@ -41,7 +41,7 @@ special_table equ 0x0815FCC0
 
 /// From 0x24 to (inclusvie) 0x26 are 3 free nullsub specials
 .org (special_table + (0x24 * 4))
-        .word special_test | 1// replace with real special 0x24
+        .word special_move_npc_to | 1// replace with real special 0x24
         .pool
 
 /// From 0x2B are 7 free specials

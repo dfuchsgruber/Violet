@@ -9,7 +9,7 @@
 
 void tile_init(mapfooter *foot){
 	
-	if (*vardecrypt(VAR_TIMEZONE) == 1 && !*built_in_shaders){
+	if (*vardecrypt(VAR_TIMEZONE) == 1 && !*built_in_shaders && dns_on()){
 		
 		u16 *pal_save_copy = (u16*) 0x020371F8;
 		

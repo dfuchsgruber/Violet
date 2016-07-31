@@ -27,7 +27,7 @@ u16 special_get_rtc(){
 		case 6:
 			return stamp.second;
 		default:
-			return NULL;
+			return 0;;
 	}
 	
 }

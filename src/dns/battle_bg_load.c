@@ -14,7 +14,7 @@ void battle_bg_load(u8 bg_id){
 	lz77uncompvram(bgs[bg_id].tileset, (void*)0x6008000);
 	lz77uncompvram(bgs[bg_id].tilemap, (void*)0x600D000);
 	
-	if (*vardecrypt(VAR_TIMEZONE)){
+	if (*vardecrypt(VAR_TIMEZONE) && dns_on()){
 		
 		color *buf = (color*)malloc(0x60);
 		color *prebuf = (color*)0x02037ACC;

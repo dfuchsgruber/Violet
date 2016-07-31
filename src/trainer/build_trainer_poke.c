@@ -63,9 +63,9 @@ void build_trainer_poke(union union_build_field field, pokemon *poke){
 		}
 		
 		
-		union u_pid p = {get_pokemons_attribute (poke, 0, 0)};
-		p.bitfield.shinyness = field.bitfield.shinyness ? 0 : 0x201;
-		p.bitfield.nature = (builds[field.bitfield.build].nature);
+		pid p = {get_pokemons_attribute (poke, 0, 0)};
+		p.fields.shinyness = field.bitfield.shinyness ? 0 : 0x201;
+		p.fields.nature = (builds[field.bitfield.build].nature);
 		set_pokemons_attribute (poke, 0, &p);
 		
 		

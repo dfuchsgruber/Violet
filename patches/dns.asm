@@ -27,3 +27,10 @@
 	ldr r1, =battle_bg_load | 1
 	bx r1
 	.pool
+
+.org 0x083CC16C
+        .word str_settings_color
+
+.org 0x083CC198
+        .word str_settings_color_dn
+        .word str_settings_color_standard

@@ -9,17 +9,19 @@
 u8 dns_get_alpha(){
 	u16 timezone = *vardecrypt(VAR_TIMEZONE);
 	u8 alpha = 0;
-	switch(timezone){
-		case 1:
-		case 2:{ //night
-			alpha = 14;
-			break;
-		}
-		case 3:{ //evening
-			alpha = 13;
-			break;
-		}
-	}
+        if (dns_on()){
+            switch(timezone){
+                    case 1:
+                    case 2:{ //night
+                            alpha = 14;
+                            break;
+                    }
+                    case 3:{ //evening
+                            alpha = 13;
+                            break;
+                    }
+            }
+        }
 	return alpha;
 }
 
@@ -27,27 +29,29 @@ u8 dns_get_alpha(){
 color dns_get_over(){
 	u16 timezone = *vardecrypt(VAR_TIMEZONE);
 	u16 o = 0;
-	switch(timezone){
-		case 1:{ //night
-			o = 0x4D06;
-			break;
-		}
-		case 2:{ //morning
-			o = 0x65ff;
-			break;
-		}
-		case 3:{ //evening
-			o =0x29fd;
-			break;
-		}
-	}
+        if (dns_on()){
+            switch(timezone){
+                    case 1:{ //night
+                            o = 0x4D06;
+                            break;
+                    }
+                    case 2:{ //morning
+                            o = 0x65ff;
+                            break;
+                    }
+                    case 3:{ //evening
+                            o =0x29fd;
+                            break;
+                    }
+            }
+        }
 	color over = {o};
 	return over;
 }
 
 void dns_apply_shaders(u16 start_col, u16 col_cnt){
 		
-	if(*vardecrypt(VAR_TIMEZONE)){
+	if(*vardecrypt(VAR_TIMEZONE) && dns_on()){
 		dns_blend_colors(start_col, col_cnt, dns_get_over(), dns_get_alpha());
 	}
 	

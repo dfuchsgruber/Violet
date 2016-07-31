@@ -13,6 +13,7 @@ MIDFLAGS=-V92
 CFLAGS=-c -std=gnu11 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/
 LDFLAGS=-z muldefs
 GRITFLAGS=-fa -ftc
+STR2SFLAGS=-t table.tbl -a 0xFF
 
 BLDPATH= bld
 ASSRC1= $(shell find src -type f -iname '*.asm')
@@ -21,6 +22,7 @@ CSRC= $(shell find src -type f -iname '*.c')
 MIDSRC= $(shell find asset/mus -type f -iname '*.mid')
 GFXSRC= $(shell find asset/gfx -type f -iname '*.png')
 GFXSRC2 = $(shell find asset/gfx -type f -iname '*.bmp')
+STRSRC = $(shell find asset/string -type f -iname '*.txt')
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
@@ -30,6 +32,9 @@ MIDAS= $(MIDSRC:%.mid=$(BLDPATH)/%.s)
 MIDOBJS= $(MIDAS:%.s=$(BLDPATH)/%.o)
 	
 GFXC= $(BLDPATH)/asset/gfx/gfx.c
+
+STRAS= $(STRSRC:%.txt=$(BLDPATH)/%.s)
+STROBJS= $(STRAS:%.s=$(BLDPATH)/%.o)
 
 .PHONY: build clean
 
@@ -59,9 +64,21 @@ $(GFXC): $(GFXSRC)
 	    grit $$png $(GRITFLAGS) -ff $${png%.png}.grit -o $@; \
 	done
 	mv -f $(subst .c,.h,$(GFXC)) include/gfx.h
+	
+$(STRAS): $(BLDPATH)/%.s: %.txt
+	$(shell mkdir -p $(dir $@))
+	$(STR2S) $(STR2SFLAGS) -i $< -o $@
+	
+$(STROBJS): $(BLDPATH)/%.o: %.s
+	$(shell mkdir -p $(dir $@))
+	$(AS) $(ASFLAGS) $< -o $@
 
-asset: gfx music
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/gfx/gfx.o $(BLDPATH)/asset/mus.o
+asset: gfx music string
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/gfx/gfx.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o
+
+string: $(STROBJS)
+	$(shell mkdir -p $(BLDPATH)/asset/string)
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/str.o $(STROBJS)
 
 gfx: $(GFXC)
 	$(shell mkdir -p $(BLDPATH)/asset/gfx)

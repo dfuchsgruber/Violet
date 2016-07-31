@@ -27,6 +27,15 @@ typedef struct saveblock1 {
 	
 }saveblock1;
 
+typedef struct saveblock2{
+    
+    u8 unkown[0x13];
+    u8 detector_state; //original key swtiching
+    u8 text_speed;
+    u8 sound_state : 1;
+    u8 unkown_2 : 7;
+} saveblock2;
+
 typedef struct custom_memory{
 	
 	//dungeon_data ddata;
@@ -47,6 +56,7 @@ typedef struct custom_memory{
 
 
 saveblock1 **save1 = (saveblock1**)0x03004F58;
+saveblock2 **save2 = (saveblock2**)0x03004F5C;
 custom_memory *cmem = (custom_memory*)0x0203C610;
 
 #endif

@@ -141,3 +141,5 @@ npc_is_tile_blocked = 0x080636AD;
 tile_get_coordinates_player_is_facing = 0x0805C4F5;
 map_get_tile_level = 0x08058D45;
 get_playerfacing = 0x0805C6C5;
+_item_select_pokemon_for_activation = 0x080A17BD;
+bg_virutal_sync_reqeust_push = 0x080F6A39;

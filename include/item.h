@@ -391,3 +391,7 @@ typedef struct item {
 } item;
 
 item* items = (item*)0x083DA518;
+
+void item_field_nature_stone(u8 self);
+
+void item_nature_stone(u8 self, void (*failure_func)());

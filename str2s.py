@@ -46,7 +46,9 @@ def main(argv):
 def print_help():
 	print("--String parser for custom encoding--\n\nUsage:\n-o {name}\tOutput file name" \
 	+"\n-i {name}\tInput file name\n-t {name}\tTable file\n-a {hex/dec}\tTerminating byte to append [default = 0xFF]\nInput file follows format:" \
-	+"\n\tsymbol:\n\t\t=...\nTable file follows format:\n\tsegment = value (.e.g.: 's = 0x44')")
+	+"\n\tsymbol:\n\t\t=...\nTable file follows format:\n\tsegment = value (.e.g.: 's = 0x44')" \
+	+"\n\n++ use '@create ref' in line before symbol defintion to create reference label (for C files) called '{symbol}_ref'")
+	
 	
 def parse_file(infile, outfile, tablefile, terminator):
 	table = parse_table(tablefile)
@@ -57,20 +59,27 @@ def parse_file(infile, outfile, tablefile, terminator):
 	line_cnt = 0
 	symbol = None
 	symbols = {}
+	create_ref = False
 	
 	#now we parse linewise
 	expected_string = False
 	for line in content.split("\n"):
 		line = line.strip("\n\r\t")
+                line = line.lstrip(" ")
 		if len(line):
 			#parse non empty line
 			if expected_string:
 				if line[0] != "=":
 					print("Error in line "+str(line_cnt)+": Expected '='")
 					sys.exit(1)
-				symbols[symbol] = parse_str(line[1:], table, terminator)
+				symbols[symbol] = [parse_str(line[1:], table, terminator), create_ref]
+				#print(symbols)
 				expected_string = False
+				create_ref = False
 			else:
+				if line == "@create ref":
+					create_ref = True
+					continue
 				if line[-1] != ":":
 					print("Error in line "+str(line_cnt)+": Expected ':' at end of symbol")
 					sys.exit(1)
@@ -97,7 +106,7 @@ def parse_str(string, table, terminator):
 				pass
 		
 		if not match:
-			print("Error: Could not parse first char in'"+string+"'")
+			print("Error: Could not parse first char in '"+string+"'")
 			sys.exit(1)
 
 		string = string[len(match):]
@@ -111,16 +120,19 @@ def to_s(outfile, symbols):
 	
 	content = ""
 	for symbol in symbols:
-		content += ".global "+symbol+"\n\n"+symbol+"_data:\n\t.byte "
+		if symbols[symbol][1]: #If this is true we create a ref symbol
+			content += ".global "+symbol+"_ref\n\n.align 4\n"+symbol+"_ref:\n\t.word "+symbol+"\n\n"
+	
+		content += ".global "+symbol+"\n\n"+symbol+":\n\t.byte "
 		#Create bytechain
 		bytestr = None
-		for byte in symbols[symbol]:
+		#print(symbols[symbol])
+		for byte in symbols[symbol][0]:
 			if bytestr:
 				bytestr += ", "+str(byte)
 			else:
 				bytestr = str(byte)
-		content += bytestr+"\n\n.align 4\n\n"+symbol+":\n\t.word "+symbol+"_data\n\n\n"
-		
+		content += bytestr+"\n\n"
 	
 	outfile = open(outfile, "w+")
 	outfile.write(content)
@@ -134,7 +146,9 @@ def parse_table(tablefile):
 		#parse the segments and corresponding values
 		tokens = line.split(" ")
 		if len(tokens) == 3 and tokens[1] == "=":
-			try:
+			try:    
+                                if(tokens[0] == ''):
+                                    tokens[0] = ' '
 				table[tokens[0]] = int(tokens[2], 0)
 				if table[tokens[0]] > 255:
 					raise

@@ -21,14 +21,21 @@ void special_move_npc_to_player(){
     move_npc_to(target, pos[0], pos[1]);
 }
 
-static u8 facings[] = {0xFF, 0x1, 0x0, 0x3, 0x2};
+void special_move_npc_to(){
+    s16 x = (s16)(*vardecrypt(0x8005)+7);
+    s16 y = (s16)(*vardecrypt(0x8006)+7);
+    u8 target = (u8)*vardecrypt(0x8004);
+    move_npc_to(target, x, y);
+}
+
+//static u8 facings[] = {0xFF, 0x1, 0x0, 0x3, 0x2};
 
 void move_npc_to(u8 ow_id, s16 dest_x, s16 dest_y){
     
     u8 npc_id;
     if (get_npc_id_by_overworld(ow_id, (*save1)->map, (*save1)->bank, &npc_id))
         return;
-    
+    *((u8*)0x03004FC4) = npc_id;
     /**
     s16 x_from = npcs[npc_id].dest_x;
     s16 y_from = npcs[npc_id].dest_y;
@@ -37,7 +44,7 @@ void move_npc_to(u8 ow_id, s16 dest_x, s16 dest_y){
     
     int path_len = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id]);
     
-    dyn_move[path_len++] = facings[get_playerfacing()-1];
+    //dyn_move[path_len++] = facings[get_playerfacing()-1];
     dyn_move[path_len++] = 0xFE;
     
     /**Now we generate a move list
@@ -47,32 +54,15 @@ void move_npc_to(u8 ow_id, s16 dest_x, s16 dest_y){
     **/
     
     npc_applymovement(ow_id, (*save1)->map, (*save1)->bank, dyn_move);
-    /*
+    
     u8 cb = spawn_big_callback(move_npc_to_player_free_callback, 10);
     big_callback_set_int(cb, 0, (int)dyn_move);
     big_callbacks[cb].params[2] = ow_id;
     big_callbacks[cb].params[3] = (u16)dest_x;
     big_callbacks[cb].params[4] = (u16)dest_y;
-     */
+    
     
     *((u16*)0x20370B0) = ow_id;
-}
-
-int move_npc_to_player_movegen(s16 from, s16 to, u8 *tar, bool horizontal, int start_at){
-    int processed = 0;
-    while(from != to){
-        u8 move;
-        if (from < to){
-            move = horizontal ? 0x13 : 0x10;
-            from++;
-        }else{
-            move = horizontal ? 0x12 : 0x11;
-            from--;
-        }
-        tar[start_at+processed] = move;
-        processed++;
-    }
-    return processed;
 }
 
 void move_npc_to_player_free_callback(u8 self){

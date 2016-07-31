@@ -5,6 +5,7 @@
 #include "utils.h"
 #include "tile.h"
 #include "npc.h"
+#include "stdint.h"
 
 int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker){
     
@@ -83,6 +84,9 @@ int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker){
         }
         
     }
+    hashmap_free(map);
+    dyn_arr_free(heap);
+    free(walker);
     path[0] = 0xFE;
     return 0;
     

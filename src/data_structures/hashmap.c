@@ -59,7 +59,7 @@ int hashmap_get(u32 key, hashmap *map){
                 return map->buckets[bucket]->array[i].value;
         }
     }
-    return NULL;
+    return 0;
 }
 
 void hashmap_put(u32 key, int value, hashmap *map){

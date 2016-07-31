@@ -127,4 +127,6 @@ int big_callback_get_int(u8 callback, u8 var);
 void tile_get_coordinates_player_is_facing(s16 *x, s16 *y);
 u8 map_get_tile_level(s16 x, s16 y);
 u8 get_playerfacing();
+void _item_select_pokemon_for_activation (u8 self);
+void bg_virutal_sync_reqeust_push(u8 bg_id);
 #endif

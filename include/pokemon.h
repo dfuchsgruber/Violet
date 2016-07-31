@@ -9,12 +9,12 @@
 #define LANGUAGE_KOR 0x206
 #define LANGUAGE_ESP 0x207
 
-#define NATURE_ROBUST 0
-#define NATURE_SOLO 1
-#define NATURE_MUTIG 2
-#define NATURE_HART 3
-#define NATURE_FRECH 4
-#define NATURE_KUEHN 5
+#define NATURE_ROBUST 0 //+a-a
+#define NATURE_SOLO 1 //+a-d
+#define NATURE_MUTIG 2 //+a-i
+#define NATURE_HART 3 //+a-sa
+#define NATURE_FRECH 4 //+a-sd
+#define NATURE_KUEHN 5 //+v-a
 #define NATURE_SANFT 6
 #define NATURE_LOCKER 7
 #define NATURE_PFIFFIG 8
@@ -104,9 +104,21 @@ typedef struct marking {
 	u8 padding : 4;
 }marking;
 
+
+typedef union{
+	u32 value;
+	struct pid{
+            u32 ability : 1;
+            u32 gender_partial : 7;
+            u32 shinyness : 16;
+            u32 nature : 5;
+            u32 form : 3;
+        } fields;
+} pid;
+
 typedef struct pokemon {
 	
-	u32 pid;
+	pid pid;
 	u32 tid;
 	u8 nickname [10];
 	u16 language;
@@ -114,7 +126,7 @@ typedef struct pokemon {
 	marking markings;
 	u16 checksum;
 	u16 padding;
-	u16 encrypted_substructure [48];
+	u16 encrypted_substructure [24];
 	u32 status_condition;
 	u8 level;
 	u8 pokerus_remaining_byte;
@@ -128,18 +140,7 @@ typedef struct pokemon {
 	
 } pokemon;
 
-typedef struct pid{
-	u32 ability : 1;
-	u32 gender_partial : 7;
-	u32 shinyness : 16;
-	u32 nature : 5;
-	u32 form : 3;
-} pid;
 
-union u_pid {
-	u32 value;
-	pid bitfield;
-};
 
 pokemon *player_pokemon = (pokemon*)0x02024284;
 pokemon *opponent_pokemon = (pokemon*)0x0202402C;
