@@ -44,6 +44,10 @@ special_table equ 0x0815FCC0
         .word special_move_npc_to | 1// replace with real special 0x24
         .pool
 
+.org (special_table + (0x25 * 4))
+        .word special_gamble_remove | 1
+        .pool
+
 /// From 0x2B are 7 free specials
 
 .org (special_table +(0x36 *4))

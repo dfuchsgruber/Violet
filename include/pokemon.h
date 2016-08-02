@@ -146,5 +146,6 @@ pokemon *player_pokemon = (pokemon*)0x02024284;
 pokemon *opponent_pokemon = (pokemon*)0x0202402C;
 
 void outdoor_move_buffer_load(pokemon *pokemon, u8 index);
+void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
 
 #endif

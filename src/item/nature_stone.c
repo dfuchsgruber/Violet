@@ -69,14 +69,22 @@ void item_nature_stone(u8 self, void (*failure_func)()){
         possible = true;
         new_positive = current_positive;
     }
-    sound(5);
     if(possible){
-        
+        sound(114);
         //Now we compute the new nature
         u8 new_nature = (u8)(new_positive * 5 + new_negative);
         player_pokemon[*pokemenu_selected_pokemon_team_index].pid.fields.nature = new_nature;
         //Todo remove item and return to bag
+        item_remove(*item_activated, 1);
+        u8 *buffer0 = (u8*)0x02021CD0;
+        pokemon_load_name_as_string(&player_pokemon[*pokemenu_selected_pokemon_team_index], buffer0);
+        u8 *strbuf = (u8*)0x02021D18;
+        string_decrypt(strbuf, str_nature_stone_sucess_ref);
+        pokemenu_init_textrenderer(strbuf, 1); //String @"Es wird keine Wirkung haben"
+        bg_virutal_sync_reqeust_push(2);
+        big_callbacks[self].function = failure_func;//0x8125711;
     }else{
+        sound(5);
         pokemenu_init_textrenderer((u8*)0x08416824, 1); //String @"Es wird keine Wirkung haben"
         //pokemenu_init_textrenderer(str_nature_stone_sucess_ref, 1);
         bg_virutal_sync_reqeust_push(2);

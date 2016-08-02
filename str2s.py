@@ -64,8 +64,8 @@ def parse_file(infile, outfile, tablefile, terminator):
 	#now we parse linewise
 	expected_string = False
 	for line in content.split("\n"):
-		line = line.strip("\n\r\t")
-                line = line.lstrip(" ")
+				line = line.strip("\n\r\t")
+				line = line.lstrip(" ")
 		if len(line):
 			#parse non empty line
 			if expected_string:
@@ -146,9 +146,9 @@ def parse_table(tablefile):
 		#parse the segments and corresponding values
 		tokens = line.split(" ")
 		if len(tokens) == 3 and tokens[1] == "=":
-			try:    
-                                if(tokens[0] == ''):
-                                    tokens[0] = ' '
+			try:
+				if(tokens[0] == ''):
+					tokens[0] = ' '
 				table[tokens[0]] = int(tokens[2], 0)
 				if table[tokens[0]] > 255:
 					raise

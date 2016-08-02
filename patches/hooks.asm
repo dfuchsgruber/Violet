@@ -18,3 +18,4 @@
 .include "patches/gfx.asm"
 .include "patches/fieldmoves.asm"
 .include "patches/item.asm"
+.include "patches/pokepad.asm"

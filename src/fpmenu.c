@@ -3,6 +3,7 @@
 #include "oams.h"
 #include "fpmenu.h"
 #include "utils.h"
+#include "bg.h"
 
 #define bgset 0x93c1b00
 #define bgmap 0x93c2700

@@ -1,3 +1,3 @@
 @create ref
 str_nature_stone_sucess:
-        =Das Wesen von \b\1 hat\nsich geändert.
+        =Das Wesen von \b\2 hat\nsich geändert.\w\9

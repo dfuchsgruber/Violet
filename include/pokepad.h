@@ -19,20 +19,26 @@ extern "C" {
 
     typedef struct pokepad_item{
         u16 flag;
-        pstring string;
-        void (*script)();
+        u8 *string;
+        void (*func)();
         pstring description;
     }pokepad_item;
     
     typedef struct pokepad_memory{
         u8 items [12];
         u8 current_item;
-        u8 status;
+        u8 item_cnt;
+        void *bg1set;
+        void *buttonset;
+        u8 tboxes [12]; // 12 boxes for the item text
     } pokepad_memory;
     
-    void startmenu_init_pokepad();
-    void pokepad_callback();
+    bool startmenu_init_pokepad();
+    void pokepad_callback_init();
     void pokepad_init_components();
+    void pokepad_show_components();
+    void pokepad_build_buttons(void *tilemap);
+    void pokepad_draw_button(void *tilemap, u8 x, u8 y, u8*string, u16 start_tile);
 
 #ifdef	__cplusplus
 }
