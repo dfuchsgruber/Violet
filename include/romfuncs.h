@@ -1,7 +1,6 @@
 #ifndef H_ROMFUNCS
 #define H_ROMFUNCS
 #include <stdbool.h>
-#include "romfuncs.h"
 #include "stddef.h"
 
 //static functions in ROM
@@ -21,11 +20,6 @@ void cb1handling();
 void bg_copy_vram(u8 bgid, void*source, u16 size, u16 starttile, u8 mode);
 void cpuset (void*source, void*destination, int cnt_and_mode);
 void cpufastset (u32*source, u32*destination, u32 cnt_and_mode);
-u32* translate_text_data_into_box(u8* freespace, u8 bgid, u8 x, u8 y, u8 w, u8 h, u8 palID, u16 startTile);
-u8 spawn_tbox(u8*boxdata);
-void fill_box_bg (u8 boxid, u8 filler);
-void prepeare_bg_for_tbox(u8 boxid);
-void display_tbox_transbg (u8 boxid, u8 font, u8 unkown, u8 border_distance, u8 line_distance_u, u8 line_distance_l, u8* font_col_map, u8 display_all_boxes, u8 text[]);
 u32* bg_get_tilemap (u8 bgid);
 u32 get_pokemons_attribute (void*pokemon_offset, int requested_attribute, void*freespace);
 u32 set_pokemons_attribute (void*pokemon_offset, u16 requested_attribute, void*values);
@@ -33,7 +27,7 @@ u8 charlen_of_hex_value_dec_format(u32 value);
 void hex_to_dec_String (u8*dest, u32 value, u8 mode, u8 charlength);
 void memcopy (void* dest, void*source, u32 size);
 void recalculate_stats(void*pokemon_offset);
-void load_uncomp_pal_into_RAM(void*source, u16 dest_col, u16 bytecount);
+void load_uncomp_pal_into_RAM(const void *source, u16 dest_col, u16 bytecount);
 u8 countpokemon();
 void cry(u16 pokeID, u8 feature);
 void sound(u16 soundID);
@@ -90,8 +84,8 @@ void warp_setup_callbacks();
 void script_wait_for_warp();
 void script_halt();
 void dma3_controller_reset();
-void bghscrollset(u8 bgid, int x, int y);
-void bgvscrollset(u8 bgid, int x, int y);
+void bg_virtual_map_displace(u8 bg_id, u16 value, int mode);
+void bg_virtual_set_displace(u8 bg_id, u16 value, int mode);
 //
 u32 __umod (u32 dividend, u32 divisor);
 int __sqrt(int x);
@@ -136,4 +130,7 @@ void dma0_cb_reset();
 void set_callback3(void (*function)());
 void overworld_free();
 void bg_virtual_sync(u8 bg_id);
+void return_to_pokemenu();
+void pokemenu_init(u8 a, u8 b, u8 c, u8 d, u8 e, void (*func1)(), void (*return_callback)());
+void malloc_init(void *start, u32 size);
 #endif

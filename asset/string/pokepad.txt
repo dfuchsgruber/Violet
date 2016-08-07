@@ -1,3 +1,61 @@
-
+@create ref
 str_pokepad_wondertrade:
         =Wundertausch
+
+str_pokepad_wondertrade_desc:
+        =Tausche Pok\emon mit Trainern\naus aller Welt.
+
+str_pokepad_pokeradar:
+        =Pok\eradar
+
+@create ref
+str_pokepad_l:
+        =L
+
+@create ref
+str_pokepad_r:
+        =R
+
+@create ref
+str_pokepad_registered:
+        =Die \b\2-App wurde auf der\n\b\3-Taste registriert.
+
+@create ref
+str_pokepad_deregistered:
+        =Die \b\2-App ist nicht länger\nauf der \b\3-Taste registriert.
+
+@create ref
+str_wondertrade_not_possible_script:
+        =Verbindung zum Wundertausch-\nNetzwerk fehlgeschlagen (\b\2/250).
+
+@create ref
+str_wondertrade_level:
+        =Level:
+
+@create ref
+str_wondertrade_bronze:
+        =Bronze
+
+@create ref
+str_wondertrade_silver:
+        =Silber
+
+@create ref
+str_wondertrade_gold:
+        =Gold
+
+@create ref
+str_wondertrade_platin:
+        =Platin
+
+@create ref
+str_wondertrade_anzahl:
+        =Anzahl:
+
+@create ref
+str_wondertrade_next:
+        =Nächst. Lv.:
+
+@create ref
+str_wondertrade_none:
+        =---

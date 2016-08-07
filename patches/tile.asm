@@ -14,3 +14,7 @@
 	bx r0
 	.pool
 	
+.org 0x0806CA94
+        ldr r0, =pokepad_outdoor_trigger | 1
+        bx r0
+        .pool

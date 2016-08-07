@@ -6,7 +6,8 @@
 #include "anim_engine.h"
 #include "superstate.h"
 #include "color.h"
-
+#include "bg.h"
+#include "text.h"
 
 
 /**
@@ -275,7 +276,7 @@ void cmdx09_bg_reset(ae_memory* mem){
 
 void cmdx0A_bg_setup(ae_memory* mem){
 	//command 0xA: bg_setup
-	bg_setup(anim_engine_read_byte(mem), (void*)anim_engine_read_word(mem), anim_engine_read_byte(mem));
+	bg_setup(anim_engine_read_byte(mem), (bg_config*)anim_engine_read_word(mem), anim_engine_read_byte(mem));
 }
 
 void cmdx0B_bg_sync_and_show(ae_memory* mem){
@@ -366,11 +367,11 @@ void cmdx14_prepare_tbox(ae_memory*mem){
 	u8 palID = anim_engine_read_byte(mem);
 	u16 startTile = anim_engine_read_hword(mem);
 	if (target_var < 0x10){
-		u8 boxdata[8];
-		translate_text_data_into_box(boxdata, bgid, x, y, w, h, palID, startTile);
-		u8 boxid = spawn_tbox(boxdata);
-		fill_box_bg(boxid, 0);
-		prepeare_bg_for_tbox(boxid);
+		tboxdata boxdata;
+		tbox_data_new(&boxdata, bgid, x, y, w, h, palID, startTile);
+		u8 boxid = tbox_new(&boxdata);
+		tbox_flush(boxid, 0);
+		tbox_tilemap_draw(boxid);
 		mem->vars[target_var] = boxid;
 	}
 	
@@ -393,8 +394,8 @@ void cmdx15_display_text_inst (ae_memory* mem){
 	u8* ram_buffer = (u8*)0x02021D18;
 	string_decrypt(ram_buffer, string);
 	
-	fill_box_bg(boxid, 0);
-	display_tbox_transbg(boxid, font_id, unkown, border_distance, line_distance_u, line_distance_l, font_map, display_flag, ram_buffer );
+	tbox_flush(boxid, 0);
+	tbox_print_string(boxid, font_id, unkown, border_distance, line_distance_u, line_distance_l, font_map, display_flag, ram_buffer );
 	bg_copy_vram(bgid, bg_get_tilemap(bgid), 0x800, 0x0, 0x2);
 	
 }
@@ -513,9 +514,9 @@ void anim_engine_text_renderer(u8 self){
             *mem->destination = 0xFF;
             
             //draw the text
-            fill_box_bg(mem->boxid, 0);
+            tbox_flush(mem->boxid, 0);
             void *src = (void*)0x02021D18;
-            display_tbox_transbg(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, src);
+            tbox_print_string(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, src);
             bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
             break;
         }
@@ -835,8 +836,8 @@ void cmdx27_dma3_controller_reset(){
 void cmdx28_bg_scroll_reset(){
     int i;
     for (i = 0; i < 4; i++){
-        bghscrollset((u8)i, 0, 0); 
-        bgvscrollset((u8)i, 0, 0);
+        bg_virtual_map_displace((u8)i, 0, 0); 
+        bg_virtual_set_displace((u8)i, 0, 0);
     }
 }
 

@@ -4,6 +4,7 @@
 #include "fpmenu.h"
 #include "utils.h"
 #include "bg.h"
+#include "text.h"
 
 #define bgset 0x93c1b00
 #define bgmap 0x93c2700
@@ -55,7 +56,7 @@ void fp_callback(){
 				
 				//building the bgs
 				u32 bgcnfgs [2] = {0x1F8, 0x11D1};
-				bg_setup (0, &bgcnfgs, 2);
+				bg_setup (0, (bg_config*)bgcnfgs, 2);
 				bg_sync_display_and_show(0);
 				bg_sync_display_and_show(1);
 				bg_hide(2);
@@ -333,17 +334,17 @@ void fp_callback(){
 }
 
 u8 setup_textbox(u8 bgid, u8 x, u8 y, u8 w, u8 h, u8 palID, u16 startTile){
-	u8 boxdata[8];
-	translate_text_data_into_box(boxdata, bgid, x, y, w, h, palID, startTile);
-	u8 boxid = spawn_tbox(boxdata);
-	fill_box_bg(boxid, 0);
-	prepeare_bg_for_tbox(boxid);
+	tboxdata boxdata;
+	tbox_data_new(&boxdata, bgid, x, y, w, h, palID, startTile);
+	u8 boxid = tbox_new(&boxdata);
+	tbox_flush(boxid, 0);
+	tbox_tilemap_draw(boxid);
 	return boxid;
 }
 
 void fp_display_box(u8 boxid, u8 font, u8 unkown, u8 border_distance, u8 line_distance_u, u8 line_distance_l, u8*font_col_map, u8 display_all_boxes, u8*text){
-	fill_box_bg(boxid, 0);
-	display_tbox_transbg(boxid, font, unkown, border_distance, line_distance_u, line_distance_l, font_col_map, display_all_boxes, text );
+	tbox_flush(boxid, 0);
+	tbox_print_string(boxid, font, unkown, border_distance, line_distance_u, line_distance_l, font_col_map, display_all_boxes, text );
 }
 
 //loads all stat-related values of a pokemon

@@ -8,6 +8,8 @@
 #ifndef BG_H
 #define	BG_H
 
+#include "text.h"
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
@@ -20,9 +22,10 @@ extern "C" {
         u32 color_mode : 1;
         u32 priority : 2;
     } bg_config;
-
-
-void bg_setup (u8 tile_mode, bg_config configs[], u8 config_cnt);
+     
+    tbox *tboxes = (tbox*)0x020204B4;
+    
+    void bg_setup (u8 tile_mode, bg_config configs[], u8 config_cnt);
 
 #ifdef	__cplusplus
 }

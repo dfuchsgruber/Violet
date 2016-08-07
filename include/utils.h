@@ -10,6 +10,4 @@ int signum (int i);
 
 bool is_fading();
 
-void oam_null_callback(oam_object *self);
-
 #endif

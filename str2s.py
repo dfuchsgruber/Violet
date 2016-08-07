@@ -64,8 +64,8 @@ def parse_file(infile, outfile, tablefile, terminator):
 	#now we parse linewise
 	expected_string = False
 	for line in content.split("\n"):
-				line = line.strip("\n\r\t")
-				line = line.lstrip(" ")
+		line = line.strip("\n\r\t")
+		line = line.lstrip(" ")
 		if len(line):
 			#parse non empty line
 			if expected_string:
@@ -122,7 +122,6 @@ def to_s(outfile, symbols):
 	for symbol in symbols:
 		if symbols[symbol][1]: #If this is true we create a ref symbol
 			content += ".global "+symbol+"_ref\n\n.align 4\n"+symbol+"_ref:\n\t.word "+symbol+"\n\n"
-	
 		content += ".global "+symbol+"\n\n"+symbol+":\n\t.byte "
 		#Create bytechain
 		bytestr = None

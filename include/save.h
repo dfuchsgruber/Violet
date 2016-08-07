@@ -50,13 +50,22 @@ typedef struct custom_memory{
 	u8 trash_flags[16];
         rtc_timestamp a_gen_time;
         u8 a_vector[4];
-        pokepad_memory *pad_mem;
 	
 }custom_memory;
 
+typedef struct{
+        u8 dmap_status;
+        u8 unused_1;
+        u8 unused_2;
+        u8 unused_3;
+        pokepad_memory *pad_mem;
+        wondertrade_memory *wtrade_mem;
+    
+}floating_memory;
 
 saveblock1 **save1 = (saveblock1**)0x03004F58;
 saveblock2 **save2 = (saveblock2**)0x03004F5C;
 custom_memory *cmem = (custom_memory*)0x0203C610;
+floating_memory *fmem = (floating_memory*)0x0203CEC4;
 
 #endif

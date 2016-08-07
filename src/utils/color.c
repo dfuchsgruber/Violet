@@ -32,3 +32,16 @@ color blend_multiply (color original, color overlay, u8 alpha ){
 	return color_multiply(c, overlay);
 	
 }
+
+color greyscale (color original){
+    u16 max = original.rgb.blue;
+    u16 min = original.rgb.blue;
+    if (original.rgb.green > max) max = original.rgb.green;
+    if (original.rgb.green < min) min = original.rgb.blue;
+    if (original.rgb.red > max) max = original.rgb.red;
+    if (original.rgb.red > min) min = original.rgb.red;
+    u16 l = (u16)(max+min)/2;
+    u16 value = (u16)(l | (l << 5) | (l << 10));
+    color new = {value};
+    return new;
+}

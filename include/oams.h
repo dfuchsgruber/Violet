@@ -3,6 +3,7 @@
 #define OAM_OBJECT(x) ((oam_object*)((x*0x44)+0x0202063C))
 
 #define ROTSCALE_TABLE_NULL (rotscale_frame**)0x08231BCC
+#define GFX_ANIM_TABLE_NULL (frame**)0x08231Bc0
 
 struct oam_object;
 typedef struct oam_object oam_object;
@@ -97,5 +98,7 @@ void gfx_init_animation (oam_object* oam, u8 next_frame);
 void rotscal_new_animation (oam_object* oam, u8 animation_index);
 u8 get_obj_pal_by_tag(u16 tag);
 u16 get_obj_tile_by_tag(u16 tag);
+
+void oam_null_callback(oam_object *self);
 
 #endif

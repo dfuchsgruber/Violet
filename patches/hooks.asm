@@ -19,3 +19,8 @@
 .include "patches/fieldmoves.asm"
 .include "patches/item.asm"
 .include "patches/pokepad.asm"
+
+//Remove Help-System
+.org 0x0813B90C
+    mov r0, #0
+    bx lr
