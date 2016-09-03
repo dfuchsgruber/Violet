@@ -8808,7 +8808,7 @@ basestat basestats[POKEMON_CNT] = {
 	{
 		85, 110, 76, 56, 65, 82,    //basestat values (hp, att, def, spe, satk, sdef)
 		TYPE_GHOST, TYPE_GRASS,   //types
-		90,   //catch rate
+		255,   //catch rate
 		190,   //exp yield
 		{0, 2, 0, 0, 0, 0, 0},   //ev yield (hp, atk, def, spe, satk, sdef)
 		ITEM_NONE, ITEM_TSITRUBEERE,    //common, rare item

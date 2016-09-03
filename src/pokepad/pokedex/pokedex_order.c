@@ -507,55 +507,55 @@ u16 pokedex_order[POKEMON_CNT-1] = {
 	// POKEMON_CELEBI
 	0xfb,
 	// POKEMON_BISAFLORM
-	0x183,
+	0,
 	// POKEMON_GLURAKM
-	0x184,
+	0,
 	// POKEMON_AQUANAM
-	0x185,
+	0,
 	// POKEMON_BLITZAM
-	0x186,
+	0,
 	// POKEMON_FLAMARM
-	0x187,
+	0,
 	// POKEMON_DURENGARDA
-	0x188,
+	0,
 	// POKEMON_IN
-	0x189,
+	0,
 	// POKEMON_GAME
-	0x18a,
+	0,
 	// POKEMON_TURTOKM
-	0x18b,
+	0,
 	// POKEMON_AMPHARAOSM
-	0x18c,
+	0,
 	// POKEMON_GENGARM
-	0x18d,
+	0,
 	// POKEMON_BIBORM
-	0x18e,
+	0,
 	// POKEMON_ALTARIAM
-	0x18f,
+	0,
 	// POKEMON_GEOWAZM
-	0x190,
+	0,
 	// POKEMON_SENGOM
-	0x191,
+	0,
 	// POKEMON_VIPITISM
-	0x192,
+	0,
 	// POKEMON_ZOBIRISM
-	0x193,
+	0,
 	// POKEMON_10d
-	0x194,
+	0,
 	// POKEMON_10e
-	0x195,
+	0,
 	// POKEMON_10f
-	0x196,
+	0,
 	// POKEMON_110
-	0x197,
+	0,
 	// POKEMON_111
-	0x198,
+	0,
 	// POKEMON_112
-	0x199,
+	0,
 	// POKEMON_113
-	0x19a,
+	0,
 	// POKEMON_114
-	0x19b,
+	0,
 	// POKEMON_LOCKSCHAL
 	0xfc,
 	// POKEMON_STICHSCHAL
@@ -827,7 +827,7 @@ u16 pokedex_order[POKEMON_CNT-1] = {
 	// POKEMON_PALIMPALIM
 	0x166,
 	// POKEMON_EGG
-	0xfc,
+	0x0,
 	// POKEMON_ICOGNITO_B
 	0x0,
 	// POKEMON_ICOGNITO_C
@@ -883,7 +883,7 @@ u16 pokedex_order[POKEMON_CNT-1] = {
 	// POKEMON_ICOGNITO_QUESTION
 	0x0,
         // POKEMON_TEST
-        0x0
+        387
 };
 
 u16 pokemon_get_display_number(u16 species){
@@ -900,5 +900,15 @@ u16 pokemon_get_display_number(u16 species){
         return 0xFFFF;
     return id;
     
-    while(true){}
+}
+
+u16 pokedex_get_species_by_dex_id (u16 dex_id){
+    if(!dex_id)
+        return NULL;
+    u16 i;
+    for (i = 0; i < POKEMON_CNT-1; i++){
+        if(pokedex_order[i] == dex_id)
+            return i;
+    }
+    return 0;
 }

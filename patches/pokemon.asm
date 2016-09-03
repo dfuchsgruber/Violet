@@ -871,3 +871,24 @@
         ldr r1, =pokemon_get_basis_stage | 1
         bx r1
         .pool
+
+.org 0x08043100
+        ldr r3, =pokedex_get_species_by_dex_id | 1
+        bx r3
+        .pool
+
+.org 0x8106904
+	.word pokedex_habitats
+
+.org 0x8106944
+	.word pokedex_habitats
+
+.org 0x8106a0c
+	.word pokedex_habitats
+
+.org 0x8106a74
+	.word pokedex_habitats
+
+.org 0x8106b14
+	.word pokedex_habitats
+

@@ -46,3 +46,7 @@
 	.word hook_pokemon_destroy_trigger | 1
 	.pool
 	
+.org 0x08079D20
+        ldr r1, =mega_reset | 1
+        bx r1
+        .pool 

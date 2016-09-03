@@ -4,9 +4,12 @@
 .align 2
 .thumb
 
-.equ table, 0x9189000
+.global mega_reset
 
-main:
+.equ table, megas
+
+.thumb_func
+mega_reset:
 push {r4, lr}
 lsl r0, #0x18
 lsr r4, r0, #0x18
@@ -34,7 +37,7 @@ mov r1, #0xB
 mov r2, #0
 bl get_attr
 
-ldr r1, =0x9189000 @mega table
+ldr r1, =table @mega table
 ldr r2, =0xFFFF @termination
 
 scan_table:

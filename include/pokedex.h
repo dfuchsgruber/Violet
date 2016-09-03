@@ -87,6 +87,17 @@ extern "C" {
         u16 unused_2;
     }pokedex_data;
     
+    typedef struct{
+        u16 *data;
+        int page_size;
+    }pokedex_page;
+    
+    typedef struct{
+        pokedex_page *pages;
+        int page_cnt;
+    }pokedex_habitat;
+    
+    
 
     void pokedex_init_components();
     void pokedex_callback_init();
@@ -124,6 +135,7 @@ extern "C" {
     pokedex_data *pokedex_get_data(u16 dex_id);
     bool national_dex_is_achieved();
     u16 pokemon_get_display_number(u16 species);
+    u16 pokedex_get_species_by_dex_id (u16 dex_id);
     
     u16 pokedex_order[POKEMON_CNT-1];
     
