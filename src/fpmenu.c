@@ -2,6 +2,7 @@
 #include "romfuncs.h"
 #include "oams.h"
 #include "fpmenu.h"
+#include "pokemon.h"
 #include "utils.h"
 #include "bg.h"
 #include "text.h"
@@ -53,7 +54,8 @@ void fp_callback(){
 				remove_all_big_callbacks();
 				pokemenu_free();
 				oam_reset();
-				
+				pal_allocation_reset();
+                                
 				//building the bgs
 				u32 bgcnfgs [2] = {0x1F8, 0x11D1};
 				bg_setup (0, (bg_config*)bgcnfgs, 2);
@@ -121,10 +123,10 @@ void fp_callback(){
 				graphic graphic_arrow = {(void*)arrowup,0x80,0x1338};
 				graphic graphic_arrow2 = {(void*)arrowleft,0x80,0x1339};
 				
-				oam_template arrow_template_up ={0x1338, 0xFFFF, &arrow_up_final_oam, (frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, oam_null_callback};
-				oam_template arrow_template_down ={0x1338, 0xFFFF, &arrow_down_final_oam, (frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, oam_null_callback};
-				oam_template arrow_template_left ={0x1339, 0xFFFF, &arrow_left_final_oam, (frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, oam_null_callback};
-				oam_template arrow_template_right ={0x1339, 0xFFFF, &arrow_right_final_oam, (frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, oam_null_callback};
+				oam_template arrow_template_up ={0x1338, 0xFFFF, &arrow_up_final_oam, (gfx_frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, oam_null_callback};
+				oam_template arrow_template_down ={0x1338, 0xFFFF, &arrow_down_final_oam, (gfx_frame**)0x08231Bc0, &graphic_arrow,(rotscale_frame**)0x08231Bcc, oam_null_callback};
+				oam_template arrow_template_left ={0x1339, 0xFFFF, &arrow_left_final_oam, (gfx_frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, oam_null_callback};
+				oam_template arrow_template_right ={0x1339, 0xFFFF, &arrow_right_final_oam, (gfx_frame**)0x08231Bc0, &graphic_arrow2,(rotscale_frame**)0x08231Bcc, oam_null_callback};
 				
 				load_and_alloc_obj_vram_lz77(&graphic_arrow);
 				load_and_alloc_obj_vram_lz77(&graphic_arrow2);
@@ -271,11 +273,11 @@ void fp_callback(){
 						mem->redraw_request = 0x0;
 					}else{
 						
-						u32 *tileset = (mem->redraw_request == 0xFFFE) ? (u32*)0x8e3b4cc : *((u32**)(0x08234F7C+(mem->redraw_request<<3)));
+						u32 *tileset = (mem->redraw_request == 0xFFFE) ? (u32*)0x8e3b4cc : pokemon_frontsprites[mem->redraw_request].sprite;
 						u32 *palette = (u32*)0x8E3B680;
 						if (mem->redraw_request != 0xFFFE){
 							palette = ((((*((u32*)(0x02024284+mem->current_slot*0x64)))<<0x8)>>0x10)>0x200)?
-							(u32*)(*((u32*)(0x082371DC+(mem->redraw_request<<3)))):(u32*)(*((u32*)(0x08237F9C+(mem->redraw_request<<3))));
+                                                            pokemon_pals[mem->redraw_request].pal : pokemon_shiny_pals[mem->redraw_request].pal;
 						}
 						
 						
@@ -514,15 +516,13 @@ void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, fp_memory* mem){
 		if (mem->oam_pokepic == 0xFF){
 			//initialize pokepic 
 			sprite s = {0,0xc000, 0x0, 0x0};
-			graphic g = {(void*)(*((u32*)(0x08234F7C+(spezies<<3)))),0x800,0x1337};
-			oam_template template = {0x1337, 0xFFFF, &s, (frame**)0x08231Bc0, &g, (rotscale_frame**)0x08231Bcc, oam_null_callback};
-			mem->pokepic_start_tile = load_and_alloc_obj_vram_lz77(&g);
+			oam_template template = {spezies, 0xFFFF, &s, (gfx_frame**)0x08231Bc0, &pokemon_frontsprites[spezies], (rotscale_frame**)0x08231Bcc, oam_null_callback};
+			mem->pokepic_start_tile = load_and_alloc_obj_vram_lz77(&pokemon_frontsprites[spezies]);
 			mem->oam_pokepic = generate_oam_forward_search(&template, 64, 56, 0);
 			
 			//palette of pokepic
-			u32* palette = ((((*((u32*)pokemon_offset))<<0x8)>>0x10)>0x200)?(u32*)(*((u32*)(0x082371DC+(spezies<<3)))):(u32*)(*((u32*)(0x08237F9C+(spezies<<3))));
-			lz77uncompwram(palette,(u32*)(0x0201C000));
-			load_uncomp_pal_into_RAM((u32*)(0x0201C000), 0x100, 0x20);
+			void* palette = ((((*((u32*)pokemon_offset))<<0x8)>>0x10)>0x200)?pokemon_pals[spezies].pal : pokemon_shiny_pals[spezies].pal;
+			load_comp_pal_into_RAM(palette, 256, 32);
 		}else{
 			//update pokepic
 			if (isEgg){

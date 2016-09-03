@@ -187,22 +187,22 @@ typedef struct wild_pokemon_rod_data{
 	wild_pokemon_entry entries[8];
 }wild_pokemon_rod_data;
 
-union wild_pokemon_general_data{
+typedef union {
 	wild_pokemon_grass_data grass;
 	wild_pokemon_water_data water;
 	wild_pokemon_other_data other;
 	wild_pokemon_rod_data rod;
-};
+}wild_pokemon_general_data;
 
 typedef struct wild_pokemon_habitat{
 	u8 frequency;
 	u8 field_1;
 	u8 field_2;
 	u8 field_3;
-	union wild_pokemon_general_data *data;
+	wild_pokemon_general_data *data;
 }wild_pokemon_habitat;
 
-typedef struct wild_pokemon_data{
+typedef struct{
 	u8 bank;
 	u8 map;
 	u8 field_2;
@@ -214,11 +214,12 @@ typedef struct wild_pokemon_data{
 	
 }wild_pokemon_data;
 
-
+u16 map_wild_pokemon_get_current_table_id(); //returns 0xFFFF if none matches
 
 mapbank **mapbank_table_ptr = (mapbank**) 0x0805526C;
 mapfooter ***main_map_table_ptr = (mapfooter***) 0x080551B4;
 tileset *tilesets = (tileset*)0x082D49B8;
+wild_pokemon_data **wild_pokemon_data_ptr = (wild_pokemon_data**)0x080828F4;
 
 mapheader *get_mapheader(u8 bank, u8 map);
 mapfooter *get_mapfooter();

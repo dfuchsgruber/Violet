@@ -1,3 +1,45 @@
+#ifndef H_BASESTATS
+#define H_BASESTATS
+
+#include "types.h"
+#include "pokemon.h"
+
+#define TYPE_NORMAL 0
+#define TYPE_FIGHTING 1
+#define TYPE_FLYING 2
+#define TYPE_POISON 3
+#define TYPE_GROUND 4
+#define TYPE_ROCK 5
+#define TYPE_BUG 6
+#define TYPE_GHOST 7
+#define TYPE_STEEL 8
+#define TYPE_FAIRY 9
+#define TYPE_FIRE 10
+#define TYPE_WATER 11
+#define TYPE_GRASS 12
+#define TYPE_ELECTRIC 13
+#define TYPE_PSYCHIC 14
+#define TYPE_ICE 15
+#define TYPE_DRAGON 16
+#define TYPE_DARK 17
+
+#define EGG_GROUP_NONE 0
+#define EGG_GROUP_MONSTER 1
+#define EGG_GROUP_WATER_1 2
+#define EGG_GROUP_BUG 3
+#define EGG_GROUP_FLYING 4
+#define EGG_GROUP_FIELD 5
+#define EGG_GROUP_FAIRY 6
+#define EGG_GROUP_GRASS 7
+#define EGG_GROUP_HUMAN 8
+#define EGG_GROUP_WATER_3 9
+#define EGG_GROUP_MINERAL 10
+#define EGG_GROUP_AMORPHUS 11
+#define EGG_GROUP_WATER_2 12
+#define EGG_GROUP_DITTO 13
+#define EGG_GROUP_DRAGON 14
+#define EGG_GROUP_UNDISCOVERED 15
+
 #define POKEMON_POKEMON_0 0x0
 #define POKEMON_BISASAM 0x1
 #define POKEMON_BISAKNOSP 0x2
@@ -410,8 +452,38 @@
 #define POKEMON_JIRACHI 0x199
 #define POKEMON_DEOXYS 0x19a
 #define POKEMON_PALIMPALIM 0x19b
+#define POKEMON_EGG 0x19C
+#define POKEMON_ICOGNITO_B 0x19d
+#define POKEMON_ICOGNITO_C 0x19e
+#define POKEMON_ICOGNITO_D 0x19f
+#define POKEMON_ICOGNITO_E 0x1a0
+#define POKEMON_ICOGNITO_F 0x1a1
+#define POKEMON_ICOGNITO_G 0x1a2
+#define POKEMON_ICOGNITO_H 0x1a3
+#define POKEMON_ICOGNITO_I 0x1a4
+#define POKEMON_ICOGNITO_J 0x1a5
+#define POKEMON_ICOGNITO_K 0x1a6
+#define POKEMON_ICOGNITO_L 0x1a7
+#define POKEMON_ICOGNITO_M 0x1a8
+#define POKEMON_ICOGNITO_N 0x1a9
+#define POKEMON_ICOGNITO_O 0x1aa
+#define POKEMON_ICOGNITO_P 0x1ab
+#define POKEMON_ICOGNITO_Q 0x1ac
+#define POKEMON_ICOGNITO_R 0x1ad
+#define POKEMON_ICOGNITO_S 0x1ae
+#define POKEMON_ICOGNITO_T 0x1af
+#define POKEMON_ICOGNITO_U 0x1b0
+#define POKEMON_ICOGNITO_V 0x1b1
+#define POKEMON_ICOGNITO_W 0x1b2
+#define POKEMON_ICOGNITO_X 0x1b3
+#define POKEMON_ICOGNITO_Y 0x1b4
+#define POKEMON_ICOGNITO_Z 0x1b5
+#define POKEMON_ICOGNITO_EXL 0x1B6
+#define POKEMON_ICOGNITO_QUE 0x1B7
+#define POKEMON_TEST 0x1B8
 
-typedef struct basestats {
+
+typedef struct {
 	u8 base_hp;
 	u8 base_atk;
 	u8 base_def;
@@ -422,7 +494,15 @@ typedef struct basestats {
 	u8 type2;
 	u8 catch_rate;
 	u8 exp_yield;
-	u16 ev_yield;
+	struct {
+            u16 hp : 2;
+            u16 att: 2;
+            u16 def : 2;
+            u16 speed : 2;
+            u16 satt : 2;
+            u16 sdef : 2;
+            u16 padding : 4;
+        } ev_yield;
 	u16 common_item;
 	u16 rare_item;
 	u8 gender_value;
@@ -436,7 +516,18 @@ typedef struct basestats {
 	u8 safari_rate;
 	u8 color_flip_field;
 	u8 hidden_ability;
-	u8 field_1B;
-} basestats;
+	u8 form;
+} basestat;
 
-basestats* bstats = (basestats*)0x082546A8;
+typedef struct {
+    u8 header[4];
+    void *data;
+    u8 vol_curve[4];
+} pokemon_cry;
+
+pokemon_cry pokemon_cries_forward[POKEMON_CNT];
+pokemon_cry pokemon_cries_backward[POKEMON_CNT];
+basestat basestats[POKEMON_CNT];
+extern u8 pokemon_names[POKEMON_CNT][11];
+
+#endif

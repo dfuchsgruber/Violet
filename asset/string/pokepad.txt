@@ -59,3 +59,188 @@ str_wondertrade_next:
 @create ref
 str_wondertrade_none:
         =---
+
+@create ref
+str_wondertrade_do:
+        =Tauschen
+
+@create ref
+str_wondertrade_back:
+        =Zurück
+
+@create ref
+str_wondertrade_error_m:
+        =Dieses Pok\emon kennt eine VM\noder ist ein Ei.
+
+@create ref
+str_wondertrade_name0:
+        =Wodka
+
+str_wondertrade_name1:
+        =Freddy
+
+str_wondertrade_name2:
+        =Phil
+
+str_wondertrade_name3:
+        =Alen
+
+str_wondertrade_name4:
+        =Anja
+
+str_wondertrade_name5:
+        =Bene
+
+str_wondertrade_name6:
+        =Carina
+
+str_wondertrade_name7:
+        =Chris
+
+str_wondertrade_name8:
+        =Cindy
+
+str_wondertrade_name9:
+        =Felix
+
+str_wondertrade_name10:
+        =Georg
+
+str_wondertrade_name11:
+        =Hanna
+
+str_wondertrade_name12:
+        =Jan
+
+str_wondertrade_name13:
+        =Jana
+
+str_wondertrade_name14:
+        =Jasmin
+
+str_wondertrade_name15:
+        =Jessy
+
+str_wondertrade_name16:
+        =Jonas
+
+str_wondertrade_name17:
+        =Jörg
+
+str_wondertrade_name18:
+        =Julia
+
+str_wondertrade_name19:
+        =Laura
+
+str_wondertrade_name20:
+        =Lena
+
+str_wondertrade_name21:
+        =Louis
+
+str_wondertrade_name22:
+        =Luka
+
+str_wondertrade_name23:
+        =Maja
+
+str_wondertrade_name24:
+        =Manu
+
+str_wondertrade_name25:
+        =Marius
+
+str_wondertrade_name26:
+        =Maria
+
+str_wondertrade_name27:
+        =Martin
+
+str_wondertrade_name28:
+        =Michael
+
+str_wondertrade_name29:
+        =Miriam
+
+str_wondertrade_name30:
+        =Sophia
+
+str_wondertrade_name31:
+        =Robin
+
+str_wondertrade_name32:
+        =Sabrina
+
+str_wondertrade_name33:
+        =Sandra
+
+str_wondertrade_name34:
+        =Maxi
+
+str_wondertrade_name35:
+        =Sebi
+
+str_wondertrade_name36:
+        =Vanessa
+
+str_pokepad_pokeradar:
+        =Pok\eradar
+
+str_pokepad_pokeradar_desc:
+        =Finde seltene Pok\emon in\nder Umgebung.
+
+str_pokepad_pokeradar_done:
+        =Der Pok\eradar hat bereits ein\nPok\emon ausfindig gemacht.
+
+str_pokepad_pokeradar_empty:
+        =Der Pok\eradar kann hier nichts\nausfindig machen.
+
+str_pokepad_pokeradar_no_grass:
+        =Der Pok\eradar kann nur in der\nNähe von hohem Gras ein\lPok\emon ausfindig machen.
+
+str_pokepad_pokeradar_unlucky:
+        =Der Pok\eradar hat nichts entdeckt.\nVersuche es später noch einmal.
+
+str_pokepad_pokeradar_alert:
+        =Das Pok\emon hat dich entdeckt!\nEs ist geflohen!
+
+str_pokepad_pokeradar_flee:
+        =Das Pok\emon ist geflohen...
+
+str_pokepad_pokeradar_found:
+        =Der Pok\eradar hat ein Pok\emon\nentdeckt!
+
+str_pokepad_pokedex:
+        =Pok\edex
+
+str_pokepad_pokedex_desc:
+        =Betrachte Aufzeichnungen zu gefangenen\nund gesehenen Pok\emon.
+
+@create ref
+str_pokepad_pokedex_nl:
+        =\n
+
+@create ref
+str_pokepad_pokedex_unkown:
+    =-----
+
+@create ref
+str_pokepad_pokedex_form:
+    =Form
+
+@create ref
+str_pokepad_pokedex_data:
+    =Gr.\nGew.
+
+@create ref
+str_pokepad_pokedex_qmark:
+    =???
+
+@create ref
+str_pokepad_pokedex_std_buttons:
+    =\k\_keystart Ruf  \k\_keyud Liste  \k\_keylr Eintr. \k\_keyb Zur.
+
+@create ref
+str_pokepad_pokedex_habitat:
+    =\k\_keya Hab. 

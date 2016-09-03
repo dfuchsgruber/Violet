@@ -1,3 +1,6 @@
+#ifndef H_ITEM
+#define H_ITEM
+
 #define ITEM_NONE 0
 #define ITEM_MEISTERBALL 0x1
 #define ITEM_HYPERBALL 0x2
@@ -394,4 +397,6 @@ item* items = (item*)0x083DA518;
 
 void item_field_nature_stone(u8 self);
 
-void item_nature_stone(u8 self, void (*failure_func)());
+void item_nature_stone(u8 self, void (*failure_func)(u8));
+
+#endif

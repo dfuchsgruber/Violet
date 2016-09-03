@@ -9,11 +9,12 @@
 #define	BG_H
 
 #include "text.h"
+#include "anim_engine.h"
 
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
+    
     typedef struct{
         u32 bg_id : 2;
         u32 char_base : 2;
@@ -26,6 +27,8 @@ extern "C" {
     tbox *tboxes = (tbox*)0x020204B4;
     
     void bg_setup (u8 tile_mode, bg_config configs[], u8 config_cnt);
+    
+    
 
 #ifdef	__cplusplus
 }

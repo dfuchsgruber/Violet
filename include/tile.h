@@ -18,6 +18,9 @@
 #define DIR_DIASE 7
 #define DIR_DIASW 8
 
+#define FIELD_BEHAVIOR 0
+#define FIELD_HM_USAGE 1
+
 typedef struct {
     s16 x;
     s16 y;
@@ -26,7 +29,7 @@ typedef struct {
 typedef struct bdata{
 	
 		u32 behavior : 9;
-		u32 field_1 : 5;
+		u32 hm_usage : 5;
 		u32 field_2 : 4;
 		u32 field_3 : 6;
 		u32 field_4 : 3;
@@ -56,10 +59,14 @@ void set_trashflag(u8 facing);
 int get_trash_hash_by_facing(u8 facing, int m);
 int a_hash(s16 x, s16 y, u8 map, u8 bank, int m);
 void new_a_vector();
+u32 tile_get_field_by_pos(s16 x, s16 y, u8 field);
+
 
 void load_tv_text();
 u8 *get_tv_text();
 
 coordinate *walking_directions = (coordinate*)0x083A638C;
+
+
 
 #endif

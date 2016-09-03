@@ -22,6 +22,9 @@ typedef struct saveblock1 {
 	u8 flash_circle_size;
 	u8 field_31;
 	u16 current_footer_id;
+        //0x34
+        u8 unkown_2[0x8AC];
+        map_event_person persons[256];
 	//TODO
 	
 	
@@ -34,6 +37,9 @@ typedef struct saveblock2{
     u8 text_speed;
     u8 sound_state : 1;
     u8 unkown_2 : 7;
+    u8 unkown_3[0x12];
+    u8 pokedex_caught_flags[0x34]; //416 flags
+    u8 pokedex_seen_flags[0x34]; //416 flags
 } saveblock2;
 
 typedef struct custom_memory{
@@ -60,6 +66,7 @@ typedef struct{
         u8 unused_3;
         pokepad_memory *pad_mem;
         wondertrade_memory *wtrade_mem;
+        pokedex_memory *dex_mem;
     
 }floating_memory;
 

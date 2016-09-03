@@ -9,6 +9,7 @@
 #define	NPC_H
 
 #include "anim_engine.h"
+#include "map.h"
 
 
 typedef struct npc{
@@ -74,6 +75,7 @@ npc *npcs = (npc*)0x02036E38;
 u8 *player_npc = (u8*)0x02037078;
 
 u8 npc_is_tile_blocked(npc *n, s16 x, s16 y, u8 direction);
+u8 npc_sees_player(npc *n);
 
 #endif	/* NPC_H */
 

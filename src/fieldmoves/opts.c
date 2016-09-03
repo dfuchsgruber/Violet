@@ -31,9 +31,9 @@ void pokemenu_build_opt_by_pokemon(pokemon *base, u8 index){
         }
     }
     //adding switch
-    if(!get_pokemons_attribute(&base[1], ATTRIBUTE_SPECIES, NULL)){
+    if(get_pokemons_attribute(&base[1], ATTRIBUTE_SPECIES, NULL)){
         //at least two pokemon are present
-        list_add(opt_state->opts, &opt_state->opt_cnt, 1); //Adding summary
+        list_add(opt_state->opts, &opt_state->opt_cnt, 1); //Adding switch
     }
     //Adding back button and items
     list_add(opt_state->opts, &opt_state->opt_cnt, 3);

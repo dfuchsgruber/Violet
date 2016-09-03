@@ -11,6 +11,7 @@
 #include "anim_engine.h"
 #include "oams.h"
 #include "wondertrade.h"
+#include "pokedex.h"
 
 #define VAR_POKEPAD_LASTUSED 0x50ED
 #define VAR_POKEPAD_REGISTERED 0x50EC

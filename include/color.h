@@ -17,6 +17,13 @@ typedef union color{
 	
 }color;
 
+
+typedef struct{
+    color *palette;
+    u16 tag;
+    u16 filler;
+}pal_resource;
+
 color alpha_blend (color original, color overlay, u8 alpha);
 color color_multiply (color original, color overlay);
 color blend_multiply (color original, color overlay, u8 alpha );

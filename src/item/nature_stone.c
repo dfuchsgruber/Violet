@@ -13,7 +13,7 @@ void item_field_nature_stone(u8 self){
 
 extern u8 *str_nature_stone_sucess_ref;
 
-void item_nature_stone(u8 self, void (*failure_func)()){
+void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure)(u8)){
     u8 *pokemenu_selected_pokemon_team_index = (u8*)0x0203B0A9;
     u16 *item_activated = (u16*)0x0203AD30;
     
@@ -82,12 +82,12 @@ void item_nature_stone(u8 self, void (*failure_func)()){
         string_decrypt(strbuf, str_nature_stone_sucess_ref);
         pokemenu_init_textrenderer(strbuf, 1); //String @"Es wird keine Wirkung haben"
         bg_virutal_sync_reqeust_push(2);
-        big_callbacks[self].function = failure_func;//0x8125711;
+        big_callbacks[self].function = item_field_usage_on_poke_callback_failure;//0x8125711;
     }else{
         sound(5);
         pokemenu_init_textrenderer((u8*)0x08416824, 1); //String @"Es wird keine Wirkung haben"
         //pokemenu_init_textrenderer(str_nature_stone_sucess_ref, 1);
         bg_virutal_sync_reqeust_push(2);
-        big_callbacks[self].function = failure_func;
+        big_callbacks[self].function = item_field_usage_on_poke_callback_failure;
     }
 }

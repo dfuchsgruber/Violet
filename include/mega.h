@@ -2,6 +2,9 @@
 #define H_MEGA
 
 #define MEGA_ICON_TAG 0x134F
+#define MEGA_CNT 3
+
+#include "battle.h"
 
 typedef struct mega_table_entry{
 	
@@ -12,8 +15,7 @@ typedef struct mega_table_entry{
 	
 } mega_table_entry;
 
-mega_table_entry *megas = (mega_table_entry*)0x9189000;
-
+mega_table_entry megas[MEGA_CNT];
 
 extern u8 *attack_anim_mega;
 extern u8 *attack_anim_groudon;

@@ -1,6 +1,11 @@
 .global transparency_load_textbox_pal
 .global transparency_load_styled_border_pal
 
+.align 4
+style_ressource:
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+
 .align 2
 .thumb
 
@@ -34,7 +39,7 @@ mov r1, r0
 mov r0, r5
 cmp r1, #0
 beq styled_standard
-ldr r5, =transparency_black_box_pals
+ldr r5, =style_ressource
 b styled_end
 styled_standard:
 ldr r5, =0x847127C @standard palettes

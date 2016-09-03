@@ -68,7 +68,7 @@ void battle_printmsg (u8* str, u16 duration);
 void init_attack();
 void bsc_executer();
 u8* concatenate_strings (u8* first, u8* second); //returns the offset of the 0xFF bytes of the two strings
-u8* strcpy (u8* s1, u8* s2);
+u8* strcpy (u8* d1, u8* s2);
 bool is_double_battle();
 //void load_and_alloc_obj_vram_lz77 (graphic*g);	defined in oams.h
 u8 ability_management(u8 state, u8 attacker_slot, u8 unkown, u8 defender_ability, u16 active_attack);
@@ -133,4 +133,16 @@ void bg_virtual_sync(u8 bg_id);
 void return_to_pokemenu();
 void pokemenu_init(u8 a, u8 b, u8 c, u8 d, u8 e, void (*func1)(), void (*return_callback)());
 void malloc_init(void *start, u32 size);
+void pal_set_all_to_black();
+bool move_is_hm(u16 move);
+void unkown_ingame_trade_func();
+void ingame_trade_init_callback();
+void script_set_active();
+void item_field_usage_on_poke_callback_failure(u8 self);//0x8125711;
+u8 *str_append(u8 *dst, u8 *src);
+void tbox_draw_type_icon_by_type_p1(u8 box_id, u8 type_p1, u16 additional, u16 y_pixel);
+bool pokedex_tbox_draw_num(u8 box_id, u8 n, u16 species, u8 n2, u16 y_pixel);
+void pal_allocation_reset();
+bool obj_vram_allocate(u16 tiles);
+void obj_vram_add_tile_tag_to_allocation_table(u16 tag, u16 tile, u16 tile_amount);
 #endif

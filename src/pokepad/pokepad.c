@@ -26,13 +26,8 @@ tboxdata pokepad_tboxes [] = {
     { 0, 20, 10, 10, 2, 15, 101}, //item 5
     { 0, 8, 13, 10, 2, 15, 121}, //item 6
     { 0, 20, 13, 10, 2, 15, 141}, //item 7
+    { 0xFF, 0, 0, 0, 0, 0, 0}
 };
-
-
-void leak_test(){
-    pokepad_free_components();
-    set_callback1(pokepad_callback_init);
-}
 
 bool startmenu_init_pokepad(){
     if(!is_fading()){
@@ -41,6 +36,7 @@ bool startmenu_init_pokepad(){
         startmenu_close();
         rain_sound_fadeout();
         overworld_free();
+        free_all_tboxes();
         set_callback1(pokepad_callback_init);
         return true;
     }
@@ -89,6 +85,7 @@ void pokepad_init_components(){
     oam_reset();
     remove_all_big_callbacks();
     pal_fade_cntrl_reset();
+    pal_allocation_reset();
     //dma0_cb_reset();
     set_callback3(NULL);
     bg_reset(1);
@@ -120,11 +117,6 @@ void pokepad_init_components(){
     lz77uncompwram(gfx_pokepad_backgroundMap, bg1map);
     lz77uncompvram(gfx_pokepad_backgroundTiles, (void*)0x06000000);
     
-    //now we setup the description box
-    tbox_flush(POKEPAD_DESCRIPTION_TBOX, 0);
-    tbox_tilemap_draw(POKEPAD_DESCRIPTION_TBOX);
-    
-    pokepad_load_description();
     
     
     
@@ -139,6 +131,14 @@ void pokepad_init_components(){
     oams[fmem->pad_mem->arrow_oam].private[0] = 0;
     oams[fmem->pad_mem->arrow_oam].private[1] = 0;
     
+    pokepad_build_buttons(bg_get_tilemap(1));
+
+    
+    //now we setup the description box
+    tbox_flush(POKEPAD_DESCRIPTION_TBOX, 0);
+    tbox_tilemap_draw(POKEPAD_DESCRIPTION_TBOX);
+    
+    pokepad_load_description();
     
     //now we spawn the l&r button
     load_and_alloc_obj_vram_lz77(&graphic_pokepad_l);
@@ -151,7 +151,6 @@ void pokepad_init_components(){
     pokepad_locate_lr();
     
     
-    pokepad_build_buttons(bg_get_tilemap(1));
     
     
     bg_virtual_sync(0);
@@ -162,6 +161,7 @@ void pokepad_init_components(){
     load_uncomp_pal_into_RAM(transparency_black_box_pals, 15*16, 32);
     
     fmem->pad_mem->color_cb = spawn_big_callback(pokepad_callback_background_anim, 0);
+    pal_set_all_to_black();
     set_callback1(pokepad_show_components);
 }
 
@@ -172,7 +172,6 @@ void pokepad_load_description(){
      tbox_print_string(POKEPAD_DESCRIPTION_TBOX, 2, 0, 0, 0, 0, pokepad_fontcolmap, 0x0,
              pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].description);
 }
-
 
 void pokepad_callback_background_anim(u8 self){
     if (!is_fading()){
@@ -247,7 +246,6 @@ void pokepad_free_components(){
     free(fmem->pad_mem);
 }
 
-
 void pokepad_free_and_return(){
     cb1handling();
     if (!is_fading()){
@@ -255,7 +253,6 @@ void pokepad_free_and_return(){
         map_reload();
     }
 }
-
 
 void pokepad_idle(){
     cb1handling();
@@ -341,7 +338,6 @@ void pokepad_idle(){
     }
 }
 
-
 void pokepad_callback_registered_string(){
     cb1handling();
     if (fmem->pad_mem->lr_countdown){
@@ -356,11 +352,15 @@ void pokepad_callback_registered_string(){
 }
 
 void pokepad_show_components(){
-    init_fadescreen(0, 0);
-    set_callback1(pokepad_idle);
+    cb1handling();
+    if(!is_fading()){
+        init_fadescreen(0, 0);
+        set_callback1(pokepad_idle);
+    }
 }
 
 bool pokepad_init_function_outdoor(){
+    
     u8 *registered = (u8*)vardecrypt(VAR_POKEPAD_REGISTERED); //we interpret the var offset as 2 bytes
     if(super->keys_new.keys.l && registered[0] != 0xFF){
         if (pokepad_items[registered[0]].func){

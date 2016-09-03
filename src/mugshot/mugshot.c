@@ -70,7 +70,7 @@ void spawn_mugshot(){
     mugshot_template->pal_tag = tag;
     mugshot_template->oam = &mugshot_sprite;
     mugshot_template->graphics = NULL;
-    mugshot_template->animation = (frame**)0x08231Bc0;
+    mugshot_template->animation = (gfx_frame**)0x08231Bc0;
     mugshot_template->rotscale = (rotscale_frame**)0x08231Bcc;
     mugshot_template->callback = oam_null_callback;
     *vardecrypt(0x8003) = generate_oam_forward_search(mugshot_template, x, 0x50, 0);

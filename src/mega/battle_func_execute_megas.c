@@ -78,8 +78,8 @@ void battle_cb_do_megas (){
 				current_battler->ability = get_ability(target, fields);
 				
 				//Type update
-				current_battler->type1 = bstats[target].type1;
-				current_battler->type2 = bstats[target].type2;
+				current_battler->type1 = basestats[target].type1;
+				current_battler->type2 = basestats[target].type2;
 				
 				u8 cb_id = spawn_big_callback(cb_mega_anim, 10);
 				big_callback* cb_o = CALLBACK_OBJECT(cb_id);

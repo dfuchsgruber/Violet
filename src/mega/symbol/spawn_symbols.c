@@ -16,7 +16,7 @@ static oam_template symbol_template = {
 	0xADDD,
 	0xADDD,
 	&final_oam,
-	(frame**)0x08231Bc0,
+	(gfx_frame**)0x08231Bc0,
 	(graphic*)0,
 	(rotscale_frame**)0x8231BC0,
 	symbol_callback

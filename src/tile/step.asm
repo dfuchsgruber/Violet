@@ -69,8 +69,9 @@ bl call_via_r0
 not_found:
 
 
-ldr r0, =0x0919A461	@pokeradar poschange
-bl call_via_r0
+bl pokeradar_step
+cmp r0, #0
+bne ret_1
 
 
 ldr r0, =0x081E7F95

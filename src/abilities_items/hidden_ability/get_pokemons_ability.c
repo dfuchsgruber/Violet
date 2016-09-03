@@ -19,19 +19,19 @@ u8 get_pokemons_ability (pokemon *poke){
 	
 	u16 species = (u16)get_pokemons_attribute(poke, ATTRIBUTE_SPECIES, 0);
 	
-	if (hidden_ability_bit && bstats[species].hidden_ability){
+	if (hidden_ability_bit && basestats[species].hidden_ability){
 		
-		return bstats[species].hidden_ability;
-		
-	}
-	
-	if (ability_bit && bstats[species].ability2){
-		
-		return bstats[species].ability2;
+		return basestats[species].hidden_ability;
 		
 	}
 	
-	return bstats[species].ability1;
+	if (ability_bit && basestats[species].ability2){
+		
+		return basestats[species].ability2;
+		
+	}
+	
+	return basestats[species].ability1;
 	
 	
 }

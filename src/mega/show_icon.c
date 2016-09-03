@@ -14,7 +14,7 @@ static oam_template icon_template = {
 	MEGA_ICON_TAG,
 	MEGA_ICON_TAG,
 	&icon_sprite,
-	(frame**)0x08231Bc0,
+	(gfx_frame**)0x08231Bc0,
 	(graphic*)0,
 	(rotscale_frame**)0x08231Bcc,
 	icon_callback
@@ -24,7 +24,7 @@ static oam_template icon_template_reg = {
 	MEGA_ICON_TAG+1,
 	MEGA_ICON_TAG+1,
 	&icon_sprite,
-	(frame**)0x08231Bc0,
+	(gfx_frame**)0x08231Bc0,
 	(graphic*)0,
 	(rotscale_frame**)0x08231Bcc,
 	icon_callback

@@ -13,7 +13,11 @@ special_table equ 0x0815FCC0
 	.word special_addkarma_wrap | 1
 	.pool
 	
-.org (special_table +(0x16 * 4))
+.org (special_table + (0x13 * 4))
+        .word pokeradar_spawn_pokemon | 1
+        .pool
+
+.org (special_table + (0x16 * 4))
 	.word special_get_rtc | 1
 	.pool
 	

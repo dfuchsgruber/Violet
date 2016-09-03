@@ -3,12 +3,13 @@
 #define OAM_OBJECT(x) ((oam_object*)((x*0x44)+0x0202063C))
 
 #define ROTSCALE_TABLE_NULL (rotscale_frame**)0x08231BCC
-#define GFX_ANIM_TABLE_NULL (frame**)0x08231Bc0
+#define GFX_ANIM_TABLE_NULL (gfx_frame**)0x08231Bc0
+
 
 struct oam_object;
 typedef struct oam_object oam_object;
-struct frame;
-typedef struct frame frame;
+struct gfx_frame;
+typedef struct gfx_frame gfx_frame;
 
 
 typedef struct palette {
@@ -17,10 +18,10 @@ typedef struct palette {
 	u16 field_6;
 } palette;
 
-typedef struct frame {
+typedef struct gfx_frame {
   u16 data;
   u16 duration;
-} frame;
+} gfx_frame;
 
 typedef struct graphic {
   void *sprite;
@@ -47,7 +48,7 @@ typedef struct oam_template {
   u16 tiles_tag;
   u16 pal_tag;
   sprite *oam;
-  frame **animation;
+  gfx_frame **animation;
   graphic *graphics;
   rotscale_frame **rotscale;
   void (*callback)(oam_object *self);
@@ -55,7 +56,7 @@ typedef struct oam_template {
 
 typedef struct oam_object {
   sprite final_oam;
-  frame **animation_table;
+  gfx_frame **animation_table;
   u32 *gfx_table;
   u32 *rotscale_table;
   oam_template *oam_template;

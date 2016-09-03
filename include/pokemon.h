@@ -1,6 +1,13 @@
 #ifndef H_POKEMON
 #define H_POKEMON
 
+#include "types.h"
+#include "stdbool.h"
+#include "oams.h"
+#include "evolution.h"
+
+#define POKEMON_CNT 0x1B9
+
 #define LANGUAGE_JAP 0x201
 #define LANGUAGE_ENG 0x202
 #define LANGUAGE_FRA 0x203
@@ -107,7 +114,7 @@ typedef struct marking {
 
 typedef union{
 	u32 value;
-	struct pid{
+	struct{
             u32 ability : 1;
             u32 gender_partial : 7;
             u32 shinyness : 16;
@@ -140,12 +147,43 @@ typedef struct pokemon {
 	
 } pokemon;
 
+typedef struct {
+        u16 move_id : 9;
+        u16 level : 7;
+}pokemon_move;
 
+
+
+pokemon_move *pokemon_moves[POKEMON_CNT];
 
 pokemon *player_pokemon = (pokemon*)0x02024284;
 pokemon *opponent_pokemon = (pokemon*)0x0202402C;
 
 void outdoor_move_buffer_load(pokemon *pokemon, u8 index);
 void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
+void pokemon_new(pokemon *space, u16 species, u8 level, u8 ev_split,
+        bool pid_determined, pid pid, bool tid_determined, u32 tid);
+u8 pokemon_get_egg_moves(pokemon *p, u16 *space); //returns cnt (max 10, requires 10 space)
+u16 pokemon_append_attack(pokemon *p, u16 attack);
+void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
+void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed);
+void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread, bool tid_determined, u32 tid, u16(*seed_generator)());
+
+
+graphic pokemon_frontsprites[POKEMON_CNT];
+graphic pokemon_backsprites[POKEMON_CNT];
+palette pokemon_pals[POKEMON_CNT];
+palette pokemon_shiny_pals[POKEMON_CNT];
+u8 pokemon_icon_usage[POKEMON_CNT];
+pokemon_move *pokemon_moves[POKEMON_CNT];
+u8 pokemon_tm_compatibility [POKEMON_CNT][8];
+void *pokemon_icons[POKEMON_CNT];
+u32 pokemon_player_y[POKEMON_CNT];
+u8 pokemon_altitude[POKEMON_CNT];
+u32 pokemon_enemy_y[POKEMON_CNT];
+u8 pokemon_item_animations[POKEMON_CNT][5];
+ 
+pokemon_evolution pokemon_evolutions[POKEMON_CNT][5];
+
 
 #endif
