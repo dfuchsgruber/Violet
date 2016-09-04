@@ -507,6 +507,10 @@
         mov r0, #0x7F
         lsl r0, #0x18
 
+.org 0x0800F134
+        mov r0, #0x7F
+        lsl r0, #0x18
+
 //prevent deoxys second front/backsprite frame to be loaded (the att form frame)
 .org 0x0800ED3C
     mov r1, #0
@@ -765,53 +769,20 @@
 
 //Pokemon Altitude
 
-.org 0x8011ed0
+.org 0x80355f8
 	.word pokemon_altitude
 
-.org 0x8011f04
+.org 0x803565c
 	.word pokemon_altitude
 
-.org 0x8011f30
+.org 0x80746f8
 	.word pokemon_altitude
 
-.org 0x80476e4
+.org 0x807470c
 	.word pokemon_altitude
 
-.org 0x8051430
-	.word pokemon_altitude
 
-.org 0x8052140
-	.word pokemon_altitude
 
-.org 0x8052820
-	.word pokemon_altitude
-
-.org 0x805359c
-	.word pokemon_altitude
-
-.org 0x8074664
-	.word pokemon_altitude
-
-.org 0x8074698
-	.word pokemon_altitude
-
-.org 0x80746ac
-	.word pokemon_altitude
-
-.org 0x807650c
-	.word pokemon_altitude
-
-.org 0x8076a3c
-	.word pokemon_altitude
-
-.org 0x8076c38
-	.word pokemon_altitude
-
-.org 0x8076c54
-	.word pokemon_altitude
-
-.org 0x814a5fc
-	.word pokemon_altitude
 
 .org 0x080746EC
         mov r0, #0x7F
@@ -891,4 +862,28 @@
 
 .org 0x8106b14
 	.word pokedex_habitats
+
+.org 0x8088f18
+	.word dex_data
+
+.org 0x8088f40
+	.word dex_data
+
+.org 0x8088f54
+	.word dex_data
+
+.org 0x8105b0c
+	.word dex_data
+
+.org 0x8105b94
+	.word dex_data
+
+.org 0x8105be0
+	.word dex_data
+
+.org 0x8105db8
+	.word dex_data
+
+.org 0x8106744
+	.word dex_data
 

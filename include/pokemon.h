@@ -186,4 +186,5 @@ u8 pokemon_item_animations[POKEMON_CNT][5];
 pokemon_evolution pokemon_evolutions[POKEMON_CNT][5];
 
 
+
 #endif

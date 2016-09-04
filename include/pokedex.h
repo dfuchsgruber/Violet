@@ -15,7 +15,7 @@
 extern "C" {
 #endif
     
-    #define POKEDEX_CNT 386
+    #define POKEDEX_CNT 387
 
     #define POKEDEX_TBOX_SEEN 0
     #define POKEDEX_TBOX_CAUGHT 1
@@ -128,6 +128,7 @@ extern "C" {
     void pokedex_callback_entry_idle();
     void pokedex_callback_entry_back();
     bool pokedex_operator(u16 val, u8 op, bool is_species_id);
+    u8* pokedex_flag_access (u16 flag, bool seen);
     u16 pokedex_get_number_seen_or_caught(bool caught);
     //Romfuncs
     u16 pokedex_get_id(u16 species);
@@ -138,6 +139,7 @@ extern "C" {
     u16 pokedex_get_species_by_dex_id (u16 dex_id);
     
     u16 pokedex_order[POKEMON_CNT-1];
+    pokedex_data dex_data[POKEDEX_CNT+1];
     
 #ifdef	__cplusplus
 }

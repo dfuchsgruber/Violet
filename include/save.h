@@ -44,18 +44,24 @@ typedef struct saveblock2{
 
 typedef struct custom_memory{
 	
-	//dungeon_data ddata;
-	mapheader dhead;
-	mapfooter footer;
-	dungeon_generator dgen;
-	map_events devents;
-	map_event_warp ladder;
-	map_event_person dpers[5];
-        
-        //trash memory (generall a vector memory)
-	u8 trash_flags[16];
-        rtc_timestamp a_gen_time;
-        u8 a_vector[4];
+    u8 flag_extension[0x80]; //additional 0x400 flags (0x900-0xD00)
+    u8 pokedex_seen_extension[0x40]; //additional 512 flags
+    u8 pokedex_caught_extension[0x40]; //additional 512 flags
+    u8 gp_freespace[0x100];
+    u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
+    
+    //dungeon_data ddata;
+    mapheader dhead;
+    mapfooter footer;
+    dungeon_generator dgen;
+    map_events devents;
+    map_event_warp ladder;
+    map_event_person dpers[5];
+
+    //trash memory (generall a vector memory)
+    u8 trash_flags[16];
+    rtc_timestamp a_gen_time;
+    u8 a_vector[4];
 	
 }custom_memory;
 
@@ -72,7 +78,7 @@ typedef struct{
 
 saveblock1 **save1 = (saveblock1**)0x03004F58;
 saveblock2 **save2 = (saveblock2**)0x03004F5C;
-custom_memory *cmem = (custom_memory*)0x0203C610;
+custom_memory *cmem = (custom_memory*)0x0203C200;
 floating_memory *fmem = (floating_memory*)0x0203CEC4;
 
 #endif

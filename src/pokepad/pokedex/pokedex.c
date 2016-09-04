@@ -920,7 +920,8 @@ void pokedex_build_list(){
     int j;
     for (i = 0; i < POKEMON_CNT; i++){
         //check if pokemon is a mega target
-        bool is_mega_target = (i > 251 && i < 277) || !i || i > 411;
+        
+        bool is_mega_target = !pokedex_get_id(i);
         j = 0;
         while(megas[j].species != 0xFFFF){
             if(megas[j].target == i){
