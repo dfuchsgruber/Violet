@@ -887,3 +887,10 @@
 .org 0x8106744
 	.word dex_data
 
+//footprint disable
+
+.org 0x08105E0E
+        ldr r0, =0x084400C0 //unown footprint offset
+.org 0x8105E88
+        .pool
+        

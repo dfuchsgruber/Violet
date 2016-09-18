@@ -5032,18 +5032,5 @@ pokedex_data dex_data[POKEDEX_CNT+1] = {
 		337,   //trainer scale
 		2,   //trainer displace
 		0   //unused 2
-	},
-        {
-		{0xc2, 0xc3, 0xc7, 0xc7, 0xbf, 0xc6, 0xc2, 0xc9, 0xbd, 0xc2, 0xff, 0x0},   //category
-		70,   //height
-		2065,   //weight
-		(u8*)0x844f5f4,   //page0
-		(u8*)0x844f65b,   //page1
-		0,   //unused
-		286,   //poke scale
-		65535,   //poke displace
-		483,   //trainer scale
-		9,   //trainer displace
-		0   //unused 2
 	}
 };

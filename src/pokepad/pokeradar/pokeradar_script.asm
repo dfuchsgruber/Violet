@@ -29,6 +29,7 @@ script_pokeradar_s:
     hidesprite 254
     clearflag 0x917
     showsprite 254
+    lockall
     fadescreen 0
     
     loadpointer 0 str_pokepad_pokeradar_found
@@ -88,6 +89,8 @@ script_pokeradar_poschange_s:
     showsprite 254
     random 0x4
     addvar 0x800D 0x52
+    singlemovement 254 0x800D
+    waitmovement 0
     singlemovement 254 0x800D
     waitmovement 0
     cry 0x50EB 0

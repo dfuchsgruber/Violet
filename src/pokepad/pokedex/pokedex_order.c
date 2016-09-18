@@ -881,9 +881,7 @@ u16 pokedex_order[POKEMON_CNT-1] = {
 	// POKEMON_ICOGNITO_EXCLAMATION
 	0x0,
 	// POKEMON_ICOGNITO_QUESTION
-	0x0,
-        // POKEMON_TEST
-        387
+	0x0
 };
 
 u16 pokemon_get_display_number(u16 species){

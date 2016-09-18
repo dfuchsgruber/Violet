@@ -179,3 +179,5 @@ pal_allocation_reset = 0x08008871;
 obj_vram_allocate = 0x080073B5;
 obj_vram_add_tile_tag_to_allocation_table = 0x08008829;
 national_dex_is_achieved = 0x0806E1C1;
+worldmap_get_position_namespace = 0x080C431D;
+worldmap_get_current_index = 0x080C0FF1;

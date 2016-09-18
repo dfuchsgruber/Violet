@@ -4,6 +4,21 @@
 #include "types.h"
 #include "pokemon.h"
 
+#define SHAPE_BALL 12
+#define SHAPE_SNAKE 3
+#define SHAPE_FISH 11
+#define SHAPE_ARMS 8
+#define SHAPE_HEAD 7
+#define SHAPE_TAIL 2
+#define SHAPE_LEGS 9
+#define SHAPE_ANIMAL 0
+#define SHAPE_WINGED 5
+#define SHAPE_TENTACLES 10
+#define SHAPE_MULTI 13
+#define SHAPE_HUMANOID 1
+#define SHAPE_WINGED_INSECT 4
+#define SHAPE_INSECT 6
+
 #define TYPE_NORMAL 0
 #define TYPE_FIGHTING 1
 #define TYPE_FLYING 2

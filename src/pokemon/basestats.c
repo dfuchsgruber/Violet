@@ -42,7 +42,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_BISAKNOSP
@@ -62,7 +62,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_BISAFLOR
@@ -82,7 +82,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_GLUMANDA
@@ -102,7 +102,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_GLUTEXO
@@ -122,7 +122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		CHLOROPHYLL,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_GLURAK
@@ -142,7 +142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SCHIGGY
@@ -162,7 +162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SCHILLOK
@@ -182,7 +182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_TURTOK
@@ -202,7 +202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_DARTIRI
@@ -222,7 +222,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_DARTIGNIS
@@ -242,7 +242,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_FIARO
@@ -262,7 +262,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_HORNLIU
@@ -282,7 +282,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_KOKUNA
@@ -302,7 +302,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_BIBOR
@@ -322,7 +322,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_STARALILI
@@ -342,7 +342,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_STARAVIA
@@ -362,7 +362,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_STARAPTOR
@@ -382,7 +382,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_BRONZEL
@@ -402,7 +402,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_BRONZONG
@@ -422,7 +422,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_MAEHIKEL
@@ -442,7 +442,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_CHEVRUMM
@@ -462,7 +462,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_PARAGONI
@@ -482,7 +482,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_TROMBORK
@@ -502,7 +502,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_PIKACHU
@@ -522,7 +522,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_RAICHU
@@ -542,7 +542,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SANDAN
@@ -562,7 +562,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SANDAMER
@@ -582,7 +582,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_NIDORANW
@@ -602,7 +602,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_NIDORINA
@@ -622,7 +622,7 @@ basestat basestats[POKEMON_CNT] = {
 		75,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_NIDOQUEEN
@@ -642,7 +642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_NIDORANM
@@ -662,7 +662,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_NIDORINO
@@ -682,7 +682,7 @@ basestat basestats[POKEMON_CNT] = {
 		75,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_NIDOKING
@@ -702,7 +702,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_FLOETTE
@@ -722,7 +722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_FLORGES
@@ -742,7 +742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_VULPIX
@@ -762,7 +762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_VULNONA
@@ -782,7 +782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_PUMMELUFF
@@ -802,7 +802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KNUDDELUFF
@@ -822,7 +822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_ZUBAT
@@ -842,7 +842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_GOLBAT
@@ -862,7 +862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_MYRAPLA
@@ -882,7 +882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_DUFLOR
@@ -902,7 +902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_GIFLOR
@@ -922,7 +922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_FOLIPURBA
@@ -942,7 +942,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_FEELINARA
@@ -962,7 +962,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_WATTZAPF
@@ -982,7 +982,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_VOLTULA
@@ -1002,7 +1002,7 @@ basestat basestats[POKEMON_CNT] = {
 		75,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_DIGDA
@@ -1022,7 +1022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_DIGDRI
@@ -1042,7 +1042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_MULTI,   //form
 	},
 
 	//POKEMON_KASTADUR
@@ -1062,7 +1062,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_TENTANTEL
@@ -1082,7 +1082,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_ENTON
@@ -1102,7 +1102,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_ENTORON
@@ -1122,7 +1122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MENKI
@@ -1142,7 +1142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_RASAFF
@@ -1162,7 +1162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_FUKANO
@@ -1182,7 +1182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_ARKANI
@@ -1202,7 +1202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_GRAMOKLES
@@ -1222,7 +1222,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_DUOKLES
@@ -1242,7 +1242,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_MULTI,   //form
 	},
 
 	//POKEMON_DURENGARD
@@ -1262,7 +1262,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_ABRA
@@ -1282,7 +1282,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_KADABRA
@@ -1302,7 +1302,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SIMSALA
@@ -1322,7 +1322,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_MACHOLLO
@@ -1342,7 +1342,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MASCHOCK
@@ -1362,7 +1362,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_MACHOMEI
@@ -1382,7 +1382,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KNOFENSA
@@ -1402,7 +1402,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_ULTRIGARIA
@@ -1422,7 +1422,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_SARZENIA
@@ -1442,7 +1442,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_TENTACHA
@@ -1462,7 +1462,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_TENTOXA
@@ -1482,7 +1482,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_KLEINSTEIN
@@ -1502,7 +1502,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_GEOROK
@@ -1522,7 +1522,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_GEOWAZ
@@ -1542,7 +1542,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_PONITA
@@ -1562,7 +1562,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_GALLOPA
@@ -1582,7 +1582,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_FLEGMON
@@ -1602,7 +1602,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_LAHMUS
@@ -1622,7 +1622,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MAGNETILO
@@ -1642,7 +1642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_MAGNETON
@@ -1662,7 +1662,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_MULTI,   //form
 	},
 
 	//POKEMON_PORENTA
@@ -1682,7 +1682,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_DODU
@@ -1702,7 +1702,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_DODRI
@@ -1722,7 +1722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_JURBO
@@ -1742,7 +1742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_JUGONG
@@ -1762,7 +1762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_SLEIMA
@@ -1782,7 +1782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_SLEIMOK
@@ -1802,7 +1802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_MUSCHAS
@@ -1822,7 +1822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_AUSTOS
@@ -1842,7 +1842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_NEBULAK
@@ -1862,7 +1862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_ALPOLLO
@@ -1882,7 +1882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_GENGAR
@@ -1902,7 +1902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_ONIX
@@ -1922,7 +1922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_TRAUMATO
@@ -1942,7 +1942,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_HYPNO
@@ -1962,7 +1962,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KRABBY
@@ -1982,7 +1982,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_KINGLER
@@ -2002,7 +2002,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_VOLTOBAL
@@ -2022,7 +2022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_LEKTROBAL
@@ -2042,7 +2042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_OWEI
@@ -2062,7 +2062,7 @@ basestat basestats[POKEMON_CNT] = {
 		75,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_MULTI,   //form
 	},
 
 	//POKEMON_KOKOWEI
@@ -2082,7 +2082,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_TRAGOSSO
@@ -2102,7 +2102,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_KNOGGA
@@ -2122,7 +2122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_KICKLEE
@@ -2142,7 +2142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_NOCKCHAN
@@ -2162,7 +2162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_SCHLURP
@@ -2182,7 +2182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SMOGON
@@ -2202,7 +2202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_SMOGMOG
@@ -2222,7 +2222,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_MULTI,   //form
 	},
 
 	//POKEMON_RIHORN
@@ -2242,7 +2242,7 @@ basestat basestats[POKEMON_CNT] = {
 		75,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_RIZEROS
@@ -2262,7 +2262,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_CHANEIRA
@@ -2282,7 +2282,7 @@ basestat basestats[POKEMON_CNT] = {
 		125,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_ZOBIRIS
@@ -2302,7 +2302,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KANGAMA
@@ -2322,7 +2322,7 @@ basestat basestats[POKEMON_CNT] = {
 		125,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SEEPER
@@ -2342,7 +2342,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_SEEMON
@@ -2362,7 +2362,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_QUABBEL
@@ -2382,7 +2382,7 @@ basestat basestats[POKEMON_CNT] = {
 		50,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_APOQUALLYP
@@ -2402,7 +2402,7 @@ basestat basestats[POKEMON_CNT] = {
 		75,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_STERNDU
@@ -2422,7 +2422,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_STARMIE
@@ -2442,7 +2442,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_TRAUNFUGIL
@@ -2462,7 +2462,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_SICHLOR
@@ -2482,7 +2482,7 @@ basestat basestats[POKEMON_CNT] = {
 		125,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_GALAGLADI
@@ -2502,7 +2502,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_ELEKTEK
@@ -2522,7 +2522,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MAGMAR
@@ -2542,7 +2542,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_PINSIR
@@ -2562,7 +2562,7 @@ basestat basestats[POKEMON_CNT] = {
 		125,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_TAUROS
@@ -2582,7 +2582,7 @@ basestat basestats[POKEMON_CNT] = {
 		125,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_KARPADOR
@@ -2602,7 +2602,7 @@ basestat basestats[POKEMON_CNT] = {
 		25,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_GARADOS
@@ -2622,7 +2622,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_LAPRAS
@@ -2642,7 +2642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_DITTO
@@ -2662,7 +2662,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_EVOLI
@@ -2682,7 +2682,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_AQUANA
@@ -2702,7 +2702,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_BLITZA
@@ -2722,7 +2722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_FLAMARA
@@ -2742,7 +2742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_PORYGON
@@ -2762,7 +2762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_AMONITAS
@@ -2782,7 +2782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_AMOROSO
@@ -2802,7 +2802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_KABUTO
@@ -2822,7 +2822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_KABUTOPS
@@ -2842,7 +2842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_AERODACTYL
@@ -2862,7 +2862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_RELAXO
@@ -2882,7 +2882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_ARKTOS
@@ -2902,7 +2902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_ZAPDOS
@@ -2922,7 +2922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_LAVADOS
@@ -2942,7 +2942,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_DRATINI
@@ -2962,7 +2962,7 @@ basestat basestats[POKEMON_CNT] = {
 		100,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_DRAGONIR
@@ -2982,7 +2982,7 @@ basestat basestats[POKEMON_CNT] = {
 		125,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_DRAGORAN
@@ -3002,7 +3002,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MEWTU
@@ -3022,7 +3022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MEW
@@ -3042,7 +3042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_ENDIVIE
@@ -3062,7 +3062,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_LORBLATT
@@ -3082,7 +3082,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_MEGANIE
@@ -3102,7 +3102,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_FEURIGEL
@@ -3122,7 +3122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_IGELAVAR
@@ -3142,7 +3142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_TORNUPTO
@@ -3162,7 +3162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_KARNIMANI
@@ -3182,7 +3182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_TYRACROC
@@ -3202,7 +3202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_IMPERGATOR
@@ -3222,7 +3222,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_IGNIVOR
@@ -3242,7 +3242,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_RAMOTH
@@ -3262,7 +3262,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_GLAZIOLA
@@ -3282,7 +3282,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_RESLADERO
@@ -3302,7 +3302,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_LEDYBA
@@ -3322,7 +3322,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_LEDIAN
@@ -3342,7 +3342,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_WEBARAK
@@ -3362,7 +3362,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_ARIADOS
@@ -3382,7 +3382,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_IKSBAT
@@ -3402,7 +3402,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_LAMPI
@@ -3422,7 +3422,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_LANTURN
@@ -3442,7 +3442,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_MAGNEZONE
@@ -3462,7 +3462,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_TOGEKISS
@@ -3482,7 +3482,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_FLABEBE
@@ -3502,7 +3502,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_TOGEPI
@@ -3522,7 +3522,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_TOGETIC
@@ -3542,7 +3542,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_NATU
@@ -3562,7 +3562,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_XATU
@@ -3582,7 +3582,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_VOLTILAMM
@@ -3602,7 +3602,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_WAATY
@@ -3622,7 +3622,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_AMPHAROS
@@ -3642,7 +3642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_BLUBELLA
@@ -3662,7 +3662,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_MARILL
@@ -3682,7 +3682,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_AZUMARILL
@@ -3702,7 +3702,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MOGELBAUM
@@ -3722,7 +3722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_CLAVION
@@ -3742,7 +3742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_LICHTEL
@@ -3762,7 +3762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_LATERNECTO
@@ -3782,7 +3782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_SKLELABRA
@@ -3802,7 +3802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_GRIFFEL
@@ -3822,7 +3822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SHNEBEDECK
@@ -3842,7 +3842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_REXBLISAR
@@ -3862,7 +3862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_AMBIDIFFEL
@@ -3882,7 +3882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_FELINO
@@ -3902,7 +3902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_MORLORD
@@ -3922,7 +3922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_PSIANA
@@ -3942,7 +3942,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_NACHTARA
@@ -3962,7 +3962,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_KRAMURX
@@ -3982,7 +3982,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_LASCHOKING
@@ -4002,7 +4002,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_KRAMSHEF
@@ -4022,7 +4022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_ICOGNITO
@@ -4042,7 +4042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_FROSDEDJE
@@ -4062,7 +4062,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_SKORGRO
@@ -4082,7 +4082,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_TANNZA
@@ -4102,7 +4102,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_FORSTELLKA
@@ -4122,7 +4122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_ELEVOLTEK
@@ -4142,7 +4142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SKORGLA
@@ -4162,7 +4162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_STAHLOS
@@ -4182,7 +4182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_SNUBBULL
@@ -4202,7 +4202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_GRANBULL
@@ -4222,7 +4222,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MAMUTEL
@@ -4242,7 +4242,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_SCHEROX
@@ -4262,7 +4262,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_POTTROTT
@@ -4282,7 +4282,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_SKARABORN
@@ -4302,7 +4302,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KRYPPUK
@@ -4322,7 +4322,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_TEDDIURSA
@@ -4342,7 +4342,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_URSARING
@@ -4362,7 +4362,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SCHNECKMAG
@@ -4382,7 +4382,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_MAGCARGO
@@ -4402,7 +4402,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_QUIEKEL
@@ -4422,7 +4422,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_KEIFEL
@@ -4442,7 +4442,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_CORASONN
@@ -4462,7 +4462,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_REMORAID
@@ -4482,7 +4482,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_OCTILLERY
@@ -4502,7 +4502,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TENTACLES,   //form
 	},
 
 	//POKEMON_BOTOGEL
@@ -4522,7 +4522,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_SCHLURPLEK
@@ -4542,7 +4542,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_PANZAERON
@@ -4562,7 +4562,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_HUNDUSTER
@@ -4582,7 +4582,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_HUNDEMON
@@ -4602,7 +4602,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_SEEDRAKING
@@ -4622,7 +4622,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_PHANPY
@@ -4642,7 +4642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_DONPHAN
@@ -4662,7 +4662,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_PORYGON2
@@ -4682,7 +4682,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_VOLUMINAS
@@ -4702,7 +4702,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_MULTI,   //form
 	},
 
 	//POKEMON_TRAUNMAGIL
@@ -4722,7 +4722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_RABAUZ
@@ -4742,7 +4742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KAPOERA
@@ -4762,7 +4762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_KUSSILLA
@@ -4782,7 +4782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_ELEKID
@@ -4802,7 +4802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_MAGBY
@@ -4822,7 +4822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MILTANK
@@ -4842,7 +4842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_HEITEIRA
@@ -4862,7 +4862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_RAIKOU
@@ -4882,7 +4882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_ENTEI
@@ -4902,7 +4902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_SUICUNE
@@ -4922,7 +4922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_LARVITAR
@@ -4942,7 +4942,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_PUPITAR
@@ -4962,7 +4962,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_DESPOTAR
@@ -4982,7 +4982,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_LUGIA
@@ -5002,7 +5002,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_HO_OH
@@ -5022,7 +5022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_CELEBI
@@ -5042,7 +5042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_BISAFLORM
@@ -5562,7 +5562,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_STICHSCHAL
@@ -5582,7 +5582,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_STAHLSTICH
@@ -5602,7 +5602,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_WELUNO
@@ -5622,7 +5622,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_ORTHODOS
@@ -5642,7 +5642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_ZERBERTRES
@@ -5662,7 +5662,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_SEEKID
@@ -5682,7 +5682,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_SEESKULL
@@ -5702,7 +5702,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_SKULLYDRA
@@ -5722,7 +5722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_FIFFYEN
@@ -5742,7 +5742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_MAGNAYEN
@@ -5762,7 +5762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_ZIGZACHS
@@ -5782,7 +5782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_GERADAKS
@@ -5802,7 +5802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_WAUMPEL
@@ -5822,7 +5822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_SCHALOKO
@@ -5842,7 +5842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_PAPINELLA
@@ -5862,7 +5862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_PANEKON
@@ -5882,7 +5882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_PUDOX
@@ -5902,7 +5902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_LOTURZEL
@@ -5922,7 +5922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_LOMBRERO
@@ -5942,7 +5942,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KAPPALORES
@@ -5962,7 +5962,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_SAMURZEL
@@ -5982,7 +5982,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_BLANAS
@@ -6002,7 +6002,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_TENGULIST
@@ -6022,7 +6022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_NINCADA
@@ -6042,7 +6042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_NINJASK
@@ -6062,7 +6062,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_NINJATOM
@@ -6082,7 +6082,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_SCHWALBINI
@@ -6102,7 +6102,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_SCHWALBOSS
@@ -6122,7 +6122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_KNILZ
@@ -6142,7 +6142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_KAPILZ
@@ -6162,7 +6162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_PANDIR
@@ -6182,7 +6182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_WINGULL
@@ -6202,7 +6202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_PELIPPER
@@ -6222,7 +6222,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_GEHWEIHER
@@ -6242,7 +6242,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_MASKEREGEN
@@ -6262,7 +6262,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_WAILMER
@@ -6282,7 +6282,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_WAILORD
@@ -6302,7 +6302,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_ENECO
@@ -6322,7 +6322,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_ENEKORO
@@ -6342,7 +6342,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_KECLEON
@@ -6362,7 +6362,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_PUPPANCE
@@ -6382,7 +6382,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_LEPUMENTAS
@@ -6402,7 +6402,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_NASGNET
@@ -6422,7 +6422,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_MAGBRANT
@@ -6442,7 +6442,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_ZWIRRFINST
@@ -6462,7 +6462,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_SCHMERBE
@@ -6482,7 +6482,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_WELSAR
@@ -6502,7 +6502,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_LIEBISKUS
@@ -6522,7 +6522,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_KREBSCORPS
@@ -6542,7 +6542,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_KREBUTACK
@@ -6562,7 +6562,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_BARSCHWA
@@ -6582,7 +6582,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_MILOTIC
@@ -6602,7 +6602,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_KANIVANHA
@@ -6622,7 +6622,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_TOHAIDO
@@ -6642,7 +6642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_KNACKLION
@@ -6662,7 +6662,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_VIBRAVA
@@ -6682,7 +6682,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED_INSECT,   //form
 	},
 
 	//POKEMON_LIBELLDRA
@@ -6702,7 +6702,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_RIOLU
@@ -6722,7 +6722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_LUCARIO
@@ -6742,7 +6742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_FRIZELBLIZ
@@ -6762,7 +6762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_VOLTENSO
@@ -6782,7 +6782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_CAMAUB
@@ -6802,7 +6802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_CAMERUPT
@@ -6822,7 +6822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_SEEMOPS
@@ -6842,7 +6842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_SEEJONG
@@ -6862,7 +6862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_WALRAISA
@@ -6882,7 +6882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_TUSKA
@@ -6902,7 +6902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_NOKTUSKA
@@ -6922,7 +6922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_SCHNEPPKE
@@ -6942,7 +6942,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_FIRNONTOR
@@ -6962,7 +6962,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_LUNASTEIN
@@ -6982,7 +6982,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_SONNFEL
@@ -7002,7 +7002,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_AZURILL
@@ -7022,7 +7022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_LEGS,   //form
 	},
 
 	//POKEMON_SPOINK
@@ -7042,7 +7042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_GROINK
@@ -7062,7 +7062,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_PLUSLE
@@ -7082,7 +7082,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_MINUN
@@ -7102,7 +7102,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_FLUNKIFER
@@ -7122,7 +7122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_MEDITIE
@@ -7142,7 +7142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_MEDITALIS
@@ -7162,7 +7162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_WABLU
@@ -7182,7 +7182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_ALTARIA
@@ -7202,7 +7202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_ISSO
@@ -7222,7 +7222,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_ZWIRRLICHT
@@ -7242,7 +7242,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_ZWIRRKLOP
@@ -7262,7 +7262,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_ROSELIA
@@ -7282,7 +7282,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_BUMMELZ
@@ -7302,7 +7302,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_MUNTIER
@@ -7322,7 +7322,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_LETARKING
@@ -7342,7 +7342,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_SCHLUPPUCK
@@ -7362,7 +7362,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_SCHLUKWECH
@@ -7382,7 +7382,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_TROPIUS
@@ -7402,7 +7402,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_KAUMALAT
@@ -7422,7 +7422,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_KNARKSEL
@@ -7442,7 +7442,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_KNAKRACK
@@ -7462,7 +7462,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_PERLU
@@ -7482,7 +7482,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_AALABYSS
@@ -7502,7 +7502,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_SAGANABYSS
@@ -7522,7 +7522,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_ABSOL
@@ -7542,7 +7542,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		9,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_SHUPPET
@@ -7562,7 +7562,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_BANETTE
@@ -7582,7 +7582,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_VIPITIS
@@ -7602,7 +7602,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_SENGO
@@ -7622,7 +7622,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		4,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_RELICANTH
@@ -7642,7 +7642,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_STOLLUNIOR
@@ -7662,7 +7662,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_STOLLRAK
@@ -7682,7 +7682,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_STOLLOSS
@@ -7702,7 +7702,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_FORMEO
@@ -7722,7 +7722,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_BALL,   //form
 	},
 
 	//POKEMON_VOLBEAT
@@ -7742,7 +7742,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_ILLUMISE
@@ -7762,7 +7762,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_LILIEP
@@ -7782,7 +7782,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		6,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_WIELIE
@@ -7802,7 +7802,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_ANORITH
@@ -7822,7 +7822,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_INSECT,   //form
 	},
 
 	//POKEMON_ARMALDO
@@ -7842,7 +7842,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_TRASLA
@@ -7862,7 +7862,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KIRLIA
@@ -7882,7 +7882,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_GUARDEVOIR
@@ -7902,7 +7902,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KINDWURM
@@ -7922,7 +7922,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_DRASCHEL
@@ -7942,7 +7942,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		8,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_BRUTALANDA
@@ -7962,7 +7962,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ANIMAL,   //form
 	},
 
 	//POKEMON_TANHEL
@@ -7982,7 +7982,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HEAD,   //form
 	},
 
 	//POKEMON_METANG
@@ -8002,7 +8002,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_METAGROSS
@@ -8022,7 +8022,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_MULTI,   //form
 	},
 
 	//POKEMON_REGIROCK
@@ -8042,7 +8042,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		5,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_REGICE
@@ -8062,7 +8062,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_REGISTEEL
@@ -8082,7 +8082,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		7,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_KYOGRE
@@ -8102,7 +8102,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_FISH,   //form
 	},
 
 	//POKEMON_GROUDON
@@ -8122,7 +8122,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_TAIL,   //form
 	},
 
 	//POKEMON_RAYQUAZA
@@ -8142,7 +8142,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		3,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_SNAKE,   //form
 	},
 
 	//POKEMON_LATIAS
@@ -8162,7 +8162,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		0,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_LATIOS
@@ -8182,7 +8182,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_WINGED,   //form
 	},
 
 	//POKEMON_JIRACHI
@@ -8202,7 +8202,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_DEOXYS
@@ -8222,7 +8222,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		2,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_HUMANOID,   //form
 	},
 
 	//POKEMON_PALIMPALIM
@@ -8242,7 +8242,7 @@ basestat basestats[POKEMON_CNT] = {
 		0,   //safari rate
 		1,   //flip and color
 		ABILITY_NONE,   //hidden ability
-		0,   //form
+		SHAPE_ARMS,   //form
 	},
 
 	//POKEMON_EGG
@@ -8823,7 +8823,6 @@ basestat basestats[POKEMON_CNT] = {
 		ABILITY_NONE,   //hidden ability
 		0,   //form
 	}
-
 
     
 };

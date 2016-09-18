@@ -15,7 +15,7 @@
 extern "C" {
 #endif
     
-    #define POKEDEX_CNT 387
+    #define POKEDEX_CNT 386
 
     #define POKEDEX_TBOX_SEEN 0
     #define POKEDEX_TBOX_CAUGHT 1
@@ -26,7 +26,10 @@ extern "C" {
     
     #define POKEDEX_VAR_LAST_SPECIES 0x50DB
     #define POKEDEX_VAR_COMPARATOR 0x50DA
-    #define POKEDEX_FLAG_HABITAT 0x927
+    #define POKEDEX_FLAG_HABITAT 0x828
+    #define POKEDEX_FLAG_FEATURE_0 0x928
+    #define POKEDEX_FLAG_FEATURE_1 0x929
+    #define POKEDEX_FLAG_FEATURE_2 0x92A
     
     extern u8 *str_pokepad_pokedex_nl_ref;
     extern u8 *str_pokepad_pokedex_unkown_ref;
@@ -35,6 +38,16 @@ extern "C" {
     extern u8 *str_pokepad_pokedex_qmark_ref;
     extern u8 *str_pokepad_pokedex_std_buttons_ref;
     extern u8 *str_pokepad_pokedex_habitat_ref;
+    extern u8 *str_pokepad_pokedex_kg_ref;
+    extern u8 *str_pokepad_pokedex_m_ref;
+    extern u8 *str_pokepad_pokedex_comma_ref;
+    extern u8 *str_pokepad_pokedex_habitat_title_ref;
+    extern u8 *str_pokepad_pokedex_habitat_back_ref;
+    extern u8 *str_pokepad_pokedex_habitat_grass_ref;
+    extern u8 *str_pokepad_pokedex_habitat_water_ref;
+    extern u8 *str_pokepad_pokedex_habitat_rod_ref;
+    extern u8 *str_pokepad_pokedex_habitat_radar_ref;
+    extern u8 *str_pokepad_pokedex_habitat_none_ref;
     
     typedef struct{
         u16 dex_id;
@@ -42,6 +55,18 @@ extern "C" {
         bool seen;
         bool caught;
     }pokedex_list_element;
+    
+    
+    typedef struct{
+        u8 namespace;
+        u8 propabilty; //0 rare, 1 medium, 2 common
+        u8 type; //0 grass, 1 water, 2 rod, 3 radar
+    }pokedex_habitat_pair;
+    
+    #define HABITAT_TYPE_GRASS 0
+    #define HABITAT_TYPE_WATER 1
+    #define HABITAT_TYPE_ROD 2
+    #define HABITAT_TYPE_RADAR 3
     
     typedef struct {
         bool from_outdoor;
@@ -66,9 +91,28 @@ extern "C" {
         pokedex_list_element *list;
         //for entry
         u16 tile_pokepic;
+        u16 tile_form;
         u8 pal_pokepic;
+        u8 pal_form;
         u8 oam_pokepic;
+        u8 oam_form;
         bool entry_fade;
+        bool entry_skip_cry;
+        //for habitats
+        pokedex_habitat_pair *habitats;
+        int habitat_size;
+        u8 oam_habitat_cursor;
+        u8 oam_habitat_head;
+        u8 habitat_cursor_x;
+        u8 habitat_cursor_y;
+        u8 habitat_oams_rarity[4]; // 3 for rod is not used
+        bool habitat_cursor_is_moving ;
+        u8 habitat_fading_mode;
+        u8 habitat_fading_index;
+        u8 habitat_fading_countdown;
+        u8 habitat_oams_rod[3];
+        u8 current_worldmap;
+        bool habitat_found;
     } pokedex_memory;
     
     
@@ -98,6 +142,8 @@ extern "C" {
     }pokedex_habitat;
     
     
+    int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species);
+    int pokedex_get_namespace_of_species_add_pair_if_not_present(pokedex_habitat_pair *dst, int cnt, u8 namespace, u8 propability, u8 type);
 
     void pokedex_init_components();
     void pokedex_callback_init();
@@ -130,6 +176,11 @@ extern "C" {
     bool pokedex_operator(u16 val, u8 op, bool is_species_id);
     u8* pokedex_flag_access (u16 flag, bool seen);
     u16 pokedex_get_number_seen_or_caught(bool caught);
+    void pokedex_init_habitat();
+    void pokedex_habitats_load_for_species(u16 *unpacked_map);
+    void pokedex_habitats_load_namespace();
+    void pokedex_habitats_update();
+    void pokedex_habitat_callback_idle();
     //Romfuncs
     u16 pokedex_get_id(u16 species);
     bool pokedex_operator_by_dex_id(u16 dex_id, u8 op); //0 := is_seen, 1 := is_caught, 2 := set_seen, 3 := set_caught4
@@ -137,9 +188,17 @@ extern "C" {
     bool national_dex_is_achieved();
     u16 pokemon_get_display_number(u16 species);
     u16 pokedex_get_species_by_dex_id (u16 dex_id);
+    void pokedex_habitat_big_callback_cursor_movement(u8 self);
     
     u16 pokedex_order[POKEMON_CNT-1];
     pokedex_data dex_data[POKEDEX_CNT+1];
+    
+    const int *gfx_worldmapTiles;
+    const void *gfx_worldmapPal;
+    u8 pokedex_fontcolmap[4];
+    
+    int *worldmap_tilemaps[4];
+    u8 *namespace_worldmap_associations;
     
 #ifdef	__cplusplus
 }

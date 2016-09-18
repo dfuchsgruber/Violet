@@ -106,6 +106,10 @@
 .byte 0x66
 .endm
 
+.macro lockall
+.byte 0x69
+.endm
+
 .macro waitkeypress
 .byte 0x6D
 .endm

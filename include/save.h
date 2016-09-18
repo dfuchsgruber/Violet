@@ -32,7 +32,9 @@ typedef struct saveblock1 {
 
 typedef struct saveblock2{
     
-    u8 unkown[0x13];
+    u8 unkown[0x8];
+    bool player_is_female;
+    u8 unkown_4[0xA];
     u8 detector_state; //original key swtiching
     u8 text_speed;
     u8 sound_state : 1;

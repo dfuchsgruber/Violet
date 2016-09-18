@@ -103,10 +103,10 @@ u8 pokeradar_prepeare(){
             }else{
                 index = 4; //0.1 chance
             }
-            u16 result = (*wild_pokemon_data_ptr)[wild_table_entry].other->data->other.entries[index].species;
+            u16 result = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].species;
             //now we determine the level
-            u8 min = (*wild_pokemon_data_ptr)[wild_table_entry].other->data->other.entries[index].level_min;
-            u8 max = (*wild_pokemon_data_ptr)[wild_table_entry].other->data->other.entries[index].level_max;
+            u8 min = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].level_min;
+            u8 max = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].level_max;
             u32 level = (u32)(__umod(random_change_seed(), (u32)(max-min+1))+min);
             *vardecrypt(0x8000) = result;
             *vardecrypt(0x8001) = (u16)level;

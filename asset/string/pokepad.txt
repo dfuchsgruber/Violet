@@ -243,4 +243,44 @@ str_pokepad_pokedex_std_buttons:
 
 @create ref
 str_pokepad_pokedex_habitat:
-    =\k\_keya Hab. 
+    =\k\_keya Hab.
+
+@create ref
+str_pokepad_pokedex_kg:
+    =kg
+
+@create ref
+str_pokepad_pokedex_m:
+    =m
+
+@create ref
+str_pokepad_pokedex_comma:
+    =,
+
+@create ref
+str_pokepad_pokedex_habitat_title:
+    = Fundorte v. 
+
+@create ref
+str_pokepad_pokedex_habitat_back:
+    = \k\_keyb Zur.
+
+@create ref
+str_pokepad_pokedex_habitat_grass:
+    = Gras
+
+@create ref
+str_pokepad_pokedex_habitat_water:
+    = Wasser
+
+@create ref
+str_pokepad_pokedex_habitat_rod:
+    = Angel
+
+@create ref
+str_pokepad_pokedex_habitat_radar:
+    = Radar
+
+@create ref
+str_pokepad_pokedex_habitat_none:
+    = Keine Gebiete bekannt
