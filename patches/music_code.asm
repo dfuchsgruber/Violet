@@ -18,3 +18,8 @@ bx r0
     mov r0, #0x1
 .org 0x08088C82
     mov r0, #0x1
+
+.org 0x08055DAC
+    ldr r0, =current_map_get_song | 1
+    bx r0
+    .pool

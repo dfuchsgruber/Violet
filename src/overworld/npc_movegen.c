@@ -13,6 +13,7 @@
 #include "overworld.h"
 #include "callbacks.h"
 #include "data_structures.h"
+//void tt(int a, int b){while(true){}}
 
 void special_move_npc_to_player(){
     s16 pos[2];
@@ -42,10 +43,7 @@ void move_npc_to(u8 ow_id, s16 dest_x, s16 dest_y){
     **/
     u8 *dyn_move = (u8*)malloc(256); //dynamic space for movement list
     
-    int path_len = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id]);
-    
-    //dyn_move[path_len++] = facings[get_playerfacing()-1];
-    dyn_move[path_len++] = 0xFE;
+    int path_len = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id])-1;
     
     /**Now we generate a move list
     int processed = 0;

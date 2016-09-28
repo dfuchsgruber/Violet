@@ -101,7 +101,8 @@ void anim_engine_execute_frame (ae_memory* mem){
                                     cmdx2A_bg_vmap_drop,
                                     cmdx2B_bg_scroll,
                                     cmdx2C_mapreload,
-                                    cmdx2D_force_pals_to_black
+                                    cmdx2D_force_pals_to_black,
+                                    cmdx2E_bg_clear_map
         };
 	u8 cmd_id = anim_engine_read_byte(mem);
 	
@@ -930,4 +931,12 @@ void anim_engine_bg_free_task(u8 self){
         free(memory);
         remove_big_callback(self);
     }
+}
+
+void cmdx2E_bg_clear_map (ae_memory *mem){
+    u8 bg_id = anim_engine_read_byte(mem);
+    u16 size = anim_engine_read_hword(mem);
+    int n = 0;
+    cpuset(&n, bg_get_tilemap(bg_id), (size/4) || 0x5000000);
+    bg_virtual_sync(bg_id);
 }

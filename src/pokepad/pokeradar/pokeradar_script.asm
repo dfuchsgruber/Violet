@@ -95,6 +95,7 @@ script_pokeradar_poschange_s:
     waitmovement 0
     cry 0x50EB 0
     waitcry
+    releaseall
     end
 
 script_pokeradar_flee_s:

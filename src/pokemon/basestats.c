@@ -5647,7 +5647,7 @@ basestat basestats[POKEMON_CNT] = {
 
 	//POKEMON_ZERBERTRES
 	{
-		80, 125, 62, 90, 125, 65,    //basestat values (hp, att, def, spe, satk, sdef)
+		80, 125, 62, 90, 120, 65,    //basestat values (hp, att, def, spe, satk, sdef)
 		TYPE_FIRE, TYPE_DARK,   //types
 		45,   //catch rate
 		209,   //exp yield

@@ -13,6 +13,7 @@
 #include "anim_engine.h"
 
 #define VAR_BATTLE_MUSIC 0x50DC
+#define VAR_MAP_MUSIC_FORCE 0x50D9
 
 #define MUS_VIOLET_ENCOUNTER 274
 #define MUS_GYMLEADER_BATTLE 0x128
@@ -25,7 +26,7 @@
 
 u16 get_encounter_music_by_trainer_id(u16 trainer_id);
 u16 battle_get_music();
-
+u16 current_map_get_song();
 
 
 #endif	/* MUSIC_H */

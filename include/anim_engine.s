@@ -31,6 +31,18 @@
 .hword \startframe
 .endm
 
+@spawns a big callback
+.macro spawn_big_cb func prio init_data_hword_cnt
+.byte 0x8
+.word \func
+.byte \prio
+.byte \init_data_hword_cnt
+.endm
+
+@append max 16 .hword XXX to the command (the cnt must equal the init_data_hword_cnt)
+@these hwords are copied into callback.params[n], copying the first one to n = 0
+
+
 @resets bgs
 .macro bg_reset unkown
 .byte 9
@@ -275,4 +287,11 @@
 @field for bg setup
 .macro bg_setup_cnfg id charbase mapbase size colmode priority
 .word \id | (\charbase << 2) | (\mapbase << 4) | (\size << 9) | (\colmode << 11) | (\priority << 12)
+.endm
+
+@clear the vmap for a bg
+.macro bg_clear_map id size
+.byte 0x2E
+.byte \id
+.hword \size
 .endm

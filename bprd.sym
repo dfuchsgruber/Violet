@@ -181,3 +181,7 @@ obj_vram_add_tile_tag_to_allocation_table = 0x08008829;
 national_dex_is_achieved = 0x0806E1C1;
 worldmap_get_position_namespace = 0x080C431D;
 worldmap_get_current_index = 0x080C0FF1;
+npc_anim_stop = 0x08067935;
+npc_anim_init_walk = 0x80646FD;
+npc_anim_walk_is_finished = 0x8064D5D;
+player_npc_set_state_and_behavior_tile_anim = 0x0805C025;

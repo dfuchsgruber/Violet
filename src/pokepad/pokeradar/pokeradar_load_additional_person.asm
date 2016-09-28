@@ -52,7 +52,7 @@ bx r1
 .align 2
 overworld:
 .byte 254	@id of the additional npc
-.byte 0x72	@picture
+.byte 155	@picture
 .byte 0x0
 .byte 0x0	@unkowns
 .hword 0x0	@x

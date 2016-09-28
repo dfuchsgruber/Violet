@@ -3,7 +3,7 @@
 #include "map.h"
 #include "utils.h"
 #include "pokepad.h"
-#include "pokemon.h"
+#include "basestats.h"
 #include "pokeradar.h"
 #include "callbacks.h"
 #include "save.h"
@@ -118,6 +118,10 @@ u8 pokeradar_prepeare(){
             (*save1)->persons[i].x = (s16)(npc_pos.x-7);
             (*save1)->persons[i].y = (s16)(npc_pos.y-7);
             //test(&(*save1)->persons[i]);
+            
+            u8 form = basestats[result].form;
+            (*save1)->persons[i].overworld_index = (u8)(154+form);
+            
             return 0;
         }
     }

@@ -179,3 +179,8 @@ music_table equ 0x9194500
 
 .org music_table + 8*362
     .word mus_criminal_intentions
+    .word 0
+
+.org music_table + 8*363
+    .word mus_mistral
+    .word 0

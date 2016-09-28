@@ -147,4 +147,5 @@ bool obj_vram_allocate(u16 tiles);
 void obj_vram_add_tile_tag_to_allocation_table(u16 tag, u16 tile, u16 tile_amount);
 u8 worldmap_get_position_namespace(u8 worldmap_index, u8 layer, u16 x, u16 y);
 u8 worldmap_get_current_index();
+void player_npc_set_state_and_behavior_tile_anim (u8 movement, u8 unkown);
 #endif

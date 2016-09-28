@@ -10,7 +10,7 @@
 
 #include "anim_engine.h"
 #include "map.h"
-
+#include "oams.h"
 
 typedef struct npc{
     struct{
@@ -76,6 +76,15 @@ u8 *player_npc = (u8*)0x02037078;
 
 u8 npc_is_tile_blocked(npc *n, s16 x, s16 y, u8 direction);
 u8 npc_sees_player(npc *n);
+
+bool npc_anim_stop (npc *n, oam_object *target);
+
+void npc_anim_init_walk (npc *n, oam_object *target, u8 direction, u8 unkown);
+bool npc_anim_walk_is_finished (npc *n, oam_object *target);
+
+bool npc_anim_diag_no_init(npc *n, oam_object *target);
+void npc_diag_apply(npc *n, oam_object *target, u8 direction);
+u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direction, u8 role_to);
 
 #endif	/* NPC_H */
 

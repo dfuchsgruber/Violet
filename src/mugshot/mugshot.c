@@ -13,10 +13,10 @@
 static sprite mugshot_sprite = {0, 0xC000, 0, 0};
 
 static mugshot mugshots[] = {
-    {(void*) 0x93d6750, (void*) 0x93d6720}, {(void*) 0x8882bb4 ,(void*) 0x8883240}, {(void*) 0x8885630, (void*) 0x8885e00}, {(void*) 0x8884168, (void*) 0x8884850},
+    {(void*) 0x93d6750, (void*) 0x93d6720}, {(void*) 0x8882bb4 ,(void*) 0x8883240}, {&gfx_mug_mistralTiles, &gfx_mug_mistralPal}, {(void*) 0x8884168, (void*) 0x8884850},
     {(void*) 0x8884bf8, (void*) 0x8885328}, {(void*) 0x88692e8, (void*) 0x8869a04}, {(void*) 0x8891f00, (void*) 0x88922b0}, {(void*) 0x8892388, (void*) 0x88927c8},
     {(void*) 0x9500000, (void*) 0x9500440}, {(void*) 0x9502350, (void*) 0x95026f0}, {(void*) 0x88b4000, (void*) 0x9502310}, {(void*) 0x9502730, (void*) 0x9502d10},
-    {(void*) 0x9502d50, (void*) 0x9502b40}, {(void*) 0x9503200, (void*) 0x9503640}, {(void*) 0x9378bf0, (void*) 0x9378f90}, {(void*) 0x9379000, (void*) 0x93793a0},
+    {&gfx_mug_hiroTiles, &gfx_mug_hiroPal}, {(void*) 0x9503200, (void*) 0x9503640}, {(void*) 0x9378bf0, (void*) 0x9378f90}, {(void*) 0x9379000, (void*) 0x93793a0},
     {(void*) 0x938d800, (void*) 0x93c1300}, {(void*) 0x93c1330, (void*) 0x93c16c0}, {(void*) 0x93c1700, (void*) 0x93c1a70}, {(void*) 0x93c4160, (void*) 0x93c45f0},
     {(void*) 0x93d4c30, (void*) 0x93d4c00}, {(void*) 0x93d50b0, (void*) 0x93d5080}, {(void*) 0x9399530, (void*) 0x93997c0}, {(void*) 0x93d54b0, (void*) 0x93d5480},
     {(void*) 0x93d6350, (void*) 0x93d6320}, {&gfx_mug_igvaTiles, &gfx_mug_igvaPal}

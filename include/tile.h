@@ -21,6 +21,15 @@
 #define FIELD_BEHAVIOR 0
 #define FIELD_HM_USAGE 1
 
+
+#define BEHAVIOR_SIDE_STAIR_WEST 0xB4
+#define BEHAVIOR_SIDE_STAIR_EAST 0xB5
+
+#define DIAG_NO 0x80
+#define DIAG_SO 0x81
+#define DIAG_SW 0x82
+#define DIAG_NW 0x83
+
 typedef struct {
     s16 x;
     s16 y;
@@ -60,7 +69,6 @@ int get_trash_hash_by_facing(u8 facing, int m);
 int a_hash(s16 x, s16 y, u8 map, u8 bank, int m);
 void new_a_vector();
 u32 tile_get_field_by_pos(s16 x, s16 y, u8 field);
-
 
 void load_tv_text();
 u8 *get_tv_text();

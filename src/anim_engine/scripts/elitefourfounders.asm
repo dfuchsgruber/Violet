@@ -177,6 +177,7 @@ frame 4800
 
 frame 5100
     mapreload
+    script_notify
     end
     endframe
 

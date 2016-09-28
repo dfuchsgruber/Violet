@@ -110,6 +110,10 @@
 .byte 0x69
 .endm
 
+.macro releaseall
+.byte 0x6B
+.endm
+
 .macro waitkeypress
 .byte 0x6D
 .endm

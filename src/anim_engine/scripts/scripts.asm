@@ -9,6 +9,6 @@ script_table:
     .word elite_four_founders
     .word ae_script_darkqueen_fade_to
     .word ae_script_darkqueen_fade_from
-
+    .word ae_script_mistral_yin_yang
 
 
