@@ -1,3 +1,6 @@
 @create ref
 str_nature_stone_sucess:
         =Das Wesen von \b\2 hat\nsich geändert.\w\9
+
+str_item_desc_wolkenherz:
+        =Ein antikes Relikt, das zwar aus\nStein ist, sich aber weich anfühlt.

@@ -18,3 +18,8 @@
         ldr r0, =pokepad_outdoor_trigger | 1
         bx r0
         .pool
+
+//prevents the help context from start menu to be ereased by decetor state
+.org 0x0806F064
+        mov r0, #0
+        mov r0, #0

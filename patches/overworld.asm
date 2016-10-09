@@ -3,6 +3,9 @@ overworld_table equ 0x08C80000
 .org overworld_table + 4*1
     .word ow_mskate
 
+.org overworld_table + 4*82
+    .word ow_manus
+
 .org overworld_table + 4*86
     .word ow_igva
 
@@ -27,6 +30,12 @@ overworld_table equ 0x08C80000
     .word ow_shape_fish
     .word ow_shape_ball
     .word ow_shape_multi
+
+.org overworld_table + 4 * 168
+    .word ow_mistral
+
+.org overworld_table + 4 * 169
+    .word ow_altaria
 
 
 .org 0x8064540

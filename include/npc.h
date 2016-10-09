@@ -71,8 +71,21 @@ typedef struct npc{
     u8 field_23;
 }npc;
 
+typedef struct{
+    u8 state;
+    u8 bike;
+    u8 running2;
+    u8 running1;
+    u8 std_oam_id;
+    u8 player_npc_id;
+    u8 is_locked;
+    u8 gender;
+    u8 mode;
+    u8 unkown[3];
+}player_state;
+
 npc *npcs = (npc*)0x02036E38;
-u8 *player_npc = (u8*)0x02037078;
+player_state *pstate = (player_state*)0x02037078;
 
 u8 npc_is_tile_blocked(npc *n, s16 x, s16 y, u8 direction);
 u8 npc_sees_player(npc *n);

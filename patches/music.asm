@@ -45,6 +45,10 @@ music_table equ 0x9194500
     .word mus_melancholy
     .word 0
 
+.org music_table + 8*293
+    .word mus_windy
+    .word 0
+
 .org music_table + 8*296
     .word mus_gym_leader
     .word 0
@@ -183,4 +187,8 @@ music_table equ 0x9194500
 
 .org music_table + 8*363
     .word mus_mistral
+    .word 0
+
+.org music_table + 8*364
+    .word mus_sky
     .word 0

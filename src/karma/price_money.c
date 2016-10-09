@@ -27,7 +27,17 @@ int modify_price_money(int price_money){
 	//Applying karma
 	int factor = 0x100 - ((s16)(*vardecrypt(VAR_KARMA)));
 	new_price_money *= factor;
-	new_price_money >>= 8; 
+	new_price_money >>= 8;
+        
+        u16 *credit = vardecrypt(VAR_CREDIT);
+        if(*credit){
+            int to_pay = new_price_money - (new_price_money >> 2);
+            if(to_pay > *credit){
+                to_pay = *credit;
+            }
+            *credit = (u16)(*credit - to_pay);
+            new_price_money -= to_pay;
+        }
 	
 	return new_price_money;
 }

@@ -23,6 +23,12 @@ beq trigger_tv
 cmp r4, #0xB3
 beq trigger_trash
 
+cmp r4, #0xB8
+beq trigger_cloud
+
+cmp r4, #0xB9
+beq trigger_cloud_back
+
 ldr r0, =0x924
 bl _checkflag
 cmp r0, #0
@@ -47,6 +53,19 @@ cmp r5, #2
 bne ret
 ldr r0, =script_tv
 b ret_s
+
+
+
+trigger_cloud:
+mov r0, #0
+exec_trigger_cloud:
+bl cloud_trigger
+b ret_s
+
+trigger_cloud_back:
+mov r0, #1
+b exec_trigger_cloud
+
 
 trigger_dungeon_entry:
 ldr r0, =script_d_entry

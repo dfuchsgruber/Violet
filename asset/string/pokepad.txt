@@ -267,7 +267,7 @@ str_pokepad_pokedex_habitat_back:
 
 @create ref
 str_pokepad_pokedex_habitat_grass:
-    = Gras
+    = Natur
 
 @create ref
 str_pokepad_pokedex_habitat_water:

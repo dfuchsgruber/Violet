@@ -33,7 +33,7 @@ typedef struct saveblock1 {
 typedef struct saveblock2{
     
     u8 unkown[0x8];
-    bool player_is_female;
+    u8 player_is_female;
     u8 unkown_4[0xA];
     u8 detector_state; //original key swtiching
     u8 text_speed;
@@ -75,6 +75,7 @@ typedef struct{
         pokepad_memory *pad_mem;
         wondertrade_memory *wtrade_mem;
         pokedex_memory *dex_mem;
+        script additional_levelscript_4;
     
 }floating_memory;
 

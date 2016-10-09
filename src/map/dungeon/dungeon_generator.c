@@ -419,7 +419,7 @@ void relocate_dungeon_events(dungeon_generator *d){
 	
 	cmem->ladder.x = x;
 	cmem->ladder.y = y;
-	cmem->ladder.field_4 = 0;
+	cmem->ladder.height = 0;
 	cmem->ladder.target_warp_id = 3;
 	cmem->ladder.target_map = 3;
 	cmem->ladder.target_bank = 3;

@@ -52,8 +52,20 @@ special_table equ 0x0815FCC0
         .word special_gamble_remove | 1
         .pool
 
+.org (special_table + (0x26 * 4))
+        .word special_heal_team_index | 1
+        .pool
+
 /// From 0x2B are 7 free specials
+.org (special_table + (0x2B * 4))
+        .word cloud_force | 1
+        .pool
+
+.org (special_table + (0x2C * 4))
+        .word cloud_enter | 1
+        .pool
 
 .org (special_table +(0x36 *4))
         .word special_x36_check_loaded_trainerflag | 1
         .pool
+

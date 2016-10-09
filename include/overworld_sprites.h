@@ -15,6 +15,7 @@
 
 //We define the constant offsets for things we know
 #define OW_ANIM_STANDARD_NPC (void*)0x083A322C
+#define OW_ANIM_HO_OH (void*)0x083A3280
 
 #define OW_FORMATION_16_32 (void*)0x083A3660
 #define OW_FORMATION_128_64 (void*)0x083A3914

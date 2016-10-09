@@ -6,11 +6,6 @@
 #include "romfuncs.h"
 #include "data_structures.h"
 
-void special_test(){
-    
-    while(true){}
-}
-
 
 
 void special_prepeare_player_facing(){

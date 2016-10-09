@@ -49,12 +49,14 @@ typedef struct battler {
 } battler;
 
 typedef struct battle_bg{
-	void *tileset;
-	void *tilemap;
-	void *animset;
-	void *animmap;
-	void *palette;
+	const void *tileset;
+	const void *tilemap;
+	const void *anim_tileset;
+	const void *anim_tilemap;
+	const void *pal;
 }battle_bg;
+
+battle_bg battle_bgs[29];
 
 u16 can_mega_evolve(battler *b);
 

@@ -148,4 +148,15 @@ void obj_vram_add_tile_tag_to_allocation_table(u16 tag, u16 tile, u16 tile_amoun
 u8 worldmap_get_position_namespace(u8 worldmap_index, u8 layer, u16 x, u16 y);
 u8 worldmap_get_current_index();
 void player_npc_set_state_and_behavior_tile_anim (u8 movement, u8 unkown);
+void pokemon_heal_all();
+u8 *flag_access(u16 flag);
+void npc_player_set_bike_state(u8 state);
+bool checkitem(u16 item, u16 quantity);
+void warp_setup_teleport_callback();
+void warp_setup_muted_callback();
+void warp_enable_flags();
+script map_get_levelscript_if_triggered(u8 type);
+void script_init_muted(script s);
+
+
 #endif

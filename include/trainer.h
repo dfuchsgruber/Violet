@@ -14,18 +14,19 @@
 #define TRAINERCLASS_GYMLEADER 0x54
 #define TRAINERCLASS_TEAM_VIOLET 0x55
 
-typedef struct trainer{
-	u8 struct_info;
-	u8 trainerclass;
-	struct encounter_and_gender{
-            u8 encounter : 7;
-            u8 gender : 1;
-        }encounter_and_gender;
-	u8 field_2;
-	u8 name[8];
-	u8 unkown_fields[0x1C];
-	
-}trainer;
+typedef struct {
+    u8 struct_info;
+    u8 trainerclass;
+
+    struct encounter_and_gender {
+        u8 encounter : 7;
+        u8 gender : 1;
+    } encounter_and_gender;
+    u8 field_2;
+    u8 name[12];
+    u8 unkown_fields[0x18];
+
+} trainer;
 
 typedef struct build_field{
 	u8 build : 5;

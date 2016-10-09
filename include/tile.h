@@ -30,6 +30,7 @@
 #define DIAG_SW 0x82
 #define DIAG_NW 0x83
 
+
 typedef struct {
     s16 x;
     s16 y;
@@ -75,6 +76,13 @@ u8 *get_tv_text();
 
 coordinate *walking_directions = (coordinate*)0x083A638C;
 
+script cloud_trigger(bool back);
+void cloud_enter();
 
+extern script script_cloud_none_ref;
+extern script script_use_cloud_ref;
+extern script script_use_cloud_back_ref;
+extern script script_cloud_facings[5];
+extern script script_cloud_force_ref[5];
 
 #endif

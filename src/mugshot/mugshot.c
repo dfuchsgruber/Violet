@@ -10,7 +10,7 @@
 
 #define MUGSHOT_BASE_TAG 0x1340
 
-static sprite mugshot_sprite = {0, 0xC000, 0, 0};
+static sprite mugshot_sprite = {0, 0xC000, 0x400, 0};
 
 static mugshot mugshots[] = {
     {(void*) 0x93d6750, (void*) 0x93d6720}, {(void*) 0x8882bb4 ,(void*) 0x8883240}, {&gfx_mug_mistralTiles, &gfx_mug_mistralPal}, {(void*) 0x8884168, (void*) 0x8884850},

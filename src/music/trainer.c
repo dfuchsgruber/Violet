@@ -33,8 +33,12 @@ pair trainer_music_table [] = {
 };
 
 u16 battle_get_music(){
-    u16 battle_music = *vardecrypt(VAR_BATTLE_MUSIC);
-    if (battle_music) return battle_music;
+    u16 *battle_music = vardecrypt(VAR_BATTLE_MUSIC);
+    if (*battle_music){
+        u16 forced_mus = *battle_music;
+        *battle_music = 0;
+        return forced_mus;
+    }
     if (battle_flags->trainer_battle){
         //scan a lo_table
         int i = 0;

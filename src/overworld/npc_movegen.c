@@ -43,7 +43,7 @@ void move_npc_to(u8 ow_id, s16 dest_x, s16 dest_y){
     **/
     u8 *dyn_move = (u8*)malloc(256); //dynamic space for movement list
     
-    int path_len = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id])-1;
+    a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id]);
     
     /**Now we generate a move list
     int processed = 0;

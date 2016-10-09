@@ -11,3 +11,15 @@ trainerpals equ 0x082398EC
 
 .org trainerpals + 8*2
     .word gfx_trainer_revo_fPal
+
+.org trainersprites +8 *5
+    .word gfx_trainer_eliseTiles
+
+.org trainerpals + 8*5
+    .word gfx_trainer_elisePal
+
+.org trainersprites + 8 * 118
+    .word gfx_trainer_manusTiles
+
+.org trainerpals + 8 * 118
+    .word gfx_trainer_manusPal

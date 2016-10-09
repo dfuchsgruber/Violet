@@ -158,8 +158,6 @@ const int *gfx_worldmapTiles = (int*)0x09370200;
 const void *gfx_worldmapPal = (void*)0x083EEB32;
 u8 *namespace_worldmap_associations = (u8*)0x083F12FC;
 
-void test(int a, int b){while(true){}}
-
 void pokedex_init_habitat(){
     cb1handling();
     if(!is_fading()){

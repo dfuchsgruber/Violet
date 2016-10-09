@@ -21,6 +21,8 @@
 .include "patches/pokepad.asm"
 .include "patches/pokemon.asm"
 .include "patches/extensions.asm"
+.include "patches/battle.asm"
+.include "patches/map.asm"
 
 //Remove Help-System
 .org 0x0813B90C

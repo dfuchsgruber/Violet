@@ -53,6 +53,10 @@
 .hword \specialid
 .endm
 
+.macro waitstate
+.byte 0x27
+.endm
+
 .macro pause frames
 .byte 0x28
 .hword \frames
@@ -102,8 +106,18 @@
 .byte 0x5A
 .endm
 
+.macro spriteface owid dir
+.byte 0x5B
+.hword \owid
+.byte \dir
+.endm
+
 .macro waitmsg
 .byte 0x66
+.endm
+
+.macro closeonkeypress
+.byte 0x68
 .endm
 
 .macro lockall
@@ -147,3 +161,4 @@
 .hword \persid
 .hword \movement
 .endm
+

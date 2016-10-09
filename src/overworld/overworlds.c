@@ -368,3 +368,63 @@ overworld_sprite ow_shape_multi = {
     OW_ANIM_STANDARD_NPC, overworld_sprite_shape_multi,
     ROTSCALE_TABLE_NULL
 };
+
+static graphic overworld_sprite_mistral []={
+    {&gfx_ow_mistral_0Tiles, 0x100, 0},
+    {&gfx_ow_mistral_1Tiles, 0x100, 0},
+    {&gfx_ow_mistral_2Tiles, 0x100, 0},
+    {&gfx_ow_mistral_3Tiles, 0x100, 0},
+    {&gfx_ow_mistral_4Tiles, 0x100, 0},
+    {&gfx_ow_mistral_5Tiles, 0x100, 0},
+    {&gfx_ow_mistral_6Tiles, 0x100, 0},
+    {&gfx_ow_mistral_7Tiles, 0x100, 0},
+    {&gfx_ow_mistral_8Tiles, 0x100, 0}
+}; 
+
+overworld_sprite ow_mistral = {
+    0xFFFF, 0x1100+6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_mistral,
+    ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_manus []={
+    {&gfx_ow_manus_0Tiles, 0x100, 0},
+    {&gfx_ow_manus_1Tiles, 0x100, 0},
+    {&gfx_ow_manus_2Tiles, 0x100, 0},
+    {&gfx_ow_manus_3Tiles, 0x100, 0},
+    {&gfx_ow_manus_4Tiles, 0x100, 0},
+    {&gfx_ow_manus_5Tiles, 0x100, 0},
+    {&gfx_ow_manus_6Tiles, 0x100, 0},
+    {&gfx_ow_manus_7Tiles, 0x100, 0},
+    {&gfx_ow_manus_8Tiles, 0x100, 0}
+}; 
+
+overworld_sprite ow_manus = {
+    0xFFFF, 0x1100+4, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_manus,
+    ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_altaria []={
+    {&gfx_ow_altaria_0Tiles, 0x200, 0},
+    {&gfx_ow_altaria_0Tiles, 0x200, 0},
+    {&gfx_ow_altaria_0Tiles, 0x200, 0},
+    {&gfx_ow_altaria_0Tiles, 0x200, 0},
+    {&gfx_ow_altaria_1Tiles, 0x200, 0},
+    {&gfx_ow_altaria_0Tiles, 0x200, 0},
+    {&gfx_ow_altaria_1Tiles, 0x200, 0},
+    {&gfx_ow_altaria_0Tiles, 0x200, 0},
+    {&gfx_ow_altaria_1Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_altaria = {
+    0xFFFF, 0x1100+6, 0x11FF, 0x200,
+    32, 32, 0x15, 0x1, 0x0, 0x0,
+    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+    OW_ANIM_HO_OH, overworld_sprite_altaria,
+    ROTSCALE_TABLE_NULL
+};

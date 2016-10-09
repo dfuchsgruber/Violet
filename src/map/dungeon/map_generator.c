@@ -80,7 +80,7 @@ map_events *compute_dungeon_events(){
 	
 	cmem->ladder.x = 0;
 	cmem->ladder.y = 0;
-	cmem->ladder.field_4 = 0;
+	cmem->ladder.height = 0;
 	cmem->ladder.target_warp_id = 0;
 	cmem->ladder.target_map = 3;
 	cmem->ladder.target_bank = 3;

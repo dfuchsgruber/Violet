@@ -90,14 +90,18 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 result = DIAG_SW;
             }
             
-        }else if(role_to == BEHAVIOR_SIDE_STAIR_WEST && get_block_info_behaviour(x_to_origin, (s16)(y_to_origin-1)) == BEHAVIOR_SIDE_STAIR_WEST){ //Northwest ascending check
-            //In order to check for northwest ascend we have to move the ncpy one step up (y--)
-            memcopy(ncpy, n, sizeof(npc));
-            ncpy->from_y--;
-            ncpy->dest_y--;
-            result = npc_is_tile_blocked(ncpy, x_to_origin, (s16)(y_to_origin-1), direction);
-            if(!result){
-                result = DIAG_NW;
+        }else if(role_to == BEHAVIOR_SIDE_STAIR_WEST){ //Northwest ascending check
+            if(get_block_info_behaviour(x_to_origin, (s16)(y_to_origin-1)) != BEHAVIOR_SIDE_STAIR_WEST){
+                return 3;
+            }else{
+                //In order to check for northwest ascend we have to move the ncpy one step up (y--)
+                memcopy(ncpy, n, sizeof(npc));
+                ncpy->from_y--;
+                ncpy->dest_y--;
+                result = npc_is_tile_blocked(ncpy, x_to_origin, (s16)(y_to_origin-1), direction);
+                if(!result){
+                    result = DIAG_NW;
+                }
             }
         }
         
@@ -112,14 +116,18 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 result = DIAG_SO;
             }
             
-        }else if(role_to == BEHAVIOR_SIDE_STAIR_EAST && get_block_info_behaviour(x_to_origin, (s16)(y_to_origin-1)) == BEHAVIOR_SIDE_STAIR_EAST){ //Northwest ascending check
-            //In order to check for northwest ascend we have to move the ncpy one step up (y--)
-            memcopy(ncpy, n, sizeof(npc));
-            ncpy->from_y--;
-            ncpy->dest_y--;
-            result = npc_is_tile_blocked(ncpy, x_to_origin, (s16)(y_to_origin-1), direction);
-            if(!result){
-                result = DIAG_NO;
+        }else if(role_to == BEHAVIOR_SIDE_STAIR_EAST){ //Northwest ascending check
+            if(get_block_info_behaviour(x_to_origin, (s16)(y_to_origin-1)) != BEHAVIOR_SIDE_STAIR_EAST){
+                return 3;
+            }else{
+                //In order to check for northwest ascend we have to move the ncpy one step up (y--)
+                memcopy(ncpy, n, sizeof(npc));
+                ncpy->from_y--;
+                ncpy->dest_y--;
+                result = npc_is_tile_blocked(ncpy, x_to_origin, (s16)(y_to_origin-1), direction);
+                if(!result){
+                    result = DIAG_NO;
+                }
             }
         }
     }

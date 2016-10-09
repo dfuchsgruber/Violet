@@ -1,6 +1,6 @@
 #define CALLBACK_OBJECT(x) ((big_callback*)((x*sizeof(big_callback))+0x03004FE0))
 
-typedef struct big_callback{
+typedef struct{
 	
 	void (*function)(u8 self);
 	u8 active_state;

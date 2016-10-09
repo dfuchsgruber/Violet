@@ -185,6 +185,7 @@ u8 pokemon_item_animations[POKEMON_CNT][5];
  
 pokemon_evolution pokemon_evolutions[POKEMON_CNT][5];
 
+void special_heal_team_index();
 
 
 #endif

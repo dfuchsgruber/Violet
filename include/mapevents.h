@@ -28,7 +28,7 @@ typedef struct map_event_person{
 typedef struct map_event_warp{
 	s16 x;
 	s16 y;
-	u8 field_4;
+	u8 height;
 	u8 target_warp_id;
 	u8 target_map;
 	u8 target_bank;
