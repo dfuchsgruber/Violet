@@ -13,7 +13,18 @@ item_resource equ 0x83D3BE8
 .org item_table + 0x2C * 0x10B + description
     .word str_item_desc_wolkenherz
 
+
+.org item_table + 0x2C * 0x168 + description
+    .word str_item_desc_wolke
+
 .org item_resource + 0x10B * 8
     .word gfx_item_wolkenherzTiles
     .word gfx_item_wolkenherzPal
 
+.org item_resource + 0x168 * 8
+    .word gfx_item_wolkeTiles
+    .word gfx_item_wolkePal
+
+//@Bike sound := 195
+.org 0x080A1402
+    mov r0, #195

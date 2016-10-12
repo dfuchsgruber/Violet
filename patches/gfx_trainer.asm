@@ -18,6 +18,18 @@ trainerpals equ 0x082398EC
 .org trainerpals + 8*5
     .word gfx_trainer_elisePal
 
+.org trainersprites + 8 * 71
+    .word gfx_trainer_cloudrider_femTiles
+
+.org trainerpals + 8 * 71
+    .word gfx_trainer_cloudrider_femPal
+
+.org trainersprites + 8 * 72
+    .word gfx_trainer_cloudrider_maleTiles
+
+.org trainerpals + 8 * 72
+    .word gfx_trainer_cloudrider_malePal
+
 .org trainersprites + 8 * 118
     .word gfx_trainer_manusTiles
 

@@ -428,3 +428,43 @@ overworld_sprite ow_altaria = {
     OW_ANIM_HO_OH, overworld_sprite_altaria,
     ROTSCALE_TABLE_NULL
 };
+
+static graphic overworld_sprite_cloudrider_fem []={
+    {&gfx_ow_cloudrider_fem_0Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_1Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_2Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_0Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_0Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_1Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_1Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_2Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_fem_2Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_cloudrider_fem = {
+    0xFFFF, 0x1100+6, 0x11FF, 0x200,
+    32, 32, 0x15, 0x1, 0x0, 0x0,
+    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_cloudrider_fem,
+    ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_cloudrider_male []={
+    {&gfx_ow_cloudrider_male_0Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_1Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_2Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_0Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_0Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_1Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_1Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_2Tiles, 0x200, 0},
+    {&gfx_ow_cloudrider_male_2Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_cloudrider_male = {
+    0xFFFF, 0x1100+6, 0x11FF, 0x200,
+    32, 32, 0x15, 0x1, 0x0, 0x0,
+    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_cloudrider_male,
+    ROTSCALE_TABLE_NULL
+};

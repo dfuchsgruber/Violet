@@ -4,3 +4,6 @@ str_nature_stone_sucess:
 
 str_item_desc_wolkenherz:
         =Ein antikes Relikt, das zwar aus\nStein ist, sich aber weich anfühlt.
+
+str_item_desc_wolke:
+        =Eine gewobene Wolke von watte-\nartier Konsistenz. Sie schwebt in\nBodennähe und kann Menschen tragen.

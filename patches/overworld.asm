@@ -37,6 +37,12 @@ overworld_table equ 0x08C80000
 .org overworld_table + 4 * 169
     .word ow_altaria
 
+.org overworld_table + 4 * 170
+    .word ow_cloudrider_fem
+
+.org overworld_table + 4 * 171
+    .word ow_cloudrider_male
+
 
 .org 0x8064540
     .word npc_anims
