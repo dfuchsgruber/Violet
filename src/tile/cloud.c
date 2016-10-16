@@ -54,3 +54,21 @@ void cloud_enter(){
     clearflag(FLAG_TRANSPARENCY_ON);
 }
 
+
+void warp_to_pos_with_facing(){
+    u16 x = *vardecrypt(0x8000);
+    u16 y = *vardecrypt(0x8001);
+    u16 bank = *vardecrypt(0x8002);
+    u16 map = *vardecrypt (0x8003);
+    u16 facing = *vardecrypt(0x8004);
+    
+    //ampf(x, y, bank, map);
+    
+    fmem->additional_levelscript_4 = script_cloud_facings[facing];
+    warp_setup((u8)bank, (u8)map, 0xFF, (s16)x, (s16)y);
+    //warp_setup_callbacks();
+    warp_setup_muted_callback();
+    warp_enable_flags();
+    clearflag(FLAG_TRANSPARENCY_ON);
+}
+

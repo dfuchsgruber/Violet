@@ -414,7 +414,7 @@ void wondertrade_init_components(){
     tbox_tilemap_draw(POKEPAD_WONDERTRADE_TBOX_CNT_T);
     u8 *strbuf = (u8*)0x02021D18;
     u16 cnt = *vardecrypt(VAR_POKEPAD_WONDERTRADE_CNT);
-    hex_to_dec_String(strbuf, cnt, 0, 3);
+    value_to_str(strbuf, cnt, 0, 3);
     tbox_print_string(POKEPAD_WONDERTRADE_TBOX_CNT_T, 2, 0, 0, 0, 0, wondertrade_fontcolmap, 0x0, strbuf);
     
     //Neachster Lv.
@@ -440,7 +440,7 @@ void wondertrade_init_components(){
             break;
     }
     if (cnt != 0xFFFF)
-        hex_to_dec_String(strbuf2, cnt, 0, 3);
+        value_to_str(strbuf2, cnt, 0, 3);
     else
         strcpy(strbuf2, str_wondertrade_none_ref);
     tbox_print_string(POKEPAD_WONDERTRADE_TBOX_NEXT_T, 2, 0, 0, 0, 0, wondertrade_fontcolmap, 0x0,strbuf2);
@@ -448,7 +448,7 @@ void wondertrade_init_components(){
     //now we spawn the oam for the badges
     load_and_alloc_obj_vram_lz77(&graphic_wondertrade_badges);
     u8 bpal = allocate_obj_pal(0xA004);
-    load_comp_pal_into_RAM(gfx_wondertrade_badgesPal, (u16)((16+bpal)*16), 32);
+    pal_load_comp(gfx_wondertrade_badgesPal, (u16)((16+bpal)*16), 32);
     fmem->wtrade_mem->oam_badge = generate_oam_forward_search(&oam_template_wondertrade_badges, 64, 50, 0);
     //now we change to the proper graphic
     int displacement = 0;
@@ -501,9 +501,9 @@ void wondertrade_init_components(){
     bg_virtual_set_displace(2, 0, 0);
     
     //pal
-    load_comp_pal_into_RAM(gfx_wondertrade_bg_upperPal, 0, 32);
-    load_comp_pal_into_RAM(gfx_wondertrade_bg_lowerPal, 1*16, 32);
-    load_uncomp_pal_into_RAM(transparency_black_box_pals, 15*16, 32);
+    pal_load_comp(gfx_wondertrade_bg_upperPal, 0, 32);
+    pal_load_comp(gfx_wondertrade_bg_lowerPal, 1*16, 32);
+    pal_load_uncomp(transparency_black_box_pals, 15*16, 32);
     if (!fmem->wtrade_mem->usable){
         //greyscale all pals
         int i;
@@ -514,8 +514,8 @@ void wondertrade_init_components(){
             pal_restore[i] = n;
         }
     }
-    load_uncomp_pal_into_RAM(transparency_black_box_pals, 13*16, 32);
-    load_uncomp_pal_into_RAM(transparency_black_box_pals, 14*16, 32);
+    pal_load_uncomp(transparency_black_box_pals, 13*16, 32);
+    pal_load_uncomp(transparency_black_box_pals, 14*16, 32);
     
     pal_set_all_to_black();
     
@@ -546,7 +546,7 @@ void wondertrade_init_callback(){
 
 void wondertrade_load_steps_into_buffer(){
     u8 *buffer0 = (u8*)0x02021CD0;
-    hex_to_dec_String(buffer0, *vardecrypt(VAR_POKEPAD_WONDERTRADE_STEP_CNT), 0, 3);
+    value_to_str(buffer0, *vardecrypt(VAR_POKEPAD_WONDERTRADE_STEP_CNT), 0, 3);
 }
 
 void wondertrade_init(bool is_outdoor){

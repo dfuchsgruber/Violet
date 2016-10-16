@@ -29,10 +29,10 @@ void battle_bg_load(u8 bg_id){
 			buf[i] = new;
 		}
 		
-		load_uncomp_pal_into_RAM(buf, 0x20, 0x60);
+		pal_load_uncomp(buf, 0x20, 0x60);
 		
 		free(buf);
 	}else{
-		load_comp_pal_into_RAM(battle_bgs[bg_id].pal, 0x20, 0x60);
+		pal_load_comp(battle_bgs[bg_id].pal, 0x20, 0x60);
 	}
 }

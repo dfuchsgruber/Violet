@@ -65,6 +65,10 @@ special_table equ 0x0815FCC0
         .word cloud_enter | 1
         .pool
 
+.org (special_table + (0x2D * 4))
+        .word warp_to_pos_with_facing | 1
+        .pool
+
 .org (special_table +(0x36 *4))
         .word special_x36_check_loaded_trainerflag | 1
         .pool

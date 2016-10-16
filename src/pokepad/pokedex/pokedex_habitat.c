@@ -248,14 +248,14 @@ void pokedex_init_habitat(){
         tbox_print_string(4, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_habitat_radar_ref);
         
         //pal
-        load_uncomp_pal_into_RAM(gfx_worldmapPal, 0, 0xA0);
-        load_comp_pal_into_RAM(gfx_pokedex_habitat_uiPal, 4 * 16, 32);
-        load_uncomp_pal_into_RAM((void*)0x83EEAB2, (u16)((16+allocate_obj_pal(0xA014))*16), 30);
-        load_comp_pal_into_RAM(gfx_pokedex_habitat_rarityPal, (u16)((16+allocate_obj_pal(0xA016))*16), 32);
+        pal_load_uncomp(gfx_worldmapPal, 0, 0xA0);
+        pal_load_comp(gfx_pokedex_habitat_uiPal, 4 * 16, 32);
+        pal_load_uncomp((void*)0x83EEAB2, (u16)((16+allocate_obj_pal(0xA014))*16), 30);
+        pal_load_comp(gfx_pokedex_habitat_rarityPal, (u16)((16+allocate_obj_pal(0xA016))*16), 32);
         //load_comp_pal_into_RAM(gfx_pokedex_habitat_rodPal, (u16)((16+allocate_obj_pal(0xA017))*16), 32);
         void *head_pal = (*save2)->player_is_female ? (void*)0x083EEAF2 : (void*)0x083EEAD2;
-        load_uncomp_pal_into_RAM(head_pal, (u16)((16+allocate_obj_pal(0xA015))*16), 32);
-        load_uncomp_pal_into_RAM(transparency_black_box_pals, 16*13, 32);
+        pal_load_uncomp(head_pal, (u16)((16+allocate_obj_pal(0xA015))*16), 32);
+        pal_load_uncomp(transparency_black_box_pals, 16*13, 32);
         pal_set_all_to_black();
         
         //oam

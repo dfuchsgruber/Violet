@@ -101,6 +101,11 @@
 #define ATTRIBUTE_LEVEL 0x38
 #define ATTRIBUTE_CURRENT_HP 0x39
 #define ATTRIBUTE_TOTAL_HP 0x3A
+#define ATTRIBUTE_ATK 0x3B
+#define ATTRIBUTE_DEF 0x3C
+#define ATTRIBUTE_INIT 0x3D
+#define ATTRIBUTE_SATK 0x3E
+#define ATTRIBUTE_SDEF 0x3F
 
 
 typedef struct marking {

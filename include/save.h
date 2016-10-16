@@ -4,6 +4,8 @@
 #include "dungeon_generator.h"
 #include "rtc.h"
 #include "pokepad.h"
+#include "fp_menu.h"
+#include "fpmenu.h"
 
 
 typedef struct saveblock1 {
@@ -75,9 +77,12 @@ typedef struct{
         pokepad_memory *pad_mem;
         wondertrade_memory *wtrade_mem;
         pokedex_memory *dex_mem;
+        fp_memory *fp_mem;
         script additional_levelscript_4;
     
 }floating_memory;
+
+
 
 saveblock1 **save1 = (saveblock1**)0x03004F58;
 saveblock2 **save2 = (saveblock2**)0x03004F5C;

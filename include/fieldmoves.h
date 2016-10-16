@@ -46,6 +46,7 @@ typedef struct outdoor_move{
 extern outdoor_move table_outdoor_move_initializers[];
 
 s_pokemenu_state *pokemenu_state = (s_pokemenu_state*)0x0203B09C;
+u8 *pokemenu_team_index = (u8*)0x0203B0A9;
 
 void pokemenu_opt_outdoor_move(u8 callback_self);
 void pokemenu_build_opt_by_pokemon(pokemon *base, u8 index);

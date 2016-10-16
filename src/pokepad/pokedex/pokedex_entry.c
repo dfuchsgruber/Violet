@@ -103,7 +103,7 @@ void pokedex_entry_load_strings(){
     tbox_print_string(1, 2, 8, 0, 0, 0, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->category : str_pokepad_pokedex_qmark_ref);
     u32 height_upper = pokedex_get_data(dex_id)->height / 10;
     u32 height_lower = __umod(pokedex_get_data(dex_id)->height, 10);
-    hex_to_dec_String(str_append(hex_to_dec_String(strbuf, height_upper, 0, 3), str_pokepad_pokedex_comma_ref), height_lower, 0, 1);
+    value_to_str(str_append(value_to_str(strbuf, height_upper, 0, 3), str_pokepad_pokedex_comma_ref), height_lower, 0, 1);
     tbox_print_string(1, 2, 38, 15, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark_ref);
     if(is_caught)
         tbox_print_string(1, 2, 70, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_m_ref);
@@ -111,7 +111,7 @@ void pokedex_entry_load_strings(){
     u32 weight_lower = __umod(pokedex_get_data(dex_id)->weight, 10);
     if(is_caught)
         tbox_print_string(1, 2, 70, 30, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_kg_ref);
-    hex_to_dec_String(str_append(hex_to_dec_String(strbuf, weight_upper, 0, 3), str_pokepad_pokedex_comma_ref), weight_lower, 0, 1);
+    value_to_str(str_append(value_to_str(strbuf, weight_upper, 0, 3), str_pokepad_pokedex_comma_ref), weight_lower, 0, 1);
     tbox_print_string(1, 2, 38, 30, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark_ref);
     tbox_print_string(2, 2, 0, 0, 0, 1, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->page0 : str_pokepad_pokedex_qmark_ref);
     if(is_caught){
@@ -142,7 +142,7 @@ void pokedex_entry_load_pokepic(){
     if(fmem->dex_mem->pal_pokepic == 0xFF){
         fmem->dex_mem->pal_pokepic = allocate_obj_pal(0xA00A);
     }
-    load_comp_pal_into_RAM(pokemon_pals[fmem->dex_mem->current_species].pal, (u16)(256 + fmem->dex_mem->pal_pokepic * 16), 32);
+    pal_load_comp(pokemon_pals[fmem->dex_mem->current_species].pal, (u16)(256 + fmem->dex_mem->pal_pokepic * 16), 32);
     pal_set_all_to_black();
     
     void *offset = (void*)(0x06010000 + 32 * fmem->dex_mem->tile_pokepic);
@@ -207,11 +207,11 @@ void pokedex_callback_init_entry(){
         fmem->dex_mem->oam_pokepic = generate_oam_forward_search(&pokedex_pokepic_template, 192, 64, 0);
         fmem->dex_mem->oam_form = generate_oam_forward_search(&pokedex_form_template, 108, 72, 0);
         
-        load_comp_pal_into_RAM(gfx_pokedex_entry_uiPal, 0, 32);
-        load_comp_pal_into_RAM(gfx_pokedex_bottom_1Pal, 16, 32);
-        load_comp_pal_into_RAM(gfx_pokedex_formsPal, (u16)(fmem->dex_mem->pal_form*16), 32);
-        load_uncomp_pal_into_RAM((void*)0x08E95DDC, 3*16, 32);
-        load_uncomp_pal_into_RAM((void*)0x08E95DBC, 4*16, 32);
+        pal_load_comp(gfx_pokedex_entry_uiPal, 0, 32);
+        pal_load_comp(gfx_pokedex_bottom_1Pal, 16, 32);
+        pal_load_comp(gfx_pokedex_formsPal, (u16)(fmem->dex_mem->pal_form*16), 32);
+        pal_load_uncomp((void*)0x08E95DDC, 3*16, 32);
+        pal_load_uncomp((void*)0x08E95DBC, 4*16, 32);
         pal_set_all_to_black();
     
         init_fadescreen(0, 0);

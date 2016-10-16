@@ -1,0 +1,25 @@
+str_fp_menu_kp:
+    =Kp
+
+str_fp_menu_atk:
+    =Angr.
+
+str_fp_menu_def:
+    =Vert.
+
+str_fp_menu_init:
+    =Init.
+
+str_fp_menu_satk:
+    =Sp. Angr.
+
+str_fp_menu_sdef:
+    =Sp. Vert.
+
+@create ref
+str_fp_menu_plus:
+    =+
+
+@create ref
+str_fp_menu_minus:
+    =-

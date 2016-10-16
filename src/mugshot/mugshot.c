@@ -41,7 +41,7 @@ void spawn_mugshot(){
     //apply weather effects to pal
     u8 weather = get_current_weather();
     
-    load_uncomp_pal_into_RAM(pal_buf, (u16)(0x100+16*pal), 32);
+    pal_load_uncomp(pal_buf, (u16)(0x100+16*pal), 32);
     
     if (weather == WEATHER_CLOUDY || weather == WEATHER_HEAVY_RAIN || weather == WEATHER_RAIN || weather == WEATHER_STORM){
         //fade
@@ -76,9 +76,17 @@ void spawn_mugshot(){
     *vardecrypt(0x8003) = generate_oam_forward_search(mugshot_template, x, 0x50, 0);
 }
 
-void clear_mugshot(){
-    int oam_id = *vardecrypt(0x8003);
+void mugshot_oam_despawn_cb(u8 self){
+    u16 oam_id = big_callbacks[self].params[0];
     free(oams[oam_id].oam_template->graphics);
     free(oams[oam_id].oam_template);
     oam_despawn(&oams[oam_id]);
+    remove_big_callback(self);
+}
+
+void clear_mugshot(){
+    u16 oam_id = *vardecrypt(0x8003);
+    u8 cb_id = spawn_big_callback(mugshot_oam_despawn_cb, 0);
+    big_callbacks[cb_id].params[0] = oam_id;
+    oams[oam_id].x2 = -64;
 }

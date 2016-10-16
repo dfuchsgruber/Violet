@@ -192,3 +192,7 @@ music_table equ 0x9194500
 .org music_table + 8*364
     .word mus_sky
     .word 0
+
+.org music_table + 8*365
+    .word mus_violet_sphere_v1
+    .word 0

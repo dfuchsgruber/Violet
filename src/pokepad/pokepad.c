@@ -123,7 +123,7 @@ void pokepad_init_components(){
     //Now we spawn arrow oam
     load_and_alloc_obj_vram_lz77(&graphic_pokepad_arrow);
     u8 arrow_pal = allocate_obj_pal(0xA001);
-    load_comp_pal_into_RAM(gfx_pokepad_arrowPal, (u16)((arrow_pal+16)*16), 32);
+    pal_load_comp(gfx_pokepad_arrowPal, (u16)((arrow_pal+16)*16), 32);
     //Now we have to find x and y from the current position
     s16 x = (s16)(56 + 104 * (fmem->pad_mem->current_item & 1));
     s16 y = (s16)(40 + (fmem->pad_mem->current_item >> 1) * 24);
@@ -144,7 +144,7 @@ void pokepad_init_components(){
     load_and_alloc_obj_vram_lz77(&graphic_pokepad_l);
     load_and_alloc_obj_vram_lz77(&graphic_pokepad_r);
     u8 lrpal = allocate_obj_pal(0xA002);
-    load_comp_pal_into_RAM(gfx_pokepad_lPal, (u16)((lrpal+16)*16), 32);
+    pal_load_comp(gfx_pokepad_lPal, (u16)((lrpal+16)*16), 32);
     fmem->pad_mem->l_oam = generate_oam_forward_search(&oam_template_pokepad_l, -16, 0, 0);
     fmem->pad_mem->r_oam = generate_oam_forward_search(&oam_template_pokepad_r, -16, 0, 0);
     
@@ -157,8 +157,8 @@ void pokepad_init_components(){
     bg_virtual_sync(1);
     
     //pal
-    load_comp_pal_into_RAM(gfx_pokepad_backgroundPal, 0, 32);
-    load_uncomp_pal_into_RAM(transparency_black_box_pals, 15*16, 32);
+    pal_load_comp(gfx_pokepad_backgroundPal, 0, 32);
+    pal_load_uncomp(transparency_black_box_pals, 15*16, 32);
     
     fmem->pad_mem->color_cb = spawn_big_callback(pokepad_callback_background_anim, 0);
     pal_set_all_to_black();

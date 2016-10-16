@@ -33,7 +33,7 @@ void spawn_symbols(u8 state){
 		
 		//load palette
 		u8 pal_id = allocate_obj_pal(0xADDD); //allocated a palette for the tag 0xADDD
-		load_comp_pal_into_RAM((void*) 0x93dae60, (u16)((pal_id + 0x10) << 4), 0x20);
+		pal_load_comp((void*) 0x93dae60, (u16)((pal_id + 0x10) << 4), 0x20);
 		
 		//load graphic
 		u16 tile = load_and_alloc_obj_vram_lz77 (&symbol_graphic);

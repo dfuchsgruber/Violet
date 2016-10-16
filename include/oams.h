@@ -44,7 +44,7 @@ typedef struct sprite {
   u16 rotscale;
 } sprite;
 
-typedef struct oam_template {
+typedef struct {
   u16 tiles_tag;
   u16 pal_tag;
   sprite *oam;

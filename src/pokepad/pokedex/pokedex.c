@@ -267,11 +267,11 @@ void pokedex_init_components(){
     
     u16 seen = pokedex_get_number_seen_or_caught(false);
     u16 caught = pokedex_get_number_seen_or_caught(true);
-    hex_to_dec_String(strbuf, seen, 0, 3);
+    value_to_str(strbuf, seen, 0, 3);
     tbox_flush(POKEDEX_TBOX_SEEN, 0);
     tbox_tilemap_draw(POKEDEX_TBOX_SEEN);
     tbox_print_string(POKEDEX_TBOX_SEEN, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
-    hex_to_dec_String(strbuf, caught, 0, 3);
+    value_to_str(strbuf, caught, 0, 3);
     tbox_flush(POKEDEX_TBOX_CAUGHT, 0);
     tbox_tilemap_draw(POKEDEX_TBOX_CAUGHT);
     tbox_print_string(POKEDEX_TBOX_CAUGHT, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
@@ -290,37 +290,37 @@ void pokedex_init_components(){
     load_and_alloc_obj_vram_lz77(&pokedex_cursor_graphic);
     
     u8 cursor_pal = (u8)(allocate_obj_pal(0xA013) + 0x10);
-    load_comp_pal_into_RAM(gfx_pokedex_sort_cursorPal, (u16)(cursor_pal*16), 32);
+    pal_load_comp(gfx_pokedex_sort_cursorPal, (u16)(cursor_pal*16), 32);
     fmem->dex_mem->oam_sort_cursor = generate_oam_forward_search(&pokedex_cursor_template, 128, 16, 0);
     fmem->dex_mem->sort_cursor_pos = fmem->dex_mem->current_comparator & 3;
     pokedex_sort_locate_cursor();
     
-    load_comp_pal_into_RAM(gfx_pokedex_uiPal, 0, 32);
+    pal_load_comp(gfx_pokedex_uiPal, 0, 32);
     //Now we decide weather we want to clear features
     const color cols_active [2]= {{0x6754}, {0x57E0}};
     const color cols_inactive [2]= {{0x3E0C}, {0x35E8}};
     if(checkflag(POKEDEX_FLAG_FEATURE_0)){
-        load_uncomp_pal_into_RAM(cols_active, 10, 4);
+        pal_load_uncomp(cols_active, 10, 4);
     }else{
-        load_uncomp_pal_into_RAM(cols_inactive, 10, 4);
+        pal_load_uncomp(cols_inactive, 10, 4);
     }
     if(checkflag(POKEDEX_FLAG_FEATURE_1)){
-        load_uncomp_pal_into_RAM(cols_active, 12, 4);
+        pal_load_uncomp(cols_active, 12, 4);
     }else{
-        load_uncomp_pal_into_RAM(cols_inactive, 12, 4);
+        pal_load_uncomp(cols_inactive, 12, 4);
     }
     if(checkflag(POKEDEX_FLAG_FEATURE_2)){
-        load_uncomp_pal_into_RAM(cols_active, 14, 4);
+        pal_load_uncomp(cols_active, 14, 4);
     }else{
-        load_uncomp_pal_into_RAM(cols_inactive, 14, 4);
+        pal_load_uncomp(cols_inactive, 14, 4);
     }
     
-    load_comp_pal_into_RAM(gfx_pokedex_bottom_1Pal, 16, 32);
-    load_comp_pal_into_RAM(gfx_pokedex_bottom_0Pal, 32, 32);
-    load_uncomp_pal_into_RAM(pokedex_colors, 15*16, 16);
-    load_uncomp_pal_into_RAM(pokedex_colors_nr, 14*16, 32);
-    load_uncomp_pal_into_RAM((void*)0x08E95DDC, 3*16, 32);
-    load_uncomp_pal_into_RAM((void*)0x08E95DBC, 4*16, 32);
+    pal_load_comp(gfx_pokedex_bottom_1Pal, 16, 32);
+    pal_load_comp(gfx_pokedex_bottom_0Pal, 32, 32);
+    pal_load_uncomp(pokedex_colors, 15*16, 16);
+    pal_load_uncomp(pokedex_colors_nr, 14*16, 32);
+    pal_load_uncomp((void*)0x08E95DDC, 3*16, 32);
+    pal_load_uncomp((void*)0x08E95DBC, 4*16, 32);
     pal_set_all_to_black();
     
     init_fadescreen(0, 0);

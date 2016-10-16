@@ -1,7 +1,7 @@
 #ifndef H_FPMENU
 #define H_FPMENU
 
-typedef struct fp_memory {
+typedef struct fpp_memory {
 	u8 status;
 	u8 current_slot;
 	u8 current_stat;
@@ -40,16 +40,16 @@ typedef struct fp_memory {
 	u32 *bg0set;
 	u32 *bg0map;
 	
-} fp_memory;
+} fpp_memory;
 
 void fp_callback();
 u8 setup_textbox(u8 bgid, u8 x, u8 y, u8 w, u8 h, u8 palID, u16 startTile);
 void fp_display_box(u8 boxid, u8 font, u8 unkown, u8 border_distance, u8 line_distance_u, u8 line_distance_l, u8*font_col_map, u8 display_all_boxes, u8*text);
-void fp_load_stat(void*pokemon_offset, u8 requested_stat, fp_memory* mem);
-void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, fp_memory* mem);
-void fp_load_stats (void*pokemon_offset, u8 requested_stat, fp_memory* mem);
-void fp_do_color_animation(fp_memory* mem);
-void fp_do_arrow_animation(fp_memory* mem);
+void fp_load_stat(void*pokemon_offset, u8 requested_stat, fpp_memory* mem);
+void fp_load_pokemon (void*pokemon_offset, u8 requested_stat, fpp_memory* mem);
+void fp_load_stats (void*pokemon_offset, u8 requested_stat, fpp_memory* mem);
+void fp_do_color_animation(fpp_memory* mem);
+void fp_do_arrow_animation(fpp_memory* mem);
 u32 get_fp_used (void* pokeoffset);
 
 #endif

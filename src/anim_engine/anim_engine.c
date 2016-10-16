@@ -323,10 +323,10 @@ void cmdx0F_load_obj_pal(ae_memory* mem){
 	if (palid!=0xFF){
 		if (mode == 0){
 			//copy only
-			load_uncomp_pal_into_RAM(pal, (u16)(0x100+palid*0x10), 0x20);
+			pal_load_uncomp(pal, (u16)(0x100+palid*0x10), 0x20);
 		}else if (mode == 1){
 			//lz77 decomp
-			load_comp_pal_into_RAM(pal, (u16)(0x100+palid*0x10), 0x20);
+			pal_load_comp(pal, (u16)(0x100+palid*0x10), 0x20);
 		}		
 	}
 }
