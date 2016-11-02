@@ -1,0 +1,12 @@
+
+str_access_card_atrium:
+    =EG Atrium
+
+str_access_card_fossil:
+    =3F Fossilien
+
+str_access_card_cyber:
+    =8F Cybernetik
+
+str_access_card_already_there:
+    =Du befindest dich bereits auf\ndieser Ebene.

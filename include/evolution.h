@@ -37,15 +37,15 @@ extern "C" {
 #define EVOLUTION_METHOD_ITEM_AND_DISTINCT_MAP 19
 #define EVOLUTION_METHOD_LINK_CABLE_AND_ITEM 20
 #define EVOLUTION_METHOD_MALE_AND_STONE 21
-    
+
     typedef struct {
         u16 method;
         u16 condition;
         u16 target;
         u16 padding;
-    }pokemon_evolution;
-    
-u16 pokemon_get_basis_stage(u16 species);
+    } pokemon_evolution;
+
+    u16 pokemon_get_basis_stage(u16 species);
 
 #ifdef	__cplusplus
 }

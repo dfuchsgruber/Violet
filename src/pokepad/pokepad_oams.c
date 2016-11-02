@@ -6,25 +6,25 @@
 //static resources
 
 graphic graphic_wondertrade_badges = {
-    (void*)gfx_wondertrade_badgesTiles,
-    0x80*4,
+    (void*) gfx_wondertrade_badgesTiles,
+    0x80 * 4,
     0xA004
 };
 
 graphic graphic_pokepad_arrow = {
-    (void*)gfx_pokepad_arrowTiles,
+    (void*) gfx_pokepad_arrowTiles,
     0x80,
     0xA001
 };
 
 graphic graphic_pokepad_l = {
-    (void*)gfx_pokepad_lTiles,
+    (void*) gfx_pokepad_lTiles,
     0x40,
     0xA002
 };
 
 graphic graphic_pokepad_r = {
-    (void*)gfx_pokepad_rTiles,
+    (void*) gfx_pokepad_rTiles,
     0x40,
     0xA003
 };
@@ -77,18 +77,17 @@ oam_template oam_template_pokepad_r = {
     oam_null_callback
 };
 
-
-void pokepad_oam_arrow_anim(oam_object *self){
-    if(++self->private[2] != 4)
+void pokepad_oam_arrow_anim(oam_object *self) {
+    if (++self->private[2] != 4)
         return;
     self->private[2] = 0;
-    if(!self->private[0]){
+    if (!self->private[0]) {
         //count up to 4
         self->private[1]++;
         self->x2++;
         if (self->private[1] == 2)
             self->private[0] = 1;
-    }else{
+    } else {
         //count down to -4
         self->private[1]--;
         self->x2--;

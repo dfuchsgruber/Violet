@@ -14,7 +14,6 @@
 
 extern u16 *table_field_moves;
 
-
 typedef struct pokmenu_opt_state {
     void *callback;
     u16 field_4;
@@ -30,23 +29,23 @@ typedef struct pokmenu_opt_state {
     u8 field_15;
     u8 field_16;
     u8 opt_cnt;
-    
-}pokemenu_opt_state;
 
-typedef struct s_pokemenu_state{
+} pokemenu_opt_state;
+
+typedef struct s_pokemenu_state {
     pokemenu_opt_state *opt_state;
     void *callback;
-}s_pokemenu_state;
+} s_pokemenu_state;
 
-typedef struct outdoor_move{
+typedef struct outdoor_move {
     bool (*init_func)();
     u32 not_usable_msg;
-}outdoor_move;
+} outdoor_move;
 
 extern outdoor_move table_outdoor_move_initializers[];
 
-s_pokemenu_state *pokemenu_state = (s_pokemenu_state*)0x0203B09C;
-u8 *pokemenu_team_index = (u8*)0x0203B0A9;
+s_pokemenu_state *pokemenu_state = (s_pokemenu_state*) 0x0203B09C;
+u8 *pokemenu_team_index = (u8*) 0x0203B0A9;
 
 void pokemenu_opt_outdoor_move(u8 callback_self);
 void pokemenu_build_opt_by_pokemon(pokemon *base, u8 index);

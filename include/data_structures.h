@@ -10,20 +10,17 @@
 
 #include "npc.h"
 
-typedef struct{
-    
+typedef struct {
     u32 key;
     int value;
-    
+
 } dyn_arr_node;
 
-
-typedef struct{
-
+typedef struct {
     int size;
     int array_size;
     dyn_arr_node *array;
-    
+
 } dyn_arr;
 
 dyn_arr *dyn_arr_init(int array_size);
@@ -40,13 +37,11 @@ void binary_heap_insert(u32 key, int priority, dyn_arr *heap);
 
 int binary_heap_remove(int i, dyn_arr *heap);
 
-
-typedef struct{
-    
+typedef struct {
     int map_size;
     dyn_arr **buckets;
     u8 a[4];
-    
+
 } hashmap;
 
 hashmap *hashmap_init(int buckets);

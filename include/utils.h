@@ -5,8 +5,8 @@
 #include "stdbool.h"
 #include "oams.h"
 
-int abs (int i);
-int signum (int i);
+int abs(int i);
+int signum(int i);
 
 bool is_fading();
 

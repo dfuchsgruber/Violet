@@ -6,13 +6,12 @@
 
 #include "battle.h"
 
-typedef struct mega_table_entry{
-	
-	u16 species;
-	u16 item;
-	u16 target;
-	u16 regent;
-	
+typedef struct mega_table_entry {
+    u16 species;
+    u16 item;
+    u16 target;
+    u16 regent;
+
 } mega_table_entry;
 
 mega_table_entry megas[MEGA_CNT];
@@ -24,7 +23,7 @@ extern u8 *attack_anim_rayquaza;
 
 bool can_player_trigger_mega();
 void* get_pokemon_offset_by_index(u8 index);
-void battle_cb_do_megas ();
+void battle_cb_do_megas();
 mega_table_entry* get_mega_if_can_mega_evolve(battler *b);
 
 void cb_mega_anim(u8 self);

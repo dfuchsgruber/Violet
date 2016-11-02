@@ -8,14 +8,22 @@ item_resource equ 0x83D3BE8
 .org item_table + 0x2C*0x70 + field_usage
     .word item_field_nature_stone | 1
 
-
+.org item_table + 0x2C * 0xDA + description
+    .word str_item_desc_up_grade
 
 .org item_table + 0x2C * 0x10B + description
     .word str_item_desc_wolkenherz
 
+.org item_table + 0x2C * 0x15D + description
+    .word str_item_desc_zugangskarte
 
 .org item_table + 0x2C * 0x168 + description
     .word str_item_desc_wolke
+
+
+
+
+
 
 .org item_resource + 0x10B * 8
     .word gfx_item_wolkenherzTiles

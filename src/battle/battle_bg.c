@@ -94,11 +94,11 @@ battle_bg battle_bgs[29] = {
     },
     // Battle bg 11
     {
+        gfx_battle_bg_museumTiles,
+        gfx_battle_bg_museumMap,
         NULL,
         NULL,
-        NULL,
-        NULL,
-        NULL
+        gfx_battle_bg_museumPal
     },
     // Battle bg 12
     {

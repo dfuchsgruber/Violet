@@ -350,7 +350,7 @@
 #define ITEM_VM08 0x15a
 #define ITEM_ITEM_15B 0x15b
 #define ITEM_ITEM_15C 0x15c
-#define ITEM_EICHS_PAKET 0x15d
+#define ITEM_ZUGANGSKARTE 0x15d
 #define ITEM_POKEFLOETE 0x15e
 #define ITEM__OEFFNER 0x15f
 #define ITEM_RAD_COUPON 0x160
@@ -378,22 +378,22 @@
 #define ITEM_SAPHIR 0x176
 
 typedef struct item {
-	u8 name[14];
-	u16 index;
-	u16 price;
-	u8 holding_effect_id;
-	u8 holding_effect_param;
-	u8 *description_ptr;
-	u16 field_18;
-	u8 pocket;
-	u8 type;
-	void *field_usage;
-	void *battle_usage_1;
-	void *battle_usage_2;
-	void *field_28;
+    u8 name[14];
+    u16 index;
+    u16 price;
+    u8 holding_effect_id;
+    u8 holding_effect_param;
+    u8 *description_ptr;
+    u16 field_18;
+    u8 pocket;
+    u8 type;
+    void *field_usage;
+    void *battle_usage_1;
+    void *battle_usage_2;
+    void *field_28;
 } item;
 
-item* items = (item*)0x083DA518;
+item* items = (item*) 0x083DA518;
 
 void item_field_nature_stone(u8 self);
 

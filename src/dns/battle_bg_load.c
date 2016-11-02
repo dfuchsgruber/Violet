@@ -7,32 +7,31 @@
 #include "battle.h"
 #include "dns.h"
 
+void battle_bg_load(u8 bg_id) {
 
-void battle_bg_load(u8 bg_id){
-	
-	lz77uncompvram(battle_bgs[bg_id].tileset, (void*)0x6008000);
-	lz77uncompvram(battle_bgs[bg_id].tilemap, (void*)0x600D000);
-	
-	if (*vardecrypt(VAR_TIMEZONE) && dns_on()){
-		
-		color *buf = (color*)malloc(0x60);
-		color *prebuf = (color*)0x02037ACC;
-		lz77uncompwram(battle_bgs[bg_id].pal, prebuf);
-		
-		color over = dns_get_over();
-		u8 alpha = dns_get_alpha();
-		
-		int i;
-		for (i = 0; i < 0x30; i++){
-			color original = prebuf[i];
-			color new = blend_multiply(original, over, alpha);
-			buf[i] = new;
-		}
-		
-		pal_load_uncomp(buf, 0x20, 0x60);
-		
-		free(buf);
-	}else{
-		pal_load_comp(battle_bgs[bg_id].pal, 0x20, 0x60);
-	}
+    lz77uncompvram(battle_bgs[bg_id].tileset, (void*) 0x6008000);
+    lz77uncompvram(battle_bgs[bg_id].tilemap, (void*) 0x600D000);
+
+    if (*vardecrypt(VAR_TIMEZONE) && dns_on()) {
+
+        color *buf = (color*) malloc(0x60);
+        color *prebuf = (color*) 0x02037ACC;
+        lz77uncompwram(battle_bgs[bg_id].pal, prebuf);
+
+        color over = dns_get_over();
+        u8 alpha = dns_get_alpha();
+
+        int i;
+        for (i = 0; i < 0x30; i++) {
+            color original = prebuf[i];
+            color new = blend_multiply(original, over, alpha);
+            buf[i] = new;
+        }
+
+        pal_load_uncomp(buf, 0x20, 0x60);
+
+        free(buf);
+    } else {
+        pal_load_comp(battle_bgs[bg_id].pal, 0x20, 0x60);
+    }
 }

@@ -107,62 +107,60 @@
 #define ATTRIBUTE_SATK 0x3E
 #define ATTRIBUTE_SDEF 0x3F
 
-
 typedef struct marking {
-	u8 circle : 1;
-	u8 square : 1;
-	u8 triangle : 1;
-	u8 heart : 1;
-	u8 padding : 4;
-}marking;
+    u8 circle : 1;
+    u8 square : 1;
+    u8 triangle : 1;
+    u8 heart : 1;
+    u8 padding : 4;
+} marking;
 
+typedef union {
+    u32 value;
 
-typedef union{
-	u32 value;
-	struct{
-            u32 ability : 1;
-            u32 gender_partial : 7;
-            u32 shinyness : 16;
-            u32 nature : 5;
-            u32 form : 3;
-        } fields;
+    struct {
+        u32 ability : 1;
+        u32 gender_partial : 7;
+        u32 shinyness : 16;
+        u32 nature : 5;
+        u32 form : 3;
+    } fields;
 } pid;
 
 typedef struct pokemon {
-	
-	pid pid;
-	u32 tid;
-	u8 nickname [10];
-	u16 language;
-	u8 ot_name [7];
-	marking markings;
-	u16 checksum;
-	u16 padding;
-	u16 encrypted_substructure [24];
-	u32 status_condition;
-	u8 level;
-	u8 pokerus_remaining_byte;
-	u16 current_hp;
-	u16 total_hp;
-	u16 attack;
-	u16 defense;
-	u16 speed;
-	u16 sattack;
-	u16 sdefense;
-	
+    pid pid;
+    u32 tid;
+    u8 nickname [10];
+    u16 language;
+    u8 ot_name [7];
+    marking markings;
+    u16 checksum;
+    u16 padding;
+    u16 encrypted_substructure [24];
+    u32 status_condition;
+    u8 level;
+    u8 pokerus_remaining_byte;
+    u16 current_hp;
+    u16 total_hp;
+    u16 attack;
+    u16 defense;
+    u16 speed;
+    u16 sattack;
+    u16 sdefense;
+
 } pokemon;
 
 typedef struct {
-        u16 move_id : 9;
-        u16 level : 7;
-}pokemon_move;
+    u16 move_id : 9;
+    u16 level : 7;
+} pokemon_move;
 
 
 
 pokemon_move *pokemon_moves[POKEMON_CNT];
 
-pokemon *player_pokemon = (pokemon*)0x02024284;
-pokemon *opponent_pokemon = (pokemon*)0x0202402C;
+pokemon *player_pokemon = (pokemon*) 0x02024284;
+pokemon *opponent_pokemon = (pokemon*) 0x0202402C;
 
 void outdoor_move_buffer_load(pokemon *pokemon, u8 index);
 void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
@@ -187,7 +185,7 @@ u32 pokemon_player_y[POKEMON_CNT];
 u8 pokemon_altitude[POKEMON_CNT];
 u32 pokemon_enemy_y[POKEMON_CNT];
 u8 pokemon_item_animations[POKEMON_CNT][5];
- 
+
 pokemon_evolution pokemon_evolutions[POKEMON_CNT][5];
 
 void special_heal_team_index();

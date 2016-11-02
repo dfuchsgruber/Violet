@@ -69,6 +69,19 @@ special_table equ 0x0815FCC0
         .word warp_to_pos_with_facing | 1
         .pool
 
+.org (special_table +(0x2E *4))
+        .word access_card_print_multichoice | 1
+        .pool
+
+.org (special_table +(0x2F *4))
+        .word access_card_execute_elevator | 1
+        .pool
+
+.org (special_table + (0x30 *4))
+        .word access_card_init_by_atrium | 1
+        .pool
+
+
 .org (special_table +(0x36 *4))
         .word special_x36_check_loaded_trainerflag | 1
         .pool

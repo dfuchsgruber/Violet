@@ -9,7 +9,7 @@
 //	+ regular map (flat), lz77 compressed, 32x14 
 //	Total size: 36 + 3800 + 756 = 4592
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:58
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -31,6 +31,38 @@ extern const unsigned short gfx_battle_bg_cloudsPal[18];
 
 //}}BLOCK(gfx_battle_bg_clouds)
 
+//{{BLOCK(gfx_battle_bg_museum)
+
+//======================================================================
+//
+//	gfx_battle_bg_museum, 256x112@4, 
+//	+ palette 20 entries, lz77 compressed
+//	+ 322 tiles (t|f reduced) lz77 compressed
+//	+ regular map (flat), lz77 compressed, 32x14 
+//	Total size: 40 + 3332 + 784 = 4156
+//
+//	Time-stamp: 2016-11-01, 19:56:58
+//	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
+//	( http://www.coranac.com/projects/#grit )
+//
+//======================================================================
+
+#ifndef GRIT_GFX_BATTLE_BG_MUSEUM_H
+#define GRIT_GFX_BATTLE_BG_MUSEUM_H
+
+#define gfx_battle_bg_museumTilesLen 3332
+extern const unsigned int gfx_battle_bg_museumTiles[833];
+
+#define gfx_battle_bg_museumMapLen 784
+extern const unsigned short gfx_battle_bg_museumMap[392];
+
+#define gfx_battle_bg_museumPalLen 40
+extern const unsigned short gfx_battle_bg_museumPal[20];
+
+#endif // GRIT_GFX_BATTLE_BG_MUSEUM_H
+
+//}}BLOCK(gfx_battle_bg_museum)
+
 //{{BLOCK(gfx_albusfrontal)
 
 //======================================================================
@@ -41,7 +73,7 @@ extern const unsigned short gfx_battle_bg_cloudsPal[18];
 //	+ regular map (flat), lz77 compressed, 32x64 
 //	Total size: 40 + 2340 + 856 = 3236
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:58
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -73,7 +105,7 @@ extern const unsigned short gfx_albusfrontalPal[20];
 //	+ regular map (flat), lz77 compressed, 32x21 
 //	Total size: 40 + 3872 + 1004 = 4916
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:58
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -105,7 +137,7 @@ extern const unsigned short gfx_efounder_backgroundPal[20];
 //	+ regular map (flat), lz77 compressed, 32x64 
 //	Total size: 40 + 2452 + 836 = 3328
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:58
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -137,7 +169,7 @@ extern const unsigned short gfx_faunfrontalPal[20];
 //	+ regular map (flat), lz77 compressed, 32x64 
 //	Total size: 40 + 3440 + 988 = 4468
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -167,7 +199,7 @@ extern const unsigned short gfx_luciusfrontalPal[20];
 //	+ 4 tiles lz77 compressed
 //	Total size: 80 = 80
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -192,7 +224,7 @@ extern const unsigned int gfx_fp_menu_arrow_leftTiles[20];
 //	+ 4 tiles lz77 compressed
 //	Total size: 24 + 108 = 132
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -221,7 +253,7 @@ extern const unsigned short gfx_fp_menu_arrow_upPal[12];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 36 + 3036 + 656 = 3728
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -253,7 +285,7 @@ extern const unsigned short gfx_fp_menu_bgPal[18];
 //	+ regular map (flat), lz77 compressed, 32x21 
 //	Total size: 40 + 1408 + 312 = 1760
 //
-//	Time-stamp: 2016-10-16, 20:46:15
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -285,7 +317,7 @@ extern const unsigned short gfx_future_layer_1Pal[20];
 //	+ regular map (flat), lz77 compressed, 32x21 
 //	Total size: 32 + 3212 + 568 = 3812
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -317,7 +349,7 @@ extern const unsigned short gfx_future_layer_2Pal[16];
 //	+ regular map (flat), lz77 compressed, 32x21 
 //	Total size: 24 + 1108 + 352 = 1484
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -348,7 +380,7 @@ extern const unsigned short gfx_future_layer_3Pal[12];
 //	+ 9 tiles lz77 compressed
 //	Total size: 28 + 224 = 252
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -376,7 +408,7 @@ extern const unsigned short gfx_item_wolkePal[14];
 //	+ 9 tiles lz77 compressed
 //	Total size: 40 + 260 = 300
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -395,6 +427,34 @@ extern const unsigned short gfx_item_wolkenherzPal[20];
 
 //}}BLOCK(gfx_item_wolkenherz)
 
+//{{BLOCK(gfx_mug_blackbeard)
+
+//======================================================================
+//
+//	gfx_mug_blackbeard, 64x64@4, 
+//	+ palette 20 entries, lz77 compressed
+//	+ 64 tiles lz77 compressed
+//	Total size: 40 + 1232 = 1272
+//
+//	Time-stamp: 2016-11-01, 19:56:59
+//	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
+//	( http://www.coranac.com/projects/#grit )
+//
+//======================================================================
+
+#ifndef GRIT_GFX_MUG_BLACKBEARD_H
+#define GRIT_GFX_MUG_BLACKBEARD_H
+
+#define gfx_mug_blackbeardTilesLen 1232
+extern const unsigned int gfx_mug_blackbeardTiles[308];
+
+#define gfx_mug_blackbeardPalLen 40
+extern const unsigned short gfx_mug_blackbeardPal[20];
+
+#endif // GRIT_GFX_MUG_BLACKBEARD_H
+
+//}}BLOCK(gfx_mug_blackbeard)
+
 //{{BLOCK(gfx_mug_hiro)
 
 //======================================================================
@@ -404,7 +464,7 @@ extern const unsigned short gfx_item_wolkenherzPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 872 = 912
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -432,7 +492,7 @@ extern const unsigned short gfx_mug_hiroPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 1188 = 1228
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -460,7 +520,7 @@ extern const unsigned short gfx_mug_igvaPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 36 + 840 = 876
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -487,7 +547,7 @@ extern const unsigned short gfx_mug_mistralPal[18];
 //	+ 128 tiles not compressed
 //	Total size: 4096 = 4096
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -511,7 +571,7 @@ extern const unsigned int gfx_ow_bbshipTiles[1024];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -535,7 +595,7 @@ extern const unsigned int gfx_ow_cloudrider_fem_0Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -559,7 +619,7 @@ extern const unsigned int gfx_ow_cloudrider_fem_1Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -583,7 +643,7 @@ extern const unsigned int gfx_ow_cloudrider_fem_2Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:56:59
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -607,7 +667,7 @@ extern const unsigned int gfx_ow_cloudrider_male_0Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -631,7 +691,7 @@ extern const unsigned int gfx_ow_cloudrider_male_1Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -655,7 +715,7 @@ extern const unsigned int gfx_ow_cloudrider_male_2Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -679,7 +739,7 @@ extern const unsigned int gfx_ow_altaria_0Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -703,7 +763,7 @@ extern const unsigned int gfx_ow_altaria_1Tiles[128];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -727,7 +787,7 @@ extern const unsigned int gfx_ow_igva_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -751,7 +811,7 @@ extern const unsigned int gfx_ow_igva_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -775,7 +835,7 @@ extern const unsigned int gfx_ow_igva_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -799,7 +859,7 @@ extern const unsigned int gfx_ow_igva_3Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -823,7 +883,7 @@ extern const unsigned int gfx_ow_igva_4Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -847,7 +907,7 @@ extern const unsigned int gfx_ow_igva_5Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:16
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -871,7 +931,7 @@ extern const unsigned int gfx_ow_igva_6Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -895,7 +955,7 @@ extern const unsigned int gfx_ow_igva_7Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -919,7 +979,7 @@ extern const unsigned int gfx_ow_igva_8Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -944,7 +1004,7 @@ extern const unsigned int gfx_ow_mpirate_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -972,7 +1032,7 @@ extern const unsigned short gfx_ow_mpirate_1Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1000,7 +1060,7 @@ extern const unsigned short gfx_ow_mpirate_2Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1028,7 +1088,7 @@ extern const unsigned short gfx_ow_mpirate_3Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:00
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1056,7 +1116,7 @@ extern const unsigned short gfx_ow_mpirate_4Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1084,7 +1144,7 @@ extern const unsigned short gfx_ow_mpirate_5Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1112,7 +1172,7 @@ extern const unsigned short gfx_ow_mpirate_6Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1140,7 +1200,7 @@ extern const unsigned short gfx_ow_mpirate_7Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1167,7 +1227,7 @@ extern const unsigned short gfx_ow_mpirate_8Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1191,7 +1251,7 @@ extern const unsigned int gfx_ow_manus_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1215,7 +1275,7 @@ extern const unsigned int gfx_ow_manus_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1239,7 +1299,7 @@ extern const unsigned int gfx_ow_manus_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1263,7 +1323,7 @@ extern const unsigned int gfx_ow_manus_3Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1287,7 +1347,7 @@ extern const unsigned int gfx_ow_manus_4Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1311,7 +1371,7 @@ extern const unsigned int gfx_ow_manus_5Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1335,7 +1395,7 @@ extern const unsigned int gfx_ow_manus_6Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:17
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1359,7 +1419,7 @@ extern const unsigned int gfx_ow_manus_7Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1383,7 +1443,7 @@ extern const unsigned int gfx_ow_manus_8Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1407,7 +1467,7 @@ extern const unsigned int gfx_ow_mistral_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1432,7 +1492,7 @@ extern const unsigned int gfx_ow_mistral_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:01
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1460,7 +1520,7 @@ extern const unsigned short gfx_ow_mistral_2Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1488,7 +1548,7 @@ extern const unsigned short gfx_ow_mistral_3Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1516,7 +1576,7 @@ extern const unsigned short gfx_ow_mistral_4Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1544,7 +1604,7 @@ extern const unsigned short gfx_ow_mistral_5Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1572,7 +1632,7 @@ extern const unsigned short gfx_ow_mistral_6Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1600,7 +1660,7 @@ extern const unsigned short gfx_ow_mistral_7Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 32 + 256 = 288
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1628,7 +1688,7 @@ extern const unsigned short gfx_ow_mistral_8Pal[16];
 //	+ 16 tiles not compressed
 //	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1656,7 +1716,7 @@ extern const unsigned short gfx_pskate_0Pal[16];
 //	+ 16 tiles not compressed
 //	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1684,7 +1744,7 @@ extern const unsigned short gfx_pskate_1Pal[16];
 //	+ 16 tiles not compressed
 //	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1711,7 +1771,7 @@ extern const unsigned short gfx_pskate_2Pal[16];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1735,7 +1795,7 @@ extern const unsigned int gfx_pskate_3Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 512 = 512
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1760,7 +1820,7 @@ extern const unsigned int gfx_pskate_4Tiles[128];
 //	+ 16 tiles not compressed
 //	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2016-10-16, 20:46:18
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1788,7 +1848,7 @@ extern const unsigned short gfx_pskate_5Pal[16];
 //	+ 16 tiles not compressed
 //	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1816,7 +1876,7 @@ extern const unsigned short gfx_pskate_6Pal[16];
 //	+ 16 tiles not compressed
 //	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1844,7 +1904,7 @@ extern const unsigned short gfx_pskate_7Pal[16];
 //	+ 16 tiles not compressed
 //	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:02
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1871,7 +1931,7 @@ extern const unsigned short gfx_pskate_8Pal[16];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1895,7 +1955,7 @@ extern const unsigned int gfx_ow_shape_animal_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1919,7 +1979,7 @@ extern const unsigned int gfx_ow_shape_animal_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1943,7 +2003,7 @@ extern const unsigned int gfx_ow_shape_animal_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1967,7 +2027,7 @@ extern const unsigned int gfx_ow_shape_tentacles_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -1991,7 +2051,7 @@ extern const unsigned int gfx_ow_shape_tentacles_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2015,7 +2075,7 @@ extern const unsigned int gfx_ow_shape_tentacles_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2039,7 +2099,7 @@ extern const unsigned int gfx_ow_shape_fish_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2063,7 +2123,7 @@ extern const unsigned int gfx_ow_shape_fish_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2087,7 +2147,7 @@ extern const unsigned int gfx_ow_shape_fish_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2111,7 +2171,7 @@ extern const unsigned int gfx_ow_shape_ball_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2135,7 +2195,7 @@ extern const unsigned int gfx_ow_shape_ball_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2159,7 +2219,7 @@ extern const unsigned int gfx_ow_shape_ball_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:19
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2183,7 +2243,7 @@ extern const unsigned int gfx_ow_shape_multi_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2207,7 +2267,7 @@ extern const unsigned int gfx_ow_shape_multi_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:03
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2231,7 +2291,7 @@ extern const unsigned int gfx_ow_shape_multi_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2255,7 +2315,7 @@ extern const unsigned int gfx_ow_shape_human_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2279,7 +2339,7 @@ extern const unsigned int gfx_ow_shape_human_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2303,7 +2363,7 @@ extern const unsigned int gfx_ow_shape_human_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2327,7 +2387,7 @@ extern const unsigned int gfx_ow_shape_tail_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2351,7 +2411,7 @@ extern const unsigned int gfx_ow_shape_tail_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2375,7 +2435,7 @@ extern const unsigned int gfx_ow_shape_tail_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2399,7 +2459,7 @@ extern const unsigned int gfx_ow_shape_snake_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2423,7 +2483,7 @@ extern const unsigned int gfx_ow_shape_snake_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2447,7 +2507,7 @@ extern const unsigned int gfx_ow_shape_snake_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2471,7 +2531,7 @@ extern const unsigned int gfx_ow_shape_winsect_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2495,7 +2555,7 @@ extern const unsigned int gfx_ow_shape_winsect_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:20
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2519,7 +2579,7 @@ extern const unsigned int gfx_ow_shape_winsect_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:04
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2543,7 +2603,7 @@ extern const unsigned int gfx_ow_shape_winged_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2567,7 +2627,7 @@ extern const unsigned int gfx_ow_shape_winged_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2591,7 +2651,7 @@ extern const unsigned int gfx_ow_shape_winged_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2615,7 +2675,7 @@ extern const unsigned int gfx_ow_shape_insect_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2639,7 +2699,7 @@ extern const unsigned int gfx_ow_shape_insect_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2663,7 +2723,7 @@ extern const unsigned int gfx_ow_shape_insect_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2687,7 +2747,7 @@ extern const unsigned int gfx_ow_shape_head_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2711,7 +2771,7 @@ extern const unsigned int gfx_ow_shape_head_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2735,7 +2795,7 @@ extern const unsigned int gfx_ow_shape_head_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2759,7 +2819,7 @@ extern const unsigned int gfx_ow_shape_arms_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2783,7 +2843,7 @@ extern const unsigned int gfx_ow_shape_arms_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2807,7 +2867,7 @@ extern const unsigned int gfx_ow_shape_arms_2Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:21
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2831,7 +2891,7 @@ extern const unsigned int gfx_ow_shape_legs_0Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:05
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2855,7 +2915,7 @@ extern const unsigned int gfx_ow_shape_legs_1Tiles[64];
 //	+ 8 tiles not compressed
 //	Total size: 256 = 256
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2880,7 +2940,7 @@ extern const unsigned int gfx_ow_shape_legs_2Tiles[64];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 20 + 164 = 184
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2909,7 +2969,7 @@ extern const unsigned short gfx_pokedex_bottom_0Pal[10];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 16 + 20 + 160 = 196
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2941,7 +3001,7 @@ extern const unsigned short gfx_pokedex_bottom_1Pal[8];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 28 + 508 + 296 = 832
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -2972,7 +3032,7 @@ extern const unsigned short gfx_pokedex_entry_uiPal[14];
 //	+ 224 tiles not compressed
 //	Total size: 20 + 7168 = 7188
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3000,7 +3060,7 @@ extern const unsigned short gfx_pokedex_formsPal[10];
 //	+ 16 tiles lz77 compressed
 //	Total size: 20 + 180 = 200
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3028,7 +3088,7 @@ extern const unsigned short gfx_pokedex_habitat_rarityPal[10];
 //	+ 16 tiles lz77 compressed
 //	Total size: 20 + 196 = 216
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3057,7 +3117,7 @@ extern const unsigned short gfx_pokedex_habitat_rodPal[10];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 28 + 528 + 256 = 812
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3088,7 +3148,7 @@ extern const unsigned short gfx_pokedex_habitat_uiPal[14];
 //	+ 32 tiles lz77 compressed
 //	Total size: 20 + 272 = 292
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3117,7 +3177,7 @@ extern const unsigned short gfx_pokedex_sort_cursorPal[10];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 40 + 1444 + 456 = 1940
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3148,7 +3208,7 @@ extern const unsigned short gfx_pokedex_uiPal[20];
 //	+ 4 tiles lz77 compressed
 //	Total size: 24 + 72 = 96
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:06
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3177,7 +3237,7 @@ extern const unsigned short gfx_pokepad_arrowPal[12];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 40 + 956 + 328 = 1324
 //
-//	Time-stamp: 2016-10-16, 20:46:22
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3207,7 +3267,7 @@ extern const unsigned short gfx_pokepad_backgroundPal[20];
 //	+ 20 tiles lz77 compressed
 //	Total size: 112 = 112
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3232,7 +3292,7 @@ extern const unsigned int gfx_pokepad_buttonTiles[28];
 //	+ 2 tiles lz77 compressed
 //	Total size: 24 + 44 = 68
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3259,7 +3319,7 @@ extern const unsigned short gfx_pokepad_lPal[12];
 //	+ 2 tiles lz77 compressed
 //	Total size: 56 = 56
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3284,7 +3344,7 @@ extern const unsigned int gfx_pokepad_rTiles[14];
 //	+ 16 tiles lz77 compressed
 //	Total size: 36 + 368 = 404
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3313,7 +3373,7 @@ extern const unsigned short gfx_wondertrade_badgesPal[18];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 40 + 332 + 208 = 580
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3345,7 +3405,7 @@ extern const unsigned short gfx_wondertrade_bg_lowerPal[20];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 92 + 436 + 280 = 808
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3376,7 +3436,7 @@ extern const unsigned short gfx_wondertrade_bg_upperPal[46];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 776 = 816
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3404,7 +3464,7 @@ extern const unsigned short gfx_trainer_albusPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 852 = 892
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3432,7 +3492,7 @@ extern const unsigned short gfx_trainer_cloudrider_femPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 884 = 924
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3460,7 +3520,7 @@ extern const unsigned short gfx_trainer_cloudrider_malePal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 896 = 936
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:07
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3488,7 +3548,7 @@ extern const unsigned short gfx_trainer_elisePal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 1124 = 1164
 //
-//	Time-stamp: 2016-10-16, 20:46:23
+//	Time-stamp: 2016-11-01, 19:57:08
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3516,7 +3576,7 @@ extern const unsigned short gfx_trainer_manusPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 700 = 740
 //
-//	Time-stamp: 2016-10-16, 20:46:24
+//	Time-stamp: 2016-11-01, 19:57:08
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3544,7 +3604,7 @@ extern const unsigned short gfx_trainer_revo_fPal[20];
 //	+ 64 tiles lz77 compressed
 //	Total size: 40 + 760 = 800
 //
-//	Time-stamp: 2016-10-16, 20:46:24
+//	Time-stamp: 2016-11-01, 19:57:08
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //
@@ -3563,6 +3623,34 @@ extern const unsigned short gfx_trainer_revo_mPal[20];
 
 //}}BLOCK(gfx_trainer_revo_m)
 
+//{{BLOCK(gfx_trainer_violet_elite_fem)
+
+//======================================================================
+//
+//	gfx_trainer_violet_elite_fem, 64x64@4, 
+//	+ palette 20 entries, lz77 compressed
+//	+ 64 tiles lz77 compressed
+//	Total size: 40 + 1028 = 1068
+//
+//	Time-stamp: 2016-11-01, 19:57:08
+//	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
+//	( http://www.coranac.com/projects/#grit )
+//
+//======================================================================
+
+#ifndef GRIT_GFX_TRAINER_VIOLET_ELITE_FEM_H
+#define GRIT_GFX_TRAINER_VIOLET_ELITE_FEM_H
+
+#define gfx_trainer_violet_elite_femTilesLen 1028
+extern const unsigned int gfx_trainer_violet_elite_femTiles[257];
+
+#define gfx_trainer_violet_elite_femPalLen 40
+extern const unsigned short gfx_trainer_violet_elite_femPal[20];
+
+#endif // GRIT_GFX_TRAINER_VIOLET_ELITE_FEM_H
+
+//}}BLOCK(gfx_trainer_violet_elite_fem)
+
 //{{BLOCK(gfx_yin_yang)
 
 //======================================================================
@@ -3573,7 +3661,7 @@ extern const unsigned short gfx_trainer_revo_mPal[20];
 //	+ regular map (flat), lz77 compressed, 32x20 
 //	Total size: 20 + 476 + 316 = 812
 //
-//	Time-stamp: 2016-10-16, 20:46:24
+//	Time-stamp: 2016-11-01, 19:57:08
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.12
 //	( http://www.coranac.com/projects/#grit )
 //

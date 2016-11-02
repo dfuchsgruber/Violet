@@ -10,21 +10,17 @@
 #include "data_structures.h"
 #include "romfuncs.h"
 
-
-
-
-
 /**
  * Restores heap invariance of heap at root position (sift downn)
  * @param a
  * @param heap
  */
-void binary_heap_heapify(int a, dyn_arr *heap){
+void binary_heap_heapify(int a, dyn_arr *heap) {
     int i = a;
     do {
         int min = i;
-        int left = 2*i + 1;
-        int right = 2*i + 2;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
         if (left < heap->size && heap->array[left].key < heap->array[min].key)
             min = left;
         if (right < heap->size && heap->array[right].key < heap->array[min].key)
@@ -33,10 +29,8 @@ void binary_heap_heapify(int a, dyn_arr *heap){
             break;
         dyn_arr_swap(i, min, heap->array);
         i = min;
-    }while(true);
+    } while (true);
 }
-
-
 
 /**
  * Decreases a key for a node in the heap
@@ -44,14 +38,14 @@ void binary_heap_heapify(int a, dyn_arr *heap){
  * @param array 
  * @param key_new
  */
-void binary_heap_decrease_key(int a, dyn_arr_node *array, u32 key_new){
+void binary_heap_decrease_key(int a, dyn_arr_node *array, u32 key_new) {
     int i = a;
-    if (key_new <= array[i].key){
+    if (key_new <= array[i].key) {
         array[i].key = key_new;
         //Now we push the key upwards
-        while(i  && array[i].key < array[(i-1)/2].key){
-            dyn_arr_swap(i, (i-1)/2, array);
-            i = (i-1)/2;
+        while (i && array[i].key < array[(i - 1) / 2].key) {
+            dyn_arr_swap(i, (i - 1) / 2, array);
+            i = (i - 1) / 2;
         }
     }
 }
@@ -63,9 +57,9 @@ void binary_heap_decrease_key(int a, dyn_arr_node *array, u32 key_new){
  * @param heap
  * @return the index in the heap (may change after other operations on heap)
  */
-void binary_heap_insert(u32 key, int value, dyn_arr *heap){
+void binary_heap_insert(u32 key, int value, dyn_arr *heap) {
     int i = heap->size;
-    dyn_arr_resize(i+1, heap);
+    dyn_arr_resize(i + 1, heap);
     heap->array[i].key = key;
     heap->array[i].value = value;
     binary_heap_decrease_key(i, heap->array, key);
@@ -77,15 +71,15 @@ void binary_heap_insert(u32 key, int value, dyn_arr *heap){
  * @param heap
  * @return the key that was removed
  */
-int binary_heap_remove(int i, dyn_arr *heap){
-    int last = heap->size-1;
+int binary_heap_remove(int i, dyn_arr *heap) {
+    int last = heap->size - 1;
     int value = heap->array[i].value;
     dyn_arr_swap(i, last, heap->array);
     dyn_arr_resize(last, heap);
-    if (i != last){
-        if(i == 0 || heap->array[i].key > heap->array[(i-1)/2].key){
+    if (i != last) {
+        if (i == 0 || heap->array[i].key > heap->array[(i - 1) / 2].key) {
             binary_heap_heapify(i, heap);
-        }else{
+        } else {
             binary_heap_decrease_key(i, heap->array, heap->array[i].key);
         }
     }

@@ -5,25 +5,22 @@
 
 #define VAR_TIMEZONE 0x50DF
 
-typedef struct rtc_timestamp{
-	
-	u8 year;
-	u8 month;
-	u8 day;
-	u8 day_of_week;
-	u8 hour;
-	u8 minute;
-	u8 second;
-}rtc_timestamp;
-
+typedef struct rtc_timestamp {
+    u8 year;
+    u8 month;
+    u8 day;
+    u8 day_of_week;
+    u8 hour;
+    u8 minute;
+    u8 second;
+} rtc_timestamp;
 
 typedef struct gpio {
-	
-	u16 data;
-	u16 out;
-	u16 cntrl;
-	
-}gpio;
+    u16 data;
+    u16 out;
+    u16 cntrl;
+
+} gpio;
 
 void rtc_read(rtc_timestamp *s);
 void rtc_send_byte(u8 byte);

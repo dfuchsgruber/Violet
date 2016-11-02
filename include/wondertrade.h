@@ -12,22 +12,22 @@
 extern "C" {
 #endif
 
-    #define VAR_POKEPAD_WONDERTRADE_STEP_CNT 0x50E2
-    #define VAR_POKEPAD_WONDERTRADE_CNT 0x50F2
+#define VAR_POKEPAD_WONDERTRADE_STEP_CNT 0x50E2
+#define VAR_POKEPAD_WONDERTRADE_CNT 0x50F2
 
-    #define POKEPAD_WONDERTRADE_TBOX_TITLE 0
-    #define POKEPAD_WONDERTRADE_TBOX_LEVEL_H 1
-    #define POKEPAD_WONDERTRADE_TBOX_LEVEL_T 2
-    #define POKEPAD_WONDERTRADE_TBOX_CNT_H 3
-    #define POKEPAD_WONDERTRADE_TBOX_CNT_T 4
-    #define POKEPAD_WONDERTRADE_TBOX_NEXT_H 5
-    #define POKEPAD_WONDERTRADE_TBOX_NEXT_T 6
-    #define POKEPAD_WONDERTRADE_TBOX_RENDERER 7
-    #define POKEPAD_WONDERTRADE_TBOX_TRADE 8
-    #define POKEPAD_WONDERTRADE_TBOX_BACK 9
+#define POKEPAD_WONDERTRADE_TBOX_TITLE 0
+#define POKEPAD_WONDERTRADE_TBOX_LEVEL_H 1
+#define POKEPAD_WONDERTRADE_TBOX_LEVEL_T 2
+#define POKEPAD_WONDERTRADE_TBOX_CNT_H 3
+#define POKEPAD_WONDERTRADE_TBOX_CNT_T 4
+#define POKEPAD_WONDERTRADE_TBOX_NEXT_H 5
+#define POKEPAD_WONDERTRADE_TBOX_NEXT_T 6
+#define POKEPAD_WONDERTRADE_TBOX_RENDERER 7
+#define POKEPAD_WONDERTRADE_TBOX_TRADE 8
+#define POKEPAD_WONDERTRADE_TBOX_BACK 9
 
-    #define POKEPAD_WONDERTRADE_MEW_FLAG 0x91F
-    
+#define POKEPAD_WONDERTRADE_MEW_FLAG 0x91F
+
     typedef struct wondertrade_memory {
         bool from_outdoor;
         bool error_m;
@@ -36,8 +36,8 @@ extern "C" {
         u8 color_cb;
         u8 oam_badge;
         u8 cursor;
-    }wondertrade_memory ;
-    
+    } wondertrade_memory;
+
     extern u8 *str_pokepad_wondertrade_ref;
     extern u8 *script_wondertrade_failure;
     extern u8 *str_wondertrade_level_ref;
@@ -52,16 +52,16 @@ extern "C" {
     extern u8 *str_wondertrade_do_ref;
     extern u8 *str_wondertrade_back_ref;
     extern u8 *str_wondertrade_error_m_ref;
-    
+
     extern u8 *str_wondertrade_name0_ref;
     extern u8 *wondertrade_ot_names[];
-    
+
     void wondertrade_bg_scroll_callback(u8 self);
     void wondertrade_init_components();
     void wondertrade_init_callback();
     void wondertrade_load_steps_into_buffer();
     void wondertrade_init(bool is_outdoor);
-    
+
     u16 wondertrade_select_pokemon();
     void wondertrade_spawn_pokemon();
     bool wondertrade_can_pokemon_be_sent();

@@ -14,23 +14,23 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
-    #define POKEDEX_CNT 386
 
-    #define POKEDEX_TBOX_SEEN 0
-    #define POKEDEX_TBOX_CAUGHT 1
-    #define POKEDEX_TBOX_LIST_NAME 2
-    #define POKEDEX_TBOX_LIST_TYPES 3
-    #define POKEDEX_TBOX_LIST_CAPTURE 4
-    #define POKEDEX_TBOX_LIST_NR 5
-    
-    #define POKEDEX_VAR_LAST_SPECIES 0x50DB
-    #define POKEDEX_VAR_COMPARATOR 0x50DA
-    #define POKEDEX_FLAG_HABITAT 0x927
-    #define POKEDEX_FLAG_FEATURE_0 0x928
-    #define POKEDEX_FLAG_FEATURE_1 0x929
-    #define POKEDEX_FLAG_FEATURE_2 0x92A
-    
+#define POKEDEX_CNT 386
+
+#define POKEDEX_TBOX_SEEN 0
+#define POKEDEX_TBOX_CAUGHT 1
+#define POKEDEX_TBOX_LIST_NAME 2
+#define POKEDEX_TBOX_LIST_TYPES 3
+#define POKEDEX_TBOX_LIST_CAPTURE 4
+#define POKEDEX_TBOX_LIST_NR 5
+
+#define POKEDEX_VAR_LAST_SPECIES 0x50DB
+#define POKEDEX_VAR_COMPARATOR 0x50DA
+#define POKEDEX_FLAG_HABITAT 0x927
+#define POKEDEX_FLAG_FEATURE_0 0x928
+#define POKEDEX_FLAG_FEATURE_1 0x929
+#define POKEDEX_FLAG_FEATURE_2 0x92A
+
     extern u8 *str_pokepad_pokedex_nl_ref;
     extern u8 *str_pokepad_pokedex_unkown_ref;
     extern u8 *str_pokepad_pokedex_form_ref;
@@ -48,26 +48,25 @@ extern "C" {
     extern u8 *str_pokepad_pokedex_habitat_rod_ref;
     extern u8 *str_pokepad_pokedex_habitat_radar_ref;
     extern u8 *str_pokepad_pokedex_habitat_none_ref;
-    
-    typedef struct{
+
+    typedef struct {
         u16 dex_id;
         u16 species;
         bool seen;
         bool caught;
-    }pokedex_list_element;
-    
-    
-    typedef struct{
+    } pokedex_list_element;
+
+    typedef struct {
         u8 namespace;
         u8 propabilty; //0 rare, 1 medium, 2 common
         u8 type; //0 grass, 1 water, 2 rod, 3 radar
-    }pokedex_habitat_pair;
-    
-    #define HABITAT_TYPE_GRASS 0
-    #define HABITAT_TYPE_WATER 1
-    #define HABITAT_TYPE_ROD 2
-    #define HABITAT_TYPE_RADAR 3
-    
+    } pokedex_habitat_pair;
+
+#define HABITAT_TYPE_GRASS 0
+#define HABITAT_TYPE_WATER 1
+#define HABITAT_TYPE_ROD 2
+#define HABITAT_TYPE_RADAR 3
+
     typedef struct {
         bool from_outdoor;
         bool in_list;
@@ -106,7 +105,7 @@ extern "C" {
         u8 habitat_cursor_x;
         u8 habitat_cursor_y;
         u8 habitat_oams_rarity[4]; // 3 for rod is not used
-        bool habitat_cursor_is_moving ;
+        bool habitat_cursor_is_moving;
         u8 habitat_fading_mode;
         u8 habitat_fading_index;
         u8 habitat_fading_countdown;
@@ -114,9 +113,7 @@ extern "C" {
         u8 current_worldmap;
         bool habitat_found;
     } pokedex_memory;
-    
-    
-     
+
     typedef struct {
         u8 category[12];
         u16 height;
@@ -129,19 +126,19 @@ extern "C" {
         u16 trainer_scale;
         u16 trainer_displace;
         u16 unused_2;
-    }pokedex_data;
-    
-    typedef struct{
+    } pokedex_data;
+
+    typedef struct {
         u16 *data;
         int page_size;
-    }pokedex_page;
-    
-    typedef struct{
+    } pokedex_page;
+
+    typedef struct {
         pokedex_page *pages;
         int page_cnt;
-    }pokedex_habitat;
-    
-    
+    } pokedex_habitat;
+
+
     int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species);
     int pokedex_get_namespace_of_species_add_pair_if_not_present(pokedex_habitat_pair *dst, int cnt, u8 namespace, u8 propability, u8 type);
 
@@ -150,7 +147,7 @@ extern "C" {
     void pokedex_init(bool from_outdoor);
     void pokedex_show_components();
     void pokedex_build_list();
-    void pokedex_quicksort_list(u8 comparator, int l, int r);//0 := nr, 1 := name, 2 := size, 3 := weight
+    void pokedex_quicksort_list(u8 comparator, int l, int r); //0 := nr, 1 := name, 2 := size, 3 := weight
     int pokedex_quicksort_list_compare(u8 comparator, int a, int b);
     void pokedex_quicksort_list_swap(int a, int b);
     void pokedex_group_window_set();
@@ -174,7 +171,7 @@ extern "C" {
     void pokedex_callback_entry_idle();
     void pokedex_callback_entry_back();
     bool pokedex_operator(u16 val, u8 op, bool is_species_id);
-    u8* pokedex_flag_access (u16 flag, bool seen);
+    u8* pokedex_flag_access(u16 flag, bool seen);
     u16 pokedex_get_number_seen_or_caught(bool caught);
     void pokedex_init_habitat();
     void pokedex_habitats_load_for_species(u16 *unpacked_map);
@@ -187,19 +184,19 @@ extern "C" {
     pokedex_data *pokedex_get_data(u16 dex_id);
     bool national_dex_is_achieved();
     u16 pokemon_get_display_number(u16 species);
-    u16 pokedex_get_species_by_dex_id (u16 dex_id);
+    u16 pokedex_get_species_by_dex_id(u16 dex_id);
     void pokedex_habitat_big_callback_cursor_movement(u8 self);
-    
-    u16 pokedex_order[POKEMON_CNT-1];
-    pokedex_data dex_data[POKEDEX_CNT+1];
-    
+
+    u16 pokedex_order[POKEMON_CNT - 1];
+    pokedex_data dex_data[POKEDEX_CNT + 1];
+
     const int *gfx_worldmapTiles;
     const void *gfx_worldmapPal;
     u8 pokedex_fontcolmap[4];
-    
+
     int *worldmap_tilemaps[4];
     u8 *namespace_worldmap_associations;
-    
+
 #ifdef	__cplusplus
 }
 #endif

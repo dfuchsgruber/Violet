@@ -28,33 +28,32 @@ typedef struct {
 
 } trainer;
 
-typedef struct build_field{
-	u8 build : 5;
-	u8 ability : 1;
-	u8 hability : 1;
-	u8 shinyness : 1;
-	
-}build_field;
+typedef struct build_field {
+    u8 build : 5;
+    u8 ability : 1;
+    u8 hability : 1;
+    u8 shinyness : 1;
 
-typedef struct build{
-	u8 nature : 5;
-	u8 evs[6];
-	u16 prefered_item;
+} build_field;
+
+typedef struct build {
+    u8 nature : 5;
+    u8 evs[6];
+    u16 prefered_item;
 } build;
 
-union union_build_field{
-	u8 value;
-	build_field bitfield;
+union union_build_field {
+    u8 value;
+    build_field bitfield;
 };
 
-typedef struct trainer_items{
-	
-	u16 items[4];
-	u8 cnt;
-	
-}trainer_items;
+typedef struct trainer_items {
+    u16 items[4];
+    u8 cnt;
 
-typedef struct trainer_variables{
+} trainer_items;
+
+typedef struct trainer_variables {
     u16 kind_of_battle;
     u16 trainer_id;
     u16 overworld_target;
@@ -66,16 +65,16 @@ typedef struct trainer_variables{
     script *script_later;
     script *script_continue;
     u16 reserved_word_xse;
-    
-}trainer_variables;
+
+} trainer_variables;
 
 
-trainer* trainers = (trainer*)0x0823E998;
-trainer_variables *trainer_vars = (trainer_variables*)0x020386AC;
+trainer* trainers = (trainer*) 0x0823E998;
+trainer_variables *trainer_vars = (trainer_variables*) 0x020386AC;
 
 void build_trainer_poke(union union_build_field field, pokemon *poke);
 
-void load_trainer_items (trainer_items *t_items);
+void load_trainer_items(trainer_items *t_items);
 
 bool checktrainerflag(u16 trainer_id);
 bool trainer_can_npc_challange_player(u16 trainer_id);

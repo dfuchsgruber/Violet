@@ -12,16 +12,16 @@
 #include "romfuncs.h"
 #include "npc.h"
 
-u16 get_encounter_music_by_trainer_id(u16 trainer_id){
-    if (trainers[trainer_id].trainerclass == TRAINERCLASS_TEAM_VIOLET){
+u16 get_encounter_music_by_trainer_id(u16 trainer_id) {
+    if (trainers[trainer_id].trainerclass == TRAINERCLASS_TEAM_VIOLET) {
         return MUS_VIOLET_ENCOUNTER;
-    }else if(trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONARY){
+    } else if (trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONARY) {
         return MUS_REVOLUTIONARY_ENCOUNTER;
     }
-    
-    
+
+
     //Get encounter music by field inside trainer and modulo
-    return (u16)( __umod(trainers[trainer_id].encounter_and_gender.encounter, 3) + 283 );
+    return (u16) (__umod(trainers[trainer_id].encounter_and_gender.encounter, 3) + 283);
 }
 
 pair trainer_music_table [] = {
@@ -32,25 +32,25 @@ pair trainer_music_table [] = {
     {0xFFFF, 0xFFFF}
 };
 
-u16 battle_get_music(){
+u16 battle_get_music() {
     u16 *battle_music = vardecrypt(VAR_BATTLE_MUSIC);
-    if (*battle_music){
+    if (*battle_music) {
         u16 forced_mus = *battle_music;
         *battle_music = 0;
         return forced_mus;
     }
-    if (battle_flags->trainer_battle){
+    if (battle_flags->trainer_battle) {
         //scan a lo_table
         int i = 0;
-        while(trainer_music_table[i].id != 0xFFFF){
-            if(trainer_music_table[i].id == trainers[*trainer_id].trainerclass){
+        while (trainer_music_table[i].id != 0xFFFF) {
+            if (trainer_music_table[i].id == trainers[*trainer_id].trainerclass) {
                 return trainer_music_table[i].value;
             }
             i++;
         }
         return MUS_TRAINER_BATTLE;
     }
-    if(battle_flags->flag_C || battle_flags->flag_D){
+    if (battle_flags->flag_C || battle_flags->flag_D) {
         return MUS_WILDBATTLE;
     }
     return MUS_WILDBATTLE;

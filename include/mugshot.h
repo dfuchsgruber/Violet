@@ -11,18 +11,17 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
+
 #include "stdbool.h"
 
+    typedef struct mugshot {
+        void *gfx;
+        void *pal;
+    } mugshot;
 
-typedef struct mugshot{
-    void *gfx;
-    void *pal;
-}mugshot;
+    void spawn_mugshot();
 
-void spawn_mugshot();
-
-void clear_mugshot();
+    void clear_mugshot();
 
 #ifdef	__cplusplus
 }

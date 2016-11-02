@@ -115,6 +115,6 @@
 
 u8 get_pokemons_ability(pokemon *poke);
 
-u8 write_ability_into_dbuf (pokemon *poke);
+u8 write_ability_into_dbuf(pokemon *poke);
 
 #endif

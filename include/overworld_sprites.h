@@ -11,7 +11,7 @@
 
 #include "types.h"
 #include "oams.h"
-    
+
 
 //We define the constant offsets for things we know
 #define OW_ANIM_STANDARD_NPC (void*)0x083A322C
@@ -25,8 +25,7 @@
 #define OW_FINAL_OAM_128_64 (sprite*)0x083A35A4
 #define OW_FINAL_OAM_32_32 (sprite*)0x083A35DC
 
-typedef struct overworld_sprite{
-    
+typedef struct overworld_sprite {
     u16 tiles_tag; //Tiles tag
     u16 pal_tag; //0x1100 + PalID
     u16 unkown; //usually 0x11FF
@@ -42,14 +41,14 @@ typedef struct overworld_sprite{
     void *animation; //NSE := Anim Pointer
     graphic *graphics; //NSE := equals Pointer 3
     rotscale_frame **rotscales; //No NSE equal
-    
-    
-    
+
+
+
     //TODO
-    
-}overworld_sprite;
-    
- 
+
+} overworld_sprite;
+
+
 
 #endif	/* OVERWORLD_SPRITES_H */
 

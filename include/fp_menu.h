@@ -13,9 +13,8 @@ extern "C" {
 #endif
 
 #include "pokemon.h"
-    
+
     typedef struct {
-        
         u8 poke_index;
         u8 stat_index;
         u16 tile_pokepic;
@@ -24,8 +23,8 @@ extern "C" {
         u8 oam_arrows[4]; //down, up, left, right
         u8 delay;
         u8 pokepic_loading_state;
-        
-    }fp_memory;
+
+    } fp_memory;
 
     void fp_menu_init(u8 self);
 
@@ -44,11 +43,11 @@ extern "C" {
     void fp_menu_callback_arrow_anim(u8 self);
     void fp_menu_callback_return();
     void fp_menu_callback_pokemon_load();
-    
+
     extern u8 *fp_menu_names[6];
     extern u8 *str_fp_menu_plus_ref;
     extern u8 *str_fp_menu_minus_ref;
-    
+
 
 #ifdef	__cplusplus
 }

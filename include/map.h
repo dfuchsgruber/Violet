@@ -46,159 +46,156 @@
 
 
 //A single map connection
-typedef struct map_connection{
-	u32 direction;
-	u32 displacement;
-	u8 bank;
-	u8 map;
-	u8 field_A;
-	u8 field_B;
-}map_connection;
+
+typedef struct map_connection {
+    u32 direction;
+    u32 displacement;
+    u8 bank;
+    u8 map;
+    u8 field_A;
+    u8 field_B;
+} map_connection;
 
 //A list containing map connections
-typedef struct map_connections {
-	u32 count;
-	map_connection *connections;
-}map_connections;
 
-typedef struct map_block{
-	u16 block_id : 10;
-	u16 level : 6;
+typedef struct map_connections {
+    u32 count;
+    map_connection *connections;
+} map_connections;
+
+typedef struct map_block {
+    u16 block_id : 10;
+    u16 level : 6;
 } map_block;
 
-typedef struct map_data{
-	map_block *blocks;
-}map_data;
+typedef struct map_data {
+    map_block *blocks;
+} map_data;
+
+typedef struct map_tileset_info {
+    u8 compression_used;
+    u8 color_section : 1; //0 and 1 are possible
+    u8 padding : 7;
+    u8 field_2;
+    u8 field_3;
+
+} map_tileset_info;
+
+typedef struct map_tileset {
+    map_tileset_info *info;
+    void *graphic;
+    u16 *colors; //6 * 16 colors
+    void *blocks;
+    void *behaviors;
+    void *animations;
 
 
-typedef struct map_tileset_info{
-	u8 compression_used;
-	u8 color_section : 1; //0 and 1 are possible
-	u8 padding : 7;
-	u8 field_2;
-	u8 field_3;
-	
-}map_tileset_info;
-
-typedef struct map_tileset{
-	
-	map_tileset_info *info;
-	void *graphic;
-	u16 *colors; //6 * 16 colors
-	void *blocks;
-	void *behaviors;
-	void *animations;
-	
-	
-}map_tileset;
-
+} map_tileset;
 
 typedef struct tileset {
-	
-	u8 field_0;
-	u8 palette_state;
-	u8 field_2;
-	u8 field_3;
-	void *field_4;
-	void *palette;
-	void *field_C;
-	block_data *data;
-	void *init_callback;
-	
+    u8 field_0;
+    u8 palette_state;
+    u8 field_2;
+    u8 field_3;
+    void *field_4;
+    void *palette;
+    void *field_C;
+    block_data *data;
+    void *init_callback;
+
 } tileset;
 
 //The actual map data
-typedef struct mapfooter{
-	u32 width;
-	u32 height;
-	u16 *border_blocks;
-	map_block *map;
-	tileset *tileset1;
-	tileset *tileset2;
-	u8 border_width;
-	u8 border_height;
-	u16 padding;
-}mapfooter;
+
+typedef struct mapfooter {
+    u32 width;
+    u32 height;
+    u16 *border_blocks;
+    map_block *map;
+    tileset *tileset1;
+    tileset *tileset2;
+    u8 border_width;
+    u8 border_height;
+    u16 padding;
+} mapfooter;
 
 
 //Map header data 
-typedef struct mapheader{
-	mapfooter *footer;
-	map_events *events;
-	void *levelscripts;
-	map_connections *connections;
-	u16 music;
-	u16 map_index; //main table is used when map is loaded
-	u8 name_bank;
-	u8 flash;
-	u8 weather;
-	u8 type;
-	u16 field_18;
-	u8 show_name;
-	u8 battle_style;
-	
-}mapheader;
+
+typedef struct mapheader {
+    mapfooter *footer;
+    map_events *events;
+    void *levelscripts;
+    map_connections *connections;
+    u16 music;
+    u16 map_index; //main table is used when map is loaded
+    u8 name_bank;
+    u8 flash;
+    u8 weather;
+    u8 type;
+    u16 field_18;
+    u8 show_name;
+    u8 battle_style;
+
+} mapheader;
 
 //Simply a index based list of mapheaders
-typedef struct mapbank{
-	mapheader **maps;
-}mapbank;
+
+typedef struct mapbank {
+    mapheader **maps;
+} mapbank;
 
 typedef struct map_dynamic_data {
-	
-	u32 width;
-	u32 height;
-	map_block *blocks;
+    u32 width;
+    u32 height;
+    map_block *blocks;
 } map_dynamic_data;
 
-typedef struct footer_dynamic_data{
-	
-	mapfooter *footer;
-	void *event_header;
-	
-}footer_dynamic_data;
+typedef struct footer_dynamic_data {
+    mapfooter *footer;
+    void *event_header;
+
+} footer_dynamic_data;
 
 
-footer_dynamic_data *foot_ddata = (footer_dynamic_data*)0x02036DFC;
+footer_dynamic_data *foot_ddata = (footer_dynamic_data*) 0x02036DFC;
 
 
 map_dynamic_data *map_ddata = (map_dynamic_data*) 0x03004F90;
 
+typedef struct wild_pokemon_entry {
+    u8 level_min;
+    u8 level_max;
+    u16 species;
+} wild_pokemon_entry;
 
-typedef struct wild_pokemon_entry{
-	u8 level_min;
-	u8 level_max;
-	u16 species;
-}wild_pokemon_entry;
+typedef struct wild_pokemon_habitat {
+    u8 frequency;
+    u8 field_1;
+    u8 field_2;
+    u8 field_3;
+    wild_pokemon_entry *data;
+} wild_pokemon_habitat;
 
+typedef struct {
+    u8 bank;
+    u8 map;
+    u8 field_2;
+    u8 field_3;
+    wild_pokemon_habitat *grass;
+    wild_pokemon_habitat *water;
+    wild_pokemon_habitat *other;
+    wild_pokemon_habitat *rod;
 
-typedef struct wild_pokemon_habitat{
-	u8 frequency;
-	u8 field_1;
-	u8 field_2;
-	u8 field_3;
-	wild_pokemon_entry *data;
-}wild_pokemon_habitat;
-
-typedef struct{
-	u8 bank;
-	u8 map;
-	u8 field_2;
-	u8 field_3;
-	wild_pokemon_habitat *grass;
-	wild_pokemon_habitat *water;
-	wild_pokemon_habitat *other;
-	wild_pokemon_habitat *rod;
-	
-}wild_pokemon_data;
+} wild_pokemon_data;
 
 u16 map_wild_pokemon_get_current_table_id(); //returns 0xFFFF if none matches
 
 mapbank **mapbank_table_ptr = (mapbank**) 0x0805526C;
 mapfooter ***main_map_table_ptr = (mapfooter***) 0x080551B4;
-tileset *tilesets = (tileset*)0x082D49B8;
-wild_pokemon_data **wild_pokemon_data_ptr = (wild_pokemon_data**)0x080828F4;
-u8 **map_namespaces = (u8**)0x083F1504;
+tileset *tilesets = (tileset*) 0x082D49B8;
+wild_pokemon_data **wild_pokemon_data_ptr = (wild_pokemon_data**) 0x080828F4;
+u8 **map_namespaces = (u8**) 0x083F1504;
 
 mapheader *get_mapheader(u8 bank, u8 map);
 mapfooter *get_mapfooter();

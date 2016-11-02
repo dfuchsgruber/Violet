@@ -7,3 +7,9 @@ str_item_desc_wolkenherz:
 
 str_item_desc_wolke:
         =Eine gewobene Wolke von watte-\nartier Konsistenz. Sie schwebt in\nBodennähe und kann Menschen tragen.
+
+str_item_desc_zugangskarte:
+        =Eine hochentwickelte Zugangs-\nKarte zum Gebäude der Laz.Corp.
+
+str_item_desc_up_grade:
+        =Ein Softwareupdate für das\nvirtuelle Pok\emon Porygon.

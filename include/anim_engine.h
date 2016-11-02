@@ -4,18 +4,17 @@
 #include <stdbool.h>
 
 typedef struct ae_memory {
-	
-	u16 current_frame;
-	u32 current_programm;
-	u8 link_numbers;
-	u8 callback_id;
-	bool active;
-	u32 links [8];
-	u16 lframes [8];
-	u16 vars[16];
+    u16 current_frame;
+    u32 current_programm;
+    u8 link_numbers;
+    u8 callback_id;
+    bool active;
+    u32 links [8];
+    u16 lframes [8];
+    u16 vars[16];
 } ae_memory;
 
-typedef struct text_render_flags_s{
+typedef struct text_render_flags_s {
     u8 linebreak : 1;
     u8 paragraph : 1;
     u8 end : 1;
@@ -26,7 +25,7 @@ typedef struct text_render_flags_s{
     u8 pass_free : 1;
 } text_render_flags_s;
 
-typedef union text_render_flags{
+typedef union text_render_flags {
     u8 value;
     text_render_flags_s flags;
 } text_render_flags;
@@ -47,7 +46,7 @@ typedef struct aetr_memory {
     u8 line_distance_l;
     u8 display_flag;
     u8 bg_id;
-    
+
 } aetr_memory;
 
 typedef void (*ae_cmd)(ae_memory* mem);
@@ -60,17 +59,17 @@ void anim_engine_callback(u8 callback_id);
 void anim_engine_execute_frame(ae_memory* mem);
 u8 anim_engine_read_byte(ae_memory* mem);
 u16 anim_engine_get_hword(ae_memory*mem);
-u32 anim_engine_read_word (ae_memory* mem);
-u16 anim_engine_read_hword (ae_memory* mem);
+u32 anim_engine_read_word(ae_memory* mem);
+u16 anim_engine_read_hword(ae_memory* mem);
 u16 anim_engine_read_param(ae_memory* mem);
 //void anim_engine_tbox_renderer(u8 cbid);
 void anim_engine_text_renderer(u8 self);
-void anim_engine_obj_mover (u8 cbid);
-void anim_engine_fader (u8 cb_id);
+void anim_engine_obj_mover(u8 cbid);
+void anim_engine_fader(u8 cb_id);
 void callback_maintain();
 /**
 / Command Functions
-**/
+ **/
 void cmdx00_end(ae_memory* mem);
 void cmdx01_call(ae_memory* mem);
 void cmdx02_jump(ae_memory* mem);
@@ -86,26 +85,26 @@ void cmdx0B_bg_sync_and_show(ae_memory* mem);
 void cmdx0C_bg_hide(ae_memory* mem);
 void cmdx0D_bg_display_sync();
 void cmdx0E_bg_override(ae_memory* mem);
-void cmdx0F_load_obj_pal (ae_memory* mem);
+void cmdx0F_load_obj_pal(ae_memory* mem);
 void cmdx10_free_obj_pal(ae_memory* mem);
 void cmdx11_get_io(ae_memory* mem);
 void cmdx12_set_io_to_var(ae_memory* mem);
 void cmdx13_set_io_to_value(ae_memory*mem);
-void cmdx14_prepare_tbox (ae_memory*mem);
-void cmdx15_display_text_inst (ae_memory*mem);
-void cmdx16_clear_textbox (ae_memory*mem);
-void cmdx17_display_rendered_tbox (ae_memory*mem);
-void cmdx18_rendered_tbox_event (ae_memory* mem);
-void cmdx19_objmove (ae_memory* mem);
+void cmdx14_prepare_tbox(ae_memory*mem);
+void cmdx15_display_text_inst(ae_memory*mem);
+void cmdx16_clear_textbox(ae_memory*mem);
+void cmdx17_display_rendered_tbox(ae_memory*mem);
+void cmdx18_rendered_tbox_event(ae_memory* mem);
+void cmdx19_objmove(ae_memory* mem);
 void anim_engine_cmdx1A(ae_memory* mem);
 void cmdx1B_gfx_anim_set(ae_memory*mem);
-void cmdx1C_rs_anim_set (ae_memory*mem);
-void cmdx1D_loadpal (ae_memory*mem);
-void cmdx1E_fade (ae_memory*mem);
-void cmdx1F_invertcolors (ae_memory* mem);
-void cmdx20_sound (ae_memory* mem);
-void cmdx21_song (ae_memory* mem);
-void cmdx22_cry (ae_memory* mem);
+void cmdx1C_rs_anim_set(ae_memory*mem);
+void cmdx1D_loadpal(ae_memory*mem);
+void cmdx1E_fade(ae_memory*mem);
+void cmdx1F_invertcolors(ae_memory* mem);
+void cmdx20_sound(ae_memory* mem);
+void cmdx21_song(ae_memory* mem);
+void cmdx22_cry(ae_memory* mem);
 void cmdx23_maintain();
 void cmdx24_script_notify();
 void cmdx25_oam_reset();
