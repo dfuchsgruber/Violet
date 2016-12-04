@@ -10,7 +10,7 @@ void generate_trash_item(u8 facing) {
     u16 item = 0;
     if (!check_trashflag(facing)) {
 
-        int hash = get_trash_hash_by_facing(facing, 97);
+        u32 hash = (u32)get_trash_hash_by_facing(facing, 97);
         if (hash <= 2) {
             //Leftovers
             item = ITEM_UEBERRESTE;
@@ -101,7 +101,7 @@ void update_a_vector() {
 
     int day_difference = (current_time.year * 365 + current_time.month * 30 + current_time.day) -
             (cmem->a_gen_time.year * 365 + cmem->a_gen_time.month * 30 + cmem->a_gen_time.day);
-    if (day_difference >= 14) {
+    if (day_difference >= 7) {
         new_a_vector();
         reset_trash_flags();
     }

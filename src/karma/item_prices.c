@@ -27,10 +27,10 @@ int modify_item_prices(int price) {
     price_new *= factor;
     price_new >>= 8;
 
-    //Now we make sure our price is a multiple of 10
-    int d = price_new / 10;
-    if (d * 10 != price_new) {
+    //Now we make sure our price is a multiple of 50
+    int d = price_new / 50;
+    if (d * 50 != price_new) {
         d++;
     }
-    return d * 10;
+    return d * 50;
 }

@@ -162,7 +162,7 @@ music_table equ 0x9194500
     .word 0
 
 .org music_table + 8*356
-    .word mus_groudon_battle
+    .word mus_magmatic
     .word 0
 
 .org music_table + 8*357

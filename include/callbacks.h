@@ -1,4 +1,9 @@
+#ifndef H_CALLBACK
+#define H_CALLBACK
+
 #define CALLBACK_OBJECT(x) ((big_callback*)((x*sizeof(big_callback))+0x03004FE0))
+
+void nullsub();
 
 typedef struct {
     void (*function)(u8 self);
@@ -11,4 +16,4 @@ typedef struct {
 
 big_callback *big_callbacks = (big_callback*) 0x03004FE0;
 
-u32* nullsub = (u32*) 0x0800758D;
+#endif

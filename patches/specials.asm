@@ -40,10 +40,6 @@ special_table equ 0x0815FCC0
         .word special_move_npc_to_player | 1
         .pool
 
-// NOTE !!!!!!!!!! AFTER 0x1B THERE IS NOT ANYMORE FREE SPECIAL SPACE! !!!!!!!!!!!!!!!!!
-
-
-/// From 0x24 to (inclusvie) 0x26 are 3 free nullsub specials
 .org (special_table + (0x24 * 4))
         .word special_move_npc_to | 1// replace with real special 0x24
         .pool
@@ -56,7 +52,6 @@ special_table equ 0x0815FCC0
         .word special_heal_team_index | 1
         .pool
 
-/// From 0x2B are 7 free specials
 .org (special_table + (0x2B * 4))
         .word cloud_force | 1
         .pool
@@ -80,9 +75,30 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x30 *4))
         .word access_card_init_by_atrium | 1
         .pool
-
+.org (special_table + (0x31 *4))
+        .word transparency_load_black_box_pals | 1
+        .pool
 
 .org (special_table +(0x36 *4))
         .word special_x36_check_loaded_trainerflag | 1
         .pool
 
+.org (special_table + (0x3E * 4))
+        .word fossil_print_multichoice | 1
+        .pool
+
+.org (special_table + (0x3F * 4))
+        .word fossil_execute | 1
+        .pool
+
+.org (special_table + (0x40 * 4))
+        .word fossil_is_finished | 1
+        .pool
+
+.org (special_table + (0x41 * 4))
+        .word pokemon_team_knows_hm | 1
+        .pool
+
+.org (special_table + (0x42 * 4))
+        .word pokemon_team_remove | 1
+        .pool

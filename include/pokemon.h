@@ -189,6 +189,9 @@ u8 pokemon_item_animations[POKEMON_CNT][5];
 pokemon_evolution pokemon_evolutions[POKEMON_CNT][5];
 
 void special_heal_team_index();
+void pokemon_team_remove();
+void pokemon_team_knows_hm();
+bool pokemon_knows_hm(pokemon *p);
 
 
 #endif

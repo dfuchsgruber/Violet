@@ -11,7 +11,7 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
+#include "pstring.h"
     typedef struct {
         u8 bg_id;
         u8 x;

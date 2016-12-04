@@ -158,11 +158,11 @@ battle_bg battle_bgs[29] = {
     },
     // Battle bg 19
     {
-        (void*) 0x8a20000,
-        (void*) 0x890b1ac,
+        gfx_battle_bg_fireTiles,
+        gfx_battle_bg_fireMap,
         NULL,
         NULL,
-        (void*) 0x8a2e000
+        gfx_battle_bg_firePal
     },
     // Battle bg 20
     {

@@ -468,3 +468,23 @@ overworld_sprite ow_cloudrider_male = {
     OW_ANIM_STANDARD_NPC, overworld_sprite_cloudrider_male,
     ROTSCALE_TABLE_NULL
 };
+
+static graphic overworld_sprite_moltres [] = {
+    {&gfx_ow_moltres_0Tiles, 0x800, 0},
+    {&gfx_ow_moltres_0Tiles, 0x800, 0},
+    {&gfx_ow_moltres_0Tiles, 0x800, 0},
+    {&gfx_ow_moltres_0Tiles, 0x800, 0},
+    {&gfx_ow_moltres_1Tiles, 0x800, 0},
+    {&gfx_ow_moltres_0Tiles, 0x800, 0},
+    {&gfx_ow_moltres_1Tiles, 0x800, 0},
+    {&gfx_ow_moltres_0Tiles, 0x800, 0},
+    {&gfx_ow_moltres_1Tiles, 0x800, 0}
+};
+
+overworld_sprite ow_moltres = {
+    0xFFFF, 0x1100 + 3, 0x11FF, 0x800,
+    64, 64, 0x12, 0x1, 0x0, 0,
+    OW_FINAL_OAM_64_64, OW_FORMATION_64_64,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_moltres,
+    ROTSCALE_TABLE_NULL
+};

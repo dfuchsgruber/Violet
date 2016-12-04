@@ -62,6 +62,7 @@ typedef struct custom_memory {
     u8 trash_flags[16];
     rtc_timestamp a_gen_time;
     u8 a_vector[4];
+    rtc_timestamp fossil_gen_time;
 
 } custom_memory;
 
@@ -75,7 +76,8 @@ typedef struct {
     pokedex_memory *dex_mem;
     fp_memory *fp_mem;
     script additional_levelscript_4;
-
+    u16 *dmart;
+    
 } floating_memory;
 
 

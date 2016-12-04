@@ -6,3 +6,5 @@
 void oam_null_callback(oam_object *self) {
     return;
 }
+
+void nullsub(){}

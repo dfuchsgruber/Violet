@@ -29,5 +29,7 @@ u8 rtc_read_byte();
 u16 special_get_rtc();
 void rtc_chip_wait();
 u8 to_dec(u8 value);
+int rtc_timestamp_to_seconds(rtc_timestamp *t);
+bool rtc_test();
 
 #endif

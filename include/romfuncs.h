@@ -3,6 +3,11 @@
 #include <stdbool.h>
 #include "stddef.h"
 
+#define CPUSET_COPY 0
+#define CPUSET_FILL 0x1000000
+#define CPUSET_HALFWORD 0
+#define CPUSET_WORD 0x4000000
+
 //static functions in ROM
 u8 get_item_effect_param(u16 item_id);
 void init_fadescreen(u8 type, u8 unkown);
@@ -159,5 +164,13 @@ script map_get_levelscript_if_triggered(u8 type);
 void script_init_muted(script s);
 bool multichoice(u8 x, u8 y, u8 choice, bool forced_choice);
 void warp_history_set(u8 index, u8 bank, u8 map, u8 exit, s16 x, s16 y);
+int save_get_key(u8 index);
+bool tile_is_reflective_water(u8 behavior);
+void pal_apply_shader_by_overworld_pal(u8 ow_pal);
+void pal_ow_fading_state_sync(u8 ow_pal);
+int script_read_word(void *script_state);
+void pokemart(u16 *list);
+void mart_set_end_callback(void (*func)());
+void item_printstr(u8 cb_id, u8 unkown, u8 unkown2, u8 *str);
 
 #endif

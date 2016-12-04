@@ -1,6 +1,8 @@
 #ifndef H_ITEM
 #define H_ITEM
 
+#include "stdbool.h"
+
 #define ITEM_NONE 0
 #define ITEM_MEISTERBALL 0x1
 #define ITEM_HYPERBALL 0x2
@@ -393,10 +395,24 @@ typedef struct item {
     void *field_28;
 } item;
 
+typedef struct{
+    u16 flag;
+    u16 item;
+}mart_item;
+
+typedef struct{
+    void (*end_callback)();
+    u16 *item_list;
+}mart_state;
+
 item* items = (item*) 0x083DA518;
+mart_state *mstate = (mart_state*)0x02039934;
 
 void item_field_nature_stone(u8 self);
 
 void item_nature_stone(u8 self, void (*failure_func)(u8));
+
+bool script_cmd_x86_pokemart(void *script_state);
+
 
 #endif

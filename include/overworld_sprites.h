@@ -20,9 +20,11 @@
 #define OW_FORMATION_16_32 (void*)0x083A3660
 #define OW_FORMATION_128_64 (void*)0x083A3914
 #define OW_FORMATION_32_32 (void*)0x083A36B4
+#define OW_FORMATION_64_64 (void*)0x083A3794
 
 #define OW_FINAL_OAM_16_32 (sprite*)0x083A35D4
 #define OW_FINAL_OAM_128_64 (sprite*)0x083A35A4
+#define OW_FINAL_OAM_64_64 (sprite*)0x083A35E4
 #define OW_FINAL_OAM_32_32 (sprite*)0x083A35DC
 
 typedef struct overworld_sprite {

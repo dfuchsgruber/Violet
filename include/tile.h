@@ -7,6 +7,7 @@
 #include <stdbool.h>
 
 #include "anim_engine.h"
+#include "oams.h"
 
 #define DIR_NONE 0
 #define DIR_DOWN 1
@@ -30,10 +31,23 @@
 #define DIAG_SW 0x82
 #define DIAG_NW 0x83
 
+#define VAR_ASH 0x50D0
+#define FLAG_ASHBAG 0x951
+
 typedef struct {
     s16 x;
     s16 y;
 } coordinate;
+
+typedef struct{
+    u8 bank;
+    u8 map;
+    u8 triggered_by_behavior;
+    bool apply_to_every_map;
+    oam_template *temp;
+    palette *pal;
+    void (*init_func)();
+}any_grass;
 
 typedef struct bdata {
     u32 behavior : 9;
@@ -68,6 +82,7 @@ int get_trash_hash_by_facing(u8 facing, int m);
 int a_hash(s16 x, s16 y, u8 map, u8 bank, int m);
 void new_a_vector();
 u32 tile_get_field_by_pos(s16 x, s16 y, u8 field);
+void ash_grass_step();
 
 void load_tv_text();
 u8 *get_tv_text();

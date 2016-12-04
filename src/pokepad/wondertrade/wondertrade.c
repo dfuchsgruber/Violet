@@ -214,12 +214,7 @@ bool wondertrade_can_pokemon_be_sent() {
     if (get_pokemons_attribute(&player_pokemon[*result], ATTRIBUTE_IS_EGG, 0)) {
         return false;
     }
-    int i;
-    for (i = 0; i < 4; i++) {
-        if (move_is_hm((u16) get_pokemons_attribute(&player_pokemon[*result], (u8) (ATTRIBUTE_ATTACK1 + i), 0)))
-            return false;
-    }
-    return true;
+    return !pokemon_knows_hm(&player_pokemon[*result]);
 }
 
 void wondertrade_callback_after_selection() {

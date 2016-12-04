@@ -11,8 +11,8 @@ typedef struct oam_object oam_object;
 struct gfx_frame;
 typedef struct gfx_frame gfx_frame;
 
-typedef struct palette {
-    void *pal;
+typedef struct {
+    const void *pal;
     u16 tag;
     u16 field_6;
 } palette;
@@ -23,7 +23,7 @@ typedef struct gfx_frame {
 } gfx_frame;
 
 typedef struct graphic {
-    void *sprite;
+    const void *sprite;
     u16 size;
     u16 tag;
 } graphic;
