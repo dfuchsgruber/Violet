@@ -21,3 +21,29 @@
 	ldr r0, =choice_band_on_0 | 1
 	bx r0
 	.pool
+
+
+//abilities
+.org 0x80001c0
+	.word ability_names
+
+.org 0x80d823c
+	.word ability_names
+
+.org 0x80d8840
+	.word ability_names
+
+.org 0x813683c
+	.word ability_names
+
+
+.org 0x80001c4
+	.word ability_descriptions
+
+.org 0x8136844
+	.word ability_descriptions
+
+.org 0x0801A584
+        ldr r0, =hook_attack_negating_abilities | 1
+        bx r0
+        .pool

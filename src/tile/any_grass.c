@@ -39,6 +39,7 @@ any_grass tile_any_grasses[] = {
     {3, 24, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
     {18, 3, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
     {1, 30, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
+    {0, 12, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
     {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub} 
 };
 

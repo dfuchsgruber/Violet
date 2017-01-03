@@ -62,8 +62,14 @@ u16 can_mega_evolve(battler *b);
 
 battler* battlers = (battler*) 0x02023BE4;
 u8 *attack_targets = (u8*) 0x02023BD6;
+u8 *attacking_battler = (u8*)0x02023D6B;
+u8 *defending_battler = (u8*)0x02023D6C;
 u8 *battler_oams = (u8*) 0x02023D44;
 u8 *battler_cnt = (u8*) 0x02023BCC;
 u16 *trainer_id = (u16*) 0x020386AE;
+u8 *stat_change = (u8*) 0x02023FC4;
+u16 *active_attack = (u16*) 0x02023D4A;
+
+u32 *bsc_status_flags = (u32*)0x02023DD0;
 
 #endif

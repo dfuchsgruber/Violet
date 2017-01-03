@@ -84,7 +84,7 @@ void symbol_callback(oam_object *self) {
 
             self->x = oams[hp_oam].x;
             self->x2 = (s16) (oams[hp_oam].x2 + dxmin);
-            self->y = (u16) (oams[hp_oam].y - 2);
+            self->y = (s16) (oams[hp_oam].y - 2);
             self->y2 = (s16) (oams[hp_oam].y2);
 
             self->bitfield2 = (u8) (self->bitfield2 & (~0x4)); //visible

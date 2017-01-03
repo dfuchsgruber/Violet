@@ -3,6 +3,7 @@
 #include "basestats.h"
 #include "abilities.h"
 #include "item.h"
+#include "gfx.h"
 
 graphic pokemon_backsprites[POKEMON_CNT] = {
     // POKEMON_POKEMON_0
@@ -886,6 +887,6 @@ graphic pokemon_backsprites[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     {(void*) 0x8e4874c, 0x800, 0x1b7},
     // POKEMON_TEST
-    {(void*) 0x93bfd2c, 0x800, 0x1b8}
+    {gfx_pkmn_groudon_emperor_backspriteTiles, 0x800, 0x1b8}
 
 };

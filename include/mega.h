@@ -2,7 +2,7 @@
 #define H_MEGA
 
 #define MEGA_ICON_TAG 0x134F
-#define MEGA_CNT 3
+#define MEGA_CNT 4
 
 #include "battle.h"
 

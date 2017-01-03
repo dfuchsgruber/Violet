@@ -734,9 +734,6 @@ u16 pokedex_habitat_selten_page_7[1] = {
     POKEMON_MEW
 };
 
-u16 pokedex_habitat_selten_page_8[1] = {
-    POKEMON_TEST
-};
 pokedex_page pokedex_habitat_selten_pages [9] = {
     { pokedex_habitat_selten_page_0, 1},
     { pokedex_habitat_selten_page_1, 3},
@@ -745,8 +742,7 @@ pokedex_page pokedex_habitat_selten_pages [9] = {
     { pokedex_habitat_selten_page_4, 1},
     { pokedex_habitat_selten_page_5, 1},
     { pokedex_habitat_selten_page_6, 1},
-    { pokedex_habitat_selten_page_7, 1},
-    { pokedex_habitat_selten_page_8, 1}
+    { pokedex_habitat_selten_page_7, 1}
 };
 
 

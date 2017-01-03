@@ -13,3 +13,77 @@
 .org 0x800fd0c
 	.word battle_bgs
 
+//bsc strings
+	
+
+.org 0x80cf194
+	.word bsc_strings
+
+.org 0x80cf270
+	.word bsc_strings
+
+.org 0x80cf2b8
+	.word bsc_strings
+
+.org 0x80cf350
+	.word bsc_strings
+
+.org 0x80cf530
+	.word bsc_strings
+
+.org 0x80cf5b0
+	.word bsc_strings
+
+.org 0x80cf5f8
+	.word bsc_strings
+
+.org 0x80cf640
+	.word bsc_strings
+
+.org 0x80cf674
+	.word bsc_strings
+
+.org 0x80cf6a0
+	.word bsc_strings
+
+.org 0x80cfcd0
+	.word bsc_strings
+
+.org 0x80cfda8
+	.word bsc_strings
+
+.org 0x80cfdf0
+	.word bsc_strings
+
+.org 0x80cfe90
+	.word bsc_strings
+
+.org 0x80cff0c
+	.word bsc_strings
+
+.org 0x80cff48
+	.word bsc_strings
+
+.org 0x80d0058
+	.word bsc_strings
+
+.org 0x80d00c4
+	.word bsc_strings
+
+.org 0x80d010c
+	.word bsc_strings
+
+.org 0x80d0154
+	.word bsc_strings
+
+.org 0x80d0188
+	.word bsc_strings
+
+.org 0x80d01b4
+	.word bsc_strings
+
+.org 0x80d86a4
+	.word bsc_strings
+
+.org 0x8eb5f88
+	.word bsc_strings

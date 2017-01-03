@@ -8,6 +8,7 @@
 #include "color.h"
 #include "bg.h"
 #include "text.h"
+#include "save.h"
 
 /**
 / Method to initalize the callback
@@ -25,7 +26,8 @@ void init_anim_engine(void *script) {
 
     (*((u32*) (callback_offset + 0xC))) = (u32) (cmalloc(sizeof (ae_memory)));
     ae_memory* mem = (*((ae_memory**) (callback_offset + 0xC)));
-
+    fmem->ae_mem = mem;
+    
     //initalising values
     mem->current_programm = ((u32) script);
     mem->callback_id = callback_id;
@@ -100,7 +102,9 @@ void anim_engine_execute_frame(ae_memory* mem) {
         cmdx2B_bg_scroll,
         cmdx2C_mapreload,
         cmdx2D_force_pals_to_black,
-        cmdx2E_bg_clear_map};
+        cmdx2E_bg_clear_map,
+        cmdx2F_setvar
+    };
     u8 cmd_id = anim_engine_read_byte(mem);
 
     while (cmd_id != 0xFF) {
@@ -307,20 +311,25 @@ void cmdx0E_bg_override(ae_memory* mem) {
     big_callbacks[cid].params[2] = (u16) ((int) buffer >> 16);
 }
 
+
+
 void cmdx0F_load_obj_pal(ae_memory* mem) {
 
-    u8 palid = allocate_obj_pal(anim_engine_read_hword(mem));
+    u8 pal_id = allocate_obj_pal(anim_engine_read_hword(mem));
+    if(pal_id == 0xFF) return;
+    
     void* pal = (void*) anim_engine_read_word(mem);
     u8 mode = anim_engine_read_byte(mem);
-    if (palid != 0xFF) {
-        if (mode == 0) {
-            //copy only
-            pal_load_uncomp(pal, (u16) (0x100 + palid * 0x10), 0x20);
-        } else if (mode == 1) {
-            //lz77 decomp
-            pal_load_comp(pal, (u16) (0x100 + palid * 0x10), 0x20);
-        }
+    u8 force = anim_engine_read_byte(mem);
+    
+    if(mode){
+        void *nbuf = (void*) 0x02037ACC;
+        lz77uncompwram(pal, nbuf);
+        pal = nbuf;
     }
+    
+    cpuset(pal, &pal_restore[(pal_id + 16) * 16], 16);
+    if(force) cpuset(pal, &pals[(pal_id + 16) * 16], 16);
 }
 
 void cmdx10_free_obj_pal(ae_memory* mem) {
@@ -634,8 +643,8 @@ void cmdx19_objmove(ae_memory* mem) {
 
     if (duration == 0) {
         oam_object* oam = (oam_object*) (0x0202063c + oam_id * 0x44);
-        oam-> x = (u16) (oam->x + x);
-        oam-> y = (u16) (oam->y + y);
+        oam-> x = (s16) (oam->x + x);
+        oam-> y = (s16) (oam->y + y);
     } else {
         //spawn a new callback
         u8 cbid = spawn_big_callback(anim_engine_obj_mover, 1);
@@ -663,8 +672,8 @@ void anim_engine_obj_mover(u8 cbid) {
     int x_mov = (x * t) / d - ((t - 1) * x) / d;
     int y_mov = (y * t) / d - ((t - 1) * y) / d;
 
-    oam -> x = (u16) ((oam -> x) + x_mov);
-    oam -> y = (u16) ((oam -> y) + y_mov);
+    oam -> x = (s16) ((oam -> x) + x_mov);
+    oam -> y = (s16) ((oam -> y) + y_mov);
 
     if (cb->params[4] == cb->params[3]) {
         remove_big_callback(cbid);
@@ -935,4 +944,10 @@ void cmdx2E_bg_clear_map(ae_memory *mem) {
     int n = 0;
     cpuset(&n, bg_get_tilemap(bg_id), (size / 4) || 0x5000000);
     bg_virtual_sync(bg_id);
+}
+
+void cmdx2F_setvar(ae_memory *mem) {
+    int var = anim_engine_read_hword(mem) - 0x8000;
+    u16 val = anim_engine_read_hword(mem);
+    mem->vars[var] = val;
 }

@@ -8,6 +8,7 @@
 
 #include "anim_engine.h"
 #include "oams.h"
+#include "pokemon.h"
 
 #define DIR_NONE 0
 #define DIR_DOWN 1
@@ -33,6 +34,8 @@
 
 #define VAR_ASH 0x50D0
 #define FLAG_ASHBAG 0x951
+
+#define VAR_HATCHING_FASTENED_LEFT 0x50CE
 
 typedef struct {
     s16 x;
@@ -91,6 +94,10 @@ coordinate *walking_directions = (coordinate*) 0x083A638C;
 
 script cloud_trigger(bool back);
 void cloud_enter();
+
+void egg_warm_update();
+bool pokemon_party_has_flamebody();
+void pokemon_hatch_decrement(pokemon *p);
 
 extern script script_cloud_none_ref;
 extern script script_use_cloud_ref;

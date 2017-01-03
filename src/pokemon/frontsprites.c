@@ -1,6 +1,7 @@
 #include "types.h"
 #include "oams.h"
 #include "pokemon.h"
+#include "gfx.h"
 
 graphic pokemon_frontsprites[POKEMON_CNT] = {
     // POKEMON_POKEMON_0
@@ -884,5 +885,5 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     {(void*) 0x8e48590, 0x800, 0x1b7},
     // POKEMON_TEST
-    {(void*) 0x93bf810, 0x800, 0x1b8}
+    {gfx_pkmn_groudon_emperor_frontspriteTiles, 0x800, 0x1b8}
 };

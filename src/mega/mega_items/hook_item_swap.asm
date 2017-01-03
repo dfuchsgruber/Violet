@@ -51,7 +51,7 @@ is_item_removable:	@bool func (battler* b)
 push {r4-r5, lr}
 ldrh r2, [r0]	@target species
 ldrh r3, [r0, #0x2E]	@target item
-ldr r0, =0x9189000
+ldr r0, =megas
 ldr r1, =0xFFFF
 scan_table:
 ldrh r5, [r0]	@species

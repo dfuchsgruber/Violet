@@ -81,6 +81,10 @@ music_table equ 0x9194500
     .word mus_orina_city
     .word 0
 
+.org music_table + 8*309
+    .word mus_inferior
+    .word 0
+
 .org music_table + 8*310
     .word mus_victory_trainer
     .word 0
@@ -103,6 +107,10 @@ music_table equ 0x9194500
 
 .org music_table + 8*328
     .word mus_darkness
+    .word 0
+
+.org music_table + 8*329
+    .word mus_groudon_rise
     .word 0
 
 .org music_table + 8*330

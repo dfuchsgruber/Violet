@@ -119,6 +119,7 @@ void anim_engine_bg_scroller(u8 self);
 void cmdx2C_mapreload();
 void cmdx2D_force_pals_to_black();
 void cmdx2E_bg_clear_map(ae_memory *mem);
+void cmdx2F_setvar(ae_memory *mem);
 void ae_mapreloader();
 
 void anim_engine_yin_yang_fade_big_callback(u8 self);

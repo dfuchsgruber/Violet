@@ -18,15 +18,15 @@ str_pokepad_r:
 
 @create ref
 str_pokepad_registered:
-        =Die \b\2-App wurde auf der\n\b\3-Taste registriert.
+        =Die \b\02-App wurde auf der\n\b\03-Taste registriert.
 
 @create ref
 str_pokepad_deregistered:
-        =Die \b\2-App ist nicht länger\nauf der \b\3-Taste registriert.
+        =Die \b\02-App ist nicht länger\nauf der \b\03-Taste registriert.
 
 @create ref
 str_wondertrade_not_possible_script:
-        =Verbindung zum Wundertausch-\nNetzwerk fehlgeschlagen (\b\2/250).
+        =Verbindung zum Wundertausch-\nNetzwerk fehlgeschlagen (\b\02/250).
 
 @create ref
 str_wondertrade_level:

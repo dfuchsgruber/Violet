@@ -8804,24 +8804,24 @@ basestat basestats[POKEMON_CNT] = {
         ABILITY_NONE, //hidden ability
         0, //form
     },
-    //POKEMON_TEST
+    //POKEMON_GROUDON_REGENT
     {
-        85, 110, 76, 56, 65, 82, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_GHOST, TYPE_GRASS, //types
-        255, //catch rate
-        190, //exp yield
-        {0, 2, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
-        ITEM_NONE, ITEM_TSITRUBEERE, //common, rare item
-        127, //gender
-        20, //egg cycles
-        70, //base friendship
-        0, //lvl up curve
-        EGG_GROUP_FIELD, EGG_GROUP_DRAGON, //egg groups
-        INNERE_KRAFT, ABILITY_NONE, //abilities
+        100, 195, 150, 95, 125, 105, //basestat values (hp, att, def, spe, satk, sdef)
+        TYPE_GROUND, TYPE_FIRE, //types
+        5, //catch rate
+        255, //exp yield
+        {0, 3, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+        ITEM_NONE, ITEM_NONE, //common, rare item
+        255, //gender
+        120, //egg cycles
+        0, //base friendship
+        5, //lvl up curve
+        EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED, //egg groups
+        R_KAISERAURA, ABILITY_NONE, //abilities
         0, //safari rate
-        3, //flip and color
+        0, //flip and color
         ABILITY_NONE, //hidden ability
-        0, //form
+        SHAPE_TAIL, //form
     }
 
 

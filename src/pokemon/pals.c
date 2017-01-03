@@ -1,6 +1,7 @@
 #include "types.h"
 #include "oams.h"
 #include "pokemon.h"
+#include "gfx.h"
 
 palette pokemon_pals[POKEMON_CNT] = {
     // POKEMON_POKEMON_0
@@ -884,7 +885,7 @@ palette pokemon_pals[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     {(void*) 0x8db8d68, 0x1b7, 0x0},
     // POKEMON_TEST
-    {(void*) 0x93c0084, 0x1b8, 0x0}
+    {gfx_pkmn_groudon_emperor_frontspritePal, 0x1b8, 0x0}
 };
 
 palette pokemon_shiny_pals[POKEMON_CNT] = {
@@ -1769,5 +1770,5 @@ palette pokemon_shiny_pals[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     {(void*) 0x8db8f88, 0x3ab, 0x0},
     // POKEMON_TEST
-    {(void*) 0x93c00b8, 0x3ac, 0x0},
+    {gfx_pkmn_groudon_emperor_shinyPal, 0x3ac, 0x0},
 };

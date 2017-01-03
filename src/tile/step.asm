@@ -13,6 +13,7 @@
 tile_step:
 
 bl update_a_vector
+bl egg_warm_update
 
 ldr r0, =0x50E2
 bl vardecrypt

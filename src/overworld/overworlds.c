@@ -488,3 +488,43 @@ overworld_sprite ow_moltres = {
     OW_ANIM_STANDARD_NPC, overworld_sprite_moltres,
     ROTSCALE_TABLE_NULL
 };
+
+static graphic overworld_sprites_diserakt [] = {
+    {&gfx_ow_diserakt_0Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_2Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_1Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_0Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_0Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_2Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_2Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_1Tiles, 0x100, 0},
+    {&gfx_ow_diserakt_1Tiles, 0x100, 0},
+};
+
+overworld_sprite ow_diserakt = {
+    0xFFFF, 0x1100 + 4, 0x11FF, 0x100,
+    16, 32, 0x13, 0x1, 0x0, 0x0,
+    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprites_diserakt,
+    ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_groudon [] = {
+    {&gfx_ow_groudon_0Tiles, 0x800, 0},
+    {&gfx_ow_groudon_0Tiles, 0x800, 0},
+    {&gfx_ow_groudon_0Tiles, 0x800, 0},
+    {&gfx_ow_groudon_1Tiles, 0x800, 0},
+    {&gfx_ow_groudon_2Tiles, 0x800, 0},
+    {&gfx_ow_groudon_1Tiles, 0x800, 0},
+    {&gfx_ow_groudon_2Tiles, 0x800, 0},
+    {&gfx_ow_groudon_1Tiles, 0x800, 0},
+    {&gfx_ow_groudon_2Tiles, 0x800, 0}
+};
+
+overworld_sprite ow_groudon = {
+    0xFFFF, 0x1100 + 3, 0x11FF, 0x800,
+    64, 64, 0x12, 0x1, 0x0, 0,
+    OW_FINAL_OAM_64_64, OW_FORMATION_64_64,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_groudon,
+    ROTSCALE_TABLE_NULL
+};

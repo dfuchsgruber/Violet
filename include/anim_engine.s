@@ -31,6 +31,28 @@
 .hword \startframe
 .endm
 
+
+@Creates a new oam by template
+@template := oam template ptr
+@x := s16 x coordinate of center
+@y := s16 y coordinate of center
+@unkown := byte unkown membere
+@target_var := local ae_variable to store oam_id
+.macro oam_new template x y unkown target_var
+.byte 0x3
+.word \template
+.hword \x
+.hword \y
+.byte \unkown
+.hword \target_var
+.endm
+
+@Loads and allocates lz77 for objvram and a graphic structre
+.macro obj_vram_load graphic
+.byte 0x5
+.word \graphic
+.endm
+
 @spawns a big callback
 .macro spawn_big_cb func prio init_data_hword_cnt
 .byte 0x8
@@ -80,6 +102,20 @@
 .hword \size
 .hword \start
 .byte \mode
+.endm
+
+
+@loads obj palette
+@tag := pal tag
+@pal := ptr to pal src
+@mode := mode (0=copy, 1=lz77uncomp)
+@force := 0=to_restore_only, 1=force_to_palram_immideatly
+.macro load_obj_pal tag pal mode force
+.byte 0xF
+.hword \tag
+.word \pal
+.byte \mode
+.byte \force
 .endm
 
 @sets io to a value
@@ -282,6 +318,13 @@
 @force pals to black
 .macro force_pals_to_black
 .byte 0x2D
+.endm
+
+@set a var to a value
+.macro setvar var val
+.byte 0x2F
+.hword \var
+.hword \val
 .endm
 
 @field for bg setup

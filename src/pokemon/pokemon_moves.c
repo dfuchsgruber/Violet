@@ -889,6 +889,6 @@ pokemon_move *pokemon_moves[POKEMON_CNT] = {
     (pokemon_move*) NULL,
     // POKEMON_ICOGNITO_QUESTION
     (pokemon_move*) NULL,
-    // POKEMON_TEST
-    pmoves_test
+    // POKEMON_GROUDON_REGENT
+    (pokemon_move*) 0x82595c8,
 };

@@ -5,6 +5,36 @@
 #define ROTSCALE_TABLE_NULL (rotscale_frame**)0x08231BCC
 #define GFX_ANIM_TABLE_NULL (gfx_frame**)0x08231Bc0
 
+#define ATTR0_ROTSCALE 0x100
+#define ATTR0_DSIZE 0x200
+#define ATTR0_OBJDISABLE 0x200
+#define ATTR0_MODE_SEMI_NORMAL 0
+#define ATTR0_MODE_SEMI_TRANSPARENT 0x400
+#define ATTR0_MODE_OBJ_WINDOW 0x600
+#define ATTR0_MOSAIC 0x1000
+#define ATTR0_COLMODE 0x2000
+#define ATTR0_SHAPE_SQUARE 0
+#define ATTR0_SHAPE_HORIZONTAL 0x4000
+#define ATTR0_SHAPE_VERTICAL 0x8000
+
+#define ATTR1_HFLIP 0x1000
+#define ATTR1_VFLIP 0x2000
+#define ATTR1_SIZE_8_8 0
+#define ATTR1_SIZE_16_8 0
+#define ATTR1_SIZE_8_16 0
+#define ATTR1_SIZE_16_16 0x4000
+#define ATTR1_SIZE_32_8 0x4000
+#define ATTR1_SIZE_8_32 0x4000
+#define ATTR1_SIZE_32_32 0x8000
+#define ATTR1_SIZE_32_16 0x8000
+#define ATTR1_SIZE_16_32 0x8000
+#define ATTR1_SIZE_64_64 0xC000
+#define ATTR1_SIZE_64_32 0xC000
+#define ATTR1_SIZE_32_64 0xC000
+
+#define ATTR2_PRIO(x) (x<<10)
+
+
 
 struct oam_object;
 typedef struct oam_object oam_object;
@@ -61,8 +91,8 @@ typedef struct oam_object {
     oam_template *oam_template;
     u32 field18;
     u32 *callback;
-    u16 x;
-    u16 y;
+    s16 x;
+    s16 y;
     s16 x2;
     s16 y2;
     u8 x_centre;

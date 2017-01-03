@@ -15,6 +15,8 @@ extern "C" {
 #include "types.h"
     
 #define ERR_UNKOWN_GRASS_ANIMATION 0
+#define ERR_TAN_16_COS_16_EQUALS_ZERO 1    
+    
     void debug1(int a);
     void debug2(int a, int b);
     void debug3(int a, int b, int c);

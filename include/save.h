@@ -6,6 +6,7 @@
 #include "pokepad.h"
 #include "fp_menu.h"
 #include "fpmenu.h"
+#include "anim_engine.h"
 
 typedef struct saveblock1 {
     s16 x;
@@ -77,6 +78,7 @@ typedef struct {
     fp_memory *fp_mem;
     script additional_levelscript_4;
     u16 *dmart;
+    ae_memory *ae_mem;
     
 } floating_memory;
 

@@ -62,19 +62,19 @@ bg_config pokepad_bg_cnfgs [] = {
 
 void pokepad_locate_lr() {
     u8 *registered = (u8*) vardecrypt(VAR_POKEPAD_REGISTERED); //we interpret the var offset as 2 bytes
-    oams[fmem->pad_mem->l_oam].x = (u16) - 16; //move both offscreen
-    oams[fmem->pad_mem->r_oam].x = (u16) - 16;
+    oams[fmem->pad_mem->l_oam].x = (s16) - 16; //move both offscreen
+    oams[fmem->pad_mem->r_oam].x = (s16) - 16;
     int i;
     for (i = 0; i < fmem->pad_mem->item_cnt; i++) {
         if (fmem->pad_mem->items[i] == registered[0]) {
             //left match, relocate left icon
-            oams[fmem->pad_mem->l_oam].x = (u16) (72 + 96 * (i & 1));
-            oams[fmem->pad_mem->l_oam].y = (u16) (31 + (i >> 1) * 24);
+            oams[fmem->pad_mem->l_oam].x = (s16) (72 + 96 * (i & 1));
+            oams[fmem->pad_mem->l_oam].y = (s16) (31 + (i >> 1) * 24);
         }
         if (fmem->pad_mem->items[i] == registered[1]) {
             //left match, relocate left icon
-            oams[fmem->pad_mem->r_oam].x = (u16) (136 + 96 * (i & 1));
-            oams[fmem->pad_mem->r_oam].y = (u16) (31 + (i >> 1) * 24);
+            oams[fmem->pad_mem->r_oam].x = (s16) (136 + 96 * (i & 1));
+            oams[fmem->pad_mem->r_oam].y = (s16) (31 + (i >> 1) * 24);
         }
 
     }
@@ -265,22 +265,22 @@ void pokepad_idle() {
             //Right press
             item_changed = true;
             fmem->pad_mem->current_item++;
-            oams[fmem->pad_mem->arrow_oam].x = (u16) (oams[fmem->pad_mem->arrow_oam].x + 12 * 8);
+            oams[fmem->pad_mem->arrow_oam].x = (s16) (oams[fmem->pad_mem->arrow_oam].x + 12 * 8);
         } else if (super->keys_new.keys.left && (fmem->pad_mem->current_item & 1)) {
             //Left press
             item_changed = true;
             fmem->pad_mem->current_item--;
-            oams[fmem->pad_mem->arrow_oam].x = (u16) (oams[fmem->pad_mem->arrow_oam].x - 12 * 8);
+            oams[fmem->pad_mem->arrow_oam].x = (s16) (oams[fmem->pad_mem->arrow_oam].x - 12 * 8);
         } else if (super->keys_new.keys.up && fmem->pad_mem->current_item > 1) {
             //Up press
             item_changed = true;
             fmem->pad_mem->current_item = (u8) (fmem->pad_mem->current_item - 2);
-            oams[fmem->pad_mem->arrow_oam].y = (u16) (oams[fmem->pad_mem->arrow_oam].y - 3 * 8);
+            oams[fmem->pad_mem->arrow_oam].y = (s16) (oams[fmem->pad_mem->arrow_oam].y - 3 * 8);
         } else if (super->keys_new.keys.down && fmem->pad_mem->current_item + 2 < fmem->pad_mem->item_cnt) {
             //Down press
             item_changed = true;
             fmem->pad_mem->current_item = (u8) (fmem->pad_mem->current_item + 2);
-            oams[fmem->pad_mem->arrow_oam].y = (u16) (oams[fmem->pad_mem->arrow_oam].y + 3 * 8);
+            oams[fmem->pad_mem->arrow_oam].y = (s16) (oams[fmem->pad_mem->arrow_oam].y + 3 * 8);
         } else if (super->keys_new.keys.l) {
             if (registered[0] == fmem->pad_mem->items[fmem->pad_mem->current_item]) {
                 registered[0] = 0xFF;

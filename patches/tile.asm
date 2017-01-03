@@ -54,3 +54,16 @@
 .org 0x0806F064
         mov r0, #0
         mov r0, #0
+
+
+//overwrite gfx for therme graphic covers
+.org 0x083A5D14
+    .word gfx_grass_thermeTiles
+
+.org 0x08398EA8
+    .word 0x7B313F52
+
+.org 0x08046294
+    ldr r1, =pokemon_hatch_decrement_hook | 1
+    bx r1
+    .pool

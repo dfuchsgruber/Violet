@@ -1,0 +1,16 @@
+bsc_string_aura:
+    =Die Kaiseraura von \b\10\nschüchtert \b\13 ein!
+
+bsc_string_raura:
+    =Die rote Kaiseraura von\n\b\10 lässt Wasser-\lAngriffe verdampfen!
+
+bsc_string_baura:
+    =Die blaue Kaiseraura von\n\b\10 lässt Feuer-\lAngriffe erlöschen!
+
+bsc_string_gaura:
+    =Die grüne Kaiseraura von\n\b\10 macht es immun\lgegen elementare Angriffe!
+
+
+
+
+

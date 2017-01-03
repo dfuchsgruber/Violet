@@ -9,6 +9,7 @@
 #include "mega.h"
 #include <stdbool.h>
 #include "unaligned_types.h"
+#include "debug.h"
 
 
 static u8* react_str = (u8*) 0x88F704E;
@@ -507,7 +508,6 @@ void cb_mega_anim(u8 self) {
         u8* src = (cself->params[0] == 540) ? (u8*) 0x88F70F8 : react_str;
 
         //searching for the mega evolution that has current species as target and is a regent evolution
-        mega_table_entry* megas = (mega_table_entry*) 0x9189000;
         cself->params[5] = 0;
         int i = 0;
         while (megas[i].species != 0xFFFF) {
@@ -609,7 +609,7 @@ void cb_mega_anim(u8 self) {
     }
 
 
-    if (cself->params[0] == 700) {
+    if (cself->params[0] == 800) {
         *((u8*) 0x02023BE3) = (u8) (cself->params[3]);
         remove_big_callback(self);
 

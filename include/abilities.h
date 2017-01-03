@@ -1,6 +1,11 @@
 #ifndef H_ABILITIES
 #define H_ABILITIES
 
+#include "pokemon.h"
+
+
+#define ABILITY_CNT 0x71
+
 #define ABILITY_NONE 0x0
 #define DUFTNOTE 0x1
 #define NIESEL 0x2
@@ -111,10 +116,22 @@
 #define ALLROUNDER 0x6b
 #define HITZEWAHN 0x6c
 #define GIFTWAHN 0x6d
+#define R_KAISERAURA 0x6E
+#define B_KAISERAURA 0x6F
+#define G_KAISERAURA 0x70
 
 
-u8 get_pokemons_ability(pokemon *poke);
+extern u8 ability_names[ABILITY_CNT][0xD];
+u8 *ability_descriptions[ABILITY_CNT];
 
-u8 write_ability_into_dbuf(pokemon *poke);
+
+extern u8 str_ability_description_r_kaiseraura[];
+extern u8 str_ability_description_b_kaiseraura[];
+extern u8 str_ability_description_g_kaiseraura[];
+
+extern u8 bsc_flinch_aura[];
+extern u8 bsc_flinch_raura[];
+extern u8 bsc_flinch_baura[];
+extern u8 bsc_flinch_gaura[];
 
 #endif

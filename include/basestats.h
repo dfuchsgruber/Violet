@@ -495,7 +495,7 @@
 #define POKEMON_ICOGNITO_Z 0x1b5
 #define POKEMON_ICOGNITO_EXL 0x1B6
 #define POKEMON_ICOGNITO_QUE 0x1B7
-#define POKEMON_TEST 0x1B8
+#define POKEMON_GROUDON_REGENT 0x1B8
 
 typedef struct {
     u8 base_hp;

@@ -1,3 +1,3 @@
 @create ref
 str_item_ashbag:
-    =In der Aschetasche befindet\nsich \b\2 Asche.\w\9
+    =In der Aschetasche befindet\nsich \b\02 Asche.\w\09

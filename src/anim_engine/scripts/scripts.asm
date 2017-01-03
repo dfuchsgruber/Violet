@@ -11,5 +11,12 @@ script_table:
     .word ae_script_darkqueen_fade_from
     .word ae_script_mistral_yin_yang
     .word ae_script_future
+    .word ae_script_groudon_diserakt 
+    .word ae_script_groudon
+    .word ae_script_groudon_fade
+
+
+
+
 
 

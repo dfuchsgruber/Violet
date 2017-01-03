@@ -5,6 +5,7 @@
 #include "stdbool.h"
 #include "oams.h"
 #include "evolution.h"
+#include "abilities.h"
 
 #define POKEMON_CNT 0x1B9
 
@@ -172,6 +173,10 @@ void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
 void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed);
 void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread, bool tid_determined, u32 tid, u16(*seed_generator)());
 
+
+
+u8 get_pokemons_ability(pokemon *poke);
+u8 write_ability_into_dbuf(pokemon *poke);
 
 graphic pokemon_frontsprites[POKEMON_CNT];
 graphic pokemon_backsprites[POKEMON_CNT];
