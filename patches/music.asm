@@ -208,3 +208,11 @@ music_table equ 0x9194500
 .org music_table + 8*365
     .word mus_violet_sphere_v1
     .word 0
+
+.org music_table + 8 * 366
+    .word sound_hint
+    .word 0x10001
+
+.org music_table + 8 * 367
+    .word mus_mistral_battle
+    .word 0

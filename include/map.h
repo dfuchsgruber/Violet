@@ -197,6 +197,8 @@ tileset *tilesets = (tileset*) 0x082D49B8;
 wild_pokemon_data **wild_pokemon_data_ptr = (wild_pokemon_data**) 0x080828F4;
 u8 **map_namespaces = (u8**) 0x083F1504;
 
+void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);
+
 mapheader *get_mapheader(u8 bank, u8 map);
 mapfooter *get_mapfooter();
 

@@ -2,6 +2,7 @@
 #include "romfuncs.h"
 #include "item.h"
 #include "save.h"
+#include "debug.h"
 
 
 mart_item mart_items_ball_std[] = {
@@ -99,14 +100,10 @@ mart_item *mart_items[] = {
     NULL
 };
 
-void dynamic_mart_free_and_resume(){
-    free(mstate->item_list);
-    script_resume();
-}
 
 bool script_cmd_x88_pokemart3(void *script_state){
     u16* additional_items = (u16*) script_read_word(script_state);
-    u16 *item_space = cmalloc(sizeof(u16)*256); //256 items is the maximum
+    u16 *item_space = (fmem->dmart); //256 items is the maximum
     int i = 0;
     int j = 0;
     int z;
@@ -149,7 +146,7 @@ bool script_cmd_x88_pokemart3(void *script_state){
     }
     item_space[j] = 0;
     pokemart(item_space);
-    mstate->end_callback = dynamic_mart_free_and_resume;
+    mstate->end_callback = script_resume;
     script_halt();
     return true;
 }

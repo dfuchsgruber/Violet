@@ -1,0 +1,2 @@
+str_detector:
+    =Der Detektor schlägt aus!\nIn der Nähe muss ein Item liegen!

@@ -4228,7 +4228,7 @@ basestat basestats[POKEMON_CNT] = {
     //POKEMON_MAMUTEL
     {
         110, 130, 80, 80, 70, 60, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_DARK, TYPE_DARK, //types
+        TYPE_ICE, TYPE_GROUND, //types
         50, //catch rate
         216, //exp yield
         {1, 2, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)

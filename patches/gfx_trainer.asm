@@ -48,3 +48,10 @@ trainerpals equ 0x082398EC
 .org trainerpals + 8 * 74
     .word gfx_trainer_violet_elite_malePal
 
+.org trainersprites + 8 * 96
+    .word gfx_trainer_mistraltiles
+
+.org trainerpals + 8 * 96
+    .word gfx_trainer_mistralPal
+
+

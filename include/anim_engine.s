@@ -143,6 +143,21 @@
 .hword \desttile
 .endm
 
+.macro display_text tbid font unkown bdistance ldistanceu ldistancel fontmap display text bgid
+.byte 0x15
+.hword \tbid
+.byte \font
+.byte \unkown
+.byte \bdistance
+.byte \ldistanceu
+.byte \ldistancel
+.word \fontmap
+.byte \display
+.word \text
+.byte \bgid
+.endm
+
+
 @macro to clear a tbox
 @boxid := tbox to clear, textbox buffer to 
 .macro text_clear boxid
@@ -210,6 +225,14 @@
 
 .equ RESTORE, 0
 .equ FORCE, 1
+
+
+@callasm
+.macro callasm func param_cnt
+.byte 0x1A
+.word \func
+.byte \param_cnt
+.endm
 
 @loads a palette
 .macro loadpal source dest count copy force

@@ -33,15 +33,19 @@ oam_template any_grass_templates[] = {
 
 
 
-any_grass tile_any_grasses[] = {
-    {0, 0, 2, true, (oam_template *)0x083A52E4, NULL, nullsub}, //Normal Grass, behavior 2 triggered by any map
-    {0, 0, 3, true, (oam_template *)0x083A5800, NULL, nullsub},
-    {3, 24, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
-    {18, 3, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
-    {1, 30, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
-    {0, 12, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], ash_grass_step},
-    {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub} 
+any_grass tile_any_grasses[ANY_GRASS_CNT] = {
+    {0, 0, 2, true, (oam_template *)0x083A52E4, NULL, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
+    {0, 0, 3, true, (oam_template *)0x083A5800, NULL, any_grass_step, any_grass_player_step_null},
+    {3, 24, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
+    {18, 3, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
+    {1, 30, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
+    {0, 12, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
+    {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub, any_grass_player_step_null} 
 };
+
+void any_grass_step(){
+    sound(0x15C);
+}
 
 bool tile_is_any_grass(u8 behavior){
     return behavior == 0x3; //we abuse "tall grass" byte for any grass
@@ -52,11 +56,16 @@ bool tile_is_high_grass(u8 behavior){
 }
 
 
-void ash_grass_step(){
+u8 *ash_grass_player_step(){
     u16 *collected = vardecrypt(VAR_ASH);
     if(checkflag(FLAG_ASHBAG) && *collected < 50000){
         (*collected)++;
     }
+    return NULL;
+}
+
+u8 *any_grass_player_step_null(){
+    return NULL;
 }
 
 /**
@@ -97,3 +106,4 @@ u8 tile_any_grass_init(coordinate *pos){
     err(ERR_UNKOWN_GRASS_ANIMATION);
     return 64;
 }
+

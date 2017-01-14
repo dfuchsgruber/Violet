@@ -291,6 +291,27 @@ void groudon_anim_diserakt_cb (u8 self){
     
 }
 
+void groudon_cb_grey_fade(u8 self){
+    big_callback *bself = &big_callbacks[self];
+    if(bself->params[0] == 16){
+        cpuset(pals, pal_restore, 512 | CPUSET_HALFWORD );
+        remove_big_callback(self);
+    }else{
+        bself->params[0] = (u16)(bself->params[0]+1);
+        int intensity = bself->params[0]*1;
+        int i;
+        for(i = 0; i < 512; i++){
+            //for each color calculate middle
+            u16 middle_int = (u16)((pal_restore[i].rgb.blue + pal_restore[i].rgb.red
+                + pal_restore[i].rgb.green) / 3);
+           
+            color middle_col = {(u16)((middle_int << 5) | (middle_int << 10)| middle_int)};
+            
+            pals[i] = alpha_blend(pal_restore[i], middle_col, (u8)intensity);
+        }
+    }
+}
+
 oam_template oam_template_groudon_head = {
     0xA0A0,
     0xA0A0,

@@ -8,7 +8,7 @@ flag_ext:
     ldr r0, =0x900
     cmp r4, r0
     blt std_flag
-    ldr r0, =0xD00
+    ldr r0, =0xE00
     cmp r4, r0
     bge std_flag
     mov r0, r4

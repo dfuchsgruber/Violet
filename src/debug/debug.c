@@ -36,3 +36,7 @@ void debugn(int *n){
 void err(int e){
     debug4(e, -1, -1, -1);
 }
+
+void err2(int e, int p){
+    debug4(e, p, -1, -1);
+}

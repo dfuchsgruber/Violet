@@ -7,6 +7,16 @@
 .byte 0x3
 .endm
 
+.macro call label
+.byte 0x4
+.word \label
+.endm
+
+.macro goto label
+.byte 0x5
+.word \label
+.endm
+
 .macro gotoif cond label
 .byte 0x6
 .byte \cond
@@ -53,6 +63,12 @@
 .hword \specialid
 .endm
 
+.macro special2 var specialid
+.byte 0x26
+.hword \var
+.hword \specialid
+.endm
+
 .macro waitstate
 .byte 0x27
 .endm
@@ -60,6 +76,11 @@
 .macro pause frames
 .byte 0x28
 .hword \frames
+.endm
+
+.macro setflag flag
+.byte 0x29
+.hword \flag
 .endm
 
 .macro clearflag flag
@@ -80,6 +101,42 @@
 .macro checksound
 .byte 0x30
 .endm
+
+.macro fanfare id
+.byte 0x31
+.hword \id
+.endm
+
+.macro playsong id mode
+.byte 0x33
+.hword \id
+.byte \mode
+.endm
+
+.macro getplayerpos x y
+.byte 0x42
+.hword \x
+.hword \y
+.endm
+
+.macro additem item cnt
+.byte 0x44
+.hword \item
+.hword \cnt
+.endm
+
+.macro removeitem item cnt
+.byte 0x45
+.hword \item
+.hword \cnt
+.endm
+
+.macro checkitem item cnt
+.byte 0x47
+.hword \item
+.hword \cnt
+.endm
+
 
 .macro applymovement persid movement
 .byte 0x4f
@@ -130,6 +187,18 @@
 
 .macro waitkeypress
 .byte 0x6D
+.endm
+
+.macro bufferitem buf item
+.byte 0x80
+.byte \buf
+.hword \item
+.endm
+
+.macro buffernumber buf var
+.byte 0x83
+.byte \buf
+.hword \var
 .endm
 
 .macro random mod

@@ -50,7 +50,6 @@ typedef struct custom_memory {
     u8 pokedex_caught_extension[0x40]; //additional 512 flags
     u8 gp_freespace[0x100];
     u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
-
     //dungeon_data ddata;
     mapheader dhead;
     mapfooter footer;
@@ -58,12 +57,13 @@ typedef struct custom_memory {
     map_events devents;
     map_event_warp ladder;
     map_event_person dpers[5];
-
+    
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
     rtc_timestamp a_gen_time;
     u8 a_vector[4];
     rtc_timestamp fossil_gen_time;
+    u8 any_a_flags[16];
 
 } custom_memory;
 
@@ -77,8 +77,10 @@ typedef struct {
     pokedex_memory *dex_mem;
     fp_memory *fp_mem;
     script additional_levelscript_4;
-    u16 *dmart;
+    u16 dmart[32]; //max 32 items per mart
     ae_memory *ae_mem;
+    tileset *current_tileset_1;
+    tileset *current_tileset_2;
     
 } floating_memory;
 

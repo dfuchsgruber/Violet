@@ -13,6 +13,8 @@ lsr r1, #2
 lsl r1, #2
 strb r1, [r0]	@no map was generated so far
 
+bl fmem_init
+
 @//return to the rom boot
 ldr r0, =0x03003034
 strb r4, [r0]

@@ -894,3 +894,13 @@
 .org 0x8105E88
         .pool
         
+//move tutor
+.org 0x08120BDC
+    ldr r1, =move_tutor_get_attack_id | 1
+    bx r1
+    .pool
+
+.org 0x08120C1C
+    ldr r2, =move_tutor_is_compatible | 1
+    bx r2
+    .pool

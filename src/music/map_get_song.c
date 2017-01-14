@@ -6,6 +6,7 @@
 
 u16 current_map_get_song() {
     u16 forced = *vardecrypt(VAR_MAP_MUSIC_FORCE);
+    if(forced == 0xFFFF)return 0;
     if (forced) return forced;
     saveblock1 *s = *save1;
     return get_mapheader(s->bank, s->map)->music;

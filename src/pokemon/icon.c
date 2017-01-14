@@ -1,7 +1,8 @@
 #include "types.h"
 #include "pokemon.h"
+#include "gfx.h"
 
-void *pokemon_icons[POKEMON_CNT] = {
+ const void *pokemon_icons[POKEMON_CNT] = {
     // POKEMON_POKEMON_0
     (void*) 0x8e76f50,
     // POKEMON_BISASAM
@@ -883,7 +884,7 @@ void *pokemon_icons[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     (void*) 0x8e4894c,
     // POKEMON_TEST
-    (void*) 0x8e36e90
+    gfx_icon_groudonTiles
 };
 
 u8 pokemon_icon_usage[POKEMON_CNT] = {
@@ -1767,6 +1768,6 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x0,
     // POKEMON_ICOGNITO_QUESTION
     0x0,
-    // POKEMON_TEST
-    0x1
+    // POKEMON_GROUDON_REGENT
+    0x0
 };

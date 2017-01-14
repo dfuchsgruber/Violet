@@ -67,3 +67,18 @@
     ldr r1, =pokemon_hatch_decrement_hook | 1
     bx r1
     .pool
+
+
+//hidden items
+.org 0x080CC604
+    ldr r2, =singpost_get_flag | 1
+    bx r2
+    .pool
+
+.org 0x0806D120
+    ldr r0, =hook_singpost_hidden_flag | 1
+    bx r0
+    .pool
+
+.org 0x08083064
+    .word script_repel_wore_off

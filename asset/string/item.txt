@@ -13,3 +13,39 @@ str_item_desc_zugangskarte:
 
 str_item_desc_up_grade:
         =Ein Softwareupdate für das\nvirtuelle Pok\emon Porygon.
+
+str_item_desc_finsterstein:
+        =Dieser besondere, düstere\nStein hilft manchen Pok\emon\nbei ihrer Evolution.
+
+str_item_desc_leuchtstein:
+        =Dieser besondere, hell leuchtende\nStein hilft manchen Pok\emon\nbei ihrer Evolution.
+
+str_item_desc_funkelstein:
+        =Dieser besondere, funkelnde\nStein hilft manchen Pok\emon\nbei ihrer Evolution.
+
+str_repel_wore_off:
+        =Schutz wirkt nicht mehr...
+
+str_repel_renew:
+        =\b\02 einsetzen?
+
+str_repel_use:
+        =\b\01 setzt\n\b\02 ein.
+
+str_item_desc_gengarnit:
+        =Wird er von einem Gengar\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen.
+
+str_item_desc_bisaflornit:
+        =Wird er von einem Bisaflor\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen.
+
+str_item_desc_gluraknit:
+        =Wird er von einem Glurak\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen.
+
+str_item_desc_turtoknit:
+        =Wird er von einem Turtok\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen.
+
+str_item_desc_ampharosnit:
+        =Wird er von einem Ampharos\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen.
+
+str_item_desc_bibornit:
+        =Wird er von einem Bibor\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen.

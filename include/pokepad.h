@@ -19,6 +19,9 @@
 #define POKEPAD_DESCRIPTION_TBOX 0
 #define POKEPAD_BUTTON_TBOX_BASE 1
 
+#define FLAG_WONDERTRADE 0x915
+#define FLAG_POKERADAR 0x23C
+
 
 #ifdef	__cplusplus
 extern "C" {

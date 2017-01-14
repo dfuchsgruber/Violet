@@ -172,5 +172,9 @@ int script_read_word(void *script_state);
 void pokemart(u16 *list);
 void mart_set_end_callback(void (*func)());
 void item_printstr(u8 cb_id, u8 unkown, u8 unkown2, u8 *str);
+void worldmapflag_state_set(u16 flag);
+void worldmapflag_set(u16 flag);
+void item_func_repel(u8 self);
+void additem(u16 item, u16 cnt);
 
 #endif

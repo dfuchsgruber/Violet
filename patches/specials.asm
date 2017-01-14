@@ -102,3 +102,23 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x42 * 4))
         .word pokemon_team_remove | 1
         .pool
+
+.org (special_table + (0x43 * 4))
+        .word version_init | 1
+        .pool
+
+.org (special_table + (0x44 * 4))
+        .word version_transfer | 1
+        .pool
+
+.org (special_table + (0x46 * 4))
+        .word special_ash_can_store | 1
+        .pool
+
+.org (special_table + (0x47 * 4))
+        .word mushroom_create | 1
+        .pool
+
+.org (special_table + (0x48 * 4))
+        .word repel_use | 1
+        .pool

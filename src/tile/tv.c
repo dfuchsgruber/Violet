@@ -13,6 +13,9 @@ void load_tv_text() {
 
 }
 
+extern u8 str_tv_albus[];
+extern u8 str_tv_violet[];
+
 u8 *get_tv_text() {
 
     u16 story_prog = *vardecrypt(0x4051);
@@ -20,10 +23,13 @@ u8 *get_tv_text() {
         return (u8*) 0x08927118; //Sendung Uli und Klaus
     }
     if (story_prog < 0x15) {
-        return (u8*) 0x089273CA; //Nachrichten: Primus entf�hrt
+        return (u8*) 0x089273CA; //Nachrichten: Primus entfuehrt
     }
     if (story_prog < 0x1D) {
         return (u8*) 0x08927535; //History-Doku: Atkania Reportage
     }
-    return (u8*) 0x08927535;
+    if (story_prog < 0x22){
+        return str_tv_albus;
+    }
+    return str_tv_violet;
 }

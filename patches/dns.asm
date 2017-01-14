@@ -34,3 +34,18 @@
 .org 0x083CC198
         .word str_settings_color_dn
         .word str_settings_color_standard
+
+.org 0x8059A90
+        ldr r3, =tileset_load_pal_as_ts0 | 1
+        bx r3
+        .pool
+
+.org 0x8059AA0
+        ldr r3, =tileset_load_pal_as_ts1 | 1
+        bx r3
+        .pool
+
+.org 0x80558EC
+        ldr r0, =mapchange_tileset_pal_load_hook | 1
+        bx r0
+        .pool

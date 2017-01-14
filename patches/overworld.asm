@@ -53,6 +53,9 @@ overworld_table equ 0x08C80000
 .org overworld_table + 4 * 172
     .word ow_diserakt
 
+.org overworld_table + 4 * 173
+    .word ow_rubys
+
 
 
 .org 0x8064540

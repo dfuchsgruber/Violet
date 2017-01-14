@@ -1,6 +1,9 @@
 #include "types.h"
 #include "pokedex.h"
 
+extern u8 str_pokedex_mamutel[];
+extern u8 str_pokedex_none[];
+
 pokedex_data dex_data[POKEDEX_CNT + 1] = {
     {
         {0xcf, 0xc8, 0xbc, 0xbf, 0xc5, 0xbb, 0xc8, 0xc8, 0xce, 0xff, 0x0, 0x0}, //category
@@ -2749,8 +2752,8 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
         {0xbe, 0xe3, 0xe4, 0xe4, 0xd9, 0xe0, 0xee, 0xd5, 0xdc, 0xe2, 0xff, 0xff}, //category
         18, //height
         1004, //weight
-        (u8*) 0x878fe90, //page0
-        (u8*) 0x844a78e, //page1
+        (u8*) str_pokedex_mamutel, //page0
+        (u8*) str_pokedex_none, //page1
         0, //unused
         777, //poke scale
         0, //poke displace

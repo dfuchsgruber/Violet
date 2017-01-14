@@ -7,10 +7,12 @@
 #include "color.h"
 #include "save.h"
 #include "gfx.h"
+#include "map.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
-static sprite mugshot_sprite = {0, 0xC000, 0x400, 0};
+static sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
+static sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
 
 static mugshot mugshots[] = {
     {(void*) 0x93d6750, (void*) 0x93d6720},
@@ -86,7 +88,12 @@ void spawn_mugshot() {
     oam_template *mugshot_template = (oam_template*) malloc(sizeof (oam_template));
     mugshot_template->tiles_tag = tag;
     mugshot_template->pal_tag = tag;
-    mugshot_template->oam = &mugshot_sprite;
+    
+    if(!checkflag(0x806) && get_mapheader((*save1)->bank, (*save1)->map)->flash){
+        mugshot_template->oam = &mugshot_sprite_prio0;
+    }else{     
+        mugshot_template->oam = &mugshot_sprite;
+    }
     mugshot_template->graphics = NULL;
     mugshot_template->animation = (gfx_frame**) 0x08231Bc0;
     mugshot_template->rotscale = (rotscale_frame**) 0x08231Bcc;

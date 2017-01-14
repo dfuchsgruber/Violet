@@ -1,6 +1,8 @@
 #ifndef H_MEGA
 #define H_MEGA
 
+#define FLAG_MEGA_USED 0x920
+
 #define MEGA_ICON_TAG 0x134F
 #define MEGA_CNT 4
 

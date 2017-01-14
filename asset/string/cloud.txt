@@ -1,5 +1,5 @@
 str_use_cloud:
-    =Die Wolken scheinen hier tief zu\nschweben.\pMöchtest du auf deine Wolke\n steigen?
+    =Die Wolken scheinen hier tief zu\nschweben.\pMöchtest du auf deine Wolke\nsteigen?
 
 str_cloud_used:
     =Die Wolke trägt dich empor!

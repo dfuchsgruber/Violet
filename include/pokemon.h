@@ -185,11 +185,12 @@ palette pokemon_shiny_pals[POKEMON_CNT];
 u8 pokemon_icon_usage[POKEMON_CNT];
 pokemon_move *pokemon_moves[POKEMON_CNT];
 u8 pokemon_tm_compatibility [POKEMON_CNT][8];
-void *pokemon_icons[POKEMON_CNT];
+const void *pokemon_icons[POKEMON_CNT];
 u32 pokemon_player_y[POKEMON_CNT];
 u8 pokemon_altitude[POKEMON_CNT];
 u32 pokemon_enemy_y[POKEMON_CNT];
 u8 pokemon_item_animations[POKEMON_CNT][5];
+u32 pokemon_tutor_compatibility[POKEMON_CNT];
 
 pokemon_evolution pokemon_evolutions[POKEMON_CNT][5];
 

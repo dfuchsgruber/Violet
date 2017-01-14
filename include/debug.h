@@ -15,7 +15,10 @@ extern "C" {
 #include "types.h"
     
 #define ERR_UNKOWN_GRASS_ANIMATION 0
-#define ERR_TAN_16_COS_16_EQUALS_ZERO 1    
+#define ERR_TAN_16_COS_16_EQUALS_ZERO 1 
+#define ERR_HIDDEN_FLAG_CHUNK_GT_3 2
+#define ERR_FLAG_ACCESS_INVALID 3
+#define ERR_NO_REPEL_ITEM 4
     
     void debug1(int a);
     void debug2(int a, int b);
@@ -23,6 +26,7 @@ extern "C" {
     void debug4(int a, int b, int c, int d);
     void debugn(int *n);
     void err(int e);
+    void err2(int e, int p);
 
 
 #ifdef	__cplusplus

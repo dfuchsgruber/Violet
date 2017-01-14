@@ -2,3 +2,5 @@ bld/
 make.bat
 /bld
 nbproject/
+.vscode/
+/.vscode

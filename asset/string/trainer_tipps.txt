@@ -1,0 +1,26 @@
+str_trainer_tipp_mushroom:
+    =Trainer-Tipp!\nWo Pilze wachsen, können Pilze\lgefunden werden.\pSelbst der Detektor kann Pilze nicht\nfinden.\pPilze können im Wochentakt\nnachwachsen.
+
+str_trainer_tipp_shell:
+    =Trainer-Tipp!\nIn Muscheln versteckten sich\lItems, die vom Detektor nicht\lgefunden werden können.\pWöchentlich werden neue Items\nangespült.
+
+str_trainer_tipp_detektor:
+    =Trainer-Tipp!\nDer Detektor kann in den Optionen\lausgeschaltet werden!
+
+str_trainer_tipp_wondertrade:
+    =Trainer-Tipp!\nJe öfter du den Wundertausch\lbenutzt, desto seltenere Pok\emon\lwerden dir zugesandt!
+
+str_trainer_tipp_pokeradar:
+    =Trainer-Tipp!\nJe öfter du den Pok\eradar\lbenutzt, desto seltenere Pok\emon\lspürt er auf!
+
+str_trainer_tipp_fp_menu:
+    =Trainer-Tipp!\nIm Pok\emon-Men\$ue findet sich\lder Flei\$s-Punkte Manager.\pDort kannst du die im Kampf\nverdienten Flei\$s-Punkte auf\ldeine Pok\emon verteilen!
+
+str_trainer_tipp_dns:
+    =Trainer-Tipp!\nDu kannst die Darstellung\ldes Tag-Nacht Rythmus (DNS)\lin den Optionen abschalten.\pZeitbasierte Events werden\ntrotzdem noch ausgeführt!
+
+str_trainer_tipp_cloud:
+    =Trainer-Tipp!\nWenn du tieffliegende Wolken\lsiehst, kannst du auf deiner\lgewobenen Wolke emporsteigen!
+
+str_trainer_tipp_habitat:
+    =Trainer-Tipp!\nBez\$ueglich der Habitats-Funktion\ldes Pok\edex fallen H\$oehlen und\ldergleichen unter die\lKategorie Natur.\pUnter der Kategorie Angel\nstehen jeweils S f\$uer\lSuperangel, P f\$uer Profiangel\lund A f\$uer Angel.

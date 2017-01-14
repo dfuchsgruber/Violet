@@ -29,6 +29,9 @@ beq trigger_cloud
 cmp r4, #0xB9
 beq trigger_cloud_back
 
+cmp r4, #0xBC
+beq trigger_any_behavior
+
 ldr r0, =0x924
 bl _checkflag
 cmp r0, #0
@@ -54,6 +57,9 @@ bne ret
 ldr r0, =script_tv
 b ret_s
 
+trigger_any_behavior:
+bl singpost_behavior_xBC
+b ret_s
 
 
 trigger_cloud:

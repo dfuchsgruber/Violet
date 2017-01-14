@@ -14,3 +14,14 @@ void item_ashbag_field(u8 self){
     item_printstr(self, n, 4, strbuf);
 }
 
+bool special_ash_can_store(){
+    u16 *ash = vardecrypt(VAR_ASH);
+    u16 *picked_up = vardecrypt(0x8006);
+    *picked_up = (u16)(*picked_up * 50);
+    if(*ash+*picked_up <= 50000 && checkflag(FLAG_ASHBAG)){
+        *ash = (u16)(*ash + *picked_up);
+        return 1;
+    }else{
+        return 0;
+    }
+}

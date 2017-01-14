@@ -528,3 +528,23 @@ overworld_sprite ow_groudon = {
     OW_ANIM_STANDARD_NPC, overworld_sprite_groudon,
     ROTSCALE_TABLE_NULL
 };
+
+static graphic overworld_sprite_rubys [] = {
+    {&gfx_ow_rubys_0Tiles, 0x100, 0},
+    {&gfx_ow_rubys_1Tiles, 0x100, 0},
+    {&gfx_ow_rubys_2Tiles, 0x100, 0},
+    {&gfx_ow_rubys_3Tiles, 0x100, 0},
+    {&gfx_ow_rubys_4Tiles, 0x100, 0},
+    {&gfx_ow_rubys_5Tiles, 0x100, 0},
+    {&gfx_ow_rubys_6Tiles, 0x100, 0},
+    {&gfx_ow_rubys_7Tiles, 0x100, 0},
+    {&gfx_ow_rubys_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_rubys = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_rubys,
+    ROTSCALE_TABLE_NULL
+};
