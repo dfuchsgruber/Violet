@@ -27,18 +27,18 @@ bg_config fp_menu_bg_configs[2] = {
 
 tboxdata fp_menu_tboxes [] = {
     {0, 3, 1, 8, 2, 15, 1}, //0 := pokemon name
-    {0, 13, 7, 2, 2, 15, 17}, //1 := sum of evs
-    {0, 13, 4, 2, 2, 15, 23}, //2 := lvl
-    {0, 21, 4, 3, 2, 15, 27}, //3-9 := stats
-    {0, 26, 4, 3, 2, 15, 33},
-    {0, 21, 7, 3, 2, 15, 39},
-    {0, 26, 7, 3, 2, 15, 45},
-    {0, 21, 10, 3, 2, 15, 51},
-    {0, 26, 10, 3, 2, 15, 57},
-    {0, 3, 12, 8, 2, 15, 63}, //9 := stat name
-    {0, 15, 15, 3, 2, 15, 93}, //10 := usable
-    {0, 24, 15, 3, 2, 15, 99}, //11 := used
-    {0, 15, 18, 3, 2, 15, 105}, //12 := bonus
+    {0, 13, 7, 3, 2, 15, 17}, //1 := sum of evs
+    {0, 13, 4, 2, 2, 15, 25}, //2 := lvl
+    {0, 21, 4, 3, 2, 15, 29}, //3-9 := stats
+    {0, 26, 4, 3, 2, 15, 35},
+    {0, 21, 7, 3, 2, 15, 41},
+    {0, 26, 7, 3, 2, 15, 47},
+    {0, 21, 10, 3, 2, 15, 53},
+    {0, 26, 10, 3, 2, 15, 59},
+    {0, 3, 12, 8, 2, 15, 65}, //9 := stat name
+    {0, 15, 15, 3, 2, 15, 95}, //10 := usable
+    {0, 24, 15, 3, 2, 15, 101}, //11 := used
+    {0, 15, 18, 3, 2, 15, 107}, //12 := bonus
     {0xFF, 0, 0, 0, 0, 0, 0}
 };
 
@@ -312,7 +312,7 @@ void fp_menu_pokemon_load() {
 
     //to load the pal we determine if the pokemon is shiny
     pid poke_pid = (pid) get_pokemons_attribute(target, ATTRIBUTE_PID, 0);
-    if (poke_pid.fields.shinyness < 512) {
+    if (poke_pid.fields.shinyness <= 512) {
         pal_load_comp(pokemon_shiny_pals[species].pal, (u16) (256 + 16 * fmem->fp_mem->pal_pokepic), 32);
     } else {
         pal_load_comp(pokemon_pals[species].pal, (u16) (256 + 16 * fmem->fp_mem->pal_pokepic), 32);

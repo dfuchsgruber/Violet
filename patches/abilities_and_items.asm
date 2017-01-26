@@ -5,6 +5,18 @@
 	bx r0
 	.pool
 
+.org 0x0801A0C4
+        ldr r0, =ability_management_battle_enter | 1
+        bx r0
+        .pool
+
+
+.org 0x0801A584
+        ldr r0, =hook_attack_negating_abilities | 1
+        bx r0
+        .pool
+
+
 
 //scarf
 .org 0x8014DC0
@@ -42,8 +54,3 @@
 
 .org 0x8136844
 	.word ability_descriptions
-
-.org 0x0801A584
-        ldr r0, =hook_attack_negating_abilities | 1
-        bx r0
-        .pool

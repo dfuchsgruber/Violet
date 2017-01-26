@@ -411,7 +411,8 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     // POKEMON_FROSDEDJE
     {(void*) 0x8c48290, 0x800, 0xca},
     // POKEMON_SKORGRO
-    {(void*) 0x88626f8, 0x800, 0xcb},
+    {(void*) 0x89749E0, 0x800, 0xcb},
+    //{(void*) 0x8c48290, 0x800, 0xca},
     // POKEMON_TANNZA
     {(void*) 0x8dba9ec, 0x800, 0xcc},
     // POKEMON_FORSTELLKA

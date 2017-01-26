@@ -23,6 +23,7 @@
 .include "patches/extensions.asm"
 .include "patches/battle.asm"
 .include "patches/map.asm"
+.include "patches/attack.asm"
 
 //Remove Help-System
 .org 0x0813B90C

@@ -87,3 +87,15 @@
 
 .org 0x8eb5f88
 	.word bsc_strings
+
+.org 0x802BE0C
+        .word terrain_moves
+
+//@battlestring remove attack limitations
+.org 0x080D80AA
+    mov r0, #0x7F
+    lsl r0, #0x18 //high number so that all attacks are valid
+
+.org 0x080D80C2
+    mov r0, #0x7F
+    lsl r0, #0x18 //high number so all attacks are valid

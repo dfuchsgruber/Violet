@@ -79,7 +79,27 @@ ITEM_SIZE equ 0x2C
 .org item_table + ITEM_SIZE * 270 + field_usage
     .word item_ashbag_field | 1
 
+.org item_table + ITEM_SIZE * 0x34 + description
+    .word str_item_desc_magmaisierer
 
+.org item_table + ITEM_SIZE * 0x3A + description
+    .word str_item_desc_leben_orb
+
+.org item_table + ITEM_SIZE * 0x3B + description
+    .word str_item_desc_evolith
+
+
+.org item_resource + 0x34 * 8
+    .word gfx_item_magmaisiererTiles
+    .word gfx_item_magmaisiererPal
+
+.org item_resource + 0x3A * 8
+    .word gfx_item_leben_orbTiles
+    .word gfx_item_leben_orbPal
+
+.org item_resource + 0x3B * 8
+    .word gfx_item_evolithTiles
+    .word gfx_item_evolithPal
 
 .org item_resource + 0x64 * 8
     .word gfx_item_finstersteinTiles

@@ -36,12 +36,12 @@ u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
     }else if(defender_ability == LAERMSCHUTZ){
         //check if attack is blocked by lärmschutz
         u16 *learmschutz_blockated_moves = (u16*)0x08250028;
-        u16 move = 0, i = 0;
-        while(learmschutz_blockated_moves[i] != 0xFFFF){
+        int i;
+        for(i = 0; learmschutz_blockated_moves[i] != 0xFFFF; i++){
             if(used_attack == learmschutz_blockated_moves[i]) break;
-            i++;
+            
         }
-        if(move != 0xFFFF){
+        if(learmschutz_blockated_moves[i] != 0xFFFF){
             return (u8*)0x081DD704;
         }
     }

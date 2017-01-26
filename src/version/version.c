@@ -43,6 +43,7 @@ void version_upgrade_alpha_1_X_to_2_0(){
     worldmapflag_state_set(0x892);
     worldmapflag_set(0x892);
     new_a_vector();
+    setflag(0x96B);
     //update entire player party
     int i;
     for(i = 0; i < countpokemon(); i++){

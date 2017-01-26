@@ -28,7 +28,7 @@ static mugshot mugshots[] = {
     {(void*) 0x88b4000, (void*) 0x9502310},
     {(void*) 0x9502730, (void*) 0x9502d10},
     {&gfx_mug_hiroTiles, &gfx_mug_hiroPal},
-    {(void*) 0x9503200, (void*) 0x9503640},
+    {&gfx_mug_lesterTiles, &gfx_mug_lesterPal},
     {(void*) 0x9378bf0, (void*) 0x9378f90},
     {(void*) 0x9379000, (void*) 0x93793a0},
     {(void*) 0x938d800, (void*) 0x93c1300},

@@ -2,6 +2,7 @@
 #include "romfuncs.h"
 #include "battle.h"
 #include "gfx.h"
+#include "attack.h"
 
 battle_bg battle_bgs[29] = {
     // Battle bg 0
@@ -146,15 +147,15 @@ battle_bg battle_bgs[29] = {
         NULL,
         NULL,
         NULL,
-        (void*) 0x824e610
+        NULL,
     },
     // Battle bg 18
     {
-        (void*) 0x824e728,
-        (void*) 0x824ea60,
         NULL,
         NULL,
-        (void*) 0x824e65c
+        NULL,
+        NULL,
+        NULL
     },
     // Battle bg 19
     {
@@ -237,4 +238,61 @@ battle_bg battle_bgs[29] = {
         (void*) 0x8a2e300
     }
 
+};
+
+u16 terrain_moves[] = {
+    ATTACK_STERNSCHAUER,
+    ATTACK_STACHELSPORE,
+    ATTACK_STEINHAGEL,
+    ATTACK_AQUAWELLE,
+    
+    0,
+    ATTACK_SCHAUFLER,
+    ATTACK_SURFER,
+    ATTACK_SPUKBALL,
+    
+    ATTACK_ERDBEBEN,
+    ATTACK_HYPERSTRAHL,
+    ATTACK_NASSMACHER, //inside cave route4, kaskada
+    ATTACK_ANTIK_KRAFT, //museum
+    
+    0,
+    0,
+    0,
+    0,
+    
+    0,
+    0,
+    ATTACK_FLAMMENWURF, //fire route
+    0,
+    
+    0,
+    0,
+    0,
+    0,
+    
+    0,
+    0,
+    0,
+    0,
+    
+    0,
+    0,
+    0,
+    0,
+    
+    0,
+    0,
+    0,
+    0,
+    
+    0,
+    0,
+    0,
+    0,
+    
+    0,
+    0,
+    0,
+    0,
 };
