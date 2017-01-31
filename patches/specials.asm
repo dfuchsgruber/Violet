@@ -122,3 +122,7 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x48 * 4))
         .word repel_use | 1
         .pool
+
+.org (special_table + (0x49 * 4))
+        .word version_is_latest | 1
+        .pool

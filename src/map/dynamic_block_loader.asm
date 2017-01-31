@@ -40,7 +40,7 @@ ldrb r1, [r1, #5]
 bl is_dungeon_map
 cmp r0, #0
 beq skip
-bl compute_dungeon_blocks
+bl dungeon_compute_blocks
 skip:
 add sp, #4
 pop {r4-r6}

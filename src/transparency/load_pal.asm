@@ -5,6 +5,24 @@
 style_ressource:
     .word 0x0847015C //tileset of border
     .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
+    .word 0x0847015C //tileset of border
+    .word transparency_black_box_pals
 
 .align 2
 .thumb

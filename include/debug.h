@@ -19,6 +19,11 @@ extern "C" {
 #define ERR_HIDDEN_FLAG_CHUNK_GT_3 2
 #define ERR_FLAG_ACCESS_INVALID 3
 #define ERR_NO_REPEL_ITEM 4
+#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_0 5
+#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_1 6
+#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_2 7
+#define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_3 8
+    
     
     void debug1(int a);
     void debug2(int a, int b);

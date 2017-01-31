@@ -24,7 +24,7 @@ bool dungeon_crash() {
     s16 coordinates[2];
     get_current_tile_position(&coordinates[0], &coordinates[1]);
     if (is_dungeon_map()) {
-        if (((*vardecrypt(0x50E1))++ >= 2 * (cmem->dgen.width + cmem->dgen.height)) ||
+        if (((*vardecrypt(0x50E1))++ >= 4 * (cmem->dgen.width + cmem->dgen.height)) ||
                 get_block_info_behaviour(coordinates[0], coordinates[1]) == 0xB0) {
             init_script((void*) 0x8719D01);
             clearflag(FLAG_LOAD_DMAP);

@@ -7,6 +7,7 @@
 .global script_pokeradar_flee
 
 script_pokeradar_s:
+    lockall
     pause 0x18
     checkflag 0x917
     gotoif 0 subscript_pokeradar_done
@@ -34,30 +35,35 @@ script_pokeradar_s:
     
     loadpointer 0 str_pokepad_pokeradar_found
     callstd 6
+    releaseall
     end
 
 
 subscript_pokeradar_done:
     loadpointer 0 str_pokepad_pokeradar_done
     callstd 6
+    releaseall
     end
 
 subscript_pokeradar_empty:
     fadescreen 0
     loadpointer 0 str_pokepad_pokeradar_empty
     callstd 6
+    releaseall
     end
 
 subscript_pokeradar_no_grass:
     fadescreen 0
     loadpointer 0 str_pokepad_pokeradar_no_grass
     callstd 6
+    releaseall
     end   
 
 subscript_pokeradar_unlucky:
     fadescreen 0
     loadpointer 0 str_pokepad_pokeradar_unlucky
     callstd 6
+    releaseall
     end   
 
 script_pokeradar_battle:
@@ -69,6 +75,7 @@ script_pokeradar_battle:
     fadescreen 1
     hidesprite 254
     fadescreen 0
+    releaseall
     end
 
 script_pokeradar_alert_s:
@@ -81,6 +88,7 @@ script_pokeradar_alert_s:
     fadescreen 1
     hidesprite 254
     fadescreen 0
+    releaseall
     end
 
 script_pokeradar_poschange_s:
@@ -106,6 +114,7 @@ script_pokeradar_flee_s:
     fadescreen 0
     loadpointer 0 str_pokepad_pokeradar_flee
     callstd 6
+    releaseall
     end
 
 script_pokeradar_movement_alert:

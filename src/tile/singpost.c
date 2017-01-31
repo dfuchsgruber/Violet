@@ -16,8 +16,8 @@ u8 *singpost_behavior_xBC(){
     switch(block_id){
         case 0x00F:
             //mushroom
-            if (get_tile_hash_by_facing(facing, 2)){
-                //1/2 chance that a mushroom yields something
+            if (!get_tile_hash_by_facing(facing, 3)){
+                //1/4 chance that a mushroom yields something
                 int hash = get_tile_hash_by_facing(facing, 127);
                 u16 flag = (u16)(0xD80 + hash);
                 if(checkflag(flag))
@@ -41,8 +41,8 @@ u8 *singpost_behavior_xBC(){
             break;
         case 0x1E1:
             //shell
-            if(get_tile_hash_by_facing(facing, 3)){
-                //1/3 chance that shell yields something
+            if(!get_tile_hash_by_facing(facing, 5)){
+                //1/5 chance that shell yields something
                 int hash = get_tile_hash_by_facing(facing, 127);
                 u16 flag = (u16)(0xD80 + hash);
                 if(checkflag(flag))

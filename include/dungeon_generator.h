@@ -5,6 +5,15 @@
 #include "map.h"
 #include <stdbool.h>
 
+#define SEG_A (1 << 7)
+#define SEG_B (1 << 6)
+#define SEG_C (1 << 5)
+#define SEG_D (1 << 4)
+#define SEG_E (1 << 3)
+#define SEG_F (1 << 2)
+#define SEG_G (1 << 1)
+#define SEG_H (1 << 0)
+
 #define FLAG_LOAD_DMAP 0x922
 #define SIMPLE_GIVEITEM_SCRIPT(item) O_SCRIPT_COPYVARIFNOTZERO(0x8000, item), O_SCRIPT_COPYVARIFNOTZERO(0x8001, 1), O_SCRIPT_CALLSTD(1), O_SCRIPT_END
 
@@ -42,6 +51,8 @@ typedef struct dungeon_generator {
     room *rooms;
     u8 regions;
     u8 *dbuf;
+    
+    u8 additional_connection_attempts;
 
 
 } dungeon_generator;
@@ -83,23 +94,24 @@ bool is_dungeon_map();
 bool dungeon_crash();
 bool special_dungeon_warpback();
 void dungeon_store_current_pos();
-
-void compute_dungeon_blocks();
+void dungeon_relocate_room_connector(u8 r, dungeon_generator *d);
+void dungeon_compute_blocks();
 void compute_dungeon_rooms(dungeon_generator *d);
-void compute_dungeon_paths(dungeon_generator *d);
-void compute_dungeon_tiles(dungeon_generator *d);
-void relocate_dungeon_events(dungeon_generator *d);
+void dungeon_compute_paths(dungeon_generator *d);
+void dungeon_compute_tile_map(dungeon_generator *d);
+void dungeon_relocate_events(dungeon_generator *d);
 
-void set_block(s16 x, s16 y, dungeon_generator *d);
-bool get_block(s16 x, s16 y, dungeon_generator *d);
+void dungeon_set_block_passable(s16 x, s16 y, dungeon_generator *d);
+bool dungeon_is_block_passable(s16 x, s16 y, dungeon_generator *d);
 
-void dungeon_room_get_neighbours(union union_neighbours *drn, union union_neighbours *npn, dungeon_generator *d, u32 current_room);
-u8 dungeon_pick_room(union union_neighbours n, dungeon_generator *d);
+void dungeon_room_get_neighbours(union union_neighbours *drn, union union_neighbours *npn, 
+        union union_neighbours *srn, dungeon_generator *d, u32 current_room);
+u8 dungeon_pick_random_neighbour_room(union union_neighbours n, dungeon_generator *d);
 void dungeon_connect_rooms(u8 first, u8 second, dungeon_generator *d);
 
-u32 random_next32(dungeon_generator *d);
-u16 random_next16(dungeon_generator *d);
-u8 random_next8(dungeon_generator *d);
+u32 dungeon_random_next_32(dungeon_generator *d);
+u16 dungeon_random_next_16(dungeon_generator *d);
+u8 dungeon_random_next_8(dungeon_generator *d);
 
 mapheader *compute_dungeon_header();
 mapfooter *compute_dungeon_footer();

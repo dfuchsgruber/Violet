@@ -904,3 +904,14 @@
     ldr r2, =move_tutor_is_compatible | 1
     bx r2
     .pool
+
+//move tutor limiter
+.org 0x08127874
+    lsl r0, #0
+    lsl r0, #0 //overwrite the limiting check
+
+.org 0x0811F48A
+    lsl r0, #0
+    lsl r0, #0
+
+    

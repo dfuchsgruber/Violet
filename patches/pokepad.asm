@@ -43,3 +43,11 @@
         ldr r1, =pokedex_get_number_seen_or_caught | 1
         bx r1
         .pool
+
+//Fix the wondertrade gb
+.org 0x8050c38
+	.word gfx_vanilla_gb_tradeTiles
+
+.org 0x8050d2c
+	.word gfx_vanilla_gb_tradeTiles
+

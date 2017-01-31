@@ -25,7 +25,7 @@ mapheader *get_mapheader(u8 bank, u8 map) {
 mapfooter *get_mapfooter() {
 
     if (is_dungeon_map()) {
-        compute_dungeon_blocks();
+        dungeon_compute_blocks();
         return &(cmem->footer);
     }
 

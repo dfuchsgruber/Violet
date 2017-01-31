@@ -55,3 +55,7 @@ void version_upgrade_alpha_1_X_to_2_0(){
     }
     *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_0;
 }
+
+u16 version_is_latest(){
+    return *vardecrypt(VAR_SAVEGAME_VERSION) == VERSION_LATEST;
+}

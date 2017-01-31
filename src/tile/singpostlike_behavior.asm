@@ -1,4 +1,4 @@
-
+.include "overworld_script.s"
 @0806D154 via r0
 
 .align 2
@@ -105,6 +105,7 @@ script_d_entry:
 .byte 0x9 
 .byte 0x6 @callstd 6
 
+ setvar 0x50E1 0
 .byte 0x23 
 .word dungeon_store_current_pos @callasm store...
 .byte 0x29 

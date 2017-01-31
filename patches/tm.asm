@@ -14,3 +14,6 @@
 	bx r0
 	.pool
 	
+//prevent tms from being given
+.org 0x08132926
+        cmp r0, #0xFF

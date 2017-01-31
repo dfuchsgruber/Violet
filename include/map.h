@@ -45,6 +45,12 @@
 #define CDIRECTION_RIGHT 4
 
 
+// a levelscript list entry
+typedef struct {
+    u8 type;
+    void *levelscript;
+} levelscript_head;
+
 //A single map connection
 
 typedef struct map_connection {
@@ -125,7 +131,7 @@ typedef struct mapfooter {
 typedef struct mapheader {
     mapfooter *footer;
     map_events *events;
-    void *levelscripts;
+    levelscript_head *levelscripts;
     map_connections *connections;
     u16 music;
     u16 map_index; //main table is used when map is loaded
@@ -188,6 +194,7 @@ typedef struct {
     wild_pokemon_habitat *rod;
 
 } wild_pokemon_data;
+
 
 u16 map_wild_pokemon_get_current_table_id(); //returns 0xFFFF if none matches
 

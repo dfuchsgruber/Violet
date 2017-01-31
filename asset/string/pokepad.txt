@@ -239,7 +239,7 @@ str_pokepad_pokedex_qmark:
 
 @create ref
 str_pokepad_pokedex_std_buttons:
-    =\k\_keystart Ruf  \k\_keyud Liste  \k\_keylr Eintr. \k\_keyb Zur.
+    =\k\_keystart Ruf  \k\_keyud Liste  \k\_keyhor Eintr. \k\_keyb Zur.
 
 @create ref
 str_pokepad_pokedex_habitat:

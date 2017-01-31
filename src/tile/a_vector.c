@@ -11,7 +11,7 @@ void generate_trash_item(u8 facing) {
     if (!check_trashflag(facing)) {
 
         u32 hash = (u32)get_tile_hash_by_facing(facing, 97);
-        if (hash <= 2) {
+        if (!hash) {
             //Leftovers
             item = ITEM_UEBERRESTE;
         } else if (hash < 8) {
