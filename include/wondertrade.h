@@ -38,22 +38,22 @@ extern "C" {
         u8 cursor;
     } wondertrade_memory;
 
-    extern u8 *str_pokepad_wondertrade_ref;
+    extern u8 str_pokepad_wondertrade[];
     extern u8 *script_wondertrade_failure;
-    extern u8 *str_wondertrade_level_ref;
-    extern u8 *str_wondertrade_bronze_ref;
-    extern u8 *str_wondertrade_silver_ref;
-    extern u8 *str_wondertrade_gold_ref;
-    extern u8 *str_wondertrade_platin_ref;
-    extern u8 *str_wondertrade_anzahl_ref;
-    extern u8 *str_wondertrade_next_ref;
-    extern u8 *str_wondertrade_none_ref;
-    extern u8 *str_wondertrade_not_possible_script_ref;
-    extern u8 *str_wondertrade_do_ref;
-    extern u8 *str_wondertrade_back_ref;
-    extern u8 *str_wondertrade_error_m_ref;
+    extern u8 str_wondertrade_level[];
+    extern u8 str_wondertrade_bronze[];
+    extern u8 str_wondertrade_silver[];
+    extern u8 str_wondertrade_gold[];
+    extern u8 str_wondertrade_platin[];
+    extern u8 str_wondertrade_anzahl[];
+    extern u8 str_wondertrade_next[];
+    extern u8 str_wondertrade_none[];
+    extern u8 str_wondertrade_not_possible_script[];
+    extern u8 str_wondertrade_do[];
+    extern u8 str_wondertrade_back[];
+    extern u8 str_wondertrade_error_m[];
 
-    extern u8 *str_wondertrade_name0_ref;
+    extern u8 str_wondertrade_name0[];
     extern u8 *wondertrade_ot_names[];
 
     void wondertrade_bg_scroll_callback(u8 self);

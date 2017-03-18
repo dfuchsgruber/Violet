@@ -1,62 +1,18 @@
-overworld_table equ 0x08C80000
+overworld_pals equ 0x083A501C
 
-.org overworld_table + 4*1
-    .word ow_mskate
+.org 0x0805F2C8
+    ldr r1, =overworld_get | 1
+    bx r1
+    .pool
 
-.org overworld_table + 4*82
-    .word ow_manus
+.org overworld_pals + 8 * 8
+    .word gfx_ow_pal_hiroPal
 
-.org overworld_table + 4*86
-    .word ow_igva
-
-
-.org overworld_table + 4 * 113
-    .word ow_groudon
-
-.org overworld_table + 4*137
-    .word ow_moltres
-
-.org overworld_table + 4*152
-    .word ow_bbship
-
-.org overworld_table + 4*153
-    .word ow_mpirate
-
-.org overworld_table + 4*154
-    .word ow_shape_animal
-    .word ow_shape_human
-    .word ow_shape_tail
-    .word ow_shape_snake
-    .word ow_shape_winsect
-    .word ow_shape_winged
-    .word ow_shape_insect
-    .word ow_shape_head
-    .word ow_shape_arms
-    .word ow_shape_legs
-    .word ow_shape_tentacles
-    .word ow_shape_fish
-    .word ow_shape_ball
-    .word ow_shape_multi
-
-.org overworld_table + 4 * 168
-    .word ow_mistral
-
-.org overworld_table + 4 * 169
-    .word ow_altaria
-
-.org overworld_table + 4 * 170
-    .word ow_cloudrider_fem
-
-.org overworld_table + 4 * 171
-    .word ow_cloudrider_male
-
-.org overworld_table + 4 * 172
-    .word ow_diserakt
-
-.org overworld_table + 4 * 173
-    .word ow_rubys
+.org overworld_pals + 9 * 8
+    .word gfx_ow_pal_hiro_mirrorPal
 
 
+////////////////////////////////////////////////////////////////////////////////
 
 .org 0x8064540
     .word npc_anims
@@ -82,3 +38,10 @@ overworld_table equ 0x08C80000
     ldr r1, = npc_player_init_bike_hook | 1
     bx r1
     .pool
+
+//Fix for weird overworld of rival in intro...
+.org 0x083E18C0
+    .word gfx_ow_rival_allTiles
+
+.org 0x083E18C8
+    .word gfx_ow_rival_allPal

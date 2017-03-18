@@ -1,5 +1,0 @@
-str_pokedex_none:
-    =\xFF
-
-str_pokedex_mamutel:
-    =Die beeindruckenden Sto\$sz\$aehne dieser\nPok\emon sind aus Eis. Nach der Eiszeit\nnahm ihre Population ab.

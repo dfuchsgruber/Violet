@@ -6,9 +6,14 @@
 #include "mega.h"
 #include <stdbool.h>
 
+extern const unsigned gfx_mega_triggerTiles[];
+extern const unsigned gfx_mega_triggerPal[];
+extern const unsigned gfx_regent_triggerTiles[];
+extern const unsigned gfx_regent_triggerPal[];
+
 static sprite icon_sprite = {0x400, 0xC000, 0x400, 0};
-static graphic icon_graphic = {(void*) 0x93Da730, 0x800, MEGA_ICON_TAG};
-static graphic regent_graphic = {(void*) 0x93dab30, 0x800, MEGA_ICON_TAG + 1};
+static graphic icon_graphic = {gfx_mega_triggerTiles, 0x800, MEGA_ICON_TAG};
+static graphic regent_graphic = {gfx_regent_triggerTiles, 0x800, MEGA_ICON_TAG + 1};
 
 static oam_template icon_template = {
     MEGA_ICON_TAG,
@@ -41,7 +46,7 @@ void mega_show_icon() {
 
     if ((mega_entry = get_mega_if_can_mega_evolve(b)) && can_player_trigger_mega()) { //                                  TODO: player must also be able to perform mega!
 
-        u32 *palette = (mega_entry->regent == 1) ? (u32*) (0x93dab00) : (u32*) (0x93da700);
+        const u32 *palette = (mega_entry->regent == 1) ? gfx_regent_triggerPal : gfx_mega_triggerPal;
         graphic *g = (mega_entry->regent == 1) ? &regent_graphic : &icon_graphic;
         u16 paltag = (mega_entry->regent == 1) ? (u16) (MEGA_ICON_TAG + 1) : MEGA_ICON_TAG;
         oam_template *temp = (mega_entry->regent == 1) ? &icon_template_reg : &icon_template;

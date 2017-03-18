@@ -12,6 +12,14 @@
 #include "color.h"
 #include "superstate.h"
 
+
+extern const unsigned short gfx_fp_menu_arrow_upTiles[];
+extern const unsigned short gfx_fp_menu_arrow_leftTiles[];
+extern const unsigned short gfx_fp_menu_bgMap[];
+extern const unsigned short gfx_fp_menu_bgTiles[];
+extern const unsigned short gfx_fp_menu_bgPal[];
+extern const unsigned short gfx_fp_menu_arrow_upPal[];
+
 void fp_menu_init(u8 self) {
     fmem->fp_mem = (fp_memory*) cmalloc(sizeof (fpp_memory));
     fmem->fp_mem->poke_index = *pokemenu_team_index;
@@ -350,10 +358,11 @@ u16 fp_menu_get_sum_applied(pokemon *target) {
 
 void fp_menu_stats_load(pokemon *target) {
     //print the stats
-    pid poke_pid = (pid) get_pokemons_attribute(target, ATTRIBUTE_PID, NULL);
+    
     //determining which stat to print red (boosted) and which one blue (nerved)
-    int stat_boosted = (poke_pid.fields.nature / 5) + 1;
-    int stat_nerved = (int) __umod(poke_pid.fields.nature, 5) + 1;
+    u8 nature = pokemon_get_nature(target);
+    int stat_boosted = (nature / 5) + 1;
+    int stat_nerved = (int) __umod(nature, 5) + 1;
     int i;
     for (i = 0; i < 6; i++) {
         u8 *str = value_to_str(strbuf, get_pokemons_attribute(target, (u8) (ATTRIBUTE_TOTAL_HP + i), NULL), 0, 3);
@@ -362,10 +371,10 @@ void fp_menu_stats_load(pokemon *target) {
         u8 *fontcolmap = fp_menu_fontcolmap_std;
         if (i == stat_boosted && i != stat_nerved) {
             fontcolmap = fp_menu_fontcolmap_red;
-            str_append(str, str_fp_menu_plus_ref);
+            str_append(str, str_fp_menu_plus);
         } else if (i == stat_nerved && i != stat_boosted) {
             fontcolmap = fp_menu_fontcolmap_blue;
-            str_append(str, str_fp_menu_minus_ref);
+            str_append(str, str_fp_menu_minus);
         }
         tbox_tilemap_draw(box_id);
         tbox_print_string(box_id, 2, 0, 0, 0, 0, fontcolmap, 0, strbuf);

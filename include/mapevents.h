@@ -9,9 +9,9 @@ typedef struct map_event_person {
     u8 field_3;
     s16 x;
     s16 y;
-    u8 field_8;
-    u8 facing;
+    u8 level;
     u8 behavior;
+    u8 behavior_range;
     u8 field_B;
     u8 is_trainer : 1;
     u8 padding : 7;
@@ -36,7 +36,12 @@ typedef struct map_event_warp {
 typedef struct map_event_script { //TODO
     s16 x;
     s16 y;
-    u8 unkown[8];
+    u8 level;
+    u8 field_5;
+    u16 var;
+    u16 value;
+    u8 field_A;
+    u8 field_B;
     u8 *script;
 } map_event_script;
 

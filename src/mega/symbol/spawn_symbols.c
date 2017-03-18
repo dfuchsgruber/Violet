@@ -8,6 +8,9 @@
 #include <stdbool.h>
 
 
+extern const unsigned short gfx_mega_symbolTiles[];
+extern const unsigned short gfx_mega_symbolPal[];
+
 static sprite final_oam = {
     0x0, 0x4000, 0x0, 0x0
 };
@@ -23,7 +26,7 @@ static oam_template symbol_template = {
 
 };
 
-static graphic symbol_graphic = {(void*) 0x93dae90, 0x100, 0xADDD};
+static graphic symbol_graphic = {gfx_mega_symbolTiles, 0x100, 0xADDD};
 
 void spawn_symbols(u8 state) {
     if (state == 2) {
@@ -33,7 +36,7 @@ void spawn_symbols(u8 state) {
 
         //load palette
         u8 pal_id = allocate_obj_pal(0xADDD); //allocated a palette for the tag 0xADDD
-        pal_load_comp((void*) 0x93dae60, (u16) ((pal_id + 0x10) << 4), 0x20);
+        pal_load_comp(gfx_mega_symbolPal, (u16) ((pal_id + 0x10) << 4), 0x20);
 
         //load graphic
         u16 tile = load_and_alloc_obj_vram_lz77(&symbol_graphic);

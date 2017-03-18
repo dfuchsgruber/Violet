@@ -69,7 +69,59 @@ u8 *battler_cnt = (u8*) 0x02023BCC;
 u16 *trainer_id = (u16*) 0x020386AE;
 u8 *stat_change = (u8*) 0x02023FC4;
 u16 *active_attack = (u16*) 0x02023D4A;
+u16 *battler_team_slots = (u16*) 0x02023BCE;
 
 u32 *bsc_status_flags = (u32*)0x02023DD0;
+
+extern const unsigned short gfx_battle_bg_capturedTiles[];
+extern const unsigned short gfx_battle_bg_caveTiles[];
+extern const unsigned short gfx_battle_bg_cloudsTiles[];
+extern const unsigned short gfx_battle_bg_desertTiles[];
+extern const unsigned short gfx_battle_bg_evolutionTiles[];
+extern const unsigned short gfx_battle_bg_fireTiles[];
+extern const unsigned short gfx_battle_bg_grassTiles[];
+extern const unsigned short gfx_battle_bg_gymTiles[];
+extern const unsigned short gfx_battle_bg_millTiles[];
+extern const unsigned short gfx_battle_bg_mountainTiles[];
+extern const unsigned short gfx_battle_bg_museumTiles[];
+extern const unsigned short gfx_battle_bg_oceanTiles[];
+extern const unsigned short gfx_battle_bg_pondTiles[];
+extern const unsigned short gfx_battle_bg_shoreTiles[];
+extern const unsigned short gfx_battle_bg_streetTiles[];
+extern const unsigned short gfx_battle_bg_watercaveTiles[];
+
+extern const unsigned short gfx_battle_bg_capturedPal[];
+extern const unsigned short gfx_battle_bg_cavePal[];
+extern const unsigned short gfx_battle_bg_cloudsPal[];
+extern const unsigned short gfx_battle_bg_desertPal[];
+extern const unsigned short gfx_battle_bg_evolutionPal[];
+extern const unsigned short gfx_battle_bg_firePal[];
+extern const unsigned short gfx_battle_bg_grassPal[];
+extern const unsigned short gfx_battle_bg_gymPal[];
+extern const unsigned short gfx_battle_bg_millPal[];
+extern const unsigned short gfx_battle_bg_mountainPal[];
+extern const unsigned short gfx_battle_bg_museumPal[];
+extern const unsigned short gfx_battle_bg_oceanPal[];
+extern const unsigned short gfx_battle_bg_pondPal[];
+extern const unsigned short gfx_battle_bg_shorePal[];
+extern const unsigned short gfx_battle_bg_streetPal[];
+extern const unsigned short gfx_battle_bg_watercavePal[];
+
+extern const unsigned short gfx_battle_bg_capturedMap[];
+extern const unsigned short gfx_battle_bg_caveMap[];
+extern const unsigned short gfx_battle_bg_cloudsMap[];
+extern const unsigned short gfx_battle_bg_desertMap[];
+extern const unsigned short gfx_battle_bg_evolutionMap[];
+extern const unsigned short gfx_battle_bg_fireMap[];
+extern const unsigned short gfx_battle_bg_grassMap[];
+extern const unsigned short gfx_battle_bg_gymMap[];
+extern const unsigned short gfx_battle_bg_millMap[];
+extern const unsigned short gfx_battle_bg_mountainMap[];
+extern const unsigned short gfx_battle_bg_museumMap[];
+extern const unsigned short gfx_battle_bg_oceanMap[];
+extern const unsigned short gfx_battle_bg_pondMap[];
+extern const unsigned short gfx_battle_bg_shoreMap[];
+extern const unsigned short gfx_battle_bg_streetMap[];
+extern const unsigned short gfx_battle_bg_watercaveMap[];
 
 #endif

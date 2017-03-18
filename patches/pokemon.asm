@@ -169,66 +169,6 @@
 .org 0x81568f4
 	.word basestats
 
-.org 0x9188f90
-	.word basestats
-
-.org 0x9189888
-	.word basestats
-
-.org 0x918a13c
-	.word basestats
-
-.org 0x9196178
-	.word basestats
-
-.org 0x9196854
-	.word basestats
-
-.org 0x9196a78
-	.word basestats
-
-.org 0x919bc40
-	.word basestats
-
-.org 0x91a58ec
-	.word basestats
-
-.org 0x91a5dac
-	.word basestats
-
-.org 0x91a63f8
-	.word basestats
-
-.org 0x91a6c9c
-	.word basestats
-
-.org 0x91b606c
-	.word basestats
-
-.org 0x91b6410
-	.word basestats
-
-.org 0x91b6434
-	.word basestats
-
-.org 0x91b6474
-	.word basestats
-
-.org 0x91b652c
-	.word basestats
-
-.org 0x91b6560
-	.word basestats
-
-.org 0x91b659c
-	.word basestats
-
-.org 0x91b669c
-	.word basestats
-
-.org 0x91b66cc
-	.word basestats
-
 .org 0x8046108
 	.word basestats + 17
 
@@ -478,26 +418,6 @@
 .org 0x814ab9c
 	.word pokemon_frontsprites
 
-.org 0x91898ac
-	.word pokemon_frontsprites
-
-.org 0x91911f0
-	.word pokemon_frontsprites
-
-.org 0x9196ac0
-	.word pokemon_frontsprites
-
-.org 0x919cb28
-	.word pokemon_frontsprites
-
-.org 0x919d304
-	.word pokemon_frontsprites
-
-.org 0x91ab218
-	.word pokemon_frontsprites
-
-.org 0x91aba00
-	.word pokemon_frontsprites
 
 .org 0x0800ECF0
         mov r0, #0x7F
@@ -568,24 +488,6 @@
 .org 0x8083924
 	.word pokemon_pals
 
-.org 0x91898b8
-	.word pokemon_pals
-
-.org 0x91911f8
-	.word pokemon_pals
-
-.org 0x919cb54
-	.word pokemon_pals
-
-.org 0x919d31c
-	.word pokemon_pals
-
-.org 0x91ab248
-	.word pokemon_pals
-
-.org 0x91aba08
-	.word pokemon_pals
-
 .org 0x08043FFE
         mov r0, #0x7F
         lsl r0, #0x18
@@ -599,24 +501,6 @@
 	.word pokemon_shiny_pals
 
 .org 0x80440b4
-	.word pokemon_shiny_pals
-
-.org 0x91898bc
-	.word pokemon_shiny_pals
-
-.org 0x91911fc
-	.word pokemon_shiny_pals
-
-.org 0x919cb44
-	.word pokemon_shiny_pals
-
-.org 0x919d348
-	.word pokemon_shiny_pals
-
-.org 0x91ab238
-	.word pokemon_shiny_pals
-
-.org 0x91aba4c
 	.word pokemon_shiny_pals
 
 // Icons
@@ -915,3 +799,135 @@
     lsl r0, #0
 
     
+//Remove the strucutre encryption and pid usage
+.org 0x0803E2E8
+    ldr r1, =pokemon_calculate_checksum | 1
+    bx r1
+    .pool
+
+.org 0x0803F81C
+    //decrypt substructure
+    bx lr
+
+.org 0x0803F7F8
+    //encrypt substructure  
+    bx lr
+
+.org 0x0803F84E
+    //order of substruct partitions is always ABCD
+    mov r0, #0
+    mov r0, #0
+
+.org 0x8042D9C
+    ldr r1, =pokemon_get_nature | 1
+    bx r1
+    .pool
+
+.org 0x8042DB4
+    ldr r1, =pokemon_nature_by_pid | 1
+    bx r1
+    .pool
+
+//shinyness
+.org 0x0804439C
+    ldr r2, =pokemon_is_shiny | 1
+    bx r2
+    .pool
+
+.org 0x08043FF4
+    ldr r3, =pokemon_get_pal | 1
+    bx r3
+    .pool
+
+.org 0x08044080
+    ldr r3, =pokemon_get_pal_struct | 1
+    bx r3
+    .pool
+
+.org 0x080F19EE
+    ldr r7, =0xFFFF
+    mov r1, r4
+    ldr r2, =pokemon_is_shiny | 1
+    bl blxr2
+    mov r8, r0
+    b pshinysparkledone
+    .pool
+blxr2:
+    bx r2
+pshinysparkledone:
+    
+
+.org 0x080838DC
+    //pokepic pid generation must not be shiny
+    mov r3, #0
+    sub r3, #1
+
+//evaluate contest stats as ev/4
+
+//these 6 patches prevent the division by 4
+
+.org 0x0803E3AE
+    mov r1, #0x16 //hp -> coolness
+
+.org 0x0803E47C
+lsl r0, #0
+lsl r0, #0
+lsl r0, #0x1A
+lsr r0, #0x1A
+
+.org 0x0803E3C6
+    mov r1, #0x17 //atk -> beauty
+
+.org 0x0803E4C8
+lsl r0, #0
+lsl r0, #0
+lsl r0, #0x1A
+lsr r0, #0x1A
+
+.org 0x0803E3DE
+    mov r1, #0x18 //def -> cuteness
+
+.org 0x0803E50E
+lsl r0, #0
+lsl r0, #0
+lsl r0, #0x1A
+lsr r0, #0x1A
+
+.org 0x0803E3F6
+    mov r1, #0x21 //init -> smartness
+
+.org 0x0803E554
+lsl r0, #0
+lsl r0, #0
+lsl r0, #0x1A
+lsr r0, #0x1A
+
+.org 0x0803E40E
+    mov r1, #0x2F //satk -> toughness
+
+.org 0x0803E59A
+lsl r0, #0
+lsl r0, #0
+lsl r0, #0x1A
+lsr r0, #0x1A
+
+.org 0x0803E426
+    mov r1, #0x30 //sdef -> sheen
+
+.org 0x0803E5E0
+lsl r0, #0
+lsl r0, #0
+lsl r0, #0x1A
+lsr r0, #0x1A
+
+//disable the 512 ev limit (due to the fact that 255 can be earned on every single ev)
+.org 0x0804392A
+    lsl r0, #0
+    
+.org 0x080438E6
+    lsl r0, #0
+    lsl r0, #0
+    lsl r0, #0
+    lsl r0, #0
+    lsl r0, #0
+

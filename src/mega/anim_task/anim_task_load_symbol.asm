@@ -48,18 +48,22 @@ bx r1
 
 .align 4
 gfxs:
-.word 0x93dafa0
-.word 0xAAA00200
-.word 0x93db0e0
-.word 0xAAA10200
-.word 0x93db1a0
-.word 0xAAA20200
-.word 0x93db260
-.word 0xAAA30200
+.word gfx_mega_sparkleTiles
+.hword 0x200
+.hword 0xAAA0
+.word gfx_regent_kyogre_sparkleTiles
+.hword 0x200
+.hword 0xAAA0
+.word gfx_regent_groudon_sparkleTiles
+.hword 0x200
+.hword 0xAAA0
+.word gfx_regent_rayquaza_sparkleTiles
+.hword 0x200
+.hword 0xAAA0
 
 .align 4
 pals:
-.word 0x93daf80
+.word gfx_mega_sparklePal
 .word 0xAAA0
-.word 0x93db0c0
+.word gfx_regent_kyogre_sparklePal
 .word 0xAAA1

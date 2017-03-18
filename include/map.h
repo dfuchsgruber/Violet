@@ -48,7 +48,7 @@
 // a levelscript list entry
 typedef struct {
     u8 type;
-    void *levelscript;
+    MISALIGNED_32 levelscript;
 } levelscript_head;
 
 //A single map connection
@@ -87,29 +87,15 @@ typedef struct map_tileset_info {
 
 } map_tileset_info;
 
-typedef struct map_tileset {
-    map_tileset_info *info;
+typedef struct tileset {
+    map_tileset_info info;
     void *graphic;
     u16 *colors; //6 * 16 colors
     void *blocks;
-    void *behaviors;
-    void *animations;
-
-
-} map_tileset;
-
-typedef struct tileset {
-    u8 field_0;
-    u8 palette_state;
-    u8 field_2;
-    u8 field_3;
-    void *field_4;
-    void *palette;
-    void *field_C;
-    block_data *data;
-    void *init_callback;
-
+    void *(*animation_init)();
+    block_data *behaviours;
 } tileset;
+
 
 //The actual map data
 

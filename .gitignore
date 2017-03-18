@@ -1,4 +1,6 @@
 bld/
+base/
+/base
 make.bat
 /bld
 nbproject/

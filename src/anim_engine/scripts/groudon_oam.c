@@ -9,6 +9,14 @@
 #include "utils.h"
 
 
+
+extern const unsigned short gfx_groudon_headTiles[];
+extern const unsigned short gfx_groudon_arm_leftTiles[];
+extern const unsigned short gfx_groudon_arm_rightTiles[];
+extern const unsigned short gfx_groudon_leg_leftTiles[];
+extern const unsigned short gfx_groudon_leg_rightTiles[];
+extern const unsigned short gfx_groudon_diseraktTiles[];
+
 graphic graphic_groudon_head = {
     gfx_groudon_headTiles,
     0x800,

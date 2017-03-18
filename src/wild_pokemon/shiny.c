@@ -8,7 +8,7 @@ pid pid_shinyness_apply(pid p){
             //Chances for this to happen are SPLASH_CNT & 0xFFF / 65.535 * 2
             p.fields.shinyness = 0;
         }
-        p.fields.shinyness = 0x200;
+        p.fields.shinyness = 0x300;
         
     }
     return p;

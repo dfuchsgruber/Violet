@@ -18,6 +18,15 @@
 #include "utils.h"
 #include "transparency.h"
 
+extern const unsigned short gfx_pokedex_formsTiles[];
+extern const unsigned short gfx_pokedex_entry_uiMap[];
+extern const unsigned short gfx_pokedex_bottom_1Map[];
+extern const unsigned short gfx_pokedex_bottom_1Tiles[];
+extern const unsigned short gfx_pokedex_entry_uiTiles[];
+extern const unsigned short gfx_pokedex_entry_uiPal[];
+extern const unsigned short gfx_pokedex_bottom_1Pal[];
+extern const unsigned short gfx_pokedex_formsPal[];
+
 
 u8 pokedex_entry_title_fontcolmap[] = {0, 1, 2, 0};
 
@@ -74,8 +83,8 @@ void pokedex_entry_load_strings() {
 
     tbox_flush(1, 0);
     tbox_tilemap_draw(1);
-    tbox_print_string(1, 2, 96, 0, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_form_ref);
-    tbox_print_string(1, 2, 4, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_data_ref);
+    tbox_print_string(1, 2, 96, 0, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_form);
+    tbox_print_string(1, 2, 4, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_data);
 
     tbox_flush(2, 0);
     tbox_tilemap_draw(2);
@@ -92,28 +101,28 @@ void pokedex_entry_load_strings() {
     u8 *buf = strbuf;
     *buf = 0xFF;
     u8 str_space[] = {0, 0, 0, 0, 0, 0, 0, 0xFF};
-    buf = str_append(buf, has_habitat ? str_pokepad_pokedex_habitat_ref : str_space);
-    strcpy(buf, str_pokepad_pokedex_std_buttons_ref);
+    buf = str_append(buf, has_habitat ? str_pokepad_pokedex_habitat : str_space);
+    strcpy(buf, str_pokepad_pokedex_std_buttons);
     tbox_print_string(4, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
 
     bool is_caught = fmem->dex_mem->list[fmem->dex_mem->current_list_index].caught;
 
     u8 str_none[1] = {0xFF};
 
-    tbox_print_string(1, 2, 8, 0, 0, 0, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->category : str_pokepad_pokedex_qmark_ref);
+    tbox_print_string(1, 2, 8, 0, 0, 0, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->category : str_pokepad_pokedex_qmark);
     u32 height_upper = pokedex_get_data(dex_id)->height / 10;
     u32 height_lower = __umod(pokedex_get_data(dex_id)->height, 10);
-    value_to_str(str_append(value_to_str(strbuf, height_upper, 0, 3), str_pokepad_pokedex_comma_ref), height_lower, 0, 1);
-    tbox_print_string(1, 2, 38, 15, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark_ref);
+    value_to_str(str_append(value_to_str(strbuf, height_upper, 0, 3), str_pokepad_pokedex_comma), height_lower, 0, 1);
+    tbox_print_string(1, 2, 38, 15, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark);
     if (is_caught)
-        tbox_print_string(1, 2, 70, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_m_ref);
+        tbox_print_string(1, 2, 70, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_m);
     u32 weight_upper = pokedex_get_data(dex_id)->weight / 10;
     u32 weight_lower = __umod(pokedex_get_data(dex_id)->weight, 10);
     if (is_caught)
-        tbox_print_string(1, 2, 70, 30, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_kg_ref);
-    value_to_str(str_append(value_to_str(strbuf, weight_upper, 0, 3), str_pokepad_pokedex_comma_ref), weight_lower, 0, 1);
-    tbox_print_string(1, 2, 38, 30, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark_ref);
-    tbox_print_string(2, 2, 0, 0, 0, 1, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->page0 : str_pokepad_pokedex_qmark_ref);
+        tbox_print_string(1, 2, 70, 30, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_kg);
+    value_to_str(str_append(value_to_str(strbuf, weight_upper, 0, 3), str_pokepad_pokedex_comma), weight_lower, 0, 1);
+    tbox_print_string(1, 2, 38, 30, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark);
+    tbox_print_string(2, 2, 0, 0, 0, 1, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->page0 : str_pokepad_pokedex_qmark);
     if (is_caught) {
         u8 type1 = (u8) (basestats[fmem->dex_mem->current_species].type1 + 1);
         u8 type2 = (u8) (basestats[fmem->dex_mem->current_species].type2 + 1);
@@ -151,7 +160,7 @@ void pokedex_entry_load_pokepic() {
     //load form
     offset = (void*) (0x06010000 + 32 * fmem->dex_mem->tile_form);
     u8 form = basestats[fmem->dex_mem->current_species].form;
-    cpuset(&gfx_pokedex_formsTiles[form * 128], offset, 256);
+    cpuset(&gfx_pokedex_formsTiles[form * 256], offset, 256);
 }
 
 void pokedex_callback_init_entry() {

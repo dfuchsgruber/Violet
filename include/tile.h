@@ -68,7 +68,7 @@ typedef struct{
 }any_grass;
 
 typedef struct bdata {
-    u32 behavior : 9;
+    u32 behavior : 8;
     u32 hm_usage : 5;
     u32 field_2 : 4;
     u32 field_3 : 6;

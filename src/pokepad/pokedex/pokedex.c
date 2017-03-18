@@ -18,6 +18,16 @@
 #include "utils.h"
 #include "transparency.h"
 
+extern const unsigned short gfx_pokedex_sort_cursorTiles[];
+extern const unsigned short gfx_pokedex_uiMap[];
+extern const unsigned short gfx_pokedex_uiTiles[];
+extern const unsigned short gfx_pokedex_bottom_1Map[];
+extern const unsigned short gfx_pokedex_bottom_1Tiles[];
+extern const unsigned short gfx_pokedex_bottom_0Map[];
+extern const unsigned short gfx_pokedex_sort_cursorPal[];
+extern const unsigned short gfx_pokedex_uiPal[];
+extern const unsigned short gfx_pokedex_bottom_1Pal[];
+extern const unsigned short gfx_pokedex_bottom_0Pal[];
 
 
 bg_config pokedex_bg_main_configs [] = {

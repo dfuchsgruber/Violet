@@ -1,3 +1,5 @@
+WAV2AGB=@wav2agb
+AR=arm-none-eabi-ar
 AS=@arm-none-eabi-as
 LD=@arm-none-eabi-ld
 OBJCOPY=arm-none-eabi-objcopy
@@ -8,34 +10,45 @@ ARS=@armipsd
 MID2AGB=@mid2agb
 STR2S=@python str2s.py
 PY=@python
+BIN2S=@python bin2s.py
 
 ASFLAGS=-mthumb -Iinclude/
 MIDFLAGS=-V92
 CFLAGS=-c -std=gnu11 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/
 LDFLAGS=-z muldefs
-GRITFLAGS=-fa -ftc
-STR2SFLAGS=-t table.tbl -a 0xFF
+GRITFLAGS=-fh! -ftc
+STR2SFLAGS=-t table.tbl -a 0xFF -l GER
+WAVFLAGS=-c
 
 BLDPATH= bld
 ASSRC1= $(shell find src -type f -iname '*.asm')
 ASSRC2= $(shell find src -type f -iname '*.s')
 CSRC= $(shell find src -type f -iname '*.c')
-MIDSRC= $(shell find asset/mus -type f -iname '*.mid')
-GFXSRC= $(shell find asset/gfx -type f -iname '*.png')
-GFXSRC2 = $(shell find asset/gfx -type f -iname '*.bmp')
-STRSRC = $(shell find asset/string -type f -iname '*.txt')
+MIDSRC= $(shell find Violet_Sources_Private/asset/mus -type f -iname '*.mid')
+GFXSRC= $(shell find Violet_Sources_Private/asset/gfx -type f -iname '*.png')
+STRSRC = $(shell find Violet_Sources_Private/asset/string -type f -iname '*.txt')
+WAVSRC = $(shell find Violet_Sources_Private/asset/cry -type f -iname '*.wav')
+SAMPLESRC = $(shell find Violet_Sources_Private/asset/sample -type f -iname '*.bin')
+
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
 COBJS= $(CSRC:%.c=$(BLDPATH)/%.o)
 	
 MIDAS= $(MIDSRC:%.mid=$(BLDPATH)/%.s)
-MIDOBJS= $(MIDAS:%.s=$(BLDPATH)/%.o)
+MIDOBJS= $(MIDAS:%.s=%.o)
 	
-GFXC= $(BLDPATH)/asset/gfx/gfx.c
+GFXC= $(GFXSRC:%.png=$(BLDPATH)/%.c)
+GFXOBJS= $(GFXC:%.c=%.o)
 
 STRAS= $(STRSRC:%.txt=$(BLDPATH)/%.s)
 STROBJS= $(STRAS:%.s=$(BLDPATH)/%.o)
+	
+WAVAS = $(WAVSRC:%.wav=$(BLDPATH)/%.s)
+WAVOBJS = $(WAVAS:%.s=%.o)
+
+SAMPLEAS = $(SAMPLESRC:%.bin=$(BLDPATH)/%.s)
+SAMPLEOBJS = $(SAMPLEAS:%.s=%.o)
 
 .PHONY: build clean
 
@@ -47,7 +60,7 @@ $(ASOBJS2): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@
 	
-$(COBJS): $(BLDPATH)/%.o: %.c asset
+$(COBJS): $(BLDPATH)/%.o: %.c 
 	$(shell mkdir -p $(dir $@))
 	$(CC) $(CFLAGS) $< -o $@
 	
@@ -55,16 +68,18 @@ $(MIDAS): $(BLDPATH)/%.s: %.mid
 	$(shell mkdir -p $(dir $@))
 	$(MID2AGB) $(MIDFLAGS) -G$(shell echo "$<" | sed -n 's?.*\/vcg\(.*\)\/.*?\1?p') $< $@ > /dev/null
 	
-$(MIDOBJS): $(BLDPATH)/%.o: %.s
+$(MIDOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@	
 	
-$(GFXC): $(GFXSRC)
+$(GFXC): $(BLDPATH)/%.c: %.png
 	$(shell mkdir -p $(dir $(GFXC)))
-	@for png in $?; do \
-	    grit $$png $(GRITFLAGS) -ff $${png%.png}.grit -o $@; \
-	done
-	mv -f $(subst .c,.h,$(GFXC)) include/gfx.h
+	$(GRIT) $< $(GRITFLAGS) -ff $(basename $<).grit -o $@ 
+	
+	
+$(GFXOBJS): %.o: %.c
+	$(shell mkdir -p $(dir $@))
+	$(CC) $(CFLAGS) $< -o $@
 	
 $(STRAS): $(BLDPATH)/%.s: %.txt
 	$(shell mkdir -p $(dir $@))
@@ -73,24 +88,40 @@ $(STRAS): $(BLDPATH)/%.s: %.txt
 $(STROBJS): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@
-
-asset: gfx music string
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/gfx/gfx.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o
-
-string: $(STROBJS)
-	$(shell mkdir -p $(BLDPATH)/asset/string)
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/str.o $(STROBJS)
-
-gfx: $(GFXC)
-	$(shell mkdir -p $(BLDPATH)/asset/gfx)
-	$(CC) $(CFLAGS) -o $(BLDPATH)/asset/gfx/gfx.o $(GFXC)
-
-music: $(MIDOBJS)
-	$(shell mkdir -p $(BLDPATH)/asset/mus)
-	$(AS) $(ASFLAGS) -o $(BLDPATH)/asset/mus/voice.o asset/mus/voice.s
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/mus/voice.o $(MIDOBJS)
 	
-build:  $(ASOBJS1) $(ASOBJS2) $(COBJS)
+$(WAVAS): $(BLDPATH)/%.s: %.wav
+	
+	$(shell mkdir -p $(dir $(WAVAS)))
+	$(WAV2AGB) $< $@ $(WAVFLAGS)
+	
+$(WAVOBJS): %.o: %.s
+	$(shell mkdir -p $(dir $@))
+	$(AS) $(ASFLAGS) $< -o $@
+	
+$(SAMPLEAS): $(BLDPATH)/%.s: %.bin
+	$(shell mkdir -p $(dir $@))
+	$(BIN2S) -i $< -o $@
+	
+$(SAMPLEOBJS): %.o: %.s
+	$(shell mkdir -p $(dir $@))
+	$(AS) $(ASFLAGS) $< -o $@
+
+$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(BLDPATH)/Violet_Sources_Private/asset/str.o
+#	Create a ld script
+	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS))" > $(BLDPATH)/asset.ld
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(BLDPATH)/Violet_Sources_Private/asset/str.o
+	
+
+$(BLDPATH)/Violet_Sources_Private/asset/str.o: $(STROBJS)
+	$(shell mkdir -p $(BLDPATH)/Violet_Sources_Private/asset/string)
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/Violet_Sources_Private/asset/str.o $(STROBJS)
+
+
+$(BLDPATH)/Violet_Sources_Private/asset/mus.o: $(MIDOBJS)
+	$(shell mkdir -p $(BLDPATH)/Violet_Sources_Private/asset/mus)
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(MIDOBJS)
+	
+build:  $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \

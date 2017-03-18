@@ -27,10 +27,10 @@
 extern "C" {
 #endif
 
-    extern u8 *str_pokepad_r_ref;
-    extern u8 *str_pokepad_l_ref;
-    extern u8 *str_pokepad_registered_ref;
-    extern u8 *str_pokepad_deregistered_ref;
+    extern u8 str_pokepad_r[];
+    extern u8 str_pokepad_l[];
+    extern u8 str_pokepad_registered[];
+    extern u8 str_pokepad_deregistered[];
 
     typedef struct pokepad_item {
         u16 flag;

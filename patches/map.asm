@@ -13,3 +13,7 @@
     ldr r0, =whiteout_hook | 1
     bx r0
     .pool
+
+//@remove previously on quest
+.org 0x08111002
+    mov r0, #0 //0 events to be loaded

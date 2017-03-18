@@ -4,40 +4,41 @@
 #include "gfx.h"
 #include "attack.h"
 
+
 battle_bg battle_bgs[29] = {
-    // Battle bg 0
+    // Battle street
     {
-        (void*) 0x93c5730,
-        (void*) 0x9372c40,
+        gfx_battle_bg_streetTiles,
+        gfx_battle_bg_streetMap,
         NULL,
         NULL,
-        (void*) 0x9374370
+        gfx_battle_bg_streetPal
     },
-    // Battle bg 1
+    // Battle grass
     {
-        (void*) 0x93c4620,
-        (void*) 0x9372c40,
+        gfx_battle_bg_grassTiles,
+        gfx_battle_bg_grassMap,
         NULL,
         NULL,
-        (void*) 0x9372c20
+        gfx_battle_bg_grassPal
     },
-    // Battle bg 2
+    // Battle mountain
     {
-        (void*) 0x93c68d0,
-        (void*) 0x9372c40,
+        gfx_battle_bg_mountainTiles,
+        gfx_battle_bg_mountainMap,
         NULL,
         NULL,
-        (void*) 0x9375ecc
+        gfx_battle_bg_mountainPal
     },
-    // Battle bg 3
+    // Battle pond
     {
-        (void*) 0x93c8410,
-        (void*) 0x9372c40,
+        gfx_battle_bg_pondTiles,
+        gfx_battle_bg_pondMap,
         NULL,
         NULL,
-        (void*) 0x9376b04
+        gfx_battle_bg_pondPal
     },
-    // Battle bg 4
+    // Battle cloud
     {
         gfx_battle_bg_cloudsTiles,
         gfx_battle_bg_cloudsMap,
@@ -45,53 +46,53 @@ battle_bg battle_bgs[29] = {
         NULL,
         gfx_battle_bg_cloudsPal
     },
-    // Battle bg 5
+    // Battle shore
     {
-        (void*) 0x93c9040,
-        (void*) 0x9372c40,
+        gfx_battle_bg_shoreTiles,
+        gfx_battle_bg_shoreMap,
         NULL,
         NULL,
-        (void*) 0x93775a8
+        gfx_battle_bg_shorePal
     },
-    // Battle bg 6
+    // Battle ocean
     {
-        (void*) 0x93c9ad0,
-        (void*) 0x9372c40,
+        gfx_battle_bg_oceanTiles,
+        gfx_battle_bg_oceanMap,
         NULL,
         NULL,
-        (void*) 0x9378188
+        gfx_battle_bg_oceanPal
     },
-    // Battle bg 7
+    // Battle cave
     {
-        (void*) 0x93cb0d0,
-        (void*) 0x9372c40,
+        gfx_battle_bg_caveTiles,
+        gfx_battle_bg_caveMap,
         NULL,
         NULL,
-        (void*) 0x93c4130
+        gfx_battle_bg_cavePal
     },
-    // Battle bg 8
+    // Battle bg desert
     {
-        (void*) 0x93ca6a0,
-        (void*) 0x9372c40,
+        gfx_battle_bg_desertTiles,
+        gfx_battle_bg_desertMap,
         NULL,
         NULL,
-        (void*) 0x9378bc8
+        gfx_battle_bg_desertPal
     },
-    // Battle bg 9
+    // Battle bg gym
     {
-        (void*) 0x93d59f0,
-        (void*) 0x9372c40,
+        gfx_battle_bg_gymTiles,
+        gfx_battle_bg_gymMap,
         NULL,
         NULL,
-        (void*) 0x93d59c0
+        gfx_battle_bg_gymPal
     },
-    // Battle bg 10
+    // Battle bg watercave
     {
-        (void*) 0x93db330,
-        (void*) 0x9372c40,
+        gfx_battle_bg_watercaveTiles,
+        gfx_battle_bg_watercaveMap,
         NULL,
         NULL,
-        (void*) 0x93db300
+        gfx_battle_bg_watercavePal
     },
     // Battle bg 11
     {
@@ -103,142 +104,61 @@ battle_bg battle_bgs[29] = {
     },
     // Battle bg 12
     {
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        NULL
-    },
-    // Battle bg 13
-    {
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        NULL
-    },
-    // Battle bg 14
-    {
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        NULL
-    },
-    // Battle bg 15
-    {
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        NULL
-    },
-    // Battle bg 16
-    {
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        NULL
-    },
-    // Battle bg 17
-    {
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-    },
-    // Battle bg 18
-    {
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        NULL
-    },
-    // Battle bg 19
-    {
         gfx_battle_bg_fireTiles,
         gfx_battle_bg_fireMap,
         NULL,
         NULL,
         gfx_battle_bg_firePal
     },
-    // Battle bg 20
+    // Battle evol 13
     {
-        (void*) 0x8980000,
-        (void*) 0x9135000,
+        gfx_battle_bg_evolutionTiles,
+        gfx_battle_bg_evolutionMap,
         NULL,
         NULL,
-        (void*) 0x8a2e060
+        gfx_battle_bg_evolutionPal
     },
-    // Battle bg 21
+    // Battle bg captured 14
     {
-        (void*) 0x8976000,
-        (void*) 0x890b1ac,
+        gfx_battle_bg_capturedTiles,
+        gfx_battle_bg_capturedMap,
         NULL,
         NULL,
-        (void*) 0x8a2e0c0
+        gfx_battle_bg_capturedPal
     },
-    // Battle bg 22
+    // Battle bg wooden mill 15
     {
-        (void*) 0x9020000,
-        (void*) 0x890b1ac,
+        gfx_battle_bg_millTiles,
+        gfx_battle_bg_millMap,
         NULL,
         NULL,
-        (void*) 0x8a2e240
-    },
-    // Battle bg 23
-    {
-        (void*) 0x9020000,
-        (void*) 0x824c828,
-        NULL,
-        NULL,
-        (void*) 0x824c4a8
-    },
-    // Battle bg 24
-    {
-        (void*) 0x901ef80,
-        (void*) 0x9020888,
-        NULL,
-        NULL,
-        (void*) 0x8a2e2a0
-    },
-    // Battle bg 25
-    {
-        (void*) 0x8910454,
-        (void*) 0x9020888,
-        NULL,
-        NULL,
-        (void*) 0x8a2e300
-    },
-    // Battle bg 26
-    {
-        (void*) 0x8874768,
-        (void*) 0x890b1ac,
-        NULL,
-        NULL,
-        (void*) 0x8a2e360
-    },
-    // Battle bg 27
-    {
-        (void*) 0x8a2b7e0,
-        (void*) 0x890b1ac,
-        NULL,
-        NULL,
-        (void*) 0x8a30fb0
+        gfx_battle_bg_millPal
     },
     // Battle bg 28
-    {
-        (void*) 0x8910454,
-        (void*) 0x890b1ac,
-        NULL,
-        NULL,
-        (void*) 0x8a2e300
-    }
 
 };
+
+void battle_bg_load(u8 id){
+    lz77uncompvram(battle_bgs[id].tileset, (void*) 0x6008000);
+    lz77uncompvram(battle_bgs[id].tilemap, (void*) 0x600d000);
+    pal_load_comp(battle_bgs[id].pal, 0x20, 0x60);
+}
+
+void battle_bg_load_anim(u8 id){
+    (void)id;
+    return;
+}
+
+void battle_bg_get(u8 id, const void **set, const void **map, const void **pal){
+    *set = battle_bgs[id].tileset;
+    *map = battle_bgs[id].tilemap;
+    *pal = battle_bgs[id].pal;
+}
+
+u8 battle_bg_get_id(){
+    u8 *battle_bg_id = (u8*)0x2022B50;
+    return *battle_bg_id;
+}
 
 u16 terrain_moves[] = {
     ATTACK_STERNSCHAUER,
@@ -246,7 +166,7 @@ u16 terrain_moves[] = {
     ATTACK_STEINHAGEL,
     ATTACK_AQUAWELLE,
     
-    0,
+    ATTACK_WINDSCHNITT,
     ATTACK_SCHAUFLER,
     ATTACK_SURFER,
     ATTACK_SPUKBALL,
@@ -256,43 +176,8 @@ u16 terrain_moves[] = {
     ATTACK_NASSMACHER, //inside cave route4, kaskada
     ATTACK_ANTIK_KRAFT, //museum
     
-    0,
-    0,
-    0,
-    0,
-    
-    0,
-    0,
     ATTACK_FLAMMENWURF, //fire route
-    0,
-    
-    0,
-    0,
-    0,
-    0,
-    
-    0,
-    0,
-    0,
-    0,
-    
-    0,
-    0,
-    0,
-    0,
-    
-    0,
-    0,
-    0,
-    0,
-    
-    0,
-    0,
-    0,
-    0,
-    
-    0,
-    0,
-    0,
-    0,
+    0, //evolution
+    0, //captured
+    ATTACK_SCHNABEL, //mill
 };

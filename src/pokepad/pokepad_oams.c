@@ -4,6 +4,11 @@
 #include "gfx.h"
 
 //static resources
+extern const unsigned short gfx_wondertrade_badgesTiles[];
+extern const unsigned short gfx_pokepad_arrowTiles[];
+extern const unsigned short gfx_pokepad_lTiles[];
+extern const unsigned short gfx_pokepad_rTiles[];
+
 
 graphic graphic_wondertrade_badges = {
     (void*) gfx_wondertrade_badgesTiles,

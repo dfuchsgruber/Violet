@@ -5,10 +5,14 @@
 #define LOW 0
 #define HIGH 1
 
+
 typedef unsigned char u8;
 typedef unsigned short int u16;
 typedef unsigned int u32;
 typedef unsigned long long int u64;
+
+typedef u8 MISALIGNED_32[4];
+typedef u8 MISALIGNED_16[4];
 
 typedef signed char s8;
 typedef signed short int s16;

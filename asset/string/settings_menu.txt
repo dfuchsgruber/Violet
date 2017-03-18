@@ -1,8 +1,0 @@
-str_settings_color:
-    =Farben
-
-str_settings_color_dn:
-    =DNS
-
-str_settings_color_standard:
-    =Standard

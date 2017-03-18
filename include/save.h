@@ -81,10 +81,10 @@ typedef struct {
     ae_memory *ae_mem;
     tileset *current_tileset_1;
     tileset *current_tileset_2;
+    u8 dma0_dump[4];
+    
     
 } floating_memory;
-
-
 
 saveblock1 **save1 = (saveblock1**) 0x03004F58;
 saveblock2 **save2 = (saveblock2**) 0x03004F5C;

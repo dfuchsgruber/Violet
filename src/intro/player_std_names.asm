@@ -1,0 +1,54 @@
+.global player_std_names
+
+.align 4
+player_std_names:
+@Boys
+.word str_player_std_name_0
+.word str_player_std_name_1
+.word str_player_std_name_2
+.word str_player_std_name_3
+.word str_player_std_name_4
+.word str_player_std_name_5
+.word str_player_std_name_6
+.word str_player_std_name_7
+.word str_player_std_name_8
+.word str_player_std_name_9
+.word str_player_std_name_10
+.word str_player_std_name_11
+.word str_player_std_name_12
+.word str_player_std_name_13
+.word str_player_std_name_14
+.word str_player_std_name_15
+.word str_player_std_name_16
+.word str_player_std_name_17
+.word str_player_std_name_18
+.word str_player_std_name_19
+.word str_player_std_name_20
+.word str_player_std_name_21
+.word str_player_std_name_22
+.word str_player_std_name_23
+@Girls
+.word str_player_std_name_24
+.word str_player_std_name_25
+.word str_player_std_name_26
+.word str_player_std_name_27
+.word str_player_std_name_28
+.word str_player_std_name_29
+.word str_player_std_name_30
+.word str_player_std_name_31
+.word str_player_std_name_32
+.word str_player_std_name_33
+.word str_player_std_name_34
+.word str_player_std_name_35
+.word str_player_std_name_36
+.word str_player_std_name_37
+.word str_player_std_name_38
+.word str_player_std_name_39
+.word str_player_std_name_40
+.word str_player_std_name_41
+.word str_player_std_name_42
+.word str_player_std_name_43
+.word str_player_std_name_44
+.word str_player_std_name_45
+.word str_player_std_name_46
+.word str_player_std_name_47

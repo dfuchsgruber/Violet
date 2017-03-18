@@ -14,6 +14,13 @@
 #include "utils.h"
 #include "text.h"
 
+extern const unsigned short gfx_pokepad_backgroundMap[];
+extern const unsigned short gfx_pokepad_backgroundTiles[];
+extern const unsigned short gfx_pokepad_arrowPal[];
+extern const unsigned short gfx_pokepad_lPal[];
+extern const unsigned short gfx_pokepad_backgroundPal[];
+extern const unsigned short gfx_pokepad_buttonTiles[];
+
 u8 pokepad_fontcolmap[] = {0, 2, 1, 0};
 
 tboxdata pokepad_tboxes [] = {
@@ -314,17 +321,17 @@ void pokepad_idle() {
             //Print that we relocated the key
             u8 *buffer1 = (u8*) 0x02021CF0;
             if (lr_relocate & 1) { //1 or 3
-                strcpy(buffer1, str_pokepad_l_ref);
+                strcpy(buffer1, str_pokepad_l);
             } else { //2 or 4
-                strcpy(buffer1, str_pokepad_r_ref);
+                strcpy(buffer1, str_pokepad_r);
             }
             u8 *buffer0 = (u8*) 0x02021CD0;
             strcpy(buffer0, pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].string);
             u8 *strbuf = (u8*) 0x02021D18;
             if (lr_relocate > 2) {
-                string_decrypt(strbuf, str_pokepad_deregistered_ref);
+                string_decrypt(strbuf, str_pokepad_deregistered);
             } else {
-                string_decrypt(strbuf, str_pokepad_registered_ref);
+                string_decrypt(strbuf, str_pokepad_registered);
             }
 
             tbox_flush(POKEPAD_DESCRIPTION_TBOX, 0);

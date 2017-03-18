@@ -1,2 +1,0 @@
-str_version_alpha_1_0:
-    =Herzlichen Glückwunsch!\nDeine Version wurde von\l\b\02.X auf \b\03.X\lgeupdated.\pSetze dein Abenteuer im Osten\nder Felsigen Ödnis fort.

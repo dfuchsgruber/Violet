@@ -12,6 +12,8 @@
 extern "C" {
 #endif
 
+#define ATTACK_CNT 413
+    
 #define ATTACK_NONE 0
 #define ATTACK_PFUND 1
 #define ATTACK_KARATESCHLAG 2
@@ -425,6 +427,26 @@ extern "C" {
 #define ATTACK_KAEFERGEBRUMM 410
 #define ATTACK_TORNADO 411
 #define ATTACK_KOENIGSSCHILD 412
+    
+#define SELECTED_TARGET 0
+#define TARGET_DEPENDS_ON_ATTACK (1 << 0)    
+#define TARGET_UNUSED (1 << 1) 
+#define RANDOM_TARGET (1 << 2)
+#define TARGET_BOTH_FOES (1 << 3)
+#define TARGET_USER (1 << 4)
+#define TARGET_BOTH_FOES_AND_PARTNER (1 << 5) 
+#define TARGET_OPPONENT_FIELD (1 << 6)
+
+#define MAKES_CONTACT (1 << 0)
+#define AFFECTED_BY_PROTECT (1 << 1)
+#define AFFECTED_BY_MAGIC_COAT (1 << 2)
+#define AFFECTED_BY_SNATCH (1 << 3)
+#define MIRRORABLE (1 << 4)
+#define TRIGGERS_KINGS_ROCK (1 << 5)
+    
+#define CATEGORY_PHYSICAL 0
+#define CATEGORY_SPECIAL 1
+#define CATEGORY_STATUS 2
     typedef struct{
         u8 effect;
         u8 base_power;
@@ -433,7 +455,7 @@ extern "C" {
         u8 pp;
         u8 effect_accuracy;
         u8 affects_whom;
-        u8 priority;
+        s8 priority;
         u8 flags;
         u8 effect_table;
         u8 category;
@@ -442,7 +464,7 @@ extern "C" {
 
     
     
-    attack *attacks = (attack*)0x9100000;
+    attack attacks[ATTACK_CNT];
 
 #ifdef	__cplusplus
 }

@@ -107,6 +107,7 @@
 #define ATTRIBUTE_INIT 0x3D
 #define ATTRIBUTE_SATK 0x3E
 #define ATTRIBUTE_SDEF 0x3F
+#define ATTRIBUTE_SPECIES2 0x41
 
 typedef struct marking {
     u8 circle : 1;
@@ -173,8 +174,6 @@ void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
 void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed);
 void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread, bool tid_determined, u32 tid, u16(*seed_generator)());
 
-
-
 u8 get_pokemons_ability(pokemon *poke);
 u8 write_ability_into_dbuf(pokemon *poke);
 
@@ -199,5 +198,6 @@ void pokemon_team_remove();
 void pokemon_team_knows_hm();
 bool pokemon_knows_hm(pokemon *p);
 
+u8 pokemon_get_nature(pokemon *target);
 
 #endif

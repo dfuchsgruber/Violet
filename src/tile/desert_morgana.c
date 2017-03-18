@@ -97,9 +97,9 @@ void do_fata_morgana() {
         get_current_tile_position(&coordinates[0], &coordinates[1]);
         bool matched = false;
 
-        //change all tiles within the players vision +1 
+        //change all tiles within the circle radius of 5 + 1 (you might be leaving a tile that needs to be changed)
         int x;
-        for (x = -8; x <= 8; x++) {
+        for (x = -6; x <= 6; x++) {
             int y;
             for (y = -6; y <= 6; y++) {
 

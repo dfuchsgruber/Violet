@@ -110,8 +110,8 @@ map_events *compute_dungeon_events() {
         cmem->dpers[i].field_3 = 0;
         cmem->dpers[i].x = 0;
         cmem->dpers[i].y = 0;
-        cmem->dpers[i].field_8 = 0;
-        cmem->dpers[i].facing = 0;
+        cmem->dpers[i].level = 0;
+        cmem->dpers[i].behavior_range = 0;
         cmem->dpers[i].behavior = 0;
         cmem->dpers[i].field_B = 0;
         cmem->dpers[i].is_trainer = 0;

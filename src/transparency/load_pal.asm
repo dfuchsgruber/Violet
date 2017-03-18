@@ -37,7 +37,8 @@ beq tbox_standard
 ldr r1, =transparency_black_box_pals
 b tbox_end
 tbox_standard:
-ldr r1, =0x084711DC @standard palettes
+ldr r1, =gfx_text_stdPal
+@ldr r1, =0x084711DC @standard palettes
 tbox_end:
 ldr r0, [sp]
 add r0, r1

@@ -186,9 +186,9 @@ void pokedex_update_list() {
         if (list[first].seen) {
             buf = str_append(buf, pokemon_names[list[first].species]);
         } else {
-            buf = str_append(buf, str_pokepad_pokedex_unkown_ref);
+            buf = str_append(buf, str_pokepad_pokedex_unkown);
         }
-        buf = str_append(buf, str_pokepad_pokedex_nl_ref);
+        buf = str_append(buf, str_pokepad_pokedex_nl);
 
 
         if (list[first].caught) {

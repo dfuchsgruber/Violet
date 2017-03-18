@@ -13,7 +13,7 @@ bne scan_next_entry
 ldr r0, [sp, #8]
 mov r1, #0xC
 mul r0, r1
-ldr r1, =0x09100000 @attack_data
+ldr r1, =attacks
 add r0, r1
 ldrb r1, [r0, #10]
 cmp r1, #0

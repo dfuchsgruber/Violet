@@ -176,5 +176,16 @@ void worldmapflag_state_set(u16 flag);
 void worldmapflag_set(u16 flag);
 void item_func_repel(u8 self);
 void additem(u16 item, u16 cnt);
+void blend_proceed();
+void oam_attributes_proceed();
+void oam_attributes_copy();
+void graphic_copy_queue_do();
+void handle_pals();
+void dma3_do();
+void tbox_proceed();
+void big_callbacks_proceed();
+void oam_anim_proceed();
+int bg_decomp_and_load(u8 bg_id, const void *res, u32 fixed_size, u16 row_displ, bool is_tilemap);
+void ts_main_big_cb(u8 self);
 
 #endif

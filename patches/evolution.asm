@@ -1,5 +1,5 @@
 
-evolution_table equ 0x9195500
+evolution_table equ 0x8900000 //*TODO*/
 
 //evolutions
 .org 0x08045878

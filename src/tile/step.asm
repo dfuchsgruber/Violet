@@ -12,8 +12,10 @@
 .thumb_func
 tile_step:
 
-bl update_a_vector
 bl egg_warm_update
+@bl update_a_vector
+
+
 
 ldr r0, =0x50E2
 bl vardecrypt
@@ -74,6 +76,7 @@ ldr r0, =0x02036DFC
 ldr r0, [r0, #4]	@loading some maps dat
 
 bl check_detector
+mov r0, #0
 mov r1, r0	@result of decetor_check_in_r4
 mov r0, r4
 mov r4, r1

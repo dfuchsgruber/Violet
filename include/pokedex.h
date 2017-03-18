@@ -31,23 +31,23 @@ extern "C" {
 #define POKEDEX_FLAG_FEATURE_1 0x929
 #define POKEDEX_FLAG_FEATURE_2 0x92A
 
-    extern u8 *str_pokepad_pokedex_nl_ref;
-    extern u8 *str_pokepad_pokedex_unkown_ref;
-    extern u8 *str_pokepad_pokedex_form_ref;
-    extern u8 *str_pokepad_pokedex_data_ref;
-    extern u8 *str_pokepad_pokedex_qmark_ref;
-    extern u8 *str_pokepad_pokedex_std_buttons_ref;
-    extern u8 *str_pokepad_pokedex_habitat_ref;
-    extern u8 *str_pokepad_pokedex_kg_ref;
-    extern u8 *str_pokepad_pokedex_m_ref;
-    extern u8 *str_pokepad_pokedex_comma_ref;
-    extern u8 *str_pokepad_pokedex_habitat_title_ref;
-    extern u8 *str_pokepad_pokedex_habitat_back_ref;
-    extern u8 *str_pokepad_pokedex_habitat_grass_ref;
-    extern u8 *str_pokepad_pokedex_habitat_water_ref;
-    extern u8 *str_pokepad_pokedex_habitat_rod_ref;
-    extern u8 *str_pokepad_pokedex_habitat_radar_ref;
-    extern u8 *str_pokepad_pokedex_habitat_none_ref;
+    extern u8 str_pokepad_pokedex_nl[];
+    extern u8 str_pokepad_pokedex_unkown[];
+    extern u8 str_pokepad_pokedex_form[];
+    extern u8 str_pokepad_pokedex_data[];
+    extern u8 str_pokepad_pokedex_qmark[];
+    extern u8 str_pokepad_pokedex_std_buttons[];
+    extern u8 str_pokepad_pokedex_habitat[];
+    extern u8 str_pokepad_pokedex_kg[];
+    extern u8 str_pokepad_pokedex_m[];
+    extern u8 str_pokepad_pokedex_comma[];
+    extern u8 str_pokepad_pokedex_habitat_title[];
+    extern u8 str_pokepad_pokedex_habitat_back[];
+    extern u8 str_pokepad_pokedex_habitat_grass[];
+    extern u8 str_pokepad_pokedex_habitat_water[];
+    extern u8 str_pokepad_pokedex_habitat_rod[];
+    extern u8 str_pokepad_pokedex_habitat_radar[];
+    extern u8 str_pokepad_pokedex_habitat_none[];
 
     typedef struct {
         u16 dex_id;
@@ -190,8 +190,8 @@ extern "C" {
     u16 pokedex_order[POKEMON_CNT - 1];
     pokedex_data dex_data[POKEDEX_CNT + 1];
 
-    const int *gfx_worldmapTiles;
-    const void *gfx_worldmapPal;
+    extern const unsigned short gfx_worldmapTiles[];
+    extern const unsigned short gfx_worldmapPal[];
     u8 pokedex_fontcolmap[4];
 
     int *worldmap_tilemaps[4];

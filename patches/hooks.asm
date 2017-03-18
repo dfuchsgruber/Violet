@@ -24,6 +24,11 @@
 .include "patches/battle.asm"
 .include "patches/map.asm"
 .include "patches/attack.asm"
+.include "patches/save.asm"
+.include "patches/idle_loop.asm"
+.include "patches/titlescreen.asm"
+.include "patches/intro.asm"
+.include "patches/worldmap.asm"
 
 //Remove Help-System
 .org 0x0813B90C

@@ -21,7 +21,7 @@ pokemenu_opts:  @format : string, function pointer
     .word 0x8123755
     .word 0x8415fa3
     .word 0x8123c89
-    .word 0x88cee80
+    .word str_fp_menu
     .word fp_menu_init + 1
     .word 0x84167f2
     .word 0x8123e5d

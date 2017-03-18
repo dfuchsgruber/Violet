@@ -8,6 +8,587 @@
 #include "types.h"
 #include "overworld_sprites.h"
 #include "gfx.h"
+#include "romfuncs.h"
+
+
+static graphic overworld_sprite_deoxys_normal_sprites[] = {
+	{&gfx_ow_deoxys_normal_0Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_1Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_2Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_3Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_4Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_5Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_6Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_7Tiles, 0x200, 0},
+	{&gfx_ow_deoxys_normal_8Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_deoxys_normal = {
+	0xffff, 0x1103, 0x11ff, 0x200,
+	32, 32, 0x12, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_deoxys_normal_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_registeel_sprites[] = {
+	{&gfx_ow_registeel_0Tiles, 0x200, 0},
+	{&gfx_ow_registeel_1Tiles, 0x200, 0},
+	{&gfx_ow_registeel_2Tiles, 0x200, 0},
+	{&gfx_ow_registeel_3Tiles, 0x200, 0},
+	{&gfx_ow_registeel_4Tiles, 0x200, 0},
+	{&gfx_ow_registeel_5Tiles, 0x200, 0},
+	{&gfx_ow_registeel_6Tiles, 0x200, 0},
+	{&gfx_ow_registeel_7Tiles, 0x200, 0},
+	{&gfx_ow_registeel_8Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_registeel = {
+	0xffff, 0x1104, 0x11ff, 0x200,
+	32, 32, 0x13, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_registeel_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_regice_sprites[] = {
+	{&gfx_ow_regice_0Tiles, 0x200, 0},
+	{&gfx_ow_regice_1Tiles, 0x200, 0},
+	{&gfx_ow_regice_2Tiles, 0x200, 0},
+	{&gfx_ow_regice_3Tiles, 0x200, 0},
+	{&gfx_ow_regice_4Tiles, 0x200, 0},
+	{&gfx_ow_regice_5Tiles, 0x200, 0},
+	{&gfx_ow_regice_6Tiles, 0x200, 0},
+	{&gfx_ow_regice_7Tiles, 0x200, 0},
+	{&gfx_ow_regice_8Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_regice = {
+	0xffff, 0x1104, 0x11ff, 0x200,
+	32, 32, 0x13, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_regice_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_regirock_sprites[] = {
+	{&gfx_ow_regirock_0Tiles, 0x200, 0},
+	{&gfx_ow_regirock_1Tiles, 0x200, 0},
+	{&gfx_ow_regirock_2Tiles, 0x200, 0},
+	{&gfx_ow_regirock_3Tiles, 0x200, 0},
+	{&gfx_ow_regirock_4Tiles, 0x200, 0},
+	{&gfx_ow_regirock_5Tiles, 0x200, 0},
+	{&gfx_ow_regirock_6Tiles, 0x200, 0},
+	{&gfx_ow_regirock_7Tiles, 0x200, 0},
+	{&gfx_ow_regirock_8Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_regirock = {
+	0xffff, 0x1106, 0x11ff, 0x200,
+	32, 32, 0x15, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_regirock_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_voltilamm_sprites[] = {
+	{&gfx_ow_voltilamm_0Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_1Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_2Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_3Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_4Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_5Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_6Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_7Tiles, 0x100, 0},
+	{&gfx_ow_voltilamm_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_voltilamm = {
+	0xffff, 0x1103, 0x11ff, 0x100,
+	16, 32, 0x12, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_voltilamm_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_staralili_sprites[] = {
+	{&gfx_ow_staralili_0Tiles, 0x80, 0},
+	{&gfx_ow_staralili_1Tiles, 0x80, 0},
+	{&gfx_ow_staralili_2Tiles, 0x80, 0},
+	{&gfx_ow_staralili_3Tiles, 0x80, 0},
+	{&gfx_ow_staralili_4Tiles, 0x80, 0},
+	{&gfx_ow_staralili_5Tiles, 0x80, 0},
+	{&gfx_ow_staralili_6Tiles, 0x80, 0},
+	{&gfx_ow_staralili_7Tiles, 0x80, 0},
+	{&gfx_ow_staralili_8Tiles, 0x80, 0}
+};
+
+overworld_sprite ow_staralili = {
+	0xffff, 0x1106, 0x11ff, 0x80,
+	16, 16, 0x15, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_16, OW_FORMATION_16_16,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_staralili_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_larissa_sprites[] = {
+	{&gfx_ow_larissa_0Tiles, 0x100, 0},
+	{&gfx_ow_larissa_1Tiles, 0x100, 0},
+	{&gfx_ow_larissa_2Tiles, 0x100, 0},
+	{&gfx_ow_larissa_3Tiles, 0x100, 0},
+	{&gfx_ow_larissa_4Tiles, 0x100, 0},
+	{&gfx_ow_larissa_5Tiles, 0x100, 0},
+	{&gfx_ow_larissa_6Tiles, 0x100, 0},
+	{&gfx_ow_larissa_7Tiles, 0x100, 0},
+	{&gfx_ow_larissa_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_larissa = {
+	0xffff, 0x1106, 0x11ff, 0x100,
+	16, 32, 0x15, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_larissa_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_elise_sprites[] = {
+	{&gfx_ow_elise_0Tiles, 0x100, 0},
+	{&gfx_ow_elise_1Tiles, 0x100, 0},
+	{&gfx_ow_elise_2Tiles, 0x100, 0},
+	{&gfx_ow_elise_3Tiles, 0x100, 0},
+	{&gfx_ow_elise_4Tiles, 0x100, 0},
+	{&gfx_ow_elise_5Tiles, 0x100, 0},
+	{&gfx_ow_elise_6Tiles, 0x100, 0},
+	{&gfx_ow_elise_7Tiles, 0x100, 0},
+	{&gfx_ow_elise_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_elise = {
+	0xffff, 0x1103, 0x11ff, 0x100,
+	16, 32, 0x12, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_elise_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_faun_young_sprites[] = {
+	{&gfx_ow_faun_young_0Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_1Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_2Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_3Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_4Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_5Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_6Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_7Tiles, 0x100, 0},
+	{&gfx_ow_faun_young_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_faun_young = {
+	0xffff, 0x1105, 0x11ff, 0x100,
+	16, 32, 0x14, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_faun_young_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_egg_sprites[] = {
+	{&gfx_ow_egg_0Tiles, 0x80, 0}
+};
+
+overworld_sprite ow_egg = {
+	0xffff, 0x1105, 0x11ff, 0x80,
+	16, 16, 0x44, 0x0, 0x0, 0x0,
+	OW_FINAL_OAM_16_16, OW_FORMATION_16_16,
+	OW_ANIM_NONE, overworld_sprite_egg_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_rin_sprites[] = {
+	{&gfx_ow_rin_0Tiles, 0x100, 0},
+	{&gfx_ow_rin_1Tiles, 0x100, 0},
+	{&gfx_ow_rin_2Tiles, 0x100, 0},
+	{&gfx_ow_rin_3Tiles, 0x100, 0},
+	{&gfx_ow_rin_4Tiles, 0x100, 0},
+	{&gfx_ow_rin_5Tiles, 0x100, 0},
+	{&gfx_ow_rin_6Tiles, 0x100, 0},
+	{&gfx_ow_rin_7Tiles, 0x100, 0},
+	{&gfx_ow_rin_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_rin = {
+	0xffff, 0x110b, 0x11ff, 0x100,
+	16, 32, 0x1a, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_rin_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+static graphic overworld_sprite_blaise_sprites[] = {
+	{&gfx_ow_blaise_0Tiles, 0x100, 0},
+	{&gfx_ow_blaise_1Tiles, 0x100, 0},
+	{&gfx_ow_blaise_2Tiles, 0x100, 0},
+	{&gfx_ow_blaise_3Tiles, 0x100, 0},
+	{&gfx_ow_blaise_4Tiles, 0x100, 0},
+	{&gfx_ow_blaise_5Tiles, 0x100, 0},
+	{&gfx_ow_blaise_6Tiles, 0x100, 0},
+	{&gfx_ow_blaise_7Tiles, 0x100, 0},
+	{&gfx_ow_blaise_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_blaise = {
+	0xffff, 0x1103, 0x11ff, 0x100,
+	16, 32, 0x12, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_blaise_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+static graphic overworld_sprite_mia_sprites[] = {
+	{&gfx_ow_mia_0Tiles, 0x100, 0},
+	{&gfx_ow_mia_1Tiles, 0x100, 0},
+	{&gfx_ow_mia_2Tiles, 0x100, 0},
+	{&gfx_ow_mia_3Tiles, 0x100, 0},
+	{&gfx_ow_mia_4Tiles, 0x100, 0},
+	{&gfx_ow_mia_5Tiles, 0x100, 0},
+	{&gfx_ow_mia_6Tiles, 0x100, 0},
+	{&gfx_ow_mia_7Tiles, 0x100, 0},
+	{&gfx_ow_mia_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_mia = {
+	0xffff, 0x1105, 0x11ff, 0x100,
+	16, 32, 0x14, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_mia_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_lester_sprites[] = {
+	{&gfx_ow_lester_0Tiles, 0x100, 0},
+	{&gfx_ow_lester_1Tiles, 0x100, 0},
+	{&gfx_ow_lester_2Tiles, 0x100, 0},
+	{&gfx_ow_lester_3Tiles, 0x100, 0},
+	{&gfx_ow_lester_4Tiles, 0x100, 0},
+	{&gfx_ow_lester_5Tiles, 0x100, 0},
+	{&gfx_ow_lester_6Tiles, 0x100, 0},
+	{&gfx_ow_lester_7Tiles, 0x100, 0},
+	{&gfx_ow_lester_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_lester = {
+	0xffff, 0x1106, 0x11ff, 0x100,
+	16, 32, 0x15, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_lester_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_faun_sprites[] = {
+	{&gfx_ow_faun_0Tiles, 0x100, 0},
+	{&gfx_ow_faun_1Tiles, 0x100, 0},
+	{&gfx_ow_faun_2Tiles, 0x100, 0},
+	{&gfx_ow_faun_3Tiles, 0x100, 0},
+	{&gfx_ow_faun_4Tiles, 0x100, 0},
+	{&gfx_ow_faun_5Tiles, 0x100, 0},
+	{&gfx_ow_faun_6Tiles, 0x100, 0},
+	{&gfx_ow_faun_7Tiles, 0x100, 0},
+	{&gfx_ow_faun_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_faun = {
+	0xffff, 0x1106, 0x11ff, 0x100,
+	16, 32, 0x15, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_faun_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+static graphic overworld_sprite_revolutionary_sprites[] = {
+	{&gfx_ow_revolutionary_0Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_1Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_2Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_3Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_4Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_5Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_6Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_7Tiles, 0x100, 0},
+	{&gfx_ow_revolutionary_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_revolutionary = {
+	0xffff, 0x1105, 0x11ff, 0x100,
+	16, 32, 0x14, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_revolutionary_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_rival_sprites[] = {
+	{&gfx_ow_rival_0Tiles, 0x100, 0},
+	{&gfx_ow_rival_1Tiles, 0x100, 0},
+	{&gfx_ow_rival_2Tiles, 0x100, 0},
+	{&gfx_ow_rival_3Tiles, 0x100, 0},
+	{&gfx_ow_rival_4Tiles, 0x100, 0},
+	{&gfx_ow_rival_5Tiles, 0x100, 0},
+	{&gfx_ow_rival_6Tiles, 0x100, 0},
+	{&gfx_ow_rival_7Tiles, 0x100, 0},
+	{&gfx_ow_rival_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_rival = {
+	0xffff, 0x1103, 0x11ff, 0x100,
+	16, 32, 0x12, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_rival_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+static graphic overworld_sprite_tann_sprites[] = {
+	{&gfx_ow_tann_0Tiles, 0x100, 0},
+	{&gfx_ow_tann_1Tiles, 0x100, 0},
+	{&gfx_ow_tann_2Tiles, 0x100, 0},
+	{&gfx_ow_tann_3Tiles, 0x100, 0},
+	{&gfx_ow_tann_4Tiles, 0x100, 0},
+	{&gfx_ow_tann_5Tiles, 0x100, 0},
+	{&gfx_ow_tann_6Tiles, 0x100, 0},
+	{&gfx_ow_tann_7Tiles, 0x100, 0},
+	{&gfx_ow_tann_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_tann = {
+	0xffff, 0x1106, 0x11ff, 0x100,
+	16, 32, 0x15, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_tann_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+static graphic overworld_sprite_felix_sprites[] = {
+	{&gfx_ow_felix_0Tiles, 0x100, 0},
+	{&gfx_ow_felix_1Tiles, 0x100, 0},
+	{&gfx_ow_felix_2Tiles, 0x100, 0},
+	{&gfx_ow_felix_3Tiles, 0x100, 0},
+	{&gfx_ow_felix_4Tiles, 0x100, 0},
+	{&gfx_ow_felix_5Tiles, 0x100, 0},
+	{&gfx_ow_felix_6Tiles, 0x100, 0},
+	{&gfx_ow_felix_7Tiles, 0x100, 0},
+	{&gfx_ow_felix_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_felix = {
+	0xffff, 0x1103, 0x11ff, 0x100,
+	16, 32, 0x12, 0x1, 0x0, 0x9,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_felix_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+static graphic overworld_sprite_albus_sprites[] = {
+	{&gfx_ow_albus_0Tiles, 0x100, 0},
+	{&gfx_ow_albus_1Tiles, 0x100, 0},
+	{&gfx_ow_albus_2Tiles, 0x100, 0},
+	{&gfx_ow_albus_3Tiles, 0x100, 0},
+	{&gfx_ow_albus_4Tiles, 0x100, 0},
+	{&gfx_ow_albus_5Tiles, 0x100, 0},
+	{&gfx_ow_albus_6Tiles, 0x100, 0},
+	{&gfx_ow_albus_7Tiles, 0x100, 0},
+	{&gfx_ow_albus_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_albus = {
+	0xffff, 0x1105, 0x11ff, 0x100,
+	16, 32, 0x14, 0x1, 0x0, 0x8,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_albus_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+static graphic overworld_sprite_violet_grunt_f_sprites[] = {
+	{&gfx_ow_violet_grunt_f_0Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_1Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_2Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_3Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_4Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_5Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_6Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_7Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_f_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_violet_grunt_f = {
+	0xffff, 0x110c, 0x11ff, 0x100,
+	16, 32, 0x1a, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_violet_grunt_f_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_violet_grunt_m_sprites[] = {
+	{&gfx_ow_violet_grunt_m_0Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_1Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_2Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_3Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_4Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_5Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_6Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_7Tiles, 0x100, 0},
+	{&gfx_ow_violet_grunt_m_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_violet_grunt_m = {
+	0xffff, 0x110b, 0x11ff, 0x100,
+	16, 32, 0x1a, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_violet_grunt_m_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_primus_sprites[] = {
+	{&gfx_ow_primus_0Tiles, 0x100, 0},
+	{&gfx_ow_primus_1Tiles, 0x100, 0},
+	{&gfx_ow_primus_2Tiles, 0x100, 0},
+	{&gfx_ow_primus_3Tiles, 0x100, 0},
+	{&gfx_ow_primus_4Tiles, 0x100, 0},
+	{&gfx_ow_primus_5Tiles, 0x100, 0},
+	{&gfx_ow_primus_6Tiles, 0x100, 0},
+	{&gfx_ow_primus_7Tiles, 0x100, 0},
+	{&gfx_ow_primus_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_primus = {
+	0xffff, 0x1105, 0x11ff, 0x100,
+	16, 32, 0x14, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_STANDARD_NPC, overworld_sprite_primus_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_hiro_call_bike_sprites[] = {
+	{&gfx_ow_hiro_call_bike_0Tiles, 0x200, 0},
+	{&gfx_ow_hiro_call_bike_1Tiles, 0x200, 0},
+	{&gfx_ow_hiro_call_bike_2Tiles, 0x200, 0},
+	{&gfx_ow_hiro_call_bike_3Tiles, 0x200, 0},
+	{&gfx_ow_hiro_call_bike_4Tiles, 0x200, 0},
+	{&gfx_ow_hiro_call_bike_5Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_hiro_call_bike = {
+	0xffff, 0x1109, 0x1102, 0x200,
+	32, 32, 0x18, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+	OW_ANIM_HIRO_CALL_BIKE, overworld_sprite_hiro_call_bike_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_hiro_call2_sprites[] = {
+	{&gfx_ow_hiro_call2_0Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_1Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_2Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_3Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_4Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_5Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_6Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_7Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call2_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_hiro_call2 = {
+	0xffff, 0x1100, 0x1102, 0x100,
+	16, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_HIRO_CALL2, overworld_sprite_hiro_call2_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_hiro_rod_sprites[] = {
+	{&gfx_ow_hiro_rod_0Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_1Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_2Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_3Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_4Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_5Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_6Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_7Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_8Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_9Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_10Tiles, 0x200, 0},
+	{&gfx_ow_hiro_rod_11Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_hiro_rod = {
+	0xffff, 0x1100, 0x1102, 0x200,
+	32, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+	OW_ANIM_HIRO_ROD, overworld_sprite_hiro_rod_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_hiro_call_sprites[] = {
+	{&gfx_ow_hiro_call_0Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_1Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_2Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_3Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_4Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_5Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_6Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_7Tiles, 0x100, 0},
+	{&gfx_ow_hiro_call_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_hiro_call = {
+	0xffff, 0x1100, 0x1102, 0x100,
+	16, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_HIRO_CALL, overworld_sprite_hiro_call_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_hiro_sit_sprites[] = {
+	{&gfx_ow_hiro_sit_0Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_1Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_2Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_3Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_4Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_5Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_6Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_7Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_8Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_9Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_10Tiles, 0x100, 0},
+	{&gfx_ow_hiro_sit_11Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_hiro_sit = {
+	0xffff, 0x1100, 0x11ff, 0x100,
+	16, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_HIRO_SIT, overworld_sprite_hiro_sit_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_hiro_sprites[] = {
+	{&gfx_ow_hiro_0Tiles, 0x200, 0},
+	{&gfx_ow_hiro_1Tiles, 0x200, 0},
+	{&gfx_ow_hiro_2Tiles, 0x200, 0},
+	{&gfx_ow_hiro_3Tiles, 0x200, 0},
+	{&gfx_ow_hiro_4Tiles, 0x200, 0},
+	{&gfx_ow_hiro_5Tiles, 0x200, 0},
+	{&gfx_ow_hiro_6Tiles, 0x200, 0},
+	{&gfx_ow_hiro_7Tiles, 0x200, 0},
+	{&gfx_ow_hiro_8Tiles, 0x200, 0},
+	{&gfx_ow_hiro_9Tiles, 0x200, 0},
+	{&gfx_ow_hiro_10Tiles, 0x200, 0},
+	{&gfx_ow_hiro_11Tiles, 0x200, 0},
+	{&gfx_ow_hiro_12Tiles, 0x200, 0},
+	{&gfx_ow_hiro_13Tiles, 0x200, 0},
+	{&gfx_ow_hiro_14Tiles, 0x200, 0},
+	{&gfx_ow_hiro_15Tiles, 0x200, 0},
+	{&gfx_ow_hiro_16Tiles, 0x200, 0},
+	{&gfx_ow_hiro_17Tiles, 0x200, 0},
+	{&gfx_ow_hiro_18Tiles, 0x200, 0},
+	{&gfx_ow_hiro_19Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_hiro = {
+	0xffff, 0x1100, 0x1102, 0x200,
+	16, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_HIRO, overworld_sprite_hiro_sprites, 
+	ROTSCALE_TABLE_NULL
+};
 
 static graphic overworld_sprite_mskate_sprites[] = {
     {&gfx_pskate_0Tiles, 0x200, 0},
@@ -548,3 +1129,208 @@ overworld_sprite ow_rubys = {
     OW_ANIM_STANDARD_NPC, overworld_sprite_rubys,
     ROTSCALE_TABLE_NULL
 };
+
+
+//The overworld table
+overworld_sprite *overworld_sprites[] = {
+    	&ow_hiro,
+	&ow_mskate,//(overworld_sprite*) 0x96d865c,
+	&ow_hiro_sit,
+	&ow_hiro_call,
+	&ow_hiro_rod,
+	&ow_hiro_call2,
+	&ow_hiro_call_bike,
+	(overworld_sprite*) 0x83a4428,
+	(overworld_sprite*) 0x83a444c,
+	(overworld_sprite*) 0x83a4470,
+//10
+	(overworld_sprite*) 0x83a4494,
+	(overworld_sprite*) 0x83a4740,
+	(overworld_sprite*) 0x83a47ac,
+	(overworld_sprite*) 0x83a47d0,
+	(overworld_sprite*) 0x83a3b28,
+	(overworld_sprite*) 0x83a3b4c,
+	(overworld_sprite*) 0x83a3b70,
+	(overworld_sprite*) 0x83a3b94,
+	(overworld_sprite*) 0x83a3c00,
+	(overworld_sprite*) 0x83a3c6c,
+//20
+	(overworld_sprite*) 0x83a3cb4,
+	(overworld_sprite*) 0x83a3bb8,
+	(overworld_sprite*) 0x83a3bdc,
+	(overworld_sprite*) 0x83a3c24,
+	(overworld_sprite*) 0x83a3c90,
+	(overworld_sprite*) 0x83a4254,
+	(overworld_sprite*) 0x83a4278,
+	(overworld_sprite*) 0x83a3cd8,
+	(overworld_sprite*) 0x83a3d20,
+	(overworld_sprite*) 0x83a3db0,
+//30        
+	(overworld_sprite*) 0x83a3cfc,
+	(overworld_sprite*) 0x83a3c48,
+	(overworld_sprite*) 0x83a3d44,
+	(overworld_sprite*) 0x83a3df8,
+	(overworld_sprite*) 0x83a42e4,
+	(overworld_sprite*) 0x83a3e1c,
+	(overworld_sprite*) 0x83a4110,
+	(overworld_sprite*) 0x83a40ec,
+	(overworld_sprite*) 0x83a4134,
+	(overworld_sprite*) 0x83a3e40,
+//40
+	(overworld_sprite*) 0x83a3e64,
+	(overworld_sprite*) 0x83a3e88,
+	(overworld_sprite*) 0x83a3eac,
+	(overworld_sprite*) 0x83a3f3c,
+	(overworld_sprite*) 0x83a3f60,
+	(overworld_sprite*) 0x83a3f84,
+	(overworld_sprite*) 0x83a3fa8,
+	&ow_primus, //(overworld_sprite*) 0x83a3d68,
+	(overworld_sprite*) 0x83a3d8c,
+	&ow_violet_grunt_m,//(overworld_sprite*) 0x83a44dc,
+//50
+	&ow_violet_grunt_f,//(overworld_sprite*) 0x83a3f18,
+	(overworld_sprite*) 0x83a483c,
+	(overworld_sprite*) 0x83a3ed0,
+	(overworld_sprite*) 0x83a417c,
+	(overworld_sprite*) 0x83a3fcc,
+	(overworld_sprite*) 0x83a3ff0,
+	(overworld_sprite*) 0x83a4158,
+	(overworld_sprite*) 0x83a4080,
+	(overworld_sprite*) 0x83a3ef4,
+	(overworld_sprite*) 0x83a3dd4,
+//60
+	(overworld_sprite*) 0x83a3b04,
+	(overworld_sprite*) 0x83a4014,
+	(overworld_sprite*) 0x83a4038,
+	(overworld_sprite*) 0x83a405c,
+	(overworld_sprite*) 0x83a41c4,
+	(overworld_sprite*) 0x83a4398,
+	&ow_albus,//(overworld_sprite*) 0x83a43bc,
+	(overworld_sprite*) 0x83a41e8,
+	(overworld_sprite*) 0x83a432c,
+	&ow_felix,//(overworld_sprite*) 0x83a4350,
+//70
+	(overworld_sprite*) 0x83a4374,
+	&ow_tann,//(overworld_sprite*) 0x83a4230,
+	&ow_rival, //(overworld_sprite*) 0x83a46f8,
+	(overworld_sprite*) 0x83a4668,
+	(overworld_sprite*) 0x83a46d4,
+	(overworld_sprite*) 0x83a4524,
+	(overworld_sprite*) 0x83a468c,
+	(overworld_sprite*) 0x83a46b0,
+	&ow_revolutionary,//(overworld_sprite*) 0x83a429c,
+	&ow_faun, //(overworld_sprite*) 0x83a42c0,
+//80
+	&ow_lester,//(overworld_sprite*) 0x83a4548,
+	&ow_mia, //(overworld_sprite*) 0x83a456c,
+	&ow_manus,//(overworld_sprite*) 0x96d7e58,
+	(overworld_sprite*) 0x83a45b4,
+	(overworld_sprite*) 0x83a45d8,
+	(overworld_sprite*) 0x83a4644,
+	&ow_igva,//(overworld_sprite*) 0x96d85f0,
+	(overworld_sprite*) 0x83a45fc,
+	(overworld_sprite*) 0x83a4fb0,
+	&ow_blaise, //(overworld_sprite*) 0x83a4500,
+//90
+	(overworld_sprite*) 0x83a40a4,
+	(overworld_sprite*) 0x83a41a0,
+	(overworld_sprite*) 0x83a420c,
+	(overworld_sprite*) 0x83a47f4,
+	(overworld_sprite*) 0x83a4818,
+	(overworld_sprite*) 0x83a4308,
+	(overworld_sprite*) 0x83a43e0,
+	(overworld_sprite*) 0x83a4404,
+	(overworld_sprite*) 0x83a4884,
+	(overworld_sprite*) 0x83a48a8,
+//100
+	(overworld_sprite*) 0x83a48cc,
+	&ow_egg,//(overworld_sprite*) 0x83a48f0,
+	(overworld_sprite*) 0x83a4914,
+	&ow_faun_young,//(overworld_sprite*) 0x83a4938,
+	(overworld_sprite*) 0x83a495c,
+	&ow_elise,//(overworld_sprite*) 0x83a4980,
+	&ow_larissa,//(overworld_sprite*) 0x83a49a4,
+	(overworld_sprite*) 0x83a49c8,
+	(overworld_sprite*) 0x83a4fd4,
+	(overworld_sprite*) 0x83a4860,
+//110
+        &ow_staralili,//(overworld_sprite*) 0x83a49ec,
+	&ow_voltilamm,//(overworld_sprite*) 0x83a4e48,
+	(overworld_sprite*) 0x83a4eb4,
+	&ow_groudon,//(overworld_sprite*) 0x96d7bd0,
+	(overworld_sprite*) 0x83a4ed8,
+	(overworld_sprite*) 0x83a4f44,
+	(overworld_sprite*) 0x83a4f68,
+	(overworld_sprite*) 0x83a4efc,
+	(overworld_sprite*) 0x83a4a10,
+	(overworld_sprite*) 0x83a4a34,
+//120
+        (overworld_sprite*) 0x83a4f20,
+	(overworld_sprite*) 0x83a4a58,
+	(overworld_sprite*) 0x83a4a7c,
+	(overworld_sprite*) 0x83a4aa0,
+	(overworld_sprite*) 0x83a4ac4,
+	(overworld_sprite*) 0x83a4ae8,
+	(overworld_sprite*) 0x83a4b0c,
+	(overworld_sprite*) 0x83a4b30,
+	(overworld_sprite*) 0x83a4b54,
+	(overworld_sprite*) 0x83a4b78,
+//130	
+        (overworld_sprite*) 0x83a4b9c,
+	(overworld_sprite*) 0x83a4bc0,
+	(overworld_sprite*) 0x83a4be4,
+	&ow_regirock,//(overworld_sprite*) 0x83a4c08,
+	&ow_regice,//(overworld_sprite*) 0x83a4e6c,
+	&ow_registeel,//(overworld_sprite*) 0x83a4c2c,
+	(overworld_sprite*) 0x83a4c50,
+	&ow_moltres,//(overworld_sprite*) 0x96d7ca8,
+	(overworld_sprite*) 0x83a4c98,
+	(overworld_sprite*) 0x83a4d28,
+//140	
+        (overworld_sprite*) 0x83a4d4c,
+	(overworld_sprite*) 0x83a4d70,
+	(overworld_sprite*) 0x83a4db8,
+	(overworld_sprite*) 0x83a4d94,
+	(overworld_sprite*) 0x83a4ddc,
+	(overworld_sprite*) 0x83a4e00,
+	(overworld_sprite*) 0x83a4e24,
+	(overworld_sprite*) 0x83a4e90,
+	(overworld_sprite*) 0x83a4cbc,
+	(overworld_sprite*) 0x83a4ce0,
+//150	
+        &ow_deoxys_normal,//(overworld_sprite*) 0x83a4d04,
+	(overworld_sprite*) 0x83a4ff8,
+	&ow_bbship,//(overworld_sprite*) 0x96d8584,
+	&ow_mpirate,//(overworld_sprite*) 0x96d8518,
+        &ow_shape_animal,
+	&ow_shape_human,//(overworld_sprite*) 0x96d84ac,
+	&ow_shape_tail,//(overworld_sprite*) 0x96d8440,
+	&ow_shape_snake,//(overworld_sprite*) 0x96d83d4,
+	&ow_shape_winsect,//(overworld_sprite*) 0x96d8368,
+	&ow_shape_winged,//(overworld_sprite*) 0x96d82fc,
+//160
+	&ow_shape_insect,//(overworld_sprite*) 0x96d8290,
+	&ow_shape_head,//(overworld_sprite*) 0x96d8224,
+	&ow_shape_arms,//(overworld_sprite*) 0x96d81b8,
+	&ow_shape_legs,//(overworld_sprite*) 0x96d814c,
+	&ow_shape_tentacles,//(overworld_sprite*) 0x96d80e0,
+	&ow_shape_fish,//(overworld_sprite*) 0x96d8074,
+	&ow_shape_ball,//(overworld_sprite*) 0x96d8008,
+	&ow_shape_multi,//(overworld_sprite*) 0x96d7f9c,
+	&ow_mistral,
+	&ow_altaria,
+//170	
+        &ow_cloudrider_fem,
+        &ow_cloudrider_male,
+        &ow_diserakt,
+        &ow_rubys
+
+};
+
+
+overworld_sprite *overworld_get (u8 picture){
+    if(picture >= 0xF0){
+        return overworld_sprites[*vardecrypt((u16)(0x4010+picture-0xF0))];
+    }
+    return overworld_sprites[picture];
+}

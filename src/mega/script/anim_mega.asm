@@ -99,8 +99,8 @@ anim:
 		.byte 0xe, 0x0
 	
 	.byte 0x3
-	.word (anim_task_cry)
-	.byte 0x2, 0x0 @cry of pokemon through callback
+        .word anim_task_cry
+        .hword 2 @cry of pokemon through callback
 	.byte 0x5 @waitstate
 	.byte 0xb, 0x2
 	
