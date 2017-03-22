@@ -1,7 +1,0 @@
-.string str_version_alpha_1_0 GER
-    =Herzlichen Glückwunsch!\nDeine Version wurde von\l\b\02.X auf \b\03.X\lgeupdated.\pSetze dein Abenteuer im Osten\nder Felsigen Ödnis fort.
-.end
-
-.string str_version_alpha_1_0 EN
-    =Congratulations!\nYour version was updated from\l\b\02.X to \b\03.X.\pContinue your adventure in the east\nof the Rocky Desolatuion.
-.end
