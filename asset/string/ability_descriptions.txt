@@ -1,0 +1,27 @@
+.string str_ability_description_r_kaiseraura GER
+    =Verh. Wasser Att. und schüchtert ein
+.end
+
+.string str_ability_description_r_kaiseraura EN
+    =Prevents Water moves and intimedates
+.end
+
+.string str_ability_description_b_kaiseraura GER
+    =Verh. Feuer Att. und schüchtert ein
+.end
+
+.string str_ability_description_b_kaiseraura EN
+    =Prevents Fire moves and intimedates
+.end
+
+.string str_ability_description_g_kaiseraura GER
+    =Verh. elem. Att. und schüchtert ein
+.end
+
+.string str_ability_description_g_kaiseraura EN
+    =Prevents elem. moves and intimedates
+.end
+
+
+
+

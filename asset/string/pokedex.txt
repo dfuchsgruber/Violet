@@ -1,0 +1,11 @@
+.string str_pokedex_none _
+    =\xFF
+.end
+
+.string str_pokedex_mamutel GER
+    =Die beeindruckenden Sto\$sz\$aehne dieser\nPok\emon sind aus Eis. Nach der Eiszeit\nnahm ihre Population ab.
+.end
+
+.string str_pokedex_mamutel EN
+    =This Pok\emon's impressive\ntusks are fully made of ice.\nAfter the ice age their\npopulation decreased.
+.end

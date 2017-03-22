@@ -1,0 +1,15 @@
+.string str_tv_albus GER
+        =... Es läuft eine Exklusiv-Sendung\nder Theto-Polizei:\pB\$uerger Thetos, der gefährliche\nAnf\$uehrer der Revolutionsbewegung\lAblus wurde nahe Kaskada\lgesichtet.\pEr gilt als gefährlichste\nPers\$oenlichkeit des Kontinents.\pAls ehemaliges Mitglied der Top\nVier ist grö\$ste Vorsicht geboten.\pJeder Hinweis, der zur Ergreifung\ndienlich ist, wird hoch belohnt.\pHalten Sie sich dennoch fern von\njeder gr\$uen gekleideten Gestalt!
+.end
+
+.string str_tv_albus EN
+        =... An exclusive report of the\nTheto police department:\lDear citizens, the most dangerous\lleader of the Revolutionary\lMovement Albus is claimed to be\lseen in Kaskada.\pHe is known for being the most\nwanted personality on the entire\lcontinent.\pAs former member of the Elite Four\nhe is to be met with greatest\lcaution.\pEvery hint leading to his capture\nwill be highly rewarded.\pIn general stay away from every\ngreen cloaked person!
+.end
+
+.string str_tv_violet GER
+        =... Es läuft eine Theto-Polizei\nSondersendung:\pOberwachtmeister Harren: Lassen\nSie uns über die Organsation Team\lViolet sprechen.\pDie verbrecherische Organisation\nist in drei Fraktionen unterteilt,\lan deren Spitze jeweils m\$aechtige\lVorst\$aende stehen.\pReporter: Drei Vorst\$aende also?\nUnd wer sind diese Verbrecher?\pOberwachtmeister Harren:\nDie dritte Division wird von Rin\langeführt, einer ber\$uechtigten\lGanovin, die als \$aeu\$sert brutal\lgilt.\pDie zweite Division leitet\nMistral, ein Empork\$oemmling, der\lsich zuvor als Mitglied der\lRevolution einen Namen gemacht\lhat.\pEr gilt wegen seiner berechnenden\nArt als besonders gefährlich.\pReporter: Und wer befehligt die\nerste Division?\pOberwachtmeister Harren: Nun, das\nist eine gute Frage.\pUnsere arbeiten Bereits an der\nL\$oesung dieses R\$aetsels.\lGer\$uechten zufolge soll dieser\lomin\$oese erste Vorstand auch der\lst\$aerkste in den Reihen der\lOrganisation sein.\pLeider aber hält er sich, ebenso\nwie der An\$uehrer der Bande, sehr\lbedeckt.
+.end
+
+.string str_tv_violet EN
+        =... An exclusive report of the\nTheto police department:\pChief Harren: Let us talk about\nthe criminal organisation Team\lViolet.\pThey are organzied as three\nseperate divisions led by an\lpowerfull Admin.\pReporter: So three Admins? And who\nare those dangerous criminals?\pChief Harren: The third division\nis led by Rin, an infamous villain\lthat is said be extremly brutal.\pThe second Admins is called\nMistral, an upstart that before\lwas part of the Revolutionary\lMovement. Because of his\lcalculating nature he is claimed\lto be most dangerous.\pReporter: And who is in charge of\nthe first division?\pChief Harren: Well, that we do not\nknow.\pOur staff is currently engaged to\nsolve this puzzle.\pRumors say the first Admin also is\nto be the most powerfull among\lthem.\pUnfortunatley he as well as Team\nViolets prime leader is hiding in\lthe shadows, waiting.
+.end
