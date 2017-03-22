@@ -1,0 +1,743 @@
+@ Map Assembly created by map2agb at 20.03.2017 15:29:13
+@ Section: MapHeader
+.align 2
+.global mapheader_03_00
+mapheader_03_00:
+	.word mapfooter_03_00
+	.word mapevents_03_00
+	.word mapscriptheader_03_00
+	.word mapconnection_header_03_00
+	.hword 300
+	.hword 78
+	.byte 88
+	.byte 0
+	.byte 2
+	.byte 1
+	.hword 1537
+	.byte 0
+	.byte 0
+
+@ Section: MapFooter
+.align 2
+.global mapfooter_03_00
+mapfooter_03_00:
+	.word 24
+	.word 20
+	.word mapborderblocks_03_00
+	.word mapblocks_03_00
+	.word tileset_082D49B8_primary
+	.word tileset_082D49D0_secondary
+	.byte 2
+	.byte 2
+	.hword 0
+
+@ Section: BorderBlocks
+.align 2
+.global mapborderblocks_03_00
+mapborderblocks_03_00:
+	.hword 28
+	.hword 29
+	.hword 20
+	.hword 21
+
+@ Section: MapBlocks
+.align 2
+.global mapblocks_03_00
+mapblocks_03_00:
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1055
+	.hword 12966
+	.hword 12967
+	.hword 1054
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1052
+	.hword 1053
+	.hword 1044
+	.hword 1045
+	.hword 1060
+	.hword 1061
+	.hword 1060
+	.hword 1061
+	.hword 1060
+	.hword 1061
+	.hword 1060
+	.hword 1061
+	.hword 1060
+	.hword 1063
+	.hword 12974
+	.hword 12975
+	.hword 1062
+	.hword 1061
+	.hword 1060
+	.hword 1061
+	.hword 1060
+	.hword 1061
+	.hword 1060
+	.hword 1061
+	.hword 1044
+	.hword 1045
+	.hword 1052
+	.hword 1055
+	.hword 12966
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12933
+	.hword 12934
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12943
+	.hword 1054
+	.hword 1053
+	.hword 1044
+	.hword 1047
+	.hword 12974
+	.hword 12950
+	.hword 12950
+	.hword 12929
+	.hword 12930
+	.hword 12930
+	.hword 12930
+	.hword 12931
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12929
+	.hword 12930
+	.hword 12930
+	.hword 12930
+	.hword 12931
+	.hword 12950
+	.hword 12950
+	.hword 12951
+	.hword 1046
+	.hword 1045
+	.hword 1052
+	.hword 1055
+	.hword 12974
+	.hword 12999
+	.hword 12958
+	.hword 1673
+	.hword 1674
+	.hword 1674
+	.hword 1674
+	.hword 1675
+	.hword 12998
+	.hword 12950
+	.hword 12999
+	.hword 12958
+	.hword 1673
+	.hword 1674
+	.hword 1674
+	.hword 1674
+	.hword 1675
+	.hword 12998
+	.hword 12950
+	.hword 12951
+	.hword 1054
+	.hword 1053
+	.hword 1044
+	.hword 1047
+	.hword 12974
+	.hword 12951
+	.hword 12305
+	.hword 1681
+	.hword 1683
+	.hword 1682
+	.hword 1682
+	.hword 1684
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 12305
+	.hword 1681
+	.hword 1683
+	.hword 1682
+	.hword 1682
+	.hword 1684
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 1046
+	.hword 1045
+	.hword 1052
+	.hword 1055
+	.hword 12974
+	.hword 12951
+	.hword 12965
+	.hword 1688
+	.hword 1689
+	.hword 1690
+	.hword 1691
+	.hword 1692
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 12965
+	.hword 1688
+	.hword 1689
+	.hword 1690
+	.hword 1691
+	.hword 1692
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 1054
+	.hword 1053
+	.hword 1044
+	.hword 1047
+	.hword 12974
+	.hword 12951
+	.hword 1709
+	.hword 1696
+	.hword 1699
+	.hword 1698
+	.hword 1697
+	.hword 1700
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 1709
+	.hword 1696
+	.hword 1699
+	.hword 1698
+	.hword 1697
+	.hword 1700
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 1046
+	.hword 1045
+	.hword 1052
+	.hword 1055
+	.hword 12974
+	.hword 12991
+	.hword 12942
+	.hword 12990
+	.hword 12950
+	.hword 12991
+	.hword 12942
+	.hword 12942
+	.hword 12990
+	.hword 12950
+	.hword 12991
+	.hword 12942
+	.hword 12990
+	.hword 12950
+	.hword 12991
+	.hword 12942
+	.hword 12942
+	.hword 12990
+	.hword 12950
+	.hword 12951
+	.hword 1054
+	.hword 1053
+	.hword 1044
+	.hword 1047
+	.hword 12974
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12968
+	.hword 12969
+	.hword 12969
+	.hword 12969
+	.hword 12969
+	.hword 12989
+	.hword 12981
+	.hword 12950
+	.hword 12951
+	.hword 1046
+	.hword 1045
+	.hword 1052
+	.hword 1055
+	.hword 12974
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12999
+	.hword 1712
+	.hword 1713
+	.hword 1713
+	.hword 1713
+	.hword 1713
+	.hword 1715
+	.hword 1716
+	.hword 13006
+	.hword 12951
+	.hword 1054
+	.hword 1053
+	.hword 1044
+	.hword 1047
+	.hword 12974
+	.hword 12950
+	.hword 12999
+	.hword 1668
+	.hword 1668
+	.hword 1668
+	.hword 1668
+	.hword 1026
+	.hword 12998
+	.hword 12950
+	.hword 12951
+	.hword 1720
+	.hword 1721
+	.hword 1721
+	.hword 1721
+	.hword 1721
+	.hword 1723
+	.hword 1724
+	.hword 12974
+	.hword 12951
+	.hword 1046
+	.hword 1045
+	.hword 1052
+	.hword 1055
+	.hword 12974
+	.hword 12950
+	.hword 12951
+	.hword 12292
+	.hword 12292
+	.hword 12292
+	.hword 12292
+	.hword 12305
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 1728
+	.hword 1729
+	.hword 1744
+	.hword 1730
+	.hword 1731
+	.hword 1732
+	.hword 1733
+	.hword 12974
+	.hword 12951
+	.hword 1054
+	.hword 1053
+	.hword 1044
+	.hword 1047
+	.hword 12974
+	.hword 12950
+	.hword 12951
+	.hword 12292
+	.hword 12292
+	.hword 12292
+	.hword 12292
+	.hword 12296
+	.hword 12949
+	.hword 12950
+	.hword 12951
+	.hword 1736
+	.hword 1737
+	.hword 1752
+	.hword 1708
+	.hword 1739
+	.hword 1740
+	.hword 1741
+	.hword 12974
+	.hword 12951
+	.hword 1046
+	.hword 1045
+	.hword 1052
+	.hword 1055
+	.hword 12974
+	.hword 12950
+	.hword 12951
+	.hword 1027
+	.hword 12297
+	.hword 12305
+	.hword 12297
+	.hword 12305
+	.hword 12949
+	.hword 12950
+	.hword 12991
+	.hword 12942
+	.hword 12942
+	.hword 12990
+	.hword 12950
+	.hword 12991
+	.hword 12942
+	.hword 12942
+	.hword 12940
+	.hword 12951
+	.hword 1054
+	.hword 1053
+	.hword 1044
+	.hword 1047
+	.hword 12974
+	.hword 12950
+	.hword 12991
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12942
+	.hword 12990
+	.hword 12950
+	.hword 12999
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12998
+	.hword 12950
+	.hword 12951
+	.hword 1046
+	.hword 1045
+
+	.hword 1052
+	.hword 1055
+	.hword 12974
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12944
+	.hword 1671
+	.hword 1671
+	.hword 1671
+	.hword 1026
+	.hword 1671
+	.hword 1671
+	.hword 12936
+	.hword 12950
+	.hword 12951
+	.hword 1054
+	.hword 1053
+
+	.hword 1044
+	.hword 1047
+	.hword 12982
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 4817
+	.hword 4819
+	.hword 4820
+	.hword 4818
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12950
+	.hword 12951
+	.hword 1046
+	.hword 1045
+
+	.hword 1052
+	.hword 1055
+	.hword 12305
+	.hword 12305
+	.hword 12297
+	.hword 12305
+	.hword 12297
+	.hword 4394
+	.hword 4395
+	.hword 4395
+	.hword 4396
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12958
+	.hword 12959
+	.hword 1054
+	.hword 1053
+
+	.hword 1044
+	.hword 1047
+	.hword 12302
+	.hword 12303
+	.hword 12302
+	.hword 12303
+	.hword 12296
+	.hword 4394
+	.hword 4395
+	.hword 4395
+	.hword 4396
+	.hword 12305
+	.hword 12296
+	.hword 12305
+	.hword 12296
+	.hword 12305
+	.hword 12296
+	.hword 12305
+	.hword 12302
+	.hword 12303
+	.hword 12302
+	.hword 12303
+	.hword 1046
+	.hword 1045
+
+@ Section: MapEvents
+.align 2
+.global mapevents_03_00
+mapevents_03_00:
+	.byte 3
+	.byte 3
+	.byte 3
+	.byte 5
+	.word mapevents_persons_03_00
+	.word mapevents_warps_03_00
+	.word mapevents_script_triggers_03_00
+	.word mapevents_signs_03_00
+
+@ Section: MapEvents, Persons
+.align 2
+.global mapevents_persons_03_00
+mapevents_persons_03_00:
+@//new structure
+	.byte 1
+	.byte 23
+	.byte 0
+	.byte 0
+	.hword 3
+	.hword 10
+	.byte 3
+	.byte 2
+	.byte 65
+	.byte 0
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x081656C4
+	.hword 0
+	.hword 0
+@//new structure
+	.byte 2
+	.byte 27
+	.byte 0
+	.byte 0
+	.hword 13
+	.hword 17
+	.byte 3
+	.byte 2
+	.byte 38
+	.byte 0
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x08165797
+	.hword 0
+	.hword 0
+@//new structure
+	.byte 3
+	.byte 71
+	.byte 0
+	.byte 0
+	.hword 10
+	.hword 8
+	.byte 3
+	.byte 7
+	.byte 17
+	.byte 0
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x00000000
+	.hword 44
+	.hword 0
+
+@ Section: MapEvents, Warps
+.align 2
+.global mapevents_warps_03_00
+mapevents_warps_03_00:
+@//new structure
+	.hword 6
+	.hword 7
+	.byte 0
+	.byte 1
+	.byte 0
+	.byte 4
+@//new structure
+	.hword 15
+	.hword 7
+	.byte 0
+	.byte 0
+	.byte 2
+	.byte 4
+@//new structure
+	.hword 16
+	.hword 13
+	.byte 0
+	.byte 0
+	.byte 3
+	.byte 4
+
+@ Section: MapEvents, Warps
+.align 2
+.global mapevents_script_triggers_03_00
+mapevents_script_triggers_03_00:
+@//new structure
+	.hword 12
+	.hword 1
+	.byte 3
+	.byte 0
+	.hword 16464
+	.hword 0
+	.byte 0
+	.byte 0
+	.word 0x08165555
+@//new structure
+	.hword 13
+	.hword 1
+	.byte 3
+	.byte 0
+	.hword 16464
+	.hword 0
+	.byte 0
+	.byte 0
+	.word 0x08165561
+@//new structure
+	.hword 13
+	.hword 2
+	.byte 3
+	.byte 0
+	.hword 16386
+	.hword 1
+	.byte 0
+	.byte 0
+	.word 0x081657E3
+
+@ Section: MapEvents, Signs
+.align 2
+.global mapevents_signs_03_00
+mapevents_signs_03_00:
+@//new structure
+	.hword 16
+	.hword 16
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x081657A0
+@//new structure
+	.hword 4
+	.hword 7
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x081657B8
+@//new structure
+	.hword 13
+	.hword 7
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x081657C1
+@//new structure
+	.hword 9
+	.hword 11
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x081657CA
+@//new structure
+	.hword 5
+	.hword 14
+	.byte 0
+	.byte 0
+	.hword 0
+	.word 0x081657D3
+
+@ Section: MapScriptsHeader
+.global mapscriptheader_03_00
+mapscriptheader_03_00:
+	.byte 3
+	.word 0x081653CD
+	.byte 2
+	.word mapscript_03_00AfterStepOrEnter
+	.byte 0
+
+@ MapScript Entry, Type AfterStepOrEnter
+.global mapscript_03_00AfterStepOrEnter
+mapscript_03_00AfterStepOrEnter:
+	.hword 16464
+	.hword 0
+	.word 0x08165440
+
+
+@ Section: MapConnections 
+.align 2
+.global mapconnection_header_03_00
+mapconnection_header_03_00:
+	.word 2
+	.word mapconnections_03_00
+
+.global mapconnections_03_00
+.align 2
+mapconnections_03_00:
+@//new structure
+	.word 2
+	.word 0
+	.byte 3
+	.byte 19
+	.byte 0
+	.byte 0
+@//new structure
+	.word 1
+	.word 0
+	.byte 3
+	.byte 39
+	.byte 0
+	.byte 0
+

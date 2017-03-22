@@ -2,20 +2,20 @@
 
 import sys
 
-def decomp(data):
-    """ Decomps lz77 compressed data specified by GBATEK """
-    if (data[0] >> 4) & 0xF != 1: raise Exception("Lz77 Error: Data is not lz77 compressed")
-    size = data[1] + (data[2] << 8) + (data[3] << 16) #LE read of bit 8-31 of size field
-    out = [33] * size
-    off = 4 #Data starts at offset = 0x4
+def decomp(rom, off):
+    """ Decomps lz77 compressed data specified by GBATEK, returns an uint8 list"""
+    if (rom.u8(off) >> 4) & 0xF != 1: raise Exception("Lz77 Error: Data is not lz77 compressed")
+    size = rom.u8(off + 1) + (rom.u8(off + 2) << 8) + (rom.u8(off + 3) << 16) #LE read of bit 8-31 of size field
+    out = [0] * size
+    off += 4 #Data starts at offset = 0x4
     dst = 0
     while size:
-        enc = data[off]
+        enc = rom.u8(off)
         off += 1
         for i in range(7, -1, -1):
             if enc & (1 << i):
                 #Reference to literal chain
-                ref = data[off] + (data[off+1] << 8)
+                ref = rom.u8(off) + (rom.u8(off+1) << 8)
                 off += 2
 
                 #Decode literal Reference
@@ -35,7 +35,7 @@ def decomp(data):
 
             else:
                 #New literal, raw dump
-                out[dst] = data[off]
+                out[dst] = rom.u8(off)
                 off += 1
                 dst += 1
                 size -= 1
