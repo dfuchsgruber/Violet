@@ -28,7 +28,7 @@ mega_table_entry *get_mega_if_can_mega_evolve(battler *b);
 
 void cb_mega_anim(u8 self) {
 
-    big_callback* cself = CALLBACK_OBJECT(self);
+    big_callback* cself = &big_callbacks[self];
 
     //execute bsc if bsc active
     u8 battle_state = *((u8*) 0x02023BE3);
@@ -36,7 +36,7 @@ void cb_mega_anim(u8 self) {
         bsc_executer();
     }
 
-
+    
 
 
     //at frame 0x0: clear the message box
@@ -53,6 +53,8 @@ void cb_mega_anim(u8 self) {
         //we copy our string into the ram buffer
         u8* ram_buf = (u8*) 0x02021D18;
         u8 slot = (u8) cself->params[1];
+        
+        //debug1(&big_callbacks[self]);
 
         u8* src = (cself->params[0] == 540) ? str_mega_evolved : str_mega_reacts;
 
@@ -159,12 +161,17 @@ void cb_mega_anim(u8 self) {
 
 
     if (cself->params[0] == 800) {
+        
+        u8 slot = (u8) cself->params[1];
+        mega_disable_blurr(slot);
+        
         *((u8*) 0x02023BE3) = (u8) (cself->params[3]);
         remove_big_callback(self);
+        //dprintf("removed callback with slot %d\n", 8);
+        //dprintf("executing ability_management with %d\n", 4);
 
-
+        dprintf("Hello world\nLinebreak:%d", 57);
         //we know execute ability management for battle enter
-        u8 slot = (u8) cself->params[1];
         *((u8*) 0x02023D6B) = slot; //active index is current slot
         ability_management(0, slot, 0, 0, 0);
 

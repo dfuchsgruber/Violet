@@ -20,7 +20,7 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
     pid poke_pid = {get_pokemons_attribute(&player_pokemon[*pokemenu_selected_pokemon_team_index], ATTRIBUTE_PID, 0)};
     u8 current_nature = poke_pid.fields.nature;
     u32 current_positive = current_nature / 5;
-    u32 current_negative = __umod(current_nature, 5);
+    u32 current_negative = __aeabi_uidivmod(current_nature, 5);
 
 
     bool possible = false;

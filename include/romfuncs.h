@@ -92,7 +92,7 @@ void dma3_controller_reset();
 void bg_virtual_map_displace(u8 bg_id, u16 value, int mode);
 void bg_virtual_set_displace(u8 bg_id, u16 value, int mode);
 //
-u32 __umod(u32 dividend, u32 divisor);
+u32 __aeabi_uidivmod(u32 dividend, u32 divisor);
 int __sqrt(int x);
 script npc_get_script(u8 npc_id);
 u16 trainer_get_unaligned_hword(void *src);

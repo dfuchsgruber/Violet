@@ -50,3 +50,16 @@
         ldr r1, =mega_reset | 1
         bx r1
         .pool 
+
+//prevent pokemon to blur into white after wandler transformation
+.org 0x08034CF0
+        mov r1, r9
+        ldr r0, =hook_wandler_blurr_0 | 1
+        bx r0
+        .pool
+
+.org 0x08034EFC
+        mov r1, r9
+        ldr r0, =hook_wandler_blurr_1 | 1
+        bx r0
+        .pool

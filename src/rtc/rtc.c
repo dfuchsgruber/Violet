@@ -110,7 +110,7 @@ void rtc_chip_wait() {
 
     int i = 100;
     while (i--) {
-        asm volatile(
+        __asm__ __volatile__(
                 "nop\n\r"
                 );
     }

@@ -21,3 +21,29 @@ class Agbrom:
 
     def array(self, off, size):
         return [self.u8(off + i) for i in range (0, size)]
+
+    def findall(self, bytes, unaligned=False):
+        results = []
+        position = -1
+        bytes = bytearray(bytes)
+        while True:
+            position = self.bytes.find(bytes, position+1)
+            if position >= 0:
+                if position % 4 == 0 or unaligned:
+                    results.append(position)
+                else:
+                    print("Warning. Found unaligned reference at "+hex(position))
+                    
+            else:
+                break
+        return results
+    
+    def get_references(self, offset):
+        offset += 0x08000000
+        bytes = [
+            offset & 0xFF,
+            (offset >> 8) & 0xFF,
+            (offset >> 16) & 0xFF,
+            (offset >> 24) & 0xFF
+        ]
+        return self.findall(bytes)

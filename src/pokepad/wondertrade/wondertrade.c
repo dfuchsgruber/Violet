@@ -151,7 +151,7 @@ u16 wondertrade_select_pokemon() {
     u32 table_size = 0;
     while (wondertrade_pokemon[table][table_size] != 0xFFFF)
         table_size++;
-    return wondertrade_pokemon[table][__umod(random_change_seed(), table_size)];
+    return wondertrade_pokemon[table][__aeabi_uidivmod(random_change_seed(), table_size)];
 }
 
 u16 wondertrade_next_seed() {
@@ -163,7 +163,7 @@ void wondertrade_spawn_pokemon() {
 
     //first we find a OT name
     u8 *ot_name = species == POKEMON_MEW ? str_wondertrade_name0 :
-            wondertrade_ot_names[__umod(random_change_seed(), 36)];
+            wondertrade_ot_names[__aeabi_uidivmod(random_change_seed(), 36)];
 
     u32 tid = 1;
     int i = 0;

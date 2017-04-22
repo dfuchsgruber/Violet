@@ -48,11 +48,11 @@ int sin_16(int x){
     if(x < 0){
         x += (((-x) >> 16)+1) << 16;
     } 
-    x = (int)__umod((u32)x, 0x10000);
+    x = (int)__aeabi_uidivmod((u32)x, 0x10000);
     //x is a positive value in range[0, 0x10000)
     int lower = x >> 8;
     int interpol_lower = sin_lo_table[lower];
-    int interpol_higher = sin_lo_table[__umod((u32)lower+1, 0x100)];
+    int interpol_higher = sin_lo_table[__aeabi_uidivmod((u32)lower+1, 0x100)];
     int delta = interpol_higher - interpol_lower;
     int fractional = x & 0xFF;
     return interpol_lower + ((delta * fractional) >> 8);

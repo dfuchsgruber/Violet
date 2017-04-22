@@ -18,10 +18,6 @@
 .org 0x08111002
     mov r0, #0 //0 events to be loaded
 
-
-//test map2agb 3.0 map
-.org 0x8352218
-    .word mapheader_03_00
-
-.org 0x0834EBE4
-    .word mapfooter_03_00
+.org 0x081656C4
+    .byte 0x5
+    .word script_test

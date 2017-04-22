@@ -13,6 +13,7 @@ extern "C" {
 #endif
 
 #include "types.h"
+#include <stdarg.h>
     
 #define ERR_UNKOWN_GRASS_ANIMATION 0
 #define ERR_TAN_16_COS_16_EQUALS_ZERO 1 
@@ -23,6 +24,7 @@ extern "C" {
 #define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_1 6
 #define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_2 7
 #define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_3 8
+#define ERR_MEGA_CALLBACK_NOT_ACCESSIBLE 9
     
     
     void debug1(int a);
@@ -33,6 +35,9 @@ extern "C" {
     void err(int e);
     void err2(int e, int p);
 
+    void dprintf(const char * str, ...);
+    
+    
 
 #ifdef	__cplusplus
 }

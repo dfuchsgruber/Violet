@@ -115,7 +115,7 @@ animk:
 	
 .align 2
 templ:
-	.hword 0xAAA1, 0xAAA1
+	.hword 0xAAA0, 0xAAA1
 	.word 0x083AC944
 	.word 0x08231BC0
 	.word 0

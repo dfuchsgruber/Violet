@@ -463,6 +463,11 @@ extern "C" {
     }attack;
 
     
+    typedef struct{
+        u8 attacker;
+        u8 defender;
+        u8 multiplicator;
+    }type_effectiveness;
     
     attack attacks[ATTACK_CNT];
 

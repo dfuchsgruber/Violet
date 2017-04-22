@@ -12,7 +12,7 @@ extern const unsigned short gfx_mega_symbolTiles[];
 extern const unsigned short gfx_mega_symbolPal[];
 
 static sprite final_oam = {
-    0x0, 0x4000, 0x0, 0x0
+    ATTR0_SHAPE_VERTICAL, ATTR1_SIZE_8_16, 0x0, 0x0
 };
 
 static oam_template symbol_template = {
@@ -26,7 +26,7 @@ static oam_template symbol_template = {
 
 };
 
-static graphic symbol_graphic = {gfx_mega_symbolTiles, 0x100, 0xADDD};
+static graphic symbol_graphic = {gfx_mega_symbolTiles, 0x200, 0xADDD};
 
 void spawn_symbols(u8 state) {
     if (state == 2) {
@@ -50,6 +50,16 @@ void spawn_symbols(u8 state) {
             oams[oam_id].private[1] = tile;
         }
     }
+}
+
+u16 mega_symbol_tile_displacement(u16 species){
+    if(species == POKEMON_GROUDON_REGENT){
+        return 2;
+    }
+    //TODO: When including other regents use their crown
+    //kyogre: return 4;
+    //rayquaza: return 6;
+    return 0;
 }
 
 void symbol_callback(oam_object *self) {
@@ -79,7 +89,7 @@ void symbol_callback(oam_object *self) {
 
         if (!(oams[hp_oam].bitfield2 & 4)) { //checking if the healthbox is invisible (indicated by bitfield2 bit 2
 
-            int dxmin = is_opponent(slot) ? 36 : 42; //the x value to subtract from the start to position the icon rightly
+            int dxmin = is_opponent(slot) ? 30 : 36; //the x value to subtract from the start to position the icon rightly
 
             //mirror the hp_box_priority
             u16 priority_bits = (oams[hp_oam].final_oam.attr2 & 0xC00);
@@ -92,7 +102,7 @@ void symbol_callback(oam_object *self) {
 
             self->bitfield2 = (u8) (self->bitfield2 & (~0x4)); //visible
 
-            u16 base_tile = (u16) (self->private[1]+ (is_emperor ? 4 : 0));
+            u16 base_tile = (u16) (self->private[1]+ mega_symbol_tile_displacement(species));
 
             self->final_oam.attr2 = (u16) ((self->final_oam.attr2 & (~0x3FF)) | base_tile);
 

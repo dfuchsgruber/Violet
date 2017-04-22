@@ -31,21 +31,3 @@
 
 .org 0x080C3EF4
     .word worldmap0_namespace_position_assoc
-
-//testscript
-.org 0x081656C4
-     .byte 0x79
-     .halfword 0x196
-     .byte 50
-     .halfword 0
-     .word 0, 0
-     .byte 0
-     
-     .byte 0x29
-     .halfword 0x927
-     
-     .byte 0x44
-     .halfword 0x169
-     .halfword 1
-
-     .byte 2

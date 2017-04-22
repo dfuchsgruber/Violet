@@ -12,7 +12,8 @@ ldr r0, =cb_mega_anim
 bl search_if_func_is_already_a_cb
 cmp r0, #0xFF
 bne skip_0
-mov r0, #0
+mov r0, #9
+bl err
 skip_0:
 
 mov r1, #0x28

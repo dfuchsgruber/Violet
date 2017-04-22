@@ -1,4 +1,7 @@
 .global anim_task_sprite_update
+.global hook_wandler_blurr_0
+.global hook_wandler_blurr_1
+.global mega_disable_blurr
 
 .align 2
 .thumb
@@ -12,7 +15,8 @@ ldr r0, =cb_mega_anim
 bl search_if_func_is_already_a_cb
 cmp r0, #0xFF
 bne skip_0
-mov r0, #0
+mov r0, #9
+bl err
 skip_0:
 mov r1, #0x28
 mul r0, r1
@@ -37,6 +41,7 @@ mov r0, r5
 mov r1, r5
 mov r2, #0
 bl load_graphic_for_wandler
+
 
 
 @move oam away
@@ -109,3 +114,59 @@ bx r3
 search_if_func_is_already_a_cb:
 ldr r1, =0x80775ED
 bx r1
+
+.align 2
+.thumb_func
+.thumb
+
+hook_wandler_blurr_0:
+    mov r0, r10
+    bl _wandler_blurr
+    ldr r0, =0x08034CFC | 1
+    bx r0
+
+_wandler_blurr:
+    push {r4-r5, lr}
+    mov r4, r0
+    mov r1, r5
+    @//decide weather to blurr or not to blurr the pkmn
+    ldr r0, =cb_mega_anim
+    bl search_if_func_is_already_a_cb
+    cmp r0, #0xFF
+    bne no_blurr
+
+    @//White blurr for wandler
+    ldr r3, =0x7FFF
+    mov r0, r4
+    mov r1, #16
+    mov r2, #6
+    bl color_blend
+    b no_blurr
+
+
+no_blurr:
+    pop {r4-r5}
+    pop {r0}
+    bx r0
+
+hook_wandler_blurr_1:
+    mov r0, r10
+    bl _wandler_blurr
+    ldr r0, =0x08034F08 | 1
+    bx r0
+
+.align 2
+.thumb
+
+.thumb_func
+
+mega_disable_blurr:
+    @//disable blurr
+    ldr r2, =0x02024018 @pokemon_sprites_data
+    ldr r1, [r2]
+    ldr r2, [r1]
+    lsl r0, #2
+    add r0, r2
+    mov r1, #0
+    strh r1, [r0, #2]
+    bx lr

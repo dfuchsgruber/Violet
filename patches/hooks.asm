@@ -29,6 +29,7 @@
 .include "patches/titlescreen.asm"
 .include "patches/intro.asm"
 .include "patches/worldmap.asm"
+.include "patches/types.asm"
 
 //Remove Help-System
 .org 0x0813B90C

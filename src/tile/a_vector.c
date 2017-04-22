@@ -72,7 +72,7 @@ int get_tile_hash_by_facing(u8 facing, int m) {
 int a_hash(s16 x, s16 y, u8 map, u8 bank, int m) {
 
     int h = (x * cmem->a_vector[0]) + (y * cmem->a_vector[1]) + (map * cmem->a_vector[2]) + (bank * cmem->a_vector[3]);
-    return (int) __umod((u32) h, (u32) m);
+    return (int) __aeabi_uidivmod((u32) h, (u32) m);
 
 
 }

@@ -54,10 +54,13 @@ void battle_cb_do_megas() {
                 }
 
                 current_battler->trigger = 0;
+                u8 slot = current_index;
+                *((u8*)0x020370D0) = slot;
 
                 //Change the species
 
                 void* pokemon_offset = get_pokemon_offset_by_index(current_index);
+                
                 u16 target = can_mega_evolve(current_battler);
                 set_pokemons_attribute(pokemon_offset, 0xB, &target);
                 recalculate_stats(pokemon_offset);
@@ -71,19 +74,15 @@ void battle_cb_do_megas() {
                 current_battler->current_hp = (u16) get_pokemons_attribute(pokemon_offset, 0x39, 0);
                 current_battler->max_hp = (u16) get_pokemons_attribute(pokemon_offset, 0x3A, 0);
 
-                //Ability update, we need ability bit and coolness information
-                u32 ability_bit = get_pokemons_attribute(pokemon_offset, 0x2E, 0) & 1;
-                u32 hidden_bit = (get_pokemons_attribute(pokemon_offset, 0x16, 0) & 0x80) >> 6;
-                u8 fields = (u8) (ability_bit | hidden_bit);
-                current_battler->ability = get_ability(target, fields);
+                
+                current_battler->ability = get_pokemons_ability(pokemon_offset);
 
                 //Type update
                 current_battler->type1 = basestats[target].type1;
                 current_battler->type2 = basestats[target].type2;
 
                 u8 cb_id = spawn_big_callback(cb_mega_anim, 10);
-                big_callback* cb_o = CALLBACK_OBJECT(cb_id);
-                cb_o-> params[1] = current_index;
+                big_callbacks[cb_id].params[1] = slot;
                 return;
             }
         }

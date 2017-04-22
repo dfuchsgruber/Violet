@@ -34,7 +34,7 @@ int hashmap_hash(u32 key, hashmap *map) {
         hash += key_8 * map->a[i];
     }
 
-    return (int) __umod((u32) hash, (u32) map->map_size);
+    return (int) __aeabi_uidivmod((u32) hash, (u32) map->map_size);
 }
 
 bool hashmap_contains(u32 key, hashmap *map) {

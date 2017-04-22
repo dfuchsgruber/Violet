@@ -43,4 +43,6 @@ void spawn_symbols(u8 state);
 void spawn_trigger_cb();
 void trigger_cb(u8 self);
 
+void mega_disable_blurr(u8 slot);
+
 #endif

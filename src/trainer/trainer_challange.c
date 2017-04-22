@@ -46,7 +46,7 @@ bool checktrainerflag(u16 trainer_id) {
 }
 
 bool trainer_can_npc_challange_player(u16 trainer_id) {
-    if (trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONARY) {
+    if (trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONAER) {
         //check if a revolutionary wants to challange you
         if (checkflag(FLAG_IS_FRACTION_CHOSEN) && checkflag(FLAG_IS_REVOLUTION_FRACTION)) {
 

@@ -113,7 +113,7 @@ void dungeon_compute_rooms(dungeon_generator *d){
         for(i = 0; i < rooms; i++){
             
             //Now we find the x,y of the current room inside a room grid
-            int room_x = (int)__umod((u32)i, (u32)(d->rooms_per_line));
+            int room_x = (int)__aeabi_uidivmod((u32)i, (u32)(d->rooms_per_line));
             int room_y = i / d->rooms_per_line;
             
             //We also find the x,y of the segment the room is represented by
@@ -122,9 +122,9 @@ void dungeon_compute_rooms(dungeon_generator *d){
             
             //determine the width, height of a room
             //we take a segment size and multiply w,h by a of range [0,5; 1.0]
-            int room_width = hor_seg_size * (int)(__umod(dungeon_random_next_8(d), 6) + 5); //mul with 5...10
+            int room_width = hor_seg_size * (int)(__aeabi_uidivmod(dungeon_random_next_8(d), 6) + 5); //mul with 5...10
             room_width /= 10;
-            int room_height = ver_seg_size * (int)(__umod(dungeon_random_next_8(d), 6) + 5);
+            int room_height = ver_seg_size * (int)(__aeabi_uidivmod(dungeon_random_next_8(d), 6) + 5);
             room_height /= 10;
             
             int x = seg_x * hor_seg_size + 1;
@@ -167,7 +167,7 @@ void dungeon_compute_paths(dungeon_generator *d) {
     u32 rooms_max = (u32) (d->rooms_per_line * d->rooms_per_row);
     u32 current_room;
     do {
-        current_room = __umod(dungeon_random_next_32(d), rooms_max);
+        current_room = __aeabi_uidivmod(dungeon_random_next_32(d), rooms_max);
 
     } while (!(d->rooms[current_room].presence));
 
@@ -211,7 +211,7 @@ void dungeon_compute_paths(dungeon_generator *d) {
 
             //Algorithm reached dead end, rechoice of current room
             do {
-                current_room = __umod(dungeon_random_next_32(d), rooms_max);
+                current_room = __aeabi_uidivmod(dungeon_random_next_32(d), rooms_max);
             } while (!(d->rooms[current_room].presence));
         }
 
@@ -266,8 +266,8 @@ void dungeon_merge_regions(u8 r, u8 s, dungeon_generator *d){
 }
 
 void dungeon_relocate_room_connector(u8 r, dungeon_generator *d){
-    int x = d->rooms[r].x + (int)__umod(dungeon_random_next_8(d), d->rooms[r].width);
-    int y = d->rooms[r].y + (int)__umod(dungeon_random_next_8(d), d->rooms[r].height);
+    int x = d->rooms[r].x + (int)__aeabi_uidivmod(dungeon_random_next_8(d), d->rooms[r].width);
+    int y = d->rooms[r].y + (int)__aeabi_uidivmod(dungeon_random_next_8(d), d->rooms[r].height);
     d->rooms[r].connector_x = (s16)x;
     d->rooms[r].connector_y = (s16)y;
 }
@@ -527,7 +527,7 @@ void dungeon_relocate_events(dungeon_generator *d) {
 
     u32 entrance;
     do {
-        entrance = __umod(dungeon_random_next_8(d), rooms_max);
+        entrance = __aeabi_uidivmod(dungeon_random_next_8(d), rooms_max);
     } while (!(d->rooms[entrance].presence && d->rooms[entrance].width > 1 && d->rooms[entrance].height > 1)); //pick a real room
 
 
@@ -536,8 +536,8 @@ void dungeon_relocate_events(dungeon_generator *d) {
     s16 x = d->rooms[entrance].x; //+ __umod(random_next8(d), (u32)(d->rooms[entrance].width - 2)));
     s16 y = d->rooms[entrance].y; //+ __umod(random_next8(d), (u32)(d->rooms[entrance].height - 2)));
 
-    s16 x_rel = (s16) (__umod(dungeon_random_next_8(d), (u32) ((d->rooms[entrance].width - 2))) + 1);
-    s16 y_rel = (s16) (__umod(dungeon_random_next_8(d), (u32) ((d->rooms[entrance].height - 2))) + 1);
+    s16 x_rel = (s16) (__aeabi_uidivmod(dungeon_random_next_8(d), (u32) ((d->rooms[entrance].width - 2))) + 1);
+    s16 y_rel = (s16) (__aeabi_uidivmod(dungeon_random_next_8(d), (u32) ((d->rooms[entrance].height - 2))) + 1);
 
     x = (s16) (2*(x + x_rel));
     y = (s16) (2*(y + y_rel));
@@ -557,7 +557,7 @@ void dungeon_relocate_events(dungeon_generator *d) {
         if (dungeon_random_next_8(d) < 0xc0) { // 3/4 chance that an item will be spawned
             u32 picked;
             do {
-                picked = __umod(dungeon_random_next_8(d), rooms_max);
+                picked = __aeabi_uidivmod(dungeon_random_next_8(d), rooms_max);
             } while (d->rooms[picked].is_person_located ||
                     (!(d->rooms[picked].presence && d->rooms[picked].width > 1 && d->rooms[picked].height > 1)));
 
@@ -574,17 +574,17 @@ void dungeon_relocate_events(dungeon_generator *d) {
             //setting up a random script for the item
             u8 r = dungeon_random_next_8(d);
             if (r < 0x70) { // 112 / 256 Orb
-                cmem->dpers[i].script = dungeon_item_scripts_orbs[__umod(dungeon_random_next_8(d), 10)];
+                cmem->dpers[i].script = dungeon_item_scripts_orbs[__aeabi_uidivmod(dungeon_random_next_8(d), 10)];
             } else if (r < 0xE0) { // 112 / 256 Common Item
-                cmem->dpers[i].script = dungeon_item_scripts_common[__umod(dungeon_random_next_8(d), 5)];
+                cmem->dpers[i].script = dungeon_item_scripts_common[__aeabi_uidivmod(dungeon_random_next_8(d), 5)];
             } else if (r < 0xEC) { // 12 / 256 Heartscale
                 cmem->dpers[i].script = dungeon_item_script_heartscale;
             } else if (r < 0xF4) { // 8 / 256 Evolution Stone
-                cmem->dpers[i].script = dungeon_item_scripts_evolution_stones[__umod(dungeon_random_next_8(d), 8)];
+                cmem->dpers[i].script = dungeon_item_scripts_evolution_stones[__aeabi_uidivmod(dungeon_random_next_8(d), 8)];
             } else if (r < 0xFE) { // 10 / 256 Rare Item
-                cmem->dpers[i].script = dungeon_item_scripts_rare[__umod(dungeon_random_next_8(d), 8)];
+                cmem->dpers[i].script = dungeon_item_scripts_rare[__aeabi_uidivmod(dungeon_random_next_8(d), 8)];
             } else { // 2 / 256 Fossil
-                cmem->dpers[i].script = dungeon_item_scripts_fossils[__umod(dungeon_random_next_8(d), 5)];
+                cmem->dpers[i].script = dungeon_item_scripts_fossils[__aeabi_uidivmod(dungeon_random_next_8(d), 5)];
             }
             d->rooms[picked].is_person_located = true;
             candidates--;
@@ -606,7 +606,7 @@ void dungeon_attempt_additional_placements(dungeon_generator *d){
     int i;
     int rooms = d->rooms_per_line * d->rooms_per_row;
     for(i = 0; i < d->additional_connection_attempts; i++){
-        int r = (int)__umod(dungeon_random_next_16(d), (u32)rooms); //the first room
+        int r = (int)__aeabi_uidivmod(dungeon_random_next_16(d), (u32)rooms); //the first room
         dungeon_room_get_neighbours(NULL, NULL, &neighbours, d, (u8)r);
         u8 n = dungeon_pick_random_neighbour_room(neighbours, d);
         dungeon_connect_rooms((u8)r, n, d);
@@ -633,7 +633,7 @@ void dungeon_decorate_passable_segment(s16 x, s16 y, dungeon_generator *d){
         set_block_id((s16)(2*x+8), (s16)(2*y+7), 0x2F7);
     }else{
         //no dripping wall can be placed here, so we place a random decor
-        switch(__umod(dungeon_random_next_8(d), 5)){
+        switch(__aeabi_uidivmod(dungeon_random_next_8(d), 5)){
             case 0:
                 //place meteor crater
                 set_block_id((s16)(2*x+7), (s16)(2*y+7), 0x2D5);
@@ -683,8 +683,8 @@ void dungeon_decorate(dungeon_generator *d){
     int i;
     for(i = 0; i < d->width * d->height / 13; i++){
         //pick a random tile and decorate it
-        s16 x = (s16)__umod(dungeon_random_next_16(d), d->width);
-        s16 y = (s16)__umod(dungeon_random_next_16(d), d->height);
+        s16 x = (s16)__aeabi_uidivmod(dungeon_random_next_16(d), d->width);
+        s16 y = (s16)__aeabi_uidivmod(dungeon_random_next_16(d), d->height);
         if(dungeon_is_block_passable(x, y, d)){
             //passable block to decorate
             dungeon_decorate_passable_segment(x, y, d);

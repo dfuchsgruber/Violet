@@ -44,7 +44,7 @@ bool pokeradar_determine_position(coordinate *result) {
     //test(candidates);
     if (candidate_cnt) {
         //now we choose a random candidate
-        u32 r = __umod(random_change_seed(), (u32) candidate_cnt);
+        u32 r = __aeabi_uidivmod(random_change_seed(), (u32) candidate_cnt);
         x = candidates[r].x;
         y = candidates[r].y;
     }
@@ -106,7 +106,7 @@ u8 pokeradar_prepeare() {
             //now we determine the level
             u8 min = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].level_min;
             u8 max = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].level_max;
-            u32 level = (u32) (__umod(random_change_seed(), (u32) (max - min + 1)) + min);
+            u32 level = (u32) (__aeabi_uidivmod(random_change_seed(), (u32) (max - min + 1)) + min);
             *vardecrypt(0x8000) = result;
             *vardecrypt(0x8001) = (u16) level;
 
