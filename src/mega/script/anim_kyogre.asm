@@ -1,5 +1,5 @@
 .global attack_anim_kyogre
-
+.global animk
 .align 2
 
 animk:

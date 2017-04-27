@@ -1,4 +1,5 @@
 VIOLETPATH = "C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
+FREPATH = "D:/Hacking/1695 - Pokemon Fire Red (U)(Independent).gba"
 
 class Agbrom:
     

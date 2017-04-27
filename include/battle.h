@@ -72,6 +72,8 @@ u16 *active_attack = (u16*) 0x02023D4A;
 u16 *battler_team_slots = (u16*) 0x02023BCE;
 
 u32 *bsc_status_flags = (u32*)0x02023DD0;
+u8 *bsc_buffers = (u8*)0x02022AB8;
+u8 **bsc_offset = (u8**)0x02023D74;
 
 extern const unsigned short gfx_battle_bg_capturedTiles[];
 extern const unsigned short gfx_battle_bg_caveTiles[];

@@ -1,4 +1,4 @@
-bsc_cmd_table equ 0x8250040
+
 //abilities and items
 .org 0x0801A378
 	ldr r0, =end_of_turn_ab | 1
@@ -92,5 +92,8 @@ bhiddenabdone:
     bx r1
     .pool
 
-.org bsc_cmd_table + 0xE5 * 4
-    .word bsc_cmd_mitnahme | 1
+
+.org 0x080162D0
+    ldr r2, =hook_attack_init | 1
+    bx r2
+    .pool

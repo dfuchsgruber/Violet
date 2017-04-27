@@ -82,11 +82,12 @@
 .org 0x80d01b4
 	.word bsc_strings
 
+.org 0x80d79b8
+	.word bsc_strings
+
 .org 0x80d86a4
 	.word bsc_strings
 
-.org 0x8eb5f88
-	.word bsc_strings
 
 .org 0x802BE0C
         .word terrain_moves
@@ -116,6 +117,9 @@ blxr4:
         bx r0
         .pool
         
+//@battlestring remove the bsc string limitation (extend it to 0x7FFF)
+.org 0x080D7988
+    .halfword 0x7FFF
 
 //@battlestring remove attack limitations
 .org 0x080D80AA
@@ -132,3 +136,18 @@ blxr4:
 
 .org 0x0800FEB0
     .halfword 0x5050 //win0 settings
+
+.org 0x8014ba0
+	.word battle_script_cmds
+
+.org 0x80159ac
+	.word battle_script_cmds
+
+.org 0x8015bf0
+	.word battle_script_cmds
+
+.org 0x8015c1c
+	.word battle_script_cmds
+
+.org 0x801cfd8
+	.word battle_script_cmds

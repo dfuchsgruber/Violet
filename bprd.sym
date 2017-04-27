@@ -216,3 +216,4 @@ big_callbacks_proceed = 0x080774dd;
 oam_anim_proceed = 0x08006add;
 bg_decomp_and_load = 0x80F6B0d;
 ts_main_big_cb = 0x08078B89;
+bsc_push_next_cmd = 0x080174C9;

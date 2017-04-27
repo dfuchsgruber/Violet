@@ -3,6 +3,7 @@
 
 #include "pokemon.h"
 
+#define FLAG_AP_SPARER_TRIGGERED 0x918
 
 #define ABILITY_CNT 0x71
 

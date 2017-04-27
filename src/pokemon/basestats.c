@@ -8118,7 +8118,7 @@ basestat basestats[POKEMON_CNT] = {
         0, //base friendship
         5, //lvl up curve
         EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED, //egg groups
-        DUERRE, ABILITY_NONE, //abilities
+        WANDLUNGSK, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
         ABILITY_NONE, //hidden ability
