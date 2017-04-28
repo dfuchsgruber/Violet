@@ -1,12 +1,16 @@
 """ Module for interpreting a script """
-
-
+import agb
+import json
 
 class Command: 
-    def __init__(self, name, id, params):
+    def __init__(self, name, id, params, ends_section=False):
         self.name = name
         self.id = id
         self.params = params
+        self.ends_section = ends_section
+
+    def get_ends_section(self):
+        return self.get_ends_section
         
     def to_assembly_macro(self):
         macro = ".macro " + self.name + " " + " ".join([param.name for param in self.params]) + "\n"
@@ -14,6 +18,20 @@ class Command:
         macro += "\n".join([param.to_assembly_macro() for param in self.params])+"\n"
         macro += ".endm\n"
         return macro
+
+    def export(self, tree, rom, offset):
+        exported_params = []
+        offset += 1
+        for param in self.params:
+            exported_params.append(param.export(tree, rom, offset))
+            offset += param.size(rom, offset)
+        return self.name + " ".join(exported_params)
+
+    def size(self, rom, offset):
+        size = 1
+        for param in self.params:
+            size += param.size(rom, offset + size)
+        return size
 
 class Param:
     def __init__(self, name, type, note=None):
@@ -24,47 +42,61 @@ class Param:
     def to_assembly_macro(self):
         return "." + self.type.datatype + " \\"+self.name
 
+    def export(self, tree, rom, offset):
+        return self.type.consume(tree, rom, offset)
+
+    def size(self, rom, offset):
+        return self.param.size(rom, offset)
+
 class Byte:
     def __init__(self):
         self.datatype = "byte"
-    def consume(self, rom, offset):
-        return rom.u8(offset)
+    def consume(self, tree, rom, offset):
+        return hex(rom.u8(offset))
     def size(self, rom, offset):
         return 1
 
 class Halfword:
     def __init__(self):
         self.datatype = "hword"
-    def consume(self, rom, offset):
-        return rom.u16(offset)
+    def consume(self, tree, rom, offset):
+        return hex(rom.u16(offset))
     def size(self, rom, offset):
         return 2
 
 class Word:
     def __init__(self):
         self.datatype = "word"
-    def consume(self, rom, offset):
-        return rom.u32(offset)
+    def consume(self, tree, rom, offset):
+        return hex(rom.u32(offset))
     def size(self, rom, offset):
         return 4
 
 class List:
     def __init__(self):
         self.datatype = "byte"
-    def consume(self, rom, offset):
+    def consume(self, tree, rom, offset):
         size = rom.u8(offset)
-        return [rom.u16(offset + 1 + i * 2) for i in range(0,size)]
+        array = [rom.u16(offset + 1 + i * 2) for i in range(0,size)]
+        if size:
+            return hex(size) + "\n.hword " + ", ".join(array)
+        else:
+            return hex(size)
     def size(self, rom, offset):
         1 + rom.u8(offset) * 2
 
 class ScriptReference:
     def __init__(self):
         self.datatype = "word"
-    def consume(self, rom, offset):
-        return rom.u32(offset)
+    def consume(self, tree, rom, offset):
+        ref = script_offset_to_label(rom.u32(offset))
+        tree.offsets.append(ref)
+        return script_offset_to_label(ref)
     def size(self, rom, offset):
         return 4
         
+def script_offset_to_label(offset):
+    return "attack_script_" + hex(offset - 0x08000000)
         
 commands = [
     Command("loadgraphic", 0, [Param("id", Halfword())]),
@@ -75,7 +107,7 @@ commands = [
 	Command("waitstate", 5, []),
 	Command("nop", 6, []),
 	Command("nop2", 7, []),
-	Command("end", 8, []),
+	Command("end", 8, [], ends_section=True),
 	Command("playsound", 9, [Param("sound", Halfword())]),
 	Command("enable_oam_as_target", 10, [Param("slot", Byte())]),
 	Command("disable_oam_as_target", 11, [Param("slot", Byte())]),
@@ -117,8 +149,50 @@ commands = [
 ]
 
 
+class Ascript_exploration_tree:
+    """ Class to explore a script offset """
+
+    def __init__(self, rom):
+        self.rom = rom
+        self.offsets = []
+        self.explored_offsets = set() #No offset must be encountered twice (prevent infinite loops)
+        self.assemblies = []
+    
+    def explore(self, offset, verbose=False):
+        """ Explores an offset of a script tree """
+        self.offsets.append(offset)
+        while len(self.offsets):
+            #Explore this offset
+            offset = self.offsets.pop()
+            if verbose: print("Exploring offset", hex(offset))
+            if offset not in self.explored_offsets:
+                label = script_offset_to_label(offset)
+                assembly = ".global " + label + "\n" + label + ":\n" 
+                while True:
+                    cmd = commands[self.rom.u8(offset)]
+                    assembly += cmd.export(self, self.rom, offset) + "\n"
+                    #cmd.callback(self, self.rom, offset)
+                    if cmd.get_ends_section(self.rom, offset): break #Only if the command ends a section
+                    offset += cmd.size(self.rom, offset)
+                self.explored_offsets.add(offset) #We worked through this offset
+                self.assemblies.append(offset, assembly) #Append the assembly
+
+    def load_lib(self, libpath):
+        """ Loads a json list of so far explored offset"""
+        fd = open(libpath)
+        lib = fd.read()
+        fd.close()
+        self.explored_offsets = json.loads(lib)
+
+    def store_lib(self, libpath):
+        """ Stores a json list of so far explored offsets"""
+        fd = open(libpath, "w+")
+        fd.write(json.dumps(self.explored_offsets))
+        fd.close()
+
 def to_assembly_macro(commands):
     return "\n\n".join([command.to_assembly_macro() for command in commands])
 
 open("D:/temp/ascriptmacros.s", "w+").write(to_assembly_macro(commands))
 
+testtree = Ascript_exploration_tree(agb.Agbrom())

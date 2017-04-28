@@ -5,6 +5,8 @@ import pstring
 import sys
 import getopt
 
+
+LIBFILE = "lib/owscript.json"
 verbose = True
 tablefile = "../table.tbl"
 
@@ -108,7 +110,7 @@ class ParamType:
     def export(self, tree, rom, offset):
         return self.export_func(tree, rom, offset)
 
-class Exploration_tree:
+class Owscript_Exploration_tree:
     """ Class to explore a script offset """
 
     def __init__(self, rom):
