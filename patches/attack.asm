@@ -512,3 +512,25 @@
 .org 0x8137c64
 	.word attack_descriptions
 
+.org 0x80162e8
+	.word attack_effects
+
+
+.org 0x80232ac
+	.word attack_effects
+
+
+.org 0x8025c7c
+	.word attack_effects
+
+
+.org 0x80273fc
+	.word attack_effects
+
+
+.org 0x8029788
+	.word attack_effects
+
+
+.org 0x802be18
+	.word attack_effects

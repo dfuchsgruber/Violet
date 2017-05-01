@@ -10,7 +10,7 @@ class Command:
         self.ends_section = ends_section
 
     def get_ends_section(self):
-        return self.get_ends_section
+        return self.ends_section
         
     def to_assembly_macro(self):
         macro = ".macro " + self.name + " " + " ".join([param.name for param in self.params]) + "\n"
@@ -25,7 +25,7 @@ class Command:
         for param in self.params:
             exported_params.append(param.export(tree, rom, offset))
             offset += param.size(rom, offset)
-        return self.name + " ".join(exported_params)
+        return self.name + " " + " ".join(exported_params)
 
     def size(self, rom, offset):
         size = 1
@@ -46,7 +46,7 @@ class Param:
         return self.type.consume(tree, rom, offset)
 
     def size(self, rom, offset):
-        return self.param.size(rom, offset)
+        return self.type.size(rom, offset)
 
 class Byte:
     def __init__(self):
@@ -77,32 +77,32 @@ class List:
         self.datatype = "byte"
     def consume(self, tree, rom, offset):
         size = rom.u8(offset)
-        array = [rom.u16(offset + 1 + i * 2) for i in range(0,size)]
+        array = [hex(rom.u16(offset + 1 + i * 2)) for i in range(0,size)]
         if size:
             return hex(size) + "\n.hword " + ", ".join(array)
         else:
             return hex(size)
     def size(self, rom, offset):
-        1 + rom.u8(offset) * 2
+        return 1 + rom.u8(offset) * 2
 
 class ScriptReference:
     def __init__(self):
         self.datatype = "word"
     def consume(self, tree, rom, offset):
-        ref = script_offset_to_label(rom.u32(offset))
-        tree.offsets.append(ref)
+        ref = rom.pointer(offset)
+        if tree.recursive: tree.offsets.append(ref)
         return script_offset_to_label(ref)
     def size(self, rom, offset):
         return 4
         
 def script_offset_to_label(offset):
-    return "attack_script_" + hex(offset - 0x08000000)
+    return "attack_script_" + hex(offset)
         
 commands = [
     Command("loadgraphic", 0, [Param("id", Halfword())]),
 	Command("cmd1", 1, [Param("param0", Halfword())]),
-	Command("loadoam", 2, [Param("oam", Word()), Param("additional", List())]),
-	Command("loadcallback", 3, [Param("function", Word()), Param("additional", List())]),
+	Command("loadoam", 2, [Param("oam", Word()), Param("unkown", Byte()), Param("additional", List())]),
+	Command("loadcallback", 3, [Param("function", Word()), Param("priority", Byte()), Param("additional", List())]),
 	Command("pause", 4, [Param("frames", Byte())]),
 	Command("waitstate", 5, []),
 	Command("nop", 6, []),
@@ -114,9 +114,9 @@ commands = [
 	Command("enablebld", 12, [Param("bld", Halfword())]),
 	Command("resetbld", 13, []),
 	Command("call", 14, [Param("subscript", ScriptReference())]),
-	Command("return", 15, []),
+	Command("return", 15, [], ends_section=True),
 	Command("setadditional", 16, [Param("id", Byte()), Param("value", Halfword())]),
-	Command("goto_if_charging_state_bit_0", 17, [Param("subscript", ScriptReference())]),
+	Command("goto_if_charging_state_bit_0", 17, [Param("subscript_not_set", ScriptReference()), Param("subscript_set", ScriptReference())]),
 	Command("goto_if_charging_state_equals", 18, [Param("value", Byte()), Param("subscript", ScriptReference())]),
 	Command("jump", 19, [Param("subscript", ScriptReference())]),
 	Command("fade_into_background", 20, [Param("id", Byte())]),
@@ -129,25 +129,29 @@ commands = [
 	Command("sound_modulation", 27, [Param("param4", Halfword()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte())]),
 	Command("playsound4", 28, [Param("sound", Halfword()), Param("modulation", Byte()), Param("param3", Byte()), Param("param3", Byte())]),
 	Command("playsound5", 29, [Param("sound", Halfword()), Param("modulation", Byte()), Param("param2", Byte())]),
-	Command("setbld", 31, [Param("param0", Halfword())]),
+	Command("setbld", 30, [Param("value", Halfword())]),
+    Command("loadcallback_and_execute_and_endframe", 31, [Param("function", Word()), Param("additional", List())]),
 	Command("cmd20", 32, []),
 	Command("goto_if_additional_equals", 33, [Param("id", Byte()), Param("value", Halfword()), Param("param3", ScriptReference())]),
 	Command("something_with_poke_oam", 34, [Param("slot", Byte())]),
 	Command("something_with_poke_oam_on_user", 35, [Param("slot", Byte())]),
 	Command("nop3", 36, [Param("unused", ScriptReference())]),
 	Command("fade_into_background_target_based", 37, [Param("id_target_is_opponent", Byte()), Param("id_target_is_not_opponent", Byte()), Param("unused", Byte())]),
-	Command("playsound", 38, [Param("sound", Halfword()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte())]),
+	Command("playsound2", 38, [Param("sound", Halfword()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte())]),
 	Command("cmd27", 39, [Param("param4", Halfword()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte()), Param("param4", Byte())]),
 	Command("cmd28", 40, [Param("param0", Byte())]),
 	Command("cmd29", 41, []),
 	Command("cmd2A", 42, [Param("param0", Byte())]),
 	Command("cmd2B", 43, [Param("param0", Byte())]),
 	Command("cmd2C", 44, [Param("param0", Byte())]),
+	Command("cmd2D", 45, []),
 	Command("cmd2E", 46, [Param("param0", Byte())]),
 	Command("cmd2F", 47, []),
 
 ]
 
+for i in range(0, len(commands)):
+    if commands[i].id != i: raise Exception(hex(i))
 
 class Ascript_exploration_tree:
     """ Class to explore a script offset """
@@ -155,27 +159,32 @@ class Ascript_exploration_tree:
     def __init__(self, rom):
         self.rom = rom
         self.offsets = []
-        self.explored_offsets = set() #No offset must be encountered twice (prevent infinite loops)
+        self.explored_offsets = [] #No offset must be encountered twice (prevent infinite loops)
         self.assemblies = []
+        self.recursive = True
     
-    def explore(self, offset, verbose=False):
+    def explore(self, offset, verbose=False, recursive=True):
         """ Explores an offset of a script tree """
         self.offsets.append(offset)
+        self.recursive = recursive
         while len(self.offsets):
             #Explore this offset
             offset = self.offsets.pop()
             if verbose: print("Exploring offset", hex(offset))
             if offset not in self.explored_offsets:
+                initial_offset = offset
                 label = script_offset_to_label(offset)
-                assembly = ".global " + label + "\n" + label + ":\n" 
+                assembly = ".include \"attack_anim.s\"\n.global " + label + "\n" + label + ":\n" 
                 while True:
                     cmd = commands[self.rom.u8(offset)]
+                    if verbose: print("@", hex(offset), ":", cmd.__dict__)
                     assembly += cmd.export(self, self.rom, offset) + "\n"
                     #cmd.callback(self, self.rom, offset)
-                    if cmd.get_ends_section(self.rom, offset): break #Only if the command ends a section
+                    if cmd.get_ends_section(): break #Only if the command ends a section
+                    if verbose: print("Command did not end secion.")
                     offset += cmd.size(self.rom, offset)
-                self.explored_offsets.add(offset) #We worked through this offset
-                self.assemblies.append(offset, assembly) #Append the assembly
+                self.explored_offsets.append(initial_offset) #We worked through this offset
+                self.assemblies.append((initial_offset, assembly)) #Append the assembly
 
     def load_lib(self, libpath):
         """ Loads a json list of so far explored offset"""
@@ -193,6 +202,6 @@ class Ascript_exploration_tree:
 def to_assembly_macro(commands):
     return "\n\n".join([command.to_assembly_macro() for command in commands])
 
-open("D:/temp/ascriptmacros.s", "w+").write(to_assembly_macro(commands))
+#open("D:/temp/ascriptmacros.s", "w+").write(to_assembly_macro(commands))
 
-testtree = Ascript_exploration_tree(agb.Agbrom())
+#testtree = Ascript_exploration_tree(agb.Agbrom())

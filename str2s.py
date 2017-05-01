@@ -92,65 +92,65 @@ def parse_file(infile, outfile, tablefile, terminator, language):
 		line = line.lstrip(" ")
 		if len(line):
 			#parse non empty line
-			if line[0] == '#': continue #Ignore comment lines
+			if not line[0] == '#':  #Ignore comment lines
 
-			tokens = line.split(" ")
-			if state == STATE_NONE:
-				#Expect a .string or .array directive
-				if(tokens[0] == ".string"):
-					#Parse str directive
-					if len(tokens) < 2: raise_parsing_error(line_cnt, "Expected symbol name")
-					if len(tokens) < 3: raise_parsing_error(line_cnt, "Expected language")
-					if tokens[2].lower() == language.lower() or tokens[2] == "_":
-						#Language match, translate the single string block
-						current_symbol = tokens[1]
-						state = STATE_PLAIN #Now we expect plain text
-					else:
-						state = STATE_IGNORE #Ignore every line until .end directive
-				elif(tokens[0] == ".array"):
-    				#Parse array directive
-					if len(tokens) < 2: raise_parsing_error(line_cnt, "Expected symbol name")
-					if len(tokens) < 3: raise_parsing_error(line_cnt, "Expected language")
-					if len(tokens) < 4: raise_parsing_error(line_cnt, "Expected element width")
-					if tokens[2].lower() == language.lower() or tokens[2] == "_":
-						#Language match, wait for text inputs
-						try: array_element_width = int(tokens[3], 0)
-						except: raise_parsing_error(line_cnt, "Invalid element width")
-						current_symbol = tokens[1]
-						symbols[current_symbol] = [] #Empty array to collect bytes into
-						state = STATE_ARRAY
-					else:
-						state = STATE_IGNORE #Ignore every line until .end directive
+                            tokens = line.split(" ")
+                            if state == STATE_NONE:
+                                    #Expect a .string or .array directive
+                                    if(tokens[0] == ".string"):
+                                            #Parse str directive
+                                            if len(tokens) < 2: raise_parsing_error(line_cnt, "Expected symbol name")
+                                            if len(tokens) < 3: raise_parsing_error(line_cnt, "Expected language")
+                                            if tokens[2].lower() == language.lower() or tokens[2] == "_":
+                                                    #Language match, translate the single string block
+                                                    current_symbol = tokens[1]
+                                                    state = STATE_PLAIN #Now we expect plain text
+                                            else:
+                                                    state = STATE_IGNORE #Ignore every line until .end directive
+                                    elif(tokens[0] == ".array"):
+                                    #Parse array directive
+                                            if len(tokens) < 2: raise_parsing_error(line_cnt, "Expected symbol name")
+                                            if len(tokens) < 3: raise_parsing_error(line_cnt, "Expected language")
+                                            if len(tokens) < 4: raise_parsing_error(line_cnt, "Expected element width")
+                                            if tokens[2].lower() == language.lower() or tokens[2] == "_":
+                                                    #Language match, wait for text inputs
+                                                    try: array_element_width = int(tokens[3], 0)
+                                                    except: raise_parsing_error(line_cnt, "Invalid element width")
+                                                    current_symbol = tokens[1]
+                                                    symbols[current_symbol] = [] #Empty array to collect bytes into
+                                                    state = STATE_ARRAY
+                                            else:
+                                                    state = STATE_IGNORE #Ignore every line until .end directive
 
-				else: raise_parsing_error(line_cnt, "Unkown directive '"+tokens[0]+"'")
-			elif state == STATE_IGNORE:
-				#Ignore everything up to an .end directive
-				if(tokens[0] == ".end"): state = STATE_NONE
-			elif state == STATE_EXPECT_END:
-    			#Expect an .end directive
-				if(tokens[0] != ".end"): raise_parsing_error(line_cnt, "Expected .end directive")
-				state = STATE_NONE
-			elif state == STATE_PLAIN:
-				#Expect "="
-				if(line[0] != "="): raise_parsing_error(line_cnt, "Expected string prefix '='")
-				symbols[current_symbol] = parse_str(line[1:], table, terminator)
-				state = STATE_EXPECT_END
-			elif state == STATE_ARRAY:
-    			#Expect any number of "=" inputs and fill them up to element width or .end directive
-				if(tokens[0] == ".end"):
-    				#End of array input feed 
-					state = STATE_NONE
-					continue
-				if(line[0] != "="): raise_parsing_error(line_cnt, "Expected string prefix '='")
-				bytes = parse_str(line[1:], table, terminator)
-				while len(bytes) < array_element_width:
-					bytes.append(terminator)
-				if len(bytes) > array_element_width:
-					#Truncate
-					bytes = bytes[0:array_element_width]
-					bytes[array_element_width-1] = terminator
-					raise_parsing_warning(line_cnt, "String exceeds array width, auto-truncated.")
-				symbols[current_symbol] += bytes
+                                    else: raise_parsing_error(line_cnt, "Unkown directive '"+tokens[0]+"'")
+                            elif state == STATE_IGNORE:
+                                    #Ignore everything up to an .end directive
+                                    if(tokens[0] == ".end"): state = STATE_NONE
+                            elif state == STATE_EXPECT_END:
+                            #Expect an .end directive
+                                    if(tokens[0] != ".end"): raise_parsing_error(line_cnt, "Expected .end directive")
+                                    state = STATE_NONE
+                            elif state == STATE_PLAIN:
+                                    #Expect "="
+                                    if(line[0] != "="): raise_parsing_error(line_cnt, "Expected string prefix '='")
+                                    symbols[current_symbol] = parse_str(line[1:], table, terminator)
+                                    state = STATE_EXPECT_END
+                            elif state == STATE_ARRAY:
+                            #Expect any number of "=" inputs and fill them up to element width or .end directive
+                                    if(tokens[0] == ".end"):
+                                    #End of array input feed 
+                                            state = STATE_NONE
+                                            continue
+                                    if(line[0] != "="): raise_parsing_error(line_cnt, "Expected string prefix '='")
+                                    bytes = parse_str(line[1:], table, terminator)
+                                    while len(bytes) < array_element_width:
+                                            bytes.append(terminator)
+                                    if len(bytes) > array_element_width:
+                                            #Truncate
+                                            bytes = bytes[0:array_element_width]
+                                            bytes[array_element_width-1] = terminator
+                                            raise_parsing_warning(line_cnt, "String exceeds array width, auto-truncated.")
+                                    symbols[current_symbol] += bytes
 		
 	
 	to_s(outfile, symbols)

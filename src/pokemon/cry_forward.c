@@ -1290,7 +1290,7 @@ pokemon_cry pokemon_cries_forward [POKEMON_CNT] = {
     // POKEMON_DURENGARDA
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x85dc8b8, {
+, cry_681, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_IN
     {

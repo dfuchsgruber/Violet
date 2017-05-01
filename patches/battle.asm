@@ -13,6 +13,9 @@
 .org 0x800fd0c
 	.word battle_bgs
 
+.org 0x080738C4
+        .word battle_anim_bgs
+
 //bsc strings
 	
 

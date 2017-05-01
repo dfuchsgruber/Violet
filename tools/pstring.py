@@ -53,4 +53,5 @@ class PString:
             if not self.rev_table[value]: raise Exception("No literal associated with "+hex(value))
             result += self.rev_table[value]
             offset += 1
+        
         return result

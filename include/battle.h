@@ -56,6 +56,12 @@ typedef struct battle_bg {
     const void *pal;
 } battle_bg;
 
+typedef struct  {
+    const void *tileset;
+    const void *pal;
+    const void *map;
+} battle_anim_bg;
+
 battle_bg battle_bgs[29];
 
 u16 can_mega_evolve(battler *b);
@@ -75,6 +81,12 @@ u32 *bsc_status_flags = (u32*)0x02023DD0;
 u8 *bsc_buffers = (u8*)0x02022AB8;
 u8 **bsc_offset = (u8**)0x02023D74;
 
+u8 *attack_anim_target_index = (u8*)0x02037F1B;
+u8 *attack_anim_user_index = (u8*)0x02037F1A;
+u16 *attack_anim_additional_animation = (u16*)0x2037F02;
+u8 *attack_anim_tasks_running = (u8*)0x02037EE2;
+
+
 extern const unsigned short gfx_battle_bg_capturedTiles[];
 extern const unsigned short gfx_battle_bg_caveTiles[];
 extern const unsigned short gfx_battle_bg_cloudsTiles[];
@@ -91,6 +103,7 @@ extern const unsigned short gfx_battle_bg_pondTiles[];
 extern const unsigned short gfx_battle_bg_shoreTiles[];
 extern const unsigned short gfx_battle_bg_streetTiles[];
 extern const unsigned short gfx_battle_bg_watercaveTiles[];
+extern const unsigned short gfx_stance_changeTiles[];
 
 extern const unsigned short gfx_battle_bg_capturedPal[];
 extern const unsigned short gfx_battle_bg_cavePal[];
@@ -108,6 +121,7 @@ extern const unsigned short gfx_battle_bg_pondPal[];
 extern const unsigned short gfx_battle_bg_shorePal[];
 extern const unsigned short gfx_battle_bg_streetPal[];
 extern const unsigned short gfx_battle_bg_watercavePal[];
+extern const unsigned short gfx_stance_changePal[];
 
 extern const unsigned short gfx_battle_bg_capturedMap[];
 extern const unsigned short gfx_battle_bg_caveMap[];
@@ -125,5 +139,7 @@ extern const unsigned short gfx_battle_bg_pondMap[];
 extern const unsigned short gfx_battle_bg_shoreMap[];
 extern const unsigned short gfx_battle_bg_streetMap[];
 extern const unsigned short gfx_battle_bg_watercaveMap[];
+extern const unsigned short gfx_stance_changeMap[];
+
 
 #endif

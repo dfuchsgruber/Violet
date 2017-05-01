@@ -10,16 +10,18 @@
 .endm
 
 
-.macro loadoam oam additional
+.macro loadoam oam unkown additional
 .byte 0x2
 .word \oam
+.byte \unkown
 .byte \additional
 .endm
 
 
-.macro loadcallback function additional
+.macro loadcallback function priority additional
 .byte 0x3
 .word \function
+.byte \priority
 .byte \additional
 .endm
 
@@ -103,9 +105,10 @@
 .endm
 
 
-.macro goto_if_charging_state_bit_0 subscript
+.macro goto_if_charging_state_bit_0 subscript_not_set subscript_set
 .byte 0x11
-.word \subscript
+.word \subscript_not_set
+.word \subscript_set
 .endm
 
 
@@ -165,21 +168,21 @@
 .endm
 
 
-.macro sound_modulation param4 param4 param4 param4 param4
+.macro sound_modulation param0 param1 param2 param3 param4
 .byte 0x1b
-.hword \param4
-.byte \param4
-.byte \param4
-.byte \param4
+.hword \param0
+.byte \param1
+.byte \param2
+.byte \param3
 .byte \param4
 .endm
 
 
-.macro playsound4 sound modulation param3 param3
+.macro playsound4 sound modulation param2 param3
 .byte 0x1c
 .hword \sound
 .byte \modulation
-.byte \param3
+.byte \param2
 .byte \param3
 .endm
 
@@ -192,9 +195,16 @@
 .endm
 
 
-.macro setbld param0
+.macro setbld value
+.byte 0x1e
+.hword \value
+.endm
+
+
+.macro loadcallback_and_execute_and_endframe function additional
 .byte 0x1f
-.hword \param0
+.word \function
+.byte \additional
 .endm
 
 
@@ -230,31 +240,31 @@
 .endm
 
 
-.macro cmd25 param2 param2 param2
+.macro fade_into_background_target_based id_target_is_opponent id_target_is_not_opponent unused
 .byte 0x25
-.byte \param2
-.byte \param2
-.byte \param2
+.byte \id_target_is_opponent
+.byte \id_target_is_not_opponent
+.byte \unused
 .endm
 
 
-.macro playsound param4 param4 param4 param4 param4
+.macro playsound2 sound param1 param2 param3 param4
 .byte 0x26
-.hword \param4
-.byte \param4
-.byte \param4
-.byte \param4
+.hword \sound
+.byte \param1
+.byte \param2
+.byte \param3
 .byte \param4
 .endm
 
 
-.macro cmd27 param4 param4 param4 param4 param4
+.macro cmd27 param1 param2 param3 param4 param5
 .byte 0x27
-.hword \param4
+.hword \param1
+.byte \param2
+.byte \param3
 .byte \param4
-.byte \param4
-.byte \param4
-.byte \param4
+.byte \param5
 .endm
 
 
@@ -285,6 +295,12 @@
 .macro cmd2C param0
 .byte 0x2c
 .byte \param0
+.endm
+
+
+.macro cmd2D 
+.byte 0x2d
+
 .endm
 
 

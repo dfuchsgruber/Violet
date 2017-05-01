@@ -69,7 +69,7 @@ void battle_cb_do_megas() {
 
                 int j;
                 for (j = 0; j < 5; j++) {
-                    current_battler->stats[i] = (u16) get_pokemons_attribute(pokemon_offset, (u8) (0x3B + j), 0);
+                    current_battler->stats[i] = (u16) get_pokemons_attribute(pokemon_offset, (u8) (ATTRIBUTE_ATK + j), 0);
                 }
                 current_battler->current_hp = (u16) get_pokemons_attribute(pokemon_offset, 0x39, 0);
                 current_battler->max_hp = (u16) get_pokemons_attribute(pokemon_offset, 0x3A, 0);

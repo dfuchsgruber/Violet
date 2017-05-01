@@ -1265,9 +1265,10 @@
 .byte 0xF7
 .endm
 
-.macro animation slot unkown anim
+@// for slots: 1 translates to the slot of attacking battler, 0 of the defender
+.macro animation slot_user slot_target anim
 .byte 0xF8
-.byte \slot
-.byte \unkown
+.byte \slot_user
+.byte \slot_target
 .word \anim
 .endm

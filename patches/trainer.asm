@@ -93,3 +93,9 @@
 
 .org 0x812c098
 	.word trainers
+
+.org 0x080d7b0c
+	.word trainer_class_names
+
+.org 0x0811b58c
+	.word trainer_class_names

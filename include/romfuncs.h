@@ -188,5 +188,7 @@ void oam_anim_proceed();
 int bg_decomp_and_load(u8 bg_id, const void *res, u32 fixed_size, u16 row_displ, bool is_tilemap);
 void ts_main_big_cb(u8 self);
 void bsc_push_next_cmd();
+void attack_anim_remove_big_cb(u8 self);
+
 
 #endif

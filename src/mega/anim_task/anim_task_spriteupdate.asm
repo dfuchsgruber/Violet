@@ -134,6 +134,10 @@ _wandler_blurr:
     bl search_if_func_is_already_a_cb
     cmp r0, #0xFF
     bne no_blurr
+    ldr r0, =attack_anim_stance_change_sprite_change
+    bl search_if_func_is_already_a_cb
+    cmp r0, #0xFF
+    bne no_blurr
 
     @//White blurr for wandler
     ldr r3, =0x7FFF
