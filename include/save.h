@@ -8,6 +8,8 @@
 #include "fpmenu.h"
 #include "anim_engine.h"
 
+#define GP_STACK_SIZE 16
+
 typedef struct saveblock1 {
     s16 x;
     s16 y;
@@ -67,6 +69,7 @@ typedef struct custom_memory {
 
 } custom_memory;
 
+
 typedef struct {
     u8 dmap_status;
     u8 unused_1;
@@ -82,7 +85,9 @@ typedef struct {
     tileset *current_tileset_1;
     tileset *current_tileset_2;
     u8 dma0_dump[4];
-    
+    int gp_stack_size;
+    int gp_stack[GP_STACK_SIZE];
+    int battle_custom_status[4];
     
 } floating_memory;
 

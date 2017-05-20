@@ -189,6 +189,7 @@ int bg_decomp_and_load(u8 bg_id, const void *res, u32 fixed_size, u16 row_displ,
 void ts_main_big_cb(u8 self);
 void bsc_push_next_cmd();
 void attack_anim_remove_big_cb(u8 self);
-
+bool move_needs_charging(u16 move);
+void bsc_init_by_interrupting_battle_func(u8 *bsc);
 
 #endif

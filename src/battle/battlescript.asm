@@ -251,3 +251,5 @@ battle_script_cmds:
 	.word 0x802dfad
 	.word 0x802dfb9
         .word bsc_cmd_custom_attack_anim
+        .word bsc_cmd_callasm
+

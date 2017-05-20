@@ -3350,10 +3350,10 @@ attack attacks[ATTACK_CNT] = {
 	},
 	// ATTACK_WUCHTSCHLAG
 	{
-		0xb6, //Effect-id (in table)
+		76, //Effect-id (in table)
 		120, //Base Power
 		TYPE_FIGHTING,
-		100, //Accuracy
+		50, //Accuracy
 		5, //PP
 		100, //Effect accuracy
 		SELECTED_TARGET,
@@ -6185,7 +6185,7 @@ attack attacks[ATTACK_CNT] = {
 	},
 	// ATTACK_KOENIGSSCHILD
 	{
-		0x6f, //Effect-id (in table)
+		111,//0xE3, //Effect-id (in table)
 		0, //Base Power
 		TYPE_STEEL,
 		100, //Accuracy

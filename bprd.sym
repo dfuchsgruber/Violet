@@ -218,3 +218,5 @@ bg_decomp_and_load = 0x80F6B0d;
 ts_main_big_cb = 0x08078B89;
 bsc_push_next_cmd = 0x080174C9;
 attack_anim_remove_big_cb = 0x80726C4 | 1;
+move_needs_charging = 0x0802A158 | 1;
+bsc_init_by_interrupting_battle_func = 0x0801BBA9;

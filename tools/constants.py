@@ -1680,3 +1680,17 @@ trainer_ai = {
 	30 : "TRAINER_AI_SAFARI_ZONE",
 	31 : "TRAINER_AI_FLEE_IF_HP_LOW",
 }
+
+pockets = [
+	"POCKET_NONE",
+	"POCKET_ITEMS",
+	"POCKET_KEY_ITEMS",
+	"POCKET_POKEBALLS",
+	"POCKET_TM_HM",
+	"POCKET_BERRIES"
+]
+
+def byte_to_pchar(byte):
+	for pchar in pchar_dict:
+		if pchar_dict[pchar] == byte: return pchar
+	return hex(byte)

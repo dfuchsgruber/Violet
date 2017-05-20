@@ -1,10 +1,9 @@
 
 
-
 .align 2
 .thumb
 
-.global after_attack_abilities
+.global hook_attack_done
 
 .equ lifeorb, 0x3a
 .equ attack_data, 0x9100000
@@ -19,6 +18,17 @@
 .equ seeges, 0x65
 .equ bsc_seeges, 0x88B3FEE
 
+
+.thumb_func
+hook_attack_done:
+mov r0, r10
+bl attack_done
+ldr r0, =0x02023D6C
+ldrb r1, [r0]
+mov r0, #0
+str r0, [sp]
+ldr r0, =0x0802350D
+bx r0
 
 
 .thumb_func

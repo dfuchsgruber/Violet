@@ -231,6 +231,7 @@
     .word bsc_attack_effect_xe0 @0xe0
     .word bsc_attack_effect_xe1 @0xe1
     .word bsc_attack_effect_xe2 @0xe2
+    .word 0x81dbaa6 @0xe3 kings shield
 
 
 bsc_attack_effect_xd5:

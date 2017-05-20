@@ -2,6 +2,18 @@
 #ifndef HBATTLE
 #define HBATTLE
 
+#define CUSTOM_STATUS_AP_SPARER 1
+
+
+#define ATTACK_MISSED 1
+#define ATTACK_SUPER_EFFECTIVE 2
+#define ATTACK_NOT_EFFECTIVE 4
+#define ATTACK_NO_EFFECT 8
+#define ATTACK_OHKO 16
+#define ATTACK_FAILED 32
+#define ATTACK_ENDURED 64
+#define ATTACK_ENDURED_BY_FOCUS_SASH 128
+
 typedef struct battle_flag {
     u32 double_battle : 1;
     u32 link_battle : 1;
@@ -19,6 +31,12 @@ typedef struct battle_flag {
     u32 flag_D : 1;
     u32 unkown : 18;
 } battle_flag;
+
+typedef struct battler_status{
+    u8 unkown[16];
+}battler_status;
+
+battler_status *battler_statuses = (battler_status*)0x02023E8C;
 
 battle_flag *battle_flags = (battle_flag*) 0x02022B4C;
 
@@ -41,12 +59,16 @@ typedef struct battler {
     u8 name[11];
     u8 trigger;
     u8 ot[8];
-    u32 padding3;
+    u32 custom_status; //to apply hacks
     u32 pid;
     u32 status1;
-    u32 field_50;
+    u32 status2;
     u32 tid;
 } battler;
+
+#define STATUS1_SLEEPING 7
+
+#define STATUS2_ATTACK_CHARGED 0x1000
 
 typedef struct battle_bg {
     const void *tileset;
@@ -66,15 +88,24 @@ battle_bg battle_bgs[29];
 
 u16 can_mega_evolve(battler *b);
 
+
 battler* battlers = (battler*) 0x02023BE4;
 u8 *attack_targets = (u8*) 0x02023BD6;
 u8 *attacking_battler = (u8*)0x02023D6B;
 u8 *defending_battler = (u8*)0x02023D6C;
+u8 *active_battler = (u8*)0x02023BC4;
 u8 *battler_oams = (u8*) 0x02023D44;
 u8 *battler_cnt = (u8*) 0x02023BCC;
 u16 *trainer_id = (u16*) 0x020386AE;
 u8 *stat_change = (u8*) 0x02023FC4;
+
 u16 *active_attack = (u16*) 0x02023D4A;
+u8 *active_attack_slot = (u8*)0x02023D48;
+u32 *attack_result = (u32*)0x02023DCC;
+
+int *damage_to_apply = (int*)0x2023D50;
+int *damage_caused = (int*)0x02023D54;
+
 u16 *battler_team_slots = (u16*) 0x02023BCE;
 
 u32 *bsc_status_flags = (u32*)0x02023DD0;
@@ -85,6 +116,23 @@ u8 *attack_anim_target_index = (u8*)0x02037F1B;
 u8 *attack_anim_user_index = (u8*)0x02037F1A;
 u16 *attack_anim_additional_animation = (u16*)0x2037F02;
 u8 *attack_anim_tasks_running = (u8*)0x02037EE2;
+
+u8 *battler_temporary_status= (u8*)0x02023E8C;
+
+
+#define BATTLE_WEATHER_RAIN 1
+#define BATTLE_WEATHER_WOLKENBRUCH 2
+#define BATTLE_WEATHER_RAIN_NIESEL 4
+#define BATTLE_WEATHER_SANDSTORM 8
+#define BATTLE_WEATHER_SANDSTORM_ABILITY 16
+#define BATTLE_WEATHER_SUN 32
+#define BATTLE_WEATHER_SUN_DUERRE 64
+#define BATTLE_WEATHER_HAIL 128
+
+u16 *battle_weather = (u16*) 0x02023F1C;
+
+#define CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD 1
+#define CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD_APPLY_DROP 2
 
 
 extern const unsigned short gfx_battle_bg_capturedTiles[];

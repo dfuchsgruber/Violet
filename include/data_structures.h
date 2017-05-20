@@ -66,5 +66,12 @@ int a_star_to_key(s16 x, s16 y);
 
 bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *walker);
 
+
+
+void gp_stack_init();
+bool gp_stack_push(int value);
+int gp_stack_peek();
+int gp_stack_pop();
+
 #endif	/* BIN_HEAP_H */
 

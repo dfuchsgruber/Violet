@@ -1272,3 +1272,8 @@
 .byte \slot_target
 .word \anim
 .endm
+
+.macro callasm function
+.byte 0xF9
+.word \function
+.endm

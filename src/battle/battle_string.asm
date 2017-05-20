@@ -393,3 +393,9 @@ bsc_strings:
 .word str_battle_x190
 .word str_battle_x191
 .word str_battle_x192
+.word str_battle_x193
+.word str_battle_x194
+.word str_battle_x195
+.word str_battle_x196
+
+

@@ -34,7 +34,7 @@ class PString:
         while len(string):
             matched_literal = None
             for literal in self.table:
-                if string.index(literal) == 0:
+                if string.find(literal) == 0:
                     matched_literal = literal
                     break
             if not matched_literal: raise ("Could not parse first literal in " + string)
@@ -44,7 +44,7 @@ class PString:
         bytes.append(self.terminator)
         return bytes
     
-    def hex2str(self, rom, offset):
+    def hex2str(self, rom, offset, decap=False):
         """ Parses bytes at an offset into a string """
         result = ""
         while True:
@@ -53,5 +53,23 @@ class PString:
             if not self.rev_table[value]: raise Exception("No literal associated with "+hex(value))
             result += self.rev_table[value]
             offset += 1
-        
-        return result
+        if decap:
+            return decap_by_delimiters(result)
+        else:
+            return result
+
+def recap_by_delimiter(s, delim):
+    """ Splits a string by a delimiter, recapitalizes tokens and joins it back together"""
+    return delim.join([token[0].capitalize() + token[1:] for token in s.split(delim)])
+
+def decap_by_delimiters(s, delims=[" ", "_", "-"]):
+    """ Splits a string by different delimiters, decapitalizes and joins it back together"""
+    s = s.lower() #Decap everything at first
+    for delim in delims:
+        #print("splitting", s, "by", delim)
+        s = recap_by_delimiter(s, delim)
+        #print("done:",s)
+    return s
+
+
+    

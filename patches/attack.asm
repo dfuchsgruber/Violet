@@ -509,6 +509,21 @@
 .org 0x85ee924
 	.word attacks
 
+.org 0x8011494
+	.word attacks + 4
+
+.org 0x8011644
+	.word attacks + 4
+
+.org 0x803e7f8
+	.word attacks + 4
+
+.org 0x803e8a0
+	.word attacks + 4
+
+.org 0x8040de0
+	.word attacks + 4
+
 .org 0x8137c64
 	.word attack_descriptions
 
@@ -534,3 +549,39 @@
 
 .org 0x802be18
 	.word attack_effects
+
+.org 0x080D77BC
+        mov r0, #0x7F
+        lsl r0, #0x18 //new attack limiter
+
+.org 0x08072534
+	.word attack_anims
+
+
+//King's Shield
+
+.org 0x08026FB8
+        ldr r0, =hook_kings_shield | 1
+        bx r0
+        .pool
+
+.org 0x08026F18
+        ldr r1, =hook_protecting_attacks_reset | 1
+        bx r1
+        .pool
+
+.org 0x0801D980
+        ldr r0, =hook_protect_attack_succeeds | 1
+        bx r0
+        .pool
+
+.org 0x0801DBB0
+        ldr r0, =hook_protect_attack_succeeds2 | 1
+        bx r0
+        .pool
+
+.org 0x0801FCC4
+        ldr r0, =hook_kings_shield_drop | 1
+        bx r0
+        .pool
+

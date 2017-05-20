@@ -9,6 +9,7 @@
 #define	PSTRING_H
 
 #include "types.h"
+#include "language.h"
 
 pstring buffer0 = (pstring) 0x02021CD0;
 pstring gbuffer = (pstring) 0x02021D18;

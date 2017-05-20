@@ -1,6 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "utils.h"
+#include "debug.h"
 
 #include <stdarg.h>
 
@@ -143,3 +144,14 @@ void dprintf(const char * str, ...)
         dprint(__outstr);
         free(__outstr);
     }
+
+void derrf(const char *str, ...){
+        char* __outstr = malloc(256);
+        va_list args;
+        va_start(args, str);
+        mini_vsnprintf(__outstr, 256, str, args);
+        va_end(args);
+        dprint(__outstr);
+        free(__outstr);
+        err(ERR_GENERIC);
+}

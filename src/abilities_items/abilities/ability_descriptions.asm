@@ -115,3 +115,8 @@ ability_descriptions:
     .word str_ability_descr_0x6e
     .word str_ability_descr_0x6f
     .word str_ability_descr_0x70
+    .word str_ability_descr_0x71
+    .word str_ability_descr_0x72
+    .word str_ability_descr_0x73
+
+

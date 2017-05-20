@@ -25,6 +25,7 @@ extern "C" {
 #define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_2 7
 #define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_3 8
 #define ERR_MEGA_CALLBACK_NOT_ACCESSIBLE 9
+#define ERR_GENERIC 10
     
     
     void debug1(int a);
@@ -36,7 +37,7 @@ extern "C" {
     void err2(int e, int p);
 
     void dprintf(const char * str, ...);
-    
+    void derrf(const char *str, ...);
     
 
 #ifdef	__cplusplus

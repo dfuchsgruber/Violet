@@ -154,3 +154,9 @@ blxr4:
 
 .org 0x801cfd8
 	.word battle_script_cmds
+
+.org 0x080153B4
+        ldr r0, =hook_clear_temporary_effects | 1
+        bx r0
+        .pool
+

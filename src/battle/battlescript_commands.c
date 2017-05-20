@@ -34,3 +34,11 @@ void bsc_cmd_custom_attack_anim(){
     
     
 }
+
+void bsc_cmd_callasm(){
+    //Parameter structure
+    //Offset : word
+    bsc_get_byte(); //command itself
+    void (*function)() = (void (*)()) bsc_get_word();
+    function();
+}

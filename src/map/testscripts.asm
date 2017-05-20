@@ -3,6 +3,7 @@
 .global script_test
 
 script_test:
+givepokemon 0x15 26 0x3a 0 0 0
 givepokemon 0x3e 50 0xEe 0 0 0
 setflag 0x921
 setflag 0x828

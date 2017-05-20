@@ -10,13 +10,20 @@
 #include "callbacks.h"
 #include "color.h"
 #include "mega.h"
+#include "pstring.h"
+#include "save.h"
 
 
 extern u8 bsc_wandlungskunst[];
 extern u8 bsc_stance_change_to_attack[];
 extern u8 bsc_stance_change_to_defense[];
+extern u8 bsc_ap_sparer[];
 
 void attack_init_trigger_abilities(){
+    
+    char str[] = PSTRING("deutsch\n","englisch\n");
+    dprintf(str);
+    
     battler *attacker = &battlers[*attacking_battler];
     switch(attacker->ability){
         case WANDLUNGSK:{
@@ -55,14 +62,23 @@ void attack_init_trigger_abilities(){
                 bsc_push_next_cmd();
                 *attack_anim_user_index = *attacking_battler;
                 *attack_anim_target_index = *attacking_battler;
-                dprintf("User index %d, target index %d\n", *attacking_battler, *attacking_battler);
+                dprintf("User index %d, target index %d\n", *attacking_battler, 
+                        *attacking_battler);
                 *bsc_offset = bsc_stance_change_to_defense;
             }
+            break;
             
         }
         case AP_SPARER:{
             if(random_change_seed() & 3){
-                setflag(FLAG_AP_SPARER_TRIGGERED);
+                attacker->custom_status |= CUSTOM_STATUS_AP_SPARER;
+                bsc_push_next_cmd();
+                *bsc_offset = bsc_ap_sparer;
+                dprintf("Ap sparer triggered for attacker %d\n", 
+                        *attacking_battler);
+                bsc_buffers[0] = 0xFD;
+                bsc_buffers[1] = 3;
+                bsc_buffers[3] = 0xFF;
             }
             break;
         }

@@ -120,6 +120,9 @@
 #define R_KAISERAURA 0x6E
 #define B_KAISERAURA 0x6F
 #define G_KAISERAURA 0x70
+#define PHOTOGENESE 0x71
+#define EXTRADORN 0x72
+#define CURATOR 0x73
 
 
 void stance_change_change_species(u8 target, u16 species);
