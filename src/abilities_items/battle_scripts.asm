@@ -17,6 +17,7 @@
 .global bsc_tollwut
 .global bsc_tollwut_attack_boost
 .global bsc_lucid
+.global bsc_robustheit
 
 bsc_wandlungskunst:
 printstring 0x184
@@ -169,5 +170,11 @@ waitmessage 0x40
 setbyte 0x2023FDE 0x14
 call bsc_turn_end_statchange
 end3
+
+bsc_robustheit:
+printstring 0x18D
+waitmessage 0x40
+return
+
 
 

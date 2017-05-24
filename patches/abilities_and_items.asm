@@ -26,6 +26,15 @@
         bx r0
         .pool
 
+.org 0x08014F9C
+        ldr r0, =hook_attack_priorities | 1
+        bx r0
+        .pool
+
+.org 0x0801F5AC
+        ldr r0, =hook_sturdy | 1
+        bx r0
+        .pool
 
 
 //scarf

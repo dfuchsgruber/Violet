@@ -191,5 +191,7 @@ void bsc_push_next_cmd();
 void attack_anim_remove_big_cb(u8 self);
 bool move_needs_charging(u16 move);
 void bsc_init_by_interrupting_battle_func(u8 *bsc);
+u16 pokemon_get_basic_stage(u16 species);
+void bsc_cmd_x06_apply_damage_modifiers();
 
 #endif

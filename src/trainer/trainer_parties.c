@@ -17,7 +17,7 @@ trainer_pokemon_default_item_default_attacks trainer_party_x0[] = {
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x1[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,25,POKEMON_MAEHIKEL)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,100,POKEMON_DEOXYS)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x2[] = {

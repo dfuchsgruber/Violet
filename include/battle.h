@@ -67,6 +67,9 @@ typedef struct battler {
 } battler;
 
 #define STATUS1_SLEEPING 7
+#define STATUS1_POISONED 8
+#define STATUS1_BURNED 16
+#define STATUS1_BADLY_POISONED 0x80
 
 #define STATUS2_ATTACK_CHARGED 0x1000
 
@@ -134,6 +137,7 @@ u16 *battle_weather = (u16*) 0x02023F1C;
 #define CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD 1
 #define CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD_APPLY_DROP 2
 
+void damage_apply_multiplier(int multiplier);
 
 extern const unsigned short gfx_battle_bg_capturedTiles[];
 extern const unsigned short gfx_battle_bg_caveTiles[];

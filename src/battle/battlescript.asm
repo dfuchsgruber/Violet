@@ -8,7 +8,7 @@ battle_script_cmds:
 	.word 0x801e1b1
 	.word 0x801e38d
 	.word 0x801e521
-	.word 0x801e7cd
+	.word apply_pre_damage_modifiers
 	.word 0x801f089
 	.word 0x801f239
 	.word 0x801f3c5

@@ -438,7 +438,7 @@ basestat basestats[POKEMON_CNT] = {
         70, //base friendship
         0, //lvl up curve
         EGG_GROUP_FIELD, EGG_GROUP_FIELD, //egg groups
-        FROSTSCHICHT, ABILITY_NONE, //abilities
+        ROBUSTHEIT, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
         NOTSCHUTZ, //hidden ability

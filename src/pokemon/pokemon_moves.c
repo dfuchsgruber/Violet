@@ -338,7 +338,7 @@ pokemon_move moveset_pokemon_maehikel[] = {
 	{ATTACK_RASIERBLATT, 15},
 	{ATTACK_WUNSCHTRAUM, 20},
 	{ATTACK_ZAUBERBLATT, 25},
-        {ATTACK_ERHOLUNG, 26},
+        {ATTACK_HEULER, 26},
         {ATTACK_TACKLE, 26},
         {ATTACK_HAGELSTURM, 26},
         {ATTACK_SANDSTURM, 26},
