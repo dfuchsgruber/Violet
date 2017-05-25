@@ -9,10 +9,6 @@ class Img_file:
         self.tiles = self._img_to_tiles(image)
         self.key = path
         self.palette = image.palette.palette
-        
-        print(list(map(self._tile_to_str, self.tiles)))
-
-
 
 
     def _img_to_tiles(self, image):
@@ -34,14 +30,6 @@ class Img_file:
         temp_image.putdata(data)
         return temp_image
 
-    def _create_access_matrix(self, image):
-        """ This is the most crucial part as it reduces the image by w/h flip and remaps indices"""
-        self.matrix = []
-        self.reduced_tiles = []
-        self.index_dict = {}
-        for tile in self.tiles:
-            pass
-
     def _tile_to_str(self, tile):
         str = ""
         for pixel in tile.getdata():
@@ -54,15 +42,6 @@ class Img_file:
             joined.paste(tiles[i], (i*8, 0))
         joined.show()
 
-
-
-
-Img_file("tileset.png")
-
-class Img_table:
-    
-    def __init__(self):
-        self.img_files = {}
 
 
 
