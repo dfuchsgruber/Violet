@@ -1,0 +1,142 @@
+import agb
+import pymap
+import img_dump
+import sys
+import getopt
+import os
+from pymap import tileset, palette
+
+ROM_VIOLET = "VIOLET"
+
+def _flatten(l):
+    return [item for sub in l for item in sub]
+
+def _bitfield(val, lowest, highest):
+    """ Extracts an integer bitfield out of a value from bit lowest (inclusive) to highest (exclusive)"""
+    size = highest-lowest
+    mask = (1 << (size)) - 1
+    return (val >> lowest) & mask
+
+
+def export_tileset(rom, offset, symbol, gfx_symbol, export_gfx=None, basename=None, forced_block_size=0):
+    """ Exports a tileset into a pts (pymap tileset file)"""
+    basename = os.path.abspath(basename)
+    tinfo = rom.array(offset, 4)
+    compression = tinfo[0]
+    is_primary = not (tinfo[1] & 1)
+    gfx_offset = rom.pointer(offset + 4)
+    pal_offset = rom.pointer(offset + 8)
+    block_data = rom.pointer(offset + 12)
+    anim_init = rom.u32(offset + 16)
+    behaviour_offset = rom.pointer(offset + 20)
+
+    t = pymap.tileset.Tileset(is_primary)
+    if forced_block_size:
+        t.blocks = [[0] * 8 for i in range(forced_block_size)]
+        t.behaviours = [0] * forced_block_size
+    dump_palettes(rom, pal_offset, basename, t)
+    if export_gfx:
+        export_gfx = os.path.abspath(export_gfx) 
+        dump_gfx(rom, gfx_offset, export_gfx, compression, pal_offset, is_primary)
+        t.load_image_file(export_gfx)
+        t.gfx = hex(gfx_offset + 0x08000000)
+
+    #Initialize blocks
+    block_cnt = len(t.blocks)
+    for i in range(block_cnt):
+        for j in range(8): t.blocks[i][j] = rom.u16(block_data + (i * 8 + j) * 2)
+    
+    #Initialize behaviours
+    for i in range(block_cnt):
+        value = rom.u32(behaviour_offset + i * 4)
+        t.behaviours[i] = list(map(hex, [_bitfield(value, 0, 9), _bitfield(value, 9, 14), _bitfield(value, 14, 18),
+                            _bitfield(value, 18, 24), _bitfield(value, 24, 27), _bitfield(value, 27, 29),
+                            _bitfield(value, 29, 31), _bitfield(value, 31, 32)]))
+
+
+    t.symbol = symbol
+    t.init_func = hex(anim_init)
+    
+
+    #Save the tileset
+    t.save(basename + ".pts")
+
+
+def dump_palettes(rom, offset, basename, t: tileset.Tileset):
+    """ Dumps a palette array of size 7 or 5, depending on wether the tileset is primary"""
+    if not t.is_primary: offset += 0xE0
+    for i in range((7 if t.is_primary else 6)):
+        colors = [rom.u16(offset + 32 * i + 2 * j) for j in range(16)]
+        rgbs = _flatten(map(lambda col: (col & 0x1F, (col >> 5) & 0x1F, (col >> 10) & 0x1F), colors))
+        index = i if t.is_primary else i + 7
+        path = basename + "_pal" + str(i) + ".ppl"
+        fd = open(path, "wb")
+        fd.write(bytes([rgb * 8 for rgb in rgbs]))
+        fd.close()
+        t.palettes[i].load_palette_file(path)
+
+def dump_gfx(rom, offset, path, lz77, palette_offset, is_primary):
+    """ Dumps the gfx """
+    width, height = (128, 320) if is_primary else (128, 192)
+    img_dump.dump_png(path, rom, offset, width, height, palette_offset, 16, img_lz77=lz77, pal_lz77=False)
+
+
+
+def main(args):
+    """ Shell interface for the exporter """
+    try:
+        opts, args = getopt.getopt(args, "hg:s:o:n:t:b:x:y:", ["help","verbose"])
+    except getopt.GetoptError:
+        sys.exit(2)
+    rom = None
+    offset = None
+    export_gfx = None
+    basename = None
+    tileset_table = None
+    tileset_number = None
+    symbol = None
+    gfx_symbol = None
+    forced_block_size = 0
+    for opt, arg in opts:
+        if opt in ("-h", "--help"):
+            print("""Usage: python pysetex.py [opts] srcfile
+            -g {file}\t\tOutput graphic file [default=do not export graphic]
+            -s {off}\t\t\ttileset offset
+            -n {num}\t\t\ttileset number (overrides tileset offset together with tileset table)
+            -t {off}\t\t\ttileset table (only needed when tileset number is passed)
+            -o {basepath}\t\toutput base path 'e.g. ts/tileset_foo would provide files ts/tileset_foo.pts, ts/tileset_foo_pal0.pts'
+            -y {name}\t\t\tsymbol to create out of tileset
+            -x {sym}\t\t\tsymbol reference to tileset gfx
+            -b {num}\t\t\texplicit number of blocks to export (only use for secondary tilesets)
+            """)
+            return
+        elif opt in ("-g"): export_gfx = arg
+        elif opt in ("-s"): offset = int(arg, 0)
+        elif opt in ("-n"): tileset_number = int(arg, 0)
+        elif opt in ("-t"): tileset_table = int(arg, 0)
+        elif opt in ("-o"): basename = arg
+        elif opt in ("-y"): symbol = arg
+        elif opt in ("-x"): gfx_symbol = arg
+        elif opt in ("-b"): forced_block_size = int(arg, 0)
+    #Process values
+    if tileset_number != None and tileset_table != None: offset = tileset_table + 24 * tileset_number
+    if not offset: raise Exception("No offset is specified or offset is NULL (see --help)")
+    if not basename: raise Exception("No output basepath specified (see --help)")
+
+    #Support for VIOLET
+
+    try: rom = args[0]
+    except: raise Exception("No input rom specified (see --help)")
+    if rom == ROM_VIOLET: rom = agb.VIOLETPATH
+
+    if not symbol: symbol = "maptileset_" + str(offset)
+
+    export_tileset(agb.Agbrom(path=rom), offset, symbol, gfx_symbol, export_gfx, basename, forced_block_size)
+    
+if __name__ == "__main__":
+    #call from main with shell "owscript -s offset -o outpath -l libfile"
+    main(sys.argv[1:])
+        
+
+
+    

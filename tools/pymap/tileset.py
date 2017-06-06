@@ -1,6 +1,6 @@
 
 import json
-import image, palette, agbimg
+from . import image, palette, agbimg
 
 PATH_UNSAFED = "unsafed"
 
@@ -9,7 +9,7 @@ class Tileset:
     def __init__(self, is_primary):
         self.path = PATH_UNSAFED
         self.is_primary = is_primary
-        palette_count = 7 if is_primary else 5
+        palette_count = 7 if is_primary else 6
         self.palettes = [palette.Palette() for i in range(0, palette_count)]
         self.image = image.Image() 
         #self.image = agbimg.Agb_image()
@@ -22,6 +22,7 @@ class Tileset:
         self.behaviours = [0] * number_blocks
 
     def load_image_file(self, path):
+        if not path: return
         self.image.load_image_file(path)
         #self.image.load_png(path)
         if self.is_primary and self.image.width * self.image.height != 128 * 320:

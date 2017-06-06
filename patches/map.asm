@@ -18,6 +18,12 @@
 .org 0x08111002
     mov r0, #0 //0 events to be loaded
 
+
+
+//**************TEST FOR SCRIPTS AND MAPS ! REMOVE!!! 
 .org 0x081656C4
     .byte 0x5
     .word script_test
+
+.org 0x082DD3F4
+    .word maptileset0

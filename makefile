@@ -11,7 +11,7 @@ MID2AGB=@mid2agb
 STR2S=@python str2s.py
 PY=@python
 BIN2S=@python bin2s.py
-MAP2AGB=@D:/Hacking/map2agb/map2agb/bin/Debug/map2agb.exe
+PYSET2S=@python tools/pyset2s.py
 
 ASFLAGS=-mthumb -Iinclude/
 MIDFLAGS=-V92
@@ -30,9 +30,11 @@ MIDSRC= $(shell find Violet_Sources_Private/asset/mus -type f -iname '*.mid')
 GFXSRC= $(shell find Violet_Sources_Private/asset/gfx -type f -iname '*.png')
 STRSRC = $(shell find Violet_Sources_Private/asset/string -type f -iname '*.txt')
 WAVSRC = $(shell find Violet_Sources_Private/asset/cry -type f -iname '*.wav')
+
+
 SAMPLESRC = $(shell find Violet_Sources_Private/asset/sample -type f -iname '*.bin')
 MAPSRC = $(shell find map -type f -iname '*.mapheader')
-MAPTILESETSRC = $(shell find map -type f -iname '*.tileset')
+MAPTILESETSRC = $(shell find map -type f -iname '*.pts')
 MAPTILESETGFXSRC = $(shell find map -type f -iname '*.png')
 
 
@@ -58,7 +60,7 @@ SAMPLEOBJS = $(SAMPLEAS:%.s=%.o)
 MAPAS = $(MAPSRC:%.mapheader=$(BLDPATH)/%.s)
 MAPOBJS = $(MAPAS:%.s=%.o)
 	
-MAPTILESETAS = $(MAPTILESETSRC:%.tileset=$(BLDPATH)/%.s)
+MAPTILESETAS = $(MAPTILESETSRC:%.pts=$(BLDPATH)/%.s)
 MAPTILESETOBJS = $(MAPTILESETAS:%.s=%.o)
 	
 MAPTILESETGFXC = $(MAPTILESETGFXSRC:%.png=$(BLDPATH)/%.c)
@@ -128,9 +130,9 @@ $(MAPOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@
 	
-$(MAPTILESETAS): $(BLDPATH)/%.s: %.tileset
+$(MAPTILESETAS): $(BLDPATH)/%.s: %.pts
 	$(shell mkdir -p $(dir $@))
-	$(MAP2AGB)  -o $@ -m tileset $<
+	$(PYSET2S)  -o $@ $<
 
 $(MAPTILESETOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
