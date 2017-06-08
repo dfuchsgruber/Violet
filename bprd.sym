@@ -222,3 +222,4 @@ move_needs_charging = 0x0802A158 | 1;
 bsc_init_by_interrupting_battle_func = 0x0801BBA9;
 pokemon_get_basic_stage = 0x08045874 | 1;
 bsc_cmd_x06_apply_damage_modifiers = 0x0801E7CC | 1;
+memset = 0x081E9DC0 | 1;
