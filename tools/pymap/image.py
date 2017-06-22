@@ -22,7 +22,7 @@ class Image:
         self.width, self.height = self.image.size
         #image = self._make_color_transparent(image)
         #self.tiles = self._img_to_tiles(image)
-        self.key = path
+        self.key = os.path.relpath(path)
         self.palette = self.image.palette.palette
         self.empty = False
         self.tiles = self._img_to_tiles(self.image)

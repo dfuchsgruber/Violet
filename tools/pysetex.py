@@ -7,6 +7,7 @@ import os
 from pymap import tileset, palette
 
 ROM_VIOLET = "VIOLET"
+DEFAULT_TABLE = 0x2D49B8
 
 def _flatten(l):
     return [item for sub in l for item in sub]
@@ -20,7 +21,6 @@ def _bitfield(val, lowest, highest):
 
 def export_tileset(rom, offset, symbol, gfx_symbol, export_gfx=None, basename=None, forced_block_size=0):
     """ Exports a tileset into a pts (pymap tileset file)"""
-    basename = os.path.abspath(basename)
     tinfo = rom.array(offset, 4)
     compression = tinfo[0]
     is_primary = not (tinfo[1] & 1)
@@ -36,10 +36,11 @@ def export_tileset(rom, offset, symbol, gfx_symbol, export_gfx=None, basename=No
         t.behaviours = [0] * forced_block_size
     dump_palettes(rom, pal_offset, basename, t)
     if export_gfx:
-        export_gfx = os.path.abspath(export_gfx) 
         dump_gfx(rom, gfx_offset, export_gfx, compression, pal_offset, is_primary)
         t.load_image_file(export_gfx)
         t.gfx = hex(gfx_offset + 0x08000000)
+    if gfx_symbol:
+        t.gfx = gfx_symbol
 
     #Initialize blocks
     block_cnt = len(t.blocks)
@@ -92,7 +93,7 @@ def main(args):
     offset = None
     export_gfx = None
     basename = None
-    tileset_table = None
+    tileset_table = DEFAULT_TABLE
     tileset_number = None
     symbol = None
     gfx_symbol = None

@@ -21,14 +21,14 @@ class Palette:
             #Open as pymap palette file (maybe we should use another extension, who knows...)
             self.colors = bytes(fd.read())
             fd.close()
-            self.key = path
+            self.key = os.path.relpath(path)
             self.empty = False
         elif extension.lower() == ".png":
             #Extract palette from 4bpp indexed png
             img = Image.open(fd)
             self.colors = bytes(img.palette.palette)
             fd.close()
-            self.key = path
+            self.key = os.path.relpath(path)
             self.empty = False
         else:
             fd.close()

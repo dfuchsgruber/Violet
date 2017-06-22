@@ -10,6 +10,7 @@ import numpy as np
 import time
 from threading import Thread
 
+
 CANVAS_ZOOM = 3
 CANVAS_WIDTH = 128 * CANVAS_ZOOM
 CANVAS_HEIGHT_TSP = 1280 * CANVAS_ZOOM
@@ -624,6 +625,7 @@ class Tileset_gui(tkinter.Frame):
         t = self.primary_tileset if primary else self.secondary_tileset
         if not path or not len(path): return
         if not t: return
+        path = os.path.relpath(path)
         try:
             t.palettes[pal_id].load_palette_file(path)
         except Exception as e:
@@ -679,7 +681,7 @@ class Tileset_gui(tkinter.Frame):
         widget_entry = self.tsp_img_entry if primary else self.tss_img_entry
         path = widget_entry.get()
         try:
-            t.load_image_file(path)
+            t.load_image_file(os.path.relpath(path))
         except Exception as e:
             messagebox.showerror("Could not open image file", "Invalid image file or path " + path + "\n" + str(e))
 
@@ -783,6 +785,7 @@ class Tileset_gui(tkinter.Frame):
         t.image.key = path
         widget_entry = self.tsp_img_entry if primary else self.tss_img_entry
         if not path or not len(path): return
+        path = os.path.relpath(path)
         widget_entry.delete(0, tkinter.END)
         widget_entry.insert(0, path)
         t.load_image_file(path)

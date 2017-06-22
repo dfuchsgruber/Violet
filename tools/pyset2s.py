@@ -20,7 +20,7 @@ def shell(args):
             print("Usage: python pyset2s.py -o outfile infile")
             return
         elif opt == "-o": outfile = os.path.abspath(arg)
-    tileset_file = os.path.abspath(args[0])
+    tileset_file = args[0]
     if not outfile: raise Exception("No output file specified")
     s = tileset_to_assembly(tileset_file)
     fd = open(outfile, "w+")
@@ -32,7 +32,7 @@ def tileset_to_assembly(tileset_file):
     s = "@*** Auto generated tileset assembly of '" + tileset_file + "', " + str(time.time()) + "***\n\n"
 
 
-    t = pymap.tileset.from_file(tileset_file)
+    t = pymap.tileset.from_file(tileset_file, from_root=True) #This is executed from the root dir
     symbol = t.symbol
     #First create the header (global symbols)
     s += "\n".join([".global " + symbol + g for g in ["", "_palettes", "_blocks", "_behaviours"]])

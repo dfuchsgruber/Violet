@@ -1,6 +1,8 @@
 
 import json
 from . import image, palette, agbimg
+import os
+from . import path as rpath
 
 PATH_UNSAFED = "unsafed"
 
@@ -56,24 +58,25 @@ class Tileset:
             "gfx" : self.gfx,
             "init_func" : self.init_func,
         }
-        self.path = path
+        self.path = os.path.relpath(path)
         fd = open(path, "w+")
         json.dump(data, fd)
         fd.close()
 
-def from_file(path):
+def from_file(path, from_root=False):
     """ Instanciates the class from a json file"""
+    def _path(p): return rpath.rootpath(p) if from_root else os.path.relpath(p)
     fd = open(path, "r+")
     data = json.load(fd)
     fd.close()
     t = Tileset(data["is_primary"])
-    t.load_image_file(data["image"])
+    t.load_image_file(_path(data["image"]))
     palette_keys = data["palettes"]
     for i in range(0, len(palette_keys)):
-        t.load_palette(palette_keys[i], i)
+        t.load_palette(_path(palette_keys[i]), i)
     t.blocks = data["blocks"]
     t.behaviours = data["behaviours"]
-    t.path = path
+    t.path = _path(path)
     t.symbol = data["symbol"]
     t.gfx = data["gfx"]
     t.init_func = data["init_func"]
