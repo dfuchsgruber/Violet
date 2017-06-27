@@ -9,6 +9,9 @@ import os, getopt
 
 NONE, BLOCKS, LEVELS, EVENTS = range(4)
 
+
+BLOCK_CANVAS_SIZE = 600
+
 class Pymap_gui(tkinter.Frame):
     """ Main gui frame for the pymap module """
     def __init__(self, root):
@@ -19,6 +22,8 @@ class Pymap_gui(tkinter.Frame):
         self.block_selection = [[0]]
         self.block_selection_area = 0, 0, 0, 0
         self._init_gui(root)
+        self.undo_stack = [] #Tuple: func(mode, arg), arg
+        self.redo_stack = [] #as above
 
 
     def _init_gui(self, root):
@@ -36,6 +41,8 @@ class Pymap_gui(tkinter.Frame):
         file_menu.add_command(label="Open", command=self.file_open)
         file_menu.add_command(label="Save", command=self.file_save)
         menu.add_radiobutton(label="Footer", command=self.edit_footer)
+        menu.add_radiobutton(label="Undo", command=self.undo)
+        menu.add_radiobutton(label="Redo", command=self.redo)
 
         #Setup a context widget on the left of the frame
         self.context_widget = None
@@ -65,7 +72,7 @@ class Pymap_gui(tkinter.Frame):
         tkinter.Label(self.context_widget, text="Blocks:", relief=tkinter.RIDGE).grid(row=0, column=0, sticky=tkinter.NW)
         self.block_canvas_frame = tkinter.Frame(self.context_widget)
         self.block_canvas_frame.grid(row=1, column=0, columnspan=2, sticky=tkinter.NW)
-        self.block_canvas = tkinter.Canvas(self.block_canvas_frame, width=128, height=768, background="black", scrollregion=(0, 0, 128, 2048))
+        self.block_canvas = tkinter.Canvas(self.block_canvas_frame, width=128, height=BLOCK_CANVAS_SIZE, background="black", scrollregion=(0, 0, 128, 2048))
         self.block_canvas.pack(side=tkinter.LEFT)
         self.block_canvas_bar_v = tkinter.Scrollbar(self.block_canvas_frame, orient=tkinter.VERTICAL)
         self.block_canvas_bar_v.pack(side=tkinter.RIGHT, fill=tkinter.Y)
@@ -81,10 +88,12 @@ class Pymap_gui(tkinter.Frame):
         self._refresh_map()
 
         #Event binding of block canvas (selection)
-        def update_block_selection_by_area():
+        def update_block_selection_by_area(x0, y0, x1, y1):
             """ Updates the block selection by the block selection area """
             if not self._can_draw or not self.context == BLOCKS: return
-            x0, y0, x1, y1 = self.block_selection_area
+            #Check if the rectangle is valid (bottom right block is defined)
+            if (y1 - 1) * 8 + x1 - 1 >= len(self.block_imgs): return
+            self.block_selection_area = x0, y0, x1, y1
             self.block_selection = [[8 * y + x for x in range(x0, x1)] for y in range(y0, y1)]
             self.block_canvas.delete(self.block_canvas_selection_rectangle)
             self.block_canvas_selection_rectangle = self.block_canvas.create_rectangle(16 * x0, 16 * y0, 16 * x1, 16 * y1, fill="", outline="red")
@@ -92,24 +101,26 @@ class Pymap_gui(tkinter.Frame):
 
         def block_canvas_b_pressed(e):
             slider_top, slider_bottom = self.block_canvas_bar_v.get()
-            x, y = e.x, e.y + (slider_top * 768)
+            x, y = e.x, e.y + (slider_top * 2048)
             x0, y0 = int(x / 16), int(y / 16)
-            self.block_selection_area = x0, y0, x0 + 1, y0 + 1
-            update_block_selection_by_area()
+            update_block_selection_by_area(x0, y0, x0 + 1, y0 + 1)
         
         def block_canvas_b_motion(e):
             x0, y0, _, _ = self.block_selection_area
             slider_top, slider_bottom = self.block_canvas_bar_v.get()
-            x, y = e.x, e.y + (slider_top * 768)
-            x1, y1 = int(x / 16), int(y / 16)
+            x, y = e.x, e.y + (slider_top * 2048)
+            x1, y1 = int(x / 16) + 1, int(y / 16) + 1
+            if x1 > 8: x1 = 8
+            if y1 > 256: y1 = 256
             if x1 <= x0: x1 = x0 + 1
             if y1 <= y0: y1 = y0 + 1
-            self.block_selection_area = x0, y0, x1, y1
-            update_block_selection_by_area()
-        
+            update_block_selection_by_area(x0, y0, x1, y1)
+
+
         self.block_canvas.bind("<ButtonPress-1>", block_canvas_b_pressed)
         self.block_canvas.bind("<ButtonPress-3>", block_canvas_b_pressed)
         self.block_canvas.bind("<B3-Motion>", block_canvas_b_motion)
+
 
 
 
@@ -120,6 +131,7 @@ class Pymap_gui(tkinter.Frame):
         if not self.map.footer.tsp or not self.map.footer.tss: return False
         if self.map.footer.tsp.image.empty or self.map.footer.tss.image.empty: return False
         return True
+
 
 
     def _get_tile(self, id, pal, hflip, vflip):
@@ -175,7 +187,7 @@ class Pymap_gui(tkinter.Frame):
         self.block_canvas_image = self.block_canvas.create_image(1, 1, image=self.block_raw_image, anchor=tkinter.NW)
 
 
-    def _refresh_borders(self):
+    def _refresh_borders(self, b1binding=None):
         """ Refresh the borders """
         if not self._can_draw() or not self.context == BLOCKS: return
         bw, bh = self.map.footer.border_width, self.map.footer.border_height
@@ -191,6 +203,16 @@ class Pymap_gui(tkinter.Frame):
         self.border_raw_image = ImageTk.PhotoImage(self.border_raw_pil_image)
         self.border_canvas.create_image(1, 1, image=self.border_raw_image, anchor=tkinter.NW)
 
+        #Event binding of border canvas
+        def border_canvas_b_pressed(e):
+            print("asdf")
+            x, y = int(e.x / 16), int(e.y / 16)
+            action = Action_border_change(self, x, y, self.block_selection)
+            self.undo_stack.append(action)
+            action.do()
+
+        self.border_canvas.bind("<ButtonPress-1>", border_canvas_b_pressed)
+
     def _refresh_block_selection(self):
         """ Refresh the selection widget"""
         if not self._can_draw() or not self.context == BLOCKS: return
@@ -199,7 +221,7 @@ class Pymap_gui(tkinter.Frame):
         w, h = len(self.block_selection[0]), len(self.block_selection)
         if ow != w or oh != h:
             #Create a new frame and canvas
-            cw, ch = min(w, 4), min(h, 4)
+            cw, ch = min(w, 8), min(h, 4)
             self.selection_frame = tkinter.Frame(self.context_widget)
             self.selection_frame.grid(row=3, column=0, sticky=tkinter.NW)
             self.selection_canvas = tkinter.Canvas(self.selection_frame, width = 16 * cw, height = 16 * ch, background="black", scrollregion=(0, 0, 16 * w, 16 * h))
@@ -227,7 +249,24 @@ class Pymap_gui(tkinter.Frame):
                 self.selection_raw_pil_image.paste(self.block_imgs[block_id], (16 * x, 16 * y))
         self.selection_raw_image = ImageTk.PhotoImage(self.selection_raw_pil_image)
         self.selection_canvas.create_image(1, 1, image=self.selection_raw_image, anchor=tkinter.NW)
+        
 
+
+    def undo(self):
+        """ Pops from undo stack and undoes last action """
+        if len(self.undo_stack):
+            action = self.undo_stack.pop()
+            self.redo_stack.append(action)
+            action.undo()
+
+    def redo(self):
+        """ Pops from redo stack and redoes the last action """
+        if len(self.redo_stack):
+            action = self.redo_stack.pop()
+            self.undo_stack.append(action)
+            action.do()
+
+    
 
 
     def _refresh_map(self):
@@ -365,6 +404,48 @@ class Pymap_gui(tkinter.Frame):
                 messagebox.showerror("Tileset error", "Unable to load tileset file: "+ str(e))
                 return
         entry_tsp.bind("<Button-1>", lambda e: open_tileset(True)), entry_tss.bind("<Button-1>", lambda e: open_tileset(False))
+
+
+
+
+class Action_border_change:
+    """ Action class for border change """
+    def __init__(self, root: Pymap_gui, x, y, blocks):
+        self.root = root
+        self.x0 = x
+        self.y0 = y
+        self.blocks = blocks
+        dx, dy = root.block_selection_size
+        self.last_blocks = _arrrange(root.block_selection, self.x0, self.y0, self.x0 + dy, self.y0 + dy)
+
+    def do(self):
+        _arrpaste(self.root.map.footer.borders, self.blocks, self.x0, self.y0)
+        self.root._refresh_borders()
+
+    def undo(self):
+        _arrpaste(self.root.map.footer.borders, self.last_blocks, self.x0, self.y0)
+        self.root._refresh_borders()
+        
+
+
+
+def _arrpaste(dst, src, x0, y0):
+    """ Pastes src into dst at coordinates x0, y0 (where dst and src are defined)"""
+    for y in range(min(y0, len(src), len(dst)), min(len(src), len(dst))):
+        for x in range(min(x0, len(src[y]), len(dst[y])), min(len(src[y]), len(dst[y]))):
+            dst[y][x] = src[y][x]
+
+def _arrrange(src, x0, y0, x1, y1):
+    """ Extracts an array range from source"""
+    dst = [[-1 for x in range(x0, x1)] for y in range(y0, y1)]
+    for y in range(y0, y1):
+        if y in range(len(src)):
+            for x in range(x0, x1):
+                if x in range(len(src[y])):
+                    dst[y - y0][x - x0] = src[y][x]
+    return dst
+    
+
 
 def shell(args):
     """ Shell call for the gui """
