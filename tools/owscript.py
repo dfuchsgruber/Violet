@@ -5,8 +5,13 @@ import pstring
 import sys
 import getopt
 
+TYPE_SCRIPT = 0
+TYPE_MOVEMENT = 1
+TYPE_STRING = 2
+TYPE_MART = 3
 
-LIBFILE = "lib/owscript.json"
+
+LIBFILE = "lib/owscript.pml"
 verbose = True
 tablefile = "../table.tbl"
 
@@ -22,7 +27,7 @@ class CommandTrainerbattleFactory:
         elif type in (1,2):
             return Command("trainerbattlecont", [Param("kind", BYTE), Param("trainer", HWORD),
             Param("people", HWORD), Param("str_challange", STRING), Param("str_defeat", STRING),
-            Param("continuation", SCRIPT_REFERENCE)])
+            Param("continuation", SCRIPT_REFERENCE)], ends_section = True)
         elif type in (4,7):
             return Command("trainerbattledouble", [Param("kind", BYTE), Param("trainer", HWORD),
             Param("people", HWORD), Param("str_challange", STRING), Param("str_defeat", STRING),
@@ -38,6 +43,8 @@ class CommandTrainerbattleFactory:
             Param("people", HWORD), Param("str_challange", STRING), Param("str_defeat", STRING),
             Param("str_var1", WORD), Param("continuation", SCRIPT_REFERENCE)])
 
+    def get_ends_section(self, rom, offset): return self.make_command(rom, offset).ends_section
+
     def make_command(self, rom, offset):
         type = rom.u8(offset + 1)
         return self.make_command_by_type(type)
@@ -45,8 +52,8 @@ class CommandTrainerbattleFactory:
     def size(self, rom, offset):
         return self.make_command(rom, offset).size(rom, offset)
 
-    def export(self, rom, offset):
-        return self.make_command(rom, offset).export(rom, offset)
+    def export(self, tree, rom, offset):
+        return self.make_command(rom, offset).export(tree, rom, offset)
 
     def to_macro(self, id):
         """ Exports all types as macro """
@@ -116,76 +123,95 @@ class Owscript_Exploration_tree:
     def __init__(self, rom):
         self.rom = rom
         self.offsets = []
-        self.explored_offsets = set() #No offset must be encountered twice (prevent infinite loops)
+        self.explored_offsets = {} #No offset must be encountered twice (prevent infinite loops)
         self.assemblies = []
+        self.strings = [] #Tuple symbol, content, filename
     
-    def explore(self, offset):
+    def explore(self, offset, verbose=verbose, recursive=True):
         """ Explores an offset of a script tree """
         self.offsets.append(offset)
         while len(self.offsets):
             #Explore this offset
             offset = self.offsets.pop()
-            if verbose: print("Exploring offset", hex(offset))
             if offset not in self.explored_offsets:
+                if verbose: print("Exploring offset", hex(offset))
                 label = script_offset_to_label(offset)
+                self.explored_offsets[offset] = TYPE_SCRIPT #We worked through this offset
+                original_offset = offset
                 assembly = ".global " + label + "\n" + label + ":\n" 
                 while True:
-                    cmd = owscript_cmds[self.rom.u8(offset)]
-                    assembly += cmd.export(self, self.rom, offset) + "\n"
+                    try: cmd_id = self.rom.u8(offset)
+                    except Exception as e:
+                        print("Error at exploring offset", offset)
+                        raise e
+                    try: cmd = owscript_cmds[cmd_id]
+                    except Exception as e:
+                        print("Error: Command", cmd_id, "is not defined. Exported so far", assembly)
+                        raise e
+                    #cmd = owscript_cmds[self.rom.u8(offset)]
+                    try: assembly += cmd.export(self, self.rom, offset) + "\n"
+                    except Exception as e:
+                        print("Error at export of command", cmd)
+                        raise e
                     #cmd.callback(self, self.rom, offset)
                     if cmd.get_ends_section(self.rom, offset): break #Only if the command ends a section
                     offset += cmd.size(self.rom, offset)
-                self.explored_offsets.add(offset) #We worked through this offset
-                self.assemblies.append(offset, assembly) #Append the assembly
+                self.assemblies.append((original_offset, assembly)) #Append the assembly
 
     def load_lib(self, libpath):
         """ Loads a json list of so far explored offset"""
         fd = open(libpath)
         lib = fd.read()
         fd.close()
-        self.explored_offsets = json.loads(lib)
+        self.explored_offsets = eval(lib)
 
     def store_lib(self, libpath):
         """ Stores a json list of so far explored offsets"""
         fd = open(libpath, "w+")
-        fd.write(json.dumps(self.explored_offsets))
+        fd.write(str(self.explored_offsets))
         fd.close()
+
+    
 
 
 
 pstring_factory = pstring.PString(tablefile, terminator=0xFF)
 
-def script_offset_to_label(offset): return "ow_script_" + "{0:#0{1}x}".format(offset, 10)
-def movement_offset_to_label(offset): return "ow_script_movs_" + "{0:#0{1}x}".format(offset, 10)
-def string_offset_to_label(offset): return "str_ow_script_" + "{0:#0{1}x}".format(offset, 10)
-def mart_offset_to_label(offset): return "ow_script_mart" + "{0:#0{1}x}".format(offset, 10)
+def script_offset_to_label(offset): return "ow_script_" + hex(offset)
+def movement_offset_to_label(offset): return "ow_script_movs_" + hex(offset)
+def string_offset_to_label(offset): return "str_" + hex(offset)
+def mart_offset_to_label(offset): return "ow_script_mart" + hex(offset)
 
 def explore_movement_list(tree, rom, offset):
     """ Explores an offset as reference to a movement list """
     offset = rom.pointer(offset)
     label = movement_offset_to_label(offset)
-    assembly = ".global " + label + "\n" + label + ":\n"
-    assembly_offset = offset
-    while True:
-        bt = rom.u8(offset)
-        assembly += ".byte " + hex(bt) + "\n"
-        offset += 1
-        if bt == 0xFE: break
-    tree.assemblies.append(assembly_offset, assembly)
+    if not offset in tree.explored_offsets:
+        assembly = ".global " + label + "\n" + label + ":\n"
+        assembly_offset = offset
+        while True:
+            bt = rom.u8(offset)
+            assembly += ".byte " + constants._dict_get(constants.moves, bt) + "\n"
+            offset += 1
+            if bt == 0xFE: break
+        tree.assemblies.append((assembly_offset, assembly))
+        tree.explored_offsets[assembly_offset] = TYPE_MOVEMENT
     return label
 
 def explore_mart_list(tree, rom, offset):
     """ Explores an offset as reference to a mart list """
     offset = rom.pointer(offset)
     label = mart_offset_to_label(offset)
-    assembly = ".global " + label + "\n" + label + ":\n"
-    assembly_offset = offset
-    while True:
-        hword = rom.u16(offset)
-        assembly += ".hword " + constants.item_table[hword] + "\n"
-        offset += 2
-        if hword == 0: break
-    tree.assemblies.append(assembly_offset, assembly)
+    if not offset in tree.explored_offsets:
+        assembly = ".global " + label + "\n" + label + ":\n"
+        assembly_offset = offset
+        while True:
+            hword = rom.u16(offset)
+            assembly += ".hword " + constants.item_table[hword] + "\n"
+            offset += 2
+            if hword == 0: break
+        tree.assemblies.append((assembly_offset, assembly))
+        tree.explored_offsets[assembly_offset] = TYPE_MART
     return label
 
 def explore_script_reference(tree, rom, offset):
@@ -199,8 +225,10 @@ def explore_string_reference(tree, rom, offset):
     """ Explores an offset as reference to a string """
     offset = rom.pointer(offset)
     s = pstring_factory.hex2str(rom, offset)
-    print(s)
     label = string_offset_to_label(offset)
+    if not offset in tree.explored_offsets:
+        tree.strings.append((label, s))
+        tree.explored_offsets[offset] = TYPE_STRING
     return label
 
 #Parameter types, can be extended and stores callbacks to exploration funcs that yield the exported assembly string and also proceed exporting
@@ -208,14 +236,18 @@ BYTE = ParamType(1, lambda tree, rom, offset : str(hex(rom.u8(offset))))
 HWORD = ParamType(2, lambda tree, rom, offset : str(hex(rom.u16(offset))))
 WORD =  ParamType(4, lambda tree, rom, offset : str(hex(rom.u32(offset))))
 SCRIPT_REFERENCE = ParamType(4, explore_script_reference)
-ITEM = ParamType(2, lambda tree, rom, offset : constants.item_table[rom.u16(offset)])
-FLAG = ParamType(2, lambda tree, rom, offset : str(hex(rom.u16(offset))))
+ITEM = ParamType(2, lambda tree, rom, offset : constants.item(rom.u16(offset)))
+FLAG = ParamType(2, lambda tree, rom, offset : constants.flag(rom.u16(offset)))
 MOVEMENT_LIST = ParamType(4, explore_movement_list)
 STRING = ParamType(4, explore_string_reference)
-POKEMON = ParamType(2, lambda tree, rom, offset : constants.species_table[rom.u16(offset)])
-ATTACK = ParamType(2, lambda tree, rom, offset : constants.attack_table[rom.u16(offset)])
+POKEMON = ParamType(2, lambda tree, rom, offset : constants.species(rom.u16(offset)))
+ATTACK = ParamType(2, lambda tree, rom, offset : constants.attack(rom.u16(offset)))
 MART = ParamType(4, explore_mart_list)
-
+FLAG = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.flag_table, rom.u16(offset)))
+VAR = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.var_table, rom.u16(offset)))
+ORD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.ords, rom.u8(offset)))
+STD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.stds, rom.u8(offset)))
+MUSIC = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.music, rom.u16(offset)))
 
 owscript_cmds = [
     #0x00
@@ -225,13 +257,13 @@ owscript_cmds = [
     Command("return", [], ends_section = True),
     Command("call", [Param("subscript", SCRIPT_REFERENCE)]),
     Command("goto", [Param("script", SCRIPT_REFERENCE)], ends_section = True),
-    Command("callif", [Param("condition", BYTE), Param("script", SCRIPT_REFERENCE)]),
-    Command("gotoif", [Param("condition", BYTE), Param("subscript", SCRIPT_REFERENCE)]),
+    Command("callif", [Param("condition", ORD), Param("script", SCRIPT_REFERENCE)]),
+    Command("gotoif", [Param("condition", ORD), Param("subscript", SCRIPT_REFERENCE)]),
     #0x08
-    Command("gotostd", [Param("std", BYTE)], ends_section = True),
-    Command("callstd", [Param("std", BYTE)]),
-    Command("gotostdif", [Param("condition", BYTE), Param("std", BYTE)]),
-    Command("callstdif", [Param("condition", BYTE), Param("std", BYTE)]),
+    Command("gotostd", [Param("std", STD)], ends_section = True),
+    Command("callstd", [Param("std", STD)]),
+    Command("gotostdif", [Param("condition", BYTE), Param("std", STD)]),
+    Command("callstdif", [Param("condition", BYTE), Param("std", STD)]),
     Command("jumpram", []),
     Command("killscript", []),
     Command("set_x203AA3C", [Param("value", BYTE)]),
@@ -243,12 +275,12 @@ owscript_cmds = [
     Command("setbyte", [Param("bank", BYTE), Param("offset", WORD)]),
     Command("copyscriptbanks", [Param("dst_bank", BYTE), Param("src_bank", BYTE)]),
     Command("copybyte", [Param("dst", WORD), Param("src", WORD)]),
-    Command("setvar", [Param("var", HWORD), Param("value", HWORD)]),
-    Command("addvar", [Param("var", HWORD), Param("value", HWORD)]),
+    Command("setvar", [Param("var", VAR), Param("value", HWORD)]),
+    Command("addvar", [Param("var", VAR), Param("value", HWORD)]),
     #0x18
-   Command("subvar", [Param("var", HWORD), Param("value", HWORD)]),
-   Command("copyvar", [Param("dst", HWORD), Param("src", HWORD)]),
-   Command("copyvarifnotzero", [Param("dst", HWORD), Param("src", HWORD)]),
+   Command("subvar", [Param("var", VAR), Param("value", HWORD)]),
+   Command("copyvar", [Param("dst", VAR), Param("src", VAR)]),
+   Command("copyvarifnotzero", [Param("dst", VAR), Param("src", VAR)]),
    Command("comparebanks", [Param("bank1", HWORD), Param("bank2", HWORD)]),
    Command("comparebanktobyte", [Param("bank", BYTE), Param("value", BYTE)]),
    Command("comparebanktofarbyte", [Param("bank", BYTE), Param("offset", WORD)]),
@@ -256,8 +288,8 @@ owscript_cmds = [
    Command("comparefarbytetobyte", [Param("offset", WORD), Param("value", BYTE)]),
    #0x20
    Command("comparefarbytes", [Param("offset1", WORD), Param("offset2", WORD)]),
-   Command("compare", [Param("var", HWORD), Param("value", HWORD)]),
-   Command("comparevars", [Param("var1", HWORD), Param("var2", HWORD)]),
+   Command("compare", [Param("var", VAR), Param("value", HWORD)]),
+   Command("comparevars", [Param("var1", VAR), Param("var2", VAR)]),
    Command("callasm", [Param("function", WORD)]),
    Command("callasmandwaitstate", [Param("function", WORD)]),
    Command("special", [Param("special_id", HWORD)]),
@@ -276,10 +308,10 @@ owscript_cmds = [
    Command("checksound", []),
    Command("fanfare", [Param("fanfare", HWORD)]),
    Command("waitfanfare", []),
-   Command("playsong", [Param("song", HWORD), Param("feature", BYTE)]),
-   Command("playsong2", [Param("song", HWORD)]),
+   Command("playsong", [Param("song", MUSIC), Param("feature", BYTE)]),
+   Command("playsong2", [Param("song", MUSIC)]),
    Command("songfadedefault", []),
-   Command("fadesong", [Param("song", HWORD)]),
+   Command("fadesong", [Param("song", MUSIC)]),
    Command("fadeout", [Param("speed", BYTE)]),
    #0x38
    Command("fadein", [Param("speed", BYTE)]),
@@ -459,7 +491,8 @@ owscript_cmds = [
    Command("warpteleport2", [Param("bank", BYTE), Param("map", BYTE), Param("exit", BYTE), Param("x", HWORD), Param("y", HWORD)]),
    Command("setcatchlocation", [Param("teamslot", HWORD), Param("namespace", BYTE)]),
    Command("braille2", [Param("brailledata", STRING)]),
-   Command("bufferitems", [Param("buffer", BYTE), Param("item", ITEM), Param("quantity", HWORD)])
+   Command("bufferitems", [Param("buffer", BYTE), Param("item", ITEM), Param("quantity", HWORD)]),
+   Command("singlemovement", [Param("target", HWORD), Param("move", HWORD)])
 ]
 
 def shell(argv):
@@ -511,8 +544,8 @@ def export_macros(path):
 
 if __name__ == "__main__":
     #call from main with shell "owscript -s offset -o outpath -l libfile"
-    #shell(sys.argv[1:])
-    export_macros("D:/temp/owscript_macros.s")
+    shell(sys.argv[1:])
+    #export_macros("D:/temp/owscript_macros.s")
 
 """
 test_tree = Exploration_tree(agb.Agbrom(path="C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"))

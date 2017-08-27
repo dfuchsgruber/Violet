@@ -1,0 +1,3 @@
+.string str_0x8f4eff GER
+	=\b\06s_Computer_scheint_das_neuste\nModell_zu_sein!\p...\pIch_sollte_mich_auf_den_Weg\nmachen.
+.end

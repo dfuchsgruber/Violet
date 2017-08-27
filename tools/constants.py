@@ -1,4 +1,16 @@
+
+import os
+import sys
+import getopt
+from pymap import path as rpath
+STDLIB = "./lib/macros.py"
+INCLUDE = "../include"
+STDMACRO = "std.s"
+
+
 """ Table of certain constants """
+
+
 
 move_tutor = [
 		
@@ -879,7 +891,7 @@ ability_table = [
 	"SANDSCHLEIER",
 	"STATIK",
 	"VOLTABSORBER",
-	"H2O-ABSORBER",
+	"H2O_ABSORBER",
 	"DOESIGKEIT",
 	"WOLKE_SIEBEN",
 	"FACETTENAUGE",
@@ -965,7 +977,7 @@ ability_table = [
 	"LERNFAEHIG",
 	"HAGELALARM",
 	"HOCHMUT",
-	"AP-SPARER",
+	"AP_SPARER",
 	"TAKTIKWECHS.",
 	"LUZID",
 	"UNGEBROCHEN",
@@ -1690,7 +1702,688 @@ pockets = [
 	"POCKET_BERRIES"
 ]
 
+flag_table = {
+	0x820 : "FRBADGE_1",
+	0x821 : "FRBADGE_2",
+	0x822 : "FRBADGE_3",
+	0x823 : "FRBADGE_4",
+	0x824 : "FRBADGE_5",
+	0x825 : "FRBADGE_6",
+	0x826 : "FRBADGE_7",
+	0x827 : "FRBADGE_8",
+	0x828 : "PKMNMENU",
+	0x829 : "POKEDEX",
+	0x830 : "RUNNING_SHOES",
+
+	#Custom from pkmn violet, incomplete
+	0x90F : "BATTLE_LOSABLE",
+	0x910 : "TRANS_PALETTE_FETCH",
+	0x911 : "TRANS_DISABLE",
+	0x915 : "WONDERTRADE",
+	0x916 : "MAP_BGN_AUTO_ALIGN_OFF",
+	0x917 : "POKERADAR_POKEMON_SPAWNED",
+	0x918 : "ABILITY_SPARSAM_TRIGGER",
+	0x91F : "WONDERTRADE_MEW_RECEIVED",
+	0x920 : "MEGA_EVOLUTION_PERFORMED",
+	0x921 : "PLAYER_ABLE_TO_MEGA_EVOLVE",
+	0x922 : "MAP_LOAD_DYNAMIC",
+	0x923 : "DUNGEON_BUFFERED",
+	0x924 : "PLAYER_CAN_ENTER_DUNGEONS",
+	0x927 : "POKEDEX_FEATURE_HABITAT",
+	0x928 : "POKEDEX_FEATURE_0",
+	0x929 : "POKEDEX_FEATURE_1",
+	0x92A : "POKEDEX_FEATURE_2"
+}
+
+var_table = {
+	0x4050 : "INTRO",
+	0x4051 : "STORY_PROGRESS",
+	0x4052 : "STARTER_SELECTED",
+	0x4077 : "DYN_MULTICHOICE_ITEM_CNT",
+	0x50CC : "TRAINER_TIPP_CNT",
+	0x50CD : "SGM_VER",
+	0x50CE : "HATCHING_BOOST_STEPS",
+	0x50D0 : "ASH",
+	0x50D9 : "SONG_OVERRIDE",
+	0x50DA : "POKEDEX_ACTIVE_COMPARATOR",
+	0x50DB : "POKEDEX_LAST_SPECIES",
+	0x50DC : "BATTLE_SONG_OVERRIDE",
+	0x50DD : "TRASH_A_VEC_LOW",
+	0x50DE : "TRASH_A_VEC_HIGH",
+	0x50DF : "SHADER_STATE",
+	0x50E0 : "DUNGEON_STEPS_TO_ENTER",
+	0x50E1 : "DUNGEON_STEPS",
+	0x50E2 : "WONDERTRADE_STEPS_TO_ENABLE",
+	0x50E3 : "BATTLE_BG_OVERRIDE",
+	0x50E4 : "OPPONENT_MEGA_ITEM",
+	0x50E5 : "PLAYER_MEGA_ITEM",
+	0x50E6 : "_buffer0",
+	0x50E7 : "_buffer1",
+	0x50E8 : "DIFFICULTY_LEVEL_RANGE",
+	0x50E9 : "POKERADAR_ENEMY_STATE",
+	0x50EA : "POKERADAR_ENCOUNTER_COUNT",
+	0x50EB : "POKERADAR_EMENY_SPECIES",
+	0x50EC : "POKEPAD_SHORTCUTS",
+	0x50ED : "POKEPAD_LAST_USED",
+	0x50EE : "POKEARADAR_ENEMY_LEVEL",
+	0x50EF : "_unused_probably_",
+	0x50F0 : "_pad0",
+	0x50F1 : "_pad1",
+	0x50F7 : "DETECTOR_FLAG",
+	0x50F8 : "TRAINER_LEVEL_OVERRIDE",
+	0x50F9 : "DIFFICULTY",
+	0x50FA : "KARMA_POINTS",
+	0x50FB : "KARMA_VALUE",
+	0x800F : "LASTTALKED",
+	0x800D : "LASTRESULT",
+	0x800C : "PLAYERFACING",
+}
+
+ords = {
+	0 : "LESS",
+	1 : "EQUAL",
+	2 : "HIGHER",
+	3 : "LESS_OR_EQUAL",
+	4 : "HIGHER_OR_EQUAL",
+	5 : "NOT_EQUAL"
+}
+
+stds = {
+	0 : "ITEM_OBTAIN",
+	1 : "ITEM_FIND",
+	2 : "MSG_FACE",
+	3 : "MSG_SIGN",
+	4 : "MSG_KEEPOPEN",
+	5 : "MSG_YES_NO",
+	6 : "MSG"
+}
+
+moves = {
+	0x01 : 'LOOK_UP',
+	0x02 : 'LOOK_LEFT',
+	0x03 : 'LOOK_RIGHT',
+	0x04 : 'LOOK_DOWN',
+	0x08 : 'STEP_DOWN_VERY_SLOW',
+	0x09 : 'STEP_UP_VERY_SLOW',
+	0x0a : 'STEP_LEFT_VERY_SLOW',
+	0x0b : 'STEP_RIGHT_VERY_SLOW',
+	0x0c : 'STEP_DOWN_SLOW',
+	0x0d : 'STEP_UP_SLOW',
+	0x0e : 'STEP_LEFT_SLOW',
+	0x0f : 'STEP_RIGHT_SLOW',
+	0x10 : 'STEP_DOWN',
+	0x11 : 'STEP_UP',
+	0x12 : 'STEP_LEFT',
+	0x13 : 'STEP_RIGHT',
+	0x14 : 'JUMP_DOWN2',
+	0x15 : 'JUMP_UP2',
+	0x16 : 'JUMP_LEFT2',
+	0x17 : 'JUMP_RIGHT2',
+	0x1d : 'STEP_DOWN_FAST',
+	0x1e : 'STEP_UP_FAST',
+	0x1f : 'STEP_LEFT_FAST',
+	0x20 : 'STEP_RIGHT_FAST',
+	0x21 : 'STEP_IN_PLACE_DOWN',
+	0x22 : 'STEP_IN_PLACE_UP',
+	0x23 : 'STEP_IN_PLACE_LEFT',
+	0x24 : 'STEP_IN_PLACE_RIGHT',
+	0x25 : 'STEP_IN_PLACE_DOWN_FAST',
+	0x26 : 'STEP_IN_PLACE_UP_FAST',
+	0x27 : 'STEP_IN_PLACE_LEFT_FAST',
+	0x28 : 'STEP_IN_PLACE_RIGHT_FAST',
+	0x29 : 'STEP_IN_PLACE_DOWN_VERY_FAST',
+	0x2a : 'STEP_IN_PLACE_UP_VERY_FAST',
+	0x2b : 'STEP_IN_PLACE_LEFT_VERY_FAST',
+	0x2c : 'STEP_IN_PLACE_RIGHT_VERY_FAST',
+	0x2d : 'LOOK_DOWN_DELAYED',
+	0x2e : 'LOOK_UP_DELAYED',
+	0x2f : 'LOOK_LEFT_DELAYED',
+	0x30 : 'LOOK_RIGHT_DELAYED',
+	0x31 : 'SLIDE_DOWN',
+	0x32 : 'SLIDE_UP',
+	0x33 : 'SLIDE_LEFT',
+	0x34 : 'SLIDE_RIGHT',
+	0x3d : 'SLIDE_DOWN_ON_RIGHT_FOOT',
+	0x3e : 'SLIDE_UP_ON_RIGHT_FOOT',
+	0x3f : 'SLIDE_LEFT_ON_RIGHT_FOOT',
+	0x40 : 'SLIDE_RIGHT_ON_RIGHT_FOOT',
+	0x41 : 'SLIDE_DOWN_ON_LEFT_FOOT',
+	0x42 : 'SLIDE_UP_ON_LEFT_FOOT',
+	0x43 : 'SLIDE_LEFT_ON_LEFT_FOOT',
+	0x44 : 'SLIDE_RIGHT_ON_LEFT_FOOT',
+	0x45 : 'RUN_INFINITLY',
+	0x46 : 'JUMP_DOWN_RUNNING',
+	0x47 : 'JUMP_UP_RUNNING',
+	0x48 : 'JUMP_LEFT_RUNNING',
+	0x49 : 'JUMP_RIGHT_RUNNING',
+	0x4a : 'FACE_PLAYER',
+	0x4b : 'FACE_AWAY_FROM_PLAYER',
+	0x4e : 'JUMP_DOWN',
+	0x4f : 'JUMP_UP',
+	0x50 : 'JUMP_LEFT',
+	0x51 : 'JUMP_RIGHT',
+	0x52 : 'JUMP_IN_PLACE_FACE_DOWN',
+	0x53 : 'JUMP_IN_PLACE_FACE_UP',
+	0x54 : 'JUMP_IN_PLACE_FACE_LEFT',
+	0x55 : 'JUMP_IN_PLACE_FACE_RIGHT',
+	0x56 : 'JUMP_IN_PLACE_FACE_DOWN_TO_UP',
+	0x57 : 'JUMP_IN_PLACE_FACE_UP_TO_DOWN',
+	0x58 : 'JUMP_IN_PLACE_FACE_LEFT_TO_RIGHT',
+	0x59 : 'JUMP_IN_PLACE_FACE_RIGHT_TO_LEFT',
+	0x60 : 'HIDE_SPRITE',
+	0x61 : 'SHOW_SPRITE',
+	0x62 : 'SAY_EXCLAM',
+	0x63 : 'SAY_QUESTION',
+	0x64 : 'SAY_X',
+	0x65 : 'SAY_DOUBLE_EXCLAM',
+	0x66 : 'SAY_SMILE',
+	0x6E : 'MOVEX_DOWN',
+	0x6F : 'MOVEY_DOWN',
+	0x78 : 'LOOK_RIGHT_LEFT_DOWNFACING',
+	0xA0 : 'LIFT_DOWN',
+	0xA1 : 'LIFT_UP',
+	0xA2 : 'LIFT_LEFT',
+	0xA3 : 'LIFT_RIGHT',
+	0xA5 : 'FLY_OUT_OF_SCREEN',
+	0xA6 : 'FLY_FROM_SCREEN',
+	0xfe : 'STOP'
+}
+
+map_connections = [
+	"NONE",
+	"SOUTH",
+	"NORTH",
+	"WEST",
+	"EAST",
+	"DIVE",
+	"RETURN_FROM_DIVE"
+]
+
+music = {
+    256: 'MUS_POKEMON_WERDEN_GEHEILT',
+    257: 'MUS_ITEM_GEFUNDEN',
+    258: 'MUS_ITEM_ERHALTEN',
+    259: 'MUS_POKEMON_GEFANGEN',
+    260: 'MUS_ORDEN_ERHALTEN',
+    261: 'MUS_BASISITEM_ERHALTEN',
+    262: 'MUS_BEERE_WURDE_GEPFLUCKT',
+    263: 'MUS_POKEMON_ENTWICKLUNG_ANFANGSSOUND',
+    264: 'MUS_SAFARIZONE',
+    265: 'MUS_KAMPF_GEGEN_ARENALEITER_HOENN',
+    266: 'MUS_KAMPF_GEGEN_TRAINER_HOENN',
+    267: 'MUS_CHANEIRA_TANZ',
+    268: 'MUS_SOUND_GLUCKWUNSCH',
+    269: 'MUS_SOUND_GLUCKWUNSCH',
+    270: 'MUS_VERRUCKTER_SOUND',
+    271: 'MUS_VERRUCKTER_SOUND',
+    272: 'MUS_KOMMT_MIT_SPIELER_WIRD_HERUMGEFUHRT',
+    273: 'MUS_SPIELHALLE',
+    274: 'MUS_ROCKET_HQ_AND_AZURIA_HOHLE_AND_TOP_4_BRUNO',
+    275: 'MUS_ARENA_AND_TOP_4_LOTTE',
+    276: "PUMMELLUFFS_LIED",
+    277: 'MUS_INTRO',
+    278: 'MUS_TITELBILDSCHIRM',
+    279: 'MUS_ZINNOBERINSEL',
+    280: 'MUS_LAVANDIA',
+    281: 'MUS_POKEMON_WERDEN_PER_MASCHINE_GEHEILT',
+    282: 'MUS_UNTERWEGS_MIT_DEM_FAHRRAD',
+    283: 'MUS_BEGEGNUNG_MIT_TRAINER_TEAM_ROCKET',
+    284: 'MUS_BEGEGNUNG_MIT_TRAINER_GORE',
+    285: 'MUS_BEGEGNUNG_MIT_TRAINER_TEENAGER',
+    286: 'MUS_EINTRAG_IN_DIE_RUHMESHALLE',
+    287: "VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN",
+    288: 'MUS_MONDBERG_AND_FELSTUNNEL_AND_SIEGESSTRASSE',
+    289: 'MUS_POKEMON_HAUS_AND_KRAFTWERK',
+    290: 'MUS_ABSPANN',
+    291: 'MUS_ROUTE_1_AND_TUNNELPFAD',
+    292: 'MUS_ROUTE_24_25',
+    293: 'MUS_ROUTE_3_10_AND_ROUTE_16_22',
+    294: 'MUS_ROUTE_11_15',
+    295: 'MUS_INDIGO_PLATEAU_AND_TOP_4_SIEGFRIED_AND_TOP_4_CHAMP_GARY',
+    296: 'MUS_KAMPF_GEGEN_ARENALEITER_KANTO',
+    297: 'MUS_KAMPF_GEGEN_RIVALEN_GARY',
+    298: 'MUS_KAMPF_GEGEN_WILDES_POKEMON',
+    299: 'MUS_KAMPF_GEGEN_DEN_CHAMP',
+    300: 'MUS_ALABASTIA',
+    301: "PROFESSOR_EICHS_LABOR",
+    302: 'MUS_PROFESSOR_EICH_ERSCHEINT',
+    303: 'MUS_POKEMON_CENTER_AND_POKEMON_MARKT_AND_LINK_ZENTRALE',
+    304: 'MUS_MS_ANNE',
+    305: 'MUS_SURFER',
+    306: 'MUS_TOP_4_ARGATHE_AND_LAVANDIA_TURM',
+    307: 'MUS_TEAM_ROCKETS_VERSTECK_SAFRONIA_CITY_AND_SILPH_CO',
+    308: 'MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY',
+    309: 'MUS_PRISMANIA_CITY',
+    310: 'MUS_NORMALEN_TRAINER_BESIEGT',
+    311: 'MUS_ARENALEITER_BESIEGT_VERSION_2',
+    312: 'MUS_ARENALEITER_BESIEGT',
+    313: 'MUS_ORANIA_CITY',
+    314: 'MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY',
+    315: 'MUS_RIVALE_ERSCHEINT_GARY',
+    316: 'MUS_RIVALE_ERSCHEINT_GARY_AND_VERSION_2',
+    317: 'MUS_SOUND_317',
+    318: 'MUS_BASISITEM_ERHALTEN_VERSION_2',
+    319: 'MUS_POKEMON_GEFANGEN_VERSION_2',
+    320: 'MUS_MERKWURDIGER_UND_UNBEKANNTER_SOUND',
+    321: 'MUS_GAMEFREAK_LOGO',
+    322: 'MUS_POKEMON_BESIEGT',
+    323: 'MUS_TASTENERKLARUNG',
+    324: 'MUS_SPIELERKLARUNG',
+    325: 'MUS_SPIELERKLARUNG_BEENDET',
+    326: 'MUS_SPIELHALLE_VERSION_2',
+    327: 'MUS_KONEX_KLUB',
+    328: 'MUS_POKEMON_NETZWERK_CENTER',
+    329: 'MUS_MERWURDIGE_UND_UNBEKANNTE_MUSIK',
+    330: 'MUS_SPIELHALLE_VERSION_3',
+    331: 'MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS',
+    332: 'MUS_KOMM_MIT_SPIELER_WIRD_HERUMGEFUHRT_AND_VERSION_2',
+    333: 'MUS_NABELFELSINSEL_SEE_DES_ZORNS_REMIX',
+    334: 'MUS_PUNKTLOCH_AND_TANIBOSCHLUSSEL_AND_ICOGNITO_KAMMERN',
+    335: 'MUS_EILAND_1_3',
+    336: 'MUS_EILAND_4_5_AZALEA_CITY_AND_EBENHOLZ_CITY_REMIX',
+    337: 'MUS_EILAND_6_7_VIOLA_CITY_AND_OLIVIANA_CITY_REMIX',
+    338: 'MUS_POKEMON_FLOTE',
+    339: 'MUS_KAMPF_GEGEN_DEOXYS',
+    340: 'MUS_KAMPF_GEGEN_MEWTO',
+    341: 'MUS_KAMPF_GEGEN_ARKTOS_AND_ZAPDOS_AND_LAVADOS_AND_LUGIA_AND_HO_OH',
+    342: 'MUS_BEGEGNUNG_MIT_TRAINER',
+    343: 'MUS_DEOXYS_ERSCHEINT',
+    344: 'MUS_TRAINERTURM',
+    345: 'MUS_RUHMESHALLE',
+    346: 'MUS_CHANEIRA_TANZ_ANFANGSSOUND_IM_RADIO',
+    347: 'MUS_VIOLET_BATTLE',
+	348: "SOUND_STEP",
+	349: "MUS_JEROPARDY",
+	350: "MUS_TRAINERSCHOOL",
+	351: "MUS_RIVAL_BATTLE",
+	352: "MUS_DESERT",
+	353: "MUS_REVOLUTIONARY_BATTLE",
+	354: "KASKADA_BATTLE",
+	355: "MUS_REVOLUTION",
+	356: "MUS_LAVA",
+	357: "MUS_ELISE_BATTLE",
+	358: "MUS_DIMENSIONAL_TRAVELER",
+	359: "MUS_DARK_QUEEN_BATTLE",
+	360: "MUS_DARK_QUEEN",
+	361: "MUS_PIRATE",
+	362: "MUS_BLACK_MARKET",
+	363: "MUS_MISTRAL",
+	364: "MUS_CLOUDS",
+	365: "MUS_DARK_FUTURE",
+	366: "MUS_TRAINER_TIPP",
+	367: "MUS_EMPEROR_GROUDON_BATTLE",
+
+	
+
+}
+
+behaviours = [
+    'BEHAVIOUR_KEINE_BEWEGUNG',
+    'BEHAVIOUR_UMHERBLICKEN',
+    'BEHAVIOUR_HERUMGEHEN',
+    'BEHAVIOUR_GEHE_AUF_UND_AB',
+    'BEHAVIOUR_GEHE_AUF_UND_AB',
+    'BEHAVIOUR_GEHE_HIN_UND_HER',
+    'BEHAVIOUR_GEHE_HIN_UND_HER',
+    'BEHAVIOUR_BLICKE_NACH_OBEN',
+    'BEHAVIOUR_BLICKE_NACH_UNTEN',
+    'BEHAVIOUR_BLICKE_NACH_LINKS',
+    'BEHAVIOUR_BLICKE_NACH_RECHTS',
+    'BEHAVIOUR_ERROR_MAN_WIRD_NACH_KAMPF_ZU_DIESER_PERSON',
+    'BEHAVIOUR_VERSTECKT',
+    'BEHAVIOUR_BLICKE_HOCH_UND_RUNTER',
+    'BEHAVIOUR_BLICKE_LINKS_UND_RECHTS',
+    'BEHAVIOUR_BLICKE_OBEN_UND_LINKS',
+    'BEHAVIOUR_BLICKE_OBEN_UND_RECHTS',
+    'BEHAVIOUR_BLICKE_UNTEN_UND_LINKS',
+    'BEHAVIOUR_BLICKE_UNTEN_UND_RECHTS',
+    'BEHAVIOUR_BLICKE_OBEN__UNTEN__LINKS',
+    'BEHAVIOUR_BLICKE_OBEN__UNTEN__RECHTS',
+    'BEHAVIOUR_BLICKE_OBEN__LINKS__RECHTS',
+    'BEHAVIOUR_BLICKE_UNTEN__LINKS__RECHTS',
+    'BEHAVIOUR_BLICKE_RUNDUM_GEGEN_DEN_UHRZEIGERSINN',
+    'BEHAVIOUR_BLICKE_RUNDUM_IM_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_AUF_UND_AB',
+    'BEHAVIOUR_LAUFE_AUF_UND_AB',
+    'BEHAVIOUR_LAUFE_HIN_UND_HER',
+    'BEHAVIOUR_LAUFE_HIN_UND_HER',
+    'BEHAVIOUR_LAUFE_HOCH__RECHTS__LINKS__RUNTER',
+    'BEHAVIOUR_LAUFE_RECHTS__LINKS__HOCH__RUNTER',
+    'BEHAVIOUR_LAUFE_RUNTER__HOCH__RECHTS__LINKS',
+    'BEHAVIOUR_LAUFE_LINKS__RUNTER__HOCH__RECHTS',
+    'BEHAVIOUR_LAUFE_HOCH__LINKS__RECHTS__RUNTER',
+    'BEHAVIOUR_LAUFE_LINKS__RECHTS__RUNTER__HOCH',
+    'BEHAVIOUR_LAUFE_RUNTER__HOCH__LINKS__RECHTS',
+    'BEHAVIOUR_LAUFE_RECHTS__RUNTER__HOCH__LINKS',
+    'BEHAVIOUR_LAUFE_LINKS__HOCH__RUNTER__RECHTS',
+    'BEHAVIOUR_LAUFE_HOCH__RUNTER__RECHTS__LINKS',
+    'BEHAVIOUR_LAUFE_RECHTS__LINKS__HOCH__RUNTER',
+    'BEHAVIOUR_LAUFE_RUNTER__RECHTS__LINKS__HOCH',
+    'BEHAVIOUR_LAUFE_RECHTS__HOCH__RUNTER__LINKS',
+    'BEHAVIOUR_LAUFE_HOCH__RUNTER__LINKS__RECHTS',
+    'BEHAVIOUR_LAUFE_LINKS__RECHTS__HOCH__RUNTER',
+    'BEHAVIOUR_LAUFE_RUNTER__LINKS__RECHTS__HOCH',
+    'BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_IM_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_IM_UHRZEIGERSINN',
+    'BEHAVIOUR_LAUFE_IM_UHRZEIGERSINN',
+    'BEHAVIOUR_SPIELER_KOPIEREN',
+    'BEHAVIOUR_SPIELER_SPIEGELN',
+    'BEHAVIOUR_SPIELER_SPIEGELN',
+    'BEHAVIOUR_SPIELER_SPIEGELN',
+    'BEHAVIOUR_BAUM_WAND_VERKLEIDUNG',
+    'BEHAVIOUR_FELS_WAND_VERKLEIDUNG',
+    'BEHAVIOUR_SPIELER_SPIEGELN_IM_STAND',
+    'BEHAVIOUR_SPIELER_KOPIEREN_IM_STAND',
+    'BEHAVIOUR_SPIELER_SPIEGELN_IM_STAND',
+    'BEHAVIOUR_SPIELER_SPIEGELN_IM_STAND',
+    'BEHAVIOUR_VERSTECKT',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_UNTEN',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_OBEN',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_LINKS',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_RECHTS',
+    'BEHAVIOUR_AUF_DER_STELLE_JOGGEN_UNTEN',
+    'BEHAVIOUR_AUF_DER_STELLE_JOGGEN_OBEN',
+    'BEHAVIOUR_AUF_DER_STELLE_JOGGEN_LINKS',
+    'BEHAVIOUR_AUF_DER_STELLE_JOGGEN_RECHTS',
+    'BEHAVIOUR_AUF_DER_STELLE_LAUFEN_UNTEN',
+    'BEHAVIOUR_AUF_DER_STELLE_LAUFEN_OBEN',
+    'BEHAVIOUR_AUF_DER_STELLE_LAUFEN_LINKS',
+    'BEHAVIOUR_AUF_DER_STELLE_LAUFEN_RECHTS',
+    'BEHAVIOUR_VERSTECKT',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_UNTEN_',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_OBEN_',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_LINKS_',
+    'BEHAVIOUR_AUF_DER_STELLE_GEHEN_RECHTS'
+]
+
+map_namespaces = {
+    88: 'MAP_AMONIA',
+    89: 'MAP_MERIANA_CITY',
+    90: 'MAP_AKTANIA',
+    91: 'MAP_SILVANIA',
+    92: 'MAP_KASKADA',
+    93: 'MAP_ORINA_CITY',
+    94: 'MAP_INFERIOR',
+    95: 'MAP_CEOMETRIA',
+    96: 'MAP_ZINNOBERINSEL',
+    97: 'MAP_INDIGO_PLATEAU',
+    98: 'MAP_SAFFRONIA_CITY',
+    99: 'MAP_ROUTE_4',
+    100: 'MAP_ROUTE_10',
+    101: 'MAP_ROUTE_1',
+    102: 'MAP_ROUTE_3',
+    103: 'MAP_FELSIGE_OEDNIS',
+    104: 'MAP_ROUTE_4',
+    105: 'MAP_ROUTE_5',
+    106: 'MAP_ROUTE_6',
+    107: 'MAP_ROUTE_7',
+    108: 'MAP_ROUTE_8',
+    109: 'MAP_ROUTE_9',
+    110: 'MAP_ROUTE_10',
+    111: 'MAP_ROUTE_11',
+    112: 'MAP_ROUTE_12',
+    113: 'MAP_ROUTE_13',
+    114: 'MAP_ROUTE_14',
+    115: 'MAP_ROUTE_15',
+    116: 'MAP_ROUTE_16',
+    117: 'MAP_ROUTE_17',
+    118: 'MAP_ROUTE_18',
+    119: 'MAP_ROUTE_19',
+    120: 'MAP_ROUTE_20',
+    121: 'MAP_ROUTE_21',
+    122: 'MAP_ROUTE_2',
+    123: 'MAP_ROUTE_23',
+    124: 'MAP_ROUTE_24',
+    125: 'MAP_ROUTE_25',
+    126: 'MAP_SILVANIA_WALD',
+    127: 'MAP_PKMN_FRIEDHOF',
+    128: 'MAP_KUESTENBERG',
+    129: 'MAP_ASCHHAIN',
+    130: 'MAP_TUNNELPFAD',
+    131: 'MAP_WASSERPFAD',
+    132: 'MAP_SIEGESSTRASSE',
+    133: 'MAP_ROCKET_HQ',
+    134: 'MAP_SILPH_CO.',
+    135: 'MAP_KUESTENBERG',
+    136: 'MAP_SAFARI_ZONE',
+    137: 'MAP_POKEMON_LIGA',
+    138: 'MAP_VULCANO',
+    139: 'MAP_SEESCHAUMINSELN',
+    140: 'MAP_POKEMON_TURM',
+    141: 'MAP_AZURIA_HOEHLE',
+    142: 'MAP_KRAFTWERK',
+    143: 'MAP_EILAND_EINS',
+    144: 'MAP_EILAND_ZWEI',
+    145: 'MAP_EILAND_DREI',
+    146: 'MAP_EILAND_VIER',
+    147: 'MAP_EILAND_FUENF',
+    148: 'MAP_EILAND_SIEBEN',
+    149: 'MAP_EILAND_SECHS',
+    150: 'MAP_GLUEHWEG',
+    151: 'MAP_SCHATZGESTADE',
+    152: 'MAP_KAP_KANTE',
+    153: 'MAP_BUNDBRUECKE',
+    154: 'MAP_TRI_EILAND_HAFEN',
+    155: 'MAP_SEVII_EILAND_6',
+    156: 'MAP_SEVII_EILAND_7',
+    157: 'MAP_SEVII_EILAND_8',
+    158: 'MAP_SEVII_EILAND_9',
+    159: 'MAP_FERIENPARADIES',
+    160: 'MAP_WASSERIRRGARTEN',
+    161: 'MAP_EILAND_5_WEIDE',
+    162: 'MAP_TRAINERSCHULE',
+    163: 'MAP_FERN_EILAND',
+    164: 'MAP_GRUENER_PFAD',
+    165: 'MAP_WASSERWEG',
+    166: 'MAP_RUINENTAL',
+    167: 'MAP_TRAINERTURM',
+    168: 'MAP_SCHLUCHTEINGANG',
+    169: 'MAP_7_SCHATZSCHLUCHT',
+    170: 'MAP_TANIBO_RUINEN',
+    171: 'MAP_SEVII_EILAND_22',
+    172: 'MAP_SEVII_EILAND_23',
+    173: 'MAP_SEVII_EILAND_24',
+    174: 'MAP_NABELFELS',
+    175: 'MAP_GLUTBERG',
+    176: 'MAP_BEERENFORST',
+    177: 'MAP_EISKASKADENHOEHLE',
+    178: 'MAP_ROCKET_LAGER',
+    179: 'MAP_TRAINERTURM',
+    180: 'MAP_PUNKTLOCH',
+    181: 'MAP_VERLORENE_HOEHLE',
+    182: 'MAP_MUSTERBUSCHWALD',
+    183: 'MAP_WANDELHOEHLE',
+    184: 'MAP_TANIBO_KAMMER',
+    185: 'MAP_TRI_EILAND_PFAD',
+    186: 'MAP_TANIBO_SCHLUESSEL',
+    187: 'MAP_ENTSTEHUNGSINSEL',
+    188: 'MAP_WUESTENKAMMER',
+    189: 'MAP_PEZWULP_KAMMER',
+    190: 'MAP_DREICKE_KAMMER',
+    191: 'MAP_VIERZISSE_KAMMER',
+    192: 'MAP_FUENIBISKU_KAMMER',
+    193: 'MAP_LILECHS_KAMMER',
+    194: 'MAP_ARC_SCRIM',
+    195: 'MAP_GLUTTHERME',
+    196: 'MAP_PRISMANIA_EINK',
+}
+
+map_show_name = {
+	0 : "DONT_SHOW",
+	1 : "SHOW",
+	6 : "SHOW_VILLAGE",
+	0xD : "SHOW_CITY"
+}
+
+flash_types = [
+	"FLASH_NONE", "DARK_FLASH_USABLE", "DARK_FLASH_NOT_USABLE"
+]
+
+map_weather = [
+	"MAP_WEATHER_INSIDE",
+	"MAP_WEATHER_SUNNY_WITH_CLOUD_REFLECTION",
+	"MAP_WEATHER_OUTSIDE",
+	"MAP_WEATHER_RAIN",
+	"MAP_WEATHER_SNOW",
+	"MAP_WEATHER_THUNDER",
+	"MAP_WEATHER_STATIC_FOG",
+	"MAP_WEATHER_ASH",
+	"MAP_WEATHER_SANDSTORM",
+	"MAP_WEATHER_DYNAMIC_FOG",
+	"MAP_WEATHER_DENSE_FOG",
+	"MAP_WEATHER_CLOUDY",
+	"MAP_WEATHER_EXTREME_SUN",
+	"MAP_WEATHER_EXTREME_THUNDER",
+	"MAP_WEATHER_UNDERWATER",
+	"MAP_WEATHER_WEATHER_0F"
+]
+
+map_types = [
+	"MAP_TYPE_STD",
+	"MAP_TYPE_VILLAGE",
+	"MAP_TYPE_CITY",
+	"MAP_TYPE_ROUTE",
+	"MAP_TYPE_BASEMENT",
+	"MAP_TYPE_UNDERWATER",
+	"MAP_TYPE_TYPE_06",
+	"MAP_TYPE_TYPE_07",
+	"MAP_TYPE_INSIDE",
+	"MAP_TYPE_SECRET_BASE"
+]
+
+battle_types = [
+	"BATTLE_TYPE_RANDOM",
+	"BATTLE_TYPE_ARENA",
+	"BATTLE_TYPE_TEAM_ROCKET",
+	"BATTLE_TYPE_03",
+	"BATTLE_TYPE_ELITE4_FIRST",
+	"BATTLE_TYPE_ELITE4_SECOND",
+	"BATTLE_TYPE_ELITE4_THIRD",
+	"BATTLE_TYPE_ELITE4_FOURTH",
+	"BATTLE_TYPE_BIG_POKEBALL"
+]
+
+			
+def values(_d):
+	if isinstance(_d, dict): return _d.values()
+	return _d
+
+def _dict_get(_d, key, hexstr=True, _str=True):
+	""" Returns a string from a dict in this module if a key is present else simply the key """
+	if key in _d: return _d[key]
+	if hexstr: return hex(key)
+	if _str: return str(key)
+	return key
+
 def byte_to_pchar(byte):
 	for pchar in pchar_dict:
 		if pchar_dict[pchar] == byte: return pchar
 	return hex(byte)
+
+def item(id):
+	try: return item_table[id]
+	except: return hex(id)
+
+def species(id):
+	try: return species_table[id]
+	except: return hex(id)
+
+def flag(id):
+	try: return flag_table[id]
+	except: return hex(id)
+
+def attack(id):
+	try: return attack_table[id]
+	except: return hex(id)
+
+def _mkdirs(dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+
+def export_macros(lib, dir):
+	""" Exports several macros into a directory """
+	_mkdirs(dir)
+	macros = [
+		_export_generic_macros(lib, dir, "item", item_table),
+		_export_generic_macros(lib, dir, "species", species_table),
+		_export_generic_macros(lib, dir, "attack", attack_table),
+		_export_generic_macros(lib, dir, "ability", ability_table),
+		_export_generic_macros_from_dict(lib, dir, "flag", flag_table),
+		_export_generic_macros_from_dict(lib, dir, "var", var_table),
+		_export_generic_macros_from_dict(lib, dir, "ord", ords),
+		_export_generic_macros_from_dict(lib, dir, "std", stds),
+		_export_generic_macros_from_dict(lib, dir, "moves", moves),
+		_export_generic_macros(lib, dir, "map_connections", map_connections),
+		_export_generic_macros_from_dict(lib, dir, "music", music),
+		_export_generic_macros(lib, dir, "behaviours", behaviours),
+		_export_generic_macros_from_dict(lib, dir, "map_namespaces", map_namespaces),
+		_export_generic_macros_from_dict(lib, dir, "map_showname", map_show_name),
+		_export_generic_macros(lib, dir, "flash_types", flash_types),
+		_export_generic_macros(lib, dir, "map_weather", map_weather),
+		_export_generic_macros(lib, dir, "map_type", map_types),
+		_export_generic_macros(lib, dir, "battle_types", battle_types)
+	]
+	fd = open(dir + STDMACRO, "w+")
+	fd.write("\n\n\n".join(macros))
+	fd.close()
+
+def _export_generic_macros(lib, dir, _generic_name, _generic_table):
+	""" Export generic macros """
+	_mkdirs(dir)
+	macro = "@ARM Assembly macro definitions for " + _generic_name + "\n\n\n"
+	macro += "\n".join([(".equ " + _generic_table[i] + ", " + hex(i)) for i in range(len(_generic_table))]) + "\n"
+	path = dir + _generic_name +".s"
+	return macro
+	"""fd = open(path, "w+")
+	fd.write(macro)
+	fd.close()
+	lib_update(lib, _generic_name, path)"""
+
+def _export_generic_macros_from_dict(lib, dir, _generic_name, _generic_dict):
+	""" Export generic macros """
+	_mkdirs(dir)
+	macro = "@ARM Assembly macro definitions for " + _generic_name + "\n\n\n"
+	macro += "\n".join([(".equ " + _generic_dict[k] + ", " + hex(k)) for k in _generic_dict]) + "\n"
+	path = dir + _generic_name +".s"
+	return macro
+	"""fd = open(path, "w+")
+	fd.write(macro)
+	fd.close()
+	lib_update(lib, _generic_name, path)"""
+
+def lib_update(libf, type, file):
+	""" Updates a macro link in the lib for a certain type """
+	fd = open(libf, "r+")
+	lib = eval(fd.read())
+	fd.close()
+	lib[type] = os.path.relpath(file, INCLUDE)
+	fd = open(libf, "w+")
+	fd.write(str(lib))
+	fd.close()
+
+def get_macro_header():
+	""" Returns a macro header """
+	"""fd = open(rpath.path(STDLIB, from_root=from_root), "r+")
+	lib = eval(fd.read())
+	fd.close()"""
+	#return "\n".join(('.include "' + lib[k].replace("\\", "/") + '"') for k in lib) + "\n"
+	return ".include \"" + STDMACRO + "\""
+
+if __name__ == "__main__":
+	try:
+		opts, args = getopt.getopt(sys.argv[1:], "hl:", ["help"])
+	except getopt.GetoptError:
+		sys.exit(2)
+	lib = STDLIB
+	for opt, arg in opts:
+		if opt in ("-h", "--help"):
+			print("Usage: constants.py outdir (e.g.'foo/bar/')")
+			sys.exit(0)
+		elif opt in ("-l"): lib = arg
+	dir = args[0]
+	export_macros(lib, dir)

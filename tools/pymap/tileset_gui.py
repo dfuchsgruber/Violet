@@ -9,20 +9,22 @@ import PIL.ImageTk as ImageTk
 import numpy as np
 import time
 from threading import Thread
-
+from . import project, resources
+import tkinter.ttk as ttk
 
 CANVAS_ZOOM = 3
 CANVAS_WIDTH = 128 * CANVAS_ZOOM
 CANVAS_HEIGHT_TSP = 1280 * CANVAS_ZOOM
 CANVAS_HEIGHT_TSS = 768 * CANVAS_ZOOM
 CANVAS_HEIGHT = 512 * CANVAS_ZOOM
+STDPROJ = "../map/proj.pmp"
 
 
 class Tileset_gui(tkinter.Frame):
 
-    def __init__(self, root):
+    def __init__(self, root, proj=project.Project.load_project(STDPROJ)):
 
-        
+        self.project = proj
         self.primary_tileset = None
         self.secondary_tileset = None
         self.root = root
@@ -53,13 +55,9 @@ class Tileset_gui(tkinter.Frame):
         root.config(menu=menu)
         tsp_file_menu = tkinter.Menu(menu, tearoff=0)
         menu.add_cascade(label="Primary", menu=tsp_file_menu)
-        tsp_file_menu.add_command(label="New", command=(lambda : self.file_new(True)))
-        tsp_file_menu.add_command(label="Open", command=(lambda : self.file_open(True)))
         tsp_file_menu.add_command(label="Save", command=(lambda : self.file_save(True)))   
         tss_file_menu = tkinter.Menu(menu, tearoff=0)
         menu.add_cascade(label="Secondary", menu=tss_file_menu)
-        tss_file_menu.add_command(label="New", command=(lambda : self.file_new(False)))
-        tss_file_menu.add_command(label="Open", command=(lambda : self.file_open(False)))
         tss_file_menu.add_command(label="Save", command=(lambda : self.file_save(False)))
 
         def blocks_extend():
@@ -79,66 +77,20 @@ class Tileset_gui(tkinter.Frame):
             self.refresh_block_edit(False)
         tss_file_menu.add_command(label="Change #blocks", command=blocks_extend)
 
-        #Setup the image browsing widget for both tilesets
-        #-----------------------------------------------------------------
-        #tsp
-        lb_head_tsp = tkinter.Label(root, text="Primary:")
-        lb_head_tsp.grid(row=0, column=0, sticky=tkinter.NW)
-        lb_img_tsp = tkinter.Label(root, text="Image", relief=tkinter.RIDGE)
-        lb_img_tsp.grid(row=1, column=0, sticky=tkinter.NW)
-        self.tsp_img_entry = tkinter.Entry(root)
-        self.tsp_img_entry.grid(row=1, column=2, sticky=tkinter.NW)
-        self.tsp_img_entry.bind("<Button-1>", lambda e: self.open_image_dialoge(True))
-        self.tsp_img_entry.bind("<Return>", lambda e: self.open_image_path(True))
-        #tss
-        lb_head_tss = tkinter.Label(root, text="Secondary:")
-        lb_head_tss.grid(row=0, column=3, sticky=tkinter.NW)
-        lb_img_tss = tkinter.Label(root, text="Image", relief=tkinter.RIDGE)
-        lb_img_tss.grid(row=1, column=3, sticky=tkinter.NW)
-        self.tss_img_entry = tkinter.Entry(root)
-        self.tss_img_entry.grid(row=1, column=5, sticky=tkinter.NW)
-        self.tss_img_entry.bind("<Button-1>", lambda e: self.open_image_dialoge(False))
-        self.tss_img_entry.bind("<Return>", lambda e: self.open_image_path(False))
-
-        #Setup the palette browsing widget for both tilesets
-        #-------------------------------------------------------------------
-        #tsp
-        lb_pal_tsp = tkinter.Label(root, text="Palette", relief=tkinter.RIDGE)
-        lb_pal_tsp.grid(row=2, column=0, sticky=tkinter.NW)
-        palette_keys = [str(i) for i in range(7)]
-        self.tsp_pal_dropdown = tkinterx.DropDown(root, palette_keys)
-        self.tsp_pal_dropdown.grid(row=2, column=1, sticky=tkinter.NW)
-        self.tsp_pal_dropdown.add_callback(lambda: self.palette_selected(True))
-        self.tsp_pal_dropdown.set("0")
-        self.tsp_pal_entry = tkinter.Entry(root)
-        self.tsp_pal_entry.grid(row=2, column=2, sticky=tkinter.NW)
-        self.tsp_pal_entry.bind("<Button-1>", lambda e: self.open_pal_dialoge(True))
-        self.tsp_pal_entry.bind("<Return>", lambda e: self.open_pal_path(True))
-        #tss
-        lb_pal_tss = tkinter.Label(root, text="Palette", relief=tkinter.RIDGE)
-        lb_pal_tss.grid(row=2, column=3, sticky=tkinter.NW)
-        palette_keys = [str(i + 7) for i in range(6)]
-        self.tss_pal_dropdown = tkinterx.DropDown(root, palette_keys)
-        self.tss_pal_dropdown.grid(row=2, column=4, sticky=tkinter.NW)
-        self.tss_pal_dropdown.add_callback(lambda: self.palette_selected(False))
-        self.tss_pal_dropdown.set("7")
-        self.tss_pal_entry = tkinter.Entry(root)
-        self.tss_pal_entry.grid(row=2, column=5, sticky=tkinter.NW)
-        self.tss_pal_entry.bind("<Button-1>", lambda e: self.open_pal_dialoge(False))
-        self.tss_pal_entry.bind("<Return>", lambda e: self.open_pal_path(False))
         
-        #Setup the canvas for the tileset
+        #Setup the labelframes
+        #-----------------------------------------------------------------
+        self.frame_tsp = ttk.Labelframe(root, text="Primary tileset (tsp)")
+        self.frame_tss = ttk.Labelframe(root, text="Secondary tileset (tss)")
+        self.frame_pool = ttk.Labelframe(root, text="Tile pool")
+        self.frame_tsp.grid(row=0, column=0, sticky=tkinter.NW)
+        self.frame_tss.grid(row=0, column=1, sticky=tkinter.NW)
+        self.frame_pool.grid(row=0, column=2, sticky=tkinter.NW)
+
+        #Setup the canvas for the tileset pool
         #-------------------------------------------------------------------
-        lb_head_tileset = tkinter.Label(root, text="Tileset:")
-        lb_head_tileset.grid(row=0, column=6, sticky=tkinter.NW)
-        lb_pal_tileset = tkinter.Label(root, text="Palette", relief=tkinter.RIDGE)
-        lb_pal_tileset.grid(row=1, column=6, sticky=tkinter.NW)
-        self.tileset_pal_dropdown = tkinterx.DropDown(root, [str(i) for i in range(13)])
-        self.tileset_pal_dropdown.grid(row=1, column=7 ,sticky=tkinter.NW)
-        self.tileset_pal_dropdown.add_callback(lambda: self.refresh_tileset_canvas())
-        self.tileset_pal_dropdown.set("0")
-        canvas_frame = tkinter.Frame(root)
-        canvas_frame.grid(row=5, column=6, sticky=tkinter.NW, columnspan=4,)
+        canvas_frame = tkinter.Frame(self.frame_pool)
+        canvas_frame.grid(row=0, column=0, sticky=tkinter.NW)
         self.tileset_canvas = tkinter.Canvas(canvas_frame, width=CANVAS_WIDTH, height=512, scrollregion=(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT), background="black")
         self.tileset_canvas_bar_v = tkinter.Scrollbar(canvas_frame, orient=tkinter.VERTICAL)
         self.tileset_canvas_bar_v.pack(side=tkinter.RIGHT, fill=tkinter.Y)
@@ -147,24 +99,30 @@ class Tileset_gui(tkinter.Frame):
         self.tileset_raw_image = ImageTk.PhotoImage(self.tileset_raw_pil_image)
         self.tileset_canvas_image = self.tileset_canvas.create_image(1, 1, image=self.tileset_raw_image, anchor=tkinter.NW)
         self.tileset_canvas.config(yscrollcommand=self.tileset_canvas_bar_v.set) 
-
-        #Setup the canvas for tileset selection
+        #Setup properties window for tileset pool
         #-------------------------------------------------------------------
-        lb_tile_selection = tkinter.Label(root, text="Selection", relief=tkinter.RIDGE)
-        lb_tile_selection.grid(row=2, column=6, sticky=tkinter.NW)
-        self.tile_selection_canvas = tkinter.Canvas(root, width=8 * CANVAS_ZOOM * 2, height=8 * CANVAS_ZOOM * 4, background="black")
+        self.frame_pool_properties = tkinter.Frame(self.frame_pool)
+        self.frame_pool_properties.grid(row=1, sticky=tkinter.NW)
+        tkinter.Label(self.frame_pool_properties, text="Palette").grid(row=0, column=0, sticky=tkinter.NW)
+        self.tileset_pal_combobox = tkinterx.Combobox(self.frame_pool_properties, list(map(str, range(13))), state='readonly')
+        self.tileset_pal_combobox.grid(row=0, column=1, columnspan=2, sticky=tkinter.NW)
+        self.tileset_pal_combobox.add_callback(lambda: self.refresh_tileset_canvas())
+        self.tileset_pal_combobox.set("0", untraced=True)
+        tkinter.Button(self.frame_pool_properties, text="Import", command=self.open_pal_dialoge).grid(row=0, column=3, sticky=tkinter.NW)
+        self.tile_selection_canvas = tkinter.Canvas(self.frame_pool_properties, width=8 * CANVAS_ZOOM * 2, height=8 * CANVAS_ZOOM * 4, background="black")
         self.tile_selection_raw_image = ImageTk.PhotoImage(PImage.new("RGBA", (8 * CANVAS_ZOOM, 8 * CANVAS_ZOOM), "black"))
         self.tile_selection_canvas_image = self.tile_selection_canvas.create_image(1, 1, image=self.tile_selection_raw_image, anchor=tkinter.NW)
-        self.tile_selection_canvas.grid(row=4, column=9, sticky=tkinter.NW)
-        self.tile_selection_hflip_box = tkinterx.Checkbutton(root, "HFlip", onvalue=True, offvalue=False)
+        self.tile_selection_canvas.grid(row=1, column=0, rowspan=2, sticky=tkinter.NW)
+        self.tile_selection_hflip_box = tkinterx.Checkbutton(self.frame_pool_properties, "HFlip", onvalue=True, offvalue=False)
         def flip_selection(hflip=False, vflip=False):
             self.selected_tiles = [[(t, (not h if hflip else h), (not v if vflip else v), p) for (t, h, v, p) in line] for line in self.selected_tiles]
             self.refresh_tile_selection()
         self.tile_selection_hflip_box.add_callback(lambda: flip_selection(hflip=True))
-        self.tile_selection_hflip_box.grid(row=2, column=7, sticky=tkinter.NW)
-        self.tile_selection_vflip_box = tkinterx.Checkbutton(root, "VFlip", onvalue=True, offvalue=False)
+        self.tile_selection_hflip_box.grid(row=1, column=1, sticky=tkinter.NW)
+        self.tile_selection_vflip_box = tkinterx.Checkbutton(self.frame_pool_properties, "VFlip", onvalue=True, offvalue=False)
         self.tile_selection_vflip_box.add_callback(lambda: flip_selection(vflip=True))
-        self.tile_selection_vflip_box.grid(row=2, column=8, sticky=tkinter.NW)
+        self.tile_selection_vflip_box.grid(row=1, column=2, sticky=tkinter.NW)
+        #Data binding for tileset pool
         x0, y0, x1, y1 = self.tileset_selected_area
         self.tileset_canvas_selection_rectangle = self.tileset_canvas.create_rectangle(x0 * 8 * CANVAS_ZOOM, y0 * 8 * CANVAS_ZOOM, x1 * 8 * CANVAS_ZOOM, y1 * 8 * CANVAS_ZOOM, fill="", outline="red")
         #Define inner methods for mouse drag
@@ -196,9 +154,9 @@ class Tileset_gui(tkinter.Frame):
 
         #Setup the two canvases for block selection (one for tsp and tss)
         #-------------------------------------------------------------------
-        canvas_frame_blocks_tsp, canvas_frame_blocks_tss = tkinter.Frame(root), tkinter.Frame(root)
-        canvas_frame_blocks_tsp.grid(row=5, column=0, sticky=tkinter.NW, columnspan=3)
-        canvas_frame_blocks_tss.grid(row=5, column=3, sticky=tkinter.NW, columnspan=3)
+        canvas_frame_blocks_tsp, canvas_frame_blocks_tss = tkinter.Frame(self.frame_tsp), tkinter.Frame(self.frame_tss)
+        canvas_frame_blocks_tsp.grid(row=0, column=0, columnspan=2, sticky=tkinter.NW)
+        canvas_frame_blocks_tss.grid(row=0, column=0, columnspan=2, sticky=tkinter.NW)
         self.blocks_tsp_canvas = tkinter.Canvas(canvas_frame_blocks_tsp, width=CANVAS_WIDTH, height=512, scrollregion=(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT_TSP), background="black")
         self.blocks_tss_canvas = tkinter.Canvas(canvas_frame_blocks_tss, width=CANVAS_WIDTH, height=512, scrollregion=(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT_TSS), background="black")
         self.blocks_tsp_bar_v = tkinter.Scrollbar(canvas_frame_blocks_tsp, orient=tkinter.VERTICAL)
@@ -297,22 +255,24 @@ class Tileset_gui(tkinter.Frame):
                 self.blocks_tss_canvas.delete(self.blocks_tss_canvas_image)
                 self.blocks_tss_canvas.create_image(1, 1, image=self.blocks_tss_raw_image, anchor=tkinter.NW)
             self.refresh_block_selection_rectangle(primary)
-        bt_block_edit_tsp_expl, bt_block_edit_tss_expl = tkinter.Button(root, text="Save", command=lambda: save_block_to_build(True)), tkinter.Button(root, text="Save", command=lambda: save_block_to_build(False))
-        bt_block_edit_tsp_expl.grid(row=4, column=2, sticky=tkinter.NW)
-        bt_block_edit_tss_expl.grid(row=4, column=5, sticky=tkinter.NW)
-        self.lb_head_block_edit_tsp, self.lb_head_block_edit_tss = tkinter.Label(root, text="Block #???"), tkinter.Label(root, text="Block #???")
-        self.lb_head_block_edit_tsp.grid(row=4, column=0, sticky=tkinter.NW)
-        self.lb_head_block_edit_tss.grid(row=4, column=3, sticky=tkinter.NW)
-        self.block_tsp_edit_canvas = tkinter.Canvas(root, width=8 * CANVAS_ZOOM * 2, height = 8 * CANVAS_ZOOM * 4, background="black")
-        self.block_tss_edit_canvas = tkinter.Canvas(root, width=8 * CANVAS_ZOOM * 2, height = 8 * CANVAS_ZOOM * 4, background="black")
+        bedit_frame_tsp, bedit_frame_tss = tkinter.Frame(self.frame_tsp), tkinter.Frame(self.frame_tss)
+        bedit_frame_tsp.grid(row=1, sticky=tkinter.NW), bedit_frame_tss.grid(row=1, sticky=tkinter.NW)
+        bt_block_edit_tsp_expl, bt_block_edit_tss_expl = tkinter.Button(bedit_frame_tsp, text="Save", command=lambda: save_block_to_build(True)), tkinter.Button(bedit_frame_tss, text="Save", command=lambda: save_block_to_build(False))
+        bt_block_edit_tsp_expl.grid(row=2, column=0, sticky=tkinter.NW)
+        bt_block_edit_tss_expl.grid(row=2, column=0, sticky=tkinter.NW)
+        self.lb_head_block_edit_tsp, self.lb_head_block_edit_tss = tkinter.Label(bedit_frame_tsp, text="Block #???"), tkinter.Label(bedit_frame_tss, text="Block #???")
+        self.lb_head_block_edit_tsp.grid(row=0, column=0, sticky=tkinter.NW)
+        self.lb_head_block_edit_tss.grid(row=0, column=0, sticky=tkinter.NW)
+        self.block_tsp_edit_canvas = tkinter.Canvas(bedit_frame_tsp, width=8 * CANVAS_ZOOM * 2, height = 8 * CANVAS_ZOOM * 4, background="black")
+        self.block_tss_edit_canvas = tkinter.Canvas(bedit_frame_tss, width=8 * CANVAS_ZOOM * 2, height = 8 * CANVAS_ZOOM * 4, background="black")
         self.block_tsp_edit_raw_pil_image = PImage.new("RGBA", (8 * CANVAS_ZOOM * 2, 8 * CANVAS_ZOOM * 4), "black")
         self.block_tss_edit_raw_pil_image = PImage.new("RGBA", (8 * CANVAS_ZOOM * 2, 8 * CANVAS_ZOOM * 4), "black")
         self.block_tsp_edit_raw_image = ImageTk.PhotoImage(self.block_tsp_edit_raw_pil_image)
         self.block_tss_edit_raw_image = ImageTk.PhotoImage(self.block_tss_edit_raw_pil_image)
         self.block_tsp_edit_canvas_image = self.block_tsp_edit_canvas.create_image(1, 1, image=self.block_tsp_edit_raw_image, anchor=tkinter.NW)
         self.block_tss_edit_canvas_image = self.block_tss_edit_canvas.create_image(1, 1, image=self.block_tss_edit_raw_image, anchor=tkinter.NW)
-        self.block_tsp_edit_canvas.grid(row=4, column=1, sticky=tkinter.NW)
-        self.block_tss_edit_canvas.grid(row=4, column=4, sticky=tkinter.NW)
+        self.block_tsp_edit_canvas.grid(row=1, column=0, sticky=tkinter.NW)
+        self.block_tss_edit_canvas.grid(row=1, column=0, sticky=tkinter.NW)
         def edit_canvas_b_press(event, primary):
             if not self.primary_tileset or not self.secondary_tileset: return
             block_to_build = self.block_to_build_tsp if primary else self.block_to_build_tss
@@ -348,7 +308,7 @@ class Tileset_gui(tkinter.Frame):
                 tile, hflip, vflip, pal = self.block_to_build_tsp[2 * y0 + x0] if primary else self.block_to_build_tss[2 * y0 + x0]
                 tx, ty = tile & 0xF, tile >> 4
                 self.tileset_selected_area = tx, ty, tx + 1, ty + 1
-                self.tileset_pal_dropdown.set(str(pal))
+                self.tileset_pal_combobox.set(str(pal))
                 self.tile_selection_hflip_box.set(hflip, ignore_trace=True)
                 self.tile_selection_vflip_box.set(vflip, ignore_trace=True)
                 self.tileset_canvas.delete(self.tileset_canvas_selection_rectangle)
@@ -367,41 +327,101 @@ class Tileset_gui(tkinter.Frame):
         self.block_tss_edit_canvas.bind("<B3-Motion>", lambda e: edit_canvas_b3_motion(e, False))
         self.block_tsp_edit_canvas.bind("<ButtonRelease-3>", lambda e: edit_canvas_b3_release(e, True))
         self.block_tss_edit_canvas.bind("<ButtonRelease-3>", lambda e: edit_canvas_b3_release(e, False))
-        tkinter.Button(root, text="Update blocks (long computing time...)", command=lambda: self.refresh_block_selection(True)).grid(row=6, column=0, sticky=tkinter.NW)
-        tkinter.Button(root, text="Update blocks (long computing time...)", command=lambda: self.refresh_block_selection(False)).grid(row=6, column=3, sticky=tkinter.NW)
+
+        bpframe_tsp, bpframe_tss = tkinter.Frame(self.frame_tsp), tkinter.Frame(self.frame_tss)
+        bpframe_tsp.grid(row=1, column=1, sticky=tkinter.NW), bpframe_tss.grid(row=1, column=1, sticky=tkinter.NW)
+
+
+        tkinter.Button(bpframe_tsp, text="Update blocks (long computing time...)", command=lambda: self.refresh_block_selection(True)).grid(row=0, column=0, columnspan=3, sticky=tkinter.NW)
+        tkinter.Button(bpframe_tss, text="Update blocks (long computing time...)", command=lambda: self.refresh_block_selection(False)).grid(row=0, column=0, columnspan=3, sticky=tkinter.NW)
     
         #Setup two widgets for data editing
         #-------------------------------------------------------------------
-        tkinter.Label(root, text="Tileset symbol").grid(row=7, column=0, sticky=tkinter.NW)
-        tkinter.Label(root, text="Tileset symbol").grid(row=7, column=3, sticky=tkinter.NW)
-        self.tsp_sym_entry = tkinterx.Entry(root)
-        self.tss_sym_entry = tkinterx.Entry(root)
-        self.tsp_sym_entry.grid(row=7, column=1, sticky=tkinter.NW)
-        self.tss_sym_entry.grid(row=7, column=4, sticky=tkinter.NW)
-        tkinter.Label(root, text="Gfx symbol").grid(row=8, column=0, sticky=tkinter.NW)
-        tkinter.Label(root, text="Gfx symbol").grid(row=8, column=3, sticky=tkinter.NW)
-        self.tsp_gfx_entry = tkinterx.Entry(root)
-        self.tss_gfx_entry = tkinterx.Entry(root)
-        self.tsp_gfx_entry.grid(row=8, column=1, sticky=tkinter.NW)
-        self.tss_gfx_entry.grid(row=8, column=4, sticky=tkinter.NW)
-        tkinter.Label(root, text="Animation initialization function").grid(row=9, column=0, sticky=tkinter.NW)
-        tkinter.Label(root, text="Animation initialization function").grid(row=9, column=3, sticky=tkinter.NW)
-        self.tsp_init_func_entry = tkinterx.Entry(root)
-        self.tss_init_func_entry = tkinterx.Entry(root)
-        self.tsp_init_func_entry.grid(row=9, column=1, sticky=tkinter.NW)
-        self.tss_init_func_entry.grid(row=9, column=4, sticky=tkinter.NW)
-        def ts_n_set_member(primary, attr, text):
-            if primary and self.primary_tileset: self.primary_tileset.__setattr__(attr, text)
-            if not primary and self.secondary_tileset: self.secondary_tileset.__setattr__(attr, text)
-        self.tsp_sym_entry.add_callback(lambda: ts_n_set_member(True, "symbol", self.tsp_sym_entry.get()))
-        self.tss_sym_entry.add_callback(lambda: ts_n_set_member(False, "symbol", self.tss_sym_entry.get()))
-        self.tsp_gfx_entry.add_callback(lambda: ts_n_set_member(True, "gfx", self.tsp_gfx_entry.get()))
-        self.tss_gfx_entry.add_callback(lambda: ts_n_set_member(False, "gfx", self.tss_gfx_entry.get()))
-        self.tsp_init_func_entry.add_callback(lambda: ts_n_set_member(True, "init_func", self.tsp_init_func_entry.get()))
-        self.tss_init_func_entry.add_callback(lambda: ts_n_set_member(False, "init_func", self.tss_init_func_entry.get()))
+        tkinter.Label(bpframe_tsp, text="Symbol").grid(row=1, column=0, sticky=tkinter.NW)
+        tkinter.Label(bpframe_tss, text="Symbol").grid(row=1, column=0, sticky=tkinter.NW)
+        self.tsp_sym_combobox = tkinterx.Combobox(bpframe_tsp, values=self.project.get_tileset_paths(_sorted=True), state="readonly")
+        self.tss_sym_combobox = tkinterx.Combobox(bpframe_tss, values=self.project.get_tileset_paths(_sorted=True), state="readonly")
+        self.tsp_sym_combobox.grid(row=1, column=1, sticky=tkinter.NW)
+        self.tss_sym_combobox.grid(row=1, column=1, sticky=tkinter.NW)
+        tkinter.Label(bpframe_tsp, text="Gfx").grid(row=2, column=0, sticky=tkinter.NW)
+        tkinter.Label(bpframe_tss, text="Gfx").grid(row=2, column=0, sticky=tkinter.NW)
+        self.tsp_gfx_combobox = tkinterx.Combobox(bpframe_tsp, values=self.project.get_image_paths(_sorted=True), state="readonly")
+        self.tss_gfx_combobox = tkinterx.Combobox(bpframe_tss, values=self.project.get_image_paths(_sorted=True), state="readonly")
+        self.tsp_gfx_combobox.grid(row=2, column=1, sticky=tkinter.NW)
+        self.tss_gfx_combobox.grid(row=2, column=1, sticky=tkinter.NW)
+        tkinter.Label(bpframe_tsp, text="Anim. init.").grid(row=3, column=0, sticky=tkinter.NW)
+        tkinter.Label(bpframe_tss, text="Anim. init.").grid(row=3, column=0, sticky=tkinter.NW)
+        self.tsp_init_func_entry = tkinterx.Entry(bpframe_tsp)
+        self.tss_init_func_entry = tkinterx.Entry(bpframe_tss)
+        self.tsp_init_func_entry.grid(row=3, column=1, sticky=tkinter.NW)
+        self.tss_init_func_entry.grid(row=3, column=1, sticky=tkinter.NW)
+        self.tsp_error_label = tkinter.Label(bpframe_tsp, fg="red")
+        self.tsp_error_label.grid(row=4, column=0, sticky=tkinter.NW, columnspan=2)
+        self.tss_error_label = tkinter.Label(bpframe_tss, fg="red")
+        self.tss_error_label.grid(row=4, column=0, sticky=tkinter.NW, columnspan=2)
+
+        def set_anim_init_func(primary, symbol):
+            if primary and self.primary_tileset:
+                self.primary_tileset.init_func = symbol
+            elif not primary and self.secondary_tileset:
+                self.secondary_tileset.init_func = symbol
+
+        def set_gfx(primary, symbol):
+            img = self.project.get_image_path(symbol)
+            if not img:
+                return
+            if primary and self.primary_tileset:
+                try:
+                    self.primary_tileset.gfx = symbol
+                    self.primary_tileset.load_image_file(img)
+                    self.refresh_all()
+                    self.err(primary) #clear err
+                except Exception as e:
+                    #messagebox.showerror(title="Error while loading gfx", message="Gfx symbol '" + symbol + "' could not be loaded: " + str(e))
+                    self.err(primary, "Gfx symbol '" + symbol + "' could not be loaded: " + str(e))
+                    #self.root.grab_set()
+                    self.refresh_widgets(True), self.refresh_widgets(False)
+            elif not primary and self.secondary_tileset:
+                try:
+                    self.secondary_tileset.gfx = symbol
+                    self.secondary_tileset.load_image_file(img)
+                    self.refresh_all()
+                    self.err(primary)
+                except Exception as e:
+                    #messagebox.showerror(title="Error while loading gfx", message="Gfx symbol '" + symbol + "' could not be loaded: " + str(e))
+                    self.err(primary, "Gfx symbol '" + symbol + "' could not be loaded: " + str(e))
+                    #self.root.grab_set()
+                    self.refresh_widgets(True), self.refresh_widgets(False)
+
+        def reassing_tileset(primary, symbol):
+            ts = self.project.get_tileset(symbol)
+            if not ts:
+                return self.err(primary, "Tileset symbol '" + symbol + "' is not defined!")
+                #return messagebox.showerror(title="Tileset symbol not defined", message="Tileset symbol '" + symbol + "' is not defined!")
+            #print(primary, ts.is_primary, ts.symbol)
+            if primary:
+                if not ts.is_primary:
+                    self.primary_tileset = None
+                    self.refresh_all()
+                    self.err(primary, "Unable to assing tileset symbol '" + symbol +  "' because it does not match the tileset type")
+                else: self.assign_tileset(ts)
+            else:
+                if ts.is_primary:
+                    self.secondary_tileset = None
+                    self.refresh_all()
+                    self.err(primary, "Unable to assing tileset symbol '" + symbol +  "' because it does not match the tileset type")
+                else: self.assign_tileset(ts)
+                
+        self.tsp_init_func_entry.add_callback(lambda: set_anim_init_func(True, self.tsp_init_func_entry.get()))
+        self.tss_init_func_entry.add_callback(lambda: set_anim_init_func(False, self.tss_init_func_entry.get()))
+        self.tsp_gfx_combobox.add_callback(lambda: set_gfx(True, self.tsp_gfx_combobox.get()))
+        self.tss_gfx_combobox.add_callback(lambda: set_gfx(False, self.tss_gfx_combobox.get()))
+        self.tsp_sym_combobox.add_callback(lambda: reassing_tileset(True, self.tsp_sym_combobox.get()))
+        self.tss_sym_combobox.add_callback(lambda: reassing_tileset(False, self.tss_sym_combobox.get()))
 
     def refresh_tile_selection_by_block_area(self, primary):
         """ Refreshes the tile selection by the selected area inside a block (tsp or tss)"""
+        if not self._can_draw(): return
         x0, y0, x1, y1 = self.block_to_build_tsp_selected_area if primary else self.block_to_build_tss_selected_area
         blocks = self.block_to_build_tsp if primary else self.block_to_build_tss
         self.selected_tiles = [[blocks[2 * (y0 + j) + x0 + i] for i in range(x1 - x0)] for j in range(y1 - y0)]
@@ -410,17 +430,18 @@ class Tileset_gui(tkinter.Frame):
 
     def refresh_tile_selection_by_tileset_area(self):
         """ Refreshes the tile selection by the selected area inside the tileset widget"""
+        if not self._can_draw(): return
         x0, y0, x1, y1 = self.tileset_selected_area
         hflip = self.tile_selection_hflip_box.get()
         vflip = self.tile_selection_vflip_box.get()
-        self.selected_tiles = [[(16 * (y0 + j) + x0 + i, hflip, vflip, int(self.tileset_pal_dropdown.get())) for i in range(x1 - x0)] for j in range(y1 - y0)]
+        self.selected_tiles = [[(16 * (y0 + j) + x0 + i, hflip, vflip, int(self.tileset_pal_combobox.get())) for i in range(x1 - x0)] for j in range(y1 - y0)]
         self.refresh_tile_selection()
         self.tileset_canvas.delete(self.tileset_canvas_selection_rectangle)
         self.tileset_canvas_selection_rectangle = self.tileset_canvas.create_rectangle(x0 * 8 * CANVAS_ZOOM, y0 * 8 * CANVAS_ZOOM, x1 * 8 * CANVAS_ZOOM, y1 * 8 * CANVAS_ZOOM, fill="", outline="red")
 
     def refresh_block_edit(self, primary):
         """ Refreshes the block edit canvas for a given tileset (tss or tsp) and all"""
-        if not self.primary_tileset and self.secondary_tileset: return
+        if not self._can_draw(): return
         t = self.primary_tileset if primary else self.secondary_tileset
         raw_pil_image = self.block_tsp_edit_raw_pil_image if primary else self.block_tss_edit_raw_pil_image
         canvas_image = self.block_tsp_edit_canvas_image if primary else self.block_tss_edit_canvas_image
@@ -441,9 +462,7 @@ class Tileset_gui(tkinter.Frame):
 
     def refresh_block_in_selection(self, primary, i):
         """ Refreshes a single block (index i) in the canvas for a given tileset (tss or tsp) and all canvases linked to it (cascade)"""
-        
-        if not self.primary_tileset or not self.secondary_tileset: return
-        if self.primary_tileset.image.empty or self.secondary_tileset.image.empty: return
+        if not self._can_draw(): return
         t = self.primary_tileset if primary else self.secondary_tileset        
         block_x, block_y = i % 8, int(i / 8)
         block = t.blocks[i]
@@ -487,9 +506,7 @@ class Tileset_gui(tkinter.Frame):
 
     def refresh_block_selection(self, primary):
         """ Refreshes a block canvas for a given tileset (tss or tsp) and all canvases linked to it (cascade)"""
-        
-        if not self.primary_tileset or not self.secondary_tileset: return
-        if self.primary_tileset.image.empty or self.secondary_tileset.image.empty: return
+        if not self._can_draw(): return
         t = self.primary_tileset if primary else self.secondary_tileset
         #Refresh all blocks, which causes a lot of computing time...
 
@@ -512,7 +529,7 @@ class Tileset_gui(tkinter.Frame):
             self.refresh_block_in_selection(primary, i)
 
         t1 = time.time()
-        print("Done! Took me ", t1-t0, "s")
+        #print("Done! Took me ", t1-t0, "s")
         
         raw_pil_image = self.blocks_tsp_raw_pil_image if primary else self.blocks_tss_raw_pil_image
         if primary:
@@ -527,6 +544,7 @@ class Tileset_gui(tkinter.Frame):
         
     def refresh_block_selection_rectangle(self, primary):
         """ Redraws the red rectangle for block selection (this needs to be called seperatly when you choose a tile or on other instances) """
+        if not self._can_draw(): return
         if primary:
             x, y = self.selected_block_tsp & 7, self.selected_block_tsp >> 3
             self.blocks_tsp_canvas.delete(self.blocks_tsp_canvas_rectangle)
@@ -541,34 +559,20 @@ class Tileset_gui(tkinter.Frame):
         """ Refreshes the title of the gui """
         title = "pytileset - primary tileset: "
         if self.primary_tileset:
-            title += self.primary_tileset.path
+            title += self.primary_tileset.symbol
         else:
             title += "not loaded"
         title += ", secondary tileset; "
         if self.secondary_tileset:
-            title += self.secondary_tileset.path
+            title += self.secondary_tileset.symbol
         else:
             title += "not loaded"
         self.root.wm_title(title)
 
-
-    def palette_selected(self, primary):
-        """ Called when a palette is selected in dropdown """
-        if primary:
-            if not self.primary_tileset: return
-            value = int(self.tsp_pal_dropdown.get())
-            self.tsp_pal_entry.delete(0, tkinter.END)
-            self.tsp_pal_entry.insert(0, self.primary_tileset.palettes[value].key)
-            self.refresh_tileset_canvas() 
-        else:
-            if not self.secondary_tileset: return
-            value = int(self.tss_pal_dropdown.get()) - 7
-            self.tss_pal_entry.delete(0, tkinter.END)
-            self.tss_pal_entry.insert(0, self.secondary_tileset.palettes[value].key)
-            self.refresh_tileset_canvas()
         
     def refresh_tile_selection(self):
         """ Refreshes the canvas for the selected tiles """
+        if not self._can_draw(): return
         #self.tileset_canvas.coords(self.tileset_canvas_selection_rectangle, x0 * 8 * CANVAS_ZOOM, y0 * 8 * CANVAS_ZOOM, x1 * 8 * CANVAS_ZOOM, y1 * 8 * CANVAS_ZOOM)
         #Create a new image for the tile selection
         merged_img = PImage.new("RGBA", (8 * CANVAS_ZOOM * 2, 8 * CANVAS_ZOOM * 4))
@@ -585,26 +589,28 @@ class Tileset_gui(tkinter.Frame):
     
     def get_tile(self, tile, hflip, vflip, pal):
         """ Gets a tile form one of the two resources (tsp, tss)"""
+        if not self._can_draw(): return
         if not self.primary_tileset or not self.secondary_tileset: return
         if tile < 0x280:
             t_src = self.primary_tileset
         else:
             t_src = self.secondary_tileset
             tile -= 0x280
-        if pal < 7: colors = self.primary_tileset.palettes[pal].colors
-        else: colors = self.secondary_tileset.palettes[pal - 7].colors
+        if pal < 7: colors = self.primary_tileset.palettes[pal]
+        else: colors = self.secondary_tileset.palettes[pal - 7]
         return t_src.get_tile(tile, colors, hflip, vflip)
         
 
     def refresh_tileset_canvas(self, refresh_tile_selection=True):
         """ Refreshes the tileset canvas and all canvases linked to its appearance (cascade)"""
+        if not self._can_draw(): return
         if not self.primary_tileset or not self.secondary_tileset: return
         if self.primary_tileset.image.empty or self.secondary_tileset.image.empty: return
-        pal_id = int(self.tileset_pal_dropdown.get())
+        pal_id = int(self.tileset_pal_combobox.get())
         if pal_id < 7:
-            colors = self.primary_tileset.palettes[pal_id].colors
+            colors = self.primary_tileset.palettes[pal_id]
         else:
-            colors = self.secondary_tileset.palettes[pal_id - 7].colors
+            colors = self.secondary_tileset.palettes[pal_id - 7]
         tsp_img = self.primary_tileset.get_image(colors, 16, 40)
         tss_img = self.secondary_tileset.get_image(colors, 16, 24)
         merged_img = PImage.new("RGBA", (128, 512))
@@ -620,39 +626,41 @@ class Tileset_gui(tkinter.Frame):
         #Refresh tile selection and both block canvases (those may have changed as well)
         if refresh_tile_selection: self.refresh_tile_selection()
 
-    def open_pal(self, path, primary, pal_id):
-        """ Reads a palette file into a certain palette slot on a tileset and refreshes the canvas"""
+    def open_pal(self, path, pal_id):
+        """ Reads a palette file into a certain palette slot on a tileset and refreshes the canvas
+        if not self._can_draw(): return
+        primary = False
+        if pal_id < 7: primary = True
+        else: pal_id -= 7
         t = self.primary_tileset if primary else self.secondary_tileset
         if not path or not len(path): return
         if not t: return
-        path = os.path.relpath(path)
         try:
-            t.palettes[pal_id].load_palette_file(path)
+            t.palettes[pal_id] = palette.from_file(path)
         except Exception as e:
             messagebox.showerror("Could not read palette file", "Could not read palette file :" + str(e))
             return
-        widget_entry = self.tsp_pal_entry if primary else self.tss_pal_entry
-        widget_entry.delete(0, tkinter.END)
-        widget_entry.insert(0, path)
         self.refresh_tileset_canvas()
+        """
         
 
-    def open_pal_dialoge(self, primary):
+    def open_pal_dialoge(self):
         """ Callback to open a palette and use it for tsp or tss """
-        t = self.primary_tileset if primary else self.secondary_tileset
-        if not t: return
-        pal_id = int(self.tsp_pal_dropdown.get()) if primary else int(self.tss_pal_dropdown.get()) - 7
-        options = {}
-        if t.palettes[pal_id].key != palette.PATH_NONE:
-            options["initialdir"] = t.palettes[pal_id].key
-        options["filetypes"] = [("pymap palette files", ".ppl"), ("4bpp portable network graphics", ".png")]
-        options["title"] = "Load palette"
-        options["parent"] = self
+        if not self._can_draw(): return
+        pal_id = int(self.tileset_pal_combobox.get())
+        options = {
+            "initialdir" : os.getcwd(),
+            "filetypes" : [("pymap palette files", ".ppl"), ("4bpp portable network graphics", ".png")],
+            "title" : "Import palette",
+            "parent" : self
+        }
         path = filedialog.askopenfilename(**options)
-        self.open_pal(path, primary, pal_id)
+        self.open_pal(path, pal_id)
 
+    """
     def open_pal_path(self, primary):
-        """ Callback to open a palette by its path and use it for tsp or tss """
+        return #Deprecated
+         Callback to open a palette by its path and use it for tsp or tss 
         t = self.primary_tileset if primary else self.secondary_tileset
         pal_id = int(self.tsp_pal_dropdown.get()) if primary else int(self.tss_pal_dropdown.get()) - 7
         if not t: return
@@ -661,7 +669,7 @@ class Tileset_gui(tkinter.Frame):
         self.open_pal(path, primary, pal_id)
 
     def open_image_dialoge(self, primary):
-        """ Callback to open a tileset (tsp or tss) loading dialoge when one would want to enter something"""
+        return #Deprecated
         t = self.primary_tileset if primary else self.secondary_tileset
         if not t: return
         options = {}
@@ -673,9 +681,8 @@ class Tileset_gui(tkinter.Frame):
         path = filedialog.askopenfilename(**options)
         self.load_image(path, primary)
         self.refresh_tileset_canvas()
-
     def open_image_path(self, primary):
-        """ Callback to load an image file after manual path input and enter key press"""
+        return #Deprecated
         t = self.primary_tileset if primary else self.secondary_tileset
         if not t: return
         widget_entry = self.tsp_img_entry if primary else self.tss_img_entry
@@ -688,7 +695,7 @@ class Tileset_gui(tkinter.Frame):
 
 
     def palette_widget_pal_selected(self):
-        """ Callback that triggers when a palette is selected"""
+        return #Deprecated
         #Todo change the displayed tileset in right palette
         self.palette_widget_entry_pal.delete(0, tkinter.END)
         self.palette_widget_entry_pal.insert(0, self.active_palette_key)
@@ -696,43 +703,61 @@ class Tileset_gui(tkinter.Frame):
 
 
     def palette_widget_refresh(self):
-        """ Refreshes the palette widget """
+        return #Deprecated
         self.palette_keys = [str(i + (0 if self.tileset.is_primary else 7)) + ": " + str(os.path.basename(self.tileset.palettes[i].key) if self.tileset.palettes[i].key else "null") for i in range(len(self.tileset.palettes))]
         self.active_palette_key.set(self.palette_keys[0])
         self.palette_widget_dropdown["menu"].delete(0, tkinter.END)
         for pkey in self.palette_keys:
             self.palette_widget_dropdown["menu"].add_command(label=pkey, command = tkinter._setit(self.active_palette_key, pkey, callback=self.palette_widget_pal_selected))
-
+"""
 
     def assign_tileset(self, t):
         """ Assigns a new tileset to the current state of the gui"""
+        print("assigning", t.symbol)
         if t.is_primary:
             self.primary_tileset = t
         else:
             self.secondary_tileset = t
 
-        #Update the palette browsing 
-        pal_id = int(self.tsp_pal_dropdown.get()) if t.is_primary else int(self.tss_pal_dropdown.get()) - 7
-        entry_widget = self.tsp_pal_entry if t.is_primary else self.tss_pal_entry
-        entry_widget.delete(0, tkinter.END)
-        entry_widget.insert(0, t.palettes[pal_id].key)
-        
         #Update the image browsing widget
-        widget_entry = self.tsp_img_entry if t.is_primary else self.tss_img_entry
-        widget_entry.delete(0, tkinter.END)
-        self.load_image(t.image.key, t.is_primary)
+        img = self.project.get_image_path(t.gfx)
+        if not img:
+            #messagebox.showerror("Gfx symbol not defined", message="Gfx symbol '" + t.gfx + "' is not defined!")
+            #self.root.grab_set()
+            self.err(t.is_primary, "Gfx symbol '" + t.gfx + "' is not defined!")
+            return
+        t.load_image_file(img)
+        self.refresh_all()
+        self.err(t.is_primary)
 
-        #Update data fields
-        widget_entry_sym = self.tsp_sym_entry if t.is_primary else self.tss_sym_entry
-        widget_entry_sym.set(t.symbol)
-        widget_entry_gfx = self.tsp_gfx_entry if t.is_primary else self.tss_gfx_entry
-        widget_entry_gfx.set(t.gfx)
-        widget_entry_init_func = self.tsp_init_func_entry if t.is_primary else self.tss_init_func_entry
-        widget_entry_init_func.set(t.init_func)
+    def refresh_widgets(self, primary):
+        """ Refreshes the widgets of a tileset (tsp or tss)"""
+        sym, gfx, init_func = "", "", ""
+        if primary and self.primary_tileset:
+            sym = self.primary_tileset.symbol
+            gfx = self.primary_tileset.gfx
+            init_func = self.primary_tileset.init_func
+        elif not primary and self.secondary_tileset:
+            sym = self.secondary_tileset.symbol
+            gfx = self.secondary_tileset.gfx
+            init_func = self.secondary_tileset.init_func
+        if primary:
+            self.tsp_sym_combobox.set(sym, untraced=True)
+            self.tsp_gfx_combobox.set(gfx, untraced=True)
+            self.tsp_init_func_entry.set(init_func, untraced=True)
+        else:
+            self.tss_sym_combobox.set(sym, untraced=True)
+            self.tss_gfx_combobox.set(gfx, untraced=True)
+            self.tss_init_func_entry.set(init_func, untraced=True)
 
+    def refresh_all(self):
+        self.refresh_widgets(True)
+        self.refresh_widgets(False)
+        if not self._can_draw(): return
         self.refresh_tileset_canvas()
         self.refresh_block_selection(True)
         self.refresh_block_selection(False)
+
 
 
     def file_new(self, primary):
@@ -767,28 +792,42 @@ class Tileset_gui(tkinter.Frame):
         path = filedialog.askopenfilename(**options)
         self.open_tileset_path(path, primary)
 
+    def open_tileset(self, symbol):
+        """ Opens a tileset by a symbol name """
+        ts = self.project.get_tileset(symbol)
+        if not ts:
+            messagebox.showerror(title="Tileset not defined", message="The tileset symbol '" + symbol + "' is not defined!")
+            #self.root.grab_set()
+            return
+        try:
+            self.assign_tileset(ts)
+        except Exception as e:
+            messagebox.showerror(title="Tileset could not be assinged", message="Tileset symbol '" + symbol + "' could not be assigned: " + str(e))
+            #self.root.grab_set()
+
     def open_tileset_path(self, path, primary):
-        """ Opens a tileset by its path"""
+        """ Opens a tileset by its path
         if not path or not len(path): return
         t = tileset.from_file(path)
         if t.is_primary != primary:
             messagebox.showerror("Wrong tileset type", "Selected tileset does not match the required type (primary, secondary)!")
+            
             return
         self.assign_tileset(t)
         self.refresh_title()
         print("Tileset file '" + path + "' opened sucessfully")
+        """
+        pass #deprecated
 
-    def load_image(self, path, primary):
-        """ Loads a new image as the image file of the tileset """
+    def load_image(self, symbol, primary):
+        """ Loads a new image as the image file of the tileset 
         t = self.primary_tileset if primary else self.secondary_tileset
         if not t: return
-        t.image.key = path
-        widget_entry = self.tsp_img_entry if primary else self.tss_img_entry
+        path = self.project.get_image_path(symbol)
         if not path or not len(path): return
-        path = os.path.relpath(path)
-        widget_entry.delete(0, tkinter.END)
-        widget_entry.insert(0, path)
-        t.load_image_file(path)
+        try: t.load_image_file(path)
+        except Exception as e: tkinter.messagebox.showerror(title="Unable to load png", message="Unable to load png '" + path + "': " + str(e))"""
+        pass #deprecated
         
             
     def file_save(self, primary):
@@ -802,25 +841,31 @@ class Tileset_gui(tkinter.Frame):
         t = self.primary_tileset if primary else self.secondary_tileset
         #Sync all not saved attributes
 
-        options = {}
-        if t and t.path != tileset.PATH_UNSAFED:
-            options["initialdir"] = t.path
-        options["defaultextension"] = ".pts"
-        options["filetypes"] = [('pymap tileset files', '.pts')]
-        options["title"] = "Save tileset to file"
-        options["parent"] = self
-        path = filedialog.asksaveasfilename(**options)
-        if not path or not len(path): return False
-        t.save(path)
-        self.refresh_title()
-        print("Tileset file '" + path + "'saved sucessfully")
+        if primary and self.primary_tileset:
+            self.project.save_tileset(self.primary_tileset.symbol, self.primary_tileset, self.primary_tileset.path)
+            print("Tileset file '" + self.primary_tileset.path + "'saved sucessfully")
+        elif not primary and self.secondary_tileset:
+            self.project.save_tileset(self.secondary_tileset.symbol, self.secondary_tileset, self.secondary_tileset.path)
+            print("Tileset file '" + self.secondary_tileset.path + "'saved sucessfully")
+        return True
+    
+    def _can_draw(self):
+        """ Checks if the gui can draw any blocks (all data is instanciated correctly) """
+        if not self.primary_tileset or not self.secondary_tileset: return False
+        if not self.primary_tileset.image or not self.secondary_tileset.image: return False
+        if self.primary_tileset.image.empty: return False
+        if self.secondary_tileset.image.empty: return False
         return True
 
-
-
+    def err(self, primary, estr=""):
+        """ Shows an error message """
+        if primary: self.tsp_error_label.config(text=estr)
+        else: self.tss_error_label.config(text=estr)
 
 
 def shell(args):
+    return
+    #depreacted
     try:
         opts, args = getopt.getopt(args, "hp:s:", ["help"])
     except getopt.GetoptError:

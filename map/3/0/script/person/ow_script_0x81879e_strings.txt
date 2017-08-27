@@ -1,0 +1,13 @@
+.string str_0x818854 GER
+	=(..._Ich_f\$uehle_mich_irgendwie\nkomisch..._Das_hat_angefangen,\lseitdem_ich_in_AKTANIA_war...\lMir_ist_so_schwindlig..._)
+.end
+
+
+.string str_0x8187f5 GER
+	=(Argghhh..._Was_war_das!?_Alles\ndreht_sich..._Arghhh..._Mir_wird\lganz_schwarz_vor_Augen...)
+.end
+
+
+.string str_0x8187d3 GER
+	=(Gwaaaaaaaaahhhhhhh!!!!!!!!!!!!)
+.end

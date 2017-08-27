@@ -1,13 +1,15 @@
+STDPATH = "C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
 VIOLETPATH = "C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
 FREPATH = "D:/Hacking/1695 - Pokemon Fire Red (U)(Independent).gba"
 FRDPATH = "D:/Hacking/bprd.gba"
 
 class Agbrom:
     
-    def __init__(self, path=VIOLETPATH):
+    def __init__(self, path=STDPATH):
         fd = open(path, "rb")
         self.bytes = bytearray(fd.read())
         fd.close()
+        self.path = path
 
     def u8(self, off):
         return int(self.bytes[off]) & 0xFFF
@@ -17,6 +19,18 @@ class Agbrom:
 
     def u32(self, off):
         return (int(self.bytes[off]) & 0xFF) | (int(self.bytes[off + 1]) << 8) | (int(self.bytes[off + 2]) << 16) | (int(self.bytes[off + 3]) << 24)
+
+    def s8(self, off):
+        value = self.u8(off)
+        return (value & 0x7F) - (value & 0x80)
+
+    def s16(self, off):
+        value = self.u16(off)
+        return (value & 0x7FFF)  - (value & 0x8000)
+
+    def _int(self, off):
+        value = self.u32(off)
+        return (value & 0x7FFFFFFF) - (value & 0x80000000)
 
     def pointer(self, off):
         return self.u32(off) - 0x8000000
@@ -49,3 +63,7 @@ class Agbrom:
             (offset >> 24) & 0xFF
         ]
         return self.findall(bytes)
+
+    def pointer_dump(self, offset, label):
+        refs = self.get_references(offset)
+        return "\n".join([".org " + hex(offset + 0x8000000) + "\n\t.word " + label + "\n" for offset in refs])

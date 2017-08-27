@@ -17,6 +17,7 @@ extern "C" {
     typedef struct mugshot {
         void *gfx;
         void *pal;
+        u8 *name;
     } mugshot;
 
     void spawn_mugshot();

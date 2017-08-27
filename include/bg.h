@@ -24,8 +24,6 @@ extern "C" {
         u32 priority : 2;
     } bg_config;
 
-    tbox *tboxes = (tbox*) 0x020204B4;
-
     void bg_setup(u8 tile_mode, bg_config configs[], u8 config_cnt);
 
 

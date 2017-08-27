@@ -88,6 +88,8 @@ typedef struct {
     int gp_stack_size;
     int gp_stack[GP_STACK_SIZE];
     int battle_custom_status[4];
+    u8 mugshot_oam_id;
+    u8 mugshot_tb_id;
     
 } floating_memory;
 

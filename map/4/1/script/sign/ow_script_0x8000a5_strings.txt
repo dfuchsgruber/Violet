@@ -1,0 +1,3 @@
+.string str_0x8000b2 GER
+	=Das_sieht_aus_wie_ein_Shooter._Ich\nlasse_besser_die_Finger_davon,_da\lSpiele_ab_18_nicht_f\$uer_mich\lgeeignet_sind._Ich_w\$uerde_sonst\lAmokl\$aeufer_werden,_denn_das_l\$aesst\lsich_nicht_vermeiden,_bei\lShooterspielen_ab_18!
+.end

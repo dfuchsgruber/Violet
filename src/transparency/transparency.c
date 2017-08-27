@@ -45,6 +45,7 @@ bool transparency_load_black_pal() {
 }
 
 bool transparency_is_on() {
+    dprintf("Transparency used by weather %d, bypassed %d\n", checkflag(FLAG_BYPASS_TRANSPARENCY), transparency_used_by_weather());
     return !checkflag(FLAG_BYPASS_TRANSPARENCY) && !transparency_used_by_weather();
 }
 

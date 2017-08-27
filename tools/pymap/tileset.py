@@ -8,14 +8,14 @@ PATH_UNSAFED = "unsafed"
 
 class Tileset:
 
-    def __init__(self, is_primary):
+    def __init__(self, is_primary, symbol="0"):
         self.path = PATH_UNSAFED
         self.is_primary = is_primary
         palette_count = 7 if is_primary else 6
-        self.palettes = [palette.Palette() for i in range(0, palette_count)]
+        self.palettes = [[0 for i in range(16 * 3)] for i in range(0, palette_count)]
         self.image = image.Image() 
         #self.image = agbimg.Agb_image()
-        self.symbol = "0"
+        self.symbol = symbol
         self.gfx = "0"
         self.init_func = "0"
 
@@ -28,13 +28,15 @@ class Tileset:
         self.image.load_image_file(path)
         #self.image.load_png(path)
         if self.is_primary and self.image.width * self.image.height != 128 * 320:
+            self.image.empty = True
             raise Exception("Image must contain 128 * 320 (=40.960) pixels")
         if not self.is_primary and self.image.width * self.image.height != 128 * 192:
+            self.image.empty = True
             raise Exception("Image must contain 128 * 192 (=24.576) pixels")
 
 
     def load_palette(self, path, slot):
-        self.palettes[slot].load_palette_file(path)
+        self.palettes[i] = palette.from_file(path)
 
     def get_image(self, colors, tiles_per_line, tiles_per_row):
         if not self.image: raise Exception("Tileset holds no image file")
@@ -49,8 +51,7 @@ class Tileset:
 
     def save(self, path):
         data = {
-            "image" : self.image.key,
-            "palettes" : [p.key for p in self.palettes],
+            "palettes" : self.palettes,
             "is_primary" : self.is_primary,
             "blocks" : self.blocks,
             "behaviours" : self.behaviours,
@@ -58,25 +59,20 @@ class Tileset:
             "gfx" : self.gfx,
             "init_func" : self.init_func,
         }
-        self.path = os.path.relpath(path)
         fd = open(path, "w+")
         json.dump(data, fd)
         fd.close()
 
-def from_file(path, from_root=False):
+def from_file(path, from_root=False, path_absolute=False):
     """ Instanciates the class from a json file"""
-    def _path(p): return rpath.rootpath(p) if from_root else os.path.relpath(p)
     fd = open(path, "r+")
     data = json.load(fd)
     fd.close()
     t = Tileset(data["is_primary"])
-    t.load_image_file(_path(data["image"]))
-    palette_keys = data["palettes"]
-    for i in range(0, len(palette_keys)):
-        t.load_palette(_path(palette_keys[i]), i)
+    t.palettes = data["palettes"]
     t.blocks = data["blocks"]
     t.behaviours = data["behaviours"]
-    t.path = _path(path)
+    t.path = path
     t.symbol = data["symbol"]
     t.gfx = data["gfx"]
     t.init_func = data["init_func"]

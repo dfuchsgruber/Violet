@@ -32,7 +32,7 @@ def tileset_to_assembly(tileset_file):
     s = "@*** Auto generated tileset assembly of '" + tileset_file + "', " + str(time.time()) + "***\n\n"
 
 
-    t = pymap.tileset.from_file(tileset_file, from_root=True) #This is executed from the root dir
+    t = pymap.tileset.from_file(tileset_file, from_root=True, path_absolute=True) #This is executed from the root dir
     symbol = t.symbol
     #First create the header (global symbols)
     s += "\n".join([".global " + symbol + g for g in ["", "_palettes", "_blocks", "_behaviours"]])
@@ -40,8 +40,7 @@ def tileset_to_assembly(tileset_file):
 
     #Create the tileset chunk
     s += ".align 4\n" + symbol + ":\n"
-    tinfo = [1, 0, 0, 0] #We assume tileset is always compressed
-    if not t.is_primary: tinfo[1] = 1
+    tinfo = [1, 0, 0, 0] #We assume tileset is always compressed and pals are contained with no displacement (as they are compiled this way)
     s += ".byte " + ", ".join(map(str, tinfo)) + "\n"
     s += ".word " + t.gfx + "\n"
     s += ".word " + symbol + "_palettes\n"
@@ -58,7 +57,7 @@ def tileset_to_assembly(tileset_file):
         return rgb
     
     s += ".align 4\n" + symbol + "_palettes:\n"
-    s += "\n".join([".hword " + ", ".join(map(str,pal_to_rgbs(bytearray(palette.colors)))) for palette in t.palettes])
+    s += "\n".join([".hword " + ", ".join(map(str,pal_to_rgbs(palette))) for palette in t.palettes])
     s += "\n\n"
 
         

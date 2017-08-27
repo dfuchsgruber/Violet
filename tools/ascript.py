@@ -161,6 +161,7 @@ class Ascript_exploration_tree:
         self.offsets = []
         self.explored_offsets = [] #No offset must be encountered twice (prevent infinite loops)
         self.assemblies = []
+        self.strings = []
         self.recursive = True
     
     def explore(self, offset, verbose=False, recursive=True):
@@ -170,7 +171,6 @@ class Ascript_exploration_tree:
         while len(self.offsets):
             #Explore this offset
             offset = self.offsets.pop()
-            if verbose: print("Exploring offset", hex(offset))
             if offset not in self.explored_offsets:
                 initial_offset = offset
                 label = script_offset_to_label(offset)
@@ -191,13 +191,14 @@ class Ascript_exploration_tree:
         fd = open(libpath)
         lib = fd.read()
         fd.close()
-        self.explored_offsets = json.loads(lib)
+        self.explored_offsets = eval(lib)
 
     def store_lib(self, libpath):
         """ Stores a json list of so far explored offsets"""
         fd = open(libpath, "w+")
-        fd.write(json.dumps(self.explored_offsets))
+        fd.write(str(self.explored_offsets))
         fd.close()
+
 
 def to_assembly_macro(commands):
     return "\n\n".join([command.to_assembly_macro() for command in commands])

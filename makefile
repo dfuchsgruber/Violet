@@ -12,6 +12,8 @@ STR2S=@python str2s.py
 PY=@python
 BIN2S=@python bin2s.py
 PYSET2S=@python tools/pyset2s.py
+PYMAP2S=@python tools/pymap2s.py
+PYPROJ2S=@python tools/pyproj2s.py
 
 ASFLAGS=-mthumb -Iinclude/
 MIDFLAGS=-V92
@@ -23,20 +25,25 @@ WAVFLAGS=-c
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
 BLDPATH= bld
-ASSRC1= $(shell find src -type f -iname '*.asm')
-ASSRC2= $(shell find src -type f -iname '*.s')
-CSRC= $(shell find src -type f -iname '*.c')
-MIDSRC= $(shell find Violet_Sources_Private/asset/mus -type f -iname '*.mid')
-GFXSRC= $(shell find Violet_Sources_Private/asset/gfx -type f -iname '*.png')
-STRSRC = $(shell find Violet_Sources_Private/asset/string -type f -iname '*.txt')
-WAVSRC = $(shell find Violet_Sources_Private/asset/cry -type f -iname '*.wav')
+
+rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
 
 
-SAMPLESRC = $(shell find Violet_Sources_Private/asset/sample -type f -iname '*.bin')
-MAPSRC = $(shell find map -type f -iname '*.mapheader')
-MAPTILESETSRC = $(shell find map -type f -iname '*.pts')
-MAPTILESETGFXSRC = $(shell find map -type f -iname '*.png')
+ASSRC1:= $(call rwildcard,src/,*.asm)
+ASSRC2:= $(call rwildcard,src/,*.s)
+CSRC:= $(call rwildcard,src/,*.c)
+MIDSRC:=$(call rwildcard,Violet_Sources_Private/asset/mus/,*.mid)
+GFXSRC:=$(call rwildcard,Violet_Sources_Private/asset/gfx/,*.png)
+STRSRC:=$(call rwildcard,Violet_Sources_Private/asset/string/,*.txt)
+WAVSRC:=$(call rwildcard,Violet_Sources_Private/asset/cry/,*.wav)
 
+
+SAMPLESRC:=$(call rwildcard,Violet_Sources_Private/asset/sample/,*.bin)
+MAPTILESETSRC:=$(call rwildcard,map/,*.pts)
+MAPTILESETGFXSRC:=$(call rwildcard,map/,*.png)
+MAPSRC:=$(call rwildcard,map/,*.pmh)
+MAPASSRC:=$(call rwildcard,map/,*.asm)
+MAPSTRSRC:=$(call rwildcard,map/,*.txt)
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
@@ -57,7 +64,7 @@ WAVOBJS = $(WAVAS:%.s=%.o)
 SAMPLEAS = $(SAMPLESRC:%.bin=$(BLDPATH)/%.s)
 SAMPLEOBJS = $(SAMPLEAS:%.s=%.o)
 	
-MAPAS = $(MAPSRC:%.mapheader=$(BLDPATH)/%.s)
+MAPAS = $(MAPSRC:%.pmh=$(BLDPATH)/%.s)
 MAPOBJS = $(MAPAS:%.s=%.o)
 	
 MAPTILESETAS = $(MAPTILESETSRC:%.pts=$(BLDPATH)/%.s)
@@ -65,6 +72,11 @@ MAPTILESETOBJS = $(MAPTILESETAS:%.s=%.o)
 	
 MAPTILESETGFXC = $(MAPTILESETGFXSRC:%.png=$(BLDPATH)/%.c)
 MAPTILESETGFXOBJS = $(MAPTILESETGFXC:%.c=%.o)
+	
+MAPASOBJS= $(MAPASSRC:%.asm=$(BLDPATH)/%.o)
+
+MAPSTRAS= $(MAPSTRSRC:%.txt=$(BLDPATH)/%.s)
+MAPSTROBJS= $(MAPSTRAS:%.s=%.o)
 
 .PHONY: build clean
 
@@ -122,9 +134,9 @@ $(SAMPLEOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@
 	
-$(MAPAS): $(BLDPATH)/%.s: %.mapheader
+$(MAPAS): $(BLDPATH)/%.s: %.pmh
 	$(shell mkdir -p $(dir $@))
-	$(MAP2AGB)  -o $@ -m map $<
+	$(PYMAP2S)  -o $@ $<
 
 $(MAPOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
@@ -145,11 +157,28 @@ $(MAPTILESETGFXC): $(BLDPATH)/%.c: %.png
 $(MAPTILESETGFXOBJS): %.o: %.c
 	$(shell mkdir -p $(dir $@))
 	$(CC) $(CFLAGS) $< -o $@
-	
 
-$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(BLDPATH)/Violet_Sources_Private/asset/str.o
+$(MAPASOBJS): $(BLDPATH)/%.o: %.asm
+	$(shell mkdir -p $(dir $@))
+	$(AS) $(ASFLAGS)  $< -o $@
+
+$(MAPSTRAS): $(BLDPATH)/%.s: %.txt
+	$(shell mkdir -p $(dir $@))
+	$(STR2S) $(STR2SFLAGS) -i $< -o $@
+	
+$(MAPSTROBJS): %.o: %.s
+	$(shell mkdir -p $(dir $@))
+	$(AS) $(ASFLAGS) $< -o $@
+
+
+$(BLDPATH)/map/proj.o: map/proj.pmp
+#	Compile pmp map project
+	$(PYPROJ2S) -b mapbanks -f mapfooters -o $(BLDPATH)/map/proj.s map/proj.pmp
+	$(AS) $(ASFLAGS) $(BLDPATH)/map/proj.s -o $(BLDPATH)/map/proj.o
+
+$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(BLDPATH)/Violet_Sources_Private/asset/str.o
 #	Create a ld script
-	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS))" > $(BLDPATH)/asset.ld
+	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o)" > $(BLDPATH)/asset.ld
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(BLDPATH)/Violet_Sources_Private/asset/str.o
 	
 

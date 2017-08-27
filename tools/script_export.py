@@ -5,13 +5,13 @@ import owscript
 import ascript
 import constants
 
-OWSCRIPTLIB = "lib/owscript.json"
-ASCRIPTLIB = "lib/ascript.json"
+OWSCRIPTLIB = "lib/owscript.py"
+ASCRIPTLIB = "lib/ascript.py"
 
 def shell(argv):
     """ Shell method for this tool """
     try:
-        opts, args = getopt.getopt(argv, "vrhs:o:l:r:m:", ["help","verbose", "recursive", "libignore"])
+        opts, args = getopt.getopt(argv, "vrhs:o:l:r:m:b:p:", ["help","verbose", "recursive", "libignore", "singlefile"])
     except getopt.GetoptError:
         sys.exit(2)
     mode = None
@@ -22,12 +22,13 @@ def shell(argv):
     verbose = False
     recursive = False
     libignore = False
+    singlefile = False
+    preamble = ""
 
     derive_offset_from_attack = None
-
     for opt, arg in opts:
         if opt in ("-h", "--help"):
-            print("usage: python script_export.py -s offset -o outdir -m mode {a,attack,ow,overworld} [-l libfile=lib/XXscript.json] [-b romfile=VIOLETPATH] [--verbose] [--recursive] [--libignore]")
+            print("usage: python script_export.py -s offset -o outdir -m mode {a,attack,ow,overworld} [-l libfile=lib/XXscript.json] [-b romfile=VIOLETPATH] [-p preamble path to file that is prepended] [--verbose] [--recursive] [--libignore] [--singlefile]")
             sys.exit(0)
         if opt == "-s":
             try:    
@@ -42,12 +43,18 @@ def shell(argv):
             rompath = arg
         elif opt == "-m":
             mode = arg
+        elif opt == "-p":
+            fd = open(arg, "r+")
+            preamble = fd.read()
+            fd.close()
         elif opt in ("-v", "--verbose"):
             verbose = True
         elif opt in ("-r", "--recursive"):
             recursive = True
         elif opt in ("--libignore"):
             libignore = True
+        elif opt in ("--singlefile"):
+            singlefile = True
 
     rom = agb.Agbrom(path=rompath)
     if verbose: print("Rom loaded sucessfully.")
@@ -66,13 +73,13 @@ def shell(argv):
     if mode in ("a", "attack", "attack_script"):
         #Dump as attack script
         file_prefix = "attack_script"
-        if not libpath: libpath = "lib/ascript.json"
+        if not libpath: libpath = ASCRIPTLIB
         tree = ascript.Ascript_exploration_tree(rom)
 
     elif mode in ("o", "ow", "owscript", "ow_script"):
         #Dump as overworld script
         file_prefix = "ow_script"
-        if not libpath: libpath = "lib/owscript.json"
+        if not libpath: libpath = OWSCRIPTLIB
         tree = owscript.Owscript_Exploration_tree(rom)
 
     else:
@@ -84,15 +91,37 @@ def shell(argv):
     if verbose: print("Script decompiled sucessfully.")
     if not libignore: tree.store_lib(libpath)
     if verbose: print("Lib", libpath, "updated sucessfully.")
+    if not len(tree.assemblies): return
 
-    #Dump the script output
-    for assembly_offset, assembly in tree.assemblies:
-        
-        fd = open(outpath + "/" + file_prefix + "_" + hex(assembly_offset) + ".asm", "w+")
-        fd.write(assembly)
+    if singlefile:
+        #Dump the script output
+        output = preamble + "\n" + constants.get_macro_header() + "\n\n".join([""] + [assembly for _, assembly in tree.assemblies])
+        fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + ".asm", "w+")
+        fd.write(output)
         fd.close()
-        if verbose: print("Exported script at", hex(assembly_offset), "sucessfully.")
 
+        #Dump the string output
+        output = "\n\n".join([".string " + label + " GER\n\t=" + content + "\n.end\n" for label, content in tree.strings])
+        fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + "_strings.txt", "w+")
+        fd.write(output)
+        fd.close()
+
+    else:
+        #Dump the script output
+        for assembly_offset, assembly in tree.assemblies:
+            
+            fd = open(outpath + "/" + file_prefix + "_" + hex(assembly_offset) + ".asm", "w+")
+            fd.write(assembly)
+            fd.close()
+            if verbose: print("Exported script at", hex(assembly_offset), "sucessfully.")
+
+        #Dump the string output
+        for label, content in tree.strings:
+            
+            fd = open(outpath + "/" + filename + "_strings.txt", "w+")
+            fd.write(".string " + label + " GER\n\t=" + content + "\n.end\n")
+            fd.close()
+            if verbose: print("Exported string " + label + "sucessfully.")
 
 
 if __name__ == "__main__":

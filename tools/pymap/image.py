@@ -9,7 +9,6 @@ class Image:
     
     def __init__(self):
         self.tiles = None
-        self.key = None
         self.palette = None
         self.empty = True
         self.width, self.height = None, None
@@ -18,11 +17,13 @@ class Image:
 
     def load_image_file(self, path):
         if not path: return
-        self.image = PImage.open(path)
+        try: self.image = PImage.open(path)
+        except Exception as e:
+            print("Image", path, "could not be opened", e)
+            return
         self.width, self.height = self.image.size
         #image = self._make_color_transparent(image)
         #self.tiles = self._img_to_tiles(image)
-        self.key = os.path.relpath(path)
         self.palette = self.image.palette.palette
         self.empty = False
         self.tiles = self._img_to_tiles(self.image)
@@ -73,7 +74,7 @@ class Image:
 
     def _get_tiles(self, tiles_per_line, tiles_per_row, palette):
         tiles = self.tiles
-        joined = PImage.new("RGBA", (tiles_per_line * 8, tiles_per_row * 8))
+        joined = PImage.new("P", (tiles_per_line * 8, tiles_per_row * 8))
         for i in range(0, len(tiles)):
             x = i % tiles_per_line
             y = int(i / tiles_per_line)

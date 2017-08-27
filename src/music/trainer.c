@@ -19,8 +19,6 @@ u16 get_encounter_music_by_trainer_id(u16 trainer_id) {
     } else if (trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONAER) {
         return MUS_REVOLUTIONARY_ENCOUNTER;
     }
-
-
     //Get encounter music by field inside trainer and modulo
     return (u16) (__aeabi_uidivmod(trainers[trainer_id].encounter_and_gender.encounter, 3) + 283);
 }

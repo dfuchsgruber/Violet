@@ -14,7 +14,7 @@ u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
             //1/4 chance of flinching due to emperors aura
             stat_change[0x17] = *attacking_battler;
             stat_change[0x18] = *defending_battler;
-            if(battlers[*attacking_battler].field_50 & 0x1000){
+            if(battlers[*attacking_battler].status2 & 0x1000){
                 *bsc_status_flags |= 0x800;
             }
             return bsc_flinch_aura;

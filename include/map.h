@@ -55,7 +55,7 @@ typedef struct {
 
 typedef struct map_connection {
     u32 direction;
-    u32 displacement;
+    int displacement;
     u8 bank;
     u8 map;
     u8 field_A;
@@ -184,8 +184,10 @@ typedef struct {
 
 u16 map_wild_pokemon_get_current_table_id(); //returns 0xFFFF if none matches
 
-mapbank **mapbank_table_ptr = (mapbank**) 0x0805526C;
-mapfooter ***main_map_table_ptr = (mapfooter***) 0x080551B4;
+//mapbank *mapbank_table_ptr = (mapbank**) 0x0805526C;
+//mapfooter ***main_map_table_ptr = (mapfooter***) 0x080551B4;
+extern mapheader **mapbanks[];
+extern mapfooter *mapfooters[];
 tileset *tilesets = (tileset*) 0x082D49B8;
 wild_pokemon_data **wild_pokemon_data_ptr = (wild_pokemon_data**) 0x080828F4;
 u8 **map_namespaces = (u8**) 0x083F1504;

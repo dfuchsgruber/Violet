@@ -61,8 +61,9 @@ def pal(data, color_cnt):
         palette.append((red * 8, green * 8, blue * 8))
     return palette
 
-def dump_png(path, rom, img_offset, width, height, pal_offset, col_cnt, img_lz77=False, pal_lz77=False, depth=4, pal_start_color=0):
-    """ Dumps a png with pal from data """
+
+def dump_png_fp(fp, rom, img_offset, width, height, pal_offset, col_cnt, img_lz77=False, pal_lz77=False, depth=4, pal_start_color=0):
+    """ Dumps a png with pal from data by fp """
     #First get picture
     img_data = rom.array(img_offset, (width * height * depth) >> 3)
     if img_lz77: img_data = lz77.decomp(rom, img_offset)
@@ -73,12 +74,17 @@ def dump_png(path, rom, img_offset, width, height, pal_offset, col_cnt, img_lz77
 
     #Now get the palette
     pal_data = rom.array(pal_offset, col_cnt * 2)
-    if pal_lz77: pal_data = lz77.decomp(pal_data)
+    if pal_lz77: pal_data = lz77.decomp(rom, pal_offset)
     pal_data = ([0,0] * pal_start_color) + pal_data
     img_pal = pal(pal_data, col_cnt+pal_start_color)
-
-    outfile = open(path, "wb")
+    
     pngwriter = png.Writer(width, height, palette=img_pal, bitdepth=depth)
-    pngwriter.write(outfile, img_rows)
-    outfile.close()
+    pngwriter.write(fp, img_rows)
+    
+
+def dump_png(path, rom, img_offset, width, height, pal_offset, col_cnt, img_lz77=False, pal_lz77=False, depth=4, pal_start_color=0):
+    """ Dumps a png with pal from data by filename (creates fp and calls dump_png_fp) """
+    fp = open(path, "wb")
+    dump_png_fp(fp, rom, img_offset, width, height, pal_offset, col_cnt, img_lz77=img_lz77, pal_lz77=pal_lz77, depth=depth, pal_start_color=pal_start_color)
+    fp.close()
 

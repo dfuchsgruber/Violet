@@ -1,0 +1,3 @@
+.string str_0x85ef91 GER
+	=Der_vollautomatische_Battlepass_ist\ndeine_Zugangskarte_zum_Battle-Area,\lkurz_B.A._Er_zeigt_dir_au\$serdem\ldeinen_derzeitigen_Battlepasspoint\lKontostand_an._Mit_den\lBattlepasspoints_kannst_du_dir\ln\$uetzliche_Dinge_kaufen,_oder\lMinispiele_spielen._Du_gewinnst_sie\ldurch_herausragende,_k\$aempferische\lLeistungen._Sei_sparsam_mit_ihnen.
+.end

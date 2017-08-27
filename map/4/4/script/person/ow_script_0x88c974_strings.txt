@@ -1,0 +1,3 @@
+.string str_0x8a08b0 GER
+	=Einst_war_ich_ein_glorreicher\nTrainer._Aber_nun_...._nun_..._bin\lich_ein_alter_Greis...
+.end

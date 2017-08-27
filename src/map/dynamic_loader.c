@@ -18,7 +18,7 @@ mapheader *get_mapheader(u8 bank, u8 map) {
         //return (mapheader*)0x8350558;
         return compute_dungeon_header();
     } else {
-        return ((*mapbank_table_ptr)[bank]).maps[map];
+        return mapbanks[bank][map];
     }
 }
 
@@ -32,7 +32,7 @@ mapfooter *get_mapfooter() {
     //return standard map header
     u16 current_footer = (*save1)->current_footer_id;
     if (current_footer) {
-        return ((*main_map_table_ptr)[current_footer - 1]);
+        return mapfooters[current_footer - 1];
     }
     return (mapfooter*) 0;
 }

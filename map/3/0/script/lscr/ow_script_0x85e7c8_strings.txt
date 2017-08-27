@@ -1,0 +1,3 @@
+.string str_0x899e90 GER
+	=Na_los!_Wir_sind_sowieso_schon\nviel_zu_sp\$aet!_Beeilung!
+.end

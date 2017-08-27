@@ -1,0 +1,38 @@
+.string str_0x89553b GER
+	=W\$aehle_zun\$aechst_den\nSchwierigkeitsgrad_aus,_in_dem_du\ldas_Spiel_spielen_m\$oechtest.\lAchtung!:_Diese_Entscheidung_ist\lendg\$ueltig._Du_kannst_sie_w\$aehrend\ldes_Spielverlaufes_nicht_\$aendern!
+.end
+
+
+.string str_0x892f6e GER
+	=\_spnr\30\89\_spnr\16\30\89\_spnr\1f\30\89\_spnr\$oe\31\89\_spnr\n\31\89\_spnr\0f_\9e\0b\8a\_spnr\09\02\02
+.end
+
+
+.string str_0x8cf12f GER
+	=???:_..._..._..._..._...\n..._..._..._..._..._...\pKannst_du_mich_h\$oeren?\p..._..._..._..._..._...\n..._..._..._..._..._...\pLass_es_mich_dir_zeigen_...\p..._..._..._..._..._...\n..._..._..._..._..._...\pSie_kamen_aus_dem_All_...\p..._..._..._..._..._...\n..._..._..._..._..._...
+.end
+
+
+.string str_0x118d200 GER
+	=____\03__\52\36\09_\57\36\09\03___\$s_\80_\80___\03___\0b\03___\04\10\01_)\36\09_\04___\04___\04_\01\50\58\36\09_\24___\78___\14__\01
+.end
+
+
+.string str_0x8cf066 GER
+	=???:_..._..._..._..._...\n..._..._..._..._..._...\pSie_wollten_unterwerfen...\p..._..._..._..._..._...\n..._..._..._..._..._...\pSie_wollten_beherrschen...\p..._..._..._..._..._...\n..._..._..._..._..._...
+.end
+
+
+.string str_0x118d300 GER
+	=____\13\4c_____\05_\20__\04___\04___\03__\5e\36\09_\61\36\09\05___\03\01_\64\36\09_\67\36\09\06___\01\01\01
+.end
+
+
+.string str_0x8cef3e GER
+	=???:_..._..._..._..._...\n..._..._..._..._..._...\pSie_hatten_uns_untersch\$aetzt...\p..._..._..._..._..._...\n..._..._..._..._..._...\pDoch_sie_werden_wiederkehren...\p..._..._..._..._..._...\n..._..._..._..._..._...\pSie_kommen...\p..._..._..._..._..._...\n..._..._..._..._..._...\l..._..._..._..._..._...
+.end
+
+
+.string str_0x8f6f8b GER
+	=..._Ein_wirklich_seltsamer_Traum\p..._Was_er_wohl_zu_bedeuten_hat?
+.end

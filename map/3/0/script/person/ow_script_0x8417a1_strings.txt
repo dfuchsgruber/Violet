@@ -1,0 +1,53 @@
+.string str_0x841cd3 GER
+	=Herzlich_willkommen_in_der\nORINA_CITY_BANK.
+.end
+
+
+.string str_0x841ad3 GER
+	=Ihr_Kontostand_betr\$aegt:_\b\02\b7
+.end
+
+
+.string str_0x841d01 GER
+	=Womit_kann_ich_behilflich_sein?
+.end
+
+
+.string str_0x841cb4 GER
+	=Beehren_sie_uns_bald_wieder.
+.end
+
+
+.string str_0x841afa GER
+	=Ihr_Kontostand_betr\$aegt:_\b\03\b\02\b7
+.end
+
+
+.string str_0x841c41 GER
+	=Die_von_ihnen_ausgew\$aehlte\nGeldsumme_\$uebersteigt_ihr_Honorar.
+.end
+
+
+.string str_0x841c0e GER
+	=Ihr_Kontostand_betr\$aegt:_\b\03000\b\02\b7
+.end
+
+
+.string str_0x841bdc GER
+	=Ihr_Kontostand_betr\$aegt:_\b\0300\b\02\b7
+.end
+
+
+.string str_0x841bab GER
+	=Ihr_Kontostand_betr\$aegt:_\b\030\b\02\b7
+.end
+
+
+.string str_0x841c84 GER
+	=Sie_haben_zu_wenig_Geld_auf_ihrem\nKonto.
+.end
+
+
+.string str_0x841aab GER
+	=Sie_k\$oennen_kein_Geld_mehr\naufnehmen.
+.end

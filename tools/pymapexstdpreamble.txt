@@ -1,0 +1,1 @@
+.include "overworld_script.s"

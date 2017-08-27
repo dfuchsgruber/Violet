@@ -12,7 +12,6 @@ class Map_event:
     def __init__(self, type): self.type = type
     def to_dict(self): return self.__dict__
 
-
 class Map_event_person(Map_event):
     """ Class to modell an map event person"""
     def __init__(self):
@@ -39,13 +38,23 @@ class Map_event_sign(Map_event):
         self.level = 0
         self.sign_type = 0
         self.field_6 = 0
-        if sign_type in range(0, 5):
+        self.field_7 = 0
+        #Each item can virtually store also information that is not meant for its state and remember those even after transformation
+        self.item_id = "0"
+        self.hidden = "0"
+        self.count = "0"
+        self.script = "0"
+        self._struct_setup()
+        super().__init__(MAPEVENT_SIGN)
+    
+    def _struct_setup(self):
+        """ Initializes structure corresponding to sign_type"""
+        if self.sign_type in range(0, 5):
             self.structure = SIGN_STRUCTURE_SCRIPT
-            self.script = "0"
         else:
             self.structure = SIGN_STRUCTURE_ITEM
-            self.item_id = "0"
-            self.count = "0"
+
+
         
 class Map_event_warp(Map_event):
     """ Class to model a map event warp"""
@@ -55,6 +64,7 @@ class Map_event_warp(Map_event):
         self.target_warp = 0
         self.target_bank = 0
         self.target_map = 0
+        super().__init__(MAPEVENT_WARP)
 
 class Map_event_trigger(Map_event):
     """ Class to model a map event trigger"""
@@ -67,6 +77,7 @@ class Map_event_trigger(Map_event):
         self.field_a = 0
         self.field_b = 0
         self.script = "0"
+        super().__init__(MAPEVENT_TRIGGER)
 
 
 def from_dict(d):
@@ -77,5 +88,5 @@ def from_dict(d):
     elif type == MAPEVENT_TRIGGER: e = Map_event_trigger()
     elif type == MAPEVENT_WARP: e = Map_event_warp()
     else: raise Exception("Unkown event type " + str(type))
-    for k, v in d: e.__setattr__(k, v)
+    for k, v in d.items(): e.__setattr__(k, v)
     return e

@@ -223,3 +223,6 @@ bsc_init_by_interrupting_battle_func = 0x0801BBA9;
 pokemon_get_basic_stage = 0x08045874 | 1;
 bsc_cmd_x06_apply_damage_modifiers = 0x0801E7CC | 1;
 memset = 0x081E9DC0 | 1;
+tbox_sync = 0x08003EA0 | 1;
+tbox_flush_map = 0x08004038 | 1;
+string_get_width = 0x08005E54 | 1;

@@ -1,0 +1,13 @@
+.string str_0x8a0c83 GER
+	=\b\01!_Deine_Pok\emon_sehen_sehr\nm\$uede_aus._Setz_dich_doch_zu_mir\lund_ruhe_dich_eine_Weile_aus.
+.end
+
+
+.string str_0x8a0c66 GER
+	=Pass_gut_auf_dich_auf,_\b\01.
+.end
+
+
+.string str_0x8a11ed GER
+	=\b\01,_beeil_dich_lieber.\n\b\06_wird_nicht_gerne_warten\lgelassen.
+.end

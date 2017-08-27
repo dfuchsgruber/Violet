@@ -6,6 +6,26 @@ import os
 
 PATH_NONE = ""
 
+def from_file(path):
+    """ Exctracts colors from a ppl file or a png"""
+    filename, extension = os.path.splitext(path)
+    fd = open(path, "rb")
+    if extension.lower() == ".ppl":
+        #Open as pymap palette file (maybe we should use another extension, who knows...)
+        colors = bytes(fd.read())
+        fd.close()
+        return colors
+    elif extension.lower() == ".png":
+        #Extract palette from 4bpp indexed png
+        img = Image.open(fd)
+        colors = bytes(img.palette.palette)
+        fd.close()
+        return colors
+    else:
+        fd.close()
+        raise Exception("Unkown palette file extension " + extension)
+
+### DEPRECATED
 class Palette:
 
     def __init__(self):

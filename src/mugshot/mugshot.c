@@ -8,6 +8,8 @@
 #include "save.h"
 #include "gfx.h"
 #include "map.h"
+#include "text.h"
+#include "debug.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -24,45 +26,124 @@ extern const unsigned short gfx_mug_igvaTiles[];
 extern const unsigned short gfx_mug_igvaPal[];
 extern const unsigned short gfx_mug_blackbeardTiles[];
 extern const unsigned short gfx_mug_blackbeardPal[];
+extern const unsigned short gfx_mug_rinTiles[];
+extern const unsigned short gfx_mug_rinPal[];
+extern const unsigned short gfx_mug_rivalTiles[];
+extern const unsigned short gfx_mug_rivalPal[];
+extern const unsigned short gfx_mug_brixTiles[];
+extern const unsigned short gfx_mug_brixPal[];
+extern const unsigned short gfx_mug_mayTiles[];
+extern const unsigned short gfx_mug_mayPal[];
+extern const unsigned short gfx_mug_felixTiles[];
+extern const unsigned short gfx_mug_felixPal[];
+extern const unsigned short gfx_mug_felixTiles[];
+extern const unsigned short gfx_mug_felixPal[];
+extern const unsigned short gfx_mug_blaiseTiles[];
+extern const unsigned short gfx_mug_blaisePal[];
+extern const unsigned short gfx_mug_tannTiles[];
+extern const unsigned short gfx_mug_tannPal[];
+extern const unsigned short gfx_mug_faunTiles[];
+extern const unsigned short gfx_mug_faunPal[];
+extern const unsigned short gfx_mug_eliseTiles[];
+extern const unsigned short gfx_mug_elisePal[];
+extern const unsigned short gfx_mug_emerysTiles[];
+extern const unsigned short gfx_mug_emerysPal[];
+extern const unsigned short gfx_mug_rubysTiles[];
+extern const unsigned short gfx_mug_rubysPal[];
+extern const unsigned short gfx_mug_saphiraTiles[];
+extern const unsigned short gfx_mug_saphiraPal[];
+extern const unsigned short gfx_mug_harrenfeldTiles[];
+extern const unsigned short gfx_mug_harrenfeldPal[];
+extern const unsigned short gfx_mug_albusTiles[];
+extern const unsigned short gfx_mug_albusPal[];
+extern const unsigned short gfx_mug_faun_youngTiles[];
+extern const unsigned short gfx_mug_faun_youngPal[];
+extern const unsigned short gfx_pkmn_species_251_pokemon_celebi_frontspriteTiles[];
+extern const unsigned short gfx_pkmn_species_251_pokemon_celebi_frontspritePal[];
+extern const unsigned short gfx_mug_larissaTiles[];
+extern const unsigned short gfx_mug_larissaPal[];
+extern const unsigned short gfx_mug_primusTiles[];
+extern const unsigned short gfx_mug_primusPal[];
+
+extern u8 str_mug_mistral[];
+extern u8 str_mug_hiro[];
+extern u8 str_mug_lester[];
+extern u8 str_mug_igva[];
+extern u8 str_mug_blackbeard[];
+extern u8 str_mug_rin[];
+extern u8 str_mug_rival[];
+extern u8 str_mug_brix[];
+extern u8 str_mug_may[];
+extern u8 str_mug_felix[];
+extern u8 str_mug_felix[];
+extern u8 str_mug_blaise[];
+extern u8 str_mug_tann[];
+extern u8 str_mug_faun[];
+extern u8 str_mug_elise[];
+extern u8 str_mug_emerys[];
+extern u8 str_mug_rubys[];
+extern u8 str_mug_saphira[];
+extern u8 str_mug_harrenfeld[];
+extern u8 str_mug_albus[];
+extern u8 str_mug_larissa[];
+extern u8 str_mug_primus[];
+extern u8 str_mug_celebi[];
+
+
+extern u8 str_mugshot_stub[];
 
 static mugshot mugshots[] = {
-    {(void*) 0x93d6750, (void*) 0x93d6720},
-    {(void*) 0x8882bb4, (void*) 0x8883240},
-    {&gfx_mug_mistralTiles, &gfx_mug_mistralPal},
-    {(void*) 0x8884168, (void*) 0x8884850},
+    {&gfx_mug_rinTiles, &gfx_mug_rinPal, str_mug_rin},
+    {NULL, NULL, NULL},
+    {&gfx_mug_mistralTiles, &gfx_mug_mistralPal, str_mug_mistral},
+    {NULL, NULL, NULL},
     
-    {(void*) 0x8884bf8, (void*) 0x8885328},
-    {(void*) 0x88692e8, (void*) 0x8869a04},
-    {(void*) 0x8891f00, (void*) 0x88922b0},
-    {(void*) 0x8892388, (void*) 0x88927c8},
+    {NULL, NULL, NULL},
+    {NULL, NULL, NULL},
+    {&gfx_mug_rivalTiles, &gfx_mug_rivalPal, str_mug_rival},
+    {&gfx_mug_brixTiles, &gfx_mug_brixPal, str_mug_brix},
     
-    {(void*) 0x9500000, (void*) 0x9500440},
-    {(void*) 0x9502350, (void*) 0x95026f0},
-    {(void*) 0x88b4000, (void*) 0x9502310},
-    {(void*) 0x9502730, (void*) 0x9502d10},
+    {&gfx_mug_mayTiles, &gfx_mug_mayPal, str_mug_may},
+    {&gfx_mug_felixTiles, &gfx_mug_felixPal, str_mug_felix},
+    {&gfx_mug_blaiseTiles, &gfx_mug_blaisePal, str_mug_blaise},
+    {&gfx_mug_tannTiles, &gfx_mug_tannPal, str_mug_tann},
     
-    {&gfx_mug_hiroTiles, &gfx_mug_hiroPal},
-    {&gfx_mug_lesterTiles, &gfx_mug_lesterPal},
-    {(void*) 0x9378bf0, (void*) 0x9378f90},
-    {(void*) 0x9379000, (void*) 0x93793a0},
+    {&gfx_mug_hiroTiles, &gfx_mug_hiroPal, str_mug_hiro},
+    {&gfx_mug_lesterTiles, &gfx_mug_lesterPal, str_mug_lester},
+    {&gfx_mug_faunTiles, &gfx_mug_faunPal, str_mug_faun},
+    {&gfx_mug_eliseTiles, &gfx_mug_elisePal, str_mug_elise},
     
-    {(void*) 0x938d800, (void*) 0x93c1300},
-    {(void*) 0x93c1330, (void*) 0x93c16c0},
-    {(void*) 0x93c1700, (void*) 0x93c1a70},
-    {(void*) 0x93c4160, (void*) 0x93c45f0},
+    {&gfx_mug_emerysTiles, &gfx_mug_emerysPal, str_mug_emerys},
+    {&gfx_mug_rubysTiles, &gfx_mug_rubysPal, str_mug_rubys},
+    {&gfx_mug_saphiraTiles, &gfx_mug_saphiraPal, str_mug_saphira},
+    {&gfx_mug_harrenfeldTiles, &gfx_mug_harrenfeldPal, str_mug_harrenfeld},
     
-    {(void*) 0x93d4c30, (void*) 0x93d4c00},
-    {(void*) 0x93d50b0, (void*) 0x93d5080},
-    {(void*) 0x9399530, (void*) 0x93997c0},
-    {(void*) 0x93d54b0, (void*) 0x93d5480},
+    {&gfx_mug_albusTiles, &gfx_mug_albusPal, str_mug_albus},
+    {&gfx_mug_faun_youngTiles, &gfx_mug_faun_youngPal, str_mug_faun},
+    {&gfx_pkmn_species_251_pokemon_celebi_frontspriteTiles, &gfx_pkmn_species_251_pokemon_celebi_frontspritePal, str_mug_celebi},
+    {&gfx_mug_larissaTiles, &gfx_mug_larissaPal, str_mug_larissa},
     
-    {(void*) 0x93d6350, (void*) 0x93d6320},
-    {&gfx_mug_igvaTiles, &gfx_mug_igvaPal},
-    {&gfx_mug_blackbeardTiles, &gfx_mug_blackbeardPal}
+    {&gfx_mug_primusTiles, &gfx_mug_primusPal, str_mug_primus},
+    {&gfx_mug_igvaTiles, &gfx_mug_igvaPal, str_mug_igva},
+    {&gfx_mug_blackbeardTiles, &gfx_mug_blackbeardPal, str_mug_blackbeard}
 };
 
-void spawn_mugshot() {
 
+/**
+ * Clears the bottom line of the tbox (sets tile to color 0)
+ * @param box_id
+ */
+void tbox_clear_bottom_line(u8 box_id){
+    int first_tile = tboxes[box_id].boxdata.w * (tboxes[box_id].boxdata.h - 1);
+    int i;
+    u16 *vtileset = (tboxes[box_id].virtual_tileset);
+    for(i = 0; i < tboxes[box_id].boxdata.w; i++){
+        vtileset[(first_tile + i) * 16 + 14] = 0;
+        vtileset[(first_tile + i) * 16 + 15] = 0;
+    }
+}
+
+void spawn_mugshot() {
     int side = *vardecrypt(0x8000);
     int index = *vardecrypt(0x8001);
     u16 tag = (u16) (MUGSHOT_BASE_TAG + index);
@@ -73,13 +154,14 @@ void spawn_mugshot() {
     mugshot_tmp_graphic->tag = tag;
 
     u8 pal = allocate_obj_pal(tag);
-    u16 *pal_buf = (u16*) malloc(32);
+    u16 *pal_buf = (u16*) malloc(40);
+    
     lz77uncompwram(mugshots[index].pal, pal_buf);
     //apply weather effects to pal
+    
+    
     u8 weather = get_current_weather();
-
     pal_load_uncomp(pal_buf, (u16) (0x100 + 16 * pal), 32);
-
     if (weather == WEATHER_CLOUDY || weather == WEATHER_HEAVY_RAIN || weather == WEATHER_RAIN || weather == WEATHER_STORM) {
         //fade
         u16 *dma3s = (u16*) 0x020375F8;
@@ -115,20 +197,40 @@ void spawn_mugshot() {
     mugshot_template->animation = (gfx_frame**) 0x08231Bc0;
     mugshot_template->rotscale = (rotscale_frame**) 0x08231Bcc;
     mugshot_template->callback = oam_null_callback;
-    *vardecrypt(0x8003) = generate_oam_forward_search(mugshot_template, x, 0x50, 0);
+    fmem->mugshot_oam_id = generate_oam_forward_search(mugshot_template, x, 0x50, 0);
+    
+    //Copy name string
+    string_decrypt(strbuf, mugshots[index].name);
+    //spawn tbox
+    tboxdata tbdata = {
+        0, (side ? 0 : 22), 12, (u8)((string_get_width(2, strbuf, 0) >> 3) + 4), 2, 15, 0xE8
+    };
+    u8 box_id = tbox_new(&tbdata);
+    tbox_flush(box_id, 0x11);
+    tbox_clear_bottom_line(box_id);
+    tbox_tilemap_draw(box_id);
+    
+    u8 fontcolmap[] = {1, 2, 1, 3};
+    tbox_print_string(box_id, 2, 16, 0, 0, 0, fontcolmap, 0, strbuf);
+    fmem->mugshot_tb_id = box_id;
 }
 
+
 void mugshot_oam_despawn_cb(u8 self) {
-    u16 oam_id = big_callbacks[self].params[0];
+    u8 oam_id = fmem->mugshot_oam_id;
     free(oams[oam_id].oam_template->graphics);
     free(oams[oam_id].oam_template);
     oam_despawn(&oams[oam_id]);
     remove_big_callback(self);
+    tbox_flush(fmem->mugshot_tb_id, 0);
+    //tbox_tilemap_draw(fmem->mugshot_tb_id);
+    tbox_sync(fmem->mugshot_tb_id, TBOX_SYNC_MAP_AND_SET);
+    tbox_flush_map(fmem->mugshot_tb_id);
+    free_tbox(fmem->mugshot_tb_id);
 }
 
 void clear_mugshot() {
-    u16 oam_id = *vardecrypt(0x8003);
-    u8 cb_id = spawn_big_callback(mugshot_oam_despawn_cb, 0);
-    big_callbacks[cb_id].params[0] = oam_id;
+    u16 oam_id = fmem->mugshot_oam_id;
+    spawn_big_callback(mugshot_oam_despawn_cb, 0);
     oams[oam_id].x2 = -64;
 }
