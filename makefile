@@ -32,13 +32,13 @@ rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 ASSRC1:= $(call rwildcard,src/,*.asm)
 ASSRC2:= $(call rwildcard,src/,*.s)
 CSRC:= $(call rwildcard,src/,*.c)
-MIDSRC:=$(call rwildcard,Violet_Sources_Private/asset/mus/,*.mid)
-GFXSRC:=$(call rwildcard,Violet_Sources_Private/asset/gfx/,*.png)
-STRSRC:=$(call rwildcard,Violet_Sources_Private/asset/string/,*.txt)
-WAVSRC:=$(call rwildcard,Violet_Sources_Private/asset/cry/,*.wav)
+MIDSRC:=$(call rwildcard,asset/mus/,*.mid)
+GFXSRC:=$(call rwildcard,asset/gfx/,*.png)
+STRSRC:=$(call rwildcard,asset/string/,*.txt)
+WAVSRC:=$(call rwildcard,asset/cry/,*.wav)
 
 
-SAMPLESRC:=$(call rwildcard,Violet_Sources_Private/asset/sample/,*.bin)
+SAMPLESRC:=$(call rwildcard,asset/sample/,*.bin)
 MAPTILESETSRC:=$(call rwildcard,map/,*.pts)
 MAPTILESETGFXSRC:=$(call rwildcard,map/,*.png)
 MAPSRC:=$(call rwildcard,map/,*.pmh)
@@ -176,20 +176,20 @@ $(BLDPATH)/map/proj.o: map/proj.pmp
 	$(PYPROJ2S) -b mapbanks -f mapfooters -o $(BLDPATH)/map/proj.s map/proj.pmp
 	$(AS) $(ASFLAGS) $(BLDPATH)/map/proj.s -o $(BLDPATH)/map/proj.o
 
-$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(BLDPATH)/Violet_Sources_Private/asset/str.o
+$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o
 #	Create a ld script
 	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o)" > $(BLDPATH)/asset.ld
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(BLDPATH)/Violet_Sources_Private/asset/str.o
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o
 	
 
-$(BLDPATH)/Violet_Sources_Private/asset/str.o: $(STROBJS)
-	$(shell mkdir -p $(BLDPATH)/Violet_Sources_Private/asset/string)
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/Violet_Sources_Private/asset/str.o $(STROBJS)
+$(BLDPATH)/asset/str.o: $(STROBJS)
+	$(shell mkdir -p $(BLDPATH)/asset/string)
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/str.o $(STROBJS)
 
 
-$(BLDPATH)/Violet_Sources_Private/asset/mus.o: $(MIDOBJS)
-	$(shell mkdir -p $(BLDPATH)/Violet_Sources_Private/asset/mus)
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/Violet_Sources_Private/asset/mus.o $(MIDOBJS)
+$(BLDPATH)/asset/mus.o: $(MIDOBJS)
+	$(shell mkdir -p $(BLDPATH)/asset/mus)
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/mus.o $(MIDOBJS)
 	
 build:  $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o

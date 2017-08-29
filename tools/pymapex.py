@@ -150,8 +150,12 @@ def export_map(rom, offset, tsp, tss, symbol, basepath, proj, script_export_func
     """ Exports a map """
     header = mapheader.Mapheader()
     export_footer(header.footer, rom, rom.pointer(offset), tsp, tss, basepath, proj, tileset_export_func)
-    export_events(header, rom, rom.pointer(offset + 4), basepath, script_export_func)
-    header.levelscript_header = export_levelscripts(rom, rom.pointer(offset + 0x8), basepath, script_export_func)
+    event_off = rom.pointer(offset + 4)
+    if event_off: export_events(header, rom, rom.pointer(offset + 4), basepath, script_export_func)
+    else: event_off = "0"
+    lsrc_off = rom.pointer(offset + 0x8)
+    if lsrc_off: header.levelscript_header = export_levelscripts(rom, rom.pointer(offset + 0x8), basepath, script_export_func)
+    else: header.levelscript_header = "0"
     if rom.u32(offset + 0xC) == 0:
         header.connections = []
     else:
