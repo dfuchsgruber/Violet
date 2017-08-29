@@ -1,0 +1,436 @@
+.string str_mapnamespace_88 GER
+	=Amonia
+.end
+
+.string str_mapnamespace_89 GER
+	=Meriana_City
+.end
+
+.string str_mapnamespace_90 GER
+	=Aktania
+.end
+
+.string str_mapnamespace_91 GER
+	=Silvania
+.end
+
+.string str_mapnamespace_92 GER
+	=Kaskada
+.end
+
+.string str_mapnamespace_93 GER
+	=Orina_City
+.end
+
+.string str_mapnamespace_94 GER
+	=Inferior
+.end
+
+.string str_mapnamespace_95 GER
+	=CEOMETRIA
+.end
+
+.string str_mapnamespace_96 GER
+	=ZINNOBERINSEL
+.end
+
+.string str_mapnamespace_97 GER
+	=INDIGO_PLATEAU
+.end
+
+.string str_mapnamespace_98 GER
+	=SAFFRONIA_CITY
+.end
+
+.string str_mapnamespace_99 GER
+	=ROUTE_4
+.end
+
+.string str_mapnamespace_100 GER
+	=ROUTE_10
+.end
+
+.string str_mapnamespace_101 GER
+	=Route_1
+.end
+
+.string str_mapnamespace_102 GER
+	=Route_3
+.end
+
+.string str_mapnamespace_103 GER
+	=Felsige_\$OEdnis
+.end
+
+.string str_mapnamespace_104 GER
+	=Route_4
+.end
+
+.string str_mapnamespace_105 GER
+	=Route_5
+.end
+
+.string str_mapnamespace_106 GER
+	=Route_6
+.end
+
+.string str_mapnamespace_107 GER
+	=ROUTE_7
+.end
+
+.string str_mapnamespace_108 GER
+	=ROUTE_8
+.end
+
+.string str_mapnamespace_109 GER
+	=ROUTE_9
+.end
+
+.string str_mapnamespace_110 GER
+	=ROUTE_10
+.end
+
+.string str_mapnamespace_111 GER
+	=ROUTE_11
+.end
+
+.string str_mapnamespace_112 GER
+	=ROUTE_12
+.end
+
+.string str_mapnamespace_113 GER
+	=ROUTE_13
+.end
+
+.string str_mapnamespace_114 GER
+	=ROUTE_14
+.end
+
+.string str_mapnamespace_115 GER
+	=ROUTE_15
+.end
+
+.string str_mapnamespace_116 GER
+	=ROUTE_16
+.end
+
+.string str_mapnamespace_117 GER
+	=ROUTE_17
+.end
+
+.string str_mapnamespace_118 GER
+	=ROUTE_18
+.end
+
+.string str_mapnamespace_119 GER
+	=ROUTE_19
+.end
+
+.string str_mapnamespace_120 GER
+	=ROUTE_20
+.end
+
+.string str_mapnamespace_121 GER
+	=ROUTE_21
+.end
+
+.string str_mapnamespace_122 GER
+	=Route_2
+.end
+
+.string str_mapnamespace_123 GER
+	=ROUTE_23
+.end
+
+.string str_mapnamespace_124 GER
+	=ROUTE_24
+.end
+
+.string str_mapnamespace_125 GER
+	=ROUTE_25
+.end
+
+.string str_mapnamespace_126 GER
+	=Silvania-Wald
+.end
+
+.string str_mapnamespace_127 GER
+	=PKMN-FRIEDHOF
+.end
+
+.string str_mapnamespace_128 GER
+	=K\$UESTENBERG
+.end
+
+.string str_mapnamespace_129 GER
+	=Aschhain
+.end
+
+.string str_mapnamespace_130 GER
+	=TUNNELPFAD
+.end
+
+.string str_mapnamespace_131 GER
+	=WasserPFAD
+.end
+
+.string str_mapnamespace_132 GER
+	=SIEGESSTRASSE
+.end
+
+.string str_mapnamespace_133 GER
+	=ROCKET_HQ
+.end
+
+.string str_mapnamespace_134 GER
+	=SILPH_CO.
+.end
+
+.string str_mapnamespace_135 GER
+	=K\$uestenberg
+.end
+
+.string str_mapnamespace_136 GER
+	=SAFARI-ZONE
+.end
+
+.string str_mapnamespace_137 GER
+	=Pok\emon_LIGA
+.end
+
+.string str_mapnamespace_138 GER
+	=Vulcano
+.end
+
+.string str_mapnamespace_139 GER
+	=SEESCHAUMINSELN
+.end
+
+.string str_mapnamespace_140 GER
+	=Pok\emon_TURM
+.end
+
+.string str_mapnamespace_141 GER
+	=AZURIA-H\$OEHLE
+.end
+
+.string str_mapnamespace_142 GER
+	=KRAFTWERK
+.end
+
+.string str_mapnamespace_143 GER
+	=EILAND_EINS
+.end
+
+.string str_mapnamespace_144 GER
+	=EILAND_ZWEI
+.end
+
+.string str_mapnamespace_145 GER
+	=EILAND_DREI
+.end
+
+.string str_mapnamespace_146 GER
+	=EILAND_VIER
+.end
+
+.string str_mapnamespace_147 GER
+	=EILAND_F\$UENF
+.end
+
+.string str_mapnamespace_148 GER
+	=EILAND_SIEBEN
+.end
+
+.string str_mapnamespace_149 GER
+	=EILAND_SECHS
+.end
+
+.string str_mapnamespace_150 GER
+	=GL\$UEHWEG
+.end
+
+.string str_mapnamespace_151 GER
+	=SCHATZGESTADE
+.end
+
+.string str_mapnamespace_152 GER
+	=KAP_KANTE
+.end
+
+.string str_mapnamespace_153 GER
+	=BUNDBR\$UECKE
+.end
+
+.string str_mapnamespace_154 GER
+	=TRI-EILAND_HAFEN
+.end
+
+.string str_mapnamespace_155 GER
+	=SEVII_EILAND_6
+.end
+
+.string str_mapnamespace_156 GER
+	=SEVII_EILAND_7
+.end
+
+.string str_mapnamespace_157 GER
+	=SEVII_EILAND_8
+.end
+
+.string str_mapnamespace_158 GER
+	=SEVII_EILAND_9
+.end
+
+.string str_mapnamespace_159 GER
+	=FERIENPARADIES
+.end
+
+.string str_mapnamespace_160 GER
+	=WasserIRRGARTEN
+.end
+
+.string str_mapnamespace_161 GER
+	=EILAND_5-WEIDE
+.end
+
+.string str_mapnamespace_162 GER
+	=Trainerschule
+.end
+
+.string str_mapnamespace_163 GER
+	=FERN-EILAND
+.end
+
+.string str_mapnamespace_164 GER
+	=GR\$UENER_PFAD
+.end
+
+.string str_mapnamespace_165 GER
+	=WasserWEG
+.end
+
+.string str_mapnamespace_166 GER
+	=RUINENTAL
+.end
+
+.string str_mapnamespace_167 GER
+	=TRAINERTURM
+.end
+
+.string str_mapnamespace_168 GER
+	=SCHLUCHTEINGANG
+.end
+
+.string str_mapnamespace_169 GER
+	=7-SCHATZSCHLUCHT
+.end
+
+.string str_mapnamespace_170 GER
+	=TANIBO-RUINEN
+.end
+
+.string str_mapnamespace_171 GER
+	=SEVII_EILAND_22
+.end
+
+.string str_mapnamespace_172 GER
+	=SEVII_EILAND_23
+.end
+
+.string str_mapnamespace_173 GER
+	=SEVII_EILAND_24
+.end
+
+.string str_mapnamespace_174 GER
+	=NABELFELS
+.end
+
+.string str_mapnamespace_175 GER
+	=GLUTBERG
+.end
+
+.string str_mapnamespace_176 GER
+	=BEERENFORST
+.end
+
+.string str_mapnamespace_177 GER
+	=EISKASKADENH\$OEHLE
+.end
+
+.string str_mapnamespace_178 GER
+	=ROCKET-LAGER
+.end
+
+.string str_mapnamespace_179 GER
+	=TRAINERTURM
+.end
+
+.string str_mapnamespace_180 GER
+	=PUNKTLOCH
+.end
+
+.string str_mapnamespace_181 GER
+	=VERLORENE_H\$OEHLE
+.end
+
+.string str_mapnamespace_182 GER
+	=MUSTERBUSCHWALD
+.end
+
+.string str_mapnamespace_183 GER
+	=WANDELH\$OEHLE
+.end
+
+.string str_mapnamespace_184 GER
+	=TANIBO-KAMMER
+.end
+
+.string str_mapnamespace_185 GER
+	=TRI-EILAND-PFAD
+.end
+
+.string str_mapnamespace_186 GER
+	=TANIBO-SCHL\$UESSEL
+.end
+
+.string str_mapnamespace_187 GER
+	=ENTSTEHUNGSINSEL
+.end
+
+.string str_mapnamespace_188 GER
+	=W\$UESTENKAMMER
+.end
+
+.string str_mapnamespace_189 GER
+	=PEZWULP-KAMMER
+.end
+
+.string str_mapnamespace_190 GER
+	=DREICKE-KAMMER
+.end
+
+.string str_mapnamespace_191 GER
+	=VIERZISSE-KAMMER
+.end
+
+.string str_mapnamespace_192 GER
+	=F\$UENIBISKU-KAMMER
+.end
+
+.string str_mapnamespace_193 GER
+	=LILECHS-KAMMER
+.end
+
+.string str_mapnamespace_194 GER
+	=Arc_Scrim
+.end
+
+.string str_mapnamespace_195 GER
+	=GLUTTHERME
+.end
+
+.string str_mapnamespace_196 GER
+	=PRISMANIA_EINK.
+.end
+

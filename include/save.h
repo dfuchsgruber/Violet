@@ -7,6 +7,7 @@
 #include "fp_menu.h"
 #include "fpmenu.h"
 #include "anim_engine.h"
+#include "multichoice.h"
 
 #define GP_STACK_SIZE 16
 
@@ -90,6 +91,7 @@ typedef struct {
     int battle_custom_status[4];
     u8 mugshot_oam_id;
     u8 mugshot_tb_id;
+    multichoice_t dynamic_choice;
     
 } floating_memory;
 

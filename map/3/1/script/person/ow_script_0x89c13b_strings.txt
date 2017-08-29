@@ -1,0 +1,3 @@
+.string str_0x8a2b06 GER
+	=Es_hei\$st,_die_Kampf-Angriffe_von\nManus'_Pok\emon_k\$oennten_Felsen\lzertr\$uemmern._Ob_das_wohl_wahr_ist?
+.end

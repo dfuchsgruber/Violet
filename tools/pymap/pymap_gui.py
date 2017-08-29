@@ -2,7 +2,7 @@ import tkinter
 import PIL.Image as PImage
 from tkinter import messagebox, filedialog
 from . import tkinterx
-from . import mapheader, mapfooter, mapevent, tileset, resources, project, tileset_gui, mapconnection
+from . import mapheader, mapfooter, mapevent, tileset, resources, project, tileset_gui, mapconnection, config
 import PIL.ImageTk as ImageTk
 import os, getopt
 from . import tileset_gui
@@ -17,19 +17,14 @@ UNDO_STACK_MAX = 0x10000
 WIDTH = 0
 HEIGHT = 1
 
-STDLIB = "./lib/pymap.py"
-STDPROJ = "../map/proj.pmp"
 
 NONE, MAP, LEVEL, EVENTS = range(4)
+STDPROJ = config.STDPROJ
 
 class Pymap_gui(tkinter.Frame):
     """ Main gui frame for the pymap module """
     def __init__(self, root, ow_img_pool, proj: project.Project):
 
-        #Load lib
-        fd = open(STDLIB, "r+")
-        self.lib = eval(fd.read())
-        fd.close()
 
         self.map = None
         self.bank, self.mapid = None, None
@@ -174,7 +169,10 @@ class Pymap_gui(tkinter.Frame):
         def update_info(e):
             """ Updates coordinate info """
             if not self._can_draw(): return
-            x, y = int(e.x / 16), int(e.y / 16)
+            hslider, _ = self.event_map_widget_canvas_bar_h.get()
+            vslider, _ = self.event_map_widget_canvas_bar_v.get()
+            x, y = e.x + (hslider * self.map.footer.width * 16), e.y + (vslider * self.map.footer.height * 16)
+            x, y = int(x / 16), int(y / 16)
             if self._coordinate_in_map(x, y):
                 self.event_map_widget_label_info["text"] = "x : " + hex(x) + ", y : " + hex(y)
 
@@ -185,7 +183,10 @@ class Pymap_gui(tkinter.Frame):
         def event_map_canvas_b1_press(e):
             """ Button 1 press on event: select event"""
             if not self._can_draw(): return
-            x, y = int(e.x / 16), int(e.y / 16)
+            hslider, _ = self.event_map_widget_canvas_bar_h.get()
+            vslider, _ = self.event_map_widget_canvas_bar_v.get()
+            x, y = e.x + (hslider * self.map.footer.width * 16), e.y + (vslider * self.map.footer.height * 16)
+            x, y = int(x / 16), int(y / 16)
             self.selected_event_by_drag = self._select_event_by_coordinates(x, y)
             self.selected_event_by_drag_aggregate = False
         self.event_map_widget_canvas.bind("<Button-1>", event_map_canvas_b1_press)
@@ -194,7 +195,10 @@ class Pymap_gui(tkinter.Frame):
         def event_map_canvas_b1_motion(e):
             """ Button 1 motion on event: move event """
             if not self._can_draw(): return
-            x, y = int(e.x / 16), int(e.y / 16)
+            hslider, _ = self.event_map_widget_canvas_bar_h.get()
+            vslider, _ = self.event_map_widget_canvas_bar_v.get()
+            x, y = e.x + (hslider * self.map.footer.width * 16), e.y + (vslider * self.map.footer.height * 16)
+            x, y = int(x / 16), int(y / 16)
             if not self.selected_event_by_drag: return
             if x == self.selected_event_by_drag.x and y == self.selected_event_by_drag.y: return
             if not self._coordinate_in_map(x, y): return

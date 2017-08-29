@@ -17,9 +17,11 @@ class Ow_imgs():
         fd.close()
         self.extern = d["extern"]
         rompath, table_off, number_range, pal_table = d["base"]
-        self.rom = romclass(path=rompath)
+        if rompath: self.rom = romclass(path=rompath)
+        else: self.rom = None
         self.table = table_off
-        self.number_range = number_range
+        if number_range: self.number_range = number_range
+        else: self.number_range = set()
         self.pictures = [None for i in range(256)]
         self.pal_table = pal_table
         self.img_dump_method = img_dump_method

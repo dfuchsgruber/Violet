@@ -1,0 +1,1580 @@
+.string str_battle_xc EN
+	=\b\24
+.end
+
+.string str_battle_xd EN
+	=\b__gained\b\01\n\b\30_EXP._Points!\p
+.end
+
+.string str_battle_xe EN
+	=\b__grew_to\nLV._\b\01!\w\0a\p
+.end
+
+.string str_battle_xf EN
+	=\b__learned\n\b\01!\w\0a\p
+.end
+
+.string str_battle_x10 EN
+	=\b__is_trying_to\nlearn_\b\01.\p
+.end
+
+.string str_battle_x11 EN
+	=But,_\b__can't_learn\nmore_than_four_moves.\p
+.end
+
+.string str_battle_x12 EN
+	=Delete_a_move_to_make\nroom_for_\b\01?
+.end
+
+.string str_battle_x13 EN
+	=\b__forgot\n\b\01.\p
+.end
+
+.string str_battle_x14 EN
+	=\w\_spnr\20Stop_learning\n\b\01?
+.end
+
+.string str_battle_x15 EN
+	=\b__did_not_learn\n\b\01.\p
+.end
+
+.string str_battle_x16 EN
+	=\b\0f_learned\n\b_!
+.end
+
+.string str_battle_x17 EN
+	=\b\0f's\nattack_missed!
+.end
+
+.string str_battle_x18 EN
+	=\b\10\nprotected_itself!
+.end
+
+.string str_battle_x19 EN
+	=\b\0f's_stats_won't\ngo_any_higher!
+.end
+
+.string str_battle_x1a EN
+	=\b\10_avoided\ndamage_with_\b\19!
+.end
+
+.string str_battle_x1b EN
+	=It_doesn't_affect\n\b\10\b0
+.end
+
+.string str_battle_x1c EN
+	=\b\0f\nfainted!\p
+.end
+
+.string str_battle_x1d EN
+	=\b\10\nfainted!\p
+.end
+
+.string str_battle_x1e EN
+	=\b\23_got_\b7\b_\nfor_winning!\p
+.end
+
+.string str_battle_x1f EN
+	=\b\23_is_out_of\nusable_POK\eMON!\p
+.end
+
+.string str_battle_x20 EN
+	=\b\23_panicked_and_lost_\b7\b_\b0\p\b0_\b0_\b0_\b0\p\b\23_whited_out!\w\09
+.end
+
+.string str_battle_x21 EN
+	=\b\13_prevents\nescape_with_\b\1a!\p
+.end
+
+.string str_battle_x22 EN
+	=Hit_\b__time(s)!
+.end
+
+.string str_battle_x23 EN
+	=\b\11\nfell_asleep!
+.end
+
+.string str_battle_x24 EN
+	=\b\13's_\b\1a\nmade_\b\11_sleep!
+.end
+
+.string str_battle_x25 EN
+	=\b\10_is\nalready_asleep!
+.end
+
+.string str_battle_x26 EN
+	=\b\0f_is\nalready_asleep!
+.end
+
+.string str_battle_x27 EN
+	=\b\10\nwasn't_affected!
+.end
+
+.string str_battle_x28 EN
+	=\b\11\nwas_poisoned!
+.end
+
+.string str_battle_x29 EN
+	=\b\13's_\b\1a\npoisoned_\b\11!
+.end
+
+.string str_battle_x2a EN
+	=\b\0f_is_hurt\nby_poison!
+.end
+
+.string str_battle_x2b EN
+	=\b\10_is_already\npoisoned.
+.end
+
+.string str_battle_x2c EN
+	=\b\11_is_badly\npoisoned!
+.end
+
+.string str_battle_x2d EN
+	=\b\10_had_its\nenergy_drained!
+.end
+
+.string str_battle_x2e EN
+	=\b\11_was_burned!
+.end
+
+.string str_battle_x2f EN
+	=\b\13's_\b\1a\nburned_\b\11!
+.end
+
+.string str_battle_x30 EN
+	=\b\0f_is_hurt\nby_its_burn!
+.end
+
+.string str_battle_x31 EN
+	=\b\11_was\nfrozen_solid!
+.end
+
+.string str_battle_x32 EN
+	=\b\13's_\b\1a\nfroze_\b\11_solid!
+.end
+
+.string str_battle_x33 EN
+	=\b\0f_is\nfrozen_solid!
+.end
+
+.string str_battle_x34 EN
+	=\b\10_was\ndefrosted!
+.end
+
+.string str_battle_x35 EN
+	=\b\0f_was\ndefrosted!
+.end
+
+.string str_battle_x36 EN
+	=\b\0f_was\ndefrosted_by_\b\14!
+.end
+
+.string str_battle_x37 EN
+	=\b\11_is_paralyzed!\nIt_may_be_unable_to_move!
+.end
+
+.string str_battle_x38 EN
+	=\b\13's_\b\1a\nparalyzed_\b\11!\lIt_may_be_unable_to_move!
+.end
+
+.string str_battle_x39 EN
+	=\b\0f_is_paralyzed!\nIt_can't_move!
+.end
+
+.string str_battle_x3a EN
+	=\b\10_is\nalready_paralyzed!
+.end
+
+.string str_battle_x3b EN
+	=\b\10_was\nhealed_of_paralysis!
+.end
+
+.string str_battle_x3c EN
+	=\b\10's\ndream_was_eaten!
+.end
+
+.string str_battle_x3d EN
+	=\b\0f's_\b_\nwon't_go_higher!
+.end
+
+.string str_battle_x3e EN
+	=\b\10's_\b_\nwon't_go_lower!
+.end
+
+.string str_battle_x3f EN
+	=Your_team's_\b_\nstopped_working!
+.end
+
+.string str_battle_x40 EN
+	=The_foe's_\b_\nstopped_working!
+.end
+
+.string str_battle_x41 EN
+	=\b\0f_is\nconfused!
+.end
+
+.string str_battle_x42 EN
+	=\b\0f_snapped\nout_of_confusion!
+.end
+
+.string str_battle_x43 EN
+	=\b\11_became\nconfused!
+.end
+
+.string str_battle_x44 EN
+	=\b\10_is\nalready_confused!
+.end
+
+.string str_battle_x45 EN
+	=\b\10\nfell_in_love!
+.end
+
+.string str_battle_x46 EN
+	=\b\0f_is_in_love\nwith_\b\13!
+.end
+
+.string str_battle_x47 EN
+	=\b\0f_is\nimmobilized_by_love!
+.end
+
+.string str_battle_x48 EN
+	=\b\10_was\nblown_away!
+.end
+
+.string str_battle_x49 EN
+	=\b\0f_transformed\ninto_the_\b__type!
+.end
+
+.string str_battle_x4a EN
+	=\b\0f_flinched!
+.end
+
+.string str_battle_x4b EN
+	=\b\10_regained\nhealth!
+.end
+
+.string str_battle_x4c EN
+	=\b\10's\nHP_is_full!
+.end
+
+.string str_battle_x4d EN
+	=\b\2a's_\b\14\nraised_SP._DEF!
+.end
+
+.string str_battle_x4e EN
+	=\b\2a's_\b\14\nraised_DEFENSE!
+.end
+
+.string str_battle_x4f EN
+	=\b\2a's_party_is_covered\nby_a_veil!
+.end
+
+.string str_battle_x50 EN
+	=\b\10's_party_is_protected\nby_SAFEGUARD!
+.end
+
+.string str_battle_x51 EN
+	=\b\2c's_party_is_no_longer\nprotected_by_SAFEGUARD!
+.end
+
+.string str_battle_x52 EN
+	=\b\0f_went\nto_sleep!
+.end
+
+.string str_battle_x53 EN
+	=\b\0f_slept_and\nbecame_healthy!
+.end
+
+.string str_battle_x54 EN
+	=\b\0f_whipped\nup_a_whirlwind!
+.end
+
+.string str_battle_x55 EN
+	=\b\0f_took\nin_sunlight!
+.end
+
+.string str_battle_x56 EN
+	=\b\0f_lowered\nits_head!
+.end
+
+.string str_battle_x57 EN
+	=\b\0f_is_glowing!
+.end
+
+.string str_battle_x58 EN
+	=\b\0f_flew\nup_high!
+.end
+
+.string str_battle_x59 EN
+	=\b\0f_dug_a_hole!
+.end
+
+.string str_battle_x5a EN
+	=\b\10_was_squeezed_by\n\b\0f's_BIND!
+.end
+
+.string str_battle_x5b EN
+	=\b\10_was_trapped\nin_the_vortex!
+.end
+
+.string str_battle_x5c EN
+	=\b\10_was_WRAPPED_by\n\b\0f!
+.end
+
+.string str_battle_x5d EN
+	=\b\0f_CLAMPED\n\b\10!
+.end
+
+.string str_battle_x5e EN
+	=\b\0f_is_hurt\nby_\b_!
+.end
+
+.string str_battle_x5f EN
+	=\b\0f_was_freed\nfrom_\b_!
+.end
+
+.string str_battle_x60 EN
+	=\b\0f_kept_going\nand_crashed!
+.end
+
+.string str_battle_x61 EN
+	=\b\2a_became\nshrouded_in_MIST!
+.end
+
+.string str_battle_x62 EN
+	=\b\13_is_protected\nby_MIST!
+.end
+
+.string str_battle_x63 EN
+	=\b\0f_is_getting\npumped!
+.end
+
+.string str_battle_x64 EN
+	=\b\0f_is_hit\nwith_recoil!
+.end
+
+.string str_battle_x65 EN
+	=\b\0f_protected\nitself!
+.end
+
+.string str_battle_x66 EN
+	=\b\0f_is_buffeted\nby_the_sandstorm!
+.end
+
+.string str_battle_x67 EN
+	=\b\0f_is_pelted\nby_HAIL!
+.end
+
+.string str_battle_x68 EN
+	=\b\10_was_seeded!
+.end
+
+.string str_battle_x69 EN
+	=\b\10_evaded\nthe_attack!
+.end
+
+.string str_battle_x6a EN
+	=\b\0f's_health_is\nsapped_by_LEECH_SEED!
+.end
+
+.string str_battle_x6b EN
+	=\b\0f_is_fast\nasleep.
+.end
+
+.string str_battle_x6c EN
+	=\b\0f_woke_up!
+.end
+
+.string str_battle_x6d EN
+	=But_\b\13's_UPROAR\nkept_it_awake!
+.end
+
+.string str_battle_x6e EN
+	=\b\0f_woke_up\nin_the_UPROAR!
+.end
+
+.string str_battle_x6f EN
+	=\b\0f_caused\nan_UPROAR!
+.end
+
+.string str_battle_x70 EN
+	=\b\0f_is_making\nan_UPROAR!
+.end
+
+.string str_battle_x71 EN
+	=\b\0f_calmed_down.
+.end
+
+.string str_battle_x72 EN
+	=But_\b\10_can't\nsleep_in_an_UPROAR!
+.end
+
+.string str_battle_x73 EN
+	=\b\0f_STOCKPILED\n\b_!
+.end
+
+.string str_battle_x74 EN
+	=\b\0f_can't\nSTOCKPILE_any_more!
+.end
+
+.string str_battle_x75 EN
+	=But_\b\10_can't\nsleep_in_an_UPROAR!
+.end
+
+.string str_battle_x76 EN
+	=But_the_UPROAR_kept\n\b\10_awake!
+.end
+
+.string str_battle_x77 EN
+	=\b\10_stayed_awake\nusing_its_\b\19!
+.end
+
+.string str_battle_x78 EN
+	=\b\0f_is_storing\nenergy!
+.end
+
+.string str_battle_x79 EN
+	=\b\0f_unleashed\nenergy!
+.end
+
+.string str_battle_x7a EN
+	=\b\0f_became\nconfused_due_to_fatigue!
+.end
+
+.string str_battle_x7b EN
+	=\b\23_picked_up\n\b7\b_!\p
+.end
+
+.string str_battle_x7c EN
+	=\b\10_is\nunaffected!
+.end
+
+.string str_battle_x7d EN
+	=\b\0f_transformed\ninto_\b_!
+.end
+
+.string str_battle_x7e EN
+	=\b\0f_made\na_SUBSTITUTE!
+.end
+
+.string str_battle_x7f EN
+	=\b\0f_already\nhas_a_SUBSTITUTE!
+.end
+
+.string str_battle_x80 EN
+	=The_SUBSTITUTE_took_damage\nfor_\b\10!\p
+.end
+
+.string str_battle_x81 EN
+	=\b\10's\nSUBSTITUTE_faded!\p
+.end
+
+.string str_battle_x82 EN
+	=\b\0f_must\nrecharge!
+.end
+
+.string str_battle_x83 EN
+	=\b\10's_RAGE\nis_building!
+.end
+
+.string str_battle_x84 EN
+	=\b\10's_\b_\nwas_disabled!
+.end
+
+.string str_battle_x85 EN
+	=\b\12's_\b\14\nis_disabled!\p
+.end
+
+.string str_battle_x86 EN
+	=\b\0f_is_disabled\nno_more!
+.end
+
+.string str_battle_x87 EN
+	=\b\10_got\nan_ENCORE!
+.end
+
+.string str_battle_x88 EN
+	=\b\0f's_ENCORE\nended!
+.end
+
+.string str_battle_x89 EN
+	=\b\0f_took_aim\nat_\b\10!
+.end
+
+.string str_battle_x8a EN
+	=\b\0f_SKETCHED\n\b_!
+.end
+
+.string str_battle_x8b EN
+	=\b\0f_is_trying\nto_take_its_foe_with_it!
+.end
+
+.string str_battle_x8c EN
+	=\b\10_took\n\b\0f_with_it!
+.end
+
+.string str_battle_x8d EN
+	=Reduced_\b\10's\n\b__by_\b\01!
+.end
+
+.string str_battle_x8e EN
+	=\b\0f_stole\n\b\10's_\b\16!
+.end
+
+.string str_battle_x8f EN
+	=\b\10_can't\nescape_now!
+.end
+
+.string str_battle_x90 EN
+	=\b\10_fell_into\na_NIGHTMARE!
+.end
+
+.string str_battle_x91 EN
+	=\b\0f_is_locked\nin_a_NIGHTMARE!
+.end
+
+.string str_battle_x92 EN
+	=\b\0f_cut_its_own_HP_and\nlaid_a_CURSE_on_\b\10!
+.end
+
+.string str_battle_x93 EN
+	=\b\0f_is_afflicted\nby_the_CURSE!
+.end
+
+.string str_battle_x94 EN
+	=SPIKES_were_scattered_all_around\nthe_opponent's_side!
+.end
+
+.string str_battle_x95 EN
+	=\b\13_is_hurt\nby_SPIKES!
+.end
+
+.string str_battle_x96 EN
+	=\b\0f_identified\n\b\10!
+.end
+
+.string str_battle_x97 EN
+	=\b\0f's_PERISH_count\nfell_to_\b_!
+.end
+
+.string str_battle_x98 EN
+	=\b\0f_braced\nitself!
+.end
+
+.string str_battle_x99 EN
+	=\b\10_ENDURED\nthe_hit!
+.end
+
+.string str_battle_x9a EN
+	=MAGNITUDE_\b_!
+.end
+
+.string str_battle_x9b EN
+	=\b\0f_cut_its_own_HP\nand_maximized_ATTACK!
+.end
+
+.string str_battle_x9c EN
+	=\b\0f_copied\n\b\10's_stat_changes!
+.end
+
+.string str_battle_x9d EN
+	=\b\0f_got_free_of\n\b\10's_\b_!
+.end
+
+.string str_battle_x9e EN
+	=\b\0f_shed\nLEECH_SEED!
+.end
+
+.string str_battle_x9f EN
+	=\b\0f_blew_away\nSPIKES!
+.end
+
+.string str_battle_xa0 EN
+	=\b\0f_fled_from\nbattle!
+.end
+
+.string str_battle_xa1 EN
+	=\b\0f_foresaw\nan_attack!
+.end
+
+.string str_battle_xa2 EN
+	=\b\10_took_the\n\b__attack!
+.end
+
+.string str_battle_xa3 EN
+	=\b_'s_attack!
+.end
+
+.string str_battle_xa4 EN
+	=\b\0f_became_the\ncenter_of_attention!
+.end
+
+.string str_battle_xa5 EN
+	=\b\0f_began\ncharging_power!
+.end
+
+.string str_battle_xa6 EN
+	=NATURE_POWER_turned_into\n\b\14!
+.end
+
+.string str_battle_xa7 EN
+	=\b\0f's_status\nreturned_to_normal!
+.end
+
+.string str_battle_xa8 EN
+	=\b\12_has_no\nmoves_left!\p
+.end
+
+.string str_battle_xa9 EN
+	=\b\10_was_subjected\nto_TORMENT!
+.end
+
+.string str_battle_xaa EN
+	=\b\12_can't_use_the_same\nmove_in_a_row_due_to_the_TORMENT!\p
+.end
+
+.string str_battle_xab EN
+	=\b\0f_is_tightening\nits_focus!
+.end
+
+.string str_battle_xac EN
+	=\b\10_fell_for\nthe_TAUNT!
+.end
+
+.string str_battle_xad EN
+	=\b\12_can't_use\n\b\14_after_the_TAUNT!\p
+.end
+
+.string str_battle_xae EN
+	=\b\0f_is_ready_to\nhelp_\b\10!
+.end
+
+.string str_battle_xaf EN
+	=\b\0f_switched\nitems_with_its_opponent!
+.end
+
+.string str_battle_xb0 EN
+	=\b\0f_copied\n\b\10's_\b\19!
+.end
+
+.string str_battle_xb1 EN
+	=\b\0f_made_a_WISH!
+.end
+
+.string str_battle_xb2 EN
+	=\b_'s_WISH\ncame_true!
+.end
+
+.string str_battle_xb3 EN
+	=\b\0f_planted_its_roots!
+.end
+
+.string str_battle_xb4 EN
+	=\b\0f_absorbed\nnutrients_with_its_roots!
+.end
+
+.string str_battle_xb5 EN
+	=\b\10_anchored\nitself_with_its_roots!
+.end
+
+.string str_battle_xb6 EN
+	=\b\0f_made\n\b\10_drowsy!
+.end
+
+.string str_battle_xb7 EN
+	=\b\0f_knocked_off\n\b\10's_\b\16!
+.end
+
+.string str_battle_xb8 EN
+	=\b\0f_swapped_abilities\nwith_its_opponent!
+.end
+
+.string str_battle_xb9 EN
+	=\b\0f_sealed_the\nopponent's_move(s)!
+.end
+
+.string str_battle_xba EN
+	=\b\12_can't_use_the\nsealed_\b\14!\p
+.end
+
+.string str_battle_xbb EN
+	=\b\0f_wants_the\nopponent_to_bear_a_GRUDGE!
+.end
+
+.string str_battle_xbc EN
+	=\b\0f's_\b__lost\nall_its_PP_due_to_the_GRUDGE!
+.end
+
+.string str_battle_xbd EN
+	=\b\0f_shrouded\nitself_in_\b\14!
+.end
+
+.string str_battle_xbe EN
+	=\b\0f's_\b\14\nwas_bounced_back_by_MAGIC_COAT!
+.end
+
+.string str_battle_xbf EN
+	=\b\0f_waits_for_its_foe\nto_make_a_move!
+.end
+
+.string str_battle_xc0 EN
+	=\b\10_SNATCHED\n\b\13's_move!
+.end
+
+.string str_battle_xc1 EN
+	=\b\13's_\b\1a\nmade_it_rain!
+.end
+
+.string str_battle_xc2 EN
+	=\b\13's_\b\1a\nraised_its_SPEED!
+.end
+
+.string str_battle_xc3 EN
+	=\b\10_was_protected\nby_\b\19!
+.end
+
+.string str_battle_xc4 EN
+	=\b\10's_\b\19\nprevents_\b\0f\lfrom_using_\b\14!
+.end
+
+.string str_battle_xc5 EN
+	=\b\10_restored_HP\nusing_its_\b\19!
+.end
+
+.string str_battle_xc6 EN
+	=\b\10's_\b\19\nmade_it_the_\b__type!
+.end
+
+.string str_battle_xc7 EN
+	=\b\11's_\b\19\nprevents_paralysis!
+.end
+
+.string str_battle_xc8 EN
+	=\b\10's_\b\19\nprevents_romance!
+.end
+
+.string str_battle_xc9 EN
+	=\b\11's_\b\19\nprevents_poisoning!
+.end
+
+.string str_battle_xca EN
+	=\b\10's_\b\19\nprevents_confusion!
+.end
+
+.string str_battle_xcb EN
+	=\b\10's_\b\19\nraised_its_FIRE_power!
+.end
+
+.string str_battle_xcc EN
+	=\b\10_anchors\nitself_with_\b\19!
+.end
+
+.string str_battle_xcd EN
+	=\b\13's_\b\1a\ncuts_\b\10's_ATTACK!
+.end
+
+.string str_battle_xce EN
+	=\b\13's_\b\1a\nprevents_stat_loss!
+.end
+
+.string str_battle_xcf EN
+	=\b\10's_\b\19\nhurt_\b\0f!
+.end
+
+.string str_battle_xd0 EN
+	=\b\13_TRACED\n\b_'s_\b\01!
+.end
+
+.string str_battle_xd1 EN
+	=sharply_
+.end
+
+.string str_battle_xd2 EN
+	=rose!
+.end
+
+.string str_battle_xd3 EN
+	=harshly_
+.end
+
+.string str_battle_xd4 EN
+	=fell!
+.end
+
+.string str_battle_xd5 EN
+	=\b\0f's_\b_\n\b\01
+.end
+
+.string str_battle_xd6 EN
+	=\b\10's_\b_\n\b\01
+.end
+
+.string str_battle_xd7 EN
+	=\b\0f's_\b_\n\b\01
+.end
+
+.string str_battle_xd8 EN
+	=\b\10's_\b_\n\b\01
+.end
+
+.string str_battle_xd9 EN
+	=A_critical_hit!
+.end
+
+.string str_battle_xda EN
+	=It's_a_one-hit_KO!
+.end
+
+.string str_battle_xdb EN
+	=\w\_spnr\201,_\w\_spnr\0f2,_and\w\_spnr\0f\b0_\w\_spnr\0f\b0_\w\_spnr\0f\b0_\w\_spnr\0f\w\10\31_Poof!\p
+.end
+
+.string str_battle_xdc EN
+	=And\b0\p
+.end
+
+.string str_battle_xdd EN
+	=It's_not_very_effective\b0
+.end
+
+.string str_battle_xde EN
+	=It's_super_effective!
+.end
+
+.string str_battle_xdf EN
+	=\w\10\11_Got_away_safely!\p
+.end
+
+.string str_battle_xe0 EN
+	=\w\10\11_Wild_\b__fled!
+.end
+
+.string str_battle_xe1 EN
+	=No!_There's_no_running\nfrom_a_TRAINER_battle!\p
+.end
+
+.string str_battle_xe2 EN
+	=Can't_escape!\p
+.end
+
+.string str_battle_xe3 EN
+	=
+.end
+
+.string str_battle_xe4 EN
+	=But_nothing_happened!
+.end
+
+.string str_battle_xe5 EN
+	=But_it_failed!
+.end
+
+.string str_battle_xe6 EN
+	=It_hurt_itself_in_its\nconfusion!
+.end
+
+.string str_battle_xe7 EN
+	=The_MIRROR_MOVE_failed!
+.end
+
+.string str_battle_xe8 EN
+	=It_started_to_rain!
+.end
+
+.string str_battle_xe9 EN
+	=A_downpour_started!
+.end
+
+.string str_battle_xea EN
+	=Rain_continues_to_fall.
+.end
+
+.string str_battle_xeb EN
+	=The_downpour_continues.
+.end
+
+.string str_battle_xec EN
+	=The_rain_stopped.
+.end
+
+.string str_battle_xed EN
+	=A_sandstorm_brewed!
+.end
+
+.string str_battle_xee EN
+	=The_sandstorm_rages.
+.end
+
+.string str_battle_xef EN
+	=The_sandstorm_subsided.
+.end
+
+.string str_battle_xf0 EN
+	=The_sunlight_got_bright!
+.end
+
+.string str_battle_xf1 EN
+	=The_sunlight_is_strong.
+.end
+
+.string str_battle_xf2 EN
+	=The_sunlight_faded.
+.end
+
+.string str_battle_xf3 EN
+	=It_started_to_hail!
+.end
+
+.string str_battle_xf4 EN
+	=Hail_continues_to_fall.
+.end
+
+.string str_battle_xf5 EN
+	=The_hail_stopped.
+.end
+
+.string str_battle_xf6 EN
+	=But_it_failed_to_SPIT_UP\na_thing!
+.end
+
+.string str_battle_xf7 EN
+	=But_it_failed_to_SWALLOW\na_thing!
+.end
+
+.string str_battle_xf8 EN
+	=The_wind_turned_into_a\nHEAT_WAVE!
+.end
+
+.string str_battle_xf9 EN
+	=All_stat_changes_were\neliminated!
+.end
+
+.string str_battle_xfa EN
+	=Coins_scattered_everywhere!
+.end
+
+.string str_battle_xfb EN
+	=It_was_too_weak_to_make\na_SUBSTITUTE!
+.end
+
+.string str_battle_xfc EN
+	=The_battlers_shared\ntheir_pain!
+.end
+
+.string str_battle_xfd EN
+	=A_bell_chimed!
+.end
+
+.string str_battle_xfe EN
+	=All_affected_POK\eMON_will\nfaint_in_three_turns!
+.end
+
+.string str_battle_xff EN
+	=There's_no_PP_left_for\nthis_move!\p
+.end
+
+.string str_battle_x100 EN
+	=But_there_was_no_PP_left\nfor_the_move!
+.end
+
+.string str_battle_x101 EN
+	=\b\23_used\n\b\16!
+.end
+
+.string str_battle_x102 EN
+	=The_old_man_used\n\b\16!
+.end
+
+.string str_battle_x103 EN
+	=The_TRAINER_blocked_the_BALL!
+.end
+
+.string str_battle_x104 EN
+	=Don't_be_a_thief!
+.end
+
+.string str_battle_x105 EN
+	=It_dodged_the_thrown_BALL!\nThis_POK\eMON_can't_be_caught!
+.end
+
+.string str_battle_x106 EN
+	=You_missed_the_POK\eMON!
+.end
+
+.string str_battle_x107 EN
+	=Oh,_no!\nThe_POK\eMON_broke_free!
+.end
+
+.string str_battle_x108 EN
+	=Aww!\nIt_appeared_to_be_caught!
+.end
+
+.string str_battle_x109 EN
+	=Aargh!\nAlmost_had_it!
+.end
+
+.string str_battle_x10a EN
+	=Shoot!\nIt_was_so_close,_too!
+.end
+
+.string str_battle_x10b EN
+	=Gotcha!\n\b\06_was_caught!\w\0a\w\0b\42\01\p
+.end
+
+.string str_battle_x10c EN
+	=Gotcha!\n\b\06_was_caught!\w\0a\w\0b\42\01\w\_spnr#
+.end
+
+.string str_battle_x10d EN
+	=Give_a_nickname_to_the\ncaptured_\b\06?
+.end
+
+.string str_battle_x10e EN
+	=\b\06_was_sent_to\n\b\27_PC.
+.end
+
+.string str_battle_x10f EN
+	=\b\06's_data_was\nadded_to_the_POK\eDEX.\p
+.end
+
+.string str_battle_x110 EN
+	=It_is_raining.
+.end
+
+.string str_battle_x111 EN
+	=A_sandstorm_is_raging.
+.end
+
+.string str_battle_x112 EN
+	=Can't_escape!\p
+.end
+
+.string str_battle_x113 EN
+	=\b\0f_ignored\norders_while_asleep!
+.end
+
+.string str_battle_x114 EN
+	=\b\0f_ignored\norders!
+.end
+
+.string str_battle_x115 EN
+	=\b\0f_began_to_nap!
+.end
+
+.string str_battle_x116 EN
+	=\b\0f_is\nloafing_around!
+.end
+
+.string str_battle_x117 EN
+	=\b\0f_won't\nobey!
+.end
+
+.string str_battle_x118 EN
+	=\b\0f_turned_away!
+.end
+
+.string str_battle_x119 EN
+	=\b\0f_pretended\nnot_to_notice!
+.end
+
+.string str_battle_x11a EN
+	=\b\1c_\b\1d_is\nabout_to_use_\b\01.\pWill_\b\23_change\nPOK\eMON?
+.end
+
+.string str_battle_x11b EN
+	=\b\23_threw_a_ROCK\nat_the_\b\06!
+.end
+
+.string str_battle_x11c EN
+	=\b\23_threw_some_BAIT\nat_the_\b\06!
+.end
+
+.string str_battle_x11d EN
+	=\b\06_is_watching\ncarefully!
+.end
+
+.string str_battle_x11e EN
+	=\b\06_is_angry!
+.end
+
+.string str_battle_x11f EN
+	=\b\06_is_eating!
+.end
+
+.string str_battle_x120 EN
+	=
+.end
+
+.string str_battle_x121 EN
+	=
+.end
+
+.string str_battle_x122 EN
+	=\w\10\42_ANNOUNCER:_You're_out_of\nSAFARI_BALLS!_Game_over!\p
+.end
+
+.string str_battle_x123 EN
+	=\b\13's_\b\16\ncured_paralysis!
+.end
+
+.string str_battle_x124 EN
+	=\b\13's_\b\16\ncured_poison!
+.end
+
+.string str_battle_x125 EN
+	=\b\13's_\b\16\nhealed_its_burn!
+.end
+
+.string str_battle_x126 EN
+	=\b\13's_\b\16\ndefrosted_it!
+.end
+
+.string str_battle_x127 EN
+	=\b\13's_\b\16\nwoke_it_from_its_sleep!
+.end
+
+.string str_battle_x128 EN
+	=\b\13's_\b\16\nsnapped_it_out_of_confusion!
+.end
+
+.string str_battle_x129 EN
+	=\b\13's_\b\16\ncured_its_\b__problem!
+.end
+
+.string str_battle_x12a EN
+	=\b\13's_\b\16\nrestored_health!
+.end
+
+.string str_battle_x12b EN
+	=\b\13's_\b\16\nrestored_\b_'s_PP!
+.end
+
+.string str_battle_x12c EN
+	=\b\13's_\b\16\nrestored_its_status!
+.end
+
+.string str_battle_x12d EN
+	=\b\13's_\b\16\nrestored_its_HP_a_little!
+.end
+
+.string str_battle_x12e EN
+	=\b\16's_effect_allows_only\n\b\14_to_be_used!\p
+.end
+
+.string str_battle_x12f EN
+	=\b\10_hung_on\nusing_its_\b\16!
+.end
+
+.string str_battle_x130 EN
+	=
+.end
+
+.string str_battle_x131 EN
+	=\b\11's_\b\e\nprevents_burns!
+.end
+
+.string str_battle_x132 EN
+	=\b\10's_\b\19\nblocks_\b\14!
+.end
+
+.string str_battle_x133 EN
+	=\b\0f's_\b\18\nrestored_its_HP_a_little!
+.end
+
+.string str_battle_x134 EN
+	=\b\13's_\b\1a\nwhipped_up_a_sandstorm!
+.end
+
+.string str_battle_x135 EN
+	=\b\13's_\b\1a\nprevents_\b__loss!
+.end
+
+.string str_battle_x136 EN
+	=\b\10's_\b\19\ninfatuated_\b\0f!
+.end
+
+.string str_battle_x137 EN
+	=\b\10's_\b\19\nmade_\b\14_ineffective!
+.end
+
+.string str_battle_x138 EN
+	=\b\13's_\b\1a\ncured_its_\b__problem!
+.end
+
+.string str_battle_x139 EN
+	=It_sucked_up_the\nLIQUID_OOZE!
+.end
+
+.string str_battle_x13a EN
+	=\b\13_transformed!
+.end
+
+.string str_battle_x13b EN
+	=Electricity's_power_was\nweakened!
+.end
+
+.string str_battle_x13c EN
+	=Fire's_power_was\nweakened!
+.end
+
+.string str_battle_x13d EN
+	=\b\0f_hid\nunderwater!
+.end
+
+.string str_battle_x13e EN
+	=\b\0f_sprang_up!
+.end
+
+.string str_battle_x13f EN
+	=HM_moves_can't_be\nforgotten_now.\p
+.end
+
+.string str_battle_x140 EN
+	=\b\0f_found\none_\b\16!
+.end
+
+.string str_battle_x141 EN
+	=Player_defeated\n\b\1c_\b\1d!\p
+.end
+
+.string str_battle_x142 EN
+	=A_soothing_aroma_wafted\nthrough_the_area!
+.end
+
+.string str_battle_x143 EN
+	=Items_can't_be_used_now.\w\_spnr\40
+.end
+
+.string str_battle_x144 EN
+	=For_\b\13,\n\b\16_\b_
+.end
+
+.string str_battle_x145 EN
+	=Using_\b\16,_the_\b_\nof_\b\13_\b\01
+.end
+
+.string str_battle_x146 EN
+	=\b\13_used\n\b\16_to_hustle!
+.end
+
+.string str_battle_x147 EN
+	=\b\10's_\b\19\nmade_\b\14_useless!
+.end
+
+.string str_battle_x148 EN
+	=\b\10_was_trapped\nby_SAND_TOMB!
+.end
+
+.string str_battle_x149 EN
+	=
+.end
+
+.string str_battle_x14a EN
+	=_a_boosted
+.end
+
+.string str_battle_x14b EN
+	=\b\13's_\b\1a\nintensified_the_sun's_rays!
+.end
+
+.string str_battle_x14c EN
+	=\b\10_makes_GROUND\nmoves_miss_with_\b\19!
+.end
+
+.string str_battle_x14d EN
+	=You_throw_a_BALL_now,_right?\nI\b0_I'll_do_my_best!
+.end
+
+.string str_battle_x14e EN
+	=\b\10's_\b\19\ntook_the_attack!
+.end
+
+.string str_battle_x14f EN
+	=\b\0f_chose\n\b\14_as_its_destiny!
+.end
+
+.string str_battle_x150 EN
+	=\b\0f_lost_its\nfocus_and_couldn't_move!
+.end
+
+.string str_battle_x151 EN
+	=Use_next_POK\eMON?
+.end
+
+.string str_battle_x152 EN
+	=\w\10\11_\b\0f_fled\nusing_its_\b\16!\p
+.end
+
+.string str_battle_x153 EN
+	=\w\10\11_\b\0f_fled\nusing_\b\18!\p
+.end
+
+.string str_battle_x154 EN
+	=\b\10_was\ndragged_out!\p
+.end
+
+.string str_battle_x155 EN
+	=\b\10's_\b\19\nprevented_\b\13's\l\b__from_working!
+.end
+
+.string str_battle_x156 EN
+	=\b\13's_\b\16\nnormalized_its_status!
+.end
+
+.string str_battle_x157 EN
+	=\b\1c_\b\1d\nused_\b\16!
+.end
+
+.string str_battle_x158 EN
+	=The_BOX_is_full!\nYou_can't_catch_any_more!\p
+.end
+
+.string str_battle_x159 EN
+	=\b\10_avoided\nthe_attack!
+.end
+
+.string str_battle_x15a EN
+	=\b\13's_\b\1a\nmade_it_ineffective!
+.end
+
+.string str_battle_x15b EN
+	=\b\11's_\b\e\nprevents_flinching!
+.end
+
+.string str_battle_x15c EN
+	=\b\10_already\nhas_a_burn.
+.end
+
+.string str_battle_x15d EN
+	=\b\10's_stats_won't\ngo_any_lower!
+.end
+
+.string str_battle_x15e EN
+	=\b\13's_\b\1a\nblocks_\b\14!
+.end
+
+.string str_battle_x15f EN
+	=\b\28's_\b_\nwore_off!
+.end
+
+.string str_battle_x160 EN
+	=\b\2a's_\b\14\nraised_DEFENSE_a_little!
+.end
+
+.string str_battle_x161 EN
+	=\b\2a's_\b\14\nraised_SP._DEF_a_little!
+.end
+
+.string str_battle_x162 EN
+	=The_wall_shattered!
+.end
+
+.string str_battle_x163 EN
+	=\b\0f's_\b\18\nprevents_\b\10's\l\b\19_from_working!
+.end
+
+.string str_battle_x164 EN
+	=\b\13's_\b\1a\ncured_its_\b__problem!
+.end
+
+.string str_battle_x165 EN
+	=\b\0f_can't_escape!
+.end
+
+.string str_battle_x166 EN
+	=\b\0f_obtained\n\b_.
+.end
+
+.string str_battle_x167 EN
+	=\b\10_obtained\n\b\01.
+.end
+
+.string str_battle_x168 EN
+	=\b\0f_obtained\n\b_.\p\b\10_obtained\n\b\01.
+.end
+
+.string str_battle_x169 EN
+	=But_it_had_no_effect!
+.end
+
+.string str_battle_x16a EN
+	=\b\13's_\b\1a\nhad_no_effect_on_\b\11!
+.end
+
+.string str_battle_x16b EN
+	=OAK:_Hm!_Excellent!\pIf_you_win,_you_earn_prize_money,\nand_your_POK\eMON_will_grow!\pBattle_other_TRAINERS_and_make\nyour_POK\eMON_strong!\p
+.end
+
+.string str_battle_x16c EN
+	=OAK:_Hm\b0\nHow_disappointing\b0\pIf_you_win,_you_earn_prize_money,\nand_your_POK\eMON_grow.\pBut_if_you_lose,_\b\23,_you_end\nup_paying_prize_money\b0\pHowever,_since_you_had_no_warning\nthis_time,_I'll_pay_for_you.\pBut_things_won't_be_this_way_once\nyou_step_outside_these_doors.\pThat's_why_you_must_strengthen_your\nPOK\eMON_by_battling_wild_POK\eMON.\p
+.end
+
+.string str_battle_x16d EN
+	=\b\23_is_out_of\nusable_POK\eMON!\pPlayer_lost_against\n\b\1c_\b\1d!\w\09
+.end
+
+.string str_battle_x16e EN
+	=\b\23_paid_\b7\b__as_the_prize\nmoney\b0\p\b0_\b0_\b0_\b0\p\b\23_whited_out!\w\09
+.end
+
+.string str_battle_x16f EN
+	=\b\03_was_transferred_to\nSomeone's_PC.\pIt_was_placed_in_\nBOX_\b1\b\02.\b2
+.end
+
+.string str_battle_x170 EN
+	=\b\03_was_transferred_to\nBILL'S_PC.\pIt_was_placed_in_\nBOX_\b1\b\02.\b2
+.end
+
+.string str_battle_x171 EN
+	=BOX_\b1\b\04\b2_on\nSomeone's_PC_was_full.\p\b\03_was_transferred_to\nBOX_\b1\b\02.\b2
+.end
+
+.string str_battle_x172 EN
+	=BOX_\b1\b\04\b2_on\nBILL'S_PC_was_full.\p\b\03_was_transferred_to\nBOX_\b1\b\02.\b2
+.end
+
+.string str_battle_x173 EN
+	=The_POK\e_DUDE_used\n\b\16!
+.end
+
+.string str_battle_x174 EN
+	=\b\23_played_the_\b\16.\pNow,_that's_a_catchy_tune!
+.end
+
+.string str_battle_x175 EN
+	=\b\23_played_the\n\b\16.
+.end
+
+.string str_battle_x176 EN
+	=The_POK\eMON_hearing_the_FLUTE\nawoke!
+.end
+
+.string str_battle_x177 EN
+	=\b+
+.end
+
+.string str_battle_x178 EN
+	=\b\2f
+.end
+
+.string str_battle_x179 EN
+	=\b\23_whited_out!\w\09
+.end
+
+.string str_battle_x17a EN
+	=\b\0f_is_too_scared_to_move!
+.end
+
+.string str_battle_x17b EN
+	=GHOST:_Get_out\b0\b0_Get_out\b0\b0
+.end
+
+.string str_battle_x17c EN
+	=SILPH_SCOPE_unveiled_the_GHOST's\nidentity!
+.end
+
+.string str_battle_x17d EN
+	=The_GHOST_was_MAROWAK!\p\n
+.end
+
+.string str_battle_x17e EN
+	=\b\1d:_\b\06,_come_back!
+.end
+
+.string str_battle_x17f EN
+	=\b\25
+.end
+
+.string str_battle_x180 EN
+	=\b\1d:_\b\_spnr,_come_back!
+.end
+
+.string str_battle_x181 EN
+	=\b\1d:_\b\06_and\n\b\_spnr,_come_back!
+.end
+
+
+.string str_battle_x182 EN
+	=\b\0f was hurt by\n\b\18!
+.end
+
+.string str_battle_x183 EN
+	=\b\0f was hurt by\nits Life Orb!
+.end
+
+.string str_battle_x184 EN
+	=\b\0f used\n\b\18\ and became\la \b-Type!
+.end
+
+.string str_battle_x185 EN
+	=\b\13's \b\1a\nmade its attack rise\lbut its defense drop!
+.end
+
+.string str_battle_x186 EN
+	=\b\0f uses\n\b\18 to improve\lits accuracy!
+.end
+
+.string str_battle_x187 EN
+	=\b\1a's \b\13\nmade it hail!
+.end
+
+.string str_battle_x188 EN
+	=
+.end
+
+.string str_battle_x189 EN
+	=\b\1a's \b\13\nmade its attack rise!
+.end
+
+.string str_battle_x18a EN
+	=\b\13 uses \b\1a\nand saves pp!
+.end
+
+.string str_battle_x18b EN
+	=\b\12 changes\ninto its blade form!
+.end
+
+.string str_battle_x18c EN
+	=\b\12 changes\ninto its shield form!
+.end
+
+.string str_battle_x18d EN
+        =Sturdy became active!
+.end
+
+.string str_battle_x18e EN
+	=\b\13's ability\nto have a lucid dream\lmade its Sp.Att. rise!
+.end
+
+.string str_battle_x18f EN
+        =\b\10's Emperor's-Aura\nintimedates \b\13!
+.end
+
+.string str_battle_x190 EN
+        =\b\10's Red Emperor's\nAura vaporizes Water-type moves!
+.end
+
+.string str_battle_x191 EN
+        =\b\10's Blue Emperor's\nAura clears Fire-type moves.
+.end
+
+.string str_battle_x192 EN
+        =\b\10's Blue Emperor's\nAura negates elementary moves.
+.end
+
+.string str_battle_x193 EN
+        =\b\10 was hurt by\n\l\b\0f's \b\18!
+.end
+
+.string str_battle_x194 EN
+        =\b\13 bounced off!\nIts attack sharply droped!
+.end
+
+.string str_battle_x195 EN
+        =\b\0f could\nrestore some Hp by\lusing \b\18!
+.end
+
+.string str_battle_x196 EN
+        =\b\0f fell in\nrabies!
+.end

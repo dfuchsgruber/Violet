@@ -41,11 +41,11 @@
 
 //start position of player
 .org 0x08054A20
-    mov r0, #16
+    mov r0, #5
     str r0, [sp] //y
     mov r0, #4 //bank
     mov r1, #1 //map
-    mov r3, #16 //x
+    mov r3, #8 //x
 
 
 //.org 0x08352218

@@ -1,0 +1,3 @@
+.string str_0x8a200c GER
+	=Dieser_Tunnel_soll_nach_Route_2\nf\$uehren,_aber_ich_f\$uerchte_mich_vor\lH\$oehlen.
+.end

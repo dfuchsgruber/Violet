@@ -217,6 +217,7 @@ def explore_mart_list(tree, rom, offset):
 def explore_script_reference(tree, rom, offset):
     """ Explores an offset as reference to a new subscript"""
     offset = rom.pointer(offset)
+    if offset not in range(0, 0x2000000): return "0" #invalid offset
     label = script_offset_to_label(offset)
     tree.offsets.append(offset)
     return label

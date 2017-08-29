@@ -1,0 +1,23 @@
+.string str_0x94568f GER
+	=Hyaa!_Hajajaja!\nIn_vielen_Jahren_des_harten\lTraining_habe_ich_meine\lKampftechnik_so_sehr_verfeinert,\ldass_ich_Steine_regnen_lassen\lkann!\pSoll_ich_einem_deiner_Pok\emon_den\nSteinhagel_beibringen?\pDann_will_ich_einen_Riesenpilz\noder_drei_Minipilze_als\lGegenleistung!
+.end
+
+
+.string str_0x945eb7 GER
+	=Hyaa!_Vortrefflich!\nDu_hast_\b\03-mal_\b\02\lbei_dir!\lAls_Gegenleistung_bringe_ich_einem\ldeiner_Pok\emon_Steinhagel_bei!\lWas_sagst_du_dazu?
+.end
+
+
+.string str_0x8a1be6 GER
+	=Sch\$oen,_sch\$oen!\nWelches_deiner_Pok\emon_soll\lSteinhagel_lernen?
+.end
+
+
+.string str_0x94618b GER
+	=\b\01_\$uebergibt\n\b\03-mal_\b\02.
+.end
+
+
+.string str_0x945830 GER
+	=Hyaa!_Wie_schade!\pWenn_ich_einem_deiner_Pok\emon\nSteinhagel_beibringen_soll,_dann\lkomm_mit_3_Minipilzen_oder_einem\lRiesenpilz_wieder!
+.end

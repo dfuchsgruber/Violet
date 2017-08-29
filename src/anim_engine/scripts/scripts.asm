@@ -19,6 +19,13 @@ script_table:
     .word ae_script_groudon_red
     .word ae_script_groudon_grey
     .word ae_script_arc_scrim
+    .word ae_script_difficulty_setting
+
+    .word ae_script_difficulty_setting_fade_to_dark
+    .word ae_script_intro
+
+
+
 
 
 

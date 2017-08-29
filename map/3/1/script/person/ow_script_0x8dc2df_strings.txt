@@ -1,0 +1,3 @@
+.string str_0x8de4c9 GER
+	=Br\$ueder_und_Schwestern,_lasst_uns\nk\$aempfen_f\$uer_eine_Welt_ohne\lUngerechtigkeit_und_Unterdr\$ueckung!
+.end

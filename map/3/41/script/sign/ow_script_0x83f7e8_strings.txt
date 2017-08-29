@@ -1,0 +1,13 @@
+.string str_0x83f8bf GER
+	=Die_Felswand_sieht_steinig_aus,_ein\nPok\emon_kann_hier_klettern.\lM\$oechtest_du_\b\02_einsetzten?
+.end
+
+
+.string str_0x83f89b GER
+	=\b\03_setzt_\b\02_ein.
+.end
+
+
+.string str_0x83f92e GER
+	=Die_Felswand_sieht_steinig_aus,\nsodass_ein_Pok\emon_bestimmt\lhinaufklettern_k\$oennte.
+.end

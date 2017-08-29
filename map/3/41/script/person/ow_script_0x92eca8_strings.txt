@@ -1,0 +1,18 @@
+.string str_0x8e225d GER
+	=Sei_gegr\$ue\$st,_junger_Trainer.\nLass_mich_dir_etwas_\$ueber_unsere\lWelt_erz\$aehlen,_wenn_du_erlaubst.\lLass_mich_deinen_Horizont\lerweitern.
+.end
+
+
+.string str_0x8e1e69 GER
+	=Du_musst_wissen,_dass_sich_in\nTheto_einst_die_f\$uenf_m\$aechtigsten\laller_Trainer_vereint_hatten,_um\ldem_Kontinent_Stabilit\$aet_und\lIntegrit\$aet_zu_verschaffen.\lSo_entstand_ein_Herrschaftssystem,\lan_dessen_Spitze_der_Champion\lsteht._Ihm_untergeordnet_sind_die\lTop_Vier,_m\$aechtige_Trainer,_unter\ldenen_das_Gebiet_Theto_aufgeteilt\lwurde._Jeder_von_ihnen_beherrscht\leinen_Teil.\pDie_Top_Vier,_die_derzeit\nregieren,_sind_'Der_Pinke',_'Die\lBlaue',_'Die_Violette'_und_'Der\lSchwarze'.\pNun_rivalisieren_diese_vier_aber\num_die_Vorherrschaft,_sie_sind\luntereinander_teils_sogar\lverfeindet._Die_Bev\$oelkerung_sind\ldie_leidtragenden._Korruption,\lAusbeutung_und_Unterdr\$ueckung_sind\ldie_Resultate_dieses_Systems,\lwelches_von_der_Polizei_gesch\$uetzt\lwird.\pSag_mir,_ist_es_nicht_die_eines\njeden_Menschen_Aufgabe,_sich_gegen\ldie_Missst\$aende_aufzulehnen?\pIch_bin_ein_Revolution\$aer_und\nk\$aempfe_f\$uer_Gerechtigkeit._Die_Welt\lsieht_uns_als_Verbrecher,_doch\lsind_wir_in_Wahrheit_Erl\$oeser.
+.end
+
+
+.string str_0x8de830 GER
+	=Es_wird_eine_Zeit_kommen,_sich_zu\nentscheiden,_zwischen_den_Top_Vier\lund_der_Revolution.\pEgal,_welchen_Entschluss_du_auch\nfasst,_folge_deinem_Gewissen.\lDas_wollte_ich_dir_mit_auf_den_Weg\lgeben,_junger_Trainer,_in_der\lHoffnung,_es_m\$oege_dich_erleuchten.
+.end
+
+
+.string str_0x9312b4 GER
+	=Nun,_du_musst_dir_deiner\nEntscheidungen_bewusst_sein...\pKomm_jederzeit_zu_mir,_wenn_du_es\ndir_anders_\$ueberlegt_hast.
+.end

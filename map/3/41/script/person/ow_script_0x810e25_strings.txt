@@ -1,0 +1,3 @@
+.string str_0x810ec2 GER
+	=Hey!_Verschwinde_du_Balg!
+.end

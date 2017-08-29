@@ -39,6 +39,18 @@ overworld_pals equ 0x083A501C
     bx r1
     .pool
 
+//Bg alignment
+.org 0x0805A5F4
+    ldr r0, =bg_alignment | 1
+    bx r0
+    .pool
+
+//Dynamic multichoice
+.org 0x0809CB90
+    ldr r0, =dynamic_multichoice_hook | 1
+    bx r0
+    .pool
+
 //Fix for weird overworld of rival in intro...
 .org 0x083E18C0
     .word gfx_ow_rival_allTiles

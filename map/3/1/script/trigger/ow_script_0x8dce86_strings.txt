@@ -1,0 +1,18 @@
+.string str_0x8dcf8d GER
+	=Mann:_Damit_kommen_Sie_nicht\ndurch._Wenn_die_Top_Vier_davon\lerfahren,_werden_Sie_daf\$uer_b\$ue\$sen.
+.end
+
+
+.string str_0x8de230 GER
+	=Polizist:_Ha!_Ich_wei\$s_nicht,\nwovon_Sie_reden._Sie_unterstellen\lder_Polizei_ungeheuerliche_Dinge!\lIch_k\$oennte_Sie_inhaftieren_wegen\lsolcher_Anschuldigungen...
+.end
+
+
+.string str_0x8dcf36 GER
+	=Mann:_Was_f\$aellt_Ihnen_ein?\nKorruptes_Gesindel..._Schon_gut,\lich_gehe,_ich_gehe...
+.end
+
+
+.string str_0x8dcee9 GER
+	=Polizist:_Verdammter_Bengel!_...\nIch_sollte_mich_darum_k\$uemmern_...
+.end

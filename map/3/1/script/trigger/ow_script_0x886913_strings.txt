@@ -1,0 +1,8 @@
+.string str_0x8869ab GER
+	=Hallo!_Du_siehst_mir_aus_wie_ein\nTrainer,_bist_aber_offensichtlich\lnoch_gr\$uen_hinter_den_Ohren._Keine\lSorge,_mit_etwas_\$UEbung_wird_das\lschon._Komm_mit,_ich_erkl\$aere_dir\ldie_Welt,_die_sich_dir_als_Trainer\ler\$oeffnet.
+.end
+
+
+.string str_0x886a80 GER
+	=Diesen_Ort_nennt_man_Pokestop.\nJeder_Trainer_hat_sozusagen_die\lPflicht_dort_vorbeizuschauen,\lsobald_er_eine_neue_Stadt\lerreicht._Komm,_gehen_wir_hinein.
+.end

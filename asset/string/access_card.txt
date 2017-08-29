@@ -1,0 +1,32 @@
+
+.string str_access_card_atrium GER
+    =EG Atrium
+.end
+
+.string str_access_card_atrium EN
+    =1F Atrium
+.end
+
+.string str_access_card_fossil GER
+    =3F Fossilien
+.end
+
+.string str_access_card_fossil EN
+    =4F Fossils
+.end
+
+.string str_access_card_cyber GER
+    =8F Cybernetik
+.end
+
+.string str_access_card_cyber EN
+    =9F Cybernetics
+.end
+
+.string str_access_card_already_there GER
+    =Du befindest dich bereits auf\ndieser Ebene.
+.end
+
+.string str_access_card_already_there EN
+    =But you are already on that\nfloor!
+.end

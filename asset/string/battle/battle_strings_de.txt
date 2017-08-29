@@ -1,0 +1,1579 @@
+.string str_battle_xc GER
+	=\b\24
+.end
+
+.string str_battle_xd GER
+	=\b__erh\$aelt\b\01\n\b\30_E.-Punkte!\p
+.end
+
+.string str_battle_xe GER
+	=\b__erreicht\nLv._\b\01!\w\0a\p
+.end
+
+.string str_battle_xf GER
+	=\b__erlernt\n\b\01!\w\0a\p
+.end
+
+.string str_battle_x10 GER
+	=\b__versucht,\n\b\01_zu_lernen.\p
+.end
+
+.string str_battle_x11 GER
+	=Aber_\b__kann_nicht\nmehr_als_vier_Attacken_erlernen.\p
+.end
+
+.string str_battle_x12 GER
+	=Soll_eine_Attacke_zugunsten_von\n\b\01_vergessen_werden?
+.end
+
+.string str_battle_x13 GER
+	=\b__hat\n\b\01_vergessen!\p
+.end
+
+.string str_battle_x14 GER
+	=\w\_spnr\20\b\01\nnicht_erlernen?
+.end
+
+.string str_battle_x15 GER
+	=\b__hat_\b\01\nnicht_erlernt.\p
+.end
+
+.string str_battle_x16 GER
+	=\b\0f_hat\n\b__gelernt!
+.end
+
+.string str_battle_x17 GER
+	=Attacke_von_\b\0f\ngeht_daneben!
+.end
+
+.string str_battle_x18 GER
+	=\b\10\nsch\$uetzt_sich_selbst!
+.end
+
+.string str_battle_x19 GER
+	=Status_von_\b\0f\nkann_nicht_weiter_erh\$oeht_werden!
+.end
+
+.string str_battle_x1a GER
+	=\b\10_vermeidet\nSchaden_mit_\b\19!
+.end
+
+.string str_battle_x1b GER
+	=Es_hat_keine_Wirkung_auf\n\b\10...
+.end
+
+.string str_battle_x1c GER
+	=\b\0f\nwurde_besiegt!\p
+.end
+
+.string str_battle_x1d GER
+	=\b\10\nwurde_besiegt!\p
+.end
+
+.string str_battle_x1e GER
+	=\b\23_gewinnt_\b_\b7!\p
+.end
+
+.string str_battle_x1f GER
+	=\b\23_hat_kein\nkampff\$aehiges_Pok\emon_mehr!\p
+.end
+
+.string str_battle_x20 GER
+	=\b\23_ger\$aet_in_Panik_und_hat\n\b_\b7_verloren\b0\p\b0\b0\b0\b0\p\b\23_f\$aellt_in_Ohnmacht!\w\09
+.end
+
+.string str_battle_x21 GER
+	=\b\13_verhindert\neine_Flucht_mit_\b\1a!\p
+.end
+
+.string str_battle_x22 GER
+	=\b_-mal_getroffen!
+.end
+
+.string str_battle_x23 GER
+	=\b\11\nist_eingeschlafen!
+.end
+
+.string str_battle_x24 GER
+	=\b\1a_von\n\b\13_l\$aesst\l\b\11_einschlafen!
+.end
+
+.string str_battle_x25 GER
+	=\b\10_schl\$aeft\nbereits!
+.end
+
+.string str_battle_x26 GER
+	=\b\0f_schl\$aeft\nbereits!
+.end
+
+.string str_battle_x27 GER
+	=\b\10\nist_unversehrt!
+.end
+
+.string str_battle_x28 GER
+	=\b\11\nwurde_vergiftet!
+.end
+
+.string str_battle_x29 GER
+	=\b\1a_von\n\b\13_vergiftete\l\b\11!
+.end
+
+.string str_battle_x2a GER
+	=\b\0f_wurde_durch\nGift_verletzt!
+.end
+
+.string str_battle_x2b GER
+	=\b\10_ist_bereits\nvergiftet.
+.end
+
+.string str_battle_x2c GER
+	=\b\11_wurde_schwer\nvergiftet!
+.end
+
+.string str_battle_x2d GER
+	=\b\10_wurde\nEnergie_abgesaugt!
+.end
+
+.string str_battle_x2e GER
+	=\b\11_brennt!
+.end
+
+.string str_battle_x2f GER
+	=\b\1a_von\n\b\13_verbrennt\l\b\11!
+.end
+
+.string str_battle_x30 GER
+	=Die_Verbrennung_schadet\n\b\0f!
+.end
+
+.string str_battle_x31 GER
+	=\b\11_erstarrt\nzu_Eis!
+.end
+
+.string str_battle_x32 GER
+	=\b\11_wurde_durch\n\b\1a_von\l\b\13_eingefroren!
+.end
+
+.string str_battle_x33 GER
+	=\b\0f_ist\neingefroren!
+.end
+
+.string str_battle_x34 GER
+	=\b\10_wurde\naufgetaut!
+.end
+
+.string str_battle_x35 GER
+	=\b\0f_wurde\naufgetaut!
+.end
+
+.string str_battle_x36 GER
+	=\b\0f_wurde\ndurch_\b\14_aufgetaut!
+.end
+
+.string str_battle_x37 GER
+	=\b\11_ist\nparalysiert!_Es_greift\leventuell_nicht_an!
+.end
+
+.string str_battle_x38 GER
+	=\b\1a_von\n\b\13_paralysierte\p\b\11!\nEs_greift_eventuell_nicht_an!
+.end
+
+.string str_battle_x39 GER
+	=\b\0f_ist\nparalysiert!_Es_kann\lnicht_angreifen!
+.end
+
+.string str_battle_x3a GER
+	=\b\10_ist\nbereits_paralysiert!
+.end
+
+.string str_battle_x3b GER
+	=\b\10_wurde_von_der\nParalyse_geheilt!
+.end
+
+.string str_battle_x3c GER
+	=Der_Traum_von_\b\10\nwurde_gefressen!
+.end
+
+.string str_battle_x3d GER
+	=\b__von\n\b\0f_kann_nicht\lmehr_erh\$oeht_werden!
+.end
+
+.string str_battle_x3e GER
+	=\b__von\n\b\10_kann_nicht\lweiter_gesenkt_werden!
+.end
+
+.string str_battle_x3f GER
+	=\b__in_deinem_Team\nfunktioniert_nicht_mehr!
+.end
+
+.string str_battle_x40 GER
+	=\b__des_Gegners\nfunktioniert_nicht_mehr!
+.end
+
+.string str_battle_x41 GER
+	=\b\0f_ist\nverwirrt!
+.end
+
+.string str_battle_x42 GER
+	=\b\0f_ist_nicht\nmehr_verwirrt!
+.end
+
+.string str_battle_x43 GER
+	=\b\11_wurde\nverwirrt!
+.end
+
+.string str_battle_x44 GER
+	=\b\10_ist\nbereits_verwirrt!
+.end
+
+.string str_battle_x45 GER
+	=\b\10\nhat_sich_verliebt!
+.end
+
+.string str_battle_x46 GER
+	=\b\0f_hat_sich_in\n\b\13_verliebt!
+.end
+
+.string str_battle_x47 GER
+	=\b\0f_ist_starr\nvor_Liebe!
+.end
+
+.string str_battle_x48 GER
+	=\b\10_wurde\nweggeweht!
+.end
+
+.string str_battle_x49 GER
+	=\b\0f_verwandelt\nsich_zu_Typ_\b_!
+.end
+
+.string str_battle_x4a GER
+	=\b\0f_schreckt\nzur\$ueck!
+.end
+
+.string str_battle_x4b GER
+	=\b\10_erholt_sich!
+.end
+
+.string str_battle_x4c GER
+	=\b\10_hat_alle_KP!
+.end
+
+.string str_battle_x4d GER
+	=\b\14_von\n\b\2a_erh\$oeht\ldie_SP._VER.
+.end
+
+.string str_battle_x4e GER
+	=\b\14_von\n\b\2a\lerh\$oeht_die_VERTEIDIGUNG!
+.end
+
+.string str_battle_x4f GER
+	=Team_von_\b\2a_wird_von\neinem_Schleier_umh\$uellt!
+.end
+
+.string str_battle_x50 GER
+	=Team_von_\b\10\nwird_durch_BODYGUARD_gesch\$uetzt!
+.end
+
+.string str_battle_x51 GER
+	=BODYGUARD_von\n\b\2c_l\$aesst_nach!
+.end
+
+.string str_battle_x52 GER
+	=\b\0f_ist\neingeschlafen!
+.end
+
+.string str_battle_x53 GER
+	=\b\0f_schl\$aeft_und\nerholt_sich!
+.end
+
+.string str_battle_x54 GER
+	=\b\0f_entfacht\neinen_Wirbelwind!
+.end
+
+.string str_battle_x55 GER
+	=\b\0f_absorbiert\nSonnenlicht!
+.end
+
+.string str_battle_x56 GER
+	=\b\0f_zieht_seinen\nKopf_ein!
+.end
+
+.string str_battle_x57 GER
+	=\b\0f_leuchtet!
+.end
+
+.string str_battle_x58 GER
+	=\b\0f_fliegt\nhoch_empor!
+.end
+
+.string str_battle_x59 GER
+	=\b\0f_gr\$aebt_sich\nein!
+.end
+
+.string str_battle_x5a GER
+	=\b\0f_setzt_bei\n\b\10\lKLAMMERGRIFF_ein!
+.end
+
+.string str_battle_x5b GER
+	=\b\10_wurde_in\neinem_Strudel_gefangen!
+.end
+
+.string str_battle_x5c GER
+	=\b\10_wurde_von\n\b\0f_umWICKELt!
+.end
+
+.string str_battle_x5d GER
+	=\b\10_wurde_von\n\b\0f_geSCHNAPPT!
+.end
+
+.string str_battle_x5e GER
+	=\b\0f_wurde_durch\n\b__verletzt!
+.end
+
+.string str_battle_x5f GER
+	=\b\0f_wurde_von\n\b__befreit!
+.end
+
+.string str_battle_x60 GER
+	=\b\0f_macht_weiter\nund_bricht_zusammen!
+.end
+
+.string str_battle_x61 GER
+	=\b\2a_wird_in\nWEISSNEBEL_geh\$uellt!
+.end
+
+.string str_battle_x62 GER
+	=\b\13_wird_durch\nWEISSNEBEL_gesch\$uetzt!
+.end
+
+.string str_battle_x63 GER
+	=\b\0f_pumpt\nsich_auf!
+.end
+
+.string str_battle_x64 GER
+	=\b\0f_wurde_vom\nR\$uecksto\$s_getroffen!
+.end
+
+.string str_battle_x65 GER
+	=\b\0f_sch\$uetzt\nsich_selbst!
+.end
+
+.string str_battle_x66 GER
+	=\b\0f_wird_vom\nSandsturm_getroffen!
+.end
+
+.string str_battle_x67 GER
+	=\b\0f_wird_vom\nHAGELSTURM_getroffen!
+.end
+
+.string str_battle_x68 GER
+	=\b\10_wurde\nbepflanzt!
+.end
+
+.string str_battle_x69 GER
+	=\b\10_ist\nausgewichen!
+.end
+
+.string str_battle_x6a GER
+	=Egelsamen_schadet\n\b\0f!
+.end
+
+.string str_battle_x6b GER
+	=\b\0f_schl\$aeft_tief\nund_fest.
+.end
+
+.string str_battle_x6c GER
+	=\b\0f_ist\naufgewacht!
+.end
+
+.string str_battle_x6d GER
+	=AUFRUHR_von_\b\13\nh\$aelt_es_wach!
+.end
+
+.string str_battle_x6e GER
+	=\b\0f_wird_durch\nAUFRUHR_wach!
+.end
+
+.string str_battle_x6f GER
+	=\b\0f_verursacht\nAUFRUHR!
+.end
+
+.string str_battle_x70 GER
+	=\b\0f_macht\neinen_AUFRUHR!
+.end
+
+.string str_battle_x71 GER
+	=\b\0f\nberuhigt_sich.
+.end
+
+.string str_battle_x72 GER
+	=\b\10_kann_bei_dem\nAUFRUHR_nicht_schlafen!
+.end
+
+.string str_battle_x73 GER
+	=\b\0f_HORTET\n\b_!
+.end
+
+.string str_battle_x74 GER
+	=\b\0f_kann_nicht\nweiter_HORTEN!
+.end
+
+.string str_battle_x75 GER
+	=\b\10_kann_bei_dem\nAUFRUHR_nicht_schlafen!
+.end
+
+.string str_battle_x76 GER
+	=Aber_der_AUFRUHR_h\$aelt\n\b\10_wach!
+.end
+
+.string str_battle_x77 GER
+	=\b\10_h\$aelt_sich_mit\n\b\19_wach!
+.end
+
+.string str_battle_x78 GER
+	=\b\0f_speichert\nEnergie!
+.end
+
+.string str_battle_x79 GER
+	=\b\0f_erzeugt\nEnergie!
+.end
+
+.string str_battle_x7a GER
+	=\b\0f_ist_vor\nErsch\$oepfung_verwirrt!
+.end
+
+.string str_battle_x7b GER
+	=\b\23_hebt\n\b_\b7_auf!\p
+.end
+
+.string str_battle_x7c GER
+	=\b\10_ist\nunversehrt!
+.end
+
+.string str_battle_x7d GER
+	=\b\0f_verwandelt\nsich_in_\b_!
+.end
+
+.string str_battle_x7e GER
+	=\b\0f_setzt_einen\nDELEGATOR_ein!
+.end
+
+.string str_battle_x7f GER
+	=\b\0f_hat_bereits\neinen_DELEGATOR!
+.end
+
+.string str_battle_x80 GER
+	=Der_DELEGATOR_steckt_den\nSchlag_f\$uer_\b\10\lein!\p
+.end
+
+.string str_battle_x81 GER
+	=DELEGATOR_von\n\b\10_l\$aesst_nach!\p
+.end
+
+.string str_battle_x82 GER
+	=\b\0f_muss_sich\nwieder_aufladen!
+.end
+
+.string str_battle_x83 GER
+	=\b\10_verf\$aellt_in\nRASEREI!
+.end
+
+.string str_battle_x84 GER
+	=\b__von\n\b\10\lwurde_blockiert!
+.end
+
+.string str_battle_x85 GER
+	=\b\14_von\n\b\12_ist_blockiert!\p
+.end
+
+.string str_battle_x86 GER
+	=\b\0f_ist_nicht\nmehr_blockiert!
+.end
+
+.string str_battle_x87 GER
+	=\b\10_gibt\neine_ZUGABE!
+.end
+
+.string str_battle_x88 GER
+	=ZUGABE_von_\b\0f\nist_beendet!
+.end
+
+.string str_battle_x89 GER
+	=\b\0f_zielt\nauf_\b\10!
+.end
+
+.string str_battle_x8a GER
+	=\b\0f_setzt\nNACHAHMER_bei_\b__ein!
+.end
+
+.string str_battle_x8b GER
+	=\b\0f_versucht_den\nGegner_mit_sich_zu_nehmen!
+.end
+
+.string str_battle_x8c GER
+	=\b\10_nimmt\n\b\0f_mit_sich!
+.end
+
+.string str_battle_x8d GER
+	=\b__von\n\b\10_wird_um\l\b\01_reduziert!
+.end
+
+.string str_battle_x8e GER
+	=\b\0f_stiehlt\n\b\16_von\l\b\10!
+.end
+
+.string str_battle_x8f GER
+	=\b\10_kann\nnicht_fliehen!
+.end
+
+.string str_battle_x90 GER
+	=\b\10_bekommt\nNACHTMAHR!
+.end
+
+.string str_battle_x91 GER
+	=\b\0f_ist_in\nNACHTMAHR_gefangen!
+.end
+
+.string str_battle_x92 GER
+	=\b\0f_nimmt_einen\nTeil_seiner_KP_und_legt_einen\lFLUCH_auf_\b\10!
+.end
+
+.string str_battle_x93 GER
+	=\b\0f_wurde_durch\nFLUCH_verletzt!
+.end
+
+.string str_battle_x94 GER
+	=Pok\emon-Team_von_\b\29\nverteilt_STACHELN_um_sich!
+.end
+
+.string str_battle_x95 GER
+	=\b\13_wurde_durch\nSTACHLER_verletzt!
+.end
+
+.string str_battle_x96 GER
+	=\b\0f_erkennt\n\b\10!
+.end
+
+.string str_battle_x97 GER
+	=ABGESANG_von_\b\0f\nsteht_bei_\b_!
+.end
+
+.string str_battle_x98 GER
+	=\b\0f_macht_sich\nbereit!
+.end
+
+.string str_battle_x99 GER
+	=\b\10_setzt\nAUSDAUER_ein!
+.end
+
+.string str_battle_x9a GER
+	=INTENSIT\$AET_\b_!
+.end
+
+.string str_battle_x9b GER
+	=\b\0f_nutzt_seine\nKP_und_hebt_den_ANGR.-Wert!
+.end
+
+.string str_battle_x9c GER
+	=\b\0f_kopiert_die\nStatusver\$aenderungen\lvon_\b\10!
+.end
+
+.string str_battle_x9d GER
+	=\b\0f_befreit\nsich_von_\b_\lvon_\b\10!
+.end
+
+.string str_battle_x9e GER
+	=\b\0f_befreit_sich\nvon_Egelsamen!
+.end
+
+.string str_battle_x9f GER
+	=\b\0f_bl\$aest_den\nSTACHLER_weg!
+.end
+
+.string str_battle_xa0 GER
+	=\b\0f_ist\ngefl\$uechtet!
+.end
+
+.string str_battle_xa1 GER
+	=\b\0f_sah_eine\nAttacke_voraus!
+.end
+
+.string str_battle_xa2 GER
+	=\b\10_wurde_von\nder_Attacke_\b__getroffen!
+.end
+
+.string str_battle_xa3 GER
+	=Angriff_von_\b_!
+.end
+
+.string str_battle_xa4 GER
+	=\b\0f_zieht_alle\nAufmerksamkeit_auf_sich!
+.end
+
+.string str_battle_xa5 GER
+	=\b\0f_l\$aedt\nsich_auf!
+.end
+
+.string str_battle_xa6 GER
+	=NATUR-KRAFT_wurde_zu\n\b\14!
+.end
+
+.string str_battle_xa7 GER
+	=Status_von_\b\0f\nwird_normal!
+.end
+
+.string str_battle_xa8 GER
+	=\b\12_hat_keine\nAttacken_mehr_\$uebrig!\p
+.end
+
+.string str_battle_xa9 GER
+	=\b\10_wird_von\nFOLTERKNECHT_unterworfen!
+.end
+
+.string str_battle_xaa GER
+	=\b\12_kann\naufgrund_von_FOLTERKNECHT\pdie_Attacke_nicht_2-mal\nhintereinander_einsetzen!
+.end
+
+.string str_battle_xab GER
+	=\b\0f_verst\$aerkt\nseinen_Fokus!
+.end
+
+.string str_battle_xac GER
+	=\b\10_f\$aellt_auf\nVERH\$OEHNER_herein!
+.end
+
+.string str_battle_xad GER
+	=\b\12_kann\n\b\14_nach_VERH\$OEHNER\lnicht_einsetzen!\p
+.end
+
+.string str_battle_xae GER
+	=\b\0f_will\n\b\10_helfen!
+.end
+
+.string str_battle_xaf GER
+	=\b\0f_tauscht\nItems_mit_dem_Gegner!
+.end
+
+.string str_battle_xb0 GER
+	=\b\0f\nkopiert_\b\19_von\l\b\10!
+.end
+
+.string str_battle_xb1 GER
+	=\b\0f_spricht_einen\nWUNSCHTRAUM_aus!
+.end
+
+.string str_battle_xb2 GER
+	=WUNSCHTRAUM_von\n\b__erf\$uellt_sich!
+.end
+
+.string str_battle_xb3 GER
+	=\b\0f_pflanzt_seine\nWurzeln!
+.end
+
+.string str_battle_xb4 GER
+	=\b\0f_nimmt_\$ueber\nseine_Wurzeln_N\$aehrstoffe_auf!
+.end
+
+.string str_battle_xb5 GER
+	=\b\10\nverankert_sich_mit_seinen_Wurzeln!
+.end
+
+.string str_battle_xb6 GER
+	=\b\0f_macht\n\b\10_schl\$aefrig!
+.end
+
+.string str_battle_xb7 GER
+	=\b\0f\nentrei\$st_\b\16_von\l\b\10!
+.end
+
+.string str_battle_xb8 GER
+	=\b\0f_tauscht_die\nF\$aehigkeiten_mit_dem_Gegner!
+.end
+
+.string str_battle_xb9 GER
+	=\b\0f_versiegelt\ndie_Attacke/n_des_Gegners!
+.end
+
+.string str_battle_xba GER
+	=\b\12_kann_die_ver-\nsiegelte_Attacke_\b\14\lnicht_einsetzen!\p
+.end
+
+.string str_battle_xbb GER
+	=\b\0f_m\$oechte,_dass\nder_Gegner_ein_NACHSPIEL_ertr\$aegt!
+.end
+
+.string str_battle_xbc GER
+	=\b__von\n\b\0f_hat_aufgrund\lvon_NACHSPIEL_alle_AP_verloren!
+.end
+
+.string str_battle_xbd GER
+	=\b\0f_verh\$uellt_sich\nselbst_in_\b\14!
+.end
+
+.string str_battle_xbe GER
+	=\b\14_von\n\b\0f_prallte_am\lMAGIEMANTEL_ab!
+.end
+
+.string str_battle_xbf GER
+	=\b\0f_wartet_auf\neine_gegnerische_Attacke!
+.end
+
+.string str_battle_xc0 GER
+	=\b\10_\$UEBERNAHM\nAttacke_von_\b\13!
+.end
+
+.string str_battle_xc1 GER
+	=\b\1a_von\n\b\13_l\$aesst\les_regnen!
+.end
+
+.string str_battle_xc2 GER
+	=\b\1a_von\n\b\13_erh\$oeht\lseine_INIT.!
+.end
+
+.string str_battle_xc3 GER
+	=\b\10_wurde_durch\n\b\19_gesch\$uetzt!
+.end
+
+.string str_battle_xc4 GER
+	=\b\19_von\n\b\10_hindert\p\b\0f_daran,\n\b\14_einzusetzen!
+.end
+
+.string str_battle_xc5 GER
+	=\b\10_f\$uellt_KP_mit\nHilfe_von_\b\19_auf!
+.end
+
+.string str_battle_xc6 GER
+	=\b\19_von\n\b\10_macht_es_zu\leinem_\b_-Typ!
+.end
+
+.string str_battle_xc7 GER
+	=\b\19_von\n\b\11_verhindert\leine_Paralyse!
+.end
+
+.string str_battle_xc8 GER
+	=\b\19_von\n\b\10_verhindert\leine_Romanze!
+.end
+
+.string str_battle_xc9 GER
+	=\b\19_von\n\b\11_verhindert\leine_Vergiftung!
+.end
+
+.string str_battle_xca GER
+	=\b\19_von\n\b\10_verhindert\lVerwirrung!
+.end
+
+.string str_battle_xcb GER
+	=\b\19_von\n\b\10_erh\$oeht_die\lFeuer-Kraft!
+.end
+
+.string str_battle_xcc GER
+	=\b\10_verankert\nsich_mit_Hilfe_von_\b\19!
+.end
+
+.string str_battle_xcd GER
+	=\b\1a_von\n\b\13_vermindert\lANGRIFF_von_\b\10!
+.end
+
+.string str_battle_xce GER
+	=\b\1a_von\n\b\13_verhindert\lStatusver\$aenderungen!
+.end
+
+.string str_battle_xcf GER
+	=\b\19_von\n\b\10_verletzt\l\b\0f!
+.end
+
+.string str_battle_xd0 GER
+	=F\$AEHRTE_von\n\b\13\perkennt_\b\01\nvon_\b_!
+.end
+
+.string str_battle_xd1 GER
+	=steigt_stark!
+.end
+
+.string str_battle_xd2 GER
+	=steigt.
+.end
+
+.string str_battle_xd3 GER
+	=sinkt_stark!
+.end
+
+.string str_battle_xd4 GER
+	=sinkt.
+.end
+
+.string str_battle_xd5 GER
+	=\b__von\n\b\0f_\b\01
+.end
+
+.string str_battle_xd6 GER
+	=\b__von\n\b\10_\b\01
+.end
+
+.string str_battle_xd7 GER
+	=\b__von\n\b\0f_\b\01
+.end
+
+.string str_battle_xd8 GER
+	=\b__von\n\b\10_\b\01
+.end
+
+.string str_battle_xd9 GER
+	=Ein_Volltreffer!
+.end
+
+.string str_battle_xda GER
+	=Ein_K.O.-Treffer!
+.end
+
+.string str_battle_xdb GER
+	=\w\_spnr\201,_\w\_spnr\0f2_und\w\_spnr\0f..._\w\_spnr\0f..._\w\_spnr\0f..._\w\_spnr\0f\w\10\31_Schwupp!\p
+.end
+
+.string str_battle_xdc GER
+	=Und...\p
+.end
+
+.string str_battle_xdd GER
+	=Das_ist_nicht_sehr_effektiv...
+.end
+
+.string str_battle_xde GER
+	=Das_ist_sehr_effektiv!
+.end
+
+.string str_battle_xdf GER
+	=\w\10\11_Du_bist_entkommen!\p
+.end
+
+.string str_battle_xe0 GER
+	=\w\10\11_Wildes_\b__floh!
+.end
+
+.string str_battle_xe1 GER
+	=Du_kannst_aus_TRAINER-K\$aempfen\nnicht_fliehen!\p
+.end
+
+.string str_battle_xe2 GER
+	=Flucht_unm\$oeglich!\p
+.end
+
+.string str_battle_xe3 GER
+	=
+.end
+
+.string str_battle_xe4 GER
+	=Nichts_geschieht!
+.end
+
+.string str_battle_xe5 GER
+	=Es_schlug_fehl!
+.end
+
+.string str_battle_xe6 GER
+	=Es_hat_sich_vor_Verwirrung\nselbst_verletzt!
+.end
+
+.string str_battle_xe7 GER
+	=Der_SPIEGELTRICK_schlug_fehl!
+.end
+
+.string str_battle_xe8 GER
+	=Es_f\$aengt_an_zu_regnen!
+.end
+
+.string str_battle_xe9 GER
+	=Ein_Wolkenbruch!
+.end
+
+.string str_battle_xea GER
+	=Es_regnet_weiter.
+.end
+
+.string str_battle_xeb GER
+	=Der_Wolkenbruch_h\$aelt_an.
+.end
+
+.string str_battle_xec GER
+	=Es_hat_aufgeh\$oert_zu_regnen.
+.end
+
+.string str_battle_xed GER
+	=Ein_Sandsturm_kommt_auf!
+.end
+
+.string str_battle_xee GER
+	=Der_Sandsturm_tobt.
+.end
+
+.string str_battle_xef GER
+	=Der_Sandsturm_legt_sich.
+.end
+
+.string str_battle_xf0 GER
+	=Das_Sonnenlicht_wird_st\$aerker!
+.end
+
+.string str_battle_xf1 GER
+	=Glei\$sendes_Sonnenlicht!
+.end
+
+.string str_battle_xf2 GER
+	=Das_Sonnenlicht_l\$aesst_nach!
+.end
+
+.string str_battle_xf3 GER
+	=Es_f\$aengt_an_zu_hageln!
+.end
+
+.string str_battle_xf4 GER
+	=Es_hagelt!
+.end
+
+.string str_battle_xf5 GER
+	=Es_hat_aufgeh\$oert_zu_hageln.
+.end
+
+.string str_battle_xf6 GER
+	=Aber_es_konnte_nichts\nENTFESSELN!
+.end
+
+.string str_battle_xf7 GER
+	=Aber_es_konnte_nichts\nVERZEHREN!
+.end
+
+.string str_battle_xf8 GER
+	=Der_Wind_wurde_zu_einer\nHITZEWELLE!
+.end
+
+.string str_battle_xf9 GER
+	=Alle_Statusver\$aenderungen_wurden\nentfernt!
+.end
+
+.string str_battle_xfa GER
+	=Es_sind_\$ueberall_M\$uenzen_verstreut!
+.end
+
+.string str_battle_xfb GER
+	=Zu_schwach,_um_einen_DELEGATOR\neinzusetzen!
+.end
+
+.string str_battle_xfc GER
+	=Die_Kontrahenten_teilen\nihr_Leid!
+.end
+
+.string str_battle_xfd GER
+	=Eine_Glocke_l\$aeutet!
+.end
+
+.string str_battle_xfe GER
+	=Alle_betroffenen_Pok\emon_werden\nin_3_Runden_K.O._gehen!
+.end
+
+.string str_battle_xff GER
+	=Es_sind_keine_AP_mehr_f\$uer\ndiese_Attacke_\$uebrig!\p
+.end
+
+.string str_battle_x100 GER
+	=Aber_es_waren_keine_AP_mehr\nf\$uer_diese_Attacke_\$uebrig!
+.end
+
+.string str_battle_x101 GER
+	=\b\23_setzt\n\b\16_ein!
+.end
+
+.string str_battle_x102 GER
+	=Der_alte_Mann_wirft_einen\n\b\16!
+.end
+
+.string str_battle_x103 GER
+	=Der_TRAINER_hat_den_BALL\nabgeblockt!
+.end
+
+.string str_battle_x104 GER
+	=Sei_kein_Dieb!
+.end
+
+.string str_battle_x105 GER
+	=Es_ist_dem_BALL_ausgewichen!_Dieses\nPok\emon_kann_nicht_gefangen_werden!
+.end
+
+.string str_battle_x106 GER
+	=Du_hast_das_Pok\emon_verfehlt!
+.end
+
+.string str_battle_x107 GER
+	=Mist!\nDas_Pok\emon_hat_sich_befreit!
+.end
+
+.string str_battle_x108 GER
+	=Oh!\nFast_h\$aette_es_geklappt!
+.end
+
+.string str_battle_x109 GER
+	=Mist!\nDas_war_knapp!
+.end
+
+.string str_battle_x10a GER
+	=Verflixt!\nEs_h\$aette_beinahe_geklappt!
+.end
+
+.string str_battle_x10b GER
+	=Toll!\n\b\06_wurde_gefangen!\w\0a\w\0b\42\01\p
+.end
+
+.string str_battle_x10c GER
+	=Toll!\n\b\06_wurde_gefangen!\w\0a\w\0b\42\01\w\_spnr#
+.end
+
+.string str_battle_x10d GER
+	=M\$oechtest_du_dem_\b\06\neinen_Spitznamen_geben?
+.end
+
+.string str_battle_x10e GER
+	=\b\06_wurde_auf\n\b\27_PC_\$uebertragen.
+.end
+
+.string str_battle_x10f GER
+	=F\$uer_\b\06_wurde_ein_Eintrag\nim_Pok\edex_angelegt.\p
+.end
+
+.string str_battle_x110 GER
+	=Es_regnet.
+.end
+
+.string str_battle_x111 GER
+	=Ein_Sandsturm_tobt.
+.end
+
+.string str_battle_x112 GER
+	=Flucht_unm\$oeglich!\p
+.end
+
+.string str_battle_x113 GER
+	=\b\0f_ignoriert_die\nBefehle._Es_schl\$aeft!
+.end
+
+.string str_battle_x114 GER
+	=\b\0f_ignoriert_den\nBefehl!
+.end
+
+.string str_battle_x115 GER
+	=\b\0f_macht\nein_Nickerchen!
+.end
+
+.string str_battle_x116 GER
+	=\b\0f_faulenzt!
+.end
+
+.string str_battle_x117 GER
+	=\b\0f_ist\nungehorsam!
+.end
+
+.string str_battle_x118 GER
+	=\b\0f_wendet\nsich_ab!
+.end
+
+.string str_battle_x119 GER
+	=\b\0f_gibt_vor,\nnichts_zu_bemerken!
+.end
+
+.string str_battle_x11a GER
+	=Als_N\$aechstes_wird_\b\01_von\n\b\1c_\b\1d_eingesetzt.\pWird_\b\23_das\nPok\emon_wechseln?
+.end
+
+.string str_battle_x11b GER
+	=\b\23_hat_einen_STEin_auf\n\b\06_geworfen.
+.end
+
+.string str_battle_x11c GER
+	=\b\23_wirft_einen_K\$OEDER\nf\$uer_\b\06_aus.
+.end
+
+.string str_battle_x11d GER
+	=\b\06_beobachtet\nalles_aufmerksam!
+.end
+
+.string str_battle_x11e GER
+	=\b\06_ist_w\$uetend!
+.end
+
+.string str_battle_x11f GER
+	=\b\06_frisst!
+.end
+
+.string str_battle_x120 GER
+	=
+.end
+
+.string str_battle_x121 GER
+	=
+.end
+
+.string str_battle_x122 GER
+	=\w\10\42_ANSAGE:_Du_hast_keine\nSAFARIB\$AELLE_mehr!_Game_over!\p
+.end
+
+.string str_battle_x123 GER
+	=\b\16_von\n\b\13\lheilte_die_Paralyse!
+.end
+
+.string str_battle_x124 GER
+	=\b\16_von\n\b\13\lheilte_die_Vergiftung!
+.end
+
+.string str_battle_x125 GER
+	=\b\16_von\n\b\13\lheilte_die_Verbrennung!
+.end
+
+.string str_battle_x126 GER
+	=\b\16_von\n\b\13_taute_es_auf!
+.end
+
+.string str_battle_x127 GER
+	=\b\16_von\n\b\13_\lweckte_es_auf!
+.end
+
+.string str_battle_x128 GER
+	=\b\16_von\n\b\13\lhebt_die_Verwirrung_auf!
+.end
+
+.string str_battle_x129 GER
+	=\b\16_von\n\b\13_\lheilte_sein_Problem_mit_\b_!
+.end
+
+.string str_battle_x12a GER
+	=\b\16_f\$uellte\nKP_von_\b\13_auf!
+.end
+
+.string str_battle_x12b GER
+	=\b\16_von\n\b\13_f\$uellte_AP_von\l\b__auf!
+.end
+
+.string str_battle_x12c GER
+	=\b\16_von\n\b\13\pstellte_seine\nStatuswerte_wieder_her!
+.end
+
+.string str_battle_x12d GER
+	=\b\16_von\n\b\13\lf\$uellte_einige_KP_auf!
+.end
+
+.string str_battle_x12e GER
+	=\b\16_erlaubt\nnur_den_Einsatz_von_\b\14!\p
+.end
+
+.string str_battle_x12f GER
+	=\b\10_h\$aelt\nmit_Hilfe_von\l\b\16_durch!
+.end
+
+.string str_battle_x130 GER
+	=
+.end
+
+.string str_battle_x131 GER
+	=\b\e_von\n\b\11_verhindert\lVerbrennung!
+.end
+
+.string str_battle_x132 GER
+	=\b\19_von\n\b\10_blockiert\l\b\14!
+.end
+
+.string str_battle_x133 GER
+	=\b\18_von\n\b\0f_f\$uellt\leinige_KP_auf!
+.end
+
+.string str_battle_x134 GER
+	=\b\1a_von\n\b\13_entfacht\leinen_Sandsturm!
+.end
+
+.string str_battle_x135 GER
+	=\b\1a_von\n\b\13_verhindert_\lden_Verlust_von_\b_!
+.end
+
+.string str_battle_x136 GER
+	=\b\0f_ist_vernarrt\nin_\b\19_von\l\b\10!
+.end
+
+.string str_battle_x137 GER
+	=\b\19_von\n\b\10_macht\l\b\14_wirkungslos!
+.end
+
+.string str_battle_x138 GER
+	=\b\1a_von\n\b\13_heilt_sein\lProblem_mit_\b_!
+.end
+
+.string str_battle_x139 GER
+	=Es_saugt\nKLOAKENSOSSE_auf!
+.end
+
+.string str_battle_x13a GER
+	=\b\13\nverwandelt_sich!
+.end
+
+.string str_battle_x13b GER
+	=Die_St\$aerke_der_Elektrizit\$aet\nwurde_geschw\$aecht!
+.end
+
+.string str_battle_x13c GER
+	=Die_St\$aerke_des_Feuers\nwurde_geschw\$aecht!
+.end
+
+.string str_battle_x13d GER
+	=\b\0f_taucht\nunter!
+.end
+
+.string str_battle_x13e GER
+	=\b\0f_springt_hoch!
+.end
+
+.string str_battle_x13f GER
+	=VM-Attacken_k\$oennen_jetzt_\nnicht_vergessen_werden.\p
+.end
+
+.string str_battle_x140 GER
+	=\b\0f_hat_1\n\b\16_gefunden!
+.end
+
+.string str_battle_x141 GER
+	=Spieler_besiegt\n\b\1c_\b\1d!\p
+.end
+
+.string str_battle_x142 GER
+	=Ein_wohltuendes_Aroma\nbreitet_sich_aus!
+.end
+
+.string str_battle_x143 GER
+	=Hier_k\$oennen_Items_nicht_eingesetzt\nwerden.\w\_spnr\40
+.end
+
+.string str_battle_x144 GER
+	=F\$uer_\b\13_war\n\b\16_\b_
+.end
+
+.string str_battle_x145 GER
+	=\b\16:_\b__von\n\b\13_\b\01
+.end
+
+.string str_battle_x146 GER
+	=\b\13_setzt\n\b\16_ein,_um_zu_dr\$aengeln!
+.end
+
+.string str_battle_x147 GER
+	=\b\19_von\n\b\10_hebt_die\lWirkung_von_\b\14_auf!
+.end
+
+.string str_battle_x148 GER
+	=\b\10_wurde_durch\nSANDGRAB_gefangen!
+.end
+
+.string str_battle_x149 GER
+	=
+.end
+
+.string str_battle_x14a GER
+	=_spezielle
+.end
+
+.string str_battle_x14b GER
+	=\b\1a_von\n\b\13_intensiviert\ldie_Sonnenstrahlen!
+.end
+
+.string str_battle_x14c GER
+	=\b\10_wehrt_Boden-\nAttacken_mit_\b\19_ab!
+.end
+
+.string str_battle_x14d GER
+	=Nun_muss_man_einen_BALL_werfen,\noder?_Ich..._Ich_werde_mein_Bestes\lgeben!
+.end
+
+.string str_battle_x14e GER
+	=\b\19_von\n\b\10_\$uebernimmt\lden_Angriff!
+.end
+
+.string str_battle_x14f GER
+	=\b\0f_w\$aehlte\n\b\14_als_Vorhersehung_aus!
+.end
+
+.string str_battle_x150 GER
+	=\b\0f_hat_seinen\nFokus_verloren_und_kann\lnicht_angreifen!
+.end
+
+.string str_battle_x151 GER
+	=N\$aechstes_Pok\emon_einsetzen?
+.end
+
+.string str_battle_x152 GER
+	=\w\10\11_\b\0f_flieht\ndurch_Einsatz_von_\b\16!\p
+.end
+
+.string str_battle_x153 GER
+	=\w\10\11_\b\0f_flieht\ndurch_Einsatz_von_\b\18!\p
+.end
+
+.string str_battle_x154 GER
+	=\b\10_wurde\nauserw\$aehlt!\p
+.end
+
+.string str_battle_x155 GER
+	=\b\19_von\n\b\10_macht\p\b__von\n\b\13_wirkungslos!
+.end
+
+.string str_battle_x156 GER
+	=\b\16_von\n\b\13_normalisierte\lseine_Statuswerte!
+.end
+
+.string str_battle_x157 GER
+	=\b\16_wird_von\n\b\1c_\b\1d_eingesetzt!
+.end
+
+.string str_battle_x158 GER
+	=Die_BOXEN_sind_voll!\nDu_kannst_keines_mehr_fangen!\p
+.end
+
+.string str_battle_x159 GER
+	=\b\10_wehrt_die\nAttacke_ab!
+.end
+
+.string str_battle_x15a GER
+	=\b\1a_von\n\b\13_machte\les_wirkungslos!
+.end
+
+.string str_battle_x15b GER
+	=\b\e_von\n\b\11_verhindert\lein_Zur\$ueckschrecken!
+.end
+
+.string str_battle_x15c GER
+	=\b\10_brennt\nbereits.
+.end
+
+.string str_battle_x15d GER
+	=Status_von_\b\10\nkann_nicht_weiter_sinken!
+.end
+
+.string str_battle_x15e GER
+	=\b\1a_von\n\b\13_blockiert\l\b\14!
+.end
+
+.string str_battle_x15f GER
+	=\b__von\n\b\28_l\$aesst_nach!
+.end
+
+.string str_battle_x160 GER
+	=\b\14_von\n\b\2a\lerh\$oeht_etwas_die_VERTEIDIGUNG!
+.end
+
+.string str_battle_x161 GER
+	=Die_SP._VER._wird_etwas_durch\n\b\14_von\l\b\2a_erh\$oeht.
+.end
+
+.string str_battle_x162 GER
+	=Die_Mauer_brach_zusammen!
+.end
+
+.string str_battle_x163 GER
+	=\b\18_von\n\b\0f_macht\p\b\19_von\n\b\10_wirkungslos!
+.end
+
+.string str_battle_x164 GER
+	=\b\1a_von\n\b\13_heilt_sein\lProblem_mit_\b_!
+.end
+
+.string str_battle_x165 GER
+	=\b\0f\nkann_nicht_fliehen!
+.end
+
+.string str_battle_x166 GER
+	=\b\0f_erh\$aelt\n\b_.
+.end
+
+.string str_battle_x167 GER
+	=\b\10_erh\$aelt\n\b\01.
+.end
+
+.string str_battle_x168 GER
+	=\b\0f_erh\$aelt\n\b_.\p\b\10_erh\$aelt\n\b\01.
+.end
+
+.string str_battle_x169 GER
+	=Es_ist_wirkungslos!
+.end
+
+.string str_battle_x16a GER
+	=\b\1a_von\n\b\13_hat_keine\lWirkung_auf_\b\11!
+.end
+
+.string str_battle_x16b GER
+	=Tann:_Hm!_Grandios!\pBei_einem_Sieg_erh\$aeltst_du_ein\nPreisgeld_und_deine_Pok\emon\lwerden_st\$aerker!\lK\$aempfe_gegen_andere_TRAINER\lund_st\$aerke_so_deine_Pok\emon!\p
+.end
+
+.string str_battle_x16c GER
+	=Tann:_Hm\b0\nWie_entt\$aeuschend\b0\pBei_einem_Sieg_erh\$aeltst_du_ein\nPreisgeld_und_deine_Pok\emon\lwerden_st\$aerker!\lWenn_du_aber_verlierst,_\b\23,\lmusst_du_das_Preisgeld_zahlen\b0\pDa_du_dies_noch_nicht_wusstest,\nzahle_ich_f\$uer_dich.\pAber_wenn_du_durch_diese_T\$uer\nschreitest,_wird_das_nicht_mehr\lso_sein.\lDaher_musst_du_deine_Pok\emon\lst\$aerken,_indem_du_gegen_wilde\lPok\emon_k\$aempfst.\p
+.end
+
+.string str_battle_x16d GER
+	=\b\23_hat_kein\nkampff\$aehiges_Pok\emon_mehr!\pSpieler_verlor_gegen\n\b\1c_\b\1d!\w\09
+.end
+
+.string str_battle_x16e GER
+	=\b\23_gab_\b_\b7_Preisgeld\b0\p\b0\b0\b0\b0\p\b\23_f\$aellt_in_Ohnmacht!\w\09
+.end
+
+.string str_battle_x16f GER
+	=\b\03_wurde_auf_JEMANDES_PC\n\$uebertragen.\pEs_wurde_in_BOX\n\b1\b\02\b2_abgelegt.
+.end
+
+.string str_battle_x170 GER
+	=\b\03_wurde_auf_BILLs_PC\n\$uebertragen.\pEs_wurde_in_BOX\n\b1\b\02\b2_abgelegt.
+.end
+
+.string str_battle_x171 GER
+	=BOX_\b1\b\04\b2_in\nJEMANDES_PC_ist_voll.\p\b\03_wurde_in_BOX\n\b1\b\02\b2_\$uebertragen.
+.end
+
+.string str_battle_x172 GER
+	=BOX_\b1\b\04\b2_in\nBILLs_PC_ist_voll.\p\b\03_wurde_in_BOX\n\b1\b\02\b2_\$uebertragen.
+.end
+
+.string str_battle_x173 GER
+	=Der_POK\eKUMPEL_wirft_einen\n\b\16!
+.end
+
+.string str_battle_x174 GER
+	=\b\23_spielt_\b\16!\pEine_sch\$oene_Melodie!
+.end
+
+.string str_battle_x175 GER
+	=\b\23_spielt_\b\16.
+.end
+
+.string str_battle_x176 GER
+	=Beim_Erklingen_der_FL\$OETE\nwacht_das_Pok\emon_auf!
+.end
+
+.string str_battle_x177 GER
+	=\b+
+.end
+
+.string str_battle_x178 GER
+	=\b\2f
+.end
+
+.string str_battle_x179 GER
+	=\b\23_f\$aellt_in_Ohnmacht!\w\09
+.end
+
+.string str_battle_x17a GER
+	=\b\0f_kann_sich_vor_Angst\nnicht_bewegen!
+.end
+
+.string str_battle_x17b GER
+	=Geist:_Hau_ab..._Verschwinde...
+.end
+
+.string str_battle_x17c GER
+	=Das_SILPH_SCOPE_hat_den_Geist\nidentifiziert!
+.end
+
+.string str_battle_x17d GER
+	=Der_Geist_war_KNOGGA!\p
+.end
+
+.string str_battle_x17e GER
+	=\b\1d:_\b\06,_komm\nzur\$ueck!
+.end
+
+.string str_battle_x17f GER
+	=\b\25
+.end
+
+.string str_battle_x180 GER
+	=\b\1d:_\b\_spnr,_komm\nzur\$ueck!
+.end
+
+.string str_battle_x181 GER
+	=\b\1d:_\b\06_und\n\b\_spnr,_kommt_zur\$ueck!
+.end
+
+.string str_battle_x182 GER
+	=\b\0f_wurde_durch\n\b\18_verletzt!
+.end
+
+.string str_battle_x183 GER
+	=\b\0f_wurde_von_seinem\nLeben-Orb_verletzt!
+.end
+
+.string str_battle_x184 GER
+	=\b\0f_wird\ndurch_\b\18\lzu_einem_\b_-Typ!
+.end
+
+.string str_battle_x185 GER
+	=\b\1a_von\n\b\13_steigert_seinen\lAngr.,_senkt_aber_die\lVert.
+.end
+
+.string str_battle_x186 GER
+	=\b\0f_nutzt\n\b\18,_um_seine\lGenauigkeit_zu_steigern.
+.end
+
+.string str_battle_x187 GER
+	=\b\1a_von_\b\13\nl\$aesst_es_hageln!
+.end
+
+.string str_battle_x188 GER
+	=
+.end
+
+.string str_battle_x189 GER
+	=\b\1a_von_\b\13\nsteigert_seinen_Angriff.
+.end
+
+.string str_battle_x18a GER
+	=\b\0f_nutzt_\b\18,\nund_verbraucht_keine_Ap!
+.end
+
+.string str_battle_x18b GER
+	=\b\12_wechselt_in\nseine_Klingenform!
+.end
+
+.string str_battle_x18c GER
+	=\b\12_wechselt_in\nseine_Schildform!
+.end
+
+.string str_battle_x18d GER
+	=Robustheit_wird_wirksam!
+.end
+
+.string str_battle_x18e GER
+	=\b\13's_F\$aehigkeit,\nluzid_zu_tr\$aeumen,_steigert\lseinen_Sp.Angr._
+.end
+
+.string str_battle_x18f GER
+	=Die_Kaiseraura_von_\b\10\nsch\$uechtert_\b\13_ein!
+.end
+
+.string str_battle_x190 GER
+	=Die_rote_Kaiseraura_von\n\b\10_l\$aesst_Wasser-\lAngriffe_verdampfen!
+.end
+
+.string str_battle_x191 GER
+	=Die_blaue_Kaiseraura_von\n\b\10_l\$aesst_Feuer-\lAngriffe_erl\$oeschen!
+.end
+
+.string str_battle_x192 GER
+	=Die_gr\$uene_Kaiseraura_von\n\b\10_macht_es_immun\lgegen_elementare_Angriffe!
+.end
+
+.string str_battle_x193 GER
+        =\b\10 wurde durch\n\b\18 von\l\b\0f verletzt!
+.end
+
+.string str_battle_x194 GER
+        =\b\13 ist abgeprallt!\nSein Angriff sinkt stark!
+.end
+
+.string str_battle_x195 GER
+        =\b\0f konnte durch\n\b\18 einige Kp\lzurückgewinnen!
+.end
+
+.string str_battle_x196 GER
+        =\b\0f verfällt in\nTollwut!
+.end

@@ -100,12 +100,6 @@ def shell(argv):
         fd.write(output)
         fd.close()
 
-        #Dump the string output
-        output = "\n\n".join([".string " + label + " GER\n\t=" + content + "\n.end\n" for label, content in tree.strings])
-        fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + "_strings.txt", "w+")
-        fd.write(output)
-        fd.close()
-
     else:
         #Dump the script output
         for assembly_offset, assembly in tree.assemblies:
@@ -115,13 +109,12 @@ def shell(argv):
             fd.close()
             if verbose: print("Exported script at", hex(assembly_offset), "sucessfully.")
 
-        #Dump the string output
-        for label, content in tree.strings:
-            
-            fd = open(outpath + "/" + filename + "_strings.txt", "w+")
-            fd.write(".string " + label + " GER\n\t=" + content + "\n.end\n")
-            fd.close()
-            if verbose: print("Exported string " + label + "sucessfully.")
+
+    #Dump the string output
+    output = "\n\n".join([".string " + label + " GER\n\t=" + content + "\n.end\n" for label, content in tree.strings])
+    fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + "_strings.txt", "w+")
+    fd.write(output)
+    fd.close()
 
 
 if __name__ == "__main__":

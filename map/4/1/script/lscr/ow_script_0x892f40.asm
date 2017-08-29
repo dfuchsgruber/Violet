@@ -9,27 +9,56 @@ goto ow_script_0x96b13e
 
 .global ow_script_0x96b13e
 ow_script_0x96b13e:
+//init some stuff
 special 0x43
-setvar STORY_PROGRESS 0x1
+setvar POKEPAD_SHORTCUTS 0xffff
+addvar STORY_PROGRESS 0x1 @//beforehand raise of storyvar to not trigger again at mapreload
+setflag MAP_BGN_AUTO_ALIGN_OFF
+setvar 0x8004 11
+special 0x19
+waitstate
+loadpointer 0x0 str_0x89553b
+callstd MSG_KEEPOPEN
+setvar DYN_MULTICHOICE_ITEM_CNT 0x5
+loadpointer 0x0 difficulty_choices
+multichoice2 0x3 0x1 0x0 0x2 0x1
+copyvar DIFFICULTY LASTRESULT
+@//Fading back to black and then, while dark, let the player run to his bed (hacky af, but w/e)
+
+setvar 0x8004 12
+special 0x19
+waitstate
+clearflag MAP_BGN_AUTO_ALIGN_OFF
+waitstate //both waitstates are resolved in animation 12
+pause 0x20
+fadescreen 1
+applymovement 0xFF mov_player_to_bed
+waitmovement 0
+setvar 0x8004 13
+special 0x19
+waitstate //now disable the bg aligment again
+setflag MAP_BGN_AUTO_ALIGN_OFF
+waitstate
+
+
 end
 
-callasm 0x9189b81
-setvar POKEPAD_SHORTCUTS 0xffff
-goto ow_script_0x840091
+
+mov_player_to_bed:
+.byte STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST
+.byte STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST, STEP_DOWN_FAST
+.byte STOP
 
 
-.global ow_script_0x840091
-ow_script_0x840091:
-fadesong 0x0
-fadescreen 0x1
-loadpointer 0x0 str_0x89553b
-callstd MSG
-setvar DYN_MULTICHOICE_ITEM_CNT 0x5
-loadpointer 0x0 str_0x892f6e
-multichoice2 0x8 0x4 0x0 0x2 0x1
-copyvar DIFFICULTY LASTRESULT
-setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-goto ow_script_0x8ceeb1
+.align 4
+difficulty_choices:
+    .word str_difficulty_very_easy, 0
+    .word str_difficulty_easy, 0
+    .word str_difficulty_normal, 0
+    .word str_difficulty_hard, 0
+    .word str_difficulty_very_hard, 0
+
+
 
 
 .global ow_script_0x8ceeb1

@@ -1,19 +1,17 @@
 import os
 import agb
 import pymapex, pysetex, owscript
-from pymap import project as project
+from pymap import project as project, config
 
 #Hacky module for multi export of map, tileset and wild data
 
-MAPOUTPUT = "../map/%b/%m/map_%b_%m.pmh" #%b will be replaced with bank and %m with map
-MAPSYM = "map_%b_%m"
-TSOUTPUT = "../map/tileset/tileset%n/maptileset%n" #%s will be replaced with the offset and %n with the number relative to TSTABLE
-TSGRAPHIC = "../map/tileset/tileset%n/gfx_maptileset%n.png" #Can be None as well - no graphic will be exported then
-TSGFXSYM = "gfx_maptileset%nTiles"
-TSSYM = "maptileset%n"
-
-PROJ = "../map/proj.pmp"
-
+MAPOUTPUT = config.MAPOUTPUT #%b will be replaced with bank and %m with map
+MAPSYM = config.MAPSYM
+TSOUTPUT = config.TSOUTPUT #%s will be replaced with the offset and %n with the number relative to TSTABLE
+TSGRAPHIC = config.TSGRAPHIC #Can be None as well - no graphic will be exported then
+TSGFXSYM = config.TSGFXSYM
+TSSYM = config.TSSYM
+PROJ = config.STDPROJ
 MAPTABLEPTR = pymapex.DEFAULT_TABLE
 TSTABLE = pysetex.DEFAULT_TABLE
 
@@ -22,7 +20,7 @@ def _mkdirs(dir):
         os.makedirs(dir)
 
 def shell():
-    rom = agb.Agbrom()
+    rom = agb.Agbrom(path=config.STDROM)
     try: proj = project.Project.load_project(PROJ)
     except: 
         proj = project.Project()

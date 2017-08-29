@@ -1,0 +1,1500 @@
+.string str_item_desc_x0_item_none GER
+	=_????
+.end
+
+.string str_item_desc_x1_item_meisterball GER
+	=Der Ball mit bester Erfolgsquote.\nFängt jedes Pok\emon garantiert.
+.end
+
+.string str_item_desc_x2_item_hyperball GER
+	=Ein_Ball_mit_hoher_Erfolgsquote.\nDem_Superball_in_allen\nPunkten_\$ueberlegen.
+.end
+
+.string str_item_desc_x3_item_superball GER
+	=Ein_Ball_mit_guter_Erfolgsquote.\nDem_Pok\eball_in_allen\nPunkten_\$ueberlegen.
+.end
+
+.string str_item_desc_x4_item_pokeball GER
+	=Damit_f\$aengst_du_wilde_Pok\emon.\nDas_Design_\$aehnelt_einer\nKapsel.
+.end
+
+.string str_item_desc_x5_item_safariball GER
+	=Ein_Ball,_der_nur_in_der_Safari-\nZone_eingesetzt_wird._Er_besticht\ndurch_sein_Tarnfarbenmuster.
+.end
+
+.string str_item_desc_x6_item_netzball GER
+	=Ein_Ball,_der_Pok\emon_der\nElementklassen_Wasser\nund_K\$aefer_besser_f\$aengt.
+.end
+
+.string str_item_desc_x7_item_tauchball GER
+	=Ein_Ball,_mit_dem_sich\nPok\emon_vom_Meeresgrund\nbesser_fangen_lassen.
+.end
+
+.string str_item_desc_x8_item_nestball GER
+	=Ein_Ball,_dessen_Erfolgsquote\nbesonders_bei_schw\$aecheren\nPok\emon_sehr_hoch_ist.
+.end
+
+.string str_item_desc_x9_item_wiederball GER
+	=Ein_Ball,_der_f\$uer_bereits\ngefangene_Pok\emon_besser\ngeeignet_ist.
+.end
+
+.string str_item_desc_xa_item_timerball GER
+	=Ein_Ball,_der_mit_zunehmender\nKampfdauer_effektiver_wird.
+.end
+
+.string str_item_desc_xb_item_luxusball GER
+	=Ein_behaglicher_Ball,_der\nPok\emon_veranlasst,_nach\ndem_Fang_freundlicher_zu_werden.
+.end
+
+.string str_item_desc_xc_item_premierball GER
+	=Ein_seltener_Ball,_der_als\nReminiszenz_an_irgendein\nEreignis_hergestellt_wurde.
+.end
+
+.string str_item_desc_xd_item_trank GER
+	=Die_Kp_eines_Pok\emon\nwerden_um_20_Punkte_aufgef\$uellt.
+.end
+
+.string str_item_desc_xe_item_gegengift GER
+	=Heilt_Vergiftungen_bei_Pok\emon.
+.end
+
+.string str_item_desc_xf_item_feuerheiler GER
+	=Heilt_Verbrennungen_bei_Pok\emon.
+.end
+
+.string str_item_desc_x10_item_eisheiler GER
+	=Taut_ein_eingefrorenes\nPok\emon_wieder_auf.
+.end
+
+.string str_item_desc_x11_item_aufwecker GER
+	=Weckt_ein_schlafendes\nPok\emon_wieder_auf.
+.end
+
+.string str_item_desc_x12_item_para_heiler GER
+	=Heilt_Paralyse_bei_Pok\emon.
+.end
+
+.string str_item_desc_x13_item_top_genesung GER
+	=Stellt_gesamte_Kp_und_Status\neines_Pok\emon_wieder_her.
+.end
+
+.string str_item_desc_x14_item_top_trank GER
+	=F\$uellt_die_Kp_eines_Pok\emon\nvollst\$aendig_auf.
+.end
+
+.string str_item_desc_x15_item_hypertrank GER
+	=F\$uellt_die_Kp_eines_Pok\emon_um\n200_Punkte_auf.
+.end
+
+.string str_item_desc_x16_item_supertrank GER
+	=F\$uellt_die_Kp_eines_Pok\emon_um\n50_Punkte_auf.
+.end
+
+.string str_item_desc_x17_item_hyperheiler GER
+	=Beseitigt_alle_Statusprobleme\neines_Pok\emon.
+.end
+
+.string str_item_desc_x18_item_beleber GER
+	=Belebt_ein_Pok\emon_und_f\$uellt\ndessen_Kp_zur_H\$aelfte_wieder_auf.
+.end
+
+.string str_item_desc_x19_item_top_beleber GER
+	=Belebt_ein_Pok\emon_und_f\$uellt\ndie_Kp_vollst\$aendig_wieder_auf.
+.end
+
+.string str_item_desc_x1a_item_tafelwasser GER
+	=Ein_stilles_Wasser_mit_hohem\nMineralienanteil,_das_die_Kp_eines\nPok\emon_um_50_Punkte_auff\$uellt.
+.end
+
+.string str_item_desc_x1b_item_sprudel GER
+	=Ein_sprudelndes_Mineralwasser,\ndas_die_Kp_eines_Pok\emon\num_60_Punkte_auff\$uellt.
+.end
+
+.string str_item_desc_x1c_item_limonade GER
+	=Ein_s\$ue\$ses_Getr\$aenk,_das_die_Kp_eines\nPok\emon_um_80_Punkte_auff\$uellt.
+.end
+
+.string str_item_desc_x1d_item_kuhmuh_milch GER
+	=Vitaminreiche_Milch,_welche_die_Kp\neines_Pok\emon_um\n100_Punkte_auff\$uellt.
+.end
+
+.string str_item_desc_x1e_item_energiestaub GER
+	=Ein_bitteres_Pulver,_das_die_Kp\neines_Pok\emon_um\n50_Punkte_auff\$uellt.
+.end
+
+.string str_item_desc_x1f_item_kraftwurzel GER
+	=Eine_bittere_Wurzel,_welche_die_Kp\neines_Pok\emon_um\n200_Punkte_auff\$uellt.
+.end
+
+.string str_item_desc_x20_item_heilpuder GER
+	=Ein_bitteres_Pulver,_das_alle\nStatusprobleme_eines_Pok\emon_\nbeseitigt.
+.end
+
+.string str_item_desc_x21_item_vitalkraut GER
+	=Ein_bitteres_Kraut,_das_besiegte\nPok\emon_belebt_und_die_Kp\nvollst\$aendig_auff\$uellt.
+.end
+
+.string str_item_desc_x22_item_aether GER
+	=F\$uellt_Ap_einer_ausgew\$aehlten_Attacke\neines_Pok\emon_um_10_Punkte_auf.
+.end
+
+.string str_item_desc_x23_item_top_aether GER
+	=F\$uellt_Ap_einer_ausgew\$aehlten_Attacke\neines_Pok\emon_vollst\$aendig_auf.
+.end
+
+.string str_item_desc_x24_item_elixier GER
+	=F\$uellt_alle_Ap_aller_Attacken_eines\nPok\emon_um_10_Punkte_auf.
+.end
+
+.string str_item_desc_x25_item_top_elixier GER
+	=F\$uellt_alle_Ap_aller_Attacken_eines\nPok\emon_vollst\$aendig_auf.
+.end
+
+.string str_item_desc_x26_item_lavakeks GER
+	=Eine_Spezialit\$aet_aus_Bad\nLavastadt,_die_alle\nStatusprobleme_eines_Pok\emon_heilt.
+.end
+
+.string str_item_desc_x27_item_blaue_floete GER
+	=Eine_blaue,_gl\$aeserne_Fl\$oete,_die\nschlafende_Pok\emon_aufweckt.
+.end
+
+.string str_item_desc_x28_item_gelbe_floete GER
+	=Eine_gelbe,_gl\$aeserne_Fl\$oete,_die\nverwirrte_Pok\emon_heilt.
+.end
+
+.string str_item_desc_x29_item_rote_floete GER
+	=Eine_rote,_gl\$aeserne_Fl\$oete,_die\nPok\emon_von_Anziehung_heilt.
+.end
+
+.string str_item_desc_x2a_item_schw_floete GER
+	=Eine_schwarze,_gl\$aeserne_Fl\$oete,_die\nwilde_Pok\emon_vom_Angriff\nabhalten_kann.
+.end
+
+.string str_item_desc_x2b_item_weisse_floete GER
+	=Eine_durchsichtige,_gl\$aeserne_Fl\$oete,\ndie_wilde_Pok\emon_anziehen_kann.
+.end
+
+.string str_item_desc_x2c_item_beerensaft GER
+	=Reiner_Fruchtsaft,_der_die_Kp_eines\nPok\emon_um_20_Punkte_auff\$uellt.
+.end
+
+.string str_item_desc_x2d_item_zauberasche GER
+	=Belebt_und_erfrischt_alle_besiegten\nPok\emon_und_f\$uellt_deren_Kp\nvollst\$aendig_wieder_auf.
+.end
+
+.string str_item_desc_x2e_item_kuestensalz GER
+	=Salz,_das_sich_tief_in_der_K\$uesten-\nH\$oehle_befand._Es_ist_extrem_salzig!
+.end
+
+.string str_item_desc_x2f_item_kuestenschale GER
+	=Eine_sch\$oene_Muschelschale,_die\nsich_in_der_K\$uestenh\$oehle_befand.\nSie_ist_blau_und_wei\$s_gestreift.
+.end
+
+.string str_item_desc_x30_item_purpurstueck GER
+	=Eine_rote_Scherbe_eines_antiken\nWerkzeugs,_das_vor_langer_Zeit\nangefertigt_wurde.
+.end
+
+.string str_item_desc_x31_item_indigostueck GER
+	=Eine_blaue_Scherbe_eines_antiken\nWerkzeugs,_das_vor_langer_Zeit\nangefertigt_wurde.
+.end
+
+.string str_item_desc_x32_item_gelbstueck GER
+	=Eine_gelbe_Scherbe_eines_antiken\nWerkzeugs,_das_vor_langer_Zeit\nangefertigt_wurde.
+.end
+
+.string str_item_desc_x33_item_gruenstueck GER
+	=Eine_gr\$uene_Scherbe_eines_antiken\nWerkzeugs,_das_vor_langer_Zeit\nangefertigt_wurde.
+.end
+
+.string str_item_desc_x34_item_magmaisierer GER
+	=Eine_Schachtel_voller_Magmaenergie.\nDas_Lieblingsst\$ueck_eines\nbestimmten_Pok\emon.
+.end
+
+.string str_item_desc_x35_item_stromisierer GER
+	=Ein_Item,_das_Elektek_zur\nEntwicklung_ben\$oetigt.
+.end
+
+.string str_item_desc_x36_item_schoenschuppe GER
+	=Ein_Item,_das_Barschwa_zur\nEntwicklung_ben\$oetigt.
+.end
+
+.string str_item_desc_x37_item_dubiosdisk GER
+	=Ein_Item,_das_Porygon2_zur\nEntwicklung_ben\$oetigt.
+.end
+
+.string str_item_desc_x38_item_duesterumhang GER
+	=Ein_Item,_das_Zwirrklop_zur\nEntwicklung_ben\$oetigt.
+.end
+
+.string str_item_desc_x39_item_schuetzer GER
+	=Ein_Item,_das_Rizeros_zur\nEntwicklung_ben\$oetigt.
+.end
+
+.string str_item_desc_x3a_item_leben_orb GER
+	=Ein_Item_zum_Tragen.\nVerst\$aerkt_Attacken,_aber_jede\nAttacke_kostet_Kp.
+.end
+
+.string str_item_desc_x3b_item_evolith GER
+	=Ein_mysteri\$oeser_Klumpen,_der_Vert.\nund_Sp.Vert._von_Pok\emon_steigert,\ndie_sich_noch_entwickeln_k\$oennen.
+.end
+
+.string str_item_desc_x3c_item_item_3c GER
+	=_????
+.end
+
+.string str_item_desc_x3d_item_item_3d GER
+	=_????
+.end
+
+.string str_item_desc_x3e_item_item_3e GER
+	=_????
+.end
+
+.string str_item_desc_x3f_item_kp_plus GER
+	=Ein_gehaltvolles_Getr\$aenk,_das_die\nKp-Anzeige_eines_Pok\emon_erh\$oeht.
+.end
+
+.string str_item_desc_x40_item_protein GER
+	=Ein_gehaltvolles_Getr\$aenk,_das_den\nAngr.-Wert_eines_Pok\emon_hebt.
+.end
+
+.string str_item_desc_x41_item_eisen GER
+	=Ein_gehaltvolles_Getr\$aenk,_das_den\nVert.-Wert_eines_Pok\emon_hebt.
+.end
+
+.string str_item_desc_x42_item_carbon GER
+	=Ein_gehaltvolles_Getr\$aenk,_das_den\nInit.-Wert_eines_Pok\emon_hebt.
+.end
+
+.string str_item_desc_x43_item_kalzium GER
+	=Ein_gehaltvolles_Getr\$aenk,_das_den\nSp._Ang.-Wert_eines_Pok\emon\nhebt.
+.end
+
+.string str_item_desc_x44_item_sonderbonbon GER
+	=Ein_energiereiches_Bonbon,_das\nden_Level_eines_Pok\emon_um\neins_anhebt.
+.end
+
+.string str_item_desc_x45_item_ap_plus GER
+	=Hebt_die_maximale_Anzahl_der_Ap\neiner_Attacke_eines_Pok\emon.
+.end
+
+.string str_item_desc_x46_item_zink GER
+	=Ein_gehaltvolles_Getr\$aenk,_das_den\nSp._Ver.-Wert_eines_Pok\emon\nhebt.
+.end
+
+.string str_item_desc_x47_item_ap_top GER
+	=Maximiert_die_Anzahl_der_Ap\neiner_Attacke_eines_Pok\emon.
+.end
+
+.string str_item_desc_x48_item_item_48 GER
+	=_????
+.end
+
+.string str_item_desc_x49_item_megablock GER
+	=Eine_m\$oegliche_Status\$aenderung_der\nPok\emon_im_Team_wird_f\$uer\nf\$uenf_Runden_verhindert.
+.end
+
+.string str_item_desc_x4a_item_angriffplus GER
+	=Hebt_die_Volltrefferquote_des_Pkmn\nim_Kampf._Die_Wirkung_wird_mit\ndem_Tausch_des_Pok\emon_beendet.
+.end
+
+.string str_item_desc_x4b_item_x_angriff GER
+	=Hebt_den_Angr.-Wert_eines_Pkmn\nim_Kampf._Die_Wirkung_wird_mit_dem\nTausch_des_Pok\emon_beendet.
+.end
+
+.string str_item_desc_x4c_item_x_abwehr GER
+	=Hebt_den_Vert.-Wert_eines_Pkmn\nim_Kampf._Die_Wirkung_wird_mit_dem\nTausch_des_Pok\emon_beendet.
+.end
+
+.string str_item_desc_x4d_item_x_tempo GER
+	=Hebt_den_Init.-Wert_eines_Pkmn\nim_Kampf._Die_Wirkung_wird_mit_dem\nTausch_des_Pok\emon_beendet.
+.end
+
+.string str_item_desc_x4e_item_x_treffer GER
+	=Hebt_die_Genauigkeit_eines_Pkmn\nim_Kampf._Die_Wirkung_wird_mit_dem\nTausch_des_Pok\emon_beendet.
+.end
+
+.string str_item_desc_x4f_item_x_spezial GER
+	=Hebt_den_Sp._Ang.-Wert_eines_Pkmn\nim_Kampf._Die_Wirkung_wird_mit_dem\nTausch_des_Pok\emon_beendet.
+.end
+
+.string str_item_desc_x50_item_pokepuppe GER
+	=Eine_h\$uebsche_Puppe._Sie_erm\$oeglicht\ndie_Flucht_im_Kampf_gegen_wilde\nPok\emon.
+.end
+
+.string str_item_desc_x51_item_eneco_rute GER
+	=Ein_tolles_Item._Fliehe_damit_aus\njedem_Kampf_mit_einem_wilden\nPok\emon.
+.end
+
+.string str_item_desc_x52_item_item_52 GER
+	=_????
+.end
+
+.string str_item_desc_x53_item_superschutz GER
+	=H\$aelt_200_Schritte_lang_schwache,_\nwilde_Pok\emon_ab.
+.end
+
+.string str_item_desc_x54_item_top_schutz GER
+	=H\$aelt_250_Schritte_lang_schwache,_\nwilde_Pok\emon_ab.
+.end
+
+.string str_item_desc_x55_item_fluchtseil GER
+	=Ein_langes,_festes_Seil,_das_die\nsofortige_Flucht_aus_H\$oehlen_oder\n\$AEhnlichem_erm\$oeglicht.
+.end
+
+.string str_item_desc_x56_item_schutz GER
+	=H\$aelt_100_Schritte_lang_schwache,_\nwilde_Pok\emon_ab.
+.end
+
+.string str_item_desc_x57_item_item_57 GER
+	=_????
+.end
+
+.string str_item_desc_x58_item_item_58 GER
+	=_????
+.end
+
+.string str_item_desc_x59_item_item_59 GER
+	=_????
+.end
+
+.string str_item_desc_x5a_item_item_5a GER
+	=_????
+.end
+
+.string str_item_desc_x5b_item_item_5b GER
+	=_????
+.end
+
+.string str_item_desc_x5c_item_item_5c GER
+	=_????
+.end
+
+.string str_item_desc_x5d_item_sonnenstein GER
+	=Dieser_spezielle_Stein_l\$oest_bei_be-\nstimmten_Pok\emon_die_Entwicklung\naus._Er_ist_rot_wie_die_Sonne.
+.end
+
+.string str_item_desc_x5e_item_mondstein GER
+	=Dieser_spezielle_Stein_l\$oest_bei_be-\nstimmten_Pok\emon_die_Entwicklung\naus._Er_ist_schwarz_wie_die_Nacht.
+.end
+
+.string str_item_desc_x5f_item_feuerstein GER
+	=Dieser_spezielle_Stein_l\$oest_bei\nbestimmten_Pok\emon_die\nEntwicklung_aus._Er_ist_orange.
+.end
+
+.string str_item_desc_x60_item_donnerstein GER
+	=Dieser_spezielle_Stein_l\$oest_bei_be-\nstimmten_Pok\emon_die_Entwicklung\naus._Er_hat_ein_Blitzmuster.
+.end
+
+.string str_item_desc_x61_item_wasserstein GER
+	=Dieser_spezielle_Stein_l\$oest_bei\nbestimmten_Pok\emon_die\nEntwicklung_aus._Er_ist_hellblau.
+.end
+
+.string str_item_desc_x62_item_blattstein GER
+	=Dieser_spezielle_Stein_l\$oest_bei_be-\nstimmten_Pok\emon_die_Entwicklung\naus._Er_hat_ein_Blattmuster.
+.end
+
+.string str_item_desc_x63_item_linkkabel GER
+	=Eine_Box,_die_einen_Pok\emon_Tausch\nsimuliert._Manche_Pok\emon_ben\$oetigen\nein_Item_zum_Tragen.
+.end
+
+.string str_item_desc_x64_item_finsterstein GER
+	=Dieser_besondere,_d\$uestere\nStein_hilft_manchen_Pok\emon\nbei_ihrer_Evolution.
+.end
+
+.string str_item_desc_x65_item_leuchtstein GER
+	=Dieser_besondere,_hell_leuchtende\nStein_hilft_manchen_Pok\emon\nbei_ihrer_Evolution.
+.end
+
+.string str_item_desc_x66_item_funkelstein GER
+	=Dieser_besondere,_funkelnde\nStein_hilft_manchen_Pok\emon\nbei_ihrer_Evolution.
+.end
+
+.string str_item_desc_x67_item_minipilz GER
+	=Ein_kleiner_und_seltener_Pilz,_der_\nseine_Liebhaber_hat.
+.end
+
+.string str_item_desc_x68_item_riesenpilz GER
+	=Ein_gro\$ser_und_seltener_Pilz,_der_\nseine_Liebhaber_hat.
+.end
+
+.string str_item_desc_x69_item_spv_orb_n GER
+	=_????
+.end
+
+.string str_item_desc_x6a_item_perle GER
+	=Eine_relativ_kleine_Perle,_die_in\nsch\$oenem_Silber_funkelt._Sie_ist_von\ngeringem_Wert.
+.end
+
+.string str_item_desc_x6b_item_riesenperle GER
+	=Eine_relativ_gro\$se_Perle,_die_in\nsch\$oenem_Silber_funkelt._Sie_ist_von\nhohem_Wert.
+.end
+
+.string str_item_desc_x6c_item_sternenstaub GER
+	=Sch\$oener,_roter_Sand,_der_sich\nseidenweich_anf\$uehlt._Er_ist_von\nhohem_Wert.
+.end
+
+.string str_item_desc_x6d_item_sternenstueck GER
+	=Ein_sch\$oener,_roter_Edelstein,\nder_einen_hohen_Preis_erzielen_kann.
+.end
+
+.string str_item_desc_x6e_item_nugget GER
+	=Ein_Nugget_aus_purem_Gold,_das\neinen_schimmernden_Glanz_besitzt._\nEs_ist_von_gro\$sem_Wert.
+.end
+
+.string str_item_desc_x6f_item_herzschuppe GER
+	=Eine_h\$uebsche,_herzf\$oermige,_sehr\nseltene_Schuppe._Sie_erstrahlt_in\nden_Farben_des_Regenbogens.
+.end
+
+.string str_item_desc_x70_item_angr_orb_p GER
+	=_????
+.end
+
+.string str_item_desc_x71_item_angr_orb_n GER
+	=_????
+.end
+
+.string str_item_desc_x72_item_vert_orb_p GER
+	=_????
+.end
+
+.string str_item_desc_x73_item_vert_orb_n GER
+	=_????
+.end
+
+.string str_item_desc_x74_item_init_orb_p GER
+	=_????
+.end
+
+.string str_item_desc_x75_item_init_orb_n GER
+	=_????
+.end
+
+.string str_item_desc_x76_item_spa_orb_p GER
+	=_????
+.end
+
+.string str_item_desc_x77_item_spa_orb_n GER
+	=_????
+.end
+
+.string str_item_desc_x78_item_spv_orb_p GER
+	=_????
+.end
+
+.string str_item_desc_x79_item_79 GER
+	=Ein_Brief_mit_Zigzachs-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x7a_item_hafenbrief GER
+	=Ein_Brief_mit_Wingull-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x7b_item_glitzerbrief GER
+	=Ein_Brief_mit_Pikachu-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x7c_item_eilbrief GER
+	=Ein_Brief_mit_Magnetilo-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x7d_item_waldbrief GER
+	=Ein_Brief_mit_Bummelz-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x7e_item_wellenbrief GER
+	=Ein_Brief_mit_Wailmer-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x7f_item_perlenbrief GER
+	=Ein_Brief,_der_von_einem_Pok\emon\ngetragen_werden_kann_und_als\nAufdruck_den_Tr\$aeger_hat.
+.end
+
+.string str_item_desc_x80_item_dunkelbrief GER
+	=Ein_Brief_mit_Zwirrlicht-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x81_item_tropenbrief GER
+	=Ein_Brief_mit_Blubella-Aufdruck.\nEr_kann_von_einem_Pok\emon\ngetragen_werden.
+.end
+
+.string str_item_desc_x82_item_traumbrief GER
+	=Ein_Brief,_der_von_einem_Pok\emon\ngetragen_werden_kann_und_als\nAufdruck_den_Tr\$aeger_hat.
+.end
+
+.string str_item_desc_x83_item_edelbrief GER
+	=Ein_Brief_mit_einem_bezaubernden,\nextravaganten_Aufdruck._Er_kann\nvon_einem_Pok\emon_getragen_werden.
+.end
+
+.string str_item_desc_x84_item_retrobrief GER
+	=Brief_mit_dem_Aufdruck_dreier\nniedlicher,_possierlicher\nPok\emon-Gesichter.
+.end
+
+.string str_item_desc_x85_item_amrenabeere GER
+	=Item_(Tragen)_bewirkt_im_Kampf\nSelbstheilung_bei_Paralyse.
+.end
+
+.string str_item_desc_x86_item_maronbeere GER
+	=Item_(Tragen)_weckt_schlafendes\nPok\emon_im_Kampf.
+.end
+
+.string str_item_desc_x87_item_pirsifbeere GER
+	=Item_(Tragen)_bewirkt_im_Kampf\nSelbstheilung_bei_Vergiftung.
+.end
+
+.string str_item_desc_x88_item_fragiabeere GER
+	=Item_(Tragen)_bewirkt_im_Kampf\nSelbstheilung_bei_Verbrennung.
+.end
+
+.string str_item_desc_x89_item_wilbirbeere GER
+	=Item_(Tragen)_bewirkt_im_Kampf\nSelbstheilung_bei_Frost.
+.end
+
+.string str_item_desc_x8a_item_jonagobeere GER
+	=Item_(Tragen)_f\$uellt_Ap_im_Kampf_um\n10_Punkte_auf.
+.end
+
+.string str_item_desc_x8b_item_sinelbeere GER
+	=Item_(Tragen)_f\$uellt_Kp_im_Kampf_um\n10_Punkte_auf.
+.end
+
+.string str_item_desc_x8c_item_persimbeere GER
+	=Item_(Tragen)_bewirkt_im_Kampf\nSelbstheilung_bei_Verwirrung.
+.end
+
+.string str_item_desc_x8d_item_prunusbeere GER
+	=Item_(Tragen)_bewirkt_im_Kampf\nSelbstheilung_bei_Statusproblem.
+.end
+
+.string str_item_desc_x8e_item_tsitrubeere GER
+	=Item_(Tragen)_f\$uellt_Kp_im_Kampf_um\n30_Punkte_auf.
+.end
+
+.string str_item_desc_x8f_item_giefebeere GER
+	=Item_(Tragen)_f\$uellt_im_Kampf_Kp\nauf,_bewirkt_aber_evtl._Verwirrung.
+.end
+
+.string str_item_desc_x90_item_wikibeere GER
+	=Item_(Tragen)_f\$uellt_im_Kampf_Kp\nauf,_bewirkt_aber_evtl._Verwirrung.
+.end
+
+.string str_item_desc_x91_item_magobeere GER
+	=Item_(Tragen)_f\$uellt_im_Kampf_Kp\nauf,_bewirkt_aber_evtl._Verwirrung.
+.end
+
+.string str_item_desc_x92_item_gauvebeere GER
+	=Item_(Tragen)_f\$uellt_im_Kampf_Kp\nauf,_bewirkt_aber_evtl._Verwirrung.
+.end
+
+.string str_item_desc_x93_item_yapabeere GER
+	=Item_(Tragen)_f\$uellt_im_Kampf_Kp\nauf,_bewirkt_aber_evtl._Verwirrung.
+.end
+
+.string str_item_desc_x94_item_himmihbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x95_item_morbbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x96_item_nanabbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x97_item_nirbebeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x98_item_sananabeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x99_item_granabeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x9a_item_setangbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x9b_item_qualotbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x9c_item_honmelbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x9d_item_labrusbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x9e_item_tamotbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_x9f_item_saimbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa0_item_magostbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa1_item_rabutabeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa2_item_tronzibeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa3_item_kiwanbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa4_item_pallmbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa5_item_wasmelbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa6_item_durinbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa7_item_myrtilbeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xa8_item_lydzibeere GER
+	=Item_(Tragen)_hebt_Angr.-Wert\nin_einer_Notlage.
+.end
+
+.string str_item_desc_xa9_item_linganbeere GER
+	=Item_(Tragen)_hebt_Vert.-Wert\nin_einer_Notlage.
+.end
+
+.string str_item_desc_xaa_item_salkabeere GER
+	=Item_(Tragen)_hebt_Init.-Wert\nin_einer_Notlage.
+.end
+
+.string str_item_desc_xab_item_tahaybeere GER
+	=Item_(Tragen)_hebt_Sp._Ang.-Wert\nin_einer_Notlage.
+.end
+
+.string str_item_desc_xac_item_apikobeere GER
+	=Item_(Tragen)_hebt_Sp._Ver.-Wert\nin_einer_Notlage.
+.end
+
+.string str_item_desc_xad_item_lansatbeere GER
+	=Item_(Tragen)_hebt_Volltrefferquote\nin_einer_Notlage.
+.end
+
+.string str_item_desc_xae_item_krambobeere GER
+	=Item_(Tragen)_hebt_einen_Statuswert\nin_einer_Notlage.
+.end
+
+.string str_item_desc_xaf_item_enigmabeere GER
+	=Kann_zu_einem_Pulver_gemahlen\nwerden,_um_Medizin_herzustellen.
+.end
+
+.string str_item_desc_xb0_item_item_b0 GER
+	=_????
+.end
+
+.string str_item_desc_xb1_item_wahlglas GER
+	=_????
+.end
+
+.string str_item_desc_xb2_item_wahlschal GER
+	=_????
+.end
+
+.string str_item_desc_xb3_item_blendpuder GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nsenkt_die_Genauigkeit_des_Gegners.
+.end
+
+.string str_item_desc_xb4_item_schlohkraut GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nhebt_jede_Statusver\$aenderung_auf.
+.end
+
+.string str_item_desc_xb5_item_machoband GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nf\$oerdert_Wachstum,_aber_senkt_Init.
+.end
+
+.string str_item_desc_xb6_item_ep_teiler GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nteilt_die_Kampf-E.-Punkte.
+.end
+
+.string str_item_desc_xb7_item_flinkklaue GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nhebt_die_Erstschlagquote.
+.end
+
+.string str_item_desc_xb8_item_sanftglocke GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nbes\$aenftigt_und_f\$oerdert_Sympathie.
+.end
+
+.string str_item_desc_xb9_item_mentalkraut GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nerl\$oest_Pok\emon_von_Anziehung.
+.end
+
+.string str_item_desc_xba_item_wahlband GER
+	=Ein_Item,_das_ein_Pok\emon_tragen\nkann._Es_st\$aerkt_eine_Attacke._Aber\nnur_diese_ist_einsetzbar.
+.end
+
+.string str_item_desc_xbb_item_king_stein GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nkann_Gegner_zur\$ueckweichen_lassen.
+.end
+
+.string str_item_desc_xbc_item_silberstaub GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverbessert_K\$aefer-Attacken.
+.end
+
+.string str_item_desc_xbd_item_muenzamulett GER
+	=Ein_Item,_das_ein_Pok\emon_tr\$aegt\nund_das_doppeltes_Preisgeld_bringt,\nwenn_der_Tr\$aeger_am_Kampf_teilnimmt.
+.end
+
+.string str_item_desc_xbe_item_schutzband GER
+	=Ein_Item,_das_ein_Pok\emon_tr\$aegt._Es\nkann_wilde_Pok\emon_abhalten,_wenn\nder_Tr\$aeger_an_erster_Stelle_steht.
+.end
+
+.string str_item_desc_xbf_item_seelentau GER
+	=Ein_Item,_das_von_Latios_oder\nLatias_getragen_werden_kann._Es\nhebt_Sp._Ang._&_Sp._Ver.
+.end
+
+.string str_item_desc_xc0_item_abysszahn GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nhebt_Sp._Ang._f\$uer_Perlu!
+.end
+
+.string str_item_desc_xc1_item_abyssplatte GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nhebt_Sp._Ver._f\$uer_Perlu!
+.end
+
+.string str_item_desc_xc2_item_rauchball GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann.\nFluchtgarantie_vor_wilden_Pok\emon.
+.end
+
+.string str_item_desc_xc3_item_ewigstein GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nbewirkt_Entwicklungsstopp.
+.end
+
+.string str_item_desc_xc4_item_fokus_band GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nkann_manchmal_ein_K.O._verhindern.
+.end
+
+.string str_item_desc_xc5_item_gluecks_ei GER
+	=Ein_Item,_das_ein_Pok\emon\ntr\$aegt,_um_Extra-E.-Punkte\nim_Kampf_zu_erhalten.
+.end
+
+.string str_item_desc_xc6_item_scope_linse GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nerh\$oeht_die_Volltrefferquote.
+.end
+
+.string str_item_desc_xc7_item_metallmantel GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Stahl-Attacken.
+.end
+
+.string str_item_desc_xc8_item_ueberreste GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nf\$uellt_im_Kampf_stetig_Kp_auf.
+.end
+
+.string str_item_desc_xc9_item_drachenhaut GER
+	=Seltsame_Haut_zum_Tragen\nf\$uer_Pok\emon_der_Elementklasse\nDrache.
+.end
+
+.string str_item_desc_xca_item_kugelblitz GER
+	=Ein_Item,_das_von_Pikachu\ngetragen_werden_kann._Es_erh\$oeht\nseinen_Sp._Ang.-Wert.
+.end
+
+.string str_item_desc_xcb_item_pudersand GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Boden-Attacken.
+.end
+
+.string str_item_desc_xcc_item_granitstein GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Gestein-Attacken.
+.end
+
+.string str_item_desc_xcd_item_wundersaat GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Pflanzen-Attacken.
+.end
+
+.string str_item_desc_xce_item_schattenglas GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Unlicht-Attacken.
+.end
+
+.string str_item_desc_xcf_item_schwarzgurt GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Kampf-Attacken.
+.end
+
+.string str_item_desc_xd0_item_magnet GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Elektro-Attacken.
+.end
+
+.string str_item_desc_xd1_item_zauberwasser GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Wasser-Attacken.
+.end
+
+.string str_item_desc_xd2_item_hackattack GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Flug-Attacken.
+.end
+
+.string str_item_desc_xd3_item_giftstich GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Gift-Attacken.
+.end
+
+.string str_item_desc_xd4_item_ewiges_eis GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Eis-Attacken.
+.end
+
+.string str_item_desc_xd5_item_bannsticker GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Geist-Attacken.
+.end
+
+.string str_item_desc_xd6_item_kruemmloeffel GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Psycho-Attacken.
+.end
+
+.string str_item_desc_xd7_item_holzkohle GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Feuer-Attacken.
+.end
+
+.string str_item_desc_xd8_item_drachenzahn GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Drache-Attacken.
+.end
+
+.string str_item_desc_xd9_item_seidenschal GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Normal-Attacken.
+.end
+
+.string str_item_desc_xda_item_up_grade GER
+	=Ein_Softwareupdate_f\$uer_das\nvirtuelle_Pok\emon_Porygon.
+.end
+
+.string str_item_desc_xdb_item_seegesang GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nf\$uellt_im_Kampf_stetig_Kp_auf.
+.end
+
+.string str_item_desc_xdc_item_seerauch GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nverst\$aerkt_Wasser-Attacken.
+.end
+
+.string str_item_desc_xdd_item_laxrauch GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nsenkt_Genauigkeit_des_Gegners.
+.end
+
+.string str_item_desc_xde_item_lucky_punch GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nerh\$oeht_Chaneiras_Volltrefferquote.
+.end
+
+.string str_item_desc_xdf_item_metallstaub GER
+	=Ein_Item,_das_einem_Pok\emon_zum\nTragen_gegeben_werden_kann._Es\nerh\$oeht_den_Vert.-Wert_von_Ditto.
+.end
+
+.string str_item_desc_xe0_item_kampfknochen GER
+	=Ein_harter_Knochen,_der_den_Angr.-\nWert_von_Tragosso_oder_Knogga\nerh\$oeht,_wenn_sie_ihn_tragen.
+.end
+
+.string str_item_desc_xe1_item_lauchstange GER
+	=Diese_Lauchstange_erh\$oeht_die\nVolltrefferquote,_wenn_Porenta\nsie_tr\$aegt.
+.end
+
+.string str_item_desc_xe2_item_bisaflornit GER
+	=Wird_er_von_einem_Bisaflor\ngetragen,_kann_es_im_Kampf_eine\nMega-Entwicklung_durchf\$uehren.
+.end
+
+.string str_item_desc_xe3_item_gluraknit GER
+	=Wird_er_von_einem_Glurak\ngetragen,_kann_es_im_Kampf_eine\nMega-Entwicklung_durchf\$uehren.
+.end
+
+.string str_item_desc_xe4_item_turtoknit GER
+	=Wird_er_von_einem_Turtok\ngetragen,_kann_es_im_Kampf_eine\nMega-Entwicklung_durchf\$uehren.
+.end
+
+.string str_item_desc_xe5_item_terrasornit GER
+	=Einer_der_seltenen_Mega-Steine.\nGetragen_von_Terasorus_k\$oennte_man\nmittels_des_Mega-Amuletts...
+.end
+
+.string str_item_desc_xe6_item_zerbernit GER
+	=Einer_der_seltenen_Mega-Steine.\nGetragen_von_Zerbertres_k\$oennte_man\nmittels_des_Mega-Amuletts...
+.end
+
+.string str_item_desc_xe7_item_skullydranit GER
+	=Einer_der_seltenen_Mega-Steine.\nGetragen_von_Skullydra_k\$oennte_man\nmittels_des_Mega-Amuletts...
+.end
+
+.string str_item_desc_xe8_item_aquananit GER
+	=Einer_der_seltenen_Mega-Steine.\nGetragen_von_Aquana_k\$oennte_man\nmittels_des_Mega-Amuletts...
+.end
+
+.string str_item_desc_xe9_item_flamaranit GER
+	=Einer_der_seltenen_Mega-Steine.\nGetragen_von_Flamara_k\$oennte_man\nmittels_des_Mega-Amuletts...
+.end
+
+.string str_item_desc_xea_item_blitzanit GER
+	=Einer_der_seltenen_Mega-Steine.\nGetragen_von_Blitza_k\$oennte_man\nmittels_des_Mega-Amuletts...
+.end
+
+.string str_item_desc_xeb_item_ampharosnit GER
+	=Wird_er_von_einem_Ampharos\ngetragen,_kann_es_im_Kampf_eine\nMega-Entwicklung_durchf\$uehren.
+.end
+
+.string str_item_desc_xec_item_gengarnit GER
+	=Wird_er_von_einem_Gengar\ngetragen,_kann_es_im_Kampf_eine\nMega-Entwicklung_durchf\$uehren.
+.end
+
+.string str_item_desc_xed_item_bibornit GER
+	=Wird_er_von_einem_Bibor\ngetragen,_kann_es_im_Kampf_eine\nMega-Entwicklung_durchf\$uehren.
+.end
+
+.string str_item_desc_xee_item_item_ee GER
+	=_????
+.end
+
+.string str_item_desc_xef_item_item_ef GER
+	=_????
+.end
+
+.string str_item_desc_xf0_item_item_f0 GER
+	=_????
+.end
+
+.string str_item_desc_xf1_item_item_f1 GER
+	=_????
+.end
+
+.string str_item_desc_xf2_item_item_f2 GER
+	=_????
+.end
+
+.string str_item_desc_xf3_item_item_f3 GER
+	=_????
+.end
+
+.string str_item_desc_xf4_item_item_f4 GER
+	=_????
+.end
+
+.string str_item_desc_xf5_item_item_f5 GER
+	=_????
+.end
+
+.string str_item_desc_xf6_item_item_f6 GER
+	=_????
+.end
+
+.string str_item_desc_xf7_item_item_f7 GER
+	=_????
+.end
+
+.string str_item_desc_xf8_item_item_f8 GER
+	=_????
+.end
+
+.string str_item_desc_xf9_item_item_f9 GER
+	=_????
+.end
+
+.string str_item_desc_xfa_item_item_fa GER
+	=_????
+.end
+
+.string str_item_desc_xfb_item_item_fb GER
+	=_????
+.end
+
+.string str_item_desc_xfc_item_item_fc GER
+	=_????
+.end
+
+.string str_item_desc_xfd_item_item_fd GER
+	=_????
+.end
+
+.string str_item_desc_xfe_item_roter_schal GER
+	=Ein_Item,_das_ein_Pok\emon_tr\$aegt,\num_den_Cool.-Wert_im\nWettbewerb_zu_erh\$oehen.
+.end
+
+.string str_item_desc_xff_item_blauer_schal GER
+	=Ein_Item,_das_ein_Pok\emon_tr\$aegt,\num_den_Sch\$oen.-Wert_im\nWettbewerb_zu_erh\$oehen.
+.end
+
+.string str_item_desc_x100_item_rosa_schal GER
+	=Ein_Item,_das_ein_Pok\emon_tr\$aegt,\num_den_Anmut-Wert_im\nWettbewerb_zu_erh\$oehen.
+.end
+
+.string str_item_desc_x101_item_gruener_schal GER
+	=Ein_Item,_das_ein_Pok\emon_tr\$aegt,\num_den_Klug.-Wert_im\nWettbewerb_zu_erh\$oehen.
+.end
+
+.string str_item_desc_x102_item_gelber_schal GER
+	=Ein_Item,_das_ein_Pok\emon_tr\$aegt,\num_den_St\$aerke-Wert_im\nWettbewerb_zu_erh\$oehen.
+.end
+
+.string str_item_desc_x103_item_eilrad GER
+	=Klapprad,_das_doppelt_so_schnell\nist_wie_ein_Fu\$sg\$aenger.
+.end
+
+.string str_item_desc_x104_item_muenzkorb GER
+	=Im_Korb_finden_bis_zu_9999\nM\$uenzen_f\$uer_die_Spielhalle\nPlatz.
+.end
+
+.string str_item_desc_x105_item_detektor GER
+	=Ein_Ger\$aet,_das_verborgene_Items\nvia_Schallwellen_ortet.
+.end
+
+.string str_item_desc_x106_item_angel GER
+	=Damit_kannst_du_in_jedem_Gew\$aesser\nnach_Pok\emon_angeln.
+.end
+
+.string str_item_desc_x107_item_profiangel GER
+	=Eine_recht_gute_Angel,_um_Pok\emon\nzu_fangen.
+.end
+
+.string str_item_desc_x108_item_superangel GER
+	=Eine_wundervoll_gefertigte_Angel.\nDie_beste_Angel,_um_nach\nPok\emon_zu_fischen.
+.end
+
+.string str_item_desc_x109_item_bootsticket GER
+	=Ein_Ticket,_um_auf_der_M.S._Anne\nzu_fahren._Eine_Zeichnung_der\nF\$aehre_ist_auf_dem_Ticket_zu_sehen.
+.end
+
+.string str_item_desc_x10a_item_wettb_karte GER
+	=Ausweis_zur_Teilnahme_an_Pok\emon-\nWettbewerben._Die_Zeichnung\neines_Bandes_ist_aufgedruckt.
+.end
+
+.string str_item_desc_x10b_item_item_10b GER
+	=Ein_antikes_Relikt,_das_zwar_aus\nStein_ist,_sich_aber_weich_anf\$uehlt.
+.end
+
+.string str_item_desc_x10c_item_wailmerkanne GER
+	=Ein_Gegenstand_zum_Gie\$sen_von\nPflanzen,_wie_beispielsweise_Beeren.
+.end
+
+.string str_item_desc_x10d_item_devon_waren GER
+	=Ein_P\$aeckchen,_das_Maschinenteile\nder_Devon_Corp._enth\$aelt.
+.end
+
+.string str_item_desc_x10e_item_aschetasche GER
+	=Ein_S\$aeckchen_zum_Sammeln_und\nAufbewahren_von_Vulkanasche.
+.end
+
+.string str_item_desc_x10f_item_kelleroeffner GER
+	=Schl\$uessel_f\$uer_Neu_Malvenfroh,\ndas_unter_Malvenfroh_City\nerrichtet_wurde.
+.end
+
+.string str_item_desc_x110_item_kunstrad GER
+	=Dieses_Klapprad_erm\$oeglicht_Spr\$uenge\nund_Wheelies.
+.end
+
+.string str_item_desc_x111_item_box GER
+	=Box_f\$uer_,_die_im_Beerenmixer\nhergestellt_werden._Wird_sie_ge-\nsch\$uettelt,_spendet_sie_einen_Riegel.
+.end
+
+.string str_item_desc_x112_item_brief GER
+	=Ein_\$aeu\$serst_wichtiger_Brief_an_Troy,\nvom_Pr\$aesidenten_der_Devon_Corp.
+.end
+
+.string str_item_desc_x113_item_aeon_ticket GER
+	=Das_Bootsticket_zu_einer_fernen\nInsel_im_S\$ueden._Eine_Zeichnung\nder_Insel_ist_aufgedruckt.
+.end
+
+.string str_item_desc_x114_item_spiritkern GER
+	=Ein_merkw\$uerdiger_Gesteinsbrocken,\numgeben_von_etwas_B\$oesem.
+.end
+
+.string str_item_desc_x115_item_blaue_kugel GER
+	=Eine_blau_gl\$uehende_Kugel,_die_eine\nuralte_Macht_bergen_soll.
+.end
+
+.string str_item_desc_x116_item_scanner GER
+	=Ein_Ger\$aet,_mit_dem_man_im_Wasser\nnach_Lebewesen_sucht._Seine\nBedienung_ist_schwierig.
+.end
+
+.string str_item_desc_x117_item_wuestenglas GER
+	=Eine_Schutzbrille,_die_es_Trainern\nerm\$oeglicht,_selbst_bei_Sandst\$uermen\nW\$uesten_zu_durchqueren.
+.end
+
+.string str_item_desc_x118_item_meteorit GER
+	=Ein_Meteorit,_der_im_Mondberg\naufschlug._Ein_sehr_harter_Klumpen.
+.end
+
+.string str_item_desc_x119_item_k1_schluessel GER
+	=Der_Schl\$uessel_zur_Kabine_1\nauf_dem_Schiffswrack._Er_sieht\nalt_und_zerbrechlich_aus.
+.end
+
+.string str_item_desc_x11a_item_k2_schluessel GER
+	=Der_Schl\$uessel_zur_Kabine_2\nauf_dem_Schiffswrack._Er_sieht\nalt_und_zerbrechlich_aus.
+.end
+
+.string str_item_desc_x11b_item_k4_schluessel GER
+	=Der_Schl\$uessel_zur_Kabine_4\nauf_dem_Schiffswrack._Er_sieht\nalt_und_zerbrechlich_aus.
+.end
+
+.string str_item_desc_x11c_item_k6_schluessel GER
+	=Der_Schl\$uessel_zur_Kabine_6\nauf_dem_Schiffswrack._Er_sieht\nalt_und_zerbrechlich_aus.
+.end
+
+.string str_item_desc_x11d_item_l_schluessel GER
+	=Der_Schl\$uessel_zum_Lagerraum_im\nSchiffswrack._Er_sieht_alt_und\nzerbrechlich_aus.
+.end
+
+.string str_item_desc_x11e_item_wurzelfossil GER
+	=Das_Fossil_eines_uralten_Pok\emon,\ndas_in_der_Tiefsee_lebte._Es_sieht\nwie_eine_Pflanzenwurzel_aus.
+.end
+
+.string str_item_desc_x11f_item_klauenfossil GER
+	=Das_Fossil_eines_uralten_Pok\emon,\ndas_in_der_Tiefsee_lebte._Es_sieht\nwie_eine_Klaue_aus.
+.end
+
+.string str_item_desc_x120_item_devon_scope GER
+	=Ein_Ger\$aet_der_Devon_Corp.,_\ndas_unsichtbare_Pok\emon\nentlarvt.
+.end
+
+.string str_item_desc_x121_item_tm01 GER
+	=_ngriff,_der_zu-\nletzt_erfolgt._Der\nAnwender_schreckt\nevtl._zur\$ueck.
+.end
+
+.string str_item_desc_x122_item_tm02 GER
+	=Der_Gegner_wird_mit\nriesigen,_scharfen\nKlauen_stark\nverletzt.
+.end
+
+.string str_item_desc_x123_item_tm03 GER
+	=_ngriff_mit_Wasser-\nwelle,_die_den\nGegner_evtl.\nverwirren_kann.
+.end
+
+.string str_item_desc_x124_item_tm04 GER
+	=Erh\$oeht_SP._ANG.\nund_SP._VER.\ndurch\nKonzentration.
+.end
+
+.string str_item_desc_x125_item_tm05 GER
+	=Verjagt_den_Gegner\nund_beendet_den\nKampf_in_der\nWildnis.
+.end
+
+.string str_item_desc_x126_item_tm06 GER
+	=_ergiftet_den\nGegner_mit\neinem_potenten\nToxin.
+.end
+
+.string str_item_desc_x127_item_tm07 GER
+	=Hagelsturm_f\$uer_5\nRunden._Schadet\nallen,_au\$ser\nEIS-POK\eMON.
+.end
+
+.string str_item_desc_x128_item_tm08 GER
+	=Pumpt_den_K\$oerper\nauf,_um_den_ANGR.\nund_die_VERT._\nzu_erh\$oehen.
+.end
+
+.string str_item_desc_x129_item_tm09 GER
+	=Verschie\$st_2_bis_5\nSamen_gleichzeitig\nauf_den_Gegner.
+.end
+
+.string str_item_desc_x12a_item_tm10 GER
+	=Die_Wirkung_und\nElementklasse_der\nAttacke_h\$aengt\nvom_Benutzer_ab.
+.end
+
+.string str_item_desc_x12b_item_tm11 GER
+	=_rh\$oeht_St\$aerke\nvon_Feuer-\nAttacken_5\nRunden_lang.
+.end
+
+.string str_item_desc_x12c_item_tm12 GER
+	=Legt_den_Gegner\nrein._Er_benutzt\nnur_noch_Angriffe.
+.end
+
+.string str_item_desc_x12d_item_tm13 GER
+	=_er_Gegner_wird_von\neinem_Eisstrahl\ngetroffen_und\nfriert_evtl._ein.
+.end
+
+.string str_item_desc_x12e_item_tm14 GER
+	=Ein_Schneesturm,\nder_den_Gegner\neinfrieren_kann,\nw\$uetet.
+.end
+
+.string str_item_desc_x12f_item_tm15 GER
+	=Starke_Attacke,_die\nden_Angreifer\nzwingt,_eine_Runde\nauszusetzen.
+.end
+
+.string str_item_desc_x130_item_tm16 GER
+	=Erzeugt_Lichtwand\nund_senkt_Schaden\ndurch_SP._ANG.\nf\$uer_5_Runden.
+.end
+
+.string str_item_desc_x131_item_tm17 GER
+	=Anwender_weicht\njeder_Attacke_aus.\nScheitert_evtl._bei\nWiederholung.
+.end
+
+.string str_item_desc_x132_item_tm18 GER
+	=Erh\$oeht_St\$aerke\nvon_Wasser-\nAttacken_5_\nRunden_lang.
+.end
+
+.string str_item_desc_x133_item_tm19 GER
+	=_tarke_Attacke!\nAbsorbiert_die\nH\$aelfte_des_ange-\nrichteten_Schadens.
+.end
+
+.string str_item_desc_x134_item_tm20 GER
+	=_eam_d._Anwenders\nist_5_Runden_vor\nStatusproblemen\ngesch\$uetzt.
+.end
+
+.string str_item_desc_x135_item_tm21 GER
+	=Die_Attacke_ist\nst\$aerker_bei\nverhassten\nTRAINERn.
+.end
+
+.string str_item_desc_x136_item_tm22 GER
+	=Absorbiert_Licht_in\nder_1._Runde.\nIn_Runde_2\nerfolgt_der_Angriff.
+.end
+
+.string str_item_desc_x137_item_tm23 GER
+	=Attacke_mit_hartem\nEisenschweif.\nSenkt_evtl._den\nVERT.-Wert.
+.end
+
+.string str_item_desc_x138_item_tm24 GER
+	=Eine_starke\nElektro-Attacke,\ndie_den_Gegner\nevtl._paralysiert.
+.end
+
+.string str_item_desc_x139_item_tm25 GER
+	=Eine_verheerende\nElektro-Attacke,\ndie_den_Gegner\nevtl._paralysiert.
+.end
+
+.string str_item_desc_x13a_item_tm26 GER
+	=Ein_m\$aechtiges\nBeben,_das_au\$ser\nfliegende_Gegner\nalle_trifft.
+.end
+
+.string str_item_desc_x13b_item_tm27 GER
+	=Angriff,_dessen\nKraft_bei_Freund-\nschaft_zum_TRAI-\nNER_gr\$oe\$ser_wird.
+.end
+
+.string str_item_desc_x13c_item_tm28 GER
+	=1._Runde_eingrab-\nen_und_2._an-\ngreifen._Flucht\naus_H\$oehlen_m\$oeglich.
+.end
+
+.string str_item_desc_x13d_item_tm29 GER
+	=Starke_Psycho-\nAttacke,_die_evtl.\ndie_SP._VER.\nsenkt.
+.end
+
+.string str_item_desc_x13e_item_tm30 GER
+	=Bewirft_Gegner_mit\ngruseligem_Ball\nund_senkt_evtl.\ndie_SP._VER.
+.end
+
+.string str_item_desc_x13f_item_tm31 GER
+	=Durchbricht_Barri-\neren_wie_LICHT-\nSCHILD_und\nREFLEKTOR.
+.end
+
+.string str_item_desc_x140_item_tm32 GER
+	=Erzeugt_Eben-\nbilder,_um_\nFluchtwert\nzu_erh\$oehen.
+.end
+
+.string str_item_desc_x141_item_tm33 GER
+	=Lichtwand,_die\n5_Runden_leicht\nvor_physischen\nAngriffen_sch\$uetzt.
+.end
+
+.string str_item_desc_x142_item_tm34 GER
+	=Angriff_mit_schnel-\nlem_Elektro-Schlag.\nAusweichen_nicht\nm\$oeglich.
+.end
+
+.string str_item_desc_x143_item_tm35 GER
+	=Starke_Feuer-\nAttacke,_die_evtl.\nden_Gegner\nverbrennt.
+.end
+
+.string str_item_desc_x144_item_tm36 GER
+	=Gegner_wird_mit_\ndreckigem_Schlamm\nbeworfen,\nvergiftet_ihn_evtl.
+.end
+
+.string str_item_desc_x145_item_tm37 GER
+	=Sandsturm_f\$uer_5\nRunden._Kein_Ef-\nfekt_bei_Gestein,\nBoden_und_Stahl.
+.end
+
+.string str_item_desc_x146_item_tm38 GER
+	=Feuersbrunst,_die\nalles_versengt.\nVerbrennt_den\nGegner_evtl.
+.end
+
+.string str_item_desc_x147_item_tm39 GER
+	=Angriff_mit_Felsen.\nBei_Erfolg_wird\nder_INIT.-Wert_des\nGegners_gesenkt.
+.end
+
+.string str_item_desc_x148_item_tm40 GER
+	=Eine_extrem\nschnelle_und\nunausweichbare\nAttacke.
+.end
+
+.string str_item_desc_x149_item_tm41 GER
+	=Erz\$uernt_Gegner,_um\nwiederholten_Ein-\nsatz_derselben_Att.\nzu_verhindern.
+.end
+
+.string str_item_desc_x14a_item_tm42 GER
+	=Erh\$oeht_ANGR._nach\nVerbrennung,\nParalyse_oder\nVergiftung.
+.end
+
+.string str_item_desc_x14b_item_tm43 GER
+	=_ngriff,_der_ab-\nh\$aengig_vom_Ort\nnoch_einen\nZusatzeffekt_hat.
+.end
+
+.string str_item_desc_x14c_item_tm44 GER
+	=Anwender_schl\$aeft_2\nRunden,_um_KP\nund_Status_voll\nzu_erneuern.
+.end
+
+.string str_item_desc_x14d_item_tm45 GER
+	=Angriff_des_anderen\nGeschlechts\nunwahrscheinlich.
+.end
+
+.string str_item_desc_x14e_item_tm46 GER
+	=Das_vom_Gegner\ngehaltene_Item\nkann_gestohlen\nwerden.
+.end
+
+.string str_item_desc_x14f_item_tm47 GER
+	=Trifft_den_Gegner\nmit_Stahlfl\$uegeln.\nAnwenders_VERT.\nsteigt_evtl.
+.end
+
+.string str_item_desc_x150_item_tm48 GER
+	=Anwender_tauscht\nSpezialf\$aehigkeit_mit\ngegnerischem\nPOK\eMON.
+.end
+
+.string str_item_desc_x151_item_tm49 GER
+	=Raubt_den_Effekt\nder_gegn._heilenden\noder_Status_ver-\n\$aendernden_Attacke.
+.end
+
+.string str_item_desc_x152_item_tm50 GER
+	=Angriff_mit_voller\nKraft,_der_den_SP.\nANG._d._Anwenders_\ndeutlich_senkt.
+.end
+
+.string str_item_desc_x153_item_vm01 GER
+	=Ein_Basisangriff.\nDamit_k\$oennen\nkleine_B\$aeume\ngef\$aellt_werden.
+.end
+
+.string str_item_desc_x154_item_vm02 GER
+	=Sttigt_in_der_1.\nRunde_empor_und\ntrifft_den_Gegner\nin_Runde_2.
+.end
+
+.string str_item_desc_x155_item_vm03 GER
+	=Eine_Welle_bricht\n\$ueber_den_Gegner\nherein._Surfen\ndamit_m\$oeglich.
+.end
+
+.string str_item_desc_x156_item_vm04 GER
+	=Gegner_wird_extrem\nstark_getroffen._\nVerschieben_von\nFelsen_m\$oeglich.
+.end
+
+.string str_item_desc_x157_item_vm05 GER
+	=Erzeugt_helles\nLicht,_das_die\ngegnerische\nGenauigkeit_senkt.
+.end
+
+.string str_item_desc_x158_item_vm06 GER
+	=Zertr\$uemmernder_An-\ngriff,_auch_bei\nSteinen._Senkt_evtl.\ndie_VERT.
+.end
+
+.string str_item_desc_x159_item_vm07 GER
+	=Eine_m\$aechtige\nAttacke._Wasser-\nf\$aelle_k\$oennen_damit\nerklommen_werden.
+.end
+
+.string str_item_desc_x15a_item_vm08 GER
+	=Der_Anwender\ntaucht_in_der_1.\nRunde_unter_und\ntrifft_in_Runde_2.
+.end
+
+.string str_item_desc_x15b_item_item_15b GER
+	=_????
+.end
+
+.string str_item_desc_x15c_item_item_15c GER
+	=_????
+.end
+
+.string str_item_desc_x15d_item_eichs_paket GER
+	=Eine_hochentwickelte_Zugangs-\nKarte_zum_Geb\$aeude_der_Laz.Corp.
+.end
+
+.string str_item_desc_x15e_item_pokefloete GER
+	=Eine_Fl\$oete,_deren_lieblicher_Klang\njedes_schlafende_Pok\emon\nsofort_aufweckt.
+.end
+
+.string str_item_desc_x15f_item__oeffner GER
+	=Der_Schl\$uessel_zur_Arena_der\nZinnoberinsel._Er_ist_rot_und\nreich_verziert.
+.end
+
+.string str_item_desc_x160_item_rad_coupon GER
+	=Gegen_Vorlage_dieses_Gutscheins\nerh\$aeltst_du_im_Fahrradladen_in\nAzuria_City_ein_Fahrrad.
+.end
+
+.string str_item_desc_x161_item_pkmcorder GER
+	=Ein_Kameragadget_mit_Wi-fi_Empfang.\nEr_kann_sogar_in_H\$oehlen_Bilder\nsenden.\n
+.end
+
+.string str_item_desc_x162_item_altbernstein GER
+	=Ein_St\$ueck_Bernstein,_in_dem_die_Gene\neines_antiken_Pok\emon_enthalten\nsind._Es_ist_durchsichtig!
+.end
+
+.string str_item_desc_x163_item_tueroeffner GER
+	=Eine_Art_Schl\$uesselkarte,_mit_der_die\nT\$ueren_im_Hauptsitz_der_Silph\nCo._in_Saffronia_ge\$oeffnet_werden.
+.end
+
+.string str_item_desc_x164_item_liftoeffner GER
+	=Ein_Schl\$uessel,_mit_dem_der_Aufzug\nim_Versteck_von_Team_Rocket\naktiviert_wird.
+.end
+
+.string str_item_desc_x165_item_helixfossil GER
+	=Ein_Fossil_eines_antiken\nPok\emon,_das_am_Meeresgrund\nlebte._Es_sieht_wie_ein_Panzer_aus.
+.end
+
+.string str_item_desc_x166_item_domfossil GER
+	=Ein_Fossil_eines_antiken\nPok\emon,_das_am_Meeresgrund\nlebte._Es_sieht_wie_ein_Panzer_aus.
+.end
+
+.string str_item_desc_x167_item_silph_scope GER
+	=Eine_Linse,_mit_der_unsichtbare_Pkmn\nsichtbar_werden._Sie_wurde_von\nder_Silph_Co._hergestellt.
+.end
+
+.string str_item_desc_x168_item_fahrrad GER
+	=Eine_gewobene_Wolke_von_watte-\nartier_Konsistenz._Sie_schwebt_in\nBodenn\$aehe_und_kann_Menschen_tragen.
+.end
+
+.string str_item_desc_x169_item_karte GER
+	=Eine_praktische_Karte,_die_jederzeit\naufgerufen_werden_kann._Dein_aktu-\neller_Standort_wird_auch_angezeigt.
+.end
+
+.string str_item_desc_x16a_item_kampffahnder GER
+	=Ein_Ger\$aet,_das_r\$ueckkampfwillige\nTrainer_ausfindig_macht._Die\nBatterie_l\$aedt_sich_beim_Reisen_auf.
+.end
+
+.string str_item_desc_x16b_item_ruhmesdatei GER
+	=Ein_Ger\$aet,_das_dir_Infos_\$ueber\nwichtige_Personen,_die_dir\nbegegnet_sind,_ins_Ged\$aechtnis_ruft.
+.end
+
+.string str_item_desc_x16c_item_vmtm_box GER
+	=Eine_Box,_in_der_Vms_und_Tms\naufbewahrt_werden._Sie_ist_in\ndeinen_Beutel_integriert.
+.end
+
+.string str_item_desc_x16d_item_beerentuete GER
+	=Eine_T\$uete,_in_der_Beeren\naufbewahrt_werden._Sie_ist_in\ndeinen_Beutel_integriert.
+.end
+
+.string str_item_desc_x16e_item_lehrkanal GER
+	=Eine_Sendung,_die_dem_Anf\$aenger-\nTrainer_mit_n\$uetzlichen_Tipps\nzur_Seite_steht.
+.end
+
+.string str_item_desc_x16f_item_tri_pass GER
+	=Ein_Pass_f\$uer_die_F\$aehren_zwischen\nEiland_Eins,_Zwei_und_Drei._Es\nsind_drei_Inseln_aufgedruckt.
+.end
+
+.string str_item_desc_x170_item_bunt_pass GER
+	=Ein_Pass_f\$uer_die_F\$aehren_zwischen\nOrania_und_den_Sevii_Eilanden.\nEs_ist_ein_Regenbogen_aufgedruckt.
+.end
+
+.string str_item_desc_x171_item_mega_amulett GER
+	=Ein_goldenes_Amulett,_in_das_ein\nEdelstein_eingesetzt_ist._Es\nscheint_von_innen_zu_leuchten.
+.end
+
+.string str_item_desc_x172_item_geheimticket GER
+	=Eine_Fahrkarte_f\$uer_das_Schiff_zum\nNabelfelsen._Sie_leuchtet\ngeheimnisvoll.
+.end
+
+.string str_item_desc_x173_item_auroraticket GER
+	=Eine_Fahrkarte_f\$uer_das_Schiff_zur\nEntstehungsinsel._Sie\nleuchtet_wundervoll.
+.end
+
+.string str_item_desc_x174_item_puderdoeschen GER
+	=Ein_Glas,_um_Beerenpuder,\nder_mit_der_Beerenm\$uehle\nhergestellt_wurde,_aufzubewahren.
+.end
+
+.string str_item_desc_x175_item_rubin GER
+	=Ein_ausgesprochen_sch\$oenes_Juwel,\ndas_r\$oetlich_schimmert._Es\nsymbolisiert_Leidenschaft.
+.end
+
+.string str_item_desc_x176_item_saphir GER
+	=Ein_ausgesprochen_sch\$oenes_Juwel,\ndas_blau_schimmert._Es\nsymbolisiert_Ehrlichkeit.
+.end
+

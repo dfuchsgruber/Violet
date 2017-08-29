@@ -17,12 +17,11 @@ CANVAS_WIDTH = 128 * CANVAS_ZOOM
 CANVAS_HEIGHT_TSP = 1280 * CANVAS_ZOOM
 CANVAS_HEIGHT_TSS = 768 * CANVAS_ZOOM
 CANVAS_HEIGHT = 512 * CANVAS_ZOOM
-STDPROJ = "../map/proj.pmp"
 
 
 class Tileset_gui(tkinter.Frame):
 
-    def __init__(self, root, proj=project.Project.load_project(STDPROJ)):
+    def __init__(self, root, proj=None):
 
         self.project = proj
         self.primary_tileset = None

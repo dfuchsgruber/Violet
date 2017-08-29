@@ -1,0 +1,3 @@
+.string str_0x8a1f57 GER
+	=Die_Stadt_der_Berge,_nennt_man\nMeriana_City_mancherorts._Es\lhei\$st,_dass_hier_der_Arenaleiter\lKamillo_aus_Hoenn_ausgebildet\lwurde._Seit_dem_zieht_dieser_Ort\lviele_Kampf-Trainer_an.
+.end

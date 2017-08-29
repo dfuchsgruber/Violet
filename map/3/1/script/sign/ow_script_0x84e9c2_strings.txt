@@ -1,0 +1,8 @@
+.string str_0x84e9d5 GER
+	=Die_Arena_ist_einem_Kampf-Dojo\nnachempfunden.
+.end
+
+
+.string str_0x84ea0f GER
+	=Arenaleiter_Manus_au\$ser_Haus,\nArena_geschlossen.
+.end

@@ -196,7 +196,7 @@ class BankItem:
             """ Deletes the bank (and thus all references to maps)  but not anything on the disk (simply to prevent mass deletion)"""
             if tkinter.messagebox.askyesno(title="Remove bank", message="Do you really want to remove this bank? It will result in a loss of all references."):
                 children = frame.tree.get_children(self.iid)
-                frame.tree.delete(children)
+                if len(children): frame.tree.delete(children)
                 frame.tree.delete(self.iid)
                 #Delete all children in their respective namespaces
                 for child in children:

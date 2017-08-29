@@ -1,0 +1,136 @@
+.array trainer_class_names GER 13
+		#0x0
+	=\__pk\__mn-trainer
+	=\__pk\__mn-trainer
+	=Polizist
+	=Revolution\$aer
+	#0x4
+	=Aromalady
+	=Ruinenmaniac
+	=Forscherin
+	=Planscher
+	#0x8
+	=Planscher
+	=Ass-trainer
+	=Hexe
+	=Lady
+	#0xc
+	=Sch\$oenheit
+	=Schn\$oesel
+	=Pok\emaniac
+	=Schwimmer
+	#0x10
+	=Schwarzgurt
+	=Gitarrist
+	=Hitzkopf
+	=Camper
+	#0x14
+	=K\$aefermaniac
+	=Psycho
+	=Gentleman
+	=Top Vier
+	#0x18
+	=Leiterald
+	=Schulkind
+	=Sen. & Jun.
+	=Pok\efan
+	#0x1c
+	=Experte
+	=Teenager
+	=Champ
+	=Angler
+	#0x20
+	=Triathlet
+	=Drachenprofi
+	=Vogelf\$aenger
+	=Ninjajunge
+	#0x24
+	=K\$aempferin
+	=Schirmdame
+	=Schwimmerin
+	=Picknicker
+	#0x28
+	=Zwil.
+	=Matrose
+	=Snowboarder
+	=\__pk\__mn-sammler
+	#0x2c
+	=\__pk\__mn-trainer
+	=Pkmn-z\$uechter
+	=Pkmn-ranger
+	=Magma Boss
+	#0x30
+	=Team Magma
+	=G\$oere
+	=K\$aefersammler
+	=Picknicker
+	#0x34
+	=Junges Gl\$ueck
+	=Altes Paar
+	=Geschwister
+	=Wolkenreiter
+	#0x38
+	=Violet Vors.
+	=Teenager
+	=K\$aefersammler
+	=G\$oere
+	#0x3c
+	=Matrose
+	=Camper
+	=Picknicker
+	=Pok\emaniac
+	#0x40
+	=Streber
+	=Wanderer
+	=Biker
+	=Dieb
+	#0x44
+	=Mechaniker
+	=Angler
+	=Schwimmer
+	=Glatzkopf
+	#0x48
+	=Spieler
+	=Sch\$oenheit
+	=Schwimmerin
+	=Psycho
+	#0x4c
+	=Rocker
+	=Jongleur
+	=Dompteur
+	=Vogelf\$aenger
+	#0x50
+	=Schwarzgurt
+	=Rivale
+	=Forscher
+	=Boss
+	#0x54
+	=Arenaleiter
+	=Team Violet
+	=Ass-trainer
+	=Top Vier
+	#0x58
+	=Gentleman
+	=Rivale
+	=Champ
+	=Exorzistin
+	#0x5c
+	=Zwil.
+	=Primapaar
+	=Junges Gl\$ueck
+	=M\$uehlensippe
+	#0x60
+	=Geschwister
+	=\__pk\__mn Prof.
+	=Spieler
+	=M\$uehlenm\$aedel
+	#0x64
+	=Planscher
+	=\__pk\__mn-z\$uechter
+	=\__pk\__mn-ranger
+	=Aromalady
+	#0x68
+	=Ruinenmaniac
+	=Lady
+	=Malerin
+.end

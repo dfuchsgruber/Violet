@@ -1,0 +1,3 @@
+.string str_0x8aaf9e GER
+	=Prof._Tanns_Labor
+.end

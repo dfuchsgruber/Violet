@@ -1,0 +1,8 @@
+.string str_0x80f3b7 GER
+	=Als_Lady_lehne_ich_keine\nHerausforderung_ab!_Benimm_dich\laber_gut!
+.end
+
+
+.string str_0x80f40b GER
+	=Du_hast_dich_nicht_gut\nbenommen!
+.end

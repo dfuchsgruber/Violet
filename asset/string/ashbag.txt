@@ -1,0 +1,32 @@
+
+.string str_item_ashbag GER
+    =In der Aschetasche befindet\nsich \b\02 Asche.\w\09
+.end
+
+.string str_item_ashbag EN
+    =The ashbag contains\b\02\nashes.\w\09
+.end
+
+.string str_ashbag_not_received GER
+    =Zu Schade!\nDu besitzt keinen Aschebeutel!
+.end
+
+.string str_ashbag_not_received EN
+    =What a shame!\nYou do not own an ashbag!
+.end
+
+.string str_ashbag_full GER
+    =Zu Schade!\nDeine Aschetasche ist voll!
+.end
+
+.string str_ashbag_full EN
+    =What a shame!\nYour ashbag seems to be full.
+.end
+
+.string str_ashbag_picked_up GER
+    =\b\01 findet\n\b\02 Asche!
+.end
+
+.string str_ashbag_picked_up EN
+    =\b\01 obtains\n\b\02 ashes!
+.end

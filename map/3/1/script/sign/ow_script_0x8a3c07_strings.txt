@@ -1,0 +1,3 @@
+.string str_0x8a3c11 GER
+	=Westen:_Route_2
+.end

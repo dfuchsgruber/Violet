@@ -1,0 +1,123 @@
+.string str_0x8e17bd GER
+	=Polizist_Marq:_Gut,_ich_lasse_euch\nlaufen,_dieses_Mal._Vorausgesetzt,\lihr_k\$oennt_mich_entsprechend\lentlohnen,_wie_sich_versteht...
+.end
+
+
+.string str_0x8e1748 GER
+	=Mann:_Wir_sind_Revolution\$aere._Wir\nverhandeln_nicht_mit\lEuresgleichen._Wir_werden_euer\lSystem_zum_Einsturz_bringen!
+.end
+
+
+.string str_0x8e1702 GER
+	=Mann:_Hey,_warte_mal._Willst_du\nwirklich_ins_Gef\$aengnis_gehen?
+.end
+
+
+.string str_0x8e167c GER
+	=Mann:_K\$aempfen_wir_nicht_f\$uer\nIdeale?_F\$uer_eine_Welt_der\lGerechtigkeit_und_ohne_Korruption?\lWollen_wir_wirklich_unsere_Werte\lverraten?
+.end
+
+
+.string str_0x8e162e GER
+	=Mann:_Mach,_was_du_willst._Ich\nwerde_mein_Leben_nicht_einfach_so\lwegwerfen.
+.end
+
+
+.string str_0x8e15cc GER
+	=Wir_nehmen_dein_Angebot_an,\nPolizist._Wir_werden_dich\lbezahlen,_wenn_du_uns_passieren\ll\$aesst.
+.end
+
+
+.string str_0x8e14fb GER
+	=Mann:_Hey,_da_belauscht_uns\njemand!
+.end
+
+
+.string str_0x8e148e GER
+	=Marq:_Hach,_wie_unerfreulich,_ein\nZeuge.\l...\lNun,_was_machen_wir_nun_mit_dir...\lWas_machen_wir_mit_dir..._
+.end
+
+
+.string str_0x8e12f8 GER
+	=Junge,_du_musst_verstehen,_wie\nunsere_Welt_funktioniert._An_der\lSpitze,_da_sitzt_ein_einziger\lMann,_der_Champion,_m\$aechtig_und\leinflussreich._Unter_ihm_die_Top\lVier,_die_Herrscher_Thetos._Und\ldann,_dann_kommen_wir,_die\leinfachen_Menschen,_die_nichts\lhaben_au\$ser_dem,_was_sie_sich\lerarbeiten._Die_Welt_ist_nicht\lgerecht,_denn_es_ist_die\lmenschliche_Natur,_Macht_zu\lsuchen.
+.end
+
+
+.string str_0x8e11b9 GER
+	=Diese_beiden_M\$aenner_geh\$oeren_den\nRevolution\$aeren_an,_die_das_System\lder_Top_Vier_st\$uerzen_wollen,_im\lSinne_einer_gerechten_Welt.\pSoll_ich_sie_wirklich_fangen?_Soll\nich_den_Top_Vier_erlauben,_ihre\lUnterdr\$ueckungsherrschaft\lforzusetzten?_Oder_ist_es_nicht\lsinnvoller,_sie_laufen_zu_lassen\lund_daraus_noch_Profit_zu_ziehen?
+.end
+
+
+.string str_0x8e0f79 GER
+	=Ich_biete_dir_einen_Anteil_an.\nVerstehe_meinen_Standpunkt._Die\lWelt_ist_korrupt_und_wer_sich_der\lWelt_nicht_beugt,_wird_zerquetscht\lwie_ein_K\$aefer-Pok\emon.
+.end
+
+
+.string str_0x8e1015 GER
+	=\23\$s\8e\_spnr\4c\e\8e\_spnrDieser_Weg_f\$uehrt_ostw\$aerts_in_eine\nW\$ueste._Halte_dich_lieber_fern!
+.end
+
+
+.string str_0x8e0cdc GER
+	=Ich_kann_Sie_nicht_einfach\ndavonkommen_lassen._Sie\lunterdr\$uecken_die_Menschen_dieser\lStadt!
+.end
+
+
+.string str_0x8e0c9c GER
+	=So_sei_es_dann_der_Kampf.\nBedauerlich,_dass_es_so_enden\lmuss.
+.end
+
+
+.string str_0x8e0c71 GER
+	=Dummer_Junge..._Du_verstehst_gar\nnichts!
+.end
+
+
+.string str_0x8e0c5e GER
+	=Das_..._Nein_...
+.end
+
+
+.string str_0x8e0b99 GER
+	=Polizist:_Wachtmeister_Marq,_ich\nhabe_bereits_von_dubiosen\lAktivit\$aeten_geh\$oert,_und_nun_muss\lich_sie_mit_eigenen_Augen\lmiterleben!_Ungeheuerlich!\lHiermit_sind_Sie_festgenommen,\lalle_drei!
+.end
+
+
+.string str_0x8e0b24 GER
+	=Nah._H\$aette_ich_doch_den_Top_Vier\nmehr_gedient,_als_meinem_eigenen\lReichtum,_w\$aere_ich_nun_in_einer\lbesseren_Lage...
+.end
+
+
+.string str_0x8e0aa8 GER
+	=Danke,_vielen_Dank!_Endlich\nhat_jemand_diesen_Schurken_zur\lStrecke_gebracht.\lIch_will_mich_dir_erkenntlich\lzeigen.
+.end
+
+
+.string str_0x8e0a79 GER
+	=Ich_stehe_in_deiner_Schuld.\pAuf_Wiedersehen!
+.end
+
+
+.string str_0x8e0f0b GER
+	=..._Ich_werde_..._Ihr_Geld_nehmen.\pLassen_Sie_die_Revolution\$aere\nlaufen.
+.end
+
+
+.string str_0x8e0ef0 GER
+	=Eine_weise_Entscheidung.
+.end
+
+
+.string str_0x8e0edc GER
+	=\b\01_erh\$aelt_1500_\b7.
+.end
+
+
+.string str_0x8e0e4f GER
+	=Du_bist_ein_kluger_Junge._Du\nverstehst,_wie_die_Welt\lfunktioniert._Wir_brauchen_keine\lIdealisten,_sondern_Pragmatiker.\lWie_mich,_wie_dich.
+.end
+
+
+.string str_0x8e0e17 GER
+	=Revolution\$aere:_Schnell,_machen_wir\nuns_aus_dem_Staub!
+.end

@@ -1,0 +1,3 @@
+.string str_0x8f6ed0 GER
+	=Es_hei\$st,_dass_in_Theto_einst_das\nZeit-Pok\emon_das_Herz_der_Zeit\lverborgen_hat._Solange_es_schl\$aegt,\lbleibt_die_Zeit_im_Fluss.
+.end

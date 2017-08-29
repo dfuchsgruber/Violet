@@ -3,9 +3,30 @@
 .end
 
 
-.string str_0x892f6e GER
-	=\_spnr\30\89\_spnr\16\30\89\_spnr\1f\30\89\_spnr\$oe\31\89\_spnr\n\31\89\_spnr\0f_\9e\0b\8a\_spnr\09\02\02
+.string str_difficulty_very_easy GER
+    =Sehr einfach
 .end
+
+.string str_difficulty_easy GER
+    =Einfach
+.end
+
+.string str_difficulty_normal GER
+    =Normal
+.end
+
+.string str_difficulty_hard GER
+    =Schwer
+.end
+
+.string str_difficulty_very_hard GER
+    =Sehr schwer
+.end
+
+.string str_intro_0 GER
+    =... Kannst du mich hören?\n... ... ...\nLass es mich dir zeigen...\nSie kamen aus dem All...
+.end
+
 
 
 .string str_0x8cf12f GER

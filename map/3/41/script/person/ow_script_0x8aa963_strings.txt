@@ -1,0 +1,8 @@
+.string str_0x8ab8e2 GER
+	=Mein_Konkurent_dort_dr\$ueben_meint,\ner_w\$uerde_es_in_Manus_Arena\lschaffen._Dabei_bin_ich_es,_der\ldiesen_Posten_ergattern_wird!_Sieh\ldir_nur_an,_wie_viel_ich_trainiert\lhabe!
+.end
+
+
+.string str_0x8abf92 GER
+	=Dann_muss_ich_wohl_noch_h\$aerter_an\nmir_und_meinen_Pok\emon_arbeiten!
+.end
