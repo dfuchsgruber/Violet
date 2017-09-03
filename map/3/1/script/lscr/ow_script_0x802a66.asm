@@ -5,7 +5,7 @@
 .global ow_script_0x802a66
 ow_script_0x802a66:
 checkflag 0x932
-gotoif EQUAL ow_script_0x935de6
+callif EQUAL ow_script_0x935de6
 end
 
 

@@ -74,9 +74,9 @@ loadpointer 0x0 str_0x8e148e
 callstd MSG_KEEPOPEN
 getplayerpos 0x8000 0x8001
 compare 0x8001 0x1e
-gotoif EQUAL ow_script_0x8e1470
+callif EQUAL ow_script_0x8e1470
 compare 0x8001 0x20
-gotoif EQUAL ow_script_0x8e147c
+callif EQUAL ow_script_0x8e147c
 applymovement 0x2a ow_script_movs_0x8e146d
 waitmovement 0x0
 loadpointer 0x0 str_0x8e12f8
@@ -103,7 +103,7 @@ ow_script_0x8e1b14:
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x8e22eb
+gotoif EQUAL ow_script_0x8e22eb
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8e0cdc
 callstd MSG_KEEPOPEN

@@ -16,7 +16,7 @@ call ow_script_0x8e63f4
 loadpointer 0x0 str_0x8e225d
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x947e76
+gotoif EQUAL ow_script_0x947e76
 playsong MUS_REVOLUTION 0x1
 applymovement 0x800f ow_script_movs_0x8dea30
 waitmovement 0x0

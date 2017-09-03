@@ -7,7 +7,7 @@ ow_script_0x844895:
 lock
 faceplayer
 checkflag 0x209
-callif EQUAL ow_script_0x8448c2
+gotoif EQUAL ow_script_0x8448c2
 loadpointer 0x0 str_0x8448cd
 callstd MSG_FACE
 copyvarifnotzero 0x8000 0xb7

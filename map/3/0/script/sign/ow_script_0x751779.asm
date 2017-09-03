@@ -5,9 +5,9 @@
 .global ow_script_0x751779
 ow_script_0x751779:
 checkflag 0x21c
-callif LESS ow_script_0x7758df
+gotoif LESS ow_script_0x7758df
 checkflag 0x21e
-callif EQUAL ow_script_0x756d9e
+gotoif EQUAL ow_script_0x756d9e
 fanfare 0x13e
 loadpointer 0x0 str_0x751875
 callstd MSG

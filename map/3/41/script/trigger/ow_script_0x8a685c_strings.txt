@@ -56,3 +56,23 @@
 .string str_0x8a6a97 GER
 	=Du_bist_in_der_Tat_ein_z\$aehes\nB\$uerschchen...
 .end
+
+
+.string str_0x8a752d GER
+	=Das_war_keine_schlechte\nVorstellung,_Kindchen..._Du_hast\lwirklich_etwas_auf_dem_Kasten.
+.end
+
+
+.string str_0x8a7502 GER
+	=Verdammt!_Der_Kleine_hat_mich\nbesiegt...
+.end
+
+
+.string str_0x8a74d8 GER
+	=Wir_sollten_uns_vom_Acker_machen!
+.end
+
+
+.string str_0x8a73a9 GER
+	=Ich_danke_euch_beiden,_dass_ihr\ndiese_Halunken_vertrieben_habt.\lSie_haben_immerzu_von_einem\lseltsamen_Objekt_namens_Zeitstein\lgeredet._Ob_sie_gedacht_haben,_ich\lw\$uesste_etwas_dar\$ueber?\l...\l...\lWie_dem_auch_sei_-_wollt_ihr\lnicht_auf_ein_Wort_in_mein\lLabor_kommen?_Ich_wollte_euch\lsowieso_treffen.
+.end

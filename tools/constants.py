@@ -3,9 +3,11 @@ import os
 import sys
 import getopt
 from pymap import path as rpath
+from pymap import config
+
 STDLIB = "./lib/macros.py"
 INCLUDE = "../include"
-STDMACRO = "std.s"
+STDPREAMBLE = config.STDPREAMBLE
 
 
 """ Table of certain constants """
@@ -1703,36 +1705,226 @@ pockets = [
 ]
 
 flag_table = {
-	0x820 : "FRBADGE_1",
-	0x821 : "FRBADGE_2",
-	0x822 : "FRBADGE_3",
-	0x823 : "FRBADGE_4",
-	0x824 : "FRBADGE_5",
-	0x825 : "FRBADGE_6",
-	0x826 : "FRBADGE_7",
-	0x827 : "FRBADGE_8",
-	0x828 : "PKMNMENU",
-	0x829 : "POKEDEX",
-	0x830 : "RUNNING_SHOES",
-
-	#Custom from pkmn violet, incomplete
-	0x90F : "BATTLE_LOSABLE",
-	0x910 : "TRANS_PALETTE_FETCH",
-	0x911 : "TRANS_DISABLE",
-	0x915 : "WONDERTRADE",
-	0x916 : "MAP_BGN_AUTO_ALIGN_OFF",
-	0x917 : "POKERADAR_POKEMON_SPAWNED",
-	0x918 : "ABILITY_SPARSAM_TRIGGER",
-	0x91F : "WONDERTRADE_MEW_RECEIVED",
-	0x920 : "MEGA_EVOLUTION_PERFORMED",
-	0x921 : "PLAYER_ABLE_TO_MEGA_EVOLVE",
-	0x922 : "MAP_LOAD_DYNAMIC",
-	0x923 : "DUNGEON_BUFFERED",
-	0x924 : "PLAYER_CAN_ENTER_DUNGEONS",
-	0x927 : "POKEDEX_FEATURE_HABITAT",
-	0x928 : "POKEDEX_FEATURE_0",
-	0x929 : "POKEDEX_FEATURE_1",
-	0x92A : "POKEDEX_FEATURE_2"
+	0x200 : "RIVALE_AMONIA"
+	0x201 : "ITEMID87"
+	0x202 : "???3"
+	0x203 : "???2"
+	0x204 : "???"
+	0x205 : "ITEMID86"
+	0x206 : "ITEMID85"
+	0x207 : "ITEMID84"
+	0x208 : "ITEMID83"
+	0x209 : "ITEMID82"
+	0x20a : "ITEMID81"
+	0x20b : "LESTERAKTANIA2"
+	0x20c : "LESTERARENA"
+	0x20d : "LESTERAKTANIA"
+	0x20e : "LESTERARENA3"
+	0x20f : "LESTERAKTANIA4"
+	0x210 : "ITEMID80"
+	0x211 : "ITEMID79"
+	0x212 : "ITEMID78"
+	0x213 : "ITEMID77"
+	0x214 : "ITEMID76"
+	0x215 : "ITEMID75"
+	0x216 : "ITEMID74"
+	0x217 : "ITEMID73"
+	0x218 : "ITEMID72"
+	0x219 : "ITEMID71"
+	0x21a : "ITEMID70"
+	0x21b : "ITEMID69"
+	0x21c : "ITEMIDFF"
+	0x21d : "ITEMSCRIPT"
+	0x21e : "MILLSCRIPT:_DID_YOU_DO_THE_GOOOD_CHOICE?"
+	0x21f : "MILLSCRIPTPERSID"
+	0x220 : "MILLSCRIPTEGG"
+	0x221 : "BIBORQUESTTRIGGERED_(SET_IF_NOT_TRIGGERED)"
+	0x222 : "BIBORQUESTFINISHED"
+	0x223 : "BIBORQUESTRECIEVEDBIBOR"
+	0x224 : "EGGROUTE1"
+	0x225 : "EGGROUTE2"
+	0x226 : "QUESTMERIANACITY2"
+	0x227 : "QUESTMERIANACITY"
+	0x228 : "?"
+	0x229 : "BEERENSAFT_IN_SIVLANIA"
+	0x22a : "ITEM_ID"
+	0x22b : "ITEMID68"
+	0x22c : "ITEMID67"
+	0x22d : "ITEMID66"
+	0x22e : "CUT2"
+	0x22f : "CUT"
+	0x230 : "ITEMID65"
+	0x231 : "ITEMID64"
+	0x232 : "SCRIPTAKTANIAII"
+	0x233 : "ITEMID63"
+	0x234 : "ITEMID62"
+	0x235 : "FAUNID_EINOEDE"
+	0x236 : "FAUN/MIAID_MIAS_HAUS_IN_SILVANIA"
+	0x237 : "ITEMID61"
+	0x238 : "BRANCH_FOR_LEVELSCRIPT_IN_MIAS_HOUSE"
+	0x239 : "RUEPEL_SILVANIA"
+	0x23a : "ITEMID60"
+	0x23b : "ITEMID59"
+	0x23c : "POKERADARFLAG"
+	0x23d : "ENERGIEBALL_TUTOR_FLAG"
+	0x23e : "ITEMID58"
+	0x23f : "ITEMID57"
+	0x240 : "ITEMID56"
+	0x241 : "ITEMID55"
+	0x242 : "ITEMID54"
+	0x243 : "ITEMID53"
+	0x244 : "SILVANIA_TEAM_VIOLET_DONE?"
+	0x245 : "MAIKEIDROUTE3"
+	0x246 : "USED"
+	0x247 : "ITEMID52"
+	0x248 : "ITEMID51"
+	0x249 : "ITEMID50"
+	0x24a : "ITEMID49"
+	0x24b : "ITEMID48"
+	0x24c : "ITEMID47"
+	0x24d : "ITEMID46"
+	0x24e : "ITEMID45"
+	0x24f : "ITEMID44"
+	0x250 : "ITEMID43"
+	0x251 : "EIID"
+	0x252 : "ITEMID42"
+	0x253 : "RECIEVEDCLAWFOSSIL???"
+	0x254 : "FOSSILID"
+	0x255 : "ITEMID41"
+	0x256 : "ITEMID40"
+	0x257 : "ITEMID39"
+	0x258 : "ITEMID38"
+	0x259 : "ITEMID37"
+	0x25a : "ITEMID36"
+	0x25b : "ITEMID35"
+	0x25c : "GRUNTID"
+	0x25d : "ITEMID34"
+	0x25e : "ITEMID33"
+	0x260 : "ITEMID32"
+	0x261 : "ITEMID31"
+	0x262 : "FELIXKASK"
+	0x263 : "PAROLEKASKUNTERGRUND"
+	0x264 : "EVOLITHKASK"
+	0x265 : "ITEMID30"
+	0x266 : "ITEMID29"
+	0x267 : "KUESTENBERG0"
+	0x268 : "KUESTENBERG1"
+	0x269 : "KUESTENBERG2"
+	0x26b : "IGVABLACKMARKET"
+	0x26c : "PRIMUSBLACKMARKET"
+	0x26d : "BLAISEBLACKMARKET"
+	0x26e : "ITEMID28"
+	0x26f : "SCHATTENGLAS"
+	0x270 : "BBSHIPMARKET"
+	0x271 : "ITEMID27"
+	0x820 : "FRBADGE_1"
+	0x821 : "FRBADGE_2"
+	0x822 : "FRBADGE_3"
+	0x823 : "FRBADGE_4"
+	0x824 : "FRBADGE_5"
+	0x825 : "FRBADGE_6"
+	0x826 : "FRBADGE_7"
+	0x827 : "FRBADGE_8"
+	0x828 : "PKMNMENU"
+	0x829 : "POKEDEX"
+	0x82f : "RUNNING_SHOES"
+	0x900 : "RIVALE_IM_EIGENEN_HAUS"
+	0x901 : "MERIANA_CITY_FUEHRUNG"
+	0x902 : "MARIANA_CITY_FUEHRUNG2"
+	0x903 : "MARIANA_CITY_FUEHRUNG"
+	0x904 : "BLAISE_UND_FELIX_HOEHLE_IN_BALL"
+	0x905 : "FLASHBACK_ID_IN_AKTANIA"
+	0x90a : "GENGARNIT_IN_AKTANIA"
+	0x90f : "BATTLE_LOSABLE"
+	0x910 : "TRANS_PALETTE_FETCH"
+	0x911 : "TRANS_DISABLE"
+	0x914 : "ID"
+	0x915 : "WONDERTRADE"
+	0x916 : "MAP_BGN_AUTO_ALIGN_OFF"
+	0x917 : "POKERADAR_POKEMON_SPAWNED"
+	0x918 : "ABILITY_SPARSAM_TRIGGER"
+	0x919 : "ANGELAKTAINA"
+	0x91a : "ITEMID26"
+	0x91b : "ITEMID25"
+	0x91c : "LESTERID_AKTANIA"
+	0x91d : "DETEKTOR_ID"
+	0x91e : "WORLDMAP_->_ROTE_ANIMATION"
+	0x91f : "WONDERTRADE_MEW_RECEIVED"
+	0x920 : "MEGA_EVOLUTION_PERFORMED"
+	0x921 : "PLAYER_ABLE_TO_MEGA_EVOLVE"
+	0x922 : "MAP_LOAD_DYNAMIC"
+	0x923 : "DUNGEON_BUFFERED"
+	0x924 : "PLAYER_CAN_ENTER_DUNGEONS"
+	0x925 : "FRACTION_CHOSEN"
+	0x926 : "IS_REVOLUTION_FRACTION"
+	0x927 : "POKEDEX_FEATURE_HABITAT"
+	0x928 : "POKEDEX_FEATURE_0"
+	0x929 : "POKEDEX_FEATURE_1"
+	0x92a : "POKEDEX_FEATURE_2"
+	0x92b : "ITEMID23"
+	0x92c : "ITEMID24"
+	0x92d : "ITEMID22"
+	0x92e : "ITEMID21"
+	0x92f : "ITEMID20"
+	0x930 : "HMFLYID"
+	0x931 : "ITEMID19"
+	0x932 : "MERIANACITY_ARENA_LOCKED"
+	0x933 : "ELISEINFRONTOFMERIANA"
+	0x934 : "VIOLETGRUNTSROUTE4"
+	0x935 : "ITEMID18"
+	0x936 : "EGGID4"
+	0x937 : "ITEMID17"
+	0x938 : "ITEMID16"
+	0x939 : "ITEMID15"
+	0x93a : "ITEMID14"
+	0x93b : "ITEMID13"
+	0x93c : "FUTURESCRIPTDONE"
+	0x93d : "EGGID3"
+	0x93e : "MATSCHBOMBE"
+	0x93f : "ACCESS_TO_FOSSIL_E.G._IN_LAZCORP"
+	0x940 : "UPGRADE"
+	0x941 : "EVENTMUSEUM"
+	0x942 : "EVENTMUSEMACTIVE"
+	0x943 : "PIRATEORINACITYDISSAPPEARED"
+	0x944 : "WOLKENHERZSTOLEN"
+	0x945 : "ORINACITYBANKTHERE"
+	0x946 : "FOSSILCURRENTLYUNDERRESTAURATION"
+	0x947 : "ITEMID12"
+	0x948 : "AETHER_IM_MARKT_VERFUEGBAR"
+	0x949 : "ELIXIER_IM_MARKT_VERFUEGBAR"
+	0x94a : "ITEMID11"
+	0x94b : "ITEMID10"
+	0x94c : "EGGID2"
+	0x94d : "EGGID"
+	0x94e : "LAVADOSSEEN"
+	0x94f : "KARMAEVENTASCHHAIN"
+	0x950 : "NUGGETASCHHAIN"
+	0x951 : "ASHBAG"
+	0x952 : "ITEMID9"
+	0x953 : "ITEMID8"
+	0x954 : "ASHPRESENT"
+	0x955 : "EGGIDS"
+	0x956 : "TMID"
+	0x957 : "IGVAVULCANOENTRANCE"
+	0x958 : "ITEMID7"
+	0x959 : "ITEMID6"
+	0x95a : "ITEMID5"
+	0x95b : "ITEMID4"
+	0x95c : "ITEMID3"
+	0x95d : "ITEMID2"
+	0x95e : "GROUDONVISIBLEVOLCANO"
+	0x95f : "DISERAKTVOLCANO"
+	0x960 : "VULCONEVENT"
+	0x961 : "ITEMID"
+	0x962 : "TRAINER_TIPP_MUSHROOM"
+	0x963 : "TRAINER_TIPP_SHELL"
+	0x964 : "TRAINER_TIPP_DETECTOR"
+	0x965 : "TRAINER_TIPP_FP_MENU"
+	0x966 : "TRAINER_TIPP_WONDERTRADE"
+	0x967 : "TRAINER_TIPP_POKERADAR"
+	0x968 : "TRAINER_TIPP_HABITAT"
+	0x969 : "TRAINER_TIPP_DNS"
+	0x96a : "TRAINER_TIPP_CLOUD"
 }
 
 var_table = {
@@ -1744,6 +1936,12 @@ var_table = {
 	0x50CD : "SGM_VER",
 	0x50CE : "HATCHING_BOOST_STEPS",
 	0x50D0 : "ASH",
+	0x50D3 : "LAZ_CORP_CURRENT_LEVEL",
+	0x50D4 : "BANK_CREDIT",
+	0x50D5 : "MERIANA_ARENA_HEALS",
+	0x50D6 : "MERIANA_ARENA_TRAINERS",
+	0x50D7 : "NULLVAR",
+	0x50D8 : "MONEY_GIFT_FOR_HOMELESS",
 	0x50D9 : "SONG_OVERRIDE",
 	0x50DA : "POKEDEX_ACTIVE_COMPARATOR",
 	0x50DB : "POKEDEX_LAST_SPECIES",
@@ -1774,6 +1972,7 @@ var_table = {
 	0x50F9 : "DIFFICULTY",
 	0x50FA : "KARMA_POINTS",
 	0x50FB : "KARMA_VALUE",
+
 	0x800F : "LASTTALKED",
 	0x800D : "LASTRESULT",
 	0x800C : "PLAYERFACING",
@@ -2273,9 +2472,10 @@ def values(_d):
 	if isinstance(_d, dict): return _d.values()
 	return _d
 
-def _dict_get(_d, key, hexstr=True, _str=True):
+def _dict_get(_d, key, hexstr=True, _str=True, pedantic=False):
 	""" Returns a string from a dict in this module if a key is present else simply the key """
 	if key in _d: return _d[key]
+	elif pedantic: raise Exception("Pedantic: Value " + str(key) + " not in dict " + str(_d))
 	if hexstr: return hex(key)
 	if _str: return str(key)
 	return key
@@ -2285,9 +2485,11 @@ def byte_to_pchar(byte):
 		if pchar_dict[pchar] == byte: return pchar
 	return hex(byte)
 
-def item(id):
+def item(id, pedantic=False):
 	try: return item_table[id]
-	except: return hex(id)
+	except: 
+		if pedantic: raise Exception("Pedantic: Value " + str(id) + " not in item list")
+    	else: return hex(id)
 
 def species(id):
 	try: return species_table[id]
@@ -2328,7 +2530,7 @@ def export_macros(lib, dir):
 		_export_generic_macros(lib, dir, "map_type", map_types),
 		_export_generic_macros(lib, dir, "battle_types", battle_types)
 	]
-	fd = open(dir + STDMACRO, "w+")
+	fd = open(dir + STDPREAMBLE, "w+")
 	fd.write("\n\n\n".join(macros))
 	fd.close()
 
@@ -2372,7 +2574,7 @@ def get_macro_header():
 	lib = eval(fd.read())
 	fd.close()"""
 	#return "\n".join(('.include "' + lib[k].replace("\\", "/") + '"') for k in lib) + "\n"
-	return ".include \"" + STDMACRO + "\""
+	return ".include \"" + STDPREAMBLE + "\""
 
 if __name__ == "__main__":
 	try:

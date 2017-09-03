@@ -7,7 +7,7 @@ ow_script_0x8a19d4:
 loadpointer 0x0 str_0x94568f
 callstd MSG_FACE
 call ow_script_0x945619
-callif EQUAL ow_script_0x8faec2
+gotoif EQUAL ow_script_0x8faec2
 end
 
 
@@ -24,7 +24,7 @@ waitmovement 0x0
 loadpointer 0x0 str_0x945eb7
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
-callif LESS ow_script_0x8a1a57
+gotoif LESS ow_script_0x8a1a57
 loadpointer 0x0 str_0x8a1be6
 callstd MSG
 setflag TRANS_DISABLE
@@ -33,7 +33,7 @@ setvar 0x8005 0x12
 call ow_script_0x1c9086
 clearflag TRANS_DISABLE
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x8a1a57
+gotoif EQUAL ow_script_0x8a1a57
 call ow_script_0x9455aa
 loadpointer 0x0 str_0x94618b
 callstd MSG
@@ -46,7 +46,7 @@ setvar 0x8000 0x69
 setvar 0x8001 0x1
 checkitem ITEM_RIESENPILZ 0x3
 compare LASTRESULT 0x1
-callif LESS ow_script_0x9455d9
+gotoif LESS ow_script_0x9455d9
 setvar 0x8000 0x68
 setvar 0x8001 0x3
 removeitem ITEM_RIESENPILZ 0x3
@@ -88,12 +88,12 @@ setvar 0x8000 0x67
 setvar 0x8001 0x3
 checkitem ITEM_MINIPILZ 0x3
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x9455ee
+gotoif EQUAL ow_script_0x9455ee
 setvar 0x8000 0x68
 setvar 0x8001 0x1
 checkitem ITEM_RIESENPILZ 0x1
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x9455ee
+gotoif EQUAL ow_script_0x9455ee
 setvar LASTRESULT 0x0
 goto ow_script_0x945662
 

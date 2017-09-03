@@ -53,6 +53,12 @@
 .word \graphic
 .endm
 
+@Despawns an oam
+.macro oam_despawn target_var:req
+.byte 0x7
+.hword \target_var
+.endm
+
 @spawns a big callback
 .macro spawn_big_cb func prio init_data_hword_cnt
 .byte 0x8
@@ -226,6 +232,19 @@
 .equ RESTORE, 0
 .equ FORCE, 1
 
+@oam_move
+@target := oam id (or var that holds oam id) to move
+@duration := duration in frames (0 = instantly)
+@dx := total x movement
+@dy := total y movement
+.macro oam_move target:req duration:req dx:req dy:req
+.byte 0x19
+.hword \target
+.hword \duration
+.hword \dx
+.hword \dy
+.endm
+
 
 @callasm
 .macro callasm func param_cnt
@@ -350,14 +369,51 @@
 .hword \val
 .endm
 
-@field for bg setup
-.macro bg_setup_cnfg id charbase mapbase size colmode priority
-.word \id | (\charbase << 2) | (\mapbase << 4) | (\size << 9) | (\colmode << 11) | (\priority << 12)
-.endm
-
 @clear the vmap for a bg
 .macro bg_clear_map id size
 .byte 0x2E
 .byte \id
 .hword \size
+.endm
+
+@fadescreen for obj pal (by tag)
+@target := the overlay color to fade into
+@tag := the pal tag of the obj pal to fade
+@first := first color relative to obj pal
+@number := number of cols to fade
+@duration := duration in frames for fading process (0 := imideately)
+@from := base intensity to start
+@to := intensity to be at end of fading
+.macro fade_obj_pal color:req tag:req first:req number:req duration:req from:req to:req
+.byte 0x30
+.hword \color
+.hword \tag
+.byte \first
+.byte \number
+.hword \duration
+.byte \from
+.byte \to
+.endm
+
+@flushes a textbox
+@target := boxid (or var that holds box id)
+@flush := [first pixel] | [second pixel] >> 4
+.macro tbox_flush target:req flush:req
+.byte 0x31
+.hword \target
+.byte \flush
+.endm
+
+@forces the pal restore to the values that are currently visible
+@first := first color to force
+@count := number of colors to force relative to first
+.macro pal_restore_force_current first count
+.byte 0x32
+.hword \first
+.hword \count
+.endm
+
+@field for bg setup
+.macro bg_setup_cnfg id charbase mapbase size colmode priority
+.word \id | (\charbase << 2) | (\mapbase << 4) | (\size << 9) | (\colmode << 11) | (\priority << 12)
 .endm

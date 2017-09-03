@@ -5,7 +5,7 @@
 .global ow_script_0x834f46
 ow_script_0x834f46:
 checkflag FRBADGE_3
-gotoif EQUAL ow_script_0x834fb5
+callif EQUAL ow_script_0x834fb5
 end
 
 

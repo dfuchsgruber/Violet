@@ -193,5 +193,6 @@ bool move_needs_charging(u16 move);
 void bsc_init_by_interrupting_battle_func(u8 *bsc);
 u16 pokemon_get_basic_stage(u16 species);
 void bsc_cmd_x06_apply_damage_modifiers();
+void remove_pc_item(u16 item, u16 quantity);
 
 #endif

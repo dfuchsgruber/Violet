@@ -5,11 +5,11 @@
 .global ow_script_0x947b32
 ow_script_0x947b32:
 checkflag 0x201
-callif EQUAL ow_script_0x89be13
+gotoif EQUAL ow_script_0x89be13
 loadpointer 0x0 str_0x89be1d
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x85e7fa
+callif EQUAL ow_script_0x85e7fa
 closeonkeypress
 setflag 0x201
 end

@@ -12,8 +12,8 @@ TSGRAPHIC = config.TSGRAPHIC #Can be None as well - no graphic will be exported 
 TSGFXSYM = config.TSGFXSYM
 TSSYM = config.TSSYM
 PROJ = config.STDPROJ
-MAPTABLEPTR = pymapex.DEFAULT_TABLE
-TSTABLE = pysetex.DEFAULT_TABLE
+MAPTABLEPTR = config.MAPTABLEPTR
+TSTABLE = config.TSTABLE
 
 def _mkdirs(dir):
     if not os.path.exists(dir):

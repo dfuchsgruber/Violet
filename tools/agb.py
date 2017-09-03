@@ -1,4 +1,6 @@
-STDPATH = "C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
+from pymap import config
+
+STDPATH = config.STDROM
 VIOLETPATH = "C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
 FREPATH = "D:/Hacking/1695 - Pokemon Fire Red (U)(Independent).gba"
 FRDPATH = "D:/Hacking/bprd.gba"

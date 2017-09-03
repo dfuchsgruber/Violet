@@ -5,7 +5,7 @@
 .global ow_script_0x83ff26
 ow_script_0x83ff26:
 compare STORY_PROGRESS 0x1
-callif EQUAL ow_script_0x8400be
+gotoif EQUAL ow_script_0x8400be
 end
 
 

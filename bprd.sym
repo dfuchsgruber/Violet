@@ -226,3 +226,4 @@ memset = 0x081E9DC0 | 1;
 tbox_sync = 0x08003EA0 | 1;
 tbox_flush_map = 0x08004038 | 1;
 string_get_width = 0x08005E54 | 1;
+remove_pc_item = 0x0809A544 | 1;

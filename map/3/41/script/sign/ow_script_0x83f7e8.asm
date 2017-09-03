@@ -7,11 +7,11 @@ ow_script_0x83f7e8:
 bufferattack 0x0 ATTACK_FASSADE
 checkattack ATTACK_FASSADE
 compare LASTRESULT 0x6
-callif EQUAL ow_script_0x83f924
+gotoif EQUAL ow_script_0x83f924
 loadpointer 0x0 str_0x83f8bf
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x83f8bb
+gotoif EQUAL ow_script_0x83f8bb
 setanimation 0x0 0x800d
 bufferpartypokemon 0x1 0x800d
 loadpointer 0x0 str_0x83f89b
@@ -26,13 +26,13 @@ goto ow_script_0x83f829
 .global ow_script_0x83f829
 ow_script_0x83f829:
 compare PLAYERFACING 0x1
-callif EQUAL ow_script_0x83f864
+gotoif EQUAL ow_script_0x83f864
 compare PLAYERFACING 0x2
-callif EQUAL ow_script_0x83f857
+gotoif EQUAL ow_script_0x83f857
 compare PLAYERFACING 0x3
-callif EQUAL ow_script_0x83f87e
+gotoif EQUAL ow_script_0x83f87e
 compare PLAYERFACING 0x4
-callif EQUAL ow_script_0x83f871
+gotoif EQUAL ow_script_0x83f871
 end
 
 

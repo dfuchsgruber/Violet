@@ -23,7 +23,7 @@ copyvarifnotzero 0x8000 0x18
 copyvarifnotzero 0x8001 0x1
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x87f3c1
+gotoif EQUAL ow_script_0x87f3c1
 lock
 faceplayer
 loadpointer 0x0 str_0x8f5bc3

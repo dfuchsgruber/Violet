@@ -116,7 +116,7 @@ class MapItem:
     def remove(self):
         """ Removes the map from the project and the tree """
         if tkinter.messagebox.askyesno(title="Remove map", message="Do you really want to remove this map from the project?"):
-            if self.frame.gui.map and self.frame.gui.bank == self.bank and self.frame.gui.mapid == self.mapid:
+            if self.frame.gui.map and self.frame.gui.bank == self.bank and self.frame.gui.mapid == self.mapid and self.frame.map_has_changed():
                 if tkinter.messagebox.askyesno(title="Save changes before removal", message="Deleting the current map will result in a loss of all changes. Do you want to save the map before removing it?"):
                     self.frame.gui.file_save()
                 self.frame.gui.map = None

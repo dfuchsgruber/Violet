@@ -103,7 +103,10 @@ void anim_engine_execute_frame(ae_memory* mem) {
         cmdx2C_mapreload,
         cmdx2D_force_pals_to_black,
         cmdx2E_bg_clear_map,
-        cmdx2F_setvar
+        cmdx2F_setvar,
+        cmdx30_fade_obj_pal,
+        cmdx31_tbox_flush,
+        cmdx32_pal_restore_force_current
     };
     u8 cmd_id = anim_engine_read_byte(mem);
 
@@ -219,7 +222,8 @@ void cmdx04_oam_delete(ae_memory* mem) {
     if (id >= 0x8000) {
         id = mem->vars[id - 0x8000];
     }
-    clear_oam_entry((oam_object*) (id * 0x44 + 0x0202063c));
+    clear_oam_entry(&oams[id]);
+    //clear_oam_entry((oam_object*) (id * 0x44 + 0x0202063c));
 }
 
 void cmdx05_oam_vram_load(ae_memory* mem) {
@@ -243,7 +247,7 @@ void cmdx06_oam_vram_free(ae_memory* mem) {
 
 void cmdx07_oam_despawn(ae_memory* mem) {
     u8 oam_id = (u8) anim_engine_read_param(mem);
-    oam_object* oam = (oam_object*) (oam_id * 0x44 + 0x0202063c);
+    oam_object* oam = &oams[oam_id];
     oam_despawn(oam);
 }
 
@@ -519,7 +523,7 @@ void anim_engine_text_renderer(u8 self) {
             *mem->destination = 0xFF;
 
             //draw the text
-            tbox_flush(mem->boxid, 0);
+            //tbox_flush(mem->boxid, 0);
             void *src = (void*) 0x02021D18;
             tbox_print_string(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, src);
             bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
@@ -950,4 +954,45 @@ void cmdx2F_setvar(ae_memory *mem) {
     int var = anim_engine_read_hword(mem) - 0x8000;
     u16 val = anim_engine_read_hword(mem);
     mem->vars[var] = val;
+}
+
+void cmdx30_fade_obj_pal(ae_memory *mem){
+    u16 color = anim_engine_read_hword(mem);
+    u16 tag = anim_engine_read_hword(mem);
+    u8 start_col = anim_engine_read_byte(mem);
+    u8 col_count = anim_engine_read_byte(mem);
+    u16 duration = anim_engine_read_hword(mem);
+    u8 from_intensity = anim_engine_read_byte(mem);
+    u8 to_intensity = anim_engine_read_byte(mem);
+    
+    int pal_id = get_obj_pal_by_tag(tag) + 16;
+    u16 dcol = (u16)(16 * pal_id + start_col);
+    u16 ncol = col_count;
+    u8 cb_id = spawn_big_callback(anim_engine_fader, 0);
+    big_callbacks[cb_id].params[0] = color;
+    big_callbacks[cb_id].params[1] = dcol;
+    big_callbacks[cb_id].params[2] = ncol;
+    big_callbacks[cb_id].params[3] = duration;
+    big_callbacks[cb_id].params[4] = 0; //current frame
+    big_callbacks[cb_id].params[5] = from_intensity;
+    big_callbacks[cb_id].params[6] = to_intensity;
+
+    anim_engine_fader(cb_id);
+    
+}
+
+void cmdx31_tbox_flush(ae_memory *mem){
+    u8 box_id = (u8)anim_engine_read_param(mem);
+    u8 flush = anim_engine_read_byte(mem);
+    tbox_flush(box_id, flush);
+}
+
+void cmdx32_pal_restore_force_current(ae_memory *mem){
+    u16 first_col = anim_engine_read_hword(mem);
+    u16 col_cnt = anim_engine_read_hword(mem);
+    int i;
+    for(i = 0; i < col_cnt; i++){
+        pal_restore[first_col + i] = pals[first_col + i];
+    }
+    
 }

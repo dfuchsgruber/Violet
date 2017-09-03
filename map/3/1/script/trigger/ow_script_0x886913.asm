@@ -95,7 +95,7 @@ end
 ow_script_0x8a1251:
 getplayerpos 0x8000 0x8001
 compare 0x8000 0x42
-gotoif EQUAL ow_script_0x8a12f1
+callif EQUAL ow_script_0x8a12f1
 return
 
 
@@ -117,7 +117,7 @@ return
 ow_script_0x8a1311:
 getplayerpos 0x8000 0x8001
 compare 0x8000 0x42
-gotoif EQUAL ow_script_0x8a1323
+callif EQUAL ow_script_0x8a1323
 return
 
 

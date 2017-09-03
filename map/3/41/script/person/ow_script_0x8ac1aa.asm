@@ -11,7 +11,7 @@ goto ow_script_0x8cb3c8
 .global ow_script_0x8cb3c8
 ow_script_0x8cb3c8:
 checkflag POKERADAR_POKEMON_SPAWNED
-callif LESS ow_script_0x8ac1e8
+gotoif LESS ow_script_0x8ac1e8
 goto ow_script_0x8ac281
 
 
@@ -26,10 +26,10 @@ sound 0x27
 checksound
 callasm 0x919a201
 compare POKERADAR_EMENY_SPECIES 0xffff
-callif EQUAL ow_script_0x8ac33f
+gotoif EQUAL ow_script_0x8ac33f
 callasm 0x9199e31
 compare 0x8002 0x0
-callif EQUAL ow_script_0x8ac33f
+gotoif EQUAL ow_script_0x8ac33f
 callasm 0x9199de1
 hidesprite 0xfe
 showsprite 0xfe

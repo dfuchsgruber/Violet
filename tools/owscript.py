@@ -126,10 +126,12 @@ class Owscript_Exploration_tree:
         self.explored_offsets = {} #No offset must be encountered twice (prevent infinite loops)
         self.assemblies = []
         self.strings = [] #Tuple symbol, content, filename
+        self.pedantic = False
     
-    def explore(self, offset, verbose=verbose, recursive=True):
+    def explore(self, offset, verbose=verbose, recursive=True, pedantic=False):
         """ Explores an offset of a script tree """
         self.offsets.append(offset)
+        self.pedantic = pedantic
         while len(self.offsets):
             #Explore this offset
             offset = self.offsets.pop()
@@ -237,18 +239,18 @@ BYTE = ParamType(1, lambda tree, rom, offset : str(hex(rom.u8(offset))))
 HWORD = ParamType(2, lambda tree, rom, offset : str(hex(rom.u16(offset))))
 WORD =  ParamType(4, lambda tree, rom, offset : str(hex(rom.u32(offset))))
 SCRIPT_REFERENCE = ParamType(4, explore_script_reference)
-ITEM = ParamType(2, lambda tree, rom, offset : constants.item(rom.u16(offset)))
-FLAG = ParamType(2, lambda tree, rom, offset : constants.flag(rom.u16(offset)))
+ITEM = ParamType(2, lambda tree, rom, offset : constants.item(rom.u16(offset), pedantic=tree.pedantic))
+FLAG = ParamType(2, lambda tree, rom, offset : constants.flag(rom.u16(offset), pedantic=tree.pedantic))
 MOVEMENT_LIST = ParamType(4, explore_movement_list)
 STRING = ParamType(4, explore_string_reference)
-POKEMON = ParamType(2, lambda tree, rom, offset : constants.species(rom.u16(offset)))
-ATTACK = ParamType(2, lambda tree, rom, offset : constants.attack(rom.u16(offset)))
+POKEMON = ParamType(2, lambda tree, rom, offset : constants.species(rom.u16(offset), pedantic=tree.pedantic))
+ATTACK = ParamType(2, lambda tree, rom, offset : constants.attack(rom.u16(offset), pedantic=tree.pedantic))
 MART = ParamType(4, explore_mart_list)
-FLAG = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.flag_table, rom.u16(offset)))
-VAR = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.var_table, rom.u16(offset)))
-ORD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.ords, rom.u8(offset)))
-STD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.stds, rom.u8(offset)))
-MUSIC = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.music, rom.u16(offset)))
+FLAG = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.flag_table, rom.u16(offset), pedantic=tree.pedantic))
+VAR = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.var_table, rom.u16(offset), pedantic=tree.pedantic))
+ORD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.ords, rom.u8(offset), pedantic=tree.pedantic))
+STD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.stds, rom.u8(offset), pedantic=tree.pedantic))
+MUSIC = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.music, rom.u16(offset), pedantic=tree.pedantic))
 
 owscript_cmds = [
     #0x00
@@ -258,8 +260,8 @@ owscript_cmds = [
     Command("return", [], ends_section = True),
     Command("call", [Param("subscript", SCRIPT_REFERENCE)]),
     Command("goto", [Param("script", SCRIPT_REFERENCE)], ends_section = True),
-    Command("callif", [Param("condition", ORD), Param("script", SCRIPT_REFERENCE)]),
     Command("gotoif", [Param("condition", ORD), Param("subscript", SCRIPT_REFERENCE)]),
+    Command("callif", [Param("condition", ORD), Param("script", SCRIPT_REFERENCE)]),
     #0x08
     Command("gotostd", [Param("std", STD)], ends_section = True),
     Command("callstd", [Param("std", STD)]),

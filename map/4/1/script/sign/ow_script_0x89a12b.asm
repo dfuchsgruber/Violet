@@ -6,7 +6,7 @@
 ow_script_0x89a12b:
 special 0x187
 compare LASTRESULT 0x2
-callif EQUAL ow_script_0x89a168
+gotoif EQUAL ow_script_0x89a168
 lockall
 setvar 0x8004 0x20
 special 0x17d

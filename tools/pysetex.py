@@ -4,11 +4,11 @@ import img_dump
 import sys
 import getopt
 import os
-from pymap import tileset, palette, project, image
+from pymap import tileset, palette, project, image, config
 import json
 
 ROM_VIOLET = "VIOLET"
-DEFAULT_TABLE = 0x2D49B8
+DEFAULT_TABLE = config.TSTABLE
 
 def _flatten(l):
     return [item for sub in l for item in sub]

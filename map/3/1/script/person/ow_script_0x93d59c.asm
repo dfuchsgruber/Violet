@@ -10,7 +10,7 @@ call ow_script_0x8a7f80
 loadpointer 0x0 str_0x949632
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x949573
+gotoif EQUAL ow_script_0x949573
 setvar BATTLE_SONG_OVERRIDE 0x165
 trainerbattlecont 0x1 0x84 0x0 str_0x94948c str_0x949515 ow_script_0x93d5e1
 

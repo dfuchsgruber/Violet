@@ -5,11 +5,11 @@
 .global ow_script_0x8fae7c
 ow_script_0x8fae7c:
 checkflag 0x223
-callif EQUAL ow_script_0x8fb105
+gotoif EQUAL ow_script_0x8fb105
 checkflag 0x222
-callif EQUAL ow_script_0x8fb10e
+gotoif EQUAL ow_script_0x8fb10e
 checkflag 0x221
-callif EQUAL ow_script_0x8fafe1
+gotoif EQUAL ow_script_0x8fafe1
 loadpointer 0x0 str_0x8dcaa4
 callstd MSG_FACE
 end
@@ -24,7 +24,7 @@ ow_script_movs_0x87bf49:
 .global ow_script_0x8fafe1
 ow_script_0x8fafe1:
 checktrainerflag 0x28
-callif LESS ow_script_0x8fb076
+gotoif LESS ow_script_0x8fb076
 lock
 faceplayer
 loadpointer 0x0 str_0x8dca59
@@ -42,7 +42,7 @@ waitmovement 0x0
 loadpointer 0x0 str_0x8dc9a6
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x8fb0b2
+gotoif EQUAL ow_script_0x8fb0b2
 loadpointer 0x0 str_0x8fb02d
 callstd MSG_FACE
 end
@@ -52,7 +52,7 @@ end
 ow_script_0x8fb0b2:
 countpokemon
 compare LASTRESULT 0x6
-callif LESS ow_script_0x8fb0c5
+gotoif LESS ow_script_0x8fb0c5
 goto ow_script_0x8dc43a
 
 
@@ -87,11 +87,11 @@ end
 .global ow_script_0x947e82
 ow_script_0x947e82:
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x880b86
+gotoif EQUAL ow_script_0x880b86
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x880ba0
+gotoif EQUAL ow_script_0x880ba0
 compare LASTRESULT 0x2
-callif EQUAL ow_script_0x880be5
+gotoif EQUAL ow_script_0x880be5
 end
 
 
@@ -110,7 +110,7 @@ call ow_script_0x880bd9
 loadpointer 0x0 str_0x1a83ae
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x880bcd
+gotoif EQUAL ow_script_0x880bcd
 return
 
 
@@ -125,9 +125,9 @@ return
 ow_script_0x1aba6e:
 bufferboxname 0x0 0x4037
 checkflag 0x834
-gotoif LESS ow_script_0x1aba89
+callif LESS ow_script_0x1aba89
 checkflag 0x834
-gotoif EQUAL ow_script_0x1abab4
+callif EQUAL ow_script_0x1abab4
 return
 
 
@@ -135,7 +135,7 @@ return
 ow_script_0x1abab4:
 special2 0x800d 0x165
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x1abacd
+gotoif EQUAL ow_script_0x1abacd
 loadpointer 0x0 str_0x1a8ac7
 callstd MSG_KEEPOPEN
 return
@@ -154,7 +154,7 @@ return
 ow_script_0x1aba89:
 special2 0x800d 0x165
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x1abaa2
+gotoif EQUAL ow_script_0x1abaa2
 loadpointer 0x0 str_0x1a8a83
 callstd MSG_KEEPOPEN
 return
@@ -194,7 +194,7 @@ ow_script_0x8c8acf:
 loadpointer 0x0 str_0x1a83ae
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x931332
+gotoif EQUAL ow_script_0x931332
 clearflag TRANS_DISABLE
 return
 
@@ -219,7 +219,7 @@ faceplayer
 loadpointer 0x0 str_0x8dcba5
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x8dcb4e
+gotoif EQUAL ow_script_0x8dcb4e
 loadpointer 0x0 str_0x8dcb0a
 callstd MSG
 clearflag 0x221
@@ -241,7 +241,7 @@ faceplayer
 loadpointer 0x0 str_0x8fcddd
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x8dc94e
+gotoif EQUAL ow_script_0x8dc94e
 goto ow_script_0x8fb0b2
 
 

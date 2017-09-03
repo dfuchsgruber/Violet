@@ -14,10 +14,10 @@ ow_script_0x8d421d:
 loadpointer 0x0 str_0x8d4251
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x8d42dc
+gotoif EQUAL ow_script_0x8d42dc
 countpokemon
 compare LASTRESULT 0x6
-callif EQUAL ow_script_0x8d42d1
+gotoif EQUAL ow_script_0x8d42d1
 giveegg 0x8000
 fanfare 0x13e
 loadpointer 0x0 str_0x8d42b4

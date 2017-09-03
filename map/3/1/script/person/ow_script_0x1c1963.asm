@@ -6,20 +6,20 @@
 ow_script_0x1c1963:
 special 0x187
 compare LASTRESULT 0x2
-callif EQUAL ow_script_0x1aa912
+gotoif EQUAL ow_script_0x1aa912
 lockall
 checkflag FRBADGE_2
-callif LESS ow_script_0x1c19d7
+gotoif LESS ow_script_0x1c19d7
 checkattack ATTACK_ZERSCHNEIDER
 compare LASTRESULT 0x6
-callif EQUAL ow_script_0x1c19d7
+gotoif EQUAL ow_script_0x1c19d7
 setanimation 0x0 0x800d
 bufferpartypokemon 0x0 0x800d
 bufferattack 0x1 ATTACK_ZERSCHNEIDER
 loadpointer 0x0 str_0x1c19e4
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-callif EQUAL ow_script_0x1c19e1
+gotoif EQUAL ow_script_0x1c19e1
 loadpointer 0x0 str_0x1c1a37
 callstd MSG_KEEPOPEN
 closeonkeypress

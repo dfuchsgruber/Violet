@@ -4,10 +4,9 @@
 
 .global ow_script_0x84002b
 ow_script_0x84002b:
-setflag 0x900
 sethealingplace 0x1
 compare STORY_PROGRESS 0x0
-callif EQUAL ow_script_0x84003e
+gotoif EQUAL ow_script_0x84003e
 end
 
 

@@ -5,6 +5,19 @@
 #define ROTSCALE_TABLE_NULL (rotscale_frame**)0x08231BCC
 #define GFX_ANIM_TABLE_NULL (gfx_frame**)0x08231Bc0
 
+#define GFX_ANIM_VFLIP 0x40
+#define GFX_ANIM_HFLIP 0x80
+
+#define GFX_ANIM_LOOP_START 0xFFFC
+#define GFX_ANIM_JUMP_LOOP_STARt 0xFFFD
+#define GFX_ANIM_JUMP 0xFFFE
+#define GFX_ANIM_END 0xFFFF
+
+#define ROTSCAL_ANIM_LOOP_START 0x7FFC
+#define ROTSCAL_ANIM_JUMP_LOOP_START 0x7FFD
+#define ROTSCAL_ANIM_JUMP 0x7FFE
+#define ROTSCAL_ANIM_END 0x7FFF
+
 #define ATTR0_ROTSCALE 0x100
 #define ATTR0_DSIZE 0x200
 #define ATTR0_OBJDISABLE 0x200
@@ -59,8 +72,8 @@ typedef struct graphic {
 } graphic;
 
 typedef struct rotscale_frame {
-    u16 scale_delta_x;
-    u16 scale_delta_y;
+    s16 scale_delta_x;
+    s16 scale_delta_y;
     u8 rot_delta;
     u8 duration;
     u16 field_6;
@@ -111,13 +124,13 @@ typedef struct oam_object {
 
 oam_object* oams = (oam_object*) 0x0202063C;
 
-u8 generate_oam_forward_search(oam_template * template, s16 x, s16 y, u8 unkown);
+u8 generate_oam_forward_search(oam_template * template, s16 x, s16 y, u8 prio);
 
 u16 load_and_alloc_obj_vram_lz77(graphic*g);
 void free_vram_for_obj_without_tag_remove(oam_object* oam);
 void free_obj_vram_by_object(oam_object* oam);
 
-u8 generate_oam_backward_search(oam_template * template, s16 x, s16 y, u8 unkown);
+u8 generate_oam_backward_search(oam_template * template, s16 x, s16 y, u8 prio);
 u8 allocate_obj_pal(u16 paltag);
 u16 get_paltag_by_allocated_pal(u8 palid);
 void free_obj_pal(u16 paltag);

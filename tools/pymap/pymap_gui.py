@@ -251,7 +251,7 @@ class Pymap_gui(tkinter.Frame):
                 widget.get_handle().grid(row=startrow, sticky=tkinter.NW)
                 startrow += 1
                 if change_sensitive: widget.add_callback(lambda: self._event_apply_changes(self.event_type, self.event_id, supress_warnings=True))
-                else: widget.bind("<FocusOut>", (lambda _: self._event_apply_changes(self.event_type, self.event_id, supress_warnings=True)))
+                #else: widget.bind("<FocusOut>", (lambda _: self._event_apply_changes(self.event_type, self.event_id, supress_warnings=True)))
                 entries.append(widget)
             return entries
 
@@ -287,7 +287,7 @@ class Pymap_gui(tkinter.Frame):
                 cbox_behaviour = tkinterx.LabeledCombobox(self.event_edit_widget, text="Behaviour", values=constants.values(constants.behaviours))
                 self.__setattr__("event_edit_widget_" + "Behaviour".lower(), cbox_behaviour)
                 cbox_behaviour.get_handle().grid(row=9, sticky=tkinter.NW)
-                cbox_behaviour.bind("<FocusOut>", (lambda _: self._event_apply_changes(self.event_type, self.event_id, supress_warnings=True)))
+                #cbox_behaviour.bind("<FocusOut>", (lambda _: self._event_apply_changes(self.event_type, self.event_id, supress_warnings=True)))
                 entries.append(cbox_behaviour)
                 self.event_edit_widgets.append(cbox_behaviour)
                 entries += _build_entries(["Behaviour range", "FieldB", "Is Trainer", "Padding", "FieldD", "Alert range", "Script", "Flag", "Field16", "Field17"], 10)
@@ -327,10 +327,10 @@ class Pymap_gui(tkinter.Frame):
             self.event_edit_widgets.append(self.event_edit_widget_id_spinbox)
             #Coordinate entry is common for all event types
             entries = _build_entries(["X", "Y"], 2, change_sensitive=True) + entries
-            """#Apply button
+            #Apply button
             apply_button = tkinter.Button(self.event_edit_widget, text="Apply", command=lambda: self._event_apply_changes(self.event_type, id))
             apply_button.grid(row=len(self.event_edit_widgets) + 2, sticky=tkinter.NW)
-            self.event_edit_widgets.append(apply_button)"""
+            self.event_edit_widgets.append(apply_button)
             #Remove button
             remove_button = tkinter.Button(self.event_edit_widget, text="Remove (this)", command=lambda: self._remove_event(self.event_type, id))
             remove_button.grid(row=len(self.event_edit_widgets) + 2, sticky=tkinter.NW)
@@ -1199,10 +1199,18 @@ class Pymap_gui(tkinter.Frame):
         elif self.context == LEVEL: self._refresh_level_map()
         elif self.context == EVENTS: self._refresh_event_map()
 
+    def map_has_changed(self):
+        """ Checks if the current map (if present) has changed and thus should be saved """
+        if not self.map: return False
+        last_action = self.action_peek()
+        if not last_action: return False
+        if last_action.is_last_saved_state: return False
+        return True
 
     def open_map(self, bank, mapid):
         """ Opens a map by its bank and map"""
-        if self.map:
+        
+        if self.map and self.map_has_changed():
             if messagebox.askyesno(title="Save changes", message="Do you want to save your changes to map " + str(self.bank) + "." + str(self.mapid) + "?"): self.file_save()
         path = self.proj.get_map_path(bank, mapid)
         if not path or not len(path): return
@@ -1223,6 +1231,12 @@ class Pymap_gui(tkinter.Frame):
         self.proj.save_map(self.bank, self.mapid, self.map, self.proj.get_map_path(self.bank, self.mapid))
         self.map_tree.refresh()
         self.proj.save_project()
+        #Mark the topmost element of the undo stack as last saved state
+        for i in range(len(self.undo_stack)):
+            if i < len(self.undo_stack) - 1: self.undo_stack[i].is_last_saved_state = False
+            else: self.undo_stack[i].is_last_saved_state = True
+        for i in range(len(self.redo_stack)): self.redo_stack[i].is_last_saved_state = False
+
         print("Map file " + str(self.bank) + "." + str(self.mapid) + " saved sucessfully")
         return True
 
@@ -1649,9 +1663,15 @@ class Pymap_gui(tkinter.Frame):
         canvas.bind("<Motion>", canvas_motion)
         canvas.bind("<ButtonPress-1>", canvas_b1_press)
 
-class Action_add_connection:
+class Action:
+    def __init__(self):
+        self.is_last_saved_state = False
+        
+
+class Action_add_connection(Action):
     """ Action class for adding of connection """
     def __init__(self, root: Pymap_gui, dialog_update: callable):
+        super().__init__()
         self.root = root
         self.id = len(root.map.connections)
         self.dialog_update = dialog_update
@@ -1664,9 +1684,10 @@ class Action_add_connection:
         self.root.map.connections.remove(self.root.map.connections[self.id])
         self.dialog_update()
 
-class Action_remove_connection:
+class Action_remove_connection(Action):
     """ Action class for removal of connection"""
     def __init__(self, root: Pymap_gui, dialog_update: callable, id):
+        super().__init__()
         self.root = root
         self.id = id
         self.connection = root.map.connections[id]
@@ -1680,9 +1701,10 @@ class Action_remove_connection:
         self.root.map.connections.insert(self.id, self.connection)
         self.dialog_update()
 
-class Action_connection_change:
+class Action_connection_change(Action):
     """ Action class for editing of connection """
     def __init__(self, root: Pymap_gui, dialog_update: callable, id, diffs):
+        super().__init__()
         self.root = root
         self.id = id
         self.connection = root.map.connections[id]
@@ -1701,9 +1723,10 @@ class Action_connection_change:
             self.root.map.connections[self.id].__setattr__(k, o)
         self.dialog_update()
 
-class Action_event:
+class Action_event(Action):
     """ Abstract superclass for action events """
     def __init__(self, root: Pymap_gui, stype, id):
+        super().__init__()
         self.root = root
         self.stype = stype
         self.id = id
@@ -1740,9 +1763,10 @@ class Action_event:
         self.root._refresh_event_person_picture(self.id)
         #self.root._refresh_event_map()
 
-class Action_header_edit:
+class Action_header_edit(Action):
     """ Action class for change of header properties """
     def __init__(self, root: Pymap_gui, diffs, header_dialog_update: callable):
+        super().__init__()
         self.root = root
         self.diffs = diffs
         self.header_dialog_update = header_dialog_update
@@ -1762,9 +1786,10 @@ class Action_header_edit:
         self.header_dialog_update()
         
 
-class Action_footer_edit:
+class Action_footer_edit(Action):
     """ Action class for change of footer properties """
     def __init__(self, root: Pymap_gui, diffs, footer_dialog_update: callable):
+        super().__init__()
         self.root = root
         self.diffs = diffs
         self.footer_dialog_update = footer_dialog_update
@@ -1870,13 +1895,13 @@ class Action_event_remove(Action_event):
             self.root.map.persons.remove(self.event)
             if id >= len(self.root.map.persons): id = len(self.root.map.persons) - 1
         elif self.stype == "Warp":
-            self.map.warps.remove(self.event)
+            self.root.map.warps.remove(self.event)
             if id >= len(self.root.map.warps): id = len(self.root.map.warps) - 1
         elif self.stype == "Trigger":
-            self.map.triggers.remove(self.event)
+            self.root.map.triggers.remove(self.event)
             if id >= len(self.root.map.triggers): id = len(sel.root.map.triggers) - 1
         elif self.stype in ("Sign", "SignScript", "SignItem"):
-            self.map.signposts.remove(self.event)
+            self.root.map.signposts.remove(self.event)
             if id >= len(self.root.map.signposts): id = len(self.root.map.signposts) - 1
         if id < 0:
             self.root._select_event(self.stype, 0)
@@ -1920,9 +1945,10 @@ class Action_event_change(Action_event):
             event.__setattr__(attr, old)
         self._update()
 
-class Action_border_change:
+class Action_border_change(Action):
     """ Action class for border change """
     def __init__(self, root: Pymap_gui, x, y, blocks):
+        super().__init__()
         self.root = root
         self.x0 = x
         self.y0 = y
@@ -1939,9 +1965,10 @@ class Action_border_change:
         _arrpaste(self.root.map.footer.borders, self.last_blocks, self.x0, self.y0, filter=(lambda c, t: (c &~0x3FF) | (t & 0x3FF)))
         self.root._refresh_borders()
         
-class Action_map_change:
+class Action_map_change(Action):
     """ Action class for map change """
     def __init__(self, root: Pymap_gui, x, y, blocks):
+        super().__init__()
         self.root = root
         self.x0 = x
         self.y0 = y
@@ -1964,9 +1991,10 @@ class Action_map_change:
 
         
 
-class Action_map_fill:
+class Action_map_fill(Action):
     """ Action class for map fill """
     def __init__(self, root: Pymap_gui, x, y, block):
+        super().__init__()
         self.root = root
         self.x = x
         self.y = y
@@ -2002,9 +2030,10 @@ class Action_map_fill:
         self.root._refresh_context_map()
 
 
-class Action_level_change:
+class Action_level_change(Action):
     """ Action level change """
     def __init__(self, root: Pymap_gui, x, y, level):
+        super().__init__()
         self.root = root
         self.x = x
         self.y = y
@@ -2021,9 +2050,10 @@ class Action_level_change:
         self.root.map.footer.blocks[self.y][self.x] |= self.level_old << 10
         self.root._refresh_level_map_coordinate(self.x, self.y)
 
-class Action_level_fill:
+class Action_level_fill(Action):
     """ Action class for map fill (level map)"""
     def __init__(self, root: Pymap_gui, x, y, level):
+        super().__init__()
         self.root = root
         self.x = x
         self.y = y
