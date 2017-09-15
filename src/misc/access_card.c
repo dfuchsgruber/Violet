@@ -7,7 +7,7 @@
 
 access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
     {0, 9, 13, 0, 8}, //Cybernetik
-    {0x93f, 9, 15, 0, 3}, //Fossil
+    {FLAG_ACCESS_CARD_FOSSIL, 9, 15, 0, 3}, //Fossil
     {0, 9, 14, 1, 0} //Atrium
 };
 

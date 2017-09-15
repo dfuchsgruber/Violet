@@ -1,0 +1,3 @@
+.string str_0x8470f4 GER
+	=Fr\$ueher_einmal_lebten_ich_und_meine\nFamilie_gemeinsam_auf_dieser\lInsel._Nachdem_der_Meteor_jedoch\leingeschlagen_hat,_sind_mein_Sohn\lund_meine_Enkel_nach_Kaskada\lgezogen.
+.end

@@ -84,37 +84,39 @@ def shell(argv):
 
     else:
         raise Exception("Unkown script mode "+mode)
+    export_script(tree, libpath, offset, file_prefix, recursive=recursive, verbose=verbose, libignore=libignore, singlefile=singlefile)
 
+def export_script(tree, libpath, offset, file_prefix, recursive=True, verbose=False, libignore=False, singlefile=True):
     if not libignore: tree.load_lib(libpath)
     if verbose: print("Lib ", libpath, "loaded sucessfully.")
     tree.explore(offset, verbose=verbose, recursive=recursive)
     if verbose: print("Script decompiled sucessfully.")
     if not libignore: tree.store_lib(libpath)
     if verbose: print("Lib", libpath, "updated sucessfully.")
-    if not len(tree.assemblies): return
-
-    if singlefile:
-        #Dump the script output
-        output = preamble + "\n" + constants.get_macro_header() + "\n\n".join([""] + [assembly for _, assembly in tree.assemblies])
-        fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + ".asm", "w+")
-        fd.write(output)
-        fd.close()
-
-    else:
-        #Dump the script output
-        for assembly_offset, assembly in tree.assemblies:
-            
-            fd = open(outpath + "/" + file_prefix + "_" + hex(assembly_offset) + ".asm", "w+")
-            fd.write(assembly)
+    if len(tree.assemblies):
+        #Dump assemblies
+        if singlefile:
+            #Dump the script output
+            output = preamble + "\n" + constants.get_macro_header() + "\n\n".join([""] + [assembly for _, assembly in tree.assemblies])
+            fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + ".asm", "w+")
+            fd.write(output)
             fd.close()
-            if verbose: print("Exported script at", hex(assembly_offset), "sucessfully.")
 
+        else:
+            #Dump the script output
+            for assembly_offset, assembly in tree.assemblies:
+                
+                fd = open(outpath + "/" + file_prefix + "_" + hex(assembly_offset) + ".asm", "w+")
+                fd.write(assembly)
+                fd.close()
+                if verbose: print("Exported script at", hex(assembly_offset), "sucessfully.")
 
     #Dump the string output
-    output = "\n\n".join([".string " + label + " GER\n\t=" + content + "\n.end\n" for label, content in tree.strings])
-    fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + "_strings.txt", "w+")
-    fd.write(output)
-    fd.close()
+    if len(tree.strings):
+        output = "\n\n".join([".string " + label + " GER\n\t=" + content + "\n.end\n" for label, content in tree.strings])
+        fd = open(outpath + "/" + file_prefix + "_" + hex(offset) + "_strings.txt", "w+")
+        fd.write(output)
+        fd.close()
 
 
 if __name__ == "__main__":

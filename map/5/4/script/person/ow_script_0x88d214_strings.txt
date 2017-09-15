@@ -1,0 +1,8 @@
+.string str_0x1a908b GER
+	=Hallo!\nKann_ich_dir_behilflich_sein?
+.end
+
+
+.string str_0x1a7e77 GER
+	=Bitte_komm_bald_wieder!
+.end

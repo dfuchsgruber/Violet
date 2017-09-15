@@ -58,7 +58,7 @@ return
 
 .global ow_script_0x8dcdd2
 ow_script_0x8dcdd2:
-setflag RIVAL_PLAYER_HOUSE //rival in same house
+setflag ANOMIA_RIVAL_IN_PLAYER_HOUSE //rival in same house 
 setflag 0x221
 setflag 0x228
 setflag 0x227

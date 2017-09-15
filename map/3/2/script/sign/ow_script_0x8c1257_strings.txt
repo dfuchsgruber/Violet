@@ -1,0 +1,3 @@
+.string str_0x8ca664 GER
+	=Arena_von_Aktania\pTyp:_Gestein\nLeiter:_Lester
+.end

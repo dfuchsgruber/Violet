@@ -1,0 +1,18 @@
+.string str_0x87cae0 GER
+	=Ein_seltsamer_Stein,_der_golden\nschimmert._Ab_und_an_wirkt_es_so,\lals_w\$uerde_er_sich_bewegen...
+.end
+
+
+.string str_0x87caba GER
+	=\b\01_untersucht_den_Stein_n\$aeher...
+.end
+
+
+.string str_0x87ca86 GER
+	=Auf_einmal_springt_der_goldene\nStein_in_die_H\$oehe!
+.end
+
+
+.string str_0x87ca4e GER
+	=Der_Stein_entpuppt_sich_als\nKleinstein!\lEs_greift_an!
+.end

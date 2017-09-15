@@ -1,0 +1,3 @@
+.string str_0x93c135 GER
+	=Weibliche_K\$aemper_sind_ebenso_ernst\nzu_nehmen,_wie_m\$aennliche_Gegner!
+.end

@@ -1,0 +1,3 @@
+.string str_0x89f061 GER
+	=Vor_vielen_Jahren_und_nach\netlichen_Kriegen_erschuf_der\lChampion_ein_dezentrales\lHerrschaftssystem,_das_von_den_Top\lVier_geleitet_wird.
+.end

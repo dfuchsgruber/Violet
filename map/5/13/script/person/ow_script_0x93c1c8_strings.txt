@@ -1,0 +1,3 @@
+.string str_0x93c8b8 GER
+	=Diese_Zeichen_werden_Katakana-\nZeichen_genannt.\lIm_Gegensatz_zu_den_Hiragana-\lZeichen_sind_diese_eckiger.
+.end

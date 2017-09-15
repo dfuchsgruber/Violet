@@ -1,0 +1,3 @@
+.string str_0x811138 GER
+	=Aktania_war_einst_eine_sch\$oene_Stadt\nam_Strand._Jedes_Jahr_hatten_wir\ltausende_Besucher_hier,_aber_dann\lkam_der_schwarze_Nebel_und_hat_den\lganzen_Strand_vernebelt_und_die\lStadt_verdunkelt..._
+.end

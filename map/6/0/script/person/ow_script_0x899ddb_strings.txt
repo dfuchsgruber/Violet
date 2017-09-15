@@ -1,0 +1,18 @@
+.string str_0x89a9bb GER
+	=Gengar_ist_der_K\$oenig_unter_den\nGeistpokemon._Seine\lGeschwindigkeit_und_St\$aerke_sind\l\$ueberragend,_findest_du_nicht_auch?\lWenn_du_mir_ein_Gengar_zeigen\lkannst,_werde_ich_dir_einen_Weg\lverraten,_es_st\$aerker_zu_machen!\pKannst_du_mir_ein_Gengar\nzeigen?
+.end
+
+
+.string str_0x89a986 GER
+	=Komm_wieder,_wenn_du_mir_ein\nGengar_zeigen_kannst!
+.end
+
+
+.string str_0x89a91d GER
+	=Wahrhaftig!_Das_ist_ein_Gengar.\nNun_m\$oechte_ich_dir_das_geben,_was\lich_dir_versprochen_habe.
+.end
+
+
+.string str_0x89a88b GER
+	=Dieses_Item_nennt_sich_\b\02.\nEs_ist_ein_Stein_in_dessen\lGegenwart_sich_Gengar_seltsam\lverh\$aelt._Ich_wei\$s_jedoch_nicht\lgenau,_wie_man_ihn_benuzt...
+.end

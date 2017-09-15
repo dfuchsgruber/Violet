@@ -28,7 +28,7 @@ def _mkdirs(dir):
 def main(args):
     """ Shell interface for the exporter """
     try:
-        opts, args = getopt.getopt(args, "hb:m:s:t:p:c:y:o:", ["help", "tt", "pg", "po", "py", "px", "sg", "so", "sy", "sx", "deleteanim"])
+        opts, args = getopt.getopt(args, "hb:m:s:t:p:c:y:o:", ["help", "deleteanim", "pedantic"])
     except getopt.GetoptError:
         sys.exit(2)
     rom = None
@@ -40,6 +40,7 @@ def main(args):
     tss = None
     basepath = None
     symbol = None
+    pedantic = False
 
     for opt, arg in opts:
         if opt in ("-h", "--help"):
@@ -51,7 +52,7 @@ def main(args):
             -p {symbol}\tSymbol of primary tileset. If not defined the tileset will be exported
             -c {symbol}\tSymbol of secondary tileset. If not defined the tileset will be exported
             -y {symbol}\tBase symbol (e.g. if symbol equals 'foo' then global symbols for mapheader, footer, etc. will be 'mapheader_foo', 'mapfooter_foo', etc.)
-
+            --pedantic\t\tPedantic export for constants (if a constant is not defined it will abort exporting)
             """)
             return
         elif opt in ("-b"): bank = int(arg, 0)
@@ -62,7 +63,7 @@ def main(args):
         elif opt in ("-c"): tss = arg
         elif opt in ("-y"): symbol = arg
         elif opt in ("-o"): basepath = arg
-
+        elif opt in ("--pedantic"): pedantic = False
 
 
     try: rom = args[0]
@@ -82,20 +83,19 @@ def main(args):
         offset = rom.pointer(rom.pointer(rom.pointer(table) + 4 * bank) + 4 * map)
 
     proj = project.Project.load_project(projfile)
-    header = export_map(rom, offset, tsp, tss, symbol, basepath, proj, STDSCRIPTEXPORT, STDTILESETEXPORT)
+    header = export_map(rom, offset, tsp, tss, symbol, basepath, proj, STDSCRIPTEXPORT, STDTILESETEXPORT, pedantic=pedantic)
     proj.save_map(bank, map, header, basepath + ".pmh")
     proj.save_project()
 
-def export_connections(rom: agb.Agbrom, offset, basepath):
+def export_connections(rom: agb.Agbrom, offset, basepath, pedantic=False):
     """ Exports the map connections """
     count = rom.u32(offset)
     connections = [mapconnection.Mapconnection() for i in range(count)]
-    offset = rom.pointer(offset + 4)
+    base = rom.pointer(offset + 4)
     for i in range(count):
+        offset = base + 12 * i
         direction = rom.u32(offset)
-        if direction < len(constants.map_connections): direction = constants.map_connections[direction]
-        else: direction = hex(direction)
-        connections[i].direction = direction
+        connections[i].direction = constants.map_connection(direction, pedantic=pedantic)
         connections[i].displacement = rom._int(offset + 4)
         connections[i].bank = rom.u8(offset + 8)
         connections[i].mapid = rom.u8(offset + 9)
@@ -104,7 +104,7 @@ def export_connections(rom: agb.Agbrom, offset, basepath):
     return connections
 
 
-def export_levelscript(rom: agb.Agbrom, offset, type, basepath, script_export_func):
+def export_levelscript(rom: agb.Agbrom, offset, type, basepath, script_export_func, pedantic=False):
     """ Exports a levelscript structure as assembly string.
     Returns a tuple: label, assembly"""
     if type in (1,3,5,6,7):
@@ -114,7 +114,7 @@ def export_levelscript(rom: agb.Agbrom, offset, type, basepath, script_export_fu
         #Extended
         label = "lscr_" + hex(offset)
         assembly = ".align 4\n.global " + label + "\n\n" + label + ":\n"
-        var = constants._dict_get(constants.var_table, rom.u16(offset))
+        var = constants._dict_get(constants.var_table, rom.u16(offset), pedantic=pedantic)
         value = hex(rom.u16(offset + 2))
         script = script_export_func(rom, rom.pointer(offset + 4), basepath, "lscr")
         field_8 = hex(rom.u16(offset + 8))
@@ -124,7 +124,7 @@ def export_levelscript(rom: agb.Agbrom, offset, type, basepath, script_export_fu
         return label, assembly
     else: raise Exception("Unkown levelscript header type " + str(type))
 
-def export_levelscripts(rom: agb.Agbrom, offset, basepath, script_export_func):
+def export_levelscripts(rom: agb.Agbrom, offset, basepath, script_export_func, pedantic=False):
     """ Exports levelscripts into a seperate folder """
     lscr = ".global lscr_" + hex(offset) + "\n\nlscr_" + hex(offset) + ":\n"
     lscr_label = "lscr_" + hex(offset)
@@ -133,7 +133,7 @@ def export_levelscripts(rom: agb.Agbrom, offset, basepath, script_export_func):
         type = rom.u8(offset)
         lscr += "\t.byte " + hex(type) + "\n"
         if not type: break
-        label, assembly = export_levelscript(rom, rom.pointer(offset + 1), type, basepath, script_export_func)
+        label, assembly = export_levelscript(rom, rom.pointer(offset + 1), type, basepath, script_export_func, pedantic=pedantic)
         offset += 5
         lscr += ".word " + label + "\n"
         assemblies.append(assembly)
@@ -146,34 +146,34 @@ def export_levelscripts(rom: agb.Agbrom, offset, basepath, script_export_func):
 
         
 
-def export_map(rom, offset, tsp, tss, symbol, basepath, proj, script_export_func, tileset_export_func):
+def export_map(rom, offset, tsp, tss, symbol, basepath, proj, script_export_func, tileset_export_func, pedantic=False):
     """ Exports a map """
     header = mapheader.Mapheader()
-    export_footer(header.footer, rom, rom.pointer(offset), tsp, tss, basepath, proj, tileset_export_func)
+    export_footer(header.footer, rom, rom.pointer(offset), tsp, tss, basepath, proj, tileset_export_func, pedantic=pedantic)
     event_off = rom.u32(offset + 4)
-    if event_off: export_events(header, rom, rom.pointer(offset + 4), basepath, script_export_func)
+    if event_off: export_events(header, rom, rom.pointer(offset + 4), basepath, script_export_func, pedantic=pedantic)
     else: event_off = "0"
     lscr_off = rom.u32(offset + 0x8)
-    if lscr_off: header.levelscript_header = export_levelscripts(rom, rom.pointer(offset + 0x8), basepath, script_export_func)
+    if lscr_off: header.levelscript_header = export_levelscripts(rom, rom.pointer(offset + 0x8), basepath, script_export_func, pedantic=pedantic)
     else: header.levelscript_header = "0"
     if rom.u32(offset + 0xC) == 0:
         header.connections = []
     else:
-        header.connections = export_connections(rom, rom.pointer(offset + 0xC), basepath)
-    header.music = constants._dict_get(constants.music, rom.u16(offset + 0x10))
+        header.connections = export_connections(rom, rom.pointer(offset + 0xC), basepath, pedantic=pedantic)
+    header.music = constants._dict_get(constants.music, rom.u16(offset + 0x10), pedantic=pedantic)
     header.id = rom.u16(offset + 0x12)
-    header.name_bank = constants._dict_get(constants.map_namespaces, rom.u8(offset + 0x14))
-    header.flash_type = constants.flash_types[rom.u8(offset + 0x15)]
-    header.weather = constants.map_weather[rom.u8(offset + 0x16)]
-    header.type = constants.map_types[rom.u8(offset + 0x17)]
-    header.show_name = constants._dict_get(constants.map_show_name, rom.u8(offset + 0x19))
+    header.name_bank = constants._dict_get(constants.map_namespaces, rom.u8(offset + 0x14), pedantic=pedantic)
+    header.flash_type = constants.flash_type(rom.u8(offset + 0x15), pedantic=pedantic)
+    header.weather = constants.map_weather(rom.u8(offset + 0x16), pedantic=pedantic)
+    header.type = constants.map_type(rom.u8(offset + 0x17), pedantic=pedantic)
+    header.show_name = constants._dict_get(constants.map_show_name, rom.u8(offset + 0x19), pedantic=pedantic)
     header.field_18 = rom.u8(offset + 0x18)
     header.field_1a = rom.u8(offset + 0x1A)
-    header.battle_style = constants.battle_types[rom.u8(offset + 0x1B)]
+    header.battle_style = constants.battle_type(rom.u8(offset + 0x1B), pedantic=pedantic)
     header.symbol = symbol
     return header
 
-def export_footer(footer: pymap.mapfooter.Mapfooter, rom: agb.Agbrom, offset, tsp, tss, basepath, proj, tileset_export_func):
+def export_footer(footer: pymap.mapfooter.Mapfooter, rom: agb.Agbrom, offset, tsp, tss, basepath, proj, tileset_export_func, pedantic=False):
     """ Exports a mapfooter into a mapfooter instance"""
     footer.width = rom.u32(offset)
     footer.height = rom.u32(offset + 0x4)
@@ -204,7 +204,7 @@ def export_footer(footer: pymap.mapfooter.Mapfooter, rom: agb.Agbrom, offset, ts
     footer.tss = pymap.tileset.Tileset(False)
     footer.tss.symbol = tss
 
-def export_events(header: pymap.mapheader.Mapheader, rom: agb.Agbrom, offset, basepath, script_export_func):
+def export_events(header: pymap.mapheader.Mapheader, rom: agb.Agbrom, offset, basepath, script_export_func, pedantic=False):
     """ Exports map events into a mapheader instance """
     person_cnt = rom.u8(offset)
     warp_cnt = rom.u8(offset + 1)
@@ -215,22 +215,22 @@ def export_events(header: pymap.mapheader.Mapheader, rom: agb.Agbrom, offset, ba
     trigger_off = rom.pointer(offset + 0xC)
     signpost_off = rom.pointer(offset + 0x10)
     header.persons = [
-        export_person(rom, person_off + 0x18 * i, basepath, script_export_func) for i in range(person_cnt)
+        export_person(rom, person_off + 0x18 * i, basepath, script_export_func, pedantic=pedantic) for i in range(person_cnt)
         ]
     header.warps = [
-        export_warp(rom, warp_off + 0x8 * i) for i in range(warp_cnt)
+        export_warp(rom, warp_off + 0x8 * i, pedantic=pedantic) for i in range(warp_cnt)
     ]
     header.triggers = [
-        export_trigger(rom, trigger_off + 0x10 * i, basepath, script_export_func) for i in range(trigger_cnt)
+        export_trigger(rom, trigger_off + 0x10 * i, basepath, script_export_func, pedantic=pedantic) for i in range(trigger_cnt)
     ]
     header.signposts = [
-        export_sign(rom, signpost_off + 0xC * i, basepath, script_export_func) for i in range(signpost_cnt)
+        export_sign(rom, signpost_off + 0xC * i, basepath, script_export_func, pedantic=pedantic) for i in range(signpost_cnt)
     ]
 
         
 
 
-def export_person(rom: agb.Agbrom, offset, basepath, script_export_func):
+def export_person(rom: agb.Agbrom, offset, basepath, script_export_func, pedantic=False):
     """ Exports a person """
     person = mapevent.Map_event_person()
     person.target_index = rom.u8(offset)
@@ -248,12 +248,12 @@ def export_person(rom: agb.Agbrom, offset, basepath, script_export_func):
     person.field_d = rom.u8(offset + 0xD)
     person.alert_radius = rom.u16(offset + 0xE)
     person.script = script_export_func(rom, rom.pointer(offset + 0x10), basepath, "person")
-    person.flag = rom.u16(offset + 0x14)
+    person.flag = constants.flag(rom.u16(offset + 0x14), pedantic=pedantic)
     person.field_16 = rom.u8(offset + 0x16)
     person.field_17 = rom.u8(offset + 0x17)
     return person
 
-def export_warp(rom: agb.Agbrom, offset):
+def export_warp(rom: agb.Agbrom, offset, pedantic=False):
     """ Exports a warp """
     warp = mapevent.Map_event_warp()
     warp.x = rom.s16(offset)
@@ -264,21 +264,21 @@ def export_warp(rom: agb.Agbrom, offset):
     warp.target_bank = rom.u8(offset + 7)
     return warp
 
-def export_trigger(rom : agb.Agbrom, offset, basepath, script_export_func):
+def export_trigger(rom : agb.Agbrom, offset, basepath, script_export_func, pedantic=False):
     """ Exports a trigger """
     trigger = mapevent.Map_event_trigger()
     trigger.x = rom.s16(offset)
     trigger.y = rom.s16(offset + 2)
     trigger.level = rom.u8(offset + 4)
     trigger.field_5 = rom.u8(offset+ 5)
-    trigger.var = constants._dict_get(constants.var_table, rom.u16(offset + 6))
+    trigger.variable = constants._dict_get(constants.var_table, rom.u16(offset + 6), pedantic=pedantic)
     trigger.value = rom.u16(offset + 8)
     trigger.field_a = rom.u8(offset + 0xA)
     trigger.field_b = rom.u8(offset + 0xB)
     trigger.script = script_export_func(rom, rom.pointer(offset + 0xC), basepath, "trigger")
     return trigger
 
-def export_sign(rom: agb.Agbrom, offset, basepath, script_export_func):
+def export_sign(rom: agb.Agbrom, offset, basepath, script_export_func, pedantic=False):
     """ Exports a sign """
     sign = mapevent.Map_event_sign()
     sign.x = rom.s16(offset)
@@ -291,7 +291,7 @@ def export_sign(rom: agb.Agbrom, offset, basepath, script_export_func):
     if sign.structure == mapevent.SIGN_STRUCTURE_SCRIPT:
         sign.script = script_export_func(rom, rom.pointer(offset + 0x8), basepath, "sign")
     else:
-        sign.item_id = constants.item(rom.u16(offset + 8))
+        sign.item_id = constants.item(rom.u16(offset + 8), pedantic=pedantic)
         sign.hidden = rom.u8(offset + 0xA)
         sign.count = rom.u8(offset + 0xB)
     return sign

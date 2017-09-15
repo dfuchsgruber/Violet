@@ -1,0 +1,3 @@
+.string str_0x8c0eba GER
+	=Einst_war_Harren_B\$uergermeister\ndieser_Stadt._Er_und_seine_Gestein\lPok\emon_waren_eine_Ber\$uehmtheit.\pNach_dem_Meteoriteneinschlag_aber\n\$uebernahm_sein_Sohn_Lester_das_Amt\ldes_B\$uergermeisters_und\lArenaleiters.
+.end

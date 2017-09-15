@@ -1,0 +1,3 @@
+.string str_0x8c105d GER
+	=Nick_und_Rick_nutzen_V\$oegel,_um\nhierher_zu_gelangen._Ihre\lStaraptor'_sind_so_gut_trainiert,\ldass_sie_selbst_durch_die\lGewitterst\$uerme_fliegen_k\$oennen.
+.end

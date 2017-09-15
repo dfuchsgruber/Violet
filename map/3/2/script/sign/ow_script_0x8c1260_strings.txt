@@ -1,0 +1,3 @@
+.string str_0x8c1aac GER
+	=Tempel_der_W\$aechter
+.end

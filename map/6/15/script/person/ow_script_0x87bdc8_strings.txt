@@ -1,0 +1,23 @@
+.string str_0x87c7c7 GER
+	=Hallo!_Ich_bin_ein\nleidenschaftlicher_H\$oehlenbauer._In\ldieser_hier_bin_ich_auf_einen\lseltsamen_Stein_gesto\$sen,_den_ich\lzuerst_f\$uer_ein_Goldnugget_hielt,\laber_er_l\$aesst_sich_einfach_nicht\labbauen._Willst_du_ihn_dir_einmal\lansehen?
+.end
+
+
+.string str_0x87c738 GER
+	=Sieh_ihn_dir_einfach_an,_ich_werde\ndaraus_nicht_schlau...
+.end
+
+
+.string str_0x87c77f GER
+	=Wie_du_willst._Ich_werde_diesen\nseltsamen_Stein_weiter\luntersuchen...
+.end
+
+
+.string str_0x87c5fa GER
+	=._._._!\nWas?_Der_Stein_war_in_Wirklichkeit\lein_schillerndes_Kleinstein!_Das\list_ja_Wahnsinn!_Und_ich_dachte_es\lw\$aere_ein_Nugget!
+.end
+
+
+.string str_0x87c492 GER
+	=Immer_weiter_schuften!_Schuften!\nSchuften!_Das_ist_mein_Motto!\lGraben,_graben,_immer_weiter\lschuften!
+.end

@@ -1,0 +1,3 @@
+.string str_0x80ebe5 GER
+	=Chaneira!_Chaneira!
+.end

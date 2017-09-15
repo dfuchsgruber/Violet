@@ -1,0 +1,83 @@
+.string str_0x8d79cd GER
+	=..._Was_sind_das_f\$uer_Bilder,_die\nich_sehe?_...
+.end
+
+
+.string str_0x8d79fe GER
+	=Ein_Erdbeben?!?
+.end
+
+
+.string str_0x8d7bbb GER
+	=Ein_Meteorit?!?\pWas_hat_das_zu_bedeuten?
+.end
+
+
+.string str_0x8d7b5b GER
+	=Was_ist_das_f\$uer_ein_Pok\emon?\pIst_es_etwa_mit_dem_Meteor_hierher\ngekommen?
+.end
+
+
+.string str_0x8d7ae9 GER
+	=Oh_nein!_Es_scheint,_als_w\$uerde_es\nangreifen_wollen!
+.end
+
+
+.string str_0x8d7ed8 GER
+	=All_die_Menschen!_Sie_sind\nverschwunden!\lDieses_Monster_..._es_zerst\$oert\ldiese_Stadt!
+.end
+
+
+.string str_0x8d7eab GER
+	=Es_l\$aeuft_Amok!_Es_muss_aufgehalten\nwerden!
+.end
+
+
+.string str_0x8d7e03 GER
+	=Diese_Stadt...\pKann_es_sein?_...\pIst_das_hier_Aktanias_Zerst\$oerung\nin_der_Vergangenheit?
+.end
+
+
+.string str_0x8d8100 GER
+	=Der_Tempel!...
+.end
+
+
+.string str_0x8d80ca GER
+	=Das_ist_doch_...\n..._...\pLester!_Das_ist_Lester!
+.end
+
+
+.string str_0x8d803f GER
+	=Stopp_diesen_Wahnsinn,_du_Monster!\pIch,_als_Arenaleiter_dieser\nantiken_Stadt,_werde_es_dir_nicht\lgew\$aehren,_noch_mehr_Unheil\lanzurichten!
+.end
+
+
+.string str_0x8d7fa0 GER
+	=Ihr_W\$aechter_Aktanias,_ihr_Monster\nder_Antike,_ihr_W\$aechtergolems!\lIch_beschw\$oere_euch,_tut_eure\lPflicht,_sch\$uetzt_diesen_heiligen\lOrt,_vertreibt_den_Angreifer!
+.end
+
+
+.string str_0x8dc40d GER
+	=Was_geht_hier_vor?
+.end
+
+
+.string str_0x8dc39d GER
+	=W\$aechter_der_Felsen,_Golem_der\nSteine!\pZeig_dich,_du_m\$aechtiges_Unget\$uem\nder_Antike!_Regirock!
+.end
+
+
+.string str_0x8dc346 GER
+	=Bringer_der_Eiszeit,_W\$aechter_der\nGletscher!\pZeige_dich,_du_uraltes_Gesch\$oepf!\nRegice!
+.end
+
+
+.string str_0x8dc2ea GER
+	=H\$uelle_der_Unzerst\$oerbarkeit,_ewige\nLegierung!\lIch_beschw\$oere_dich,_W\$aechtergolem!\lRegisteel!
+.end
+
+
+.string str_0x8e195c GER
+	=Verteidigt_diesen_heiligen_Ort,\nvernichtet_den_Angreifer!
+.end

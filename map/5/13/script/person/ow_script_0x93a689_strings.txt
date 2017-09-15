@@ -1,0 +1,3 @@
+.string str_0x93c17a GER
+	=Woher_Manus_nur_all_die_Mittel\nhat,_ein_derart_gewaltiges_Dojo_zu\lerrichten?
+.end

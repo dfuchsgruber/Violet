@@ -1,0 +1,3 @@
+.string str_0x8a36f1 GER
+	=Als_Forscherin_habe_ich_die_ganze\nWelt_bereist_und_meinen_Beitrag\lzur_Entdeckung_der_Mega-Evolution\lgeleistet..._Guten_Gewissens_haben\lich,_mein_Mann_und_unsere_Kinder\lund_Enkel_uns_hier_niedergelassen.
+.end

@@ -127,7 +127,7 @@ def mapevents_to_assembly(maph: mapheader.Mapheader):
             s += _indented(1, "@// Warp #" + hex(i) + "\n")
             s += _data(1, (
                 (trigger.x, "hword"), (trigger.y, "hword"), (trigger.level, "byte"), (trigger.field_5, "byte"),
-                (trigger.var, "hword"), (trigger.value, "hword"), (trigger.field_a, "byte"), (trigger.field_b, "byte"),
+                (trigger.variable, "hword"), (trigger.value, "hword"), (trigger.field_a, "byte"), (trigger.field_b, "byte"),
                 (trigger.script, "word")
             ))
         s += "\n\n"

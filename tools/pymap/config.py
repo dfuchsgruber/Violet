@@ -10,3 +10,4 @@ STDROM = "C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
 MAPTABLEPTR = 0x5526C
 TSTABLE = 0x2D49B8
 STDPREAMBLE = "std.s"
+PEDANTIC = True

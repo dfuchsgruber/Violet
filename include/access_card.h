@@ -16,6 +16,8 @@ extern "C" {
 
 #define ACCESS_CARD_ELEMENT_CNT 3
 #define ACCESS_CARD_INDEX_ATRIUM 2
+    
+#define FLAG_ACCESS_CARD_FOSSIL 0x93F
 
     extern u8 **access_card_element_names;
 

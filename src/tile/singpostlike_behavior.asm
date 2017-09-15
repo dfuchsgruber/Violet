@@ -1,4 +1,5 @@
 .include "overworld_script.s"
+.include "std.s"
 @0806D154 via r0
 
 .align 2
@@ -32,7 +33,7 @@ beq trigger_cloud_back
 cmp r4, #0xBC
 beq trigger_any_behavior
 
-ldr r0, =0x924
+ldr r0, =PLAYER_CAN_ENTER_DUNGEONS
 bl _checkflag
 cmp r0, #0
 beq ret

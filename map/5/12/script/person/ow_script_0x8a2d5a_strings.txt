@@ -1,0 +1,3 @@
+.string str_0x8a359d GER
+	=Mein_Vater_hat_die_Mytologie_der\nPok\emon_Welt_studiert._Sein_Werk\ltr\$aegt_den_Titel_\b2Unsere_Welt_-_vom\lEi_zum_Pok\emon\b2_und_ist_weltweit\lein_Bestseller._Ich_bin_sehr_stolz\ldeswegen.
+.end

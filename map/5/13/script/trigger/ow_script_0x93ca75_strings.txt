@@ -1,0 +1,128 @@
+.string str_0x93cbff GER
+	=Halt!\nBevor_du_dich_der_Herausforderung\ldieser_Arena_stellst,_solltest_du\lwissen,_wie_hier_gek\$aempft_wird.\pDu_k\$aempfst_gegen_vier_Gegner_in\nFolge_und_schlie\$slich_gegen_Manus,\lden_Arenaleiter.\pZwischen_den_K\$aempfen_erlauben_wir\ndir_\b\02_Mal_eines_deiner_Pok\emon\lzu_heilen.\pBist_du_damit_einverstanden?
+.end
+
+
+.string str_0x948a7f GER
+	=Manus:_Sieh_an,_du_hast_es_also\nbis_hier_geschafft.\pIch_wusste,_dass_du_ein_K\$aempfer\nbist!\pJetzt_zeig_mir,_wie_z\$aeh_du_bist?\nKannst_du_dich_gegen_meine_Schl\$aege\lverteidigen?\lUnd_viel_wichtiger:_Kannst_du\lzur\$ueckschlagen?
+.end
+
+
+.string str_0x948b5a GER
+	=Starke_Sache!_Nicht_einmal_meine\nrohe_Muskelkraft_konnte_dich_in\lzerschmettern.
+.end
+
+
+.string str_0x94907f GER
+	=Manus:_Au\$serordentlich!\nDu_bist_so_stark,_wie_du_wirkst.\pDein_verbissener_Kampfstil_und\ndeine_Z\$aehigkeit_haben_dir_den_Sieg\lbeschert.\pDieses_dumme_M\$aedchen_im_Wasserpfad\nvorhin_hat_genau_diese_wichtigen\lEigenschaften_nicht.\pLass_mich_dir_den_Faustorden\n\$ueberreichen.
+.end
+
+
+.string str_0x949053 GER
+	=\b\01_hat_den_Faustorden\nvon_Manus_erhalten.
+.end
+
+
+.string str_0x948eb4 GER
+	=Der_Faustorden_erlaubt_es_dir,_die\nVersteckte_Maschine_Fliegen\lau\$serhalb_des_Kampfes_einzusetzen.\pF\$uer_deine_au\$serordentliche\nLeistung_im_Ring_m\$oechte_ich_dir\lau\$serdem_das_hier_\$ueberreichen.
+.end
+
+
+.string str_0x948d53 GER
+	=Diese_Tm_enth\$aelt_Power-Punch,\nden_m\$aechtigsten_aller_Schl\$aege!\lKeiner_kann_der_Wucht_standhalten.\pDer_Preis_daf\$uer_ist,_dass_der\nAnwender_eine_Runde_Energien\lfokussieren_muss,_ohne_dabei\lgetroffen_zu_werden.\lDu_siehst,_dass_Raffinesse_und\lSt\$aerke_diesen_Angriff_so\leinzigartig_machen.\pUnd_nun_Junge,_verlasse_den_Ring\nund_zeige_der_Welt_dein\lK\$aempferherz!
+.end
+
+
+.string str_0x948a18 GER
+	=Du_denkst,_dass_du_Manus\nherausfordern_kannst?\pFalsch_gedacht!_An_mir_scheitern\nsie_alle_schlie\$slich!
+.end
+
+
+.string str_0x948c44 GER
+	=Ich_ziehe_mein_Stirnband_vor_dir!\nZeig_dem_Boss,_was_du_kannst!
+.end
+
+
+.string str_0x93d3ca GER
+	=M\$oechtest_du_eines_deiner_Pok\emon\nvor_dem_n\$aechsten_Kampf_heilen?
+.end
+
+
+.string str_0x949015 GER
+	=Welches_Pok\emon_soll_geheilt\nwerden?
+.end
+
+
+.string str_0x948f99 GER
+	=Das_Pok\emon_wurde_vollst\$aendig\ngeheilt.
+.end
+
+
+.string str_0x948fcc GER
+	=Dann_fahren_wir_einfach_fort!\nMach_dich_bereit_f\$uer_den_n\$aechsten\lKampf!
+.end
+
+
+.string str_0x93d4ab GER
+	=Fantastisch!_Dein_n\$aechster_Gegner\nerwartet_dich_schon.
+.end
+
+
+.string str_0x93d419 GER
+	=Atemberaubend!_Meisterlich!\nDu_hast_es_geschafft,_vier_K\$aempfe\lin_Folge_zu_gewinnen.\lNun_wird_dir_Leiter_Manus_selbst\lgegen\$uebertreten.
+.end
+
+
+.string str_0x93d182 GER
+	=Eines_Tages_werde_ich_Manus\nheiraten_und_wir_werden\lwundersch\$oene_K\$aempferkinder\lbekommen!
+.end
+
+
+.string str_0x93d1dd GER
+	=Soll_das_hei\$sen,_er_wird_meinen\nAntrag_ablehnen?
+.end
+
+
+.string str_0x93d0cf GER
+	=Manus_ist_niemand,_der_es_gerne\nmit_Schwachmaten_aufnimmt.\lIch_werde_dich_pr\$uefen!
+.end
+
+
+.string str_0x93d123 GER
+	=Oh,_du_scheinst_einiges_auf_dem\nKasten_zu_haben.
+.end
+
+
+.string str_0x93d4e4 GER
+	=Untersch\$aetze_niemals_die_Tritte\neiner_Frau!\lIch_werde_dich_zermalmen!
+.end
+
+
+.string str_0x93d52c GER
+	=Was?_Unm\$oeglich!\nWie_konnte_ich_gegen_dich\lverlieren?
+.end
+
+
+.string str_0x93cb85 GER
+	=Komm_wieder,_wenn_du_f\$uer_diese_Art\ndes_K\$aempfens_bereit_bist!
+.end
+
+
+.string str_0x93cbf8 GER
+	=kein
+.end
+
+
+.string str_0x93cbf2 GER
+	=ein
+.end
+
+
+.string str_0x93cbeb GER
+	=zwei
+.end
+
+
+.string str_0x93caeb GER
+	=Du_hast_diese_Arena_bereits\nbezwungen,_mach_dich_auf_die_Suche\lnach_neuen_Abenteuern_anstatt\lErinnerungen_nachzutrauern!
+.end

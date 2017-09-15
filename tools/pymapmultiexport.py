@@ -1,6 +1,6 @@
 import os
 import agb
-import pymapex, pysetex, owscript
+import pymapex, pysetex, owscript, script_export
 from pymap import project as project, config
 
 #Hacky module for multi export of map, tileset and wild data
@@ -14,6 +14,7 @@ TSSYM = config.TSSYM
 PROJ = config.STDPROJ
 MAPTABLEPTR = config.MAPTABLEPTR
 TSTABLE = config.TSTABLE
+PEDANTIC = config.PEDANTIC
 
 def _mkdirs(dir):
     if not os.path.exists(dir):
@@ -28,7 +29,15 @@ def shell():
     proj.save_project(path=PROJ)
 
     while 1:
-        line = input(">>Export maps: Format {bank.map}, {bank.map}, ... {bank.map}")
+        line = input(">>Export maps: Format {bank.map}, {bank.map}, ... {bank.map} or list:{listpath}\n")
+        if line.find("list:") == 0:
+            #Export from list(lines will be merged and fed into input)
+            path = line.split(":")[1]
+            fd = open(path, "r+")
+            content = fd.read()
+            fd.close()
+            line = content.replace("\r\n", " ").replace("\n", " ")
+            print(line)
         maps = map((lambda t: t.strip().split(".")), line.split(","))
         for bank, mapid in maps:
             #print("Exporting map", bank, id)
@@ -49,10 +58,11 @@ def export(bank, mapid, rom: agb.Agbrom, proj: project.Project):
     out = resolve(MAPOUTPUT, bank, mapid)
     outdir = os.path.dirname(out)
     _mkdirs(outdir)
-    mh = pymapex.export_map(rom, offset, None, None, resolve(MAPSYM, bank, mapid), out, proj, export_ow_script, export_tileset)
+    print(PEDANTIC)
+    mh = pymapex.export_map(rom, offset, None, None, resolve(MAPSYM, bank, mapid), out, proj, export_ow_script, export_tileset, pedantic=PEDANTIC)
     proj.save_map(bank, mapid, mh, out)
     proj.save_project(path=PROJ)
-    print("Exported", bank, ".", mapid, "as", resolve(MAPSYM, bank, mapid), "into", out)
+    print("Exported", bank +  "." + mapid, "as", resolve(MAPSYM, bank, mapid), "into", out)
 
     """tsargs = "--pg " + PTSGRAPHIC + " --po " + PTSOUTPUT + "--py " + PTSSYM + " --px " + PTSGFXSYM + " --sg " + STSGRAPHIC + " --so " + STSOUTPUT + "--sy " + STSSYM + " --sx " + STSGFXSYM + " --deleteanim"
     command = resolve("python pymapex.py -b %b -m %m -y " + MAPSYM + " -o " + MAPOUTPUT + " " + tsargs + " VIOLET" + " \"" + PROJ + "\"", bank, id)
@@ -65,7 +75,10 @@ def export_ow_script(rom: agb.Agbrom, offset, path, prefix):
     dir = os.path.dirname(path) + "/script/" + prefix + "/"
     _mkdirs(dir)
     print("Invoked script export for", hex(offset), "into", dir)
-    os.system("python script_export.py -s " + hex(offset) + ' -o "' + dir + '" -m ow -b "' + rom.path + '" -r -p pymapexstdpreamble.txt --singlefile')
+    #Create exporting tree
+    tree = owscript.Owscript_Exploration_tree(rom)
+    script_export.export_script(tree, script_export.OWSCRIPTLIB, offset, "ow_script", recursive=True, verbose=False, libignore=False, singlefile=True)
+    #os.system("python script_export.py -s " + hex(offset) + ' -o "' + dir + '" -m ow -b "' + rom.path + '" -r -p pymapexstdpreamble.txt --singlefile')
     return owscript.script_offset_to_label(offset)
 
 def export_tileset(rom: agb.Agbrom, offset, proj: project.Project):

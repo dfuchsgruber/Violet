@@ -1,0 +1,3 @@
+.string str_0x8ced64 GER
+	=Es_hei\$st,_dass_die_ersten_Menschen\n\$ueberhaupt_den_Tempel_auf_dieser\lInsel_erbaut_haben_sollen.\pEine_Schande,_dass_er_nun_mehr_in\neinem_derartigen_Zustand_verweilt.
+.end

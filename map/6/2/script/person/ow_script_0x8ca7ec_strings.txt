@@ -1,0 +1,8 @@
+.string str_0x8ca8f9 GER
+	=Einst_erbauten_meine_Vorfahren\ndiese_R\$aeumlichkeiten_um_den\lW\$aechtern_ihre_Dankbarkeit_zu\lzeigen._Die_Schriftzeichen_sind\lin_der_heutigen_Blindenschrift\lverfasst._Damals_vermochten_nur\ldie_Geweihten_Priester_sie_zu\lentziffern._Komm_mit,_ich_f\$uehre\ldich_in_die_Arena.
+.end
+
+
+.string str_0x8ca83f GER
+	=Ich_kann_dir_leider_nicht\ngestatten,_die_heiligen\lGrabst\$aedten_der_Golems_zu\lbetreten._Nur_jene,_die_ihr_Leben\lder_Wache_verschrieben_haben,\ld\$uerfen_diese_heiligen_Statuen\lerblicken.
+.end

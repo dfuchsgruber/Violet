@@ -1,0 +1,13 @@
+.string str_0x8ceca3 GER
+	=Hallo,_mein_Junge._Ich_lese_f\$uer\nmein_Leben_gerne_B\$uecher_und\lerz\$aehle_Geschichten._M\$oechtest_du\leine_Geschichte_h\$oeren?
+.end
+
+
+.string str_0x8ceaf8 GER
+	=Einst_formte_der_Gigant,_der_die\nKontinente_mit_blo\$sen_H\$aenden_zog,\ldrei_Soldaten,_denen_er_den_Schutz\lder_Welt_anvertraute.\lEinen_W\$aechter_schuf_er_aus_dem\lGestein_der_Berge,_einen_W\$aechter\lschuf_er_aus_dem_Eis_eines\lGletschers_und_den_dritten_W\$aechter\lschuf_er_aus_den_Metallen_im\lHerzen_der_Erde.\lIm_Tempel_hier_huldigen_wir_den\ldrei_W\$aechtern,_die_vor_wenigen\lJahren_nur_unsere_Welt_vor_der\lBedrohung_aus_dem_All_besch\$uetzten.
+.end
+
+
+.string str_0x8ced19 GER
+	=Komm_gerne_wieder,_ich_erz\$aehle_dir\njederzeit_Geschichten,_wenn_du\lwillst.
+.end
