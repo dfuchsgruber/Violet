@@ -4,7 +4,7 @@
 
 .global ow_script_0x84e9c2
 ow_script_0x84e9c2:
-checkflag 0x932
+checkflag MERIANA_CITY_HIKER_BLOCKING_ROUTE_4
 gotoif EQUAL ow_script_0x84ea05
 loadpointer 0x0 str_0x84e9d5
 callstd MSG_SIGN

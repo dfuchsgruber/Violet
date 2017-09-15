@@ -1,8 +1,0 @@
-.string str_0x8aa83e GER
-	=Ich_trainiere_sehr_hart,_um_eines\nTages_Mitglied_in_Manus_Arena\lwerden_zu_k\$oennen._Meine_Schl\$aege\lmussen_schnell_und_stark_sein,\lmeine_Tritte_brauchen_Wucht!\pIch_zeige_dir,_wie_man_k\$aempft!
-.end
-
-
-.string str_0x8aa8fb GER
-	=Gro\$sartige_Kampftechnik!_Hast_du\nschonmal_dar\$ueber_nachgedacht,_dich\lselbst_daf\$uer_zu_bewerben?
-.end

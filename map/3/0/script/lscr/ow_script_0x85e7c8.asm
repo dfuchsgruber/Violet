@@ -27,7 +27,7 @@ special 0x7
 applymovement 0x3 ow_script_movs_0x89bd95
 waitmovement 0x0
 hidesprite 0x3
-setflag 0x200
+setflag ANOMIA_RIVAL_OUTSIDE_PLAYER_HOUSE
 setvar STORY_PROGRESS 0x3
 releaseall
 end

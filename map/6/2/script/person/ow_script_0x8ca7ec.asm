@@ -25,7 +25,7 @@ goto ow_script_0x8f6d7a
 .global ow_script_0x8f6d7a
 ow_script_0x8f6d7a:
 setvar STORY_PROGRESS 0x12
-clearflag 0x246
+clearflag AKTANIA_LESTER_ARENA
 warp 0x6 0x1 0x0 0x0 0x0
 end
 

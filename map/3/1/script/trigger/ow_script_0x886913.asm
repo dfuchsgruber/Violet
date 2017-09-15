@@ -15,7 +15,7 @@ goto ow_script_0x88c7d7
 
 .global ow_script_movs_0x886b4b
 ow_script_movs_0x886b4b:
-.byte 0x0
+.byte FACE_DOWN
 .byte SAY_EXCLAM
 .byte STOP
 

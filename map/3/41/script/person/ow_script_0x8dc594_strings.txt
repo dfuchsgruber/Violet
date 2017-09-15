@@ -1,3 +1,0 @@
-.string str_0x8dea32 GER
-	=Wende_dich_gegen_deine\nUnterdr\$uecker,_Junge!_Sei_kein\lSklave_der_Top_Vier!
-.end

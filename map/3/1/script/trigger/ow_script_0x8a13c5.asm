@@ -169,15 +169,6 @@ special 0x6
 return
 
 
-.global ow_script_0x8a1cc9
-ow_script_0x8a1cc9:
-setvar 0x8000 0x0
-setvar 0x8001 0xc
-setvar 0x8002 0xe
-special 0x6
-return
-
-
 .global ow_script_movs_0x8a27ba
 ow_script_movs_0x8a27ba:
 .byte STEP_DOWN

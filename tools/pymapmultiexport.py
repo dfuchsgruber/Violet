@@ -54,15 +54,15 @@ def tsresolve(s, offset, num):
 
 def export(bank, mapid, rom: agb.Agbrom, proj: project.Project):
     #Calculate offset
+    print("Exporting", str(bank) +  "." + str(mapid), "...")
     offset = rom.pointer(rom.pointer(rom.pointer(MAPTABLEPTR) + 4 * bank) + 4 * mapid)
     out = resolve(MAPOUTPUT, bank, mapid)
     outdir = os.path.dirname(out)
     _mkdirs(outdir)
-    print(PEDANTIC)
     mh = pymapex.export_map(rom, offset, None, None, resolve(MAPSYM, bank, mapid), out, proj, export_ow_script, export_tileset, pedantic=PEDANTIC)
     proj.save_map(bank, mapid, mh, out)
     proj.save_project(path=PROJ)
-    print("Exported", bank +  "." + mapid, "as", resolve(MAPSYM, bank, mapid), "into", out)
+    print("Exported", str(bank) +  "." + str(mapid), "as", resolve(MAPSYM, bank, mapid), "into", out)
 
     """tsargs = "--pg " + PTSGRAPHIC + " --po " + PTSOUTPUT + "--py " + PTSSYM + " --px " + PTSGFXSYM + " --sg " + STSGRAPHIC + " --so " + STSOUTPUT + "--sy " + STSSYM + " --sx " + STSGFXSYM + " --deleteanim"
     command = resolve("python pymapex.py -b %b -m %m -y " + MAPSYM + " -o " + MAPOUTPUT + " " + tsargs + " VIOLET" + " \"" + PROJ + "\"", bank, id)
@@ -77,7 +77,10 @@ def export_ow_script(rom: agb.Agbrom, offset, path, prefix):
     print("Invoked script export for", hex(offset), "into", dir)
     #Create exporting tree
     tree = owscript.Owscript_Exploration_tree(rom)
-    script_export.export_script(tree, script_export.OWSCRIPTLIB, offset, "ow_script", recursive=True, verbose=False, libignore=False, singlefile=True)
+    fdpreamble = open("pymapexstdpreamble.txt", "r+")
+    preamble = fdpreamble.read()
+    fdpreamble.close()
+    script_export.export_script(tree, script_export.OWSCRIPTLIB, offset, "ow_script", preamble, dir, recursive=True, verbose=False, libignore=False, singlefile=True)
     #os.system("python script_export.py -s " + hex(offset) + ' -o "' + dir + '" -m ow -b "' + rom.path + '" -r -p pymapexstdpreamble.txt --singlefile')
     return owscript.script_offset_to_label(offset)
 

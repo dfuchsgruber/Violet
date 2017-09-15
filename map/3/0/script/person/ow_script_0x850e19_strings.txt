@@ -1,3 +1,0 @@
-.string str_0x850e5f GER
-	=h
-.end

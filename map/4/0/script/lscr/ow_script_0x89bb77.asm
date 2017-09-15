@@ -4,7 +4,7 @@
 
 .global ow_script_movs_0x89ba89
 ow_script_movs_0x89ba89:
-.byte 0x0
+.byte FACE_DOWN
 .byte SAY_EXCLAM
 .byte STOP
 
@@ -67,7 +67,7 @@ loadpointer 0x0 str_0x89ba97
 callstd MSG
 special 0xf
 playsong MUS_RIVALE_ERSCHEINT_GARY 0x0
-clearflag 0x900
+clearflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
 showsprite 0x2
 sound 0x9
 checksound
@@ -85,7 +85,7 @@ applymovement 0x2 ow_script_movs_0x89adc0
 waitmovement 0x0
 sound 0x9
 hidesprite 0x2
-setflag 0x900
+setflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
 fadesong MUS_ALABASTIA
 checksound
 pause 0x1c

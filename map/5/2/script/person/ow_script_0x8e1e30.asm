@@ -10,9 +10,9 @@ ow_script_movs_0x8e07eb:
 
 .global ow_script_0x8e1e30
 ow_script_0x8e1e30:
-checkflag 0x228
+checkflag MERIANA_CITY_REVOLUTIONARIES
 gotoif LESS ow_script_0x8de301
-checkflag 0x229
+checkflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
 gotoif EQUAL ow_script_0x8de4b5
 loadpointer 0x0 str_0x8e07ee
 callstd MSG_KEEPOPEN
@@ -22,8 +22,8 @@ applymovement 0x800f ow_script_movs_0x8e07eb
 waitmovement 0x0
 loadpointer 0x0 str_0x8e066f
 callstd MSG_KEEPOPEN
-clearflag 0x228
-addvar 0x4054 0x1
+clearflag MERIANA_CITY_REVOLUTIONARIES
+addvar MERIANA_CITY_REVOLUTIONARY 0x1
 end
 
 
@@ -45,7 +45,7 @@ end
 
 .global ow_script_0x8de301
 ow_script_0x8de301:
-checkflag 0x229
+checkflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
 gotoif EQUAL ow_script_0x8de4b5
 loadpointer 0x0 str_0x8de430
 callstd MSG_FACE

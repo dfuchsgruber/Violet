@@ -47,8 +47,8 @@ loadpointer 0x0 str_0x8dcee9
 callstd MSG
 fadescreen 0x1
 hidesprite 0x27
-clearflag 0x227
+clearflag MERIANA_CITY_DUDE
 fadescreen 0x0
-addvar 0x4054 0x1
+addvar MERIANA_CITY_REVOLUTIONARY 0x1
 releaseall
 end

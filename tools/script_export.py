@@ -84,9 +84,9 @@ def shell(argv):
 
     else:
         raise Exception("Unkown script mode "+mode)
-    export_script(tree, libpath, offset, file_prefix, recursive=recursive, verbose=verbose, libignore=libignore, singlefile=singlefile)
+    export_script(tree, libpath, offset, file_prefix, preamble, outpath, recursive=recursive, verbose=verbose, libignore=libignore, singlefile=singlefile)
 
-def export_script(tree, libpath, offset, file_prefix, recursive=True, verbose=False, libignore=False, singlefile=True):
+def export_script(tree, libpath, offset, file_prefix, preamble, outpath, recursive=True, verbose=False, libignore=False, singlefile=True):
     if not libignore: tree.load_lib(libpath)
     if verbose: print("Lib ", libpath, "loaded sucessfully.")
     tree.explore(offset, verbose=verbose, recursive=recursive)

@@ -14,7 +14,7 @@ lscr_0x89f109:
 .global lscr_0x8f46eb
 
 lscr_0x8f46eb:
-	.hword 0x404c, 0x0
+	.hword AKTANIA_FLASHBACK_LSCR_PLAYER_INVISIBLE, 0x0
 	.word ow_script_0x814a4c
 	.hword 0x0
 

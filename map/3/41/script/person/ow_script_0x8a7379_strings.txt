@@ -1,8 +1,0 @@
-.string str_0x8a9536 GER
-	=Unsere_Sitten_verkommen,_die\nJugend_verliert_den_Respekt._Bist\ldu_auch_eine_solche_r\$uepelhafte\lGestalt?
-.end
-
-
-.string str_0x8a959f GER
-	=Ohne_Zweifel_leben_in_dir\nSittlichkeit_und_Anstand_weiter.\lPass_gut_auf_dich_auf,_Bursche.
-.end

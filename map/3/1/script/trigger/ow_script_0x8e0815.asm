@@ -16,7 +16,7 @@ ow_script_movs_0x8e1745:
 
 .global ow_script_movs_0x8e1742
 ow_script_movs_0x8e1742:
-.byte 0x0
+.byte FACE_DOWN
 .byte STOP
 
 
@@ -185,8 +185,8 @@ callstd MSG
 fadescreen 0x1
 hidesprite 0x2c
 fadescreen 0x0
-setvar 0x4054 0x80
-setflag 0x229
+setvar MERIANA_CITY_REVOLUTIONARY 0x80
+setflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
 setvar 0x8000 0x8
 special2 0x8000 0xc
 releaseall
@@ -195,7 +195,7 @@ end
 
 .global ow_script_0x8e22eb
 ow_script_0x8e22eb:
-addvar _buffer1 0x1
+addvar 0x50e7 0x1
 goto ow_script_0x8e0da6
 
 
@@ -226,8 +226,8 @@ fadescreen 0x1
 hidesprite 0x2b
 hidesprite 0x29
 fadescreen 0x0
-setvar 0x4054 0x7f
-setflag 0x229
+setvar MERIANA_CITY_REVOLUTIONARY 0x7f
+setflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
 setvar 0x8000 0xfff2
 special2 0x8000 0xc
 releaseall

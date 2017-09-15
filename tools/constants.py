@@ -1705,9 +1705,20 @@ pockets = [
 ]
 
 flag_table = {
-	0 : "0",
 	
-	0x200 : "ANOMIA_RIVAL_IN_PLAYER_HOUSE",
+	0x200 : "ANOMIA_RIVAL_OUTSIDE_PLAYER_HOUSE",
+
+	0x209 : "MERIANA_CITY_EXPLANATION_IN_FRONT_OF_POKESTOP_DOOR",
+	0x20A : "MERIANA_CITY_VIOLET_GRUNTS",
+
+	0x226 : "MERIANA_CITY_POLICEMAN_AND_DUDE",
+	0x227 : "MERIANA_CITY_DUDE",
+	0x228 : "MERIANA_CITY_REVOLUTIONARIES",
+	0x229 : "MERIANA_CITY_BLOCKING_REVOLUTIONARIES",
+
+	0x246 : "AKTANIA_LESTER_ARENA",
+
+	0x24A : "MERIANA_CITY_ITEM_0",
 
 	0x820 : "FRBADGE_1",
 	0x821 : "FRBADGE_2",
@@ -1720,12 +1731,21 @@ flag_table = {
 	0x828 : "PKMNMENU",
 	0x829 : "POKEDEX",
 	0x830 : "RUNNING_SHOES",
+
+	0x900 : "AMONIA_RIVAL_INSIDE_PLAYER_HOUSE",
+
 	0x910 : "TRANS_PALETTE_FETCH",
 	0x911 : "TRANS_DISABLE",
 	0x915 : "WONDERTRADE",
 	0x916 : "MAP_BGN_AUTO_ALIGN_OFF",
 	0x917 : "POKERADAR_POKEMON_SPAWNED",
 	0x918 : "ABILITY_SPARSAM_TRIGGER",
+
+	0x91B : "AKTANIA_ITEM_0",
+	0x91A : "AKTANIA_ITEM_1",
+	0x91C : "AKTANIA_LESTER_IN_FRONT_OF_ARENA",
+
+
 	0x91d : "DETEKTOR_ID",
 	0x91f : "WONDERTRADE_MEW_RECEIVED",
 	0x920 : "MEGA_EVOLUTION_PERFORMED",
@@ -1739,6 +1759,10 @@ flag_table = {
 	0x928 : "POKEDEX_FEATURE_0",
 	0x929 : "POKEDEX_FEATURE_1",
 	0x92a : "POKEDEX_FEATURE_2",
+
+	0x932 : "MERIANA_CITY_HIKER_BLOCKING_ROUTE_4",
+	0x933 : "MERIANA_CITY_ELISE_VISIBLE",
+
 	0x962 : "TRAINER_TIPP_MUSHROOM",
 	0x963 : "TRAINER_TIPP_SHELL",
 	0x964 : "TRAINER_TIPP_DETECTOR",
@@ -1751,10 +1775,12 @@ flag_table = {
 }
 
 var_table = {
-	0 : "0",
+	0x404C : "AKTANIA_FLASHBACK_LSCR_PLAYER_INVISIBLE",
 	0x4050 : "INTRO",
 	0x4051 : "STORY_PROGRESS",
 	0x4052 : "STARTER_SELECTED",
+	0x4054 : "MERIANA_CITY_REVOLUTIONARY",
+	0x4056 : "AMONIA_PLAYERFACING_INTRO",
 	0x4077 : "DYN_MULTICHOICE_ITEM_CNT",
 	0x50CC : "TRAINER_TIPP_CNT",
 	0x50CD : "SGM_VER",
@@ -1764,6 +1790,7 @@ var_table = {
 	0x50D4 : "BANK_CREDIT",
 	0x50D5 : "MERIANA_ARENA_HEALS",
 	0x50D6 : "MERIANA_ARENA_TRAINERS",
+	0x50D7 : "MERIANA_ARENA_TRIGGER",
 	0x50D8 : "MONEY_GIFT_FOR_HOMELESS",
 	0x50D9 : "SONG_OVERRIDE",
 	0x50DA : "POKEDEX_ACTIVE_COMPARATOR",
@@ -1916,7 +1943,6 @@ map_connections = [
 ]
 
 music = {
-	0 : "0",
     256: 'MUS_POKEMON_WERDEN_GEHEILT',
     257: 'MUS_ITEM_GEFUNDEN',
     258: 'MUS_ITEM_ERHALTEN',
@@ -2316,11 +2342,14 @@ def species(id, pedantic=False):
 		else: return hex(id)
 
 def flag(id, pedantic=False):
-	try: return flag_table[id]
+	negated = id & 0x8000
+	id &= 0x7FFF
+	if negated: nstr = " | 0x8000"
+	else: nstr = ""
+	try: return flag_table[id] + nstr
 	except: 
-		if not id: return "0"
-		if pedantic: raise Exception("Pedantic: Value " + hex(id) + " not in flag list")
-		else: return hex(id)
+		if pedantic and id not in range(0x100): raise Exception("Pedantic: Value " + hex(id) + " not in flag list")
+		else: return hex(id) + nstr
 
 def attack(id, pedantic=False):
 	try: return attack_table[id]
@@ -2331,32 +2360,38 @@ def attack(id, pedantic=False):
 def map_connection(val, pedantic=False):
 	try: return map_connections[val]
 	except: 
-		if pedantic: raise Exception("Pedantic: Value " + hex(id) + " not in connection list")
-		else: return hex(id)
+		if pedantic: raise Exception("Pedantic: Value " + hex(val) + " not in connection list")
+		else: return hex(val)
 
 def flash_type(val, pedantic=False):
 	try: return flash_types[val]
 	except: 
-		if pedantic: raise Exception("Pedantic: Value " + hex(id) + " not in flash type list")
-		else: return hex(id)
+		if pedantic: raise Exception("Pedantic: Value " + hex(val) + " not in flash type list")
+		else: return hex(val)
 		
 def map_weather(val, pedantic=False):
 	try: return map_weathers[val]
 	except: 
-		if pedantic: raise Exception("Pedantic: Value " + hex(id) + " not in map weather list")
-		else: return hex(id)
+		if pedantic: raise Exception("Pedantic: Value " + hex(val) + " not in map weather list")
+		else: return hex(val)
 
 def map_type(val, pedantic=False):
 	try: return map_types[val]
 	except: 
-		if pedantic: raise Exception("Pedantic: Value " + hex(id) + " not in map type list")
-		else: return hex(id)
+		if pedantic: raise Exception("Pedantic: Value " + hex(val) + " not in map type list")
+		else: return hex(val)
 
 def battle_type(val, pedantic=False):
 	try: return battle_types[val]
 	except: 
-		if pedantic: raise Exception("Pedantic: Value " + hex(id) + " not in battle type list")
-		else: return hex(id)
+		if pedantic: raise Exception("Pedantic: Value " + hex(val) + " not in battle type list")
+		else: return hex(val)
+
+def var(val, pedantic=False):
+	try: return var_table[val]
+	except:
+		if pedantic and val not in range(0x8000, 0x8010): raise Exception("Pedantic: Value " + hex(val) + " not in var list")
+		else: return hex(val)
 
 def _mkdirs(dir):
 	if not os.path.exists(dir):

@@ -1,8 +1,0 @@
-.string str_0x8a9ca1 GER
-	=Was_entspannt_mehr_als_ein\nPicknick_in_der_Sonne?\pEin_Kampf_nat\$uerlich!
-.end
-
-
-.string str_0x8a95fb GER
-	=Mir_bleibt_immerhin_noch_das\nPicknicken!
-.end

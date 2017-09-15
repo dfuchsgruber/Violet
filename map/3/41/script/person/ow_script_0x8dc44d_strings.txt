@@ -1,3 +1,0 @@
-.string str_0x8de6b0 GER
-	=Krieg_den_Top_Vier,_Krieg_dem\nChampion!_Friede_dem_Volk!
-.end

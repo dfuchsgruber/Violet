@@ -1,8 +1,0 @@
-.string str_0x8448cd GER
-	=Oh_sieh_mal,_was_ich_dort_auf_dem\nBoden_gefunden_habe!_Eine\lmerkw\$uerdige_Klaue..._Willst_du_sie\lhaben?
-.end
-
-
-.string str_0x844937 GER
-	=Sie_sieht_wirklich_ziemlich\nmerkw\$uerdig_aus,_nicht?
-.end

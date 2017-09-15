@@ -118,7 +118,7 @@ ow_script_movs_0x8a133b:
 
 .global ow_script_movs_0x888e47
 ow_script_movs_0x888e47:
-.byte 0x0
+.byte FACE_DOWN
 .byte STOP
 
 

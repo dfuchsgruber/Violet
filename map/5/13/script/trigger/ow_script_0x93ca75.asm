@@ -10,7 +10,7 @@ ow_script_movs_0x93cd29:
 
 .global ow_script_movs_0x93cd2c
 ow_script_movs_0x93cd2c:
-.byte 0x0
+.byte FACE_DOWN
 .byte STOP
 
 
@@ -102,7 +102,7 @@ loadpointer 0x0 str_0x949053
 callstd MSG_KEEPOPEN
 waitfanfare
 setflag FRBADGE_3
-setflag 0x933
+setflag MERIANA_CITY_ELISE_VISIBLE
 loadpointer 0x0 str_0x948eb4
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 0x121

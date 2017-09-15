@@ -4,7 +4,7 @@
 
 .global ow_script_movs_0x8d79c9
 ow_script_movs_0x8d79c9:
-.byte 0x0
+.byte FACE_DOWN
 .byte SAY_EXCLAM
 .byte STOP
 
@@ -39,7 +39,7 @@ goto ow_script_0x8d7bed
 
 .global ow_script_0x8d7bed
 ow_script_0x8d7bed:
-loadpointer 0x0 str_0x118d200
+loadpointer 0x0 0
 callasm 0x9190001
 clearflag TRANS_DISABLE
 goto ow_script_0x8d7ea1
@@ -270,7 +270,7 @@ special 0x7
 showsprite 0xa
 applymovement 0xa ow_script_movs_0x8d80fd
 waitmovement 0x0
-fadesong 0x0
+fadesong 0
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d80ca
 callstd MSG

@@ -114,7 +114,7 @@ def export_levelscript(rom: agb.Agbrom, offset, type, basepath, script_export_fu
         #Extended
         label = "lscr_" + hex(offset)
         assembly = ".align 4\n.global " + label + "\n\n" + label + ":\n"
-        var = constants._dict_get(constants.var_table, rom.u16(offset), pedantic=pedantic)
+        var = constants.var(rom.u16(offset), pedantic=pedantic)
         value = hex(rom.u16(offset + 2))
         script = script_export_func(rom, rom.pointer(offset + 4), basepath, "lscr")
         field_8 = hex(rom.u16(offset + 8))
@@ -271,7 +271,7 @@ def export_trigger(rom : agb.Agbrom, offset, basepath, script_export_func, pedan
     trigger.y = rom.s16(offset + 2)
     trigger.level = rom.u8(offset + 4)
     trigger.field_5 = rom.u8(offset+ 5)
-    trigger.variable = constants._dict_get(constants.var_table, rom.u16(offset + 6), pedantic=pedantic)
+    trigger.variable = constants.var(rom.u16(offset + 6), pedantic=pedantic)
     trigger.value = rom.u16(offset + 8)
     trigger.field_a = rom.u8(offset + 0xA)
     trigger.field_b = rom.u8(offset + 0xB)

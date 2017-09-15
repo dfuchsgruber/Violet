@@ -16,7 +16,7 @@ lscr_0x71a500:
 .global lscr_0x168c29
 
 lscr_0x168c29:
-	.hword 0x4056, 0x0
+	.hword AMONIA_PLAYERFACING_INTRO, 0x0
 	.word ow_script_0x168c33
 	.hword 0x0
 

@@ -1,8 +1,0 @@
-.string str_0x8a8910 GER
-	=Ein_Kampf_ist_im_Grunde_wie_Strom.\nUnd_wir_Trainer_stehen_dabei\lgeh\$oerig_unter_Spannung!
-.end
-
-
-.string str_0x8a896a GER
-	=Oh_je._Ich_glaube,_da_hab_ich_wohl\neinen_Kurzschluss_verursacht...
-.end

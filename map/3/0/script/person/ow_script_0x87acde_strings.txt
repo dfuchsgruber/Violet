@@ -1,3 +1,0 @@
-.string str_0x87f589 GER
-	=The_flag_was_set.
-.end

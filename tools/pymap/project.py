@@ -20,7 +20,7 @@ class Project:
         """ Returns the smallest availible footer id """
         used_footers = self.get_used_footers()
         if len(used_footers):
-            for i in range(1, min(used_footers) + 1, 0x10000):
+            for i in range(1, max(used_footers) + 2):
                 if not i in used_footers: return i
             raise Exception("Appearantly there are no availible footers which is rather unlikley since there are 0x10000 possible ones...")
         else:
@@ -34,6 +34,15 @@ class Project:
                 _, _, _, footer_id = self.banks[bank][mapid]
                 used_footers.add(footer_id)
         return used_footers
+
+    def get_footer_usage(self, footer_id):
+        """ Returns all map symbols that use a footer id"""
+        symbols = set()
+        for bank in self.banks:
+            for mapid in self.banks[bank]:
+                symbol, _, _, fid = self.banks[bank][mapid]
+                if fid == footer_id: symbols.add(symbol)
+        return symbols
 
     def get_map_path(self, bank, mapid):
         """ Returns the path of a map by its bank, map"""

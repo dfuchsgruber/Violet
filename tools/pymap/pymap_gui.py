@@ -1252,8 +1252,10 @@ class Pymap_gui(tkinter.Frame):
         dialog.wm_title("Edit mapheader of map " + self.map.key)
         dialog.attributes("-toolwindow", 1)
         entries = [("Levelscript header", "levelscript_header", None), ("Music", "music", constants.music),
-        ("Flash type", "flash_type", constants.flash_types), ("Weather", "weather", constants.map_weather), ("Map type", "type", constants.map_types),
-        ("Field18", "field_18", None), ("Show name", "show_name", constants.map_show_name), ("Field1A", "field_1a", None) , ("Battle style", "battle_style", constants.battle_types)]
+        ("Flash type", "flash_type", constants.flash_types), ("Weather", "weather", constants.map_weathers), ("Map type", "type", constants.map_types),
+        ("Field18", "field_18", None), ("Show name", "show_name", constants.map_show_name), ("Field1A", "field_1a", None) , ("Battle style", "battle_style", constants.battle_types),
+        ("Footer id", "id", None)
+        ]
         dialog.dropdowns = [None for _ in entries]
         for i in range(len(entries)):
             show, name, consts = entries[i]
@@ -1266,7 +1268,7 @@ class Pymap_gui(tkinter.Frame):
             except: value = str(value)
             entry.insert(0, value)
             entries[i] = show, name, entry
-                
+                            
 
         def close():
             #self.root.deiconify()
@@ -1298,6 +1300,16 @@ class Pymap_gui(tkinter.Frame):
                 except: pass
                 value_old = self.map.__getattribute__(name)
                 if value != value_old: diffs[name] = value, value_old
+            if "id" in diffs:
+                #Check if the new footer id is already used (if another map uses this footer id)
+                footer_id, _ = diffs["id"]
+                id_usage = self.proj.get_footer_usage(footer_id)
+                print(diffs["id"], id_usage)
+                if self.map.symbol in id_usage: id_usage.remove(self.map.symbol)
+                if len(id_usage):
+                    if not tkinter.messagebox.askyesno(title="Footer id already used", message="The footer id " + str(footer_id) + " is already used by the following map(s) (listed by symbol) "+ str(id_usage) + ". A possible unused id would be " + hex(self.proj.get_smallest_availible_foooter_id()) + ". Do you want to continue?", default="no"): return
+
+
             if len(diffs): self.action(Action_header_edit(self, diffs, update))
 
         tkinter.Button(dialog, text="Apply", command=apply_changes).grid(row=len(entries), column=0, sticky=tkinter.NW)

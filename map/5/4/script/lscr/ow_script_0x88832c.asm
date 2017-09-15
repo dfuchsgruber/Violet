@@ -247,7 +247,7 @@ waitmovement 0x0
 sound 0x9
 hidesprite 0x7
 setflag PKMNMENU
-clearflag 0x900
+clearflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
 applymovement 0xff ow_script_movs_0x888a3d
 waitmovement 0x0
 setvar STORY_PROGRESS 0xa
