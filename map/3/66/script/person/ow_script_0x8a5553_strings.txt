@@ -1,0 +1,3 @@
+.string str_0x8a679f GER
+	=Ich_frage_mich,_was_welche_Pok\emon\nich_mir_als_erstes_fangen_werde!\lBestimmt_werde_ich_mehr_Pok\emon_im\lPokedex_registrieren,_als_du!
+.end

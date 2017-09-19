@@ -1,0 +1,3 @@
+.string str_0x965de4 GER
+	=Selbst_an_Wintertagen_herrschen_in\nInferior_H\$oechsttemperaturen.\pWir_haben_hier_sogut_wie_niemals\nSchneefall.
+.end

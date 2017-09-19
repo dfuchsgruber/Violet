@@ -1,0 +1,3 @@
+.string str_0x860241 GER
+	=Mistral_wird_das_Fragment_des\nZeitsteins_sicherstellen.\pSolange_er_besch\$aeftigt_ist,_halten\nwir_die_Stadt_in_Schach.
+.end

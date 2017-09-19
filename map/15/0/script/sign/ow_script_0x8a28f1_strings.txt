@@ -1,0 +1,3 @@
+.string str_0x8f7189 GER
+	=Pokemonzucht_an_der_alten_M\$uehle\pBetreiber:_Nick_und_Rick
+.end

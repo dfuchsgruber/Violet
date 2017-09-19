@@ -1,0 +1,8 @@
+.string str_0x94bffc GER
+	=Du_bist_das_erste_Mal_auf_einer\nWolke_unterwegs?\pDann_wird_es_Zeit,_dass_du_auf\neiner_Wolke_k\$aempfst!
+.end
+
+
+.string str_0x94c063 GER
+	=Du_hast_eindeutig_Talent,_wenn_es\num_Wolkenreiten_geht!
+.end

@@ -270,7 +270,7 @@ special 0x7
 showsprite 0xa
 applymovement 0xa ow_script_movs_0x8d80fd
 waitmovement 0x0
-fadesong 0
+fadesong MUS_0
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d80ca
 callstd MSG
@@ -457,7 +457,7 @@ goto ow_script_0x92df2f
 
 .global ow_script_0x92df2f
 ow_script_0x92df2f:
-setflag 0x232
+setflag AKTANIA_FLASHBACK_DONE
 warpmuted 0xf 0x0 0xff 0x2e 0x2c
 end
 

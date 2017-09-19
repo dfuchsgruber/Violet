@@ -1,0 +1,53 @@
+.string str_0x8ed116 GER
+	=Es_war_vor_langer_Zeit,_als_der\nElan_der_Jugend_in_mir_wohnte_und\lich_von_der_Legende_des\lmysteri\$oesen_Zeitpokemon_geh\$oert\lhatte...
+.end
+
+
+.string str_0x8ed0b8 GER
+	=Faun:_Das_ist_er_also,_der\nsagenumwobene_Schrein,_der_dem\lZeitpokemon_geweiht_ist?
+.end
+
+
+.string str_0x8ed06c GER
+	=Wo_ist_es_denn_nun,_das_Pok\emon,\ndas_die_Zeit_beeinflussen_kann?
+.end
+
+
+.string str_0x8ed049 GER
+	=Was_war_das_f\$uer_ein_Ger\$aeusch?
+.end
+
+
+.string str_0x8ed00c GER
+	=Das_muss_das_legend\$aere_Pok\emon\nsein,_das_muss_Celebi_sein!
+.end
+
+
+.string str_0x8ecfea GER
+	=..._Hilf_mir,_lieber_Mensch_...
+.end
+
+
+.string str_0x8ecfd8 GER
+	=Eine_Stimme?
+.end
+
+
+.string str_0x8ecfb4 GER
+	=..._Lieber_Mensch,_so_hilf_mir...
+.end
+
+
+.string str_0x8ecf8a GER
+	=Spricht_es_..._\$ueber_Thelepatie_mit\nmir?
+.end
+
+
+.string str_0x8ecdda GER
+	=..._Sie_haben_die_Zeit\ngesch\$aendet...\p..._Sie,_die_alles_kontrollieren\p...\p..._Sie_haben_den_Fluss_der_Zeit\nmanipuliert_und_sie_hergef\$uehrt_...\p..._Die_Zeit_ist_in_Gefahr_...\p...\p..._Doch_du_kannst_helfen,_lieber\nMensch_...\p..._Dein_Herz_ist_rein...\p...\p..._Der_Stein_kann_nicht_l\$aenger\nblo\$s_von_mir_beh\$uetet_werden_...\p..._Den_gr\$oe\$sten_W\$aechtern_will_ich\nihn_vermachen_...\p..._Und_das_Schicksal_in_deine\nH\$aende_legen,_lieber_Mensch_...
+.end
+
+
+.string str_0x8ecd2c GER
+	=Noch_heute_geben_mir_diese_Worte\nein_R\$aetsel_auf,_doch_bin_ich\lsicher,_dass_meine_Begegnung_mit\lCelebi,_dem_Zeitpokemon,_kein\lZufall_war._Es_wollte_mich_warnen,\ldoch_wovor?
+.end

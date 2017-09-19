@@ -1,0 +1,8 @@
+.string str_0x96317e GER
+	=Wanderschaft_trainiert_den_K\$oerper\nausgezeichnet.
+.end
+
+
+.string str_0x9631b1 GER
+	=Oh,_du_bist_wohl_auch_recht_viel\nunterwegs?
+.end

@@ -1,0 +1,8 @@
+.string str_0x843a47 GER
+	=Oh,_du_und_deine_Pok\emon_sehen_ja\nschrecklich_ersch\$oepft_aus!_Setzt\leuch_doch_erstmal_zu_mir_und_ruht\leuch_aus.
+.end
+
+
+.string str_0x843aba GER
+	=Oh,_schon_viel_besser,_\b\01!\nUnd_jetzt_gib_alles,_zeig_es_der\lWelt!
+.end

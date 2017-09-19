@@ -1,0 +1,8 @@
+.string str_0x71ad57 GER
+	=Ich_habe_viele_Jahre_gek\$aempft,_und\nmein_Pok\emon_ist_\$aeu\$sert_selten!
+.end
+
+
+.string str_0x71b389 GER
+	=Seltenheit_bedeutet_wohl_nicht\nSt\$aerke...
+.end

@@ -1,0 +1,28 @@
+.string str_0x92ea1b GER
+	=Oh,_du_nennst_mich_eine_Hexe!\pHehehe!\pHehehe!\pDas_ist_wahr!_Ich_bin_eine_Hexe!\pIch_kenne_viele_Hexengeschichten.\nSoll_ich_dir_eine_erz\$aehlen?
+.end
+
+
+.string str_0x92e752 GER
+	=Vor_vielen_Jahren,_vor_\$AEonen,_als\ndie_Legend\$aeren_Pokemon_die_Welt\lkreierten,_da_existierte_ein\lMensch_mit_der_Ambition,\lunsterblich_zu_werden.\pSie_war_die_dunkle_K\$oenigin,_die\nVerk\$oerperung_der_Nacht,_ein\lSchatten.\pIm_Laufe_der_Zeit_erwarb_sie_die\nF\$aehigkeit,_Seelen_zu_verschlingen,\lsie_sich_einzuverleiben_und_zu\lverbrauchen.\pBald_regierte_sie_das_ganze_Land\nund_war_selbst_den_Sch\$oepfern_der\lWelt_ebenb\$uertig.\pEines_Tages_aber_gelang_es_einem\nTrainer,_die_finstere_K\$oenigin_zu\lversiegeln.\pSeit_je_her_sind_wir_Hexen_auf_der\nSuche_nach_einem_Weg,_ihre\lunsterbliche_Seele\lzur\$ueckzubringen.
+.end
+
+
+.string str_0x92e6f1 GER
+	=Eine_spannende_Geschichte,_nicht?\pEines_steht_jedenfalls_fest,_sie\nist_irgendwo_da_drau\$sen..._
+.end
+
+
+.string str_0x92df22 GER
+	=..._..._...
+.end
+
+
+.string str_0x92def0 GER
+	=..._..._...\pErkennst_du_mich_nicht?\p..._..._...
+.end
+
+
+.string str_0x92e9aa GER
+	=Nah!_Wie_auch_immer!_Wir_Hexen\nhaben_eine_uralte_Geschichte_und\lTradition...\pEs_lohnt_sich,_dar\$ueber_zu_wissen.
+.end

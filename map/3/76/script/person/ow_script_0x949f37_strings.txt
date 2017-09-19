@@ -1,0 +1,8 @@
+.string str_0x94db4f GER
+	=Ein_neues_Gesicht_unter_den\nWolkenreitern?\pZeig_mir,_was_du_auf_dem_Kasten\nhast!
+.end
+
+
+.string str_0x94dba2 GER
+	=Ah!_Du_scheinst_etwas_vom_Fliegen\nzu_verstehen!
+.end

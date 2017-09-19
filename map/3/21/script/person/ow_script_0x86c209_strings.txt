@@ -1,0 +1,3 @@
+.string str_0x86ca74 GER
+	=Verdammt,_immer_wenn_ich_dem\nBrunnen_zu_nahe_komme,\lverschwindet_er_wieder!
+.end

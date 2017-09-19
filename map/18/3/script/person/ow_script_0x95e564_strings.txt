@@ -1,0 +1,8 @@
+.string str_0x95e57c GER
+	=Ich_bin_nicht_begeistert_von\ndiesem_Ort,_aber_mein_Pok\emon\lliebt_ihn_\$ueber_alles.
+.end
+
+
+.string str_0x95e5cf GER
+	=Mit_einem_Hundemon_am\nH\$oellenschlund_spazieren_gehen...
+.end

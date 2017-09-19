@@ -1,0 +1,18 @@
+.string str_0x945f3c GER
+	=Ich_bin_ein_Forscher_der_Laz.Corp\nund_fasziniert_von_der\lBeschaffenheit_des_Lichts.\pDie_Lichtkanone_ist_der_Angriff\nmeiner_Wahl!\pAber_ich_bin_auch_sein_Sammler.\nWenn_du_mir_entweder_3_Minipilze\loder_einen_Riesenpilz_bringst,\lkann_ich_im_Gegenzug_daf\$uer_einem\ldeiner_Pok\emon_Lichtkanone\lbeibringen.
+.end
+
+
+.string str_0x946118 GER
+	=Vorz\$ueglich!\nDu_hast_\b\02-mal\l\b\02_dabei!\pSoll_ich_nun_einem_deiner_Pok\emon\ndie_Lichtkanone_beibringen?
+.end
+
+
+.string str_0x9461a3 GER
+	=Welchem_deiner_Pok\emon_soll_ich\nLichtkanone_beibringen?
+.end
+
+
+.string str_0x9461dd GER
+	=Wie_unverhofft!\nSolltest_du_deine_Einstellung\l\$aendern_und_meine_Faszination_f\$uer\lLicht_teilen,_wei\$st_du_ja,_wo_du\lmich_findest!
+.end

@@ -1,0 +1,3 @@
+.string str_0x9278f8 GER
+	=Im_Fernsehen_laufen_stets\ninteressante_Dinge._Nicht_zuletzt,\lweil_das_Programm_so_vielf\$aeltig\list.\pWirf_doch_auch_das_eine_oder\nandere_Mal_einen_Blick_auf_einen\lFernseher,_vielleicht_gef\$aellt_dir,\lwas_du_siehst.
+.end

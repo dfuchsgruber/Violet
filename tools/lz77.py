@@ -4,7 +4,8 @@ import sys
 
 def decomp(rom, off):
     """ Decomps lz77 compressed data specified by GBATEK, returns an uint8 list"""
-    if (rom.u8(off) >> 4) & 0xF != 1: raise Exception("Lz77 Error: Data is not lz77 compressed")
+    #if (rom.u8(off) >> 4) & 0xF != 1: raise Exception("Lz77 Error: Data is not lz77 compressed")
+    if (rom.u8(off) >> 4) & 0xF != 1: print("Lz77 Warning: Data is not lz77 compressed (at least not properly). Still trying to decompress...")
     size = rom.u8(off + 1) + (rom.u8(off + 2) << 8) + (rom.u8(off + 3) << 16) #LE read of bit 8-31 of size field
     out = [0] * size
     off += 4 #Data starts at offset = 0x4

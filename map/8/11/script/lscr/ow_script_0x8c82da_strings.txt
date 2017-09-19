@@ -1,0 +1,3 @@
+.string str_0x8c80e4 GER
+	=Igva:_Sehr_gut,_du_hast\nhergefunden.\pWo_wir_uns_hier_befinden?\nDas_hier_ist_das_dunkle_Geheimnis\lKaskadas,_die_Schattenseite_des\lSystems,_dem_wir_unterworfen_sind.\lEs_ist_ein_geheimer_Markt_im\lUntergrund,_der_gr\$oe\$ste_und\lber\$uechtigste_des_Kontinents.\lEr_liegt_direkt_unterhalb\lKaskadas,_sodass_sogar_Schiffe\lhier_anlegen_k\$oennen.\lWas_gehandelt_wird?\lVerbotene_Gegenst\$aende,_Falschgeld\lund_sogar_versklavte_Pok\emon...\lEs_ist_ein_trauriger_Ort,_das\lh\$aessliche_Gesicht_Thetos.\lKomm_mit,_ich_f\$uehre_dich_herum.
+.end

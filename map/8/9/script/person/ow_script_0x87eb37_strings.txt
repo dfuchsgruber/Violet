@@ -1,0 +1,3 @@
+.string str_0x87fba3 GER
+	=Seit_einigen_Monaten_sehe_ich_hier\nimmer_\$oefter_Revolution\$aere_in_ihren\lsmaragdgr\$uenen_Roben.\pWas_sie_wohl_hier_wollen?
+.end

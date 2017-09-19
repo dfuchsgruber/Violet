@@ -1,0 +1,3 @@
+.string str_0x965f0a GER
+	=Das_Sortiment_in_den\nVerkaufsabteilungen_der_Pok\estops\lwird_laufend_erweitert.\pSo_haben_sich_nun_auch_Hyperb\$aelle\ndort_eingefunden.\pEin_Gl\$ueck,_dass_diese\nhochentwickelten_Pok\eb\$aelle_nun_f\$uer\ldie_Masse_verf\$uegbar_sind.
+.end

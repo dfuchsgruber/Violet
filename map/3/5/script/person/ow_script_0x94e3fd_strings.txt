@@ -1,0 +1,3 @@
+.string str_0x94e407 GER
+	=Das_kupferfarbene_Geb\$aeude_im\nNorden_der_Stadt_ist_eine_Bank.\pAber_wenn_du_mich_fragst,_solltest\ndu_dir_von_diesen_Leuten_kein_Geld\lleihen...
+.end

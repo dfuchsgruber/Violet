@@ -1,0 +1,18 @@
+.string str_0x8dce63 GER
+	=Normal-
+.end
+
+
+.string str_0x8d4251 GER
+	=Dort_liegt_ein_Ei!\nM\$oechtest_du_es_aufnehmen?
+.end
+
+
+.string str_0x8d42b4 GER
+	=\b\01_hat_ein_\b\02-Ei\nerhalten!
+.end
+
+
+.string str_0x8d4280 GER
+	=Schade!_Du_hast_keinen_Platz_mehr\nin_deinem_Team.
+.end

@@ -1,0 +1,8 @@
+.string str_0x93bc2f GER
+	=Alle_meine_Klassenkameradinen\nhaben_bereits_einen_Freund!\lWie_w\$aere_es_mit_uns_beiden?
+.end
+
+
+.string str_0x93bc87 GER
+	=Soll_das_hei\$sen,_du_erteilst_mir\neinen_Korb?
+.end

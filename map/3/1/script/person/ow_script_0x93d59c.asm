@@ -23,7 +23,7 @@ callstd MSG
 special 0x7
 fadescreen 0x1
 hidesprite 0x800f
-setflag 0x934
+setflag ROUTE_5_VIOLET_GRUNTS
 fadescreen 0x0
 release
 end

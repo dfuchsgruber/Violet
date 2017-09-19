@@ -1,0 +1,3 @@
+.string str_0x8fb3d5 GER
+	=Kampf-
+.end

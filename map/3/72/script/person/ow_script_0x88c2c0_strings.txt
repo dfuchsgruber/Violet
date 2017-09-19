@@ -1,0 +1,3 @@
+.string str_0x8a06ea GER
+	=Die_Typenverh\$aeltnisse_der\nPok\emonwelt_zu_kennen,_ist_von\lgro\$sem_Vorteil._So_kann_man_seine\lAngriffe_effektiv_einsetzen!
+.end

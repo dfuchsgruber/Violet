@@ -1,0 +1,3 @@
+.string str_0x8c910d GER
+	=Ich_beobachte_gerne_Menschen_in\nihren_Kanus.\p...\pDas_Wasser_ist_zweifellos_das\nElement_des_Lebens!
+.end

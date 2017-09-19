@@ -1,0 +1,3 @@
+.string str_0x8f2194 GER
+	=Von_einem_Untergrundhandel_wei\$s\nich_nichts...\pWie,_du_hast_nicht_gefragt?
+.end

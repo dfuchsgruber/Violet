@@ -1,0 +1,8 @@
+.string str_0x8efc78 GER
+	=Die_Welt_ist_ein_grauenvoller_Ort.\nWir_werden_sie_unter_einen_ewigen\lFrieden_bringen!
+.end
+
+
+.string str_0x8f0916 GER
+	=Niemand_kann_sich_gegen_den\nFrieden_selbst_wehren,_auch_du\lnicht!
+.end

@@ -1,0 +1,8 @@
+.string str_0x8e2b2d GER
+	=Viele_Wanderer_treten_den\nbeschwerlichen_Pfad_durch_die\l\$OEdnis_und_W\$ueste_nach_Kaskada_an.\pDas_zeugt_von_F\$aehigkeit.
+.end
+
+
+.string str_0x8e2ba1 GER
+	=In_Kaskada_erwarten_einen_die\nreinsten_Wasserquellen_der_ganzen\lRegion,_so_sagt_man.
+.end

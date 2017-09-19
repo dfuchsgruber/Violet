@@ -1,0 +1,3 @@
+.string str_0x94e05a GER
+	=Im_Museum_stellen_sie_eines_meiner\nGem\$aelde_aus._Es_zeigt_den_gro\$sen\lDrachen_Rayquaza,_den_Herrscher\ldes_Himmels.\pIch_bin_so_stolz!
+.end

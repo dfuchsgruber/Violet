@@ -1,0 +1,13 @@
+.string str_0x95dbb7 GER
+	=Blaise:_Hallo_\b\01.\nIch_bin_gerade_deinem_kleinen\lFreund_\b\06_\$ueber_den_Weg\lgelaufen.\pEr_scheint_sich_gemacht_zu_haben,\nganz_\$aehnlich_wie_du.\pBist_du_deinem_Ziel_n\$aeher\ngekommen?\lOder_f\$uehlst_du_dich_deinem_Traum\lferner_als_zuvor?\pIch_habe_eine_Niederlage_erlitten,\neine_vernichtende,_wie_man_meinen\lk\$oennte.\pMein_Vater_ist_ein_Gegner,_den_ich\nuntersch\$aetzt_habe...
+.end
+
+
+.string str_0x95dd1d GER
+	=Und_dennoch_oder_gerade_deswegen\nwerde_ich_nicht_aufgeben.\pMein_Vater_hat_es_verdient,\nvernichtet_zu_werden._Von_mir.\pIch_war_zu_nachl\$aessig,_zu_weich.\nSei_gnadenlos,_r\$uecksichtslos.\pIch_halte_nicht_viel_von\nFreundschaften,_dieser_nervige\lFelix_Bengel_sollte_das_begriffen\lhaben.\pIch_frage_mich,_ob_wir_k\$aempfen\nsollten,_ob_ich_mich_dir_stellen\lwill_und_komme_zu_dem_Schluss,\ldass_ich_auch_dich_untersch\$aetzt\lhaben_k\$oennte.\pWenn_ich_meinen_Vater_gest\$uerzt\nhabe,_\b\01_-_und_das_ist_ein\lVersprechen_-_werde_ich_dich\lzerstampfen_und_nach_dir_den_Rest\lder_Welt.
+.end
+
+
+.string str_0x95db3f GER
+	=Jede_Niederlage_bringt_mich_dem\nendg\$ueltigen_Sieg_n\$aeher.\pUnd_vor_diesem_Tag_solltest_du,\nsollte_sich_jeder_f\$uerchten...
+.end

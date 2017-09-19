@@ -1,0 +1,3 @@
+.string str_0x87fa5c GER
+	=Die_Fernsehberichte_orientieren\nsich_immer_an_den_aktuellen\lEreignissen_in_der_Region.
+.end

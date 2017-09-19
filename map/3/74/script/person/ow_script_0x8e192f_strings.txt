@@ -1,0 +1,8 @@
+.string str_0x8e1c76 GER
+	=Es_hei\$st,_der_Champion_der_Region\nsei_ein_junger_Mann._Andere\lsprechen_von_einer_wundersch\$oenen\lLady.
+.end
+
+
+.string str_0x8e1cdd GER
+	=Wer_auch_immer_der_Champion_Thetos\nist,_er_muss_unglaublich_stark\lsein.
+.end

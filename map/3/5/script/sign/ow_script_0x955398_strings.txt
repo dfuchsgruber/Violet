@@ -1,0 +1,3 @@
+.string str_0x955429 GER
+	=Orina_City_Mauzi_Bank
+.end

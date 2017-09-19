@@ -1,0 +1,3 @@
+.string str_0x931edc GER
+	=Die_Welt_ist_kompliziert.\nWenn_jemand_wie_Team_Violet\leinfache_L\$oesungen_anbietet,_wieso\lnicht?
+.end

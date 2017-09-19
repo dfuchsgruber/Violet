@@ -1,0 +1,8 @@
+.string str_0x7287d7 GER
+	=Ich_frage_mich,_wie_viele_Ebenen\ndiese_H\$oehle_hat!
+.end
+
+
+.string str_0x72880b GER
+	=Ich_hoffe,_es_sind_nicht_mehr_als\nzwei_Ebenen!
+.end

@@ -1,0 +1,3 @@
+.string str_0x93ba54 GER
+	=Die_Wanderung_entlang_des\nWasserpfades_ist_sehr_beliebt\lunter_Wanderern.\pAllein_die_Vorstellung_unter_einem\ngewaltigen_Fluss_zu_marschieren...\pUnfassbar,_nicht?
+.end

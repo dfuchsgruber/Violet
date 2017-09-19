@@ -1,0 +1,8 @@
+.string str_0x8ede71 GER
+	=Wie_kann_es_hier_so_trocken_sein,\nw\$aehrend_Kaskada_die_Stadt_der\lWasserquellen_genannt_wird?
+.end
+
+
+.string str_0x8edee6 GER
+	=Kaskada_und_diese_W\$ueste_liegen\nnahezu_unmittelbar_nebeneinander.
+.end

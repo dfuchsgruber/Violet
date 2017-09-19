@@ -1,0 +1,3 @@
+.string str_0x95ed28 GER
+	=Inferior_ist_lange_umk\$aempft\ngewesen_unter_den_Top_Vier.\pNun,_da_der_Champion_Lucius_fort\nist,_wei\$s_man_nie_genau,_ob_der\lSchwarze_Devin_erneut_einen\lVersuch_unternimmt,_dieses_Gebiet\lzu_unterwerfen...
+.end

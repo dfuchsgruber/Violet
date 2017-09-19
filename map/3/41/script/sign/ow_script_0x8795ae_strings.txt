@@ -1,0 +1,3 @@
+.string str_0x88bc91 GER
+	=Westen:_Route_2\nOsten:_Meriana_City
+.end

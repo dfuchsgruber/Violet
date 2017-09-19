@@ -1,0 +1,3 @@
+.string str_0x87f9d5 GER
+	=Im_Fernsehen_laufen_oft_sehr\nspannende_Berichte!\pErst_k\$uerzlich_habe_ich_eine\nDokumentation_\$ueber_das_seltene\lPok\emon_Barschwa_gesehen.
+.end

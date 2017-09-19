@@ -1,0 +1,18 @@
+.string str_0x8f1d5b GER
+	=_\b\01_klopft_an_\n...\l..._...\lParole?
+.end
+
+
+.string str_0x8f1d80 GER
+	=\89\1d\8f\_spnr\97\1d\8f\_spnr
+.end
+
+
+.string str_0x8f1d1f GER
+	=Einlass_gew\$aehrt!
+.end
+
+
+.string str_0x8f1d3c GER
+	=Kein_Einlass_gew\$aehrt!
+.end

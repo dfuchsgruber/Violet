@@ -1,0 +1,3 @@
+.string str_0x8a0763 GER
+	=Der_Angriff_eines_Pok\emon_bestimmt\n\$ueber_die_St\$aerke_seiner_physischen\lAngriffe._Der_Spezial-Angriff\ldagegen_st\$aerkt_die_speziellen\lAttacken._\$AEhnlich_verh\$aelt_es_sich\lmit_den_Verteidigungswerten.
+.end

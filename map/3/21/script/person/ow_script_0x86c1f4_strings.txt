@@ -1,0 +1,3 @@
+.string str_0x91ff57 GER
+	=Endlich!_Nach_tagelanger_Suche\nhabe_ich_den_Weg_nach_Kaskada\lwieder_gefunden._Nur_z\$oegere_ich,\lmich_erneut_in_eine_H\$oehle_zu\lbegeben...
+.end

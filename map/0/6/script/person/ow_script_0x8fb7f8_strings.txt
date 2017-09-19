@@ -1,0 +1,8 @@
+.string str_0x8feb10 GER
+	=Meine_Pflanzen-Pok\emon_k\$oennen_sich\nmit_der_Trockenheit_einer_W\$ueste\lnicht_wirklich_anfreunden...
+.end
+
+
+.string str_0x8feb72 GER
+	=Vielleicht_sollte_ich_einfach_hier\nunten_bleiben,_wo_es_sch\$oen_k\$uehl\lund_feucht_ist.
+.end

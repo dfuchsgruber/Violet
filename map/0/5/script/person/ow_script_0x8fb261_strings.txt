@@ -1,0 +1,3 @@
+.string str_0x8fb26b GER
+	=Gem\$ae\$s_Insider-Informationen_soll\nman_in_dieser_H\$oehle_Fossilien\lfinden_k\$oennen.\pOb_ich_eines_ergattern_kann?
+.end

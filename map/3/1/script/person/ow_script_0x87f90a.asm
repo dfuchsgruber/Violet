@@ -6,12 +6,12 @@
 ow_script_0x87f90a:
 lock
 faceplayer
-checkflag 0x20c
+checkflag MERIANA_CITY_BLACK_BELT
 gotoif EQUAL ow_script_0x8a28fd
 loadpointer 0x0 str_0x8a29c0
 callstd MSG_KEEPOPEN
-copyvarifnotzero 0x8000 0xcf
-copyvarifnotzero 0x8001 0x1
+copyvarifnotzero 0x8000 ITEM_SCHWARZGURT
+copyvarifnotzero 0x8001 ITEM_MEISTERBALL
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x87f3c1
@@ -19,7 +19,7 @@ loadpointer 0x0 str_0x8a2922
 callstd MSG_KEEPOPEN
 closeonkeypress
 release
-setflag 0x20c
+setflag MERIANA_CITY_BLACK_BELT
 end
 
 

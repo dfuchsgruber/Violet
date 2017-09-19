@@ -1,0 +1,3 @@
+.string str_0x94e8ac GER
+	=Diese_Schweine_von_Bankiers_haben\nmich_bis_auf_letzten_\b7\lausgenommen!
+.end

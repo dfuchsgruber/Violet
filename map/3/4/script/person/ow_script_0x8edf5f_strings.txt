@@ -1,0 +1,3 @@
+.string str_0x8f1adb GER
+	=Was_soll_das_hei\$sen,_ich_kann_hier\nnicht_angeln?\pWas_denkst_du,_was_ich_hier_seit\nStunden_treibe?
+.end

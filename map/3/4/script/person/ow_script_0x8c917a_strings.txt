@@ -1,0 +1,3 @@
+.string str_0x8f1987 GER
+	=Ich_liebe_es,_gemeinsam_mit_meinem\nSchatz_den_Wellen_zu_lauschen.
+.end

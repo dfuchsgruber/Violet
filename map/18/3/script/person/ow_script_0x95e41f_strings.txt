@@ -1,0 +1,8 @@
+.string str_0x95e437 GER
+	=Was_hat_mich_nur_geritten,_einen\nCampingsauflug_in_diese\lweltgewordene_H\$oelle_zu\lunternehmen?
+.end
+
+
+.string str_0x95e496 GER
+	=\$UEberall_nur_Asche_und_Feuer...
+.end

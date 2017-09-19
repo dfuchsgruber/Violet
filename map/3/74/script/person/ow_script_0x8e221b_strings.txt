@@ -1,0 +1,3 @@
+.string str_0x8e66ad GER
+	=Pok\emon,_die_sich_durch_Tausch\nentwickeln,_k\$oennen_ihre_Evolution\lstattdessen_mithilfe_eines\lsimulierten_Tauschs_durchf\$uehren.\pEin_Linkkabel_wird_dazu_aber\nben\$oetigt,_und_man_sagt_sich,_dass\ldiese_\$aeu\$sert_selten_sind.
+.end

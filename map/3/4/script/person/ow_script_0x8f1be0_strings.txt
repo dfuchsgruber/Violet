@@ -1,0 +1,3 @@
+.string str_0x8f1bea GER
+	=Der_K\$uestenberg_ist_klein,_doch\nhoch_genug,_um_bei_Sturm_einen\langenehm_salzigen_Wind_erleben_zu\lk\$oennen.
+.end

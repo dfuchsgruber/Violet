@@ -1,0 +1,3 @@
+.string str_0x86ef43 GER
+	=Du_bist_der_doch_der_Junge_aus_dem\nOrina_City_Museum.\pHat_dich_Mistral_nicht_gewarnt,\nihm_fernzubleiben?
+.end

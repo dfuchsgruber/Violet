@@ -1,0 +1,8 @@
+.string str_0x926b0a GER
+	=Ein_Brunnen!_Das_frische_Wasser\nwird_den_ersch\$oepften_Pok\emon\lhelfen.
+.end
+
+
+.string str_0x926b6d GER
+	=Die_Pok\emon_von_\b\01_wurden\nvollst\$aendig_geheilt.
+.end

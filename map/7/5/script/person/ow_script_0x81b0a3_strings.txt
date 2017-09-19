@@ -1,0 +1,8 @@
+.string str_0x81b0bb GER
+	=Pflanzen-Pok\emon_sind_stark.\nDeswegen_trainiere_ich_sie.
+.end
+
+
+.string str_0x81b0f6 GER
+	=Pflanzen-Pok\emon_sind_sehr\nstark,_auch_wenn_ich_verloren_habe.
+.end

@@ -1,0 +1,18 @@
+.string str_0x958549 GER
+	=Elise:_Hallo_\b\01!\nIch_will_dich_nicht_l\$aenger_auf_die\lFolter_spannen.\pEs_ist_den_Forschern_hier\ngelungen,_ein_Pok\emon,_das_am\lComputer_gestaltet_wurde,_in_die\lRealit\$aet_umzusetzten.\pSein_Name_ist_Porygon_und_da_ich\nvon_deinen_F\$aehigkeiten_als_Trainer\lviel_halte,_konnte_ich_den\lPr\$aesidenten_der_Laz.Corp_davon\l\$ueberzeugen,_dir_ein_Exemplar\lanzuvertrauen.
+.end
+
+
+.string str_0x958498 GER
+	=\b\01_hat_ein_Porygon_erhalten.
+.end
+
+
+.string str_0x95839d GER
+	=Ich_bin_gespannt,_welche\nF\$aehigkeiten_du_in_diesem_Pok\emon\lzum_Vorschein_bringen_wirst.\p...\nNun_muss_ich_aber_wieder_selbst_an\ldie_Arbeit.\pEs_gibt_da_noch_die_ein_oder\nandere_Feldstudie,_die_f\$uer\lProfssor_Tann_erledigt_werden\lmuss.\pWir_sehen_uns,_\b\01.
+.end
+
+
+.string str_0x9584c8 GER
+	=Wie_schade,_du_scheinst_keinen\nPlatz_mehr_auf_deinem_PC_zu_haben.\pKomm_doch_wieder,_wenn_du_das\nPorygon_entgegennehmen_kannst.
+.end

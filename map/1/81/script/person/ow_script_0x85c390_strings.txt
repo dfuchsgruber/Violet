@@ -1,0 +1,8 @@
+.string str_0x8643bf GER
+	=Selbst_wenn_du_uns_Fu\$ssoldaten\nhier_besiegst,_erwartet_dich_der\lwahre_Schrecken_noch!
+.end
+
+
+.string str_0x9660f5 GER
+	=Team_Violets_Elite_tritt_hier_auf.\nDu_wurdest_gewarnt...
+.end

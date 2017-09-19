@@ -1,0 +1,3 @@
+.string str_0x971e6a GER
+	=Hallo,_ich_bin_Wodka,_der\nEntwickler_des_Spiels.\pWenn_du_deinen_Spielstand_auf_eine\nneue_Version_deines_Spiels_bringen\lwillst,_musst_du_daf\$uer_folgendes\ltun:\pZuerst_erstellst_du_eine_ROM_mit\nder_aktuellsten_Version_von\lPok\emon_Violet._Dabei_folgst_du\lden_Anweisungen_in_der_README.txt\lDatei.\pWichtig_ist,_dass_du_eine\nungepatchte_deutsche_Feuerrot_ROM\lbenutzt.\pDann_ersetzt_du_die_derzeitig\nbenutze_ROM_mit_der_neu_gepatchten\lund_sprichst_mich_wieder_an.
+.end

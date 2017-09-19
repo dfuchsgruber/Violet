@@ -4,14 +4,14 @@
 
 .global ow_script_0x86dd9c
 ow_script_0x86dd9c:
-checkflag 0x1e5
+checkflag AKTANIA_GEODUDE_DONE
 gotoif LESS ow_script_0x87afc7
 end
 
 
 .global ow_script_0x87afc7
 ow_script_0x87afc7:
-checkflag 0x1e4
+checkflag AKTANIA_GEODUDE_ACCEPTED
 gotoif EQUAL ow_script_0x87c9f4
 loadpointer 0x0 str_0x87cae0
 callstd MSG
@@ -26,7 +26,7 @@ ow_script_movs_0x87cadd:
 
 .global ow_script_0x87c9f4
 ow_script_0x87c9f4:
-checkflag 0x1e3
+checkflag AKTANIA_GEODUDE_FOUGHT
 gotoif EQUAL ow_script_0x87ca4c
 loadpointer 0x0 str_0x87caba
 callstd MSG
@@ -40,14 +40,14 @@ cry POKEMON_KLEINSTEIN 0x0
 loadpointer 0x0 str_0x87ca4e
 callstd MSG
 waitcry
-setvar 0x407c 0x1
+setvar NEXT_POKEMON_SHINY 0x1
 setwildbattle POKEMON_KLEINSTEIN 0xc ITEM_NUGGET
 dowildbattle
 setmaptile 0x7 0x7 0x2fc 0x0
 fadescreen 0x1
 special 0x8e
 fadescreen 0x0
-setflag 0x1e3
+setflag AKTANIA_GEODUDE_FOUGHT
 end
 
 

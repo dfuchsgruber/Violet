@@ -1,0 +1,13 @@
+.string str_0x8fb630 GER
+	=Kennst_du_das?_Du_liebst_es,\nFlug-Pok\emon_zu_trainieren_und\lwirst_st\$aendig_von_Gestein-Pok\emon\lausgebremst?\pDann_habe_ich_hier_die_perfekte\nAbhilfe_f\$uer_dich!
+.end
+
+
+.string str_0x8fb6cf GER
+	=Stahlfl\$uegel_ist_eine_Attacke,_die\nvon_fliegenden_Pok\emon_ausgef\$uehrt\lwerden_kann_und_selbst\lGestein-Pok\emon_sehr_effektiv\ltrifft.
+.end
+
+
+.string str_0x8fb75c GER
+	=Mit_Stahlfl\$uegel_kannst_selbst\nl\$aestige_Gestein-Pok\emon_effektiv\ltreffen.
+.end

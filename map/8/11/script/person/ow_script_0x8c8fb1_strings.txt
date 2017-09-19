@@ -1,0 +1,3 @@
+.string str_0x931b2f GER
+	=Ich_eine_Schwester_des_Pok\estops?\nDas_ist_ein_Irrtum!\pDas_Pok\estop-Franchise_steht_in\nkeiner_Verbindung_zu_diesem\lSchwarzmarkt!_Ehrlich!
+.end

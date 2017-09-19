@@ -1,0 +1,8 @@
+.string str_0x804181 GER
+	=Mit_einem_Pokeball_kannst_du_wilde\nPok\emon_fangen,_sodass_sie_dir\lgehorchen._Toll_nicht?
+.end
+
+
+.string str_0x8041dd GER
+	=Ich_habe_mein_Pok\emon_auch_mit\neinem_Pokeball_gefangen.
+.end

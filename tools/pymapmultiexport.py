@@ -80,7 +80,7 @@ def export_ow_script(rom: agb.Agbrom, offset, path, prefix):
     fdpreamble = open("pymapexstdpreamble.txt", "r+")
     preamble = fdpreamble.read()
     fdpreamble.close()
-    script_export.export_script(tree, script_export.OWSCRIPTLIB, offset, "ow_script", preamble, dir, recursive=True, verbose=False, libignore=False, singlefile=True)
+    script_export.export_script(tree, script_export.OWSCRIPTLIB, offset, "ow_script", preamble, dir, recursive=True, verbose=False, libignore=False, singlefile=True, pedantic=PEDANTIC)
     #os.system("python script_export.py -s " + hex(offset) + ' -o "' + dir + '" -m ow -b "' + rom.path + '" -r -p pymapexstdpreamble.txt --singlefile')
     return owscript.script_offset_to_label(offset)
 

@@ -1,0 +1,3 @@
+.string str_0x95d935 GER
+	=Wir_dicken_Leute_haben_nicht_viele\nFreunde,_musst_du_wissen.\pBlo\$s_die_kleinen_Kinder_verachten\nuns_nicht_wegen_unserer_Figur...
+.end

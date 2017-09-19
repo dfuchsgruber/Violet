@@ -1,0 +1,3 @@
+.string str_0x8a062f GER
+	=Feuer_schl\$aegt_Wasser,_Wasser\nschl\$aegt_Pflanze_und_Pflanze\lschl\$aegt_Feuer..._Nein,_warte!...
+.end

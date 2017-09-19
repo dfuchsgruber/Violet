@@ -11,7 +11,7 @@ ASCRIPTLIB = "lib/ascript.py"
 def shell(argv):
     """ Shell method for this tool """
     try:
-        opts, args = getopt.getopt(argv, "vrhs:o:l:r:m:b:p:", ["help","verbose", "recursive", "libignore", "singlefile"])
+        opts, args = getopt.getopt(argv, "vrhs:o:l:r:m:b:p:", ["help","verbose", "recursive", "libignore", "singlefile", "pedantic"])
     except getopt.GetoptError:
         sys.exit(2)
     mode = None
@@ -24,6 +24,7 @@ def shell(argv):
     libignore = False
     singlefile = False
     preamble = ""
+    pedantic = False
 
     derive_offset_from_attack = None
     for opt, arg in opts:
@@ -55,6 +56,8 @@ def shell(argv):
             libignore = True
         elif opt in ("--singlefile"):
             singlefile = True
+        elif opt in ("--pedantic"):
+            pedantic=True
 
     rom = agb.Agbrom(path=rompath)
     if verbose: print("Rom loaded sucessfully.")
@@ -84,12 +87,12 @@ def shell(argv):
 
     else:
         raise Exception("Unkown script mode "+mode)
-    export_script(tree, libpath, offset, file_prefix, preamble, outpath, recursive=recursive, verbose=verbose, libignore=libignore, singlefile=singlefile)
+    export_script(tree, libpath, offset, file_prefix, preamble, outpath, recursive=recursive, verbose=verbose, libignore=libignore, singlefile=singlefile, pedantic=pedantic)
 
-def export_script(tree, libpath, offset, file_prefix, preamble, outpath, recursive=True, verbose=False, libignore=False, singlefile=True):
+def export_script(tree, libpath, offset, file_prefix, preamble, outpath, recursive=True, verbose=False, libignore=False, singlefile=True, pedantic=False):
     if not libignore: tree.load_lib(libpath)
     if verbose: print("Lib ", libpath, "loaded sucessfully.")
-    tree.explore(offset, verbose=verbose, recursive=recursive)
+    tree.explore(offset, verbose=verbose, recursive=recursive, pedantic=pedantic)
     if verbose: print("Script decompiled sucessfully.")
     if not libignore: tree.store_lib(libpath)
     if verbose: print("Lib", libpath, "updated sucessfully.")

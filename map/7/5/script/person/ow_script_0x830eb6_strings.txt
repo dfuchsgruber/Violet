@@ -1,0 +1,8 @@
+.string str_0x8f078d GER
+	=\b\01,_wie_sch\$oen_dich_hier\nzu_treffen._Du_brauchst_wohl_den\lRanken-Orden,_um_den_Zeitwald_zu\lmeistern.\lAuch_wenn_ich_ihn_dir_nur_zu_gerne\lkampflos_\$ueberreichen_w\$uerde,_damit\ldu_Team_Violet_vertreiben_kannst,\lmuss_ich_die_Regeln_befolgen.\lFolge_mir_in_die_Arena!
+.end
+
+
+.string str_0x8f08c4 GER
+	=Du_hast_unfassbar_gek\$aempft._Team\nViolet_sollte_f\$uer_dich_kein\lProblem_darstellen.
+.end

@@ -1,0 +1,8 @@
+.string str_0x95f5fd GER
+	=Ah,_du_willst_gegen_mich_k\$aempfen?\nIch_habe_noch_keinen_Kampf\lverloren!
+.end
+
+
+.string str_0x95f646 GER
+	=F\$uer_alles_gibt_es_ein_erstes_Mal.
+.end

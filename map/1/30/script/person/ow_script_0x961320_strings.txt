@@ -1,0 +1,8 @@
+.string str_0x962eb8 GER
+	=Viele_kommen_hierher_in_der\nHoffnung,_das_Pok\emon_Lavados_zu\ltreffen.\lIch_erleichtere_sie_stattdessen_um\lihre_eigenen_Pok\emon!
+.end
+
+
+.string str_0x962f39 GER
+	=In_Ordnung,_du_kannst_deine\nPok\emon_behalten!
+.end

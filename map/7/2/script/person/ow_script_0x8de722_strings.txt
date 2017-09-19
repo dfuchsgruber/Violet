@@ -1,0 +1,3 @@
+.string str_0x8df230 GER
+	=Einer_Legende_nach_ruht_im\nSilvania-Wald_ein_Pok\emon,_das\ldurch_die_Zeit_reisen_kann.\pSpannend,_nicht?
+.end

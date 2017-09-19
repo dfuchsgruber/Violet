@@ -1,0 +1,8 @@
+.string str_0x926c12 GER
+	=Oh,_ich_verdurste_hier_noch_in\ndieser_trockenen_\$OEdnis!
+.end
+
+
+.string str_0x926c67 GER
+	=Wo,_wo_ist_nur_ein_Brunnen!
+.end

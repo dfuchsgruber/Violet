@@ -1,0 +1,8 @@
+.string str_0x86d276 GER
+	=In_dieser_Arena_ist_es_wahnsinnig\nhei\$s!
+.end
+
+
+.string str_0x86d2a0 GER
+	=Die_Hitze_macht_einem_echt_zu\nschaffen.
+.end

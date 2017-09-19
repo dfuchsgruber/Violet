@@ -1,0 +1,3 @@
+.string str_0x95ee0c GER
+	=Feuer
+.end

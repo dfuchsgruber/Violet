@@ -1,0 +1,33 @@
+.string str_0x955818 GER
+	=Am_Brett_h\$aengen_Steckbriefe_von\ngesuchten_Personen_aus.
+.end
+
+
+.string str_0x955852 GER
+	=Wessen_Steckbrief_m\$oechtest_du\nbetrachten?
+.end
+
+
+.string str_0x9557b6 GER
+	=M\57\95\_spnrf\57\95\_spnr\$AE\57\95\_spnr\n\57\95\_spnr
+.end
+
+
+.string str_0x95553d GER
+	=Anf\$uehrer_der_Revolutionsbewegung,\nder_Wei\$se_Albus.\lGesucht_wegen_Hochverrat.\lBelohnung_f\$uer_die_Ergreifung:\l999.999\b7
+.end
+
+
+.string str_0x9555f5 GER
+	=Kommandant_der_Blackbeard_Piraten,\nBlackbeard.\pGesucht_wegen_schwerem_Raub,\nMenschen-_und_Pok\emonhandel.\pBelohnung_f\$uer_die_Ergreifung:\n200.000\b7
+.end
+
+
+.string str_0x95569b GER
+	=Kommandant_der_zweiten_Division\nvon_Team_Violet,_Mistral.\lGesucht_wegen_schwerem_Raub,\lHochverrat.\lBelohnung_f\$uer_die_Ergreifung:\l75.000\b7
+.end
+
+
+.string str_0x955726 GER
+	=Kommandant_der_dritten_Division\nvon_Team_Violet,_Rin.\pGesucht_wegen_Raub,_N\$oetigung,\nEntf\$uehrung,_Mord.\pBelohnung_f\$uer_die_Ergreifung:\n125.000\b7.
+.end

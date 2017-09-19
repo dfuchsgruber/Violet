@@ -1,0 +1,8 @@
+.string str_0x9665c5 GER
+	=Igva:_\b\01,\ndu_bist_wirklich_kaum_aufzuhalten.\pIch_konnte_dich_gar_nicht\neinholen,_so_schnell_hast_du\ldiesem_Violet-Pack_eingeheizt!\pVor_uns_liegt_der_Gipfel_des\nVolcanos...\pMistral_hat_ihn_ungl\$uecklicherweise\nwohl_schon_erreicht.\pWir_sollten_uns_beeilen,_ehe_es\nzum_Schlimmsten_kommt.\pIch_werde_mich_um_deine\nangeschlagenen_Pok\emon_k\$uemmern...
+.end
+
+
+.string str_0x96659a GER
+	=Los,_wir_d\$uerfen_keine_Zeit\nverlieren!
+.end

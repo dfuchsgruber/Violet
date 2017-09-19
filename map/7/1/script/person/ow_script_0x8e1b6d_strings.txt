@@ -1,0 +1,18 @@
+.string str_0x721f5f GER
+	=Hallo!_Ich_bin_der_Beerenverk\$aeufer\nvon_Theto._Wie_mein_Name_schon\lsagt,_verkaufe_ich_Beeren._Willst\ldu_ein_paar_Beeren_kaufen?
+.end
+
+
+.string str_0x71d79e GER
+	=Such_dir_etwas_aus,_mein_Sortiment\nist_riesig!
+.end
+
+
+.string str_0x71d3f1 GER
+	=Danke_f\$uer_deinen_Einkauf._Beehre\nmich_bald_wieder!
+.end
+
+
+.string str_0x721ed1 GER
+	=Wirklich?_Das_ist_schade,_denn\nBeeren_k\$oennen_genauso_n\$uetzlich_sein\lwie_Tr\$aenke_oder_Pokeb\$aelle._Komm\lwieder,_wenn_du_Beeren_kaufen\lwillst.
+.end

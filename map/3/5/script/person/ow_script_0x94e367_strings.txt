@@ -1,0 +1,3 @@
+.string str_0x94e371 GER
+	=Faun_setzt_sich_f\$uer_die_Sauberkeit\nauf_den_Stra\$sen_von_Orina_City\lein.\pErst_durch_seine_Herrschaft_ist\ndieser_Ort_wirklich_sch\$oen\lgeworden.
+.end

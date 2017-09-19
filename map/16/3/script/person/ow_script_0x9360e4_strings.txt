@@ -1,0 +1,8 @@
+.string str_0x93baf6 GER
+	=Hey!_Diese_Waren_hat_die\nRevolution_in_Kaskada_erworben.\lIch_werde_sie_dir_nicht_kampflos\l\$ueberlassen!
+.end
+
+
+.string str_0x93bb5e GER
+	=Diese_Waren_sind_sehr_wertvoll_f\$uer\nuns,_bitte_respektiere_das!
+.end

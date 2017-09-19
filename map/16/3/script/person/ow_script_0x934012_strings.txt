@@ -1,0 +1,8 @@
+.string str_0x936e16 GER
+	=Die_Arena_von_Meriana_City_ist\neine_Pilgerst\$aette_f\$uer_K\$aempfer.\lIch_bin_auf_direktem_Weg_dorthin!
+.end
+
+
+.string str_0x936e78 GER
+	=Was?_Wie_konnte_ich_gegen_einen\nNicht-K\$aempfer_verlieren?
+.end

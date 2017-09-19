@@ -1,0 +1,43 @@
+.string str_0x8bf724 GER
+	=Maike:_\b\01!
+.end
+
+
+.string str_0x8bf610 GER
+	=So_ein_Zufall,_dass_wir_uns_hier\ntreffen?_Bist_du_etwa_auch_auf_den\lWeg_nach_Aktania,_um_deinen_ersten\lArena_Orden_zu_erringen?\lWie_w\$aere_es,_wenn_du_mir_zuerst\ldein_K\$oennen_unter_Beweis_stellst.\lSeit_ich_die_Trainerschule\lverlassen_habe,_bin_ich_viel\lst\$aerker_geworden.
+.end
+
+
+.string str_0x8bfe09 GER
+	=Meine_Pok\emon_sind_nicht_mehr_zu\nbremsen!
+.end
+
+
+.string str_0x8bf5bc GER
+	=Nimm_dich_in_Acht!
+.end
+
+
+.string str_0x8bf5d1 GER
+	=Unglaublich_wie_stark_du_geworden\nbist!_Einfach_unglaublich!
+.end
+
+
+.string str_0x8bf3f9 GER
+	=Scheinbar_hast_du_auch_nicht\nauf_der_faulen_Haut_herumgelegen!\lDu_bist_wirklich_ganz_sch\$oen_stark\lgeworden._Versuch_dich_doch_in_der\lArena_von_Aktania,_du_kannst_das\lsicherlich_schaffen.\lWie_du_dort_hingelangst?_Dort_oben\lbetreiben_zwei_nette_Herren_namens\lNick_und_Rick_eine_Farm._Sie\lz\$uechten_auch_V\$oegel,_die_dich_von\lhier_nach_Aktania_bringen_k\$oennen.\lFrag_die_beiden_doch_einfach_mal!\lUnd_bevor_ich_es_vergesse:_Ich\lhabe_ein_Geschenk_f\$uer_dich!
+.end
+
+
+.string str_0x8bf3dc GER
+	=\b\01_erh\$aelt_eine_Karte.
+.end
+
+
+.string str_0x8bf2f0 GER
+	=Die_Karte_kann_oft_sehr_n\$uetzlich\nsein._Wirf_ruhig_einen_Blick\ldarauf.\pDer_Kampf_hat_Spa\$s_gemacht._Wir\nsehen_uns,_\b\01!
+.end
+
+
+.string str_0x8bf745 GER
+	=Ich_kann_dich_doch_nicht_nach\nAktania_gehen_lassen,_ohne_zu\lwissen,_ob_du_die_Arena_\$ueberhaupt\lmeistern_kannst.\pWas_sagst_du?_Lass_uns_k\$aempfen!
+.end

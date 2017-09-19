@@ -1,0 +1,3 @@
+.string str_0x95cf0e GER
+	=Wer_du_nicht_sein_kannst,_der\nsollst_du_auch_nicht_sein.\pDas_ist_eine_Weisheit,_die_ich\njedem_auf_den_Weg_mitgeben_will.
+.end

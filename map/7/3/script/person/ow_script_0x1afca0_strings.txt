@@ -1,0 +1,3 @@
+.string str_0x1b46c9 GER
+	=Pok\emon_JOURNAL\pSonderreportage:_ARENALEITERIN\nMISTY_aus_AZURIA_CITY!\pMISTY_verg\$oettert_angeblich\nLORELEI_von_den_TOP_VIER.
+.end

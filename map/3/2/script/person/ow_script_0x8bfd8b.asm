@@ -4,7 +4,7 @@
 
 .global ow_script_0x8bfd8b
 ow_script_0x8bfd8b:
-checkflag 0x919
+checkflag AKTANIA_ROD
 gotoif EQUAL ow_script_0x8bfdcb
 lock
 faceplayer
@@ -14,10 +14,10 @@ compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8c1233
 loadpointer 0x0 str_0x8c1201
 callstd MSG
-copyvarifnotzero 0x8000 0x106
-copyvarifnotzero 0x8001 0x1
+copyvarifnotzero 0x8000 ITEM_ANGEL
+copyvarifnotzero 0x8001 ITEM_MEISTERBALL
 callstd ITEM_OBTAIN
-setflag 0x919
+setflag AKTANIA_ROD
 loadpointer 0x0 str_0x8c1179
 callstd MSG
 release

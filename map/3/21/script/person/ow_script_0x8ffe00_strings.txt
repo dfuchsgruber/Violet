@@ -1,0 +1,43 @@
+.string str_0x91fed1 GER
+	=..._Ich_habe_wohl_den_Rest_der\nDivision_verloren_in_all_der\lAufregung...
+.end
+
+
+.string str_0x91fcc4 GER
+	=Du_bist_doch_dieser_Junge_aus_dem\nSilvania-Wald!_Was_willst_du_von\lmir?\pVerstehst_du_nicht,_warum_wir_tun,\nwas_wir_tun?_Diese_Welt_ist_v\$oellig\lkrank._Menschen_wie_du_und_ich\lsind_Sklaven_eines_Systems,_gegen\ldas_wir_uns_nicht_wehren_k\$oennen.\pWir_werden_ausgebeutet_und\nunterdr\$ueckt,_aber_reden_uns_ein,\les_w\$aere_nicht_so.\pMein_ganzes_Leben_lang_hat_man_mir\ngesagt,_ich_w\$uerde_zu_nichts\ltaugen,_aber_Team_Violet_hat_mir\ldas_Gef\$uehl_gegeben,_gebraucht_zu\lwerden._Wir_werden_eine_bessere\lWelt_erschaffen,_eine_friedvollere\lWelt.
+.end
+
+
+.string str_0x90ff39 GER
+	=\42
+.end
+
+
+.string str_0x90fd48 GER
+	=Ich_kann_Team_Violet_nicht_machen\nlassen,_was_es_will._Eure_Ziele\lsind_nichts_als_Illusionen,_ihr\lwollt_eine_ganze_Welt_versklaven.
+.end
+
+
+.string str_0x8fff26 GER
+	=Dann_ist_es_eben_der_Kampf!_Ich\nhabe_mir_ein_brandneues\lPok\emon-Team_zugelegt,_mit_welchem\lich_dich_bezwingen_kann!
+.end
+
+
+.string str_0x8fff9c GER
+	=Es_ist_mir_wohl_einfach_nicht\nbestimmt,_dich_zu_besiegen...
+.end
+
+
+.string str_0x8ffe77 GER
+	=...!_Du_hast_mich_erneut_besiegt,\naber_meinen_Ehrgeiz_hast_du_nur\langestachelt._Wir_werden_obsiegen\lund_letzlich_wirst_auch_du\leinsehen_m\$uessen,_dass_du_falsch\lgelegen_hast!
+.end
+
+
+.string str_0x90fe3d GER
+	=Ich_werde_dich_nicht_bek\$aempfen,\nwenn_du_nicht_auf_einen_Kampf_aus\lbist.\lAber_sei_gewarnt,_Team_Violet\lnutzt_dich_nicht_weniger_aus,_als\ldas_System_der_Pok\emon-Liga._\$OEffne\ldeine_Augen_und_blicke_der\lWahrheit_ins_Gesicht._Vorerst_aber\lkannst_du_gehen.
+.end
+
+
+.string str_0x90fdef GER
+	=..._...\pVielleicht_hast_du_recht._Ich\nwerde_\$ueber_einiges_nachdenken\lm\$uessen.
+.end

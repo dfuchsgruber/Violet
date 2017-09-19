@@ -1,0 +1,3 @@
+.string str_0x963705 GER
+	=Hallo_\b\01.\nDas_hier_ist_mein_Reich,_die_Welt\lder_Flammen_und_der_aufstrebenden\lGem\$ueter_und_Geister.\pAber_lass_uns_keine_Zeit\nverlieren.\pDie_R\$uepel_aus_dieser_Stadt_zu\nvertreiben,_wird_nichts_n\$uetzen,\lsolange_Mistral_noch_immer_in_der\lN\$aehe_ist.\pWir_sollten_den_Volcano_erklimmen\nund_ihn_dort_stellen.\pFolge_mir_einfach,_wenn_du_bereit\nbist,_aber_beeile_dich.
+.end

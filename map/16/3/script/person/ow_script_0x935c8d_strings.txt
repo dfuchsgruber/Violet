@@ -1,0 +1,8 @@
+.string str_0x937767 GER
+	=Der_Fang_in_einer_H\$oehle_k\$oennte\ndurchaus_besser_sein...\lOb_ich_am_Fluss_mehr_Gl\$ueck_habe?
+.end
+
+
+.string str_0x9377c1 GER
+	=Ich_sollte_mein_Gl\$ueck_am_Fluss\nnach_Meriana_City_probieren.
+.end

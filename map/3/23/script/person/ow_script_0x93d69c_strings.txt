@@ -1,0 +1,8 @@
+.string str_0x949b31 GER
+	=K\$aeferpok\emon_gibt_es_sehr_viele,\nman_kann_sie_leicht_fangen.\pAber_ob_sie_auch_im_Kampf\n\$ueberzeugen_k\$oennen?
+.end
+
+
+.string str_0x949b9d GER
+	=Buhu!_Du_hast_sie_alle_zerquetscht\nmeine_armen_K\$aefer.
+.end

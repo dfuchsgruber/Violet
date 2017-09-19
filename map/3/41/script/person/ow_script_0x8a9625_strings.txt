@@ -1,0 +1,8 @@
+.string str_0x8a9d7f GER
+	=Was_ist_berauschender_als_der\nKlang_eines_Baches_oder_der_Duft\lvon_frischem_Laub?
+.end
+
+
+.string str_0x8aaf13 GER
+	=Natur_und_Mensch_sind_keine\nFeinde,_sondern_brauchen_einander.\pMerk_dir_das._Bitte.
+.end

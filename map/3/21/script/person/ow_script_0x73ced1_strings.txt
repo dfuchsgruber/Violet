@@ -1,0 +1,8 @@
+.string str_0x743d3a GER
+	=Was_eine_Exorzistin_in_der_W\$ueste_zu\nsuchen_hat?_Ich_wei\$s_es_nicht!
+.end
+
+
+.string str_0x743d7f GER
+	=Hinterfrage_nie_die_Gedanken\nunseres_Sch\$oefpers!
+.end

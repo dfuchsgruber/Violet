@@ -1,0 +1,8 @@
+.string str_0x8a9ce9 GER
+	=Ich_bin_eine_Grazie._Meine\nSch\$oenheit_kann_blenden._Sieh_mich\lan_und_lass_mich_dein_Herz\lergreifen!
+.end
+
+
+.string str_0x8a9d56 GER
+	=Du_kannst_meiner_Sch\$oenheit\nwiderstehen?
+.end

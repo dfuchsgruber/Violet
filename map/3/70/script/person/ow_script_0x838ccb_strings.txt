@@ -1,0 +1,3 @@
+.string str_0x83f669 GER
+	=Entschuldigung,_aber_der_Zutritt_zu\ndiesem_Bereich,_steht_nicht_allen\lLeuten_zu.
+.end

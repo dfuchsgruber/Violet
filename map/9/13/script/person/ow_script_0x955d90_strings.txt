@@ -1,0 +1,13 @@
+.string str_0x957fcc GER
+	=Eben_habe_ich_eine_Software\nfertiggestellt,_welche_das\lvirtuelle_Pok\emon_Porygon_noch\lverbessert.
+.end
+
+
+.string str_0x9580a7 GER
+	=Benutze_ein_Linkkabel,_um_das\nUp-Grade_auf_einem_Porygon_zu\linstallieren.\pEs_wird_seine_F\$aehigkeiten_deutlich\nverbessern.
+.end
+
+
+.string str_0x95803c GER
+	=Das_virtuelle_Pok\emon,_an_dem_wir\narbeiten,_wird_sicherlich_noch_um\leiniges_verbessert_werden.
+.end

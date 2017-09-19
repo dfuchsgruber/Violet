@@ -80,12 +80,12 @@ u8 pokeradar_prepeare() {
     coordinate npc_pos;
     u16 wild_table_entry = map_wild_pokemon_get_current_table_id();
     if (wild_table_entry != 0xFFFF) {
-        if ((*wild_pokemon_data_ptr)[wild_table_entry].other) {
+        if (wild_pokemon[wild_table_entry].other) {
             if (!pokeradar_determine_position(&npc_pos))
                 return 3;
             //There is a pokemon we can spawn, we check if random < frequency
             u8 random = (u8) random_change_seed();
-            if ((*wild_pokemon_data_ptr)[wild_table_entry].other->frequency <= random) {
+            if (wild_pokemon[wild_table_entry].other->frequency <= random) {
                 return 2; //Unlucky, pokemon did not appear
             }
             int index;
@@ -102,10 +102,10 @@ u8 pokeradar_prepeare() {
             } else {
                 index = 4; //0.1 chance
             }
-            u16 result = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].species;
+            u16 result = wild_pokemon[wild_table_entry].other->data[index].species;
             //now we determine the level
-            u8 min = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].level_min;
-            u8 max = (*wild_pokemon_data_ptr)[wild_table_entry].other->data[index].level_max;
+            u8 min = wild_pokemon[wild_table_entry].other->data[index].level_min;
+            u8 max = wild_pokemon[wild_table_entry].other->data[index].level_max;
             u32 level = (u32) (__aeabi_uidivmod(random_change_seed(), (u32) (max - min + 1)) + min);
             *vardecrypt(0x8000) = result;
             *vardecrypt(0x8001) = (u16) level;

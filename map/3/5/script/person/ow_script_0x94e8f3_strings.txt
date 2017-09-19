@@ -1,0 +1,3 @@
+.string str_0x94e8fd GER
+	=Kennst_du_die_Tochter_von\nProfessor_Primus?\pSie_ist_ein_wirklich_bezauberndes\nM\$aedchen...\pAber_ich_traue_mich_nicht,_ihr\nmeine_Bewunderung_zu_gestehen...
+.end

@@ -1,0 +1,43 @@
+.string str_0x94d6db GER
+	=Ist_das_erneut_eine_Vision?\n..._..._...\pDoch_was_ist_das_f\$uer_ein_dunkler,\nbe\$aengstigender_Ort?\pEs_wirkt_so,_als_h\$aetten_violette\nKristalle_die_Welt_verschlungen...
+.end
+
+
+.string str_0x94d69f GER
+	=Ein_trister,_lebloser_Ort...\nWas_hat_das_nur_zu_bedeuten?
+.end
+
+
+.string str_0x94d65f GER
+	=Sind_das_etwa_Faun_und_Larissa?\nWarum_sind_sie_an_diesem_Ort?
+.end
+
+
+.string str_0x94d5ec GER
+	=Larissa:_Faun,_ich_bin_froh,_Euch\nhier_zu_treffen.\pIch_hatte_fast_bef\$uerchtet,_Ihr\nw\$uerdet_nicht_kommen.
+.end
+
+
+.string str_0x94d4e4 GER
+	=Faun:_Ach_M\$aedchen,_ich_h\$aette_genug\nGrund_gehabt,_dich_wie_die_anderen\lzu_versetzten.\pAber_trotz_allem,_was_passiert\nist,_bleibe_ich_noch_immer_ein\lMitglied_der_Top_Vier.\pAuch_wenn_von_der_Welt,_die_ich\ngeschworen_habe_zu_besch\$uetzen,\lnicht_mehr_viel_\$uebrig_ist...
+.end
+
+
+.string str_0x94d210 GER
+	=Larissa:_Ich_bedaure_zutiefst,_was\npassiert_ist,_und_ich_gebe_zu,\ldass_es_h\$aette_verhindert_werden\lk\$oennen.\pDoch_es_war_unm\$oeglich,_die\nEreignisse_zu_antizpieren,_die\lunsere_Welt_in_diese_finstere\lSph\$aere_gest\$uerzt_haben...
+.end
+
+
+.string str_0x94d09a GER
+	=Faun:_Das_ist_nicht_l\$aenger_von\nBedeutung._Was_z\$aehlt,_ist_die\lTatsache,_dass_wir_noch_immer\lleben.\pDiese_Welt_mag_verloren_sein,_aber\nwir_werden_unsere_Hoffnung_nicht\lverlieren.\pUnsere_Freunde_und_Familien_haben\nnicht_umsonst_ihr_Leben_gelassen.\pLarissa,_es_gilt_nun,_dich_zu\nbeweisen._Wir_werden_uns_nicht\lalles_nehmen_lassen.
+.end
+
+
+.string str_0x94c54b GER
+	=Larissa:_Unm\$oeglich!\nSie_haben_uns_gefunden!
+.end
+
+
+.string str_0x94c524 GER
+	=Faun:_Das_ist_unser_Ende...
+.end

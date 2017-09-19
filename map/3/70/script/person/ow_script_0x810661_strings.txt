@@ -1,0 +1,8 @@
+.string str_0x8106f1 GER
+	=Zeit_f\$uer_einen_Kampf!
+.end
+
+
+.string str_0x81089a GER
+	=Du_bist_der_verdiente_Sieger.
+.end

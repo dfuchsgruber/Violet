@@ -1,0 +1,8 @@
+.string str_0x9281cc GER
+	=Unser_Anf\$uehrer_ist_einer_der\nm\$aechtigsten_Trainer_der_Region.\pEr_beherrscht_sogar_die\nMega-Evolution.
+.end
+
+
+.string str_0x928233 GER
+	=Du_wei\$st_nicht,_was_die\nMega-Evolution_ist?\pKein_Wunder,_dass_du_dich_nicht\nmit_ihm_messen_kannst.
+.end

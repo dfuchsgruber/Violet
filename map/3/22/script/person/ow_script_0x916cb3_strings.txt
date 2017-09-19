@@ -1,0 +1,8 @@
+.string str_0x935cc0 GER
+	=Ich_trainiere,_um_den_Arenaorden\nvon_Manus_zu_erringen.\pDann_kann_ich_endlich_die\nVersteckte_Maschine_Fliegen\lau\$serhalb_des_Kampfes_benutzen!
+.end
+
+
+.string str_0x935d50 GER
+	=Ich_muss_st\$aerker_werden!\nManus,_mach_dich_gefasst!
+.end

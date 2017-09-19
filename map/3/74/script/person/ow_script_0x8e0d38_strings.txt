@@ -1,0 +1,3 @@
+.string str_0x8e2c92 GER
+	=Ich_suche_hier_nach_dem_Pok\emon\nSkorgla._Es_hei\$st,_dass_es_sich\lhier_finden_l\$aesst.
+.end

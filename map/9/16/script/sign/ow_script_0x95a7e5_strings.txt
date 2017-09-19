@@ -1,0 +1,3 @@
+.string str_0x95a7ef GER
+	=Auf_dem_Gem\$aelde_ist_ein_monstr\$oeses\nFischwesen_zu_sehen,_das_scheinbar\lmit_unergr\$uendlicher_Stille_am\lMeeresboden_wandert.
+.end

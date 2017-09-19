@@ -1,0 +1,3 @@
+.string str_0x8f4688 GER
+	=__W\$aehlst_du_dieses_Pok\emon?\nA_:_Best\$aetigen__B_:_Abbruch
+.end

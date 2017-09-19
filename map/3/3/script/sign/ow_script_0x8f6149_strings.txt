@@ -1,0 +1,8 @@
+.string str_0x8f615e GER
+	=Die_T\$uer_der_Silvania-Arena_ist_aus\nedlem_Holz_gefertigt.
+.end
+
+
+.string str_0x8f6400 GER
+	=Die_T\$uer_scheint_verschlossen_zu\nsein.
+.end

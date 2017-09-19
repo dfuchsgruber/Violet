@@ -1,0 +1,8 @@
+.string str_0x81a2c9 GER
+	=Angeln_ist_nicht_das_Spannendste...
+.end
+
+
+.string str_0x81a2ee GER
+	=Aber_ich_habe_zu_nichts_anderem\nTalent.
+.end

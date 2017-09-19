@@ -1,0 +1,3 @@
+.string str_0x8c830d GER
+	=Als_ich_mich_Team_Violet\nangeschlossen_habe,_wurde_ich\lsofort_dem_Kommandanten_der\lzweiten_Division_zugeteilt,\lMistral.\pEr_ist_ein_\$aeu\$sert_ambitionierter\nMann,_skrupellos_und_m\$aechtig.
+.end

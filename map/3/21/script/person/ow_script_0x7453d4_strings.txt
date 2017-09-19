@@ -1,0 +1,8 @@
+.string str_0x81fc71 GER
+	=Ich_h\$aette_mir_einen_besseren_Ort\nf\$uer_mein_Picknick_aussuchen\lk\$oennen.
+.end
+
+
+.string str_0x8ffccf GER
+	=Doch_wer_kann_schon_von_sich\nbehaupten,_in_der_W\$ueste_ein\lPicknick_veranstaltet_zu_haben?
+.end

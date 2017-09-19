@@ -1,0 +1,8 @@
+.string str_0x86d382 GER
+	=Ich_schwitze_nicht!_Das_ist\nMassage\$oel,_das_meinen_K\$oerper\lgl\$aenzen_l\$aesst!
+.end
+
+
+.string str_0x86d3cd GER
+	=Ich_schw\$oere_dir,_das_ist_kein\nSchwei\$s!
+.end

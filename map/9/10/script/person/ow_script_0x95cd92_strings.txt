@@ -1,0 +1,3 @@
+.string str_0x95cd9c GER
+	=Im_Fernsehen_l\$aeuft_zunehmend_mehr\nM\$uell...\pIch_frage_mich,_wann_eine_echte\nAlternative_dazu_aufkommt.
+.end

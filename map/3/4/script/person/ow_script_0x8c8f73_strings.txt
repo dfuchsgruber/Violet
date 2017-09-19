@@ -1,0 +1,3 @@
+.string str_0x8f172d GER
+	=Manche_sagen,_dass_alle_unsere\nEntscheidungen_Auswirkungen\lh\$aetten._Sie_reden_von_Karma.\lGlaubst_du_an_das_Karma?
+.end

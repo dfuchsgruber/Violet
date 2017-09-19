@@ -1,0 +1,3 @@
+.string str_0x928e02 GER
+	=Kaskada_wurde_am_Fu\$s_des\nK\$uestenbergs_erbaut_und_benutzt_die\lEnergie_der_Wasserf\$aelle,_um_eine\lStromversorgung_zu_garantieren.
+.end

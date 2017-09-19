@@ -1,0 +1,8 @@
+.string str_0x743970 GER
+	=Ich_habe_meine_Pok\emon_gerade_am\nBrunnen_erfrischt!_Ich_bin_so_gut\lgest\$aerkt,_ich_kann_nicht_verliern!
+.end
+
+
+.string str_0x8ede0e GER
+	=Am_Brunnen_konnte_ich_meine\nPok\emon_heilen...\pVielleicht_war_es_aber_auch_blo\$s\neine_Fata_Morgana.
+.end

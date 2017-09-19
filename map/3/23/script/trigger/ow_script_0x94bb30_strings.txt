@@ -1,0 +1,3 @@
+.string str_0x94d460 GER
+	=Oh_nein...\nDieses_Gef\$uehl_des_Schwindels...\pAls_ob_mich_etwas_aus_dieser_Welt\nhinfortrei\$st...\pUnd_wegtr\$aegt...\nNicht_schon_wieder...
+.end

@@ -1,0 +1,3 @@
+.string str_0x86c9f0 GER
+	=Ich_habe_geh\$oert,_dass_es_in_dieser\nW\$ueste_goldene_Kakteen_geben_soll.\pSch\$uettelt_man_an_ihnen,_so_soll\nman_Pok\emon_antreffen_k\$oennen.
+.end

@@ -1,0 +1,8 @@
+.string str_0x96646f GER
+	=Du_magst_es_vielleicht_mit_unseren\nR\$uepeln_aufnehmen_k\$oennen,\laber_wir_von_der_Violet_Elite,\lwerden_dich_vernichten.
+.end
+
+
+.string str_0x9664e4 GER
+	=Beachtlich...\nGegen_Mistral_hast_du_letztlich\laber_keine_Chancen...
+.end

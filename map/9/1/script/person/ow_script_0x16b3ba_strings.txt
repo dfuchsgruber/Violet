@@ -1,0 +1,3 @@
+.string str_0x19684c GER
+	=Es_stimmt,_dass_ein_Pok\emon_mit\neinem_hohen_Level_sehr_stark_ist...\pAllerdings_haben_alle_Pok\emon\nSchw\$aechen._Die_richtige_Attacke\lkann_sie_leicht_besiegen!\pDaher_gibt_es_kein_Universal-\nPok\emon.
+.end

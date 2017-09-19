@@ -1,0 +1,3 @@
+.string str_0x8c90bc GER
+	=Kaskada_ist_die_einzige_Stadt_des\nOstens,_die_nicht_dem_Pinken_Faun\luntersteht.
+.end

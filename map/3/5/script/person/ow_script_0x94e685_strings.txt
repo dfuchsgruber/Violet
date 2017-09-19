@@ -1,0 +1,3 @@
+.string str_0x94e68f GER
+	=Professor_Primus_ist_der_genialste\nKopf_des_Landes.\pMit_seinen_Abhandlungen_\$ueber\ninterstellares_Reisen_hat_er_unser\lWeltbild_im_Bezug_auf_das_All\lentscheidend_ver\$aendert.
+.end

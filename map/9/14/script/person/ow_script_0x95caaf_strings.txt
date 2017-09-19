@@ -1,0 +1,3 @@
+.string str_0x95cab9 GER
+	=Wusstest_du,_dass_das_Pok\emon\nLagerunssystem_entscheidend_durch\ldie_Laz.Corp_voran_gebracht_wurde?\pAbteilungsleiter_Bill_aus_Kanto\nist_ein_Genie!
+.end

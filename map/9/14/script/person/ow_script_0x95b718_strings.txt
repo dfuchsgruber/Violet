@@ -1,0 +1,3 @@
+.string str_0x95c90e GER
+	=Die_Laz.Corp_investiert_Unsummen\nin_v\$oellig_abstruse_Forschungen.\pProfessor_Primus_forscht_an_einer\ntransdimensionalen_Portaltechnik.\pEr_tr\$aeumt_davon,_zu_fremden\nGalaxien_reisen_zu_k\$oennen.
+.end

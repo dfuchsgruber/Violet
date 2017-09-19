@@ -1,0 +1,3 @@
+.string str_0x86bd85 GER
+	=Mistrals_Division_in_Team_Violet\n\$ueberragt_die_von_Rin_bei_weitem.\pWir_sind_eine_gef\$aehrliche_Macht,\ndie_alles_niederstampft!
+.end

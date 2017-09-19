@@ -1,0 +1,8 @@
+.string str_0x92f0aa GER
+	=Hu?_Was_macht_eine_gute_Seele_wie\ndu_an_so_einem_Ort?\pWei\$st_du_nicht,_dass_der_Abschaum\nder_Region_hier_zusammenkommt?
+.end
+
+
+.string str_0x8c8d47 GER
+	=Ah,_ein_neues_Gesicht!\pDu_scheinst_genau_hierher_zu\npassen,_zu_all_den_anderen\lSchurken...
+.end

@@ -4,5 +4,5 @@
 
 .global ow_script_0x80146d
 ow_script_0x80146d:
-setworldmapflag 0x891
+setworldmapflag WM_MERIANA_CITY
 end

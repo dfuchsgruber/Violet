@@ -1,0 +1,8 @@
+.string str_0x8646a4 GER
+	=Ich_habe_es_mir_ausgesucht,_ein\nRanger_zu_sein,_also_kann_ich_mich\lnicht_dar\$ueber_beschweren,_nun_an\lsolchen_Orten_zu_sein!
+.end
+
+
+.string str_0x864721 GER
+	=Urgh..._Diese_vernichtende,\nzerm\$uerbende_Hitze...
+.end

@@ -1,0 +1,3 @@
+.string str_0x95feaf GER
+	=Bist_du_mit_dem_Angriff\nHitzekoller_vertraut?\pEr_gilt_als_einer_der_st\$aerksten\nAngriffe_des_Typs_Feuer.
+.end

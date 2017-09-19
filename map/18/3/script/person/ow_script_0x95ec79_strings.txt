@@ -1,0 +1,8 @@
+.string str_0x95ec91 GER
+	=Hitze_hat_erstaunliche_Einfl\$uesse\nauf_bestimmte_Arten_von_Pok\emon.\pLass_mich_dir_diese_Kraft_zeigen!
+.end
+
+
+.string str_0x95ecf7 GER
+	=Was?_Du_hast_der_Kraft_des_Feuers\nwiderstanden?
+.end

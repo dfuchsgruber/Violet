@@ -1,0 +1,8 @@
+.string str_0x81b151 GER
+	=Ich_liebe_diese_Arena!_Der_Geruch\nvon_frischen_Planzen_l\$aesst_mich_auf\lWolke_sieben_schweben.
+.end
+
+
+.string str_0x81b1b1 GER
+	=Ahh!_Dieser_Duft!\nWas?_Nein_ich_bin_nicht_verr\$ueckt!
+.end

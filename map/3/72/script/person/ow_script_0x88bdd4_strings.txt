@@ -1,0 +1,3 @@
+.string str_0x8a068a GER
+	=Sind_die_KP_eines_Pok\emon_niedrig,\nsollte_man_ein_Heilitem_benutzen.\lEinen_Trank_zum_Beispiel!
+.end

@@ -1,0 +1,3 @@
+.string str_0x8febc6 GER
+	=Einer_Legende_nach_sind_hier_die\nSieglkammern_eines_legend\$aeren\lPok\emon.
+.end

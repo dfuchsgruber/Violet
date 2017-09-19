@@ -37,6 +37,12 @@ class Agbrom:
     def pointer(self, off):
         return self.u32(off) - 0x8000000
 
+    def nullable_pointer(self, off):
+        """ Same as pointer but returns None if pointer is 0 """
+        u32 = self.u32(off)
+        if u32 == 0: return None
+        return u32 - 0x8000000
+
     def array(self, off, size):
         return [self.u8(off + i) for i in range (0, size)]
 

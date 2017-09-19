@@ -1,0 +1,3 @@
+.string str_0x927fbc GER
+	=Ihr_systemtreuen_Narren!_Versteht\nihr_nicht,_dass_alles_dem\lUntergang_geweiht_ist?
+.end

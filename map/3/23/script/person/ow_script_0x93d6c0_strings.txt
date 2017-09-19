@@ -1,0 +1,3 @@
+.string str_0x949cb9 GER
+	=Heil_denen,_die_auf_den_Wolken\nwandern.\lHeil_dem_Volk_des_Himmels.
+.end

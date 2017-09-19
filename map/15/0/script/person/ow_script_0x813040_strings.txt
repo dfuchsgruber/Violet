@@ -1,0 +1,3 @@
+.string str_0x81a262 GER
+	=Von_Silvania_kommt_man_in_den\nZeitwald._Wieso_er_Zeitwald_hei\$st?\lKeine_Ahnung.
+.end

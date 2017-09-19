@@ -1,0 +1,3 @@
+.string str_0x953aa8 GER
+	=Wenn_ich_erwachsen_bin,_werde_ich\nmich_der_Physik_widmen,_wie\lProfessor_Primus.\lEr_ist_so_klug!_So_toll!\lJa,_Professor_Primus!
+.end

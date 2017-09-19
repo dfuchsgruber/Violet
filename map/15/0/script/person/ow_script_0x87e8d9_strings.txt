@@ -1,0 +1,3 @@
+.string str_0x895f45 GER
+	=Voltilamm!_Voltilamm!
+.end

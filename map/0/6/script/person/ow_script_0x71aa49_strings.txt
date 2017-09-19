@@ -1,0 +1,8 @@
+.string str_0x71acf5 GER
+	=Wo_ist_denn_blo\$s_dieser_Ausgang!\nOhne_Blitz_komme_ich_nicht_voran!
+.end
+
+
+.string str_0x71ad42 GER
+	=Ich_brauche_Blitz...
+.end

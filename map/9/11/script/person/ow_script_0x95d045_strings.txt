@@ -1,0 +1,3 @@
+.string str_0x95d04f GER
+	=Mein_Mann_hat_insgeheim_ein\nProblem_mit_meinem_Vater.\pEr_gibt_es_zwar_nicht_zu,_aber_er\nkann_ihn_nicht_ausstehen.
+.end

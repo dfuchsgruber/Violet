@@ -1,0 +1,8 @@
+.string str_0x8774d7 GER
+	=Es_hei\$st,_dass_es_in_der_W\$ueste\ngoldene_Kateen_geben_soll.\lOb_das_stimmt?
+.end
+
+
+.string str_0x88adf9 GER
+	=Vielleicht_werde_ich_nach_goldenen\nKateen_suchen...
+.end

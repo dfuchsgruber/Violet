@@ -1,0 +1,3 @@
+.string str_0x965ac5 GER
+	=Ich_komme_nur_wegen_der_sch\$oenen\nDamen,_die_sich_hier_in_den\lThermen_tummeln!\pHehe!_Aber_das_erz\$aehlst_du\nnat\$uerlich_niemandem,_oder?
+.end

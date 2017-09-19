@@ -4,7 +4,7 @@
 
 .global ow_script_0x8a122a
 ow_script_0x8a122a:
-compare 0x4053 0x0
+compare TRAINERSCHOOL_DONE 0x0
 gotoif EQUAL ow_script_0x8a0ce0
 loadpointer 0x0 str_0x8a0c83
 callstd MSG_FACE

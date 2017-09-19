@@ -1,0 +1,118 @@
+.string str_0x8eca2e GER
+	=Faun:_Mit_Team_Violet_und_der\nRevolutionsarmee_als_Gegnern\lk\$oennen_wir_nicht_standhalten.\lSelbst_wir,_von_den_Top_Vier,_sind\ldazu_nicht_im_Stande...
+.end
+
+
+.string str_0x8eca11 GER
+	=Oh,_\b\01!\nDa_bist_du_ja!
+.end
+
+
+.string str_0x8ec9d0 GER
+	=Darf_ich_dir_Mia_vorstellen,_die\nArenaleiterin_Silvanias?
+.end
+
+
+.string str_0x8ec921 GER
+	=Sehr_erfreut!_Danke,_dass_du_uns\nim_Kampf_gegen_Team_Violet\lunterst\$uetzt.\pAls_ich_erfahren_habe,_dass_Faun\nvon_den_Top_Vier_uns_hilft,_ist\lmir_ein_Stein_vom_Herzen_gefallen.
+.end
+
+
+.string str_0x8ec8fc GER
+	=Sie_sind_Mitglied_der_Top_Vier?
+.end
+
+
+.string str_0x8ec8ab GER
+	=Oh,_\$aeh,_ja!_Ich_bin_zust\$aendig_f\$uer\ndie_Regierung_des_\$oestlichen_Teils\lvon_Theto.
+.end
+
+
+.string str_0x8ec84d GER
+	=Mia:_Faun_ist_ein_ber\$uehmter\nTrainer._Viele_sahen_ihn_sogar_den\lPosten_des_Champs_erklimmen.
+.end
+
+
+.string str_0x8ec7d7 GER
+	=Nein,_ich_war_diesbez\$ueglich_nie\nambitioniert.\pAber_das_tut_auch_nicht_zur_Sache,\nwir_haben_ein_ernsthaftes_Problem.
+.end
+
+
+.string str_0x8ec6df GER
+	=Mia:_Ja,_in_der_Tat._Augenzeugen\nberichten,_beobachtet_zu_haben,\lwie_Team_Violet_in_den_Zeitwald\leingefallen_ist._Einige_geben_auch\lan,_Professor_Primus_gesehen_zu\lhaben._Wir_m\$uessen_also_davon\lausgehen,_dass_Team_Violet_eine\lGeisel_genommen_hat.
+.end
+
+
+.string str_0x87e807 GER
+	=Faun:_Im_Zeitwald_lebt_ein\nPok\emon,_welches_in_der_Lage_ist,\ldie_Zeit_selbst_zu_beugen._In\lmeiner_Jugend_bin_ich_ihm_sogar\lbegegnet...
+.end
+
+
+.string str_0x8f28b9 GER
+	=Meine_Begegnung_mit_Celebi_war\nbezeichnend._Noch_heute_tr\$aeume_ich\lvon_diesem_Moment...\pEs_hat_mich_vor_etwas_gewarnt,_vor\neiner_Bedrohung._Wenn_das_Pok\emon\ldamit_Team_Violet_gemeint_hat,\lsind_wir_in_ernsthaften\lSchwierigkeiten._Celebi_kennt_die\lZeit_besser_als_jedes_andere\lWesen,_es_kennt_die_Vergangenheit,\ldie_Gegenwart_und_auch_...\p...\p...\pdie_Zukunft.
+.end
+
+
+.string str_0x8f3668 GER
+	=Mia:_Soll_das_hei\$sen,_dass_Team\nViolet_Celebi_Schaden_zuf\$uegen\lwill?
+.end
+
+
+.string str_0x8f27cb GER
+	=Ich_f\$uerchte,_dass_es_weitaus\nschlimmer_sein_k\$oennte._Wenn_Celebi\lmich_damals_vor_Team_Violet\lgewarnt_hat,_dann_hat_ihr_Handeln\lAuswirkungen_von_unvorstellbarem\lAusma\$s,_so_weitreichend,_dass\lselbst_die_Zeit_nicht_verschont\lbleibt.
+.end
+
+
+.string str_0x8f276d GER
+	=\b\01:_Ich_habe_Team_Violet\n\$ueber_den_Zeitstein_reden_h\$oeren.\lVermutlich_sind_sie_darauf_aus!
+.end
+
+
+.string str_0x8f26b3 GER
+	=Der_Zeitstein?_Das_ergibt_Sinn.\nSeit_dem_Verh\$aengnis_von_Aktania\lwidmet_sich_Professor_Primus_der\lErforschung_der_Zeitstruktur.\lDeswegen_wird_Team_Violet_ihn_als\lGeisel_genommen_haben.
+.end
+
+
+.string str_0x8f2607 GER
+	=Mia:_Das_ist_schrecklich!_Aber_ich\nkann_die_Arena_nicht_noch_l\$aenger\lunbeaufsichtigt_lassen._Gut,_dass\lsich_nun_ein_Mitglied_der_Top_Vier\lum_die_Angelegenheit_k\$uemmert.
+.end
+
+
+.string str_0x8f257b GER
+	=Polizist:_Lord_Faun!\nEntschuldigen_Sie,_dass_ich_so\lhereinplatze,_aber_der_Anf\$uehrer\lder_Revolutionsbewegung_wurde_nahe\lKaskada_gesichtet.
+.end
+
+
+.string str_0x8f0b3b GER
+	=In_Kaskada?_Ich_muss_ihn\ntreffen..._Vielleicht_kann_ich_ihn\lvon_seinem_Vorhaben_abbringen...
+.end
+
+
+.string str_0x8f0ad6 GER
+	=Entschuldige_bitte,_Mia,_aber_als\nTop_Vier_Mitglied_muss_ich_der\lRevolutionsarmee_gegen\$uebertreten.
+.end
+
+
+.string str_0x8f0a28 GER
+	=Au\$serdem_habe_ich_vollstes\nVertrauen,_dass_\b\01_diese\lSituation_in_den_Griff_bekommt.\lEr_ist_ein_vorz\$ueglicher_Trainer,\lund_ich_muss_es_wissen,_denn_ich\lhabe_ihn_ausgebildet.
+.end
+
+
+.string str_0x8f0a11 GER
+	=Polizist:_Gehen_wir!
+.end
+
+
+.string str_0x8f0984 GER
+	=Mia:_Wenn_sich_Faun_auf_dich\nverl\$aesst,_werde_ich_das_auch_tun.\lIch_vertraue_dir_die_Angelegenheit\lan.
+.end
+
+
+.string str_0x8c7f7a GER
+	=Mia_\$uebergibt_\b\01\nZerschneider!
+.end
+
+
+.string str_0x8c7f9a GER
+	=Diese_Versteckte_Maschine_nennt\nsich_Zerschneider_und_kann\lGestr\$uepp_und_Pflanzen_entfernen.\lIm_Kampf_gegen_Team_Violet_sollte\lsie_dir_n\$uetzlich_sein.\lIch_werde_zur_Arena_zur\$ueckkehren,\lwo_du_mich_herausfordern_kannst.\lErst_nach_einem_Sieg_\$ueber_mich,\lwirst_du_in_der_Lage_sein,_die\lMaschine_zu_verwenden.
+.end

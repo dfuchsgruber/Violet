@@ -1,0 +1,3 @@
+.string str_0x8fffd9 GER
+	=Haus_des_Namensexperten
+.end

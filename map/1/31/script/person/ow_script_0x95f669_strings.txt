@@ -1,0 +1,8 @@
+.string str_0x95f681 GER
+	=Ein_Wanderer_muss_jede_Wanderung\nauf_sich_nehmen.\lSelbst_bei_der_Aussicht_zu\lverbrennen,_kann_ich_nicht\lkneifen!
+.end
+
+
+.string str_0x95f6f4 GER
+	=Deine_Herausforderung_ist_wohl_das\nEnde_meiner_Wanderschaft...
+.end

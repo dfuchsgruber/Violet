@@ -1,0 +1,8 @@
+.string str_0x95f49e GER
+	=Wir_Ranger_sind_eine_von_den_Top\nVier_unabh\$aengige_Gruppe,_die_sich\lum_das_Wohl_Thetos_sorgt.\lBesonders_in_gef\$aehrlichen_Gebieten\lm\$uessen_wir_auf_der_Hut_sein!
+.end
+
+
+.string str_0x95f53d GER
+	=Du_scheinst_recht_z\$aeh_zu_sein,\nverbrenn'_dich_nicht.
+.end

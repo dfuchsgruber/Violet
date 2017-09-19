@@ -1,0 +1,18 @@
+.string str_0x95f326 GER
+	=\b\06:\b\01!\nLange_nicht_gesehen,_du_altes\lBumelz!\p..._Bist_du_etwa_auf_dem_Weg_nach\nInferior,_um_dir_einen_Orden_zu\lergattern?\pDa_bin_ich_dir_wohl_schon_zuvor\ngekommen.\pMeine_Pok\emon_haben_Igva_in_Grund\nund_Boden_gestampft!\pUnd_jetzt_werden_wir_das_gleiche\nmit_dir_tun!_
+.end
+
+
+.string str_0x95efd2 GER
+	=Unm\$oeglich!\nWieso_besiegst_du_mich_jedes_Mal?
+.end
+
+
+.string str_0x95f255 GER
+	=\b\06:_Nicht_schlecht!\nHmm..._Aber_ich_habe_nat\$uerlich\lauch_nicht_alles_gegeben.\pIch_habe_dich_gewinnen_lassen,_ja\nso_ist_das_tats\$aechlich.\pDu_brauchst_auf_jeden_Fall_ein\nwenig_Unterst\$uetzung_im_Kampf_gegen\lIgva.
+.end
+
+
+.string str_0x95f051 GER
+	=Diese_Versteckte_Maschine_enth\$aelt\nSurfer,_einen_m\$aechtigen\lWasserangriff.\pIch_gebe_ihn_dir,_damit_du_eine\nChance_hast,_Igva_zu_besiegen,\lnicht,_weil_ich_nett_sein_will...\pDu_bist_mein_Erzrivale,_ja?\nIch_helfe_meinen_Gegner_nicht...\pWie_auch_immer...\nUm_Surfer_auch_au\$serhalb_des\lKampfes_benutzen_zu_k\$oennen_und\ldamit_\$ueber_die_Ozeane_zu_gleiten,\lmusst_du_zuerst_den_Hitzeorden\lerrungen_haben.\pViel_Gl\$ueck,_und_beim_n\$aechsten_Mal\nwerde_ich_siegen_-_\$aeh_...\pIch_meine,_beim_n\$aechsten_Mal_werde\nich_mich_nicht_zur\$ueckhalten!
+.end

@@ -1,0 +1,3 @@
+.string str_0x93144c GER
+	=Igva:_Wenn_ich_es_mir_recht\n\$ueberlege...\pVielleicht_sollte_ich_dich_diesen\nOrt_doch_besser_auf_eigene_Faust\lerkunden_lassen.\pImmerhin_sollst_du_selbst_die\ndunklen_Geheimnisse_unserer_Welt\lenth\$uellen.\pSuch_mich_einfach,_wenn_du_dich\nhier_etwas_umgesehen_hast.
+.end

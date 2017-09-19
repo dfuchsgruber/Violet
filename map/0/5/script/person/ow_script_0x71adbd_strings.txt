@@ -1,0 +1,8 @@
+.string str_0x71b3bd GER
+	=Ich_w\$uerde_zu_gerne_wissen,_was_am\nanderen_Ende_der_H\$oehle_ist!_Man\nspricht_von_einer_W\$ueste.
+.end
+
+
+.string str_0x71b424 GER
+	=Ich_hoffe,_es_ist_keine_W\$ueste!
+.end

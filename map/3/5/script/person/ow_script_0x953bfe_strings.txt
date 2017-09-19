@@ -1,0 +1,3 @@
+.string str_0x953c08 GER
+	=Der_Architekt_dieses_Geb\$aeudes\ngeh\$oert_wahrlich_ausgezeichnet.\lUnd_das_sage_ich_nicht_nur,_weil\lich_zuf\$aellig_eben_dieser_bin!
+.end

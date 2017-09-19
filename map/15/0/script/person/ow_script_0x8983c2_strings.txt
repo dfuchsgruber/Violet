@@ -1,0 +1,8 @@
+.string str_0x8999f3 GER
+	=Du_Einfaltspinsel!_Lass_mich_dir\netwas_von_meinem_Karate_zeigen!
+.end
+
+
+.string str_0x899a36 GER
+	=Ka!_Ra!_Te!_Buhu!
+.end

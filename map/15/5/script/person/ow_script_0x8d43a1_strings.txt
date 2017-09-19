@@ -1,0 +1,8 @@
+.string str_0x8d441f GER
+	=Bist_du_auch_gekommen,_um\nVogelpokemon_zu_fangen?
+.end
+
+
+.string str_0x8d43b9 GER
+	=Hier_in_dieser_M\$uehle_leben_sehr\nviele_Flug-Pok\emon._Als\lVogelf\$aenger_ist_das_f\$uer_mich_sehr\ln\$uetzlich.
+.end

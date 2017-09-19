@@ -1,0 +1,8 @@
+.string str_0x8e1843 GER
+	=Das_Wetter_in_dieser_Gegend_ist\ngrauenvoll._In_dieser_ariden\lUmgebung_k\$oennen_meine_Pflanzen-\lPok\emon_nicht_wachsen!
+.end
+
+
+.string str_0x8e18b9 GER
+	=Ich_sollte_zur\$ueck_in_den\nSilvania-Wald_gehen.
+.end

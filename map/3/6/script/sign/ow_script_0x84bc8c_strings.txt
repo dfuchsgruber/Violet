@@ -1,0 +1,3 @@
+.string str_0x8601de GER
+	=Der_Volcano_-_das_Herz_des_Feuers
+.end

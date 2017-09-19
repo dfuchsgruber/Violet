@@ -1,0 +1,28 @@
+.string str_0x937bb1 GER
+	=Hallo,_ich_bin_ein_Assistent\nProfessor_Tanns._Ich_helfe\lTrainern,_die_den_Pokedex_haben,\lbei_der_Vervollst\$aendigung_der\lDaten.\lWenn_du_25_verschiedene_Pok\emon_im\lPokedex_registriert_hast,_erh\$aeltst\ldu_eine_Belohnung.
+.end
+
+
+.string str_0x937ae9 GER
+	=Sehr_gut,_du_hast_bereits\n\b\04_verschiedene_Pok\emon\lregistriert.\pAls_Belohnung_werde_ich_deinem\nPok\edex_die_Habitat-Funktion\lhinzuf\$uegen.
+.end
+
+
+.string str_0x937b72 GER
+	=Der_Pok\edex_von_\b\01_wurde\num_die_Habitats-Funktion\lerweitert!
+.end
+
+
+.string str_0x9381b7 GER
+	=Soll_ich_dir_erkl\$aeren,_wie_man_die\nHabitats-Funktion_benutzt?
+.end
+
+
+.string str_0x937ed4 GER
+	=Wenn_du_dir_den_Pok\edex-Eintrag_zu\neiner_bestimmten_Spezies_ansiehst,\lkannst_mithilfe_von_\k_\ldie_Habitate_der_Spezies\lbetrachten.\lDiese_leuchten_rot_auf._Wenn_du\lmit_dem_Cursor_auf_eines_der\lGebiete_gehst,_wird_dir_angezeigt,\lwie_h\$aeufig_die_Spezies_dort\lanzutreffen_ist.\pJe_gr\$oe\$ser_der_Kreis,_desto_h\$oeher\ndie_Wahrscheinlichkeit_dem_Pok\emon\lzu_begegnen.\lPok\emon_in_H\$oehlen_werden_ebenfalls\ldem_Gras-Reiter_zugeordnet.\pDer_Angel-Reiter_zeigt_an,_ob_das\nPok\emon_mit_der_Angel,_Profiangel\loder_Superangel_zu_finden_ist.\pDurch_die_Habitat-Funktion_findest\ndu_sicherlich_jedes_Pok\emon!\pDu_wirst_Professor_Tann_eine_gro\$se\nHilfe_sein!
+.end
+
+
+.string str_0x938154 GER
+	=Komm_jederzeit_wieder,_wenn_du\nHilfe_brauchst,_die\lHabitats-Funktion_deines_Pok\edex\lzu_benutzen.
+.end

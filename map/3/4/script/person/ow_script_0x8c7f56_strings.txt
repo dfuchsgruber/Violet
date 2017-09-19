@@ -1,0 +1,13 @@
+.string str_0x8f14e8 GER
+	=Der_Pfad_f\$uer_den_du_dich\nentschieden_hast...\pDu_hast_ein_reines_Herz...\pEs_wird_dich_weit_bringen...
+.end
+
+
+.string str_0x8f156e GER
+	=Mir_scheint,_du_bist_dir_deiner\nSelbst_noch_nicht_sicher._Folge\ldeinem_Herzen,_lass_es_f\$uer_dich\lentscheiden...
+.end
+
+
+.string str_0x8f15df GER
+	=Ich_sehe_deine_Entschlossenheit...\pDu_w\$uerdest_alles_tun,_um_deinen\nWillen_durchzusetzten...\pNoch_ist_es_nicht_zu_sp\$aet,\numzukehren...
+.end

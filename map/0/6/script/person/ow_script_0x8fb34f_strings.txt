@@ -1,0 +1,3 @@
+.string str_0x8fb359 GER
+	=Da_warme_Luft_aufsteigt,_ist_es\nhier_in_der_unteren_Ebene_der\lH\$oehle_angenehm_k\$uehl.
+.end

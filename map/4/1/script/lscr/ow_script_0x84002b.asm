@@ -13,5 +13,5 @@ end
 
 .global ow_script_0x84003e
 ow_script_0x84003e:
-playsong2 0xffff
+playsong2 MUS_NONE
 end

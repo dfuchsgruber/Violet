@@ -1,0 +1,13 @@
+.string str_0x92ee2b GER
+	=???:_Nah,_hallo!\pDein_Auftreten,_deine\nAusstrahlung...\pDu_musst_\b\01_sein!\nUm_dich_kursieren_bereits_einige\lspannende_Ger\$uechte.\pIn_Kreisen_der_Arenaleiter_loben\nLester_aus_Aktania_und_Mia_aus\lSilvania_dein_Talent.\pUnd_selbst_in_anderer_Gesellschaft\nsind_bereits_die_einen_oder\landeren_Augen_auf_deine_Generation\lgerichtet...\p...\n...\pWie_stehst_du_zu_dieser_Welt?\nWie_stehst_du_zu_dem_System,_das\luns_beherrscht?\lHast_du_deine_Entscheidung_bereits\lgef\$aellt?\lWei\$st_du,_auf_welcher_Seite_du\lk\$aempfen_wirst?\pBevor_du_antwortest,_solltest_du\naber_die_ganze_Wahrheit_kennen.\pLass_mich_dir_das_wahre_Gesicht\nunserer_Welt_zeigen.
+.end
+
+
+.string str_0x92ecf0 GER
+	=Wusste_ich_doch,_dass_du_darauf\neingehen_w\$uerdest!\pKomm_einfach_zu_dem_exklusiven\nKlubhaus_im_S\$uedosten_Kaskadas.\lDie_geheime_Eintrittsparole_lautet\lKrieg_den_Schwachen.\p...\n...\pOh,_und_mein_Name_ist_Igva!
+.end
+
+
+.string str_0x92edce GER
+	=Huh._Ich_h\$aette_dich_anders\neingesch\$aetzt.\pKomm_wieder,_wenn_du_es_dir_anders\n\$ueberlegt_hast.
+.end

@@ -1,0 +1,8 @@
+.string str_0x8ef8b7 GER
+	=Ich_k\$aempfe_f\$uer_Frieden_und\nOrdnung!_Und_mein_Kampf_ist_nobel!
+.end
+
+
+.string str_0x8efbc3 GER
+	=Als_Herrscher_der_Welt_bringen_wir\ndie_Ordnung!
+.end

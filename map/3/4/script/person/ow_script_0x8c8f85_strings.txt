@@ -1,0 +1,13 @@
+.string str_0x8f18a8 GER
+	=Guten_Tag!\nHast_du_Lust_auf_eine_Fahrt_mit\leinem_unserer_Kanus?_Ein_Tag\lkostet_dich_gerade_einmal\p...\neine_MILLION_\b7!\pWas_sagst_du?
+.end
+
+
+.string str_0x8f1821 GER
+	=...\pDu_hast_nicht_gen\$uegend_Geld?\nPah!_Armer_Schlucker!
+.end
+
+
+.string str_0x8f1865 GER
+	=Wiebitte?_Warum_denn_nicht?\pDer_Preis?\p...\pPah!_Armer_Schlucker!
+.end

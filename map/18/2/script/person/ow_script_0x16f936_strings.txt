@@ -1,0 +1,3 @@
+.string str_0x1a0c6e GER
+	=Hallo!_Danke_f\$uer_die_Erfrischung!
+.end

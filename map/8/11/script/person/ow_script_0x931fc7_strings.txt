@@ -1,0 +1,43 @@
+.string str_0x93674c GER
+	=Oh_hallo!\pHast_du_Lust_auf_kleines_lustiges\nSpielchen_mit_einem_alten_Herren?
+.end
+
+
+.string str_0x935fb2 GER
+	=Lass_mich_das_Spielchen_erkl\$aeren.\pIch_habe_hier_20_Murmeln,_wir\nbeide_nehmen_abwechselnd_entweder\leine,_zwei_oder_drei_Murmeln.\pDer_Spieler,_der_die_letzte_Murmel\nan_sich_nimmt,_gewinnt_das_Spiel.\pSimpel,_nicht?\pWenn_du_gewinnst,_zahle_ich_dir\n50_000\b7,_anderenfalls_schuldest\ldu_mir_5_000\b7.\pWas_sagst_du?
+.end
+
+
+.string str_0x935a97 GER
+	=Gut,_ich_bin_so_freundlich_und\nlasse_dir_den_Vortritt.
+.end
+
+
+.string str_0x935a60 GER
+	=\b\02_Murmeln_verbleiben.\nWie_viele_m\$oechtest_du_nehmen?
+.end
+
+
+.string str_0x933ed4 GER
+	=m\3e\93\_spnr\$oe\3f\93\_spnr\04\40\93\_spnr
+.end
+
+
+.string str_0x933e82 GER
+	=Na_dann_werde_ich_..._\$aeh_...\n\b\02_Murmeln_nehmen,_denke_ich.
+.end
+
+
+.string str_0x933e28 GER
+	=Oh,_was_ein_Pech!\pSieht_so_aus,_als_h\$aettest_du\nverloren!\pDas_tut_mir_aufrichtig_leid...
+.end
+
+
+.string str_0x935ada GER
+	=Du_hast_ja_nicht_einmal_gen\$uegend\nGeld,_deine_Schulden_zu_zahlen!
+.end
+
+
+.string str_0x9366ff GER
+	=Oh,_das_ist_aber_schade!\nDu_hast_wohl_Angst,_gegen_mich_zu\lverlieren,_was?
+.end

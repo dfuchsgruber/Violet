@@ -1,0 +1,8 @@
+.string str_0x8fec28 GER
+	=Wieso_sollte_man_seine_Pok\emon\ntrainieren,_wenn_man_sie_einfach\landeren_Trainern_stehlen_kann?
+.end
+
+
+.string str_0x8fec89 GER
+	=H\$aette_ich_meine_Pok\emon_selbst\ntrainiert,_w\$aere_ich_vielleicht_in\lder_Lage_gewesen,_dich_zu\lbesiegen!
+.end

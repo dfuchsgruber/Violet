@@ -1,0 +1,3 @@
+.string str_0x94e7e7 GER
+	=Die_Orina_City_Bank_ist_gerissen.\nNimmst_du_dir_einen_Kredit,\lverlangen_sie_ein_F\$uenftel_als\lZinssatz.\pUnd_sie_kapseln_es_klammheimlich\nvon_deinem_gewonnen_Preisgeld_ab!\lUnversch\$aemtheit!
+.end

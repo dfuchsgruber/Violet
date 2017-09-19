@@ -1,0 +1,8 @@
+.string str_0x94c11f GER
+	=Willst_du_wissen,_wie_man_wieder\nzum_Boden_zur\$ueckkehrt?\pIch_werde_es_dir_verraten,_wenn_du\nmich_besiegst!
+.end
+
+
+.string str_0x94c18b GER
+	=Also_gut!_An_einer_Stelle,_an\nwelcher_die_Wolken_wieder\ldurchl\$aessig_sind,_kannst_du_zum\lBoden_zur\$ueckkehren.\pDu_erkennst_die_Stellen_an_dunklen\nFlecken_im_Wolkengrund.
+.end

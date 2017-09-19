@@ -1,0 +1,8 @@
+.string str_0x962fde GER
+	=Ich_verschicke_viele_meiner\ngez\$uechteten_Pok\emon_im\lWundertausch,_um_dann_auch_fremde\lPok\emon_aufzuziehen.
+.end
+
+
+.string str_0x96313e GER
+	=Willst_du_mir_eines_deiner_Pok\emon\n\$ueberlassen?_Sie_sind_stark!
+.end

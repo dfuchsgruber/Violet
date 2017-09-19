@@ -1,0 +1,8 @@
+.string str_0x8efa78 GER
+	=Ich_muss_in_der_Region_f\$uer_Ordnung\nund_Sicherheit_sorgen._Freiwillige\lRanger_sind_im_Gegensatz_zur\lPolizei_nicht_korrupt.
+.end
+
+
+.string str_0x8efb78 GER
+	=Team_Violet_ist_sowohl_der_Polizei\nals_auch_den_Rangern_ein_Dorn_im\lAuge!
+.end

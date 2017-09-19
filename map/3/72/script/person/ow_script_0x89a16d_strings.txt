@@ -1,0 +1,3 @@
+.string str_0x8a0590 GER
+	=Felix:_Ja,_das_ist_eigentlich_ganz\ngut_gelaufen...\lWie_ist_es_dir_ergangen?
+.end

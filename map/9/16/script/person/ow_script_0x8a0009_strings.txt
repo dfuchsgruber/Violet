@@ -1,0 +1,3 @@
+.string str_0x958e8b GER
+	=Es_ist_mein_Traum,_eines_Tages\nselbst_ein_Fossil_auszugraben_und\ldamit_dieses_Museum_zu_bereichern.
+.end

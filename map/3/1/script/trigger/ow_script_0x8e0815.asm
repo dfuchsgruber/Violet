@@ -177,8 +177,8 @@ applymovement 0x2c ow_script_movs_0x8e0b21
 waitmovement 0x0
 loadpointer 0x0 str_0x8e0aa8
 callstd MSG_KEEPOPEN
-copyvarifnotzero 0x8000 0x15
-copyvarifnotzero 0x8001 0x1
+copyvarifnotzero 0x8000 ITEM_HYPERTRANK
+copyvarifnotzero 0x8001 ITEM_MEISTERBALL
 callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x8e0a79
 callstd MSG
@@ -195,12 +195,6 @@ end
 
 .global ow_script_0x8e22eb
 ow_script_0x8e22eb:
-addvar 0x50e7 0x1
-goto ow_script_0x8e0da6
-
-
-.global ow_script_0x8e0da6
-ow_script_0x8e0da6:
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8e0f0b
 callstd MSG_KEEPOPEN

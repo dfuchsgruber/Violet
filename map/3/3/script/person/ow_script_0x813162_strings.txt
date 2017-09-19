@@ -1,0 +1,3 @@
+.string str_0x81aafa GER
+	=Ich_trainere_mein_Pok\emon_um_Mia\nherauszufordern.
+.end

@@ -1,0 +1,8 @@
+.string str_0x8e10e9 GER
+	=Ein_enges_Band_zu_seinen_Pok\emon\nist_f\$uer_Erfolg_essentiell.
+.end
+
+
+.string str_0x8e18e8 GER
+	=Mir_scheint,_du_pfelgst_eine_sehr\ninnige_Beziehung_zu_deinen\lPok\emon.
+.end

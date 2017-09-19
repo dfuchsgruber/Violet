@@ -1,0 +1,3 @@
+.string str_0x958121 GER
+	=So_ein_Mist...\nEiner_von_diesen_Team_Violet\lR\$uepeln_hat_mir_doch_glatt_meine\lDubiosdisc_geklaut...\pDie_Software_ist_noch\nunvollst\$aendig...\pIch_will_mir_gar_nicht_ausmalen,\nwas_sie_mit_Porygon_anstellen\lkann...
+.end

@@ -1,0 +1,3 @@
+.string str_0x92dce2 GER
+	=Ein_Blick_aufs_Meer_gen\$uegt,_mein\nHerz_mit_Sehensucht_zu_erf\$uellen.\pWie_gerne_ich_doch_auf_einem\nLapras_in_den_Sonnenunterang\lsegeln_w\$uerde...
+.end

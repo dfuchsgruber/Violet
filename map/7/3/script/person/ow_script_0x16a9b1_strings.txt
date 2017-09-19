@@ -1,0 +1,3 @@
+.string str_0x194666 GER
+	=Vor_vielen_Jahren_riefen_drei\njunge_Trainertalente_das_System\lder_Top_Vier_ins_Leben.
+.end

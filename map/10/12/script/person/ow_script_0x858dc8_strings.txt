@@ -1,0 +1,3 @@
+.string str_0x965e52 GER
+	=Wir_in_Inferior_sind_nicht\nunbedingt_zufrieden_mit_den\lVerh\$aeltnissen.\pGrenzgebiete_wie_dieses_sind_unter\nden_Top_Vier_sehr_umk\$aempft_und_am\lEnde_muss_der_einfache_Mann_daf\$uer\lbezahlen.
+.end

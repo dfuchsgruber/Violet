@@ -1,0 +1,3 @@
+.string str_0x927e54 GER
+	=Argh!_So_viele_von_diesen\nverfluchten_Revolution\$aeren...\pAber_der_gro\$se_Lord_Faun_wird\ndiesen_rebellischen_Verbrechern\leinen_Denkzettel_verpassen!
+.end

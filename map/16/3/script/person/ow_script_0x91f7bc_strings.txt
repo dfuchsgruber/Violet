@@ -1,0 +1,3 @@
+.string str_0x9377fe GER
+	=Ein_Gl\$ueck_ist_dieser_Tunnel_nicht\ndunkel.\pKeines_meiner_Pok\emon_kennnt_die\nAttacke_Blitz!
+.end

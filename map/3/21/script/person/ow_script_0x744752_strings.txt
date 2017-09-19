@@ -1,0 +1,8 @@
+.string str_0x74476a GER
+	=Meine_kleine,_rebellische_Schwester\nist_vor_kurzem_auch_Trainer\lgeworden!_..._Sie_trainiert_auf\lRoute_2!
+.end
+
+
+.string str_0x7453a9 GER
+	=Hmpf..._Ich_dachte,_ich_h\$aette_eine\nChance!
+.end

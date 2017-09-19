@@ -5,16 +5,16 @@
 int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
     int cnt = 0;
     int i = 0;
-    wild_pokemon_data *wild_data = *wild_pokemon_data_ptr;
-    while (wild_data[i].bank != 0xFF) {
+    
+    while (wild_pokemon[i].bank != 0xFF) {
 
-        u8 namespace = (u8) (get_mapheader(wild_data[i].bank, wild_data[i].map)->name_bank);
+        u8 namespace = (u8) (get_mapheader(wild_pokemon[i].bank, wild_pokemon[i].map)->name_bank);
 
         //now we check each table if it contains the pokemon and if it does add it to the list
         //Grass table
         int j;
-        for (j = 0; j < 12 && wild_data[i].grass; j++) {
-            if (wild_data[i].grass->data[j].species == species) {
+        for (j = 0; j < 12 && wild_pokemon[i].grass; j++) {
+            if (wild_pokemon[i].grass->data[j].species == species) {
                 u8 probability = 0; //rare
                 if (j < 6)
                     probability++;
@@ -27,8 +27,8 @@ int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
         }
 
         //Water table
-        for (j = 0; j < 5 && wild_data[i].water; j++) {
-            if (wild_data[i].water->data[j].species == species) {
+        for (j = 0; j < 5 && wild_pokemon[i].water; j++) {
+            if (wild_pokemon[i].water->data[j].species == species) {
                 u8 probability = 0; //rare
                 if (j < 2)
                     probability++;
@@ -40,8 +40,8 @@ int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
         }
 
         //Rod
-        for (j = 0; j < 10 && wild_data[i].rod; j++) {
-            if (wild_data[i].rod->data[j].species == species) {
+        for (j = 0; j < 10 && wild_pokemon[i].rod; j++) {
+            if (wild_pokemon[i].rod->data[j].species == species) {
                 u8 probability = 0; //rare
                 if (j < 2)
                     probability++;
@@ -53,8 +53,8 @@ int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
         }
 
         //Radar
-        for (j = 0; j < 5 && wild_data[i].other; j++) {
-            if (wild_data[i].other->data[j].species == species) {
+        for (j = 0; j < 5 && wild_pokemon[i].other; j++) {
+            if (wild_pokemon[i].other->data[j].species == species) {
                 u8 probability = 0; //rare
                 if (j < 1)
                     probability++;

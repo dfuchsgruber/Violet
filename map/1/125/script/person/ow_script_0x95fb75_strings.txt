@@ -1,0 +1,3 @@
+.string str_0x961354 GER
+	=An_machen_Tagen_kann_man_hier_das\nlegend\$aere_Pok\emon_Lavados_treffen.\pEin_gro\$ser_brennender_Vogel,\ndessen_Ruf_die_Flammen_entfacht.
+.end

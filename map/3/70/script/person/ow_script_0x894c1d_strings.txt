@@ -1,0 +1,73 @@
+.string str_0x895067 GER
+	=???:_Hey_du_da!_Bitte_lass_dieses\nItem_dort_liegen._Er_geh\$oert\leinem_kleinen_Jungen,_der_hier\ldurchgelaufen_ist._Er_hat_uns\lbeauftragt_dannach_zu_suchen.
+.end
+
+
+.string str_0x894fc0 GER
+	=???:_Du_wurdest_damit_beauftragt,\nihn_zu_holen._Wenn_du_mich_fragst,\lsollte_der_Junge_dort_das_Item\lbehalten._Wenn_das_Kind_so_dumm\list_und_das_Item_verliert...
+.end
+
+
+.string str_0x894f22 GER
+	=???:_Entschludige_bitte_meinen\nFreund._Mein_Name_ist_Felix,_und\ldu_solltest_mir_dieses_Item_geben,\ldamit_der_Junge,_der_es_verloren\lhat,_es_wieder_bekommt.
+.end
+
+
+.string str_0x894e61 GER
+	=???:_Mein_Name_ist_Blaise,_und_du\nsolltest_dieses_Item_behalten.\lSieh_mal,_wenn_der_Bengel_es\lverliert,_dann_geh\$oert_es_ihm_auch\lnicht_l\$aenger._Du_bist_nun_der\lrechtm\$ae\$sige_Besitzer,_glaub_mir.
+.end
+
+
+.string str_0x894ccb GER
+	=!Achtung._Du_stehst_nun_vor_der\nersten_von_vielen_Entscheidungen,\ldie_du_w\$aehrend_des_Spielverlaufes\ltreffen_kannst._Jede_dieser\lEntscheidungen_bringt_dir_entweder\lpositives_Karma_oder_negatives\lKarma_ein._Je_nach_deinem\lderzeitigen_Karmawert_sind\lbestimmte_Events_verf\$uegbar.\lBedenke_auch,_dass_manchmal_ein\lnegatives_Karma_von_N\$oeten_ist._Du\lkannst_deine_Karmawerte_bei_einem\lHellseher_\$ueberpr\$uefen_lassen.
+.end
+
+
+.string str_0x89593f GER
+	=5\5a\89\_spnra\62\89\_spnr\69\33\12\01_\25\13\01\4f#_\24\64\89\_spnr\51__\0f_9)\89\_spnr\09\06\04\s(\89\_spnr\0f_\45\69\89\_spnr\09\06\25\07_\0f_\24(\89\_spnr\09\06\2f\$s_\4f+_\6e\5e\89\_spnr\4f\2c_\6e\5e\89\_spnr\4f\2b_\6e\5e\89\_spnr\4f&_\6e\5e\89\_spnr\05\b1\63\89\_spnr#_\13)\89\_spnr\51__\25\14\01\04\s(\89\_spnr\0f_M\5a\89\_spnr\09\06\25\07_\0f_y\5a\89\_spnr\09\06\42_\80\01\80\21\01\80\21_\07\01\42\5e\89\_spnr\21\01\80\22_\07\01\4e\5e\89\_spnr\21\01\80\23_\07\01\5a\5e\89\_spnr\4f#_\0d)\89\_spnr\51__(\01\6f___\34\5a\89\_spnr\07\5a\89\_spnr\05\5a\89\_spnr\02
+.end
+
+
+.string str_0x895445 GER
+	=\b\01_nimmt_das_Item.
+.end
+
+
+.string str_0x8953cf GER
+	=Blaise:_Wusste_ich_doch,_dass_du\ndich_richtig_entscheidest._Du\lsolltest_zuerst_an_dich_denken,\ldann_an_die_anderen.
+.end
+
+
+.string str_0x89532f GER
+	=Felix:_Manchmal_machst_du_mich\necht_krank_mit_deiner_Einstellung,\lBlaise._Und_was_dich_angeht,_so\lsolltest_du_dich_sch\$aemen!_Ich_f\$uer\lmeinen_Teil_gehe_jetzt...
+.end
+
+
+.string str_0x895273 GER
+	=Blaise:_Du_gef\$aellst_mir._Du_hast\ndie_richtige_Einstellung_f\$uer_einen\lPok\emon_Trainer._Halte_dich_an\lmich..._Wie_war_noch_gleich_dein\lName?\l..._\b\01_also.\lNun,_wir_sehen_uns,_\b\01.
+.end
+
+
+.string str_0x895854 GER
+	=\b\01_hebt_das_Item_auf.
+.end
+
+
+.string str_0x895823 GER
+	=Felix:_Danke!_Du_hast_das_richtige\ngetan!
+.end
+
+
+.string str_0x899fad GER
+	=\b\01_\$uebergibt_das_Item\nan_FELIX.
+.end
+
+
+.string str_0x895760 GER
+	=Blaise:_Pah!_Nicht_noch_so_ein\nWeichling_wie_du,_Felix._Ich_mach\lmich_vom_Acker..._Wenn_jemand_ein\lItem_einfach_so_liegen_l\$aesst_-_ich\lh\$aette_es_genommen...
+.end
+
+
+.string str_0x89569f GER
+	=Felix:_Eine_gute_Entscheidung._Der\nJunge_wird_sich_sicherlich\lfreuen._Wie_war_doch_gleich_dein\lName?\l...\l\b\01_also!_Ich_bin_sicher,_dass\lwir_uns_noch_einmal_begegnen\lwerden,_\b\01.\lWir_sehen_uns!
+.end

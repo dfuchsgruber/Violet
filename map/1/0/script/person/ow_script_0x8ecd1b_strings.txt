@@ -1,0 +1,3 @@
+.string str_0x8f4419 GER
+	=Es_hei\$st,_dass_es_einen_Stein\ngeben_soll,_der_das_Herz_der_Zeit\lrepr\$aesentiert._Seine_Energie_soll\lgrenzenlos_sein.
+.end

@@ -1,0 +1,38 @@
+.string str_0x8c8907 GER
+	=Hallo!_Du_siehst_aus_wie_ein\nTrainer,_nicht?\pWie_w\$aere_es,_dein_Team_mit_ein\npaar_exklusiven_Pok\emon\laufzustocken?\pIch_verkaufe_dir_die_seltensten\nExemplare_zu_einem_Spottpreis!\pSieh_dir_mein_Sortiment\nruhig_an.
+.end
+
+
+.string str_0x8c8a39 GER
+	=\5b\8a\8c\_spnr\70\8a\8c\_spnr\85\8a\8c\_spnr\9a\8a\8c\_spnr\d\8a\8c\_spnr\52\8a\8c\_spnr
+.end
+
+
+.string str_0x8c86ac GER
+	=\b\01_hat_\b\02\nerhalten!
+.end
+
+
+.string str_0x8c8683 GER
+	=Vielen_Dank!_Beehre_mich_gerne\nwieder!
+.end
+
+
+.string str_0x8c8767 GER
+	=Das_Pok\emon_\b\02_soll\nes_sein?
+.end
+
+
+.string str_0x8c86f0 GER
+	=Du_scheinst_nicht_gen\$uegend_Platz\nin_deinem_Team_zu_haben.\pKomm_wieder,_wenn_du_Platz_in\ndeinem_Team_geschaffen_hast.
+.end
+
+
+.string str_0x8c882b GER
+	=Ganz_wie_du_m\$oechtest.\pKomm_jederzeit_wieder,_falls_du_es\ndir_anders_\$ueberlegst.
+.end
+
+
+.string str_0x8c8793 GER
+	=Oh,_sieht_so_aus,_als_h\$aettest_du\nnicht_gen\$uegend_Geld_bei_dir,_um\ldir_das_zu_leisten.\pKomm_wieder,_wenn_du_dir_das\nProdukt_kaufen_kannst.
+.end

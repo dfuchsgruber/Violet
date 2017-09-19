@@ -1,0 +1,23 @@
+.string str_0x8f1fda GER
+	=Ich_sehe_ein_Licht_in_deinem\nHerzen,_das_dem_der_Sonne_gleicht.\lJemand_deines_Charakters_hat_es\lverdient,_belohnt_zu_werden.
+.end
+
+
+.string str_0x8f1f5c GER
+	=Der_Evolith_st\$aerkt_schwache\nPok\emon,_so_wie_die_Starken_auch\lin_unserer_Gesellschaft_die\lSchwachen_in_Schutz_nehmen_m\$uessen.
+.end
+
+
+.string str_0x8f2063 GER
+	=Tust_du_Gutes,_wird_dir_Gutes\nwiderfahren._Dieser_Grundsatz_wird\ldir_ein_erf\$uelltes_Leben_bescheren.
+.end
+
+
+.string str_0x8f20d3 GER
+	=Dein_Herz_ist_voller_Hass...\nBefreie_den_Herz,_es_wird_dich\lbefreien!
+.end
+
+
+.string str_0x8f211b GER
+	=Wenn_eigenn\$uetzige_Taten_sich\nzun\$aechst_lohnen_m\$oegen,_so_sind\lgute_Handlungen_auf_lange_Sicht\limmer_sinnvoller.
+.end

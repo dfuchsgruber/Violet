@@ -1,0 +1,8 @@
+.string str_0x73cdd2 GER
+	=Hier_ist_das_Kaktus_Labyrinth!_Ich\nwerde_den_Ausgang_in_Windeseile\lfinden!
+.end
+
+
+.string str_0x73ce20 GER
+	=Der_Ausgang...
+.end

@@ -1,0 +1,3 @@
+.string str_0x95aae7 GER
+	=Ich_bevorzuge_den_Bankautomaten.\nAuf_diese_Weise_muss_ich_nicht_so\llange_anstehen.
+.end

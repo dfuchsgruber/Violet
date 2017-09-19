@@ -1,0 +1,3 @@
+.string str_0x89bfed GER
+	=Na_los!_Die_Schule_hat_l\$aengst\nangefangen._Faun_wird_uns_Feuer\lunterm_Hintern_machen,_wenn_wir\luns_nicht_bald_blicken_lassen.
+.end

@@ -1,0 +1,3 @@
+.string str_0x81ab8e GER
+	=Ich_bin_hierhergekommen,_um_die\nWaldluft_zu_genie\$sen._Anordnung\lmeines_Hausarztes.
+.end

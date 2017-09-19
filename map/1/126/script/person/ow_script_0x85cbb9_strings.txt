@@ -1,0 +1,3 @@
+.string str_0x9663ca GER
+	=Ich_habe_das_Magmaherz_an_diesem\nOrt_gefunden,_aber_Arch\$aeologen\lhaben_es_sofort_beschlagnahmt_und\lin_das_Orina_City_Museum_gebracht.\pWo_liegt_da_die_Gerechtigkeit?
+.end

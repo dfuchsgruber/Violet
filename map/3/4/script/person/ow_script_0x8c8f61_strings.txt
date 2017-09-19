@@ -1,0 +1,3 @@
+.string str_0x8f1665 GER
+	=Das_Wasser_hier_ist_so_sauber,\ndass_man_direkt_davon_trinken\lk\$oennte.
+.end

@@ -6,7 +6,7 @@
 ow_script_0x899ddb:
 lock
 faceplayer
-checkflag 0x90a
+checkflag AKTANIA_GENGARNITE
 gotoif EQUAL ow_script_0x899e4b
 loadpointer 0x0 str_0x89a9bb
 callstd MSG_YES_NO
@@ -40,12 +40,12 @@ ow_script_0x87f879:
 loadpointer 0x0 str_0x89a91d
 callstd MSG
 bufferitem 0x0 ITEM_GENGARNIT
-copyvarifnotzero 0x8000 0xec
-copyvarifnotzero 0x8001 0x1
+copyvarifnotzero 0x8000 ITEM_GENGARNIT
+copyvarifnotzero 0x8001 ITEM_MEISTERBALL
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x87f3c1
-setflag 0x90a
+setflag AKTANIA_GENGARNITE
 goto ow_script_0x899e4b
 
 

@@ -1,0 +1,38 @@
+.string str_0x95d7f0 GER
+	=Ich_bin_der_Attacken-Erinnerer.\nMeine_F\$aehigkeit_ist_es,_Pok\emon\lwieder_an_verlernte_Attacken_zu\lerinnern.\pIm_Gegenzu_verlange_ich_daf\$uer\nallerdins_eine_Herzschuppe.
+.end
+
+
+.string str_0x95d771 GER
+	=Wie_aufregend!_Du_hast_eine\nHerzschuppe_bei_dir!\pSoll_ich_einem_deiner_Pok\emon_zu\neiner_vergessenen_Attacke\lverhelfen?
+.end
+
+
+.string str_0x95d618 GER
+	=Welches_Pok\emon_soll_sich_an_eine\nAttacke_erinnern?
+.end
+
+
+.string str_0x95d5ee GER
+	=Welche_Attacke_soll_ich_ihm\nbeibringen?
+.end
+
+
+.string str_0x95d5a7 GER
+	=Na_das_hat_doch_wunderbar\ngeklappt!\pVielen_Dank_f\$uer_die_Herzschuppe!
+.end
+
+
+.string str_0x95d659 GER
+	=Hmm...\nEs_sieht_so_aus,_als_k\$oennte_sich\ldieses_Pok\emon_an_keine_Attacke\lerinnern...
+.end
+
+
+.string str_0x95d6ba GER
+	=Das_ist_ja_ein_Ei!\nWie_soll_ich_einem_Ei_denn_eine\lAttacke_beibringen?
+.end
+
+
+.string str_0x95d70e GER
+	=Das_ist_au\$serordentlich_schade!\nKomm_gerne_wieder_vorbei,_wenn_du\lmeine_Hilfe_brauchen_solltest.
+.end

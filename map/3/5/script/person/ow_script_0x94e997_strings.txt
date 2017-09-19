@@ -1,0 +1,3 @@
+.string str_0x94e9a1 GER
+	=Ob_ich_in_den_Blumenk\$aesten\nK\$aefer-Pok\emon_finde?
+.end

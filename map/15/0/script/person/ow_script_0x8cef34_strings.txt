@@ -1,0 +1,3 @@
+.string str_0x8d41a0 GER
+	=Die_Region_Theto_wird_von_vier\nvoneinander_unabh\$aengigen_Trainern\lregiert,_den_Top_Vier._\$UEber_ihnen\lsteht_blo\$s_der_Champion.
+.end

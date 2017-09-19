@@ -66,6 +66,7 @@ class Command:
         self.params = params
         self.callback = callback
         self.ends_section = ends_section
+        self.macro_export = None
 
     def size(self, rom, offset):
         size = 1
@@ -153,7 +154,7 @@ class Owscript_Exploration_tree:
                     #cmd = owscript_cmds[self.rom.u8(offset)]
                     try: assembly += cmd.export(self, self.rom, offset) + "\n"
                     except Exception as e:
-                        print("Error at export of command", cmd)
+                        print("Error at export of command", cmd.name)
                         raise e
                     #cmd.callback(self, self.rom, offset)
                     if cmd.get_ends_section(self.rom, offset): break #Only if the command ends a section
@@ -234,22 +235,31 @@ def explore_string_reference(tree, rom, offset):
         tree.explored_offsets[offset] = TYPE_STRING
     return label
 
+def isvar(val):
+    """ Checks if a value corresponds to a variable """
+    if val in range(0x8000, 0x8010): return True
+    if val in range(0x4000, 0x6000): return True
+    return False
+
 #Parameter types, can be extended and stores callbacks to exploration funcs that yield the exported assembly string and also proceed exporting
 BYTE = ParamType(1, lambda tree, rom, offset : str(hex(rom.u8(offset))))
 HWORD = ParamType(2, lambda tree, rom, offset : str(hex(rom.u16(offset))))
 WORD =  ParamType(4, lambda tree, rom, offset : str(hex(rom.u32(offset))))
 SCRIPT_REFERENCE = ParamType(4, explore_script_reference)
-ITEM = ParamType(2, lambda tree, rom, offset : constants.item(rom.u16(offset), pedantic=tree.pedantic))
+ITEM = ParamType(2, lambda tree, rom, offset: constants.item(rom.u16(offset), pedantic=tree.pedantic) if not isvar(rom.u16(offset)) else constants.var(rom.u16(offset), pedantic=tree.pedantic))
 FLAG = ParamType(2, lambda tree, rom, offset : constants.flag(rom.u16(offset), pedantic=tree.pedantic))
 MOVEMENT_LIST = ParamType(4, explore_movement_list)
 STRING = ParamType(4, explore_string_reference)
-POKEMON = ParamType(2, lambda tree, rom, offset : constants.species(rom.u16(offset), pedantic=tree.pedantic))
+POKEMON = ParamType(2, lambda tree, rom, offset : constants.species(rom.u16(offset), pedantic=tree.pedantic) if not isvar(rom.u16(offset)) else constants.var(rom.u16(offset), pedantic=tree.pedantic))
 ATTACK = ParamType(2, lambda tree, rom, offset : constants.attack(rom.u16(offset), pedantic=tree.pedantic))
 MART = ParamType(4, explore_mart_list)
 VAR = ParamType(2, lambda tree, rom, offset : constants.var(rom.u16(offset), pedantic=tree.pedantic))
 ORD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.ords, rom.u8(offset), pedantic=tree.pedantic))
 STD = ParamType(1, lambda tree, rom, offset : constants._dict_get(constants.stds, rom.u8(offset), pedantic=tree.pedantic))
 MUSIC = ParamType(2, lambda tree, rom, offset : constants._dict_get(constants.music, rom.u16(offset), pedantic=tree.pedantic))
+
+
+
 
 owscript_cmds = [
     #0x00
@@ -282,7 +292,7 @@ owscript_cmds = [
     #0x18
    Command("subvar", [Param("var", VAR), Param("value", HWORD)]),
    Command("copyvar", [Param("dst", VAR), Param("src", VAR)]),
-   Command("copyvarifnotzero", [Param("dst", VAR), Param("src", VAR)]),
+   Command("copyvarifnotzero", [Param("dst", VAR), Param("src", ITEM)]),
    Command("comparebanks", [Param("bank1", HWORD), Param("bank2", HWORD)]),
    Command("comparebanktobyte", [Param("bank", BYTE), Param("value", BYTE)]),
    Command("comparebanktofarbyte", [Param("bank", BYTE), Param("offset", WORD)]),

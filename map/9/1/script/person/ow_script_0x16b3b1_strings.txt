@@ -1,0 +1,3 @@
+.string str_0x19675c GER
+	=Auch_wenn_sie_den_gleichen_Level\nhaben,_k\$oennen_die_F\$aehigkeiten_von\lPok\emon_trotzdem_verschieden_sein.\pDas_Pok\emon_eines_Trainers_ist\nst\$aerker_als_ein_wild_lebendes.
+.end

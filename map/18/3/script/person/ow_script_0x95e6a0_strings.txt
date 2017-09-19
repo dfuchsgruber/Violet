@@ -1,0 +1,3 @@
+.string str_0x95eb93 GER
+	=Vor_vielen_Jahren_haben_Hexen_hier\nBeschw\$oerungsrituale_abgehalten.\pDie_Magie_der_Dunklen_K\$oenigin_soll\nin_der_Lage_sein,_das_Landmassen-\lPok\emon_Groudon_zu_binden.\pWenn_du_mich_fragst,_ist_hinter\ndiesem_Hokus-Pokus_nichts_Wahres.
+.end

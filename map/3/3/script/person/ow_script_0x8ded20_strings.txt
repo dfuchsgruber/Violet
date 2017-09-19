@@ -1,0 +1,3 @@
+.string str_0x8df298 GER
+	=Mia,_die_Arenaleiterin_dieser\nStadt,_k\$uemmert_sich_um_den\lSilvania-Wald.
+.end

@@ -1,0 +1,8 @@
+.string str_0x935b6f GER
+	=S\$uedw\$aerts_gelangst_du_\$ueber_den\nWasserpfad_nach_Meriana_City.\pDort_trainiert_der_gr\$oe\$ste_aller\nK\$aempfer,_Manus!
+.end
+
+
+.string str_0x932010 GER
+	=Eines_Tages_werde_ich_in_seiner\nArena_arbeiten!
+.end

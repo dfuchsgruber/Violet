@@ -1,0 +1,8 @@
+.string str_0x931d8f GER
+	=..._..._...\n..._..._...
+.end
+
+
+.string str_0x931bb9 GER
+	=Blaise:_\b\01.\nDich_h\$aette_ich_sicherlich_nicht\lhier_erwartet.\pDu_hast_dich_weiterentwickelt,_das\nist_unverkennbar.\pDu_bist_als_Trainer_und_Mensch\ngewachsen,_wie_ich.\pDieser_Ort_ist_mir_ein_Dorn_im\nAuge,_denn_er_wurde_von_meinem\lVater_ins_Leben_gerufen.\pEr_ist_ein_m\$aechtiger_Trainer,\nm\$aechtiger_noch_als_Faun,_dieser\lalte_Narr.\pUnd_ich_werde_ihn_st\$uerzen.\nEines_Tages...\pVergiss_nie,_dass_Macht_in_dieser\nWelt_alles_ist._Sieh_dir_diesen\lOrt_an_und_werde_dir_dessen\lbewusst.
+.end

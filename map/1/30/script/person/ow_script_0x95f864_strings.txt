@@ -1,0 +1,58 @@
+.string str_0x95fd2c GER
+	=Schluchz...\nSchluchz...\pWei\$st_du,_diese_b\$oesen_M\$aenner_von\nTeam_Violet_haben_mir_mein\lTaschengeld_gestohlen...\p1500\b7_sind_nun_weg_und_alles_was\nmir_nun_noch_bleibt_ist_dieses\lNugget...\pEs_ist_ein_Geschenk_meines_Papas,\laber_vielleicht_kann_ich_es\nverkaufen...\pIch_brauche_das_Geld_wirklich\nsehr_dringend...
+.end
+
+
+.string str_0x95fcf3 GER
+	=_\b\95\_spnr\0e\b\95\_spnr\e\b\95\_spnr
+.end
+
+
+.string str_0x95f9d1 GER
+	=Jammerschade,_heute_ist_nicht_dein\nGl\$ueckstag,_wie_es_scheint.\lImmerhin_wirst_du_dein_Nugget_auch\lgleich_los_sein...
+.end
+
+
+.string str_0x95f937 GER
+	=Waaas?_Schluchz!?\nDas_ist_nicht_dein_Ernst?\pWieso_sind_alle_so_gemein_zu_mir!\nBuhu!_Buhu!\pLass_mich_in_Ruhe,_dieses_Nugget\nhat_mein_Papa_mir_geschenkt!
+.end
+
+
+.string str_0x95f8bc GER
+	=Wuh\$ae\$ae\$ae!_B\$ae\$ae\$ae\$aeh!\nBitte_nimm_es_nicht...
+.end
+
+
+.string str_0x95f8fc GER
+	=Du_bist_ein_b\$oeser_Mensch...\nGuh\$ae\$ae\$ae!_B\$aeh!_W\$ae\$aeh!_Schluz...
+.end
+
+
+.string str_0x95fa93 GER
+	=Na..._H\$oer_doch_bitte_auf_zu\nweinen!\lWas_passiert_ist,_kann_nicht\lwieder_r\$ueckg\$aengig_gemacht_werden.\pSei_das_n\$aechste_Mal_ein_bisschen\nvorsichtiger,_f\$uer_jetzt_hast_du\ldeine_Lektion_auf_jeden_Fall\lgelernt.
+.end
+
+
+.string str_0x95fa65 GER
+	=Buhu!_Schluchz!\nDu_bist_gemein!_Baha!_Buhu!
+.end
+
+
+.string str_0x95fc52 GER
+	=Na,_mach_dir_keine_Sorgen.\nIch_werde_dir_stattdessen_einfach\l1500\b7_geben_und_Team_Violet_zur\lR\$aechenschaft_ziehen.
+.end
+
+
+.string str_0x95fc38 GER
+	=\b\01_gibt_dem_Kind_1500\b7.
+.end
+
+
+.string str_0x95fbb9 GER
+	=Danke!_Schluchz!\nDu_bist_toll!\lIch_hoffe_wir_begegnen_uns_bald\lwieder!\lUi,_ich_kann_mir_jetzt_dieses\lSpielzeug_kaufen!\lJuhu!
+.end
+
+
+.string str_0x95fcd2 GER
+	=Du_hast_nicht_gen\$uegend_Geld...
+.end

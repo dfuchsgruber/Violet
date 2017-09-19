@@ -1,0 +1,3 @@
+.string str_0x928010 GER
+	=Wenn_wir_nicht_f\$uer_eine_bessere\nWelt_k\$aempfen,_wer_dann?
+.end

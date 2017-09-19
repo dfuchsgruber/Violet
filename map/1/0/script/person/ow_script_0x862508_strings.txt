@@ -1,0 +1,8 @@
+.string str_0x8ef778 GER
+	=Manche_m\$oegen_K\$aeferpokemon_f\$uer\nschwach_halten,_ich_aber_sage,_sie\lbergen_riesiges_Potenzial!
+.end
+
+
+.string str_0x8ef878 GER
+	=Dein_Sieg_ist_kein_Beweis_f\$uer_die\nSchw\$aeche_der_K\$aefer-Pok\emon!
+.end

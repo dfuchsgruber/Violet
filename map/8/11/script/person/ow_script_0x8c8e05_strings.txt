@@ -1,0 +1,3 @@
+.string str_0x931979 GER
+	=Du_machst_dir_also_die_M\$uehe,_mit\nallen_Statisten_zu_sprechen?\pNein_im_Ernst,_das_ist_toll!\pIch_verrate_dir_im_Gegenzug_ein\nGeheimnis._Viele_der_St\$aende_hier\lwerden_erst_in_sp\$aeteren_Versionen\lsinnvoll_besetzt_sein.\pGedulde_dich_einfach_ein_bisschen!
+.end

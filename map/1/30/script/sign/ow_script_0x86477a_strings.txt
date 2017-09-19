@@ -1,0 +1,3 @@
+.string str_0x96afef GER
+	=Norden:_Haus_des_Glasbl\$aesers\nS\$ueden:_Route_6
+.end

@@ -4,5 +4,5 @@
 
 .global ow_script_0x811515
 ow_script_0x811515:
-setworldmapflag 0x892
+setworldmapflag WM_AKTANIA
 end

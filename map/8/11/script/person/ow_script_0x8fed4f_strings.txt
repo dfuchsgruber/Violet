@@ -1,0 +1,3 @@
+.string str_0x9339fb GER
+	=Viele_Pok\estops_werden_durch\nsteuerfreie_Ware_finanziert.\pIn_vielen_Teilen_der_Region_reicht\noft_das_Budget_der_Top_Vier_nicht\laus.\pBesonders_in_den_Distirkten_des\nPinken_Faun_ist_das_ein_Problem.
+.end

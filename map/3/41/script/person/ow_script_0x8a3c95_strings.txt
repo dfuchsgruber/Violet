@@ -1,0 +1,3 @@
+.string str_0x8a538f GER
+	=Viele_Leute_nennen_Route_2_auch\ndie_Birkenstra\$se._Ich_muss_wohl\lnicht_erkl\$aeren,_wieso,_oder?
+.end

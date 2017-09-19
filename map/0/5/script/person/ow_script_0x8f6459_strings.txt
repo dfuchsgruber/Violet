@@ -1,0 +1,3 @@
+.string str_0x8fb1c7 GER
+	=Warum_muss_es_hier_auch_so\nverflucht_dunkel_sein?\pSt\$aendig_stolpere_ich_\$ueber_ein\nKleinstein...
+.end

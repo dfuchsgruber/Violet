@@ -1,0 +1,8 @@
+.string str_0x92ec17 GER
+	=Was_ist_das_f\$uer_ein_seltsames\nGef\$uehl?_..._..._...\p..._..._..._..._...\pIch_f\$uehle_mich_so_schwindlig...\n..._..._..._..._...\pIch_falle..._falle...
+.end
+
+
+.string str_0x92eb38 GER
+	=Was_bei_Arceus_war_das?_Was_haben\ndiese_Bilder_zu_bedeuten?\pSind_diese_Visionen_Wirklichkeit,\nbin_ich_Zeuge_der_Zerst\$oerung\lAktanias_geworden?\pIch_muss_in_Erfahrung_bringen,_was\nes_damit_auf_sich_hat!
+.end

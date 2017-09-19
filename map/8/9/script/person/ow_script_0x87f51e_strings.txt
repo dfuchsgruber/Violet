@@ -1,0 +1,3 @@
+.string str_0x9272eb GER
+	=Mein_Papa_sagt_immer,_dass_ein\nguter_Trainer_auch_ein_guter\lMensch_sein_sollte.
+.end

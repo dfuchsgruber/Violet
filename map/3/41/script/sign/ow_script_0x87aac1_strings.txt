@@ -1,0 +1,3 @@
+.string str_0x87aad8 GER
+	=BIBOR!_BIBOR!
+.end

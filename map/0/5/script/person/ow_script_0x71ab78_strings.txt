@@ -1,0 +1,8 @@
+.string str_0x71ab90 GER
+	=Ich_war_schon_am_anderen_Ausgang!\nDu_willst_wissen_was_dort_ist?_Ich\lsags_dir,_wenn_du_mich_besiegst!
+.end
+
+
+.string str_0x71abf9 GER
+	=Dort_ist_eine_grauenhafte_W\$ueste!
+.end

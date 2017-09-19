@@ -1,0 +1,8 @@
+.string str_0x864425 GER
+	=Eindringling.._Ich..._schwitze..\nKampf!
+.end
+
+
+.string str_0x86444f GER
+	=Die_Hitze_hier_ist_unertr\$aeglich!\nWieso_sind_wir_\$ueberhaupt_in_einem\lVulkan?
+.end

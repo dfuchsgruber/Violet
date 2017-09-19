@@ -1,0 +1,8 @@
+.string str_0x955b31 GER
+	=Elise:_Ah,_\b\01!\nWie_ich_sehe_hast_du_Orina_City\lgefunden.\pIm_Norden_der_Stadt_befindet_sich\ndie_Laz.Corp,_wo_ich_und_mein\lVater_besch\$aeftigt_sind.\pKomm_mich_dort_doch_besuchen_und\nich_zeige_dir_das_k\$uenstliche\lPok\emon.\pDaf\$uer_wirst_du_diese_Zugangskarte\nben\$oetigen.
+.end
+
+
+.string str_0x955a4c GER
+	=Die_Zugangskarte_erm\$oeglicht_dir\nden_Zutritt_zum_Cyberlabor_der\lLaz.Corp,_wo_du_mich_triffst.\pNat\$uerlich_konnte_ich_dir_keinen\nZutritt_zu_den_anderen_Stockwerken\lverschaffen,_ich_hoffe_du\lverstehst_das.\pIch_treffe_dich_dort,_\b\01!
+.end

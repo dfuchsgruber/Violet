@@ -1,0 +1,8 @@
+.string str_0x948c85 GER
+	=Es_tut_mir_im_Herzen_weh,_wie_ihr\njungen_Leute_das_Verm\$aechtnis\lmeiner_Generation_vernichtet.
+.end
+
+
+.string str_0x9497f6 GER
+	=Dass_du_nicht_einmal_den_Anstand\nhast,_zu_verlieren...
+.end

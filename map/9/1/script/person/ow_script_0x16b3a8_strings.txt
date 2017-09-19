@@ -1,0 +1,3 @@
+.string str_0x196800 GER
+	=Mein_Pok\emon_wurde_vergiftet!\nDas_Gift_hat_es_lange_nach_dem\lKampf_besiegt!
+.end

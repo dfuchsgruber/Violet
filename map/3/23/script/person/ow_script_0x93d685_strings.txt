@@ -1,0 +1,8 @@
+.string str_0x9498a0 GER
+	=Hast_du_es_schon_geh\$oert?\pDie_Laz.Corp_will_diesen_Monat\nnoch_ein_Produkt_namens_Pok\epad\lauf_den_Markt_bringen.\pAls_Ass-Trainer_muss_ich_mir_das\nauf_jeden_Fall_ansehen.
+.end
+
+
+.string str_0x94994a GER
+	=Wie,_du_besitzt_bereits_ein\nPok\epad?
+.end

@@ -1,0 +1,33 @@
+.string str_0x958c0b GER
+	=Willkommen_im_Orina_City_Museum.\nHier_kannst_du_dir_allerlei_antike\lAusstellungsst\$uecke_ansehen.\pDer_Eintritt_kostet_150\b7.\nM\$oechtest_du_eine_Karte_kaufen?
+.end
+
+
+.string str_0x958b7e GER
+	=Viel_Freude_bei_deinem_Aufenthalt.
+.end
+
+
+.string str_0x958bb4 GER
+	=Entschuldigung,_aber_mir_scheint,\ndu_hast_nicht_gen\$uegend_\b7_bei_dir.
+.end
+
+
+.string str_0x958cc7 GER
+	=Komm_jederzeit_wieder,_falls_du\ndir_unsere_Austellungsst\$uecke\lansehen_m\$oechtest.
+.end
+
+
+.string str_0x958d38 GER
+	=M\$oechtest_du_das_Museum_schon\nwieder_verlassen?
+.end
+
+
+.string str_0x958ab9 GER
+	=Bitte_hilf_uns!\nEin_Kommandant_von_Team_Violet_ist\lhier_eingefallen_und_will_unser\lwertvollstes_Ausstellungsst\$ueck\lstehlen.
+.end
+
+
+.string str_0x958b44 GER
+	=Bitte_komm_schnell_wieder_und\nvertreibe_diese_Schurken!
+.end

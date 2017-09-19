@@ -1,0 +1,3 @@
+.string str_0x95c8bf GER
+	=Selbst_die_Lobby_dieser_Firma\nstrahlt_einen_unvergleichlichen\lFuturismus_aus.
+.end

@@ -1,0 +1,3 @@
+.string str_0x936da7 GER
+	=Bis_vor_kurzem_war_der\nWassertunnel_eingest\$uerzt.\pArenaleiter_Manus_aus_Meriana_City\nhat_ihn_wieder_errichtet.
+.end

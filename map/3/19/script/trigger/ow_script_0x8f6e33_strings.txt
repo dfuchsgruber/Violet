@@ -1,0 +1,3 @@
+.string str_0x8a0956 GER
+	=Die_Trainerschule_liegt_westlich\nvon_Route_1._Ich_sollte_mich\lbeeilen,_sonst_verpasse_ich_noch\ldie_Pr\$uefungen!
+.end

@@ -1,0 +1,3 @@
+.string str_0x8bf9ef GER
+	=Die_Arbeit_auf_der_Farm_ist\nKnochenarbeit._Aber_sie_befreit\lden_Geist_und_bringt_einen_in\lEinklang_mit_der_Natur._Vor_allem\lzu_den_Voltilamm_habe_ich_eine\lenge_Beziehung_aufgebaut.
+.end

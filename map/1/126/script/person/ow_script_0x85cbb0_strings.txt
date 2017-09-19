@@ -1,0 +1,3 @@
+.string str_0x864574 GER
+	=Ich_w\$uerde_dir_nicht_empfehlen,\nnoch_tiefer_in_den_Vulkan_zu\lwandern.\pNicht,_dass_es_einen_Weg_g\$aebe...
+.end

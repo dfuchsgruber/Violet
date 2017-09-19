@@ -1,0 +1,3 @@
+.string str_0x936eb2 GER
+	=Mein_Freund_mag_die_feuchte_Luft\nin_diesem_Tunnel.
+.end

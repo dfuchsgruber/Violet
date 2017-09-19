@@ -1,0 +1,3 @@
+.string str_0x9553f8 GER
+	=Orina_City_Museum
+.end

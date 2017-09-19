@@ -1,0 +1,18 @@
+.string str_0x8aac71 GER
+	=Oh,_\b\01._Ich_h\$aette_es_beinahe\nvergessen,_dass_auch_ich_f\$uer_euch\lbeide_ein_Geschenk_habe.\lSeit_geraumer_Zeit_arbeite_ich\ln\$aemlich_an_einem_System,_dass\lhelfen_soll,_Trainer_von_\$ueberall\lmiteinander_zu_verbinden,_den\lWundertausch.\lDie_ganze_Sache_ist_sehr_aufregend\lund_einfach_zugleich:_Man_bietet\lein_Pok\emon_aus_seinem_Team_zum\lTausch_an_-_dann_wird_dieses_an\leinen_Trainer_irgendwo_auf_der\lWelt_versandt_und_mal_selbst\lerh\$aelt_dessen_verschicktes\lPok\emon._Das_Lustige_dabei_ist,\ldass_du_nie_wei\$st,_wo_dein_Pok\emon\lhingeschickt_wird_und_woher_die\lPok\emon,_die_man_selbst_erh\$aelt,\lwirklich_stammen.\lIch_werde_die_App_auf_deinem\lPokepad_installieren,_wenn_du\lerlaubst.
+.end
+
+
+.string str_0x8aa801 GER
+	=Elise_hat_die_Wundertausch-App_auf\ndem_Pokepad_installiert!
+.end
+
+
+.string str_0x8ab119 GER
+	=Je_\$oefter_du_den_Wundertausch\ndurchf\$uehrst,_desto_h\$oeher_steigt\lder_Level_der_App._Ist_dieser_erst\lgro\$s_genug,_steigen_auch_die\lChancen_seltene_Pok\emon_zu\lerhalten._Manche_von_ihnen_sind\lvon_Z\$uechtern_herangezogen_worden,\landere_tragen_seltene_Items_oder\lkennen_ungew\$oehnliche_Attacken,_die\landere_Trainer_sie_gelehrt_haben.\pMein_Traum_ist_es,_die_Barrieren\nder_R\$aeumlichkeit_zwischen_den\lTrainern_zu_durchbrechen_und_die\lWelt_zu_vereinigen._Es_w\$uerde_mich\lfreuen,_wenn_du_mir_dabei_hilfst,\lindem_du_den_Wundertausch_oft\lbenutzt.
+.end
+
+
+.string str_0x8a7951 GER
+	=In_naher_Zukunft_schon_werden\nviele_Trainer_den_Wundertausch\lnutzen._Davon_bin_ich_\$ueberzeugt!
+.end

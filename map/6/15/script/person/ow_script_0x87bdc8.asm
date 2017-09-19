@@ -6,9 +6,9 @@
 ow_script_0x87bdc8:
 lock
 faceplayer
-checkflag 0x1e5
+checkflag AKTANIA_GEODUDE_DONE
 gotoif EQUAL ow_script_0x87c2db
-checkflag 0x1e4
+checkflag AKTANIA_GEODUDE_ACCEPTED
 gotoif EQUAL ow_script_0x87c2b9
 loadpointer 0x0 str_0x87c7c7
 callstd MSG_YES_NO
@@ -16,7 +16,7 @@ compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x87c774
 loadpointer 0x0 str_0x87c738
 callstd MSG_FACE
-setflag 0x1e4
+setflag AKTANIA_GEODUDE_ACCEPTED
 release
 end
 
@@ -31,7 +31,7 @@ end
 
 .global ow_script_0x87c2b9
 ow_script_0x87c2b9:
-checkflag 0x1e3
+checkflag AKTANIA_GEODUDE_FOUGHT
 gotoif EQUAL ow_script_0x87c2cd
 loadpointer 0x0 str_0x87c738
 callstd MSG_FACE
@@ -43,7 +43,7 @@ end
 ow_script_0x87c2cd:
 loadpointer 0x0 str_0x87c5fa
 callstd MSG_FACE
-setflag 0x1e5
+setflag AKTANIA_GEODUDE_DONE
 release
 end
 

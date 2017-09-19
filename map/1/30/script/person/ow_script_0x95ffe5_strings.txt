@@ -1,0 +1,8 @@
+.string str_0x962cce GER
+	=Ich_bin_eine_Lady_von_hoher\nGeburt._Es_geziemt_sich,_dass_du\ldich_kampflos_ergibst.
+.end
+
+
+.string str_0x962d24 GER
+	=Dir_fehlt_die_Gallanz!\nR\$uepelhaftes_Benehmen...
+.end

@@ -1,0 +1,3 @@
+.string str_0x95eb56 GER
+	=Hui!_Schau_mal,_ich_wirble_Asche\nauf,_indem_ich_renne!_Hui!
+.end

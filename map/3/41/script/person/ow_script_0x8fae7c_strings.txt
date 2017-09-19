@@ -1,0 +1,93 @@
+.string str_0x8dcaa4 GER
+	=Der_R\$uepel_ist_wohl_nach_Norden\ngerannt,_in_Richtung_Route_3!
+.end
+
+
+.string str_0x8dca59 GER
+	=Oh,_du_hast_meine_Bibor\nzur\$ueckgebracht!_Vielen,_vielen\lDank!
+.end
+
+
+.string str_0x8dc421 GER
+	=\b\01_\$uebergibt_die_Bibor!
+.end
+
+
+.string str_0x8dc9a6 GER
+	=Was_ist_das?_Sieht_so_aus,_als\nwolle_eines_der_Bibor_bei_dir\lbleiben._Willst_du_das_Bibor_in\ldein_Team_aufnehmen?
+.end
+
+
+.string str_0x8fb02d GER
+	=Das_ist_aber_schade!_Komm_wieder,\nwenn_du_es_dir_anders_\$ueberlegt\lhast.
+.end
+
+
+.string str_0x8dc8dd GER
+	=Sieht_so_aus,_als_h\$aettest_du_nicht\ngenug_Platz_in_deinem_Team.\pKomm_wieder,_wenn_du_Platz_in\ndeinem_Team_hast.
+.end
+
+
+.string str_0x87ae8d GER
+	=\b\01_hat_Bibor_erhalten!
+.end
+
+
+.string str_0x8dcd2f GER
+	=K\$uemmere_dich_gut_um_Bibor!
+.end
+
+
+.string str_0x1a8bc9 GER
+	=Es_ist_kein_Platz_mehr_f\$uer_Pok\emon\nvorhanden!\pDie_Pok\emon_BOXEN_sind_voll_und\nes_kann_kein_Pok\emon_mehr\labgelegt_werden!
+.end
+
+
+.string str_0x1a8ac7 GER
+	=\b\03_wurde_auf_BILLs_PC\n\$uebertragen.\pEs_wurde_in_BOX\n\b1\b\02\b2_abgelegt.
+.end
+
+
+.string str_0x1a8b4b GER
+	=BOX_\b1\b\04\b2_in\nBILLs_PC_ist_voll.\p\b\03_wurde_in_BOX\n\b1\b\02\b2_\$uebertragen.
+.end
+
+
+.string str_0x1a8a83 GER
+	=\b\03_wurde_auf_JEMANDES_PC\n\$uebertragen.\pEs_wurde_in_BOX\n\b1\b\02\b2_abgelegt.
+.end
+
+
+.string str_0x1a8b08 GER
+	=BOX_\b1\b\04\b2_in\nJEMANDES_PC_ist_voll.\p\b\03_wurde_in_BOX\n\b1\b\02\b2_\$uebertragen.
+.end
+
+
+.string str_0x8dcba5 GER
+	=Oh,_du_siehst_aus_wie_ein_Trainer!\nEiner_dieser_Schurken_von_Team\lViolet_hat_mich_kurzerhand_aller\lmeiner_gez\$uechteten_Bibor_beraubt.\pIch_selbst_bin_kein_Trainer,_w\$aerst\ndu_also_so_freundlichen,_sie_mir\lwiederzuholen?
+.end
+
+
+.string str_0x8dcb0a GER
+	=Wie_\$ueberaus_r\$uehmlich_von_dir!_Ich\nbin_auf_deine_Hilfe_angewiesen!
+.end
+
+
+.string str_0x8dcb58 GER
+	=Wie_jammerschade!_Was_soll_ich\ndenn_als_Imker_nun_tun,_so_ganz\lohne_Bibor?
+.end
+
+
+.string str_0x8fcddd GER
+	=Bist_du_gekommen,_um_das_Bibor_in\ndein_Team_aufzunehmen?
+.end
+
+
+.string str_0x8dc958 GER
+	=Das_ist_aber_schade!_Solltest_du\ndeine_Meinung_\$aendern,_komm_einfach\lzu_mir.
+.end
+
+
+.string str_0x8dcd4c GER
+	=Ich_m\$oechte_dir_vielmals_danken,\ndass_du_mir_meine_Bibor\lzur\$ueckgebracht_hast.\pSie_sind_mein_ganzer_Stolz,_musst\ndu_wissen!
+.end

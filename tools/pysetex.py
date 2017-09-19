@@ -30,7 +30,7 @@ def export_tileset(rom, proj: project.Project, offset, symbol, gfx_symbol, expor
     block_data = rom.pointer(offset + 12)
     anim_init = rom.u32(offset + 16)
     behaviour_offset = rom.pointer(offset + 20)
-
+    
     t = pymap.tileset.Tileset(is_primary)
     if forced_block_size:
         t.blocks = [[0] * 8 for i in range(forced_block_size)]

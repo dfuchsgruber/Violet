@@ -1,0 +1,8 @@
+.string str_0x8fe86e GER
+	=Da_ich_nach_Kaskada_will,_muss_ich\nmich_durch_die_W\$ueste_k\$aempfen!
+.end
+
+
+.string str_0x8feac9 GER
+	=Ein_best\$aendiger,_ausdauernder\nKampfstil_ist_der_Schl\$uessel_zum\lErfolg!
+.end

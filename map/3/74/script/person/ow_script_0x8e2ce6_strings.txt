@@ -1,0 +1,33 @@
+.string str_0x8e2f49 GER
+	=Mein_Hobby_ist_es,_Beerensaft\nherzustellen._Gerade_arbeite_ich\lan_einem_Saft,_der_aus_dem_Extrakt\lvon_Sinelbeeren_hergestellt_wird.\lWenn_du_mir_gen\$uegend_Sinelbeeren\lbesorgst,_habe_ich_ein_Geschenk\lf\$uer_dich.\pIch_brauche_-_\$aehm_-_sagen_wir_etwa\l25_St\$ueck.\pWas_sagst_du_dazu?
+.end
+
+
+.string str_0x8e2d1b GER
+	=Etwa_25_Sinelbeeren_sollten\nausreichen,_um_meine_neuste\lKreation_fertigzustellen.
+.end
+
+
+.string str_0x8e2d79 GER
+	=Das_ist_\$aeu\$serst_schade._Wir_beide\nw\$uerden_davon_profitieren._Was_ich\ldir_zu_bieten_habe,_ist_f\$uer_jeden\lTrainer_sehr_begehrenswert.
+.end
+
+
+.string str_0x8e2f06 GER
+	=Oh,_wie_wunderbar!_Du_hast_mir_25\nSinelbeeren_besorgt!
+.end
+
+
+.string str_0x8e2ee7 GER
+	=\b\01_\$uebergibt_die\nSinelbeeren.
+.end
+
+
+.string str_0x8e2e62 GER
+	=Sei_unbesorgt,_ich_werde_nun_auch\nmeinen_Teil_der_Vereinbarung\lerf\$uellen._Nimm_diese_versteckte\lMaschine_als_Zeichen_meines\lDankes!
+.end
+
+
+.string str_0x8e3064 GER
+	=Beerensaft_heilt_die_Kraftpunkte\ndeines_Pok\emons_im_Kampf_und\lschmeckt_dazu_auch_noch_\$aeu\$sert\lgut!
+.end

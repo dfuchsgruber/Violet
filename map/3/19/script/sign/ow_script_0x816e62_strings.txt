@@ -1,0 +1,3 @@
+.string str_0x823a89 GER
+	=ROUTE_1:_Verbindungsstrecke\nAMONIA_-_MERIANA_CITY
+.end

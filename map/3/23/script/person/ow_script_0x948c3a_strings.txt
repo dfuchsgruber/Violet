@@ -1,0 +1,3 @@
+.string str_0x94c233 GER
+	=Hast_du_je_vom_wei\$sen_Albus\ngeh\$oert?\pEr_war_einst_Mitglied_der_Top_Vier\nund_leitet_jetzt_die_edle\lRevolutionsbewegung.\pEr_ist_ja_so_edel,_so_gro\$sm\$ue\$stig\nund_gro\$sherzig...
+.end

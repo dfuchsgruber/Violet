@@ -1,0 +1,3 @@
+.string str_0x94dddb GER
+	=Hast_du_je_vom_ber\$uechtigten\nPiraten_Blackbeard_geh\$oert?\pEr_handelt_mit_gestohlenen_Pok\emon\nund_karpert_Handelsschiffe.\pAuf_seine_Ergreifung_wurde_eine\nhohe_Belohnung_ausgesetzt.
+.end

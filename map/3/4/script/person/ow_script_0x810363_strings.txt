@@ -1,0 +1,3 @@
+.string str_0x8c8f0d GER
+	=Lord_Faun_wird_den_Revolution\$aeren\nzeigen,_wie_stark_ein_Mitglied_der\lTop_Vier_ist!
+.end

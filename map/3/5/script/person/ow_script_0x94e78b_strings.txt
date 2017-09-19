@@ -1,0 +1,3 @@
+.string str_0x94e795 GER
+	=Steh_auf,_du_versoffener_Hund!\nWo_warst_du_nur_wieder_die_ganze\lNacht?
+.end

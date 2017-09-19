@@ -1,0 +1,3 @@
+.string str_0x95a60e GER
+	=Der_goldene_Nachbau_des_fossilen\nPok\emons_Armaldo.\pEs_schimmert_r\$oetlich_im_fahlen\nLicht_der_Museumslampen.
+.end

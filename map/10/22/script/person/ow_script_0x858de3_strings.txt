@@ -1,0 +1,3 @@
+.string str_0x966059 GER
+	=Kann_man_das,_was_sie_im_Fernsehen\nzeigen,_\$ueberhaupt_noch_als_Sendung\lbezeichnen?\pIch_habe_viel_mehr_das_Gef\$uehl,\npermament_der_Werbung_ausgesetzt\lzu_sein.
+.end

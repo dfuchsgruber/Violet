@@ -1,0 +1,8 @@
+.string str_0x8e687b GER
+	=Ich_habe_Bedenken,_weiter_\$oestlich\nzu_wandern,_denn_dort_liegt_eine\lt\$oedliche_W\$ueste._Viele_Wanderer\lsollen_dort_bereits_verschwunden\lsein.
+.end
+
+
+.string str_0x8e6906 GER
+	=Vielleicht_bleibe_ich_lieber_hier,\nin_der_N\$aehe_des_Silvania-Waldes.
+.end

@@ -1,0 +1,3 @@
+.string str_0x8c7e2e GER
+	=Es_hei\$st,_dass_man_in_der_W\$ueste\ndie_Versteckte_Maschine_Blitz\lfinden_kann.\pGl\$uecklicherweise_ist_diese_H\$oehle\nnicht_dunkel.
+.end

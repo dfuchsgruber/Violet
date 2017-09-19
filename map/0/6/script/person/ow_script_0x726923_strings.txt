@@ -1,0 +1,8 @@
+.string str_0x8fb7a5 GER
+	=Ich_bin_hierher_gekommen,_um_mir\neines_der_seltenen_Fossil-Pok\emon\lzu_beschaffen.
+.end
+
+
+.string str_0x8fb810 GER
+	=Du_wirst_sie_mir_nicht_wegnehmen,\ndie_Fossil-Pok\emon!
+.end

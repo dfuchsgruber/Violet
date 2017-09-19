@@ -1,0 +1,173 @@
+.string str_0x8a7f97 GER
+	=Mein_Sohn_und_\b\01.\nDa_seid_ihr,_zwei_frisch_gebackene\lTrainer_und_schon_stark_genug,_es\lmit_den_Schergen_von_Team_Violet\laufzunehmen._Keiner_wei\$s_so_recht,\lwas_diese_Gruppe_eigentlich_im\lSchilde_f\$uehrt,_aber_scheinbar_sind\lsie_hinter_einem_Objekt_namens\lZeitstein_her._Ich_als_Archeologe\lmuss_zugeben,_bereits_von_diesem\lomin\$oesen_Stein_geh\$oert_zu_haben._Er\lwird_in_vielen_Legenden_erw\$aehnt\lund_soll_den_Fluss_der_Zeit\laufrecht_erhalten..._Wo_er_liegt\lwei\$s_aber_keiner!\l...\l...\lNun_aber_genug_dazu._Ich_wollte\leuch_ohnehin_aus_einem_anderem\lGrund_sehen:_Auch_ich_wollte_euch\lbeide_auf_eurem_neuen_Weg\lunterst\$uetzen.\pElise,_w\$uerdest_du?
+.end
+
+
+.string str_0x8a7f3d GER
+	=Elise:_Oh_ja,_sofort,_Professor\nTann!_Ich_bin_schon_auf_dem_Weg!
+.end
+
+
+.string str_0x8a7e8d GER
+	=Darf_ich_vorstellen?_Meine\nAssistentin_Elise._Sie_ist_die\lTochter_eines_Kollegen_von_mir_und\lhilft_mir,_beim_Digitalisieren\lmeiner_archeologischen_Studien.
+.end
+
+
+.string str_0x8a7dbf GER
+	=Elise:_In_der_Tat,_ich_bin_die\nTochter_von_Professor_Primus,\leinem_angesehenen_Physiker_der\lThetoregion._Als_Angestellte_der\lLaZ._Cooperation_bin_ich\lma\$sgeblich_an_der_Entwicklung_des\lPokepads_beteiligt.
+.end
+
+
+.string str_0x8a7930 GER
+	=Ihr_kennt_das_Pokepad_nicht?
+.end
+
+
+.string str_0x8a78f1 GER
+	=Das_ist_der_Grund,_wieso_ich_sie\nherbestellt_habe,_Elise.
+.end
+
+
+.string str_0x8a7830 GER
+	=Nat\$uerlich!_Ich_Dummerchen._Das\nPokepad_ist_ein_Gadget,_auf_dem\lman_die_verschiedensten_Apps\linstallieren_kann._Schon_bald_wird\lein_Trainerdasein_ohne_das_Pokepad\lnicht_mehr_denkbar_sein.
+.end
+
+
+.string str_0x8a77ae GER
+	=Ganz_genau._Und_als_Starthilfe\ngewisserma\$sen_will_ich_euch_beiden\ljeweils_eines_dieser_Ger\$aete\lschenken.
+.end
+
+
+.string str_0x8a7789 GER
+	=Wirklich?_Fantastisch,_Papi!\nJuhu!
+.end
+
+
+.string str_0x8a776a GER
+	=Vielen_Dank,_Professor_Tann.
+.end
+
+
+.string str_0x8aa319 GER
+	=\b\01_hat_das_Pokepad\nerhalten!
+.end
+
+
+.string str_0x8a7751 GER
+	=Danke,_Elise!
+.end
+
+
+.string str_0x8a76ee GER
+	=Aber_das_soll_noch_nicht_alles\nsein._Mein_n\$aechtes_Geschenk_ist\lmit_einer_Bitte_verbunden.
+.end
+
+
+.string str_0x8aabee GER
+	=\b\06:_Einer_Bitte?_Du_bist_schon\nwieder_so_ein_Spielverderber,\lPapi!
+.end
+
+
+.string str_0x8aa57d GER
+	=Elise:_Ich_darf_doch_bitten!_Der\nProfessor_macht_dir_ein_Geschenk,\ldu_k\$oenntest_ruhig_mal_etwas\lDankbarkeit_zeigen...
+.end
+
+
+.string str_0x8aa381 GER
+	=Ach,_das_macht_gar_nichts,_Elise.\nIch_kenne_meinen_Sohn_gut_genug,\lum_zu_wissen,_dass_er_nur_Sp\$ae\$se\lmacht...\lWie_dem_auch_sei_-_vor_vielen\lJahren_entwickelte_ein_genialer\lKopf_namens_Professor_Eich_den\lPokedex,_ein_Ger\$aet,_welches_Daten\l\$ueber_gesehene_und_gefangene\lPok\emon_aufzeichnet._Mit_der\lEntwicklung_des_Pokepads_sah_man\lden_Pokedex_immer_seltener,_bis\ldieser_schlie\$slich_digitalisiert\lund_ins_Pokepad_integriert_wurde.\lWenn_ihr_erlaubt,_w\$uerde_ich_gerne\ldie_Pokedex-App_auf_eurem_Pokepad\linstallieren.
+.end
+
+
+.string str_0x8aa372 GER
+	=Danke,_Papi!
+.end
+
+
+.string str_0x8aa338 GER
+	=Die_Pokedex-App_wurde_auf_dem\nPokepad_installiert!
+.end
+
+
+.string str_0x8aa305 GER
+	=Dankesehr,_Elise.
+.end
+
+
+.string str_0x8aa27f GER
+	=Gut,_gut._H\$aetten_wir_das_also_auch\nabgehakt._Ich_nehme_an,_ihr_beiden\lhabt_in_der_Trainerschule_gelernt,\lwie_man_ein_Pok\emon_f\$aengt?
+.end
+
+
+.string str_0x8aa22a GER
+	=Nat\$uerlich,_Papi!_Herr_Faun_hat_uns\nalles_beigebracht,_was_ein_Trainer\lk\$oennen_muss!
+.end
+
+
+.string str_0x8aa1b8 GER
+	=Sprecht_ihr_etwa_von_dem_Faun?_Dem\nruhmreichen_Trainer_vergangener\lTage?_Den,_den_sie_die_'rosa\lFaust'_nannten?
+.end
+
+
+.string str_0x8aa184 GER
+	=Kennst_du_etwa_noch_einen_anderen\nFaun,_Elise?
+.end
+
+
+.string str_0x8a9f82 GER
+	=Faun_war_fr\$ueher_ein_mal_ein_gro\$ser\nTrainer,_eine_Ber\$uehmtheit,_wenn\lman_so_will._Doch_irgendwann_im\lLeben_kommt_der_Punkt,_da_man\letwas_an_kommende_Generationen\lweitergeben_will_und_so_hat_Faun\leine_Trainerschule_er\$oeffnet,_um\langehenden_Trainern_sein_Wissen\lmitzugeben.\lUm_aber_aufs_Thema_zur\$ueckzukommen:\lDer_Pokedex_registriert_Daten,\lwenn_ihr_einem_Pok\emon_begegnet.\lFangt_ihr_es,_so_speichert_er_noch\lmehr_Informationen_dar\$ueber_ab.\lNat\$uerlich_braucht_ihr,_um_Pok\emon\lfangen_zu_k\$oennen,_erst_einmal\lPokeb\$aelle.
+.end
+
+
+.string str_0x8a9c83 GER
+	=\b\06_hat_5_Pokeb\$aelle_erhalten!
+.end
+
+
+.string str_0x8a9a4c GER
+	=Ich_kann_es_noch_immer_nicht\nfassen_-_ich_habe_euch_beide_schon\lgekannt,_da_habt_ihr_noch_im\lKindbett_gelegen_und_jetzt_zieht\lihr_hinaus_in_die_weite_Welt,_auf\lder_Suche_nach_Ruhm_und_St\$aerke.\lWenn_ich_euch_einen_Rat_auf_den\lWeg_mitgeben_will,_dann_diesen:\lK\$aempft_nicht_f\$uer_Macht,_k\$aempft\lnicht_f\$uer_Achtung,_k\$aempft_nicht\lohne_Herz._Pok\emon_sind_Lebewesen\lwie_wir_Menschen,_gleichgestellt.\lWir_messen_einander_im_Kampf_des\lSpa\$ses_halber,_nicht_um_zu\lvernichten._Nur,_wer_ein_starkes\lBand_zwischen_sich_und_seinen\lPok\emon_spannt,_kann_in_dieser\lWelt_erfolgreich_sein.
+.end
+
+
+.string str_0x8a99f1 GER
+	=Das_war_eine_sch\$oene_Ansprache,\nProfessor._Wirklich_fesselnd_und\lnur_allzu_zutreffend.
+.end
+
+
+.string str_0x8a9950 GER
+	=Du_warst_schon_immer_einer,_der\nviel_redet,_Papi!_Immer_diese_\$oeden\lAnsprachen._Es_ist_doch\lselbstverst\$aendlich,_dass_Trainer\lund_Pok\emon_Freunde_werden_m\$uessen!
+.end
+
+
+.string str_0x8a992f GER
+	=(Was_antwortest_du?)
+.end
+
+
+.string str_0x8f6d34 GER
+	=#\70\8f\_spnr\98A\8f\_spnrFaun,_die_Pinke\nFaust,_der\nnoch_heute_die\nRegion_regiert...
+.end
+
+
+.string str_0x8a9771 GER
+	=Ich_danke_Ihnen_vielmals,\nProfessor,_auch_wenn_es_sehr_naiv\list,_zu_glauben,_dass_Freundschaft\lund_Liebe_allein_in_dieser_Welt\lbestehen_k\$oennen._Nur_wer_ehrgeizig\lsein_Ziel_nicht_aus_den_Augen\lverliert,_kann_auch_erfolgreich\lsein._Nat\$uerlich_enstehen_auch\ldabei_Freunschaften._Ihre_Worte\lsind_hoffnungsvoll,_und_voller\lHoffnung_werde_ich_mich_dieser\lWelt_stellen.
+.end
+
+
+.string str_0x8ab043 GER
+	=Es_freut_mich,_wenn_auch_meine\nIdeale_in_der_kommenden_Generation\lweiterleben._Die_Hoffnung,_die_ich\leuch_beiden_auf_den_Weg_gebe,_wird\lder_Grundstein_f\$uer_eine_neue_Zeit\lsein,_eure_Zeit.
+.end
+
+
+.string str_0x8aafd4 GER
+	=Auch_ich_w\$uensche_euch_beiden_viel\nGl\$ueck_auf_eurem_Weg._Bei_Fragen\lstehe_ich_euch_gerne_mit_Rat_zur\lSeite.
+.end
+
+
+.string str_0x8a965b GER
+	=Ich_danke_Ihnen_vielmals,\nProfessor._In_Ihren_Worten_steckt\lnichts_als_die_Wahrheit._Wahre\lKraft_findet_man_nur_in_dem_Band,\ldas_Mensch_und_Pok\emon\lgleicherma\$sen_vereint._Ihre_Worte\lsind_voller_Hoffnung,_und_diese\lHoffnung_werde_ich_hinaustragen_in\ldieser_weite_Welt!_
+.end
+
+
+.string str_0x8ad201 GER
+	=\b\01_hat_5_Pokeb\$aelle\nerhalten!
+.end

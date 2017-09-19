@@ -1,0 +1,3 @@
+.string str_0x926aaa GER
+	=Interessant_sind_die_goldenen\nKakteen_in_dieser_W\$uestenregion._In\lihnen_leben_manchmal_Pok\emon.
+.end

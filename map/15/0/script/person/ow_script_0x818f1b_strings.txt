@@ -1,0 +1,8 @@
+.string str_0x818f6a GER
+	=Ein_Experte_zu_sein,_bringt_viele\nVorteile_mit_sich.
+.end
+
+
+.string str_0x818f33 GER
+	=Ein_Experte_zu_sein,_bringt_auch\nNachteile_mit_sich.
+.end

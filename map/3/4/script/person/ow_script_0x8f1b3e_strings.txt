@@ -1,0 +1,3 @@
+.string str_0x8f1b48 GER
+	=Willst_du_mich_verurteilen,_dass\nich_mir_mein_Essen_in_M\$uelltonnen\lsuche?\pVerurteile_lieber_das_System,_das\neinem_alten_Mann_nicht_genug_zu\lEssen_gibt!
+.end

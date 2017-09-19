@@ -1,0 +1,8 @@
+.string str_0x93bb9e GER
+	=Merk_dir_meinen_Namen,_Bursche!\nEines_Tages_werde_ich_die_ganze\lWelt_umwandert_haben!
+.end
+
+
+.string str_0x93bbf6 GER
+	=Merke_dir_diesen_Triumph_\$ueber\nmich,_den_Weltumwanderer!
+.end

@@ -189,7 +189,7 @@ u16 map_wild_pokemon_get_current_table_id(); //returns 0xFFFF if none matches
 extern mapheader **mapbanks[];
 extern mapfooter *mapfooters[];
 tileset *tilesets = (tileset*) 0x082D49B8;
-wild_pokemon_data **wild_pokemon_data_ptr = (wild_pokemon_data**) 0x080828F4;
+extern wild_pokemon_data wild_pokemon[]; //= (wild_pokemon_data**) 0x080828F4;
 u8 **map_namespaces = (u8**) 0x083F1504;
 
 void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);

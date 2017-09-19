@@ -1,0 +1,3 @@
+.string str_0x926cf8 GER
+	=Mann,_ich_w\$uerde_zu_gerne_die\nParole_kennen,_um_in_dieses_Haus\lzu_kommen!\pOb_sie_geheime_Tee-Klub_Treffen\nabhalten?
+.end

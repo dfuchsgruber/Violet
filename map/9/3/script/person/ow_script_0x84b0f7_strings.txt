@@ -1,0 +1,3 @@
+.string str_0x85ffad GER
+	=Aufgrund_meines_Alters_vergesse_ich\nnicht_selten_Diskretionsabstand\leinzahlten.
+.end

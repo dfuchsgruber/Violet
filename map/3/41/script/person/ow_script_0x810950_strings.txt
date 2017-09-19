@@ -1,0 +1,8 @@
+.string str_0x810968 GER
+	=Ich_f\$uehle,_was_andere_f\$uehlen...
+.end
+
+
+.string str_0x810989 GER
+	=Ich_f\$uehle...
+.end

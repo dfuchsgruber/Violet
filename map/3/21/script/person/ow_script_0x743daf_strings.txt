@@ -1,0 +1,8 @@
+.string str_0x744635 GER
+	=Als_ich_mich_in_der_N\$aehe_eines\ngoldenen_Kaktusses_aufgehalten\lhabe,_hat_mich_ein_Tuska\langefallen.\lIch_habe_es_gefangen!
+.end
+
+
+.string str_0x7446c2 GER
+	=Mein_Tuska....
+.end

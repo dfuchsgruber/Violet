@@ -1,0 +1,8 @@
+.string str_0x93d5fd GER
+	=Ich_habe_geh\$oert,_dass_Menschen,\ndie_sich_dem_Himmel_verbunden\lf\$uehlen,_auf_Wolken_reiten_k\$oennen.
+.end
+
+
+.string str_0x948bab GER
+	=Was_machst_du_denn_so_einen\ngrimmigen_Gesichtsausdruck?\lHat_dir_irgendetwas_die_Laune_am\lLeben_verdorben?
+.end

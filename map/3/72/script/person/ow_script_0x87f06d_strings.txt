@@ -1,0 +1,3 @@
+.string str_0x8a05dd GER
+	=Diese_Statue_stellt_ein_Pok\emon\nvom_Typen_Stahl_und_Fee_dar._Es\lhei\$st_Flunkifer.
+.end

@@ -1,0 +1,28 @@
+.string str_0x93824f GER
+	=-Hust-\n-Keuch-\lArgh!_Ich_bin_...\lHast_du_vielleicht_etwas_Geld_f\$uer\lmich?\lBitte,_ich_habe_Hunger_und_Durst!
+.end
+
+
+.string str_0x938223 GER
+	=Wie_viel_\b7_m\$oechtest_du_dem\nFremden_geben?
+.end
+
+
+.string str_0x937e89 GER
+	=
+.end
+
+
+.string str_0x937e0e GER
+	=Vielen_...\n-Hust-\l-Keuch-\lDank_....
+.end
+
+
+.string str_0x937e6d GER
+	=Du_hast_nicht_gen\$uegend_\b7.
+.end
+
+
+.string str_0x937dbf GER
+	=-Keuch-\nHerzloser_Junge...\l..._Kein_Respekt_...\l-Keuch-
+.end

@@ -219,8 +219,19 @@ class Pymap_gui(tkinter.Frame):
             #self.selected_event_by_drag.y = y
             #self._refresh_event(self.event_type, self.event_id)
             update_info(e)
+
+        def event_map_canvas_b2_press(e):
+            """ Button 1 double click (follow warp if possible)"""
+            if not self._can_draw(): return
+            event_map_canvas_b1_press(e) #Select the event regulary
+            print("double", self.event_type)
+            if self.event_type == "Warp":
+                self.open_map(self.selected_event_by_drag.target_bank, self.selected_event_by_drag.target_map)
+            
+
         self.event_map_widget_canvas.bind("<B1-Motion>", event_map_canvas_b1_motion)
         self.event_map_widget_canvas.bind("<Motion>", update_info)
+        self.event_map_widget_canvas.bind("<Button-2>", event_map_canvas_b2_press)
 
         #Setup editing widget at border
         self.event_edit_widget = ttk.Labelframe(self.event_frame, text="Properties")

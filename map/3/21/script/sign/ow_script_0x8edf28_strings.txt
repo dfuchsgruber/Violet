@@ -1,0 +1,13 @@
+.string str_0x926b9d GER
+	=Der_Katkus_schimmert_golden_in_der\nW\$uestensonne._M\$oechtest_du_an_ihm\lr\$uetteln?
+.end
+
+
+.string str_0x926c53 GER
+	=Nichts_passiert...
+.end
+
+
+.string str_0x926beb GER
+	=\b\01_l\$aesst_den_Kaktus_in\nRuhe.
+.end

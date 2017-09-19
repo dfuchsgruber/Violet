@@ -164,7 +164,7 @@ class Ascript_exploration_tree:
         self.strings = []
         self.recursive = True
     
-    def explore(self, offset, verbose=False, recursive=True):
+    def explore(self, offset, verbose=False, recursive=True, pedantic=False):
         """ Explores an offset of a script tree """
         self.offsets.append(offset)
         self.recursive = recursive

@@ -7,6 +7,8 @@
 #include "evolution.h"
 #include "abilities.h"
 
+#define NEXT_POKEMON_SHINY 0x407C
+
 #define POKEMON_CNT 0x1B9
 
 #define LANGUAGE_JAP 0x201

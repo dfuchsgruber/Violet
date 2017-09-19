@@ -1,0 +1,8 @@
+.string str_0x95e1ca GER
+	=Von_Zeit_zu_Zeit_fliegt_ein\nbrennendes_Pok\emon_\$ueber_diese\lGegend.\pIch_werde_es_fangen!
+.end
+
+
+.string str_0x95e223 GER
+	=Wenn_du_ein_brennendes\nFlug-Pok\emon_findest,_sag_mir\lbescheid,_ja?
+.end

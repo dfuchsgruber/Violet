@@ -1,0 +1,3 @@
+.string str_0x95ce0c GER
+	=B\$uecher_sind_der_Weg,_einen_Geist\nauch_\$ueber_den_Tod_hinweg_am_Leben\lzu_erhalten.
+.end

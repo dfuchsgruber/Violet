@@ -1,0 +1,23 @@
+.string str_0x9633f9 GER
+	=Hui!_Asche_sammeln_macht_Spa\$s!\nUnd_wei\$st_du,_was_noch_mehr_Spa\$s\lmacht?\pDie_gesammelte_Asche_zu_teilen.\nIch_werde_dir_etwas_Asche_geben!
+.end
+
+
+.string str_0x96332e GER
+	=\b\01_hat_500_Asche_erhalten.
+.end
+
+
+.string str_0x96359a GER
+	=Der_nette_Mann_im_Aschhain_stellt\nheilsame_Fl\$oeten_aus_Asche_her.\pDu_solltest_ihm_deine_Asche\nbringen.
+.end
+
+
+.string str_0x963356 GER
+	=Oh!_Deine_Aschetasche_scheint_ja\nganz_sch\$oen_voll_zu_sein!\pAm_besten_gibst_du_dem_netten_Mann\nim_Aschhain_etwas_davon,_dann_kann\ler_dir_eine_Fl\$oete_daraus_machen!
+.end
+
+
+.string str_0x96348d GER
+	=Findest_du_nicht,_dass_das_Asche\nsammeln_Spa\$s_macht?\pAber_du_scheinst_ja_gar_keine\nAschetasche_zu_besitzen,_wie\lwillst_du_denn_dann_Asche_sammeln?\pBesuch_doch_den_netten_Mann_im\nAschhain_und_seinen_Sohn.\lDort_wird_man_dir_sicherlich_eine\lAschetasche_geben.
+.end

@@ -1,0 +1,3 @@
+.string str_0x8f38f8 GER
+	=Die_Revolutionsbewegung_fordert\nFreiheit_und_ein_Ende_der\lKorruption.\lKeine_schlechten_Forderungen,_wenn\lman_bedenkt,_wie_sich_die_Welt\lentwickelt_hat...
+.end

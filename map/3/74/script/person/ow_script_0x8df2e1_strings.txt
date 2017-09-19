@@ -1,0 +1,8 @@
+.string str_0x8e101d GER
+	=Dieser_Weg_f\$uehrt_ostw\$aerts_in_eine\nW\$ueste._Halte_dich_lieber_fern!
+.end
+
+
+.string str_0x8e1060 GER
+	=W\$uesten_sind_trocken_und_hei\$s...
+.end

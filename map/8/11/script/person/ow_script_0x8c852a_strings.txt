@@ -1,0 +1,3 @@
+.string str_0x8c8b6b GER
+	=Wieso_ich_mich_Team_Violet\nangeschlossen_habe?\pMein_Leben_war_bedeutungslos,_bis\nman_mir_die_Chance_gegeben_hat,\ldie_Welt_zu_einem_besseren_Ort_zu\lmachen.\pViele_sehen_nicht,_dass_wir_der\nWelt_Frieden_bringen.
+.end

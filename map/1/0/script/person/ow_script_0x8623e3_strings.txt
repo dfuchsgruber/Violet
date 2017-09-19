@@ -1,0 +1,8 @@
+.string str_0x8f2a42 GER
+	=Nenn_mich_einen_Spielverderber,\naber_wenn_ich_etwas_nicht_gut\lfinde,_sollte_es_verboten_werden.\lMeine_Moralvorstellungen_sollten\ldas_Ma\$s_aller_Dinge_sein.
+.end
+
+
+.string str_0x8f2adf GER
+	=Dein_Kampfstil_geh\$oert_verboten!
+.end

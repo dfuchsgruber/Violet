@@ -1,0 +1,8 @@
+.string str_0x95a56d GER
+	=\b1Das_Magmaherz_-_die_Essenz_der\nErde_und_Landmassen\b1
+.end
+
+
+.string str_0x959487 GER
+	=..._Das_Schild_wurde\ndurchgestrichen_...
+.end

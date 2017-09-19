@@ -1,0 +1,3 @@
+.string str_0x94d7a4 GER
+	=Ich_hatte_erneut_eine_Vision,_wie\nich_sie_auch_von_der_Zerst\$oerung\lAktanias_hatte...\pNur_war_etwas_anders...\nFaun_und_Larissa,_sie_haben_beide\lso_anders_gewirkt...\p\$AElter..._Gezeichnet_von_etwas\nSchrecklichem!\p..._..._...\nW\$aere_es_m\$oeglich,_dass_diese_Bilder\lder_Zukunft_entstammen?\lWo_ich_doch_die_Vergangenheit\lsehen_konnte...\pWenn_ich_mit_meiner_Vermutung\nRecht_habe,_schwebt_diese_Welt_in\lgro\$ser_Gefahr.\pIch_muss_herausfinden,_was_es_mit\nall_dem_auf_sich_hat.
+.end

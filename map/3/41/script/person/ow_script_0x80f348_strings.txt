@@ -1,0 +1,8 @@
+.string str_0x80f360 GER
+	=Sieh_mal,_was_ich_mir_f\$uer_K\$aefer\ngefangen_habe!
+.end
+
+
+.string str_0x80f391 GER
+	=Meine_K\$aefer!!
+.end

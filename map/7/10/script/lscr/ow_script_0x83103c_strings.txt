@@ -1,0 +1,33 @@
+.string str_0x8310dc GER
+	=Nun_gut!_Der_Kampf_in_der\nSilvania-Arena_m\$oege_nun_beginnen!\lDer_Herausforderer_\b\01_tritt\lgegen_Mia_an.
+.end
+
+
+.string str_0x83114c GER
+	=Denke_nicht,_dass_ich_mich\nzur\$ueckhalte!_Ich_gebe_alles!
+.end
+
+
+.string str_0x8311a8 GER
+	=Unfassbar,_unglaublich!
+.end
+
+
+.string str_0x8311c0 GER
+	=Dieser_Kampf_war_wirklich\n\$ueberragend!_Den_Ranken-Orden\lhast_du_dir_redlich_verdient!
+.end
+
+
+.string str_0x8f2a1f GER
+	=\b\01_hat_den_Ranken-Orden\nerhalten!
+.end
+
+
+.string str_0x8f36ad GER
+	=Nun_hast_du_wirklich_bewiesen,\ndass_du_es_mit_Team_Violet\laufnehmen_kannst.\lNimm_au\$serdem_noch_diese\pTechnische_Maschine,_sie_wird\ndeine_Pok\emon_st\$aerker_machen.
+.end
+
+
+.string str_0x8f3750 GER
+	=Diese_Technische_Maschine_enth\$aelt\nGigasauger._Sie_f\$uegt_deinem_Gegner\lSchaden_zu_und_stellt_die_Kraft\ldes_Anwenders_gleichzeitig_wieder\lher._Die_perfekte_Waffe_im_Kampf\lgegen_Team_Violet.\lIch_bitte_dich,_rette_den_Wald,\lvertreibe_diese_b\$oesen_Menschen!
+.end

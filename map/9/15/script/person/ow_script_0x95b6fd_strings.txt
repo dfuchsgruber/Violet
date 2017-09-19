@@ -1,0 +1,3 @@
+.string str_0x95c7d2 GER
+	=Fossilien_h\$aeufen_sich_dort,_wo\neine_hohe_Mineralkonzentration\lvorherrscht.\pAuf_diese_Weise_k\$oennen_wir\neffizienter_antike_Pok\emon\lrestaurieren.
+.end

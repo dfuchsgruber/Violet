@@ -1,0 +1,3 @@
+.string str_0x9586a8 GER
+	=Hey,_du_Pimpf!_Bist_du_uns_etwa\nvon_Route_2_bis_hierher_gefolgt?\pVerschwinde,_ehe_unser_Anf\$uehrer\nmit_dir_den_Boden_aufwischt!
+.end

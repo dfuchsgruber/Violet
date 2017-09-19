@@ -1,0 +1,3 @@
+.string str_0x87f2d9 GER
+	=Bist_du_mit_den_Entscheidungen,\ndie_du_getroffen_hast,_zufrieden?\lStehst_du_hinter_dem,_was_du_getan\lhast?_H\$aettest_du_mehr_tun_sollen?
+.end

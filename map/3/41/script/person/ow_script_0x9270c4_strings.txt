@@ -1,0 +1,13 @@
+.string str_0x8abe1c GER
+	=Acht_lange_Jahre_habe_ich_f\$uer_die\nLaz.Corp_geschuftet._Acht_lange\lJahre_habe_ich_mich_der\lEntwicklung_von_Software_gewidmet.\lAcht_lange_Jahre_habe_ich\lkaltherzig_Pok\emon_ausgebeutet,\lnur_des_Fortschritt_wegens.\lJetzt_endlich_habe_ich_meine\lFehler_eingesehen._Es_ist_falsch,\lPok\emon_f\$uer_kommerzielle_Zwecke\lauszunutzen.\lHier,_nimm_das._Ich_habe_daf\$uer\lkeine_Verwendung_mehr.
+.end
+
+
+.string str_0x8ab77f GER
+	=Das_Linkkabel_simuliert_einen\nechten_Pok\emon_Tausch,_sodass\ljene,_die_sich_erst_im_Tausch\lentwickeln,_auf_diese_Weise_zu\lihrer_Evolution_gelangen_k\$oennen.\lIst_es_nicht_grotesk,_wozu_unsere\lTechnik_f\$aehig_ist?_Pok\emon_zur\lEvolution_zwingen?_...\lAber_nicht_mit_mir..._Soll_die\lLaz.Corp_doch_machen,_was_sie_f\$uer\lrichtig_h\$aelt._Ich_halte_mich_da_ab\ljetzt_raus!
+.end
+
+
+.string str_0x8ab6bf GER
+	=Mein_Boss_wollte,_dass_ich_ein\nRaum-Zeit-Portal_konstruiere,_dass\ldie_Lebensenergie_von_Pok\emon_als\lEnergiequelle_nutzt..._Ab_diesem\lPunkt_war_mir_klar,_dass_es_so\lnicht_weitergehen_kann...
+.end

@@ -1,0 +1,3 @@
+.string str_0x94e49f GER
+	=Der_Kontrast_aus_Blumen_und_Metall\nmacht_Orina_City_zu_dem_sch\$oenen\lOrt,_der_es_ist.
+.end

@@ -1,0 +1,13 @@
+.string str_0x71ab1f GER
+	=Vorhin_war_ein_h\$uebsches_M\$aedchen\nmit_rotem_Kopftuch_hier!
+.end
+
+
+.string str_0x8fb233 GER
+	=Sie_war_vielleicht_h\$uebsch_aber\nebenso_stark!
+.end
+
+
+.string str_0x71ab61 GER
+	=Sie_war_stark!
+.end
