@@ -9,7 +9,7 @@
 #define GFX_ANIM_HFLIP 0x80
 
 #define GFX_ANIM_LOOP_START 0xFFFC
-#define GFX_ANIM_JUMP_LOOP_STARt 0xFFFD
+#define GFX_ANIM_JUMP_LOOP_START 0xFFFD
 #define GFX_ANIM_JUMP 0xFFFE
 #define GFX_ANIM_END 0xFFFF
 
@@ -141,6 +141,7 @@ void gfx_init_animation(oam_object* oam, u8 next_frame);
 void rotscal_new_animation(oam_object* oam, u8 animation_index);
 u8 get_obj_pal_by_tag(u16 tag);
 u16 get_obj_tile_by_tag(u16 tag);
+void oam_rs_free(oam_object *oam);
 
 void oam_null_callback(oam_object *self);
 

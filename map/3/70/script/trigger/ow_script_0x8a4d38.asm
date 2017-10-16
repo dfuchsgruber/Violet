@@ -419,7 +419,7 @@ return
 .global ow_script_0x8a6efe
 ow_script_0x8a6efe:
 copyvarifnotzero 0x8000 ITEM_GEGENGIFT
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 closeonkeypress
 applymovement 0xff ow_script_movs_0x8a5dfe

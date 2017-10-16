@@ -2,11 +2,13 @@
 
 @// Wild data map_15_0_wild_grass
 .global map_15_0_wild_grass
+.align 4
 map_15_0_wild_grass:
 .byte 0x10 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_15_0_wild_grass_entries
 
+.align 4
 map_15_0_wild_grass_entries:
 .byte 9, 12 @//Level range
 .hword POKEMON_VOLTILAMM @// 20 percent percent
@@ -35,11 +37,13 @@ map_15_0_wild_grass_entries:
 
 @// Wild data map_15_0_wild_water
 .global map_15_0_wild_water
+.align 4
 map_15_0_wild_water:
 .byte 0xb @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_15_0_wild_water_entries
 
+.align 4
 map_15_0_wild_water_entries:
 .byte 26, 30 @//Level range
 .hword POKEMON_LOTURZEL @// 60 percent percent
@@ -54,11 +58,13 @@ map_15_0_wild_water_entries:
 
 @// Wild data map_15_0_wild_other
 .global map_15_0_wild_other
+.align 4
 map_15_0_wild_other:
 .byte 0x82 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_15_0_wild_other_entries
 
+.align 4
 map_15_0_wild_other_entries:
 .byte 10, 14 @//Level range
 .hword POKEMON_MOGELBAUM @// 60 percent percent
@@ -73,11 +79,13 @@ map_15_0_wild_other_entries:
 
 @// Wild data map_15_0_wild_rod
 .global map_15_0_wild_rod
+.align 4
 map_15_0_wild_rod:
 .byte 0xb @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_15_0_wild_rod_entries
 
+.align 4
 map_15_0_wild_rod_entries:
 .byte 26, 30 @//Level range
 .hword POKEMON_LOTURZEL @// 70 percent, rod percent

@@ -194,5 +194,9 @@ void bsc_init_by_interrupting_battle_func(u8 *bsc);
 u16 pokemon_get_basic_stage(u16 species);
 void bsc_cmd_x06_apply_damage_modifiers();
 void remove_pc_item(u16 item, u16 quantity);
+void dma3_add_request(void *src, void *dst, u16 size);
+void fanfare(u16 song_id);
+u8 weather_get();
+void pokedex_set_caught_and_load_pid(u16 dex_id, u8 flags, u32 pid);
 
 #endif

@@ -4,20 +4,21 @@
 
 
 .string str_0x89ba97 GER
-	=Guten_Morgen,_\b\01.\nIch_hoffe_du_hast_gut_geschlafen?\lZumindest_lange_genug._Hast_du\letwa_schon_vergessen,_was_f\$uer_ein\lTag_heute_ist?_Die\lAbschlusspr\$uefung_der_Trainerschule\lbeginnt_in_ein_paar_Minuten.\l\b\06_wird_jeden_Moment_-
+	=Guten Morgen \b\01.\pDu hast wieder einmal verschlafen!\pUnd ausgerechnet heute, wo doch\ndeine Abschlusspr\$uefung in der\lTrainerschule ansteht.\pBeeil dich lieber, \b\06\nwird jeden Moment -
 .end
 
 
 .string str_0x947c6c GER
-	=\b\01,_du_Schlafm\$uetze!_In_f\$uenf\nMinuten_geht_die_Pr\$uefung_los._Wenn\lwir_zu_sp\$aet_kommen,_k\$oennen_wir_uns\lkeines_der_starken_Pok\emon\lschnappen!\lWie_hei\$st_es_doch:_Das_fr\$uehe\lStaralili_f\$aengt_das_Waumpel.\pUnd_du_kannst_weder_fliegen,\nnoch_bist_du_fr\$ueh_dran.\pAlso_los!_Beeil_dich!
+	=\b\01, du Schlafm\$uetze!\pDie Pr\$uefung beginnt gleich\nund du bist noch gar nicht\lrichtig aus den Federn gekommen!\pWenn wir zu sp\$aet\nkommen, wird uns Faun eine\lordentliche Standpauke halten und\lwir wissen ja, wie er sein kann...\pAlso los! Komm in die G\$aenge!\pIch gebe dir eine halbe Minute!
 .end
 
 
 .string str_0x89ad96 GER
-	=Was_f\$uer_ein_seltsamer_Auftritt...
+	=Was f\$uer ein Auftritt...
 .end
 
 
 .string str_0x89ad05 GER
-	=\b\06_war_schon_immer_ein_Hitzkopf\nvon_einem_Chaoten._Du_solltest_ihn\llieber_nicht_warten_lassen.\l..\l...\lUnd_viel_Gl\$ueck_bei_deiner_Pr\$uefung\lheute!
+	=\b\06 hatte schon immer etwas von\neinem Hitzkopf an sich...\pDu solltest ihn lieber nicht\nwarten lassen, bef\$uerchte ich.\pUnd nat\$uerlich viel\nGl\$ueck bei deiner Pr\$uefung, Liebling!
 .end
+

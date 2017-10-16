@@ -2,11 +2,13 @@
 
 @// Wild data map_3_3_wild_water
 .global map_3_3_wild_water
+.align 4
 map_3_3_wild_water:
 .byte 0x11 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_3_wild_water_entries
 
+.align 4
 map_3_3_wild_water_entries:
 .byte 30, 30 @//Level range
 .hword POKEMON_SEEPER @// 60 percent percent
@@ -21,11 +23,13 @@ map_3_3_wild_water_entries:
 
 @// Wild data map_3_3_wild_rod
 .global map_3_3_wild_rod
+.align 4
 map_3_3_wild_rod:
 .byte 0x11 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_3_wild_rod_entries
 
+.align 4
 map_3_3_wild_rod_entries:
 .byte 30, 30 @//Level range
 .hword POKEMON_SEEPER @// 70 percent, rod percent

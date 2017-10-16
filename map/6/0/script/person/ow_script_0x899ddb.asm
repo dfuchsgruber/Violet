@@ -41,7 +41,7 @@ loadpointer 0x0 str_0x89a91d
 callstd MSG
 bufferitem 0x0 ITEM_GENGARNIT
 copyvarifnotzero 0x8000 ITEM_GENGARNIT
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x87f3c1

@@ -1,8 +1,8 @@
 import sys, getopt, ntpath, os
+import agb
 
-
-STDINFILE = "C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
-STDTABLEFILE = "table.tbl"
+STDINFILE = path=agb.FRDPATH#"C:/Users/Domi/Dropbox/Pokemon Violet/Pokemon Violet.gba"
+STDTABLEFILE = "../table.tbl"
 
 def main(argv):
     try:
@@ -56,7 +56,9 @@ def promt(table, rev_table, bytes, terminator):
             if usr_cmd[0].lower() in ("h", "help"):
                 print_help()
             elif usr_cmd[0].lower() in ("f", "findall"):
-                findall(bytes, parse_str(usr_cmd[1], table, terminator), rev_table)
+                pattern = parse_str(usr_cmd[1], table, terminator)
+                for occurence in findall(bytes, pattern, rev_table):
+                    print("Found at", str(hex(0x8000000+occurence)), "\t", context(bytes, occurence, pattern, rev_table))
             elif usr_cmd[0].lower() in ("r", "replaceall"):
                 bytes = replaceall(bytes, parse_str(usr_cmd[1], table, terminator), parse_str(usr_cmd[2], table, terminator), rev_table)
             elif usr_cmd[0].lower() in ("w", "wb", "writeback"):
@@ -73,6 +75,38 @@ def promt(table, rev_table, bytes, terminator):
                 table_dump(bytes, usr_cmd[1], usr_cmd[2], usr_cmd[3], usr_cmd[4], rev_table, terminator)
             elif usr_cmd[0].lower() in ("q", "quit", "e", "exit"):
                 sys.exit(0)
+            elif usr_cmd[0].lower() in ("fr", "findrefs"):
+                pattern = parse_str(usr_cmd[1], table, terminator)
+                occurences = findall(bytes, pattern, rev_table)
+                for occurence in occurences:
+                    print("Found at", str(hex(0x8000000+occurence)), "\t", context(bytes, occurence, pattern, rev_table))
+                    refs = findall(bytes, bytearray([occurence & 0xFF, (occurence >> 8) & 0xFF, (occurence >> 16) & 0xFF, ((occurence >> 24) & 0xFF) + 8]), rev_table)
+                    for ref in refs: print("\tref at\t" + str(hex(0x08000000 + ref)))
+            elif usr_cmd[0].lower() in ("frr", "findrefsandrepoint"):
+                pattern = parse_str(usr_cmd[1], table, terminator)
+                label = usr_cmd[2]
+                xrefs = []
+                occurences = findall(bytes, pattern, rev_table)
+                for occurence in occurences:
+                    print("Found at", str(hex(0x8000000+occurence)), "\t", context(bytes, occurence, pattern, rev_table))
+                    refs = findall(bytes, bytearray([occurence & 0xFF, (occurence >> 8) & 0xFF, (occurence >> 16) & 0xFF, ((occurence >> 24) & 0xFF) + 8]), rev_table)
+                    xrefs += refs
+                    for ref in refs: print("\tref at\t" + str(hex(0x08000000 + ref)))
+                for ref in xrefs:
+                    print(".org " + str(hex(0x08000000 + ref)))
+                    print("\t.word", label)
+
+            elif usr_cmd[0].lower() in ("d", "dump"):
+                offset = int(usr_cmd[1], 0)
+                if offset > 0x08000000: offset = offset - 0x08000000
+                s = "@" + hex(offset) + ":\n\t"
+                while True:
+                    byte = bytes[offset]
+                    s += rev_table[byte]
+                    offset += 1
+                    if byte == terminator: break
+                print(s)
+                     
         except Exception as e:
             print(e)
 
@@ -132,10 +166,9 @@ def findall(bytes, pattern, rev_table):
         if j <= i: break
         i = j
         occurrences.append(i)
-    
-    for occurence in occurrences:
-        print("Found at", str(hex(0x8000000+occurence)), "\t", context(bytes, occurence, pattern, rev_table))
+    return occurrences
 
+    
 
 
 def print_help():

@@ -13,7 +13,7 @@ faceplayer
 loadpointer 0x0 str_0x9499a7
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_SANFTGLOCKE
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x949a41
 callstd MSG_FACE

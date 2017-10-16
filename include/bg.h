@@ -15,6 +15,7 @@
 extern "C" {
 #endif
 
+#define MAP_BGN_AUTO_ALIGN_OFF 0x916
     typedef struct {
         u32 bg_id : 2;
         u32 char_base : 2;
@@ -26,7 +27,7 @@ extern "C" {
 
     void bg_setup(u8 tile_mode, bg_config configs[], u8 config_cnt);
 
-
+    void *gp_tmp_buf = (void*)0x0201C000;
 
 #ifdef	__cplusplus
 }

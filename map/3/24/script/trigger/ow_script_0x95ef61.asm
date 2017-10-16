@@ -28,7 +28,7 @@ loadpointer 0x0 str_0x95f255
 callstd MSG_KEEPOPEN
 special 0x7
 copyvarifnotzero 0x8000 ITEM_VM03
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 call ow_script_0x89ba6e
 loadpointer 0x0 str_0x95f051

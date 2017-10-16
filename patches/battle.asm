@@ -16,6 +16,13 @@
 .org 0x080738C4
         .word battle_anim_bgs
 
+
+.org 0x0800F3D8
+        .word gfx_battle_boxTiles
+
+.org 0x0800F3E0
+        .word gfx_battle_boxPal
+
 //bsc strings
 	
 
@@ -115,10 +122,25 @@ blxr4:
         bx r4
         .pool
 
+
+
+.org 0x0807FBC0
+        ldr r0, =battle_bg_by_tile | 1
+        bx r0
+        .pool
+
+.org 0x0802d9b0
+        .word battle_bg_catch
+
 .org 0x800FBB0
         ldr r0, =battle_bg_get_id | 1
         bx r0
         .pool
+
+
+
+.org 0x080CE03C
+        .byte 13 //battle bg evo
         
 //@battlestring remove the bsc string limitation (extend it to 0x7FFF)
 .org 0x080D7988
@@ -159,4 +181,16 @@ blxr4:
         ldr r0, =hook_clear_temporary_effects | 1
         bx r0
         .pool
+
+.org 0x08015778
+    ldr r0, =battle_whiteout_bypass | 1
+    bx r0
+    .pool
+
+.org 0x08080404
+    .word trainerbattle_after_battle | 1
+
+.org 0x08080050
+    .word hook_battle_result
+    .word hook_battle_result
 

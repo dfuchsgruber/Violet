@@ -55,6 +55,12 @@ def export_tileset(rom, proj: project.Project, offset, symbol, gfx_symbol, expor
                             _bitfield(value, 18, 24), _bitfield(value, 24, 27), _bitfield(value, 27, 29),
                             _bitfield(value, 29, 31), _bitfield(value, 31, 32)]))
 
+        """
+        #This exportation is only relevant for violet as the fourth bitfield (18:24) will be exported from (16:24) (battle bg)
+        t.behaviours[i] = list(map(hex, [_bitfield(value, 0, 9), _bitfield(value, 9, 14), _bitfield(value, 14, 16),
+                            _bitfield(value, 16, 24), _bitfield(value, 24, 27), _bitfield(value, 27, 29),
+                            _bitfield(value, 29, 31), _bitfield(value, 31, 32)]))"""
+
     t.symbol = symbol
     if delete_anim_edit:
         t.init_func = "0"

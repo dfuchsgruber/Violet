@@ -197,4 +197,12 @@ void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);
 mapheader *get_mapheader(u8 bank, u8 map);
 mapfooter *get_mapfooter();
 
+u16 *tileset_anim_clk0 = (u16*)0x03000FAE;
+u16 *tileset_anim_clk0_cycle = (u16*)0x03000FB0;
+u16 *tileset_anim_clk1 = (u16*)0x03000FB2;
+u16 *tileset_anim_clk1_cycle = (u16*)0x03000FB4;
+void (**tileset_anim_0)(u16) = (void(**)(u16))0x03000FB8;
+void (**tileset_anim_1)(u16) = (void(**)(u16))0x03000FBC;
+
+
 #endif

@@ -5,6 +5,6 @@
 .global ow_script_0x8fb342
 ow_script_0x8fb342:
 copyvarifnotzero 0x8000 ITEM_BELEBER
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_FIND
 end

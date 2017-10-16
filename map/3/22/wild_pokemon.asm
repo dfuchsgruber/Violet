@@ -2,11 +2,13 @@
 
 @// Wild data map_3_22_wild_grass
 .global map_3_22_wild_grass
+.align 4
 map_3_22_wild_grass:
 .byte 0x15 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_22_wild_grass_entries
 
+.align 4
 map_3_22_wild_grass_entries:
 .byte 21, 25 @//Level range
 .hword POKEMON_WINGULL @// 20 percent percent
@@ -35,11 +37,13 @@ map_3_22_wild_grass_entries:
 
 @// Wild data map_3_22_wild_water
 .global map_3_22_wild_water
+.align 4
 map_3_22_wild_water:
 .byte 0x2 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_22_wild_water_entries
 
+.align 4
 map_3_22_wild_water_entries:
 .byte 5, 10 @//Level range
 .hword POKEMON_TENTACHA @// 60 percent percent
@@ -54,11 +58,13 @@ map_3_22_wild_water_entries:
 
 @// Wild data map_3_22_wild_other
 .global map_3_22_wild_other
+.align 4
 map_3_22_wild_other:
 .byte 0x9f @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_22_wild_other_entries
 
+.align 4
 map_3_22_wild_other_entries:
 .byte 23, 26 @//Level range
 .hword POKEMON_WINGULL @// 60 percent percent
@@ -73,11 +79,13 @@ map_3_22_wild_other_entries:
 
 @// Wild data map_3_22_wild_rod
 .global map_3_22_wild_rod
+.align 4
 map_3_22_wild_rod:
 .byte 0x2 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_22_wild_rod_entries
 
+.align 4
 map_3_22_wild_rod_entries:
 .byte 5, 10 @//Level range
 .hword POKEMON_TENTACHA @// 70 percent, rod percent

@@ -20,7 +20,7 @@ waitmovement 0x0
 loadpointer 0x0 str_0x8f5bee
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_BELEBER
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x87f3c1

@@ -91,10 +91,16 @@ callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 goto ow_script_0x8f6e54
 
+.align 4
+meriana_revo_choice:
+    .word str_meriana_revo_choice_0, 0
+    .word str_meriana_revo_choice_1, 0
+    
+
 
 .global ow_script_0x8f6e54
 ow_script_0x8f6e54:
-loadpointer 0x0 str_0x8e1015
+loadpointer 0x0 meriana_revo_choice
 goto ow_script_0x8e1b14
 
 
@@ -178,7 +184,7 @@ waitmovement 0x0
 loadpointer 0x0 str_0x8e0aa8
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_HYPERTRANK
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x8e0a79
 callstd MSG

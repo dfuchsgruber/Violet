@@ -1,100 +1,100 @@
 .string str_0x89dc19 GER
-	=\b\01!_Na_los,_komm_her!_Die_anderen\nwerden_jeden_Moment_da_sein!
+	=\b\01! Na los, komm schon!
 .end
 
 
 .string str_0x89db85 GER
-	=Ich_bin_schon_ganz_aufgeregt_auf\ndie_praktische_Pr\$uefung._Ich_bin\lmir_nicht_sicher,_wie_viele_von\lden_Fragen_ich_richtig_beantworten\lkonnte...
+	=Endlich geht es ans Eingemachte!\nDieser \$oede Test hatte es in sich,\laber wenn es ums K\$aempfen geht, bin\lich euch allen haushoch \$ueberlegen!
 .end
 
 
 .string str_0x89d956 GER
-	=Sieh_mal,_da_ist_Maike._Sie_ist\nerst_vor_ein_paar_Wochen_mit_ihrem\lBruder_Brix_nach_Theto_gezogen.\lAngeblich_war_er_eine_gro\$se_Nummer\lin_Hoenn_und_sie_hat_hier_ihre\lPr\$uefungen_nachgeholt.
+	=Da kommt auch schon Maike.\pSie ist vor einiger Zeit mit ihrem\nBruder Brix nach Theto gekommen.\lDer war wohl eine ziemlich gro\$se\lNummer in Hoenn und sie versucht\laus seinem Schatten zu steigen.
 .end
 
 
 .string str_0x980cd8 GER
-	=Maike:_\b\06,_\b\01!\nHabt_ihr_die_Ger\$uechte_schon\lgeh\$oert?_Demjenigen,_der_als_bester\lbei_den_theoretischen_Pr\$uefungen\labgeschnitten_hat,_wollen_sie_ein\lschillerndes_Pok\emon_schenken!_Ich\lhabe_selbst_noch_nie_ein\lschillerndes_Pok\emon_gesehen...\lMan_sagt,_sie_haben_eine_andere\lFarbe_als_\$ueblich_und_glitzern\lmerkw\$uerdig!_Das_h\$oert_sich_spannend\lan,_nicht?
+	=\b\01, \b\06!\pWas haltet ihr denn von den\nGer\$uechten, die man sich erz\$aehlt?\lDer Klassenbeste soll ein\lschillerndes Pok\emon von Faun\lbekommen.\pAufregend nicht? Mein Bruder\nhat mir einmal von schillernden\lPok\emon erz\$aehlt.\pSie sind sehr selten und\nglitzern in einer f\$uer die Art\lun\$uebliche Farbe.\pAllerdings mache ich\nmir keine zu gro\$sen Hoffnungen...
 .end
 
 
 .string str_0x89e366 GER
-	=Und_da_kommt_Blaise._Keiner_wei\$s\nwirklich_etwas_\$ueber_ihn..._Er\lspricht_so_gut_wie_nie_und_ist\lauch_sonst_immer_abweisend._Und\lwenn_man_ihn_dann_mal_anspricht,\list_er_unfreundlich...\lEin_seltsamer_Kerl...
+	=Und das ist Blaise.\pEr ist ein ziemlicher Miesepeter,\nwenn du mich fragst.\pWenn er einmal etwas sagt, ist\nes eigentlich nie sonderlich nett...
 .end
 
 
 .string str_0x89e350 GER
-	=Blaise:_..._..._...
+	=Diese Schule macht mich krank...
 .end
 
 
 .string str_0x89e03c GER
-	=Es_hei\$st_er_sei_der_Sohn_einer_der\nst\$aerksten_Trainer_Thetos._Er_und\lFaun_sollen_den_gleichen_Rang\lhaben!_Wahnsinn,_nicht?_Ob_Blaise\lals_Sohn_eines_solchen_Trainers\lauch_so_begabt_ist?_Und_was_ist\ldann_erst_mit_Faun?_Man_w\$uerde\leinem_alten_Mann_wie_ihm_niemals\lzutrauen,_zur_Elite_der\lPok\emon-Trainer_zu_geh\$oeren,_findet\lihr_nicht_auch?_Er_steckt_voller\l\$UEberraschungen,_meine_ich.\lManchmal_frage_ich_mich,_wie_stark\ler_wirklich_ist,_ihr_etwa_nicht?
+	=Sein Vater soll ein sehr m\$aechtiger\nTrainer sein und wie wir unter\lFaun gelernt haben.\pWegen ihm ist Blaise \$ueberhaupt\nhier, denn ich denke, wenn es nach\lBlaise ginge, h\$aetten wir ihn in\lder Trainerschule nie zu Gesicht\lbekommen.
 .end
 
 
 .string str_0x89e210 GER
-	=Das_ist_Felix,_Fauns_Enkel.\nAnfangs_hab'_ich_noch_geglaubt,\ldass_sein_eigener_Gro\$svater_ihn\lvielleicht_bevorzugt_behandeln\lw\$uerde,_aber_scheinbar_ist_er_ihm\lgegen\$ueber_nur_noch_strenger._Faun\lmag_ein_guter_Mann_sein,_aber_ist\ler_ein_strenger_Lehrer,_findet_ihr\lnicht_auch?
+	=Ah und zu guter letzt kommt auch\nendlich noch Felix.\pEr ist der Enkel von Faun und man\nsollte glauben, dass er dadurch\lirgendwelche Vorteile genie\$st,\laber das Gegenteil ist der Fall.\pMit niemandem sonst geht Faun\nso hart ins Gericht!
 .end
 
 
 .string str_0x89df52 GER
-	=Felix:_Hey_Leute!_Freut_mich_euch\nzu_sehen._Hattet_ihr_auch_so_ein\lgutes_Gef\$uehl_bei_der_Pr\$uefung\lgerade_eben?_Ich_hoffe,_ich_kann\lin_der_praktischen_Pr\$uefung_ebenso\lgut_abschneiden._Mal_sehen,_welche\lAufgabe_mir_Opi_diesmal_vorsetzt.
+	=Hallo Leute!\pHattet ihr ein gutes Gef\$uehl bei\nder Pr\$uefung?\pIch denke, dass Faun keinen von\nuns wirklich durchfallen lassen\lw\$uerde...\pBis auf mich vielleicht, wenn\nich es mir so recht \$ueberlege!
 .end
 
 
 .string str_0x89df1e GER
-	=Hey,_Blaise!_Und_wie_lief_der_Test\nbei_dir?
+	=Na Blaise? Wie immer schlecht\ngelaunt?\pSei doch nicht immer so ein\nSpielverderber.\pWie ist es dir denn in der\nPr\$uefung ergangen?
 .end
 
 
 .string str_0x89de07 GER
-	=..._..._...\nDer_Test_war_ein_Witz._Kein\lanst\$aendiger_Trainer_braucht_einen\lTest,_um_k\$aempfen_zu_k\$oennen._Wenn\lmein_dummer_Vater_nicht_gewesen\lw\$aere,_h\$aette_ich_nie_mit_dir_im\lKlassenzimmer_gesessen.\lWahre_St\$aerke_und_wahre_Macht\lkannst_du_nicht_aus_B\$uechern\lerlangen,_Einfaltspinsel!
+	=Das kann dir noch gleichg\$ueltiger\nsein als mir.\pVom Auswendiglernen ist noch\nniemand ein guter Trainer geworden.\pDiese ganze Trainerschule ist\neine v\$oellig hinf\$aellige Einrichtung.\pFaun will nicht einsehen,\ndass seine glorreichen Tage\lgez\$aehlt sind und versucht jetzt mit\laller M\$uehe einen Beitrag zu leisten...\pW\$aere mein dummer Vater\nnicht, h\$aette ich diesem ganzen\lKindergarten hier entgehen k\$oennen.
 .end
 
 
 .string str_0x89ee4c GER
-	=Du_hast_Recht,_\b\06.\nEr_ist_wirklich_ein_unfreundlicher\lZeitgenosse_und_arrogant_noch\ldazu...
+        =Du hast Recht, \b\06!\pBlaise ist wirklich unm\$oeglich...
 .end
 
 
 .string str_0x89eda2 GER
-	=Nungut,_ich_habe_eure_Ergebnisse\nim_theoretischen_Teil_nun\lausgewertet._Gruppiert_euch_nun\lbitte_in_einer_Reihe,_sodass_ich\leuch_die_praktische_Pr\$uefung\lerl\$aeutern_kann.
+	=So zusammen! Ich bin soeben mit der\nAuswertung eurer Ergebnisse fertig\lgeworden.\pWir werden nun mit der\npraktischen Pr\$uefung beginnen,\lbitte stellt euch dazu in einer\lReihe auf.
 .end
 
 
 .string str_0x89ebfb GER
-	=Vorz\$ueglich!_Nun_geht_es_an_die\npraktische_Pr\$uefung._Sie_besteht\laus_drei_Teilen_-_zum_einen_der\lKampf_gegen_ein_wildes_Pok\emon,\lzum_anderen_der_Kampf_gegen_einen\landeren_Trainer._Als_letztes_dann\lwerden_eure_F\$aehigkeiten_im_Bereich\lFangen_von_Pok\emon_getestet.\lHabt_keine_Angst,_jeder_von_euch\lwird_es_schaffen,_ich_bin_mir\lsicher._Dennoch_m\$uesst_ihr_alles\lgeben._Kein_Ass-Trainer_ist_bisher\lvom_Himmel_gefallen.\l...
+	=Nun gut! Die praktische Pr\$uefung\nsetzt sich aus drei Teilen\lzusammen.\pZuerst werdet ihr ein wildes\nPok\emon bezwingen, dann eines\leinfangen und zuletzt noch\lgegeneinander in einem\lTrainerkampf antreten.
 .end
 
 
 .string str_0x89ea85 GER
-	=Nun_gut,_ich_habe_f\$uenf_sehr\nseltene_Pok\emon_f\$uer_euch\lmitgebracht._Jedes_steht_noch_am\lAnfang_seiner_Zeit_und_birgt_ein\lPotenzial,_das_nur_ein_Trainer_mit\lEngagement_zum_Vorschein_bringen\lkann._Einer_zuf\$aelligen_Reihenfolge\lnach_werdet_ihr_eure_Pok\emon\lausw\$aehlen_d\$uerfen.\l...\l...\lAls_erstes_bitte,_Blaise.\lTritt_nach_vorne_und_entscheide\ldich_f\$uer_eines_der_f\$uenf_Pok\emon.
+	=Zuallererst braucht ihr aber noch\nein Pok\emon, mit welchem ihr die\lPr\$uefung und eure Trainerkarriere\lbestreiten wollt.\pEs wird euer Partner sein und\neuch durch schwierige und\lgl\$ueckliche Zeiten begleiten.\pZuerst w\$uerde ich Blaise\nbitten, eines dieser f\$uenf Pok\emon\lauszuw\$aehlen. Trete bitte vor!
 .end
 
 
 .string str_0x89ea1d GER
-	=Ein_Pok\emon_vom_Typen_Unlicht._Es\nwird_mir_gute_Dienste_erweisen_und\lzu_Macht_verhelfen.\l...
+        =Zumindest ein kleiner Ausgleich f\$uer\ndiese Farce...
 .end
 
 
 .string str_0x89e9d4 GER
-	=Als_n\$aechster_an_der_Reihe_bist_du,\nFelix._Komm_bitte_nach_vorne.
+        =Der n\$aechste w\$aerst dann du Felix,\nkomm bitte auch zu mir.
 .end
 
 
 .string str_0x89e939 GER
-	=Danke,_Opi_-_...\$aehm_-_ich_meinte\nnat\$uerlich_Hr._Faun._Ich_habe\lbereits_von_diesem_Pok\emon_geh\$oert.\lIch_denke_ich_und_es_werden_gute\lFreunde_werden.
+        =Danke Opi - \$aehm ich meine nat\$uerlich\nHerr Faun!\pMit diesem Pok\emon an meiner\nSeite kann mich kein Hindernis\lstoppen!
 .end
 
 
 .string str_0x89e90e GER
-	=\b\01,_w\$uerdest_du_nun_bitte\nvortreten?
+        =\b\01, w\$uerdest nun du bitte\nvortreten?
 .end
 
 
 .string str_0x89e896 GER
-	=Es_sind_noch_drei_Pok\emon_\$uebrig.\nW\$aehle_weise,_denn_es_wird_dein\lPartner_und_Freund_sein_und_dich\ltreu_begleiten.
+	=Es sind noch drei Pok\emon \$uebrig\ngeblieben, aber w\$aehle trotzdem mit\lBedacht.\pEines dieser Pok\emon wird dein\ntreuer Freund und Parnter werden.
 .end
 
 
@@ -104,127 +104,126 @@
 
 
 .string str_0x89f11e GER
-	=Du_hast_eine_vorz\$uegliche_Wahl\ngetroffen._Du_und_dein_Pok\emon,\lihr_werdet_sicherlich_gute_Freunde\lwerden.
+	=Eine vorz\$uegliche Wahl!\pIch hatte mir schon gedacht, dass\ndu dich f\$uer \b\02 entscheiden\lw\$uerdest.\pEs passt wirklich hervorragend\nzu dir.
 .end
 
 
 .string str_0x89fa22 GER
-	=Soweit_so_gut._\b\06,_du_bist\nals_N\$aechster_dran._Tritt_vor!
+	=Soweit so gut, als n\$aechsten w\$uerde\nich bitte \b\06 bitten.
 .end
 
 
 .string str_0x89fa5d GER
-	=Oh_man!_Das_wird_ein_Spa\$s_werden!
+	=Ich bin ja schon so aufgeregt!
 .end
 
 
 .string str_0x89f966 GER
-	=Dieses_Pok\emon_gef\$aellt_mir!_Ich\nwerde_der_St\$aerkste_Pok\emon_Trainer\laller_Zeiten_und_eines_Tages_die\lTop_Vier_und_sogar_den_Champ\lherausfordern._Merke_dir_meinen\lNamen,_\b\06,_Welt!
+	=Dieses Pok\emon ist genau richtig!\nDamit werde ich ohne Zweifel der\lst\$aerkste Trainer Thetos werden!
 .end
 
 
 .string str_0x89f8b8 GER
-	=Und_als_Letztes_Maike._Deine\nAuswahl_ist_leider_nicht_mehr\lgro\$s,_aber_ich_habe_das_Gef\$uehl,\ldass_das_verbleibene_Pok\emon_und\ldu_trotzdem_ein_gutes_Team_bilden\lwerdet.
+	=Und zuletzt noch Maike, f\$uer dich\nbleibt noch ein einziges Pok\emon\l\$uebrig.
 .end
 
 
 .string str_0x89f86e GER
-	=Das_ist_wahrlich_ein_tolles\nPok\emon._Ich_werde_mein_Bestes\lgeben!
+	=Ok, dann nehme ich wohl dieses.
 .end
 
 
 .string str_0x89f7c9 GER
-	=Gut,_da_ihr_nun_alle_ein_Pok\emon\nerhalten_habt,_m\$uesst_ihr_nun_euren\lersten_Kampf_bestreiten._Reiht\leuch_bitte_hintereinander_ein_und\lfolgt_mir_zum_hohen_Gras.
+	=Da ihr nun alle mit einem Pok\emon\nausgestattet seid, beginnen wir\lmit dem ersten Teil der\lpraktischen Pr\$uefung.\pFolgt mir bitte alle zum hohen\nGras.
 .end
 
 
 .string str_0x89f64c GER
-	=Nun_gut,_hier_seht_ihr_sogenanntes\nhohes_Gras._Im_hohen_Gras_leben\lwilde_Pok\emon,_ungez\$aehmt_und\langriffsfreudig._Haltet_ihr_euch\lzulange_im_hohen_Gras_auf,_so_kann\leuch_ein_wildes_Pok\emon\lattackieren._In_diesem_Teil_der\lPr\$uefung_werdet_ihr_gegen_ein\lsolches_wildes_Pok\emon_k\$aempfen.\lDen_Anfang_macht_diesmal\lvielleicht_-_\$aehm_-_wie_w\$aere_es_mit\ldir,_\b\06?
+	=Im hohen Gras lauern wilde Pok\emon,\ndie ihr besiegen k\$oennt, um\lErfahrungspunkte zu sammeln und so\leuren eigenen Pok\emon zu St\$aerke zu\lverhelfen.\p\b\06, warum machst du nicht\nden Anfang?
 .end
 
 
 .string str_0x89f603 GER
-	=Oh_ja,_super!_Dann_kann_ich_gleich\nzeigen,_was_mein_Pok\emon_drauf\lhat!
+	=Oh super, dann kann ich gleich\nzeigen, was mein Pok\emon drauf hat!
 .end
 
 
 .string str_0x8a02c9 GER
-	=Whoho!_Ein_Pok\emon_springt_aus_dem\nGras!
+	=Woah! Ein Pok\emon ist aus dem Gras\ngesprungen!
 .end
 
 
 .string str_0x8a0269 GER
-	=Yeah!_Das_war_kein_Problem_f\$uer\nmein_Pok\emon._Ein_Kinderspiel.\lReizlos!_Ich_bin_der_Beste!
+	=Ha! Das war ein Kinderspiel!\nAbsolut kein Problem f\$uer den\lk\$uenftigen st\$aerksten Trainer der\lWelt!
 .end
 
 
 .string str_0x8a01ae GER
-	=..._Komm_wieder_runter,\nEinfaltspinsel._Du_hast_ein_wildes\lPok\emon_besiegt,_nicht_die_Top\lVier_geschlagen._Das_ist_keine\lLeistung_im_Angesicht_dessen,_was\ldir_als_Trainer_bevorsteht...
+	=Peinlich...
 .end
 
 
 .string str_0x8a001e GER
-	=Blaise!_Sei_nicht_so_arrogant_und\nherablassend._Selbst_dein_Vater\lhat_nicht_den_Hochmut,_jemanden\lwegen_etwas_zu_verspotten,_das_man\lselbst_noch_nicht_gewagt_hat.\lNichtsdestotrotz_ist_an_Blaise\lAussage_schon_etwas_Wahres_dran.\lWilde_Pok\emon_werden_euch_im_Laufe\lder_Zeit_zu_Hauf_begegnen.\lManchmal_ist_es_zeitsparender,_vor\lihnen_zu_fliehen,_selbst_wenn_man\lin_der_Lage_w\$aere,_sie_zu_besiegen.
+	=Blaise! So langsam ist es genug mit\ndeinen herablassenden Spr\$uechen.\pDein Vater hat dich auch in meine\nObhut gegeben, um dir den n\$oetigen\lRespekt vor Pok\emon und Trainern\lbeizubringen.\pDiese Tugenden sind genauso\nwichtig wie gute Fertigkeiten im\lKampf, das muss dir klar sein!
 .end
 
-
 .string str_0x89fe98 GER
-	=Wenn_du_schon_so_gro\$se_T\$oene\nspuckst,_Blaise,_wieso_versuchst\ldu_es_dann_nicht_als_N\$aechster?
+	=Au\$serdem wenn du schon so gro\$se\nT\$oene spuckst, warum versuchst du\les nicht erst einmal, Blaise?
 .end
 
 
 .string str_0x89fe3d GER
-	=Es_stellt_keine_Herausforderung\ndar,_gegen_ein_wildes_Pok\emon_zu\lk\$aempfen._Ich_verzichte!
+	=Wohl eher nicht. Ich habe bereits,\nwas ich brauche, um meinen Vater\lin die Schranken zu weisen.\pDieses Pok\emon wird mir zu\ngro\$ser Macht verhelfen, warum\lsollte ich mir diesen Kindergarten\lalso weiter zumuten?
 .end
 
 
 .string str_0x89fd21 GER
-	=F\$uer_wen_h\$aeltst_du_dich_eigentlich,\nverzogenes_Balg?_Dein_Vater_hat\lmir_aufgetragen,_dich\lzurechtzuweisen_und_dir_das\lTrainerdasein_beizubringen._Und_so\ldankst_du_es_mir?_Willst_du_deinem\lVater_so_in_den_R\$uecken_fallen?_Du\lwirst_diese_Pr\$uefung_absolvieren,\lwie_alle_anderen_auch.
+	=Jetzt h\$oer mir mal zu, du verzogenes\nBalg!\pIch habe keine M\$uehen gescheut,\naus euch f\$aehige junge Trainer zu\lmachen, und so willst du es mir\lund deinem Vater danken?
 .end
 
 
 .string str_0x89fc50 GER
-	=Nein._Sie_irren_sich._So_wie_mein\nVater,_der_Ignorant._Er_ist_es\lnicht_w\$uerdig,_ein_derart_m\$aechtiger\lTrainer_zu_sein._Ich_habe_bereits\lwas_ich_wollte_-_ein_Pok\emon._Sie\lk\$oennen_mir_nichts_mehr_beibringen.\l...
+	=Es ist mir egal, was Sie von mir\nhalten.\pSie selbst sind auch nicht mehr\nals ein Relikt aus vergangen Tagen.\pSie m\$oegen ja einmal ein\ngro\$sartiger Trainer gewesen sein,\laber in Zukunft werden neue Kr\$aefte\lden Ton angeben.\pIch brauche mich nicht vor\nIhnen zu rechtfertigen, ich werde\lauf eigene Faust meinen Vater\lst\$uerzen und mir diese Welt zu F\$ue\$sen legen.\pIn diesem Sinne w\$uensche\nich noch ein angenehmes Leben!
 .end
 
 
 .string str_0x89fba5 GER
-	=..._Blaise...\nWas_tust_du_nur_wieder?_Dieser\lStarrkopf_mit_seinem_ewigen_Hass\lauf_alles_und_jeden..._Ich_werde\lihn_sp\$aeter_zur_Vernunft_bringen\lm\$uessen...
+	=Das ist doch nicht zu fassen!\pWie kann jemand nur derart\nverbissen gegen alles und jeden\lvorgehen?
 .end
 
 
 .string str_0x8a039f GER
-	=Dieser_vollkommene_Narr!_Nicht\neinmal_sein_Vater_hatte_ein\lsolches_Temperament!_Er_wird_es\lnoch_bereuen,_sich_von_mir\labgewandt_zu_haben...\p...\pWie_dem_auch_sei,_lasst_uns_bitte\ndiesen_-_\$aehm_-_Vorfall_vergessen\lund_mit_der_Pr\$uefung_fortfahren.
+	=Argh! Dieser Narr! Er kommt viel zu\nsehr nach seinem Vater...\p...\pLassen wir uns davon aber nicht\nabbringen.
 .end
 
 
 .string str_0x8a0376 GER
-	=Maike,_w\$uerdest_du_nun\n\$aehm...?
+	=Maike, w\$uerdest du bitte - \$aehm...
 .end
 
 
 .string str_0x8a035f GER
-	=Oh_-_\$aeh_-_nat\$uerlich!
+	=Oh \$aeh ja, nat\$uerlich, nat\$uerlich!
 .end
 
 
 .string str_0x8a02fb GER
-	=Uff..._Das_war_knapp!_Aber_ich_hab\nes_geschafft!_Das_ist_ein\lwichtiger_Schritt_f\$uer_mich...
+	=Puh! Diese wilden Pok\emon sind ganz\nschon furchteinfl\$oe\$send...
 .end
 
 
 .string str_0x89ff93 GER
-	=Das_hast_du_gut_gemacht,_Maike.\nWer_will_als_N\$aechster?\l\b\01?
+	=Unsinn, das hast du gut gemeistert!\p\b\01, w\$uerdest du nun vortreten?
 .end
 
 
 .string str_0x89fefb GER
-	=Wenn_ein_Pok\emon_dich_angreift,\nachte_darauf,_seine_Kraftpunkte\lschnellstm\$oeglich_auf_0_zu\lreduzieren._Nur_so_kannst_du_den\lKampf_gewinnen.
+	=Wenn dich ein Pok\emon angreift,\nversuche seine Kraftpunkte auf 0\lzu reduzieren.
 .end
 
 
 .string str_0x8a10a1 GER
-	=Sehr_sch\$oen!_Du_hast_dein_erstes\nPok\emon_besiegt_und_sicherlich\lmitbekommen,_wie_es_im_Kampf\lErfahrungspunkte_gesammelt_hat.\lWenn_es_gen\$uegend_davon_gewonnen\lhat,_steigert_sich_der_Level\ldeines_Pok\emon.
+	=Sehr gut, ausgezeichnet!
 .end
 
 
@@ -234,72 +233,71 @@
 
 
 .string str_0x8a1036 GER
-	=Nat\$uerlich_doch,_Opi_-_\$aehm_-_ich\nmeinte_nat\$uerlich_Hr._Faun!
+	=Aber sicher doch, Opi - \$aehm, ich\nmeine nat\$uerlich Herr Faun!
 .end
 
 
 .string str_0x8a0ff4 GER
-	=Da_hat_mein_Pok\emon_gute_Arbeit\ngeleistet,_sch\$aetze_ich.
+	=Ah, mein Pok\emon hat mein Vertrauen\nnicht entt\$aeuscht.
 .end
 
 
 .string str_0x8a0f9b GER
-	=Das_war_schonmal_ganz_passabel,\nFelix._Doch_lass_dir_das_nicht_zu\lKopf_steigen,_Junge!
+	=Oh ja, das war nicht \$uebel, ganz\npassabel, will ich meinen.\pLass dir aber einen Erfolg nicht\nzu Kopf steigen, h\$oerst du Junge?
 .end
 
 
 .string str_0x8a0f25 GER
-	=Hach,_Opi_-_\$aehm_-_Hr.Faun._Ich\nwerde_mir_doch_einen_Sieg_nicht_zu\lKopf_steigen_lassen._Das_m\$uesstest\ldu_doch_wissen!
+	=Opi, muss das denn wirklich sein?
 .end
 
 
 .string str_0x8a0ee7 GER
-	=Ist_ja_gut,_Felix..._Du_kannst\nzur\$ueck_in_die_Reihe_gehen...
+	=Hier bin ich f\$uer dich immer noch\nHerr Faun!\pUnd jetzt geh zur\$ueck in die Reihe!
 .end
 
 
 .string str_0x8a0d3d GER
-	=Gut,_liebe_Sch\$ueler._Eure_Pr\$uefung\nist_noch_nicht_vor\$ueber!_Im\ln\$aechsten_Test_m\$uesst_ihr_mit_eurem\lPok\emon_gegen_einen_anderen\lTrainer_k\$aempfen._Das_ist_eine\lgr\$oe\$sere_Herausforderung,_als_es\lmit_einem_wilden_Pok\emon\laufzunehmen.\l\b\01,_\b\06!_Ihr_beiden\lbildet_eine_Gruppe.\lMaike_und_Felix_ihr_seid_das\landere_Paar.\lPlatziert_euch_nun_bitte_jeweils\lgegen\$ueber_eurem_Parnter_auf_einem\lder_beiden_Kampffelder_und_macht\leuch_bereit.
+	=Sehr gut! Wie ich sehe, hat es\nkeinem von euch Probleme bereitet,\lein wildes Pok\emon zu besiegen.\lNat\$uerlich entspricht das auch\lmeinen Erwartungen an euch.\pIm n\$aechsten Teil werdet ihr\neure Fertigkeiten als Trainer im\lZweikampf unter Beweis stellen.\pSucht euch einen Partner\nund begebt euch zu den Kampffeldern.
 .end
 
 
 .string str_0x8a3164 GER
-	=Nun_gut!_Jeder_von_euch_wird_das\nPok\emon,_mit_dem_er_eben_gek\$aempft\lhat,_in_den_Kampf_schicken._Der\lSieg_alleine_ist_nicht_alles,\ldenn_es_z\$aehlt,_wie_ihr_euch_beim\lK\$aempfen_anstellt._Also,_gebt_euer\lBestes_und_k\$aempft_f\$uer_den_Sieg!
+	=Jeder von euch wird nun das von ihm\ngew\$aehlte Pok\emon in den Kampf\lschicken.\pEs kommt beim K\$aempfen nicht\nimmer nur auf den Sieg an, sondern\ldarauf, \$ueber seine Grenzen\lhinauszuwachsen.\pGebt alles und setzt alles\nVertrauen in euren neuen Partner.
 .end
 
 
 .string str_0x8a2fdd GER
-	=Davon_habe_ich_immer_getr\$aeumt,\n\b\01!_Mit_meinem_eigenen\lPok\emon_gegen_dich_anzutreten!\lHeute_beginnt_eine_neue_Zeit_f\$uer\luns_beide,_wir_k\$oennen_unseren\lTraum_endlich_wahr_werden_lassen.\lDieser_Kampf_soll_der_erste_von\lvielen_sein!_Auf_das_ich_-_\$aehm_ich\lmeine_nat\$uerlich_der_Bessere_-\lgewinne!
+	=Kannst du es fassen, \b\01?\pDavon haben wir immer getr\$aeumt.\nMit unseren Pok\emon gegeneinander\lantreten.\pLass uns den ersten von vielen\nK\$aempfen bestreiten!
 .end
 
 
 .string str_0x8a30ff GER
-	=Das_ist_unfair!_Ich_will_nochmal!\nBuhu!
+	=Das ist unfair! Ich war noch gar\nnicht bereit!
 .end
 
 
 .string str_0x8a3129 GER
-	=Niemand_kann_mich_auf_meinem_Weg\nzum_Champion_aufhalten!
+	=Ich bin dir immer einen Schritt\nvoraus!
 .end
 
 
 .string str_0x8a3e3e GER
-	=Oh_Mann!_Ich_habe_wohl_gegen_dich\nverloren!_So_ein_Mist!
+	=Verloren? So werde ich doch nie mit\nmeinem Bruder Brix gleichziehen\lk\$oennen...
 .end
 
 
 .string str_0x8a3e79 GER
-	=Mach_dir_nichts_draus._Du_hast_gut\ngek\$aempft_und_auch_ich_bin_ins\lSchwitzen_gekommen._Wir_m\$uessen\lbeide_noch_an_uns_arbeiten.
+	=Mach dir keinen Kopf, ich bin eben\nkein gew\$oehnlicher Gegner.
 .end
 
 
 .string str_0x8a3cfd GER
-	=Nun_gut_liebe_Sch\$ueler,_aufgepasst.\nIhr_habt_euch_gut_in_euren_K\$aempfen\lgeschlagen._Bleibt_noch_eine\lPr\$uefung_zu_absolvieren._Und_\lderjenige,_der_am_Besten_in_den\ltheoretischen_Pr\$uefungen\labgeschnitten_hat,_der_kann_sich\lganz_besonders_auf_die_n\$aechste\lPr\$uefung_freuen._Folgt_mir_bitte\lalle_zur\$ueck_zum_hohen_Gras.
+	=Das sah doch alles sehr gut aus,\njeder von euch hat tapfer und\lmutig gek\$aempft.\pAuf mehr kommt es nicht an. Eine\nNiederlage ist nur ein Schritt auf\ldem Weg zum Sieg.\pBleibt also nur noch eine\nletzte Pr\$uefung.\pIch w\$uerde euch wieder zum\nhohen Gras bitten, wo ihr nun\lunter Beweis stellen m\$uesst, dass\lihr f\$aehig seid, ein wildes Pok\emon\leinzufangen.\pDerjenige mit den\nbesten Ergebnissen im\ltheoretischen Teil darf sich an\leinem schillernden Pok\emon versuchen.
 .end
 
-
 .string str_0x8a4a2b GER
-	=Hmm...\n...\lWie_es_scheint,_war_Blaise\lderjenige,_der_als_Einziger_volle\lPunktzahl_im_Test_erzielt_hat.\lSeine_Belohnung,_ein_schillerndes\lPok\emon,_wird_er_deshalb_nicht\lerhalten...\lAber_dennoch_wollen_wir_nun_mit\lden_Pr\$uefungen_im_Fangen_eines\lPok\emons_beginnen.
+	=Ah, scheinbar war Blaise der\neinzige von euch, der die volle\lPunktzahl im Test erzielt hat.\pSeine Belohung wird er nat\$uerlich\nnicht erhalten.\pBeginnen wir also mit dem\nletzten Teil der Pr\$uefung.
 .end
 
 
@@ -309,27 +307,26 @@
 
 
 .string str_0x8a61c1 GER
-	=Du_erh\$aeltst_von_mir_nun_10\nPokeb\$aelle,_mithilfe_derer_du\lversuchst,_das_Pok\emon,_das_dich\langreifen_wird,_einzufangen._Du\lsolltest_ihm_zuvor_jedoch_einige\lseiner_Kraftpunkte_nehmen,_sodass\les_sich_nicht_wehren_kann.\lVersuche_dein_Gl\$ueck!
+	=Du erh\$aeltst von mir nun 10\nPok\eb\$aelle, mit denen du versuchen\lsollst, das Pok\emon, das dir\lbegegnet, einzufangen.\pViel Gl\$ueck!
 .end
 
-
 .string str_0x8a6151 GER
-	=Lass_dich_nicht_entmutigen._Ich\nf\$uelle_deinen_Vorrat_an_Pokeb\$aellen\lauf_und_dann_versuch_es_gleich\lnoch_einmal.
+	=Lass dich nicht entmutigen.\pVersuche es am besten gleich noch\neinmal, ich werde deinen Vorrat an\lPok\eb\$aellen aufstocken.
 .end
 
 
 .string str_0x8a6081 GER
-	=Vorz\$ueglich,_\b\01._Mit_zwei\nPok\emon_im_Team_erreicht_man_mehr\lals_mit_einem._Achte_auch_stets\ldarauf,_dir_Pok\emon_verschiedener\lTypen_anzueignen_und_zu\ltrainieren,_sodass_du_f\$uer_jede\lSituation_gewappnet_bist.
+	=Ausgezeichnet. Es ist sehr wichtig,\nmehrere Pok\emon im Team zu f\$uehren,\lum auf die verschiedensten\lHerausforderungen vorbereitet zu\lsein.
 .end
 
 
 .string str_0x8a7c05 GER
-	=\b\06,_w\$uerdest_du_bitte_als\nN\$aechster_antreten?
+	=\b\06, du bist nun an der Reihe!
 .end
 
 
 .string str_0x8a7bbf GER
-	=Nat\$uerlich!_Das_Pok\emon_kann_sich\nschonmal_auf_etwas_gefasst_machen!
+	=Kinderspiel! Ich werde dem Pok\emon\nzeigen, wo es lang geht!
 .end
 
 
@@ -339,7 +336,7 @@
 
 
 .string str_0x8a7b45 GER
-	=Whoho!_Die_Nummer_zwei_im_Team_des\nk\$uenftigen_Champions_steht_fest!
+	=Das war fast zu einfach!\pDieses Pok\emon wird sich super in\nmein Team einf\$uegen.
 .end
 
 
@@ -349,7 +346,7 @@
 
 
 .string str_0x8a7af9 GER
-	=Maike,_du_darfst_es_als_N\$aechste\nversuchen.
+	=Oh ok. Ich werde mein Bestes geben.\nIch darf nicht scheitern...
 .end
 
 
@@ -379,7 +376,7 @@
 
 
 .string str_0x8a7a04 GER
-	=Ich_werde_dich_nicht_entt\$aeuschen,\nOpi_-_\$aehm_ich_meine_Hr._Faun!
+	=Ich_werde_dich_nicht_entt\$aeuschen,\nOpi_-_\$aehm_ich_meine_Herr_Faun!
 .end
 
 
@@ -399,7 +396,7 @@
 
 
 .string str_0x8a8df9 GER
-	=Gut,_nun_hat_jeder_seine_Pr\$uefungen\nabsolviert._Lasst_mich_nun_zur\lAuswertung_kommen._Beginnen_wir\lmit_dir,_\b\06
+	=Sehr gut! Damit haben wir unsere\nPr\$uefungen beendet und ich kann nun\ldie Ergebnisse verk\$uenden.\pBeginnen wir mit dir, \b\06.
 .end
 
 
@@ -409,7 +406,7 @@
 
 
 .string str_0x8a8c94 GER
-	=Die_theoretischen_Pr\$uefungen_hast\ndu_mit_6_richtigen_Antworten_knapp\lbestanden...\l...\lIm_Kampftest_hast_du_dich_gut\lgeschlagen_und_ebenfalls\lbestanden.\l...\l...\lIm_Feldtest_..._nun_..._wie_soll\lich_es_am_Besten_sagen_...\l...\l....\lGl\$ueckwunsch!_Du_hast_bestanden!_Du\lbist_nun_ein_waschechter_Trainer!
+	=Die theoretischen Pr\$uefungen hast du\nmit 6 richtigen Antworten\lbestanden.\pIm Kampftest hast du dich\nau\$serordentlich gut geschlagen.\pUnd auch der Feldtest hat dir\nkeine Probleme bereitet.\pDa w\$uerde ich doch meinen,\ndass du dich mit Stolz einen\lechten Trainer nennen kannst!
 .end
 
 
@@ -424,17 +421,17 @@
 
 
 .string str_0x8a8c31 GER
-	=Nun_kommen_wir_zu_dir,_\b\01.\n...\l....
+	=Nun_kommen_wir_zu_dir,_\b\01.
 .end
 
 
 .string str_0x8af042 GER
-	=Die_theoretische_Pr\$uefung_hast\ndu_mit_\b\02_Antworten\labsolviert.\lIm_praktischen_Kampftest_hast_du\ldich_gut_geschlagen._Bestanden,\lm\$oechte_ich_meinen!\l...\l...\lIm_Feldtest_hast_du_ebenfalls_gute\lArbeit_geleistet_-_auch_hier\lbestehst_du!\l...\lAlles_in_Allem_darf_ich_auch_dir\lgratulieren,_einem_frisch\lgebackenen_Trainer!
+	=Die theoretische Pr\$uefung hast du\nmit \b\02 Antworten absolviert.\pIm Kampftest hast du dich\nau\$serordentlich gut geschlagen und\lauch den Feldtest mit Bravour\lbestanden.\pAuch du hast die Pr\$uefung\nsomit bestanden, \b\01!
 .end
 
 
 .string str_0x8a8a28 GER
-	=Klasse_Arbeit,_\b\01!
+	=Klasse!
 .end
 
 
@@ -449,12 +446,12 @@
 
 
 .string str_0x8abc30 GER
-	=Maike..._Auch_du_hast_die\ntheoretische_Pr\$uefung_mit_8\lrichtigen_Antworten_bestanden._Im\lpraktischen_Test_hast_du_zwar\lverloren,_aber_gut_gek\$aempft_und\lein_wildes_Pok\emon_konntest_du\lauch_fangen.\l...\l....\lAuch_dich_darf_ich_wahrlich_eine\lTrainerin_nenne!_Gl\$ueckwunsch!
+	=Maike! In der theoretischen Pr\$uefung\nhast du mit 7 richtigen Antworten\lbestanden.\pDen Kampf hast du zwar verloren,\naber Talent bewiesen und auch ist\les dir gelungen, ein Pok\emon\leinzufangen.\pAuch du kannst dich vollen\nStolzes einen Trainer nennen!
 .end
 
 
 .string str_0x8abbec GER
-	=Wahnsinn!_Ich_bin_so_gl\$uecklich!\nWenn_mein_Vater_das_erst_erf\$aehrt!
+	=Wahnsinn! Vielleicht habe ich doch\nnoch eine Chance, mit Brix\lgleichzuziehen.
 .end
 
 
@@ -469,32 +466,32 @@
 
 
 .string str_0x8abb05 GER
-	=Nun_zu_dir,_Felix.\nDu_hast_9_richtige_Antworten_in\lder_Pr\$uefung_gegeben,_deinen_Kampf\lgewonnen_und_ein_Pok\emon\leingefangen._Zu_Recht_darfst_auch\ldu_dich_einen_Trainer_nennen!
+	=Und jetzt noch zu dir Felix.\pIm Test hast du 9 richtige\nAntworten geliefert, deinen Kampf\lgewonnen und m\$uehelos ein wildes\lPok\emon eingefangen.\pWas soll ich sagen, au\$ser,\ndass ich sehr stolz auf dich bin?\pAuch du hast nat\$uerlich bestanden!
 .end
 
 
 .string str_0x8abade GER
-	=Danke,_Opi!_Wirklich_vielmals\nDanke!
+	=Danke,_Opi!
 .end
 
 
 .string str_0x8abaa9 GER
-	=Wahnsinn,_Felix!_Du_warst_wirklich\neinsame_Spitze!
+	=Wahnsinn,_Felix!\nDu_warst_wirklich einsame_Spitze!
 .end
 
 
 .string str_0x8aba75 GER
-	=Du_wirst_sicherlich_auch_ein\nstarker_Gegner_sein!
+	=Du_wirst_sicherlich_ein\nstarker_Gegner_sein!
 .end
 
 
 .string str_0x8acfd5 GER
-	=Ich_bin_wirklich_sehr_froh,_dass\njeder_von_euch_seine_Pr\$uefung\lbestanden_hat._Auch_wenn_Blaise_es\lnicht_f\$uer_n\$oetig_gehalten_hat,_die\lTrainerschule_zu_absolvieren,_hat\les_euch_hoffentlich_auf_euren_Weg\leinen_Schritt_weitergebracht.\lJeder_von_euch_kann_es_weit\lbringen,_wenn_er_sich_nur_gen\$uegend\lins_Zeug_legt!\lIn_diesem_Sinne_w\$uensche_ich_euch\lalles_Gute_auf_eurer_kommenden\lReise._Dies_hei\$st_keineswegs_lebe\lwohl._Ich_bin_mir_sicher,_dass_wir\luns_wiedersehen_werden.\lIhr_wart_alle_gro\$sartige_Sch\$ueler!
+	=Es ist wirklich ein gro\$sartiger\nMoment euch, meine Sch\$uetzlinge,\lnun aufbrechen zu sehen.\pIhr seid die Zukunft Thetos und\nwenn ich euch einige Tugenden\leines alten Mannes mit auf den Weg\lgeben konnte, erf\$uellt mich das\ldurch und durch mit Gl\$ueck.\pIch mag ein strenger Lehrer\nund manchmal etwas ungest\$uem\lgewesen sein, aber ich hoffe ihr\lwisst, dass ich nur an eurem\lGelingen bem\$ueht war.\pZieht nun hinaus in die Welt!\pLebt euren Traum!
 .end
 
 
 .string str_0x8acecc GER
-	=Hr._Faun_wird_mir_fehlen..._Er_war\nein_toller_Lehrer.\l...\lAber_ich_habe_nun_einen_eigenen\lWeg_vor_mir._Ich_und_mein_Pok\emon\lwerden_ihn_gemeinsam_bestreiten.\lWie_Hr._Faun_schon_gesagt_hat:\lDies_hei\$st_auf_keinen_Fall\llebewohl!\lWir_sehen_uns!
+	=Herr Faun war ein toller Lehrer.\pIhr alle seid so starke Trainer\ngeworden und ich bin immer ein\lNachz\$uegler gewesen.\pMein Bruder hat so viel Talent\nund Charisma, ich muss mich\lwirklich anstrengen, wenn ich ihn\ljemals einholen will.\pIhr werdet mir alle\nschrecklich fehlen, aber von nun\lan m\$uessen wir auf eigenen Beinen stehen.\pBis dann, Leute!
 .end
 
 
@@ -504,22 +501,21 @@
 
 
 .string str_0x8accb0 GER
-	=Eine_neue_\$AEra_beginnt_und_vier\nPok\emon_Trainer_machen_sich_auf,\lum_Ruhm_und_Ehre_zu_erringen!_Ein\lwahrhaft_sch\$oener_Augenblick,_doch\lwird_auch_er_nicht_ewig_w\$aehren!\l...\lAu\$serdem_habe_ich_mich_noch_um\lBlaise_zu_k\$uemmern._Zeit_seines\lLebens_stand_er_im_Schatten_seines\lVaters_und_k\$aempft_verbissen_f\$uer\lAnerkennung...\lWir_werden_uns_wiedersehen,\l\b\01!
+	=Opi war wirklich klasse!\pDie Schulzeit wird mir fehlen, ihr\nwart alle tolle Freunde.\pAber jetzt haben wir unsere\neigenen Wege vor uns.\pDas ist aber auf keinen Fall\nein Abschied f\$uer immer, die Welt\list ja bekanntlich sehr klein.\pWenn wir uns das n\$aechste\nMal begegnen, sind wir alle schon\lein St\$ueck weiter gekommen.\pViel Gl\$ueck, Leute!
 .end
 
 
 .string str_0x8a4916 GER
-	=Hmm...\n...\lAh_ja,_wie_es_scheint,_haben_zwei\lSch\$ueler_mit_voller_Punktzahl\labgeschnitten._Zum_Einen_unser\llieber_Blaise,_der_uns_ja\lverlassen_hat,_zum_Anderen...\l\b\01!\lHerzlichen_Gl\$ueckwunsch._Als\lKlassenbester_wirst_du_die_Chance\lbekommen,_ein_schillerndes_Pok\emon\leinzufangen.
+	=Oh! Scheinbar haben gleich zwei\nLeute mit voller Punktzahl\labgeschnitten.\pZum einen Blaise und zum anderen\n\b\01. Da Blaise sich aber f\$uer zu\lgut erachtet, uns mit seiner\lAnwesenheit zu beehren, darf nun\l\b\01 sich daran probieren, ein\lschillerndes Pok\emon einzufangen.
 .end
 
-
 .string str_0x8a2dfc GER
-	=\b\01,_du_hast_geschummelt!\nIch_war_noch_gar_nicht_bereit!_Das\lwar_\$ueberhaupt_unfair,_dein_Pok\emon\list_viel_st\$aerker_als_meines._Ich\lbin_der_bessere_Trainer_von_uns\lbeiden!\l...\lWie_gemein!_Aber_der_Sieg_geh\$oert\ldir._Du_hast_nat\$uerlich_auch_nicht\lgerade_schlecht_gek\$aempft,_das_muss\lman_dir_lassen,_Hut_ab!
+	=\b\01, du hast geschummelt!\pDu hast das st\$aerkere Pok\emon\ngew\$aehlt, das ist unfair!\pIch will noch einmal!
 .end
 
 
 .string str_0x8a2f28 GER
-	=\b\01,_ich_wusste,_dass_ich\ngewinne._Ich_bin_unschlagbar.\lKeine_Schande_gegen_den\lzuk\$uenftigen_Champ_der_Theto_Region\l\b\06_zu_verlieren._Aber_sicherlich\lhast_du_auch_ganz_gut_gek\$aempft!
+	=\b\01! Ich wusste, dass ich\ngewinne!\pDu hast keine Chance, es ist nur\nnat\$uerlich gegen den k\$uenftigen\lst\$aerksten Trainer Thetos zu verlieren!
 .end
 
 

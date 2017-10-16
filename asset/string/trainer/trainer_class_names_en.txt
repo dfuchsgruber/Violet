@@ -1,4 +1,4 @@
-.array trainer_class_names GER 13
+.array trainer_class_names EN 13
 	#0x0
 	=\__pk\__mn Trainer
 	=\__pk\__mn Trainer

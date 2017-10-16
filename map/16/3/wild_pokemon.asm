@@ -2,11 +2,13 @@
 
 @// Wild data map_16_3_wild_grass
 .global map_16_3_wild_grass
+.align 4
 map_16_3_wild_grass:
 .byte 0x4 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_16_3_wild_grass_entries
 
+.align 4
 map_16_3_wild_grass_entries:
 .byte 21, 24 @//Level range
 .hword POKEMON_MACHOLLO @// 20 percent percent

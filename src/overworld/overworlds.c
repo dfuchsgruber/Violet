@@ -1130,6 +1130,37 @@ overworld_sprite ow_rubys = {
     ROTSCALE_TABLE_NULL
 };
 
+static graphic overworld_sprite_hiroine_sprites[] = {
+	{&gfx_ow_hiroine_0Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_1Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_2Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_3Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_4Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_5Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_6Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_7Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_8Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_9Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_10Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_11Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_12Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_13Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_14Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_15Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_16Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_17Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_18Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_19Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_hiroine = {
+	0xffff, 0x1110, 0x1102, 0x200,
+	16, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_HIRO, overworld_sprite_hiroine_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
 
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
@@ -1140,7 +1171,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_hiro_rod,
 	&ow_hiro_call2,
 	&ow_hiro_call_bike,
-	(overworld_sprite*) 0x83a4428,
+	&ow_hiroine,
 	(overworld_sprite*) 0x83a444c,
 	(overworld_sprite*) 0x83a4470,
 //10

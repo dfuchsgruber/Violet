@@ -1,0 +1,7 @@
+.string str_battle_actions GER
+    =\w\05\05\w\04\0d\0e\0fKampf\w\13\38Beutel\nPok\emon\w\13\38Flucht\xFF
+.end
+
+.string str_battle_actions EN
+    =\w\05\05\w\04\0d\0e\0fFight\w\13\38Bag\nPok\emon\w\13\38Run\xFF
+.end

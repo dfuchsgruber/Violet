@@ -44,6 +44,7 @@ callstd MSG_KEEPOPEN
 closeonkeypress
 special 0x7
 playsong MUS_ALABASTIA 0
+playsong2 MUS_ALABASTIA
 end
 
 
@@ -51,7 +52,11 @@ end
 ow_script_0x8a1cc9:
 setvar 0x8000 0x0
 setvar 0x8001 0xc
-setvar 0x8002 0xe
+checkgender
+compare LASTRESULT 0
+gotoif 1 boy
+setvar 0x8001 0x1B
+boy:
 special 0x6
 return
 

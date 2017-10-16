@@ -1,0 +1,3 @@
+.string str_trainerschool_selection_text GER
+    =  \k\_keya  Best\$aetigen              \k\_keyb  Abbruch
+.end

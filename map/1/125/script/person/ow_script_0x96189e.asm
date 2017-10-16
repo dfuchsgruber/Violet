@@ -42,7 +42,7 @@ gotoif EQUAL ow_script_0x961af3
 loadpointer 0x0 str_0x961ab8
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_SCHW_FLOETE
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 subvar ASH 0x3e8
 goto ow_script_0x961a35
@@ -81,7 +81,7 @@ gotoif EQUAL ow_script_0x961af3
 loadpointer 0x0 str_0x961ab8
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_WEISSE_FLOETE
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 subvar ASH 0x3e8
 goto ow_script_0x961a35
@@ -97,7 +97,7 @@ gotoif EQUAL ow_script_0x961af3
 loadpointer 0x0 str_0x961ab8
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_GELBE_FLOETE
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 subvar ASH 0x1f4
 goto ow_script_0x961a35
@@ -113,7 +113,7 @@ gotoif EQUAL ow_script_0x961af3
 loadpointer 0x0 str_0x961ab8
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_ROTE_FLOETE
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 subvar ASH 0x1f4
 goto ow_script_0x961a35
@@ -129,7 +129,7 @@ gotoif EQUAL ow_script_0x961af3
 loadpointer 0x0 str_0x961ab8
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_BLAUE_FLOETE
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 subvar ASH 0xfa
 goto ow_script_0x961a35

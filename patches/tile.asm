@@ -82,3 +82,28 @@
 
 .org 0x08083064
     .word script_repel_wore_off
+
+
+
+
+.org 0x805b298
+	.word door_animations
+
+.org 0x805b2cc
+	.word door_animations
+
+.org 0x805b300
+	.word door_animations
+
+.org 0x805b340
+	.word door_animations
+
+.org 0x805b37c
+	.word door_animations
+
+
+.org 0x083A52F0
+    .word high_grass_graphics
+
+.org 0x083A520C
+    .word gfx_high_grassPal

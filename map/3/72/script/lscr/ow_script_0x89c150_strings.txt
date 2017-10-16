@@ -1,128 +1,27 @@
 .string str_0x89c626 GER
-	=Wenn_wir_Gl\$ueck_haben,_hat_der_Test\nnoch_nicht_begonnen._Nur_werden\lwir_wohl_keine_Zeit_mehr_haben,\lunsere_Unterlagen_ein_letztes_Mal\ldurchzusehen...\l...\lLos_jetzt!_Beeilung!
+	=\b\01! Wir sind viel zu sp\$aet!\nUm unsere Unterlagen noch einmal\ldurchzusehen, bleibt wohl keine\lZeit mehr!\pKomm schon, Beeilung! Sonst\nverpassen wir noch die Pr\$uefung!
 .end
 
 
 .string str_0x89c567 GER
-	=Faun:_Ah_ja,_\b\06_und_\b\01!\nIch_hatte_mich_bereits_gefragt,\lwann_ihr_denn_endlich_kommen\lw\$uerdet._Bitte,_nehmt_Platz!
+	=Ah ja, \b\06 und \b\01!\pIch hatte schon bef\$uerchtet, ihr\nw\$uerdet nicht auftauchen.\pNehmt bitte Platz, wir\nhaben lange genug auf euch gewartet.
 .end
 
 
 .string str_0x89c3c8 GER
-	=Liebe_Sch\$ueler,_der_Tag_eurer\nAbschlusspr\$uefung_ist_gekommen._Wir\lbeginnen_wie_\$ueblich_mit_den\ltheoretischen_Tests._In_zehn\lFragen_m\$uesst_ihr_euer_Wissen_\$ueber\ldie_Welt_der_Pok\emon_beweisen.\lAber_seid_unbesorgt._Jeder_von\leuch_erh\$aelt_die_M\$oeglichkeit,_in\lder_nachfolgenden_praktischen\lPr\$uefung_seine_Ergebnisse\laufzubessern.\l...\lIch_werde_nun_euere\lAufgabenbl\$aetter_verteilen_und_ich\lw\$uensche_ab_dann_absolute_Ruhe.
+        =Nun gut, meine lieben Sch\$ueler!\nHeute ist der Tag eurer\lAbschlusspr\$uefung gekommen.\pZun\$aechst werdet ihr in einer\ntheoretischen Pr\$uefung euer Wissen\lum die Welt der Pok\emon unter\lBeweis stellen.\pAnschlie\$send liegt eine\npraktische Pr\$uefung, in der euch\ldie Grundfertigkeiten eines\lTrainers abverlangt werden, vor euch.\pIn diesem Sinne werde\nich ohne weitere Umscheife mit dem\ltheoretischen Teil beginnen und\lnun die Frageb\$oegen austeilen.\pIch w\$uensche absolute Ruhe!
 .end
-
 
 .string str_0x89c29e GER
-	=Vor_euch_findet_ihr_ein_Blatt_mit\nFragen,_zu_denen_ihr_jeweils_eine\lAntwort_ausw\$aehlen_k\$oennt.\lSeid_ihr_euch_nicht_sicher,\lratet_einfach,_denn_es_gibt_keine\lPunkte_Abzug_f\$uer_falsche\lAntworten.\lIn_diesem_Sinne,_viel_Gl\$ueck_bei\leurer_Pr\$uefung.
-.end
-
-
-.string str_0x89ccbd GER
-	=Bereich_A:_Typ-Verh\$aeltnisse\nAufgabe_1:\lGreift_Pok\emon_A_das_Pok\emon_B_vom\lTypen_Wasser_mit_einem_Angriff_vom\lTypen_Pflanze_an,_wie_ver\$aendert\lsich_der_einhergehende_Schaden?
-.end
-
-
-.string str_0x89cc5d GER
-	=\6eR\89\_spnr\80R\89\_spnr\90R\89\_spnr6R\89\_spnr
-.end
-
-
-.string str_0x89c9b2 GER
-	=Welcher_folgender_Typen_ist\neffektiv_gegen_den_Typen_Fee?
-.end
-
-
-.string str_0x89cb20 GER
-	=\35Q\89\_spnr\3dQ\89\_spnr\47Q\89\_spnr\4eQ\89\_spnr6R\89\_spnr
-.end
-
-
-.string str_0x89cb8b GER
-	=Greift_man_ein_Pok\emon_der_Typen\nUnlicht_/_Geist_an,_wie_viele\lverschiedene_Attackentypen_gibt\les,_die_auf_diese_Kombination\leffektiv_wirken?
-.end
-
-
-.string str_0x89cc1b GER
-	=\30R\89\_spnr\39R\89\_spnr\41R\89\_spnr\48R\89\_spnr6R\89\_spnr
-.end
-
-
-.string str_0x89cdd0 GER
-	=Bereich_B:_Items\nAufgabe_4:\lWelches_der_folgenden_Items_heilt\ldie_KP_eines_Pok\emons_nicht_wieder\lauf?
-.end
-
-
-.string str_0x89ce38 GER
-	=\5fT\89\_spnr\67T\89\_spnr\74T\89\_spnr\49T\89\_spnr
-.end
-
-
-.string str_0x89ceb6 GER
-	=Aufgabe_5:\nWelches_dieser_Items_kann_am\lteuersten_verkauft_werden?
-.end
-
-
-.string str_0x89cefb GER
-	=\10U\89\_spnr\19U\89\_spnr\27U\89\_spnr\35U\89\_spnr\49T\89\_spnr
-.end
-
-
-.string str_0x89cf75 GER
-	=Aufgabe_6:\nEines_dieser_Items_existiert\lnicht._Welches?
-.end
-
-
-.string str_0x89cfaf GER
-	=NU\89\_spnrbU\89\_spnrpU\89\_spnr\_spcursorU\89\_spnr\pU\89\_spnr\49T\89\_spnr
-.end
-
-
-.string str_0x89d03c GER
-	=Bereich_C:_Training\nFrage_7:\lWelches_der_folgenden_Pok\emon_gibt\lam_meisten_Erfahrungspunkte,_wenn\lman_es_besiegt?
-.end
-
-
-.string str_0x89d0b0 GER
-	=GV\89\_spnrPV\89\_spnrXV\89\_spnr\49T\89\_spnr
-.end
-
-
-.string str_0x8fbb48 GER
-	=Aufgabe_8:\nWelches_dieser_Pok\emon_entwickelt\lsich_nicht_auf_Level_36?
-.end
-
-
-.string str_0x89d154 GER
-	=\69W\89\_spnr\73W\89\_spnr\7eW\89\_spnr\8aW\89\_spnr\49T\89\_spnr
-.end
-
-
-.string str_0x89d1c9 GER
-	=Aufgabe_9:\nPok\emon_A_und_Pok\emon_B_nehmen\lan_einem_Doppekampf_teil._Pok\emon\lB_tr\$aegt_einen_EP-Teiler._Wie_viel\lder_gesamten_Erfahrungspunkte\lerh\$aelt_Pok\emon_A,_wenn_der_Gegner\lbesiegt_wird?
-.end
-
-
-.string str_0x89d288 GER
-	=\99X\89\_spnr5X\89\_spnr'X\89\_spnr\49T\89\_spnr
-.end
-
-
-.string str_0x89d2f5 GER
-	=Bonusaufgabe:\nWelche_dieser_Aussagen_ist_falsch?
-.end
-
-
-.string str_0x89d328 GER
-	=\41Y\89\_spnr\58Y\89\_spnr\6dY\89\_spnr\82Y\89\_spnr\9cY\89\_spnr\49T\89\_spnr
+        =Vor euch findet ihr einen Bogen mit\njeweils zehn Fragen, die ihr\lbeantworten m\$uesst.\pMacht euch keinen zu gro\$sen\nKopf, ihr k\$oennt im praktischen\lTeil noch gen\$uegend Punkte sammeln,\laber gebt euch trotzdem M\$uehe!\pIn diesem Sinne w\$uensche ich\nallen ein gutes Gelingen!
 .end
 
 
 .string str_0x89d5d3 GER
-	=Gut,_die_Bearbeitungszeit_ist_nun\nvor\$ueber._Bitte_legt_eure_Stifte\lbeiseite_und_lasst_mich_eure\lAufgabenbl\$aetter_einsammeln.
+        =Gut, die Bearbeitungszeit ist nun\nvor\$ueber!\pLegt eure Stifte beiseite, ich\nwerde die B\$oegen einsammeln und\lunverz\$ueglich korrigieren.
 .end
 
 
 .string str_0x89d54d GER
-	=W\$aehrend_ich_eure_Ergebnisse\nauswerte,_habt_ihr_Zeit_euch_am\lPausenhof_zu_versammeln._Die\lpraktische_Pr\$uefung_wird_in_K\$uerze\lbeginnen.
+        =Findet euch, solange ich mit der\nKorrektur besch\$aeftigt bin, doch\lbitte schon einmal auf dem Hof\lzusammen, damit wir schnell mit\lder praktischen Pr\$uefung beginnen\lk\$oennen.
 .end

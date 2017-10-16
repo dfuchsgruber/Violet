@@ -1,5 +1,14 @@
 trainersprites equ 0x0823944C
 trainerpals equ 0x082398EC
+
+.macro trainergfx,num,tiles,pal
+.org trainersprites + 8 * num
+    .word tiles
+.org trainerpals + 8 * num
+    .word pal
+.endmacro
+
+
 .org trainersprites + 8*1
     .word gfx_trainer_revo_mTiles
 
@@ -54,4 +63,26 @@ trainerpals equ 0x082398EC
 .org trainerpals + 8 * 96
     .word gfx_trainer_mistralPal
 
+
+.org trainersprites + 8 * 135
+    .word gfx_trainer_hiroTiles
+
+.org trainerpals + 8 * 135
+    .word gfx_trainer_hiroPal
+
+.org trainersprites + 8 * 136
+    .word gfx_trainer_hiroineTiles
+
+.org trainerpals + 8 * 136
+    .word gfx_trainer_hiroinePal
+
+
+trainergfx 0,gfx_trainer_polizistTiles,gfx_trainer_polizistPal
+trainergfx 27,gfx_trainer_rinTiles,gfx_trainer_rinPal
+trainergfx 78,gfx_trainer_violet_grunt_fTiles,gfx_trainer_violet_grunt_fPal
+trainergfx 106,gfx_trainer_rivalTiles,gfx_trainer_rivalPal
+trainergfx 109,gfx_trainer_violet_grunt_mTiles,gfx_trainer_violet_grunt_mPal
+trainergfx 116,gfx_trainer_lesterTiles,gfx_trainer_lesterPal
+trainergfx 117,gfx_trainer_miaTiles,gfx_trainer_miaPal
+trainergfx 137,gfx_trainer_violet_grunt_fTiles,gfx_trainer_violet_grunt_fPal
 

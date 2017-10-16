@@ -49,7 +49,7 @@ bx r0
 trigger_trash:
 mov r0, r5
 bl generate_trash_item
-ldr r0, =0x089279D4
+ldr r0, =trash_script
 b ret_s
 
 trigger_tv:

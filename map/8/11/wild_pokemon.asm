@@ -2,11 +2,13 @@
 
 @// Wild data map_8_11_wild_water
 .global map_8_11_wild_water
+.align 4
 map_8_11_wild_water:
 .byte 0xd @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_8_11_wild_water_entries
 
+.align 4
 map_8_11_wild_water_entries:
 .byte 26, 32 @//Level range
 .hword POKEMON_QUABBEL @// 60 percent percent
@@ -21,11 +23,13 @@ map_8_11_wild_water_entries:
 
 @// Wild data map_8_11_wild_rod
 .global map_8_11_wild_rod
+.align 4
 map_8_11_wild_rod:
 .byte 0xd @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_8_11_wild_rod_entries
 
+.align 4
 map_8_11_wild_rod_entries:
 .byte 26, 32 @//Level range
 .hword POKEMON_QUABBEL @// 70 percent, rod percent

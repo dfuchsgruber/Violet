@@ -24,6 +24,7 @@ loadpointer 0x0 str_0x8e066f
 callstd MSG_KEEPOPEN
 clearflag MERIANA_CITY_REVOLUTIONARIES
 addvar MERIANA_CITY_REVOLUTIONARY 0x1
+closeonkeypress
 end
 
 

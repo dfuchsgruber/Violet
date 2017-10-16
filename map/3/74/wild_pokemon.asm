@@ -2,11 +2,13 @@
 
 @// Wild data map_3_74_wild_grass
 .global map_3_74_wild_grass
+.align 4
 map_3_74_wild_grass:
 .byte 0x17 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_74_wild_grass_entries
 
+.align 4
 map_3_74_wild_grass_entries:
 .byte 13, 16 @//Level range
 .hword POKEMON_PONITA @// 20 percent percent
@@ -35,11 +37,13 @@ map_3_74_wild_grass_entries:
 
 @// Wild data map_3_74_wild_other
 .global map_3_74_wild_other
+.align 4
 map_3_74_wild_other:
 .byte 0x86 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_74_wild_other_entries
 
+.align 4
 map_3_74_wild_other_entries:
 .byte 13, 17 @//Level range
 .hword POKEMON_PONITA @// 60 percent percent

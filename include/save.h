@@ -8,6 +8,7 @@
 #include "fpmenu.h"
 #include "anim_engine.h"
 #include "multichoice.h"
+#include "trainerschool_test.h"
 
 #define GP_STACK_SIZE 16
 
@@ -92,6 +93,9 @@ typedef struct {
     u8 mugshot_oam_id;
     u8 mugshot_tb_id;
     multichoice_t dynamic_choice;
+    u16 tile_anim_clks_0[8];
+    u16 tile_anim_clks_1[8];
+    trainerschool_test_memory *tst_mem;
     
 } floating_memory;
 

@@ -15,7 +15,7 @@ gotoif EQUAL ow_script_0x8c1233
 loadpointer 0x0 str_0x8c1201
 callstd MSG
 copyvarifnotzero 0x8000 ITEM_ANGEL
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 setflag AKTANIA_ROD
 loadpointer 0x0 str_0x8c1179

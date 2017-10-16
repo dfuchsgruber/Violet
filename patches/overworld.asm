@@ -11,6 +11,12 @@ overworld_pals equ 0x083A501C
 .org overworld_pals + 9 * 8
     .word gfx_ow_pal_hiro_mirrorPal
 
+.org overworld_pals + 0xD * 8
+    .word gfx_ow_pal_hiroinePal
+
+.org overworld_pals + 0xE * 8
+    .word gfx_ow_pal_hiroine_mirrorPal
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -57,3 +63,46 @@ overworld_pals equ 0x083A501C
 
 .org 0x083E18C8
     .word gfx_ow_rival_allPal
+
+
+//Npc Interaction
+.org 0x083A543C
+    .word ow_hiro_surf_graphics
+
+.org 0x083A54D4
+    .word ow_hiro_arrow_graphics
+
+.org 0x083C71E0
+    .word ow_hiro_emoji_graphics
+
+.org 0x083A5CD0
+    .word ow_hiro_fly_graphics
+
+//directly application for ow throwing sprites
+.org 0x082345E8
+    .word gfx_hiro_throwTiles
+    .halfword 0x800, 0
+    .word gfx_hiro_throwTiles + 0x800 
+    .halfword 0x800, 0
+    .word gfx_hiro_throwTiles + 0x1000
+    .halfword 0x800, 0
+    .word gfx_hiro_throwTiles + 0x1800
+    .halfword 0x800, 0
+    .word gfx_hiro_throwTiles + 0x2000
+    .halfword 0x800, 0
+    .word gfx_hiroine_throwTiles
+    .halfword 0x800, 0
+    .word gfx_hiroine_throwTiles + 0x800 
+    .halfword 0x800, 0
+    .word gfx_hiroine_throwTiles + 0x1000
+    .halfword 0x800, 0
+    .word gfx_hiroine_throwTiles + 0x1800
+    .halfword 0x800, 0
+    .word gfx_hiroine_throwTiles + 0x2000
+    .halfword 0x800, 0
+
+.org 0x08239EA4
+    .word gfx_hiro_throwPal
+
+.org 0x08239EAC
+    .word gfx_hiroine_throwPal

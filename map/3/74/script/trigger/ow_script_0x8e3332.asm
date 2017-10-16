@@ -64,7 +64,7 @@ callstd MSG
 special 0x7
 setflag DETEKTOR_ID
 copyvarifnotzero 0x8000 ITEM_DETEKTOR
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 call ow_script_0x89ba6e
 loadpointer 0x0 str_0x9681e9

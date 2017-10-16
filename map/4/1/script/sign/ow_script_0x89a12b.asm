@@ -18,6 +18,7 @@ callstd MSG_KEEPOPEN
 special 0xf9
 waitstate
 special 0x120
+clearflag TRANS_DISABLE
 releaseall
 end
 

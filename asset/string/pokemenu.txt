@@ -1,0 +1,95 @@
+.string str_pokemon GER
+    =Pok\emon
+.end
+
+.string str_pokemon EN
+    =Pok\emon
+.end
+
+.string str_menu_pokemon_desc GER
+    =\$UEberpr\$uefe_und_organisiere_die_Pok\emon,\ndie_sich_in_deinem_Team_befinden.\xFF
+.end
+
+.string str_menu_pokemon_desc EN
+    =Check and organize the Pok\emon in your\nparty.
+.end
+
+.string str_bericht GER
+    =Bericht
+.end
+
+.string str_bericht EN
+    =Summary
+.end
+
+.string str_tausch GER
+    =Tausch
+.end
+
+.string str_tausch EN
+    =Switch
+.end
+
+.string str_geben GER
+    =Geben
+.end
+
+.string str_geben EN
+    =Give
+.end
+
+.string str_nehmen GER
+    =Nehmen
+.end
+
+.string str_nehmen EN
+    =Take
+.end
+
+.string str_aussenden GER
+    =Aussenden
+.end
+
+.string str_aussenden EN
+    =Send out
+.end
+
+.string str_eintragen GER
+    =Eintragen
+.end
+
+.string str_eintragen EN
+    =Select
+.end
+
+.string str_austragen GER
+    =Austragen
+.end
+
+.string str_austragen EN
+    =Deselect
+.end
+
+.string str_wahlen GER
+    =W\$aehlen
+.end
+
+.string str_wahlen EN
+    =Choose
+.end
+
+.string str_choose_pokemon GER
+    =W\$aehle ein Pok\emon.
+.end
+
+.string str_choose_pokemon EN
+    =Choose a Pok\emon.
+.end
+
+.string str_choose_pkmn_or_back GER
+    =W\$aehle PKMN oder zur\$ueck.
+.end
+
+.string str_choose_pkmn_or_back EN
+    =Choose Pok\emon or back.
+.end

@@ -2,7 +2,6 @@
 .include "patches/tm.asm"
 .include "patches/transparency.asm"
 .include "patches/tile.asm"
-.include "patches/help_menu.asm"
 .include "patches/flash.asm"
 .include "patches/trainer.asm"
 .include "patches/evolution.asm"
@@ -30,6 +29,7 @@
 .include "patches/intro.asm"
 .include "patches/worldmap.asm"
 .include "patches/types.asm"
+.include "patches/string.asm"
 
 //Remove Help-System
 .org 0x0813B90C

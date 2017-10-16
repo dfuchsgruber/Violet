@@ -64,6 +64,8 @@ extern const unsigned short gfx_mug_larissaTiles[];
 extern const unsigned short gfx_mug_larissaPal[];
 extern const unsigned short gfx_mug_primusTiles[];
 extern const unsigned short gfx_mug_primusPal[];
+extern const unsigned short gfx_mug_hiroineTiles[];
+extern const unsigned short gfx_mug_hiroinePal[];
 
 extern u8 str_mug_mistral[];
 extern u8 str_mug_hiro[];
@@ -125,7 +127,8 @@ static mugshot mugshots[] = {
     
     {&gfx_mug_primusTiles, &gfx_mug_primusPal, str_mug_primus},
     {&gfx_mug_igvaTiles, &gfx_mug_igvaPal, str_mug_igva},
-    {&gfx_mug_blackbeardTiles, &gfx_mug_blackbeardPal, str_mug_blackbeard}
+    {&gfx_mug_blackbeardTiles, &gfx_mug_blackbeardPal, str_mug_blackbeard},
+    {&gfx_mug_hiroineTiles, &gfx_mug_hiroinePal, str_mug_hiro}
 };
 
 
@@ -143,7 +146,18 @@ void tbox_clear_bottom_line(u8 box_id){
     }
 }
 
+
+void mugshot_oam_despawn_cb(u8 self);
+
 void spawn_mugshot() {
+    
+    //If a callback to clear a mugshot is currently active we have to clear first in order to prevent that our content will be swiped away
+    u8 clearing_cb = get_callback_id_by_func(mugshot_oam_despawn_cb);
+    if(clearing_cb != 0xFF){
+        mugshot_oam_despawn_cb(clearing_cb);
+        remove_big_callback(clearing_cb);
+    }
+    
     int side = *vardecrypt(0x8000);
     int index = *vardecrypt(0x8001);
     u16 tag = (u16) (MUGSHOT_BASE_TAG + index);
@@ -203,7 +217,7 @@ void spawn_mugshot() {
     string_decrypt(strbuf, mugshots[index].name);
     //spawn tbox
     tboxdata tbdata = {
-        0, (side ? 0 : 22), 12, (u8)((string_get_width(2, strbuf, 0) >> 3) + 4), 2, 15, 0xE8
+        0, (side ? 0 : 22), 12, (u8)((string_get_width(2, strbuf, 0) >> 3) + 5), 2, 15, 0xE8
     };
     u8 box_id = tbox_new(&tbdata);
     tbox_flush(box_id, 0x11);
@@ -213,24 +227,29 @@ void spawn_mugshot() {
     u8 fontcolmap[] = {1, 2, 1, 3};
     tbox_print_string(box_id, 2, 16, 0, 0, 0, fontcolmap, 0, strbuf);
     fmem->mugshot_tb_id = box_id;
+    dprintf("Spawned oam %d, tbid %d\n", fmem->mugshot_oam_id, box_id);
 }
 
 
 void mugshot_oam_despawn_cb(u8 self) {
-    u8 oam_id = fmem->mugshot_oam_id;
+    u8 oam_id = (u8)big_callbacks[self].params[0];
+    u8 tb_id = (u8)big_callbacks[self].params[1];
     free(oams[oam_id].oam_template->graphics);
     free(oams[oam_id].oam_template);
     oam_despawn(&oams[oam_id]);
-    remove_big_callback(self);
-    tbox_flush(fmem->mugshot_tb_id, 0);
+    tbox_flush(tb_id, 0);
     //tbox_tilemap_draw(fmem->mugshot_tb_id);
-    tbox_sync(fmem->mugshot_tb_id, TBOX_SYNC_MAP_AND_SET);
-    tbox_flush_map(fmem->mugshot_tb_id);
-    free_tbox(fmem->mugshot_tb_id);
+    tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
+    tbox_flush_map(tb_id);
+    free_tbox(tb_id);
+    dprintf("Triggered despawn with oam %d, tbid %d\n", oam_id, tb_id);
+    remove_big_callback(self);
 }
 
 void clear_mugshot() {
     u16 oam_id = fmem->mugshot_oam_id;
-    spawn_big_callback(mugshot_oam_despawn_cb, 0);
+    u8 cb_id = spawn_big_callback(mugshot_oam_despawn_cb, 0);
+    big_callbacks[cb_id].params[0] = oam_id;
+    big_callbacks[cb_id].params[1] = fmem->mugshot_tb_id;
     oams[oam_id].x2 = -64;
 }

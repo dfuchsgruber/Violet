@@ -89,3 +89,20 @@ int hwt(int x, int th, int n0){
     return n0 / div;
     
 }
+
+int ggt(int a, int b){
+    if(a == 0) return b;
+    while(b != 0){
+        if (a > b){
+            a = a - b;
+        }else{
+            b = b - a;
+        }
+    }
+    return a;
+}
+
+int kgv(int a, int b){
+    if(a == 0 || b == 0) return -1;
+    return a / ggt(a, b) * b;
+}

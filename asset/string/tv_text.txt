@@ -13,3 +13,15 @@
 .string str_tv_violet EN
         =... An exclusive report of the\nTheto police department:\pChief Harren: Let us talk about\nthe criminal organisation Team\lViolet.\pThey are organzied as three\nseperate divisions led by an\lpowerfull Admin.\pReporter: So three Admins? And who\nare those dangerous criminals?\pChief Harren: The third division\nis led by Rin, an infamous villain\lthat is said be extremly brutal.\pThe second Admins is called\nMistral, an upstart that before\lwas part of the Revolutionary\lMovement. Because of his\lcalculating nature he is claimed\lto be most dangerous.\pReporter: And who is in charge of\nthe first division?\pChief Harren: Well, that we do not\nknow.\pOur staff is currently engaged to\nsolve this puzzle.\pRumors say the first Admin also is\nto be the most powerfull among\lthem.\pUnfortunatley he as well as Team\nViolets prime leader is hiding in\lthe shadows, waiting.
 .end
+
+.string str_tv_champion_report GER
+        =...Es läuft eine Talkshow:\pKlaus: Nun Uli, wissen wir denn\nschon etwas über unseren neuen\lChampion?\pNein Klaus, ich fürchte, dass\nsich der neue Champion äu\$sert\lbedeckt hält. Ich habe aber\lgehört, er solle noch sehr jung\lsein.\pKlaus: Er? Ich hörte von einer\nFrau...
+.end
+
+.string str_tv_primus GER
+        = ...Es laufen die Nachrichten:\pSprecher: Noch immer haben wir\nkeine Neuigkeiten vom vermissten\lProfessor Primus.\pEr gilt seit vier Tagen als\nvermisst. Zeugenangaben zufolge\lwurde er von Schergen der\lOrganisation Team Violet enführt.\pPrimus gilt als führender\nWissenschaftler auf dem Gebiet der\lZeitforschung.\pDie Polizei nimmt jeden\nhilfreichen Hinweis entgegen.
+.end
+
+.string str_tv_aktania GER
+        = ... Es läuft eine History-Doku:\pErzähler: Das Verhängnis von\nAktania, eine Tragödie, die den\lganzen Kontinent ergriffen hat.\pAls ein Meteorit aus dem all vor\nder Küste des einstigen\lFerienparadises Aktania einschlug,\lsollte sich das Leben auf der\lInsel für immer verändern.\pViele Menschen fielen der\nKatastrophe zum Opfer, so auch der\lArenaleiter der Stadt, Harren.\pDer zuständige Regent von den Top\nVier kommentierte das Unglück wie\lfolgt:\pHarren war ein gro\$ser Mann, sein\nTod ist bedauernswert. Ich hätte\lmir niemand besseren als\lArenaleiter von Aktania wünschen\lkönnen und so bin ich zumindest\lerleichtert, dass die Aufgabe nun\lseinem Sohn Lester zuteil wird.
+.end

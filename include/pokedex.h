@@ -30,6 +30,8 @@ extern "C" {
 #define POKEDEX_FLAG_FEATURE_0 0x928
 #define POKEDEX_FLAG_FEATURE_1 0x929
 #define POKEDEX_FLAG_FEATURE_2 0x92A
+    
+#define CAUGHT_POKEDEX_DISABLE 0x912
 
     extern u8 str_pokepad_pokedex_nl[];
     extern u8 str_pokepad_pokedex_unkown[];

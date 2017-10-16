@@ -66,7 +66,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEBALL
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_w, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
 		0x4, //index
 		200, //price
 		0, //holding_effect_id

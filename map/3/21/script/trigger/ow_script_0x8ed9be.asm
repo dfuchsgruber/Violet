@@ -66,7 +66,7 @@ loadpointer 0x0 str_0x8edd68
 callstd MSG_KEEPOPEN
 special 0x7
 copyvarifnotzero 0x8000 ITEM_EP_TEILER
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 call ow_script_0x8bf7fb
 loadpointer 0x0 str_0x8edba7

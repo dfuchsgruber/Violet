@@ -2,11 +2,13 @@
 
 @// Wild data map_18_3_wild_grass
 .global map_18_3_wild_grass
+.align 4
 map_18_3_wild_grass:
 .byte 0x18 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_18_3_wild_grass_entries
 
+.align 4
 map_18_3_wild_grass_entries:
 .byte 24, 27 @//Level range
 .hword POKEMON_VULPIX @// 20 percent percent
@@ -35,11 +37,13 @@ map_18_3_wild_grass_entries:
 
 @// Wild data map_18_3_wild_other
 .global map_18_3_wild_other
+.align 4
 map_18_3_wild_other:
 .byte 0x4f @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_18_3_wild_other_entries
 
+.align 4
 map_18_3_wild_other_entries:
 .byte 26, 30 @//Level range
 .hword POKEMON_FUKANO @// 60 percent percent

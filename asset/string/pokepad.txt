@@ -1,3 +1,11 @@
+.string str_pokepad GER
+        =Pok\epad
+.end
+
+.string str_pokepad EN
+        =Pok\epad
+.end
+
 .string str_pokepad_wondertrade GER
         =Wundertausch
 .end

@@ -1,3 +1,3 @@
 .string str_0x8a0824 GER
-	=Der_Lehrereberuf_ist_nur_ein\nAspekt_meines_Lebens._Als\lJungspund_habe_ich_die_ganze_Welt\lbereist_und_bin_ein_etablierter\lTrainer_geworden.
+	=Und? Hattest du ein gutes Gef\$uehl\nbei den Fragen?\pIch wollte euch die\nAngelegenheit nicht allzu leicht\lmachen, aber keine Sorge, der\lpraktische Teil kann den\ltheoretischen immer noch ausgleichen!
 .end

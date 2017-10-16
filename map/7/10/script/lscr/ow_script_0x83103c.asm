@@ -70,7 +70,7 @@ clearflag FRBADGE_4
 loadpointer 0x0 str_0x8f36ad
 callstd MSG
 copyvarifnotzero 0x8000 ITEM_TM19
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 call ow_script_0x85f329
 end

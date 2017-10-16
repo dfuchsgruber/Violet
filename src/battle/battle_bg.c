@@ -3,7 +3,7 @@
 #include "battle.h"
 #include "gfx.h"
 #include "attack.h"
-
+#include "tile.h"
 
 battle_bg battle_bgs[29] = {
     // Battle street
@@ -138,6 +138,14 @@ battle_bg battle_bgs[29] = {
 
 };
 
+u8 battle_bg_by_tile(){
+    coordinate pos;
+    get_current_tile_position(&pos.x, &pos.y);
+    dprintf("battle_bg_by_tile x %d, y %d\n", pos.x, pos.y);
+    u8 bg_id = (u8)tile_get_field_by_pos(pos.x, pos.y, 4);
+    return bg_id;
+}
+
 void battle_bg_load(u8 id){
     lz77uncompvram(battle_bgs[id].tileset, (void*) 0x6008000);
     lz77uncompvram(battle_bgs[id].tilemap, (void*) 0x600d000);
@@ -157,6 +165,7 @@ void battle_bg_get(u8 id, const void **set, const void **map, const void **pal){
 
 u8 battle_bg_get_id(){
     u8 *battle_bg_id = (u8*)0x2022B50;
+    dprintf("Battle bg id is %d\n", *battle_bg_id);
     return *battle_bg_id;
 }
 

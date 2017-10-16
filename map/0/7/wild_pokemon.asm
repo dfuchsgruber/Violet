@@ -2,11 +2,13 @@
 
 @// Wild data map_0_7_wild_grass
 .global map_0_7_wild_grass
+.align 4
 map_0_7_wild_grass:
 .byte 0x1 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_0_7_wild_grass_entries
 
+.align 4
 map_0_7_wild_grass_entries:
 .byte 20, 22 @//Level range
 .hword POKEMON_MARILL @// 20 percent percent
@@ -35,11 +37,13 @@ map_0_7_wild_grass_entries:
 
 @// Wild data map_0_7_wild_water
 .global map_0_7_wild_water
+.align 4
 map_0_7_wild_water:
 .byte 0xa @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_0_7_wild_water_entries
 
+.align 4
 map_0_7_wild_water_entries:
 .byte 25, 32 @//Level range
 .hword POKEMON_KRABBY @// 60 percent percent
@@ -54,11 +58,13 @@ map_0_7_wild_water_entries:
 
 @// Wild data map_0_7_wild_rod
 .global map_0_7_wild_rod
+.align 4
 map_0_7_wild_rod:
 .byte 0xa @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_0_7_wild_rod_entries
 
+.align 4
 map_0_7_wild_rod_entries:
 .byte 25, 32 @//Level range
 .hword POKEMON_KRABBY @// 70 percent, rod percent

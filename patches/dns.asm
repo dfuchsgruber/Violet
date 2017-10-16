@@ -28,12 +28,6 @@
 	bx r1
 	.pool
 
-.org 0x083CC16C
-        .word str_settings_color
-
-.org 0x083CC198
-        .word str_settings_color_dn
-        .word str_settings_color_standard
 
 .org 0x8059A90
         ldr r3, =tileset_load_pal_as_ts0 | 1

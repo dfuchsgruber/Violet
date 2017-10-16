@@ -243,7 +243,7 @@ battle_script_cmds:
 	.word 0x802d351
 	.word 0x802d3cd
 	.word 0x802d799
-	.word 0x802d8f5
+	.word bsc_pokemon_caught @//0xF1
 	.word 0x802d971
 	.word 0x802dcd1
 	.word 0x802df55

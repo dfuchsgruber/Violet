@@ -2,11 +2,13 @@
 
 @// Wild data map_0_12_wild_grass
 .global map_0_12_wild_grass
+.align 4
 map_0_12_wild_grass:
 .byte 0x1c @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_0_12_wild_grass_entries
 
+.align 4
 map_0_12_wild_grass_entries:
 .byte 26, 30 @//Level range
 .hword POKEMON_CAMAUB @// 20 percent percent

@@ -53,8 +53,12 @@
 .end
 
 
-.string str_0x8e1015 GER
-	=\23\$s\8e\_spnr\4c\e\8e\_spnrDieser_Weg_f\$uehrt_ostw\$aerts_in_eine\nW\$ueste._Halte_dich_lieber_fern!
+.string str_meriana_revo_choice_0 GER
+    =Bestechen lassen
+.end
+
+.string str_meriana_revo_choice_1 GER
+    =Widersprechen
 .end
 
 

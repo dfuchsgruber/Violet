@@ -1,5 +1,7 @@
 @// Tables pasted from the ROM
 
+.include "std.s"
+
 .global table_pokemenu_opts
 .global pokemenu_opts
 
@@ -9,66 +11,70 @@ table_pokemenu_opts:
 
 @Limit for field moves is 0xC which is currently located at 
 pokemenu_opts:  @format : string, function pointer
-    .word 0x84167cf
+    .word str_bericht
     .word 0x8122d85
-    .word 0x84167c8
+    .word str_tausch
     .word 0x8122e39
-    .word 0x8415f82
+    .word str_zuruck
     .word 0x8123691
-    .word 0x8415f97
+    .word str_items
     .word 0x81236f1
-    .word 0x8415f70
+    .word str_geben
     .word 0x8123755
-    .word 0x8415fa3
+    .word str_nehmen
     .word 0x8123c89
     .word str_fp_menu
     .word fp_menu_init + 1
-    .word 0x84167f2
+    .word 0x84167f2 @//brief nehmen (deprecated)
     .word 0x8123e5d
-    .word 0x84167f9
+    .word 0x84167f9 @//brief lesen
     .word 0x8123da9
-    .word 0x8415f82
+    .word str_zuruck @//brief zuruck
     .word 0x81240b5
-    .word 0x84167b7
+    .word str_tausch @//str tausch (1)
     .word 0x8124145
-    .word 0x84167be
+    .word str_aussenden
     .word 0x8124145
-    .word 0x84167de
+    .word str_eintragen
     .word 0x81241a5
-    .word 0x84167e8
+    .word str_austragen
     .word 0x81242c9
-    .word 0x8415faa
+    .word str_nehmen
     .word 0x81243a5
-    .word 0x841b8d7
+    .word str_wahlen
     .word 0x81243d5
-    .word 0x84167ff
+    .word str_tausch
     .word 0x81244e1
-    .word 0x84167ff
+    .word str_tausch
     .word 0x81245f1
-    .word 0x82476e8
+    .word attack_names + ATTACK_BLITZ * 13
     .word 0x81245f5
-    .word 0x8247027
+    .word attack_names + ATTACK_ZERSCHNEIDER * 13
     .word 0x81245f5
-    .word 0x824705b
+    .word attack_names + ATTACK_FLIEGEN * 13
     .word 0x81245f5
-    .word 0x82472f2
+    .word attack_names + ATTACK_STAERKE * 13
     .word 0x81245f5
-    .word 0x8247249
+    .word attack_names + ATTACK_SURFER * 13
     .word 0x81245f5
-    .word 0x8247c09
+    .word attack_names + ATTACK_ZERTRUEMMERER * 13
     .word 0x81245f5
-    .word 0x82475d7
+    .word attack_names + ATTACK_KASKADE * 13
     .word 0x81245f5
-    .word 0x8247478
+    .word attack_names + ATTACK_TELEPORT * 13
     .word 0x81245f5
-    .word 0x8247403
+    .word attack_names + ATTACK_SCHAUFLER * 13
     .word 0x81245f5
-    .word 0x82479f4
+    .word attack_names + ATTACK_MILCHGETRAENK * 13
     .word 0x81245f5
-    .word 0x824763f
+    .word attack_names + ATTACK_WEICHEI * 13
     .word 0x81245f5
-    .word 0x8247b12
+    .word attack_names + ATTACK_LOCKDUFT * 13
     .word 0x81245f5
+
+
+
+
 
 
 .global table_field_moves

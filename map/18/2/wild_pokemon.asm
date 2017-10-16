@@ -2,11 +2,13 @@
 
 @// Wild data map_18_2_wild_grass
 .global map_18_2_wild_grass
+.align 4
 map_18_2_wild_grass:
 .byte 0x4 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_18_2_wild_grass_entries
 
+.align 4
 map_18_2_wild_grass_entries:
 .byte 24, 27 @//Level range
 .hword POKEMON_ZUBAT @// 20 percent percent

@@ -11,7 +11,7 @@ faceplayer
 loadpointer 0x0 str_0x8fb630
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_TM47
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x8fb6cf
 callstd MSG_KEEPOPEN

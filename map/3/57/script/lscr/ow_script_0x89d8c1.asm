@@ -132,6 +132,7 @@ call ow_script_0x89ba6e
 loadpointer 0x0 str_0x89e366
 callstd MSG
 special 0x7
+
 call ow_script_0x89e33c
 loadpointer 0x0 str_0x89e350
 callstd MSG
@@ -176,7 +177,7 @@ call ow_script_0x89e1fc
 loadpointer 0x0 str_0x89df1e
 callstd MSG
 special 0x7
-call ow_script_0x89e328
+call ow_script_0x89e33c
 loadpointer 0x0 str_0x89de07
 callstd MSG
 special 0x7
@@ -289,7 +290,7 @@ callstd MSG
 special 0x7
 applymovement 0x6 ow_script_movs_0x89ea7c
 waitmovement 0x0
-call ow_script_0x89e328
+call ow_script_0x89e33c
 loadpointer 0x0 str_0x89ea1d
 callstd MSG
 special 0x7
@@ -339,8 +340,8 @@ ow_script_movs_0x89f119:
 .global ow_script_0x922e6e
 ow_script_0x922e6e:
 setvar STORY_PROGRESS 0x8
-callasm 0x91a44c1
-pause 0x1
+callasm trainerschool_selection_init
+waitstate
 copyvar 0x8004 LASTRESULT
 bufferpokemon 0x0 LASTRESULT
 givepokemon 0x8004 0x5 ITEM_SINELBEERE 0x0 0x0 0x0
@@ -351,6 +352,7 @@ waitfanfare
 closeonkeypress
 call ow_script_0x893bb5
 setflag PKMNMENU
+special 0x16F
 applymovement 0xff ow_script_movs_0x89f189
 waitmovement 0x0
 call ow_script_0x89c5ee
@@ -694,6 +696,7 @@ goto ow_script_0x8facfc
 
 .global ow_script_0x8facfc
 ow_script_0x8facfc:
+setflag BLACKOUT_BYPASS
 setwildbattle POKEMON_STARALILI 0x2 ITEM_NONE
 dowildbattle
 compare LASTRESULT 0xff
@@ -890,8 +893,8 @@ goto ow_script_0x8a2db7
 .global ow_script_0x8a2db7
 ow_script_0x8a2db7:
 copyvar 0x8006 LASTRESULT
-compare 0x8006 0x0
-callif NOT_EQUAL ow_script_0x8a2dd8
+compare 0x8006 0xFF
+callif EQUAL ow_script_0x8a2dd8
 compare 0x8006 0x0
 callif EQUAL ow_script_0x8a2dea
 goto ow_script_0x8a32d6
@@ -1046,7 +1049,7 @@ loadpointer 0x0 str_0x8a61c1
 callstd MSG
 special 0x7
 copyvarifnotzero 0x8000 ITEM_POKEBALL
-copyvarifnotzero 0x8001 ITEM_TIMERBALL
+copyvarifnotzero 0x8001 10
 callstd ITEM_OBTAIN
 goto ow_script_0x8a5fe1
 
@@ -1064,6 +1067,7 @@ compare STARTER_SELECTED 0x1
 callif EQUAL ow_script_0x8a6d9d
 compare STARTER_SELECTED 0x2
 callif EQUAL ow_script_0x8a6dad
+setflag CAUGHT_POKEDEX_DISABLE
 dowildbattle
 countpokemon
 compare LASTRESULT 0x2
@@ -1086,6 +1090,7 @@ return
 
 .global ow_script_0x8a6046
 ow_script_0x8a6046:
+clearflag CAUGHT_POKEDEX_DISABLE
 call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8a6081
 callstd MSG
@@ -1778,11 +1783,3 @@ special 0x9e
 waitstate
 return
 
-
-.global ow_script_0x89e328
-ow_script_0x89e328:
-setvar 0x8000 0x0
-setvar 0x8001 0xa
-setvar 0x8002 0xe
-special 0x6
-return

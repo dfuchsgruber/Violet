@@ -11,7 +11,7 @@ gotoif EQUAL ow_script_0x8448c2
 loadpointer 0x0 str_0x8448cd
 callstd MSG_FACE
 copyvarifnotzero 0x8000 ITEM_FLINKKLAUE
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 setflag MERIANA_CITY_EXPLANATION_IN_FRONT_OF_POKESTOP_DOOR
 loadpointer 0x0 str_0x844937

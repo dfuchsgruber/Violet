@@ -2,11 +2,13 @@
 
 @// Wild data map_3_70_wild_grass
 .global map_3_70_wild_grass
+.align 4
 map_3_70_wild_grass:
 .byte 0x9 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_70_wild_grass_entries
 
+.align 4
 map_3_70_wild_grass_entries:
 .byte 5, 7 @//Level range
 .hword POKEMON_KLEINSTEIN @// 20 percent percent

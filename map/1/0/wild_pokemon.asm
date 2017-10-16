@@ -2,11 +2,13 @@
 
 @// Wild data map_1_0_wild_grass
 .global map_1_0_wild_grass
+.align 4
 map_1_0_wild_grass:
 .byte 0x9 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_1_0_wild_grass_entries
 
+.align 4
 map_1_0_wild_grass_entries:
 .byte 16, 20 @//Level range
 .hword POKEMON_SAMURZEL @// 20 percent percent
@@ -35,11 +37,13 @@ map_1_0_wild_grass_entries:
 
 @// Wild data map_1_0_wild_water
 .global map_1_0_wild_water
+.align 4
 map_1_0_wild_water:
 .byte 0xa @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_1_0_wild_water_entries
 
+.align 4
 map_1_0_wild_water_entries:
 .byte 35, 35 @//Level range
 .hword POKEMON_ENTON @// 60 percent percent
@@ -54,11 +58,13 @@ map_1_0_wild_water_entries:
 
 @// Wild data map_1_0_wild_other
 .global map_1_0_wild_other
+.align 4
 map_1_0_wild_other:
 .byte 0x8a @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_1_0_wild_other_entries
 
+.align 4
 map_1_0_wild_other_entries:
 .byte 20, 25 @//Level range
 .hword POKEMON_PARAGONI @// 60 percent percent
@@ -73,11 +79,13 @@ map_1_0_wild_other_entries:
 
 @// Wild data map_1_0_wild_rod
 .global map_1_0_wild_rod
+.align 4
 map_1_0_wild_rod:
 .byte 0xa @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_1_0_wild_rod_entries
 
+.align 4
 map_1_0_wild_rod_entries:
 .byte 35, 35 @//Level range
 .hword POKEMON_ENTON @// 70 percent, rod percent

@@ -89,6 +89,13 @@ typedef struct morgana_anim {
     u16 walkfield;
 } morgana_anim;
 
+typedef struct {
+    u16 block;
+    u8 type;
+    u8 double_tiled;
+    void *gfx;
+    u8 *palette_map;
+} door_animation;
 
 void do_fata_morgana();
 
@@ -134,5 +141,6 @@ extern u8 script_trainer_tipp_pokeradar[];
 extern u8 script_trainer_tipp_habitat[];
 extern u8 script_trainer_tipp_dns[];
 extern u8 script_trainer_tipp_cloud[];
+
 
 #endif

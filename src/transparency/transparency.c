@@ -45,12 +45,12 @@ bool transparency_load_black_pal() {
 }
 
 bool transparency_is_on() {
-    dprintf("Transparency used by weather %d, bypassed %d\n", checkflag(FLAG_BYPASS_TRANSPARENCY), transparency_used_by_weather());
+    dprintf("Transparency used by weather %d, bypassed %d\n", transparency_used_by_weather(), checkflag(FLAG_BYPASS_TRANSPARENCY));
     return !checkflag(FLAG_BYPASS_TRANSPARENCY) && !transparency_used_by_weather();
 }
 
 bool transparency_used_by_weather() {
-    u8 current_weather = *((u8*) 0x0202555A);
+    u8 current_weather = weather_get();
     return current_weather == 6 || current_weather == 8 || current_weather == 9 || current_weather == 0xA;
 }
 

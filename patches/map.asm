@@ -47,6 +47,10 @@
     mov r1, #1 //map
     mov r3, #8 //x
 
+//enable running shoes everywhere
+.org 0x080BD584
+    mov r0, #0
+
 
 //.org 0x08352218
 //    .word map_3_0

@@ -24,17 +24,18 @@
 .word \script
 .endm
 
-.macro callif condition script
+.macro gotoif condition subscript
 .byte 0x6
+.byte \condition
+.word \subscript
+.endm
+
+.macro callif condition script
+.byte 0x7
 .byte \condition
 .word \script
 .endm
 
-.macro gotoif condition subscript
-.byte 0x7
-.byte \condition
-.word \subscript
-.endm
 
 .macro gotostd std
 .byte 0x8

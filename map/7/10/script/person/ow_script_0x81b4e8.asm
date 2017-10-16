@@ -22,7 +22,7 @@ waitfanfare
 loadpointer 0x0 str_0x81b772
 callstd MSG
 copyvarifnotzero 0x8000 ITEM_TM19
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x81b828
 callstd MSG

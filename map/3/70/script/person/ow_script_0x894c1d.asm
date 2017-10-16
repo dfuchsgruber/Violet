@@ -96,7 +96,7 @@ gotoif EQUAL ow_script_0x895493
 loadpointer 0x0 str_0x895445
 callstd MSG
 copyvarifnotzero 0x8000 ITEM_BELEBER
-copyvarifnotzero 0x8001 ITEM_MEISTERBALL
+copyvarifnotzero 0x8001 1
 callstd ITEM_FIND
 call ow_script_0x895abc
 setvar 0x8000 0x0

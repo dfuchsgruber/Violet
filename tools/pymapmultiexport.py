@@ -93,7 +93,7 @@ def export_tileset(rom: agb.Agbrom, offset, proj: project.Project):
     outpath = tsresolve(TSOUTPUT, offset, num)
     gfxsym = tsresolve(TSGFXSYM, offset, num)
     _mkdirs(os.path.dirname(outpath))
-    #Check if sym is in proj
+    #Check if sym is in proj7
     if sym in proj.tilesets: return sym
     print("Exporting tileset num", num, "at", hex(offset), "into", outpath, "as", sym, ". Graphic will be exported to", graphic, "with symbol", gfxsym)
     pysetex.export_tileset(rom, proj, offset, sym, gfxsym, export_gfx=graphic, basename=outpath, delete_anim_edit=True)
