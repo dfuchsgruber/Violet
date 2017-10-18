@@ -6,7 +6,7 @@ OBJCOPY=arm-none-eabi-objcopy
 GRIT=@grit
 CC=@arm-none-eabi-gcc
 NM=@arm-none-eabi-nm
-ARS=@armipsd
+ARS=@armips
 MID2AGB=@mid2agb
 STR2S=@python str2s.py
 PY=@python
@@ -15,7 +15,7 @@ PYSET2S=@python tools/pyset2s.py
 PYMAP2S=@python tools/pymap2s.py
 PYPROJ2S=@python tools/pyproj2s.py
 
-ASFLAGS=-mthumb -Iinclude/
+ASFLAGS=-mthumb -Iinclude/ -mcpu=arm7tdmi -march=armv4t
 MIDFLAGS=-V92
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/
 LDFLAGS=-z muldefs

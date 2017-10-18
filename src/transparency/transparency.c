@@ -14,7 +14,7 @@ void transparency_handler(u8 *command) {
             //We check if have a special that disables the transparency
             if (*command == 0x26 || *command == 0x25) {
                 //Now we set together the param
-                u16 special_id = (u16) (command[1] || (command[2] << 8));
+                u16 special_id = (u16) (command[1] | (command[2] << 8));
                 int i;
                 for (i = 0; transparency_disabling_special_ids[i] != 0xFFFF; i++) {
                     if (transparency_disabling_special_ids[i] == special_id) {
