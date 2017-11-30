@@ -141,8 +141,9 @@ battle_bg battle_bgs[29] = {
 u8 battle_bg_by_tile(){
     coordinate pos;
     get_current_tile_position(&pos.x, &pos.y);
-    dprintf("battle_bg_by_tile x %d, y %d\n", pos.x, pos.y);
-    u8 bg_id = (u8)tile_get_field_by_pos(pos.x, pos.y, 4);
+    u8 bg_id = (u8)tile_get_field_by_pos(pos.x, pos.y, 3);
+    u16 (*f)(s16, s16) = (u16(*)(s16, s16))0x08058E49;
+    dprintf("battle_bg_by_tile x %d, y %d, bg %d, block %d, block data %d\n", pos.x, pos.y, bg_id, f(pos.x, pos.y), tile_get_field_by_pos(pos.x, pos.y, 8));
     return bg_id;
 }
 
@@ -165,7 +166,7 @@ void battle_bg_get(u8 id, const void **set, const void **map, const void **pal){
 
 u8 battle_bg_get_id(){
     u8 *battle_bg_id = (u8*)0x2022B50;
-    dprintf("Battle bg id is %d\n", *battle_bg_id);
+    //dprintf("Battle bg id is %d\n", *battle_bg_id);
     return *battle_bg_id;
 }
 

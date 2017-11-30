@@ -1,19 +1,52 @@
+
+
+/****************************************************************************
+ * Copyright (C) 2015-2017 by the SotS Team                                 *
+ *                                                                          *
+ * This file is part of Sovereign of the Skies.                             *
+ *                                                                          *
+ *   Sovereign of the Skies is free software: you can redistribute it       *
+ *   and/or modify it                                                       *
+ *   under the terms of the GNU Lesser General Public License as published  *
+ *   by the Free Software Foundation, either version 3 of the License, or   *
+ *   (at your option) any later version provided you include a copy of the  *
+ *   licence and this header.                                               *
+ *                                                                          *
+ *   Sovereign of the Skies is distributed in the hope that it will be      *
+ *   useful, but WITHOUT ANY WARRANTY; without even the implied warranty of *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          *
+ *   GNU Lesser General Public License for more details.                    *
+ *                                                                          *
+ *   You should have received a copy of the GNU Lesser General Public       *
+ *   License along with Sovereign of the Skies.                             *
+ *   If not, see <http://www.gnu.org/licenses/>.                            *
+ ****************************************************************************/
+/* 
+ * File:   agb_debug.c
+ * Author: Sturmvogel
+ *
+ * Created on 11. April 2017, 04:55
+ */
+
 #include "types.h"
 #include "romfuncs.h"
 #include "utils.h"
 #include "debug.h"
 
-#include <stdarg.h>
-
-/*****************
- * AUTHOR: Sbird *
- *               *
- *****************/
 void dprint(const char * sz)
 {
     __asm__ __volatile__(
         "mov r2, %0\n"
-        "ldr r0, =0xc0ded00d\n"
+        "mov r0, #0xC0\n"
+        "lsl r0, #0x8\n"
+        "mov r1, #0xDE\n"
+        "orr r0, r1\n"
+        "lsl r0, #0x8\n"
+        "mov r1, #0xD0\n"
+        "orr r0, r1\n"
+        "lsl r0, #8\n"
+        "mov r1, #0x0D\n"
+        "orr r0, r1\n"
         "mov r1, #0\n"
         "and r0, r0, r0\n":
         :
@@ -39,10 +72,19 @@ u32 mini_itoa(int value, u32 radix, u32 uppercase, u32 unsig, char * buffer, u32
         value = -value;
     }
     /* This builds the string back to front ... */
-    do {
-        u32 digit = __aeabi_uidivmod(value, radix); * (pbuffer++) = (digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
-        value /= radix;
-    } while (value > 0);
+    if (radix == 16) {
+        do {
+            u32 digit = value & 0xF;
+            * (pbuffer++) = (digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
+            value >>= 4;
+        } while (value > 0);
+    } else {
+        do {
+            u32 digit = value % radix;
+            * (pbuffer++) = (digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
+            value /= radix;
+        } while (value > 0);
+    }
     for (i = (pbuffer - buffer); i < zero_pad; i++)
         * (pbuffer++) = '0';
     if (negative)
@@ -134,16 +176,14 @@ int mini_vsnprintf(char * buffer, u32 buffer_len,
 }
 
 void dprintf(const char * str, ...)
-    //---------------------------------------------------------------------------------
-    {
-        char* __outstr = malloc(256);
-        va_list args;
-        va_start(args, str);
-        mini_vsnprintf(__outstr, 256, str, args);
-        va_end(args);
-        dprint(__outstr);
-        free(__outstr);
-    }
+{
+    char __outstr[256];
+    va_list args;
+    va_start(args, str);
+    mini_vsnprintf(__outstr, 256, str, args);
+    va_end(args);
+    dprint(__outstr);
+}
 
 void derrf(const char *str, ...){
         char* __outstr = malloc(256);

@@ -99,3 +99,9 @@
 
 .org 0x0811b58c
 	.word trainer_class_names
+
+.org 0x080D7A48
+        ldr r2, =trainer_get_class_name | 1
+        bx r2
+        .pool
+

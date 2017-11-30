@@ -20,7 +20,7 @@ u16 get_encounter_music_by_trainer_id(u16 trainer_id) {
         return MUS_REVOLUTIONARY_ENCOUNTER;
     }
     //Get encounter music by field inside trainer and modulo
-    return (u16) (__aeabi_uidivmod(trainers[trainer_id].encounter_and_gender.encounter, 3) + 283);
+    return (u16) ((trainers[trainer_id].encounter_and_gender.encounter % 3) + 283);
 }
 
 pair trainer_music_table [] = {

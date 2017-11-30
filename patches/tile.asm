@@ -107,3 +107,24 @@
 
 .org 0x083A520C
     .word gfx_high_grassPal
+
+//PC
+.org 0x0806CE3C
+    .word owscript_pc_turn_on
+
+.org 0x083B95C8
+    .word owscript_pc_turn_on
+
+
+.org 0x0806CE40
+    .word owscript_pc_turn_on2
+
+.org 0x0806D178
+    .word owscript_pc_turn_on2
+
+.org 0x083CD334
+    .word str_pc_take, str_pc_take_desc
+    .word str_pc_deposit, str_pc_deposit_desc
+    .word str_pc_move, str_pc_move_desc
+    .word str_pc_move_items, str_pc_move_items_desc
+    .word str_pc_adieu, str_pc_adieu

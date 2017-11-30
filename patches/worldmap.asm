@@ -31,3 +31,15 @@
 
 .org 0x080C3EF4
     .word worldmap0_namespace_position_assoc
+
+.org 0x080C43C4
+    .word gfx_hiroine_headTiles
+
+.org 0x80C43F4
+    .word gfx_hiro_headTiles
+
+.org 0x080C44B8
+    .word gfx_hiroine_headPal
+
+.org 0x080C44D4
+    .word gfx_hiro_headPal

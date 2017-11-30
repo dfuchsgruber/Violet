@@ -14,6 +14,7 @@ typedef unsigned long long int u64;
 typedef u8 MISALIGNED_32[4];
 typedef u8 MISALIGNED_16[4];
 
+#define GET_MISALIGNED_16(arr)((arr[0]) | (arr[1] << 8))
 #define GET_MISALIGNED_32(arr)((arr[0]) | (arr[1] << 8) | (arr[2] << 16) | (arr[3] << 24))
 
 typedef signed char s8;

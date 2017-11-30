@@ -171,3 +171,11 @@
 .string str_0x8ad201 GER
 	=\b\01_hat_5_Pokeb\$aelle\nerhalten!
 .end
+
+.string str_route_2_lab_choice_0 GER
+        =Zustimmen
+.end
+
+.string str_route_2_lab_choice_1 GER
+        =Widersprechen
+.end

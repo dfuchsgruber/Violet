@@ -739,6 +739,7 @@ song song_table[] = {
 	//Song 367
 	{mus_mistral_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
         //Song 368
-        {mus_test, SONG_TYPE_SONG, SONG_TYPE_SONG},
+        {mus_monumental, SONG_TYPE_SONG, SONG_TYPE_SONG},
+        
 
 };

@@ -155,18 +155,9 @@ waitmovement 0x0
 special 0x114
 applymovement 0x7 ow_script_movs_0x8a4e67
 waitmovement 0x0
-goto ow_script_0x8f6e5f
-
-
-.global ow_script_0x8f6e5f
-ow_script_0x8f6e5f:
 setflag PKMNMENU
-goto ow_script_0x8d317f
-
-
-.global ow_script_0x8d317f
-ow_script_0x8d317f:
 clearflag ROUTE_2_CAVE_GIRL_AND_GRUNT
+setvar LASTTALKED 7
 trainerbattlecont 0x1 0x6 0x0 str_0x8a4e71 str_0x8a4ed1 ow_script_0x8a5ac7
 
 
@@ -265,11 +256,12 @@ applymovement 0xff ow_script_movs_0x8a5fc5
 waitmovement 0x0
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8a5fb6
-callstd MSG
+callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x8a5f75
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
+closeonkeypress
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8a5e0c
 special 0x7
@@ -287,6 +279,11 @@ callstd MSG
 special 0x7
 call ow_script_0x8a5e85
 goto ow_script_0x8a5e6f
+
+.align 4
+choice:
+    .word str_route_2_cave_choice_1, 0
+    .word str_route_2_cave_choice_0, 0
 
 
 .global ow_script_0x8a5e6f

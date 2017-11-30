@@ -16,7 +16,6 @@ callstd MSG_YES_NO
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8305ae
 showmoney 0x0 0x0 0x0
-callasm 0x9181e01
 loadpointer 0x0 str_0x83069c
 callstd MSG_YES_NO
 compare LASTRESULT 0x0

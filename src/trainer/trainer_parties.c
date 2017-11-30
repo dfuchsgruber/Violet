@@ -46,7 +46,7 @@ trainer_pokemon_default_item_default_attacks trainer_party_x7[] = {
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,5,POKEMON_MYRAPLA),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,5,POKEMON_SAMURZEL),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,6,POKEMON_MAEHIKEL),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,6,POKEMON_ROSELIA)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,6,POKEMON_MYRAPLA)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x8[] = {
@@ -294,7 +294,7 @@ trainer_pokemon_default_item_default_attacks trainer_party_x34[] = {
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x35[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,20,POKEMON_ROSELIA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,20,POKEMON_PORYGON_Z),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0,0x0,false,false,19,POKEMON_FLOETTE)
 };
 

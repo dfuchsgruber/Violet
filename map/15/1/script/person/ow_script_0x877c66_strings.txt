@@ -1,0 +1,28 @@
+.string str_0x8bfba9 GER
+	=Hallo!_Mein_Name_ist_Rick.\nIch_und_mein_Bruder_Nick_betreiben\ldiese_Farm_hier._Wir_z\$uechten\lM\$aehikel,_Voltilamm_und\lVogelpokemon._Wenn_du_willst,\lbringt_dich_mein_Staraptor_von\lhier_nach_Aktania._Als\lGegenleistung_verlange_ich_gerade\leinmal_150_\b7.\pWas_sagst_du?_Willst_du_den\nService_in_Anspruch_nehmen?
+.end
+
+
+.string str_0x812578 GER
+	=Toll!_Also,_150_\b7,_bitte!\n
+.end
+
+
+.string str_0x812509 GER
+	=\b\01_bezahlt_150_\b7.
+.end
+
+
+.string str_0x81f8d2 GER
+	=Dankesch\$oen...\nKomm_bitte_mit,_mein_Staraptor_wird\ldich_jetzt_nach_Aktania_fliegen.
+.end
+
+
+.string str_0x118d6c0 GER
+	=____\05_\20__\04___\04___\0b\05___\01_\n\n\n\n\n\n____\06___\03__\7d\36\09_\80\36\09\07___\06\78_\40\02\02\0d\40____\_spleft\36\09\_spnr___\04_\01\60#\36\09_\0c___\_spnr___\04\1d\01\80#\36\09_\0c___\_spnr___\02_\_spnr_:___\0c___\13\92_\80___\07\40\k__7___\80___\13\97_?___\05_\20__\b0___\b1___\n
+.end
+
+
+.string str_0x812597 GER
+	=Ganz_wie_du_willst._Solltest_du\njedoch_irgendwanneinmal_nach\lAktania_wollen,_komm_einfach_zu\lmir.
+.end

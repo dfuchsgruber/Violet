@@ -8,49 +8,6 @@ ow_script_movs_0x8d79c9:
 .byte SAY_EXCLAM
 .byte STOP
 
-
-.global ow_script_0x8d7960
-ow_script_0x8d7960:
-call ow_script_0x8a1cc9
-loadpointer 0x0 str_0x8d79cd
-callstd MSG
-special 0x7
-lockall
-call ow_script_0x8d7a10
-sound 0x15
-applymovement 0x1 ow_script_movs_0x8d79c9
-applymovement 0x2 ow_script_movs_0x8d79c9
-applymovement 0x3 ow_script_movs_0x8d79c9
-applymovement 0x4 ow_script_movs_0x8d79c9
-applymovement 0x5 ow_script_movs_0x8d79c9
-waitmovement 0x0
-lockall
-checksound
-pause 0x24
-call ow_script_0x8a1cc9
-loadpointer 0x0 str_0x8d79fe
-callstd MSG
-special 0x7
-fadescreen 0x1
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-goto ow_script_0x8d7bed
-
-
-.global ow_script_0x8d7bed
-ow_script_0x8d7bed:
-loadpointer 0x0 0
-callasm 0x9190001
-clearflag TRANS_DISABLE
-goto ow_script_0x8d7ea1
-
-
-.global ow_script_0x8d7ea1
-ow_script_0x8d7ea1:
-setvar STORY_PROGRESS 0x14
-goto ow_script_0x8d7c01
-
-
 .global ow_script_movs_0x8d7ba7
 ow_script_movs_0x8d7ba7:
 .byte STEP_DOWN_FAST
@@ -109,8 +66,56 @@ ow_script_movs_0x8d7b4e:
 .byte STOP
 
 
-.global ow_script_0x8d7c01
-ow_script_0x8d7c01:
+
+.global ow_script_0x8d7960
+ow_script_0x8d7960:
+
+//Todo
+
+setflag TRANS_DISABLE
+clearflag TRANS_PALETTE_FETCH
+setvar STORY_PROGRESS 0x14
+setvar 0x8004 0x12
+special 0x19
+waitstate
+clearflag TRANS_DISABLE
+
+//
+
+call ow_script_0x8a1cc9
+loadpointer 0x0 str_0x8d79cd
+callstd MSG
+special 0x7
+lockall
+call ow_script_0x8d7a10
+sound 0x15
+applymovement 0x1 ow_script_movs_0x8d79c9
+applymovement 0x2 ow_script_movs_0x8d79c9
+applymovement 0x3 ow_script_movs_0x8d79c9
+applymovement 0x4 ow_script_movs_0x8d79c9
+applymovement 0x5 ow_script_movs_0x8d79c9
+waitmovement 0x0
+lockall
+checksound
+pause 0x24
+call ow_script_0x8a1cc9
+loadpointer 0x0 str_0x8d79fe
+callstd MSG
+special 0x7
+fadescreen 0x1
+setflag TRANS_DISABLE
+clearflag TRANS_PALETTE_FETCH
+goto ow_script_0x8d7bed
+
+
+.global ow_script_0x8d7bed
+ow_script_0x8d7bed:
+setvar STORY_PROGRESS 0x14
+setvar 0x8004 0x10
+special 0x19
+waitstate
+clearflag TRANS_DISABLE
+setvar STORY_PROGRESS 0x14
 special 0xb
 lockall
 fadescreen 0x0
@@ -295,8 +300,9 @@ goto ow_script_0x8e09b9
 .global ow_script_0x8e09b9
 ow_script_0x8e09b9:
 special 0x114
-callasm 0x9405525
-pause 0x1
+setvar 0x8004 0x11
+special 0x19
+waitstate
 showsprite 0x13
 goto ow_script_0x8dbff9
 
@@ -451,7 +457,6 @@ waitcry
 fadescreen 0x1
 callasm 0x919d791
 writebytetooffset 0x0 0x2036e28
-setvar STORY_PROGRESS 0x14
 goto ow_script_0x92df2f
 
 

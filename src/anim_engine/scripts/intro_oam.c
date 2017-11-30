@@ -112,8 +112,8 @@ gfx_frame gfx_anim_intro_deoxys_arm_right[] = {
 };
 
 gfx_frame gfx_anim_intro_deoxys_arm_left[] = {
-    {0, 16 | GFX_ANIM_VFLIP}, {32, 16| GFX_ANIM_VFLIP}, 
-    {64, 16 | GFX_ANIM_VFLIP}, {32, 16 | GFX_ANIM_VFLIP}, {GFX_ANIM_JUMP, 0}
+    {0, 16 | GFX_ANIM_HFLIP}, {32, 16| GFX_ANIM_HFLIP}, 
+    {64, 16 | GFX_ANIM_HFLIP}, {32, 16 | GFX_ANIM_HFLIP}, {GFX_ANIM_JUMP, 0}
 };
 
 gfx_frame *gfx_anim_table_intro_deoxys_arm_right[] = {

@@ -369,7 +369,7 @@ graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_360_pokemon_isso_frontspriteTiles, 0x800, 360},
     {gfx_pkmn_species_361_pokemon_zwirrlicht_frontspriteTiles, 0x800, 361},
     {gfx_pkmn_species_362_pokemon_zwirrklop_frontspriteTiles, 0x800, 362},
-    {gfx_pkmn_species_363_pokemon_roselia_frontspriteTiles, 0x800, 363},
+    {gfx_pkmn_species_363_pokemon_porygon_z_frontspriteTiles, 0x800, 363},
     {gfx_pkmn_species_364_pokemon_bummelz_frontspriteTiles, 0x800, 364},
     {gfx_pkmn_species_365_pokemon_muntier_frontspriteTiles, 0x800, 365},
     {gfx_pkmn_species_366_pokemon_letarking_frontspriteTiles, 0x800, 366},

@@ -63,7 +63,7 @@
 #define ITEM_SCHUETZER 0x39
 #define ITEM_LEBEN_ORB 0x3a
 #define ITEM_EVOLITH 0x3b
-#define ITEM_ITEM_3C 0x3c
+#define ITEM_SCHARFZAHN 0x3c
 #define ITEM_ITEM_3D 0x3d
 #define ITEM_ITEM_3E 0x3e
 #define ITEM_KP_PLUS 0x3f
@@ -486,7 +486,7 @@ extern u8 str_item_desc_x38_item_duesterumhang[];
 extern u8 str_item_desc_x39_item_schuetzer[];
 extern u8 str_item_desc_x3a_item_leben_orb[];
 extern u8 str_item_desc_x3b_item_evolith[];
-extern u8 str_item_desc_x3c_item_item_3c[];
+extern u8 str_item_desc_x3c_item_scharfzahn[];
 extern u8 str_item_desc_x3d_item_item_3d[];
 extern u8 str_item_desc_x3e_item_item_3e[];
 extern u8 str_item_desc_x3f_item_kp_plus[];

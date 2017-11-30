@@ -88,8 +88,12 @@
 .end
 
 
-.string str_0x8a5f75 GER
-	=\7e\5f\8a\_spnr\9b\5f\8a\_spnr
+.string str_route_2_cave_choice_0 GER
+        =Zurückbringen
+.end
+
+.string str_route_2_cave_choice_1 GER
+        =Behalten
 .end
 
 

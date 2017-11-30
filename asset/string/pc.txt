@@ -1,0 +1,743 @@
+.string str_pc_turn_on GER
+    =\b\01 schaltet den PC ein.
+.end
+
+.string str_pc_turn_on EN
+    =\b\01 turns on the PC.
+.end
+
+.string str_pc_lagerungssystem GER
+    =Lagerunssystem
+.end
+
+.string str_pc_lagerungssystem EN
+    =Storage-System
+.end
+
+.string str_pc_player GER
+    =Eigener PC
+.end
+
+.string str_pc_player EN
+    =Own PC
+.end
+
+.string str_pc_ausloggen GER
+    =Ausloggen
+.end
+
+.string str_pc_ausloggen EN
+    =Logout
+.end
+
+.string str_pc_access GER
+    =Zugriff auf welchen PC?
+.end
+
+.string str_pc_access EN
+    =Access to which PC?
+.end
+
+.string str_pc_opened_storage GER
+    =Pok\emon-Lagerungssystem ge\$oeffnet.
+.end
+
+.string str_pc_opened_storage EN
+    =Pok\emon-Storage-System activated.
+.end
+
+.string str_pc_connection GER
+    =Verbindung mit PC von \b\01...
+.end
+
+.string str_pc_connection EN
+    =Connecting to \b\01's PC...
+.end
+
+.string str_pc_take GER
+    =Pok\emon Nehmen
+.end
+
+.string str_pc_take EN
+    =Take Pok\emon
+.end
+
+.string str_pc_take_desc GER
+    =Nimm ein Pok\emon aus einer\nBox in dein Team auf.
+.end
+
+.string str_pc_take_desc EN
+    =Add a Pok\emon from a\nBox to your team.
+.end
+
+.string str_pc_deposit GER
+    =Pok\emon Ablegen
+.end
+
+.string str_pc_deposit EN
+    =Deposit Pok\emon
+.end
+
+.string str_pc_deposit_desc GER
+    =Lagere Pok\emon aus deinem\nTeam in einer Box.
+.end
+
+.string str_pc_deposit_desc EN
+    =Deposit Pok\emon from your\nteam in a box.
+.end
+
+.string str_pc_move GER
+    =Pok\emon Bewegen
+.end
+
+.string str_pc_move EN
+    =Move Pok\emon
+.end
+
+.string str_pc_move_desc GER
+    =Ordne Pok\emon in den Boxen\nund deinem Team.
+.end
+
+.string str_pc_move_desc EN
+    =Move Pok\emon inside your\nboxes and team.
+.end
+
+.string str_pc_move_items GER
+    =Items Bewegen
+.end
+
+.string str_pc_move_items EN
+    =Move Items
+.end
+
+.string str_pc_move_items_desc GER
+    =Items, gehalten vom Pok\emon\nim Team oder in der Box bewegen.
+.end
+
+.string str_pc_move_items_desc EN
+    =Move items held by Pok\emon\nin your team or a box.
+.end
+
+.string str_pc_adieu GER
+    =Adieu!
+.end
+
+.string str_pc_adieu EN
+    =Adieu!
+.end
+
+.string str_pc_wechseln GER
+    =Wechseln
+.end
+
+.string str_pc_wechseln EN
+    =Goto
+.end
+
+.string str_pc_motive GER
+    =Motiv
+.end
+
+.string str_pc_motive EN
+    =Motive
+.end
+
+.string str_pc_name_box GER
+    =Benennen
+.end
+
+.string str_pc_name_box EN
+    =Name
+.end
+
+.string str_pc_jump_to_which_box GER
+    =Zu welcher Box wechseln?
+.end
+
+.string str_pc_jump_to_which_box EN
+    =Jump to which box?
+.end
+
+.string str_pc_liste_1 GER
+    =Liste 1
+.end
+
+.string str_pc_liste_1 EN
+    =List 1
+.end
+
+.string str_pc_liste_2 GER
+    =Liste 2
+.end
+
+.string str_pc_liste_2 EN
+    =List 2
+.end
+
+.string str_pc_liste_3 GER
+    =Liste 3
+.end
+
+.string str_pc_liste_3 EN
+    =List 3
+.end
+
+.string str_pc_sonstiges GER
+    =Sonstiges
+.end
+
+.string str_pc_sonstiges EN
+    =Other
+.end
+
+.string str_pc_motive_wald GER
+    =Wald
+.end
+
+.string str_pc_motive_wald EN
+    =Forest
+.end
+
+.string str_pc_motive_mauer GER
+    =Mauer
+.end
+
+.string str_pc_motive_mauer EN
+    =Wall
+.end
+
+.string str_pc_motive_wueste GER
+    =W\$ueste
+.end
+
+.string str_pc_motive_wueste EN
+    =Desert
+.end
+
+.string str_pc_motive_steppe GER
+    =Steppe
+.end
+
+.string str_pc_motive_steppe EN
+    =Steppe
+.end
+
+.string str_pc_motive_geroell GER
+    =Ger\$oell
+.end
+
+.string str_pc_motive_geroell EN
+    =Gravel
+.end
+
+.string str_pc_motive_vulkan GER
+    =Vulkan
+.end
+
+.string str_pc_motive_vulkan EN
+    =Vulcano
+.end
+
+.string str_pc_motive_schnee GER
+    =Schnee
+.end
+
+.string str_pc_motive_schnee EN
+    =Snow
+.end
+
+.string str_pc_motive_hoehle GER
+    =H\$oehle
+.end
+
+.string str_pc_motive_hohele EN
+    =Cave
+.end
+
+.string str_pc_motive_strand GER
+    =Strand
+.end
+
+.string str_pc_motive_strand EN
+    =Beach
+.end
+
+.string str_pc_motive_fluss GER
+    =Fluss
+.end
+
+.string str_pc_motive_fluss EN
+    =River
+.end
+
+.string str_pc_motive_tiefsee GER
+    =Tiefsee
+.end
+
+.string str_pc_motive_tiefsee EN
+    =Seafloor
+.end
+
+.string str_pc_motive_himmel GER
+    =Himmel
+.end
+
+.string str_pc_motive_himmel EN
+    =Sky
+.end
+
+.string str_pc_motive_sterne GER
+    =Sterne
+.end
+
+.string str_pc_motive_sterne EN
+    =Stars
+.end
+
+.string str_pc_motive_pokestop GER
+    =Pok\estop
+.end
+
+.string str_pc_motive_pokestop EN
+    =Pok\estop
+.end
+
+.string str_pc_motive_fliese GER
+    =Fliese
+.end
+
+.string str_pc_motive_fliese EN
+    =Tile
+.end
+
+.string str_pc_motive_weiss GER
+    =Wei\$s
+.end
+
+.string str_pc_motive_weiss EN
+    =White
+.end
+
+
+.string str_pc_mark GER
+    =Markieren
+.end
+
+.string str_pc_mark EN
+    =Mark
+.end
+
+.string str_pc_entlass GER
+    =Entlassen
+.end
+
+.string str_pc_entlass EN
+    =Release
+.end
+
+.string str_pc_0 GER
+	=Die_Box_verlassen?
+.end
+
+.string str_pc_0 EN
+	=Leave box?
+.end
+
+.string str_pc_1 GER
+	=Was_m\$oechtest_du_tun?
+.end
+
+.string str_pc_1 EN
+	=What do you want to do?
+.end
+
+.string str_pc_2 GER
+	=W\$aehle_eine_Motivsammlung.
+.end
+
+.string str_pc_2 EN
+	=Select a motive collection.
+.end
+
+.string str_pc_3 GER
+	=W\$aehle_einen_Hintergrund.
+.end
+
+.string str_pc_3 EN
+	=Select a background.
+.end
+
+.string str_pc_4 GER
+	=Ausgew\$aehlt:_\f7_
+.end
+
+.string str_pc_4 EN
+	=Selected:_\f7_
+.end
+
+.string str_pc_5 GER
+	=Zu_welcher_Box_wechseln?
+.end
+
+.string str_pc_5 EN
+	=Jump to which box?
+.end
+
+.string str_pc_6 GER
+	=In_welche_Box_ablegen?
+.end
+
+.string str_pc_6 EN
+	=Deposit in which box?
+.end
+
+.string str_pc_7 GER
+	=Abgelegt:_\f7_
+.end
+
+.string str_pc_7 EN
+	=Deposited:_\f7_
+.end
+
+.string str_pc_8 GER
+	=Die_Box_ist_voll.
+.end
+
+.string str_pc_8 EN
+	=The box is full.
+.end
+
+.string str_pc_9 GER
+	=Dieses_Pok\emon_freilassen?
+.end
+
+.string str_pc_9 EN
+	=Release this Pok\emon?
+.end
+
+.string str_pc_10 GER
+	=\f7__ist_frei.
+.end
+
+.string str_pc_10 EN
+	=\f7__is free.
+.end
+
+.string str_pc_11 GER
+	=Tsch\$uess,_\f7_!
+.end
+
+.string str_pc_11 EN
+	=Bye,_\f7_!
+.end
+
+.string str_pc_12 GER
+	=Markiere_dein_Pok\emon.
+.end
+
+.string str_pc_12 EN
+	=Mark you_Pok\emon.
+.end
+
+.string str_pc_13 GER
+	=Dein_letztes_Pok\emon!
+.end
+
+.string str_pc_13 EN
+	=Your_last_Pok\emon!
+.end
+
+.string str_pc_14 GER
+	=Dein_Team_ist_voll!
+.end
+
+.string str_pc_14 EN
+	=Your_team_is_full!
+.end
+
+.string str_pc_15 GER
+	=Du_h\$aeltst_ein_Pok\emon!
+.end
+
+.string str_pc_15 EN
+	=Your holding a Pok\emon!
+.end
+
+.string str_pc_16 GER
+	=Welches_w\$aehlst_du_aus?
+.end
+
+.string str_pc_16 EN
+	=Which one do you choose?
+.end
+
+.string str_pc_17 GER
+	=Ei-Freilassung_unm\$oeglich!
+.end
+
+.string str_pc_17 EN
+	=Can't release an egg!
+.end
+
+.string str_pc_18 GER
+	=Box_weiter_bearbeiten?
+.end
+
+.string str_pc_18 EN
+	=Keep editing the box?
+.end
+
+.string str_pc_19 GER
+	=\f7__kam_zur\$ueck!
+.end
+
+.string str_pc_19 EN
+	=\f7__returned!
+.end
+
+.string str_pc_20 GER
+	=War_es_in_Sorge_um_dich?
+.end
+
+.string str_pc_20 EN
+	=Did it care for you?
+.end
+
+.string str_pc_21 GER
+	=..._..._..._..._...!
+.end
+
+.string str_pc_21 EN
+	=..._..._..._..._...!
+.end
+
+.string str_pc_22 GER
+	=Bitte_Brief_entfernen.
+.end
+
+.string str_pc_22 EN
+	=Please remove letter.
+.end
+
+.string str_pc_23 GER
+	=Ausgew\$aehlt:_\f7_
+.end
+
+.string str_pc_23 EN
+	=Selected:_\f7_
+.end
+
+.string str_pc_24 GER
+	=Einem_Pok\emon_geben?
+.end
+
+.string str_pc_24 EN
+	=Give to a Pok\emon?
+.end
+
+.string str_pc_25 GER
+	=Item_im_Beutel_verstaut.
+.end
+
+.string str_pc_25 EN
+	=Item added to bag.
+.end
+
+.string str_pc_26 GER
+	=Der_Beutel_ist_voll.
+.end
+
+.string str_pc_26 EN
+	=Your bag is full.
+.end
+
+.string str_pc_27 GER
+	=Item_in_den_Beutel_legen?
+.end
+
+.string str_pc_27 EN
+	=Put item in your bag?
+.end
+
+.string str_pc_28 GER
+	=Gehalten:_\f7_
+.end
+
+.string str_pc_28 EN
+	=Held:_\f7_
+.end
+
+.string str_pc_29 GER
+	=Ge\$aendert_in_\f7_.
+.end
+
+.string str_pc_29 EN
+	=Changed_to_\f7_.
+.end
+
+.string str_pc_30 GER
+	=Brief-Lagerung_unm\$oeglich!
+.end
+
+.string str_pc_30 EN
+	=Can't store a letter!
+.end
+
+.string str_pc_action_0 GER
+	=Zur\$ueck
+.end
+
+.string str_pc_action_0 EN
+	=Zur\$ueck
+.end
+
+.string str_pc_action_1 GER
+	=Ablegen
+.end
+
+.string str_pc_action_1 EN
+	=Deposit
+.end
+
+.string str_pc_action_2 GER
+	=Nehmen
+.end
+
+.string str_pc_action_2 EN
+	=Take
+.end
+
+.string str_pc_action_3 GER
+	=Bewegen
+.end
+
+.string str_pc_action_3 EN
+	=Move
+.end
+
+.string str_pc_action_4 GER
+	=Tausch
+.end
+
+.string str_pc_action_4 EN
+	=Switch
+.end
+
+.string str_pc_action_5 GER
+	=Absetzen
+.end
+
+.string str_pc_action_5 EN
+	=Put
+.end
+
+.string str_pc_action_6 GER
+	=Bericht
+.end
+
+.string str_pc_action_6 EN
+	=Summary
+.end
+
+.string str_pc_action_7 GER
+	=Entlassen
+.end
+
+.string str_pc_action_7 EN
+	=Release
+.end
+
+.string str_pc_action_8 GER
+	=Markieren
+.end
+
+.string str_pc_action_8 EN
+	=Mark
+.end
+
+.string str_pc_action_9 GER
+	=Wechseln
+.end
+
+.string str_pc_action_9 EN
+	=Change
+.end
+
+.string str_pc_action_10 GER
+	=Motiv
+.end
+
+.string str_pc_action_10 EN
+	=Motive
+.end
+
+.string str_pc_action_11 GER
+	=Bennenen
+.end
+
+.string str_pc_action_11 EN
+	=Name
+.end
+
+.string str_pc_action_12 GER
+	=Nehmen
+.end
+
+.string str_pc_action_12 EN
+	=Take
+.end
+
+.string str_pc_action_13 GER
+	=Geben
+.end
+
+.string str_pc_action_13 EN
+	=Give
+.end
+
+.string str_pc_action_14 GER
+	=Geben
+.end
+
+.string str_pc_action_14 EN
+	=Give
+.end
+
+.string str_pc_action_15 GER
+	=Tauschen
+.end
+
+.string str_pc_action_15 EN
+	=Switch
+.end
+
+.string str_pc_action_16 GER
+	=Beutel
+.end
+
+.string str_pc_action_16 EN
+	=Bag
+.end
+
+.string str_pc_action_17 GER
+	=Info
+.end
+
+.string str_pc_action_17 EN
+	=Info
+.end
+
+
+.string str_pc_only_one_poke GER
+        =Du f\$uehrst nur ein Pok\emon mit dir!
+.end
+
+.string str_pc_only_one_poke GER
+        =You only have one Pok\emon in\nyour party!
+.end
+
+
+
+
+
+

@@ -19,7 +19,7 @@ frame 129
     oam_reset
     callback_reset
     bg_reset 0
-    bg_scroll_reset
+    bg_disp_reset
     bg_setup 0 bgcnfgs 3
     bg_sync_and_show 0
     bg_sync_and_show 1

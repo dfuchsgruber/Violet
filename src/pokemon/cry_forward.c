@@ -1817,10 +1817,10 @@ pokemon_cry pokemon_cries_forward [POKEMON_CNT] = {
         {0x20, 0x3c, 0x0, 0x0}
 , (void*) 0x867a474, {
             0xff, 0x0, 0xff, 0x0}},
-    // POKEMON_ROSELIA
+    // POKEMON_PORYGON_Z
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x8613838, {
+, cry_474, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_BUMMELZ
     {

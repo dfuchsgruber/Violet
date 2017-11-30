@@ -24,7 +24,7 @@ u16 pokedex_habitat_gras_page_4[4] = {
 };
 // Habitat gras, page 5
 u16 pokedex_habitat_gras_page_5[4] = {
-    POKEMON_ZOBIRIS, POKEMON_ROSELIA, POKEMON_SHNEBEDECK, POKEMON_REXBLISAR
+    POKEMON_ZOBIRIS, POKEMON_PORYGON_Z, POKEMON_SHNEBEDECK, POKEMON_REXBLISAR
 };
 // Habitat gras, page 6
 u16 pokedex_habitat_gras_page_6[3] = {

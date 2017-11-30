@@ -9,6 +9,7 @@ u8 transparency_disabling_command_ids [] = {0x2, 0x97, 0x5C, 0x5D, 0xB7, 0x29, 0
     0x86, 0x39, 0xFF};
 
 void transparency_handler(u8 *command) {
+    //dprintf("Story progress is %d\n", *vardecrypt(0x4051));
     if (*command != 0x27) { //waitstate bypasses the entire handle
         if (transparency_is_on()) {
             //We check if have a special that disables the transparency
@@ -45,7 +46,7 @@ bool transparency_load_black_pal() {
 }
 
 bool transparency_is_on() {
-    dprintf("Transparency used by weather %d, bypassed %d\n", transparency_used_by_weather(), checkflag(FLAG_BYPASS_TRANSPARENCY));
+    //dprintf("Transparency used by weather %d, bypassed %d\n", transparency_used_by_weather(), checkflag(FLAG_BYPASS_TRANSPARENCY));
     return !checkflag(FLAG_BYPASS_TRANSPARENCY) && !transparency_used_by_weather();
 }
 

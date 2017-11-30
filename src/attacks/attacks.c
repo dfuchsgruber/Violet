@@ -1023,15 +1023,15 @@ attack attacks[ATTACK_CNT] = {
 		CATEGORY_PHYSICAL,
 		0x0 //Padding
 	},
-	// ATTACK_FAUSTHIEB
+	// ATTACK_KONTER
 	{
-		0x0, //Effect-id (in table)
-		75, //Base Power
+		89, //Effect-id (in table)
+		1, //Base Power
 		TYPE_FIGHTING,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
-		SELECTED_TARGET,
+		TARGET_DEPENDS_ON_ATTACK,
 		0, //Priority
 		MAKES_CONTACT | MIRRORABLE,
 		0x0, //Effect table
@@ -3558,10 +3558,10 @@ attack attacks[ATTACK_CNT] = {
 		CATEGORY_STATUS,
 		0x0 //Padding
 	},
-	// ATTACK_INNERE_KRAFT
+	// ATTACK_KRAFTRESERVE
 	{
-		0x1d, //Effect-id (in table)
-		15, //Base Power
+		135, //Effect-id (in table)
+		1, //Base Power
 		TYPE_NORMAL,
 		100, //Accuracy
 		15, //PP
@@ -3648,15 +3648,15 @@ attack attacks[ATTACK_CNT] = {
 		CATEGORY_PHYSICAL,
 		0x0 //Padding
 	},
-	// ATTACK_FOKUSWELLE
+	// ATTACK_SPIEGELCAPE
 	{
-		0x0, //Effect-id (in table)
-		75, //Base Power
+		144, //Effect-id (in table)
+		1, //Base Power
 		TYPE_PSYCHIC,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
-		SELECTED_TARGET,
+		TARGET_DEPENDS_ON_ATTACK,
 		0, //Priority
 		MIRRORABLE,
 		0x0, //Effect table

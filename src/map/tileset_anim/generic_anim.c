@@ -21,10 +21,11 @@ u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header){
 }
 
 void generic_tileset_anim_proceed(tileset_animation *anim, u16 clk){
-    if(!__aeabi_uidivmod(clk, anim->speed)){
+    if(checkflag(TILESET_ANIM_DISABLE)) return;
+    if(!(clk % anim->speed)){
         //Copy frame
         void *dst = (void*)(0x06000000 + anim->start_tile * 32);
-        int frame = (int)__aeabi_uidivmod(clk / anim->speed, anim->cycle);
+        int frame = (clk / anim->speed) % anim->cycle;
         int source_offset = 32 * anim->num_tiles * frame;
         void *src = (void*)((int)anim->gfx + source_offset);
         dma3_add_request(src, dst, (u16)(anim->num_tiles * 32));

@@ -229,3 +229,36 @@
 .string str_pokedex EN
     =Pok\edex
 .end
+
+.string str_ja GER
+    =Ja
+.end
+
+.string str_ja EN
+    =Yes
+.end
+
+
+.string str_nein GER
+    =Nein
+.end
+
+.string str_nein EN
+    =No
+.end
+
+.string str_pc_choose GER
+    =Welches w\$aehlst du aus?
+.end
+
+.string str_pc_choose EN
+    =Which one do you pick?
+.end
+
+.string str_ende GER
+    =Ende
+.end
+
+.string str_ende EN
+    =End
+.end

@@ -21,7 +21,7 @@ u16 mitnahme_items[10][11] = {
 
 u16 *mitnahme_pick_item(pokemon *p){
     u32 l = (get_pokemons_attribute(p, ATTRIBUTE_LEVEL, 0)-1) / 10;
-    u32 r = __aeabi_uidivmod(random_change_seed(), 100);
+    u32 r = random_change_seed() % 100;
     if(r < 1) return &mitnahme_items[l][0];
     if(r < 2) return &mitnahme_items[l][1];
     if(r < 5) return &mitnahme_items[l][2];

@@ -141,6 +141,9 @@ blxr4:
 
 .org 0x080CE03C
         .byte 13 //battle bg evo
+
+.org 0x080CE348
+        .byte 13 //^
         
 //@battlestring remove the bsc string limitation (extend it to 0x7FFF)
 .org 0x080D7988

@@ -5,21 +5,16 @@
 .global ow_script_0x8fbbbb
 ow_script_0x8fbbbb:
 lockall
-goto ow_script_0x8f6e67
+sound 0x15
+applymovement 0x48 ow_script_movs_0x8fbc24
+waitmovement 0x0
+goto ow_script_0x8bf01f
 
 
 .global ow_script_movs_0x8fbc24
 ow_script_movs_0x8fbc24:
 .byte SAY_EXCLAM
 .byte STOP
-
-
-.global ow_script_0x8f6e67
-ow_script_0x8f6e67:
-sound 0x15
-applymovement 0x48 ow_script_movs_0x8fbc24
-waitmovement 0x0
-goto ow_script_0x8bf01f
 
 
 .global ow_script_0x8bf01f
@@ -30,14 +25,15 @@ callstd MSG
 special 0x7
 setvar 0x8004 0x48
 setvar LASTTALKED 0x48
-special 0x19
+special 0x1b
 waitmovement 0x0
 faceplayer
 call ow_script_0x8bf7fb
 loadpointer 0x0 str_0x8bf610
-callstd MSG_YES_NO
+callstd MSG_KEEPOPEN
+multichoice 8 8 0 1
 special 0x7
-compare LASTRESULT 0x0
+compare LASTRESULT 0x1
 callif EQUAL ow_script_0x8bf0a0
 goto ow_script_0x8bf0c1
 
@@ -115,8 +111,9 @@ trainerbattlecont 0x1 0x29 0x0 str_0x8bf5bc str_0x8bf5d1 ow_script_0x8bf158
 ow_script_0x8bf0a0:
 call ow_script_0x8bf7fb
 loadpointer 0x0 str_0x8bf745
-callstd MSG_YES_NO
+callstd MSG_KEEPOPEN
 special 0x7
-compare LASTRESULT 0x0
+multichoice 8 8 0 1
+compare LASTRESULT 0x1
 callif EQUAL ow_script_0x8bf0a0
 goto ow_script_0x8bf0c1

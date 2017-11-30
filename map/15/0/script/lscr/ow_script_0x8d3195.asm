@@ -20,7 +20,7 @@ special 0x7
 fadescreen 0x1
 sound 0x64
 checksound
-callasm 0x919d791
+callasm cmdx2D_force_pals_to_black
 clearflag PKMNMENU
 setvar STORY_PROGRESS 0x15
 writebytetooffset 0x2 0x2036e28

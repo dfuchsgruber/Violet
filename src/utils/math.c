@@ -1,6 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "debug.h"
+#include "utils.h"
 
 int abs(int i) {
     if (i < 0) {
@@ -48,19 +49,42 @@ int sin_16(int x){
     if(x < 0){
         x += (((-x) >> 16)+1) << 16;
     } 
-    x = (int)__aeabi_uidivmod((u32)x, 0x10000);
+    x = x % 0x10000;
     //x is a positive value in range[0, 0x10000)
     int lower = x >> 8;
     int interpol_lower = sin_lo_table[lower];
-    int interpol_higher = sin_lo_table[__aeabi_uidivmod((u32)lower+1, 0x100)];
+    int interpol_higher = sin_lo_table[(lower+1) % 0x100];
     int delta = interpol_higher - interpol_lower;
     int fractional = x & 0xFF;
     return interpol_lower + ((delta * fractional) >> 8);
     
 }
 
+
+int __sin(int x, int period, int amplitude){
+    //map range [0, period-1] -> [0, 0xFFFF]
+    int y = sin_16((x << 16) / period);
+    y *= amplitude;
+    int rem = (y >> 15) & 1;
+    return (y >> 16) + rem;
+}
+
 int cos_16(int x){
     return sin_16(x+0x4000);
+}
+
+int __cos(int x, int period, int amplitude){
+    //map range [0, period-1] -> [0, 0xFFFF]
+    int y = cos_16((x << 16) / period);
+    return (y * amplitude) >> 16;
+}
+
+int __tan(int x, int period){
+    int _cos = __cos(x, period, 1);
+    int _sin = __sin(x, period, 1);
+    if(_cos == 0)
+        debug1(ERR_TAN_16_COS_16_EQUALS_ZERO);
+    return _sin / _cos;
 }
 
 int tan_16(int x){
@@ -71,6 +95,42 @@ int tan_16(int x){
     debug1(ERR_TAN_16_COS_16_EQUALS_ZERO);
     return 0;
 }
+
+int linear_cos_16(int x){
+    if(x < 0) x = -x; //cosine is even
+    x %= 0x10000;
+    if(x < 0x8000){
+        //interpolate from [0; pi]
+        return 0x10000 - x * 0x8000 / 0x20000;
+    }else{
+        //interpolate from [pi; 2pi]
+        return x * 0x8000 / 0x20000 - 0x10000;
+    }
+}
+
+int linear_sin_16(int x){
+    return linear_cos_16(x - 0x4000);
+}
+
+int linear_sin(int x, int period, int amplitude){
+    int y = linear_sin_16((x << 16) / period);
+    return (y * amplitude) >> 16;
+}
+
+int linear_cos(int x, int period, int amplitude){
+    int y = linear_cos_16((x << 16) / period);
+    return (y * amplitude) >> 16;
+}
+
+int linear_tan(int x, int period){
+    int _cos = linear_cos(x, period, 1);
+    int _sin = linear_sin(x, period, 1);
+    if(_cos == 0)
+        debug1(ERR_TAN_16_COS_16_EQUALS_ZERO);
+    return _sin / _cos;
+    
+}
+
 
 
 

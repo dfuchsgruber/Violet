@@ -368,7 +368,7 @@
     gfx_pkmn_species_360_pokemon_isso_iconTiles,
     gfx_pkmn_species_361_pokemon_zwirrlicht_iconTiles,
     gfx_pkmn_species_362_pokemon_zwirrklop_iconTiles,
-    gfx_pkmn_species_363_pokemon_roselia_iconTiles,
+    gfx_pkmn_species_363_pokemon_porygon_z_iconTiles,
     gfx_pkmn_species_364_pokemon_bummelz_iconTiles,
     gfx_pkmn_species_365_pokemon_muntier_iconTiles,
     gfx_pkmn_species_366_pokemon_letarking_iconTiles,

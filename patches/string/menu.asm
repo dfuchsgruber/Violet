@@ -222,4 +222,36 @@
 .org 0x800cf40
     .word str_pokedex
 
+.org 0x83e85d8
+       .word str_ja
+.org 0x812a564
+        .word str_ja
+.org 0x8155524
+        .word str_ja
+.org 0x81555e0
+        .word str_ja
+.org 0x83df240
+        .word str_ja
+.org 0x83df338
+        .word str_ja
+.org 0x83df378
+        .word str_ja
 
+.org 0x83e8728
+        .word str_nein
+.org 0x845b438
+        .word str_nein
+.org 0x845b440
+        .word str_nein
+.org 0x812a568
+        .word str_nein
+.org 0x8155528
+        .word str_nein
+.org 0x81555e4
+        .word str_nein
+.org 0x83df248
+        .word str_nein
+.org 0x83df340
+        .word str_nein
+.org 0x83df380
+        .word str_nein

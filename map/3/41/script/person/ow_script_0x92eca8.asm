@@ -14,10 +14,11 @@ lock
 faceplayer
 call ow_script_0x8e63f4
 loadpointer 0x0 str_0x8e225d
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
+callstd MSG_KEEPOPEN
+multichoice 8 8 0 1
+compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x947e76
-playsong MUS_REVOLUTION 0x1
+playsong MUS_REVOLUTION 0x0
 applymovement 0x800f ow_script_movs_0x8dea30
 waitmovement 0x0
 loadpointer 0x0 str_0x8e1e69

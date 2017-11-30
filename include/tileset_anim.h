@@ -12,7 +12,8 @@
 extern "C" {
 #endif
 
-
+#define TILESET_ANIM_DISABLE 0x913
+    
 typedef struct {
     u16 cycle;
     u16 speed;

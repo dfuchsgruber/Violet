@@ -728,7 +728,7 @@ u16 pokedex_order[POKEMON_CNT - 1] = {
     0x163,
     // POKEMON_ZWIRRKLOP
     0x164,
-    // POKEMON_ROSELIA
+    // POKEMON_PORYGON_Z
     0x13b,
     // POKEMON_BUMMELZ
     0x11f,

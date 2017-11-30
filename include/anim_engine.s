@@ -326,7 +326,7 @@
 .endm
 
 @resets bgscroll
-.macro bg_scroll_reset
+.macro bg_disp_reset
 .byte 0x28
 .endm
 
@@ -343,7 +343,9 @@
 .byte \bgid
 .endm
 
-@bg scroll animation
+@bg scroll animation (deltas are the full deltas over all frames)
+@deltas are calculated precisly, meaning after duration exactly hdelta
+@and vdelta will be scrolled
 .macro bg_scroll bgid duration hdelta vdelta
 .byte 0x2B
 .byte \bgid
@@ -412,6 +414,71 @@
 .hword \first
 .hword \count
 .endm
+
+.macro jump_if_female target:req startframe:req
+.byte 0x33
+.word \target
+.hword \startframe
+.endm
+
+@0:= clearflag, <>0 := setflag
+.macro setflag flag:req value:req
+.byte 0x34
+.hword \flag
+.byte \value
+.endm
+
+@0: load from save, <>0 := push to save
+.macro pal_restore_snapshot mode:req
+.byte 0x35
+.byte \mode
+.endm
+
+@loads obj palette
+@pal := ptr to pal struct
+@mode := mode (0=copy, 1=lz77uncomp)
+@force := 0=to_restore_only, 1=force_to_palram_immideatly
+.macro load_obj_pal_from_struct pal:req mode:req force:req
+.byte 0x36
+.word \pal
+.byte \mode
+.byte \force
+.endm
+
+
+@moves an object according to a function trace
+@oam_id := oam id (or var) to oam
+@duration := duration in frames (note that 0 is not always supported and usually provides edge cases)
+@trace := id of the trace of the function that the oam will be moved according to
+@... dependent on the traces additional parameters follow
+.macro oam_move_trace oam_id:req duration:req trace:req
+.byte 0x37
+.hword \oam_id
+.hword \duration
+.byte \trace
+.endm
+
+.equ XAXIS, 0
+.equ YAXIS, 1
+
+.equ SINE, 0
+.equ COSINE, 1
+.equ TANGENS, 2
+@Move oam along y axis on a trigonometric trace
+@requires:
+@   on_y_axis : byte
+@   amplitude : hword
+@   period : hword
+
+.equ LSINE, 3
+.equ LCOSINE, 4
+.equ LTANGENS, 5
+@Move oam along y axis on a trigonmetric trace whereas all areas are approximated by linear functions (edgy)
+@requires:
+@   on_y_axis : byte
+@   amplitude : hword
+@   period : hword
+
 
 @field for bg setup
 .macro bg_setup_cnfg id charbase mapbase size colmode priority

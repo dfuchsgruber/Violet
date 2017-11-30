@@ -66,6 +66,14 @@ item_effects equ 0x082527E0
     .word gfx_item_wolkeTiles
     .word gfx_item_wolkePal
 
+.org item_resource + 0x3C * 8
+    .word gfx_item_scharfzahnTiles
+    .word gfx_item_scharfzahnPal
+
+.org item_resource + 0x63 * 8
+    .word gfx_item_linkkabelTiles
+    .word gfx_item_linkkabelPal
+
 
 
 //@Bike sound := 195

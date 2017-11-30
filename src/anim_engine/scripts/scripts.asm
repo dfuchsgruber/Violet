@@ -23,6 +23,12 @@ script_table:
 
     .word ae_script_difficulty_setting_fade_to_dark
     .word ae_script_intro
+    .word ae_script_staraptor_to
+    .word ae_script_staraptor_from
+
+    .word ae_script_aktania_meteor
+    .word ae_script_aktania_beam
+    .word ae_script_aktania_sky
 
 
 

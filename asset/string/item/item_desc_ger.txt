@@ -238,8 +238,8 @@
 	=Ein_mysteri\$oeser_Klumpen,_der_Vert.\nund_Sp.Vert._von_Pok\emon_steigert,\ndie_sich_noch_entwickeln_k\$oennen.
 .end
 
-.string str_item_desc_x3c_item_item_3c GER
-	=_????
+.string str_item_desc_x3c_item_scharfzahn GER
+	=Ein Item zum Tragen. Verursacht der\nTr\$aeger Schaden, erschrickt der\nGegner eventuell.
 .end
 
 .string str_item_desc_x3d_item_item_3d GER

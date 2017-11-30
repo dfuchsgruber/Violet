@@ -9,6 +9,8 @@
 #include "bg.h"
 #include "text.h"
 #include "save.h"
+#include "debug.h"
+#include "utils.h"
 
 /**
 / Method to initalize the callback
@@ -19,39 +21,33 @@ void init_anim_engine_by_table() {
     init_anim_engine(anim_script_table[index]);
 }
 
-void init_anim_engine(void *script) {
+void init_anim_engine(u8 *script) {
 
-    u8 callback_id = spawn_big_callback((void*) anim_engine_callback, 0);
-    u32 callback_offset = (u32) (0x03004FE0 + 0x28 * callback_id);
+    u8 callback_id = spawn_big_callback(anim_engine_callback, 0);
+    ae_memory *mem = cmalloc(sizeof(ae_memory));
+    big_callback_set_int(callback_id, 1, (int)mem);
 
-    (*((u32*) (callback_offset + 0xC))) = (u32) (cmalloc(sizeof (ae_memory)));
-    ae_memory* mem = (*((ae_memory**) (callback_offset + 0xC)));
     fmem->ae_mem = mem;
-    
-    //initalising values
-    mem->current_programm = ((u32) script);
+    mem->current_programm = (script);
     mem->callback_id = callback_id;
     mem->active = true;
 }
 
 void anim_engine_callback(u8 callback_id) {
 
-    ae_memory* mem = *((ae_memory**) (0x03004FE0 + 0x28 * callback_id + +0xC));
+    ae_memory* mem = (ae_memory*)big_callback_get_int(callback_id, 1);
 
     //programm read loop
-    u16 keyframe = anim_engine_get_hword(mem);
-    while (keyframe == (mem->current_frame) && mem->active) {
-
+    while (anim_engine_get_hword(mem) == (mem->current_frame) && mem->active) {
         //execution of the command with the related frame
-        mem->current_programm = (u32) (mem->current_programm + 2);
+        mem->current_programm += 2;
         anim_engine_execute_frame(mem);
-        keyframe = anim_engine_get_hword(mem);
     }
-    if ((mem->active) == false) {
+    if (!(mem->active)) {
         free(mem);
         return;
     }
-    mem->current_frame = (u16) (mem->current_frame + 1);
+    mem->current_frame++;
 }
 
 void anim_engine_execute_frame(ae_memory* mem) {
@@ -96,7 +92,7 @@ void anim_engine_execute_frame(ae_memory* mem) {
         cmdx25_oam_reset,
         cmdx26_callback_reset,
         cmdx27_dma3_controller_reset,
-        cmdx28_bg_scroll_reset,
+        cmdx28_bg_displacement_reset,
         cmdx29_bg_vmap_init,
         cmdx2A_bg_vmap_drop,
         cmdx2B_bg_scroll,
@@ -106,11 +102,18 @@ void anim_engine_execute_frame(ae_memory* mem) {
         cmdx2F_setvar,
         cmdx30_fade_obj_pal,
         cmdx31_tbox_flush,
-        cmdx32_pal_restore_force_current
+        cmdx32_pal_restore_force_current,
+        cmdx33_jump_if_female,
+        cmdx34_setflag,
+        cmdx35_pal_restore_snapshot,
+        cmdx36_load_obj_pal_from_struct,
+        cmdx37_obj_move_trace
+    
     };
     u8 cmd_id = anim_engine_read_byte(mem);
 
     while (cmd_id != 0xFF) {
+        dprintf("Executing command %d at %x\n", cmd_id, mem->current_programm - 1);
         cmdTable[cmd_id](mem);
         cmd_id = anim_engine_read_byte(mem);
     }
@@ -121,45 +124,31 @@ void anim_engine_execute_frame(ae_memory* mem) {
  **/
 
 u8 anim_engine_read_byte(ae_memory* mem) {
-    u8 result = (*((u8*) (mem->current_programm)));
-    mem->current_programm = (u32) (mem->current_programm + 1);
-    return result;
+    return *(mem->current_programm++);
 }
 
 u16 anim_engine_read_param(ae_memory*mem) {
     u16 result = anim_engine_read_hword(mem);
     if ((u16) (result - 0x8000) < 0x10) {
-
         result = mem->vars[(u16) (result - 0x8000)];
-
-        //*((u16*)0x2000000) = result;
-        //while(true){}
     }
     return result;
 }
 
 u32 anim_engine_read_word(ae_memory* mem) {
-    u32 result = (u32) (*((u8*) mem->current_programm));
-    result = (u32) (result + (u32) ((*(u8*) (mem->current_programm + 1)) << 0x8));
-    result = (u32) (result + (u32) ((*(u8*) (mem->current_programm + 2)) << 0x10));
-    result = (u32) (result + (u32) ((*(u8*) (mem->current_programm + 3)) << 0x18));
-    mem->current_programm = (u32) (mem->current_programm + 4);
-    return result;
+    u32 word = (u32)GET_MISALIGNED_32(mem->current_programm);
+    mem->current_programm += 4;
+    return word;
 }
 
 u16 anim_engine_get_hword(ae_memory* mem) {
-
-    u16 result = (u16) (*((u8*) mem->current_programm));
-    result = (u16) (result + (u16) ((*(u8*) (mem->current_programm + 1)) << 0x8));
-    return result;
+    return (u16)GET_MISALIGNED_16(mem->current_programm);
 }
 
 u16 anim_engine_read_hword(ae_memory*mem) {
-
-    u16 result = (u16)*((u8*) mem->current_programm);
-    result = (u16) (result + (u32) ((*(u8*) (mem->current_programm + 1)) << 0x8));
-    mem->current_programm = (u32) (mem->current_programm + 2);
-    return result;
+    u16 hword = anim_engine_get_hword(mem);
+    mem->current_programm += 2;
+    return hword;
 }
 
 void cmdx00_end(ae_memory* mem) {
@@ -176,7 +165,7 @@ void cmdx00_end(ae_memory* mem) {
 }
 
 void cmdx01_call(ae_memory* mem) {
-    u32 subscript = anim_engine_read_word(mem);
+    u8 *subscript = (u8*)anim_engine_read_word(mem);
     u16 new_frame = anim_engine_read_hword(mem);
 
     if (mem->link_numbers < 8) {
@@ -185,7 +174,7 @@ void cmdx01_call(ae_memory* mem) {
         mem->links[mem->link_numbers] = (mem->current_programm);
         mem->lframes[mem->link_numbers] = mem->current_frame;
 
-        mem->link_numbers = (u8) (mem->link_numbers + 1);
+        mem->link_numbers++;
         mem->current_programm = subscript;
         mem->current_frame = new_frame;
 
@@ -193,7 +182,7 @@ void cmdx01_call(ae_memory* mem) {
 }
 
 void cmdx02_jump(ae_memory* mem) {
-    mem->current_programm = anim_engine_read_word(mem);
+    mem->current_programm = (u8*) anim_engine_read_word(mem);
     mem->current_frame = anim_engine_read_hword(mem);
 }
 
@@ -304,6 +293,7 @@ void cmdx0E_bg_override(ae_memory* mem) {
     u8 mode = anim_engine_read_byte(mem);
 
     void* buffer = malloc(size);
+    if(!buffer)dprintf("Can not override because malloc did not provide heap memory\n");
 
     lz77uncompwram(graphic, buffer);
     bg_copy_vram(bgid, buffer, size, start, mode);
@@ -320,11 +310,11 @@ void cmdx0E_bg_override(ae_memory* mem) {
 void cmdx0F_load_obj_pal(ae_memory* mem) {
 
     u8 pal_id = allocate_obj_pal(anim_engine_read_hword(mem));
-    if(pal_id == 0xFF) return;
     
     void* pal = (void*) anim_engine_read_word(mem);
     u8 mode = anim_engine_read_byte(mem);
     u8 force = anim_engine_read_byte(mem);
+    if(pal_id == 0xFF)return;
     
     if(mode){
         void *nbuf = (void*) 0x02037ACC;
@@ -507,7 +497,7 @@ void anim_engine_text_renderer(u8 self) {
         case 0xFE:
         {
             //linebreak
-            if (!mem->flags.flags.pass_linebreak) {
+            if (!(mem->flags.flags.pass_linebreak)) {
                 if (mem->flags.flags.linebreak) {
                     mem->flags.flags.linebreak = 0;
                 } else {
@@ -533,97 +523,6 @@ void anim_engine_text_renderer(u8 self) {
     mem->source++;
 
 }
-
-/**
-void anim_engine_tbox_renderer(u8 cb_id){
-	
-        int callback = 0x03004FE0 + 0x28*cb_id;
-        u8* boxid =(u8*)(callback+0x8);
-        u8* text_speed = (u8*)(callback+0x9);
-        u8* font_id = (u8*)(callback+0xA);
-        u8* unkown = (u8*)(callback+0xB);
-        u8* border_distance = (u8*)(callback+0xC);
-        u8* line_distance_u = (u8*)(callback+0xD);
-        u8* line_distance_l = (u8*)(callback+0xE);
-        u8* display_flag = (u8*)(callback+0xF);
-        u8** font_map = (u8**)(callback+0x10);
-        u8** source = (u8**)(callback+0x14);
-        u8* delay_cnt = (u8*)(callback+0x18);
-        u8* flags = (u8*)(callback+0x19); //0,1,2 = wait n,p,end ; 3,4,5 = allowed n,p,end 
-        u16* cur_pos = (u16*)(callback+0x1A);
-        u8** resource = (u8**)(callback+0x1C);
-        u8* bgid = (u8*)(callback+0x20);
-	
-        u8* buffer = (u8*)0x02021D18;
-
-	
-        if (*delay_cnt == 0){
-                //delay is over -> render text
-		
-                //check for halt flags
-                if ((((*flags)&0x1)) && (((*flags)&0x8)!= 0x0)){
-                        //wait n is set but we have token
- *flags = (u8)((*flags)&0xF6);
-                }
-                if ((((*flags)&0x2)!= 0x0) && (((*flags)&0x10)!= 0x0)){
-                        //wait p is set but we have token -> proceed to a new box
- *flags = (u8)((*flags)&0xED);
-                }
-                if ((((*flags)&0x4)!= 0x0) && (((*flags)&0x20)!= 0x0)){
-                        //wait end is set but we have token -> delete the box
-                        free(*resource);
-                        remove_big_callback(cb_id);
-                        flush_tbox(*boxid, 0);
-                        free_tbox(*boxid);
-                        bg_copy_vram(*bgid, bg_get_tilemap(*bgid), 0x800, 0x0, 0x2);
-                        return;
-                }
-		
-		
-                if (((*flags)&0x7) == 0){ //0000 0111 must be unset -> handle is not waiting
-			
-                        u8 current_char = (*source)[*cur_pos];
-			
-                        switch (current_char){
-                                case 0xFB:{
-                                        //new box
- *flags = (u8)((*flags)|0x2); //set wait p flag
- *source = (u8*)(*source+(*cur_pos)+1);
- *cur_pos = 0x0;
-                                        break;
-                                }
-                                case 0xFF:{
-                                        //textbox has ended
- *flags = (u8)((*flags)|0x4); //set wait end flag
-                                        break;
-                                }
-                                case 0xFE:{
-                                        //next line
- *flags = (u8)((*flags)|0x1); //set wait n flag
-                                        //do the normal copy request
-                                }
-                                default:{
-                                        //normal copy request
-                                        buffer[(*cur_pos)] = (*source)[(*cur_pos)];
-                                        buffer[(*cur_pos)+1] = 0xFF;
- *cur_pos = (u16)(*cur_pos+1);
-					
-                                        //printing the new text
-                                        fill_box_bg(*boxid, 0);
-                                        display_tbox_transbg(*boxid, *font_id, *unkown, *border_distance, *line_distance_u, *line_distance_l, *font_map, *display_flag, buffer );
-                                        bg_copy_vram(*bgid, bg_get_tilemap(*bgid), 0x800, 0x0, 0x2);
-					
-                                        //resetting delay
- *delay_cnt = *text_speed;
-                                        break;
-                                }
-                        }
-                }	
-        }else{
- *delay_cnt = (u8)(*delay_cnt-1);
-        }
-}
- **/
 
 void cmdx18_rendered_tbox_event(ae_memory* mem) {
     u8 self = (u8) (anim_engine_read_param(mem));
@@ -651,8 +550,8 @@ void cmdx19_objmove(ae_memory* mem) {
         oam-> y = (s16) (oam->y + y);
     } else {
         //spawn a new callback
-        u8 cbid = spawn_big_callback(anim_engine_obj_mover, 1);
-        big_callback* cb = (big_callback*) (0x03004FE0 + cbid * 0x28);
+        u8 cb_id = spawn_big_callback(anim_engine_obj_mover, 1);
+        big_callback* cb = &big_callbacks[cb_id];
         cb->params[0] = oam_id;
         cb->params[1] = (u16) x;
         cb->params[2] = (u16) y;
@@ -825,6 +724,7 @@ void cmdx24_script_notify() {
 }
 
 void cmdx25_oam_reset() {
+    obj_pal_reset();
     oam_reset();
 }
 
@@ -843,7 +743,7 @@ void cmdx27_dma3_controller_reset() {
     dma3_controller_reset();
 }
 
-void cmdx28_bg_scroll_reset() {
+void cmdx28_bg_displacement_reset() {
     int i;
     for (i = 0; i < 4; i++) {
         bg_virtual_map_displace((u8) i, 0, 0);
@@ -868,8 +768,6 @@ void cmdx2A_bg_vmap_drop(ae_memory *mem) {
 void cmdx2B_bg_scroll(ae_memory *mem) {
     u8 bg_id = anim_engine_read_byte(mem);
     u16 duration = anim_engine_read_hword(mem);
-    u16 hfrom = get_io((u16) (0x10 + bg_id * 4));
-    u16 vfrom = get_io((u16) (0x12 + bg_id * 4));
     u16 hdelta = anim_engine_read_hword(mem);
     u16 vdelta = anim_engine_read_hword(mem);
     u8 self = spawn_big_callback(anim_engine_bg_scroller, 0);
@@ -877,33 +775,35 @@ void cmdx2B_bg_scroll(ae_memory *mem) {
     big_callbacks[self].params[1] = duration;
     big_callbacks[self].params[2] = hdelta;
     big_callbacks[self].params[3] = vdelta;
-    big_callbacks[self].params[4] = hfrom;
-    big_callbacks[self].params[5] = vfrom;
-    big_callbacks[self].params[6] = 0;
+    big_callbacks[self].params[4] = 0;
     anim_engine_bg_scroller(self);
 }
 
 void anim_engine_bg_scroller(u8 self) {
     u8 bg_id = (u8) big_callbacks[self].params[0];
     u16 duration = big_callbacks[self].params[1];
-    u16 current_frame = big_callbacks[self].params[6]++;
+    u16 current_frame = ++(big_callbacks[self].params[4]);
     s16 hdelta = (s16) big_callbacks[self].params[2];
     s16 vdelta = (s16) big_callbacks[self].params[3];
-    u16 hfrom = big_callbacks[self].params[4];
-    u16 vfrom = big_callbacks[self].params[5];
+    u16 bg_hreg = (u16)(0x10 + 4 * bg_id);
+    u16 bg_vreg = (u16)(0x12 + 4 * bg_id);
+    u16 x = get_io(bg_hreg);
+    u16 y = get_io(bg_vreg);
     if (duration) {
-
-        int hc = (current_frame * hdelta) / duration;
-        int vc = (current_frame * vdelta) / duration;
-        set_io((u16) (0x10 + bg_id * 4), (u16) (hfrom + hc));
-        set_io((u16) (0x12 + bg_id * 4), (u16) (vfrom + vc));
+        int x_0 = ((current_frame - 1) * hdelta) / duration;
+        int x_1 = (current_frame * hdelta) / duration;
+        int y_0 = ((current_frame - 1) * vdelta) / duration;
+        int y_1 = (current_frame * vdelta) / duration;
+        //dprintf("Frame %d: x_0 %d, x_1 %d, y_0 %d, y_1, %d\n", current_frame, x_0, x_1, y_0, y_1);
+        set_io(bg_hreg, (u16)(x + x_1 - x_0));
+        set_io(bg_vreg, (u16)(y + y_1 - y_0));
 
     } else {
-        set_io((u16) (0x10 + bg_id * 4), (u16) (hfrom + hdelta));
-        set_io((u16) (0x12 + bg_id * 4), (u16) (vfrom + vdelta));
+        set_io(bg_hreg, (u16)(x + hdelta));
+        set_io(bg_hreg, (u16)(y + hdelta));
     }
 
-    if (duration < current_frame) {
+    if (duration <= current_frame) {
         remove_big_callback(self);
     }
 }
@@ -995,4 +895,134 @@ void cmdx32_pal_restore_force_current(ae_memory *mem){
         pal_restore[first_col + i] = pals[first_col + i];
     }
     
+}
+
+void cmdx33_jump_if_female(ae_memory *mem){
+    u8 *target = (u8*)anim_engine_read_word(mem);
+    u16 target_frame = anim_engine_read_hword(mem);
+    if((*save2)->player_is_female){
+        mem->current_programm = target;
+        mem->current_frame = target_frame;
+    }
+   
+}
+
+void cmdx34_setflag(ae_memory *mem){
+    u16 flag = anim_engine_read_hword(mem);
+    if(anim_engine_read_byte(mem)) setflag(flag);
+    else clearflag(flag);
+}
+
+void cmdx35_pal_restore_snapshot(ae_memory *mem){
+    if(anim_engine_read_byte(mem)){
+        //Create snapshot pal_restore
+        if(!mem->pal_restore_save){
+            dprintf("Warning: Trying to snapshot pal restore when there is already a snapshot!\n");
+            mem->pal_restore_save = malloc(sizeof(color) * 1024);
+        }
+        //cpuset(pal_restore, mem->pal_restore_save, 0x4000100);
+        cpuset(pal_tmp, &(mem->pal_restore_save[512]), 0x4000100);
+        dprintf("Pal restore snap alloc\n");
+    }else{
+        if(!mem->pal_restore_save){
+            dprintf("Warning: Trying to load a not present snapshot for pal restore\n");
+        }
+        //cpuset(mem->pal_restore_save, pal_restore, 0x4000100);
+        cpuset(&(mem->pal_restore_save[512]), pal_tmp, 0x4000100);
+        free(mem->pal_restore_save);
+        mem->pal_restore_save = NULL;
+        dprintf("Pal restore snap free\n");
+    }
+}
+
+void cmdx36_load_obj_pal_from_struct(ae_memory *mem){
+    palette *p = (palette*)anim_engine_read_word(mem);
+    u8 pal_id = allocate_obj_pal(p->tag);
+    u8 mode = anim_engine_read_byte(mem);
+    u8 force = anim_engine_read_byte(mem);
+    if(pal_id == 0xFF)return;
+    
+    void *pal = p->pal;
+    if(mode){
+        void *nbuf = (void*) 0x02037ACC;
+        lz77uncompwram(pal, nbuf);
+        pal = nbuf;
+    }
+    
+    cpuset(pal, &pal_restore[(pal_id + 16) * 16], 16);
+    if(force) cpuset(pal, &pals[(pal_id + 16) * 16], 16);
+}
+
+void _obj_move_trig_trace(u8 self){
+    u16 *values = big_callbacks[self].params;
+    u8 oam_id = (u8)values[0];
+    u16 duration = values[1];
+    if(duration == values[2]++){
+        remove_big_callback(self); return;
+    }
+    u16 frame = values[2];
+    s16 amplitude = (s16)values[3];
+    int period = values[4];
+    bool on_y_axis = values[5];
+    int trig_func = values[6];
+    int d;
+    switch(trig_func){
+        case 0: //sine function
+            d = __sin(frame, period, amplitude) - __sin(frame - 1, period, amplitude);
+    dprintf(" sin(%d, %d, %d) = %d\n", frame, period, amplitude, __sin(frame, period, amplitude));
+            break;
+        case 1: //cosine function
+            d = __cos(frame, period, amplitude) - __cos(frame - 1, period, amplitude);
+            break;
+        case 2: //tangens function
+            d = __tan(frame, period) - __tan(frame - 1, period);
+            break;
+        case 3: //linear sine function
+            d = linear_sin(frame, period, amplitude) - linear_sin(frame - 1, period, amplitude);
+            break;
+        case 4: //linear cosine function
+            d = linear_cos(frame, period, amplitude) - linear_cos(frame - 1, period, amplitude);
+            break;
+        case 5: //linear tangens function
+            d = linear_tan(frame, period) - linear_tan(frame - 1, period);
+            break;
+        default: return;
+    }
+    if(on_y_axis)oams[oam_id].y = (s16)(oams[oam_id].y + d);
+    else oams[oam_id].x = (s16)(oams[oam_id].x + d);
+}
+
+
+
+
+
+void cmdx37_obj_move_trace(ae_memory *mem){
+    u8 oam_id = (u8)anim_engine_read_param(mem);
+    u16 duration = anim_engine_read_hword(mem);
+    u8 trace = anim_engine_read_byte(mem);
+    switch(trace){
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:{
+            //Trigonometric functions
+            u8 on_y_axis = anim_engine_read_byte(mem);
+            u16 amplitude = anim_engine_read_hword(mem);
+            u16 period = anim_engine_read_hword(mem);
+            u8 cb_id = spawn_big_callback(_obj_move_trig_trace, 0);
+            big_callbacks[cb_id].params[0] = oam_id;
+            big_callbacks[cb_id].params[1] = duration;
+            big_callbacks[cb_id].params[2] = 0;
+            big_callbacks[cb_id].params[3] = amplitude;
+            big_callbacks[cb_id].params[4] = period;
+            big_callbacks[cb_id].params[5] = on_y_axis;
+            big_callbacks[cb_id].params[6] = trace;
+            break;
+        }
+        default:
+            dprintf("Trace %d not specified\n", trace);
+            err(ERR_GENERIC);
+    }
 }

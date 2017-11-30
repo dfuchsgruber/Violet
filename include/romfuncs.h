@@ -41,7 +41,7 @@ void free(void* ptr);
 void color_blend(u16 color_id_to_blend, u16 color_count, u8 intesity, u16 color_to_blend_into);
 void remove_big_callback(u8 cbid);
 void init_script(void* script);
-u8 spawn_big_callback(void*function, u8 priority);
+u8 spawn_big_callback(void (*function)(u8), u8 priority);
 void* cmalloc(size_t size);
 u8 allocate_rotscale();
 void set_rotscale_param(u8 id, u16 v0, u16 v1, u16 v2, u16 v3);
@@ -198,5 +198,6 @@ void dma3_add_request(void *src, void *dst, u16 size);
 void fanfare(u16 song_id);
 u8 weather_get();
 void pokedex_set_caught_and_load_pid(u16 dex_id, u8 flags, u32 pid);
+bool fadescreen_is_active();
 
 #endif

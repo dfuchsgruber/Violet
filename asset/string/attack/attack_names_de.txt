@@ -67,7 +67,7 @@
 	=Bohrschnabel
 	=\$ueberroller
 	=Fu\$skick
-	=Fausthieb
+	=Konter
 	=Geowurf
 	=St\$aerke
 	=Absorber
@@ -236,13 +236,13 @@
 	=Morgengrauen
 	=Synthese
 	=Mondschein
-	=Innere_kraft
+	=Kraftreserve
 	=Kreuzhieb
 	=Windhose
 	=Regentanz
 	=Sonnentag
 	=Knirscher
-	=Fokuswelle
+	=Spiegelcape
 	=Psycho-plus
 	=Turbotempo
 	=Antik-kraft

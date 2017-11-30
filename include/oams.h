@@ -5,8 +5,8 @@
 #define ROTSCALE_TABLE_NULL (rotscale_frame**)0x08231BCC
 #define GFX_ANIM_TABLE_NULL (gfx_frame**)0x08231Bc0
 
-#define GFX_ANIM_VFLIP 0x40
-#define GFX_ANIM_HFLIP 0x80
+#define GFX_ANIM_VFLIP 0x80
+#define GFX_ANIM_HFLIP 0x40
 
 #define GFX_ANIM_LOOP_START 0xFFFC
 #define GFX_ANIM_JUMP_LOOP_START 0xFFFD

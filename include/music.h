@@ -95,7 +95,7 @@ extern const unsigned char mus_violet_sphere_v1[];
 extern const unsigned char sound_hint[];
 extern const unsigned char mus_mistral_battle[];
 extern const unsigned char mus_ceometria[];
-extern const unsigned char mus_test[];
+extern const unsigned char mus_monumental[];
 
 #endif	/* MUSIC_H */
 

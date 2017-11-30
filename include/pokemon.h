@@ -200,6 +200,13 @@ void pokemon_team_remove();
 void pokemon_team_knows_hm();
 bool pokemon_knows_hm(pokemon *p);
 
+/**
+ * 
+ * @param p
+ * @return 0 := male, 0xFE := female i guess? 0xFF := no gender at all
+ */
+u8 pokemon_get_gender(pokemon *p);
+
 u8 pokemon_get_nature(pokemon *target);
 
 #endif

@@ -239,7 +239,7 @@
 .end
 
 .string str_item_desc_x3c_item_item_3c EN
-	=?????
+	=An item to hold. If the user\ncauses damage the target may\nflinch.
 .end
 
 .string str_item_desc_x3d_item_item_3d EN

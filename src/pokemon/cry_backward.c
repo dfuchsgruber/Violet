@@ -1820,7 +1820,7 @@ pokemon_cry pokemon_cries_backward [POKEMON_CNT] = {
     // POKEMON_ROSELIA
     {
         {0x30, 0x3c, 0x0, 0x0}
-, (void*) 0x8613838, {
+, cry_474, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_BUMMELZ
     {

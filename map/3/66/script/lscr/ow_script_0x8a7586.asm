@@ -309,7 +309,7 @@ special 0x7
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 loadpointer 0x0 str_0x8a992f
 callstd MSG
-loadpointer 0x0 str_0x8f6d34
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x0
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -321,6 +321,11 @@ special 0x7
 setvar 0x8000 0xfe
 goto ow_script_0x8aac32
 
+
+.align 4
+choice:
+    .word str_route_2_lab_choice_0, 0
+    .word str_route_2_lab_choice_1, 0
 
 .global ow_script_movs_0x8ab040
 ow_script_movs_0x8ab040:

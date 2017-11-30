@@ -1,3 +1,3 @@
 .string str_0x8e6508 GER
-	=\4f
+	=S\$uedlich von hier liegt Ceometria,\ndie Insel der Toten.\pWann immer ein Trainer einen\nVerlust betrauern muss, besucht er\ldiesen Ort...
 .end

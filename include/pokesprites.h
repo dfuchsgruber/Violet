@@ -374,7 +374,7 @@ extern "C" {
     extern const unsigned short gfx_pkmn_species_360_pokemon_isso_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_361_pokemon_zwirrlicht_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_362_pokemon_zwirrklop_frontspriteTiles[];
-    extern const unsigned short gfx_pkmn_species_363_pokemon_roselia_frontspriteTiles[];
+    extern const unsigned short gfx_pkmn_species_363_pokemon_porygon_z_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_364_pokemon_bummelz_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_365_pokemon_muntier_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_366_pokemon_letarking_frontspriteTiles[];
@@ -816,7 +816,7 @@ extern "C" {
     extern const unsigned short gfx_pkmn_species_360_pokemon_isso_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_361_pokemon_zwirrlicht_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_362_pokemon_zwirrklop_backspriteTiles[];
-    extern const unsigned short gfx_pkmn_species_363_pokemon_roselia_backspriteTiles[];
+    extern const unsigned short gfx_pkmn_species_363_pokemon_porygon_z_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_364_pokemon_bummelz_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_365_pokemon_muntier_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_366_pokemon_letarking_backspriteTiles[];
@@ -1258,7 +1258,7 @@ extern "C" {
     extern const unsigned short gfx_pkmn_species_360_pokemon_isso_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_361_pokemon_zwirrlicht_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_362_pokemon_zwirrklop_frontspritePal[];
-    extern const unsigned short gfx_pkmn_species_363_pokemon_roselia_frontspritePal[];
+    extern const unsigned short gfx_pkmn_species_363_pokemon_porygon_z_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_364_pokemon_bummelz_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_365_pokemon_muntier_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_366_pokemon_letarking_frontspritePal[];
@@ -1700,7 +1700,7 @@ extern "C" {
     extern const unsigned short gfx_pkmn_species_360_pokemon_isso_backspritePal[];
     extern const unsigned short gfx_pkmn_species_361_pokemon_zwirrlicht_backspritePal[];
     extern const unsigned short gfx_pkmn_species_362_pokemon_zwirrklop_backspritePal[];
-    extern const unsigned short gfx_pkmn_species_363_pokemon_roselia_backspritePal[];
+    extern const unsigned short gfx_pkmn_species_363_pokemon_porygon_z_backspritePal[];
     extern const unsigned short gfx_pkmn_species_364_pokemon_bummelz_backspritePal[];
     extern const unsigned short gfx_pkmn_species_365_pokemon_muntier_backspritePal[];
     extern const unsigned short gfx_pkmn_species_366_pokemon_letarking_backspritePal[];
@@ -2143,7 +2143,7 @@ extern "C" {
     extern const unsigned short gfx_pkmn_species_360_pokemon_isso_iconTiles[];
     extern const unsigned short gfx_pkmn_species_361_pokemon_zwirrlicht_iconTiles[];
     extern const unsigned short gfx_pkmn_species_362_pokemon_zwirrklop_iconTiles[];
-    extern const unsigned short gfx_pkmn_species_363_pokemon_roselia_iconTiles[];
+    extern const unsigned short gfx_pkmn_species_363_pokemon_porygon_z_iconTiles[];
     extern const unsigned short gfx_pkmn_species_364_pokemon_bummelz_iconTiles[];
     extern const unsigned short gfx_pkmn_species_365_pokemon_muntier_iconTiles[];
     extern const unsigned short gfx_pkmn_species_366_pokemon_letarking_iconTiles[];

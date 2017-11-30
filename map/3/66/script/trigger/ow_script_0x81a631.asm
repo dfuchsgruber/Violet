@@ -32,9 +32,13 @@ ow_script_movs_0x8ab113:
 ow_script_0x8a5ca9:
 applymovement 0x2 ow_script_movs_0x8a5fc7
 waitmovement 0x0
-singlemovement 0xff 0x1
-waitmovement 0x0
+applymovement 0xFF faceup
+waitmovement 0
 call ow_script_0x8a7343
 applymovement 0x2 ow_script_movs_0x8ab113
 waitmovement 0x0
 end
+
+faceup:
+.byte 1, 0xFE
+

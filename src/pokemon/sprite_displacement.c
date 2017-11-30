@@ -455,7 +455,7 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_BOTOGEL
     0x667,
     // POKEMON_SCHLURPLEK
-    0x87,
+    0xd85,
     // POKEMON_PANZAERON
     0x187,
     // POKEMON_HUNDUSTER
@@ -728,7 +728,7 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     0x766,
     // POKEMON_ZWIRRKLOP
     0x286,
-    // POKEMON_ROSELIA
+    // POKEMON_PORYGON_Z
     0x886,
     // POKEMON_BUMMELZ
     0xd85,
@@ -1340,7 +1340,7 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     // POKEMON_BOTOGEL
     0x856,
     // POKEMON_SCHLURPLEK
-    0x188,
+    0x686,
     // POKEMON_PANZAERON
     0x88,
     // POKEMON_HUNDUSTER
@@ -1613,7 +1613,7 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     0x66,
     // POKEMON_ZWIRRKLOP
     0x577,
-    // POKEMON_ROSELIA
+    // PORYGON_Z
     0x776,
     // POKEMON_BUMMELZ
     0xf74,
@@ -2498,7 +2498,7 @@ u8 pokemon_altitude[POKEMON_CNT] = {
     0x9,
     // POKEMON_ZWIRRKLOP
     0x0,
-    // POKEMON_ROSELIA
+    // POKEMON_PORYGON_Z
     0x0,
     // POKEMON_BUMMELZ
     0x0,

@@ -1,0 +1,3096 @@
+.string str_pokedex_data_0_page_0 EN
+	=This_is_a_newly_discovered_POK\eMON._It_is\ncurrently_under_investigation._No_detailed\ninformation_is_available_at_this_time.
+.end
+
+.string str_pokedex_data_0_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_1_page_0 EN
+	=There_is_a_plant_seed_on_its_back_right\nfrom_the_day_this_POK\eMON_is_born.\nThe_seed_slowly_grows_larger.
+.end
+
+.string str_pokedex_data_1_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_2_page_0 EN
+	=There_is_a_plant_bulb_on_its_back.\nWhen_it_absorbs_nutrients,_the_bulb_is_said\nto_blossom_into_a_large_flower.
+.end
+
+.string str_pokedex_data_2_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_3_page_0 EN
+	=A_bewitching_aroma_wafts_from_its_flower.\nThe_fragrance_becalms_those_engaged_in\na_battle.
+.end
+
+.string str_pokedex_data_3_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_4_page_0 EN
+	=From_the_time_it_is_born,_a_flame_burns\nat_the_tip_of_its_tail._Its_life_would_end\nif_the_flame_were_to_go_out.
+.end
+
+.string str_pokedex_data_4_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_5_page_0 EN
+	=It_lashes_about_with_its_tail_to_knock\ndown_its_foe._It_then_tears_up_the_fallen\nopponent_with_sharp_claws.
+.end
+
+.string str_pokedex_data_5_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_6_page_0 EN
+	=Its_wings_can_carry_this_POK\eMON_close_to\nan_altitude_of_4,600_feet._It_blows_out\nfire_at_very_high_temperatures.
+.end
+
+.string str_pokedex_data_6_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_7_page_0 EN
+	=When_it_retracts_its_long_neck_into_its\nshell,_it_squirts_out_water_with_vigorous\nforce.
+.end
+
+.string str_pokedex_data_7_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_8_page_0 EN
+	=This_POK\eMON_is_very_popular_as_a_pet.\nIts_fur-covered_tail_is_a_symbol_of_its\nlongevity.
+.end
+
+.string str_pokedex_data_8_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_9_page_0 EN
+	=It_crushes_its_foe_under_its_heavy_body\nto_cause_fainting._In_a_pinch,_it_will\nwithdraw_inside_its_shell.
+.end
+
+.string str_pokedex_data_9_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_10_page_0 EN
+	=It_is_covered_with_a_green_skin._When_it\ngrows,_it_sheds_the_skin,_covers_itself\nwith_silk,_and_becomes_a_cocoon.
+.end
+
+.string str_pokedex_data_10_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_11_page_0 EN
+	=Even_though_it_is_encased_in_a_sturdy\nshell,_the_body_inside_is_tender.\nIt_can't_withstand_a_harsh_attack.
+.end
+
+.string str_pokedex_data_11_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_12_page_0 EN
+	=The_wings_are_protected_by_rain-repellent\ndust._As_a_result,_this_POK\eMON_can_fly\nabout_even_in_rain.
+.end
+
+.string str_pokedex_data_12_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_13_page_0 EN
+	=Often_found_in_forests_and_grasslands.\nIt_has_a_sharp,_toxic_barb_of_around_two\ninches_on_top_of_its_head.
+.end
+
+.string str_pokedex_data_13_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_14_page_0 EN
+	=This_POK\eMON_is_in_a_temporary_stage\nwhile_making_its_body._It_is_almost\ncompletely_unable_to_move_on_its_own.
+.end
+
+.string str_pokedex_data_14_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_15_page_0 EN
+	=May_appear_in_a_swarm._Flies_at_violent\nspeeds,_all_the_while_stabbing_with_the\ntoxic_stinger_on_its_rear.
+.end
+
+.string str_pokedex_data_15_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_16_page_0 EN
+	=Does_not_like_to_fight._It_hides_in\ntall_grass_and_so_on,_foraging_for_food\nsuch_as_small_bugs.
+.end
+
+.string str_pokedex_data_16_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_17_page_0 EN
+	=The_claws_on_its_feet_are_well_developed.\nIt_can_carry_prey_such_as_an_EXEGGCUTE\nto_its_nest_over_60_miles_away.
+.end
+
+.string str_pokedex_data_17_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_18_page_0 EN
+	=It_spreads_its_gorgeous_wings_widely_to\nintimidate_enemies._It_races_through_the\nskies_at_Mach-2_speed.
+.end
+
+.string str_pokedex_data_18_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_19_page_0 EN
+	=Its_fangs_are_long_and_very_sharp.\nThey_grow_continuously,_so_it_gnaws_on\nhard_things_to_whittle_them_down.
+.end
+
+.string str_pokedex_data_19_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_20_page_0 EN
+	=Its_rear_feet_have_three_toes_each.\nThey_are_webbed,_enabling_it_to_swim\nacross_rivers.
+.end
+
+.string str_pokedex_data_20_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_21_page_0 EN
+	=It_busily_flits_around_here_and_there.\nEven_if_it_is_frail,_it_can_be_a_tough\nfoe_that_uses_MIRROR_MOVE.
+.end
+
+.string str_pokedex_data_21_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_22_page_0 EN
+	=Its_huge_and_magnificent_wings_can_keep_it\naloft_in_the_sky._It_can_remain_flying_a\nwhole_day_without_landing.
+.end
+
+.string str_pokedex_data_22_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_23_page_0 EN
+	=A_very_common_sight_in_grassland,_etc.\nIt_flicks_its_tongue_in_and_out_to_sense\ndanger_in_its_surroundings.
+.end
+
+.string str_pokedex_data_23_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_24_page_0 EN
+	=The_pattern_on_its_belly_appears_to_be_a\nfrightening_face._Weak_foes_will_flee_just\nat_the_sight_of_the_pattern.
+.end
+
+.string str_pokedex_data_24_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_25_page_0 EN
+	=It_has_small_electric_sacs_on_both_its\ncheeks._If_threatened,_it_looses_electric\ncharges_from_the_sacs.
+.end
+
+.string str_pokedex_data_25_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_26_page_0 EN
+	=Its_electric_charges_can_reach_even\n100,000_volts._Careless_contact_can_cause\neven_an_Indian_elephant_to_faint.
+.end
+
+.string str_pokedex_data_26_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_27_page_0 EN
+	=It_burrows_and_lives_underground.\nIf_threatened,_it_curls_itself_up_into_a\nball_for_protection.
+.end
+
+.string str_pokedex_data_27_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_28_page_0 EN
+	=It_is_adept_at_attacking_with_the_spines\non_its_back_and_its_sharp_claws_while\nquickly_scurrying_about.
+.end
+
+.string str_pokedex_data_28_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_29_page_0 EN
+	=Though_small,_it_must_be_treated_with\ncaution_because_of_its_powerfully_toxic\nbarbs._The_female_has_smaller_horns.
+.end
+
+.string str_pokedex_data_29_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_30_page_0 EN
+	=The_female_has_a_gentle_temperament.\nIt_emits_ultrasonic_cries_that_have_the\npower_to_befuddle_foes.
+.end
+
+.string str_pokedex_data_30_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_31_page_0 EN
+	=The_body_is_covered_by_stiff,_needle-\nlike_scales._If_it_becomes_excited,\nthe_needles_bristle_outwards.
+.end
+
+.string str_pokedex_data_31_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_32_page_0 EN
+	=Its_large_ears_are_flapped_like_wings\nwhen_it_is_listening_to_distant_sounds.\nIt_extends_toxic_barbs_when_angered.
+.end
+
+.string str_pokedex_data_32_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_33_page_0 EN
+	=It_is_easily_angered._By_swinging_its_well-\ndeveloped_horn_wildly,_it_can_even_punch\nthrough_diamond.
+.end
+
+.string str_pokedex_data_33_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_34_page_0 EN
+	=It_is_recognized_by_its_rock-hard_hide\nand_its_extended_horn._Be_careful_with\nthe_horn_as_it_contains_venom.
+.end
+
+.string str_pokedex_data_34_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_35_page_0 EN
+	=Its_adorable_appearance_makes_it_popular\nas_a_pet._However,_it_is_rare_and\ndifficult_to_find.
+.end
+
+.string str_pokedex_data_35_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_36_page_0 EN
+	=It_has_an_acute_sense_of_hearing._It_can\neasily_hear_a_pin_being_dropped_nearly\n1,100_yards_away.
+.end
+
+.string str_pokedex_data_36_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_37_page_0 EN
+	=While_young,_it_has_six_gorgeous_tails.\nWhen_it_grows,_several_new_tails_are\nsprouted.
+.end
+
+.string str_pokedex_data_37_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_38_page_0 EN
+	=It_has_nine_long_tails_and_fur_that_\ngleams_gold._It_is_said_to_live_for_\n1,000_years.
+.end
+
+.string str_pokedex_data_38_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_39_page_0 EN
+	=It_captivates_foes_with_its_huge,_round\neyes,_then_lulls_them_to_sleep_by_singing\na_soothing_melody.
+.end
+
+.string str_pokedex_data_39_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_40_page_0 EN
+	=Its_fur_is_extremely_fine,_dense,_and\nsupple._The_exquisitely_pleasant_fur\nconveys_an_image_of_luxury.
+.end
+
+.string str_pokedex_data_40_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_41_page_0 EN
+	=It_has_no_eyes._Instead,_it_relies_on\nits_ultrasonic_cries_for_echo_location_to\nflit_about_in_darkness.
+.end
+
+.string str_pokedex_data_41_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_42_page_0 EN
+	=It_clamps_down_on_its_prey_with_needle-\nsharp_fangs_and_drains_over_10_ounces_of\nblood_in_one_gulp.
+.end
+
+.string str_pokedex_data_42_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_43_page_0 EN
+	=Its_scientific_name_is_\b1Oddium_Wanderus.\b2\nAt_night,_it_is_said_to_walk_nearly_1,000\nfeet_on_its_two_roots.
+.end
+
+.string str_pokedex_data_43_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_44_page_0 EN
+	=Its_pistils_exude_an_incredibly_foul_odor.\nThe_horrid_stench_can_cause_fainting_at_a\ndistance_of_1.25_miles.
+.end
+
+.string str_pokedex_data_44_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_45_page_0 EN
+	=Its_petals_are_the_largest_in_the_world.\nIt_fiendishly_scatters_allergy-causing\npollen_from_its_petals.
+.end
+
+.string str_pokedex_data_45_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_46_page_0 EN
+	=Growing_out_of_the_bug's_back_are\nmushrooms_called_tochukaso._The_mushrooms\ngrow_with_the_bug_host.
+.end
+
+.string str_pokedex_data_46_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_47_page_0 EN
+	=It_scatters_toxic_spores_from_the\nmushroom_cap._In_China,_the_spores_are\nused_as_herbal_medicine.
+.end
+
+.string str_pokedex_data_47_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_48_page_0 EN
+	=Its_eyes_act_as_radar,_enabling_it_to_be\nactive_in_darkness._The_eyes_can_also\nshoot_powerful_beams.
+.end
+
+.string str_pokedex_data_48_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_49_page_0 EN
+	=The_wings_are_covered_with_dustlike\nscales._Every_time_it_flaps_its_wings,_it\nlooses_highly_toxic_dust.
+.end
+
+.string str_pokedex_data_49_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_50_page_0 EN
+	=It_burrows_through_the_ground_at_a\nshallow_depth._It_leaves_raised_earth_in\nits_wake,_making_it_easy_to_spot.
+.end
+
+.string str_pokedex_data_50_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_51_page_0 EN
+	=In_battle,_it_digs_through_the_ground_and\nstrikes_the_unsuspecting_foe_from_an\nunexpected_direction.
+.end
+
+.string str_pokedex_data_51_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_52_page_0 EN
+	=All_it_does_is_sleep_during_the_daytime.\nAt_night,_it_patrols_its_territory_with_its\neyes_aglow.
+.end
+
+.string str_pokedex_data_52_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_53_page_0 EN
+	=Has_a_vicious_temperament._Beware_if_it\nraises_its_tail_straight_up._It_is_a_signal\nthat_it_is_about_to_pounce_and_bite.
+.end
+
+.string str_pokedex_data_53_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_54_page_0 EN
+	=It_is_constantly_wracked_by_a_headache.\nWhen_the_headache_turns_intense,_it_begins\nusing_mysterious_powers.
+.end
+
+.string str_pokedex_data_54_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_55_page_0 EN
+	=The_forelegs_are_webbed,_helping_to_make\nit_an_adept_swimmer._It_can_be_seen\nswimming_elegantly_in_lakes,_etc.
+.end
+
+.string str_pokedex_data_55_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_56_page_0 EN
+	=Light_and_agile_on_its_feet,_and_ferocious\nin_temperament._When_angered,_it_flies_into\nan_uncontrollable_frenzy.
+.end
+
+.string str_pokedex_data_56_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_57_page_0 EN
+	=It_is_always_outrageously_furious._If_it\ngives_chase,_it_will_tenaciously_track_the\ntarget_no_matter_how_far.
+.end
+
+.string str_pokedex_data_57_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_58_page_0 EN
+	=Very_friendly_and_faithful_to_people.\nIt_will_try_to_repel_enemies_by_barking\nand_biting.
+.end
+
+.string str_pokedex_data_58_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_59_page_0 EN
+	=A_POK\eMON_that_is_described_in_Chinese\nlegends._It_is_said_to_race_at_an\nunbelievable_speed.
+.end
+
+.string str_pokedex_data_59_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_60_page_0 EN
+	=Its_slick_black_skin_is_thin_and_damp.\nA_part_of_its_internal_organs_can_be_seen\nthrough_the_skin_as_a_spiral_pattern.
+.end
+
+.string str_pokedex_data_60_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_61_page_0 EN
+	=Its_two_legs_are_well_developed.\nEven_though_it_can_live_on_the_ground,\nit_prefers_living_in_water.
+.end
+
+.string str_pokedex_data_61_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_62_page_0 EN
+	=An_adept_swimmer,_it_knows_the_front\ncrawl,_butterfly,_and_more._It_is_faster\nthan_the_best_human_swimmers.
+.end
+
+.string str_pokedex_data_62_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_63_page_0 EN
+	=It_sleeps_for_18_hours_a_day._It_uses_a\nvariety_of_extrasensory_powers_even\nwhile_asleep.
+.end
+
+.string str_pokedex_data_63_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_64_page_0 EN
+	=It_happened_one_morning_-_a_boy_with\nextrasensory_powers_awoke_in_bed\ntransformed_into_KADABRA.
+.end
+
+.string str_pokedex_data_64_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_65_page_0 EN
+	=It_does_not_like_physical_attacks_very_\nmuch._Instead,_it_freely_uses_extra-\nsensory_powers_to_defeat_foes.
+.end
+
+.string str_pokedex_data_65_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_66_page_0 EN
+	=Its_whole_body_is_composed_of_muscles.\nEven_though_it's_the_size_of_a_human\nchild,_it_can_hurl_100_grown-ups.
+.end
+
+.string str_pokedex_data_66_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_67_page_0 EN
+	=Its_formidable_body_never_gets_tired.\nIt_helps_people_by_doing_work_such_as\nthe_moving_of_heavy_goods.
+.end
+
+.string str_pokedex_data_67_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_68_page_0 EN
+	=Its_four_ruggedly_developed_arms_can\nlaunch_a_flurry_of_1,000_punches_in_just\ntwo_seconds.
+.end
+
+.string str_pokedex_data_68_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_69_page_0 EN
+	=Its_bud_looks_like_a_human_face._Because\nof_the_bud,_it_is_rumored_to_be_a_type_of\nlegendary_mandrake_plant.
+.end
+
+.string str_pokedex_data_69_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_70_page_0 EN
+	=The_leafy_parts_act_as_cutters_for\nslashing_foes._It_spits_a_fluid_that\ndissolves_everything.
+.end
+
+.string str_pokedex_data_70_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_71_page_0 EN
+	=Lures_prey_into_its_mouth_with_a_honeylike\naroma._The_helpless_prey_is_melted_with\na_dissolving_fluid.
+.end
+
+.string str_pokedex_data_71_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_72_page_0 EN
+	=Its_eyes_are_as_transparent_as_crystals.\nFrom_them,_it_shoots_mysterious\nbeams_of_light.
+.end
+
+.string str_pokedex_data_72_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_73_page_0 EN
+	=It_has_80_tentacles_that_move_about\nfreely._They_can_sting,_causing_poisoning\nand_sharp,_stabbing_pain.
+.end
+
+.string str_pokedex_data_73_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_74_page_0 EN
+	=Its_round_form_makes_it_easy_to_pick_up.\nSome_people_have_used_them_to_hurl\nat_each_other_in_a_snowball_fight.
+.end
+
+.string str_pokedex_data_74_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_75_page_0 EN
+	=Be_careful_while_hiking_on_mountain_trails.\nGRAVELER_may_come_rolling_down_the_path\nwithout_slowing.
+.end
+
+.string str_pokedex_data_75_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_76_page_0 EN
+	=It_is_enclosed_in_a_hard_shell_that_is_as\nrugged_as_slabs_of_rock._It_sheds_skin\nonce_a_year_to_grow_larger.
+.end
+
+.string str_pokedex_data_76_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_77_page_0 EN
+	=Its_body_is_light,_and_its_legs_are\nincredibly_powerful._It_can_clear\nAyers_Rock_in_one_leap.
+.end
+
+.string str_pokedex_data_77_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_78_page_0 EN
+	=It_can_gallop_at_a_top_speed_of_150\nmiles_per_hour._It_can_race_as_fast_as_a\nbullet_train_while_ablaze.
+.end
+
+.string str_pokedex_data_78_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_79_page_0 EN
+	=It_is_always_vacantly_lost_in_thought,_but\nno_one_knows_what_it_is_thinking_about.\nIt_is_good_at_fishing_with_its_tail.
+.end
+
+.string str_pokedex_data_79_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_80_page_0 EN
+	=When_a_SLOWPOKE_went_hunting_in_the_sea,\nits_tail_was_bitten_by_a_SHELLDER._That\nmade_it_evolve_into_SLOWBRO.
+.end
+
+.string str_pokedex_data_80_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_81_page_0 EN
+	=It_moves_while_constantly_hovering.\nIt_discharges_THUNDER_WAVE_and_so_on\nfrom_the_units_at_its_sides.
+.end
+
+.string str_pokedex_data_81_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_82_page_0 EN
+	=A_linked_cluster_formed_of_several\nMAGNEMITE._It_discharges_powerful\nmagnetic_waves_at_high_voltage.
+.end
+
+.string str_pokedex_data_82_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_83_page_0 EN
+	=It_always_walks_about_with_a_plant_stalk\nclamped_in_its_beak._The_stalk_is_used_for\nbuilding_its_nest.
+.end
+
+.string str_pokedex_data_83_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_84_page_0 EN
+	=A_two-headed_POK\eMON_that_was_discovered\nas_a_sudden_mutation._It_runs_at_a_pace\nof_over_60_miles_per_hour.
+.end
+
+.string str_pokedex_data_84_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_85_page_0 EN
+	=An_odd_species_that_is_rarely_found.\nThe_three_heads_respectively_represent\njoy,_sadness,_and_anger.
+.end
+
+.string str_pokedex_data_85_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_86_page_0 EN
+	=Covered_with_light_blue_fur,_its_hide_is\nthick_and_tough._It_is_active_in_bitter\ncold_of_minus_40_degrees_Fahrenheit.
+.end
+
+.string str_pokedex_data_86_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_87_page_0 EN
+	=Its_body_is_covered_with_a_pure_white\nfur._The_colder_the_weather,_the_more\nactive_it_becomes.
+.end
+
+.string str_pokedex_data_87_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_88_page_0 EN
+	=Sludge_exposed_to_X_rays_from_the_moon\ntransformed_into_GRIMER._It_loves_feeding\non_filthy_things.
+.end
+
+.string str_pokedex_data_88_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_89_page_0 EN
+	=It_is_usually_undetectable_because_it\nblends_in_with_the_ground._Touching_it_can\ncause_terrible_poisoning.
+.end
+
+.string str_pokedex_data_89_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_90_page_0 EN
+	=It_is_encased_in_a_shell_that_is_harder\nthan_diamond._Inside,_however,_it_is\nsurprisingly_tender.
+.end
+
+.string str_pokedex_data_90_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_91_page_0 EN
+	=Its_shell_is_extremely_hard._It_cannot_be\nshattered,_even_with_a_bomb._The_shell\nopens_only_when_it_is_attacking.
+.end
+
+.string str_pokedex_data_91_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_92_page_0 EN
+	=A_being_that_exists_as_a_thin_gas._It_can\ntopple_an_Indian_elephant_by_enveloping\nthe_prey_in_two_seconds.
+.end
+
+.string str_pokedex_data_92_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_93_page_0 EN
+	=If_you_get_the_feeling_of_being_watched\nin_darkness_when_nobody_is_around,\nHAUNTER_is_there.
+.end
+
+.string str_pokedex_data_93_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_94_page_0 EN
+	=It_is_said_to_emerge_from_darkness_to\nsteal_the_lives_of_those_who_become_lost\nin_mountains.
+.end
+
+.string str_pokedex_data_94_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_95_page_0 EN
+	=It_usually_lives_underground._It_searches\nfor_food_while_boring_its_way_through_the\nground_at_50_miles_per_hour.
+.end
+
+.string str_pokedex_data_95_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_96_page_0 EN
+	=A_descendent_of_the_legendary_animal\nbaku,_which_is_said_to_eat_dreams._It_is\nskilled_at_hypnotism.
+.end
+
+.string str_pokedex_data_96_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_97_page_0 EN
+	=It_carries_a_pendulum-like_device._There\nonce_was_an_incident_in_which_it_took_\naway_a_child_it_hypnotized.
+.end
+
+.string str_pokedex_data_97_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_98_page_0 EN
+	=It_can_be_found_near_the_sea._The_large\npincers_grow_back_if_they_are_torn_out_of\ntheir_sockets.
+.end
+
+.string str_pokedex_data_98_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_99_page_0 EN
+	=Its_large_and_hard_pincer_has_10,000-\nhorsepower_strength._However,_being_so\nbig,_it_is_unwieldy_to_move.
+.end
+
+.string str_pokedex_data_99_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_100_page_0 EN
+	=A_life-form_whose_identity_is_unknown.\nIt_is_said_to_SCREECH_or_suddenly\nSELFDESTRUCT.
+.end
+
+.string str_pokedex_data_100_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_101_page_0 EN
+	=It_explodes_in_response_to_even_minor\nstimuli._It_is_feared,_with_the_nickname\nof_\b1The_Bomb_Ball.\b2
+.end
+
+.string str_pokedex_data_101_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_102_page_0 EN
+	=Even_though_it_appears_to_be_eggs_of\nsome_sort,_it_was_discovered_to_be_a_life-\nform_more_like_plant_seeds.
+.end
+
+.string str_pokedex_data_102_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_103_page_0 EN
+	=It_is_called_\b1The_Walking_Tropical\nRainforest.\b2_Each_of_the_nuts_has\na_face_and_a_will_of_its_own.
+.end
+
+.string str_pokedex_data_103_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_104_page_0 EN
+	=It_wears_the_skull_of_its_dead_mother_on\nits_head._When_it_becomes_lonesome,_it_is\nsaid_to_cry_loudly.
+.end
+
+.string str_pokedex_data_104_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_105_page_0 EN
+	=It_is_small_and_was_originally_very_weak.\nIts_temperament_turned_ferocious_when_it\nbegan_using_bones.
+.end
+
+.string str_pokedex_data_105_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_106_page_0 EN
+	=The_legs_freely_contract_and_stretch.\nThe_stretchy_legs_allow_it_to_hit_a\ndistant_foe_with_a_rising_kick.
+.end
+
+.string str_pokedex_data_106_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_107_page_0 EN
+	=The_spirit_of_a_pro_boxer_has_infused_this\nPOK\eMON._It_throws_punches_that_are\nfaster_than_a_bullet_train.
+.end
+
+.string str_pokedex_data_107_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_108_page_0 EN
+	=Its_tongue_is_twice_the_length_of_its\nbody._It_can_be_moved_like_an_arm_for\ngrabbing_food_and_attacking.
+.end
+
+.string str_pokedex_data_108_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_109_page_0 EN
+	=Its_thin,_balloon-like_body_is_inflated_by\nhorribly_toxic_gases._It_reeks_when_it_is\nnearby.
+.end
+
+.string str_pokedex_data_109_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_110_page_0 EN
+	=Very_rarely,_a_sudden_mutation_can_result\nin_two_small_KOFFING_twins_becoming\nconjoined_as_a_WEEZING.
+.end
+
+.string str_pokedex_data_110_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_111_page_0 EN
+	=Strong,_but_not_too_bright,_this_POK\eMON\ncan_shatter_even_a_skyscraper_with_its\ncharging_TACKLES.
+.end
+
+.string str_pokedex_data_111_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_112_page_0 EN
+	=It_begins_walking_on_its_hind_legs_after\nevolution._It_can_punch_holes_through\nboulders_with_its_horn.
+.end
+
+.string str_pokedex_data_112_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_113_page_0 EN
+	=It_lays_several_eggs_a_day._The_eggs_are\napparently_rich_in_nutrients_and_extremely\ndelicious.
+.end
+
+.string str_pokedex_data_113_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_114_page_0 EN
+	=Blue_plant_vines_cloak_the_POK\eMON's\nidentity_in_a_tangled_mass._It_entangles\nanything_that_gets_close.
+.end
+
+.string str_pokedex_data_114_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_115_page_0 EN
+	=The_female_raises_its_offspring_in_a_pouch\non_its_belly._It_is_skilled_at_attacking\nusing_COMET_PUNCH.
+.end
+
+.string str_pokedex_data_115_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_116_page_0 EN
+	=It_maintains_balance_using_its_tail,_which\nis_wound_up_like_a_coil._It_may_spray_ink\nfrom_its_mouth.
+.end
+
+.string str_pokedex_data_116_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_117_page_0 EN
+	=Its_body_bristles_with_sharp_spikes.\nCarelessly_trying_to_touch_it_could_cause\nfainting_from_the_spikes.
+.end
+
+.string str_pokedex_data_117_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_118_page_0 EN
+	=Its_dorsal_and_pectoral_fins_are_strongly\ndeveloped_like_muscles._It_can_swim_at_a\nspeed_of_five_knots.
+.end
+
+.string str_pokedex_data_118_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_119_page_0 EN
+	=The_horn_on_its_head_is_sharp_like_a\ndrill._It_bores_a_hole_in_a_boulder_to\nmake_its_nest.
+.end
+
+.string str_pokedex_data_119_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_120_page_0 EN
+	=It_appears_in_large_numbers_by_seashores.\nAt_night,_its_central_core_flashes_with_a\nred_light.
+.end
+
+.string str_pokedex_data_120_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_121_page_0 EN
+	=This_POK\eMON_has_a_geometric_body.\nBecause_of_its_body,_the_locals_suspect\nthat_it_is_an_alien_creature.
+.end
+
+.string str_pokedex_data_121_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_122_page_0 EN
+	=It_is_adept_at_conning_people._It_is_said\nto_be_able_to_create_walls_out_of_thin\nair_by_miming.
+.end
+
+.string str_pokedex_data_122_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_123_page_0 EN
+	=It_tears_and_shreds_prey_with_its_wickedly\nsharp_scythes._It_very_rarely_spreads_its\nwings_to_fly.
+.end
+
+.string str_pokedex_data_123_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_124_page_0 EN
+	=It_speaks_using_a_language_that_sounds\nhuman._Research_is_under_way_to_determine\nwhat_is_being_said.
+.end
+
+.string str_pokedex_data_124_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_125_page_0 EN
+	=It_loves_to_feed_on_strong_electricity.\nIt_occasionally_appears_around_large\npower_plants_and_so_on.
+.end
+
+.string str_pokedex_data_125_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_126_page_0 EN
+	=Found_near_the_mouth_of_a_volcano.\nThis_fire-breather's_body_temperature_is\nnearly_2,200_degrees_Fahrenheit.
+.end
+
+.string str_pokedex_data_126_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_127_page_0 EN
+	=Its_two_long_pincer_horns_are_powerful.\nOnce_they_grip_an_enemy,_they_won't\nrelease_until_the_foe_is_torn.
+.end
+
+.string str_pokedex_data_127_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_128_page_0 EN
+	=When_it_is_about_to_TACKLE,_it_whips\nits_body_repeatedly_with_its_three\nlong_tails.
+.end
+
+.string str_pokedex_data_128_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_129_page_0 EN
+	=It_is_virtually_worthless_in_terms_of_both\npower_and_speed._It_is_the_most_weak_and\npathetic_POK\eMON_in_the_world.
+.end
+
+.string str_pokedex_data_129_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_130_page_0 EN
+	=It_has_an_extremely_aggressive_nature.\nThe_HYPER_BEAM_it_shoots_from_its_mouth\ntotally_incinerates_all_targets.
+.end
+
+.string str_pokedex_data_130_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_131_page_0 EN
+	=Its_high_intelligence_enables_it_to\nunderstand_human_speech._It_likes_to_ferry\npeople_on_its_back.
+.end
+
+.string str_pokedex_data_131_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_132_page_0 EN
+	=It_can_freely_recombine_its_own_cellular\nstructure_to_transform_into_other_life-\nforms.
+.end
+
+.string str_pokedex_data_132_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_133_page_0 EN
+	=An_extremely_rare_POK\eMON_that_may\nevolve_in_a_number_of_different_ways\ndepending_on_stimuli.
+.end
+
+.string str_pokedex_data_133_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_134_page_0 EN
+	=Its_body's_cellular_structure_is_similar_to\nthe_molecular_composition_of_water.\nIt_can_melt_invisibly_in_water.
+.end
+
+.string str_pokedex_data_134_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_135_page_0 EN
+	=If_it_is_angered_or_startled,_the_fur_all\nover_its_body_bristles_like_sharp_needles\nthat_pierce_foes.
+.end
+
+.string str_pokedex_data_135_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_136_page_0 EN
+	=It_has_a_flame_bag_inside_its_body._After\ninhaling_deeply,_it_blows_out_flames_of\nnearly_3,100_degrees_Fahrenheit.
+.end
+
+.string str_pokedex_data_136_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_137_page_0 EN
+	=Using_the_most_advanced_technologies,\nscientists_finally_succeeded_in_making_the\nfirst_artificial_POK\eMON.
+.end
+
+.string str_pokedex_data_137_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_138_page_0 EN
+	=A_prehistoric_POK\eMON_that_lived_in_the\nprimordial_sea,_it_swims_by_twisting_its\n10_tentacles_about.
+.end
+
+.string str_pokedex_data_138_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_139_page_0 EN
+	=Its_tentacles_are_highly_developed_as_if\nthey_are_hands_and_feet._As_soon_as_it\nensnares_prey,_it_bites.
+.end
+
+.string str_pokedex_data_139_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_140_page_0 EN
+	=This_POK\eMON_was_regenerated_from_the\nfossil_of_an_ancient_creature._It_protects\nitself_with_a_hard_shell.
+.end
+
+.string str_pokedex_data_140_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_141_page_0 EN
+	=It_swims_freely_through_water._It_catches\nprey_with_its_scythe-like_arms_and_drains\nthe_victim's_fluids.
+.end
+
+.string str_pokedex_data_141_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_142_page_0 EN
+	=It_was_regenerated_from_a_dinosaur's\ngenetic_matter_that_was_found_in_amber.\nIt_flies_with_high-pitched_cries.
+.end
+
+.string str_pokedex_data_142_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_143_page_0 EN
+	=It_is_not_satisfied_unless_it_eats_over_880\npounds_of_food_every_day._When_it_is_done\neating,_it_goes_promptly_to_sleep.
+.end
+
+.string str_pokedex_data_143_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_144_page_0 EN
+	=One_of_the_legendary_bird_POK\eMON.\nWith_its_long_tail_trailing_behind,_its\nflying_form_is_magnificent.
+.end
+
+.string str_pokedex_data_144_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_145_page_0 EN
+	=One_of_the_legendary_bird_POK\eMON.\nWhile_it_is_flying,_it_makes_crackling_and\nsnapping_sounds.
+.end
+
+.string str_pokedex_data_145_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_146_page_0 EN
+	=One_of_the_legendary_bird_POK\eMON.\nThose_seeing_it_are_overwhelmed_by_its\norange_wings_that_seem_to_be_on_fire.
+.end
+
+.string str_pokedex_data_146_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_147_page_0 EN
+	=Even_the_young_can_exceed_6.5_feet_in\nlength._It_grows_larger_by_repeatedly\nshedding_skin.
+.end
+
+.string str_pokedex_data_147_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_148_page_0 EN
+	=It_is_said_to_live_in_seas_and_lakes.\nEven_though_it_has_no_wings,_it_has_been\nseen_flying_occasionally.
+.end
+
+.string str_pokedex_data_148_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_149_page_0 EN
+	=It_can_fly_in_spite_of_its_big_and_bulky\nphysique._It_circles_the_globe_in_just\n16_hours.
+.end
+
+.string str_pokedex_data_149_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_150_page_0 EN
+	=A_POK\eMON_whose_genetic_code_was\nrepeatedly_recombined_for_research.\nIt_turned_vicious_as_a_result.
+.end
+
+.string str_pokedex_data_150_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_151_page_0 EN
+	=A_POK\eMON_of_South_America_that_was\nthought_to_have_been_extinct._It_is_very\nintelligent_and_learns_any_move.
+.end
+
+.string str_pokedex_data_151_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_152_page_0 EN
+	=Its_pleasantly_aromatic_leaf_has_the\nability_to_check_the_humidity_and\ntemperature.
+.end
+
+.string str_pokedex_data_152_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_153_page_0 EN
+	=A_spicy_aroma_emanates_from_around_its\nneck._The_aroma_acts_as_a_stimulant_to\nrestore_health.
+.end
+
+.string str_pokedex_data_153_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_154_page_0 EN
+	=MEGANIUM's_breath_has_the_power_to_revive\ndead_grass_and_plants._It_can_make_them\nhealthy_again.
+.end
+
+.string str_pokedex_data_154_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_155_page_0 EN
+	=It_usually_stays_hunched_over._If_it_is\nangry_or_surprised,_it_shoots_flames_out\nof_its_back.
+.end
+
+.string str_pokedex_data_155_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_156_page_0 EN
+	=This_POK\eMON_is_fully_covered_by\nnonflammable_fur._It_can_withstand_any\nkind_of_fire_attack.
+.end
+
+.string str_pokedex_data_156_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_157_page_0 EN
+	=It_has_a_secret,_devastating_move._It\nrubs_its_blazing_fur_together_to_cause\nhuge_explosions.
+.end
+
+.string str_pokedex_data_157_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_158_page_0 EN
+	=It_is_small_but_rough_and_tough._It_won't\nhesitate_to_take_a_bite_out_of_anything\nthat_moves.
+.end
+
+.string str_pokedex_data_158_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_159_page_0 EN
+	=It_opens_its_huge_jaws_wide_when\nattacking._If_it_loses_any_fangs_while\nbiting,_they_grow_back_in.
+.end
+
+.string str_pokedex_data_159_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_160_page_0 EN
+	=It_is_hard_for_it_to_support_its_own\nweight_out_of_water,_so_it_gets_down_on\nall_fours._But_it_moves_fast.
+.end
+
+.string str_pokedex_data_160_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_161_page_0 EN
+	=It_stands_on_its_tail_so_it_can_see_a_long\nway._If_it_spots_an_enemy,_it_cries_loudly\nto_warn_its_kind.
+.end
+
+.string str_pokedex_data_161_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_162_page_0 EN
+	=There_is_no_telling_where_its_tail_begins.\nDespite_its_short_legs,_it_is_quick_at\nhunting_RATTATA.
+.end
+
+.string str_pokedex_data_162_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_163_page_0 EN
+	=It_has_a_perfect_sense_of_time._Whatever\nhappens,_it_keeps_rhythm_by_precisely\ntilting_its_head_in_time.
+.end
+
+.string str_pokedex_data_163_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_164_page_0 EN
+	=When_it_needs_to_think,_it_rotates_its_head\n180_degrees_to_sharpen_its_intellectual\npower.
+.end
+
+.string str_pokedex_data_164_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_165_page_0 EN
+	=When_the_weather_turns_cold,_numerous\nLEDYBA_gather_from_everywhere_to_cluster\nand_keep_each_other_warm.
+.end
+
+.string str_pokedex_data_165_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_166_page_0 EN
+	=The_star_patterns_on_its_back_grow_larger\nor_smaller_depending_on_the_number_of\nstars_in_the_night_sky.
+.end
+
+.string str_pokedex_data_166_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_167_page_0 EN
+	=It_spins_a_web_using_fine--but_durable--\nthread._It_then_waits_patiently_for_prey\nto_be_trapped.
+.end
+
+.string str_pokedex_data_167_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_168_page_0 EN
+	=A_single_strand_of_a_special_string_is\nendlessly_spun_out_of_its_rear._The_string\nleads_back_to_its_nest.
+.end
+
+.string str_pokedex_data_168_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_169_page_0 EN
+	=The_development_of_wings_on_its_legs\nenables_it_to_fly_fast_but_also_makes_it\ntough_to_stop_and_rest.
+.end
+
+.string str_pokedex_data_169_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_170_page_0 EN
+	=On_the_dark_ocean_floor,_its_only_means\nof_communication_is_its_constantly\nflashing_lights.
+.end
+
+.string str_pokedex_data_170_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_171_page_0 EN
+	=It_blinds_prey_with_an_intense_burst_of\nlight,_then_swallows_the_immobilized_prey\nin_a_single_gulp.
+.end
+
+.string str_pokedex_data_171_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_172_page_0 EN
+	=Despite_its_small_size,_it_can_zap_even\nadult_humans._However,_if_it_does_so,_it\nalso_surprises_itself.
+.end
+
+.string str_pokedex_data_172_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_173_page_0 EN
+	=When_numerous_meteors_illuminate_the\nnight_sky,_sightings_of_CLEFFA_strangely\nincrease.
+.end
+
+.string str_pokedex_data_173_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_174_page_0 EN
+	=Its_extremely_flexible_and_elastic_body\nmakes_it_bounce_continuously--anytime,\nanywhere.
+.end
+
+.string str_pokedex_data_174_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_175_page_0 EN
+	=A_proverb_claims_that_happiness_will_come\nto_anyone_who_can_make_a_sleeping_TOGEPI\nstand_up.
+.end
+
+.string str_pokedex_data_175_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_176_page_0 EN
+	=It_grows_dispirited_if_it_is_not_with_kind\npeople._It_can_float_in_midair_without\nmoving_its_wings.
+.end
+
+.string str_pokedex_data_176_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_177_page_0 EN
+	=It_usually_forages_for_food_on_the_ground\nbut_may,_on_rare_occasions,_hop_onto\nbranches_to_peck_at_shoots.
+.end
+
+.string str_pokedex_data_177_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_178_page_0 EN
+	=In_South_America,_it_is_said_that_its_right\neye_sees_the_future_and_its_left_eye\nviews_the_past.
+.end
+
+.string str_pokedex_data_178_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_179_page_0 EN
+	=Its_fleece_grows_continually._In_the\nsummer,_the_fleece_is_fully_shed,_but_it\ngrows_back_in_a_week.
+.end
+
+.string str_pokedex_data_179_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_180_page_0 EN
+	=Its_fluffy_fleece_easily_stores\nelectricity._Its_rubbery_hide_keeps_it\nfrom_being_electrocuted.
+.end
+
+.string str_pokedex_data_180_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_181_page_0 EN
+	=The_bright_light_on_its_tail_can_be_seen\nfar_away._It_has_been_treasured_since\nancient_times_as_a_beacon.
+.end
+
+.string str_pokedex_data_181_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_182_page_0 EN
+	=Plentiful_in_the_tropics._When_it_dances,\nits_petals_rub_together_and_make_a\npleasant_ringing_sound.
+.end
+
+.string str_pokedex_data_182_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_183_page_0 EN
+	=The_end_of_its_tail_serves_as_a_buoy_that\nkeeps_it_from_drowning,_even_in_a_vicious\ncurrent.
+.end
+
+.string str_pokedex_data_183_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_184_page_0 EN
+	=When_it_plays_in_water,_it_rolls_up_its\nelongated_ears_to_prevent_their_insides\nfrom_getting_wet.
+.end
+
+.string str_pokedex_data_184_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_185_page_0 EN
+	=It_disguises_itself_as_a_tree_to_avoid\nattack._It_hates_water,_so_it_will\ndisappear_if_it_starts_raining.
+.end
+
+.string str_pokedex_data_185_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_186_page_0 EN
+	=Whenever_three_or_more_of_these_get\ntogether,_they_sing_in_a_loud_voice_that\nsounds_like_bellowing.
+.end
+
+.string str_pokedex_data_186_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_187_page_0 EN
+	=Its_body_is_so_light,_it_must_grip_the\nground_firmly_with_its_feet_to_keep_from\nbeing_blown_away.
+.end
+
+.string str_pokedex_data_187_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_188_page_0 EN
+	=It_spreads_its_petals_to_absorb_sunlight.\nIt_also_floats_in_the_air_to_get_closer_to\nthe_sun.
+.end
+
+.string str_pokedex_data_188_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_189_page_0 EN
+	=It_drifts_on_seasonal_winds_and_spreads\nits_cotton-like_spores_all_over_the_world_\nto_make_more_offspring.
+.end
+
+.string str_pokedex_data_189_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_190_page_0 EN
+	=It_lives_atop_tall_trees._When_leaping\nfrom_branch_to_branch,_it_deftly_uses_its\ntail_for_balance.
+.end
+
+.string str_pokedex_data_190_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_191_page_0 EN
+	=It_lives_by_drinking_only_dewdrops_from\nunder_the_leaves_of_plants._It_is_said\nthat_it_eats_nothing_else.
+.end
+
+.string str_pokedex_data_191_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_192_page_0 EN
+	=In_the_daytime,_it_rushes_about_in_a\nhectic_manner,_but_it_comes_to_a_complete\nstop_when_the_sun_sets.
+.end
+
+.string str_pokedex_data_192_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_193_page_0 EN
+	=Its_large_eyes_can_scan_360_degrees.\nIt_looks_in_all_directions_to_seek_out\ninsects_as_its_prey.
+.end
+
+.string str_pokedex_data_193_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_194_page_0 EN
+	=When_it_walks_around_on_the_ground,\nit_coats_its_body_with_a_slimy,_poisonous\nfilm.
+.end
+
+.string str_pokedex_data_194_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_195_page_0 EN
+	=Due_to_its_relaxed_and_carefree_attitude,\nit_often_bumps_its_head_on_boulders_and\nboat_hulls_as_it_swims.
+.end
+
+.string str_pokedex_data_195_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_196_page_0 EN
+	=By_reading_air_currents,_it_can_predict\nthings_such_as_the_weather_or_its_foe's\nnext_move.
+.end
+
+.string str_pokedex_data_196_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_197_page_0 EN
+	=When_darkness_falls,_the_rings_on_its_body\nbegin_to_glow,_striking_fear_in_the_hearts\nof_anyone_nearby.
+.end
+
+.string str_pokedex_data_197_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_198_page_0 EN
+	=It_is_said_that_when_chased,_it_lures_its\nattacker_onto_dark_mountain_trails_where\nthe_foe_will_get_lost.
+.end
+
+.string str_pokedex_data_198_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_199_page_0 EN
+	=When_its_head_was_bitten,_toxins_entered\nSLOWPOKE's_head_and_unlocked_an\nextraordinary_power.
+.end
+
+.string str_pokedex_data_199_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_200_page_0 EN
+	=It_loves_to_bite_and_yank_people's_hair\nfrom_behind_without_warning,_just_to_see\ntheir_shocked_reactions.
+.end
+
+.string str_pokedex_data_200_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_201_page_0 EN
+	=Its_flat,_thin_body_is_always_stuck_on\nwalls._Its_shape_appears_to_have_some\nmeaning.
+.end
+
+.string str_pokedex_data_201_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_202_page_0 EN
+	=To_keep_its_pitch-black_tail_hidden,_it\nlives_quietly_in_the_darkness._It_is_never\nfirst_to_attack.
+.end
+
+.string str_pokedex_data_202_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_203_page_0 EN
+	=Its_tail,_which_also_contains_a_small\nbrain,_may_bite_on_its_own_if_it_notices_an\nalluring_smell.
+.end
+
+.string str_pokedex_data_203_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_204_page_0 EN
+	=It_hangs_and_waits_for_flying-insect_prey\nto_come_near._It_does_not_move_about\nmuch_on_its_own.
+.end
+
+.string str_pokedex_data_204_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_205_page_0 EN
+	=It_remains_immovably_rooted_to_its_tree.\nIt_scatters_pieces_of_its_hard_shell_to\ndrive_its_enemies_away.
+.end
+
+.string str_pokedex_data_205_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_206_page_0 EN
+	=If_spotted,_it_escapes_by_burrowing_with\nits_tail._It_can_hover_just_slightly_using\nits_wings.
+.end
+
+.string str_pokedex_data_206_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_207_page_0 EN
+	=It_usually_clings_to_cliffs._When_it_spots\nits_prey,_it_spreads_its_wings_and_glides\ndown_to_attack.
+.end
+
+.string str_pokedex_data_207_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_208_page_0 EN
+	=It_is_said_that_if_an_ONIX_lives_for_over\n100_years,_its_composition_changes_to\nbecome_diamond-like.
+.end
+
+.string str_pokedex_data_208_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_209_page_0 EN
+	=It_has_an_active,_playful_nature._Many\nwomen_like_to_frolic_with_it_because_of\nits_affectionate_ways.
+.end
+
+.string str_pokedex_data_209_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_210_page_0 EN
+	=Because_its_fangs_are_too_heavy,_it\nalways_keeps_its_head_tilted_down.\nHowever,_its_BITE_is_powerful.
+.end
+
+.string str_pokedex_data_210_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_211_page_0 EN
+	=The_small_spikes_covering_its_body\ndeveloped_from_scales._They_inject_a\ntoxin_that_causes_fainting.
+.end
+
+.string str_pokedex_data_211_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_212_page_0 EN
+	=Its_wings_are_not_used_for_flying.\nThey_are_flapped_at_high_speed_to_adjust\nits_body_temperature.
+.end
+
+.string str_pokedex_data_212_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_213_page_0 EN
+	=It_stores_BERRIES_inside_its_shell.\nTo_avoid_attacks,_it_hides_beneath_rocks\nand_remains_completely_still.
+.end
+
+.string str_pokedex_data_213_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_214_page_0 EN
+	=Usually_docile,_but_if_disturbed_while\nsipping_honey,_it_chases_off_the_intruder\nwith_its_horn.
+.end
+
+.string str_pokedex_data_214_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_215_page_0 EN
+	=Vicious_in_nature,_it_drives_PIDGEY_from\ntheir_nests_and_feasts_on_the_eggs_that\nare_left_behind.
+.end
+
+.string str_pokedex_data_215_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_216_page_0 EN
+	=Before_food_becomes_scarce_in_wintertime,\nits_habit_is_to_hoard_food_in_many_hidden\nlocations.
+.end
+
+.string str_pokedex_data_216_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_217_page_0 EN
+	=With_its_ability_to_distinguish_any_smell,\nit_unfailingly_finds_all_food_buried_deep\nunderground.
+.end
+
+.string str_pokedex_data_217_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_218_page_0 EN
+	=A_common_sight_in_volcanic_areas,_it\nslowly_slithers_around_in_a_constant\nsearch_for_warm_places.
+.end
+
+.string str_pokedex_data_218_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_219_page_0 EN
+	=Its_brittle_shell_occasionally_spouts\nintense_flames_that_circulate_throughout\nits_body.
+.end
+
+.string str_pokedex_data_219_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_220_page_0 EN
+	=If_it_smells_something_enticing,_it_dashes\noff_headlong_to_find_the_source_of_the\naroma.
+.end
+
+.string str_pokedex_data_220_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_221_page_0 EN
+	=If_it_charges_at_an_enemy,_the_hairs_on\nits_back_stand_up_straight._It_is_very\nsensitive_to_sound.
+.end
+
+.string str_pokedex_data_221_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_222_page_0 EN
+	=In_a_south_sea_nation,_the_people_live_in\ncommunities_that_are_built_on_groups_of\nthese_POK\eMON.
+.end
+
+.string str_pokedex_data_222_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_223_page_0 EN
+	=Using_its_dorsal_fin_as_a_suction_pad,_it\nclings_to_a_MANTINE's_underside_to\nscavenge_for_leftovers.
+.end
+
+.string str_pokedex_data_223_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_224_page_0 EN
+	=It_instinctively_sneaks_into_rocky_holes.\nIf_it_gets_sleepy,_it_steals_the_nest_of_a\nfellow_OCTILLERY.
+.end
+
+.string str_pokedex_data_224_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_225_page_0 EN
+	=It_nests_at_the_edge_of_sharp_cliffs.\nIt_spends_all_day_carrying_food_to_its\nawaiting_chicks.
+.end
+
+.string str_pokedex_data_225_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_226_page_0 EN
+	=Swimming_freely_in_open_seas,_it_may_fly\nout_of_the_water_and_over_the_waves_if_it\nbuilds_up_enough_speed.
+.end
+
+.string str_pokedex_data_226_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_227_page_0 EN
+	=After_nesting_in_bramble_bushes,_the_wings\nof_its_chicks_grow_hard_from_scratches_by\nthorns.
+.end
+
+.string str_pokedex_data_227_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_228_page_0 EN
+	=To_corner_prey,_they_check_each_other's\nlocation_using_barks_that_only_they_can\nunderstand.
+.end
+
+.string str_pokedex_data_228_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_229_page_0 EN
+	=Upon_hearing_its_eerie_howls,_other\nPOK\eMON_get_the_shivers_and_head_straight\nback_to_their_nests.
+.end
+
+.string str_pokedex_data_229_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_230_page_0 EN
+	=It_sleeps_deep_on_the_ocean_floor_to\nbuild_its_energy._It_is_said_to_cause\ntornadoes_as_it_wakes.
+.end
+
+.string str_pokedex_data_230_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_231_page_0 EN
+	=As_a_sign_of_affection,_it_bumps_with_its\nsnout._However,_it_is_so_strong,_it_may\nsend_you_flying.
+.end
+
+.string str_pokedex_data_231_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_232_page_0 EN
+	=The_longer_and_bigger_its_tusks,_the\nhigher_its_rank_in_its_herd._The_tusks_take\na_long_time_to_grow.
+.end
+
+.string str_pokedex_data_232_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_233_page_0 EN
+	=Further_research_enhanced_its_abilities.\nSometimes,_it_may_exhibit_motions_that\nwere_not_programmed.
+.end
+
+.string str_pokedex_data_233_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_234_page_0 EN
+	=Those_who_stare_at_its_antlers_will\ngradually_lose_control_of_their_senses\nand_be_unable_to_stand.
+.end
+
+.string str_pokedex_data_234_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_235_page_0 EN
+	=Once_it_becomes_an_adult,_it_has_a\ntendency_to_let_its_comrades_plant\nfootprints_on_its_back.
+.end
+
+.string str_pokedex_data_235_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_236_page_0 EN
+	=Even_though_it_is_small,_it_can't_be\nignored_because_it_will_slug_any_handy\ntarget_without_warning.
+.end
+
+.string str_pokedex_data_236_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_237_page_0 EN
+	=It_launches_kicks_while_spinning._If_it\nspins_at_high_speed,_it_may_bore_its_way\ninto_the_ground.
+.end
+
+.string str_pokedex_data_237_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_238_page_0 EN
+	=It_always_rocks_its_head_slowly_backwards\nand_forwards_as_if_it_is_trying_to_kiss\nsomeone.
+.end
+
+.string str_pokedex_data_238_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_239_page_0 EN
+	=Even_in_the_most_vicious_storm,_this\nPOK\eMON_plays_happily_if_thunder_rumbles\nin_the_sky.
+.end
+
+.string str_pokedex_data_239_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_240_page_0 EN
+	=It_is_found_in_volcanic_craters._Its_body\nheat_exceeds_1,100_degrees_Fahrenheit,\nso_don't_underestimate_it.
+.end
+
+.string str_pokedex_data_240_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_241_page_0 EN
+	=If_it_has_just_had_a_baby,_the_milk_it\nproduces_contains_much_more_nutrition_than\nusual.
+.end
+
+.string str_pokedex_data_241_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_242_page_0 EN
+	=It_has_a_very_compassionate_nature._If_it\nsees_a_sick_POK\eMON,_it_will_nurse_the\nsufferer_back_to_health.
+.end
+
+.string str_pokedex_data_242_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_243_page_0 EN
+	=This_POK\eMON_races_across_the\nland_while_barking_a_cry_that_sounds\nlike_crashing_thunder.
+.end
+
+.string str_pokedex_data_243_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_244_page_0 EN
+	=A_POK\eMON_that_races_across_the_land.\nIt_is_said_that_one_is_born_every_time_a\nnew_volcano_appears.
+.end
+
+.string str_pokedex_data_244_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_245_page_0 EN
+	=This_POK\eMON_races_across_the_land.\nIt_is_said_that_north_winds_will_somehow\nblow_whenever_it_appears.
+.end
+
+.string str_pokedex_data_245_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_246_page_0 EN
+	=It_is_born_deep_underground._It_can't\nemerge_until_it_has_entirely_consumed_the\nsoil_around_it.
+.end
+
+.string str_pokedex_data_246_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_247_page_0 EN
+	=Even_sealed_in_its_shell,_it_can_move\nfreely._Hard_and_fast,_it_has_outstanding\ndestructive_power.
+.end
+
+.string str_pokedex_data_247_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_248_page_0 EN
+	=It_has_an_impudent_nature._Having_great\nstrength,_it_can_even_change_surrounding\nlandforms.
+.end
+
+.string str_pokedex_data_248_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_249_page_0 EN
+	=It_is_said_to_be_the_guardian_of_the_seas.\nIt_is_rumored_to_have_been_seen_on_the\nnight_of_a_storm.
+.end
+
+.string str_pokedex_data_249_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_250_page_0 EN
+	=A_legend_says_that_its_body_glows_in\nseven_colors._A_rainbow_is_said_to_form\nbehind_it_when_it_flies.
+.end
+
+.string str_pokedex_data_250_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_251_page_0 EN
+	=When_CELEBI_disappears_deep_in_a_forest,\nit_is_said_to_leave_behind_an_egg_it\nbrought_from_the_future.
+.end
+
+.string str_pokedex_data_251_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_252_page_0 EN
+	=It_quickly_scales_even_vertical_walls.\nIt_senses_humidity_with_its_tail_to_predict\nthe_next_day's_weather.
+.end
+
+.string str_pokedex_data_252_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_253_page_0 EN
+	=Its_strongly_developed_thigh_muscles\ngive_it_astounding_agility_and_jumping\nperformance.
+.end
+
+.string str_pokedex_data_253_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_254_page_0 EN
+	=The_leaves_on_its_forelegs_are_as_sharp\nas_swords._It_agilely_leaps_about_the\nbranches_of_trees_to_strike.
+.end
+
+.string str_pokedex_data_254_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_255_page_0 EN
+	=It_has_a_flame_sac_inside_its_belly_that\nperpetually_burns._It_feels_warm_if_it_is\nhugged.
+.end
+
+.string str_pokedex_data_255_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_256_page_0 EN
+	=It_boosts_its_concentration_by_emitting\nharsh_cries._Its_kicks_have_outstanding\ndestructive_power.
+.end
+
+.string str_pokedex_data_256_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_257_page_0 EN
+	=When_facing_a_tough_foe,_it_looses_flames\nfrom_its_wrists._Its_powerful_legs_let_it\njump_clear_over_buildings.
+.end
+
+.string str_pokedex_data_257_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_258_page_0 EN
+	=Its_large_tail_fin_propels_it_through\nwater_with_powerful_acceleration._It_is\nstrong_in_spite_of_its_size.
+.end
+
+.string str_pokedex_data_258_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_259_page_0 EN
+	=It_is_at_its_best_when_on_muddy_ground\nwith_poor_footing._It_quickly_overwhelms\nfoes_struggling_in_mud.
+.end
+
+.string str_pokedex_data_259_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_260_page_0 EN
+	=Its_arms_are_rock-hard._With_one_swing,\nthey_can_batter_down_its_foe._It_makes_its\nnest_on_beautiful_beaches.
+.end
+
+.string str_pokedex_data_260_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_261_page_0 EN
+	=It_has_a_very_tenacious_nature._Its_acute\nsense_of_smell_lets_it_chase_a_chosen\nprey_without_ever_losing_track.
+.end
+
+.string str_pokedex_data_261_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_262_page_0 EN
+	=It_will_always_obey_the_commands_of_a\nskilled_TRAINER._Its_behavior_arises_from\nits_living_in_packs_in_ancient_times.
+.end
+
+.string str_pokedex_data_262_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_263_page_0 EN
+	=A_POK\eMON_with_abundant_curiosity.\nIt_shows_an_interest_in_everything,_so_it\nalways_zigs_and_zags.
+.end
+
+.string str_pokedex_data_263_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_264_page_0 EN
+	=When_running_in_a_straight_line,_it_can_top\n60_miles_per_hour._However,_it_has_a\ntough_time_with_curved_roads.
+.end
+
+.string str_pokedex_data_264_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_265_page_0 EN
+	=It_lives_amidst_tall_grass_and_in_forests.\nWhen_attacked,_it_resists_by_pointing_its\nvenomous_spikes_at_the_foe.
+.end
+
+.string str_pokedex_data_265_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_266_page_0 EN
+	=It_conserves_its_energy_by_moving_as\nlittle_as_possible._It_awaits_evolution\nwhile_drinking_only_a_little_rainwater.
+.end
+
+.string str_pokedex_data_266_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_267_page_0 EN
+	=Despite_its_appearance,_it_has_an\naggressive_nature._It_attacks_by_jabbing\nwith_its_long,_thin_mouth.
+.end
+
+.string str_pokedex_data_267_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_268_page_0 EN
+	=Its_body,_which_is_made_of_soft_silk,\nhardens_over_time._When_cracks_appear,\nevolution_is_near.
+.end
+
+.string str_pokedex_data_268_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_269_page_0 EN
+	=It_scatters_horribly_toxic_dust_when_it\nsenses_danger._They_tend_to_gather_in_the\nglow_of_streetlamps_at_night.
+.end
+
+.string str_pokedex_data_269_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_270_page_0 EN
+	=It_searches_about_for_clean_water._If_it\ndoes_not_drink_water_for_too_long,_the\nleaf_on_its_head_wilts.
+.end
+
+.string str_pokedex_data_270_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_271_page_0 EN
+	=It_lives_at_the_water's_edge_where_it_is\nsunny._It_sleeps_on_a_bed_of_water_grass\nby_day_and_becomes_active_at_night.
+.end
+
+.string str_pokedex_data_271_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_272_page_0 EN
+	=The_rhythm_of_bright,_festive_music\nactivates_LUDICOLO's_cells,_making_it_more\npowerful.
+.end
+
+.string str_pokedex_data_272_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_273_page_0 EN
+	=If_it_remains_still,_it_becomes_impossible\nto_distinguish_from_real_nuts._It_delights\nin_surprising_foraging_PIDGEY.
+.end
+
+.string str_pokedex_data_273_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_274_page_0 EN
+	=They_live_in_holes_bored_in_large_trees.\nThe_sound_of_NUZLEAF's_grass_flute_fills\nlisteners_with_dread.
+.end
+
+.string str_pokedex_data_274_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_275_page_0 EN
+	=A_POK\eMON_that_was_feared_as_a_forest\nguardian._It_can_read_the_foe's_mind_and\ntake_preemptive_action.
+.end
+
+.string str_pokedex_data_275_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_276_page_0 EN
+	=It_dislikes_cold_seasons._They_migrate_to\nother_lands_in_search_of_warmth,_flying\nover_180_miles_a_day.
+.end
+
+.string str_pokedex_data_276_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_277_page_0 EN
+	=If_its_two_tail_feathers_are_standing_at\nattention,_it_is_proof_of_good_health.\nIt_soars_elegantly_in_the_sky.
+.end
+
+.string str_pokedex_data_277_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_278_page_0 EN
+	=It_rides_upon_ocean_winds_as_if_it_were\na_glider._In_the_winter,_it_hides_food\naround_its_nest.
+.end
+
+.string str_pokedex_data_278_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_279_page_0 EN
+	=It_is_a_flying_transporter_that_carries\nsmall_POK\eMON_in_its_beak._It_bobs_on_the\nwaves_to_rest_its_wings.
+.end
+
+.string str_pokedex_data_279_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_280_page_0 EN
+	=It_is_highly_attuned_to_the_emotions_of\npeople_and_POK\eMON._It_hides_if_it_senses\nhostility.
+.end
+
+.string str_pokedex_data_280_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_281_page_0 EN
+	=The_cheerful_spirit_of_its_TRAINER_gives\nit_energy_for_its_psychokinetic_power.\nIt_spins_and_dances_when_happy.
+.end
+
+.string str_pokedex_data_281_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_282_page_0 EN
+	=It_has_the_power_to_predict_the_future.\nIts_power_peaks_when_it_is_protecting_its\nTRAINER.
+.end
+
+.string str_pokedex_data_282_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_283_page_0 EN
+	=They_usually_live_on_ponds,_but_after_an\nevening_shower,_they_may_appear_on\npuddles_in_towns.
+.end
+
+.string str_pokedex_data_283_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_284_page_0 EN
+	=The_antennae_have_distinctive_patterns\nthat_look_like_eyes._When_it_rains,_they\ngrow_heavy,_making_flight_impossible.
+.end
+
+.string str_pokedex_data_284_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_285_page_0 EN
+	=It_prefers_damp_places._By_day_it_remains\nstill_in_the_forest_shade._It_releases\ntoxic_powder_from_its_head.
+.end
+
+.string str_pokedex_data_285_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_286_page_0 EN
+	=The_seeds_on_its_tail_are_made_of_toxic\nspores._It_knocks_out_foes_with_quick,\nvirtually_invisible_punches.
+.end
+
+.string str_pokedex_data_286_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_287_page_0 EN
+	=It_sleeps_for_20_hours_every_day._Making\ndrowsy_those_that_see_it_is_one_of\nits_abilities.
+.end
+
+.string str_pokedex_data_287_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_288_page_0 EN
+	=It_is_always_hungry_because_it_won't_stop\nrampaging._Even_while_it_is_eating,_it\ncan't_keep_still.
+.end
+
+.string str_pokedex_data_288_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_289_page_0 EN
+	=It_is_the_world's_most_slothful_POK\eMON.\nHowever,_it_can_exert_horrifying_power_by\nreleasing_pent-up_energy_all_at_once.
+.end
+
+.string str_pokedex_data_289_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_290_page_0 EN
+	=Because_it_lived_almost_entirely\nunderground,_it_is_nearly_blind.\nIt_uses_its_antennae_instead.
+.end
+
+.string str_pokedex_data_290_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_291_page_0 EN
+	=This_POK\eMON_is_so_quick,_it_is_said_to\nbe_able_to_avoid_any_attack._It_loves_to\nfeed_on_tree_sap.
+.end
+
+.string str_pokedex_data_291_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_292_page_0 EN
+	=A_most_peculiar_POK\eMON_that_somehow\nappears_in_a_POK\e_BALL_when_a_NINCADA\nevolves.
+.end
+
+.string str_pokedex_data_292_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_293_page_0 EN
+	=It_usually_murmurs,_but_starts_crying\nloudly_if_it_senses_danger._It_stops_when\nits_ear_covers_are_shut.
+.end
+
+.string str_pokedex_data_293_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_294_page_0 EN
+	=When_it_stamps_its_feet_and_bellows,_it\ngenerates_ultrasonic_waves_that_can_blow\napart_a_house.
+.end
+
+.string str_pokedex_data_294_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_295_page_0 EN
+	=It_emits_a_variety_of_sounds_from_the_\nholes_all_over_its_body._Its_loud_cries\ncan_be_heard_from_over_six_miles_away.
+.end
+
+.string str_pokedex_data_295_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_296_page_0 EN
+	=It_grows_stronger_by_enduring_harsh\ntraining._It_is_a_gutsy_POK\eMON_that_can\nwithstand_any_attack.
+.end
+
+.string str_pokedex_data_296_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_297_page_0 EN
+	=It_stomps_on_the_ground_to_build_power.\nIt_can_send_a_10-ton_truck_flying_with_a\nstraight-arm_punch.
+.end
+
+.string str_pokedex_data_297_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_298_page_0 EN
+	=It_battles_by_flinging_around_its_tail,\nwhich_is_bigger_than_its_body._The\ntail_is_a_flotation_device_in_water.
+.end
+
+.string str_pokedex_data_298_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_299_page_0 EN
+	=Its_magnetic_nose_consistently_faces\nnorth._Travelers_check_NOSEPASS_to_get\ntheir_bearings.
+.end
+
+.string str_pokedex_data_299_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_300_page_0 EN
+	=It_is_said_to_be_difficult_to_earn_its\ntrust._However,_it_is_extremely_popular\nfor_its_cute_looks_and_behavior.
+.end
+
+.string str_pokedex_data_300_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_301_page_0 EN
+	=The_favorite_of_trend-conscious\nfemale_TRAINERS,_they_are_used_in\ncompetition_for_their_style_and_fur.
+.end
+
+.string str_pokedex_data_301_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_302_page_0 EN
+	=It_feeds_on_gemstone_crystals.\nIn_darkness,_its_eyes_sparkle_with_the\nglitter_of_jewels.
+.end
+
+.string str_pokedex_data_302_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_303_page_0 EN
+	=It_uses_its_docile-looking_face_to_lull\nfoes_into_complacency,_then_bites_with_its\nhuge,_relentless_jaws.
+.end
+
+.string str_pokedex_data_303_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_304_page_0 EN
+	=It_eats_iron_to_build_its_steel_body.\nIt_is_a_pest_that_descends_from_mountains\nto_eat_bridges_and_train_tracks.
+.end
+
+.string str_pokedex_data_304_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_305_page_0 EN
+	=It_habitually_shows_off_its_strength_with\nthe_size_of_sparks_it_creates_by_ramming\nits_steel_body_into_boulders.
+.end
+
+.string str_pokedex_data_305_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_306_page_0 EN
+	=It_claims_a_large_mountain_as_its_sole\nterritory._It_mercilessly_thrashes_those\nthat_violate_its_space.
+.end
+
+.string str_pokedex_data_306_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_307_page_0 EN
+	=It_never_skips_its_daily_yoga_training.\nIt_heightens_its_inner_strength_through\nmeditation.
+.end
+
+.string str_pokedex_data_307_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_308_page_0 EN
+	=It_elegantly_avoids_attacks_with_dance-\nlike_steps,_then_launches_a_devastating\nblow_in_the_same_motion.
+.end
+
+.string str_pokedex_data_308_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_309_page_0 EN
+	=It_stores_static_electricity_in_its_fur\nfor_discharging._It_gives_off_sparks_if_a\nstorm_approaches.
+.end
+
+.string str_pokedex_data_309_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_310_page_0 EN
+	=It_rarely_appears_before_people.\nIt_is_said_to_nest_where_lightning_has\nfallen.
+.end
+
+.string str_pokedex_data_310_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_311_page_0 EN
+	=It_cheers_on_partners_while_scattering\nsparks_from_its_body._It_climbs_telephone\npoles_to_absorb_electricity.
+.end
+
+.string str_pokedex_data_311_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_312_page_0 EN
+	=Its_dislike_of_water_makes_it_take_shelter\nunder_the_eaves_of_houses_in_rain._It_uses\npom-poms_made_of_sparks_for_cheering.
+.end
+
+.string str_pokedex_data_312_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_313_page_0 EN
+	=It_lives_around_clean_ponds._At_night,\nits_rear_lights_up._It_converses_with\nothers_by_flashing_its_light.
+.end
+
+.string str_pokedex_data_313_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_314_page_0 EN
+	=It_guides_VOLBEAT_to_draw_signs_in_night\nskies._There_are_scientists_that_study_the\npatterns_it_creates.
+.end
+
+.string str_pokedex_data_314_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_315_page_0 EN
+	=Additional software was installed on\nit but since then its behaviour hast become\nsomewhat strange.
+.end
+
+.string str_pokedex_data_315_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_316_page_0 EN
+	=There_is_nothing_its_stomach_can't_digest.\nWhile_it_is_digesting,_vile,_overpowering\ngases_are_expelled.
+.end
+
+.string str_pokedex_data_316_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_317_page_0 EN
+	=It_can_swallow_a_tire_whole_in_one_gulp.\nIt_secretes_a_horribly_toxic_fluid_from\nthe_pores_on_its_body.
+.end
+
+.string str_pokedex_data_317_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_318_page_0 EN
+	=It_lives_in_massive_rivers_that_course\nthrough_jungles._It_swarms_prey_that\nenter_its_territory.
+.end
+
+.string str_pokedex_data_318_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_319_page_0 EN
+	=The_ruffian_of_the_seas,_it_has_fangs_that\ncrunch_through_iron._It_swims_by_jetting\nwater_from_its_rear.
+.end
+
+.string str_pokedex_data_319_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_320_page_0 EN
+	=When_it_sucks_in_a_large_volume_of\nseawater,_it_becomes_like_a_big,_bouncy\nball._It_eats_a_ton_of_food_daily.
+.end
+
+.string str_pokedex_data_320_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_321_page_0 EN
+	=It_is_among_the_largest_of_all_POK\eMON.\nIt_herds_prey_in_a_pack_then_swallows_the\nmassed_prey_in_one_gulp.
+.end
+
+.string str_pokedex_data_321_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_322_page_0 EN
+	=Magma_of_almost_2,200_degrees_Fahrenheit\ncourses_through_its_body._When_it_grows\ncold,_the_magma_hardens_and_slows_it.
+.end
+
+.string str_pokedex_data_322_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_323_page_0 EN
+	=If_angered,_the_humps_on_its_back_erupt\nin_a_shower_of_molten_lava._It_lives_in\nthe_craters_of_volcanoes.
+.end
+
+.string str_pokedex_data_323_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_324_page_0 EN
+	=It_burns_coal_inside_its_shell._If_it_is\nattacked,_it_belches_thick,_black_smoke\nand_flees.
+.end
+
+.string str_pokedex_data_324_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_325_page_0 EN
+	=It_apparently_dies_if_it_stops_bouncing\nabout._It_carries_a_pearl_from_CLAMPERL\non_its_head.
+.end
+
+.string str_pokedex_data_325_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_326_page_0 EN
+	=It_can_gain_control_over_foes_by_doing\nodd_dance_steps._The_black_pearls_on_its\nforehead_are_precious_gems.
+.end
+
+.string str_pokedex_data_326_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_327_page_0 EN
+	=No_two_SPINDA_are_said_to_have_identical\npatterns._It_confuses_foes_with_its\nstumbling_motions.
+.end
+
+.string str_pokedex_data_327_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_328_page_0 EN
+	=It_lives_in_arid_deserts._It_makes_a\nsloping_pit_trap_in_sand_where_it\npatiently_awaits_prey.
+.end
+
+.string str_pokedex_data_328_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_329_page_0 EN
+	=It_generates_ultrasonic_waves_by_violently\nflapping_its_wings._After_making_its_prey\nfaint,_it_melts_the_prey_with_acid.
+.end
+
+.string str_pokedex_data_329_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_330_page_0 EN
+	=It_hides_itself_by_kicking_up_desert_sand\nwith_its_wings._Red_covers_shield_its_eyes\nfrom_sand.
+.end
+
+.string str_pokedex_data_330_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_331_page_0 EN
+	=It_prefers_harsh_environments_such_as\ndeserts._It_can_survive_for_30_days_on\nwater_stored_in_its_body.
+.end
+
+.string str_pokedex_data_331_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_332_page_0 EN
+	=It_lives_in_deserts._It_becomes_active_at\nnight_when_it_hunts_for_prey_exhausted\nfrom_the_desert's_heat.
+.end
+
+.string str_pokedex_data_332_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_333_page_0 EN
+	=It_constantly_grooms_its_cotton-like\nwings._It_takes_a_shower_to_clean\nitself_if_it_becomes_dirty.
+.end
+
+.string str_pokedex_data_333_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_334_page_0 EN
+	=If_you_hear_a_beautiful_melody_trilling\ndeep_among_mountains_far_from_people,\nit_is_ALTARIA's_humming.
+.end
+
+.string str_pokedex_data_334_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_335_page_0 EN
+	=If_it_comes_across_a_SEVIPER,_its_fur\nbristles_and_it_assumes_its_battle_pose.\nIts_sharp_claws_are_its_best_weapon.
+.end
+
+.string str_pokedex_data_335_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_336_page_0 EN
+	=It_sharpens_its_swordlike_tail_on_hard\nrocks._It_hides_in_tall_grass_and_strikes\nunwary_prey_with_venomous_fangs.
+.end
+
+.string str_pokedex_data_336_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_337_page_0 EN
+	=Its_health_ebbs_and_flows_with_the_lunar\ncycle._It_brims_with_power_when_exposed\nto_the_light_of_the_full_moon.
+.end
+
+.string str_pokedex_data_337_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_338_page_0 EN
+	=It_absorbs_solar_energy_during_the_day.\nAlways_expressionless,_it_can_sense_what\nits_foe_is_thinking.
+.end
+
+.string str_pokedex_data_338_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_339_page_0 EN
+	=It_probes_muddy_riverbeds_with_its_two\nlong_whiskers._A_slimy_film_protects_its\nbody.
+.end
+
+.string str_pokedex_data_339_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_340_page_0 EN
+	=It_makes_its_nest_at_the_bottom_of_\nswamps._It_will_eat_anything_-_if_it_is\nalive,_WHISCASH_will_eat_it.
+.end
+
+.string str_pokedex_data_340_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_341_page_0 EN
+	=It_came_from_overseas._It_is_a_very_hardy\ncreature_that_will_quickly_proliferate,\neven_in_polluted_streams.
+.end
+
+.string str_pokedex_data_341_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_342_page_0 EN
+	=A_rough_customer_that_wildly_flails_its\ngiant_claws._It_is_said_to_be_extremely\nhard_to_raise.
+.end
+
+.string str_pokedex_data_342_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_343_page_0 EN
+	=It_was_discovered_in_ancient_ruins.\nWhile_moving,_it_constantly_spins._It\nstands_on_one_foot_even_when_asleep.
+.end
+
+.string str_pokedex_data_343_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_344_page_0 EN
+	=It_appears_to_have_been_born_from_clay\ndolls_made_by_ancient_people._It_uses\ntelekinesis_to_float_and_move.
+.end
+
+.string str_pokedex_data_344_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_345_page_0 EN
+	=It_became_extinct_roughly_100_million\nyears_ago._It_was_regenerated_from_a\nfossil_using_advanced_techniques.
+.end
+
+.string str_pokedex_data_345_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_346_page_0 EN
+	=It_ensnares_prey_with_its_eight_tentacles.\nIt_then_melts_the_prey_with_a_strong_acid\nbefore_feeding.
+.end
+
+.string str_pokedex_data_346_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_347_page_0 EN
+	=It_is_a_kind_of_POK\eMON_progenitor.\nIt_uses_its_extending_claws_to_catch_prey\nhiding_among_rocks_on_the_seafloor.
+.end
+
+.string str_pokedex_data_347_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_348_page_0 EN
+	=Protected_by_a_hard_shell,_its_body_is\nvery_sturdy._It_skewers_prey_with_its\nclaws_to_feed.
+.end
+
+.string str_pokedex_data_348_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_349_page_0 EN
+	=Ridiculed_for_its_shabby_appearance,\nit_is_ignored_by_researchers._It_lives_in\nponds_choked_with_weeds.
+.end
+
+.string str_pokedex_data_349_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_350_page_0 EN
+	=MILOTIC_is_breathtakingly_beautiful.\nThose_that_see_it_are_said_to_forget_their\ncombative_spirits.
+.end
+
+.string str_pokedex_data_350_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_351_page_0 EN
+	=It_has_the_ability_to_change_its_form_into\nthe_sun,_the_rain,_or_a_snow_cloud,_\ndepending_on_the_weather.
+.end
+
+.string str_pokedex_data_351_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_352_page_0 EN
+	=It_changes_body_color_to_blend_in_with\nits_surroundings._It_also_changes_color_if\nit_is_happy_or_sad.
+.end
+
+.string str_pokedex_data_352_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_353_page_0 EN
+	=It_loves_to_feed_on_feelings_like_envy_and\nmalice._Its_upright_horn_catches_the\nemotions_of_people.
+.end
+
+.string str_pokedex_data_353_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_354_page_0 EN
+	=Strong_feelings_of_hatred_turned_a_puppet\ninto_a_POK\eMON._If_it_opens_its_mouth,\nits_cursed_energy_escapes.
+.end
+
+.string str_pokedex_data_354_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_355_page_0 EN
+	=Making_itself_invisible,_it_silently_sneaks\nup_to_prey._It_has_the_ability_to_slip\nthrough_thick_walls.
+.end
+
+.string str_pokedex_data_355_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_356_page_0 EN
+	=Its_body_is_entirely_hollow._When_it_opens\nits_mouth,_it_sucks_everything_in_as_if_it\nwere_a_black_hole.
+.end
+
+.string str_pokedex_data_356_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_357_page_0 EN
+	=It_lives_in_tropical_jungles._The_bunch_of\nfruit_around_its_neck_is_delicious.\nThe_fruit_grows_twice_a_year.
+.end
+
+.string str_pokedex_data_357_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_358_page_0 EN
+	=It_travels_by_riding_on_winds._It_cleverly\nuses_its_long_tail_to_pluck_nuts_and\nberries,_which_it_loves_to_eat.
+.end
+
+.string str_pokedex_data_358_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_359_page_0 EN
+	=It_appears_when_it_senses_an_impending\nnatural_disaster._As_a_result,_it_was\nmistaken_as_a_doom-bringer.
+.end
+
+.string str_pokedex_data_359_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_360_page_0 EN
+	=It_tends_to_move_in_a_pack_with_others.\nThey_cluster_in_a_tight_group_to_sleep_in\na_cave.
+.end
+
+.string str_pokedex_data_360_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_361_page_0 EN
+	=It_is_said_that_a_home_visited_by_a\nSNORUNT_will_prosper._It_can_withstand\ncold_of_minus_150_degrees_Fahrenheit.
+.end
+
+.string str_pokedex_data_361_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_362_page_0 EN
+	=It_has_a_body_of_ice_that_won't_melt,\neven_with_fire._It_can_instantly_freeze\nmoisture_in_the_atmosphere.
+.end
+
+.string str_pokedex_data_362_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_363_page_0 EN
+	=Its_body_is_covered_in_fluffy_fur._The\nfur_keeps_it_from_feeling_cold_while\nit_is_rolling_on_ice.
+.end
+
+.string str_pokedex_data_363_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_364_page_0 EN
+	=It_touches_new_things_with_its_nose_to\ntest_for_smell_and_feel._It_plays_by\nspinning_SPHEAL_on_its_nose.
+.end
+
+.string str_pokedex_data_364_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_365_page_0 EN
+	=It_swims_through_icy_seas_while_shattering\nice_floes_with_its_large_tusks._It_is\nprotected_by_its_thick_blubber.
+.end
+
+.string str_pokedex_data_365_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_366_page_0 EN
+	=It_is_protected_by_a_sturdy_shell.\nOnce_in_a_lifetime,_it_makes_a_magnificent\npearl.
+.end
+
+.string str_pokedex_data_366_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_367_page_0 EN
+	=It_lives_deep_in_the_sea_where_no_light\never_filters_down._It_lights_up_its_small\nfishlike_tail_to_attract_prey.
+.end
+
+.string str_pokedex_data_367_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_368_page_0 EN
+	=Its_swimming_form_is_exquisitely_elegant.\nWith_its_thin_mouth,_it_feeds_on_seaweed\nthat_grows_between_rocks.
+.end
+
+.string str_pokedex_data_368_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_369_page_0 EN
+	=It_has_remained_unchanged_for_100\nmillion_years._It_was_discovered\nduring_a_deep-sea_exploration.
+.end
+
+.string str_pokedex_data_369_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_370_page_0 EN
+	=During_the_spawning_season,_countless\nLUVDISC_congregate_at_coral_reefs,\nturning_the_waters_pink.
+.end
+
+.string str_pokedex_data_370_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_371_page_0 EN
+	=Its_steel-hard_head_can_shatter_boulders.\nIt_longingly_hopes_for_wings_to_grow_so_it\ncan_fly.
+.end
+
+.string str_pokedex_data_371_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_372_page_0 EN
+	=Its_armored_body_makes_all_attacks_bounce\noff._The_armor_is_too_tough,_however,\nmaking_it_heavy_and_somewhat_sluggish.
+.end
+
+.string str_pokedex_data_372_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_373_page_0 EN
+	=It_becomes_uncontrollable_if_it_is\nenraged._It_destroys_everything_with\nshredding_claws_and_fire.
+.end
+
+.string str_pokedex_data_373_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_374_page_0 EN
+	=It_uses_magnetic_waves_to_converse_with\nits_kind._All_the_cells_in_its_body_are\nmagnetic.
+.end
+
+.string str_pokedex_data_374_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_375_page_0 EN
+	=It_floats_midair_using_magnetism._Its_body\nis_so_tough,_even_a_crash_with_a_jet\nplane_won't_leave_a_scratch.
+.end
+
+.string str_pokedex_data_375_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_376_page_0 EN
+	=It_is_formed_by_two_METANG_fusing.\nIts_four_brains_are_said_to_be_superior\nto_a_supercomputer.
+.end
+
+.string str_pokedex_data_376_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_377_page_0 EN
+	=It_is_entirely_composed_of_rocks_with_no\nsign_of_a_brain_or_heart._It_is_a_mystery\neven_to_modern_scientists.
+.end
+
+.string str_pokedex_data_377_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_378_page_0 EN
+	=Research_revealed_that_its_body_is_made\nof_the_same_kind_of_ice_that_is_found_at\nthe_South_Pole.
+.end
+
+.string str_pokedex_data_378_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_379_page_0 EN
+	=It_is_sturdier_than_any_kind_of_metal.\nIt_hardened_due_to_pressure_underground\nover_tens_of_thousands_of_years.
+.end
+
+.string str_pokedex_data_379_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_380_page_0 EN
+	=It_can_telepathically_communicate_with\npeople._It_changes_its_appearance_using\nits_down_that_refracts_light.
+.end
+
+.string str_pokedex_data_380_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_381_page_0 EN
+	=It_has_a_docile_temperament_and_dislikes\nfighting._Tucking_in_its_forelegs,_it_can\nfly_faster_than_a_jet_plane.
+.end
+
+.string str_pokedex_data_381_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_382_page_0 EN
+	=This_POK\eMON_is_said_to_have\nexpanded_the_sea_by_bringing_heavy_rains.\nIt_has_the_power_to_control_water.
+.end
+
+.string str_pokedex_data_382_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_383_page_0 EN
+	=This_legendary_POK\eMON_is_said_to\nrepresent_the_land._It_went_to_sleep_after\ndueling_KYOGRE.
+.end
+
+.string str_pokedex_data_383_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_384_page_0 EN
+	=It_has_lived_for_hundreds_of_millions_of\nyears_in_the_ozone_layer._Its_flying_form\nlooks_like_a_meteor.
+.end
+
+.string str_pokedex_data_384_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_385_page_0 EN
+	=It_is_said_to_make_any_wish_come_true.\nIt_is_awake_for_only_seven_days_out_of\na_thousand_years.
+.end
+
+.string str_pokedex_data_385_page_1 EN
+	=
+.end
+
+.string str_pokedex_data_386_page_0 EN
+	=This_DEOXYS_has_transformed_into_its\naggressive_guise._It_can_fool_enemies_by\naltering_its_appearance.
+.end
+
+.string str_pokedex_data_386_page_1 EN
+	=
+.end
+

@@ -53,3 +53,6 @@
 .org 0x8050d2c
 	.word gfx_vanilla_gb_tradeTiles
 
+//Wondertrade names after trade
+.org 0x08050E52
+    lsl r0, #0

@@ -409,7 +409,7 @@ static graphic overworld_sprite_violet_grunt_f_sprites[] = {
 };
 
 overworld_sprite ow_violet_grunt_f = {
-	0xffff, 0x110c, 0x11ff, 0x100,
+	0xffff, 0x110b, 0x11ff, 0x100,
 	16, 32, 0x1a, 0x1, 0x0, 0x0,
 	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
 	OW_ANIM_STANDARD_NPC, overworld_sprite_violet_grunt_f_sprites, 
@@ -556,6 +556,31 @@ overworld_sprite ow_hiro_sit = {
 	16, 32, 0x10, 0x1, 0x0, 0x0,
 	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
 	OW_ANIM_HIRO_SIT, overworld_sprite_hiro_sit_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+
+static graphic overworld_sprite_hiroine_sit_sprites[] = {
+	{&gfx_ow_hiroine_sit_0Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_1Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_2Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_0Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_0Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_1Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_1Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_2Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_2Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_0Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_1Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_sit_2Tiles, 0x100, 0}
+};
+
+
+overworld_sprite ow_hiroine_sit = {
+	0xffff, 0x1110, 0x11ff, 0x100,
+	16, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_HIRO_SIT, overworld_sprite_hiroine_sit_sprites, 
 	ROTSCALE_TABLE_NULL
 };
 
@@ -1173,7 +1198,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_hiro_call_bike,
 	&ow_hiroine,
 	(overworld_sprite*) 0x83a444c,
-	(overworld_sprite*) 0x83a4470,
+	&ow_hiroine_sit,
 //10
 	(overworld_sprite*) 0x83a4494,
 	(overworld_sprite*) 0x83a4740,

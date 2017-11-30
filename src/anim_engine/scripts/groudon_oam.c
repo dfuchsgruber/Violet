@@ -227,31 +227,7 @@ void groudon_anim_earthquake_cb(u8 self){
     }
 }
     
-    /**
-    
-    if(!__umod(big_callbacks[self].params[3], big_callbacks[self].params[1])){
-        if(big_callbacks[self].params[3] >= big_callbacks[self].params[2]){
-            remove_big_callback(self);
-        }else{
-            //period of oszilation is 4*speed, but sin_16 has period of 0x10000
-            //so we multiply the counter by 0x10000 / (4*speed)
-            int x = big_callbacks[self].params[3] * 0x10000 / (4 * big_callbacks[self].params[1]);
-            int y = sin_16(x) * big_callbacks[self].params[0] / 0x10000;
-            //we adjust the value by multiplicating e^ax to the sin
-            //where a is defined as 2*ln(0.5)*T
-            int a = 2 * (-69314718) / * 4 * (big_callbacks[self].params[1]) * 100000000;
-            y = y * exp(a*x);
-            
-            
-            int i;
-            for(i = 0; i < 5; i++){
-                oams[fmem->ae_mem->vars[i]].x2 = (s16)(oams[fmem->ae_mem->vars[i]].x2 + y);
-            }
-            set_io(0x14, (u16)(get_io(0x14)-y));
-        }
-    }
-    big_callbacks[self].params[3]++;
-}**/
+   
 
 void groudon_anim_diserakt_cb (u8 self){
     

@@ -198,8 +198,8 @@ void trainerschool_test_idle(){
     if(super->keys_new.keys.down){
         fmem->tst_mem->cursor++;
         fmem->tst_mem->cursor = 
-        (u8)(__aeabi_uidivmod(fmem->tst_mem->cursor,
-                trainerschool_test_questions[fmem->tst_mem->current_question].answer_cnt));
+        (u8)(fmem->tst_mem->cursor %
+                trainerschool_test_questions[fmem->tst_mem->current_question].answer_cnt);
         sound(5);
         trainerschool_test_load_answers();
     }else if(super->keys_new.keys.up){

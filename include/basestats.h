@@ -418,7 +418,7 @@
 #define POKEMON_ISSO 0x168
 #define POKEMON_ZWIRRLICHT 0x169
 #define POKEMON_ZWIRRKLOP 0x16a
-#define POKEMON_ROSELIA 0x16b
+#define POKEMON_PORYGON_Z 0x16b
 #define POKEMON_BUMMELZ 0x16c
 #define POKEMON_MUNTIER 0x16d
 #define POKEMON_LETARKING 0x16e
@@ -605,5 +605,6 @@ extern u8 cry_443[];
 extern u8 cry_444[];
 extern u8 cry_445[];
 extern u8 cry_115[];
+extern u8 cry_474[];
 
 #endif

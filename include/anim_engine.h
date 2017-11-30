@@ -2,16 +2,18 @@
 #define H_ANIM_ENGINE
 
 #include <stdbool.h>
+#include "color.h"
 
 typedef struct ae_memory {
     u16 current_frame;
-    u32 current_programm;
+    u8 *current_programm;
     u8 link_numbers;
     u8 callback_id;
     bool active;
-    u32 links [8];
+    u8 *links [8];
     u16 lframes [8];
     u16 vars[16];
+    color *pal_restore_save;
 } ae_memory;
 
 typedef struct text_render_flags_s {
@@ -51,10 +53,10 @@ typedef struct aetr_memory {
 
 typedef void (*ae_cmd)(ae_memory* mem);
 
-extern void **anim_script_table;
+extern u8 **anim_script_table;
 
 void init_anim_engine_by_table();
-void init_anim_engine(void *script);
+void init_anim_engine(u8 *script);
 void anim_engine_callback(u8 callback_id);
 void anim_engine_execute_frame(ae_memory* mem);
 u8 anim_engine_read_byte(ae_memory* mem);
@@ -111,7 +113,7 @@ void cmdx25_oam_reset();
 void cmdx26_callback_reset(ae_memory *mem);
 void cmdx27_dma3_controller_reset();
 void anim_engine_bg_free_task(u8 self);
-void cmdx28_bg_scroll_reset();
+void cmdx28_bg_displacement_reset();
 void cmdx29_bg_vmap_init(ae_memory *mem);
 void cmdx2A_bg_vmap_drop(ae_memory *mem);
 void cmdx2B_bg_scroll(ae_memory *mem);
@@ -123,6 +125,12 @@ void cmdx2F_setvar(ae_memory *mem);
 void cmdx30_fade_obj_pal(ae_memory *mem);
 void cmdx31_tbox_flush(ae_memory *mem);
 void cmdx32_pal_restore_force_current(ae_memory *mem);
+void cmdx33_jump_if_female(ae_memory *mem);
+void cmdx34_setflag(ae_memory *mem);
+void cmdx35_pal_restore_snapshot(ae_memory *mem);
+void cmdx36_load_obj_pal_from_struct(ae_memory *mem);
+void _obj_move_sine_trace(u8 self);
+void cmdx37_obj_move_trace(ae_memory *mem);
 void ae_mapreloader();
 
 void anim_engine_yin_yang_fade_big_callback(u8 self);

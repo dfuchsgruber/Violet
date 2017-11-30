@@ -17,6 +17,9 @@ overworld_pals equ 0x083A501C
 .org overworld_pals + 0xE * 8
     .word gfx_ow_pal_hiroine_mirrorPal
 
+.org overworld_pals + 0xB * 8
+    .word gfx_ow_pal_violetPal
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -106,3 +109,6 @@ overworld_pals equ 0x083A501C
 
 .org 0x08239EAC
     .word gfx_hiroine_throwPal
+
+.org 0x0815F914 + 4 * 0x97
+    .word script_cmd_x97_fadescreen | 1

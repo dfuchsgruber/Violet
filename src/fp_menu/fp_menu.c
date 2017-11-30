@@ -247,17 +247,17 @@ void fp_menu_callback_idle() {
                 sound(26);
             }
         } else if (super->keys_new.keys.left) {
-            fmem->fp_mem->stat_index = (u8) __aeabi_uidivmod((u32) (stat + 5), 6);
+            fmem->fp_mem->stat_index = (u8) ((stat + 5) % 6);
             fp_menu_stat_load(target);
             sound(5);
         } else if (super->keys_new.keys.right) {
-            fmem->fp_mem->stat_index = (u8) __aeabi_uidivmod((u32) (stat + 1), 6);
+            fmem->fp_mem->stat_index = (u8) ((stat + 1) % 6);
             fp_menu_stat_load(target);
             sound(5);
         } else if (super->keys_new.keys.down) {
             u8 next_index = fmem->fp_mem->poke_index;
             do {
-                next_index = (u8) __aeabi_uidivmod((u32) (next_index + 1), pokemon_cnt);
+                next_index = (u8) ((next_index + 1) % pokemon_cnt);
                 if (!get_pokemons_attribute(&player_pokemon[next_index], ATTRIBUTE_IS_EGG, NULL)) {
                     //load this pokemon
                     fmem->fp_mem->poke_index = next_index;
@@ -268,7 +268,7 @@ void fp_menu_callback_idle() {
         } else if (super->keys_new.keys.up) {
             u8 next_index = fmem->fp_mem->poke_index;
             do {
-                next_index = (u8) __aeabi_uidivmod((u32) (next_index - 1), pokemon_cnt);
+                next_index = (u8) ((next_index - 1) % pokemon_cnt);
                 if (!get_pokemons_attribute(&player_pokemon[next_index], ATTRIBUTE_IS_EGG, NULL)) {
                     //load this pokemon
                     fmem->fp_mem->poke_index = next_index;
@@ -362,8 +362,8 @@ void fp_menu_stats_load(pokemon *target) {
     //determining which stat to print red (boosted) and which one blue (nerved)
     u8 nature = pokemon_get_nature(target);
     int stat_boosted = (nature / 5) + 1;
-    int stat_nerved = (int) __aeabi_uidivmod(nature, 5) + 1;
-    int i;
+    int stat_nerved = (nature % 5) + 1;
+    int i; 
     for (i = 0; i < 6; i++) {
         u8 *str = value_to_str(strbuf, get_pokemons_attribute(target, (u8) (ATTRIBUTE_TOTAL_HP + i), NULL), 0, 3);
         u8 box_id = (u8) (3 + i);
@@ -501,7 +501,7 @@ void fp_menu_callback_arrow_anim(u8 self) {
         if (++big_callbacks[self].params[1] == 15)
             big_callbacks[self].params[0] = 1;
     }
-    if (__aeabi_uidivmod(big_callbacks[self].params[1], 3)) return; //every 3th frame we do a movemen
+    if (big_callbacks[self].params[1] % 3) return; //every 3th frame we do a movemen
     oams[fmem->fp_mem->oam_arrows[0]].y2 = (s16) (oams[fmem->fp_mem->oam_arrows[0]].y2 + d);
     oams[fmem->fp_mem->oam_arrows[1]].y2 = (s16) (oams[fmem->fp_mem->oam_arrows[1]].y2 - d);
     oams[fmem->fp_mem->oam_arrows[2]].x2 = (s16) (oams[fmem->fp_mem->oam_arrows[2]].x2 + d);

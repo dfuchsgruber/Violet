@@ -26,6 +26,7 @@ extern "C" {
 #define ERR_DUNGEON_GEN_PATTERN_MISMATCH_SEG_3 8
 #define ERR_MEGA_CALLBACK_NOT_ACCESSIBLE 9
 #define ERR_GENERIC 10
+#define ERR_TRADE_EVO_NOT_IMPLEMENTED 11
     
     
     void debug1(int a);

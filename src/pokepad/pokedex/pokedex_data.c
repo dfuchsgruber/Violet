@@ -1,5039 +1,3880 @@
 #include "types.h"
 #include "pokedex.h"
+#include "pstring.h"
 
 extern u8 str_pokedex_mamutel[];
 extern u8 str_pokedex_none[];
 
 pokedex_data dex_data[POKEDEX_CNT + 1] = {
     {
-        {0xcf, 0xc8, 0xbc, 0xbf, 0xc5, 0xbb, 0xc8, 0xc8, 0xce, 0xff, 0x0, 0x0}, //category
-        0, //height
-        0, //weight
-        (u8*) 0x8444b7d, //page0
-        (u8*) 0x8444c0c, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbb, 0xc7, 0xbf, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        7, //height
-        69, //weight
-        (u8*) 0x8444c0d, //page0
-        (u8*) 0x8444c62, //page1
-        0, //unused
-        356, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbb, 0xc7, 0xbf, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        130, //weight
-        (u8*) 0x8444c63, //page0
-        (u8*) 0x8444cdb, //page1
-        0, //unused
-        332, //poke scale
-        11, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbb, 0xc7, 0xbf, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        20, //height
-        1000, //weight
-        (u8*) 0x8444cdc, //page0
-        (u8*) 0x8444d2c, //page1
-        0, //unused
-        256, //poke scale
-        1, //poke displace
-        375, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xbd, 0xc2, 0xcd, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        85, //weight
-        (u8*) 0x8444d2d, //page0
-        (u8*) 0x8444d9c, //page1
-        0, //unused
-        410, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xbb, 0xc7, 0xc7, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        190, //weight
-        (u8*) 0x8444d9d, //page0
-        (u8*) 0x8444e19, //page1
-        0, //unused
-        294, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xbb, 0xc7, 0xc7, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        17, //height
-        905, //weight
-        (u8*) 0x8444e1a, //page0
-        (u8*) 0x8444e8d, //page1
-        0, //unused
-        271, //poke scale
-        0, //poke displace
-        317, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xc3, 0xc8, 0xc3, 0xc5, 0xcc, 0xf2, 0xce, 0xbf, 0xff, 0x0, 0x0}, //category
-        5, //height
-        90, //weight
-        (u8*) 0x8444e8e, //page0
-        (u8*) 0x8444eef, //page1
-        0, //unused
-        412, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xf2, 0xce, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        225, //weight
-        (u8*) 0x8444ef0, //page0
-        (u8*) 0x8444f66, //page1
-        0, //unused
-        334, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xce, 0xc3, 0xbf, 0xcc, 0xff, 0x0}, //category
-        16, //height
-        855, //weight
-        (u8*) 0x8444f67, //page0
-        (u8*) 0x8444ff5, //page1
-        0, //unused
-        256, //poke scale
-        1, //poke displace
-        329, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xc9, 0xce, 0xc5, 0xbf, 0xc2, 0xc6, 0xbd, 0xc2, 0xbf, 0xc8, 0xff}, //category
-        3, //height
-        29, //weight
-        (u8*) 0x88d0631, //page0
-        (u8*) 0x8445052, //page1
-        0, //unused
-        549, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xe9, 0xe2, 0xdf, 0xd9, 0xe2, 0xe6, 0xd9, 0xdb, 0xd9, 0xe2, 0xff}, //category
-        7, //height
-        160, //weight
-        (u8*) 0x88d0737, //page0
-        (u8*) 0x84450ba, //page1
-        0, //unused
-        350, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xe8, 0xdd, 0xd7, 0xdc, 0xda, 0xe0, 0xd5, 0xe1, 0xe1, 0xd9, 0xff}, //category
-        12, //height
-        320, //weight
-        (u8*) 0x88d07cb, //page0
-        (u8*) 0x8445127, //page1
-        0, //unused
-        312, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbb, 0xcf, 0xca, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        32, //weight
-        (u8*) 0x8445128, //page0
-        (u8*) 0x84451a2, //page1
-        0, //unused
-        455, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc9, 0xc5, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        100, //weight
-        (u8*) 0x84451a3, //page0
-        (u8*) 0x8445223, //page1
-        0, //unused
-        424, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xbc, 0xc3, 0xbf, 0xc8, 0xbf, 0xff, 0x0, 0x0}, //category
-        10, //height
-        295, //weight
-        (u8*) 0x8445224, //page0
-        (u8*) 0x844529d, //page1
-        0, //unused
-        366, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xbb, 0xcc, 0xff, 0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xff, 0x0}, //category
-        3, //height
-        18, //weight
-        (u8*) 0x844529e, //page0
-        (u8*) 0x8445320, //page1
-        0, //unused
-        492, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xbb, 0xcc, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        300, //weight
-        (u8*) 0x8445321, //page0
-        (u8*) 0x8445396, //page1
-        0, //unused
-        334, //poke scale
-        11, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xbb, 0xcc, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        395, //weight
-        (u8*) 0x8445397, //page0
-        (u8*) 0x844540e, //page1
-        0, //unused
-        269, //poke scale
-        65534, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xe6, 0xe3, 0xe2, 0xee, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        35, //weight
-        (u8*) 0x88d083f, //page0
-        (u8*) 0x844547a, //page1
-        0, //unused
-        481, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xe6, 0xe3, 0xe2, 0xee, 0xd9, 0xdb, 0xe0, 0xe3, 0xd7, 0xdf, 0xff}, //category
-        7, //height
-        185, //weight
-        (u8*) 0x88d088f, //page0
-        (u8*) 0x84454f0, //page1
-        0, //unused
-        401, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xdd, 0xe8, 0xe8, 0xff, 0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xff, 0x0}, //category
-        3, //height
-        20, //weight
-        (u8*) 0x88d23cc, //page0
-        (u8*) 0x844556a, //page1
-        0, //unused
-        571, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xdd, 0xe8, 0xe8, 0xff, 0xc9, 0xc1, 0xbf, 0xc6, 0xff, 0x0, 0x0}, //category
-        12, //height
-        380, //weight
-        (u8*) 0x88d2442, //page0
-        (u8*) 0x84455e3, //page1
-        0, //unused
-        282, //poke scale
-        65535, //poke displace
-        272, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xd5, 0xe9, 0xe1, 0xe7, 0xe8, 0xe9, 0xe1, 0xe4, 0xda, 0xff, 0x0}, //category
-        20, //height
-        69, //weight
-        (u8*) 0x88d266d, //page0
-        (u8*) 0x8445678, //page1
-        0, //unused
-        298, //poke scale
-        13, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcf, 0xe6, 0xdb, 0xd9, 0xdc, 0xf5, 0xe0, 0xee, 0xff, 0x0, 0x0, 0x0}, //category
-        35, //height
-        650, //weight
-        (u8*) 0x88d25ef, //page0
-        (u8*) 0x84456df, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        296, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        60, //weight
-        (u8*) 0x84456e0, //page0
-        (u8*) 0x844573b, //page1
-        0, //unused
-        479, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        300, //weight
-        (u8*) 0x844573c, //page0
-        (u8*) 0x84457d2, //page1
-        0, //unused
-        426, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        120, //weight
-        (u8*) 0x84457d3, //page0
-        (u8*) 0x844582e, //page1
-        0, //unused
-        370, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        295, //weight
-        (u8*) 0x844582f, //page0
-        (u8*) 0x844589f, //page1
-        0, //unused
-        341, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xbe, 0xc9, 0xcc, 0xc8, 0xff, 0x0, 0x0, 0x0}, //category
-        4, //height
-        70, //weight
-        (u8*) 0x84458a0, //page0
-        (u8*) 0x8445920, //page1
-        0, //unused
-        488, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xbe, 0xc9, 0xcc, 0xc8, 0xff, 0x0, 0x0, 0x0}, //category
-        8, //height
-        200, //weight
-        (u8*) 0x8445921, //page0
-        (u8*) 0x8445995, //page1
-        0, //unused
-        381, //poke scale
-        13, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc9, 0xc2, 0xcc, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        13, //height
-        600, //weight
-        (u8*) 0x8445996, //page0
-        (u8*) 0x8445a05, //page1
-        0, //unused
-        283, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xbe, 0xc9, 0xcc, 0xc8, 0xff, 0x0, 0x0, 0x0}, //category
-        5, //height
-        90, //weight
-        (u8*) 0x8445a06, //page0
-        (u8*) 0x8445a91, //page1
-        0, //unused
-        480, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xbe, 0xc9, 0xcc, 0xc8, 0xff, 0x0, 0x0, 0x0}, //category
-        9, //height
-        195, //weight
-        (u8*) 0x8445a92, //page0
-        (u8*) 0x8445b07, //page1
-        0, //unused
-        408, //poke scale
-        13, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc9, 0xc2, 0xcc, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        14, //height
-        620, //weight
-        (u8*) 0x8445b08, //page0
-        (u8*) 0x8445b7f, //page1
-        0, //unused
-        304, //poke scale
-        3, //poke displace
-        323, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xdd, 0xe2, 0xd6, 0xe0, 0xf6, 0xe8, 0xe0, 0xd9, 0xe6, 0xff, 0x0}, //category
-        6, //height
-        75, //weight
-        (u8*) 0x88d26ff, //page0
-        (u8*) 0x8445bf2, //page1
-        0, //unused
-        425, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xd5, 0xe6, 0xe8, 0xd9, 0xe2, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        13, //height
-        400, //weight
-        (u8*) 0x88d2780, //page0
-        (u8*) 0x8445c65, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        272, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcf, 0xbd, 0xc2, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        99, //weight
-        (u8*) 0x8445c66, //page0
-        (u8*) 0x8445cd8, //page1
-        0, //unused
-        497, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcf, 0xbd, 0xc2, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        199, //weight
-        (u8*) 0x8445cd9, //page0
-        (u8*) 0x8445d3a, //page1
-        0, //unused
-        339, //poke scale
-        6, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xbb, 0xc6, 0xc6, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        5, //height
-        55, //weight
-        (u8*) 0x8445d3b, //page0
-        (u8*) 0x8445db6, //page1
-        0, //unused
-        419, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xbb, 0xc6, 0xc6, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        120, //weight
-        (u8*) 0x8445db7, //page0
-        (u8*) 0x8445e2a, //page1
-        0, //unused
-        328, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xbf, 0xbe, 0xbf, 0xcc, 0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0}, //category
-        8, //height
-        75, //weight
-        (u8*) 0x8445e2b, //page0
-        (u8*) 0x8445e9b, //page1
-        0, //unused
-        355, //poke scale
-        65532, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xbf, 0xbe, 0xbf, 0xcc, 0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0}, //category
-        16, //height
-        550, //weight
-        (u8*) 0x8445e9c, //page0
-        (u8*) 0x8445f19, //page1
-        0, //unused
-        291, //poke scale
-        0, //poke displace
-        296, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcf, 0xc8, 0xc5, 0xcc, 0xbb, 0xcf, 0xce, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        5, //height
-        54, //weight
-        (u8*) 0x8445f1a, //page0
-        (u8*) 0x8445f96, //page1
-        0, //unused
-        423, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcf, 0xc8, 0xc5, 0xcc, 0xbb, 0xcf, 0xce, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        86, //weight
-        (u8*) 0x8445f97, //page0
-        (u8*) 0x8446023, //page1
-        0, //unused
-        329, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc6, 0xcf, 0xc7, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        186, //weight
-        (u8*) 0x8446024, //page0
-        (u8*) 0x84460a2, //page1
-        0, //unused
-        256, //poke scale
-        4, //poke displace
-        272, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcf, 0xe2, 0xe6, 0xd9, 0xdd, 0xda, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        54, //weight
-        (u8*) 0x88d2806, //page0
-        (u8*) 0x84460ff, //page1
-        0, //unused
-        546, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xdd, 0xe2, 0xd8, 0xe9, 0xe2, 0xdb, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        295, //weight
-        (u8*) 0x88d2858, //page0
-        (u8*) 0x8446166, //page1
-        0, //unused
-        307, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xe0, 0xd9, 0xd6, 0xd9, 0xe2, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        300, //weight
-        (u8*) 0x88d28c7, //page0
-        (u8*) 0x84461de, //page1
-        0, //unused
-        360, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe3, 0xe2, 0xe2, 0xd9, 0xe6, 0xe7, 0xe4, 0xdd, 0xe2, 0xe2, 0xff}, //category
-        15, //height
-        125, //weight
-        (u8*) 0x88d293e, //page0
-        (u8*) 0x844624f, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        293, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xcf, 0xc6, 0xd1, 0xcf, 0xcc, 0xc0, 0xff, 0x0, 0x0, 0x0}, //category
-        2, //height
-        8, //weight
-        (u8*) 0x8446250, //page0
-        (u8*) 0x84462cc, //page1
-        0, //unused
-        706, //poke scale
-        22, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xcf, 0xc6, 0xd1, 0xcf, 0xcc, 0xc0, 0xff, 0x0, 0x0, 0x0}, //category
-        7, //height
-        333, //weight
-        (u8*) 0x84462cd, //page0
-        (u8*) 0x8446327, //page1
-        0, //unused
-        384, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe3, 0xe6, 0xe2, 0xda, 0xe6, 0xe9, 0xd7, 0xdc, 0xe8, 0xff, 0x0}, //category
-        4, //height
-        42, //weight
-        (u8*) 0x88d29b0, //page0
-        (u8*) 0x844637c, //page1
-        0, //unused
-        480, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe3, 0xe6, 0xe2, 0xdf, 0xe9, 0xdb, 0xd9, 0xe0, 0xff, 0xff, 0x0}, //category
-        10, //height
-        320, //weight
-        (u8*) 0x88d2a07, //page0
-        (u8*) 0x84463fb, //page1
-        0, //unused
-        320, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc8, 0xce, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        196, //weight
-        (u8*) 0x84463fc, //page0
-        (u8*) 0x8446467, //page1
-        0, //unused
-        347, //poke scale
-        11, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc8, 0xce, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        17, //height
-        766, //weight
-        (u8*) 0x8446468, //page0
-        (u8*) 0x84464e0, //page1
-        0, //unused
-        272, //poke scale
-        4, //poke displace
-        287, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xd1, 0xad, 0xba, 0x0, 0xbb, 0xc0, 0xc0, 0xbf, 0xff}, //category
-        5, //height
-        280, //weight
-        (u8*) 0x84464e1, //page0
-        (u8*) 0x844655a, //page1
-        0, //unused
-        388, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xd1, 0xad, 0xba, 0x0, 0xbb, 0xc0, 0xc0, 0xbf, 0xff}, //category
-        10, //height
-        320, //weight
-        (u8*) 0x844655b, //page0
-        (u8*) 0x84465ea, //page1
-        0, //unused
-        326, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xcf, 0xc8, 0xbe, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        7, //height
-        190, //weight
-        (u8*) 0x84465eb, //page0
-        (u8*) 0x844665d, //page1
-        0, //unused
-        346, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbf, 0xc1, 0xbf, 0xc8, 0xbe, 0xf1, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        19, //height
-        1550, //weight
-        (u8*) 0x844665e, //page0
-        (u8*) 0x84466dd, //page1
-        0, //unused
-        256, //poke scale
-        65535, //poke displace
-        312, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xd7, 0xdc, 0xeb, 0xd9, 0xe6, 0xe8, 0xff, 0xd5, 0xda, 0xe8, 0xff}, //category
-        6, //height
-        124, //weight
-        (u8*) 0x88d2a7a, //page0
-        (u8*) 0x8446751, //page1
-        0, //unused
-        353, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xd7, 0xdc, 0xeb, 0xd9, 0xe6, 0xe8, 0xd9, 0xe6, 0xff, 0xda, 0xff}, //category
-        10, //height
-        200, //weight
-        (u8*) 0x88d2b17, //page0
-        (u8*) 0x84467bd, //page1
-        0, //unused
-        288, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xf5, 0xe2, 0xdd, 0xdb, 0xe7, 0xe8, 0xdd, 0xd7, 0xdc, 0xff, 0xff}, //category
-        13, //height
-        540, //weight
-        (u8*) 0x88d2ba6, //page0
-        (u8*) 0x8446833, //page1
-        0, //unused
-        256, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xcd, 0xc3, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        195, //weight
-        (u8*) 0x8446834, //page0
-        (u8*) 0x844689d, //page1
-        0, //unused
-        374, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xcd, 0xc3, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        13, //height
-        565, //weight
-        (u8*) 0x844689e, //page0
-        (u8*) 0x8446916, //page1
-        0, //unused
-        272, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xcd, 0xc3, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        480, //weight
-        (u8*) 0x8446917, //page0
-        (u8*) 0x8446997, //page1
-        0, //unused
-        272, //poke scale
-        65535, //poke displace
-        271, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xbb, 0xc0, 0xce, 0xca, 0xcc, 0xc9, 0xce, 0xd4, 0xff, 0x0}, //category
-        8, //height
-        195, //weight
-        (u8*) 0x8446998, //page0
-        (u8*) 0x8446a16, //page1
-        0, //unused
-        320, //poke scale
-        12, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xbb, 0xc0, 0xce, 0xca, 0xcc, 0xc9, 0xce, 0xd4, 0xff, 0x0}, //category
-        15, //height
-        705, //weight
-        (u8*) 0x8446a17, //page0
-        (u8*) 0x8446a79, //page1
-        0, //unused
-        304, //poke scale
-        6, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xbb, 0xc0, 0xce, 0xca, 0xcc, 0xc9, 0xce, 0xd4, 0xff, 0x0}, //category
-        16, //height
-        1300, //weight
-        (u8*) 0x8446a7a, //page0
-        (u8*) 0x8446acd, //page1
-        0, //unused
-        278, //poke scale
-        2, //poke displace
-        283, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc6, 0xcf, 0xc7, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        7, //height
-        40, //weight
-        (u8*) 0x8446ace, //page0
-        (u8*) 0x8446b39, //page1
-        0, //unused
-        354, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xc3, 0xbf, 0xc1, 0xbf, 0xc8, 0xce, 0xc9, 0xce, 0xff, 0x0}, //category
-        10, //height
-        64, //weight
-        (u8*) 0x8446b3a, //page0
-        (u8*) 0x8446bb1, //page1
-        0, //unused
-        256, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xc3, 0xbf, 0xc1, 0xbf, 0xc8, 0xce, 0xc9, 0xce, 0xff, 0x0}, //category
-        17, //height
-        155, //weight
-        (u8*) 0x8446bb2, //page0
-        (u8*) 0x8446c2f, //page1
-        0, //unused
-        256, //poke scale
-        2, //poke displace
-        302, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcb, 0xcf, 0xbb, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        455, //weight
-        (u8*) 0x8446c30, //page0
-        (u8*) 0x8446c8d, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcb, 0xcf, 0xbb, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        16, //height
-        550, //weight
-        (u8*) 0x8446c8e, //page0
-        (u8*) 0x8446d12, //page1
-        0, //unused
-        272, //poke scale
-        65535, //poke displace
-        312, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbf, 0xcd, 0xce, 0xbf, 0xdd, 0xe2, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        200, //weight
-        (u8*) 0x8446d13, //page0
-        (u8*) 0x8446d96, //page1
-        0, //unused
-        330, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbf, 0xcd, 0xce, 0xbf, 0xdd, 0xe2, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        1050, //weight
-        (u8*) 0x8446d97, //page0
-        (u8*) 0x8446dfb, //page1
-        0, //unused
-        272, //poke scale
-        8, //poke displace
-        305, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcf, 0xcc, 0xc1, 0xbf, 0xcd, 0xce, 0xbf, 0xdd, 0xe2, 0xff, 0x0, 0x0}, //category
-        14, //height
-        3000, //weight
-        (u8*) 0x8446dfc, //page0
-        (u8*) 0x8446e69, //page1
-        0, //unused
-        266, //poke scale
-        3, //poke displace
-        298, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xd9, 0xe9, 0xd9, 0xe6, 0xca, 0xc0, 0xbf, 0xcc, 0xbe, 0xff, 0x0}, //category
-        10, //height
-        300, //weight
-        (u8*) 0x8446e6a, //page0
-        (u8*) 0x8446ed0, //page1
-        0, //unused
-        288, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xd9, 0xe9, 0xd9, 0xe6, 0xca, 0xc0, 0xbf, 0xcc, 0xbe, 0xff, 0x0}, //category
-        17, //height
-        950, //weight
-        (u8*) 0x8446ed1, //page0
-        (u8*) 0x8446f5e, //page1
-        0, //unused
-        282, //poke scale
-        65535, //poke displace
-        312, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc8, 0xbb, 0xcc, 0xbd, 0xc2, 0xbf, 0xcc, 0xff, 0x0}, //category
-        12, //height
-        360, //weight
-        (u8*) 0x8446f5f, //page0
-        (u8*) 0x8446fce, //page1
-        0, //unused
-        271, //poke scale
-        10, //poke displace
-        272, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xd3, 0xc7, 0xbc, 0xc3, 0xc9, 0xcd, 0xbf, 0xff, 0x0, 0x0, 0x0}, //category
-        16, //height
-        785, //weight
-        (u8*) 0x8446fcf, //page0
-        (u8*) 0x844702e, //page1
-        0, //unused
-        257, //poke scale
-        65534, //poke displace
-        312, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xc1, 0xc8, 0xbf, 0xce, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        60, //weight
-        (u8*) 0x844702f, //page0
-        (u8*) 0x8447092, //page1
-        0, //unused
-        294, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xc1, 0xc8, 0xbf, 0xce, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        600, //weight
-        (u8*) 0x8447093, //page0
-        (u8*) 0x8447108, //page1
-        0, //unused
-        293, //poke scale
-        65532, //poke displace
-        273, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc3, 0xc6, 0xbe, 0xbf, 0xc8, 0xce, 0xbf, 0xff, 0x0, 0x0, 0x0}, //category
-        8, //height
-        150, //weight
-        (u8*) 0x8447109, //page0
-        (u8*) 0x8447161, //page1
-        0, //unused
-        317, //poke scale
-        65534, //poke displace
-        256, //trainer scale
-        65533, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xcf, 0xc9, 0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0}, //category
-        14, //height
-        392, //weight
-        (u8*) 0x8447162, //page0
-        (u8*) 0x84471bd, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        287, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xce, 0xcc, 0xc3, 0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0}, //category
-        18, //height
-        852, //weight
-        (u8*) 0x84471be, //page0
-        (u8*) 0x844722a, //page1
-        0, //unused
-        272, //poke scale
-        65534, //poke displace
-        296, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbf, 0xbf, 0xc2, 0xcf, 0xc8, 0xbe, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        900, //weight
-        (u8*) 0x844722b, //page0
-        (u8*) 0x84472a0, //page1
-        0, //unused
-        298, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbf, 0xbf, 0xc2, 0xcf, 0xc8, 0xbe, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        17, //height
-        1200, //weight
-        (u8*) 0x84472a1, //page0
-        (u8*) 0x844730a, //page1
-        0, //unused
-        288, //poke scale
-        1, //poke displace
-        306, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc6, 0xbb, 0xc7, 0xc7, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        300, //weight
-        (u8*) 0x844730b, //page0
-        (u8*) 0x8447377, //page1
-        0, //unused
-        258, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc6, 0xbb, 0xc7, 0xc7, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        300, //weight
-        (u8*) 0x8447378, //page0
-        (u8*) 0x8447403, //page1
-        0, //unused
-        288, //poke scale
-        7, //poke displace
-        288, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xcf, 0xcd, 0xbd, 0xc2, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        40, //weight
-        (u8*) 0x8447404, //page0
-        (u8*) 0x8447455, //page1
-        0, //unused
-        643, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xcf, 0xcd, 0xbd, 0xc2, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        1325, //weight
-        (u8*) 0x8447456, //page0
-        (u8*) 0x84474e2, //page1
-        0, //unused
-        264, //poke scale
-        0, //poke displace
-        288, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbb, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        13, //height
-        1, //weight
-        (u8*) 0x84474e3, //page0
-        (u8*) 0x8447564, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbb, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        16, //height
-        1, //weight
-        (u8*) 0x8447565, //page0
-        (u8*) 0x84475d2, //page1
-        0, //unused
-        269, //poke scale
-        2, //poke displace
-        308, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xbb, 0xce, 0xce, 0xbf, 0xc8, 0xff, 0x0, 0x0, 0x0}, //category
-        15, //height
-        405, //weight
-        (u8*) 0x84475d3, //page0
-        (u8*) 0x8447649, //page1
-        0, //unused
-        256, //poke scale
-        4, //poke displace
-        317, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xbf, 0xc6, 0xcd, 0xc8, 0xbb, 0xce, 0xce, 0xbf, 0xcc, 0xff, 0x0}, //category
-        88, //height
-        2100, //weight
-        (u8*) 0x844764a, //page0
-        (u8*) 0x84476b7, //page1
-        0, //unused
-        257, //poke scale
-        0, //poke displace
-        515, //trainer scale
-        12, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xd3, 0xca, 0xc8, 0xc9, 0xcd, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        324, //weight
-        (u8*) 0x84476b8, //page0
-        (u8*) 0x8447733, //page1
-        0, //unused
-        274, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xd3, 0xca, 0xc8, 0xc9, 0xcd, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        16, //height
-        756, //weight
-        (u8*) 0x8447734, //page0
-        (u8*) 0x84477a3, //page1
-        0, //unused
-        298, //poke scale
-        3, //poke displace
-        310, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xbb, 0xbc, 0xbc, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        65, //weight
-        (u8*) 0x84477a4, //page0
-        (u8*) 0x8447814, //page1
-        0, //unused
-        469, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc8, 0xbf, 0xc3, 0xc0, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        13, //height
-        600, //weight
-        (u8*) 0x8447815, //page0
-        (u8*) 0x8447897, //page1
-        0, //unused
-        287, //poke scale
-        3, //poke displace
-        308, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xbb, 0xc6, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        5, //height
-        104, //weight
-        (u8*) 0x8447898, //page0
-        (u8*) 0x8447902, //page1
-        0, //unused
-        364, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xbb, 0xc6, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        666, //weight
-        (u8*) 0x8447903, //page0
-        (u8*) 0x8447976, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        25, //weight
-        (u8*) 0x8447977, //page0
-        (u8*) 0x84479fc, //page1
-        0, //unused
-        495, //poke scale
-        65532, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xbb, 0xc6, 0xc7, 0xc0, 0xcc, 0xcf, 0xbd, 0xc2, 0xce, 0xff, 0x0}, //category
-        20, //height
-        1200, //weight
-        (u8*) 0x84479fd, //page0
-        (u8*) 0x8447a63, //page1
-        0, //unused
-        283, //poke scale
-        0, //poke displace
-        376, //trainer scale
-        7, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xc8, 0xcd, 0xbb, 0xc7, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        65, //weight
-        (u8*) 0x8447a64, //page0
-        (u8*) 0x8447ad2, //page1
-        0, //unused
-        545, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc8, 0xc9, 0xbd, 0xc2, 0xbf, 0xc8, 0xc0, 0xbb, 0xc8, 0xff, 0x0}, //category
-        10, //height
-        450, //weight
-        (u8*) 0x8447ad3, //page0
-        (u8*) 0x8447b3a, //page1
-        0, //unused
-        293, //poke scale
-        12, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc3, 0xbd, 0xc5, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        498, //weight
-        (u8*) 0x8447b3b, //page0
-        (u8*) 0x8447bbb, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        273, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xcf, 0xc8, 0xbd, 0xc2, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        14, //height
-        502, //weight
-        (u8*) 0x8447bbc, //page0
-        (u8*) 0x8447c3d, //page1
-        0, //unused
-        256, //poke scale
-        1, //poke displace
-        264, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc6, 0xbf, 0xbd, 0xc5, 0xbf, 0xcc, 0xff, 0x0, 0x0}, //category
-        12, //height
-        655, //weight
-        (u8*) 0x8447c3e, //page0
-        (u8*) 0x8447cc3, //page1
-        0, //unused
-        272, //poke scale
-        3, //poke displace
-        272, //trainer scale
-        65533, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xd1, 0xc9, 0xc6, 0xc5, 0xbf, 0xff, 0x0, 0x0}, //category
-        6, //height
-        10, //weight
-        (u8*) 0x8447cc4, //page0
-        (u8*) 0x8447d4c, //page1
-        0, //unused
-        369, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xd1, 0xc9, 0xc6, 0xc5, 0xbf, 0xff, 0x0, 0x0}, //category
-        12, //height
-        95, //weight
-        (u8*) 0x8447d4d, //page0
-        (u8*) 0x8447daf, //page1
-        0, //unused
-        321, //poke scale
-        65535, //poke displace
-        276, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xbb, 0xbd, 0xc2, 0xc6, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        10, //height
-        1150, //weight
-        (u8*) 0x8447db0, //page0
-        (u8*) 0x8447e23, //page1
-        0, //unused
-        291, //poke scale
-        7, //poke displace
-        276, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc9, 0xc2, 0xcc, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        19, //height
-        1200, //weight
-        (u8*) 0x8447e24, //page0
-        (u8*) 0x8447e96, //page1
-        0, //unused
-        272, //poke scale
-        65535, //poke displace
-        344, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        346, //weight
-        (u8*) 0x8447e97, //page0
-        (u8*) 0x8447eec, //page1
-        0, //unused
-        257, //poke scale
-        6, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc3, 0xc8, 0xcd, 0xce, 0xbf, 0xcc, 0xc8, 0xc3, 0xcd, 0xff, 0x0}, //category
-        5, //height
-        110, //weight
-        (u8*) 0x8746200, //page0
-        (u8*) 0x8447f54, //page1
-        0, //unused
-        451, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xcf, 0xce, 0xce, 0xbf, 0xcc, 0xce, 0xc3, 0xbf, 0xcc, 0xff, 0x0}, //category
-        22, //height
-        800, //weight
-        (u8*) 0x8447f55, //page0
-        (u8*) 0x8447fd1, //page1
-        0, //unused
-        257, //poke scale
-        65533, //poke displace
-        349, //trainer scale
-        5, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe6, 0xd5, 0xd7, 0xdc, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        80, //weight
-        (u8*) 0x8447fd2, //page0
-        (u8*) 0x8448034, //page1
-        0, //unused
-        399, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe6, 0xd5, 0xd7, 0xdc, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        250, //weight
-        (u8*) 0x8448035, //page0
-        (u8*) 0x84480b9, //page1
-        0, //unused
-        296, //poke scale
-        3, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xc6, 0xbf, 0xc3, 0xce, 0xff, 0xcd, 0xbd, 0xc2, 0xff, 0x0, 0x0}, //category
-        6, //height
-        150, //weight
-        (u8*) 0x84480ba, //page0
-        (u8*) 0x8448142, //page1
-        0, //unused
-        379, //poke scale
-        4, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xc6, 0xbf, 0xc3, 0xce, 0xff, 0xcd, 0xbd, 0xc2, 0xff, 0x0, 0x0}, //category
-        13, //height
-        390, //weight
-        (u8*) 0x8448143, //page0
-        (u8*) 0x84481bc, //page1
-        0, //unused
-        304, //poke scale
-        1, //poke displace
-        288, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xbf, 0xcc, 0xc8, 0xc0, 0xc9, 0xcc, 0xc7, 0xff, 0x0, 0x0}, //category
-        8, //height
-        345, //weight
-        (u8*) 0x84481bd, //page0
-        (u8*) 0x8448218, //page1
-        0, //unused
-        326, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xd3, 0xcd, 0xce, 0xbf, 0xcc, 0xc3, 0xf2, 0xcd, 0xff, 0x0, 0x0}, //category
-        11, //height
-        800, //weight
-        (u8*) 0x8448219, //page0
-        (u8*) 0x844829f, //page1
-        0, //unused
-        301, //poke scale
-        3, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xbf, 0xc3, 0xcd, 0xbd, 0xc2, 0xbf, 0xcc, 0xff, 0xbf, 0xff}, //category
-        7, //height
-        10, //weight
-        (u8*) 0x8746268, //page0
-        (u8*) 0x844831c, //page1
-        0, //unused
-        407, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xc8, 0xce, 0xc3, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        560, //weight
-        (u8*) 0x844831d, //page0
-        (u8*) 0x84483a1, //page1
-        0, //unused
-        272, //poke scale
-        0, //poke displace
-        293, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc6, 0xc3, 0xc8, 0xc1, 0xbf, 0xff, 0xc2, 0xce, 0xff, 0x0, 0x0}, //category
-        14, //height
-        406, //weight
-        (u8*) 0x84483a2, //page0
-        (u8*) 0x844841d, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        300, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xe0, 0xd9, 0xdf, 0xe8, 0xe6, 0xe3, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        300, //weight
-        (u8*) 0x844841e, //page0
-        (u8*) 0x844847f, //page1
-        0, //unused
-        330, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xcc, 0xbf, 0xc8, 0xc8, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        13, //height
-        445, //weight
-        (u8*) 0x8448480, //page0
-        (u8*) 0x84484f9, //page1
-        0, //unused
-        293, //poke scale
-        4, //poke displace
-        272, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc8, 0xbf, 0xc3, 0xc0, 0xc5, 0xf4, 0xda, 0xd9, 0xe6, 0xff, 0x0}, //category
-        15, //height
-        550, //weight
-        (u8*) 0x84484fa, //page0
-        (u8*) 0x844857e, //page1
-        0, //unused
-        256, //poke scale
-        1, //poke displace
-        257, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc3, 0xc6, 0xbe, 0xbc, 0xcf, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0}, //category
-        14, //height
-        884, //weight
-        (u8*) 0x844857f, //page0
-        (u8*) 0x84485d7, //page1
-        0, //unused
-        256, //poke scale
-        2, //poke displace
-        312, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc3, 0xcd, 0xbd, 0xc2, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        100, //weight
-        (u8*) 0x84485d8, //page0
-        (u8*) 0x844864e, //page1
-        0, //unused
-        317, //poke scale
-        4, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xcc, 0xbb, 0xcf, 0xcd, 0xbb, 0xc7, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        65, //height
-        2350, //weight
-        (u8*) 0x844864f, //page0
-        (u8*) 0x84486c2, //page1
-        0, //unused
-        288, //poke scale
-        65535, //poke displace
-        512, //trainer scale
-        11, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xce, 0xcc, 0xbb, 0xc8, 0xcd, 0xca, 0xc9, 0xcc, 0xce, 0xff, 0x0, 0x0}, //category
-        25, //height
-        2200, //weight
-        (u8*) 0x84486c3, //page0
-        (u8*) 0x8448749, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        425, //trainer scale
-        8, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xce, 0xcc, 0xbb, 0xc8, 0xcd, 0xc0, 0xc9, 0xcc, 0xc7, 0xff, 0x0, 0x0}, //category
-        3, //height
-        40, //weight
-        (u8*) 0x844874a, //page0
-        (u8*) 0x84487af, //page1
-        0, //unused
-        602, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xd0, 0xc9, 0xc6, 0xcf, 0xce, 0xc3, 0xc9, 0xc8, 0xff, 0x0, 0x0}, //category
-        3, //height
-        65, //weight
-        (u8*) 0x84487b0, //page0
-        (u8*) 0x8448805, //page1
-        0, //unused
-        476, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc6, 0xcf, 0xbc, 0xbc, 0xc6, 0xbb, 0xcd, 0xbf, 0xff, 0x0, 0x0}, //category
-        10, //height
-        290, //weight
-        (u8*) 0x8448806, //page0
-        (u8*) 0x8448897, //page1
-        0, //unused
-        316, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc6, 0xc3, 0xce, 0xd4, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        245, //weight
-        (u8*) 0x8448898, //page0
-        (u8*) 0x84488ef, //page1
-        0, //unused
-        283, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xd9, 0xe9, 0xd9, 0xe6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        250, //weight
-        (u8*) 0x84488f0, //page0
-        (u8*) 0x8448971, //page1
-        0, //unused
-        302, //poke scale
-        11, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xc3, 0xcc, 0xce, 0xcf, 0xbf, 0xc6, 0xc6, 0xff, 0x0, 0x0, 0x0}, //category
-        8, //height
-        365, //weight
-        (u8*) 0x8448972, //page0
-        (u8*) 0x84489ea, //page1
-        0, //unused
-        328, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xca, 0xc3, 0xcc, 0xbb, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        75, //weight
-        (u8*) 0x84489eb, //page0
-        (u8*) 0x8448a5a, //page1
-        0, //unused
-        521, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xca, 0xc3, 0xcc, 0xbb, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        350, //weight
-        (u8*) 0x8448a5b, //page0
-        (u8*) 0x8448ada, //page1
-        0, //unused
-        307, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xce, 0xc3, 0xbf, 0xcc, 0xff, 0x0}, //category
-        5, //height
-        115, //weight
-        (u8*) 0x8448adb, //page0
-        (u8*) 0x8448b56, //page1
-        0, //unused
-        438, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xce, 0xc3, 0xbf, 0xcc, 0xff, 0x0}, //category
-        13, //height
-        405, //weight
-        (u8*) 0x8448b57, //page0
-        (u8*) 0x8448bc5, //page1
-        0, //unused
-        271, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc9, 0xcd, 0xcd, 0xc3, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        590, //weight
-        (u8*) 0x8448bc6, //page0
-        (u8*) 0x8448c50, //page1
-        0, //unused
-        275, //poke scale
-        65535, //poke displace
-        317, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xce, 0xbb, 0xc1, 0xce, 0xcc, 0xf1, 0xcf, 0xc7, 0xbf, 0xcc, 0xff, 0x0}, //category
-        21, //height
-        4600, //weight
-        (u8*) 0x8448c51, //page0
-        (u8*) 0x8448cc9, //page1
-        0, //unused
-        275, //poke scale
-        1, //poke displace
-        408, //trainer scale
-        7, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xdd, 0xe7, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        17, //height
-        554, //weight
-        (u8*) 0x8448cca, //page0
-        (u8*) 0x8448d44, //page1
-        0, //unused
-        278, //poke scale
-        0, //poke displace
-        308, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xe0, 0xd9, 0xdf, 0xe8, 0xe6, 0xe3, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        16, //height
-        526, //weight
-        (u8*) 0x8448d45, //page0
-        (u8*) 0x8448da4, //page1
-        0, //unused
-        275, //poke scale
-        1, //poke displace
-        330, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xbb, 0xc7, 0xc7, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        20, //height
-        600, //weight
-        (u8*) 0x8448da5, //page0
-        (u8*) 0x8448e32, //page1
-        0, //unused
-        270, //poke scale
-        1, //poke displace
-        379, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe6, 0xd5, 0xd7, 0xdc, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        33, //weight
-        (u8*) 0x8448e33, //page0
-        (u8*) 0x8448ea8, //page1
-        0, //unused
-        256, //poke scale
-        8, //poke displace
-        386, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe6, 0xd5, 0xd7, 0xdc, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        40, //height
-        165, //weight
-        (u8*) 0x8448ea9, //page0
-        (u8*) 0x8448f0b, //page1
-        0, //unused
-        274, //poke scale
-        0, //poke displace
-        423, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe6, 0xd5, 0xd7, 0xdc, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        22, //height
-        2100, //weight
-        (u8*) 0x8448f0c, //page0
-        (u8*) 0x8448f74, //page1
-        0, //unused
-        283, //poke scale
-        65535, //poke displace
-        342, //trainer scale
-        4, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbf, 0xc8, 0xc7, 0xcf, 0xce, 0xbb, 0xc8, 0xce, 0xff, 0x0, 0x0}, //category
-        20, //height
-        1220, //weight
-        (u8*) 0x8448f75, //page0
-        (u8*) 0x8448feb, //page1
-        0, //unused
-        276, //poke scale
-        65535, //poke displace
-        342, //trainer scale
-        5, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc8, 0xbf, 0xcf, 0xbf, 0x0, 0xbb, 0xcc, 0xce, 0xff, 0x0, 0x0, 0x0}, //category
-        4, //height
-        40, //weight
-        (u8*) 0x8448fec, //page0
-        (u8*) 0x8449059, //page1
-        0, //unused
-        460, //poke scale
-        65534, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xcf, 0xbc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        64, //weight
-        (u8*) 0x844905a, //page0
-        (u8*) 0x84490be, //page1
-        0, //unused
-        512, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xcf, 0xbc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        158, //weight
-        (u8*) 0x84490bf, //page0
-        (u8*) 0x8449119, //page1
-        0, //unused
-        296, //poke scale
-        4, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xf1, 0xcf, 0xce, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        1005, //weight
-        (u8*) 0x844911a, //page0
-        (u8*) 0x8449182, //page1
-        0, //unused
-        286, //poke scale
-        0, //poke displace
-        317, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xd9, 0xe9, 0xd9, 0xe6, 0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0, 0x0}, //category
-        5, //height
-        79, //weight
-        (u8*) 0x8449183, //page0
-        (u8*) 0x84491e9, //page1
-        0, //unused
-        539, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xcf, 0xc6, 0xc5, 0xbb, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        190, //weight
-        (u8*) 0x84491ea, //page0
-        (u8*) 0x8449244, //page1
-        0, //unused
-        329, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xcf, 0xc6, 0xc5, 0xbb, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        17, //height
-        795, //weight
-        (u8*) 0x8449245, //page0
-        (u8*) 0x84492a5, //page1
-        0, //unused
-        284, //poke scale
-        65535, //poke displace
-        287, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xcc, 0xc9, 0xcd, 0xcd, 0xc7, 0xbb, 0xcf, 0xc6, 0xff, 0x0, 0x0}, //category
-        6, //height
-        95, //weight
-        (u8*) 0x84492a6, //page0
-        (u8*) 0x8449303, //page1
-        0, //unused
-        487, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xcc, 0xc9, 0xcd, 0xcd, 0xc7, 0xbb, 0xcf, 0xc6, 0xff, 0x0, 0x0}, //category
-        11, //height
-        250, //weight
-        (u8*) 0x8449304, //page0
-        (u8*) 0x844936a, //page1
-        0, //unused
-        378, //poke scale
-        11, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xcc, 0xc9, 0xcd, 0xcd, 0xc7, 0xbb, 0xcf, 0xc6, 0xff, 0x0, 0x0}, //category
-        23, //height
-        888, //weight
-        (u8*) 0x844936b, //page0
-        (u8*) 0x84493d0, //page1
-        0, //unused
-        282, //poke scale
-        65535, //poke displace
-        375, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xd5, 0xd7, 0xdf, 0xd9, 0xe0, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        60, //weight
-        (u8*) 0x88d2c37, //page0
-        (u8*) 0x8449434, //page1
-        0, //unused
-        439, //poke scale
-        12, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xe3, 0xe2, 0xe2, 0xd9, 0xff, 0xc3, 0xbc, 0xff, 0x0, 0x0, 0x0}, //category
-        18, //height
-        325, //weight
-        (u8*) 0x88d2cb4, //page0
-        (u8*) 0x8449496, //page1
-        0, //unused
-        346, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc8, 0xd9, 0xe9, 0xe7, 0xd7, 0xdc, 0xe2, 0xd9, 0xd9, 0xff, 0x0, 0x0}, //category
-        7, //height
-        212, //weight
-        (u8*) 0x88d2d23, //page0
-        (u8*) 0x8449504, //page1
-        0, //unused
-        380, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xe6, 0xd9, 0xe7, 0xe8, 0xe0, 0xdd, 0xe2, 0xdb, 0xff, 0x0, 0x0}, //category
-        16, //height
-        408, //weight
-        (u8*) 0x88d2d72, //page0
-        (u8*) 0x844955f, //page1
-        0, //unused
-        278, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xf3, 0xc8, 0xc0, 0xae, 0xca, 0xcf, 0xc8, 0xc5, 0xce, 0xff, 0x0}, //category
-        10, //height
-        108, //weight
-        (u8*) 0x8449560, //page0
-        (u8*) 0x84495c5, //page1
-        0, //unused
-        256, //poke scale
-        4, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xf3, 0xc8, 0xc0, 0xae, 0xca, 0xcf, 0xc8, 0xc5, 0xce, 0xff, 0x0}, //category
-        14, //height
-        356, //weight
-        (u8*) 0x84495c6, //page0
-        (u8*) 0x8449621, //page1
-        0, //unused
-        256, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xbb, 0xbe, 0xbf, 0xc8, 0xd1, 0xcf, 0xcc, 0xc0, 0xff, 0x0, 0x0}, //category
-        5, //height
-        85, //weight
-        (u8*) 0x8449622, //page0
-        (u8*) 0x8449687, //page1
-        0, //unused
-        414, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xc8, 0xc1, 0xbc, 0xbf, 0xdd, 0xe2, 0xff, 0x0, 0x0, 0x0}, //category
-        11, //height
-        335, //weight
-        (u8*) 0x8449688, //page0
-        (u8*) 0x84496eb, //page1
-        0, //unused
-        316, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xbf, 0xbe, 0xbf, 0xcc, 0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0}, //category
-        18, //height
-        750, //weight
-        (u8*) 0x84496ec, //page0
-        (u8*) 0x8449751, //page1
-        0, //unused
-        279, //poke scale
-        65535, //poke displace
-        313, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xc8, 0xc1, 0xc6, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        5, //height
-        120, //weight
-        (u8*) 0x8449752, //page0
-        (u8*) 0x84497b0, //page1
-        0, //unused
-        424, //poke scale
-        65534, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbf, 0xcf, 0xbd, 0xc2, 0xce, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        225, //weight
-        (u8*) 0x84497b1, //page0
-        (u8*) 0x8449816, //page1
-        0, //unused
-        269, //poke scale
-        6, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xc1, 0xc8, 0xbf, 0xce, 0xc1, 0xbf, 0xbc, 0xc3, 0xbf, 0xff}, //category
-        3, //height
-        20, //weight
-        (u8*) 0x8449817, //page0
-        (u8*) 0x844987e, //page1
-        0, //unused
-        508, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc4, 0xcf, 0xbc, 0xc3, 0xc6, 0xc3, 0xbf, 0xcc, 0xbf, 0xcc, 0xff, 0x0}, //category
-        3, //height
-        30, //weight
-        (u8*) 0x844987f, //page0
-        (u8*) 0x84498da, //page1
-        0, //unused
-        462, //poke scale
-        22, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xdd, 0xe2, 0xd6, 0xe0, 0xf6, 0xe8, 0xe0, 0xd9, 0xe6, 0xff, 0x0}, //category
-        3, //height
-        10, //weight
-        (u8*) 0x88d2dff, //page0
-        (u8*) 0x8449936, //page1
-        0, //unused
-        457, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd4, 0xbb, 0xbd, 0xc5, 0xbf, 0xc8, 0xbc, 0xbb, 0xc6, 0xc6, 0xff, 0x0}, //category
-        3, //height
-        15, //weight
-        (u8*) 0x8449937, //page0
-        (u8*) 0x844999b, //page1
-        0, //unused
-        507, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcc, 0xbf, 0xcf, 0xbe, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        32, //weight
-        (u8*) 0x844999c, //page0
-        (u8*) 0x8449a00, //page1
-        0, //unused
-        424, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc6, 0xbf, 0xc3, 0xc8, 0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xff, 0x0}, //category
-        2, //height
-        20, //weight
-        (u8*) 0x8449a01, //page0
-        (u8*) 0x8449a66, //page1
-        0, //unused
-        610, //poke scale
-        23, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xd3, 0xcd, 0xce, 0xc3, 0xc5, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        150, //weight
-        (u8*) 0x8449a67, //page0
-        (u8*) 0x8449acb, //page1
-        0, //unused
-        258, //poke scale
-        4, //poke displace
-        317, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc9, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        78, //weight
-        (u8*) 0x8449acc, //page0
-        (u8*) 0x8449b32, //page1
-        0, //unused
-        379, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc9, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        133, //weight
-        (u8*) 0x8449b33, //page0
-        (u8*) 0x8449b8d, //page1
-        0, //unused
-        372, //poke scale
-        13, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbf, 0xcf, 0xbd, 0xc2, 0xce, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        14, //height
-        615, //weight
-        (u8*) 0x8449b8e, //page0
-        (u8*) 0x8449bf6, //page1
-        0, //unused
-        275, //poke scale
-        2, //poke displace
-        283, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc6, 0xcf, 0xc7, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        58, //weight
-        (u8*) 0x8449bf7, //page0
-        (u8*) 0x8449c5d, //page1
-        0, //unused
-        472, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xcb, 0xcf, 0xbb, 0xc7, 0xbb, 0xe9, 0xe7, 0xff, 0x0, 0x0, 0x0}, //category
-        4, //height
-        85, //weight
-        (u8*) 0x8449c5e, //page0
-        (u8*) 0x8449cc3, //page1
-        0, //unused
-        476, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xcb, 0xcf, 0xbb, 0xc2, 0xbb, 0xcd, 0xbf, 0xff, 0x0, 0x0, 0x0}, //category
-        8, //height
-        285, //weight
-        (u8*) 0x8449cc4, //page0
-        (u8*) 0x8449d28, //page1
-        0, //unused
-        448, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc3, 0xc7, 0xc3, 0xce, 0xbb, 0xce, 0xc3, 0xc9, 0xc8, 0xff, 0x0, 0x0}, //category
-        12, //height
-        380, //weight
-        (u8*) 0x8449d29, //page0
-        (u8*) 0x8449d90, //page1
-        0, //unused
-        305, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xd7, 0xdc, 0xe0, 0xf6, 0xe7, 0xe7, 0xd9, 0xe0, 0xff, 0x0, 0x0}, //category
-        11, //height
-        339, //weight
-        (u8*) 0x88d2e88, //page0
-        (u8*) 0x8449df4, //page1
-        0, //unused
-        289, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xd9, 0xe6, 0xee, 0xd9, 0xff, 0xbb, 0xc2, 0xc8, 0xff, 0x0, 0x0}, //category
-        4, //height
-        5, //weight
-        (u8*) 0x88d2eec, //page0
-        (u8*) 0x8449e58, //page1
-        0, //unused
-        562, //poke scale
-        65529, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xd5, 0xe1, 0xe4, 0xd9, 0xff, 0xbb, 0xc2, 0xc8, 0xff, 0x0, 0x0}, //category
-        6, //height
-        10, //weight
-        (u8*) 0x88d2f88, //page0
-        (u8*) 0x8449ec0, //page1
-        0, //unused
-        387, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xd9, 0xe0, 0xd9, 0xdd, 0xe8, 0xff, 0xc2, 0xc8, 0xff, 0x0, 0x0}, //category
-        8, //height
-        30, //weight
-        (u8*) 0x88d2ffe, //page0
-        (u8*) 0x8449f21, //page1
-        0, //unused
-        418, //poke scale
-        65532, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xc8, 0xc1, 0xcd, 0xbd, 0xc2, 0xd1, 0xbf, 0xc3, 0xc0, 0xff}, //category
-        8, //height
-        115, //weight
-        (u8*) 0x8449f22, //page0
-        (u8*) 0x8449f81, //page1
-        0, //unused
-        363, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcc, 0xc9, 0xcd, 0xce, 0xbc, 0xbb, 0xcf, 0xc7, 0xff, 0x0, 0x0}, //category
-        3, //height
-        18, //weight
-        (u8*) 0x8449f82, //page0
-        (u8*) 0x8449fe0, //page1
-        0, //unused
-        541, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcc, 0xc9, 0xcd, 0xce, 0xbc, 0xbb, 0xcf, 0xc7, 0xff, 0x0, 0x0}, //category
-        8, //height
-        85, //weight
-        (u8*) 0x8449fe1, //page0
-        (u8*) 0x844a042, //page1
-        0, //unused
-        374, //poke scale
-        12, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xc3, 0xbc, 0xbf, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        380, //weight
-        (u8*) 0x844a043, //page0
-        (u8*) 0x844a0a7, //page1
-        0, //unused
-        274, //poke scale
-        65532, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc3, 0xcd, 0xbd, 0xc2, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        85, //weight
-        (u8*) 0x844a0a8, //page0
-        (u8*) 0x844a102, //page1
-        0, //unused
-        479, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc3, 0xcd, 0xbd, 0xc2, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        14, //height
-        750, //weight
-        (u8*) 0x844a103, //page0
-        (u8*) 0x844a168, //page1
-        0, //unused
-        273, //poke scale
-        4, //poke displace
-        273, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xc9, 0xc8, 0xc8, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        9, //height
-        265, //weight
-        (u8*) 0x844a169, //page0
-        (u8*) 0x844a1cb, //page1
-        0, //unused
-        363, //poke scale
-        12, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xc9, 0xc8, 0xbe, 0xcd, 0xbd, 0xc2, 0xbf, 0xdd, 0xe2, 0xff, 0x0}, //category
-        10, //height
-        270, //weight
-        (u8*) 0x844a1cc, //page0
-        (u8*) 0x844a233, //page1
-        0, //unused
-        317, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc3, 0xc8, 0xcd, 0xce, 0xbf, 0xcc, 0xc8, 0xc3, 0xcd, 0xff, 0x0}, //category
-        5, //height
-        21, //weight
-        (u8*) 0x844a234, //page0
-        (u8*) 0x844a298, //page1
-        0, //unused
-        401, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xc9, 0xc8, 0xbb, 0xcc, 0xbd, 0xc2, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        20, //height
-        795, //weight
-        (u8*) 0x844a299, //page0
-        (u8*) 0x844a301, //page1
-        0, //unused
-        265, //poke scale
-        65535, //poke displace
-        330, //trainer scale
-        4, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xbf, 0xc3, 0xcd, 0xbd, 0xc2, 0xbf, 0xcc, 0xff, 0x0, 0x0}, //category
-        7, //height
-        10, //weight
-        (u8*) 0x844a302, //page0
-        (u8*) 0x844a361, //page1
-        0, //unused
-        407, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xd3, 0xc7, 0xbc, 0xc9, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        5, //height
-        50, //weight
-        (u8*) 0x844a362, //page0
-        (u8*) 0x844a3c1, //page1
-        0, //unused
-        411, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xd7, 0xdc, 0xe2, 0xd9, 0xd9, 0xdb, 0xd9, 0xd6, 0xdd, 0xd9, 0xff}, //category
-        68, //height
-        285, //weight
-        (u8*) 0x88d3074, //page0
-        (u8*) 0x844a421, //page1
-        0, //unused
-        517, //poke scale
-        4, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xc8, 0xc1, 0xc2, 0xbb, 0xc6, 0xcd, 0xff, 0x0, 0x0, 0x0}, //category
-        15, //height
-        415, //weight
-        (u8*) 0x844a422, //page0
-        (u8*) 0x844a486, //page1
-        0, //unused
-        281, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xd9, 0xe9, 0xe8, 0xd9, 0xe0, 0xd1, 0xcf, 0xcc, 0xc7, 0xff, 0x0}, //category
-        6, //height
-        72, //weight
-        (u8*) 0x844a487, //page0
-        (u8*) 0x844a4ec, //page1
-        0, //unused
-        445, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xd9, 0xe9, 0xe8, 0xd9, 0xe0, 0xd1, 0xcf, 0xcc, 0xc7, 0xff, 0x0}, //category
-        12, //height
-        1258, //weight
-        (u8*) 0x844a4ed, //page0
-        (u8*) 0x844a550, //page1
-        0, //unused
-        293, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xc9, 0xc8, 0xc8, 0xbf, 0xcc, 0xc5, 0xbf, 0xc3, 0xc6, 0xff, 0x0}, //category
-        15, //height
-        140, //weight
-        (u8*) 0x844a551, //page0
-        (u8*) 0x844a5bb, //page1
-        0, //unused
-        284, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xe0, 0xe9, 0xdb, 0xcd, 0xc5, 0xc9, 0xcc, 0xca, 0xc3, 0xff, 0x0}, //category
-        11, //height
-        648, //weight
-        (u8*) 0x844a5bc, //page0
-        (u8*) 0x844a61d, //page1
-        0, //unused
-        350, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xe8, 0xd5, 0xdc, 0xe0, 0xbc, 0xc9, 0xbb, 0xff, 0x0, 0x0, 0x0}, //category
-        92, //height
-        4000, //weight
-        (u8*) 0x844a61e, //page0
-        (u8*) 0x844a673, //page1
-        0, //unused
-        278, //poke scale
-        65535, //poke displace
-        557, //trainer scale
-        13, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xd9, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        78, //weight
-        (u8*) 0x844a674, //page0
-        (u8*) 0x844a6d1, //page1
-        0, //unused
-        465, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xd9, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        14, //height
-        487, //weight
-        (u8*) 0x844a6d2, //page0
-        (u8*) 0x844a730, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe3, 0xe4, 0xe4, 0xd9, 0xe0, 0xee, 0xd5, 0xdc, 0xe2, 0xff, 0xff}, //category
-        18, //height
-        1004, //weight
-        (u8*) str_pokedex_mamutel, //page0
-        (u8*) str_pokedex_none, //page1
-        0, //unused
-        777, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc8, 0xbf, 0xc3, 0xc0, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        1180, //weight
-        (u8*) 0x844a78f, //page0
-        (u8*) 0x844a7f9, //page1
-        0, //unused
-        282, //poke scale
-        0, //poke displace
-        282, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc3, 0xc7, 0xc7, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0}, //category
-        6, //height
-        205, //weight
-        (u8*) 0x844a7fa, //page0
-        (u8*) 0x844a861, //page1
-        0, //unused
-        485, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xc8, 0xd4, 0xbf, 0xc6, 0xc2, 0xc9, 0xcc, 0xc8, 0xff, 0x0}, //category
-        15, //height
-        540, //weight
-        (u8*) 0x844a862, //page0
-        (u8*) 0x844a8c4, //page1
-        0, //unused
-        285, //poke scale
-        0, //poke displace
-        283, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xbf, 0xcc, 0xbc, 0xc9, 0xce, 0xbf, 0xc8, 0xff, 0xbf, 0xff, 0x0}, //category
-        9, //height
-        280, //weight
-        (u8*) 0x844a8c5, //page0
-        (u8*) 0x844a926, //page1
-        0, //unused
-        413, //poke scale
-        65533, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc6, 0xbf, 0xc3, 0xc8, 0xbc, 0xf1, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        6, //height
-        88, //weight
-        (u8*) 0x844a927, //page0
-        (u8*) 0x844a989, //page1
-        0, //unused
-        455, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc6, 0xf1, 0xc0, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        18, //height
-        1258, //weight
-        (u8*) 0x844a98a, //page0
-        (u8*) 0x844a9ec, //page1
-        0, //unused
-        275, //poke scale
-        0, //poke displace
-        280, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xd0, 0xbb, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        7, //height
-        350, //weight
-        (u8*) 0x844a9ed, //page0
-        (u8*) 0x844aa57, //page1
-        0, //unused
-        329, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xd0, 0xbb, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        550, //weight
-        (u8*) 0x844aa58, //page0
-        (u8*) 0x844aab3, //page1
-        0, //unused
-        332, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xbf, 0xcc, 0xc5, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        65, //weight
-        (u8*) 0x844aab4, //page0
-        (u8*) 0x844ab0b, //page1
-        0, //unused
-        324, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xd1, 0xbf, 0xdd, 0xe2, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        558, //weight
-        (u8*) 0x844ab0c, //page0
-        (u8*) 0x844ab6b, //page1
-        0, //unused
-        306, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc9, 0xcc, 0xbb, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        50, //weight
-        (u8*) 0x844ab6c, //page0
-        (u8*) 0x844abcb, //page1
-        0, //unused
-        410, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xc9, 0xbd, 0xc2, 0xbe, 0xcc, 0xcf, 0xbd, 0xc5, 0xff, 0x0, 0x0}, //category
-        6, //height
-        120, //weight
-        (u8*) 0x844abcc, //page0
-        (u8*) 0x844ac31, //page1
-        0, //unused
-        316, //poke scale
-        4, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xc9, 0xbd, 0xc2, 0xbe, 0xcc, 0xcf, 0xbd, 0xc5, 0xff, 0x0, 0x0}, //category
-        9, //height
-        285, //weight
-        (u8*) 0x844ac32, //page0
-        (u8*) 0x844ac9c, //page1
-        0, //unused
-        296, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xc3, 0xbf, 0xc0, 0xbf, 0xcc, 0xbb, 0xc8, 0xce, 0xff, 0x0, 0x0}, //category
-        9, //height
-        160, //weight
-        (u8*) 0x844ac9d, //page0
-        (u8*) 0x844ad06, //page1
-        0, //unused
-        293, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xe0, 0xe9, 0xdb, 0xcc, 0xc9, 0xbd, 0xc2, 0xbf, 0xc8, 0xff, 0x0}, //category
-        21, //height
-        2200, //weight
-        (u8*) 0x844ad07, //page0
-        (u8*) 0x844ad69, //page1
-        0, //unused
-        275, //poke scale
-        0, //poke displace
-        360, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xe0, 0xe9, 0xdb, 0xcd, 0xe8, 0xd5, 0xdc, 0xe0, 0xff, 0x0, 0x0}, //category
-        17, //height
-        505, //weight
-        (u8*) 0x844ad6a, //page0
-        (u8*) 0x844adc9, //page1
-        0, //unused
-        285, //poke scale
-        0, //poke displace
-        276, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xbb, 0xbe, 0xbf, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        108, //weight
-        (u8*) 0x844adca, //page0
-        (u8*) 0x844ae35, //page1
-        0, //unused
-        393, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xbb, 0xbe, 0xbf, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        14, //height
-        350, //weight
-        (u8*) 0x844ae36, //page0
-        (u8*) 0x844ae98, //page1
-        0, //unused
-        256, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe6, 0xd5, 0xd7, 0xdc, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        1520, //weight
-        (u8*) 0x844ae99, //page0
-        (u8*) 0x844aef8, //page1
-        0, //unused
-        257, //poke scale
-        1, //poke displace
-        293, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xc8, 0xc1, 0xcc, 0xf3, 0xcd, 0xcd, 0xbf, 0xc6, 0xff, 0x0}, //category
-        5, //height
-        335, //weight
-        (u8*) 0x844aef9, //page0
-        (u8*) 0x844af61, //page1
-        0, //unused
-        465, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xce, 0xc3, 0xbf, 0xcc, 0xff, 0x0}, //category
-        11, //height
-        1200, //weight
-        (u8*) 0x844af62, //page0
-        (u8*) 0x844afc7, //page1
-        0, //unused
-        313, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xc3, 0xcc, 0xce, 0xcf, 0xbf, 0xc6, 0xc6, 0xff, 0x0, 0x0, 0x0}, //category
-        6, //height
-        325, //weight
-        (u8*) 0x844afc8, //page0
-        (u8*) 0x844b031, //page1
-        0, //unused
-        320, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xe3, 0xe1, 0xe4, 0xd5, 0xe7, 0xe7, 0xff, 0xcc, 0xff, 0x0, 0x0}, //category
-        14, //height
-        712, //weight
-        (u8*) 0x88d30d1, //page0
-        (u8*) 0x844b089, //page1
-        0, //unused
-        277, //poke scale
-        65535, //poke displace
-        277, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xc3, 0xce, 0xce, 0xbf, 0xcc, 0xc6, 0xc3, 0xbd, 0xc2, 0xff, 0x0}, //category
-        12, //height
-        580, //weight
-        (u8*) 0x88d312e, //page0
-        (u8*) 0x844b0e7, //page1
-        0, //unused
-        287, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbb, 0xbd, 0xc5, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        7, //height
-        210, //weight
-        (u8*) 0x844b0e8, //page0
-        (u8*) 0x844b149, //page1
-        0, //unused
-        292, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc9, 0xca, 0xc0, 0xcd, 0xce, 0xbb, 0xc8, 0xbe, 0xff, 0x0, 0x0}, //category
-        14, //height
-        480, //weight
-        (u8*) 0x844b14a, //page0
-        (u8*) 0x844b1ae, //page1
-        0, //unused
-        256, //poke scale
-        2, //poke displace
-        257, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcf, 0xcd, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        60, //weight
-        (u8*) 0x844b1af, //page0
-        (u8*) 0x844b202, //page1
-        0, //unused
-        440, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xe0, 0xd9, 0xdf, 0xe8, 0xe6, 0xe3, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        235, //weight
-        (u8*) 0x844b203, //page0
-        (u8*) 0x844b25e, //page1
-        0, //unused
-        363, //poke scale
-        13, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xc6, 0xcf, 0xce, 0xc2, 0xbf, 0xcc, 0xbe, 0xff, 0x0, 0x0, 0x0}, //category
-        7, //height
-        214, //weight
-        (u8*) 0x844b25f, //page0
-        (u8*) 0x844b2c4, //page1
-        0, //unused
-        284, //poke scale
-        11, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xc3, 0xc6, 0xbd, 0xc2, 0xc5, 0xcf, 0xc2, 0xff, 0x0, 0x0, 0x0}, //category
-        12, //height
-        755, //weight
-        (u8*) 0x844b2c5, //page0
-        (u8*) 0x844b31d, //page1
-        0, //unused
-        280, //poke scale
-        3, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcc, 0xbf, 0xcf, 0xbe, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        468, //weight
-        (u8*) 0x844b31e, //page0
-        (u8*) 0x844b379, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        310, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xc9, 0xc8, 0xc8, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        19, //height
-        1780, //weight
-        (u8*) 0x844b37a, //page0
-        (u8*) 0x844b3df, //page1
-        0, //unused
-        283, //poke scale
-        0, //poke displace
-        359, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xcf, 0xc6, 0xc5, 0xbb, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        21, //height
-        1980, //weight
-        (u8*) 0x844b3e0, //page0
-        (u8*) 0x844b43e, //page1
-        0, //unused
-        283, //poke scale
-        0, //poke displace
-        370, //trainer scale
-        7, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xc9, 0xc6, 0xbb, 0xcc, 0xc6, 0xc3, 0xbd, 0xc2, 0xce, 0xff, 0x0}, //category
-        20, //height
-        1870, //weight
-        (u8*) 0x844b43f, //page0
-        (u8*) 0x844b4a1, //page1
-        0, //unused
-        286, //poke scale
-        0, //poke displace
-        371, //trainer scale
-        7, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xbf, 0xc6, 0xcd, 0xc2, 0xbb, 0xcf, 0xce, 0xff, 0x0, 0x0, 0x0}, //category
-        6, //height
-        720, //weight
-        (u8*) 0x844b4a2, //page0
-        (u8*) 0x844b510, //page1
-        0, //unused
-        472, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xbb, 0xcc, 0xce, 0xcd, 0xbd, 0xc2, 0xbb, 0xc6, 0xbf, 0xff, 0x0}, //category
-        12, //height
-        1520, //weight
-        (u8*) 0x844b511, //page0
-        (u8*) 0x844b56f, //page1
-        0, //unused
-        292, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xce, 0xc3, 0xbf, 0xcc, 0xff, 0x0}, //category
-        20, //height
-        2020, //weight
-        (u8*) 0x844b570, //page0
-        (u8*) 0x844b5d0, //page1
-        0, //unused
-        285, //poke scale
-        0, //poke displace
-        383, //trainer scale
-        7, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xce, 0xbb, 0xcf, 0xbd, 0xc2, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        52, //height
-        2160, //weight
-        (u8*) 0x844b5d1, //page0
-        (u8*) 0x844b637, //page1
-        0, //unused
-        283, //poke scale
-        0, //poke displace
-        742, //trainer scale
-        18, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbf, 0xc1, 0xbf, 0xc8, 0xbc, 0xc9, 0xc1, 0xbf, 0xc8, 0xff, 0x0}, //category
-        38, //height
-        1990, //weight
-        (u8*) 0x844b638, //page0
-        (u8*) 0x844b697, //page1
-        0, //unused
-        283, //poke scale
-        0, //poke displace
-        620, //trainer scale
-        16, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd4, 0xbf, 0xc3, 0xce, 0xcc, 0xbf, 0xc3, 0xcd, 0xbf, 0xff, 0x0, 0x0}, //category
-        6, //height
-        50, //weight
-        (u8*) 0x844b698, //page0
-        (u8*) 0x844b6f5, //page1
-        0, //unused
-        393, //poke scale
-        65526, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xc9, 0xbd, 0xc5, 0xbf, 0xff, 0xbe, 0xbe, 0xd3, 0xff, 0xff, 0x0}, //category
-        5, //height
-        50, //weight
-        (u8*) 0x87460e4, //page0
-        (u8*) 0x844b78b, //page1
-        0, //unused
-        541, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xd1, 0xbf, 0xcc, 0xce, 0xff, 0xd4, 0xbf, 0xff, 0x0}, //category
-        9, //height
-        216, //weight
-        (u8*) 0x8746148, //page0
-        (u8*) 0x844b7f4, //page1
-        0, //unused
-        360, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xc3, 0xce, 0xce, 0xbf, 0xcc, 0xff, 0xcd, 0xce, 0xbf, 0xcc, 0xff}, //category
-        17, //height
-        522, //weight
-        (u8*) 0x87462cc, //page0
-        (u8*) 0x844b877, //page1
-        0, //unused
-        282, //poke scale
-        65535, //poke displace
-        313, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xbf, 0xc6, 0xca, 0xbf, 0xff, 0xc8, 0xbe, 0xbf, 0xcc, 0xff, 0xff}, //category
-        4, //height
-        25, //weight
-        (u8*) 0x844b878, //page0
-        (u8*) 0x844b8d5, //page1
-        0, //unused
-        566, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc9, 0xcc, 0xce, 0xc2, 0xc9, 0xcd, 0xff, 0xbe, 0xbf, 0xcc, 0xff, 0x0}, //category
-        9, //height
-        195, //weight
-        (u8*) 0x844b8d6, //page0
-        (u8*) 0x844b957, //page1
-        0, //unused
-        343, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd4, 0xbf, 0xcc, 0xbc, 0xbf, 0xcc, 0xcf, 0xcd, 0xff, 0xc9, 0xcc, 0xff}, //category
-        19, //height
-        520, //weight
-        (u8*) 0x844b958, //page0
-        (u8*) 0x844b9ed, //page1
-        0, //unused
-        275, //poke scale
-        65535, //poke displace
-        314, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xd5, 0xe7, 0xe7, 0xd9, 0xe6, 0xc7, 0xc9, 0xc6, 0xbd, 0xc2, 0xff}, //category
-        4, //height
-        76, //weight
-        (u8*) 0x8746328, //page0
-        (u8*) 0x844ba79, //page1
-        0, //unused
-        535, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xbf, 0xc6, 0xca, 0xc2, 0xc3, 0xc8, 0xff, 0xbf, 0xcc, 0xff, 0x0}, //category
-        7, //height
-        280, //weight
-        (u8*) 0x874c5dc, //page0
-        (u8*) 0x844bb03, //page1
-        0, //unused
-        340, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbf, 0xbf, 0xcd, 0xbd, 0xc2, 0xc6, 0xbb, 0xc8, 0xc1, 0xbf, 0xff}, //category
-        15, //height
-        819, //weight
-        (u8*) 0x87727c0, //page0
-        (u8*) 0x844bb81, //page1
-        0, //unused
-        276, //poke scale
-        65535, //poke displace
-        282, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc3, 0xcd, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        5, //height
-        136, //weight
-        (u8*) 0x844bb82, //page0
-        (u8*) 0x844bc03, //page1
-        0, //unused
-        481, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xc3, 0xcd, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        370, //weight
-        (u8*) 0x844bc04, //page0
-        (u8*) 0x844bc84, //page1
-        0, //unused
-        359, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc6, 0xbf, 0xc3, 0xc8, 0xbe, 0xbb, 0xbd, 0xc2, 0xcd, 0xff, 0x0}, //category
-        4, //height
-        175, //weight
-        (u8*) 0x844bc85, //page0
-        (u8*) 0x844bcd9, //page1
-        0, //unused
-        560, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xca, 0xcc, 0xc3, 0xc8, 0xce, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        5, //height
-        325, //weight
-        (u8*) 0x844bcda, //page0
-        (u8*) 0x844bd58, //page1
-        0, //unused
-        321, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xcf, 0xcc, 0xc7, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        36, //weight
-        (u8*) 0x844bd59, //page0
-        (u8*) 0x844bdbf, //page1
-        0, //unused
-        711, //poke scale
-        22, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc9, 0xc5, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        100, //weight
-        (u8*) 0x844bdc0, //page0
-        (u8*) 0x844be49, //page1
-        0, //unused
-        431, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xbb, 0xc6, 0xce, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        284, //weight
-        (u8*) 0x844be4a, //page0
-        (u8*) 0x844bed4, //page1
-        0, //unused
-        298, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc9, 0xc5, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        7, //height
-        115, //weight
-        (u8*) 0x844bed5, //page0
-        (u8*) 0x844bf56, //page1
-        0, //unused
-        391, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xc7, 0xc9, 0xce, 0xce, 0xbf, 0xff, 0x0, 0x0}, //category
-        12, //height
-        316, //weight
-        (u8*) 0x844bf57, //page0
-        (u8*) 0x844bfd8, //page1
-        0, //unused
-        269, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xd5, 0xe7, 0xe7, 0xd9, 0xe6, 0xc6, 0xc3, 0xc8, 0xcd, 0xbf, 0xff}, //category
-        5, //height
-        26, //weight
-        (u8*) 0x844bfd9, //page0
-        (u8*) 0x844c047, //page1
-        0, //unused
-        406, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcc, 0xc9, 0xc2, 0xc7, 0xcf, 0xce, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        325, //weight
-        (u8*) 0x844c048, //page0
-        (u8*) 0x844c0b3, //page1
-        0, //unused
-        277, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xc9, 0xcc, 0xc1, 0xc6, 0xc9, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        550, //weight
-        (u8*) 0x844c0b4, //page0
-        (u8*) 0x844c117, //page1
-        0, //unused
-        283, //poke scale
-        0, //poke displace
-        282, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xbd, 0xc2, 0xbf, 0xc6, 0xc8, 0xcf, 0xcd, 0xcd, 0xff, 0x0}, //category
-        5, //height
-        40, //weight
-        (u8*) 0x844c118, //page0
-        (u8*) 0x844c1ab, //page1
-        0, //unused
-        472, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xc3, 0xc8, 0xce, 0xbf, 0xcc, 0xc6, 0xc3, 0xcd, 0xce, 0xff, 0x0}, //category
-        10, //height
-        280, //weight
-        (u8*) 0x844c1ac, //page0
-        (u8*) 0x844c229, //page1
-        0, //unused
-        299, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xbf, 0xcc, 0xcd, 0xbd, 0xc2, 0xc6, 0xbb, 0xc1, 0xbf, 0xc8, 0xff}, //category
-        13, //height
-        596, //weight
-        (u8*) 0x844c22a, //page0
-        (u8*) 0x844c2a0, //page1
-        0, //unused
-        290, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xd1, 0xf1, 0xc6, 0xbc, 0xc6, 0xbf, 0xdd, 0xe2, 0xff}, //category
-        3, //height
-        23, //weight
-        (u8*) 0x844c2a1, //page0
-        (u8*) 0x844c316, //page1
-        0, //unused
-        465, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xd1, 0xbb, 0xc6, 0xbc, 0xbf, 0xff, 0x0, 0x0, 0x0}, //category
-        7, //height
-        198, //weight
-        (u8*) 0x844c317, //page0
-        (u8*) 0x844c39d, //page1
-        0, //unused
-        428, //poke scale
-        13, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbf, 0xbf, 0xc7, 0xf2, 0xd1, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        95, //weight
-        (u8*) 0x844c39e, //page0
-        (u8*) 0x844c406, //page1
-        0, //unused
-        295, //poke scale
-        65534, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xd5, 0xe7, 0xe7, 0xd9, 0xe6, 0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xff}, //category
-        12, //height
-        280, //weight
-        (u8*) 0x844c407, //page0
-        (u8*) 0x844c497, //page1
-        0, //unused
-        288, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbf, 0xc0, 0xf3, 0xc2, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        66, //weight
-        (u8*) 0x844c498, //page0
-        (u8*) 0x844c50c, //page1
-        0, //unused
-        457, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc7, 0xc9, 0xce, 0xc3, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        202, //weight
-        (u8*) 0x844c50d, //page0
-        (u8*) 0x844c595, //page1
-        0, //unused
-        354, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcf, 0xc7, 0xbb, 0xcc, 0xc7, 0xcf, 0xc8, 0xc1, 0xff, 0x0, 0x0, 0x0}, //category
-        16, //height
-        484, //weight
-        (u8*) 0x844c596, //page0
-        (u8*) 0x844c5f8, //page1
-        0, //unused
-        277, //poke scale
-        0, //poke displace
-        276, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xd5, 0xe7, 0xe7, 0xd9, 0xe6, 0xc1, 0xbf, 0xc2, 0xbf, 0xcc, 0xff}, //category
-        5, //height
-        17, //weight
-        (u8*) 0x844c5f9, //page0
-        (u8*) 0x844c672, //page1
-        0, //unused
-        375, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xcf, 0xc1, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        36, //weight
-        (u8*) 0x844c673, //page0
-        (u8*) 0x844c6e8, //page1
-        0, //unused
-        378, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xc3, 0xc6, 0xd4, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        45, //weight
-        (u8*) 0x844c6e9, //page0
-        (u8*) 0x844c76b, //page1
-        0, //unused
-        513, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xc3, 0xc6, 0xd4, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        12, //height
-        392, //weight
-        (u8*) 0x844c76c, //page0
-        (u8*) 0x844c7e9, //page1
-        0, //unused
-        324, //poke scale
-        6, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xbb, 0xcf, 0xc6, 0xca, 0xbf, 0xc6, 0xd4, 0xff, 0x0, 0x0, 0x0}, //category
-        8, //height
-        240, //weight
-        (u8*) 0x844c7ea, //page0
-        (u8*) 0x844c861, //page1
-        0, //unused
-        291, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc3, 0xc6, 0xbe, 0xbb, 0xc0, 0xc0, 0xbf, 0xff, 0x0, 0x0, 0x0}, //category
-        14, //height
-        465, //weight
-        (u8*) 0x844c862, //page0
-        (u8*) 0x844c8c5, //page1
-        0, //unused
-        301, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xf3, 0xcd, 0xcd, 0xc3, 0xc1, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        20, //height
-        1305, //weight
-        (u8*) 0x844c8c6, //page0
-        (u8*) 0x844c958, //page1
-        0, //unused
-        277, //poke scale
-        5, //poke displace
-        326, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xc9, 0xcc, 0xbc, 0xbf, 0xcc, 0xbf, 0xc3, 0xce, 0xbf, 0xcc, 0xff}, //category
-        5, //height
-        55, //weight
-        (u8*) 0x844c959, //page0
-        (u8*) 0x844c9dd, //page1
-        0, //unused
-        405, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc8, 0xc3, 0xc8, 0xc4, 0xd5, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        120, //weight
-        (u8*) 0x844c9de, //page0
-        (u8*) 0x844ca44, //page1
-        0, //unused
-        383, //poke scale
-        65527, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xf1, 0xcf, 0xce, 0xcf, 0xc8, 0xc1, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        12, //weight
-        (u8*) 0x844ca45, //page0
-        (u8*) 0x844caab, //page1
-        0, //unused
-        372, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbb, 0xc8, 0xbe, 0xc2, 0xbb, 0xc3, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        163, //weight
-        (u8*) 0x844caac, //page0
-        (u8*) 0x844cb35, //page1
-        0, //unused
-        373, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xf2, 0xc2, 0xc6, 0xbf, 0xff, 0xc6, 0xcd, 0xff, 0x0, 0x0, 0x0}, //category
-        10, //height
-        405, //weight
-        (u8*) 0x844cb36, //page0
-        (u8*) 0x844cba8, //page1
-        0, //unused
-        356, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbb, 0xcd, 0xbb, 0xc8, 0xd4, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        21, //height
-        840, //weight
-        (u8*) 0x844cba9, //page0
-        (u8*) 0x844cc1f, //page1
-        0, //unused
-        284, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xbf, 0xc6, 0xc6, 0xbf, 0xc8, 0xcd, 0xca, 0xc3, 0xbf, 0xc6, 0xff}, //category
-        10, //height
-        864, //weight
-        (u8*) 0x844cc20, //page0
-        (u8*) 0x844cc84, //page1
-        0, //unused
-        256, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xcf, 0xcc, 0xbb, 0xff, 0xcc, 0xc0, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        23, //height
-        2538, //weight
-        (u8*) 0x844cc85, //page0
-        (u8*) 0x844cd17, //page1
-        0, //unused
-        268, //poke scale
-        65535, //poke displace
-        375, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbf, 0xca, 0xcf, 0xc8, 0xc5, 0xce, 0xbf, 0xce, 0xff, 0x0, 0x0}, //category
-        2, //height
-        20, //weight
-        (u8*) 0x844cd18, //page0
-        (u8*) 0x844cd90, //page1
-        0, //unused
-        603, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc9, 0xc7, 0xca, 0xbb, 0xcd, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        970, //weight
-        (u8*) 0x844cd91, //page0
-        (u8*) 0x844cdf5, //page1
-        0, //unused
-        256, //poke scale
-        9, //poke displace
-        289, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xf1, 0xce, 0xd4, 0xbd, 0xc2, 0xbf, 0xc8, 0xff, 0x0, 0x0, 0x0}, //category
-        6, //height
-        110, //weight
-        (u8*) 0x844cdf6, //page0
-        (u8*) 0x844ce89, //page1
-        0, //unused
-        492, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xc8, 0xc1, 0xbf, 0xbc, 0xc3, 0xc6, 0xbe, 0xbf, 0xce, 0xff}, //category
-        11, //height
-        326, //weight
-        (u8*) 0x844ce8a, //page0
-        (u8*) 0x844cf0c, //page1
-        0, //unused
-        322, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xcc, 0xbf, 0xc3, 0xc0, 0xbf, 0xcc, 0xff, 0xc3, 0xcd, 0xff, 0x0}, //category
-        5, //height
-        110, //weight
-        (u8*) 0x844cf0d, //page0
-        (u8*) 0x844cf6f, //page1
-        0, //unused
-        451, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xd1, 0xc3, 0xc8, 0xbe, 0xc6, 0xbf, 0xcc, 0xff, 0x0}, //category
-        6, //height
-        115, //weight
-        (u8*) 0x844cf70, //page0
-        (u8*) 0x844cff7, //page1
-        0, //unused
-        466, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65533, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xff}, //category
-        4, //height
-        600, //weight
-        (u8*) 0x844cff8, //page0
-        (u8*) 0x844d079, //page1
-        0, //unused
-        419, //poke scale
-        21, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xff}, //category
-        9, //height
-        1200, //weight
-        (u8*) 0x844d07a, //page0
-        (u8*) 0x844d10f, //page1
-        0, //unused
-        275, //poke scale
-        11, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xca, 0xbb, 0xc8, 0xd4, 0xbf, 0xcc, 0xff}, //category
-        21, //height
-        3600, //weight
-        (u8*) 0x844d110, //page0
-        (u8*) 0x844d17f, //page1
-        0, //unused
-        274, //poke scale
-        65535, //poke displace
-        374, //trainer scale
-        7, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbf, 0xbe, 0xc3, 0xce, 0xbb, 0xce, 0xc3, 0xc9, 0xc8, 0xff, 0x0}, //category
-        6, //height
-        112, //weight
-        (u8*) 0x844d180, //page0
-        (u8*) 0x844d1df, //page1
-        0, //unused
-        465, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbf, 0xbe, 0xc3, 0xce, 0xbb, 0xce, 0xc3, 0xc9, 0xc8, 0xff, 0x0}, //category
-        13, //height
-        315, //weight
-        (u8*) 0x844d1e0, //page0
-        (u8*) 0x844d260, //page1
-        0, //unused
-        298, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xbf, 0xd1, 0xc3, 0xce, 0xce, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        6, //height
-        152, //weight
-        (u8*) 0x844d261, //page0
-        (u8*) 0x844d2df, //page1
-        0, //unused
-        290, //poke scale
-        16, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc8, 0xce, 0xc6, 0xbb, 0xbe, 0xcf, 0xc8, 0xc1, 0xff, 0x0, 0x0}, //category
-        15, //height
-        402, //weight
-        (u8*) 0x844d2e0, //page0
-        (u8*) 0x844d345, //page1
-        0, //unused
-        256, //poke scale
-        1, //poke displace
-        257, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc4, 0xcf, 0xbc, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        42, //weight
-        (u8*) 0x844d346, //page0
-        (u8*) 0x844d3ce, //page1
-        0, //unused
-        515, //poke scale
-        65527, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc4, 0xcf, 0xbc, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        42, //weight
-        (u8*) 0x844d3cf, //page0
-        (u8*) 0x844d44a, //page1
-        0, //unused
-        512, //poke scale
-        65529, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xc3, 0xbc, 0xbf, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        7, //height
-        177, //weight
-        (u8*) 0x844d44b, //page0
-        (u8*) 0x844d4cd, //page1
-        0, //unused
-        442, //poke scale
-        65532, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xc3, 0xbc, 0xbf, 0xc6, 0xc6, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        177, //weight
-        (u8*) 0x844d4ce, //page0
-        (u8*) 0x844d53d, //page1
-        0, //unused
-        572, //poke scale
-        65532, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xc9, 0xcc, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        20, //weight
-        (u8*) 0x844d53e, //page0
-        (u8*) 0x844d5a6, //page1
-        0, //unused
-        677, //poke scale
-        20, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xc1, 0xbf, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        103, //weight
-        (u8*) 0x844d5a7, //page0
-        (u8*) 0x844d62a, //page1
-        0, //unused
-        593, //poke scale
-        22, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xdd, 0xda, 0xe8, 0xbc, 0xd9, 0xe9, 0xe8, 0xd9, 0xe0, 0xff, 0x0}, //category
-        17, //height
-        800, //weight
-        (u8*) 0x844d62b, //page0
-        (u8*) 0x844d69f, //page1
-        0, //unused
-        256, //poke scale
-        5, //poke displace
-        345, //trainer scale
-        4, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xc8, 0xbb, 0xbe, 0xbf, 0xc8, 0xc6, 0xc9, 0xcd, 0xff, 0x0, 0x0}, //category
-        8, //height
-        208, //weight
-        (u8*) 0x844d6a0, //page0
-        (u8*) 0x844d71b, //page1
-        0, //unused
-        362, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xcc, 0xcf, 0xce, 0xbb, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        888, //weight
-        (u8*) 0x844d71c, //page0
-        (u8*) 0x844d794, //page1
-        0, //unused
-        265, //poke scale
-        0, //poke displace
-        342, //trainer scale
-        4, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcf, 0xc1, 0xbf, 0xc6, 0xd1, 0xbb, 0xc6, 0xff, 0x0, 0x0, 0x0}, //category
-        20, //height
-        1300, //weight
-        (u8*) 0x844d795, //page0
-        (u8*) 0x844d815, //page1
-        0, //unused
-        256, //poke scale
-        10, //poke displace
-        493, //trainer scale
-        10, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc6, 0xcf, 0xce, 0xd1, 0xbb, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        145, //height
-        3980, //weight
-        (u8*) 0x844d816, //page0
-        (u8*) 0x844d87d, //page1
-        0, //unused
-        276, //poke scale
-        65535, //poke displace
-        1428, //trainer scale
-        20, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xce, 0xbb, 0xcf, 0xbc, 0xc2, 0xbf, 0xc3, 0xce, 0xff, 0x0, 0x0, 0x0}, //category
-        7, //height
-        240, //weight
-        (u8*) 0x844d87e, //page0
-        (u8*) 0x844d8f7, //page1
-        0, //unused
-        310, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xcf, 0xcd, 0xbc, 0xcc, 0xcf, 0xbd, 0xc2, 0xff, 0x0, 0x0, 0x0}, //category
-        19, //height
-        2200, //weight
-        (u8*) 0x844d8f8, //page0
-        (u8*) 0x844d96c, //page1
-        0, //unused
-        256, //poke scale
-        6, //poke displace
-        345, //trainer scale
-        4, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xbf, 0xce, 0xe3, 0xe2, 0xbb, 0xce, 0xc3, 0xc9, 0xc8, 0xff, 0x0}, //category
-        5, //height
-        804, //weight
-        (u8*) 0x844d96d, //page0
-        (u8*) 0x844d9e6, //page1
-        0, //unused
-        392, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xca, 0xcc, 0xcf, 0xc8, 0xc1, 0xc0, 0xbf, 0xbe, 0xbf, 0xcc, 0xff}, //category
-        7, //height
-        306, //weight
-        (u8*) 0x844d9e7, //page0
-        (u8*) 0x844da51, //page1
-        0, //unused
-        423, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xc8, 0xc3, 0xca, 0xcf, 0xc6, 0xbb, 0xce, 0xc9, 0xcc, 0xff}, //category
-        9, //height
-        715, //weight
-        (u8*) 0x844da52, //page0
-        (u8*) 0x844dad9, //page1
-        0, //unused
-        358, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xcf, 0xc8, 0xc5, 0xce, 0xae, 0xca, 0xbb, 0xc8, 0xbe, 0xbb, 0xff}, //category
-        11, //height
-        50, //weight
-        (u8*) 0x844dada, //page0
-        (u8*) 0x844db4f, //page1
-        0, //unused
-        321, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xc7, 0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xc6, 0xf2, 0xd1, 0xbf, 0xff}, //category
-        7, //height
-        150, //weight
-        (u8*) 0x844db50, //page0
-        (u8*) 0x844dbcd, //page1
-        0, //unused
-        298, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xc3, 0xbc, 0xcc, 0xbb, 0xce, 0xc3, 0xc9, 0xc8, 0xff, 0x0, 0x0}, //category
-        11, //height
-        153, //weight
-        (u8*) 0x844dbce, //page0
-        (u8*) 0x844dc4b, //page1
-        0, //unused
-        370, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xd3, 0xcd, 0xce, 0xc3, 0xc5, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        20, //height
-        820, //weight
-        (u8*) 0x844dc4c, //page0
-        (u8*) 0x844dcbd, //page1
-        0, //unused
-        280, //poke scale
-        0, //poke displace
-        299, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xbb, 0xc5, 0xce, 0xcf, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        513, //weight
-        (u8*) 0x844dcbe, //page0
-        (u8*) 0x844dd2c, //page1
-        0, //unused
-        455, //poke scale
-        19, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xcd, 0xbd, 0xc2, 0xc9, 0xbd, 0xc5, 0xff}, //category
-        13, //height
-        774, //weight
-        (u8*) 0x844dd2d, //page0
-        (u8*) 0x844dda6, //page1
-        0, //unused
-        327, //poke scale
-        3, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc9, 0xc6, 0xc6, 0xd0, 0xc9, 0xc1, 0xbf, 0xc6, 0xff, 0x0, 0x0}, //category
-        4, //height
-        12, //weight
-        (u8*) 0x844dda7, //page0
-        (u8*) 0x844de16, //page1
-        0, //unused
-        422, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xcf, 0xc7, 0xc7, 0xcd, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        11, //height
-        206, //weight
-        (u8*) 0x844de17, //page0
-        (u8*) 0x844de94, //page1
-        0, //unused
-        327, //poke scale
-        0, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xcc, 0xbf, 0xce, 0xce, 0xc5, 0xbb, 0xce, 0xd4, 0xff, 0x0, 0x0}, //category
-        13, //height
-        403, //weight
-        (u8*) 0x844de95, //page0
-        (u8*) 0x844df0f, //page1
-        0, //unused
-        256, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbf, 0xc3, 0xcd, 0xcd, 0xd4, 0xbb, 0xc2, 0xc8, 0xff, 0x0, 0x0}, //category
-        27, //height
-        525, //weight
-        (u8*) 0x844df10, //page0
-        (u8*) 0x844dfa4, //page1
-        0, //unused
-        275, //poke scale
-        6, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbf, 0xce, 0xbf, 0xc9, 0xcc, 0xc3, 0xce, 0xff, 0x0, 0x0, 0x0}, //category
-        10, //height
-        1680, //weight
-        (u8*) 0x844dfa5, //page0
-        (u8*) 0x844e009, //page1
-        0, //unused
-        300, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbf, 0xce, 0xbf, 0xc9, 0xcc, 0xc3, 0xce, 0xff, 0x0, 0x0, 0x0}, //category
-        12, //height
-        1540, //weight
-        (u8*) 0x844e00a, //page0
-        (u8*) 0x844e07c, //page1
-        0, //unused
-        328, //poke scale
-        65533, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xbb, 0xcc, 0xce, 0xc2, 0xbb, 0xbb, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        4, //height
-        19, //weight
-        (u8*) 0x844e07d, //page0
-        (u8*) 0x844e0fc, //page1
-        0, //unused
-        581, //poke scale
-        65534, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xbb, 0xcc, 0xce, 0xc2, 0xbb, 0xbb, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        9, //height
-        236, //weight
-        (u8*) 0x844e0fd, //page0
-        (u8*) 0x844e16d, //page1
-        0, //unused
-        317, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc1, 0xcc, 0xc9, 0xbc, 0xc3, 0xbb, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        115, //weight
-        (u8*) 0x844e16e, //page0
-        (u8*) 0x844e1d2, //page1
-        0, //unused
-        484, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc6, 0xc3, 0xc8, 0xc1, 0xbf, 0xc6, 0xff, 0x0, 0x0}, //category
-        11, //height
-        328, //weight
-        (u8*) 0x844e1d3, //page0
-        (u8*) 0x844e245, //page1
-        0, //unused
-        365, //poke scale
-        7, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbf, 0xc2, 0xc7, 0xca, 0xcf, 0xca, 0xca, 0xbf, 0xff, 0x0, 0x0}, //category
-        5, //height
-        215, //weight
-        (u8*) 0x844e246, //page0
-        (u8*) 0x844e2b7, //page1
-        0, //unused
-        384, //poke scale
-        18, //poke displace
-        256, //trainer scale
-        65533, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc6, 0xbf, 0xc2, 0xc7, 0xca, 0xcf, 0xca, 0xca, 0xbf, 0xff, 0x0, 0x0}, //category
-        15, //height
-        1080, //weight
-        (u8*) 0x844e2b8, //page0
-        (u8*) 0x844e32f, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        280, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbf, 0xbf, 0xbb, 0xc8, 0xbf, 0xc7, 0xc9, 0xc8, 0xbf, 0xff, 0x0}, //category
-        10, //height
-        238, //weight
-        (u8*) 0x844e330, //page0
-        (u8*) 0x844e3bc, //page1
-        0, //unused
-        305, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbb, 0xc8, 0xc5, 0xc0, 0xf3, 0xcd, 0xcd, 0xbf, 0xcc, 0xff, 0x0}, //category
-        15, //height
-        604, //weight
-        (u8*) 0x844e3bd, //page0
-        (u8*) 0x844e426, //page1
-        0, //unused
-        275, //poke scale
-        65535, //poke displace
-        269, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xcc, 0xbf, 0xbc, 0xcd, 0xcd, 0xbf, 0xc8, 0xc3, 0xc9, 0xcc, 0xff}, //category
-        7, //height
-        125, //weight
-        (u8*) 0x844e427, //page0
-        (u8*) 0x844e4a8, //page1
-        0, //unused
-        296, //poke scale
-        4, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc3, 0xc6, 0xbe, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        682, //weight
-        (u8*) 0x844e4a9, //page0
-        (u8*) 0x844e528, //page1
-        0, //unused
-        312, //poke scale
-        2, //poke displace
-        271, //trainer scale
-        65535, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xc3, 0xcd, 0xbd, 0xc2, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        74, //weight
-        (u8*) 0x844e529, //page0
-        (u8*) 0x844e5ab, //page1
-        0, //unused
-        423, //poke scale
-        3, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd4, 0xbb, 0xcc, 0xce, 0xc2, 0xbf, 0xc3, 0xce, 0xff, 0x0, 0x0, 0x0}, //category
-        62, //height
-        1620, //weight
-        (u8*) 0x844e5ac, //page0
-        (u8*) 0x844e60c, //page1
-        0, //unused
-        282, //poke scale
-        65535, //poke displace
-        382, //trainer scale
-        7, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xbf, 0xce, 0xce, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        3, //height
-        8, //weight
-        (u8*) 0x844e60d, //page0
-        (u8*) 0x844e689, //page1
-        0, //unused
-        435, //poke scale
-        65531, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc0, 0xbb, 0xcc, 0xbc, 0xbf, 0xc8, 0xcd, 0xca, 0xc3, 0xbf, 0xc6, 0xff}, //category
-        10, //height
-        220, //weight
-        (u8*) 0x844e68a, //page0
-        (u8*) 0x844e6fb, //page1
-        0, //unused
-        316, //poke scale
-        8, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xca, 0xcf, 0xca, 0xca, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        6, //height
-        23, //weight
-        (u8*) 0x844e6fc, //page0
-        (u8*) 0x844e76f, //page1
-        0, //unused
-        440, //poke scale
-        65533, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xbb, 0xcc, 0xc3, 0xc9, 0xc8, 0xbf, 0xce, 0xce, 0xbf, 0xff, 0x0}, //category
-        11, //height
-        125, //weight
-        (u8*) 0x844e770, //page0
-        (u8*) 0x844e7f0, //page1
-        0, //unused
-        262, //poke scale
-        9, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbf, 0xcb, 0xcf, 0xc3, 0xbf, 0xc7, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        150, //weight
-        (u8*) 0x844e7f1, //page0
-        (u8*) 0x844e863, //page1
-        0, //unused
-        376, //poke scale
-        13, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc3, 0xc8, 0xc5, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        16, //height
-        306, //weight
-        (u8*) 0x844e864, //page0
-        (u8*) 0x844e8d1, //page1
-        0, //unused
-        256, //poke scale
-        2, //poke displace
-        299, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc9, 0xbc, 0xcd, 0xce, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        20, //height
-        1000, //weight
-        (u8*) 0x844e8d2, //page0
-        (u8*) 0x844e944, //page1
-        0, //unused
-        283, //poke scale
-        65535, //poke displace
-        371, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xc3, 0xc8, 0xbe, 0xcd, 0xca, 0xc3, 0xbf, 0xc6, 0xff, 0x0, 0x0}, //category
-        6, //height
-        10, //weight
-        (u8*) 0x844e945, //page0
-        (u8*) 0x844e9c6, //page1
-        0, //unused
-        505, //poke scale
-        65532, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xbf, 0xcd, 0xbb, 0xcd, 0xce, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        12, //height
-        470, //weight
-        (u8*) 0x844e9c7, //page0
-        (u8*) 0x844ea53, //page1
-        0, //unused
-        301, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xcc, 0xbb, 0xc2, 0xc6, 0xbf, 0xc5, 0xc3, 0xc8, 0xbe, 0xff}, //category
-        6, //height
-        140, //weight
-        (u8*) 0x844ea54, //page0
-        (u8*) 0x844eabb, //page1
-        0, //unused
-        453, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbd, 0xc2, 0xc8, 0xbf, 0xbf, 0xc2, 0xcf, 0xce, 0xff, 0x0, 0x0}, //category
-        7, //height
-        168, //weight
-        (u8*) 0x844eabc, //page0
-        (u8*) 0x844eb42, //page1
-        0, //unused
-        380, //poke scale
-        14, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xc8, 0xce, 0xc6, 0xc3, 0xce, 0xd4, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        2565, //weight
-        (u8*) 0x844eb43, //page0
-        (u8*) 0x844ebc4, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        344, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbb, 0xca, 0xca, 0xc6, 0xbb, 0xe9, 0xe7, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        8, //height
-        395, //weight
-        (u8*) 0x844ebc5, //page0
-        (u8*) 0x844ec50, //page1
-        0, //unused
-        315, //poke scale
-        15, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xca, 0xc3, 0xbf, 0xc6, 0xbc, 0xbb, 0xc6, 0xc6, 0xff, 0x0, 0x0}, //category
-        11, //height
-        876, //weight
-        (u8*) 0x844ec51, //page0
-        (u8*) 0x844ecd0, //page1
-        0, //unused
-        338, //poke scale
-        12, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbc, 0xcc, 0xbf, 0xbd, 0xc2, 0xbf, 0xcc, 0xff, 0x0}, //category
-        14, //height
-        1506, //weight
-        (u8*) 0x844ecd1, //page0
-        (u8*) 0x844ed55, //page1
-        0, //unused
-        305, //poke scale
-        2, //poke displace
-        277, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc7, 0xcf, 0xcd, 0xbd, 0xc2, 0xbf, 0xc6, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        4, //height
-        525, //weight
-        (u8*) 0x844ed56, //page0
-        (u8*) 0x844edb8, //page1
-        0, //unused
-        691, //poke scale
-        22, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xce, 0xc3, 0xbf, 0xc0, 0xcd, 0xbf, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        17, //height
-        270, //weight
-        (u8*) 0x844edb9, //page0
-        (u8*) 0x844ee35, //page1
-        0, //unused
-        307, //poke scale
-        1, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xf3, 0xbe, 0xcd, 0xbf, 0xbf, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        226, //weight
-        (u8*) 0x844ee36, //page0
-        (u8*) 0x844eea3, //page1
-        0, //unused
-        278, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbc, 0xbf, 0xcd, 0xce, 0xbb, 0xc8, 0xbe, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        10, //height
-        234, //weight
-        (u8*) 0x844eea4, //page0
-        (u8*) 0x844ef0b, //page1
-        0, //unused
-        316, //poke scale
-        5, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcc, 0xbf, 0xc8, 0xbe, 0xbf, 0xd4, 0xd0, 0xc9, 0xcf, 0xcd, 0xff, 0x0}, //category
-        6, //height
-        87, //weight
-        (u8*) 0x844ef0c, //page0
-        (u8*) 0x844ef7d, //page1
-        0, //unused
-        371, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xbf, 0xc3, 0xc8, 0xc2, 0xbb, 0xcf, 0xca, 0xce, 0xff, 0x0}, //category
-        6, //height
-        421, //weight
-        (u8*) 0x844ef7e, //page0
-        (u8*) 0x844efec, //page1
-        0, //unused
-        448, //poke scale
-        17, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xcf, 0xcc, 0xbd, 0xc2, 0xcd, 0xce, 0xbf, 0xc2, 0xbf, 0xcc, 0xff}, //category
-        11, //height
-        1105, //weight
-        (u8*) 0x844efed, //page0
-        (u8*) 0x844f06b, //page1
-        0, //unused
-        311, //poke scale
-        10, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xe6, 0xd5, 0xd7, 0xdc, 0xd9, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        15, //height
-        1026, //weight
-        (u8*) 0x844f06c, //page0
-        (u8*) 0x844f0cd, //page1
-        0, //unused
-        272, //poke scale
-        2, //poke displace
-        307, //trainer scale
-        0, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xc5, 0xcf, 0xc1, 0xbf, 0xc6, 0xff, 0x0}, //category
-        6, //height
-        952, //weight
-        (u8*) 0x844f0ce, //page0
-        (u8*) 0x844f143, //page1
-        0, //unused
-        414, //poke scale
-        65535, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xc5, 0xc6, 0xbb, 0xcf, 0xbf, 0xff, 0x0}, //category
-        12, //height
-        2025, //weight
-        (u8*) 0x844f144, //page0
-        (u8*) 0x844f1e0, //page1
-        0, //unused
-        256, //poke scale
-        3, //poke displace
-        272, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xc0, 0xcf, 0xcd, 0xcd, 0xff, 0x0, 0x0}, //category
-        16, //height
-        5500, //weight
-        (u8*) 0x844f1e1, //page0
-        (u8*) 0x844f262, //page1
-        0, //unused
-        272, //poke scale
-        3, //poke displace
-        461, //trainer scale
-        4, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xce, 0xbf, 0xc3, 0xc8, 0xc1, 0xc3, 0xca, 0xc0, 0xbf, 0xc6, 0xff}, //category
-        17, //height
-        2300, //weight
-        (u8*) 0x844f263, //page0
-        (u8*) 0x844f2f6, //page1
-        0, //unused
-        256, //poke scale
-        1, //poke displace
-        309, //trainer scale
-        1, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbc, 0xbf, 0xcc, 0xc1, 0xff, 0x0, 0x0, 0x0, 0x0}, //category
-        18, //height
-        1750, //weight
-        (u8*) 0x844f2f7, //page0
-        (u8*) 0x844f368, //page1
-        0, //unused
-        265, //poke scale
-        0, //poke displace
-        317, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbf, 0xc3, 0xcd, 0xbf, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        19, //height
-        2050, //weight
-        (u8*) 0x844f369, //page0
-        (u8*) 0x844f3f7, //page1
-        0, //unused
-        256, //poke scale
-        0, //poke displace
-        359, //trainer scale
-        6, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xf1, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        14, //height
-        400, //weight
-        (u8*) 0x844f3f8, //page0
-        (u8*) 0x844f47a, //page1
-        0, //unused
-        291, //poke scale
-        2, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xf1, 0xc9, 0xc8, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        20, //height
-        600, //weight
-        (u8*) 0x844f47b, //page0
-        (u8*) 0x844f4fc, //page1
-        0, //unused
-        273, //poke scale
-        0, //poke displace
-        313, //trainer scale
-        3, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xcd, 0xbf, 0xbf, 0xc1, 0xcc, 0xf3, 0xc8, 0xbe, 0xc6, 0xbf, 0xcc, 0xff}, //category
-        45, //height
-        3520, //weight
-        (u8*) 0x844f4fd, //page0
-        (u8*) 0x844f57a, //page1
-        0, //unused
-        272, //poke scale
-        1, //poke displace
-        639, //trainer scale
-        13, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc5, 0xc9, 0xc8, 0xce, 0xc3, 0xc8, 0xbf, 0xc8, 0xce, 0xff, 0x0, 0x0}, //category
-        35, //height
-        9500, //weight
-        (u8*) 0x844f57b, //page0
-        (u8*) 0x844f5f3, //page1
-        0, //unused
-        276, //poke scale
-        0, //poke displace
-        530, //trainer scale
-        12, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xc2, 0xc3, 0xc7, 0xc7, 0xbf, 0xc6, 0xc2, 0xc9, 0xbd, 0xc2, 0xff, 0x0}, //category
-        70, //height
-        2065, //weight
-        (u8*) 0x844f5f4, //page0
-        (u8*) 0x844f65b, //page1
-        0, //unused
-        286, //poke scale
-        65535, //poke displace
-        483, //trainer scale
-        9, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xd1, 0xf3, 0xc8, 0xcd, 0xbd, 0xc2, 0xbf, 0xcc, 0xff, 0x0, 0x0, 0x0}, //category
-        3, //height
-        11, //weight
-        (u8*) 0x844f65c, //page0
-        (u8*) 0x844f6be, //page1
-        0, //unused
-        608, //poke scale
-        65528, //poke displace
-        256, //trainer scale
-        65534, //trainer displace
-        0 //unused 2
-    },
-    {
-        {0xbe, 0xc8, 0xcd, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}, //category
-        17, //height
-        608, //weight
-        (u8*) 0x844f6bf, //page0
-        (u8*) 0x844f73b, //page1
-        0, //unused
-        293, //poke scale
-        0, //poke displace
-        337, //trainer scale
-        2, //trainer displace
-        0 //unused 2
-    }
+	//Entry 0
+	PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_n, PCHAR_b, PCHAR_e, PCHAR_k, PCHAR_a, PCHAR_n, PCHAR_n, PCHAR_t, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_U, PCHAR_n, PCHAR_k, PCHAR_n, PCHAR_o, PCHAR_w, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	0, 0,//Height & weight
+	str_pokedex_data_0_page_0, str_pokedex_data_0_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	256, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 1
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_m, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 69,//Height & weight
+	str_pokedex_data_1_page_0, str_pokedex_data_1_page_1,
+	0,//unused
+	356, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 2
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_m, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 130,//Height & weight
+	str_pokedex_data_2_page_0, str_pokedex_data_2_page_1,
+	0,//unused
+	332, 11,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 3
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_m, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 1000,//Height & weight
+	str_pokedex_data_3_page_0, str_pokedex_data_3_page_1,
+	0,//unused
+	256, 1,//Pokemon scale, displacement
+	375, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 4
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_c, PCHAR_h, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_z, PCHAR_a, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 85,//Height & weight
+	str_pokedex_data_4_page_0, str_pokedex_data_4_page_1,
+	0,//unused
+	410, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 5
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 190,//Height & weight
+	str_pokedex_data_5_page_0, str_pokedex_data_5_page_1,
+	0,//unused
+	294, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 6
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	17, 905,//Height & weight
+	str_pokedex_data_6_page_0, str_pokedex_data_6_page_1,
+	0,//unused
+	271, 0,//Pokemon scale, displacement
+	317, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 7
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_i, PCHAR_n, PCHAR_i, PCHAR_k, PCHAR_r, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_SPACE, PCHAR_T, PCHAR_u, PCHAR_r, PCHAR_t, PCHAR_l, PCHAR_e, 0xff})),
+	5, 90,//Height & weight
+	str_pokedex_data_7_page_0, str_pokedex_data_7_page_1,
+	0,//unused
+	412, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 8
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_u, PCHAR_r, PCHAR_t, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 225,//Height & weight
+	str_pokedex_data_8_page_0, str_pokedex_data_8_page_1,
+	0,//unused
+	334, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 9
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_h, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_f, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0})),
+	16, 855,//Height & weight
+	str_pokedex_data_9_page_0, str_pokedex_data_9_page_1,
+	0,//unused
+	256, 1,//Pokemon scale, displacement
+	329, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 10
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_t, PCHAR_k, PCHAR_e, PCHAR_h, PCHAR_l, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, 0xff}), P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	3, 29,//Height & weight
+	str_pokedex_data_10_page_0, str_pokedex_data_10_page_1,
+	0,//unused
+	549, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 11
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_u, PCHAR_n, PCHAR_k, PCHAR_e, PCHAR_n, PCHAR_r, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_n, 0xff}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_c, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 160,//Height & weight
+	str_pokedex_data_11_page_0, str_pokedex_data_11_page_1,
+	0,//unused
+	350, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 12
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_h, PCHAR_f, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_m, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_B, PCHAR_u, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_f, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0})),
+	12, 320,//Height & weight
+	str_pokedex_data_12_page_0, str_pokedex_data_12_page_1,
+	0,//unused
+	312, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 13
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_u, PCHAR_p, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_i, PCHAR_r, PCHAR_y, PCHAR_SPACE, PCHAR_B, PCHAR_u, PCHAR_g, 0xff, 0x0, 0x0})),
+	3, 32,//Height & weight
+	str_pokedex_data_13_page_0, str_pokedex_data_13_page_1,
+	0,//unused
+	455, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 14
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_k, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_c, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 100,//Height & weight
+	str_pokedex_data_14_page_0, str_pokedex_data_14_page_1,
+	0,//unused
+	424, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 15
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_b, PCHAR_i, PCHAR_e, PCHAR_n, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_e, 0xff, 0x0})),
+	10, 295,//Height & weight
+	str_pokedex_data_15_page_0, str_pokedex_data_15_page_1,
+	0,//unused
+	366, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 16
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0})),
+	3, 18,//Height & weight
+	str_pokedex_data_16_page_0, str_pokedex_data_16_page_1,
+	0,//unused
+	492, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 17
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 300,//Height & weight
+	str_pokedex_data_17_page_0, str_pokedex_data_17_page_1,
+	0,//unused
+	334, 11,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 18
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 395,//Height & weight
+	str_pokedex_data_18_page_0, str_pokedex_data_18_page_1,
+	0,//unused
+	269, 65534,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 19
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_z, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	3, 35,//Height & weight
+	str_pokedex_data_19_page_0, str_pokedex_data_19_page_1,
+	0,//unused
+	481, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 20
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_g, PCHAR_l, PCHAR_o, PCHAR_c, PCHAR_k, 0xff}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 185,//Height & weight
+	str_pokedex_data_20_page_0, str_pokedex_data_20_page_1,
+	0,//unused
+	401, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 21
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_i, PCHAR_t, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0})),
+	3, 20,//Height & weight
+	str_pokedex_data_21_page_0, str_pokedex_data_21_page_1,
+	0,//unused
+	571, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 22
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_i, PCHAR_t, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_a, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 380,//Height & weight
+	str_pokedex_data_22_page_0, str_pokedex_data_22_page_1,
+	0,//unused
+	282, 65535,//Pokemon scale, displacement
+	272, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 23
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_u, PCHAR_m, PCHAR_s, PCHAR_t, PCHAR_u, PCHAR_m, PCHAR_p, PCHAR_f, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_n, PCHAR_a, PCHAR_k, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 69,//Height & weight
+	str_pokedex_data_23_page_0, str_pokedex_data_23_page_1,
+	0,//unused
+	298, 13,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 24
+	PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_r, PCHAR_g, PCHAR_e, PCHAR_h, PCHAR_oe, PCHAR_l, PCHAR_z, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_b, PCHAR_r, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	35, 650,//Height & weight
+	str_pokedex_data_24_page_0, str_pokedex_data_24_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	296, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 25
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 60,//Height & weight
+	str_pokedex_data_25_page_0, str_pokedex_data_25_page_1,
+	0,//unused
+	479, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 26
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 300,//Height & weight
+	str_pokedex_data_26_page_0, str_pokedex_data_26_page_1,
+	0,//unused
+	426, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 27
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 120,//Height & weight
+	str_pokedex_data_27_page_0, str_pokedex_data_27_page_1,
+	0,//unused
+	370, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 28
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 295,//Height & weight
+	str_pokedex_data_28_page_0, str_pokedex_data_28_page_1,
+	0,//unused
+	341, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 29
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_d, PCHAR_o, PCHAR_r, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_P, PCHAR_i, PCHAR_n, 0xff, 0x0})),
+	4, 70,//Height & weight
+	str_pokedex_data_29_page_0, str_pokedex_data_29_page_1,
+	0,//unused
+	488, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 30
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_d, PCHAR_o, PCHAR_r, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_P, PCHAR_i, PCHAR_n, 0xff, 0x0})),
+	8, 200,//Height & weight
+	str_pokedex_data_30_page_0, str_pokedex_data_30_page_1,
+	0,//unused
+	381, 13,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 31
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_o, PCHAR_h, PCHAR_r, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_i, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	13, 600,//Height & weight
+	str_pokedex_data_31_page_0, str_pokedex_data_31_page_1,
+	0,//unused
+	283, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 32
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_d, PCHAR_o, PCHAR_r, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_P, PCHAR_i, PCHAR_n, 0xff, 0x0})),
+	5, 90,//Height & weight
+	str_pokedex_data_32_page_0, str_pokedex_data_32_page_1,
+	0,//unused
+	480, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 33
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_d, PCHAR_o, PCHAR_r, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_P, PCHAR_i, PCHAR_n, 0xff, 0x0})),
+	9, 195,//Height & weight
+	str_pokedex_data_33_page_0, str_pokedex_data_33_page_1,
+	0,//unused
+	408, 13,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 34
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_o, PCHAR_h, PCHAR_r, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_i, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	14, 620,//Height & weight
+	str_pokedex_data_34_page_0, str_pokedex_data_34_page_1,
+	0,//unused
+	304, 3,//Pokemon scale, displacement
+	323, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 35
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_n, PCHAR_b, PCHAR_l, PCHAR_ue, PCHAR_t, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_i, PCHAR_r, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 75,//Height & weight
+	str_pokedex_data_35_page_0, str_pokedex_data_35_page_1,
+	0,//unused
+	425, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 36
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_i, PCHAR_r, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	13, 400,//Height & weight
+	str_pokedex_data_36_page_0, str_pokedex_data_36_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	272, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 37
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_o, PCHAR_x, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 99,//Height & weight
+	str_pokedex_data_37_page_0, str_pokedex_data_37_page_1,
+	0,//unused
+	497, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 38
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_o, PCHAR_x, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 199,//Height & weight
+	str_pokedex_data_38_page_0, str_pokedex_data_38_page_1,
+	0,//unused
+	339, 6,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 39
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	5, 55,//Height & weight
+	str_pokedex_data_39_page_0, str_pokedex_data_39_page_1,
+	0,//unused
+	419, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 40
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	10, 120,//Height & weight
+	str_pokedex_data_40_page_0, str_pokedex_data_40_page_1,
+	0,//unused
+	328, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 41
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_e, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 75,//Height & weight
+	str_pokedex_data_41_page_0, str_pokedex_data_41_page_1,
+	0,//unused
+	355, 65532,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 42
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_e, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	16, 550,//Height & weight
+	str_pokedex_data_42_page_0, str_pokedex_data_42_page_1,
+	0,//unused
+	291, 0,//Pokemon scale, displacement
+	296, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 43
+	PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_n, PCHAR_k, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 54,//Height & weight
+	str_pokedex_data_43_page_0, str_pokedex_data_43_page_1,
+	0,//unused
+	423, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 44
+	PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_n, PCHAR_k, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 86,//Height & weight
+	str_pokedex_data_44_page_0, str_pokedex_data_44_page_1,
+	0,//unused
+	329, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 45
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_o, PCHAR_w, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 186,//Height & weight
+	str_pokedex_data_45_page_0, str_pokedex_data_45_page_1,
+	0,//unused
+	256, 4,//Pokemon scale, displacement
+	272, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 46
+	PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_n, PCHAR_r, PCHAR_e, PCHAR_i, PCHAR_f, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_h, PCHAR_r, PCHAR_o, PCHAR_o, PCHAR_m, 0xff, 0x0, 0x0, 0x0})),
+	3, 54,//Height & weight
+	str_pokedex_data_46_page_0, str_pokedex_data_46_page_1,
+	0,//unused
+	546, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 47
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_n, PCHAR_d, PCHAR_u, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_h, PCHAR_r, PCHAR_o, PCHAR_o, PCHAR_m, 0xff, 0x0, 0x0, 0x0})),
+	10, 295,//Height & weight
+	str_pokedex_data_47_page_0, str_pokedex_data_47_page_1,
+	0,//unused
+	307, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 48
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_l, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_n, PCHAR_s, PCHAR_e, PCHAR_c, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 300,//Height & weight
+	str_pokedex_data_48_page_0, str_pokedex_data_48_page_1,
+	0,//unused
+	360, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 49
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_p, PCHAR_i, PCHAR_n, PCHAR_n, 0xff}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_t, PCHAR_h, 0xff})),
+	15, 125,//Height & weight
+	str_pokedex_data_49_page_0, str_pokedex_data_49_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	293, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 50
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_u, PCHAR_l, PCHAR_w, PCHAR_u, PCHAR_r, PCHAR_f, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	2, 8,//Height & weight
+	str_pokedex_data_50_page_0, str_pokedex_data_50_page_1,
+	0,//unused
+	706, 22,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 51
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_u, PCHAR_l, PCHAR_w, PCHAR_u, PCHAR_r, PCHAR_f, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 333,//Height & weight
+	str_pokedex_data_51_page_0, str_pokedex_data_51_page_1,
+	0,//unused
+	384, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 52
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_r, PCHAR_n, PCHAR_f, PCHAR_r, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_r, PCHAR_a, PCHAR_t, PCHAR_c, PCHAR_h, PCHAR_SPACE, PCHAR_C, PCHAR_a, PCHAR_t, 0xff})),
+	4, 42,//Height & weight
+	str_pokedex_data_52_page_0, str_pokedex_data_52_page_1,
+	0,//unused
+	480, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 53
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_r, PCHAR_n, PCHAR_k, PCHAR_u, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_y, PCHAR_SPACE, PCHAR_C, PCHAR_a, PCHAR_t, 0xff, 0x0})),
+	10, 320,//Height & weight
+	str_pokedex_data_53_page_0, str_pokedex_data_53_page_1,
+	0,//unused
+	320, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 54
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_n, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_u, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 196,//Height & weight
+	str_pokedex_data_54_page_0, str_pokedex_data_54_page_1,
+	0,//unused
+	347, 11,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 55
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_n, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_u, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	17, 766,//Height & weight
+	str_pokedex_data_55_page_0, str_pokedex_data_55_page_1,
+	0,//unused
+	272, 4,//Pokemon scale, displacement
+	287, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 56
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_DOT, PCHAR_SLASH, PCHAR_SPACE, PCHAR_A, PCHAR_f, PCHAR_f, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_n, PCHAR_k, PCHAR_e, PCHAR_y, 0xff, 0x0})),
+	5, 280,//Height & weight
+	str_pokedex_data_56_page_0, str_pokedex_data_56_page_1,
+	0,//unused
+	388, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 57
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_DOT, PCHAR_SLASH, PCHAR_SPACE, PCHAR_A, PCHAR_f, PCHAR_f, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_n, PCHAR_k, PCHAR_e, PCHAR_y, 0xff, 0x0})),
+	10, 320,//Height & weight
+	str_pokedex_data_57_page_0, str_pokedex_data_57_page_1,
+	0,//unused
+	326, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 58
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_u, PCHAR_n, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 190,//Height & weight
+	str_pokedex_data_58_page_0, str_pokedex_data_58_page_1,
+	0,//unused
+	346, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 59
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_n, PCHAR_d, PCHAR_ae, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_n, PCHAR_d, PCHAR_a, PCHAR_r, PCHAR_y, 0xff, 0x0, 0x0})),
+	19, 1550,//Height & weight
+	str_pokedex_data_59_page_0, str_pokedex_data_59_page_1,
+	0,//unused
+	256, 65535,//Pokemon scale, displacement
+	312, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 60
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_e, PCHAR_r, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_d, PCHAR_p, PCHAR_o, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 124,//Height & weight
+	str_pokedex_data_60_page_0, str_pokedex_data_60_page_1,
+	0,//unused
+	353, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 61
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_d, PCHAR_p, PCHAR_o, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	10, 200,//Height & weight
+	str_pokedex_data_61_page_0, str_pokedex_data_61_page_1,
+	0,//unused
+	288, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 62
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_oe, PCHAR_n, PCHAR_i, PCHAR_g, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_h, 0xff, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_d, PCHAR_p, PCHAR_o, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	13, 540,//Height & weight
+	str_pokedex_data_62_page_0, str_pokedex_data_62_page_1,
+	0,//unused
+	256, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 63
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_s, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_s, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	9, 195,//Height & weight
+	str_pokedex_data_63_page_0, str_pokedex_data_63_page_1,
+	0,//unused
+	374, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 64
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_s, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_s, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	13, 565,//Height & weight
+	str_pokedex_data_64_page_0, str_pokedex_data_64_page_1,
+	0,//unused
+	272, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 65
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_s, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_s, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 480,//Height & weight
+	str_pokedex_data_65_page_0, str_pokedex_data_65_page_1,
+	0,//unused
+	272, 65535,//Pokemon scale, displacement
+	271, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 66
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_a, PCHAR_f, PCHAR_t, PCHAR_p, PCHAR_r, PCHAR_o, PCHAR_t, PCHAR_z, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_p, PCHAR_o, PCHAR_w, PCHAR_e, PCHAR_r, 0xff, 0x0})),
+	8, 195,//Height & weight
+	str_pokedex_data_66_page_0, str_pokedex_data_66_page_1,
+	0,//unused
+	320, 12,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 67
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_a, PCHAR_f, PCHAR_t, PCHAR_p, PCHAR_r, PCHAR_o, PCHAR_t, PCHAR_z, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_p, PCHAR_o, PCHAR_w, PCHAR_e, PCHAR_r, 0xff, 0x0})),
+	15, 705,//Height & weight
+	str_pokedex_data_67_page_0, str_pokedex_data_67_page_1,
+	0,//unused
+	304, 6,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 68
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_a, PCHAR_f, PCHAR_t, PCHAR_p, PCHAR_r, PCHAR_o, PCHAR_t, PCHAR_z, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_p, PCHAR_o, PCHAR_w, PCHAR_e, PCHAR_r, 0xff, 0x0})),
+	16, 1300,//Height & weight
+	str_pokedex_data_68_page_0, str_pokedex_data_68_page_1,
+	0,//unused
+	278, 2,//Pokemon scale, displacement
+	283, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 69
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_o, PCHAR_w, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 40,//Height & weight
+	str_pokedex_data_69_page_0, str_pokedex_data_69_page_1,
+	0,//unused
+	354, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 70
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_i, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_o, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_y, PCHAR_c, PCHAR_a, PCHAR_t, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0})),
+	10, 64,//Height & weight
+	str_pokedex_data_70_page_0, str_pokedex_data_70_page_1,
+	0,//unused
+	256, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 71
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_i, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_o, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_y, PCHAR_c, PCHAR_a, PCHAR_t, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0})),
+	17, 155,//Height & weight
+	str_pokedex_data_71_page_0, str_pokedex_data_71_page_1,
+	0,//unused
+	256, 2,//Pokemon scale, displacement
+	302, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 72
+	PSTRING(P99_PROCTECT({PCHAR_Q, PCHAR_u, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_J, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_y, PCHAR_f, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0})),
+	9, 455,//Height & weight
+	str_pokedex_data_72_page_0, str_pokedex_data_72_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 73
+	PSTRING(P99_PROCTECT({PCHAR_Q, PCHAR_u, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_J, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_y, PCHAR_f, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0})),
+	16, 550,//Height & weight
+	str_pokedex_data_73_page_0, str_pokedex_data_73_page_1,
+	0,//unused
+	272, 65535,//Pokemon scale, displacement
+	312, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 74
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 200,//Height & weight
+	str_pokedex_data_74_page_0, str_pokedex_data_74_page_1,
+	0,//unused
+	330, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 75
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 1050,//Height & weight
+	str_pokedex_data_75_page_0, str_pokedex_data_75_page_1,
+	0,//unused
+	272, 8,//Pokemon scale, displacement
+	305, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 76
+	PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_r, PCHAR_g, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_g, PCHAR_a, PCHAR_t, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	14, 3000,//Height & weight
+	str_pokedex_data_76_page_0, str_pokedex_data_76_page_1,
+	0,//unused
+	266, 3,//Pokemon scale, displacement
+	298, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 77
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_u, PCHAR_e, PCHAR_r, PCHAR_p, PCHAR_f, PCHAR_e, PCHAR_r, PCHAR_d, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_r, PCHAR_e, PCHAR_SPACE, PCHAR_H, PCHAR_o, PCHAR_r, PCHAR_s, PCHAR_e, 0xff, 0x0})),
+	10, 300,//Height & weight
+	str_pokedex_data_77_page_0, str_pokedex_data_77_page_1,
+	0,//unused
+	288, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 78
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_u, PCHAR_e, PCHAR_r, PCHAR_p, PCHAR_f, PCHAR_e, PCHAR_r, PCHAR_d, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_r, PCHAR_e, PCHAR_SPACE, PCHAR_H, PCHAR_o, PCHAR_r, PCHAR_s, PCHAR_e, 0xff, 0x0})),
+	17, 950,//Height & weight
+	str_pokedex_data_78_page_0, str_pokedex_data_78_page_1,
+	0,//unused
+	282, 65535,//Pokemon scale, displacement
+	312, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 79
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_n, PCHAR_a, PCHAR_r, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_p, PCHAR_e, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 360,//Height & weight
+	str_pokedex_data_79_page_0, str_pokedex_data_79_page_1,
+	0,//unused
+	271, 10,//Pokemon scale, displacement
+	272, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 80
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_y, PCHAR_m, PCHAR_b, PCHAR_i, PCHAR_o, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_e, PCHAR_r, PCHAR_m, PCHAR_i, PCHAR_t, PCHAR_SPACE, PCHAR_C, PCHAR_r, PCHAR_a, PCHAR_b, 0xff})),
+	16, 785,//Height & weight
+	str_pokedex_data_80_page_0, str_pokedex_data_80_page_1,
+	0,//unused
+	257, 65534,//Pokemon scale, displacement
+	312, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 81
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_n, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_n, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	3, 60,//Height & weight
+	str_pokedex_data_81_page_0, str_pokedex_data_81_page_1,
+	0,//unused
+	294, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 82
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_n, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_n, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 600,//Height & weight
+	str_pokedex_data_82_page_0, str_pokedex_data_82_page_1,
+	0,//unused
+	293, 65532,//Pokemon scale, displacement
+	273, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 83
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_d, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_d, PCHAR_SPACE, PCHAR_D, PCHAR_u, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0})),
+	8, 150,//Height & weight
+	str_pokedex_data_83_page_0, str_pokedex_data_83_page_1,
+	0,//unused
+	317, 65534,//Pokemon scale, displacement
+	256, 65533,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 84
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_u, PCHAR_o, PCHAR_v, PCHAR_o, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_w, PCHAR_i, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0})),
+	14, 392,//Height & weight
+	str_pokedex_data_84_page_0, str_pokedex_data_84_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	287, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 85
+	PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_i, PCHAR_v, PCHAR_o, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_i, PCHAR_p, PCHAR_l, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff})),
+	18, 852,//Height & weight
+	str_pokedex_data_85_page_0, str_pokedex_data_85_page_1,
+	0,//unused
+	272, 65534,//Pokemon scale, displacement
+	296, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 86
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_h, PCHAR_u, PCHAR_n, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_a, PCHAR_SPACE, PCHAR_L, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0})),
+	11, 900,//Height & weight
+	str_pokedex_data_86_page_0, str_pokedex_data_86_page_1,
+	0,//unused
+	298, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 87
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_h, PCHAR_u, PCHAR_n, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_a, PCHAR_SPACE, PCHAR_L, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0})),
+	17, 1200,//Height & weight
+	str_pokedex_data_87_page_0, str_pokedex_data_87_page_1,
+	0,//unused
+	288, 1,//Pokemon scale, displacement
+	306, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 88
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_l, PCHAR_u, PCHAR_d, PCHAR_g, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	9, 300,//Height & weight
+	str_pokedex_data_88_page_0, str_pokedex_data_88_page_1,
+	0,//unused
+	258, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 89
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_l, PCHAR_u, PCHAR_d, PCHAR_g, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 300,//Height & weight
+	str_pokedex_data_89_page_0, str_pokedex_data_89_page_1,
+	0,//unused
+	288, 7,//Pokemon scale, displacement
+	288, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 90
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_v, PCHAR_a, PCHAR_l, PCHAR_v, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	3, 40,//Height & weight
+	str_pokedex_data_90_page_0, str_pokedex_data_90_page_1,
+	0,//unused
+	643, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 91
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_v, PCHAR_a, PCHAR_l, PCHAR_v, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	15, 1325,//Height & weight
+	str_pokedex_data_91_page_0, str_pokedex_data_91_page_1,
+	0,//unused
+	264, 0,//Pokemon scale, displacement
+	288, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 92
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_a, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_G, PCHAR_a, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	13, 1,//Height & weight
+	str_pokedex_data_92_page_0, str_pokedex_data_92_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 93
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_a, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_G, PCHAR_a, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	16, 1,//Height & weight
+	str_pokedex_data_93_page_0, str_pokedex_data_93_page_1,
+	0,//unused
+	269, 2,//Pokemon scale, displacement
+	308, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 94
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_d, PCHAR_o, PCHAR_w, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 405,//Height & weight
+	str_pokedex_data_94_page_0, str_pokedex_data_94_page_1,
+	0,//unused
+	256, 4,//Pokemon scale, displacement
+	317, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 95
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_l, PCHAR_s, PCHAR_n, PCHAR_a, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_S, PCHAR_n, PCHAR_a, PCHAR_k, PCHAR_e, 0xff, 0x0})),
+	88, 2100,//Height & weight
+	str_pokedex_data_95_page_0, str_pokedex_data_95_page_1,
+	0,//unused
+	257, 0,//Pokemon scale, displacement
+	515, 12,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 96
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_n, PCHAR_o, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_n, PCHAR_o, PCHAR_s, PCHAR_i, PCHAR_s, 0xff, 0x0, 0x0, 0x0})),
+	10, 324,//Height & weight
+	str_pokedex_data_96_page_0, str_pokedex_data_96_page_1,
+	0,//unused
+	274, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 97
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_n, PCHAR_o, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_n, PCHAR_o, PCHAR_s, PCHAR_i, PCHAR_s, 0xff, 0x0, 0x0, 0x0})),
+	16, 756,//Height & weight
+	str_pokedex_data_97_page_0, str_pokedex_data_97_page_1,
+	0,//unused
+	298, 3,//Pokemon scale, displacement
+	310, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 98
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_a, PCHAR_b, PCHAR_b, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_i, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_C, PCHAR_r, PCHAR_a, PCHAR_b, 0xff, 0x0})),
+	4, 65,//Height & weight
+	str_pokedex_data_98_page_0, str_pokedex_data_98_page_1,
+	0,//unused
+	469, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 99
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_n, PCHAR_e, PCHAR_i, PCHAR_f, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_n, PCHAR_c, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	13, 600,//Height & weight
+	str_pokedex_data_99_page_0, str_pokedex_data_99_page_1,
+	0,//unused
+	287, 3,//Pokemon scale, displacement
+	308, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 100
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 104,//Height & weight
+	str_pokedex_data_100_page_0, str_pokedex_data_100_page_1,
+	0,//unused
+	364, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 101
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 666,//Height & weight
+	str_pokedex_data_101_page_0, str_pokedex_data_101_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 102
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_g, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 25,//Height & weight
+	str_pokedex_data_102_page_0, str_pokedex_data_102_page_1,
+	0,//unused
+	495, 65532,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 103
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_l, PCHAR_m, PCHAR_f, PCHAR_r, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_c, PCHAR_o, PCHAR_n, PCHAR_u, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	20, 1200,//Height & weight
+	str_pokedex_data_103_page_0, str_pokedex_data_103_page_1,
+	0,//unused
+	283, 0,//Pokemon scale, displacement
+	376, 7,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 104
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_n, PCHAR_s, PCHAR_a, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_n, PCHAR_e, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 65,//Height & weight
+	str_pokedex_data_104_page_0, str_pokedex_data_104_page_1,
+	0,//unused
+	545, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 105
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_n, PCHAR_o, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, PCHAR_f, PCHAR_a, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_o, PCHAR_n, PCHAR_e, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_e, PCHAR_p, PCHAR_e, PCHAR_r, 0xff})),
+	10, 450,//Height & weight
+	str_pokedex_data_105_page_0, str_pokedex_data_105_page_1,
+	0,//unused
+	293, 12,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 106
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_K, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	15, 498,//Height & weight
+	str_pokedex_data_106_page_0, str_pokedex_data_106_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	273, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 107
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_n, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_n, PCHAR_c, PCHAR_h, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0})),
+	14, 502,//Height & weight
+	str_pokedex_data_107_page_0, str_pokedex_data_107_page_1,
+	0,//unused
+	256, 1,//Pokemon scale, displacement
+	264, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 108
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_e, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	12, 655,//Height & weight
+	str_pokedex_data_108_page_0, str_pokedex_data_108_page_1,
+	0,//unused
+	272, 3,//Pokemon scale, displacement
+	272, 65533,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 109
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_w, PCHAR_o, PCHAR_l, PCHAR_k, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_G, PCHAR_a, PCHAR_s, 0xff, 0x0})),
+	6, 10,//Height & weight
+	str_pokedex_data_109_page_0, str_pokedex_data_109_page_1,
+	0,//unused
+	369, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 110
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_w, PCHAR_o, PCHAR_l, PCHAR_k, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_G, PCHAR_a, PCHAR_s, 0xff, 0x0})),
+	12, 95,//Height & weight
+	str_pokedex_data_110_page_0, str_pokedex_data_110_page_1,
+	0,//unused
+	321, 65535,//Pokemon scale, displacement
+	276, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 111
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_k, PCHAR_e, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 1150,//Height & weight
+	str_pokedex_data_111_page_0, str_pokedex_data_111_page_1,
+	0,//unused
+	291, 7,//Pokemon scale, displacement
+	276, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 112
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_o, PCHAR_h, PCHAR_r, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_i, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	19, 1200,//Height & weight
+	str_pokedex_data_112_page_0, str_pokedex_data_112_page_1,
+	0,//unused
+	272, 65535,//Pokemon scale, displacement
+	344, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 113
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_g, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 346,//Height & weight
+	str_pokedex_data_113_page_0, str_pokedex_data_113_page_1,
+	0,//unused
+	257, 6,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 114
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_i, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_n, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 110,//Height & weight
+	str_pokedex_data_114_page_0, str_pokedex_data_114_page_1,
+	0,//unused
+	451, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 115
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_r, PCHAR_e, PCHAR_n, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	22, 800,//Height & weight
+	str_pokedex_data_115_page_0, str_pokedex_data_115_page_1,
+	0,//unused
+	257, 65533,//Pokemon scale, displacement
+	349, 5,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 116
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 80,//Height & weight
+	str_pokedex_data_116_page_0, str_pokedex_data_116_page_1,
+	0,//unused
+	399, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 117
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 250,//Height & weight
+	str_pokedex_data_117_page_0, str_pokedex_data_117_page_1,
+	0,//unused
+	296, 3,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 118
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_l, PCHAR_e, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_G, PCHAR_o, PCHAR_l, PCHAR_d, PCHAR_f, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0})),
+	6, 150,//Height & weight
+	str_pokedex_data_118_page_0, str_pokedex_data_118_page_1,
+	0,//unused
+	379, 4,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 119
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_l, PCHAR_e, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_G, PCHAR_o, PCHAR_l, PCHAR_d, PCHAR_f, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0})),
+	13, 390,//Height & weight
+	str_pokedex_data_119_page_0, str_pokedex_data_119_page_1,
+	0,//unused
+	304, 1,//Pokemon scale, displacement
+	288, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 120
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_f, PCHAR_o, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_p, PCHAR_e, 0xff, 0x0})),
+	8, 345,//Height & weight
+	str_pokedex_data_120_page_0, str_pokedex_data_120_page_1,
+	0,//unused
+	326, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 121
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_i, PCHAR_oe, PCHAR_s, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_i, PCHAR_o, PCHAR_u, PCHAR_s, 0xff, 0x0})),
+	11, 800,//Height & weight
+	str_pokedex_data_121_page_0, str_pokedex_data_121_page_1,
+	0,//unused
+	301, 3,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 122
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_e, PCHAR_i, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_r, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	7, 10,//Height & weight
+	str_pokedex_data_122_page_0, str_pokedex_data_122_page_1,
+	0,//unused
+	407, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 123
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_n, PCHAR_t, PCHAR_i, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_n, PCHAR_t, PCHAR_i, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 560,//Height & weight
+	str_pokedex_data_123_page_0, str_pokedex_data_123_page_1,
+	0,//unused
+	272, 0,//Pokemon scale, displacement
+	293, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 124
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_l, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_u, PCHAR_m, PCHAR_a, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_p, PCHAR_e, 0xff})),
+	14, 406,//Height & weight
+	str_pokedex_data_124_page_0, str_pokedex_data_124_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	300, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 125
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_l, PCHAR_e, PCHAR_k, PCHAR_t, PCHAR_r, PCHAR_o, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_l, PCHAR_e, PCHAR_c, PCHAR_t, PCHAR_r, PCHAR_i, PCHAR_c, 0xff, 0x0, 0x0, 0x0})),
+	11, 300,//Height & weight
+	str_pokedex_data_125_page_0, str_pokedex_data_125_page_1,
+	0,//unused
+	330, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 126
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_r, PCHAR_e, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_t, PCHAR_f, PCHAR_i, PCHAR_r, PCHAR_e, 0xff, 0x0, 0x0, 0x0})),
+	13, 445,//Height & weight
+	str_pokedex_data_126_page_0, str_pokedex_data_126_page_1,
+	0,//unused
+	293, 4,//Pokemon scale, displacement
+	272, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 127
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_n, PCHAR_e, PCHAR_i, PCHAR_f, PCHAR_k, PCHAR_ae, PCHAR_f, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_g, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_e, PCHAR_t, PCHAR_l, PCHAR_e, 0xff})),
+	15, 550,//Height & weight
+	str_pokedex_data_127_page_0, str_pokedex_data_127_page_1,
+	0,//unused
+	256, 1,//Pokemon scale, displacement
+	257, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 128
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_d, PCHAR_b, PCHAR_u, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_d, PCHAR_SPACE, PCHAR_B, PCHAR_u, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0})),
+	14, 884,//Height & weight
+	str_pokedex_data_128_page_0, str_pokedex_data_128_page_1,
+	0,//unused
+	256, 2,//Pokemon scale, displacement
+	312, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 129
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	9, 100,//Height & weight
+	str_pokedex_data_129_page_0, str_pokedex_data_129_page_1,
+	0,//unused
+	317, 4,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 130
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_s, PCHAR_a, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_t, PCHAR_r, PCHAR_o, PCHAR_c, PCHAR_i, PCHAR_o, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0})),
+	65, 2350,//Height & weight
+	str_pokedex_data_130_page_0, str_pokedex_data_130_page_1,
+	0,//unused
+	288, 65535,//Pokemon scale, displacement
+	512, 11,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 131
+	PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_s, PCHAR_p, PCHAR_o, PCHAR_r, PCHAR_t, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_s, PCHAR_p, PCHAR_o, PCHAR_r, PCHAR_t, 0xff, 0x0, 0x0})),
+	25, 2200,//Height & weight
+	str_pokedex_data_131_page_0, str_pokedex_data_131_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	425, 8,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 132
+	PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_s, PCHAR_f, PCHAR_o, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_s, PCHAR_f, PCHAR_o, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0})),
+	3, 40,//Height & weight
+	str_pokedex_data_132_page_0, str_pokedex_data_132_page_1,
+	0,//unused
+	602, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 133
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_v, PCHAR_o, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_v, PCHAR_o, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0})),
+	3, 65,//Height & weight
+	str_pokedex_data_133_page_0, str_pokedex_data_133_page_1,
+	0,//unused
+	476, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 134
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_b, PCHAR_b, PCHAR_l, PCHAR_a, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_u, PCHAR_b, PCHAR_b, PCHAR_l, PCHAR_e, PCHAR_SPACE, PCHAR_J, PCHAR_e, PCHAR_t, 0xff, 0x0})),
+	10, 290,//Height & weight
+	str_pokedex_data_134_page_0, str_pokedex_data_134_page_1,
+	0,//unused
+	316, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 135
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_i, PCHAR_t, PCHAR_z, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, PCHAR_n, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0})),
+	8, 245,//Height & weight
+	str_pokedex_data_135_page_0, str_pokedex_data_135_page_1,
+	0,//unused
+	283, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 136
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_u, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	9, 250,//Height & weight
+	str_pokedex_data_136_page_0, str_pokedex_data_136_page_1,
+	0,//unused
+	302, 11,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 137
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_r, PCHAR_t, PCHAR_u, PCHAR_e, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_r, PCHAR_t, PCHAR_u, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	8, 365,//Height & weight
+	str_pokedex_data_137_page_0, str_pokedex_data_137_page_1,
+	0,//unused
+	328, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 138
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_r, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_r, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 75,//Height & weight
+	str_pokedex_data_138_page_0, str_pokedex_data_138_page_1,
+	0,//unused
+	521, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 139
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_r, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_r, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 350,//Height & weight
+	str_pokedex_data_139_page_0, str_pokedex_data_139_page_1,
+	0,//unused
+	307, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 140
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_h, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_f, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0})),
+	5, 115,//Height & weight
+	str_pokedex_data_140_page_0, str_pokedex_data_140_page_1,
+	0,//unused
+	438, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 141
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_h, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_f, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0})),
+	13, 405,//Height & weight
+	str_pokedex_data_141_page_0, str_pokedex_data_141_page_1,
+	0,//unused
+	271, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 142
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	18, 590,//Height & weight
+	str_pokedex_data_142_page_0, str_pokedex_data_142_page_1,
+	0,//unused
+	275, 65535,//Pokemon scale, displacement
+	317, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 143
+	PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_g, PCHAR_t, PCHAR_r, PCHAR_ae, PCHAR_u, PCHAR_m, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_l, PCHAR_e, PCHAR_e, PCHAR_p, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0})),
+	21, 4600,//Height & weight
+	str_pokedex_data_143_page_0, str_pokedex_data_143_page_1,
+	0,//unused
+	275, 1,//Pokemon scale, displacement
+	408, 7,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 144
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_e, PCHAR_e, PCHAR_z, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	17, 554,//Height & weight
+	str_pokedex_data_144_page_0, str_pokedex_data_144_page_1,
+	0,//unused
+	278, 0,//Pokemon scale, displacement
+	308, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 145
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_l, PCHAR_e, PCHAR_k, PCHAR_t, PCHAR_r, PCHAR_o, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_l, PCHAR_e, PCHAR_c, PCHAR_t, PCHAR_r, PCHAR_i, PCHAR_c, 0xff, 0x0, 0x0, 0x0})),
+	16, 526,//Height & weight
+	str_pokedex_data_145_page_0, str_pokedex_data_145_page_1,
+	0,//unused
+	275, 1,//Pokemon scale, displacement
+	330, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 146
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 600,//Height & weight
+	str_pokedex_data_146_page_0, str_pokedex_data_146_page_1,
+	0,//unused
+	270, 1,//Pokemon scale, displacement
+	379, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 147
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	18, 33,//Height & weight
+	str_pokedex_data_147_page_0, str_pokedex_data_147_page_1,
+	0,//unused
+	256, 8,//Pokemon scale, displacement
+	386, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 148
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	40, 165,//Height & weight
+	str_pokedex_data_148_page_0, str_pokedex_data_148_page_1,
+	0,//unused
+	274, 0,//Pokemon scale, displacement
+	423, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 149
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	22, 2100,//Height & weight
+	str_pokedex_data_149_page_0, str_pokedex_data_149_page_1,
+	0,//unused
+	283, 65535,//Pokemon scale, displacement
+	342, 4,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 150
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_n, PCHAR_m, PCHAR_u, PCHAR_t, PCHAR_a, PCHAR_n, PCHAR_t, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_n, PCHAR_e, PCHAR_t, PCHAR_i, PCHAR_c, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	20, 1220,//Height & weight
+	str_pokedex_data_150_page_0, str_pokedex_data_150_page_1,
+	0,//unused
+	276, 65535,//Pokemon scale, displacement
+	342, 5,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 151
+	PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_e, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_A, PCHAR_r, PCHAR_t, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_N, PCHAR_e, PCHAR_w, PCHAR_SPACE, PCHAR_S, PCHAR_p, PCHAR_e, PCHAR_c, PCHAR_i, PCHAR_e, PCHAR_s, 0xff})),
+	4, 40,//Height & weight
+	str_pokedex_data_151_page_0, str_pokedex_data_151_page_1,
+	0,//unused
+	460, 65534,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 152
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_u, PCHAR_b, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_a, PCHAR_f, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	9, 64,//Height & weight
+	str_pokedex_data_152_page_0, str_pokedex_data_152_page_1,
+	0,//unused
+	512, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 153
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_u, PCHAR_b, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_a, PCHAR_f, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 158,//Height & weight
+	str_pokedex_data_153_page_0, str_pokedex_data_153_page_1,
+	0,//unused
+	296, 4,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 154
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_ae, PCHAR_u, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_e, PCHAR_r, PCHAR_b, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	18, 1005,//Height & weight
+	str_pokedex_data_154_page_0, str_pokedex_data_154_page_1,
+	0,//unused
+	286, 0,//Pokemon scale, displacement
+	317, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 155
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_u, PCHAR_e, PCHAR_r, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_r, PCHAR_e, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0})),
+	5, 79,//Height & weight
+	str_pokedex_data_155_page_0, str_pokedex_data_155_page_1,
+	0,//unused
+	539, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 156
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_u, PCHAR_l, PCHAR_k, PCHAR_a, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_o, PCHAR_l, PCHAR_c, PCHAR_a, PCHAR_n, PCHAR_o, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	9, 190,//Height & weight
+	str_pokedex_data_156_page_0, str_pokedex_data_156_page_1,
+	0,//unused
+	329, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 157
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_u, PCHAR_l, PCHAR_k, PCHAR_a, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_o, PCHAR_l, PCHAR_c, PCHAR_a, PCHAR_n, PCHAR_o, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	17, 795,//Height & weight
+	str_pokedex_data_157_page_0, str_pokedex_data_157_page_1,
+	0,//unused
+	284, 65535,//Pokemon scale, displacement
+	287, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 158
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_J, PCHAR_a, PCHAR_w, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 95,//Height & weight
+	str_pokedex_data_158_page_0, str_pokedex_data_158_page_1,
+	0,//unused
+	487, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 159
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_J, PCHAR_a, PCHAR_w, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	11, 250,//Height & weight
+	str_pokedex_data_159_page_0, str_pokedex_data_159_page_1,
+	0,//unused
+	378, 11,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 160
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_J, PCHAR_a, PCHAR_w, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	23, 888,//Height & weight
+	str_pokedex_data_160_page_0, str_pokedex_data_160_page_1,
+	0,//unused
+	282, 65535,//Pokemon scale, displacement
+	375, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 161
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_o, PCHAR_u, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 60,//Height & weight
+	str_pokedex_data_161_page_0, str_pokedex_data_161_page_1,
+	0,//unused
+	439, 12,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 162
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_o, PCHAR_n, PCHAR_n, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_B, PCHAR_o, PCHAR_d, PCHAR_y, 0xff, 0x0, 0x0})),
+	18, 325,//Height & weight
+	str_pokedex_data_162_page_0, str_pokedex_data_162_page_1,
+	0,//unused
+	346, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 163
+	PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_e, PCHAR_u, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_n, PCHAR_e, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_O, PCHAR_w, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 212,//Height & weight
+	str_pokedex_data_163_page_0, str_pokedex_data_163_page_1,
+	0,//unused
+	380, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 164
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_r, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_l, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_O, PCHAR_w, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	16, 408,//Height & weight
+	str_pokedex_data_164_page_0, str_pokedex_data_164_page_1,
+	0,//unused
+	278, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 165
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_ue, PCHAR_n, PCHAR_f, PCHAR_MINUS, PCHAR_P, PCHAR_u, PCHAR_n, PCHAR_k, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_v, PCHAR_e, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, 0xff, 0x0, 0x0})),
+	10, 108,//Height & weight
+	str_pokedex_data_165_page_0, str_pokedex_data_165_page_1,
+	0,//unused
+	256, 4,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 166
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_ue, PCHAR_n, PCHAR_f, PCHAR_MINUS, PCHAR_P, PCHAR_u, PCHAR_n, PCHAR_k, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_v, PCHAR_e, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, 0xff, 0x0, 0x0})),
+	14, 356,//Height & weight
+	str_pokedex_data_166_page_0, str_pokedex_data_166_page_1,
+	0,//unused
+	256, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 167
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_d, PCHAR_e, PCHAR_n, PCHAR_w, PCHAR_u, PCHAR_r, PCHAR_f, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_r, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_t, 0xff})),
+	5, 85,//Height & weight
+	str_pokedex_data_167_page_0, str_pokedex_data_167_page_1,
+	0,//unused
+	414, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 168
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_b, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_L, PCHAR_e, PCHAR_g, 0xff, 0x0, 0x0, 0x0})),
+	11, 335,//Height & weight
+	str_pokedex_data_168_page_0, str_pokedex_data_168_page_1,
+	0,//unused
+	316, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 169
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_e, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	18, 750,//Height & weight
+	str_pokedex_data_169_page_0, str_pokedex_data_169_page_1,
+	0,//unused
+	279, 65535,//Pokemon scale, displacement
+	313, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 170
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_g, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_g, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 120,//Height & weight
+	str_pokedex_data_170_page_0, str_pokedex_data_170_page_1,
+	0,//unused
+	424, 65534,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 171
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 225,//Height & weight
+	str_pokedex_data_171_page_0, str_pokedex_data_171_page_1,
+	0,//unused
+	269, 6,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 172
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_n, PCHAR_e, PCHAR_t, PCHAR_g, PCHAR_e, PCHAR_b, PCHAR_i, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0})),
+	3, 20,//Height & weight
+	str_pokedex_data_172_page_0, str_pokedex_data_172_page_1,
+	0,//unused
+	508, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 173
+	PSTRING(P99_PROCTECT({PCHAR_J, PCHAR_u, PCHAR_b, PCHAR_i, PCHAR_l, PCHAR_i, PCHAR_e, PCHAR_r, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_p, PCHAR_e, 0xff, 0x0})),
+	3, 30,//Height & weight
+	str_pokedex_data_173_page_0, str_pokedex_data_173_page_1,
+	0,//unused
+	462, 22,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 174
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_n, PCHAR_b, PCHAR_l, PCHAR_ue, PCHAR_t, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	3, 10,//Height & weight
+	str_pokedex_data_174_page_0, str_pokedex_data_174_page_1,
+	0,//unused
+	457, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 175
+	PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_n, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_k, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0})),
+	3, 15,//Height & weight
+	str_pokedex_data_175_page_0, str_pokedex_data_175_page_1,
+	0,//unused
+	507, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 176
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_e, PCHAR_u, PCHAR_d, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_p, PCHAR_p, PCHAR_i, PCHAR_n, PCHAR_e, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0})),
+	6, 32,//Height & weight
+	str_pokedex_data_176_page_0, str_pokedex_data_176_page_1,
+	0,//unused
+	424, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 177
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_l, PCHAR_e, PCHAR_i, PCHAR_n, PCHAR_v, PCHAR_o, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0})),
+	2, 20,//Height & weight
+	str_pokedex_data_177_page_0, str_pokedex_data_177_page_1,
+	0,//unused
+	610, 23,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 178
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 150,//Height & weight
+	str_pokedex_data_178_page_0, str_pokedex_data_178_page_1,
+	0,//unused
+	258, 4,//Pokemon scale, displacement
+	317, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 179
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_o, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 78,//Height & weight
+	str_pokedex_data_179_page_0, str_pokedex_data_179_page_1,
+	0,//unused
+	379, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 180
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_o, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 133,//Height & weight
+	str_pokedex_data_180_page_0, str_pokedex_data_180_page_1,
+	0,//unused
+	372, 13,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 181
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	14, 615,//Height & weight
+	str_pokedex_data_181_page_0, str_pokedex_data_181_page_1,
+	0,//unused
+	275, 2,//Pokemon scale, displacement
+	283, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 182
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_m, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_o, PCHAR_w, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 58,//Height & weight
+	str_pokedex_data_182_page_0, str_pokedex_data_182_page_1,
+	0,//unused
+	472, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 183
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_q, PCHAR_u, PCHAR_a, PCHAR_m, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_q, PCHAR_u, PCHAR_a, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_u, PCHAR_s, PCHAR_e, 0xff, 0x0})),
+	4, 85,//Height & weight
+	str_pokedex_data_183_page_0, str_pokedex_data_183_page_1,
+	0,//unused
+	476, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 184
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_q, PCHAR_u, PCHAR_a, PCHAR_h, PCHAR_a, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_q, PCHAR_u, PCHAR_a, PCHAR_SPACE, PCHAR_R, PCHAR_a, PCHAR_b, PCHAR_b, PCHAR_i, PCHAR_t, 0xff})),
+	8, 285,//Height & weight
+	str_pokedex_data_184_page_0, str_pokedex_data_184_page_1,
+	0,//unused
+	448, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 185
+	PSTRING(P99_PROCTECT({PCHAR_I, PCHAR_m, PCHAR_i, PCHAR_t, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_m, PCHAR_i, PCHAR_t, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0})),
+	12, 380,//Height & weight
+	str_pokedex_data_185_page_0, str_pokedex_data_185_page_1,
+	0,//unused
+	305, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 186
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_o, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 339,//Height & weight
+	str_pokedex_data_186_page_0, str_pokedex_data_186_page_1,
+	0,//unused
+	289, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 187
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_e, PCHAR_r, PCHAR_z, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_t, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_w, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0})),
+	4, 5,//Height & weight
+	str_pokedex_data_187_page_0, str_pokedex_data_187_page_1,
+	0,//unused
+	562, 65529,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 188
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_m, PCHAR_p, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_t, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_w, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0})),
+	6, 10,//Height & weight
+	str_pokedex_data_188_page_0, str_pokedex_data_188_page_1,
+	0,//unused
+	387, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 189
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_l, PCHAR_e, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_t, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_w, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0})),
+	8, 30,//Height & weight
+	str_pokedex_data_189_page_0, str_pokedex_data_189_page_1,
+	0,//unused
+	418, 65532,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 190
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_e, PCHAR_i, PCHAR_f, 0xff}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_T, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0x0, 0x0})),
+	8, 115,//Height & weight
+	str_pokedex_data_190_page_0, str_pokedex_data_190_page_1,
+	0,//unused
+	363, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 191
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_o, PCHAR_s, PCHAR_t, PCHAR_b, PCHAR_a, PCHAR_u, PCHAR_m, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	3, 18,//Height & weight
+	str_pokedex_data_191_page_0, str_pokedex_data_191_page_1,
+	0,//unused
+	541, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 192
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_o, PCHAR_s, PCHAR_t, PCHAR_b, PCHAR_a, PCHAR_u, PCHAR_m, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 85,//Height & weight
+	str_pokedex_data_192_page_0, str_pokedex_data_192_page_1,
+	0,//unused
+	374, 12,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 193
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_b, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_l, PCHAR_e, PCHAR_a, PCHAR_r, PCHAR_SPACE, PCHAR_W, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0})),
+	12, 380,//Height & weight
+	str_pokedex_data_193_page_0, str_pokedex_data_193_page_1,
+	0,//unused
+	274, 65532,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 194
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0})),
+	4, 85,//Height & weight
+	str_pokedex_data_194_page_0, str_pokedex_data_194_page_1,
+	0,//unused
+	479, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 195
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0})),
+	14, 750,//Height & weight
+	str_pokedex_data_195_page_0, str_pokedex_data_195_page_1,
+	0,//unused
+	273, 4,//Pokemon scale, displacement
+	273, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 196
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_o, PCHAR_n, PCHAR_n, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	9, 265,//Height & weight
+	str_pokedex_data_196_page_0, str_pokedex_data_196_page_1,
+	0,//unused
+	363, 12,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 197
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_n, PCHAR_d, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_o, PCHAR_n, PCHAR_l, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, 0xff, 0x0, 0x0})),
+	10, 270,//Height & weight
+	str_pokedex_data_197_page_0, str_pokedex_data_197_page_1,
+	0,//unused
+	317, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 198
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_i, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_a, PCHAR_r, PCHAR_k, PCHAR_n, PCHAR_e, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0})),
+	5, 21,//Height & weight
+	str_pokedex_data_198_page_0, str_pokedex_data_198_page_1,
+	0,//unused
+	401, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 199
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_n, PCHAR_a, PCHAR_r, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_y, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 795,//Height & weight
+	str_pokedex_data_199_page_0, str_pokedex_data_199_page_1,
+	0,//unused
+	265, 65535,//Pokemon scale, displacement
+	330, 4,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 200
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_e, PCHAR_i, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_r, PCHAR_e, PCHAR_e, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	7, 10,//Height & weight
+	str_pokedex_data_200_page_0, str_pokedex_data_200_page_1,
+	0,//unused
+	407, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 201
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_y, PCHAR_m, PCHAR_b, PCHAR_o, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_y, PCHAR_m, PCHAR_b, PCHAR_o, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 50,//Height & weight
+	str_pokedex_data_201_page_0, str_pokedex_data_201_page_1,
+	0,//unused
+	411, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 202
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_n, PCHAR_e, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_b, PCHAR_i, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_e, PCHAR_n, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	68, 285,//Height & weight
+	str_pokedex_data_202_page_0, str_pokedex_data_202_page_1,
+	0,//unused
+	517, 4,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 203
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_h, PCHAR_a, PCHAR_l, PCHAR_s, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_N, PCHAR_e, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0})),
+	15, 415,//Height & weight
+	str_pokedex_data_203_page_0, str_pokedex_data_203_page_1,
+	0,//unused
+	281, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 204
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_u, PCHAR_t, PCHAR_e, PCHAR_l, PCHAR_w, PCHAR_u, PCHAR_r, PCHAR_m, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_g, PCHAR_w, PCHAR_o, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 72,//Height & weight
+	str_pokedex_data_204_page_0, str_pokedex_data_204_page_1,
+	0,//unused
+	445, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 205
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_u, PCHAR_t, PCHAR_e, PCHAR_l, PCHAR_w, PCHAR_u, PCHAR_r, PCHAR_m, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_g, PCHAR_w, PCHAR_o, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	12, 1258,//Height & weight
+	str_pokedex_data_205_page_0, str_pokedex_data_205_page_1,
+	0,//unused
+	293, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 206
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_r, PCHAR_k, PCHAR_e, PCHAR_i, PCHAR_l, 0xff, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_n, PCHAR_a, PCHAR_k, PCHAR_e, 0xff, 0x0})),
+	15, 140,//Height & weight
+	str_pokedex_data_206_page_0, str_pokedex_data_206_page_1,
+	0,//unused
+	284, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 207
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_g, PCHAR_s, PCHAR_k, PCHAR_o, PCHAR_r, PCHAR_p, PCHAR_i, 0xff, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_y, PCHAR_s, PCHAR_c, PCHAR_o, PCHAR_r, PCHAR_p, PCHAR_i, PCHAR_o, PCHAR_n, 0xff})),
+	11, 648,//Height & weight
+	str_pokedex_data_207_page_0, str_pokedex_data_207_page_1,
+	0,//unused
+	350, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 208
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_h, PCHAR_l, PCHAR_b, PCHAR_o, PCHAR_a, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_n, PCHAR_a, PCHAR_k, PCHAR_e, 0xff, 0x0})),
+	92, 4000,//Height & weight
+	str_pokedex_data_208_page_0, str_pokedex_data_208_page_1,
+	0,//unused
+	278, 65535,//Pokemon scale, displacement
+	557, 13,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 209
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_i, PCHAR_r, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 78,//Height & weight
+	str_pokedex_data_209_page_0, str_pokedex_data_209_page_1,
+	0,//unused
+	465, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 210
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_i, PCHAR_r, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	14, 487,//Height & weight
+	str_pokedex_data_210_page_0, str_pokedex_data_210_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 211
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_p, PCHAR_p, PCHAR_e, PCHAR_l, PCHAR_z, PCHAR_a, PCHAR_h, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	18, 1004,//Height & weight
+	str_pokedex_data_211_page_0, str_pokedex_data_211_page_1,
+	0,//unused
+	777, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 212
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_n, PCHAR_e, PCHAR_i, PCHAR_f, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_n, PCHAR_c, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	18, 1180,//Height & weight
+	str_pokedex_data_212_page_0, str_pokedex_data_212_page_1,
+	0,//unused
+	282, 0,//Pokemon scale, displacement
+	282, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 213
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_i, PCHAR_m, PCHAR_m, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_l, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 205,//Height & weight
+	str_pokedex_data_213_page_0, str_pokedex_data_213_page_1,
+	0,//unused
+	485, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 214
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_l, PCHAR_h, PCHAR_o, PCHAR_r, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_l, PCHAR_e, PCHAR_SPACE, PCHAR_H, PCHAR_o, PCHAR_r, PCHAR_n, 0xff})),
+	15, 540,//Height & weight
+	str_pokedex_data_214_page_0, str_pokedex_data_214_page_1,
+	0,//unused
+	285, 0,//Pokemon scale, displacement
+	283, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 215
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_o, PCHAR_t, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_p, PCHAR_SPACE, PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_w, 0xff, 0x0})),
+	9, 280,//Height & weight
+	str_pokedex_data_215_page_0, str_pokedex_data_215_page_1,
+	0,//unused
+	413, 65533,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 216
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_l, PCHAR_e, PCHAR_i, PCHAR_n, PCHAR_b, PCHAR_ae, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_t, PCHAR_t, PCHAR_l, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_a, PCHAR_r, 0xff})),
+	6, 88,//Height & weight
+	str_pokedex_data_216_page_0, str_pokedex_data_216_page_1,
+	0,//unused
+	455, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 217
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_ae, PCHAR_f, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_i, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_a, PCHAR_t, PCHAR_o, PCHAR_r, 0xff, 0x0})),
+	18, 1258,//Height & weight
+	str_pokedex_data_217_page_0, str_pokedex_data_217_page_1,
+	0,//unused
+	275, 0,//Pokemon scale, displacement
+	280, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 218
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_v, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_v, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 350,//Height & weight
+	str_pokedex_data_218_page_0, str_pokedex_data_218_page_1,
+	0,//unused
+	329, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 219
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_v, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_v, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 550,//Height & weight
+	str_pokedex_data_219_page_0, str_pokedex_data_219_page_1,
+	0,//unused
+	332, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 220
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_r, PCHAR_k, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 65,//Height & weight
+	str_pokedex_data_220_page_0, str_pokedex_data_220_page_1,
+	0,//unused
+	324, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 221
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_w, PCHAR_i, PCHAR_n, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 558,//Height & weight
+	str_pokedex_data_221_page_0, str_pokedex_data_221_page_1,
+	0,//unused
+	306, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 222
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_r, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_r, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 50,//Height & weight
+	str_pokedex_data_222_page_0, str_pokedex_data_222_page_1,
+	0,//unused
+	410, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 223
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_o, PCHAR_c, PCHAR_h, PCHAR_d, PCHAR_r, PCHAR_u, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_J, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 120,//Height & weight
+	str_pokedex_data_223_page_0, str_pokedex_data_223_page_1,
+	0,//unused
+	316, 4,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 224
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_o, PCHAR_c, PCHAR_h, PCHAR_d, PCHAR_r, PCHAR_u, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_J, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	9, 285,//Height & weight
+	str_pokedex_data_224_page_0, str_pokedex_data_224_page_1,
+	0,//unused
+	296, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 225
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_e, PCHAR_f, PCHAR_e, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_t, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_l, PCHAR_i, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_y, 0xff, 0x0, 0x0, 0x0})),
+	9, 160,//Height & weight
+	str_pokedex_data_225_page_0, str_pokedex_data_225_page_1,
+	0,//unused
+	293, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 226
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_g, PCHAR_r, PCHAR_o, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_K, PCHAR_i, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	21, 2200,//Height & weight
+	str_pokedex_data_226_page_0, str_pokedex_data_226_page_1,
+	0,//unused
+	275, 0,//Pokemon scale, displacement
+	360, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 227
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_g, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_h, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_r, PCHAR_m, PCHAR_o, PCHAR_r, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0})),
+	17, 505,//Height & weight
+	str_pokedex_data_227_page_0, str_pokedex_data_227_page_1,
+	0,//unused
+	285, 0,//Pokemon scale, displacement
+	276, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 228
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_d, PCHAR_e, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_a, PCHAR_r, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 108,//Height & weight
+	str_pokedex_data_228_page_0, str_pokedex_data_228_page_1,
+	0,//unused
+	393, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 229
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_d, PCHAR_e, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_a, PCHAR_r, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	14, 350,//Height & weight
+	str_pokedex_data_229_page_0, str_pokedex_data_229_page_1,
+	0,//unused
+	256, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 230
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	18, 1520,//Height & weight
+	str_pokedex_data_230_page_0, str_pokedex_data_230_page_1,
+	0,//unused
+	257, 1,//Pokemon scale, displacement
+	293, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 231
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_r, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_N, PCHAR_o, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0})),
+	5, 335,//Height & weight
+	str_pokedex_data_231_page_0, str_pokedex_data_231_page_1,
+	0,//unused
+	465, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 232
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_r, PCHAR_m, PCHAR_o, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 1200,//Height & weight
+	str_pokedex_data_232_page_0, str_pokedex_data_232_page_1,
+	0,//unused
+	313, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 233
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_r, PCHAR_t, PCHAR_u, PCHAR_e, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_r, PCHAR_t, PCHAR_u, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 325,//Height & weight
+	str_pokedex_data_233_page_0, str_pokedex_data_233_page_1,
+	0,//unused
+	320, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 234
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_m, PCHAR_p, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_H, PCHAR_o, PCHAR_r, PCHAR_n, 0xff, 0x0, 0x0, 0x0})),
+	14, 712,//Height & weight
+	str_pokedex_data_234_page_0, str_pokedex_data_234_page_1,
+	0,//unused
+	277, 65535,//Pokemon scale, displacement
+	277, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 235
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_i, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_l, PCHAR_i, PCHAR_c, PCHAR_h, 0xff, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_i, PCHAR_n, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	12, 580,//Height & weight
+	str_pokedex_data_235_page_0, str_pokedex_data_235_page_1,
+	0,//unused
+	287, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 236
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_u, PCHAR_f, PCHAR_f, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	7, 210,//Height & weight
+	str_pokedex_data_236_page_0, str_pokedex_data_236_page_1,
+	0,//unused
+	292, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 237
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_p, PCHAR_f, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_n, PCHAR_d, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0x0, 0x0})),
+	14, 480,//Height & weight
+	str_pokedex_data_237_page_0, str_pokedex_data_237_page_1,
+	0,//unused
+	256, 2,//Pokemon scale, displacement
+	257, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 238
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_u, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_K, PCHAR_i, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 60,//Height & weight
+	str_pokedex_data_238_page_0, str_pokedex_data_238_page_1,
+	0,//unused
+	440, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 239
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_l, PCHAR_e, PCHAR_k, PCHAR_t, PCHAR_r, PCHAR_o, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_l, PCHAR_e, PCHAR_c, PCHAR_t, PCHAR_r, PCHAR_i, PCHAR_c, 0xff, 0x0, 0x0, 0x0})),
+	6, 235,//Height & weight
+	str_pokedex_data_239_page_0, str_pokedex_data_239_page_1,
+	0,//unused
+	363, 13,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 240
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, PCHAR_d, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_v, PCHAR_e, PCHAR_SPACE, PCHAR_C, PCHAR_o, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0})),
+	7, 214,//Height & weight
+	str_pokedex_data_240_page_0, str_pokedex_data_240_page_1,
+	0,//unused
+	284, 11,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 241
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_i, PCHAR_l, PCHAR_c, PCHAR_h, PCHAR_k, PCHAR_u, PCHAR_h, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_i, PCHAR_l, PCHAR_k, PCHAR_SPACE, PCHAR_C, PCHAR_o, PCHAR_w, 0xff, 0x0, 0x0, 0x0})),
+	12, 755,//Height & weight
+	str_pokedex_data_241_page_0, str_pokedex_data_241_page_1,
+	0,//unused
+	280, 3,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 242
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_e, PCHAR_u, PCHAR_d, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_p, PCHAR_p, PCHAR_i, PCHAR_n, PCHAR_e, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0})),
+	15, 468,//Height & weight
+	str_pokedex_data_242_page_0, str_pokedex_data_242_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	310, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 243
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_h, PCHAR_u, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	19, 1780,//Height & weight
+	str_pokedex_data_243_page_0, str_pokedex_data_243_page_1,
+	0,//unused
+	283, 0,//Pokemon scale, displacement
+	359, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 244
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_u, PCHAR_l, PCHAR_k, PCHAR_a, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_o, PCHAR_l, PCHAR_c, PCHAR_a, PCHAR_n, PCHAR_o, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	21, 1980,//Height & weight
+	str_pokedex_data_244_page_0, str_pokedex_data_244_page_1,
+	0,//unused
+	283, 0,//Pokemon scale, displacement
+	370, 7,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 245
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_l, PCHAR_a, PCHAR_r, PCHAR_l, PCHAR_i, PCHAR_c, PCHAR_h, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_u, PCHAR_r, PCHAR_o, PCHAR_r, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 1870,//Height & weight
+	str_pokedex_data_245_page_0, str_pokedex_data_245_page_1,
+	0,//unused
+	286, 0,//Pokemon scale, displacement
+	371, 7,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 246
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_l, PCHAR_s, PCHAR_h, PCHAR_a, PCHAR_u, PCHAR_t, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_S, PCHAR_k, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0})),
+	6, 720,//Height & weight
+	str_pokedex_data_246_page_0, str_pokedex_data_246_page_1,
+	0,//unused
+	472, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 247
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_r, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_e, PCHAR_l, PCHAR_l, 0xff, 0x0})),
+	12, 1520,//Height & weight
+	str_pokedex_data_247_page_0, str_pokedex_data_247_page_1,
+	0,//unused
+	292, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 248
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_r, PCHAR_m, PCHAR_o, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 2020,//Height & weight
+	str_pokedex_data_248_page_0, str_pokedex_data_248_page_1,
+	0,//unused
+	285, 0,//Pokemon scale, displacement
+	383, 7,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 249
+	PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_i, PCHAR_v, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	52, 2160,//Height & weight
+	str_pokedex_data_249_page_0, str_pokedex_data_249_page_1,
+	0,//unused
+	283, 0,//Pokemon scale, displacement
+	742, 18,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 250
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_n, PCHAR_b, PCHAR_o, PCHAR_g, PCHAR_e, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_i, PCHAR_n, PCHAR_b, PCHAR_o, PCHAR_w, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	38, 1990,//Height & weight
+	str_pokedex_data_250_page_0, str_pokedex_data_250_page_1,
+	0,//unused
+	283, 0,//Pokemon scale, displacement
+	620, 16,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 251
+	PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_e, PCHAR_i, PCHAR_t, PCHAR_r, PCHAR_e, PCHAR_i, PCHAR_s, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_m, PCHAR_e, PCHAR_SPACE, PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_v, PCHAR_e, PCHAR_l, 0xff})),
+	6, 50,//Height & weight
+	str_pokedex_data_251_page_0, str_pokedex_data_251_page_1,
+	0,//unused
+	393, 65526,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 252
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_c, PCHAR_k, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_o, PCHAR_d, PCHAR_SPACE, PCHAR_G, PCHAR_e, PCHAR_c, PCHAR_k, PCHAR_o, 0xff, 0x0})),
+	5, 50,//Height & weight
+	str_pokedex_data_252_page_0, str_pokedex_data_252_page_1,
+	0,//unused
+	541, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 253
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_e, PCHAR_r, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_o, PCHAR_d, PCHAR_SPACE, PCHAR_G, PCHAR_e, PCHAR_c, PCHAR_k, PCHAR_o, 0xff, 0x0})),
+	9, 216,//Height & weight
+	str_pokedex_data_253_page_0, str_pokedex_data_253_page_1,
+	0,//unused
+	360, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 254
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_i, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_o, PCHAR_r, PCHAR_e, PCHAR_s, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	17, 522,//Height & weight
+	str_pokedex_data_254_page_0, str_pokedex_data_254_page_1,
+	0,//unused
+	282, 65535,//Pokemon scale, displacement
+	313, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 255
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_l, PCHAR_p, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_h, PCHAR_i, PCHAR_c, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 25,//Height & weight
+	str_pokedex_data_255_page_0, str_pokedex_data_255_page_1,
+	0,//unused
+	566, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 256
+	PSTRING(P99_PROCTECT({PCHAR_O, PCHAR_r, PCHAR_t, PCHAR_h, PCHAR_o, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_Y, PCHAR_o, PCHAR_u, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_F, PCHAR_o, PCHAR_w, PCHAR_l, 0xff, 0x0})),
+	9, 195,//Height & weight
+	str_pokedex_data_256_page_0, str_pokedex_data_256_page_1,
+	0,//unused
+	343, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 257
+	PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_z, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	19, 520,//Height & weight
+	str_pokedex_data_257_page_0, str_pokedex_data_257_page_1,
+	0,//unused
+	275, 65535,//Pokemon scale, displacement
+	314, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 258
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, PCHAR_m, PCHAR_o, PCHAR_l, PCHAR_c, PCHAR_h, 0xff}), P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_d, PCHAR_SPACE, PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0})),
+	4, 76,//Height & weight
+	str_pokedex_data_258_page_0, str_pokedex_data_258_page_1,
+	0,//unused
+	535, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 259
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_l, PCHAR_p, PCHAR_h, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_d, PCHAR_SPACE, PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0})),
+	7, 280,//Height & weight
+	str_pokedex_data_259_page_0, str_pokedex_data_259_page_1,
+	0,//unused
+	340, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 260
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_d, PCHAR_SPACE, PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0})),
+	15, 819,//Height & weight
+	str_pokedex_data_260_page_0, str_pokedex_data_260_page_1,
+	0,//unused
+	276, 65535,//Pokemon scale, displacement
+	282, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 261
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 136,//Height & weight
+	str_pokedex_data_261_page_0, str_pokedex_data_261_page_1,
+	0,//unused
+	481, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 262
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 370,//Height & weight
+	str_pokedex_data_262_page_0, str_pokedex_data_262_page_1,
+	0,//unused
+	359, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 263
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_l, PCHAR_e, PCHAR_i, PCHAR_n, PCHAR_d, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_c, PCHAR_o, PCHAR_o, PCHAR_n, 0xff})),
+	4, 175,//Height & weight
+	str_pokedex_data_263_page_0, str_pokedex_data_263_page_1,
+	0,//unused
+	560, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 264
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_r, PCHAR_i, PCHAR_n, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_u, PCHAR_s, PCHAR_h, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	5, 325,//Height & weight
+	str_pokedex_data_264_page_0, str_pokedex_data_264_page_1,
+	0,//unused
+	321, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 265
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_u, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_r, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	3, 36,//Height & weight
+	str_pokedex_data_265_page_0, str_pokedex_data_265_page_1,
+	0,//unused
+	711, 22,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 266
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_k, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_c, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 100,//Height & weight
+	str_pokedex_data_266_page_0, str_pokedex_data_266_page_1,
+	0,//unused
+	431, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 267
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_l, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_u, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_f, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0})),
+	10, 284,//Height & weight
+	str_pokedex_data_267_page_0, str_pokedex_data_267_page_1,
+	0,//unused
+	298, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 268
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_k, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_c, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 115,//Height & weight
+	str_pokedex_data_268_page_0, str_pokedex_data_268_page_1,
+	0,//unused
+	391, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 269
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_m, PCHAR_o, PCHAR_t, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_t, PCHAR_h, 0xff})),
+	12, 316,//Height & weight
+	str_pokedex_data_269_page_0, str_pokedex_data_269_page_1,
+	0,//unused
+	269, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 270
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, PCHAR_l, PCHAR_i, PCHAR_n, PCHAR_s, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_W, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0x0})),
+	5, 26,//Height & weight
+	str_pokedex_data_270_page_0, str_pokedex_data_270_page_1,
+	0,//unused
+	406, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 271
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_o, PCHAR_h, PCHAR_m, PCHAR_u, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_J, PCHAR_o, PCHAR_l, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	12, 325,//Height & weight
+	str_pokedex_data_271_page_0, str_pokedex_data_271_page_1,
+	0,//unused
+	277, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 272
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_o, PCHAR_r, PCHAR_g, PCHAR_l, PCHAR_o, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_a, PCHAR_r, PCHAR_e, PCHAR_f, PCHAR_r, PCHAR_e, PCHAR_e, 0xff, 0x0, 0x0, 0x0})),
+	15, 550,//Height & weight
+	str_pokedex_data_272_page_0, str_pokedex_data_272_page_1,
+	0,//unused
+	283, 0,//Pokemon scale, displacement
+	282, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 273
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_l, PCHAR_n, PCHAR_u, PCHAR_s, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_c, PCHAR_o, PCHAR_r, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 40,//Height & weight
+	str_pokedex_data_273_page_0, str_pokedex_data_273_page_1,
+	0,//unused
+	472, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 274
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_i, PCHAR_n, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_l, PCHAR_i, PCHAR_s, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 280,//Height & weight
+	str_pokedex_data_274_page_0, str_pokedex_data_274_page_1,
+	0,//unused
+	299, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 275
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_a, PCHAR_g, PCHAR_e, PCHAR_n, 0xff}), P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	13, 596,//Height & weight
+	str_pokedex_data_275_page_0, str_pokedex_data_275_page_1,
+	0,//unused
+	290, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 276
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_ae, PCHAR_l, PCHAR_b, PCHAR_l, PCHAR_e, PCHAR_i, PCHAR_n, 0xff}), P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_s, PCHAR_w, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_w, 0xff})),
+	3, 23,//Height & weight
+	str_pokedex_data_276_page_0, str_pokedex_data_276_page_1,
+	0,//unused
+	465, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 277
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_a, PCHAR_l, PCHAR_b, PCHAR_e, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_w, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_w, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	7, 198,//Height & weight
+	str_pokedex_data_277_page_0, str_pokedex_data_277_page_1,
+	0,//unused
+	428, 13,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 278
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_m, PCHAR_oe, PCHAR_w, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_a, PCHAR_g, PCHAR_u, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 95,//Height & weight
+	str_pokedex_data_278_page_0, str_pokedex_data_278_page_1,
+	0,//unused
+	295, 65534,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 279
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, PCHAR_v, PCHAR_o, PCHAR_g, PCHAR_e, PCHAR_l, 0xff}), P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff, 0x0})),
+	12, 280,//Height & weight
+	str_pokedex_data_279_page_0, str_pokedex_data_279_page_1,
+	0,//unused
+	288, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 280
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_f, PCHAR_ue, PCHAR_h, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_e, PCHAR_l, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	4, 66,//Height & weight
+	str_pokedex_data_280_page_0, str_pokedex_data_280_page_1,
+	0,//unused
+	457, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 281
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_m, PCHAR_o, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_m, PCHAR_o, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	8, 202,//Height & weight
+	str_pokedex_data_281_page_0, str_pokedex_data_281_page_1,
+	0,//unused
+	354, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 282
+	PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_m, PCHAR_a, PCHAR_r, PCHAR_m, PCHAR_u, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_m, PCHAR_b, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	16, 484,//Height & weight
+	str_pokedex_data_282_page_0, str_pokedex_data_282_page_1,
+	0,//unused
+	277, 0,//Pokemon scale, displacement
+	276, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 283
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, PCHAR_g, PCHAR_e, PCHAR_h, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_n, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_k, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, 0xff})),
+	5, 17,//Height & weight
+	str_pokedex_data_283_page_0, str_pokedex_data_283_page_1,
+	0,//unused
+	375, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 284
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_u, PCHAR_g, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_y, PCHAR_e, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	8, 36,//Height & weight
+	str_pokedex_data_284_page_0, str_pokedex_data_284_page_1,
+	0,//unused
+	378, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 285
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_l, PCHAR_z, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_h, PCHAR_r, PCHAR_o, PCHAR_o, PCHAR_m, 0xff, 0x0, 0x0, 0x0})),
+	4, 45,//Height & weight
+	str_pokedex_data_285_page_0, str_pokedex_data_285_page_1,
+	0,//unused
+	513, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 286
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_l, PCHAR_z, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_h, PCHAR_r, PCHAR_o, PCHAR_o, PCHAR_m, 0xff, 0x0, 0x0, 0x0})),
+	12, 392,//Height & weight
+	str_pokedex_data_286_page_0, str_pokedex_data_286_page_1,
+	0,//unused
+	324, 6,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 287
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_u, PCHAR_l, PCHAR_p, PCHAR_e, PCHAR_l, PCHAR_z, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_l, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	8, 240,//Height & weight
+	str_pokedex_data_287_page_0, str_pokedex_data_287_page_1,
+	0,//unused
+	291, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 288
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_d, PCHAR_a, PCHAR_f, PCHAR_f, PCHAR_e, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_d, PCHAR_SPACE, PCHAR_M, PCHAR_o, PCHAR_n, PCHAR_k, PCHAR_e, PCHAR_y, 0xff})),
+	14, 465,//Height & weight
+	str_pokedex_data_288_page_0, str_pokedex_data_288_page_1,
+	0,//unused
+	301, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 289
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_z, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 1305,//Height & weight
+	str_pokedex_data_289_page_0, str_pokedex_data_289_page_1,
+	0,//unused
+	277, 5,//Pokemon scale, displacement
+	326, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 290
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_o, PCHAR_r, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_e, PCHAR_i, PCHAR_t, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_i, PCHAR_n, PCHAR_e, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	5, 55,//Height & weight
+	str_pokedex_data_290_page_0, str_pokedex_data_290_page_1,
+	0,//unused
+	405, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 291
+	PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_i, PCHAR_n, PCHAR_j, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_N, PCHAR_i, PCHAR_n, PCHAR_j, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 120,//Height & weight
+	str_pokedex_data_291_page_0, str_pokedex_data_291_page_1,
+	0,//unused
+	383, 65527,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 292
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_ae, PCHAR_u, PCHAR_t, PCHAR_u, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_h, PCHAR_e, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 12,//Height & weight
+	str_pokedex_data_292_page_0, str_pokedex_data_292_page_1,
+	0,//unused
+	372, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 293
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_d, PCHAR_h, PCHAR_a, PCHAR_i, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_h, PCHAR_i, PCHAR_s, PCHAR_p, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 163,//Height & weight
+	str_pokedex_data_293_page_0, str_pokedex_data_293_page_1,
+	0,//unused
+	373, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 294
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_oe, PCHAR_h, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_V, PCHAR_o, PCHAR_i, PCHAR_c, PCHAR_e, 0xff, 0x0, 0x0})),
+	10, 405,//Height & weight
+	str_pokedex_data_294_page_0, str_pokedex_data_294_page_1,
+	0,//unused
+	356, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 295
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_s, PCHAR_a, PCHAR_n, PCHAR_z, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_u, PCHAR_d, PCHAR_SPACE, PCHAR_N, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_e, 0xff, 0x0})),
+	21, 840,//Height & weight
+	str_pokedex_data_295_page_0, str_pokedex_data_295_page_1,
+	0,//unused
+	284, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 296
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_p, PCHAR_i, PCHAR_e, PCHAR_l, 0xff}), P99_PROCTECT({PCHAR_G, PCHAR_u, PCHAR_t, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	10, 864,//Height & weight
+	str_pokedex_data_296_page_0, str_pokedex_data_296_page_1,
+	0,//unused
+	256, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 297
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_u, PCHAR_r, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_A, PCHAR_r, PCHAR_m, PCHAR_SPACE, PCHAR_T, PCHAR_h, PCHAR_r, PCHAR_u, PCHAR_s, PCHAR_t, 0xff, 0x0})),
+	23, 2538,//Height & weight
+	str_pokedex_data_297_page_0, str_pokedex_data_297_page_1,
+	0,//unused
+	268, 65535,//Pokemon scale, displacement
+	375, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 298
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_p, PCHAR_u, PCHAR_n, PCHAR_k, PCHAR_t, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_l, PCHAR_k, PCHAR_a, PCHAR_SPACE, PCHAR_D, PCHAR_o, PCHAR_t, 0xff, 0x0, 0x0})),
+	2, 20,//Height & weight
+	str_pokedex_data_298_page_0, str_pokedex_data_298_page_1,
+	0,//unused
+	603, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 299
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_m, PCHAR_p, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_m, PCHAR_p, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	10, 970,//Height & weight
+	str_pokedex_data_299_page_0, str_pokedex_data_299_page_1,
+	0,//unused
+	256, 9,//Pokemon scale, displacement
+	289, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 300
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_ae, PCHAR_t, PCHAR_z, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_K, PCHAR_i, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 110,//Height & weight
+	str_pokedex_data_300_page_0, str_pokedex_data_300_page_1,
+	0,//unused
+	492, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 301
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_e, PCHAR_b, PCHAR_i, PCHAR_l, PCHAR_d, PCHAR_e, PCHAR_t, 0xff}), P99_PROCTECT({PCHAR_P, PCHAR_r, PCHAR_i, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 326,//Height & weight
+	str_pokedex_data_301_page_0, str_pokedex_data_301_page_1,
+	0,//unused
+	322, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 302
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_e, PCHAR_i, PCHAR_f, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_a, PCHAR_r, PCHAR_k, PCHAR_n, PCHAR_e, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0, 0x0})),
+	5, 110,//Height & weight
+	str_pokedex_data_302_page_0, str_pokedex_data_302_page_1,
+	0,//unused
+	451, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 303
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_i, PCHAR_n, PCHAR_d, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_c, PCHAR_e, PCHAR_i, PCHAR_v, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0})),
+	6, 115,//Height & weight
+	str_pokedex_data_303_page_0, str_pokedex_data_303_page_1,
+	0,//unused
+	466, 15,//Pokemon scale, displacement
+	256, 65533,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 304
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_p, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_A, PCHAR_r, PCHAR_m, PCHAR_o, PCHAR_r, 0xff, 0x0})),
+	4, 600,//Height & weight
+	str_pokedex_data_304_page_0, str_pokedex_data_304_page_1,
+	0,//unused
+	419, 21,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 305
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_p, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_A, PCHAR_r, PCHAR_m, PCHAR_o, PCHAR_r, 0xff, 0x0})),
+	9, 1200,//Height & weight
+	str_pokedex_data_305_page_0, str_pokedex_data_305_page_1,
+	0,//unused
+	275, 11,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 306
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_p, PCHAR_a, PCHAR_n, PCHAR_z, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_A, PCHAR_r, PCHAR_m, PCHAR_o, PCHAR_r, 0xff, 0x0})),
+	21, 3600,//Height & weight
+	str_pokedex_data_306_page_0, str_pokedex_data_306_page_1,
+	0,//unused
+	274, 65535,//Pokemon scale, displacement
+	374, 7,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 307
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_d, PCHAR_i, PCHAR_t, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_d, PCHAR_i, PCHAR_t, PCHAR_a, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0})),
+	6, 112,//Height & weight
+	str_pokedex_data_307_page_0, str_pokedex_data_307_page_1,
+	0,//unused
+	465, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 308
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_d, PCHAR_i, PCHAR_t, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_d, PCHAR_i, PCHAR_t, PCHAR_a, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0})),
+	13, 315,//Height & weight
+	str_pokedex_data_308_page_0, str_pokedex_data_308_page_1,
+	0,//unused
+	298, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 309
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_w, PCHAR_i, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, PCHAR_n, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0})),
+	6, 152,//Height & weight
+	str_pokedex_data_309_page_0, str_pokedex_data_309_page_1,
+	0,//unused
+	290, 16,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 310
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_n, PCHAR_t, PCHAR_l, PCHAR_a, PCHAR_d, PCHAR_u, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_i, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_g, PCHAR_e, 0xff, 0x0, 0x0})),
+	15, 402,//Height & weight
+	str_pokedex_data_310_page_0, str_pokedex_data_310_page_1,
+	0,//unused
+	256, 1,//Pokemon scale, displacement
+	257, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 311
+	PSTRING(P99_PROCTECT({PCHAR_J, PCHAR_u, PCHAR_b, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_h, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0})),
+	4, 42,//Height & weight
+	str_pokedex_data_311_page_0, str_pokedex_data_311_page_1,
+	0,//unused
+	515, 65527,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 312
+	PSTRING(P99_PROCTECT({PCHAR_J, PCHAR_u, PCHAR_b, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_h, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0})),
+	4, 42,//Height & weight
+	str_pokedex_data_312_page_0, str_pokedex_data_312_page_1,
+	0,//unused
+	512, 65529,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 313
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_b, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_r, PCHAR_e, PCHAR_f, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	7, 177,//Height & weight
+	str_pokedex_data_313_page_0, str_pokedex_data_313_page_1,
+	0,//unused
+	442, 65532,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 314
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_b, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_r, PCHAR_e, PCHAR_f, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 177,//Height & weight
+	str_pokedex_data_314_page_0, str_pokedex_data_314_page_1,
+	0,//unused
+	572, 65532,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 315
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_r, PCHAR_t, PCHAR_u, PCHAR_e, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_r, PCHAR_t, PCHAR_u, PCHAR_a, PCHAR_l, 0xFF, 0x0, 0x0, 0x0, 0x0})),
+	9, 340,//Height & weight
+	str_pokedex_data_315_page_0, str_pokedex_data_315_page_1,
+	0,//unused
+	677, 20,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 316
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_m, PCHAR_a, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	4, 103,//Height & weight
+	str_pokedex_data_316_page_0, str_pokedex_data_316_page_1,
+	0,//unused
+	593, 22,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 317
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_b, PCHAR_e, PCHAR_u, PCHAR_t, PCHAR_e, PCHAR_l, 0xff, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_g, 0xff, 0x0})),
+	17, 800,//Height & weight
+	str_pokedex_data_317_page_0, str_pokedex_data_317_page_1,
+	0,//unused
+	256, 5,//Pokemon scale, displacement
+	345, 4,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 318
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_n, PCHAR_a, PCHAR_d, PCHAR_e, PCHAR_n, PCHAR_l, PCHAR_o, PCHAR_s, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_v, PCHAR_a, PCHAR_g, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 208,//Height & weight
+	str_pokedex_data_318_page_0, str_pokedex_data_318_page_1,
+	0,//unused
+	362, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 319
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_r, PCHAR_u, PCHAR_t, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_r, PCHAR_u, PCHAR_t, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	18, 888,//Height & weight
+	str_pokedex_data_319_page_0, str_pokedex_data_319_page_1,
+	0,//unused
+	265, 0,//Pokemon scale, displacement
+	342, 4,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 320
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_u, PCHAR_g, PCHAR_e, PCHAR_l, PCHAR_w, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_SPACE, PCHAR_W, PCHAR_h, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0x0})),
+	20, 1300,//Height & weight
+	str_pokedex_data_320_page_0, str_pokedex_data_320_page_1,
+	0,//unused
+	256, 10,//Pokemon scale, displacement
+	493, 10,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 321
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_w, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_o, PCHAR_a, PCHAR_t, PCHAR_SPACE, PCHAR_W, PCHAR_h, PCHAR_a, PCHAR_l, PCHAR_e, 0xff})),
+	145, 3980,//Height & weight
+	str_pokedex_data_321_page_0, str_pokedex_data_321_page_1,
+	0,//unused
+	276, 65535,//Pokemon scale, displacement
+	1428, 20,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 322
+	PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_u, PCHAR_b, PCHAR_h, PCHAR_e, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_N, PCHAR_u, PCHAR_m, PCHAR_b, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 240,//Height & weight
+	str_pokedex_data_322_page_0, str_pokedex_data_322_page_1,
+	0,//unused
+	310, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 323
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_u, PCHAR_s, PCHAR_b, PCHAR_r, PCHAR_u, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_r, PCHAR_u, PCHAR_p, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0})),
+	19, 2200,//Height & weight
+	str_pokedex_data_323_page_0, str_pokedex_data_323_page_1,
+	0,//unused
+	256, 6,//Pokemon scale, displacement
+	345, 4,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 324
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_a, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	5, 804,//Height & weight
+	str_pokedex_data_324_page_0, str_pokedex_data_324_page_1,
+	0,//unused
+	392, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 325
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_r, PCHAR_u, PCHAR_n, PCHAR_g, PCHAR_f, PCHAR_e, PCHAR_d, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_B, PCHAR_o, PCHAR_u, PCHAR_n, PCHAR_c, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	7, 306,//Height & weight
+	str_pokedex_data_325_page_0, str_pokedex_data_325_page_1,
+	0,//unused
+	423, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 326
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_n, PCHAR_i, PCHAR_p, PCHAR_u, PCHAR_l, PCHAR_a, PCHAR_t, PCHAR_o, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_n, PCHAR_i, PCHAR_p, PCHAR_u, PCHAR_l, PCHAR_a, PCHAR_t, PCHAR_e, 0xff, 0x0})),
+	9, 715,//Height & weight
+	str_pokedex_data_326_page_0, str_pokedex_data_326_page_1,
+	0,//unused
+	358, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 327
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_n, PCHAR_k, PCHAR_t, PCHAR_MINUS, PCHAR_P, PCHAR_a, PCHAR_n, PCHAR_d, PCHAR_a, 0xff}), P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_o, PCHAR_t, PCHAR_SPACE, PCHAR_P, PCHAR_a, PCHAR_n, PCHAR_d, PCHAR_a, 0xff, 0x0})),
+	11, 50,//Height & weight
+	str_pokedex_data_327_page_0, str_pokedex_data_327_page_1,
+	0,//unused
+	321, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 328
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_m, PCHAR_e, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_l, PCHAR_oe, PCHAR_w, PCHAR_e, 0xff}), P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_t, PCHAR_SPACE, PCHAR_P, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	7, 150,//Height & weight
+	str_pokedex_data_328_page_0, str_pokedex_data_328_page_1,
+	0,//unused
+	298, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 329
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_b, PCHAR_r, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_b, PCHAR_r, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0})),
+	11, 153,//Height & weight
+	str_pokedex_data_329_page_0, str_pokedex_data_329_page_1,
+	0,//unused
+	370, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 330
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 820,//Height & weight
+	str_pokedex_data_330_page_0, str_pokedex_data_330_page_1,
+	0,//unused
+	280, 0,//Pokemon scale, displacement
+	299, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 331
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_a, PCHAR_k, PCHAR_t, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_a, PCHAR_c, PCHAR_t, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	4, 513,//Height & weight
+	str_pokedex_data_331_page_0, str_pokedex_data_331_page_1,
+	0,//unused
+	455, 19,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 332
+	PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_o, PCHAR_g, PCHAR_e, PCHAR_l, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_o, PCHAR_c, PCHAR_k, 0xff}), P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_r, PCHAR_e, PCHAR_c, PCHAR_r, PCHAR_o, PCHAR_w, 0xff, 0x0, 0x0})),
+	13, 774,//Height & weight
+	str_pokedex_data_332_page_0, str_pokedex_data_332_page_1,
+	0,//unused
+	327, 3,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 333
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_l, PCHAR_l, PCHAR_v, PCHAR_o, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_t, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_r, PCHAR_d, 0xff})),
+	4, 12,//Height & weight
+	str_pokedex_data_333_page_0, str_pokedex_data_333_page_1,
+	0,//unused
+	422, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 334
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_m, PCHAR_m, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_H, PCHAR_u, PCHAR_m, PCHAR_m, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	11, 206,//Height & weight
+	str_pokedex_data_334_page_0, str_pokedex_data_334_page_1,
+	0,//unused
+	327, 0,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 335
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_e, PCHAR_t, PCHAR_t, PCHAR_k, PCHAR_a, PCHAR_t, PCHAR_z, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_a, PCHAR_t, PCHAR_SPACE, PCHAR_F, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_e, PCHAR_t, 0xff, 0x0})),
+	13, 403,//Height & weight
+	str_pokedex_data_335_page_0, str_pokedex_data_335_page_1,
+	0,//unused
+	256, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 336
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_e, PCHAR_i, PCHAR_s, PCHAR_s, PCHAR_z, PCHAR_a, PCHAR_h, PCHAR_n, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_SPACE, PCHAR_S, PCHAR_n, PCHAR_a, PCHAR_k, PCHAR_e, 0xff, 0x0})),
+	27, 525,//Height & weight
+	str_pokedex_data_336_page_0, str_pokedex_data_336_page_1,
+	0,//unused
+	275, 6,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 337
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_e, PCHAR_o, PCHAR_r, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_e, PCHAR_o, PCHAR_r, PCHAR_i, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0})),
+	10, 1680,//Height & weight
+	str_pokedex_data_337_page_0, str_pokedex_data_337_page_1,
+	0,//unused
+	300, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 338
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_e, PCHAR_o, PCHAR_r, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_e, PCHAR_o, PCHAR_r, PCHAR_i, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0})),
+	12, 1540,//Height & weight
+	str_pokedex_data_338_page_0, str_pokedex_data_338_page_1,
+	0,//unused
+	328, 65533,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 339
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_h, PCHAR_a, PCHAR_a, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_h, PCHAR_i, PCHAR_s, PCHAR_k, PCHAR_e, PCHAR_r, PCHAR_s, 0xff, 0x0, 0x0, 0x0})),
+	4, 19,//Height & weight
+	str_pokedex_data_339_page_0, str_pokedex_data_339_page_1,
+	0,//unused
+	581, 65534,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 340
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_h, PCHAR_a, PCHAR_a, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_h, PCHAR_i, PCHAR_s, PCHAR_k, PCHAR_e, PCHAR_r, PCHAR_s, 0xff, 0x0, 0x0, 0x0})),
+	9, 236,//Height & weight
+	str_pokedex_data_340_page_0, str_pokedex_data_340_page_1,
+	0,//unused
+	317, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 341
+	PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_o, PCHAR_b, PCHAR_i, PCHAR_a, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_u, PCHAR_f, PCHAR_f, PCHAR_i, PCHAR_a, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	6, 115,//Height & weight
+	str_pokedex_data_341_page_0, str_pokedex_data_341_page_1,
+	0,//unused
+	484, 18,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 342
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_g, PCHAR_u, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	11, 328,//Height & weight
+	str_pokedex_data_342_page_0, str_pokedex_data_342_page_1,
+	0,//unused
+	365, 7,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 343
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_h, PCHAR_m, PCHAR_p, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_y, PCHAR_SPACE, PCHAR_D, PCHAR_o, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0})),
+	5, 215,//Height & weight
+	str_pokedex_data_343_page_0, str_pokedex_data_343_page_1,
+	0,//unused
+	384, 18,//Pokemon scale, displacement
+	256, 65533,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 344
+	PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_h, PCHAR_m, PCHAR_p, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_e, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_y, PCHAR_SPACE, PCHAR_D, PCHAR_o, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0})),
+	15, 1080,//Height & weight
+	str_pokedex_data_344_page_0, str_pokedex_data_344_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	280, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 345
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_a, PCHAR_n, PCHAR_e, PCHAR_m, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_a, PCHAR_SPACE, PCHAR_L, PCHAR_i, PCHAR_l, PCHAR_y, 0xff, 0x0, 0x0, 0x0})),
+	10, 238,//Height & weight
+	str_pokedex_data_345_page_0, str_pokedex_data_345_page_1,
+	0,//unused
+	305, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 346
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_n, PCHAR_k, PCHAR_f, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_r, PCHAR_n, PCHAR_a, PCHAR_c, PCHAR_l, PCHAR_e, 0xff, 0x0, 0x0, 0x0})),
+	15, 604,//Height & weight
+	str_pokedex_data_346_page_0, str_pokedex_data_346_page_1,
+	0,//unused
+	275, 65535,//Pokemon scale, displacement
+	269, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 347
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_e, PCHAR_b, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_i, PCHAR_o, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_O, PCHAR_l, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_r, PCHAR_i, PCHAR_m, PCHAR_p, 0xff, 0x0})),
+	7, 125,//Height & weight
+	str_pokedex_data_347_page_0, str_pokedex_data_347_page_1,
+	0,//unused
+	296, 4,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 348
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_i, PCHAR_l, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_l, PCHAR_a, PCHAR_t, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 682,//Height & weight
+	str_pokedex_data_348_page_0, str_pokedex_data_348_page_1,
+	0,//unused
+	312, 2,//Pokemon scale, displacement
+	271, 65535,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 349
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_c, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 74,//Height & weight
+	str_pokedex_data_349_page_0, str_pokedex_data_349_page_1,
+	0,//unused
+	423, 3,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 350
+	PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_T, PCHAR_e, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	62, 1620,//Height & weight
+	str_pokedex_data_350_page_0, str_pokedex_data_350_page_1,
+	0,//unused
+	282, 65535,//Pokemon scale, displacement
+	382, 7,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 351
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_a, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	3, 8,//Height & weight
+	str_pokedex_data_351_page_0, str_pokedex_data_351_page_1,
+	0,//unused
+	435, 65531,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 352
+	PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_r, PCHAR_b, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_p, PCHAR_i, PCHAR_e, PCHAR_l, 0xff}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_l, PCHAR_o, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_w, PCHAR_a, PCHAR_p, 0xff, 0x0})),
+	10, 220,//Height & weight
+	str_pokedex_data_352_page_0, str_pokedex_data_352_page_1,
+	0,//unused
+	316, 8,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 353
+	PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_e, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 23,//Height & weight
+	str_pokedex_data_353_page_0, str_pokedex_data_353_page_1,
+	0,//unused
+	440, 65533,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 354
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_r, PCHAR_i, PCHAR_o, PCHAR_n, PCHAR_e, PCHAR_t, PCHAR_t, PCHAR_e, 0xff, 0x0}), P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_r, PCHAR_i, PCHAR_o, PCHAR_n, PCHAR_e, PCHAR_t, PCHAR_t, PCHAR_e, 0xff, 0x0})),
+	11, 125,//Height & weight
+	str_pokedex_data_354_page_0, str_pokedex_data_354_page_1,
+	0,//unused
+	262, 9,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 355
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_e, PCHAR_q, PCHAR_u, PCHAR_i, PCHAR_e, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_e, PCHAR_q, PCHAR_u, PCHAR_i, PCHAR_e, PCHAR_m, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	8, 150,//Height & weight
+	str_pokedex_data_355_page_0, str_pokedex_data_355_page_1,
+	0,//unused
+	376, 13,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 356
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_n, PCHAR_k, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_c, PCHAR_k, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	16, 306,//Height & weight
+	str_pokedex_data_356_page_0, str_pokedex_data_356_page_1,
+	0,//unused
+	256, 2,//Pokemon scale, displacement
+	299, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 357
+	PSTRING(P99_PROCTECT({PCHAR_O, PCHAR_b, PCHAR_s, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_u, PCHAR_i, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 1000,//Height & weight
+	str_pokedex_data_357_page_0, str_pokedex_data_357_page_1,
+	0,//unused
+	283, 65535,//Pokemon scale, displacement
+	371, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 358
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_n, PCHAR_d, PCHAR_s, PCHAR_p, PCHAR_i, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_n, PCHAR_d, PCHAR_SPACE, PCHAR_C, PCHAR_h, PCHAR_i, PCHAR_m, PCHAR_e, 0xff, 0x0})),
+	6, 10,//Height & weight
+	str_pokedex_data_358_page_0, str_pokedex_data_358_page_1,
+	0,//unused
+	505, 65532,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 359
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_s, PCHAR_a, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_i, PCHAR_s, PCHAR_a, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0})),
+	12, 470,//Height & weight
+	str_pokedex_data_359_page_0, str_pokedex_data_359_page_1,
+	0,//unused
+	301, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 360
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_r, PCHAR_a, PCHAR_h, PCHAR_l, PCHAR_e, PCHAR_k, PCHAR_i, PCHAR_n, PCHAR_d, 0xff}), P99_PROCTECT({PCHAR_B, PCHAR_r, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	6, 140,//Height & weight
+	str_pokedex_data_360_page_0, str_pokedex_data_360_page_1,
+	0,//unused
+	453, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 361
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_n, PCHAR_e, PCHAR_e, PCHAR_h, PCHAR_u, PCHAR_t, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_n, PCHAR_o, PCHAR_w, PCHAR_SPACE, PCHAR_H, PCHAR_a, PCHAR_t, 0xff, 0x0, 0x0, 0x0})),
+	7, 168,//Height & weight
+	str_pokedex_data_361_page_0, str_pokedex_data_361_page_1,
+	0,//unused
+	380, 14,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 362
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_t, PCHAR_l, PCHAR_i, PCHAR_t, PCHAR_z, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_F, PCHAR_a, PCHAR_c, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 2565,//Height & weight
+	str_pokedex_data_362_page_0, str_pokedex_data_362_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	344, 2,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 363
+	PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_p, PCHAR_p, PCHAR_l, PCHAR_a, PCHAR_u, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_p, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	8, 395,//Height & weight
+	str_pokedex_data_363_page_0, str_pokedex_data_363_page_1,
+	0,//unused
+	315, 15,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 364
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_SPACE, PCHAR_R, PCHAR_o, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0})),
+	11, 876,//Height & weight
+	str_pokedex_data_364_page_0, str_pokedex_data_364_page_1,
+	0,//unused
+	338, 12,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 365
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_b, PCHAR_r, PCHAR_e, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_c, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_r, PCHAR_e, PCHAR_a, PCHAR_k, 0xff, 0x0, 0x0})),
+	14, 1506,//Height & weight
+	str_pokedex_data_365_page_0, str_pokedex_data_365_page_1,
+	0,//unused
+	305, 2,//Pokemon scale, displacement
+	277, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 366
+	PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_l, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_v, PCHAR_a, PCHAR_l, PCHAR_v, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	4, 525,//Height & weight
+	str_pokedex_data_366_page_0, str_pokedex_data_366_page_1,
+	0,//unused
+	691, 22,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 367
+	PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_e, PCHAR_f, PCHAR_s, PCHAR_e, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_e, PCHAR_p, PCHAR_SPACE, PCHAR_S, PCHAR_e, PCHAR_a, 0xff, 0x0, 0x0, 0x0})),
+	17, 270,//Height & weight
+	str_pokedex_data_367_page_0, str_pokedex_data_367_page_1,
+	0,//unused
+	307, 1,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 368
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_ue, PCHAR_d, PCHAR_s, PCHAR_e, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_o, PCHAR_u, PCHAR_t, PCHAR_h, PCHAR_SPACE, PCHAR_S, PCHAR_e, PCHAR_a, 0xff, 0x0, 0x0})),
+	18, 226,//Height & weight
+	str_pokedex_data_368_page_0, str_pokedex_data_368_page_1,
+	0,//unused
+	278, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 369
+	PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_L, PCHAR_o, PCHAR_n, PCHAR_g, PCHAR_e, PCHAR_v, PCHAR_i, PCHAR_t, PCHAR_y, 0xff, 0x0, 0x0})),
+	10, 234,//Height & weight
+	str_pokedex_data_369_page_0, str_pokedex_data_369_page_1,
+	0,//unused
+	316, 5,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 370
+	PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_e, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_z, PCHAR_v, PCHAR_o, PCHAR_u, PCHAR_s, 0xff, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_e, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_z, PCHAR_v, PCHAR_o, PCHAR_u, PCHAR_s, 0xff, 0x0})),
+	6, 87,//Height & weight
+	str_pokedex_data_370_page_0, str_pokedex_data_370_page_1,
+	0,//unused
+	371, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 371
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, PCHAR_h, PCHAR_a, PCHAR_u, PCHAR_p, PCHAR_t, 0xff, 0x0}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_a, PCHAR_d, 0xff, 0x0, 0x0})),
+	6, 421,//Height & weight
+	str_pokedex_data_371_page_0, str_pokedex_data_371_page_1,
+	0,//unused
+	448, 17,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 372
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_u, PCHAR_r, PCHAR_c, PCHAR_h, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_h, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_E, PCHAR_n, PCHAR_d, PCHAR_u, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_c, PCHAR_e, 0xff, 0x0, 0x0})),
+	11, 1105,//Height & weight
+	str_pokedex_data_372_page_0, str_pokedex_data_372_page_1,
+	0,//unused
+	311, 10,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 373
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	15, 1026,//Height & weight
+	str_pokedex_data_373_page_0, str_pokedex_data_373_page_1,
+	0,//unused
+	272, 2,//Pokemon scale, displacement
+	307, 0,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 374
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_k, PCHAR_u, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0x0, 0x0})),
+	6, 952,//Height & weight
+	str_pokedex_data_374_page_0, str_pokedex_data_374_page_1,
+	0,//unused
+	414, 65535,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 375
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_k, PCHAR_l, PCHAR_a, PCHAR_u, PCHAR_e, 0xff, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_w, 0xff, 0x0, 0x0})),
+	12, 2025,//Height & weight
+	str_pokedex_data_375_page_0, str_pokedex_data_375_page_1,
+	0,//unused
+	256, 3,//Pokemon scale, displacement
+	272, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 376
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_f, PCHAR_u, PCHAR_s, PCHAR_s, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_L, PCHAR_e, PCHAR_g, 0xff, 0x0, 0x0, 0x0})),
+	16, 5500,//Height & weight
+	str_pokedex_data_376_page_0, str_pokedex_data_376_page_1,
+	0,//unused
+	272, 3,//Pokemon scale, displacement
+	461, 4,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 377
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_i, PCHAR_p, PCHAR_f, PCHAR_e, PCHAR_l, 0xff}), P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_P, PCHAR_e, PCHAR_a, PCHAR_k, 0xff, 0x0, 0x0})),
+	17, 2300,//Height & weight
+	str_pokedex_data_377_page_0, str_pokedex_data_377_page_1,
+	0,//unused
+	256, 1,//Pokemon scale, displacement
+	309, 1,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 378
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_c, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_g, 0xff, 0x0, 0x0, 0x0, 0x0})),
+	18, 1750,//Height & weight
+	str_pokedex_data_378_page_0, str_pokedex_data_378_page_1,
+	0,//unused
+	265, 0,//Pokemon scale, displacement
+	317, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 379
+	PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	19, 2050,//Height & weight
+	str_pokedex_data_379_page_0, str_pokedex_data_379_page_1,
+	0,//unused
+	256, 0,//Pokemon scale, displacement
+	359, 6,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 380
+	PSTRING(P99_PROCTECT({PCHAR_ae, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	14, 400,//Height & weight
+	str_pokedex_data_380_page_0, str_pokedex_data_380_page_1,
+	0,//unused
+	291, 2,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 381
+	PSTRING(P99_PROCTECT({PCHAR_ae, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_E, PCHAR_o, PCHAR_n, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	20, 600,//Height & weight
+	str_pokedex_data_381_page_0, str_pokedex_data_381_page_1,
+	0,//unused
+	273, 0,//Pokemon scale, displacement
+	313, 3,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 382
+	PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_g, PCHAR_r, PCHAR_ue, PCHAR_n, PCHAR_d, PCHAR_l, PCHAR_e, PCHAR_r, 0xff}), P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_s, PCHAR_i, PCHAR_n, 0xff, 0x0, 0x0})),
+	45, 3520,//Height & weight
+	str_pokedex_data_382_page_0, str_pokedex_data_382_page_1,
+	0,//unused
+	272, 1,//Pokemon scale, displacement
+	639, 13,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 383
+	PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_o, PCHAR_n, PCHAR_t, PCHAR_i, PCHAR_n, PCHAR_e, PCHAR_n, PCHAR_t, 0xff, 0x0, 0x0}), P99_PROCTECT({PCHAR_C, PCHAR_o, PCHAR_n, PCHAR_t, PCHAR_i, PCHAR_n, PCHAR_e, PCHAR_n, PCHAR_t, 0xff, 0x0, 0x0})),
+	35, 9500,//Height & weight
+	str_pokedex_data_383_page_0, str_pokedex_data_383_page_1,
+	0,//unused
+	276, 0,//Pokemon scale, displacement
+	530, 12,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 384
+	PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_i, PCHAR_m, PCHAR_m, PCHAR_e, PCHAR_l, PCHAR_h, PCHAR_o, PCHAR_c, PCHAR_h, 0xff, 0x0}), P99_PROCTECT({PCHAR_S, PCHAR_k, PCHAR_y, PCHAR_SPACE, PCHAR_H, PCHAR_i, PCHAR_g, PCHAR_h, 0xff, 0x0, 0x0, 0x0})),
+	70, 2065,//Height & weight
+	str_pokedex_data_384_page_0, str_pokedex_data_384_page_1,
+	0,//unused
+	286, 65535,//Pokemon scale, displacement
+	483, 9,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 385
+	PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_ue, PCHAR_n, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_s, PCHAR_h, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	3, 11,//Height & weight
+	str_pokedex_data_385_page_0, str_pokedex_data_385_page_1,
+	0,//unused
+	608, 65528,//Pokemon scale, displacement
+	256, 65534,//Trainer scale, displacement
+	0,//unused
+},
+{
+	//Entry 386
+	PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_n, PCHAR_s, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}), P99_PROCTECT({PCHAR_D, PCHAR_n, PCHAR_a, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})),
+	17, 608,//Height & weight
+	str_pokedex_data_386_page_0, str_pokedex_data_386_page_1,
+	0,//unused
+	293, 0,//Pokemon scale, displacement
+	337, 2,//Trainer scale, displacement
+	0,//unused
+}
+
 };

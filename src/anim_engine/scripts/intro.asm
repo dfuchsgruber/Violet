@@ -234,7 +234,7 @@ frame 4000
 
 frame 4080
     sound 80
-    fadescreen 0x7FFF 0x 512 2 0 16
+    fadescreen 0x7FFF 0x0 512 2 0 16
     endframe
 
 frame 4090
@@ -247,7 +247,7 @@ frame 4110
 
 frame 4120
     sound 80
-    fadescreen 0x7FFF 0x 512 2 0 16
+    fadescreen 0x7FFF 0x0 512 2 0 16
     endframe
 
 frame 4130

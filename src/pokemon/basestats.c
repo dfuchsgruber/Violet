@@ -2675,7 +2675,7 @@ basestat basestats[POKEMON_CNT] = {
         ITEM_NONE, ITEM_NONE, //common, rare item
         31, //gender
         1, //egg cycles
-        255, //base friendship
+        70, //base friendship
         0, //lvl up curve
         EGG_GROUP_FIELD, EGG_GROUP_FIELD, //egg groups
         ANGSTHASE, ABILITY_NONE, //abilities
@@ -4527,22 +4527,22 @@ basestat basestats[POKEMON_CNT] = {
 
     //POKEMON_SCHLURPLEK
     {
-        65, 40, 70, 70, 80, 140, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_WATER, TYPE_FLYING, //types
-        25, //catch rate
-        168, //exp yield
-        {0, 0, 0, 0, 0, 2, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+        110, 85, 95, 50, 80, 95, //basestat values (hp, att, def, spe, satk, sdef)
+        TYPE_NORMAL, TYPE_NORMAL, //types
+        30, //catch rate
+        190, //exp yield
+        {3, 0, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
         ITEM_NONE, ITEM_NONE, //common, rare item
         127, //gender
-        25, //egg cycles
+        20, //egg cycles
         70, //base friendship
-        5, //lvl up curve
-        EGG_GROUP_WATER_1, EGG_GROUP_WATER_1, //egg groups
-        WASSERTEMPO, H2O_ABSORBER, //abilities
+        0, //lvl up curve
+        EGG_GROUP_MONSTER, EGG_GROUP_MONSTER, //egg groups
+        TEMPOMACHER, DOESIGKEIT, //abilities
         0, //safari rate
-        6, //flip and color
+        9, //flip and color
         ABILITY_NONE, //hidden ability
-        SHAPE_HUMANOID, //form
+        SHAPE_TAIL, //form
     },
 
     //POKEMON_PANZAERON
@@ -5084,7 +5084,7 @@ basestat basestats[POKEMON_CNT] = {
         ABILITY_NONE, //hidden ability
         0, //form
     },
-
+ 
     //POKEMON_AQUANAM
     {
         130, 65, 95, 80, 125, 115, //basestat values (hp, att, def, spe, satk, sdef)
@@ -7265,24 +7265,24 @@ basestat basestats[POKEMON_CNT] = {
         SHAPE_HUMANOID, //form
     },
 
-    //POKEMON_ROSELIA
+    //POKEMON_PORYGON_Z
     {
-        50, 60, 45, 65, 100, 80, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_GRASS, TYPE_POISON, //types
-        150, //catch rate
-        152, //exp yield
-        {0, 0, 0, 0, 1, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
-        ITEM_NONE, ITEM_GIFTSTICH, //common, rare item
-        127, //gender
+        85, 80, 70, 90, 135, 75, //basestat values (hp, att, def, spe, satk, sdef)
+        TYPE_NORMAL, TYPE_NORMAL, //types
+        30, //catch rate
+        210, //exp yield
+        {0, 0, 0, 0, 2, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+        ITEM_DUBIOSDISK, ITEM_DUBIOSDISK, //common, rare item
+        255, //gender
         20, //egg cycles
         70, //base friendship
-        3, //lvl up curve
-        EGG_GROUP_FAIRY, EGG_GROUP_GRASS, //egg groups
-        INNERE_KRAFT, GIFTDORN, //abilities
+        0, //lvl up curve
+        EGG_GROUP_MINERAL, EGG_GROUP_MINERAL, //egg groups
+        ANPASSUNG, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
         ABILITY_NONE, //hidden ability
-        SHAPE_HUMANOID, //form
+        SHAPE_LEGS, //form
     },
 
     //POKEMON_BUMMELZ

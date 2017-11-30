@@ -1,0 +1,3 @@
+.string str_0x8cade0 GER
+	=Dieser_Ort_ist_heilig._Niemand\ndarf_ihn_je_betreten,_der_nicht\lseinen_Eid_gegen\$ueber_den_W\$aechtern\lgeschworen_hat.\p...\nBeeilen_wir_uns.
+.end

@@ -1,7 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "rtc.h"
-
+#include "debug.h"
 
 
 static gpio *gpios = (gpio *) 0x080000C4;
@@ -32,6 +32,7 @@ u16 special_get_rtc() {
     }
 
 }
+
 
 /**
  * Reads the current time information and stores it into the timestamp space

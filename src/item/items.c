@@ -66,7 +66,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEBALL
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
 		0x4, //index
 		200, //price
 		0, //holding_effect_id
@@ -516,7 +516,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AETHER
-		PSTRING(P99_PROCTECT({PCHAR_ae, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
+		PSTRING(P99_PROCTECT({PCHAR_AE, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
 		0x22, //index
 		1200, //price
 		0, //holding_effect_id
@@ -905,13 +905,13 @@ item items[] = {
 		(void(*)(u8))0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_3C
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		//ITEM_ITEM_SCHARFZAHN
+		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_f, PCHAR_z, PCHAR_a, PCHAR_h, PCHAR_n, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_a, PCHAR_z, PCHAR_o, PCHAR_r, 0, PCHAR_F, PCHAR_a, PCHAR_n, PCHAR_g, 0xff, 0, 0, 0})),
 		0x0, //index
 		0, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_desc_x3c_item_item_3c,
+		30, //holding_effect_id
+		10, //holding_effect_param
+		str_item_desc_x3c_item_scharfzahn,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3006,7 +3006,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_UEBERRESTE
-		PSTRING(P99_PROCTECT({PCHAR_ue, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_e, PCHAR_f, PCHAR_t, PCHAR_o, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_s, 0xff, 0, 0, 0, 0})),
+		PSTRING(P99_PROCTECT({PCHAR_UE, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_e, PCHAR_f, PCHAR_t, PCHAR_o, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_s, 0xff, 0, 0, 0, 0})),
 		0xc8, //index
 		200, //price
 		43, //holding_effect_id

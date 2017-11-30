@@ -44,7 +44,7 @@ void move_npc_to(u8 ow_id, s16 dest_x, s16 dest_y) {
     u8 *dyn_move = (u8*) malloc(256); //dynamic space for movement list
 
     a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id]);
-
+    //dprintf("path is %x\n", dyn_move);
     /**Now we generate a move list
     int processed = 0;
     processed += move_npc_to_player_movegen(horizontal_first ? x_from : y_from, horizontal_first ? dest_x : dest_y, dyn_move, horizontal_first, processed);
