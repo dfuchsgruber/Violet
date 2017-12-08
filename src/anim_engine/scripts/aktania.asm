@@ -355,7 +355,7 @@ frame 28
 
 frame 29
     oam_reset
-    //callback_reset
+    callback_reset
     maintain
     bg_reset 0
     bg_setup 0 bgcnfgs2 3
@@ -395,9 +395,13 @@ frame 29
     oam_new oam_template_aktania_sky_deoxys 80 116 0 0x8003
     oam_move_trace 0x8000 9999 SINE
         .byte YAXIS
-        .hword 2, 32
+        .hword 1, 64
+    oam_move_trace 0x8003 9999 SINE
+        .byte YAXIS
+        .hword 2, 40
 
     endframe
+
 
 frame 30
     bg_scroll 2 128 0xFFF0 0
@@ -405,6 +409,19 @@ frame 30
     bg_scroll 0 1000 1000 0
     fadescreen 0 0 512 16 16 0
     endframe
+
+frame 32
+    oam_move_trace 0x8001 9999 SINE
+        .byte YAXIS
+        .hword 1, 64
+    oam_move_trace 0x8002 9999 SINE
+        .byte YAXIS
+        .hword 1, 64
+    endframe
+
+frame 35
+    endframe
+
 
 frame 9999
     end

@@ -26,7 +26,7 @@ void init_anim_engine(u8 *script) {
     u8 callback_id = spawn_big_callback(anim_engine_callback, 0);
     ae_memory *mem = cmalloc(sizeof(ae_memory));
     big_callback_set_int(callback_id, 1, (int)mem);
-
+    //dprintf("Anim engine setup @%x, var space @%x\n", mem, mem->vars);
     fmem->ae_mem = mem;
     mem->current_programm = (script);
     mem->callback_id = callback_id;
@@ -130,7 +130,7 @@ u8 anim_engine_read_byte(ae_memory* mem) {
 u16 anim_engine_read_param(ae_memory*mem) {
     u16 result = anim_engine_read_hword(mem);
     if ((u16) (result - 0x8000) < 0x10) {
-        result = mem->vars[(u16) (result - 0x8000)];
+        result = mem->vars[(result - 0x8000)];
     }
     return result;
 }
@@ -969,7 +969,7 @@ void _obj_move_trig_trace(u8 self){
     switch(trig_func){
         case 0: //sine function
             d = __sin(frame, period, amplitude) - __sin(frame - 1, period, amplitude);
-    dprintf(" sin(%d, %d, %d) = %d\n", frame, period, amplitude, __sin(frame, period, amplitude));
+    //dprintf(" sin(%d, %d, %d) = %d\n", frame, period, amplitude, __sin(frame, period, amplitude));
             break;
         case 1: //cosine function
             d = __cos(frame, period, amplitude) - __cos(frame - 1, period, amplitude);
