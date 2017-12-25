@@ -73,7 +73,7 @@ bool npc_side_stairway_init_if_possible(u8 diag) {
 u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direction, u8 role_to) {
 
     //first we create a dummy npc we can mess with
-    npc *ncpy = (npc*) malloc(sizeof (npc));
+    npc ncpy;
 
     u16 role_current = get_block_info_behaviour(n->from_x, n->from_y);
     u8 result = npc_is_tile_blocked(n, x_to_origin, y_to_origin, direction);
@@ -81,10 +81,10 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
     if (direction == 3) { //direction left
         if (role_current == BEHAVIOR_SIDE_STAIR_EAST) { //Southwest descending check
             //In order to check for southwest descend we have to move the ncpy one step down (y++)
-            memcopy(ncpy, n, sizeof (npc));
-            ncpy->from_y++;
-            ncpy->dest_y++;
-            result = npc_is_tile_blocked(ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
+            memcopy(&ncpy, n, sizeof (npc));
+            ncpy.from_y++;
+            ncpy.dest_y++;
+            result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
             if (!result) {
                 result = DIAG_SW;
             }
@@ -94,10 +94,10 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 return 3;
             } else {
                 //In order to check for northwest ascend we have to move the ncpy one step up (y--)
-                memcopy(ncpy, n, sizeof (npc));
-                ncpy->from_y--;
-                ncpy->dest_y--;
-                result = npc_is_tile_blocked(ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);
+                memcopy(&ncpy, n, sizeof (npc));
+                ncpy.from_y--;
+                ncpy.dest_y--;
+                result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);
                 if (!result) {
                     result = DIAG_NW;
                 }
@@ -107,10 +107,10 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
     } else if (direction == 4) {//direction right
         if (role_current == BEHAVIOR_SIDE_STAIR_WEST) { //Southwest descending check
             //In order to check for southwest descend we have to move the ncpy one step down (y++)
-            memcopy(ncpy, n, sizeof (npc));
-            ncpy->from_y++;
-            ncpy->dest_y++;
-            result = npc_is_tile_blocked(ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
+            memcopy(&ncpy, n, sizeof (npc));
+            ncpy.from_y++;
+            ncpy.dest_y++;
+            result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
             if (!result) {
                 result = DIAG_SO;
             }
@@ -120,10 +120,10 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 return 3;
             } else {
                 //In order to check for northwest ascend we have to move the ncpy one step up (y--)
-                memcopy(ncpy, n, sizeof (npc));
-                ncpy->from_y--;
-                ncpy->dest_y--;
-                result = npc_is_tile_blocked(ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);
+                memcopy(&ncpy, n, sizeof (npc));
+                ncpy.from_y--;
+                ncpy.dest_y--;
+                result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);
                 if (!result) {
                     result = DIAG_NO;
                 }
@@ -131,7 +131,6 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
         }
     }
 
-    free(ncpy);
 
     return result;
 }

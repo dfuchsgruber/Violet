@@ -4,7 +4,7 @@
 
 
 .string str_0x8ed0b8 GER
-	=Faun:_Das_ist_er_also,_der\nsagenumwobene_Schrein,_der_dem\lZeitpokemon_geweiht_ist?
+	=Das_ist_er_also,_der\nsagenumwobene_Schrein,_der_dem\lZeitpokemon_geweiht_ist?
 .end
 
 

@@ -1,48 +1,52 @@
 .string str_0x8ff6f3 GER
-	=Felix:_Oh,_hallo_\b\01!\nWie_ich_sehe_wanderst_du_auch_in\ldieser_dunklen_H\$oehle_umher.\lBeherrscht_eines_deiner_Pok\emon\ldie_Vm_Blitz,_k\$oennte_es_etwas\lLicht_ins_Dunkel_bringen._Leider\lscheinen_weder_du_noch_ich_ein\lPok\emon_mit_diesem_Angriff_zu\lbesitzen,_wie_ungl\$uecklich.\lWie_l\$aeuft_es_bei_dir?_Hast_du_auch\lschon_drei_Arenaorden_erringen\lk\$oennen?_Ich_selbst_strebe_den_Rang\leines_Arenaleiters_vorerst_an,\ldenn_dieser_ist_der_erste\lnotwendige_Schritt_auf_dem_Weg,\lein_Mitglied_der_Top_Vier_zu\lwerden,_so_wie_Opi.\lWo_wir_gearde_von_ihm_sprechen,\lhat_er_dich_auch_kontaktiert,_ihn\lbei_der_Bek\$aempfung_der\lRevolution\$aere_in_Kaskada_zu\lhelfen?
+	=Oh,_hallo_\b\01!\nWie_ich_sehe_wanderst_du_auch_in\ldieser_dunklen_H\$oehle_umher.\lBeherrscht_eines_deiner_Pok\emon\ldie_Vm_Blitz,_k\$oennte_es_etwas\lLicht_ins_Dunkel_bringen._Leider\lscheinen_weder_du_noch_ich_ein\lPok\emon_mit_diesem_Angriff_zu\lbesitzen,_wie_ungl\$uecklich.\lWie_l\$aeuft_es_bei_dir?_Hast_du_auch\lschon_drei_Arenaorden_erringen\lk\$oennen?_Ich_selbst_strebe_den_Rang\leines_Arenaleiters_vorerst_an,\ldenn_dieser_ist_der_erste\lnotwendige_Schritt_auf_dem_Weg,\lein_Mitglied_der_Top_Vier_zu\lwerden,_so_wie_Opi.\lWo_wir_gearde_von_ihm_sprechen,\lhat_er_dich_auch_kontaktiert,_ihn\lbei_der_Bek\$aempfung_der\lRevolution\$aere_in_Kaskada_zu\lhelfen?
 .end
 
 
 .string str_0x9454f8 GER
-	=\b\01:_Nein,_Faun_hat_mich_damit\nbeauftragt,_Team_Violet_im\lZeitwald_Paroli_zu_bieten.
+	=Nein,_Faun_hat_mich_damit\nbeauftragt,_Team_Violet_im\lZeitwald_Paroli_zu_bieten.
 .end
 
 
 .string str_0x94591f GER
-	=Felix:_Ich_verstehe.\nDann_ist_dir_das_wohl_gelungen.\pIch_muss_dich_wohl_jetzt_bitten,\nmir_in_Kaskada_zu_helfen.\pDie_Revolution\$aere_sind_\$aeu\$sert\ngef\$aehrlich,_denn_sie_drohen_mit\leinem_Krieg.\pOpi_hat_mir_oft_von_seiner_Jugend\nerz\$aehlt,_als_er_dem_Land_den\lFrieden_der_Top_Vier_gebracht_hat.\pWir_m\$uessen_diesen_Frieden\nverteidigen.
+	=Ich_verstehe.\nDann_ist_dir_das_wohl_gelungen.\pIch_muss_dich_wohl_jetzt_bitten,\nmir_in_Kaskada_zu_helfen.\pDie_Revolution\$aere_sind_\$aeu\$sert\ngef\$aehrlich,_denn_sie_drohen_mit\leinem_Krieg.\pOpi_hat_mir_oft_von_seiner_Jugend\nerz\$aehlt,_als_er_dem_Land_den\lFrieden_der_Top_Vier_gebracht_hat.\pWir_m\$uessen_diesen_Frieden\nverteidigen.
 .end
 
-
-.string str_0x8ff537 GER
-	=\40\$oe\8f\_spnr\4c\$oe\8f\_spnr
+.string str_felsige_oednis_choice_0 GER
+        =Die Revolution bedroht den Frieden
 .end
+
+.string str_felsige_oednis_choice_1 GER
+        =Die Top Vier sind korrupt
+.end
+
 
 
 .string str_0x945a65 GER
-	=Felix:_Ach,_was_ich_dich_noch\nfragen_wollte_-_hast_du_zuf\$aellig\lBlaise_getroffen?\pAnfangs_sind_wir_zusammen_gereist,\ndoch_nach_einiger_Zeit_hat_er_mich\labgeh\$aengt.\pEr_ist_auf_einem_gef\$aehrlichen\npers\$oenlichen_Kreuzzug_gegen_seinen\lVater,_Devin_von_den_Top_Vier.\pEs_ist_nur_zu_leicht,_dass_man_vom\nrechten_Weg_abkommt,_wenn_man_nur\lauf_Vergeltung_aus_ist...
+	=Ach,_was_ich_dich_noch\nfragen_wollte_-_hast_du_zuf\$aellig\lBlaise_getroffen?\pAnfangs_sind_wir_zusammen_gereist,\ndoch_nach_einiger_Zeit_hat_er_mich\labgeh\$aengt.\pEr_ist_auf_einem_gef\$aehrlichen\npers\$oenlichen_Kreuzzug_gegen_seinen\lVater,_Devin_von_den_Top_Vier.\pEs_ist_nur_zu_leicht,_dass_man_vom\nrechten_Weg_abkommt,_wenn_man_nur\lauf_Vergeltung_aus_ist...
 .end
 
 
 .string str_0x945bc8 GER
-	=Felix:_Vermutlich_wird_es_am\nkl\$uegsten_sein,_wenn_wir_uns_auf\lnach_Kaskada_machen.\pDort_sehen_wir_weiter,_denke_ich.\nOpi_wird_unsere_Hilfe_gebrauchen\lk\$oennen.\pBeeil_dich_bitte,_\b\01.
+	=Vermutlich_wird_es_am\nkl\$uegsten_sein,_wenn_wir_uns_auf\lnach_Kaskada_machen.\pDort_sehen_wir_weiter,_denke_ich.\nOpi_wird_unsere_Hilfe_gebrauchen\lk\$oennen.\pBeeil_dich_bitte,_\b\01.
 .end
 
 
 .string str_0x945da0 GER
-	=\b\01:_...
+	=... ... ...
 .end
 
 
 .string str_0x945daa GER
-	=Felix:_Du_wirkst_recht\nunentschlossen.\pIch_kann_verstehen,_dass_du_nicht\nunbedingt_mit_allen_Entscheidungen\lder_Top_Vier_konform_gehst.\pTrotzdem_bringen_sie_dem_Kontinent\nein_wichtiges_Gut_-_den_Frieden.\pUnd_den_m\$uessen_wir_um_jeden_Preis\nverteidigen!
+	=Du_wirkst_recht\nunentschlossen.\pIch_kann_verstehen,_dass_du_nicht\nunbedingt_mit_allen_Entscheidungen\lder_Top_Vier_konform_gehst.\pTrotzdem_bringen_sie_dem_Kontinent\nein_wichtiges_Gut_-_den_Frieden.\pUnd_den_m\$uessen_wir_um_jeden_Preis\nverteidigen!
 .end
 
 
 .string str_0x945c7d GER
-	=\b\01:_Richtig.\nDie_Top_Vier_gew\$aehrleisten_trotz\laller_Probleme_immer_noch_einen\lbest\$aendigen_Frieden.\pDie_Menschen_brauchen_eine_L\$oesung,\naber_die_sollte_nicht_der_Krieg\lsein.
+	=Richtig.\nDie_Top_Vier_gew\$aehrleisten_trotz\laller_Probleme_immer_noch_einen\lbest\$aendigen_Frieden.\pDie_Menschen_brauchen_eine_L\$oesung,\naber_die_sollte_nicht_der_Krieg\lsein.
 .end
 
 
 .string str_0x945d2b GER
-	=Felix:_Es_wird_Opi_\$uebergl\$uecklich\nmachen,_dass_zwei_seiner\lSch\$uetzlinge_das_Erbe_seines\lFriedens_verteidigen_wollen!
+	=Es_wird_Opi_\$uebergl\$uecklich\nmachen,_dass_zwei_seiner\lSch\$uetzlinge_das_Erbe_seines\lFriedens_verteidigen_wollen!
 .end

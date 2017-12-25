@@ -40,6 +40,7 @@ extern "C" {
     extern u8 str_pokepad_pokedex_qmark[];
     extern u8 str_pokepad_pokedex_std_buttons[];
     extern u8 str_pokepad_pokedex_habitat[];
+    extern u8 str_pokepad_pokedex_std_buttons_battle[];
     extern u8 str_pokepad_pokedex_kg[];
     extern u8 str_pokepad_pokedex_m[];
     extern u8 str_pokepad_pokedex_comma[];
@@ -114,6 +115,7 @@ extern "C" {
         u8 habitat_oams_rod[3];
         u8 current_worldmap;
         bool habitat_found;
+        bool from_battle;
     } pokedex_memory;
 
     typedef struct {

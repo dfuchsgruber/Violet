@@ -8,25 +8,6 @@ setvar LASTTALKED 0x36
 goto ow_script_0x8d35c7
 
 
-.global ow_script_0x8d35c7
-ow_script_0x8d35c7:
-lockall
-playsong MUS_BEGEGNUNG_MIT_TRAINER_GORE 0x0
-showsprite 0x32
-showsprite 0x33
-showsprite 0x34
-showsprite 0x35
-showsprite 0x36
-getplayerpos 0x8000 0x8001
-compare 0x8000 0xd
-callif EQUAL ow_script_0x8d3f37
-compare 0x8000 0xe
-callif EQUAL ow_script_0x8d3f43
-compare 0x8000 0x10
-callif EQUAL ow_script_0x8d3f4d
-goto ow_script_0x8d3f7c
-
-
 .global ow_script_movs_0x8d3ef2
 ow_script_movs_0x8d3ef2:
 .byte STEP_UP_FAST
@@ -38,32 +19,38 @@ ow_script_movs_0x8d3ef2:
 .byte STOP
 
 
-.global ow_script_0x8d3f7c
-ow_script_0x8d3f7c:
-applymovement 0x36 ow_script_movs_0x8d3ef2
-waitmovement 0x0
-goto ow_script_0x8d40bf
+.global ow_script_0x8d35c7
+ow_script_0x8d35c7:
 
-
-.global ow_script_0x8d40bf
-ow_script_0x8d40bf:
 lockall
 sound 0x15
-singlemovement 0xff 0x0
+applymovement 0xff mov_0
 waitmovement 0x0
-singlemovement 0xff 0x62
+applymovement 0xff mov_x62
 waitmovement 0x0
-goto ow_script_0x8fb128
+playsong MUS_BEGEGNUNG_MIT_TRAINER_GORE 0x0
+showsprite 0x32
+showsprite 0x33
+showsprite 0x34
+showsprite 0x35
+showsprite 0x36
+setvar 0x8004 0x36
+special 0x1B
+waitmovement 0
+setvar LASTTALKED 0x36
+faceplayer
 
-
-.global ow_script_0x8fb128
-ow_script_0x8fb128:
 setflag PKMNMENU
 pause 0x40
 call ow_script_0x8d3f23
 settrainerflag 0x19
 trainerbattlecont 0x1 0x19 0x0 str_0x8d3efa str_0x8d3bb9 ow_script_0x8d4033
 
+mov_0:
+.byte 0, STOP
+
+mov_x62:
+.byte 0x62, STOP
 
 .global ow_script_0x8d4033
 ow_script_0x8d4033:
@@ -74,12 +61,12 @@ applymovement 0x35 ow_script_movs_0x8d3ef2
 waitmovement 0x0
 loadpointer 0x0 str_0x8d38fe
 callstd MSG
-singlemovement 0x36 0x4
+applymovement 0x36 mov_4
 call ow_script_0x8d3f23
 loadpointer 0x0 str_0x8d3f8b
 callstd MSG
 special 0x7
-singlemovement 0x36 0x1
+applymovement 0x36 mov_1
 call ow_script_0x8d3f23
 loadpointer 0x0 str_0x8d3be3
 callstd MSG_YES_NO
@@ -97,6 +84,11 @@ special 0x7
 setvar 0x8006 0xa
 goto ow_script_0x8d3691
 
+mov_4:
+.byte 4, STOP
+
+mov_1:
+.byte 1, STOP
 
 .global ow_script_movs_0x8d36f5
 ow_script_movs_0x8d36f5:

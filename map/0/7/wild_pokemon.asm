@@ -60,30 +60,30 @@ map_0_7_wild_water_entries:
 .global map_0_7_wild_rod
 .align 4
 map_0_7_wild_rod:
-.byte 0xa @// Frequency in 1/256
+.byte 0x1e @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_0_7_wild_rod_entries
 
 .align 4
 map_0_7_wild_rod_entries:
-.byte 25, 32 @//Level range
-.hword POKEMON_KRABBY @// 70 percent, rod percent
-.byte 25, 32 @//Level range
-.hword POKEMON_KREBSCORPS @// 30 percent, rod percent
-.byte 27, 33 @//Level range
-.hword POKEMON_KRABBY @// 60 percent, profi rod percent
-.byte 25, 34 @//Level range
-.hword POKEMON_KINGLER @// 20 percent, profi rod percent
-.byte 30, 35 @//Level range
-.hword POKEMON_KINGLER @// 20 percent, profi rod percent
-.byte 10, 0 @//Level range
-.hword POKEMON_POKEMON_0 @// 40 percent, super rod percent
-.byte 64, 40 @//Level range
-.hword 0x872 @// 40 percent, super rod percent
 .byte 20, 22 @//Level range
+.hword POKEMON_KARPADOR @// 70 percent, rod percent
+.byte 20, 22 @//Level range
+.hword POKEMON_KARPADOR @// 30 percent, rod percent
+.byte 20, 22 @//Level range
+.hword POKEMON_KARPADOR @// 60 percent, profi rod percent
+.byte 20, 22 @//Level range
+.hword POKEMON_KARPADOR @// 20 percent, profi rod percent
+.byte 20, 22 @//Level range
+.hword POKEMON_KARPADOR @// 20 percent, profi rod percent
+.byte 20, 22 @//Level range
+.hword POKEMON_KARPADOR @// 40 percent, super rod percent
+.byte 20, 24 @//Level range
+.hword POKEMON_KARPADOR @// 40 percent, super rod percent
+.byte 20, 24 @//Level range
 .hword POKEMON_KARPADOR @// 15 percent, super rod percent
-.byte 20, 22 @//Level range
+.byte 20, 24 @//Level range
 .hword POKEMON_KARPADOR @// 4 percent, super rod percent
-.byte 20, 22 @//Level range
-.hword POKEMON_KARPADOR @// 1 percent, super rod percent
+.byte 25, 25 @//Level range
+.hword POKEMON_GARADOS @// 1 percent, super rod percent
 

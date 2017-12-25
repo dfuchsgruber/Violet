@@ -100,9 +100,13 @@ void pokedex_entry_load_strings() {
 
     u8 *buf = strbuf;
     *buf = 0xFF;
-    u8 str_space[] = {0, 0, 0, 0, 0, 0, 0, 0xFF};
-    buf = str_append(buf, has_habitat ? str_pokepad_pokedex_habitat : str_space);
-    strcpy(buf, str_pokepad_pokedex_std_buttons);
+    if(fmem->dex_mem->from_battle){
+        strcpy(buf, str_pokepad_pokedex_std_buttons_battle);
+    }else{
+        u8 str_space[] = {0, 0, 0, 0, 0, 0, 0, 0xFF};
+        buf = str_append(buf, has_habitat ? str_pokepad_pokedex_habitat : str_space);
+        strcpy(buf, str_pokepad_pokedex_std_buttons);
+    }
     tbox_print_string(4, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
 
     bool is_caught = fmem->dex_mem->list[fmem->dex_mem->current_list_index].caught;
@@ -163,79 +167,162 @@ void pokedex_entry_load_pokepic() {
     cpuset(&gfx_pokedex_formsTiles[form * 256], offset, 256);
 }
 
+u16 pokedex_colors[16];
+u16 pokedex_colors_nr[16];
+
+void pokedex_callback_init_entry_load_elements(){
+   //disable window
+    set_io(0, (u16) (get_io(0) &~0x6000));
+
+    fmem->dex_mem->tile_pokepic = 0xFFFF;
+    fmem->dex_mem->pal_pokepic = 0xFF;
+
+
+    oam_reset();
+    bg_reset(0);
+    pal_fade_cntrl_reset();
+    pal_allocation_reset();
+    free_all_tboxes();
+    set_callback3(NULL);
+    dma0_cb_reset();
+    bg_reset(0);
+    bg_setup(0, pokedex_bg_entry_configs, 4);
+
+    void *bg0map = cmalloc(0x800);
+    void *bg1map = malloc(0x800);
+    void *bg2map = cmalloc(0x800);
+    void *bg3map = malloc(0x800);
+    bg_set_tilemap(0, bg0map);
+    bg_set_tilemap(1, bg1map);
+    bg_set_tilemap(2, bg2map);
+    bg_set_tilemap(3, bg3map);
+
+    lz77uncompwram(gfx_pokedex_entry_uiMap, bg1map);
+    lz77uncompwram(gfx_pokedex_bottom_1Map, bg3map);
+    lz77uncompvram(gfx_pokedex_bottom_1Tiles, (void*) 0x06004000);
+    lz77uncompvram(gfx_pokedex_bottom_1Tiles, (void*) 0x06008000);
+    lz77uncompvram(gfx_pokedex_bottom_1Tiles, (void*) 0x0600c000);
+    lz77uncompvram(gfx_pokedex_entry_uiTiles, (void*) 0x06000000);
+
+    set_io(0x18, (u16) (-4));
+
+    tbox_sync_with_virtual_bg_and_init_all(pokedex_entry_tboxes);
+    pokedex_entry_load_strings();
+
+    //oam
+    fmem->dex_mem->pal_form = (u8) (allocate_obj_pal(0xA00C) + 0x10);
+    fmem->dex_mem->tile_form = obj_vram_allocate(16);
+    obj_vram_add_tile_tag_to_allocation_table(0xA00C, fmem->dex_mem->tile_form, 16);
+    pokedex_entry_load_pokepic();
+    fmem->dex_mem->oam_pokepic = generate_oam_forward_search(&pokedex_pokepic_template, 192, 64, 0);
+    fmem->dex_mem->oam_form = generate_oam_forward_search(&pokedex_form_template, 108, 72, 0);
+
+    pal_load_comp(gfx_pokedex_entry_uiPal, 0, 32);
+    pal_load_comp(gfx_pokedex_bottom_1Pal, 16, 32);
+    pal_load_comp(gfx_pokedex_formsPal, (u16) (fmem->dex_mem->pal_form * 16), 32);
+    pal_load_uncomp((void*) 0x08E95DDC, 3 * 16, 32);
+    pal_load_uncomp((void*) 0x08E95DBC, 4 * 16, 32);
+    pal_load_uncomp(pokedex_colors_nr, 14 * 16, 32);
+    pal_load_uncomp(pokedex_colors, 15 * 16, 16);
+    pal_set_all_to_black();
+
+    bg_virtual_sync(1);
+    bg_virtual_sync(2);
+    bg_virtual_sync(3);
+
+    bg_sync_display_and_show(0);
+    bg_sync_display_and_show(1);
+    bg_sync_display_and_show(2);
+    bg_sync_display_and_show(3);
+    bg_display_sync();
+    
+    dprintf("Loaded pokexdex elements\n");
+}
+
 void pokedex_callback_init_entry() {
     cb1handling();
     if (!is_fading()) {
-
-        //disable window
-        set_io(0, (u16) (get_io(0) &~0x6000));
-
-        fmem->dex_mem->tile_pokepic = 0xFFFF;
-        fmem->dex_mem->pal_pokepic = 0xFF;
-
         pokedex_free_maps();
-
-        oam_reset();
-        bg_reset(0);
-        oam_reset();
+        pokedex_callback_init_entry_load_elements();
         remove_all_big_callbacks();
-        pal_fade_cntrl_reset();
-        pal_allocation_reset();
-        free_all_tboxes();
-        set_callback3(NULL);
-        bg_reset(0);
-        bg_setup(0, pokedex_bg_entry_configs, 4);
-
-        void *bg0map = cmalloc(0x800);
-        void *bg1map = malloc(0x800);
-        void *bg2map = cmalloc(0x800);
-        void *bg3map = malloc(0x800);
-        bg_set_tilemap(0, bg0map);
-        bg_set_tilemap(1, bg1map);
-        bg_set_tilemap(2, bg2map);
-        bg_set_tilemap(3, bg3map);
-
-        lz77uncompwram(gfx_pokedex_entry_uiMap, bg1map);
-        lz77uncompwram(gfx_pokedex_bottom_1Map, bg3map);
-        lz77uncompvram(gfx_pokedex_bottom_1Tiles, (void*) 0x06004000);
-        lz77uncompvram(gfx_pokedex_bottom_1Tiles, (void*) 0x06008000);
-        lz77uncompvram(gfx_pokedex_bottom_1Tiles, (void*) 0x0600c000);
-        lz77uncompvram(gfx_pokedex_entry_uiTiles, (void*) 0x06000000);
-
-        set_io(0x18, (u16) (-4));
-
-        tbox_sync_with_virtual_bg_and_init_all(pokedex_entry_tboxes);
-        pokedex_entry_load_strings();
-
-        //oam
-        fmem->dex_mem->pal_form = (u8) (allocate_obj_pal(0xA00C) + 0x10);
-        fmem->dex_mem->tile_form = obj_vram_allocate(16);
-        obj_vram_add_tile_tag_to_allocation_table(0xA00C, fmem->dex_mem->tile_form, 16);
-        pokedex_entry_load_pokepic();
-        fmem->dex_mem->oam_pokepic = generate_oam_forward_search(&pokedex_pokepic_template, 192, 64, 0);
-        fmem->dex_mem->oam_form = generate_oam_forward_search(&pokedex_form_template, 108, 72, 0);
-
-        pal_load_comp(gfx_pokedex_entry_uiPal, 0, 32);
-        pal_load_comp(gfx_pokedex_bottom_1Pal, 16, 32);
-        pal_load_comp(gfx_pokedex_formsPal, (u16) (fmem->dex_mem->pal_form * 16), 32);
-        pal_load_uncomp((void*) 0x08E95DDC, 3 * 16, 32);
-        pal_load_uncomp((void*) 0x08E95DBC, 4 * 16, 32);
-        pal_set_all_to_black();
-
-        init_fadescreen(0, 0);
         set_callback1(pokedex_callback_entry_idle);
-
-        bg_virtual_sync(1);
-        bg_virtual_sync(2);
-        bg_virtual_sync(3);
-
-        bg_sync_display_and_show(0);
-        bg_sync_display_and_show(1);
-        bg_sync_display_and_show(2);
-        bg_sync_display_and_show(3);
-        bg_display_sync();
+        init_fadescreen(0, 0);
+        
     }
 }
+
+void pokedex_entry_from_battle_cb(u8 self){
+    
+    if(!is_fading()){
+        switch( big_callbacks[self].params[0]){
+            case 0: //Countdown
+                if(--(big_callbacks[self].params[1])) return;
+                big_callbacks[self].params[0]++;
+                break;
+            case 1:{ //Wait for a press
+                if (super->keys.keys.left) {
+                    u16 x = get_io(0x1A);
+                    if (x)
+                        x = (u16) (x - 4);
+                    set_io(0x1A, x);
+
+                } else if (super->keys.keys.right) {
+                    //first we count the lines in page1
+                    u16 dex_id = pokedex_get_id(fmem->dex_mem->current_species);
+                    pokedex_data *data = pokedex_get_data(dex_id);
+                    //we count the lines
+                    int i;
+                    int line_cnt = 1;
+                    for (i = 1; data->page0[i] != 0xFF; i++) {
+                        if (data->page0[i] == 0xFE)
+                            line_cnt++;
+                    }
+
+                    u16 bg2hscroll = get_io(0x1A);
+                    if (bg2hscroll < 16 * (line_cnt - 3)) {
+                        set_io(0x1A, (u16) (bg2hscroll + 4));
+                    }
+                } else if(super->keys_new.keys.A){
+                    fadescreen(-1, 0, 0, 16, 0);
+                    big_callbacks[self].params[0]++;
+                } else if (super->keys_new.keys.start) {
+                     cry(fmem->dex_mem->current_species, 0);
+                }
+                break;
+            }
+            case 2:{ //free all components
+                free(bg_get_tilemap(0));
+                free(bg_get_tilemap(1));
+                free(bg_get_tilemap(2));
+                free(bg_get_tilemap(3));
+                free_all_tboxes();
+                remove_big_callback(self);
+            }
+        }
+    }
+    
+}
+
+u8 pokedex_init_entry_from_battle(u16 species){
+    //First allocate dex_mem
+    pokedex_memory *dex_mem = (pokedex_memory*)cmalloc(sizeof(pokedex_memory));
+    dex_mem->current_species = species;
+    dex_mem->from_battle = true;
+    fmem->dex_mem = dex_mem;
+    pokedex_callback_init_entry_load_elements();
+    u8 cb_id = spawn_big_callback(pokedex_entry_from_battle_cb, 0);
+    big_callbacks[cb_id].params[0] = 0;
+    big_callbacks[cb_id].params[1] = 120; //countdown
+    fading_cntrl->field_8 &= 0x7F;
+    fadescreen(0xFFFFFFFF, 0, 16, 0, 0xFFFF);
+    
+    //Set the pokedex callback3
+    void (*pokedex_cb3)() = (void(*)())(0x08102714 | 1);
+    set_callback3(pokedex_cb3);
+    
+    return cb_id;
+}
+
 
 void pokedex_callback_entry_back() {
     cb1handling();

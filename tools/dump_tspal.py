@@ -6,10 +6,10 @@ import png
 
 #This module quickdumps a png with a palette of a tileset (for editing in right pal)
 
-TSNUM = 2
+TSNUM = 245157
 TSPAL = 1
-COLS = 16 * 7
-PATH = "D:/temp/ts2p1.png"
+COLS = 16 * 5
+PATH = "D:/temp/ts" + str(TSNUM) + "p" + str(TSPAL) + ".png"
 
 rom = agb.Agbrom(path=agb.STDPATH)
 

@@ -31,4 +31,5 @@ color *pal_restore = (color*) 0x020371F8;
 color *pals = (color*) 0x020375F8;
 color *pal_tmp = (color*) 0x02037ACC;
 
+
 #endif

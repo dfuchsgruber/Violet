@@ -30,6 +30,18 @@
 .include "patches/worldmap.asm"
 .include "patches/types.asm"
 .include "patches/string.asm"
+.include "patches/color.asm"
+
+//Memleak debug
+.org 0x0800296C
+    ldr r2, =malloc_hook | 1
+    bx r2
+    .pool
+
+.org 0x08002A04
+    ldr r2, =free_hook | 1
+    bx r2
+    .pool
 
 //Remove Help-System
 .org 0x0813B90C

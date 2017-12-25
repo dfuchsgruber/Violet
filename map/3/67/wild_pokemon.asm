@@ -60,30 +60,30 @@ map_3_67_wild_water_entries:
 .global map_3_67_wild_rod
 .align 4
 map_3_67_wild_rod:
-.byte 0xf @// Frequency in 1/256
+.byte 0x6 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_67_wild_rod_entries
 
 .align 4
 map_3_67_wild_rod_entries:
-.byte 35, 35 @//Level range
+.byte 20, 20 @//Level range
 .hword POKEMON_TENTACHA @// 70 percent, rod percent
-.byte 35, 35 @//Level range
+.byte 20, 20 @//Level range
 .hword POKEMON_TENTACHA @// 30 percent, rod percent
-.byte 35, 35 @//Level range
+.byte 40, 40 @//Level range
 .hword POKEMON_TENTACHA @// 60 percent, profi rod percent
-.byte 35, 35 @//Level range
+.byte 40, 40 @//Level range
 .hword POKEMON_TENTACHA @// 20 percent, profi rod percent
-.byte 37, 37 @//Level range
+.byte 40, 40 @//Level range
 .hword POKEMON_TENTOXA @// 20 percent, profi rod percent
-.byte 15, 0 @//Level range
-.hword POKEMON_POKEMON_0 @// 40 percent, super rod percent
-.byte 144, 197 @//Level range
-.hword 0x871 @// 40 percent, super rod percent
-.byte 13, 17 @//Level range
-.hword POKEMON_PONITA @// 15 percent, super rod percent
-.byte 13, 17 @//Level range
-.hword POKEMON_KNACKLION @// 4 percent, super rod percent
-.byte 13, 17 @//Level range
-.hword POKEMON_SKORGLA @// 1 percent, super rod percent
+.byte 40, 40 @//Level range
+.hword POKEMON_TENTOXA @// 40 percent, super rod percent
+.byte 40, 40 @//Level range
+.hword POKEMON_TENTOXA @// 40 percent, super rod percent
+.byte 50, 50 @//Level range
+.hword POKEMON_TENTOXA @// 15 percent, super rod percent
+.byte 50, 50 @//Level range
+.hword POKEMON_TENTOXA @// 4 percent, super rod percent
+.byte 50, 50 @//Level range
+.hword POKEMON_TENTOXA @// 1 percent, super rod percent
 

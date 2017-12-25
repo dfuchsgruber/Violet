@@ -25,6 +25,7 @@ bool pokemon_is_shiny(u32 tid, pid p){
 }
 
 palette *pokemon_get_pal_struct(u16 species, u32 tid, pid p){
+    //dprintf("Pokemon get pal struct for species %d, pid %x, tid %x\n", species, p.fields.shinyness, tid);
     if(pokemon_is_shiny(tid, p))
         return &pokemon_shiny_pals[species];
     else

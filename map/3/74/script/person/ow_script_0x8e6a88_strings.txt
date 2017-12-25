@@ -1,5 +1,5 @@
 .string str_0x8ec458 GER
-	=Faun:_Oh,_hallo_\b\01!\nIch_habe_gerade_alle_H\$aende_voll_zu\ltun._Es_hei\$st,_der_Anf\$uehrer_der\lRevoultion_sei_hier_gesichtet\lworden.\lDie_Revolutionsarmee_strebt_einen\lSturz_der_Top_Vier_an,_um_eine\lneue_Weltordnung_der_Gerechtigkeit\lzu_errichten._Ihre_Ideale_m\$oegen\lnoch_so_nobel_sein,_bedeutet_eine\lRevolution_doch_Krieg_und_Krieg\lbedeutet,_dass_die_Bev\$oelkerung\lThetos_leiden.
+	=Oh,_hallo_\b\01!\nIch_habe_gerade_alle_H\$aende_voll_zu\ltun._Es_hei\$st,_der_Anf\$uehrer_der\lRevoultion_sei_hier_gesichtet\lworden.\lDie_Revolutionsarmee_strebt_einen\lSturz_der_Top_Vier_an,_um_eine\lneue_Weltordnung_der_Gerechtigkeit\lzu_errichten._Ihre_Ideale_m\$oegen\lnoch_so_nobel_sein,_bedeutet_eine\lRevolution_doch_Krieg_und_Krieg\lbedeutet,_dass_die_Bev\$oelkerung\lThetos_leiden.
 .end
 
 

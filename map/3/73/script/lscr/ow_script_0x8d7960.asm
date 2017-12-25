@@ -70,18 +70,6 @@ ow_script_movs_0x8d7b4e:
 .global ow_script_0x8d7960
 ow_script_0x8d7960:
 
-//Todo
-
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-setvar STORY_PROGRESS 0x14
-setvar 0x8004 0x12
-special 0x19
-waitstate
-clearflag TRANS_DISABLE
-
-//
-
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d79cd
 callstd MSG
@@ -437,7 +425,16 @@ hidesprite 0x6
 hidesprite 0x8
 hidesprite 0xf
 hidesprite 0x13
-callasm 0x91a3759
+
+
+setflag TRANS_DISABLE
+clearflag TRANS_PALETTE_FETCH
+setvar STORY_PROGRESS 0x14
+setvar 0x8004 0x12
+special 0x19
+waitstate
+clearflag TRANS_DISABLE
+
 goto ow_script_0x8e1aa9
 
 
@@ -455,7 +452,7 @@ call ow_script_0x8d7a10
 cry POKEMON_DEOXYS 0x0
 waitcry
 fadescreen 0x1
-callasm 0x919d791
+//callasm 0x919d791
 writebytetooffset 0x0 0x2036e28
 goto ow_script_0x92df2f
 

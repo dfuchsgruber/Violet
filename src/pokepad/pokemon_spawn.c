@@ -3,6 +3,7 @@
 #include "pokemon.h"
 #include "basestats.h"
 #include "pokepad.h"
+#include "debug.h"
 
 void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed) {
     int i;
@@ -15,6 +16,8 @@ void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed) {
 }
 
 void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread, bool tid_determined, u32 tid, u16(*seed_generator)()) {
+    //dprintf("Spawning pokemon by seed algorithm: species %d, level %d, ev_spread %d, tid_det %d, tid %x, seed_gen %x\n",
+    //        species, level, ev_spread, tid_determined, tid, seed_generator);
 
     //first we random a pid
     pid pid = {(u32) (random_change_seed() | random_change_seed() << 16)};

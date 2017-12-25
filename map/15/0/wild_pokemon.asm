@@ -81,30 +81,30 @@ map_15_0_wild_other_entries:
 .global map_15_0_wild_rod
 .align 4
 map_15_0_wild_rod:
-.byte 0xb @// Frequency in 1/256
+.byte 0x0 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_15_0_wild_rod_entries
 
 .align 4
 map_15_0_wild_rod_entries:
-.byte 26, 30 @//Level range
-.hword POKEMON_LOTURZEL @// 70 percent, rod percent
-.byte 28, 33 @//Level range
-.hword POKEMON_LOMBRERO @// 30 percent, rod percent
-.byte 28, 30 @//Level range
-.hword POKEMON_MARILL @// 60 percent, profi rod percent
-.byte 30, 35 @//Level range
-.hword POKEMON_AZUMARILL @// 20 percent, profi rod percent
-.byte 30, 38 @//Level range
-.hword POKEMON_AZUMARILL @// 20 percent, profi rod percent
-.byte 11, 0 @//Level range
-.hword POKEMON_POKEMON_0 @// 40 percent, super rod percent
-.byte 0, 11 @//Level range
-.hword 0x872 @// 40 percent, super rod percent
-.byte 10, 14 @//Level range
-.hword POKEMON_MOGELBAUM @// 15 percent, super rod percent
-.byte 10, 14 @//Level range
-.hword POKEMON_CLAVION @// 4 percent, super rod percent
-.byte 10, 14 @//Level range
-.hword POKEMON_SCHLURP @// 1 percent, super rod percent
+.byte 9, 13 @//Level range
+.hword POKEMON_KARPADOR @// 70 percent, rod percent
+.byte 11, 14 @//Level range
+.hword POKEMON_KARPADOR @// 30 percent, rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_KARPADOR @// 60 percent, profi rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_KARPADOR @// 20 percent, profi rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_KARPADOR @// 20 percent, profi rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_KARPADOR @// 40 percent, super rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_KARPADOR @// 40 percent, super rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_KARPADOR @// 15 percent, super rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_GARADOS @// 4 percent, super rod percent
+.byte 0, 0 @//Level range
+.hword POKEMON_GARADOS @// 1 percent, super rod percent
 

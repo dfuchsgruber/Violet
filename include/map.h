@@ -204,5 +204,15 @@ u16 *tileset_anim_clk1_cycle = (u16*)0x03000FB4;
 void (**tileset_anim_0)(u16) = (void(**)(u16))0x03000FB8;
 void (**tileset_anim_1)(u16) = (void(**)(u16))0x03000FBC;
 
+typedef struct{
+    u8 _unkown;
+    u8 _unkown_2;
+    u8 x_start;
+    u8 y_start;
+} stru_map_displ_cntrl;
+
+stru_map_displ_cntrl *map_displ_cntrl = (stru_map_displ_cntrl*)0x03000E90;
+
+void map_delta_to_map_tile(mapfooter *foot, u16 map_tile_id, s16 x_relative, s16 y_relative);
 
 #endif

@@ -10,6 +10,7 @@
 #include "map.h"
 #include "text.h"
 #include "debug.h"
+#include "transparency.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -216,18 +217,34 @@ void spawn_mugshot() {
     //Copy name string
     string_decrypt(strbuf, mugshots[index].name);
     //spawn tbox
-    tboxdata tbdata = {
-        0, (side ? 0 : 22), 12, (u8)((string_get_width(2, strbuf, 0) >> 3) + 5), 2, 15, 0xE8
-    };
-    u8 box_id = tbox_new(&tbdata);
-    tbox_flush(box_id, 0x11);
-    tbox_clear_bottom_line(box_id);
-    tbox_tilemap_draw(box_id);
+    u8 strwidth = string_get_width(2, strbuf, 0);
+    if(transparency_is_on()){
+        tboxdata tbdata = {
+            0, (side ? 0 : (u8)(30 - strwidth / 8 - 4)), 12, (u8)((strwidth / 8) + 4), 2, 15, 0xE8
+        };
+        u8 box_id = tbox_new(&tbdata);
+        tbox_flush(box_id, 0x11);
+        tbox_tilemap_draw(box_id);
+        tbox_clear_bottom_line(box_id);
+        u8 fontcolmap[] = {1, 2, 1, 3};
+        tbox_print_string(box_id, 2, 16, 0, 0, 0, fontcolmap, 0, strbuf);
+        fmem->mugshot_tb_id = box_id;
+        
+    }else{
+        tboxdata tbdata = {
+            0, (side ? 0 : (u8)(30 - strwidth / 8 - 5)), 11, (u8)((strwidth / 8) + 4), 2, 15, 0xE8
+        };
+        u8 box_id = tbox_new(&tbdata);
+        tbox_flush(box_id, 0x11);
+        tbox_tilemap_draw(box_id);
+        tbox_border_init(box_id, 1, 15 * 16);
+        tbox_border_draw(box_id, 1, 0xF);
+        u8 fontcolmap[] = {1, 2, 1, 3};
+        tbox_print_string(box_id, 2, 16, 0, 0, 0, fontcolmap, 0, strbuf);
+        fmem->mugshot_tb_id = box_id;
+    }
     
-    u8 fontcolmap[] = {1, 2, 1, 3};
-    tbox_print_string(box_id, 2, 16, 0, 0, 0, fontcolmap, 0, strbuf);
-    fmem->mugshot_tb_id = box_id;
-    dprintf("Spawned oam %d, tbid %d\n", fmem->mugshot_oam_id, box_id);
+    //dprintf("Spawned oam %d, tbid %d\n", fmem->mugshot_oam_id, box_id);
 }
 
 
@@ -240,9 +257,10 @@ void mugshot_oam_despawn_cb(u8 self) {
     tbox_flush(tb_id, 0);
     //tbox_tilemap_draw(fmem->mugshot_tb_id);
     tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
-    tbox_flush_map(tb_id);
+    if(!transparency_is_on()) tbox_border_flush(tb_id);
+    
     free_tbox(tb_id);
-    dprintf("Triggered despawn with oam %d, tbid %d\n", oam_id, tb_id);
+    //dprintf("Triggered despawn with oam %d, tbid %d\n", oam_id, tb_id);
     remove_big_callback(self);
 }
 

@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "types.h"
 #include "stdbool.h"
 #include "romfuncs.h"
@@ -17,6 +19,7 @@
 #include "superstate.h"
 #include "utils.h"
 #include "transparency.h"
+#include "debug.h"
 
 extern const unsigned short gfx_pokedex_sort_cursorTiles[];
 extern const unsigned short gfx_pokedex_uiMap[];
@@ -121,6 +124,7 @@ void pokedex_callback_return() {
     cb1handling();
     if (!is_fading()) {
         //end pokedex
+        free_all_tboxes();
         *vardecrypt(POKEDEX_VAR_COMPARATOR) = fmem->dex_mem->current_comparator;
         *vardecrypt(POKEDEX_VAR_LAST_SPECIES) = fmem->dex_mem->current_species;
         pokedex_free_maps();

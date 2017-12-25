@@ -1,5 +1,5 @@
 .string str_0x8eca2e GER
-	=Faun:_Mit_Team_Violet_und_der\nRevolutionsarmee_als_Gegnern\lk\$oennen_wir_nicht_standhalten.\lSelbst_wir,_von_den_Top_Vier,_sind\ldazu_nicht_im_Stande...
+	=Mit_Team_Violet_und_der\nRevolutionsarmee_als_Gegnern\lk\$oennen_wir_nicht_standhalten.\lSelbst_wir,_von_den_Top_Vier,_sind\ldazu_nicht_im_Stande...
 .end
 
 
@@ -29,7 +29,7 @@
 
 
 .string str_0x8ec84d GER
-	=Mia:_Faun_ist_ein_ber\$uehmter\nTrainer._Viele_sahen_ihn_sogar_den\lPosten_des_Champs_erklimmen.
+	=Faun_ist_ein_ber\$uehmter\nTrainer._Viele_sahen_ihn_sogar_den\lPosten_des_Champs_erklimmen.
 .end
 
 
@@ -39,12 +39,12 @@
 
 
 .string str_0x8ec6df GER
-	=Mia:_Ja,_in_der_Tat._Augenzeugen\nberichten,_beobachtet_zu_haben,\lwie_Team_Violet_in_den_Zeitwald\leingefallen_ist._Einige_geben_auch\lan,_Professor_Primus_gesehen_zu\lhaben._Wir_m\$uessen_also_davon\lausgehen,_dass_Team_Violet_eine\lGeisel_genommen_hat.
+	=Ja,_in_der_Tat._Augenzeugen\nberichten,_beobachtet_zu_haben,\lwie_Team_Violet_in_den_Zeitwald\leingefallen_ist._Einige_geben_auch\lan,_Professor_Primus_gesehen_zu\lhaben._Wir_m\$uessen_also_davon\lausgehen,_dass_Team_Violet_eine\lGeisel_genommen_hat.
 .end
 
 
 .string str_0x87e807 GER
-	=Faun:_Im_Zeitwald_lebt_ein\nPok\emon,_welches_in_der_Lage_ist,\ldie_Zeit_selbst_zu_beugen._In\lmeiner_Jugend_bin_ich_ihm_sogar\lbegegnet...
+	=Im_Zeitwald_lebt_ein\nPok\emon,_welches_in_der_Lage_ist,\ldie_Zeit_selbst_zu_beugen._In\lmeiner_Jugend_bin_ich_ihm_sogar\lbegegnet...
 .end
 
 
@@ -54,7 +54,7 @@
 
 
 .string str_0x8f3668 GER
-	=Mia:_Soll_das_hei\$sen,_dass_Team\nViolet_Celebi_Schaden_zuf\$uegen\lwill?
+	=Soll_das_hei\$sen,_dass_Team\nViolet_Celebi_Schaden_zuf\$uegen\lwill?
 .end
 
 
@@ -74,7 +74,7 @@
 
 
 .string str_0x8f2607 GER
-	=Mia:_Das_ist_schrecklich!_Aber_ich\nkann_die_Arena_nicht_noch_l\$aenger\lunbeaufsichtigt_lassen._Gut,_dass\lsich_nun_ein_Mitglied_der_Top_Vier\lum_die_Angelegenheit_k\$uemmert.
+	=Das_ist_schrecklich!_Aber_ich\nkann_die_Arena_nicht_noch_l\$aenger\lunbeaufsichtigt_lassen._Gut,_dass\lsich_nun_ein_Mitglied_der_Top_Vier\lum_die_Angelegenheit_k\$uemmert.
 .end
 
 
@@ -104,7 +104,7 @@
 
 
 .string str_0x8f0984 GER
-	=Mia:_Wenn_sich_Faun_auf_dich\nverl\$aesst,_werde_ich_das_auch_tun.\lIch_vertraue_dir_die_Angelegenheit\lan.
+	=Wenn_sich_Faun_auf_dich\nverl\$aesst,_werde_ich_das_auch_tun.\lIch_vertraue_dir_die_Angelegenheit\lan.
 .end
 
 

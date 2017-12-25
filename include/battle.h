@@ -122,6 +122,9 @@ u8 *attack_anim_tasks_running = (u8*)0x02037EE2;
 
 u8 *battler_temporary_status= (u8*)0x02023E8C;
 
+#define BATTLE_BG_OVERRIDE 0x50e3
+
+u8 battle_bg_get_id();
 
 #define BATTLE_WEATHER_RAIN 1
 #define BATTLE_WEATHER_WOLKENBRUCH 2

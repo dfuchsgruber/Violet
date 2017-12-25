@@ -64,7 +64,7 @@ wild_pokemon:
 	.word map_3_74_wild_grass, 0, map_3_74_wild_other, 0 
 @// 3.4
 	.byte 3, 4, 0, 0
-	.word 0, map_3_4_wild_water, 0, map_3_4_wild_rod 
+	.word 0, map_3_4_wild_water, 0, 0 
 @// 8.11
 	.byte 8, 11, 0, 0
 	.word 0, map_8_11_wild_water, 0, map_8_11_wild_rod 
@@ -76,7 +76,7 @@ wild_pokemon:
 	.word map_3_22_wild_grass, map_3_22_wild_water, map_3_22_wild_other, map_3_22_wild_rod 
 @// 16.3
 	.byte 16, 3, 0, 0
-	.word map_16_3_wild_grass, 0, 0, 0 
+	.word map_16_3_wild_grass, 0, 0, map_16_3_wild_rod 
 @// 3.23
 	.byte 3, 23, 0, 0
 	.word map_3_23_wild_grass, 0, map_3_23_wild_other, 0 
@@ -113,6 +113,3 @@ wild_pokemon:
 @// 1.126
 	.byte 1, 126, 0, 0
 	.word map_1_126_wild_grass, 0, 0, 0 
-        
-        .byte 255, 255, 0, 0
-        .word 0, 0, 0, 0

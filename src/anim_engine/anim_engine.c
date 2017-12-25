@@ -28,15 +28,17 @@ void init_anim_engine(u8 *script) {
     big_callback_set_int(callback_id, 1, (int)mem);
     //dprintf("Anim engine setup @%x, var space @%x\n", mem, mem->vars);
     fmem->ae_mem = mem;
-    mem->current_programm = (script);
+    mem->current_programm = script;
     mem->callback_id = callback_id;
     mem->active = true;
+    mem->root = anim_engine_task_setup();
+    
 }
 
 void anim_engine_callback(u8 callback_id) {
-
     ae_memory* mem = (ae_memory*)big_callback_get_int(callback_id, 1);
-
+    anim_engine_tasks_execute(mem->root);
+    
     //programm read loop
     while (anim_engine_get_hword(mem) == (mem->current_frame) && mem->active) {
         //execution of the command with the related frame
@@ -113,7 +115,7 @@ void anim_engine_execute_frame(ae_memory* mem) {
     u8 cmd_id = anim_engine_read_byte(mem);
 
     while (cmd_id != 0xFF) {
-        dprintf("Executing command %d at %x\n", cmd_id, mem->current_programm - 1);
+        //dprintf("Executing command %d at %x\n", cmd_id, mem->current_programm - 1);
         cmdTable[cmd_id](mem);
         cmd_id = anim_engine_read_byte(mem);
     }
@@ -293,16 +295,18 @@ void cmdx0E_bg_override(ae_memory* mem) {
     u8 mode = anim_engine_read_byte(mem);
 
     void* buffer = malloc(size);
-    if(!buffer)dprintf("Can not override because malloc did not provide heap memory\n");
+    if(!buffer){
+        dprintf("Can not override because malloc did not provide heap memory\n");
+        return;
+    }
 
     lz77uncompwram(graphic, buffer);
     bg_copy_vram(bgid, buffer, size, start, mode);
 
     //spawn a free function for the memory block associated with the graphic
-    int cid = spawn_big_callback(anim_engine_bg_free_task, 0);
-    big_callbacks[cid].params[0] = 4;
-    big_callbacks[cid].params[1] = (u16) (int) buffer;
-    big_callbacks[cid].params[2] = (u16) ((int) buffer >> 16);
+    anim_engine_task *t = anim_engine_task_new(0, anim_engine_bg_free_task, sizeof(void*), mem->root);
+    void **vars = (void**)(t->vars);
+    *vars = buffer;
 }
 
 
@@ -426,12 +430,11 @@ void cmdx17_display_rendered_tbox(ae_memory*mem) {
         aetr_memory *trmem = (aetr_memory*) malloc(sizeof (aetr_memory));
         u8 *buf = (u8*) malloc(0x800);
         string_decrypt(buf, string); //decrypting buffer directives ([player] etc)
-        u8 self = spawn_big_callback(anim_engine_text_renderer, 0);
-        mem->vars[target_var] = self;
-
-        big_callbacks[self].params[0] = (u16) (int) trmem;
-        big_callbacks[self].params[1] = (u16) ((int) trmem >> 16);
-
+     
+        anim_engine_task *t = anim_engine_task_new(127, anim_engine_text_renderer, sizeof(aetr_memory*), mem->root);
+        mem->vars[target_var] = (u16)(t->id);
+        aetr_memory **vars = t->vars;
+        *vars = trmem;
         trmem->bg_id = bgid;
         trmem->border_distance = border_distance;
         trmem->boxid = boxid;
@@ -447,13 +450,13 @@ void cmdx17_display_rendered_tbox(ae_memory*mem) {
         trmem->o_text = buf;
         trmem->source = buf;
         trmem->unkown = unkown;
-        anim_engine_text_renderer(self);
+        anim_engine_text_renderer(t);
     }
 }
 
-void anim_engine_text_renderer(u8 self) {
-
-    aetr_memory *mem = (aetr_memory*) (big_callbacks[self].params[0] + (big_callbacks[self].params[1] << 16));
+void anim_engine_text_renderer(anim_engine_task *t) {
+    aetr_memory **vars = (aetr_memory**)(t->vars);
+    aetr_memory *mem = *vars;
     if (mem->delay_timer) {
         mem->delay_timer--;
         return;
@@ -478,7 +481,7 @@ void anim_engine_text_renderer(u8 self) {
             bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
             free(mem->o_text);
             free(mem);
-            remove_big_callback(self);
+            anim_engine_task_delete(t);
             return;
         }
         case 0xFB:
@@ -525,10 +528,17 @@ void anim_engine_text_renderer(u8 self) {
 }
 
 void cmdx18_rendered_tbox_event(ae_memory* mem) {
-    u8 self = (u8) (anim_engine_read_param(mem));
+    u16 id = anim_engine_read_param(mem);
     u8 event = (u8) (anim_engine_read_byte(mem));
 
-    aetr_memory *trmem = (aetr_memory*) (big_callbacks[self].params[0] + (big_callbacks[self].params[1] << 16));
+    anim_engine_task *t = anim_engine_task_get_by_id(mem->root, id);
+    if(!t){
+        dprintf("Rendered textbox event could not be applied, anim task with id %d not present!\n");
+        err(ERR_GENERIC);
+        return;
+    }
+    aetr_memory **vars = (aetr_memory**)(t->vars);
+    aetr_memory *trmem = *vars;
     trmem->flags.value |= (u8) (1 << event);
 
     /**
@@ -550,27 +560,30 @@ void cmdx19_objmove(ae_memory* mem) {
         oam-> y = (s16) (oam->y + y);
     } else {
         //spawn a new callback
-        u8 cb_id = spawn_big_callback(anim_engine_obj_mover, 1);
-        big_callback* cb = &big_callbacks[cb_id];
-        cb->params[0] = oam_id;
-        cb->params[1] = (u16) x;
-        cb->params[2] = (u16) y;
-        cb->params[3] = duration;
-        cb->params[4] = 0x0; //frame count
+        anim_engine_task *t = anim_engine_task_new(0, _obj_move_linear_trace,
+                5 * sizeof(u16), mem->root);
+        
+        dprintf("Spawned linear trace @%x\n", t);
+        u16 *vars = (u16*)(t->vars);
+        vars[0] = oam_id;
+        vars[1] = (u16) x;
+        vars[2] = (u16) y;
+        vars[3] = duration;
+        vars[4] = 0x0; //frame count
     }
 }
 
-void anim_engine_obj_mover(u8 cbid) {
-    big_callback* cb = (big_callback*) (0x03004FE0 + cbid * 0x28);
-    u8 oam_id = (u8) (cb->params[0]);
-    oam_object* oam = (oam_object*) (0x0202063c + oam_id * 0x44);
-    s16 x = (s16) (cb->params[1]);
-    s16 y = (s16) (cb->params[2]);
-    u16 d = cb->params[3];
-    u16 t = cb->params[4];
+void _obj_move_linear_trace(anim_engine_task *self) {
+    u16 *vars = (u16*)(self->vars);
+    u8 oam_id = (u8) (vars[0]);
+    oam_object* oam = &oams[oam_id];
+    s16 x = (s16) (vars[1]);
+    s16 y = (s16) (vars[2]);
+    u16 d = vars[3];
+    u16 t = vars[4];
 
 
-    cb->params[4] = (u16) (t + 1); //incrementing frame count 
+    vars[4]++; //incrementing frame count 
     //calculating the movement in this frame by this formula mov_x(t) = x*t/d - (t-1)*x/d
     int x_mov = (x * t) / d - ((t - 1) * x) / d;
     int y_mov = (y * t) / d - ((t - 1) * y) / d;
@@ -578,8 +591,8 @@ void anim_engine_obj_mover(u8 cbid) {
     oam -> x = (s16) ((oam -> x) + x_mov);
     oam -> y = (s16) ((oam -> y) + y_mov);
 
-    if (cb->params[4] == cb->params[3]) {
-        remove_big_callback(cbid);
+    if (vars[4] == vars[3]) {
+        anim_engine_task_delete(self);
     }
 }
 
@@ -632,40 +645,43 @@ void cmdx1E_fade(ae_memory* mem) {
     u8 to_intensity = anim_engine_read_byte(mem);
 
     //initing a callback
-    u8 cb_id = spawn_big_callback(anim_engine_fader, 0);
-    big_callbacks[cb_id].params[0] = color;
-    big_callbacks[cb_id].params[1] = dcol;
-    big_callbacks[cb_id].params[2] = ncol;
-    big_callbacks[cb_id].params[3] = duration;
-    big_callbacks[cb_id].params[4] = 0; //current frame
-    big_callbacks[cb_id].params[5] = from_intensity;
-    big_callbacks[cb_id].params[6] = to_intensity;
+    anim_engine_task *t = anim_engine_task_new(0, anim_engine_fader, 7 * sizeof(u16), mem->root);
+    
+    u16 *vars = (u16*)(t->vars);
+    vars[0] = color;
+    vars[1] = dcol;
+    vars[2] = ncol;
+    vars[3] = duration;
+    vars[4] = 0; //current frame
+    vars[5] = from_intensity;
+    vars[6] = to_intensity;
 
-    anim_engine_fader(cb_id);
+    anim_engine_fader(t);
 
 }
 
-void anim_engine_fader(u8 cb_id) {
+void anim_engine_fader(anim_engine_task *self) {
 
-    u16 duration = big_callbacks[cb_id].params[3];
-    u16 current_frame = big_callbacks[cb_id].params[4]++;
+    u16 *vars = (u16*)(self->vars);
+    u16 duration = vars[3];
+    u16 current_frame = vars[4]++;
     u8 intensity;
     if (duration) {
 
-        int d = big_callbacks[cb_id].params[6] - big_callbacks[cb_id].params[5];
+        int d = vars[6] - vars[5];
         d *= current_frame;
         d /= duration;
-        intensity = (u8) (d + big_callbacks[cb_id].params[5]);
+        intensity = (u8) (d + vars[5]);
 
     } else {
         //Instant palload
-        intensity = (u8) big_callbacks[cb_id].params[6];
+        intensity = (u8) vars[6];
     }
 
     //now we do the fading loop
-    int c = big_callbacks[cb_id].params[1];
-    int max = big_callbacks[cb_id].params[2] + c;
-    color over = {big_callbacks[cb_id].params[0]};
+    int c = vars[1];
+    int max = vars[2] + c;
+    color over = {vars[0]};
     while (c < max) {
         color b = pal_restore[c];
         color n = alpha_blend(b, over, intensity);
@@ -674,7 +690,7 @@ void anim_engine_fader(u8 cb_id) {
     }
 
     if (current_frame >= duration) {
-        remove_big_callback(cb_id);
+        anim_engine_task_delete(self);
     }
 }
 
@@ -770,21 +786,23 @@ void cmdx2B_bg_scroll(ae_memory *mem) {
     u16 duration = anim_engine_read_hword(mem);
     u16 hdelta = anim_engine_read_hword(mem);
     u16 vdelta = anim_engine_read_hword(mem);
-    u8 self = spawn_big_callback(anim_engine_bg_scroller, 0);
-    big_callbacks[self].params[0] = bg_id;
-    big_callbacks[self].params[1] = duration;
-    big_callbacks[self].params[2] = hdelta;
-    big_callbacks[self].params[3] = vdelta;
-    big_callbacks[self].params[4] = 0;
-    anim_engine_bg_scroller(self);
+    anim_engine_task *t = anim_engine_task_new(15, anim_engine_bg_scroller, 5 * sizeof(u16), mem->root);
+    u16 *vars = (u16*)(t->vars);
+    vars[0] = bg_id;
+    vars[1] = duration;
+    vars[2] = hdelta;
+    vars[3] = vdelta;
+    vars[4] = 0;
+    anim_engine_bg_scroller(t);
 }
 
-void anim_engine_bg_scroller(u8 self) {
-    u8 bg_id = (u8) big_callbacks[self].params[0];
-    u16 duration = big_callbacks[self].params[1];
-    u16 current_frame = ++(big_callbacks[self].params[4]);
-    s16 hdelta = (s16) big_callbacks[self].params[2];
-    s16 vdelta = (s16) big_callbacks[self].params[3];
+void anim_engine_bg_scroller(anim_engine_task *self) {
+    u16 *vars = (u16*)(self->vars);
+    u8 bg_id = (u8) vars[0];
+    u16 duration = vars[1];
+    u16 current_frame = ++(vars[4]);
+    s16 hdelta = (s16) vars[2];
+    s16 vdelta = (s16) vars[3];
     u16 bg_hreg = (u16)(0x10 + 4 * bg_id);
     u16 bg_vreg = (u16)(0x12 + 4 * bg_id);
     u16 x = get_io(bg_hreg);
@@ -804,7 +822,7 @@ void anim_engine_bg_scroller(u8 self) {
     }
 
     if (duration <= current_frame) {
-        remove_big_callback(self);
+        anim_engine_task_delete(self);
     }
 }
 
@@ -834,11 +852,12 @@ void cmdx2D_force_pals_to_black() {
     }
 }
 
-void anim_engine_bg_free_task(u8 self) {
-    if (!--big_callbacks[self].params[0]) {
-        void *memory = (void*) (big_callbacks[self].params[1] + (big_callbacks[self].params[2] << 16));
-        free(memory);
-        remove_big_callback(self);
+void anim_engine_bg_free_task(anim_engine_task *self) {
+    void **vars = (void**)(self->vars);
+    free(*vars);
+    if(anim_engine_task_delete(self) < 0){
+        dprintf("Error at deleting bg free task!\n");
+        err( ERR_GENERIC);
     }
 }
 
@@ -868,16 +887,17 @@ void cmdx30_fade_obj_pal(ae_memory *mem){
     int pal_id = get_obj_pal_by_tag(tag) + 16;
     u16 dcol = (u16)(16 * pal_id + start_col);
     u16 ncol = col_count;
-    u8 cb_id = spawn_big_callback(anim_engine_fader, 0);
-    big_callbacks[cb_id].params[0] = color;
-    big_callbacks[cb_id].params[1] = dcol;
-    big_callbacks[cb_id].params[2] = ncol;
-    big_callbacks[cb_id].params[3] = duration;
-    big_callbacks[cb_id].params[4] = 0; //current frame
-    big_callbacks[cb_id].params[5] = from_intensity;
-    big_callbacks[cb_id].params[6] = to_intensity;
+    anim_engine_task *t = anim_engine_task_new(0, anim_engine_fader, 7 * sizeof(u16), mem->root);
+    u16 *vars = (u16*)(t->vars);
+    vars[0] = color;
+    vars[1] = dcol;
+    vars[2] = ncol;
+    vars[3] = duration;
+    vars[4] = 0; //current frame
+    vars[5] = from_intensity;
+    vars[6] = to_intensity;
 
-    anim_engine_fader(cb_id);
+    anim_engine_fader(t);
     
 }
 
@@ -953,18 +973,19 @@ void cmdx36_load_obj_pal_from_struct(ae_memory *mem){
     if(force) cpuset(pal, &pals[(pal_id + 16) * 16], 16);
 }
 
-void _obj_move_trig_trace(u8 self){
-    u16 *values = big_callbacks[self].params;
-    u8 oam_id = (u8)values[0];
-    u16 duration = values[1];
-    if(duration == values[2]++){
-        remove_big_callback(self); return;
+void _obj_move_trig_trace(anim_engine_task *self){
+    u16 *vars = (u16*)(self->vars);
+    //trace @%x with vars @%x\n", self, vars);
+    u8 oam_id = (u8)vars[0];
+    u16 duration = vars[1];
+    if(duration == vars[2]++){
+        anim_engine_task_delete(self);
     }
-    u16 frame = values[2];
-    s16 amplitude = (s16)values[3];
-    int period = values[4];
-    bool on_y_axis = values[5];
-    int trig_func = values[6];
+    u16 frame = vars[2];
+    s16 amplitude = (s16)vars[3];
+    int period = vars[4];
+    bool on_y_axis = vars[5];
+    int trig_func = vars[6];
     int d;
     switch(trig_func){
         case 0: //sine function
@@ -1011,14 +1032,31 @@ void cmdx37_obj_move_trace(ae_memory *mem){
             u8 on_y_axis = anim_engine_read_byte(mem);
             u16 amplitude = anim_engine_read_hword(mem);
             u16 period = anim_engine_read_hword(mem);
-            u8 cb_id = spawn_big_callback(_obj_move_trig_trace, 0);
-            big_callbacks[cb_id].params[0] = oam_id;
-            big_callbacks[cb_id].params[1] = duration;
-            big_callbacks[cb_id].params[2] = 0;
-            big_callbacks[cb_id].params[3] = amplitude;
-            big_callbacks[cb_id].params[4] = period;
-            big_callbacks[cb_id].params[5] = on_y_axis;
-            big_callbacks[cb_id].params[6] = trace;
+            size_t size_var_space = 7 * sizeof(u16);
+            anim_engine_task *t = anim_engine_task_new(0, _obj_move_trig_trace, size_var_space, mem->root);
+            u16 *var_space = (u16*)(t->vars);
+            var_space[0] = oam_id;
+            var_space[1] = duration;
+            var_space[2] = 0;
+            var_space[3] = amplitude;
+            var_space[4] = period;
+            var_space[5] = on_y_axis;
+            var_space[6] = trace;
+            dprintf("Spawned trig trace task @%x\n", t);
+            break;
+        }
+        case 6:{
+            //Linear function
+            u16 dx = anim_engine_read_hword(mem);
+            u16 dy = anim_engine_read_hword(mem);
+            anim_engine_task *t = anim_engine_task_new(0, _obj_move_linear_trace,
+                5 * sizeof(u16), mem->root);
+            u16 *vars = (u16*)(t->vars);
+            vars[0] = oam_id;
+            vars[1] = (u16) dx;
+            vars[2] = (u16) dy;
+            vars[3] = duration;
+            vars[4] = 0x0; //frame count
             break;
         }
         default:

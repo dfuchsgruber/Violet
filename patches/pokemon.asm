@@ -856,6 +856,12 @@ blxr2:
     bx r2
 pshinysparkledone:
     
+//This pid is plugged into pokedex
+.org 0x08104C20
+    mov r0, #0
+    sub r0, #1
+    bx lr
+
 
 .org 0x080838DC
     //pokepic pid generation must not be shiny

@@ -8,12 +8,12 @@ setvar LASTTALKED 0x1
 lockall
 loadpointer 0x0 str_0x8d4859
 callstd MSG
-call ow_script_0x8d4852
+applymovement 1 mov_2
 loadpointer 0x0 str_0x8d4782
 callstd MSG
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x8d474e
-multichoice 0x0 0x0 0x0 0x0
+loadpointer 0x0 choice
+multichoice 0x0 0x0 0x0 1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x1
 gotoif LESS ow_script_0x8d44b9
@@ -23,6 +23,13 @@ callstd MSG
 special 0x7
 trainerbattlecont 0x1 0x26 0x0 str_0x8d46bb str_0x8d469f ow_script_0x8d44dd
 
+mov_2:
+.byte 2, STOP
+
+.align 4
+choice:
+    .word str_mill_choice_1, 0
+    .word str_mill_choice_0, 0
 
 .global ow_script_0x8d44dd
 ow_script_0x8d44dd:
@@ -64,7 +71,3 @@ callstd MSG
 goto ow_script_0x8d4513
 
 
-.global ow_script_0x8d4852
-ow_script_0x8d4852:
-singlemovement 0x1 0x2
-return

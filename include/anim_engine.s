@@ -479,6 +479,12 @@
 @   amplitude : hword
 @   period : hword
 
+.equ LINEAR, 6
+@Move along linear axis (equivalent to obj_move command)
+@requires:
+@   delta x : hword
+@   delta y : hword
+
 
 @field for bg setup
 .macro bg_setup_cnfg id charbase mapbase size colmode priority

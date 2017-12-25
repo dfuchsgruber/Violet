@@ -13,7 +13,7 @@ items:
     .word str_pokepad_wondertrade_desc //should be descr
     //Pokedex
     .word 0x829
-    .word str_pokepad_pokedex
+    .word str_pokepad_pokedex2
     .word pokedex_init //should be initilaizer func
     .word str_pokepad_pokedex_desc //should be descr
     //Pokeradar

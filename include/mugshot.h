@@ -15,8 +15,8 @@ extern "C" {
 #include "stdbool.h"
 
     typedef struct mugshot {
-        void *gfx;
-        void *pal;
+        const void *gfx;
+        const void *pal;
         u8 *name;
     } mugshot;
 

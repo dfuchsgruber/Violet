@@ -81,30 +81,30 @@ map_1_0_wild_other_entries:
 .global map_1_0_wild_rod
 .align 4
 map_1_0_wild_rod:
-.byte 0xa @// Frequency in 1/256
+.byte 0x26 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_1_0_wild_rod_entries
 
 .align 4
 map_1_0_wild_rod_entries:
-.byte 35, 35 @//Level range
-.hword POKEMON_ENTON @// 70 percent, rod percent
-.byte 35, 35 @//Level range
-.hword POKEMON_GEHWEIHER @// 30 percent, rod percent
-.byte 35, 37 @//Level range
-.hword POKEMON_GEHWEIHER @// 60 percent, profi rod percent
-.byte 37, 37 @//Level range
-.hword POKEMON_ENTORON @// 20 percent, profi rod percent
-.byte 40, 40 @//Level range
-.hword POKEMON_ENTORON @// 20 percent, profi rod percent
-.byte 10, 0 @//Level range
-.hword POKEMON_POKEMON_0 @// 40 percent, super rod percent
-.byte 112, 161 @//Level range
-.hword 0x872 @// 40 percent, super rod percent
-.byte 20, 25 @//Level range
-.hword POKEMON_PARAGONI @// 15 percent, super rod percent
-.byte 20, 25 @//Level range
-.hword POKEMON_TANNZA @// 4 percent, super rod percent
-.byte 20, 25 @//Level range
-.hword POKEMON_KASTADUR @// 1 percent, super rod percent
+.byte 14, 14 @//Level range
+.hword POKEMON_SCHMERBE @// 70 percent, rod percent
+.byte 14, 14 @//Level range
+.hword POKEMON_KARPADOR @// 30 percent, rod percent
+.byte 36, 36 @//Level range
+.hword POKEMON_GARADOS @// 60 percent, profi rod percent
+.byte 36, 36 @//Level range
+.hword POKEMON_WELSAR @// 20 percent, profi rod percent
+.byte 36, 36 @//Level range
+.hword POKEMON_WELSAR @// 20 percent, profi rod percent
+.byte 48, 48 @//Level range
+.hword POKEMON_WELSAR @// 40 percent, super rod percent
+.byte 48, 48 @//Level range
+.hword POKEMON_WELSAR @// 40 percent, super rod percent
+.byte 48, 48 @//Level range
+.hword POKEMON_GARADOS @// 15 percent, super rod percent
+.byte 55, 55 @//Level range
+.hword POKEMON_WELSAR @// 4 percent, super rod percent
+.byte 55, 55 @//Level range
+.hword POKEMON_WELSAR @// 1 percent, super rod percent
 

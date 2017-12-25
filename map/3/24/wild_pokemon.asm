@@ -25,30 +25,30 @@ map_3_24_wild_water_entries:
 .global map_3_24_wild_rod
 .align 4
 map_3_24_wild_rod:
-.byte 0x2 @// Frequency in 1/256
+.byte 0x14 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_24_wild_rod_entries
 
 .align 4
 map_3_24_wild_rod_entries:
-.byte 25, 32 @//Level range
-.hword POKEMON_ENTON @// 70 percent, rod percent
-.byte 25, 32 @//Level range
-.hword POKEMON_MARILL @// 30 percent, rod percent
-.byte 25, 30 @//Level range
-.hword POKEMON_ENTON @// 60 percent, profi rod percent
-.byte 30, 35 @//Level range
-.hword POKEMON_ENTON @// 20 percent, profi rod percent
-.byte 35, 40 @//Level range
-.hword POKEMON_ENTON @// 20 percent, profi rod percent
-.byte 2, 0 @//Level range
-.hword POKEMON_POKEMON_0 @// 40 percent, super rod percent
-.byte 72, 142 @//Level range
-.hword 0x83c @// 40 percent, super rod percent
 .byte 5, 5 @//Level range
-.hword POKEMON_KARPADOR @// 15 percent, super rod percent
+.hword POKEMON_KARPADOR @// 70 percent, rod percent
 .byte 5, 5 @//Level range
-.hword POKEMON_KARPADOR @// 4 percent, super rod percent
+.hword POKEMON_KARPADOR @// 30 percent, rod percent
 .byte 5, 15 @//Level range
-.hword POKEMON_GRAMOKLES @// 1 percent, super rod percent
+.hword POKEMON_GRAMOKLES @// 60 percent, profi rod percent
+.byte 5, 15 @//Level range
+.hword POKEMON_KARPADOR @// 20 percent, profi rod percent
+.byte 5, 15 @//Level range
+.hword POKEMON_QUABBEL @// 20 percent, profi rod percent
+.byte 15, 25 @//Level range
+.hword POKEMON_GRAMOKLES @// 40 percent, super rod percent
+.byte 20, 30 @//Level range
+.hword POKEMON_DUOKLES @// 40 percent, super rod percent
+.byte 15, 25 @//Level range
+.hword POKEMON_GARADOS @// 15 percent, super rod percent
+.byte 15, 25 @//Level range
+.hword POKEMON_ENTON @// 4 percent, super rod percent
+.byte 25, 35 @//Level range
+.hword POKEMON_ENTON @// 1 percent, super rod percent
 

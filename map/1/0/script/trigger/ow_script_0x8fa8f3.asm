@@ -36,6 +36,7 @@ settrainerflag 0x4b
 settrainerflag 0x4c
 lockall
 playsong MUS_ROCKET_HQ_AND_AZURIA_HOHLE_AND_TOP_4_BRUNO 0x0
+setvar SONG_OVERRIDE MUS_ROCKET_HQ_AND_AZURIA_HOHLE_AND_TOP_4_BRUNO
 special 0x113
 applymovement 0x7f ow_script_movs_0x8f4d2c
 waitmovement 0x0
@@ -193,7 +194,6 @@ trainerbattlecont 0x1 0x4a 0x0 str_0x8f523b str_0x8f527b ow_script_0x8f5cdf
 
 .global ow_script_0x8f5cdf
 ow_script_0x8f5cdf:
-playsong MUS_ROCKET_HQ_AND_AZURIA_HOHLE_AND_TOP_4_BRUNO 0x0
 loadpointer 0x0 str_0x8f5f96
 callstd MSG
 trainerbattlecont 0x1 0x4b 0x0 str_0x8f5f21 str_0x8f5f57 ow_script_0x8fa888
@@ -222,7 +222,6 @@ ow_script_movs_0x8f5eac:
 
 .global ow_script_0x8fa888
 ow_script_0x8fa888:
-playsong MUS_ROCKET_HQ_AND_AZURIA_HOHLE_AND_TOP_4_BRUNO 0x0
 loadpointer 0x0 str_0x8f5edb
 callstd MSG
 call ow_script_0x8f4d18
@@ -236,12 +235,7 @@ applymovement 0x5 ow_script_movs_0x8f5eac
 waitmovement 0x0
 pause 0x20
 call ow_script_0x8f4d18
-loadpointer 0x0 str_0x8f5d92
-callstd MSG
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-special 0x3b
-playsong MUS_KAMPF_GEGEN_ARENALEITER_HOENN 0x0
+setvar BATTLE_SONG_OVERRIDE MUS_KAMPF_GEGEN_ARENALEITER_HOENN
 trainerbattlecont 0x1 0x4c 0x0 str_0x8f5d92 str_0x8f5d31 ow_script_0x8fab2c
 
 
@@ -310,6 +304,7 @@ ow_script_movs_0x8f68a4:
 
 .global ow_script_0x8fab2c
 ow_script_0x8fab2c:
+setvar SONG_OVERRIDE 0
 applymovement 0xff ow_script_movs_0x8f6d19
 waitmovement 0x0
 clearflag TRANS_DISABLE
@@ -331,6 +326,7 @@ hidesprite 0xd
 hidesprite 0x9
 hidesprite 0x6
 fadescreen 0x0
+playsong VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN 0
 applymovement 0x1e ow_script_movs_0x8f6cf5
 waitmovement 0x0
 call ow_script_0x8f4d04

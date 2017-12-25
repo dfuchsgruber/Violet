@@ -127,7 +127,7 @@ frame 1910
 
 frame 2100
     sound 80
-    fadescreen 0x7FFF 0x 512 2 0 16
+    fadescreen 0x7FFF 0x0 512 2 0 16
     endframe
 
 frame 2110

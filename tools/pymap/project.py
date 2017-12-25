@@ -115,7 +115,7 @@ class Project:
         if symbol_old not in self.tilesets: raise Exception("Tileset symbol '" + symbol_old + "' is not defined!")
         for bank in self.banks:
             for mapid in self.banks[bank]:
-                _, path, _, _ = self.banks[bank][map_id]
+                _, path, _, _ = self.banks[bank][mapid]
                 changed = False
                 mh = mapheader.load(path, self, instanciate_ts=False)
                 if mh.footer.tsp.symbol == symbol_old:
@@ -126,7 +126,7 @@ class Project:
                     changed = True
                 if changed:
                     mh.save(path)
-        path = self.tilesets.pop[symbol_old]
+        path = self.tilesets.pop(symbol_old)
         self.tilesets[symbol_new] = path
 
         

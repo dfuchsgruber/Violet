@@ -3,20 +3,10 @@
     .word startmenu_init_pokepad | 1
     .word str_pokemon
 
-//pokeradar
-.org 0x0805EC6C
-    ldr r0, =pokeradar_map_increment_person_cnt | 1
-    bx r0
-    .pool
-
-.org 0x0805FDA0
-    ldr r2, =pokeradar_npc_get_person_increment_person_cnt | 1
-    bx r2
-    .pool 
-
-.org 0x080550B4
-    ldr r0, =pokeradar_load_additional_person | 1
-    bx r0 
+//Pokeradar
+.org 0x0805FDB0
+    ldr r3, =person_get_by_target_index | 1
+    bx r3
     .pool
 
 .org 0x08081AE8
@@ -43,6 +33,17 @@
 
 .org 0x08088F70
         ldr r1, =pokedex_get_number_seen_or_caught | 1
+        bx r1
+        .pool
+
+//Pokedex from battle
+.org 0x08106C20
+        mov r0, r5
+        ldr r1, =pokedex_init_entry_from_battle | 1
+        bl bxr1
+        pop {r4, r5}
+        pop {r1}
+bxr1:
         bx r1
         .pool
 

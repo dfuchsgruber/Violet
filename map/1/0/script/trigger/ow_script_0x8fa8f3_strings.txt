@@ -1,55 +1,55 @@
 .string str_0x8f4c85 GER
-	=???:_Wir_werden_die_Informationen\nohnehin_bekommen,_Professor.\lSie_ersparen_sich_eine_Menge\lSchmerzen,_wenn_sie_kooperieren.
+	=Wir_werden_die_Informationen\nohnehin_bekommen,_Professor.\lSie_ersparen_sich_eine_Menge\lSchmerzen,_wenn_sie_kooperieren.
 .end
 
 
 .string str_0x8f4c4b GER
-	=???:_In_Ordnung,_in_Ordnung.\nTun_Sie_mir_nichts,_bitte!
+	=In_Ordnung,_in_Ordnung.\nTun_Sie_mir_nichts,_bitte!
 .end
 
 
 .string str_0x8f4b7b GER
-	=???:_Gut,_Professor_Primus,_eine\nweise_Entscheidung.\lWir_verlangen_nicht_viel_von\lIhnen._Sehen_Sie_sich_die_Runen\lan,_die_dort_in_den_Schrein\lgraviert_sind_und_\$uebersetzten_Sie\ldie_antiken_Icognito-Zeichen.
+	=Gut,_Professor_Primus,_eine\nweise_Entscheidung.\lWir_verlangen_nicht_viel_von\lIhnen._Sehen_Sie_sich_die_Runen\lan,_die_dort_in_den_Schrein\lgraviert_sind_und_\$uebersetzten_Sie\ldie_antiken_Icognito-Zeichen.
 .end
 
 
 .string str_0x8f4aee GER
-	=Professor_Primus:_...\p...._...._....\pEs_ist_eine_sehr_alte_Sprache_...\lwie_..._interessant_...\p....\p.....\pOh_ja,_h\$oechst_interessant_...
+	=... ... ...\p...._...._....\pEs_ist_eine_sehr_alte_Sprache_...\lwie_..._interessant_...\p....\p.....\pOh_ja,_h\$oechst_interessant_...
 .end
 
 
 .string str_0x8f4ab8 GER
-	=???:_Also,_was_ist_nun?_Was_steht\ndort_geschrieben?
+	=Also,_was_ist_nun?_Was_steht\ndort_geschrieben?
 .end
 
 
 .string str_0x8f49f3 GER
-	=Professor_Primus:_Es_sind_im\nGrunde_zwei_Texte._Ein_alter_Text,\lder_vom_Stein_der_Zeit,_dem\lDiserakt,_erz\$aehlt._Und_ein_neuer\lText,_nur_ein_paar_Jahre_alt,_der\lebenfalls_von_dem_Stein_handelt.
+	=... Offenbar_sind_es_im\nGrunde_zwei_Texte._Ein_alter_Text,\lder_vom_Stein_der_Zeit,_dem\lDiserakt,_erz\$aehlt._Und_ein_neuer\lText,_nur_ein_paar_Jahre_alt,_der\lebenfalls_von_dem_Stein_handelt.
 .end
 
 
 .string str_0x8f49c5 GER
-	=???:_Und_was_besagen_sie,_die\nbeiden_Texte?
+	=Und_was_besagen_sie,_die\nbeiden_Texte?
 .end
 
 
 .string str_0x8f48ca GER
-	=Professor_Primus:_Der_alte_Text\nhandelt_von_der_Erschaffung_der\lZeit_durch_Dialga._Dieses_soll_das\lHerz_der_Zeit_in_einem_Stein\lversiegelt_haben._Aus_diesem_Stein\list_das_zeitreisende_Pok\emon\lCelebi_entstanden,_welches_den\lDiserakt_bewachen_sollte.
+	=Hmm... Diese alte Inschrift\nhandelt_von_der_Erschaffung_der\lZeit_durch_Dialga._Dieses_soll_das\lHerz_der_Zeit_in_einem_Stein\lversiegelt_haben._Aus_diesem_Stein\list_das_zeitreisende_Pok\emon\lCelebi_entstanden,_welches_den\lDiserakt_bewachen_sollte.
 .end
 
 
 .string str_0x8f4823 GER
-	=???:_Ja,_das_wissen_wir_bereits.\nCelebi,_das_Zeitpokemon,_dem\ldieser_Schrein_gewidmet_ist.\lDer_neue_Text,_der_interessiert\lmich._Welche_Enth\$uellungen_h\$aelt_er\lbereit?
+	=Oh ja,_das_wissen_wir_bereits.\nCelebi,_das_Zeitpokemon,_dem\ldieser_Schrein_gewidmet_ist.\lDer_neue_Text,_der_interessiert\lmich._Welche_Enth\$uellungen_h\$aelt_er\lbereit?
 .end
 
 
 .string str_0x8f4755 GER
-	=Professor_Primus:_Der_neue_Text\nist_an_jene_Menschen_adressiert,\ldie_den_Stein_mit_reinem_Herzen\lsuchen._Er_besagt,_dass_Celebi_den\lStein_fortgebracht_und_ihn_den\lgro\$sen_W\$aechtern_der_Welt\lanvertraut_hat.
+	=Die neuerlich hinzugefügte Inschrift\nist_an_jene_Menschen_adressiert,\ldie_den_Stein_mit_reinem_Herzen\lsuchen._Er_besagt,_dass_Celebi_den\lStein_fortgebracht_und_ihn_den\lgro\$sen_W\$aechtern_der_Welt\lanvertraut_hat.
 .end
 
 
 .string str_0x8f46fc GER
-	=???:_..._..._...\p..._..._..._...\pDen_..._W\$aechtern_...\p..._meint_es_damit_...._etwa_...
+	=..._..._...\p..._..._..._...\pDen_..._W\$aechtern_...\p..._meint_es_damit_...._etwa_...
 .end
 
 
@@ -59,17 +59,17 @@
 
 
 .string str_0x8f59e8 GER
-	=Professor_Primus:_Ein_Trainer!\nArceus_sei_Dank!_Hilf_mir,_diese\lSchergen_von_Team_Violet_haben\lmich_als_Geisel_genommen!
+	=Ein_Trainer!\nArceus_sei_Dank!_Hilf_mir,_diese\lSchergen_von_Team_Violet_haben\lmich_als_Geisel_genommen!
 .end
 
 
 .string str_0x8f59cf GER
-	=???:_Schweig,_du_Narr!
+	=Schweig,_du_Narr!
 .end
 
 
 .string str_0x8f56b8 GER
-	=???:_Was_haben_wir_denn_da?\nEinen_kleinen_Jungen,_der_sich_in\lAngelegenheiten_einmischt,_die_ihn\lnichts_angehen.\pErlaube_mir_mich_vorzustellen._Ich\nbin_Rin,_Anf\$uehrer_der_zweiten\lDivision_von_Team_Violet_und\lMitglied_des_Vorstands.\pWir_sind_eine_Organisation_des\nFriedens._Seit_je_her_war_es_die\lFreiheit,_die_der_Menschheit_den\lKrieg_gebracht_hat._Es_liegt_in\lder_Natur_des_Menschen,_zu\lk\$aempfen._Wir_werden_diesem\lKreislauf_ein_Ende_bereiten,_indem\lwir_eine_Waffe_konstruieren,\lwelche_uns_zu_den_Herrschern_der\lWelt_machen_wird._Dann_werden_wir\ldie_Menschheit_zum_Frieden\lzwingen!\pDas_Problem_ist_die_Energie,_die\nf\$uer_eine_derartige_Waffe_ben\$oetigt\lwird._Da_kommt_der_Stein_der_Zeit,\lder_Diserakt,_ins_Spiel._Mit_der\lEssenz_der_Zeit_angetrieben,\lk\$oennen_wir_dank_ihm_die_Maschine\lbetreiben.
+	=Was_haben_wir_denn_da?\nEinen_kleinen_Jungen,_der_sich_in\lAngelegenheiten_einmischt,_die_ihn\lnichts_angehen.\pErlaube_mir_mich_vorzustellen._Ich\nbin_Rin,_Anf\$uehrer_der_zweiten\lDivision_von_Team_Violet_und\lMitglied_des_Vorstands.\pWir_sind_eine_Organisation_des\nFriedens._Seit_je_her_war_es_die\lFreiheit,_die_der_Menschheit_den\lKrieg_gebracht_hat._Es_liegt_in\lder_Natur_des_Menschen,_zu\lk\$aempfen._Wir_werden_diesem\lKreislauf_ein_Ende_bereiten,_indem\lwir_eine_Waffe_konstruieren,\lwelche_uns_zu_den_Herrschern_der\lWelt_machen_wird._Dann_werden_wir\ldie_Menschheit_zum_Frieden\lzwingen!\pDas_Problem_ist_die_Energie,_die\nf\$uer_eine_derartige_Waffe_ben\$oetigt\lwird._Da_kommt_der_Stein_der_Zeit,\lder_Diserakt,_ins_Spiel._Mit_der\lEssenz_der_Zeit_angetrieben,\lk\$oennen_wir_dank_ihm_die_Maschine\lbetreiben.
 .end
 
 
@@ -79,7 +79,7 @@
 
 
 .string str_0x8f5514 GER
-	=Rin:_Du_begreifst_es_nicht,_Junge.\nDie_M\$aechte,_mit_denen_du_dich\lanlegst,_\$uebersteigen_deine\lF\$aehigkeiten_bei_Weitem._Unser_Plan\list_in_vollem_Gange_und_kann_nicht\lmehr_aufgehalten_werden.\lSchlie\$slich_wird_man_uns_noch\ldanken,_f\$uer_das,_was_wir_der\lMenschheit_geschenkt_haben.
+	=Du_begreifst_es_nicht,_Junge.\nDie_M\$aechte,_mit_denen_du_dich\lanlegst,_\$uebersteigen_deine\lF\$aehigkeiten_bei_Weitem._Unser_Plan\list_in_vollem_Gange_und_kann_nicht\lmehr_aufgehalten_werden.\lSchlie\$slich_wird_man_uns_noch\ldanken,_f\$uer_das,_was_wir_der\lMenschheit_geschenkt_haben.
 .end
 
 
@@ -89,17 +89,17 @@
 
 
 .string str_0x8f52c9 GER
-	=Rin:_Du_bist_ein_einf\$aeltiger\nIdealist._Solange_die_Menschen\lfrei_sind,_werden_sie_immer_Kriege\lf\$uehren,_werden_sie_immer_k\$aempfen.\lEine_Nation_muss_unterdr\$ueckt\lwerden,_um_in_Frieden_existieren\lzu_k\$oennen._Der_Krieg_ist_das\leinzige,_das_wahren_Frieden\lbringen_kann._Ich_werde_es_dir\lbeweisen._Los,_meine_Untergebenen,\lschaltet_diesen_Ignoranten_aus.
+	=Du_bist_ein_einf\$aeltiger\nIdealist._Solange_die_Menschen\lfrei_sind,_werden_sie_immer_Kriege\lf\$uehren,_werden_sie_immer_k\$aempfen.\lEine_Nation_muss_unterdr\$ueckt\lwerden,_um_in_Frieden_existieren\lzu_k\$oennen._Der_Krieg_ist_das\leinzige,_das_wahren_Frieden\lbringen_kann._Ich_werde_es_dir\lbeweisen._Los,_meine_Untergebenen,\lschaltet_diesen_Ignoranten_aus.
 .end
 
 
 .string str_0x8f523b GER
-	=R\$uepel:_Du_wirst_Rin_in_ihrer\nMission_nicht_aufhalten,_Bengel!
+	=Du_wirst_Rin_in_ihrer\nMission_nicht_aufhalten,_Bengel!
 .end
 
 
 .string str_0x8f527b GER
-	=R\$uepel:_Du_kannst_nicht_gewinnen,\negal,_ob_ich_nun_verloren_habe.
+	=Du_kannst_nicht_gewinnen,\negal,_ob_ich_nun_verloren_habe.
 .end
 
 
@@ -124,12 +124,12 @@
 
 
 .string str_0x8f5eb8 GER
-	=Rin:_Beiseite,_ihr_Schw\$aechlinge.
+	=Beiseite,_ihr_Schw\$aechlinge.
 .end
 
 
 .string str_0x8f5d92 GER
-	=Rin:_Du_hast_eine_Menge_Mut,_dich\nmit_uns_anzulegen._Aber_du_musst\lbegreifen,_dass_unsere_Ideale_kein\ldummes_Kinderspiel_sind._Wir\lk\$aempfen_f\$uer_eine_bessere_Welt._Und\lich_bin_bereit,_jeden_Preis_zu\lzahlen,_der_von_mir_gefordert\lwird._Auch_wenn_es_bedeutet,_ein\lKind_zu_vernichten.
+	=Du_hast_eine_Menge_Mut,_dich\nmit_uns_anzulegen._Aber_du_musst\lbegreifen,_dass_unsere_Ideale_kein\ldummes_Kinderspiel_sind._Wir\lk\$aempfen_f\$uer_eine_bessere_Welt._Und\lich_bin_bereit,_jeden_Preis_zu\lzahlen,_der_von_mir_gefordert\lwird._Auch_wenn_es_bedeutet,_ein\lKind_zu_vernichten.
 .end
 
 
@@ -139,17 +139,17 @@
 
 
 .string str_0x8fa9e7 GER
-	=Rin:_\b0\nDu_bist_\b0_\b0\lein_ernstzunehmender_Gegner._Ich\lwar_unvorsichtig_und_habe_mich\l\$ueberrumpeln_lassen.\pSei's_drum,_ich_habe_bereits\nerfahren,_was_ich_wissen_wollte.\pUnsere_Friedensmission_wird\nforgesetzt_und_du_solltest_dich\llieber_von_uns_fern_halten,_Kind.\lAnderenfalls_werden_dir_die_Dinge\lschnell_\$ueber_den_Kopf_wachsen.
+	=\b0\nDu_bist_\b0_\b0\lein_ernstzunehmender_Gegner._Ich\lwar_unvorsichtig_und_habe_mich\l\$ueberrumpeln_lassen.\pSei's_drum,_ich_habe_bereits\nerfahren,_was_ich_wissen_wollte.\pUnsere_Friedensmission_wird\nforgesetzt_und_du_solltest_dich\llieber_von_uns_fern_halten,_Kind.\lAnderenfalls_werden_dir_die_Dinge\lschnell_\$ueber_den_Kopf_wachsen.
 .end
 
 
 .string str_0x8f6cfb GER
-	=Rin:_Wir_ziehen_ab,_los!
+	=Wir_ziehen_ab,_los!
 .end
 
 
 .string str_0x8f6c09 GER
-	=Professor_Primus:_Oh_Arceus,_ich\ndanke_dir,_tausend_Mal_danke_ich\ldir,_dass_du_mich_von_diesen\lschrecklichen_Schurken_befreit\lhast._Bereits_seit_einer_Woche\lhalten_sie_mich_gefangen_und\lzwingen_mich_dazu,_antike_Texte_zu\l\$uebersetzten.
+	=Oh_beim gro\$sen Arceus,_ich\ndanke_dir,_tausend_Mal_danke_ich\ldir,_dass_du_mich_von_diesen\lschrecklichen_Schurken_befreit\lhast._Bereits_seit_einer_Woche\lhalten_sie_mich_gefangen_und\lzwingen_mich_dazu,_antike_Texte_zu\l\$uebersetzten.
 .end
 
 
@@ -159,17 +159,17 @@
 
 
 .string str_0x8f6bb4 GER
-	=Professor_Primus:_Oh_Elise,_meine\nliebe_Elise!
+	=Elise! Was tust du denn hier?
 .end
 
 
 .string str_0x8f6b22 GER
-	=Elise:_Ich_hatte_mir_solche_Sorgen\num_dich_gemacht,_Papa._Als_ich\lgeh\$oert_habe,_dass_Team_Violet_dich\lentf\$uehrt_hat,_bin_ich_fast\ldurchgedreht...
+	=Ich_habe_mir_solche_Sorgen\num_dich_gemacht,_Papa._Als_ich\lgeh\$oert_habe,_dass_Team_Violet_dich\lentf\$uehrt_hat,_bin_ich_fast\ldurchgedreht...
 .end
 
 
 .string str_0x8f6ae5 GER
-	=Professor_Primus:_Sei_unbesorgt,\nKleines,_ich_bin_wohlauf.
+	=Sei unbesorgt, ich bin wohlauf.
 .end
 
 
@@ -179,12 +179,12 @@
 
 
 .string str_0x8f68d7 GER
-	=Elise:_Wirklich,_\b\01?\nDu_bist_ohne_Zweifel_fantastisch!\pAls_ich_dich_das_erste_Mal_gesehen\nhabe,_wusste_ich,_dass_du_ein\ltalentierter_Trainer_bist,_aber\ldass_du_sogar_ein_so_hohes_Tier_in\lder_Hirarchie_Team_Violets\lbesiegen_kannst...\pFantastisch!_Du_hast_mir_meinen\nlieben_Vater_zur\$ueckgebracht,\l\b\01!_Ich_w\$uesste_nicht,_was\lich_ohne_deine_Hilfe_getan_h\$aette.\pDanke,_danke,_und_nochmals_danke!
+	=Wirklich,_\b\01?\nDu_bist_ohne_Zweifel_fantastisch!\pAls_ich_dich_das_erste_Mal_gesehen\nhabe,_wusste_ich,_dass_du_ein\ltalentierter_Trainer_bist,_aber\ldass_du_sogar_ein_so_hohes_Tier_in\lder_Hirarchie_Team_Violets\lbesiegen_kannst...\pFantastisch!_Du_hast_mir_meinen\nlieben_Vater_zur\$ueckgebracht,\l\b\01!_Ich_w\$uesste_nicht,_was\lich_ohne_deine_Hilfe_getan_h\$aette.\pDanke,_danke,_und_nochmals_danke!
 .end
 
 
 .string str_0x8f68a8 GER
-	=Professor_Primus:_Ungeachtet\ndessen_aber_...
+	=Ungeachtet\ndessen_aber_...
 .end
 
 
@@ -194,17 +194,17 @@
 
 
 .string str_0x8f6725 GER
-	=Elise:_Das_klingt_ja_schrecklich!
+	=Das_klingt_ja_schrecklich!
 .end
 
 
 .string str_0x8f6626 GER
-	=Professor_Primus:_Das_ist_in_der\nTat_beunruhigend._Alarmierend\lsogar...\lTeam_Violet_darf_unter_keinen\lUmst\$aenden_in_den_Besitz_des\lDiserakts_gelangen._Ich_werde_mich\lunverz\$ueglich_auf_den_Weg_machen,\ldie_Top_Vier_von_der_Situation_in\lKenntnis_zu_setzten.
+	=Ja. Das_ist_in_der\nTat_beunruhigend._Alarmierend\lsogar...\lTeam_Violet_darf_unter_keinen\lUmst\$aenden_in_den_Besitz_des\lDiserakts_gelangen._Ich_werde_mich\lunverz\$ueglich_auf_den_Weg_machen,\ldie_Top_Vier_von_der_Situation_in\lKenntnis_zu_setzten.
 .end
 
 
 .string str_0x8f65b0 GER
-	=Elise:_\b\01,_was_wirst_du\nnun_tun?_Verfolgst_du_Team_Violet\lweiterhin,_um_unsere_Welt_vor_der\lUnterwerfung_zu_retten?
+	=\b\01,_was_wirst_du\nnun_tun?_Verfolgst_du_Team_Violet\lweiterhin,_um_unsere_Welt_vor_der\lUnterwerfung_zu_retten?
 .end
 
 
@@ -214,5 +214,5 @@
 
 
 .string str_0x8f6465 GER
-	=Elise:_Du_bist_wahrlich_ein_nobler\nMensch,_\b\01._Wenn_uns_jemand\lretten_kann,_dann_du.
+	=Du_bist_wahrlich_ein_gro\$ser\nMensch,_\b\01._Wenn_uns_jemand\lretten_kann,_dann_du.
 .end

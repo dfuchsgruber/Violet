@@ -5,7 +5,7 @@
 #include "tile.h"
 #include "gfx.h"
 #include "debug.h"
-
+#include "color.h"
 
 /*
  * Per each map on each bank we get an additional gras animation by this routine (a table determines which one)
@@ -95,7 +95,8 @@ u8 tile_any_grass_init(coordinate *pos){
                 u8 pal_id = get_obj_pal_by_tag(tile_any_grasses[i].pal->tag);
                 if(pal_id == 0xFF)
                     pal_id = allocate_obj_pal(tile_any_grasses[i].pal->tag);
-                pal_load_uncomp(tile_any_grasses[i].pal->pal, (u16)(pal_id*16 + 256), 32);
+                u16 color = (u16)(pal_id * 16 + 256);
+                pal_load_uncomp(tile_any_grasses[i].pal->pal, color, 32);
                 pal_apply_shader_by_overworld_pal(pal_id);
                 pal_ow_fading_state_sync(pal_id);
             }

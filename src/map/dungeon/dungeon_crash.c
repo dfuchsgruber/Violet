@@ -50,8 +50,8 @@ void dungeon_store_current_pos() {
     u8 map = (*save1)->map;
     cmem->dgen.from_bank = bank;
     cmem->dgen.from_map = map;
-    cmem->dgen.from_x = (*save1)->x;
-    cmem->dgen.from_y = (*save1)->y;
+    cmem->dgen.from_x = (*save1)->x_cam_orig;
+    cmem->dgen.from_y = (*save1)->y_cam_orig;
     cmem->dgen.facing = (u8) (*vardecrypt(0x800C));
     cmem->dhead.name_bank =  mapbanks[bank][map]->name_bank;
     cmem->dgen.initial_seed = (u32) (random_change_seed() | (random_change_seed() << 16));

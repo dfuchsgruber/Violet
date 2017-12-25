@@ -16,7 +16,5 @@ void special_move_npc_to_player();
 
 void special_move_npc_to();
 
-
-
 #endif	/* OVERWORLD_H */
 

@@ -1,12 +1,33 @@
+.include "std.s"
+
 .global battle_bg_catch
+
+.equ BATTLE_BG_CATCH, 14
 
 .align 4
 .thumb
 
 .thumb_func
 battle_bg_catch:
-    mov r0, #0x19	@catch bg
-    ldr r1, =0x0203c5c6
-    strb r0, [r1]
-    ldr r0, =0x802DA60 | 1
-    bx r0
+    ldr r0, =BATTLE_BG_OVERRIDE
+    ldr r1, =vardecrypt
+    bl bxr1
+    mov r1, #BATTLE_BG_CATCH + 1
+    strh r1, [r0]
+    ldr r1, =0x0800F2D0 | 1
+    bl bxr1
+    ldr r1, =0x0800F3A4 | 1
+    bl bxr1
+    ldr r0, =BATTLE_BG_OVERRIDE
+    ldr r1, =vardecrypt
+    bl bxr1
+    mov r1, #0
+    strh r1, [r0]
+    ldr r1, =0x02022980
+    mov r2, #0x1
+    lsl r2, #8
+    mov r0, r2
+    strh r0, [r1]
+    ldr r1, =0x802DACC | 1
+bxr1:
+    bx r1

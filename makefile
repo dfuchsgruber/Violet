@@ -175,10 +175,15 @@ $(BLDPATH)/map/proj.o: map/proj.pmp
 #	Compile pmp map project
 	$(PYPROJ2S) -b mapbanks -f mapfooters -o $(BLDPATH)/map/proj.s map/proj.pmp
 	$(AS) $(ASFLAGS) $(BLDPATH)/map/proj.s -o $(BLDPATH)/map/proj.o
+	
+$(BLDPATH)/map/morgana.o: map/3/21/map_3_21.pmh
+#	Run python script for generating a sorted list of morgana tiles
+	$(PY) tools/fata_morgana_gen.py map/3/21/map_3_21.pmh $(BLDPATH)/map/morgana.s fata_morgana_blocks fata_morgana_blocks_cnt
+	$(AS) $(ASFLAGS) $(BLDPATH)/map/morgana.s -o $(BLDPATH)/map/morgana.o
 
-$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o
+$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o $(BLDPATH)/map/morgana.o
 #	Create a ld script
-	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o)" > $(BLDPATH)/asset.ld
+	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/map/morgana.o)" > $(BLDPATH)/asset.ld
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o
 	
 

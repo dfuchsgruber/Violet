@@ -88,10 +88,10 @@ for pair in maps2export:
         outtable += basesym + "_wild_other, "
     else:
         outtable += "0, "
-    rod_off = rom.nullable_pointer(off + 8)
+    rod_off = rom.nullable_pointer(off + 16)
     if rod_off:
         #Export rod data
-        data += export_data(water_off, 10, basesym + "_wild_rod", chances_rod)
+        data += export_data(rod_off, 10, basesym + "_wild_rod", chances_rod)
         outtable += basesym + "_wild_rod "
     else:
         outtable += "0 "

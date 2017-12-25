@@ -56,10 +56,10 @@ callstd MSG
 special 0x7
 call ow_script_0x89e1fc
 loadpointer 0x0 str_0x94591f
-callstd MSG
+callstd MSG_KEEPOPEN
 special 0x7
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x8ff537
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 copyvar 0x8004 LASTRESULT
@@ -86,6 +86,11 @@ addvar STORY_PROGRESS 0x1
 addvar DIFFICULTY_LEVEL_RANGE 0x2
 releaseall
 end
+
+.align 4
+choice:
+    .word str_felsige_oednis_choice_0, 0
+    .word str_felsige_oednis_choice_1, 0
 
 
 .global ow_script_movs_0x8ff979

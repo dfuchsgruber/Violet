@@ -1,4 +1,5 @@
 .include "overworld_script.s"
+.include "std.s"
 
 .global script_pokeradar
 .global script_pokeradar_battle
@@ -96,15 +97,48 @@ script_pokeradar_poschange_s:
     clearflag 0x917
     showsprite 254
     random 0x4
-    addvar 0x800D 0x52
-    singlemovement 254 0x800D
-    waitmovement 0
-    singlemovement 254 0x800D
-    waitmovement 0
+    compare 0x800D 0
+    callif 1 _mov_x52
+    compare 0x800D 1
+    callif 1 _mov_x53
+    compare 0x800D 2
+    callif 1 _mov_x54
+    compare 0x800D 3
+    callif 1 _mov_x55
     cry 0x50EB 0
     waitcry
     releaseall
     end
+
+_mov_x52:
+    applymovement 254 mov_x52
+    waitmovement 0
+    return
+_mov_x53:
+    applymovement 254 mov_x53
+    waitmovement 0
+    return
+_mov_x54:
+    applymovement 254 mov_x54
+    waitmovement 0
+    return
+_mov_x55:
+    applymovement 254 mov_x55
+    waitmovement 0
+    return
+
+mov_x52:
+    .byte 0x52, 0x52, STOP
+
+mov_x53:
+    .byte 0x53, 0x53, STOP
+
+mov_x54:
+    .byte 0x54, 0x54, STOP
+
+mov_x55:
+    .byte 0x55, 0x55, STOP
+
 
 script_pokeradar_flee_s:
     cry 0x50EB 0

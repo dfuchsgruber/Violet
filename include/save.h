@@ -13,8 +13,8 @@
 #define GP_STACK_SIZE 16
 
 typedef struct saveblock1 {
-    s16 x;
-    s16 y;
+    s16 x_cam_orig; //camera origin
+    s16 y_cam_orig; //camera origin
     u8 bank;
     u8 map;
     u8 unkown_0[0x16];
@@ -68,13 +68,14 @@ typedef struct custom_memory {
     u8 a_vector[4];
     rtc_timestamp fossil_gen_time;
     u8 any_a_flags[16];
+    map_event_person pokeradar_person;
 
 } custom_memory;
 
 
 typedef struct {
     u8 dmap_status;
-    u8 unused_1;
+    u8 battle_bg_index;
     u8 unused_2;
     u8 unused_3;
     pokepad_memory *pad_mem;
@@ -96,6 +97,7 @@ typedef struct {
     u16 tile_anim_clks_0[8];
     u16 tile_anim_clks_1[8];
     trainerschool_test_memory *tst_mem;
+    
     
 } floating_memory;
 

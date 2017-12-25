@@ -10,6 +10,29 @@
 #include "tile.h"
 #include "npc.h"
 
+extern u8 script_pokeradar_battle[];
+
+map_event_person pokeradar_map_event_person = {
+    254, //scripts use this as target reference
+    155, //the picture to be displayed
+    0,
+    0,
+    0, //x
+    0, //y
+    0, //level
+    2, //move arround
+    0, //behaviour range
+    0, 
+    1, //is trainer -> yes;
+    0, //padding is trainer;
+    0,
+    3, //sight range;
+    script_pokeradar_battle,
+    POKERADAR_FLAG_SPAWNED,
+    0,
+    0
+};
+
 bool pokeradar_determine_position(coordinate *result) {
     s16 camera_pos[2];
     get_current_tile_position(&camera_pos[0], &camera_pos[1]);
@@ -110,16 +133,11 @@ u8 pokeradar_prepeare() {
             *vardecrypt(0x8000) = result;
             *vardecrypt(0x8001) = (u16) level;
 
-            //Now we synchroinze the map person with the coordinates
-            int i = 0;
-            while ((*save1)->persons[i].target_index != 254)
-                i++;
-            (*save1)->persons[i].x = (s16) (npc_pos.x - 7);
-            (*save1)->persons[i].y = (s16) (npc_pos.y - 7);
-            //test(&(*save1)->persons[i]);
-
-            u8 form = basestats[result].form;
-            (*save1)->persons[i].overworld_index = (u8) (154 + form);
+            memcopy(&(cmem->pokeradar_person), &pokeradar_map_event_person, sizeof(map_event_person));
+            cmem->pokeradar_person.x = (s16)(npc_pos.x - 7);
+            cmem->pokeradar_person.y = (s16)(npc_pos.y - 7);
+            cmem->pokeradar_person.overworld_index = (u8)(154 + basestats[result].form);
+            
 
             return 0;
         }
@@ -157,7 +175,7 @@ bool pokeradar_step() {
     if (checkflag(POKERADAR_FLAG_SPAWNED))
         return false;
     u16 steps = (*vardecrypt(POKERADAR_VAR_STEP_CNT))++;
-    u16 r = random_change_seed() & 7;
+    u16 r = random_change_seed() % 10;
     if (steps > r) {
 
         //we either do a pos change (0,75) or a flee (0,25)
@@ -171,11 +189,8 @@ bool pokeradar_step() {
             *vardecrypt(POKERADAR_VAR_STEP_CNT) = 0;
             coordinate npc_pos;
             if (pokeradar_determine_position(&npc_pos)) {
-                int i = 0;
-                while ((*save1)->persons[i].target_index != 254)
-                    i++;
-                (*save1)->persons[i].x = (s16) (npc_pos.x - 7);
-                (*save1)->persons[i].y = (s16) (npc_pos.y - 7);
+                cmem->pokeradar_person.x = (s16) (npc_pos.x - 7);
+                cmem->pokeradar_person.y = (s16) (npc_pos.y - 7);
                 init_script(script_pokeradar_poschange);
                 script_set_active();
                 return true;

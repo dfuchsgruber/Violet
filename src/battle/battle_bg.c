@@ -4,6 +4,7 @@
 #include "gfx.h"
 #include "attack.h"
 #include "tile.h"
+#include "save.h"
 
 battle_bg battle_bgs[29] = {
     // Battle street
@@ -138,36 +139,40 @@ battle_bg battle_bgs[29] = {
 
 };
 
-u8 battle_bg_by_tile(){
-    coordinate pos;
-    get_current_tile_position(&pos.x, &pos.y);
-    u8 bg_id = (u8)tile_get_field_by_pos(pos.x, pos.y, 3);
-    u16 (*f)(s16, s16) = (u16(*)(s16, s16))0x08058E49;
-    dprintf("battle_bg_by_tile x %d, y %d, bg %d, block %d, block data %d\n", pos.x, pos.y, bg_id, f(pos.x, pos.y), tile_get_field_by_pos(pos.x, pos.y, 8));
-    return bg_id;
-}
+
 
 void battle_bg_load(u8 id){
+    id = battle_bg_get_id();
     lz77uncompvram(battle_bgs[id].tileset, (void*) 0x6008000);
     lz77uncompvram(battle_bgs[id].tilemap, (void*) 0x600d000);
     pal_load_comp(battle_bgs[id].pal, 0x20, 0x60);
 }
 
+
 void battle_bg_load_anim(u8 id){
     (void)id;
+    id = battle_bg_get_id();
+    lz77uncompvram(0, (void*)0x6004000);
+    lz77uncompvram(0, (void*)0x600E000);
     return;
 }
 
 void battle_bg_get(u8 id, const void **set, const void **map, const void **pal){
+    id = battle_bg_get_id();
     *set = battle_bgs[id].tileset;
     *map = battle_bgs[id].tilemap;
     *pal = battle_bgs[id].pal;
 }
 
 u8 battle_bg_get_id(){
-    u8 *battle_bg_id = (u8*)0x2022B50;
-    //dprintf("Battle bg id is %d\n", *battle_bg_id);
-    return *battle_bg_id;
+    u16 *var_override = vardecrypt(BATTLE_BG_OVERRIDE);
+    //dprintf("Battle bg var override is %d\n", *var_override);
+    if(*var_override)
+        return (u8)(*var_override - 1);
+    coordinate pos;
+    get_current_tile_position(&pos.x, &pos.y);
+    u8 bg_id = (u8)tile_get_field_by_pos(pos.x, pos.y, 3);
+    return bg_id;
 }
 
 u16 terrain_moves[] = {
@@ -192,6 +197,12 @@ u16 terrain_moves[] = {
     ATTACK_SCHNABEL, //mill
 };
 
+u16 bsc_cmd_xCC_set_terrain_based_move(){
+    //Note that this is only a replacement for the first few parts of the function
+    //The hook will redirect to a continuation of bsc_cmd_xCC of the vanilla game
+    *active_attack = terrain_moves[battle_bg_get_id()];
+    return *active_attack;
+}
 battle_anim_bg battle_anim_bgs[] = {
         {(void*)0x8d1c9bc, (void*)0x8d1cfb4, (void*)0x8d1cfd4}, //0x0
 	{(void*)0x8d1c9bc, (void*)0x8d1cfb4, (void*)0x8d1cfd4}, //0x1
@@ -238,3 +249,5 @@ battle_anim_bg battle_anim_bgs[] = {
 	{(void*)0x8074285, (void*)0x807432d, (void*)0x80743bd},//0x2a
         {gfx_stance_changeTiles, gfx_stance_changePal, gfx_stance_changeMap}//0x2b
 };
+
+

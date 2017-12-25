@@ -399,6 +399,10 @@ frame 29
     oam_move_trace 0x8003 9999 SINE
         .byte YAXIS
         .hword 2, 40
+    oam_move 0x8000 128 24 0
+    oam_move 0x8001 128 24 0
+    oam_move 0x8002 128 24 0
+    oam_move 0x8003 128 0xFFE0 0
 
     endframe
 
@@ -419,13 +423,37 @@ frame 32
         .hword 1, 64
     endframe
 
-frame 35
+//frame 2100
+frame 80
+    sound 80
+    fadescreen 0x7FFF 0x0 512 2 0 16
     endframe
 
+//frame 2110
+frame 90
+    fadescreen 0x7FFF 0 512 6 16 0
+    endframe
 
-frame 9999
+//frame 2100
+frame 210
+    sound 80
+    fadescreen 0x7FFF 0x0 512 2 0 16
+    endframe
+
+//frame 2110
+frame 220
+    fadescreen 0x7FFF 0 512 6 16 0
+    endframe
+
+frame 260
+    setflag MAP_BGN_AUTO_ALIGN_OFF 0
+    setflag TILESET_ANIM_DISABLE 0
+    pal_restore_snapshot 0
+    mapreload
+    script_notify
     end
     endframe
+    
 
 
 

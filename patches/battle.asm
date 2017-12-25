@@ -1,11 +1,3 @@
-.org 0x800f224
-	.word battle_bgs
-
-.org 0x800f264
-	.word battle_bgs
-
-.org 0x800f2a4
-	.word battle_bgs
 
 .org 0x800fce0
 	.word battle_bgs
@@ -99,8 +91,17 @@
 	.word bsc_strings
 
 
-.org 0x802BE0C
-        .word terrain_moves
+.org 0x0802BDBC
+    //This is fragile, no command must be changed or inserted 
+    //as the space exactly suffices to perform the hook
+        ldr r2, =bsc_cmd_xCC_set_terrain_based_move | 1
+        bl _blxr2
+        mov r1, #0
+        ldr r2, =0x0802BDD0 | 1
+_blxr2:
+        bx r2
+        .pool
+        
 
 .org 0x0800F1E4
         ldr r1, =battle_bg_load | 1
@@ -110,23 +111,17 @@
 .org 0x0800F230
         ldr r1, =battle_bg_load_anim | 1
         bx r1
-        .pool
+       .pool
 
 .org 0x0800F270
-        push{lr, r4}
-        ldr r4, =battle_bg_get | 1
+       push{r4, lr}
+       ldr r4, =battle_bg_get | 1
         bl blxr4
+        pop {r4}
         pop {r0}
         bx r0
 blxr4:
-        bx r4
-        .pool
-
-
-
-.org 0x0807FBC0
-        ldr r0, =battle_bg_by_tile | 1
-        bx r0
+       bx r4
         .pool
 
 .org 0x0802d9b0
@@ -137,13 +132,22 @@ blxr4:
         bx r0
         .pool
 
+.org 0x080CDFB8
+        ldr r0, =battle_bg_evolution1 | 1
+        bx r0
+        .pool
+
+.org 0x080CE20C
+        ldr r0, =battle_bg_evolution2 | 1
+        bx r0
+        .pool
+
+.org 0x080CE344
+        ldr r1, =battle_bg_evolution3 | 1
+        bx r1
+        .pool
 
 
-.org 0x080CE03C
-        .byte 13 //battle bg evo
-
-.org 0x080CE348
-        .byte 13 //^
         
 //@battlestring remove the bsc string limitation (extend it to 0x7FFF)
 .org 0x080D7988

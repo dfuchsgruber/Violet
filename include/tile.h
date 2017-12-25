@@ -72,7 +72,7 @@ typedef struct bdata {
     u32 hm_usage : 5;
     u32 field_2 : 4;
     u32 field_3 : 6;
-    u32 field_4 : 3;
+    u32 field_4 : 3; //if 0 no wildbattle triggered, 1 fetch data from wild grass table, 2
     u32 field_5 : 2;
     u32 field_6 : 2;
     u32 field_7 : 1;
@@ -126,6 +126,13 @@ void cloud_enter();
 void egg_warm_update();
 bool pokemon_party_has_flamebody();
 void pokemon_hatch_decrement(pokemon *p);
+
+/**
+ * Redraws a singular block in the map
+ * @param x the AM x coordiante + 7 (camera origin relative)
+ * @param y the AM y coordinate + 7 (camera origin relative)
+ */
+void map_draw_block(s16 x, s16 y);
 
 extern script script_cloud_none_ref;
 extern script script_use_cloud_ref;

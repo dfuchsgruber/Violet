@@ -81,30 +81,30 @@ map_3_41_wild_other_entries:
 .global map_3_41_wild_rod
 .align 4
 map_3_41_wild_rod:
-.byte 0x7 @// Frequency in 1/256
+.byte 0x31 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_3_41_wild_rod_entries
 
 .align 4
 map_3_41_wild_rod_entries:
-.byte 20, 25 @//Level range
-.hword POKEMON_TENTACHA @// 70 percent, rod percent
-.byte 20, 25 @//Level range
-.hword POKEMON_WINGULL @// 30 percent, rod percent
-.byte 25, 30 @//Level range
-.hword POKEMON_MARILL @// 60 percent, profi rod percent
-.byte 30, 35 @//Level range
-.hword POKEMON_MARILL @// 20 percent, profi rod percent
-.byte 35, 40 @//Level range
-.hword POKEMON_AZUMARILL @// 20 percent, profi rod percent
-.byte 7, 0 @//Level range
-.hword POKEMON_POKEMON_0 @// 40 percent, super rod percent
-.byte 84, 55 @//Level range
-.hword 0x872 @// 40 percent, super rod percent
-.byte 9, 12 @//Level range
-.hword POKEMON_VOLTOBAL @// 15 percent, super rod percent
-.byte 9, 12 @//Level range
-.hword POKEMON_ZIGZACHS @// 4 percent, super rod percent
-.byte 10, 14 @//Level range
-.hword POKEMON_SAMURZEL @// 1 percent, super rod percent
+.byte 9, 11 @//Level range
+.hword POKEMON_KARPADOR @// 70 percent, rod percent
+.byte 9, 11 @//Level range
+.hword POKEMON_TENTACHA @// 30 percent, rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_KARPADOR @// 60 percent, profi rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_TENTACHA @// 20 percent, profi rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_KARPADOR @// 20 percent, profi rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_KARPADOR @// 40 percent, super rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_TENTACHA @// 40 percent, super rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_KARPADOR @// 15 percent, super rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_TENTOXA @// 4 percent, super rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_GARADOS @// 1 percent, super rod percent
 

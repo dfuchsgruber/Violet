@@ -1848,10 +1848,10 @@ class Action_footer_edit(Action):
         #Tss and tsp
         if "tsp" in self.diffs:
             tsp_new, tsp_old = self.diffs["tsp"]
-            if len(tsp_new): self.root.map.footer.tsp = self.root.proj.get_tileset(tsp_new)
+            if len(tsp_new): self.root.map.footer.tsp_sym = tsp_new
         if "tss" in self.diffs:
             tss_new, tss_old = self.diffs["tss"]
-            if len(tss_new): self.root.map.footer.tss = self.root.proj.get_tileset(tss_new)
+            if len(tss_new): self.root.map.footer.tss_sym = tss_new
         self.root._refresh()
         self.footer_dialog_update()
 
@@ -1871,10 +1871,10 @@ class Action_footer_edit(Action):
         #Tss and tsp
         if "tsp" in self.diffs:
             tsp_new, tsp_old = self.diffs["tsp"]
-            if len(tsp_old): self.root.map.footer.tsp = self.root.proj.get_tileset(tsp_old)
+            if len(tsp_old): self.root.map.footer.tsp_sym = tsp_old
         if "tss" in self.diffs:
             tss_new, tss_old = self.diffs["tss"]
-            if len(tss_old): self.root.map.footer.tss = self.root.proj.get_tileset(tss_old)
+            if len(tss_old): self.root.map.footer.tss_sym = tss_old
         self.root._refresh()
         self.footer_dialog_update()
 

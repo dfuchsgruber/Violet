@@ -200,4 +200,15 @@ u8 weather_get();
 void pokedex_set_caught_and_load_pid(u16 dex_id, u8 flags, u32 pid);
 bool fadescreen_is_active();
 
+/**
+ * 
+ * @param affects bits 0-15 bg pals, bit 15-31 obj pals
+ * @param p1
+ * @param p2
+ * @param p3
+ * @param color
+ */
+void fadescreen(u32 affects, u8 p1, u8 p2, u8 p3, u16 color);
+
+
 #endif

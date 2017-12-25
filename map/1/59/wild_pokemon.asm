@@ -60,30 +60,30 @@ map_1_59_wild_water_entries:
 .global map_1_59_wild_rod
 .align 4
 map_1_59_wild_rod:
-.byte 0x0 @// Frequency in 1/256
+.byte 0x19 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_1_59_wild_rod_entries
 
 .align 4
 map_1_59_wild_rod_entries:
+.byte 23, 25 @//Level range
+.hword POKEMON_QUABBEL @// 70 percent, rod percent
+.byte 23, 25 @//Level range
+.hword POKEMON_QUABBEL @// 30 percent, rod percent
+.byte 23, 25 @//Level range
+.hword POKEMON_REMORAID @// 60 percent, profi rod percent
+.byte 23, 25 @//Level range
+.hword POKEMON_REMORAID @// 20 percent, profi rod percent
+.byte 23, 25 @//Level range
+.hword POKEMON_KARPADOR @// 20 percent, profi rod percent
+.byte 23, 25 @//Level range
+.hword POKEMON_KARPADOR @// 40 percent, super rod percent
 .byte 1, 1 @//Level range
-.hword POKEMON_POKEMON_0 @// 70 percent, rod percent
-.byte 1, 1 @//Level range
-.hword POKEMON_POKEMON_0 @// 30 percent, rod percent
-.byte 1, 1 @//Level range
-.hword POKEMON_POKEMON_0 @// 60 percent, profi rod percent
-.byte 1, 1 @//Level range
-.hword POKEMON_POKEMON_0 @// 20 percent, profi rod percent
-.byte 1, 1 @//Level range
-.hword POKEMON_POKEMON_0 @// 20 percent, profi rod percent
-.byte 0, 0 @//Level range
 .hword POKEMON_POKEMON_0 @// 40 percent, super rod percent
-.byte 212, 52 @//Level range
-.hword 0x872 @// 40 percent, super rod percent
-.byte 23, 25 @//Level range
-.hword POKEMON_QUABBEL @// 15 percent, super rod percent
-.byte 23, 25 @//Level range
-.hword POKEMON_QUABBEL @// 4 percent, super rod percent
-.byte 23, 25 @//Level range
-.hword POKEMON_REMORAID @// 1 percent, super rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_POKEMON_0 @// 15 percent, super rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_POKEMON_0 @// 4 percent, super rod percent
+.byte 1, 1 @//Level range
+.hword POKEMON_POKEMON_0 @// 1 percent, super rod percent
 

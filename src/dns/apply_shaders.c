@@ -56,7 +56,7 @@ void dns_apply_shaders(u16 start_col, u16 col_cnt) {
     if (*vardecrypt(VAR_TIMEZONE) && dns_on()) {
         dns_blend_colors(start_col, col_cnt, dns_get_over(), dns_get_alpha());
     }
-    dprintf("dns apply shaders\n");
+    //dprintf("dns apply shaders\n");
 
 }
 

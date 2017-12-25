@@ -1288,7 +1288,7 @@ overworld_sprite *overworld_sprites[] = {
 	(overworld_sprite*) 0x83a4fb0,
 	&ow_blaise, //(overworld_sprite*) 0x83a4500,
 //90
-	(overworld_sprite*) 0x83a40a4,
+	&ow_rin,
 	(overworld_sprite*) 0x83a41a0,
 	(overworld_sprite*) 0x83a420c,
 	(overworld_sprite*) 0x83a47f4,

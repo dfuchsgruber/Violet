@@ -8,8 +8,12 @@
 .end
 
 
-.string str_0x8d474e GER
-	=\57\47\8d\_spnr\6f\47\8d\_spnr
+.string str_mill_choice_0 GER
+        =Ei nehmen
+.end
+
+.string str_mill_choice_1 GER
+        =Ei beschützen
 .end
 
 

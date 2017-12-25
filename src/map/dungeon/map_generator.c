@@ -9,7 +9,7 @@
 static map_connections null_connections = {0, NULL};
 
 levelscript_head levelscript_null [] = {
-    {0, NULL}
+    {0, {0, 0, 0, 0} }
 };
 
 
