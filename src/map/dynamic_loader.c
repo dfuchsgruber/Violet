@@ -12,11 +12,15 @@
 #include "pokemon.h"
 #include "map.h"
 #include "dungeon_generator.h"
+#include "dungeon2.h"
+
 
 mapheader *get_mapheader(u8 bank, u8 map) {
     if (is_dungeon_map()) {
         //return (mapheader*)0x8350558;
-        return compute_dungeon_header();
+        //return compute_dungeon_header();
+        //return dungeon2_init_header();
+        return &(cmem->dhead);
     } else {
         return mapbanks[bank][map];
     }
@@ -25,7 +29,8 @@ mapheader *get_mapheader(u8 bank, u8 map) {
 mapfooter *get_mapfooter() {
 
     if (is_dungeon_map()) {
-        dungeon_compute_blocks();
+        //dungeon_compute_blocks();
+        //dungeon2_compute();
         return &(cmem->footer);
     }
 

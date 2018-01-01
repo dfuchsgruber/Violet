@@ -9,6 +9,7 @@
 #include "anim_engine.h"
 #include "multichoice.h"
 #include "trainerschool_test.h"
+#include "dungeon2.h"
 
 #define GP_STACK_SIZE 16
 
@@ -69,6 +70,9 @@ typedef struct custom_memory {
     rtc_timestamp fossil_gen_time;
     u8 any_a_flags[16];
     map_event_person pokeradar_person;
+    
+    //DungeonGenerator2
+    dungeon_generator2 dg2;
 
 } custom_memory;
 

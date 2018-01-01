@@ -86,7 +86,8 @@
     .word script_repel_wore_off
 
 
-
+.org 0x08097C9C
+    .word cut_table
 
 .org 0x805b298
 	.word door_animations

@@ -10,8 +10,8 @@ map_1_59_wild_grass:
 
 .align 4
 map_1_59_wild_grass_entries:
-.byte 44, 44 @//Level range
-.hword POKEMON_VULPIX @// 20 percent percent
+.byte 22, 25 @//Level range
+.hword POKEMON_SPOINK @// 20 percent percent
 .byte 22, 25 @//Level range
 .hword POKEMON_WINGULL @// 20 percent percent
 .byte 22, 25 @//Level range

@@ -18,8 +18,16 @@
 .end
 
 
-.string str_0x933ed4 GER
-	=m\3e\93\_spnr\$oe\3f\93\_spnr\04\40\93\_spnr
+.string str_blackmarket_1 GER
+        =Eine
+.end
+
+.string str_blackmarket_2 GER
+        =Zwei
+.end
+
+.string str_blackmarket_3 GER
+        =Drei
 .end
 
 

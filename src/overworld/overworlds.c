@@ -516,6 +516,31 @@ overworld_sprite ow_hiro_rod = {
 	ROTSCALE_TABLE_NULL
 };
 
+
+static graphic overworld_sprite_hiroine_rod_sprites[] = {
+	{&gfx_ow_hiroine_rod_0Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_1Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_2Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_3Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_4Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_5Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_6Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_7Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_8Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_9Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_10Tiles, 0x200, 0},
+	{&gfx_ow_hiroine_rod_11Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_hiroine_rod = {
+	0xffff, 0x1100, 0x1102, 0x200,
+	32, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+	OW_ANIM_HIRO_ROD, overworld_sprite_hiroine_rod_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+
 static graphic overworld_sprite_hiro_call_sprites[] = {
 	{&gfx_ow_hiro_call_0Tiles, 0x100, 0},
 	{&gfx_ow_hiro_call_1Tiles, 0x100, 0},
@@ -533,6 +558,26 @@ overworld_sprite ow_hiro_call = {
 	16, 32, 0x10, 0x1, 0x0, 0x0,
 	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
 	OW_ANIM_HIRO_CALL, overworld_sprite_hiro_call_sprites, 
+	ROTSCALE_TABLE_NULL
+};
+
+static graphic overworld_sprite_hiroine_call_sprites[] = {
+	{&gfx_ow_hiroine_call_0Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_1Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_2Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_3Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_4Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_5Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_3Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_4Tiles, 0x100, 0},
+	{&gfx_ow_hiroine_call_5Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_hiroine_call = {
+	0xffff, 0x1100, 0x1102, 0x100,
+	16, 32, 0x10, 0x1, 0x0, 0x0,
+	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+	OW_ANIM_HIRO_CALL, overworld_sprite_hiroine_call_sprites, 
 	ROTSCALE_TABLE_NULL
 };
 
@@ -1200,9 +1245,9 @@ overworld_sprite *overworld_sprites[] = {
 	(overworld_sprite*) 0x83a444c,
 	&ow_hiroine_sit,
 //10
-	(overworld_sprite*) 0x83a4494,
-	(overworld_sprite*) 0x83a4740,
-	(overworld_sprite*) 0x83a47ac,
+	&ow_hiroine_call,
+	&ow_hiroine_rod,
+	&ow_hiroine_call,
 	(overworld_sprite*) 0x83a47d0,
 	(overworld_sprite*) 0x83a3b28,
 	(overworld_sprite*) 0x83a3b4c,

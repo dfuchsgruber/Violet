@@ -8,32 +8,83 @@ showmoney 0x0 0x0 0x0
 loadpointer 0x0 str_0x8c8907
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x6
-loadpointer 0x0 str_0x8c8a39
+loadpointer 0x0 choice
 multichoice 0xd 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-compare LASTRESULT 0x5
-gotoif EQUAL ow_script_0x8c881e
 compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8c85d0
+gotoif EQUAL pkmn0
 compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x8c85fb
+gotoif EQUAL pkmn1
 compare LASTRESULT 0x2
-gotoif EQUAL ow_script_0x8c8626
+gotoif EQUAL pkmn2
 compare LASTRESULT 0x3
-gotoif EQUAL ow_script_0x8c85a5
-goto ow_script_0x8c857a
+gotoif EQUAL pkmn3
+compare LASTRESULT 0x4
+gotoif EQUAL pkmn4
+goto ow_script_0x8c8ac3
 
 
-.global ow_script_0x8c857a
-ow_script_0x8c857a:
-checkmoney 0x124f8 0x0
+
+pkmn0:
+checkmoney 35000 0x0
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8c8786
-bufferpokemon 0x0 POKEMON_BARSCHWA
+bufferpokemon 0x0 POKEMON_TROPIUS
 call ow_script_0x8c86c2
-paymoney 0x124f8 0x0
-setvar 0x8000 0x148
+paymoney 35000 0x0
+setvar 0x8000 POKEMON_TROPIUS
 goto ow_script_0x8c8651
+
+pkmn1:
+checkmoney 99999 0x0
+compare LASTRESULT 0x0
+gotoif EQUAL ow_script_0x8c8786
+bufferpokemon 0x0 POKEMON_DRATINI
+call ow_script_0x8c86c2
+paymoney 99999 0x0
+setvar 0x8000 POKEMON_DRATINI
+goto ow_script_0x8c8651
+
+pkmn2:
+checkmoney 15000 0x0
+compare LASTRESULT 0x0
+gotoif EQUAL ow_script_0x8c8786
+bufferpokemon 0x0 POKEMON_PERLU
+call ow_script_0x8c86c2
+paymoney 15000 0x0
+setvar 0x8000 POKEMON_PERLU
+goto ow_script_0x8c8651
+
+pkmn3:
+checkmoney 25000 0x0
+compare LASTRESULT 0x0
+gotoif EQUAL ow_script_0x8c8786
+bufferpokemon 0x0 POKEMON_NEBULAK
+call ow_script_0x8c86c2
+paymoney 25000 0x0
+setvar 0x8000 POKEMON_NEBULAK
+goto ow_script_0x8c8651
+
+pkmn4:
+checkmoney 55000 0x0
+compare LASTRESULT 0x0
+gotoif EQUAL ow_script_0x8c8786
+bufferpokemon 0x0 POKEMON_CHANEIRA
+call ow_script_0x8c86c2
+paymoney 55000 0x0
+setvar 0x8000 POKEMON_CHANEIRA
+goto ow_script_0x8c8651
+
+
+.align 4
+choice:
+    .word str_blackmarket_pkmn0, 0
+    .word str_blackmarket_pkmn1, 0
+    .word str_blackmarket_pkmn2, 0
+    .word str_blackmarket_pkmn3, 0
+    .word str_blackmarket_pkmn4, 0
+    .word str_blackmarket_back, 0
+
 
 
 .global ow_script_0x8c8651
@@ -48,6 +99,7 @@ callstd MSG_KEEPOPEN
 waitfanfare
 givepokemon 0x8000 0x5 ITEM_NONE 0x0 0x0 0x0
 call ow_script_0x880b64
+clearflag TRANS_DISABLE
 goto ow_script_0x8c8ac3
 
 
@@ -105,50 +157,3 @@ loadpointer 0x0 str_0x8c8793
 callstd MSG
 end
 
-
-.global ow_script_0x8c85a5
-ow_script_0x8c85a5:
-checkmoney 0x61a8 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8c8786
-bufferpokemon 0x0 POKEMON_TROPIUS
-call ow_script_0x8c86c2
-paymoney 0x61a8 0x0
-setvar 0x8000 0x171
-goto ow_script_0x8c8651
-
-
-.global ow_script_0x8c8626
-ow_script_0x8c8626:
-checkmoney 0xc350 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8c8786
-bufferpokemon 0x0 POKEMON_DRATINI
-call ow_script_0x8c86c2
-paymoney 0xc350 0x0
-setvar 0x8000 0x93
-goto ow_script_0x8c8651
-
-
-.global ow_script_0x8c85fb
-ow_script_0x8c85fb:
-checkmoney 0x88b8 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8c8786
-bufferpokemon 0x0 POKEMON_GRAMOKLES
-call ow_script_0x8c86c2
-paymoney 0x88b8 0x0
-setvar 0x8000 0x3c
-goto ow_script_0x8c8651
-
-
-.global ow_script_0x8c85d0
-ow_script_0x8c85d0:
-checkmoney 0xafc8 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8c8786
-bufferpokemon 0x0 POKEMON_EVOLI
-call ow_script_0x8c86c2
-paymoney 0xafc8 0x0
-setvar 0x8000 0x85
-goto ow_script_0x8c8651

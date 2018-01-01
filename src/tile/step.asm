@@ -29,7 +29,8 @@ skip_inc:
 bl do_fata_morgana
 
 
-bl dungeon_crash
+@bl dungeon_crash
+bl dungeon2_step_is_collapsing
 cmp r0, #0
 bne ret_1
 

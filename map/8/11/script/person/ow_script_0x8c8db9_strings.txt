@@ -1,5 +1,5 @@
 .string str_0x931867 GER
-	=Prof._Primus:_\$AEh_ja,_verstehen\nSie,_ich_will_Transformationen\lerzielen,_ich_ben\$oetige_hohe\lEnergien._K\$oennen_Sie_nicht...
+	=\$AEh_ja,_verstehen\nSie,_ich_will_Transformationen\lerzielen,_ich_ben\$oetige_hohe\lEnergien._K\$oennen_Sie_nicht...
 .end
 
 

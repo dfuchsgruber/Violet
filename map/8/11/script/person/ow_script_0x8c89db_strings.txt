@@ -3,8 +3,28 @@
 .end
 
 
-.string str_0x8c8a39 GER
-	=\5b\8a\8c\_spnr\70\8a\8c\_spnr\85\8a\8c\_spnr\9a\8a\8c\_spnr\d\8a\8c\_spnr\52\8a\8c\_spnr
+.string str_blackmarket_pkmn0 GER
+        =Topius     35.000\b7   
+.end
+
+.string str_blackmarket_pkmn1 GER
+        =Dratini    99.999\b7
+.end
+
+.string str_blackmarket_pkmn2 GER
+        =Perlu      15.000\b7
+.end
+
+.string str_blackmarket_pkmn3 GER
+        =Nebulak    25.000\b7
+.end
+
+.string str_blackmarket_pkmn4 GER
+        =Chaneira   55.000\b7
+.end
+
+.string str_blackmarket_back GER
+        =Zurück            
 .end
 
 
@@ -36,3 +56,4 @@
 .string str_0x8c8793 GER
 	=Oh,_sieht_so_aus,_als_h\$aettest_du\nnicht_gen\$uegend_Geld_bei_dir,_um\ldir_das_zu_leisten.\pKomm_wieder,_wenn_du_dir_das\nProdukt_kaufen_kannst.
 .end
+

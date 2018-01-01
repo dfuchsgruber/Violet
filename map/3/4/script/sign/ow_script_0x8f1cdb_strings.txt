@@ -3,8 +3,12 @@
 .end
 
 
-.string str_0x8f1d80 GER
-	=\89\1d\8f\_spnr\97\1d\8f\_spnr
+.string str_kaskada_parole_choice_0 GER
+        =... ... ...
+.end
+
+.string str_kaskada_parole_choice_1 GER
+        =Krieg den Schwachen
 .end
 
 

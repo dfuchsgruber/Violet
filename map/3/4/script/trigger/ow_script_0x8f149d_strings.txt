@@ -1,5 +1,5 @@
 .string str_0x8c90a0 GER
-	=Felix:_\b\01,_da_bist_ja.
+	=\b\01,_da_bist_du_ja.
 .end
 
 

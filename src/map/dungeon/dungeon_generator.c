@@ -695,7 +695,7 @@ void dungeon_decorate(dungeon_generator *d){
 }
 
 void dungeon_compute_blocks() {
-
+    
     if (dflags->blocks_initialized) {
         //The blocks were already loaded, so we use the same seed
         cmem->dgen.seed = cmem->dgen.initial_seed;

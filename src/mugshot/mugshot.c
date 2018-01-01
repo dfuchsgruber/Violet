@@ -256,6 +256,7 @@ void mugshot_oam_despawn_cb(u8 self) {
     oam_despawn(&oams[oam_id]);
     tbox_flush(tb_id, 0);
     //tbox_tilemap_draw(fmem->mugshot_tb_id);
+    tbox_flush_map(tb_id);
     tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
     if(!transparency_is_on()) tbox_border_flush(tb_id);
     

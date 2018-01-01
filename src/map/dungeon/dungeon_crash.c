@@ -20,7 +20,6 @@ static u8 earthquake_script [] = {
 };
 
 bool dungeon_crash() {
-
     s16 coordinates[2];
     get_current_tile_position(&coordinates[0], &coordinates[1]);
     if (is_dungeon_map()) {

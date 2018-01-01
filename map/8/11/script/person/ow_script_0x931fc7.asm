@@ -27,7 +27,7 @@ buffernumber 0x0 0x8004
 loadpointer 0x0 str_0x935a60
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x3
-loadpointer 0x0 str_0x933ed4
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x1
 compare LASTRESULT 0x0
 callif EQUAL ow_script_0x933ebf
@@ -44,6 +44,11 @@ compare 0x8004 0x0
 gotoif EQUAL ow_script_0x933e18
 goto ow_script_0x933987
 
+.align 4
+choice:
+    .word str_blackmarket_1, 0
+    .word str_blackmarket_2, 0
+    .word str_blackmarket_3, 0
 
 .global ow_script_0x933e18
 ow_script_0x933e18:
