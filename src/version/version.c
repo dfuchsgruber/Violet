@@ -5,6 +5,7 @@
 #include "save.h"
 #include "tile.h"
 #include "pokemon.h"
+#include "rtc.h"
 
 void version_init(){
     *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_LATEST;
@@ -24,13 +25,18 @@ void version_transfer(){
     while(*vardecrypt(VAR_SAVEGAME_VERSION) != VERSION_LATEST){
         //transfer savegames to a higher version until we reach the latest
         switch(*vardecrypt(VAR_SAVEGAME_VERSION)){
-            case VERSION_ALPHA_2_0: //latest version, nothing to do here up to now
+            case VERSION_ALPHA_2_1:
+                //Latest
+                break;
+            case VERSION_ALPHA_2_0:
+                version_upgrade_alpha_2_0_to_2_1();
                 break;
             case 0:
             default:
                 //Version Alpha 1.0 (no version system was implemented there)
                 version_upgrade_alpha_1_X_to_2_0();
                 break;
+            
         }
     }
     *vardecrypt(0x8005) = (u16)(*vardecrypt(VAR_SAVEGAME_VERSION) + 1);
@@ -54,6 +60,10 @@ void version_upgrade_alpha_1_X_to_2_0(){
         additem(ITEM_GENGARNIT, 1);
     }
     *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_0;
+}
+
+void version_upgrade_alpha_2_0_to_2_1(){
+    *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_1;
 }
 
 u16 version_is_latest(){

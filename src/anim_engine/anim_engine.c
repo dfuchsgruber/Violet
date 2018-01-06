@@ -464,6 +464,7 @@ void anim_engine_text_renderer(anim_engine_task *t) {
     mem->delay_timer = mem->delay;
     //read next char
     u8 c = *(mem->source);
+    //dprintf("Anim engine texte renderer: Current char: 0x%x @0x%x\n", c, mem->source);
     switch (c) {
         case 0xFF:
         {
@@ -477,6 +478,7 @@ void anim_engine_text_renderer(anim_engine_task *t) {
             }
             //despawn
             flush_tbox(mem->boxid, 0);
+            tbox_flush_map(mem->boxid);
             free_tbox(mem->boxid);
             bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
             free(mem->o_text);
@@ -491,10 +493,14 @@ void anim_engine_text_renderer(anim_engine_task *t) {
                 if (mem->flags.flags.paragraph) {
                     mem->flags.flags.paragraph = 0;
                 } else {
+                    
                     return; //no token for new paragraph, so we wait
                 }
             }
-            mem->destination = (u8*) 0x02021D18; //reset of destination buffer, so next chars are append to front
+            mem->destination = strbuf; //reset of destination buffer, so next chars are append to front
+            flush_tbox(mem->boxid, 0);
+            tbox_tilemap_draw(mem->boxid);
+            //dprintf("Anim engine text renderer: Flushed tbox!\n");
             break;
         }
         case 0xFE:
@@ -517,14 +523,12 @@ void anim_engine_text_renderer(anim_engine_task *t) {
 
             //draw the text
             //tbox_flush(mem->boxid, 0);
-            void *src = (void*) 0x02021D18;
-            tbox_print_string(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, src);
+            tbox_print_string(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, strbuf);
             bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
             break;
         }
     }
     mem->source++;
-
 }
 
 void cmdx18_rendered_tbox_event(ae_memory* mem) {
@@ -812,7 +816,7 @@ void anim_engine_bg_scroller(anim_engine_task *self) {
         int x_1 = (current_frame * hdelta) / duration;
         int y_0 = ((current_frame - 1) * vdelta) / duration;
         int y_1 = (current_frame * vdelta) / duration;
-        //dprintf("Frame %d: x_0 %d, x_1 %d, y_0 %d, y_1, %d\n", current_frame, x_0, x_1, y_0, y_1);
+        //dprintf("Frame %d: x_0 %d, x_1 %d, y_0 %d, y_1, %d\n", current_frame, x_0, x_1, y_0, y_1);f
         set_io(bg_hreg, (u16)(x + x_1 - x_0));
         set_io(bg_vreg, (u16)(y + y_1 - y_0));
 

@@ -9,7 +9,7 @@ hashmap *hashmap_init(int buckets) {
     map->map_size = buckets;
     int i;
     for (i = 0; i < 4; i++) {
-        map->a[i] = (u8) random_change_seed();
+        map->a[i] = (u8) rnd16();
     }
     return map;
 }

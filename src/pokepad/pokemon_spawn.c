@@ -10,7 +10,7 @@ void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed) {
     for (i = 0; i < 6; i++)
         iv_det[i] = false;
     while (seed < 128) {
-        iv_det[random_change_seed() % 6] = true;
+        iv_det[rnd16() % 6] = true;
         seed += 16;
     }
 }
@@ -20,7 +20,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
     //        species, level, ev_spread, tid_determined, tid, seed_generator);
 
     //first we random a pid
-    pid pid = {(u32) (random_change_seed() | random_change_seed() << 16)};
+    pid pid = {(u32) (rnd16() | rnd16() << 16)};
 
     if (!seed_generator()) {
         pid.fields.shinyness = 0;
@@ -51,7 +51,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
     int attached = 0;
     while (seed < 64 && egg_move_cnt && attached < 4) {
         //we attach a random egg move
-        int n = random_change_seed() % egg_move_cnt;
+        int n = rnd16() % egg_move_cnt;
         if (pokemon_append_attack(&opponent_pokemon[0], egg_moves[n]) == 0xFFFF) {
             pokemon_rotate_and_push_attack(&opponent_pokemon[0], egg_moves[n]);
         }

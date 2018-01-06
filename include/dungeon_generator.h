@@ -89,7 +89,7 @@ union union_neighbours {
 
 dungeon_flags *dflags = (dungeon_flags*) 0x203CEC4;
 
-bool is_dungeon_map();
+int dungeon_get_type();
 
 bool dungeon_crash();
 bool special_dungeon_warpback();

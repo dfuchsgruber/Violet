@@ -131,7 +131,7 @@ void wondertrade_bg_scroll_callback(u8 self) {
 
 u16 wondertrade_select_pokemon() {
     u8 table = 0; //bronze standard table
-    u8 r = (u8) random_change_seed();
+    u8 r = (u8) rnd16();
     switch (wondertrade_get_level()) {
         case 3:
             if (r < 16)
@@ -151,11 +151,11 @@ u16 wondertrade_select_pokemon() {
     u32 table_size = 0;
     while (wondertrade_pokemon[table][table_size] != 0xFFFF)
         table_size++;
-    return wondertrade_pokemon[table][random_change_seed() % table_size];
+    return wondertrade_pokemon[table][rnd16() % table_size];
 }
 
 u16 wondertrade_next_seed() {
-    return (u16) ((random_change_seed() & 511) / (wondertrade_get_level() + 1));
+    return (u16) ((rnd16() & 511) / (wondertrade_get_level() + 1));
 }
 
 void wondertrade_spawn_pokemon() {
@@ -163,7 +163,7 @@ void wondertrade_spawn_pokemon() {
 
     //first we find a OT name
     u8 *ot_name = species == POKEMON_MEW ? str_wondertrade_name0 :
-            wondertrade_ot_names[random_change_seed() % 36];
+            wondertrade_ot_names[rnd16() % 36];
 
     u32 tid = 1;
     int i = 0;

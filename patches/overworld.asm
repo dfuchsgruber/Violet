@@ -23,6 +23,9 @@ overworld_pals equ 0x083A501C
 .org overworld_pals + 0xC * 8
     .word gfx_ow_pal_violet_mirrorPal
 
+.org overworld_pals + 0x10 * 8
+    .word gfx_ow_pal_bbshipPal
+
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -13,10 +13,6 @@
 	.org 0x81e14bc
 		.word song_table
 
-NUM_CHAN equ 12
-
-.org 0x081e1361
-        .byte 0xC0 + NUM_CHAN
 
 
     

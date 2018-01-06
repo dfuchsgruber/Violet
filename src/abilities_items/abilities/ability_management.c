@@ -10,7 +10,7 @@ u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
     
     if(defender_ability == R_KAISERAURA || defender_ability == B_KAISERAURA
             || defender_ability == G_KAISERAURA){
-        if(!(random_change_seed() & 3)){
+        if(!(rnd16() & 3)){
             //1/4 chance of flinching due to emperors aura
             stat_change[0x17] = *attacking_battler;
             stat_change[0x18] = *defending_battler;

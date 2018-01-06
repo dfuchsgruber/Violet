@@ -55,10 +55,16 @@ typedef struct custom_memory {
     u8 pokedex_caught_extension[0x40]; //additional 512 flags
     u8 gp_freespace[0x100];
     u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
-    //dungeon_data ddata;
-    mapheader dhead;
-    mapfooter footer;
-    dungeon_generator dgen;
+    mapheader dmapheader;
+    mapfooter dmapfooter;
+    
+    //Dungeon Memory I
+    wild_pokemon_data dwild_data;
+    wild_pokemon_habitat dwild_habitat_grass;
+    wild_pokemon_habitat dwild_habitat_water;
+    wild_pokemon_habitat dwild_habitat_rod;
+    wild_pokemon_habitat dwild_habitat_radar;
+    u8 __olddgen[0xC]; //Deprecated (0x30 bytes)
     map_events devents;
     map_event_warp ladder;
     map_event_person dpers[5];
@@ -71,8 +77,12 @@ typedef struct custom_memory {
     u8 any_a_flags[16];
     map_event_person pokeradar_person;
     
-    //DungeonGenerator2
+    //Dungeon Memory II
     dungeon_generator2 dg2;
+    wild_pokemon_entry dwild_data_grass[12];
+    wild_pokemon_entry dwild_data_water[5];
+    wild_pokemon_entry dwild_data_rod[10];
+    wild_pokemon_entry dwild_data_radar[5];
 
 } custom_memory;
 

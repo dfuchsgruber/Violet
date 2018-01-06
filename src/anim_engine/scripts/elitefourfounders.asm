@@ -2,7 +2,7 @@
 
 .global elite_four_founders
 
-.equ dstring1, 0x89279FB
+
 
 .align 4
 elite_four_founders:
@@ -42,7 +42,7 @@ frame 130
 
 frame 358
     text_init 0x8000 0 4 15 30 4 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL dstring1 0 0x10
+    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_0 0 0x10
     endframe
 
 frame 800
@@ -70,7 +70,7 @@ frame 1312
 frame 1344
     bg_scroll 1 400 8 0
     text_init 0x8000 0 2 5 16 12 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL 0x88F6D3C 0 0x10
+    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_1 0 0x10
     endframe
 
 frame 1799
@@ -96,7 +96,7 @@ frame 1833
 frame 1866
     bg_scroll 1 400 0xFFF8 0
     text_init 0x8000 0 16 5 16 12 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL 0x8927A7C 0 0x10
+    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_2 0 0x10
     endframe
 
 frame 2299
@@ -111,7 +111,7 @@ frame 2300
 
 frame 2400
     text_init 0x8000 0 6 5 20 4 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL 0x887F382 0 0x10
+    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_3 0 0x10
     endframe
 
 
@@ -132,13 +132,13 @@ frame 2700
 
 frame 2740
     text_init 0x8000 0 2 3 10 14 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL 0x8927B71 0 0x10
+    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_4 0 0x10
     endframe
 
 
 frame 3100
     text_init 0x8002 0 22 3 10 14 14 200
-    text_render 0x8003 0x8002 4 2 0 0 0 0 fmap DISPLAYALL 0x8927C34 0 0x10
+    text_render 0x8003 0x8002 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_5 0 0x10
     endframe
 
 frame 3699
@@ -159,7 +159,7 @@ frame 3750
 
 frame 3800
     text_init 0x8000 0 4 15 30 4 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL 0x8927C88 0 0x10
+    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_6 0 0x10
     endframe
 
 frame 4150

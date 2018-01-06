@@ -47,3 +47,15 @@
 .org 0x0813B90C
     mov r0, #0
     bx lr
+
+
+//PRNG xorshift
+.org 0x08044DCC
+    ldr r0, =rnd16 | 1
+    bx r0
+    .pool
+
+.org 0x08044DEC
+    ldr r1, =rnd_main_set_seed | 1
+    bx r1
+    .pool

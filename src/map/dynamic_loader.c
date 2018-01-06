@@ -16,11 +16,11 @@
 
 
 mapheader *get_mapheader(u8 bank, u8 map) {
-    if (is_dungeon_map()) {
+    if (dungeon_get_type()) {
         //return (mapheader*)0x8350558;
         //return compute_dungeon_header();
         //return dungeon2_init_header();
-        return &(cmem->dhead);
+        return &(cmem->dmapheader);
     } else {
         return mapbanks[bank][map];
     }
@@ -28,10 +28,10 @@ mapheader *get_mapheader(u8 bank, u8 map) {
 
 mapfooter *get_mapfooter() {
 
-    if (is_dungeon_map()) {
+    if (dungeon_get_type()) {
         //dungeon_compute_blocks();
         //dungeon2_compute();
-        return &(cmem->footer);
+        return &(cmem->dmapfooter);
     }
 
     //return standard map header
@@ -42,6 +42,7 @@ mapfooter *get_mapfooter() {
     return (mapfooter*) 0;
 }
 
-bool is_dungeon_map() {
-    return ((checkflag(FLAG_LOAD_DMAP))); // && map == 10 && bank == 0);
+int dungeon_get_type() {
+    u16 *dtype = vardecrypt(DUNGEON_TYPE);
+    return *dtype;
 }

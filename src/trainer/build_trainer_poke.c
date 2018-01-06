@@ -71,7 +71,7 @@ void build_trainer_poke(union union_build_field field, pokemon *poke) {
                     field.bitfield.build = 10;
                     break;
             }
-            field.bitfield.ability = (u8) (random_change_seed() & 1); //random ability still
+            field.bitfield.ability = (u8) (rnd16() & 1); //random ability still
         }
 
 

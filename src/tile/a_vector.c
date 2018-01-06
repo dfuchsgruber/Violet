@@ -81,7 +81,7 @@ void new_a_vector() {
 
     int i;
     for (i = 0; i < 4; i++) {
-        cmem->a_vector[i] = (u8) random_change_seed();
+        cmem->a_vector[i] = (u8) rnd16();
     }
     rtc_read(&(cmem->a_gen_time));
 

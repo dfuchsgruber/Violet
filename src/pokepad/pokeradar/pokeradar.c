@@ -67,7 +67,7 @@ bool pokeradar_determine_position(coordinate *result) {
     //test(candidates);
     if (candidate_cnt) {
         //now we choose a random candidate
-        int r = random_change_seed() %  candidate_cnt;
+        int r = rnd16() %  candidate_cnt;
         x = candidates[r].x;
         y = candidates[r].y;
     }
@@ -107,13 +107,13 @@ u8 pokeradar_prepeare() {
             if (!pokeradar_determine_position(&npc_pos))
                 return 3;
             //There is a pokemon we can spawn, we check if random < frequency
-            u8 random = (u8) random_change_seed();
+            u8 random = (u8) rnd16();
             if (wild_pokemon[wild_table_entry].other->frequency <= random) {
                 return 2; //Unlucky, pokemon did not appear
             }
             int index;
             //Now we select a pokemon
-            random = (u8) random_change_seed();
+            random = (u8) rnd16();
             if (random < 76) { //0.3 chance
                 index = 0;
             } else if (random < 140) { //0.25 chance
@@ -129,7 +129,7 @@ u8 pokeradar_prepeare() {
             //now we determine the level
             u8 min = wild_pokemon[wild_table_entry].other->data[index].level_min;
             u8 max = wild_pokemon[wild_table_entry].other->data[index].level_max;
-            int level = (random_change_seed() % (max - min + 1)) + min;
+            int level = (rnd16() % (max - min + 1)) + min;
             *vardecrypt(0x8000) = result;
             *vardecrypt(0x8001) = (u16) level;
 
@@ -159,7 +159,7 @@ bool pokeradar_npc_alert(u8 npc_id) {
 u16 pokeradar_next_seed() {
     u32 d = (u32) ((*vardecrypt(POKERADAR_VAR_CNT) >> 4) + 1);
     if (d > 4) d = 4;
-    u16 seed = random_change_seed() & 511;
+    u16 seed = rnd16() & 511;
     return (u16) (seed / d);
 }
 
@@ -175,11 +175,11 @@ bool pokeradar_step() {
     if (checkflag(POKERADAR_FLAG_SPAWNED))
         return false;
     u16 steps = (*vardecrypt(POKERADAR_VAR_STEP_CNT))++;
-    u16 r = random_change_seed() % 10;
+    u16 r = rnd16() % 10;
     if (steps > r) {
 
         //we either do a pos change (0,75) or a flee (0,25)
-        if ((u8) random_change_seed() < 64) {
+        if ((u8) rnd16() < 64) {
             //flee script
             init_script(script_pokeradar_flee);
             script_set_active();

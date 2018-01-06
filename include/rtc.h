@@ -15,6 +15,8 @@ typedef struct rtc_timestamp {
     u8 second;
 } rtc_timestamp;
 
+void reset_trash_flags();
+
 typedef struct gpio {
     u16 data;
     u16 out;

@@ -6,8 +6,10 @@
 	.pool
 
 
-.org 0x80828f4
-	.word wild_pokemon
+.org 0x08082898
+        ldr r0, =map_wild_pokemon_get_current_table_id | 1
+        bx r0
+        .pool
 
 .org 0x8082cb0
 	.word wild_pokemon

@@ -1,0 +1,28 @@
+.string str_anim_engine_elitefounders_0 GER
+    =Vor_vielen_Jahren_eroberten_drei\nTrainer_das_Land_im_Sturm...\pSie_waren_der_Beginn_einer_neuen\n\$AEra,_dem_Zeitalter_der_Top_Vier.
+.end
+
+.string str_anim_engine_elitefounders_1 GER
+    =Faun,_die_Pinke\nFaust,_der\nnoch_heute_die\nRegion_regiert...
+.end
+
+
+.string str_anim_engine_elitefounders_2 GER
+    =Albus,_der_Wei\$se\nRitter,_Begr\$uender\nder_Revolution...
+.end
+
+.string str_anim_engine_elitefounders_3 GER
+    =Ihnen_allen_aber_ging\nvor_allem_einer_voran...
+.end
+
+.string str_anim_engine_elitefounders_4 GER
+    =Lucius,_der\nGraue\nDrachen-\nj\$aeger,\nder_sich\nmit\nG\$oettern\nmisst...
+.end
+
+.string str_anim_engine_elitefounders_5 GER
+    =_Der_einst\n_st\$aerkste\n_Trainer\n_Thetos,\n_der\n_ehemalige\n_..._...\n_Champion!
+.end
+
+.string str_anim_engine_elitefounders_6 GER
+    =Gemeinsam_brachten_sie_Theto\nDekaden_des_Friedens...\pEhe_sie_ihren_Differenzen_nicht\nl\$aenger_beilegen_konnten...\pUnd_schlie\$slich_gingen_alle_drei\nihrer_Wege...\pUnd_\$ueberlie\$sen_Theto\ndem_Schicksal...
+.end

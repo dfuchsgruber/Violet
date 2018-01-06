@@ -75,8 +75,7 @@ b exec_trigger_cloud
 
 
 trigger_dungeon_entry:
-@ldr r0, =script_d_entry
-ldr r0, =ow_script_dungeon2_enter
+ldr r0, =ow_script_dungeon2_enter_cave
 ret_s:
 pop {r4-r5}
 pop {r1}
@@ -85,46 +84,6 @@ bx r1
 _checkflag:
 ldr r1, =checkflag
 bx r1
-
-
-
-script_d_entry:
-.byte 0xF 
-.byte 0 
-.word 0x88102A3 @loadpointer 0 @text
-.byte 0x9 
-.byte 0x5 @callstd 5
-.byte 0x21 
-.hword 0x800D 
-.hword 0	@compare LASTRESULT 0
-.byte 0x6 
-.byte 01
-.word sden	@if 0x1 goto @sden
-
-.byte 0xF 
-.byte 0 
-.word 0x88102E5 @loadpointer 0 @text
-.byte 0x9 
-.byte 0x6 @callstd 6
-
- setvar 0x50E1 0
-.byte 0x23 
-.word dungeon_store_current_pos @callasm store...
-.byte 0x29 
-.hword 0x922
-
-.byte 0x39 
-.byte 3
-.byte 3
-.byte 0 
-.hword 0 
-.hword 0
-.byte 0x27
-.byte 2
-
-sden:
-.byte 0x68	@closeonkeypress
-.byte 0x2
 
 
 script_tv:

@@ -70,7 +70,7 @@ void attack_init_trigger_abilities(){
             
         }
         case AP_SPARER:{
-            if(random_change_seed() & 3){
+            if(rnd16() & 3){
                 attacker->custom_status |= CUSTOM_STATUS_AP_SPARER;
                 bsc_push_next_cmd();
                 *bsc_offset = bsc_ap_sparer;

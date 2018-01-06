@@ -6,7 +6,7 @@
 ow_script_0x892f40:
 
 //init some stuff
-special 0x43
+special 0x43 //version init
 call ow_script_0x8dcdd2
 setvar POKEPAD_SHORTCUTS 0xffff
 addvar STORY_PROGRESS 0x1 @//beforehand raise of storyvar to not trigger again at mapreload
