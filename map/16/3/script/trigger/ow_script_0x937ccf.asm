@@ -22,7 +22,7 @@ ow_script_0x937cf4:
 loadpointer 0x0 str_0x938223
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x4
-loadpointer 0x0 str_0x937e89
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -39,6 +39,13 @@ setvar MONEY_GIFT_FOR_HOMELESS 0x3
 setvar 0x8005 0x10
 goto ow_script_0x937df9
 
+
+.align 4
+choice:
+.word str_route_4_homeless_choice0, 0
+.word str_route_4_homeless_choice1, 0
+.word str_route_4_homeless_choice2, 0
+.word str_route_4_homeless_choice3, 0
 
 .global ow_script_0x937df9
 ow_script_0x937df9:

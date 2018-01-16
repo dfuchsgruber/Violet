@@ -43,3 +43,7 @@ bx r0
 .org 0x081E032C
     .word  0x03005E40+1 // new mixer RAM location (used for branch)
 
+// Midi trace repoint (enable up to 14 traces at once)
+.org 0x084A18C4
+    .word 0x03002BB0
+    .word 14 // Num traces

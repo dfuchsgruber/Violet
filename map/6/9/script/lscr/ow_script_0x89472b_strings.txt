@@ -1,33 +1,33 @@
 .string str_0x8cae89 GER
-	=Aufseher:_Nun_verk\$uende_ich_hiermit\nden_Kampf_zwischen_Lester_und\l\b\01_um_den_Antikorden._M\$oege_der\lKampf_beginnen!
+	=Aufseher: Nun verk\$uende ich hiermit\nden Kampf zwischen Lester und\l\b\01 um den Antikorden. M\$oege der\lKampf beginnen!
 .end
 
 
 .string str_0x8cafb5 GER
-	=Lester:_Ich_mag_dich,_du_scheinst\ndie_n\$oetige_Ehrfurcht_vor_diesem\lOrt_zu_besitzen._Aber_glaub_nicht,\ldass_ich_mich_deswegen\lzur\$ueckhalten_werde._Meine\lGestein-Pok\emon_sind_hart_in_der\lVerteidigung_und_im_Angriff.
+	= Ich mag dich, du scheinst\ndie n\$oetige Ehrfurcht vor diesem\lOrt zu besitzen. Aber glaub nicht,\ldass ich mich deswegen\lzur\$ueckhalten werde. Meine\lGestein-Pok\emon sind hart in der\lVerteidigung und im Angriff.
 .end
 
 
 .string str_0x8cb08b GER
-	=Beeindruckend._Deine_Pok\emon_haben\nmich_zerschmettert_wie_Graphit.\lDen_Antikorden_hast_du_dir_redlich\lverdient,_\b\01.
+	=Beeindruckend. Deine Pok\emon haben\nmich zerschmettert wie Graphit.\lDen Antikorden hast du dir redlich\lverdient, \b\01.
 .end
 
 
 .string str_0x8cb101 GER
-	=Unter_den_heiligen_Hallen_des\nTempels_der_W\$aechter_hast_du_mich\lgeschlagen_und_deine_St\$aerke\lbezeugt._Die_W\$aechter_haben_dich\lanerkannt_und_dir_Kraft_geliehen.\lNimm_den_Orden_als_Zeichen_deiner\lLeistung.
+	=Unter den heiligen Hallen des\nTempels der W\$aechter hast du mich\lgeschlagen und deine St\$aerke\lbezeugt. Die W\$aechter haben dich\lanerkannt und dir Kraft geliehen.\lNimm den Orden als Zeichen deiner\lLeistung.
 .end
 
 
 .string str_0x897c8a GER
-	=\b\01_hat_den_Antikorden_von\nLester_erhalten!
+	=\b\01 hat den Antikorden von\nLester erhalten!
 .end
 
 
 .string str_0x8cb1cc GER
-	=Mit_diesem_Orden_kannst_du_die\nVersteckte_Maschine_Blitz\lau\$serhalb_des_Kampfs_einsetzen.\lFerner_m\$oechte_ich_dir_das_hier\l\$ueberreichen,_als_Symbol_meiner\lpers\$oenlichen_Wertsch\$aetzung.
+	=Mit diesem Orden kannst du die\nVersteckte Maschine Blitz\lau\$serhalb des Kampfs einsetzen.\lFerner m\$oechte ich dir das hier\l\$ueberreichen, als Symbol meiner\lpers\$oenlichen Wertsch\$aetzung.
 .end
 
 
 .string str_0x8cb281 GER
-	=Diese_Technische_Maschine_enth\$aelt\ndie_Attacke_Felsgrab._Sie_schadet\ldem_Gegner_und_verlangsamt_ihn\lzus\$aetzlich_dazu._Ideal_f\$uer_alle\lGestein-Pok\emon,_die_nicht_all_zu\lflink_sind.\pUnser_Kampf_war_eine_Bereicherung\nf\$uer_mich._Verlasse_nun_diesen_Ort\lund_setzte_deine_Reise_fort._Der\lGeist_der_W\$aechter_m\$oege_dich_auf\lewig_begleiten.
+	=Diese Technische Maschine enth\$aelt\ndie Attacke Felsgrab. Sie schadet\ldem Gegner und verlangsamt ihn\lzus\$aetzlich dazu. Ideal f\$uer alle\lGestein-Pok\emon, die nicht all zu\lflink sind.\pUnser Kampf war eine Bereicherung\nf\$uer mich. Verlasse nun diesen Ort\lund setzte deine Reise fort. Der\lGeist der W\$aechter m\$oege dich auf\lewig begleiten.
 .end

@@ -13,6 +13,15 @@ extern "C" {
 #endif
 #define ____ 0xC5
 
+    typedef struct{
+        u8 bank;
+        u8 map;
+        s16 x;
+        s16 y;
+        u16 field_6;
+    } stru_flight_position;
+    
+    stru_flight_position flight_positions[];
 
 
 #ifdef	__cplusplus

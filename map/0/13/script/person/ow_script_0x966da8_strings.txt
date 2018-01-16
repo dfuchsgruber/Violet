@@ -1,150 +1,150 @@
 .string str_0x969e0b GER
-	=Igva:_Mistral!\nWas_hast_du_vor?\lWei\$st_du_denn,_was_du_hier_tust?
+	= Mistral!\nWas hast du vor?\lWei\$st du denn, was du hier tust?
 .end
 
 
 .string str_0x96a758 GER
-	=Mistral:_Igva,_du_bist_naiv_wie_eh\nund_je.\pDass_ihr_Revolution\$aere_immer_noch\nexistiert,_ist_mir_ein_R\$aetsel.\pEuer_Anf\$uehrer_hat_au\$ser_sch\$oen\nklingenden_Spr\$uechen_und_Krieg_doch\lnichts_zu_bieten?\pIhr_redet_von_Aufstand_und\nNeuerung,_aber_habt_keine_L\$oesungen\lanzubieten.\pIhr_f\$uehrt_die_Menschen_in_einen\nKrieg,_der_ihnen_nichts_bringt.\pUnd_dann_nennst_du_mich_einen\nUnmenschen?
+	= Igva, du bist naiv wie eh\nund je.\pDass ihr Revolution\$aere immer noch\nexistiert, ist mir ein R\$aetsel.\pEuer Anf\$uehrer hat au\$ser sch\$oen\nklingenden Spr\$uechen und Krieg doch\lnichts zu bieten?\pIhr redet von Aufstand und\nNeuerung, aber habt keine L\$oesungen\lanzubieten.\pIhr f\$uehrt die Menschen in einen\nKrieg, der ihnen nichts bringt.\pUnd dann nennst du mich einen\nUnmenschen?
 .end
 
 
 .string str_0x96a8cd GER
-	=Igva:_Nein,_du_irrst_dich!\nUnser_Kampf_ist_nobel,_deiner_nur\legoistisch!\pDu_hast_uns_im_Stich_gelassen,_um\nMacht_zu_finden.\pUnd_nun_willst_du_den_Zeitstein\nrauben,_wissend,_dass_du_damit_den\lW\$aechter_der_Landmassen_erweckst\lund_seinen_Zorn_\$ueber_dieses_Land\lschickst?\pIst_dir_bewusst,_was_das_legend\$aere\nPok\emon_Groudon_f\$uer_eine\lschrecklich_vernichtende_Kreatur\list?
+	= Nein, du irrst dich!\nUnser Kampf ist nobel, deiner nur\legoistisch!\pDu hast uns im Stich gelassen, um\nMacht zu finden.\pUnd nun willst du den Zeitstein\nrauben, wissend, dass du damit den\lW\$aechter der Landmassen erweckst\lund seinen Zorn \$ueber dieses Land\lschickst?\pIst dir bewusst, was das legend\$aere\nPok\emon Groudon f\$uer eine\lschrecklich vernichtende Kreatur\list?
 .end
 
 
 .string str_0x969d1d GER
-	=Mistral:_Hahaha!\nUnd_dir_ist_nie_in_den_Sinn\lgekommen,_dass_ich_genau_das\lprovozieren_will?\pDass_es_mir_mehr_um_die\nWiedererweckung_Groudons_geht,_als\ldiesen_dummen_Stein?\l...\pAber_sieh_nur,_Igva.\nDein_neuer_Begleiter_ist\leingetroffen.
+	= Hahaha!\nUnd dir ist nie in den Sinn\lgekommen, dass ich genau das\lprovozieren will?\pDass es mir mehr um die\nWiedererweckung Groudons geht, als\ldiesen dummen Stein?\l...\pAber sieh nur, Igva.\nDein neuer Begleiter ist\leingetroffen.
 .end
 
 
 .string str_0x969a22 GER
-	=Mistral:_Herzlich_willkommen,\n\b\01!\pUns_scheint_doch_etwas_zu\nverbinden,_wenn_ich_dich_hier_mit\lmeiner_alten_Partnerin_treffe.\pEinst_war_ich_Teil_ihrer\neinf\$aeltigen_Revolustionsbewegung,\lehe_ich_erkannt_habe,_dass_ich_so\lniemals_Macht_erlangen_kann.\pNun_stehen_wir_hier_schicksalshaft\neinander_gegen\$ueber.\pVor_uns_der_Schlot_eines_Vulkans,\nin_dessen_Herzen_eine_der\lm\$aechtigsten_Kreaturen_der_Welt\lschlummert.\pAm_Ende_des_Weges_ein_Teil_des\nlegend\$aeren_Steins_der_Zeit,_des\lDiserakts.\pWas_Rin_nicht_in_Erfahrung_bringen\nkonnte,_wei\$s_ich_l\$aengst:\pIn_drei_Teile_wurde_der_Zeitstein\ngespalten,_den_drei_W\$aechtern_der\lWelt_anvertraut.\pSieh_ihn_dir_an,_den_Zeitstein,\ndiese_\$ueberw\$aeltigende_Aura_der\lMacht,_dieses_pulsierende\lSchimmern.\lEs_ist_fast_bezaubernd...
+	= Herzlich willkommen,\n\b\01!\pUns scheint doch etwas zu\nverbinden, wenn ich dich hier mit\lmeiner alten Partnerin treffe.\pEinst war ich Teil ihrer\neinf\$aeltigen Revolustionsbewegung,\lehe ich erkannt habe, dass ich so\lniemals Macht erlangen kann.\pNun stehen wir hier schicksalshaft\neinander gegen\$ueber.\pVor uns der Schlot eines Vulkans,\nin dessen Herzen eine der\lm\$aechtigsten Kreaturen der Welt\lschlummert.\pAm Ende des Weges ein Teil des\nlegend\$aeren Steins der Zeit, des\lDiserakts.\pWas Rin nicht in Erfahrung bringen\nkonnte, wei\$s ich l\$aengst:\pIn drei Teile wurde der Zeitstein\ngespalten, den drei W\$aechtern der\lWelt anvertraut.\pSieh ihn dir an, den Zeitstein,\ndiese \$ueberw\$aeltigende Aura der\lMacht, dieses pulsierende\lSchimmern.\lEs ist fast bezaubernd...
 .end
 
 
 .string str_0x96eab0 GER
-	=Der_Stein_wird_sich_bald_im_Besitz\ndes_Teams_Violet_befinden_und\leine_Waffe_erschaffen,_deren_Macht\lunvergleichlich_gro\$s_sein_soll.\lUnd_ich_werde_mich_weder_von_euch\lnoch_sonst_irgendjemandem\laufhalten_lassen.
+	=Der Stein wird sich bald im Besitz\ndes Teams Violet befinden und\leine Waffe erschaffen, deren Macht\lunvergleichlich gro\$s sein soll.\lUnd ich werde mich weder von euch\lnoch sonst irgendjemandem\laufhalten lassen.
 .end
 
 
 .string str_0x96abb4 GER
-	=Igva:_Wir_d\$uerfen_das_nicht\ngeschehen_lassen.\lDer_Diserakt_h\$aelt_den_Fluss_der\lZeit_aufrecht_-_wer_ihm_die\lEnerige_entzieht,_l\$aehmt_die\lZeitstruktur.\lAu\$serdem_wird_das_Entfernen_des\lDiserakts_das_W\$aechterpok\emon\lGroudon_auf_den_Plan_rufen.\lInferior_wird_diese_Katastrophe\lnicht_\$ueberstehen_k\$oennen.
+	= Wir d\$uerfen das nicht\ngeschehen lassen.\lDer Diserakt h\$aelt den Fluss der\lZeit aufrecht - wer ihm die\lEnerige entzieht, l\$aehmt die\lZeitstruktur.\lAu\$serdem wird das Entfernen des\lDiserakts das W\$aechterpok\emon\lGroudon auf den Plan rufen.\lInferior wird diese Katastrophe\lnicht \$ueberstehen k\$oennen.
 .end
 
 
 .string str_0x96ab03 GER
-	=Mistral_ist_nicht_aufzuhalten.\nDas_Fragment_des_Zeitsteins_wird\luns_zu_den_Herrschern_der_Welt\lerheben!
+	=Mistral ist nicht aufzuhalten.\nDas Fragment des Zeitsteins wird\luns zu den Herrschern der Welt\lerheben!
 .end
 
 
 .string str_0x96ab6d GER
-	=Du_kommst_ohnehin_zu_sp\$aet,_um_uns\nnun_noch_zu_stoppen.
+	=Du kommst ohnehin zu sp\$aet, um uns\nnun noch zu stoppen.
 .end
 
 
 .string str_0x96aa55 GER
-	=Mistral_vollbringt,_was_Rin_nicht\nerreichen_konnte.\pEr_wird_alle_drei_Teile_des\nDiserakts_finden_und_vereinen.
+	=Mistral vollbringt, was Rin nicht\nerreichen konnte.\pEr wird alle drei Teile des\nDiserakts finden und vereinen.
 .end
 
 
 .string str_0x96aac6 GER
-	=Stell_dich_ihm_nicht_in_den_Weg,\noder_du_wirst_vernichtet!
+	=Stell dich ihm nicht in den Weg,\noder du wirst vernichtet!
 .end
 
 
 .string str_0x96a618 GER
-	=Ich_bin_der_Punkt,_an_dem_du\nscheitern_wirst.\pMistrals_Aufgabe_ist_zu_wichtig,\nals_dass_ich_dir_erlauben_k\$oennte,\leinzugreifen.
+	=Ich bin der Punkt, an dem du\nscheitern wirst.\pMistrals Aufgabe ist zu wichtig,\nals dass ich dir erlauben k\$oennte,\leinzugreifen.
 .end
 
 
 .string str_0x969f24 GER
-	=Unm\$oeglich.\nDu_kannst_ihn_nicht_stoppen!
+	=Unm\$oeglich.\nDu kannst ihn nicht stoppen!
 .end
 
 
 .string str_0x96ae6e GER
-	=Mistral:_Ihr_beiden_kommt_zu_sp\$aet.\nDer_Diserakt_ist_mein.
+	= Ihr beiden kommt zu sp\$aet.\nDer Diserakt ist mein.
 .end
 
 
 .string str_0x96adf1 GER
-	=Igva:_Mistral,_bitte!\pWenn_ich_dir_je_etwas_bedeutet\nhabe,_tu_es_nicht!
+	= Mistral, bitte!\pWenn ich dir je etwas bedeutet\nhabe, tu es nicht!
 .end
 
 
 .string str_0x96ada6 GER
-	=Mistral:_Schweig!\nDummes_M\$aedchen!\pErzittert_vor_der_Kraft_des\nDiserakts!
+	= Schweig!\nDummes M\$aedchen!\pErzittert vor der Kraft des\nDiserakts!
 .end
 
 
 .string str_0x96ad59 GER
-	=Igva:_Oh_bei_Arceus!\nDas_ist_das_W\$aechterpok\emon\lGroudon...\lEs..._es_...
+	= Oh bei Arceus!\nDas ist das W\$aechterpok\emon\lGroudon...\lEs... es ...
 .end
 
 
 .string str_0x96a698 GER
-	=Mistral:_Es_ist_endlich_aus_seinem\nSchlaf_erwacht!
+	= Es ist endlich aus seinem\nSchlaf erwacht!
 .end
 
 
 .string str_0x96ebfd GER
-	=Igva:_Das_ist_unser_aller_Ende!\nGroudon_wird_alles_verw\$uesten_und\lzerst\$oeren!
+	= Das ist unser aller Ende!\nGroudon wird alles verw\$uesten und\lzerst\$oeren!
 .end
 
 
 .string str_0x96b05d GER
-	=Mistral:_Da_stehst_du_vor_mir,\ndu_m\$aechtiges,_m\$aechtiges_Wesen!\pDeine_Kraft_soll_fortan_an_mich\ngebunden_sein.\pHier_erhebe_ich_das_Magmaherz,_das\nuralte_Artefakt,_um_deine_wahre\lKraft_zu_entfesseln!
+	= Da stehst du vor mir,\ndu m\$aechtiges, m\$aechtiges Wesen!\pDeine Kraft soll fortan an mich\ngebunden sein.\pHier erhebe ich das Magmaherz, das\nuralte Artefakt, um deine wahre\lKraft zu entfesseln!
 .end
 
 
 .string str_0x97138c GER
-	=Igva:_Was?_Groudon_ist...\nVerschwunden?
+	= Was? Groudon ist...\nVerschwunden?
 .end
 
 
 .string str_0x96f1be GER
-	=Mistral:_T\$oerrichtes_G\$oer!\nGroudon_ist_nicht_verschwunden...\pEs_ist_unter_meiner_Kontrolle!\pDas_Magmaherz,_welches_ich_aus_dem\nMuseum_von_Orina_City_gestohlen\lhabe,_verleiht_Groudon_seine\lurspr\$uengliche_Macht...\pEs_erhebt_es_in_seine_Kaiserform!\pMein_Wort_ist_Groudons_Befehl!\pMein_Wille_seine_Handlung!\pMein_Geist_seine_Macht!\pGroudons_Kaiserform_birgt_ein\nunvorstellbares_Ma\$s_an_Vernichtung\lund_Chaos_-_Planeten_werden_wie\lK\$aeferpok\emon_zerschmettert_und\lHimmel_wie_Kerzen_in_Brand\lgesetzt!\pHahaha!_Hahaha!\pAlso!\p\b\01!\pIch_fordere_dich_heraus!\pBrenne!_Schreie!\pIch_werde_dich_vernichten!
+	= T\$oerrichtes G\$oer!\nGroudon ist nicht verschwunden...\pEs ist unter meiner Kontrolle!\pDas Magmaherz, welches ich aus dem\nMuseum von Orina City gestohlen\lhabe, verleiht Groudon seine\lurspr\$uengliche Macht...\pEs erhebt es in seine Kaiserform!\pMein Wort ist Groudons Befehl!\pMein Wille seine Handlung!\pMein Geist seine Macht!\pGroudons Kaiserform birgt ein\nunvorstellbares Ma\$s an Vernichtung\lund Chaos - Planeten werden wie\lK\$aeferpok\emon zerschmettert und\lHimmel wie Kerzen in Brand\lgesetzt!\pHahaha! Hahaha!\pAlso!\p\b\01!\pIch fordere dich heraus!\pBrenne! Schreie!\pIch werde dich vernichten!
 .end
 
 
 .string str_0x96f0ee GER
-	=Dieser_Kampf_wird_\$ueber_das\nSchicksal_dieser_Welt_entscheiden!\pWer_darf_herrschen,_wer_muss\ngehorchen?
+	=Dieser Kampf wird \$ueber das\nSchicksal dieser Welt entscheiden!\pWer darf herrschen, wer muss\ngehorchen?
 .end
 
 
 .string str_0x96f156 GER
-	=..._Das_ist_..._v\$oellig_...\nabsurd!_...\pDu_hast_..._Groudon_..._besiegt?\nIn_seiner_Kaiserform?
+	=... Das ist ... v\$oellig ...\nabsurd! ...\pDu hast ... Groudon ... besiegt?\nIn seiner Kaiserform?
 .end
 
 
 .string str_0x9713b5 GER
-	=Mistral:_...\n..._..._..._...\pDas_..._ist_...\n...\p..._du_hast_Groudon_besiegt?
+	= ...\n... ... ... ...\pDas ... ist ...\n...\p... du hast Groudon besiegt?
 .end
 
 
 .string str_0x96fd16 GER
-	=Mistral:_Nein!\nEs_entzieht_sich_meiner_Kontrolle!
+	= Nein!\nEs entzieht sich meiner Kontrolle!
 .end
 
 
 .string str_0x96fd4a GER
-	=Igva:_Es_wird_alles_und_jeden_hier\nvernichten!
+	= Es wird alles und jeden hier\nvernichten!
 .end
 
 
 .string str_0x96fc90 GER
-	=Igva:_Wir_werden_es_nicht\nschaffen!\lDer_Vulkan_ist_im_Begriff\lauszubrechen.\lDer_Abstieg_wird_ein_hei\$ser_Tod!\lWir_sind_am_Ende!
+	= Wir werden es nicht\nschaffen!\lDer Vulkan ist im Begriff\lauszubrechen.\lDer Abstieg wird ein hei\$ser Tod!\lWir sind am Ende!
 .end
 
 
 .string str_0x97300a GER
-	=Mistral:_Was_habe_ich_getan?\nJetzt_werden_wir...\lWerden_wir...\pAlle...\nsterben!
+	= Was habe ich getan?\nJetzt werden wir...\lWerden wir...\pAlle...\nsterben!
 .end
 
 
 .string str_0x972330 GER
-	=Igva:_Wir_sind_geliefert.\nDer_Tod,_er_hat_uns_gefunden!
+	= Wir sind geliefert.\nDer Tod, er hat uns gefunden!
 .end
 
 

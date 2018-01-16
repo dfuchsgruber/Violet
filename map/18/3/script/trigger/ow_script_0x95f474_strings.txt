@@ -1,18 +1,18 @@
 .string str_0x95e7e5 GER
-	=Igva:_Willkommen_in_meiner_Welt,\n\b\01!\pHattest_du_mich_hier_nicht\nerwartet?\pDabei_bin_ich_doch_selbst_in\ndieser_Gegend_aufgewachsen...\pHabe_ich_nicht_erw\$aehnt,_dass_ich\naus_Inferior_stamme?\p..._...\nUnd_dass_ich_Arenaleiterin_der\lStadt_bin_wei\$st_du_also_auch\lnicht?\pHuch,_entschuldige_bitte...\nDas_bleibt_aber_unter_uns,_ja?\lDass_ein_Arenaleiter_sich_gegen\ldie_Top_Vier_stellt_und_insgeheim\ldie_Revolution_unterst\$uetzt...\pNunja...\nDa_w\$aeren_wir_auch_schon_wieder_an\ldem_Punkt_angekommen,_an_dem_ich\ldich_um_deine_Hilfe_bitten_muss.\pIch_kann_und_m\$oechte_mich_nicht_auf\ndie_Top_Vier_verlassen,_das_kannst\ldu_sicherlich_verstehen.\pEin_hochrangiges_Mitglied_des_Team\nViolet_hat_unsere_Stadt_besetzt.\pIhr_Anf\$uehrer_hei\$st_Mistral_und_ich\nwei\$s_nicht,_ob_ich_alleine_mit_ihm\lfertig_werde.\pAber_zusammen_-_hihi_-_\$aehm,_werden\nwir_ihn_sicherlich_besiegen\lk\$oennen.
+	= Willkommen in meiner Welt,\n\b\01!\pHattest du mich hier nicht\nerwartet?\pDabei bin ich doch selbst in\ndieser Gegend aufgewachsen...\pHabe ich nicht erw\$aehnt, dass ich\naus Inferior stamme?\p... ...\nUnd dass ich Arenaleiterin der\lStadt bin wei\$st du also auch\lnicht?\pHuch, entschuldige bitte...\nDas bleibt aber unter uns, ja?\lDass ein Arenaleiter sich gegen\ldie Top Vier stellt und insgeheim\ldie Revolution unterst\$uetzt...\pNunja...\nDa w\$aeren wir auch schon wieder an\ldem Punkt angekommen, an dem ich\ldich um deine Hilfe bitten muss.\pIch kann und m\$oechte mich nicht auf\ndie Top Vier verlassen, das kannst\ldu sicherlich verstehen.\pEin hochrangiges Mitglied des Team\nViolet hat unsere Stadt besetzt.\pIhr Anf\$uehrer hei\$st Mistral und ich\nwei\$s nicht, ob ich alleine mit ihm\lfertig werde.\pAber zusammen - hihi - \$aehm, werden\nwir ihn sicherlich besiegen\lk\$oennen.
 .end
 
 
 .string str_0x95eb33 GER
-	=Was_sagst_du_dazu?\nHilfst_du_mir?
+	=Was sagst du dazu?\nHilfst du mir?
 .end
 
 
 .string str_0x95e710 GER
-	=Ich_wusste,_dass_ich_auf_dich\nz\$aehlen_kann,_\b\01.\pWir_treffen_uns_in_Inferior,\nwestlich_von_hier!
+	=Ich wusste, dass ich auf dich\nz\$aehlen kann, \b\01.\pWir treffen uns in Inferior,\nwestlich von hier!
 .end
 
 
 .string str_0x95e77f GER
-	=Hey!_Du_kannst_mich_nicht_einfach\nso_im_Stich_lassen,_\b\01!\lWir_sind_doch_-_\$aeh_-_Freunde?\lOder_nicht?
+	=Hey! Du kannst mich nicht einfach\nso im Stich lassen, \b\01!\lWir sind doch - \$aeh - Freunde?\lOder nicht?
 .end

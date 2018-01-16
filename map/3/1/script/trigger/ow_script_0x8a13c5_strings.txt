@@ -1,48 +1,48 @@
 .string str_0x8a17ec GER
-	=???:_Wir_sollten_uns_beeilen._Rin\nund_die_anderen_R\$uepel_werden\ll\$aengst_in_Silvania_sein.\p???:_Ich_habe_da_eine_viel_bessere\nIdee!\p???:_Lass_h\$oeren.\p???:_Auf_Route_2_soll_der\nArcheologe_Professor_Tann_sein\lLabor_haben._Denkst_du_nicht_auch,\ldass_er_uns_etwas_\$ueber_den_Stein\lwissen_k\$oennte?\p???:_Ja,_das_klingt_einleuchtend.\nRin_wird_uns_reichlich_entlohnen,\lwenn_wir_ihr_die_Informationen\lbesorgen,_die_sie_sucht.\p???:_Dann_ist_das_beschlossen._Wir\nwerden_dem_Professor_zusetzen_und\ldann_-
+	= Wir sollten uns beeilen. Rin\nund die anderen R\$uepel werden\ll\$aengst in Silvania sein.\p Ich habe da eine viel bessere\nIdee!\p Lass h\$oeren.\p Auf Route 2 soll der\nArcheologe Professor Tann sein\lLabor haben. Denkst du nicht auch,\ldass er uns etwas \$ueber den Stein\lwissen k\$oennte?\p Ja, das klingt einleuchtend.\nRin wird uns reichlich entlohnen,\lwenn wir ihr die Informationen\lbesorgen, die sie sucht.\p Dann ist das beschlossen. Wir\nwerden dem Professor zusetzen und\ldann -
 .end
 
 
 .string str_0x8a1608 GER
-	=???:_Der_Junge_da_hat_uns\nbelauscht!\l???:_Ja,_genau!_Du_da,_du_Knirps!\lWei\$st_du_\$ueberhaupt,_wer_wir_sind?\lMitglieder_des_Team_Violet\lnat\$uerlich._Unsere_Organisation\lwird_schon_bald_die_Herrschaft\l\$ueber_diese_Region_erlangt_haben\lund_da_k\$oennen_wir_Rotzl\$oeffel_wie\ldich_nicht_gebrauchen.\l???:_Du_solltest_ihn_erledigen,\lehe_er_jemanden_von_unserem\lVorhaben_erz\$aehlen_kann.\l???:_Das_werde_ich_tun,_keine\lSorge._Jetzt_wirst_du_erleben,_was\les_hei\$st,_sich_mit_Team_Violet\lanzulegen!
+	= Der Junge da hat uns\nbelauscht!\l Ja, genau! Du da, du Knirps!\lWei\$st du \$ueberhaupt, wer wir sind?\lMitglieder des Team Violet\lnat\$uerlich. Unsere Organisation\lwird schon bald die Herrschaft\l\$ueber diese Region erlangt haben\lund da k\$oennen wir Rotzl\$oeffel wie\ldich nicht gebrauchen.\l Du solltest ihn erledigen,\lehe er jemanden von unserem\lVorhaben erz\$aehlen kann.\l Das werde ich tun, keine\lSorge. Jetzt wirst du erleben, was\les hei\$st, sich mit Team Violet\lanzulegen!
 .end
 
 
 .string str_0x8a158f GER
-	=F\$uerchte_uns!_Sp\$uere_das_Ausma\$s\nunserer_St\$aerke!
+	=F\$uerchte uns! Sp\$uere das Ausma\$s\nunserer St\$aerke!
 .end
 
 
 .string str_0x8a15bf GER
-	=Ein_Bengel_hat_mich_geschlagen?\nWie_erniedrigend!
+	=Ein Bengel hat mich geschlagen?\nWie erniedrigend!
 .end
 
 
 .string str_0x8a14b2 GER
-	=I..._Ich_..._du_..._wie_konnte_ich\ngegen_einen_Gr\$uenschnabel_wie_dich\lverlieren?\l...\lAber_das_ist_ja_auch\lnebens\$aechlich._Ich_habe_einen_Plan\lauszuf\$uehren.\lDu_hast_nicht_das_letzte_Mal_von\luns_geh\$oert,_das_schw\$oere_ich_dir!
+	=I... Ich ... du ... wie konnte ich\ngegen einen Gr\$uenschnabel wie dich\lverlieren?\l...\lAber das ist ja auch\lnebens\$aechlich. Ich habe einen Plan\lauszuf\$uehren.\lDu hast nicht das letzte Mal von\luns geh\$oert, das schw\$oere ich dir!
 .end
 
 
 .string str_0x8a146b GER
-	=Und_ich_habe_keine_Zeit,_mich_mit\nG\$oeren_zu_befassen!_Adieu!
+	=Und ich habe keine Zeit, mich mit\nG\$oeren zu befassen! Adieu!
 .end
 
 
 .string str_0x8f2375 GER
-	=???:_Keine_schlechte_Vorstellung,\nJunge._Du_scheinst_zwar_noch_nicht\llange_ein_Trainer_zu_sein,_doch\lkannst_du_eine_Pok\emon_mit_Eleganz\lf\$uehren.\pErlaube_mir,_mich_vorzustellen.\nIch_bin_Larissa,_meines_Zeichens\lK\$uenstlerin._Diese_Plage_namens\lTeam_Violet_treibt_schon_seit\lgeraumer_Zeit_ihr_Unwesen_in_der\lRegion,_doch_scheinen_sie_in_den\lletzten_Wochen_aggressiver\lgeworden_zu_sein.\pDa_du_nun_ohnehin_zu_ihren_Feinden\nz\$aehlst,_k\$oenntest_du_sicherlich\lhelfen,_diese_niedertr\$aechtigen\lKreaturen_in_ihre_Schranken_zu\lweisen.
+	= Keine schlechte Vorstellung,\nJunge. Du scheinst zwar noch nicht\llange ein Trainer zu sein, doch\lkannst du eine Pok\emon mit Eleganz\lf\$uehren.\pErlaube mir, mich vorzustellen.\nIch bin Larissa, meines Zeichens\lK\$uenstlerin. Diese Plage namens\lTeam Violet treibt schon seit\lgeraumer Zeit ihr Unwesen in der\lRegion, doch scheinen sie in den\lletzten Wochen aggressiver\lgeworden zu sein.\pDa du nun ohnehin zu ihren Feinden\nz\$aehlst, k\$oenntest du sicherlich\lhelfen, diese niedertr\$aechtigen\lKreaturen in ihre Schranken zu\lweisen.
 .end
 
 
 .string str_0x8f2c1e GER
-	=Hu?_Du_z\$oegerst?_Fehlt_es_dir_an\nMut?_Habe_ich_mich_in_dir_geirrt?
+	=Hu? Du z\$oegerst? Fehlt es dir an\nMut? Habe ich mich in dir geirrt?
 .end
 
 
 .string str_0x8a1cdd GER
-	=Den_b\$oesen_Machenschaften_von_Team\nViolet_muss_ich_Einhalt_gebieten.\lDu_kannst_auf_mich_z\$aehlen!
+	=Den b\$oesen Machenschaften von Team\nViolet muss ich Einhalt gebieten.\lDu kannst auf mich z\$aehlen!
 .end
 
 
 .string str_0x8f2c62 GER
-	=Larissa:_Ehrenhaft_und_nobel\ngesprochen,_Junge._Die_Welt\lbraucht_mehr_von_euch_ehrgeizigen\lRittern.\pWohin_sind_Tugend_und_Eleganz\nverschwunden?_Ich_werde_sie\lzur\$ueckbringen,_das_versichere_ich\ldir.\pWir_werden_uns_wiedersehen,_ich\nkann_es_in_deinen_Augen_lesen.
+	= Ehrenhaft und nobel\ngesprochen, Junge. Die Welt\lbraucht mehr von euch ehrgeizigen\lRittern.\pWohin sind Tugend und Eleganz\nverschwunden? Ich werde sie\lzur\$ueckbringen, das versichere ich\ldir.\pWir werden uns wiedersehen, ich\nkann es in deinen Augen lesen.
 .end

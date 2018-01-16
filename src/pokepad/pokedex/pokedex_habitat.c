@@ -29,6 +29,10 @@ extern const unsigned short gfx_worldmap_4bppTiles[];
 extern const unsigned short gfx_worldmap_4bppPal[];
 extern const unsigned short gfx_worldmap_4bppMap[];
 
+extern const unsigned short gfx_hiro_headTiles[];
+extern const unsigned short gfx_hiroine_headTiles[];
+extern const unsigned short gfx_hiro_headPal[];
+extern const unsigned short gfx_hiroine_headPal[];
 
 bg_config pokedex_bg_habitat_configs [] = {
     {0, 0, 31, 0, 0, 0},
@@ -55,13 +59,13 @@ graphic pokedex_habitat_cursor_graphic = {
 };
 
 graphic pokedex_habitat_male_graphic = {
-    (void*) 0x083EEDF4,
+    gfx_hiro_headTiles,
     0x80,
     0xA015
 };
 
 graphic pokedex_habitat_female_graphic = {
-    (void*) 0x083EEDF4,
+    gfx_hiroine_headTiles,
     0x80,
     0xA015
 };
@@ -270,7 +274,7 @@ void pokedex_init_habitat() {
         pal_load_uncomp((void*) 0x83EEAB2, (u16) ((16 + allocate_obj_pal(0xA014))*16), 30);
         pal_load_comp(gfx_pokedex_habitat_rarityPal, (u16) ((16 + allocate_obj_pal(0xA016))*16), 32);
         //load_comp_pal_into_RAM(gfx_pokedex_habitat_rodPal, (u16)((16+allocate_obj_pal(0xA017))*16), 32);
-        void *head_pal = (*save2)->player_is_female ? (void*) 0x083EEAF2 : (void*) 0x083EEAD2;
+        void *head_pal = (*save2)->player_is_female ? gfx_hiroine_headPal : gfx_hiro_headPal;
         pal_load_uncomp(head_pal, (u16) ((16 + allocate_obj_pal(0xA015))*16), 32);
         pal_load_uncomp(transparency_black_box_pals, 16 * 13, 32);
         pal_set_all_to_black();

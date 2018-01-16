@@ -51,13 +51,11 @@
 .org 0x080BD584
     mov r0, #0
 
+.org 0x080BFF50
+    .word healing_places
 
-//.org 0x08352218
-//    .word map_3_0
+.org 0x080BFF74
+    .word healing_places
 
-//.org 0x0834EBE4
-//    .word map_3_0_footer
-
-//.org 0x082DD3F4
-//    .word maptileset0
-//    .word maptileset1
+.org 0x080BFFE4
+    .word healing_place_target_persons

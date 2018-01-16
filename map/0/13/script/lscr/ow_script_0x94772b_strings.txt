@@ -1,23 +1,23 @@
 .string str_0x947967 GER
-	=Igva:_Die_Beben_haben\nnachgelassen?\pUnd_Groudon...\nist_verschwunden?\pWas_hat_das_zu_bedeuten?
+	= Die Beben haben\nnachgelassen?\pUnd Groudon...\nist verschwunden?\pWas hat das zu bedeuten?
 .end
 
 
 .string str_0x9479c7 GER
-	=Mistral:_Offenbar_hatten_wir_Gl\$ueck\nim_Ungl\$ueck...\pDie_Lage_hat_sich_beruhigt,_was\nmich_in_meinen_Handlungen\lbest\$aerkt.\pMein_Weg_scheint_mir_nun_klar,_ich\nsehe_mein_Schicksal...
+	= Offenbar hatten wir Gl\$ueck\nim Ungl\$ueck...\pDie Lage hat sich beruhigt, was\nmich in meinen Handlungen\lbest\$aerkt.\pMein Weg scheint mir nun klar, ich\nsehe mein Schicksal...
 .end
 
 
 .string str_0x94794f GER
-	=Igva:_Warte,_Mistral!
+	= Warte, Mistral!
 .end
 
 
 .string str_0x9477c9 GER
-	=Igva:_..._Ich_verstehe\nehrlichgesagt_nicht,_was_hier\lvorgefallen_ist...\pAber_es_scheint_so,_als_w\$aeren_wir\nmit_einem_blauen_Auge_davon\lgekommen.\p\b\01!\nIch_m\$oechte_dir_f\$uer_alles_danken.\pIch_wei\$s,_dass_du_eigentlich_nach\nInferior_gekommen_bist,_um_einen\lArenaorden_zu_erringen.\pAls_Arenaleiterin_werde_ich_dir\ndiesen_Wunsch_nicht_l\$aenger\lversagen.\pFordere_mich_in_Inferiors_Arena\nheraus!
+	= ... Ich verstehe\nehrlichgesagt nicht, was hier\lvorgefallen ist...\pAber es scheint so, als w\$aeren wir\nmit einem blauen Auge davon\lgekommen.\p\b\01!\nIch m\$oechte dir f\$uer alles danken.\pIch wei\$s, dass du eigentlich nach\nInferior gekommen bist, um einen\lArenaorden zu erringen.\pAls Arenaleiterin werde ich dir\ndiesen Wunsch nicht l\$aenger\lversagen.\pFordere mich in Inferiors Arena\nheraus!
 .end
 
 
 .string str_0x8fb998 GER
-	=Du_hast_nun_das_Ende_der\nAlpha-Version_von_Pok\emon_Violet\lerreicht._Das_Spiel_endet\lvorr\$uebergehend_an_diesem_Punkt.\lDu_wirst_nun_in_eine_H\$oehle_auf\lRoute_2_gebracht,_welche_aus_zwei\lR\$aeumen_besteht.\lIn_einem_der_R\$aeume_findest_du_den\lEntwickler_des_Spiels_vor,_im\landeren_nichts._Um_deinen\lSpielstand_in_die_n\$aechste_Version\lzu_\$uebertragen,_musst_du_das_Spiel\lin_dem_Raum_speichern,_in_welchem\lsich_NICHT_der_Entwickler_Wodka\lbefindet.
+	=Du hast nun das Ende der\nAlpha-Version von Pok\emon Violet\lerreicht. Das Spiel endet\lvorr\$uebergehend an diesem Punkt.\lDu wirst nun in eine H\$oehle auf\lRoute 2 gebracht, welche aus zwei\lR\$aeumen besteht.\lIn einem der R\$aeume findest du den\lEntwickler des Spiels vor, im\landeren nichts. Um deinen\lSpielstand in die n\$aechste Version\lzu \$uebertragen, musst du das Spiel\lin dem Raum speichern, in welchem\lsich NICHT der Entwickler Wodka\lbefindet.
 .end

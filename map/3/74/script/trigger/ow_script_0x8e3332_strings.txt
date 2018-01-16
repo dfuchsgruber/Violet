@@ -1,18 +1,18 @@
 .string str_0x8e627c GER
-	=\b\06:_Oh,_\b\01!\nDu_machst_dich_wohl_auch_auf_den\lWeg_nach_Kaskada?_Sei_gewarnt,_die\lW\$ueste_im_Osten_ist_t\$ueckisch._Aber\lich_habe_ja_bereits_meinen_zweiten\lArena-Orden_errungen._F\$uer_mich\lwird_das_ein_Kinderspiel_werden!\lWie_steht_es_um_deine_Pok\emon?\lKannst_du_mir_immer_noch\lentgegentreten?
+	= Oh, \b\01!\nDu machst dich wohl auch auf den\lWeg nach Kaskada? Sei gewarnt, die\lW\$ueste im Osten ist t\$ueckisch. Aber\lich habe ja bereits meinen zweiten\lArena-Orden errungen. F\$uer mich\lwird das ein Kinderspiel werden!\lWie steht es um deine Pok\emon?\lKannst du mir immer noch\lentgegentreten?
 .end
 
 
 .string str_0x8e6231 GER
-	=Du_bist_ein_verfluchter\nGl\$ueckspilz._Meine_Arena-Orden\lsprechen_f\$uer_mich!
+	=Du bist ein verfluchter\nGl\$ueckspilz. Meine Arena-Orden\lsprechen f\$uer mich!
 .end
 
 
 .string str_0x8e6164 GER
-	=Reines_Gl\$ueck!_Du_kannst_im_Grunde\nkein_besserer_Trainer_sein,_als\lich,_denn_ich_besitze_mehr\lArena-Orden_als_du!\p...\p...\pNicht_weniger_hast_du_ein_bisschen\nK\$oennen_bewiesen._Das_hier_sollte\ldir_helfen...
+	=Reines Gl\$ueck! Du kannst im Grunde\nkein besserer Trainer sein, als\lich, denn ich besitze mehr\lArena-Orden als du!\p...\p...\pNicht weniger hast du ein bisschen\nK\$oennen bewiesen. Das hier sollte\ldir helfen...
 .end
 
 
 .string str_0x9681e9 GER
-	=Der_Detektor_findet_versteckte\nGegenst\$aende,_die_dem_blo\$sen_Auge\lentgehen.\pDu_musst_ihn_daf\$uer_nicht_einmal\neinschalten,_er_aktiviert_sich\lautomatisch,_wenn_du_dich_in_die\lN\$aehe_eines_versteckten_Gegenstands\lbegibst.\pDu_kannst_den_Alarm_in_den\nOptionen_auch_ausschalten,_wenn_du\lm\$oechtest.\p...\pWie_dem_auch_sei!\nIch_werde_mich_wieder_auf_den_Weg\lmachen!\lBeim_n\$aechsten_Mal_gewinne_ich!
+	=Der Detektor findet versteckte\nGegenst\$aende, die dem blo\$sen Auge\lentgehen.\pDu musst ihn daf\$uer nicht einmal\neinschalten, er aktiviert sich\lautomatisch, wenn du dich in die\lN\$aehe eines versteckten Gegenstands\lbegibst.\pDu kannst den Alarm in den\nOptionen auch ausschalten, wenn du\lm\$oechtest.\p...\pWie dem auch sei!\nIch werde mich wieder auf den Weg\lmachen!\lBeim n\$aechsten Mal gewinne ich!
 .end

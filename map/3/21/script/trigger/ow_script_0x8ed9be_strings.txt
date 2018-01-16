@@ -1,33 +1,33 @@
 .string str_0x8eda29 GER
-	=Maike:_Oh,_hallo_\b\01!\pWie_mir_scheint,_bist_du_auch_auf\ndem_Weg_nach_Kaskada._Aber_zuerst\lerwartet_dich_hier_eine_wirklich\lgrauenvolle_W\$ueste.\pWollen_wir_mal_sehen,_ob_du_mir\ngewachsen_bist!
+	= Oh, hallo \b\01!\pWie mir scheint, bist du auch auf\ndem Weg nach Kaskada. Aber zuerst\lerwartet dich hier eine wirklich\lgrauenvolle W\$ueste.\pWollen wir mal sehen, ob du mir\ngewachsen bist!
 .end
 
 
 .string str_0x8edae8 GER
-	=Wieso_kann_ich_nicht_auch_einmal\neinen_Sieg_erringen?
+	=Wieso kann ich nicht auch einmal\neinen Sieg erringen?
 .end
 
 
 .string str_0x8ffbb5 GER
-	=Unfassbar..._Ich_verliere_einen\nKampf_nach_dem_anderen._Vielleicht\lhab_einfach_nicht_das_Zeug,_ein\lTrainer_zu_sein...
+	=Unfassbar... Ich verliere einen\nKampf nach dem anderen. Vielleicht\lhab einfach nicht das Zeug, ein\lTrainer zu sein...
 .end
 
 
 .string str_0x8ffb51 GER
-	=Lass_dich_nicht_unterkriegen,\nMaike._Du_bist_weit_gekommen_und\lwirst_es_noch_viel_weiter_bringen.
+	=Lass dich nicht unterkriegen,\nMaike. Du bist weit gekommen und\lwirst es noch viel weiter bringen.
 .end
 
 
 .string str_0x8ff97b GER
-	=Maike:_Ja,_du_hast_vermutlich\nrecht._Ich_darf_mich_nicht\lunterkriegen_lassen._Mein_Bruder\lw\$uerde_auf_mich_voller_Scham\lherabblicken,_wenn_er_mich_jetzt\lso_sehen_w\$uerde!\p...\p...\pWie_dem_auch_sei,_die_W\$ueste,_die\nuns_erwartet,_ist_kein_Ponita-Hof.\lMan_hat_mir_zwar_gesagt,_dass_es\lauch_einen_Brunnen_geben_soll,\ldoch_habe_ich_mich_wegen_der\lvielen_Fata_Morganen_schnell\lverirrt.\lDu_kannst_dir_nie_sicher_sein,_ob\lder_Weg,_den_du_einschl\$aegst,_nicht\lin_eine_Sackgasse_f\$uehrt.
+	= Ja, du hast vermutlich\nrecht. Ich darf mich nicht\lunterkriegen lassen. Mein Bruder\lw\$uerde auf mich voller Scham\lherabblicken, wenn er mich jetzt\lso sehen w\$uerde!\p...\p...\pWie dem auch sei, die W\$ueste, die\nuns erwartet, ist kein Ponita-Hof.\lMan hat mir zwar gesagt, dass es\lauch einen Brunnen geben soll,\ldoch habe ich mich wegen der\lvielen Fata Morganen schnell\lverirrt.\lDu kannst dir nie sicher sein, ob\lder Weg, den du einschl\$aegst, nicht\lin eine Sackgasse f\$uehrt.
 .end
 
 
 .string str_0x8edd68 GER
-	=Fast_h\$aette_ich_es_vergessen!_Mein\nBruder_Brix_aus_Hoenn_hat_mir\leinige_seltene_Items_\$ueberreicht,\ldie_ich_in_seinem_Namen_an\ltalentierte_Trainer_aush\$aendigen\lsoll.
+	=Fast h\$aette ich es vergessen! Mein\nBruder Brix aus Hoenn hat mir\leinige seltene Items \$ueberreicht,\ldie ich in seinem Namen an\ltalentierte Trainer aush\$aendigen\lsoll.
 .end
 
 
 .string str_0x8edba7 GER
-	=Der_Ep-Teiler_erm\$oeglicht_es,\nPok\emon_zu_trainieren,_ohne_dass\ldiese_am_Kampf_teilnehmen_m\$uessen.\pJedes_Pok\emon,_dass_dieses_Item\ntr\$aegt,_erh\$aelt_automatisch_einen\lTeil_der_verdienten\lErfahrungspunkte._Ich_hoffe,_du\lkannst_ihn_gut_gebrauchen.\pIch_f\$uer_meinen_Teil_aber,_werde\nmich_nun_wieder_auf_den_Weg\lmachen._Ich_werde_alles_daran\lsetzten,_ein_besserer_Trainer_zu\lwerden,_sodass_ich_eines_Tages\lmeinem_Bruder_voller_Stolz_in_die\lAugen_blicken_kann.
+	=Der Ep-Teiler erm\$oeglicht es,\nPok\emon zu trainieren, ohne dass\ldiese am Kampf teilnehmen m\$uessen.\pJedes Pok\emon, dass dieses Item\ntr\$aegt, erh\$aelt automatisch einen\lTeil der verdienten\lErfahrungspunkte. Ich hoffe, du\lkannst ihn gut gebrauchen.\pIch f\$uer meinen Teil aber, werde\nmich nun wieder auf den Weg\lmachen. Ich werde alles daran\lsetzten, ein besserer Trainer zu\lwerden, sodass ich eines Tages\lmeinem Bruder voller Stolz in die\lAugen blicken kann.
 .end

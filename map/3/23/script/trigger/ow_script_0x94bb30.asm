@@ -12,7 +12,7 @@ callstd MSG
 fadescreen 0x1
 sound 0x64
 checksound
-callasm 0x919d791
+callasm cmdx2D_force_pals_to_black
 addvar STORY_PROGRESS 0x1
 goto ow_script_0x94c3f4
 

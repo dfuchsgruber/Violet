@@ -104,7 +104,7 @@ goto ow_script_0x94d77e
 
 .global ow_script_0x94d77e
 ow_script_0x94d77e:
-callasm 0x919d791
+callasm cmdx2D_force_pals_to_black
 copyvar 0x8000 0x8008
 copyvar 0x8001 0x8009
 copyvar 0x8004 0x800a

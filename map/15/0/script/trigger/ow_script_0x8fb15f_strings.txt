@@ -1,53 +1,53 @@
 .string str_0x8d3efa GER
-	=Polizist:_Hey_du_da!\nStehen_geblieben!
+	=Polizist: Hey du da!\nStehen geblieben!
 .end
 
 
 .string str_0x8d3bb9 GER
-	=Argh!_Ihr_verdammten_Team_Violet\nR\$uepel!
+	=Argh! Ihr verdammten Team Violet\nR\$uepel!
 .end
 
 
 .string str_0x8d38fe GER
-	=Polizisten:_Herr_Wachtmeister!\nWir_stehen_Ihnen_zur_Seite!
+	=Polizisten: Herr Wachtmeister!\nWir stehen Ihnen zur Seite!
 .end
 
 
 .string str_0x8d3f8b GER
-	=Polizist:_Nicht_n\$oetig,_M\$aenner._Ich\nhabe_die_Situation_im_Griff.
+	=Polizist: Nicht n\$oetig, M\$aenner. Ich\nhabe die Situation im Griff.
 .end
 
 
 .string str_0x8d3be3 GER
-	=Polizist:_..._..._..._...\n..._..._..._..._..._...\pNein,_du_siehst_nicht_aus,_wie\neiner_von_denen._Du_bist_kein\lMitglied_von_Team_Violet.\lEntschuldige_bitte,_Junge._Mein\lName_ist_Oberwachtmeister\lHarrenfeld,_ich_kommandiere_die\lPolizei_in_diesem_Bezirk_Thetos.\pWir_haben_Informationen_erhalten,\ndass_eine_ganze_Division_der\lOrganisation_Team_Violet_auf_den\lWeg_nach_Silvania_ist.\p..._..._...\n...._...._....\pNun,_wir_haben_alle_verf\$uegbaren\nKr\$aefte_angefordert,_aber_ich_bin\lmir_nicht_sicher,_ob_wir_es_mit\leiner_ganzen_Division_aufnehmen\lk\$oennen._Sollte_einer_der_drei\lKommandanten_die_Gruppe\leskortieren,_k\$oennte_das_Probleme\lbedeuten.\p..._..._...\n..._..._...\pNun,_du_machst_den_Eindruck,_ein\nganz_passabler_Trainer_zu_sein.\lK\$oenntest_du_uns_nicht_helfen,_Team\lViolet_zu_bek\$aempfen?
+	=Polizist: ... ... ... ...\n... ... ... ... ... ...\pNein, du siehst nicht aus, wie\neiner von denen. Du bist kein\lMitglied von Team Violet.\lEntschuldige bitte, Junge. Mein\lName ist Oberwachtmeister\lHarrenfeld, ich kommandiere die\lPolizei in diesem Bezirk Thetos.\pWir haben Informationen erhalten,\ndass eine ganze Division der\lOrganisation Team Violet auf den\lWeg nach Silvania ist.\p... ... ...\n.... .... ....\pNun, wir haben alle verf\$uegbaren\nKr\$aefte angefordert, aber ich bin\lmir nicht sicher, ob wir es mit\leiner ganzen Division aufnehmen\lk\$oennen. Sollte einer der drei\lKommandanten die Gruppe\leskortieren, k\$oennte das Probleme\lbedeuten.\p... ... ...\n... ... ...\pNun, du machst den Eindruck, ein\nganz passabler Trainer zu sein.\lK\$oenntest du uns nicht helfen, Team\lViolet zu bek\$aempfen?
 .end
 
 
 .string str_0x8d3858 GER
-	=Team_Violet_ist_auch_mein_Feind.\pSie_haben_den_Vater_meines_besten\nFreundes_bedroht_und_werden_daf\$uer\lbezahlen._Sie_k\$oennen_auf_meine\lHilfe_z\$aehlen,_Herr_Wachtmeister!
+	=Team Violet ist auch mein Feind.\pSie haben den Vater meines besten\nFreundes bedroht und werden daf\$uer\lbezahlen. Sie k\$oennen auf meine\lHilfe z\$aehlen, Herr Wachtmeister!
 .end
 
 
 .string str_0x8d375f GER
-	=Wachtmeister_Harrenfeld:_Ha!\pSehr_sch\$oen,_du_bist_ein\nausgesprochen_herzlicher_Mensch.\pIm_Kampf_gegen_diese\nVerbrecherbande_k\$oennen_wir_jede\lUnterst\$uetzung_gebrauchen.\pWir_werden_uns_auf_den_Weg_nach\nSilvania_machen,_wo_du_dann_zu_uns\lsto\$sen_kannst.
+	=Wachtmeister  Ha!\pSehr sch\$oen, du bist ein\nausgesprochen herzlicher Mensch.\pIm Kampf gegen diese\nVerbrecherbande k\$oennen wir jede\lUnterst\$uetzung gebrauchen.\pWir werden uns auf den Weg nach\nSilvania machen, wo du dann zu uns\lsto\$sen kannst.
 .end
 
 
 .string str_0x8d36f8 GER
-	=Wir_ziehen_ab!_Auf_nach_Silvania!
+	=Wir ziehen ab! Auf nach Silvania!
 .end
 
 
 .string str_0x8d371c GER
-	=Polizisten:_Aye,_Sir!
+	=Polizisten: Aye, Sir!
 .end
 
 
 .string str_0x8d3aaf GER
-	=Nein,_ich_werde_nicht_Ihre_Arbeit\nerldigen._Sie_sind_Wachtmeister\ldieses_Bezirks_und_verpflichtet,\lf\$uer_Ordnung_zu_sorgen.\pIch_habe_selbst_Angelegenheiten\nmit_Team_Violet_zu_regeln_und\lwerde_Ihnen_daher_nicht_im_Weg\lstehen._Rechnen_d\$uerfen_Sie_mit_mir\ljedoch_nicht.
+	=Nein, ich werde nicht Ihre Arbeit\nerldigen. Sie sind Wachtmeister\ldieses Bezirks und verpflichtet,\lf\$uer Ordnung zu sorgen.\pIch habe selbst Angelegenheiten\nmit Team Violet zu regeln und\lwerde Ihnen daher nicht im Weg\lstehen. Rechnen d\$uerfen Sie mit mir\ljedoch nicht.
 .end
 
 
 .string str_0x8d39ed GER
-	=Wachmeister_Harrenfeld:_Hmpf!\pDu_scheinst_keinen_Funken_Anstand\nzu_besitzen._Wie_dem_auch_sei,_wir\lsind_auf_deine_Hilfe_nicht\langewiesen._Wir_werden_der_Team\lViolet_Division_Einhalt_gebieten.
+	=Wachmeister  Hmpf!\pDu scheinst keinen Funken Anstand\nzu besitzen. Wie dem auch sei, wir\lsind auf deine Hilfe nicht\langewiesen. Wir werden der Team\lViolet Division Einhalt gebieten.
 .end

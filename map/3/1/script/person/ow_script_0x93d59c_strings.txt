@@ -1,5 +1,5 @@
 .string str_0x949632 GER
-	=Elise:_Oh,_hallo_\b\01!\nIch_wollte_dich_nicht_\$ueberrumpeln.\lWie_ich_sehe,_hast_du_gerade_die\lArena_von_Meriana_City_gemeistert.\lIch_habe_ich_mich_in_letzter_Zeit\lselbst_etwas_am_K\$aempfen_versucht.\lWie_w\$aere_es_mit_einem_Kampf?
+	=Oh,_hallo_\b\01!\nIch_wollte_dich_nicht_\$ueberrumpeln.\lWie_ich_sehe,_hast_du_gerade_die\lArena_von_Meriana_City_gemeistert.\lIch_habe_ich_mich_in_letzter_Zeit\lselbst_etwas_am_K\$aempfen_versucht.\lWie_w\$aere_es_mit_einem_Kampf?
 .end
 
 
@@ -14,7 +14,7 @@
 
 
 .string str_0x94918c GER
-	=Elise:_Ich_habe_es_kommen_sehen.\nAber_schlecht_habe_ich_mich_nicht\lgeschlagen,_oder?\pVielleicht_mache_ich_das_K\$aempfen\nja_zu_meinem_neuen_Hobby,_neben\lder_ganzen_Forschung.\pWo_wir_gerade_beim_Thema_sind:\nLaz._Corp,_die_Firma,_bei_der_ich\lbesch\$aeftigt_bin,_hat_ein_komplett\lvirtuelles_Pok\emon_kreiert.\pDu_solltest_dir_das_unbedingt\nansehen.\pEs_wird_auch_Professor_Tann_im\nHinblick_auf_den_Pok\edex_helfen.\pDer_Hauptsitz_der_Laz.Corp_ist_in\nOrina_City._Das_liegt_westlich_von\lRoute_2,_wo_das_Labor_von\lProfessor_Tann_ist.\lWenn_du_dich_an_der_Kreuzung,_die\ln\$oerdlich_zur_Route_3_f\$uehrt,\lwestlich_bewegst,_solltest_du\lfr\$ueher_oder_sp\$aeter_Orina_City\lerreichen.\pVon_mir_hast_du_aber_nicht\nerfahren,_dass_es_gelungen_ist,\lein_k\$uenstliches_Pok\emon_zu\lerschaffen,_ja?\pBis_dann,_\b\01.
+	=Ich_habe_es_kommen_sehen.\nAber_schlecht_habe_ich_mich_nicht\lgeschlagen,_oder?\pVielleicht_mache_ich_das_K\$aempfen\nja_zu_meinem_neuen_Hobby,_neben\lder_ganzen_Forschung.\pWo_wir_gerade_beim_Thema_sind:\nLaz._Corp,_die_Firma,_bei_der_ich\lbesch\$aeftigt_bin,_hat_ein_komplett\lvirtuelles_Pok\emon_kreiert.\pDu_solltest_dir_das_unbedingt\nansehen.\pEs_wird_auch_Professor_Tann_im\nHinblick_auf_den_Pok\edex_helfen.\pDer_Hauptsitz_der_Laz.Corp_ist_in\nOrina_City._Das_liegt_westlich_von\lRoute_2,_wo_das_Labor_von\lProfessor_Tann_ist.\lWenn_du_dich_an_der_Kreuzung,_die\ln\$oerdlich_zur_Route_3_f\$uehrt,\lwestlich_bewegst,_solltest_du\lfr\$ueher_oder_sp\$aeter_Orina_City\lerreichen.\pVon_mir_hast_du_aber_nicht\nerfahren,_dass_es_gelungen_ist,\lein_k\$uenstliches_Pok\emon_zu\lerschaffen,_ja?\pBis_dann,_\b\01.
 .end
 
 

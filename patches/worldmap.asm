@@ -43,3 +43,13 @@
 
 .org 0x080C44D4
     .word gfx_hiro_headPal
+
+.org 0x080BFE20
+    ldr r2, =map_get_flightposition | 1
+    bx r2
+    .pool
+
+.org 0x080BFE80
+    ldr r1, =flightposition_by_id | 1
+    bx r1
+    .pool

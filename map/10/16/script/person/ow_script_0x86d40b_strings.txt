@@ -1,8 +1,8 @@
 .string str_0x86d444 GER
-	=IGVA:_\b\01!_Freut_mich,_dich_zu\nsehen._Im_Namen_der_Stadt_INFERIOR\lund_der_ganzen_Region_m\$oechte_ich\ldir_f\$uer_deine_Unterst\$uetzung_am\lVULCANO_danken._Ich_bin\lzuversichtlich,_dass_du_es_schaffen\lwirst,_den_Orden_zu_erinngen._Wenn\ldu_aber_glaubst,_ich_w\$uerde_nicht\lalles_geben,_dann_irrst_du_dich,\lkomm_mit_mir!\2bo\01\07\01Be\86\_spnr\02
+	= \b\01! Freut mich, dich zu\nsehen. Im Namen der Stadt INFERIOR\lund der ganzen Region m\$oechte ich\ldir f\$uer deine Unterst\$uetzung am\lVULCANO danken. Ich bin\lzuversichtlich, dass du es schaffen\lwirst, den Orden zu erinngen. Wenn\ldu aber glaubst, ich w\$uerde nicht\lalles geben, dann irrst du dich,\lkomm mit mir!
 .end
 
 
 .string str_0x86d584 GER
-	=Das_war_der_hei\$seste_Kampf_meines\nLebens!
+	=Das war der hei\$seste Kampf meines\nLebens!
 .end

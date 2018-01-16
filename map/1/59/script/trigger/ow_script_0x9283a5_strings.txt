@@ -1,138 +1,138 @@
 .string str_0x92d01d GER
-	=..._..._...\pDir_nach_all_der_Zeit\ngegen\$ueberzutreten_...\p...\pSo_viel_hat_sich_ver\$aendert,_so\nviel_ist_geschehen_...\pWieso,_Albus?_Wieso_tust_du_das?
+	=... ... ...\pDir nach all der Zeit\ngegen\$ueberzutreten ...\p...\pSo viel hat sich ver\$aendert, so\nviel ist geschehen ...\pWieso, Albus? Wieso tust du das?
 .end
 
 
 .string str_0x92cf46 GER
-	=Albus:_Alter_Freund,_es_tut_mir\nweh,_dass_wir_unter_diesen\lUmst\$aenden_zusammenkommen.\pAber_wir_beide_wissen,_dass_das\nSystem,_dem_wir_gedient_haben,_das\lSystem,_das_wir_selbst_erschaffen\lhaben,_uns_entglitten_ist.
+	= Alter Freund, es tut mir\nweh, dass wir unter diesen\lUmst\$aenden zusammenkommen.\pAber wir beide wissen, dass das\nSystem, dem wir gedient haben, das\lSystem, das wir selbst erschaffen\lhaben, uns entglitten ist.
 .end
 
 
 .string str_0x92ce82 GER
-	=Entglitten?_Du_hast_dich_von\nunserem_Lebenswerk_abgewendet.\lErinnerst_du_dich?_Die_Top_Vier,\ldie_Pokemon_Liga._All_das._Sie\lwaren_unser_Werk,_unser\lVerm\$aechtnis.\pUnd_nun_trittst_du_es_mit_F\$ue\$sen!
+	=Entglitten? Du hast dich von\nunserem Lebenswerk abgewendet.\lErinnerst du dich? Die Top Vier,\ldie Pokemon Liga. All das. Sie\lwaren unser Werk, unser\lVerm\$aechtnis.\pUnd nun trittst du es mit F\$ue\$sen!
 .end
 
 
 .string str_0x928b41 GER
-	=Du_tust_mir_unrecht._Ich_habe_so\nlange_daran_festgehalten,_wie_ich\les_nur_irgendwie_verantworten\lkonnte.\pAber_Korruption_und_Machtsucht\nhaben_unsere_Ideale_infiziert_und\leine_kranke_Regierung\lhervorgebracht.\pErkennst_du_es_nicht?_Siehst_du\nnicht,_was_aus_dieser_Welt\lgeworden_ist?\pDein_eigener_Sch\$ueler_Devin_ist_der\nK\$oenig_des_Untergrunds,_die_Polizei\lk\$uemmert_sich_nicht_um_das_Gesetz\lsondern_blo\$s_um_einen_gef\$uellten\lGeldbeutel.\pDie_Feinde_der_Freiheit_sind_unter\neuch,_Faun._Sie_sind_an_deiner\lSeite._Der_neue_Champion,_der\lLucius_vertrieben_hat...\pEr_wird_diese_Welt_nicht_retten\nk\$oennen.\pVerstehst_du_nicht?_Wir_m\$uessen\ndiese_Aufgabe_selbst_in_die_Hand\lnehmen,_wie_wir_es_vor_all_den\lJahren_getan_haben.
+	=Du tust mir unrecht. Ich habe so\nlange daran festgehalten, wie ich\les nur irgendwie verantworten\lkonnte.\pAber Korruption und Machtsucht\nhaben unsere Ideale infiziert und\leine kranke Regierung\lhervorgebracht.\pErkennst du es nicht? Siehst du\nnicht, was aus dieser Welt\lgeworden ist?\pDein eigener Sch\$ueler Devin ist der\nK\$oenig des Untergrunds, die Polizei\lk\$uemmert sich nicht um das Gesetz\lsondern blo\$s um einen gef\$uellten\lGeldbeutel.\pDie Feinde der Freiheit sind unter\neuch, Faun. Sie sind an deiner\lSeite. Der neue Champion, der\lLucius vertrieben hat...\pEr wird diese Welt nicht retten\nk\$oennen.\pVerstehst du nicht? Wir m\$uessen\ndiese Aufgabe selbst in die Hand\lnehmen, wie wir es vor all den\lJahren getan haben.
 .end
 
 
 .string str_0x928a7f GER
-	=Du_irrst_dich,_Albus._Du_irrst\ndich.\pDeine_Motive_sind_edel,_aber_eine\nneue_Revolution_wird_nichts\lbewirken._Hunderte_Menschen_werden\lunter_dem_Krieg,_den_du_diesem\lKontinent_bringst,_leiden.
+	=Du irrst dich, Albus. Du irrst\ndich.\pDeine Motive sind edel, aber eine\nneue Revolution wird nichts\lbewirken. Hunderte Menschen werden\lunter dem Krieg, den du diesem\lKontinent bringst, leiden.
 .end
 
 
 .string str_0x928a11 GER
-	=..._...\nDas_Meer_...\lEs_hat_mich_schon_immer\lfasziniert...\l...\lEs_ist_voller_Frieden_und\lHarmonie...\l...
+	=... ...\nDas Meer ...\lEs hat mich schon immer\lfasziniert...\l...\lEs ist voller Frieden und\lHarmonie...\l...
 .end
 
 
 .string str_0x9288c7 GER
-	=Ich_kenne_dich,_Faun.\pDu_bist_mein_Freund.\pWir_sind_wie_Br\$ueder_f\$uereinander.\pDu_wirst_mich_nicht_bek\$aempfen_und\nich_werde_dich_nicht_bek\$aempfen.\pJedoch_werde_ich_mein_Vorhaben\nnicht_aufgeben,_denn_ich_wei\$s,\ldass_ich_das_Richtige_tue.\lDu_bist_ein_guter_Mensch,_Faun.\pAuch_du_wirst_begreifen,_dass_ich\nim_Recht_liege.\pIrgendwann.
+	=Ich kenne dich, Faun.\pDu bist mein Freund.\pWir sind wie Br\$ueder f\$uereinander.\pDu wirst mich nicht bek\$aempfen und\nich werde dich nicht bek\$aempfen.\pJedoch werde ich mein Vorhaben\nnicht aufgeben, denn ich wei\$s,\ldass ich das Richtige tue.\lDu bist ein guter Mensch, Faun.\pAuch du wirst begreifen, dass ich\nim Recht liege.\pIrgendwann.
 .end
 
 
 .string str_0x9286da GER
-	=Bist_du_nicht_der_Junge,_der_mir\nauf_Route_2_begegnet_ist?\l...\lDu_bist_ein_Sch\$ueler_Fauns?\lDie_Welt_ist_wahrlich_klein._Ich\lhoffe,_du_bist_nicht_gekommen,\ldich_unserer_Sache_in_den_Weg_zu\lstellen.\lJa,_ich_bin_der_Kopf_der\lRevolutionsbewegung,_Albus.\lIm_Kampf_f\$uer_Freiheit_und\lGerechtigkeit_bin_ich_unerm\$uedlich.\lM\$oeglicherweise_kannst_du,_anders\lals_dein_Lehrer,_zur_Einsicht\lfinden_und_dich_meiner_Sache\lanschlie\$sen.\lEines_steht_aber_fest:\lUnsere_Wege_werden_sich_wieder\lkreuzen.
+	=Bist du nicht der Junge, der mir\nauf Route 2 begegnet ist?\l...\lDu bist ein Sch\$ueler Fauns?\lDie Welt ist wahrlich klein. Ich\lhoffe, du bist nicht gekommen,\ldich unserer Sache in den Weg zu\lstellen.\lJa, ich bin der Kopf der\lRevolutionsbewegung, Albus.\lIm Kampf f\$uer Freiheit und\lGerechtigkeit bin ich unerm\$uedlich.\lM\$oeglicherweise kannst du, anders\lals dein Lehrer, zur Einsicht\lfinden und dich meiner Sache\lanschlie\$sen.\lEines steht aber fest:\lUnsere Wege werden sich wieder\lkreuzen.
 .end
 
 
 .string str_0x9286b8 GER
-	=Albus,_warte...
+	=Albus, warte...
 .end
 
 
 .string str_0x928594 GER
-	=Hallo,_\b\01.\pDu_bist_Albus_also_bereits\nbegegnet.\pEr_ist_der_Anf\$uehrer_der\nRevolutionsbewegung_und_mein\p...\pFreund...\pEr_war_es_zumindest._Fr\$ueher\neroberten_wir_gemeinsam_den\lKontinent_und_gr\$uendeten_die_Top\lVier,_musst_du_wissen.\pJetzt_aber_hat_er_sich_gegen_sein\neigenes_System_verschworen...
+	=Hallo, \b\01.\pDu bist Albus also bereits\nbegegnet.\pEr ist der Anf\$uehrer der\nRevolutionsbewegung und mein\p...\pFreund...\pEr war es zumindest. Fr\$ueher\neroberten wir gemeinsam den\lKontinent und gr\$uendeten die Top\lVier, musst du wissen.\pJetzt aber hat er sich gegen sein\neigenes System verschworen...
 .end
 
 
 .string str_0x92dc49 GER
-	=Felix!_Was_verschl\$aegt_dich\ndenn_hierher?
+	=Felix! Was verschl\$aegt dich\ndenn hierher?
 .end
 
 
 .string str_0x92dbcf GER
-	=Hallo_Opi,_hallo_\b\01!\pIch_bin_gekommen,_um_dich_im_Kampf\ngegen_die_Revolution\$aere_zu\lunterst\$uetzen,_Opi,_was_sonst?
+	=Hallo Opi, hallo \b\01!\pIch bin gekommen, um dich im Kampf\ngegen die Revolution\$aere zu\lunterst\$uetzen, Opi, was sonst?
 .end
 
 
 .string str_0x92db7f GER
-	=Nun,_da_bist_du_zu_sp\$aet,_ihr\nAnf\$uehrer_ist_mir_eben_durch_die\lFinger_gegangen.
+	=Nun, da bist du zu sp\$aet, ihr\nAnf\$uehrer ist mir eben durch die\lFinger gegangen.
 .end
 
 
 .string str_0x92db39 GER
-	=War_das_der_gr\$uen_vermummte_Mann,\ndem_ich_dort_oben_begegnet_bin?
+	=War das der gr\$uen vermummte Mann,\ndem ich dort oben begegnet bin?
 .end
 
 
 .string str_0x92db05 GER
-	=Wie_ung\$uenstig!_Ich_h\$aette_ihn\n\$ueberw\$aeltigen_sollen.
+	=Wie ung\$uenstig! Ich h\$aette ihn\n\$ueberw\$aeltigen sollen.
 .end
 
 
 .string str_0x935f18 GER
-	=Rede_keinen_Unfug,_Felix.\nAlbus'_Fertigkeiten_im_Kampf_sind\ldeinen_um_Lichtjahre_voraus.\lImmerhin_waren_wir_einst_Partner,\lwir_sind_ebenb\$uertig.
+	=Rede keinen Unfug, Felix.\nAlbus' Fertigkeiten im Kampf sind\ldeinen um Lichtjahre voraus.\lImmerhin waren wir einst Partner,\lwir sind ebenb\$uertig.
 .end
 
 
 .string str_0x92d98d GER
-	=Du_untersch\$aetzt_uns_immer_noch,\nOpi!_Wir_sind_deine_Sch\$ueler!\pWer_sagt,_dass_wir_nicht_l\$aengst\n\$ueber_deine_Generation\lhinausgewachsen_sind?\pWer_sagt,_dass_die_\$AEra,_die_du_uns\nvorausgesagt_hast,_nicht_schon\lgekommen_ist?
+	=Du untersch\$aetzt uns immer noch,\nOpi! Wir sind deine Sch\$ueler!\pWer sagt, dass wir nicht l\$aengst\n\$ueber deine Generation\lhinausgewachsen sind?\pWer sagt, dass die \$AEra, die du uns\nvorausgesagt hast, nicht schon\lgekommen ist?
 .end
 
 
 .string str_0x936ef3 GER
-	=Gjahaha!_Gjahahap\nDu_erinnerst_mich_an_meine_Jugend,\lFelix._Unverbesserlich\loptimistisch_und_naiv!\pNein,_ihr_zwei_seid_noch_nicht\nso_weit_uns_Veteranen\lherauszufordern.\pAber_der_Tag_wird_kommen,_da_ihr\ngl\$aenzen_k\$oennt_und_Menschen_wie\lAlbus_oder_mich_abl\$oesen_werdet.
+	=Gjahaha! Gjahahap\nDu erinnerst mich an meine Jugend,\lFelix. Unverbesserlich\loptimistisch und naiv!\pNein, ihr zwei seid noch nicht\nso weit uns Veteranen\lherauszufordern.\pAber der Tag wird kommen, da ihr\ngl\$aenzen k\$oennt und Menschen wie\lAlbus oder mich abl\$oesen werdet.
 .end
 
 
 .string str_0x92d7c0 GER
-	=Bis_dahin_aber_m\$uesst_ihr_noch\neiniges_leisten,_euch_beweisen.\lK\$aempft_mit_Herz_und_lasst_euch_von\leuren_Entscheidungen_nicht\labbringen.
+	=Bis dahin aber m\$uesst ihr noch\neiniges leisten, euch beweisen.\lK\$aempft mit Herz und lasst euch von\leuren Entscheidungen nicht\labbringen.
 .end
 
 
 .string str_0x93a4de GER
-	=Ich_finde_es_unfair,_dass_Opi_uns\nimmer_noch_wie_Kinder_behandelt...\lSieht_er_nicht,_dass_wir\linzwischen_unseren_eigenen_Weg\lgehen?\lWir_werden_ihm_wohl_beweisen\lm\$uessen,_dass_wir_zu_etwas_taugen.\lIch_werde_meinen_Plan,_Arenaleiter\lzu_werden,_\$ueber_den_Haufen_werfen.\l\b\01,_lass_uns_keine_kleinen_Ziele\lfassen.\lLass_uns_direkt_nach_den_Sternen\lgreifen.\lLass_uns_den_Titel_des_Champions\lanstreben!
+	=Ich finde es unfair, dass Opi uns\nimmer noch wie Kinder behandelt...\lSieht er nicht, dass wir\linzwischen unseren eigenen Weg\lgehen?\lWir werden ihm wohl beweisen\lm\$uessen, dass wir zu etwas taugen.\lIch werde meinen Plan, Arenaleiter\lzu werden, \$ueber den Haufen werfen.\l\b\01, lass uns keine kleinen Ziele\lfassen.\lLass uns direkt nach den Sternen\lgreifen.\lLass uns den Titel des Champions\lanstreben!
 .end
 
 
 .string str_0x92e6d7 GER
-	=Was_sagst_du_dazu?
+	=Was sagst du dazu?
 .end
 
 
 .string str_0x92e662 GER
-	=Nur,_wenn_man_seine\nTr\$aeume_hoch_ansetzt,_kann_man\lGr\$oe\$se_erlangen.\pWir_werden_die_Welt_erobern,_auf\nunsere_Art!
+	=Nur, wenn man seine\nTr\$aeume hoch ansetzt, kann man\lGr\$oe\$se erlangen.\pWir werden die Welt erobern, auf\nunsere Art!
 .end
 
 
 .string str_0x92e5ea GER
-	=Das_ist_die_richtige_Einstellung!\pWie_einst_Opi_und_seine_beiden\nGef\$aehrten,_werden_wir_uns_diese\lWelt_zu_F\$ue\$sen_legen!
+	=Das ist die richtige Einstellung!\pWie einst Opi und seine beiden\nGef\$aehrten, werden wir uns diese\lWelt zu F\$ue\$sen legen!
 .end
 
 
 .string str_0x92e221 GER
-	=\$UEbrigens,_ich_bin_auf_dem_Weg\nhierher_unserem_alten\lKlassenkameraden_Blaise_begegnet.\pEr_scheint_sich_ebenfalls_gut_zu\nmachen,_hat_sogar_einige\lArenaorden_errungen._Nur_seine\lhasszerfressene_Art_ist_er_noch\lnicht_los_geworden.\pHat_aber_etwas_sehr_interessantes\nerz\$aehlt,_\$ueber_eine_Kampftechnik,\ldie_sich_Mega-Evolution_nennt.\p..._...\p..._...\pIch_dachte_mir_bereits,_dass_du\nauch_nicht_viel_dar\$ueber_wei\$st._Es\lscheint_sich_um_eine_Art_der\lEvolution_zu_handlen,_welche_von\leinem_Trainer_nur_ausgel\$oest_werden\lkann,_wenn_sein_Pok\emon_und_er\leine_enge_Bindung_zueinander\lhaben.\pWarum_Faun_uns_dieses_Geheimnis\nwohl_vorenthalten_hat?\pWir_werden_wohl_auf_eigene_Faust\nherausfinden_m\$uessen,_was_es_damit\lauf_sich_hat.
+	=\$UEbrigens, ich bin auf dem Weg\nhierher unserem alten\lKlassenkameraden Blaise begegnet.\pEr scheint sich ebenfalls gut zu\nmachen, hat sogar einige\lArenaorden errungen. Nur seine\lhasszerfressene Art ist er noch\lnicht los geworden.\pHat aber etwas sehr interessantes\nerz\$aehlt, \$ueber eine Kampftechnik,\ldie sich Mega-Evolution nennt.\p... ...\p... ...\pIch dachte mir bereits, dass du\nauch nicht viel dar\$ueber wei\$st. Es\lscheint sich um eine Art der\lEvolution zu handlen, welche von\leinem Trainer nur ausgel\$oest werden\lkann, wenn sein Pok\emon und er\leine enge Bindung zueinander\lhaben.\pWarum Faun uns dieses Geheimnis\nwohl vorenthalten hat?\pWir werden wohl auf eigene Faust\nherausfinden m\$uessen, was es damit\lauf sich hat.
 .end
 
 
 .string str_0x92e138 GER
-	=Wei\$st_du...\nManchmal_starre_ich_stundenlang_in\lden_Himmel_und_frage_mich,_was_es\ljenseits_unserer_Welt_gibt...\lIst_dort_drau\$sen_noch_Leben?\lWerden_wir_ihm_begegnen?\lDie_Welt_ist_so_riesig,_gr\$oe\$ser\lnoch_als_unsere_Tr\$aeume.\l...\l...
+	=Wei\$st du...\nManchmal starre ich stundenlang in\lden Himmel und frage mich, was es\ljenseits unserer Welt gibt...\lIst dort drau\$sen noch Leben?\lWerden wir ihm begegnen?\lDie Welt ist so riesig, gr\$oe\$ser\lnoch als unsere Tr\$aeume.\l...\l...
 .end
 
 
 .string str_0x92e024 GER
-	=Wei\$st_du,_f\$uer_den_Anfang_w\$aere_es\nsicherlich_hilfreich,_wenn_wir_Opi\lim_Kampf_gegen_die_Revolution\$aere\lunterst\$uetzen_k\$oennten.\pLass_uns_in_Kaskada_nach_dem_in\ngr\$uen_vermummten_Mann,_Albus,\lsuchen_und_ihn_stellen.\pOpi_wird_sicherlich_beeindruckt\nsein,_wenn_wir_ihn_fassen_k\$oennen.
+	=Wei\$st du, f\$uer den Anfang w\$aere es\nsicherlich hilfreich, wenn wir Opi\lim Kampf gegen die Revolution\$aere\lunterst\$uetzen k\$oennten.\pLass uns in Kaskada nach dem in\ngr\$uen vermummten Mann, Albus,\lsuchen und ihn stellen.\pOpi wird sicherlich beeindruckt\nsein, wenn wir ihn fassen k\$oennen.
 .end
 
 
 .string str_0x92e4e6 GER
-	=Vielleicht_ist_es_doch\nsinnvoller,_sich_auf_kleine_Ziele\lzu_berufen._Niemand_kann_unendlich\lgro\$se_Stufen_erklimmen.
+	=Vielleicht ist es doch\nsinnvoller, sich auf kleine Ziele\lzu berufen. Niemand kann unendlich\lgro\$se Stufen erklimmen.
 .end
 
 
 .string str_0x92e56f GER
-	=Vermutlich_hast_du_du_Recht._Opi\nund_seine_beiden_Gef\$aehrten_haben\lsich_ihren_Ruhm_auch_\$ueber_viele\lJahre_hinweg_erk\$aempft.
+	=Vermutlich hast du du Recht. Opi\nund seine beiden Gef\$aehrten haben\lsich ihren Ruhm auch \$ueber viele\lJahre hinweg erk\$aempft.
 .end

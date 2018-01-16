@@ -190,7 +190,7 @@ extern mapheader **mapbanks[];
 extern mapfooter *mapfooters[];
 tileset *tilesets = (tileset*) 0x082D49B8;
 extern wild_pokemon_data wild_pokemon[]; //= (wild_pokemon_data**) 0x080828F4;
-u8 **map_namespaces = (u8**) 0x083F1504;
+extern u8 *map_namespaces[];
 
 void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);
 
@@ -214,5 +214,13 @@ typedef struct{
 stru_map_displ_cntrl *map_displ_cntrl = (stru_map_displ_cntrl*)0x03000E90;
 
 void map_delta_to_map_tile(mapfooter *foot, u16 map_tile_id, s16 x_relative, s16 y_relative);
+
+typedef struct{
+    u16 bank;
+    u16 map;
+} stru_healing_place;
+
+stru_healing_place healing_places[];
+u8 healing_place_target_persons[];
 
 #endif
