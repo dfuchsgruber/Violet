@@ -721,6 +721,26 @@ overworld_sprite ow_igva = {
     ROTSCALE_TABLE_NULL
 };
 
+static graphic overworld_sprite_botogel_sprites[] = {
+    {&gfx_ow_botogel_0Tiles, 0x100, 0},
+    {&gfx_ow_botogel_1Tiles, 0x100, 0},
+    {&gfx_ow_botogel_2Tiles, 0x100, 0},
+    {&gfx_ow_botogel_0Tiles, 0x100, 0},
+    {&gfx_ow_botogel_0Tiles, 0x100, 0},
+    {&gfx_ow_botogel_1Tiles, 0x100, 0},
+    {&gfx_ow_botogel_1Tiles, 0x100, 0},
+    {&gfx_ow_botogel_2Tiles, 0x100, 0},
+    {&gfx_ow_botogel_2Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_botogel = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_botogel_sprites,
+    ROTSCALE_TABLE_NULL
+};
+
 static graphic overworld_sprite_bbship_sprites[] = {
     {&gfx_ow_bbshipTiles, 0x1000, 0},
     {&gfx_ow_bbshipTiles, 0x1000, 0},
@@ -1445,7 +1465,9 @@ overworld_sprite *overworld_sprites[] = {
         &ow_cloudrider_fem,
         &ow_cloudrider_male,
         &ow_diserakt,
-        &ow_rubys
+        &ow_rubys,
+//174 
+        &ow_botogel,
 
 };
 

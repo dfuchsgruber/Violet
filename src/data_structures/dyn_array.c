@@ -41,12 +41,12 @@ void dyn_arr_resize(int size, dyn_arr *heap) {
     dyn_arr_node *array_x;
     if (size > heap->array_size) {
         array_x = (dyn_arr_node*) cmalloc(sizeof (dyn_arr_node)*(u32) size * 2);
-        memcopy(array_x, heap->array, sizeof (dyn_arr_node)*(u32) heap->array_size);
+        memcpy(array_x, heap->array, sizeof (dyn_arr_node)*(u32) heap->array_size);
         heap->array_size = size * 2;
         heap->size = size;
     } else if (size <= heap->array_size / 2) {
         array_x = (dyn_arr_node*) cmalloc(sizeof (dyn_arr_node)*(u32) heap->array_size / 2);
-        memcopy(array_x, heap->array, sizeof (dyn_arr_node)*(u32) size);
+        memcpy(array_x, heap->array, sizeof (dyn_arr_node)*(u32) size);
         heap->array_size /= 2;
         heap->size = size;
     } else {

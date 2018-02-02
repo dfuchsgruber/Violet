@@ -6,3 +6,18 @@
     =Present Code?
 .end
 
+.string str_present_0 GER
+    =Na siehst du, ganz einfach!\pAls Geschenk erh\$aeltst du von mir\ndies hier.
+.end
+
+.string str_present_0 EN
+    =Easy going!\pAs reward you will get this here!
+.end
+
+.string str_present_already_received GER
+    =Es tut mir leid, aber diesen\nGeschenkcode hast du wohl schon\leingel\$oest!\pEin Geschenkcode kann nur ein\neinziges Mal benutzt werden.
+.end
+
+.string str_present_already_received EN
+    =I am afraid but it seems that you\nalready used this present code.\pEvery single present code can\nonly be used once however.
+.end

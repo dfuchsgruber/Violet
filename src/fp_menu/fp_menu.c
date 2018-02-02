@@ -403,7 +403,7 @@ void fp_menu_stat_load(pokemon *target) {
     int fp_free = (fp_earned - fp_applied) & (~3);
 
     //We create a copy of the pokemon without any fp_applied to get the bonus as difference
-    memcopy(opponent_pokemon, target, sizeof (pokemon));
+    memcpy(opponent_pokemon, target, sizeof (pokemon));
     pokemon_set_fp_applied(opponent_pokemon, stat, 0);
     recalculate_stats(opponent_pokemon);
 

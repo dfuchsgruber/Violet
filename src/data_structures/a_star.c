@@ -10,7 +10,7 @@
 int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker) {
 
     npc *walker = (npc*) malloc(sizeof (npc));
-    memcopy(walker, original_walker, sizeof (npc));
+    memcpy(walker, original_walker, sizeof (npc));
 
     s16 from_x = walker->dest_x;
     s16 from_y = walker->dest_y;
@@ -125,7 +125,7 @@ int a_star_reconstruct(u8 *path, s16 dest_x, s16 dest_y, hashmap *nodes) {
     for (i = 0; i < path_length; i++) {
         path_buf[i] = path[path_length - i - 1];
     }
-    memcopy(path, path_buf, (u32) path_length);
+    memcpy(path, path_buf, (u32) path_length);
 
     path[i++] = 0xFE;
     free(path_buf);

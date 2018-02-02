@@ -126,3 +126,7 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x49 * 4))
         .word version_is_latest | 1
         .pool
+
+.org (special_table + (0x4A * 4))
+        .word special_query_present_code | 1
+        .pool

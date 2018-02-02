@@ -1067,7 +1067,7 @@ compare STARTER_SELECTED 0x1
 callif EQUAL ow_script_0x8a6d9d
 compare STARTER_SELECTED 0x2
 callif EQUAL ow_script_0x8a6dad
-setflag CAUGHT_POKEDEX_DISABLE
+setflag CAUGHT_POKEDEX_DISABLE 
 dowildbattle
 countpokemon
 compare LASTRESULT 0x2

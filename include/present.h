@@ -58,11 +58,14 @@ extern "C" {
 
     pstring_query_string *pstring_query_strings[6];
 
+    #define NUM_PRESENTS 1
+    
     typedef struct{
         u8 md[SHA3_MDLEN];
         u8 *script;
     } present_t;
     
+    present_t presents[NUM_PRESENTS];
     
 #ifdef	__cplusplus
 }

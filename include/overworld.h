@@ -16,5 +16,7 @@ void special_move_npc_to_player();
 
 void special_move_npc_to();
 
+u8 **ow_script_virtual_ptr = (u8**) 0x020370A4;
+
 #endif	/* OVERWORLD_H */
 

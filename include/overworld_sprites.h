@@ -724,6 +724,9 @@ extern const unsigned short gfx_ow_rubys_8Tiles[];
 extern const unsigned short gfx_ow_hiroine_sit_0Tiles[];
 extern const unsigned short gfx_ow_hiroine_sit_1Tiles[];
 extern const unsigned short gfx_ow_hiroine_sit_2Tiles[];
+extern const unsigned short gfx_ow_botogel_0Tiles[];
+extern const unsigned short gfx_ow_botogel_1Tiles[];
+extern const unsigned short gfx_ow_botogel_2Tiles[];
 
 
 #endif	/* OVERWORLD_SPRITES_H */

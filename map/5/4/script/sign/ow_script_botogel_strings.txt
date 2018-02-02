@@ -1,0 +1,15 @@
+.string str_ow_script_botogel_0 GER
+    =Botogel! Botogel!
+.end
+
+.string str_ow_script_botogel_1 GER
+    =Hihi! Das Botogel scheint dich zu\nm\$oegen.\pWei\$st du, Botogel ist ein sehr\ngro\$sz\$uegiges Pok\emon. Es hat\lunheimlichen Spa\$s am Verschenken.\pWenn du ihm einen g\$ueltigen\nGeschenkcode sagst, wird es dir\letwas geben.\pWeil das Botogel dich zu\nm\$oegen scheint, werde ich dir einen\lCode verraten.\pVersuch es mit BOTOGEL\nund achte stets auf die richtige\lGro\$s- und Kleinschreibung.
+.end
+
+.string str_ow_script_botogel_2 GER
+    =Botogel! Botogel?
+.end
+
+.string str_ow_script_botogel_3 GER
+    =Oh tut mir leid! Sieht so aus, als\nw\$aere der Code ung\$ueltig.\pBist du dir sicher, dass du alles\nkorrekt geschrieben hast?
+.end

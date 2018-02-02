@@ -134,9 +134,9 @@ void pokedex_callback_sort() {
 void pokedex_quicksort_list_swap(int a, int b) {
     pokedex_list_element *list = fmem->dex_mem->list;
     pokedex_list_element tmp;
-    memcopy(&tmp, &list[a], sizeof (pokedex_list_element));
-    memcopy(&list[a], &list[b], sizeof (pokedex_list_element));
-    memcopy(&list[b], &tmp, sizeof (pokedex_list_element));
+    memcpy(&tmp, &list[a], sizeof (pokedex_list_element));
+    memcpy(&list[a], &list[b], sizeof (pokedex_list_element));
+    memcpy(&list[b], &tmp, sizeof (pokedex_list_element));
 }
 
 void pokedex_quicksort_revert(int from, int to) {

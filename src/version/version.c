@@ -63,6 +63,7 @@ void version_upgrade_alpha_1_X_to_2_0(){
     *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_0;
 }
 
+
 void version_upgrade_alpha_2_0_to_2_1(){
     *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_1;
     *vardecrypt(BATTLE_BG_OVERRIDE) = 0;

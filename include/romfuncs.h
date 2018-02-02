@@ -31,7 +31,8 @@ u32 get_pokemons_attribute(void*pokemon_offset, int requested_attribute, void*fr
 u32 set_pokemons_attribute(void*pokemon_offset, u16 requested_attribute, void*values);
 u8 charlen_of_hex_value_dec_format(u32 value);
 u8* value_to_str(u8*dest, u32 value, u8 mode, u8 charlength);
-void memcopy(void* dest, void*source, u32 size);
+void memcpy(void*, const void*, size_t);
+void memset(void*, int, size_t);
 void recalculate_stats(void*pokemon_offset);
 void pal_load_uncomp(const void *source, u16 dest_col, u16 bytecount);
 u8 countpokemon();

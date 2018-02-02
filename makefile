@@ -195,13 +195,18 @@ $(BLDPATH)/asset/str.o: $(STROBJS)
 $(BLDPATH)/asset/mus.o: $(MIDOBJS)
 	$(shell mkdir -p $(BLDPATH)/asset/mus)
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/mus.o $(MIDOBJS)
+
+include/std.s: tools/constants.py
+# Create the std.s
+	$(PY) tools/constants.py include/
 	
-build:  $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
+build:  include/std.s $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o index
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
-	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
+	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sy
 	cat $(BLDPATH)/__symbols.sym
+	@cd tools && python index.py
 		
 clean:
 	rm -rf $(BLDPATH)

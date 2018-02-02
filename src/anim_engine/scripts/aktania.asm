@@ -245,7 +245,7 @@ frame 1970
 
 frame 2099
     setflag MAP_BGN_AUTO_ALIGN_OFF 0
-    setflag TILESET_ANIM_DISABLE 0
+    setflag TILESET_ANIM_DISABLE 0 
     endframe
 
 frame 2100

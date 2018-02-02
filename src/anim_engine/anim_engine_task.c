@@ -104,7 +104,7 @@ anim_engine_task *anim_engine_task_new(int priority, void (*callback)(anim_engin
  */
 anim_engine_task *anim_engine_task_setup(){
     anim_engine_task *t = malloc(sizeof(anim_engine_task));
-    memcopy(t, &anim_engine_task_root, sizeof(anim_engine_task));
+    memcpy(t, &anim_engine_task_root, sizeof(anim_engine_task));
     return t;
 }
 

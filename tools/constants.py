@@ -1841,7 +1841,6 @@ flag_table = {
 	0x829 : "POKEDEX",
 	0x82F : "RUNNING_SHOES",
 
-	0x834  : "0x834",
 
 	0x890 : "WM_AMONIA",
 	0x891 : "WM_MERIANA_CITY",
@@ -1864,6 +1863,9 @@ flag_table = {
 	0x90F : "BLACKOUT_BYPASS",
 	0x910 : "TRANS_PALETTE_FETCH",
 	0x911 : "TRANS_DISABLE",
+	0x912 : "CAUGHT_POKEDEX_DISABLE",
+	0x913 : "TILESET_ANIM_DISABLE",
+
 	0x915 : "WONDERTRADE",
 	0x916 : "MAP_BGN_AUTO_ALIGN_OFF",
 	0x917 : "POKERADAR_POKEMON_SPAWNED",
@@ -1962,14 +1964,12 @@ flag_table = {
 	0x975 : "ROUTE_2_CAVE_ITEM_0",
 	0x976 : "ROUTE_2_CAVE_ITEM_1",
 	0x977 : "ROUTE_3_MILL_ITEM_1",
+	0x978 : "PRESENT_0",
+	0x979 : "PRESENT_INTRODUCED",
 }
 
 var_table = {
 
-	0x4001 : "0x4001",
-	0x403C : "0x403C",
-	0x403D : "0x403D",
-	0x403E : "0x403E",
 
 	0x404C : "AKTANIA_FLASHBACK_LSCR_PLAYER_INVISIBLE",
 	0x4050 : "INTRO",
@@ -2017,6 +2017,7 @@ var_table = {
 	0x50EE : "POKEARADAR_ENEMY_LEVEL",
 
 	0x50F4 : "TRAINERSCHOOL_CORRECT_ANSWERS",
+	0x50F5 : "DUNGEON_TYPE",
 
 	0x50F7 : "DETECTOR_FLAG",
 	0x50F8 : "TRAINER_LEVEL_OVERRIDE",
@@ -2693,4 +2694,5 @@ if __name__ == "__main__":
 			sys.exit(0)
 		elif opt in ("-l"): lib = arg
 	dir = args[0]
+	print("Exporting std macros to", dir)
 	export_macros(lib, dir)

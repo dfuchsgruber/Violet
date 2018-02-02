@@ -90,7 +90,7 @@ int hashmap_remove(u32 key, hashmap *map) {
         for (i = 0; i < map->buckets[bucket]->size; i++) {
             if (map->buckets[bucket]->array[i].key == key) {
                 int value = map->buckets[bucket]->array[i].value;
-                memcopy(&map->buckets[bucket]->array[i], &map->buckets[bucket]->array[i + 1], (u32) (map->buckets[bucket]->array_size - i - 1)* (sizeof (dyn_arr_node)));
+                memcpy(&map->buckets[bucket]->array[i], &map->buckets[bucket]->array[i + 1], (u32) (map->buckets[bucket]->array_size - i - 1)* (sizeof (dyn_arr_node)));
                 if (map->buckets[bucket]->size - 1) {
                     dyn_arr_resize(map->buckets[bucket]->size - 1, map->buckets[bucket]);
                     return value;

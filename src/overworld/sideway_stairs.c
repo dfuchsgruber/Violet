@@ -81,7 +81,7 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
     if (direction == 3) { //direction left
         if (role_current == BEHAVIOR_SIDE_STAIR_EAST) { //Southwest descending check
             //In order to check for southwest descend we have to move the ncpy one step down (y++)
-            memcopy(&ncpy, n, sizeof (npc));
+            memcpy(&ncpy, n, sizeof (npc));
             ncpy.from_y++;
             ncpy.dest_y++;
             result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
@@ -94,7 +94,7 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 return 3;
             } else {
                 //In order to check for northwest ascend we have to move the ncpy one step up (y--)
-                memcopy(&ncpy, n, sizeof (npc));
+                memcpy(&ncpy, n, sizeof (npc));
                 ncpy.from_y--;
                 ncpy.dest_y--;
                 result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);
@@ -107,7 +107,7 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
     } else if (direction == 4) {//direction right
         if (role_current == BEHAVIOR_SIDE_STAIR_WEST) { //Southwest descending check
             //In order to check for southwest descend we have to move the ncpy one step down (y++)
-            memcopy(&ncpy, n, sizeof (npc));
+            memcpy(&ncpy, n, sizeof (npc));
             ncpy.from_y++;
             ncpy.dest_y++;
             result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
@@ -120,7 +120,7 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 return 3;
             } else {
                 //In order to check for northwest ascend we have to move the ncpy one step up (y--)
-                memcopy(&ncpy, n, sizeof (npc));
+                memcpy(&ncpy, n, sizeof (npc));
                 ncpy.from_y--;
                 ncpy.dest_y--;
                 result = npc_is_tile_blocked(&ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);

@@ -133,7 +133,7 @@ u8 pokeradar_prepeare() {
             *vardecrypt(0x8000) = result;
             *vardecrypt(0x8001) = (u16) level;
 
-            memcopy(&(cmem->pokeradar_person), &pokeradar_map_event_person, sizeof(map_event_person));
+            memcpy(&(cmem->pokeradar_person), &pokeradar_map_event_person, sizeof(map_event_person));
             cmem->pokeradar_person.x = (s16)(npc_pos.x - 7);
             cmem->pokeradar_person.y = (s16)(npc_pos.y - 7);
             cmem->pokeradar_person.overworld_index = (u8)(154 + basestats[result].form);
