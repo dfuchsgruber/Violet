@@ -240,3 +240,5 @@ script_halt_and_callback = 0x080697E4 | 1;
 fadescreen_is_active = 0x0806A8D8 | 1;
 fadescreen = 0x080704EC | 1;
 map_delta_to_map_tile = 0x0805A948 | 1;
+pokemon_query_string = 0x0809DA38 | 1;
+pokemon_query_string_std_closure = 0x08056900 | 1;

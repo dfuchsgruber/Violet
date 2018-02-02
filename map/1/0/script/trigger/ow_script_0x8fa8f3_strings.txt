@@ -154,7 +154,7 @@
 
 
 .string str_0x8f6be9 GER
-	= Papa! Papa!
+	=Papa! Papa!
 .end
 
 

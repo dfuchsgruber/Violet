@@ -1,5 +1,5 @@
 .string str_0x8eda29 GER
-	= Oh, hallo \b\01!\pWie mir scheint, bist du auch auf\ndem Weg nach Kaskada. Aber zuerst\lerwartet dich hier eine wirklich\lgrauenvolle W\$ueste.\pWollen wir mal sehen, ob du mir\ngewachsen bist!
+	=Oh, hallo \b\01!\pWie mir scheint, bist du auch auf\ndem Weg nach Kaskada. Aber zuerst\lerwartet dich hier eine wirklich\lgrauenvolle W\$ueste.\pWollen wir mal sehen, ob du mir\ngewachsen bist!
 .end
 
 
@@ -19,7 +19,7 @@
 
 
 .string str_0x8ff97b GER
-	= Ja, du hast vermutlich\nrecht. Ich darf mich nicht\lunterkriegen lassen. Mein Bruder\lw\$uerde auf mich voller Scham\lherabblicken, wenn er mich jetzt\lso sehen w\$uerde!\p...\p...\pWie dem auch sei, die W\$ueste, die\nuns erwartet, ist kein Ponita-Hof.\lMan hat mir zwar gesagt, dass es\lauch einen Brunnen geben soll,\ldoch habe ich mich wegen der\lvielen Fata Morganen schnell\lverirrt.\lDu kannst dir nie sicher sein, ob\lder Weg, den du einschl\$aegst, nicht\lin eine Sackgasse f\$uehrt.
+	=Ja, du hast vermutlich\nrecht. Ich darf mich nicht\lunterkriegen lassen. Mein Bruder\lw\$uerde auf mich voller Scham\lherabblicken, wenn er mich jetzt\lso sehen w\$uerde!\p...\p...\pWie dem auch sei, die W\$ueste, die\nuns erwartet, ist kein Ponita-Hof.\lMan hat mir zwar gesagt, dass es\lauch einen Brunnen geben soll,\ldoch habe ich mich wegen der\lvielen Fata Morganen schnell\lverirrt.\lDu kannst dir nie sicher sein, ob\lder Weg, den du einschl\$aegst, nicht\lin eine Sackgasse f\$uehrt.
 .end
 
 

@@ -1,0 +1,8 @@
+.string str_0x9553a2 GER
+	=\b\01_nutzt_die_Zugangskarte.\nW\$aehle_ein_Stockwerk.
+.end
+
+
+.string str_0x95544f GER
+	=Du_befindest_dich_bereits_in\ndiesem_Stockwerk.
+.end

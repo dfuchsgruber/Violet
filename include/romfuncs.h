@@ -199,7 +199,6 @@ void fanfare(u16 song_id);
 u8 weather_get();
 void pokedex_set_caught_and_load_pid(u16 dex_id, u8 flags, u32 pid);
 bool fadescreen_is_active();
-
 /**
  * 
  * @param affects bits 0-15 bg pals, bit 15-31 obj pals
@@ -210,5 +209,20 @@ bool fadescreen_is_active();
  */
 void fadescreen(u32 affects, u8 p1, u8 p2, u8 p3, u16 color);
 
+/**
+ * Queries a string (as for pokemon nickname)
+ * @param mode TODO (3 seems to be nickname)
+ * @param target_buf result of the query
+ * @param species species to show
+ * @param gender gender of the species to show
+ * @param closure closure function after the query (usually includes a reload)
+ */
+void pokemon_query_string(u8 mode, u8 *target_buf, u16 species, u8 gender,
+        u32 pid, void (*closure)());
+
+/**
+ * Std. closure function for string queries. Uses map reload.
+ */
+void pokemon_query_string_std_closure();
 
 #endif

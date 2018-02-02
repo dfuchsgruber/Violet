@@ -1,10 +1,10 @@
 .string str_0x8a17ec GER
-	= Wir sollten uns beeilen. Rin\nund die anderen R\$uepel werden\ll\$aengst in Silvania sein.\p Ich habe da eine viel bessere\nIdee!\p Lass h\$oeren.\p Auf Route 2 soll der\nArcheologe Professor Tann sein\lLabor haben. Denkst du nicht auch,\ldass er uns etwas \$ueber den Stein\lwissen k\$oennte?\p Ja, das klingt einleuchtend.\nRin wird uns reichlich entlohnen,\lwenn wir ihr die Informationen\lbesorgen, die sie sucht.\p Dann ist das beschlossen. Wir\nwerden dem Professor zusetzen und\ldann -
+	=Wir sollten uns beeilen. Rin\nund die anderen R\$uepel werden\ll\$aengst in Silvania sein.\pIch habe da eine viel bessere\nIdee!\pLass h\$oeren.\pAuf Route 2 soll der\nArcheologe Professor Tann sein\lLabor haben. Denkst du nicht auch,\ldass er uns etwas \$ueber den Stein\lwissen k\$oennte?\pJa, das klingt einleuchtend.\nRin wird uns reichlich entlohnen,\lwenn wir ihr die Informationen\lbesorgen, die sie sucht.\pDann ist das beschlossen. Wir\nwerden dem Professor zusetzen und\ldann -
 .end
 
 
 .string str_0x8a1608 GER
-	= Der Junge da hat uns\nbelauscht!\l Ja, genau! Du da, du Knirps!\lWei\$st du \$ueberhaupt, wer wir sind?\lMitglieder des Team Violet\lnat\$uerlich. Unsere Organisation\lwird schon bald die Herrschaft\l\$ueber diese Region erlangt haben\lund da k\$oennen wir Rotzl\$oeffel wie\ldich nicht gebrauchen.\l Du solltest ihn erledigen,\lehe er jemanden von unserem\lVorhaben erz\$aehlen kann.\l Das werde ich tun, keine\lSorge. Jetzt wirst du erleben, was\les hei\$st, sich mit Team Violet\lanzulegen!
+	=Der Junge da hat uns\nbelauscht!\lJa, genau! Du da, du Knirps!\lWei\$st du \$ueberhaupt, wer wir sind?\lMitglieder des Team Violet\lnat\$uerlich. Unsere Organisation\lwird schon bald die Herrschaft\l\$ueber diese Region erlangt haben\lund da k\$oennen wir Rotzl\$oeffel wie\ldich nicht gebrauchen.\lDu solltest ihn erledigen,\lehe er jemanden von unserem\lVorhaben erz\$aehlen kann.\lDas werde ich tun, keine\lSorge. Jetzt wirst du erleben, was\les hei\$st, sich mit Team Violet\lanzulegen!
 .end
 
 
@@ -29,7 +29,7 @@
 
 
 .string str_0x8f2375 GER
-	= Keine schlechte Vorstellung,\nJunge. Du scheinst zwar noch nicht\llange ein Trainer zu sein, doch\lkannst du eine Pok\emon mit Eleganz\lf\$uehren.\pErlaube mir, mich vorzustellen.\nIch bin Larissa, meines Zeichens\lK\$uenstlerin. Diese Plage namens\lTeam Violet treibt schon seit\lgeraumer Zeit ihr Unwesen in der\lRegion, doch scheinen sie in den\lletzten Wochen aggressiver\lgeworden zu sein.\pDa du nun ohnehin zu ihren Feinden\nz\$aehlst, k\$oenntest du sicherlich\lhelfen, diese niedertr\$aechtigen\lKreaturen in ihre Schranken zu\lweisen.
+	=Keine schlechte Vorstellung,\nJunge. Du scheinst zwar noch nicht\llange ein Trainer zu sein, doch\lkannst du eine Pok\emon mit Eleganz\lf\$uehren.\pErlaube mir, mich vorzustellen.\nIch bin Larissa, meines Zeichens\lK\$uenstlerin. Diese Plage namens\lTeam Violet treibt schon seit\lgeraumer Zeit ihr Unwesen in der\lRegion, doch scheinen sie in den\lletzten Wochen aggressiver\lgeworden zu sein.\pDa du nun ohnehin zu ihren Feinden\nz\$aehlst, k\$oenntest du sicherlich\lhelfen, diese niedertr\$aechtigen\lKreaturen in ihre Schranken zu\lweisen.
 .end
 
 
@@ -44,5 +44,5 @@
 
 
 .string str_0x8f2c62 GER
-	= Ehrenhaft und nobel\ngesprochen, Junge. Die Welt\lbraucht mehr von euch ehrgeizigen\lRittern.\pWohin sind Tugend und Eleganz\nverschwunden? Ich werde sie\lzur\$ueckbringen, das versichere ich\ldir.\pWir werden uns wiedersehen, ich\nkann es in deinen Augen lesen.
+	=Ehrenhaft und nobel\ngesprochen, Junge. Die Welt\lbraucht mehr von euch ehrgeizigen\lRittern.\pWohin sind Tugend und Eleganz\nverschwunden? Ich werde sie\lzur\$ueckbringen, das versichere ich\ldir.\pWir werden uns wiedersehen, ich\nkann es in deinen Augen lesen.
 .end

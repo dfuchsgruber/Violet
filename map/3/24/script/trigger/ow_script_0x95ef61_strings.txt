@@ -9,7 +9,7 @@
 
 
 .string str_0x95f255 GER
-	= Nicht schlecht!\nHmm... Aber ich habe nat\$uerlich\lauch nicht alles gegeben.\pIch habe dich gewinnen lassen, ja\nso ist das tats\$aechlich.\pDu brauchst auf jeden Fall ein\nwenig Unterst\$uetzung im Kampf gegen\lIgva.
+	=Nicht schlecht!\nHmm... Aber ich habe nat\$uerlich\lauch nicht alles gegeben.\pIch habe dich gewinnen lassen, ja\nso ist das tats\$aechlich.\pDu brauchst auf jeden Fall ein\nwenig Unterst\$uetzung im Kampf gegen\lIgva.
 .end
 
 

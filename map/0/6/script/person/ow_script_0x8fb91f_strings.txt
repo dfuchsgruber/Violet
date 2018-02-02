@@ -33,9 +33,22 @@
 .end
 
 
-.string str_0x8fe553 GER
-	=(q\8f\_spnr\6bq\8f\_spnr
+.string str_fossil_choice_0 GER
+        =Ein Fossil abgeben
 .end
+
+.string str_fossil_choice_1 GER
+        =Beide Fossilien behalten
+.end
+
+.string str_fossil_choice_2 GER
+        =Klauenfossil
+.end
+
+.string str_fossil_choice_3 GER
+        =Wurzelfossil
+.end
+
 
 
 .string str_0x8fe4dd GER

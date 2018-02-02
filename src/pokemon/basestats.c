@@ -4053,7 +4053,7 @@ basestat basestats[POKEMON_CNT] = {
         255, //exp yield
         {0, 0, 0, 2, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
         ITEM_NONE, ITEM_NONE, //common, rare item
-        127, //gender
+        254, //gender
         19, //egg cycles
         70, //base friendship
         0, //lvl up curve

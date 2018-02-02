@@ -14,7 +14,7 @@ buffernumber 0x0 0x50d0
 loadpointer 0x0 str_0x961ca8
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x6
-loadpointer 0x0 str_0x961bfb
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x0
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -31,6 +31,14 @@ loadpointer 0x0 str_0x961baf
 callstd MSG_FACE
 end
 
+.align 4
+choice:
+    .word str_aschhain_flute_choice_0, 0
+    .word str_aschhain_flute_choice_1, 0
+    .word str_aschhain_flute_choice_2, 0
+    .word str_aschhain_flute_choice_3, 0
+    .word str_aschhain_flute_choice_4, 0
+    .word str_aschhain_flute_choice_5, 0
 
 .global ow_script_0x9619fb
 ow_script_0x9619fb:

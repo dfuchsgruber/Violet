@@ -4,7 +4,7 @@
 
 
 .string str_0x8cafb5 GER
-	= Ich mag dich, du scheinst\ndie n\$oetige Ehrfurcht vor diesem\lOrt zu besitzen. Aber glaub nicht,\ldass ich mich deswegen\lzur\$ueckhalten werde. Meine\lGestein-Pok\emon sind hart in der\lVerteidigung und im Angriff.
+	=Ich mag dich, du scheinst\ndie n\$oetige Ehrfurcht vor diesem\lOrt zu besitzen. Aber glaub nicht,\ldass ich mich deswegen\lzur\$ueckhalten werde. Meine\lGestein-Pok\emon sind hart in der\lVerteidigung und im Angriff.
 .end
 
 

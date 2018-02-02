@@ -13,7 +13,7 @@
  * A table states which grass animation is on which map-bank combination
  */
 
-extern const unsigned short gfx_grass_ashTiles[];
+extern const unsigned int gfx_grass_ashTiles[];
 extern const unsigned short gfx_grass_ashPal[];
 
 

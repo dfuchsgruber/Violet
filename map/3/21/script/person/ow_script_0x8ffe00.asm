@@ -20,7 +20,7 @@ faceplayer
 loadpointer 0x0 str_0x91fcc4
 callstd MSG
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x90ff39
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -31,6 +31,10 @@ callstd MSG
 special 0x7
 trainerbattlecont 0x1 0x64 0x0 str_0x8fff26 str_0x8fff9c ow_script_0x8ffe63
 
+.align 4
+choice:
+    .word str_violet_grunt_choice_0, 0
+    .word str_violet_grunt_choice_1, 0
 
 .global ow_script_0x8ffe63
 ow_script_0x8ffe63:

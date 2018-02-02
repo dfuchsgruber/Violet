@@ -1,5 +1,5 @@
 .string str_0x86d444 GER
-	= \b\01! Freut mich, dich zu\nsehen. Im Namen der Stadt INFERIOR\lund der ganzen Region m\$oechte ich\ldir f\$uer deine Unterst\$uetzung am\lVULCANO danken. Ich bin\lzuversichtlich, dass du es schaffen\lwirst, den Orden zu erinngen. Wenn\ldu aber glaubst, ich w\$uerde nicht\lalles geben, dann irrst du dich,\lkomm mit mir!
+	=\b\01! Freut mich, dich zu\nsehen. Im Namen der Stadt INFERIOR\lund der ganzen Region m\$oechte ich\ldir f\$uer deine Unterst\$uetzung am\lVULCANO danken. Ich bin\lzuversichtlich, dass du es schaffen\lwirst, den Orden zu erinngen. Wenn\ldu aber glaubst, ich w\$uerde nicht\lalles geben, dann irrst du dich,\lkomm mit mir!
 .end
 
 

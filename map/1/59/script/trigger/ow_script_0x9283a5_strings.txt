@@ -4,7 +4,7 @@
 
 
 .string str_0x92cf46 GER
-	= Alter Freund, es tut mir\nweh, dass wir unter diesen\lUmst\$aenden zusammenkommen.\pAber wir beide wissen, dass das\nSystem, dem wir gedient haben, das\lSystem, das wir selbst erschaffen\lhaben, uns entglitten ist.
+	=Alter Freund, es tut mir\nweh, dass wir unter diesen\lUmst\$aenden zusammenkommen.\pAber wir beide wissen, dass das\nSystem, dem wir gedient haben, das\lSystem, das wir selbst erschaffen\lhaben, uns entglitten ist.
 .end
 
 

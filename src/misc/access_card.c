@@ -14,14 +14,14 @@ access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
 void access_card_print_multichoice() {
 
     //iterate through all access cards
-    u8 **d_elements = cmalloc(sizeof (u8*) * ACCESS_CARD_ELEMENT_CNT);
+    dynamic_multichoice *d_elements = cmalloc(sizeof(dynamic_multichoice) * ACCESS_CARD_ELEMENT_CNT);
     int i;
     u16 displayed = 0;
     for (i = 0; i < ACCESS_CARD_ELEMENT_CNT; i++) {
         if (access_card_elements[i].flag) {
             if (!checkflag(access_card_elements[i].flag)) continue;
         }
-        d_elements[displayed++] = access_card_element_names[i];
+        d_elements[displayed++].text = access_card_element_names[i];
     }
     if (displayed) {
         *vardecrypt(0x4077) = displayed;

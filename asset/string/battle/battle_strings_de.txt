@@ -255,15 +255,15 @@
 .end
 
 .string str_battle_x4c GER
-	=\b\10_hat_alle_KP!
+	=\b\10_hat_alle_Kp!
 .end
 
 .string str_battle_x4d GER
-	=\b\14_von\n\b\2a_erh\$oeht\ldie_SP._VER.
+	=\b\14_von\n\b\2a_erh\$oeht\ldie_Sp. Ver.
 .end
 
 .string str_battle_x4e GER
-	=\b\14_von\n\b\2a\lerh\$oeht_die_VERTEIDIGUNG!
+	=\b\14_von\n\b\2a\lerh\$oeht_die_Verteidigung!
 .end
 
 .string str_battle_x4f GER
@@ -271,11 +271,11 @@
 .end
 
 .string str_battle_x50 GER
-	=Team_von_\b\10\nwird_durch_BODYGUARD_gesch\$uetzt!
+	=Team_von_\b\10\nwird_durch_Bodyguard_gesch\$uetzt!
 .end
 
 .string str_battle_x51 GER
-	=BODYGUARD_von\n\b\2c_l\$aesst_nach!
+	=Bodyguard_von\n\b\2c_l\$aesst_nach!
 .end
 
 .string str_battle_x52 GER
@@ -311,7 +311,7 @@
 .end
 
 .string str_battle_x5a GER
-	=\b\0f_setzt_bei\n\b\10\lKLAMMERGRIFF_ein!
+	=\b\0f_setzt_bei\n\b\10\lKlammergriff_ein!
 .end
 
 .string str_battle_x5b GER
@@ -319,11 +319,11 @@
 .end
 
 .string str_battle_x5c GER
-	=\b\10_wurde_von\n\b\0f_umWICKELt!
+	=\b\10_wurde_von\n\b\0f_umwickelt!
 .end
 
 .string str_battle_x5d GER
-	=\b\10_wurde_von\n\b\0f_geSCHNAPPT!
+	=\b\10_wurde_von\n\b\0f_geschnappt!
 .end
 
 .string str_battle_x5e GER
@@ -339,11 +339,11 @@
 .end
 
 .string str_battle_x61 GER
-	=\b\2a_wird_in\nWEISSNEBEL_geh\$uellt!
+	=\b\2a_wird_in\nWeissnebel_geh\$uellt!
 .end
 
 .string str_battle_x62 GER
-	=\b\13_wird_durch\nWEISSNEBEL_gesch\$uetzt!
+	=\b\13_wird_durch\nWeissnebel_gesch\$uetzt!
 .end
 
 .string str_battle_x63 GER
@@ -363,7 +363,7 @@
 .end
 
 .string str_battle_x67 GER
-	=\b\0f_wird_vom\nHAGELSTURM_getroffen!
+	=\b\0f_wird_vom\nHagelsturm_getroffen!
 .end
 
 .string str_battle_x68 GER
@@ -387,19 +387,19 @@
 .end
 
 .string str_battle_x6d GER
-	=AUFRUHR_von_\b\13\nh\$aelt_es_wach!
+	=Aufruhr_von_\b\13\nh\$aelt_es_wach!
 .end
 
 .string str_battle_x6e GER
-	=\b\0f_wird_durch\nAUFRUHR_wach!
+	=\b\0f_wird_durch\nAufruhr_wach!
 .end
 
 .string str_battle_x6f GER
-	=\b\0f_verursacht\nAUFRUHR!
+	=\b\0f_verursacht\nAufruhr!
 .end
 
 .string str_battle_x70 GER
-	=\b\0f_macht\neinen_AUFRUHR!
+	=\b\0f_macht\neinen_Aufruhr!
 .end
 
 .string str_battle_x71 GER
@@ -407,23 +407,23 @@
 .end
 
 .string str_battle_x72 GER
-	=\b\10_kann_bei_dem\nAUFRUHR_nicht_schlafen!
+	=\b\10_kann_bei_dem\nAufruhr_nicht_schlafen!
 .end
 
 .string str_battle_x73 GER
-	=\b\0f_HORTET\n\b_!
+	=\b\0f_Hortet\n\b_!
 .end
 
 .string str_battle_x74 GER
-	=\b\0f_kann_nicht\nweiter_HORTEN!
+	=\b\0f_kann_nicht\nweiter_Horten!
 .end
 
 .string str_battle_x75 GER
-	=\b\10_kann_bei_dem\nAUFRUHR_nicht_schlafen!
+	=\b\10_kann_bei_dem\nAufruhr_nicht_schlafen!
 .end
 
 .string str_battle_x76 GER
-	=Aber_der_AUFRUHR_h\$aelt\n\b\10_wach!
+	=Aber_der_Aufruhr_h\$aelt\n\b\10_wach!
 .end
 
 .string str_battle_x77 GER
@@ -455,19 +455,19 @@
 .end
 
 .string str_battle_x7e GER
-	=\b\0f_setzt_einen\nDELEGATOR_ein!
+	=\b\0f_setzt_einen\nDelegator_ein!
 .end
 
 .string str_battle_x7f GER
-	=\b\0f_hat_bereits\neinen_DELEGATOR!
+	=\b\0f_hat_bereits\neinen_Delegator!
 .end
 
 .string str_battle_x80 GER
-	=Der_DELEGATOR_steckt_den\nSchlag_f\$uer_\b\10\lein!\p
+	=Der_Delegator_steckt_den\nSchlag_f\$uer_\b\10\lein!\p
 .end
 
 .string str_battle_x81 GER
-	=DELEGATOR_von\n\b\10_l\$aesst_nach!\p
+	=Delegator_von\n\b\10_l\$aesst_nach!\p
 .end
 
 .string str_battle_x82 GER
@@ -475,7 +475,7 @@
 .end
 
 .string str_battle_x83 GER
-	=\b\10_verf\$aellt_in\nRASEREI!
+	=\b\10_verf\$aellt_in\nRaserei!
 .end
 
 .string str_battle_x84 GER
@@ -491,11 +491,11 @@
 .end
 
 .string str_battle_x87 GER
-	=\b\10_gibt\neine_ZUGABE!
+	=\b\10_gibt\neine_Zugabe!
 .end
 
 .string str_battle_x88 GER
-	=ZUGABE_von_\b\0f\nist_beendet!
+	=Zugabe_von_\b\0f\nist_beendet!
 .end
 
 .string str_battle_x89 GER
@@ -503,7 +503,7 @@
 .end
 
 .string str_battle_x8a GER
-	=\b\0f_setzt\nNACHAHMER_bei_\b__ein!
+	=\b\0f_setzt\nNachahmer_bei_\b__ein!
 .end
 
 .string str_battle_x8b GER
@@ -527,27 +527,27 @@
 .end
 
 .string str_battle_x90 GER
-	=\b\10_bekommt\nNACHTMAHR!
+	=\b\10_bekommt\nNachtmahr!
 .end
 
 .string str_battle_x91 GER
-	=\b\0f_ist_in\nNACHTMAHR_gefangen!
+	=\b\0f_ist_in\nNachtmahr_gefangen!
 .end
 
 .string str_battle_x92 GER
-	=\b\0f_nimmt_einen\nTeil_seiner_KP_und_legt_einen\lFLUCH_auf_\b\10!
+	=\b\0f_nimmt_einen\nTeil_seiner_Kp_und_legt_einen\lFluch_auf_\b\10!
 .end
 
 .string str_battle_x93 GER
-	=\b\0f_wurde_durch\nFLUCH_verletzt!
+	=\b\0f_wurde_durch\nFluch_verletzt!
 .end
 
 .string str_battle_x94 GER
-	=Pok\emon-Team_von_\b\29\nverteilt_STACHELN_um_sich!
+	=Pok\emon-Team_von_\b\29\nverteilt_Stacheln_um_sich!
 .end
 
 .string str_battle_x95 GER
-	=\b\13_wurde_durch\nSTACHLER_verletzt!
+	=\b\13_wurde_durch\nStachler_verletzt!
 .end
 
 .string str_battle_x96 GER
@@ -555,7 +555,7 @@
 .end
 
 .string str_battle_x97 GER
-	=ABGESANG_von_\b\0f\nsteht_bei_\b_!
+	=Abgesang_von_\b\0f\nsteht_bei_\b_!
 .end
 
 .string str_battle_x98 GER
@@ -563,15 +563,15 @@
 .end
 
 .string str_battle_x99 GER
-	=\b\10_setzt\nAUSDAUER_ein!
+	=\b\10_setzt\nAusdauer_ein!
 .end
 
 .string str_battle_x9a GER
-	=INTENSIT\$AET_\b_!
+	=Intensit\$aet_\b_!
 .end
 
 .string str_battle_x9b GER
-	=\b\0f_nutzt_seine\nKP_und_hebt_den_ANGR.-Wert!
+	=\b\0f_nutzt_seine\nKp_und_hebt_den_Angr.-Wert!
 .end
 
 .string str_battle_x9c GER
@@ -587,7 +587,7 @@
 .end
 
 .string str_battle_x9f GER
-	=\b\0f_bl\$aest_den\nSTACHLER_weg!
+	=\b\0f_bl\$aest_den\nStachler_weg!
 .end
 
 .string str_battle_xa0 GER
@@ -615,7 +615,7 @@
 .end
 
 .string str_battle_xa6 GER
-	=NATUR-KRAFT_wurde_zu\n\b\14!
+	=Natur-Kraft_wurde_zu\n\b\14!
 .end
 
 .string str_battle_xa7 GER
@@ -627,11 +627,11 @@
 .end
 
 .string str_battle_xa9 GER
-	=\b\10_wird_von\nFOLTERKNECHT_unterworfen!
+	=\b\10_wird_von\nFolterknecht_unterworfen!
 .end
 
 .string str_battle_xaa GER
-	=\b\12_kann\naufgrund_von_FOLTERKNECHT\pdie_Attacke_nicht_2-mal\nhintereinander_einsetzen!
+	=\b\12_kann\naufgrund_von_Folterknecht\pdie_Attacke_nicht_2-mal\nhintereinander_einsetzen!
 .end
 
 .string str_battle_xab GER
@@ -639,11 +639,11 @@
 .end
 
 .string str_battle_xac GER
-	=\b\10_f\$aellt_auf\nVERH\$OEHNER_herein!
+	=\b\10_f\$aellt_auf\nVerh\$oehner_herein!
 .end
 
 .string str_battle_xad GER
-	=\b\12_kann\n\b\14_nach_VERH\$OEHNER\lnicht_einsetzen!\p
+	=\b\12_kann\n\b\14_nach_Verh\$oehner\lnicht_einsetzen!\p
 .end
 
 .string str_battle_xae GER
@@ -659,11 +659,11 @@
 .end
 
 .string str_battle_xb1 GER
-	=\b\0f_spricht_einen\nWUNSCHTRAUM_aus!
+	=\b\0f_spricht_einen\nWunschtraum_aus!
 .end
 
 .string str_battle_xb2 GER
-	=WUNSCHTRAUM_von\n\b__erf\$uellt_sich!
+	=Wunschtraum_von\n\b__erf\$uellt_sich!
 .end
 
 .string str_battle_xb3 GER
@@ -699,11 +699,11 @@
 .end
 
 .string str_battle_xbb GER
-	=\b\0f_m\$oechte,_dass\nder_Gegner_ein_NACHSPIEL_ertr\$aegt!
+	=\b\0f_m\$oechte,_dass\nder_Gegner_ein_Nachspiel_ertr\$aegt!
 .end
 
 .string str_battle_xbc GER
-	=\b__von\n\b\0f_hat_aufgrund\lvon_NACHSPIEL_alle_AP_verloren!
+	=\b__von\n\b\0f_hat_aufgrund\lvon_Nachspiel_alle_AP_verloren!
 .end
 
 .string str_battle_xbd GER
@@ -711,7 +711,7 @@
 .end
 
 .string str_battle_xbe GER
-	=\b\14_von\n\b\0f_prallte_am\lMAGIEMANTEL_ab!
+	=\b\14_von\n\b\0f_prallte_am\lMagiemantel_ab!
 .end
 
 .string str_battle_xbf GER
@@ -719,7 +719,7 @@
 .end
 
 .string str_battle_xc0 GER
-	=\b\10_\$UEBERNAHM\nAttacke_von_\b\13!
+	=\b\10_\$UEbernahm\nAttacke_von_\b\13!
 .end
 
 .string str_battle_xc1 GER
@@ -727,7 +727,7 @@
 .end
 
 .string str_battle_xc2 GER
-	=\b\1a_von\n\b\13_erh\$oeht\lseine_INIT.!
+	=\b\1a_von\n\b\13_erh\$oeht\lseine_Init.!
 .end
 
 .string str_battle_xc3 GER
@@ -739,7 +739,7 @@
 .end
 
 .string str_battle_xc5 GER
-	=\b\10_f\$uellt_KP_mit\nHilfe_von_\b\19_auf!
+	=\b\10_f\$uellt_Kp_mit\nHilfe_von_\b\19_auf!
 .end
 
 .string str_battle_xc6 GER
@@ -771,7 +771,7 @@
 .end
 
 .string str_battle_xcd GER
-	=\b\1a_von\n\b\13_vermindert\lANGRIFF_von_\b\10!
+	=\b\1a_von\n\b\13_vermindert\lAngriff_von_\b\10!
 .end
 
 .string str_battle_xce GER
@@ -851,7 +851,7 @@
 .end
 
 .string str_battle_xe1 GER
-	=Du_kannst_aus_TRAINER-K\$aempfen\nnicht_fliehen!\p
+	=Du_kannst_aus_Trainer-K\$aempfen\nnicht_fliehen!\p
 .end
 
 .string str_battle_xe2 GER
@@ -875,7 +875,7 @@
 .end
 
 .string str_battle_xe7 GER
-	=Der_SPIEGELTRICK_schlug_fehl!
+	=Der_Spiegeltrick_schlug_fehl!
 .end
 
 .string str_battle_xe8 GER
@@ -935,15 +935,15 @@
 .end
 
 .string str_battle_xf6 GER
-	=Aber_es_konnte_nichts\nENTFESSELN!
+	=Aber_es_konnte_nichts\nEntfesseln!
 .end
 
 .string str_battle_xf7 GER
-	=Aber_es_konnte_nichts\nVERZEHREN!
+	=Aber_es_konnte_nichts\nVerzehren!
 .end
 
 .string str_battle_xf8 GER
-	=Der_Wind_wurde_zu_einer\nHITZEWELLE!
+	=Der_Wind_wurde_zu_einer\nHitzewelle!
 .end
 
 .string str_battle_xf9 GER
@@ -955,7 +955,7 @@
 .end
 
 .string str_battle_xfb GER
-	=Zu_schwach,_um_einen_DELEGATOR\neinzusetzen!
+	=Zu_schwach,_um_einen_Delegator\neinzusetzen!
 .end
 
 .string str_battle_xfc GER
@@ -987,7 +987,7 @@
 .end
 
 .string str_battle_x103 GER
-	=Der_TRAINER_hat_den_BALL\nabgeblockt!
+	=Der_Trainer_hat_den_Ball\nabgeblockt!
 .end
 
 .string str_battle_x104 GER
@@ -995,7 +995,7 @@
 .end
 
 .string str_battle_x105 GER
-	=Es_ist_dem_BALL_ausgewichen!_Dieses\nPok\emon_kann_nicht_gefangen_werden!
+	=Es_ist_dem_Ball_ausgewichen!_Dieses\nPok\emon_kann_nicht_gefangen_werden!
 .end
 
 .string str_battle_x106 GER
@@ -1031,7 +1031,7 @@
 .end
 
 .string str_battle_x10e GER
-	=\b\06_wurde_auf\n\b\27_PC_\$uebertragen.
+	=\b\06_wurde_auf\n\b\27_Pc_\$uebertragen.
 .end
 
 .string str_battle_x10f GER
@@ -1083,11 +1083,11 @@
 .end
 
 .string str_battle_x11b GER
-	=\b\23_hat_einen_STEin_auf\n\b\06_geworfen.
+	=\b\23_hat_einen_Stein_auf\n\b\06_geworfen.
 .end
 
 .string str_battle_x11c GER
-	=\b\23_wirft_einen_K\$OEDER\nf\$uer_\b\06_aus.
+	=\b\23_wirft_einen_K\$oeder\nf\$uer_\b\06_aus.
 .end
 
 .string str_battle_x11d GER
@@ -1111,7 +1111,7 @@
 .end
 
 .string str_battle_x122 GER
-	=\w\10\42_ANSAGE:_Du_hast_keine\nSAFARIB\$AELLE_mehr!_Game_over!\p
+	=\w\10\42_Ansage:_Du_hast_keine\nSafarib\$aelle_mehr!_Game_over!\p
 .end
 
 .string str_battle_x123 GER
@@ -1143,7 +1143,7 @@
 .end
 
 .string str_battle_x12a GER
-	=\b\16_f\$uellte\nKP_von_\b\13_auf!
+	=\b\16_f\$uellte\nKp_von_\b\13_auf!
 .end
 
 .string str_battle_x12b GER
@@ -1155,7 +1155,7 @@
 .end
 
 .string str_battle_x12d GER
-	=\b\16_von\n\b\13\lf\$uellte_einige_KP_auf!
+	=\b\16_von\n\b\13\lf\$uellte_einige_Kp_auf!
 .end
 
 .string str_battle_x12e GER
@@ -1179,7 +1179,7 @@
 .end
 
 .string str_battle_x133 GER
-	=\b\18_von\n\b\0f_f\$uellt\leinige_KP_auf!
+	=\b\18_von\n\b\0f_f\$uellt\leinige_Kp_auf!
 .end
 
 .string str_battle_x134 GER
@@ -1203,7 +1203,7 @@
 .end
 
 .string str_battle_x139 GER
-	=Es_saugt\nKLOAKENSOSSE_auf!
+	=Es_saugt\nKloakensosse_auf!
 .end
 
 .string str_battle_x13a GER
@@ -1263,7 +1263,7 @@
 .end
 
 .string str_battle_x148 GER
-	=\b\10_wurde_durch\nSANDGRAB_gefangen!
+	=\b\10_wurde_durch\nSandgrab_gefangen!
 .end
 
 .string str_battle_x149 GER
@@ -1283,7 +1283,7 @@
 .end
 
 .string str_battle_x14d GER
-	=Nun_muss_man_einen_BALL_werfen,\noder?_Ich..._Ich_werde_mein_Bestes\lgeben!
+	=Nun_muss_man_einen_Ball_werfen,\noder?_Ich..._Ich_werde_mein_Bestes\lgeben!
 .end
 
 .string str_battle_x14e GER
@@ -1327,7 +1327,7 @@
 .end
 
 .string str_battle_x158 GER
-	=Die_BOXEN_sind_voll!\nDu_kannst_keines_mehr_fangen!\p
+	=Die_Boxen_sind_voll!\nDu_kannst_keines_mehr_fangen!\p
 .end
 
 .string str_battle_x159 GER
@@ -1359,11 +1359,11 @@
 .end
 
 .string str_battle_x160 GER
-	=\b\14_von\n\b\2a\lerh\$oeht_etwas_die_VERTEIDIGUNG!
+	=\b\14_von\n\b\2a\lerh\$oeht_etwas_die_Verteidigung!
 .end
 
 .string str_battle_x161 GER
-	=Die_SP._VER._wird_etwas_durch\n\b\14_von\l\b\2a_erh\$oeht.
+	=Die_Sp. Ver._wird_etwas_durch\n\b\14_von\l\b\2a_erh\$oeht.
 .end
 
 .string str_battle_x162 GER
@@ -1403,7 +1403,7 @@
 .end
 
 .string str_battle_x16b GER
-	=Tann:_Hm!_Grandios!\pBei_einem_Sieg_erh\$aeltst_du_ein\nPreisgeld_und_deine_Pok\emon\lwerden_st\$aerker!\lK\$aempfe_gegen_andere_TRAINER\lund_st\$aerke_so_deine_Pok\emon!\p
+	=Tann:_Hm!_Grandios!\pBei_einem_Sieg_erh\$aeltst_du_ein\nPreisgeld_und_deine_Pok\emon\lwerden_st\$aerker!\lK\$aempfe_gegen_andere_Trainer\lund_st\$aerke_so_deine_Pok\emon!\p
 .end
 
 .string str_battle_x16c GER
@@ -1419,23 +1419,23 @@
 .end
 
 .string str_battle_x16f GER
-	=\b\03_wurde_auf_JEMANDES_PC\n\$uebertragen.\pEs_wurde_in_BOX\n\b1\b\02\b2_abgelegt.
+	=\b\03_wurde_auf_den_Pc\n\$uebertragen.\pEs_wurde_in_Box\n\b1\b\02\b2_abgelegt.
 .end
 
 .string str_battle_x170 GER
-	=\b\03_wurde_auf_BILLs_PC\n\$uebertragen.\pEs_wurde_in_BOX\n\b1\b\02\b2_abgelegt.
+	=\b\03_wurde_auf_Bills_Pc\n\$uebertragen.\pEs_wurde_in_Box\n\b1\b\02\b2_abgelegt.
 .end
 
 .string str_battle_x171 GER
-	=BOX_\b1\b\04\b2_in\nJEMANDES_PC_ist_voll.\p\b\03_wurde_in_BOX\n\b1\b\02\b2_\$uebertragen.
+	=Box_\b1\b\04\b2_in\nist_voll.\p\b\03_wurde_in_Box\n\b1\b\02\b2_\$uebertragen.
 .end
 
 .string str_battle_x172 GER
-	=BOX_\b1\b\04\b2_in\nBILLs_PC_ist_voll.\p\b\03_wurde_in_BOX\n\b1\b\02\b2_\$uebertragen.
+	=Box_\b1\b\04\b2_in\nBills_Pc_ist_voll.\p\b\03_wurde_in_Box\n\b1\b\02\b2_\$uebertragen.
 .end
 
 .string str_battle_x173 GER
-	=Der_POK\eKUMPEL_wirft_einen\n\b\16!
+	=Der_Pok\ekumpel_wirft_einen\n\b\16!
 .end
 
 .string str_battle_x174 GER
@@ -1447,7 +1447,7 @@
 .end
 
 .string str_battle_x176 GER
-	=Beim_Erklingen_der_FL\$OETE\nwacht_das_Pok\emon_auf!
+	=Beim_Erklingen_der_Fl\$oete\nwacht_das_Pok\emon_auf!
 .end
 
 .string str_battle_x177 GER

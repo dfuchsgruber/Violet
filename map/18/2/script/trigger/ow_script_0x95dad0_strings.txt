@@ -1,5 +1,5 @@
 .string str_0x95dbb7 GER
-	= Hallo \b\01.\nIch bin gerade deinem kleinen\lFreund \b\06 \$ueber den Weg\lgelaufen.\pEr scheint sich gemacht zu haben,\nganz \$aehnlich wie du.\pBist du deinem Ziel n\$aeher\ngekommen?\lOder f\$uehlst du dich deinem Traum\lferner als zuvor?\pIch habe eine Niederlage erlitten,\neine vernichtende, wie man meinen\lk\$oennte.\pMein Vater ist ein Gegner, den ich\nuntersch\$aetzt habe...
+	=Hallo \b\01.\nIch bin gerade deinem kleinen\lFreund \b\06 \$ueber den Weg\lgelaufen.\pEr scheint sich gemacht zu haben,\nganz \$aehnlich wie du.\pBist du deinem Ziel n\$aeher\ngekommen?\lOder f\$uehlst du dich deinem Traum\lferner als zuvor?\pIch habe eine Niederlage erlitten,\neine vernichtende, wie man meinen\lk\$oennte.\pMein Vater ist ein Gegner, den ich\nuntersch\$aetzt habe...
 .end
 
 

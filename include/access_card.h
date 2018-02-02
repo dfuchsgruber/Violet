@@ -30,6 +30,10 @@ extern "C" {
 
     } access_card_element;
 
+    typedef struct{
+        u8 *text;
+        int field_4;
+    } dynamic_multichoice;
 
 
 #ifdef	__cplusplus

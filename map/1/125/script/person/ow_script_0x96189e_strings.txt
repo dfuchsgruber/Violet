@@ -8,10 +8,29 @@
 .end
 
 
-.string str_0x961bfb GER
-	=\14\1c\96\_spnr\2f\1c\96\_spnr\4c\1c\96\_spnr\67\1c\96\_spnr\82\1c\96\_spnr\9d\1c\96\_spnr
+.string str_aschhain_flute_choice_0 GER
+        =Blaue_Fl\$oete_/_250__Asche
 .end
 
+.string str_aschhain_flute_choice_1 GER
+        =Rote_Fl\$oete__/_500__Asche__
+.end
+
+.string str_aschhain_flute_choice_2 GER
+        =Gelbe_Fl\$oete_/_500__Asche
+.end
+
+.string str_aschhain_flute_choice_3 GER
+        =Wei\$se_Fl\$oete_/_1000_Asche
+.end
+
+.string str_aschhain_flute_choice_4 GER
+        =Schw._Fl\$oete_/_1000_Asche
+.end
+
+.string str_aschhain_flute_choice_5 GER
+        =Tsch\$uess!
+.end
 
 .string str_0x961baf GER
 	=Wenn_ich_eine_Fl\$oete_f\$uer_dich\nherstellen_soll,_komm_einfach\lwieder_vorbei.

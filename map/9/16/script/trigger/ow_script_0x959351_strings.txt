@@ -1,10 +1,10 @@
 .string str_0x959e02 GER
-	= Halt, keinen Schritt\nweiter!
+	=Halt, keinen Schritt\nweiter!
 .end
 
 
 .string str_0x959af2 GER
-	= Hallo, \b\01.\nDass wir uns an diesem Ort\lwiederbegegnen hatte ich nicht\lgehofft.\pUnd dass du dich meiner Bestrebung\nentgegenstellst entspricht\lebenfalls nicht meinen\lVorstellungen.\pIch habe dir einen Kampf\nversprochen, aber noch habe ich\lnicht die Macht erlangt, die ich\lbesitzen will.\pDas Magmaherz, welches hier\nausgestellt ist, verk\$oerpert die\lEssenz der Landmassen.\pGemeinsam mit seinem wahren\nGebieter kann es ungeheuerliche\lM\$aechte entfesseln.\pDu verstehst sicherlich, warum ich\ndas Artefakt nicht in einem Museum\lverstauben lassen kann.\p...\n...\pDu willst mich also aufhalten?\nDas werde ich dir leider nicht\lgestatten.\pSeit ihm Team Violet beigetreten\nbin, habe ich meiner Division\lbestens ausgebildete Eliten\lhinzugef\$uegt.\pSieh zu, was du gegen sie\nausrichten kannst.
+	=Hallo, \b\01.\nDass wir uns an diesem Ort\lwiederbegegnen hatte ich nicht\lgehofft.\pUnd dass du dich meiner Bestrebung\nentgegenstellst entspricht\lebenfalls nicht meinen\lVorstellungen.\pIch habe dir einen Kampf\nversprochen, aber noch habe ich\lnicht die Macht erlangt, die ich\lbesitzen will.\pDas Magmaherz, welches hier\nausgestellt ist, verk\$oerpert die\lEssenz der Landmassen.\pGemeinsam mit seinem wahren\nGebieter kann es ungeheuerliche\lM\$aechte entfesseln.\pDu verstehst sicherlich, warum ich\ndas Artefakt nicht in einem Museum\lverstauben lassen kann.\p...\n...\pDu willst mich also aufhalten?\nDas werde ich dir leider nicht\lgestatten.\pSeit ihm Team Violet beigetreten\nbin, habe ich meiner Division\lbestens ausgebildete Eliten\lhinzugef\$uegt.\pSieh zu, was du gegen sie\nausrichten kannst.
 .end
 
 

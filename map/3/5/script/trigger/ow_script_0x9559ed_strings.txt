@@ -1,5 +1,5 @@
 .string str_0x955b31 GER
-	= Ah, \b\01!\nWie ich sehe hast du Orina City\lgefunden.\pIm Norden der Stadt befindet sich\ndie Laz.Corp, wo ich und mein\lVater besch\$aeftigt sind.\pKomm mich dort doch besuchen und\nich zeige dir das k\$uenstliche\lPok\emon.\pDaf\$uer wirst du diese Zugangskarte\nben\$oetigen.
+	=Ah, \b\01!\nWie ich sehe hast du Orina City\lgefunden.\pIm Norden der Stadt befindet sich\ndie Laz.Corp, wo ich und mein\lVater besch\$aeftigt sind.\pKomm mich dort doch besuchen und\nich zeige dir das k\$uenstliche\lPok\emon.\pDaf\$uer wirst du diese Zugangskarte\nben\$oetigen.
 .end
 
 

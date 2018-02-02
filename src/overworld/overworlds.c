@@ -680,6 +680,27 @@ overworld_sprite ow_mskate = {
     ROTSCALE_TABLE_NULL
 };
 
+
+static graphic overworld_sprite_fskate_sprites[] = {
+    {&gfx_pskatef_0Tiles, 0x200, 0},
+    {&gfx_pskatef_1Tiles, 0x200, 0},
+    {&gfx_pskatef_2Tiles, 0x200, 0},
+    {&gfx_pskatef_3Tiles, 0x200, 0},
+    {&gfx_pskatef_4Tiles, 0x200, 0},
+    {&gfx_pskatef_5Tiles, 0x200, 0},
+    {&gfx_pskatef_6Tiles, 0x200, 0},
+    {&gfx_pskatef_7Tiles, 0x200, 0},
+    {&gfx_pskatef_8Tiles, 0x200, 0}
+};
+
+overworld_sprite ow_fskate = {
+    0xFFFF, 0x1100 + 0, 0x1102, 0x200,
+    32, 32, 0x10, 0x1, 0x0, 0x0,
+    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
+    OW_ANIM_STANDARD_NPC, overworld_sprite_fskate_sprites,
+    ROTSCALE_TABLE_NULL
+};
+
 static graphic overworld_sprite_igva_sprites[] = {
     {&gfx_ow_igva_0Tiles, 0x100, 0},
     {&gfx_ow_igva_1Tiles, 0x100, 0},
@@ -1242,7 +1263,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_hiro_call2,
 	&ow_hiro_call_bike,
 	&ow_hiroine,
-	(overworld_sprite*) 0x83a444c,
+	&ow_fskate,
 	&ow_hiroine_sit,
 //10
 	&ow_hiroine_call,

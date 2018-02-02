@@ -1,3 +1,3 @@
 .string str_0x864813 GER
-	= \b\01, wir sollten uns\nbeeilen.\pMistral befindet sich auf dem Weg\nin Richtung Gipfel.\pWir d\$uerfen ihm nicht gestatten,\ndiesen Ort zu erreichen.\pAber sei auf der Hut:\nMistral war selbst Teil der\lRevolutionsbewegung, ehe er uns im\lStich gelassen hat.\pEr ist stark und zielstrebig, wir\nm\$uessen vorsichtig sein.
+	=\b\01, wir sollten uns\nbeeilen.\pMistral befindet sich auf dem Weg\nin Richtung Gipfel.\pWir d\$uerfen ihm nicht gestatten,\ndiesen Ort zu erreichen.\pAber sei auf der Hut:\nMistral war selbst Teil der\lRevolutionsbewegung, ehe er uns im\lStich gelassen hat.\pEr ist stark und zielstrebig, wir\nm\$uessen vorsichtig sein.
 .end

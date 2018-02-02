@@ -3,10 +3,17 @@
 .end
 
 
-.string str_0x95fcf3 GER
-	=_\b\95\_spnr\0e\b\95\_spnr\e\b\95\_spnr
+.string str_aschhain_girl_choice_0 GER
+        =1500\b7_geben
 .end
 
+.string str_aschhain_girl_choice_1 GER
+        =Nichts tun
+.end
+
+.string str_aschhain_girl_choice_2 GER
+        =Nugget stehlen
+.end
 
 .string str_0x95f9d1 GER
 	=Jammerschade,_heute_ist_nicht_dein\nGl\$ueckstag,_wie_es_scheint.\lImmerhin_wirst_du_dein_Nugget_auch\lgleich_los_sein...

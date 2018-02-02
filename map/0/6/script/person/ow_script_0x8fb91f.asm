@@ -65,7 +65,7 @@ ow_script_0x8fe2d1:
 loadpointer 0x0 str_0x8fe5f1
 callstd MSG
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x8fe5b8
+loadpointer 0x0 choice1
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -81,7 +81,7 @@ special2 0x8005 0xc
 loadpointer 0x0 str_0x8fe51d
 callstd MSG
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x8fe553
+loadpointer 0x0 choice2
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 copyvar 0x8006 LASTRESULT
@@ -115,6 +115,16 @@ callif EQUAL ow_script_0x8fe513
 loadpointer 0x0 str_0x8fe443
 callstd MSG
 goto ow_script_0x8fee78
+
+.align 4
+choice1:
+    .word str_fossil_choice_0, 0
+    .word str_fossil_choice_1, 0
+
+.align 4
+choice2:
+    .word str_fossil_choice_2, 0
+    .word str_fossil_choice_3, 0
 
 
 .global ow_script_0x8fee78
@@ -243,7 +253,7 @@ special2 0x8005 0xc
 loadpointer 0x0 str_0x8fe51d
 callstd MSG
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x8fe553
+loadpointer 0x0 choice2
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 copyvar 0x8006 LASTRESULT

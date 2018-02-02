@@ -4,7 +4,7 @@
 
 
 .string str_0x8a7f3d GER
-	= Oh ja, sofort, Professor\nTann! Ich bin schon auf dem Weg!
+	=Oh ja, sofort, Professor\nTann! Ich bin schon auf dem Weg!
 .end
 
 
@@ -14,7 +14,7 @@
 
 
 .string str_0x8a7dbf GER
-	= In der Tat, ich bin die\nTochter von Professor Primus,\leinem angesehenen Physiker der\lThetoregion. Als Angestellte der\lLaZ. Cooperation bin ich\lma\$sgeblich an der Entwicklung des\lPokepads beteiligt.
+	=In der Tat, ich bin die\nTochter von Professor Primus,\leinem angesehenen Physiker der\lThetoregion. Als Angestellte der\lLaZ. Cooperation bin ich\lma\$sgeblich an der Entwicklung des\lPokepads beteiligt.
 .end
 
 
@@ -64,12 +64,12 @@
 
 
 .string str_0x8aabee GER
-	= Einer Bitte? Du bist schon\nwieder so ein Spielverderber,\lPapi!
+	=Einer Bitte? Du bist schon\nwieder so ein Spielverderber,\lPapi!
 .end
 
 
 .string str_0x8aa57d GER
-	= Ich darf doch bitten! Der\nProfessor macht dir ein Geschenk,\ldu k\$oenntest ruhig mal etwas\lDankbarkeit zeigen...
+	=Ich darf doch bitten! Der\nProfessor macht dir ein Geschenk,\ldu k\$oenntest ruhig mal etwas\lDankbarkeit zeigen...
 .end
 
 

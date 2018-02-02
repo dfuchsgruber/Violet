@@ -8,8 +8,20 @@
 .end
 
 
-.string str_0x9557b6 GER
-	=M\57\95\_spnrf\57\95\_spnr\$AE\57\95\_spnr\n\57\95\_spnr
+.string str_orina_city_bounties_0 GER
+        =Violet Vors. Rin
+.end
+
+.string str_orina_city_bounties_1 GER
+        =Violet Vors. Mistral
+.end
+
+.string str_orina_city_bounties_2 GER
+        =Blackbeard
+.end
+
+.string str_orina_city_bounties_3 GER
+        =Revolutionsführer Albus
 .end
 
 

@@ -5,6 +5,7 @@
 #include "save.h"
 #include "tile.h"
 #include "pokemon.h"
+#include "battle.h"
 #include "rtc.h"
 
 void version_init(){
@@ -64,6 +65,7 @@ void version_upgrade_alpha_1_X_to_2_0(){
 
 void version_upgrade_alpha_2_0_to_2_1(){
     *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_1;
+    *vardecrypt(BATTLE_BG_OVERRIDE) = 0;
 }
 
 u16 version_is_latest(){

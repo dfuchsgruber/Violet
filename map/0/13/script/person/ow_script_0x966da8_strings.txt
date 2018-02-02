@@ -1,25 +1,25 @@
 .string str_0x969e0b GER
-	= Mistral!\nWas hast du vor?\lWei\$st du denn, was du hier tust?
+	=Mistral!\nWas hast du vor?\lWei\$st du denn, was du hier tust?
 .end
 
 
 .string str_0x96a758 GER
-	= Igva, du bist naiv wie eh\nund je.\pDass ihr Revolution\$aere immer noch\nexistiert, ist mir ein R\$aetsel.\pEuer Anf\$uehrer hat au\$ser sch\$oen\nklingenden Spr\$uechen und Krieg doch\lnichts zu bieten?\pIhr redet von Aufstand und\nNeuerung, aber habt keine L\$oesungen\lanzubieten.\pIhr f\$uehrt die Menschen in einen\nKrieg, der ihnen nichts bringt.\pUnd dann nennst du mich einen\nUnmenschen?
+	=Igva, du bist naiv wie eh\nund je.\pDass ihr Revolution\$aere immer noch\nexistiert, ist mir ein R\$aetsel.\pEuer Anf\$uehrer hat au\$ser sch\$oen\nklingenden Spr\$uechen und Krieg doch\lnichts zu bieten?\pIhr redet von Aufstand und\nNeuerung, aber habt keine L\$oesungen\lanzubieten.\pIhr f\$uehrt die Menschen in einen\nKrieg, der ihnen nichts bringt.\pUnd dann nennst du mich einen\nUnmenschen?
 .end
 
 
 .string str_0x96a8cd GER
-	= Nein, du irrst dich!\nUnser Kampf ist nobel, deiner nur\legoistisch!\pDu hast uns im Stich gelassen, um\nMacht zu finden.\pUnd nun willst du den Zeitstein\nrauben, wissend, dass du damit den\lW\$aechter der Landmassen erweckst\lund seinen Zorn \$ueber dieses Land\lschickst?\pIst dir bewusst, was das legend\$aere\nPok\emon Groudon f\$uer eine\lschrecklich vernichtende Kreatur\list?
+	=Nein, du irrst dich!\nUnser Kampf ist nobel, deiner nur\legoistisch!\pDu hast uns im Stich gelassen, um\nMacht zu finden.\pUnd nun willst du den Zeitstein\nrauben, wissend, dass du damit den\lW\$aechter der Landmassen erweckst\lund seinen Zorn \$ueber dieses Land\lschickst?\pIst dir bewusst, was das legend\$aere\nPok\emon Groudon f\$uer eine\lschrecklich vernichtende Kreatur\list?
 .end
 
 
 .string str_0x969d1d GER
-	= Hahaha!\nUnd dir ist nie in den Sinn\lgekommen, dass ich genau das\lprovozieren will?\pDass es mir mehr um die\nWiedererweckung Groudons geht, als\ldiesen dummen Stein?\l...\pAber sieh nur, Igva.\nDein neuer Begleiter ist\leingetroffen.
+	=Hahaha!\nUnd dir ist nie in den Sinn\lgekommen, dass ich genau das\lprovozieren will?\pDass es mir mehr um die\nWiedererweckung Groudons geht, als\ldiesen dummen Stein?\l...\pAber sieh nur, Igva.\nDein neuer Begleiter ist\leingetroffen.
 .end
 
 
 .string str_0x969a22 GER
-	= Herzlich willkommen,\n\b\01!\pUns scheint doch etwas zu\nverbinden, wenn ich dich hier mit\lmeiner alten Partnerin treffe.\pEinst war ich Teil ihrer\neinf\$aeltigen Revolustionsbewegung,\lehe ich erkannt habe, dass ich so\lniemals Macht erlangen kann.\pNun stehen wir hier schicksalshaft\neinander gegen\$ueber.\pVor uns der Schlot eines Vulkans,\nin dessen Herzen eine der\lm\$aechtigsten Kreaturen der Welt\lschlummert.\pAm Ende des Weges ein Teil des\nlegend\$aeren Steins der Zeit, des\lDiserakts.\pWas Rin nicht in Erfahrung bringen\nkonnte, wei\$s ich l\$aengst:\pIn drei Teile wurde der Zeitstein\ngespalten, den drei W\$aechtern der\lWelt anvertraut.\pSieh ihn dir an, den Zeitstein,\ndiese \$ueberw\$aeltigende Aura der\lMacht, dieses pulsierende\lSchimmern.\lEs ist fast bezaubernd...
+	=Herzlich willkommen,\n\b\01!\pUns scheint doch etwas zu\nverbinden, wenn ich dich hier mit\lmeiner alten Partnerin treffe.\pEinst war ich Teil ihrer\neinf\$aeltigen Revolustionsbewegung,\lehe ich erkannt habe, dass ich so\lniemals Macht erlangen kann.\pNun stehen wir hier schicksalshaft\neinander gegen\$ueber.\pVor uns der Schlot eines Vulkans,\nin dessen Herzen eine der\lm\$aechtigsten Kreaturen der Welt\lschlummert.\pAm Ende des Weges ein Teil des\nlegend\$aeren Steins der Zeit, des\lDiserakts.\pWas Rin nicht in Erfahrung bringen\nkonnte, wei\$s ich l\$aengst:\pIn drei Teile wurde der Zeitstein\ngespalten, den drei W\$aechtern der\lWelt anvertraut.\pSieh ihn dir an, den Zeitstein,\ndiese \$ueberw\$aeltigende Aura der\lMacht, dieses pulsierende\lSchimmern.\lEs ist fast bezaubernd...
 .end
 
 
@@ -29,7 +29,7 @@
 
 
 .string str_0x96abb4 GER
-	= Wir d\$uerfen das nicht\ngeschehen lassen.\lDer Diserakt h\$aelt den Fluss der\lZeit aufrecht - wer ihm die\lEnerige entzieht, l\$aehmt die\lZeitstruktur.\lAu\$serdem wird das Entfernen des\lDiserakts das W\$aechterpok\emon\lGroudon auf den Plan rufen.\lInferior wird diese Katastrophe\lnicht \$ueberstehen k\$oennen.
+	=Wir d\$uerfen das nicht\ngeschehen lassen.\lDer Diserakt h\$aelt den Fluss der\lZeit aufrecht - wer ihm die\lEnerige entzieht, l\$aehmt die\lZeitstruktur.\lAu\$serdem wird das Entfernen des\lDiserakts das W\$aechterpok\emon\lGroudon auf den Plan rufen.\lInferior wird diese Katastrophe\lnicht \$ueberstehen k\$oennen.
 .end
 
 
@@ -64,47 +64,47 @@
 
 
 .string str_0x96ae6e GER
-	= Ihr beiden kommt zu sp\$aet.\nDer Diserakt ist mein.
+	=Ihr beiden kommt zu sp\$aet.\nDer Diserakt ist mein.
 .end
 
 
 .string str_0x96adf1 GER
-	= Mistral, bitte!\pWenn ich dir je etwas bedeutet\nhabe, tu es nicht!
+	=Mistral, bitte!\pWenn ich dir je etwas bedeutet\nhabe, tu es nicht!
 .end
 
 
 .string str_0x96ada6 GER
-	= Schweig!\nDummes M\$aedchen!\pErzittert vor der Kraft des\nDiserakts!
+	=Schweig!\nDummes M\$aedchen!\pErzittert vor der Kraft des\nDiserakts!
 .end
 
 
 .string str_0x96ad59 GER
-	= Oh bei Arceus!\nDas ist das W\$aechterpok\emon\lGroudon...\lEs... es ...
+	=Oh bei Arceus!\nDas ist das W\$aechterpok\emon\lGroudon...\lEs... es ...
 .end
 
 
 .string str_0x96a698 GER
-	= Es ist endlich aus seinem\nSchlaf erwacht!
+	=Es ist endlich aus seinem\nSchlaf erwacht!
 .end
 
 
 .string str_0x96ebfd GER
-	= Das ist unser aller Ende!\nGroudon wird alles verw\$uesten und\lzerst\$oeren!
+	=Das ist unser aller Ende!\nGroudon wird alles verw\$uesten und\lzerst\$oeren!
 .end
 
 
 .string str_0x96b05d GER
-	= Da stehst du vor mir,\ndu m\$aechtiges, m\$aechtiges Wesen!\pDeine Kraft soll fortan an mich\ngebunden sein.\pHier erhebe ich das Magmaherz, das\nuralte Artefakt, um deine wahre\lKraft zu entfesseln!
+	=Da stehst du vor mir,\ndu m\$aechtiges, m\$aechtiges Wesen!\pDeine Kraft soll fortan an mich\ngebunden sein.\pHier erhebe ich das Magmaherz, das\nuralte Artefakt, um deine wahre\lKraft zu entfesseln!
 .end
 
 
 .string str_0x97138c GER
-	= Was? Groudon ist...\nVerschwunden?
+	=Was? Groudon ist...\nVerschwunden?
 .end
 
 
 .string str_0x96f1be GER
-	= T\$oerrichtes G\$oer!\nGroudon ist nicht verschwunden...\pEs ist unter meiner Kontrolle!\pDas Magmaherz, welches ich aus dem\nMuseum von Orina City gestohlen\lhabe, verleiht Groudon seine\lurspr\$uengliche Macht...\pEs erhebt es in seine Kaiserform!\pMein Wort ist Groudons Befehl!\pMein Wille seine Handlung!\pMein Geist seine Macht!\pGroudons Kaiserform birgt ein\nunvorstellbares Ma\$s an Vernichtung\lund Chaos - Planeten werden wie\lK\$aeferpok\emon zerschmettert und\lHimmel wie Kerzen in Brand\lgesetzt!\pHahaha! Hahaha!\pAlso!\p\b\01!\pIch fordere dich heraus!\pBrenne! Schreie!\pIch werde dich vernichten!
+	=T\$oerrichtes G\$oer!\nGroudon ist nicht verschwunden...\pEs ist unter meiner Kontrolle!\pDas Magmaherz, welches ich aus dem\nMuseum von Orina City gestohlen\lhabe, verleiht Groudon seine\lurspr\$uengliche Macht...\pEs erhebt es in seine Kaiserform!\pMein Wort ist Groudons Befehl!\pMein Wille seine Handlung!\pMein Geist seine Macht!\pGroudons Kaiserform birgt ein\nunvorstellbares Ma\$s an Vernichtung\lund Chaos - Planeten werden wie\lK\$aeferpok\emon zerschmettert und\lHimmel wie Kerzen in Brand\lgesetzt!\pHahaha! Hahaha!\pAlso!\p\b\01!\pIch fordere dich heraus!\pBrenne! Schreie!\pIch werde dich vernichten!
 .end
 
 
@@ -119,32 +119,32 @@
 
 
 .string str_0x9713b5 GER
-	= ...\n... ... ... ...\pDas ... ist ...\n...\p... du hast Groudon besiegt?
+	=...\n... ... ... ...\pDas ... ist ...\n...\p... du hast Groudon besiegt?
 .end
 
 
 .string str_0x96fd16 GER
-	= Nein!\nEs entzieht sich meiner Kontrolle!
+	=Nein!\nEs entzieht sich meiner Kontrolle!
 .end
 
 
 .string str_0x96fd4a GER
-	= Es wird alles und jeden hier\nvernichten!
+	=Es wird alles und jeden hier\nvernichten!
 .end
 
 
 .string str_0x96fc90 GER
-	= Wir werden es nicht\nschaffen!\lDer Vulkan ist im Begriff\lauszubrechen.\lDer Abstieg wird ein hei\$ser Tod!\lWir sind am Ende!
+	=Wir werden es nicht\nschaffen!\lDer Vulkan ist im Begriff\lauszubrechen.\lDer Abstieg wird ein hei\$ser Tod!\lWir sind am Ende!
 .end
 
 
 .string str_0x97300a GER
-	= Was habe ich getan?\nJetzt werden wir...\lWerden wir...\pAlle...\nsterben!
+	=Was habe ich getan?\nJetzt werden wir...\lWerden wir...\pAlle...\nsterben!
 .end
 
 
 .string str_0x972330 GER
-	= Wir sind geliefert.\nDer Tod, er hat uns gefunden!
+	=Wir sind geliefert.\nDer Tod, er hat uns gefunden!
 .end
 
 

@@ -6,8 +6,8 @@ import png
 
 #This module quickdumps a png with a palette of a tileset (for editing in right pal)
 
-TSNUM = 245157
-TSPAL = 1
+TSNUM = 251828
+TSPAL = 0
 COLS = 16 * 5
 PATH = "D:/temp/ts" + str(TSNUM) + "p" + str(TSPAL) + ".png"
 

@@ -14,7 +14,7 @@ extern "C" {
 
     u32 *_main_rnd = (u32*)0x03004F50;
 
-    u16 rnd_init(); //Initializes the main rng module (xorshift)
+    void rnd_init(); //Initializes the main rng module (xorshift)
 
     /**
      * Provides new 16 bit random value (periodicity is 2^32)

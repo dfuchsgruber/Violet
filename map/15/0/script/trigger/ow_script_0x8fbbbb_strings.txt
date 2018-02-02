@@ -1,5 +1,5 @@
 .string str_0x8bf724 GER
-	= \b\01!
+	=\b\01!
 .end
 
 

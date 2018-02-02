@@ -8,10 +8,13 @@
 .end
 
 
-.string str_0x90ff39 GER
-	=\42
+.string str_violet_grunt_choice_0 GER
+        =R\$uepel gehen lassen
 .end
 
+.string str_violet_grunt_choice_1 GER
+        =R\$uepel bek\$aempfen
+.end
 
 .string str_0x90fd48 GER
 	=Ich_kann_Team_Violet_nicht_machen\nlassen,_was_es_will._Eure_Ziele\lsind_nichts_als_Illusionen,_ihr\lwollt_eine_ganze_Welt_versklaven.

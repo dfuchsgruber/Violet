@@ -325,15 +325,15 @@ voicegroup000:
 		.word	0x86a1e74
 		.byte	255,0,255,165
 
- 
-@**************** Voice 032 ****************@ E-Bass DPP
 
-	.byte	KeySplit
-	.byte	0x0
-	.byte	0x0
-	.byte	0x0
-	.word	KeySplitInstr7
-	.word	snd_7_split
+@**************** Voice 032 ****************@
+
+		.byte	DirectSound
+		.byte	Cn3
+		.byte	0x0
+		.byte	0x0
+		.word	0x84e9270
+		.byte	255,253,0,149
 
 
 @**************** Voice 033 ****************@

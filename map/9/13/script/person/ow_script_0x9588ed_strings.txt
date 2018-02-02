@@ -1,5 +1,5 @@
 .string str_0x958549 GER
-	= Hallo \b\01!\nIch will dich nicht l\$aenger auf die\lFolter spannen.\pEs ist den Forschern hier\ngelungen, ein Pok\emon, das am\lComputer gestaltet wurde, in die\lRealit\$aet umzusetzten.\pSein Name ist Porygon und da ich\nvon deinen F\$aehigkeiten als Trainer\lviel halte, konnte ich den\lPr\$aesidenten der Laz.Corp davon\l\$ueberzeugen, dir ein Exemplar\lanzuvertrauen.
+	=Hallo \b\01!\nIch will dich nicht l\$aenger auf die\lFolter spannen.\pEs ist den Forschern hier\ngelungen, ein Pok\emon, das am\lComputer gestaltet wurde, in die\lRealit\$aet umzusetzten.\pSein Name ist Porygon und da ich\nvon deinen F\$aehigkeiten als Trainer\lviel halte, konnte ich den\lPr\$aesidenten der Laz.Corp davon\l\$ueberzeugen, dir ein Exemplar\lanzuvertrauen.
 .end
 
 

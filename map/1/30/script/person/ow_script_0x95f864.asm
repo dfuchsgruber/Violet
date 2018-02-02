@@ -9,7 +9,7 @@ faceplayer
 loadpointer 0x0 str_0x95fd2c
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x3
-loadpointer 0x0 str_0x95fcf3
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -22,6 +22,11 @@ callstd MSG_KEEPOPEN
 special 0x7
 trainerbattlecont 0x1 0x9b 0x0 str_0x95f937 str_0x95f8bc ow_script_0x960424
 
+.align 4
+choice:
+    .word str_aschhain_girl_choice_0, 0
+    .word str_aschhain_girl_choice_1, 0
+    .word str_aschhain_girl_choice_2, 0
 
 .global ow_script_0x960424
 ow_script_0x960424:

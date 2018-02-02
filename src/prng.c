@@ -7,7 +7,7 @@
 
 
 
-u16 rnd_init(){
+void rnd_init(){
     u16 timer = *(u16*)0x04000104;
     if(!timer) timer++; //Just any not zero number
     u16 *timer_cntl = (u16*)0x04000106;

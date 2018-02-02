@@ -14,7 +14,7 @@ ow_script_0x9554da:
 loadpointer 0x0 str_0x955852
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x4
-loadpointer 0x0 str_0x9557b6
+loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x0
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -28,6 +28,13 @@ gotoif EQUAL ow_script_0x955527
 closeonkeypress
 releaseall
 end
+
+.align 4
+choice:
+    .word str_orina_city_bounties_0, 0
+    .word str_orina_city_bounties_1, 0
+    .word str_orina_city_bounties_2, 0
+    .word str_orina_city_bounties_3, 0
 
 
 .global ow_script_0x955527

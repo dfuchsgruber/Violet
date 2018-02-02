@@ -327,7 +327,7 @@ class Pymap_gui(tkinter.Frame):
             else:
                 event_present = True
                 self.event_edit_widget_id_spinbox = tkinterx.Spinbox(self.event_edit_widget, from_=0, to=len(self.map.signposts) - 1, default=id, command=lambda: self._select_event("Sign", int(self.event_edit_widget_id_spinbox.get())))
-                entries = _build_entries(["Level", "Type", "Field6", "Field7", "Item", "Hidden and Flags", "Count"], 4)
+                entries = _build_entries(["Level", "Type", "Field6", "Field7", "Item", "Hidden Id", "Flags, Chunk, Count"], 4)
         elif self.event_type == "None": return
         else: 
             raise Exception("Unkown event type selected: " + self.event_type)
@@ -440,7 +440,7 @@ class Pymap_gui(tkinter.Frame):
             _load_entires(self.map.signposts[id], {"X" : "x", "Y" : "y", "Level" : "level", "Type" : "sign_type", "Field6" : "field_6", "Field7" : "field_7", "Script" : "script"})
         elif stype == "SignItem":
             event = self.map.signposts[id]
-            _load_entires(self.map.signposts[id], {"X" : "x", "Y" : "y", "Level" : "level", "Type" : "sign_type", "Field6" : "field_6", "Field7" : "field_7", "Item" : "item_id", "Hidden and Flags" : "hidden", "Count" : "count"})
+            _load_entires(self.map.signposts[id], {"X" : "x", "Y" : "y", "Level" : "level", "Type" : "sign_type", "Field6" : "field_6", "Field7" : "field_7", "Item" : "item_id", "Hidden Id" : "hidden", "Flags, Chunk, Count" : "count"})
         else: raise Exception("Unkown event type " + stype)
 
     def _event_apply_changes(self, stype, id, supress_warnings=False):
@@ -461,7 +461,7 @@ class Pymap_gui(tkinter.Frame):
             assocs = {"X" : "x", "Y" : "y", "Level" : "level", "Type" : "sign_type", "Field6" : "field_6", "Field7" : "field_7", "Script" : "script"}
             event = self.map.signposts[id]
         elif stype == "SignItem":
-            assocs =  {"X" : "x", "Y" : "y", "Level" : "level", "Type" : "sign_type", "Field6" : "field_6", "Field7" : "field_7", "Item" : "item_id", "Hidden and Flags" : "hidden", "Count" : "count"}
+            assocs =  {"X" : "x", "Y" : "y", "Level" : "level", "Type" : "sign_type", "Field6" : "field_6", "Field7" : "field_7", "Item" : "item_id", "Hidden Id" : "hidden", "Flags, Chunk, Count" : "count"}
             event = self.map.signposts[id]
         else: raise Exception("Unknown specified event type " + stype)
         diffs = {}

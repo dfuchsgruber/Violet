@@ -5415,7 +5415,7 @@ item items[] = {
 		257, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))(0x080A1318 | 1), //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -5430,7 +5430,7 @@ item items[] = {
 		257, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x080A1D4D, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0, //battle_usage2
 		(void(*)(u8))0x0, //field_28

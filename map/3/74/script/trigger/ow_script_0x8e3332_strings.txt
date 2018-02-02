@@ -1,5 +1,5 @@
 .string str_0x8e627c GER
-	= Oh, \b\01!\nDu machst dich wohl auch auf den\lWeg nach Kaskada? Sei gewarnt, die\lW\$ueste im Osten ist t\$ueckisch. Aber\lich habe ja bereits meinen zweiten\lArena-Orden errungen. F\$uer mich\lwird das ein Kinderspiel werden!\lWie steht es um deine Pok\emon?\lKannst du mir immer noch\lentgegentreten?
+	=Oh, \b\01!\nDu machst dich wohl auch auf den\lWeg nach Kaskada? Sei gewarnt, die\lW\$ueste im Osten ist t\$ueckisch. Aber\lich habe ja bereits meinen zweiten\lArena-Orden errungen. F\$uer mich\lwird das ein Kinderspiel werden!\lWie steht es um deine Pok\emon?\lKannst du mir immer noch\lentgegentreten?
 .end
 
 

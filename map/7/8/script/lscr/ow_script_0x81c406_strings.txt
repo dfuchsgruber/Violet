@@ -64,7 +64,7 @@
 
 
 .string str_0x8f276d GER
-	= Ich habe Team Violet\n\$ueber den Zeitstein reden h\$oeren.\lVermutlich sind sie darauf aus!
+	=Ich habe Team Violet\n\$ueber den Zeitstein reden h\$oeren.\lVermutlich sind sie darauf aus!
 .end
 
 

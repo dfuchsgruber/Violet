@@ -28,7 +28,7 @@ ow_script_0x95b72c:
 loadpointer 0x0 str_0x95b769
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x3
-loadpointer 0x0 str_0x95b8e2
+loadpointer 0x0 choice_main
 multichoice 0x0 0x0 0x0 0x0
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -38,6 +38,12 @@ gotoif EQUAL ow_script_0x95b7ec
 loadpointer 0x0 str_0x95b7b9
 callstd MSG
 end
+
+.align 4
+choice_main:
+    .word str_orina_city_bank_main_0, 0
+    .word str_orina_city_bank_main_1, 0
+    .word str_orina_city_bank_main_2, 0
 
 
 .global ow_script_0x95b7ec
@@ -53,7 +59,7 @@ buffernumber 0x0 0x50d4
 loadpointer 0x0 str_0x95bb6b
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x95bb4f
+loadpointer 0x0 choice_take
 multichoice 0x0 0x0 0x0 0x0
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -62,13 +68,18 @@ loadpointer 0x0 str_0x95b7b9
 callstd MSG
 end
 
+.align 4
+choice_take:
+    .word str_orina_city_bank_take_0, 0
+    .word str_orina_city_bank_take_1, 0
+
 
 .global ow_script_0x95b947
 ow_script_0x95b947:
 loadpointer 0x0 str_0x95bb13
 callstd MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x4
-loadpointer 0x0 str_0x95badc
+loadpointer 0x0 choice_amount
 multichoice 0x0 0x0 0x0 0x0
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
@@ -79,6 +90,12 @@ compare LASTRESULT 0x2
 gotoif EQUAL ow_script_0x95b9d5
 goto ow_script_0x95b911
 
+.align 4
+choice_amount:
+    .word str_orina_city_bank_amount_0, 0
+    .word str_orina_city_bank_amount_1, 0
+    .word str_orina_city_bank_amount_2, 0
+    .word str_orina_city_bank_amount_3, 0
 
 .global ow_script_0x95b9d5
 ow_script_0x95b9d5:

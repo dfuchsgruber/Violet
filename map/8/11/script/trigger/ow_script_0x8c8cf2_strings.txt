@@ -1,3 +1,3 @@
 .string str_0x93144c GER
-	= Wenn ich es mir recht\n\$ueberlege...\pVielleicht sollte ich dich diesen\nOrt doch besser auf eigene Faust\lerkunden lassen.\pImmerhin sollst du selbst die\ndunklen Geheimnisse unserer Welt\lenth\$uellen.\pSuch mich einfach, wenn du dich\nhier etwas umgesehen hast.
+	=Wenn ich es mir recht\n\$ueberlege...\pVielleicht sollte ich dich diesen\nOrt doch besser auf eigene Faust\lerkunden lassen.\pImmerhin sollst du selbst die\ndunklen Geheimnisse unserer Welt\lenth\$uellen.\pSuch mich einfach, wenn du dich\nhier etwas umgesehen hast.
 .end

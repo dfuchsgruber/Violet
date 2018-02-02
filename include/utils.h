@@ -88,4 +88,6 @@ int linear_tan(int x, int period);
 
 bool is_fading();
 
+void nullsub();
+
 #endif

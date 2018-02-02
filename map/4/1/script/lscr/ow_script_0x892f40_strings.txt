@@ -40,6 +40,6 @@
 
 
 .string str_0x8cf12f GER
-    = Was für ein seltsamer Traum...\nEr hat sich so real angefühlt!\p... Und was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\p... ... ...\n... ... ...\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der gro\$se Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!
+    =Was für ein seltsamer Traum...\nEr hat sich so real angefühlt!\p... Und was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\p... ... ...\n... ... ...\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der gro\$se Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!
 .end
 

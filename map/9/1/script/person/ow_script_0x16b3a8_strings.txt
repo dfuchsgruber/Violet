@@ -1,3 +1,3 @@
 .string str_0x196800 GER
-	=Mein_Pok\emon_wurde_vergiftet!\nDas_Gift_hat_es_lange_nach_dem\lKampf_besiegt!
+	=Ich kann dir nur dringed davon\nabraten, ein Darlehn bei der Orina\lCity aufzunehmen.\pEin Gro\$steil deines Preisgelds\nverschwindet im Handumdrehen und\lehe du dich versiehst, besitzt du\lkein Geld mehr.
 .end

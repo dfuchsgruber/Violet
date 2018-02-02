@@ -23,8 +23,42 @@
 .end
 
 
-.string str_0x95b8e2 GER
-	=\_spcursor,\95\_spnr\k,\95\_spnr\06\b9\95\_spnr
+.string str_orina_city_bank_main_0 GER
+        =Kredit
+.end
+
+
+.string str_orina_city_bank_main_1 GER
+        =Information
+.end
+
+
+.string str_orina_city_bank_main_2 GER
+        =Tschüss!
+.end
+
+.string str_orina_city_bank_take_0 GER
+        =Kredit aufnehmen
+.end
+
+.string str_orina_city_bank_take_1 GER
+        =Tschüss!
+.end
+
+.string str_orina_city_bank_amount_0 GER
+        =1.000\b7
+.end
+
+.string str_orina_city_bank_amount_1 GER
+        =10.000\b7
+.end
+
+.string str_orina_city_bank_amount_2 GER
+        =50.000\b7
+.end
+
+.string str_orina_city_bank_amount_3 GER
+        =Zurück
 .end
 
 
@@ -43,18 +77,10 @@
 .end
 
 
-.string str_0x95bb4f GER
-	=\58A\95\_spnr\06\b9\95\_spnr
-.end
 
 
 .string str_0x95bb13 GER
 	=Bitte_w\$aehle_einen_Betrag_aus,_den\ndu_dir_leihen_m\$oechtest.
-.end
-
-
-.string str_0x95badc GER
-	=y/\95\_spnr\$ue/\95\_spnr_A\95\_spnr\0aA\95\_spnr
 .end
 
 
