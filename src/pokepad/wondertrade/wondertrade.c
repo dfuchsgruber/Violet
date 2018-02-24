@@ -372,7 +372,7 @@ void wondertrade_init_components() {
     tbox_tilemap_draw(POKEPAD_WONDERTRADE_TBOX_CNT_T);
     u8 *strbuf = (u8*) 0x02021D18;
     u16 cnt = *vardecrypt(VAR_POKEPAD_WONDERTRADE_CNT);
-    value_to_str(strbuf, cnt, 0, 3);
+    itoa(strbuf, cnt, 0, 3);
     tbox_print_string(POKEPAD_WONDERTRADE_TBOX_CNT_T, 2, 0, 0, 0, 0, wondertrade_fontcolmap, 0x0, strbuf);
 
     //Neachster Lv.
@@ -398,7 +398,7 @@ void wondertrade_init_components() {
             break;
     }
     if (cnt != 0xFFFF)
-        value_to_str(strbuf2, cnt, 0, 3);
+        itoa(strbuf2, cnt, 0, 3);
     else
         strcpy(strbuf2, str_wondertrade_none);
     tbox_print_string(POKEPAD_WONDERTRADE_TBOX_NEXT_T, 2, 0, 0, 0, 0, wondertrade_fontcolmap, 0x0, strbuf2);
@@ -504,7 +504,7 @@ void wondertrade_init_callback() {
 
 void wondertrade_load_steps_into_buffer() {
     u8 *buffer0 = (u8*) 0x02021CD0;
-    value_to_str(buffer0, *vardecrypt(VAR_POKEPAD_WONDERTRADE_STEP_CNT), 0, 3);
+    itoa(buffer0, *vardecrypt(VAR_POKEPAD_WONDERTRADE_STEP_CNT), 0, 3);
 }
 
 void wondertrade_init(bool is_outdoor) {

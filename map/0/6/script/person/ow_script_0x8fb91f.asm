@@ -32,13 +32,14 @@ ow_script_0x8fb91f:
 loadpointer 0x0 str_0x8fe75c
 callstd MSG
 clearflag PKMNMENU
-showsprite 0xe
-applymovement 0xe ow_script_movs_0x8fe753
+setvar LASTTALKED 0xe
+showsprite LASTTALKED
+applymovement LASTTALKED ow_script_movs_0x8fe753
 waitmovement 0x0
 getplayerpos 0x8000 0x8001
 compare 0x8000 0x21
 callif EQUAL ow_script_0x8fe744
-applymovement 0xe ow_script_movs_0x8fe741
+applymovement LASTTALKED ow_script_movs_0x8fe741
 waitmovement 0x0
 sound 0x15
 applymovement 0xff ow_script_movs_0x8fe73d
@@ -105,7 +106,7 @@ compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe4cc
 loadpointer 0x0 str_0x8fe47f
 callstd MSG
-applymovement 0xe ow_script_movs_0x8fe47c
+applymovement LASTTALKED ow_script_movs_0x8fe47c
 waitmovement 0x0
 sound 0x17
 compare 0x8005 0x20
@@ -136,7 +137,7 @@ callif EQUAL ow_script_0x8fe431
 loadpointer 0x0 str_0x8fe3db
 callstd MSG
 fadescreen 0x1
-hidesprite 0xe
+hidesprite LASTTALKED
 fadescreen 0x0
 end
 
@@ -149,7 +150,7 @@ ow_script_movs_0x8fe440:
 
 .global ow_script_0x8fe431
 ow_script_0x8fe431:
-applymovement 0xe ow_script_movs_0x8fe440
+applymovement LASTTALKED ow_script_movs_0x8fe440
 waitmovement 0x0
 return
 
@@ -162,7 +163,7 @@ ow_script_movs_0x8fe43d:
 
 .global ow_script_0x8fe425
 ow_script_0x8fe425:
-applymovement 0xe ow_script_movs_0x8fe43d
+applymovement LASTTALKED ow_script_movs_0x8fe43d
 waitmovement 0x0
 return
 
@@ -189,7 +190,7 @@ ow_script_movs_0x8fe4d8:
 
 .global ow_script_0x8fe4cc
 ow_script_0x8fe4cc:
-applymovement 0xe ow_script_movs_0x8fe4d8
+applymovement LASTTALKED ow_script_movs_0x8fe4d8
 waitmovement 0x0
 return
 
@@ -204,7 +205,7 @@ ow_script_movs_0x8fe4c7:
 
 .global ow_script_0x8fe4bb
 ow_script_0x8fe4bb:
-applymovement 0xe ow_script_movs_0x8fe4c7
+applymovement LASTTALKED ow_script_movs_0x8fe4c7
 waitmovement 0x0
 return
 
@@ -289,7 +290,7 @@ callif EQUAL ow_script_0x8fe431
 loadpointer 0x0 str_0x8fe8d0
 callstd MSG
 fadescreen 0x1
-hidesprite 0xe
+hidesprite LASTTALKED
 fadescreen 0x0
 end
 
@@ -302,6 +303,6 @@ ow_script_movs_0x8fe750:
 
 .global ow_script_0x8fe744
 ow_script_0x8fe744:
-applymovement 0xe ow_script_movs_0x8fe750
+applymovement LASTTALKED ow_script_movs_0x8fe750
 waitmovement 0x0
 return

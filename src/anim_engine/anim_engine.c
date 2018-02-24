@@ -118,6 +118,7 @@ void anim_engine_execute_frame(ae_memory* mem) {
         //dprintf("Executing command %d at %x\n", cmd_id, mem->current_programm - 1);
         cmdTable[cmd_id](mem);
         cmd_id = anim_engine_read_byte(mem);
+        
     }
 }
 
@@ -184,8 +185,9 @@ void cmdx01_call(ae_memory* mem) {
 }
 
 void cmdx02_jump(ae_memory* mem) {
-    mem->current_programm = (u8*) anim_engine_read_word(mem);
+    u8 *target = (u8*) anim_engine_read_word(mem);
     mem->current_frame = anim_engine_read_hword(mem);
+    mem->current_programm = target;
 }
 
 void cmdx03_oam_new(ae_memory* mem) {

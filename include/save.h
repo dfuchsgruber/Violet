@@ -37,7 +37,7 @@ typedef struct saveblock1 {
 } saveblock1;
 
 typedef struct saveblock2 {
-    u8 unkown[0x8];
+    u8 player_name[0x8];
     u8 player_is_female;
     u8 unkown_4[0xA];
     u8 detector_state; //original key swtiching

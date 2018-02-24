@@ -11,6 +11,7 @@ import time
 from threading import Thread
 from . import project, resources
 import tkinter.ttk as ttk
+import png
 
 CANVAS_ZOOM = 3
 CANVAS_WIDTH = 128 * CANVAS_ZOOM
@@ -358,6 +359,8 @@ class Tileset_gui(tkinter.Frame):
         self.tsp_error_label.grid(row=4, column=0, sticky=tkinter.NW, columnspan=2)
         self.tss_error_label = tkinter.Label(bpframe_tss, fg="red")
         self.tss_error_label.grid(row=4, column=0, sticky=tkinter.NW, columnspan=2)
+        tkinter.Button(bpframe_tsp, text="Export in selected palette", command = lambda: self.export_tileset_gfx(True)).grid(row=5, column=0, columnspan=3, sticky=tkinter.NW)
+        tkinter.Button(bpframe_tss, text="Export in selected palette", command = lambda: self.export_tileset_gfx(False)).grid(row=5, column=0, columnspan=3, sticky=tkinter.NW)
 
         def set_anim_init_func(primary, symbol):
             if primary and self.primary_tileset:
@@ -626,7 +629,7 @@ class Tileset_gui(tkinter.Frame):
         if refresh_tile_selection: self.refresh_tile_selection()
 
     def open_pal(self, path, pal_id):
-        """ Reads a palette file into a certain palette slot on a tileset and refreshes the canvas
+        """ Reads a palette file into a certain palette slot on a tileset and refreshes the canvas """
         if not self._can_draw(): return
         primary = False
         if pal_id < 7: primary = True
@@ -640,7 +643,7 @@ class Tileset_gui(tkinter.Frame):
             messagebox.showerror("Could not read palette file", "Could not read palette file :" + str(e))
             return
         self.refresh_tileset_canvas()
-        """
+        
         
 
     def open_pal_dialoge(self):
@@ -655,6 +658,37 @@ class Tileset_gui(tkinter.Frame):
         }
         path = filedialog.askopenfilename(**options)
         self.open_pal(path, pal_id)
+
+
+    def export_tileset_gfx(self, primary):
+        """ Exports the the tilesets gfx in the currently
+        selected palette by overwriting the png linked to
+        the gfx"""
+        t = self.primary_tileset if primary else self.secondary_tileset
+        if not t: return
+
+        # Get the palette
+        pal_id = int(self.tileset_pal_combobox.get())
+        if pal_id < 7:
+            if not self.primary_tileset: return
+            pal = self.primary_tileset.palettes[pal_id]
+        else:
+            if not self.secondary_tileset: return
+            pal = self.secondary_tileset.palettes[pal_id - 7]
+        
+        # Group the flat palette into RGB triples
+        rgbs = zip(pal[0::3], pal[1::3], pal[2::3])
+        
+        path = self.project.get_image_path(t.gfx)
+       
+        # Use the png method to generate 4bpp pngs
+        width, height, pixels, _ = png.Reader(path).read()
+        fpout = open("D:/temp/___pymapts.png", "wb")
+        png.Writer(width, height, palette=rgbs, bitdepth=4).write(fpout, pixels)
+        fpout.close()
+        print("Sucessfully exported tileset gfx with palette", pal_id, "to", path)
+        
+
 
     """
     def open_pal_path(self, primary):

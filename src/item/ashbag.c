@@ -8,7 +8,7 @@
 extern u8 str_item_ashbag[];
 
 void item_ashbag_field(u8 self){
-    value_to_str(buffer0, *vardecrypt(VAR_ASH), 0, 5);
+    itoa(buffer0, *vardecrypt(VAR_ASH), 0, 5);
     string_decrypt(strbuf, str_item_ashbag);
     u8 n = (u8)big_callbacks[self].params[3];
     item_printstr(self, n, 4, strbuf);

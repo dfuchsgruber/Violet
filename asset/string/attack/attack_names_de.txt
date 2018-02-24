@@ -232,7 +232,7 @@
 	=Lockduft
 	=Eisenschweif
 	=Metallklaue
-	=\$ueberwurf
+	=\$UEberwurf
 	=Morgengrauen
 	=Synthese
 	=Mondschein
@@ -288,7 +288,7 @@
 	=Begrenzer
 	=Heilung
 	=Nachspiel
-	=\$uebernahme
+	=\$UEbernahme
 	=Geheimpower
 	=Taucher
 	=Armsto\$s

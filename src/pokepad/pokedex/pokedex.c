@@ -32,6 +32,9 @@ extern const unsigned short gfx_pokedex_uiPal[];
 extern const unsigned short gfx_pokedex_bottom_1Pal[];
 extern const unsigned short gfx_pokedex_bottom_0Pal[];
 
+extern u8 str_pokedex_feature_0[];
+extern u8 str_pokedex_feature_1[];
+extern u8 str_pokedex_feature_2[];
 
 bg_config pokedex_bg_main_configs [] = {
     {0, 2, 31, 0, 0, 0},
@@ -47,7 +50,9 @@ tboxdata pokedex_main_tboxes [] = {
     {0, 22, 5, 8, 14, 3, 125}, // type list
     {0, 12, 5, 2, 14, 4, 237}, // capture list
     {0, 7, 5, 5, 14, 14, 265}, // nr list
-
+    {0, 1, 5, 6, 2, 3, 335}, // feature 0: scanner
+    {0, 1, 10, 6, 2, 3, 347}, // feature 1: scanner
+    {0, 1, 15, 6, 2, 3, 359}, // feature 1: scanner
     {0xFF, 0, 0, 0, 0, 0, 0}
 };
 
@@ -89,6 +94,8 @@ oam_template pokedex_cursor_template = {
 };
 
 u8 pokedex_fontcolmap[4] = {0, 2, 1, 0};
+u8 pokedex_features_active_fontcolmap[4] = {0, 15, 13, 1};
+u8 pokedex_features_fontcolmap[4] = {0, 10, 13, 1};
 
 u16 pokedex_colors[16] = {0, 0x2927, 0x7FFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 u16 pokedex_colors_nr[16] = {0, 0x7FFF, 0x2927, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -138,6 +145,71 @@ void pokedex_callback_return() {
     }
 }
 
+void pokedex_draw_feature_strings(){
+    
+    if(checkflag(POKEDEX_FLAG_FEATURE_0)){
+        tbox_flush(POKEDEX_TBOX_FEATURE_0, 0);
+        tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_0);
+        tbox_print_string(POKEDEX_TBOX_FEATURE_0, 2, 2, 4, 0, 0,
+                fmem->dex_mem->current_feature == 0 ? 
+                    pokedex_features_active_fontcolmap : 
+                    pokedex_features_fontcolmap, 0, str_pokedex_feature_0);
+    }
+    if(checkflag(POKEDEX_FLAG_FEATURE_1)){
+        tbox_flush(POKEDEX_TBOX_FEATURE_1, 0);
+        tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_1);
+        tbox_print_string(POKEDEX_TBOX_FEATURE_1, 2, 2, 2, 0, 0,
+                fmem->dex_mem->current_feature == 1 ? 
+                    pokedex_features_active_fontcolmap : 
+                    pokedex_features_fontcolmap, 0, str_pokedex_feature_1);
+    }
+    if(checkflag(POKEDEX_FLAG_FEATURE_2)){
+        tbox_flush(POKEDEX_TBOX_FEATURE_2, 0);
+        tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_2);
+        tbox_print_string(POKEDEX_TBOX_FEATURE_2, 2, 2, 2, 0, 0,
+                fmem->dex_mem->current_feature == 2 ? 
+                    pokedex_features_active_fontcolmap : 
+                    pokedex_features_fontcolmap, 0, str_pokedex_feature_2);
+    }
+}
+
+u16 feature_flags[] = {
+    POKEDEX_FLAG_FEATURE_0,
+    POKEDEX_FLAG_FEATURE_1,
+    POKEDEX_FLAG_FEATURE_2
+};
+
+void pokedex_callback_feature_selection(){
+    cb1handling();
+    if(super->keys_new.keys.down || super->keys_new.keys.up){
+        // Select next availble feature
+        u8 next_feature = fmem->dex_mem->current_feature;
+        do{
+            if(super->keys_new.keys.down)
+                next_feature++;
+            else
+                next_feature = (u8)(next_feature + 3 - 1);
+            next_feature %= 3;
+        }while(!checkflag(feature_flags[next_feature]));
+        if(next_feature == fmem->dex_mem->current_feature) return;
+        fmem->dex_mem->current_feature = next_feature;
+        sound(5);
+        pokedex_draw_feature_strings();
+    }else if(super->keys_new.keys.B){
+        // Return to group selection
+        fmem->dex_mem->current_feature = 0xFF;
+        pokedex_draw_feature_strings();
+        set_callback1(pokedex_callback_group_selection);
+        sound(5);
+    }else if(super->keys_new.keys.A){
+        // Open the scanner UI
+        sound(5);
+        set_callback1(pokedex_callback_init_feature_scanner);
+        init_fadescreen(1, 0);
+        return;
+    }
+}
+
 void pokedex_callback_group_selection() {
     cb1handling();
     if (!is_fading()) {
@@ -174,7 +246,18 @@ void pokedex_callback_group_selection() {
                     break;
                 case 1:
                     if (checkflag(POKEDEX_FLAG_FEATURE_0) || checkflag(POKEDEX_FLAG_FEATURE_1) || checkflag(POKEDEX_FLAG_FEATURE_2)) {
-                        //TODO : features
+                        sound(5);
+                        // Find a valid feature
+                        for(u8 i = 0; i < 3; i++){
+                            if(checkflag(feature_flags[i])){
+                                fmem->dex_mem->current_feature = i;
+                                break;
+                            }
+                        }
+                        pokedex_draw_feature_strings();
+                        fmem->dex_mem->group_fading_index = 16;
+                        fmem->dex_mem->group_fading_mode = true;
+                        set_callback1(pokedex_callback_feature_selection);
                     } else {
                         sound(26);
                     }
@@ -290,15 +373,17 @@ void pokedex_init_components() {
 
     u16 seen = pokedex_get_number_seen_or_caught(false);
     u16 caught = pokedex_get_number_seen_or_caught(true);
-    value_to_str(strbuf, seen, 0, 3);
+    itoa(strbuf, seen, 0, 3);
     tbox_flush(POKEDEX_TBOX_SEEN, 0);
     tbox_tilemap_draw(POKEDEX_TBOX_SEEN);
     tbox_print_string(POKEDEX_TBOX_SEEN, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
-    value_to_str(strbuf, caught, 0, 3);
+    itoa(strbuf, caught, 0, 3);
     tbox_flush(POKEDEX_TBOX_CAUGHT, 0);
     tbox_tilemap_draw(POKEDEX_TBOX_CAUGHT);
     tbox_print_string(POKEDEX_TBOX_CAUGHT, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
+    pokedex_draw_feature_strings();
 
+    
     //Displacements
     bg_virtual_map_displace(0, 0, 0);
     bg_virtual_set_displace(0, 0, 0);
@@ -322,7 +407,7 @@ void pokedex_init_components() {
     //Now we decide weather we want to clear features
     const color cols_active [2] = {
         {0x6754},
-        {0x57E0}};
+        {0x56D0}};
     const color cols_inactive [2] = {
         {0x3E0C},
         {0x35E8}};
@@ -388,6 +473,7 @@ void pokedex_init(bool from_outdoor) {
     fmem->dex_mem->current_species = *vardecrypt(POKEDEX_VAR_LAST_SPECIES);
     fmem->dex_mem->current_comparator = (u8) * vardecrypt(POKEDEX_VAR_COMPARATOR);
     fmem->dex_mem->cursor_anchor = 0;
+    fmem->dex_mem->current_feature = 0xFF;
     set_callback1(pokedex_callback_init);
     init_fadescreen(1, 0);
 }

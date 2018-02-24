@@ -391,7 +391,7 @@ graphic pokemon_backsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_382_pokemon_stollunior_backspriteTiles, 0x800, 382},
     {gfx_pkmn_species_383_pokemon_stollrak_backspriteTiles, 0x800, 383},
     {gfx_pkmn_species_384_pokemon_stolloss_backspriteTiles, 0x800, 384},
-    {gfx_pkmn_species_385_pokemon_formeo_backspriteTiles, 0x800, 385},
+    {(void*)0x8E27288, 0x800, 385}, // Keep Formeo's original tiles
     {gfx_pkmn_species_386_pokemon_volbeat_backspriteTiles, 0x800, 386},
     {gfx_pkmn_species_387_pokemon_illumise_backspriteTiles, 0x800, 387},
     {gfx_pkmn_species_388_pokemon_liliep_backspriteTiles, 0x800, 388},

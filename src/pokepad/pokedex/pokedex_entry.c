@@ -116,7 +116,7 @@ void pokedex_entry_load_strings() {
     tbox_print_string(1, 2, 8, 0, 0, 0, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->category : str_pokepad_pokedex_qmark);
     u32 height_upper = pokedex_get_data(dex_id)->height / 10;
     u32 height_lower = pokedex_get_data(dex_id)->height % 10;
-    value_to_str(str_append(value_to_str(strbuf, height_upper, 0, 3), str_pokepad_pokedex_comma), height_lower, 0, 1);
+    itoa(str_append(itoa(strbuf, height_upper, 0, 3), str_pokepad_pokedex_comma), height_lower, 0, 1);
     tbox_print_string(1, 2, 38, 15, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark);
     if (is_caught)
         tbox_print_string(1, 2, 70, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_m);
@@ -124,7 +124,7 @@ void pokedex_entry_load_strings() {
     u32 weight_lower = pokedex_get_data(dex_id)->weight % 10;
     if (is_caught)
         tbox_print_string(1, 2, 70, 30, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_kg);
-    value_to_str(str_append(value_to_str(strbuf, weight_upper, 0, 3), str_pokepad_pokedex_comma), weight_lower, 0, 1);
+    itoa(str_append(itoa(strbuf, weight_upper, 0, 3), str_pokepad_pokedex_comma), weight_lower, 0, 1);
     tbox_print_string(1, 2, 38, 30, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark);
     tbox_print_string(2, 2, 0, 0, 0, 1, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->page0 : str_pokepad_pokedex_qmark);
     if (is_caught) {
@@ -291,12 +291,14 @@ void pokedex_entry_from_battle_cb(u8 self){
                 break;
             }
             case 2:{ //free all components
+                volume_set((void*) 0x030071F0, 0xFFFF, 0x100);
                 free(bg_get_tilemap(0));
                 free(bg_get_tilemap(1));
                 free(bg_get_tilemap(2));
                 free(bg_get_tilemap(3));
                 free_all_tboxes();
                 remove_big_callback(self);
+                
             }
         }
     }
@@ -361,6 +363,7 @@ void pokedex_callback_entry_idle() {
         if (super->keys_new.keys.B) {
             sound(5);
             init_fadescreen(1, 0);
+            volume_set((void*) 0x030071F0, 0xFFFF, 0x100);
             set_callback1(pokedex_callback_entry_back);
         } else if (super->keys_new.keys.start) {
             cry(fmem->dex_mem->current_species, 0);

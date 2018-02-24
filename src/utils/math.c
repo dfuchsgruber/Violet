@@ -100,11 +100,14 @@ int linear_cos_16(int x){
     if(x < 0) x = -x; //cosine is even
     x %= 0x10000;
     if(x < 0x8000){
-        //interpolate from [0; pi]
-        return 0x10000 - x * 0x8000 / 0x20000;
+        // Linear interpolation between (0, 0x10000), (0x8000, -0x10000)
+        // f(x) = 0x10000 - 4 * x
+        return 0x10000 - x * 4;
     }else{
-        //interpolate from [pi; 2pi]
-        return x * 0x8000 / 0x20000 - 0x10000;
+        x -= 0x8000;
+        // Linear interpolation between (0x8000, -0x10000, 0x10000, 0x10000)
+        // f(x) = 4 * x - 0x10000
+        return x * 4 - 0x10000;
     }
 }
 
@@ -114,12 +117,18 @@ int linear_sin_16(int x){
 
 int linear_sin(int x, int period, int amplitude){
     int y = linear_sin_16((x << 16) / period);
-    return (y * amplitude) >> 16;
+    // Rounding (y * amplitude) >> 16
+    y *= amplitude;
+    int carry = (y >> 15) & 1;
+    return (y >> 16) + carry;
 }
 
 int linear_cos(int x, int period, int amplitude){
     int y = linear_cos_16((x << 16) / period);
-    return (y * amplitude) >> 16;
+    // Rounding (y * amplitude) >> 16
+    y *= amplitude;
+    int carry = (y >> 15) & 1;
+    return (y >> 16) + carry;
 }
 
 int linear_tan(int x, int period){

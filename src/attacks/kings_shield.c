@@ -29,7 +29,7 @@ bool attack_is_protecting_move(u16 move){
 bool protect_attack_succeeds(){
     dprintf("Trying to apply protect state\n");
     battler *attacker = &battlers[*attacking_battler];
-    if(fmem->battle_custom_status[*defending_battler] |= 
+    if(fmem->battle_custom_status[*defending_battler] & 
                 CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD){
         dprintf("Defender %d is behind kings shield\n", *defending_battler);
         //king shield protect, check if the move hits

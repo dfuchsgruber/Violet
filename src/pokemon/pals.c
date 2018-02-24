@@ -390,7 +390,7 @@ palette pokemon_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_382_pokemon_stollunior_frontspritePal, 382, 0},
     {gfx_pkmn_species_383_pokemon_stollrak_frontspritePal, 383, 0},
     {gfx_pkmn_species_384_pokemon_stolloss_frontspritePal, 384, 0},
-    {gfx_pkmn_species_385_pokemon_formeo_frontspritePal, 385, 0},
+    {(void*)0x8E27208, 385, 0}, // Keep Formeo's original pal
     {gfx_pkmn_species_386_pokemon_volbeat_frontspritePal, 386, 0},
     {gfx_pkmn_species_387_pokemon_illumise_frontspritePal, 387, 0},
     {gfx_pkmn_species_388_pokemon_liliep_frontspritePal, 388, 0},
@@ -835,7 +835,7 @@ palette pokemon_shiny_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_382_pokemon_stollunior_backspritePal, 382, 0},
     {gfx_pkmn_species_383_pokemon_stollrak_backspritePal, 383, 0},
     {gfx_pkmn_species_384_pokemon_stolloss_backspritePal, 384, 0},
-    {gfx_pkmn_species_385_pokemon_formeo_backspritePal, 385, 0},
+    {(void*) 0x08E27C44, 385, 0}, // Keep Formeo's original pal
     {gfx_pkmn_species_386_pokemon_volbeat_backspritePal, 386, 0},
     {gfx_pkmn_species_387_pokemon_illumise_backspritePal, 387, 0},
     {gfx_pkmn_species_388_pokemon_liliep_backspritePal, 388, 0},

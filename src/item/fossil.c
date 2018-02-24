@@ -6,6 +6,7 @@
 #include "map.h"
 #include "save.h"
 #include "rtc.h"
+#include "access_card.h"
 
 
 u16 fossils [5] = {
@@ -26,25 +27,33 @@ u16 fossil_species[5] = {
 
 void fossil_print_multichoice() {
 
-    //iterate through all access cards
-    u8 **d_elements = cmalloc(sizeof (u8*) * 5);
+    // Return 1 for success and 0 for failure
+    u16 *lastresult = vardecrypt(0x800D);
+    *lastresult = 0;
+    
+    // Iterate through all possible fossils
+    dynamic_multichoice choices[5];
     int i;
     u16 displayed = 0;
     for (i = 0; i < 5; i++) {
         if(checkitem(fossils[i], 1)){
-            d_elements[displayed++] = items[fossils[i]].name;
+            choices[displayed].text = items[fossils[i]].name;
+            choices[displayed].field_4 = 0;
+            displayed++;
         }
     }
     
     *vardecrypt(0x4077) = displayed;
+    dprintf("Displaying %d choices\n", displayed);
     if (displayed) {
         void **script_state_pointers = (void**) 0x03000F14;
-        *script_state_pointers = d_elements;
+        *script_state_pointers = choices;
         if (multichoice(0, 0, 0, false)) {
+            dprintf("Halting for dchoice\n");
             script_halt();
+            *lastresult = 1;
         }
     }
-    free(d_elements);
 }
 
 void fossil_execute() {
@@ -71,8 +80,8 @@ void fossil_execute() {
 u16 fossil_is_finished(){
     rtc_timestamp t;
     rtc_read(&t);
-    int seconds_current = rtc_timestamp_to_seconds(&t);
-    int seconds_generated = rtc_timestamp_to_seconds(&cmem->fossil_gen_time);
+    u64 seconds_current = rtc_timestamp_to_seconds(&t);
+    u64 seconds_generated = rtc_timestamp_to_seconds(&cmem->fossil_gen_time);
     if(seconds_current - seconds_generated > 60*60){
         return 1;
     }else{

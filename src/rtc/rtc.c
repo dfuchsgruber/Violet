@@ -137,8 +137,8 @@ u8 to_dec(u8 val) {
 
 }
 
-int rtc_timestamp_to_seconds(rtc_timestamp *t){
-    return t->second + 60*(t->minute + (60* t->hour + 24*(t->day + 365*t->year)));
+u64 rtc_timestamp_to_seconds(rtc_timestamp *t){
+    return (u64)(t->second + 60*(t->minute + (60* t->hour + 24*(t->day + 365*t->year))));
 }
 
 bool rtc_test(){

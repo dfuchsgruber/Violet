@@ -268,7 +268,7 @@ void fp_menu_callback_idle() {
         } else if (super->keys_new.keys.up) {
             u8 next_index = fmem->fp_mem->poke_index;
             do {
-                next_index = (u8) ((next_index - 1) % pokemon_cnt);
+                next_index = (u8) ((next_index + pokemon_cnt - 1) % pokemon_cnt);
                 if (!get_pokemons_attribute(&player_pokemon[next_index], ATTRIBUTE_IS_EGG, NULL)) {
                     //load this pokemon
                     fmem->fp_mem->poke_index = next_index;
@@ -333,7 +333,7 @@ void fp_menu_pokemon_load() {
     tbox_print_string(0, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
 
     //print the level
-    value_to_str(strbuf, get_pokemons_attribute(target, ATTRIBUTE_LEVEL, NULL), 0, 2);
+    itoa(strbuf, get_pokemons_attribute(target, ATTRIBUTE_LEVEL, NULL), 0, 2);
     tbox_flush(2, 0);
     tbox_tilemap_draw(2);
     tbox_print_string(2, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
@@ -365,7 +365,7 @@ void fp_menu_stats_load(pokemon *target) {
     int stat_nerved = (nature % 5) + 1;
     int i; 
     for (i = 0; i < 6; i++) {
-        u8 *str = value_to_str(strbuf, get_pokemons_attribute(target, (u8) (ATTRIBUTE_TOTAL_HP + i), NULL), 0, 3);
+        u8 *str = itoa(strbuf, get_pokemons_attribute(target, (u8) (ATTRIBUTE_TOTAL_HP + i), NULL), 0, 3);
         u8 box_id = (u8) (3 + i);
         tbox_flush(box_id, 0);
         u8 *fontcolmap = fp_menu_fontcolmap_std;
@@ -382,7 +382,7 @@ void fp_menu_stats_load(pokemon *target) {
 
     //print the sum of evs
     u32 ev_sum = (u32) (4 * fp_menu_get_sum_applied(target));
-    value_to_str(strbuf, ev_sum, 0, 3);
+    itoa(strbuf, ev_sum, 0, 3);
     tbox_flush(1, 0);
     tbox_tilemap_draw(1);
     tbox_print_string(1, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
@@ -411,19 +411,19 @@ void fp_menu_stat_load(pokemon *target) {
             (int) get_pokemons_attribute(opponent_pokemon, (u8) (ATTRIBUTE_TOTAL_HP + stat), NULL);
 
     //print availble
-    value_to_str(strbuf, (u32) fp_free, 0, 3);
+    itoa(strbuf, (u32) fp_free, 0, 3);
     tbox_flush(10, 0);
     tbox_tilemap_draw(10);
     tbox_print_string(10, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
 
     //print used
-    value_to_str(strbuf, (u32) fp_applied, 0, 3);
+    itoa(strbuf, (u32) fp_applied, 0, 3);
     tbox_flush(12, 0);
     tbox_tilemap_draw(12);
     tbox_print_string(12, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
 
     //print bonus
-    value_to_str(strbuf, (u32) stat_bonus, 0, 3);
+    itoa(strbuf, (u32) stat_bonus, 0, 3);
     tbox_flush(11, 0);
     tbox_tilemap_draw(11);
     tbox_print_string(11, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);

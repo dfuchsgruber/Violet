@@ -1,7 +1,7 @@
 .array trainer_class_names GER 13
 		#0x0
-	=\__pk\__mn-trainer
-	=\__pk\__mn-trainer
+	=\__pk\__mn-Trainer
+	=\__pk\__mn-Trainer
 	=Polizist
 	=Revolution\$aer
 	#0x4
@@ -11,7 +11,7 @@
 	=Planscher
 	#0x8
 	=Planscher
-	=Ass-trainer
+	=Ass-Trainer
 	=Hexe
 	=Lady
 	#0xc
@@ -53,11 +53,11 @@
 	=Zwil.
 	=Matrose
 	=Snowboarder
-	=\__pk\__mn-sammler
+	=\__pk\__mn-Sammler
 	#0x2c
-	=\__pk\__mn-trainer
-	=Pkmn-z\$uechter
-	=Pkmn-ranger
+	=\__pk\__mn-Trainer
+	=Pkmn-Z\$uechter
+	=Pkmn-Ranger
 	=Magma Boss
 	#0x30
 	=Team Magma
@@ -107,7 +107,7 @@
 	#0x54
 	=Arenaleiter
 	=Team Violet
-	=Ass-trainer
+	=Ass-Trainer
 	=Top Vier
 	#0x58
 	=Gentleman
@@ -126,8 +126,8 @@
 	=M\$uehlenm\$aedel
 	#0x64
 	=Planscher
-	=\__pk\__mn-z\$uechter
-	=\__pk\__mn-ranger
+	=\__pk\__mn-Z\$uechter
+	=\__pk\__mn-Ranger
 	=Aromalady
 	#0x68
 	=Ruinenmaniac

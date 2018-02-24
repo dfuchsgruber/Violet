@@ -192,6 +192,7 @@ u8 pokemon_altitude[POKEMON_CNT];
 u32 pokemon_enemy_y[POKEMON_CNT];
 u8 pokemon_item_animations[POKEMON_CNT][5];
 u32 pokemon_tutor_compatibility[POKEMON_CNT];
+u16 icon_pals[3][16];
 
 pokemon_evolution pokemon_evolutions[POKEMON_CNT][5];
 

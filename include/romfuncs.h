@@ -30,7 +30,7 @@ u32* bg_get_tilemap(u8 bgid);
 u32 get_pokemons_attribute(void*pokemon_offset, int requested_attribute, void*freespace);
 u32 set_pokemons_attribute(void*pokemon_offset, u16 requested_attribute, void*values);
 u8 charlen_of_hex_value_dec_format(u32 value);
-u8* value_to_str(u8*dest, u32 value, u8 mode, u8 charlength);
+u8* itoa(u8*dest, u32 value, u8 mode, u8 charlength);
 void memcpy(void*, const void*, size_t);
 void memset(void*, int, size_t);
 void recalculate_stats(void*pokemon_offset);
@@ -74,7 +74,7 @@ bool checkflag(u16 flag);
 void battle_printmsg(u8* str, u16 duration);
 void init_attack();
 void bsc_executer();
-u8* concatenate_strings(u8* first, u8* second); //returns the offset of the 0xFF bytes of the two strings
+u8* strcat(u8* first, u8* second); //returns the offset of the 0xFF bytes of the two strings
 u8* strcpy(u8* d1, u8* s2);
 bool is_double_battle();
 //void load_and_alloc_obj_vram_lz77 (graphic*g);	defined in oams.h
@@ -225,5 +225,7 @@ void pokemon_query_string(u8 mode, u8 *target_buf, u16 species, u8 gender,
  * Std. closure function for string queries. Uses map reload.
  */
 void pokemon_query_string_std_closure();
+
+void volume_set(void *a, u16 b, u16 volume);
 
 #endif

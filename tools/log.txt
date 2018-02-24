@@ -1,0 +1,2860 @@
+Bisasam – PokéWiki
+document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );
+(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Bisasam","wgTitle":"Bisasam","wgCurRevisionId":1624214,"wgRevisionId":1624214,"wgArticleId":1392,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pokémon der Woche","PokéWiki:Lesenswerter Artikel","Pokémon","Bisasam","Pflanzen-Pokémon","Gift-Pokémon","Grün gefärbte Pokémon","Monster-Gruppen-Pokémon","Pflanze-Gruppen-Pokémon","Zweigeschlechtliche Pokémon","Entwicklung durch Level"],"wgBreakFrames":false,"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"Bisasam","wgRelevantArticleId":1392,"wgRequestId":"648edefab7dd36bf5939ceb0","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"preview":true,"publish":false},"wgSmjInlineMath":[["[math]","[/math]"]],"wgSmjScripts":["//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML","//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/extensions/TeX/mhchem.js"],"wgSmjSize":110});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.page.gallery.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.pokewiki.styles":"ready"});mw.loader.implement("user.options@18yzhtg",function($,jQuery,require,module){mw.user.options.set({"variant":"de"});});mw.loader.implement("user.tokens@1270ipo",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","ext.mp4handler","ext.mp3handler","skins.pokewiki.js"]);});
+SDG.Publisher.setZone('rest');
+SDG.Publisher.activateSecureProtocol();
+Netzwerk
+Filb.dePokéWiki
+Meine Werkzeuge
+Benutzerkonto erstellenAnmelden
+Aktivieren
+Menü
+Menü
+Navigation
+HauptseitePokéWiki-PortalPokémonVideospieleAnimeSammelkartenspielMangaAktuelle News
+PokéWiki
+Letzte ÄnderungenZufälliger ArtikelAllg. DiskussionAusgezeichnete ArtikelProjekteWer ist online?MissionsbrettTo-do-Liste
+Hilfen
+HilfeAutorenportalRegelnFragenPokéWiki-ForumÜber PokéWiki
+Werkzeuge
+Links auf diese SeiteÄnderungen an verlinkten SeitenSpezialseitenDruckversionPermanenter LinkSeiten­informationen
+Namensräume
+Artikel
+Diskussion
+Varianten
+Ansichten
+Lesen
+Quelltext anzeigen
+Versionsgeschichte
+Mehr
+Suche
+Dieses Pokémon war Pokémon der Woche (KW29/2009 sowie KW47/2015).
+Dieser Artikel ist ein lesenswerter Artikel
+Bisasam
+Aus PokéWiki
+Wechseln zu:					Navigation, 					Suche
+←  Kopplosio
+Pokémon-Liste • Anime-Auftritte • Sammelkarten
+Bisaknosp →
+Bisasam
+Hauptartwork des Pokémon
+Name in verschiedenen Sprachen
+Deutsch
+Bisasam
+Japanisch
+フシギダネ (Fushigidane)
+Englisch
+Bulbasaur
+Französisch
+Bulbizarre
+Koreanisch
+이상해씨 (Isanghaessi)
+Chinesisch
+妙蛙種子 / 妙蛙种子 (Miàowāzhǒngzǐ)
+Allgemeine Informationen
+National-Dex
+#001
+Johto-Dex
+#226 (GSK)#231 (HGSS)
+Kalos-Dex
+#080 (Zentral)
+Typen
+Fähigkeiten
+Notdünger  Chlorophyll (VF)
+Fangen, Zucht, Training
+Fangrate
+45 (5.9% (Wenn ein normaler Pokéball bei kompletter Gesundheit geworfen wird))
+Start-Freundschaft
+70
+Geschlecht
+87,5% ♂ 12,5% ♀
+EP Lv. 100
+1.059.860
+Ei-Gruppen
+Monster, Pflanze
+Ei-Schritte
+5120
+Erscheinung
+Kategorie
+Samen
+Größe
+0,7 m
+Gewicht
+6,9 kg
+Farbe
+Grün
+Silhouette
+Fußabdruck
+Ruf
+i
+AR-Marke anzeigenausblenden
+Bisasam ist ein Pokémon mit den Typen  und  und existiert seit der ersten Spielgeneration. Es ist die erste Entwicklungsstufe von Bisaknosp und Bisaflor. Neben Glumanda und Schiggy ist Bisasam eines der Starter-Pokémon aus Kanto.
+Als Starter-Pokémon ist es in Pokémon Rot, Blau, Feuerrot und Blattgrün erhältlich und in Pokémon X und Y ist es eines der von Professor Platan erhältlichen Pokémon. Außerdem kann man es in Pokémon Mystery Dungeon: Team Blau und Rot, Erkundungsteam Zeit, Dunkelheit und Himmel sowie in Pokémon Super Mystery Dungeon als spielbaren Charakter oder als Partner erhalten.
+Im Anime und im Manga Pocket Monsters: Dengeki Pikachu nimmt es als Ashs Bisasam eine wichtigere Rolle ein. Weitere größere Auftritte besitzt es als Maikes Bisasam im Anime und als Rots Bisasam namens Bisa im „Pocket Monsters SPECIAL“-Manga.
+Inhaltsverzeichnis
+1 Spezies
+1.1 Aussehen und Körperbau
+1.2 Attacken und Fähigkeiten
+1.3 Verhalten und Lebensraum
+1.4 Entwicklung
+1.5 Herkunft und Namensbedeutung
+2 In den Spielen
+2.1 Auftritte
+2.1.1 Fundorte
+2.1.1.1 Hauptspiele
+2.1.1.2 Spin-offs
+2.1.2 Trainer
+2.1.2.1 Berühmte Trainer
+2.1.2.2 Weitere Trainer
+2.2 Attacken
+2.2.1 Durch Levelaufstieg
+2.2.2 Durch TM/VM
+2.2.3 Vererbbarkeit
+2.2.4 Durch Attacken-Lehrer
+2.2.5 Besondere Attacken
+2.2.6 Besonderheiten
+2.3 Statuswerte
+2.4 Typ-Schwächen
+2.5 Getragene Items
+2.6 Pokédex-Einträge
+2.7 Pokéathlon-Leistung
+2.8 Spin-off-Daten
+2.9 Strategie
+3 Im Anime
+3.1 Ashs Bisasam
+3.2 Maikes Bisasam
+3.3 Weitere Auftritte
+3.4 Attacken
+4 Im Manga
+4.1 In Pocket Monsters SPECIAL
+4.2 In Pocket Monsters: Dengeki Pikachu
+4.3 In Magical Pokémon Journey
+4.4 In Pokémon Pocket Monsters
+5 Im Sammelkartenspiel
+6 Bilder
+6.1 Sprites und 3D-Modelle
+6.2 Artworks
+7 Trivia
+Spezies
+Aussehen und Körperbau
+Bisasam benutzt Egelsamen
+Bisasam ist ein kleines, vierbeiniges und reptilienähnliches Pokémon, das grün-blau, dunkelgrün und grün erscheint. Der Samen ist dabei grüner Farbe. Sein Körper färbt sich grün-blau. Zusätzlich sind auf seiner Haut einzelne, dunkelgrüne Flecken zu erkennen. Das Pflanze-Gift-Pokémon besitzt einen breiten Kopf, der von zwei abgerundeten, dreieckigen Ohren gekrönt wird. Die großen Augen bestehen aus weißer Lederhaut und rot-weißen Pupillen. Die beiden kleinen Nasenlöcher befinden sich direkt über dem sehr breiten Maul. Auf seinem Rücken trägt Bisasam von Geburt an einen zwiebelähnlichen Samen. Die Knolle enthält nährstoffreiche Samen, wird aber auch selbst als Samen bezeichnet. Ferner steht es auf vier kurzen, kräftigen Beinen, die an den kleinen Füßen mit jeweils drei kurzen Krallen bewaffnet sind.
+In der schillernden Form erscheint Bisasam komplett grünlich.
+Attacken und Fähigkeiten
+Bisasam beim Einsatz von Rankenhieb
+Bisasams Knolle ist der Ausgangspunkt für zahlreiche Fähigkeiten. Sie ermöglicht es dem Pokémon, Sonnenlicht zu absorbieren und dort zu speichern. Diese Energie und die in der Knolle enthaltenen Samen kann Bisasam nutzen, um tagelang ohne Nahrung auszukommen oder um sein Wachstum zu beschleunigen, wobei die Knolle gemeinsam mit dem Pokémon wächst. Passend dazu kann Bisasam Attacken wie Solarstrahl, Synthese und Wachstum erlernen.
+Da Bisasam seine Knolle kurzzeitig an der Spitze öffnen kann, kann es die in der Knolle enthaltenen Samen auch offensiv nutzen, indem es den Gegner mit Samen bombardiert oder auf den Gegner einen Egelsamen schießt, der ihn bepflanzt und ihm Energie absaugt. Ebenso kann es durch die Knolle Puder freisetzen, wie es beim Einsatz von Giftpuder und Schlafpuder zeigt. Zu guter Letzt kann Bisasam auch Ranken seitlich oder oben aus der Knolle heraus entfesseln, von denen es nicht nur beim Einsatz einer der für es charakteristischsten Attacken, Rankenhieb, Gebrauch macht, sondern die es auch generell zum Greifen und Fangen von Objekten verwenden kann.
+Wie alle Pflanzen-Starter-Pokémon ist es mit genügend Zuneigung dazu in der Lage, von einem Attacken-Lehrer die Attacke Pflanzensäulen zu erlernen. Pflanzensäulen richtet im Kampf nicht nur größeren Schaden an, sondern gehört auch zu den sogenannten Kombinationsattacken. Falls sie mit Feuersäulen kombiniert wird, entsteht ein Flammenfeld, welches dem Gegner in jedem Zug Schaden zufügt. In Kombination mit Wassersäulen richtet Pflanzensäulen mehr Schaden an und es entsteht ein Moor, welches die Initiative des Gegners senkt. Damit diese Kombinationsattacken funktionieren, muss jedoch zuerst Pflanzensäulen und im Anschluss die jeweils andere Attacke ausgeführt werden.
+Bisasams Fähigkeit ist der Notdünger, welcher die Standardfähigkeit aller Starter-Pokémon des Typs Pflanze darstellt. Besitzt ein Pokémon mit Notdünger nur noch 1/3 oder weniger seiner maximalen KP, erhöht sich die Stärke von Pflanzen-Attacken um 50 Prozent. Werden KP regeneriert, normalisiert sich die Stärke wieder. Seine Versteckte Fähigkeit ist Chlorophyll, das bei Sonne seine Initiative verdoppelt und seine Verbundenheit, aber auch Abhängigkeit zur Sonne symbolisiert.
+Verhalten und Lebensraum
+Bisasam weist gemeinsam mit seiner Evolutionslinie ein sehr schmales Verbreitungsspektrum auf und ist lediglich in Kanto und in Kalos heimisch. Aber auch dort sind sie in freier Wildbahn äußerst selten anzutreffen und werden in diesen Regionen viel eher als Starter-Pokémon genutzt. Aus diesem Grund befinden sich die meisten Bisasam und dessen Entwicklungen im Besitz von Pokémon-Trainern und werden fast ausschließlich zu diesem Zweck gezüchtet und aufgezogen. Aufgrund dieser frühen und zumeist lang anhaltenden Verbindung zu einem Trainer gelten Bisasam als treue und gut erzogene Pokémon. Die wenigen wilden Exemplare bevorzugen als natürlichen Lebensraum hohes Grasland und Wälder vorwiegend in der Kanto-Region.
+Dieses Pokémon trägt von Geburt an eine Knolle auf dem Rücken, mit der es in Symbiose lebt und die mit ihm keimt und wächst. Die Knolle enthält Nährstoffe, die sie zum Teil durch Photosynthese selbst erzeugt. Deshalb halten sie sich gerne im Sonnenlicht auf; beispielsweise um bei einem Nickerchen Kraft zu tanken. Hält es sich für längere Zeit in der Sonne auf, wächst es auch schneller. Außerdem befinden sich in dieser Knolle zusätzlich auch noch kleinere Samen. Wenn es noch klein ist, frisst es diese Samen, um durch deren Nährstoffe rasch zu wachsen. Nach der Geburt nimmt es besipielsweise für eine Weile ausschließlich Nährstoffe über die Knolle auf seinem Rücken auf, bevor es überhaupt anfängt, richtig zu fressen. Es gibt einige wissenschaftliche Theorien, die besagen, dass der Samen auf Bisasams Rücken einst deutlich leichter war und es deshalb auf zwei Beinen laufen konnte. Bestätigt werden konnte dies jedoch noch nicht. Es ist jedoch bekannt, dass sich seine Weiterentwicklung Bisaknosp zeitweise auf seine Hinterbeine stellen kann.
+In der Kanto-Region findet einmal jährlich ein besonderes Wachstumsritual statt, an dem Bisaflor und seine Vorentwicklungen beteiligt sind. Bei diesem wird Bisaflors Fähigkeit, die Vegetation zu manipulieren, besonders deutlich. Bisasam, deren Entwicklung kurz bevor steht, spüren dies instinktiv und machen sich auf den Weg zu einem Ort, der als mysteriöser Garten bekannt ist. Bei diesem handelt es sich um eine Lichtung in einem dichten Waldstück mitten in der Kanto-Region mit einem großen, uralten Baum im Zentrum. Im Wurzelwerk dieses Baumes lebt ein uraltes Bisaflor. Je näher die Bisasam diesem Ort kommen, desto intensiver beginnt ihre Knolle zu leuchten. Haben sich die Bisasam nachts auf der Lichtung versammelt, nutzt das Bisaflor seine Fähigkeit und lässt die umliegende Vegetation so sprießen, dass die Lichtung vollkommen versiegelt ist. Aus diesem Grund konnte bisher auch noch kein Mensch diesem Wachstumsritual beiwohnen. Dieses Ritual wird dann von besagtem Bisaflor initiiert und findet in den frühen Morgenstunden statt. Mit dem ersten Licht des neuen Tages öffnen sich dann die Knollen der Bisasam und alle entwicklen sich kollektiv zu Bisaknosp weiter. Der uralte Baum im Zentrum beginnt dabei ebenfalls zu blühen. Nach dieser Entwicklung öffnet Bisaflor wieder alle Zugänge zum Garten und die Bisaknosp verlassen das Waldstück wieder.
+Entwicklung
+Bisasam ist ein Basis-Pokémon und die Vorentwicklung von Bisaknosp, welches sich wiederum zu Bisaflor entwickeln kann. Weiterhin kann Bisaflor seit der sechsten Generation eine Mega-Entwicklung vollführen. Die drei Pokémon repräsentieren verschiedene Lebensstadien einer Pflanze: Bei der Entwicklung zu Bisaknosp wird aus Bisasams Knolle eine pinkfarbene Knospe, die von Blättern umgeben ist, und nach dem nächsten Entwicklungsschritt ist eine Blume entstanden, die durch einen Stamm mit dem Pokémon verbunden ist.
+In den Spielen werden die Entwicklungen durch das Erreichen der Level 16 bzw. 32 ausgelöst. In der Anime-Episode Der Mysteriöse Garten wird ein versteckter Garten geschildert, in dem sich jährlich Bisasam treffen, um sich bei einer von einem Bisaflor gehaltenen Zeremonie zu entwickeln. Dabei lässt sich beobachten, dass Bisasams Knolle hellblau leuchtet, wenn es bereit für die Entwicklung ist.
+Basis
+Bisasam
+Level 16
+Stufe 1
+Bisaknosp
+Level 32
+Stufe 2
+Bisaflor
+Mega-Entwicklungmit  Bisaflornit
+Mega-Stufe
+Mega-Bisaflor
+Herkunft und Namensbedeutung
+Bisasams Körperbau könnte auf einer Mischung aus einer Kröte und, aufgrund der Haltung und der Eckzähne, auf einem säugetierähnlichen Reptil der Teilordnung der Dicynodontia basieren. Falls jene auch über Ohrmuscheln verfügt haben sollten, würde dies wiederum für diese Herkunft sprechen. Der Samen auf seinem Rücken beruht wahrscheinlich auf einer Pflanzenzwiebel.
+Seine Namen in den verschiedenen Sprachen spielen mit Wörtern wie Samen, Pflanzenzwiebel und Saurier auf seinen Körperbau an und betiteln das Pokémon als bizarr oder mysteriös. Das „Bi“ in seinem deutschen Namen könnte allerdings auch als Vorsilbe für Zwei fungieren und eine Anspielung auf seine Symbiose zwischen Reptil und Pflanze sein. Des Weiteren bilden die japanischen Namen von Bisasam, Bisaknosp und Bisaflor ein Wortspiel: Bisasams Name fragt 不思議だねFushigi da ne (Ein Mysterium, nicht wahr?). Der Name von Bisaknosp antwortet 不思議そう Fushigi sou (Ja, ein Mysterium) und Bisaflors Name erwidert 不思議ばな Fushigi ba na (Falls es ein Mysterium ist).
+Es wurde von Ken Sugimori entworfen.
+Sprache
+Name
+Mögliche Namensherkunft
+Deutsch
+Bisasam
+bi (Vorsilbe für Zwei; Anspielung auf seine Ambivalenz zwischen Tier und Pflanze) + σαύρα saura (gr. Echse) + Samen
+Englisch
+Bulbasaur
+bulb (engl. Zwiebel) + σαύρα saura (gr. Echse)
+Japanisch
+フシギダネ Fushigidane
+不思議 fushigi (jap. Mysterium) + 種 tane (jap. Samen)
+Französisch
+Bulbizarre
+bulbe (frz. Zwiebel) + bizarre (frz. merkwürdig, bizarr)
+Koreanisch
+이상해씨 Isanghaessi
+이상해 isanghae (kor. komisch) + 씨 ssi (kor. Kern, Samen)
+Chinesisch
+妙蛙種子 (妙蛙种子) Miàowāzhǒngzǐ
+妙 miào (chin. wunderbar, mysteriös) + 蛙 wā (chin. Frosch) + 種子 zhǒngzi (chin. Samen)
+In den Spielen
+Auftritte
+In den Spielen ist Bisasam vor allem bekannt für seine Rolle als Starter-Pokémon, die es in den Spielen Pokémon Rot, Blau, Feuerrot und Blattgrün innehat. Zu Beginn dieser Spiele kann sich der Protagonist bei Professor Eich in Alabastia eines von drei Starter-Pokémon aussuchen, zu denen neben Bisasam auch Glumanda und Schiggy gehören. Wählt der Protagonist Schiggy, wird der Rivale Blau Bisasam als Starter-Pokémon wählen. In diesem Fall kämpft Blau dreimal mit Bisasam gegen den Protagonisten: In Professor Eichs Labor, auf Route 22 und in Azuria City.
+Auch in Pokémon HeartGold und SoulSilver wird der Spieler von Professor Eich vor die Wahl zwischen Bisasam, Glumanda und Schiggy gestellt, allerdings erst am Ende des Spiels nach dem Sieg über Rot. Die einzigen weiteren Hauptspiele, in denen Bisasam nicht nur durch Tausch erhältlich ist, sind Pokémon X und Y. Hier kämpft Professor Platan bei der ersten Begegnung in Illumina City mit einem Bisasam und den anderen beiden Kanto-Startern gegen den Protagonisten, welcher nach dem Kampf eines dieser Pokémon wählen darf. In anderen Spielen ist Bisasam vorrangig in Wäldern und im Grasland anzutreffen.
+In Pokémon Mystery Dungeon: Team Blau und Team Rot kann Bisasam als spielbarer Charakter erhalten werden. Hierzu muss der zu Beginn des Spiels durchgeführte Fragebogen so beantwortet werden, dass abhängig vom angegebenen Geschlecht dem Spieler die Charaktereigenschaft gutmütig (männlich) bzw. ausgeglichen (weiblich) zugeschrieben wird. Falls der Spieler ein Pokémon steuert, das kein Pflanzen-Pokémon ist, so kann er sich Bisasam als Partner-Pokémon wünschen.
+Ähnliches gilt für Pokémon Mystery Dungeon: Erkundungsteam Zeit, Dunkelheit und Himmel: Auch hier kann das Spiel mit Bisasam als Protagonist bestritten werden, falls die Beantwortung des Fragebogens dies ergibt. Hier lauten die zu Bisasam passenden Charaktereigenschaften einsam (männlich) und gutmütig (weiblich). Ebenso wie im Vorgänger ist Bisasam als Partner-Pokémon auswählbar, falls der Protagonist nicht bereits den Typ Pflanze besitzt.
+In Pokémon Super Mystery Dungeon ist das Ergebnis des Fragebogens nicht mehr bindend, daher kann Bisasam immer als Protagonist oder, wenn der Protagonist kein Pflanzen-Pokémon ist, als Partner gewählt werden.
+Fundorte
+Hauptspiele
+Spiel
+Fundort
+I
+RB
+Starter-Pokémon
+G
+Geschenk (Azuria City)
+II
+GSK
+Tausch
+III
+RUSASM
+Tausch
+FRBG
+Starter-Pokémon
+IV
+DPPT
+Tausch
+HGSS
+Von Professor Eich nach dem Sieg über Rot
+PdF
+Im Gras
+V
+SWS2W2
+Poképorter
+VI
+XY
+Von Professor Platan in Illumina City
+ΩRαS
+Tausch
+VII
+SM
+Tausch
+USUM
+Route 2 (Insel-Scanner)
+Spin-offs
+Spiel
+Fundort
+I
+SNP
+Fluss
+PI
+Alabastia (roter Tisch), Vertania City (blauer Tisch)
+III
+COLXD
+Tausch
+PMDPMD
+Starter, erster Partner, Freudenturm E1-E5
+R
+Fliederwald (Nach Spielende)
+L
+Phoboszug, Uferloser Level 16, Link Kampf
+IV
+PMD2PMD2PMD2
+Erster Partner, Verwirrwald U1-13, Geheimnisdschungel U1-29
+RBL
+Die Stillhaine
+R3
+Isla Dolcevi, Kap Dorn
+PP
+Grünzone
+V
+SPR
+Immergrünes Tal (4-2) (Waldbereich)
+LPTA
+F-Pfad, Minus-Weg, Feststell-Museum
+VI
+LB
+Schwert-und-Schild-Weg S01
+SH
+Perlhafen, Indigosalon; Zwinkernd: Eventstufe
+RBLW
+Urwald der Genesung (Eingang, Zentrum, Hinterer Bereich)
+PIC
+Rätsel 14-08
+Trainer
+Berühmte Trainer
+Folgende berühmte Trainer besitzen dieses Pokémon bzw. haben oder hatten dieses Pokémon in ihrem Team:
+Trainer
+Trainerrang
+Spiele
+Level
+Kanto
+Blau
+Rivale
+RBFRBG
+5 (In Alabastia – Bei Schiggy als eigener Starter) / 8 (Auf der Route 22 – Bei Schiggy als eigener Starter) / 17 (In Azuria City – Bei Schiggy als eigener Starter)
+Kalos
+Professor Platan
+Professor
+XY
+10
+Weitere Trainer
+Spiel(e)
+Trainer
+Trainer-Anzahl
+RBGFRBG
+Aromalady Erika (nur in FRBG) • Picknicker Martha und Tina • Schönheit Tia
+3 (In Pokémon Rot, Blau und Gelb)/4 (In Pokémon Feuerrot und Blattgrün)
+GSKHGSS
+Ass-Trainer Lars und Maja • Göre Svantje • Picknicker Gudrun • Pokéfan Ernst
+5
+Attacken
+Bitte die gewünschte Generation anklicken
+1. Generation‍
+2. Generation‍
+3. Generation‍
+4. Generation‍
+5. Generation‍
+6. Generation‍
+7. Generation
+alle Generationen
+Durch LevelaufstiegFolgende Attacken kann Bisasam durch Levelaufstieg erlernen:
+1. Generation
+✽✽
+Lv.
+Attacke
+Typ
+Stärke
+Gen.
+AP
+1
+Tackle
+35
+95%
+35
+1
+Heuler
+—
+100%
+40
+7
+Egelsamen
+—
+90%
+10
+13
+Rankenhieb
+35
+100%
+10
+20
+Giftpuder
+—
+75%
+35
+27
+Rasierblatt
+55
+95%
+25
+34
+Wachstum
+—
+—
+40
+41
+Schlafpuder
+—
+75%
+15
+48
+Solarstrahl
+120
+100%
+10
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+2. Generation
+✽✽
+Lv.
+Attacke
+Typ
+Stärke
+Gen.
+AP
+1
+Tackle
+35
+95%
+35
+4
+Heuler
+—
+100%
+40
+7
+Egelsamen
+—
+90%
+10
+10
+Rankenhieb
+35
+100%
+10
+15
+Schlafpuder
+—
+75%
+15
+15
+Giftpuder
+—
+75%
+35
+20
+Rasierblatt
+55
+95%
+25
+25
+Lockduft
+—
+100%
+20
+32
+Wachstum
+—
+—
+40
+39
+Synthese
+—
+—
+5
+46
+Solarstrahl
+120
+100%
+10
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+3. Generation
+✽✽
+Lv.
+Attacke
+Typ
+Stärke
+Gen.
+AP
+1
+Tackle
+35
+95%
+35
+4
+Heuler
+—
+100%
+40
+7
+Egelsamen
+—
+90%
+10
+10
+Rankenhieb
+35
+100%
+10
+15
+Schlafpuder
+—
+75%
+15
+15
+Giftpuder
+—
+75%
+35
+20
+Rasierblatt
+55
+95%
+25
+25
+Lockduft
+—
+100%
+20
+32
+Wachstum
+—
+—
+40
+39
+Synthese
+—
+—
+5
+46
+Solarstrahl
+120
+100%
+10
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+4. Generation
+✽✽
+Lv.
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+1
+Tackle
+35
+95%
+35
+3
+Heuler
+—
+100%
+40
+7
+Egelsamen
+—
+90%
+10
+9
+Rankenhieb
+35
+100%
+15
+13
+Schlafpuder
+—
+75%
+15
+13
+Giftpuder
+—
+75%
+35
+15
+Bodycheck
+90
+85%
+20
+19
+Rasierblatt
+55
+95%
+25
+21
+Lockduft
+—
+100%
+20
+25
+Wachstum
+—
+—
+40
+27
+Risikotackle
+120
+100%
+15
+31
+Sorgensamen
+—
+100%
+10
+33
+Synthese
+—
+—
+5
+37
+Samenbomben
+80
+100%
+15
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+5. Generation
+✽✽
+Lv.
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+1
+Tackle
+50
+100%
+35
+3
+Heuler
+—
+100%
+40
+7
+Egelsamen
+—
+90%
+10
+9
+Rankenhieb
+35
+100%
+15
+13
+Schlafpuder
+—
+75%
+15
+13
+Giftpuder
+—
+75%
+35
+15
+Bodycheck
+90
+85%
+20
+19
+Rasierblatt
+55
+95%
+25
+21
+Lockduft
+—
+100%
+20
+25
+Wachstum
+—
+—
+40
+27
+Risikotackle
+120
+100%
+15
+31
+Sorgensamen
+—
+100%
+10
+33
+Synthese
+—
+—
+5
+37
+Samenbomben
+80
+100%
+15
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+6. Generation
+✽✽
+Lv.
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+1
+Tackle
+50
+100%
+35
+3
+Heuler
+—
+100%
+40
+7
+Egelsamen
+—
+90%
+10
+9
+Rankenhieb
+45
+100%
+25
+13
+Giftpuder
+—
+75%
+35
+13
+Schlafpuder
+—
+75%
+15
+15
+Bodycheck
+90
+85%
+20
+19
+Rasierblatt
+55
+95%
+25
+21
+Lockduft
+—
+100%
+20
+25
+Wachstum
+—
+—
+20
+27
+Risikotackle
+120
+100%
+15
+31
+Sorgensamen
+—
+100%
+10
+33
+Synthese
+—
+—
+5
+37
+Samenbomben
+80
+100%
+15
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+7. Generation
+✽✽
+Lv.
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+1
+Tackle
+40
+100%
+35
+3
+Heuler
+—
+100%
+40
+7
+Rankenhieb SM
+45
+100%
+25
+7
+Egelsamen USUM
+—
+90%
+10
+9
+Rankenhieb
+45
+100%
+25
+13
+Giftpuder
+—
+75%
+35
+13
+Schlafpuder
+—
+75%
+15
+15
+Bodycheck
+90
+85%
+20
+19
+Rasierblatt
+55
+95%
+25
+21
+Lockduft
+—
+100%
+20
+25
+Wachstum
+—
+—
+20
+27
+Risikotackle
+120
+100%
+15
+31
+Sorgensamen
+—
+100%
+10
+33
+Synthese
+—
+—
+5
+37
+Samenbomben
+80
+100%
+15
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+Durch TM/VM
+Folgende Attacken kann Bisasam durch TMs oder VMs erlernen:
+1. Generation
+✽✽
+TM/VM
+Attacke
+Typ
+Stärke
+Gen.
+AP
+TM03
+Schwerttanz
+—
+—
+30
+TM06
+Toxin
+—
+85%
+10
+TM08
+Bodyslam
+85
+100%
+15
+TM09
+Bodycheck
+90
+85%
+20
+TM10
+Risikotackle
+100
+100%
+15
+TM20
+Raserei
+20
+100%
+20
+TM21
+Megasauger
+40
+100%
+10
+TM22
+Solarstrahl
+120
+100%
+10
+TM31
+Mimikry
+—
+—
+10
+TM32
+Doppelteam
+—
+—
+15
+TM33
+Reflektor
+—
+—
+20
+TM34
+Geduld
+variiert
+—
+10
+TM44
+Erholung
+—
+—
+10
+TM50
+Delegator
+—
+—
+10
+VM01
+Zerschneider
+50
+95%
+30
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+2. Generation
+✽✽
+TM/VM
+Attacke
+Typ
+Stärke
+Gen.
+AP
+TM02
+Kopfnuss
+70
+100%
+15
+TM03
+Fluch
+—
+—
+10
+TM06
+Toxin
+—
+85%
+10
+TM10
+Kraftreserve
+variiert
+100%
+15
+TM11
+Sonnentag
+—
+—
+5
+TM12
+Lockduft
+—
+100%
+20
+TM13
+Schnarcher
+40
+100%
+15
+TM17
+Schutzschild
+—
+—
+10
+TM19
+Gigasauger
+60
+100%
+5
+TM20
+Ausdauer
+—
+—
+10
+TM21
+Frustration
+variiert
+100%
+20
+TM22
+Solarstrahl
+120
+100%
+10
+TM27
+Rückkehr
+variiert
+100%
+20
+TM31
+Lehmschelle
+20
+100%
+10
+TM32
+Doppelteam
+—
+—
+15
+TM34
+Angeberei
+—
+90%
+15
+TM35
+Schlafrede
+—
+—
+10
+TM40
+Einigler
+—
+—
+40
+TM44
+Erholung
+—
+—
+10
+TM45
+Anziehung
+—
+100%
+15
+TM49
+Zornklinge
+10
+95%
+20
+VM01
+Zerschneider
+50
+95%
+30
+VM05
+Blitz
+—
+70%
+20
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+3. Generation
+✽✽
+TM/VM
+Attacke
+Typ
+Stärke
+Gen.
+AP
+TM06
+Toxin
+—
+85%
+10
+TM09
+Kugelsaat
+10
+100%
+30
+TM10
+Kraftreserve
+variiert
+100%
+15
+TM11
+Sonnentag
+—
+—
+5
+TM17
+Schutzschild
+—
+—
+10
+TM19
+Gigasauger
+60
+100%
+5
+TM21
+Frustration
+variiert
+100%
+20
+TM22
+Solarstrahl
+120
+100%
+10
+TM27
+Rückkehr
+variiert
+100%
+20
+TM32
+Doppelteam
+—
+—
+15
+TM36
+Matschbombe
+90
+100%
+10
+TM42
+Fassade
+70
+100%
+20
+TM43
+Geheimpower
+70
+100%
+20
+TM44
+Erholung
+—
+—
+10
+TM45
+Anziehung
+—
+100%
+15
+VM01
+Zerschneider
+50
+95%
+30
+VM04
+Stärke
+80
+100%
+15
+VM05
+Blitz
+—
+70%
+20
+VM06
+Zertrümmerer
+20
+100%
+15
+TM
+Drei-Streich PMD
+TM
+Vakuumhieb PMD
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+4. Generation
+✽✽
+TM/VM
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+TM06
+Toxin
+—
+85%
+10
+TM09
+Kugelsaat
+10
+100%
+30
+TM10
+Kraftreserve
+variiert
+100%
+15
+TM11
+Sonnentag
+—
+—
+5
+TM17
+Schutzschild
+—
+—
+10
+TM19
+Gigasauger
+60
+100%
+10
+TM21
+Frustration
+variiert
+100%
+20
+TM22
+Solarstrahl
+120
+100%
+10
+TM27
+Rückkehr
+variiert
+100%
+20
+TM32
+Doppelteam
+—
+—
+15
+TM36
+Matschbombe
+90
+100%
+10
+TM42
+Fassade
+70
+100%
+20
+TM43
+Geheimpower
+70
+100%
+20
+TM44
+Erholung
+—
+—
+10
+TM45
+Anziehung
+—
+100%
+15
+TM53
+Energieball
+80
+100%
+10
+TM58
+Ausdauer
+—
+—
+10
+TM70
+Blitz
+—
+100%
+20
+TM75
+Schwerttanz
+—
+—
+30
+TM78
+Liebreiz
+—
+100%
+20
+TM82
+Schlafrede
+—
+—
+10
+TM83
+Beerenkräfte
+variiert
+100%
+15
+TM86
+Strauchler
+variiert
+100%
+20
+TM87
+Angeberei
+—
+90%
+15
+TM90
+Delegator
+—
+—
+10
+VM01
+Zerschneider
+50
+95%
+30
+VM04
+Stärke
+80
+100%
+15
+VM06
+Zertrümmerer
+40
+100%
+15
+TM
+Drei-Streich PMD
+TM
+Vakuumhieb PMD
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+5. Generation
+✽✽
+TM/VM
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+TM06
+Toxin
+—
+90%
+10
+TM09
+Giftschock
+65
+100%
+10
+TM10
+Kraftreserve
+variiert
+100%
+15
+TM11
+Sonnentag
+—
+—
+5
+TM16
+Lichtschild
+—
+—
+30
+TM17
+Schutzschild
+—
+—
+10
+TM20
+Bodyguard
+—
+—
+25
+TM21
+Frustration
+variiert
+100%
+20
+TM22
+Solarstrahl
+120
+100%
+10
+TM27
+Rückkehr
+variiert
+100%
+20
+TM32
+Doppelteam
+—
+—
+15
+TM36
+Matschbombe
+90
+100%
+10
+TM42
+Fassade
+70
+100%
+20
+TM44
+Erholung
+—
+—
+10
+TM45
+Anziehung
+—
+100%
+15
+TM48
+Kanon
+60
+100%
+15
+TM49
+Widerhall
+40
+100%
+15
+TM53
+Energieball
+80
+100%
+10
+TM70
+Blitz
+—
+100%
+20
+TM75
+Schwerttanz
+—
+—
+30
+TM86
+Strauchler
+variiert
+100%
+20
+TM87
+Angeberei
+—
+90%
+15
+TM90
+Delegator
+—
+—
+10
+TM94
+Zertrümmerer
+40
+100%
+15
+VM01
+Zerschneider
+50
+95%
+30
+VM04
+Stärke
+80
+100%
+15
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+6. Generation
+✽✽
+TM/VM
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+TM06
+Toxin
+—
+90%
+10
+TM09
+Giftschock
+65
+100%
+10
+TM10
+Kraftreserve
+60
+100%
+15
+TM11
+Sonnentag
+—
+—
+5
+TM16
+Lichtschild
+—
+—
+30
+TM17
+Schutzschild
+—
+—
+10
+TM20
+Bodyguard
+—
+—
+25
+TM21
+Frustration
+variiert
+100%
+20
+TM22
+Solarstrahl
+120
+100%
+10
+TM27
+Rückkehr
+variiert
+100%
+20
+TM32
+Doppelteam
+—
+—
+15
+TM36
+Matschbombe
+90
+100%
+10
+TM42
+Fassade
+70
+100%
+20
+TM44
+Erholung
+—
+—
+10
+TM45
+Anziehung
+—
+100%
+15
+TM48
+Kanon
+60
+100%
+15
+TM49
+Widerhall
+40
+100%
+15
+TM53
+Energieball
+90
+100%
+10
+TM70
+Blitz
+—
+100%
+20
+TM75
+Schwerttanz
+—
+—
+20
+TM86
+Strauchler
+variiert
+100%
+20
+TM87
+Angeberei
+—
+90%
+15
+TM88
+Schlafrede
+—
+—
+10
+TM90
+Delegator
+—
+—
+10
+TM94
+Zertrümmerer XY
+40
+100%
+15
+TM94
+Geheimpower ΩRαS
+70
+100%
+20
+TM96
+Natur-Kraft
+—
+—
+20
+TM100
+Vertrauenssache
+—
+—
+20
+VM01
+Zerschneider
+50
+95%
+30
+VM04
+Stärke
+80
+100%
+15
+VM06
+Zertrümmerer ΩRαS
+40
+100%
+15
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+7. Generation
+✽✽
+TM/VM
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+TM01
+Kraftschub
+—
+—
+30
+TM06
+Toxin
+—
+90%
+10
+TM09
+Giftschock
+65
+100%
+10
+TM10
+Kraftreserve
+60
+100%
+15
+TM11
+Sonnentag
+—
+—
+5
+TM16
+Lichtschild
+—
+—
+30
+TM17
+Schutzschild
+—
+—
+10
+TM20
+Bodyguard
+—
+—
+25
+TM21
+Frustration
+variiert
+100%
+20
+TM22
+Solarstrahl
+120
+100%
+10
+TM27
+Rückkehr
+variiert
+100%
+20
+TM32
+Doppelteam
+—
+—
+15
+TM36
+Matschbombe
+90
+100%
+10
+TM42
+Fassade
+70
+100%
+20
+TM44
+Erholung
+—
+—
+10
+TM45
+Anziehung
+—
+100%
+15
+TM48
+Kanon
+60
+100%
+15
+TM49
+Widerhall
+40
+100%
+15
+TM53
+Energieball
+90
+100%
+10
+TM75
+Schwerttanz
+—
+—
+20
+TM86
+Strauchler
+variiert
+100%
+20
+TM87
+Angeberei
+—
+85%
+15
+TM88
+Schlafrede
+—
+—
+10
+TM90
+Delegator
+—
+—
+10
+TM96
+Natur-Kraft
+—
+—
+20
+TM100
+Vertrauenssache
+—
+—
+20
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+Vererbbarkeit
+Folgende Attacken kann Bisasam durch Zucht mit anderen Pokémon erlernen:
+Bisasam kann in der ersten Generation auf diese Art keine Attacken erlernen.
+2. Generation
+✽✽
+Väter anzeigen
+Väter ausblenden
+Attacke
+Typ
+Stärke
+Gen.
+AP
+Väter
+Blättertanz
+70
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla, Duflor, Giflor, BlubellaSonnflora
+Bodyguard
+—
+—
+25
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon*, Lahmus*, Laschoking*LaprasEndivie, Lorblatt, MeganieVoltilamm*, Waaty*, Ampharos*
+Klingensturm
+80
+75%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Karnimani*, Tyracroc*, Impergator*
+Lichtschild
+—
+—
+30
+Bisasam*, Bisaknosp*, Bisaflor*Paras*, Parasek*Endivie, Lorblatt, MeganieVoltilamm, Waaty, Ampharos
+Schädelwumme
+100
+100%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Schiggy, Schillok, TurtokNidoran♂°, Nidorino°, Nidoking°Paras°, Parasek°Flegmon°, Lahmus°Tragosso*°, Knogga*°Schlurp°Tangela°Lapras°Relaxo°
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+3. Generation
+✽✽
+Väter anzeigen
+Väter ausblenden
+Attacke
+Typ
+Stärke
+Gen.
+AP
+Väter
+Blättertanz
+70
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla, Duflor, Giflor, BlubellaSonnfloraRoselia
+Bodyguard
+—
+—
+25
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon*, Lahmus*, Laschoking*LaprasEndivie, Lorblatt, MeganieVoltilamm*, Waaty*, Ampharos*
+Charme
+—
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Relaxo*Knilz*, Kapilz*
+Fluch
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon, Lahmus, LaschokingOwei*, Kokowei*Schlurp*Rihorn*, Rizeros*Lapras*Relaxo*Sonnkern*, Sonnflora*Larvitar*, Pupitar*, Despotar*Hydropi*, Moorabbel*, Sumpex*
+Grasflöte
+—
+55%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Endivie*, Lorblatt*, Meganie*Sonnkern*, Sonnflora*RoseliaTuska*, Noktuska*
+Lichtschild
+—
+—
+30
+Bisasam*, Bisaknosp*, Bisaflor*Paras*, Parasek*Endivie, Lorblatt, MeganieVoltilamm, Waaty, Ampharos
+Schädelwumme
+100
+100%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Schiggy, Schillok, TurtokTragosso*, Knogga*
+Zauberblatt
+60
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*BlubellaRoseliaTropius
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+4. Generation
+✽✽
+Väter anzeigen
+Väter ausblenden
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+Väter
+Amnesie
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Nidoran♂*, Nidorino*, Nidoking*Flegmon, Lahmus, LaschokingSchlurp*, Schlurplek*Tangela*, Tangoloss*RelaxoHoppspross*, Hubelupf*, Papungha*Samurzel*, Blanas*, Tengulist*Chelast*, Chelcarain*, Chelterrar*
+Blättersturm
+140
+90%
+5
+Bisasam*, Bisaknosp*, Bisaflor*SarzeniaOwei*, KokoweiTangela*, Tangoloss*Endivie*, Lorblatt*, Meganie*BlubellaSonnfloraGeckarbor*, Reptain, GewaldroTengulistRoselia*, Roserade*TropiusChelast, Chelcarain, Chelterrar
+Blättertanz
+90
+100%
+20
+Bisasam*, Bisaknosp*, BisaflorMyrapla, Duflor, Giflor, BlubellaMeganieSonnfloraRoselia, RoseradeKinoso
+Blattgeißel HGSS
+120
+85%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Schlurp, SchlurplekTangela, TangolossVenuflibis
+Bodyguard
+—
+—
+25
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon*, Lahmus*, Laschoking*LaprasEndivie, Lorblatt, MeganieVoltilamm*, Waaty*, Ampharos*
+Charme
+—
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Relaxo*Knilz*, Kapilz*
+Fluch
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon, Lahmus, LaschokingOwei*, Kokowei*Schlurp*, Schlurplek*Rihorn*, Rizeros*, Rihornior*Lapras*Relaxo*Sonnkern*, Sonnflora*Larvitar*, Pupitar*, Despotar*Hydropi*, Moorabbel*, Sumpex*Stollunior*, Stollrak*,Stolloss*Tropius*Chelast, Chelcarain, ChelterrarKoknodon*, Rameidon*Schilterus*, Bollterus*
+Grasflöte
+—
+55%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Endivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*Kikugi*, Kinoso*Shnebedeck, Rexblisar
+Lichtschild
+—
+—
+30
+Bisasam*, Bisaknosp*, Bisaflor*Paras*, Parasek*Endivie, Lorblatt, MeganieVoltilamm, Waaty, Ampharos
+Natur-Kraft
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Owei*, Kokowei*Tangela*, Tangoloss*Endivie*, Lorblatt*, Meganie*Sonnkern*, Sonnflora*Loturzel, Lombrero, KappaloresSamurzel, Blanas, TengulistTropius*Kikugi*, Kinoso*
+Schädelwumme
+100
+100%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Schiggy, Schillok, TurtokTragosso*, Knogga*Rihorn*, Rizeros*, Rihornior*Shnebedeck*, Rexblisar*
+Schlammbad HGSS
+65
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Hydropi*, Moorabbel*, Sumpex*
+Verwurzler
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Knofensa*, Ultrigaria*, Sarzenia*Owei*, Kokowei*Tangela, TangolossEndivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraRoselia, RoseradeTuska, NoktuskaVenuflibisShnebedeck, Rexblisar
+Zauberblatt
+60
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*Endivie, Lorblatt, MeganieBlubellaGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*TropiusKikugi, KinosoVenuflibis*Shnebedeck*, Rexblisar*
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+5. Generation
+✽✽
+Väter anzeigen
+Väter ausblenden
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+Väter
+Amnesie
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Nidoran♂*, Nidorino*, Nidoking*Flegmon, Lahmus, LaschokingSchlurp*, Schlurplek*Tangela*, Tangoloss*RelaxoHoppspross*, Hubelupf*, Papungha*Samurzel*, Blanas*, Tengulist*Chelast*, Chelcarain*, Chelterrar*
+Ausdauer
+—
+—
+10
+Bisasam*°, Bisaknosp*°, Bisaflor*°Glumanda°, Glutexo°, Glurak°Schiggy°, Schillok°, Turtok°Nidoran♂*°, Nidorino*°, Nidoking*°Myrapla°, Duflor°, Giflor°, Blubella°Paras*°, Parasek*°Knofensa°, Ultrigaria°, Sarzenia°Flegmon°, Lahmus°, Laschoking°Owei°, Kokowei°Tragosso*°, Knogga*°Schlurp°, Schlurplek°Rihorn°, Rizeros°, Rihornior°Tangela°, Tangoloss°Lapras°Relaxo°Endivie°, Lorblatt°, Meganie°Karnimani°, Tyracroc°, Impergator°Voltilamm°, Waaty°, Ampharos°Hoppspross*°, Hubelupf*°, Papungha*°Sonnkern*°, Sonnflora*°Larvitar°, Pupitar°, Despotar°Geckarbor°, Reptain°, Gewaldro°Hydropi°, Moorabbel°, Sumpex°Loturzel°, Lombrero°, Tengulist°Samurzel°, Blanas°, Tengulist°Knilz°, Kapilz°Flurmel°, Krakeelo°, Krawumms°Stollunior°, Stollrak°, Stolloss°Roselia°, Roserade°Tuska°, Noktuska°Tropius°Chelast°, Chelcarain°, Chelterrar°Koknodon°, Rameidon°Schilterus, BollterusKikugi°, Kinoso°Kaumalat°, Knarksel°, Knakrack°Venuflibis°Shnebedeck°, Rexblisar°Tarnpignon*, Hutsassa*Milza*, Sharfax*, Maxax*
+Blättersturm
+140
+90%
+5
+Bisasam*, Bisaknosp*, Bisaflor*SarzeniaOwei*, KokoweiTangela*, Tangoloss*Endivie*, Lorblatt*, Meganie*BlubellaSonnfloraGeckarbor*, Reptain, GewaldroTengulistRoselia*, Roserade*TropiusChelast, Chelcarain, ChelterrarSerpifeu, Efoserp, Serpiroyal
+Blättertanz
+120
+100%
+10
+Bisasam*, Bisaknosp*, BisaflorMyrapla, Duflor, Giflor, BlubellaMeganieSonnfloraRoselia, RoseradeKinosoMaracamba
+Blattgeißel
+120
+85%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*Schlurp, SchlurplekTangela, TangolossVenuflibisTentantel
+Charme
+—
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Relaxo*Knilz*, Kapilz*Waumboll, Elfun
+Fluch
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon, Lahmus, LaschokingOwei*, Kokowei*Schlurp*, Schlurplek*Rihorn*, Rizeros*, Rihornior*Lapras*Relaxo*Sonnkern*, Sonnflora*Larvitar*, Pupitar*, Despotar*Hydropi*, Moorabbel*, Sumpex*Stollunior*, Stollrak*,Stolloss*Tropius*Chelast, Chelcarain, ChelterrarKoknodon*, Rameidon*Schilterus*, Bollterus*Kastadur, Tentantel
+Gigasauger
+75
+100%
+10
+Bisasam*°, Bisaknosp*°, Bisaflor*°Myrapla, Duflor, Giflor, BlubellaParas, ParasekKnofensa*°, Ultrigaria*°, Sarzenia*°Owei*°, Kokowei*°Tangela, Tangoloss S2W2Endivie°, Lorblatt°, Meganie°Hoppspross, Hubelupf, PapunghaSonnkern, SonnfloraGeckarbor, Reptain, GewaldroLoturzel*°, Lombrero*°, Kappalores*°Samurzel°, Blanas°, Tengulist°Knilz, KapilzRoselia, RoseradeTuska°, Noktuska°Tropius°Chelast, Chelcarain, ChelterrarKikugi°, Kinoso°Venuflibis*°Shnebedeck°, Rexblisar°Serpifeu, Efoserp, SerpiroyalWaumboll, ElfunMaracambaTarnpignon, Hutsassa
+Grasflöte
+—
+55%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Endivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*Kikugi*, Kinoso*Shnebedeck, RexblisarVenuflibis*Waumboll*, Elfun*Maracamba*
+Natur-Kraft
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Owei*, Kokowei*Tangela*, Tangoloss*Endivie*, Lorblatt*, Meganie*Sonnkern*, Sonnflora*Loturzel, Lombrero, KappaloresSamurzel, Blanas, TengulistTropius*Kikugi*, Kinoso*
+Schädelwumme
+100
+100%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Schiggy, Schillok, TurtokTragosso*, Knogga*Rihorn*, Rizeros*, Rihornior*Shnebedeck*, Rexblisar*
+Schlammbad
+65
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Hydropi*, Moorabbel*, Sumpex*
+Verwurzler
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Knofensa*, Ultrigaria*, Sarzenia*Owei*, Kokowei*Tangela, TangolossEndivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraRoselia, RoseradeTuska, NoktuskaVenuflibisShnebedeck, RexblisarMaracambaTarnpignon, HutsassaKastadur, Tentantel
+Zauberblatt
+60
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*Endivie, Lorblatt, MeganieBlubellaGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*TropiusKikugi, KinosoVenuflibis*Shnebedeck*, Rexblisar*Serpifeu*, Efoserp*, Serpiroyal*
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+6. Generation
+✽✽
+Eltern anzeigen
+Eltern ausblenden
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+Eltern
+Amnesie
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Nidoran♂*, Nidorino*, Nidoking*Flegmon, Lahmus, LaschokingSchlurp*, Schlurplek*Tangela*, Tangoloss*RelaxoHoppspross*, Hubelupf*, Papungha*Samurzel*, Blanas*, Tengulist*Chelast*, Chelcarain*, Chelterrar*
+Ausdauer
+—
+—
+10
+Bisasam*°, Bisaknosp*°, Bisaflor*°Glumanda°, Glutexo°, Glurak°Schiggy°, Schillok°, Turtok°Nidoran♂*°, Nidorino*°, Nidoking*°Myrapla°, Duflor°, Giflor°, Blubella°Paras*°, Parasek*°Knofensa°, Ultrigaria°, Sarzenia°Flegmon°, Lahmus°, Laschoking°Owei°, Kokowei°Tragosso*°, Knogga*°Schlurp°, Schlurplek°Rihorn°, Rizeros°, Rihornior°Tangela°, Tangoloss°Lapras°Relaxo°Endivie°, Lorblatt°, Meganie°Karnimani°, Tyracroc°, Impergator°Voltilamm°, Waaty°, Ampharos°Hoppspross*°, Hubelupf*°, Papungha*°Sonnkern*°, Sonnflora*°Larvitar°, Pupitar°, Despotar°Geckarbor°, Reptain°, Gewaldro°Hydropi°, Moorabbel°, Sumpex°Loturzel°, Lombrero°, Tengulist°Samurzel°, Blanas°, Tengulist°Knilz°, Kapilz°Flurmel°, Krakeelo°, Krawumms°Stollunior°, Stollrak°, Stolloss°Roselia°, Roserade°Tuska°, Noktuska°Tropius°Chelast°, Chelcarain°, Chelterrar°Koknodon°, Rameidon°Schilterus, BollterusKikugi°, Kinoso°Kaumalat°, Knarksel°, Knakrack°Venuflibis°Shnebedeck°, Rexblisar°Tarnpignon*, Hutsassa*Milza*, Sharfax*, Maxax*
+Blättersturm
+130
+90%
+5
+Bisasam*, Bisaknosp*, Bisaflor*SarzeniaOwei*, KokoweiTangela*, Tangoloss*Endivie*, Lorblatt*, Meganie*BlubellaSonnfloraGeckarbor*, Reptain, GewaldroTengulistRoselia*, Roserade*TropiusChelast, Chelcarain, ChelterrarSerpifeu, Efoserp, Serpiroyal
+Blättertanz
+120
+100%
+10
+Bisasam*, Bisaknosp*, BisaflorMyrapla, Duflor, Giflor, BlubellaMeganieSonnfloraRoselia, RoseradeKinosoMaracamba
+Blattgeißel
+120
+85%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*Schlurp, SchlurplekTangela, TangolossVenuflibisTentantel
+Charme
+—
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Relaxo*Knilz*, Kapilz*Waumboll, ElfunBalgoras, Monargoras
+Fluch
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon, Lahmus, LaschokingOwei*, Kokowei*Schlurp*, Schlurplek*Rihorn*, Rizeros*, Rihornior*Lapras*Relaxo*Sonnkern*, Sonnflora*Larvitar*, Pupitar*, Despotar*Hydropi*, Moorabbel*, Sumpex*Stollunior*, Stollrak*,Stolloss*Tropius*Chelast, Chelcarain, ChelterrarKoknodon*, Rameidon*Schilterus*, Bollterus*Kastadur, TentantelBalgoras*, Monargoras*Paragoni, TromborkArktip, Arktilas
+Gigasauger
+75
+100%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla, Duflor, Giflor, BlubellaParas, ParasekKnofensa*, Ultrigaria*, Sarzenia*Owei*, Kokowei*Tangela, TangolossEndivie, Lorblatt, MeganieHoppspross, Hubelupf, PapunghaSonnkern, SonnfloraGeckarbor, Reptain, GewaldroLoturzel, Lombrero, KappaloresSamurzel, Blanas, TengulistKnilz, KapilzRoselia, RoseradeTuska, NoktuskaTropiusChelast, Chelcarain, ChelterrarKikugi, KinosoVenuflibis*Shnebedeck, RexblisarSerpifeu, Efoserp, SerpiroyalWaumboll, ElfunMaracambaTarnpignon, HutsassaKastadur, Tentantel
+Grasfeld
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla, Duflor, Giflor, BlubellaOwei*, Kokowei*Tangela, TangolossEndivie*, Lorblatt*, Meganie*Hoppspross*, Hubelupf*, Papungha*Sonnkern*, Sonnflora*Geckarbor*, Reptain*, Gewaldro*Samurzel*, Blanas*, Tengulist*Chelast*, Chelcarain*, Chelterrar*RoseradeSerpifeu*, Efoserp*, Serpiroyal*Maracamba*
+Grasflöte
+—
+55%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Endivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*Kikugi*, Kinoso*Shnebedeck, RexblisarVenuflibis*Waumboll*, Elfun*Maracamba*
+Natur-Kraft
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Owei*, Kokowei*Tangela*, Tangoloss*Endivie*, Lorblatt*, Meganie*Sonnkern*, Sonnflora*Loturzel, Lombrero, KappaloresSamurzel, Blanas, TengulistTropius*Kikugi*, Kinoso*Amarino, Amagarga
+Schädelwumme
+130
+100%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Schiggy, Schillok, TurtokTragosso*, Knogga*Rihorn*, Rizeros*, Rihornior*Shnebedeck*, Rexblisar*, Arktilas
+Schlammbad
+65
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Hydropi*, Moorabbel*, Sumpex*
+Verwurzler
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Knofensa*, Ultrigaria*, Sarzenia*Owei*, Kokowei*Tangela, TangolossEndivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraRoselia, RoseradeTuska, NoktuskaVenuflibisShnebedeck, RexblisarMaracambaTarnpignon, HutsassaKastadur, TentantelParagoni, Trombork
+Zauberblatt
+60
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*Endivie, Lorblatt, MeganieBlubellaGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*TropiusKikugi, KinosoVenuflibis*Shnebedeck*, Rexblisar*Serpifeu*, Efoserp*, Serpiroyal*
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+7. Generation
+✽✽
+Eltern anzeigen
+Eltern ausblenden
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+Eltern
+Amnesie
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Nidoran♂*, Nidorino*, Nidoking*Flegmon, Lahmus, LaschokingSchlurp*, Schlurplek*Tangela*, Tangoloss*RelaxoHoppspross*, Hubelupf*, Papungha*Samurzel*, Blanas*, Tengulist*Chelast*, Chelcarain*, Chelterrar*Bubungus*, Lamellux*Curelei*
+Ausdauer
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Nidoran♂*, Nidorino*, Nidoking*Paras*, Parasek*Tragosso*, Knogga*, Alola-Knogga*Hoppspross*, Hubelupf*, Papungha*Sonnkern*, Sonnflora*Schilterus, BollterusTarnpignon*, Hutsassa*Milza*, Sharfax*, Maxax*Curelei*Tortunator
+Blattgeißel
+120
+85%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*Schlurp, SchlurplekTangela, TangolossVenuflibisTentantel
+Blättersturm
+130
+90%
+5
+Bisasam*, Bisaknosp*, Bisaflor*SarzeniaOwei*, Kokowei, Alola-KokoweiTangela*, Tangoloss*Endivie*, Lorblatt*, Meganie*BlubellaSonnfloraGeckarbor*, Reptain, GewaldroTengulistRoselia*, Roserade*TropiusChelast, Chelcarain, ChelterrarSerpifeu, Efoserp, SerpiroyalImantis*, Mantidea*
+Blättertanz
+120
+100%
+10
+Bisasam*, Bisaknosp*, BisaflorMyrapla, Duflor, Giflor, BlubellaMeganieSonnfloraRoselia, RoseradeKinosoMaracambaCurelei
+Charme
+—
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Relaxo*Knilz*, Kapilz*Waumboll, ElfunBalgoras, Monargoras
+Fluch
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Flegmon, Lahmus, LaschokingOwei*, Kokowei*, Alola-Kokowei*Schlurp*, Schlurplek*Rihorn*, Rizeros*, Rihornior*Lapras*Relaxo*Sonnkern*, Sonnflora*Larvitar*, Pupitar*, Despotar*Hydropi*, Moorabbel*, Sumpex*Stollunior*, Stollrak*, Stolloss*Tropius*Chelast, Chelcarain, ChelterrarKoknodon*, Rameidon*Schilterus*, Bollterus*Kastadur, TentantelBalgoras*, Monargoras*Paragoni, TromborkArktip, Arktilas
+Gigasauger
+75
+100%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla, Duflor, Giflor, BlubellaParas, ParasekKnofensa*, Ultrigaria*, Sarzenia*Owei*, Kokowei*, Alola-Kokowei*Tangela, TangolossHoppspross, Hubelupf, PapunghaSonnkern, SonnfloraGeckarbor, Reptain, GewaldroLoturzel, Lombrero, KappaloresKnilz, KapilzRoselia, RoseradeChelast, Chelcarain, ChelterrarVenuflibis*Serpifeu, Efoserp, SerpiroyalWaumboll, ElfunMaracambaTarnpignon, HutsassaImantis*, Mantidea*Bubungus, Lamellux
+Grasfeld
+—
+—
+10
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla, Duflor, Giflor, BlubellaOwei*, Kokowei*, Alola-Kokowei*Tangela, TangolossEndivie*, Lorblatt*, Meganie*Hoppspross*, Hubelupf*, Papungha*Sonnkern*, Sonnflora*Geckarbor*, Reptain*, Gewaldro*Samurzel*, Blanas*, Tengulist*Chelast*, Chelcarain*, Chelterrar*RoseradeSerpifeu*, Efoserp*, Serpiroyal*Maracamba*Curelei
+Grasflöte
+—
+55%
+15
+Bisasam*, Bisaknosp*, Bisaflor*Endivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*Kikugi*, Kinoso*Venuflibis*Shnebedeck, RexblisarWaumboll*, Elfun*Maracamba*
+Natur-Kraft
+—
+—
+20
+Bisasam, Bisaknosp, BisaflorMyrapla, Duflor, Giflor, BlubellaParas, ParasekKnofensa, Ultrigaria, SarzeniaOwei, Kokowei, Alola-KokoweiTangela, TangolossEndivie, Lorblatt, MeganieSonnkern, SonnfloraGeckarbor, Reptain, GewaldroLoturzel, Lombrero, KappaloresSamurzel, Blanas, TengulistRoselia, RoseradeTuska, NoktuskaTropiusChelast, Chelcarain, ChelterrarKikugi, KinosoVenuflibisSerpifeu, Efoserp, SerpiroyalWaumboll, ElfunMaracambaTarnpignon, HutsassaKastadur, TentantelAmarino, AmagargaParagoni, TromborkImantis, MantideaBubungus, LamelluxCureleiSen-Long
+Schlammbad
+65
+100%
+20
+Bisasam*, Bisaknosp*, Bisaflor*Hydropi*, Moorabbel*, Sumpex*
+Schädelwumme
+130
+100%
+10
+Bisasam*, Bisaknosp*, Bisaflor*Schiggy, Schillok, TurtokTragosso*, Knogga*, Alola-Knogga*Rihorn*, Rizeros*, Rihornior*Shnebedeck*, Rexblisar*Arktilas
+Verwurzler
+—
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Myrapla*, Duflor*, Giflor*, Blubella*Knofensa*, Ultrigaria*, Sarzenia*Owei*, Kokowei*, Alola-Kokowei*Tangela, TangolossEndivie*, Lorblatt*, Meganie*Sonnkern, SonnfloraRoselia, RoseradeTuska, NoktuskaVenuflibisShnebedeck, RexblisarMaracambaTarnpignon, HutsassaKastadur, TentantelParagoni, TromborkImantis, MantideaBubungus, Lamellux
+Zauberblatt
+60
+—
+20
+Bisasam*, Bisaknosp*, Bisaflor*Knofensa*, Ultrigaria*, Sarzenia*Endivie, Lorblatt, MeganieBlubellaGeckarbor*, Reptain*, Gewaldro*Roselia, RoseradeTuska*, Noktuska*TropiusKikugi, KinosoVenuflibis*Shnebedeck*, Rexblisar*Serpifeu*, Efoserp*, Serpiroyal*Curelei
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+Mit einem * markierte Pokémon können die Attacke nur durch Chain Breeding erlernen. Mit einem ° markierte Pokémon müssen aus einer früheren Generation übertragen werden, um die per TM oder Attacken-Lehrer erlernte Attacke vererben zu können.
+Durch Attacken-Lehrer
+Folgende Attacken kann Bisasam durch Attacken-Lehrer erlernen:
+Bisasam kann in der ersten Generation auf diese Art keine Attacken erlernen.
+Bisasam kann in der zweiten Generation auf diese Art keine Attacken erlernen.
+3. Generation
+✽✽
+Edition
+Attacke
+Typ
+Stärke
+Gen.
+AP
+SMXD
+Angeberei
+—
+90%
+15
+SM
+Ausdauer
+—
+—
+10
+FRBGSMXD
+Bodyslam
+85
+100%
+15
+FRBGSMXD
+Delegator
+—
+—
+10
+SM
+Einigler
+—
+—
+40
+SM
+Lehmschelle
+20
+100%
+10
+FRBGSMXD
+Mimikry
+—
+—
+10
+FRBGSMXD
+Risikotackle
+120
+100%
+15
+SM
+Schlafrede
+—
+—
+10
+SM
+Schnarcher
+40
+100%
+15
+FRBGSM
+Schwerttanz
+—
+—
+30
+SM
+Zornklinge
+10
+95%
+20
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+4. Generation
+✽✽
+Edition
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+PTHGSS
+Abschlag
+20
+100%
+20
+HGSS
+Fadenschuss
+—
+95%
+40
+HGSS
+Kopfnuss
+70
+100%
+15
+PTHGSS
+Lehmschelle
+20
+100%
+10
+PTHGSS
+Samenbomben
+80
+100%
+15
+PTHGSS
+Schnarcher
+40
+100%
+15
+HGSS
+Sorgensamen
+—
+100%
+10
+PTHGSS
+Synthese
+—
+—
+5
+PTHGSS
+Zornklinge
+10
+95%
+20
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+5. Generation
+✽✽
+Edition
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+S2W2
+Abschlag
+20
+100%
+20
+S2W2
+Gigasauger
+75
+100%
+10
+S2W2
+Klammergriff
+15
+85%
+20
+SWS2W2
+Pflanzsäulen
+50
+100%
+10
+S2W2
+Samenbomben
+80
+100%
+15
+S2W2
+Schlafrede
+—
+—
+10
+S2W2
+Schnarcher
+40
+100%
+15
+S2W2
+Sorgensamen
+—
+100%
+10
+S2W2
+Synthese
+—
+—
+5
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+6. Generation
+✽✽
+Edition
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+ΩRαS
+Abschlag
+65
+100%
+25
+ΩRαS
+Gigasauger
+75
+100%
+10
+ΩRαS
+Klammergriff
+15
+85%
+20
+XYΩRαS
+Pflanzsäulen
+80
+100%
+10
+ΩRαS
+Samenbomben
+80
+100%
+15
+ΩRαS
+Schnarcher
+50
+100%
+15
+ΩRαS
+Sorgensamen
+—
+100%
+10
+ΩRαS
+Synthese
+—
+—
+5
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+7. Generation
+✽✽
+Edition
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+USUM
+Abschlag
+65
+100%
+25
+USUM
+Gigasauger
+75
+100%
+10
+USUM
+Klammergriff
+15
+85%
+20
+SMUSUM
+Pflanzensäulen
+80
+100%
+10
+USUM
+Samenbomben
+80
+100%
+15
+USUM
+Schnarcher
+50
+100%
+15
+USUM
+Sorgensamen
+—
+100%
+10
+USUM
+Synthese
+—
+—
+5
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+Besondere Attacken
+Bisasam kann in der ersten Generation auf diese Art keine Attacken erlernen.
+2. Generation
+✽✽
+Attacke
+Typ
+Stärke
+Gen.
+AP
+Antik-Kraft
+60
+100%
+5
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+Bisasam kann in der dritten Generation auf diese Art keine Attacken erlernen.
+Bisasam kann in der vierten Generation auf diese Art keine Attacken erlernen.
+5. Generation
+✽✽
+Attacke
+Typ
+Kat.
+Stärke
+Gen.
+AP
+Fauna-Statue
+150
+90%
+5
+Meteorologe
+50
+100%
+10
+Rückentzug
+—
+—
+5
+Trugschlag
+40
+100%
+40
+Fett hervorgehobene Attacken erhalten einen Typen-Bonus, bei kursiv ge-schriebenen Attacken bekommen die Entwicklungen einen Typen-Bonus.
+Bisasam kann in der sechsten Generation auf diese Art keine Attacken erlernen.
+Bisasam kann in der siebten Generation auf diese Art keine Attacken erlernen.
+Im Zuge einer einwöchigen Aktion war ein Bisasam mit Antik-Kraft in Japan und den USA erhältlich.
+Während einer Sticker-Sammelaktion in Japan konnte man sich ein Bisasam-Ei mit vier besonderen Attacken auf Pokémon Schwarze Edition 2 und Weiße Edition 2 herunterladen.
+Besonderheiten
+Bisasam und seine Weiterentwicklungen sind die einzigen Pflanzen-Pokémon, die Schlammbad erlernen können.
+Bisasam ist das einzige Starter-Pokémon, das Schlafpuder erlernen kann.
+Statuswerte
+Statuswerte
+FP
+Basiswerte
+MaximalwerteNegatives Wesen
+MaximalwerteNeutrales Wesen
+MaximalwertePositives Wesen
+Lv. 50
+Lv. 100
+Lv. 50
+Lv. 100
+Lv. 50
+Lv. 100
+KP
+0
+45
+152
+294
+152
+294
+152
+294
+Angriff
+0
+49
+90
+177
+101
+197
+111
+216
+Vert.
+0
+49
+90
+177
+101
+197
+111
+216
+Spez.-Angr.
+1
+65
+105
+206
+117
+229
+128
+251
+Spez.-Vert.
+0
+65
+105
+206
+117
+229
+128
+251
+Init.
+0
+45
+87
+170
+97
+189
+106
+207
+Basiswertsumme:
+318
+In der 1. Generation beträgt der SPEZ-Basiswert von Bisasam 65.
+Typ-Schwächen
+Wird Bisasam von Attacken dieser jeweiligen Typen angegriffen, wird der Schaden mit dem angegebenen Faktor multipliziert.
+Multiplikator
+0×
+¼×
+½×
+1×
+2×
+4×
+In I ist  4x.
+Getragene Items
+Ein wildes Bisasam kann folgende Items tragen:
+Spiel(e)
+Item
+Wahrscheinlichkeit
+RBG
+Bitterbeere
+100%
+STA
+Schachtel* (Nachdem Sieg über dem Champ in der Arenaleiter-Burg (Runde 1)) Schatulle* (Nachdem Sieg über dem Champ in der Arenaleiter-Burg (Runde 2))
+100%
+Pokémon der ersten Spielgeneration können in Spielen selbiger Generation keine Items tragen, tragen aber jeweils beim Tausch auf Spiele der zweiten Spielgeneration ein Item bei sich.
+Pokédex-Einträge
+Gen.
+Spiel
+Eintrag
+I
+RB
+Dieses POKéMON trägt von Geburt an einen Samen auf dem Rücken, der mit ihm keimt und wächst.
+G
+Dieses Pokémon kommt sehr lange ohne Nahrung aus. Die Knolle auf seinem Rücken speichert Solarenergie.
+STA
+Dieses Pokémon trägt von Geburt an eine Knolle auf dem Rücken, die mit ihm keimt und wächst. Die Knolle enthält Samen.
+II
+G
+Der Samen auf dem Rücken enthält Nährstoffe. Er wächst mit zunehmender Körpergröße.
+S
+Von Geburt an trägt es einen Samen auf seinem Rücken. Wächst es, so wächst auch der Samen.
+K
+Da es noch klein ist, frisst es die Samen auf seinem Rücken, um durch deren Nährstoffe rasch zu wachsen.
+STA2
+Von Geburt an trägt es einen Samen auf seinem Rücken. Wächst es, so wächst auch der Samen.
+III
+RU
+BISASAM macht gern einmal ein Nickerchen im Sonnenschein. Auf seinem Rücken trägt es einen Samen. Indem es Sonnenstrahlen aufsaugt, wird der Samen zunehmend größer.
+SA
+BISASAM macht gern einmal ein Nickerchen im Sonnenschein. Auf seinem Rücken trägt es einen Samen. Indem es Sonnenstrahlen aufsaugt, wird er zunehmend größer.
+FR
+Von Geburt an hat dieses POKéMON einen Samen auf dem Rücken, welcher langsam wächst.
+BG
+Dieses POKéMON trägt von Geburt an einen Samen auf dem Rücken, der mit ihm keimt und wächst.
+SM
+BISASAM macht gern einmal ein Nickerchen im Sonnenschein. Auf seinem Rücken trägt es einen Samen. Indem es Sonnenstrahlen aufsaugt, wird der Samen stetig größer.
+IV
+DPPT
+Nach der Geburt nimmt es für eine Weile Nährstoffe über den Samen auf seinem Rücken auf.
+HG
+Der Samen auf dem Rücken enthält Nährstoffe. Er wächst mit zunehmender Körpergröße.
+SS
+Von Geburt an trägt es einen Samen auf seinem Rücken. Wächst es, so wächst auch der Samen.
+V
+SW
+Nach der Geburt nimmt es für eine Weile Nährstoffe über den Samen auf seinem Rücken auf.
+S2W2
+Nach der Geburt nimmt es für eine Weile Nährstoffe über den Samen auf seinem Rücken auf.
+3D Pro
+Nach der Geburt nimmt es für eine Weile Nährstoffe über den Samen auf seinem Rücken auf.
+VI
+X
+Dieses Pokémon trägt von Geburt an einen Samen auf dem Rücken, der mit ihm keimt und wächst.
+Y
+Nach der Geburt nimmt es für eine Weile Nährstoffe über den Samen auf seinem Rücken auf.
+ΩR
+Bisasam macht gern einmal ein Nickerchen im Sonnenschein. Auf seinem Rücken trägt es einen Samen. Indem es Sonnenstrahlen aufsaugt, wird der Samen zunehmend größer.
+αS
+Bisasam macht gern einmal ein Nickerchen im Sonnenschein. Auf seinem Rücken trägt es einen Samen. Indem es Sonnenstrahlen aufsaugt, wird er zunehmend größer.
+GO
+Bisasam macht gern einmal ein Nickerchen im Sonnenschein. Auf seinem Rücken trägt es einen Samen. Indem es Sonnenstrahlen aufsaugt, wird der Samen zunehmend größer.
+Trophäen-Infos aus Super Smash Bros. Brawl
+Ein Pokémon der Klasse Samen. Von Geburt an trägt es einen großen Samen auf seinem Rücken. Es nutzt die Nährstoffe daraus für sein eigenes Wachstum. Hält es sich für längere Zeit in der Sonne auf, wächst es schneller. Legenden besagen, dass der Samen auf BISASAMS Rücken einst leichter war und es deshalb auf zwei Beinen laufen konnte. Es entwickelt sich zu BISAKNOSP.
+Pokéathlon-Leistung
+Die max. Leistung von Bisasam:
+Tempo
+3
+Kraft
+3
+Technik
+4
+Ausdauer
+4
+Sprung
+3
+Eine Liste aller max. Werte findet man hier.
+Spin-off-Daten
+Pokémon Mystery Dungeon: Team Blau und Team Rot
+Größe: 1
+Rekrutierrate: 5,1%
+Partnerareal: Prachtebene
+Pokémon Mystery Dungeon: Erkundungsteam Zeit, Dunkelheit und Himmel
+Größe: 1
+Rekrutierrate: 8,2%
+IQ-Gruppe: F
+Pokémon Ranger
+R-001
+Gruppe: Pflanze
+Poké-Stärke:
+Pflanze
+Fähigkeit:
+Überqueren
+Kreise: 3
+Min EP: 12
+Max EP: 22
+Verzeichnis-Eintrag
+Bisasam verlängert seine Ranke, um mit ihr anzugreifen und Fänge zu verhindern.
+Pokémon Ranger: Spuren des Lichts
+R-014/N-004
+Gruppe: Pflanze
+Poké-Stärke:
+Pflanze
+Fähigkeit:
+Zerschneiden1
+Verzeichnis-Eintrag
+Nimmt den Gegner kontinuierlich mit Samen unter Beschuss.
+Pokémon GO
+Kraftpunkte: 90
+Angriff: 118
+Verteidigung: 118
+Fangrate: 20%
+Fluchtrate: 10%
+Max. WP (Wettkampfpunkte): 981
+Ei-Distanz: —
+Entwicklung: 25 Bonbons
+Sofort-Attacken: Rankenhieb, Tackle
+Lade-Attacken: Matschbombe, Samenbomben, Blattgeißel
+Strategie
+→ Hauptartikel: Bisasam/Strategie
+Bisasam befindet sich zurzeit im LC-Tier und eignet sich aufgrund seiner Fähigkeit Chlorophyll und guter Spezial-Angriffs-Werte zum speziellen Sweeper in der Sonne.
+Im Anime
+→ Hauptartikel: Bisasam (Anime)
+Im Anime wird Bisasam in der ersten Episode Pika – Pikachu zum ersten Mal erwähnt, in Bisasam und das versteckte Idyll hat es seinen ersten Auftritt, bei dem es von Ash gefangen wird. Im Laufe des Animes kommen immer wieder andere Bisasam vor, so auch das, das sich Maike fängt. In XY besitzt Sannah ebenso ein Bisasam.
+Es ist nach Schiggy Ashs zweite Wahl beim Start seiner Reise.
+Ashs Bisasam
+→ Hauptartikel: Ashs Bisasam
+Ashs Bisasam Ash fängt sich ein Bisasam, in der Episode Bisasam und das versteckte Idyll, auf dem Weg nach Orania City, als sein viertes Pokémon. Es ist sehr stark und sehr sehr ehrgeizig. Es kommt ganz nach Ash, da er den Sieg ebenfalls so anstrebt, wie Bisasam es macht. Und so bleibt es in seinem Team bis zur Episode Bisasam im Diplomatendienst, in der Ash es nach Alabastia zu Professor Eich in sein Labor schickt, wo es den dort lebenden Pokémon helfen soll, sich zu vertragen.
+Maikes Bisasam
+→ Hauptartikel: Maikes Bisasam
+Auch Ashs Begleiterin Maike fängt sich ein Bisasam. In Betreten verboten! wird sie von einem Panzaeron in ein Reservat für Pflanzen-Pokémon verschleppt, in dem sie sich mit einem Bisasam anfreundet, das von ihr einige Male gerettet wird. Als Dank schenkt das Pokémon Maike eine Blume und schließt sich ihrem Team an. Während Maike durch die Johto-Region reist, entwickelt sich Bisasam bis zur Endstufe Bisaflor.
+Weitere Auftritte
+Ein weiteres Bisasam im Anime gehört dem Bürgermeister von Trovitopolis, das in Gefahr im Kanal zu sehen ist. Als der Bürgermeister noch ein Kind war, fing er ein Bisasam, das sich aber einfach nicht in ein Bisaknosp entwickeln wollte. Aus diesem Grund setzte er sein Pokémon in der Kanalisation aus. Ash, Misty und Tracey finden das ausgesetzte Bisasam, als sie nach Ashs Bisasam suchen, das ebenfalls verloren ging. Es ist in der Zeit, in der es im Kanal lebte, sehr groß gewachsen. Die Freunde bekämpfen den arroganten Bürgermeister und geben das Bisasam in die Obhut Schwester Joys.
+Attacken
+Ashs Bisasam setzt in der Episode Die Arena der Ninjas Wirbelwind und in Der Hoothoot-Express Schaufler ein, obwohl Bisasam in den Spielen beide Attacken nicht erlernen kann. Außerdem setzt es in Kampf um Togepi die Attacke Bodycheck ein, die es in den Spielen aber erst ab der 4. Generation erlernen kann.
+Im Manga
+In Pocket Monsters SPECIAL
+Bisa als Bisasam
+→ Hauptartikel: Bisa
+Im Pocket Monsters SPECIAL-Manga taucht Bisasam erstmals in VS. Maschock als eines von Professor Eichs Pokémon auf. Nachdem Rot aus Versehen alle Pokémon des Professors freigelassen hat, muss er sie wieder einfangen. Bisasam findet er in der Pokémon-Arena von Vertania City und muss mit ihm zusammen gegen ein wildes Maschock antreten. Es kann das wilde Maschock mit Solarstrahl besiegen, woraufhin Professor Eich es Rot überlässt. In VS. Schillok entwickelt sich Bisasam schließlich nach einem Kampf gegen ein Rasaff zu Bisaknosp.
+In Pocket Monsters: Dengeki Pikachu
+→ Hauptartikel: Ashs Bisasam
+Ashs Bisasam erscheint in Pocket Monsters: Dengeki Pikachu.
+In Magical Pokémon Journey
+Pistachio besitzt ein Bisasam in Magical Pokémon Journey.
+In Pokémon Pocket Monsters
+Bereits im ersten Kapitel von Pokémon Pocket Monsters ist ein Bisasam zu sehen.
+Im Sammelkartenspiel
+→ Hauptartikel: Bisasam (TCG)
+Von Bisasam existieren momentan 18 verschiedene Sammelkarten, von denen fünf nicht auf Deutsch erschienen sind. Die erste Sammelkarte war das Bisasam mit der Kartennummer 44/102 aus der Erweiterung Basis, welche im Dezember 1999 erschien, die letzte auf Deutsch erschienene Karte dagegen das im August 2012 erschienene Bisasam (Erforscher der Finsternis 1). Nur eine Bisasam-Karte trägt einen abweichenden Kartennamen: Erikas Bisasam aus der Erweiterung Gym Challenge. Mit einer Seltenheit von nicht so häufig ist diese auch die einzige Sammelkarte von Bisasam, die nicht als häufig gekennzeichnet ist. Alle Pokémonkarten von Bisasam haben den Typ Pflanze inne, sind Basis-Pokémon und verfügen über 40 bis 60 Kraftpunkte. Meistens besitzen Bisasam eine Feuer-Schwäche, allerdings gibt es auch drei Karten mit einer Psycho-Schwäche. Die zwei neuesten Karten dieses Pokémon haben eine Wasser-Resistenz und Rückzugskosten von 2, auf allen anderen Karten sind keine Resistenz und Rückzugskosten von 1 vermerkt.
+Weiterhin ist Bisasam auf den Trainerkarten Stadt-Freiwillige und Wagnisbombe abgebildet und es existiert eine Ditto-Sammelkarte, auf der Ditto die Form eines Bisasam annimmt.
+ausgewählte Sammelkarten
+Bisasam (Basis 44)
+Erikas Bisasam (Gym Challenge 39)
+Bisasam (Expedition 95)
+Bisasam (Rätselhafte Wunder 77)
+Bisasam (Erforscher der Finsternis 1)
+Ditto (EX Delta Species 36)
+Bilder
+Sprites und 3D-Modelle
+Warnung: Die verlinkten Seiten verursachen aufgrund der vielen animierten Grafiken und der damit verbundenen Seitengröße enorm viel Traffic.
+→ Hauptartikel: Bisasam/Sprites und 3D-Modelle
+Icon
+SMUSUM
+Rückseite
+SH
+SH
+Artworks
+PGL-Artwork
+Artwork im Anime-Stil
+Artwork im Anime-Stil zur Originalserie
+Weiteres Artwork im Anime-Stil
+Artwork zu Pocket Monsters Aka und Midori
+Artwork von Ken Sugimori zur 1. Generation
+Artwork zu Pokémon Super Mystery Dungeon
+Artwork zu Pokémon-Spielhaus
+Trivia
+Bisasam ist neben Bauz der einzige Starter der Hauptreihe, der von Beginn an einen Dual-Typ ( ) hat.
+In Pokémon Mystery Dungeon ist es ebenfalls der einzige Starter mit einem Dual-Typ.
+Alle Entwicklungsstufen von Bisasam kommen in der Super Smash Bros.-Reihe vor.
+Es gehört derselben Kategorie wie Bisaknosp, Bisaflor und Sonnkern an, nämlich Samen.
+Es wurde 2001 auf den Niue-Dollar(en) gedruckt.
+In Super Mario Maker existiert ein Bisasam-Kostüm, das Mario tragen kann. Es wird freigespielt, wenn man das dazugehörige Eventlevel mit Bisasam beendet.
+Die Starter-Pokémon der jeweiligen Spiele
+RGBFRBG
+G
+GSKHGSS
+RUSASMΩRαS
+DPPT
+SWS2W2
+XY
+SMUSUM
+COL
+XD
+R
+R2
+R3
+PMDPMD
+PMD2PMD2PMD2
+PMD3PMD3PMD3
+PMD4
+PSMD
+RBL
+SPR
+CON
+GO
+Bisasam
+Glumanda
+Schiggy
+Pikachu
+Endivie
+Feurigel
+Karnimani
+Psiana
+Nachtara
+Evoli
+Geckarbor
+Flemmli
+Hydropi
+Chelast
+Panflam
+Plinfa
+Serpifeu
+Floink
+Ottaro
+Igamaro
+Fynx
+Froxy
+Bauz
+Flamiau
+Robball
+Plusle
+Minun
+Mampfaxo
+Staralili
+Pachirisu
+Ukulelen-Pichu
+Nur als Junge
+Nur als Mädchen
+Geschlecht egal
+Nur in Zeit & Dunkelheit
+Nur in Himmel
+Edition egal
+Flammendes Abenteuerteam
+Stürmisches Abenteuerteam
+Leuchtendes Abenteuerteam
+Rattfratz
+Pikachu
+Evoli
+Bisasam
+Glumanda
+Schiggy
+Pikachu
+Abgerufen von „https://www.pokewiki.de/index.php?title=Bisasam&oldid=1624214“
+Kategorien: Pokémon der WochePokéWiki:Lesenswerter ArtikelPokémonBisasamPflanzen-PokémonGift-PokémonGrün gefärbte PokémonMonster-Gruppen-PokémonPflanze-Gruppen-PokémonZweigeschlechtliche PokémonEntwicklung durch Level
+In anderen Sprachen:
+EnglishFrançaisItaliano日本語Polski中文
+Diese Seite mit Freunden teilen:
+Diese Seite wurde zuletzt am 11. Februar 2018 um 11:20 Uhr bearbeitet.
+Der Inhalt ist verfügbar unter der Lizenz Creative Commons „Namensnennung, Weitergabe unter gleichen Bedingungen“, sofern nicht anders angegeben.
+Datenschutz
+Über PokéWiki
+Impressum
+SDG.Publisher.registerSlot('banner', document.getElementById('ad1'));
+SDG.Publisher.registerSlot('sky', document.getElementById('ad2'));
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-17060614-2', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('set', 'dimension1', 'Videospiele');
+ga('send', 'pageview');
+(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"5.452","walltime":"9.677","ppvisitednodes":{"value":197972,"limit":1000000},"ppgeneratednodes":{"value":192363,"limit":1000000},"postexpandincludesize":{"value":1015973,"limit":3145728},"templateargumentsize":{"value":564914,"limit":3145728},"expansiondepth":{"value":30,"limit":40},"expensivefunctioncount":{"value":3,"limit":100},"timingprofile":["100.00% 8702.724      1 -total"," 84.99% 7396.259    741 Vorlage:Fileexist"," 62.57% 5445.577      1 Vorlage:Sprites"," 62.30% 5421.862     67 Vorlage:Sprites/Box"," 51.72% 4500.823    576 Vorlage:Sprites/Spriteexist"," 12.25% 1066.181     60 Vorlage:Sprite/Gen7IconMap"," 10.20%  888.019      1 Vorlage:Startpokémon","  7.75%  674.309      5 Vorlage:Atk-Table","  6.88%  598.736    117 Vorlage:Sk","  6.71%  584.286    382 Vorlage:AtkRow"]},"cachereport":{"origin":"emonga.filb.de","timestamp":"20180217051847","ttl":3600,"transientcontent":true}}});});(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":9806,"wgHostname":"emonga.filb.de"});});
+SDG.Publisher.loadAllSlots(false);

@@ -29,7 +29,7 @@ memcopy = 0x081E9D61;
 get_pokemons_attribute = 0x0803FAE9;
 set_pokemons_attribute = 0x0804027D;
 charlen_of_hex_value_dec_format = 0x080CC0BD;
-value_to_str = 0x08008DF9;
+itoa = 0x08008DF8 | 1;
 recalculate_stats = 0x0803E37D;
 pal_load_uncomp = 0x08070351;
 countpokemon = 0x08040B3D;
@@ -84,7 +84,7 @@ get_ability = 0x08040C39;
 battle_printmsg = 0x080D89E1;
 init_attack = 0x08015C25;
 bsc_executer = 0x0801CFB5;
-concatenate_strings = 0x08008D25;
+strcat = 0x08008D25;
 strcpy = 0x08008D05;
 is_double_battle = 0x080751F5;
 generate_oam_backward_search = 0x08006F61;
@@ -242,3 +242,7 @@ fadescreen = 0x080704EC | 1;
 map_delta_to_map_tile = 0x0805A948 | 1;
 pokemon_query_string = 0x0809DA38 | 1;
 pokemon_query_string_std_closure = 0x08056900 | 1;
+volume_set = 0x081E2378 | 1;
+
+
+icon_pals = 0x083D3054;

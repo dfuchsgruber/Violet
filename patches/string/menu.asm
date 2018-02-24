@@ -118,6 +118,17 @@
 .org 0x8088cec
     .word str_optionen
 
+// Utilization of L=A etc. remove
+.org 0x0806F21E
+    lsl r0, #0
+
+.org 0x0806F26C
+    lsl r0, #0
+
+.org 0x0806F066
+    lsl r0, #0
+
+
 .org 0x83cc160
     .word str_options_text_tempo
     .word str_options_animation

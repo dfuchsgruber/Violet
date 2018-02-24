@@ -19,7 +19,7 @@ callstd MSG_YES_NO
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x95c56e
 special 0x3e
-compare DYN_MULTICHOICE_ITEM_CNT 0x0
+compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x95c4fb
 waitstate
 compare LASTRESULT 0x7f

@@ -137,12 +137,13 @@ class MapItem:
             mh = mapheader.load(frame.project.get_map_path(self.bank, self.mapid), frame.project, instanciate_ts=False)
             _, path, _, _ = frame.project.banks[self.bank][self.mapid]
             new_namespace = tkinterx.askcombobox(frame.gui.root, "Change namespace", list(constants.map_namespaces.values()), default=mh.name_bank)
-            mh.name_bank = new_namespace
             if mh.name_bank == new_namespace or new_namespace == None: return #No changes whatsoever
             if new_namespace not in constants.map_namespaces.values():
                 new_namespace = UNDEFINED_NAMESPACE
             
+            mh.name_bank = new_namespace
             mh.save(path)
+
             if frame.gui.bank == self.bank and frame.gui.mapid == self.mapid and frame.gui.map:
                 frame.gui.map.name_bank = new_namespace
 

@@ -4,5 +4,5 @@
 
 
 .string str_0x88adf9 GER
-	=Vielleicht_werde_ich_nach_goldenen\nKateen_suchen...
+	=Vielleicht_werde_ich_nach_goldenen\nKakteen_suchen...
 .end
