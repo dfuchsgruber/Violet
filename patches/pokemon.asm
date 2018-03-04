@@ -681,10 +681,10 @@
         lsl r0, #0x18
 
 .org 0x8043b68
-	.word pokemon_tm_compatilbity
+	.word pokemon_tm_compatibility
 
 .org 0x8043b80
-	.word pokemon_tm_compatilbity
+	.word pokemon_tm_compatibility
 
 //Evolution table
 

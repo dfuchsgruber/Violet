@@ -544,7 +544,7 @@ pokemon_cry pokemon_cries_forward[POKEMON_CNT];
 pokemon_cry pokemon_cries_backward[POKEMON_CNT];
 basestat basestats[POKEMON_CNT];
 extern u8 pokemon_names[POKEMON_CNT][11];
-
+u16 egg_moves[];
 
 extern u8 cry_661[];
 extern u8 cry_662[];

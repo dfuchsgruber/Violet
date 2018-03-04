@@ -19,7 +19,18 @@ LINKED = 2
 # use the moveset of another pokemon)
 
 links = {
-    0x107: 0xF
+    252 : 3,
+    253 : 6,
+    260 : 9,
+    261 : 0xb5,
+    262 : 0x5e,
+    263 : 15,
+    264 : 0x167,
+    265 : 0x4c,
+    266 : 0x17c,
+    267 : 0x17b,
+    268 : 0x72,
+    257 : 0x3e,
 }
 
 
@@ -29,7 +40,9 @@ def merge_pkmns(pkmn1: pokemon_crawler.Pokemon, pkmn2: pokemon_crawler.Pokemon):
     attacks_lvlup = pkmn1.attacks_lvlup + pkmn2.attacks_lvlup
     attacks_lvlup.sort(key=lambda x: x[0])
     attacks_breed = pkmn1.attacks_breed.union(pkmn2.attacks_breed)
-    attacks_tutor = pkmn1.attacks_tutor.union(pkmn2.attacks_tutor)
+    attacks_tutor = {}
+    attacks_tutor.update(pkmn1.attacks_tutor)
+    attacks_tutor.update(pkmn2.attacks_tutor)
     attacks_tm = pkmn1.attacks_tm + pkmn2.attacks_tm
     availible_attacks = pkmn1.availible_attacks.union(pkmn2.availible_attacks)
     return pokemon_crawler.Pokemon(attacks_lvlup=attacks_lvlup, attacks_breed=attacks_breed,

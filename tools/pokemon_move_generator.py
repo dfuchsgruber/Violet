@@ -67,10 +67,15 @@ def load_data(input="./pokemon_crawler/"):
 
 
 if __name__ == "__main__":
+    
+
     pkmns = load_data()
     linked = link.update_and_link(pkmns, constants)
     export.export_lvlup_attacks(linked, "../src/pokemon/pokemon_moves.c", constants)
     built_violet = agb.Agbrom(path="../bld/Pokemon Violet.gba")
     offset_evolution_table = built_violet.pointer(0x42e6c)
     export.export_egg_moves(linked, "../src/pokemon/breeding/egg_moves.c", constants, built_violet, offset_evolution_table)
+    export.export_tm_move_compatibility(linked, "../src/pokemon/hm_compatibility.c", constants)
+    export.export_move_tutor_compatibility(linked, "../src/pokemon/move_tutor/move_tutor_compatibility.c", constants)
+    export.export_inaccessible_attacks(linked, "../src/pokemon/inaccessible_moves.c", constants)
     #pprint.pprint(normalize.not_in_moveset_base)

@@ -337,7 +337,7 @@
 	=R\$ueckentzug
 	=Jauler
 	=Drachenklaue
-	=Fauna-statue
+	=Flora-Statue
 	=Protzer
 	=Sprungfeder
 	=Lehmschuss
@@ -374,7 +374,7 @@
 	=Nahkampf
 	=Lichtkanone
 	=Draco-meteor
-	=Nasschweif
+	=Nassschweif
 	=Zen-kopfsto\$s
 	=Energieball
 	=Schattensto\$s
