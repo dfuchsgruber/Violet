@@ -1,9 +1,9 @@
 .string str_mega_reacts GER
-    =\b\03 von \b\02\nreagiert auf \b\01 von \b\04.
+    =\b\x03 von \b\x02\nreagiert auf \b\x01 von \b\x04.
 .end
 
 .string str_mega_reacts EN
-    =\b\02's \b\03\nreacts to \b\04's \b\01.
+    =\b\x02's \b\x03\nreacts to \b\x04's \b\x01.
 .end
 
 .string str_mega_opp GER
@@ -15,26 +15,26 @@
 .end
 
 .string str_mega_evolved GER
-    =\b\02 hat sich zu\nMega-\b\05 entwickelt!
+    =\b\x02 hat sich zu\nMega-\b\x05 entwickelt!
 .end
 
 .string str_mega_evolved EN
-    =\b\02 evolved into\nMega-\b\05!
+    =\b\x02 evolved into\nMega-\b\x05!
 .end
 
 .string str_regent_evolved GER
-    =\b\02 umgibt die Aura\neines Kaisers!
+    =\b\x02 umgibt die Aura\neines Kaisers!
 .end
 
 .string str_regent_evolved EN
-    =\b\02 is surrouned by\nthe aura of an emperor!
+    =\b\x02 is surrouned by\nthe aura of an emperor!
 .end
 
 .string str_aura_pulses GER
-    =Die Aura von \b\02\npulsiert!
+    =Die Aura von \b\x02\npulsiert!
 .end
 
 .string str_aura_pulses EN
-    =\b\02's aura begins\nto pulse!
+    =\b\x02's aura begins\nto pulse!
 .end
 

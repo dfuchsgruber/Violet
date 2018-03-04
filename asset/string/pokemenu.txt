@@ -7,7 +7,7 @@
 .end
 
 .string str_menu_pokemon_desc GER
-    =\$UEberpr\$uefe_und_organisiere_die_Pok\emon,\ndie_sich_in_deinem_Team_befinden.\xFF
+    =\$UEberpr\$uefe_und_organisiere_die_Pok\emon,\ndie_sich_in_deinem_Team_befinden.
 .end
 
 .string str_menu_pokemon_desc EN

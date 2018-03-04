@@ -11,13 +11,14 @@ moves = set(lines)
 
 class Pokemon:
     
-    def __init__(self):
+    def __init__(self, attacks_lvlup=[], attacks_breed=set(), attacks_tutor=set(), 
+    attacks_tm=[], availible_attacks=set()):
         """ Represents a pokemon with all relevant fetched data """
-        self.attacks_lvlup = []
-        self.attacks_breed = set()
-        self.availible_attacks = set()
-        self.attacks_tutor = set()
-        self.attacks_tm = []
+        self.attacks_lvlup = attacks_lvlup
+        self.attacks_breed = attacks_breed
+        self.availible_attacks = availible_attacks
+        self.attacks_tutor = attacks_tutor
+        self.attacks_tm = attacks_tm
 
     def __str__(self):
         return str(self.__dict__)
@@ -213,7 +214,13 @@ def get_lvlup_attacks(lines, generation=7):
     while True:
         # Parse all attacks
         try:
-            lvl = int(lines[index]) 
+            if lines[index].startswith("Ent"):
+                # This ill formated level up attack
+                # usually is achieved at level up
+                # We fetch it with level 1
+                lvl = 1
+            else:
+                lvl = int(lines[index]) 
             attack = parse_attack_string(lines[index + 1])
             if not is_attack(attack): raise Exception()
             attacks_lvlup.append((lvl, attack))

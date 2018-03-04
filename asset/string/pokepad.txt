@@ -35,27 +35,27 @@
 .end
 
 .string str_pokepad_registered GER
-        =Die \b\02-App wurde auf der\n\b\03-Taste registriert.
+        =Die \b\x02-App wurde auf der\n\b\x03-Taste registriert.
 .end
 
 .string str_pokepad_registered EN
-        =The \b\02-App was registered\non the \b\03-key.
+        =The \b\x02-App was registered\non the \b\x03-key.
 .end
 
 .string str_pokepad_deregistered GER
-        =Die \b\02-App ist nicht länger\nauf der \b\03-Taste registriert.
+        =Die \b\x02-App ist nicht länger\nauf der \b\x03-Taste registriert.
 .end
 
 .string str_pokepad_deregistered EN
-        =The \b\02-App is no longer\nregistered on the \b\03-key.
+        =The \b\x02-App is no longer\nregistered on the \b\x03-key.
 .end
 
 .string str_wondertrade_not_possible_script GER
-        =Verbindung zum Wundertausch-\nNetzwerk fehlgeschlagen (\b\02/250).
+        =Verbindung zum Wundertausch-\nNetzwerk fehlgeschlagen (\b\x02/250).
 .end
 
 .string str_wondertrade_not_possible_script EN
-        =Failed to connect to the\nWondertrade-Network (\b\02/250).
+        =Failed to connect to the\nWondertrade-Network (\b\x02/250).
 .end
 
 .string str_wondertrade_level _

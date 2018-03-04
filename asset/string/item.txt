@@ -1,10 +1,10 @@
 
 .string str_nature_stone_sucess GER
-        =Das Wesen von \b\02 hat\nsich geändert.\w\09
+        =Das Wesen von \b\x02 hat\nsich geändert.\w\x09
 .end
 
 .string str_nature_stone_sucess EN
-        =\b\02's nature has\nchanged.\w\09
+        =\b\x02's nature has\nchanged.\w\x09
 .end
 
 .string str_item_desc_wolkenherz GER
@@ -96,19 +96,19 @@
 .end
 
 .string str_repel_renew GER
-        =\b\02 einsetzen?
+        =\b\x02 einsetzen?
 .end
 
 .string str_repel_renew EN
-        =Use \b\02?
+        =Use \b\x02?
 .end
 
 .string str_repel_use GER
-        =\b\01 setzt\n\b\02 ein.
+        =\b\x01 setzt\n\b\x02 ein.
 .end
 
 .string str_repel_use EN
-        =\b\01 uses\n\b\02.
+        =\b\x01 uses\n\b\x02.
 .end
 
 .string str_item_desc_gengarnit GER

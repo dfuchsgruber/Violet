@@ -1,10 +1,10 @@
 
 .string str_item_ashbag GER
-    =In der Aschetasche befindet\nsich \b\02 Asche.\w\09
+    =In der Aschetasche befindet\nsich \b\x02 Asche.\w\x09
 .end
 
 .string str_item_ashbag EN
-    =The ashbag contains\b\02\nashes.\w\09
+    =The ashbag contains\b\x02\nashes.\w\x09
 .end
 
 .string str_ashbag_not_received GER
@@ -24,9 +24,9 @@
 .end
 
 .string str_ashbag_picked_up GER
-    =\b\01 findet\n\b\02 Asche!
+    =\b\x01 findet\n\b\x02 Asche!
 .end
 
 .string str_ashbag_picked_up EN
-    =\b\01 obtains\n\b\02 ashes!
+    =\b\x01 obtains\n\b\x02 ashes!
 .end

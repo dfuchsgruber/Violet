@@ -937,3 +937,8 @@ lsr r0, #0x1A
     lsl r0, #0
     lsl r0, #0
 
+// Breeding
+.org 0x08045B2C
+    ldr r0, =_pokemon_get_egg_moves_stub | 1
+    bx r0
+    .pool

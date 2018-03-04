@@ -6,10 +6,16 @@ for each pokemon which are up to date with the latest generation
 LATEST_GENERATION = 7
 
 import pokemon_crawler.pokemon_crawler as crawler
+from pokemon_crawler.pokemon_crawler import Pokemon
 import constants
+import agb
 import urllib.request
 import pprint
 import pickle
+import os.path
+import pokemon_crawler.link as link
+import pokemon_crawler.normalize as normalize
+import pokemon_crawler.export as export
 
 def fetch_data(generation=LATEST_GENERATION, output="./pokemon_crawler/"):
     for i, species in enumerate(constants.species_table):
@@ -47,7 +53,24 @@ def fetch_data(generation=LATEST_GENERATION, output="./pokemon_crawler/"):
             pprint.pprint(pkmn.attacks_tm)
             """
 
+def load_data(input="./pokemon_crawler/"):
+    pkmns = []
+    for i, species in enumerate(constants.species_table):
+        path = input + str(i).zfill(3) + ".pkl"
+        if os.path.exists(path):
+            fp = open(path, "rb")
+            pkmns.append(pickle.load(fp))
+            fp.close()
+        else:
+            pkmns.append(None)
+    return pkmns
+
 
 if __name__ == "__main__":
-    fetch_data()
-    
+    pkmns = load_data()
+    linked = link.update_and_link(pkmns, constants)
+    export.export_lvlup_attacks(linked, "../src/pokemon/pokemon_moves.c", constants)
+    built_violet = agb.Agbrom(path="../bld/Pokemon Violet.gba")
+    offset_evolution_table = built_violet.pointer(0x42e6c)
+    export.export_egg_moves(linked, "../src/pokemon/breeding/egg_moves.c", constants, built_violet, offset_evolution_table)
+    #pprint.pprint(normalize.not_in_moveset_base)

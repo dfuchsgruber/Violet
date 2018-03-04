@@ -39,11 +39,11 @@
 .end
 
 .string str_option_head GER
-    =\k\0aAuswahl \k\0b\$AEndern \k_\k\01Zur\$ueck
+    =\k\x0aAuswahl \k\x0b\$AEndern \k_\k\x01Zur\$ueck
 .end
 
 .string str_option_head EN
-    =\k\0aSelection \k\0bChance \k_\k\01Back
+    =\k\x0aSelection \k\x0bChange \k_\k\x01Back
 .end
 
 .string str_optionen GER

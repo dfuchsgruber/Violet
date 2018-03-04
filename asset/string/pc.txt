@@ -1,9 +1,9 @@
 .string str_pc_turn_on GER
-    =\b\01 schaltet den PC ein.
+    =\b\x01 schaltet den PC ein.
 .end
 
 .string str_pc_turn_on EN
-    =\b\01 turns on the PC.
+    =\b\x01 turns on the PC.
 .end
 
 .string str_pc_lagerungssystem GER
@@ -47,11 +47,11 @@
 .end
 
 .string str_pc_connection GER
-    =Verbindung mit PC von \b\01...
+    =Verbindung mit PC von \b\x01...
 .end
 
 .string str_pc_connection EN
-    =Connecting to \b\01's PC...
+    =Connecting to \b\x01's PC...
 .end
 
 .string str_pc_take GER
@@ -368,11 +368,11 @@
 .end
 
 .string str_pc_4 GER
-	=Ausgew\$aehlt:_\f7_
+	=Ausgew\$aehlt:_\xf7_
 .end
 
 .string str_pc_4 EN
-	=Selected:_\f7_
+	=Selected:_\xf7_
 .end
 
 .string str_pc_5 GER
@@ -392,11 +392,11 @@
 .end
 
 .string str_pc_7 GER
-	=Abgelegt:_\f7_
+	=Abgelegt:_\xf7_
 .end
 
 .string str_pc_7 EN
-	=Deposited:_\f7_
+	=Deposited:_\xf7_
 .end
 
 .string str_pc_8 GER
@@ -416,19 +416,19 @@
 .end
 
 .string str_pc_10 GER
-	=\f7__ist_frei.
+	=\xf7__ist_frei.
 .end
 
 .string str_pc_10 EN
-	=\f7__is free.
+	=\xf7__is free.
 .end
 
 .string str_pc_11 GER
-	=Tsch\$uess,_\f7_!
+	=Tsch\$uess,_\xf7_!
 .end
 
 .string str_pc_11 EN
-	=Bye,_\f7_!
+	=Bye,_\xf7_!
 .end
 
 .string str_pc_12 GER
@@ -488,11 +488,11 @@
 .end
 
 .string str_pc_19 GER
-	=\f7__kam_zur\$ueck!
+	=\xf7__kam_zur\$ueck!
 .end
 
 .string str_pc_19 EN
-	=\f7__returned!
+	=\xf7__returned!
 .end
 
 .string str_pc_20 GER
@@ -520,11 +520,11 @@
 .end
 
 .string str_pc_23 GER
-	=Ausgew\$aehlt:_\f7_
+	=Ausgew\$aehlt:_\xf7_
 .end
 
 .string str_pc_23 EN
-	=Selected:_\f7_
+	=Selected:_\xf7_
 .end
 
 .string str_pc_24 GER
@@ -560,19 +560,19 @@
 .end
 
 .string str_pc_28 GER
-	=Gehalten:_\f7_
+	=Gehalten:_\xf7_
 .end
 
 .string str_pc_28 EN
-	=Held:_\f7_
+	=Held:_\xf7_
 .end
 
 .string str_pc_29 GER
-	=Ge\$aendert_in_\f7_.
+	=Ge\$aendert_in_\xf7_.
 .end
 
 .string str_pc_29 EN
-	=Changed_to_\f7_.
+	=Changed_to_\xf7_.
 .end
 
 .string str_pc_30 GER

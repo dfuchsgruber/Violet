@@ -170,7 +170,16 @@ void outdoor_move_buffer_load(pokemon *pokemon, u8 index);
 void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
 void pokemon_new(pokemon *space, u16 species, u8 level, u8 ev_split,
         bool pid_determined, pid pid, bool tid_determined, u32 tid);
-u8 pokemon_get_egg_moves(pokemon *p, u16 *space); //returns cnt (max 10, requires 10 space)
+
+/**
+ * Returns a pointer to a list of attacks describing the egg moves obtainable by
+ * a pokemon.
+ * @param species The pokemon species to find egg moves for.
+ * @param size A pointer where the function stores the size of the egg move list.
+ * @return Egg moves array.
+ */
+u16 *pokemon_get_egg_moves(u16 species, int *size);
+
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
 void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed);

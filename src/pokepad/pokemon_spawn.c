@@ -43,13 +43,12 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
     }
 
     //now we add egg moves
-    u16 egg_moves[10];
-    for (i = 0; i < 10; i++)
-        egg_moves[i] = 0xFFFF;
-    u8 egg_move_cnt = pokemon_get_egg_moves(&opponent_pokemon[0], egg_moves);
+    int egg_move_cnt = 0;
+    u16 *egg_moves = pokemon_get_egg_moves(species, &egg_move_cnt);
+    dprintf("Returned egg moves %x for species %d of size %d\n", egg_moves, species, egg_move_cnt);
     int seed = seed_generator();
     int attached = 0;
-    while (seed < 64 && egg_move_cnt && attached < 4) {
+    while (seed < 64 && egg_move_cnt && attached < 4 && egg_move_cnt) {
         //we attach a random egg move
         int n = rnd16() % egg_move_cnt;
         if (pokemon_append_attack(&opponent_pokemon[0], egg_moves[n]) == 0xFFFF) {
@@ -69,6 +68,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
         }
         set_pokemons_attribute(p, ATTRIBUTE_ITEM, item);
     }
+    recalculate_stats(&opponent_pokemon[0]);
 }
 
 

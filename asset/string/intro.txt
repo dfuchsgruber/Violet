@@ -87,11 +87,11 @@
 .end
 
 .string str_intro_prof_6 GER
-    =Genau...\nDu hei\$st also \b\01.
+    =Genau...\nDu hei\$st also \b\x01.
 .end
 
 .string str_intro_prof_6 EN
-    =That's right...\nYour name is \b\01.
+    =That's right...\nYour name is \b\x01.
 .end
 
 .string str_intro_prof_7 GER
@@ -111,11 +111,11 @@
 .end
 
 .string str_intro_prof_9 GER
-    =\b\01!\nDeine Reise in die sagenhafte\lRegion Theto beginnt nun endlich!\pAuf deiner langen Stra\$se des\nLernens wirst du Bekanntschaften\lschlie\$sen, Feinde bezwingen und\lüber dich hinauswachsen.\pBis zur Spitze wird dich dein\nEhrgeiz bringen!\pDas ist dein Traum!\nLebe ihn!\p
+    =\b\x01!\nDeine Reise in die sagenhafte\lRegion Theto beginnt nun endlich!\pAuf deiner langen Stra\$se des\nLernens wirst du Bekanntschaften\lschlie\$sen, Feinde bezwingen und\lüber dich hinauswachsen.\pBis zur Spitze wird dich dein\nEhrgeiz bringen!\pDas ist dein Traum!\nLebe ihn!\p
 .end
 
 .string str_intro_prof_9 EN
-    = \b\01!\nYour journey into the Theto region\lwill finally begin.\pOn the long road of learning you\nwill meet various people, fight\lnumerous enemies and overcome your\lown limits.\pYour ambitions will bring you to\nthe very top of this world.\pThis is your dream!\nNow live it!\p
+    = \b\x01!\nYour journey into the Theto region\lwill finally begin.\pOn the long road of learning you\nwill meet various people, fight\lnumerous enemies and overcome your\lown limits.\pYour ambitions will bring you to\nthe very top of this world.\pThis is your dream!\nNow live it!\p
 .end
 
 .string str_player_std_new_name GER

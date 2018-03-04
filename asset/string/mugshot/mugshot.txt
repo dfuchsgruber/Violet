@@ -3,7 +3,7 @@
 .end
 
 .string str_mug_hiro GER
-    =\b\01
+    =\b\x01
 .end
 
 .string str_mug_lester GER
@@ -23,7 +23,7 @@
 .end
 
 .string str_mug_rival GER
-    =\b\06
+    =\b\x06
 .end
 
 .string str_mug_brix GER

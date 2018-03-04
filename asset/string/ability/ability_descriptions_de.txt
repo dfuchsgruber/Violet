@@ -419,22 +419,22 @@
 
 
 .string str_ability_descr_0x54 GER
-	=150\5b_S.Angr._i._Sonne,_aber_Sch.
+	=150\x5b_S.Angr._i._Sonne,_aber_Sch.
 .end
 
 
 .string str_ability_descr_0x55 GER
-	=150\5b_S.Angr._i._Regen,_aber_Sch.
+	=150\x5b_S.Angr._i._Regen,_aber_Sch.
 .end
 
 
 .string str_ability_descr_0x56 GER
-	=150\5b_S.Angr._i._Hagel,_aber_Sch.
+	=150\x5b_S.Angr._i._Hagel,_aber_Sch.
 .end
 
 
 .string str_ability_descr_0x57 GER
-	=150\5b_Angr._i._Sand.,_aber_Sch.
+	=150\x5b_Angr._i._Sand.,_aber_Sch.
 .end
 
 

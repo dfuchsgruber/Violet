@@ -386,7 +386,7 @@ u16 pokedex_habitat_wasser_page_6[4] = {
 };
 // Habitat wasser, page 7
 u16 pokedex_habitat_wasser_page_7[2] = {
-    POKEMON_JURBO, POKEMON_JUGONG
+    POKEMON_JUROB, POKEMON_JUGONG
 };
 // Habitat wasser, page 8
 u16 pokedex_habitat_wasser_page_8[3] = {

@@ -1,5 +1,5 @@
 .string str_pokedex_none _
-    =\xFF
+    =\xff
 .end
 
 .string str_pokedex_mamutel GER

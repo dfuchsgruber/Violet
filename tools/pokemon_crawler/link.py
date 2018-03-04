@@ -5,59 +5,65 @@ table and also allows to link the same moveset
 to different pokemon.
 """
 
-from . import pokemon_crawler as crawler
+from . import data
+from . import pokemon_crawler
+from . import normalize
 
-# Defintions for additional moves on pokemon
+# Define entry types for movesets
 
-# Lockschal
-pokemon_lockschal = {
-    "lvlup" : [
-        (1, "Pfund"),
-        (1, "Härtner"),
-        (7, "Rasierblatt"),
-        (12, "Natur-Kraft"),
-        (15, "Zornklinge"),
-        (19, "Energiefokus"),
-        (23, "Laubklinge"),
-        ()
-    ]
+NULL = 0
+REAL = 1
+LINKED = 2
+
+# Define links (i.e. pokemon that
+# use the moveset of another pokemon)
+
+links = {
+    0x107: 0xF
 }
-ATTACK_KLINGENSTURM
-ATTACK_SCHWERTTANZ
-ATTACK_WIRBELWIND
-ATTACK_KUGELSAAT
-ATTACK_ZAUBERBLATT
-ATTACK_PATRONENHIEB
-ATTACK_TIEFSCHLAG
-ATTACK_STAHLSTREICH
-ATTACK_SCHALLSTICH
 
-ATTACK_FLUCH
-ATTACK_DRESCHFLEGEL
-ATTACK_VERFOLGUNG
 
-RASIERBLATT, 7},
-	{ATTACK_NATUR_KRAFT, 12},
-	{ATTACK_GEDULD, 16},
-	{ATTACK_LAUBKLINGE, 21},
-	{ATTACK_RUCKZUCKHIEB, 25},
-	{ATTACK_KOPFNUSS, 29},
-	{ATTACK_STAHLSTREICH, 36},
-	{ATTACK_NAHKAMPF, 42},
-	{ATTACK_SCHALLSTICH, 55},
-	{0x1FF, 0x7F}
-};
+def merge_pkmns(pkmn1: pokemon_crawler.Pokemon, pkmn2: pokemon_crawler.Pokemon):
+    """ Merges two pokemon data and returns a new
+    pokemon data set."""
+    attacks_lvlup = pkmn1.attacks_lvlup + pkmn2.attacks_lvlup
+    attacks_lvlup.sort(key=lambda x: x[0])
+    attacks_breed = pkmn1.attacks_breed.union(pkmn2.attacks_breed)
+    attacks_tutor = pkmn1.attacks_tutor.union(pkmn2.attacks_tutor)
+    attacks_tm = pkmn1.attacks_tm + pkmn2.attacks_tm
+    availible_attacks = pkmn1.availible_attacks.union(pkmn2.availible_attacks)
+    return pokemon_crawler.Pokemon(attacks_lvlup=attacks_lvlup, attacks_breed=attacks_breed,
+    attacks_tutor=attacks_tutor, attacks_tm=attacks_tm, availible_attacks=availible_attacks)
+ 
 
-pokemon_move moveset_pokemon_stichschal[] = {
-	{ATTACK_PFUND, 1},
-	{ATTACK_HAERTNER, 1},
-	{ATTACK_RASIERBLATT, 7},
-	{ATTACK_NATUR_KRAFT, 12},
-	{ATTACK_GEDULD, 16},
-	{ATTACK_LAUBKLINGE, 21},
-	{ATTACK_RUCKZUCKHIEB, 25},
-	{ATTACK_KOPFNUSS, 29},
-	{ATTACK_STAHLSTREICH, 36},
-	{ATTACK_NAHKAMPF, 42},
-	{ATTACK_SCHALLSTICH, 55},
-	{0x1FF, 0x7F}
+def update_and_link(pkmns, constants):
+    """ Updates the pokemon list by merging the pokemon
+    with their respective linked additional data.
+    pkmns must be a list of either pokemon objects
+    or None. (A link will be expected then.). For all
+    pokemon instances the movesets are normalized.
+    """
+    # First fetch the local pokemon and insert 
+    # them into the list 
+    for species in data.local_pkmn:
+        pkmns[species] = data.local_pkmn[species]
+
+    # Second update the pokemon
+    for species in data.updates:
+        pkmns[species] = merge_pkmns(pkmns[species], data.updates[species])
+    
+    # Apply links
+    linked = []
+    for species, pkmn in enumerate(pkmns):
+        if pkmn:
+            normalize.normalize_pokemon(pkmn, constants)
+            linked.append((REAL, pkmn))
+        else:
+            if species in links:
+                linked.append((LINKED, links[species]))
+            else:
+                linked.append((NULL, None))
+
+    return linked
+            
+

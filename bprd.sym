@@ -161,7 +161,6 @@ move_is_hm = 0x080440B9;
 pokemon_new = 0x803D955;
 unkown_ingame_trade_func = 0x0807DC89;
 ingame_trade_init_callback = 0x080505ED;
-pokemon_get_egg_moves = 0x08045B2D;
 pokemon_append_attack = 0x0803E7B1;
 pokemon_rotate_and_push_attack = 0x0803EB41;
 tile_get_field_by_pos = 0x08058F49;
