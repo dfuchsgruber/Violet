@@ -742,8 +742,8 @@ song song_table[] = {
         {mus_monumental, SONG_TYPE_SONG, SONG_TYPE_SONG},
         //Song 369
         {mus_route_7, SONG_TYPE_SONG, SONG_TYPE_SONG},
-        //
-        {mus_chan_test, SONG_TYPE_SONG, SONG_TYPE_SONG},
+        //Song 370
+        {mus_glyphs, SONG_TYPE_SONG, SONG_TYPE_SONG},
         
 
 };
