@@ -29,7 +29,7 @@
 
 
 .string str_0x8c86ac GER
-	=\b\01_hat_\b\02\nerhalten!
+	=\b\x01_hat_\b\x02\nerhalten!
 .end
 
 
@@ -39,7 +39,7 @@
 
 
 .string str_0x8c8767 GER
-	=Das_Pok\emon_\b\02_soll\nes_sein?
+	=Das_Pok\emon_\b\x02_soll\nes_sein?
 .end
 
 
