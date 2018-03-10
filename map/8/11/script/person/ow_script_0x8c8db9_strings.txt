@@ -4,5 +4,5 @@
 
 
 .string str_0x931636 GER
-	=Oh,_hallo_\b\x01!\pIch_hatte_dich_..._\$aeh_..._an_einem\nOrt_wie_diesem_nicht_erwartet.\pWas_treibst_du_hier_auch?\nNur_Ganoven_und_anderes_Gesindel\lkommt_hier_zusammen,_nicht_aber\lLeute_von_deinem_Schlag!\p...\n...\pWas_ich_hier_tue?\pNun_..._\$aeh_..._ja_...\nIch_erwerbe_hier_gewisse_..._\$aeh\p..._Ger\$aetschaften_...\pNicht,_weil_sie_auf_dem_legalen\nMarkt_zu_teuer_w\$aeren_...\pIch_..._\$aeh_...\nIch_habe_ganz_vergessen,_dass_ich\leinen_wichtigen_Termin_habe.\pMeine_Forschungen_dulden_keinen\nAufschub.\p...\pAuf_Wiedersehen,_\b\x01!\nUnd_gr\$ue\$se_doch_bitte_Elise,_mein\lkleines_M\$aedchen,_von_mir.
+	=Oh,_hallo_\b\01!\pIch_hatte_dich_..._\$aeh_..._an_einem\nOrt_wie_diesem_nicht_erwartet.\pWas_treibst_du_hier_auch?\nNur_Ganoven_und_anderes_Gesindel\lkommt_hier_zusammen,_nicht_aber\lLeute_von_deinem_Schlag!\p...\n...\pWas_ich_hier_tue?\pNun_..._\$aeh_..._ja_...\nIch_erwerbe_hier_gewisse_..._\$aeh\p..._Ger\$aetschaften_...\pNicht,_weil_sie_auf_dem_legalen\nMarkt_zu_teuer_w\$aeren_...\pIch_..._\$aeh_...\nIch_habe_ganz_vergessen,_dass_ich\leinen_wichtigen_Termin_habe.\pMeine_Forschungen_dulden_keinen\nAufschub.\p...\pAuf_Wiedersehen,_\b\01!\nUnd_gr\$ue\$se_doch_bitte_Elise,_mein\lkleines_M\$aedchen,_von_mir.
 .end
