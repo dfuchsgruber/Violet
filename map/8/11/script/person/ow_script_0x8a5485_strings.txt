@@ -4,5 +4,5 @@
 
 
 .string str_0x8fad70 GER
-	=Die_Batterie_des_Wundertauschs\nbetr\$aegt_\b\02/250.\pHab_noch_etwas_Geduld!
+	=Die_Batterie_des_Wundertauschs\nbetr\$aegt_\b\x02/250.\pHab_noch_etwas_Geduld!
 .end

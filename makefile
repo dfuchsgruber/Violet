@@ -8,12 +8,12 @@ CC=@arm-none-eabi-gcc
 NM=@arm-none-eabi-nm
 ARS=@armips
 MID2AGB=@mid2agb
-STR2S=@python str2s.py
-PY=@python
-BIN2S=@python bin2s.py
-PYSET2S=@python tools/pyset2s.py
-PYMAP2S=@python tools/pymap2s.py
-PYPROJ2S=@python tools/pyproj2s.py
+STR2S=@python3 str2s.py
+PY=@python3
+BIN2S=@python3 bin2s.py
+PYSET2S=@python3 tools/pyset2s.py
+PYMAP2S=@python3 tools/pymap2s.py
+PYPROJ2S=@python3 tools/pyproj2s.py
 
 ASFLAGS=-mthumb -Iinclude/ -mcpu=arm7tdmi -march=armv4t
 MIDFLAGS=-V92
@@ -200,7 +200,7 @@ include/std.s: tools/constants.py
 # Create the std.s
 	$(PY) tools/constants.py include/
 	
-build:  include/std.s $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o index
+all:  include/std.s $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o index
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \

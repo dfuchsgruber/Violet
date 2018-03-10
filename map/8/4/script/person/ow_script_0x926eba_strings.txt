@@ -14,7 +14,7 @@
 
 
 .string str_0x1961c4 GER
-	=Der_Spitzname_ist_\b\02,\noder?_Ein_sch\$oener_Name!\pGef\$aellt_er_dir_noch_immer,_oder\nm\$oechtest_du_ihn_\$aendern?
+	=Der_Spitzname_ist_\b\x02,\noder?_Ein_sch\$oener_Name!\pGef\$aellt_er_dir_noch_immer,_oder\nm\$oechtest_du_ihn_\$aendern?
 .end
 
 
@@ -24,17 +24,17 @@
 
 
 .string str_0x196308 GER
-	=Fertig!_Von_nun_an_hei\$st_dein\nPok\emon_\b\02!\pEigentlich_unterscheidet_sich_der\nName_nicht_von_dem_vorherigen_und\ldoch_ist_er_um_einiges_besser!\pWelch_ein_Gl\$ueck!
+	=Fertig!_Von_nun_an_hei\$st_dein\nPok\emon_\b\x02!\pEigentlich_unterscheidet_sich_der\nName_nicht_von_dem_vorherigen_und\ldoch_ist_er_um_einiges_besser!\pWelch_ein_Gl\$ueck!
 .end
 
 
 .string str_0x19626e GER
-	=Fertig!_Von_nun_an_hei\$st_dein\nPok\emon_\b\02!\pDas_ist_ein_besserer_Name_als_der\nvorherige._Welch_ein_Gl\$ueck_f\$uer\ldich!
+	=Fertig!_Von_nun_an_hei\$st_dein\nPok\emon_\b\x02!\pDas_ist_ein_besserer_Name_als_der\nvorherige._Welch_ein_Gl\$ueck_f\$uer\ldich!
 .end
 
 
 .string str_0x1963a6 GER
-	=_in_wirklich_guter\nName!\pK\$uemmere_dich_gut_um_\b\02!
+	=_in_wirklich_guter\nName!\pK\$uemmere_dich_gut_um_\b\x02!
 .end
 
 

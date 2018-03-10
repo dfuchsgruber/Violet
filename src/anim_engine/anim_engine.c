@@ -2,7 +2,6 @@
 #include "romfuncs.h"
 #include "oams.h"
 #include "callbacks.h"
-#include <stdbool.h>
 #include "anim_engine.h"
 #include "superstate.h"
 #include "color.h"
@@ -157,7 +156,7 @@ u16 anim_engine_read_hword(ae_memory*mem) {
 void cmdx00_end(ae_memory* mem) {
     if (mem->link_numbers == 0) {
         //there are no links left -> engine is shut down
-        mem->active = false;
+        mem->active = 1;
         remove_big_callback(mem->callback_id);
     } else {
         //there are links -> return to last element on link list
@@ -742,7 +741,7 @@ void cmdx23_maintain() {
 }
 
 void cmdx24_script_notify() {
-    *((bool*) 0x03000EA8) = false;
+    *((int*) 0x03000EA8) = 0;
 }
 
 void cmdx25_oam_reset() {
@@ -990,7 +989,7 @@ void _obj_move_trig_trace(anim_engine_task *self){
     u16 frame = vars[2];
     s16 amplitude = (s16)vars[3];
     int period = vars[4];
-    bool on_y_axis = vars[5];
+    int on_y_axis = vars[5];
     int trig_func = vars[6];
     int d;
     switch(trig_func){
