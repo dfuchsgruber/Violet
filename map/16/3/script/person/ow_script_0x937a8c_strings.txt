@@ -4,12 +4,12 @@
 
 
 .string str_0x937ae9 GER
-	=Sehr_gut,_du_hast_bereits\n\b\x04_verschiedene_Pok\emon\lregistriert.\pAls_Belohnung_werde_ich_deinem\nPok\edex_die_Habitat-Funktion\lhinzuf\$uegen.
+	=Sehr_gut,_du_hast_bereits\n\b\04_verschiedene_Pok\emon\lregistriert.\pAls_Belohnung_werde_ich_deinem\nPok\edex_die_Habitat-Funktion\lhinzuf\$uegen.
 .end
 
 
 .string str_0x937b72 GER
-	=Der_Pok\edex_von_\b\x01_wurde\num_die_Habitats-Funktion\lerweitert!
+	=Der_Pok\edex_von_\b\01_wurde\num_die_Habitats-Funktion\lerweitert!
 .end
 
 
