@@ -996,7 +996,7 @@
             "XXX"
         ]
     },
-    "types" : {
+    "pokemon_types" : {
         "type" : "enum",
         "base" : 0,
         "values" : [
@@ -1462,29 +1462,28 @@
         ]
     },
     "attack_affects_whom_flags" : {
-        "type" : "enum",
-        "base" : 0,
-        "values" : [
-            "TARGET_DEPENDS_ON_ATTACK",
-            "TARGET_UNUSED",
-            "RANDOM_TARGET",
-            "TARGET_BOTH_FOES",
-            "TARGET_USER",
-            "TARGET_BOTH_FOES_AND_PARTNER",
-            "TARGET_OPPONENT_FIELD"
-        ]
+        "type" : "dict"
+        "values" : {
+            0 : "SELECTED_TARGET",
+            1 : "TARGET_DEPENDS_ON_ATTACK",
+            2 : "TARGET_UNUSED",
+            4 : "RANDOM_TARGET",
+            8 : "TARGET_BOTH_FOES",
+            16 : "TARGET_USER",
+            32 : "TARGET_BOTH_FOES_AND_PARTNER",
+            64 : "TARGET_OPPONENT_FIELD"
+        }
     },
     "attack_flags" : {
-        "type" : "enum",
-        "base" : 0,
-        "values" : [
-            "MAKES_CONTACT",
-            "AFFECTED_BY_PROTECT",
-            "AFFECTED_BY_MAGIC_COAT",
-            "AFFECTED_BY_SNATCH",
-            "MIRRORABLE",
-            "TRIGGERS_KINGS_ROCK"
-        ]
+        "type" : "dict",
+        "values" : {
+            1 : "MAKES_CONTACT",
+            2 : "AFFECTED_BY_PROTECT",
+            4 : "AFFECTED_BY_MAGIC_COAT",
+            8 : "AFFECTED_BY_SNATCH",
+            16 : "MIRRORABLE",
+            32 : "TRIGGERS_KINGS_ROCK"
+        }
     },
     "attack_categories" : {
         "type" : "enum",
@@ -1625,15 +1624,15 @@
         "values" : {
             0 : "TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS",
             1 : "TRAINER_AI_VARIABILITY",
-            2 : "TRAINER_AI_SUPER_EFFECTIVE",
-            3 : "TRAINER_AI_STATUS_MOVES_PREFERED_IN_FIRST_ROUND",
-            4 : "TRAINER_AI_PREFER_CERTAIN_MOVES",
-            5 : "TRAINER_AI_PREFER_NO_DAMAGE_MOVES",
-            6 : "TRAINER_AI_PREFER_NO_DAMAGE_MOVES_IF_OTHER_POKEMON_IN_PARTY",
-            7 : "TRAINER_AI_CONSIDER_PERECNTUAL_HP",
-            29 : "TRAINER_AI_FLEE",
-            30 : "TRAINER_AI_SAFARI_ZONE",
-            31 : "TRAINER_AI_FLEE_IF_HP_LOW",
+            (2**2) : "TRAINER_AI_SUPER_EFFECTIVE",
+            (2**3) : "TRAINER_AI_STATUS_MOVES_PREFERED_IN_FIRST_ROUND",
+            (2**4) : "TRAINER_AI_PREFER_CERTAIN_MOVES",
+            (2**5) : "TRAINER_AI_PREFER_NO_DAMAGE_MOVES",
+            (2**7) : "TRAINER_AI_PREFER_NO_DAMAGE_MOVES_IF_OTHER_POKEMON_IN_PARTY",
+            (2**8) : "TRAINER_AI_CONSIDER_PERECNTUAL_HP",
+            (2**29) : "TRAINER_AI_FLEE",
+            (2**30) : "TRAINER_AI_SAFARI_ZONE",
+            (2**31) : "TRAINER_AI_FLEE_IF_HP_LOW",
         }
     },
     "flags" : {
@@ -2508,6 +2507,167 @@
             "DIVE",
             "RETURN_FROM_DIVE"
         ]
+    },
+    "pokemon_shapes" : {
+        "type" : "enum",
+        "base" : 0,
+        "values" : [
+            "SHAPE_ANIMAL",
+            "SHAPE_HUMANOID",
+            "SHAPE_TAIL",
+            "SHAPE_SNAKE",
+            "SHAPE_WINGED_INSECT",
+            "SHAPE_WINGED",
+            "SHAPE_INSECT",
+            "SHAPE_HEAD",
+            "SHAPE_ARMS",
+            "SHAPE_LEGS",
+            "SHAPE_TENTACLES",
+            "SHAPE_FISH",
+            "SHAPE_BALL",
+            "SHAPE_MULTI"
+        ]
+    },
+    "pokemon_language_ids" : {
+        "type" : "enum",
+        "base" : 0x201,
+        "values" : [
+            "LANGUAGE_JAP",
+            "LANGUAGE_ENG",
+            "LANGUAGE_FRA",
+            "LANGAUGE_ITA",
+            "LANGUAGE_GER",
+            "LANGUAGE_KOR",
+            "LANGUAGE_ESP"
+        ]
+    },
+    "natures" : {
+        "type" : "enum",
+        "base" : 0,
+        "values" : [
+            "NATURE_ROBUST",
+            "NATURE_SOLO",
+            "NATURE_MUTIG",
+            "NATURE_HART",
+            "NATURE_FRECH",
+            "NATURE_KUEHN",
+            "NATURE_SANFT",
+            "NATURE_LOCKER",
+            "NATURE_PFIFFIG",
+            "NATURE_LASCH",
+            "NATURE_SCHEU",
+            "NATURE_HASTIG",
+            "NATURE_ERNST",
+            "NATURE_FROH",
+            "NATURE_NAIV",
+            "NATURE_MAESSIG",
+            "NATURE_MILD",
+            "NATURE_RUHIG",
+            "NATURE_ZAGHAFT",
+            "NATURE_HITZIG",
+            "NATURE_STILL",
+            "NATURE_ZART",
+            "NATURE_FORSCH",
+            "NATURE_SACHT",
+            "NATURE_KAUZIG
+        ]
+    },
+    "pokemon_attributes" : {
+        "type" : "enum",
+        "base" : 0,
+        "values": [
+            "ATTRIBUTE_PID",
+            "ATTRIBUTE_TID",
+            "ATTRIBUTE_NICKNAME",
+            "ATTRIBUTE_LANGUAGE",
+            "ATTRIBUTE_SANITY_0",
+            "ATTRIBUTE_SANITY_1",
+            "ATTRIBUTE_SANITY_2",
+            "ATTRIBUTE_OT_NAME",
+            "ATTRIBUTE_MARKINGS",
+            "ATTRIBUTE_CHECKSUM",
+            "ATTRIBUTE_FILLER",
+            "ATTRIBUTE_SPECIES",
+            "ATTRIBUTE_ITEM",
+            "ATTRIBUTE_ATTACK1",
+            "ATTRIBUTE_ATTACK2",
+            "ATTRIBUTE_ATTACK3",
+            "ATTRIBUTE_ATTACK4",
+            "ATTRIBUTE_PP1",
+            "ATTRIBUTE_PP2",
+            "ATTRIBUTE_PP3",
+            "ATTRIBUTE_PP4",
+            "ATTRIBUTE_PP_BONUSES",
+            "ATTRIBUTE_COOLNESS",
+            "ATTRIBUTE_BEAUTY",
+            "ATTRIBUTE_CUTENESS",
+            "ATTRIBUTE_EXP",
+            "ATTRIBUTE_HP_EV",
+            "ATTRIBUTE_ATT_EV",
+            "ATTRIBUTE_DEF_EV",
+            "ATTRIBUTE_INIT_EV",
+            "ATTRIBUTE_SATT_EV",
+            "ATTRIBUTE_SDEF_EV",
+            "ATTRIBUTE_HAPPINESS",
+            "ATTRIBUTE_SMARTNESS",
+            "ATTRIBUTE_POKERUS",
+            "ATTRIBUTE_CATCH_LOCATION",
+            "ATTRIBUTE_CATCH_LEVEL",
+            "ATTRIBUTE_U0",
+            "ATTRIBUTE_CATCH_INFO",
+            "ATTRIBUTE_HP_IV",
+            "ATTRIBUTE_ATT_IV",
+            "ATTRIBUTE_DEF_IV",
+            "ATTRIBUTE_INIT_IV",
+            "ATTRIBUTE_SATT_IV",
+            "ATTRIBUTE_SDEF_IV",
+            "ATTRIBUTE_IS_EGG",
+            "ATTRIBUTE_ABILITY",
+            "ATTRIBUTE_TOUGHNESS",
+            "ATTRIBUTE_SHEEN",
+            "ATTRIBUTE_U1",
+            "ATTRIBUTE_U2",
+            "ATTRIBUTE_U3",
+            "ATTRIBUTE_U4",
+            "ATTRIBUTE_U5",
+            "ATTRIBUTE_U6",
+            "ATTRIBUTE_STATUS",
+            "ATTRIBUTE_LEVEL",
+            "ATTRIBUTE_CURRENT_HP",
+            "ATTRIBUTE_TOTAL_HP",
+            "ATTRIBUTE_ATK",
+            "ATTRIBUTE_DEF",
+            "ATTRIBUTE_INIT",
+            "ATTRIBUTE_SATK",
+            "ATTRIBUTE_SDEF",
+            "ATTRIBUTE_SPECIES2"
+        ]
+    },
+    "attack_results" : {
+        "type" : "dict",
+        "values" : {
+            1 : "ATTACK_MISSED",
+            2 : "ATTACK_SUPER_EFFECTIVE",
+            4 : "ATTACK_NOT_EFFECTIVE",
+            8 : "ATTACK_NO_EFFECT",
+            16 : "ATTACK_OHKO",
+            32 : "ATTACK_FAILED",
+            64 : "ATTACK_ENDURED",
+            128 : "ATTACK_ENDURED_BY_FOCUS_SASH"
+        }
+    },
+    "battle_weathers" : {
+        "type" : "dict",
+        "values" : {
+            1 : "BATTLE_WEATHER_RAIN",
+            2 : "BATTLE_WEATHER_WOLKENBRUCH",
+            4 : "BATTLE_WEATHER_RAIN_DRIZZLE",
+            8 : "BATTLE_WEATHER_SANDSTORM",
+            16 : "BATTLE_WEATHER_SANDSTORM_ABILITY",
+            32 : "BATTLE_WEATHER_SUN",
+            64 : "BATTLE_WEATHER_SUN_DROUGHT",
+            128 : "BATTLE_WEATHER_HAIL"
+        }
     }
 
 }

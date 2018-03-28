@@ -4,16 +4,24 @@
 #include "callbacks.h"
 #include "trainerschool_test.h"
 #include "bg.h"
-#include "utils.h"
 #include "text.h"
 #include "superstate.h"
 #include "oams.h"
 #include "debug.h"
 #include "data_structures.h"
 #include "starterselection.h"
+
+#include "../../include/c/math.h"
 #include "basestats.h"
 #include "transparency.h"
 
+typedef struct {
+        u16 hscroll;
+        u8 hscroll_delay;
+        u8 cursor;
+        u8 pokeball_oams[3];
+        bool selected;
+    } trainerschool_selection_memory;
 
 bg_config trainerschool_selection_bg_configs[4] = {
     {0, 2, 31, 0, 0, 0}, //text on bg0

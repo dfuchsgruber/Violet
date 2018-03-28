@@ -1,7 +1,7 @@
 #include "types.h"
 #include "map.h"
 
-stru_healing_place healing_places[] = {
+stru_healing_place healing_places[NUM_HEALING_PLACES] = {
     {4, 0},
     {5, 4},
     {6, 5},
@@ -25,6 +25,6 @@ stru_healing_place healing_places[] = {
     {0xFFFF, 0xFFFF}
 };
 
-u8 healing_place_target_persons[] = {
+u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
     {1, 1, 3, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0xFF}
 };

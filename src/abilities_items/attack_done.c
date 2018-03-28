@@ -5,7 +5,6 @@
 #include "item.h"
 #include "attack.h"
 #include "battle.h"
-#include "basestats.h"
 #include "debug.h"
 #include "save.h"
 #include "data_structures.h"

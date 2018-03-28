@@ -23,9 +23,9 @@ LANGUAGE=LANG_GER#LANG_EN
 CLANGMACRO=PSTRING
 
 # Define compiler flags
-ASFLAGS=-mthumb -Iinclude/ -Iinclude/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
+ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
-CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/ -Iinclude/constants/ -D$(LANGUAGE)
+CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/c/ -Iinclude/c/constants/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs
 GRITFLAGS=-fh! -ftc
 WAVFLAGS=-c
