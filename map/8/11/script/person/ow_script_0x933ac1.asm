@@ -1,6 +1,9 @@
+.include "callstds.s"
+.include "flags.s"
+.include "movements.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x933e11
 ow_script_movs_0x933e11:

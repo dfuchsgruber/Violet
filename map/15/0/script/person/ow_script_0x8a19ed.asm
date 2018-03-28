@@ -1,6 +1,8 @@
+.include "map_connections.s"
+.include "items.s"
+.include "map_adjacency_types.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_mart0x8fb16a
 ow_script_mart0x8fb16a:

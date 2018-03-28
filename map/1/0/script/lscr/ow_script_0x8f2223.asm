@@ -1,6 +1,10 @@
+.include "flags.s"
+.include "movements.s"
+.include "callstds.s"
+.include "species.s"
+.include "vars.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x8f2219
 ow_script_movs_0x8f2219:

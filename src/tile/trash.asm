@@ -1,5 +1,5 @@
 .include "overworld_script.s"
-.include "std.s"
+.include "vars.s"
 
 .global trash_script
 

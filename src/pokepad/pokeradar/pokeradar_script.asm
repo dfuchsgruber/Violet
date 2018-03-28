@@ -1,5 +1,5 @@
 .include "overworld_script.s"
-.include "std.s"
+.include "movements.s"
 
 .global script_pokeradar
 .global script_pokeradar_battle

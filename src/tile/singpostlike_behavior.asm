@@ -1,5 +1,5 @@
 .include "overworld_script.s"
-.include "std.s"
+.include "flags.s"
 @0806D154 via r0
 
 .align 2

@@ -1,6 +1,9 @@
+.include "movements.s"
+.include "callstds.s"
+.include "vars.s"
+.include "songs.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x94794b
 ow_script_movs_0x94794b:
@@ -62,7 +65,7 @@ end
 ow_script_0x8f6d1b:
 pause 0x40
 fadescreen 0x1
-fadesong MUS_0
+fadesong 0
 loadpointer 0x0 str_0x8fb998
 callstd MSG
 warpmuted 0x3 0x4b 0xff 0x2 0x2

@@ -1,6 +1,8 @@
+.include "items.s"
+.include "callstds.s"
+.include "abilities.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x914c07
 ow_script_0x914c07:

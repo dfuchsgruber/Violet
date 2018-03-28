@@ -1,6 +1,5 @@
 @// Tables pasted from the ROM
-
-.include "std.s"
+.include "attacks.s"
 
 .global table_pokemenu_opts
 .global pokemenu_opts

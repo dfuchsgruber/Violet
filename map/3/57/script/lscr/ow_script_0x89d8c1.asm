@@ -1,6 +1,15 @@
+.include "flags.s"
+.include "songs.s"
+.include "map_connections.s"
+.include "movements.s"
+.include "items.s"
+.include "callstds.s"
+.include "species.s"
+.include "map_adjacency_types.s"
+.include "vars.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x89dc15
 ow_script_movs_0x89dc15:
@@ -1296,7 +1305,7 @@ applymovement 0x7 ow_script_movs_0x8a8e6d
 waitmovement 0x0
 applymovement 0x4 ow_script_movs_0x8a8c91
 waitmovement 0x0
-fadesong MUS_0
+fadesong 0
 call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8a8df9
 callstd MSG
@@ -1326,7 +1335,7 @@ call ow_script_0x89db71
 loadpointer 0x0 str_0x8a8c5e
 callstd MSG
 special 0x7
-fadesong MUS_0
+fadesong 0
 applymovement 0x4 ow_script_movs_0x8a8c5a
 waitmovement 0x0
 applymovement 0x3 ow_script_movs_0x8a8c57
@@ -1361,7 +1370,7 @@ goto ow_script_0x8ab99d
 ow_script_0x8ab99d:
 applymovement 0x4 ow_script_movs_0x8a8c5a
 waitmovement 0x0
-fadesong MUS_0
+fadesong 0
 applymovement 0xff ow_script_movs_0x8a8c57
 waitmovement 0x0
 applymovement 0x5 ow_script_movs_0x8aabe2
@@ -1387,7 +1396,7 @@ callstd MSG
 special 0x7
 applymovement 0x4 ow_script_movs_0x8a8c5a
 waitmovement 0x0
-fadesong MUS_0
+fadesong 0
 applymovement 0x5 ow_script_movs_0x8a8c57
 waitmovement 0x0
 applymovement 0x7 ow_script_movs_0x8aabe2

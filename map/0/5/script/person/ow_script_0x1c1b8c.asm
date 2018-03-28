@@ -1,6 +1,10 @@
+.include "flags.s"
+.include "attacks.s"
+.include "callstds.s"
+.include "vars.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x1c1b8c
 ow_script_0x1c1b8c:

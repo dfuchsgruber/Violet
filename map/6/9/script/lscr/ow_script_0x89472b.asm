@@ -1,6 +1,10 @@
+.include "flags.s"
+.include "movements.s"
+.include "items.s"
+.include "callstds.s"
+.include "vars.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x897e33
 ow_script_movs_0x897e33:

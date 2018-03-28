@@ -1,4 +1,4 @@
-.include "std.s"
+.include "species.s"
 
 @// Wild data map_0_6_wild_grass
 .global map_0_6_wild_grass

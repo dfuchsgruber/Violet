@@ -1,6 +1,12 @@
+.include "map_connections.s"
+.include "items.s"
+.include "callstds.s"
+.include "species.s"
+.include "map_adjacency_types.s"
+.include "vars.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x8304ac
 ow_script_0x8304ac:

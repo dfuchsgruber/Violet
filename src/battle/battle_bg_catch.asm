@@ -1,4 +1,4 @@
-.include "std.s"
+.include "vars.s"
 
 .global battle_bg_catch
 

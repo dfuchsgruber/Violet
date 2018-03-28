@@ -1,5 +1,6 @@
 .include "anim_engine.s"
-.include "std.s"
+.include "songs.s"
+.include "species.s"
 
 .global ae_script_intro
 

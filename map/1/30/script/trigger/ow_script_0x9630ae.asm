@@ -1,6 +1,11 @@
+.include "flags.s"
+.include "songs.s"
+.include "movements.s"
+.include "callstds.s"
+.include "species.s"
+.include "vars.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x801223
 ow_script_movs_0x801223:
@@ -24,7 +29,7 @@ lockall
 applymovement 0xff ow_script_movs_0x801223
 waitmovement 0x0
 cry POKEMON_LAVADOS 0x0
-fadesong MUS_0
+fadesong 0
 pause 0x40
 special 0x113
 applymovement 0x7f ow_script_movs_0x9630a8

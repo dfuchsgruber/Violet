@@ -1,6 +1,7 @@
+.include "flags.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x8dc2d5
 ow_script_0x8dc2d5:

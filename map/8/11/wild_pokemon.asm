@@ -1,4 +1,4 @@
-.include "std.s"
+.include "species.s"
 
 @// Wild data map_8_11_wild_water
 .global map_8_11_wild_water

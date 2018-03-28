@@ -1,6 +1,9 @@
+.include "items.s"
+.include "callstds.s"
+.include "flags.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x8fb602
 ow_script_0x8fb602:

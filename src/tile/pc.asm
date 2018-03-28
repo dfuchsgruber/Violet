@@ -1,6 +1,9 @@
 @//All changes for the pc
 
-.include "std.s"
+.include "callstds.s"
+.include "ordinals.s"
+.include "vars.s"
+.include "flags.s"
 .include "overworld_script.s"
 
 .global owscript_pc_turn_on

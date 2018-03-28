@@ -1,6 +1,10 @@
+.include "flags.s"
+.include "songs.s"
+.include "movements.s"
+.include "callstds.s"
+.include "vars.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x89c605
 ow_script_movs_0x89c605:
@@ -169,7 +173,7 @@ waitmovement 0x0
 applymovement 0x9 ow_script_movs_0x89c3c1
 waitmovement 0x0
 special 0x113
-fadesong MUS_0
+fadesong 0
 applymovement 0x7f ow_script_movs_0x89c563
 waitmovement 0x0
 call ow_script_0x89c5ee

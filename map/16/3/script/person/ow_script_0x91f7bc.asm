@@ -1,6 +1,6 @@
+.include "callstds.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x91f7bc
 ow_script_0x91f7bc:

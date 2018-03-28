@@ -1,6 +1,7 @@
+.include "callstds.s"
+.include "species.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x8110c2
 ow_script_0x8110c2:

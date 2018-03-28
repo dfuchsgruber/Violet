@@ -1,4 +1,4 @@
-.include "std.s"
+.include "vars.s"
 .include "overworld_script.s"
 
 .equ DTYPE_FOREST, 1

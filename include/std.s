@@ -1793,7 +1793,7 @@
 @ARM Assembly macro definitions for music
 
 
-.equ MUS_0, 0x0
+.equ 0, 0x0
 .equ MUS_POKEMON_WERDEN_GEHEILT, 0x100
 .equ MUS_ITEM_ERHALTEN, 0x102
 .equ MUS_POKEMON_GEFANGEN, 0x103

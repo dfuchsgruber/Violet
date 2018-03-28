@@ -1,6 +1,7 @@
+.include "movements.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x84ea62
 ow_script_movs_0x84ea62:

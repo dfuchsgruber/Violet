@@ -1,5 +1,8 @@
+.include "flags.s"
+.include "vars.s"
+.include "species.s"
+.include "ordinals.s"
 .include "overworld_script.s"
-.include "std.s"
 
 .global ow_script_botogel
 

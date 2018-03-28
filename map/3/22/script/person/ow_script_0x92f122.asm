@@ -1,6 +1,7 @@
+.include "callstds.s"
+.include "flags.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x92f122
 ow_script_0x92f122:

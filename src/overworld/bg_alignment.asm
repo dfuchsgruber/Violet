@@ -1,6 +1,6 @@
 @//*** Skips the bg alignment in the overworld
 
-.include "std.s"
+.include "flags.s"
 
 .global bg_alignment
 

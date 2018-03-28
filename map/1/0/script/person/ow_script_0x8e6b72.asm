@@ -1,6 +1,7 @@
+.include "items.s"
+.include "callstds.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x8e6b72
 ow_script_0x8e6b72:

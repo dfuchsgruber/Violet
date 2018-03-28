@@ -1,6 +1,8 @@
+.include "callstds.s"
+.include "flags.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x959462
 ow_script_0x959462:

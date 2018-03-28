@@ -1,4 +1,4 @@
-.include "std.s"
+.include "flags.s"
 
 .global battle_whiteout_bypass
 .global hook_battle_result

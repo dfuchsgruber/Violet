@@ -1,6 +1,9 @@
+.include "movements.s"
+.include "callstds.s"
+.include "vars.s"
+.include "songs.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x9339f0
 ow_script_movs_0x9339f0:

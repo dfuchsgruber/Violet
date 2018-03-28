@@ -1,6 +1,9 @@
+.include "callstds.s"
+.include "flags.s"
+.include "vars.s"
+.include "songs.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x9369e4
 ow_script_0x9369e4:
@@ -11,7 +14,7 @@ setvar 0x8004 0xb
 special 0x1b
 waitmovement 0x0
 faceplayer
-fadesong MUS_0
+fadesong 0
 call ow_script_0x936c1c
 loadpointer 0x0 str_0x936bf6
 callstd MSG

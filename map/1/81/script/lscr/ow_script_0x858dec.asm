@@ -1,6 +1,7 @@
+.include "callstds.s"
+.include "vars.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x858dec
 ow_script_0x858dec:

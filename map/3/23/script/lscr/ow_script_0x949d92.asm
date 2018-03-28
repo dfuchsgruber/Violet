@@ -1,11 +1,13 @@
+.include "callstds.s"
+.include "vars.s"
+.include "songs.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x949d92
 ow_script_0x949d92:
 lockall
-fadesong MUS_0
+fadesong 0
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x94d7a4
 callstd MSG

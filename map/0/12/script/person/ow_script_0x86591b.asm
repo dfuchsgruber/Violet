@@ -1,6 +1,5 @@
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x86591b
 ow_script_0x86591b:

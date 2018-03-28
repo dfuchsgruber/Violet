@@ -1,4 +1,3 @@
-.include "std.s"
 
 .global lscr_0x71f4e0
 

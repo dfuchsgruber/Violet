@@ -1,6 +1,7 @@
+.include "flags.s"
+.include "species.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x860960
 ow_script_0x860960:

@@ -1,5 +1,7 @@
 .include "anim_engine.s"
-.include "std.s"
+.include "flags.s"
+.include "songs.s"
+.include "species.s"
 
 .global ae_script_aktania_meteor
 .global ae_script_aktania_beam

@@ -1,6 +1,9 @@
+.include "movements.s"
+.include "callstds.s"
+.include "flags.s"
+.include "vars.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x9665c2
 ow_script_movs_0x9665c2:

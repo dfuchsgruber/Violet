@@ -1,6 +1,11 @@
+.include "flags.s"
+.include "songs.s"
+.include "movements.s"
+.include "callstds.s"
+.include "species.s"
+.include "vars.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_movs_0x96aa3b
 ow_script_movs_0x96aa3b:
@@ -270,7 +275,7 @@ callstd MSG
 special 0x7
 applymovement 0x2 ow_script_movs_0x96ada3
 waitmovement 0x0
-fadesong MUS_0
+fadesong 0
 sound 0x16
 hidesprite 0x9
 checksound
@@ -587,7 +592,7 @@ cry POKEMON_GROUDON 0x0
 call ow_script_0x972ff2
 waitcry
 pause 0x20
-fadesong MUS_0
+fadesong 0
 setvar 0x8004 0x9
 special 0x19
 waitstate

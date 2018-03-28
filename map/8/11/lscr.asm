@@ -1,4 +1,4 @@
-.include "std.s"
+.include "vars.s"
 
 .global lscr_0x7194d8
 

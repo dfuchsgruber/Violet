@@ -1,6 +1,6 @@
+.include "flags.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x85bb91
 ow_script_0x85bb91:

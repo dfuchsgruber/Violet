@@ -1,6 +1,7 @@
+.include "movements.s"
+.include "songs.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x89bfa5
 ow_script_0x89bfa5:

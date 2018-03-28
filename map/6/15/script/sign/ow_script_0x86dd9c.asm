@@ -1,6 +1,12 @@
+.include "flags.s"
+.include "movements.s"
+.include "items.s"
+.include "callstds.s"
+.include "species.s"
+.include "vars.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x86dd9c
 ow_script_0x86dd9c:

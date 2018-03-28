@@ -1,6 +1,9 @@
+.include "movements.s"
+.include "callstds.s"
+.include "vars.s"
+.include "ordinals.s"
 .include "overworld_script.s"
 
-.include "std.s"
 
 .global ow_script_0x83c1cf
 ow_script_0x83c1cf:

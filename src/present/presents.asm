@@ -1,5 +1,7 @@
 .include "overworld_script.s"
-.include "std.s"
+.include "items.s"
+.include "callstds.s"
+.include "flags.s"
 
 .global ow_script_present_0
 
