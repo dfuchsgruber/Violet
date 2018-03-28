@@ -1,3 +1,0 @@
-.string str_0x95c9cb GER
-	=Wusstest_du,_dass_sich_jede\nBeziehung_zwischen_Teilchen_auf\lvier_fundamentale_Kr\$aefte\lzur\$ueckf\$uehren_l\$aesst?\pDa_w\$aeren_die_Gravitation_und_die\nelektromagnetische_Kraft.\lDazu_kommen_die_myster\$oesen_starken\lund_schwachen_Kernkr\$aefte...
-.end

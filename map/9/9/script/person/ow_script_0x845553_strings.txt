@@ -1,3 +1,0 @@
-.string str_0x84c5fb GER
-	=Seit_Wochen_gehe_ich_Laufen,_aber\nich_nehme_keinen_Kilo_ab!_Ich\lsollte_wirklich_weniger_Chips\lessen...
-.end

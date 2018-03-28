@@ -1,4 +1,0 @@
-.string str_0x19675c GER
-	=Es ist wirklich eine Schande, dass\ndiese Stadt kein ordentliches\lEinkaufszentrum besitzt.
-.end
-

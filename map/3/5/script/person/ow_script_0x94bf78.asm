@@ -7,3 +7,15 @@ ow_script_0x94bf78:
 loadpointer 0x0 str_0x94de8d
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x94de8d
+
+str_0x94de8d:
+    .string "Ich halte Ausschau nach\nzwielichten Gestalten!\pWenn ich einen Verbrecher\nergreife, werde ich befördert!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,8 +1,0 @@
-.string str_0x95e31f GER
-	=Das_einzige,_was_noch_hei\$ser_ist,\nals_dieser_Ort,_w\$aere_meine\lWenigkeit!
-.end
-
-
-.string str_0x95e369 GER
-	=Wie_kannst_du_meine_Sch\$oenheit_so\ndreist_misachten?
-.end

@@ -1,3 +1,0 @@
-.string str_0x8c80e4 GER
-	=Sehr gut, du hast\nhergefunden.\pWo wir uns hier befinden?\nDas hier ist das dunkle Geheimnis\lKaskadas, die Schattenseite des\lSystems, dem wir unterworfen sind.\lEs ist ein geheimer Markt im\lUntergrund, der gr\$oe\$ste und\lber\$uechtigste des Kontinents.\lEr liegt direkt unterhalb\lKaskadas, sodass sogar Schiffe\lhier anlegen k\$oennen.\lWas gehandelt wird?\lVerbotene Gegenst\$aende, Falschgeld\lund sogar versklavte Pok\emon...\lEs ist ein trauriger Ort, das\lh\$aessliche Gesicht Thetos.\lKomm mit, ich f\$uehre dich herum.
-.end

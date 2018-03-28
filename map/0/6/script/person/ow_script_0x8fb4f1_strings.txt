@@ -1,3 +1,0 @@
-.string str_0x8fef43 GER
-	=Vorhin_kam_ein_\$aeu\$sert_mysteri\$oeser\nMann_hier_entlang._Er_erz\$aehlte_von\lden_Missst\$aenden_in_den_Top_Vier\lund_wollte_mich_\$ueberzeugen,_der\lRevolutionsarmee_beizutreten.
-.end

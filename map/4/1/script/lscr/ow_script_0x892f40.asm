@@ -100,3 +100,75 @@ difficulty_choices:
     .word str_difficulty_hard, 0
     .word str_difficulty_very_hard, 0
 
+
+
+.ifdef LANG_GER
+.global str_0x89553b
+
+str_0x89553b:
+    .string "Wähle zunächst den\nSchwierigkeitsgrad aus, in dem du\ldas Spiel spielen möchtest.\pAchtung: Diese Entscheidung ist\nendgültig.\pDu kannst sie während\ndes Spielverlaufes nicht ändern!"
+        
+        
+.global str_difficulty_very_easy
+
+str_difficulty_very_easy:
+    .string "Sehr einfach"
+        
+        
+.global str_difficulty_easy
+
+str_difficulty_easy:
+    .string "Einfach"
+        
+        
+.global str_difficulty_normal
+
+str_difficulty_normal:
+    .string "Normal"
+        
+        
+.global str_difficulty_hard
+
+str_difficulty_hard:
+    .string "Schwer"
+        
+        
+.global str_difficulty_very_hard
+
+str_difficulty_very_hard:
+    .string "Sehr schwer"
+        
+        
+.global str_intro_0
+
+str_intro_0:
+    .string "...Kannst du mich hören?\n... ... ...\nLass es mich dir zeigen...\nSie kamen aus dem All..."
+        
+        
+.global str_intro_1
+
+str_intro_1:
+    .string "Sie kamen von weit her...\nSie wollten die Menschen...\n...vernichten..."
+        
+        
+.global str_intro_2
+
+str_intro_2:
+    .string "Sie waren zum Äußersten bereit...\nEin Kampf war unvermeidbar..."
+        
+        
+.global str_intro_3
+
+str_intro_3:
+    .string "Und auch wenn sie besiegt wurden...\nWerden sie gestärkt wiederkehren..."
+        
+        
+.global str_0x8cf12f
+
+str_0x8cf12f:
+    .string "Was für ein seltsamer Traum...\nEr hat sich so real angefühlt!\p... Und was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\p... ... ...\n... ... ...\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der große Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!"
+        
+        
+.elseif LANG_EN
+
+.endif

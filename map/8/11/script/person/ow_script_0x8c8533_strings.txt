@@ -1,3 +1,0 @@
-.string str_0x8c8c3d GER
-	=Der_Schwarzmarkt_floriert,_w\$aehrend\ndie_Top_Vier_ihre_Augen\lverschlie\$sen.\pIst_es_nicht_ironisch,_dass_selbst\nRevolution\$aere_hier_verkehren?
-.end

@@ -1,8 +1,0 @@
-.string str_0x8d499a GER
-	=In_dieser_M\$uehle_kann_man\ninteressante_Dinge_finden!
-.end
-
-
-.string str_0x8d49d0 GER
-	=Hast_du_auch_schon_interessante\nDinge_hier_gefunden?
-.end

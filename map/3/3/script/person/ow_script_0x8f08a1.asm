@@ -14,3 +14,15 @@ callstd MSG_KEEPOPEN
 callasm 0x91a44c1
 pause 0x1
 end
+
+
+.ifdef LANG_GER
+.global str_0x8f4688
+
+str_0x8f4688:
+    .string "  Wählst du dieses Pokémon?\nA : Bestätigen  B : Abbruch"
+        
+        
+.elseif LANG_EN
+
+.endif

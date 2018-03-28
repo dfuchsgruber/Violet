@@ -71,3 +71,75 @@ callstd MSG
 goto ow_script_0x8d4513
 
 
+
+
+.ifdef LANG_GER
+.global str_0x8d4859
+
+str_0x8d4859:
+    .string "Kekeke! Jetzt werde ich mir dieses\nAltaria-Ei unter den Nagel reißen!"
+        
+        
+.global str_0x8d4782
+
+str_0x8d4782:
+    .string "Wer bist du denn?\nWeißt du, hier nistet ein goldenes\lAltaria und scheinbar hat es ein\lEi gelegt. Was denkst du, wie viel\lwohl so ein goldenes Wablu wert\list?\lAber du kriegst nichts davon! Das\list mein Ei!"
+        
+        
+.global str_mill_choice_0
+
+str_mill_choice_0:
+    .string "Ei nehmen"
+        
+        
+.global str_mill_choice_1
+
+str_mill_choice_1:
+    .string "Ei beschützen"
+        
+        
+.global str_0x8d46e0
+
+str_0x8d46e0:
+    .string "Du denkst also, dass du dieses Ei\neinfach so nehmen kannst?\pNichts da, ich werde mir das\nPrachtstück holen."
+        
+        
+.global str_0x8d46bb
+
+str_0x8d46bb:
+    .string "Was? Unsinn! Dieses Ei gehört mir!"
+        
+        
+.global str_0x8d469f
+
+str_0x8d469f:
+    .string "Unmöglich! Das schöne Ei!"
+        
+        
+.global str_0x8d4585
+
+str_0x8d4585:
+    .string "Wah! Du bist stark. Gegen dich\nkann ich nichts ausrichten. Nimm\ldir doch dieses dumme Ei, ich\lwollte es ohnehin nicht haben!"
+        
+        
+.global str_0x8d4644
+
+str_0x8d4644:
+    .string "Dieses Ei gehört der Mutter und du\nwirst es ihr nicht wegnehmen.\lDafür werde ich sorgen."
+        
+        
+.global str_0x8d4604
+
+str_0x8d4604:
+    .string "Kekeke! Dieses Ei wirst du mir\nschon wegnehmen müssen, Junge!"
+        
+        
+.global str_0x8d4525
+
+str_0x8d4525:
+    .string "Wah! Du bist stark! Was hast du\ndenn davon, dieses blöde Ei zu\lbeschützen?\pIch verzieh\ mich!"
+        
+        
+.elseif LANG_EN
+
+.endif

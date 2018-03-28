@@ -1,3 +1,0 @@
-.string str_0x95547f GER
-	=Ein_Briefkasten
-.end

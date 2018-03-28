@@ -1,3 +1,0 @@
-.string str_0x8f1a7c GER
-	=Was?_Ich_habe_dieses_Kanu_nicht\ngestohlen._Ich_habe_es_mir_nur_auf\lunbestimmte_Zeit_geliehen!
-.end

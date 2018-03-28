@@ -35,3 +35,21 @@ setvar 0x8001 0xb
 setvar 0x8002 0xe
 special 0x6
 return
+
+
+.ifdef LANG_GER
+.global str_0x843a47
+
+str_0x843a47:
+    .string "Oh, du und deine Pokémon sehen ja\nschrecklich erschöpft aus! Setzt\leuch doch erstmal zu mir und ruht\leuch aus."
+        
+        
+.global str_0x843aba
+
+str_0x843aba:
+    .string "Oh, schon viel besser, PLAYER!\nUnd jetzt gib alles, zeig es der\lWelt!"
+        
+        
+.elseif LANG_EN
+
+.endif

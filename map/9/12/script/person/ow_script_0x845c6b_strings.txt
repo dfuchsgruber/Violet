@@ -1,3 +1,0 @@
-.string str_0x95d460 GER
-	=Mit_einem_Wissenschaftler\nverheiratet_zu_sein,_ist_nicht\limmer_einfach.\pDen_ganzen_Tag_redet_er_vom\nWellencharakter_des_Lichts.\lOder_waren_es_doch_Teilchen?
-.end

@@ -1,3 +1,0 @@
-.string str_0x89f1c6 GER
-	=Die_Schule_ist_anstrengend,_aber\nman_darf_nicht_aufgeben!
-.end

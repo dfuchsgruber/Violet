@@ -1,3 +1,0 @@
-.string str_0x95cb56 GER
-	=Glaubst_du_an_einen_Gott?\nManche_verehren_Arceus,_den\lSch\$oepfer_aller_Dinge...\pIch_wei\$s_nicht,_ob_ich_an_etwas\nderart_abstraktes_glauben_kann...
-.end

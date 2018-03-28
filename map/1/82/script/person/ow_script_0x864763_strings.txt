@@ -1,8 +1,0 @@
-.string str_0x8657cf GER
-	=Halt!_Weiter_geht_es_nicht_f\$uer\ndich.\pJenseits_dieser_H\$oehle_haben_die\ngro\$sen_Leute_zu_tun!
-.end
-
-
-.string str_0x86582b GER
-	=Wenn_du_klug_bist,_kehrst_du_um!
-.end

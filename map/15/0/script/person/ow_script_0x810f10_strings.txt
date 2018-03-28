@@ -1,3 +1,0 @@
-.string str_0x810f25 GER
-	=Staralili!
-.end

@@ -1,3 +1,0 @@
-.string str_0x94dd5d GER
-	=Findest_du_es_etwa_witzig,_dass\nich_als_emertierte_Trainerin\lmeinen_Unterhalt_mit_dem_Sammeln\lvon_Pfandflaschen_machen_muss?
-.end

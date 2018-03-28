@@ -1,3 +1,4 @@
+	
 #include "types.h"
 #include "item.h"
 #include "romfuncs.h"
@@ -6,7 +7,7 @@
 item items[] = {
 	{
 		//ITEM_NONE
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -15,13 +16,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MEISTERBALL
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_i, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Meisterball"), PSTRING("MASTER BALL")),
 		0x1, //index
 		0, //price
 		0, //holding_effect_id
@@ -30,13 +31,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		0, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HYPERBALL
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_U, PCHAR_l, PCHAR_t, PCHAR_r, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Hyperball"), PSTRING("ULTRA BALL")),
 		0x2, //index
 		1200, //price
 		0, //holding_effect_id
@@ -45,13 +46,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERBALL
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_r, PCHAR_e, PCHAR_a, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Superball"), PSTRING("GREAT BALL")),
 		0x3, //index
 		600, //price
 		0, //holding_effect_id
@@ -60,13 +61,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		2, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEBALL
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Pokéball"), PSTRING("POKé BALL")),
 		0x4, //index
 		200, //price
 		0, //holding_effect_id
@@ -75,13 +76,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		3, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SAFARIBALL
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_f, PCHAR_a, PCHAR_r, PCHAR_i, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_a, PCHAR_f, PCHAR_a, PCHAR_r, PCHAR_i, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Safariball"), PSTRING("SAFARI BALL")),
 		0x5, //index
 		0, //price
 		0, //holding_effect_id
@@ -90,13 +91,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		4, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NETZBALL
-		PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_e, PCHAR_t, PCHAR_z, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_N, PCHAR_e, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Netzball"), PSTRING("NET BALL")),
 		0x6, //index
 		1000, //price
 		0, //holding_effect_id
@@ -105,13 +106,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		5, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAUCHBALL
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_i, PCHAR_v, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tauchball"), PSTRING("DIVE BALL")),
 		0x7, //index
 		1000, //price
 		0, //holding_effect_id
@@ -120,13 +121,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		6, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NESTBALL
-		PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_N, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Nestball"), PSTRING("NEST BALL")),
 		0x8, //index
 		1000, //price
 		0, //holding_effect_id
@@ -135,13 +136,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		7, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WIEDERBALL
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_e, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_p, PCHAR_e, PCHAR_a, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Wiederball"), PSTRING("REPEAT BALL")),
 		0x9, //index
 		1000, //price
 		0, //holding_effect_id
@@ -150,13 +151,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		8, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TIMERBALL
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_i, PCHAR_m, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_i, PCHAR_m, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Timerball"), PSTRING("TIMER BALL")),
 		0xa, //index
 		1000, //price
 		0, //holding_effect_id
@@ -165,13 +166,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		9, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LUXUSBALL
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_u, PCHAR_x, PCHAR_u, PCHAR_s, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_u, PCHAR_x, PCHAR_u, PCHAR_r, PCHAR_y, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Luxusball"), PSTRING("LUXURY BALL")),
 		0xb, //index
 		0, //price
 		0, //holding_effect_id
@@ -180,13 +181,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		10, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PREMIERBALL
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_r, PCHAR_e, PCHAR_m, PCHAR_i, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_r, PCHAR_e, PCHAR_m, PCHAR_i, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0})),
+		LANGDEP(PSTRING("Premierball"), PSTRING("PREMIER BALL")),
 		0xc, //index
 		200, //price
 		0, //holding_effect_id
@@ -195,13 +196,13 @@ item items[] = {
 		0, //field_18
 		POCKET_POKEBALLS, //pocket
 		11, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
 		(void(*)(u8))0x80a1f09, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRANK
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_k, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Trank"), PSTRING("POTION")),
 		0xd, //index
 		300, //price
 		0, //holding_effect_id
@@ -216,7 +217,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GEGENGIFT
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_n, PCHAR_g, PCHAR_i, PCHAR_f, PCHAR_t, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_A, PCHAR_n, PCHAR_t, PCHAR_i, PCHAR_d, PCHAR_o, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Gegengift"), PSTRING("ANTIDOTE")),
 		0xe, //index
 		250, //price
 		0, //holding_effect_id
@@ -231,7 +232,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FEUERHEILER
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_u, PCHAR_e, PCHAR_r, PCHAR_h, PCHAR_e, PCHAR_i, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_u, PCHAR_r, PCHAR_n, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Feuerheiler"), PSTRING("BURN HEAL")),
 		0xf, //index
 		250, //price
 		0, //holding_effect_id
@@ -246,7 +247,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EISHEILER
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_h, PCHAR_e, PCHAR_i, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_I, PCHAR_c, PCHAR_e, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Eisheiler"), PSTRING("ICE HEAL")),
 		0x10, //index
 		250, //price
 		0, //holding_effect_id
@@ -261,7 +262,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AUFWECKER
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_u, PCHAR_f, PCHAR_w, PCHAR_e, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_A, PCHAR_w, PCHAR_a, PCHAR_k, PCHAR_e, PCHAR_n, PCHAR_i, PCHAR_n, PCHAR_g, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Aufwecker"), PSTRING("AWAKENING")),
 		0x11, //index
 		250, //price
 		0, //holding_effect_id
@@ -276,7 +277,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PARA_HEILER
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_r, PCHAR_a, PCHAR_MINUS, PCHAR_H, PCHAR_e, PCHAR_i, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_a, PCHAR_r, PCHAR_l, PCHAR_y, PCHAR_z, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_a, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Para-Heiler"), PSTRING("PARLYZ HEAL")),
 		0x12, //index
 		200, //price
 		0, //holding_effect_id
@@ -291,7 +292,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_GENESUNG
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_o, PCHAR_p, PCHAR_MINUS, PCHAR_G, PCHAR_e, PCHAR_n, PCHAR_e, PCHAR_s, PCHAR_u, PCHAR_n, PCHAR_g, 0xff, 0}), P99_PROTECT({PCHAR_F, PCHAR_u, PCHAR_l, PCHAR_l, PCHAR_SPACE, PCHAR_R, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_o, PCHAR_r, PCHAR_e, 0xff, 0})),
+		LANGDEP(PSTRING("Top-Genesung"), PSTRING("FULL RESTORE")),
 		0x13, //index
 		3000, //price
 		0, //holding_effect_id
@@ -306,7 +307,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_TRANK
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_o, PCHAR_p, PCHAR_MINUS, PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_k, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_x, PCHAR_SPACE, PCHAR_P, PCHAR_o, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Top-Trank"), PSTRING("MAX POTION")),
 		0x14, //index
 		2500, //price
 		0, //holding_effect_id
@@ -321,7 +322,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HYPERTRANK
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_k, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_P, PCHAR_o, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0})),
+		LANGDEP(PSTRING("Hypertrank"), PSTRING("HYPER POTION")),
 		0x15, //index
 		1200, //price
 		0, //holding_effect_id
@@ -336,7 +337,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERTRANK
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_k, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_P, PCHAR_o, PCHAR_t, PCHAR_i, PCHAR_o, PCHAR_n, 0xff, 0})),
+		LANGDEP(PSTRING("Supertrank"), PSTRING("SUPER POTION")),
 		0x16, //index
 		700, //price
 		0, //holding_effect_id
@@ -351,7 +352,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HYPERHEILER
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_y, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_h, PCHAR_e, PCHAR_i, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_u, PCHAR_l, PCHAR_l, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Hyperheiler"), PSTRING("FULL HEAL")),
 		0x17, //index
 		600, //price
 		0, //holding_effect_id
@@ -366,7 +367,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BELEBER
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_l, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_v, PCHAR_i, PCHAR_v, PCHAR_e, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Beleber"), PSTRING("REVIVE")),
 		0x18, //index
 		1500, //price
 		0, //holding_effect_id
@@ -381,7 +382,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_BELEBER
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_o, PCHAR_p, PCHAR_MINUS, PCHAR_B, PCHAR_e, PCHAR_l, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_r, 0xff, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_x, PCHAR_SPACE, PCHAR_R, PCHAR_e, PCHAR_v, PCHAR_i, PCHAR_v, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Top-Beleber"), PSTRING("MAX REVIVE")),
 		0x19, //index
 		4000, //price
 		0, //holding_effect_id
@@ -396,7 +397,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAFELWASSER
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_f, PCHAR_e, PCHAR_l, PCHAR_w, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, 0xff, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_r, PCHAR_e, PCHAR_s, PCHAR_h, PCHAR_SPACE, PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Tafelwasser"), PSTRING("FRESH WATER")),
 		0x1a, //index
 		200, //price
 		0, //holding_effect_id
@@ -411,7 +412,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPRUDEL
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_r, PCHAR_u, PCHAR_d, PCHAR_e, PCHAR_l, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_o, PCHAR_d, PCHAR_a, PCHAR_SPACE, PCHAR_P, PCHAR_o, PCHAR_p, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Sprudel"), PSTRING("SODA POP")),
 		0x1b, //index
 		300, //price
 		0, //holding_effect_id
@@ -426,7 +427,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LIMONADE
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_m, PCHAR_o, PCHAR_n, PCHAR_a, PCHAR_d, PCHAR_e, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_e, PCHAR_m, PCHAR_o, PCHAR_n, PCHAR_a, PCHAR_d, PCHAR_e, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Limonade"), PSTRING("LEMONADE")),
 		0x1c, //index
 		350, //price
 		0, //holding_effect_id
@@ -441,7 +442,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUHMUH_MILCH
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_u, PCHAR_h, PCHAR_m, PCHAR_u, PCHAR_h, PCHAR_MINUS, PCHAR_M, PCHAR_i, PCHAR_l, PCHAR_c, PCHAR_h, 0xff, 0}), P99_PROTECT({PCHAR_M, PCHAR_o, PCHAR_o, PCHAR_m, PCHAR_o, PCHAR_o, PCHAR_SPACE, PCHAR_M, PCHAR_i, PCHAR_l, PCHAR_k, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Kuhmuh-Milch"), PSTRING("MOOMOO MILK")),
 		0x1d, //index
 		500, //price
 		0, //holding_effect_id
@@ -456,7 +457,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ENERGIESTAUB
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_n, PCHAR_e, PCHAR_r, PCHAR_g, PCHAR_i, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_u, PCHAR_b, 0xff, 0}), P99_PROTECT({PCHAR_E, PCHAR_n, PCHAR_e, PCHAR_r, PCHAR_g, PCHAR_y, PCHAR_p, PCHAR_o, PCHAR_w, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0})),
+		LANGDEP(PSTRING("Energiestaub"), PSTRING("ENERGYPOWDER")),
 		0x1e, //index
 		500, //price
 		0, //holding_effect_id
@@ -471,7 +472,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KRAFTWURZEL
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_a, PCHAR_f, PCHAR_t, PCHAR_w, PCHAR_u, PCHAR_r, PCHAR_z, PCHAR_e, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_n, PCHAR_e, PCHAR_r, PCHAR_g, PCHAR_y, PCHAR_SPACE, PCHAR_R, PCHAR_o, PCHAR_o, PCHAR_t, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Kraftwurzel"), PSTRING("ENERGY ROOT")),
 		0x1f, //index
 		800, //price
 		0, //holding_effect_id
@@ -486,7 +487,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HEILPUDER
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_e, PCHAR_i, PCHAR_l, PCHAR_p, PCHAR_u, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_e, PCHAR_a, PCHAR_l, PCHAR_SPACE, PCHAR_P, PCHAR_o, PCHAR_w, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Heilpuder"), PSTRING("HEAL POWDER")),
 		0x20, //index
 		450, //price
 		0, //holding_effect_id
@@ -501,7 +502,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VITALKRAUT
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_i, PCHAR_t, PCHAR_a, PCHAR_l, PCHAR_k, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_t, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_v, PCHAR_i, PCHAR_v, PCHAR_a, PCHAR_l, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_r, PCHAR_b, 0xff, 0})),
+		LANGDEP(PSTRING("Vitalkraut"), PSTRING("REVIVAL HERB")),
 		0x21, //index
 		2800, //price
 		0, //holding_effect_id
@@ -516,7 +517,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AETHER
-		PSTRING(P99_PROCTECT({PCHAR_AE, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Äther"), PSTRING("ETHER")),
 		0x22, //index
 		1200, //price
 		0, //holding_effect_id
@@ -531,7 +532,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_AETHER
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_o, PCHAR_p, PCHAR_MINUS, PCHAR_ae, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_x, PCHAR_SPACE, PCHAR_E, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Top-äther"), PSTRING("MAX ETHER")),
 		0x23, //index
 		2000, //price
 		0, //holding_effect_id
@@ -546,7 +547,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ELIXIER
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_l, PCHAR_i, PCHAR_x, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_l, PCHAR_i, PCHAR_x, PCHAR_i, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Elixier"), PSTRING("ELIXIR")),
 		0x24, //index
 		3000, //price
 		0, //holding_effect_id
@@ -561,7 +562,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_ELIXIER
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_o, PCHAR_p, PCHAR_MINUS, PCHAR_E, PCHAR_l, PCHAR_i, PCHAR_x, PCHAR_i, PCHAR_e, PCHAR_r, 0xff, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_x, PCHAR_SPACE, PCHAR_E, PCHAR_l, PCHAR_i, PCHAR_x, PCHAR_i, PCHAR_r, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Top-Elixier"), PSTRING("MAX ELIXIR")),
 		0x25, //index
 		4500, //price
 		0, //holding_effect_id
@@ -576,7 +577,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LAVAKEKS
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_v, PCHAR_a, PCHAR_k, PCHAR_e, PCHAR_k, PCHAR_s, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_a, PCHAR_v, PCHAR_a, PCHAR_SPACE, PCHAR_C, PCHAR_o, PCHAR_o, PCHAR_k, PCHAR_i, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Lavakeks"), PSTRING("LAVA COOKIE")),
 		0x26, //index
 		200, //price
 		0, //holding_effect_id
@@ -591,7 +592,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLAUE_FLOETE
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Blaue Flöte"), PSTRING("BLUE FLUTE")),
 		0x27, //index
 		100, //price
 		0, //holding_effect_id
@@ -606,7 +607,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GELBE_FLOETE
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_e, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_Y, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_w, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_e, 0xff, 0})),
+		LANGDEP(PSTRING("Gelbe Flöte"), PSTRING("YELLOW FLUTE")),
 		0x28, //index
 		200, //price
 		0, //holding_effect_id
@@ -621,7 +622,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROTE_FLOETE
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_t, PCHAR_e, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_d, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Rote Flöte"), PSTRING("RED FLUTE")),
 		0x29, //index
 		300, //price
 		0, //holding_effect_id
@@ -636,7 +637,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHW_FLOETE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_DOT, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Schw. Flöte"), PSTRING("BLACK FLUTE")),
 		0x2a, //index
 		400, //price
 		0, //holding_effect_id
@@ -647,11 +648,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WEISSE_FLOETE
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_i, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0}), P99_PROTECT({PCHAR_W, PCHAR_h, PCHAR_i, PCHAR_t, PCHAR_e, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Weisse Flöte"), PSTRING("WHITE FLUTE")),
 		0x2b, //index
 		500, //price
 		0, //holding_effect_id
@@ -662,11 +663,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BEERENSAFT
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_a, PCHAR_f, PCHAR_t, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, PCHAR_SPACE, PCHAR_J, PCHAR_u, PCHAR_i, PCHAR_c, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Beerensaft"), PSTRING("BERRY JUICE")),
 		0x2c, //index
 		100, //price
 		1, //holding_effect_id
@@ -681,7 +682,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ZAUBERASCHE
-		PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_a, PCHAR_u, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_a, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_a, PCHAR_c, PCHAR_r, PCHAR_e, PCHAR_d, PCHAR_SPACE, PCHAR_A, PCHAR_s, PCHAR_h, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Zauberasche"), PSTRING("SACRED ASH")),
 		0x2d, //index
 		200, //price
 		0, //holding_effect_id
@@ -692,11 +693,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1859, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUESTENSALZ
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_ue, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_a, PCHAR_l, PCHAR_z, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_h, PCHAR_o, PCHAR_a, PCHAR_l, PCHAR_SPACE, PCHAR_S, PCHAR_a, PCHAR_l, PCHAR_t, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Küstensalz"), PSTRING("SHOAL SALT")),
 		0x2e, //index
 		20, //price
 		0, //holding_effect_id
@@ -707,11 +708,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUESTENSCHALE
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_ue, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0}), P99_PROTECT({PCHAR_S, PCHAR_h, PCHAR_o, PCHAR_a, PCHAR_l, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_e, PCHAR_l, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Küstenschale"), PSTRING("SHOAL SHELL")),
 		0x2f, //index
 		20, //price
 		0, //holding_effect_id
@@ -722,11 +723,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PURPURSTUECK
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_r, PCHAR_p, PCHAR_u, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_ue, PCHAR_c, PCHAR_k, 0xff, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_d, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Purpurstück"), PSTRING("RED SHARD")),
 		0x30, //index
 		200, //price
 		0, //holding_effect_id
@@ -737,11 +738,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_INDIGOSTUECK
-		PSTRING(P99_PROCTECT({PCHAR_I, PCHAR_n, PCHAR_d, PCHAR_i, PCHAR_g, PCHAR_o, PCHAR_s, PCHAR_t, PCHAR_ue, PCHAR_c, PCHAR_k, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_d, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Indigostück"), PSTRING("BLUE SHARD")),
 		0x31, //index
 		200, //price
 		0, //holding_effect_id
@@ -752,11 +753,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GELBSTUECK
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_s, PCHAR_t, PCHAR_ue, PCHAR_c, PCHAR_k, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_Y, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_w, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_d, 0xff, 0})),
+		LANGDEP(PSTRING("Gelbstück"), PSTRING("YELLOW SHARD")),
 		0x32, //index
 		200, //price
 		0, //holding_effect_id
@@ -767,11 +768,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRUENSTUECK
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_ue, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_ue, PCHAR_c, PCHAR_k, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_r, PCHAR_e, PCHAR_e, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_d, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Grünstück"), PSTRING("GREEN SHARD")),
 		0x33, //index
 		200, //price
 		0, //holding_effect_id
@@ -782,11 +783,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MAGMAISIERER
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_m, PCHAR_a, PCHAR_i, PCHAR_s, PCHAR_i, PCHAR_e, PCHAR_r, PCHAR_e, PCHAR_r, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Magmaisierer"), PSTRING("????????")),
 		0x34, //index
 		2100, //price
 		0, //holding_effect_id
@@ -797,11 +798,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_STROMISIERER
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_r, PCHAR_o, PCHAR_m, PCHAR_i, PCHAR_s, PCHAR_i, PCHAR_e, PCHAR_r, PCHAR_e, PCHAR_r, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Stromisierer"), PSTRING("????????")),
 		0x35, //index
 		2100, //price
 		0, //holding_effect_id
@@ -812,11 +813,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHOENSCHUPPE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_oe, PCHAR_n, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_e, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Schönschuppe"), PSTRING("????????")),
 		0x36, //index
 		500, //price
 		0, //holding_effect_id
@@ -827,11 +828,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DUBIOSDISK
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_u, PCHAR_b, PCHAR_i, PCHAR_o, PCHAR_s, PCHAR_d, PCHAR_i, PCHAR_s, PCHAR_k, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Dubiosdisk"), PSTRING("????????")),
 		0x37, //index
 		2100, //price
 		0, //holding_effect_id
@@ -842,11 +843,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DUESTERUMHANG
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_ue, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_u, PCHAR_m, PCHAR_h, PCHAR_a, PCHAR_n, PCHAR_g, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Düsterumhang"), PSTRING("????????")),
 		0x38, //index
 		2100, //price
 		0, //holding_effect_id
@@ -857,11 +858,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHUETZER
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_ue, PCHAR_t, PCHAR_z, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Schützer"), PSTRING("????????")),
 		0x39, //index
 		2100, //price
 		0, //holding_effect_id
@@ -872,11 +873,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LEBEN_ORB
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_n, PCHAR_MINUS, PCHAR_O, PCHAR_r, PCHAR_b, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Leben-Orb"), PSTRING("????????")),
 		0x3a, //index
 		200, //price
 		0, //holding_effect_id
@@ -887,11 +888,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EVOLITH
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_v, PCHAR_o, PCHAR_l, PCHAR_i, PCHAR_t, PCHAR_h, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Evolith"), PSTRING("????????")),
 		0x3b, //index
 		200, //price
 		0, //holding_effect_id
@@ -902,11 +903,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_SCHARFZAHN
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_f, PCHAR_z, PCHAR_a, PCHAR_h, PCHAR_n, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_a, PCHAR_z, PCHAR_o, PCHAR_r, 0, PCHAR_F, PCHAR_a, PCHAR_n, PCHAR_g, 0xff, 0, 0, 0})),
+		//ITEM_SCHARFZAHN
+		LANGDEP(PSTRING("Scharfzahn"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		30, //holding_effect_id
@@ -917,11 +918,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_3D
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -932,11 +933,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_3E
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -947,11 +948,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KP_PLUS
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_p, PCHAR_MINUS, PCHAR_P, PCHAR_l, PCHAR_u, PCHAR_s, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_p, PCHAR_SPACE, PCHAR_U, PCHAR_p, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Kp-Plus"), PSTRING("HP UP")),
 		0x3f, //index
 		9800, //price
 		0, //holding_effect_id
@@ -962,11 +963,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a17cd, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PROTEIN
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_r, PCHAR_o, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_r, PCHAR_o, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Protein"), PSTRING("PROTEIN")),
 		0x40, //index
 		9800, //price
 		0, //holding_effect_id
@@ -977,11 +978,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a17cd, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EISEN
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_s, PCHAR_e, PCHAR_n, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_I, PCHAR_r, PCHAR_o, PCHAR_n, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Eisen"), PSTRING("IRON")),
 		0x41, //index
 		9800, //price
 		0, //holding_effect_id
@@ -992,11 +993,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a17cd, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_CARBON
-		PSTRING(P99_PROCTECT({PCHAR_C, PCHAR_a, PCHAR_r, PCHAR_b, PCHAR_o, PCHAR_n, 0xff, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_a, PCHAR_r, PCHAR_b, PCHAR_o, PCHAR_s, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Carbon"), PSTRING("CARBOS")),
 		0x42, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1007,11 +1008,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a17cd, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KALZIUM
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_a, PCHAR_l, PCHAR_z, PCHAR_i, PCHAR_u, PCHAR_m, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_a, PCHAR_l, PCHAR_c, PCHAR_i, PCHAR_u, PCHAR_m, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Kalzium"), PSTRING("CALCIUM")),
 		0x43, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1022,11 +1023,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a17cd, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SONDERBONBON
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_o, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_o, PCHAR_n, PCHAR_b, PCHAR_o, PCHAR_n, 0xff, 0}), P99_PROTECT({PCHAR_R, PCHAR_a, PCHAR_r, PCHAR_e, PCHAR_SPACE, PCHAR_C, PCHAR_a, PCHAR_n, PCHAR_d, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Sonderbonbon"), PSTRING("RARE CANDY")),
 		0x44, //index
 		4800, //price
 		0, //holding_effect_id
@@ -1037,11 +1038,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1821, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AP_PLUS
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_p, PCHAR_MINUS, PCHAR_P, PCHAR_l, PCHAR_u, PCHAR_s, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_p, PCHAR_SPACE, PCHAR_U, PCHAR_p, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Ap-Plus"), PSTRING("PP UP")),
 		0x45, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1052,11 +1053,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ZINK
-		PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_i, PCHAR_n, PCHAR_k, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_Z, PCHAR_i, PCHAR_n, PCHAR_c, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Zink"), PSTRING("ZINC")),
 		0x46, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1067,11 +1068,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a17cd, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AP_TOP
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_p, PCHAR_MINUS, PCHAR_T, PCHAR_o, PCHAR_p, 0xff, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_p, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_x, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Ap-Top"), PSTRING("PP MAX")),
 		0x47, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1082,11 +1083,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_48
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1097,11 +1098,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MEGABLOCK
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_g, PCHAR_a, PCHAR_b, PCHAR_l, PCHAR_o, PCHAR_c, PCHAR_k, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_u, PCHAR_a, PCHAR_r, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_p, PCHAR_e, PCHAR_c, PCHAR_DOT, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Megablock"), PSTRING("GUARD SPEC.")),
 		0x49, //index
 		700, //price
 		0, //holding_effect_id
@@ -1116,7 +1117,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGRIFFPLUS
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_g, PCHAR_r, PCHAR_i, PCHAR_f, PCHAR_f, PCHAR_p, PCHAR_l, PCHAR_u, PCHAR_s, 0xff, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_i, PCHAR_r, PCHAR_e, PCHAR_SPACE, PCHAR_H, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Angriffplus"), PSTRING("DIRE HIT")),
 		0x4a, //index
 		650, //price
 		0, //holding_effect_id
@@ -1131,7 +1132,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_ANGRIFF
-		PSTRING(P99_PROCTECT({PCHAR_X, PCHAR_MINUS, PCHAR_A, PCHAR_n, PCHAR_g, PCHAR_r, PCHAR_i, PCHAR_f, PCHAR_f, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_X, PCHAR_SPACE, PCHAR_A, PCHAR_t, PCHAR_t, PCHAR_a, PCHAR_c, PCHAR_k, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("X-Angriff"), PSTRING("X ATTACK")),
 		0x4b, //index
 		500, //price
 		0, //holding_effect_id
@@ -1146,7 +1147,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_ABWEHR
-		PSTRING(P99_PROCTECT({PCHAR_X, PCHAR_MINUS, PCHAR_A, PCHAR_b, PCHAR_w, PCHAR_e, PCHAR_h, PCHAR_r, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_X, PCHAR_SPACE, PCHAR_D, PCHAR_e, PCHAR_f, PCHAR_e, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("X-Abwehr"), PSTRING("X DEFEND")),
 		0x4c, //index
 		550, //price
 		0, //holding_effect_id
@@ -1161,7 +1162,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_TEMPO
-		PSTRING(P99_PROCTECT({PCHAR_X, PCHAR_MINUS, PCHAR_T, PCHAR_e, PCHAR_m, PCHAR_p, PCHAR_o, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_X, PCHAR_SPACE, PCHAR_S, PCHAR_p, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("X-Tempo"), PSTRING("X SPEED")),
 		0x4d, //index
 		350, //price
 		0, //holding_effect_id
@@ -1176,7 +1177,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_TREFFER
-		PSTRING(P99_PROCTECT({PCHAR_X, PCHAR_MINUS, PCHAR_T, PCHAR_r, PCHAR_e, PCHAR_f, PCHAR_f, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_X, PCHAR_SPACE, PCHAR_A, PCHAR_c, PCHAR_c, PCHAR_u, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("X-Treffer"), PSTRING("X ACCURACY")),
 		0x4e, //index
 		950, //price
 		0, //holding_effect_id
@@ -1191,7 +1192,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_SPEZIAL
-		PSTRING(P99_PROCTECT({PCHAR_X, PCHAR_MINUS, PCHAR_S, PCHAR_p, PCHAR_e, PCHAR_z, PCHAR_i, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_X, PCHAR_SPACE, PCHAR_S, PCHAR_p, PCHAR_e, PCHAR_c, PCHAR_i, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("X-Spezial"), PSTRING("X SPECIAL")),
 		0x4f, //index
 		350, //price
 		0, //holding_effect_id
@@ -1206,7 +1207,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEPUPPE
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_p, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_SPACE, PCHAR_D, PCHAR_o, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Poképuppe"), PSTRING("POKé DOLL")),
 		0x50, //index
 		1000, //price
 		0, //holding_effect_id
@@ -1221,7 +1222,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ENECO_RUTE
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_n, PCHAR_e, PCHAR_c, PCHAR_o, PCHAR_MINUS, PCHAR_R, PCHAR_u, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_f, PCHAR_f, PCHAR_y, PCHAR_SPACE, PCHAR_T, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Eneco-Rute"), PSTRING("FLUFFY TAIL")),
 		0x51, //index
 		1000, //price
 		0, //holding_effect_id
@@ -1236,7 +1237,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_52
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1247,11 +1248,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERSCHUTZ
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_u, PCHAR_t, PCHAR_z, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_R, PCHAR_e, PCHAR_p, PCHAR_e, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Superschutz"), PSTRING("SUPER REPEL")),
 		0x53, //index
 		500, //price
 		0, //holding_effect_id
@@ -1262,11 +1263,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_SCHUTZ
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_o, PCHAR_p, PCHAR_MINUS, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_u, PCHAR_t, PCHAR_z, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_x, PCHAR_SPACE, PCHAR_R, PCHAR_e, PCHAR_p, PCHAR_e, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Top-Schutz"), PSTRING("MAX REPEL")),
 		0x54, //index
 		700, //price
 		0, //holding_effect_id
@@ -1277,11 +1278,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FLUCHTSEIL
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_t, PCHAR_s, PCHAR_e, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_s, PCHAR_c, PCHAR_a, PCHAR_p, PCHAR_e, PCHAR_SPACE, PCHAR_R, PCHAR_o, PCHAR_p, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Fluchtseil"), PSTRING("ESCAPE ROPE")),
 		0x55, //index
 		550, //price
 		0, //holding_effect_id
@@ -1292,11 +1293,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1c99, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHUTZ
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_u, PCHAR_t, PCHAR_z, 0xff, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_p, PCHAR_e, PCHAR_l, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Schutz"), PSTRING("REPEL")),
 		0x56, //index
 		350, //price
 		0, //holding_effect_id
@@ -1307,11 +1308,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_57
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1322,11 +1323,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_58
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1337,11 +1338,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_59
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1352,11 +1353,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_5A
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1367,11 +1368,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_5B
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1382,11 +1383,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_5C
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -1397,11 +1398,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SONNENSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_o, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_u, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Sonnenstein"), PSTRING("SUN STONE")),
 		0x5d, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1412,11 +1413,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MONDSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_n, PCHAR_d, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_o, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Mondstein"), PSTRING("MOON STONE")),
 		0x5e, //index
 		0, //price
 		0, //holding_effect_id
@@ -1427,11 +1428,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FEUERSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_e, PCHAR_u, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_i, PCHAR_r, PCHAR_e, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Feuerstein"), PSTRING("FIRE STONE")),
 		0x5f, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1442,11 +1443,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DONNERSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_h, PCHAR_u, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0})),
+		LANGDEP(PSTRING("Donnerstein"), PSTRING("THUNDERSTONE")),
 		0x60, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1457,11 +1458,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WASSERSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Wasserstein"), PSTRING("WATER STONE")),
 		0x61, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1472,11 +1473,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLATTSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_t, PCHAR_t, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_e, PCHAR_a, PCHAR_f, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Blattstein"), PSTRING("LEAF STONE")),
 		0x62, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1487,11 +1488,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LINKKABEL
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_n, PCHAR_k, PCHAR_k, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Linkkabel"), PSTRING("????????")),
 		0x63, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1502,11 +1503,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FINSTERSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_i, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Finsterstein"), PSTRING("????????")),
 		0x64, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1517,11 +1518,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LEUCHTSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_t, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Leuchtstein"), PSTRING("????????")),
 		0x65, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1532,11 +1533,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FUNKELSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_u, PCHAR_n, PCHAR_k, PCHAR_e, PCHAR_l, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Funkelstein"), PSTRING("????????")),
 		0x66, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1547,11 +1548,11 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MINIPILZ
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_i, PCHAR_n, PCHAR_i, PCHAR_p, PCHAR_i, PCHAR_l, PCHAR_z, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_i, PCHAR_n, PCHAR_y, PCHAR_m, PCHAR_u, PCHAR_s, PCHAR_h, PCHAR_r, PCHAR_o, PCHAR_o, PCHAR_m, 0xff, 0})),
+		LANGDEP(PSTRING("Minipilz"), PSTRING("TINYMUSHROOM")),
 		0x67, //index
 		500, //price
 		0, //holding_effect_id
@@ -1562,11 +1563,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RIESENPILZ
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_i, PCHAR_e, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_p, PCHAR_i, PCHAR_l, PCHAR_z, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_M, PCHAR_u, PCHAR_s, PCHAR_h, PCHAR_r, PCHAR_o, PCHAR_o, PCHAR_m, 0xff, 0})),
+		LANGDEP(PSTRING("Riesenpilz"), PSTRING("BIG MUSHROOM")),
 		0x68, //index
 		5000, //price
 		0, //holding_effect_id
@@ -1577,11 +1578,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPV_ORB_N
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_v, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_n, PCHAR_PARANTHESIS_END, 0xff, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Spv Orb (n)"), PSTRING("????????")),
 		0x69, //index
 		0, //price
 		0, //holding_effect_id
@@ -1590,13 +1591,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PERLE
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_e, PCHAR_r, PCHAR_l, PCHAR_e, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_e, PCHAR_a, PCHAR_r, PCHAR_l, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Perle"), PSTRING("PEARL")),
 		0x6a, //index
 		1400, //price
 		0, //holding_effect_id
@@ -1607,11 +1608,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RIESENPERLE
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_i, PCHAR_e, PCHAR_s, PCHAR_e, PCHAR_n, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_l, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_i, PCHAR_g, PCHAR_SPACE, PCHAR_P, PCHAR_e, PCHAR_a, PCHAR_r, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Riesenperle"), PSTRING("BIG PEARL")),
 		0x6b, //index
 		7500, //price
 		0, //holding_effect_id
@@ -1622,11 +1623,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_STERNENSTAUB
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_u, PCHAR_b, 0xff, 0}), P99_PROTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, PCHAR_d, PCHAR_u, PCHAR_s, PCHAR_t, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Sternenstaub"), PSTRING("STARDUST")),
 		0x6c, //index
 		2000, //price
 		0, //holding_effect_id
@@ -1637,11 +1638,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_STERNENSTUECK
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_ue, PCHAR_c, PCHAR_k, 0xff, 0}), P99_PROTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, PCHAR_SPACE, PCHAR_P, PCHAR_i, PCHAR_e, PCHAR_c, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Sternenstück"), PSTRING("STAR PIECE")),
 		0x6d, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1652,11 +1653,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NUGGET
-		PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_u, PCHAR_g, PCHAR_g, PCHAR_e, PCHAR_t, 0xff, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_N, PCHAR_u, PCHAR_g, PCHAR_g, PCHAR_e, PCHAR_t, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Nugget"), PSTRING("NUGGET")),
 		0x6e, //index
 		10000, //price
 		0, //holding_effect_id
@@ -1667,11 +1668,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HERZSCHUPPE
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_e, PCHAR_r, PCHAR_z, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_u, PCHAR_p, PCHAR_p, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_e, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Herzschuppe"), PSTRING("HEART SCALE")),
 		0x6f, //index
 		100, //price
 		0, //holding_effect_id
@@ -1682,11 +1683,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGR_ORB_P
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_g, PCHAR_r, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_p, PCHAR_PARANTHESIS_END, 0xff}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Angr. Orb (p)"), PSTRING("????????")),
 		0x70, //index
 		0, //price
 		0, //holding_effect_id
@@ -1695,13 +1696,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGR_ORB_N
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_g, PCHAR_r, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_n, PCHAR_PARANTHESIS_END, 0xff}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Angr. Orb (n)"), PSTRING("????????")),
 		0x71, //index
 		0, //price
 		0, //holding_effect_id
@@ -1710,13 +1711,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VERT_ORB_P
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_p, PCHAR_PARANTHESIS_END, 0xff}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vert. Orb (p)"), PSTRING("????????")),
 		0x72, //index
 		0, //price
 		0, //holding_effect_id
@@ -1725,13 +1726,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VERT_ORB_N
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_e, PCHAR_r, PCHAR_t, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_n, PCHAR_PARANTHESIS_END, 0xff}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vert. Orb (n)"), PSTRING("????????")),
 		0x73, //index
 		0, //price
 		0, //holding_effect_id
@@ -1740,13 +1741,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_INIT_ORB_P
-		PSTRING(P99_PROCTECT({PCHAR_I, PCHAR_n, PCHAR_i, PCHAR_t, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_p, PCHAR_PARANTHESIS_END, 0xff}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Init. Orb (p)"), PSTRING("????????")),
 		0x74, //index
 		0, //price
 		0, //holding_effect_id
@@ -1755,13 +1756,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_INIT_ORB_N
-		PSTRING(P99_PROCTECT({PCHAR_I, PCHAR_n, PCHAR_i, PCHAR_t, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_n, PCHAR_PARANTHESIS_END, 0xff}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Init. Orb (n)"), PSTRING("????????")),
 		0x75, //index
 		0, //price
 		0, //holding_effect_id
@@ -1770,13 +1771,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPA_ORB_P
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_a, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_p, PCHAR_PARANTHESIS_END, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Spa. Orb (p)"), PSTRING("????????")),
 		0x76, //index
 		0, //price
 		0, //holding_effect_id
@@ -1785,13 +1786,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPA_ORB_N
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_a, PCHAR_DOT, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_n, PCHAR_PARANTHESIS_END, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Spa. Orb (n)"), PSTRING("????????")),
 		0x77, //index
 		0, //price
 		0, //holding_effect_id
@@ -1800,13 +1801,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPV_ORB_P
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_v, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, PCHAR_SPACE, PCHAR_PARANTHESIS_START, PCHAR_p, PCHAR_PARANTHESIS_END, 0xff, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Spv Orb (p)"), PSTRING("????????")),
 		0x78, //index
 		0, //price
 		0, //holding_effect_id
@@ -1815,13 +1816,13 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		item_field_nature_stone, //field_usage
+		(void(*)(u8))0x9008d01, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_79
-		PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_i, PCHAR_g, PCHAR_z, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_s, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff}), P99_PROTECT({PCHAR_O, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_e, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Zigzachsbrief"), PSTRING("ORANGE MAIL")),
 		0x79, //index
 		50, //price
 		0, //holding_effect_id
@@ -1832,11 +1833,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HAFENBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_f, PCHAR_e, PCHAR_n, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_a, PCHAR_r, PCHAR_b, PCHAR_o, PCHAR_r, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Hafenbrief"), PSTRING("HARBOR MAIL")),
 		0x7a, //index
 		50, //price
 		0, //holding_effect_id
@@ -1847,11 +1848,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GLITZERBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_l, PCHAR_i, PCHAR_t, PCHAR_z, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0}), P99_PROTECT({PCHAR_G, PCHAR_l, PCHAR_i, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0})),
+		LANGDEP(PSTRING("Glitzerbrief"), PSTRING("GLITTER MAIL")),
 		0x7b, //index
 		50, //price
 		0, //holding_effect_id
@@ -1862,11 +1863,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EILBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_l, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_e, PCHAR_c, PCHAR_h, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Eilbrief"), PSTRING("MECH MAIL")),
 		0x7c, //index
 		50, //price
 		0, //holding_effect_id
@@ -1877,11 +1878,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WALDBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_l, PCHAR_d, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_W, PCHAR_o, PCHAR_o, PCHAR_d, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Waldbrief"), PSTRING("WOOD MAIL")),
 		0x7d, //index
 		50, //price
 		0, //holding_effect_id
@@ -1892,11 +1893,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WELLENBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_e, PCHAR_n, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0}), P99_PROTECT({PCHAR_W, PCHAR_a, PCHAR_v, PCHAR_e, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Wellenbrief"), PSTRING("WAVE MAIL")),
 		0x7e, //index
 		50, //price
 		0, //holding_effect_id
@@ -1907,11 +1908,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PERLENBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_e, PCHAR_r, PCHAR_l, PCHAR_e, PCHAR_n, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_e, PCHAR_a, PCHAR_d, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Perlenbrief"), PSTRING("BEAD MAIL")),
 		0x7f, //index
 		50, //price
 		0, //holding_effect_id
@@ -1922,11 +1923,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DUNKELBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_u, PCHAR_n, PCHAR_k, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_d, PCHAR_o, PCHAR_w, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Dunkelbrief"), PSTRING("SHADOW MAIL")),
 		0x80, //index
 		50, //price
 		0, //holding_effect_id
@@ -1937,11 +1938,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TROPENBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_o, PCHAR_p, PCHAR_e, PCHAR_n, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_r, PCHAR_o, PCHAR_p, PCHAR_i, PCHAR_c, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Tropenbrief"), PSTRING("TROPIC MAIL")),
 		0x81, //index
 		50, //price
 		0, //holding_effect_id
@@ -1952,11 +1953,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRAUMBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_m, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_r, PCHAR_e, PCHAR_a, PCHAR_m, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Traumbrief"), PSTRING("DREAM MAIL")),
 		0x82, //index
 		50, //price
 		0, //holding_effect_id
@@ -1967,11 +1968,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EDELBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_d, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_a, PCHAR_b, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Edelbrief"), PSTRING("FAB MAIL")),
 		0x83, //index
 		50, //price
 		0, //holding_effect_id
@@ -1982,11 +1983,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RETROBRIEF
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_e, PCHAR_t, PCHAR_r, PCHAR_o, PCHAR_b, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_t, PCHAR_r, PCHAR_o, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Retrobrief"), PSTRING("RETRO MAIL")),
 		0x84, //index
 		50, //price
 		0, //holding_effect_id
@@ -1997,11 +1998,11 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AMRENABEERE
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_m, PCHAR_r, PCHAR_e, PCHAR_n, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_h, PCHAR_e, PCHAR_r, PCHAR_i, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Amrenabeere"), PSTRING("CHERI BERRY")),
 		0x85, //index
 		20, //price
 		2, //holding_effect_id
@@ -2016,7 +2017,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MARONBEERE
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_h, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_o, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Maronbeere"), PSTRING("CHESTO BERRY")),
 		0x86, //index
 		20, //price
 		3, //holding_effect_id
@@ -2031,7 +2032,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PIRSIFBEERE
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_i, PCHAR_r, PCHAR_s, PCHAR_i, PCHAR_f, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_e, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Pirsifbeere"), PSTRING("PECHA BERRY")),
 		0x87, //index
 		20, //price
 		4, //holding_effect_id
@@ -2046,7 +2047,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FRAGIABEERE
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_i, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_a, PCHAR_w, PCHAR_s, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Fragiabeere"), PSTRING("RAWST BERRY")),
 		0x88, //index
 		20, //price
 		5, //holding_effect_id
@@ -2061,7 +2062,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WILBIRBEERE
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_l, PCHAR_b, PCHAR_i, PCHAR_r, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_A, PCHAR_s, PCHAR_p, PCHAR_e, PCHAR_a, PCHAR_r, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Wilbirbeere"), PSTRING("ASPEAR BERRY")),
 		0x89, //index
 		20, //price
 		6, //holding_effect_id
@@ -2076,7 +2077,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_JONAGOBEERE
-		PSTRING(P99_PROCTECT({PCHAR_J, PCHAR_o, PCHAR_n, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_e, PCHAR_p, PCHAR_p, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Jonagobeere"), PSTRING("LEPPA BERRY")),
 		0x8a, //index
 		20, //price
 		7, //holding_effect_id
@@ -2091,7 +2092,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SINELBEERE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_i, PCHAR_n, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_O, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Sinelbeere"), PSTRING("ORAN BERRY")),
 		0x8b, //index
 		20, //price
 		1, //holding_effect_id
@@ -2106,7 +2107,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PERSIMBEERE
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_i, PCHAR_m, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_i, PCHAR_m, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Persimbeere"), PSTRING("PERSIM BERRY")),
 		0x8c, //index
 		20, //price
 		8, //holding_effect_id
@@ -2121,7 +2122,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PRUNUSBEERE
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_r, PCHAR_u, PCHAR_n, PCHAR_u, PCHAR_s, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_u, PCHAR_m, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Prunusbeere"), PSTRING("LUM BERRY")),
 		0x8d, //index
 		20, //price
 		9, //holding_effect_id
@@ -2136,7 +2137,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TSITRUBEERE
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_s, PCHAR_i, PCHAR_t, PCHAR_r, PCHAR_u, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_i, PCHAR_t, PCHAR_r, PCHAR_u, PCHAR_s, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Tsitrubeere"), PSTRING("SITRUS BERRY")),
 		0x8e, //index
 		20, //price
 		1, //holding_effect_id
@@ -2151,7 +2152,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GIEFEBEERE
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_e, PCHAR_f, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_i, PCHAR_g, PCHAR_y, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Giefebeere"), PSTRING("FIGY BERRY")),
 		0x8f, //index
 		20, //price
 		10, //holding_effect_id
@@ -2162,11 +2163,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WIKIBEERE
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_i, PCHAR_k, PCHAR_i, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_W, PCHAR_i, PCHAR_k, PCHAR_i, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Wikibeere"), PSTRING("WIKI BERRY")),
 		0x90, //index
 		20, //price
 		11, //holding_effect_id
@@ -2177,11 +2178,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MAGOBEERE
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Magobeere"), PSTRING("MAGO BERRY")),
 		0x91, //index
 		20, //price
 		12, //holding_effect_id
@@ -2192,11 +2193,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GAUVEBEERE
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_a, PCHAR_u, PCHAR_v, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_A, PCHAR_g, PCHAR_u, PCHAR_a, PCHAR_v, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Gauvebeere"), PSTRING("AGUAV BERRY")),
 		0x92, //index
 		20, //price
 		13, //holding_effect_id
@@ -2207,11 +2208,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_YAPABEERE
-		PSTRING(P99_PROCTECT({PCHAR_Y, PCHAR_a, PCHAR_p, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_I, PCHAR_a, PCHAR_p, PCHAR_a, PCHAR_p, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Yapabeere"), PSTRING("IAPAPA BERRY")),
 		0x93, //index
 		20, //price
 		14, //holding_effect_id
@@ -2222,11 +2223,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HIMMIHBEERE
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_i, PCHAR_m, PCHAR_m, PCHAR_i, PCHAR_h, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_a, PCHAR_z, PCHAR_z, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Himmihbeere"), PSTRING("RAZZ BERRY")),
 		0x94, //index
 		20, //price
 		0, //holding_effect_id
@@ -2237,11 +2238,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MORBBEERE
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_o, PCHAR_r, PCHAR_b, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_k, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Morbbeere"), PSTRING("BLUK BERRY")),
 		0x95, //index
 		20, //price
 		0, //holding_effect_id
@@ -2252,11 +2253,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NANABBEERE
-		PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_a, PCHAR_n, PCHAR_a, PCHAR_b, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_N, PCHAR_a, PCHAR_n, PCHAR_a, PCHAR_b, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Nanabbeere"), PSTRING("NANAB BERRY")),
 		0x96, //index
 		20, //price
 		0, //holding_effect_id
@@ -2267,11 +2268,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NIRBEBEERE
-		PSTRING(P99_PROCTECT({PCHAR_N, PCHAR_i, PCHAR_r, PCHAR_b, PCHAR_e, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_W, PCHAR_e, PCHAR_p, PCHAR_e, PCHAR_a, PCHAR_r, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Nirbebeere"), PSTRING("WEPEAR BERRY")),
 		0x97, //index
 		20, //price
 		0, //holding_effect_id
@@ -2282,11 +2283,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SANANABEERE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_n, PCHAR_a, PCHAR_n, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_i, PCHAR_n, PCHAR_a, PCHAR_p, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Sananabeere"), PSTRING("PINAP BERRY")),
 		0x98, //index
 		20, //price
 		0, //holding_effect_id
@@ -2297,11 +2298,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRANABEERE
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_m, PCHAR_e, PCHAR_g, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Granabeere"), PSTRING("POMEG BERRY")),
 		0x99, //index
 		20, //price
 		0, //holding_effect_id
@@ -2312,11 +2313,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SETANGBEERE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_t, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_K, PCHAR_e, PCHAR_l, PCHAR_p, PCHAR_s, PCHAR_y, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Setangbeere"), PSTRING("KELPSY BERRY")),
 		0x9a, //index
 		20, //price
 		0, //holding_effect_id
@@ -2327,11 +2328,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_QUALOTBEERE
-		PSTRING(P99_PROCTECT({PCHAR_Q, PCHAR_u, PCHAR_a, PCHAR_l, PCHAR_o, PCHAR_t, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_Q, PCHAR_u, PCHAR_a, PCHAR_l, PCHAR_o, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Qualotbeere"), PSTRING("QUALOT BERRY")),
 		0x9b, //index
 		20, //price
 		0, //holding_effect_id
@@ -2342,11 +2343,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HONMELBEERE
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_o, PCHAR_n, PCHAR_m, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_o, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_w, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Honmelbeere"), PSTRING("HONDEW BERRY")),
 		0x9c, //index
 		20, //price
 		0, //holding_effect_id
@@ -2357,11 +2358,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LABRUSBEERE
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_b, PCHAR_r, PCHAR_u, PCHAR_s, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_r, PCHAR_e, PCHAR_p, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Labrusbeere"), PSTRING("GREPA BERRY")),
 		0x9d, //index
 		20, //price
 		0, //holding_effect_id
@@ -2372,11 +2373,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAMOTBEERE
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_m, PCHAR_o, PCHAR_t, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_a, PCHAR_m, PCHAR_a, PCHAR_t, PCHAR_o, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Tamotbeere"), PSTRING("TAMATO BERRY")),
 		0x9e, //index
 		20, //price
 		0, //holding_effect_id
@@ -2387,11 +2388,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SAIMBEERE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_i, PCHAR_m, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_o, PCHAR_r, PCHAR_n, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Saimbeere"), PSTRING("CORNN BERRY")),
 		0x9f, //index
 		20, //price
 		0, //holding_effect_id
@@ -2402,11 +2403,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MAGOSTBEERE
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_s, PCHAR_t, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_s, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Magostbeere"), PSTRING("MAGOST BERRY")),
 		0xa0, //index
 		20, //price
 		0, //holding_effect_id
@@ -2417,11 +2418,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RABUTABEERE
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_b, PCHAR_u, PCHAR_t, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_a, PCHAR_b, PCHAR_u, PCHAR_t, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Rabutabeere"), PSTRING("RABUTA BERRY")),
 		0xa1, //index
 		20, //price
 		0, //holding_effect_id
@@ -2432,11 +2433,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRONZIBEERE
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_o, PCHAR_n, PCHAR_z, PCHAR_i, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_N, PCHAR_o, PCHAR_m, PCHAR_e, PCHAR_l, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Tronzibeere"), PSTRING("NOMEL BERRY")),
 		0xa2, //index
 		20, //price
 		0, //holding_effect_id
@@ -2447,11 +2448,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KIWANBEERE
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_i, PCHAR_w, PCHAR_a, PCHAR_n, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_p, PCHAR_e, PCHAR_l, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Kiwanbeere"), PSTRING("SPELON BERRY")),
 		0xa3, //index
 		20, //price
 		0, //holding_effect_id
@@ -2462,11 +2463,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PALLMBEERE
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_m, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_a, PCHAR_m, PCHAR_t, PCHAR_r, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Pallmbeere"), PSTRING("PAMTRE BERRY")),
 		0xa4, //index
 		20, //price
 		0, //holding_effect_id
@@ -2477,11 +2478,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WASMELBEERE
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_s, PCHAR_m, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_m, PCHAR_e, PCHAR_l, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Wasmelbeere"), PSTRING("WATMEL BERRY")),
 		0xa5, //index
 		20, //price
 		0, //holding_effect_id
@@ -2492,11 +2493,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DURINBEERE
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_u, PCHAR_r, PCHAR_i, PCHAR_n, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_u, PCHAR_r, PCHAR_i, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Durinbeere"), PSTRING("DURIN BERRY")),
 		0xa6, //index
 		20, //price
 		0, //holding_effect_id
@@ -2507,11 +2508,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MYRTILBEERE
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_y, PCHAR_r, PCHAR_t, PCHAR_i, PCHAR_l, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_e, PCHAR_l, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Myrtilbeere"), PSTRING("BELUE BERRY")),
 		0xa7, //index
 		20, //price
 		0, //holding_effect_id
@@ -2522,11 +2523,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LYDZIBEERE
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_y, PCHAR_d, PCHAR_z, PCHAR_i, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_i, PCHAR_e, PCHAR_c, PCHAR_h, PCHAR_i, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Lydzibeere"), PSTRING("LIECHI BERRY")),
 		0xa8, //index
 		20, //price
 		15, //holding_effect_id
@@ -2537,11 +2538,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LINGANBEERE
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_a, PCHAR_n, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_a, PCHAR_n, PCHAR_l, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Linganbeere"), PSTRING("GANLON BERRY")),
 		0xa9, //index
 		20, //price
 		16, //holding_effect_id
@@ -2552,11 +2553,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SALKABEERE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_l, PCHAR_k, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_a, PCHAR_l, PCHAR_a, PCHAR_c, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Salkabeere"), PSTRING("SALAC BERRY")),
 		0xaa, //index
 		20, //price
 		17, //holding_effect_id
@@ -2567,11 +2568,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAHAYBEERE
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_a, PCHAR_h, PCHAR_a, PCHAR_y, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_e, PCHAR_t, PCHAR_a, PCHAR_y, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Tahaybeere"), PSTRING("PETAYA BERRY")),
 		0xab, //index
 		20, //price
 		18, //holding_effect_id
@@ -2582,11 +2583,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_APIKOBEERE
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_p, PCHAR_i, PCHAR_k, PCHAR_o, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_A, PCHAR_p, PCHAR_i, PCHAR_c, PCHAR_o, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Apikobeere"), PSTRING("APICOT BERRY")),
 		0xac, //index
 		20, //price
 		19, //holding_effect_id
@@ -2597,11 +2598,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LANSATBEERE
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_s, PCHAR_a, PCHAR_t, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_a, PCHAR_n, PCHAR_s, PCHAR_a, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Lansatbeere"), PSTRING("LANSAT BERRY")),
 		0xad, //index
 		20, //price
 		20, //holding_effect_id
@@ -2612,11 +2613,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KRAMBOBEERE
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_a, PCHAR_m, PCHAR_b, PCHAR_o, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_t, PCHAR_a, PCHAR_r, PCHAR_f, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Krambobeere"), PSTRING("STARF BERRY")),
 		0xae, //index
 		20, //price
 		21, //holding_effect_id
@@ -2627,11 +2628,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ENIGMABEERE
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_n, PCHAR_i, PCHAR_g, PCHAR_m, PCHAR_a, PCHAR_b, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_n, PCHAR_i, PCHAR_g, PCHAR_m, PCHAR_a, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Enigmabeere"), PSTRING("ENIGMA BERRY")),
 		0xaf, //index
 		20, //price
 		0, //holding_effect_id
@@ -2646,7 +2647,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_B0
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -2657,11 +2658,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WAHLGLAS
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_h, PCHAR_l, PCHAR_g, PCHAR_l, PCHAR_a, PCHAR_s, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Wahlglas"), PSTRING("????????")),
 		0xb1, //index
 		100, //price
 		29, //holding_effect_id
@@ -2672,11 +2673,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WAHLSCHAL
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_h, PCHAR_l, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Wahlschal"), PSTRING("????????")),
 		0xb2, //index
 		100, //price
 		29, //holding_effect_id
@@ -2687,11 +2688,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLENDPUDER
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_e, PCHAR_n, PCHAR_d, PCHAR_p, PCHAR_u, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_r, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, PCHAR_p, PCHAR_o, PCHAR_w, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0})),
+		LANGDEP(PSTRING("Blendpuder"), PSTRING("BRIGHTPOWDER")),
 		0xb3, //index
 		10, //price
 		22, //holding_effect_id
@@ -2702,11 +2703,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHLOHKRAUT
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_o, PCHAR_h, PCHAR_k, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_W, PCHAR_h, PCHAR_i, PCHAR_t, PCHAR_e, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_r, PCHAR_b, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Schlohkraut"), PSTRING("WHITE HERB")),
 		0xb4, //index
 		100, //price
 		23, //holding_effect_id
@@ -2717,11 +2718,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MACHOBAND
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_o, PCHAR_b, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_o, PCHAR_SPACE, PCHAR_B, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Machoband"), PSTRING("MACHO BRACE")),
 		0xb5, //index
 		3000, //price
 		24, //holding_effect_id
@@ -2732,11 +2733,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EP_TEILER
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_p, PCHAR_MINUS, PCHAR_T, PCHAR_e, PCHAR_i, PCHAR_l, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_x, PCHAR_p, PCHAR_DOT, PCHAR_SPACE, PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Ep-Teiler"), PSTRING("EXP. SHARE")),
 		0xb6, //index
 		3000, //price
 		25, //holding_effect_id
@@ -2747,11 +2748,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FLINKKLAUE
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_i, PCHAR_n, PCHAR_k, PCHAR_k, PCHAR_l, PCHAR_a, PCHAR_u, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_Q, PCHAR_u, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_w, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Flinkklaue"), PSTRING("QUICK CLAW")),
 		0xb7, //index
 		100, //price
 		26, //holding_effect_id
@@ -2762,11 +2763,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SANFTGLOCKE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_n, PCHAR_f, PCHAR_t, PCHAR_g, PCHAR_l, PCHAR_o, PCHAR_c, PCHAR_k, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_o, PCHAR_o, PCHAR_t, PCHAR_h, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_l, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Sanftglocke"), PSTRING("SOOTHE BELL")),
 		0xb8, //index
 		100, //price
 		27, //holding_effect_id
@@ -2777,11 +2778,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MENTALKRAUT
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_a, PCHAR_l, PCHAR_k, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_a, PCHAR_l, PCHAR_SPACE, PCHAR_H, PCHAR_e, PCHAR_r, PCHAR_b, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Mentalkraut"), PSTRING("MENTAL HERB")),
 		0xb9, //index
 		100, //price
 		28, //holding_effect_id
@@ -2792,11 +2793,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WAHLBAND
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_h, PCHAR_l, PCHAR_b, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_h, PCHAR_o, PCHAR_i, PCHAR_c, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Wahlband"), PSTRING("CHOICE BAND")),
 		0xba, //index
 		100, //price
 		29, //holding_effect_id
@@ -2807,11 +2808,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KING_STEIN
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_i, PCHAR_n, PCHAR_g, PCHAR_MINUS, PCHAR_S, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_K, PCHAR_i, PCHAR_n, PCHAR_g, 0xb4, PCHAR_s, PCHAR_SPACE, PCHAR_R, PCHAR_o, PCHAR_c, PCHAR_k, 0xff, 0, 0})),
+		LANGDEP(PSTRING("King-Stein"), PSTRING("KING\S ROCK")),
 		0xbb, //index
 		100, //price
 		30, //holding_effect_id
@@ -2822,11 +2823,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SILBERSTAUB
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_i, PCHAR_l, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_u, PCHAR_b, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_i, PCHAR_l, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_p, PCHAR_o, PCHAR_w, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0})),
+		LANGDEP(PSTRING("Silberstaub"), PSTRING("SILVERPOWDER")),
 		0xbc, //index
 		100, //price
 		31, //holding_effect_id
@@ -2837,11 +2838,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MUENZAMULETT
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_ue, PCHAR_n, PCHAR_z, PCHAR_a, PCHAR_m, PCHAR_u, PCHAR_l, PCHAR_e, PCHAR_t, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_A, PCHAR_m, PCHAR_u, PCHAR_l, PCHAR_e, PCHAR_t, PCHAR_SPACE, PCHAR_C, PCHAR_o, PCHAR_i, PCHAR_n, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Münzamulett"), PSTRING("AMULET COIN")),
 		0xbd, //index
 		100, //price
 		32, //holding_effect_id
@@ -2852,11 +2853,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHUTZBAND
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_u, PCHAR_t, PCHAR_z, PCHAR_b, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_l, PCHAR_e, PCHAR_a, PCHAR_n, PCHAR_s, PCHAR_e, PCHAR_SPACE, PCHAR_T, PCHAR_a, PCHAR_g, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Schutzband"), PSTRING("CLEANSE TAG")),
 		0xbe, //index
 		200, //price
 		33, //holding_effect_id
@@ -2867,11 +2868,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEELENTAU
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_l, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_a, PCHAR_u, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_o, PCHAR_u, PCHAR_l, PCHAR_SPACE, PCHAR_D, PCHAR_e, PCHAR_w, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Seelentau"), PSTRING("SOUL DEW")),
 		0xbf, //index
 		200, //price
 		34, //holding_effect_id
@@ -2882,11 +2883,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ABYSSZAHN
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_b, PCHAR_y, PCHAR_s, PCHAR_s, PCHAR_z, PCHAR_a, PCHAR_h, PCHAR_n, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_e, PCHAR_e, PCHAR_p, PCHAR_s, PCHAR_e, PCHAR_a, PCHAR_t, PCHAR_o, PCHAR_o, PCHAR_t, PCHAR_h, 0xff, 0})),
+		LANGDEP(PSTRING("Abysszahn"), PSTRING("DEEPSEATOOTH")),
 		0xc0, //index
 		200, //price
 		35, //holding_effect_id
@@ -2897,11 +2898,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ABYSSPLATTE
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_b, PCHAR_y, PCHAR_s, PCHAR_s, PCHAR_p, PCHAR_l, PCHAR_a, PCHAR_t, PCHAR_t, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_e, PCHAR_e, PCHAR_p, PCHAR_s, PCHAR_e, PCHAR_a, PCHAR_s, PCHAR_c, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0})),
+		LANGDEP(PSTRING("Abyssplatte"), PSTRING("DEEPSEASCALE")),
 		0xc1, //index
 		200, //price
 		36, //holding_effect_id
@@ -2912,11 +2913,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RAUCHBALL
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_b, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_m, PCHAR_o, PCHAR_k, PCHAR_e, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Rauchball"), PSTRING("SMOKE BALL")),
 		0xc2, //index
 		200, //price
 		37, //holding_effect_id
@@ -2927,11 +2928,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EWIGSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_w, PCHAR_i, PCHAR_g, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Ewigstein"), PSTRING("EVERSTONE")),
 		0xc3, //index
 		200, //price
 		38, //holding_effect_id
@@ -2942,11 +2943,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FOKUS_BAND
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_o, PCHAR_k, PCHAR_u, PCHAR_s, PCHAR_MINUS, PCHAR_B, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_o, PCHAR_c, PCHAR_u, PCHAR_s, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Fokus-Band"), PSTRING("FOCUS BAND")),
 		0xc4, //index
 		200, //price
 		39, //holding_effect_id
@@ -2957,11 +2958,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GLUECKS_EI
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_l, PCHAR_ue, PCHAR_c, PCHAR_k, PCHAR_s, PCHAR_MINUS, PCHAR_E, PCHAR_i, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_u, PCHAR_c, PCHAR_k, PCHAR_y, PCHAR_SPACE, PCHAR_E, PCHAR_g, PCHAR_g, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Glücks-Ei"), PSTRING("LUCKY EGG")),
 		0xc5, //index
 		200, //price
 		40, //holding_effect_id
@@ -2972,11 +2973,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCOPE_LINSE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_o, PCHAR_p, PCHAR_e, PCHAR_MINUS, PCHAR_L, PCHAR_i, PCHAR_n, PCHAR_s, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_c, PCHAR_o, PCHAR_p, PCHAR_e, PCHAR_SPACE, PCHAR_L, PCHAR_e, PCHAR_n, PCHAR_s, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Scope-Linse"), PSTRING("SCOPE LENS")),
 		0xc6, //index
 		200, //price
 		41, //holding_effect_id
@@ -2987,11 +2988,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_METALLMANTEL
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_m, PCHAR_a, PCHAR_n, PCHAR_t, PCHAR_e, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_a, PCHAR_l, PCHAR_SPACE, PCHAR_C, PCHAR_o, PCHAR_a, PCHAR_t, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Metallmantel"), PSTRING("METAL COAT")),
 		0xc7, //index
 		100, //price
 		42, //holding_effect_id
@@ -3002,11 +3003,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_UEBERRESTE
-		PSTRING(P99_PROCTECT({PCHAR_UE, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_e, PCHAR_f, PCHAR_t, PCHAR_o, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_s, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Überreste"), PSTRING("LEFTOVERS")),
 		0xc8, //index
 		200, //price
 		43, //holding_effect_id
@@ -3017,11 +3018,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DRACHENHAUT
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, PCHAR_h, PCHAR_a, PCHAR_u, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_l, PCHAR_e, 0xff, 0})),
+		LANGDEP(PSTRING("Drachenhaut"), PSTRING("DRAGON SCALE")),
 		0xc9, //index
 		2100, //price
 		44, //holding_effect_id
@@ -3032,11 +3033,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUGELBLITZ
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_u, PCHAR_g, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_l, PCHAR_i, PCHAR_t, PCHAR_z, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_i, PCHAR_g, PCHAR_h, PCHAR_t, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Kugelblitz"), PSTRING("LIGHT BALL")),
 		0xca, //index
 		100, //price
 		45, //holding_effect_id
@@ -3047,11 +3048,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PUDERSAND
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_o, PCHAR_f, PCHAR_t, PCHAR_SPACE, PCHAR_S, PCHAR_a, PCHAR_n, PCHAR_d, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Pudersand"), PSTRING("SOFT SAND")),
 		0xcb, //index
 		100, //price
 		46, //holding_effect_id
@@ -3062,11 +3063,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRANITSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_i, PCHAR_t, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_a, PCHAR_r, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_n, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Granitstein"), PSTRING("HARD STONE")),
 		0xcc, //index
 		100, //price
 		47, //holding_effect_id
@@ -3077,11 +3078,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WUNDERSAAT
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_u, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_s, PCHAR_a, PCHAR_a, PCHAR_t, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_i, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_l, PCHAR_e, PCHAR_SPACE, PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_d, 0xff, 0})),
+		LANGDEP(PSTRING("Wundersaat"), PSTRING("MIRACLE SEED")),
 		0xcd, //index
 		100, //price
 		48, //holding_effect_id
@@ -3092,11 +3093,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHATTENGLAS
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_n, PCHAR_g, PCHAR_l, PCHAR_a, PCHAR_s, 0xff, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_g, PCHAR_l, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_s, 0xff, 0})),
+		LANGDEP(PSTRING("Schattenglas"), PSTRING("BLACKGLASSES")),
 		0xce, //index
 		100, //price
 		49, //holding_effect_id
@@ -3107,11 +3108,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHWARZGURT
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_w, PCHAR_a, PCHAR_r, PCHAR_z, PCHAR_g, PCHAR_u, PCHAR_r, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_l, PCHAR_t, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Schwarzgurt"), PSTRING("BLACK BELT")),
 		0xcf, //index
 		100, //price
 		50, //holding_effect_id
@@ -3122,11 +3123,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MAGNET
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_n, PCHAR_e, PCHAR_t, 0xff, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_n, PCHAR_e, PCHAR_t, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Magnet"), PSTRING("MAGNET")),
 		0xd0, //index
 		100, //price
 		51, //holding_effect_id
@@ -3137,11 +3138,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ZAUBERWASSER
-		PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_a, PCHAR_u, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_w, PCHAR_a, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_r, 0xff, 0}), P99_PROTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_SPACE, PCHAR_W, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0})),
+		LANGDEP(PSTRING("Zauberwasser"), PSTRING("MYSTIC WATER")),
 		0xd1, //index
 		100, //price
 		52, //holding_effect_id
@@ -3152,11 +3153,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HACKATTACK
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_a, PCHAR_c, PCHAR_k, PCHAR_a, PCHAR_t, PCHAR_t, PCHAR_a, PCHAR_c, PCHAR_k, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_p, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_a, PCHAR_k, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Hackattack"), PSTRING("SHARP BEAK")),
 		0xd2, //index
 		100, //price
 		53, //holding_effect_id
@@ -3167,11 +3168,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GIFTSTICH
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_h, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_i, PCHAR_s, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_B, PCHAR_a, PCHAR_r, PCHAR_b, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Giftstich"), PSTRING("POISON BARB")),
 		0xd3, //index
 		100, //price
 		54, //holding_effect_id
@@ -3182,11 +3183,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EWIGES_EIS
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_w, PCHAR_i, PCHAR_g, PCHAR_e, PCHAR_s, PCHAR_SPACE, PCHAR_E, PCHAR_i, PCHAR_s, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_N, PCHAR_e, PCHAR_v, PCHAR_e, PCHAR_r, PCHAR_m, PCHAR_e, PCHAR_l, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_e, 0xff, 0})),
+		LANGDEP(PSTRING("Ewiges Eis"), PSTRING("NEVERMELTICE")),
 		0xd4, //index
 		100, //price
 		55, //holding_effect_id
@@ -3197,11 +3198,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BANNSTICKER
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_a, PCHAR_n, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_p, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_SPACE, PCHAR_T, PCHAR_a, PCHAR_g, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Bannsticker"), PSTRING("SPELL TAG")),
 		0xd5, //index
 		100, //price
 		56, //holding_effect_id
@@ -3212,11 +3213,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KRUEMMLOEFFEL
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_r, PCHAR_ue, PCHAR_m, PCHAR_m, PCHAR_l, PCHAR_oe, PCHAR_f, PCHAR_f, PCHAR_e, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_w, PCHAR_i, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_d, PCHAR_s, PCHAR_p, PCHAR_o, PCHAR_o, PCHAR_n, 0xff, 0})),
+		LANGDEP(PSTRING("Krümmlöffel"), PSTRING("TWISTEDSPOON")),
 		0xd6, //index
 		100, //price
 		57, //holding_effect_id
@@ -3227,11 +3228,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HOLZKOHLE
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_o, PCHAR_l, PCHAR_z, PCHAR_k, PCHAR_o, PCHAR_h, PCHAR_l, PCHAR_e, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_c, PCHAR_o, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Holzkohle"), PSTRING("CHARCOAL")),
 		0xd7, //index
 		9800, //price
 		58, //holding_effect_id
@@ -3242,11 +3243,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DRACHENZAHN
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, PCHAR_z, PCHAR_a, PCHAR_h, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_F, PCHAR_a, PCHAR_n, PCHAR_g, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Drachenzahn"), PSTRING("DRAGON FANG")),
 		0xd8, //index
 		100, //price
 		59, //holding_effect_id
@@ -3257,11 +3258,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEIDENSCHAL
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_i, PCHAR_d, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_i, PCHAR_l, PCHAR_k, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_r, PCHAR_f, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Seidenschal"), PSTRING("SILK SCARF")),
 		0xd9, //index
 		100, //price
 		60, //holding_effect_id
@@ -3272,11 +3273,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_UP_GRADE
-		PSTRING(P99_PROCTECT({PCHAR_U, PCHAR_p, PCHAR_MINUS, PCHAR_G, PCHAR_r, PCHAR_a, PCHAR_d, PCHAR_e, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_U, PCHAR_p, PCHAR_MINUS, PCHAR_G, PCHAR_r, PCHAR_a, PCHAR_d, PCHAR_e, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Up-Grade"), PSTRING("UP-GRADE")),
 		0xda, //index
 		2100, //price
 		61, //holding_effect_id
@@ -3287,11 +3288,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEEGESANG
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_g, PCHAR_e, PCHAR_s, PCHAR_a, PCHAR_n, PCHAR_g, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_h, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_SPACE, PCHAR_B, PCHAR_e, PCHAR_l, PCHAR_l, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Seegesang"), PSTRING("SHELL BELL")),
 		0xdb, //index
 		200, //price
 		62, //holding_effect_id
@@ -3302,11 +3303,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEERAUCH
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_c, PCHAR_h, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_e, PCHAR_a, PCHAR_SPACE, PCHAR_I, PCHAR_n, PCHAR_c, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Seerauch"), PSTRING("SEA INCENSE")),
 		0xdc, //index
 		9600, //price
 		52, //holding_effect_id
@@ -3317,11 +3318,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LAXRAUCH
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_x, PCHAR_r, PCHAR_a, PCHAR_u, PCHAR_c, PCHAR_h, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_a, PCHAR_x, PCHAR_SPACE, PCHAR_I, PCHAR_n, PCHAR_c, PCHAR_e, PCHAR_n, PCHAR_s, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Laxrauch"), PSTRING("LAX INCENSE")),
 		0xdd, //index
 		9600, //price
 		22, //holding_effect_id
@@ -3332,11 +3333,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LUCKY_PUNCH
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_u, PCHAR_c, PCHAR_k, PCHAR_y, PCHAR_SPACE, PCHAR_P, PCHAR_u, PCHAR_n, PCHAR_c, PCHAR_h, 0xff, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_u, PCHAR_c, PCHAR_k, PCHAR_y, PCHAR_SPACE, PCHAR_P, PCHAR_u, PCHAR_n, PCHAR_c, PCHAR_h, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Lucky Punch"), PSTRING("LUCKY PUNCH")),
 		0xde, //index
 		10, //price
 		63, //holding_effect_id
@@ -3347,11 +3348,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_METALLSTAUB
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_a, PCHAR_l, PCHAR_l, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_u, PCHAR_b, 0xff, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_a, PCHAR_l, PCHAR_SPACE, PCHAR_P, PCHAR_o, PCHAR_w, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0})),
+		LANGDEP(PSTRING("Metallstaub"), PSTRING("METAL POWDER")),
 		0xdf, //index
 		10, //price
 		64, //holding_effect_id
@@ -3362,11 +3363,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KAMPFKNOCHEN
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_a, PCHAR_m, PCHAR_p, PCHAR_f, PCHAR_k, PCHAR_n, PCHAR_o, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, 0xff, 0}), P99_PROTECT({PCHAR_T, PCHAR_h, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_SPACE, PCHAR_C, PCHAR_l, PCHAR_u, PCHAR_b, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Kampfknochen"), PSTRING("THICK CLUB")),
 		0xe0, //index
 		500, //price
 		65, //holding_effect_id
@@ -3377,11 +3378,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LAUCHSTANGE
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_a, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_s, PCHAR_t, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_k, 0xff, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Lauchstange"), PSTRING("STICK")),
 		0xe1, //index
 		200, //price
 		66, //holding_effect_id
@@ -3392,11 +3393,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BISAFLORNIT
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_s, PCHAR_a, PCHAR_f, PCHAR_l, PCHAR_o, PCHAR_r, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Bisaflornit"), PSTRING("????????")),
 		0xe2, //index
 		0, //price
 		0, //holding_effect_id
@@ -3407,11 +3408,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GLURAKNIT
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_l, PCHAR_u, PCHAR_r, PCHAR_a, PCHAR_k, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Gluraknit"), PSTRING("????????")),
 		0xe3, //index
 		0, //price
 		0, //holding_effect_id
@@ -3422,11 +3423,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TURTOKNIT
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_u, PCHAR_r, PCHAR_t, PCHAR_o, PCHAR_k, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Turtoknit"), PSTRING("????????")),
 		0xe4, //index
 		0, //price
 		0, //holding_effect_id
@@ -3437,11 +3438,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TERRASORNIT
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_a, PCHAR_s, PCHAR_o, PCHAR_r, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Terrasornit"), PSTRING("????????")),
 		0xe5, //index
 		0, //price
 		0, //holding_effect_id
@@ -3452,11 +3453,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ZERBERNIT
-		PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_e, PCHAR_r, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Zerbernit"), PSTRING("????????")),
 		0xe6, //index
 		0, //price
 		0, //holding_effect_id
@@ -3467,11 +3468,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SKULLYDRANIT
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_k, PCHAR_u, PCHAR_l, PCHAR_l, PCHAR_y, PCHAR_d, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Skullydranit"), PSTRING("????????")),
 		0xe7, //index
 		0, //price
 		0, //holding_effect_id
@@ -3482,11 +3483,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AQUANANIT
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_q, PCHAR_u, PCHAR_a, PCHAR_n, PCHAR_a, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Aquananit"), PSTRING("????????")),
 		0xe8, //index
 		0, //price
 		0, //holding_effect_id
@@ -3497,11 +3498,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FLAMARANIT
-		PSTRING(P99_PROCTECT({PCHAR_F, PCHAR_l, PCHAR_a, PCHAR_m, PCHAR_a, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Flamaranit"), PSTRING("????????")),
 		0xe9, //index
 		0, //price
 		0, //holding_effect_id
@@ -3512,11 +3513,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLITZANIT
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_i, PCHAR_t, PCHAR_z, PCHAR_a, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Blitzanit"), PSTRING("????????")),
 		0xea, //index
 		0, //price
 		0, //holding_effect_id
@@ -3527,11 +3528,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AMPHAROSNIT
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_m, PCHAR_p, PCHAR_h, PCHAR_a, PCHAR_r, PCHAR_o, PCHAR_s, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Ampharosnit"), PSTRING("????????")),
 		0xeb, //index
 		0, //price
 		0, //holding_effect_id
@@ -3542,11 +3543,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GENGARNIT
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_n, PCHAR_g, PCHAR_a, PCHAR_r, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Gengarnit"), PSTRING("????????")),
 		0xec, //index
 		0, //price
 		0, //holding_effect_id
@@ -3557,11 +3558,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BIBORNIT
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_i, PCHAR_b, PCHAR_o, PCHAR_r, PCHAR_n, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Bibornit"), PSTRING("????????")),
 		0xed, //index
 		0, //price
 		0, //holding_effect_id
@@ -3572,11 +3573,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_EE
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_a, PCHAR_g, PCHAR_m, PCHAR_a, PCHAR_h, PCHAR_e, PCHAR_r, PCHAR_z, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Magmaherz"), PSTRING("????????")),
 		0xee, //index
 		0, //price
 		0, //holding_effect_id
@@ -3587,11 +3588,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_EF
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3602,11 +3603,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F0
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3617,11 +3618,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F1
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3632,11 +3633,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F2
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3647,11 +3648,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F3
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3662,11 +3663,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F4
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3677,11 +3678,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F5
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3692,11 +3693,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F6
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3707,11 +3708,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F7
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3722,11 +3723,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F8
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3737,11 +3738,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F9
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3752,11 +3753,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FA
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3767,11 +3768,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FB
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3782,11 +3783,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FC
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3797,11 +3798,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FD
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -3812,11 +3813,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROTER_SCHAL
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_t, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_d, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_r, PCHAR_f, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Roter Schal"), PSTRING("RED SCARF")),
 		0xfe, //index
 		100, //price
 		0, //holding_effect_id
@@ -3827,11 +3828,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLAUER_SCHAL
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_u, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_r, PCHAR_f, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Blauer Schal"), PSTRING("BLUE SCARF")),
 		0xff, //index
 		100, //price
 		0, //holding_effect_id
@@ -3842,11 +3843,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROSA_SCHAL
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_o, PCHAR_s, PCHAR_a, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_i, PCHAR_n, PCHAR_k, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_r, PCHAR_f, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Rosa Schal"), PSTRING("PINK SCARF")),
 		0x100, //index
 		100, //price
 		0, //holding_effect_id
@@ -3857,11 +3858,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRUENER_SCHAL
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_r, PCHAR_ue, PCHAR_n, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_G, PCHAR_r, PCHAR_e, PCHAR_e, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_r, PCHAR_f, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Grüner Schal"), PSTRING("GREEN SCARF")),
 		0x101, //index
 		100, //price
 		0, //holding_effect_id
@@ -3872,11 +3873,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GELBER_SCHAL
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_l, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_a, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_Y, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_o, PCHAR_w, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_r, PCHAR_f, 0xff, 0})),
+		LANGDEP(PSTRING("Gelber Schal"), PSTRING("YELLOW SCARF")),
 		0x102, //index
 		100, //price
 		0, //holding_effect_id
@@ -3887,11 +3888,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EILRAD
-		PSTRING(P99_PROCTECT({PCHAR_E, PCHAR_i, PCHAR_l, PCHAR_r, PCHAR_a, PCHAR_d, 0xff, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_k, PCHAR_e, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Eilrad"), PSTRING("MACH BIKE")),
 		0x103, //index
 		0, //price
 		0, //holding_effect_id
@@ -3902,11 +3903,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MUENZKORB
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_ue, PCHAR_n, PCHAR_z, PCHAR_k, PCHAR_o, PCHAR_r, PCHAR_b, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_o, PCHAR_i, PCHAR_n, PCHAR_SPACE, PCHAR_C, PCHAR_a, PCHAR_s, PCHAR_e, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Münzkorb"), PSTRING("COIN CASE")),
 		0x104, //index
 		0, //price
 		0, //holding_effect_id
@@ -3917,11 +3918,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a154d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DETEKTOR
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_t, PCHAR_e, PCHAR_k, PCHAR_t, PCHAR_o, PCHAR_r, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_I, PCHAR_t, PCHAR_e, PCHAR_m, PCHAR_f, PCHAR_i, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Detektor"), PSTRING("ITEMFINDER")),
 		0x105, //index
 		0, //price
 		0, //holding_effect_id
@@ -3932,11 +3933,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1525, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGEL
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_n, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_O, PCHAR_l, PCHAR_d, PCHAR_SPACE, PCHAR_R, PCHAR_o, PCHAR_d, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Angel"), PSTRING("OLD ROD")),
 		0x106, //index
 		0, //price
 		0, //holding_effect_id
@@ -3947,11 +3948,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PROFIANGEL
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_r, PCHAR_o, PCHAR_f, PCHAR_i, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_o, PCHAR_o, PCHAR_d, PCHAR_SPACE, PCHAR_R, PCHAR_o, PCHAR_d, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Profiangel"), PSTRING("GOOD ROD")),
 		0x107, //index
 		0, //price
 		0, //holding_effect_id
@@ -3962,11 +3963,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERANGEL
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_u, PCHAR_p, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_R, PCHAR_o, PCHAR_d, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Superangel"), PSTRING("SUPER ROD")),
 		0x108, //index
 		0, //price
 		0, //holding_effect_id
@@ -3977,11 +3978,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BOOTSTICKET
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_o, PCHAR_o, PCHAR_t, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_DOT, PCHAR_s, PCHAR_DOT, PCHAR_SPACE, PCHAR_T, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Bootsticket"), PSTRING("S.S. TICKET")),
 		0x109, //index
 		0, //price
 		0, //holding_effect_id
@@ -3992,11 +3993,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WETTB_KARTE
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_e, PCHAR_t, PCHAR_t, PCHAR_b, PCHAR_DOT, PCHAR_MINUS, PCHAR_K, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_e, 0xff, 0}), P99_PROTECT({PCHAR_C, PCHAR_o, PCHAR_n, PCHAR_t, PCHAR_e, PCHAR_s, PCHAR_t, PCHAR_SPACE, PCHAR_P, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0})),
+		LANGDEP(PSTRING("Wettb.-Karte"), PSTRING("CONTEST PASS")),
 		0x10a, //index
 		0, //price
 		0, //holding_effect_id
@@ -4007,11 +4008,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_10B
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_l, PCHAR_k, PCHAR_e, PCHAR_n, PCHAR_h, PCHAR_e, PCHAR_r, PCHAR_z, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Wolkenherz"), PSTRING("????????")),
 		0x10b, //index
 		0, //price
 		0, //holding_effect_id
@@ -4022,11 +4023,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WAILMERKANNE
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_a, PCHAR_i, PCHAR_l, PCHAR_m, PCHAR_e, PCHAR_r, PCHAR_k, PCHAR_a, PCHAR_n, PCHAR_n, PCHAR_e, 0xff, 0}), P99_PROTECT({PCHAR_W, PCHAR_a, PCHAR_i, PCHAR_l, PCHAR_m, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_P, PCHAR_a, PCHAR_i, PCHAR_l, 0xff, 0})),
+		LANGDEP(PSTRING("Wailmerkanne"), PSTRING("WAILMER PAIL")),
 		0x10c, //index
 		0, //price
 		0, //holding_effect_id
@@ -4037,11 +4038,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DEVON_WAREN
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_v, PCHAR_o, PCHAR_n, PCHAR_MINUS, PCHAR_W, PCHAR_a, PCHAR_r, PCHAR_e, PCHAR_n, 0xff, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_e, PCHAR_v, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_G, PCHAR_o, PCHAR_o, PCHAR_d, PCHAR_s, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Devon-Waren"), PSTRING("DEVON GOODS")),
 		0x10d, //index
 		0, //price
 		0, //holding_effect_id
@@ -4052,11 +4053,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ASCHETASCHE
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_t, PCHAR_a, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_o, PCHAR_o, PCHAR_t, PCHAR_SPACE, PCHAR_S, PCHAR_a, PCHAR_c, PCHAR_k, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Aschetasche"), PSTRING("SOOT SACK")),
 		0x10e, //index
 		0, //price
 		0, //holding_effect_id
@@ -4065,13 +4066,13 @@ item items[] = {
 		1, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		item_ashbag_field, //field_usage
+		(void(*)(u8))0x9008ad5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KELLEROEFFNER
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_e, PCHAR_l, PCHAR_l, PCHAR_e, PCHAR_r, PCHAR_oe, PCHAR_f, PCHAR_f, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0}), P99_PROTECT({PCHAR_B, PCHAR_a, PCHAR_s, PCHAR_e, PCHAR_m, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0})),
+		LANGDEP(PSTRING("Kelleröffner"), PSTRING("BASEMENT KEY")),
 		0x10f, //index
 		0, //price
 		0, //holding_effect_id
@@ -4082,11 +4083,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUNSTRAD
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_u, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_r, PCHAR_a, PCHAR_d, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_A, PCHAR_c, PCHAR_r, PCHAR_o, PCHAR_SPACE, PCHAR_B, PCHAR_i, PCHAR_k, PCHAR_e, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Kunstrad"), PSTRING("ACRO BIKE")),
 		0x110, //index
 		0, //price
 		0, //holding_effect_id
@@ -4097,11 +4098,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BOX
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_o, PCHAR_x, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({0x55, 0x56, 0x57, 0x58, 0x59, PCHAR_SPACE, PCHAR_C, PCHAR_a, PCHAR_s, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Box"), PSTRING("POKEBLOCK CASE")),
 		0x111, //index
 		0, //price
 		0, //holding_effect_id
@@ -4112,11 +4113,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BRIEF
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_r, PCHAR_i, PCHAR_e, PCHAR_f, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_e, PCHAR_t, PCHAR_t, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Brief"), PSTRING("LETTER")),
 		0x112, //index
 		0, //price
 		0, //holding_effect_id
@@ -4127,11 +4128,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AEON_TICKET
-		PSTRING(P99_PROCTECT({PCHAR_ae, PCHAR_o, PCHAR_n, PCHAR_MINUS, PCHAR_T, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_E, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_T, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("äon-Ticket"), PSTRING("EON TICKET")),
 		0x113, //index
 		0, //price
 		0, //holding_effect_id
@@ -4142,11 +4143,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPIRITKERN
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_p, PCHAR_i, PCHAR_r, PCHAR_i, PCHAR_t, PCHAR_k, PCHAR_e, PCHAR_r, PCHAR_n, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_e, PCHAR_d, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Spiritkern"), PSTRING("RED ORB")),
 		0x114, //index
 		0, //price
 		0, //holding_effect_id
@@ -4157,11 +4158,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLAUE_KUGEL
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_l, PCHAR_a, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_K, PCHAR_u, PCHAR_g, PCHAR_e, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_l, PCHAR_u, PCHAR_e, PCHAR_SPACE, PCHAR_O, PCHAR_r, PCHAR_b, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Blaue Kugel"), PSTRING("BLUE ORB")),
 		0x115, //index
 		0, //price
 		0, //holding_effect_id
@@ -4172,11 +4173,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCANNER
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_c, PCHAR_a, PCHAR_n, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Scanner"), PSTRING("SCANNER")),
 		0x116, //index
 		0, //price
 		0, //holding_effect_id
@@ -4187,11 +4188,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WUESTENGLAS
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_ue, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_n, PCHAR_g, PCHAR_l, PCHAR_a, PCHAR_s, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_o, PCHAR_MINUS, PCHAR_G, PCHAR_o, PCHAR_g, PCHAR_g, PCHAR_l, PCHAR_e, PCHAR_s, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Wüstenglas"), PSTRING("GO-GOGGLES")),
 		0x117, //index
 		0, //price
 		0, //holding_effect_id
@@ -4202,11 +4203,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_METEORIT
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_e, PCHAR_o, PCHAR_r, PCHAR_i, PCHAR_t, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_M, PCHAR_e, PCHAR_t, PCHAR_e, PCHAR_o, PCHAR_r, PCHAR_i, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Meteorit"), PSTRING("METEORITE")),
 		0x118, //index
 		0, //price
 		0, //holding_effect_id
@@ -4217,11 +4218,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K1_SCHLUESSEL
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_1, PCHAR_MINUS, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_R, PCHAR_m, PCHAR_DOT, PCHAR_SPACE, PCHAR_1, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("K1-Schlüssel"), PSTRING("RM. 1 KEY")),
 		0x119, //index
 		0, //price
 		0, //holding_effect_id
@@ -4232,11 +4233,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K2_SCHLUESSEL
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_2, PCHAR_MINUS, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_R, PCHAR_m, PCHAR_DOT, PCHAR_SPACE, PCHAR_2, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("K2-Schlüssel"), PSTRING("RM. 2 KEY")),
 		0x11a, //index
 		0, //price
 		0, //holding_effect_id
@@ -4247,11 +4248,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K4_SCHLUESSEL
-		PSTRING(P99_PROCTECT({PCHAR_K, 0xa5, PCHAR_MINUS, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_R, PCHAR_m, PCHAR_DOT, PCHAR_SPACE, 0xa5, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("K4-Schlüssel"), PSTRING("RM. 4 KEY")),
 		0x11b, //index
 		0, //price
 		0, //holding_effect_id
@@ -4262,11 +4263,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K6_SCHLUESSEL
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_6, PCHAR_MINUS, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_R, PCHAR_m, PCHAR_DOT, PCHAR_SPACE, PCHAR_6, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("K6-Schlüssel"), PSTRING("RM. 6 KEY")),
 		0x11c, //index
 		0, //price
 		0, //holding_effect_id
@@ -4277,11 +4278,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_L_SCHLUESSEL
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_DOT, PCHAR_MINUS, PCHAR_S, PCHAR_c, PCHAR_h, PCHAR_l, PCHAR_ue, PCHAR_s, PCHAR_s, PCHAR_e, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_S, PCHAR_t, PCHAR_o, PCHAR_r, PCHAR_a, PCHAR_g, PCHAR_e, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0})),
+		LANGDEP(PSTRING("L.-Schlüssel"), PSTRING("STORAGE KEY")),
 		0x11d, //index
 		0, //price
 		0, //holding_effect_id
@@ -4292,11 +4293,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WURZELFOSSIL
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_u, PCHAR_r, PCHAR_z, PCHAR_e, PCHAR_l, PCHAR_f, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_R, PCHAR_o, PCHAR_o, PCHAR_t, PCHAR_SPACE, PCHAR_F, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Wurzelfossil"), PSTRING("ROOT FOSSIL")),
 		0x11e, //index
 		0, //price
 		0, //holding_effect_id
@@ -4307,11 +4308,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KLAUENFOSSIL
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_l, PCHAR_a, PCHAR_u, PCHAR_e, PCHAR_n, PCHAR_f, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0}), P99_PROTECT({PCHAR_C, PCHAR_l, PCHAR_a, PCHAR_w, PCHAR_SPACE, PCHAR_F, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Klauenfossil"), PSTRING("CLAW FOSSIL")),
 		0x11f, //index
 		0, //price
 		0, //holding_effect_id
@@ -4322,11 +4323,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DEVON_SCOPE
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_e, PCHAR_v, PCHAR_o, PCHAR_n, PCHAR_MINUS, PCHAR_S, PCHAR_c, PCHAR_o, PCHAR_p, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_e, PCHAR_v, PCHAR_o, PCHAR_n, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_o, PCHAR_p, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Devon-Scope"), PSTRING("DEVON SCOPE")),
 		0x120, //index
 		0, //price
 		0, //holding_effect_id
@@ -4337,11 +4338,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM01
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm01"), PSTRING("TM01")),
 		0x121, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4350,13 +4351,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM02
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm02"), PSTRING("TM02")),
 		0x122, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4365,13 +4366,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM03
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm03"), PSTRING("TM03")),
 		0x123, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4380,13 +4381,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM04
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm04"), PSTRING("TM04")),
 		0x124, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4395,13 +4396,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM05
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm05"), PSTRING("TM05")),
 		0x125, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4410,13 +4411,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM06
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm06"), PSTRING("TM06")),
 		0x126, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4425,13 +4426,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM07
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm07"), PSTRING("TM07")),
 		0x127, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4440,13 +4441,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM08
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm08"), PSTRING("TM08")),
 		0x128, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4455,13 +4456,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM09
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_0, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm09"), PSTRING("TM09")),
 		0x129, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4470,13 +4471,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM10
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm10"), PSTRING("TM10")),
 		0x12a, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4485,13 +4486,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM11
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm11"), PSTRING("TM11")),
 		0x12b, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4500,13 +4501,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM12
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm12"), PSTRING("TM12")),
 		0x12c, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4515,13 +4516,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM13
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm13"), PSTRING("TM13")),
 		0x12d, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4530,13 +4531,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM14
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm14"), PSTRING("TM14")),
 		0x12e, //index
 		5500, //price
 		0, //holding_effect_id
@@ -4545,13 +4546,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM15
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm15"), PSTRING("TM15")),
 		0x12f, //index
 		7500, //price
 		0, //holding_effect_id
@@ -4560,13 +4561,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM16
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm16"), PSTRING("TM16")),
 		0x130, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4575,13 +4576,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM17
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm17"), PSTRING("TM17")),
 		0x131, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4590,13 +4591,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM18
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm18"), PSTRING("TM18")),
 		0x132, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4605,13 +4606,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM19
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_1, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm19"), PSTRING("TM19")),
 		0x133, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4620,13 +4621,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM20
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm20"), PSTRING("TM20")),
 		0x134, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4635,13 +4636,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM21
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm21"), PSTRING("TM21")),
 		0x135, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4650,13 +4651,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM22
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm22"), PSTRING("TM22")),
 		0x136, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4665,13 +4666,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM23
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm23"), PSTRING("TM23")),
 		0x137, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4680,13 +4681,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM24
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm24"), PSTRING("TM24")),
 		0x138, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4695,13 +4696,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM25
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm25"), PSTRING("TM25")),
 		0x139, //index
 		5500, //price
 		0, //holding_effect_id
@@ -4710,13 +4711,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM26
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm26"), PSTRING("TM26")),
 		0x13a, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4725,13 +4726,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM27
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm27"), PSTRING("TM27")),
 		0x13b, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4740,13 +4741,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM28
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm28"), PSTRING("TM28")),
 		0x13c, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4755,13 +4756,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM29
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_2, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm29"), PSTRING("TM29")),
 		0x13d, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4770,13 +4771,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM30
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm30"), PSTRING("TM30")),
 		0x13e, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4785,13 +4786,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM31
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm31"), PSTRING("TM31")),
 		0x13f, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4800,13 +4801,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM32
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm32"), PSTRING("TM32")),
 		0x140, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4815,13 +4816,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM33
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm33"), PSTRING("TM33")),
 		0x141, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4830,13 +4831,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM34
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm34"), PSTRING("TM34")),
 		0x142, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4845,13 +4846,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM35
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm35"), PSTRING("TM35")),
 		0x143, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4860,13 +4861,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM36
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm36"), PSTRING("TM36")),
 		0x144, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4875,13 +4876,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM37
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm37"), PSTRING("TM37")),
 		0x145, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4890,13 +4891,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM38
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm38"), PSTRING("TM38")),
 		0x146, //index
 		5500, //price
 		0, //holding_effect_id
@@ -4905,13 +4906,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM39
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_3, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm39"), PSTRING("TM39")),
 		0x147, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4920,13 +4921,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM40
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm40"), PSTRING("TM40")),
 		0x148, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4935,13 +4936,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM41
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm41"), PSTRING("TM41")),
 		0x149, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4950,13 +4951,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM42
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm42"), PSTRING("TM42")),
 		0x14a, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4965,13 +4966,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM43
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm43"), PSTRING("TM43")),
 		0x14b, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4980,13 +4981,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM44
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm44"), PSTRING("TM44")),
 		0x14c, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4995,13 +4996,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM45
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm45"), PSTRING("TM45")),
 		0x14d, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5010,13 +5011,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM46
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm46"), PSTRING("TM46")),
 		0x14e, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5025,13 +5026,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM47
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm47"), PSTRING("TM47")),
 		0x14f, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5040,13 +5041,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM48
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm48"), PSTRING("TM48")),
 		0x150, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5055,13 +5056,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM49
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, 0xa5, PCHAR_9, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm49"), PSTRING("TM49")),
 		0x151, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5070,13 +5071,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM50
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_m, PCHAR_5, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_5, PCHAR_0, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tm50"), PSTRING("TM50")),
 		0x152, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5085,13 +5086,13 @@ item items[] = {
 		0, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM01
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, PCHAR_1, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm01"), PSTRING("HM01")),
 		0x153, //index
 		0, //price
 		0, //holding_effect_id
@@ -5100,13 +5101,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM02
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, PCHAR_2, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm02"), PSTRING("HM02")),
 		0x154, //index
 		0, //price
 		0, //holding_effect_id
@@ -5115,13 +5116,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM03
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, PCHAR_3, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm03"), PSTRING("HM03")),
 		0x155, //index
 		0, //price
 		0, //holding_effect_id
@@ -5130,13 +5131,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM04
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, 0xa5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm04"), PSTRING("HM04")),
 		0x156, //index
 		0, //price
 		0, //holding_effect_id
@@ -5145,13 +5146,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM05
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, PCHAR_5, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm05"), PSTRING("HM05")),
 		0x157, //index
 		0, //price
 		0, //holding_effect_id
@@ -5160,13 +5161,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM06
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, PCHAR_6, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm06"), PSTRING("HM06")),
 		0x158, //index
 		0, //price
 		0, //holding_effect_id
@@ -5175,13 +5176,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM07
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, PCHAR_7, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm07"), PSTRING("HM07")),
 		0x159, //index
 		0, //price
 		0, //holding_effect_id
@@ -5190,13 +5191,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM08
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_0, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_m, PCHAR_0, PCHAR_8, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm08"), PSTRING("HM08")),
 		0x15a, //index
 		0, //price
 		0, //holding_effect_id
@@ -5205,13 +5206,13 @@ item items[] = {
 		1, //field_18
 		POCKET_TM_HM, //pocket
 		1, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_15B
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -5222,11 +5223,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_15C
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, PCHAR_QUESTION, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("????????"), PSTRING("????????")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
@@ -5237,11 +5238,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EICHS_PAKET
-		PSTRING(P99_PROCTECT({PCHAR_Z, PCHAR_u, PCHAR_g, PCHAR_a, PCHAR_n, PCHAR_g, PCHAR_s, PCHAR_k, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_e, 0xff, 0}), P99_PROTECT({PCHAR_O, PCHAR_a, PCHAR_k, 0xb4, PCHAR_s, PCHAR_SPACE, PCHAR_P, PCHAR_a, PCHAR_r, PCHAR_c, PCHAR_e, PCHAR_l, 0xff, 0})),
+		LANGDEP(PSTRING("Zugangskarte"), PSTRING("OAK\S PARCEL")),
 		0x15d, //index
 		0, //price
 		0, //holding_effect_id
@@ -5252,11 +5253,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEFLOETE
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_o, PCHAR_k, 0xef, PCHAR_l, PCHAR_oe, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_k, PCHAR_POKE_E, PCHAR_SPACE, PCHAR_F, PCHAR_l, PCHAR_u, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Pok▶löte"), PSTRING("POKé FLUTE")),
 		0x15e, //index
 		0, //price
 		0, //holding_effect_id
@@ -5271,7 +5272,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM__OEFFNER
-		PSTRING(P99_PROCTECT({PCHAR_QUESTION, PCHAR_MINUS, PCHAR_oe, PCHAR_f, PCHAR_f, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_e, PCHAR_c, PCHAR_r, PCHAR_e, PCHAR_t, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("?-öffner"), PSTRING("SECRET KEY")),
 		0x15f, //index
 		0, //price
 		0, //holding_effect_id
@@ -5282,11 +5283,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RAD_COUPON
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_a, PCHAR_d, PCHAR_MINUS, PCHAR_C, PCHAR_o, PCHAR_u, PCHAR_p, PCHAR_o, PCHAR_n, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_i, PCHAR_k, PCHAR_e, PCHAR_SPACE, PCHAR_V, PCHAR_o, PCHAR_u, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_r, 0xff, 0})),
+		LANGDEP(PSTRING("Rad-Coupon"), PSTRING("BIKE VOUCHER")),
 		0x160, //index
 		0, //price
 		0, //holding_effect_id
@@ -5297,11 +5298,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PKMCORDER
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_k, PCHAR_m, PCHAR_c, PCHAR_o, PCHAR_r, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_G, PCHAR_o, PCHAR_l, PCHAR_d, PCHAR_SPACE, PCHAR_T, PCHAR_e, PCHAR_e, PCHAR_t, PCHAR_h, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Pkmcorder"), PSTRING("GOLD TEETH")),
 		0x161, //index
 		0, //price
 		0, //holding_effect_id
@@ -5310,13 +5311,13 @@ item items[] = {
 		2, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0, //field_usage
+		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ALTBERNSTEIN
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_l, PCHAR_t, PCHAR_b, PCHAR_e, PCHAR_r, PCHAR_n, PCHAR_s, PCHAR_t, PCHAR_e, PCHAR_i, PCHAR_n, 0xff, 0}), P99_PROTECT({PCHAR_O, PCHAR_l, PCHAR_d, PCHAR_SPACE, PCHAR_A, PCHAR_m, PCHAR_b, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Altbernstein"), PSTRING("OLD AMBER")),
 		0x162, //index
 		0, //price
 		0, //holding_effect_id
@@ -5327,11 +5328,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TUEROEFFNER
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_ue, PCHAR_r, PCHAR_oe, PCHAR_f, PCHAR_f, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_C, PCHAR_a, PCHAR_r, PCHAR_d, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Türöffner"), PSTRING("CARD KEY")),
 		0x163, //index
 		0, //price
 		0, //holding_effect_id
@@ -5342,11 +5343,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LIFTOEFFNER
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_oe, PCHAR_f, PCHAR_f, PCHAR_n, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_L, PCHAR_i, PCHAR_f, PCHAR_t, PCHAR_SPACE, PCHAR_K, PCHAR_e, PCHAR_y, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Liftöffner"), PSTRING("LIFT KEY")),
 		0x164, //index
 		0, //price
 		0, //holding_effect_id
@@ -5357,11 +5358,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HELIXFOSSIL
-		PSTRING(P99_PROCTECT({PCHAR_H, PCHAR_e, PCHAR_l, PCHAR_i, PCHAR_x, PCHAR_f, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0, 0}), P99_PROTECT({PCHAR_H, PCHAR_e, PCHAR_l, PCHAR_i, PCHAR_x, PCHAR_SPACE, PCHAR_F, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0})),
+		LANGDEP(PSTRING("Helixfossil"), PSTRING("HELIX FOSSIL")),
 		0x165, //index
 		0, //price
 		0, //holding_effect_id
@@ -5372,11 +5373,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DOMFOSSIL
-		PSTRING(P99_PROCTECT({PCHAR_D, PCHAR_o, PCHAR_m, PCHAR_f, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_D, PCHAR_o, PCHAR_m, PCHAR_e, PCHAR_SPACE, PCHAR_F, PCHAR_o, PCHAR_s, PCHAR_s, PCHAR_i, PCHAR_l, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Domfossil"), PSTRING("DOME FOSSIL")),
 		0x166, //index
 		0, //price
 		0, //holding_effect_id
@@ -5387,11 +5388,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SILPH_SCOPE
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_i, PCHAR_l, PCHAR_p, PCHAR_h, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_o, PCHAR_p, PCHAR_e, 0xff, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_i, PCHAR_l, PCHAR_p, PCHAR_h, PCHAR_SPACE, PCHAR_S, PCHAR_c, PCHAR_o, PCHAR_p, PCHAR_e, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Silph Scope"), PSTRING("SILPH SCOPE")),
 		0x167, //index
 		0, //price
 		0, //holding_effect_id
@@ -5402,11 +5403,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FAHRRAD
-		PSTRING(P99_PROCTECT({PCHAR_W, PCHAR_o, PCHAR_l, PCHAR_k, PCHAR_e, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_i, PCHAR_c, PCHAR_y, PCHAR_c, PCHAR_l, PCHAR_e, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Wolke"), PSTRING("BICYCLE")),
 		0x1ff, //index
 		0, //price
 		0, //holding_effect_id
@@ -5415,13 +5416,13 @@ item items[] = {
 		257, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
-		(void(*)(u8))(0x080A1318 | 1), //field_usage
+		(void(*)(u8))0x80a1319, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KARTE
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_a, PCHAR_r, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_o, PCHAR_w, PCHAR_n, PCHAR_SPACE, PCHAR_M, PCHAR_a, PCHAR_p, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Karte"), PSTRING("TOWN MAP")),
 		0x169, //index
 		0, //price
 		0, //holding_effect_id
@@ -5430,13 +5431,13 @@ item items[] = {
 		257, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x080A1D4D, //field_usage
+		(void(*)(u8))0x80a1d4d, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KAMPFFAHNDER
-		PSTRING(P99_PROCTECT({PCHAR_K, PCHAR_a, PCHAR_m, PCHAR_p, PCHAR_f, PCHAR_f, PCHAR_a, PCHAR_h, PCHAR_n, PCHAR_d, PCHAR_e, PCHAR_r, 0xff, 0}), P99_PROTECT({PCHAR_V, PCHAR_s, PCHAR_SPACE, PCHAR_S, PCHAR_e, PCHAR_e, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Kampffahnder"), PSTRING("VS SEEKER")),
 		0x16a, //index
 		0, //price
 		0, //holding_effect_id
@@ -5447,11 +5448,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a1e89, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RUHMESDATEI
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_u, PCHAR_h, PCHAR_m, PCHAR_e, PCHAR_s, PCHAR_d, PCHAR_a, PCHAR_t, PCHAR_e, PCHAR_i, 0xff, 0, 0}), P99_PROTECT({PCHAR_F, PCHAR_a, PCHAR_m, PCHAR_e, PCHAR_SPACE, PCHAR_C, PCHAR_h, PCHAR_e, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_r, 0xff, 0})),
+		LANGDEP(PSTRING("Ruhmesdatei"), PSTRING("FAME CHECKER")),
 		0x16b, //index
 		0, //price
 		0, //holding_effect_id
@@ -5462,11 +5463,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1de5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VMTM_BOX
-		PSTRING(P99_PROCTECT({PCHAR_V, PCHAR_m, PCHAR_SLASH, PCHAR_t, PCHAR_m, PCHAR_MINUS, PCHAR_B, PCHAR_o, PCHAR_x, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_m, PCHAR_SPACE, PCHAR_C, PCHAR_a, PCHAR_s, PCHAR_e, 0xff, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Vm/tm-Box"), PSTRING("TM CASE")),
 		0x16c, //index
 		0, //price
 		0, //holding_effect_id
@@ -5477,11 +5478,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a1875, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BEERENTUETE
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_e, PCHAR_e, PCHAR_r, PCHAR_e, PCHAR_n, PCHAR_t, PCHAR_ue, PCHAR_t, PCHAR_e, 0xff, 0, 0, 0}), P99_PROTECT({PCHAR_B, PCHAR_e, PCHAR_r, PCHAR_r, PCHAR_y, PCHAR_SPACE, PCHAR_P, PCHAR_o, PCHAR_u, PCHAR_c, PCHAR_h, 0xff, 0, 0})),
+		LANGDEP(PSTRING("Beerentüte"), PSTRING("BERRY POUCH")),
 		0x16d, //index
 		0, //price
 		0, //holding_effect_id
@@ -5496,7 +5497,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LEHRKANAL
-		PSTRING(P99_PROCTECT({PCHAR_L, PCHAR_e, PCHAR_h, PCHAR_r, PCHAR_k, PCHAR_a, PCHAR_n, PCHAR_a, PCHAR_l, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_e, PCHAR_a, PCHAR_c, PCHAR_h, PCHAR_y, PCHAR_SPACE, PCHAR_T, PCHAR_v, 0xff, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Lehrkanal"), PSTRING("TEACHY TV")),
 		0x16e, //index
 		0, //price
 		0, //holding_effect_id
@@ -5507,11 +5508,11 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x80a19d9, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRI_PASS
-		PSTRING(P99_PROCTECT({PCHAR_T, PCHAR_r, PCHAR_i, PCHAR_MINUS, PCHAR_P, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_T, PCHAR_r, PCHAR_i, PCHAR_MINUS, PCHAR_P, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Tri-Pass"), PSTRING("TRI-PASS")),
 		0x16f, //index
 		0, //price
 		0, //holding_effect_id
@@ -5522,11 +5523,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BUNT_PASS
-		PSTRING(P99_PROCTECT({PCHAR_B, PCHAR_u, PCHAR_n, PCHAR_t, PCHAR_MINUS, PCHAR_P, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_a, PCHAR_i, PCHAR_n, PCHAR_b, PCHAR_o, PCHAR_w, PCHAR_SPACE, PCHAR_P, PCHAR_a, PCHAR_s, PCHAR_s, 0xff, 0})),
+		LANGDEP(PSTRING("Bunt-Pass"), PSTRING("RAINBOW PASS")),
 		0x170, //index
 		0, //price
 		0, //holding_effect_id
@@ -5537,11 +5538,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MEGA_AMULETT
-		PSTRING(P99_PROCTECT({PCHAR_M, PCHAR_e, PCHAR_g, PCHAR_a, PCHAR_MINUS, PCHAR_A, PCHAR_m, PCHAR_u, PCHAR_l, PCHAR_e, PCHAR_t, PCHAR_t, 0xff, 0}), P99_PROTECT({PCHAR_T, PCHAR_e, PCHAR_a, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Mega-Amulett"), PSTRING("TEA")),
 		0x171, //index
 		0, //price
 		0, //holding_effect_id
@@ -5552,11 +5553,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0xe, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GEHEIMTICKET
-		PSTRING(P99_PROCTECT({PCHAR_G, PCHAR_e, PCHAR_h, PCHAR_e, PCHAR_i, PCHAR_m, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0}), P99_PROTECT({PCHAR_M, PCHAR_y, PCHAR_s, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0})),
+		LANGDEP(PSTRING("Geheimticket"), PSTRING("MYSTICTICKET")),
 		0x172, //index
 		0, //price
 		0, //holding_effect_id
@@ -5567,11 +5568,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AURORATICKET
-		PSTRING(P99_PROCTECT({PCHAR_A, PCHAR_u, PCHAR_r, PCHAR_o, PCHAR_r, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0}), P99_PROTECT({PCHAR_A, PCHAR_u, PCHAR_r, PCHAR_o, PCHAR_r, PCHAR_a, PCHAR_t, PCHAR_i, PCHAR_c, PCHAR_k, PCHAR_e, PCHAR_t, 0xff, 0})),
+		LANGDEP(PSTRING("Auroraticket"), PSTRING("AURORATICKET")),
 		0x173, //index
 		0, //price
 		0, //holding_effect_id
@@ -5582,11 +5583,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PUDERDOESCHEN
-		PSTRING(P99_PROCTECT({PCHAR_P, PCHAR_u, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_d, PCHAR_oe, PCHAR_s, PCHAR_c, PCHAR_h, PCHAR_e, PCHAR_n, 0xff, 0}), P99_PROTECT({PCHAR_P, PCHAR_o, PCHAR_w, PCHAR_d, PCHAR_e, PCHAR_r, PCHAR_SPACE, PCHAR_J, PCHAR_a, PCHAR_r, 0xff, 0, 0, 0})),
+		LANGDEP(PSTRING("Puderdöschen"), PSTRING("POWDER JAR")),
 		0x174, //index
 		0, //price
 		0, //holding_effect_id
@@ -5597,11 +5598,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a15d5, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RUBIN
-		PSTRING(P99_PROCTECT({PCHAR_R, PCHAR_u, PCHAR_b, PCHAR_i, PCHAR_n, 0xff, 0, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_R, PCHAR_u, PCHAR_b, PCHAR_y, 0xff, 0, 0, 0, 0, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Rubin"), PSTRING("RUBY")),
 		0x175, //index
 		0, //price
 		0, //holding_effect_id
@@ -5612,11 +5613,11 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SAPHIR
-		PSTRING(P99_PROCTECT({PCHAR_S, PCHAR_a, PCHAR_p, PCHAR_h, PCHAR_i, PCHAR_r, 0xff, 0, 0, 0, 0, 0, 0, 0}), P99_PROTECT({PCHAR_S, PCHAR_a, PCHAR_p, PCHAR_p, PCHAR_h, PCHAR_i, PCHAR_r, PCHAR_e, 0xff, 0, 0, 0, 0, 0})),
+		LANGDEP(PSTRING("Saphir"), PSTRING("SAPPHIRE")),
 		0x176, //index
 		0, //price
 		0, //holding_effect_id
@@ -5627,7 +5628,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0, //battle_usage2
+		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},
 };

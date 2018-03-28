@@ -1,8 +1,0 @@
-.string str_0x8f4305 GER
-	=Du_schon_wieder!_Du_hast_mich_und\nmeine_Pok\emon_in_Meriana_City\lschon_besiegt...\lHier,_nimm_das_und_lass_mich\lgef\$aelligst_in_Ruhe!
-.end
-
-
-.string str_0x8ef5ca GER
-	=Buhu!_Ich_wollte_doch_nur_etwas\nbewirken...
-.end

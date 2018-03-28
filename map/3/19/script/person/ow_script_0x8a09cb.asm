@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0x3 0x0 str_0x8a09e3 str_0x8a0a35
 loadpointer 0x0 str_0x8a0a35
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8a09e3
+
+str_0x8a09e3:
+    .string "Ein Trainer hat stets viele Tränke\nbei sich, wenn er gut ausgerüstet\lsein will."
+        
+        
+.global str_0x8a0a35
+
+str_0x8a0a35:
+    .string "Doch die Ausrüstung eines Trainers\nist natürlich nicht alles."
+        
+        
+.elseif LANG_EN
+
+.endif

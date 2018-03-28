@@ -1,3 +1,0 @@
-.string str_0x86eed0 GER
-	=Ich_habe_geh\$oert,_dass_man_in_den\nThermen_besonders_gut_Pok\emon-Eier\lausbr\$ueten_kann.
-.end

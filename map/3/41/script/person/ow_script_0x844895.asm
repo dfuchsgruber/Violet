@@ -26,3 +26,21 @@ loadpointer 0x0 str_0x844937
 callstd MSG_FACE
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x8448cd
+
+str_0x8448cd:
+    .string "Oh sieh mal, was ich dort auf dem\nBoden gefunden habe! Eine\lmerkwürdige Klaue... Willst du sie\lhaben?"
+        
+        
+.global str_0x844937
+
+str_0x844937:
+    .string "Sie sieht wirklich ziemlich\nmerkwürdig aus, nicht?"
+        
+        
+.elseif LANG_EN
+
+.endif

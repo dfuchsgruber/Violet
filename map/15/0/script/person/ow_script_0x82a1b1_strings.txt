@@ -1,3 +1,0 @@
-.string str_0x8bfaa5 GER
-	=Die_Zucht_ist_eine_Wissenschaft.\nWusstest_du,_dass_Pok\emon_ganz\lpers\$oenliche_Gene_haben,_die_\$ueber\lihre_F\$aehigkeiten_im_Kampf\lbestimmen?_Diese_Gene_k\$oennen_dann\lvon_den_Eltern_an_ihre_Kinder\lvererbt_werden._Sogar_Angriffe\lsind_genetisch_bedingt.\pSpannend,_nicht?
-.end

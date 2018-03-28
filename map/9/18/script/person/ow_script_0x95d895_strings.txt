@@ -1,3 +1,0 @@
-.string str_0x95d89f GER
-	=Viele_Leute_werfen_Beeren_oder\nandere_Dinge_in_den_M\$uell.\pIch_habe_geh\$oert,_dass_man_im_Laufe\neiner_Woche_sehr_viele_neue_Dinge\lfinden_kann.
-.end

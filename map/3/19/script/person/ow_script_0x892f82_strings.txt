@@ -1,3 +1,0 @@
-.string str_0x8a0b9e GER
-	=Hier_im_hohen_Gras_tauchen_auf\nverschiedenen_Routen_verschiedene\lPok\emon_auf._Man_kann_sich_also\lnie_sicher_sein,_alle_Pok\emon\lgesehen_zu_haben._Spannend,_nicht?
-.end

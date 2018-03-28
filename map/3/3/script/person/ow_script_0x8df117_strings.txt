@@ -1,3 +1,0 @@
-.string str_0x8e0932 GER
-	=Der_amtierende_Champion_soll\n\$aeu\$sert_bescheiden_sein._Niemand\lwei\$s,_wer_er_oder_sie_ist...
-.end

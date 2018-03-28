@@ -52,3 +52,33 @@ fadescreen 0x0
 addvar MERIANA_CITY_REVOLUTIONARY 0x1
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x8dcf8d
+
+str_0x8dcf8d:
+    .string "Mann: Damit kommen Sie nicht\ndurch. Wenn die Top Vier davon\lerfahren, werden Sie dafür büßen."
+        
+        
+.global str_0x8de230
+
+str_0x8de230:
+    .string "Polizist: Ha! Ich weiß nicht,\nwovon Sie reden. Sie unterstellen\lder Polizei ungeheuerliche Dinge!\lIch könnte Sie inhaftieren wegen\lsolcher Anschuldigungen..."
+        
+        
+.global str_0x8dcf36
+
+str_0x8dcf36:
+    .string "Mann: Was fällt Ihnen ein?\nKorruptes Gesindel... Schon gut,\lich gehe, ich gehe..."
+        
+        
+.global str_0x8dcee9
+
+str_0x8dcee9:
+    .string "Polizist: Verdammter Bengel! ...\nIch sollte mich darum kümmern ..."
+        
+        
+.elseif LANG_EN
+
+.endif

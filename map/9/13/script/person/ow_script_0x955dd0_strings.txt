@@ -1,3 +1,0 @@
-.string str_0x9581f2 GER
-	=Ich_bin_daf\$uer_verantwortlich,_dass\naus_den_Simuatlionen_des\lvirtuellen_Pok\emons_Porygon_ein\lmaterielles_Objekt_entsteht...\pDie_Chemie_zur_Erschaffung_eines\nPok\emons_ist_keineswegs_trivial.
-.end

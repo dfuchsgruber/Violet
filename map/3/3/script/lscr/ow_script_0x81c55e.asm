@@ -95,3 +95,15 @@ special 0x114
 addvar STORY_PROGRESS 0x1
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x87762b
+
+str_0x87762b:
+    .string "Rüpel: Wir müssen uns beeilen, Rin\nwartet sicherlich schon im Wald.\pRüpel: Ja, und sie kann launisch\nwerden... Los jetzt! "
+        
+        
+.elseif LANG_EN
+
+.endif

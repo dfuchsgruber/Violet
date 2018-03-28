@@ -1,3 +1,0 @@
-.string str_0x89a7c6 GER
-	=Einst_war_das_hier_ein_sch\$oener\nOrt._Es_war_grauenvoll:_Mein_Sohn\l-_ein_beigeisterter_Schwimmer_-\lverschwand_an_diesem_Tag_spurlos\lzusammen_mit_anderen_Urlaubern.\lMan_hat_sie_nie_wieder_gesehen...
-.end

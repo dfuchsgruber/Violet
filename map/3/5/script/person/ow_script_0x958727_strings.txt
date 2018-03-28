@@ -1,3 +1,0 @@
-.string str_0x958731 GER
-	=Wir_geh\$oeren_zur_zweiten_Division\nvon_Team_Violet.\pUnser_Anf\$uehrer_ist_noch_viel\ngef\$aehrlicher_als_Rin.
-.end

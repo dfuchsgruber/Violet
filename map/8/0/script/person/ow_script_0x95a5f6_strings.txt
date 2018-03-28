@@ -1,3 +1,0 @@
-.string str_0x95aaa5 GER
-	=Das_Wasser_in_Kaskada_ist_das\nsauberste_der_ganzen_Theto-Region.
-.end

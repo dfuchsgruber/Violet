@@ -26,3 +26,15 @@ special 0x24
 waitmovement 0x0
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x95590d
+
+str_0x95590d:
+    .string "Ich bin untröstlich, aber der Rosa\nFaun hat eine Straßensperre\langeordnet, um die zwei Divisionen\ldes Team Violet, die sich derzeit\lin seinem Regierungsbereich\laufhalten, festzumachen.\pIch kann dich nicht passieren\nlassen."
+        
+        
+.elseif LANG_EN
+
+.endif

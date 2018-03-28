@@ -1,8 +1,0 @@
-.string str_0x90ff68 GER
-	=Ich_habe_geh\$oert,_dass_sich\nirgendwo_in_dieser_W\$ueste_das\lGrabmal_eines_legend\$aeren_Pok\emon\lbefindet._Ob_an_diesen_Geschichten\letwas_dran_ist?
-.end
-
-
-.string str_0x91ff1b GER
-	=Ich_w\$uerde_gerne_einemal_einem\nlegend\$aeren_Pok\emon_begegnen.
-.end

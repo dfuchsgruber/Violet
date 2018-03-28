@@ -1,8 +1,0 @@
-.string str_0x8d40f1 GER
-	=Ich_habe_bereits_zwei_Arena-Orden\nerrungen._Was_kannst_du_mir_also\lentgegensetzten?
-.end
-
-
-.string str_0x8d4147 GER
-	=Huch!_Du_bist_recht_stark,_Junge.\nEinen_Trainer_wie_mich_zu\lbesiegen,_erfordert_Talent.
-.end

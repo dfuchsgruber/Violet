@@ -67,3 +67,27 @@ loadpointer 0x0 str_0x8c8fde
 callstd MSG
 special 0x7
 goto ow_script_0x92eac0
+
+
+.ifdef LANG_GER
+.global str_0x8c90a0
+
+str_0x8c90a0:
+    .string "PLAYER, da bist du ja."
+        
+        
+.global str_0x8c8fec
+
+str_0x8c8fec:
+    .string "Hier herrscht das reinste Chaos!\nRevolutionäre und Polizisten\lbesetzen die Stadt. Sie liefern\lsich einen erbitterten Kampf. Wir\lsollten nach Opi suchen, und ihn\lunterstützen."
+        
+        
+.global str_0x8c8fde
+
+str_0x8c8fde:
+    .string "... ... ..."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x94e61a GER
-	=Aber_sicher_doch!_Es_wundert_mich,\ndass_ein_Junge_in_deinem_Alter\l\$ueberhaupt_Interesse_an_soetwas\lzeigt...
-.end

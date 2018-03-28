@@ -1,3 +1,0 @@
-.string str_0x95d0cc GER
-	=Papi_findet_Opi_ganz_doll_\$oede!\nDer_\$oede_Opi!_Juhu!
-.end

@@ -161,3 +161,27 @@ hidesprite 0x2
 setvar STORY_PROGRESS 0xb
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x886d49
+
+str_0x886d49:
+    .string "Einen letzten Ort solltest du als\nTrainer noch unbedingt kennen.\lFolge mir einfach wie bisher!"
+        
+        
+.global str_0x888a45
+
+str_0x888a45:
+    .string "Das ist eine Pokémon-Arena. In\nganz Theto gibt es acht davon.\lJede von ihnen hat einen\lArenaleiter, der nicht nur sehr\lstark ist, sondern sich auch auf\lden Kampf mit einem bestimmten\lPokémon-Typen versteht. Der\lArenaleiter dieser Stadt, Manus,\lbeispielsweise ist auf\lKampf-Pokémon spezialsiert. Soviel\lich weiß, ist er jedoch außer Haus\lund repariert den Durchgang im\lWassertunnel, der kürzlich bei\leinem Erdbeben eingestürzt ist.\lBesiegst du einen Arenaleiter, so\lerhältst du einen Arena-Orden.\lSammle alle acht Orden ein, und du\ldarfst dich zu den besten\lTrainern überhaupt zählen. Jeder\lTrainer sollte das Ziel haben,\lalle Orden einzusammeln."
+        
+        
+.global str_0x888cd2
+
+str_0x888cd2:
+    .string "Diese Orte solltest du als\nPokémon-Trainer auf jeden Fall\lkennen und auch nutzen. Du\lbrauchst mir für meine Hilfe nicht\lzu danken, ich habe gerne Anteil\lam Glück anderer. Viel Glück auf\ldeiner Reise, ich habe bereits\lzuvor gemerkt, dass du das gewisse\lEtwas hast, das ein\lPokémon-Trainer braucht."
+        
+        
+.elseif LANG_EN
+
+.endif

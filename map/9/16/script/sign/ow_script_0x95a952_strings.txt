@@ -1,3 +1,0 @@
-.string str_0x95a95c GER
-	=Hinter_der_Vitrine_liegt_ein\nFossil,_dessen_Kontruen_eine\lglitschige_W\$oelbung_aufweisen.\pEs_wurde_mit_\b1Helixfossil\b1\nbetitelt.
-.end

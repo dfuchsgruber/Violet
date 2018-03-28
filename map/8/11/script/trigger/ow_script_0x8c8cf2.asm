@@ -27,3 +27,15 @@ waitmovement 0x0
 hidesprite 0xc
 addvar STORY_PROGRESS 0x1
 end
+
+
+.ifdef LANG_GER
+.global str_0x93144c
+
+str_0x93144c:
+    .string "Wenn ich es mir recht\nüberlege...\pVielleicht sollte ich dich diesen\nOrt doch besser auf eigene Faust\lerkunden lassen.\pImmerhin sollst du selbst die\ndunklen Geheimnisse unserer Welt\lenthüllen.\pSuch mich einfach, wenn du dich\nhier etwas umgesehen hast."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x89d4bd GER
-	=\b\01, ich werde meine Antworten\nnoch mit meinen Aufzeichnungen\lvergleichen.\pDu kannst aber ruhig schon\neinmal vorgehen!
-.end

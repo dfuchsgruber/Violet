@@ -117,3 +117,63 @@ multichoice 8 8 0 1
 compare LASTRESULT 0x1
 callif EQUAL ow_script_0x8bf0a0
 goto ow_script_0x8bf0c1
+
+
+.ifdef LANG_GER
+.global str_0x8bf724
+
+str_0x8bf724:
+    .string "PLAYER!"
+        
+        
+.global str_0x8bf610
+
+str_0x8bf610:
+    .string "So ein Zufall, dass wir uns hier\ntreffen? Bist du etwa auch auf den\lWeg nach Aktania, um deinen ersten\lArena Orden zu erringen?\lWie wäre es, wenn du mir zuerst\ldein Können unter Beweis stellst.\lSeit ich die Trainerschule\lverlassen habe, bin ich viel\lstärker geworden."
+        
+        
+.global str_0x8bfe09
+
+str_0x8bfe09:
+    .string "Meine Pokémon sind nicht mehr zu\nbremsen!"
+        
+        
+.global str_0x8bf5bc
+
+str_0x8bf5bc:
+    .string "Nimm dich in Acht!"
+        
+        
+.global str_0x8bf5d1
+
+str_0x8bf5d1:
+    .string "Unglaublich wie stark du geworden\nbist! Einfach unglaublich!"
+        
+        
+.global str_0x8bf3f9
+
+str_0x8bf3f9:
+    .string "Scheinbar hast du auch nicht\nauf der faulen Haut herumgelegen!\lDu bist wirklich ganz schön stark\lgeworden. Versuch dich doch in der\lArena von Aktania, du kannst das\lsicherlich schaffen.\lWie du dort hingelangst? Dort oben\lbetreiben zwei nette Herren namens\lNick und Rick eine Farm. Sie\lzüchten auch Vögel, die dich von\lhier nach Aktania bringen können.\lFrag die beiden doch einfach mal!\lUnd bevor ich es vergesse: Ich\lhabe ein Geschenk für dich!"
+        
+        
+.global str_0x8bf3dc
+
+str_0x8bf3dc:
+    .string "PLAYER erhält eine Karte."
+        
+        
+.global str_0x8bf2f0
+
+str_0x8bf2f0:
+    .string "Die Karte kann oft sehr nützlich\nsein. Wirf ruhig einen Blick\ldarauf.\pDer Kampf hat Spaß gemacht. Wir\nsehen uns, PLAYER!"
+        
+        
+.global str_0x8bf745
+
+str_0x8bf745:
+    .string "Ich kann dich doch nicht nach\nAktania gehen lassen, ohne zu\lwissen, ob du die Arena überhaupt\lmeistern kannst.\pWas sagst du? Lass uns kämpfen!"
+        
+        
+.elseif LANG_EN
+
+.endif

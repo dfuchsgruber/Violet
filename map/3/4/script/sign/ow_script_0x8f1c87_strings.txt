@@ -1,3 +1,0 @@
-.string str_0x8f1c91 GER
-	=Kaskada,_die_Stadt_der_Wasserf\$aelle
-.end

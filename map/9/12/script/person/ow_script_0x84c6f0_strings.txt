@@ -1,3 +1,0 @@
-.string str_0x84c6fa GER
-	=Wei\$st_du,_mein_Bruder_schl\$aeft_gar\nnicht,_er_tut_nur_so!
-.end

@@ -33,3 +33,15 @@ set_intern_bank 0x10 0x10
 loadbytefrompointer 0x12 0x10121012
 set_intern_bank 0xfe 0x6b
 end
+
+
+.ifdef LANG_GER
+.global str_0x8c80e4
+
+str_0x8c80e4:
+    .string "Sehr gut, du hast\nhergefunden.\pWo wir uns hier befinden?\nDas hier ist das dunkle Geheimnis\lKaskadas, die Schattenseite des\lSystems, dem wir unterworfen sind.\lEs ist ein geheimer Markt im\lUntergrund, der größte und\lberüchtigste des Kontinents.\lEr liegt direkt unterhalb\lKaskadas, sodass sogar Schiffe\lhier anlegen können.\lWas gehandelt wird?\lVerbotene Gegenstände, Falschgeld\lund sogar versklavte Pokémon...\lEs ist ein trauriger Ort, das\lhässliche Gesicht Thetos.\lKomm mit, ich führe dich herum."
+        
+        
+.elseif LANG_EN
+
+.endif

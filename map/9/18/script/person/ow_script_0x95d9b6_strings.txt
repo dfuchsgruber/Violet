@@ -1,3 +1,0 @@
-.string str_0x95d9c0 GER
-	=Die_K\$oenigin_der_Finsternis_ist_die\ngr\$oe\$ste_aller_Hexen.\pIhre_Magie_hat_hunderte\nverfluchte_Seelen_an_ein\lm\$aechtiges_Pok\emon_gebunden,_so_die\lLegende...
-.end

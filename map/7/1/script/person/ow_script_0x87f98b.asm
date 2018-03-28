@@ -38,3 +38,33 @@ ow_script_0x8deb07:
 loadpointer 0x0 str_0x8dec8a
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8dee30
+
+str_0x8dee30:
+    .string "Beeren sind auf viele Arten\nnützlich. Während einige von ihnen\lbei Statusproblemen helfen, kann\lman aus anderen Beerensaft\lgewinnen.\pFindest du Beeren nicht auch\neinfach toll?"
+        
+        
+.global str_0x8deadb
+
+str_0x8deadb:
+    .string "Gut geantwortet! Nimm das hier!"
+        
+        
+.global str_0x8dec8a
+
+str_0x8dec8a:
+    .string "Beerensaft füllt die Kraftpunkte\neines Pokémons wieder auf."
+        
+        
+.global str_0x8decc8
+
+str_0x8decc8:
+    .string "Das ist ein Jammer! Jeder Trainer\nsollte das Potenzial einer Beere\lzu schätzen wissen."
+        
+        
+.elseif LANG_EN
+
+.endif

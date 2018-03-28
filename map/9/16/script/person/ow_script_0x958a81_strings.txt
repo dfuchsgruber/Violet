@@ -1,8 +1,0 @@
-.string str_0x959139 GER
-	=Du_willst_dich_mit_uns_anlegen?\pWenn_Mistral_erst_das_Magmaherz\nin_seinem_Besitz_hat,_wird_das\lniemandem_mehr_gelingen!
-.end
-
-
-.string str_0x959100 GER
-	=Erfreu_dich_an_deinem_Sieg,\nsolange_du_es_noch_kannst!
-.end

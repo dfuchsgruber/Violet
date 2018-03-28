@@ -1,3 +1,0 @@
-.string str_0x86020b GER
-	=Arena_von_Inferior\pTyp:_Feuer\nLeiter:_Igva
-.end

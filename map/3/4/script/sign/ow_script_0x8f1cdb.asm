@@ -36,3 +36,39 @@ end
 ow_script_0x8f1d54:
 addvar DYN_MULTICHOICE_ITEM_CNT 0x1
 return
+
+
+.ifdef LANG_GER
+.global str_0x8f1d5b
+
+str_0x8f1d5b:
+    .string " PLAYER klopft an \n...\l... ...\lParole?"
+        
+        
+.global str_kaskada_parole_choice_0
+
+str_kaskada_parole_choice_0:
+    .string "... ... ..."
+        
+        
+.global str_kaskada_parole_choice_1
+
+str_kaskada_parole_choice_1:
+    .string "Krieg den Schwachen"
+        
+        
+.global str_0x8f1d1f
+
+str_0x8f1d1f:
+    .string "Einlass gewährt!"
+        
+        
+.global str_0x8f1d3c
+
+str_0x8f1d3c:
+    .string "Kein Einlass gewährt!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -47,3 +47,15 @@ ow_script_0x8f6de3:
 setflag ROUTE_1_RIVAL
 setvar STORY_PROGRESS 0x4
 end
+
+
+.ifdef LANG_GER
+.global str_0x89bf76
+
+str_0x89bf76:
+    .string "Wo bleibst du denn?!\nBeeilung!"
+        
+        
+.elseif LANG_EN
+
+.endif

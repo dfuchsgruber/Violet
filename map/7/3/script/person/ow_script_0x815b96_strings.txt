@@ -1,3 +1,0 @@
-.string str_0x81c244 GER
-	=Ich_liebe_es_einen_Spaziergang\ndurch_den_Silvania-Wald_zu_machen.\lDort_sind_immer_diese_leuchtenden\lSteine!
-.end

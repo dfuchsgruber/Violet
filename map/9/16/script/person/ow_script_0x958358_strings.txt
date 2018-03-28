@@ -1,3 +1,0 @@
-.string str_0x958f48 GER
-	=Ich_habe_geh\$oert,_dass_das_Museum\neng_mit_der_Laz.Corp\lzusammenarbeitet.\pGer\$uechten_zufolge_geht_es_um_die\nRestauration_von_ausgestorbenen\lPok\emon_aus_deren_Fossilien.
-.end

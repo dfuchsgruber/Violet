@@ -15,3 +15,15 @@ callstd MSG
 applymovement 0xff ow_script_movs_0x89d6a8
 waitmovement 0x0
 end
+
+
+.ifdef LANG_GER
+.global str_0x89d64f
+
+str_0x89d64f:
+    .string "Die praktische Prüfung wird jeden\nMoment beginnen. Ich sollte auf\lden Pausenhof gehen."
+        
+        
+.elseif LANG_EN
+
+.endif

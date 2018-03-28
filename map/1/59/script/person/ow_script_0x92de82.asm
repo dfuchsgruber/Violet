@@ -59,3 +59,45 @@ loadpointer 0x0 str_0x92e9aa
 callstd MSG
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x92ea1b
+
+str_0x92ea1b:
+    .string "Oh, du nennst mich eine Hexe!\pHehehe!\pHehehe!\pDas ist wahr! Ich bin eine Hexe!\pIch kenne viele Hexengeschichten.\nSoll ich dir eine erzählen?"
+        
+        
+.global str_0x92e752
+
+str_0x92e752:
+    .string "Vor vielen Jahren, vor Äonen, als\ndie Legendären Pokemon die Welt\lkreierten, da existierte ein\lMensch mit der Ambition,\lunsterblich zu werden.\pSie war die dunkle Königin, die\nVerkörperung der Nacht, ein\lSchatten.\pIm Laufe der Zeit erwarb sie die\nFähigkeit, Seelen zu verschlingen,\lsie sich einzuverleiben und zu\lverbrauchen.\pBald regierte sie das ganze Land\nund war selbst den Schöpfern der\lWelt ebenbürtig.\pEines Tages aber gelang es einem\nTrainer, die finstere Königin zu\lversiegeln.\pSeit je her sind wir Hexen auf der\nSuche nach einem Weg, ihre\lunsterbliche Seele\lzurückzubringen."
+        
+        
+.global str_0x92e6f1
+
+str_0x92e6f1:
+    .string "Eine spannende Geschichte, nicht?\pEines steht jedenfalls fest, sie\nist irgendwo da draußen... "
+        
+        
+.global str_0x92df22
+
+str_0x92df22:
+    .string "... ... ..."
+        
+        
+.global str_0x92def0
+
+str_0x92def0:
+    .string "... ... ...\pErkennst du mich nicht?\p... ... ..."
+        
+        
+.global str_0x92e9aa
+
+str_0x92e9aa:
+    .string "Nah! Wie auch immer! Wir Hexen\nhaben eine uralte Geschichte und\lTradition...\pEs lohnt sich, darüber zu wissen."
+        
+        
+.elseif LANG_EN
+
+.endif

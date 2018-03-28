@@ -85,3 +85,33 @@ hidesprite 0x2b
 hidesprite 0x2e
 pause 0x60
 return
+
+
+.ifdef LANG_GER
+.global str_0x8a752d
+
+str_0x8a752d:
+    .string "Das war keine schlechte\nVorstellung, Kindchen... Du hast\lwirklich etwas auf dem Kasten."
+        
+        
+.global str_0x8a7502
+
+str_0x8a7502:
+    .string "Verdammt! Der Kleine hat mich\nbesiegt..."
+        
+        
+.global str_0x8a74d8
+
+str_0x8a74d8:
+    .string "Wir sollten uns vom Acker machen!"
+        
+        
+.global str_0x8a73a9
+
+str_0x8a73a9:
+    .string "Ich danke euch beiden, dass ihr\ndiese Halunken vertrieben habt.\lSie haben immerzu von einem\lseltsamen Objekt namens Zeitstein\lgeredet. Ob sie gedacht haben, ich\lwüsste etwas darüber?\l...\l...\lWie dem auch sei - wollt ihr\lnicht auf ein Wort in mein\lLabor kommen? Ich wollte euch\lsowieso treffen."
+        
+        
+.elseif LANG_EN
+
+.endif

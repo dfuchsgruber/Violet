@@ -1,3 +1,0 @@
-.string str_0x89bf76 GER
-	=Wo_bleibst_du_denn?!\nBeeilung!
-.end

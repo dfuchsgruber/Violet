@@ -83,3 +83,51 @@ callstd MSG
 warpmuted 0x3 0x3 0x8 0x20 0x12
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x8310dc
+
+str_0x8310dc:
+    .string "Nun gut! Der Kampf in der\nSilvania-Arena möge nun beginnen!\lDer Herausforderer PLAYER tritt\lgegen Mia an."
+        
+        
+.global str_0x83114c
+
+str_0x83114c:
+    .string "Denke nicht, dass ich mich\nzurückhalte! Ich gebe alles!"
+        
+        
+.global str_0x8311a8
+
+str_0x8311a8:
+    .string "Unfassbar, unglaublich!"
+        
+        
+.global str_0x8311c0
+
+str_0x8311c0:
+    .string "Dieser Kampf war wirklich\nüberragend! Den Ranken-Orden\lhast du dir redlich verdient!"
+        
+        
+.global str_0x8f2a1f
+
+str_0x8f2a1f:
+    .string "PLAYER hat den Ranken-Orden\nerhalten!"
+        
+        
+.global str_0x8f36ad
+
+str_0x8f36ad:
+    .string "Nun hast du wirklich bewiesen,\ndass du es mit Team Violet\laufnehmen kannst.\lNimm außerdem noch diese\pTechnische Maschine, sie wird\ndeine Pokémon stärker machen."
+        
+        
+.global str_0x8f3750
+
+str_0x8f3750:
+    .string "Diese Technische Maschine enthält\nGigasauger. Sie fügt deinem Gegner\lSchaden zu und stellt die Kraft\ldes Anwenders gleichzeitig wieder\lher. Die perfekte Waffe im Kampf\lgegen Team Violet.\lIch bitte dich, rette den Wald,\lvertreibe diese bösen Menschen!"
+        
+        
+.elseif LANG_EN
+
+.endif

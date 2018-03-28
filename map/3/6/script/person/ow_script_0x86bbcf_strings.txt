@@ -1,3 +1,0 @@
-.string str_0x9659b6 GER
-	=Igva_ist_wirklich_eine_wahnsinns\nFrau!\pIch_bin_wohl_nicht_der_einzige\nHitzkopf,_der_ein_Auge_auf_dieses\lentflammte_M\$aedchen_geworfen_hat!
-.end

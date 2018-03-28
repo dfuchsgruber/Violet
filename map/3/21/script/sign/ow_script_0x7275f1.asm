@@ -14,3 +14,21 @@ special 0x0
 loadpointer 0x0 str_0x926b6d
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x926b0a
+
+str_0x926b0a:
+    .string "Ein Brunnen! Das frische Wasser\nwird den erschöpften Pokémon\lhelfen."
+        
+        
+.global str_0x926b6d
+
+str_0x926b6d:
+    .string "Die Pokémon von PLAYER wurden\nvollständig geheilt."
+        
+        
+.elseif LANG_EN
+
+.endif

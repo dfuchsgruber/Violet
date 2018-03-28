@@ -1,3 +1,0 @@
-.string str_0x95587d GER
-	=Orina_City,_die_Stadt_der\nWolkenkratzer
-.end

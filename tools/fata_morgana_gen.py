@@ -1,6 +1,7 @@
-import pymap.mapheader
+#!/usr/bin/env python3
+
+from pymap import mapheader
 import sys
-import agb
 
 """ Generates a sorted list of all tiles
 of the fata morgana feature that
@@ -12,7 +13,7 @@ Usage: python fata_morgana_gen.py [mappath] [output assembly] [symbol] [symbol n
 """
 
 def main(args):
-    header = pymap.mapheader.load(args[0], None, instanciate_ts=False)
+    header = mapheader.load(args[0], None, instanciate_ts=False)
     blocks = []
     for y in range(header.footer.height):
         for x in range(header.footer.width):

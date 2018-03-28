@@ -1,5 +1,0 @@
-.string str_0x19684c GER
-	=Diese Stadt ist ein Ort voller\nWunder. Die Laz.Corp. bringt uns\lder Zukunft jeden Tag ein St\$ueck\ln\$aeher.
-.end
-
-

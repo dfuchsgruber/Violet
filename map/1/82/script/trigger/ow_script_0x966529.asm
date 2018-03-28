@@ -44,3 +44,21 @@ checksound
 addvar STORY_PROGRESS 0x1
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x9665c5
+
+str_0x9665c5:
+    .string "PLAYER,\ndu bist wirklich kaum aufzuhalten.\pIch konnte dich gar nicht\neinholen, so schnell hast du\ldiesem Violet-Pack eingeheizt!\pVor uns liegt der Gipfel des\nVolcanos...\pMistral hat ihn unglücklicherweise\nwohl schon erreicht.\pWir sollten uns beeilen, ehe es\nzum Schlimmsten kommt.\pIch werde mich um deine\nangeschlagenen Pokémon kümmern..."
+        
+        
+.global str_0x96659a
+
+str_0x96659a:
+    .string "Los, wir dürfen keine Zeit\nverlieren!"
+        
+        
+.elseif LANG_EN
+
+.endif

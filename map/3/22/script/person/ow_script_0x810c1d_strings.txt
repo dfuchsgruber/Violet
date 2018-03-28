@@ -1,3 +1,0 @@
-.string str_0x9367ce GER
-	=Hast_du_je_von_der_K\$oenigin_der\nFinsternis_geh\$oert?\pEin_ber\$uehmtes_Kinderm\$aerchen,_das\nvon_einer_Hexe_handelt,_welche\lSeelen_vertilgt.
-.end

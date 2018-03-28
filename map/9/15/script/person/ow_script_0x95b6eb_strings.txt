@@ -1,3 +1,0 @@
-.string str_0x95c6e9 GER
-	=Unser_Traum_war_es_immer,\nFossilien_zum_Leben_erwecken_zu\lk\$oennen.\pNun,_da_wir_dazu_im_Stande_sind,\nwo_f\$uehrt_uns_unser_Weg_hin?
-.end

@@ -1,3 +1,0 @@
-.string str_0x95a873 GER
-	=Das_Bild_zeigt_eine_gigantische\ngr\$uene_Schlange,_die_sich_flink\ldurch_das_Wolkenmeer_windet.
-.end

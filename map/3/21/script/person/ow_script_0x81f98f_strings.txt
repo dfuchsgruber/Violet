@@ -1,3 +1,0 @@
-.string str_0x8ffd29 GER
-	=Vor_vielen_Jahren_herrschte_in\ndieser_Region_ein_schrecklicher\lKrieg.\lDrei_engagierte_Trainer_aber\lbezwangen_die_Unruhen_und_riefen\ldie_Pok\emon-Liga_und_das_System\lder_Top_Vier_ins_Leben.
-.end

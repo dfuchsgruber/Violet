@@ -1,3 +1,0 @@
-.string str_0x95ce67 GER
-	=Es_..._verfolgt_...\nmich_...\lDer_Mondschatten_...\lDar_..._Dark_..._Darkrai...
-.end

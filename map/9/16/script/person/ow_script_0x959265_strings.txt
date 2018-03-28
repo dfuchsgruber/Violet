@@ -1,8 +1,0 @@
-.string str_0x9592b0 GER
-	=Urspr\$uenglich_war_ich_Teil_von_Rins\nDivision,_habe_mich_aber_dann_f\$uer\lden_vielverprechenden_Mistral\lentschieden.\pEr_wird_uns_Ruhm_und_Macht\nbescheren,_bestimmt!
-.end
-
-
-.string str_0x95927d GER
-	=Hmpf...\nAber_gegen_Mistral_hast_du_keine\lChance!
-.end

@@ -29,3 +29,15 @@ setvar 0x8001 0xd
 setvar 0x8002 0xf
 special 0x6
 return
+
+
+.ifdef LANG_GER
+.global str_0x8ca6c5
+
+str_0x8ca6c5:
+    .string "Ah, PLAYER. Du hast also zum Tempel\ngefunden.\lFrüher einmal war dieser Ort ein\lriesiges Bauwerk, doch hat die\lWelle den Tempel nahezu zerstört.\lGemeinsam mit Manus aus Meriana\lCity habe ich im Untergrund eine\lKampfarena errichtet. Wir sehen\luns dort."
+        
+        
+.elseif LANG_EN
+
+.endif

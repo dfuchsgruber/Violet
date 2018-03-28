@@ -54,3 +54,33 @@ ow_script_0x1c1bfd:
 loadpointer 0x0 str_0x1c1cd6
 callstd MSG_SIGN
 end
+
+
+.ifdef LANG_GER
+.global str_0x1c1c09
+
+str_0x1c1c09:
+    .string "Ein Pokémon kann diesen Felsen\nvielleicht bewegen.\pMöchtest du STÄRKE einsetzen?"
+        
+        
+.global str_0x1c1c5a
+
+str_0x1c1c5a:
+    .string "BUFFER_1 setzt STÄRKE ein.\pSTÄRKE von BUFFER_1 ermöglicht\nes, den Felsen zu bewegen."
+        
+        
+.global str_0x1c1ca3
+
+str_0x1c1ca3:
+    .string "Ein Pokémon kann diesen Felsen\nvielleicht bewegen."
+        
+        
+.global str_0x1c1cd6
+
+str_0x1c1cd6:
+    .string "STÄRKE ermöglicht es, Felsen zu\nbewegen."
+        
+        
+.elseif LANG_EN
+
+.endif

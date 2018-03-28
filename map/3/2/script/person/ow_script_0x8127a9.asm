@@ -43,3 +43,33 @@ loadpointer 0x0 str_0x8127fe
 callstd MSG_FACE
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x8127cb
+
+str_0x8127cb:
+    .string "Willst du wieder zurück nach Route\n3?"
+        
+        
+.global str_0x8dc0e4
+
+str_0x8dc0e4:
+    .string "Mein Staraptor wird dich jetzt\nzurückbringen."
+        
+        
+.global str_0x118d600
+
+str_0x118d600:
+    .string "    È î  Ç   Ç   ÎÈ   À \n\n\n\n\n\n    É   Â  ヲょÌ ィょÌÊ   Éリ ぞÁÁÒぞ    LEFT_ARROWょÌË   Ñぞ"
+        
+        
+.global str_0x8127fe
+
+str_0x8127fe:
+    .string "Gut, wenn du wieder zurück willst,\nkomm einfach zu mir."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x9558a6 GER
-	=Laz.Corp_-_Wir_machen_Zukunft_zur\nGegenwart
-.end

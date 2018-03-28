@@ -1,3 +1,0 @@
-.string str_0x92d0bb GER
-	=Der_K\$uestenberg_ist_seither_bekannt\nf\$uer_seine_reinen_Quellen,_die_den\lganzen_Kontinent_mit_Wasser\lversorgen.\pDas_Meerwasser_wird_im_Laufe_der\nJahrtausende_vom_Gestein\lges\$aeubert.
-.end

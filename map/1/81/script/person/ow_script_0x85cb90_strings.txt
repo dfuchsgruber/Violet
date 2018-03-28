@@ -1,8 +1,0 @@
-.string str_0x947e42 GER
-	=Diese_Hitze..._willst_du_wirklich\nk\$aempfen?_Urgh...
-.end
-
-
-.string str_0x9636ba GER
-	=Urgh..._Verschwinde_einfach...\n\$AEchz..._So_hei\$s...
-.end

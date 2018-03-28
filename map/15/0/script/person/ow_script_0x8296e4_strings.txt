@@ -1,8 +1,0 @@
-.string str_0x8bf87b GER
-	=Ich_h\$aette_das_Zauntor_nicht_offen\nlassen_sollen!_Jetzt_sind_alle\ldiese_Voltilamm_entlaufen!
-.end
-
-
-.string str_0x8bf80e GER
-	=Ich_bin_froh,_dass_ich_-_nach_dem\nMalheur_mit_dem_offenen_Zauntor_-\lnoch_immer_auf_der_Farm_arbeiten\ldarf.
-.end

@@ -1,3 +1,0 @@
-.string str_0x8f1a1d GER
-	=Wie_ich_mir_eine_Kanufahrt_leisten\nkonnte?\pIch_gehe_arbeiten,_wie_das\nErwachsene_eben_so_tun.
-.end

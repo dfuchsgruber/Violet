@@ -493,3 +493,111 @@ applymovement 0x5 ow_script_movs_0x8d7b4b
 waitmovement 0x0
 checksound
 return
+
+
+.ifdef LANG_GER
+.global str_0x8d79cd
+
+str_0x8d79cd:
+    .string "... Was sind das für Bilder, die\nich sehe? ..."
+        
+        
+.global str_0x8d79fe
+
+str_0x8d79fe:
+    .string "Ein Erdbeben?!?"
+        
+        
+.global str_0x8d7bbb
+
+str_0x8d7bbb:
+    .string "Ein Meteorit?!?\pWas hat das zu bedeuten?"
+        
+        
+.global str_0x8d7b5b
+
+str_0x8d7b5b:
+    .string "Was ist das für ein Pokémon?\pIst es etwa mit dem Meteor hierher\ngekommen?"
+        
+        
+.global str_0x8d7ae9
+
+str_0x8d7ae9:
+    .string "Oh nein! Es scheint, als würde es\nangreifen wollen!"
+        
+        
+.global str_0x8d7ed8
+
+str_0x8d7ed8:
+    .string "All die Menschen! Sie sind\nverschwunden!\lDieses Monster ... es zerstört\ldiese Stadt!"
+        
+        
+.global str_0x8d7eab
+
+str_0x8d7eab:
+    .string "Es läuft Amok! Es muss aufgehalten\nwerden!"
+        
+        
+.global str_0x8d7e03
+
+str_0x8d7e03:
+    .string "Diese Stadt...\pKann es sein? ...\pIst das hier Aktanias Zerstörung\nin der Vergangenheit?"
+        
+        
+.global str_0x8d8100
+
+str_0x8d8100:
+    .string "Der Tempel!..."
+        
+        
+.global str_0x8d80ca
+
+str_0x8d80ca:
+    .string "Das ist doch ...\n... ...\pLester! Das ist Lester!"
+        
+        
+.global str_0x8d803f
+
+str_0x8d803f:
+    .string "Stopp diesen Wahnsinn, du Monster!\pIch, als Arenaleiter dieser\nantiken Stadt, werde es dir nicht\lgewähren, noch mehr Unheil\lanzurichten!"
+        
+        
+.global str_0x8d7fa0
+
+str_0x8d7fa0:
+    .string "Ihr Wächter Aktanias, ihr Monster\nder Antike, ihr Wächtergolems!\lIch beschwöre euch, tut eure\lPflicht, schützt diesen heiligen\lOrt, vertreibt den Angreifer!"
+        
+        
+.global str_0x8dc40d
+
+str_0x8dc40d:
+    .string "Was geht hier vor?"
+        
+        
+.global str_0x8dc39d
+
+str_0x8dc39d:
+    .string "Wächter der Felsen, Golem der\nSteine!\pZeig dich, du mächtiges Ungetüm\nder Antike! Regirock!"
+        
+        
+.global str_0x8dc346
+
+str_0x8dc346:
+    .string "Bringer der Eiszeit, Wächter der\nGletscher!\pZeige dich, du uraltes Geschöpf!\nRegice!"
+        
+        
+.global str_0x8dc2ea
+
+str_0x8dc2ea:
+    .string "Hülle der Unzerstörbarkeit, ewige\nLegierung!\lIch beschwöre dich, Wächtergolem!\lRegisteel!"
+        
+        
+.global str_0x8e195c
+
+str_0x8e195c:
+    .string "Verteidigt diesen heiligen Ort,\nvernichtet den Angreifer!"
+        
+        
+.elseif LANG_EN
+
+.endif

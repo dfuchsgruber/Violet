@@ -1,8 +1,0 @@
-.string str_0x81c2e7 GER
-	=Ein_Ass-Trainer_hat_seine_Pok\emon\nstets_ausgewogen_zu_trainieren!
-.end
-
-
-.string str_0x81c32b GER
-	=Ein_ausgewogenes_Training_ist_der\nSchl\$uessel_zum_Erfolg!
-.end

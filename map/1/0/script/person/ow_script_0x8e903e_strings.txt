@@ -1,8 +1,0 @@
-.string str_0x8f4388 GER
-	=In_diesem_Wald_kann_man_Pok\emon\ndes_Typs_Flug_exzellent\ltrainieren!
-.end
-
-
-.string str_0x8f43ce GER
-	=Huch,_du_bist_ein_st\$aerkerer_Gegner\nals_die_wilden_Pok\emon_in_diesem\lWald.
-.end

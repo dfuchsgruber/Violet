@@ -1,3 +1,0 @@
-.string str_0x8c8430 GER
-	=Die_Bezahlung_f\$uer_besagte_Waren\nkann_ich_nur_bar_entgegennehmen...
-.end

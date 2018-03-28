@@ -1,3 +1,0 @@
-.string str_0x8a2c84 GER
-	=Ich_trainiere_hier_so_lange,_bis\nich_in_der_Lage_bin,_es_mit_Manus\laufzunehmen.
-.end

@@ -1,8 +1,0 @@
-.string str_0x92d16d GER
-	=Was_ist_eine_sch\$oenere_Szenerie_f\$uer\neinen_Kampf_als_eine_Klippe_am\lMeer?
-.end
-
-
-.string str_0x92dd6f GER
-	=Es_w\$aere_hilfreich_gewesen,_weniger\nder_Landschaft_die_Aufmerksamkeit\lzu_schenken_und_mehr_dem_Kampf...
-.end

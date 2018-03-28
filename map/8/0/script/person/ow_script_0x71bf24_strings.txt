@@ -1,3 +1,0 @@
-.string str_0x71cdbe GER
-	=An_den_Fl\$uessen_kann_man\nunglaublich_gut_Staud\$aemme_bauen.
-.end

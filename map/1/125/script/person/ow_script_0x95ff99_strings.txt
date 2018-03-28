@@ -1,8 +1,0 @@
-.string str_0x96149c GER
-	=Ah,_ein_Trainer_hat_sich_hierher\nverirrt.\pMein_Vater_ist_Glasbl\$aeser,_er\nstellt_Fl\$oeten_aus_Asche_her.\pWenn_du_uns_ein_wenig_Asche\nbringst,_kann_er_sie_verarbeiten.
-.end
-
-
-.string str_0x9613d8 GER
-	=Wenn_du_nun_durch_von_Asche\nbedecktes_hohes_Gras_l\$aeufst,_f\$aengt\ldie_Aschetasche_den_Staub_auf.\pWenn_du_gen\$uegend_Asche_gesammelt\nhast,_bring_sie_zu_meinem_Vater\lund_er_wird_sie_weiterverarbeiten.
-.end

@@ -1,3 +1,0 @@
-.string str_0x93767f GER
-	=Im_Laufe_der_Jahrtausende_hat_das\nWasser_diesen_Tunnel_ausgesp\$uelt.\lSo_viele_Sackgassen...
-.end

@@ -1,8 +1,0 @@
-.string str_0x8040c2 GER
-	=Wenn_sich_die_Blicke_zweier_Trainer\ntreffen,_kommt_es_unweigerlich_zu\leinem_Kampf._Also_LOS!+
-.end
-
-
-.string str_0x804122 GER
-	=Verliert_ein_Trainer_gegen_einen\nanderen,_so_muss_er_ihm_Preisgeld\lgeben._Das_sind_die_Regeln!
-.end

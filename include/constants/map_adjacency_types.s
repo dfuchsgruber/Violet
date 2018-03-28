@@ -1,0 +1,7 @@
+.equ NONE, 0x0
+.equ SOUTH, 0x1
+.equ NORTH, 0x2
+.equ WEST, 0x3
+.equ EAST, 0x4
+.equ DIVE, 0x5
+.equ RETURN_FROM_DIVE, 0x6

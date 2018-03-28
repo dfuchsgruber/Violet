@@ -1,3 +1,0 @@
-.string str_0x94e126 GER
-	=Ich_komme_oft_hierher,_um_mir_die\nFossilien_im_Museum_anzusehen.\lDass_Pok\emon_vor_so_vielen\lJahrhunderten_unsere_Welt\lbesiedelt_haben..._Unglaublich!
-.end

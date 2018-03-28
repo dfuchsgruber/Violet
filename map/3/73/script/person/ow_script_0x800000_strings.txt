@@ -1,3 +1,0 @@
-.string str_0x8b4962 GER
-	=\b\13's_F\$aehigkeit,\nluzid_zu_tr\$aeumen,_steigert\lseinen_Sp.Angr._
-.end

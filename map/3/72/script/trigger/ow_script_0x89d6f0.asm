@@ -116,3 +116,15 @@ ow_script_0x89d7f1:
 applymovement 0x1 ow_script_movs_0x89d7fd
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x89d77c
+
+str_0x89d77c:
+    .string "Wieso bist du denn noch nicht\ndraußen auf dem Pausenhof? Dass du\limmer so trödeln musst! Beeil dich\ljetzt aber!"
+        
+        
+.elseif LANG_EN
+
+.endif

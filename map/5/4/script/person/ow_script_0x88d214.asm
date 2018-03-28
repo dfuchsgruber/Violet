@@ -239,3 +239,21 @@ ow_script_mart0x88d2e6:
 ow_script_0x88d278:
 pokemart ow_script_mart0x88d2e6
 goto ow_script_0x88d2db
+
+
+.ifdef LANG_GER
+.global str_0x1a908b
+
+str_0x1a908b:
+    .string "Hallo!\nKann ich dir behilflich sein?"
+        
+        
+.global str_0x1a7e77
+
+str_0x1a7e77:
+    .string "Bitte komm bald wieder!"
+        
+        
+.elseif LANG_EN
+
+.endif

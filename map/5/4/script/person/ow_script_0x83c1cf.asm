@@ -127,3 +127,39 @@ applymovement 0x800f ow_script_movs_0x1aa41f
 waitmovement 0x0
 special 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x1a8188
+
+str_0x1a8188:
+    .string "Willkommen im Pokestop!\pWir heilen deine Pokémon und\nmachen sie wieder fit!"
+        
+        
+.global str_0x1a8219
+
+str_0x1a8219:
+    .string "Komm jederzeit wieder vorbei!"
+        
+        
+.global str_0x1a81da
+
+str_0x1a81da:
+    .string "Okay, ich nehme deine Pokémon für\neinen Moment in meine Obhut."
+        
+        
+.global str_0x1a8237
+
+str_0x1a8237:
+    .string "Danke!\nDeine Pokémon sind wieder topfit!"
+        
+        
+.global str_0x1c067a
+
+str_0x1c067a:
+    .string "Es scheint, als ob BUFFER_1 gerade\nspielt.\lLos!"
+        
+        
+.elseif LANG_EN
+
+.endif

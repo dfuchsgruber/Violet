@@ -306,3 +306,123 @@ ow_script_0x8fe744:
 applymovement LASTTALKED ow_script_movs_0x8fe750
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8fe75c
+
+str_0x8fe75c:
+    .string "Der Stein sieht aus wie ein\nFossil..."
+        
+        
+.global str_0x8fe6cd
+
+str_0x8fe6cd:
+    .string "Du da! Stop! Diese Fossilien dort\nhabe ich schon seit Jahren\lgesucht, also stehen sie auch mir\lzu, nicht dir!"
+        
+        
+.global str_0x8fe674
+
+str_0x8fe674:
+    .string "Das ... das ist nicht möglich!\nMein Leben lang habe ich nach\ldiesen Fossilien gesucht."
+        
+        
+.global str_0x8fe5f1
+
+str_0x8fe5f1:
+    .string "Mein ganzes Leben habe ich der\nSuche nach Fossilien gewidmet und\ljetzt, da ich sie gefunden habe,\lkommt ein anderer mir zuvor..."
+        
+        
+.global str_0x8fe5b8
+
+str_0x8fe5b8:
+    .string "GqゼËbqゼË"
+        
+        
+.global str_0x8fe57c
+
+str_0x8fe57c:
+    .string "Diese Fossilien gehören mir, du\nhast kein Anrecht darauf!"
+        
+        
+.global str_0x8fe51d
+
+str_0x8fe51d:
+    .string "Welches der Fossilien möchtest du\nzuerst aufnehmen?"
+        
+        
+.global str_fossil_choice_0
+
+str_fossil_choice_0:
+    .string "Ein Fossil abgeben"
+        
+        
+.global str_fossil_choice_1
+
+str_fossil_choice_1:
+    .string "Beide Fossilien behalten"
+        
+        
+.global str_fossil_choice_2
+
+str_fossil_choice_2:
+    .string "Klauenfossil"
+        
+        
+.global str_fossil_choice_3
+
+str_fossil_choice_3:
+    .string "Wurzelfossil"
+        
+        
+.global str_0x8fe4dd
+
+str_0x8fe4dd:
+    .string "PLAYER hat das BUFFER_1\nerhalten!"
+        
+        
+.global str_0x8fe47f
+
+str_0x8fe47f:
+    .string "Von dir lasse ich mir meinen Traum\nnicht zunichte machen!"
+        
+        
+.global str_0x8fe443
+
+str_0x8fe443:
+    .string "Der Ruinenmaniac hat das\nverbleidende Fossil genommen!"
+        
+        
+.global str_0x8fe3db
+
+str_0x8fe3db:
+    .string "Adios, du frecher Bengel! Hättest\nmir beinahe den Lebenstraum\lzerstört!"
+        
+        
+.global str_0x927398
+
+str_0x927398:
+    .string "Das BUFFER_1 zerbröselte,\nda kein Platz im Beutel ist."
+        
+        
+.global str_0x8fee9e
+
+str_0x8fee9e:
+    .string "Ich will dir deinen Lebenstraum\nnicht zunichte machen.\pGlücklicherweise sind dort zwei\nFossilien, ich schlage vor, dass\ljeder von uns eines für sich\lbehalten darf."
+        
+        
+.global str_0x8fea2c
+
+str_0x8fea2c:
+    .string "Du bist sehr großzügig. Dein\nAngebot will ich gerne annehmen.\pUnd weil du mir gegenüber so\nfreundlich bist, darfst du zuerst\leines der Fossilien auswählen."
+        
+        
+.global str_0x8fe8d0
+
+str_0x8fe8d0:
+    .string "Endlich konnte ich meinen großen\nTraum in Erfüllung gehen lassen!\pFossilien sind versteinerte\nPokémon und mittels hoch\lentwickelter Technologie kann man\lsie sogar wieder zu neuem Leben\lerwecken.\pDie Laz.Corp betreibt aufwändige\nForschungen in diesem Bereich.\lIhren Hauptsitz hat sie in Orina\lCity. Ein Besuch kann nicht\lschaden.\pAuf Wiedersehen!"
+        
+        
+.elseif LANG_EN
+
+.endif

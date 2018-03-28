@@ -98,3 +98,51 @@ ow_script_0x958b36:
 loadpointer 0x0 str_0x958b44
 callstd MSG_KEEPOPEN
 goto ow_script_0x958d18
+
+
+.ifdef LANG_GER
+.global str_0x958c0b
+
+str_0x958c0b:
+    .string "Willkommen im Orina City Museum.\nHier kannst du dir allerlei antike\lAusstellungsstücke ansehen.\pDer Eintritt kostet 150POKEDOLLAR.\nMöchtest du eine Karte kaufen?"
+        
+        
+.global str_0x958b7e
+
+str_0x958b7e:
+    .string "Viel Freude bei deinem Aufenthalt."
+        
+        
+.global str_0x958bb4
+
+str_0x958bb4:
+    .string "Entschuldigung, aber mir scheint,\ndu hast nicht genügend POKEDOLLAR bei dir."
+        
+        
+.global str_0x958cc7
+
+str_0x958cc7:
+    .string "Komm jederzeit wieder, falls du\ndir unsere Austellungsstücke\lansehen möchtest."
+        
+        
+.global str_0x958d38
+
+str_0x958d38:
+    .string "Möchtest du das Museum schon\nwieder verlassen?"
+        
+        
+.global str_0x958ab9
+
+str_0x958ab9:
+    .string "Bitte hilf uns!\nEin Kommandant von Team Violet ist\lhier eingefallen und will unser\lwertvollstes Ausstellungsstück\lstehlen."
+        
+        
+.global str_0x958b44
+
+str_0x958b44:
+    .string "Bitte komm schnell wieder und\nvertreibe diese Schurken!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x8a0909 GER
-	=Amonia_ist_der_perfekte_Ort_f\$uer\nTrainer,_die_sich_zur_Ruhe_setzten\lwollen.
-.end

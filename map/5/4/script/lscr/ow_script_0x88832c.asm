@@ -266,3 +266,63 @@ applymovement 0x1 ow_script_movs_0x1aa41f
 waitmovement 0x0
 special 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8884e2
+
+str_0x8884e2:
+    .string "Da bist du ja endlich!"
+        
+        
+.global str_0x8884fb
+
+str_0x8884fb:
+    .string "Dies ist das Innere eines\nPokestops. Komm mit, ich zeige dir\lalles."
+        
+        
+.global str_0x888541
+
+str_0x888541:
+    .string "Die Frau hinter dieser Theke ist\neine ausgebildete Schwester. Sie\lheilt alle Pokémon, die du derzeit\lbei dir im Team hast und verlangt\ldafür nicht einmal Geld. Willst du\les versuchen? Na Los, tu dir\lkeinen Zwang an."
+        
+        
+.global str_0x88861b
+
+str_0x88861b:
+    .string "Siehst du, kinderleicht.\n...\lWeiter geht\s!"
+        
+        
+.global str_0x888649
+
+str_0x888649:
+    .string "Das ist hier ist der PC. Dort\nkannst du Pokémon und Items\llagern, wenn du mal keinen Platz\lmehr in deinem Beutel hast."
+        
+        
+.global str_0x8886c2
+
+str_0x8886c2:
+    .string "Diese Maschiene wird Kampfautomat\ngenannt. Sie simuliert eine echte\lKampfbegegnung, in der du deine\lPokémon trainieren kannst. Mit dem\lErwerb von Arena-Orden schaltest\ldu neue Simulationen frei."
+        
+        
+.global str_0x888787
+
+str_0x888787:
+    .string "Das hier ist die Verkaufsabteilung\neines Pokestops. Hier kannst du\lallerlei nützliche Items kaufen.\lIch hörte, dass das Sortiment in\lallen Pokestops gleich sein soll,\lauch wenn dieses laufend ergänzt\lwird. Hier, ich werde dir einen\lTrank kaufen."
+        
+        
+.global str_0x8889cd
+
+str_0x8889cd:
+    .string "PLAYER hat Trank erhalten."
+        
+        
+.global str_0x88887f
+
+str_0x88887f:
+    .string "Nichts zu danken! Ein Trank füllt\ndie KP eines Pokémon wieder auf.\lWenn also mal kein Pokestop in der\lNähe ist, sollte man immer einen\lTrank verwenden, um seine Pokémon\lzu erfrischen.\l...\lGut, das sind die wichtigsten\lEinrichtungen innerhalb eines\lPokestops. Komm mit nach draußen,\les gibt noch eine Sache, die ich\ldir zeigen will."
+        
+        
+.elseif LANG_EN
+
+.endif

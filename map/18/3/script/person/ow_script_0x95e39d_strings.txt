@@ -1,3 +1,0 @@
-.string str_0x95e3a7 GER
-	=In_Hoenn_gibt_es_eine_Person,_die\naus_Asche_Fl\$oeten_herstellen_kann.\pDie_Kl\$aenge_sollen_Pok\emon_bei_der\nGenesung_helfen.
-.end

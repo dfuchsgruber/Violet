@@ -1,3 +1,0 @@
-.string str_0x8e6626 GER
-	=Manchmal_findet_man_hier_einige\nGeist_Pok\emon,_die_sich_von\lCeometria,_der_Stadt_der_Toten,\ldie_s\$uedlich_liegt,_hierher_verirrt\lhaben.
-.end

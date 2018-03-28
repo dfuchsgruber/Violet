@@ -1,3 +1,0 @@
-.string str_0x95f73e GER
-	=Von_Zeit_zu_Zeit_fliegt_ein\nbrennendes_Pok\emon_\$ueber_die_Wipfel\ldes_Aschhains.\pIch_frage_mich,_ob_es_sich_um_ein\nseltenes_Pok\emon_handelt.
-.end

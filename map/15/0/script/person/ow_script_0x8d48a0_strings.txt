@@ -1,3 +1,0 @@
-.string str_0x947d7a GER
-	=Elektro
-.end

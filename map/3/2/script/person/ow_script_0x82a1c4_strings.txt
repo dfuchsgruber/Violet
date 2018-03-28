@@ -1,3 +1,0 @@
-.string str_0x847089 GER
-	=Einst_war_dieser_Ort_ein\nFerienparadies._Jeden_Tag\lSonnenschein_und_Schw\$aerme_von\lWingull_an_den_Str\$aenden.
-.end

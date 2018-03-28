@@ -1,3 +1,0 @@
-.string str_0x8c8eab GER
-	=Wir_wurden_angewiesen,_die_Stadt\nabzuriegeln,_solange_Lord_Faun\lsich_den_Revolution\$aeren_annimmt.
-.end

@@ -1,8 +1,0 @@
-.string str_0x80f4d7 GER
-	=Ich_respektiere_die_Natur_und_das\nselbe_solltest_du_auch_tun!
-.end
-
-
-.string str_0x80f517 GER
-	=Du_hast_die_Natur_respektiert,_das\nwar_der_Grund_f\$uer_deinen_Sieg.
-.end

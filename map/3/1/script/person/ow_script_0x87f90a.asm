@@ -38,3 +38,33 @@ ow_script_0x8a28fd:
 loadpointer 0x0 str_0x8a2907
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8a29c0
+
+str_0x8a29c0:
+    .string "Hjaaa! Huuu! Baaa! Kara!\nDiese Kampftechnik habe ich eigens\lentwickelt. Eines Tages werde ich\lsogar Manus damit übertrumpfen!\l...\lHier, nimm das und trainiere deine\lPokémon selbst so wie ich es tue!"
+        
+        
+.global str_0x8a2922
+
+str_0x8a2922:
+    .string "Das Item Schwarzgurt verstärkt\nalle Kampf-Angriffe eines\lPokémon. Damit werden seine\lSchläge und Tritte noch viel\leffektiver sein!\lHjaaa! Huuu! Baa! Kara!"
+        
+        
+.global str_0x87f3ce
+
+str_0x87f3ce:
+    .string "Sieht so aus, als hättest du für\nBUFFER_2 keinen Platz!\pKomm wieder, wenn du das Item\naufnehmen kannst."
+        
+        
+.global str_0x8a2907
+
+str_0x8a2907:
+    .string "Hjaaa! Huuu! Baaa! Kara!"
+        
+        
+.elseif LANG_EN
+
+.endif

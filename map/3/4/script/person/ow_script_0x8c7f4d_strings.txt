@@ -1,3 +1,0 @@
-.string str_0x8f1430 GER
-	=Das_Wasser,_das_diese_Stadt\numgibt,_entspringt_dem_K\$uestenberg.\lViele_nennen_ihn_auch_den_Berg_des\lUrquells.
-.end

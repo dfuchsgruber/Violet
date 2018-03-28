@@ -1,3 +1,0 @@
-.string str_0x926c84 GER
-	=Keiner_wei\$s_warum_um_das_Haus_im\nS\$ueden_immerzu_von_irgendwelchem\lKisten_umgeben_ist._Was_wohl_dort\lgetrieben_wird?
-.end

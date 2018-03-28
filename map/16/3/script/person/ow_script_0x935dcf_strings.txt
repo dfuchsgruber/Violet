@@ -1,8 +1,0 @@
-.string str_0x9382bb GER
-	=Ich_bin_ein_Sch\$ueler_von_Manus,\ndem_gr\$oe\$sten_K\$aempfer_der_Welt!\lDu_kannst_mich_nicht_besiegen!
-.end
-
-
-.string str_0x938319 GER
-	=Was?_Aber_ich_habe_doch_unter\nManus_trainiert!
-.end

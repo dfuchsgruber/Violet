@@ -1,8 +1,0 @@
-.string str_0x96628c GER
-	=Keke!_Was_ein_kleiner_Junge_in\neinem_Vulkan_zu_suchen_hat?\pWas_hat_ein_gro\$ser_Junge_hier\nverloren?_Keke!
-.end
-
-
-.string str_0x9662f7 GER
-	=Na_gut,_ich_gehe_nach_Hause...
-.end

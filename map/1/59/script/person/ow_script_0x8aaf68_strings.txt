@@ -1,3 +1,0 @@
-.string str_0x927ee7 GER
-	=Nimm_das,_du_Schurke!\pWir_wollen_keine_Revolution_hier,\nwir_brauchen_keinen_Krieg!
-.end

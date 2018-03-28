@@ -1,3 +1,0 @@
-.string str_0x8de313 GER
-	=Haus_von_Mia
-.end

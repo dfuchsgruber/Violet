@@ -1,8 +1,0 @@
-.string str_0x8e1d3e GER
-	=Mein_Herz_geh\$oert_einem_Jungen,_der\nmich_vor_langer_Zeit_allein\lgelassen_hat.
-.end
-
-
-.string str_0x8e2ad4 GER
-	=In_einem_Vergn\$uegungspark_habe_ich\nihn_das_letzte_Mal_gesehen...
-.end

@@ -258,3 +258,165 @@ ow_script_0x8e1470:
 applymovement 0x2a ow_script_movs_0x8e1488
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8e17bd
+
+str_0x8e17bd:
+    .string "Polizist Marq: Gut, ich lasse euch\nlaufen, dieses Mal. Vorausgesetzt,\lihr könnt mich entsprechend\lentlohnen, wie sich versteht..."
+        
+        
+.global str_0x8e1748
+
+str_0x8e1748:
+    .string "Mann: Wir sind Revolutionäre. Wir\nverhandeln nicht mit\lEuresgleichen. Wir werden euer\lSystem zum Einsturz bringen!"
+        
+        
+.global str_0x8e1702
+
+str_0x8e1702:
+    .string "Mann: Hey, warte mal. Willst du\nwirklich ins Gefängnis gehen?"
+        
+        
+.global str_0x8e167c
+
+str_0x8e167c:
+    .string "Mann: Kämpfen wir nicht für\nIdeale? Für eine Welt der\lGerechtigkeit und ohne Korruption?\lWollen wir wirklich unsere Werte\lverraten?"
+        
+        
+.global str_0x8e162e
+
+str_0x8e162e:
+    .string "Mann: Mach, was du willst. Ich\nwerde mein Leben nicht einfach so\lwegwerfen."
+        
+        
+.global str_0x8e15cc
+
+str_0x8e15cc:
+    .string "Wir nehmen dein Angebot an,\nPolizist. Wir werden dich\lbezahlen, wenn du uns passieren\llässt."
+        
+        
+.global str_0x8e14fb
+
+str_0x8e14fb:
+    .string "Mann: Hey, da belauscht uns\njemand!"
+        
+        
+.global str_0x8e148e
+
+str_0x8e148e:
+    .string "Marq: Hach, wie unerfreulich, ein\nZeuge.\l...\lNun, was machen wir nun mit dir...\lWas machen wir mit dir... "
+        
+        
+.global str_0x8e12f8
+
+str_0x8e12f8:
+    .string "Junge, du musst verstehen, wie\nunsere Welt funktioniert. An der\lSpitze, da sitzt ein einziger\lMann, der Champion, mächtig und\leinflussreich. Unter ihm die Top\lVier, die Herrscher Thetos. Und\ldann, dann kommen wir, die\leinfachen Menschen, die nichts\lhaben außer dem, was sie sich\lerarbeiten. Die Welt ist nicht\lgerecht, denn es ist die\lmenschliche Natur, Macht zu\lsuchen."
+        
+        
+.global str_0x8e11b9
+
+str_0x8e11b9:
+    .string "Diese beiden Männer gehören den\nRevolutionären an, die das System\lder Top Vier stürzen wollen, im\lSinne einer gerechten Welt.\pSoll ich sie wirklich fangen? Soll\nich den Top Vier erlauben, ihre\lUnterdrückungsherrschaft\lforzusetzten? Oder ist es nicht\lsinnvoller, sie laufen zu lassen\lund daraus noch Profit zu ziehen?"
+        
+        
+.global str_0x8e0f79
+
+str_0x8e0f79:
+    .string "Ich biete dir einen Anteil an.\nVerstehe meinen Standpunkt. Die\lWelt ist korrupt und wer sich der\lWelt nicht beugt, wird zerquetscht\lwie ein Käfer-Pokémon."
+        
+        
+.global str_meriana_revo_choice_0
+
+str_meriana_revo_choice_0:
+    .string "Bestechen lassen"
+        
+        
+.global str_meriana_revo_choice_1
+
+str_meriana_revo_choice_1:
+    .string "Widersprechen"
+        
+        
+.global str_0x8e0cdc
+
+str_0x8e0cdc:
+    .string "Ich kann Sie nicht einfach\ndavonkommen lassen. Sie\lunterdrücken die Menschen dieser\lStadt!"
+        
+        
+.global str_0x8e0c9c
+
+str_0x8e0c9c:
+    .string "So sei es dann der Kampf.\nBedauerlich, dass es so enden\lmuss."
+        
+        
+.global str_0x8e0c71
+
+str_0x8e0c71:
+    .string "Dummer Junge... Du verstehst gar\nnichts!"
+        
+        
+.global str_0x8e0c5e
+
+str_0x8e0c5e:
+    .string "Das ... Nein ..."
+        
+        
+.global str_0x8e0b99
+
+str_0x8e0b99:
+    .string "Polizist: Wachtmeister Marq, ich\nhabe bereits von dubiosen\lAktivitäten gehört, und nun muss\lich sie mit eigenen Augen\lmiterleben! Ungeheuerlich!\lHiermit sind Sie festgenommen,\lalle drei!"
+        
+        
+.global str_0x8e0b24
+
+str_0x8e0b24:
+    .string "Nah. Hätte ich doch den Top Vier\nmehr gedient, als meinem eigenen\lReichtum, wäre ich nun in einer\lbesseren Lage..."
+        
+        
+.global str_0x8e0aa8
+
+str_0x8e0aa8:
+    .string "Danke, vielen Dank! Endlich\nhat jemand diesen Schurken zur\lStrecke gebracht.\lIch will mich dir erkenntlich\lzeigen."
+        
+        
+.global str_0x8e0a79
+
+str_0x8e0a79:
+    .string "Ich stehe in deiner Schuld.\pAuf Wiedersehen!"
+        
+        
+.global str_0x8e0f0b
+
+str_0x8e0f0b:
+    .string "... Ich werde ... Ihr Geld nehmen.\pLassen Sie die Revolutionäre\nlaufen."
+        
+        
+.global str_0x8e0ef0
+
+str_0x8e0ef0:
+    .string "Eine weise Entscheidung."
+        
+        
+.global str_0x8e0edc
+
+str_0x8e0edc:
+    .string "PLAYER erhält 1500 POKEDOLLAR."
+        
+        
+.global str_0x8e0e4f
+
+str_0x8e0e4f:
+    .string "Du bist ein kluger Junge. Du\nverstehst, wie die Welt\lfunktioniert. Wir brauchen keine\lIdealisten, sondern Pragmatiker.\lWie mich, wie dich."
+        
+        
+.global str_0x8e0e17
+
+str_0x8e0e17:
+    .string "Revolutionäre: Schnell, machen wir\nuns aus dem Staub!"
+        
+        
+.elseif LANG_EN
+
+.endif

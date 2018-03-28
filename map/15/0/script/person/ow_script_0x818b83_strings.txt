@@ -1,8 +1,0 @@
-.string str_0x818b9b GER
-	=V\$oegel_sind_zwar_schwer_zu_fangen,\naber_die_M\$uehe_lohnt_sich!
-.end
-
-
-.string str_0x818bd9 GER
-	=V\$oegel_zu_fangen,_w\$uerde_sich_auch\nf\$uer_dich_lohnen.
-.end

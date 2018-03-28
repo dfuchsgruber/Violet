@@ -1,3 +1,0 @@
-.string str_0x959066 GER
-	=Mistral_war_bereits_ein_Kommandant\nder_Revolutionsbewegung.\pEr_ist_bestens_ausgebildet_und\nmacht_keine_halben_Sachen.\pNimm_dich_lieber_in_Acht,_Bursche!
-.end

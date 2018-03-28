@@ -1,8 +1,0 @@
-.string str_0x8d48e6 GER
-	=Das_Ei_eines_goldenen_Altarias.
-.end
-
-
-.string str_0x8d48cd GER
-	=Flug
-.end

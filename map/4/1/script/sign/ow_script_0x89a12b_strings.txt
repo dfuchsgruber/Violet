@@ -1,3 +1,0 @@
-.string str_0x1a8124 GER
-	=\b\01_schaltet_den_PC_ein.
-.end

@@ -1,3 +1,0 @@
-.string str_0x8a20ee GER
-	=Mit_der_versteckten_Maschiene\nZertr\$uemmerer_kann_man_diese_Felsen\lzerschmettern..._Jedoch_muss_der\lTrainer_auch_die_n\$oetige\lQualifikation_besitzen,_meine_ich.
-.end

@@ -30,3 +30,21 @@ hidesprite 0x800f
 fadescreen 0x0
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x8f4305
+
+str_0x8f4305:
+    .string "Du schon wieder! Du hast mich und\nmeine Pokémon in Meriana City\lschon besiegt...\lHier, nimm das und lass mich\lgefälligst in Ruhe!"
+        
+        
+.global str_0x8ef5ca
+
+str_0x8ef5ca:
+    .string "Buhu! Ich wollte doch nur etwas\nbewirken..."
+        
+        
+.elseif LANG_EN
+
+.endif

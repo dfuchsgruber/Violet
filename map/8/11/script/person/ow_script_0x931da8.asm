@@ -33,3 +33,33 @@ ow_script_0x931ddf:
 loadpointer 0x0 str_0x931de9
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x931e57
+
+str_0x931e57:
+    .string "Ah, ich sehe, dass du ein\ngerissenes kleines Balg bist."
+        
+        
+.global str_0x931e1e
+
+str_0x931e1e:
+    .string "Mit diesen Gläsern siehst du die\nWelt angenehm dunkel."
+        
+        
+.global str_0x931e9b
+
+str_0x931e9b:
+    .string "Nah, du bist viel zu freundlich\nfür einen Ort wie diesen, Kind."
+        
+        
+.global str_0x931de9
+
+str_0x931de9:
+    .string "Ein düsterer Blick auf alles raubt\ndir Illusionen."
+        
+        
+.elseif LANG_EN
+
+.endif

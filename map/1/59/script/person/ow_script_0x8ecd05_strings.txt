@@ -1,3 +1,0 @@
-.string str_0x92816c GER
-	=Die_Herrschaft_von_Unredlichkeit\nund_Geld_wird_mit_uns_ein_Ende\lfinden._Albus_wird_uns_retten.
-.end

@@ -140,14 +140,16 @@ def namespace(dir):
     """
     dirs = dir.split(os.sep)
     try:
-        mapid = int(dirs[2])
-        bank = int(dirs[1])
+        # Find the structure .*/map/bankid/mapid/.*
+        id_map_dir = dirs.index("map")
+        bank = int(dirs[id_map_dir + 1])
+        mapid = int(dirs[id_map_dir + 2])
         _, _, ns, _ = proj.banks[bank][mapid]
         return bank, mapid, ns
     except:
         raise Exception("Can not retrieve bank, map and namespace from " + dir)
 
-def index_hidden(header: mapheader, hidden_index, bank, mapid, ns):
+def index_hidden(header, hidden_index, bank, mapid, ns):
     """
     Scans the map for hidden items and adds used flags to the respective chunks
     """

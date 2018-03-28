@@ -1,3 +1,0 @@
-.string str_0x8c7d9c GER
-	=Ich_kann_es_nicht_fassen,_dass_ich\nnach_dem_langen_und_aufreibenden\lMarsch_durch_die_W\$ueste_noch_immer\lnicht_in_Kaskada_angekommen_bin!
-.end

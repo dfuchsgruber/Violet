@@ -1,8 +1,0 @@
-.string str_0x8cac8d GER
-	=In_diesem_Tempel_f\$uehle_ich_mich\nmeinen_Gestein-Pok\emon_sehr_nahe.\lIch_bin_Lester_dankbar_f\$uer_diesen\lOrt_und_werde_ihn_verteidigen!
-.end
-
-
-.string str_0x8cad12 GER
-	=Lester_erwartet_dich_bereits._Du\nkannst_es_sicherlich_mit_ihm\laufnehmen,_aber_ob_du_gewinnen\lwirst,_ist_eine_andere_Sache...
-.end

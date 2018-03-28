@@ -24,3 +24,15 @@ special2 0x800a 0x1aa
 warpmuted 0x11 0x3 0x0 0x0 0x0
 waitstate
 end
+
+
+.ifdef LANG_GER
+.global str_0x94d460
+
+str_0x94d460:
+    .string "Oh nein...\nDieses Gefühl des Schwindels...\pAls ob mich etwas aus dieser Welt\nhinfortreißt...\pUnd wegträgt...\nNicht schon wieder..."
+        
+        
+.elseif LANG_EN
+
+.endif

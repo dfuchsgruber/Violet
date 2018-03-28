@@ -156,3 +156,141 @@ ow_script_0x95bc3d:
 loadpointer 0x0 str_0x95bd3c
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x95bcb7
+
+str_0x95bcb7:
+    .string "Herzlich willkommen in der Orina\nCity Bank.\pWie ich sehe, bist du ein neuer\nKunde.\pMöchtest du ein bei uns ein\nBankkonto eröffnen?"
+        
+        
+.global str_0x95bc47
+
+str_0x95bc47:
+    .string "Wundervoll! Ich bräuchte dann nur\nnoch deinen Namen bitte?\p... ...\n... ... ...\pPLAYER also.\nEinen Moment bitte..."
+        
+        
+.global str_0x95bc02
+
+str_0x95bc02:
+    .string "PLAYER wurde ein Konto bei der Orina\nCity Bank eingerichtet."
+        
+        
+.global str_0x95bb96
+
+str_0x95bb96:
+    .string "Mit einem Konto bei unserer Bank\nbist du ermächtigt, einen Kredit\lvon bis zu 50.000POKEDOLLAR bei uns\laufzunehmen."
+        
+        
+.global str_0x95b769
+
+str_0x95b769:
+    .string "Herzlich willkommen in der Orina\nCity Bank.\pWie kann ich dir behilflich sein?"
+        
+        
+.global str_orina_city_bank_main_0
+
+str_orina_city_bank_main_0:
+    .string "Kredit"
+        
+        
+.global str_orina_city_bank_main_1
+
+str_orina_city_bank_main_1:
+    .string "Information"
+        
+        
+.global str_orina_city_bank_main_2
+
+str_orina_city_bank_main_2:
+    .string "Tschüss!"
+        
+        
+.global str_orina_city_bank_take_0
+
+str_orina_city_bank_take_0:
+    .string "Kredit aufnehmen"
+        
+        
+.global str_orina_city_bank_take_1
+
+str_orina_city_bank_take_1:
+    .string "Tschüss!"
+        
+        
+.global str_orina_city_bank_amount_0
+
+str_orina_city_bank_amount_0:
+    .string "1.000POKEDOLLAR"
+        
+        
+.global str_orina_city_bank_amount_1
+
+str_orina_city_bank_amount_1:
+    .string "10.000POKEDOLLAR"
+        
+        
+.global str_orina_city_bank_amount_2
+
+str_orina_city_bank_amount_2:
+    .string "50.000POKEDOLLAR"
+        
+        
+.global str_orina_city_bank_amount_3
+
+str_orina_city_bank_amount_3:
+    .string "Zurück"
+        
+        
+.global str_0x95b7b9
+
+str_0x95b7b9:
+    .string "Danke für deinen Besuch!\nBeehre uns bald wieder!"
+        
+        
+.global str_0x95b7fa
+
+str_0x95b7fa:
+    .string "Die Orina City Bank vergibt\nKredite an Trainer im ganzen Land.\pDabei verlangen wir als\nGegenleistung ein Fünftel des\lBetrages.\pWir ziehen von deinem erhaltenen\nPreisgeld automatisch drei Viertel\lab, um die Schulden zu begleichen."
+        
+        
+.global str_0x95bb6b
+
+str_0x95bb6b:
+    .string "Dein aktueller Kredit beträgt\nBUFFER_1POKEDOLLAR."
+        
+        
+.global str_0x95bb13
+
+str_0x95bb13:
+    .string "Bitte wähle einen Betrag aus, den\ndu dir leihen möchtest."
+        
+        
+.global str_0x95ba20
+
+str_0x95ba20:
+    .string "Vielen Dank!\nWir werden dir den Betrag von\lBUFFER_2POKEDOLLAR sofort auszahlen."
+        
+        
+.global str_0x95ba63
+
+str_0x95ba63:
+    .string "Dein Kredit beträgt nun insgesammt\nBUFFER_1POKEDOLLAR."
+        
+        
+.global str_0x95ba9b
+
+str_0x95ba9b:
+    .string "Es tut mir leid, aber wir vergeben\nkeine Kredite über 50.000POKEDOLLAR."
+        
+        
+.global str_0x95bd3c
+
+str_0x95bd3c:
+    .string "Das ist wirklich sehr schade!\nMit einem Konto bei der Orina City\lBank kannst du einen Kredit von\lbis zu 50.000POKEDOLLAR aufnehmen.\lKomm wieder, solltest du deine\lMeinung doch geändert haben."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -49,3 +49,15 @@ fadesong MUS_TRAINERSCHOOL
 setflag TRAINERSCHOOL_RIVAL
 setvar STORY_PROGRESS 0x5
 end
+
+
+.ifdef LANG_GER
+.global str_0x89bfed
+
+str_0x89bfed:
+    .string "Na los! Die Schule hat längst\nangefangen. Faun wird uns Feuer\lunterm Hintern machen, wenn wir\luns nicht bald blicken lassen."
+        
+        
+.elseif LANG_EN
+
+.endif

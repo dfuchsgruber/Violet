@@ -1,3 +1,0 @@
-.string str_0x8cb542 GER
-	=Ben?_Bist_du_es?_Bist_du_mein\nkleiner_Ben?_Oh_Ben!_Warst_du_mit\ldeinen_kleinen_Freunden_am_Strand\lspielen?
-.end

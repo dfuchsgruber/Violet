@@ -1,3 +1,0 @@
-.string str_0x94da03 GER
-	=Stara!_Staralili!_Staaar!
-.end

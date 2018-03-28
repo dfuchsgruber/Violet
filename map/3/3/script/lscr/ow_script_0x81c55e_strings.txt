@@ -1,3 +1,0 @@
-.string str_0x87762b GER
-	=R\$uepel:_Wir_m\$uessen_uns_beeilen,_Rin\nwartet_sicherlich_schon_im_Wald.\pR\$uepel:_Ja,_und_sie_kann_launisch\nwerden..._Los_jetzt!_
-.end

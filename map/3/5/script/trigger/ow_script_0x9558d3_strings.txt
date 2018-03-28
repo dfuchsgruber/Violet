@@ -1,3 +1,0 @@
-.string str_0x95590d GER
-	=Ich_bin_untr\$oestlich,_aber_der_Rosa\nFaun_hat_eine_Stra\$sensperre\langeordnet,_um_die_zwei_Divisionen\ldes_Team_Violet,_die_sich_derzeit\lin_seinem_Regierungsbereich\laufhalten,_festzumachen.\pIch_kann_dich_nicht_passieren\nlassen.
-.end

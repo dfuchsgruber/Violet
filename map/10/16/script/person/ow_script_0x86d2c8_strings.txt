@@ -1,8 +1,0 @@
-.string str_0x86d2e0 GER
-	=Ich_hasse_diesen_Job._Immer_verirre\nich_mich_bei_diesen_Pfeilfeldern!
-.end
-
-
-.string str_0x86d328 GER
-	=Ich_brauche_jeden_Tag_Stunden_bis\nich_meinen_Platz_gefunden_habe!
-.end

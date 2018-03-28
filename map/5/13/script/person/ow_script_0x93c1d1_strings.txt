@@ -1,3 +1,0 @@
-.string str_0x93c923 GER
-	=Das_letzte_Zeichen_ist_ein_Kanji-\nZeichen.\lEs_wird_mit_dem_Wort_Sprache\l\$uebersetzt.
-.end

@@ -1,8 +1,0 @@
-.string str_0x8f461a GER
-	=Ich_muss_hier_so_lange_Wache\nhalten,_bis_Rin_ihre_Mission_im\lSilvania-Wald_erledigt_hat!
-.end
-
-
-.string str_0x8f4d9d GER
-	=..._\$AEh_..._in_dieser_Version_bin\nich_zwar_noch_hier,_in_der\ln\$aechsten_aber_werde_ich_dir_den\lWeg_schon_freigemacht_haben!
-.end

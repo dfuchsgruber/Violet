@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0xac 0x0 str_0x86d2e0 str_0x86d328
 loadpointer 0x0 str_0x86d328
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x86d2e0
+
+str_0x86d2e0:
+    .string "Ich hasse diesen Job. Immer verirre\nich mich bei diesen Pfeilfeldern!"
+        
+        
+.global str_0x86d328
+
+str_0x86d328:
+    .string "Ich brauche jeden Tag Stunden bis\nich meinen Platz gefunden habe!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x8dec30 GER
-	=Ich_bin_f\$uer_mein_Leben_gern\nG\$aertnerin._Die_Beerenzucht_ist_ein\l\$aeu\$serst_spannendes_Hobby.
-.end

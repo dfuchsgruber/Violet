@@ -1,8 +1,0 @@
-.string str_0x1c19e4 GER
-	=Du_kannst_den_Zerschneider_hier\neinsetzen!\pM\$oechtest_du_den_Zerschneider\neinsetzen?
-.end
-
-
-.string str_0x1c1a48 GER
-	=Der_Zerschneider_kann_hier\neingesetzt_werden.
-.end

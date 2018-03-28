@@ -664,3 +664,195 @@ special 0x19
 waitstate
 call ow_script_0x8d7a10
 return
+
+
+.ifdef LANG_GER
+.global str_0x969e0b
+
+str_0x969e0b:
+    .string "Mistral!\nWas hast du vor?\lWeißt du denn, was du hier tust?"
+        
+        
+.global str_0x96a758
+
+str_0x96a758:
+    .string "Igva, du bist naiv wie eh\nund je.\pDass ihr Revolutionäre immer noch\nexistiert, ist mir ein Rätsel.\pEuer Anführer hat außer schön\nklingenden Sprüchen und Krieg doch\lnichts zu bieten?\pIhr redet von Aufstand und\nNeuerung, aber habt keine Lösungen\lanzubieten.\pIhr führt die Menschen in einen\nKrieg, der ihnen nichts bringt.\pUnd dann nennst du mich einen\nUnmenschen?"
+        
+        
+.global str_0x96a8cd
+
+str_0x96a8cd:
+    .string "Nein, du irrst dich!\nUnser Kampf ist nobel, deiner nur\legoistisch!\pDu hast uns im Stich gelassen, um\nMacht zu finden.\pUnd nun willst du den Zeitstein\nrauben, wissend, dass du damit den\lWächter der Landmassen erweckst\lund seinen Zorn über dieses Land\lschickst?\pIst dir bewusst, was das legendäre\nPokémon Groudon für eine\lschrecklich vernichtende Kreatur\list?"
+        
+        
+.global str_0x969d1d
+
+str_0x969d1d:
+    .string "Hahaha!\nUnd dir ist nie in den Sinn\lgekommen, dass ich genau das\lprovozieren will?\pDass es mir mehr um die\nWiedererweckung Groudons geht, als\ldiesen dummen Stein?\l...\pAber sieh nur, Igva.\nDein neuer Begleiter ist\leingetroffen."
+        
+        
+.global str_0x969a22
+
+str_0x969a22:
+    .string "Herzlich willkommen,\nPLAYER!\pUns scheint doch etwas zu\nverbinden, wenn ich dich hier mit\lmeiner alten Partnerin treffe.\pEinst war ich Teil ihrer\neinfältigen Revolustionsbewegung,\lehe ich erkannt habe, dass ich so\lniemals Macht erlangen kann.\pNun stehen wir hier schicksalshaft\neinander gegenüber.\pVor uns der Schlot eines Vulkans,\nin dessen Herzen eine der\lmächtigsten Kreaturen der Welt\lschlummert.\pAm Ende des Weges ein Teil des\nlegendären Steins der Zeit, des\lDiserakts.\pWas Rin nicht in Erfahrung bringen\nkonnte, weiß ich längst:\pIn drei Teile wurde der Zeitstein\ngespalten, den drei Wächtern der\lWelt anvertraut.\pSieh ihn dir an, den Zeitstein,\ndiese überwältigende Aura der\lMacht, dieses pulsierende\lSchimmern.\lEs ist fast bezaubernd..."
+        
+        
+.global str_0x96eab0
+
+str_0x96eab0:
+    .string "Der Stein wird sich bald im Besitz\ndes Teams Violet befinden und\leine Waffe erschaffen, deren Macht\lunvergleichlich groß sein soll.\lUnd ich werde mich weder von euch\lnoch sonst irgendjemandem\laufhalten lassen."
+        
+        
+.global str_0x96abb4
+
+str_0x96abb4:
+    .string "Wir dürfen das nicht\ngeschehen lassen.\lDer Diserakt hält den Fluss der\lZeit aufrecht - wer ihm die\lEnerige entzieht, lähmt die\lZeitstruktur.\lAußerdem wird das Entfernen des\lDiserakts das Wächterpokémon\lGroudon auf den Plan rufen.\lInferior wird diese Katastrophe\lnicht überstehen können."
+        
+        
+.global str_0x96ab03
+
+str_0x96ab03:
+    .string "Mistral ist nicht aufzuhalten.\nDas Fragment des Zeitsteins wird\luns zu den Herrschern der Welt\lerheben!"
+        
+        
+.global str_0x96ab6d
+
+str_0x96ab6d:
+    .string "Du kommst ohnehin zu spät, um uns\nnun noch zu stoppen."
+        
+        
+.global str_0x96aa55
+
+str_0x96aa55:
+    .string "Mistral vollbringt, was Rin nicht\nerreichen konnte.\pEr wird alle drei Teile des\nDiserakts finden und vereinen."
+        
+        
+.global str_0x96aac6
+
+str_0x96aac6:
+    .string "Stell dich ihm nicht in den Weg,\noder du wirst vernichtet!"
+        
+        
+.global str_0x96a618
+
+str_0x96a618:
+    .string "Ich bin der Punkt, an dem du\nscheitern wirst.\pMistrals Aufgabe ist zu wichtig,\nals dass ich dir erlauben könnte,\leinzugreifen."
+        
+        
+.global str_0x969f24
+
+str_0x969f24:
+    .string "Unmöglich.\nDu kannst ihn nicht stoppen!"
+        
+        
+.global str_0x96ae6e
+
+str_0x96ae6e:
+    .string "Ihr beiden kommt zu spät.\nDer Diserakt ist mein."
+        
+        
+.global str_0x96adf1
+
+str_0x96adf1:
+    .string "Mistral, bitte!\pWenn ich dir je etwas bedeutet\nhabe, tu es nicht!"
+        
+        
+.global str_0x96ada6
+
+str_0x96ada6:
+    .string "Schweig!\nDummes Mädchen!\pErzittert vor der Kraft des\nDiserakts!"
+        
+        
+.global str_0x96ad59
+
+str_0x96ad59:
+    .string "Oh bei Arceus!\nDas ist das Wächterpokémon\lGroudon...\lEs... es ..."
+        
+        
+.global str_0x96a698
+
+str_0x96a698:
+    .string "Es ist endlich aus seinem\nSchlaf erwacht!"
+        
+        
+.global str_0x96ebfd
+
+str_0x96ebfd:
+    .string "Das ist unser aller Ende!\nGroudon wird alles verwüsten und\lzerstören!"
+        
+        
+.global str_0x96b05d
+
+str_0x96b05d:
+    .string "Da stehst du vor mir,\ndu mächtiges, mächtiges Wesen!\pDeine Kraft soll fortan an mich\ngebunden sein.\pHier erhebe ich das Magmaherz, das\nuralte Artefakt, um deine wahre\lKraft zu entfesseln!"
+        
+        
+.global str_0x97138c
+
+str_0x97138c:
+    .string "Was? Groudon ist...\nVerschwunden?"
+        
+        
+.global str_0x96f1be
+
+str_0x96f1be:
+    .string "Törrichtes Gör!\nGroudon ist nicht verschwunden...\pEs ist unter meiner Kontrolle!\pDas Magmaherz, welches ich aus dem\nMuseum von Orina City gestohlen\lhabe, verleiht Groudon seine\lursprüngliche Macht...\pEs erhebt es in seine Kaiserform!\pMein Wort ist Groudons Befehl!\pMein Wille seine Handlung!\pMein Geist seine Macht!\pGroudons Kaiserform birgt ein\nunvorstellbares Maß an Vernichtung\lund Chaos - Planeten werden wie\lKäferpokémon zerschmettert und\lHimmel wie Kerzen in Brand\lgesetzt!\pHahaha! Hahaha!\pAlso!\pPLAYER!\pIch fordere dich heraus!\pBrenne! Schreie!\pIch werde dich vernichten!"
+        
+        
+.global str_0x96f0ee
+
+str_0x96f0ee:
+    .string "Dieser Kampf wird über das\nSchicksal dieser Welt entscheiden!\pWer darf herrschen, wer muss\ngehorchen?"
+        
+        
+.global str_0x96f156
+
+str_0x96f156:
+    .string "... Das ist ... völlig ...\nabsurd! ...\pDu hast ... Groudon ... besiegt?\nIn seiner Kaiserform?"
+        
+        
+.global str_0x9713b5
+
+str_0x9713b5:
+    .string "...\n... ... ... ...\pDas ... ist ...\n...\p... du hast Groudon besiegt?"
+        
+        
+.global str_0x96fd16
+
+str_0x96fd16:
+    .string "Nein!\nEs entzieht sich meiner Kontrolle!"
+        
+        
+.global str_0x96fd4a
+
+str_0x96fd4a:
+    .string "Es wird alles und jeden hier\nvernichten!"
+        
+        
+.global str_0x96fc90
+
+str_0x96fc90:
+    .string "Wir werden es nicht\nschaffen!\lDer Vulkan ist im Begriff\lauszubrechen.\lDer Abstieg wird ein heißer Tod!\lWir sind am Ende!"
+        
+        
+.global str_0x97300a
+
+str_0x97300a:
+    .string "Was habe ich getan?\nJetzt werden wir...\lWerden wir...\pAlle...\nsterben!"
+        
+        
+.global str_0x972330
+
+str_0x972330:
+    .string "Wir sind geliefert.\nDer Tod, er hat uns gefunden!"
+        
+        
+.global str_0x972313
+
+str_0x972313:
+    .string "Nicht."
+        
+        
+.elseif LANG_EN
+
+.endif

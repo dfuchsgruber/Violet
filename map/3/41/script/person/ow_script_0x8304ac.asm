@@ -62,3 +62,45 @@ loadpointer 0x0 str_0x8306cd
 callstd MSG
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x8305dd
+
+str_0x8305dd:
+    .string "Hallo und herzlich willkommen!\nIch bin der Käferhändler. Heute\lhabe ich ganz frische Ware\lreinbekommen, Nincada, soweit das\lAuge reicht. Du möchtest nicht\lzufällig eines kaufen?"
+        
+        
+.global str_0x83069c
+
+str_0x83069c:
+    .string "Das Stück kostet 250POKEDOLLAR. Willst du\nzuschlagen?"
+        
+        
+.global str_0x8305b9
+
+str_0x8305b9:
+    .string "PLAYER hat ein Nincada erhalten. "
+        
+        
+.global str_0x830520
+
+str_0x830520:
+    .string "Danke! Viel Spaß mit dem Nincada!"
+        
+        
+.global str_0x830551
+
+str_0x830551:
+    .string "Sorry, du hast bereits 6 Pokémon in\ndeinem Team. Komm wieder wenn du\lPlatz hast."
+        
+        
+.global str_0x8306cd
+
+str_0x8306cd:
+    .string "Das ist eine sehr schlechte\nEntscheidung, aber gut, ich kann\ldich daran nicht hindern."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,8 +1,0 @@
-.string str_0x72458c GER
-	=Soll_ich_dir_ein_Geheimnis_\$ueber\ndiese_W\$ueste_verraten?_Ich_sags_dir,\lwenn_du_mich_besiegst!
-.end
-
-
-.string str_0x7245ea GER
-	=Gut,_das_Geheimnis_ist,_dass_es\nhier_2_Brunnen_geben_soll!_Bisher\lhabe_ich_aber_noch_keinen\lgefunden...
-.end

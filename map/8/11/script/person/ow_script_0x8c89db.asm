@@ -157,3 +157,87 @@ loadpointer 0x0 str_0x8c8793
 callstd MSG
 end
 
+
+
+.ifdef LANG_GER
+.global str_0x8c8907
+
+str_0x8c8907:
+    .string "Hallo! Du siehst aus wie ein\nTrainer, nicht?\pWie wäre es, dein Team mit ein\npaar exklusiven Pokémon\laufzustocken?\pIch verkaufe dir die seltensten\nExemplare zu einem Spottpreis!\pSieh dir mein Sortiment\nruhig an."
+        
+        
+.global str_blackmarket_pkmn0
+
+str_blackmarket_pkmn0:
+    .string "Topius     35.000POKEDOLLAR   "
+        
+        
+.global str_blackmarket_pkmn1
+
+str_blackmarket_pkmn1:
+    .string "Dratini    99.999POKEDOLLAR"
+        
+        
+.global str_blackmarket_pkmn2
+
+str_blackmarket_pkmn2:
+    .string "Perlu      15.000POKEDOLLAR"
+        
+        
+.global str_blackmarket_pkmn3
+
+str_blackmarket_pkmn3:
+    .string "Nebulak    25.000POKEDOLLAR"
+        
+        
+.global str_blackmarket_pkmn4
+
+str_blackmarket_pkmn4:
+    .string "Chaneira   55.000POKEDOLLAR"
+        
+        
+.global str_blackmarket_back
+
+str_blackmarket_back:
+    .string "Zurück            "
+        
+        
+.global str_0x8c86ac
+
+str_0x8c86ac:
+    .string "PLAYER hat BUFFER_1\nerhalten!"
+        
+        
+.global str_0x8c8683
+
+str_0x8c8683:
+    .string "Vielen Dank! Beehre mich gerne\nwieder!"
+        
+        
+.global str_0x8c8767
+
+str_0x8c8767:
+    .string "Das Pokémon BUFFER_1 soll\nes sein?"
+        
+        
+.global str_0x8c86f0
+
+str_0x8c86f0:
+    .string "Du scheinst nicht genügend Platz\nin deinem Team zu haben.\pKomm wieder, wenn du Platz in\ndeinem Team geschaffen hast."
+        
+        
+.global str_0x8c882b
+
+str_0x8c882b:
+    .string "Ganz wie du möchtest.\pKomm jederzeit wieder, falls du es\ndir anders überlegst."
+        
+        
+.global str_0x8c8793
+
+str_0x8c8793:
+    .string "Oh, sieht so aus, als hättest du\nnicht genügend Geld bei dir, um\ldir das zu leisten.\pKomm wieder, wenn du dir das\nProdukt kaufen kannst."
+        
+        
+.elseif LANG_EN
+
+.endif

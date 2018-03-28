@@ -54,3 +54,33 @@ ow_script_0x899e4b:
 loadpointer 0x0 str_0x89a88b
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x89a9bb
+
+str_0x89a9bb:
+    .string "Gengar ist der König unter den\nGeistpokemon. Seine\lGeschwindigkeit und Stärke sind\lüberragend, findest du nicht auch?\lWenn du mir ein Gengar zeigen\lkannst, werde ich dir einen Weg\lverraten, es stärker zu machen!\pKannst du mir ein Gengar\nzeigen?"
+        
+        
+.global str_0x89a986
+
+str_0x89a986:
+    .string "Komm wieder, wenn du mir ein\nGengar zeigen kannst!"
+        
+        
+.global str_0x89a91d
+
+str_0x89a91d:
+    .string "Wahrhaftig! Das ist ein Gengar.\nNun möchte ich dir das geben, was\lich dir versprochen habe."
+        
+        
+.global str_0x89a88b
+
+str_0x89a88b:
+    .string "Dieses Item nennt sich BUFFER_1.\nEs ist ein Stein in dessen\lGegenwart sich Gengar seltsam\lverhält. Ich weiß jedoch nicht\lgenau, wie man ihn benuzt..."
+        
+        
+.elseif LANG_EN
+
+.endif

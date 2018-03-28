@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0x71 0x0 str_0x931930 str_0x9318e0
 loadpointer 0x0 str_0x9318e0
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x931930
+
+str_0x931930:
+    .string "Nja! Du schon wieder!\pDu wirst uns hier nicht auch die\nTour vermasseln!"
+        
+        
+.global str_0x9318e0
+
+str_0x9318e0:
+    .string "Was ist dein Antrieb?\pSiehst du nicht, dass wir der Welt\nden Frieden bringen?"
+        
+        
+.elseif LANG_EN
+
+.endif

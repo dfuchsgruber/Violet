@@ -92,3 +92,93 @@ callstd MSG
 releaseall
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x95fd2c
+
+str_0x95fd2c:
+    .string "Schluchz...\nSchluchz...\pWeißt du, diese bösen Männer von\nTeam Violet haben mir mein\lTaschengeld gestohlen...\p1500POKEDOLLAR sind nun weg und alles was\nmir nun noch bleibt ist dieses\lNugget...\pEs ist ein Geschenk meines Papas,\laber vielleicht kann ich es\nverkaufen...\pIch brauche das Geld wirklich\nsehr dringend..."
+        
+        
+.global str_aschhain_girl_choice_0
+
+str_aschhain_girl_choice_0:
+    .string "1500POKEDOLLAR geben"
+        
+        
+.global str_aschhain_girl_choice_1
+
+str_aschhain_girl_choice_1:
+    .string "Nichts tun"
+        
+        
+.global str_aschhain_girl_choice_2
+
+str_aschhain_girl_choice_2:
+    .string "Nugget stehlen"
+        
+        
+.global str_0x95f9d1
+
+str_0x95f9d1:
+    .string "Jammerschade, heute ist nicht dein\nGlückstag, wie es scheint.\lImmerhin wirst du dein Nugget auch\lgleich los sein..."
+        
+        
+.global str_0x95f937
+
+str_0x95f937:
+    .string "Waaas? Schluchz!?\nDas ist nicht dein Ernst?\pWieso sind alle so gemein zu mir!\nBuhu! Buhu!\pLass mich in Ruhe, dieses Nugget\nhat mein Papa mir geschenkt!"
+        
+        
+.global str_0x95f8bc
+
+str_0x95f8bc:
+    .string "Wuhäää! Bääääh!\nBitte nimm es nicht..."
+        
+        
+.global str_0x95f8fc
+
+str_0x95f8fc:
+    .string "Du bist ein böser Mensch...\nGuhäää! Bäh! Wääh! Schluz..."
+        
+        
+.global str_0x95fa93
+
+str_0x95fa93:
+    .string "Na... Hör doch bitte auf zu\nweinen!\lWas passiert ist, kann nicht\lwieder rückgängig gemacht werden.\pSei das nächste Mal ein bisschen\nvorsichtiger, für jetzt hast du\ldeine Lektion auf jeden Fall\lgelernt."
+        
+        
+.global str_0x95fa65
+
+str_0x95fa65:
+    .string "Buhu! Schluchz!\nDu bist gemein! Baha! Buhu!"
+        
+        
+.global str_0x95fc52
+
+str_0x95fc52:
+    .string "Na, mach dir keine Sorgen.\nIch werde dir stattdessen einfach\l1500POKEDOLLAR geben und Team Violet zur\lRächenschaft ziehen."
+        
+        
+.global str_0x95fc38
+
+str_0x95fc38:
+    .string "PLAYER gibt dem Kind 1500POKEDOLLAR."
+        
+        
+.global str_0x95fbb9
+
+str_0x95fbb9:
+    .string "Danke! Schluchz!\nDu bist toll!\lIch hoffe wir begegnen uns bald\lwieder!\lUi, ich kann mir jetzt dieses\lSpielzeug kaufen!\lJuhu!"
+        
+        
+.global str_0x95fcd2
+
+str_0x95fcd2:
+    .string "Du hast nicht genügend Geld..."
+        
+        
+.elseif LANG_EN
+
+.endif

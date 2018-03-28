@@ -109,3 +109,39 @@ return
 ow_script_0x9455ee:
 setvar LASTRESULT 0x1
 goto ow_script_0x945662
+
+
+.ifdef LANG_GER
+.global str_0x94568f
+
+str_0x94568f:
+    .string "Hyaa! Hajajaja!\nIn vielen Jahren des harten\lTraining habe ich meine\lKampftechnik so sehr verfeinert,\ldass ich Steine regnen lassen\lkann!\pSoll ich einem deiner Pokémon den\nSteinhagel beibringen?\pDann will ich einen Riesenpilz\noder drei Minipilze als\lGegenleistung!"
+        
+        
+.global str_0x945eb7
+
+str_0x945eb7:
+    .string "Hyaa! Vortrefflich!\nDu hast BUFFER_2-mal BUFFER_1\lbei dir!\lAls Gegenleistung bringe ich einem\ldeiner Pokémon Steinhagel bei!\lWas sagst du dazu?"
+        
+        
+.global str_0x8a1be6
+
+str_0x8a1be6:
+    .string "Schön, schön!\nWelches deiner Pokémon soll\lSteinhagel lernen?"
+        
+        
+.global str_0x94618b
+
+str_0x94618b:
+    .string "PLAYER übergibt\nBUFFER_2-mal BUFFER_1."
+        
+        
+.global str_0x945830
+
+str_0x945830:
+    .string "Hyaa! Wie schade!\pWenn ich einem deiner Pokémon\nSteinhagel beibringen soll, dann\lkomm mit 3 Minipilzen oder einem\lRiesenpilz wieder!"
+        
+        
+.elseif LANG_EN
+
+.endif

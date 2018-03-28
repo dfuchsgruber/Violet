@@ -1,3 +1,0 @@
-.string str_0x86c1ad GER
-	=An_Brunnen_wie_diesen_k\$oennen\nTrainer_ihre_ersch\$oepften_Pok\emon\lheilen.
-.end

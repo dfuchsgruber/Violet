@@ -1,3 +1,0 @@
-.string str_0x958ef0 GER
-	=Die_Pinself\$uehrung,_die_der\nK\$uenstler_hier_an_den_Tag_gelegt\lhat,_ist_wirklich_einmalig.
-.end

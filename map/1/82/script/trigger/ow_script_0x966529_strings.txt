@@ -1,8 +1,0 @@
-.string str_0x9665c5 GER
-	=\b\01,\ndu bist wirklich kaum aufzuhalten.\pIch konnte dich gar nicht\neinholen, so schnell hast du\ldiesem Violet-Pack eingeheizt!\pVor uns liegt der Gipfel des\nVolcanos...\pMistral hat ihn ungl\$uecklicherweise\nwohl schon erreicht.\pWir sollten uns beeilen, ehe es\nzum Schlimmsten kommt.\pIch werde mich um deine\nangeschlagenen Pok\emon k\$uemmern...
-.end
-
-
-.string str_0x96659a GER
-	=Los, wir d\$uerfen keine Zeit\nverlieren!
-.end

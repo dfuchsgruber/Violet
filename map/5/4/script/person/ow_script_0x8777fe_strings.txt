@@ -1,3 +1,0 @@
-.string str_0x880e00 GER
-	=Im_POKESTOP_kannst_du_sowohl_deine\nPok\emon_heilen_lassen,_als_auch\ln\$uetzliche_Items_f\$uer_den_Inventar\lkaufen.
-.end

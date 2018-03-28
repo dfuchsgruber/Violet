@@ -1,3 +1,0 @@
-.string str_0x8cb4a1 GER
-	=Das_Leben_an_einem_trostlosen_Ort\nist_tr\$uebselig.\pAber_Lester_unternimmt_jeden\nVersuch_etwas_Leben_auf_diese\lInsel_zu_bringen._Er_ist_ein_guter\lJunge,_wirklich.
-.end

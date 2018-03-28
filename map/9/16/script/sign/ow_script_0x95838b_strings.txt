@@ -1,3 +1,0 @@
-.string str_0x95a700 GER
-	=Das_Gem\$aelde_zeigt_ein_rotes\nMonster,_das_von_Flammen_und_Lava\lumgeben_ist.
-.end

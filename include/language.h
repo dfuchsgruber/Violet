@@ -12,20 +12,20 @@
 extern "C" {
 #endif
     
-#define P99_PROCTECT(...) __VA_ARGS__
-    
-    #define GER 0
-    #define EN 1
 
-    #define LANGUAGE GER
 
-    #if LANGUAGE==GER
-    #define PSTRING(ger,en) ger
-    #else
-    #define PSTRING(ger,en) en
-    #endif    
-    
-    
+
+
+	#define PSTRING(...) __VA_ARGS__
+
+	// Define language dependent macro
+	#ifdef LANG_GER
+		#define LANGDEP(ger,en) ger
+	#elif LANG_EN
+		#define LANGDEP(ger,en) en
+	#endif
+
+
 
 
 

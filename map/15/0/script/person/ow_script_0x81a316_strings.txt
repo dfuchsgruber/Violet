@@ -1,8 +1,0 @@
-.string str_0x81a32e GER
-	=Ein_Angler_braucht_Geduld,_und\nmeist_ist_der_Fang_nicht_gut.
-.end
-
-
-.string str_0x81a36d GER
-	=Mein_Fang_war_wohl_eher_schlecht.
-.end

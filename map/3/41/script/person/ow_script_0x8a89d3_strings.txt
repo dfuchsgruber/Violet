@@ -1,8 +1,0 @@
-.string str_0x8aaad4 GER
-	=Als_Ranger_muss_man_stets_den\n\$UEberblick_behalten._Wir_trainieren\ldie_verschiedensten_Pok\emon,_um\lf\$uer_jede_Situation_gewappnet_zu\lsein._In_der_Vielfalt_liegt_die\lSt\$aerke!
-.end
-
-
-.string str_0x8aab7f GER
-	=Achte_darauf,_m\$oeglichst_viele\nverschiedene_Typen_in_deinem\lPok\emon-Team_unterzubringen.
-.end

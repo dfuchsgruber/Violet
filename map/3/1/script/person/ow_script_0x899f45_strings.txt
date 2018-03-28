@@ -1,3 +1,0 @@
-.string str_0x8a2a88 GER
-	=Der_Wundertausch_ist_ein\nausgefallenes_System._So_kann\ljeder_Trainer_an_die\lverschiedensten_Pok\emon_gelangen.\lSpannend,_was?
-.end

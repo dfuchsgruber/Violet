@@ -9,3 +9,15 @@ loadpointer 0x0 str_0x895f45
 callstd MSG_FACE
 hidepokepic
 end
+
+
+.ifdef LANG_GER
+.global str_0x895f45
+
+str_0x895f45:
+    .string "Voltilamm! Voltilamm!"
+        
+        
+.elseif LANG_EN
+
+.endif

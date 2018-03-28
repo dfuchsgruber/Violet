@@ -28,3 +28,15 @@ ow_script_0x89a168:
 clearflag TRANS_DISABLE
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x1a8124
+
+str_0x1a8124:
+    .string "PLAYER schaltet den PC ein."
+        
+        
+.elseif LANG_EN
+
+.endif

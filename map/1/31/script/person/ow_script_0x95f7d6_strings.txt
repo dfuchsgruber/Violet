@@ -1,3 +1,0 @@
-.string str_0x95f7e0 GER
-	=Im_Aschhain_lebt_ein_alter_Mann,\nder_aus_Asche_Fl\$oeten_herstellen\lkann.\pEs_hei\$st,_dass_er_der_Sch\$ueler\neines_Meisters_aus_Hoenn_ist.
-.end

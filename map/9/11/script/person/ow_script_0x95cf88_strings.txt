@@ -1,3 +1,0 @@
-.string str_0x95cf92 GER
-	=Dass_meine_Frau_ihren_Vater_bei\nuns_wohnen_l\$aesst,_st\$oert_mich\lprinzipiell_zwar_nicht...\pAber_diese_schrecklichen\nLebensweisheiten,_mit_denen_er_die\lFamilie_bei_Langeweile_h\$aelt...
-.end

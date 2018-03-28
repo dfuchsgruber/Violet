@@ -1,3 +1,0 @@
-.string str_0x931aaa GER
-	=Manus,_aus_Meriana_City,_verkehrt\ndes_\$OEfteren_hier.\pWas_er_hier_treibt?_Keinen_blassen\nSchimmer.\pLegal_ist_es_auf_jeden_Fall_nicht!
-.end

@@ -32,3 +32,21 @@ ow_script_0x9554d7:
 closeonkeypress
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x9553a2
+
+str_0x9553a2:
+    .string "PLAYER nutzt die Zugangskarte.\nWähle ein Stockwerk."
+        
+        
+.global str_0x95544f
+
+str_0x95544f:
+    .string "Du befindest dich bereits in\ndiesem Stockwerk."
+        
+        
+.elseif LANG_EN
+
+.endif

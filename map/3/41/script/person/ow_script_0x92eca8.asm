@@ -50,3 +50,33 @@ setvar 0x8001 0x14
 setvar 0x8002 0xe
 special 0x6
 return
+
+
+.ifdef LANG_GER
+.global str_0x8e225d
+
+str_0x8e225d:
+    .string "Sei gegrüßt, junger Trainer.\nLass mich dir etwas über unsere\lWelt erzählen, wenn du erlaubst.\lLass mich deinen Horizont\lerweitern."
+        
+        
+.global str_0x8e1e69
+
+str_0x8e1e69:
+    .string "Du musst wissen, dass sich in\nTheto einst die fünf mächtigsten\laller Trainer vereint hatten, um\ldem Kontinent Stabilität und\lIntegrität zu verschaffen.\lSo entstand ein Herrschaftssystem,\lan dessen Spitze der Champion\lsteht. Ihm untergeordnet sind die\lTop Vier, mächtige Trainer, unter\ldenen das Gebiet Theto aufgeteilt\lwurde. Jeder von ihnen beherrscht\leinen Teil.\pDie Top Vier, die derzeit\nregieren, sind \Der Pinke\, \Die\lBlaue\, \Die Violette\ und \Der\lSchwarze\.\pNun rivalisieren diese vier aber\num die Vorherrschaft, sie sind\luntereinander teils sogar\lverfeindet. Die Bevölkerung sind\ldie leidtragenden. Korruption,\lAusbeutung und Unterdrückung sind\ldie Resultate dieses Systems,\lwelches von der Polizei geschützt\lwird.\pSag mir, ist es nicht die eines\njeden Menschen Aufgabe, sich gegen\ldie Missstände aufzulehnen?\pIch bin ein Revolutionär und\nkämpfe für Gerechtigkeit. Die Welt\lsieht uns als Verbrecher, doch\lsind wir in Wahrheit Erlöser."
+        
+        
+.global str_0x8de830
+
+str_0x8de830:
+    .string "Es wird eine Zeit kommen, sich zu\nentscheiden, zwischen den Top Vier\lund der Revolution.\pEgal, welchen Entschluss du auch\nfasst, folge deinem Gewissen.\lDas wollte ich dir mit auf den Weg\lgeben, junger Trainer, in der\lHoffnung, es möge dich erleuchten."
+        
+        
+.global str_0x9312b4
+
+str_0x9312b4:
+    .string "Nun, du musst dir deiner\nEntscheidungen bewusst sein...\pKomm jederzeit zu mir, wenn du es\ndir anders überlegt hast."
+        
+        
+.elseif LANG_EN
+
+.endif

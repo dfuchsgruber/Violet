@@ -1,3 +1,0 @@
-.string str_0x94def6 GER
-	=Mann:_Cecilia,_du_bist_die_W\$aerme\nund_das_Licht_in_meinem_Leben.\lOhne_dich_herrscht_Winter_in\lmeinem_Herzen_und_ich_will_keine\lSekunde_mehr_frieren_m\$uessen_f\$uer\lden_Rest_meines_Lebens.\l...\pWillst_du_meine_Frau_werden?\pFrau:_Oh,_das_kommt_...\n\$ueberraschend...\pMann:_Was_soll_das_hei\$sen?
-.end

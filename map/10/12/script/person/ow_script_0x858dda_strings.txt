@@ -1,3 +1,0 @@
-.string str_0x965fe1 GER
-	=Ich_traue_mich_nicht,_den_Vulkan\nzu_besteigen...\pWas,_wenn_er_gerade_dann\nausbricht,_w\$aehrend_ich_vor_dem\lSchlot_stehe?
-.end

@@ -1,3 +1,0 @@
-.string str_0x8ca6c5 GER
-	=Ah,_\b\01._Du_hast_also_zum_Tempel\ngefunden.\lFr\$ueher_einmal_war_dieser_Ort_ein\lriesiges_Bauwerk,_doch_hat_die\lWelle_den_Tempel_nahezu_zerst\$oert.\lGemeinsam_mit_Manus_aus_Meriana\lCity_habe_ich_im_Untergrund_eine\lKampfarena_errichtet._Wir_sehen\luns_dort.
-.end

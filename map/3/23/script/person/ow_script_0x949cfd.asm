@@ -192,3 +192,87 @@ ow_script_0x94ba17:
 loadpointer 0x0 str_0x94ba21
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x94b8ae
+
+str_0x94b8ae:
+    .string "Ich bin ein Priester des\nhimmlischen Volkes.\pWir sind eine traditionsreiche\nNation, musst du wissen.\pWir beherrschen die geheime Kunst\ndes Wolkenwebens.\pMenschen können auf gewobenen\nWolken in die Lüfte steigen und\lfliegen.\p... ...\pDu willst eine gewobene Wolke\nbesitzen?\pTut mir leid, aber ich kann dir\nnicht ohne Weiteres etwas\lderartiges nicht überlassen."
+        
+        
+.global str_0x949ddc
+
+str_0x949ddc:
+    .string "Allerdings...\n...\pWeißt du, Professor Tann, ein\nArchäologe hat ein wertvolles\lArtefakt unseres Volkes entdeckt.\pAnstatt es uns aber zu geben, hat\ner es dem Museum von Orina City\lübergeben.\pWenn du uns dieses Artefakt\nwiederbeschaffst...\pHast du deine Treue gegenüber dem\nhimmlischen Volk bewiesen und ich\lwerde dir eine gewobene Wolke\lvermachen."
+        
+        
+.global str_0x94c615
+
+str_0x94c615:
+    .string "Oh? Du hast das Wolkenherz\ntatsächlich mitgebracht?\pIch muss mich vielmals bei dir\nbedanken, du bist ein Held.\pNun kann ich dir die gewobene\nWolke mit gutem Herzen\lüberreichen."
+        
+        
+.global str_0x94bc55
+
+str_0x94bc55:
+    .string "PLAYER hat eine\ngewobene Wolke erhalten."
+        
+        
+.global str_0x94ba96
+
+str_0x94ba96:
+    .string "Das Wolkenherz ist ein heiliges\nRelikt, das von Rechtswegen her\ldem Volk der Wolkenmenschen\lgehören muss.\pDie gewobene Wolke ist als\nBelohnung nur fair."
+        
+        
+.global str_0x94c596
+
+str_0x94c596:
+    .string "Du kannst auf einer gewobenen\nWolke auch reiten, als wäre sie\lein Fahrad oder ein Skateboard."
+        
+        
+.global str_0x94ba21
+
+str_0x94ba21:
+    .string "Wenn du am Boden den Schatten\neiner tieffliegenden Wolke siehst,\lkannst du auf deiner gewobenen\lWolke emporsteigen."
+        
+        
+.global str_0x94be36
+
+str_0x94be36:
+    .string "Was ist das?\nEs hört sich an wie Ruf eines\lAltarias!"
+        
+        
+.global str_0x94bdbf
+
+str_0x94bdbf:
+    .string "Das ist... das ist ...\nEin goldenes Altaria!\lDass ich das mit meinen eigenen\lAugen bewundern darf!"
+        
+        
+.global str_0x94bd31
+
+str_0x94bd31:
+    .string "Es ... es will dir etwas sagen!\nDas goldene Altaria spricht mit\ldir...\pIch werde es übersetzten, ich kann\ndie Sprache der Wolken verstehen."
+        
+        
+.global str_0x94bc7f
+
+str_0x94bc7f:
+    .string "Das goldene Altaria sagt, du\nhättest sein Ei beschützt, in\leiner Mühle auf Route 3.\pEs will dir seinen Dank\naussprechen und dir...\pEine von ihm selbst gewobene\nWolke schenken!"
+        
+        
+.global str_0x94bf95
+
+str_0x94bf95:
+    .string "Das Altaria möchte sich\nverabschieden, es wird wieder in\ldie unendlichen Weiten\ldavongleiten."
+        
+        
+.global str_0x94bb88
+
+str_0x94bb88:
+    .string "Du bist ein wahrer Glückspliz.\nNur wenige Menschen besitzen eine\lgewobene Wolke und noch weniger\leine, die von einem Altaria selbst\lgeschaffen wurde.\pDanke, dass ich diesen Augenblick\nmiterleben durfte!"
+        
+        
+.elseif LANG_EN
+
+.endif

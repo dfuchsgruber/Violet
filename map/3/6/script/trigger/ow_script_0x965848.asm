@@ -27,3 +27,15 @@ addvar STORY_PROGRESS 0x1
 setworldmapflag WM_INFERIOR
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x963705
+
+str_0x963705:
+    .string "Hallo PLAYER.\nDas hier ist mein Reich, die Welt\lder Flammen und der aufstrebenden\lGemüter und Geister.\pAber lass uns keine Zeit\nverlieren.\pDie Rüpel aus dieser Stadt zu\nvertreiben, wird nichts nützen,\lsolange Mistral noch immer in der\lNähe ist.\pWir sollten den Volcano erklimmen\nund ihn dort stellen.\pFolge mir einfach, wenn du bereit\nbist, aber beeile dich."
+        
+        
+.elseif LANG_EN
+
+.endif

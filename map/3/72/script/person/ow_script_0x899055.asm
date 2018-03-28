@@ -16,3 +16,14 @@ setvar 0x8000 0x1
 setvar 0x8001 0x8
 special 0x6
 return
+
+.ifdef LANG_GER
+.global str_0x89f18d
+
+str_0x89f18d:
+    .string "Oh... ich habe kein gutes\nGefühl bei dem Test..."
+        
+        
+.elseif LANG_EN
+
+.endif

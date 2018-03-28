@@ -1,0 +1,6 @@
+#define POCKET_NONE 0x0
+#define POCKET_ITEMS 0x1
+#define POCKET_KEY_ITEMS 0x2
+#define POCKET_POKEBALLS 0x3
+#define POCKET_TM_HM 0x4
+#define POCKET_BERRIES 0x5

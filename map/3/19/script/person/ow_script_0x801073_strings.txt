@@ -1,3 +1,0 @@
-.string str_0x804215 GER
-	=Ich_bin_kein_Trainer._Da_ich_kein\nPok\emon_besitze,_k\$oennen_wir_auch\lnicht_k\$aempfen.
-.end

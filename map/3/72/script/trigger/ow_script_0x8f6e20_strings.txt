@@ -1,3 +1,0 @@
-.string str_0x89d64f GER
-	=Die_praktische_Pr\$uefung_wird_jeden\nMoment_beginnen._Ich_sollte_auf\lden_Pausenhof_gehen.
-.end

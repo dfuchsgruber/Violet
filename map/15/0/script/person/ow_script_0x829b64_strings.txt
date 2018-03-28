@@ -1,8 +1,0 @@
-.string str_0x8bf98a GER
-	=Es_wird_wohl_sicher_noch_eine\nWeile_dauern,_bis_wir_diese_ganzen\lVoltilamm_wieder_eingez\$aeunt_haben.
-.end
-
-
-.string str_0x8bf8d8 GER
-	=Wir_z\$uechten_alle_Arten_von\nPok\emon._Allen_voran_V\$oegel_und\lVoltilamm._Wenn_wie_sie_scheren,\lk\$oennen_wir_die_Wolle_teuer\lverkaufen._Und_Elektrizit\$aet\lstellen_sie_auch_noch_bereit.
-.end

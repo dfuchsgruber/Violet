@@ -31,3 +31,21 @@ loadpointer 0x0 str_0x86d584
 callstd MSG
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x86d444
+
+str_0x86d444:
+    .string "PLAYER! Freut mich, dich zu\nsehen. Im Namen der Stadt INFERIOR\lund der ganzen Region möchte ich\ldir für deine Unterstützung am\lVULCANO danken. Ich bin\lzuversichtlich, dass du es schaffen\lwirst, den Orden zu erinngen. Wenn\ldu aber glaubst, ich würde nicht\lalles geben, dann irrst du dich,\lkomm mit mir!"
+        
+        
+.global str_0x86d584
+
+str_0x86d584:
+    .string "Das war der heißeste Kampf meines\nLebens!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,8 +1,0 @@
-.string str_0x81b37f GER
-	=Hallo!_Lass_mich_raten,_du_willst\neinige_Tipps_f\$uer_die_Arena?\lNun,_diese_Arena_spezialisiert_sich\lauf_Plfanzen_Pok\emon._Der_Leiter\lMIA_benutzt_sie_eindrucksvoll._Am\lbesten_kannst_du_ihr_mit_Flug_oder\lFeuer_Pok\emon_begegnen.
-.end
-
-
-.string str_0x81b354 GER
-	=Ich_wusste,_dass_du_MIA_schlagen\nkannst.
-.end

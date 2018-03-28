@@ -280,3 +280,81 @@ ow_script_0x8a7011:
 applymovement 0x52 ow_script_movs_0x8a701d
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8a7134
+
+str_0x8a7134:
+    .string "Team Violet Rüpel: Wenn du uns\nnicht sagst, was wir wissen\lwollen, dann wirst du uns\lkennenlernen!"
+        
+        
+.global str_0x8a70a9
+
+str_0x8a70a9:
+    .string "Professor  Ich habe doch\nschon mehrfach betont, dass ich\lnichts über einen Zeitstein\lweiß. Ich bin lediglich ein\lArcheologe..."
+        
+        
+.global str_0x8a7027
+
+str_0x8a7027:
+    .string "Team Violet Rüpel: Das kaufen wir\ndir aber nicht ab! Los jetzt! Du\lweißt sicherlich, wo er vergraben\lliegt!"
+        
+        
+.global str_0x8a6f8a
+
+str_0x8a6f8a:
+    .string "PLAYER! Du bist auch schon hier?\nIch habe mitbekommen, dass diese\lkomischen Leute in Violet meinem\lVater zusetzten wollen."
+        
+        
+.global str_0x8a6f16
+
+str_0x8a6f16:
+    .string "Oh nein, diese Leute sind auch\nschon hier! Wir müssen diesen\lVerbrechern das Handwerk legen.\lLos beeilen wir uns!"
+        
+        
+.global str_0x8a6bac
+
+str_0x8a6bac:
+    .string "Hey, ihr da, von Team Violet! Hört\nsofort auf, den Professor zu\lbelästigen!"
+        
+        
+.global str_0x8a6b82
+
+str_0x8a6b82:
+    .string "RIVAL! PLAYER!\nArceus sei Dank, seid ihr hier!"
+        
+        
+.global str_0x8a6bfa
+
+str_0x8a6bfa:
+    .string "Team Violet Rüpel: Hey, das ist\nder Junge, der mich auf dem Weg\lhierher besiegt hat!\lTeam Violet Rüpel: Ja, mich hat er\lauch geschlagen...\lTeam Violet Rüpel: Dann werde ich\lwohl derjenige sein, der ihn\lbesiegt! Kommt her, ihr beiden\lRotzlöffel. Man muss euch wohl\lRespekt vor der Obrigkeit\lbeibringen!"
+        
+        
+.global str_0x8a6b0d
+
+str_0x8a6b0d:
+    .string "PLAYER, jeder von uns schnappt\nsich einen dieser Rüpel. Wer\lzuerst gewinnt, darf den Dritten\lin die Mangel nehmen, ok?"
+        
+        
+.global str_0x8a6ac8
+
+str_0x8a6ac8:
+    .string "Abgemacht, RIVAL!\nWir müssen deinen Vater vor diesen\lSchurken retten!"
+        
+        
+.global str_0x8a69df
+
+str_0x8a69df:
+    .string "Was meine beiden Kollegen nicht\nauf die Reihe gebracht haben,\lwerde ich nun schaffen. Wenn wir\lerst den Zeitstein in unserer\lGewalt haben, wird die Welt vor\lunserer Macht erzittern!"
+        
+        
+.global str_0x8a6a97
+
+str_0x8a6a97:
+    .string "Du bist in der Tat ein zähes\nBürschchen..."
+        
+        
+.elseif LANG_EN
+
+.endif

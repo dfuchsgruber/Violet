@@ -1,8 +1,0 @@
-.string str_0x922d48 GER
-	=Mit_meinen_Psychokr\$aeften_kann_ich\ndie_T\$aeuschungen_der_Fata_Morganas\lleicht_bezwingen!
-.end
-
-
-.string str_0x926a50 GER
-	=Ich_kann_Traum_von_Wirklichkeit\nunterscheiden,_aber_den_Kampf\lkonnte_ich_nicht_gewinnen.
-.end

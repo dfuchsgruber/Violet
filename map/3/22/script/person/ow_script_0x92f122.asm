@@ -13,3 +13,15 @@ clearflag TRANS_DISABLE
 loadpointer 0x0 str_0x92f13e
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x92f13e
+
+str_0x92f13e:
+    .string "g"
+        
+        
+.elseif LANG_EN
+
+.endif

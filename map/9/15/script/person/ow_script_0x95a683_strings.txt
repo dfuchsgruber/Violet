@@ -1,3 +1,0 @@
-.string str_0x95c65d GER
-	=Die_Fossilforschung_mag_vielen\nsteintrocken_erscheinen.\pTats\$aechlich_sind_wir_aber_den\nAnf\$aengen_der_Mensch-Pok\emon\lGeschichte_auf_der_Spur.
-.end

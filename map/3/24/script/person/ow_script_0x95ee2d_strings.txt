@@ -1,3 +1,0 @@
-.string str_0x95ee37 GER
-	=Ich_w\$uerde_mir_gut_\$ueberlegen,_ob\nich_weiter_nach_Westen_gehe...\pEs_hei\$st,_dass_die_Hitze_des\nVulcano_einem_das_Hirn_versengt...
-.end

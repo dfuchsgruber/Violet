@@ -1,3 +1,0 @@
-.string str_0x8ecc17 GER
-	=Der_westliche_Teil_Thetos_wird_vom\n\$aeltesten_der_Top_Vier_regiert.
-.end

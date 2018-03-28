@@ -1,3 +1,0 @@
-.string str_0x94e744 GER
-	=Verkatert_und_pleite...\nIch_f\$uehle_mich_fast_wieder_wie_ein\lStudent...
-.end

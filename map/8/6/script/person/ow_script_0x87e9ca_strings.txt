@@ -1,3 +1,0 @@
-.string str_0x87f1e8 GER
-	=Ich_liebe_den_Regen,_wenn_er_auf\ndas_Dach_niederprasst_und_dabei\lgem\$uetlich_knattert.
-.end

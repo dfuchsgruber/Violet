@@ -1,3 +1,0 @@
-.string str_0x94982e GER
-	=Hast_du_je_von_der_Laz.Corp\ngeh\$oert?\pSie_ist_f\$uer_den_rapiden\ntechnischen_Fortschritt_unserer\lZeit_verantwortlich!
-.end

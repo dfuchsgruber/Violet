@@ -88,3 +88,75 @@ ow_script_0x935b66:
 loadpointer 0x0 str_0x9366ff
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x93674c
+
+str_0x93674c:
+    .string "Oh hallo!\pHast du Lust auf kleines lustiges\nSpielchen mit einem alten Herren?"
+        
+        
+.global str_0x935fb2
+
+str_0x935fb2:
+    .string "Lass mich das Spielchen erklären.\pIch habe hier 20 Murmeln, wir\nbeide nehmen abwechselnd entweder\leine, zwei oder drei Murmeln.\pDer Spieler, der die letzte Murmel\nan sich nimmt, gewinnt das Spiel.\pSimpel, nicht?\pWenn du gewinnst, zahle ich dir\n50 000POKEDOLLAR, anderenfalls schuldest\ldu mir 5 000POKEDOLLAR.\pWas sagst du?"
+        
+        
+.global str_0x935a97
+
+str_0x935a97:
+    .string "Gut, ich bin so freundlich und\nlasse dir den Vortritt."
+        
+        
+.global str_0x935a60
+
+str_0x935a60:
+    .string "BUFFER_1 Murmeln verbleiben.\nWie viele möchtest du nehmen?"
+        
+        
+.global str_blackmarket_1
+
+str_blackmarket_1:
+    .string "Eine"
+        
+        
+.global str_blackmarket_2
+
+str_blackmarket_2:
+    .string "Zwei"
+        
+        
+.global str_blackmarket_3
+
+str_blackmarket_3:
+    .string "Drei"
+        
+        
+.global str_0x933e82
+
+str_0x933e82:
+    .string "Na dann werde ich ... äh ...\nBUFFER_1 Murmeln nehmen, denke ich."
+        
+        
+.global str_0x933e28
+
+str_0x933e28:
+    .string "Oh, was ein Pech!\pSieht so aus, als hättest du\nverloren!\pDas tut mir aufrichtig leid..."
+        
+        
+.global str_0x935ada
+
+str_0x935ada:
+    .string "Du hast ja nicht einmal genügend\nGeld, deine Schulden zu zahlen!"
+        
+        
+.global str_0x9366ff
+
+str_0x9366ff:
+    .string "Oh, das ist aber schade!\nDu hast wohl Angst, gegen mich zu\lverlieren, was?"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,8 +1,0 @@
-.string str_0x8a5bb9 GER
-	=Die_Wundertausch-App_wurde\naktiviert.\pM\$oechtest_du_einen_Wundertausch\ndurchf\$uehren?
-.end
-
-
-.string str_0x8fad70 GER
-	=Die_Batterie_des_Wundertauschs\nbetr\$aegt_\b\02/250.\pHab_noch_etwas_Geduld!
-.end

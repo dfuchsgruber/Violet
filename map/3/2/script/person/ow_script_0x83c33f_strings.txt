@@ -1,3 +1,0 @@
-.string str_0x8c0c34 GER
-	=Man_hat_mir_gesagt,_dass_es_viele\nWingulls_zu_sehen_gebe,_auf_dieser\lregnerischen_Insel.\pOb_man_mich_vereppelt_hat?_Das\neinzige_weit_und_breit_sind\lschwarze_Wolken_\$ueber_uns_und_keine\lV\$oegel!
-.end

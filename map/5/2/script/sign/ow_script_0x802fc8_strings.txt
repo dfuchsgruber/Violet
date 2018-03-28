@@ -1,3 +1,0 @@
-.string str_0x80eb27 GER
-	=Ein_Fernsehbericht_\$ueber_Theto_vor\n\$ueber_1000_Jahren!_Wie_interessant!
-.end

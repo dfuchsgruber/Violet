@@ -7,3 +7,15 @@ ow_script_0x84c6b9:
 loadpointer 0x0 str_0x84c6c3
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x84c6c3
+
+str_0x84c6c3:
+    .string "Zzz... Schnarch ...\nGraaäh... Zzz... Zzz..."
+        
+        
+.elseif LANG_EN
+
+.endif

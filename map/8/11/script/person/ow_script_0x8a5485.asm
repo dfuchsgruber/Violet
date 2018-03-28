@@ -66,3 +66,21 @@ buffernumber 0x0 0x50e2
 loadpointer 0x0 str_0x8fad70
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x8a5bb9
+
+str_0x8a5bb9:
+    .string "Die Wundertausch-App wurde\naktiviert.\pMöchtest du einen Wundertausch\ndurchführen?"
+        
+        
+.global str_0x8fad70
+
+str_0x8fad70:
+    .string "Die Batterie des Wundertauschs\nbeträgt BUFFER_1/250.\pHab noch etwas Geduld!"
+        
+        
+.elseif LANG_EN
+
+.endif

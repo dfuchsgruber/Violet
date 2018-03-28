@@ -1,8 +1,0 @@
-.string str_0x95e0ac GER
-	=Du_willst_k\$aempfen?\nBeschwer_dich_aber_hinterher\lnicht,_dass_du_dich_verbrannt\lh\$aettest!
-.end
-
-
-.string str_0x95e105 GER
-	=Au!_Au!_Hei\$s!
-.end

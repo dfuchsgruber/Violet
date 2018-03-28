@@ -32,3 +32,15 @@ ow_script_0x86ef25:
 loadpointer 0x0 str_0x971e6a
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x971e6a
+
+str_0x971e6a:
+    .string "Hallo, ich bin Wodka, der\nEntwickler des Spiels.\pWenn du deinen Spielstand auf eine\nneue Version deines Spiels bringen\lwillst, musst du dafür folgendes\ltun:\pZuerst erstellst du eine ROM mit\nder aktuellsten Version von\lPokémon Violet. Dabei folgst du\lden Anweisungen in der README.txt\lDatei.\pWichtig ist, dass du eine\nungepatchte deutsche Feuerrot ROM\lbenutzt.\pDann ersetzt du die derzeitig\nbenutze ROM mit der neu gepatchten\lund sprichst mich wieder an."
+        
+        
+.elseif LANG_EN
+
+.endif

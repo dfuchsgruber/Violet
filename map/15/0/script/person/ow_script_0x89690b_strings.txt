@@ -1,8 +1,0 @@
-.string str_0x89837f GER
-	=Mach_dich_auf_was_gefasst!_Meine\nPok\emon_sind_s\$ue\$s_und_gef\$aehrlich!
-.end
-
-
-.string str_0x89989f GER
-	=Vielleicht_sind_meine_Pok\emon_auch\ndoch_nur_s\$ue\$s...
-.end

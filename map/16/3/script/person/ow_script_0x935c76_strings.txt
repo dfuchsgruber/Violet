@@ -1,8 +1,0 @@
-.string str_0x9376da GER
-	=Hieb_und_Schlag!\nWie_ich's_mag!\lTritt_und_Kick!\lHalten_mich_fit!
-.end
-
-
-.string str_0x93771d GER
-	=Wie,_was_schon_aus?\nHast'_einiges_drauf!\lIch_lern_dazu!\lKarate!_Kung_Fu!
-.end

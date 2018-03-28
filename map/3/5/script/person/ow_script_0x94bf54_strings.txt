@@ -1,3 +1,0 @@
-.string str_0x94dc4d GER
-	=Selbst_nach_den_vielen_Jahren,_die\nich_nun_in_Orina_City_lebe,_bin\lich_von_den_Hochhausschluchten\lnoch_immmer_fasziniert.
-.end

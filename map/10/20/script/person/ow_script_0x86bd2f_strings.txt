@@ -1,3 +1,0 @@
-.string str_0x965b49 GER
-	=Feuerpok\emon_haben_in_diesem_Haus\nkeinen_Zutritt.\pWas_soll_sonst_aus_der\nHolzm\$oeblierung_werden?
-.end

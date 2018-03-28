@@ -1,3 +1,0 @@
-.string str_0x8c8aec GER
-	=Der_Untergrund-Markt_ist\nunantastbar.\pWenn_man_den_Ger\$uechten_glaubt,\nsteht_an_seiner_Spitze_ein\lMitglied_der_Top_Vier_selbst.
-.end

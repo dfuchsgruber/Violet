@@ -1,3 +1,0 @@
-.string str_0x95ef3e GER
-	=Westen:_Route_6\nOsten:_Orina_City
-.end

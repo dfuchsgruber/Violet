@@ -26,3 +26,15 @@ fadescreen 0x1
 hidesprite 0x800f
 fadescreen 0x0
 end
+
+
+.ifdef LANG_GER
+.global str_0x81c4e9
+
+str_0x81c4e9:
+    .string "koo"
+        
+        
+.elseif LANG_EN
+
+.endif

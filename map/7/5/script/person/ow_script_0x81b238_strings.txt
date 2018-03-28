@@ -1,8 +1,0 @@
-.string str_0x81b250 GER
-	=An_den_Hecken_hier_wachsen_manchmal\nsogar_rote_Beeren!
-.end
-
-
-.string str_0x81b289 GER
-	=Erz\$aehl_es_nicht_Mia,_aber_manchmal\nesse_ich_diese_Beeren,_wenn_ich\lhungrig_werde.
-.end

@@ -1,8 +1,0 @@
-.string str_0x9661e8 GER
-	=Ah,_Mistral_hatte_uns_vor_dir\ngewarnt.\pDerjenige,_der_dich_ausschaltet,\nerh\$aelt_eine_Bef\$oerderung.\lIch_bin_wohl_der_Gl\$ueckliche!
-.end
-
-
-.string str_0x966268 GER
-	=Oje!_Keine_Bef\$oerderung_f\$uer_mich...
-.end

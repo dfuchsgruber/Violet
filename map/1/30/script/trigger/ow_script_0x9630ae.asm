@@ -74,3 +74,21 @@ sound 0x96
 applymovement 0x9 ow_script_movs_0x94be33
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x963098
+
+str_0x963098:
+    .string "Grueeeeh! ..."
+        
+        
+.global str_0x96305b
+
+str_0x96305b:
+    .string "Gyahhh! Gyaaaaahhhhh!"
+        
+        
+.elseif LANG_EN
+
+.endif

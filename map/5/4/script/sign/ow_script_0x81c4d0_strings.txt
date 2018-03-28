@@ -1,3 +1,0 @@
-.string str_0x8772e2 GER
-	=Dieses_Feature_ist_in_der_Version\nnoch_nicht_implementiert.
-.end

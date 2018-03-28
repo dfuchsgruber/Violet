@@ -132,3 +132,21 @@ ow_script_0x8a1323:
 applymovement 0x1 ow_script_movs_0x8a132f
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8869ab
+
+str_0x8869ab:
+    .string "Hallo! Du siehst mir aus wie ein\nTrainer, bist aber offensichtlich\lnoch grün hinter den Ohren. Keine\lSorge, mit etwas Übung wird das\lschon. Komm mit, ich erkläre dir\ldie Welt, die sich dir als Trainer\leröffnet."
+        
+        
+.global str_0x886a80
+
+str_0x886a80:
+    .string "Diesen Ort nennt man Pokestop.\nJeder Trainer hat sozusagen die\lPflicht dort vorbeizuschauen,\lsobald er eine neue Stadt\lerreicht. Komm, gehen wir hinein."
+        
+        
+.elseif LANG_EN
+
+.endif

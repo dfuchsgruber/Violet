@@ -1,3 +1,0 @@
-.string str_0x95e61e GER
-	=Es_ist_schon_faszinierend,_dass\ndas_Pok\eradar_selbst_unter_den\lwidrigen_Bedingungen_hier_noch\leinwandfrei_funktioniert.
-.end

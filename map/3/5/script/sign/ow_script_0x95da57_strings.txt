@@ -1,3 +1,0 @@
-.string str_0x95da61 GER
-	=Haus_des_Attacken-Erinnerers
-.end

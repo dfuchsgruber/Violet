@@ -1,3 +1,0 @@
-.string str_0x8ef978 GER
-	=Team_Violet_rekrutiert_in_der\nganzen_Region_Mitglieder._Sie\lversprechen_einem,_Teil_von_etwas\lgro\$sem,_bedeutendem_zu_sein.
-.end

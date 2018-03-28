@@ -1,3 +1,0 @@
-.string str_0x94560d GER
-	=a
-.end

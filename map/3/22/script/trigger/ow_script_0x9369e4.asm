@@ -75,3 +75,33 @@ setvar 0x8001 0x2
 setvar 0x8002 0xe
 special 0x6
 return
+
+
+.ifdef LANG_GER
+.global str_0x936bf6
+
+str_0x936bf6:
+    .string "... ... Du ...\n... ... ... ..."
+        
+        
+.global str_0x936ba2
+
+str_0x936ba2:
+    .string "Du hast das auch gespürt,\nnicht?\pDu bist so gar nicht wie all die\nanderen..."
+        
+        
+.global str_0x936c2f
+
+str_0x936c2f:
+    .string "Erlaube mir, mich vorzustellen.\pMein Name ist Mistral, und ich bin\n... ein Suchender, so würde ich es\lnennen.\pIch suche nach einer Bestimmung,\neinem Sinn und einer Aufgabe.\pEtwas in dieser Welt, das mich\ngrößer macht, das mich erhöht.\p... ...\n... ...\pHast du je von den drei legendären\nTrainern gehört?\pIch werde es dir erzählen."
+        
+        
+.global str_0x937369
+
+str_0x937369:
+    .string "Die drei legendären Trainer haben\nsich wahrlich einen Namen gemacht.\nUnd ich werde ihnen nachfolgen.\pMein Interesse gilt den legendären\nPokémon und ihrer Macht.\pUnd ich bin durch und durch\nPragmat. Ich werde vor nichts\lzurückschrecken, um diese Macht zu\lerlangen...\pIch weiß nicht, wieso ich dir all\ndas erzähle, aber ich spüre eine\lVerbindung unserer Schicksale...\pDabei bin ich nicht einmal\nüberzeugt, ob es etwas wie das\lSchicksal wirklich gibt...\pVerrätst du mir noch deinen Namen?\n...\pPLAYER, also.\pIn dir lodert das selbe Feuer wie\nin meiner Seele.\pDu bist ebenso ambitioniert wie\nich.\pIrgendwann in naher Zukunft werden\nwir kämpfen.\pBis dahin will ich, dass du zu\neiner Herausforderung wirst.\lVersprich mir das."
+        
+        
+.elseif LANG_EN
+
+.endif

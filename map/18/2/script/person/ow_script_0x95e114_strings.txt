@@ -1,3 +1,0 @@
-.string str_0x95e11e GER
-	=Weiter_westw\$aerts_kommst_du_zum_Fu\$s\ndes_Volcanos,_einem_aktiven\lVulkan.\pDass_jemand_dort_eine_Stadt\nerrichtet_hat,_erscheint_mir_sehr\lfragw\$uerdig...
-.end

@@ -1,3 +1,0 @@
-.string str_0x94e243 GER
-	=Die_Technologie,_die_in_der\nLaz.Corp_entwickelt_wird,_ist\lihrer_Zeit_ein_halbes_Jahrhundert\lvorraus.
-.end

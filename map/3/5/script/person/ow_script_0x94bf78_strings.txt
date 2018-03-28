@@ -1,3 +1,0 @@
-.string str_0x94de8d GER
-	=Ich_halte_Ausschau_nach\nzwielichten_Gestalten!\pWenn_ich_einen_Verbrecher\nergreife,_werde_ich_bef\$oerdert!
-.end

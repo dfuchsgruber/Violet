@@ -1,3 +1,0 @@
-.string str_0x926e0c GER
-	=Ich_vermisse_die_alten_Zeiten...\pVor_den_Top_Vier...\pAls_die_Welt_noch_voller_Abenteuer\nwar...\pJetzt_bleibt_mir_noch_das_Rauschen\nder_Wasserf\$aelle...\pUnd_die_Erinnerungen...
-.end

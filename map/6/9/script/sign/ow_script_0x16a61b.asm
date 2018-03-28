@@ -19,3 +19,21 @@ loadpointer 0x0 str_0x193aaf
 callstd MSG_KEEPOPEN
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x193a74
+
+str_0x193a74:
+    .string "MARMORIA  ROCKO\pBISHERIGE SIEGER:\nRIVAL"
+        
+        
+.global str_0x193aaf
+
+str_0x193aaf:
+    .string "MARMORIA  ROCKO\pBISHERIGE SIEGER:\nRIVAL, PLAYER"
+        
+        
+.elseif LANG_EN
+
+.endif

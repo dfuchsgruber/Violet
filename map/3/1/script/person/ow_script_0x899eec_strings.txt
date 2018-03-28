@@ -1,3 +1,0 @@
-.string str_0x8a2858 GER
-	=Der_Wassertunnel_ist_eingst\$uerzt.\nDer_Arenaleiter_Manus\larbeitet_derzeit_an_seiner\lReperatur,_bitte_gedulde_dich.
-.end

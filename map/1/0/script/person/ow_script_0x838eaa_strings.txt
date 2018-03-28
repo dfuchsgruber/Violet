@@ -1,8 +1,0 @@
-.string str_0x88ae2e GER
-	=Ich_will_nicht_in_die_Schule\ngehen!_Unterricht_ist_so_\$oede!
-.end
-
-
-.string str_0x8e6b0e GER
-	=In_der_Schule_h\$aette_ich_bestimmt\ngelernt,_dich_zu_besiegen!
-.end

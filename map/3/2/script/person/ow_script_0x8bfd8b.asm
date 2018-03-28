@@ -37,3 +37,33 @@ ow_script_0x8bfdcb:
 loadpointer 0x0 str_0x8c1179
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8c16a7
+
+str_0x8c16a7:
+    .string "Angeln! Immer zu das Angeln!\nIch liebe es!\lFindest du nicht auch, dass Angeln\lein toller Sport ist?"
+        
+        
+.global str_0x8c1201
+
+str_0x8c1201:
+    .string "Du weißt, worauf es im ankommt!\nHier, nimm das."
+        
+        
+.global str_0x8c1179
+
+str_0x8c1179:
+    .string "Wirf einfach den Köder ins Wasser,\nund warte bis etwas anbeißt.\lDie interessantesten Wasserpokemon\lbeißen an verschiedensten Orte an."
+        
+        
+.global str_0x8c1638
+
+str_0x8c1638:
+    .string "Du bist ein Ignorant! Das Angeln\nist das einzig Wahre. Komm wieder,\lwenn du deine Einstellung geändert\lhast!"
+        
+        
+.elseif LANG_EN
+
+.endif

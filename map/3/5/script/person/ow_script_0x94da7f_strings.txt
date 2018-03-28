@@ -1,3 +1,0 @@
-.string str_0x94e1bd GER
-	=Hast_du_schon_vom_Pok\epad_geh\$oert?\nEs_soll_ein_Entwicklungsprojekt\lder_Laz.Corp_sein_und_das\lTrainerdasein_f\$uer_immer\lrevolutionieren!
-.end

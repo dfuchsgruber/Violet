@@ -1,8 +1,0 @@
-.string str_0x8e658b GER
-	=Was_h\$aeltst_du_von_der\nRevolutionsbewegung?_Ich_finde_ja,\lsie_hat_in_einigen_Punkten\ldurchaus_Recht!
-.end
-
-
-.string str_0x8e65f1 GER
-	=Vielleicht_schlie\$se_ich_mich_den\nRevolution\$aeren_an!
-.end

@@ -57,3 +57,21 @@ loadpointer 0x0 str_0x1c1a48
 callstd MSG_SIGN
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x1c19e4
+
+str_0x1c19e4:
+    .string "Du kannst den Zerschneider hier\neinsetzen!\pMöchtest du den Zerschneider\neinsetzen?"
+        
+        
+.global str_0x1c1a48
+
+str_0x1c1a48:
+    .string "Der Zerschneider kann hier\neingesetzt werden."
+        
+        
+.elseif LANG_EN
+
+.endif

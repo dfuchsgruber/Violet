@@ -1,3 +1,0 @@
-.string str_0x94e011 GER
-	=Ich_bin_Teil_einer_ber\$uechtigten\nMotorrad_Gang,_den_den\lGiratina-Bikern!
-.end

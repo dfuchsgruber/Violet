@@ -1,3 +1,0 @@
-.string str_0x8f16ab GER
-	=Dieser_Brunnen_wurde_dem_sch\$oensten\naller_Pokemon_erbaut,_Milotic.\pEs_hei\$st,_dass_eines_von_ihnen_in\nden_hiesigen_Gew\$aessern_lebe.
-.end

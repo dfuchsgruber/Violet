@@ -1,3 +1,0 @@
-.string str_0x92f13e GER
-	=g
-.end

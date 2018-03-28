@@ -1,3 +1,0 @@
-.string str_0x87f23e GER
-	=Es_gen\$uegt_nicht,_Gutes_zu_tun,\nwenn_man_selbst_keine\lBeeintr\$aechtung_erf\$aehrt.\pTrotz_des_eigenen_Nachteils_im\nSinne_anderer_zu_handeln,_das_ist\lwahre_G\$uete.
-.end

@@ -40,3 +40,15 @@ setvar 0x8001 0x6
 setvar 0x8002 0xe
 special 0x6
 return
+
+
+.ifdef LANG_GER
+.global str_0x899e90
+
+str_0x899e90:
+    .string "Na los! Wir sind sowieso schon\nviel zu spät! Beeilung!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x8fb2fb GER
-	=Wusstest_du,_dass_im_Stein_antike\nPok\emon-Fossilien_konsveriert\lsind?
-.end

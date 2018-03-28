@@ -144,3 +144,51 @@ ow_script_0x8ffc6d:
 applymovement 0x800f ow_script_movs_0x8ffc79
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8eda29
+
+str_0x8eda29:
+    .string "Oh, hallo PLAYER!\pWie mir scheint, bist du auch auf\ndem Weg nach Kaskada. Aber zuerst\lerwartet dich hier eine wirklich\lgrauenvolle Wüste.\pWollen wir mal sehen, ob du mir\ngewachsen bist!"
+        
+        
+.global str_0x8edae8
+
+str_0x8edae8:
+    .string "Wieso kann ich nicht auch einmal\neinen Sieg erringen?"
+        
+        
+.global str_0x8ffbb5
+
+str_0x8ffbb5:
+    .string "Unfassbar... Ich verliere einen\nKampf nach dem anderen. Vielleicht\lhab einfach nicht das Zeug, ein\lTrainer zu sein..."
+        
+        
+.global str_0x8ffb51
+
+str_0x8ffb51:
+    .string "Lass dich nicht unterkriegen,\nMaike. Du bist weit gekommen und\lwirst es noch viel weiter bringen."
+        
+        
+.global str_0x8ff97b
+
+str_0x8ff97b:
+    .string "Ja, du hast vermutlich\nrecht. Ich darf mich nicht\lunterkriegen lassen. Mein Bruder\lwürde auf mich voller Scham\lherabblicken, wenn er mich jetzt\lso sehen würde!\p...\p...\pWie dem auch sei, die Wüste, die\nuns erwartet, ist kein Ponita-Hof.\lMan hat mir zwar gesagt, dass es\lauch einen Brunnen geben soll,\ldoch habe ich mich wegen der\lvielen Fata Morganen schnell\lverirrt.\lDu kannst dir nie sicher sein, ob\lder Weg, den du einschlägst, nicht\lin eine Sackgasse führt."
+        
+        
+.global str_0x8edd68
+
+str_0x8edd68:
+    .string "Fast hätte ich es vergessen! Mein\nBruder Brix aus Hoenn hat mir\leinige seltene Items überreicht,\ldie ich in seinem Namen an\ltalentierte Trainer aushändigen\lsoll."
+        
+        
+.global str_0x8edba7
+
+str_0x8edba7:
+    .string "Der Ep-Teiler ermöglicht es,\nPokémon zu trainieren, ohne dass\ldiese am Kampf teilnehmen müssen.\pJedes Pokémon, dass dieses Item\nträgt, erhält automatisch einen\lTeil der verdienten\lErfahrungspunkte. Ich hoffe, du\lkannst ihn gut gebrauchen.\pIch für meinen Teil aber, werde\nmich nun wieder auf den Weg\lmachen. Ich werde alles daran\lsetzten, ein besserer Trainer zu\lwerden, sodass ich eines Tages\lmeinem Bruder voller Stolz in die\lAugen blicken kann."
+        
+        
+.elseif LANG_EN
+
+.endif

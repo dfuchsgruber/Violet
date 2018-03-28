@@ -1,3 +1,0 @@
-.string str_0x93c067 GER
-	=Diese_Arena_ist_perfekt_geeignet\nzur_Mediation_und_zum_Training.\pGeist_und_K\$oerper_k\$oennen_sich_hier\nvoll_und_ganz_entfalten.
-.end

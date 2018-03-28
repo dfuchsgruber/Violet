@@ -1,8 +1,0 @@
-.string str_0x96364e GER
-	=Meine_Pok\emon_speien_Flammen_und\nwir_werden_dich_versengen!
-.end
-
-
-.string str_0x96368c GER
-	=Wuah!_Dein_Feuer_war_hei\$ser_als\ndas_meine...
-.end

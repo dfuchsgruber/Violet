@@ -1,8 +1,0 @@
-.string str_0x935bdc GER
-	=Meine_Gedanken_sind_in_der_Zukunft\nund_sehen_eine_Niederlage...
-.end
-
-
-.string str_0x935c48 GER
-	=Ich_sah_meine_eigene_Niederlage!\nWelch_Pech!
-.end

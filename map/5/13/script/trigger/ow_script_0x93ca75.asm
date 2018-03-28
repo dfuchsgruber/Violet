@@ -304,3 +304,165 @@ ow_script_0x93cadd:
 loadpointer 0x0 str_0x93caeb
 callstd MSG
 goto ow_script_0x93cd2e
+
+
+.ifdef LANG_GER
+.global str_0x93cbff
+
+str_0x93cbff:
+    .string "Halt!\nBevor du dich der Herausforderung\ldieser Arena stellst, solltest du\lwissen, wie hier gekämpft wird.\pDu kämpfst gegen vier Gegner in\nFolge und schließlich gegen Manus,\lden Arenaleiter.\pZwischen den Kämpfen erlauben wir\ndir BUFFER_1 Mal eines deiner Pokémon\lzu heilen.\pBist du damit einverstanden?"
+        
+        
+.global str_0x948a7f
+
+str_0x948a7f:
+    .string "Manus: Sieh an, du hast es also\nbis hier geschafft.\pIch wusste, dass du ein Kämpfer\nbist!\pJetzt zeig mir, wie zäh du bist?\nKannst du dich gegen meine Schläge\lverteidigen?\lUnd viel wichtiger: Kannst du\lzurückschlagen?"
+        
+        
+.global str_0x948b5a
+
+str_0x948b5a:
+    .string "Starke Sache! Nicht einmal meine\nrohe Muskelkraft konnte dich in\lzerschmettern."
+        
+        
+.global str_0x94907f
+
+str_0x94907f:
+    .string "Manus: Außerordentlich!\nDu bist so stark, wie du wirkst.\pDein verbissener Kampfstil und\ndeine Zähigkeit haben dir den Sieg\lbeschert.\pDieses dumme Mädchen im Wasserpfad\nvorhin hat genau diese wichtigen\lEigenschaften nicht.\pLass mich dir den Faustorden\nüberreichen."
+        
+        
+.global str_0x949053
+
+str_0x949053:
+    .string "PLAYER hat den Faustorden\nvon Manus erhalten."
+        
+        
+.global str_0x948eb4
+
+str_0x948eb4:
+    .string "Der Faustorden erlaubt es dir, die\nVersteckte Maschine Fliegen\laußerhalb des Kampfes einzusetzen.\pFür deine außerordentliche\nLeistung im Ring möchte ich dir\laußerdem das hier überreichen."
+        
+        
+.global str_0x948d53
+
+str_0x948d53:
+    .string "Diese Tm enthält Power-Punch,\nden mächtigsten aller Schläge!\lKeiner kann der Wucht standhalten.\pDer Preis dafür ist, dass der\nAnwender eine Runde Energien\lfokussieren muss, ohne dabei\lgetroffen zu werden.\lDu siehst, dass Raffinesse und\lStärke diesen Angriff so\leinzigartig machen.\pUnd nun Junge, verlasse den Ring\nund zeige der Welt dein\lKämpferherz!"
+        
+        
+.global str_0x948a18
+
+str_0x948a18:
+    .string "Du denkst, dass du Manus\nherausfordern kannst?\pFalsch gedacht! An mir scheitern\nsie alle schließlich!"
+        
+        
+.global str_0x948c44
+
+str_0x948c44:
+    .string "Ich ziehe mein Stirnband vor dir!\nZeig dem Boss, was du kannst!"
+        
+        
+.global str_0x93d3ca
+
+str_0x93d3ca:
+    .string "Möchtest du eines deiner Pokémon\nvor dem nächsten Kampf heilen?"
+        
+        
+.global str_0x949015
+
+str_0x949015:
+    .string "Welches Pokémon soll geheilt\nwerden?"
+        
+        
+.global str_0x948f99
+
+str_0x948f99:
+    .string "Das Pokémon wurde vollständig\ngeheilt."
+        
+        
+.global str_0x948fcc
+
+str_0x948fcc:
+    .string "Dann fahren wir einfach fort!\nMach dich bereit für den nächsten\lKampf!"
+        
+        
+.global str_0x93d4ab
+
+str_0x93d4ab:
+    .string "Fantastisch! Dein nächster Gegner\nerwartet dich schon."
+        
+        
+.global str_0x93d419
+
+str_0x93d419:
+    .string "Atemberaubend! Meisterlich!\nDu hast es geschafft, vier Kämpfe\lin Folge zu gewinnen.\lNun wird dir Leiter Manus selbst\lgegenübertreten."
+        
+        
+.global str_0x93d182
+
+str_0x93d182:
+    .string "Eines Tages werde ich Manus\nheiraten und wir werden\lwunderschöne Kämpferkinder\lbekommen!"
+        
+        
+.global str_0x93d1dd
+
+str_0x93d1dd:
+    .string "Soll das heißen, er wird meinen\nAntrag ablehnen?"
+        
+        
+.global str_0x93d0cf
+
+str_0x93d0cf:
+    .string "Manus ist niemand, der es gerne\nmit Schwachmaten aufnimmt.\lIch werde dich prüfen!"
+        
+        
+.global str_0x93d123
+
+str_0x93d123:
+    .string "Oh, du scheinst einiges auf dem\nKasten zu haben."
+        
+        
+.global str_0x93d4e4
+
+str_0x93d4e4:
+    .string "Unterschätze niemals die Tritte\neiner Frau!\lIch werde dich zermalmen!"
+        
+        
+.global str_0x93d52c
+
+str_0x93d52c:
+    .string "Was? Unmöglich!\nWie konnte ich gegen dich\lverlieren?"
+        
+        
+.global str_0x93cb85
+
+str_0x93cb85:
+    .string "Komm wieder, wenn du für diese Art\ndes Kämpfens bereit bist!"
+        
+        
+.global str_0x93cbf8
+
+str_0x93cbf8:
+    .string "kein"
+        
+        
+.global str_0x93cbf2
+
+str_0x93cbf2:
+    .string "ein"
+        
+        
+.global str_0x93cbeb
+
+str_0x93cbeb:
+    .string "zwei"
+        
+        
+.global str_0x93caeb
+
+str_0x93caeb:
+    .string "Du hast diese Arena bereits\nbezwungen, mach dich auf die Suche\lnach neuen Abenteuern anstatt\lErinnerungen nachzutrauern!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,8 +1,0 @@
-.string str_0x81fb0d GER
-	=Diese_W\$ueste_ist_die_H\$oelle,_ich_hab\nso_einen_Durst!
-.end
-
-
-.string str_0x81fb69 GER
-	=Wasser...._Wasser!!
-.end

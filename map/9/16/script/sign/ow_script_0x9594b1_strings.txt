@@ -1,3 +1,0 @@
-.string str_0x95a5b5 GER
-	=\b1Das_Wolkenherz_-_es_glitzert_in\nden_Regenbogenfarben_im_Licht\b1
-.end

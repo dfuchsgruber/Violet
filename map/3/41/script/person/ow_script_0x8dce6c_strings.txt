@@ -1,3 +1,0 @@
-.string str_0x8dce7d GER
-	=Wasser-
-.end

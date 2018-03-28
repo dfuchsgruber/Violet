@@ -1,3 +1,0 @@
-.string str_0x192a92 GER
-	=Du_kannst_den_PC_in_der_Ecke_dort\ndr\$ueben_benutzen!\pDarauf_hat_man_mich_am_Empfang\nfreundlicherweise_hingewiesen.
-.end

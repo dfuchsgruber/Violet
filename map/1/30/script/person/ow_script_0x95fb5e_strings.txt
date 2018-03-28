@@ -1,8 +1,0 @@
-.string str_0x95ff17 GER
-	=Denkst_du,_du_kannst_mich,_einen\nAss-Trainer,_so_ohne_Weiteres\lbesiegen?_Komm_schon!
-.end
-
-
-.string str_0x95ff6e GER
-	=So_ist_das_Leben,_mal_flach_und\nmal_eben.
-.end

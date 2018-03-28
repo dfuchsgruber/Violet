@@ -51,3 +51,33 @@ callstd MSG
 special 0x7
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x958549
+
+str_0x958549:
+    .string "Hallo PLAYER!\nIch will dich nicht länger auf die\lFolter spannen.\pEs ist den Forschern hier\ngelungen, ein Pokémon, das am\lComputer gestaltet wurde, in die\lRealität umzusetzten.\pSein Name ist Porygon und da ich\nvon deinen Fähigkeiten als Trainer\lviel halte, konnte ich den\lPräsidenten der Laz.Corp davon\lüberzeugen, dir ein Exemplar\lanzuvertrauen."
+        
+        
+.global str_0x958498
+
+str_0x958498:
+    .string "PLAYER hat ein Porygon erhalten."
+        
+        
+.global str_0x95839d
+
+str_0x95839d:
+    .string "Ich bin gespannt, welche\nFähigkeiten du in diesem Pokémon\lzum Vorschein bringen wirst.\p...\nNun muss ich aber wieder selbst an\ldie Arbeit.\pEs gibt da noch die ein oder\nandere Feldstudie, die für\lProfssor Tann erledigt werden\lmuss.\pWir sehen uns, PLAYER."
+        
+        
+.global str_0x9584c8
+
+str_0x9584c8:
+    .string "Wie schade, du scheinst keinen\nPlatz mehr auf deinem PC zu haben.\pKomm doch wieder, wenn du das\nPorygon entgegennehmen kannst."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x95a8da GER
-	=Hinter_der_Vitrine_liegt_ein\nFossil,_dessen_Konturen_scharf\lzu_sein_scheinen.\lDas_Fossil_ist_mit_\b1Domfossil\b1\lbetitelt.
-.end

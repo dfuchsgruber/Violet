@@ -1,8 +1,0 @@
-.string str_0x928049 GER
-	=Du_willst_dich_der_Revolution_in\nden_Weg_stellen?_Du_willst_dich\lder_Freiheit_in_den_Weg_stellen?\lDas_werde_ich_nicht_zulassen.
-.end
-
-
-.string str_0x9280cb GER
-	=Dein_Handeln_wird_hunderte_in_die\nVerdammnis_st\$uerzen.
-.end

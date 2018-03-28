@@ -1,3 +1,0 @@
-.string str_0x8c7d34 GER
-	=\$OEstlich:_Silvania-Wald
-.end

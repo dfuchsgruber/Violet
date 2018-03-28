@@ -18,3 +18,21 @@ callstd MSG_SIGN
 loadpointer 0x0 str_0x959487
 callstd MSG_SIGN
 end
+
+
+.ifdef LANG_GER
+.global str_0x95a56d
+
+str_0x95a56d:
+    .string "QUOTEDas Magmaherz - die Essenz der\nErde und LandmassenQUOTE"
+        
+        
+.global str_0x959487
+
+str_0x959487:
+    .string "... Das Schild wurde\ndurchgestrichen ..."
+        
+        
+.elseif LANG_EN
+
+.endif

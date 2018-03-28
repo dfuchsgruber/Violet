@@ -1,8 +1,0 @@
-.string str_0x959205 GER
-	=Mistrals_Division_ist_zweifellos\ndie_m\$aechtigste_innerhalb_von_Team\lViolet.\pDu_bist_chancenlos!
-.end
-
-
-.string str_0x9591cb GER
-	=Was?_Du_hast_mich_besiegt?\nDu_hast_'was_auf_dem_Kasten!
-.end

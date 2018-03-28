@@ -87,3 +87,57 @@ end
 ow_script_0x95d7ed:
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x95d7f0
+
+str_0x95d7f0:
+    .string "Ich bin der Attacken-Erinnerer.\nMeine Fähigkeit ist es, Pokémon\lwieder an verlernte Attacken zu\lerinnern.\pIm Gegenzu verlange ich dafür\nallerdins eine Herzschuppe."
+        
+        
+.global str_0x95d771
+
+str_0x95d771:
+    .string "Wie aufregend! Du hast eine\nHerzschuppe bei dir!\pSoll ich einem deiner Pokémon zu\neiner vergessenen Attacke\lverhelfen?"
+        
+        
+.global str_0x95d618
+
+str_0x95d618:
+    .string "Welches Pokémon soll sich an eine\nAttacke erinnern?"
+        
+        
+.global str_0x95d5ee
+
+str_0x95d5ee:
+    .string "Welche Attacke soll ich ihm\nbeibringen?"
+        
+        
+.global str_0x95d5a7
+
+str_0x95d5a7:
+    .string "Na das hat doch wunderbar\ngeklappt!\pVielen Dank für die Herzschuppe!"
+        
+        
+.global str_0x95d659
+
+str_0x95d659:
+    .string "Hmm...\nEs sieht so aus, als könnte sich\ldieses Pokémon an keine Attacke\lerinnern..."
+        
+        
+.global str_0x95d6ba
+
+str_0x95d6ba:
+    .string "Das ist ja ein Ei!\nWie soll ich einem Ei denn eine\lAttacke beibringen?"
+        
+        
+.global str_0x95d70e
+
+str_0x95d70e:
+    .string "Das ist außerordentlich schade!\nKomm gerne wieder vorbei, wenn du\lmeine Hilfe brauchen solltest."
+        
+        
+.elseif LANG_EN
+
+.endif

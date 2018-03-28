@@ -1,8 +1,0 @@
-.string str_0x966317 GER
-	=Hast_du_schon_einmal_einen_so\nhei\$sen_Ort_gesehen?\pIch_auch_nicht!_Und_diese_Hitze\nwird_dich_in_die_Knie_zwingen!
-.end
-
-
-.string str_0x96638a GER
-	=Du_kannst_die_Hitze_noch_besser\nbeherrschen_als_ich!_Wahnsinn!
-.end

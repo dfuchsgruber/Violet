@@ -1,21 +1,22 @@
-import agb
-import pstring
-import constants
+#!/usr/bin/env python
 
-vrom = agb.Agbrom()
-erom = agb.Agbrom(path=agb.FREPATH)
+from pokestring import pstring
+from agb import agbrom
+from pymap import constants
 
-ps = pstring.PString("../table.tbl")
 
-vtable = 0x44F73C
-etable = 0x44E8b0
+with open("../../map/proj.pmp.config") as f:
+    conf = eval(f.read())["macro"]
 
-rev_pchar_dict = {}
-for k in constants.pchar_dict: rev_pchar_dict[constants.pchar_dict[k]] = k
 
-def char_to_pchar(c):
-    if c in rev_pchar_dict: return rev_pchar_dict[c]
-    return hex(c)
+vrom = agbrom.Agbrom("../../../violetbuilt.gba")
+erom = agbrom.Agbrom("../../base/bpre.gba")
+const = constants.Constants("../../map/proj.pmp.constants", conf)
+ps = pstring.Pstring("../../charmap.txt")
+
+
+vtable = 0x149B7D0
+etable = 0x44E850
 
 
 data_out = ""
@@ -26,17 +27,14 @@ for i in range(0, 387):
     voff = vtable + i * 0x24
     eoff = etable + i * 0x24
 
-    vs_category = ps.hex2str(vrom, voff, decap=True)
-    es_category = ps.hex2str(erom, eoff, decap=True)
+    vs_category = ps.hex2str(vrom, voff).capitalize()
+    es_category = ps.hex2str(erom, eoff).capitalize()
     print(i, vs_category, es_category)
-    
-    v_category = [char_to_pchar(c) for c in ps.str2hex(vs_category)]
-    e_category = [char_to_pchar(c) for c in ps.str2hex(es_category)]
 
-    v_category += [hex(0)] * (12 - len(v_category))
-    e_category += [hex(0)] * (12 - len(e_category))
 
-    data_out += "{\n\t//Entry " + str(i) + "\n\tPSTRING(P99_PROTECT({" + ", ".join(v_category) + "}), P99_PROTECT({" + ", ".join(e_category)  +"})),\n"
+    data_out += "{\n\t//Entry " + str(i) + "\n\tLANGDEP(PSTRING(\"{0}\"), PSTRING(\"{1}\")),\n".format(
+        vs_category, es_category
+    )
     height = vrom.u16(voff + 12)
     weight = vrom.u16(voff + 14)
     data_out += "\t" + str(height) + ", " + str(weight) + ",//Height & weight\n"
@@ -68,6 +66,7 @@ for i in range(0, 387):
     data_out += "\t" + str(vrom.u16(voff + 0x22)) + ",//unused\n"
     data_out +="},\n"
 
+"""
 fd = open("../asset/string/pokedex/pages_ger.txt", "w+")
 fd.write(ger_out)
 fd.close()
@@ -75,6 +74,7 @@ fd.close()
 fd = open("../asset/string/pokedex/pages_en.txt", "w+")
 fd.write(en_out)
 fd.close()
+"""
 
 fd = open("dex_out.txt", "w+")
 fd.write(data_out)

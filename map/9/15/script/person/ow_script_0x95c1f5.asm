@@ -98,3 +98,63 @@ loadpointer 0x0 str_0x95c353
 callstd MSG_FACE
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x95c5d4
+
+str_0x95c5d4:
+    .string "Hallo, junger Trainer!\nDiese Maschine kann Fossilien\lwieder zum Leben erwecken.\pMöchtest du eines deiner Fossilien\nrestaurieren lassen?"
+        
+        
+.global str_0x95c487
+
+str_0x95c487:
+    .string "Sehr wohl, ich werde dein\nBUFFER_1 restaurieren."
+        
+        
+.global str_0x95c4b4
+
+str_0x95c4b4:
+    .string "Komm in genau einer Stunde wieder\nund die Maschine wird fertig sein."
+        
+        
+.global str_0x95c3e1
+
+str_0x95c3e1:
+    .string "Es sieht so aus, als hättest du\ndeine RealTimeClock nicht\laktiviert oder als würde diese\lnicht funktionieren.\pÜberprüfe bitte deinen Emulator\noder deine Plattform."
+        
+        
+.global str_0x95c579
+
+str_0x95c579:
+    .string "Solltest du ein Fossil finden,\nkannst du es hierher bringen und\lwiederherstellen lassen."
+        
+        
+.global str_0x95c509
+
+str_0x95c509:
+    .string "Oh, es sieht so aus, als hättest\ndu kein Fossil bei dir, das ich\lwieder zum Leben erwecken könnte."
+        
+        
+.global str_0x95c2eb
+
+str_0x95c2eb:
+    .string "Ah, du bist es!\nEs ist uns gelungen, das Fossil zu\lrestaurieren.\pEs hat sich als BUFFER_1 entpuppt.\p...\n..."
+        
+        
+.global str_0x95c2d1
+
+str_0x95c2d1:
+    .string "PLAYER hat ein BUFFER_1\nerhalten!"
+        
+        
+.global str_0x95c353
+
+str_0x95c353:
+    .string "Sieht so aus, als hättest du auf\ndeinem Pc keinen Platz mehr für\lweitere Pokémon.\pKomm wieder, wenn du Platz\ngeschaffen hast."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x961de7 GER
-	=Inferior_-_Die_H\$oellenpforte
-.end

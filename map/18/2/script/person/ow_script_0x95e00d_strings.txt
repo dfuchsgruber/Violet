@@ -1,3 +1,0 @@
-.string str_0x95e017 GER
-	=Route_6_ist_ein_wirklich\nunangenehm_hei\$ser_Ort.\pDu_solltest_dir_etwas_leichters\nanziehen,_bevor_du_dich_dort\lhinbegiebst...
-.end

@@ -10,3 +10,15 @@ showpokepic POKEMON_STARALILI 0x0 0x0
 callstd MSG_FACE
 hidepokepic
 end
+
+
+.ifdef LANG_GER
+.global str_0x810f25
+
+str_0x810f25:
+    .string "Staralili!"
+        
+        
+.elseif LANG_EN
+
+.endif

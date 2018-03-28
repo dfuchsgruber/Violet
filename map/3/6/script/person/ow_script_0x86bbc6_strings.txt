@@ -1,3 +1,0 @@
-.string str_0x965932 GER
-	=Inferior_wurde_am_Fu\$s_des_Volcanos\nerbaut.\pDie_Legende_besagt,_dass_hier_die\nK\$oenigin_der_Nacht_die_Pforten_zur\lH\$oelle_ge\$oeffnet_hat.
-.end

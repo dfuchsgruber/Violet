@@ -185,3 +185,75 @@ ow_script_0x8d3f37:
 call ow_script_0x8d3f43
 call ow_script_0x8d3f43
 return
+
+
+.ifdef LANG_GER
+.global str_0x8d3efa
+
+str_0x8d3efa:
+    .string "Polizist: Hey du da!\nStehen geblieben!"
+        
+        
+.global str_0x8d3bb9
+
+str_0x8d3bb9:
+    .string "Argh! Ihr verdammten Team Violet\nRüpel!"
+        
+        
+.global str_0x8d38fe
+
+str_0x8d38fe:
+    .string "Polizisten: Herr Wachtmeister!\nWir stehen Ihnen zur Seite!"
+        
+        
+.global str_0x8d3f8b
+
+str_0x8d3f8b:
+    .string "Polizist: Nicht nötig, Männer. Ich\nhabe die Situation im Griff."
+        
+        
+.global str_0x8d3be3
+
+str_0x8d3be3:
+    .string "Polizist: ... ... ... ...\n... ... ... ... ... ...\pNein, du siehst nicht aus, wie\neiner von denen. Du bist kein\lMitglied von Team Violet.\lEntschuldige bitte, Junge. Mein\lName ist Oberwachtmeister\lHarrenfeld, ich kommandiere die\lPolizei in diesem Bezirk Thetos.\pWir haben Informationen erhalten,\ndass eine ganze Division der\lOrganisation Team Violet auf den\lWeg nach Silvania ist.\p... ... ...\n.... .... ....\pNun, wir haben alle verfügbaren\nKräfte angefordert, aber ich bin\lmir nicht sicher, ob wir es mit\leiner ganzen Division aufnehmen\lkönnen. Sollte einer der drei\lKommandanten die Gruppe\leskortieren, könnte das Probleme\lbedeuten.\p... ... ...\n... ... ...\pNun, du machst den Eindruck, ein\nganz passabler Trainer zu sein.\lKönntest du uns nicht helfen, Team\lViolet zu bekämpfen?"
+        
+        
+.global str_0x8d3858
+
+str_0x8d3858:
+    .string "Team Violet ist auch mein Feind.\pSie haben den Vater meines besten\nFreundes bedroht und werden dafür\lbezahlen. Sie können auf meine\lHilfe zählen, Herr Wachtmeister!"
+        
+        
+.global str_0x8d375f
+
+str_0x8d375f:
+    .string "Wachtmeister  Ha!\pSehr schön, du bist ein\nausgesprochen herzlicher Mensch.\pIm Kampf gegen diese\nVerbrecherbande können wir jede\lUnterstützung gebrauchen.\pWir werden uns auf den Weg nach\nSilvania machen, wo du dann zu uns\lstoßen kannst."
+        
+        
+.global str_0x8d36f8
+
+str_0x8d36f8:
+    .string "Wir ziehen ab! Auf nach Silvania!"
+        
+        
+.global str_0x8d371c
+
+str_0x8d371c:
+    .string "Polizisten: Aye, Sir!"
+        
+        
+.global str_0x8d3aaf
+
+str_0x8d3aaf:
+    .string "Nein, ich werde nicht Ihre Arbeit\nerldigen. Sie sind Wachtmeister\ldieses Bezirks und verpflichtet,\lfür Ordnung zu sorgen.\pIch habe selbst Angelegenheiten\nmit Team Violet zu regeln und\lwerde Ihnen daher nicht im Weg\lstehen. Rechnen dürfen Sie mit mir\ljedoch nicht."
+        
+        
+.global str_0x8d39ed
+
+str_0x8d39ed:
+    .string "Wachmeister  Hmpf!\pDu scheinst keinen Funken Anstand\nzu besitzen. Wie dem auch sei, wir\lsind auf deine Hilfe nicht\langewiesen. Wir werden der Team\lViolet Division Einhalt gebieten."
+        
+        
+.elseif LANG_EN
+
+.endif

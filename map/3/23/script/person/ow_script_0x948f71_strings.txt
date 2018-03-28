@@ -1,8 +1,0 @@
-.string str_0x94c37e GER
-	=Hast_du_schon_deine_Typentabelle\nauswendig_gelernt?\pIch_f\$uer_meinen_Teil_kenne_alle\nTypverh\$aeltnisse_aus_dem_Stegreif!
-.end
-
-
-.string str_0x949d71 GER
-	=Was?_Hast_du_\$ueberhaupt_gelernt?
-.end

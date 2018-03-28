@@ -21,8 +21,7 @@ extern u8 bsc_ap_sparer[];
 
 void attack_init_trigger_abilities(){
     
-    char str[] = PSTRING("deutsch\n","englisch\n");
-    dprintf(str);
+
     
     battler *attacker = &battlers[*attacking_battler];
     switch(attacker->ability){

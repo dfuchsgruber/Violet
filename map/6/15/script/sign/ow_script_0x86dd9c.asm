@@ -54,3 +54,33 @@ end
 .global ow_script_0x87ca4c
 ow_script_0x87ca4c:
 end
+
+
+.ifdef LANG_GER
+.global str_0x87cae0
+
+str_0x87cae0:
+    .string "Ein seltsamer Stein, der golden\nschimmert. Ab und an wirkt es so,\lals würde er sich bewegen..."
+        
+        
+.global str_0x87caba
+
+str_0x87caba:
+    .string "PLAYER untersucht den Stein näher..."
+        
+        
+.global str_0x87ca86
+
+str_0x87ca86:
+    .string "Auf einmal springt der goldene\nStein in die Höhe!"
+        
+        
+.global str_0x87ca4e
+
+str_0x87ca4e:
+    .string "Der Stein entpuppt sich als\nKleinstein!\lEs greift an!"
+        
+        
+.elseif LANG_EN
+
+.endif

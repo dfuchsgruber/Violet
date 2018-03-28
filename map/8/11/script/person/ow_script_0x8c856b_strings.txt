@@ -1,3 +1,0 @@
-.string str_0x93155a GER
-	=Sei_gegr\$ue\$st!\pMeine_Wenigkeit_verkauft_Protonen-\nbeschleuniger.\pMeine_besten_St\$uecke_verleihen_den\nTeilchen_Energien_von_bis_zu\lsieben_Terra-Elektronenvolt.\pWie,_du_wei\$st_nicht_wovon_ich\nspreche?\pVerschwinde,_du_Banause!
-.end

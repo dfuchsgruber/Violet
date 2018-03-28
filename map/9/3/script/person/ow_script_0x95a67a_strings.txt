@@ -1,3 +1,0 @@
-.string str_0x95ab3b GER
-	=Ich_bewache_die_R\$uecklagen_der\nOrina_City_Bank.\lOb_ich_nur_ein_einzelner_Polizist\lbin?\p\$AEhm...!_Nein!_Nat\$uerlich_nicht.\nHinter_dieser_T\$uere_sind_noch\lhundert_weitere...
-.end

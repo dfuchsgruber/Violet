@@ -72,3 +72,27 @@ end
 ow_script_0x1aa912:
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x1c1b07
+
+str_0x1c1b07:
+    .string "Dieser Fels ist zerbrechlich. Soll\nZERTRÜMMERER eingesetzt werden?"
+        
+        
+.global str_0x1c1a37
+
+str_0x1c1a37:
+    .string "BUFFER_1 setzt\nBUFFER_2 ein."
+        
+        
+.global str_0x1c1b4a
+
+str_0x1c1b4a:
+    .string "Ein großer Felsen. Ein Pokémon\nkönnte ihn vielleicht zertrümmern."
+        
+        
+.elseif LANG_EN
+
+.endif

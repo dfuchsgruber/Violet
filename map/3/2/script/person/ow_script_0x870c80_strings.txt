@@ -1,3 +1,0 @@
-.string str_0x88034f GER
-	=Graben_und_Minen_sind_meine\nLeidenschaft!_Ich_werde_bald_hier\ldamit_beginnen!_Warts_ab!
-.end

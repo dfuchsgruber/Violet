@@ -37,3 +37,21 @@ special 0x7
 addvar STORY_PROGRESS 0x2
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x92ec17
+
+str_0x92ec17:
+    .string "Was ist das für ein seltsames\nGefühl? ... ... ...\p... ... ... ... ...\pIch fühle mich so schwindlig...\n... ... ... ... ...\pIch falle... falle..."
+        
+        
+.global str_0x92eb38
+
+str_0x92eb38:
+    .string "Was bei Arceus war das? Was haben\ndiese Bilder zu bedeuten?\pSind diese Visionen Wirklichkeit,\nbin ich Zeuge der Zerstörung\lAktanias geworden?\pIch muss in Erfahrung bringen, was\nes damit auf sich hat!"
+        
+        
+.elseif LANG_EN
+
+.endif

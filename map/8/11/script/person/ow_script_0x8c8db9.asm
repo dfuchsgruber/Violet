@@ -31,3 +31,21 @@ waitmovement 0x0
 hidesprite 0x800f
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x931867
+
+str_0x931867:
+    .string "Äh ja, verstehen\nSie, ich will Transformationen\lerzielen, ich benötige hohe\lEnergien. Können Sie nicht..."
+        
+        
+.global str_0x931636
+
+str_0x931636:
+    .string "Oh, hallo PLAYER!\pIch hatte dich ... äh ... an einem\nOrt wie diesem nicht erwartet.\pWas treibst du hier auch?\nNur Ganoven und anderes Gesindel\lkommt hier zusammen, nicht aber\lLeute von deinem Schlag!\p...\n...\pWas ich hier tue?\pNun ... äh ... ja ...\nIch erwerbe hier gewisse ... äh\p... Gerätschaften ...\pNicht, weil sie auf dem legalen\nMarkt zu teuer wären ...\pIch ... äh ...\nIch habe ganz vergessen, dass ich\leinen wichtigen Termin habe.\pMeine Forschungen dulden keinen\nAufschub.\p...\pAuf Wiedersehen, PLAYER!\nUnd grüße doch bitte Elise, mein\lkleines Mädchen, von mir."
+        
+        
+.elseif LANG_EN
+
+.endif

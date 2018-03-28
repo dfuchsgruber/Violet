@@ -1,8 +1,0 @@
-.string str_0x955b31 GER
-	=Ah, \b\01!\nWie ich sehe hast du Orina City\lgefunden.\pIm Norden der Stadt befindet sich\ndie Laz.Corp, wo ich und mein\lVater besch\$aeftigt sind.\pKomm mich dort doch besuchen und\nich zeige dir das k\$uenstliche\lPok\emon.\pDaf\$uer wirst du diese Zugangskarte\nben\$oetigen.
-.end
-
-
-.string str_0x955a4c GER
-	=Die Zugangskarte erm\$oeglicht dir\nden Zutritt zum Cyberlabor der\lLaz.Corp, wo du mich triffst.\pNat\$uerlich konnte ich dir keinen\nZutritt zu den anderen Stockwerken\lverschaffen, ich hoffe du\lverstehst das.\pIch treffe dich dort, \b\01!
-.end

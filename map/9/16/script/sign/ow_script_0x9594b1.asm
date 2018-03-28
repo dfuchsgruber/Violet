@@ -18,3 +18,16 @@ callstd MSG_SIGN
 loadpointer 0x0 str_0x959487
 callstd MSG_SIGN
 end
+
+
+.ifdef LANG_GER
+.global str_0x95a5b5
+
+str_0x95a5b5:
+    .string "QUOTEDas Wolkenherz - es glitzert in\nden Regenbogenfarben im LichtQUOTE"
+        
+        
+
+.elseif LANG_EN
+
+.endif

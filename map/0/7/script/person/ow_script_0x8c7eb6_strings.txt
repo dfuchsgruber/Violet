@@ -1,8 +1,0 @@
-.string str_0x8c7ece GER
-	=Dieser_Ort_ist_wirklich\nwundersch\$oen,_nicht?
-.end
-
-
-.string str_0x8c7efc GER
-	=Dieses_bl\$aeulich_leuchtende_Gestein\nist_faszinierend.
-.end

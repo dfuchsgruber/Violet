@@ -1,3 +1,0 @@
-.string str_0x8fecef GER
-	=Man_kann_die_Hitze_der_W\$ueste\nf\$oermlich_sp\$ueren._Der_Ausgang_muss\lnah_sein.
-.end

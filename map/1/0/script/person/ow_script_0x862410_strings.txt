@@ -1,3 +1,0 @@
-.string str_0x8f384c GER
-	=Vor_einiger_Zeit_gab_es_gro\$sen\nAufruhr_in_Theto,_als_ein_junges\lTrainertalent_den_Champion\lentthront_hat.\lNiemand_wei\$s_so_recht,_wo_der\lbesiegte_Champion_geblieben_ist...
-.end

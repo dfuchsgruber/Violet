@@ -1,3 +1,0 @@
-.string str_0x8c0f86 GER
-	=Wenn_ich_ein_Pok\emon_h\$aette,_das\nSurfer_beherrscht,_dann_k\$oennte_ich\lauf_ihm_gen_Westen_reiten!
-.end

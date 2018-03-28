@@ -1,8 +1,0 @@
-.string str_0x193a74 GER
-	=MARMORIA  ROCKO\pBISHERIGE SIEGER:\n\b\06
-.end
-
-
-.string str_0x193aaf GER
-	=MARMORIA  ROCKO\pBISHERIGE SIEGER:\n\b\06, \b\01
-.end

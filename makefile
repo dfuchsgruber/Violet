@@ -8,23 +8,34 @@ CC=@arm-none-eabi-gcc
 NM=@arm-none-eabi-nm
 ARS=@armips
 MID2AGB=@mid2agb
-STR2S=@python str2s.py
-PY=@python
-BIN2S=@python bin2s.py
-PYSET2S=@python tools/pyset2s.py
-PYMAP2S=@python tools/pymap2s.py
-PYPROJ2S=@python tools/pyproj2s.py
+PY=@python3
+BIN2S=@bin2s.py
+PYSET2S=@pyset2s.py
+PYMAP2S=@pymap2s.py
+PYPROJ2S=@pyproj2s.py
+PYPREPROC=@pypreproc.py
+PYMAPCONSTEX=pymapconstex.py
 
-ASFLAGS=-mthumb -Iinclude/ -mcpu=arm7tdmi -march=armv4t
+
+# Py-Preprocessor settings (pypreproc.py)
+CHARMAP=charmap.txt
+LANGUAGE=LANG_GER#LANG_EN
+CLANGMACRO=PSTRING
+
+# Define compiler flags
+ASFLAGS=-mthumb -Iinclude/ -Iinclude/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
-CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/
+CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/ -Iinclude/constants/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs
 GRITFLAGS=-fh! -ftc
-STR2SFLAGS=-t table.tbl -a 0xFF -l GER
 WAVFLAGS=-c
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
+
+# Misc
 BLDPATH= bld
+MAPPROJ=map/proj.pmp
+
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
 
@@ -34,7 +45,6 @@ ASSRC2:= $(call rwildcard,src/,*.s)
 CSRC:= $(call rwildcard,src/,*.c)
 MIDSRC:=$(call rwildcard,asset/mus/,*.mid)
 GFXSRC:=$(call rwildcard,asset/gfx/,*.png)
-STRSRC:=$(call rwildcard,asset/string/,*.txt)
 WAVSRC:=$(call rwildcard,asset/cry/,*.wav)
 
 
@@ -43,7 +53,8 @@ MAPTILESETSRC:=$(call rwildcard,map/,*.pts)
 MAPTILESETGFXSRC:=$(call rwildcard,map/,*.png)
 MAPSRC:=$(call rwildcard,map/,*.pmh)
 MAPASSRC:=$(call rwildcard,map/,*.asm)
-MAPSTRSRC:=$(call rwildcard,map/,*.txt)
+CONSTANTS=map/proj.pmp.constants
+CONSTANTSH=$(shell ($(PYMAPCONSTEX) --get $(MAPPROJ)))
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
@@ -54,9 +65,6 @@ MIDOBJS= $(MIDAS:%.s=%.o)
 	
 GFXC= $(GFXSRC:%.png=$(BLDPATH)/%.c)
 GFXOBJS= $(GFXC:%.c=%.o)
-
-STRAS= $(STRSRC:%.txt=$(BLDPATH)/%.s)
-STROBJS= $(STRAS:%.s=$(BLDPATH)/%.o)
 	
 WAVAS = $(WAVSRC:%.wav=$(BLDPATH)/%.s)
 WAVOBJS = $(WAVAS:%.s=%.o)
@@ -75,22 +83,26 @@ MAPTILESETGFXOBJS = $(MAPTILESETGFXC:%.c=%.o)
 	
 MAPASOBJS= $(MAPASSRC:%.asm=$(BLDPATH)/%.o)
 
-MAPSTRAS= $(MAPSTRSRC:%.txt=$(BLDPATH)/%.s)
-MAPSTROBJS= $(MAPSTRAS:%.s=%.o)
 
-.PHONY: build clean
 
-$(ASOBJS1): $(BLDPATH)/%.o: %.asm
+
+.PHONY: all clean
+
+
+$(ASOBJS1): $(BLDPATH)/%.o: %.asm $(CONSTANTSH)
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS)  $< -o $@
+	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE) 
+	$(AS) $(ASFLAGS)  $(BLDPATH)/$*.i -o $@
 
-$(ASOBJS2): $(BLDPATH)/%.o: %.s
+$(ASOBJS2): $(BLDPATH)/%.o: %.s $(CONSTANTSH)
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) $< -o $@
+	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE)   
+	$(AS) $(ASFLAGS)  $(BLDPATH)/$*.i -o $@
 	
-$(COBJS): $(BLDPATH)/%.o: %.c 
+$(COBJS): $(BLDPATH)/%.o: %.c $(CONSTANTSH)
 	$(shell mkdir -p $(dir $@))
-	$(CC) $(CFLAGS) $< -o $@
+	$(PYPREPROC) -o $(BLDPATH)/$*.c $< $(CHARMAP) $(CLANGMACRO)   
+	$(CC) $(CFLAGS) $(BLDPATH)/$*.c -o $@
 	
 $(MIDAS): $(BLDPATH)/%.s: %.mid
 	$(shell mkdir -p $(dir $@))
@@ -109,13 +121,6 @@ $(GFXOBJS): %.o: %.c
 	$(shell mkdir -p $(dir $@))
 	$(CC) $(CFLAGS) $< -o $@
 	
-$(STRAS): $(BLDPATH)/%.s: %.txt
-	$(shell mkdir -p $(dir $@))
-	$(STR2S) $(STR2SFLAGS) -i $< -o $@
-	
-$(STROBJS): $(BLDPATH)/%.o: %.s
-	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) $< -o $@
 	
 $(WAVAS): $(BLDPATH)/%.s: %.wav
 	
@@ -128,7 +133,7 @@ $(WAVOBJS): %.o: %.s
 	
 $(SAMPLEAS): $(BLDPATH)/%.s: %.bin
 	$(shell mkdir -p $(dir $@))
-	$(BIN2S) -i $< -o $@
+	$(BIN2S) -o $@ $<
 	
 $(SAMPLEOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
@@ -136,7 +141,7 @@ $(SAMPLEOBJS): %.o: %.s
 	
 $(MAPAS): $(BLDPATH)/%.s: %.pmh
 	$(shell mkdir -p $(dir $@))
-	$(PYMAP2S)  -o $@ $<
+	$(PYMAP2S) -o $@ $< $(MAPPROJ)
 
 $(MAPOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
@@ -158,17 +163,11 @@ $(MAPTILESETGFXOBJS): %.o: %.c
 	$(shell mkdir -p $(dir $@))
 	$(CC) $(CFLAGS) $< -o $@
 
-$(MAPASOBJS): $(BLDPATH)/%.o: %.asm
+$(MAPASOBJS): $(BLDPATH)/%.o: %.asm $(CONSTANTSH)
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS)  $< -o $@
+	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE)   
+	$(AS) $(ASFLAGS)  $(BLDPATH)/$*.i -o $@
 
-$(MAPSTRAS): $(BLDPATH)/%.s: %.txt
-	$(shell mkdir -p $(dir $@))
-	$(STR2S) $(STR2SFLAGS) -i $< -o $@
-	
-$(MAPSTROBJS): %.o: %.s
-	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) $< -o $@
 
 
 $(BLDPATH)/map/proj.o: map/proj.pmp
@@ -181,32 +180,30 @@ $(BLDPATH)/map/morgana.o: map/3/21/map_3_21.pmh
 	$(PY) tools/fata_morgana_gen.py map/3/21/map_3_21.pmh $(BLDPATH)/map/morgana.s fata_morgana_blocks fata_morgana_blocks_cnt
 	$(AS) $(ASFLAGS) $(BLDPATH)/map/morgana.s -o $(BLDPATH)/map/morgana.o
 
-$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o $(BLDPATH)/map/morgana.o
+$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/asset/mus.o $(BLDPATH)/map/morgana.o
 #	Create a ld script
-	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(MAPSTROBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/map/morgana.o)" > $(BLDPATH)/asset.ld
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/mus.o $(BLDPATH)/asset/str.o
+	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(MAPOBJS) $(MAPTILESETOBJS) $(MAPTILESETGFXOBJS) $(MAPASOBJS) $(BLDPATH)/map/proj.o $(BLDPATH)/map/morgana.o)" > $(BLDPATH)/asset.ld
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/mus.o 
 	
 
-$(BLDPATH)/asset/str.o: $(STROBJS)
-	$(shell mkdir -p $(BLDPATH)/asset/string)
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/str.o $(STROBJS)
 
 
 $(BLDPATH)/asset/mus.o: $(MIDOBJS)
 	$(shell mkdir -p $(BLDPATH)/asset/mus)
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/mus.o $(MIDOBJS)
-
-include/std.s: tools/constants.py
-# Create the std.s
-	$(PY) tools/constants.py include/
 	
-build:  include/std.s $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o index
+$(CONSTANTSH): $(CONSTANTS)
+	# Building constants
+	$(PYMAPCONSTEX) $(MAPPROJ)
+		
+	
+all: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o #index
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
 	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
 	cat $(BLDPATH)/__symbols.sym
-	@cd tools && python index.py
+	@cd tools && python3 index.py
 		
 clean:
 	rm -rf $(BLDPATH)

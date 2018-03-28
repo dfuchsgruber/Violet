@@ -1,8 +1,0 @@
-.string str_0x8d491f GER
-	=Oh,_ich_find_dicke_Fische_einfach\nklasse.
-.end
-
-
-.string str_0x8d494b GER
-	=Dicke_Fische_bedeuten_aber_nicht\nimmer_starke_Fische.
-.end

@@ -1,8 +1,0 @@
-.string str_0x8f2b8a GER
-	=Wir_von_Team_Violet_sind_daran\ninteressiert,_die_Welt_in_einen\lbesseren_Ort_zu_verwandeln.\lMit_einem_Krieg_werden_wir_Frieden\lstiften!
-.end
-
-
-.string str_0x8f3993 GER
-	=Du_wirst_uns_nicht_aufhalten\nk\$oennen,_der_ewige_Frieden_wird\lkommen!
-.end

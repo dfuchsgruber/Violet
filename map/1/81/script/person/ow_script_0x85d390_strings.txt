@@ -1,8 +1,0 @@
-.string str_0x864949 GER
-	=Du_denkst_also_tats\$aechlich,_dass\ndu_es_aufhalten_k\$oenntest?
-.end
-
-
-.string str_0x86453a GER
-	=Deine_Versuche_werden_sp\$aetestens\nan_Mistral_scheitern...
-.end

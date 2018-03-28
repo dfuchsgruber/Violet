@@ -1,3 +1,0 @@
-.string str_0x8f1cbf GER
-	=Ein_ganz_gew\$oehnliches_Haus
-.end

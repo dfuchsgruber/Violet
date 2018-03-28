@@ -103,3 +103,33 @@ addvar STORY_PROGRESS 0x1
 fadesong MUS_BLACK_MARKET
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x93386b
+
+str_0x93386b:
+    .string "Das Leben als Pirat ist wirklich\nbefreiend!\pMein Bürojob bei der LaZ.Corp war\nein Leidensweg dagegen."
+        
+        
+.global str_0x9337e5
+
+str_0x9337e5:
+    .string "Oh ja! Das Leben auf See ist ein\nAbenteuer.\pUnd vom Lösegeld, das wir hier für\nunsere Gefangenen erwirken, lässt\les sich gut leben!"
+        
+        
+.global str_0x933908
+
+str_0x933908:
+    .string "Ahoi, Männer!\pWir stechen in See!\nKapitän Blackbeard hat alles\lverkaufen können."
+        
+        
+.global str_0x9338d3
+
+str_0x9338d3:
+    .string "Aye! Wir haben verstanden!\nAlle Mann an Board!"
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x81af29 GER
-	=Silvania\pDie_Stadt_der_Natur
-.end

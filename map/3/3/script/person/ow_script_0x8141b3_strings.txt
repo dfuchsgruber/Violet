@@ -1,3 +1,0 @@
-.string str_0x8e1ba8 GER
-	=Silvania_wurde_in_einer_Lichtung\ndes_Silvania-Waldes_von_den\lErkundern_dieser_Region_errichtet.\pIm_Wald_selbst_haben_sie_auch\neinen_Schrein_gebaut,_um_dem_darin\lwohnenden_Zeitpokemon_zu_huldigen.
-.end

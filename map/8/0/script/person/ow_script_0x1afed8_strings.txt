@@ -1,3 +1,0 @@
-.string str_0x195c7a GER
-	=Ich_bin_erst_vor_kurzem_in_diese\nStadt_gezogen!
-.end

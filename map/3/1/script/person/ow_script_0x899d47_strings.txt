@@ -1,3 +1,0 @@
-.string str_0x8a27bc GER
-	=Der_Wassertunnel_verbindet_Meriana\nCity_mit_Kaskada,_der_Stadt_des\lWassers._Von_dort_aus_erh\$aelt_auch\ldieser_Ort_hier_seine_Versorgung\lmit_frischem_Wasser.
-.end

@@ -51,3 +51,39 @@ gotoif EQUAL ow_script_0x8de4b5
 loadpointer 0x0 str_0x8de430
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8e07ee
+
+str_0x8e07ee:
+    .string "... Korruptes Gesindel ...\p....\p....."
+        
+        
+.global str_0x8e066f
+
+str_0x8e066f:
+    .string "Wer bist du?\n...\lDu hast also den Streit zwischen\lmir und Marq mit angehört?\lNun, die Sache ist die, dass Marq\ldie rechte Hand des Wachtmeisters\lHarrenfeld ist. Ein ganz hohes\lTier also.\lDoch er nutzt seine Macht aus. Er\lerpresst die Menschen, die hier\lleben. Nur können wir nichts gegen\ldieses korrupte Schwein\lunternehmen. Wenn wir ihn nur auf\lfrischer Tat ertappen würden..."
+        
+        
+.global str_0x8de630
+
+str_0x8de630:
+    .string "Vielen, vielen Dank, dass du uns\narme Bürger gerettet hast!"
+        
+        
+.global str_0x8e1de2
+
+str_0x8e1de2:
+    .string "Es wird wohl niemand den Anstand\naufbringen können, Marq zu Fall zu\lbringen."
+        
+        
+.global str_0x8de430
+
+str_0x8de430:
+    .string "Man müsste diesen korrupten Marq\nnur auf frischer Tat ertappen.\lDann hätten wir Dorfbewohner\lendlich etwas gegen ihn in der\lHand..."
+        
+        
+.elseif LANG_EN
+
+.endif

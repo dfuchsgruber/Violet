@@ -1,3 +1,0 @@
-.string str_0x95e4c0 GER
-	=Es_mag_zwar_nicht_so_aussehen,\naber_der_Boden_in_der_N\$aehe_eines\lVulkans_ist_sehr_n\$aehrstoffhaltig.\pPok\emon_und_Menschen_siedeln_seit\nJahrhunderten_an_diesen_Orten.
-.end

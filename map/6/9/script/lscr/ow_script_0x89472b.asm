@@ -86,3 +86,51 @@ setvar 0x8001 0xd
 setvar 0x8002 0xf
 special 0x6
 return
+
+
+.ifdef LANG_GER
+.global str_0x8cae89
+
+str_0x8cae89:
+    .string "Aufseher: Nun verkünde ich hiermit\nden Kampf zwischen Lester und\lPLAYER um den Antikorden. Möge der\lKampf beginnen!"
+        
+        
+.global str_0x8cafb5
+
+str_0x8cafb5:
+    .string "Ich mag dich, du scheinst\ndie nötige Ehrfurcht vor diesem\lOrt zu besitzen. Aber glaub nicht,\ldass ich mich deswegen\lzurückhalten werde. Meine\lGestein-Pokémon sind hart in der\lVerteidigung und im Angriff."
+        
+        
+.global str_0x8cb08b
+
+str_0x8cb08b:
+    .string "Beeindruckend. Deine Pokémon haben\nmich zerschmettert wie Graphit.\lDen Antikorden hast du dir redlich\lverdient, PLAYER."
+        
+        
+.global str_0x8cb101
+
+str_0x8cb101:
+    .string "Unter den heiligen Hallen des\nTempels der Wächter hast du mich\lgeschlagen und deine Stärke\lbezeugt. Die Wächter haben dich\lanerkannt und dir Kraft geliehen.\lNimm den Orden als Zeichen deiner\lLeistung."
+        
+        
+.global str_0x897c8a
+
+str_0x897c8a:
+    .string "PLAYER hat den Antikorden von\nLester erhalten!"
+        
+        
+.global str_0x8cb1cc
+
+str_0x8cb1cc:
+    .string "Mit diesem Orden kannst du die\nVersteckte Maschine Blitz\laußerhalb des Kampfs einsetzen.\lFerner möchte ich dir das hier\lüberreichen, als Symbol meiner\lpersönlichen Wertschätzung."
+        
+        
+.global str_0x8cb281
+
+str_0x8cb281:
+    .string "Diese Technische Maschine enthält\ndie Attacke Felsgrab. Sie schadet\ldem Gegner und verlangsamt ihn\lzusätzlich dazu. Ideal für alle\lGestein-Pokémon, die nicht all zu\lflink sind.\pUnser Kampf war eine Bereicherung\nfür mich. Verlasse nun diesen Ort\lund setzte deine Reise fort. Der\lGeist der Wächter möge dich auf\lewig begleiten."
+        
+        
+.elseif LANG_EN
+
+.endif

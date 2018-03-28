@@ -1,3 +1,0 @@
-.string str_0x94d9e4 GER
-	=Los,_Staralili!_Ruckzuckhieb!
-.end

@@ -1,3 +1,0 @@
-.string str_0x8a336a GER
-	=Der_Kontinent_Theto_wurde_einst\nvom_W\$aechter_der_Landmassen_Groudon\lals_erster_Kontintent_der_Welt\lgeschaffen._Man_nennt_ihn_daher\lauch_Urkontinent.
-.end

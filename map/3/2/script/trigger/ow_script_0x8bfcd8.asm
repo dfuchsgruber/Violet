@@ -38,3 +38,15 @@ releaseall
 setvar STORY_PROGRESS 0x12
 end
 
+
+
+.ifdef LANG_GER
+.global str_0x8c0738
+
+str_0x8c0738:
+    .string "Oh, ein neues Gesicht hier in\ndieser Stadt. Das geschieht in\lletzter Zeit recht häufig.\lVerzeih\ mir, dass ich mich noch\lnicht vorgestellt habe. Mein Name\list Lester, und ich bin der\lBürgermeister von Aktania, wenn\lman es denn so nennen will.\lIch will nicht lügen: Die Insel\list ein trostloser Ort, aber meine\lFamilie lebt seit Generationen\lhier und hält den Tempel so gut\les geht in Schuss.\lKomm mich doch dort einmal\lbesuchen. Vor einigen Jahren, habe\lich den Tempel zu einer Arena\lumfunktioniert. Du kannst mich\ldort gerne herausfordern, wenn du\ldich mir gewachsen fühlst.\lBis dahin - genieße das, was von\lder einstigen Sommerinsel übrig\lgeblieben ist."
+        
+        
+.elseif LANG_EN
+
+.endif

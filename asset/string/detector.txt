@@ -1,7 +1,0 @@
-.string str_detector GER
-    =Der Detektor schlägt aus!\nIn der Nähe muss ein Item liegen!
-.end
-
-.string str_detector EN
-    =Your detector seems to have\nfound an item nearby!
-.end

@@ -19,3 +19,21 @@ setvar NEXT_POKEMON_SHINY 0x1
 call ow_script_0x8d421d
 setvar NEXT_POKEMON_SHINY 0x0
 end
+
+
+.ifdef LANG_GER
+.global str_0x8d48e6
+
+str_0x8d48e6:
+    .string "Das Ei eines goldenen Altarias."
+        
+        
+.global str_0x8d48cd
+
+str_0x8d48cd:
+    .string "Flug"
+        
+        
+.elseif LANG_EN
+
+.endif

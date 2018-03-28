@@ -1,3 +1,0 @@
-.string str_0x89bed9 GER
-	=Sieh_mal,_ich_habe_ein_Pok\emon.\nLos_Azurill!\l...\lEs_kuschelt_lieber_mit_mir_als_zu\lk\$aempfen...
-.end

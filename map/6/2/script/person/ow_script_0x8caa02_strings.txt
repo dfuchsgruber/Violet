@@ -1,8 +1,0 @@
-.string str_0x8caa1f GER
-	=Oh,_hallo._Ich_bin_der_Aufseher\ndieser_Arena_und_zust\$aendig_daf\$uer,\ldass_es_bei_den_K\$aempfen_stets_mit\lrechten_Dingen_zugeht.\lLester,_der_Arenaleiter,_benutzt\lStein-Pok\emon_im_Kampf._Begegne\lihm_mit_Wasser,_Pflanzen_aber_auch\lKampf-Angriffen.
-.end
-
-
-.string str_0x8cab11 GER
-	=Gl\$ueckwunsch_zu_deinem_Sieg!_Du\nhast_gezeigt,_dass_du_es_mit_einem\lArenaleiter_aufnehmen_kannst.
-.end

@@ -29,3 +29,27 @@ ow_script_0x89be13:
 loadpointer 0x0 str_0x89be67
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x89be1d
+
+str_0x89be1d:
+    .string "Dieser Pokeball scheint RIVAL zu\ngehören. Möchtest du ihn trotzdem\lnehmen?"
+        
+        
+.global str_0x89ae00
+
+str_0x89ae00:
+    .string "RIVAL ist mein bester Freund...\nDas könnte ich nicht über mich\lbringen..."
+        
+        
+.global str_0x89be67
+
+str_0x89be67:
+    .string "Dieser Pokeball gehört RIVAL."
+        
+        
+.elseif LANG_EN
+
+.endif

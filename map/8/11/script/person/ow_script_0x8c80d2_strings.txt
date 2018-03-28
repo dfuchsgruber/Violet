@@ -1,3 +1,0 @@
-.string str_0x8c83c5 GER
-	=Ja,_diese_Lieferung_sieht_gut_aus.\nWir_Revolution\$aere_k\$oennen_derartige\lDinge_immer_gebrauchen...
-.end

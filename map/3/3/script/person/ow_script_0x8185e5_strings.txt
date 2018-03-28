@@ -1,3 +1,0 @@
-.string str_0x818ef3 GER
-	=HIHI
-.end

@@ -1,8 +1,0 @@
-.string str_0x8a09e3 GER
-	=Ein_Trainer_hat_stets_viele_Tr\$aenke\nbei_sich,_wenn_er_gut_ausger\$uestet\lsein_will.
-.end
-
-
-.string str_0x8a0a35 GER
-	=Doch_die_Ausr\$uestung_eines_Trainers\nist_nat\$uerlich_nicht_alles.
-.end

@@ -54,3 +54,39 @@ loadpointer 0x0 str_0x87c492
 callstd MSG_FACE
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x87c7c7
+
+str_0x87c7c7:
+    .string "Hallo! Ich bin ein\nleidenschaftlicher Höhlenbauer. In\ldieser hier bin ich auf einen\lseltsamen Stein gestoßen, den ich\lzuerst für ein Goldnugget hielt,\laber er lässt sich einfach nicht\labbauen. Willst du ihn dir einmal\lansehen?"
+        
+        
+.global str_0x87c738
+
+str_0x87c738:
+    .string "Sieh ihn dir einfach an, ich werde\ndaraus nicht schlau..."
+        
+        
+.global str_0x87c77f
+
+str_0x87c77f:
+    .string "Wie du willst. Ich werde diesen\nseltsamen Stein weiter\luntersuchen..."
+        
+        
+.global str_0x87c5fa
+
+str_0x87c5fa:
+    .string ". . . !\nWas? Der Stein war in Wirklichkeit\lein schillerndes Kleinstein! Das\list ja Wahnsinn! Und ich dachte es\lwäre ein Nugget!"
+        
+        
+.global str_0x87c492
+
+str_0x87c492:
+    .string "Immer weiter schuften! Schuften!\nSchuften! Das ist mein Motto!\lGraben, graben, immer weiter\lschuften!"
+        
+        
+.elseif LANG_EN
+
+.endif

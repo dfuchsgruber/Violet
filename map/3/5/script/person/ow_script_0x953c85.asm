@@ -25,3 +25,27 @@ ow_script_0x953cb2:
 loadpointer 0x0 str_0x9551cc
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x9552a7
+
+str_0x9552a7:
+    .string "Ich bin fertig mit der Laz.Corp.\nProfessor Primus\ Wahn von einem\linterdimensionalen Portal geht\lentschieden zu weit.\lDass er die radioaktiven Abfälle\leinfach so unverfroren entsorgt...\lSo kann ich nicht arbeiten."
+        
+        
+.global str_0x955217
+
+str_0x955217:
+    .string "Nimm diese Technische Maschine,\nsie ist das Sinnbild für die\lUmweltverschmutzung durch die\lLaz.Corp.\pIch will damit nichts mehr zu tun\nhaben."
+        
+        
+.global str_0x9551cc
+
+str_0x9551cc:
+    .string "Matschbombe vergiftet den Gegner,\nwie die Laz.Corp die Umwelt\lvergiftet."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,8 +1,0 @@
-.string str_0x72883a GER
-	=Mein_Ziel_ist_es_nach_Kaskada_zu\nkommen,_doch_dazu_muss_ich_\$ueber_den\lW\$uestenpfad.
-.end
-
-
-.string str_0x72888e GER
-	=Ich_frage_mich,_wie_Kaskada_wohl_so\nist.
-.end

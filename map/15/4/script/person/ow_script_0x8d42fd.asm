@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0x15 0x0 str_0x8d433f str_0x8d4315
 loadpointer 0x0 str_0x8d433f
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8d433f
+
+str_0x8d433f:
+    .string "Es heißt, in dieser Mühle würde\nein goldenes Altaria nisten.\lOb an den Gerüchten etwas dran\list?"
+        
+        
+.global str_0x8d4315
+
+str_0x8d4315:
+    .string "Oho! Du hast da ein paar nette\nPokémon!"
+        
+        
+.elseif LANG_EN
+
+.endif

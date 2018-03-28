@@ -1,3 +1,0 @@
-.string str_0x9277cd GER
-	=Ich_habe_eine_besondere_Beziehung\nzu_Pflanzen._Ich_verstehe_sie,_ich\lwei\$s,_ich_kann_mich_in_sie\lhineinf\$uehlen.\pVielleicht_sollte_ich_nach\nSilvania_ziehen._Das_Dorf_wurde_in\lder_Lichtung_eines_Waldes\lerrichtet.
-.end

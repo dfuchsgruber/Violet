@@ -1,3 +1,0 @@
-.string str_0x94e55f GER
-	=Ger\$uechten_zufolge_wird_die\nLaz.Corp_ihren_giftigen_M\$uell\leinfach_durchs_Abwasser_los.\pIch_frage_mich,_ob_da_etwas_dran\nist...
-.end

@@ -48,3 +48,27 @@ ow_script_0x8ffcc2:
 loadpointer 0x0 str_0x926beb
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x926b9d
+
+str_0x926b9d:
+    .string "Der Katkus schimmert golden in der\nWüstensonne. Möchtest du an ihm\lrütteln?"
+        
+        
+.global str_0x926c53
+
+str_0x926c53:
+    .string "Nichts passiert..."
+        
+        
+.global str_0x926beb
+
+str_0x926beb:
+    .string "PLAYER lässt den Kaktus in\nRuhe."
+        
+        
+.elseif LANG_EN
+
+.endif

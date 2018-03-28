@@ -1,8 +1,0 @@
-.string str_0x899a49 GER
-	=Joggen_ist_gut_f\$uer_Herz_und\nKreislauf!_Die_Waldluft,_die_vom\lZeitwald_hierher_gelangt,_befreit\ldie_Atemwege_meiner_Pok\emon!
-.end
-
-
-.string str_0x899ac7 GER
-	=Dann_muss_ich_mein_Training_wohl\netwas_versch\$aerfen!
-.end

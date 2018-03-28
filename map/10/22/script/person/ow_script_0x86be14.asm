@@ -7,3 +7,15 @@ ow_script_0x86be14:
 loadpointer 0x0 str_0x965de4
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x965de4
+
+str_0x965de4:
+    .string "Selbst an Wintertagen herrschen in\nInferior Höchsttemperaturen.\pWir haben hier sogut wie niemals\nSchneefall."
+        
+        
+.elseif LANG_EN
+
+.endif

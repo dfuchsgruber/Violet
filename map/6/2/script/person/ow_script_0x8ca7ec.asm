@@ -37,3 +37,21 @@ loadpointer 0x0 str_0x8ca83f
 callstd MSG_FACE
 special 0x7
 end
+
+
+.ifdef LANG_GER
+.global str_0x8ca8f9
+
+str_0x8ca8f9:
+    .string "Einst erbauten meine Vorfahren\ndiese Räumlichkeiten um den\lWächtern ihre Dankbarkeit zu\lzeigen. Die Schriftzeichen sind\lin der heutigen Blindenschrift\lverfasst. Damals vermochten nur\ldie Geweihten Priester sie zu\lentziffern. Komm mit, ich führe\ldich in die Arena."
+        
+        
+.global str_0x8ca83f
+
+str_0x8ca83f:
+    .string "Ich kann dir leider nicht\ngestatten, die heiligen\lGrabstädten der Golems zu\lbetreten. Nur jene, die ihr Leben\lder Wache verschrieben haben,\ldürfen diese heiligen Statuen\lerblicken."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,3 +1,0 @@
-.string str_0x955d38 GER
-	=Das_Up-Grade_ist_eine_Software,\nwelche_die_Kanten_des_virtuellen\lPok\emon_gl\$aetten_kann.
-.end

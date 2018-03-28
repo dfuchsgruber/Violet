@@ -1,3 +1,0 @@
-.string str_0x928102 GER
-	=Was_erhofft_ihr_zu_erreichen?_Eure\nRevolution_wird_scheitern,_die\lWelt_ist_nicht_bereit_f\$uer_eure\lIdeale!
-.end

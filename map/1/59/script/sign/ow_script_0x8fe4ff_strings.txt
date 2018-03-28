@@ -1,3 +1,0 @@
-.string str_0x8ffff2 GER
-	=K\$uestenberg
-.end

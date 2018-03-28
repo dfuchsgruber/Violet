@@ -25,3 +25,15 @@ callstd MSG
 applymovement 0xff ow_script_movs_0x8a09c9
 waitmovement 0x0
 end
+
+
+.ifdef LANG_GER
+.global str_0x8a0956
+
+str_0x8a0956:
+    .string "Die Trainerschule liegt westlich\nvon Route 1. Ich sollte mich\lbeeilen, sonst verpasse ich noch\ldie Prüfungen!"
+        
+        
+.elseif LANG_EN
+
+.endif

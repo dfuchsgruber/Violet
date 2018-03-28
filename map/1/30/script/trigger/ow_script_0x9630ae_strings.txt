@@ -1,8 +1,0 @@
-.string str_0x963098 GER
-	=Grueeeeh!_...
-.end
-
-
-.string str_0x96305b GER
-	=Gyahhh!_Gyaaaaahhhhh!
-.end

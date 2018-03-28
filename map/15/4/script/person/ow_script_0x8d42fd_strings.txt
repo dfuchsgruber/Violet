@@ -1,8 +1,0 @@
-.string str_0x8d433f GER
-	=Es_hei\$st,_in_dieser_M\$uehle_w\$uerde\nein_goldenes_Altaria_nisten.\lOb_an_den_Ger\$uechten_etwas_dran\list?
-.end
-
-
-.string str_0x8d4315 GER
-	=Oho!_Du_hast_da_ein_paar_nette\nPok\emon!
-.end

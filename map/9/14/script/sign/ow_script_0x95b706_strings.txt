@@ -1,3 +1,0 @@
-.string str_0x95c862 GER
-	=Herzlich_willkommen_bei_der\nLaz.Corp.\pUnser_Motto_lautet:_Wir_machen\nZukunft_zur_Gegenwart.
-.end

@@ -40,3 +40,33 @@ end
 ow_script_0x8d42dc:
 closeonkeypress
 end
+
+
+.ifdef LANG_GER
+.global str_0x8dce63
+
+str_0x8dce63:
+    .string "Normal-"
+        
+        
+.global str_0x8d4251
+
+str_0x8d4251:
+    .string "Dort liegt ein Ei!\nMöchtest du es aufnehmen?"
+        
+        
+.global str_0x8d42b4
+
+str_0x8d42b4:
+    .string "PLAYER hat ein BUFFER_1-Ei\nerhalten!"
+        
+        
+.global str_0x8d4280
+
+str_0x8d4280:
+    .string "Schade! Du hast keinen Platz mehr\nin deinem Team."
+        
+        
+.elseif LANG_EN
+
+.endif

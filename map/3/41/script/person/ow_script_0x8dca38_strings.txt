@@ -1,3 +1,0 @@
-.string str_0x8de6ea GER
-	=Jeder_korrupte_Polizist_soll\nbezahlen_f\$uer_seine_Taten!
-.end

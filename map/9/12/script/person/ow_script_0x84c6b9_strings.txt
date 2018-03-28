@@ -1,3 +1,0 @@
-.string str_0x84c6c3 GER
-	=Zzz..._Schnarch_...\nGraa\$aeh..._Zzz..._Zzz...
-.end

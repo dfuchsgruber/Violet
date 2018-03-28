@@ -1,8 +1,0 @@
-.string str_0x931930 GER
-	=Nja!_Du_schon_wieder!\pDu_wirst_uns_hier_nicht_auch_die\nTour_vermasseln!
-.end
-
-
-.string str_0x9318e0 GER
-	=Was_ist_dein_Antrieb?\pSiehst_du_nicht,_dass_wir_der_Welt\nden_Frieden_bringen?
-.end

@@ -34,3 +34,27 @@ ow_script_0x95809d:
 loadpointer 0x0 str_0x9580a7
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x957fcc
+
+str_0x957fcc:
+    .string "Eben habe ich eine Software\nfertiggestellt, welche das\lvirtuelle Pokémon Porygon noch\lverbessert."
+        
+        
+.global str_0x9580a7
+
+str_0x9580a7:
+    .string "Benutze ein Linkkabel, um das\nUp-Grade auf einem Porygon zu\linstallieren.\pEs wird seine Fähigkeiten deutlich\nverbessern."
+        
+        
+.global str_0x95803c
+
+str_0x95803c:
+    .string "Das virtuelle Pokémon, an dem wir\narbeiten, wird sicherlich noch um\leiniges verbessert werden."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -1,8 +1,0 @@
-.string str_0x8e2c0f GER
-	=In_k\$oerperlicher_Form_zu_bleiben\nhat_h\$oechste_Priorit\$aet_f\$uer_uns\lTriathleten!
-.end
-
-
-.string str_0x8e2c5c GER
-	=Ich_und_meine_Pok\emon_m\$uessen\nh\$aerter_an_uns_arbeiten!
-.end

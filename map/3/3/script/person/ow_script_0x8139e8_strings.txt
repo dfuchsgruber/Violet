@@ -1,3 +1,0 @@
-.string str_0x81ab2c GER
-	=Diese_Stadt_wurde_im_Wald_errichtet\nund_sie_ist_fast_nur_aus_Holz\lgebaut._Umweldfreundlich,_oder?
-.end

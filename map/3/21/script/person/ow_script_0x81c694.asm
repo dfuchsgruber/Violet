@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0x67 0x0 str_0x81fb0d str_0x81fb69
 loadpointer 0x0 str_0x81fb69
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x81fb0d
+
+str_0x81fb0d:
+    .string "Diese Wüste ist die Hölle, ich hab\nso einen Durst!"
+        
+        
+.global str_0x81fb69
+
+str_0x81fb69:
+    .string "Wasser.... Wasser!!"
+        
+        
+.elseif LANG_EN
+
+.endif

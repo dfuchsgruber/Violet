@@ -33,3 +33,27 @@ ow_script_0x949a7f:
 loadpointer 0x0 str_0x949a89
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x9499a7
+
+str_0x9499a7:
+    .string "Du siehst mir aus wie jemand, der\nsich darum bemüht, ein enges Band\lzu seinen Pokémon aufzubauen.\pNimm dieses Item, es wird dir\ndabei helfen."
+        
+        
+.global str_0x949a41
+
+str_0x949a41:
+    .string "Trägt ein Pokémon die Sanftglocke,\nso wird es zutraulicher."
+        
+        
+.global str_0x949a89
+
+str_0x949a89:
+    .string "Du siehst mir nicht wie jemand\naus, der viel auf seine Pokémon\lgibt.\lLass dir das sein gut gemeinter\lRatschlag sein und achte nicht nur\lauf dein eigenes Wohlbefinden."
+        
+        
+.elseif LANG_EN
+
+.endif

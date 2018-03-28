@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0x5f 0x0 str_0x74476a str_0x7453a9
 loadpointer 0x0 str_0x7453a9
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x74476a
+
+str_0x74476a:
+    .string "Meine kleine, rebellische Schwester\nist vor kurzem auch Trainer\lgeworden! ... Sie trainiert auf\lRoute 2!"
+        
+        
+.global str_0x7453a9
+
+str_0x7453a9:
+    .string "Hmpf... Ich dachte, ich hätte eine\nChance!"
+        
+        
+.elseif LANG_EN
+
+.endif

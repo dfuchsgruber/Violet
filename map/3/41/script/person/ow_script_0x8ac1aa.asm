@@ -71,3 +71,27 @@ ow_script_0x8ac1e8:
 loadpointer 0x0 str_0x8ac381
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x8ac2ec
+
+str_0x8ac2ec:
+    .string "Ein Pokémon scheint hier in der\nNähe zu sein! Lass dich nicht von\lihm erwischen!"
+        
+        
+.global str_0x8ac34b
+
+str_0x8ac34b:
+    .string "Der Pokeradar konnte keine Pokémon\nausfindig machen."
+        
+        
+.global str_0x8ac381
+
+str_0x8ac381:
+    .string "Aber der Pokeradar hat doch schon\nein Pokémon entdeckt!"
+        
+        
+.elseif LANG_EN
+
+.endif

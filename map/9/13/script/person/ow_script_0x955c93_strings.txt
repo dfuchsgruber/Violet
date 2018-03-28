@@ -1,3 +1,0 @@
-.string str_0x955c9d GER
-	=Ich_bin_der_Abteilungsleiter_des\nCybernetik-Labors.\pSeit_geraumer_Zeit_entwickeln_wir\nein_Pok\emon,_das_vollst\$aendig_am\lComputer_entworfen_wurde.
-.end

@@ -1,8 +1,0 @@
-.string str_0x96612f GER
-	=Ich_habe_geh\$oert,_dass_hier_ein\nm\$aechtiges_Pok\emon_schl\$aeft.\pWenn_wir_unsere_Mission_erf\$uellt\nhaben,_werde_ich_es_mir_unter_den\lNagel_rei\$sen!
-.end
-
-
-.string str_0x9661bb GER
-	=Hey!_Finger_weg_von_dem_legend\$aeren\nPok\emon!
-.end

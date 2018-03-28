@@ -1,3 +1,0 @@
-.string str_0x965baa GER
-	=Eines_meiner_wertvollsten_B\$uecher\nhandelt_von_dem_Landmassen-Pok\emon\lGroudon.\pDer_Legende_nach_schuf_es_in_einem\nKrieg_mit_seinem_ewigen_Rivalen\lalle_Landmasse_dieser_Welt.
-.end

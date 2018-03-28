@@ -1,3 +1,0 @@
-.string str_0x81fc05 GER
-	=Diese_W\$ueste_ist_nichts_f\$uer_mein\nHerz._Die_st\$aendigen_T\$aeuschungen\lder_Fata_Morganas_belasten_mich_zu\lsehr...
-.end

@@ -1,7 +1,0 @@
-.string str_trash_empty GER
-    =Der Mülleimer ist leer.
-.end
-
-.string str_trash_full GER
-    =Sieht so aus, als hättest du für\n\b\x03 keinen Platz!\pKomm wieder, wenn du das Item\naufnehmen kannst.
-.end

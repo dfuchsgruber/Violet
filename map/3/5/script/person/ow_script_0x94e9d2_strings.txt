@@ -1,3 +1,0 @@
-.string str_0x94e9dc GER
-	=Es_ist_wichtig,_einfach_einmal\nabzuschalten_und_den_Geist_wandern\lzu_lassen...
-.end

@@ -1,3 +1,0 @@
-.string str_0x8f1dd4 GER
-	=Diese_Frau_in_dem_Kanu...\nSie_ist_so_wundersch\$oen!_Aber_ich\lkann_einfach_nicht_genug_Mut\lfinden,_sie_anzusprechen!
-.end

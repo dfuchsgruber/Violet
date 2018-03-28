@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0x9 0x0 str_0x8a9d7f str_0x8aaf13
 loadpointer 0x0 str_0x8aaf13
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8a9d7f
+
+str_0x8a9d7f:
+    .string "Was ist berauschender als der\nKlang eines Baches oder der Duft\lvon frischem Laub?"
+        
+        
+.global str_0x8aaf13
+
+str_0x8aaf13:
+    .string "Natur und Mensch sind keine\nFeinde, sondern brauchen einander.\pMerk dir das. Bitte."
+        
+        
+.elseif LANG_EN
+
+.endif

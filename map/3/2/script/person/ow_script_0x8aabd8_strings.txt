@@ -1,3 +1,0 @@
-.string str_0x8c0ff2 GER
-	=Aktania,_die_Insel_der_ewigen\nSonne!\l...\pKaum_zu_glauben,_dass_dieser_Ort\nmal_ein_Strandresort_war,_oder?
-.end

@@ -1,3 +1,0 @@
-.string str_0x962d54 GER
-	=Seit_vielen_Jahren_ist_dieses\nGebiet_unter_den_Top_Vier\lumk\$aempft.\pDer_Schwarze_Devin_und_der_Rosa\nFaun_haben_einst_einen_Wettkampf\l\$ueber_die_Herrschaft_in_diesem\lGebiet_abgehalten.\pZwar_ist_der_Schwarze_Devin_ein\nSch\$ueler_Fauns_gewesen,_doch_konnte\ler_seinen_Meister_nicht_bezwingen.\pDa_sieht_man_einmal_wieder,_dass\nman_nicht_zu_\$ueberheblich_werden\lsollte.
-.end

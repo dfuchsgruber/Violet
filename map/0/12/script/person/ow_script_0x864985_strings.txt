@@ -1,8 +1,0 @@
-.string str_0x86584d GER
-	=Unfassbar,_dass_man_ein_Kind_bis\nhierher_hat_kommen_lassen.\pIch_werde_deinem_Siegeszug_ein\nEnde_machen.
-.end
-
-
-.string str_0x8658b7 GER
-	=Du_musst_wohl_der_Junge_sein,_vor\ndem_Mistral_uns_gewarnt_hat.
-.end

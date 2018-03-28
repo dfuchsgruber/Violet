@@ -1,3 +1,0 @@
-.string str_0x936852 GER
-	=Der_Wasserpfad_ist_ein\nunterirdischer_Tunnel,_welcher\lunter_einem_Flussbett_verl\$aeuft.
-.end

@@ -1,3 +1,0 @@
-.string str_0x95f573 GER
-	=Der_Aschhain_ist_ein_kleiner_Wald\nam_Fu\$se_eines_kleinen_H\$uegels.\pAlles_dreht_sich_um_das_kleine,_an\ndiesem_Ort...
-.end

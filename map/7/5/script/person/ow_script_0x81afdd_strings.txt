@@ -1,8 +1,0 @@
-.string str_0x81aff5 GER
-	=Mia_legt_gro\$sen_Wert_auf\nNat\$uerlichkeit._Deswegen_ist_in_der\lArena_auch_alles_aus_nat\$uerlichen\lRohstoffen_hergestellt.
-.end
-
-
-.string str_0x81b06e GER
-	=Sogar_die_W\$aende_sind_aus_Holz_aus\ndem_Silvania-Wald.
-.end

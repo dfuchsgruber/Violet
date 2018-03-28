@@ -25,3 +25,21 @@ ow_script_0x95ffc6:
 loadpointer 0x0 str_0x9613d8
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x96149c
+
+str_0x96149c:
+    .string "Ah, ein Trainer hat sich hierher\nverirrt.\pMein Vater ist Glasbläser, er\nstellt Flöten aus Asche her.\pWenn du uns ein wenig Asche\nbringst, kann er sie verarbeiten."
+        
+        
+.global str_0x9613d8
+
+str_0x9613d8:
+    .string "Wenn du nun durch von Asche\nbedecktes hohes Gras läufst, fängt\ldie Aschetasche den Staub auf.\pWenn du genügend Asche gesammelt\nhast, bring sie zu meinem Vater\lund er wird sie weiterverarbeiten."
+        
+        
+.elseif LANG_EN
+
+.endif

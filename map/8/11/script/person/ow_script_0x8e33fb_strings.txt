@@ -1,8 +1,0 @@
-.string str_0x931a72 GER
-	=Lord_Albus_ist_der_Bringer_einer\nneuen_Welt!_Heil_ihm!
-.end
-
-
-.string str_0x92df3b GER
-	=Hast_du_nicht_genug_gesehen?\pStellst_du_dich_uns_wieder_in_die\nQuere?
-.end

@@ -1,3 +1,0 @@
-.string str_0x800688 GER
-	=\b\01s_Haus.\62
-.end

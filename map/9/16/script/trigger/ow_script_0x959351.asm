@@ -131,3 +131,75 @@ warpmuted 0x3 0x5 0x2 0x0 0x0
 waitstate
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x959e02
+
+str_0x959e02:
+    .string "Halt, keinen Schritt\nweiter!"
+        
+        
+.global str_0x959af2
+
+str_0x959af2:
+    .string "Hallo, PLAYER.\nDass wir uns an diesem Ort\lwiederbegegnen hatte ich nicht\lgehofft.\pUnd dass du dich meiner Bestrebung\nentgegenstellst entspricht\lebenfalls nicht meinen\lVorstellungen.\pIch habe dir einen Kampf\nversprochen, aber noch habe ich\lnicht die Macht erlangt, die ich\lbesitzen will.\pDas Magmaherz, welches hier\nausgestellt ist, verkörpert die\lEssenz der Landmassen.\pGemeinsam mit seinem wahren\nGebieter kann es ungeheuerliche\lMächte entfesseln.\pDu verstehst sicherlich, warum ich\ndas Artefakt nicht in einem Museum\lverstauben lassen kann.\p...\n...\pDu willst mich also aufhalten?\nDas werde ich dir leider nicht\lgestatten.\pSeit ihm Team Violet beigetreten\nbin, habe ich meiner Division\lbestens ausgebildete Eliten\lhinzugefügt.\pSieh zu, was du gegen sie\nausrichten kannst."
+        
+        
+.global str_0x959a4a
+
+str_0x959a4a:
+    .string "Du magst es bisher zwar mit\nFußsoldaten aufgenommen haben,\laber einer Elitekraft bist du\lnicht gewachsen, Junge."
+        
+        
+.global str_0x959abd
+
+str_0x959abd:
+    .string "Welch eine Schande!\nIch habe tatsächlich verloren."
+        
+        
+.global str_0x959a0e
+
+str_0x959a0e:
+    .string "Mein Lord Mistral, ich konnte den\nJunge nicht besiegen..."
+        
+        
+.global str_0x9599ae
+
+str_0x9599ae:
+    .string "Das hatte ich auch nicht erwartet.\nAber zumindest hast du PLAYER\llange genug aufgehalten..."
+        
+        
+.global str_0x959981
+
+str_0x959981:
+    .string "... Das Magmaherz ...\nEs ist nun meines..."
+        
+        
+.global str_0x959853
+
+str_0x959853:
+    .string "Mach dir nichts daraus, dass du\ndas Magmaherz nicht beschützen\lkonntest.\pAber einen Sieg will ich dir doch\ngeben.\pAuch wenn mein Gefolge nur allzu\ngerne das ganze Museum plündern\lwürde, werde ich mich\lzurückziehen...\pPLAYER!\nBei unserer nächsten Begegnung\lwerde ich dir mit ganzer Macht\lgegenübertreten."
+        
+        
+.global str_0x9595b1
+
+str_0x9595b1:
+    .string "Meine Güte!\nDiese Schurken, diese Verbrecher!\p...\nVerzeih bitte. Ich bin der\lDirektor des Museums und ein\lForscher der Laz.Corp.\pDu hast unser Museum wohl vor dem\ngröbsten Schaden bewahrt, auch\lwenn ich sehen muss, dass das\lMagmaherz entwendet wurde.\pOhne dich, könnte ich diesen Ort\nnun dicht machen.\pTausendfachen Dank!\nWie kann ich nich nur erkenntlich\lzeigen?\p...\n...\pOh, ich weiß!\nDu bist ein Trainer, nicht?\pWir von der Laz.Corp haben eine\nMethode entwickelt, Fossilien\lwieder zum Leben zu erwecken.\pIch werde dir diesen Gefallen tun,\nwenn du möchtest.\pBesuche uns einfach in der\nLaz.Corp.\pIch werde deiner Zugangskarte die\nentsprechenden Berechtigungen\lhinzufügen."
+        
+        
+.global str_0x95957f
+
+str_0x95957f:
+    .string "PLAYER wurde der Zugang zum\nFossilienlabor gewährt!"
+        
+        
+.global str_0x9594d2
+
+str_0x9594d2:
+    .string "Es fällt mir schwer, das Magamherz\ngehen zu lassen, aber ich werde\lsicherlich auch mit diesem\lSchicksalsschlag umgehen können...\pNicht weniger bist du der Held des\nTages!"
+        
+        
+.elseif LANG_EN
+
+.endif

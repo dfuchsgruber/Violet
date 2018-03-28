@@ -1,3 +1,0 @@
-.string str_0x947ab3 GER
-	=Professor_Primus_ist_eine_Koryph\$aee\nauf_dem_Gebiet_der_Physik.\pSeine_Abhandlungen_zur_Raum-Zeit-\nStruktur_sind_hochspannend.
-.end

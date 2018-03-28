@@ -1,3 +1,0 @@
-.string str_0x8ef678 GER
-	=Ich_bin_hierher_gekommen,_um_dem\nlegend\$aeren_Zeitpokemon_zu\lbegegnen._Wo_es_sich_wohl\lversteckt?
-.end

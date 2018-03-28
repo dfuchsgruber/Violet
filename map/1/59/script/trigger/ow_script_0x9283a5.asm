@@ -435,3 +435,177 @@ call ow_script_0x89e1fc
 loadpointer 0x0 str_0x92e56f
 callstd MSG_KEEPOPEN
 goto ow_script_0x92df8a
+
+
+.ifdef LANG_GER
+.global str_0x92d01d
+
+str_0x92d01d:
+    .string "... ... ...\pDir nach all der Zeit\ngegenüberzutreten ...\p...\pSo viel hat sich verändert, so\nviel ist geschehen ...\pWieso, Albus? Wieso tust du das?"
+        
+        
+.global str_0x92cf46
+
+str_0x92cf46:
+    .string "Alter Freund, es tut mir\nweh, dass wir unter diesen\lUmständen zusammenkommen.\pAber wir beide wissen, dass das\nSystem, dem wir gedient haben, das\lSystem, das wir selbst erschaffen\lhaben, uns entglitten ist."
+        
+        
+.global str_0x92ce82
+
+str_0x92ce82:
+    .string "Entglitten? Du hast dich von\nunserem Lebenswerk abgewendet.\lErinnerst du dich? Die Top Vier,\ldie Pokemon Liga. All das. Sie\lwaren unser Werk, unser\lVermächtnis.\pUnd nun trittst du es mit Füßen!"
+        
+        
+.global str_0x928b41
+
+str_0x928b41:
+    .string "Du tust mir unrecht. Ich habe so\nlange daran festgehalten, wie ich\les nur irgendwie verantworten\lkonnte.\pAber Korruption und Machtsucht\nhaben unsere Ideale infiziert und\leine kranke Regierung\lhervorgebracht.\pErkennst du es nicht? Siehst du\nnicht, was aus dieser Welt\lgeworden ist?\pDein eigener Schüler Devin ist der\nKönig des Untergrunds, die Polizei\lkümmert sich nicht um das Gesetz\lsondern bloß um einen gefüllten\lGeldbeutel.\pDie Feinde der Freiheit sind unter\neuch, Faun. Sie sind an deiner\lSeite. Der neue Champion, der\lLucius vertrieben hat...\pEr wird diese Welt nicht retten\nkönnen.\pVerstehst du nicht? Wir müssen\ndiese Aufgabe selbst in die Hand\lnehmen, wie wir es vor all den\lJahren getan haben."
+        
+        
+.global str_0x928a7f
+
+str_0x928a7f:
+    .string "Du irrst dich, Albus. Du irrst\ndich.\pDeine Motive sind edel, aber eine\nneue Revolution wird nichts\lbewirken. Hunderte Menschen werden\lunter dem Krieg, den du diesem\lKontinent bringst, leiden."
+        
+        
+.global str_0x928a11
+
+str_0x928a11:
+    .string "... ...\nDas Meer ...\lEs hat mich schon immer\lfasziniert...\l...\lEs ist voller Frieden und\lHarmonie...\l..."
+        
+        
+.global str_0x9288c7
+
+str_0x9288c7:
+    .string "Ich kenne dich, Faun.\pDu bist mein Freund.\pWir sind wie Brüder füreinander.\pDu wirst mich nicht bekämpfen und\nich werde dich nicht bekämpfen.\pJedoch werde ich mein Vorhaben\nnicht aufgeben, denn ich weiß,\ldass ich das Richtige tue.\lDu bist ein guter Mensch, Faun.\pAuch du wirst begreifen, dass ich\nim Recht liege.\pIrgendwann."
+        
+        
+.global str_0x9286da
+
+str_0x9286da:
+    .string "Bist du nicht der Junge, der mir\nauf Route 2 begegnet ist?\l...\lDu bist ein Schüler Fauns?\lDie Welt ist wahrlich klein. Ich\lhoffe, du bist nicht gekommen,\ldich unserer Sache in den Weg zu\lstellen.\lJa, ich bin der Kopf der\lRevolutionsbewegung, Albus.\lIm Kampf für Freiheit und\lGerechtigkeit bin ich unermüdlich.\lMöglicherweise kannst du, anders\lals dein Lehrer, zur Einsicht\lfinden und dich meiner Sache\lanschließen.\lEines steht aber fest:\lUnsere Wege werden sich wieder\lkreuzen."
+        
+        
+.global str_0x9286b8
+
+str_0x9286b8:
+    .string "Albus, warte..."
+        
+        
+.global str_0x928594
+
+str_0x928594:
+    .string "Hallo, PLAYER.\pDu bist Albus also bereits\nbegegnet.\pEr ist der Anführer der\nRevolutionsbewegung und mein\p...\pFreund...\pEr war es zumindest. Früher\neroberten wir gemeinsam den\lKontinent und gründeten die Top\lVier, musst du wissen.\pJetzt aber hat er sich gegen sein\neigenes System verschworen..."
+        
+        
+.global str_0x92dc49
+
+str_0x92dc49:
+    .string "Felix! Was verschlägt dich\ndenn hierher?"
+        
+        
+.global str_0x92dbcf
+
+str_0x92dbcf:
+    .string "Hallo Opi, hallo PLAYER!\pIch bin gekommen, um dich im Kampf\ngegen die Revolutionäre zu\lunterstützen, Opi, was sonst?"
+        
+        
+.global str_0x92db7f
+
+str_0x92db7f:
+    .string "Nun, da bist du zu spät, ihr\nAnführer ist mir eben durch die\lFinger gegangen."
+        
+        
+.global str_0x92db39
+
+str_0x92db39:
+    .string "War das der grün vermummte Mann,\ndem ich dort oben begegnet bin?"
+        
+        
+.global str_0x92db05
+
+str_0x92db05:
+    .string "Wie ungünstig! Ich hätte ihn\nüberwältigen sollen."
+        
+        
+.global str_0x935f18
+
+str_0x935f18:
+    .string "Rede keinen Unfug, Felix.\nAlbus\ Fertigkeiten im Kampf sind\ldeinen um Lichtjahre voraus.\lImmerhin waren wir einst Partner,\lwir sind ebenbürtig."
+        
+        
+.global str_0x92d98d
+
+str_0x92d98d:
+    .string "Du unterschätzt uns immer noch,\nOpi! Wir sind deine Schüler!\pWer sagt, dass wir nicht längst\nüber deine Generation\lhinausgewachsen sind?\pWer sagt, dass die Ära, die du uns\nvorausgesagt hast, nicht schon\lgekommen ist?"
+        
+        
+.global str_0x936ef3
+
+str_0x936ef3:
+    .string "Gjahaha! Gjahahap\nDu erinnerst mich an meine Jugend,\lFelix. Unverbesserlich\loptimistisch und naiv!\pNein, ihr zwei seid noch nicht\nso weit uns Veteranen\lherauszufordern.\pAber der Tag wird kommen, da ihr\nglänzen könnt und Menschen wie\lAlbus oder mich ablösen werdet."
+        
+        
+.global str_0x92d7c0
+
+str_0x92d7c0:
+    .string "Bis dahin aber müsst ihr noch\neiniges leisten, euch beweisen.\lKämpft mit Herz und lasst euch von\leuren Entscheidungen nicht\labbringen."
+        
+        
+.global str_0x93a4de
+
+str_0x93a4de:
+    .string "Ich finde es unfair, dass Opi uns\nimmer noch wie Kinder behandelt...\lSieht er nicht, dass wir\linzwischen unseren eigenen Weg\lgehen?\lWir werden ihm wohl beweisen\lmüssen, dass wir zu etwas taugen.\lIch werde meinen Plan, Arenaleiter\lzu werden, über den Haufen werfen.\lPLAYER, lass uns keine kleinen Ziele\lfassen.\lLass uns direkt nach den Sternen\lgreifen.\lLass uns den Titel des Champions\lanstreben!"
+        
+        
+.global str_0x92e6d7
+
+str_0x92e6d7:
+    .string "Was sagst du dazu?"
+        
+        
+.global str_0x92e662
+
+str_0x92e662:
+    .string "Nur, wenn man seine\nTräume hoch ansetzt, kann man\lGröße erlangen.\pWir werden die Welt erobern, auf\nunsere Art!"
+        
+        
+.global str_0x92e5ea
+
+str_0x92e5ea:
+    .string "Das ist die richtige Einstellung!\pWie einst Opi und seine beiden\nGefährten, werden wir uns diese\lWelt zu Füßen legen!"
+        
+        
+.global str_0x92e221
+
+str_0x92e221:
+    .string "Übrigens, ich bin auf dem Weg\nhierher unserem alten\lKlassenkameraden Blaise begegnet.\pEr scheint sich ebenfalls gut zu\nmachen, hat sogar einige\lArenaorden errungen. Nur seine\lhasszerfressene Art ist er noch\lnicht los geworden.\pHat aber etwas sehr interessantes\nerzählt, über eine Kampftechnik,\ldie sich Mega-Evolution nennt.\p... ...\p... ...\pIch dachte mir bereits, dass du\nauch nicht viel darüber weißt. Es\lscheint sich um eine Art der\lEvolution zu handlen, welche von\leinem Trainer nur ausgelöst werden\lkann, wenn sein Pokémon und er\leine enge Bindung zueinander\lhaben.\pWarum Faun uns dieses Geheimnis\nwohl vorenthalten hat?\pWir werden wohl auf eigene Faust\nherausfinden müssen, was es damit\lauf sich hat."
+        
+        
+.global str_0x92e138
+
+str_0x92e138:
+    .string "Weißt du...\nManchmal starre ich stundenlang in\lden Himmel und frage mich, was es\ljenseits unserer Welt gibt...\lIst dort draußen noch Leben?\lWerden wir ihm begegnen?\lDie Welt ist so riesig, größer\lnoch als unsere Träume.\l...\l..."
+        
+        
+.global str_0x92e024
+
+str_0x92e024:
+    .string "Weißt du, für den Anfang wäre es\nsicherlich hilfreich, wenn wir Opi\lim Kampf gegen die Revolutionäre\lunterstützen könnten.\pLass uns in Kaskada nach dem in\ngrün vermummten Mann, Albus,\lsuchen und ihn stellen.\pOpi wird sicherlich beeindruckt\nsein, wenn wir ihn fassen können."
+        
+        
+.global str_0x92e4e6
+
+str_0x92e4e6:
+    .string "Vielleicht ist es doch\nsinnvoller, sich auf kleine Ziele\lzu berufen. Niemand kann unendlich\lgroße Stufen erklimmen."
+        
+        
+.global str_0x92e56f
+
+str_0x92e56f:
+    .string "Vermutlich hast du du Recht. Opi\nund seine beiden Gefährten haben\lsich ihren Ruhm auch über viele\lJahre hinweg erkämpft."
+        
+        
+.elseif LANG_EN
+
+.endif

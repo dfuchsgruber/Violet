@@ -314,3 +314,45 @@ end
 ow_script_0x89d3d1:
 addvar 0x8000 0x1
 return
+
+
+.ifdef LANG_GER
+.global str_0x89c626
+
+str_0x89c626:
+    .string "PLAYER! Wir sind viel zu spät!\nUm unsere Unterlagen noch einmal\ldurchzusehen, bleibt wohl keine\lZeit mehr!\pKomm schon, Beeilung! Sonst\nverpassen wir noch die Prüfung!"
+        
+        
+.global str_0x89c567
+
+str_0x89c567:
+    .string "Ah ja, RIVAL und PLAYER!\pIch hatte schon befürchtet, ihr\nwürdet nicht auftauchen.\pNehmt bitte Platz, wir\nhaben lange genug auf euch gewartet."
+        
+        
+.global str_0x89c3c8
+
+str_0x89c3c8:
+    .string "Nun gut, meine lieben Schüler!\nHeute ist der Tag eurer\lAbschlussprüfung gekommen.\pZunächst werdet ihr in einer\ntheoretischen Prüfung euer Wissen\lum die Welt der Pokémon unter\lBeweis stellen.\pAnschließend liegt eine\npraktische Prüfung, in der euch\ldie Grundfertigkeiten eines\lTrainers abverlangt werden, vor euch.\pIn diesem Sinne werde\nich ohne weitere Umscheife mit dem\ltheoretischen Teil beginnen und\lnun die Fragebögen austeilen.\pIch wünsche absolute Ruhe!"
+        
+        
+.global str_0x89c29e
+
+str_0x89c29e:
+    .string "Vor euch findet ihr einen Bogen mit\njeweils zehn Fragen, die ihr\lbeantworten müsst.\pMacht euch keinen zu großen\nKopf, ihr könnt im praktischen\lTeil noch genügend Punkte sammeln,\laber gebt euch trotzdem Mühe!\pIn diesem Sinne wünsche ich\nallen ein gutes Gelingen!"
+        
+        
+.global str_0x89d5d3
+
+str_0x89d5d3:
+    .string "Gut, die Bearbeitungszeit ist nun\nvorüber!\pLegt eure Stifte beiseite, ich\nwerde die Bögen einsammeln und\lunverzüglich korrigieren."
+        
+        
+.global str_0x89d54d
+
+str_0x89d54d:
+    .string "Findet euch, solange ich mit der\nKorrektur beschäftigt bin, doch\lbitte schon einmal auf dem Hof\lzusammen, damit wir schnell mit\lder praktischen Prüfung beginnen\lkönnen."
+        
+        
+.elseif LANG_EN
+
+.endif

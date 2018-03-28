@@ -26,3 +26,27 @@ ow_script_0x8fb752:
 loadpointer 0x0 str_0x8fb75c
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8fb630
+
+str_0x8fb630:
+    .string "Kennst du das? Du liebst es,\nFlug-Pokémon zu trainieren und\lwirst ständig von Gestein-Pokémon\lausgebremst?\pDann habe ich hier die perfekte\nAbhilfe für dich!"
+        
+        
+.global str_0x8fb6cf
+
+str_0x8fb6cf:
+    .string "Stahlflügel ist eine Attacke, die\nvon fliegenden Pokémon ausgeführt\lwerden kann und selbst\lGestein-Pokémon sehr effektiv\ltrifft."
+        
+        
+.global str_0x8fb75c
+
+str_0x8fb75c:
+    .string "Mit Stahlflügel kannst selbst\nlästige Gestein-Pokémon effektiv\ltreffen."
+        
+        
+.elseif LANG_EN
+
+.endif

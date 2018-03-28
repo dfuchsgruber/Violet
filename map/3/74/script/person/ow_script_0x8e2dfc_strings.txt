@@ -1,8 +1,0 @@
-.string str_0x8e30de GER
-	=Auch_wir_Jugendlichen_k\$oennen_es\nweit_bringen_in_dieser_Welt!
-.end
-
-
-.string str_0x8e311d GER
-	=Siehst_du?_Du_hast_mich\ngeschlagen_und_wirst_den_Geist\lunserer_Generation_in_die_Welt\ltragen!
-.end

@@ -1,3 +1,0 @@
-.string str_0x95eec1 GER
-	=Einer_Legende_nach_lebt_im_Volcano\nein_gruseliges_D\$aemonenpok\emon.\pEs_spuckt_Feuer_und_sein_Atem\nentz\$uendet_W\$aelder.
-.end

@@ -55,3 +55,41 @@ loadpointer 0x0 str_0x812597
 callstd MSG_FACE
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x8bfba9
+
+str_0x8bfba9:
+    .string "Hallo! Mein Name ist Rick.\nIch und mein Bruder Nick betreiben\ldiese Farm hier. Wir züchten\lMähikel, Voltilamm und\lVogelpokemon. Wenn du willst,\lbringt dich mein Staraptor von\lhier nach Aktania. Als\lGegenleistung verlange ich gerade\leinmal 150 POKEDOLLAR.\pWas sagst du? Willst du den\nService in Anspruch nehmen?"
+        
+        
+.global str_0x812578
+
+str_0x812578:
+    .string "Toll! Also, 150 POKEDOLLAR, bitte!\n"
+        
+        
+.global str_0x812509
+
+str_0x812509:
+    .string "PLAYER bezahlt 150 POKEDOLLAR."
+        
+        
+.global str_0x81f8d2
+
+str_0x81f8d2:
+    .string "Dankeschön...\nKomm bitte mit, mein Staraptor wird\ldich jetzt nach Aktania fliegen."
+        
+
+        
+.global str_0x812597
+
+str_0x812597:
+    .string "Ganz wie du willst. Solltest du\njedoch irgendwanneinmal nach\lAktania wollen, komm einfach zu\lmir."
+        
+        
+
+.elseif LANG_EN
+
+.endif

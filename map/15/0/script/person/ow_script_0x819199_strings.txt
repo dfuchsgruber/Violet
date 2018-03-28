@@ -1,3 +1,0 @@
-.string str_0x8471be GER
-	=Mia_aus_Silvania_kommt_oft_hierher\nund_\$ueberwacht_die_Vegetation._Ohne\lsie_w\$uerde_die_Umwelt_hier\lzusammenbrechen.
-.end

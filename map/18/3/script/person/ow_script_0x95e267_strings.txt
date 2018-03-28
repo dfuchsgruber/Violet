@@ -1,3 +1,0 @@
-.string str_0x95e271 GER
-	=Ich_suche_das_Pok\emon_Panzaeron!\nEs_hei\$st,_dass_es_sehr_selten_ist\lund_sich_deswegen_in_den_von_Asche\lbedeckten_Gr\$aesern_versteckt...
-.end

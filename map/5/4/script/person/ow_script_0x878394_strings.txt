@@ -1,3 +1,0 @@
-.string str_0x880f63 GER
-	=Es_gibt_in_jeder_Stadt_einen\nPOKESTOP._Ich_h\$oerte,_dass_in_allen\lPOKESTOPs_das_Sortiment_zwar\lgleich_ist,_aber_laufend_erweitert\lwird.
-.end

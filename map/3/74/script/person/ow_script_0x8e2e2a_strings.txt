@@ -1,8 +1,0 @@
-.string str_0x8e6784 GER
-	=Viele_ziehen_ihre_Pok\emon_nur_zum\nK\$aempfen_auf._Sie_mit_Liebe_zu\lbehandeln_ist_allerdings_nicht\lweniger_wichtig.
-.end
-
-
-.string str_0x8e67f6 GER
-	=Eine_Niederlage_ist_absolut_keine\nSchande._Meine_Pok\emon_haben_ihr\lBestes_gegeben.
-.end

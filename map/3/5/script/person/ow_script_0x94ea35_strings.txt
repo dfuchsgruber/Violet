@@ -1,3 +1,0 @@
-.string str_0x953b28 GER
-	=Eigentlich_ist_es_mir_verboten,\ndar\$ueber_zu_sprechen,_aber_ich_bin\lso_aufgeregt!\pDie_Laz.Corp_arbeitet_seit_langem\nan_der_Synthese_k\$uenstlicher\lPok\emon_und_vor_einigen_Tagen_ist\luns_endlich_der_Durchbruch\lgelungen.
-.end

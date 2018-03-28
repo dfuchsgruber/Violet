@@ -1,3 +1,0 @@
-.string str_0x95a74c GER
-	=Ein_wei\$ses,_hirsch\$aehnliches_Wesen,\ndas_von_einer_transzendenten_Anmut\lgezeichnet_ist,_gleitet_vor_dem\lLicht_der_Sonne.\pEs_wirkt_fast_wie_eine_Gottheit.
-.end

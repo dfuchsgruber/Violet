@@ -1,8 +1,0 @@
-.string str_0x92ddd7 GER
-	=W\$aerst_du_eine_Blume,_w\$uerde_ich\ndich_pfl\$uecken,_du_bist_so_h\$uebsch\lanzusehen...
-.end
-
-
-.string str_0x92de26 GER
-	=Ungl\$uecklicherweise_aber_hast_du\nnun_mich_gepfl\$ueckt..._Findest_du\lmich_etwa_auch_anziehend?
-.end

@@ -1,3 +1,0 @@
-.string str_0x8cb5ae GER
-	=Was_w\$uerde_ich_nur_f\$uer_einen\nRegenschirm_geben...
-.end

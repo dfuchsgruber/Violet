@@ -1,3 +1,0 @@
-.string str_0x958a43 GER
-	=Sieh_dir_nur_mal_dieses_Pok\emon\nan!\pSein_Skelett_ist_riesig!
-.end

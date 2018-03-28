@@ -1,3 +1,0 @@
-.string str_0x94c2dd GER
-	=Besitzt_du_auch_eine_Detektor?\pIn_den_Optionen_kannst_du\neinstellen,_ob_du_benachricht\lwerden_willst,_wenn_du_dich_in_die\lN\$aehe_eines_versteckten_Items\lbegibst.
-.end

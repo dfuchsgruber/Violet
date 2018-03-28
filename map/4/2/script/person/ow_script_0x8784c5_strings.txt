@@ -1,3 +1,0 @@
-.string str_0x881901 GER
-	=Oh,_hallo_\b\01!_Wie_geht_es_dir?\n...\lFreut_mich!_Gr\$ue\$se_doch_bitte_deine\lMutter_von_mir.
-.end

@@ -1,8 +1,0 @@
-.string str_0x935d84 GER
-	=Etikette_und_Anstand_sind_zeichen\neines_guten_Charakters.
-.end
-
-
-.string str_0x93679b GER
-	=Nur_wer_sich_auch_zu_benehmen\nwei\$s,_kann_k\$aempfen.
-.end

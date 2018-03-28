@@ -1,8 +1,0 @@
-.string str_0x87f432 GER
-	=Es_hei\$st,_das_Quellwasser_vom\nK\$uestenberg_habe_magische\lF\$aehigkeiten._Seine_blo\$se_Pr\$aesenz\lsoll_das_Wasser_in_seiner\lUmgebung_verst\$aerken.
-.end
-
-
-.string str_0x87f4bb GER
-	=Wenn_du_der_Legende_glauben\nschenkst,_wird_das_Zauberwasser\lseine_Wirkung_entfalten,\lversprochen!
-.end

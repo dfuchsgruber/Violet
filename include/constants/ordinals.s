@@ -1,0 +1,6 @@
+.equ LESS, 0x0
+.equ EQUAL, 0x1
+.equ HIGHER, 0x2
+.equ LESS_OR_EQUAL, 0x3
+.equ HIGHER_OR_EQUAL, 0x4
+.equ NOT_EQUAL, 0x5

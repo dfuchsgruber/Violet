@@ -37,3 +37,33 @@ ow_script_0x71d7cf:
 loadpointer 0x0 str_0x721ed1
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x721f5f
+
+str_0x721f5f:
+    .string "Hallo! Ich bin der Beerenverkäufer\nvon Theto. Wie mein Name schon\lsagt, verkaufe ich Beeren. Willst\ldu ein paar Beeren kaufen?"
+        
+        
+.global str_0x71d79e
+
+str_0x71d79e:
+    .string "Such dir etwas aus, mein Sortiment\nist riesig!"
+        
+        
+.global str_0x71d3f1
+
+str_0x71d3f1:
+    .string "Danke für deinen Einkauf. Beehre\nmich bald wieder!"
+        
+        
+.global str_0x721ed1
+
+str_0x721ed1:
+    .string "Wirklich? Das ist schade, denn\nBeeren können genauso nützlich sein\lwie Tränke oder Pokebälle. Komm\lwieder, wenn du Beeren kaufen\lwillst."
+        
+        
+.elseif LANG_EN
+
+.endif

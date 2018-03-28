@@ -1,3 +1,0 @@
-.string str_0x8c8e19 GER
-	=Diese_H\$oehle_hat_sich_im_Laufe_der\nJahre_mit_Meereswasser_gef\$uellt.\pSie_liegt_direkt_unterhalb_von\nKaskada,_der_Stadt_der_Quellen_und\ldes_Wassers.
-.end

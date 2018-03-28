@@ -1,8 +1,0 @@
-.string str_0x927db0 GER
-	=Hey,_du_da!\nDu_kannst_da_nicht_lang,_unser\lAnf\$uehrer_hat_dort_zu_tun.\pEr_wird_die_Welt_zu_einem_besseren\nOrt_machen,_weswegen_ich_dich\lnicht_passieren_lassen_kann.
-.end
-
-
-.string str_0x927d4e GER
-	=Wieso_widersetzt_du_dich_dem\nRecht,_dem_Frieden?_Tr\$aeumst_du\lnicht_auch_von_einer_besseren\lWelt?
-.end

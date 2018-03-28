@@ -1,3 +1,0 @@
-.string str_0x8dea7d GER
-	=Arena_von_Meriana_City\pTyp:_Kampf\nLeiter:_Manus
-.end

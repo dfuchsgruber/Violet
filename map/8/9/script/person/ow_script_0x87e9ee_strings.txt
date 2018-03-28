@@ -1,3 +1,0 @@
-.string str_0x92723b GER
-	=Ich_habe_miterlebt,_wie_die_drei\ngr\$oe\$sten_Trainer_ihrer_Zeit_die_Top\lVier_ins_Leben_riefen.\pIhre_Wege_m\$oegen_sich_getrennt\nhaben,_ihr_Verm\$aechtnis_aber_ist\lnoch_immer_standhaft.
-.end

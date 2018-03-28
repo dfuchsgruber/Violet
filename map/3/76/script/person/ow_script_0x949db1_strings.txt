@@ -1,3 +1,0 @@
-.string str_0x94dabc GER
-	=Hast_du_je_von_Lucius,_dem\nDrachent\$oeter_geh\$oert?\pEs_hei\$st,_er_hat_sein_Leben_der\nJagd_nach_der_gro\$sen_Schlange,_die\lin_den_Wolken_wohnt,_gewidmet.
-.end

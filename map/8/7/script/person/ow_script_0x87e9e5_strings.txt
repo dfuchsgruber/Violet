@@ -1,3 +1,0 @@
-.string str_0x87f361 GER
-	=Hunger!_Hunger!\nIch_will_essen!
-.end

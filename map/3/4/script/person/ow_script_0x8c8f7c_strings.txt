@@ -1,3 +1,0 @@
-.string str_0x8f179f GER
-	=Schon_lange_frage_ich_mich,_was\ndie_Erbauer_dieser_Stadt_mit\ldiesen_marineblauen\lPflastersteinen_zum_Ausdruck\lbringen_wollten...
-.end

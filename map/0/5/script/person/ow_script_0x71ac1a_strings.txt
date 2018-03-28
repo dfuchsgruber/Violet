@@ -1,8 +1,0 @@
-.string str_0x71ac32 GER
-	=Ich_frage_mich,_wo_der_Ausgang\nist..._Ich_irre_schon_seit_Stunden\ldurch_diese_H\$oehlen...
-.end
-
-
-.string str_0x71ac8d GER
-	=Die_Dunkelheit_ist_mir_bei_der\nSuche_nach_dem_Ausgang_nicht_sehr\lhilfreich.
-.end

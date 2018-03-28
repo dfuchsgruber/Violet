@@ -1,3 +1,0 @@
-.string str_0x89d77c GER
-	=Wieso_bist_du_denn_noch_nicht\ndrau\$sen_auf_dem_Pausenhof?_Dass_du\limmer_so_tr\$oedeln_musst!_Beeil_dich\ljetzt_aber!
-.end

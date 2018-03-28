@@ -1,3 +1,0 @@
-.string str_0x8a2b69 GER
-	=Wenn_ich_so_\$ueber_die_Kronen_der\nB\$aeume_blicke,_werde_ich_ganz\lmelancholisch._Als_kleines_M\$aedchen\lhaben_ich_und_mein_Pok\emon_gerne\lim_Unterholz_gespielt...
-.end

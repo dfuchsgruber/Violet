@@ -465,3 +465,153 @@ ow_script_0x8a51e5:
 applymovement 0xff ow_script_movs_0x8a51f1
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8a51f8
+
+str_0x8a51f8:
+    .string "Team Violet Rüpel: So du dummes\nGör! Gib mir schon deine Pokémon.\lMit ihnen habe ich viel bessere\lChancen, den dummen Professor Tann\lzu besiegen. Los! Wird\s bald!"
+        
+        
+.global str_0x8a51a2
+
+str_0x8a51a2:
+    .string "Hey, du da! Hör sofort auf, dem\nkleinen Mädchen zuzusetzen!"
+        
+        
+.global str_0x8a50fb
+
+str_0x8a50fb:
+    .string "Team Violet Rüpel: Na sieh einer\nan, wen haben wir denn da? Den\lJungen, der meinen Kollegen\lgeschlagen hat. Haben wir dich\lnicht gewarnt, uns in Ruhe zu\llassen?"
+        
+        
+.global str_0x8a509b
+
+str_0x8a509b:
+    .string "Mädchen: Bitte, bitte! Hilf mir!\nDiese böse Frau will mir mein\lkleines Voltilamm stehlen!"
+        
+        
+.global str_0x8a5043
+
+str_0x8a5043:
+    .string "Team Violet Rüpel: Schweig! Dieses\nPokémon ist in meinen Händen\lbesser aufgehoben."
+        
+        
+.global str_0x8a5008
+
+str_0x8a5008:
+    .string "Ich sage es nicht noch einmal!\nLass das Mädchen in Ruhe!"
+        
+        
+.global str_0x8a4fc6
+
+str_0x8a4fc6:
+    .string "Team Violet Rüpel: Oder was?\nDenkst du, ich habe Angst vor dir?"
+        
+        
+.global str_0x8a4f60
+
+str_0x8a4f60:
+    .string "Dich mit uns von Team Violet\nanzulegen, ist keine gute Idee,\ldummes Kind. Lass dir das gesagt\lsein!"
+        
+        
+.global str_0x8a4f3a
+
+str_0x8a4f3a:
+    .string "Jetzt! Lauf davon, Kleine!\nSchnell!"
+        
+        
+.global str_0x8a4f1c
+
+str_0x8a4f1c:
+    .string "Mädchen: Ohje! Waaaah!"
+        
+        
+.global str_0x8a4e71
+
+str_0x8a4e71:
+    .string "Team Violet Rüpel: Du Idiot! Du\nhast mich um ein Pokémon gebracht!\lDafür wirst du bezahlen!"
+        
+        
+.global str_0x8a4ed1
+
+str_0x8a4ed1:
+    .string "Völlig ausgeschlossen! Wie konnte\nich verlieren?"
+        
+        
+.global str_0x8a658d
+
+str_0x8a658d:
+    .string "Verdammt! Wenn ich mehr Zeit\nhätte, mich mit dir\lherumzuschlagen... aber ich muss\llos! Vergiss uns nicht!"
+        
+        
+.global str_0x8a64ec
+
+str_0x8a64ec:
+    .string "PLAYER. Schön zu sehen, dass du\ndiesem kleinen Mädchen in Not\lgeholfen hast. Du hast keine\lFurcht gezeigt, sehr\lbewundernswert."
+        
+        
+.global str_0x8a6402
+
+str_0x8a6402:
+    .string "Hmpf... In der Tat hast du\nziemlich gut gekämpft. Du könntest\lein ernstzunehmender Gegner\lwerden. Aber dennoch scheint sich\ldie Sache mit dem Kind gelohnt zu\lhaben. Sieh nur, es hat ein Item\lfallen lassen, als es weggelaufen\list..."
+        
+        
+.global str_0x8a636b
+
+str_0x8a636b:
+    .string "Tatsächlich! Das arme Ding! Erst\nwird es von dieser Frau bedroht\lund dann verliert es auch noch\lsein Item. Du solltest es ihm\lzurückbringen, PLAYER!"
+        
+        
+.global str_0x8a62df
+
+str_0x8a62df:
+    .string "Unsinn. Das Balg hat das Item\nverloren, also gehört es ihm nicht\llänger. Du hast die Frau besiegt,\lalso kannst du es auch an dich\lnehmen."
+        
+        
+.global str_0x8a5fb6
+
+str_0x8a5fb6:
+    .string "Ich werde..."
+        
+        
+.global str_route_2_cave_choice_0
+
+str_route_2_cave_choice_0:
+    .string "Zurückbringen"
+        
+        
+.global str_route_2_cave_choice_1
+
+str_route_2_cave_choice_1:
+    .string "Behalten"
+        
+        
+.global str_0x8a5d7e
+
+str_0x8a5d7e:
+    .string "... Wie dumm von dir... ....\naber das ist deine Sache... auf\ldiese Weise wirst du niemals\lErfolg haben, das garantiere\lich..."
+        
+        
+.global str_0x8a5ce8
+
+str_0x8a5ce8:
+    .string "Gut gemacht, PLAYER. Das Mädchen\nsolltest du irgendo jenseits der\lHöhle auf Route 2 finden. Übergib\lihr das Item am Besten schnell.\lIch zähle auf dich!"
+        
+        
+.global str_0x8a5f23
+
+str_0x8a5f23:
+    .string "Ich bin enttäuscht von dir,\nPLAYER... Das arme Mädchen."
+        
+        
+.global str_0x8a5eb1
+
+str_0x8a5eb1:
+    .string "Eine kluge Entscheidung... Du\nwirst einmal ein guter Trainer\lwerden, das habe ich im Gefühl...\lWir sehen uns..."
+        
+        
+.elseif LANG_EN
+
+.endif

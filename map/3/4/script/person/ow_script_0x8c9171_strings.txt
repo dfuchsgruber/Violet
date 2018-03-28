@@ -1,3 +1,0 @@
-.string str_0x8f192d GER
-	=Wenn_meine_Pok\emon_Kaskada\nbeherrschten,_k\$oennte_ich_mit_ihnen\ldie_Wasserf\$aelle_erklimmen.
-.end

@@ -51,3 +51,15 @@ clearflag AKTANIA_LESTER_REGI_ROOM
 setvar STORY_PROGRESS 0x13
 warp 0x6 0x9 0x0 0x0 0x0
 end
+
+
+.ifdef LANG_GER
+.global str_0x8cade0
+
+str_0x8cade0:
+    .string "Dieser Ort ist heilig. Niemand\ndarf ihn je betreten, der nicht\lseinen Eid gegenüber den Wächtern\lgeschworen hat.\p...\nBeeilen wir uns."
+        
+        
+.elseif LANG_EN
+
+.endif

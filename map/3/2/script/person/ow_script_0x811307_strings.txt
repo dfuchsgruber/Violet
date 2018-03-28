@@ -1,3 +1,0 @@
-.string str_0x8cb3d6 GER
-	=Wusstest_du,_dass_sich_in_Muscheln\nwertvolle_Perlen_verstecken\lk\$oennen?
-.end

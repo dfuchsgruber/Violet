@@ -1,3 +1,0 @@
-.string str_0x94dcc8 GER
-	=Das_Museum_von_Orina_City_sollte\nein_Punkt_auf_jeder_guten\lSightseeing-Tour_sein.\pDie_Nachbildungen_antiker_Pok\emon\nsind_schlichtweg_beeindruckend.
-.end

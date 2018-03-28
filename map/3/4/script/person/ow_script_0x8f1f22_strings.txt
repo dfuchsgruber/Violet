@@ -1,3 +1,0 @@
-.string str_0x926d9d GER
-	=Wenn_ich_gro\$s_bin,_m\$oechte_ich_eine\nMillion_\b7_haben!\pDann_kann_ich_mir_endlich_eine\nTour_mit_dem_Kanu_leisten!
-.end

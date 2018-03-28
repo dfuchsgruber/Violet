@@ -48,3 +48,33 @@ ow_script_0x95e771:
 loadpointer 0x0 str_0x95e77f
 callstd MSG_KEEPOPEN
 goto ow_script_0x95e6bd
+
+
+.ifdef LANG_GER
+.global str_0x95e7e5
+
+str_0x95e7e5:
+    .string "Willkommen in meiner Welt,\nPLAYER!\pHattest du mich hier nicht\nerwartet?\pDabei bin ich doch selbst in\ndieser Gegend aufgewachsen...\pHabe ich nicht erwähnt, dass ich\naus Inferior stamme?\p... ...\nUnd dass ich Arenaleiterin der\lStadt bin weißt du also auch\lnicht?\pHuch, entschuldige bitte...\nDas bleibt aber unter uns, ja?\lDass ein Arenaleiter sich gegen\ldie Top Vier stellt und insgeheim\ldie Revolution unterstützt...\pNunja...\nDa wären wir auch schon wieder an\ldem Punkt angekommen, an dem ich\ldich um deine Hilfe bitten muss.\pIch kann und möchte mich nicht auf\ndie Top Vier verlassen, das kannst\ldu sicherlich verstehen.\pEin hochrangiges Mitglied des Team\nViolet hat unsere Stadt besetzt.\pIhr Anführer heißt Mistral und ich\nweiß nicht, ob ich alleine mit ihm\lfertig werde.\pAber zusammen - hihi - ähm, werden\nwir ihn sicherlich besiegen\lkönnen."
+        
+        
+.global str_0x95eb33
+
+str_0x95eb33:
+    .string "Was sagst du dazu?\nHilfst du mir?"
+        
+        
+.global str_0x95e710
+
+str_0x95e710:
+    .string "Ich wusste, dass ich auf dich\nzählen kann, PLAYER.\pWir treffen uns in Inferior,\nwestlich von hier!"
+        
+        
+.global str_0x95e77f
+
+str_0x95e77f:
+    .string "Hey! Du kannst mich nicht einfach\nso im Stich lassen, PLAYER!\lWir sind doch - äh - Freunde?\lOder nicht?"
+        
+        
+.elseif LANG_EN
+
+.endif

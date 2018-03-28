@@ -114,3 +114,63 @@ setflag ROUTE_5_FUTURE_SEEN
 special 0x2d
 waitstate
 end
+
+
+.ifdef LANG_GER
+.global str_0x94d6db
+
+str_0x94d6db:
+    .string "Ist das erneut eine Vision?\n... ... ...\pDoch was ist das für ein dunkler,\nbeängstigender Ort?\pEs wirkt so, als hätten violette\nKristalle die Welt verschlungen..."
+        
+        
+.global str_0x94d69f
+
+str_0x94d69f:
+    .string "Ein trister, lebloser Ort...\nWas hat das nur zu bedeuten?"
+        
+        
+.global str_0x94d65f
+
+str_0x94d65f:
+    .string "Sind das etwa Faun und Larissa?\nWarum sind sie an diesem Ort?"
+        
+        
+.global str_0x94d5ec
+
+str_0x94d5ec:
+    .string "Faun, ich bin froh, Euch\nhier zu treffen.\pIch hatte fast befürchtet, Ihr\nwürdet nicht kommen."
+        
+        
+.global str_0x94d4e4
+
+str_0x94d4e4:
+    .string "Ach Mädchen, ich hätte genug\nGrund gehabt, dich wie die anderen\lzu versetzten.\pAber trotz allem, was passiert\nist, bleibe ich noch immer ein\lMitglied der Top Vier.\pAuch wenn von der Welt, die ich\ngeschworen habe zu beschützen,\lnicht mehr viel übrig ist..."
+        
+        
+.global str_0x94d210
+
+str_0x94d210:
+    .string "Ich bedaure zutiefst, was\npassiert ist, und ich gebe zu,\ldass es hätte verhindert werden\lkönnen.\pDoch es war unmöglich, die\nEreignisse zu antizpieren, die\lunsere Welt in diese finstere\lSphäre gestürzt haben..."
+        
+        
+.global str_0x94d09a
+
+str_0x94d09a:
+    .string "Das ist nicht länger von\nBedeutung. Was zählt, ist die\lTatsache, dass wir noch immer\lleben.\pDiese Welt mag verloren sein, aber\nwir werden unsere Hoffnung nicht\lverlieren.\pUnsere Freunde und Familien haben\nnicht umsonst ihr Leben gelassen.\pLarissa, es gilt nun, dich zu\nbeweisen. Wir werden uns nicht\lalles nehmen lassen."
+        
+        
+.global str_0x94c54b
+
+str_0x94c54b:
+    .string "Unmöglich!\nSie haben uns gefunden!"
+        
+        
+.global str_0x94c524
+
+str_0x94c524:
+    .string "Das ist unser Ende..."
+        
+        
+.elseif LANG_EN
+
+.endif

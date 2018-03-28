@@ -1,3 +1,0 @@
-.string str_0x8f2b00 GER
-	=Viele_sind_der_Meinung,_es_g\$aebe\nverschiedene_Zeitlinien.\lCelebi,_das_Zeitpokemon,_soll\ljedoch_\$ueber_ihnen_existieren_und\lsie_alle_kennen.
-.end

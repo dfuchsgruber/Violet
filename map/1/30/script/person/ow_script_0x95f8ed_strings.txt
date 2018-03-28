@@ -1,3 +1,0 @@
-.string str_0x960444 GER
-	=Der_nette_Herr_in_dem_Haus_dort\nist_ein_K\$uenstler.\pEr_stellt_Fl\$oeten_aus_Asche_her.\nDu_solltest_ihn_besuchen.
-.end

@@ -1,3 +1,0 @@
-.string str_0x8f45a3 GER
-	=Wenn_eines_meiner_Pok\emon_die\nAttacke_Surfer_beherrschen_w\$uerde,\lk\$oennte_ich_diesen_Fluss_nach\lKaskada_hinaufschwimmen.
-.end

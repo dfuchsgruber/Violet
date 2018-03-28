@@ -1,3 +1,0 @@
-.string str_0x817948 GER
-	=Pikachuuu!!!
-.end

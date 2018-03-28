@@ -194,3 +194,69 @@ ow_script_0x8a15f3:
 applymovement 0x3 ow_script_movs_0x8a15ff
 waitmovement 0x0
 return
+
+
+.ifdef LANG_GER
+.global str_0x8a17ec
+
+str_0x8a17ec:
+    .string "Wir sollten uns beeilen. Rin\nund die anderen Rüpel werden\llängst in Silvania sein.\pIch habe da eine viel bessere\nIdee!\pLass hören.\pAuf Route 2 soll der\nArcheologe Professor Tann sein\lLabor haben. Denkst du nicht auch,\ldass er uns etwas über den Stein\lwissen könnte?\pJa, das klingt einleuchtend.\nRin wird uns reichlich entlohnen,\lwenn wir ihr die Informationen\lbesorgen, die sie sucht.\pDann ist das beschlossen. Wir\nwerden dem Professor zusetzen und\ldann -"
+        
+        
+.global str_0x8a1608
+
+str_0x8a1608:
+    .string "Der Junge da hat uns\nbelauscht!\lJa, genau! Du da, du Knirps!\lWeißt du überhaupt, wer wir sind?\lMitglieder des Team Violet\lnatürlich. Unsere Organisation\lwird schon bald die Herrschaft\lüber diese Region erlangt haben\lund da können wir Rotzlöffel wie\ldich nicht gebrauchen.\lDu solltest ihn erledigen,\lehe er jemanden von unserem\lVorhaben erzählen kann.\lDas werde ich tun, keine\lSorge. Jetzt wirst du erleben, was\les heißt, sich mit Team Violet\lanzulegen!"
+        
+        
+.global str_0x8a158f
+
+str_0x8a158f:
+    .string "Fürchte uns! Spüre das Ausmaß\nunserer Stärke!"
+        
+        
+.global str_0x8a15bf
+
+str_0x8a15bf:
+    .string "Ein Bengel hat mich geschlagen?\nWie erniedrigend!"
+        
+        
+.global str_0x8a14b2
+
+str_0x8a14b2:
+    .string "I... Ich ... du ... wie konnte ich\ngegen einen Grünschnabel wie dich\lverlieren?\l...\lAber das ist ja auch\lnebensächlich. Ich habe einen Plan\lauszuführen.\lDu hast nicht das letzte Mal von\luns gehört, das schwöre ich dir!"
+        
+        
+.global str_0x8a146b
+
+str_0x8a146b:
+    .string "Und ich habe keine Zeit, mich mit\nGören zu befassen! Adieu!"
+        
+        
+.global str_0x8f2375
+
+str_0x8f2375:
+    .string "Keine schlechte Vorstellung,\nJunge. Du scheinst zwar noch nicht\llange ein Trainer zu sein, doch\lkannst du eine Pokémon mit Eleganz\lführen.\pErlaube mir, mich vorzustellen.\nIch bin Larissa, meines Zeichens\lKünstlerin. Diese Plage namens\lTeam Violet treibt schon seit\lgeraumer Zeit ihr Unwesen in der\lRegion, doch scheinen sie in den\lletzten Wochen aggressiver\lgeworden zu sein.\pDa du nun ohnehin zu ihren Feinden\nzählst, könntest du sicherlich\lhelfen, diese niederträchtigen\lKreaturen in ihre Schranken zu\lweisen."
+        
+        
+.global str_0x8f2c1e
+
+str_0x8f2c1e:
+    .string "Hu? Du zögerst? Fehlt es dir an\nMut? Habe ich mich in dir geirrt?"
+        
+        
+.global str_0x8a1cdd
+
+str_0x8a1cdd:
+    .string "Den bösen Machenschaften von Team\nViolet muss ich Einhalt gebieten.\lDu kannst auf mich zählen!"
+        
+        
+.global str_0x8f2c62
+
+str_0x8f2c62:
+    .string "Ehrenhaft und nobel\ngesprochen, Junge. Die Welt\lbraucht mehr von euch ehrgeizigen\lRittern.\pWohin sind Tugend und Eleganz\nverschwunden? Ich werde sie\lzurückbringen, das versichere ich\ldir.\pWir werden uns wiedersehen, ich\nkann es in deinen Augen lesen."
+        
+        
+.elseif LANG_EN
+
+.endif

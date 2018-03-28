@@ -108,3 +108,27 @@ ow_script_0x83f924:
 loadpointer 0x0 str_0x83f92e
 callstd MSG
 end
+
+
+.ifdef LANG_GER
+.global str_0x83f8bf
+
+str_0x83f8bf:
+    .string "Die Felswand sieht steinig aus, ein\nPokémon kann hier klettern.\lMöchtest du BUFFER_1 einsetzten?"
+        
+        
+.global str_0x83f89b
+
+str_0x83f89b:
+    .string "BUFFER_2 setzt BUFFER_1 ein."
+        
+        
+.global str_0x83f92e
+
+str_0x83f92e:
+    .string "Die Felswand sieht steinig aus,\nsodass ein Pokémon bestimmt\lhinaufklettern könnte."
+        
+        
+.elseif LANG_EN
+
+.endif

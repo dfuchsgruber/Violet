@@ -23,3 +23,27 @@ ow_script_0x8a0ce0:
 loadpointer 0x0 str_0x8a11ed
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8a0c83
+
+str_0x8a0c83:
+    .string "PLAYER! Deine Pokémon sehen sehr\nmüde aus. Setz dich doch zu mir\lund ruhe dich eine Weile aus."
+        
+        
+.global str_0x8a0c66
+
+str_0x8a0c66:
+    .string "Pass gut auf dich auf, PLAYER."
+        
+        
+.global str_0x8a11ed
+
+str_0x8a11ed:
+    .string "PLAYER, beeil dich lieber.\nRIVAL wird nicht gerne warten\lgelassen."
+        
+        
+.elseif LANG_EN
+
+.endif

@@ -16,3 +16,21 @@ ow_script_0x8f63f6:
 loadpointer 0x0 str_0x8f6400
 callstd MSG_SIGN
 end
+
+
+.ifdef LANG_GER
+.global str_0x8f615e
+
+str_0x8f615e:
+    .string "Die Tür der Silvania-Arena ist aus\nedlem Holz gefertigt."
+        
+        
+.global str_0x8f6400
+
+str_0x8f6400:
+    .string "Die Tür scheint verschlossen zu\nsein."
+        
+        
+.elseif LANG_EN
+
+.endif

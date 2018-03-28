@@ -1,3 +1,0 @@
-.string str_0x958fef GER
-	=Die_Steine_in_den_Vitrinen_sind\njahrtausende_alt.\pAllein_der_Gedanke_an_solch_imense\nZeitintervalle_ist_erschreckend.
-.end

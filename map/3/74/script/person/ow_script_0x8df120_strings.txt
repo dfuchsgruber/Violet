@@ -1,3 +1,0 @@
-.string str_0x8e1081 GER
-	=Dieser_Ort_tr\$aegt_den_Namen\n'Felsige_\$OEdnis'_zurecht.\lIn_dieser_Savanne_findet_man\linteressante_Pok\emon.
-.end

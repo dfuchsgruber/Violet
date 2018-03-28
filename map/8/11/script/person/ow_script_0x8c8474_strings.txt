@@ -1,3 +1,0 @@
-.string str_0x8c847e GER
-	=Streng_genommen_ist_er_nat\$uerlich\nverboten,_Fallen_f\$uer_K\$aefer-\lPok\emon_zu_kaufen...\pAndererseits...\pWie_sonst_soll_ich_der_gr\$oe\$ste\nK\$aefersammler_aller_Zeiten_werden?
-.end

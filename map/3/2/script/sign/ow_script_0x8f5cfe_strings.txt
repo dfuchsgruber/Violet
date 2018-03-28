@@ -1,3 +1,0 @@
-.string str_0x8f60c7 GER
-	=Ein_Pok\emon_k\$oennte_hier_bestimmt\nhochkraxeln_...
-.end

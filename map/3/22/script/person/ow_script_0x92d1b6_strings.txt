@@ -1,8 +1,0 @@
-.string str_0x93690c GER
-	=Hast_du_je_einen_Angler_in_Meriana\nCity_gesehen?\pNein?_Das_dachte_ich_mir,_denn_ich\nfange_jedes_Pok\emon_ehe_es\lflussabw\$aerts_dorthin_gelangt.
-.end
-
-
-.string str_0x9368a9 GER
-	=Wenn_sich_meine_Niederlage_erst\nherumgesprochen_hat...\pAlle_werden_sie_in_Meriana_City\nangeln...
-.end

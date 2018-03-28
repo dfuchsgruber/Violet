@@ -1,3 +1,0 @@
-.string str_0x8a3b8f GER
-	=Magst_du_Gedichte?_Ich_finde\nThomas_Dylan_fantastisch._Do_not\lgo_gentle_into_that_good_night...\lEin_Meisterwerk,_oder?
-.end

@@ -1,3 +1,0 @@
-.string str_0x95c769 GER
-	=Ist_dir_der_Name_Lester_ein\nBegriff?\pEr_ist_ein_gro\$ser_Unterst\$uetzer_des\nFossilienprojekts_der_Laz.Corp.
-.end

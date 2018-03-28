@@ -1,8 +1,0 @@
-.string str_0x81a447 GER
-	=Angeln_ist_nicht_leicht._Ich_habe\nbeispielsweise_einen_guten_Fang\lgemacht.
-.end
-
-
-.string str_0x81a495 GER
-	=Sterndu...
-.end

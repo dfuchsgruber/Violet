@@ -1,8 +1,0 @@
-.string str_0x963252 GER
-	=Manche_w\$uerden_behaupten,_dass_es\nnicht_klug_ist,_im_Aschegras_ein\lPicknick_zu_halten.
-.end
-
-
-.string str_0x9632aa GER
-	=Ich_aber_sage_nur...\nHust,_hust...
-.end

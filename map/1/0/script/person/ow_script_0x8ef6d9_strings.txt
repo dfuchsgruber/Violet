@@ -1,3 +1,0 @@
-.string str_0x8f455c GER
-	=Ich_suche_hier_nach_Knilz,_einem\nPilz-Pok\emon._Ob_ich_es_finden\lkann?
-.end

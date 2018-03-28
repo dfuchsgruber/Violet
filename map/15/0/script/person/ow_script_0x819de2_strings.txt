@@ -1,8 +1,0 @@
-.string str_0x819dfa GER
-	=Pflanzen_k\$oennen_so_viel_gutes_tun.\nMan_kann_sie_sogar_rauchen..._Ahh!
-.end
-
-
-.string str_0x819e42 GER
-	=Nicht,_als_ob_ich_diese_bestimmten\nPflanzen_rauchen_w\$uerde.
-.end

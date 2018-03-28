@@ -1,3 +1,0 @@
-.string str_0x949bd4 GER
-	=Wir_sind_Wolkenpriester_und\nWolkenreiter_und_verehren_den\lHimmel.\pUnsere_Tradition_reicht_bis_zu_den\nAnf\$aengen_der_Geschichte_zur\$ueck.\pEines_Tages_wird_der_gro\$se_gr\$uene\nDrache_erneut_herabsteigen_und_ein\lneues_Zeitalter_einl\$aeuten.
-.end

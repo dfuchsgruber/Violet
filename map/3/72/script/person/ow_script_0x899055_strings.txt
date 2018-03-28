@@ -1,3 +1,0 @@
-.string str_0x89f18d GER
-	=Oh..._ich_habe_kein_gutes\nGef\$uehl_bei_dem_Test...
-.end

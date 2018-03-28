@@ -1,3 +1,0 @@
-.string str_0x9284d1 GER
-	=Immer_h\$aeufiger_sehe_ich_hier\ndubiouse_Gestalten_wandeln,_die\laus_dieser_H\$oehle_im_Norden_zu\lkommen_scheinen.
-.end

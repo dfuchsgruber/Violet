@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0x55 0x0 str_0x8feb10 str_0x8feb72
 loadpointer 0x0 str_0x8feb72
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8feb10
+
+str_0x8feb10:
+    .string "Meine Pflanzen-Pokémon können sich\nmit der Trockenheit einer Wüste\lnicht wirklich anfreunden..."
+        
+        
+.global str_0x8feb72
+
+str_0x8feb72:
+    .string "Vielleicht sollte ich einfach hier\nunten bleiben, wo es schön kühl\lund feucht ist."
+        
+        
+.elseif LANG_EN
+
+.endif

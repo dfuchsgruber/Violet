@@ -123,3 +123,69 @@ ow_script_0x926f34:
 loadpointer 0x0 str_0x926f3e
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x926fde
+
+str_0x926fde:
+    .string "Oh, hallo!\pMan sieht es mir vermutlich an,\nich bin der große Namensexperte!\pIch und alleine ich vermag über\ndie Spitznamen deiner Pokémon zu\lurteilen!\pSoll ich den Namen eines deiner\nPokémon bewerten?"
+        
+        
+.global str_0x926ee5
+
+str_0x926ee5:
+    .string "Ich bin empört!\pDenkst du etwa, du kennst dich\nbesser mit Namen aus als ich?"
+        
+        
+.global str_0x19618f
+
+str_0x19618f:
+    .string "Für welches Pokémon soll ich den\nNamen bewerten?"
+        
+        
+.global str_0x1961c4
+
+str_0x1961c4:
+    .string "Der Spitzname ist BUFFER_1,\noder? Ein schöner Name!\pGefällt er dir noch immer, oder\nmöchtest du ihn ändern?"
+        
+        
+.global str_0x19623b
+
+str_0x19623b:
+    .string "Sehr schön! Und wie soll der neue\nKosename lauten?"
+        
+        
+.global str_0x196308
+
+str_0x196308:
+    .string "Fertig! Von nun an heißt dein\nPokémon BUFFER_1!\pEigentlich unterscheidet sich der\nName nicht von dem vorherigen und\ldoch ist er um einiges besser!\pWelch ein Glück!"
+        
+        
+.global str_0x19626e
+
+str_0x19626e:
+    .string "Fertig! Von nun an heißt dein\nPokémon BUFFER_1!\pDas ist ein besserer Name als der\nvorherige. Welch ein Glück für\ldich!"
+        
+        
+.global str_0x1963a6
+
+str_0x1963a6:
+    .string " in wirklich guter\nName!\pKümmere dich gut um BUFFER_1!"
+        
+        
+.global str_0x1963e0
+
+str_0x1963e0:
+    .string "Oh, mhm...\nDas ist eigentlich ein Ei!"
+        
+        
+.global str_0x926f3e
+
+str_0x926f3e:
+    .string "...\pDu scheinst nicht der Typ Mensch\nzu sein, der seinen Pokémon Namen\lgibt.\pSie sind nicht deine Freunde,\nsondern dienen dir bloß als\lWerkzeuge, nicht wahr?"
+        
+        
+.elseif LANG_EN
+
+.endif

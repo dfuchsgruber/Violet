@@ -1,8 +1,0 @@
-.string str_0x958823 GER
-	=Unser_Kommandant_interessiert_sich\nf\$uer_ein_Artefakt_in_dem_Musem.\pUnd_du_wirst_ihn_nicht_st\$oeren,\nw\$aehrend_er_es_sich_beschafft!
-.end
-
-
-.string str_0x9588a4 GER
-	=Nagh!_Verdammt!\nAber_der_wahre_Schrecken_lauert_im\lInneren,_mein_Junge!
-.end

@@ -1,3 +1,0 @@
-.string str_0x93c0e4 GER
-	=Manus_legt_gro\$sen_Wert_auf\nDisziplin.\lNur_wer_sich_im_griff_hat,_wird\lgewinnen.
-.end

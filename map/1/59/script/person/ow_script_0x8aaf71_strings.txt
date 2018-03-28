@@ -1,3 +1,0 @@
-.string str_0x927f3b GER
-	=Du_bist_stark,_aber_ich_kann_dir\nnicht_erlauben,_zu_gewinnen.\pSo_viele_Menschen_verlassen_sich\ndarauf,_dass_wir_Frieden_wahren.
-.end

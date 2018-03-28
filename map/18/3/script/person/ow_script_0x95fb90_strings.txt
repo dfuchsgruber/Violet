@@ -1,3 +1,0 @@
-.string str_0x9631de GER
-	=Ich_werde_mein_ganzes_Team_aus\nFeuer-Pok\emon_zusammenstellen.\pDann_werde_ich_der_n\$aechste\nArenaleiter_von_Inferior!
-.end

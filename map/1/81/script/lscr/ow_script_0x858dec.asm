@@ -19,3 +19,15 @@ hidesprite 0x800f
 addvar STORY_PROGRESS 0x1
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x864813
+
+str_0x864813:
+    .string "PLAYER, wir sollten uns\nbeeilen.\pMistral befindet sich auf dem Weg\nin Richtung Gipfel.\pWir dürfen ihm nicht gestatten,\ndiesen Ort zu erreichen.\pAber sei auf der Hut:\nMistral war selbst Teil der\lRevolutionsbewegung, ehe er uns im\lStich gelassen hat.\pEr ist stark und zielstrebig, wir\nmüssen vorsichtig sein."
+        
+        
+.elseif LANG_EN
+
+.endif

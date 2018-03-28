@@ -8,3 +8,21 @@ trainerbattlestd 0x0 0xd 0x0 str_0x8a9ce9 str_0x8a9d56
 loadpointer 0x0 str_0x8a9d56
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x8a9ce9
+
+str_0x8a9ce9:
+    .string "Ich bin eine Grazie. Meine\nSchönheit kann blenden. Sieh mich\lan und lass mich dein Herz\lergreifen!"
+        
+        
+.global str_0x8a9d56
+
+str_0x8a9d56:
+    .string "Du kannst meiner Schönheit\nwiderstehen?"
+        
+        
+.elseif LANG_EN
+
+.endif

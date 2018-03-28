@@ -1,3 +1,0 @@
-.string str_0x87aba7 GER
-	=!VORSICHT!\nWilde_BIBOR!_Bei_Stichen_sofort\lGEGENGift_auftragen!
-.end

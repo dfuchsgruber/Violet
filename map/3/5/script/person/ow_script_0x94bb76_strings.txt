@@ -1,3 +1,0 @@
-.string str_0x94dbda GER
-	=Orina_City_ist_die_gr\$oe\$ste_Stadt\nThetos.\pAu\$serdem_ist_sie_der_westlichste\nBereich,_der_Fauns_Kontrolle\lunterliegt.
-.end

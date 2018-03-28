@@ -35,3 +35,27 @@ ow_script_0x95cc66:
 loadpointer 0x0 str_0x95ccac
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x95cd1c
+
+str_0x95cd1c:
+    .string "Ich bin bei der Laz.Corp im\nBereich Energieforschung\langestellt.\lDieser Stein enthält sehr viel\lelektrische Energie."
+        
+        
+.global str_0x95ccac
+
+str_0x95ccac:
+    .string "Der Donnerstein kann durch seine\nhohe energetische Aktivität einem\lElektro-Pokémon zur Entwicklung\lverhelfen."
+        
+        
+.global str_0x95cc70
+
+str_0x95cc70:
+    .string "Oh...! Es scheint, du hast keinen\nPlatz in deinem Beutel!"
+        
+        
+.elseif LANG_EN
+
+.endif

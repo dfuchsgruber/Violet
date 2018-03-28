@@ -1,3 +1,0 @@
-.string str_0x8a0824 GER
-	=Und? Hattest du ein gutes Gef\$uehl\nbei den Fragen?\pIch wollte euch die\nAngelegenheit nicht allzu leicht\lmachen, aber keine Sorge, der\lpraktische Teil kann den\ltheoretischen immer noch ausgleichen!
-.end

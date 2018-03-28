@@ -1,8 +1,0 @@
-.string str_0x949732 GER
-	=Diese_Ruinen_entstammen_der_Kultur\neines_antiken_Volkes.\pSie_haben_die_Wolken_und_das\nsymbolisch_daf\$uer_stehende_Pok\emon\lAltaria_verehrt.
-.end
-
-
-.string str_0x9497bd GER
-	=Noch_heute_findet_der_Kult_der\nWolkenmenschen_Anh\$aenger.
-.end

@@ -1,3 +1,0 @@
-.string str_0x955c37 GER
-	=Hast_du_je_von_Team_Rocket_geh\$oert?\nEs_hei\$st,_ihnen_sei_es_gelungen,\lein_Pok\emon_zu_klonen.
-.end

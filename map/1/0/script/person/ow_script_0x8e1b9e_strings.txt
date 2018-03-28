@@ -1,3 +1,0 @@
-.string str_0x8f4254 GER
-	=Wenn_man_immer_weiter_westw\$aerts\nl\$aeuft,_erreicht_man_irgendwann\leine_W\$uestenregion.\pNur_einige_Wegstunden_entfernt\naber_erreicht_man_Kaskada,_die\lStadt_der_reinen_Wasserquellen.
-.end

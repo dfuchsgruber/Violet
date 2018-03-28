@@ -1,3 +1,0 @@
-.string str_0x80eaf8 GER
-	=Ein_B\$uecherregal._Ich_fasse_es\nbesser_nicht_an.
-.end

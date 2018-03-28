@@ -1,8 +1,0 @@
-.string str_0x8f448d GER
-	=Unsere_Gesellschaft_beutet_den\nEinzelnen_aus._Korruption_und\lVerzweiflung_sind_die_Folge.\lWir_kreieren_eine_Welt,_in_der_es\lFrieden_gibt.
-.end
-
-
-.string str_0x8f4519 GER
-	=Wir_sind_Teil_des_gro\$sen_Plans,\nund_du_wirst_uns_nicht_aufhalten!
-.end

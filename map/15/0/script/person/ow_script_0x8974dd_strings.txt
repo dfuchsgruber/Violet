@@ -1,8 +1,0 @@
-.string str_0x8998d3 GER
-	=Wahre_Sch\$oenheit_kommt_von_Innen.\nEine_Naturdame_wie_ich_verzichtet\ldeshalb_ganz_auf\lumweltverschmutzende_Kosmetika!
-.end
-
-
-.string str_0x899949 GER
-	=Mein_Gesicht_ist_von_Natur_aus\nsch\$oen!
-.end

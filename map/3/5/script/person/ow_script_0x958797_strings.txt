@@ -1,3 +1,0 @@
-.string str_0x9587a1 GER
-	=Hey,_verschwinde_von_hier!\nMistral_hat_Dinge_im_Museum_zu\lerledigen,_die_dich_nichts\langehen,_du_Bengel!
-.end

@@ -7,3 +7,15 @@ ow_script_0x94bf66:
 loadpointer 0x0 str_0x94dd5d
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x94dd5d
+
+str_0x94dd5d:
+    .string "Findest du es etwa witzig, dass\nich als emertierte Trainerin\lmeinen Unterhalt mit dem Sammeln\lvon Pfandflaschen machen muss?"
+        
+        
+.elseif LANG_EN
+
+.endif

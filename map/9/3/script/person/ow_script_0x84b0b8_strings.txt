@@ -1,3 +1,0 @@
-.string str_0x85ff50 GER
-	=Es_ist_wirklich_sehr\nnervenaufreibend_zu_warten,_bis_man\lan_der_Reihe_ist,_findest_du_nicht?
-.end

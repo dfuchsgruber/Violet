@@ -33,3 +33,27 @@ hidesprite 0x800f
 fadescreen 0x0
 release
 end
+
+
+.ifdef LANG_GER
+.global str_0x8f6003
+
+str_0x8f6003:
+    .string "Oh, du bist doch der liebe Junge,\nder mich vor dieser bösen Frau\lbeschützt hat.\pOhne dich hätte ich mein liebes\nVoltilamm nicht mehr."
+        
+        
+.global str_0x8f5bee
+
+str_0x8f5bee:
+    .string "Du hast ein Item gefunden, das ich\nverloren habe? Vielen Dank, aber\ldu kannst es gerne behalten, alles\lwas ich will, ist mein Voltilamm."
+        
+        
+.global str_0x8f5bc3
+
+str_0x8f5bc3:
+    .string "Komm Voltilamm, wir gehen spielen!\nHihi!"
+        
+        
+.elseif LANG_EN
+
+.endif

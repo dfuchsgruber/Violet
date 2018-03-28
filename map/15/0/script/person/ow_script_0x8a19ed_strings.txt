@@ -1,3 +1,0 @@
-.string str_0x416651 GER
-	=Du_hast_nicht_genug_Geld.\w\09
-.end

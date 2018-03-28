@@ -27,3 +27,21 @@ ow_script_0x87f3b7:
 loadpointer 0x0 str_0x87f4bb
 callstd MSG_FACE
 end
+
+
+.ifdef LANG_GER
+.global str_0x87f432
+
+str_0x87f432:
+    .string "Es heißt, das Quellwasser vom\nKüstenberg habe magische\lFähigkeiten. Seine bloße Präsenz\lsoll das Wasser in seiner\lUmgebung verstärken."
+        
+        
+.global str_0x87f4bb
+
+str_0x87f4bb:
+    .string "Wenn du der Legende glauben\nschenkst, wird das Zauberwasser\lseine Wirkung entfalten,\lversprochen!"
+        
+        
+.elseif LANG_EN
+
+.endif

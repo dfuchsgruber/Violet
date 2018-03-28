@@ -1,3 +1,0 @@
-.string str_0x95a692 GER
-	=Das_Skelett_des_fossilen_Pok\emons\nAerodactyl.\pEs_breitet_seine_Schwingen_mit\neiner_be\$aengstigenden_Anmut_aus.
-.end

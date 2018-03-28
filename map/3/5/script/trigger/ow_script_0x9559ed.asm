@@ -31,3 +31,21 @@ hidesprite 0x27
 addvar STORY_PROGRESS 0x1
 releaseall
 end
+
+
+.ifdef LANG_GER
+.global str_0x955b31
+
+str_0x955b31:
+    .string "Ah, PLAYER!\nWie ich sehe hast du Orina City\lgefunden.\pIm Norden der Stadt befindet sich\ndie Laz.Corp, wo ich und mein\lVater beschäftigt sind.\pKomm mich dort doch besuchen und\nich zeige dir das künstliche\lPokémon.\pDafür wirst du diese Zugangskarte\nbenötigen."
+        
+        
+.global str_0x955a4c
+
+str_0x955a4c:
+    .string "Die Zugangskarte ermöglicht dir\nden Zutritt zum Cyberlabor der\lLaz.Corp, wo du mich triffst.\pNatürlich konnte ich dir keinen\nZutritt zu den anderen Stockwerken\lverschaffen, ich hoffe du\lverstehst das.\pIch treffe dich dort, PLAYER!"
+        
+        
+.elseif LANG_EN
+
+.endif

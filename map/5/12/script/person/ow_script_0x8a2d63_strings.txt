@@ -1,3 +1,0 @@
-.string str_0x8a3651 GER
-	=Opi_kennt_so_viele_tolle\nGeschichten._Und_Omi_hat_die_ganze\lWelt_bereist,_erz\$aehlt_sie_immer!
-.end

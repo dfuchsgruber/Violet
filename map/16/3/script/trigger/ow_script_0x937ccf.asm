@@ -108,3 +108,63 @@ setvar 0x8005 0xfff8
 loadpointer 0x0 str_0x937dbf
 callstd MSG
 goto ow_script_0x937e34
+
+
+.ifdef LANG_GER
+.global str_0x93824f
+
+str_0x93824f:
+    .string "-Hust-\n-Keuch-\lArgh! Ich bin ...\lHast du vielleicht etwas Geld für\lmich?\lBitte, ich habe Hunger und Durst!"
+        
+        
+.global str_0x938223
+
+str_0x938223:
+    .string "Wie viel POKEDOLLAR möchtest du dem\nFremden geben?"
+        
+        
+.global str_route_4_homeless_choice0
+
+str_route_4_homeless_choice0:
+    .string "Nichts"
+        
+        
+.global str_route_4_homeless_choice1
+
+str_route_4_homeless_choice1:
+    .string "100POKEDOLLAR"
+        
+        
+.global str_route_4_homeless_choice2
+
+str_route_4_homeless_choice2:
+    .string "1.000POKEDOLLAR"
+        
+        
+.global str_route_4_homeless_choice3
+
+str_route_4_homeless_choice3:
+    .string "10.000POKEDOLLAR"
+        
+        
+.global str_0x937e0e
+
+str_0x937e0e:
+    .string "Vielen ...\n-Hust-\l-Keuch-\lDank ...."
+        
+        
+.global str_0x937e6d
+
+str_0x937e6d:
+    .string "Du hast nicht genügend POKEDOLLAR."
+        
+        
+.global str_0x937dbf
+
+str_0x937dbf:
+    .string "-Keuch-\nHerzloser Junge...\l... Kein Respekt ...\l-Keuch-"
+        
+        
+.elseif LANG_EN
+
+.endif
