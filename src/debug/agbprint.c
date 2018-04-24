@@ -30,7 +30,6 @@
 
 #include "types.h"
 #include "romfuncs.h"
-#include "utils.h"
 #include "debug.h"
 
 void dprint(const char * sz)

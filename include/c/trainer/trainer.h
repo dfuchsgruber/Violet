@@ -10,6 +10,7 @@
 
 #define TRAINER_CNT 0x2E8
 
+#include "trainer/party.h"
 
 typedef struct {
     u8 uses_custom_moves : 1;

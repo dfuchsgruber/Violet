@@ -1,5 +1,5 @@
 #include "types.h"
-#include "tile.h"
+#include "tile/coordinate.h"
 #include "worldmap.h"
 #include "romfuncs.h"
 

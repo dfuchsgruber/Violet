@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_MAP_TILESET_H_
 #define INCLUDE_C_MAP_TILESET_H_
 
+#include "tile/block.h"
+
 typedef struct map_tileset_info {
     u8 compression_used;
     u8 color_section : 1; //0 and 1 are possible

@@ -1,11 +1,12 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "music.h"
-#include "map.h"
 #include "save.h"
+#include "map/header.h"
+#include "constants/vars.h"
 
 u16 current_map_get_song() {
-    u16 forced = *vardecrypt(VAR_MAP_MUSIC_FORCE);
+    u16 forced = *vardecrypt(SONG_OVERRIDE);
     if(forced == 0xFFFF)return 0;
     if (forced) return forced;
     saveblock1 *s = *save1;

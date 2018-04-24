@@ -87,3 +87,38 @@ script_cloud_facings:
     .word script_cloud_force_left
     .word script_cloud_force_right
 
+.ifdef LANG_GER
+
+	str_use_cloud:
+		.string "Die Wolken scheinen hier tief zu\nschweben.\pMöchtest du auf deine Wolke\nsteigen?"
+
+	str_cloud_used:
+		.string "Die Wolke trägt dich empor!"
+
+	str_use_cloud_back:
+		.string "Die Wolken sind hier durchlässig.\nMöchtest du zum Boden zurückkehren?"
+
+	str_cloud_used_back:
+		.string "Die Wolke trägt dich hinab!"
+
+	str_cloud_none:
+		.string "Die Wolken scheinen hier tief zu\nschweben..."
+
+.elseif LANG_EN
+
+	str_use_cloud:
+		.string "The clouds seem to be floating\nnear the ground.\npDo you want to ascend\nby using your cloud?"
+
+	str_cloud_used:
+		.string "The cloud carries you\nupwards!"
+
+	str_use_cloud_back:
+		.string "The clouds seem not to be\nvery dense at this spot.\nDou you want to return\nto the ground?"
+
+	str_cloud_used_back:
+		.string "The cloud returns you\nto the ground."
+
+	str_cloud_none:
+		.string "The clouds seem to be floating\nnear the ground..."
+
+.endif

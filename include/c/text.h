@@ -11,7 +11,8 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-#include "pstring.h"
+
+
     typedef struct {
         u8 bg_id;
         u8 x;
@@ -55,7 +56,7 @@ extern "C" {
     void tbox_border_flush(u8 box_id);
     
     u8 *strbuf = (u8*) 0x02021D18;
-    u8 *buffer0 = (pstring) 0x02021CD0;
+    u8 *buffer0 = (u8*) 0x02021CD0;
 
 #ifdef	__cplusplus
 }

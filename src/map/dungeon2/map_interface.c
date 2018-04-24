@@ -1,13 +1,12 @@
 
 #include "types.h"
-#include "map.h"
+#include "map/header.h"
 #include "save.h"
-#include "tile.h"
 #include "dungeon2.h"
 #include "debug.h"
-#include "utils.h"
 #include "romfuncs.h"
-#include "mapevents.h"
+#include "constants/map_weathers.h"
+#include "map/footer.h"
 
 extern tileset maptileset0;
 extern tileset maptileset15;
@@ -33,13 +32,13 @@ mapheader *dungeon2_init_header_forest() {
 
     //(*save1)->flash_circle_size = 1;
     dprintf("D2 header init\n");
-    dflags->header_initialized = 1;
+    fmem->dmap_header_initialized = 1;
     cmem->dmapheader.levelscripts = dungeon2_lscr;
     cmem->dmapheader.connections = &dungeon2_connections;
     cmem->dmapheader.music = 0x14b;
     cmem->dmapheader.map_index = 0x1c1; //test index
     cmem->dmapheader.flash = 0;
-    cmem->dmapheader.weather = WEATHER_INSIDE;
+    cmem->dmapheader.weather = MAP_WEATHER_INSIDE;
     cmem->dmapheader.type = 0;
     cmem->dmapheader.show_name = 0;
     cmem->dmapheader.battle_style = 0;
@@ -90,10 +89,10 @@ u16 dungeon2_compute_block_forest(u8 *map, u8 *over, int x, int y, dungeon_gener
                         wall_neighbours++;
                 }
             }
-            if(dungeon2_rnd(dg2) < grass_neighbours * 0x3000){
+            if((int)dungeon2_rnd(dg2) < grass_neighbours * 0x3000){
                 return 0x11; //Cut grass
             }
-            if(dungeon2_rnd(dg2) < wall_neighbours * 0x1000){
+            if((int)dungeon2_rnd(dg2) < wall_neighbours * 0x1000){
                 u16 decoratives[16] = {
                     0x18, 0x19, 0x20, 0x21, 0x28, 0x29, 0x8, 0x9,
                     0xA, 0xA, 0xA, 0xA, 0xB, 0xB, 0xB, 0xB
@@ -135,7 +134,7 @@ void dungeon2_compute_forest(){
     dungeon_generator2 *dg2 = &(cmem->dg2);
     dg2->seed = dg2->initial_seed;
     dprintf("Seed is %x\n", dg2->seed);
-    dflags->blocks_initialized = 1;
+    fmem->dmap_blocks_initialized = 1;
     
     u8 *map = dungeon2_create_connected_layout(dg2);
     u8 *over = dungeon2_create_patch_layout(dg2);
@@ -144,7 +143,7 @@ void dungeon2_compute_forest(){
     free(map);
     
     
-    foot_ddata->footer = &(cmem->dmapfooter);
+    mapheader_virtual->footer = &(cmem->dmapfooter);
     //special_x8E_update_map_graphics();
     
 }

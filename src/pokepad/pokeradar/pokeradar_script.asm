@@ -170,3 +170,55 @@ script_pokeradar_poschange:
 script_pokeradar_flee:
     .word script_pokeradar_flee_s
 
+@ // Strings
+.ifdef LANG_GER
+
+	str_pokepad_pokeradar_desc:
+		.string "Finde seltene Pokémon in\nder Umgebung."
+
+	str_pokepad_pokeradar_done:
+		.string "Der Pokéradar hat bereits ein\nPokémon ausfindig gemacht."
+
+	str_pokepad_pokeradar_empty:
+		.string "Der Pokéradar kann hier nichts\nausfindig machen."
+
+	str_pokepad_pokeradar_no_grass:
+		.string "Der Pokéradar kann nur in der\nNähe von hohem Gras ein\lPokémon ausfindig machen."
+
+	str_pokepad_pokeradar_unlucky:
+		.string "Der Pokéradar hat nichts entdeckt.\nVersuche es später noch einmal."
+
+	str_pokepad_pokeradar_alert:
+		.string "Das Pokémon hat dich entdeckt!\nEs ist geflohen!"
+
+	str_pokepad_pokeradar_flee:
+		.string "Das Pokémon ist geflohen..."
+
+	str_pokepad_pokeradar_found:
+		.string "Der Pokéradar hat ein Pokémon\nentdeckt!"
+
+.elseif LANG_EN
+
+	str_pokepad_pokeradar_done:
+		.string "The Pokéradar already traced\na Pokémon."
+
+	str_pokepad_pokeradar_empty:
+		.string "The Pokéradar can not\nfind anything in this area."
+
+	str_pokepad_pokeradar_no_grass:
+		.string "The Pokéradar can only trace\nPokémon when you are\nnear some high grass."
+
+	str_pokepad_pokeradar_unlucky:
+		.string "Seems like the Pokéradar\ncould not find anything...\pBest to try it again!"
+
+	str_pokepad_pokeradar_alert:
+		.string "The Pokémon spotted you!\nIt fled!"
+
+	str_pokepad_pokeradar_flee:
+		.string "The Pokémon fled..."
+
+	str_pokepad_pokeradar_found:
+		.string "The Pokéradar spotted a Pokémon!"
+
+.endif
+

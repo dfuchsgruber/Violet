@@ -8,9 +8,6 @@
 #ifndef INCLUDE_C_BATTLE_ATTACK_H_
 #define INCLUDE_C_BATTLE_ATTACK_H_
 
-// Constants
-#include "attack_results.h"
-
 u16 *active_attack = (u16*) 0x02023D4A;
 u8 *active_attack_slot = (u8*)0x02023D48;
 u32 *attack_result = (u32*)0x02023DCC;

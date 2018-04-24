@@ -1,22 +1,21 @@
 #include "types.h"
 #include "stdbool.h"
 #include "romfuncs.h"
-#include "pokepad.h"
-#include "pokedex.h"
-#include "oams.h"
+#include "pokepad/gui.h"
+#include "pokepad/pokedex/gui.h"
+#include "pokepad/pokedex/operator.h"
+#include "pokepad/pokedex/state.h"
+#include "pokemon/names.h"
+#include "pokemon/basestat.h"
 #include "callbacks.h"
 #include "save.h"
-#include "utils.h"
 #include "bg.h"
-#include "gfx.h"
 #include "text.h"
 #include "mega.h"
-#include "pokemon.h"
-#include "basestats.h"
 #include "color.h"
 #include "superstate.h"
-#include "utils.h"
 #include "transparency.h"
+#include "language.h"
 
 bool pokedex_callback_list_mode_proceed() {
     switch (fmem->dex_mem->list_mode) {
@@ -186,9 +185,11 @@ void pokedex_update_list() {
         if (list[first].seen) {
             buf = str_append(buf, pokemon_names[list[first].species]);
         } else {
-            buf = str_append(buf, str_pokepad_pokedex_unkown);
+            u8 str_pokedex_unkown[] = PSTRING("-----");
+            buf = str_append(buf, str_pokedex_unkown);
         }
-        buf = str_append(buf, str_pokepad_pokedex_nl);
+        u8 str_newline[] = PSTRING("\n");
+        buf = str_append(buf, str_newline);
 
 
         if (list[first].caught) {

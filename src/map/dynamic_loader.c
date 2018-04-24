@@ -1,18 +1,12 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
-#include "trainer.h"
-#include "item.h"
 #include "save.h"
 #include <stdbool.h>
-#include "unaligned_types.h"
-#include "pokemon.h"
-#include "map.h"
-#include "dungeon_generator.h"
+#include "map/header.h"
 #include "dungeon2.h"
+#include "constants/vars.h"
 
 
 mapheader *get_mapheader(u8 bank, u8 map) {

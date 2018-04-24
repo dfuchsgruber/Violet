@@ -6,8 +6,7 @@
  */
 
 #include "types.h"
-#include "overworld_sprites.h"
-#include "gfx.h"
+#include "overworld/sprite.h"
 #include "romfuncs.h"
 
 

@@ -1,14 +1,13 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "battle.h"
-#include "basestats.h"
-#include "trainer.h"
-#include "item.h"
+#include "trainer/virtual.h"
+#include "constants/items.h"
+#include "constants/vars.h"
 
 void load_trainer_items(trainer_items *t_items) {
 
 
-    u16 difficulty = *vardecrypt(0x50F9);
+    u16 difficulty = *vardecrypt(DIFFICULTY);
 
     //First we get difficulty
     switch (difficulty) {

@@ -1,18 +1,18 @@
 #include "types.h"
 #include "stdbool.h"
 #include "romfuncs.h"
-#include "pokepad.h"
+#include "pokepad/gui.h"
 #include "save.h"
 #include "bg.h"
-#include "utils.h"
 #include "color.h"
 #include "callbacks.h"
 #include "transparency.h"
-#include "gfx.h"
-#include "oams.h"
+#include "oam.h"
 #include "superstate.h"
-#include "utils.h"
 #include "text.h"
+#include "fading.h"
+#include "constants/vars.h"
+#include "language.h"
 
 extern const unsigned short gfx_pokepad_backgroundMap[];
 extern const unsigned short gfx_pokepad_backgroundTiles[];
@@ -68,7 +68,7 @@ bg_config pokepad_bg_cnfgs [] = {
 };
 
 void pokepad_locate_lr() {
-    u8 *registered = (u8*) vardecrypt(VAR_POKEPAD_REGISTERED); //we interpret the var offset as 2 bytes
+    u8 *registered = (u8*) vardecrypt(POKEPAD_SHORTCUTS); //we interpret the var offset as 2 bytes
     oams[fmem->pad_mem->l_oam].x = (s16) - 16; //move both offscreen
     oams[fmem->pad_mem->r_oam].x = (s16) - 16;
     int i;
@@ -125,8 +125,6 @@ void pokepad_init_components() {
     lz77uncompvram(gfx_pokepad_backgroundTiles, (void*) 0x06000000);
 
 
-
-
     //Now we spawn arrow oam
     load_and_alloc_obj_vram_lz77(&graphic_pokepad_arrow);
     u8 arrow_pal = allocate_obj_pal(0xA001);
@@ -156,8 +154,6 @@ void pokepad_init_components() {
     fmem->pad_mem->r_oam = generate_oam_forward_search(&oam_template_pokepad_r, -16, 0, 0);
 
     pokepad_locate_lr();
-
-
 
 
     bg_virtual_sync(0);
@@ -207,7 +203,7 @@ void pokepad_build_buttons(void *tilemap) {
     pokepad_memory *mem = fmem->pad_mem;
     lz77uncompvram(gfx_pokepad_buttonTiles, (void*) 0x06001000);
 
-    int last_used = (int) (*vardecrypt(VAR_POKEPAD_LASTUSED));
+    int last_used = (int) (*vardecrypt(POKEPAD_LAST_USED));
 
     //Now we build the item list
     int i;
@@ -266,7 +262,7 @@ void pokepad_idle() {
     if (!is_fading()) {
         bool item_changed = false;
         int lr_relocate = 0;
-        u8 *registered = (u8*) vardecrypt(VAR_POKEPAD_REGISTERED);
+        u8 *registered = (u8*) vardecrypt(POKEPAD_SHORTCUTS);
         if (super->keys_new.keys.right && !(fmem->pad_mem->current_item & 1)
                 && fmem->pad_mem->current_item + 1 < fmem->pad_mem->item_cnt) {
             //Right press
@@ -321,16 +317,24 @@ void pokepad_idle() {
             //Print that we relocated the key
             u8 *buffer1 = (u8*) 0x02021CF0;
             if (lr_relocate & 1) { //1 or 3
-                strcpy(buffer1, str_pokepad_l);
+            	u8 l[] = PSTRING("L");
+                strcpy(buffer1, l);
             } else { //2 or 4
-                strcpy(buffer1, str_pokepad_r);
+            	u8 r[] = PSTRING("R");
+                strcpy(buffer1, r);
             }
             u8 *buffer0 = (u8*) 0x02021CD0;
             strcpy(buffer0, pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].string);
             u8 *strbuf = (u8*) 0x02021D18;
             if (lr_relocate > 2) {
+            	u8 str_pokepad_deregistered[] = LANGDEP(PSTRING("Die BUFFER_1-App ist nicht "
+            			"länger\nauf der BUFFER_2-Taste registriert."), PSTRING("The BUFFER_1-App "
+            					"is no longer\nregistered on the BUFFER_2-key."));
                 string_decrypt(strbuf, str_pokepad_deregistered);
             } else {
+            	u8 str_pokepad_registered[] = LANGDEP(PSTRING("Die BUFFER_1-App wurde auf der\n"
+            			"BUFFER_2-Taste registriert."), PSTRING("The BUFFER_1-App was registered\n"
+            					"on the BUFFER_2-key."));
                 string_decrypt(strbuf, str_pokepad_registered);
             }
 
@@ -368,7 +372,7 @@ void pokepad_show_components() {
 
 bool pokepad_init_function_outdoor() {
 
-    u8 *registered = (u8*) vardecrypt(VAR_POKEPAD_REGISTERED); //we interpret the var offset as 2 bytes
+    u8 *registered = (u8*) vardecrypt(POKEPAD_SHORTCUTS); //we interpret the var offset as 2 bytes
     if (super->keys_new.keys.l && registered[0] != 0xFF) {
         if (pokepad_items[registered[0]].func) {
             pokepad_items[registered[0]].func(true);

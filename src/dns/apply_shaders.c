@@ -3,9 +3,10 @@
 #include "rtc.h"
 #include "color.h"
 #include "dns.h"
+#include "constants/vars.h"
 
 u8 dns_get_alpha() {
-    u16 timezone = *vardecrypt(VAR_TIMEZONE);
+    u16 timezone = *vardecrypt(SHADER_STATE);
     u8 alpha = 0;
     if (dns_on()) {
         switch (timezone) {
@@ -26,7 +27,7 @@ u8 dns_get_alpha() {
 }
 
 color dns_get_over() {
-    u16 timezone = *vardecrypt(VAR_TIMEZONE);
+    u16 timezone = *vardecrypt(SHADER_STATE);
     u16 o = 0;
     if (dns_on()) {
         switch (timezone) {
@@ -53,7 +54,7 @@ color dns_get_over() {
 
 void dns_apply_shaders(u16 start_col, u16 col_cnt) {
     
-    if (*vardecrypt(VAR_TIMEZONE) && dns_on()) {
+    if (*vardecrypt(SHADER_STATE) && dns_on()) {
         dns_blend_colors(start_col, col_cnt, dns_get_over(), dns_get_alpha());
     }
     //dprintf("dns apply shaders\n");

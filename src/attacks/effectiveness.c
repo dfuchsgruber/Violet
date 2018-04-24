@@ -1,7 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "attack.h"
-#include "basestats.h"
+#include "constants/pokemon_types.h"
 
 type_effectiveness type_effectivenesses[] = {
     {TYPE_NORMAL, TYPE_ROCK, 5},

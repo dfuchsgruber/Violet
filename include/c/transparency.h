@@ -8,9 +8,6 @@
 #ifndef TRANSPARENCY_H
 #define	TRANSPARENCY_H
 
-#define FLAG_BYPASS_TRANSPARENCY 0x911
-#define FLAG_TRANSPARENCY_ON 0x910
-
 #include "types.h"
 #include "color.h"
 

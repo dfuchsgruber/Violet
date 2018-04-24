@@ -1,8 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
-#include "battle.h"
 #include "mega.h"
 #include <stdbool.h>
 
@@ -46,7 +45,7 @@ void mega_show_icon() {
     int i, pp_sum = 0;
     for(i = 0; i < 4; i++) pp_sum += b->current_pp[i];
 
-    if ((mega_entry = get_mega_if_can_mega_evolve(b)) && can_player_trigger_mega() & pp_sum) { //                                  TODO: player must also be able to perform mega!
+    if ((mega_entry = get_mega_if_can_mega_evolve(b)) && (can_player_trigger_mega() & pp_sum)) { //                                  TODO: player must also be able to perform mega!
 
         const u32 *palette = (mega_entry->regent == 1) ? gfx_regent_triggerPal : gfx_mega_triggerPal;
         graphic *g = (mega_entry->regent == 1) ? &regent_graphic : &icon_graphic;

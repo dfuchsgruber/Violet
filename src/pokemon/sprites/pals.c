@@ -1,8 +1,7 @@
 #include "types.h"
-#include "oams.h"
-#include "pokemon.h"
-#include "gfx.h"
-#include "pokesprites.h"
+#include "oam.h"
+#include "pokemon/count.h"
+#include "pokemon/sprites.h"
 
 palette pokemon_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_000_pokemon_pokemon_0_frontspritePal, 0, 0},

@@ -1,9 +1,11 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "pokemon.h"
-#include "basestats.h"
-#include "pokepad.h"
+#include "pokemon/virtual.h"
+#include "pokemon/egg_moves.h"
+#include "pokemon/basestat.h"
+#include "pokepad/state.h"
 #include "debug.h"
+#include "constants/pokemon_attributes.h"
 
 void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed) {
     int i;

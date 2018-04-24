@@ -1,6 +1,6 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "tile.h"
+#include "tile/door_animation.h"
 
 
 u8 door_animation_0_palettes[] = {8, 8, 8, 8, 8, 8, 8, 8};

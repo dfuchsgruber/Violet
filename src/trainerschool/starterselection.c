@@ -6,22 +6,26 @@
 #include "bg.h"
 #include "text.h"
 #include "superstate.h"
-#include "oams.h"
+#include "oam.h"
 #include "debug.h"
 #include "data_structures.h"
-#include "starterselection.h"
-
-#include "../../include/c/math.h"
-#include "basestats.h"
+#include "pokemon/basestat.h"
+#include "pokemon/names.h"
 #include "transparency.h"
+#include "constants/species.h"
+#include "constants/vars.h"
+#include "fading.h"
+#include "language.h"
 
-typedef struct {
+    typedef struct {
         u16 hscroll;
         u8 hscroll_delay;
         u8 cursor;
         u8 pokeball_oams[3];
         bool selected;
     } trainerschool_selection_memory;
+
+#define TSS_MEM ((trainerschool_selection_memory*)gp_stack_peek())
 
 bg_config trainerschool_selection_bg_configs[4] = {
     {0, 2, 31, 0, 0, 0}, //text on bg0
@@ -169,7 +173,9 @@ void trainerschool_selection_delete_species_text(){
     tbox_flush_map(0);
 }
 
-extern u8 str_trainerschool_selection_text[];
+u8 str_trainerschool_selection_text[] = LANGDEP(
+    PSTRING("  KEY_A  Bestätigen              KEY_B  Abbruch"),
+    PSTRING("  KEY_A  Confirm                 KEY_B  Abort"));
 
 void trainerschool_selection_select(){
     //Open the current pokeball

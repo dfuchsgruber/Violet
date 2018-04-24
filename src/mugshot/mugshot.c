@@ -1,16 +1,14 @@
 #include "types.h"
 #include "mugshot.h"
-#include "oams.h"
+#include "oam.h"
 #include "romfuncs.h"
 #include "callbacks.h"
-#include "utils.h"
 #include "color.h"
 #include "save.h"
-#include "gfx.h"
-#include "map.h"
 #include "text.h"
 #include "debug.h"
 #include "transparency.h"
+#include "constants/map_weathers.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -177,7 +175,8 @@ void spawn_mugshot() {
     
     u8 weather = get_current_weather();
     pal_load_uncomp(pal_buf, (u16) (0x100 + 16 * pal), 32);
-    if (weather == WEATHER_CLOUDY || weather == WEATHER_HEAVY_RAIN || weather == WEATHER_RAIN || weather == WEATHER_STORM) {
+    if (weather == MAP_WEATHER_CLOUDY || weather == MAP_WEATHER_EXTREME_THUNDER ||
+    		weather == MAP_WEATHER_THUNDER || weather == MAP_WEATHER_RAIN) {
         //fade
         u16 *dma3s = (u16*) 0x020375F8;
         int i;

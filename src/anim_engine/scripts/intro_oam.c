@@ -1,5 +1,5 @@
 #include "types.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
 #include "romfuncs.h"
 

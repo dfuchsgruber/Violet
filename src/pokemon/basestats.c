@@ -1,8 +1,10 @@
 #include "types.h"
-#include "pokemon.h"
-#include "basestats.h"
-#include "abilities.h"
-#include "item.h"
+#include "pokemon/basestat.h"
+#include "constants/abilities.h"
+#include "constants/items.h"
+#include "constants/pokemon_types.h"
+#include "constants/egg_groups.h"
+#include "constants/pokemon_shapes.h"
 
 basestat basestats[POKEMON_CNT] = {
     //POKEMON_POKEMON_0
@@ -42,7 +44,7 @@ basestat basestats[POKEMON_CNT] = {
         0, //safari rate
         3, //flip and color
         PHOTOGENESE, //hidden ability
-        SHAPE_ANIMAL, //form
+		SHAPE_ANIMAL, //form
     },
 
     //POKEMON_BISAKNOSP

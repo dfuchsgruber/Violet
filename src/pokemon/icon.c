@@ -1,7 +1,6 @@
 #include "types.h"
-#include "pokemon.h"
-#include "gfx.h"
-#include "pokesprites.h"
+#include "pokemon/count.h"
+#include "pokemon/sprites.h"
 
  const void *pokemon_icons[POKEMON_CNT] = {
 

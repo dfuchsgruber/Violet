@@ -1,13 +1,14 @@
 #include "types.h"
 #include "stdbool.h"
 #include "romfuncs.h"
-#include "tile.h"
-#include "item.h"
-#include "pokepad.h"
+#include "tile/trainer_tipp.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
+#include "constants/items.h"
 
 
 bool trigger_trainer_tipp(){
-    u16 *ttip_cnt = vardecrypt(VAR_TRAINER_TIPP_CNT);
+    u16 *ttip_cnt = vardecrypt(TRAINER_TIPP_CNT);
         if(*ttip_cnt){
             (*ttip_cnt)--;
             return false;
@@ -22,34 +23,34 @@ bool trigger_trainer_tipp(){
  * @return A new Trainer-Tipp Script if one is possible 
  */
 u8 *get_trainer_tipp(){
-    if(!checkflag(FLAG_TRAINERTIPP_DNS)){
+    if(!checkflag(TRAINER_TIPP_DNS)){
         if(!trigger_trainer_tipp()) return NULL;
-        setflag( FLAG_TRAINERTIPP_DNS);
+        setflag(TRAINER_TIPP_DNS);
         return script_trainer_tipp_dns;
     }
-    if(checkflag(0x828) && !checkflag( FLAG_TRAINERTIPP_FP_MENU)){
+    if(checkflag(0x828) && !checkflag(TRAINER_TIPP_FP_MENU)){
         if(!trigger_trainer_tipp()) return NULL;
-        setflag(FLAG_TRAINERTIPP_FP_MENU);
+        setflag(TRAINER_TIPP_FP_MENU);
         return script_trainer_tipp_fp_menu;
     }
-    if(checkflag( FLAG_WONDERTRADE) && !checkflag(FLAG_TRAINERTIPP_WONDERTRADE)){
+    if(checkflag(WONDERTRADE) && !checkflag(TRAINER_TIPP_WONDERTRADE)){
         if(!trigger_trainer_tipp()) return NULL;
-        setflag( FLAG_TRAINERTIPP_WONDERTRADE);
+        setflag(TRAINER_TIPP_WONDERTRADE);
         return script_trainer_tipp_wondertrade;
     }
-    if(checkflag( FLAG_POKERADAR) && !checkflag( FLAG_TRAINERTIPP_POKERADAR)){
+    if(checkflag(POKERADAR) && !checkflag(TRAINER_TIPP_POKERADAR)){
         if(!trigger_trainer_tipp()) return NULL;
-        setflag( FLAG_TRAINERTIPP_POKERADAR);
+        setflag(TRAINER_TIPP_POKERADAR);
         return script_trainer_tipp_pokeradar;
     }
-    if(checkflag(POKEDEX_FLAG_HABITAT) && !checkflag( FLAG_TRAINERTIPP_HABITAT)){
+    if(checkflag(POKEDEX_FEATURE_HABITAT) && !checkflag(TRAINER_TIPP_HABITAT)){
         if(!trigger_trainer_tipp()) return NULL;
-        setflag( FLAG_TRAINERTIPP_HABITAT);
+        setflag(TRAINER_TIPP_HABITAT);
         return script_trainer_tipp_habitat;
     }
-    if(checkitem(ITEM_FAHRRAD, 1) && !checkflag (FLAG_TRAINERTIPP_CLOUD)){
+    if(checkitem(ITEM_FAHRRAD, 1) && !checkflag (TRAINER_TIPP_CLOUD)){
         if(!trigger_trainer_tipp()) return NULL;
-        setflag(FLAG_TRAINERTIPP_CLOUD);
+        setflag(TRAINER_TIPP_CLOUD);
         return script_trainer_tipp_cloud;
     }
     return NULL;

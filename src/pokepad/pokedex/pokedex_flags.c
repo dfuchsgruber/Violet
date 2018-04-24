@@ -1,6 +1,6 @@
 #include "types.h"
 #include "save.h"
-#include "pokedex.h"
+#include "pokepad/pokedex/operator.h"
 
 u8* pokedex_flag_access(u16 flag, bool seen) {
     if (flag < 416) {

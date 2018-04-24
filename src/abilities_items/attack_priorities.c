@@ -1,14 +1,12 @@
 
 #include "types.h"
-#include "item.h"
-#include "basestats.h"
-#include "battle.h"
-#include "abilities.h"
 #include "romfuncs.h"
 #include "debug.h"
 #include "attack.h"
-#include "item.h"
-#include "evolution.h"
+#include "battle/battler.h"
+#include "constants/pokemon_types.h"
+#include "constants/attack_categories.h"
+#include "constants/abilities.h"
 
 s8 attack_priority_get(u16 attack, u8 user){
     s8 prio = attacks[attack].priority;

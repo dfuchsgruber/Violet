@@ -1,6 +1,7 @@
 #include "types.h"
-#include "pokemon.h"
-#include "pokedex.h"
+#include <stdbool.h>
+#include "pokemon/count.h"
+#include "pokepad/pokedex/operator.h"
 #include "mega.h"
 
 u16 pokedex_order[POKEMON_CNT - 1] = {

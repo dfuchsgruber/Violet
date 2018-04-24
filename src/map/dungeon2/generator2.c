@@ -4,13 +4,12 @@
  */
 
 #include "types.h"
-#include "map.h"
+#include "map/header.h"
 #include "save.h"
-#include "tile.h"
 #include "dungeon2.h"
 #include "debug.h"
-#include "utils.h"
 #include "romfuncs.h"
+#include "math.h"
 
 
 
@@ -62,8 +61,8 @@ void dungeon2_next_node(int *result, int margin, dungeon_generator2 *dg2){
     if(xrange <= 0 || yrange <= 0){
         derrf("Parameters for dungeon2 allow no node generation!\n");
     }
-    int x = margin + (dungeon2_rnd(dg2) % xrange);
-    int y = margin + (dungeon2_rnd(dg2) % yrange);
+    int x = margin + ((int)dungeon2_rnd(dg2) % xrange);
+    int y = margin + ((int)dungeon2_rnd(dg2) % yrange);
     result[0] = x;
     result[1] = y;
     
@@ -109,7 +108,7 @@ void dungeon2_init_by_paths(u8 *map, dungeon_generator2 *dg2){
     dungeon2_next_node(nodes[0], dg2->margin, dg2); //Initial node
     for(int i = 1; i <= dg2->nodes; i++){
         //Pick any node a
-        int *a = nodes[dungeon2_rnd(dg2) % i];
+        int *a = nodes[(int)dungeon2_rnd(dg2) % i];
         dungeon2_next_node(nodes[i], dg2->margin, dg2);
         dungeon2_connect_nodes(a, nodes[i], dg2, map);
     }
@@ -163,12 +162,12 @@ int dungeon2_flood_fill(u8 *map, u8 *map2, dungeon_generator2 *dg2){
     //Find a root for flood fill (hope it is part of the biggest connected subgraph)
     s16 x, y;
     do{
-        x = (s16)(dungeon2_rnd(dg2) % width);
-        y = (s16)(dungeon2_rnd(dg2) % height);
+        x = (s16)((int)dungeon2_rnd(dg2) % width);
+        y = (s16)((int)dungeon2_rnd(dg2) % height);
     }while(map[y * height + x] == DG2_WALL);
     
     int filled_tiles = 0;
-    coordinate *stack = malloc(sizeof(coordinate) * width * height);
+    coordinate *stack = malloc((size_t)((int)sizeof(coordinate) * width * height));
     stack[0].x = x;
     stack[0].y = y;
     int stack_size = 1;

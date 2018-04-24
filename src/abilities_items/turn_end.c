@@ -1,8 +1,11 @@
 #include "types.h"
-#include "item.h"
-#include "basestats.h"
-#include "battle.h"
-#include "abilities.h"
+#include "constants/items.h"
+#include "battle/battler.h"
+#include "battle/attack.h"
+#include "battle/weather.h"
+#include "battle/battlescript.h"
+#include "constants/abilities.h"
+#include "constants/battle_weathers.h"
 #include "romfuncs.h"
 #include "debug.h"
 
@@ -25,24 +28,24 @@ bool turn_end(u8 ability, battler *target){
             0);
     dprintf("Turn end abilties triggered, ability %d, wnegpres %d\n", ability,
             weather_negating_ability_present);
-    if(ability == SOLARKRAFT && *battle_weather & BATTLE_WEATHER_SUN && 
+    if(ability == SOLARKRAFT && (*battle_weather & BATTLE_WEATHER_SUN) &&
             !weather_negating_ability_present){
         dprintf("Solarkraft triggered\n");
         turn_end_apply_recoil_dmg(target);
         return true;
-    }else if(ability == REGENMUT && *battle_weather & BATTLE_WEATHER_RAIN &&
+    }else if(ability == REGENMUT && (*battle_weather & BATTLE_WEATHER_RAIN) &&
             !weather_negating_ability_present){
         turn_end_apply_recoil_dmg(target);
         return true;  
-    }else if(ability == SANDHERZ && *battle_weather & BATTLE_WEATHER_SANDSTORM
+    }else if(ability == SANDHERZ && (*battle_weather & BATTLE_WEATHER_SANDSTORM)
             && !weather_negating_ability_present){
         turn_end_apply_recoil_dmg(target);
         return true;
-    }else if(ability == KAELTEWAHN && *battle_weather & BATTLE_WEATHER_HAIL
+    }else if(ability == KAELTEWAHN && (*battle_weather & BATTLE_WEATHER_HAIL)
             && !weather_negating_ability_present){
         turn_end_apply_recoil_dmg(target);
         return true;
-    }else if(ability == PHOTOGENESE && *battle_weather & BATTLE_WEATHER_SUN && 
+    }else if(ability == PHOTOGENESE && (*battle_weather & BATTLE_WEATHER_SUN) &&
             !weather_negating_ability_present &&
             target->current_hp < target->max_hp ){
         int dmg = target->max_hp / 8;
@@ -54,7 +57,7 @@ bool turn_end(u8 ability, battler *target){
             target->stat_changes[2] > 0 || target->stat_changes[5] > 0)){
         bsc_init_by_interrupting_battle_func(bsc_tollwut);
         return true;
-    }else if(ability == LUZID && target->status1 & STATUS1_SLEEPING &&
+    }else if(ability == LUZID && (target->status1 & STATUS1_SLEEPING) &&
             target->stat_changes[4] < 12){
         bsc_init_by_interrupting_battle_func(bsc_lucid);
         return true;

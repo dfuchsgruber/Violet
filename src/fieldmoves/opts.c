@@ -8,11 +8,11 @@
 #include "types.h"
 #include "fieldmoves.h"
 #include "romfuncs.h"
-#include "pokemon.h"
+#include "pokemon/virtual.h"
+#include "constants/pokemon_attributes.h"
 #include "callbacks.h"
 #include "save.h"
-#include "pstring.h"
-#include "map.h"
+#include "text.h"
 
 void pokemenu_build_opt_by_pokemon(pokemon *base, u8 index) {
     pokemenu_opt_state *opt_state = pokemenu_state->opt_state;
@@ -85,14 +85,14 @@ void pokemenu_opt_outdoor_move(u8 callback_self) {
                         case 7:
                             //Teleport 
                             map_load_namespace(buffer0, get_mapheader((u8) (*save1)->healingplace_bank, (u8) (*save1)->healingplace_map)->name_bank);
-                            string_decrypt(gbuffer, (pstring) 0x084175B5);
+                            string_decrypt(strbuf, (u8*) 0x084175B5);
                             pokemenu_print_string_as_yes_no(callback_self);
                             *((u16*) ((int) (pokemenu_state->opt_state) + 0x218)) = (u8) index;
                             return;
                         case 8:
                             //Dig
                             map_load_namespace(buffer0, get_mapheader((u8) (*save1)->last_outdoor_bank, (u8) (*save1)->last_outdoor_map)->name_bank);
-                            string_decrypt(gbuffer, (pstring) 0x0841758A);
+                            string_decrypt(strbuf, (u8*) 0x0841758A);
                             pokemenu_print_string_as_yes_no(callback_self);
                             *((u16*) ((int) (pokemenu_state->opt_state) + 0x218)) = (u8) index;
                             return;

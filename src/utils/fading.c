@@ -7,7 +7,7 @@
 
 #include "types.h"
 #include "stdbool.h"
-#include "utils.h"
+#include "fading.h"
 
 /*
  * 

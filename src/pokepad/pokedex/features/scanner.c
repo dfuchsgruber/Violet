@@ -1,14 +1,22 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "pokedex.h"
-#include "map.h"
+#include "pokepad/pokedex/gui.h"
+#include "pokepad/pokedex/operator.h"
+#include "pokepad/pokedex/scanner.h"
+#include "map/header.h"
+#include "map/wild_pokemon.h"
 #include "save.h"
 #include "bg.h"
-#include "utils.h"
 #include "text.h"
-#include "basestats.h"
-#include "oams.h"
+#include "pokemon/sprites.h"
+#include "pokemon/names.h"
+#include "pokemon/basestat.h"
+#include "oam.h"
 #include "superstate.h"
+#include "math.h"
+#include "debug.h"
+#include "fading.h"
+#include "language.h"
 /*
  * Probability density functions for each type of encounter
  * in percent. (Encounters are actually hardwired with these values)
@@ -217,7 +225,7 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
     for(int i = 0; i < 3; i++){
         state->icon_pals[i] = allocate_obj_pal(
                 (u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i));
-        pal_load_uncomp(icon_pals[i], 256 + 16 * state->icon_pals[i], 32);
+        pal_load_uncomp(pokemon_icon_pals[i], 256 + 16 * state->icon_pals[i], 32);
     }
     u16 pal_black[16] = {0};
     state->icon_pals[3] = allocate_obj_pal(POKEDEX_SCANNER_ICON_BASE_TAG + 3);
@@ -235,8 +243,8 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
 
 
 u8 pokedex_feature_scanner_fontcolmap[4] = {0, 2, 1, 0};
-extern u8 str_pokedex_feature_scanner_percent[];
-extern u8 str_pokedex_feature_scanner_unseen[];
+u8 str_pokedex_feature_scanner_percent[] = PSTRING("%");
+u8 str_pokedex_feature_scanner_unseen[] = PSTRING("??????????");
 
 
 void pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state *state,
@@ -259,7 +267,8 @@ void pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state *state,
 }
 
 
-extern u8 str_pokedex_feature_scanner_none[];
+u8 str_pokedex_feature_scanner_none[] = LANGDEP(PSTRING("Keine Pokémon auffindbar"),
+    PSTRING("No Pokémon to find"));
 
 
 void pokedex_feature_scanner_print_empty_list(){
@@ -406,10 +415,9 @@ void pokedex_feature_scanner_draw_generic_icons_at(pokedex_scanner_state *state,
         oams[state->oams[i]].final_oam.attr2 |= icon_pal << 12;
     }
 }
-
-extern u8 str_pokedex_feature_scanner_rod[];
-extern u8 str_pokedex_feature_scanner_good_rod[];
-extern u8 str_pokedex_feature_scanner_super_rod[];
+u8 str_pokedex_feature_scanner_rod[] = LANGDEP(PSTRING("Angel"), PSTRING("Rod"));
+u8 str_pokedex_feature_scanner_good_rod[] = LANGDEP(PSTRING("Profiangel"), PSTRING("Good Rod"));
+u8 str_pokedex_feature_scanner_super_rod[] = LANGDEP(PSTRING("Superangel"), PSTRING("Super Rod"));
 
 void pokedex_callback_feature_scanner_load(){
     

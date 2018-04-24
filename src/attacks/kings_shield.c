@@ -1,11 +1,17 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "attack.h"
-#include "battle.h"
+#include "battle/state.h"
+#include "battle/attack.h"
+#include "battle/battlescript.h"
+#include "battle/battler.h"
 #include "save.h"
 #include "debug.h"
 #include <stdbool.h>
-#include "basestats.h"
+#include "constants/attacks.h"
+#include "constants/attack_flags.h"
+#include "constants/attack_categories.h"
+#include "constants/pokemon_types.h"
 
 extern u8 bsc_kings_shield_drop[];
 
@@ -13,11 +19,10 @@ void bsc_command_setprotect_apply_kings_shield(){
     dprintf("Kings shield tried for battler %d\n", *attacking_battler);
     if(attacks[*active_attack].effect == 0xE3){
         dprintf("Kings shield triggered for battler %d\n", *attacking_battler);
-        fmem->battle_custom_status[*attacking_battler] |= 
-                CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD;
+        fmem->battle_custom_status[*attacking_battler] |= CUSTOM_STATUS_KINGS_SHIELD;
         u8 *x02023E82 = (u8*)0x02023E82;
         *x02023E82 = 2;
-        battler_temporary_status[*attacking_battler * 16] |= 1;
+        battler_statuses[*attacking_battler].unkown[0] |= 1;
     }
 }
 
@@ -30,7 +35,7 @@ bool protect_attack_succeeds(){
     dprintf("Trying to apply protect state\n");
     battler *attacker = &battlers[*attacking_battler];
     if(fmem->battle_custom_status[*defending_battler] & 
-                CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD){
+        CUSTOM_STATUS_KINGS_SHIELD){
         dprintf("Defender %d is behind kings shield\n", *defending_battler);
         //king shield protect, check if the move hits
         if(!(attacks[*active_attack].flags & AFFECTED_BY_PROTECT)) return true;
@@ -40,7 +45,7 @@ bool protect_attack_succeeds(){
                 STATUS2_ATTACK_CHARGED)) return true;
         if(attacks[*active_attack].flags & MAKES_CONTACT)
             fmem->battle_custom_status[*attacking_battler] |=
-                    CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD_APPLY_DROP;
+                CUSTOM_STATUS_KINGS_SHIED_DROP;
         
     }else{
         //regular protect
@@ -58,9 +63,8 @@ bool protect_attack_succeeds(){
 
 void bsc_push_kings_shield_drop(){
     battler *attacker = &battlers[*attacking_battler];
-    if(fmem->battle_custom_status[*attacking_battler] & 
-            CUSTOM_TEMPORARY_STATUS_KINGS_SHIELD_APPLY_DROP &&
-            attacker->stat_changes[1] > 0){
+    if((fmem->battle_custom_status[*attacking_battler] & CUSTOM_STATUS_KINGS_SHIED_DROP)
+        && attacker->stat_changes[1] > 0){
         if(attacker->stat_changes[1] == 1) attacker->stat_changes[1] = 0;
         else attacker->stat_changes[1] = (u8)(attacker->stat_changes[1]  - 2);
         bsc_push_next_cmd();

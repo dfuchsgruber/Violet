@@ -1,14 +1,17 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
+#include "battle/battler.h"
+#include "pokemon/basestat.h"
+#include "pokemon/virtual.h"
 #include "mega.h"
 #include <stdbool.h>
+#include "constants/flags.h"
+#include "constants/pokemon_attributes.h"
 
 void trigger_opponents_mega() {
-    u8 pokemon_in_battle = *((u8*) 0x02023BCC);
+    u8 pokemon_in_battle = *battler_cnt;
     int i = 0;
     while (i < pokemon_in_battle) {
 
@@ -23,7 +26,7 @@ void trigger_opponents_mega() {
         }
         i++;
     }
-    *((int*) 0x03004ED4) = (int) battle_cb_do_megas;
+    *((void(**)()) 0x03004ED4) = battle_cb_do_megas;
 }
 
 //this is the callback that executes megas
@@ -36,12 +39,12 @@ void battle_cb_do_megas() {
     }
 
     //first we check if we have megas left to execute
-    u8 pokemon_in_battle = *((u8*) 0x02023BCC);
+    u8 pokemon_in_battle = *battler_cnt;
     int i = 0;
     while (i < pokemon_in_battle) {
 
         //we execute mega evolution in the same order the pokemon attack
-        u8 current_index = *((u8*) (0x02023BDE + i));
+        u8 current_index = battler_attacking_order[i];
         if (current_index < pokemon_in_battle) {
 
             //we check if the pokemon can perform a mega evolution
@@ -50,7 +53,7 @@ void battle_cb_do_megas() {
             if (current_battler->trigger) {
 
                 if (!is_opponent(current_index) && !(get_mega_if_can_mega_evolve(current_battler)->regent)) {
-                    setflag(0x920);
+                    setflag(MEGA_EVOLUTION_PERFORMED);
                 }
 
                 current_battler->trigger = 0;
@@ -89,14 +92,16 @@ void battle_cb_do_megas() {
         i++;
     }
     //no pokemon was triggered for mega evolution -> writing attack execution at battle callback
-    *((u32*) 0x03004ED4) = 0x0801554D;
+    *((void(**)()) 0x03004ED4) = (void(*)()) 0x0801554D;
 }
 
 void* get_pokemon_offset_by_index(u8 index) {
 
-    int base = is_opponent(index) ? 0x0202402C : 0x02024284;
-    u16 id = *((u16*) (0x02023BCE + index * 2));
-    return (void*) base + id * 100;
+	if(is_opponent(index))
+		return &opponent_pokemon[index];
+	else
+		return &player_pokemon[index];
+
 
 }
 
@@ -104,12 +109,12 @@ void* get_pokemon_offset_by_index(u8 index) {
  **/
 bool can_player_trigger_mega() {
 
-    if (checkflag(0x920) || !checkflag(0x921)) {
+    if (checkflag(MEGA_EVOLUTION_PERFORMED) || !checkflag(PLAYER_ABLE_TO_MEGA_EVOLVE)) {
         return 0;
     }
 
     int i;
-    u8 pokemon_in_battle = *((u8*) 0x02023BCC);
+    u8 pokemon_in_battle = *battler_cnt;
     for (i = 0; i < pokemon_in_battle; i++) {
         if (battlers[i].trigger && !is_opponent((u8) i)) {
             return 0;

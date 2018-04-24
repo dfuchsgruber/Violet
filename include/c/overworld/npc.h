@@ -83,10 +83,10 @@ typedef struct {
     u8 gender;
     u8 mode;
     u8 unkown[3];
-} player_state;
+} player_state_t;
 
 npc *npcs = (npc*) 0x02036E38;
-player_state *pstate = (player_state*) 0x02037078;
+player_state_t *player_state = (player_state_t*) 0x02037078;
 
 u8 npc_is_tile_blocked(npc *n, s16 x, s16 y, u8 direction);
 u8 npc_sees_player(npc *n);

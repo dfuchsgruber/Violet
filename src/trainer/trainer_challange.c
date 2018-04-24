@@ -1,10 +1,13 @@
 #include "types.h"
 #include <stdbool.h>
-#include "trainer.h"
+#include "trainer/trainer.h"
+#include "trainer/virtual.h"
 #include "save.h"
-#include "npc.h"
+#include "overworld/npc.h"
 #include "romfuncs.h"
 #include "data_structures.h"
+#include "constants/flags.h"
+#include "constants/trainerclasses.h"
 
 void special_prepeare_player_facing() {
     s16 coordinates [2];
@@ -48,7 +51,7 @@ bool checktrainerflag(u16 trainer_id) {
 bool trainer_can_npc_challange_player(u16 trainer_id) {
     if (trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONAER) {
         //check if a revolutionary wants to challange you
-        if (checkflag(FLAG_IS_FRACTION_CHOSEN) && checkflag(FLAG_IS_REVOLUTION_FRACTION)) {
+        if (checkflag(FRACTION_CHOSEN) && checkflag(REVOLUTION_FRACTION)) {
 
             return false;
         }

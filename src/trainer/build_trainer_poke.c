@@ -1,19 +1,13 @@
 #include "types.h"
-#include "romfuncs.h"
-#include "oams.h"
-#include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
-#include "trainer.h"
-#include "item.h"
-#include "save.h"
 #include <stdbool.h>
-#include "unaligned_types.h"
-#include "pokemon.h"
-#include "map.h"
+#include "romfuncs.h"
+#include "trainer/build.h"
+#include "pokemon/virtual.h"
+#include "constants/natures.h"
+#include "constants/pokemon_attributes.h"
 
 
-static u8 ev_finals[6] = {0x16, 0x17, 0x18, 0x21, 0x2F, 0x30};
+u8 ev_finals[6] = {0x16, 0x17, 0x18, 0x21, 0x2F, 0x30};
 
 static build builds [14] = {
 

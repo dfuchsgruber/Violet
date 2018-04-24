@@ -1,0 +1,14 @@
+#define SHAPE_ANIMAL 0x0
+#define SHAPE_HUMANOID 0x1
+#define SHAPE_TAIL 0x2
+#define SHAPE_SNAKE 0x3
+#define SHAPE_WINGED_INSECT 0x4
+#define SHAPE_WINGED 0x5
+#define SHAPE_INSECT 0x6
+#define SHAPE_HEAD 0x7
+#define SHAPE_ARMS 0x8
+#define SHAPE_LEGS 0x9
+#define SHAPE_TENTACLES 0xa
+#define SHAPE_FISH 0xb
+#define SHAPE_BALL 0xc
+#define SHAPE_MULTI 0xd

@@ -1,8 +1,8 @@
 #include "types.h"
-#include "npc.h"
 #include "romfuncs.h"
-#include "overworld.h"
-#include "tile.h"
+#include "overworld/npc.h"
+#include "tile/block.h"
+#include "tile/coordinate.h"
 
 void npc_diag_apply(npc *n, oam_object *target, u8 direction) {
     n->dest_x = (s16) (n->from_x + walking_directions[direction].x);

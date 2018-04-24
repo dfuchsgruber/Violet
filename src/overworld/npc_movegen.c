@@ -6,11 +6,10 @@
  */
 #include "types.h"
 #include "stdbool.h"
-#include "utils.h"
-#include "npc.h"
+#include "math.h"
+#include "overworld/npc.h"
 #include "save.h"
 #include "romfuncs.h"
-#include "overworld.h"
 #include "callbacks.h"
 #include "data_structures.h"
 //void tt(int a, int b){while(true){}}

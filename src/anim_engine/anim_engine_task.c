@@ -9,7 +9,9 @@
  * Nullsub for anim tasks (root holds nullsub)
  * @param root
  */
-void anim_engine_task_nullsub(anim_engine_task *root){ root; }
+void anim_engine_task_nullsub(anim_engine_task *root) {
+  (void)root;
+}
 
 /** Root node for the anim engine
  */

@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_POKEPAD_STATE_H_
 #define INCLUDE_C_POKEPAD_STATE_H_
 
+#include "types.h"
+#include "stdbool.h"
+
 typedef struct pokepad_item {
         u16 flag;
         u8 *string;

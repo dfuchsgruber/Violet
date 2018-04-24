@@ -1,16 +1,17 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "music.h"
-#include "battle.h"
 #include "transparency.h"
 #include "debug.h"
+#include "battle/battler.h"
+#include "constants/vars.h"
+#include "constants/flags.h"
 
 
 void whiteout(){
-    *vardecrypt(VAR_BATTLE_MUSIC) = 0;
-    *vardecrypt(VAR_MAP_MUSIC_FORCE) = 0;
-    clearflag(FLAG_BYPASS_TRANSPARENCY);
-    setflag(FLAG_TRANSPARENCY_ON);
+    *vardecrypt(BATTLE_SONG_OVERRIDE) = 0;
+    *vardecrypt(SONG_OVERRIDE) = 0;
+    clearflag(TRANS_DISABLE);
+    setflag(TRANS_PALETTE_FETCH);
 }
 
 void trainerbattle_after_battle(){

@@ -1,30 +1,46 @@
 #include "types.h"
-#include "romfuncs.h"
-#include "oams.h"
-#include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
-#include "trainer.h"
-#include "item.h"
-#include "mega.h"
 #include <stdbool.h>
-#include "unaligned_types.h"
+#include "romfuncs.h"
+#include "oam.h"
+#include "callbacks.h"
+#include "mega.h"
 #include "debug.h"
+#include "text.h"
+#include "language.h"
+#include "trainer/trainer.h"
+#include "trainer/virtual.h"
+#include "item/item.h"
+#include "constants/vars.h"
 
 
+u8 str_mega_reacts[] = LANGDEP(
+		PSTRING("BUFFER_2 von BUFFER_1\nreagiert auf PLAYER von BUFFER_3."),
+		PSTRING("BUFFER_1\s BUFFER_2\nreacts to BUFFER_3\s PLAYER.")
+);
 
-extern u8 str_mega_reacts[];
-extern u8 str_mega_opp[];
-extern u8 str_mega_evolved[];
-extern u8 str_regent_evolved[];
-extern u8 str_aura_pulses[];
+u8 str_mega_opp[] = LANGDEP(
+		PSTRING("(Gegner)"),
+		PSTRING("(foe)")
+);
 
-static u8 clear_script[] = {0x10, 0x30, 0x1, //printstring 0x130
-    0x12, 0x1, 0x0, //waitmessage 0x1
-    0x3D //end
-};
+u8 str_mega_evolved[] = LANGDEP(
+		PSTRING("BUFFER_1 hat sich zu\nMega-KUN entwickelt!"),
+		PSTRING("BUFFER_1 evolved into\nMega-KUN!")
+);
 
-mega_table_entry *get_mega_if_can_mega_evolve(battler *b);
+u8 str_regent_evolved[] = LANGDEP(
+		PSTRING("BUFFER_1 umgibt die Aura\neines Kaisers!"),
+		PSTRING("BUFFER_1 is surrouned by\nthe aura of an emperor!")
+);
+
+u8 str_aura_pulses[] = LANGDEP(
+		PSTRING("Die Aura von BUFFER_1\npulsiert!"),
+		PSTRING("BUFFER_1\s aura begins\nto pulse!")
+);
+
+
+extern u8 mega_anim_clear_script[];
+
 
 void cb_mega_anim(u8 self) {
 
@@ -45,13 +61,13 @@ void cb_mega_anim(u8 self) {
         cself->params[3] = battle_state;
         *((u8*) 0x02023BE3) = 0xC; //we go to state : execute bsc
         //*((u8**)0x02023D74) = (u8*)0x81DD2Ae; //test bsc
-        *((u8**) 0x02023D74) = clear_script;
+        *((u8**) 0x02023D74) = mega_anim_clear_script;
     }
 
     //at frame 0x4: print "reacts to mega"
     if (cself->params[0] == 0x4 || cself->params[0] == 540) {
         //we copy our string into the ram buffer
-        u8* ram_buf = (u8*) 0x02021D18;
+        u8* ram_buf = strbuf;
         u8 slot = (u8) cself->params[1];
         
         //debug1(&big_callbacks[self]);
@@ -80,7 +96,8 @@ void cb_mega_anim(u8 self) {
                     case 1:
                     {
                         //We request the mega item (depending on side)
-                        u16 item = is_opponent(slot) ? *(vardecrypt(0x50E4)) : *(vardecrypt(0x50E5));
+                        u16 item = is_opponent(slot) ? *(vardecrypt(OPPONENT_MEGA_ITEM))
+                        		: *(vardecrypt(PLAYER_MEGA_ITEM));
                         ram_buf = (strcpy(ram_buf, items[item].name));
                         break;
                     }
@@ -106,7 +123,7 @@ void cb_mega_anim(u8 self) {
                         if (!is_opponent(slot)) {
                             ram_buf = (strcpy(ram_buf, (*(u8**) 0x03004F5C)));
                         } else {
-                            u16 trainer_id = *((u16*) 0x020386AE);
+                            u16 trainer_id = trainer_vars->trainer_id;
                             //if trainerclass is of rival we load name form saveblock as well
                             if (trainers[trainer_id].trainerclass == 0x51) {
                                 ram_buf = (strcpy(ram_buf, (u8*) ((*((u8**) 0x03004F58)) + 0x3A4C)));
@@ -129,7 +146,7 @@ void cb_mega_anim(u8 self) {
             }
         }
         *ram_buf = 0xFF; //adding the end of string to the ram buffer
-        battle_printmsg((u8*) 0x02021D18, 0x40);
+        battle_printmsg(strbuf, 0x40);
     }
 
 

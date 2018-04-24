@@ -10,8 +10,6 @@
 
 #include "pokemon/count.h"
 
-// Constants
-#include "move_tutor.h"
 
 typedef struct {
     u16 move_id : 9;

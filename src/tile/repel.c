@@ -1,7 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "callbacks.h"
-#include "item.h"
+#include "constants/items.h"
 #include "debug.h"
 
 void repel_use(){

@@ -1,10 +1,19 @@
 #include "types.h"
 #include "abilities.h"
 #include "romfuncs.h"
-#include "battle.h"
-#include "basestats.h"
+#include "battle/battler.h"
+#include "battle/battlescript.h"
+#include "battle/state.h"
 #include "attack.h"
 #include "debug.h"
+#include "constants/abilities.h"
+#include "constants/pokemon_types.h"
+
+extern u8 bsc_flinch_aura[];
+extern u8 bsc_flinch_raura[];
+extern u8 bsc_flinch_baura[];
+extern u8 bsc_flinch_gaura[];
+
 
 u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
     

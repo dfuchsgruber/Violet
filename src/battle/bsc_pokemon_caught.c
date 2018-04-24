@@ -1,9 +1,10 @@
 #include "types.h"
-#include "basestats.h"
-#include "pokemon.h"
-#include "battle.h"
 #include "romfuncs.h"
-#include "pokedex.h"
+#include "battle/battlescript.h"
+#include "pokemon/virtual.h"
+#include "pokepad/pokedex/operator.h"
+#include "constants/pokemon_attributes.h"
+#include "constants/flags.h"
 
 
 void bsc_pokemon_caught(){
@@ -11,7 +12,7 @@ void bsc_pokemon_caught(){
     u16 species = (u16)get_pokemons_attribute(&opponent_pokemon[0], ATTRIBUTE_SPECIES, 0);
     u16 dex_id = pokedex_get_id(species);
     u32 pid = get_pokemons_attribute(&opponent_pokemon[0], ATTRIBUTE_PID, 0);
-    bool caught = pokedex_operator(species, 1, true);
+    bool caught = pokedex_operator(species,POKEDEX_GET | POKEDEX_CAUGHT, true);
     if(caught){
         *bsc_offset = (u8*)GET_MISALIGNED_32(++(*bsc_offset));
     }else{

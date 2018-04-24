@@ -1,5 +1,5 @@
 #include "types.h"
-#include "basestats.h"
+#include "pokemon/cry.h"
 
 pokemon_cry pokemon_cries_backward [POKEMON_CNT] = {
     // POKEMON_POKEMON_0

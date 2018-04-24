@@ -13,7 +13,7 @@ items:
     .word str_pokepad_wondertrade_desc //should be descr
     //Pokedex
     .word 0x829
-    .word str_pokepad_pokedex2
+    .word str_pokepad_pokedex
     .word pokedex_init //should be initilaizer func
     .word str_pokepad_pokedex_desc //should be descr
     //Pokeradar
@@ -26,3 +26,44 @@ items:
     .word 0
     .word 0
     .word 0
+
+.ifdef LANG_GER
+
+	str_pokepad_wondertrade:
+		.string "Wundertausch"
+
+	str_pokepad_wondertrade_desc:
+		.string "Tausche Pokémon mit Trainern\naus aller Welt."
+
+	str_pokepad_pokedex:
+		.string "Pokédex"
+
+	str_pokepad_pokedex_desc:
+		.string "Betrachte Aufzeichnungen zu gefangenen\nund gesehenen Pokémon."
+
+	str_pokepad_pokeradar:
+		.string "Pokéradar"
+
+	str_pokepad_pokeradar_desc:
+		.string "Spüre seltene Pokémon in der\nNähe auf."
+
+.elseif LANG_EN
+
+	str_pokepad_wondertrade:
+		.string "Wondertrade"
+
+	str_pokepad_wondertrade_desc:
+		.string "Trade your Pokémon with\ntrainers worldwide."
+
+	str_pokepad_pokedex:
+		.string "Pokédex"
+
+	str_pokepad_pokedex_desc:
+		.string "View your records of caught and\nseen Pokémon."
+
+	str_pokepad_pokeradar:
+		.string "Pokéradar"
+
+	str_pokepad_pokeradar_desc:
+		.string "Traces rare Pokémon\nnearby."
+.endif

@@ -150,3 +150,17 @@ table_outdoor_move_initializers:
 .word 0xd
 @.word 0x80f6985 @
 @.word 0xd
+
+@ // String
+.ifdef LANG_GER
+
+	str_fp_menu:
+		.string "Fleiß-Punkte"
+
+.elseif LANG_EN
+
+	str_fp_menu:
+		.string "Effort Values"
+
+.endif
+

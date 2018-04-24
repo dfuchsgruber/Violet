@@ -19,6 +19,8 @@
 #define POKEPAD_WONDERTRADE_TBOX_TRADE 8
 #define POKEPAD_WONDERTRADE_TBOX_BACK 9
 
+#include "types.h"
+#include "stdbool.h"
 
     typedef struct wondertrade_memory {
         bool from_outdoor;
@@ -30,21 +32,8 @@
         u8 cursor;
     } wondertrade_memory;
 
-    extern u8 str_pokepad_wondertrade[];
-    extern u8 *script_wondertrade_failure;
-    extern u8 str_wondertrade_level[];
-    extern u8 str_wondertrade_bronze[];
-    extern u8 str_wondertrade_silver[];
-    extern u8 str_wondertrade_gold[];
-    extern u8 str_wondertrade_platin[];
-    extern u8 str_wondertrade_anzahl[];
-    extern u8 str_wondertrade_next[];
-    extern u8 str_wondertrade_none[];
     extern u8 str_wondertrade_not_possible_script[];
-    extern u8 str_wondertrade_do[];
-    extern u8 str_wondertrade_back[];
-    extern u8 str_wondertrade_error_m[];
-
+    extern u8 script_wondertrade_failure[];
     extern u8 str_wondertrade_name0[];
     extern u8 *wondertrade_ot_names[];
 

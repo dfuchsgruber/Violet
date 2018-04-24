@@ -1,10 +1,11 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "battle.h"
-#include "gfx.h"
-#include "attack.h"
-#include "tile.h"
-#include "save.h"
+#include "battle/bg.h"
+#include "battle/attack.h"
+#include "constants/attacks.h"
+#include "constants/vars.h"
+#include "tile/coordinate.h"
+#include "tile/block.h"
 
 battle_bg battle_bgs[29] = {
     // Battle street

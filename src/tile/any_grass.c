@@ -2,8 +2,9 @@
 #include "romfuncs.h"
 #include "callbacks.h"
 #include "save.h"
-#include "tile.h"
-#include "gfx.h"
+#include "tile/any_grass.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
 #include "debug.h"
 #include "color.h"
 
@@ -60,8 +61,8 @@ bool tile_is_high_grass(u8 behavior){
 
 
 u8 *ash_grass_player_step(){
-    u16 *collected = vardecrypt(VAR_ASH);
-    if(checkflag(FLAG_ASHBAG) && *collected < 50000){
+    u16 *collected = vardecrypt(ASH);
+    if(checkflag(ASHBAG_RECEIVED) && *collected < 50000){
         (*collected)++;
     }
     return NULL;

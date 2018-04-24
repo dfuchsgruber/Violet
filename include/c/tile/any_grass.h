@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_TILE_ANY_GRASS_H_
 #define INCLUDE_C_TILE_ANY_GRASS_H_
 
+#include "oam.h"
 
 #define ANY_GRASS_CNT 7
 

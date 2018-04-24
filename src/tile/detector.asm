@@ -45,3 +45,19 @@ exclam:
 .byte 0x62
 .byte 0xFE
 
+.ifdef LANG_GER
+
+	str_detector:
+		.string "Der Detektor schlägt aus!\nIn der Nähe muss ein Item liegen!"
+
+	str_trainer_tipp_detektor:
+		.string "Trainer-Tipp!\nDer Detektor kann in den Optionen\lausgeschaltet werden!"
+
+.elseif LANG_EN
+
+	str_detector:
+		.string "Your detector seems to have\nfound an item nearby!"
+
+	str_trainer_tipp_detektor:
+		.string "Trainer-Tipp!\nYou can turn off the detector\lin the options!"
+.endif

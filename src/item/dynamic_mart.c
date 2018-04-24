@@ -1,6 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "item.h"
+#include "item/mart.h"
+#include "constants/items.h"
 #include "save.h"
 #include "debug.h"
 
@@ -146,7 +147,7 @@ bool script_cmd_x88_pokemart3(void *script_state){
     }
     item_space[j] = 0;
     pokemart(item_space);
-    mstate->end_callback = script_resume;
+    mart_state->end_callback = script_resume;
     script_halt();
     return true;
 }

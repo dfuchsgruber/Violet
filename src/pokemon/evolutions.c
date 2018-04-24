@@ -1,7 +1,9 @@
 #include "types.h"
-#include "basestats.h"
-#include "item.h"
-#include "attack.h"
+#include "pokemon/evolution.h"
+#include "constants/items.h"
+#include "constants/attacks.h"
+#include "constants/evolution_methods.h"
+#include "constants/species.h"
 
 pokemon_evolution pokemon_evolutions[POKEMON_CNT][5] = {
     // POKEMON_POKEMON_0
@@ -1510,7 +1512,7 @@ pokemon_evolution pokemon_evolutions[POKEMON_CNT][5] = {
     },
     // POKEMON_LATERNECTO
     {
-        {EVOLUTION_METHOD_STONE, ITEM_FINSTERSTEIN, POKEMON_SKLELABRA, 0},
+        {EVOLUTION_METHOD_STONE, ITEM_FINSTERSTEIN, POKEMON_SKELABRA, 0},
         {EVOLUTION_METHOD_NONE, 0, POKEMON_POKEMON_0, 0},
         {EVOLUTION_METHOD_NONE, 0, POKEMON_POKEMON_0, 0},
         {EVOLUTION_METHOD_NONE, 0, POKEMON_POKEMON_0, 0},

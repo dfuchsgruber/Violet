@@ -1,13 +1,18 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "abilities.h"
-#include "basestats.h"
-#include "item.h"
 #include "attack.h"
-#include "battle.h"
 #include "debug.h"
 #include "save.h"
 #include "data_structures.h"
+#include "battle/battler.h"
+#include "battle/attack.h"
+#include "battle/state.h"
+#include "battle/battlescript.h"
+#include "constants/items.h"
+#include "constants/abilities.h"
+#include "constants/attack_results.h"
+#include "constants/attacks.h"
+#include "constants/attack_flags.h"
 
 extern u8 bsc_life_orb[];
 extern u8 bsc_lernfaehig[];
@@ -33,7 +38,7 @@ void attack_done(u8 index){
     }
     //now apply the abilities
     if(attacker->ability == LERNFAEHIG && attacker->current_hp &&
-            *attack_result & ATTACK_MISSED && attacker->stat_changes[6] < 12){
+            (*attack_result & ATTACK_MISSED) && attacker->stat_changes[6] < 12){
         if(gp_stack_push(index)){
             attacker->stat_changes[6]++; //accuracy boost
             bsc_push_next_cmd();
@@ -83,7 +88,7 @@ void attack_done(u8 index){
     }else if(attacker->ability == EXTRADORN && !(*attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
             defender->current_hp && 
-            attacks[*active_attack].flags & MAKES_CONTACT){
+            (attacks[*active_attack].flags & MAKES_CONTACT)){
         bsc_push_next_cmd();
         *bsc_offset = bsc_extradorn;
         

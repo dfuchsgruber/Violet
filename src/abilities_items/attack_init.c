@@ -1,23 +1,54 @@
 #include "types.h"
-#include "abilities.h"
-#include "battle.h"
+#include "battle/battler.h"
+#include "battle/attack.h"
+#include "battle/state.h"
+#include "battle/battlescript.h"
 #include "romfuncs.h"
-#include "basestats.h"
-#include "item.h"
 #include "attack.h"
 #include "debug.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
 #include "color.h"
 #include "mega.h"
-#include "pstring.h"
 #include "save.h"
+#include "pokemon/basestat.h"
+#include "constants/abilities.h"
+#include "constants/items.h"
+#include "constants/species.h"
+#include "constants/attacks.h"
+#include "constants/attack_flags.h"
+#include "constants/pokemon_attributes.h"
+#include "constants/attack_categories.h"
+
 
 
 extern u8 bsc_wandlungskunst[];
 extern u8 bsc_stance_change_to_attack[];
 extern u8 bsc_stance_change_to_defense[];
 extern u8 bsc_ap_sparer[];
+
+void stance_change_change_species(u8 target, u16 species){
+    void *pokemon = get_pokemon_offset_by_index(target);
+    set_pokemons_attribute(pokemon, ATTRIBUTE_SPECIES, &species);
+    recalculate_stats(pokemon);
+
+    //Update the battler slot
+    battlers[target].species = species;
+    int j;
+    for(j = 0; j < 5; j++){
+        battlers[target].stats[j] =
+                (u16) get_pokemons_attribute(pokemon, (u8)(j + ATTRIBUTE_ATK), 0);
+    }
+    battlers[target].current_hp = (u16) get_pokemons_attribute(pokemon,
+            ATTRIBUTE_CURRENT_HP, 0);
+    battlers[target].max_hp = (u16) get_pokemons_attribute(pokemon,
+             ATTRIBUTE_TOTAL_HP, 0);
+    battlers[target].ability = get_pokemons_ability(pokemon);
+    battlers[target].type1 = basestats[species].type1;
+    battlers[target].type1 = basestats[species].type2;
+
+
+}
 
 void attack_init_trigger_abilities(){
     
@@ -117,28 +148,7 @@ void attack_anim_stance_change_sprite_change(u8 self){
     
 }
 
-void stance_change_change_species(u8 target, u16 species){
-    void *pokemon = get_pokemon_offset_by_index(target);
-    set_pokemons_attribute(pokemon, ATTRIBUTE_SPECIES, &species);
-    recalculate_stats(pokemon);
-    
-    //Update the battler slot
-    battlers[target].species = species;
-    int j;
-    for(j = 0; j < 5; j++){
-        battlers[target].stats[j] = 
-                (u16) get_pokemons_attribute(pokemon, (u8)(j + ATTRIBUTE_ATK), 0);
-    }
-    battlers[target].current_hp = (u16) get_pokemons_attribute(pokemon,
-            ATTRIBUTE_CURRENT_HP, 0);
-    battlers[target].max_hp = (u16) get_pokemons_attribute(pokemon,
-             ATTRIBUTE_TOTAL_HP, 0);
-    battlers[target].ability = get_pokemons_ability(pokemon);
-    battlers[target].type1 = basestats[species].type1;
-    battlers[target].type1 = basestats[species].type2;
-    
 
-}
 
 void attack_anim_stance_change_cry(u8 self){
     

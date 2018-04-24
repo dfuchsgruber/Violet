@@ -236,7 +236,7 @@
 #define ITEM_AMPHAROSNIT 0xeb
 #define ITEM_GENGARNIT 0xec
 #define ITEM_BIBORNIT 0xed
-#define ITEM_ITEM_EE 0xee
+#define ITEM_MAGMAHERZ 0xee
 #define ITEM_ITEM_EF 0xef
 #define ITEM_ITEM_F0 0xf0
 #define ITEM_ITEM_F1 0xf1

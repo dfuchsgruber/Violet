@@ -1,16 +1,13 @@
 #include "types.h"
-#include "romfuncs.h"
-#include "oams.h"
-#include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
-#include "trainer.h"
-#include "item.h"
-#include "save.h"
 #include <stdbool.h>
-#include "unaligned_types.h"
-#include "pokemon.h"
+#include "romfuncs.h"
+#include "oam.h"
+#include "callbacks.h"
+#include "battle/battler.h"
+#include "pokemon/basestat.h"
+#include "save.h"
 #include "mega.h"
+#include "constants/pokemon_attributes.h"
 
 u8 get_pokemons_ability(pokemon *poke) {
 

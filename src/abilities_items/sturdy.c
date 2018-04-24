@@ -1,14 +1,12 @@
 
 #include "types.h"
-#include "item.h"
-#include "basestats.h"
-#include "battle.h"
+#include "battle/battler.h"
+#include "battle/attack.h"
 #include "abilities.h"
 #include "romfuncs.h"
 #include "debug.h"
-#include "attack.h"
-#include "item.h"
-#include "evolution.h"
+#include "battle/battlescript.h"
+#include "constants/abilities.h"
 
 extern u8 bsc_robustheit[];
 

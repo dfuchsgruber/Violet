@@ -1,11 +1,12 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "misc.h"
-#include "basestats.h"
-#include "item.h"
-#include "map.h"
+#include "constants/items.h"
+#include "item/item.h"
+#include "constants/species.h"
+#include "multichoice.h"
 #include "save.h"
 #include "rtc.h"
+#include "debug.h"
 #include "access_card.h"
 
 
@@ -32,7 +33,7 @@ void fossil_print_multichoice() {
     *lastresult = 0;
     
     // Iterate through all possible fossils
-    dynamic_multichoice choices[5];
+    dynamic_multichoice_t choices[5];
     int i;
     u16 displayed = 0;
     for (i = 0; i < 5; i++) {

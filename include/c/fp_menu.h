@@ -46,8 +46,6 @@ extern "C" {
     void fp_menu_callback_pokemon_load();
 
     extern u8 *fp_menu_names[6];
-    extern u8 str_fp_menu_plus[];
-    extern u8 str_fp_menu_minus[];
 
 
 #ifdef	__cplusplus

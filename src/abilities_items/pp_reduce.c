@@ -1,5 +1,6 @@
 #include "types.h"
-#include "battle.h"
+#include "battle/attack.h"
+#include "battle/battler.h"
 
 void pp_reduce(u8 amount){
     battler *b = &battlers[*attacking_battler];

@@ -1,0 +1,7 @@
+#define LANGUAGE_JAP 0x0
+#define LANGUAGE_ENG 0x1
+#define LANGUAGE_FRA 0x2
+#define LANGAUGE_ITA 0x3
+#define LANGUAGE_GER 0x4
+#define LANGUAGE_KOR 0x5
+#define LANGUAGE_ESP 0x6

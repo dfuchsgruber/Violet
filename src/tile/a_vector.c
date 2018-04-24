@@ -1,8 +1,8 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "save.h"
-#include "item.h"
-#include "tile.h"
+#include "constants/items.h"
+#include "tile/trash.h"
 #include "rtc.h"
 
 void generate_trash_item(u8 facing) {

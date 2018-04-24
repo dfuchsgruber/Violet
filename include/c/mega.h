@@ -23,6 +23,8 @@ extern u8 *attack_anim_groudon;
 extern u8 *attack_anim_kyogre;
 extern u8 *attack_anim_rayquaza;
 
+mega_table_entry *get_mega_if_can_mega_evolve(battler *b);
+
 bool can_player_trigger_mega();
 void* get_pokemon_offset_by_index(u8 index);
 void battle_cb_do_megas();

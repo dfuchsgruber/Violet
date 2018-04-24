@@ -12,6 +12,10 @@
 extern "C" {
 #endif
 #include "types.h"
+#include "tile/coordinate.h"
+#include "map/header.h"
+#include "map/footer.h"
+#include "map/event.h"
 
     // Linear congruency rnd parameters
     #define DG2_RND_MULTIPLIER 0x41C64E6D

@@ -1,9 +1,12 @@
 #include "types.h"
-#include "item.h"
-#include "romfuncs.h"
-#include "pokemon.h"
-#include "callbacks.h"
 #include "stdbool.h"
+#include "constants/items.h"
+#include "romfuncs.h"
+#include "pokemon/virtual.h"
+#include "callbacks.h"
+#include "item/custom.h"
+#include "constants/pokemon_attributes.h"
+#include "language.h"
 
 void item_field_nature_stone(u8 self) {
     void **item_callback_after_poke_selection = (void**) 0x03005DE8;
@@ -11,7 +14,9 @@ void item_field_nature_stone(u8 self) {
     _item_select_pokemon_for_activation(self);
 }
 
-extern u8 str_nature_stone_sucess[];
+u8 str_nature_stone_sucess[] = LANGDEP(
+    PSTRING("Das Wesen von BUFFER_1 hat\nsich geändert.PAUSE_UNTIL_PRESS"),
+    PSTRING("BUFFER_1\s nature has\nchanged.PAUSE_UNTIL_PRESS"));
 
 void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure)(u8)) {
     u8 *pokemenu_selected_pokemon_team_index = (u8*) 0x0203B0A9;

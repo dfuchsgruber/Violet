@@ -1,6 +1,6 @@
 #include "types.h"
-#include "basestats.h"
-#include "pokedex.h"
+#include "constants/species.h"
+#include "pokepad/pokedex/habitat.h"
 
 // Habitat gras, page 0
 u16 pokedex_habitat_gras_page_0[4] = {
@@ -28,7 +28,7 @@ u16 pokedex_habitat_gras_page_5[4] = {
 };
 // Habitat gras, page 6
 u16 pokedex_habitat_gras_page_6[3] = {
-    POKEMON_LICHTEL, POKEMON_LATERNECTO, POKEMON_SKLELABRA
+    POKEMON_LICHTEL, POKEMON_LATERNECTO, POKEMON_SKELABRA
 };
 // Habitat gras, page 7
 u16 pokedex_habitat_gras_page_7[4] = {

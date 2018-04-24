@@ -1,6 +1,10 @@
 #include "types.h"
-#include "abilities.h"
-#include "pokemon.h"
+#include "stdbool.h"
+#include "constants/abilities.h"
+#include "pokemon/virtual.h"
+#include "constants/items.h"
+#include "constants/pokemon_attributes.h"
+#include "battle/battlescript.h"
 #include "romfuncs.h"
 
 

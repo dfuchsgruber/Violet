@@ -1,6 +1,6 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
 #include <stdbool.h>
 #include "anim_engine.h"
@@ -10,7 +10,7 @@
 #include "text.h"
 #include "save.h"
 #include "debug.h"
-#include "utils.h"
+#include "math.h"
 
 /**
 / Method to initalize the callback
@@ -968,7 +968,7 @@ void cmdx36_load_obj_pal_from_struct(ae_memory *mem){
     u8 force = anim_engine_read_byte(mem);
     if(pal_id == 0xFF)return;
     
-    void *pal = p->pal;
+    const void *pal = p->pal;
     if(mode){
         void *nbuf = (void*) 0x02037ACC;
         lz77uncompwram(pal, nbuf);

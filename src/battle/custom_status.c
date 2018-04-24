@@ -1,6 +1,6 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "battle.h"
+#include "battle/battler.h"
 #include "save.h"
 #include <stdbool.h>
 

@@ -1,6 +1,6 @@
 #include "types.h"
-#include "utils.h"
-#include "oams.h"
+#include "null.h"
+#include "oam.h"
 #include "romfuncs.h"
 
 void oam_null_callback(oam_object *self) {

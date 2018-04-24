@@ -1,10 +1,10 @@
 #include "types.h"
 #include "romfuncs.h"
+#include "math.h"
 #include "save.h"
-#include "tileset_anim.h"
-#include "map.h"
+#include "map/tileset.h"
 #include "debug.h"
-#include "utils.h"
+#include "constants/flags.h"
 
 u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header){
     if(anim_header->cnt == 0) return 640;

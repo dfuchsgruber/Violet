@@ -9,8 +9,11 @@
 #define INCLUDE_C_POKEPAD_GUI_H_
 
 #include "oam.h"
+#include "pokepad/state.h"
 
 
+#define POKEPAD_DESCRIPTION_TBOX 0
+#define POKEPAD_BUTTON_TBOX_BASE 1
 
     bool startmenu_init_pokepad();
     void pokepad_callback_init();

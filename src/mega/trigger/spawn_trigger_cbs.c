@@ -1,9 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
 #include "mega.h"
 #include "superstate.h"
 #include <stdbool.h>

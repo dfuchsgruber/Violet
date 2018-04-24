@@ -1,22 +1,24 @@
 #include "types.h"
 #include "stdbool.h"
 #include "romfuncs.h"
-#include "pokepad.h"
-#include "pokedex.h"
-#include "oams.h"
+#include "pokepad/pokedex/gui.h"
+#include "pokepad/pokedex/operator.h"
+#include "oam.h"
 #include "callbacks.h"
 #include "save.h"
-#include "utils.h"
 #include "bg.h"
-#include "gfx.h"
 #include "text.h"
 #include "mega.h"
-#include "pokemon.h"
-#include "basestats.h"
+#include "pokemon/basestat.h"
+#include "pokemon/names.h"
+#include "pokemon/sprites.h"
 #include "color.h"
 #include "superstate.h"
-#include "utils.h"
 #include "transparency.h"
+#include "constants/flags.h"
+#include "language.h"
+#include "fading.h"
+#include "debug.h"
 
 extern const unsigned short gfx_pokedex_formsTiles[];
 extern const unsigned short gfx_pokedex_entry_uiMap[];
@@ -83,8 +85,10 @@ void pokedex_entry_load_strings() {
 
     tbox_flush(1, 0);
     tbox_tilemap_draw(1);
-    tbox_print_string(1, 2, 96, 0, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_form);
-    tbox_print_string(1, 2, 4, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_data);
+    u8 str_form[] = LANGDEP(PSTRING("Form"), LANGDEP("Form"));
+    tbox_print_string(1, 2, 96, 0, 0, 0, pokedex_fontcolmap, 0, str_form);
+    u8 str_data[] = LANGDEP(PSTRING("Gr.\nGew."), PSTRING("Sz.\nWgt."));
+    tbox_print_string(1, 2, 4, 15, 0, 0, pokedex_fontcolmap, 0, str_data);
 
     tbox_flush(2, 0);
     tbox_tilemap_draw(2);
@@ -96,37 +100,49 @@ void pokedex_entry_load_strings() {
     tbox_flush(4, 0);
     tbox_tilemap_draw(4);
 
-    bool has_habitat = checkflag(POKEDEX_FLAG_HABITAT);
+    bool has_habitat = checkflag(POKEDEX_FEATURE_HABITAT);
 
     u8 *buf = strbuf;
     *buf = 0xFF;
     if(fmem->dex_mem->from_battle){
-        strcpy(buf, str_pokepad_pokedex_std_buttons_battle);
+        u8 str_buttons_battle[] = LANGDEP(PSTRING("KEY_START Ruf  KEY_A Weiter"),
+            PSTRING("KEY_START Cry  KEY_A Proceed"));
+        strcpy(buf, str_buttons_battle);
     }else{
-        u8 str_space[] = {0, 0, 0, 0, 0, 0, 0, 0xFF};
-        buf = str_append(buf, has_habitat ? str_pokepad_pokedex_habitat : str_space);
-        strcpy(buf, str_pokepad_pokedex_std_buttons);
+        u8 str_space[] = PSTRING("       ");
+        u8 str_buttons[] = LANGDEP(
+            PSTRING("KEY_START Ruf  KEY_UP_DOWN Liste  KEY_LEFT_RIGHT Eintr. KEY_B Zur."),
+            PSTRING("KEY_START Cry  KEY_UP_DOWN List  KEY_LEFT_RIGHT Rec. KEY_B Back"));
+        u8 str_habitat[] = LANGDEP(PSTRING("KEY_A Hab."), PSTRING("KEY_A Hab."));
+        buf = str_append(buf, has_habitat ? str_habitat : str_space);
+        strcpy(buf, str_buttons);
     }
     tbox_print_string(4, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
 
     bool is_caught = fmem->dex_mem->list[fmem->dex_mem->current_list_index].caught;
 
-    u8 str_none[1] = {0xFF};
+    u8 str_none[1] = PSTRING("");
+    u8 str_qmark[] = PSTRING("?");
 
-    tbox_print_string(1, 2, 8, 0, 0, 0, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->category : str_pokepad_pokedex_qmark);
+    tbox_print_string(1, 2, 8, 0, 0, 0, pokedex_fontcolmap, 0, is_caught ?
+        pokedex_get_data(dex_id)->category : str_qmark);
     u32 height_upper = pokedex_get_data(dex_id)->height / 10;
     u32 height_lower = pokedex_get_data(dex_id)->height % 10;
-    itoa(str_append(itoa(strbuf, height_upper, 0, 3), str_pokepad_pokedex_comma), height_lower, 0, 1);
-    tbox_print_string(1, 2, 38, 15, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark);
+    u8 str_comma[] = PSTRING(",");
+    itoa(str_append(itoa(strbuf, height_upper, 0, 3), str_comma), height_lower, 0, 1);
+    tbox_print_string(1, 2, 38, 15, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_qmark);
+    u8 str_meter[] = PSTRING("m");
+    u8 str_kilogram[] = PSTRING("kg");
     if (is_caught)
-        tbox_print_string(1, 2, 70, 15, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_m);
+        tbox_print_string(1, 2, 70, 15, 0, 0, pokedex_fontcolmap, 0, str_meter);
     u32 weight_upper = pokedex_get_data(dex_id)->weight / 10;
     u32 weight_lower = pokedex_get_data(dex_id)->weight % 10;
     if (is_caught)
-        tbox_print_string(1, 2, 70, 30, 0, 0, pokedex_fontcolmap, 0, str_pokepad_pokedex_kg);
-    itoa(str_append(itoa(strbuf, weight_upper, 0, 3), str_pokepad_pokedex_comma), weight_lower, 0, 1);
-    tbox_print_string(1, 2, 38, 30, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_pokepad_pokedex_qmark);
-    tbox_print_string(2, 2, 0, 0, 0, 1, pokedex_fontcolmap, 0, is_caught ? pokedex_get_data(dex_id)->page0 : str_pokepad_pokedex_qmark);
+        tbox_print_string(1, 2, 70, 30, 0, 0, pokedex_fontcolmap, 0, str_kilogram);
+    itoa(str_append(itoa(strbuf, weight_upper, 0, 3), str_comma), weight_lower, 0, 1);
+    tbox_print_string(1, 2, 38, 30, 0, 0, pokedex_fontcolmap, 0, is_caught ? strbuf : str_qmark);
+    tbox_print_string(2, 2, 0, 0, 0, 1, pokedex_fontcolmap, 0, is_caught ?
+        pokedex_get_data(dex_id)->page0 : str_qmark);
     if (is_caught) {
         u8 type1 = (u8) (basestats[fmem->dex_mem->current_species].type1 + 1);
         u8 type2 = (u8) (basestats[fmem->dex_mem->current_species].type2 + 1);
@@ -283,7 +299,7 @@ void pokedex_entry_from_battle_cb(u8 self){
                         set_io(0x1A, (u16) (bg2hscroll + 4));
                     }
                 } else if(super->keys_new.keys.A){
-                    fadescreen(-1, 0, 0, 16, 0);
+                    fadescreen((u32)-1, 0, 0, 16, 0);
                     big_callbacks[self].params[0]++;
                 } else if (super->keys_new.keys.start) {
                      cry(fmem->dex_mem->current_species, 0);
@@ -401,7 +417,7 @@ void pokedex_callback_entry_idle() {
                 set_io(0x1A, (u16) (bg2hscroll + 4));
             }
 
-        } else if (super->keys_new.keys.A && checkflag(POKEDEX_FLAG_HABITAT)) {
+        } else if (super->keys_new.keys.A && checkflag(POKEDEX_FEATURE_HABITAT)) {
             sound(5);
             init_fadescreen(1, 0);
             set_callback1(pokedex_init_habitat);

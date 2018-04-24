@@ -1,12 +1,11 @@
 #include "types.h"
-#include "oams.h"
-#include "gfx.h"
+#include "oam.h"
 #include "callbacks.h"
 #include "romfuncs.h"
 #include "save.h"
 #include "debug.h"
 #include "color.h"
-#include "utils.h"
+#include "math.h"
 
 
 

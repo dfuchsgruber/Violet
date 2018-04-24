@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_POKEPAD_POKEDEX_SCANNER_H_
 #define INCLUDE_C_POKEPAD_POKEDEX_SCANNER_H_
 
+#include "map/wild_pokemon.h"
+
 	typedef struct {
         int num_entries_grass, num_entries_water, num_entries_other,
                 num_entries_rod, num_entries_good_rod, num_entries_super_rod;

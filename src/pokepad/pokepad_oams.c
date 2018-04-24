@@ -1,7 +1,7 @@
 #include "types.h"
-#include "oams.h"
-#include "pokepad.h"
-#include "gfx.h"
+#include "stdbool.h"
+#include "oam.h"
+#include "pokepad/gui.h"
 
 //static resources
 extern const unsigned short gfx_wondertrade_badgesTiles[];
@@ -10,11 +10,6 @@ extern const unsigned short gfx_pokepad_lTiles[];
 extern const unsigned short gfx_pokepad_rTiles[];
 
 
-graphic graphic_wondertrade_badges = {
-    (void*) gfx_wondertrade_badgesTiles,
-    0x80 * 4,
-    0xA004
-};
 
 graphic graphic_pokepad_arrow = {
     (void*) gfx_pokepad_arrowTiles,
@@ -34,9 +29,6 @@ graphic graphic_pokepad_r = {
     0xA003
 };
 
-sprite sprite_wondertrade_badges = {
-    0, 0x4000, 0, 0
-};
 
 sprite sprite_pokepad_lr = {
     0x4000, 0, 0, 0
@@ -46,14 +38,6 @@ sprite sprite_pokepad_arrow = {
     0, 0x4000, 0, 0
 };
 
-oam_template oam_template_wondertrade_badges = {
-    0xA004, 0xA004,
-    &sprite_wondertrade_badges,
-    GFX_ANIM_TABLE_NULL,
-    NULL,
-    ROTSCALE_TABLE_NULL,
-    oam_null_callback
-};
 
 oam_template oam_template_pokepad_arrow = {
     0xA001, 0xA001,

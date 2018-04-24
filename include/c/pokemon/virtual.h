@@ -8,10 +8,6 @@
 #ifndef INCLUDE_C_POKEMON_VIRTUAL_H_
 #define INCLUDE_C_POKEMON_VIRTUAL_H_
 
-// Constants
-#include "pokemon_language_ids.h"
-#include "pokemon_attributes.h"
-
 typedef struct marking {
     u8 circle : 1;
     u8 square : 1;

@@ -8,6 +8,10 @@
 #include "map/event.h"
 #include "map/header.h"
 #include "map/footer.h"
+#include "pokepad/wondertrade.h"
+#include "anim_engine.h"
+#include "multichoice.h"
+#include "trainerschool_test.h"
 #include "rtc.h"
 #include "fp_menu.h"
 
@@ -88,7 +92,9 @@ typedef struct custom_memory {
 
 
 typedef struct {
-    u8 dmap_status;
+    u8 dmap_header_initialized : 1;
+    u8 dmap_blocks_initialized : 1;
+    u8 dmap_unused : 6;
     u8 battle_bg_index;
     u8 unused_2;
     u8 unused_3;

@@ -1,7 +1,8 @@
 #include "types.h"
-#include "abilities.h"
-#include "battle.h"
-#include "basestats.h"
+#include "constants/abilities.h"
+#include "constants/battle_weathers.h"
+#include "battle/state.h"
+#include "battle/weather.h"
 #include "romfuncs.h"
 #include "debug.h"
 

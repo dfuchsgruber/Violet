@@ -1,6 +1,6 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "tile.h"
+#include "tile/any_grass.h"
 #include "save.h"
 
 u8 *player_step_on_behavior(){

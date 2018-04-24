@@ -20,6 +20,8 @@
 
 #define POKEDEX_SCANNER_ICON_BASE_TAG 0xDDE0
 
+u8 pokedex_fontcolmap[4];
+
 // Main GUI
 
 void pokedex_init_components();

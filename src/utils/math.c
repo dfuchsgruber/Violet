@@ -1,7 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "debug.h"
-#include "utils.h"
+#include "math.h"
 
 int abs(int i) {
     if (i < 0) {

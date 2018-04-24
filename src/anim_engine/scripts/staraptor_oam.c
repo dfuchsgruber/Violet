@@ -1,9 +1,9 @@
 #include "types.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
 #include "romfuncs.h"
-#include "overworld_sprites.h"
-#include "utils.h"
+#include "math.h"
+#include "overworld/sprite.h"
 
 extern u16 gfx_anim_staraptor_frontTiles[];
 extern u16 gfx_anim_staraptor_backTiles[];

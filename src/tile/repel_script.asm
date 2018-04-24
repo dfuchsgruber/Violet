@@ -44,3 +44,28 @@ use:
     releaseall
     end
 
+@ // String
+
+.ifdef LANG_GER
+
+	str_repel_wore_off:
+		.string "Schutz wirkt nicht mehr..."
+
+	str_repel_renew:
+		.string "BUFFER_1 einsetzen?"
+
+	str_repel_use:
+		.string "PLAYER setzt\nBUFFER_1 ein."
+
+.elseif LANG_EN
+
+	str_repel_wore_off:
+		.string "Repel\s effect wore off..."
+
+	str_repel_renew:
+		.string "Use BUFFER_1?"
+
+	str_repel_use:
+		.string "PLAYER uses\nBUFFER_1."
+
+.endif

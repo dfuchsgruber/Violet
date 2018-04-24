@@ -1,6 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "pokemon.h"
+#include "pokemon/virtual.h"
+#include "constants/pokemon_attributes.h"
 
 
 void pokemon_team_remove(){

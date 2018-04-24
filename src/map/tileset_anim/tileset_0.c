@@ -1,7 +1,6 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "tileset_anim.h"
-#include "map.h"
+#include "map/tileset.h"
 
 extern u16 gfx_tileset_0_anim_0Tiles[];
 extern u16 gfx_tileset_0_anim_1Tiles[];

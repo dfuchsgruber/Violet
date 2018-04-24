@@ -8,6 +8,10 @@
 #ifndef INCLUDE_C_POKEPAD_POKEDEX_STATE_H_
 #define INCLUDE_C_POKEPAD_POKEDEX_STATE_H_
 
+#include "pokepad/pokedex/data.h"
+#include "pokepad/pokedex/habitat.h"
+#include "pokepad/pokedex/scanner.h"
+
    typedef struct {
         bool from_outdoor;
         bool in_list;

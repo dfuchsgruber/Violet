@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_TILE_BLOCK_H_
 #define INCLUDE_C_TILE_BLOCK_H_
 
+#include "tile/coordinate.h"
+
 typedef struct bdata {
     u32 behavior : 9;
     u32 hm_usage : 5;
@@ -19,6 +21,8 @@ typedef struct bdata {
     u32 field_7 : 1;
 
 } bdata;
+
+u32 tile_get_field_by_pos(s16 x, s16 y, u8 field);
 
 typedef union union_block_data {
     bdata data;

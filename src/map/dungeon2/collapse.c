@@ -1,18 +1,16 @@
 #include "types.h"
-#include "map.h"
+#include "map/header.h"
 #include "save.h"
-#include "tile.h"
 #include "dungeon2.h"
 #include "debug.h"
-#include "utils.h"
 #include "romfuncs.h"
-#include "mapevents.h"
+#include "constants/vars.h"
 
 #define DG2_STEPS_TO_COLLAPSE 10000
 
 int dungeon2_step_is_collapsing(){
     if(!dungeon_get_type()) return 0;
-    u16 *steps = vardecrypt(DG2_STEPS);
+    u16 *steps = vardecrypt(DUNGEON_STEPS);
     if(++(*steps) == DG2_STEPS_TO_COLLAPSE){
         //Todo
     }

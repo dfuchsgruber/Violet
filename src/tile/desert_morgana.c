@@ -1,15 +1,11 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "oams.h"
 #include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
-#include "trainer.h"
-#include "item.h"
 #include "save.h"
-#include "tile.h"
+#include "tile/fata_morgana.h"
+#include "overworld/map_control.h"
+#include "map/header.h"
 #include <stdbool.h>
-#include "unaligned_types.h"
 
 
 morgana_anim morgana_anims[36];
@@ -75,7 +71,7 @@ void map_draw_block(s16 x, s16 y){
         int y_tile = map_displ_cntrl->y_start + j;
         if(x_tile >= 0x20) x_tile -= 0x20;
         if(y_tile >= 0x20) y_tile -= 0x20;
-        map_delta_to_map_tile(foot_ddata->footer, (u16)(0x20 * y_tile + x_tile),
+        map_delta_to_map_tile(mapheader_virtual->footer, (u16)(0x20 * y_tile + x_tile),
                 x, y);
     }
 }

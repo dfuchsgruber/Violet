@@ -1,12 +1,14 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "basestats.h"
-#include "pstring.h"
 #include "present.h"
-#include "utils.h"
-#include "overworld.h"
+#include "text.h"
+#include "overworld/script.h"
+#include "constants/species.h"
+#include "language.h"
 
-extern u8 str_present_query[];
+u8 str_present_query[] = LANGDEP(
+    PSTRING("Geschenkcode?"),
+    PSTRING("Present Code?"));
 
 pstring_query_string pstring_query_string_present = {
     0,

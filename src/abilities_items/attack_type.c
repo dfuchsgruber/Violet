@@ -1,11 +1,11 @@
 #include "types.h"
-#include "item.h"
-#include "basestats.h"
-#include "battle.h"
-#include "abilities.h"
+#include "battle/battler.h"
+#include "battle/attack.h"
+#include "attack.h"
 #include "romfuncs.h"
 #include "debug.h"
-#include "attack.h"
+#include "constants/abilities.h"
+#include "constants/pokemon_types.h"
 
 
 void damage_apply_multiplier(int multiplier){

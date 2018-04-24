@@ -2,8 +2,10 @@
 #include "romfuncs.h"
 #include "save.h"
 #include "debug.h"
-#include "tile.h"
-#include "item.h"
+#include "tile/hidden_item.h"
+#include "tile/trash.h"
+#include "constants/items.h"
+#include "constants/flags.h"
 
 u8 *singpost_behavior_xBC(){
     //trigger script by block id (since we do not have enough behaviorbytes...)
@@ -31,8 +33,8 @@ u8 *singpost_behavior_xBC(){
                     *vardecrypt(0x8005) = ITEM_RIESENPILZ;
                 }
                 *vardecrypt(0x8006) = 1;
-                if(!checkflag( FLAG_TRAINERTIPP_MUSHROOM)){
-                    setflag(FLAG_TRAINERTIPP_MUSHROOM);
+                if(!checkflag( TRAINER_TIPP_MUSHROOM)){
+                    setflag(TRAINER_TIPP_MUSHROOM);
                     return script_hidden_item_trainer_tipp_mushroom;
                 }
                 
@@ -61,8 +63,8 @@ u8 *singpost_behavior_xBC(){
                     *vardecrypt(0x8005) = ITEM_PERLE;
                 }
                 *vardecrypt(0x8006) = 1;
-                if(!checkflag( FLAG_TRAINERTIPP_SHELL)){
-                    setflag(FLAG_TRAINERTIPP_SHELL);
+                if(!checkflag(TRAINER_TIPP_SHELL)){
+                    setflag(TRAINER_TIPP_SHELL);
                     return script_hidden_item_trainer_tipp_shell;
                 }
                 return script_hidden_item_add;

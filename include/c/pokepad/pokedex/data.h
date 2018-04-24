@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_POKEPAD_POKEDEX_DATA_H_
 #define INCLUDE_C_POKEPAD_POKEDEX_DATA_H_
 
+#include "types.h"
+#include "stdbool.h"
 #include "pokepad/pokedex/count.h"
 #include "pokemon/count.h"
 

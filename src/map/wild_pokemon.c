@@ -1,8 +1,7 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "map.h"
+#include "map/wild_pokemon.h"
 #include "save.h"
-#include "dungeon_generator.h"
 
 
 u16 map_wild_pokemon_get_current_table_id(){

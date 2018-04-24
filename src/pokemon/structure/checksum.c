@@ -1,7 +1,9 @@
 #include "types.h"
-#include "pokemon.h"
+#include "oam.h"
+#include "stdbool.h"
+#include "pokemon/virtual.h"
+#include "pokemon/sprites.h"
 #include "romfuncs.h"
-#include "basestats.h"
 
 u16 pokemon_calculate_checksum(pokemon *p){
     //We automatically return the value the checksum is later compared with,

@@ -1,5 +1,5 @@
 #include "types.h"
-#include "oams.h"
+#include "oam.h"
 
 extern const int gfx_ow_surfTiles[];
 

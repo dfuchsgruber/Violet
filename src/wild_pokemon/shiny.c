@@ -1,5 +1,7 @@
 #include "types.h"
-#include "pokemon.h"
+#include "stdbool.h"
+#include "pokemon/virtual.h"
+#include "constants/vars.h"
 #include "romfuncs.h"
 #include "debug.h"
 

@@ -1,6 +1,6 @@
 #include "types.h"
 #include "save.h"
-#include "map.h"
+#include "map/event.h"
 
 map_event_person *person_get_by_target_index(u8 target_index, map_event_person *persons, u8 num_persons){
     if(target_index == 254)

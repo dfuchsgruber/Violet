@@ -1,18 +1,20 @@
 #include "types.h"
-#include <stdbool.h>
+#include "stdbool.h"
 #include "romfuncs.h"
-#include "pokemon.h"
-#include "tile.h"
+#include "pokemon/virtual.h"
+#include "tile/block.h"
 #include "save.h"
 #include "debug.h"
-#include "abilities.h"
+#include "constants/abilities.h"
+#include "constants/vars.h"
+#include "constants/pokemon_attributes.h"
 
 void egg_warm_update(){
     s16 pos[2];
     get_current_tile_position(&pos[0], &pos[1]);
     u8 behavior = (u8)get_block_info_behaviour(pos[0], pos[1]);
     
-    u16 *v_hatching_fastened_left = vardecrypt(VAR_HATCHING_FASTENED_LEFT);
+    u16 *v_hatching_fastened_left = vardecrypt(HATCHING_BOOST_STEPS);
     
     if ((*save1)->bank == 3 && (*save1)->map == 6 && behavior == 0x28){
         //restore 1000 to the var
@@ -50,7 +52,7 @@ void pokemon_hatch_decrement(pokemon *p){
         base = 20;
     }
     
-     base += 49 * (*vardecrypt(VAR_HATCHING_FASTENED_LEFT)) / 1000;
+     base += 49 * (*vardecrypt(HATCHING_BOOST_STEPS)) / 1000;
 
     
     int cdif = base / 16;

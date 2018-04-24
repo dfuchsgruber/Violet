@@ -1,14 +1,15 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "map.h"
-#include "utils.h"
-#include "pokepad.h"
-#include "basestats.h"
-#include "pokeradar.h"
+#include "map/header.h"
+#include "pokepad/gui.h"
+#include "pokepad/pokeradar.h"
 #include "callbacks.h"
 #include "save.h"
-#include "tile.h"
-#include "npc.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
+#include "overworld/npc.h"
+#include "fading.h"
+#include "pokemon/basestat.h"
 
 extern u8 script_pokeradar_battle[];
 
@@ -28,7 +29,7 @@ map_event_person pokeradar_map_event_person = {
     0,
     3, //sight range;
     script_pokeradar_battle,
-    POKERADAR_FLAG_SPAWNED,
+    POKERADAR_POKEMON_SPAWNED,
     0,
     0
 };
@@ -98,7 +99,7 @@ void pokeradar_init(bool is_outdoor) {
 }
 
 u8 pokeradar_prepeare() {
-    if (!checkflag(POKERADAR_FLAG_SPAWNED))
+    if (!checkflag(POKERADAR_POKEMON_SPAWNED))
         return 4; //already spawned a poke
     coordinate npc_pos;
     u16 wild_table_entry = map_wild_pokemon_get_current_table_id();
@@ -157,24 +158,24 @@ bool pokeradar_npc_alert(u8 npc_id) {
 }
 
 u16 pokeradar_next_seed() {
-    u32 d = (u32) ((*vardecrypt(POKERADAR_VAR_CNT) >> 4) + 1);
+    u32 d = (u32) ((*vardecrypt(POKERADAR_ENCOUNTER_COUNT) >> 4) + 1);
     if (d > 4) d = 4;
     u16 seed = rnd16() & 511;
     return (u16) (seed / d);
 }
 
 void pokeradar_spawn_pokemon() {
-    u16 species = *vardecrypt(POKERADAR_VAR_SPECIES);
-    u8 level = (u8) * vardecrypt(POKERADAR_VAR_LEVEL);
-    if (*vardecrypt(POKERADAR_VAR_CNT) != 0xFFFF)
-        (*vardecrypt(POKERADAR_VAR_CNT))++;
+    u16 species = *vardecrypt(POKERADAR_EMENY_SPECIES);
+    u8 level = (u8) * vardecrypt(POKERADAR_ENEMY_LEVEL);
+    if (*vardecrypt(POKERADAR_ENCOUNTER_COUNT) != 0xFFFF)
+        (*vardecrypt(POKERADAR_ENCOUNTER_COUNT))++;
     pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, level, 0, false, 0, pokeradar_next_seed);
 }
 
 bool pokeradar_step() {
-    if (checkflag(POKERADAR_FLAG_SPAWNED))
+    if (checkflag(POKERADAR_POKEMON_SPAWNED))
         return false;
-    u16 steps = (*vardecrypt(POKERADAR_VAR_STEP_CNT))++;
+    u16 steps = (*vardecrypt(POKERADAR_ENEMY_STATE))++;
     u16 r = rnd16() % 10;
     if (steps > r) {
 
@@ -186,7 +187,7 @@ bool pokeradar_step() {
             return true;
         } else {
             //pos change
-            *vardecrypt(POKERADAR_VAR_STEP_CNT) = 0;
+            *vardecrypt(POKERADAR_ENEMY_STATE) = 0;
             coordinate npc_pos;
             if (pokeradar_determine_position(&npc_pos)) {
                 cmem->pokeradar_person.x = (s16) (npc_pos.x - 7);

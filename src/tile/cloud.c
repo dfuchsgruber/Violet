@@ -1,11 +1,11 @@
 #include "types.h"
 #include "romfuncs.h"
-#include "tile.h"
-#include "map.h"
+#include "map/header.h"
 #include "save.h"
-#include "item.h"
-#include "npc.h"
-#include "transparency.h"
+#include "constants/items.h"
+#include "tile/cloud.h"
+#include "overworld/npc.h"
+#include "constants/flags.h"
 
 script cloud_trigger(bool back) {
     if (checkitem(ITEM_FAHRRAD, 1)) {
@@ -14,7 +14,7 @@ script cloud_trigger(bool back) {
         map_events *events = get_mapheader((*save1)->bank, (*save1)->map)->events;
         s16 pos[2];
         tile_get_coordinates_player_is_facing(&pos[0], &pos[1]);
-        u8 height = npcs[pstate->player_npc_id].height.current;
+        u8 height = npcs[player_state->player_npc_id].height.current;
         u32 i;
         for (i = 0; i < events->warp_cnt; i++) {
             if (events->warps[i].x == pos[0] - 7 && events->warps[i].y == pos[1] - 7 &&
@@ -50,7 +50,7 @@ void cloud_enter() {
     //warp_setup_callbacks();
     warp_setup_muted_callback();
     warp_enable_flags();
-    clearflag(FLAG_TRANSPARENCY_ON);
+    clearflag(TRANS_PALETTE_FETCH);
 }
 
 void warp_to_pos_with_facing() {
@@ -67,6 +67,6 @@ void warp_to_pos_with_facing() {
     //warp_setup_callbacks();
     warp_setup_muted_callback();
     warp_enable_flags();
-    clearflag(FLAG_TRANSPARENCY_ON);
+    clearflag(TRANS_PALETTE_FETCH);
 }
 

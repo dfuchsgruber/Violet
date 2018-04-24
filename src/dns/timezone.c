@@ -1,10 +1,11 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "rtc.h"
-#include "map.h"
 #include "color.h"
 #include "save.h"
 #include "dns.h"
+#include "tile/trash.h"
+#include "constants/vars.h"
 
 void callback_switch_timezone() {
     update_timezone();
@@ -22,16 +23,16 @@ void update_timezone() {
     u8 map = (*save1)->map;
 
     if (is_inside_map(bank, map)) {
-        *vardecrypt(VAR_TIMEZONE) = 0;
+        *vardecrypt(SHADER_STATE) = 0;
     } else {
         if (stamp.hour >= 22 || stamp.hour <= 6) {
-            *vardecrypt(VAR_TIMEZONE) = 1; //night
+            *vardecrypt(SHADER_STATE) = 1; //night
         } else if (stamp.hour <= 8) {
-            *vardecrypt(VAR_TIMEZONE) = 2; //morning
+            *vardecrypt(SHADER_STATE) = 2; //morning
         } else if (stamp.hour >= 20) {
-            *vardecrypt(VAR_TIMEZONE) = 3; //evening
+            *vardecrypt(SHADER_STATE) = 3; //evening
         } else {
-            *vardecrypt(VAR_TIMEZONE) = 0;
+            *vardecrypt(SHADER_STATE) = 0;
         }
     }
 }

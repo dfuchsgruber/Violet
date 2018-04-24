@@ -1,8 +1,8 @@
 #include "types.h"
+#include "stdbool.h"
 #include "romfuncs.h"
 #include "transparency.h"
-#include "stdbool.h"
-#include "map.h"
+#include "constants/flags.h"
 
 u16 transparency_disabling_special_ids [] = {0xF9, 0x190, 0xFD, 0xFE, 0x9F, 0x2B, 0x2C, 0xFFFF};
 u8 transparency_disabling_command_ids [] = {0x2, 0x97, 0x5C, 0x5D, 0xB7, 0x29, 0x8E,
@@ -43,12 +43,12 @@ void transparency_handler(u8 *command) {
 }
 
 bool transparency_load_black_pal() {
-    return checkflag(FLAG_TRANSPARENCY_ON);
+    return checkflag(TRANS_PALETTE_FETCH);
 }
 
 bool transparency_is_on() {
     //dprintf("Transparency used by weather %d, bypassed %d\n", transparency_used_by_weather(), checkflag(FLAG_BYPASS_TRANSPARENCY));
-    return !checkflag(FLAG_BYPASS_TRANSPARENCY) && !transparency_used_by_weather();
+    return !checkflag(TRANS_DISABLE) && !transparency_used_by_weather();
 }
 
 bool transparency_used_by_weather() {
@@ -59,7 +59,7 @@ bool transparency_used_by_weather() {
 void transparency_on() {
     if (transparency_used_by_weather())
         return;
-    setflag(FLAG_TRANSPARENCY_ON);
+    setflag(TRANS_PALETTE_FETCH);
     set_io(0x48, 0x1F3F);
     set_io(0x50, 0x3F41);
     set_io(0x52, 0x060F);
@@ -71,6 +71,6 @@ void transparency_off() {
         set_io(0x50, 0x1E40);
         set_io(0x52, 0x0010);
     }
-    clearflag(FLAG_TRANSPARENCY_ON);
+    clearflag(TRANS_PALETTE_FETCH);
 
 }

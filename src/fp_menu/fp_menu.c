@@ -1,16 +1,17 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "bg.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
 #include "save.h"
-#include "utils.h"
 #include "fp_menu.h"
 #include "fieldmoves.h"
-#include "pokemon.h"
-#include "gfx.h"
+#include "pokemon/basestat.h"
+#include "pokemon/sprites.h"
 #include "color.h"
 #include "superstate.h"
+#include "constants/pokemon_attributes.h"
+#include "language.h"
 
 
 extern const unsigned short gfx_fp_menu_arrow_upTiles[];
@@ -21,7 +22,7 @@ extern const unsigned short gfx_fp_menu_bgPal[];
 extern const unsigned short gfx_fp_menu_arrow_upPal[];
 
 void fp_menu_init(u8 self) {
-    fmem->fp_mem = (fp_memory*) cmalloc(sizeof (fpp_memory));
+    fmem->fp_mem = (fp_memory*) cmalloc(sizeof (fp_memory));
     fmem->fp_mem->poke_index = *pokemenu_team_index;
     init_fadescreen(1, 0);
     set_callback1(fp_menu_callback_init);
@@ -371,10 +372,12 @@ void fp_menu_stats_load(pokemon *target) {
         u8 *fontcolmap = fp_menu_fontcolmap_std;
         if (i == stat_boosted && i != stat_nerved) {
             fontcolmap = fp_menu_fontcolmap_red;
-            str_append(str, str_fp_menu_plus);
+            u8 str_plus[] = PSTRING("+");
+            str_append(str, str_plus);
         } else if (i == stat_nerved && i != stat_boosted) {
             fontcolmap = fp_menu_fontcolmap_blue;
-            str_append(str, str_fp_menu_minus);
+            u8 str_minus[] = PSTRING("-");
+            str_append(str, str_minus);
         }
         tbox_tilemap_draw(box_id);
         tbox_print_string(box_id, 2, 0, 0, 0, 0, fontcolmap, 0, strbuf);

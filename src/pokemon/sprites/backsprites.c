@@ -1,8 +1,7 @@
 #include "types.h"
-#include "oams.h"
-#include "pokemon.h"
-#include "gfx.h"
-#include "pokesprites.h"
+#include "oam.h"
+#include "pokemon/count.h"
+#include "pokemon/sprites.h"
 
 
 graphic pokemon_backsprites[POKEMON_CNT] = {

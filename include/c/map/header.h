@@ -31,6 +31,7 @@ typedef struct mapheader {
 
 } mapheader;
 
+int dungeon_get_type();
 
 extern mapheader **mapbanks[];
 mapheader *mapheader_virtual = (mapheader*)0x02036DFC;

@@ -4,7 +4,6 @@
  * ---------------------------------------------------------------------- */
 
 #include "types.h"
-#include "pstring.h"
 #include "romfuncs.h"
 #include "present.h"
 

@@ -1,9 +1,8 @@
 #include "types.h"
-#include "pokedex.h"
-#include "pstring.h"
+#include "pokepad/pokedex/count.h"
+#include "pokepad/pokedex/data.h"
+#include "language.h"
 
-extern u8 str_pokedex_mamutel[];
-extern u8 str_pokedex_none[];
 
 pokedex_data dex_data[POKEDEX_CNT + 1] = {
 	{

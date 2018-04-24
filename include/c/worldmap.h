@@ -13,6 +13,8 @@ extern "C" {
 #endif
 #define ____ 0xC5
 
+#define NUM_FLIGHT_POSITONS 21
+
     typedef struct{
         u8 bank;
         u8 map;
@@ -21,7 +23,7 @@ extern "C" {
         u16 field_6;
     } stru_flight_position;
     
-    stru_flight_position flight_positions[];
+    stru_flight_position flight_positions[NUM_FLIGHT_POSITONS];
 
 
     int *worldmap_tilemaps[4];

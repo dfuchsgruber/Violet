@@ -14,11 +14,6 @@ extern "C" {
 
 #define ATTACK_CNT 413
     
-// Constants
-#include "attacks.h"
-#include "attack_affects_whom_flags.h"
-#include "attack_flags.h"
-#include "attack_categories.h"
 
     typedef struct{
         u8 effect;

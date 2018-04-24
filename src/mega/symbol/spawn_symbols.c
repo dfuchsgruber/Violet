@@ -1,11 +1,10 @@
 #include "types.h"
-#include "romfuncs.h"
-#include "oams.h"
-#include "callbacks.h"
-#include "battle.h"
-#include "basestats.h"
-#include "mega.h"
 #include <stdbool.h>
+#include "romfuncs.h"
+#include "oam.h"
+#include "callbacks.h"
+#include "mega.h"
+#include "constants/species.h"
 
 
 extern const unsigned short gfx_mega_symbolTiles[];
@@ -70,13 +69,13 @@ void symbol_callback(oam_object *self) {
 
     int i;
     bool is_mega = false;
-    bool is_emperor = false;
+    // bool is_emperor = false;
     for (i = 0; megas[i].species != 0xFFFF; i++) {
         //scan mega table for the a mega pokemon that matches this one
         if (megas[i].target == species) {
             is_mega = true;
             if (megas[i].regent) {
-                is_emperor = true;
+                // is_emperor = true;
             }
             break;
         }

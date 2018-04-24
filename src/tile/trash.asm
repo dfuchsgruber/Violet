@@ -26,3 +26,14 @@ loadpointer 0 str_trash_full
 callstd 0x6
 release
 end
+
+.ifdef LANG_GER
+
+	str_trash_empty:
+		.string "Der Mülleimer ist leer."
+
+	str_trash_full:
+		.string "Sieht so aus, als hättest du für\nBUFFER_2 keinen Platz!\pKomm wieder, wenn du das Item\naufnehmen kannst."
+
+.elseif LANG_EN
+.endif

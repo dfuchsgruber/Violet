@@ -1,7 +1,7 @@
 #include "types.h"
-#include "pokemon.h"
-#include "move_tutor.h"
-#include "attack.h"
+#include "stdbool.h"
+#include "pokemon/moves.h"
+#include "constants/attacks.h"
 
 
 bool move_tutor_is_compatible(u16 species, u8 move_tutor){

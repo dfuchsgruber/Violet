@@ -3,8 +3,6 @@
 #ifndef RTC
 #define RTC
 
-#define VAR_TIMEZONE 0x50DF
-
 typedef struct rtc_timestamp {
     u8 year;
     u8 month;

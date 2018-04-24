@@ -1,7 +1,6 @@
 #include "types.h"
-#include "basestats.h"
-#include "types.h"
-#include "pokemon.h"
+#include "stdbool.h"
+#include "pokemon/virtual.h"
 #include "romfuncs.h"
 
 void special_heal_team_index() {

@@ -8,7 +8,7 @@
 #ifndef BIN_HEAP_H
 #define	BIN_HEAP_H
 
-#include "npc.h"
+#include "overworld/npc.h"
 
 typedef struct {
     u32 key;

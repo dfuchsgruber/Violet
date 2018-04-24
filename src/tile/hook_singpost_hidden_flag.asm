@@ -108,3 +108,58 @@ no_ashbag:
     releaseall
     end
 
+@ // Define strings
+
+.ifdef LANG_GER
+
+	.global str_ashbag_not_received
+
+	str_ashbag_not_received:
+		.string "Zu Schade!\nDu besitzt keinen Aschebeutel!"
+
+
+	.global str_ashbag_full
+
+	str_ashbag_full:
+		.string "Zu Schade!\nDeine Aschetasche ist voll!"
+
+
+	.global str_ashbag_picked_up
+
+	str_ashbag_picked_up:
+		.string "PLAYER findet\nBUFFER_1 Asche!"
+
+	str_trainer_tipp_shell:
+		.string "Trainer-Tipp!\nIn Muscheln versteckten sich\lItems, die vom Detektor nicht\lgefunden werden können.\pWöchentlich werden neue Items\nangespült."
+
+	str_trainer_tipp_mushroom:
+		.string "Trainer-Tipp!\nWo Pilze wachsen, können Pilze\lgefunden werden.\pSelbst der Detektor kann Pilze nicht\nfinden.\pPilze können im Wochentakt\nnachwachsen."
+
+
+.elseif LANG_EN
+
+	.global str_ashbag_not_received
+
+	str_ashbag_not_received:
+		.string "What a shame!\nYou do not own an ashbag!"
+
+	.global str_ashbag_full
+
+	str_ashbag_full:
+		.string "What a shame!\nYour ashbag seems to be full."
+
+	.global str_ashbag_picked_up
+
+	str_ashbag_picked_up:
+		.string "PLAYER obtains\nBUFFER_1 ashes!"
+
+	str_trainer_tipp_shell:
+		.string "Trainer-Tipp!\nItems can hide inside shells.\pThose can not be traced by\nthe detector and are washed\lup weekly."
+
+	str_trainer_tipp_mushroom:
+		.string "Trainer-Tipp!\nWhere mushrooms grow mushrooms\ncan be found!\pEven the detector can not\ntrace mushrooms!\pThey also regrow weekly!"
+
+
+.endif
+
+

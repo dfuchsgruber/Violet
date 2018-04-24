@@ -236,7 +236,7 @@
 .equ ITEM_AMPHAROSNIT, 0xeb
 .equ ITEM_GENGARNIT, 0xec
 .equ ITEM_BIBORNIT, 0xed
-.equ ITEM_ITEM_EE, 0xee
+.equ ITEM_MAGMAHERZ, 0xee
 .equ ITEM_ITEM_EF, 0xef
 .equ ITEM_ITEM_F0, 0xf0
 .equ ITEM_ITEM_F1, 0xf1

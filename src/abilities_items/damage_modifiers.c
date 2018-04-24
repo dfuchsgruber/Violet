@@ -1,13 +1,12 @@
 #include "types.h"
-#include "item.h"
-#include "basestats.h"
-#include "battle.h"
-#include "abilities.h"
+#include "battle/battler.h"
+#include "battle/attack.h"
+#include "constants/abilities.h"
+#include "constants/attack_results.h"
+#include "attack.h"
 #include "romfuncs.h"
 #include "debug.h"
-#include "attack.h"
-#include "item.h"
-#include "evolution.h"
+#include "constants/items.h"
 
 
 void apply_final_damage_modifiers(){

@@ -9,7 +9,6 @@
 #define INCLUDE_C_FADING_H_
 
 
-#include "oams.h"
 
 typedef struct {
     u32 affects;

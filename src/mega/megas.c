@@ -1,8 +1,11 @@
 #include "types.h"
-#include "basestats.h"
 #include "romfuncs.h"
-#include "item.h"
 #include "mega.h"
+#include "pokemon/virtual.h"
+#include "constants/species.h"
+#include "constants/items.h"
+#include "constants/pokemon_attributes.h"
+#include "constants/flags.h"
 
 mega_table_entry megas[MEGA_CNT] = {
     {POKEMON_BISAFLOR, ITEM_BISAFLORNIT, POKEMON_BISAFLORM, 0},
@@ -12,7 +15,7 @@ mega_table_entry megas[MEGA_CNT] = {
 };
 
 void mega_reset_do(){
-    clearflag( FLAG_MEGA_USED);
+    clearflag(MEGA_EVOLUTION_PERFORMED);
     int pkmn_cnt = countpokemon();
     int i, j;
     for(i = 0; i < pkmn_cnt; i++){

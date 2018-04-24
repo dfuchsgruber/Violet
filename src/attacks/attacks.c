@@ -1,6 +1,9 @@
 #include "types.h"
 #include "attack.h"
-#include "basestats.h"
+#include "constants/pokemon_types.h"
+#include "constants/attack_affects_whom_flags.h"
+#include "constants/attack_categories.h"
+#include "constants/attack_flags.h"
 
 attack attacks[ATTACK_CNT] = {
 	// ATTACK_NONE

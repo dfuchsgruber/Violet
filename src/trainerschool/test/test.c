@@ -1,15 +1,16 @@
-#include "../../../include/c/math.h"
+#include "math.h"
 #include "types.h"
 #include "romfuncs.h"
 #include "save.h"
 #include "callbacks.h"
-#include "starterselection.h"
 #include "bg.h"
 #include "text.h"
 #include "superstate.h"
-#include "oams.h"
+#include "oam.h"
 #include "debug.h"
-
+#include "fading.h"
+#include "constants/vars.h"
+#include "language.h"
 
 bg_config trainerschool_test_bg_configs[3] = {
     {0, 2, 31, 0, 0, 1}, //text on bg0
@@ -89,8 +90,8 @@ oam_template trainerschool_test_oam_template_wrong = {
     oam_null_callback,
 };
 
-extern u8 str_trainerschool_test_list[];
-extern u8 str_trainerschool_test_cursor[];
+u8 str_trainerschool_test_list[] = PSTRING("-");
+u8 str_trainerschool_test_cursor[] = PSTRING("▶");
 
 void trainerschool_test_load_answers(){
     u8 question = fmem->tst_mem->current_question;

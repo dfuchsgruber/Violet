@@ -1,31 +1,37 @@
 #include "types.h"
 #include "romfuncs.h"
 #include "version.h"
-#include "item.h"
 #include "save.h"
-#include "tile.h"
-#include "pokemon.h"
-#include "battle.h"
 #include "rtc.h"
+#include "constants/vars.h"
+#include "constants/items.h"
+#include "tile/trash.h"
+#include "language.h"
 
 void version_init(){
-    *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_LATEST;
+    *vardecrypt(SGM_VER) = VERSION_LATEST;
 }
+
+u8 str_version_alpha_1_0[] = LANGDEP(
+    PSTRING("Herzlichen Glückwunsch!\nDeine Version wurde von\lBUFFER_1.X auf BUFFER_2.X"
+        "\lgeupdated.\pSetze dein Abenteuer im Osten\nder Felsigen Ödnis fort."),
+    PSTRING("Congratulations!\nYour version was updated from\lBUFFER_1.X to BUFFER_2.X."
+        "\pContinue your adventure in the east\nof the Rocky Desolation."));
 
 void version_transfer(){
     
     //Buffer the continuation string
     u8 **pointerbank_0 = (u8**)0x03000F14;
-    switch(*vardecrypt(VAR_SAVEGAME_VERSION)){
+    switch(*vardecrypt(SGM_VER)){
         case 0:
         default:
             *pointerbank_0 = str_version_alpha_1_0;
             break;
     }
-    *vardecrypt(0x8004) = (u16)(*vardecrypt(VAR_SAVEGAME_VERSION) + 1);
-    while(*vardecrypt(VAR_SAVEGAME_VERSION) != VERSION_LATEST){
+    *vardecrypt(0x8004) = (u16)(*vardecrypt(SGM_VER) + 1);
+    while(*vardecrypt(SGM_VER) != VERSION_LATEST){
         //transfer savegames to a higher version until we reach the latest
-        switch(*vardecrypt(VAR_SAVEGAME_VERSION)){
+        switch(*vardecrypt(SGM_VER)){
             case VERSION_ALPHA_2_1:
                 //Latest
                 break;
@@ -40,7 +46,7 @@ void version_transfer(){
             
         }
     }
-    *vardecrypt(0x8005) = (u16)(*vardecrypt(VAR_SAVEGAME_VERSION) + 1);
+    *vardecrypt(0x8005) = (u16)(*vardecrypt(SGM_VER) + 1);
 }
 
 /**
@@ -60,15 +66,15 @@ void version_upgrade_alpha_1_X_to_2_0(){
     if(checkflag(0x90A)){
         additem(ITEM_GENGARNIT, 1);
     }
-    *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_0;
+    *vardecrypt(SGM_VER) = VERSION_ALPHA_2_0;
 }
 
 
 void version_upgrade_alpha_2_0_to_2_1(){
-    *vardecrypt(VAR_SAVEGAME_VERSION) = VERSION_ALPHA_2_1;
+    *vardecrypt(SGM_VER) = VERSION_ALPHA_2_1;
     *vardecrypt(BATTLE_BG_OVERRIDE) = 0;
 }
 
 u16 version_is_latest(){
-    return *vardecrypt(VAR_SAVEGAME_VERSION) == VERSION_LATEST;
+    return *vardecrypt(SGM_VER) == VERSION_LATEST;
 }

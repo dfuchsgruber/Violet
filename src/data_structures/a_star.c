@@ -2,10 +2,9 @@
 #include "stdbool.h"
 #include "data_structures.h"
 #include "romfuncs.h"
-#include "utils.h"
-#include "tile.h"
-#include "npc.h"
-#include "stdint.h"
+#include "tile/block.h"
+#include "overworld/npc.h"
+#include "math.h"
 
 int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker) {
 

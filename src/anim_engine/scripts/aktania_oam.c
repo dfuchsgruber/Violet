@@ -1,8 +1,8 @@
 #include "types.h"
-#include "oams.h"
+#include "oam.h"
 #include "callbacks.h"
 #include "romfuncs.h"
-#include "basestats.h"
+#include "constants/species.h"
 
 rotscale_frame rs_frames_aktania_sky_regis[] = {
     {0x60, 0x60, 0, 0, 0},

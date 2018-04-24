@@ -1,5 +1,5 @@
 #include "types.h"
-#include "pokemon.h"
+#include "pokemon/count.h"
 
 u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_POKEMON_0
