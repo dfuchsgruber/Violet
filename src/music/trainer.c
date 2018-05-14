@@ -11,13 +11,13 @@
 #include "trainer/trainer.h"
 #include "music.h"
 #include "battle/state.h"
-#include "romfuncs.h"
-
+#include "flags.h"
 #include "constants/vars.h"
 #include "constants/songs.h"
 #include "constants/trainerclasses.h"
+#include "vars.h"
 
-u16 get_encounter_music_by_trainer_id(u16 trainer_id) {
+u16 trainer_get_encounter_song(u16 trainer_id) {
     if (trainers[trainer_id].trainerclass == TRAINERCLASS_TEAM_VIOLET) {
         return MUS_VIOLET_ENCOUNTER;
     } else if (trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONAER) {
@@ -27,7 +27,7 @@ u16 get_encounter_music_by_trainer_id(u16 trainer_id) {
     return (u16) ((trainers[trainer_id].encounter_and_gender.encounter % 3) + 283);
 }
 
-pair trainer_music_table [] = {
+short_pair trainer_music_table [] = {
     {TRAINERCLASS_RIVALE, MUS_RIVAL_BATTLE},
     {TRAINERCLASS_TEAM_VIOLET, MUS_VIOLET_BATTLE},
     {TRAINERCLASS_ARENALEITER, MUS_KAMPF_GEGEN_ARENALEITER_KANTO},
@@ -35,8 +35,8 @@ pair trainer_music_table [] = {
     {0xFFFF, 0xFFFF}
 };
 
-u16 battle_get_music() {
-    u16 *battle_music = vardecrypt(BATTLE_SONG_OVERRIDE);
+u16 battle_get_song() {
+    u16 *battle_music = var_access(BATTLE_SONG_OVERRIDE);
     if (*battle_music) {
         u16 forced_mus = *battle_music;
         *battle_music = 0;

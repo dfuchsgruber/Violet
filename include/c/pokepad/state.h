@@ -15,7 +15,7 @@ typedef struct pokepad_item {
         u16 flag;
         u8 *string;
         void (*func)(bool from_outdoor);
-        pstring description;
+        u8 *description;
     } pokepad_item;
 
     typedef struct pokepad_memory {

@@ -8,7 +8,7 @@ int modify_price_money(int price_money) {
     int new_price_money = price_money;
 
     //Applying difficulty
-    switch (*vardecrypt(DIFFICULTY)) {
+    switch (*var_access(DIFFICULTY)) {
 
         case 4:
             new_price_money /= 3;
@@ -25,11 +25,11 @@ int modify_price_money(int price_money) {
     }
 
     //Applying karma
-    int factor = 0x100 - ((s16) (*vardecrypt(KARMA_VALUE)));
+    int factor = 0x100 - ((s16) (*var_access(KARMA_VALUE)));
     new_price_money *= factor;
     new_price_money >>= 8;
 
-    u16 *credit = vardecrypt(BANK_CREDIT);
+    u16 *credit = var_access(BANK_CREDIT);
     if (*credit) {
         int to_pay = new_price_money - (new_price_money >> 2);
         if (to_pay > *credit) {

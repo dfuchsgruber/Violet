@@ -83,7 +83,7 @@ ldr r0, =0x02024284
 add r0, r1
 mov r1, #0x38
 mov r2, #0
-bl _get_pokemons_attribute
+bl _pokemon_get_attribute
 mov r2, #3
 ldr r1, =0x020370D0
 cmp r0, #25
@@ -102,7 +102,7 @@ pop {pc}
 
 .align 2
 .thumb
-_get_pokemons_attribute:
-ldr r3, =get_pokemons_attribute
+_pokemon_get_attribute:
+ldr r3, =pokemon_get_attribute
 bx r3
 

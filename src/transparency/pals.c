@@ -1,6 +1,5 @@
 #include "types.h"
 #include "color.h"
-#include "romfuncs.h"
 
 const color transparency_black_box_pals [] = {
     {0x0},
@@ -166,5 +165,5 @@ const color transparency_black_box_pals [] = {
 };
 
 void transparency_load_black_box_pals(){
-    pal_load_uncomp(transparency_black_box_pals, 13*16, 32*3);
+    pal_copy(transparency_black_box_pals, 13*16, 32*3);
 }

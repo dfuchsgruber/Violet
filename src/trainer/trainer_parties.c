@@ -6,7 +6,6 @@
  */
 
 #include "types.h"
-#include "romfuncs.h"
 #include "constants/items.h"
 #include "constants/attacks.h"
 #include "constants/species.h"

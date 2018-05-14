@@ -126,4 +126,17 @@ saveblock2 **save2 = (saveblock2**) 0x03004F5C;
 custom_memory *cmem = (custom_memory*) 0x0203C200;
 floating_memory *fmem = (floating_memory*) 0x0203CEC4;
 
+/**
+ * Increments a stat in the save file (key)
+ * @param key the stat to increment
+ */
+void save_increment_key(u8 key);
+
+/**
+ * Gets a stat in the save file (key)
+ * @param key the stat to get
+ * @return the stat value
+ */
+int save_get_key(u8 index);
+
 #endif

@@ -3,7 +3,6 @@
 #include "battle/battler.h"
 #include "battle/attack.h"
 #include "abilities.h"
-#include "romfuncs.h"
 #include "debug.h"
 #include "battle/battlescript.h"
 #include "constants/abilities.h"
@@ -17,7 +16,7 @@ void trigger_sturdy(){
             battlers[*defending_battler].ability == ROBUSTHEIT){
         *damage_to_apply = battlers[*defending_battler].current_hp - 1;
         *bsc_offset += 2;
-        bsc_push_next_cmd();
+        battlescript_callstack_push_next_command();
         *bsc_offset = bsc_robustheit;
         *bsc_offset -= 2;
     }

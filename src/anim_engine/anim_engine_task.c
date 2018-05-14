@@ -84,7 +84,7 @@ anim_engine_task *anim_engine_task_new(int priority, void (*callback)(anim_engin
     }
     //Insert between root (root->priority <= priority) and next (either NULL or next->priority > priority)
     //dprintf("New task inserted between prev @%x, next @%x\n", root, next);
-    anim_engine_task *t = cmalloc(sizeof(anim_engine_task) + size_var_space);
+    anim_engine_task *t = malloc_and_clear(sizeof(anim_engine_task) + size_var_space);
     if(!t) return NULL;
     t->priority = priority;
     t->callback = callback;

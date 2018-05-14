@@ -1,7 +1,7 @@
 #include "types.h"
-#include "romfuncs.h"
+#include "item/item.h"
 #include "constants/items.h"
 
 void remove_potion_from_pc(){
-    remove_pc_item(ITEM_TRANK, 1);
+    item_remove_from_pc(ITEM_TRANK, 1);
 }

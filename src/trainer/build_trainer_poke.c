@@ -1,11 +1,11 @@
 #include "types.h"
 #include <stdbool.h>
-#include "romfuncs.h"
 #include "trainer/build.h"
 #include "pokemon/virtual.h"
 #include "constants/natures.h"
 #include "constants/pokemon_attributes.h"
-
+#include "vars.h"
+#include "prng.h"
 
 u8 ev_finals[6] = {0x16, 0x17, 0x18, 0x21, 0x2F, 0x30};
 
@@ -50,7 +50,7 @@ void build_trainer_poke(union union_build_field field, pokemon *poke) {
     if (field.value != 0x20) {
 
         if (!field.value) {
-            switch (*(vardecrypt(0x50F9))) {
+            switch (*(var_access(0x50F9))) {
                 case 0:
                 case 1:
                 case 2:
@@ -69,34 +69,34 @@ void build_trainer_poke(union union_build_field field, pokemon *poke) {
         }
 
 
-        pid p = {get_pokemons_attribute(poke, 0, 0)};
+        pid p = {(u32)pokemon_get_attribute(poke, 0, 0)};
         p.fields.shinyness = field.bitfield.shinyness ? 0 : 0x201;
         p.fields.nature = (builds[field.bitfield.build].nature);
-        set_pokemons_attribute(poke, 0, &p);
+        pokemon_set_attribute(poke, 0, &p);
 
 
         u8 ability = field.bitfield.ability & 1;
-        set_pokemons_attribute(poke, ATTRIBUTE_ABILITY, &ability);
+        pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
 
-        u8 poke_coolness_field = (u8) (get_pokemons_attribute(poke, 0x16, 0) & 0x7F);
+        u8 poke_coolness_field = (u8) (pokemon_get_attribute(poke, 0x16, 0) & 0x7F);
         poke_coolness_field = (u8) (poke_coolness_field | (field.bitfield.hability << 7));
-        set_pokemons_attribute(poke, 0x16, &poke_coolness_field);
+        pokemon_set_attribute(poke, 0x16, &poke_coolness_field);
 
-        if (!get_pokemons_attribute(poke, 0xC, 0)) {
-            set_pokemons_attribute(poke, 0xC, &builds[field.bitfield.build].prefered_item);
+        if (!pokemon_get_attribute(poke, 0xC, 0)) {
+            pokemon_set_attribute(poke, 0xC, &builds[field.bitfield.build].prefered_item);
         }
 
         int i;
         for (i = 0; i < 6; i++) {
             u8 max_iv = 31;
-            set_pokemons_attribute(poke, (u16) (ATTRIBUTE_HP_IV + i), &max_iv);
+            pokemon_set_attribute(poke, (u16) (ATTRIBUTE_HP_IV + i), &max_iv);
 
             u8 effective_ev = (u8) (builds[field.bitfield.build].evs[i] >> 2);
-            effective_ev = (u8) ((get_pokemons_attribute(poke, ev_finals[i], 0) & 0xC0) | effective_ev);
-            set_pokemons_attribute(poke, ev_finals[i], &effective_ev);
+            effective_ev = (u8) ((pokemon_get_attribute(poke, ev_finals[i], 0) & 0xC0) | effective_ev);
+            pokemon_set_attribute(poke, ev_finals[i], &effective_ev);
 
         }
 
-        recalculate_stats(poke);
+        pokemon_calculate_stats(poke);
     }
 }

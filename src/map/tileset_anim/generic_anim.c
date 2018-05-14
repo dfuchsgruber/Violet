@@ -1,10 +1,11 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "math.h"
 #include "save.h"
 #include "map/tileset.h"
 #include "debug.h"
 #include "constants/flags.h"
+#include "flags.h"
+#include "dma.h"
 
 u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header){
     if(anim_header->cnt == 0) return 640;
@@ -28,7 +29,7 @@ void generic_tileset_anim_proceed(tileset_animation *anim, u16 clk){
         int frame = (clk / anim->speed) % anim->cycle;
         int source_offset = 32 * anim->num_tiles * frame;
         void *src = (void*)((int)anim->gfx + source_offset);
-        dma3_add_request(src, dst, (u16)(anim->num_tiles * 32));
+        dma3_queue_add(src, dst, (u16)(anim->num_tiles * 32));
         
     }
 }

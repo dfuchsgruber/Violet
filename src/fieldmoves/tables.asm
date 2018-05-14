@@ -1,15 +1,11 @@
 @// Tables pasted from the ROM
 .include "attacks.s"
 
-.global table_pokemenu_opts
-.global pokemenu_opts
+.global pokemon_party_menu_opts
 
 .align 4
-table_pokemenu_opts:
-    .word pokemenu_opts
-
 @Limit for field moves is 0xC which is currently located at 
-pokemenu_opts:  @format : string, function pointer
+pokemon_party_menu_opts:  @format : string, function pointer
     .word str_bericht
     .word 0x8122d85
     .word str_tausch
@@ -76,12 +72,9 @@ pokemenu_opts:  @format : string, function pointer
 
 
 
-.global table_field_moves
+.global field_moves
 
 .align 4
-table_field_moves:
-    .word field_moves
-
 field_moves:
     .hword 0x94
     .hword 0xf
@@ -97,12 +90,9 @@ field_moves:
     .hword 0xe6
     .hword 0xFFFF
 
-.global table_field_move_descriptions
 .global field_move_descriptions
 
 .align 4
-table_field_move_descriptions:
-    .word field_move_descriptions
 
 field_move_descriptions:
 .word 0x84174f2
@@ -118,12 +108,11 @@ field_move_descriptions:
 .word 0x8417569
 .word 0x8417554
 
-.global table_outdoor_move_initializers
+.global field_move_initalizers
 
 .align 4
-    .word table_outdoor_move_initializers
 
-table_outdoor_move_initializers:
+field_move_initalizers:
 .word 0x80c9ce5
 .word 0xd
 .word 0x80979b1

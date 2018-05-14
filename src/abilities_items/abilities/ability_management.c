@@ -1,6 +1,5 @@
 #include "types.h"
 #include "abilities.h"
-#include "romfuncs.h"
 #include "battle/battler.h"
 #include "battle/battlescript.h"
 #include "battle/state.h"
@@ -8,6 +7,7 @@
 #include "debug.h"
 #include "constants/abilities.h"
 #include "constants/pokemon_types.h"
+#include "prng.h"
 
 extern u8 bsc_flinch_aura[];
 extern u8 bsc_flinch_raura[];

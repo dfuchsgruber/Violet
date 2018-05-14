@@ -10,4 +10,11 @@
 
 extern u8 *map_namespaces[];
 
+/**
+ * Loads the string of a namespace to a given buffer
+ * @param dst the destination of the namespace string
+ * @param the namespace id
+ */
+void map_load_namespace(u8 *dst, u8 namespace_id);
+
 #endif /* INCLUDE_C_MAP_NAMESPACE_H_ */

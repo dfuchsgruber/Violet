@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "constants/items.h"
 #include "item/item.h"
 #include "constants/species.h"
@@ -8,7 +7,9 @@
 #include "rtc.h"
 #include "debug.h"
 #include "access_card.h"
-
+#include "vars.h"
+#include "item/item.h"
+#include "overworld/script.h"
 
 u16 fossils [5] = {
     ITEM_ALTBERNSTEIN,
@@ -29,7 +30,7 @@ u16 fossil_species[5] = {
 void fossil_print_multichoice() {
 
     // Return 1 for success and 0 for failure
-    u16 *lastresult = vardecrypt(0x800D);
+    u16 *lastresult = var_access(0x800D);
     *lastresult = 0;
     
     // Iterate through all possible fossils
@@ -37,42 +38,42 @@ void fossil_print_multichoice() {
     int i;
     u16 displayed = 0;
     for (i = 0; i < 5; i++) {
-        if(checkitem(fossils[i], 1)){
+        if(item_check(fossils[i], 1)){
             choices[displayed].text = items[fossils[i]].name;
             choices[displayed].field_4 = 0;
             displayed++;
         }
     }
     
-    *vardecrypt(0x4077) = displayed;
+    *var_access(0x4077) = displayed;
     dprintf("Displaying %d choices\n", displayed);
     if (displayed) {
         void **script_state_pointers = (void**) 0x03000F14;
         *script_state_pointers = choices;
         if (multichoice(0, 0, 0, false)) {
             dprintf("Halting for dchoice\n");
-            script_halt();
+            overworld_script_halt();
             *lastresult = 1;
         }
     }
 }
 
 void fossil_execute() {
-    *vardecrypt(0x4077) = 0;
-    int index = *vardecrypt(0x800D);
+    *var_access(0x4077) = 0;
+    int index = *var_access(0x800D);
     int i;
     for (i = 0; i < 5; i++) {
-        if(!checkitem(fossils[i], 1)) continue;
+        if(!item_check(fossils[i], 1)) continue;
         if (index) {
             index--;
         } else {
             if(rtc_test()){
                 rtc_read(&cmem->fossil_gen_time);
                 item_remove(fossils[i], 1);
-                *vardecrypt(0x8004) = fossils[i];
-                *vardecrypt(0x50D1) = fossil_species[i];
+                *var_access(0x8004) = fossils[i];
+                *var_access(0x50D1) = fossil_species[i];
             }else{
-                *vardecrypt(0x8004) = 0;
+                *var_access(0x8004) = 0;
             }
         }
     }

@@ -38,7 +38,7 @@ gfx_frame gfx_anim_intro_meteor[] = {
 gfx_frame *gfx_anim_table_intro_meteor[] = {gfx_anim_intro_meteor};
 
 rotscale_frame rotscal_anim_intro_meteor[] = {
-    {0x200, 0x200, 0, 0, 0}, {-8, -8, 0, 63, 0}, {ROTSCAL_ANIM_END, 0, 0, 0, 0} 
+    {0x200, 0x200, 0, 0, 0}, {-8, -8, 0, 63, 0}, {ROTSCALE_ANIM_END, 0, 0, 0, 0} 
 };
 
 rotscale_frame *rotscale_anim_table_intro_meteor[] = {rotscal_anim_intro_meteor};
@@ -57,7 +57,7 @@ void anim_intro_earthquake(u8 self){
         big_callbacks[self].params[0] = 0;
         if(++(big_callbacks[self].params[1]) == 8){
             set_io(0x14, 0);
-            remove_big_callback(self);
+            big_callback_delete(self);
         }
         else{
             big_callbacks[self].params[2] ^= 1;
@@ -149,27 +149,27 @@ void oam_intro_deoxys_leviate(oam_object *self){
 oam_template oam_template_intro_deoxys_head = {
     0xADE4, 0xADE4,
     &oam_sprite_intro_deoxys_head,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_intro_deoxys_leviate,
 };
 
 oam_template oam_template_intro_deoxys_body = {
     0xADE5, 0xADE4,
     &oam_sprite_intro_deoxys_body,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_intro_deoxys_leviate
 };
 
 oam_template oam_template_intro_deoxys_bottom = {
     0xADE6, 0xADE4,
     &oam_sprite_intro_deoxys_bottom,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_intro_deoxys_leviate
 };
 
@@ -178,7 +178,7 @@ oam_template oam_template_intro_deoxys_arm_right = {
     &oam_sprite_intro_deoxys_arm_right,
     gfx_anim_table_intro_deoxys_arm_right,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_intro_deoxys_leviate
 };
 
@@ -188,7 +188,7 @@ oam_template oam_template_intro_deoxys_arm_left = {
     gfx_anim_table_intro_deoxys_arm_left,
     //GFX_ANIM_TABLE_NULL,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_intro_deoxys_leviate
 };
 
@@ -219,7 +219,7 @@ gfx_frame gfx_anim_intro_waves[] = {
 gfx_frame *gfx_anim_table_intro_waves[] = {gfx_anim_intro_waves};
 
 rotscale_frame rotscal_anim_intro_waves[] = {
-    {0x200, 0x200, 0, 0, 0}, {ROTSCAL_ANIM_END, 0, 0, 0, 0}
+    {0x200, 0x200, 0, 0, 0}, {ROTSCALE_ANIM_END, 0, 0, 0, 0}
 };
 
 rotscale_frame *rotscale_anim_table_intro_waves[] = {rotscal_anim_intro_waves};

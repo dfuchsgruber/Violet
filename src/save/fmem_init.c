@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "save.h"
 #include "data_structures.h"
 

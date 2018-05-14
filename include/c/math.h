@@ -71,4 +71,10 @@ int linear_cos(int x, int period, int amplitude);
  */
 int linear_tan(int x, int period);
 
+/**
+ * Calculates the square root of a value x
+ * @param x argument
+ */
+int __sqrt(int x);
+
 #endif

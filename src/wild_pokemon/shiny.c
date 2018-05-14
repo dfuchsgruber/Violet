@@ -2,8 +2,10 @@
 #include "stdbool.h"
 #include "pokemon/virtual.h"
 #include "constants/vars.h"
-#include "romfuncs.h"
 #include "debug.h"
+#include "vars.h"
+#include "prng.h"
+#include "save.h"
 
 pid pid_shinyness_apply(pid p){
     if(rnd16() & 1){
@@ -14,10 +16,10 @@ pid pid_shinyness_apply(pid p){
         p.fields.shinyness = 0x300;
         
     }
-    dprintf("Next shinies %d\n", *vardecrypt(NEXT_POKEMON_SHINY));
-    if((*vardecrypt(NEXT_POKEMON_SHINY))){
+    dprintf("Next shinies %d\n", *var_access(NEXT_POKEMON_SHINY));
+    if((*var_access(NEXT_POKEMON_SHINY))){
         p.fields.shinyness &= 0x1FF;
-        (*vardecrypt(NEXT_POKEMON_SHINY))--;
+        (*var_access(NEXT_POKEMON_SHINY))--;
     }
     return p;
 }

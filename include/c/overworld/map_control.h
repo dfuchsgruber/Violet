@@ -17,4 +17,71 @@ typedef struct{
 
 stru_map_displ_cntrl *map_displ_cntrl = (stru_map_displ_cntrl*)0x03000E90;
 
+/**
+ * Reloads the map state
+ */
+void map_reload();
+
+/**
+ * Reloads the map state without fadings (small mapreaload)
+ */
+void map_reload_no_fading();
+
+/**
+ * Sets up the data for warping the player
+ * @param bank the target map bank
+ * @param map the target map id
+ * @param exit the target warp
+ * @param x the target x coordiante (if exit == 0xFF)
+ * @param y the target y coordiante (if exit == 0xFF)
+ */
+void warp_setup(u8 bank, u8 map, u8 exit, s16 x, s16 y);
+
+/**
+ * Sets up callbacks to execute the warping process setup by warp_setup
+ */
+void warp_setup_callbacks();
+
+/**
+ * Gets the weather currently present
+ * @return the current weather
+ */
+u8 map_get_current_weather();
+
+/**
+ * Plays the fadeout sound for rain
+ */
+void map_play_sound_rain_fadeout();
+
+/**
+ * Sets up the warp teleport callback
+ */
+void warp_setup_teleport_callback();
+
+/**
+ * Sets up the warp muted teleport callback
+ */
+void warp_setup_muted_callback();
+
+/**
+ * Enables the warp flags
+ */
+void warp_enable_flags();
+
+/**
+ * Sets the warp history (last used warp)
+ * @param index index in the warp history
+ * @param bank target map bank
+ * @param map target map id
+ * @param exit target warp
+ * @param x x coordiante if exit == 0xFF
+ * @param y y coordinate if exit == 0xFF
+ */
+void warp_history_set(u8 index, u8 bank, u8 map, u8 exit, s16 x, s16 y);
+
+/**
+ * Frees all components of the overworld (i.e. virtual maps)
+ */
+void overworld_free();
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

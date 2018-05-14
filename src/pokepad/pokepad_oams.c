@@ -42,27 +42,27 @@ sprite sprite_pokepad_arrow = {
 oam_template oam_template_pokepad_arrow = {
     0xA001, 0xA001,
     &sprite_pokepad_arrow,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     pokepad_oam_arrow_anim
 };
 
 oam_template oam_template_pokepad_l = {
     0xA002, 0xA002,
     &sprite_pokepad_lr,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
 oam_template oam_template_pokepad_r = {
     0xA003, 0xA002,
     &sprite_pokepad_lr,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 

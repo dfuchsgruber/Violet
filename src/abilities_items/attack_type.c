@@ -2,7 +2,6 @@
 #include "battle/battler.h"
 #include "battle/attack.h"
 #include "attack.h"
-#include "romfuncs.h"
 #include "debug.h"
 #include "constants/abilities.h"
 #include "constants/pokemon_types.h"

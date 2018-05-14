@@ -8,9 +8,61 @@
 #ifndef INCLUDE_C_OVERWORLD_SCRIPT_H_
 #define INCLUDE_C_OVERWORLD_SCRIPT_H_
 
-bool script_cmd_x86_pokemart(void *script_state);
 
-u8 **ow_script_virtual_ptr = (u8**) 0x020370A4;
+u8 **overworld_script_virtual_ptr = (u8**) 0x020370A4;
 
+/**
+ * Script command to initialize a mart
+ * @param script_state the script state
+ */
+bool overworld_script_cmd_x86_pokemart(void *script_state);
+
+/**
+ * Reads a word from the current script offset (unaligned)
+ * @param script_state the overworld script state
+ */
+int overworld_script_read_word(void *script_state);
+
+/**
+ * Initializes an overworld script
+ * @param script The script offset to initialize
+ */
+void overworld_script_init(void* script);
+
+/**
+ * Halts the script until the warp is executed
+ */
+void overworld_script_wait_for_warp();
+
+/**
+ * Halts the script until it is forcefully resumed
+ */
+void overworld_script_halt();
+
+/**
+ * Resumes the execution of the overworld script halted by overworld_script_halt
+ */
+void overworld_script_resume();
+
+/**
+ * Changes the overworld script state to active
+ */
+void overworld_script_set_active();
+
+/**
+ * Initializes a muted overworld script
+ * @param script the script to initialize
+ */
+void overworld_script_init_muted(u8 *script);
+
+/**
+ * Shows a multichoice and spawns callback to process user input
+ * @param x the x coordinate for the choice (in tiles)
+ * @param y the y coordiante for the choice (in tiles)
+ * @param choice the multichoice id
+ * @param forced_choice if the choice is forced (i.e. can not be aborted with B-press)
+ * @return on success
+ */
+bool multichoice(u8 x, u8 y, u8 choice, bool forced_choice);
 
 #endif /* INCLUDE_C_OVERWORLD_SCRIPT_H_ */

@@ -1,10 +1,10 @@
 #include "types.h"
-#include <stdbool.h>
-#include "romfuncs.h"
 #include "oam.h"
 #include "callbacks.h"
 #include "mega.h"
 #include "constants/species.h"
+#include "color.h"
+#include "battle/state.h"
 
 
 extern const unsigned short gfx_mega_symbolTiles[];
@@ -34,17 +34,17 @@ void spawn_symbols(u8 state) {
         restore_trigger_cbs();
 
         //load palette
-        u8 pal_id = allocate_obj_pal(0xADDD); //allocated a palette for the tag 0xADDD
-        pal_load_comp(gfx_mega_symbolPal, (u16) ((pal_id + 0x10) << 4), 0x20);
+        u8 pal_id = oam_allocate_palette(0xADDD); //allocated a palette for the tag 0xADDD
+        pal_decompress(gfx_mega_symbolPal, (u16) ((pal_id + 0x10) << 4), 0x20);
 
         //load graphic
-        u16 tile = load_and_alloc_obj_vram_lz77(&symbol_graphic);
+        u16 tile = oam_load_graphic(&symbol_graphic);
 
         //spawn a mega symbol for each hp box
-        int oams_to_spawn = is_double_battle() ? 4 : 2;
+        int oams_to_spawn = battle_is_double() ? 4 : 2;
         int i;
         for (i = 0; i < oams_to_spawn; i++) {
-            u8 oam_id = generate_oam_backward_search(&symbol_template, 0, 0, 0);
+            u8 oam_id = oam_new_backward_search(&symbol_template, 0, 0, 0);
             oams[oam_id].private[0] = (u8) i; //each oam gets a unique bank to handle
             oams[oam_id].private[1] = tile;
         }
@@ -88,7 +88,7 @@ void symbol_callback(oam_object *self) {
 
         if (!(oams[hp_oam].bitfield2 & 4)) { //checking if the healthbox is invisible (indicated by bitfield2 bit 2
 
-            int dxmin = is_opponent(slot) ? 30 : 36; //the x value to subtract from the start to position the icon rightly
+            int dxmin = battler_is_opponent(slot) ? 30 : 36; //the x value to subtract from the start to position the icon rightly
 
             //mirror the hp_box_priority
             u16 priority_bits = (oams[hp_oam].final_oam.attr2 & 0xC00);

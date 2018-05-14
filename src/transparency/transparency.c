@@ -1,8 +1,10 @@
 #include "types.h"
 #include "stdbool.h"
-#include "romfuncs.h"
 #include "transparency.h"
 #include "constants/flags.h"
+#include "flags.h"
+#include "overworld/map_control.h"
+#include "io.h"
 
 u16 transparency_disabling_special_ids [] = {0xF9, 0x190, 0xFD, 0xFE, 0x9F, 0x2B, 0x2C, 0xFFFF};
 u8 transparency_disabling_command_ids [] = {0x2, 0x97, 0x5C, 0x5D, 0xB7, 0x29, 0x8E,
@@ -52,7 +54,7 @@ bool transparency_is_on() {
 }
 
 bool transparency_used_by_weather() {
-    u8 current_weather = weather_get();
+    u8 current_weather =  map_get_current_weather();
     return current_weather == 6 || current_weather == 8 || current_weather == 9 || current_weather == 0xA;
 }
 
@@ -60,16 +62,16 @@ void transparency_on() {
     if (transparency_used_by_weather())
         return;
     setflag(TRANS_PALETTE_FETCH);
-    set_io(0x48, 0x1F3F);
-    set_io(0x50, 0x3F41);
-    set_io(0x52, 0x060F);
+    io_set(0x48, 0x1F3F);
+    io_set(0x50, 0x3F41);
+    io_set(0x52, 0x060F);
 }
 
 void transparency_off() {
     if (!transparency_used_by_weather()) {
-        set_io(0x48, 0x1F1F);
-        set_io(0x50, 0x1E40);
-        set_io(0x52, 0x0010);
+        io_set(0x48, 0x1F1F);
+        io_set(0x50, 0x1E40);
+        io_set(0x52, 0x0010);
     }
     clearflag(TRANS_PALETTE_FETCH);
 

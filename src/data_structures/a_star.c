@@ -1,10 +1,10 @@
 #include "types.h"
 #include "stdbool.h"
 #include "data_structures.h"
-#include "romfuncs.h"
 #include "tile/block.h"
 #include "overworld/npc.h"
 #include "math.h"
+#include "agbmemory.h"
 
 int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker) {
 
@@ -154,11 +154,11 @@ bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *wa
     walker->rectangle.x = 0;
     walker->rectangle.y = 0;
     walker->height.previous = walker->height.current;
-    walker->height.current = map_get_tile_level(from_x, from_y) & 0xF;
+    walker->height.current = (u8)(block_get_level(from_x, from_y) & 0xF);
     walker->dest_x = dest_x;
     walker->dest_y = dest_y;
-    walker->facing.lower = dir & 0xF;
-    walker->facing.higher = dir & 0xF;
+    walker->facing.lower = (u8)(dir & 0xF);
+    walker->facing.higher = (u8)(dir & 0xF);
     walker->from_x = from_x;
     walker->from_y = from_y;
     u8 result = npc_is_tile_blocked(walker, dest_x, dest_y, dir);

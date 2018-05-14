@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "debug.h"
 #include "math.h"
 

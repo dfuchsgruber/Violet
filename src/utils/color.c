@@ -1,7 +1,7 @@
 #include "types.h"
 #include "color.h"
 
-color alpha_blend(color original, color overlay, u8 alpha) {
+color color_alpha_blend(color original, color overlay, u8 alpha) {
 
     int i_alpha = 16 - alpha;
     int red = ((overlay.rgb.red * alpha) >> 4) + ((original.rgb.red * i_alpha) >> 4);
@@ -24,15 +24,15 @@ color color_multiply(color original, color overlay) {
     return c;
 }
 
-color blend_multiply(color original, color overlay, u8 alpha) {
+color color_blend_and_multiply(color original, color overlay, u8 alpha) {
 
     color white = {0x7FFF};
-    color c = alpha_blend(white, original, alpha);
+    color c = color_alpha_blend(white, original, alpha);
     return color_multiply(c, overlay);
 
 }
 
-color greyscale(color original) {
+color color_to_grayscale(color original) {
     u16 max = original.rgb.blue;
     u16 min = original.rgb.blue;
     if (original.rgb.green > max) max = original.rgb.green;

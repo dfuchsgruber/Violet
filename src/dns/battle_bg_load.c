@@ -1,18 +1,20 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "rtc.h"
 #include "color.h"
 #include "save.h"
 #include "dns.h"
 #include "constants/vars.h"
 #include "battle/bg.h"
+#include "vars.h"
+#include "bios.h"
+#include "agbmemory.h"
 
 void battle_bg_load(u8 bg_id) {
 
     lz77uncompvram(battle_bgs[bg_id].tileset, (void*) 0x6008000);
     lz77uncompvram(battle_bgs[bg_id].tilemap, (void*) 0x600D000);
 
-    if (*vardecrypt(SHADER_STATE) && dns_on()) {
+    if (*var_access(SHADER_STATE) && dns_on()) {
 
         color *buf = (color*) malloc(0x60);
         color *prebuf = (color*) 0x02037ACC;
@@ -24,14 +26,14 @@ void battle_bg_load(u8 bg_id) {
         int i;
         for (i = 0; i < 0x30; i++) {
             color original = prebuf[i];
-            color new = blend_multiply(original, over, alpha);
+            color new = color_blend_and_multiply(original, over, alpha);
             buf[i] = new;
         }
 
-        pal_load_uncomp(buf, 0x20, 0x60);
+        pal_copy(buf, 0x20, 0x60);
 
         free(buf);
     } else {
-        pal_load_comp(battle_bgs[bg_id].pal, 0x20, 0x60);
+        pal_decompress(battle_bgs[bg_id].pal, 0x20, 0x60);
     }
 }

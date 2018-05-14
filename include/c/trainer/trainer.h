@@ -36,13 +36,31 @@ typedef struct {
 
 } trainer;
 
-
 trainer trainers [TRAINER_CNT];
 
-
+/**
+ * Checks the flag of a trainer
+ * @param trainer_id Id of the trainer
+ * @return Weather the trainer was battled
+ */
 bool checktrainerflag(u16 trainer_id);
-bool trainer_can_npc_challange_player(u16 trainer_id);
+
+/**
+ * Checks whether a trainer can challange the player (double battle, fraction etc.)
+ * @param trainer_id Id of the trainer
+ * @return Whether the trainer will challange the player
+ */
+bool trainer_will_challange_player(u16 trainer_id);
+
+/**
+ * Special 0x36: Checks if the loaded trainer was battled
+ * @return Whether the loaded trainer was battled
+ */
 bool special_x36_check_loaded_trainerflag();
+
+/**
+ * Special: Prepeares the player to face the trainer approaching
+ */
 void special_prepeare_player_facing();
 
 #endif /* INCLUDE_C_TRAINER_TRAINER_H_ */

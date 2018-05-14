@@ -1,9 +1,10 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "save.h"
 #include "constants/items.h"
 #include "tile/trash.h"
 #include "rtc.h"
+#include "vars.h"
+#include "prng.h"
 
 void generate_trash_item(u8 facing) {
 
@@ -24,11 +25,11 @@ void generate_trash_item(u8 facing) {
             item = (u16) (ITEM_AMRENABEERE + berry_index);
         }
     }
-    *vardecrypt(0x8000) = item;
+    *var_access(0x8000) = item;
 }
 
 void special_set_trashflag() {
-    set_trashflag((u8) (*vardecrypt(0x800C)));
+    set_trashflag((u8) (*var_access(0x800C)));
 }
 
 bool check_trashflag(u8 facing) {
@@ -48,7 +49,7 @@ void set_trashflag(u8 facing) {
 int get_tile_hash_by_facing(u8 facing, int m) {
 
     s16 pos[2];
-    get_current_tile_position(&pos[0], &pos[1]);
+    player_get_position(&pos[0], &pos[1]);
     switch (facing) {
         case 1://down
             pos[1]++;

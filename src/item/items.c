@@ -3,7 +3,6 @@
 #include "item/item.h"
 #include "item/description.h"
 #include "constants/item_pockets.h"
-#include "romfuncs.h"
 #include "language.h"
 
 item items[] = {

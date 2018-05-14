@@ -1,6 +1,4 @@
 #include "types.h"
-#include <stdbool.h>
-#include "romfuncs.h"
 #include "oam.h"
 #include "callbacks.h"
 #include "battle/battler.h"
@@ -11,10 +9,10 @@
 
 u8 get_pokemons_ability(pokemon *poke) {
 
-    bool ability_bit = get_pokemons_attribute(poke, ATTRIBUTE_ABILITY, 0);
-    bool hidden_ability_bit = get_pokemons_attribute(poke, ATTRIBUTE_COOLNESS, 0) & 0x80;
+    bool ability_bit = pokemon_get_attribute(poke, ATTRIBUTE_ABILITY, 0);
+    bool hidden_ability_bit = pokemon_get_attribute(poke, ATTRIBUTE_COOLNESS, 0) & 0x80;
 
-    u16 species = (u16) get_pokemons_attribute(poke, ATTRIBUTE_SPECIES, 0);
+    u16 species = (u16) pokemon_get_attribute(poke, ATTRIBUTE_SPECIES, 0);
 
     if (hidden_ability_bit && basestats[species].hidden_ability) {
 

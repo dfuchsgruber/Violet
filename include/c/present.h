@@ -21,6 +21,8 @@ extern "C" {
     
     #define SHA3_MDLEN 8
     #define SHA3_INLEN 32
+
+    #define KECACK_F_ROUNDS 24
     
     typedef struct{
         union{
@@ -67,6 +69,24 @@ extern "C" {
     
     present_t presents[NUM_PRESENTS];
     
+
+    /**
+     * Queries a string (as for pokemon nickname)
+     * @param mode TODO (3 seems to be nickname)
+     * @param target_buf result of the query
+     * @param species species to show
+     * @param gender gender of the species to show
+     * @param closure closure function after the query (usually includes a reload)
+     */
+    void pokemon_query_string(u8 mode, u8 *target_buf, u16 species, u8 gender,
+            u32 pid, void (*closure)());
+
+
+    /**
+     * Std. closure function for string queries. Uses map reload.
+     */
+    void pokemon_query_string_std_closure();
+
 #ifdef	__cplusplus
 }
 #endif

@@ -18,7 +18,11 @@
             "MOVE_TUTOR_FEUERZAHN",
             "MOVE_TUTOR_EXPLOSION",
             "MOVE_TUTOR_STEINHAGEL",
-            "MOVE_TUTOR_DELEGATOR"
+            "MOVE_TUTOR_DELEGATOR",
+            "MOVE_TUTOR_FLORA_STATUE",
+            "MOVE_TUTOR_LOHEKANONADE",
+            "MOVE_TUTOR_AQUAHAUBITZE",
+            "MOVE_TUTOR_DONNERWELLE"
         ]
     },
     "evolution_methods" : {

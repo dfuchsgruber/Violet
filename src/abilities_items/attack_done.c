@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "attack.h"
 #include "debug.h"
 #include "save.h"
@@ -30,7 +29,7 @@ void attack_done(u8 index){
             ATTACK_NO_EFFECT)) && attacks[*active_attack].base_power &&
             !(battler_statuses[*attacking_battler].unkown[1] & 1)){
         //inflict life-orb damage
-        bsc_push_next_cmd();
+        battlescript_callstack_push_next_command();
         *bsc_offset = bsc_life_orb;
         //dprintf("Life orb triggered for battler %d\n", *attacking_battler);
         
@@ -41,7 +40,7 @@ void attack_done(u8 index){
             (*attack_result & ATTACK_MISSED) && attacker->stat_changes[6] < 12){
         if(gp_stack_push(index)){
             attacker->stat_changes[6]++; //accuracy boost
-            bsc_push_next_cmd();
+            battlescript_callstack_push_next_command();
             *bsc_offset = bsc_lernfaehig;
         }else{
             derrf("Lernfaehig not triggered for battler %d\n, gp stack held no \
@@ -55,7 +54,7 @@ void attack_done(u8 index){
             && defender->current_hp && attacker->stat_changes[1] < 12){
         if(gp_stack_push(index)){
             attacker->stat_changes[1]++; //accuracy boost
-            bsc_push_next_cmd();
+            battlescript_callstack_push_next_command();
             *bsc_offset = bsc_hochmut;
         }else{
             derrf("Hochmut not triggered for battler %d\n, gp stack held no \
@@ -65,7 +64,7 @@ void attack_done(u8 index){
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
             attacks[*active_attack].base_power && attacker->current_hp <
             attacker->max_hp){
-        bsc_push_next_cmd();
+        battlescript_callstack_push_next_command();
         *bsc_offset = bsc_lebensraeuber;
     }else if(attacker->ability == CURATOR && !(*attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
@@ -82,14 +81,14 @@ void attack_done(u8 index){
             *active_attack == ATTACK_MILCHGETRAENK
             
             )){
-        bsc_push_next_cmd();
+        battlescript_callstack_push_next_command();
         *bsc_offset = bsc_curator;
         
     }else if(attacker->ability == EXTRADORN && !(*attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
             defender->current_hp && 
             (attacks[*active_attack].flags & MAKES_CONTACT)){
-        bsc_push_next_cmd();
+        battlescript_callstack_push_next_command();
         *bsc_offset = bsc_extradorn;
         
         

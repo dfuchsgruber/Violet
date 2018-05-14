@@ -29,8 +29,8 @@
  */
 
 #include "types.h"
-#include "romfuncs.h"
 #include "debug.h"
+#include "agbmemory.h"
 
 void dprint(const char * sz)
 {
@@ -74,17 +74,17 @@ u32 mini_itoa(int value, u32 radix, u32 uppercase, u32 unsig, char * buffer, u32
     if (radix == 16) {
         do {
             u32 digit = value & 0xF;
-            * (pbuffer++) = (digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
+            * (pbuffer++) = (char)(digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
             value >>= 4;
         } while (value > 0);
     } else {
         do {
-            u32 digit = value % radix;
-            * (pbuffer++) = (digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
-            value /= radix;
+            u32 digit = (u32)((u32)value % radix);
+            * (pbuffer++) = (char)(digit < 10 ? '0' + digit : (uppercase ? 'A' : 'a') + digit - 10);
+            value = value / (int)radix;
         } while (value > 0);
     }
-    for (i = (pbuffer - buffer); i < zero_pad; i++)
+    for (i = (u32)(pbuffer - buffer); i < zero_pad; i++)
         * (pbuffer++) = '0';
     if (negative)
     {
@@ -92,7 +92,7 @@ u32 mini_itoa(int value, u32 radix, u32 uppercase, u32 unsig, char * buffer, u32
     }
     /* ... now we reverse it (could do it recursively but will
      * conserve the stack space) */
-    len = (pbuffer - buffer);
+    len = (u32)(pbuffer - buffer);
     for (i = 0; i < len / 2; i++) {
         char j = buffer[i];
         buffer[i] = buffer[len - i - 1];
@@ -118,13 +118,13 @@ int mini_vsnprintf(char * buffer, u32 buffer_len,
     int _puts(char * s, u32 len)
     {
         u32 i;
-        if (buffer_len - (pbuffer - buffer) - 1 < len)
-            len = buffer_len - (pbuffer - buffer) - 1;
+        if ((int)buffer_len - (pbuffer - buffer) - 1 < (int)len)
+            len = (u32)((int)buffer_len - (pbuffer - buffer) - 1);
         /* Copy to buffer */
         for (i = 0; i < len; i++)
             * (pbuffer++) = s[i];
         * (pbuffer) = '\0';
-        return len;
+        return (int)len;
     }
     while ((ch = * (fmt++))) {
         if ((u32)((pbuffer - buffer) + 1) >= buffer_len)
@@ -142,7 +142,7 @@ int mini_vsnprintf(char * buffer, u32 buffer_len,
                 if (ch == '\0')
                     return pbuffer - buffer;
                 if (ch >= '0' && ch <= '9')
-                    zero_pad = ch - '0';
+                    zero_pad = (char)(ch - '0');
                 ch = * (fmt++);
             }
             switch (ch) {
@@ -150,12 +150,12 @@ int mini_vsnprintf(char * buffer, u32 buffer_len,
                 return pbuffer - buffer;
             case 'u':
             case 'd':
-                len = mini_itoa(va_arg(va, u32), 10, 0, (ch == 'u'), bf, zero_pad);
+                len = mini_itoa(va_arg(va, int), 10, 0, (ch == 'u'), bf, zero_pad);
                 _puts(bf, len);
                 break;
             case 'x':
             case 'X':
-                len = mini_itoa(va_arg(va, u32), 16, (ch == 'X'), 1, bf, zero_pad);
+                len = mini_itoa(va_arg(va, int), 16, (ch == 'X'), 1, bf, zero_pad);
                 _puts(bf, len);
                 break;
             case 'c':
@@ -183,6 +183,8 @@ void dprintf(const char * str, ...)
     va_end(args);
     dprint(__outstr);
 }
+
+
 
 void derrf(const char *str, ...){
         char* __outstr = malloc(256);

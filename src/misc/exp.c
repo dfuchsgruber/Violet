@@ -1,12 +1,12 @@
 #include "types.h"
-#include "romfuncs.h"
+#include "vars.h"
 
 int modify_exp(int exp) {
 
     int new_exp = exp;
 
     //Applying difficulty
-    switch (*vardecrypt(0x50F9)) {
+    switch (*var_access(0x50F9)) {
 
         case 0:
             new_exp <<= 1; // 2.0

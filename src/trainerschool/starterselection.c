@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "save.h"
 #include "callbacks.h"
 #include "trainerschool_test.h"
@@ -14,8 +13,17 @@
 #include "transparency.h"
 #include "constants/species.h"
 #include "constants/vars.h"
+#include "constants/flags.h"
 #include "fading.h"
 #include "language.h"
+#include "io.h"
+#include "agbmemory.h"
+#include "vars.h"
+#include "bios.h"
+#include "flags.h"
+#include "pokemon/cry.h"
+#include "overworld/map_control.h"
+#include "music.h"
 
     typedef struct {
         u16 hscroll;
@@ -90,7 +98,7 @@ oam_template oam_template_trainerschool_lockschal = {
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -99,7 +107,7 @@ oam_template oam_template_trainerschool_weluno = {
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -108,7 +116,7 @@ oam_template oam_template_trainerschool_seekid = {
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -147,7 +155,7 @@ oam_template oam_template_trainerschool_pokeball = {
     &sprite_trainerschool_pokeball,
     gfx_anim_table_trainerschool_pokeball,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_callback_trainerschool_pokeball
 };
 
@@ -155,20 +163,21 @@ u16 trainerschool_selection_species[] = {POKEMON_LOCKSCHAL, POKEMON_WELUNO, POKE
 
 void trainerschool_selection_show_species_text(){
     u8 box_id = (u8)(TSS_MEM->cursor + 1);
-    tbox_flush(box_id, 0x11);
+    tbox_flush_set(box_id, 0x11);
     tbox_tilemap_draw(box_id);
-    u8 fontcolmap[] = {1, 2, 1, 3};
+    tbox_font_colormap fontcolmap = {1, 2, 1, 3};
     u8 *name = pokemon_names[trainerschool_selection_species[TSS_MEM->cursor]];
     int name_width_pixels = string_get_width(2, name, 0);
     int x_distance = (64 - name_width_pixels) >> 1;
-    tbox_print_string(box_id, 2, (u8)x_distance, 0, 0, 0, fontcolmap, 0, pokemon_names[trainerschool_selection_species[TSS_MEM->cursor]]);
+    tbox_print_string(box_id, 2, (u8)x_distance, 0, 0, 0, &fontcolmap, 0,
+        pokemon_names[trainerschool_selection_species[TSS_MEM->cursor]]);
     
 }
 
 void trainerschool_selection_delete_species_text(){
     u8 box_id = (u8)(TSS_MEM->cursor + 1);
     dprintf("Delete text with boxid %d\n", box_id);
-    tbox_flush(box_id, 0);
+    tbox_flush_set(box_id, 0);
     tbox_sync(box_id, TBOX_SYNC_MAP_AND_SET);
     tbox_flush_map(0);
 }
@@ -180,59 +189,59 @@ u8 str_trainerschool_selection_text[] = LANGDEP(
 void trainerschool_selection_select(){
     //Open the current pokeball
     oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].anim_number = 1;
-    gfx_init_animation(&oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]], 0);
-    cry(trainerschool_selection_species[TSS_MEM->cursor], 0);
+    oam_gfx_anim_init(&oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]], 0);
+    pokemon_play_cry(trainerschool_selection_species[TSS_MEM->cursor], 0);
     //Draw text
-    tbox_flush(0, 0x11);
+    tbox_flush_set(0, 0x11);
     tbox_tilemap_draw(0);
     tbox_sync(0, TBOX_SYNC_MAP_AND_SET);
-    u8 fontcolmap[] = {1, 2, 1, 3};
-    tbox_print_string(0, 2, 0, 0, 0, 0, fontcolmap, 0, str_trainerschool_selection_text);
+    tbox_font_colormap fontcolmap = {1, 2, 1, 3};
+    tbox_print_string(0, 2, 0, 0, 0, 0, &fontcolmap, 0, str_trainerschool_selection_text);
     TSS_MEM->selected = true;
     
 }
 
 
 void trainerschool_selection_done(){
-    cb1handling();
-    if(!is_fading()){
+    generic_callback1();
+    if(!fading_is_active()){
         clearflag(MAP_BGN_AUTO_ALIGN_OFF);   
         *((bool*) 0x03000EA8) = false;
-        set_callback1(map_reload);
+        callback1_set(map_reload);
     }
 }
 
 void trainerschool_selection_idle(){
-    cb1handling();
+    generic_callback1();
     if(!TSS_MEM->hscroll_delay){
-        set_io(0x1C, (TSS_MEM->hscroll)--);
+        io_set(0x1C, (TSS_MEM->hscroll)--);
         TSS_MEM->hscroll_delay = 8;
     }else{
         TSS_MEM->hscroll_delay--;
     }
-    if(!is_fading()){
+    if(!fading_is_active()){
         if(TSS_MEM->selected){
             //One pokeball is already opened and you selected a starter, only handle A;B for confirmation or abort
             if(super->keys_new.keys.B){
                 //Return to normal selection
-                sound(5);
-                tbox_flush(0, 0);
+                play_sound(5);
+                tbox_flush_set(0, 0);
                 tbox_flush_map(0);
                 tbox_sync(0, TBOX_SYNC_MAP_AND_SET);
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].anim_number = 0;
-                gfx_init_animation(&oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]], 0);
+                oam_gfx_anim_init(&oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]], 0);
                 TSS_MEM->selected = false;
             }else if(super->keys_new.keys.A){
-                *vardecrypt(STARTER_SELECTED) = TSS_MEM->cursor;
-                *vardecrypt(0x800D) = trainerschool_selection_species[TSS_MEM->cursor];
-                sound(5);
-                init_fadescreen(1, 0);
-                set_callback1(trainerschool_selection_done);
+                *var_access(STARTER_SELECTED) = TSS_MEM->cursor;
+                *var_access(0x800D) = trainerschool_selection_species[TSS_MEM->cursor];
+                play_sound(5);
+                fadescreen_all(1, 0);
+                callback1_set(trainerschool_selection_done);
             }
         }else{
             //Handle A;direction keys for opening and switching
             if(super->keys_new.keys.right){
-                sound(5);
+                play_sound(5);
                 trainerschool_selection_delete_species_text();
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 0;
                 TSS_MEM->cursor++;
@@ -241,7 +250,7 @@ void trainerschool_selection_idle(){
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 1;
                 
             }else if(super->keys_new.keys.left){
-                sound(5);
+                play_sound(5);
                 trainerschool_selection_delete_species_text();
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 0;
                 TSS_MEM->cursor--;
@@ -257,13 +266,13 @@ void trainerschool_selection_idle(){
 }
 
 void trainerschool_selection_init_components(){
-    cb1handling();
-    if(!is_fading()){
+    generic_callback1();
+    if(!fading_is_active()){
         //init gfx and stuff
         
-        remove_all_big_callbacks();
+        big_callback_delete_all();
         oam_reset();
-        pal_allocation_reset();
+        oam_palette_allocation_reset();
         bg_reset(0);
         bg_setup(0, trainerschool_selection_bg_configs, 4);
         
@@ -280,19 +289,19 @@ void trainerschool_selection_init_components(){
         bg_virtual_set_displace(2, 0, 0);
         bg_virtual_map_displace(3, 0, 0);
         bg_virtual_set_displace(3, 0, 0);
-        set_io(0x10, 0);
-        set_io(0x12, 0);
-        set_io(0x14, 0);
-        set_io(0x16, 0);
-        set_io(0x18, 0);
-        set_io(0x1A, 0);
-        set_io(0x1C, 0);
-        set_io(0x1E, 0);
+        io_set(0x10, 0);
+        io_set(0x12, 0);
+        io_set(0x14, 0);
+        io_set(0x16, 0);
+        io_set(0x18, 0);
+        io_set(0x1A, 0);
+        io_set(0x1C, 0);
+        io_set(0x1E, 0);
         
-        void *bg0map = cmalloc(0x800);
-        void *bg1map = cmalloc(0x800);
-        void *bg2map = cmalloc(0x800);
-        void *bg3map = cmalloc(0x800);
+        void *bg0map = malloc_and_clear(0x800);
+        void *bg1map = malloc_and_clear(0x800);
+        void *bg2map = malloc_and_clear(0x800);
+        void *bg3map = malloc_and_clear(0x800);
         
         bg_set_tilemap(0, bg0map);
         bg_set_tilemap(1, bg1map);
@@ -316,55 +325,55 @@ void trainerschool_selection_init_components(){
 
         tbox_sync_with_virtual_bg_and_init_all(trainerschool_selection_tboxes);
         
-        load_and_alloc_obj_vram_lz77(graphic_trainerschool_selection_pokeball);
-        load_and_alloc_obj_vram_lz77(&graphic_trainerschool_selection_lockschal);
-        load_and_alloc_obj_vram_lz77(&graphic_trainerschool_selection_weluno);
-        load_and_alloc_obj_vram_lz77(&graphic_trainerschool_selection_seekid);
+        oam_load_graphic(graphic_trainerschool_selection_pokeball);
+        oam_load_graphic(&graphic_trainerschool_selection_lockschal);
+        oam_load_graphic(&graphic_trainerschool_selection_weluno);
+        oam_load_graphic(&graphic_trainerschool_selection_seekid);
         
         u8 pal_id;
-        pal_id = allocate_obj_pal(0xA440);
-        pal_load_comp(gfx_trainerschool_lockschalPal, (u16)(256 + pal_id * 16), 32);
-        pal_id = allocate_obj_pal(0xA441);
-        pal_load_comp(gfx_trainerschool_welunoPal, (u16)(256 + pal_id * 16), 32);
-        pal_id = allocate_obj_pal(0xA442);
-        pal_load_comp(gfx_trainerschool_seekidPal, (u16)(256 + pal_id * 16), 32);
-        pal_id = allocate_obj_pal(palette_trainerschool_selection_pokeball->tag);
-        pal_load_comp(palette_trainerschool_selection_pokeball->pal, (u16)(256 + pal_id * 16), 32);
-        pal_load_comp(gfx_trainerschool_selection_frontPal, 0, 32);
+        pal_id = oam_allocate_palette(0xA440);
+        pal_decompress(gfx_trainerschool_lockschalPal, (u16)(256 + pal_id * 16), 32);
+        pal_id = oam_allocate_palette(0xA441);
+        pal_decompress(gfx_trainerschool_welunoPal, (u16)(256 + pal_id * 16), 32);
+        pal_id = oam_allocate_palette(0xA442);
+        pal_decompress(gfx_trainerschool_seekidPal, (u16)(256 + pal_id * 16), 32);
+        pal_id = oam_allocate_palette(palette_trainerschool_selection_pokeball->tag);
+        pal_decompress(palette_trainerschool_selection_pokeball->pal, (u16)(256 + pal_id * 16), 32);
+        pal_decompress(gfx_trainerschool_selection_frontPal, 0, 32);
         pal_set_all_to_black(); //we avoid the 1frame show of a pal
         
-        generate_oam_forward_search(&oam_template_trainerschool_lockschal, 52, 108, 0);
-        generate_oam_forward_search(&oam_template_trainerschool_weluno, 120, 114, 0);
-        generate_oam_forward_search(&oam_template_trainerschool_seekid, 188, 108, 0);
+        oam_new_forward_search(&oam_template_trainerschool_lockschal, 52, 108, 0);
+        oam_new_forward_search(&oam_template_trainerschool_weluno, 120, 114, 0);
+        oam_new_forward_search(&oam_template_trainerschool_seekid, 188, 108, 0);
         s16 coords[3] = {52, 120, 188};
         int i;
         for(i = 0; i < 3; i++)
-            TSS_MEM->pokeball_oams[i] = generate_oam_forward_search(&oam_template_trainerschool_pokeball, coords[i], 72, 0);
+            TSS_MEM->pokeball_oams[i] = oam_new_forward_search(&oam_template_trainerschool_pokeball, coords[i], 72, 0);
         
         oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 1;
         trainerschool_selection_show_species_text();
         
-        init_fadescreen(0, 0);
-        set_callback1(trainerschool_selection_idle);
+        fadescreen_all(0, 0);
+        callback1_set(trainerschool_selection_idle);
 
         bg_virtual_sync(0);
         bg_virtual_sync(1);
         bg_virtual_sync(2);
         bg_virtual_sync(3);
         
-        set_io(0x48, 0x1F3F);
-        set_io(0x50, 0x3F41);
-        set_io(0x52, 0x060F);
+        io_set(0x48, 0x1F3F);
+        io_set(0x50, 0x3F41);
+        io_set(0x52, 0x060F);
         
         
     }
 }
 
 void trainerschool_selection_init(){
-    cb1handling();
-    gp_stack_push((int)cmalloc(sizeof(trainerschool_selection_memory)));
+    generic_callback1();
+    gp_stack_push((int)malloc_and_clear(sizeof(trainerschool_selection_memory)));
     TSS_MEM->cursor = 1;
-    init_fadescreen(1, 0);
-    set_callback1(trainerschool_selection_init_components);
+    fadescreen_all(1, 0);
+    callback1_set(trainerschool_selection_init_components);
     setflag(MAP_BGN_AUTO_ALIGN_OFF);
 }

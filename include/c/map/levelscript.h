@@ -14,4 +14,12 @@ typedef struct {
     MISALIGNED_32 levelscript;
 } levelscript_head;
 
+
+/**
+ * Checks if a levelscript can be triggered and returns it
+ * @param type the levelscript type to trigger
+ * @return the levelscript
+ */
+u8 *map_levelscript_get_if_triggered(u8 type);
+
 #endif /* INCLUDE_C_MAP_LEVELSCRIPT_H_ */

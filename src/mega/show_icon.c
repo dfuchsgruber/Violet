@@ -1,9 +1,9 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "oam.h"
 #include "callbacks.h"
 #include "mega.h"
-#include <stdbool.h>
+#include "color.h"
+#include "bios.h"
 
 extern const unsigned gfx_mega_triggerTiles[];
 extern const unsigned gfx_mega_triggerPal[];
@@ -52,17 +52,17 @@ void mega_show_icon() {
         u16 paltag = (mega_entry->regent == 1) ? (u16) (MEGA_ICON_TAG + 1) : MEGA_ICON_TAG;
         oam_template *temp = (mega_entry->regent == 1) ? &icon_template_reg : &icon_template;
 
-        u8 palid = get_obj_pal_by_tag(paltag);
+        u8 palid = oam_palette_get_index(paltag);
         if (palid == 0xFF) {
-            palid = allocate_obj_pal(paltag);
+            palid = oam_allocate_palette(paltag);
             lz77uncompwram(palette, (u32*) (0x020373F8 + (palid << 5)));
             lz77uncompwram(palette, (u32*) (0x020377F8 + (palid << 5)));
         }
 
-        if (get_obj_tile_by_tag(g->tag) == 0xFFFF) {
-            load_and_alloc_obj_vram_lz77(g);
+        if (oam_vram_get_tile(g->tag) == 0xFFFF) {
+            oam_load_graphic(g);
         }
-        u8 oid = generate_oam_forward_search(temp, 0x4C, 0x70, 0);
+        u8 oid = oam_new_forward_search(temp, 0x4C, 0x70, 0);
         oam_object* oam = &oams[oid];
         oam->private[2] = palid;
 
@@ -132,7 +132,8 @@ void icon_callback(oam_object *self) {
 
             //getting the palette
             u16 palid = self->private[2];
-            color_blend((u16) (0x100 + palid * 0x10), 0x7, (u8) (self->private[4]) >> 1, 0x7FFF);
+            color white = {.value = 0x7FFF};
+            pal_blend((u16) (0x100 + palid * 0x10), 0x7, (u8) (self->private[4]) >> 1, white);
             if (!self->private[3]) {
                 //we rise the color bits
                 if (self->private[4] >= 16) {
@@ -158,7 +159,7 @@ void icon_callback(oam_object *self) {
             //move the oam downwards
             if (self->private[1] == 0) {
                 //delete the oam
-                clear_oam_entry(self);
+                oam_clear(self);
             } else {
                 self->private[1] = (u16) (self->private[1] - 4);
                 self->y2 = (s16) (self->y2 + 4);

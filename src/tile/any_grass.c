@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "callbacks.h"
 #include "save.h"
 #include "tile/any_grass.h"
@@ -7,6 +6,9 @@
 #include "constants/vars.h"
 #include "debug.h"
 #include "color.h"
+#include "music.h"
+#include "vars.h"
+#include "flags.h"
 
 /*
  * Per each map on each bank we get an additional gras animation by this routine (a table determines which one)
@@ -32,7 +34,7 @@ palette any_grass_pals[] = {
 
 oam_template any_grass_templates[] = {
     {0xFFFF, 0x1080, (sprite*)0x83A35B4, (gfx_frame**)0x83A52E0,
-    any_grass_graphics, (rotscale_frame**)ROTSCALE_TABLE_NULL, (void (*)(oam_object *))0x80DB611}
+    any_grass_graphics, OAM_ROTSCALE_ANIM_TABLE_NULL, (void (*)(oam_object *))0x80DB611}
 };
 
 
@@ -48,7 +50,7 @@ any_grass tile_any_grasses[ANY_GRASS_CNT] = {
 };
 
 void any_grass_step(){
-    sound(0x15C);
+    play_sound(0x15C);
 }
 
 bool tile_is_any_grass(u8 behavior){
@@ -61,7 +63,7 @@ bool tile_is_high_grass(u8 behavior){
 
 
 u8 *ash_grass_player_step(){
-    u16 *collected = vardecrypt(ASH);
+    u16 *collected = var_access(ASH);
     if(checkflag(ASHBAG_RECEIVED) && *collected < 50000){
         (*collected)++;
     }
@@ -82,7 +84,7 @@ u8 tile_any_grass_init(coordinate *pos){
     int *overworld_effect_state = (int*)0x020386E0;
     s16 x = (s16)overworld_effect_state[0];
     s16 y = (s16)overworld_effect_state[1];
-    u8 behavior = (u8)get_block_info_behaviour(x, y);
+    u8 behavior = (u8)block_get_behaviour_by_pos(x, y);
     for(i = 0; tile_any_grasses[i].bank != 0xFF || tile_any_grasses[i].map != 0xFF; i++){
         if(tile_any_grasses[i].triggered_by_behavior == behavior &&(
                 ((*save1)->bank == tile_any_grasses[i].bank && 
@@ -93,17 +95,17 @@ u8 tile_any_grass_init(coordinate *pos){
             
             //Load appropriate palette if present
             if(tile_any_grasses[i].pal){
-                u8 pal_id = get_obj_pal_by_tag(tile_any_grasses[i].pal->tag);
+                u8 pal_id = oam_palette_get_index(tile_any_grasses[i].pal->tag);
                 if(pal_id == 0xFF)
-                    pal_id = allocate_obj_pal(tile_any_grasses[i].pal->tag);
+                    pal_id = oam_allocate_palette(tile_any_grasses[i].pal->tag);
                 u16 color = (u16)(pal_id * 16 + 256);
-                pal_load_uncomp(tile_any_grasses[i].pal->pal, color, 32);
-                pal_apply_shader_by_overworld_pal(pal_id);
-                pal_ow_fading_state_sync(pal_id);
+                pal_copy(tile_any_grasses[i].pal->pal, color, 32);
+                pal_apply_shader(pal_id);
+                pal_apply_fading(pal_id);
             }
             
             //Instanciate appropriate template
-            return generate_oam_backward_search(tile_any_grasses[i].temp, pos->x, pos->y, 0);
+            return oam_new_backward_search(tile_any_grasses[i].temp, pos->x, pos->y, 0);
         }
         
     }

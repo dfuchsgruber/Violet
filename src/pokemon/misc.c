@@ -1,11 +1,13 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "pokemon/virtual.h"
 #include "constants/pokemon_attributes.h"
+#include "bios.h"
+#include "vars.h"
+#include "attack.h"
 
 
 void pokemon_team_remove(){
-    int index = *vardecrypt(0x8004);
+    int index = *var_access(0x8004);
     int n = 0;
     cpuset(&n, &player_pokemon[index], 25 | CPUSET_FILL | CPUSET_WORD);
     int i;
@@ -15,15 +17,15 @@ void pokemon_team_remove(){
 }
 
 void pokemon_team_knows_hm(){
-    int index = *vardecrypt(0x8004);
-    *vardecrypt(0x800D) = pokemon_knows_hm(&player_pokemon[index]);
+    int index = *var_access(0x8004);
+    *var_access(0x800D) = pokemon_knows_hm(&player_pokemon[index]);
     
 }
 
 bool pokemon_knows_hm(pokemon *p){
     int i;
     for(i = 0; i < 4; i++){
-        if(move_is_hm((u16)get_pokemons_attribute(p, (u8)(ATTRIBUTE_ATTACK1+i), NULL)))
+        if(attack_is_hidden_machine((u16)pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1+i), NULL)))
             return true;
     }
     return false;

@@ -31,6 +31,24 @@ typedef struct trainer_variables {
 
 
 trainer_variables *trainer_vars = (trainer_variables*) 0x020386AC;
+
+/**
+ * Loads the items of a trainer into the virutal trainer state
+ * @param t_items the items a trainer possesses
+ */
 void load_trainer_items(trainer_items *t_items);
+
+/**
+ * Reads an unaligned hword form the trainer build mini script
+ * @param src the source to read from
+ * @return the hword that was read
+ */
+u16 trainer_get_unaligned_hword(void *src);
+
+/**
+ * Returns the flag associated with the current trainer
+ * @return the flag
+ */
+u16 trainer_get_flag();
 
 #endif /* INCLUDE_C_TRAINER_VIRTUAL_H_ */

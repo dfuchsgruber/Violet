@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_BATTLE_BATTLER_H_
 #define INCLUDE_C_BATTLE_BATTLER_H_
 
+#include <stdbool.h>
+
 typedef struct battler {
     u16 species;
     u16 stats[5];
@@ -61,6 +63,13 @@ u8 *battler_oams = (u8*) 0x02023D44;
 u8 *battler_cnt = (u8*) 0x02023BCC;
 u16 *battler_team_slots = (u16*) 0x02023BCE;
 u8 *battler_attacking_order = (u8*)0x02023BDE;
+
+/**
+ * Checks if a battler is an opponent
+ * @param index The battler index
+ * @return Whether the battler is an opponent
+ */
+bool battler_is_opponent(u8 index);
 
 battler_status *battler_statuses = (battler_status*)0x02023E8C;
 

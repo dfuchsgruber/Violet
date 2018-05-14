@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "map/wild_pokemon.h"
 #include "save.h"
 

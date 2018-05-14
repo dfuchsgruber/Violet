@@ -55,7 +55,35 @@ typedef struct pokemon {
 pokemon *player_pokemon = (pokemon*) 0x02024284;
 pokemon *opponent_pokemon = (pokemon*) 0x0202402C;
 
-void outdoor_move_buffer_load(pokemon *pokemon, u8 index);
+/**
+ * Gets the attribute of a virtual pokemon
+ * @param p The offset of the virtual pokemon
+ * @param requested_attribute Id of the attribute to get
+ * @param result Storage for the result if it is no scalar type (pass 0 otherwise)
+ */
+int pokemon_get_attribute(pokemon* p, int requested_attribute, void *result);
+
+/**
+ * Sets the attribute of a virtual pokemon
+ * @param p The offset of the virutal pokemon
+ * @param requested_attribute Id of the attribute to set
+ * @param value Pointer to the value to apply
+ */
+void pokemon_set_attribute(pokemon* p, int requested_attribute, void* value);
+
+
+/**
+ * Calculates the stats of a pokemon.
+ * @param p Pokemon to calculate the stats of
+ */
+void pokemon_calculate_stats(pokemon *p);
+
+/**
+ * Gets the number of pokemon in the player's party
+ * @return The number of pokemon in the player's party
+ */
+u8 pokemon_get_number_in_party();
+
 void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
 void pokemon_new(pokemon *space, u16 species, u8 level, u8 ev_split,
         bool pid_determined, pid pid, bool tid_determined, u32 tid);
@@ -68,6 +96,11 @@ void special_heal_team_index();
 void pokemon_team_remove();
 void pokemon_team_knows_hm();
 bool pokemon_knows_hm(pokemon *p);
+
+/**
+ * Heals all pokemon in the player's party
+ */
+void pokemon_heal_player_party();
 
 /**
  *

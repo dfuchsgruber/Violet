@@ -1,10 +1,10 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "overworld/npc.h"
 #include "tile/block.h"
 #include "tile/coordinate.h"
 #include "tile/diagonal_stair.h"
 #include "superstate.h"
+#include "agbmemory.h"
 
 /**
  * This enables sideway stairs: The following patterns show how the behaviorbytes must be alinged
@@ -31,7 +31,7 @@
  * [  ][  ][ 1]
  * 
  * Pattern B: Southwest / Northeast
- *  * [  ][ /][  ]
+ * [  ][ /][  ]
  * [  ][||][  ]        
  * [  ][||][  ]
  * [  ][ /][  ]
@@ -56,7 +56,7 @@ bool npc_side_stairway_init_if_possible(u8 diag) {
     if (diag >= 0x80) {
         u8 movements[4] = {0xAA, 0xAB, 0xAC, 0xAD};
         //TODO running shoes
-        player_npc_set_state_and_behavior_tile_anim(movements[diag - 0x80], 2);
+        npc_player_set_state_and_execute_tile_anim(movements[diag - 0x80], 2);
         return true;
     }
     return false;
@@ -71,12 +71,12 @@ bool npc_side_stairway_init_if_possible(u8 diag) {
  * @param behaviour
  * @return the diagonal move to do (0 if none)
  */
-u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direction, u8 role_to) {
+u8 block_triggers_diagnoal_move(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direction, u8 role_to) {
 
     //first we create a dummy npc we can mess with
     npc ncpy;
 
-    u16 role_current = get_block_info_behaviour(n->from_x, n->from_y);
+    u16 role_current = block_get_behaviour_by_pos(n->from_x, n->from_y);
     u8 result = npc_is_tile_blocked(n, x_to_origin, y_to_origin, direction);
 
     if (direction == 3) { //direction left
@@ -91,7 +91,7 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
             }
 
         } else if (role_to == BEHAVIOR_SIDE_STAIR_WEST) { //Northwest ascending check
-            if (get_block_info_behaviour(x_to_origin, (s16) (y_to_origin - 1)) != BEHAVIOR_SIDE_STAIR_WEST) {
+            if (block_get_behaviour_by_pos(x_to_origin, (s16) (y_to_origin - 1)) != BEHAVIOR_SIDE_STAIR_WEST) {
                 return 3;
             } else {
                 //In order to check for northwest ascend we have to move the ncpy one step up (y--)
@@ -117,7 +117,7 @@ u8 npc_is_tile_diag_enabling(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
             }
 
         } else if (role_to == BEHAVIOR_SIDE_STAIR_EAST) { //Northwest ascending check
-            if (get_block_info_behaviour(x_to_origin, (s16) (y_to_origin - 1)) != BEHAVIOR_SIDE_STAIR_EAST) {
+            if (block_get_behaviour_by_pos(x_to_origin, (s16) (y_to_origin - 1)) != BEHAVIOR_SIDE_STAIR_EAST) {
                 return 3;
             } else {
                 //In order to check for northwest ascend we have to move the ncpy one step up (y--)

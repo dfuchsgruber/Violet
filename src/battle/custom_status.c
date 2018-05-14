@@ -1,8 +1,6 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "battle/battler.h"
 #include "save.h"
-#include <stdbool.h>
 
 void battle_clear_temporary_custom_effects(bool clear_all){
     if(clear_all){

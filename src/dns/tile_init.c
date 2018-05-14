@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "rtc.h"
 #include "map/footer.h"
 #include "color.h"
@@ -7,6 +6,7 @@
 #include "dns.h"
 #include "debug.h"
 #include "constants/vars.h"
+#include "vars.h"
 
 extern tileset maptileset0;
 extern tileset maptileset1;
@@ -21,7 +21,7 @@ extern tileset maptileset251828;
 
 void tile_init(mapfooter *foot) {
 
-    if (*vardecrypt(SHADER_STATE) == 1 && !*built_in_shaders && dns_on()) {
+    if (*var_access(SHADER_STATE) == 1 && !*built_in_shaders && dns_on()) {
 
         u16 *pal_save_copy = (u16*) 0x020371F8;
 

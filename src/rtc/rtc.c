@@ -1,8 +1,7 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "rtc.h"
 #include "debug.h"
-
+#include "vars.h"
 
 static gpio *gpios = (gpio *) 0x080000C4;
 
@@ -10,7 +9,7 @@ u16 special_get_rtc() {
 
     rtc_timestamp stamp = {0, 0, 0, 0, 0, 0, 0};
     rtc_read(&stamp);
-    switch (*vardecrypt(0x8004)) {
+    switch (*var_access(0x8004)) {
 
         case 0:
             return stamp.year;

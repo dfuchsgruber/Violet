@@ -41,7 +41,7 @@ bool protect_attack_succeeds(){
         if(!(attacks[*active_attack].flags & AFFECTED_BY_PROTECT)) return true;
         dprintf("Category of attack is %d\n", attacks[*active_attack].category);
         if(attacks[*active_attack].category == CATEGORY_STATUS) return true;
-        if(move_needs_charging(*active_attack) && !(attacker->status2 &
+        if(attack_needs_charging(*active_attack) && !(attacker->status2 &
                 STATUS2_ATTACK_CHARGED)) return true;
         if(attacks[*active_attack].flags & MAKES_CONTACT)
             fmem->battle_custom_status[*attacking_battler] |=
@@ -52,7 +52,7 @@ bool protect_attack_succeeds(){
         if(!(attacks[*active_attack].flags & AFFECTED_BY_PROTECT)) return true;
         if(*active_attack == ATTACK_FLUCH && attacker->type1 != TYPE_GHOST &&
                 attacker->type2 != TYPE_GHOST) return true; //curse succeeds
-        if(move_needs_charging(*active_attack)){
+        if(attack_needs_charging(*active_attack)){
             //check if the user has done the charging round or is starting the
             //charge
             if(!(attacker->status2 & STATUS2_ATTACK_CHARGED)) return true;
@@ -67,7 +67,7 @@ void bsc_push_kings_shield_drop(){
         && attacker->stat_changes[1] > 0){
         if(attacker->stat_changes[1] == 1) attacker->stat_changes[1] = 0;
         else attacker->stat_changes[1] = (u8)(attacker->stat_changes[1]  - 2);
-        bsc_push_next_cmd();
+        battlescript_callstack_push_next_command();
         *bsc_offset = bsc_kings_shield_drop;
     }
 }

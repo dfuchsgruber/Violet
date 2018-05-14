@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "battle/battler.h"
 #include "battle/battlescript.h"
 #include "mega.h"

@@ -1,6 +1,5 @@
 #include "types.h"
 #include <stdbool.h>
-#include "romfuncs.h"
 #include "oam.h"
 #include "callbacks.h"
 #include "mega.h"
@@ -11,6 +10,10 @@
 #include "trainer/virtual.h"
 #include "item/item.h"
 #include "constants/vars.h"
+#include "battle/battlescript.h"
+#include "vars.h"
+#include "battle/battler.h"
+#include "abilities.h"
 
 
 u8 str_mega_reacts[] = LANGDEP(
@@ -49,7 +52,7 @@ void cb_mega_anim(u8 self) {
     //execute bsc if bsc active
     u8 battle_state = *((u8*) 0x02023BE3);
     if (battle_state == 0xC) {
-        bsc_executer();
+        battlescript_execute();
     }
 
     
@@ -96,8 +99,8 @@ void cb_mega_anim(u8 self) {
                     case 1:
                     {
                         //We request the mega item (depending on side)
-                        u16 item = is_opponent(slot) ? *(vardecrypt(OPPONENT_MEGA_ITEM))
-                        		: *(vardecrypt(PLAYER_MEGA_ITEM));
+                        u16 item = battler_is_opponent(slot) ? *(var_access(OPPONENT_MEGA_ITEM))
+                        		: *(var_access(PLAYER_MEGA_ITEM));
                         ram_buf = (strcpy(ram_buf, items[item].name));
                         break;
                     }
@@ -105,7 +108,7 @@ void cb_mega_anim(u8 self) {
                     {
                         //We request the pokemons name
                         ram_buf = (strcpy(ram_buf, battlers[slot].name));
-                        if (is_opponent(slot)) {
+                        if (battler_is_opponent(slot)) {
                             ram_buf = strcpy(ram_buf, str_mega_opp);
                         }
                         break;
@@ -120,7 +123,7 @@ void cb_mega_anim(u8 self) {
                     case 4:
                     {
                         //We request the ot-name
-                        if (!is_opponent(slot)) {
+                        if (!battler_is_opponent(slot)) {
                             ram_buf = (strcpy(ram_buf, (*(u8**) 0x03004F5C)));
                         } else {
                             u16 trainer_id = trainer_vars->trainer_id;
@@ -146,7 +149,7 @@ void cb_mega_anim(u8 self) {
             }
         }
         *ram_buf = 0xFF; //adding the end of string to the ram buffer
-        battle_printmsg(strbuf, 0x40);
+        battle_print_string(strbuf, 0x40);
     }
 
 
@@ -183,14 +186,14 @@ void cb_mega_anim(u8 self) {
         mega_disable_blurr(slot);
         
         *((u8*) 0x02023BE3) = (u8) (cself->params[3]);
-        remove_big_callback(self);
+        big_callback_delete(self);
         //dprintf("removed callback with slot %d\n", 8);
         //dprintf("executing ability_management with %d\n", 4);
 
         dprintf("Hello world\nLinebreak:%d", 57);
         //we know execute ability management for battle enter
         *((u8*) 0x02023D6B) = slot; //active index is current slot
-        ability_management(0, slot, 0, 0, 0);
+        ability_execute(0, slot, 0, 0, 0);
 
 
     } else {

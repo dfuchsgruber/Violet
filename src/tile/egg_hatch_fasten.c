@@ -1,6 +1,6 @@
 #include "types.h"
 #include "stdbool.h"
-#include "romfuncs.h"
+#include "vars.h"
 #include "pokemon/virtual.h"
 #include "tile/block.h"
 #include "save.h"
@@ -11,10 +11,10 @@
 
 void egg_warm_update(){
     s16 pos[2];
-    get_current_tile_position(&pos[0], &pos[1]);
-    u8 behavior = (u8)get_block_info_behaviour(pos[0], pos[1]);
+    player_get_position(&pos[0], &pos[1]);
+    u8 behavior = (u8)block_get_behaviour_by_pos(pos[0], pos[1]);
     
-    u16 *v_hatching_fastened_left = vardecrypt(HATCHING_BOOST_STEPS);
+    u16 *v_hatching_fastened_left = var_access(HATCHING_BOOST_STEPS);
     
     if ((*save1)->bank == 3 && (*save1)->map == 6 && behavior == 0x28){
         //restore 1000 to the var
@@ -27,7 +27,7 @@ void egg_warm_update(){
 }
 
 bool pokemon_party_has_flamebody(){
-    u8 pokemon_cnt = countpokemon();
+    u8 pokemon_cnt = pokemon_get_number_in_party();
     while(--pokemon_cnt){
         if(get_pokemons_ability(&player_pokemon[pokemon_cnt]) == FLAMMKOERPER)
             return true;
@@ -36,7 +36,7 @@ bool pokemon_party_has_flamebody(){
 }
 
 void pokemon_hatch_decrement(pokemon *p){
-    int cycles = (int)get_pokemons_attribute(p, ATTRIBUTE_HAPPINESS, NULL);
+    int cycles = (int)pokemon_get_attribute(p, ATTRIBUTE_HAPPINESS, NULL);
     //get hatch decremnt by different values
     int base = 16;
     int eggs_hatched = save_get_key(0xD); //Eggs hatched
@@ -52,7 +52,7 @@ void pokemon_hatch_decrement(pokemon *p){
         base = 20;
     }
     
-     base += 49 * (*vardecrypt(HATCHING_BOOST_STEPS)) / 1000;
+     base += 49 * (*var_access(HATCHING_BOOST_STEPS)) / 1000;
 
     
     int cdif = base / 16;
@@ -63,5 +63,5 @@ void pokemon_hatch_decrement(pokemon *p){
         cycles_new = cycles - cdif;
     }
     
-    set_pokemons_attribute(p, ATTRIBUTE_HAPPINESS, &cycles_new);
+    pokemon_set_attribute(p, ATTRIBUTE_HAPPINESS, &cycles_new);
 }

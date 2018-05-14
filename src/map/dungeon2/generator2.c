@@ -8,10 +8,10 @@
 #include "save.h"
 #include "dungeon2.h"
 #include "debug.h"
-#include "romfuncs.h"
 #include "math.h"
-
-
+#include "bios.h"
+#include "agbmemory.h"
+#include "prng.h"
 
 void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2){
     dprintf("Iterating map with nlb %d and hub %d\n", near_lower_bound, far_upper_bound);

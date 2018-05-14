@@ -24,7 +24,7 @@ void anim_engine_yin_yang_fade_big_callback(u8 self) {
             set_io(0x52, 0x1f);
             big_callbacks[self].params[0]++; //next state
             big_callbacks[self].params[1] = 80; //sound wait
-            sound(8);
+            play_sound(8);
             break;
         }
         case 2:
@@ -53,7 +53,7 @@ void anim_engine_yin_yang_fade_big_callback(u8 self) {
             int n = 0;
             cpuset(&n, bg_get_tilemap(0), 0x5000200); //fill bg with 0
             bg_virtual_sync(0);
-            remove_big_callback(self);
+            big_callback_delete(self);
             break;
         }
     }

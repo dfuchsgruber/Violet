@@ -1,15 +1,15 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "transparency.h"
 #include "debug.h"
 #include "battle/battler.h"
 #include "constants/vars.h"
 #include "constants/flags.h"
-
+#include "vars.h"
+#include "flags.h"
 
 void whiteout(){
-    *vardecrypt(BATTLE_SONG_OVERRIDE) = 0;
-    *vardecrypt(SONG_OVERRIDE) = 0;
+    *var_access(BATTLE_SONG_OVERRIDE) = 0;
+    *var_access(SONG_OVERRIDE) = 0;
     clearflag(TRANS_DISABLE);
     setflag(TRANS_PALETTE_FETCH);
 }

@@ -172,7 +172,7 @@ void groudon_anim_step_cb(u8 self){
             set_io(0x16, (u16)(get_io(0x16)+1));
         
     }else{
-        remove_big_callback(self);
+        big_callback_delete(self);
     }
     
     
@@ -204,7 +204,7 @@ void groudon_anim_earthquake_cb(u8 self){
     u16 *slast = &(big_callbacks[self].params[5]);
     
     if(frame > duration){
-        remove_big_callback(self);
+        big_callback_delete(self);
     }else{
         //y(x) = A * sin(x * T / (2pi)) * hwt(x, T/2, 1)
         //T := 4 * speed
@@ -232,7 +232,7 @@ void groudon_anim_diserakt_cb (u8 self){
     
     
     if(fmem->ae_mem->vars[1]){
-        remove_big_callback(self);
+        big_callback_delete(self);
         return;
     }
     
@@ -264,11 +264,11 @@ void groudon_anim_diserakt_cb (u8 self){
         }
     }
     u8 intensity = (u8)big_callbacks[self].params[2];
-    int dst_pal = get_obj_pal_by_tag(0xA0A1) + 16;
+    int dst_pal = oam_palette_get_index(0xA0A1) + 16;
     int i;
     for(i = 0; i < 8; i++){
         color d = {dst_col};
-        color n = alpha_blend(pal_restore[dst_pal*16+i], d, intensity);
+        color n = color_alpha_blend(pal_restore[dst_pal*16+i], d, intensity);
         pals[dst_pal*16+i] = n;
     }
     
@@ -278,7 +278,7 @@ void groudon_cb_grey_fade(u8 self){
     big_callback *bself = &big_callbacks[self];
     if(bself->params[0] == 16){
         cpuset(pals, pal_restore, 512 | CPUSET_HALFWORD );
-        remove_big_callback(self);
+        big_callback_delete(self);
     }else{
         bself->params[0] = (u16)(bself->params[0]+1);
         int intensity = bself->params[0]*1;
@@ -290,7 +290,7 @@ void groudon_cb_grey_fade(u8 self){
            
             color middle_col = {(u16)((middle_int << 5) | (middle_int << 10)| middle_int)};
             
-            pals[i] = alpha_blend(pal_restore[i], middle_col, (u8)intensity);
+            pals[i] = color_alpha_blend(pal_restore[i], middle_col, (u8)intensity);
         }
     }
 }
@@ -299,9 +299,9 @@ oam_template oam_template_groudon_head = {
     0xA0A0,
     0xA0A0,
     &sprite_groudon_head,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     &graphic_groudon_head,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_callback_groudon_head
 };
 
@@ -309,9 +309,9 @@ oam_template oam_template_groudon_arm_left = {
     0xA0A1,
     0xA0A0,
     &sprite_groudon_32_16_front,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     &graphic_groudon_arm_left,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_callback_groudon_arm
 };
 
@@ -319,9 +319,9 @@ oam_template oam_template_groudon_arm_right = {
     0xA0A2,
     0xA0A0,
     &sprite_groudon_32_16_back,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     &graphic_groudon_arm_left,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_callback_groudon_arm
 };
 
@@ -329,9 +329,9 @@ oam_template oam_template_groudon_leg_left = {
     0xA0A3,
     0xA0A0,
     &sprite_groudon_32_16_front,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     &graphic_groudon_leg_left,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -339,9 +339,9 @@ oam_template oam_template_groudon_leg_right = {
     0xA0A4,
     0xA0A0,
     &sprite_groudon_32_16_back,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     &graphic_groudon_leg_right,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -349,9 +349,9 @@ oam_template oam_template_groudon_diserakt = {
     0xA0A5,
     0xA0A1,
     &sprite_groudon_head,
-    GFX_ANIM_TABLE_NULL,
+    OAM_GFX_ANIM_TABLE_NULL,
     &graphic_groudon_diserakt,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
     
 };

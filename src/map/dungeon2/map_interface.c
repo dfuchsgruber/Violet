@@ -4,9 +4,10 @@
 #include "save.h"
 #include "dungeon2.h"
 #include "debug.h"
-#include "romfuncs.h"
 #include "constants/map_weathers.h"
 #include "map/footer.h"
+#include "agbmemory.h"
+#include "prng.h"
 
 extern tileset maptileset0;
 extern tileset maptileset15;
@@ -124,7 +125,7 @@ void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2){
             /*TODO*/
             u16 block = dungeon2_compute_block_forest(map, over, x, y, dg2);
             //dprintf("DG2 block %x, %x -> %x\n", x, y, block);
-            set_block_id((s16)(x + 7), (s16)(y + 7), block);
+            block_set_by_pos((s16)(x + 7), (s16)(y + 7), block);
         }
     }
 }

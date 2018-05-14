@@ -1,6 +1,5 @@
 #include "types.h"
 #include "stdbool.h"
-#include "romfuncs.h"
 #include "pokepad/gui.h"
 #include "pokepad/pokedex/gui.h"
 #include "pokepad/pokedex/operator.h"
@@ -16,6 +15,9 @@
 #include "superstate.h"
 #include "transparency.h"
 #include "language.h"
+#include "fading.h"
+#include "music.h"
+#include "agbmemory.h"
 
 bool pokedex_callback_list_mode_proceed() {
     switch (fmem->dex_mem->list_mode) {
@@ -62,7 +64,7 @@ void pokedex_callback_list_enter_mode(u8 mode) {
 }
 
 void pokedex_callback_list() {
-    cb1handling();
+    generic_callback1();
 
     if (super->keys_new.keys.down) {
         pokedex_callback_list_enter_mode(1);
@@ -75,16 +77,16 @@ void pokedex_callback_list() {
     } else if (super->keys_new.keys.A) {
         //Todo enter page
         if (fmem->dex_mem->list[fmem->dex_mem->current_list_index].seen) {
-            sound(5);
-            set_callback1(pokedex_callback_init_entry);
-            init_fadescreen(1, 0);
+            play_sound(5);
+            callback1_set(pokedex_callback_init_entry);
+            fadescreen_all(1, 0);
             return;
         }
     } else if (super->keys_new.keys.B) {
         //Todo return to group selection
         fmem->dex_mem->in_list = false;
-        set_callback1(pokedex_callback_group_selection);
-        sound(5);
+        callback1_set(pokedex_callback_group_selection);
+        play_sound(5);
         return;
     }
     //No new key was pressed, check if we stay in mode
@@ -101,7 +103,7 @@ void pokedex_callback_list() {
             if (index_new > pokedex_get_last_seen())
                 index_new = pokedex_get_last_seen();
             if (index_new != index_old) {
-                sound(5);
+                play_sound(5);
                 fmem->dex_mem->current_list_index = (u16) index_new;
                 fmem->dex_mem->list_countdown = fmem->dex_mem->list_fast_mode ? 0 : 8;
                 pokedex_update_list();
@@ -167,10 +169,10 @@ void pokedex_update_list() {
     u8 str_none [] = {0, 0xFF};
     u8 str_pokepad_pokedex_cursor [] = {0xEF, 0xFF};
 
-    tbox_flush(POKEDEX_TBOX_LIST_NAME, 0);
-    tbox_flush(POKEDEX_TBOX_LIST_TYPES, 0);
-    tbox_flush(POKEDEX_TBOX_LIST_CAPTURE, 0);
-    tbox_flush(POKEDEX_TBOX_LIST_NR, 0);
+    tbox_flush_set(POKEDEX_TBOX_LIST_NAME, 0);
+    tbox_flush_set(POKEDEX_TBOX_LIST_TYPES, 0);
+    tbox_flush_set(POKEDEX_TBOX_LIST_CAPTURE, 0);
+    tbox_flush_set(POKEDEX_TBOX_LIST_NR, 0);
     int i = 0;
     while (first <= last) {
         u16 y_pixel = (u16) (14 * i);
@@ -178,18 +180,18 @@ void pokedex_update_list() {
         //We create the number string
         pokedex_tbox_draw_num(POKEDEX_TBOX_LIST_NR, 0, list[first].species, 0xC, y_pixel);
 
-        //buf = str_append(buf, first == fmem->dex_mem->current_list_index ? str_arrow : str_none);
+        //buf = strcat(buf, first == fmem->dex_mem->current_list_index ? str_arrow : str_none);
         if (first == fmem->dex_mem->current_list_index) {
-            buf = str_append(buf, str_pokepad_pokedex_cursor);
+            buf = strcat(buf, str_pokepad_pokedex_cursor);
         }
         if (list[first].seen) {
-            buf = str_append(buf, pokemon_names[list[first].species]);
+            buf = strcat(buf, pokemon_names[list[first].species]);
         } else {
             u8 str_pokedex_unkown[] = PSTRING("-----");
-            buf = str_append(buf, str_pokedex_unkown);
+            buf = strcat(buf, str_pokedex_unkown);
         }
         u8 str_newline[] = PSTRING("\n");
-        buf = str_append(buf, str_newline);
+        buf = strcat(buf, str_newline);
 
 
         if (list[first].caught) {
@@ -219,10 +221,10 @@ void pokedex_update_list() {
     tbox_tilemap_draw(POKEDEX_TBOX_LIST_TYPES);
     tbox_tilemap_draw(POKEDEX_TBOX_LIST_CAPTURE);
     tbox_tilemap_draw(POKEDEX_TBOX_LIST_NR);
-    tbox_print_string(POKEDEX_TBOX_LIST_NAME, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
-    tbox_print_string(POKEDEX_TBOX_LIST_TYPES, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_none);
-    tbox_print_string(POKEDEX_TBOX_LIST_CAPTURE, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_none);
-    tbox_print_string(POKEDEX_TBOX_LIST_NR, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_none);
+    tbox_print_string(POKEDEX_TBOX_LIST_NAME, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
+    tbox_print_string(POKEDEX_TBOX_LIST_TYPES, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_none);
+    tbox_print_string(POKEDEX_TBOX_LIST_CAPTURE, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_none);
+    tbox_print_string(POKEDEX_TBOX_LIST_NR, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_none);
     bg_virtual_sync(0);
 
     //while(true){}

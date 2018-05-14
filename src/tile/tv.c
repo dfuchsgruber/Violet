@@ -1,9 +1,8 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "tile/tv.h"
 #include "constants/vars.h"
 #include "language.h"
-
+#include "vars.h"
 
 //Text format :=...Es laufen [XXX]:YYYYYYY....
 //Beispiel: Es laeuft eine Doku: Blablabla
@@ -22,11 +21,9 @@ u8 str_tv_primus[];
 u8 str_tv_aktania[];
 
 
-
-
 u8 *get_tv_text() {
 
-    u16 story_prog = *vardecrypt(STORY_PROGRESS);
+    u16 story_prog = *var_access(STORY_PROGRESS);
     if (story_prog < 0xB) {
         return str_tv_champion_report; //Sendung Uli und Klaus
     }

@@ -23,7 +23,7 @@ void pokedex_big_callback_resort(u8 self) {
     switch (big_callbacks[self].params[0]) {
         case 0:
         { //init resort (win1 feature)
-            sound(6);
+            play_sound(6);
             u16 dispcnt = get_io(0) | 0x4000;
             set_io(0, dispcnt);
             set_io(0x48, 0x81F); //everything is in window 0 but nothing is in window 1
@@ -58,7 +58,7 @@ void pokedex_big_callback_resort(u8 self) {
             }
             pokedex_update_list();
             big_callbacks[self].params[0] = 3;
-            sound(6);
+            play_sound(6);
             break;
         }
         case 3:
@@ -69,7 +69,7 @@ void pokedex_big_callback_resort(u8 self) {
                 u16 dispcnt = (u16) (get_io(0) & (~0x4000));
                 set_io(0, dispcnt);
                 fmem->dex_mem->resorting = false;
-                remove_big_callback(self);
+                big_callback_delete(self);
             } else {
                 big_callbacks[self].params[1] = (u16) (big_callbacks[self].params[1] + 8);
             }
@@ -89,17 +89,17 @@ void pokedex_big_callback_resort(u8 self) {
 }
 
 void pokedex_callback_sort() {
-    cb1handling();
+    generic_callback1();
     if (fmem->dex_mem->resorting)
         return;
     if (super->keys_new.keys.B) {
         //return to group selection
         oams[fmem->dex_mem->oam_sort_cursor].anim_number = 0;
-        gfx_init_animation(&oams[fmem->dex_mem->oam_sort_cursor], 0);
+        oam_gfx_anim_init(&oams[fmem->dex_mem->oam_sort_cursor], 0);
         fmem->dex_mem->sort_cursor_pos = fmem->dex_mem->current_comparator & 3;
         pokedex_sort_locate_cursor();
-        set_callback1(pokedex_callback_group_selection);
-        sound(5);
+        callback1_set(pokedex_callback_group_selection);
+        play_sound(5);
         return;
     } else if (super->keys_new.keys.A) {
         //log new sorting
@@ -113,16 +113,16 @@ void pokedex_callback_sort() {
             fmem->dex_mem->reverse_req = false;
         }
         fmem->dex_mem->resorting = true;
-        sound(5);
-        big_callbacks[spawn_big_callback(pokedex_big_callback_resort, 0)].params[0] = 0;
+        play_sound(5);
+        big_callbacks[big_callback_new(pokedex_big_callback_resort, 0)].params[0] = 0;
     } else if (super->keys_new.keys.left && fmem->dex_mem->sort_cursor_pos > 0) {
         fmem->dex_mem->sort_cursor_pos--;
         pokedex_sort_locate_cursor();
-        sound(5);
+        play_sound(5);
     } else if (super->keys_new.keys.right && fmem->dex_mem->sort_cursor_pos < 3) {
         fmem->dex_mem->sort_cursor_pos++;
         pokedex_sort_locate_cursor();
-        sound(5);
+        play_sound(5);
     }
 
 }

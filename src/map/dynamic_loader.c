@@ -1,12 +1,11 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "oam.h"
 #include "callbacks.h"
 #include "save.h"
-#include <stdbool.h>
 #include "map/header.h"
 #include "dungeon2.h"
 #include "constants/vars.h"
+#include "vars.h"
 
 
 mapheader *get_mapheader(u8 bank, u8 map) {
@@ -37,6 +36,6 @@ mapfooter *get_mapfooter() {
 }
 
 int dungeon_get_type() {
-    u16 *dtype = vardecrypt(DUNGEON_TYPE);
+    u16 *dtype = var_access(DUNGEON_TYPE);
     return *dtype;
 }

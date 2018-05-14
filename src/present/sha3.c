@@ -4,10 +4,9 @@
  * ---------------------------------------------------------------------- */
 
 #include "types.h"
-#include "romfuncs.h"
 #include "present.h"
+#include "agbmemory.h"
 
-#define KECACK_F_ROUNDS 24
 
 // Round constants
 u64 keccakf_rndc[24] = {

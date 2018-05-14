@@ -5,8 +5,7 @@
 #include "constants/items.h"
 #include "constants/pokemon_attributes.h"
 #include "battle/battlescript.h"
-#include "romfuncs.h"
-
+#include "prng.h"
 
 u16 mitnahme_items[10][11] = {
   //1, 1, 3, 3, 3, 3, 3, 3, 5, 10, 30 in %
@@ -24,8 +23,8 @@ u16 mitnahme_items[10][11] = {
 };
 
 u16 *mitnahme_pick_item(pokemon *p){
-    u32 l = (get_pokemons_attribute(p, ATTRIBUTE_LEVEL, 0)-1) / 10;
-    u32 r = rnd16() % 100;
+    int l = (pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0)-1) / 10;
+    int r = rnd16() % 100;
     if(r < 1) return &mitnahme_items[l][0];
     if(r < 2) return &mitnahme_items[l][1];
     if(r < 5) return &mitnahme_items[l][2];
@@ -42,12 +41,12 @@ void bsc_cmd_mitnahme(){
     
     int i;
     for (i = 0; i < 6; i++){
-        if(!get_pokemons_attribute(&player_pokemon[i], ATTRIBUTE_ITEM, 0) && 
-                !get_pokemons_attribute(&player_pokemon[i], ATTRIBUTE_IS_EGG, 0) &&
+        if(!pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_ITEM, 0) && 
+                !pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_IS_EGG, 0) &&
                 get_pokemons_ability(&player_pokemon[i]) == MITNAHME &&
-                !__aeabi_uidivmod(rnd16(), 10)){
+                rnd16() % 10){
             //Trigger 'Mitnahme' on this pokemon
-            set_pokemons_attribute(&player_pokemon[i], ATTRIBUTE_ITEM, mitnahme_pick_item(&player_pokemon[i]));
+            pokemon_set_attribute(&player_pokemon[i], ATTRIBUTE_ITEM, mitnahme_pick_item(&player_pokemon[i]));
         }
     }
     

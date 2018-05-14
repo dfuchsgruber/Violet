@@ -1,10 +1,11 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "present.h"
 #include "text.h"
 #include "overworld/script.h"
 #include "constants/species.h"
 #include "language.h"
+#include "agbmemory.h"
+#include "vars.h"
 
 u8 str_present_query[] = LANGDEP(
     PSTRING("Geschenkcode?"),
@@ -81,10 +82,10 @@ void present_query_closure(){
     
     u8 *script = present_get_matching_md(md);
     if(script){
-        *ow_script_virtual_ptr = script;
-        *vardecrypt(0x800D) = 1;
+        *overworld_script_virtual_ptr = script;
+        *var_access(0x800D) = 1;
     }else{
-        *vardecrypt(0x800D) = 0;
+        *var_access(0x800D) = 0;
     }
     
     void (*std_closure_and_map_reload)() = (void(*)())(0x08056900 | 1);

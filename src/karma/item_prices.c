@@ -7,7 +7,7 @@ int modify_item_prices(int price) {
 
     int price_new = price;
 
-    switch (*vardecrypt(DIFFICULTY)) {
+    switch (*var_access(DIFFICULTY)) {
 
         case 0:
             price_new >>= 1; //0.5
@@ -24,7 +24,7 @@ int modify_item_prices(int price) {
     }
 
     //We use karma as a factor from 0.5 to 1.5
-    int factor = 0x100 + ((s16) (*vardecrypt(KARMA_POINTS)));
+    int factor = 0x100 + ((s16) (*var_access(KARMA_POINTS)));
     price_new *= factor;
     price_new >>= 8;
 

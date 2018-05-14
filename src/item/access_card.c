@@ -1,10 +1,14 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "multichoice.h"
 #include "constants/flags.h"
 #include "access_card.h"
 #include "constants/vars.h"
 #include "map/header.h"
+#include "flags.h"
+#include "agbmemory.h"
+#include "overworld/script.h"
+#include "overworld/map_control.h"
+#include "vars.h"
 
 
 access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
@@ -16,7 +20,7 @@ access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
 void access_card_print_multichoice() {
 
     //iterate through all access cards
-	dynamic_multichoice_t *d_elements = cmalloc(sizeof(dynamic_multichoice_t) * ACCESS_CARD_ELEMENT_CNT);
+	dynamic_multichoice_t *d_elements = malloc_and_clear(sizeof(dynamic_multichoice_t) * ACCESS_CARD_ELEMENT_CNT);
     int i;
     u16 displayed = 0;
     for (i = 0; i < ACCESS_CARD_ELEMENT_CNT; i++) {
@@ -26,19 +30,19 @@ void access_card_print_multichoice() {
         d_elements[displayed++].text = access_card_element_names[i];
     }
     if (displayed) {
-        *vardecrypt(DYN_MULTICHOICE_ITEM_CNT) = displayed;
+        *var_access(DYN_MULTICHOICE_ITEM_CNT) = displayed;
         void **script_state_pointers = (void**) 0x03000F14;
         *script_state_pointers = d_elements;
         if (multichoice(0, 0, 0, false)) {
-            script_halt();
+            overworld_script_halt();
         }
     }
     free(d_elements);
 }
 
 void access_card_execute_elevator() {
-    *vardecrypt(DYN_MULTICHOICE_ITEM_CNT) = 0;
-    int index = *vardecrypt(0x800D);
+    *var_access(DYN_MULTICHOICE_ITEM_CNT) = 0;
+    int index = *var_access(0x800D);
     int i;
     for (i = 0; i < ACCESS_CARD_ELEMENT_CNT; i++) {
         if (access_card_elements[i].flag) {
@@ -48,15 +52,15 @@ void access_card_execute_elevator() {
             index--;
         } else {
 
-            u16 *current_eg = vardecrypt(LAZ_CORP_CURRENT_LEVEL);
-            *vardecrypt(0x8006) = access_card_elements[*current_eg].virtual_eg;
-            *vardecrypt(0x8005) = access_card_elements[i].virtual_eg;
+            u16 *current_eg = var_access(LAZ_CORP_CURRENT_LEVEL);
+            *var_access(0x8006) = access_card_elements[*current_eg].virtual_eg;
+            *var_access(0x8005) = access_card_elements[i].virtual_eg;
             //We reached the table entry we looked for
             if (*current_eg == i) {
-                *vardecrypt(0x800D) = 0;
+                *var_access(0x800D) = 0;
             } else {
                 *current_eg = (u16) i;
-                *vardecrypt(0x800D) = 1;
+                *var_access(0x800D) = 1;
             }
             map_event_warp w = get_mapheader(access_card_elements[i].bank, access_card_elements[i].map)->events->warps[access_card_elements[i].exit];
 
@@ -68,5 +72,5 @@ void access_card_execute_elevator() {
 }
 
 void access_card_init_by_atrium() {
-    *vardecrypt(LAZ_CORP_CURRENT_LEVEL) = ACCESS_CARD_INDEX_ATRIUM;
+    *var_access(LAZ_CORP_CURRENT_LEVEL) = ACCESS_CARD_INDEX_ATRIUM;
 }

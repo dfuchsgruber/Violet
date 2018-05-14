@@ -37,4 +37,27 @@ typedef struct superstate {
 
 superstate *super = (superstate*) 0x03003040;
 
+/**
+ * Generic callback1 that manages most of the game state (can be called inside other callback1s)
+ */
+void generic_callback1();
+
+/**
+ * Sets the callback1
+ * @param f the callback function to set
+ */
+void callback1_set(void (*f)());
+
+/**
+ * Sets the callback2
+ * @param f the callback function to set
+ */
+void callback2_set(void (*f)());
+
+/**
+ * Sets the callback3
+ * @param f the callback function to set
+ */
+void callback3_set(void (*f)());
+
 #endif

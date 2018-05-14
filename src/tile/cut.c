@@ -1,6 +1,5 @@
 
 #include "types.h"
-#include "romfuncs.h"
 
 u16 cut_table[][2] = {
 	{0x10, 0x11},

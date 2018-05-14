@@ -15,7 +15,7 @@ PYMAP2S=@pymap2s.py
 PYPROJ2S=@pyproj2s.py
 PYPREPROC=@pypreproc.py
 PYMAPCONSTEX=pymapconstex.py
-
+READELF=@arm-none-eabi-readelf
 
 # Py-Preprocessor settings (pypreproc.py)
 CHARMAP=charmap.txt
@@ -26,24 +26,41 @@ CLANGMACRO=PSTRING
 # Define compiler flags
 ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
-CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
+CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Werror -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs
 GRITFLAGS=-fh! -ftc
 WAVFLAGS=-c
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
-
-# Misc
 BLDPATH= bld
+
 MAPPROJ=proj.pmp
+
+# Pokemon crawler settings
+PKMNCRAWLERDATA=bld/pkmncrawlerdata.pkl
+# Define the symbol of the evolution talbe (linked elf is parsed by movegenerator)
+PKMNEVOTABLE=pokemon_evolutions
+# Define a file that contains information about the .text section of the linked file
+# and also location and size of the evolution table
+LINKEDTEXTHEADER=$(BLDPATH)/linked.o.text
+LINKEDEVOTABLEHEADER=$(BLDPATH)/linked.o.evotable
+PKMNLVLUPATTACKS=pokemon_moves
+PKMNEGGMOVES=pokemon_egg_moves
+PKMNTMCOMPATIBILITY=pokemon_tm_compatibility
+PKMNMOVETUTORCOMPATIBILITY=pokemon_move_tutor_compatibility
+PKMNINACESSIBLEMOVES=pokemon_inacessible_moves
+
+
+
 
 # Fata morgana lookup table generator settings 
 # Define the map the fata morgana is executed on
 DESERTMAP=src/map/banks/3/21/map_3_21.pmh
 # Define the symbol of the lookup table
-FATAMORGANALOTABLE=fata_morgana_blocks
+FATAMORGANALUT=fata_morgana_blocks
 # Define the symbol of the lookup table size
-FATAMORGANALOTABLESIZE=fata_morgana_blocks_cnt
+FATAMORGANALUTSIZE=fata_morgana_blocks_cnt
+
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
 
@@ -164,9 +181,28 @@ $(BLDPATH)/$(basename $(MAPPROJ)).o: $(MAPPROJ)
 # Fata morgana lookup table
 $(BLDPATH)/fata_morgana.o: $(DESERTMAP)
 #	Run python script for generating a sorted list of morgana tiles
-	@echo "Creating fata morgana lookup table $(FATAMORGANALOTABLE) of size $(FATAMORGANALOTABLESIZE) based on $(DESERTMAP)..."
-	$(PY3) tools/fata_morgana_gen.py $(DESERTMAP) $(BLDPATH)/fata_morgana.s $(FATAMORGANALOTABLE) $(FATAMORGANALOTABLESIZE)
+	@echo "Creating fata morgana lookup table $(FATAMORGANALUT) of size $(FATAMORGANALUTSIZE) based on $(DESERTMAP)..."
+	$(PY3) tools/fata_morgana_gen.py $(DESERTMAP) $(BLDPATH)/fata_morgana.s $(FATAMORGANALUT) $(FATAMORGANALUTSIZE)
 	$(AS) $(ASFLAGS) $(BLDPATH)/fata_morgana.s -o $(BLDPATH)/fata_morgana.o
+
+	
+# Pokemon crawler
+$(PKMNCRAWLERDATA): 
+	@echo "Fetching pokemon data form pokewiki.de..."
+	$(PY3) tools/pokemon_move_generator_fetch.py $(PKMNCRAWLERDATA)	$(MAPPROJ)
+	
+$(BLDPATH)/pkmnmoves.o: $(PKMNCRAWLERDATA) $(BLDPATH)/src.o
+	@echo "Dumping .text header of linked.o elf into $(LINKEDTEXTHEADER)..."
+	$(READELF) -S $(BLDPATH)/src.o | grep ".text" > $(LINKEDTEXTHEADER)
+	@echo "Dumping offset of $(PKMNEVOTABLE) into $(LINKEDEVOTABLEHEADER)..."
+	$(READELF) -s $(BLDPATH)/src.o | grep $(PKMNEVOTABLE) > $(LINKEDEVOTABLEHEADER)
+	$(PY3) tools/pokemon_move_generator.py $(MAPPROJ) $(BLDPATH)/src.o $(LINKEDTEXTHEADER) \
+	$(LINKEDEVOTABLEHEADER) $(PKMNEVOTABLE) $(PKMNLVLUPATTACKS) $(PKMNEGGMOVES) \
+	$(PKMNTMCOMPATIBILITY) $(PKMNMOVETUTORCOMPATIBILITY) $(PKMNINACESSIBLEMOVES) \
+	$(PKMNCRAWLERDATA) $(BLDPATH)/pkmnmoves.c
+	$(CC) $(CFLAGS) $(BLDPATH)/pkmnmoves.c -o $(BLDPATH)/pkmnmoves.o
+	
+
 
 	
 # Intermediate object files (large input lists are not supported by console)
@@ -188,20 +224,23 @@ $(BLDPATH)/map.o: $(MAPOBJS) $(MAPTILESETOBJS) $(BLDPATH)/$(basename $(MAPPROJ))
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/map.ld --relocatable -o $(BLDPATH)/map.o $(BLDPATH)/fata_morgana.o 
 	
 	
+$(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS)
+	@echo "Collecting src files..."
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/src.o $(ASOBJS1) $(ASOBJS2) $(COBJS)
 	
 # Building constants
 $(CONSTANTSH): $(CONSTANTS)
 	@echo "Exporting constants..."
-	$(PYMAPCONSTEX) $(MAPPROJ)
-		
+	$(PYMAPCONSTEX) $(MAPPROJ)		
 	
-all: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o $(BLDPATH)/map.o
+	
+all: $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	@echo "Creating rom object..."
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(ASOBJS1) $(ASOBJS2) $(COBJS) $(BLDPATH)/asset.o $(BLDPATH)/map.o
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
+
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
 	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
-	cat $(BLDPATH)/__symbols.sym
 	#@cd tools && python3 index.py
 		
 clean:

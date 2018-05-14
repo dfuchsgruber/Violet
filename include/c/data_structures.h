@@ -73,5 +73,6 @@ bool gp_stack_push(int value);
 int gp_stack_peek();
 int gp_stack_pop();
 
+
 #endif	/* BIN_HEAP_H */
 

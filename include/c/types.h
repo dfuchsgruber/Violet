@@ -1,7 +1,9 @@
 #ifndef TYPES_H_
 #define TYPES_H_
 
-#define NULL 0
+#include "stdbool.h"
+#include "stddef.h"
+
 #define LOW 0
 #define HIGH 1
 
@@ -25,12 +27,15 @@ typedef signed long long int s64;
 typedef float f32;
 typedef double f64;
 
-typedef struct pair {
+typedef struct {
     u16 id;
     u16 value;
-} pair;
+} short_pair;
 
-typedef u8* script;
-typedef u8* pstring;
+typedef struct {
+    int id;
+    int value;
+} int_pair;
+
 
 #endif

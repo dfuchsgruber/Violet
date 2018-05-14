@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "callbacks.h"
 #include "save.h"
 #include "tile/fata_morgana.h"
@@ -16,7 +15,7 @@ extern int fata_morgana_blocks_cnt[1];
 void do_fata_morgana(){
     if ((*save1)->map == DESERT_MAP && (*save1)->bank == DESERT_BANK) {
         s16 coordinates[2];
-        get_current_tile_position(&coordinates[0], &coordinates[1]);
+        player_get_position(&coordinates[0], &coordinates[1]);
         //dprintf("Player at x %x, y %x\n", coordinates[0], coordinates[1]);
         
         
@@ -53,7 +52,7 @@ void do_fata_morgana(){
                 else if(l2_norm_sqr <= 25) frame = 2;
                 else frame = 3;
                 //dprintf("Block at %x, %x with id %d, frame %d\n", fata_morgana_blocks[i][0], fata_morgana_blocks[i][1], anim_index, frame);
-                set_block_id((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1],
+                block_set_by_pos((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1],
                         morgana_anims[anim_index].blocks[frame] | morgana_anims[anim_index].walkfield);
                 map_draw_block((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1]);
                     //special_x8E_update_map_graphics();

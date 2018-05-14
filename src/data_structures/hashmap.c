@@ -1,11 +1,12 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "stdbool.h"
 #include "data_structures.h"
+#include "agbmemory.h"
+#include "prng.h"
 
 hashmap *hashmap_init(int buckets) {
     hashmap *map = (hashmap*) malloc(sizeof (hashmap));
-    map->buckets = (dyn_arr**) cmalloc(sizeof (dyn_arr*)*(u32) buckets);
+    map->buckets = (dyn_arr**) malloc_and_clear(sizeof (dyn_arr*)*(u32) buckets);
     map->map_size = buckets;
     int i;
     for (i = 0; i < 4; i++) {

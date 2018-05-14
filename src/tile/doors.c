@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "tile/door_animation.h"
 
 

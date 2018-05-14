@@ -39,6 +39,20 @@ extern "C" {
     
     attack attacks[ATTACK_CNT];
 
+    /**
+     * Checks if an attack is a hidden machine
+     * @param move the attack
+     * @return if the attack is a hidden machine
+     */
+    bool attack_is_hidden_machine(u16 move);
+
+    /**
+     * Checks if an attack needs charging
+     * @param move the attack
+     * @return if the attack needs charing
+     */
+    bool attack_needs_charging(u16 move);
+
 #ifdef	__cplusplus
 }
 #endif

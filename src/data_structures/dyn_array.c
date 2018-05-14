@@ -1,11 +1,11 @@
 #include "types.h"
 #include "stdbool.h"
 #include "data_structures.h"
-#include "romfuncs.h"
+#include "agbmemory.h"
 
 dyn_arr *dyn_arr_init(int array_size) {
     dyn_arr *arr = (dyn_arr*) malloc(sizeof (dyn_arr));
-    arr->array = (dyn_arr_node*) cmalloc(sizeof (dyn_arr_node)*(u32) array_size);
+    arr->array = (dyn_arr_node*) malloc_and_clear(sizeof (dyn_arr_node)*(u32) array_size);
     arr->array_size = array_size;
     arr->size = 0;
     return arr;
@@ -40,12 +40,12 @@ void dyn_arr_swap(int a, int b, dyn_arr_node *array) {
 void dyn_arr_resize(int size, dyn_arr *heap) {
     dyn_arr_node *array_x;
     if (size > heap->array_size) {
-        array_x = (dyn_arr_node*) cmalloc(sizeof (dyn_arr_node)*(u32) size * 2);
+        array_x = (dyn_arr_node*) malloc_and_clear(sizeof (dyn_arr_node)*(u32) size * 2);
         memcpy(array_x, heap->array, sizeof (dyn_arr_node)*(u32) heap->array_size);
         heap->array_size = size * 2;
         heap->size = size;
     } else if (size <= heap->array_size / 2) {
-        array_x = (dyn_arr_node*) cmalloc(sizeof (dyn_arr_node)*(u32) heap->array_size / 2);
+        array_x = (dyn_arr_node*) malloc_and_clear(sizeof (dyn_arr_node)*(u32) heap->array_size / 2);
         memcpy(array_x, heap->array, sizeof (dyn_arr_node)*(u32) size);
         heap->array_size /= 2;
         heap->size = size;

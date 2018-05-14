@@ -1,17 +1,21 @@
 #include "types.h"
 #include "stdbool.h"
 #include "constants/items.h"
-#include "romfuncs.h"
 #include "pokemon/virtual.h"
 #include "callbacks.h"
 #include "item/custom.h"
 #include "constants/pokemon_attributes.h"
 #include "language.h"
+#include "item/item.h"
+#include "text.h"
+#include "bg.h"
+#include "overworld/pokemon_party_menu.h"
+#include "music.h"
 
 void item_field_nature_stone(u8 self) {
     void **item_callback_after_poke_selection = (void**) 0x03005DE8;
     *item_callback_after_poke_selection = item_nature_stone;
-    _item_select_pokemon_for_activation(self);
+    item_select_target_pokemon(self);
 }
 
 u8 str_nature_stone_sucess[] = LANGDEP(
@@ -22,10 +26,11 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
     u8 *pokemenu_selected_pokemon_team_index = (u8*) 0x0203B0A9;
     u16 *item_activated = (u16*) 0x0203AD30;
 
-    pid poke_pid = {get_pokemons_attribute(&player_pokemon[*pokemenu_selected_pokemon_team_index], ATTRIBUTE_PID, 0)};
+    pid poke_pid = {(u32)pokemon_get_attribute(
+        &player_pokemon[*pokemenu_selected_pokemon_team_index], ATTRIBUTE_PID, 0)};
     u8 current_nature = poke_pid.fields.nature;
     u32 current_positive = current_nature / 5;
-    u32 current_negative = __aeabi_uidivmod(current_nature, 5);
+    u32 current_negative = current_nature % 5;
 
 
     bool possible = false;
@@ -75,25 +80,25 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
         new_positive = current_positive;
     }
     if (possible) {
-        sound(114);
+        play_sound(114);
         //Now we compute the new nature
-        u8 new_nature = (u8) (new_positive * 5 + new_negative);
-        player_pokemon[*pokemenu_selected_pokemon_team_index].pid.fields.nature = new_nature;
-        recalculate_stats(&player_pokemon[*pokemenu_selected_pokemon_team_index]);
+        u32 new_nature = (u32) (new_positive * 5 + new_negative);
+        player_pokemon[*pokemenu_selected_pokemon_team_index].pid.fields.nature = new_nature & 0x1F;
+        pokemon_calculate_stats(&player_pokemon[*pokemenu_selected_pokemon_team_index]);
         //Todo remove item and return to bag
         item_remove(*item_activated, 1);
         u8 *buffer0 = (u8*) 0x02021CD0;
         pokemon_load_name_as_string(&player_pokemon[*pokemenu_selected_pokemon_team_index], buffer0);
         u8 *strbuf = (u8*) 0x02021D18;
         string_decrypt(strbuf, str_nature_stone_sucess);
-        pokemenu_init_textrenderer(strbuf, 1); //String @"Es wird keine Wirkung haben"
-        bg_virutal_sync_reqeust_push(2);
+        pokemon_party_menu_init_text_rendering(strbuf, 1); //String @"Es wird keine Wirkung haben"
+        bg_virtual_sync_reqeust_push(2);
         big_callbacks[self].function = item_field_usage_on_poke_callback_failure; //0x8125711;
     } else {
-        sound(5);
-        pokemenu_init_textrenderer((u8*) 0x08416824, 1); //String @"Es wird keine Wirkung haben"
+        play_sound(5);
+        pokemon_party_menu_init_text_rendering((u8*) 0x08416824, 1); //String @"Es wird keine Wirkung haben"
         //pokemenu_init_textrenderer(str_nature_stone_sucess_ref, 1);
-        bg_virutal_sync_reqeust_push(2);
+        bg_virtual_sync_reqeust_push(2);
         big_callbacks[self].function = item_field_usage_on_poke_callback_failure;
     }
 }

@@ -17,14 +17,14 @@
  **/
 
 void init_anim_engine_by_table() {
-    u16 index = *vardecrypt(0x8004);
+    u16 index = *var_access(0x8004);
     init_anim_engine(anim_script_table[index]);
 }
 
 void init_anim_engine(u8 *script) {
 
-    u8 callback_id = spawn_big_callback(anim_engine_callback, 0);
-    ae_memory *mem = cmalloc(sizeof(ae_memory));
+    u8 callback_id = big_callback_new(anim_engine_callback, 0);
+    ae_memory *mem = malloc_and_clear(sizeof(ae_memory));
     big_callback_set_int(callback_id, 1, (int)mem);
     //dprintf("Anim engine setup @%x, var space @%x\n", mem, mem->vars);
     fmem->ae_mem = mem;
@@ -158,7 +158,7 @@ void cmdx00_end(ae_memory* mem) {
     if (mem->link_numbers == 0) {
         //there are no links left -> engine is shut down
         mem->active = false;
-        remove_big_callback(mem->callback_id);
+        big_callback_delete(mem->callback_id);
     } else {
         //there are links -> return to last element on link list
         mem->link_numbers = (u8) (mem->link_numbers - 1);
@@ -204,7 +204,7 @@ void cmdx03_oam_new(ae_memory* mem) {
     if (target < 0x10) {
         //*((u16*)0x2000000) = mem->vars[target];
         //while(true){}
-        mem->vars[target] = generate_oam_forward_search(template, x, y, unkown);
+        mem->vars[target] = oam_new_forward_search(template, x, y, unkown);
     }
 }
 
@@ -215,7 +215,7 @@ void cmdx04_oam_delete(ae_memory* mem) {
     if (id >= 0x8000) {
         id = mem->vars[id - 0x8000];
     }
-    clear_oam_entry(&oams[id]);
+    oam_clear(&oams[id]);
     //clear_oam_entry((oam_object*) (id * 0x44 + 0x0202063c));
 }
 
@@ -223,7 +223,7 @@ void cmdx05_oam_vram_load(ae_memory* mem) {
     graphic* resource = (graphic*) anim_engine_read_word(mem);
 
     //allocating vram
-    load_and_alloc_obj_vram_lz77(resource);
+    oam_load_graphic(resource);
 }
 
 void cmdx06_oam_vram_free(ae_memory* mem) {
@@ -235,13 +235,13 @@ void cmdx06_oam_vram_free(ae_memory* mem) {
     oam_object* oam = (oam_object*) (oam_id * 0x44 + 0x0202063c);
     //*((oam_object**)0x020370d0)=oam;
     //while (true){}
-    free_obj_vram_by_object(oam);
+    oam_free_graphic(oam);
 }
 
 void cmdx07_oam_despawn(ae_memory* mem) {
     u8 oam_id = (u8) anim_engine_read_param(mem);
     oam_object* oam = &oams[oam_id];
-    oam_despawn(oam);
+    oam_free(oam);
 }
 
 void cmdx08_spawn_callback(ae_memory* mem) {
@@ -249,7 +249,7 @@ void cmdx08_spawn_callback(ae_memory* mem) {
     u8 priority = anim_engine_read_byte(mem);
     u8 length = anim_engine_read_byte(mem);
 
-    u8 cbid = spawn_big_callback(function, priority);
+    u8 cbid = big_callback_new(function, priority);
     big_callback* callback = (big_callback*) (0x03004FE0 + cbid * 0x28);
 
     //Adding params to the ram
@@ -315,7 +315,7 @@ void cmdx0E_bg_override(ae_memory* mem) {
 
 void cmdx0F_load_obj_pal(ae_memory* mem) {
 
-    u8 pal_id = allocate_obj_pal(anim_engine_read_hword(mem));
+    u8 pal_id = oam_allocate_palette(anim_engine_read_hword(mem));
     
     void* pal = (void*) anim_engine_read_word(mem);
     u8 mode = anim_engine_read_byte(mem);
@@ -333,7 +333,7 @@ void cmdx0F_load_obj_pal(ae_memory* mem) {
 }
 
 void cmdx10_free_obj_pal(ae_memory* mem) {
-    free_obj_pal(anim_engine_read_hword(mem));
+    oam_palette_free(anim_engine_read_hword(mem));
 }
 
 void cmdx11_get_io(ae_memory*mem) {
@@ -372,7 +372,7 @@ void cmdx14_prepare_tbox(ae_memory*mem) {
         tboxdata boxdata;
         tbox_data_new(&boxdata, bgid, x, y, w, h, palID, startTile);
         u8 boxid = tbox_new(&boxdata);
-        tbox_flush(boxid, 0);
+        tbox_flush_set(boxid, 0);
         tbox_tilemap_draw(boxid);
         mem->vars[target_var] = boxid;
     }
@@ -396,7 +396,7 @@ void cmdx15_display_text_inst(ae_memory* mem) {
     u8* ram_buffer = (u8*) 0x02021D18;
     string_decrypt(ram_buffer, string);
 
-    tbox_flush(boxid, 0);
+    tbox_flush_set(boxid, 0);
     tbox_print_string(boxid, font_id, unkown, border_distance, line_distance_u, line_distance_l, font_map, display_flag, ram_buffer);
     bg_copy_vram(bgid, bg_get_tilemap(bgid), 0x800, 0x0, 0x2);
 
@@ -405,7 +405,7 @@ void cmdx15_display_text_inst(ae_memory* mem) {
 void cmdx16_clear_textbox(ae_memory* mem) {
     u8 boxid = (u8) anim_engine_read_param(mem);
     flush_tbox(boxid, 0);
-    free_tbox(boxid);
+    tbox_free(boxid);
     bg_copy_vram(0, bg_get_tilemap(0), 0x800, 0x0, 0x2);
 }
 
@@ -481,7 +481,7 @@ void anim_engine_text_renderer(anim_engine_task *t) {
             //despawn
             flush_tbox(mem->boxid, 0);
             tbox_flush_map(mem->boxid);
-            free_tbox(mem->boxid);
+            tbox_free(mem->boxid);
             bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
             free(mem->o_text);
             free(mem);
@@ -608,7 +608,7 @@ void cmdx1B_gfx_anim_set(ae_memory* mem) {
 
     oam_object* oam = (oam_object*) (oam_id * 0x44 + 0x0202063c);
     oam->anim_number = anim_id;
-    gfx_init_animation(oam, 0);
+    oam_gfx_anim_init(oam, 0);
 
 
 }
@@ -618,7 +618,7 @@ void cmdx1C_rs_anim_set(ae_memory* mem) {
     u8 anim_id = anim_engine_read_byte(mem);
 
     oam_object* oam = (oam_object*) (oam_id * 0x44 + 0x0202063c);
-    rotscal_new_animation(oam, anim_id);
+    oam_rotscale_anim_init(oam, anim_id);
 
 }
 
@@ -690,7 +690,7 @@ void anim_engine_fader(anim_engine_task *self) {
     color over = {vars[0]};
     while (c < max) {
         color b = pal_restore[c];
-        color n = alpha_blend(b, over, intensity);
+        color n = color_alpha_blend(b, over, intensity);
         pals[c] = n;
         c++;
     }
@@ -721,7 +721,7 @@ void cmdx1F_invertcolors(ae_memory* mem) {
 
 void cmdx20_sound(ae_memory* mem) {
     u16 soundid = anim_engine_read_hword(mem);
-    sound(soundid);
+    play_sound(soundid);
 }
 
 void cmdx21_song(ae_memory* mem) {
@@ -730,14 +730,14 @@ void cmdx21_song(ae_memory* mem) {
     playsong1(songid, feature);
 }
 
-void cmdx22_cry(ae_memory* mem) {
+void cmdx22_pokemon_play_cry(ae_memory* mem) {
     u16 pokeid = anim_engine_read_hword(mem);
     u8 feature = anim_engine_read_byte(mem);
-    cry(pokeid, feature);
+    pokemon_play_cry(pokeid, feature);
 }
 
 void cmdx23_maintain() {
-    set_callback1(callback_maintain);
+    callback1_set(callback_maintain);
     super->callbacks[3] = NULL;
 }
 
@@ -746,7 +746,7 @@ void cmdx24_script_notify() {
 }
 
 void cmdx25_oam_reset() {
-    obj_pal_reset();
+    oam_palette_allocation_reset();
     oam_reset();
 }
 
@@ -756,7 +756,7 @@ void cmdx26_callback_reset(ae_memory *mem) {
     u8 i;
     for (i = 0; i < 0x10; i++) {
         if (i != self) {
-            remove_big_callback(i);
+            big_callback_delete(i);
         }
     }
 }
@@ -776,7 +776,7 @@ void cmdx28_bg_displacement_reset() {
 void cmdx29_bg_vmap_init(ae_memory *mem) {
     u8 bg_id = anim_engine_read_byte(mem);
     u16 size = anim_engine_read_hword(mem);
-    void *map = cmalloc(size);
+    void *map = malloc_and_clear(size);
     bg_set_tilemap(bg_id, map);
     bg_copy_vram(bg_id, map, size, 0, 2);
 }
@@ -833,7 +833,7 @@ void anim_engine_bg_scroller(anim_engine_task *self) {
 }
 
 void ae_mapreloader() {
-    cb1handling();
+    generic_callback1();
     if ((*((u8*) 0x02037AB8 + 7)) & 0x80) {
         return;
     }
@@ -846,7 +846,7 @@ void ae_mapreloader() {
 }
 
 void cmdx2C_mapreload() {
-    init_fadescreen(1, 0);
+    fadescreen_all(1, 0);
     super->callbacks[1] = ae_mapreloader;
 }
 
@@ -890,7 +890,7 @@ void cmdx30_fade_obj_pal(ae_memory *mem){
     u8 from_intensity = anim_engine_read_byte(mem);
     u8 to_intensity = anim_engine_read_byte(mem);
     
-    int pal_id = get_obj_pal_by_tag(tag) + 16;
+    int pal_id = oam_palette_get_index(tag) + 16;
     u16 dcol = (u16)(16 * pal_id + start_col);
     u16 ncol = col_count;
     anim_engine_task *t = anim_engine_task_new(0, anim_engine_fader, 7 * sizeof(u16), mem->root);
@@ -910,7 +910,7 @@ void cmdx30_fade_obj_pal(ae_memory *mem){
 void cmdx31_tbox_flush(ae_memory *mem){
     u8 box_id = (u8)anim_engine_read_param(mem);
     u8 flush = anim_engine_read_byte(mem);
-    tbox_flush(box_id, flush);
+    tbox_flush_set(box_id, flush);
 }
 
 void cmdx32_pal_restore_force_current(ae_memory *mem){
@@ -963,7 +963,7 @@ void cmdx35_pal_restore_snapshot(ae_memory *mem){
 
 void cmdx36_load_obj_pal_from_struct(ae_memory *mem){
     palette *p = (palette*)anim_engine_read_word(mem);
-    u8 pal_id = allocate_obj_pal(p->tag);
+    u8 pal_id = oam_allocate_palette(p->tag);
     u8 mode = anim_engine_read_byte(mem);
     u8 force = anim_engine_read_byte(mem);
     if(pal_id == 0xFF)return;

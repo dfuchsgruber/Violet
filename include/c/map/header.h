@@ -36,6 +36,18 @@ int dungeon_get_type();
 extern mapheader **mapbanks[];
 mapheader *mapheader_virtual = (mapheader*)0x02036DFC;
 
+/**
+ * Gets a mapheader by the current bank and map id
+ * @param bank the desired bank
+ * @param map the desired map id
+ * @return the mapheader object
+ */
 mapheader *get_mapheader(u8 bank, u8 map);
+
+/**
+ * Checks if the current map is 40.0
+ * @return if the current map is in bank 40 the and has map id 0
+ */
+bool map_is_x40_x0();
 
 #endif /* INCLUDE_C_MAP_HEADER_H_ */

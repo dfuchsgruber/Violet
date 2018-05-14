@@ -19,6 +19,13 @@ typedef struct {
 pokemon_cry pokemon_cries_forward[POKEMON_CNT];
 pokemon_cry pokemon_cries_backward[POKEMON_CNT];
 
+/**
+ * Plays the cry of a pokemon
+ * @param species The species to play the cry of
+ * @param feature Feature for the cry
+ */
+void pokemon_play_cry(u16 species, u8 feature);
+
 // Extern cries from wav2agb
 
 extern u8 cry_661[];

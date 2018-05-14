@@ -60,7 +60,7 @@ int _pokedex_feature_scanner_build_entries(wild_pokemon_entry *wild_entries,
         int in_dst = 0;
         for(int j = 0; j < num_entries; j++){
             if(dst[j][0] == key){
-                dst[j][1] += pdf[i];
+                dst[j][1] = (u16)(dst[j][1] + pdf[i]);
                 in_dst = 1;
                 break;
             }
@@ -178,18 +178,18 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
     set_io(0, (u16) (get_io(0) &~0x6000));
     oam_reset();
     bg_reset(0);
-    pal_fade_cntrl_reset();
-    pal_allocation_reset();
-    free_all_tboxes();
-    set_callback3(NULL);
-    dma0_cb_reset();
-    remove_all_big_callbacks();
+    fading_cntrl_reset();
+    oam_palette_allocation_reset();
+    tbox_free_all();
+    callback3_set(NULL);
+    dma0_reset_callback();
+    big_callback_delete_all();
     bg_reset(0);
     
     // Bg setup
     bg_setup(0, pokedex_feature_scanner_bg_cnfgs, 2);
-    void *bg0map = cmalloc(0x800);
-    void *bg1map = cmalloc(0x800);
+    void *bg0map = malloc_and_clear(0x800);
+    void *bg1map = malloc_and_clear(0x800);
     bg_set_tilemap(0, bg0map);
     bg_set_tilemap(1, bg1map);
     lz77uncompwram(gfx_pokedex_scanner_uiMap, bg1map);
@@ -209,13 +209,13 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
         int line = i < 6 ? i : i - 6;
         
         u16 tag = (u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i);
-        u16 tile = obj_vram_allocate(16);
-        obj_vram_add_tile_tag_to_allocation_table(tag, tile, 16);
+        u16 tile = oam_vram_alloc(16);
+        oam_vram_allocation_table_add(tag, tile, 16);
         oam_template icon_template = {
             tag, 0xFFFF, &pokedex_feature_scanner_icon_sprite, 
-            GFX_ANIM_TABLE_NULL, NULL, ROTSCALE_TABLE_NULL, oam_null_callback
+            oam_gfx_anim_table_null, NULL, oam_rotscale_anim_table_null, oam_null_callback
         };
-        state->oams[i] = generate_oam_forward_search(&icon_template,
+        state->oams[i] = oam_new_forward_search(&icon_template,
                 (s16)(12 + 118 * box_id), (s16)(48 + 16 * line), (u8)i
                 );
         oams[state->oams[i]].final_oam.attr0 |= ATTR0_OBJDISABLE;
@@ -223,20 +223,20 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
     
     // Load the palettes for the poke icons
     for(int i = 0; i < 3; i++){
-        state->icon_pals[i] = allocate_obj_pal(
+        state->icon_pals[i] = oam_allocate_palette(
                 (u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i));
-        pal_load_uncomp(pokemon_icon_pals[i], 256 + 16 * state->icon_pals[i], 32);
+        pal_copy(pokemon_icon_pals[i], (u16)(256 + 16 * state->icon_pals[i]), 32);
     }
     u16 pal_black[16] = {0};
-    state->icon_pals[3] = allocate_obj_pal(POKEDEX_SCANNER_ICON_BASE_TAG + 3);
-    pal_load_uncomp(pal_black, 256 + 16 * state->icon_pals[3], 32);
+    state->icon_pals[3] = oam_allocate_palette(POKEDEX_SCANNER_ICON_BASE_TAG + 3);
+    pal_copy(pal_black, (u16)(256 + 16 * state->icon_pals[3]), 32);
     
     // Palette setup
-    pal_load_comp(gfx_pokedex_scanner_uiPal, 0, 32);
-    pal_load_uncomp(pokedex_feature_scanner_text_colors, 16 * 15, 32);
+    pal_decompress(gfx_pokedex_scanner_uiPal, 0, 32);
+    pal_copy(pokedex_feature_scanner_text_colors, 16 * 15, 32);
     // Set the four mock pals for the selection to their inteded values
     u16 _selection_original_color[4] = {0x5A4B, 0x5A4B, 0x5A4B, 0x5A4B};
-    pal_load_uncomp(_selection_original_color, 12, 8);
+    pal_copy(_selection_original_color, 12, 8);
     pal_set_all_to_black();
     
 }
@@ -252,7 +252,7 @@ void pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state *state,
     // Load for each entry the respective icon and draw it
     for(int i = 0; i < size; i++){
         u16 species = entries[i][0];
-        u16 tile = get_obj_tile_by_tag((u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i));
+        u16 tile = oam_vram_get_tile((u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i));
         void *dst = (void*)(0x06010000 + 0x20 * tile);
         cpuset(pokemon_icons[species], dst, 
                 CPUSET_COPY | CPUSET_HALFWORD | 0x100);
@@ -261,8 +261,8 @@ void pokedex_feature_scanner_draw_generic_icons(pokedex_scanner_state *state,
         int icon_pal = pokemon_icon_usage[species];
         if(!pokedex_operator(species, POKEDEX_GET | POKEDEX_CAUGHT, 1))
             icon_pal = 3;
-        oams[state->oams[i]].final_oam.attr2 &= ~(0b1111 << 12);
-        oams[state->oams[i]].final_oam.attr2 |= icon_pal << 12;
+        oams[state->oams[i]].final_oam.attr2 &= (u16)(~(0b1111 << 12));
+        oams[state->oams[i]].final_oam.attr2 |= (u16)(icon_pal << 12);
     }
 }
 
@@ -275,7 +275,7 @@ void pokedex_feature_scanner_print_empty_list(){
     // Print a centered "not availible string"
     int pixel_len = string_get_width(2, str_pokedex_feature_scanner_none, 0);
     int x = ((30 * 8) - pixel_len) / 2;
-    tbox_flush(2, 0);
+    tbox_flush_set(2, 0);
     tbox_tilemap_draw(2);
     tbox_print_string(2, 2, (u16)x, 0, 0, 0,
             pokedex_feature_scanner_fontcolmap, 0, 
@@ -325,7 +325,7 @@ void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state *stat
         color blended = pal_restore[12 + i];
         color white = {.rgb = {31, 31, 31}};
         if(i == state->selected_area){
-            blended = alpha_blend(pal_restore[12 + i], white, alpha);
+            blended = color_alpha_blend(pal_restore[12 + i], white, alpha);
         }
         pals[12 + i] = blended;
     }
@@ -343,16 +343,16 @@ void pokedex_callback_feature_scanner_clear(){
     // Clear the strings
     bg_hide(0);
     bg_display_sync();
-    tbox_flush(0, 0);
-    tbox_flush(1, 0);
-    tbox_flush(2, 0);
+    tbox_flush_set(0, 0);
+    tbox_flush_set(1, 0);
+    tbox_flush_set(2, 0);
     tbox_tilemap_draw(0);
     tbox_tilemap_draw(1);
     tbox_sync(0, TBOX_SYNC_MAP_AND_SET);
     tbox_sync(1, TBOX_SYNC_MAP_AND_SET);
     tbox_sync(2, TBOX_SYNC_SET);
     
-    set_callback1(pokedex_callback_feature_scanner_load);
+    callback1_set(pokedex_callback_feature_scanner_load);
 }
 
 
@@ -402,7 +402,7 @@ void pokedex_feature_scanner_draw_generic_icons_at(pokedex_scanner_state *state,
     for(int i = pos; i < pos + size; i++){
         
         u16 species = entries[i - pos][0];
-        u16 tile = get_obj_tile_by_tag((u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i));
+        u16 tile = oam_vram_get_tile((u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i));
         void *dst = (void*)(0x06010000 + 0x20 * tile);
         cpuset(pokemon_icons[species], dst, 
                 CPUSET_COPY | CPUSET_HALFWORD | 0x100);
@@ -411,8 +411,8 @@ void pokedex_feature_scanner_draw_generic_icons_at(pokedex_scanner_state *state,
         int icon_pal = pokemon_icon_usage[species];
         if(!pokedex_operator(species, POKEDEX_GET | POKEDEX_CAUGHT, 1))
             icon_pal = 3;
-        oams[state->oams[i]].final_oam.attr2 &= ~(0b1111 << 12);
-        oams[state->oams[i]].final_oam.attr2 |= icon_pal << 12;
+        oams[state->oams[i]].final_oam.attr2 &= (u16)(~(0b1111 << 12));
+        oams[state->oams[i]].final_oam.attr2 |= (u16)(icon_pal << 12);
     }
 }
 u8 str_pokedex_feature_scanner_rod[] = LANGDEP(PSTRING("Angel"), PSTRING("Rod"));
@@ -475,16 +475,16 @@ void pokedex_callback_feature_scanner_load(){
     }
     bg_update_and_show(0);
     bg_display_sync();
-    set_callback1(pokedex_callback_feature_scanner_idle);
+    callback1_set(pokedex_callback_feature_scanner_idle);
 }
 
 void pokedex_callback_feature_scanner_return(){
-    cb1handling();
-    if (!is_fading()) {
+    generic_callback1();
+    if (!fading_is_active()) {
         // Free maps and tboxes
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));
-        free_all_tboxes();
+        tbox_free_all();
         
         free(fmem->dex_mem->scanner_state);
         
@@ -498,40 +498,40 @@ void pokedex_callback_feature_scanner_return(){
 }
 
 void pokedex_callback_feature_scanner_idle(){
-    cb1handling();
-    if(!is_fading()){
+    generic_callback1();
+    if(!fading_is_active()){
         pokedex_scanner_state *state = fmem->dex_mem->scanner_state;
         pokedex_callback_feature_scanner_selection_fade(state);
         if(super->keys_new.keys.right){
             state->selected_area++;
             state->selected_area %= 4;
-            set_callback1(pokedex_callback_feature_scanner_clear);
-            sound(5);
+            callback1_set(pokedex_callback_feature_scanner_clear);
+            play_sound(5);
         }else if(super->keys_new.keys.left){
-            state->selected_area += 3;
+            state->selected_area = (u8)(state->selected_area + 3);
             state->selected_area %= 4;
-            set_callback1(pokedex_callback_feature_scanner_clear);
-            sound(5);
+            callback1_set(pokedex_callback_feature_scanner_clear);
+            play_sound(5);
         }else if(super->keys_new.keys.B){
-            sound(5);
-            set_callback1(pokedex_callback_feature_scanner_return);
-            init_fadescreen(1, 0);
+            play_sound(5);
+            callback1_set(pokedex_callback_feature_scanner_return);
+            fadescreen_all(1, 0);
         }
         
     }
 }
 
 void pokedex_callback_init_feature_scanner() {
-    cb1handling();
-    if (!is_fading()) {
-        pokedex_scanner_state *state = cmalloc(sizeof(pokedex_scanner_state));
+    generic_callback1();
+    if (!fading_is_active()) {
+        pokedex_scanner_state *state = malloc_and_clear(sizeof(pokedex_scanner_state));
         fmem->dex_mem->scanner_state = state;
         pokedex_free_maps();
         pokedex_feature_scanner_build_entries(state);
         _pokedex_callback_init_feature_scanner(state);
         pokedex_feature_scanner_print_generic_list(state->entries_grass, state->num_entries_grass);
         pokedex_feature_scanner_draw_generic_icons(state, state->entries_grass, state->num_entries_grass);
-        set_callback1(pokedex_callback_feature_scanner_clear);
-        init_fadescreen(0, 0);
+        callback1_set(pokedex_callback_feature_scanner_clear);
+        fadescreen_all(0, 0);
     }
 }

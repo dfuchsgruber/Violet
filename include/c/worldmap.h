@@ -31,6 +31,27 @@ extern "C" {
     extern const unsigned short gfx_worldmapTiles[];
     extern const unsigned short gfx_worldmapPal[];
 
+    /**
+     * Gets the namespace id associated with a position on the worldmap
+     * @param worldmap_index which worldmap to use
+     * @param layer the town or locality layer
+     * @param x the x coordinate (in tiles)
+     * @param y the y coordinate (in tiles)
+     * @return the namespace id
+     */
+    u8 worldmap_get_namespace_by_pos(u8 worldmap_index, u8 layer, u16 x, u16 y);
+
+    /**
+     * Sets the state corresponding to a worldmapflag (needed as well to set the worldmapflag)
+     * @param flag the flag to set
+     */
+    void worldmap_flag_state_set(u16 flag);
+
+    /**
+     * Sets a worldmap flag (the state needs to be set as well!)
+     * @param flag the flag to set
+     */
+    void worldmap_flag_set(u16 flag);
 
 #ifdef	__cplusplus
 }

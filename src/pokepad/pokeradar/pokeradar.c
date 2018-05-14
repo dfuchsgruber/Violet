@@ -36,7 +36,7 @@ map_event_person pokeradar_map_event_person = {
 
 bool pokeradar_determine_position(coordinate *result) {
     s16 camera_pos[2];
-    get_current_tile_position(&camera_pos[0], &camera_pos[1]);
+    player_get_position(&camera_pos[0], &camera_pos[1]);
     coordinate *candidates = (coordinate*) malloc(sizeof (coordinate)*15 * 11); //Every tile could be a candidate
     int candidate_cnt = 0;
     int i, j;
@@ -44,7 +44,7 @@ bool pokeradar_determine_position(coordinate *result) {
         for (j = -5; j <= 5; j++) {
             s16 x = (s16) (camera_pos[0] + i);
             s16 y = (s16) (camera_pos[1] + j);
-            if (tile_get_field_by_pos(x, y, FIELD_HM_USAGE) == 1) {
+            if (block_get_field_by_pos(x, y, FIELD_HM_USAGE) == 1) {
                 //Now we have to check if there is a npc on this tile
                 int k;
                 bool match = false;
@@ -79,21 +79,21 @@ bool pokeradar_determine_position(coordinate *result) {
 }
 
 void pokeradar_callback_return_to_ow_and_init_script() {
-    cb1handling();
-    if (!is_fading()) {
+    generic_callback1();
+    if (!fading_is_active()) {
         pokepad_free_components();
-        init_script(script_pokeradar);
+        overworld_script_init(script_pokeradar);
         map_reload();
     }
 }
 
 void pokeradar_init(bool is_outdoor) {
-    *vardecrypt(0x800D) = pokeradar_prepeare();
+    *var_access(0x800D) = pokeradar_prepeare();
     if (is_outdoor) {
-        init_script(script_pokeradar);
+        overworld_script_init(script_pokeradar);
     } else {
-        init_fadescreen(1, 0);
-        set_callback1(pokeradar_callback_return_to_ow_and_init_script);
+        fadescreen_all(1, 0);
+        callback1_set(pokeradar_callback_return_to_ow_and_init_script);
     }
 
 }
@@ -131,8 +131,8 @@ u8 pokeradar_prepeare() {
             u8 min = wild_pokemon[wild_table_entry].other->data[index].level_min;
             u8 max = wild_pokemon[wild_table_entry].other->data[index].level_max;
             int level = (rnd16() % (max - min + 1)) + min;
-            *vardecrypt(0x8000) = result;
-            *vardecrypt(0x8001) = (u16) level;
+            *var_access(0x8000) = result;
+            *var_access(0x8001) = (u16) level;
 
             memcpy(&(cmem->pokeradar_person), &pokeradar_map_event_person, sizeof(map_event_person));
             cmem->pokeradar_person.x = (s16)(npc_pos.x - 7);
@@ -149,8 +149,8 @@ u8 pokeradar_prepeare() {
 bool pokeradar_npc_alert(u8 npc_id) {
     if (npcs[npc_id].overworld_id == 254) {
         if (npc_sees_player(&npcs[npc_id])) {
-            init_script(script_pokeradar_alert);
-            script_set_active();
+            overworld_script_init(script_pokeradar_alert);
+            overworld_script_set_active();
             return true;
         }
     }
@@ -158,42 +158,42 @@ bool pokeradar_npc_alert(u8 npc_id) {
 }
 
 u16 pokeradar_next_seed() {
-    u32 d = (u32) ((*vardecrypt(POKERADAR_ENCOUNTER_COUNT) >> 4) + 1);
+    u32 d = (u32) ((*var_access(POKERADAR_ENCOUNTER_COUNT) >> 4) + 1);
     if (d > 4) d = 4;
     u16 seed = rnd16() & 511;
     return (u16) (seed / d);
 }
 
 void pokeradar_spawn_pokemon() {
-    u16 species = *vardecrypt(POKERADAR_EMENY_SPECIES);
-    u8 level = (u8) * vardecrypt(POKERADAR_ENEMY_LEVEL);
-    if (*vardecrypt(POKERADAR_ENCOUNTER_COUNT) != 0xFFFF)
-        (*vardecrypt(POKERADAR_ENCOUNTER_COUNT))++;
+    u16 species = *var_access(POKERADAR_EMENY_SPECIES);
+    u8 level = (u8) * var_access(POKERADAR_ENEMY_LEVEL);
+    if (*var_access(POKERADAR_ENCOUNTER_COUNT) != 0xFFFF)
+        (*var_access(POKERADAR_ENCOUNTER_COUNT))++;
     pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, level, 0, false, 0, pokeradar_next_seed);
 }
 
 bool pokeradar_step() {
     if (checkflag(POKERADAR_POKEMON_SPAWNED))
         return false;
-    u16 steps = (*vardecrypt(POKERADAR_ENEMY_STATE))++;
+    u16 steps = (*var_access(POKERADAR_ENEMY_STATE))++;
     u16 r = rnd16() % 10;
     if (steps > r) {
 
         //we either do a pos change (0,75) or a flee (0,25)
         if ((u8) rnd16() < 64) {
             //flee script
-            init_script(script_pokeradar_flee);
-            script_set_active();
+            overworld_script_init(script_pokeradar_flee);
+            overworld_script_set_active();
             return true;
         } else {
             //pos change
-            *vardecrypt(POKERADAR_ENEMY_STATE) = 0;
+            *var_access(POKERADAR_ENEMY_STATE) = 0;
             coordinate npc_pos;
             if (pokeradar_determine_position(&npc_pos)) {
                 cmem->pokeradar_person.x = (s16) (npc_pos.x - 7);
                 cmem->pokeradar_person.y = (s16) (npc_pos.y - 7);
-                init_script(script_pokeradar_poschange);
-                script_set_active();
+                overworld_script_init(script_pokeradar_poschange);
+                overworld_script_set_active();
                 return true;
             }
         }

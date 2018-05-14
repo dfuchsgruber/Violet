@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "debug.h"
 #include "battle/battler.h"
 #include "battle/weather.h"
@@ -8,10 +7,11 @@
 #include "constants/battle_weathers.h"
 #include "constants/items.h"
 #include "constants/evolution_methods.h"
+#include "abilities.h"
 
 int attacker_modify_satk(int satk){
-    int weather_negating_ability_present = ability_management(0x13, 0,
-            WOLKE_SIEBEN, 0, 0) || ability_management(0x13, 0, KLIMASCHUTZ, 0,
+    int weather_negating_ability_present = ability_execute(0x13, 0,
+            WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
             0);
     battler *attacker = &battlers[*attacking_battler];
     switch(attacker->ability){
@@ -41,8 +41,8 @@ int attacker_modify_satk(int satk){
 }
 
 int attacker_modify_atk(int atk){
-    int weather_negating_ability_present = ability_management(0x13, 0,
-            WOLKE_SIEBEN, 0, 0) || ability_management(0x13, 0, KLIMASCHUTZ, 0,
+    int weather_negating_ability_present = ability_execute(0x13, 0,
+            WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
             0);
     battler *attacker = &battlers[*attacking_battler];
     switch(attacker->ability){

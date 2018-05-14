@@ -1,7 +1,6 @@
 #include "types.h"
 #include "mugshot.h"
 #include "oam.h"
-#include "romfuncs.h"
 #include "callbacks.h"
 #include "color.h"
 #include "save.h"
@@ -9,6 +8,11 @@
 #include "debug.h"
 #include "transparency.h"
 #include "constants/map_weathers.h"
+#include "vars.h"
+#include "flags.h"
+#include "bios.h"
+#include "agbmemory.h"
+#include "overworld/map_control.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -151,14 +155,14 @@ void mugshot_oam_despawn_cb(u8 self);
 void spawn_mugshot() {
     
     //If a callback to clear a mugshot is currently active we have to clear first in order to prevent that our content will be swiped away
-    u8 clearing_cb = get_callback_id_by_func(mugshot_oam_despawn_cb);
+    u8 clearing_cb = big_callback_get_id(mugshot_oam_despawn_cb);
     if(clearing_cb != 0xFF){
         mugshot_oam_despawn_cb(clearing_cb);
-        remove_big_callback(clearing_cb);
+        big_callback_delete(clearing_cb);
     }
     
-    int side = *vardecrypt(0x8000);
-    int index = *vardecrypt(0x8001);
+    int side = *var_access(0x8000);
+    int index = *var_access(0x8001);
     u16 tag = (u16) (MUGSHOT_BASE_TAG + index);
 
     graphic *mugshot_tmp_graphic = (graphic*) malloc(sizeof (graphic));
@@ -166,15 +170,15 @@ void spawn_mugshot() {
     mugshot_tmp_graphic->size = 0x800;
     mugshot_tmp_graphic->tag = tag;
 
-    u8 pal = allocate_obj_pal(tag);
+    u8 pal = oam_allocate_palette(tag);
     u16 *pal_buf = (u16*) malloc(40);
     
     lz77uncompwram(mugshots[index].pal, pal_buf);
     //apply weather effects to pal
     
     
-    u8 weather = get_current_weather();
-    pal_load_uncomp(pal_buf, (u16) (0x100 + 16 * pal), 32);
+    u8 weather = map_get_current_weather();
+    pal_copy(pal_buf, (u16) (0x100 + 16 * pal), 32);
     if (weather == MAP_WEATHER_CLOUDY || weather == MAP_WEATHER_EXTREME_THUNDER ||
     		weather == MAP_WEATHER_THUNDER || weather == MAP_WEATHER_RAIN) {
         //fade
@@ -184,7 +188,7 @@ void spawn_mugshot() {
             u16 original = dma3s[i + (pal + 0x10)*0x10];
             color co = {original};
             color over = {0}; //black
-            color n = alpha_blend(co, over, 3);
+            color n = color_alpha_blend(co, over, 3);
             dma3s[i + (pal + 0x10)*0x10] = n.value;
         }
     }
@@ -192,8 +196,8 @@ void spawn_mugshot() {
     free(pal_buf);
 
     //allocating vram for the tiles
-    if (get_id_of_vramobj_alloc_list_element(tag) == 0xFF) {
-        load_and_alloc_obj_vram_lz77(mugshot_tmp_graphic);
+    if (oam_vram_allocation_table_get_index(tag) == 0xFF) {
+        oam_load_graphic(mugshot_tmp_graphic);
     }
     s16 x = (s16) (0x20 + side * 0xB0);
 
@@ -211,7 +215,7 @@ void spawn_mugshot() {
     mugshot_template->animation = (gfx_frame**) 0x08231Bc0;
     mugshot_template->rotscale = (rotscale_frame**) 0x08231Bcc;
     mugshot_template->callback = oam_null_callback;
-    fmem->mugshot_oam_id = generate_oam_forward_search(mugshot_template, x, 0x50, 0);
+    fmem->mugshot_oam_id = oam_new_forward_search(mugshot_template, x, 0x50, 0);
     
     //Copy name string
     string_decrypt(strbuf, mugshots[index].name);
@@ -222,11 +226,11 @@ void spawn_mugshot() {
             0, (side ? 0 : (u8)(30 - strwidth / 8 - 4)), 12, (u8)((strwidth / 8) + 4), 2, 15, 0xE8
         };
         u8 box_id = tbox_new(&tbdata);
-        tbox_flush(box_id, 0x11);
+        tbox_flush_set(box_id, 0x11);
         tbox_tilemap_draw(box_id);
         tbox_clear_bottom_line(box_id);
-        u8 fontcolmap[] = {1, 2, 1, 3};
-        tbox_print_string(box_id, 2, 16, 0, 0, 0, fontcolmap, 0, strbuf);
+        tbox_font_colormap fontcolmap = {1, 2, 1, 3};
+        tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
         fmem->mugshot_tb_id = box_id;
         
     }else{
@@ -234,12 +238,12 @@ void spawn_mugshot() {
             0, (side ? 0 : (u8)(30 - strwidth / 8 - 5)), 11, (u8)((strwidth / 8) + 4), 2, 15, 0xE8
         };
         u8 box_id = tbox_new(&tbdata);
-        tbox_flush(box_id, 0x11);
+        tbox_flush_set(box_id, 0x11);
         tbox_tilemap_draw(box_id);
         tbox_border_init(box_id, 1, 15 * 16);
         tbox_border_draw(box_id, 1, 0xF);
-        u8 fontcolmap[] = {1, 2, 1, 3};
-        tbox_print_string(box_id, 2, 16, 0, 0, 0, fontcolmap, 0, strbuf);
+        tbox_font_colormap fontcolmap = {1, 2, 1, 3};
+        tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
         fmem->mugshot_tb_id = box_id;
     }
     
@@ -252,21 +256,21 @@ void mugshot_oam_despawn_cb(u8 self) {
     u8 tb_id = (u8)big_callbacks[self].params[1];
     free(oams[oam_id].oam_template->graphics);
     free(oams[oam_id].oam_template);
-    oam_despawn(&oams[oam_id]);
-    tbox_flush(tb_id, 0);
+    oam_free(&oams[oam_id]);
+    tbox_flush_set(tb_id, 0);
     //tbox_tilemap_draw(fmem->mugshot_tb_id);
     tbox_flush_map(tb_id);
     tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
     if(!transparency_is_on()) tbox_border_flush(tb_id);
     
-    free_tbox(tb_id);
+    tbox_free(tb_id);
     //dprintf("Triggered despawn with oam %d, tbid %d\n", oam_id, tb_id);
-    remove_big_callback(self);
+    big_callback_delete(self);
 }
 
 void clear_mugshot() {
     u16 oam_id = fmem->mugshot_oam_id;
-    u8 cb_id = spawn_big_callback(mugshot_oam_despawn_cb, 0);
+    u8 cb_id = big_callback_new(mugshot_oam_despawn_cb, 0);
     big_callbacks[cb_id].params[0] = oam_id;
     big_callbacks[cb_id].params[1] = fmem->mugshot_tb_id;
     oams[oam_id].x2 = -64;

@@ -21,11 +21,54 @@ typedef struct {
     const void *mid;
     u16 type;
     u16 type2; //exact copy of type
-}song;
+} song;
 
-u16 get_encounter_music_by_trainer_id(u16 trainer_id);
-u16 battle_get_music();
-u16 current_map_get_song();
+/**
+ * Plays a sound on the sound player.
+ * @param sound Id of the sound to play
+ */
+void play_sound(u16 sound_id);
+
+/**
+ * Plays a song on the song player
+ * @param song Id of the song to play
+ * @feature Feature of the song
+ */
+void playsong1(u16 song, u8 feature);
+
+/**
+ * Plays a song on fanfare player
+ * @param song_id id of the song to play
+ */
+void fanfare(u16 song_id);
+
+/**
+ * Gets the song to play in battle
+ * @param The song id to play
+ */
+u16 battle_get_song();
+
+/**
+ * Gets the song to play on the current map
+ * @param The song id to play
+ */
+u16 map_get_song();
+
+/**
+ * Gets the encounter music corresponding to a trainer
+ * @param trainer_id Id of the trainer
+ * @return The music to play
+ */
+u16 trainer_get_encounter_song(u16 trainer_id);
+
+
+/**
+ * Sets the song player volume
+ * @param a TODO
+ * @param b TODO
+ * @param volume the volume to set
+ */
+void volume_set(void *a, u16 b, u16 volume);
 
 extern const unsigned char mus_rin_battle[];
 extern const unsigned char mus_encounter_violet[];

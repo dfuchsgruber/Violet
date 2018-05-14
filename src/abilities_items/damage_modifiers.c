@@ -4,9 +4,9 @@
 #include "constants/abilities.h"
 #include "constants/attack_results.h"
 #include "attack.h"
-#include "romfuncs.h"
 #include "debug.h"
 #include "constants/items.h"
+#include "battle/battlescript.h"
 
 
 void apply_final_damage_modifiers(){
@@ -92,7 +92,7 @@ void apply_pre_damage_modifiers(){
         }
     }
      **/
-    bsc_cmd_x06_apply_damage_modifiers();
+    battlescript_cmd_x06_apply_damage_modifiers();
     apply_final_damage_modifiers();
 }
 

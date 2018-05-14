@@ -32,4 +32,16 @@ battle_state_t *battle_state = (battle_state_t*) 0x02022B4C;
 u16 *trainer_id = (u16*) 0x020386AE;
 u8 *stat_change = (u8*) 0x02023FC4;
 
+/**
+ * Checks if the battle is a double battle
+ * @return whether the battle is a double battle
+ */
+bool battle_is_double();
+
+/**
+ * Callback1 for the battle engine
+ */
+void battle_callback1();
+
+
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

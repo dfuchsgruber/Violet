@@ -1,45 +1,44 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "overworld/npc.h"
 #include "tile/block.h"
 #include "tile/coordinate.h"
 
-void npc_diag_apply(npc *n, oam_object *target, u8 direction) {
+void npc_diag_update_pos(npc *n, oam_object *target, u8 direction) {
     n->dest_x = (s16) (n->from_x + walking_directions[direction].x);
     n->dest_y = (s16) (n->from_y + walking_directions[direction].y);
     target->private[3] = direction;
 }
 
-bool npc_anim_diag_no_init(npc *n, oam_object *target) {
+bool npc_anim_diag_ne_init(npc *n, oam_object *target) {
     npc_anim_init_walk(n, target, 4, 0);
-    npc_diag_apply(n, target, 8);
+    npc_diag_update_pos(n, target, 8);
     return npc_anim_walk_is_finished(n, target);
 }
 
 bool npc_anim_diag_nw_init(npc *n, oam_object *target) {
     npc_anim_init_walk(n, target, 3, 0);
-    npc_diag_apply(n, target, 7);
+    npc_diag_update_pos(n, target, 7);
     return npc_anim_walk_is_finished(n, target);
 }
 
-bool npc_anim_diag_so_init(npc *n, oam_object *target) {
+bool npc_anim_diag_se_init(npc *n, oam_object *target) {
     npc_anim_init_walk(n, target, 4, 0);
-    npc_diag_apply(n, target, 6);
+    npc_diag_update_pos(n, target, 6);
     return npc_anim_walk_is_finished(n, target);
 }
 
 bool npc_anim_diag_sw_init(npc *n, oam_object *target) {
     npc_anim_init_walk(n, target, 3, 0);
-    npc_diag_apply(n, target, 5);
+    npc_diag_update_pos(n, target, 5);
     return npc_anim_walk_is_finished(n, target);
 }
 
 bool(*npc_anim_diag_no_frames[0x3])(npc *n, oam_object *target) = {
-    npc_anim_diag_no_init, npc_anim_walk_is_finished, npc_anim_stop
+    npc_anim_diag_ne_init, npc_anim_walk_is_finished, npc_anim_stop
 };
 
 bool(*npc_anim_diag_so_frames[0x3])(npc *n, oam_object *target) = {
-    npc_anim_diag_so_init, npc_anim_walk_is_finished, npc_anim_stop
+    npc_anim_diag_se_init, npc_anim_walk_is_finished, npc_anim_stop
 };
 
 bool(*npc_anim_diag_sw_frames[0x3])(npc *n, oam_object *target) = {

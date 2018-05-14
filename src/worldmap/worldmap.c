@@ -1,7 +1,6 @@
 #include "types.h"
 #include "tile/coordinate.h"
 #include "worldmap.h"
-#include "romfuncs.h"
 
 u8 worldmap0_position_data [] = {
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x5a, 

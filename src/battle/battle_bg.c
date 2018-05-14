@@ -1,11 +1,13 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "battle/bg.h"
 #include "battle/attack.h"
 #include "constants/attacks.h"
 #include "constants/vars.h"
 #include "tile/coordinate.h"
 #include "tile/block.h"
+#include "color.h"
+#include "bios.h"
+#include "vars.h"
 
 battle_bg battle_bgs[29] = {
     // Battle street
@@ -146,7 +148,7 @@ void battle_bg_load(u8 id){
     id = battle_bg_get_id();
     lz77uncompvram(battle_bgs[id].tileset, (void*) 0x6008000);
     lz77uncompvram(battle_bgs[id].tilemap, (void*) 0x600d000);
-    pal_load_comp(battle_bgs[id].pal, 0x20, 0x60);
+    pal_decompress(battle_bgs[id].pal, 0x20, 0x60);
 }
 
 
@@ -166,13 +168,13 @@ void battle_bg_get(u8 id, const void **set, const void **map, const void **pal){
 }
 
 u8 battle_bg_get_id(){
-    u16 *var_override = vardecrypt(BATTLE_BG_OVERRIDE);
+    u16 *var_override = var_access(BATTLE_BG_OVERRIDE);
     //dprintf("Battle bg var override is %d\n", *var_override);
     if(*var_override)
         return (u8)(*var_override - 1);
     coordinate pos;
-    get_current_tile_position(&pos.x, &pos.y);
-    u8 bg_id = (u8)tile_get_field_by_pos(pos.x, pos.y, 3);
+    player_get_position(&pos.x, &pos.y);
+    u8 bg_id = (u8)block_get_field_by_pos(pos.x, pos.y, 3);
     return bg_id;
 }
 

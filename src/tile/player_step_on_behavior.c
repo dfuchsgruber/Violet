@@ -1,12 +1,11 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "tile/any_grass.h"
 #include "save.h"
 
 u8 *player_step_on_behavior(){
     s16 pos[2];
-    get_current_tile_position(&pos[0], &pos[1]);
-    u8 behavior = (u8)get_block_info_behaviour(pos[0], pos[1]);
+    player_get_position(&pos[0], &pos[1]);
+    u8 behavior = (u8)block_get_behaviour_by_pos(pos[0], pos[1]);
     
     if(behavior == 0xBB){
         //anygrass, execute player_step_function

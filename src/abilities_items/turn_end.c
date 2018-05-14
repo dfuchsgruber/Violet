@@ -6,8 +6,8 @@
 #include "battle/battlescript.h"
 #include "constants/abilities.h"
 #include "constants/battle_weathers.h"
-#include "romfuncs.h"
 #include "debug.h"
+#include "abilities.h"
 
 extern u8 bsc_recoil[];
 extern u8 bsc_heal[];
@@ -19,12 +19,12 @@ void turn_end_apply_recoil_dmg(battler *target){
     int dmg = target->max_hp / 8;
     if (dmg <= 0) dmg = 1;
     *damage_to_apply = dmg;
-    bsc_init_by_interrupting_battle_func(bsc_recoil);
+    battlescript_init_and_interrupt_battle(bsc_recoil);
 }
 
 bool turn_end(u8 ability, battler *target){
-    int weather_negating_ability_present = ability_management(0x13, 0,
-            WOLKE_SIEBEN, 0, 0) || ability_management(0x13, 0, KLIMASCHUTZ, 0,
+    int weather_negating_ability_present = ability_execute(0x13, 0,
+            WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
             0);
     dprintf("Turn end abilties triggered, ability %d, wnegpres %d\n", ability,
             weather_negating_ability_present);
@@ -51,15 +51,15 @@ bool turn_end(u8 ability, battler *target){
         int dmg = target->max_hp / 8;
         if (dmg <= 0) dmg = 1;
         *damage_to_apply = -dmg;
-        bsc_init_by_interrupting_battle_func(bsc_heal);
+        battlescript_init_and_interrupt_battle(bsc_heal);
         return true;
     }else if(ability == TOLLWUT && (target->stat_changes[1] < 7 ||
             target->stat_changes[2] > 0 || target->stat_changes[5] > 0)){
-        bsc_init_by_interrupting_battle_func(bsc_tollwut);
+        battlescript_init_and_interrupt_battle(bsc_tollwut);
         return true;
     }else if(ability == LUZID && (target->status1 & STATUS1_SLEEPING) &&
             target->stat_changes[4] < 12){
-        bsc_init_by_interrupting_battle_func(bsc_lucid);
+        battlescript_init_and_interrupt_battle(bsc_lucid);
         return true;
     }
     return false;
@@ -69,7 +69,7 @@ void turn_end_tollwut_attack_boost(){
     dprintf("Tollwut attack check for battler %d, stat change %d\n", 
             *attacking_battler, battlers[*attacking_battler].stat_changes[1]);
     if(battlers[*attacking_battler].stat_changes[1] < 8){
-        bsc_push_next_cmd();
+        battlescript_callstack_push_next_command();
         *bsc_offset = bsc_tollwut_attack_boost;
     }
 }

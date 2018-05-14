@@ -22,7 +22,14 @@ typedef struct bdata {
 
 } bdata;
 
-u32 tile_get_field_by_pos(s16 x, s16 y, u8 field);
+/**
+ * Gets a certain tile field by its position
+ * @param x the x coordinate
+ * @param y the y coorindate
+ * @param the field id
+ * @return the field value
+ */
+u32 block_get_field_by_pos(s16 x, s16 y, u8 field);
 
 typedef union union_block_data {
     bdata data;
@@ -49,10 +56,68 @@ coordinate *walking_directions = (coordinate*) 0x083A638C;
 
 
 /**
- * Redraws a singular block in the map
+ * Redraws a single block in the map
  * @param x the AM x coordiante + 7 (camera origin relative)
  * @param y the AM y coordinate + 7 (camera origin relative)
  */
 void map_draw_block(s16 x, s16 y);
+
+/**
+ * Returns the player position
+ * @param x offset to store the x coordinate
+ * @param y offset to store the y coordinate
+ */
+void player_get_position(s16 *x, s16 *y);
+
+/**
+ * Returns the id of a block at a certain position
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @return the block id at x, y
+ */
+u16 block_get_by_pos(s16 x, s16 y);
+
+/**
+ * Sets the block id at a certain position
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @param block the id to set at x, y
+ */
+void block_set_by_pos(s16 x, s16 y, u16 block);
+
+/**
+ * Updates all blocks on the maps with their RAM state (used by special 0x8E)
+ */
+void blocks_update();
+
+/**
+ * Returns the behaviour of a block at a certain position
+ * @param x the x coordinate
+ * @param y the y cooordinate
+ * @return the behaviour field of this block
+ */
+u16 block_get_behaviour_by_pos(s16 x, s16 y);
+
+/**
+ * Gets the position the player is facing
+ * @param x the offset to store the x coordinate
+ * @param y the offset to store the y coordinate
+ */
+void player_get_facing_position(s16 *x, s16 *y);
+
+/**
+ * Gets the level of a block
+ * @param x the x coordinate of the block
+ * @param y the y coordinate of the block
+ * @return the level of the block at x, y
+ */
+u8 block_get_level(s16 x, s16 y);
+
+/**
+ * Checks if a tile is reflective
+ * @param behavior the bevhavior to check
+ * @return if the tile behavior is reflective
+ */
+bool tile_is_reflective_water(u8 behavior);
 
 #endif /* INCLUDE_C_TILE_BLOCK_H_ */

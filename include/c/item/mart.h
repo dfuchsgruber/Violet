@@ -21,4 +21,15 @@ typedef struct{
 
 mart_state_t *mart_state = (mart_state_t*)0x02039934;
 
+/**
+ * Opens a pokemart
+ * @param list the item list to sell (terminated by 0)
+ */
+void pokemart(u16 *list);
+
+/**
+ * Sets the continuation callback for the current pokemart
+ */
+void mart_set_continuation_callback(void (*func)());
+
 #endif /* INCLUDE_C_ITEM_MART_H_ */

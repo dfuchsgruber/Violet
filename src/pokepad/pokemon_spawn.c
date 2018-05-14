@@ -1,11 +1,11 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "pokemon/virtual.h"
 #include "pokemon/egg_moves.h"
 #include "pokemon/basestat.h"
 #include "pokepad/state.h"
 #include "debug.h"
 #include "constants/pokemon_attributes.h"
+#include "prng.h"
 
 void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed) {
     int i;
@@ -35,13 +35,13 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
     int value = 31;
     for (i = 0; i < 6; i++) {
         if (iv_det[i]) {
-            set_pokemons_attribute(p, (u16) (ATTRIBUTE_HP_IV + i), &value);
+            pokemon_set_attribute(p, (u16) (ATTRIBUTE_HP_IV + i), &value);
         }
     }
     //now we add hidden ability
     value = 0x80;
     if (seed_generator() < 16) {
-        set_pokemons_attribute(p, ATTRIBUTE_COOLNESS, &value);
+        pokemon_set_attribute(p, ATTRIBUTE_COOLNESS, &value);
     }
 
     //now we add egg moves
@@ -68,9 +68,9 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
         if (seed < 8 && basestats[species].rare_item) {
             item = &basestats[species].rare_item;
         }
-        set_pokemons_attribute(p, ATTRIBUTE_ITEM, item);
+        pokemon_set_attribute(p, ATTRIBUTE_ITEM, item);
     }
-    recalculate_stats(&opponent_pokemon[0]);
+    pokemon_calculate_stats(&opponent_pokemon[0]);
 }
 
 

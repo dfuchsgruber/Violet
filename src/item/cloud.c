@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "overworld/npc.h"
 
 void cloud_force() {

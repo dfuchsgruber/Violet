@@ -52,7 +52,7 @@ oam_template anim_staraptor_front_template = {
     &anim_staraptor_sprite,
     anim_staraptor,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
 };
 
@@ -62,7 +62,7 @@ oam_template anim_staraptor_back_template = {
     &anim_staraptor_sprite,
     anim_staraptor,
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
 };
 
@@ -71,7 +71,7 @@ oam_template anim_staraptor_front_flipped_template = {
     &anim_staraptor_sprite,
     &anim_staraptor[1],
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
 };
 
@@ -81,7 +81,7 @@ oam_template anim_staraptor_back_flipped_template = {
     &anim_staraptor_sprite,
     &anim_staraptor[1],
     NULL,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
 };
 
@@ -112,7 +112,7 @@ oam_template anim_staraptor_hiroine_template_to = {
     &anim_staraptor_sprite_hiro,
     &anim_staraptor_hiro_anim_table[1],
     anim_staraptor_hiroine_graphics,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
     
 };
@@ -123,7 +123,7 @@ oam_template anim_staraptor_hiroine_template_from = {
     &anim_staraptor_sprite_hiro,
     anim_staraptor_hiro_anim_table,
     anim_staraptor_hiroine_graphics,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
     
 };
@@ -134,7 +134,7 @@ oam_template anim_staraptor_hiro_template_to = {
     &anim_staraptor_sprite_hiro,
     &anim_staraptor_hiro_anim_table[1],
     anim_staraptor_hiro_graphics,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
     
 };
@@ -145,7 +145,7 @@ oam_template anim_staraptor_hiro_template_from = {
     &anim_staraptor_sprite_hiro,
     anim_staraptor_hiro_anim_table,
     anim_staraptor_hiro_graphics,
-    ROTSCALE_TABLE_NULL,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     anim_staraptor_oam_callback
     
 };
