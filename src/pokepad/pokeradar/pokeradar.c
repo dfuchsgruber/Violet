@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "map/header.h"
 #include "pokepad/gui.h"
 #include "pokepad/pokeradar.h"
@@ -10,6 +9,13 @@
 #include "overworld/npc.h"
 #include "fading.h"
 #include "pokemon/basestat.h"
+#include "agbmemory.h"
+#include "vars.h"
+#include "overworld/map_control.h"
+#include "prng.h"
+#include "superstate.h"
+#include "flags.h"
+#include "overworld/script.h"
 
 extern u8 script_pokeradar_battle[];
 

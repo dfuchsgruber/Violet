@@ -1,18 +1,24 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "bg.h"
 #include "oam.h"
 #include "callbacks.h"
 #include "save.h"
 #include "fp_menu.h"
-#include "fieldmoves.h"
+#include "field_move.h"
 #include "pokemon/basestat.h"
 #include "pokemon/sprites.h"
+#include "pokemon/cry.h"
 #include "color.h"
 #include "superstate.h"
 #include "constants/pokemon_attributes.h"
 #include "language.h"
-
+#include "agbmemory.h"
+#include "io.h"
+#include "bios.h"
+#include "music.h"
+#include "overworld/map_control.h"
+#include "overworld/pokemon_party_menu.h"
+#include "fading.h"
 
 extern const unsigned short gfx_fp_menu_arrow_upTiles[];
 extern const unsigned short gfx_fp_menu_arrow_leftTiles[];
@@ -51,15 +57,15 @@ tboxdata fp_menu_tboxes [] = {
     {0xFF, 0, 0, 0, 0, 0, 0}
 };
 
-u8 fp_menu_fontcolmap_std[4] = {
+tbox_font_colormap fp_menu_fontcolmap_std = {
     0, 2, 1, 3
 };
 
-u8 fp_menu_fontcolmap_red[4] = {
+tbox_font_colormap fp_menu_fontcolmap_red = {
     0, 5, 1, 3
 };
 
-u8 fp_menu_fontcolmap_blue[4] = {
+tbox_font_colormap fp_menu_fontcolmap_blue = {
     0, 9, 1, 3
 };
 
@@ -73,9 +79,9 @@ oam_template fp_menu_oam_poke_template = {
     0xA000,
     0xA000,
     &fp_menu_oam_poke_sprite,
-    oam_gfx_anim_table_null,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     fp_menu_pokepic_callback
 };
 
@@ -101,9 +107,9 @@ oam_template fp_menu_oam_arrow_template_down = {
     0xA001,
     0xA001,
     &fp_menu_arrow_sprite_down,
-    oam_gfx_anim_table_null,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -111,9 +117,9 @@ oam_template fp_menu_oam_arrow_template_up = {
     0xA001,
     0xA001,
     &fp_menu_arrow_sprite_up,
-    oam_gfx_anim_table_null,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -121,9 +127,9 @@ oam_template fp_menu_oam_arrow_template_left = {
     0xA002,
     0xA001,
     &fp_menu_arrow_sprite_left,
-    oam_gfx_anim_table_null,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -131,9 +137,9 @@ oam_template fp_menu_oam_arrow_template_right = {
     0xA002,
     0xA001,
     &fp_menu_arrow_sprite_right,
-    oam_gfx_anim_table_null,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -141,7 +147,7 @@ void fp_menu_callback_init() {
     generic_callback1();
     if (!fading_is_active()) {
         big_callback_delete_all();
-        pokemenu_free();
+        pokemon_party_menu_free();
         oam_reset();
         oam_palette_allocation_reset();
         bg_reset(0);
@@ -153,10 +159,10 @@ void fp_menu_callback_init() {
         bg_virtual_set_displace(0, 0, 0);
         bg_virtual_map_displace(1, 0, 0);
         bg_virtual_set_displace(1, 0, 0);
-        set_io(0x10, 0);
-        set_io(0x12, 0);
-        set_io(0x14, 0);
-        set_io(0x16, 0);
+        io_set(0x10, 0);
+        io_set(0x12, 0);
+        io_set(0x14, 0);
+        io_set(0x16, 0);
 
         //we init the backgrounds
 
@@ -314,13 +320,13 @@ void fp_menu_callback_return() {
 
 void fp_menu_pokemon_load() {
     pokemon *target = &player_pokemon[fmem->fp_mem->poke_index];
-    u32 species = pokemon_get_attribute(target, ATTRIBUTE_SPECIES, NULL);
+    int species = pokemon_get_attribute(target, ATTRIBUTE_SPECIES, NULL);
 
     int *obj_vram = (int*) 0x06010000; //we declare it as int, because we have not better declaration
     lz77uncompvram(pokemon_frontsprites[species].sprite, &obj_vram[8 * fmem->fp_mem->tile_pokepic]);
 
     //to load the pal we determine if the pokemon is shiny
-    pid poke_pid = (pid) pokemon_get_attribute(target, ATTRIBUTE_PID, 0);
+    pid poke_pid = {.value = (u32)pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
     if (poke_pid.fields.shinyness <= 512) {
         pal_decompress(pokemon_shiny_pals[species].pal, (u16) (256 + 16 * fmem->fp_mem->pal_pokepic), 32);
     } else {
@@ -331,13 +337,13 @@ void fp_menu_pokemon_load() {
     pokemon_get_attribute(target, ATTRIBUTE_NICKNAME, strbuf);
     tbox_flush_set(0, 0);
     tbox_tilemap_draw(0);
-    tbox_print_string(0, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
+    tbox_print_string(0, 2, 0, 0, 0, 0, &fp_menu_fontcolmap_std, 0, strbuf);
 
     //print the level
     itoa(strbuf, pokemon_get_attribute(target, ATTRIBUTE_LEVEL, NULL), 0, 2);
     tbox_flush_set(2, 0);
     tbox_tilemap_draw(2);
-    tbox_print_string(2, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
+    tbox_print_string(2, 2, 0, 0, 0, 0, &fp_menu_fontcolmap_std, 0, strbuf);
 
     fp_menu_stats_load(target);
 
@@ -369,26 +375,26 @@ void fp_menu_stats_load(pokemon *target) {
         u8 *str = itoa(strbuf, pokemon_get_attribute(target, (u8) (ATTRIBUTE_TOTAL_HP + i), NULL), 0, 3);
         u8 box_id = (u8) (3 + i);
         tbox_flush_set(box_id, 0);
-        u8 *fontcolmap = fp_menu_fontcolmap_std;
+        tbox_font_colormap fontcolmap = fp_menu_fontcolmap_std;
         if (i == stat_boosted && i != stat_nerved) {
             fontcolmap = fp_menu_fontcolmap_red;
             u8 str_plus[] = PSTRING("+");
-            str_append(str, str_plus);
+            strcat(str, str_plus);
         } else if (i == stat_nerved && i != stat_boosted) {
             fontcolmap = fp_menu_fontcolmap_blue;
             u8 str_minus[] = PSTRING("-");
-            str_append(str, str_minus);
+            strcat(str, str_minus);
         }
         tbox_tilemap_draw(box_id);
-        tbox_print_string(box_id, 2, 0, 0, 0, 0, fontcolmap, 0, strbuf);
+        tbox_print_string(box_id, 2, 0, 0, 0, 0, &fontcolmap, 0, strbuf);
     }
 
     //print the sum of evs
-    u32 ev_sum = (u32) (4 * fp_menu_get_sum_applied(target));
+    int ev_sum =  4 * fp_menu_get_sum_applied(target);
     itoa(strbuf, ev_sum, 0, 3);
     tbox_flush_set(1, 0);
     tbox_tilemap_draw(1);
-    tbox_print_string(1, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
+    tbox_print_string(1, 2, 0, 0, 0, 0, &fp_menu_fontcolmap_std, 0, strbuf);
 
     fp_menu_stat_load(target);
 }
@@ -399,7 +405,7 @@ void fp_menu_stat_load(pokemon *target) {
     //load the stats name
     tbox_flush_set(9, 0);
     tbox_tilemap_draw(9);
-    tbox_print_string(9, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, fp_menu_names[stat]);
+    tbox_print_string(9, 2, 0, 0, 0, 0, &fp_menu_fontcolmap_std, 0, fp_menu_names[stat]);
 
     int fp_earned = (int) pokemon_get_attribute(target, (u8) (ATTRIBUTE_HP_EV + stat), NULL);
     int fp_applied = pokemon_get_fp_applied(target, stat) * 4;
@@ -414,22 +420,22 @@ void fp_menu_stat_load(pokemon *target) {
             (int) pokemon_get_attribute(opponent_pokemon, (u8) (ATTRIBUTE_TOTAL_HP + stat), NULL);
 
     //print availble
-    itoa(strbuf, (u32) fp_free, 0, 3);
+    itoa(strbuf, fp_free, 0, 3);
     tbox_flush_set(10, 0);
     tbox_tilemap_draw(10);
-    tbox_print_string(10, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
+    tbox_print_string(10, 2, 0, 0, 0, 0, &fp_menu_fontcolmap_std, 0, strbuf);
 
     //print used
-    itoa(strbuf, (u32) fp_applied, 0, 3);
+    itoa(strbuf, fp_applied, 0, 3);
     tbox_flush_set(12, 0);
     tbox_tilemap_draw(12);
-    tbox_print_string(12, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
+    tbox_print_string(12, 2, 0, 0, 0, 0, &fp_menu_fontcolmap_std, 0, strbuf);
 
     //print bonus
-    itoa(strbuf, (u32) stat_bonus, 0, 3);
+    itoa(strbuf, stat_bonus, 0, 3);
     tbox_flush_set(11, 0);
     tbox_tilemap_draw(11);
-    tbox_print_string(11, 2, 0, 0, 0, 0, fp_menu_fontcolmap_std, 0, strbuf);
+    tbox_print_string(11, 2, 0, 0, 0, 0, &fp_menu_fontcolmap_std, 0, strbuf);
 
 }
 

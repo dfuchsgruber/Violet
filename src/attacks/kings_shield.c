@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "attack.h"
 #include "battle/state.h"
 #include "battle/attack.h"
@@ -7,7 +6,6 @@
 #include "battle/battler.h"
 #include "save.h"
 #include "debug.h"
-#include <stdbool.h>
 #include "constants/attacks.h"
 #include "constants/attack_flags.h"
 #include "constants/attack_categories.h"

@@ -16,6 +16,10 @@
 #include "language.h"
 #include "map/namespace.h"
 #include "fading.h"
+#include "io.h"
+#include "agbmemory.h"
+#include "bios.h"
+#include "worldmap.h"
 
 extern const unsigned short gfx_pokedex_habitat_rarityTiles[];
 extern const unsigned short gfx_pokedex_habitat_rodTiles[];
@@ -132,7 +136,7 @@ oam_template pokedex_habitat_cursor_template = {
     &pokedex_habitat_cursor_sprite,
     pokedex_habitat_cursor_gfx_anim_table,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -140,9 +144,9 @@ oam_template pokedex_habitat_head_template = {
     0xA015,
     0xA015,
     &pokedex_habitat_head_sprite,
-    oam_gfx_anim_table_null,
+    OAM_GFX_ANIM_TABLE_NULL,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -152,7 +156,7 @@ oam_template pokedex_habitat_rarity_template = {
     &pokedex_habitat_cursor_sprite,
     pokedex_habitat_rarity_gfx_anim_table,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
@@ -162,11 +166,11 @@ oam_template pokedex_habitat_rod_template = {
     &pokedex_habitat_cursor_sprite,
     pokedex_habitat_rarity_gfx_anim_table,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
-u8 pokedex_fontcolmap_namespace[4] = {3, 2, 1, 0};
+tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
 
 int *worldmap_tilemaps[4] = {
     (int*) gfx_worldmap_4bppMap,
@@ -219,8 +223,8 @@ void pokedex_init_habitat() {
         bg_set_tilemap(2, bg2map);
         bg_set_tilemap(3, bg3map);
 
-        set_io(0x18, 0);
-        set_io(0x1C, (u16) (-24));
+        io_set(0x18, 0);
+        io_set(0x1C, (u16) (-24));
 
         u16 *gp_tmp = (u16*) 0x0201C000;
 
@@ -247,30 +251,30 @@ void pokedex_init_habitat() {
         tbox_tilemap_draw(0);
         u8 str_title[] = LANGDEP(PSTRING("Fundorte v."), PSTRING("Habitats of"));
         u8 *title = strcpy(strbuf, str_title);
-        title = str_append(title, pokemon_names[fmem->dex_mem->current_species]);
-        tbox_print_string(0, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
+        title = strcat(title, pokemon_names[fmem->dex_mem->current_species]);
+        tbox_print_string(0, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
         u8 str_back[] = LANGDEP(PSTRING("KEY_B Zur."), PSTRING("KEY_B Back"));
-        tbox_print_string(0, 2, 144, 0, 0, 0, pokedex_fontcolmap, 0, str_back);
+        tbox_print_string(0, 2, 144, 0, 0, 0, &pokedex_fontcolmap, 0, str_back);
 
         tbox_flush_set(1, 0);
         tbox_tilemap_draw(1);
         u8 str_habitat_grass[] = LANGDEP(PSTRING(" Natur"), PSTRING(" Nature"));
-        tbox_print_string(1, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_habitat_grass);
+        tbox_print_string(1, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_habitat_grass);
 
         tbox_flush_set(2, 0);
         tbox_tilemap_draw(2);
         u8 str_habitat_water[] = LANGDEP(PSTRING(" Wasser"), PSTRING(" Water"));
-        tbox_print_string(2, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_habitat_water);
+        tbox_print_string(2, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_habitat_water);
 
         tbox_flush_set(3, 0);
         tbox_tilemap_draw(3);
         u8 str_habitat_rod[] = LANGDEP(PSTRING(" Angel"), PSTRING(" Rod"));
-        tbox_print_string(3, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_habitat_rod);
+        tbox_print_string(3, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_habitat_rod);
 
         tbox_flush_set(4, 0);
         tbox_tilemap_draw(4);
         u8 str_habitat_radar[] = LANGDEP(PSTRING(" Radar"), PSTRING(" Radar"));
-        tbox_print_string(4, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, str_habitat_radar);
+        tbox_print_string(4, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_habitat_radar);
 
         //pal
         pal_copy(gfx_worldmap_4bppPal, 0, 32);
@@ -324,8 +328,8 @@ void pokedex_init_habitat() {
 
         bg_display_sync();
 
-        set_io(0x50, 0x3F42);
-        set_io(0x52, 0xA0F);
+        io_set(0x50, 0x3F42);
+        io_set(0x52, 0xA0F);
     }
 }
 
@@ -448,21 +452,21 @@ void pokedex_habitats_load_namespace() {
     u8 str_blank [] = {0, 0, 0xFF};
     u8 namespace = worldmap_get_namespace_by_pos(fmem->dex_mem->current_worldmap, 0, fmem->dex_mem->habitat_cursor_y, fmem->dex_mem->habitat_cursor_x);
     if (namespace != 0xC5) {
-        str_append(str_append(strcpy(strbuf, str_blank), map_namespaces[namespace - 0x58]), str_blank);
+        strcat(strcat(strcpy(strbuf, str_blank), map_namespaces[namespace - 0x58]), str_blank);
     } else {
         *strbuf = 0xFF;
     }
     tbox_flush_set(5, 0);
     tbox_tilemap_draw(5);
-    tbox_print_string(5, 2, 0, 1, 0, 0, pokedex_fontcolmap_namespace, 0, strbuf);
+    tbox_print_string(5, 2, 0, 1, 0, 0, &pokedex_fontcolmap_namespace, 0, strbuf);
 
     //print the not found string
     if (!fmem->dex_mem->habitat_found) {
         u8 str_habitat_none[] = LANGDEP(PSTRING(" Keine Gebiete bekannt"), PSTRING("No habitats known"));
-        str_append(str_append(strcpy(strbuf, str_blank), str_habitat_none), str_blank);
+        strcat(strcat(strcpy(strbuf, str_blank), str_habitat_none), str_blank);
         tbox_flush_set(6, 0);
         tbox_tilemap_draw(6);
-        tbox_print_string(6, 2, 0, 0, 0, 0, pokedex_fontcolmap_namespace, 0, strbuf);
+        tbox_print_string(6, 2, 0, 0, 0, 0, &pokedex_fontcolmap_namespace, 0, strbuf);
     }
 }
 

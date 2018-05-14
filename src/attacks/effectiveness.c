@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "attack.h"
 #include "constants/pokemon_types.h"
 

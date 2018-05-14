@@ -1,13 +1,12 @@
 #include "types.h"
 #include "oam.h"
 #include "callbacks.h"
-#include "romfuncs.h"
 #include "save.h"
 #include "debug.h"
 #include "color.h"
 #include "math.h"
-
-
+#include "io.h"
+#include "bios.h"
 
 extern const unsigned short gfx_groudon_headTiles[];
 extern const unsigned short gfx_groudon_arm_leftTiles[];
@@ -100,9 +99,9 @@ void oam_callback_groudon_arm(oam_object *self){
 void groudon_bg_scroll_all(u8 self){
     int cnt = big_callbacks[self].params[0];
     if(cnt == 0 || cnt == 4 || cnt == 8 || cnt == 12){
-        set_io(0x10, (u16)(get_io(0x10)-1));
+        io_set(0x10, (u16)(io_get(0x10)-1));
         if(cnt == 0 || cnt == 8){
-            set_io(0x18,(u16)(get_io(0x18)-1));
+            io_set(0x18,(u16)(io_get(0x18)-1));
         }
     }
     if(!cnt){
@@ -124,12 +123,12 @@ void groudon_bg_scroll_cb(u8 self){
         oam_object *arm_right = &oams[fmem->ae_mem->vars[2]];
         big_callbacks[self].params[1] ^= 1; //switch
         if( big_callbacks[self].params[1]){
-            set_io(0x16, (u16)(get_io(0x16)+1));
+            io_set(0x16, (u16)(io_get(0x16)+1));
             head->y--;
             arm_left->y--;
             arm_right->y--;
         }else{
-            set_io(0x16, (u16)(get_io(0x16)-1));
+            io_set(0x16, (u16)(io_get(0x16)-1));
             head->y++;
             arm_left->y++;
             arm_right->y++;
@@ -143,11 +142,11 @@ void groudon_bg_scroll_cb(u8 self){
 void groudon_bg_scroll_diserakt_cb(u8 self){
     
     if(!(big_callbacks[self].params[0] & 31)){
-        set_io(0x10, (u16)(get_io(0x10)-1));
+        io_set(0x10, (u16)(io_get(0x10)-1));
         oam_object *d = &oams[fmem->ae_mem->vars[0]];
         d->x++;
         if(!(big_callbacks[self].params[0] & 127)){   
-            set_io(0x14, (u16)(get_io(0x14)-1));
+            io_set(0x14, (u16)(io_get(0x14)-1));
         }
     }
     big_callbacks[self].params[0]++;
@@ -167,9 +166,9 @@ void groudon_anim_step_cb(u8 self){
             if(big_callbacks[self].params[0] & 6)
                 oams[fmem->ae_mem->vars[i]].y = (s16)(oams[fmem->ae_mem->vars[i]].y-1);
         }
-        set_io(0x14, (u16)(get_io(0x14)+1));
+        io_set(0x14, (u16)(io_get(0x14)+1));
         if(big_callbacks[self].params[0] & 6)
-            set_io(0x16, (u16)(get_io(0x16)+1));
+            io_set(0x16, (u16)(io_get(0x16)+1));
         
     }else{
         big_callback_delete(self);
@@ -218,9 +217,9 @@ void groudon_anim_earthquake_cb(u8 self){
             for(i = 0; i < 5; i++){
                 oams[fmem->ae_mem->vars[i]].x2 = (s16)(y);
             }
-            set_io(0x14, (u16)(get_io(0x14)-y+(*slast)));
-            set_io(0x18, (u16)(get_io(0x18)-y+(*slast)));
-            set_io(0x10, (u16)(get_io(0x10)-y+(*slast)));
+            io_set(0x14, (u16)(io_get(0x14)-y+(*slast)));
+            io_set(0x18, (u16)(io_get(0x18)-y+(*slast)));
+            io_set(0x10, (u16)(io_get(0x10)-y+(*slast)));
             *slast = (u16)y;
         big_callbacks[self].params[4]++;
     }

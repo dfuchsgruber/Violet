@@ -1,7 +1,8 @@
 #include "types.h"
 #include "oam.h"
 #include "callbacks.h"
-#include "romfuncs.h"
+#include "io.h"
+#include "bios.h"
 #include "math.h"
 #include "overworld/sprite.h"
 

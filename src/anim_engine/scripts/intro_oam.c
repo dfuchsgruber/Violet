@@ -1,7 +1,8 @@
 #include "types.h"
 #include "oam.h"
 #include "callbacks.h"
-#include "romfuncs.h"
+#include "io.h"
+#include "bios.h"
 
 extern u16 gfx_intro_meteorTiles[];
 extern u16 gfx_intro_deoxys_headTiles[];
@@ -56,15 +57,15 @@ void anim_intro_earthquake(u8 self){
     if(++(big_callbacks[self].params[0]) == 3){
         big_callbacks[self].params[0] = 0;
         if(++(big_callbacks[self].params[1]) == 8){
-            set_io(0x14, 0);
+            io_set(0x14, 0);
             big_callback_delete(self);
         }
         else{
             big_callbacks[self].params[2] ^= 1;
             if(big_callbacks[self].params[2]){
-                set_io(0x14, (u16)-2);
+                io_set(0x14, (u16)-2);
             }else{
-                set_io(0x14, 2);
+                io_set(0x14, 2);
             }
         }
     }
@@ -261,7 +262,7 @@ oam_template oam_template_intro_waves_back = {
 };**/
 
 void anim_intro_waves_back_scroll(u8 self){
-    set_io(0x18, big_callbacks[self].params[0]);
-    set_io(0x1C, big_callbacks[self].params[0] >> 3);
+    io_set(0x18, big_callbacks[self].params[0]);
+    io_set(0x1C, big_callbacks[self].params[0] >> 3);
     big_callbacks[self].params[0]--;
 }

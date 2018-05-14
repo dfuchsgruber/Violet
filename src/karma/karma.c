@@ -1,8 +1,8 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "karma.h"
 #include "math.h"
 #include "constants/vars.h"
+#include "vars.h"
 
 u16 addkarma(u16 *value) {
     s16 v = (s16) (*value);

@@ -1,24 +1,24 @@
 .org 0x08122A34
-    ldr r3, =pokemenu_build_opt_by_pokemon | 1
+    ldr r3, =pokemon_party_menu_opt_build | 1
     bx r3
     .pool
 
 .org 0x8120FA8
-    .word pokemenu_opts
+    .word pokemon_party_menu_opts
 
 .org 0x8121FF0
-    .word pokemenu_opts
+    .word pokemon_party_menu_opts
 
 .org 0x8122D50
-    .word pokemenu_opts
+    .word pokemon_party_menu_opts
 
 .org 0x8122D80
-    .word pokemenu_opts
+    .word pokemon_party_menu_opts
 
 .org 0x08122208
     .word field_move_descriptions
 
 .org 0x081245F4
-    ldr r1, =pokemenu_opt_outdoor_move | 1
+    ldr r1, =pokemon_party_menu_opt_outdoor_move | 1
     bx r1
     .pool

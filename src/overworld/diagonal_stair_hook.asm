@@ -13,7 +13,7 @@ str r1, [sp] @direction as 5th param
 mov r1, r5
 mov r2, r4
 mov r3, r6
-bl npc_is_tile_diag_enabling
+bl block_triggers_diagnoal_move
 cmp r0, #0x80
 bge enables
 ldr r1, =0x805BBD9

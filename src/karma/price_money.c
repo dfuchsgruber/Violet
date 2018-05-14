@@ -1,7 +1,7 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "karma.h"
 #include "constants/vars.h"
+#include "vars.h"
 
 int modify_price_money(int price_money) {
 

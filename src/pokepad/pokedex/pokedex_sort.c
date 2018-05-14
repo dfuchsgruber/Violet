@@ -1,7 +1,6 @@
 #include "types.h"
 #include "stdbool.h"
 #include "pokepad/pokedex/gui.h"
-#include "romfuncs.h"
 #include "oam.h"
 #include "callbacks.h"
 #include "save.h"
@@ -13,6 +12,9 @@
 #include "color.h"
 #include "superstate.h"
 #include "transparency.h"
+#include "music.h"
+#include "agbmemory.h"
+#include "io.h"
 
 void pokedex_sort_locate_cursor() {
     ;
@@ -24,11 +26,11 @@ void pokedex_big_callback_resort(u8 self) {
         case 0:
         { //init resort (win1 feature)
             play_sound(6);
-            u16 dispcnt = get_io(0) | 0x4000;
-            set_io(0, dispcnt);
-            set_io(0x48, 0x81F); //everything is in window 0 but nothing is in window 1
-            set_io(0x42, 0x40F0); //leftmost = 64, rightmost = 240
-            set_io(0x46, 0xa0A0); //topmost = 33, bottommost = 160
+            u16 dispcnt = io_get(0) | 0x4000;
+            io_set(0, dispcnt);
+            io_set(0x48, 0x81F); //everything is in window 0 but nothing is in window 1
+            io_set(0x42, 0x40F0); //leftmost = 64, rightmost = 240
+            io_set(0x46, 0xa0A0); //topmost = 33, bottommost = 160
             big_callbacks[self].params[0] = 1;
             big_callbacks[self].params[1] = 160;
             //spawn_big_callback(pokedex_big_callback_quicksort_parallel, 0);
@@ -44,7 +46,7 @@ void pokedex_big_callback_resort(u8 self) {
                 big_callbacks[self].params[1] = (u16) (big_callbacks[self].params[1] - 8);
             }
             u16 topmost_new = (u16) (big_callbacks[self].params[1] << 8);
-            set_io(0x46, topmost_new | 0xA0);
+            io_set(0x46, topmost_new | 0xA0);
             break;
         }
         case 2:
@@ -66,8 +68,8 @@ void pokedex_big_callback_resort(u8 self) {
             //move window downwards
             if (big_callbacks[self].params[1] >= 232) {
 
-                u16 dispcnt = (u16) (get_io(0) & (~0x4000));
-                set_io(0, dispcnt);
+                u16 dispcnt = (u16) (io_get(0) & (~0x4000));
+                io_set(0, dispcnt);
                 fmem->dex_mem->resorting = false;
                 big_callback_delete(self);
             } else {
@@ -75,7 +77,7 @@ void pokedex_big_callback_resort(u8 self) {
             }
             u16 topmost_new = (u16) (big_callbacks[self].params[1] << 8);
             if (topmost_new > 0xA000) topmost_new = 0xA000;
-            set_io(0x46, topmost_new | 0xA0);
+            io_set(0x46, topmost_new | 0xA0);
             break;
         }
 

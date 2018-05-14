@@ -1,5 +1,5 @@
 #include "types.h"
-#include "romfuncs.h"
+#include "superstate.h"
 
 void callback_maintain();
 

@@ -1,9 +1,6 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "anim_engine.h"
-
-
-
+#include "agbmemory.h"
 
 /**
  * Nullsub for anim tasks (root holds nullsub)

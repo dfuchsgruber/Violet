@@ -1,7 +1,6 @@
 
 #include "types.h"
 #include "stdbool.h"
-#include "romfuncs.h"
 #include "pokepad/gui.h"
 #include "pokepad/pokedex/gui.h"
 #include "pokepad/pokedex/operator.h"
@@ -20,6 +19,13 @@
 #include "constants/flags.h"
 #include "constants/vars.h"
 #include "language.h"
+#include "io.h"
+#include "flags.h"
+#include "vars.h"
+#include "music.h"
+#include "bios.h"
+#include "agbmemory.h"
+#include "overworld/map_control.h"
 
 extern const unsigned short gfx_pokedex_sort_cursorTiles[];
 extern const unsigned short gfx_pokedex_uiMap[];
@@ -86,13 +92,13 @@ oam_template pokedex_cursor_template = {
     &pokedex_cursor_sprite,
     pokedex_cursor_anims,
     NULL,
-    oam_rotscale_anim_table_null,
+    OAM_ROTSCALE_ANIM_TABLE_NULL,
     oam_null_callback
 };
 
-u8 pokedex_fontcolmap[4] = {0, 2, 1, 0};
-u8 pokedex_features_active_fontcolmap[4] = {0, 15, 13, 1};
-u8 pokedex_features_fontcolmap[4] = {0, 10, 13, 1};
+tbox_font_colormap pokedex_fontcolmap = {0, 2, 1, 0};
+tbox_font_colormap pokedex_features_active_fontcolmap = {0, 15, 13, 1};
+tbox_font_colormap pokedex_features_fontcolmap = {0, 10, 13, 1};
 
 u16 pokedex_colors[16] = {0, 0x2927, 0x7FFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 u16 pokedex_colors_nr[16] = {0, 0x7FFF, 0x2927, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -150,8 +156,8 @@ void pokedex_draw_feature_strings(){
         tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_0);
         tbox_print_string(POKEDEX_TBOX_FEATURE_0, 2, 2, 4, 0, 0,
                 fmem->dex_mem->current_feature == 0 ? 
-                    pokedex_features_active_fontcolmap : 
-                    pokedex_features_fontcolmap, 0, str_feature_0);
+                    &pokedex_features_active_fontcolmap :
+                    &pokedex_features_fontcolmap, 0, str_feature_0);
     }
     if(checkflag(POKEDEX_FEATURE_1)){
       u8 str_feature_1[] = LANGDEP(PSTRING("Scanner2"), PSTRING("Scanner2"));
@@ -159,8 +165,8 @@ void pokedex_draw_feature_strings(){
         tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_1);
         tbox_print_string(POKEDEX_TBOX_FEATURE_1, 2, 2, 2, 0, 0,
                 fmem->dex_mem->current_feature == 1 ? 
-                    pokedex_features_active_fontcolmap : 
-                    pokedex_features_fontcolmap, 0, str_feature_1);
+                    &pokedex_features_active_fontcolmap :
+                    &pokedex_features_fontcolmap, 0, str_feature_1);
     }
     if(checkflag(POKEDEX_FEATURE_2)){
       u8 str_feature_2[] = LANGDEP(PSTRING("Scanner3"), PSTRING("Scanner3"));
@@ -168,8 +174,8 @@ void pokedex_draw_feature_strings(){
         tbox_tilemap_draw(POKEDEX_TBOX_FEATURE_2);
         tbox_print_string(POKEDEX_TBOX_FEATURE_2, 2, 2, 2, 0, 0,
                 fmem->dex_mem->current_feature == 2 ? 
-                    pokedex_features_active_fontcolmap : 
-                    pokedex_features_fontcolmap, 0, str_feature_2);
+                    &pokedex_features_active_fontcolmap :
+                    &pokedex_features_fontcolmap, 0, str_feature_2);
     }
 }
 
@@ -305,9 +311,9 @@ void pokedex_callback_group_selection() {
 }
 
 void pokedex_group_window_set() {
-    set_io(0, get_io(0) | 0x2000); //enable win0
-    set_io(0x48, 0x1F1F); //all bgs and obj layer are inside window
-    set_io(0x4A, 0x1B1B); //bg2 is excluded from outside the window
+    io_set(0, io_get(0) | 0x2000); //enable win0
+    io_set(0x48, 0x1F1F); //all bgs and obj layer are inside window
+    io_set(0x4A, 0x1B1B); //bg2 is excluded from outside the window
     u8 leftmost = 0;
     u8 rightmost = 240;
     u8 topmost = 0;
@@ -328,8 +334,8 @@ void pokedex_group_window_set() {
     }
     u16 hdim = (u16) (rightmost | (leftmost << 8));
     u16 vdim = (u16) (bottommost | (topmost << 8));
-    set_io(0x40, hdim);
-    set_io(0x44, vdim);
+    io_set(0x40, hdim);
+    io_set(0x44, vdim);
 }
 
 void pokedex_show_components() {
@@ -377,11 +383,11 @@ void pokedex_init_components() {
     itoa(strbuf, seen, 0, 3);
     tbox_flush_set(POKEDEX_TBOX_SEEN, 0);
     tbox_tilemap_draw(POKEDEX_TBOX_SEEN);
-    tbox_print_string(POKEDEX_TBOX_SEEN, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
+    tbox_print_string(POKEDEX_TBOX_SEEN, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
     itoa(strbuf, caught, 0, 3);
     tbox_flush_set(POKEDEX_TBOX_CAUGHT, 0);
     tbox_tilemap_draw(POKEDEX_TBOX_CAUGHT);
-    tbox_print_string(POKEDEX_TBOX_CAUGHT, 2, 0, 0, 0, 0, pokedex_fontcolmap, 0, strbuf);
+    tbox_print_string(POKEDEX_TBOX_CAUGHT, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
     pokedex_draw_feature_strings();
 
     
@@ -459,11 +465,11 @@ void pokedex_callback_init() {
         pokedex_build_list();
         pokedex_quicksort_list((u8) fmem->dex_mem->current_comparator, 0, POKEDEX_CNT - 1); //resort list
         pokedex_update_list();
-        set_io(0x50, 0);
-        set_io(0x52, 0);
-        set_io(0x54, 0);
+        io_set(0x50, 0);
+        io_set(0x52, 0);
+        io_set(0x54, 0);
 
-        bic_io(0, 0x6000);
+        io_bic(0, 0x6000);
     }
 }
 

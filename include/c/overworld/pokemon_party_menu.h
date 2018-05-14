@@ -122,4 +122,9 @@ void pokemon_party_menu_return_to();
 void pokemon_party_menu_init(u8 a, u8 b, u8 c, u8 d, u8 e, void (*func1)(),
     void (*return_callback)());
 
+/**
+ * Frees all components of the pokemon party menu
+ */
+void pokemon_party_menu_free();
+
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

@@ -1,8 +1,6 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "oam.h"
 #include "callbacks.h"
-#include <stdbool.h>
 #include "anim_engine.h"
 #include "superstate.h"
 #include "color.h"
@@ -11,6 +9,16 @@
 #include "save.h"
 #include "debug.h"
 #include "math.h"
+#include "bios.h"
+#include "music.h"
+#include "agbmemory.h"
+#include "overworld/map_control.h"
+#include "pokemon/cry.h"
+#include "flags.h"
+#include "io.h"
+#include "vars.h"
+#include "fading.h"
+#include "dma.h"
 
 /**
 / Method to initalize the callback
@@ -340,7 +348,7 @@ void cmdx11_get_io(ae_memory*mem) {
     u16 var = (u16) (anim_engine_read_hword(mem) - 0x8000);
     u16 ioreg = anim_engine_read_hword(mem);
     if (var < 0x10) {
-        mem->vars[var] = get_io(ioreg);
+        mem->vars[var] = io_get(ioreg);
 
     }
 }
@@ -349,14 +357,14 @@ void cmdx12_set_io_to_var(ae_memory*mem) {
     u16 var = (u16) (anim_engine_read_hword(mem) - 0x8000);
     u16 ioreg = anim_engine_read_hword(mem);
     if (var < 0x10) {
-        set_io(ioreg, mem->vars[var]);
+        io_set(ioreg, mem->vars[var]);
     }
 }
 
 void cmdx13_set_io_to_value(ae_memory*mem) {
     u16 val = anim_engine_read_hword(mem);
     u16 ioreg = anim_engine_read_hword(mem);
-    set_io(ioreg, val);
+    io_set(ioreg, val);
 }
 
 void cmdx14_prepare_tbox(ae_memory*mem) {
@@ -387,7 +395,7 @@ void cmdx15_display_text_inst(ae_memory* mem) {
     u8 border_distance = anim_engine_read_byte(mem);
     u8 line_distance_u = anim_engine_read_byte(mem);
     u8 line_distance_l = anim_engine_read_byte(mem);
-    u8* font_map = (u8*) anim_engine_read_word(mem);
+    tbox_font_colormap *font_map = (tbox_font_colormap*) anim_engine_read_word(mem);
     u8 display_flag = anim_engine_read_byte(mem);
     u8* string = (u8*) anim_engine_read_word(mem);
     u8 bgid = anim_engine_read_byte(mem);
@@ -404,7 +412,8 @@ void cmdx15_display_text_inst(ae_memory* mem) {
 
 void cmdx16_clear_textbox(ae_memory* mem) {
     u8 boxid = (u8) anim_engine_read_param(mem);
-    flush_tbox(boxid, 0);
+    tbox_flush_set(boxid, 0);
+    tbox_flush_map(boxid);
     tbox_free(boxid);
     bg_copy_vram(0, bg_get_tilemap(0), 0x800, 0x0, 0x2);
 }
@@ -420,7 +429,7 @@ void cmdx17_display_rendered_tbox(ae_memory*mem) {
     u8 border_distance = anim_engine_read_byte(mem);
     u8 line_distance_u = anim_engine_read_byte(mem);
     u8 line_distance_l = anim_engine_read_byte(mem);
-    u8* font_map = (u8*) anim_engine_read_word(mem);
+    tbox_font_colormap* font_map = (tbox_font_colormap*) anim_engine_read_word(mem);
     u8 display_flag = anim_engine_read_byte(mem);
     u8* string = (u8*) anim_engine_read_word(mem);
     u8 bgid = anim_engine_read_byte(mem);
@@ -479,7 +488,7 @@ void anim_engine_text_renderer(anim_engine_task *t) {
                 }
             }
             //despawn
-            flush_tbox(mem->boxid, 0);
+            tbox_flush_set(mem->boxid, 0);
             tbox_flush_map(mem->boxid);
             tbox_free(mem->boxid);
             bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
@@ -500,7 +509,7 @@ void anim_engine_text_renderer(anim_engine_task *t) {
                 }
             }
             mem->destination = strbuf; //reset of destination buffer, so next chars are append to front
-            flush_tbox(mem->boxid, 0);
+            tbox_flush_set(mem->boxid, 0);
             tbox_tilemap_draw(mem->boxid);
             //dprintf("Anim engine text renderer: Flushed tbox!\n");
             break;
@@ -730,7 +739,7 @@ void cmdx21_song(ae_memory* mem) {
     playsong1(songid, feature);
 }
 
-void cmdx22_pokemon_play_cry(ae_memory* mem) {
+void cmdx22_cry(ae_memory* mem) {
     u16 pokeid = anim_engine_read_hword(mem);
     u8 feature = anim_engine_read_byte(mem);
     pokemon_play_cry(pokeid, feature);
@@ -811,20 +820,20 @@ void anim_engine_bg_scroller(anim_engine_task *self) {
     s16 vdelta = (s16) vars[3];
     u16 bg_hreg = (u16)(0x10 + 4 * bg_id);
     u16 bg_vreg = (u16)(0x12 + 4 * bg_id);
-    u16 x = get_io(bg_hreg);
-    u16 y = get_io(bg_vreg);
+    u16 x = io_get(bg_hreg);
+    u16 y = io_get(bg_vreg);
     if (duration) {
         int x_0 = ((current_frame - 1) * hdelta) / duration;
         int x_1 = (current_frame * hdelta) / duration;
         int y_0 = ((current_frame - 1) * vdelta) / duration;
         int y_1 = (current_frame * vdelta) / duration;
         //dprintf("Frame %d: x_0 %d, x_1 %d, y_0 %d, y_1, %d\n", current_frame, x_0, x_1, y_0, y_1);f
-        set_io(bg_hreg, (u16)(x + x_1 - x_0));
-        set_io(bg_vreg, (u16)(y + y_1 - y_0));
+        io_set(bg_hreg, (u16)(x + x_1 - x_0));
+        io_set(bg_vreg, (u16)(y + y_1 - y_0));
 
     } else {
-        set_io(bg_hreg, (u16)(x + hdelta));
-        set_io(bg_hreg, (u16)(y + hdelta));
+        io_set(bg_hreg, (u16)(x + hdelta));
+        io_set(bg_hreg, (u16)(y + hdelta));
     }
 
     if (duration <= current_frame) {

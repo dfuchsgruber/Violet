@@ -32,7 +32,7 @@ resetbld
 enable_oam_as_target 0x3
 loadcallback 0x080B95A1 5 3 @shake pokemon
     .hword 1, 5, 14
-loadcallback attack_anim_stance_change_cry 2 0
+loadcallback attack_anim_stance_change_pokemon_play_cry 2 0
 
 pause 0x80
 

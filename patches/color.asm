@@ -6,6 +6,6 @@
     .pool
 
 .org 0x08070350
-    ldr r3, =_pal_load_uncomp | 1
+    ldr r3, =_pal_copy | 1
     bx r3
     .pool

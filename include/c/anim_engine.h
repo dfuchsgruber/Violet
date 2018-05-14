@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 #include "color.h"
-
+#include "text.h"
 
 typedef struct anim_engine_task{
     int priority;
@@ -50,7 +50,7 @@ typedef struct aetr_memory {
     text_render_flags flags;
     u16 delay_timer;
     u16 delay;
-    u8 *color_map;
+    tbox_font_colormap *color_map;
     u8 boxid;
     u8 font;
     u8 unkown;

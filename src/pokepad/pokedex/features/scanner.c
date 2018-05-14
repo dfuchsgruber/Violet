@@ -1,5 +1,4 @@
 #include "types.h"
-#include "romfuncs.h"
 #include "pokepad/pokedex/gui.h"
 #include "pokepad/pokedex/operator.h"
 #include "pokepad/pokedex/scanner.h"
@@ -17,6 +16,13 @@
 #include "debug.h"
 #include "fading.h"
 #include "language.h"
+#include "agbmemory.h"
+#include "io.h"
+#include "bios.h"
+#include "music.h"
+#include "dma.h"
+#include "callbacks.h"
+
 /*
  * Probability density functions for each type of encounter
  * in percent. (Encounters are actually hardwired with these values)
@@ -175,7 +181,7 @@ color pokedex_feature_scanner_text_colors[16] = {
 
 void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
     // Disable window feature
-    set_io(0, (u16) (get_io(0) &~0x6000));
+    io_set(0, (u16) (io_get(0) &~0x6000));
     oam_reset();
     bg_reset(0);
     fading_cntrl_reset();
@@ -213,7 +219,7 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
         oam_vram_allocation_table_add(tag, tile, 16);
         oam_template icon_template = {
             tag, 0xFFFF, &pokedex_feature_scanner_icon_sprite, 
-            oam_gfx_anim_table_null, NULL, oam_rotscale_anim_table_null, oam_null_callback
+            OAM_GFX_ANIM_TABLE_NULL, NULL, OAM_ROTSCALE_ANIM_TABLE_NULL, oam_null_callback
         };
         state->oams[i] = oam_new_forward_search(&icon_template,
                 (s16)(12 + 118 * box_id), (s16)(48 + 16 * line), (u8)i
@@ -241,8 +247,7 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
     
 }
 
-
-u8 pokedex_feature_scanner_fontcolmap[4] = {0, 2, 1, 0};
+tbox_font_colormap pokedex_feature_scanner_fontcolmap = {0, 2, 1, 0};
 u8 str_pokedex_feature_scanner_percent[] = PSTRING("%");
 u8 str_pokedex_feature_scanner_unseen[] = PSTRING("??????????");
 
@@ -278,7 +283,7 @@ void pokedex_feature_scanner_print_empty_list(){
     tbox_flush_set(2, 0);
     tbox_tilemap_draw(2);
     tbox_print_string(2, 2, (u16)x, 0, 0, 0,
-            pokedex_feature_scanner_fontcolmap, 0, 
+            &pokedex_feature_scanner_fontcolmap, 0,
             str_pokedex_feature_scanner_none);
     tbox_sync(2, TBOX_SYNC_MAP_AND_SET);
 }
@@ -303,14 +308,14 @@ void pokedex_feature_scanner_print_generic_list(u16 entries[][2], int size){
         
         // Print the name
         tbox_print_string(box_id, 2, 0, (u16)(16 * line), 0, 0, 
-                pokedex_feature_scanner_fontcolmap, 0, 
+                &pokedex_feature_scanner_fontcolmap, 0,
                 seen ? pokemon_names[species] : str_pokedex_feature_scanner_unseen);
         
         // Print the probabilty
         itoa(strbuf, prob, 0, 3);
         strcat(strbuf, str_pokedex_feature_scanner_percent);
         tbox_print_string(box_id, 2, 70, (u16)(16 * line), 0, 0,
-                pokedex_feature_scanner_fontcolmap, 0, strbuf);
+                &pokedex_feature_scanner_fontcolmap, 0, strbuf);
         
         
         dprintf("Printing species %d with p %d\n", species, prob);
@@ -356,7 +361,7 @@ void pokedex_callback_feature_scanner_clear(){
 }
 
 
-u8 pokedex_feature_scanner_title_fontcolmap[4] = {0, 9, 1, 0};
+tbox_font_colormap pokedex_feature_scanner_title_fontcolmap = {0, 9, 1, 0};
 
 void pokedex_feature_scanner_print_generic_titled_list_at(int pos, u8 *title,
         u16 entries[][2], int size){
@@ -375,7 +380,7 @@ void pokedex_feature_scanner_print_generic_titled_list_at(int pos, u8 *title,
         if(i == pos){
             // Print the title
             tbox_print_string(box_id, 2, 12, (u16)(16 * line), 0, 0, 
-                    pokedex_feature_scanner_title_fontcolmap, 0, title);
+                    &pokedex_feature_scanner_title_fontcolmap, 0, title);
         }else{
             // Print a pokemon
             u16 species = entries[i - pos - 1][0];
@@ -385,14 +390,14 @@ void pokedex_feature_scanner_print_generic_titled_list_at(int pos, u8 *title,
 
             // Print the name
             tbox_print_string(box_id, 2, 0, (u16)(16 * line), 0, 0, 
-                    pokedex_feature_scanner_fontcolmap, 0, 
+                    &pokedex_feature_scanner_fontcolmap, 0,
                     seen ? pokemon_names[species] : str_pokedex_feature_scanner_unseen);
 
             // Print the probabilty
             itoa(strbuf, prob, 0, 3);
             strcat(strbuf, str_pokedex_feature_scanner_percent);
             tbox_print_string(box_id, 2, 70, (u16)(16 * line), 0, 0,
-                    pokedex_feature_scanner_fontcolmap, 0, strbuf);
+                    &pokedex_feature_scanner_fontcolmap, 0, strbuf);
         }
     }
 }
@@ -490,10 +495,10 @@ void pokedex_callback_feature_scanner_return(){
         
         pokedex_init_components();
         pokedex_update_list();
-        set_io(0x50, 0);
-        set_io(0x52, 0);
-        set_io(0x54, 0);
-        bic_io(0, 0x6000);
+        io_set(0x50, 0);
+        io_set(0x52, 0);
+        io_set(0x54, 0);
+        io_bic(0, 0x6000);
     }
 }
 
