@@ -7,7 +7,7 @@
 evolution_stone_remove_item:
 
 ldr r0, =0x800D
-bl vardecrypt
+bl var_access
 mov r1, #0
 strh r1, [r0]
 ldr r2, [sp, #8]
@@ -41,7 +41,7 @@ ldr r1, =0x08041F37
 bx r1
 
 
-vardecrypt:
+var_access:
 ldr r1, =0x0806E3B9
 bx r1
 

@@ -240,9 +240,9 @@
 .endm
 
 
-.macro fade_into_background_target_based id_target_is_opponent id_target_is_not_opponent unused
+.macro fade_into_background_target_based id_target_battler_is_opponent id_target_is_not_opponent unused
 .byte 0x25
-.byte \id_target_is_opponent
+.byte \id_target_battler_is_opponent
 .byte \id_target_is_not_opponent
 .byte \unused
 .endm

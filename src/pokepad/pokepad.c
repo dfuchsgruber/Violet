@@ -59,7 +59,7 @@ bool startmenu_init_pokepad() {
 
 void pokepad_callback_init() {
     pokepad_memory *mem = (pokepad_memory*) malloc(sizeof (pokepad_memory));
-    mem->current_item = 0; //(u8)*vardecrypt(VAR_POKEPAD_LASTUSED);
+    mem->current_item = 0; //(u8)*var_access(VAR_POKEPAD_LASTUSED);
     fmem->pad_mem = mem;
     //malloc_reset_default();
     pokepad_init_components();

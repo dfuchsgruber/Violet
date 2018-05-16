@@ -18,7 +18,7 @@ bl egg_warm_update
 
 
 ldr r0, =0x50E2
-bl vardecrypt
+bl var_access
 ldrh r1, [r0]
 cmp r1, #250
 bge skip_inc
@@ -83,7 +83,7 @@ mov r0, r4
 mov r4, r1
 bl remove_big_cb
 ldr r0, =0x50f7
-bl vardecrypt
+bl var_access
 ldrb r1, [r0]
 cmp r1, #0
 beq last_step_was_not
@@ -155,7 +155,7 @@ call_via_r0:
 bx r0
 
 
-vardecrypt:
+var_access:
 ldr r1, =0x0806E3B9
 bx r1
 

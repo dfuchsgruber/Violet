@@ -12,15 +12,15 @@
 .thumb_func
 battle_bg_evolution1:
     ldr r0, =BATTLE_BG_OVERRIDE
-    ldr r1, =vardecrypt
+    ldr r1, =var_access
     bl bxr1
     mov r1, #BATTLE_BG_EVO + 1
     strh r1, [r0]
     mov r0, #0
-    ldr r1, =set_callback4
+    ldr r1, =callback4_set
     bl bxr1
     mov r0, #0
-    ldr r1, =set_callback3
+    ldr r1, =callback3_set
     bl bxr1
     ldr r1, =0x080CDFC4 | 1
 bxr1:
@@ -32,7 +32,7 @@ bxr1:
 .thumb_func
 battle_bg_evolution2:
     ldr r0, =BATTLE_BG_OVERRIDE
-    ldr r1, =vardecrypt
+    ldr r1, =var_access
     bl bxr1
     mov r1, #0
     strh r1, [r0]
@@ -51,7 +51,7 @@ battle_bg_evolution2:
 battle_bg_evolution3:
     strh r4, [r0]
     ldr r0, =BATTLE_BG_OVERRIDE
-    ldr r1, =vardecrypt
+    ldr r1, =var_access
     bl bxr1
     mov r1, #BATTLE_BG_EVO + 1
     strh r1, [r0]
@@ -60,7 +60,7 @@ battle_bg_evolution3:
     ldr r1, = 0x0800F3A4 | 1
     bl bxr1
     ldr r0, =BATTLE_BG_OVERRIDE
-    ldr r1, =vardecrypt
+    ldr r1, =var_access
     bl bxr1
     mov r1, #0
     strh r1, [r0]

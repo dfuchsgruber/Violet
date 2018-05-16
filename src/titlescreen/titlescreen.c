@@ -4,6 +4,7 @@
 #include "bg.h"
 #include "io.h"
 #include "bios.h"
+#include "debug.h"
 #include "titlescreen.h"
 
 extern const unsigned short gfx_ts_start_higherTiles[]; //lz77
@@ -57,6 +58,7 @@ void ts_setup_pal(){
 }
 
 void ts_setup_bg(){
+    dprintf("Setup ts\n");
     //Load palettes
     ts_setup_pal();
     

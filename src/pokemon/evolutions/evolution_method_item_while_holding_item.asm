@@ -28,7 +28,7 @@ cmp r0, r9
 bne param_is_not_item_evolution
 mov r4, r1
 ldr r0, =0x800D		@LASTRESULT
-bl vardecrypt
+bl var_access
 mov r1, #1
 strh r1, [r0]
 mov r1, r4
@@ -69,6 +69,6 @@ equals_req:
 ldr r0, =0x0804307D
 bx r0
 
-vardecrypt:
+var_access:
 ldr r1, =0x0806E3B9
 bx r1

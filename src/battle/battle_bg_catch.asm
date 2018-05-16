@@ -10,7 +10,7 @@
 .thumb_func
 battle_bg_catch:
     ldr r0, =BATTLE_BG_OVERRIDE
-    ldr r1, =vardecrypt
+    ldr r1, =var_access
     bl bxr1
     mov r1, #BATTLE_BG_CATCH + 1
     strh r1, [r0]
@@ -19,7 +19,7 @@ battle_bg_catch:
     ldr r1, =0x0800F3A4 | 1
     bl bxr1
     ldr r0, =BATTLE_BG_OVERRIDE
-    ldr r1, =vardecrypt
+    ldr r1, =var_access
     bl bxr1
     mov r1, #0
     strh r1, [r0]

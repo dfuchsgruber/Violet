@@ -713,7 +713,7 @@
 	.word pokemon_item_animations
 
 .org 0x08072028
-        ldr r0, =pokemon_play_cry | 1
+        ldr r0, =pokemon_play_cry_hook | 1
         bx r0
         .pool
 

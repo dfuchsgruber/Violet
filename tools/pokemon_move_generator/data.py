@@ -371,7 +371,7 @@ pokemon_zerbertres = crawler.Pokemon(attacks_lvlup=[
         "Delegator",
         "Lohekanonade"
     ]))
-)
+) 
 
 pokemon_seekid = crawler.Pokemon(attacks_lvlup=[
     (1, "Pfund"),

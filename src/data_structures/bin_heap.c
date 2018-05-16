@@ -8,7 +8,7 @@
 #include "types.h"
 #include "stdbool.h"
 #include "data_structures.h"
-#include "romfuncs.h"
+#include "agbmemory.h"
 
 /**
  * Restores heap invariance of heap at root position (sift downn)

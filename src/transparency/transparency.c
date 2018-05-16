@@ -11,7 +11,7 @@ u8 transparency_disabling_command_ids [] = {0x2, 0x97, 0x5C, 0x5D, 0xB7, 0x29, 0
     0x86, 0x39, 0xFF};
 
 void transparency_handler(u8 *command) {
-    //dprintf("Story progress is %d\n", *vardecrypt(0x4051));
+    //dprintf("Story progress is %d\n", *var_access(0x4051));
     //dprintf("Transparency handler, cmd %x @ %x\n", *command, command);
     if (*command != 0x27) { //waitstate bypasses the entire handle
         if (transparency_is_on()) {

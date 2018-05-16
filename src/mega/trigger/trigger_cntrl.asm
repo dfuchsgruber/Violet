@@ -19,7 +19,7 @@ ldrb r1, [r0]
 cmp r4, r1
 bge end_func
 mov r0, r4
-bl _is_opponent
+bl _battler_is_opponent
 cmp r0, #0
 bne next_poke
 
@@ -37,7 +37,7 @@ beq next_poke
 mov r5, r0
 ldr r0, =mega_trigger_callback
 mov r1, #0
-bl _spawn_big_callback
+bl _big_callback_new
 mov r1, #0x28
 mul r0, r1
 ldr r1, =0x03004FE0
@@ -53,8 +53,8 @@ end_func:
 pop {r4-r7, pc}
 
 
-_is_opponent:
-ldr r1, =is_opponent
+_battler_is_opponent:
+ldr r1, =battler_is_opponent
 bx r1
 
 .thumb_func
@@ -111,6 +111,6 @@ search_if_func_is_already_a_cb:
 ldr r1, =0x80775ED
 bx r1
 
-_spawn_big_callback:
-ldr r2, =spawn_big_callback
+_big_callback_new:
+ldr r2, =big_callback_new
 bx r2

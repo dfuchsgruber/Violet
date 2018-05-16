@@ -33,7 +33,7 @@ void pokedex_big_callback_resort(u8 self) {
             io_set(0x46, 0xa0A0); //topmost = 33, bottommost = 160
             big_callbacks[self].params[0] = 1;
             big_callbacks[self].params[1] = 160;
-            //spawn_big_callback(pokedex_big_callback_quicksort_parallel, 0);
+            //big_callback_new(pokedex_big_callback_quicksort_parallel, 0);
             break;
         }
         case 1:

@@ -9,7 +9,7 @@ whiteout_hook:
 push {lr}
 sub sp, #4
 ldr r0, =0x50DF @var timezone
-bl _vardecrypt
+bl _var_access
 mov r1, #0
 strh r1, [r0]
 bl whiteout
@@ -17,6 +17,6 @@ ldr r1, =0x03003040 + 0x438 @superstate
 ldr r0, =0x080566D0 | 1
 bx r0
 
-_vardecrypt:
-    ldr r1, =vardecrypt
+_var_access:
+    ldr r1, =var_access
     bx r1

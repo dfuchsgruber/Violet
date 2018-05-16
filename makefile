@@ -49,7 +49,8 @@ PKMNEGGMOVES=pokemon_egg_moves
 PKMNTMCOMPATIBILITY=pokemon_tm_compatibility
 PKMNMOVETUTORCOMPATIBILITY=pokemon_move_tutor_compatibility
 PKMNINACESSIBLEMOVES=pokemon_inacessible_moves
-
+# Define a file that contains all manual pokemon moveset (changes)
+PKMNCRAWLEREXTERN=tools/pokemon_move_generator/data.py
 
 
 
@@ -157,7 +158,7 @@ $(MAPAS): $(BLDPATH)/%.s: %.pmh
 	$(shell mkdir -p $(dir $@))
 	$(PYMAP2S) -o $@ $< $(MAPPROJ)
 
-$(MAPOBJS): %.o: %.s
+$(MAPOBJS): %.o: %.s $(CONSTANTSH)
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@
 	
@@ -191,7 +192,7 @@ $(PKMNCRAWLERDATA):
 	@echo "Fetching pokemon data form pokewiki.de..."
 	$(PY3) tools/pokemon_move_generator_fetch.py $(PKMNCRAWLERDATA)	$(MAPPROJ)
 	
-$(BLDPATH)/pkmnmoves.o: $(PKMNCRAWLERDATA) $(BLDPATH)/src.o
+$(BLDPATH)/pkmnmoves.o: $(PKMNCRAWLERDATA) $(BLDPATH)/src.o $(PKMNCRAWLEREXTERN)
 	@echo "Dumping .text header of linked.o elf into $(LINKEDTEXTHEADER)..."
 	$(READELF) -S $(BLDPATH)/src.o | grep ".text" > $(LINKEDTEXTHEADER)
 	@echo "Dumping offset of $(PKMNEVOTABLE) into $(LINKEDEVOTABLEHEADER)..."
@@ -236,8 +237,8 @@ $(CONSTANTSH): $(CONSTANTS)
 	
 all: $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	@echo "Creating rom object..."
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
-
+	#@echo "$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o"
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
 	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym

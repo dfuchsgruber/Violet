@@ -1,10 +1,10 @@
-.global pokemon_play_cry
+.global pokemon_play_cry_hook
 
 .align 4
 .thumb
 
 .thumb_func
-pokemon_play_cry:
+pokemon_play_cry_hook:
     add r0, r7, #1
     lsl r0, #0x10
     lsr r0, #0x10
