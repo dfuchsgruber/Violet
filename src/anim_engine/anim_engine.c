@@ -988,6 +988,7 @@ void cmdx36_load_obj_pal_from_struct(ae_memory *mem){
     if(force) cpuset(pal, &pals[(pal_id + 16) * 16], 16);
 }
 
+
 void _obj_move_trig_trace(anim_engine_task *self){
     u16 *vars = (u16*)(self->vars);
     //trace @%x with vars @%x\n", self, vars);
@@ -1001,31 +1002,37 @@ void _obj_move_trig_trace(anim_engine_task *self){
     int period = vars[4];
     bool on_y_axis = vars[5];
     int trig_func = vars[6];
-    int d;
+    FIXED d;
+    FIXED fperiod = INT_TO_FIXED(period);
+    FIXED famplitude = INT_TO_FIXED(amplitude);
+    FIXED fx = FIXED_DIV(INT_TO_FIXED(frame), fperiod);
+    FIXED fxprev = FIXED_DIV(INT_TO_FIXED(frame - 1), fperiod);
+
     switch(trig_func){
         case 0: //sine function
-            d = __sin(frame, period, amplitude) - __sin(frame - 1, period, amplitude);
-    //dprintf(" sin(%d, %d, %d) = %d\n", frame, period, amplitude, __sin(frame, period, amplitude));
+            d = FIXED_SIN(fx) - FIXED_SIN(fxprev);
             break;
         case 1: //cosine function
-            d = __cos(frame, period, amplitude) - __cos(frame - 1, period, amplitude);
+            d = FIXED_COS(fx) - FIXED_COS(fxprev);
             break;
         case 2: //tangens function
-            d = __tan(frame, period) - __tan(frame - 1, period);
+            d = FIXED_TAN(fx) - FIXED_TAN(fxprev);
             break;
-        case 3: //linear sine function
-            d = linear_sin(frame, period, amplitude) - linear_sin(frame - 1, period, amplitude);
+        case 3: //sine function
+            d = FIXED_TRIANGLE_SIN(fx) - FIXED_TRIANGLE_SIN(fxprev);
             break;
-        case 4: //linear cosine function
-            d = linear_cos(frame, period, amplitude) - linear_cos(frame - 1, period, amplitude);
+        case 4: //cosine function
+            d = FIXED_TRIANGLE_COS(fx) - FIXED_TRIANGLE_COS(fxprev);
             break;
-        case 5: //linear tangens function
-            d = linear_tan(frame, period) - linear_tan(frame - 1, period);
+        case 5: //tangens function
+            d = FIXED_TRIANGLE_TAN(fx) - FIXED_TRIANGLE_TAN(fxprev);
             break;
         default: return;
     }
-    if(on_y_axis)oams[oam_id].y = (s16)(oams[oam_id].y + d);
-    else oams[oam_id].x = (s16)(oams[oam_id].x + d);
+    d = FIXED_MUL(famplitude, d);
+    int dist = FIXED_TO_INT(d);
+    if(on_y_axis)oams[oam_id].y = (s16)(oams[oam_id].y + dist);
+    else oams[oam_id].x = (s16)(oams[oam_id].x + dist);
 }
 
 

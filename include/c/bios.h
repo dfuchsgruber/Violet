@@ -46,5 +46,12 @@ void cpuset(const void *src, void *dst, int cnt_and_mode);
  */
 void cpufastset(u32*source, u32*destination, u32 cnt_and_mode);
 
+/**
+ * Calcualtes the square root of x
+ * @param x x
+ * @return sqrt(x)
+ */
+u16 sqrt32(u32 x);
+
 
 #endif /* INCLUDE_C_BIOS_H_ */

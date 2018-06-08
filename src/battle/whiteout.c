@@ -23,3 +23,4 @@ void trainerbattle_after_battle(){
     if(*trainer_kind_of_battle == 9 && (*battle_result == 3 || *battle_result == 2))
         *lastresult = 0xFF;
 }
+

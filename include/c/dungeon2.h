@@ -16,6 +16,7 @@ extern "C" {
 #include "map/header.h"
 #include "map/footer.h"
 #include "map/event.h"
+#include "map/wild_pokemon.h"
 
     // Linear congruency rnd parameters
     #define DG2_RND_MULTIPLIER 0x41C64E6D
@@ -23,7 +24,9 @@ extern "C" {
 
 #define DTYPE_FOREST 1
 #define DTYPE_CAVE 2
-    
+
+#define DTYPE_FOREST_WILD_POKEMON_FREQUENCY 0x20
+
 #define DG2_WALL 0
 #define DG2_SPACE 1
     
@@ -41,13 +44,39 @@ extern "C" {
         
         
     } dungeon_generator2;
+
+#define NUM_DUNGEON_LOCATIONS 10
     
+    typedef struct{
+      u8 bank;
+      u8 map;
+      s16 x;
+      s16 y;
+      u8 type;
+    } dungeon_location;
+
+    dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS];
+
+    /**
+     * Gets the index of a dungeon location by a coordinate the player interacted with. If no
+     * match could be found -1 is returned instead.
+     */
+    int dungeon_get_location_index(u8 bank, u8 map, s16 x, s16 y, u8 type);
+
     void dungeon2_compute(int dungeon_type);
     
     void dungeon2_compute_forest();
     
+    /**
+     * Computes the header structures for the forest dungeon type
+     */
+    void dungeon2_init_forest();
     
-    
+    /**
+     * Computes the header structures for the current dungeon if not already computed
+     */
+    void dungeon2_init();
+
     /**
      * Computes map blocks for a forest map by using set_block_id(...) and a bytemap
      * @param map The basic walk map
@@ -61,6 +90,11 @@ extern "C" {
     map_events *dungeon2_init_events_forest(dungeon_generator2 *dgen);
     
     mapfooter *dungeon2_init_footer_forest(dungeon_generator2 *dg2);
+
+    /**
+     * Initializes the wild pokemon for the forest dungeon
+     */
+    void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2);
     
     /**
      * Creates a connected dungeon bytemap by the dungeon2 algorithm
@@ -176,7 +210,21 @@ extern "C" {
      * @return 
      */
     u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2);
+
+    /**
+     * Linear congruence RNG returning positive 16-bit integers
+     * @param dg2
+     * @return
+     */
+    u16 dungeon2_rnd_16(dungeon_generator2 *dg2);
     
+    /**
+     * Linear congruence RNG returning positive integers
+     * @param dg2
+     * @return
+     */
+    int dungeon2_rnd_int(dungeon_generator2 *dg2);
+
     /**
      * Linear congruence RNG
      * @param dg2
@@ -184,7 +232,18 @@ extern "C" {
      */
     u32 dungeon2_rnd(dungeon_generator2 *dg2);
     
+    /**
+     * Picks a number of distinct elements of src (terminated by 0xFFFF) and places them at dst
+     */
+    void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src);
+
     int dg2_cross_neighbourhood[4][2];
+
+    map_connections dungeon2_connections;
+
+    levelscript_head dungeon2_lscr[1];
+
+    wild_pokemon_data dungeon2_wild_pokemon_forest;
 
 #ifdef	__cplusplus
 }

@@ -43,7 +43,13 @@ gfx_frame *anim_staraptor[] = {
 };
 
 void anim_staraptor_oam_callback(oam_object *self){
-    int y2 = __cos((self->private[0])++, 32, 3);
+    FIXED period = INT_TO_FIXED(32);
+    FIXED amplitude = INT_TO_FIXED(3);
+    FIXED x = INT_TO_FIXED((self->private[0])++);
+    x = FIXED_DIV(x, period);
+    FIXED y = FIXED_COS(x);
+    y = FIXED_MUL(y, amplitude);
+    int y2 = FIXED_TO_INT(y);
     self->y2 = (s16)y2;
     
 }

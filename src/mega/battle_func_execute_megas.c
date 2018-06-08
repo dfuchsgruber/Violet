@@ -97,10 +97,11 @@ void battle_cb_do_megas() {
 
 void* get_pokemon_offset_by_index(u8 index) {
 
+  u16 party_index = battler_team_slots[index];
 	if(battler_is_opponent(index))
-		return &opponent_pokemon[index];
+		return &opponent_pokemon[party_index];
 	else
-		return &player_pokemon[index];
+		return &player_pokemon[party_index];
 
 
 }

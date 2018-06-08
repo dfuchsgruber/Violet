@@ -18,7 +18,7 @@ from pymap import project
 
 def fetch_data(output_file, consts):
     """ Fetches data from pokewiki and caches it as python pickles"""
-    pkmns = []
+    pkmns = {}
     for i, species in enumerate(consts.values("species")):
         #for i, species in ((21, 'POKEMON_Mähikel'), (250, 'POKEMON_Ho-Oh')):
         #for old, new in (("ae", "ä"), ("ue", "ü"), ("oe", "ö"), ("AE", "Ä"), ("OE", "Ö"), ("UE", "Ü")):
@@ -38,7 +38,7 @@ def fetch_data(output_file, consts):
             print(e)
             continue
         pkmn = crawler.parse_html(html, gen=LATEST_GENERATION)
-        pkmns.append(pkmn)
+        pkmns[i] = pkmn
     
     with open(output_file, "wb") as f:
         pickle.dump(pkmns, f)

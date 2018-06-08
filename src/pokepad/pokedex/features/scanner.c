@@ -82,14 +82,14 @@ int _pokedex_feature_scanner_build_entries(wild_pokemon_entry *wild_entries,
 }
 
 int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
-    u16 wild_table_id = map_wild_pokemon_get_current_table_id();
-    if(wild_table_id == 0xFFFF) return -1;
+    wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
+    if(!wild_pokemon_header) return -1;
    
     // Build grass entries
     state->num_entries_grass = 0;
-    if(wild_pokemon[wild_table_id].grass){
+    if(wild_pokemon_header->grass){
         state->num_entries_grass = _pokedex_feature_scanner_build_entries(
-                wild_pokemon[wild_table_id].grass->data, state->entries_grass, 
+                wild_pokemon_header->grass->data, state->entries_grass,
                 12, wild_pokemon_grass_pdf);
         _pokedex_feature_scanner_sort_entries(state->entries_grass, 
                 state->num_entries_grass);
@@ -97,9 +97,9 @@ int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
     
     // Build the water entries
     state->num_entries_water = 0;
-    if(wild_pokemon[wild_table_id].water){
+    if(wild_pokemon_header->water){
         state->num_entries_water = _pokedex_feature_scanner_build_entries(
-                wild_pokemon[wild_table_id].water->data, state->entries_water,
+                wild_pokemon_header->water->data, state->entries_water,
                 5, wild_pokemon_water_pdf);
         _pokedex_feature_scanner_sort_entries(state->entries_water, 
                 state->num_entries_water);
@@ -107,9 +107,9 @@ int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
     
     // Build the other entries
     state->num_entries_other = 0;
-    if(wild_pokemon[wild_table_id].other){
+    if(wild_pokemon_header->other){
         state->num_entries_other = _pokedex_feature_scanner_build_entries(
-                wild_pokemon[wild_table_id].other->data, state->entries_other,
+                wild_pokemon_header->other->data, state->entries_other,
                 5, wild_pokemon_other_pdf);
         _pokedex_feature_scanner_sort_entries(state->entries_other, 
                 state->num_entries_other);
@@ -117,9 +117,9 @@ int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
     
     // Build rod entries
     state->num_entries_rod = 0;
-    if(wild_pokemon[wild_table_id].rod){
+    if(wild_pokemon_header->rod){
         state->num_entries_rod = _pokedex_feature_scanner_build_entries(
-                wild_pokemon[wild_table_id].rod->data, state->entries_rod, 2, 
+                wild_pokemon_header->rod->data, state->entries_rod, 2,
                 wild_pokemon_rod_pdf);
         _pokedex_feature_scanner_sort_entries(state->entries_rod, 
                 state->num_entries_rod);
@@ -127,9 +127,9 @@ int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
     
     // Build good rod entries
     state->num_entries_good_rod = 0;
-    if(wild_pokemon[wild_table_id].rod){
+    if(wild_pokemon_header->rod){
         state->num_entries_good_rod = _pokedex_feature_scanner_build_entries(
-                &wild_pokemon[wild_table_id].rod->data[2], 
+                &wild_pokemon_header->rod->data[2],
                 state->entries_good_rod, 3, wild_pokemon_good_rod_pdf);
         _pokedex_feature_scanner_sort_entries(state->entries_good_rod, 
                 state->num_entries_good_rod);
@@ -137,9 +137,9 @@ int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
     
     // Build super rod entries
     state->num_entries_super_rod = 0;
-    if(wild_pokemon[wild_table_id].rod){
+    if(wild_pokemon_header->rod){
         state->num_entries_super_rod = _pokedex_feature_scanner_build_entries(
-                &wild_pokemon[wild_table_id].rod->data[5], 
+                &wild_pokemon_header->rod->data[5],
                 state->entries_super_rod, 5, wild_pokemon_super_rod_pdf);
         _pokedex_feature_scanner_sort_entries(state->entries_super_rod, 
                 state->num_entries_super_rod);
@@ -324,8 +324,12 @@ void pokedex_feature_scanner_print_generic_list(u16 entries[][2], int size){
 }
 
 void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state *state){
-    int y = -linear_cos(state->fading_timer++, 64, 4);
-    u8 alpha = (u8)(4 + y);
+    FIXED period = INT_TO_FIXED(64);
+    FIXED fx = INT_TO_FIXED(state->fading_timer++);
+    FIXED fy = FIXED_TRIANGLE_COS(FIXED_DIV(fx, period));
+    fy = FIXED_MUL(INT_TO_FIXED(-4), fy);
+    fy = FIXED_ADD(INT_TO_FIXED(4), fy);
+    u8 alpha = (u8)FIXED_TO_INT(fy);
     for(int i = 0; i < 4; i++){
         color blended = pal_restore[12 + i];
         color white = {.rgb = {31, 31, 31}};

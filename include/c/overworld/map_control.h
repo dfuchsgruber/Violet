@@ -18,6 +18,14 @@ typedef struct{
 stru_map_displ_cntrl *map_displ_cntrl = (stru_map_displ_cntrl*)0x03000E90;
 
 /**
+ * Returns the state of an overworld flag (0 or != 0)
+ * This is done by accessing 0x02037078 and masking the byte with the flag
+ * Known flags:
+ * 8 (=1 << 3) : If not set wildbattles in water are not triggered
+ */
+int overworld_flag_get(u8 flag);
+
+/**
  * Reloads the map state
  */
 void map_reload();

@@ -36,6 +36,13 @@ extern "C" {
      */
     u32 _prng_xorshift(u32 *_seed);
 
+    /**
+     * Returns a fixed point value distributed ~ N(0, 1)
+     * @param _seed Pointer the prng state
+     * @return Next state
+     */
+    FIXED _prng_stdnormal(u32 *_seed);
+
 
 
 #ifdef	__cplusplus

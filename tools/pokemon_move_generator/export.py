@@ -149,8 +149,9 @@ def export_tm_struct(attacks_tm):
     for type, num, attack in attacks_tm:
        # normalized_tm = type.upper() + str(num).zfill(2) + "_" + attack[7:]
        if type == "vm": num += 50
-       byte = num >> 3
-       bit = num & 7
+       idx = num - 1
+       byte = idx >> 3
+       bit = idx & 7
        bytes[byte] |= 2 ** bit
 
     

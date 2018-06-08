@@ -567,7 +567,7 @@ song song_table[] = {
 	//Song 281
 	{(void*) 0x86c5dd4, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 282
-	{(void*) 0x86c69e8, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_riding_cloud, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 283
 	{mus_encounter_beethoven, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 284
@@ -738,12 +738,14 @@ song song_table[] = {
 	{sound_hint, SONG_TYPE_SOUND, SONG_TYPE_SOUND},
 	//Song 367
 	{mus_mistral_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
-        //Song 368
-        {mus_monumental, SONG_TYPE_SONG, SONG_TYPE_SONG},
-        //Song 369
-        {mus_route_7, SONG_TYPE_SONG, SONG_TYPE_SONG},
-        //Song 370
-        {mus_glyphs, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  //Song 368
+  {mus_monumental, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  //Song 369
+  {mus_route_7, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  //Song 370
+  {mus_glyphs, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 371
+  {mus_riding_cloud, SONG_TYPE_SONG, SONG_TYPE_SONG}
         
 
 };

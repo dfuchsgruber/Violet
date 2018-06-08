@@ -8,7 +8,7 @@ rom = agbrom.Agbrom("/media/d/romhacking/violetbuilt.gba")
 trainer_base = rom.pointer(0xfb84)
 ps = pstring.Pstring("/media/d/romhacking/Violet_Sources/charmap.txt")
 
-proj = project.Project.load_project("/media/d/romhacking/Violet_Sources/map/proj.pmp")
+proj = project.Project.load_project("/media/d/romhacking/Violet_Sources/proj.pmp")
 consts = proj.constants
 
 trainers = []
@@ -27,7 +27,7 @@ def ai_to_str(ai):
     else: return "TRAINER_AI_STRATEGY_NONE"
 
 
-for i in range(0, 0xAB):
+for i in range(0, 0xB3):
     offset = trainer_base + i * 0x28
     trainer = "{\n\t//Trainer "+hex(i)+"\n"
     structure = rom.u8(offset) & 3

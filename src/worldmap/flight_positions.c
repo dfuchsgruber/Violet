@@ -2,6 +2,7 @@
 #include "worldmap.h"
 
 stru_flight_position flight_positions[NUM_FLIGHT_POSITONS] = {
+    // bank, map, x, y, d
     {3, 0, 14, 26, 0},
     {3, 1, 72, 29, 0},
     {3, 2, 24, 21, 0},

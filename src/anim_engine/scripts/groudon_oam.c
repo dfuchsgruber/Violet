@@ -207,9 +207,13 @@ void groudon_anim_earthquake_cb(u8 self){
     }else{
         //y(x) = A * sin(x * T / (2pi)) * hwt(x, T/2, 1)
         //T := 4 * speed
-        y = frame * 0x10000 / period;
-        y = sin_16(y) * amplitude / 0x10000; //sin_16 provides an ampl of 0x10000
+        FIXED fperiod = INT_TO_FIXED(period);
+        FIXED x = FIXED_DIV(INT_TO_FIXED(frame), fperiod);
+        FIXED fy = FIXED_SIN(x);
+        fy = FIXED_MUL(INT_TO_FIXED(amplitude), fy);
+        y = FIXED_TO_INT(fy);
         //if(frame)debug4(y, z, amplitude, w);
+
         int ht = hwt(frame/period, period/cushion, 0x10000);
         y *= ht;
         y /= 0x10000;

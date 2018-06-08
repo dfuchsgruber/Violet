@@ -8,6 +8,7 @@ CC=@arm-none-eabi-gcc
 NM=@arm-none-eabi-nm
 ARS=@armips
 MID2AGB=@mid2agb
+#MID2AGB=/media/d/romhacking/midi2agb/midi2agb
 PY3=@python3
 BIN2S=@bin2s.py
 PYSET2S=@pyset2s.py
@@ -27,7 +28,7 @@ CLANGMACRO=PSTRING
 ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
 MIDFLAGS=-V92
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Werror -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
-LDFLAGS=-z muldefs
+LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
 WAVFLAGS=-c
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
@@ -122,6 +123,7 @@ $(COBJS): $(BLDPATH)/%.o: %.c $(CONSTANTSH)
 $(MIDAS): $(BLDPATH)/%.s: %.mid
 	$(shell mkdir -p $(dir $@))
 	$(MID2AGB) $(MIDFLAGS) -G$(shell echo "$<" | sed -n 's?.*\/vcg\(.*\)\/.*?\1?p') $< $@ > /dev/null
+	#$(MID2AGB) $< $@ -m 92 -g voicegroup$(shell echo "$<" | sed -n 's?.*\/vcg\(.*\)\/.*?\1?p') 
 	
 $(MIDOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
@@ -242,7 +244,7 @@ all: $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	$(ARS) patches.asm
 	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
 	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
-	#@cd tools && python3 index.py
+	$(PY3) tools/index.py
 		
 clean:
 	rm -rf $(BLDPATH)

@@ -235,7 +235,7 @@ void spawn_mugshot() {
         
     }else{
         tboxdata tbdata = {
-            0, (side ? 0 : (u8)(30 - strwidth / 8 - 5)), 11, (u8)((strwidth / 8) + 4), 2, 15, 0xE8
+            0, (side ? 1 : (u8)(30 - strwidth / 8 - 5)), 11, (u8)((strwidth / 8) + 4), 2, 15, 0xE8
         };
         u8 box_id = tbox_new(&tbdata);
         tbox_flush_set(box_id, 0x11);

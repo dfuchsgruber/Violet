@@ -128,6 +128,7 @@ extern const unsigned char mus_ceometria[];
 extern const unsigned char mus_monumental[];
 extern const unsigned char mus_route_7[];
 extern const unsigned char mus_glyphs[];
+extern const unsigned char mus_riding_cloud[];
 
 #endif	/* MUSIC_H */
 

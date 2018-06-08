@@ -524,7 +524,7 @@ bsc_strings:
 	.global str_battle_x20
 
 	str_battle_x20:
-		.string "STRINGó gerät in Panik und hat\nSTRING \$ verlorenDOTS\pDOTSDOTSDOTSDOTS\pSTRINGó fällt in Ohnmacht!SHADOWight"
+		.string "STRINGó gerät in Panik und hat\nSTRING \$ verlorenDOTS\pDOTSDOTSDOTSDOTS\pSTRINGó fällt in Ohnmacht!"
 
 
 	.global str_battle_x21

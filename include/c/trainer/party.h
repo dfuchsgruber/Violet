@@ -272,6 +272,14 @@ trainer_pokemon_default_item_custom_attacks trainer_party_xa7[2];
 trainer_pokemon_default_item_default_attacks trainer_party_xa8[1];
 trainer_pokemon_default_item_default_attacks trainer_party_xa9[3];
 trainer_pokemon_custom_item_custom_attacks trainer_party_xaa[1];
+trainer_pokemon_default_item_default_attacks trainer_party_xab[4];
+trainer_pokemon_default_item_default_attacks trainer_party_xac[3];
+trainer_pokemon_default_item_default_attacks trainer_party_xad[3];
+trainer_pokemon_default_item_default_attacks trainer_party_xae[3];
+trainer_pokemon_default_item_default_attacks trainer_party_xaf[2];
+trainer_pokemon_default_item_default_attacks trainer_party_xb0[2];
+trainer_pokemon_default_item_default_attacks trainer_party_xb1[3];
+trainer_pokemon_default_item_default_attacks trainer_party_xb2[4];
 
 
 #endif /* INCLUDE_C_TRAINER_PARTY_H_ */

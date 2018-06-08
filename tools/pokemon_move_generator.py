@@ -21,6 +21,7 @@ import pokemon_move_generator.export as export
 
 
 if __name__ == "__main__":
+
     try:
         opts, args = getopt.getopt(sys.argv[1:], "h", ["help"])
     except getopt.GetoptError:
@@ -55,11 +56,9 @@ if __name__ == "__main__":
         pkmns = pickle.load(f)
     linked = link.update_and_link(pkmns, proj.constants)
 
-
     output = "#include \"types.h\"\n"
     # Create include preamble
-    for constant in ["species", "attacks", "move_tutor" 
-        ]:
+    for constant in ["species", "attacks", "move_tutor"]:
         output += proj.constants.get_include_directive(constant, "c") + "\n"
     
     # Extra pokemon count

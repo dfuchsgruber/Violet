@@ -11,6 +11,16 @@
         bx r0
         .pool
 
+.org 0x080831B0
+		ldr r1, =map_wildbattle_init_seed | 1
+		bx r1
+		.pool
+
+.org 0x08082C20
+		ldr r2, =map_wildbattle_init | 1
+		bx r2
+		.pool
+
 .org 0x8082cb0
 	.word wild_pokemon
 

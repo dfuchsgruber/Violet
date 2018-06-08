@@ -68,12 +68,12 @@ frame 131
     spawn_big_cb groudon_bg_scroll_cb 0 3
     .hword 0,0,0
     spawn_big_cb groudon_bg_scroll_all 0 0
-    fadescreen 0 16 240+1+13*16 128 16 0
+    fadescreen 0 16 240 128 16 0
     endframe
 
 frame 400
     sound 202
-    fadescreen 0 256+13*16+1 1 32 16 0
+    fade_obj_pal 0 0xA0A0 1 1 32 16 0
     endframe
 
 frame 432
@@ -84,7 +84,7 @@ frame 432
 frame 500
     sound 0xCF
     fadescreen 0 0 16 32 16 15
-    fadescreen 0 256+13*16+2 14 32 16 15
+    fade_obj_pal 0 0xA0A0 2 14 32 16 15
 
     spawn_big_cb groudon_anim_earthquake_cb 0 4
     .hword 32, 1, 64, 2
@@ -95,7 +95,7 @@ frame 500
 frame 600
     sound 0xCF
     fadescreen 0 0 16 32 15 14
-    fadescreen 0 256+13*16+2 14 32 15 14
+    fade_obj_pal 0 0xA0A0 2 14 32 15 14
     spawn_big_cb groudon_anim_earthquake_cb 0 4
     .hword 32, 1, 64, 2
     spawn_big_cb groudon_anim_step_cb 0 1
@@ -105,7 +105,7 @@ frame 600
 frame 700    
     sound 0xCF
     fadescreen 0 0 16 32 14 11
-    fadescreen 0 256+13*16+2 14 32 14 11
+    fade_obj_pal 0 0xA0A0 2 14 32 14 11
     spawn_big_cb groudon_anim_earthquake_cb 0 4
     .hword 32, 1, 64, 2
     spawn_big_cb groudon_anim_step_cb 0 1
@@ -116,7 +116,7 @@ frame 700
 frame 800
     sound 0xCF
     fadescreen 0 0 16 32 11 7
-    fadescreen 0 256+13*16+2 14 32 11 7
+    fade_obj_pal 0 0xA0A0 2 14 32 11 7
     spawn_big_cb groudon_anim_earthquake_cb 0 4
     .hword 32, 1, 64, 2
     spawn_big_cb groudon_anim_step_cb 0 1
@@ -126,7 +126,7 @@ frame 800
 frame 900
     sound 0xCF
     fadescreen 0 0 16 32 7 0
-    fadescreen 0 256+13*16+2 14 32 7 0
+    fade_obj_pal 0 0xA0A0 2 14 32 7 0
     spawn_big_cb groudon_anim_earthquake_cb 0 4
     .hword 32, 1, 64, 2
     spawn_big_cb groudon_anim_step_cb 0 1

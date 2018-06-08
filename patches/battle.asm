@@ -16,7 +16,6 @@
         .word gfx_battle_boxPal
 
 //bsc strings
-	
 
 .org 0x80cf194
 	.word bsc_strings
@@ -184,6 +183,7 @@ blxr4:
 .org 0x801cfd8
 	.word battle_script_cmds
 
+
 .org 0x080153B4
         ldr r0, =hook_clear_temporary_effects | 1
         bx r0
@@ -200,4 +200,16 @@ blxr4:
 .org 0x08080050
     .word hook_battle_result
     .word hook_battle_result
+
+.org 0x807f4a0
+	.word str_whiteout
+
+.org 0x81abbce
+	.word str_pokecenter0
+
+.org 0x81abbfa
+	.word str_pokecenter1
+
+.org 0x81abc03
+	.word str_pokecenter1
 

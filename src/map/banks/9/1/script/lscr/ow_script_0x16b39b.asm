@@ -3,5 +3,5 @@
 
 .global ow_script_0x16b39b
 ow_script_0x16b39b:
-sethealingplace 0x6
+sethealingplace 0x7
 end

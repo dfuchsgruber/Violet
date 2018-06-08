@@ -4,7 +4,7 @@
 
 #include "types.h"
 #include "prng.h"
-
+#include "math.h"
 
 
 void rnd_init(){
@@ -33,5 +33,12 @@ u32 _prng_xorshift(u32 *_seed){
     seed ^= seed << 5;
     *_seed = seed;
     return seed;
+}
+
+FIXED _prng_stdnormal(u32 *_seed) {
+  // Sample U uniformly in [0;1]
+  FIXED u = (u16)_prng_xorshift(_seed);
+  // Phi^-1(U) is distributed ~ N(0, 1)
+  return FIXED_PROBIT_INV(u);
 }
 

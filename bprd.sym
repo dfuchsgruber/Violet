@@ -236,6 +236,11 @@ map_delta_to_map_tile = 0x0805A948 | 1;
 pokemon_query_string = 0x0809DA38 | 1;
 pokemon_query_string_std_closure = 0x08056900 | 1;
 volume_set = 0x081E2378 | 1;
-
-
+block_get_field = 0x8058F1C | 1;
+wildbattle_does_pokemon_appear_by_frequency = 0x08082B30 | 1;
+overworld_flag_get = 0x0805C74C | 1;
+wildbattle_increase_chance = 0x08083374 | 1;
+wildbattle_initialize_by_habitat = 0x8082A50 | 1;
+wildbattle_start = 0x0807F668 | 1;
 icon_pals = 0x083D3054;
+sqrt32 = 0x081E7A84 | 1;

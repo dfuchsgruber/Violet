@@ -10,12 +10,18 @@
 
 #include "tile/coordinate.h"
 
+#define BDATA_BEHAVIOUR 0
+#define BDATA_HM_USAGE 1
+#define BDATA_TRIGGERS_WILDBATTLE 4
+#define TRIGGERS_WILDBATTLE_GRASS 1
+#define TRIGGERS_WILDBATTLE_WATER 2
+
 typedef struct bdata {
     u32 behavior : 9;
     u32 hm_usage : 5;
     u32 field_2 : 4;
     u32 field_3 : 6;
-    u32 field_4 : 3; //if 0 no wildbattle triggered, 1 fetch data from wild grass table, 2
+    u32 field_4 : 3; //if 0 no wildbattle triggered, 1 fetch data from wild grass table, 2 water
     u32 field_5 : 2;
     u32 field_6 : 2;
     u32 field_7 : 1;
@@ -30,6 +36,13 @@ typedef struct bdata {
  * @return the field value
  */
 u32 block_get_field_by_pos(s16 x, s16 y, u8 field);
+
+/**
+ * Gets a certian tile field by the blocks field data
+ * @param bdata the information compressed into 32 bit
+ * @param field the field to extract
+ */
+u32 block_get_field(bdata data, int field);
 
 typedef union union_block_data {
     bdata data;

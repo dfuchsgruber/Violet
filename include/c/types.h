@@ -38,4 +38,71 @@ typedef struct {
 } int_pair;
 
 
+typedef s32 FIXED;
+#define FIXED_SHIFT 16
+
+#define INT_MAX 0x7FFFFFFF
+#define INT_MIN -0x7FFFFFF
+
+
+/**
+ * Adds fixed point numbers
+ * @param a the first value
+ * @param b the second value
+ * @return a + b as FIXED type
+ */
+static inline FIXED FIXED_ADD(FIXED a, FIXED b) {
+  return a + b;
+}
+
+/**
+ * Subtracts fixed point numbers
+ * @param a the first value
+ * @param b the second value
+ * @return a - b as FIXED type
+ */
+static inline FIXED FIXED_SUB(FIXED a, FIXED b) {
+  return a - b;
+}
+
+/**
+ * Multiplies fixed point numbers
+ * @param a the first value
+ * @param b the second value
+ * @return a * b as FIXED type
+ */
+static inline FIXED FIXED_MUL(FIXED a, FIXED b) {
+  return (a >> (FIXED_SHIFT >> 1)) * (b >> (FIXED_SHIFT >> 1));
+}
+
+/**
+ * Divides fixed point numbers (with enormous loss of precision)
+ * @param a the first value
+ * @param b the second value
+ * @return a / b as FIXED type
+ */
+static inline FIXED FIXED_DIV(FIXED a, FIXED b) {
+  int scale_a = FIXED_SHIFT >> 1;
+  int scale_b = FIXED_SHIFT - scale_a;
+  return (a << scale_a) / (b >> scale_b);
+}
+
+/**
+ * Transforms a fixed point value to an integer (correctly rounding)
+ * @param a the fixed point value
+ * @return the integer value
+ */
+static inline int FIXED_TO_INT(FIXED a) {
+  return (int)((a + (1 << (FIXED_SHIFT - 1))) >> FIXED_SHIFT);
+}
+
+/**
+ * Transforms an integer into a fixed point value
+ */
+static inline FIXED INT_TO_FIXED(int a) {
+  return a << FIXED_SHIFT;
+}
+
+
+
 #endif

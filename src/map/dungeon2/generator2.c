@@ -13,6 +13,11 @@
 #include "agbmemory.h"
 #include "prng.h"
 
+void dungeon2_seed_init() {
+  u32 seed = (u32)(rnd16() << 16 | rnd16());
+  cmem->dg2.initial_seed = seed;
+}
+
 void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2){
     dprintf("Iterating map with nlb %d and hub %d\n", near_lower_bound, far_upper_bound);
     for(int x = 1; x < dg2->width - 1; x++){
@@ -61,8 +66,8 @@ void dungeon2_next_node(int *result, int margin, dungeon_generator2 *dg2){
     if(xrange <= 0 || yrange <= 0){
         derrf("Parameters for dungeon2 allow no node generation!\n");
     }
-    int x = margin + ((int)dungeon2_rnd(dg2) % xrange);
-    int y = margin + ((int)dungeon2_rnd(dg2) % yrange);
+    int x = margin + (dungeon2_rnd_int(dg2) % xrange);
+    int y = margin + (dungeon2_rnd_int(dg2) % yrange);
     result[0] = x;
     result[1] = y;
     
@@ -85,9 +90,9 @@ void dungeon2_connect_nodes(int *a, int *b, dungeon_generator2 *dg2, u8 *map){
             //Pick the optimal adjacent tile
             int dx = x1 - x0; int dy = y1 - y0;
             if(abs(dx) > abs(dy)){
-                i = signum(dx); j = 0;
+                i = sign(dx); j = 0;
             }else{
-                i = 0; j = signum(dy);
+                i = 0; j = sign(dy);
             }
         }
         //dprintf("Picked delta %d, %d\n", i, j);
@@ -108,7 +113,7 @@ void dungeon2_init_by_paths(u8 *map, dungeon_generator2 *dg2){
     dungeon2_next_node(nodes[0], dg2->margin, dg2); //Initial node
     for(int i = 1; i <= dg2->nodes; i++){
         //Pick any node a
-        int *a = nodes[(int)dungeon2_rnd(dg2) % i];
+        int *a = nodes[dungeon2_rnd_int(dg2) % i];
         dungeon2_next_node(nodes[i], dg2->margin, dg2);
         dungeon2_connect_nodes(a, nodes[i], dg2, map);
     }
@@ -278,6 +283,13 @@ u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2){
    
 }
 
+u16 dungeon2_rnd_16(dungeon_generator2 *dg2) {
+  return (u16)dungeon2_rnd(dg2);
+}
+
+int dungeon2_rnd_int(dungeon_generator2 *dg2) {
+  return (int)(dungeon2_rnd(dg2) & 0x7FFFFFFF);
+}
 
 u32 dungeon2_rnd(dungeon_generator2 *dg2){
     return _prng_xorshift(&(dg2->seed));

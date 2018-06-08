@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Python file to create an index of all availible items and species
 # This is used to keep track of which elements need to be included
 # yet to the game
@@ -6,12 +8,19 @@ import pymap.project as project
 import pymap.config as config
 import pymap.mapheader as mapheader
 import pymap.mapevent as mapevent
-import constants
 import os
 import re
 
+root = "src/map/banks"
+projpath = "proj.pmp"
+
+
+proj = project.Project.load_project(projpath)
+consts = proj.constants
+
+
 # Define an index for items that are not found or buyable
-item_index = dict((item, []) for item in constants.item_table)
+item_index = dict((item, []) for item in consts.values("items"))
 
 # Define an index for each hidden chunk and flag
 hidden_index = {
@@ -22,7 +31,7 @@ hidden_index = {
 }
 
 # Define an index for pokemon that are not wild pokemon
-poke_index = dict((species, []) for species in constants.species_table)
+poke_index = dict((species, []) for species in consts.values("species"))
 poke_index["POKEMON_BISASAM"].append("STARTER")
 poke_index["POKEMON_GLUMANDA"].append("STARTER")
 poke_index["POKEMON_SCHIGGY"].append("STARTER")
@@ -74,9 +83,6 @@ for species in poke_wondertrade_gold:
 for species in poke_wondertrade_platinum:
     poke_index[species].append("WONDERTRADE(PLATINUM)")
 
-root = "../map"
-proj = project.Project.load_project(config.STDPROJ)
-
 
 def index(out_item_index, out_poke_index, out_hidden_index):
     """
@@ -106,7 +112,7 @@ def index(out_item_index, out_poke_index, out_hidden_index):
                 index_hidden(header, hidden_index, bank, mapid, ns)
 
     output = ""
-    for species in constants.species_table:
+    for species in consts.values("species"):
         output += species + ":\n"
         for location in poke_index[species]:
             output += "\t\t" + location + "\n"
@@ -114,7 +120,7 @@ def index(out_item_index, out_poke_index, out_hidden_index):
     fp.write(output)
     fp.close()
     output = ""
-    for item in constants.item_table:
+    for item in consts.values("items"):
         output += item + ":\n"
         for location in item_index[item]:
             output += "\t\t" + location + "\n"
@@ -139,9 +145,10 @@ def namespace(dir):
     :return bank, mapid, namespace
     """
     dirs = dir.split(os.sep)
+    leaf = root.split(os.sep)[-1]
     try:
         # Find the structure .*/map/bankid/mapid/.*
-        id_map_dir = dirs.index("map")
+        id_map_dir = dirs.index(leaf)
         bank = int(dirs[id_map_dir + 1])
         mapid = int(dirs[id_map_dir + 2])
         _, _, ns, _ = proj.banks[bank][mapid]
@@ -209,4 +216,4 @@ def index_item_by_hidden_items(header: mapheader, item_index, bank, mapid, ns):
                     item_index[item_id].append(location)
 
 if __name__ == "__main__":
-    index("../index/items.txt", "../index/poke.txt", "../index/hidden.txt")
+    index("index_items.txt", "index_poke.txt", "index_hidden.txt")

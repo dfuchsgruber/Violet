@@ -6,6 +6,8 @@
 #include "bios.h"
 #include "debug.h"
 #include "titlescreen.h"
+#include "math.h"
+#include "prng.h"
 
 extern const unsigned short gfx_ts_start_higherTiles[]; //lz77
 extern const unsigned short gfx_ts_start_higherMap[]; //lz77
@@ -58,6 +60,13 @@ void ts_setup_pal(){
 }
 
 void ts_setup_bg(){
+    u32 seed = 1337;
+    for(int i = 0; i < 1000; i++) {
+      FIXED x = _prng_stdnormal(&seed);
+      dprintf("%d,\n", x);
+    }
+
+
     dprintf("Setup ts\n");
     //Load palettes
     ts_setup_pal();

@@ -616,7 +616,6 @@ goto ow_script_0x966e64
 
 .global ow_script_0x966e64
 ow_script_0x966e64:
-addvar STORY_PROGRESS 0x1
 end
 
 

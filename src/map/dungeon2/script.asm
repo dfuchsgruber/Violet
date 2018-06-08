@@ -1,5 +1,6 @@
 .include "vars.s"
 .include "overworld_script.s"
+.include "flags.s"
 
 .equ DTYPE_FOREST, 1
 .equ DTYPE_CAVE, 2
@@ -7,7 +8,7 @@
 .global ow_script_dungeon2_enter_forest
 
 ow_script_dungeon2_enter_forest:
-    callasm dungeon2_init_map_interface_forest
+    callasm dungeon2_seed_init
     setvar DUNGEON_TYPE DTYPE_FOREST 
     setvar DUNGEON_STEPS 0
     warp 3 3 255 0 0
@@ -18,7 +19,7 @@ ow_script_dungeon2_enter_forest:
 
 ow_script_dungeon2_enter_cave:
     @//TODO 
-    callasm dungeon2_init_map_interface_forest
+    // callasm dungeon2_init_map_interface_forest
     setvar DUNGEON_TYPE DTYPE_FOREST
     setvar DUNGEON_STEPS 0
     warp 3 3 255 0 0

@@ -59,19 +59,19 @@ typedef struct custom_memory {
     u8 pokedex_caught_extension[0x40]; //additional 512 flags
     u8 gp_freespace[0x100];
     u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
-    mapheader dmapheader;
-    mapfooter dmapfooter;
+    u8 unused0[0x1C]; // mapheader dmapheader;
+    u8 unused1[0x1C]; // mapfooter dmapfooter;
     
     //Dungeon Memory I
-    wild_pokemon_data dwild_data;
-    wild_pokemon_habitat dwild_habitat_grass;
-    wild_pokemon_habitat dwild_habitat_water;
-    wild_pokemon_habitat dwild_habitat_rod;
-    wild_pokemon_habitat dwild_habitat_radar;
-    u8 __olddgen[0xC]; //Deprecated (0x30 bytes)
-    map_events devents;
-    map_event_warp ladder;
-    map_event_person dpers[5];
+    u8 unused2[0x14]; // wild_pokemon_data dwild_data;
+    u8 unused3[0x8]; // dwild_habitat_grass;
+    u8 unused4[0x8]; // wild_pokemon_habitat dwild_habitat_water;
+    u8 unused5[0x8]; // wild_pokemon_habitat dwild_habitat_rod;
+    u8 unused6[0x8]; // wild_pokemon_habitat dwild_habitat_radar;
+    u8 unused7[0xC]; // Deprecated (0x30 bytes)
+    u8 unused8[0x14]; // map_events devents;
+    u8 unused9[0x10]; // map_event_warp ladder;
+    u8 unused10[0x18 * 5]; // map_event_person dpers[5];
     
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
@@ -83,13 +83,14 @@ typedef struct custom_memory {
     
     //Dungeon Memory II
     dungeon_generator2 dg2;
-    wild_pokemon_entry dwild_data_grass[12];
-    wild_pokemon_entry dwild_data_water[5];
-    wild_pokemon_entry dwild_data_rod[10];
-    wild_pokemon_entry dwild_data_radar[5];
+    // wild_pokemon_entry dwild_data_grass[12];
+    // wild_pokemon_entry dwild_data_water[5];
+    // wild_pokemon_entry dwild_data_rod[10];
+    // wild_pokemon_entry dwild_data_radar[5];
 
 } custom_memory;
 
+#define DMAP_PERSONS 5
 
 typedef struct {
     u8 dmap_header_initialized : 1;
@@ -117,7 +118,19 @@ typedef struct {
     u16 tile_anim_clks_0[8];
     u16 tile_anim_clks_1[8];
     trainerschool_test_memory *tst_mem;
-    
+    mapheader dmapheader;
+    mapfooter dmapfooter;
+    map_events dmapevents;
+    map_event_person dpersons[DMAP_PERSONS];
+    wild_pokemon_data dwild_pokemon;
+    wild_pokemon_habitat dwild_habitat_grass;
+    wild_pokemon_habitat dwild_habitat_water;
+    wild_pokemon_habitat dwild_habitat_radar;
+    wild_pokemon_habitat dwild_habitat_rod;
+    wild_pokemon_entry dwild_data_grass[12];
+    wild_pokemon_entry dwild_data_water[5];
+    wild_pokemon_entry dwild_data_radar[5];
+    wild_pokemon_entry dwild_data_rod[10];
     
 } floating_memory;
 
