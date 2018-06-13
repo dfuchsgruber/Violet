@@ -1,6 +1,6 @@
 # Violet_Sources
 
-This is the repository of Pokémon Violet. It can be used to build the project from source instead of applying a patch or to get an insight into how the features work.
+This is the repository of Pokémon Violet. It can be used to build the project from source instead of applying a patch or to get an insight into how the features work. This README describes the repository rather than the project itself. Visit the project [website](http://wodkarhr.github.io/Violet_Sources/) for information about the game.
 
 ## Requirements
 
