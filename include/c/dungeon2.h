@@ -92,6 +92,13 @@ extern "C" {
     mapfooter *dungeon2_init_footer_forest(dungeon_generator2 *dg2);
 
     /**
+     * Gets the level distribution (normal) for the forest based on the badges collected
+     * @param mean pointer to the mean level
+     * @param std_deviation pointer to the standard deviation
+     */
+    void dungeon2_forest_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation);
+
+    /**
      * Initializes the wild pokemon for the forest dungeon
      */
     void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2);
@@ -237,13 +244,21 @@ extern "C" {
      */
     void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src);
 
+    /**
+     * Gets the boundaries for wild pokemon levels based on a mean and standard deviation
+     * @param level_min pointer to the minimal level
+     * @param level_max pointer to the maximum level
+     * @param mean the expected level
+     * @param std_deviation the standard deviation for the level
+     */
+    void dungeon2_wild_pokemon_sample_level_boundaries(u8 *level_min, u8 *level_max, u8 mean,
+        u8 std_deviation);
+
     int dg2_cross_neighbourhood[4][2];
 
     map_connections dungeon2_connections;
 
     levelscript_head dungeon2_lscr[1];
-
-    wild_pokemon_data dungeon2_wild_pokemon_forest;
 
 #ifdef	__cplusplus
 }

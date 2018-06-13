@@ -21,7 +21,7 @@ const void *pokemon_icons[POKEMON_CNT];
 u32 pokemon_player_y[POKEMON_CNT];
 u8 pokemon_altitude[POKEMON_CNT];
 u32 pokemon_enemy_y[POKEMON_CNT];
-u16 pokemon_icon_pals[3][16];
+u16 icon_pals[3][16];
 
 
 	extern const unsigned short gfx_pkmn_species_000_pokemon_pokemon_0_frontspriteTiles[];

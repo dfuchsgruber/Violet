@@ -112,4 +112,7 @@ wild_pokemon:
 	.word map_1_82_wild_grass, 0, map_1_82_wild_other, 0 
 @// 1.126
 	.byte 1, 126, 0, 0
-	.word map_1_126_wild_grass, 0, 0, 0 
+	.word map_1_126_wild_grass, 0, 0, 0
+@// END
+	.byte 0xFF, 0xFF, 0xFF, 0xFF
+	.word 0, 0, 0, 0

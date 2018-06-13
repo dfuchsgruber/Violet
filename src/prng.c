@@ -21,6 +21,10 @@ u16 rnd16(){
     return (u16)_prng_xorshift(_main_rnd);
 }
 
+FIXED rnd_normal() {
+    return _prng_stdnormal(_main_rnd);
+}
+
 void rnd_main_set_seed(u32 seed){
     *_main_rnd = seed;
 }

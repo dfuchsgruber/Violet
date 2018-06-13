@@ -11,6 +11,12 @@ nbproject/
 __pycache__/
 *.py[cod]
 
+.settings/
+__pycache__
+.cproject
+.project
+
+
 # C extensions
 *.so
 

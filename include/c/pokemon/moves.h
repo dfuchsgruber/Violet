@@ -18,6 +18,6 @@ typedef struct {
 
 pokemon_move *pokemon_moves[POKEMON_CNT];
 u8 pokemon_tm_compatibility [POKEMON_CNT][8];
-u32 pokemon_tutor_compatibility[POKEMON_CNT];
+u32 pokemon_move_tutor_compatibility[POKEMON_CNT];
 
 #endif /* INCLUDE_C_POKEMON_MOVES_H_ */

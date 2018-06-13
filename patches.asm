@@ -9,7 +9,9 @@
 .include "patches/overworld.asm"
 
 .org 0x09000000
+.importobj "bld/linked.o"
 .ascii "POKEMON VIOLET A"
 .word 1
-.importobj "bld/linked.o"
+
 .close
+

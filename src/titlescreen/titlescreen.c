@@ -60,14 +60,6 @@ void ts_setup_pal(){
 }
 
 void ts_setup_bg(){
-    u32 seed = 1337;
-    for(int i = 0; i < 1000; i++) {
-      FIXED x = _prng_stdnormal(&seed);
-      dprintf("%d,\n", x);
-    }
-
-
-    dprintf("Setup ts\n");
     //Load palettes
     ts_setup_pal();
     

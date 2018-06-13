@@ -23,10 +23,10 @@ FIXED erfinv_center_polynomial_coefs[9] = {185661, 65645, 618, -499, 376, -240, 
 // https://people.maths.ox.ac.uk/gilesm/files/gems_erfinv.pdf
 FIXED FIXED_ERFINV(FIXED x) {
   // Approximate erfinv(-1) = -inf and erfinf(1) = inf
-  if (x == INT_TO_FIXED(-1)) {
+  if (x <= INT_TO_FIXED(-1)) {
     dprintf("Erfinv(-1) called. Returning INT_MAX");
     return INT_MAX;
-  } else if (x == INT_TO_FIXED(1)) {
+  } else if (x >= INT_TO_FIXED(1)) {
     dprintf("Erfinv(1) called. Returning INT_MIN");
     return INT_MIN;
   }

@@ -6,7 +6,7 @@
 
 bool move_tutor_is_compatible(u16 species, u8 move_tutor){
     u32 mask = (u32)(1 << move_tutor);
-    if(pokemon_tutor_compatibility[species] & mask)
+    if(pokemon_move_tutor_compatibility[species] & mask)
         return true;
     return false;
 }

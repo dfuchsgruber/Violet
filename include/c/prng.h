@@ -23,6 +23,12 @@ extern "C" {
     u16 rnd16();
 
     /**
+     * Provides a random fixed point number ~ N(0, 1) from the main rng
+     * @return x ~ N(0, 1)
+     */
+    FIXED rnd_normal();
+
+    /**
      * Sets the seed of the main rng module
      * @param seed
      * @return 

@@ -12,6 +12,8 @@
 #include "dungeon2.h"
 #include "save.h"
 #include "debug.h"
+#include "constants/flags.h"
+#include "flags.h"
 
 u16 dungeon_forest_wild_pokemon_common[] = {
     POKEMON_PARAGONI,
@@ -47,6 +49,25 @@ u16 dungeon_forest_wild_pokemon_super_rare[] = {
     POKEMON_SKARABORN,
     0xFFFF
 };
+
+void dungeon2_forest_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation) {
+  if(checkflag(FRBADGE_4)) {
+    *mean = 34;
+    *std_deviation = 3;
+  } else if (checkflag(FRBADGE_3)) {
+    *mean = 26;
+    *std_deviation = 3;
+  } else if (checkflag(FRBADGE_2)) {
+    *mean = 16;
+    *std_deviation = 2;
+  } else if (checkflag(FRBADGE_1)) {
+    *mean = 10;
+    *std_deviation = 2;
+  } else {
+    *mean = 5;
+    *std_deviation = 1;
+  }
+}
 
 void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
   (void)dg2;
@@ -84,9 +105,18 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
   fmem->dwild_data_grass[9].species = super_rare_pokemon[0];
   fmem->dwild_data_grass[10].species = super_rare_pokemon[0];
   fmem->dwild_data_grass[11].species = super_rare_pokemon[0];
+
+  u8 mean = 0;
+  u8 std_deviation = 0;
+  u8 level_min = 0;
+  u8 level_max = 0;
+  dungeon2_forest_wild_pokemon_level_distribution(&mean, &std_deviation);
+
   for(int i = 0; i < 12; i++) {
-    fmem->dwild_data_grass[i].level_min = 5;
-    fmem->dwild_data_grass[i].level_max = 10;
+    dprintf("Mean %d, std %d, min %d, max %d\n", mean, std_deviation, level_min, level_max);
+    dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max, mean, std_deviation);
+    fmem->dwild_data_grass[i].level_min = level_min;
+    fmem->dwild_data_grass[i].level_max = level_max;
   }
 }
 

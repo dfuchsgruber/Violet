@@ -231,7 +231,7 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
     for(int i = 0; i < 3; i++){
         state->icon_pals[i] = oam_allocate_palette(
                 (u16)(POKEDEX_SCANNER_ICON_BASE_TAG + i));
-        pal_copy(pokemon_icon_pals[i], (u16)(256 + 16 * state->icon_pals[i]), 32);
+        pal_copy(icon_pals[i], (u16)(256 + 16 * state->icon_pals[i]), 32);
     }
     u16 pal_black[16] = {0};
     state->icon_pals[3] = oam_allocate_palette(POKEDEX_SCANNER_ICON_BASE_TAG + 3);

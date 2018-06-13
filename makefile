@@ -34,8 +34,8 @@ WAVFLAGS=-c
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
 BLDPATH= bld
-
 MAPPROJ=proj.pmp
+SYMBOLDUMP=$(BLDPATH)/symbols
 
 # Pokemon crawler settings
 PKMNCRAWLERDATA=bld/pkmncrawlerdata.pkl
@@ -241,10 +241,8 @@ all: $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	@echo "Creating rom object..."
 	#@echo "$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o"
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
-	$(ARS) patches.asm
-	$(NM) $(BLDPATH)/linked.o -n -g --defined-only | \
-	sed -e '{s/^/0x/g};{/.*\sA\s.*/d};{s/\sT\s/ /g}' > $(BLDPATH)/__symbols.sym
-	$(PY3) tools/index.py
+	$(ARS) patches.asm -sym $(SYMBOLDUMP)
+	#$(PY3) tools/index.py
 		
 clean:
 	rm -rf $(BLDPATH)
