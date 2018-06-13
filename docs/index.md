@@ -4,7 +4,14 @@ Welcome to the __Pokémon Violet__ project. __Pokémon Violet__ is a third gener
 (German version). It provides a fresh and new game expercience with a broad amount of features, some from later generations,
 while still maintaining the nostalgic charme of the good old third generation Pokémon games.
 
----
+## Pages
+- Pokémon List - Where to find each Pokémon
+- Wondertrade - How it works
+- Pokédex - Features explained
+- Items - Where to find each item
+- [Youtube](https://www.youtube.com/channel/UCbpo4OmrVSfZei8953MpR-A) - Soundtracks and latest demo videos
+- [RomHackersWorld](https://board.romhackersworld.eu/thread/11183-pok%C3%A9mon-violet-alpha-2-0-3/) - Where the project originated
+- Easter Eggs
 
 ## What's new?
 
@@ -20,19 +27,15 @@ while still maintaining the nostalgic charme of the good old third generation Po
 - __Custom abilities__ are availible as __hidden abilities__ for some Pokémon
 - __EV's__ can be __statted__ in a RPG-like fashion once they were earned
 
----
-
 ## How to play
 
 As this game is a romhack and providing roms is illegal only a patch will be provided. Thus you need to own a __German Firered rom__ file (be aware that even downloading those roms is illegal however). An in-depth tutorial for patching will be provided here(TODO: insert link)
 
----
 
 ## Supported languages
 
 The game currently only is availible in __German__. However there is work in progress for translating the game into the __English language__. If you would like to help translating, refer to (TODO: insert link)
 
----
 
 ## Reporting bugs / suggestions / feedback
 
