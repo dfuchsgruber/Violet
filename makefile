@@ -17,6 +17,7 @@ PYPROJ2S=@pyproj2s.py
 PYPREPROC=@pypreproc.py
 PYMAPCONSTEX=pymapconstex.py
 READELF=@arm-none-eabi-readelf
+SOUNDFONTRIPPER=sound_font_ripper
 
 # Py-Preprocessor settings (pypreproc.py)
 CHARMAP=charmap.txt
@@ -33,7 +34,9 @@ GRITFLAGS=-fh! -ftc
 WAVFLAGS=-c
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
-BLDPATH= bld
+BLDPATH=bld
+BLDROM=$(BLDPATH)/violet.gba
+BASEROM=base/bprd.gba
 MAPPROJ=proj.pmp
 SYMBOLDUMP=$(BLDPATH)/symbols
 
@@ -54,7 +57,6 @@ PKMNINACESSIBLEMOVES=pokemon_inacessible_moves
 PKMNCRAWLEREXTERN=tools/pokemon_move_generator/data.py
 
 
-
 # Fata morgana lookup table generator settings 
 # Define the map the fata morgana is executed on
 DESERTMAP=src/map/banks/3/21/map_3_21.pmh
@@ -63,6 +65,9 @@ FATAMORGANALUT=fata_morgana_blocks
 # Define the symbol of the lookup table size
 FATAMORGANALUTSIZE=fata_morgana_blocks_cnt
 
+# Soundfont ripper
+PSG_DATA=/media/d/romhacking/gba-mus-ripper/psg_data.raw
+GOLDENSUN_SYNTH=/media/d/romhacking/gba-mus-ripper/goldensun_synth.raw
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
 
@@ -102,8 +107,8 @@ MAPOBJS = $(MAPAS:%.s=%.o)
 
 MAPTILESETAS = $(MAPTILESETSRC:%.pts=$(BLDPATH)/%.s)
 MAPTILESETOBJS = $(MAPTILESETAS:%.s=%.o)
-	
-.PHONY: all clean
+
+.PHONY: all clean soundfont
 
 $(ASOBJS1): $(BLDPATH)/%.o: %.asm $(CONSTANTSH)
 	$(shell mkdir -p $(dir $@))
@@ -236,13 +241,17 @@ $(CONSTANTSH): $(CONSTANTS)
 	@echo "Exporting constants..."
 	$(PYMAPCONSTEX) $(MAPPROJ)		
 	
-	
-all: $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
+soundfont: $(BLDROM)
+	$(foreach vcg,000 001 002, \
+	$(SOUNDFONTRIPPER) $(BLDROM) bld/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
+
+$(BLDROM): $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	@echo "Creating rom object..."
-	#@echo "$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o"
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
-	$(ARS) patches.asm -sym $(SYMBOLDUMP)
+	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
 	#$(PY3) tools/index.py
+	
+all: $(BLDROM) soundfont
 		
 clean:
 	rm -rf $(BLDPATH)
