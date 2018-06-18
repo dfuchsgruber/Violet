@@ -1,5 +1,6 @@
 from agb import agbrom
 from entry import IndexEntry
+import map_namespace
 
 """ Adds wild pokemon to the index """
 
@@ -11,14 +12,15 @@ WILD_POKEMON_ROD_PDF = "wild_pokemon_rod_pdf"
 WILD_POKEMON_GOOD_ROD_PDF = "wild_pokemon_good_rod_pdf"
 WILD_POKEMON_SUPER_ROD_PDF = "wild_pokemon_super_rod_pdf"
 
-def index_wild_pokemon(species_index, symbols, rom, proj, wild_pokemon_table_symbol="wild_pokemon"):
+def index_wild_pokemon(species_index, symbols, rom, proj, ps, wild_pokemon_table_symbol="wild_pokemon"):
     """ Adds the wild pokemon to the index of species
     Parameters:
     species_index : A list of lists containing the IndexEntry
                     instances for each species
     symbols : A dict of symbol -> location in rom file
     rom : An agbrom instance to obtain data from 
-    proj : A pymap project (needed for retrieving namespaces) 
+    proj : A pymap project (needed for retrieving namespaces)
+    ps : A Pstring instance for parsing hex to string 
     wild_pokemon_table_symbol : symbol that refers to the wild pokemon table"""
 
     offset = symbols[wild_pokemon_table_symbol]
@@ -34,16 +36,16 @@ def index_wild_pokemon(species_index, symbols, rom, proj, wild_pokemon_table_sym
         offset += 20
         namespace = proj.banks[bank][map][2]
         if grass:
-            index_habitat_grass(bank, map, namespace, species_index, symbols, rom, grass)
+            index_habitat_grass(bank, map, namespace, species_index, symbols, rom, proj, ps, grass)
         if water:
-            index_habitat_water(bank, map, namespace, species_index, symbols, rom, water)
+            index_habitat_water(bank, map, namespace, species_index, symbols, rom, proj, ps, water)
         if other:
-            index_habitat_other(bank, map, namespace, species_index, symbols, rom, other)
+            index_habitat_other(bank, map, namespace, species_index, symbols, rom, proj, ps, other)
         if rod:
-            index_habitat_rod(bank, map, namespace, species_index, symbols, rom, rod)
+            index_habitat_rod(bank, map, namespace, species_index, symbols, rom, proj, ps, rod)
 
 
-def index_habitat_grass(bank, map, namespace, species_index, symbols, rom, offset):
+def index_habitat_grass(bank, map, namespace, species_index, symbols, rom, proj, ps, offset):
     """ Adds wild pokemon to the index of species for grass habitats
     Parameters:
     bank : the map bank
@@ -52,6 +54,8 @@ def index_habitat_grass(bank, map, namespace, species_index, symbols, rom, offse
                     instances for each species
     symbols : A dict of symbol -> location in rom file
     rom : An agbrom instance to obtain data from
+    proj : The pymap project
+    ps : A Pstring instance to parse hex to string
     offset : offset of the grass habitat """
     frequency = rom.u8(offset)
     if not frequency: return # No pokemon appear
@@ -59,10 +63,10 @@ def index_habitat_grass(bank, map, namespace, species_index, symbols, rom, offse
     num_entries = 12
     pdf_offset = symbols[WILD_POKEMON_GRASS_PDF]
     habitat = habitat_get_with_pdf(rom, entries, num_entries, pdf_offset)
-    index_add_habitat(species_index, habitat, "{0} @ {1}.{2}".format(namespace, bank, map), 
-                        "grass")
+    where = "{0} @ {1}.{2}".format(map_namespace.map_namespace_to_string(namespace, rom, proj, ps, symbols), bank, map)
+    index_add_habitat(species_index, habitat, where, "Nature")
     
-def index_habitat_water(bank, map, namespace, species_index, symbols, rom, offset):
+def index_habitat_water(bank, map, namespace, species_index, symbols, rom, proj, ps, offset):
     """ Adds wild pokemon to the index of species for water habitats
     Parameters:
     bank : the map bank
@@ -71,6 +75,8 @@ def index_habitat_water(bank, map, namespace, species_index, symbols, rom, offse
                     instances for each species
     symbols : A dict of symbol -> location in rom file
     rom : An agbrom instance to obtain data from
+    proj : The pymap project
+    ps : A Pstring instance to parse hex to string
     offset : offset of the grass habitat """
     frequency = rom.u8(offset)
     if not frequency: return # No pokemon appear
@@ -78,10 +84,10 @@ def index_habitat_water(bank, map, namespace, species_index, symbols, rom, offse
     num_entries = 5
     pdf_offset = symbols[WILD_POKEMON_WATER_PDF]
     habitat = habitat_get_with_pdf(rom, entries, num_entries, pdf_offset)
-    index_add_habitat(species_index, habitat, "{0} @ {1}.{2}".format(namespace, bank, map), 
-                        "water")
+    where = "{0} @ {1}.{2}".format(map_namespace.map_namespace_to_string(namespace, rom, proj, ps, symbols), bank, map)
+    index_add_habitat(species_index, habitat, where, "Water")
 
-def index_habitat_other(bank, map, namespace, species_index, symbols, rom, offset):
+def index_habitat_other(bank, map, namespace, species_index, symbols, rom, proj, ps, offset):
     """ Adds wild pokemon to the index of species for other habitats
     Parameters:
     bank : the map bank
@@ -90,6 +96,8 @@ def index_habitat_other(bank, map, namespace, species_index, symbols, rom, offse
                     instances for each species
     symbols : A dict of symbol -> location in rom file
     rom : An agbrom instance to obtain data from
+    proj : The pymap project
+    ps : A Pstring instance to parse hex to string
     offset : offset of the grass habitat """
     frequency = rom.u8(offset)
     if not frequency: return # No pokemon appear
@@ -97,10 +105,10 @@ def index_habitat_other(bank, map, namespace, species_index, symbols, rom, offse
     num_entries = 5
     pdf_offset = symbols[WILD_POKEMON_OTHER_PDF]
     habitat = habitat_get_with_pdf(rom, entries, num_entries, pdf_offset)
-    index_add_habitat(species_index, habitat, "{0} @ {1}.{2}".format(namespace, bank, map), 
-                        "other")
+    where = "{0} @ {1}.{2}".format(map_namespace.map_namespace_to_string(namespace, rom, proj, ps, symbols), bank, map)
+    index_add_habitat(species_index, habitat, where, "Radar")
 
-def index_habitat_rod(bank, map, namespace, species_index, symbols, rom, offset):
+def index_habitat_rod(bank, map, namespace, species_index, symbols, rom, proj, ps, offset):
     """ Adds wild pokemon to the index of species for rod habitats
     Parameters:
     bank : the map bank
@@ -109,10 +117,13 @@ def index_habitat_rod(bank, map, namespace, species_index, symbols, rom, offset)
                     instances for each species
     symbols : A dict of symbol -> location in rom file
     rom : An agbrom instance to obtain data from
+    proj : The pymap project
+    ps : A Pstring instance to parse hex to string
     offset : offset of the grass habitat """
     frequency = rom.u8(offset)
     if not frequency: return # No pokemon appear
     entries_rod = rom.pointer(offset + 4)
+    where = "{0} @ {1}.{2}".format(map_namespace.map_namespace_to_string(namespace, rom, proj, ps, symbols), bank, map)
     num_entries_rod = 2
     pdf_offset_rod = symbols[WILD_POKEMON_ROD_PDF]
     entries_good_rod = entries_rod + 4 * num_entries_rod
@@ -123,14 +134,11 @@ def index_habitat_rod(bank, map, namespace, species_index, symbols, rom, offset)
     pdf_offset_super_rod = symbols[WILD_POKEMON_SUPER_ROD_PDF]
 
     habitat_rod = habitat_get_with_pdf(rom, entries_rod, num_entries_rod, pdf_offset_rod)
-    index_add_habitat(species_index, habitat_rod, "{0} @ {1}.{2}".format(namespace, bank, map), 
-                        "Rod")
+    index_add_habitat(species_index, habitat_rod, where, "Rod")
     habitat_good_rod = habitat_get_with_pdf(rom, entries_good_rod, num_entries_good_rod, pdf_offset_good_rod)
-    index_add_habitat(species_index, habitat_good_rod, "{0} @ {1}.{2}".format(namespace, bank, map), 
-                        "Good Rod")
+    index_add_habitat(species_index, habitat_good_rod, where, "Good Rod")
     habitat_super_rod = habitat_get_with_pdf(rom, entries_super_rod, num_entries_super_rod, pdf_offset_super_rod)
-    index_add_habitat(species_index, habitat_super_rod, "{0} @ {1}.{2}".format(namespace, bank, map), 
-                        "Super Rod")
+    index_add_habitat(species_index, habitat_super_rod, where, "Super Rod")
 
 def index_add_habitat(species_index, habitat, where, how):
     """ Adds all entries of a habitat to the species_index
