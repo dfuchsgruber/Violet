@@ -11,7 +11,7 @@ The build process of this repository requires you to have installed:
 - [armips](https://github.com/Kingcom/armips)
 - [python 3.X](https://www.python.org/)
 - [Midi2Agb](https://github.com/ipatix/midi2agb) - not currently but at some point
-- [soundFontRipper]TODO:insert link - not currently but at some point
+- [soundFontRipper](https://github.com/WodkaRHR/gba-mus-ripper)
 ### Python
 - [pyagb](https://github.com/WodkaRHR/pyagb)
 ### Rom
