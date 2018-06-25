@@ -11,7 +11,7 @@ void bsc_pokemon_caught(){
     //dprintf("Bsc before caught %x\n", *bsc_offset);
     u16 species = (u16)pokemon_get_attribute(&opponent_pokemon[0], ATTRIBUTE_SPECIES, 0);
     u16 dex_id = pokedex_get_id(species);
-    pid pid = {.value = (u32)pokemon_get_attribute(&opponent_pokemon[0], ATTRIBUTE_PID, 0)};
+    pid_t pid = {.value = (u32)pokemon_get_attribute(&opponent_pokemon[0], ATTRIBUTE_PID, 0)};
     bool caught = pokedex_operator(species,POKEDEX_GET | POKEDEX_CAUGHT, true);
     if(caught){
       u8 *bsc_off_loc = &((*bsc_offset)[1]);

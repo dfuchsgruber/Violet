@@ -13,6 +13,6 @@
  * @param var The variable to access
  * @return The offset of the variable
  */
-u16* var_access(u16 var);
+u16 *var_access(u16 var);
 
 #endif /* INCLUDE_C_VARS_H_ */

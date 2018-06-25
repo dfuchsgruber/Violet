@@ -203,7 +203,9 @@ void wondertrade_spawn_pokemon() {
     while (ot_name[i] != 0xFF)
         tid *= ot_name[i++];
 
-    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 0, true, tid, wondertrade_next_seed);
+    pid_t p = {.value = 0};
+    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 0, false, p,
+        true, tid, wondertrade_next_seed);
 
     //at last we define ot
     pokemon_set_attribute(&opponent_pokemon[0], ATTRIBUTE_OT_NAME, ot_name);

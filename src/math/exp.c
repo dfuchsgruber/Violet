@@ -16,9 +16,13 @@
 FIXED log_polynomial_coefs[5] = {-114150, 184890, -96335, 29306, -3707};
 
 FIXED FIXED_LOG(FIXED x) {
-  if(x <= 0) {
+  if(x < 0) {
     derrf("Logarithm of negative numbers not defined %d\n", x);
     return 0;
+  }
+  if (x == 0) {
+    dprintf("Warning, logarithm of 0 called (likely due to inaccuracy errors)\n");
+    return INT_MIN;
   }
   // Get the msb of x
   int msb = -1;

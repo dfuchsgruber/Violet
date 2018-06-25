@@ -3,7 +3,7 @@
 #include "callbacks.h"
 #include "save.h"
 #include "map/header.h"
-#include "dungeon2.h"
+#include "dungeon/dungeon2.h"
 #include "constants/vars.h"
 #include "vars.h"
 

@@ -10,7 +10,7 @@ u16 pokemon_calculate_checksum(pokemon *p){
     return p->checksum;
 }
 
-u8 pokemon_nature_by_pid(pid p){
+u8 pokemon_nature_by_pid(pid_t p){
     u8 nat = (u8)p.fields.nature;
     if(nat > 24) nat /= 2;
     return nat;
@@ -20,12 +20,12 @@ u8 pokemon_get_nature(pokemon *p){
     return pokemon_nature_by_pid(p->pid);
 }
 
-bool pokemon_is_shiny(u32 tid, pid p){
+bool pokemon_is_shiny(u32 tid, pid_t p){
     (void)tid;
     return p.fields.shinyness <= 512;
 }
 
-palette *pokemon_get_pal_struct(u16 species, u32 tid, pid p){
+palette *pokemon_get_pal_struct(u16 species, u32 tid, pid_t p){
     //dprintf("Pokemon get pal struct for species %d, pid %x, tid %x\n", species, p.fields.shinyness, tid);
     if(pokemon_is_shiny(tid, p))
         return &pokemon_shiny_pals[species];
@@ -34,6 +34,6 @@ palette *pokemon_get_pal_struct(u16 species, u32 tid, pid p){
     
 }
 
-const void *pokemon_get_pal(u16 species, u32 tid, pid p){
+const void *pokemon_get_pal(u16 species, u32 tid, pid_t p){
     return pokemon_get_pal_struct(species, tid, p)->pal;
 }

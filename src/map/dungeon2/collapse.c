@@ -1,7 +1,7 @@
 #include "types.h"
 #include "map/header.h"
 #include "save.h"
-#include "dungeon2.h"
+#include "dungeon/dungeon2.h"
 #include "debug.h"
 #include "constants/vars.h"
 #include "vars.h"

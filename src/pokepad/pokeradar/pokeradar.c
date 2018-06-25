@@ -37,7 +37,6 @@ map_event_person pokeradar_map_event_person = {
     script_pokeradar_battle,
     POKERADAR_POKEMON_SPAWNED,
     0,
-    0
 };
 
 bool pokeradar_determine_position(coordinate *result) {
@@ -175,7 +174,9 @@ void pokeradar_spawn_pokemon() {
     u8 level = (u8) * var_access(POKERADAR_ENEMY_LEVEL);
     if (*var_access(POKERADAR_ENCOUNTER_COUNT) != 0xFFFF)
         (*var_access(POKERADAR_ENCOUNTER_COUNT))++;
-    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, level, 0, false, 0, pokeradar_next_seed);
+    pid_t p = {.value = 0};
+    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, level, 0, false, p,
+        false, 0, pokeradar_next_seed);
 }
 
 bool pokeradar_step() {

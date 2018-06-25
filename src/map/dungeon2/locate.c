@@ -5,7 +5,7 @@
  *      Author: dominik
  */
 #include "types.h"
-#include "dungeon2.h"
+#include "dungeon/dungeon2.h"
 
 
 dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {

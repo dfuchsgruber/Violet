@@ -26,10 +26,10 @@ typedef union {
         u32 nature : 5;
         u32 form : 3;
     } fields;
-} pid;
+} pid_t;
 
 typedef struct pokemon {
-    pid pid;
+    pid_t pid;
     u32 tid;
     u8 nickname [10];
     u16 language;
@@ -86,10 +86,27 @@ u8 pokemon_get_number_in_party();
 
 void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
 void pokemon_new(pokemon *space, u16 species, u8 level, u8 ev_split,
-        bool pid_determined, pid pid, bool tid_determined, u32 tid);
+        bool pid_determined, pid_t pid, bool tid_determined, u32 tid);
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
-void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread, bool tid_determined, u32 tid, u16(*seed_generator)());
+/**
+ * Creates a new pokemon using the "seed algorithm". Features are added to the given pokemon
+ * with some probability, where values are drawn from a generator and expected to be
+ * uniformly distributed in [0; 512). Lower values mean that features will be appended, so
+ * the chance of getting "features" is increased when the rnd_generator provides numbers that
+ * range only from [0; x) with x < 512.
+ * @param p the pokemon to instanciate
+ * @param species desired species
+ * @param level desired level
+ * @param ev_spread desired ev spread
+ * @param pid_determined if the pid is already determined and given (shinyness might be changed)
+ * @param pid the pid to apply if pid_determined is set to true
+ * @param tid_determined if the tid is already determined and given
+ * @param tid the tid to apply if tid_determined is set to true
+ * @param rnd_generator function that provides values in [0; x) with x < 512 to instaciate features
+ */
+void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread,
+    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*rnd_generator)());
 u8 get_pokemons_ability(pokemon *poke);
 u8 write_ability_into_dbuf(pokemon *poke);
 void special_heal_team_index();
@@ -110,5 +127,15 @@ void pokemon_heal_player_party();
 u8 pokemon_get_gender(pokemon *p);
 
 u8 pokemon_get_nature(pokemon *target);
+
+/**
+ * Clears a pokemon entry
+ */
+void pokemon_clear(pokemon *p);
+
+/**
+ * Clears the entire party of the opponent
+ */
+void pokemon_clear_opponent_party();
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

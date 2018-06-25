@@ -17,21 +17,21 @@ void pokemon_spawn_by_algorithm_generate_ivs(bool *iv_det, int seed) {
     }
 }
 
-void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread, bool tid_determined, u32 tid, u16(*seed_generator)()) {
-    //dprintf("Spawning pokemon by seed algorithm: species %d, level %d, ev_spread %d, tid_det %d, tid %x, seed_gen %x\n",
-    //        species, level, ev_spread, tid_determined, tid, seed_generator);
+void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread,
+    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*rnd_generator)()) {
 
     //first we random a pid
-    pid pid = {(u32) (rnd16() | rnd16() << 16)};
+    if (!pid_determined)
+      pid.value = (u32) (rnd16() | rnd16() << 16);
 
-    if (!seed_generator()) {
+    if (!rnd_generator()) {
         pid.fields.shinyness = 0;
     }
     pokemon_new(p, species, level, ev_spread, true, pid, tid_determined, tid);
     //now we add ivs
     int i;
     bool iv_det[6];
-    pokemon_spawn_by_algorithm_generate_ivs(iv_det, seed_generator());
+    pokemon_spawn_by_algorithm_generate_ivs(iv_det, rnd_generator());
     int value = 31;
     for (i = 0; i < 6; i++) {
         if (iv_det[i]) {
@@ -40,7 +40,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
     }
     //now we add hidden ability
     value = 0x80;
-    if (seed_generator() < 16) {
+    if (rnd_generator() < 16) {
         pokemon_set_attribute(p, ATTRIBUTE_COOLNESS, &value);
     }
 
@@ -48,7 +48,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
     int egg_move_cnt = 0;
     u16 *egg_moves = pokemon_get_egg_moves(species, &egg_move_cnt);
     dprintf("Returned egg moves %x for species %d of size %d\n", egg_moves, species, egg_move_cnt);
-    int seed = seed_generator();
+    int seed = rnd_generator();
     int attached = 0;
     while (seed < 64 && egg_move_cnt && attached < 4 && egg_move_cnt) {
         //we attach a random egg move
@@ -62,7 +62,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
     }
 
     //now we give the item
-    seed = seed_generator();
+    seed = rnd_generator();
     if (seed < 32) {
         u16 *item = &basestats[species].common_item;
         if (seed < 8 && basestats[species].rare_item) {

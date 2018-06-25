@@ -82,7 +82,7 @@ static inline FIXED FIXED_MUL(FIXED a, FIXED b) {
  * @return a / b as FIXED type
  */
 static inline FIXED FIXED_DIV(FIXED a, FIXED b) {
-  int scale_a = FIXED_SHIFT >> 1;
+  int scale_a = FIXED_SHIFT >> 2;
   int scale_b = FIXED_SHIFT - scale_a;
   return (a << scale_a) / (b >> scale_b);
 }

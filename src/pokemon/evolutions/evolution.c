@@ -107,14 +107,14 @@ u16 pokemon_get_evolution(pokemon *p, u8 type, u16 arg){
                         break;
                     }
                     case EVOLUTION_METHOD_PID_EVEN:{
-                        pid pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
+                        pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
                         if(pokemon_evolutions[species][i].condition <= arg &&
                                 pid.value % 10 <= 4)
                             return pokemon_evolutions[species][i].target;
                         break;
                     }
                     case EVOLUTION_METHOD_PID_ODD:{
-                        pid pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
+                        pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
                         if(pokemon_evolutions[species][i].condition <= arg &&
                                 pid.value % 10 > 4)
                             return pokemon_evolutions[species][i].target;

@@ -326,7 +326,7 @@ void fp_menu_pokemon_load() {
     lz77uncompvram(pokemon_frontsprites[species].sprite, &obj_vram[8 * fmem->fp_mem->tile_pokepic]);
 
     //to load the pal we determine if the pokemon is shiny
-    pid poke_pid = {.value = (u32)pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
+    pid_t poke_pid = {.value = (u32)pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
     if (poke_pid.fields.shinyness <= 512) {
         pal_decompress(pokemon_shiny_pals[species].pal, (u16) (256 + 16 * fmem->fp_mem->pal_pokepic), 32);
     } else {

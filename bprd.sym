@@ -244,3 +244,6 @@ wildbattle_initialize_by_habitat = 0x8082A50 | 1;
 wildbattle_start = 0x0807F668 | 1;
 icon_pals = 0x083D3054;
 sqrt32 = 0x081E7A84 | 1;
+pokemon_clear = 0x0803D894 | 1;
+pokemon_clear_opponent_party = 0x0803D934 | 1;
+map_get_person = 0x805FD5C | 1;

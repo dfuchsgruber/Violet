@@ -1,7 +1,7 @@
 #ifndef HSAVE
 #define HSAVE
 
-#include "dungeon2.h"
+#include "dungeon/dungeon2.h"
 #include "pokepad/state.h"
 #include "pokepad/pokedex/state.h"
 #include "map/wild_pokemon.h"
@@ -90,7 +90,8 @@ typedef struct custom_memory {
 
 } custom_memory;
 
-#define DMAP_PERSONS 5
+#define DMAP_PERSONS 25
+#define DMAP_WARPS 1
 
 typedef struct {
     u8 dmap_header_initialized : 1;
@@ -122,6 +123,7 @@ typedef struct {
     mapfooter dmapfooter;
     map_events dmapevents;
     map_event_person dpersons[DMAP_PERSONS];
+    map_event_warp dwarps[DMAP_WARPS];
     wild_pokemon_data dwild_pokemon;
     wild_pokemon_habitat dwild_habitat_grass;
     wild_pokemon_habitat dwild_habitat_water;

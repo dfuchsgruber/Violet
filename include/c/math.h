@@ -132,5 +132,21 @@ int ggt(int a, int b);
  */
 int kgv(int a, int b);
 
+/**
+ * Maximum of a and b
+ * @param a first value
+ * @param b second value
+ * @return max(a, b)
+ */
+int max(int a, int b);
+
+/**
+ * Minimum of a and b
+ * @param a first value
+ * @param b second value
+ * @return min(a, b)
+ */
+int min(int a, int b);
+
 
 #endif

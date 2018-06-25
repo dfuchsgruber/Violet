@@ -23,6 +23,16 @@ FIXED FIXED_SQRT(FIXED x) {
   }
 }
 
+int max(int a, int b) {
+  if (a > b) return a;
+  return b;
+}
+
+int min(int a, int b) {
+  if (a < b) return a;
+  return b;
+}
+
 int abs(int i) {
     if (i < 0) {
         return -i;

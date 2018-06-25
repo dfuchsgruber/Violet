@@ -194,5 +194,5 @@ void derrf(const char *str, ...){
         va_end(args);
         dprint(__outstr);
         free(__outstr);
-        err(ERR_GENERIC);
+        err2(ERR_GENERIC, (int)str);
 }

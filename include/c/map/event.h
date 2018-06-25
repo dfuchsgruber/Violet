@@ -25,8 +25,7 @@ typedef struct map_event_person {
     u16 alert_radius;
     u8 *script;
     u16 flag;
-    u8 field_16;
-    u8 field_17;
+    u16 private; // space to store anything you like, was padding
 
 } map_event_person;
 
@@ -71,5 +70,14 @@ typedef struct map_events {
     map_event_script *scripts;
     map_event_signpost *signposts;
 } map_events;
+
+/**
+ * Returns a person based on its target index and a bank, map tuple to identify it
+ * @param target_idx target index of the person
+ * @param map_id the person is on
+ * @param bank mapbank which contains the map the person is on
+ * @return pointer to the person
+ */
+map_event_person *map_get_person(u8 target_idx, u8 map_id, u8 bank);
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

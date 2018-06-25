@@ -90,6 +90,8 @@ void player_get_position(s16 *x, s16 *y);
  */
 u16 block_get_by_pos(s16 x, s16 y);
 
+#define BLOCK_SOLID 0xC00
+
 /**
  * Sets the block id at a certain position
  * @param x the x coordinate

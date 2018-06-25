@@ -26,7 +26,7 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
     u8 *pokemenu_selected_pokemon_team_index = (u8*) 0x0203B0A9;
     u16 *item_activated = (u16*) 0x0203AD30;
 
-    pid poke_pid = {(u32)pokemon_get_attribute(
+    pid_t poke_pid = {(u32)pokemon_get_attribute(
         &player_pokemon[*pokemenu_selected_pokemon_team_index], ATTRIBUTE_PID, 0)};
     u8 current_nature = poke_pid.fields.nature;
     u32 current_positive = current_nature / 5;

@@ -25,18 +25,31 @@ extern "C" {
 #define DTYPE_FOREST 1
 #define DTYPE_CAVE 2
 
-#define DTYPE_FOREST_WILD_POKEMON_FREQUENCY 0x20
-
 #define DG2_WALL 0
 #define DG2_SPACE 1
     
     typedef struct{
+        // Initial seed of the dg2
         u32 initial_seed;
+        // Current state
         u32 seed;
+        // Size
         int width, height;
-        u16 path_randomness; // divided by 0x10000
-        u16 init_randomness; // divided by 0x10000
+        // Probabilty of keeping strategy when connecting nodes
+        FIXED path_randomness; // divided by 0x10000
+        // Probability of generating walls when randomly initializing a map
+        FIXED init_randomness; // divided by 0x10000
+
+        // Number of samples to draw a node from
+        size_t node_samples;
+        // Weighting coefficient of the mean l2 distance of a node to all other nodes
+        int node_metric_lambda_l2;
+        // Weighting coefficient of the min distance of a node to all other nodes
+        int node_metric_lambda_min;
+        // Number of nodes to generate and connect when using node based initalization
         u8 nodes;
+
+        // Size of margin in which nodes can not be placed in
         u8 margin;
         
         coordinate previous_position;
@@ -65,43 +78,10 @@ extern "C" {
 
     void dungeon2_compute(int dungeon_type);
     
-    void dungeon2_compute_forest();
-    
-    /**
-     * Computes the header structures for the forest dungeon type
-     */
-    void dungeon2_init_forest();
-    
     /**
      * Computes the header structures for the current dungeon if not already computed
      */
     void dungeon2_init();
-
-    /**
-     * Computes map blocks for a forest map by using set_block_id(...) and a bytemap
-     * @param map The basic walk map
-     * @param over The overlay map for grass patches
-     * @param dg2
-     */
-    void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2);
-    
-    mapheader *dungeon2_init_header_forest();
-    
-    map_events *dungeon2_init_events_forest(dungeon_generator2 *dgen);
-    
-    mapfooter *dungeon2_init_footer_forest(dungeon_generator2 *dg2);
-
-    /**
-     * Gets the level distribution (normal) for the forest based on the badges collected
-     * @param mean pointer to the mean level
-     * @param std_deviation pointer to the standard deviation
-     */
-    void dungeon2_forest_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation);
-
-    /**
-     * Initializes the wild pokemon for the forest dungeon
-     */
-    void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2);
     
     /**
      * Creates a connected dungeon bytemap by the dungeon2 algorithm
@@ -143,6 +123,15 @@ extern "C" {
     void dungeon2_enlarge(u8 *map, u8 *map2, dungeon_generator2 *dg2);
     
     /**
+     * Applies src to dst, i.e. when src[x][y] == type, then dst[x][y] <- type
+     * @param src the source map
+     * @param dst the destination map
+     * @param type the element to apply
+     * @param dg2 generator instance
+     */
+    void dungeon2_apply(u8 *src, u8 *dst, u8 type, dungeon_generator2 *dg2);
+
+    /**
      * Contracts the walkable map by counting neighbours in sqrt(3) neighbourhood
      * and if a space tile has one adjacent wall it will turn into a wall. This
      * serves the purpose for each wall chunk being able to be resembled by
@@ -163,24 +152,72 @@ extern "C" {
     int dungeon2_flood_fill(u8 *map, u8 *map2, dungeon_generator2 *dg2);
     
     /**
-     * Connects two points a and b as follows: Start at a and traverse tiles
-     * unitl b is reached. For each iteration chose the next tile by application
-     * of this rule: With a probabilty of randomness chose any adjacent tile.
-     * Else chose the next tile of the optimal path.
-     * @param a starting point
-     * @param b end point
+     * Calculates one step connecting two nodes p and q using shortest path strategy
+     * @param p first node (will be updated)
+     * @param q second node
+     */
+    void dungeon2_connect_nodes_sp_next_step(int p[2], int q[2], dungeon_generator2 *dg2);
+
+    /**
+     * Calculates one step connecting two nodes p and q using random adjacent strategy
+     * @param p first node (will be updated)
+     * @param q second node
+     */
+    void dungeon2_connect_nodes_rnd_next_step(int p[2], int q[2], dungeon_generator2 *dg2);
+
+    /**
+     * Connects two nodes p and q starting at p. Each step is calculated by application of
+     * one of these strategies:
+     *  - shortest path: Uses the step that minimizes the l2 norm of the distance
+     *  - random : Uses any valid step (adjacent and not in margin)
+     *  Before each step the strategy will be kept with a probabilty pr. If the strategy is
+     *  not changed pr will be multiplied with dg2->path_randomness. Otherwise it will be
+     *  reinitialized with dg2->path_randomness
+     * @param p starting point
+     * @param q end point
      * @param dg2
      * @param map
      */
-    void dungeon2_connect_nodes(int *a, int *b, dungeon_generator2 *dg2, u8 *map);
+    void dungeon2_connect_nodes(int p[2], int q[2], dungeon_generator2 *dg2, u8 *map);
     
+
     /**
-     * Generates a random point between [margin, width-margin),
-     * [margin, height-margin)
-     * @param result int[2] to store coordinates of point
-     * @param dg2
+     * Valides that nodes[idx] does not coincide with nodes[:idx]
+     * @param nodes a list of nodes
+     * @param idx the index to validate
+     * @param dg2 generator instance
+     * @return idx + 1 if the node is valid, idx instead
      */
-    void dungeon2_next_node(int *result, int margin, dungeon_generator2 *dg2);
+    int dungeon2_propose_node(int nodes[][2], int idx, dungeon_generator2 *dg2);
+
+    /**
+     * Calculates the distance metric of a nodes[idx] to all nodes[:idx]. The metric is given
+     * by lambda1 * l2(distance) + lambda2 * min(distance) and provides a score high for nodes
+     * that are not close to other nodes
+     * @param nodes a list of nodes
+     * @param idx the index to evaluate
+     * @dg2 generator instance (unused)
+     * @return the score of the node (rounded)
+     */
+    int dungeon2_node_distance(int nodes[][2], int idx, dungeon_generator2 *dg2);
+
+    /**
+     * Samples a node by generating dg2->node_samples nodes and picking the one with the highest
+     * node distance.
+     * @param nodes list of nodes
+     * @param idx the index to sample
+     * @param dg2 generator instance
+     */
+    void dungeon2_sample_node(int nodes[][2], int idx, dungeon_generator2 *dg2);
+
+    /**
+     * Generates nodes in the dungeon, i.e. a set of points between [margin, width-margin),
+     * [margin, height-margin) and which do not coincide
+     * @param nodes array of nodes with size num_nodes: nodes will be placed here
+     * @param num_nodes size of the nodes array, i.e. number of nodes that will be generated
+     * @param dg2 generator instance (state will be reinitialized)
+     */
+    void dungeon2_get_nodes(int nodes[][2], int num_nodes, dungeon_generator2 *dg2);
 
     /**
      * Intializes first an empty bytemap for the dungeon, selects random
@@ -240,9 +277,16 @@ extern "C" {
     u32 dungeon2_rnd(dungeon_generator2 *dg2);
     
     /**
+     * Returns a FIXED point number ~ N(0, 1)
+     * @param dg2 generator instance
+     * @return value x ~ N(0, 1)
+     */
+    FIXED dungeon2_rnd_normal(dungeon_generator2 *dg2);
+
+    /**
      * Picks a number of distinct elements of src (terminated by 0xFFFF) and places them at dst
      */
-    void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src);
+    void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generator2 *dg2);
 
     /**
      * Gets the boundaries for wild pokemon levels based on a mean and standard deviation
@@ -252,7 +296,13 @@ extern "C" {
      * @param std_deviation the standard deviation for the level
      */
     void dungeon2_wild_pokemon_sample_level_boundaries(u8 *level_min, u8 *level_max, u8 mean,
-        u8 std_deviation);
+        u8 std_deviation, dungeon_generator2 *dg2);
+
+    /**
+     * Copies the private field (item in context of dungeons) of the person which target index
+     * is given in 0x8004 into the variable 0x8005
+     */
+    void dungeon_special_item_by_overworld_idx();
 
     int dg2_cross_neighbourhood[4][2];
 

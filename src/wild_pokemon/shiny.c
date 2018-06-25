@@ -7,7 +7,7 @@
 #include "prng.h"
 #include "save.h"
 
-pid pid_shinyness_apply(pid p){
+pid_t pid_shinyness_apply(pid_t p){
     if(rnd16() & 1){
         if((rnd16() < (save_get_key(0x1A) & 0xFFF))){
             //Chances for this to happen are SPLASH_CNT & 0xFFF / 65.535 * 2

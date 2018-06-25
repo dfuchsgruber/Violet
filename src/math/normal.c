@@ -32,8 +32,7 @@ FIXED FIXED_ERFINV(FIXED x) {
   }
   FIXED w1 = FIXED_ADD(INT_TO_FIXED(1), x);
   FIXED w2 = FIXED_SUB(INT_TO_FIXED(1), x);
-  FIXED w = FIXED_MUL(w1, w2);
-  w = -FIXED_LOG(w);
+  FIXED w = -FIXED_LOG(w1) - FIXED_LOG(w2);
   FIXED p;
   if(w < INT_TO_FIXED(5)) {
     w = FIXED_SUB(w, INT_TO_FIXED(5) >> 1);

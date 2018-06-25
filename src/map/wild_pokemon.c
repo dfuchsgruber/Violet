@@ -5,7 +5,7 @@
 #include "tile/block.h"
 #include "debug.h"
 #include "prng.h"
-#include "dungeon2.h"
+#include "dungeon/dungeon2.h"
 
 u16 map_wild_pokemon_get_current_table_id(){
     u16 i = 0;
