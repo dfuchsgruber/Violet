@@ -1,9 +1,0 @@
-#define DONT_SHOW 0x0
-#define SHOW 0x1
-#define MAP_SHOW_NAME_2 0x2
-#define MAP_SHOW_NAME_3 0x3
-#define MAP_SHOW_NAME_4 0x4
-#define MAP_SHOW_NAME_5 0x5
-#define SHOW_VILLAGE 0x6
-#define MAP_SHOW_NAME_7 0x7
-#define SHOW_CITY 0xd

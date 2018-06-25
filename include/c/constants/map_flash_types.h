@@ -1,3 +1,0 @@
-#define FLASH_NONE 0x0
-#define DARK_FLASH_USABLE 0x1
-#define DARK_FLASH_NOT_USABLE 0x2

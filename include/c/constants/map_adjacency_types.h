@@ -1,7 +1,0 @@
-#define NONE 0x0
-#define SOUTH 0x1
-#define NORTH 0x2
-#define WEST 0x3
-#define EAST 0x4
-#define DIVE 0x5
-#define RETURN_FROM_DIVE 0x6

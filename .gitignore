@@ -7,6 +7,11 @@ nbproject/
 .vscode/
 /.vscode
 .project
+
+# Constants
+include/c/constants*
+include/as/constants*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
