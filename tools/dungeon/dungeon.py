@@ -7,7 +7,10 @@ HEIGHT = 50
 MARGIN = 3
 PATH_RANDOMNESS = .7
 NUM_NODES = 8
-NODE_MARGIN = 3
+NODE_MARGIN = 4
+
+spaces = (" ", "x")
+walls = ("#", "$")
 
 #random.seed(22)
 
@@ -170,11 +173,95 @@ for i in range(1, len(nodes)):
     p = random.choice(nodes[:i])
     connect(nodes[i], p, dungeon)
 
-print_dungeon(dungeon)
-for _ in range(3): 
+for _ in range(1): 
     dungeon = enlarge(dungeon)
-    print_dungeon(dungeon)
     dungeon = iterate(6, 2, dungeon)
-    print_dungeon(dungeon)
+    dungeon = enlarge(dungeon)
 
 print_dungeon(dungeon)
+
+#### CAVE stuff #####
+
+def copy_dungeon(dungeon):
+    return [[t for t in col] for col in dungeon]
+
+def dungeon_fix(dungeon):
+
+    tiles_ok = False
+    iterated = copy_dungeon(dungeon)
+
+    while not tiles_ok:
+        tiles_ok = True
+        for x in range(1, WIDTH - 1):
+            for y in range(1, HEIGHT - 1):
+                if dungeon[x][y] == "#":
+                    # Count cross  neighbours
+                    num_cross_neighbours = 0
+                    for dx, dy in cross_neighbourhood:
+                        if dungeon[x + dx][y + dy] == "#": # count only "real walls"
+                            num_cross_neighbours += 1
+                    if num_cross_neighbours < 2:
+                        # Make a stone
+                        iterated[x][y] = "$"
+                        tiles_ok = False
+                    if num_cross_neighbours == 2:
+                        # Check if we have a "pipe"
+                        if (dungeon[x-1][y] == "#" and dungeon[x+1][y] == "#") \
+                        or (dungeon[x][y-1] == "#" and dungeon[x][y+1] == "#"):
+                            # Make a stone as well
+                            iterated[x][y] = "$"
+                            tiles_ok = False
+        print("Fixing iteration done")
+        print_dungeon(iterated)
+        dungeon = iterated
+    
+    return iterated
+
+def dungeon_fix_queue(dungeon):
+
+    iterated = copy_dungeon(dungeon)
+
+    # Build queue
+    queue = []
+    for x in range(1, WIDTH - 1):
+        for y in range(1, HEIGHT - 1):
+            if dungeon[x][y] == "#":
+                # Count cross  neighbours
+                num_cross_neighbours = 0
+                for dx, dy in cross_neighbourhood:
+                    if dungeon[x + dx][y + dy] == "#": # count only "real walls"
+                        num_cross_neighbours += 1
+                # If it has at least one adjacent floor it is a candidate
+                if num_cross_neighbours < 4:
+                    queue.append((x, y))
+    
+    # As long as we have elements in the queue we might have to fix them
+    while len(queue):
+        x, y = queue[0]
+        queue = queue[1:]
+        # Count cross neighbours
+        num_cross_neighbours = 0
+        for dx, dy in cross_neighbourhood:
+            if iterated[x + dx][y + dy] == "#": # count only "real walls"
+                num_cross_neighbours += 1
+        tile_ok = True
+        if num_cross_neighbours < 2: # Make a stone
+            iterated[x][y] = "$"
+            tile_ok = False
+        elif num_cross_neighbours == 2:
+            # Check if we have a pipe
+            if (iterated[x-1][y] == "#" and iterated[x+1][y] == "#") \
+            or (iterated[x][y-1] == "#" and iterated[x][y+1] == "#"):
+                iterated[x][y] = "$"
+                tile_ok = False
+        if not tile_ok:
+            # Push adjacent walls into the queue, as we have changed their cross neighbourhood
+            for dx, dy in cross_neighbourhood:
+                if iterated[x + dx][y + dy] == "#": # count only "real walls"
+                    queue.append(((x + dx), (y + dy)))
+
+
+
+    print_dungeon(iterated)
+
+dungeon_fix_queue(dungeon)

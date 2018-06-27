@@ -2,17 +2,51 @@
 #include "map/header.h"
 #include "save.h"
 #include "dungeon/dungeon2.h"
+#include "dungeon/forest.h"
+#include "dungeon/cave.h"
 #include "debug.h"
 #include "constants/vars.h"
 #include "vars.h"
+#include "overworld/script.h"
+#include "overworld/map_control.h"
+#include "transparency.h"
 
-#define DG2_STEPS_TO_COLLAPSE 10000
 
-int dungeon2_step_is_collapsing(){
-    if(!dungeon_get_type()) return 0;
+extern u8 ow_script_dungeon_forest_collapsing[];
+extern u8 ow_script_dungeon_cave_collapsing[];
+
+bool dungeon2_step_is_collapsing(){
     u16 *steps = var_access(DUNGEON_STEPS);
-    if(++(*steps) == DG2_STEPS_TO_COLLAPSE){
-        //Todo
+    switch (dungeon_get_type()) {
+      case DTYPE_FOREST: {
+        if (++(*steps) >= ((DG2_FOREST_WIDTH * DG2_FOREST_WIDTH) / 5)) {
+          // Collapse
+          overworld_script_init(ow_script_dungeon_forest_collapsing);
+          overworld_script_set_active();
+          return true;
+        }
+        break;
+      }
+      case DTYPE_CAVE: {
+        if (++(*steps) >= ((DG2_CAVE_WIDTH * DG2_CAVE_WIDTH) / 5)) {
+          // Collapse
+          overworld_script_init(ow_script_dungeon_cave_collapsing);
+          overworld_script_set_active();
+          return true;
+        }
+        break;
+      }
     }
-    return 0;
+    return false;
+}
+
+void dungeon2_exit() {
+  dungeon_generator2 *dg2 = &(cmem->dg2);
+  warp_setup(dg2->previous_bank, dg2->previous_map, 0xFF, dg2->previous_position.x,
+      dg2->previous_position.y);
+  warp_setup_callbacks();
+  warp_enable_flags();
+  fmem->dmap_header_initialized = false;
+  fmem->dmap_blocks_initialized = false;
+  transparency_off();
 }

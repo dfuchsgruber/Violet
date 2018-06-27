@@ -66,13 +66,54 @@ int a_star_to_key(s16 x, s16 y);
 
 bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *walker);
 
-
-
 void gp_stack_init();
 bool gp_stack_push(int value);
 int gp_stack_peek();
 int gp_stack_pop();
 
+typedef struct {
+  int *elems;
+  size_t max_size;
+  size_t size;
+  size_t head;
+} ring_queue_t;
+
+/**
+ * Initializes a ring queue with max_size integer elements
+ * @param queue the queue instance to instanciate
+ * @param max size capacity of the queue
+ * @return whether enough memory could be allocated
+ */
+bool ring_queue_new(ring_queue_t *queue, size_t max_size);
+
+/**
+ * Enqueues an element at the queue's end
+ * @param queue the queue
+ * @param element the element to enqueue
+ * @return whether the queue had the capacity
+ */
+bool ring_queue_enqueue(ring_queue_t *queue, int element);
+
+/**
+ * Pops an element from the queue's front
+ * Throws a generic error if the queue is empty
+ * @param queue the queue
+ * @return the element
+ */
+int ring_queue_pop(ring_queue_t *queue);
+
+/**
+ * Checks if a queue is empty
+ * @param queue the queue
+ * @return if the queue is empty
+ */
+bool ring_queue_empty(ring_queue_t *queue);
+
+/**
+ * Frees the elements of a ring queue
+ * @param queue the queue to delete
+ */
+void ring_queue_del(ring_queue_t *queue);
 
 #endif	/* BIN_HEAP_H */
 

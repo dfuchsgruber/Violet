@@ -3,6 +3,7 @@
 #include "save.h"
 #include "dungeon/dungeon2.h"
 #include "dungeon/forest.h"
+#include "dungeon/cave.h"
 #include "debug.h"
 #include "constants/map_weathers.h"
 #include "map/footer.h"
@@ -22,7 +23,7 @@ void dungeon2_compute(int dungeon_type){
             dungeon2_compute_forest();
             break;
         case DTYPE_CAVE:
-            derrf("Cave dungeon not implemented yet...\n");
+            dungeon2_compute_cave();
             break;
     }
 }
@@ -33,6 +34,10 @@ void dungeon2_init() {
     switch(dungeon_type) {
       case DTYPE_FOREST: {
         dungeon2_init_forest();
+        break;
+      }
+      case DTYPE_CAVE : {
+        dungeon2_init_cave();
         break;
       }
     }

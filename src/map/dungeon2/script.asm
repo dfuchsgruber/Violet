@@ -3,9 +3,6 @@
 .include "flags.s"
 .include "callstds.s"
 
-.equ DTYPE_FOREST, 1
-.equ DTYPE_CAVE, 2
-
 .global ow_script_dungeon_item
 
 ow_script_dungeon_item:
@@ -15,7 +12,6 @@ ow_script_dungeon_item:
 	copyvarifnotzero 0x8001 1
 	callstd ITEM_FIND
 	end
-
 
 .global ow_script_dungeon_encounter
 
@@ -32,23 +28,3 @@ ow_script_dungeon_encounter:
 	release
 	end
 
-.global ow_script_dungeon2_enter_forest
-
-ow_script_dungeon2_enter_forest:
-    callasm dungeon2_seed_init
-    setvar DUNGEON_TYPE DTYPE_FOREST 
-    setvar DUNGEON_STEPS 0
-    callasm dungeon2_enter_forest
-    waitstate
-    end
-
-.global ow_script_dungeon2_enter_cave
-
-ow_script_dungeon2_enter_cave:
-    @//TODO 
-    // callasm dungeon2_init_map_interface_forest
-    setvar DUNGEON_TYPE DTYPE_FOREST
-    setvar DUNGEON_STEPS 0
-    warp 3 3 255 0 0
-    waitstate
-    end

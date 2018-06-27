@@ -28,13 +28,6 @@ skip_inc:
 
 bl do_fata_morgana
 
-
-@bl dungeon_crash
-bl dungeon2_step_is_collapsing
-cmp r0, #0
-bne ret_1
-
-
 bl player_step_on_behavior
 cmp r0, #0
 beq behavior_no_script_init
@@ -47,6 +40,10 @@ bl pokeradar_step
 cmp r0, #0
 bne ret_1
 
+@bl dungeon_crash
+bl dungeon2_step_is_collapsing
+cmp r0, #0
+bne ret_1
 
 ldr r0, =0x081E7F95
 mov r1, #0x8

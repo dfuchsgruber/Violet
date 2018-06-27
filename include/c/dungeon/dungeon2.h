@@ -27,6 +27,7 @@ extern "C" {
 
 #define DG2_WALL 0
 #define DG2_SPACE 1
+#define DG2_ROCK 2
     
     typedef struct{
         // Initial seed of the dg2
