@@ -8,17 +8,17 @@
 #ifndef INCLUDE_C_DUNGEON_CAVE_H_
 #define INCLUDE_C_DUNGEON_CAVE_H_
 
-#define DTYPE_CAVE_WILD_POKEMON_FREQUENCY 0x0
+#define DTYPE_CAVE_WILD_POKEMON_FREQUENCY 0x2
 
     #define DG2_CAVE_WIDTH 50
     #define DG2_CAVE_HEIGHT 50
     #define DG2_CAVE_PATH_RANDOMNESS 45875 //0.7
-    #define DG2_CAVE_INIT_RANDOMNESS 26214 //0.4
+    #define DG2_CAVE_INIT_RANDOMNESS 0xA000 //0.4
     #define DG2_CAVE_NODES 12
-    #define DG2_CAVE_MARGIN 3
+    #define DG2_CAVE_MARGIN 5
     #define DG2_CAVE_NODE_METRIC_LAMBDA_MIN 7
     #define DG2_CAVE_NODE_METRIC_LAMBDA_MEAN 5
-    #define DG2_CAVE_NODE_SAMPLES 100
+    #define DG2_CAVE_NODE_SAMPLES 50
 
     /**
      * Computes blocks for the cave dungeon
@@ -68,6 +68,12 @@
      * Initializes the wild pokemon for the cave dungeon
      */
     void dungeon2_init_wild_pokemon_cave(dungeon_generator2 *dg2);
+
+
+    /**
+     * Sets the overworld encounter for the cave dungeon
+     */
+    void dungeon2_set_encounter_cave();
 
 
 #endif /* INCLUDE_C_DUNGEON_CAVE_H_ */

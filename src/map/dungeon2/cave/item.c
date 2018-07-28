@@ -30,12 +30,13 @@ u16 dungeon_cave_items_common[] = {
 };
 
 u16 dungeon_cave_items_rare[] = {
-    ITEM_BLATTSTEIN,
+    ITEM_FINSTERSTEIN,
     ITEM_SONDERBONBON,
-    ITEM_RIESENPILZ,
+    ITEM_STERNENSTAUB,
     ITEM_AP_PLUS,
     ITEM_ELIXIER,
     ITEM_TOP_SCHUTZ,
+    ITEM_METALLMANTEL,
     0xFFFF
 };
 

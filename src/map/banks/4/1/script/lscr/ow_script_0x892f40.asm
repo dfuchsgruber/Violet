@@ -10,6 +10,9 @@
 .global ow_script_0x892f40
 ow_script_0x892f40:
 
+// Reset all vars, flags etc
+callasm custom_memory_init
+
 //init some stuff
 special 0x43 //version init
 call ow_script_0x8dcdd2

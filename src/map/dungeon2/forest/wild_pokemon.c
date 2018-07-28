@@ -84,12 +84,9 @@ void dungeon2_forest_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation
   }
 }
 
-u16 dungeon2_encounter_rnd_generator() {
-  dungeon_generator2 *dg2 = &(cmem->dg2);  // is expected to be initialized
-  return dungeon2_rnd_16(dg2) & 127;
-}
 
-void dungeon2_set_encounter() {
+
+void dungeon2_set_encounter_forest() {
   dungeon_generator2 *dg2 = &(cmem->dg2);
   dungeon2_forest_init_state(dg2);
   pokemon_clear_opponent_party();

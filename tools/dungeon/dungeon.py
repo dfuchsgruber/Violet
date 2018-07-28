@@ -8,6 +8,7 @@ MARGIN = 3
 PATH_RANDOMNESS = .7
 NUM_NODES = 8
 NODE_MARGIN = 4
+INIT_RANDOMNESS = .5
 
 spaces = (" ", "x")
 walls = ("#", "$")
@@ -163,7 +164,21 @@ def enlarge(dungeon):
     return iterated
 
 
-dungeon = [["#" for _ in range(HEIGHT)] for _ in range(WIDTH)]
+dungeon = [[(" " if random.random() < INIT_RANDOMNESS and x in range(1, WIDTH-1) and y in range(1, HEIGHT-1) else "#") for y in range(HEIGHT)] for x in range(WIDTH)]
+
+
+print_dungeon(dungeon)
+
+dungeon = iterate(6, 3, dungeon)
+
+print_dungeon(dungeon)
+
+dungeon = iterate(7, 2, dungeon)
+
+print_dungeon(dungeon)
+
+exit()
+
 
 nodes = get_nodes()
 for x, y in nodes: dungeon[x][y] = "x"
@@ -181,6 +196,7 @@ for _ in range(1):
 print_dungeon(dungeon)
 
 #### CAVE stuff #####
+
 
 def copy_dungeon(dungeon):
     return [[t for t in col] for col in dungeon]

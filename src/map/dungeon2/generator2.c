@@ -166,27 +166,30 @@ int dungeon2_flood_fill(u8 *map, u8 *map2, dungeon_generator2 *dg2){
     
 }
 
-void dungeon_init_random(u8 *map, dungeon_generator2 *dg2){
-    for(int x = dg2->margin; x < dg2->width - dg2->margin; x++){
-        for(int y = dg2->margin; y < dg2->height - dg2->margin; y++){
-            if(dungeon2_rnd_16(dg2) < dg2->init_randomness){
-                map[y * dg2->width + x] = DG2_WALL;
-            }else{
-                map[y * dg2->width + x] = DG2_SPACE;
-            }
-        }
-    }
-}
-
-void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2){
+void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2, bool random_nodes){
     int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2);
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, random_nodes);
     for(int i = 0; i < dg2->nodes; i++){
         map[nodes[i][1] * dg2->width + nodes[i][0]] = DG2_SPACE;
     }
 }
 
-u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2){
+void dungeon_init_random(u8 *map, dungeon_generator2 *dg2) {
+  for (int x = 0; x < dg2->width; x++) {
+    for (int y = 0; y < dg2->height; y++) {
+      if (x == 0 || y == 0 || x == dg2->width - 1 || y == dg2->height - 1) {
+        // Borders must be walls
+        map[y * dg2->width + x] = DG2_WALL;
+      } else {
+        // Randomize the type
+        map[y * dg2->width + x] = (dungeon2_rnd_16(dg2) < dg2->init_randomness) ?
+            DG2_WALL : DG2_SPACE;
+      }
+    }
+  }
+}
+
+u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes){
     
     u8 *map1 = malloc((u32)(dg2->width * dg2->height));
     u8 *map2 = malloc((u32)(dg2->width * dg2->height));
@@ -195,12 +198,12 @@ u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2){
             ((dg2->width * dg2->height) / 2));
     cpuset(&_dg2_space, map2, CPUSET_HALFWORD | CPUSET_FILL | 
             ((dg2->width * dg2->height) / 2));
-    dungeon_init_unconnected_nodes(map1, dg2);
-    dungeon_init_unconnected_nodes(map1, dg2);
+    dungeon_init_unconnected_nodes(map1, dg2, random_nodes);
     dungeon2_enlarge(map1, map2, dg2);
     dungeon2_enlarge(map2, map1, dg2);
     dungeon2_iterate(map1, map2, 8, 1, dg2);
     free(map1);
+    dungeon2_print_map(map2, dg2);
     return map2;
 }
 

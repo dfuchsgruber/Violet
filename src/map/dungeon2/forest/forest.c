@@ -78,7 +78,7 @@ map_events *dungeon2_init_events_forest(dungeon_generator2 *dg2){
 
     // Get the nodes of the dungeon
     int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2);
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
 
     int zero = 0;
 
@@ -186,9 +186,9 @@ void dungeon2_compute_forest(){
     dungeon_generator2 *dg2 = &(cmem->dg2);
     dungeon2_forest_init_state(dg2);
 
-    u8 *map = dungeon2_create_connected_layout(dg2);
+    u8 *map = dungeon2_create_connected_layout(dg2, false);
 
-    u8 *over = dungeon2_create_patch_layout(dg2);
+    u8 *over = dungeon2_create_patch_layout(dg2, false);
     dungeon2_compute_blocks_forest(map, over, dg2);
     free(map);
     free(over);
@@ -231,7 +231,7 @@ void dungeon2_enter_forest() {
   dungeon_generator2 *dg2 = &(cmem->dg2);
   dungeon2_forest_init_state(dg2);
   int nodes[dg2->nodes][2];
-  dungeon2_get_nodes(nodes, dg2->nodes, dg2);
+  dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
   s16 x = (s16)(nodes[0][0]);
   s16 y = (s16)(nodes[0][1]);
 

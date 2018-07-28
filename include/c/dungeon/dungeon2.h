@@ -88,9 +88,11 @@ extern "C" {
      * Creates a connected dungeon bytemap by the dungeon2 algorithm
      * The dungeon will contain paths and culmation points ("rooms")
      * @param dg2
+     * @param random_nodes if the set of nodes is random or coninciedes with the standard nodes
+     * of the given seed
      * @return 
      */
-    u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2);
+    u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2, bool random_nodes);
   
     /**
      * Creates the next generation map by counting the adjacent walls to a tile
@@ -215,10 +217,12 @@ extern "C" {
      * Generates nodes in the dungeon, i.e. a set of points between [margin, width-margin),
      * [margin, height-margin) and which do not coincide
      * @param nodes array of nodes with size num_nodes: nodes will be placed here
-     * @param num_nodes size of the nodes array, i.e. number of nodes that will be generated
-     * @param dg2 generator instance (state will be reinitialized)
+     * @param num_nodes size of thnodes array, i.e. number of nodes that will be generated
+     * @param dg2 generator instance
+     * @param random_nodes if the node set is random or dependent on the initial seed
      */
-    void dungeon2_get_nodes(int nodes[][2], int num_nodes, dungeon_generator2 *dg2);
+    void dungeon2_get_nodes(int nodes[][2], int num_nodes, dungeon_generator2 *dg2,
+        bool random_nodes);
 
     /**
      * Intializes first an empty bytemap for the dungeon, selects random
@@ -226,17 +230,21 @@ extern "C" {
      * In each traversal iteration step with a probabilty of dg2->randomness
      * a random adjacent tile is picked and else the optimal tile.
      * @param dg2
-     * @return 
+     * @param random_nodes if the set of nodes is random or coninciedes with the standard nodes
+     * of the given seed
      */
-    void dungeon2_init_by_paths(u8 *map, dungeon_generator2 *dg2);
+    void dungeon2_init_by_paths(u8 *map, dungeon_generator2 *dg2, bool random_nodes);
     
     /**
      * Initializes first an empty bytemap for the dungeon, selects random
      * feasible points (w.r.t. the margin) and enable make those spaces
      * @param map
+     * @param num_nodes number of nodes to generate
      * @param dg2
+     * @param random_nodes if the set of nodes is random or coninciedes with the standard nodes
+     * of the given seed
      */
-    void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2);
+    void dungeon_init_unconnected_nodes(u8 *map, dungeon_generator2 *dg2, bool random_nodes);
     
     /**
      * Initializes a bytemap for a dungeon by randomizing the walls. Each
@@ -247,14 +255,24 @@ extern "C" {
      */
     void dungeon_init_random(u8 *map, dungeon_generator2 *dg2);
     
+    /**
+     * Debugging: Uses dprintf to print a dungeon, using # for walls and spaces for spaces and
+     * x for nodes
+     * @param map the map to print
+     * @param nodes the nodes
+     * @dg2 the dungeon generator
+     */
+    void dungeon2_print_map(u8 *map, dungeon_generator2 *dg2);
 
     /**
      * Creates a map layout full of patches (can be used for grass etc.)
      * using the dungeon2 algorithm
      * @param dg2
+     * @param random_nodes if the set of nodes is random or coninciedes with the standard nodes
+     * of the given seed
      * @return 
      */
-    u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2);
+    u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes);
 
     /**
      * Linear congruence RNG returning positive 16-bit integers
@@ -298,6 +316,12 @@ extern "C" {
      */
     void dungeon2_wild_pokemon_sample_level_boundaries(u8 *level_min, u8 *level_max, u8 mean,
         u8 std_deviation, dungeon_generator2 *dg2);
+
+    /**
+     * Provides values in [0,127) based on the current dg2 instance
+     * @return random value [0, 127) based on the dg2
+     */
+    u16 dungeon2_encounter_rnd_generator();
 
     /**
      * Copies the private field (item in context of dungeons) of the person which target index

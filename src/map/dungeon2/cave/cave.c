@@ -71,7 +71,6 @@ map_events *dungeon2_init_events_cave(dungeon_generator2 *dg2){
     dprintf("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
     (void)dg2;
 
-    fmem->dmapevents.person_cnt = (u8)(dg2->nodes - 1);
     fmem->dmapevents.warp_cnt = 0;
     fmem->dmapevents.script_cnt = 0;
     fmem->dmapevents.signpost_cnt = 0;
@@ -79,7 +78,7 @@ map_events *dungeon2_init_events_cave(dungeon_generator2 *dg2){
 
     // Get the nodes of the dungeon
     int nodes[dg2->nodes][2];
-    dungeon2_get_nodes(nodes, dg2->nodes, dg2);
+    dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
 
     int zero = 0;
 
@@ -106,62 +105,16 @@ map_events *dungeon2_init_events_cave(dungeon_generator2 *dg2){
 
       fmem->dpersons[person_idx].x = (s16)(nodes[node_idx][0]);
       fmem->dpersons[person_idx].y = (s16)(nodes[node_idx][1]);
+      //dprintf("Person at (%d, %d)\n", nodes[node_idx][0], nodes[node_idx][1]);
       fmem->dpersons[person_idx].target_index = (u8)(person_idx + 1);
       fmem->dpersons[person_idx].overworld_index = 92;
       fmem->dpersons[person_idx].flag = (u16)(0x13 + i);
       fmem->dpersons[person_idx].private = dungeon_cave_pick_item(dg2);
       fmem->dpersons[person_idx].script = ow_script_dungeon_item;
     }
+
+    fmem->dmapevents.person_cnt = (u8)(1 + num_items);
     return &(fmem->dmapevents);
-}
-
-
-u16 dungeon2_compute_block_cave(u8 *map, u8 *over, int x, int y, dungeon_generator2 *dg2){
-    int width = dg2->width;
-    if(map[y * width + x] == DG2_SPACE){
-        if(over[y * width + x] == DG2_SPACE) return 0x10; //High grass
-        else{
-            //Count grass, wall neighbours
-            int grass_neighbours = 0;
-            int wall_neighbours = 0;
-            for(int k = 0; k < 4; k++){
-                int i = dg2_cross_neighbourhood[k][0];
-                int j = dg2_cross_neighbourhood[k][1];
-                if(x + i >= 0 && x + i < dg2->width &&
-                        y + j >= 0 && y + j < dg2->height){
-                    if(over[(y + j) * dg2->height + x + i] == DG2_SPACE &&
-                        map[(y + j) * dg2->height + x + i] == DG2_SPACE)
-                        grass_neighbours++;
-                    else if(map[(y + j) * dg2->height + x + i] == DG2_WALL)
-                        wall_neighbours++;
-                }
-            }
-            if(dungeon2_rnd_16(dg2) < grass_neighbours * 0x4000){
-                return 0x11; //Cut grass
-            }
-            if(dungeon2_rnd_16(dg2) < wall_neighbours * 0x1000){
-                u16 decoratives[16] = {
-                    0x18, 0x19, 0x20, 0x21, 0x28, 0x29, 0x8, 0x9,
-                    0xA, 0xA, 0xA, 0xA, 0xB, 0xB, 0xB, 0xB
-                };
-                return decoratives[dungeon2_rnd_16(dg2) % 16];
-            }
-            if(dungeon2_rnd_16(dg2) < 0x400) return 0xC;
-            return 0x1;
-        }
-    }
-    bool wall_above = true;
-    if(y > 0) wall_above = map[(y - 1) * width + x] == DG2_WALL;
-    bool wall_below = true;
-    if(y < dg2->height - 1) wall_below = map[(y + 1) * width + x] == DG2_WALL;
-    if(wall_above && wall_below) return 0x5E | BLOCK_SOLID;
-    if(wall_above) return 0x67 | BLOCK_SOLID;
-    if(wall_below){
-        if(over[y * width + x] == DG2_SPACE) return 0x5C;
-        else return 0x5F;  // Tree tip
-    }
-
-    return 0x12  | BLOCK_SOLID;
 }
 
 
@@ -177,9 +130,12 @@ void dungeon2_compute_cave(){
     dungeon_generator2 *dg2 = &(cmem->dg2);
     dungeon2_cave_init_state(dg2);
 
-    u8 *map = dungeon2_create_connected_layout(dg2);
+    u8 *map = dungeon2_create_connected_layout(dg2, false);
 
-    u8 *over = dungeon2_create_patch_layout(dg2);
+    // temporarily double the number of nodes
+    dg2->nodes = (u8)(dg2->nodes * 3);
+    u8 *over = dungeon2_create_connected_layout(dg2, true);
+    dg2->nodes = (u8)(dg2->nodes / 3);
     dungeon2_compute_blocks_cave(map, over, dg2);
     free(map);
     free(over);
@@ -223,7 +179,7 @@ void dungeon2_enter_cave() {
   dungeon_generator2 *dg2 = &(cmem->dg2);
   dungeon2_cave_init_state(dg2);
   int nodes[dg2->nodes][2];
-  dungeon2_get_nodes(nodes, dg2->nodes, dg2);
+  dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
   s16 x = (s16)(nodes[0][0]);
   s16 y = (s16)(nodes[0][1]);
 

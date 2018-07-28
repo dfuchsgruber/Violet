@@ -69,4 +69,9 @@
      */
     void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2);
 
+    /**
+     * Sets the overworld encounter for the forest dungeon
+     */
+    void dungeon2_set_encounter_forest();
+
 #endif /* INCLUDE_C_DUNGEON_FOREST_H_ */

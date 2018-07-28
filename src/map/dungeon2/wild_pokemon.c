@@ -9,6 +9,11 @@
 #include "dungeon/dungeon2.h"
 #include "prng.h"
 #include "math.h"
+#include "map/header.h"
+#include "dungeon/forest.h"
+#include "dungeon/cave.h"
+#include "save.h"
+#include "debug.h"
 
 void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generator2 *dg2) {
   int size = 0;
@@ -46,3 +51,22 @@ void dungeon2_wild_pokemon_sample_level_boundaries(u8 *level_min, u8 *level_max,
   *level_max = (u8)max(x1, x2);
 }
 
+
+u16 dungeon2_encounter_rnd_generator() {
+  dungeon_generator2 *dg2 = &(cmem->dg2);  // is expected to be initialized
+  return dungeon2_rnd_16(dg2) & 127;
+}
+
+void dungeon2_set_encounter() {
+  switch (dungeon_get_type()) {
+  case DTYPE_FOREST:
+    dungeon2_set_encounter_forest();
+    break;
+  case DTYPE_CAVE:
+    dungeon2_set_encounter_cave();
+    break;
+  default:
+    derrf("Unknown dungeon type for overworld encounters %d\n", dungeon_get_type());
+  }
+
+}
