@@ -4,6 +4,7 @@
 #include "dungeon/dungeon2.h"
 #include "dungeon/forest.h"
 #include "dungeon/cave.h"
+#include "dungeon/ocean.h"
 #include "debug.h"
 #include "constants/vars.h"
 #include "vars.h"
@@ -14,12 +15,13 @@
 
 extern u8 ow_script_dungeon_forest_collapsing[];
 extern u8 ow_script_dungeon_cave_collapsing[];
+extern u8 ow_script_dungeon_ocean_collapsing[];
 
 bool dungeon2_step_is_collapsing(){
     u16 *steps = var_access(DUNGEON_STEPS);
     switch (dungeon_get_type()) {
       case DTYPE_FOREST: {
-        if (++(*steps) >= ((DG2_FOREST_WIDTH * DG2_FOREST_WIDTH) / 5)) {
+        if (++(*steps) >= ((DG2_FOREST_WIDTH * DG2_FOREST_HEIGHT) / 6)) {
           // Collapse
           overworld_script_init(ow_script_dungeon_forest_collapsing);
           overworld_script_set_active();
@@ -28,13 +30,23 @@ bool dungeon2_step_is_collapsing(){
         break;
       }
       case DTYPE_CAVE: {
-        if (++(*steps) >= ((DG2_CAVE_WIDTH * DG2_CAVE_WIDTH) / 5)) {
+        if (++(*steps) >= ((DG2_CAVE_WIDTH * DG2_CAVE_HEIGHT) / 6)) {
           // Collapse
           overworld_script_init(ow_script_dungeon_cave_collapsing);
           overworld_script_set_active();
           return true;
         }
         break;
+      }
+      case DTYPE_OCEAN: {
+          if (++(*steps) >= ((DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT) / 6)) {
+            // Collapse
+            overworld_script_init(ow_script_dungeon_ocean_collapsing);
+            overworld_script_set_active();
+            return true;
+          }
+          break;
+
       }
     }
     return false;

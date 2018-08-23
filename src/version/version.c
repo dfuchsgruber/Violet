@@ -58,7 +58,7 @@ void version_transfer(){
 void version_upgrade_alpha_1_X_to_2_0(){
     worldmap_flag_state_set(0x892);
     worldmap_flag_set(0x892);
-    new_a_vector();
+    tmp_hash_new_seed();
     setflag(0x96B);
     //update entire player party
     int i;

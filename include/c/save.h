@@ -59,7 +59,8 @@ typedef struct custom_memory {
     u8 pokedex_caught_extension[0x40]; //additional 512 flags
     u8 gp_freespace[0x100];
     u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
-    u8 unused0[0x1C]; // mapheader dmapheader;
+    u8 dungeon_flags[0x10]; // mapheader dmapheader (part I)
+    u8 unused0[0xC]; // mapheader dmapheader (part II);
     u8 unused1[0x1C]; // mapfooter dmapfooter;
     
     //Dungeon Memory I
@@ -76,9 +77,9 @@ typedef struct custom_memory {
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
     rtc_timestamp a_gen_time;
-    u8 a_vector[4];
+    u32 tmp_hash_seed;
     rtc_timestamp fossil_gen_time;
-    u8 any_a_flags[16];
+    u8 any_tmp_flags[16];
     map_event_person pokeradar_person;
     
     //Dungeon Memory II
@@ -153,5 +154,24 @@ void save_increment_key(u8 key);
  * @return the stat value
  */
 int save_get_key(u8 index);
+
+/**
+ * Hashes a sequence based on the temporal seed (changes after some time)
+ * @param sequence the sequence to hash
+ * @param size the size of the sequence
+ * @param m the number of buckets to hash into
+ * @return the hash value of the sequence with the current temporal seed
+ */
+u32 tmp_hash(u32 seq[], size_t size, u32 m);
+
+/**
+ * Updates the seed for the tmp hash system if the cycle (one day) has passed
+ */
+void tmp_hash_update_seed();
+
+/**
+ * Randomly generates a new seed for the tmp hash system
+ */
+void tmp_hash_new_seed();
 
 #endif

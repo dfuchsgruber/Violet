@@ -22,7 +22,7 @@ u8 *singpost_behavior_xBC(){
             //mushroom
             if (!get_tile_hash_by_facing(facing, 3)){
                 //1/4 chance that a mushroom yields something
-                int hash = get_tile_hash_by_facing(facing, 127);
+                u32 hash = get_tile_hash_by_facing(facing, 127);
                 u16 flag = (u16)(0xD80 + hash);
                 if(checkflag(flag))
                     return NULL;
@@ -47,13 +47,13 @@ u8 *singpost_behavior_xBC(){
             //shell
             if(!get_tile_hash_by_facing(facing, 5)){
                 //1/5 chance that shell yields something
-                int hash = get_tile_hash_by_facing(facing, 127);
+                u32 hash = get_tile_hash_by_facing(facing, 127);
                 u16 flag = (u16)(0xD80 + hash);
                 if(checkflag(flag))
                     return NULL;
                 *var_access(0x8004) = flag;
                 //shell yields something, we decide on item
-                int v = get_tile_hash_by_facing(facing, 7);
+                u32 v = get_tile_hash_by_facing(facing, 7);
                 if(v <= 1){
                     //2/7 chance for heartscale
                     *var_access(0x8005) = ITEM_HERZSCHUPPE;
@@ -122,7 +122,8 @@ u16 singpost_get_flag(u32 fields, u8 field_id){
 void mushroom_create(){
     s16 pos[2];
     player_get_position(&pos[0], &pos[1]);
-    int h = a_hash(pos[0], pos[1], (*save1)->bank, (*save1)->map, 3);
+    u32 seq[4] = {(u32)pos[0], (u32)pos[1], (u32)((*save1)->bank), (u32)((*save1)->map)};
+    u32 h = tmp_hash(seq, 4, 3);
     if(h){
         *var_access(0x8005) = ITEM_MINIPILZ;
     }else{

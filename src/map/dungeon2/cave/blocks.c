@@ -79,8 +79,8 @@ int dungeon2_cave_get_adjacency_pattern(int x, int y, u8 *map, dungeon_generator
   int pattern = 0;
   for (int dx = -1; dx < 2; dx++) {
     for (int dy = -1; dy < 2; dy++) {
-      pattern *= 2;
-      if (map[(y + dy) * dg2->width + x + dx] == DG2_WALL) pattern += 1;
+      pattern <<= 1;
+      if (map[(y + dy) * dg2->width + x + dx] == DG2_WALL) pattern |= 1;
     }
   }
   // Pattern bits look like this

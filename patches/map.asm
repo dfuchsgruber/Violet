@@ -3,6 +3,11 @@
     bx r0
     .pool
 
+.org 0x08069C28
+	ldr r0, =map_init_levelscript_1 | 1
+	bx r0
+	.pool
+
 //@disable prescreens
 .org 0x80F8378
     mov r0, #0x1C

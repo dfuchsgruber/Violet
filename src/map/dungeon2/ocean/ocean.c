@@ -1,7 +1,7 @@
 /*
- * cave.c
+ * ocean.c
  *
- *  Created on: Jun 3, 2018
+ *  Created on: Aug 20, 2018
  *      Author: dominik
  */
 
@@ -9,7 +9,7 @@
 #include "map/header.h"
 #include "save.h"
 #include "dungeon/dungeon2.h"
-#include "dungeon/cave.h"
+#include "dungeon/ocean.h"
 #include "debug.h"
 #include "constants/map_weathers.h"
 #include "map/footer.h"
@@ -29,14 +29,14 @@
 extern tileset maptileset0;
 extern tileset maptileset15;
 
-u16 dungeon2_cave_borders[4] = {0x291, 0x291, 0x291, 0x291};
+u16 dungeon2_ocean_borders[4] = {0x1cd, 0x1cd, 0x1cd, 0x1cd};
 
-map_block dungeon2_cave_map_empty[DG2_CAVE_WIDTH * DG2_CAVE_HEIGHT] = {0};
+map_block dungeon2_ocean_map_empty[DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT] = {0};
 
 extern u8 ow_script_dungeon_encounter[];
 extern u8 ow_script_dungeon_item[];
 
-mapheader *dungeon2_init_header_cave(dungeon_generator2 *dg2) {
+mapheader *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
 
     //(*save1)->flash_circle_size = 1;
     dprintf("D2 header init\n");
@@ -50,24 +50,24 @@ mapheader *dungeon2_init_header_cave(dungeon_generator2 *dg2) {
     fmem->dmapheader.type = 0;
     fmem->dmapheader.show_name = 0;
     fmem->dmapheader.battle_style = 0;
-    fmem->dmapheader.events = dungeon2_init_events_cave(dg2);
+    fmem->dmapheader.events = dungeon2_init_events_ocean(dg2);
     return &(fmem->dmapheader);
 }
 
-mapfooter *dungeon2_init_footer_cave(dungeon_generator2 *dg2){
+mapfooter *dungeon2_init_footer_ocean(dungeon_generator2 *dg2){
     dprintf("D2 footer init\n");
     fmem->dmapfooter.width = (u32)dg2->width;
     fmem->dmapfooter.height = (u32)dg2->height;
     fmem->dmapfooter.tileset1 = &maptileset0;
     fmem->dmapfooter.tileset2 = &maptileset15;
-    fmem->dmapfooter.border_blocks = dungeon2_cave_borders;
+    fmem->dmapfooter.border_blocks = dungeon2_ocean_borders;
     fmem->dmapfooter.border_width = 2;
     fmem->dmapfooter.border_height = 2;
-    fmem->dmapfooter.map = dungeon2_cave_map_empty;
+    fmem->dmapfooter.map = dungeon2_ocean_map_empty;
     return &(fmem->dmapfooter);
 }
 
-map_events *dungeon2_init_events_cave(dungeon_generator2 *dg2){
+map_events *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
     dprintf("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
     (void)dg2;
 
@@ -109,7 +109,7 @@ map_events *dungeon2_init_events_cave(dungeon_generator2 *dg2){
       fmem->dpersons[person_idx].target_index = (u8)(person_idx + 1);
       fmem->dpersons[person_idx].overworld_index = 92;
       fmem->dpersons[person_idx].flag = (u16)(0x13 + i);
-      fmem->dpersons[person_idx].private = dungeon_cave_pick_item(dg2);
+      fmem->dpersons[person_idx].private = dungeon_ocean_pick_item(dg2);
       fmem->dpersons[person_idx].script = ow_script_dungeon_item;
     }
 
@@ -118,7 +118,7 @@ map_events *dungeon2_init_events_cave(dungeon_generator2 *dg2){
 }
 
 
-void dungeon2_compute_cave(){
+void dungeon2_compute_ocean(){
     if (fmem->dmap_blocks_initialized) {
       dprintf("D2 already computed...\n");
       return;
@@ -128,7 +128,7 @@ void dungeon2_compute_cave(){
     fmem->dmap_blocks_initialized = 1;
 
     dungeon_generator2 *dg2 = &(cmem->dg2);
-    dungeon2_cave_init_state(dg2);
+    dungeon2_ocean_init_state(dg2);
 
     u8 *map = dungeon2_create_connected_layout(dg2, false);
 
@@ -136,27 +136,27 @@ void dungeon2_compute_cave(){
     dg2->nodes = (u8)(dg2->nodes * 3);
     u8 *over = dungeon2_create_connected_layout(dg2, true);
     dg2->nodes = (u8)(dg2->nodes / 3);
-    dungeon2_compute_blocks_cave(map, over, dg2);
+    dungeon2_compute_blocks_ocean(map, over, dg2);
     free(map);
     free(over);
 
     mapheader_virtual->footer = &(fmem->dmapfooter);
 }
 
-void dungeon2_cave_init_state(dungeon_generator2 *dg2) {
+void dungeon2_ocean_init_state(dungeon_generator2 *dg2) {
   dg2->seed = dg2->initial_seed;
-  dg2->width = DG2_CAVE_WIDTH;
-  dg2->height = DG2_CAVE_HEIGHT;
-  dg2->path_randomness = DG2_CAVE_PATH_RANDOMNESS;
-  dg2->init_randomness = DG2_CAVE_INIT_RANDOMNESS;
-  dg2->nodes = DG2_CAVE_NODES;
-  dg2->margin = DG2_CAVE_MARGIN;
-  dg2->node_metric_lambda_l2 = DG2_CAVE_NODE_METRIC_LAMBDA_MEAN;
-  dg2->node_metric_lambda_min = DG2_CAVE_NODE_METRIC_LAMBDA_MIN;
-  dg2->node_samples = DG2_CAVE_NODE_SAMPLES;
+  dg2->width = DG2_OCEAN_WIDTH;
+  dg2->height = DG2_OCEAN_HEIGHT;
+  dg2->path_randomness = DG2_OCEAN_PATH_RANDOMNESS;
+  dg2->init_randomness = DG2_OCEAN_INIT_RANDOMNESS;
+  dg2->nodes = DG2_OCEAN_NODES;
+  dg2->margin = DG2_OCEAN_MARGIN;
+  dg2->node_metric_lambda_l2 = DG2_OCEAN_NODE_METRIC_LAMBDA_MEAN;
+  dg2->node_metric_lambda_min = DG2_OCEAN_NODE_METRIC_LAMBDA_MIN;
+  dg2->node_samples = DG2_OCEAN_NODE_SAMPLES;
 }
 
-void dungeon2_init_cave(){
+void dungeon2_init_ocean(){
     if (fmem->dmap_header_initialized) {
       dprintf("D2 header already initialized...\n");
       return;
@@ -165,19 +165,19 @@ void dungeon2_init_cave(){
     fmem->dmap_header_initialized = 1;
 
     dungeon_generator2 *dg2 = &(cmem->dg2);
-    dungeon2_cave_init_state(dg2);
+    dungeon2_ocean_init_state(dg2);
 
-    dungeon2_init_wild_pokemon_cave(dg2); // Initialize before events since persons depend
-    dungeon2_init_header_cave(dg2);
-    dungeon2_init_events_cave(dg2);
-    dungeon2_init_footer_cave(dg2);
+    dungeon2_init_wild_pokemon_ocean(dg2); // Initialize before events since persons depend
+    dungeon2_init_header_ocean(dg2);
+    dungeon2_init_events_ocean(dg2);
+    dungeon2_init_footer_ocean(dg2);
 }
 
 
-void dungeon2_enter_cave() {
-  // Get the warp node (first node in the cave)
+void dungeon2_enter_ocean() {
+  // Get the warp node (first node in the ocean)
   dungeon_generator2 *dg2 = &(cmem->dg2);
-  dungeon2_cave_init_state(dg2);
+  dungeon2_ocean_init_state(dg2);
   int nodes[dg2->nodes][2];
   dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);
   s16 x = (s16)(nodes[0][0]);
@@ -199,3 +199,6 @@ void dungeon2_enter_cave() {
   transparency_off();
 
 }
+
+
+

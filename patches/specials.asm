@@ -26,7 +26,7 @@ special_table equ 0x0815FCC0
 	.pool
 	
 .org (special_table +(0x18 * 4))
-	.word reset_trash_flags | 1
+	.word tmp_flags_reset | 1
 	.pool
 
 .org (special_table +(0x19 *4))
@@ -130,3 +130,7 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x4A * 4))
         .word special_query_present_code | 1
         .pool
+
+.org (special_table+ (0x4B * 4))
+		.word dungeon_map_entrance_get_type | 1
+		.pool

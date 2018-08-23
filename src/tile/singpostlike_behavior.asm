@@ -33,11 +33,6 @@ beq trigger_cloud_back
 cmp r4, #0xBC
 beq trigger_any_behavior
 
-ldr r0, =PLAYER_CAN_ENTER_DUNGEONS
-bl _checkflag
-@cmp r0, #0
-@beq ret
-
 cmp r4, #0xB1
 beq trigger_dungeon_entry
 
@@ -75,7 +70,7 @@ b exec_trigger_cloud
 
 
 trigger_dungeon_entry:
-ldr r0, =ow_script_dungeon2_enter_cave
+ldr r0, =ow_script_dungeon_enter
 ret_s:
 pop {r4-r5}
 pop {r1}

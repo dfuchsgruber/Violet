@@ -4,6 +4,7 @@
 #include "dungeon/dungeon2.h"
 #include "dungeon/forest.h"
 #include "dungeon/cave.h"
+#include "dungeon/ocean.h"
 #include "debug.h"
 #include "constants/map_weathers.h"
 #include "map/footer.h"
@@ -25,6 +26,9 @@ void dungeon2_compute(int dungeon_type){
         case DTYPE_CAVE:
             dungeon2_compute_cave();
             break;
+        case DTYPE_OCEAN:
+        	dungeon2_compute_ocean();
+        	break;
     }
 }
 
@@ -37,8 +41,12 @@ void dungeon2_init() {
         break;
       }
       case DTYPE_CAVE : {
-        dungeon2_init_cave();
-        break;
+		dungeon2_init_cave();
+		break;
+      }
+      case DTYPE_OCEAN : {
+		dungeon2_init_ocean();
+		break;
       }
     }
 }

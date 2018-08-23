@@ -12,10 +12,13 @@ void special_set_trashflag();
 void generate_trash_item(u8 facing);
 bool check_trashflag(u8 facing);
 void set_trashflag(u8 facing);
-int get_tile_hash_by_facing(u8 facing, int m);
-int a_hash(s16 x, s16 y, u8 map, u8 bank, int m);
-void update_a_vector();
-void new_a_vector();
+/**
+ * Calculates the "hash" of a block (hashes sequence {x, y, bank, map}
+ * @param facing the direction the player is facing
+ * @param m the number of buckets to hash into
+ * @return the "hash" of the block
+ */
+u32 get_tile_hash_by_facing(u8 facing, size_t m);
 u32 block_get_field_by_pos(s16 x, s16 y, u8 field);
 
 #endif /* INCLUDE_C_TILE_TRASH_H_ */

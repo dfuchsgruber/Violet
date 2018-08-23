@@ -58,7 +58,7 @@ void dungeon2_enclose(u8 *map, int width, int height){
     }
 }
 
-int dg2_cross_neighbourhood[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+int dg2_cross_neighbourhood[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 
 

@@ -170,6 +170,7 @@ u16 pokeradar_next_seed() {
 }
 
 void pokeradar_spawn_pokemon() {
+    pokemon_clear_opponent_party();
     u16 species = *var_access(POKERADAR_EMENY_SPECIES);
     u8 level = (u8) * var_access(POKERADAR_ENEMY_LEVEL);
     if (*var_access(POKERADAR_ENCOUNTER_COUNT) != 0xFFFF)

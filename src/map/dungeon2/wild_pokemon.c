@@ -12,6 +12,7 @@
 #include "map/header.h"
 #include "dungeon/forest.h"
 #include "dungeon/cave.h"
+#include "dungeon/ocean.h"
 #include "save.h"
 #include "debug.h"
 
@@ -65,6 +66,9 @@ void dungeon2_set_encounter() {
   case DTYPE_CAVE:
     dungeon2_set_encounter_cave();
     break;
+  case DTYPE_OCEAN:
+	  dungeon2_set_encounter_ocean();
+	  break;
   default:
     derrf("Unknown dungeon type for overworld encounters %d\n", dungeon_get_type());
   }

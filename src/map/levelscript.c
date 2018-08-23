@@ -1,6 +1,7 @@
 #include "types.h"
 #include "overworld/script.h"
 #include "map/levelscript.h"
+#include "dungeon/dungeon2.h"
 #include "save.h"
 
 void map_init_levelscript_4() {
@@ -13,4 +14,14 @@ void map_init_levelscript_4() {
     if (s) {
         overworld_script_init_muted(s);
     }
+}
+
+void map_init_levelscript_1() {
+	// Apply map changes due to dungeons on map
+	dungeon_map_set_tiles();
+	map_levelscript_init_no_var_check(1);
+
+	//void (*fun)(int) = (void(*)(int)) 0x08069BB1;
+	//fun(1);
+
 }

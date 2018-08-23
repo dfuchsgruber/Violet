@@ -17,7 +17,7 @@ u8 *flag_access_ext(u16 flag) {
        }else{
            //Flags 0xD80-0xE00 are mapped to any_a_flags
            int index = (flag - 0x80) / 8;
-           return &(cmem->any_a_flags[index]);
+           return &(cmem->any_tmp_flags[index]);
        }
     }else{
         err2(ERR_FLAG_ACCESS_INVALID, flag);

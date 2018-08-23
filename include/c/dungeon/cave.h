@@ -20,6 +20,28 @@
     #define DG2_CAVE_NODE_METRIC_LAMBDA_MEAN 5
     #define DG2_CAVE_NODE_SAMPLES 50
 
+
+	/**
+	 * Receives the adjanceny pattern (bitfield representing adjacent blocks) of a block
+	 * @param x the x coordinate
+	 * @param y the y coordinate
+	 * @param map the block map
+	 * @param dg2 underlying dungeon generator instance
+	 * @return the bit-battern (8-bit)
+	 */
+	int dungeon2_cave_get_adjacency_pattern(int x, int y, u8 *map, dungeon_generator2 *dg2);
+
+	/**
+	 * Checks if based on the adjacency pattern of a wall block it can be rendered with the
+	 * standard rock tileset.
+	 * @param map the map data
+	 * @param x the x coordiante (0-based)
+	 * @param y the y coordinate (0-based)
+	 * @param dg2 the underlying dungeon generator instance
+	 * @return if the block at x, y can be drawn as wall
+	 */
+	bool dungeon2_cave_wall_can_be_drawn(u8 *map, int x, int y, dungeon_generator2 *dg2);
+
     /**
      * Computes blocks for the cave dungeon
      */

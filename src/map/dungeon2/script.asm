@@ -2,6 +2,7 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "callstds.s"
+.include "ordinals.s"
 
 .global ow_script_dungeon_item
 
@@ -28,3 +29,14 @@ ow_script_dungeon_encounter:
 	release
 	end
 
+.global ow_script_dungeon_enter
+
+ow_script_dungeon_enter:
+	special2 0x8004 0x4B
+	compare 0x8004 1
+	gotoif EQUAL ow_script_dungeon2_enter_forest
+	compare 0x8004 2
+	gotoif EQUAL ow_script_dungeon2_enter_cave
+	compare 0x8005 3
+	gotoif EQUAL ow_script_dungeon2_enter_ocean
+	end

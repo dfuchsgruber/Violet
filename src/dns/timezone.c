@@ -10,7 +10,7 @@
 
 void callback_switch_timezone() {
     update_timezone();
-    update_a_vector();
+    tmp_hash_update_seed();
     callback1_set((void*) 0x08056829); //return to normal map reload
 
 }
