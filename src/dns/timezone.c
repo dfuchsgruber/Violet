@@ -20,8 +20,8 @@ void update_timezone() {
     rtc_timestamp stamp = {0, 0, 0, 0, 0, 0, 0};
     rtc_read(&stamp);
 
-    u8 bank = (*save1)->bank;
-    u8 map = (*save1)->map;
+    u8 bank = save1->bank;
+    u8 map = save1->map;
 
     if (is_inside_map(bank, map)) {
         *var_access(SHADER_STATE) = 0;
@@ -46,5 +46,5 @@ bool is_inside_map(u8 bank, u8 map) {
 }
 
 bool dns_on() {
-    return !((*save2)->sound_state);
+    return !(save2->sound_state);
 }

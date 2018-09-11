@@ -100,7 +100,7 @@ void dungeon2_ocean_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation)
 
 
 void dungeon2_set_encounter_ocean() {
-  dungeon_generator2 *dg2 = &(cmem->dg2);
+  dungeon_generator2 *dg2 = &(cmem.dg2);
   dungeon2_ocean_init_state(dg2);
   pokemon_clear_opponent_party();
 
@@ -133,46 +133,46 @@ void dungeon2_init_wild_pokemon_ocean(dungeon_generator2 *dg2) {
 
   *var_access(DUNGEON_OVERWORLD_SPECIES) = super_rare_pokemon[0];
 
-  fmem->dwild_pokemon.grass = NULL;
-  fmem->dwild_pokemon.water = &(fmem->dwild_habitat_water);
-  fmem->dwild_pokemon.other = NULL;
-  fmem->dwild_pokemon.rod = &(fmem->dwild_habitat_rod);
-  fmem->dwild_habitat_water.frequency = DTYPE_OCEAN_WILD_POKEMON_FREQUENCY_WATER;
-  fmem->dwild_habitat_water.data = fmem->dwild_data_water;
-  fmem->dwild_habitat_rod.frequency = DTYPE_OCEAN_WILD_POKEMON_FREQUENCY_ROD;
-  fmem->dwild_habitat_rod.data = fmem->dwild_data_rod;
+  fmem.dwild_pokemon.grass = NULL;
+  fmem.dwild_pokemon.water = &(fmem.dwild_habitat_water);
+  fmem.dwild_pokemon.other = NULL;
+  fmem.dwild_pokemon.rod = &(fmem.dwild_habitat_rod);
+  fmem.dwild_habitat_water.frequency = DTYPE_OCEAN_WILD_POKEMON_FREQUENCY_WATER;
+  fmem.dwild_habitat_water.data = fmem.dwild_data_water;
+  fmem.dwild_habitat_rod.frequency = DTYPE_OCEAN_WILD_POKEMON_FREQUENCY_ROD;
+  fmem.dwild_habitat_rod.data = fmem.dwild_data_rod;
 
   // Water
 
   // The first common pokemon has 60%, the second 30% probability
-  fmem->dwild_data_water[0].species = common_pokemon[0];
-  fmem->dwild_data_water[1].species = common_pokemon[1];
+  fmem.dwild_data_water[0].species = common_pokemon[0];
+  fmem.dwild_data_water[1].species = common_pokemon[1];
 
   // The two rare pokemon have a 5% probatility each
-  fmem->dwild_data_water[2].species = rare_pokemon[0];
-  fmem->dwild_data_water[3].species = rare_pokemon[1];
-  fmem->dwild_data_water[4].species = rare_pokemon[1];
+  fmem.dwild_data_water[2].species = rare_pokemon[0];
+  fmem.dwild_data_water[3].species = rare_pokemon[1];
+  fmem.dwild_data_water[4].species = rare_pokemon[1];
 
   // Rod
 
   // The rod pokemon have 70% and 30% probability
   dungeon2_pick_wild_pokemon(common_pokemon, 2, dungeon_ocean_wild_pokemon_rod, dg2);
-  fmem->dwild_data_rod[0].species = common_pokemon[0];
-  fmem->dwild_data_rod[1].species = common_pokemon[1];
+  fmem.dwild_data_rod[0].species = common_pokemon[0];
+  fmem.dwild_data_rod[1].species = common_pokemon[1];
 
   // The good rod pokemon have 60% and 40% probability
   dungeon2_pick_wild_pokemon(rare_pokemon, 3, dungeon_ocean_wild_pokemon_good_rod, dg2);
-  fmem->dwild_data_rod[2].species = rare_pokemon[0];
-  fmem->dwild_data_rod[3].species = rare_pokemon[1];
-  fmem->dwild_data_rod[4].species = rare_pokemon[1];
+  fmem.dwild_data_rod[2].species = rare_pokemon[0];
+  fmem.dwild_data_rod[3].species = rare_pokemon[1];
+  fmem.dwild_data_rod[4].species = rare_pokemon[1];
 
   // The super rood pokemon: 60% a good rod, 30% for the first, 10% for the second
   dungeon2_pick_wild_pokemon(super_rare_pokemon, 2, dungeon_ocean_wild_pokemon_super_rod, dg2);
-  fmem->dwild_data_rod[5].species = rare_pokemon[2];
-  fmem->dwild_data_rod[6].species = super_rare_pokemon[0];
-  fmem->dwild_data_rod[7].species = super_rare_pokemon[1];
-  fmem->dwild_data_rod[8].species = super_rare_pokemon[1];
-  fmem->dwild_data_rod[9].species = super_rare_pokemon[1];
+  fmem.dwild_data_rod[5].species = rare_pokemon[2];
+  fmem.dwild_data_rod[6].species = super_rare_pokemon[0];
+  fmem.dwild_data_rod[7].species = super_rare_pokemon[1];
+  fmem.dwild_data_rod[8].species = super_rare_pokemon[1];
+  fmem.dwild_data_rod[9].species = super_rare_pokemon[1];
 
   u8 mean = 0;
   u8 std_deviation = 0;
@@ -183,15 +183,15 @@ void dungeon2_init_wild_pokemon_ocean(dungeon_generator2 *dg2) {
   for(int i = 0; i < 5; i++) {
     dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,
         (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
-    fmem->dwild_data_water[i].level_min = level_min;
-    fmem->dwild_data_water[i].level_max = level_max;
+    fmem.dwild_data_water[i].level_min = level_min;
+    fmem.dwild_data_water[i].level_max = level_max;
   }
 
   for(int i = 0; i < 10; i++) {
 	  dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,
 		  (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
-	  fmem->dwild_data_rod[i].level_min = level_min;
-	  fmem->dwild_data_rod[i].level_max = level_max;
+	  fmem.dwild_data_rod[i].level_min = level_min;
+	  fmem.dwild_data_rod[i].level_max = level_max;
 	}
 
 }

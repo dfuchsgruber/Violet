@@ -6,18 +6,18 @@
 u8 *flag_access_ext(u16 flag) {
     if(flag < 0xD00){
         int index = (flag - 0x900) / 8;
-        return &(cmem->flag_extension[index]);
+        return &(cmem.flag_extension[index]);
     }else if(flag < 0xE00){
        flag = (u16)(flag-0xD00);
        if(flag < 0x80){
            //flags 0xD00 - 0xD80 are mapped to trash flags
            int index = flag / 8;
-           return &(cmem->trash_flags[index]);
+           return &(cmem.trash_flags[index]);
         
        }else{
            //Flags 0xD80-0xE00 are mapped to any_a_flags
            int index = (flag - 0x80) / 8;
-           return &(cmem->any_tmp_flags[index]);
+           return &(cmem.any_tmp_flags[index]);
        }
     }else{
         err2(ERR_FLAG_ACCESS_INVALID, flag);
@@ -27,7 +27,7 @@ u8 *flag_access_ext(u16 flag) {
 
 u16 *var_access_ext(u16 var) {
     int index = var - 0x5000;
-    return &(cmem->var_extension[index]);
+    return &(cmem.var_extension[index]);
 }
 
 bool checkflag(u16 flag) {

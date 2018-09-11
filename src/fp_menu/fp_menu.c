@@ -28,8 +28,8 @@ extern const unsigned short gfx_fp_menu_bgPal[];
 extern const unsigned short gfx_fp_menu_arrow_upPal[];
 
 void fp_menu_init(u8 self) {
-    fmem->fp_mem = (fp_memory*) malloc_and_clear(sizeof (fp_memory));
-    fmem->fp_mem->poke_index = *pokemon_party_menu_current_index;
+    fmem.fp_mem = (fp_memory*) malloc_and_clear(sizeof (fp_memory));
+    fmem.fp_mem->poke_index = pokemon_party_menu_current_index;
     fadescreen_all(1, 0);
     callback1_set(fp_menu_callback_init);
     big_callback_delete(self);
@@ -182,19 +182,19 @@ void fp_menu_callback_init() {
         //init the oams
         u16 tile_pokepic = oam_vram_alloc(64);
         oam_vram_allocation_table_add(0xA000, tile_pokepic, 64);
-        fmem->fp_mem->pal_pokepic = oam_allocate_palette(0xA000);
-        fmem->fp_mem->tile_pokepic = tile_pokepic;
-        fmem->fp_mem->oam_pokepic = oam_new_forward_search(&fp_menu_oam_poke_template, 64, 56, 0);
-        oams[fmem->fp_mem->oam_pokepic].y2 = -96;
+        fmem.fp_mem->pal_pokepic = oam_allocate_palette(0xA000);
+        fmem.fp_mem->tile_pokepic = tile_pokepic;
+        fmem.fp_mem->oam_pokepic = oam_new_forward_search(&fp_menu_oam_poke_template, 64, 56, 0);
+        oams[fmem.fp_mem->oam_pokepic].y2 = -96;
 
         //arrows
         oam_load_graphic(&fp_menu_graphic_arrow_vertical);
         oam_load_graphic(&fp_menu_graphic_arrow_horizontal);
         u8 arrow_pal = oam_allocate_palette(0xA001);
-        fmem->fp_mem->oam_arrows[0] = oam_new_forward_search(&fp_menu_oam_arrow_template_down, 16, 32, 0);
-        fmem->fp_mem->oam_arrows[1] = oam_new_forward_search(&fp_menu_oam_arrow_template_up, 16, 76, 0);
-        fmem->fp_mem->oam_arrows[2] = oam_new_forward_search(&fp_menu_oam_arrow_template_left, 12, 100, 0);
-        fmem->fp_mem->oam_arrows[3] = oam_new_forward_search(&fp_menu_oam_arrow_template_right, 124, 100, 0);
+        fmem.fp_mem->oam_arrows[0] = oam_new_forward_search(&fp_menu_oam_arrow_template_down, 16, 32, 0);
+        fmem.fp_mem->oam_arrows[1] = oam_new_forward_search(&fp_menu_oam_arrow_template_up, 16, 76, 0);
+        fmem.fp_mem->oam_arrows[2] = oam_new_forward_search(&fp_menu_oam_arrow_template_left, 12, 100, 0);
+        fmem.fp_mem->oam_arrows[3] = oam_new_forward_search(&fp_menu_oam_arrow_template_right, 124, 100, 0);
         big_callback_new(fp_menu_callback_arrow_anim, 0);
 
 
@@ -214,7 +214,7 @@ void fp_menu_callback_init() {
 
 void fp_menu_callback_show() {
     if (!fading_is_active()) {
-        oams[fmem->fp_mem->oam_pokepic].y2 = 0;
+        oams[fmem.fp_mem->oam_pokepic].y2 = 0;
         fadescreen_all(0, 0);
         callback1_set(fp_menu_callback_idle);
     }
@@ -224,22 +224,22 @@ void fp_menu_callback_show() {
 void fp_menu_callback_idle() {
     generic_callback1();
     if (!fading_is_active()) {
-        pokemon *target = &player_pokemon[fmem->fp_mem->poke_index];
-        u8 stat = fmem->fp_mem->stat_index;
+        pokemon *target = &player_pokemon[fmem.fp_mem->poke_index];
+        u8 stat = fmem.fp_mem->stat_index;
         u8 pokemon_cnt = pokemon_get_number_in_party();
         if (big_callback_is_active(fp_menu_callback_poke_jump)) return; //we have to wait for interaction
-        if (fmem->fp_mem->delay) {
-            fmem->fp_mem->delay--;
+        if (fmem.fp_mem->delay) {
+            fmem.fp_mem->delay--;
             return;
         }
 
         //Now we can interagate with the player
-        if (super->keys_new.keys.B) {
-            oams[fmem->fp_mem->oam_pokepic].private[2] = 1; //prevent the color animation to appear during fadeout
+        if (super.keys_new.keys.B) {
+            oams[fmem.fp_mem->oam_pokepic].private[2] = 1; //prevent the color animation to appear during fadeout
             play_sound(5);
             callback1_set(fp_menu_callback_return);
             fadescreen_all(1, 0);
-        } else if (super->keys_new.keys.A) {
+        } else if (super.keys_new.keys.A) {
             //Check if the stat can be increased
             int fp_earned = (int) pokemon_get_attribute(target, (u8) (ATTRIBUTE_HP_EV + stat), NULL);
             u8 fp_used = pokemon_get_fp_applied(target, stat);
@@ -253,64 +253,64 @@ void fp_menu_callback_idle() {
             } else {
                 play_sound(26);
             }
-        } else if (super->keys_new.keys.left) {
-            fmem->fp_mem->stat_index = (u8) ((stat + 5) % 6);
+        } else if (super.keys_new.keys.left) {
+            fmem.fp_mem->stat_index = (u8) ((stat + 5) % 6);
             fp_menu_stat_load(target);
             play_sound(5);
-        } else if (super->keys_new.keys.right) {
-            fmem->fp_mem->stat_index = (u8) ((stat + 1) % 6);
+        } else if (super.keys_new.keys.right) {
+            fmem.fp_mem->stat_index = (u8) ((stat + 1) % 6);
             fp_menu_stat_load(target);
             play_sound(5);
-        } else if (super->keys_new.keys.down) {
-            u8 next_index = fmem->fp_mem->poke_index;
+        } else if (super.keys_new.keys.down) {
+            u8 next_index = fmem.fp_mem->poke_index;
             do {
                 next_index = (u8) ((next_index + 1) % pokemon_cnt);
                 if (!pokemon_get_attribute(&player_pokemon[next_index], ATTRIBUTE_IS_EGG, NULL)) {
                     //load this pokemon
-                    fmem->fp_mem->poke_index = next_index;
-                    fmem->fp_mem->pokepic_loading_state = 0;
+                    fmem.fp_mem->poke_index = next_index;
+                    fmem.fp_mem->pokepic_loading_state = 0;
                     callback1_set(fp_menu_callback_pokemon_load);
                 }
-            } while (next_index != fmem->fp_mem->poke_index);
-        } else if (super->keys_new.keys.up) {
-            u8 next_index = fmem->fp_mem->poke_index;
+            } while (next_index != fmem.fp_mem->poke_index);
+        } else if (super.keys_new.keys.up) {
+            u8 next_index = fmem.fp_mem->poke_index;
             do {
                 next_index = (u8) ((next_index + pokemon_cnt - 1) % pokemon_cnt);
                 if (!pokemon_get_attribute(&player_pokemon[next_index], ATTRIBUTE_IS_EGG, NULL)) {
                     //load this pokemon
-                    fmem->fp_mem->poke_index = next_index;
-                    fmem->fp_mem->pokepic_loading_state = 0;
+                    fmem.fp_mem->poke_index = next_index;
+                    fmem.fp_mem->pokepic_loading_state = 0;
                     callback1_set(fp_menu_callback_pokemon_load);
                 }
-            } while (next_index != fmem->fp_mem->poke_index);
+            } while (next_index != fmem.fp_mem->poke_index);
         }
     }
 }
 
 void fp_menu_callback_pokemon_load() {
     generic_callback1();
-    switch (fmem->fp_mem->pokepic_loading_state) {
+    switch (fmem.fp_mem->pokepic_loading_state) {
         case 1:
-            oams[fmem->fp_mem->oam_pokepic].y2 = -96; //disable the oam temporarily
+            oams[fmem.fp_mem->oam_pokepic].y2 = -96; //disable the oam temporarily
             break;
         case 2:
             fp_menu_pokemon_load();
-            oams[fmem->fp_mem->oam_pokepic].y2 = -0; //disable the oam temporarily
+            oams[fmem.fp_mem->oam_pokepic].y2 = -0; //disable the oam temporarily
             callback1_set(fp_menu_callback_idle);
             break;
     }
-    fmem->fp_mem->pokepic_loading_state++;
+    fmem.fp_mem->pokepic_loading_state++;
 }
 
 void fp_menu_callback_return() {
     if (!fading_is_active()) {
         u8 *team_index = (u8*) 0x0203B16C;
-        *team_index = fmem->fp_mem->poke_index;
+        *team_index = fmem.fp_mem->poke_index;
 
         //Drop maps
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));
-        free(fmem->fp_mem);
+        free(fmem.fp_mem);
         tbox_free_all();
         callback1_set((void*) 0x8122df5);
     }
@@ -319,18 +319,18 @@ void fp_menu_callback_return() {
 }
 
 void fp_menu_pokemon_load() {
-    pokemon *target = &player_pokemon[fmem->fp_mem->poke_index];
+    pokemon *target = &player_pokemon[fmem.fp_mem->poke_index];
     int species = pokemon_get_attribute(target, ATTRIBUTE_SPECIES, NULL);
 
     int *obj_vram = (int*) 0x06010000; //we declare it as int, because we have not better declaration
-    lz77uncompvram(pokemon_frontsprites[species].sprite, &obj_vram[8 * fmem->fp_mem->tile_pokepic]);
+    lz77uncompvram(pokemon_frontsprites[species].sprite, &obj_vram[8 * fmem.fp_mem->tile_pokepic]);
 
     //to load the pal we determine if the pokemon is shiny
     pid_t poke_pid = {.value = (u32)pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
     if (poke_pid.fields.shinyness <= 512) {
-        pal_decompress(pokemon_shiny_pals[species].pal, (u16) (256 + 16 * fmem->fp_mem->pal_pokepic), 32);
+        pal_decompress(pokemon_shiny_pals[species].pal, (u16) (256 + 16 * fmem.fp_mem->pal_pokepic), 32);
     } else {
-        pal_decompress(pokemon_pals[species].pal, (u16) (256 + 16 * fmem->fp_mem->pal_pokepic), 32);
+        pal_decompress(pokemon_pals[species].pal, (u16) (256 + 16 * fmem.fp_mem->pal_pokepic), 32);
     }
 
     //print the nickname
@@ -400,7 +400,7 @@ void fp_menu_stats_load(pokemon *target) {
 }
 
 void fp_menu_stat_load(pokemon *target) {
-    u8 stat = fmem->fp_mem->stat_index;
+    u8 stat = fmem.fp_mem->stat_index;
 
     //load the stats name
     tbox_flush_set(9, 0);
@@ -475,14 +475,14 @@ void fp_menu_pokepic_callback(oam_object *self) {
         //Blend the pals
         int i;
         for (i = 0; i < 16; i++) {
-            int index = fmem->fp_mem->pal_pokepic * 16 + 256 + i;
-            pals[index] = color_alpha_blend(pal_restore[index], fp_menu_pokepic_anim_colors[fmem->fp_mem->stat_index], (u8) (self->private[1] / 3));
+            int index = fmem.fp_mem->pal_pokepic * 16 + 256 + i;
+            pals[index] = color_alpha_blend(pal_restore[index], fp_menu_pokepic_anim_colors[fmem.fp_mem->stat_index], (u8) (self->private[1] / 3));
         }
     }
 }
 
 void fp_menu_callback_poke_jump(u8 self) {
-    u8 oam_id = fmem->fp_mem->oam_pokepic;
+    u8 oam_id = fmem.fp_mem->oam_pokepic;
     if (big_callbacks[self].params[0]) {
         //decrease
         if (!++oams[oam_id].y2) {
@@ -511,9 +511,9 @@ void fp_menu_callback_arrow_anim(u8 self) {
             big_callbacks[self].params[0] = 1;
     }
     if (big_callbacks[self].params[1] % 3) return; //every 3th frame we do a movemen
-    oams[fmem->fp_mem->oam_arrows[0]].y2 = (s16) (oams[fmem->fp_mem->oam_arrows[0]].y2 + d);
-    oams[fmem->fp_mem->oam_arrows[1]].y2 = (s16) (oams[fmem->fp_mem->oam_arrows[1]].y2 - d);
-    oams[fmem->fp_mem->oam_arrows[2]].x2 = (s16) (oams[fmem->fp_mem->oam_arrows[2]].x2 + d);
-    oams[fmem->fp_mem->oam_arrows[3]].x2 = (s16) (oams[fmem->fp_mem->oam_arrows[3]].x2 - d);
+    oams[fmem.fp_mem->oam_arrows[0]].y2 = (s16) (oams[fmem.fp_mem->oam_arrows[0]].y2 + d);
+    oams[fmem.fp_mem->oam_arrows[1]].y2 = (s16) (oams[fmem.fp_mem->oam_arrows[1]].y2 - d);
+    oams[fmem.fp_mem->oam_arrows[2]].x2 = (s16) (oams[fmem.fp_mem->oam_arrows[2]].x2 + d);
+    oams[fmem.fp_mem->oam_arrows[3]].x2 = (s16) (oams[fmem.fp_mem->oam_arrows[3]].x2 - d);
 
 }

@@ -126,7 +126,7 @@ void cb_mega_anim(u8 self) {
                         if (!battler_is_opponent(slot)) {
                             ram_buf = (strcpy(ram_buf, (*(u8**) 0x03004F5C)));
                         } else {
-                            u16 trainer_id = trainer_vars->trainer_id;
+                            u16 trainer_id = trainer_vars.trainer_id;
                             //if trainerclass is of rival we load name form saveblock as well
                             if (trainers[trainer_id].trainerclass == 0x51) {
                                 ram_buf = (strcpy(ram_buf, (u8*) ((*((u8**) 0x03004F58)) + 0x3A4C)));

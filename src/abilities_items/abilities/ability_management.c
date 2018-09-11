@@ -21,10 +21,10 @@ u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
             || defender_ability == G_KAISERAURA){
         if(!(rnd16() & 3)){
             //1/4 chance of flinching due to emperors aura
-            battle_stat_change[0x17] = *attacking_battler;
-            battle_stat_change[0x18] = *defending_battler;
-            if(battlers[*attacking_battler].status2 & 0x1000){
-                *bsc_status_flags |= 0x800;
+            battle_stat_change[0x17] = attacking_battler;
+            battle_stat_change[0x18] = defending_battler;
+            if(battlers[attacking_battler].status2 & 0x1000){
+                bsc_status_flags |= 0x800;
             }
             return bsc_flinch_aura;
         }else if(defender_ability == R_KAISERAURA){

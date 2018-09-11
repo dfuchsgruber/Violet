@@ -15,8 +15,8 @@ extern u8 ow_script_trainerschool_wildbattle[];
 u16 map_wild_pokemon_get_current_table_id(){
     u16 i = 0;
     while(wild_pokemon[i].bank != 0xFF){
-        if(wild_pokemon[i].bank == (*save1)->bank &&
-                wild_pokemon[i].map == (*save1)->map)
+        if(wild_pokemon[i].bank == save1->bank &&
+                wild_pokemon[i].map == save1->map)
             return i;
         i++;
     }
@@ -25,7 +25,7 @@ u16 map_wild_pokemon_get_current_table_id(){
 
 wild_pokemon_data *map_wild_pokemon_get_current() {
   if(dungeon_get_type()) {
-    return &(fmem->dwild_pokemon);
+    return &(fmem.dwild_pokemon);
   } else {
     u16 idx = map_wild_pokemon_get_current_table_id();
     if (idx == 0xFFFF) return NULL;

@@ -108,8 +108,8 @@ void build_trainer_pokemon_default_item_default_attacks(pokemon *dst,
 
 int build_trainer(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id == 0x400) return 0; // No idea, but in vanilla they do it, so...
-	if (!battle_state->items_prohibited && !battle_state->items_prohibited2
-			&& !battle_state->field_31 && battle_state->trainer_battle) {
+	if (!battle_state.items_prohibited && !battle_state.items_prohibited2
+			&& !battle_state.field_31 && battle_state.trainer_battle) {
 		// Build trainer
 		pokemon_clear_opponent_party();
 		// To generate a trainer consistent pid we use a pseudo rng
@@ -138,7 +138,8 @@ int build_trainer(pokemon *dst_party, u16 trainer_id) {
 		}
 		gp_stack_pop();
 		free(state);
-		*((u32*)battle_state) |= trainers[trainer_id].battle_state;
+		u32 *battle_state_ptr = (u32*)(&battle_state);
+		*battle_state_ptr |= trainers[trainer_id].battle_state;
 		return trainers[trainer_id].pokemon_cnt;
 	}
 	return 0;

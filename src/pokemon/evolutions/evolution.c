@@ -34,9 +34,9 @@ u16 pokemon_get_evolution(pokemon *p, u8 type, u16 arg){
             if(species == POKEMON_EVOLI){
                 //Special case for Eevee, as it has 7 possible evolutions...
                 //In particular we check for Glazeon, Leafeon, Silveon as those are not listed
-                if((*save1)->bank == BANK_GLAZEON && (*save1)->map == MAP_GLAZEON)
+                if(save1->bank == BANK_GLAZEON && save1->map == MAP_GLAZEON)
                     return POKEMON_GLAZIOLA;
-                if((*save1)->bank == BANK_LEAFEON && (*save1)->map == MAP_LEAFEON)
+                if(save1->bank == BANK_LEAFEON && save1->map == MAP_LEAFEON)
                     return POKEMON_FOLIPURBA;
                 u8 friendship = (u8)pokemon_get_attribute(p, ATTRIBUTE_HAPPINESS, 0);
                 if(friendship >= 220){
@@ -124,7 +124,7 @@ u16 pokemon_get_evolution(pokemon *p, u8 type, u16 arg){
                         u16 condition = pokemon_evolutions[species][i].condition;
                         u8 bank = (u8)(condition & 0xFF);
                         u8 mapid = (u8)((condition >> 8) & 0xFF);
-                        if(bank == (*save1)->bank && mapid == (*save1)->map)
+                        if(bank == save1->bank && mapid == save1->map)
                             return pokemon_evolutions[species][i].target;
                         break;
                     }

@@ -8,12 +8,12 @@
 
 
 void damage_apply_multiplier(int multiplier){
-    *damage_to_apply *= multiplier;
-    *damage_to_apply /= 1000;
+    damage_to_apply *= multiplier;
+    damage_to_apply /= 1000;
 }
 
 u8 attack_type_by_ability(u16 attack){
-    battler *attacker = &battlers[*attacking_battler];
+    battler *attacker = &battlers[attacking_battler];
     if(attacks[attack].type == TYPE_NORMAL){
         switch(attacker->ability){
             case ZENITHAUT:

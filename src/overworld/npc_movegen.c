@@ -33,7 +33,7 @@ void special_move_npc_to() {
 void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y) {
 
     u8 npc_id;
-    if (npc_get_id_by_overworld_id(ow_id, (*save1)->map, (*save1)->bank, &npc_id))
+    if (npc_get_id_by_overworld_id(ow_id, save1->map, save1->bank, &npc_id))
         return;
     *((u8*) 0x03004FC4) = npc_id;
     /**
@@ -50,7 +50,7 @@ void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y) {
     processed += move_npc_to_player_movegen(horizontal_first ? y_from : x_from, horizontal_first ? dest_y : dest_x, dyn_move, !horizontal_first, processed);
      **/
 
-    npc_apply_movement(ow_id, (*save1)->map, (*save1)->bank, dyn_move);
+    npc_apply_movement(ow_id, save1->map, save1->bank, dyn_move);
 
     u8 cb = big_callback_new(npc_move_to_freeing_callback, 10);
     big_callback_set_int(cb, 0, (int) dyn_move);
@@ -65,7 +65,7 @@ void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y) {
 void npc_move_to_freeing_callback(u8 self) {
     big_callbacks[self].params[5]++;
     u8 npc_id;
-    if (npc_get_id_by_overworld_id((u8) big_callbacks[self].params[2], (*save1)->map, (*save1)->bank, &npc_id))
+    if (npc_get_id_by_overworld_id((u8) big_callbacks[self].params[2], save1->map, save1->bank, &npc_id))
         return;
 
     if (npcs[npc_id].dest_x == (s16) (big_callbacks[self].params[3]) &&

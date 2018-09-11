@@ -87,8 +87,8 @@ u8 tile_any_grass_init(coordinate *pos){
     u8 behavior = (u8)block_get_behaviour_by_pos(x, y);
     for(i = 0; tile_any_grasses[i].bank != 0xFF || tile_any_grasses[i].map != 0xFF; i++){
         if(tile_any_grasses[i].triggered_by_behavior == behavior &&(
-                ((*save1)->bank == tile_any_grasses[i].bank && 
-                (*save1)->map == tile_any_grasses[i].map )|| tile_any_grasses[i].apply_to_every_map)){
+                (save1->bank == tile_any_grasses[i].bank && 
+                save1->map == tile_any_grasses[i].map )|| tile_any_grasses[i].apply_to_every_map)){
             
             if(tile_any_grasses[i].init_func)
                 tile_any_grasses[i].init_func();

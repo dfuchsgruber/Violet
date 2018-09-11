@@ -35,6 +35,6 @@ void tileset_0_anim(u16 clk){
 }
 
 void tileset_0_anim_init(){
-    *tileset_anim_clk0_cycle = generic_tileset_anim_get_clk(&tileset_0_animations_head);
-    *tileset_anim_0 = tileset_0_anim;
+    tileset_anim_clk0_cycle = generic_tileset_anim_get_clk(&tileset_0_animations_head);
+    tileset_anim_0 = tileset_0_anim;
 }

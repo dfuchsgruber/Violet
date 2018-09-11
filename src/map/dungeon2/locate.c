@@ -49,8 +49,8 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 
 void dungeon_map_set_tiles() {
 	if (dungeon_get_type()) return;
-	u8 current_bank = (*save1)->bank;
-	u8 current_map = (*save1)->map;
+	u8 current_bank = save1->bank;
+	u8 current_map = save1->map;
 	for (int i = 0; i < NUM_DUNGEON_LOCATIONS; i++) {
 		if (dungeon_locations[i].bank == current_bank && dungeon_locations[i].map == current_map) {
 			// Check if the dungeon is present with current a-vector
@@ -115,7 +115,7 @@ int dungeon_get_location_idx_player_is_facing() {
 	// Transform overworld coordinates to map coordinates
 	coordinates[0] = (s16)(coordinates[0] - 7);
 	coordinates[1] = (s16)(coordinates[1] - 7);
-	return dungeon_get_location_idx((*save1)->bank, (*save1)->map, coordinates[0],
+	return dungeon_get_location_idx(save1->bank, save1->map, coordinates[0],
 			coordinates[1]);
 }
 
@@ -139,6 +139,6 @@ void dungeon2_seed_init() {
 		derrf("No dungeon matches the current entrance for seed init\n");
 	}
 	u32 seq[1] = {(u32)dungeon_idx};
-	cmem->dg2.initial_seed = tmp_hash(seq, 1);
-	dprintf("Setup seed to %d\n", cmem->dg2.initial_seed);
+	cmem.dg2.initial_seed = tmp_hash(seq, 1);
+	dprintf("Setup seed to %d\n", cmem.dg2.initial_seed);
 }

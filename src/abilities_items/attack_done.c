@@ -21,85 +21,85 @@ extern u8 bsc_curator[];
 extern u8 bsc_extradorn[];
 
 void attack_done(u8 index){
-    battler *attacker = &battlers[*attacking_battler];
-    battler *defender = &battlers[*defending_battler];
+    battler *attacker = &battlers[attacking_battler];
+    battler *defender = &battlers[defending_battler];
     //First apply life-orb damage if damage caused
     if(attacker->item == ITEM_LEBEN_ORB && attacker->current_hp &&
-            !(*attack_result & (ATTACK_FAILED | ATTACK_MISSED |
-            ATTACK_NO_EFFECT)) && attacks[*active_attack].base_power &&
-            !(battler_statuses[*attacking_battler].unkown[1] & 1)){
+            !(attack_result & (ATTACK_FAILED | ATTACK_MISSED |
+            ATTACK_NO_EFFECT)) && attacks[active_attack].base_power &&
+            !(battler_statuses[attacking_battler].unkown[1] & 1)){
         //inflict life-orb damage
         battlescript_callstack_push_next_command();
-        *bsc_offset = bsc_life_orb;
-        //dprintf("Life orb triggered for battler %d\n", *attacking_battler);
+        bsc_offset = bsc_life_orb;
+        //dprintf("Life orb triggered for battler %d\n", attacking_battler);
         
         
     }
     //now apply the abilities
     if(attacker->ability == LERNFAEHIG && attacker->current_hp &&
-            (*attack_result & ATTACK_MISSED) && attacker->stat_changes[6] < 12){
+            (attack_result & ATTACK_MISSED) && attacker->stat_changes[6] < 12){
         if(gp_stack_push(index)){
             attacker->stat_changes[6]++; //accuracy boost
             battlescript_callstack_push_next_command();
-            *bsc_offset = bsc_lernfaehig;
+            bsc_offset = bsc_lernfaehig;
         }else{
             derrf("Lernfaehig not triggered for battler %d\n, gp stack held no \
-                    space\n", *attacking_battler);
+                    space\n", attacking_battler);
         }
         
-    }else if(attacker->ability == HOCHMUT && !(*attack_result & (ATTACK_MISSED |
+    }else if(attacker->ability == HOCHMUT && !(attack_result & (ATTACK_MISSED |
             ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
-            attacks[*active_attack].base_power &&
-            !(battler_statuses[*attacking_battler].unkown[1] & 1)
+            attacks[active_attack].base_power &&
+            !(battler_statuses[attacking_battler].unkown[1] & 1)
             && defender->current_hp && attacker->stat_changes[1] < 12){
         if(gp_stack_push(index)){
             attacker->stat_changes[1]++; //accuracy boost
             battlescript_callstack_push_next_command();
-            *bsc_offset = bsc_hochmut;
+            bsc_offset = bsc_hochmut;
         }else{
             derrf("Hochmut not triggered for battler %d\n, gp stack held no \
-                    space\n", *attacking_battler);
+                    space\n", attacking_battler);
         }
-    }else if(attacker->ability == LEBENSRAEUBER && !(*attack_result & (
+    }else if(attacker->ability == LEBENSRAEUBER && !(attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
-            attacks[*active_attack].base_power && attacker->current_hp <
+            attacks[active_attack].base_power && attacker->current_hp <
             attacker->max_hp){
         battlescript_callstack_push_next_command();
-        *bsc_offset = bsc_lebensraeuber;
-    }else if(attacker->ability == CURATOR && !(*attack_result & (
+        bsc_offset = bsc_lebensraeuber;
+    }else if(attacker->ability == CURATOR && !(attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
             attacker->current_hp < attacker->max_hp && (
-            *active_attack == ATTACK_GENESUNG ||
-            *active_attack == ATTACK_TAGEDIEB ||
-            *active_attack == ATTACK_SYNTHESE ||
-            *active_attack == ATTACK_MONDSCHEIN ||
-            *active_attack == ATTACK_ERHOLUNG ||
-            *active_attack == ATTACK_WUNSCHTRAUM ||
-            *active_attack == ATTACK_WEICHEI ||
-            *active_attack == ATTACK_AROMAKUR ||
-            *active_attack == ATTACK_VITALGLOCKE ||
-            *active_attack == ATTACK_MILCHGETRAENK
+            active_attack == ATTACK_GENESUNG ||
+            active_attack == ATTACK_TAGEDIEB ||
+            active_attack == ATTACK_SYNTHESE ||
+            active_attack == ATTACK_MONDSCHEIN ||
+            active_attack == ATTACK_ERHOLUNG ||
+            active_attack == ATTACK_WUNSCHTRAUM ||
+            active_attack == ATTACK_WEICHEI ||
+            active_attack == ATTACK_AROMAKUR ||
+            active_attack == ATTACK_VITALGLOCKE ||
+            active_attack == ATTACK_MILCHGETRAENK
             
             )){
         battlescript_callstack_push_next_command();
-        *bsc_offset = bsc_curator;
+        bsc_offset = bsc_curator;
         
-    }else if(attacker->ability == EXTRADORN && !(*attack_result & (
+    }else if(attacker->ability == EXTRADORN && !(attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
             defender->current_hp && 
-            (attacks[*active_attack].flags & MAKES_CONTACT)){
+            (attacks[active_attack].flags & MAKES_CONTACT)){
         battlescript_callstack_push_next_command();
-        *bsc_offset = bsc_extradorn;
+        bsc_offset = bsc_extradorn;
         
         
     }
 }
 
 void attack_done_prepeare_life_orb(){
-    battler *attacker = &battlers[*attacking_battler];
+    battler *attacker = &battlers[attacking_battler];
     int damage = attacker->max_hp / 10;
     if(damage <= 0) damage = 1;
-    *damage_to_apply = damage;
+    damage_to_apply = damage;
 }
 
 void attack_done_prepeare_lernfaehig(){
@@ -115,23 +115,23 @@ void attack_done_prepeare_hochmut(){
 }
 
 void attack_done_prepeare_lebensraeuber(){
-    int hp_to_heal = *damage_caused >> 2;
+    int hp_to_heal = damage_caused >> 2;
     if(hp_to_heal <= 0) hp_to_heal = 1;
-    *damage_to_apply = -hp_to_heal;
+    damage_to_apply = -hp_to_heal;
 }
 
 void attack_done_prepeare_curator(){
-    battler *attacker = &battlers[*attacking_battler];
+    battler *attacker = &battlers[attacking_battler];
     int hp_to_heal = attacker->max_hp / 16;
     if (hp_to_heal <= 0) hp_to_heal = 1;
-    *damage_to_apply = -hp_to_heal;
+    damage_to_apply = -hp_to_heal;
 }
 
 void attack_done_prepeare_extradorn(){
     bsc_buffers[0] = 0xFD;
     bsc_buffers[1] = 3;
     bsc_buffers[3] = 0xFF;
-    int damage = *damage_caused / 8;
+    int damage = damage_caused / 8;
     if(damage <= 0) damage = 1;
-    *damage_to_apply = damage;
+    damage_to_apply = damage;
 }

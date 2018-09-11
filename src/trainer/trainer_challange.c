@@ -15,7 +15,7 @@ void special_prepeare_player_facing() {
     player_get_position(&coordinates[0], &coordinates[1]);
     u8 pers_id = (u8) (*var_access(0x800F)); //Get LASTTALKED
     u8 npc_id;
-    if (!npc_get_id_by_overworld_id(pers_id, (*save1)->map, (*save1)->bank, &npc_id)) {
+    if (!npc_get_id_by_overworld_id(pers_id, save1->map, save1->bank, &npc_id)) {
         s16 npc_x = npcs[npc_id].dest_x;
         s16 npc_y = npcs[npc_id].dest_y;
         u8 facing = 0;
@@ -39,7 +39,7 @@ void special_prepeare_player_facing() {
 }
 
 bool special_x36_check_loaded_trainerflag() {
-    return checktrainerflag(trainer_vars->trainer_id);
+    return checktrainerflag(trainer_vars.trainer_id);
 }
 
 bool checktrainerflag(u16 trainer_id) {

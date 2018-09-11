@@ -23,6 +23,6 @@ void tileset_251828_anim(u16 clk){
 }
 
 void tileset_251828_anim_init(){
-    *tileset_anim_clk1_cycle = generic_tileset_anim_get_clk(&tileset_251828_animations_head);
-    *tileset_anim_1 = tileset_251828_anim;
+    tileset_anim_clk1_cycle = generic_tileset_anim_get_clk(&tileset_251828_animations_head);
+    tileset_anim_1 = tileset_251828_anim;
 }

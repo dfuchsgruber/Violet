@@ -60,7 +60,7 @@ bool startmenu_init_pokepad() {
 void pokepad_callback_init() {
     pokepad_memory *mem = (pokepad_memory*) malloc(sizeof (pokepad_memory));
     mem->current_item = 0; //(u8)*var_access(VAR_POKEPAD_LASTUSED);
-    fmem->pad_mem = mem;
+    fmem.pad_mem = mem;
     //malloc_reset_default();
     pokepad_init_components();
     io_set(0x50, 0);
@@ -76,19 +76,19 @@ bg_config pokepad_bg_cnfgs [] = {
 
 void pokepad_locate_lr() {
     u8 *registered = (u8*) var_access(POKEPAD_SHORTCUTS); //we interpret the var offset as 2 bytes
-    oams[fmem->pad_mem->l_oam].x = (s16) - 16; //move both offscreen
-    oams[fmem->pad_mem->r_oam].x = (s16) - 16;
+    oams[fmem.pad_mem->l_oam].x = (s16) - 16; //move both offscreen
+    oams[fmem.pad_mem->r_oam].x = (s16) - 16;
     int i;
-    for (i = 0; i < fmem->pad_mem->item_cnt; i++) {
-        if (fmem->pad_mem->items[i] == registered[0]) {
+    for (i = 0; i < fmem.pad_mem->item_cnt; i++) {
+        if (fmem.pad_mem->items[i] == registered[0]) {
             //left match, relocate left icon
-            oams[fmem->pad_mem->l_oam].x = (s16) (72 + 96 * (i & 1));
-            oams[fmem->pad_mem->l_oam].y = (s16) (31 + (i >> 1) * 24);
+            oams[fmem.pad_mem->l_oam].x = (s16) (72 + 96 * (i & 1));
+            oams[fmem.pad_mem->l_oam].y = (s16) (31 + (i >> 1) * 24);
         }
-        if (fmem->pad_mem->items[i] == registered[1]) {
+        if (fmem.pad_mem->items[i] == registered[1]) {
             //left match, relocate left icon
-            oams[fmem->pad_mem->r_oam].x = (s16) (136 + 96 * (i & 1));
-            oams[fmem->pad_mem->r_oam].y = (s16) (31 + (i >> 1) * 24);
+            oams[fmem.pad_mem->r_oam].x = (s16) (136 + 96 * (i & 1));
+            oams[fmem.pad_mem->r_oam].y = (s16) (31 + (i >> 1) * 24);
         }
 
     }
@@ -109,8 +109,8 @@ void pokepad_init_components() {
     // load graphics
     void *bg1map = malloc_and_clear(0x800);
     void *bg0map = malloc_and_clear(0x800);
-    //fmem->pad_mem->bg0map = bg0map;
-    //fmem->pad_mem->bg1map = bg1map;
+    //fmem.pad_mem->bg0map = bg0map;
+    //fmem.pad_mem->bg1map = bg1map;
     bg_set_tilemap(0, bg0map);
     bg_set_tilemap(1, bg1map);
 
@@ -137,11 +137,11 @@ void pokepad_init_components() {
     u8 arrow_pal = oam_allocate_palette(0xA001);
     pal_decompress(gfx_pokepad_arrowPal, (u16) ((arrow_pal + 16)*16), 32);
     //Now we have to find x and y from the current position
-    s16 x = (s16) (56 + 104 * (fmem->pad_mem->current_item & 1));
-    s16 y = (s16) (40 + (fmem->pad_mem->current_item >> 1) * 24);
-    fmem->pad_mem->arrow_oam = oam_new_forward_search(&oam_template_pokepad_arrow, x, y, 0);
-    oams[fmem->pad_mem->arrow_oam].private[0] = 0;
-    oams[fmem->pad_mem->arrow_oam].private[1] = 0;
+    s16 x = (s16) (56 + 104 * (fmem.pad_mem->current_item & 1));
+    s16 y = (s16) (40 + (fmem.pad_mem->current_item >> 1) * 24);
+    fmem.pad_mem->arrow_oam = oam_new_forward_search(&oam_template_pokepad_arrow, x, y, 0);
+    oams[fmem.pad_mem->arrow_oam].private[0] = 0;
+    oams[fmem.pad_mem->arrow_oam].private[1] = 0;
 
     pokepad_build_buttons(bg_get_tilemap(1));
 
@@ -157,8 +157,8 @@ void pokepad_init_components() {
     oam_load_graphic(&graphic_pokepad_r);
     u8 lrpal = oam_allocate_palette(0xA002);
     pal_decompress(gfx_pokepad_lPal, (u16) ((lrpal + 16)*16), 32);
-    fmem->pad_mem->l_oam = oam_new_forward_search(&oam_template_pokepad_l, -16, 0, 0);
-    fmem->pad_mem->r_oam = oam_new_forward_search(&oam_template_pokepad_r, -16, 0, 0);
+    fmem.pad_mem->l_oam = oam_new_forward_search(&oam_template_pokepad_l, -16, 0, 0);
+    fmem.pad_mem->r_oam = oam_new_forward_search(&oam_template_pokepad_r, -16, 0, 0);
 
     pokepad_locate_lr();
 
@@ -170,7 +170,7 @@ void pokepad_init_components() {
     pal_decompress(gfx_pokepad_backgroundPal, 0, 32);
     pal_copy(transparency_black_box_pals, 15 * 16, 32);
 
-    fmem->pad_mem->color_cb = big_callback_new(pokepad_callback_background_anim, 0);
+    fmem.pad_mem->color_cb = big_callback_new(pokepad_callback_background_anim, 0);
     pal_set_all_to_black();
     callback1_set(pokepad_show_components);
 }
@@ -178,9 +178,9 @@ void pokepad_init_components() {
 void pokepad_load_description() {
     tbox_flush_set(POKEPAD_DESCRIPTION_TBOX, 0);
     //now we need to get the description
-    //test(pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].description);
+    //test(pokepad_items[fmem.pad_mem->items[fmem.pad_mem->current_item]].description);
     tbox_print_string(POKEPAD_DESCRIPTION_TBOX, 2, 0, 0, 0, 0, &pokepad_fontcolmap, 0x0,
-            pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].description);
+            pokepad_items[fmem.pad_mem->items[fmem.pad_mem->current_item]].description);
 }
 
 void pokepad_callback_background_anim(u8 self) {
@@ -207,7 +207,7 @@ void pokepad_callback_background_anim(u8 self) {
 }
 
 void pokepad_build_buttons(void *tilemap) {
-    pokepad_memory *mem = fmem->pad_mem;
+    pokepad_memory *mem = fmem.pad_mem;
     lz77uncompvram(gfx_pokepad_buttonTiles, (void*) 0x06001000);
 
     int last_used = (int) (*var_access(POKEPAD_LAST_USED));
@@ -238,22 +238,22 @@ void pokepad_draw_button(void *tilemap, u8 x, u8 y, u8*string) {
             map[32 * (y + i) + j + x] = tile;
         }
     }
-    u8 current = (u8) (fmem->pad_mem->item_cnt + POKEPAD_BUTTON_TBOX_BASE);
+    u8 current = (u8) (fmem.pad_mem->item_cnt + POKEPAD_BUTTON_TBOX_BASE);
     tbox_flush_set(current, 0);
     tbox_tilemap_draw(current);
     tbox_print_string(current, 2, 0, 0, 0, 0, &pokepad_fontcolmap, 0x0, string);
 }
 
 void pokepad_free_components() {
-    //free(fmem->pad_mem->bg0map);
-    //free(fmem->pad_mem->bg1map);
+    //free(fmem.pad_mem->bg0map);
+    //free(fmem.pad_mem->bg1map);
     free(bg_get_tilemap(0));
     free(bg_get_tilemap(1));
-    oam_free(&oams[fmem->pad_mem->arrow_oam]);
-    oam_free(&oams[fmem->pad_mem->l_oam]);
-    oam_free(&oams[fmem->pad_mem->r_oam]);
+    oam_free(&oams[fmem.pad_mem->arrow_oam]);
+    oam_free(&oams[fmem.pad_mem->l_oam]);
+    oam_free(&oams[fmem.pad_mem->r_oam]);
     tbox_free_all();
-    free(fmem->pad_mem);
+    free(fmem.pad_mem);
 }
 
 void pokepad_free_and_return() {
@@ -270,51 +270,51 @@ void pokepad_idle() {
         bool item_changed = false;
         int lr_relocate = 0;
         u8 *registered = (u8*) var_access(POKEPAD_SHORTCUTS);
-        if (super->keys_new.keys.right && !(fmem->pad_mem->current_item & 1)
-                && fmem->pad_mem->current_item + 1 < fmem->pad_mem->item_cnt) {
+        if (super.keys_new.keys.right && !(fmem.pad_mem->current_item & 1)
+                && fmem.pad_mem->current_item + 1 < fmem.pad_mem->item_cnt) {
             //Right press
             item_changed = true;
-            fmem->pad_mem->current_item++;
-            oams[fmem->pad_mem->arrow_oam].x = (s16) (oams[fmem->pad_mem->arrow_oam].x + 12 * 8);
-        } else if (super->keys_new.keys.left && (fmem->pad_mem->current_item & 1)) {
+            fmem.pad_mem->current_item++;
+            oams[fmem.pad_mem->arrow_oam].x = (s16) (oams[fmem.pad_mem->arrow_oam].x + 12 * 8);
+        } else if (super.keys_new.keys.left && (fmem.pad_mem->current_item & 1)) {
             //Left press
             item_changed = true;
-            fmem->pad_mem->current_item--;
-            oams[fmem->pad_mem->arrow_oam].x = (s16) (oams[fmem->pad_mem->arrow_oam].x - 12 * 8);
-        } else if (super->keys_new.keys.up && fmem->pad_mem->current_item > 1) {
+            fmem.pad_mem->current_item--;
+            oams[fmem.pad_mem->arrow_oam].x = (s16) (oams[fmem.pad_mem->arrow_oam].x - 12 * 8);
+        } else if (super.keys_new.keys.up && fmem.pad_mem->current_item > 1) {
             //Up press
             item_changed = true;
-            fmem->pad_mem->current_item = (u8) (fmem->pad_mem->current_item - 2);
-            oams[fmem->pad_mem->arrow_oam].y = (s16) (oams[fmem->pad_mem->arrow_oam].y - 3 * 8);
-        } else if (super->keys_new.keys.down && fmem->pad_mem->current_item + 2 < fmem->pad_mem->item_cnt) {
+            fmem.pad_mem->current_item = (u8) (fmem.pad_mem->current_item - 2);
+            oams[fmem.pad_mem->arrow_oam].y = (s16) (oams[fmem.pad_mem->arrow_oam].y - 3 * 8);
+        } else if (super.keys_new.keys.down && fmem.pad_mem->current_item + 2 < fmem.pad_mem->item_cnt) {
             //Down press
             item_changed = true;
-            fmem->pad_mem->current_item = (u8) (fmem->pad_mem->current_item + 2);
-            oams[fmem->pad_mem->arrow_oam].y = (s16) (oams[fmem->pad_mem->arrow_oam].y + 3 * 8);
-        } else if (super->keys_new.keys.l) {
-            if (registered[0] == fmem->pad_mem->items[fmem->pad_mem->current_item]) {
+            fmem.pad_mem->current_item = (u8) (fmem.pad_mem->current_item + 2);
+            oams[fmem.pad_mem->arrow_oam].y = (s16) (oams[fmem.pad_mem->arrow_oam].y + 3 * 8);
+        } else if (super.keys_new.keys.l) {
+            if (registered[0] == fmem.pad_mem->items[fmem.pad_mem->current_item]) {
                 registered[0] = 0xFF;
                 lr_relocate = 3;
             } else {
-                registered[0] = fmem->pad_mem->items[fmem->pad_mem->current_item];
+                registered[0] = fmem.pad_mem->items[fmem.pad_mem->current_item];
                 lr_relocate = 1;
             }
-        } else if (super->keys_new.keys.r) {
-            if (registered[1] == fmem->pad_mem->items[fmem->pad_mem->current_item]) {
+        } else if (super.keys_new.keys.r) {
+            if (registered[1] == fmem.pad_mem->items[fmem.pad_mem->current_item]) {
                 registered[1] = 0xFF;
                 lr_relocate = 4;
             } else {
-                registered[1] = fmem->pad_mem->items[fmem->pad_mem->current_item];
+                registered[1] = fmem.pad_mem->items[fmem.pad_mem->current_item];
                 lr_relocate = 2;
             }
-        } else if (super->keys_new.keys.B) {
+        } else if (super.keys_new.keys.B) {
             play_sound(5);
             callback1_set(pokepad_free_and_return);
             fadescreen_all(1, 0);
-        } else if (super->keys_new.keys.A) {
+        } else if (super.keys_new.keys.A) {
             play_sound(5);
-            if (pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].func) {
-                pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].func(false);
+            if (pokepad_items[fmem.pad_mem->items[fmem.pad_mem->current_item]].func) {
+                pokepad_items[fmem.pad_mem->items[fmem.pad_mem->current_item]].func(false);
             }
         }
         if (item_changed) {
@@ -331,7 +331,7 @@ void pokepad_idle() {
                 strcpy(buffer1, r);
             }
             u8 *buffer0 = (u8*) 0x02021CD0;
-            strcpy(buffer0, pokepad_items[fmem->pad_mem->items[fmem->pad_mem->current_item]].string);
+            strcpy(buffer0, pokepad_items[fmem.pad_mem->items[fmem.pad_mem->current_item]].string);
             u8 *strbuf = (u8*) 0x02021D18;
             if (lr_relocate > 2) {
             	u8 str_pokepad_deregistered[] = LANGDEP(PSTRING("Die BUFFER_1-App ist nicht "
@@ -349,7 +349,7 @@ void pokepad_idle() {
             tbox_print_string(POKEPAD_DESCRIPTION_TBOX, 2, 0, 0, 0, 0, &pokepad_fontcolmap, 0x0, strbuf);
             pokepad_locate_lr();
             play_sound(lr_relocate > 2 ? 3 : 2);
-            fmem->pad_mem->lr_countdown = 28;
+            fmem.pad_mem->lr_countdown = 28;
             callback1_set(pokepad_callback_registered_string);
         }
 
@@ -358,11 +358,11 @@ void pokepad_idle() {
 
 void pokepad_callback_registered_string() {
     generic_callback1();
-    if (fmem->pad_mem->lr_countdown) {
-        fmem->pad_mem->lr_countdown--;
+    if (fmem.pad_mem->lr_countdown) {
+        fmem.pad_mem->lr_countdown--;
         return;
     }
-    if (super->keys_new.keys.A) {
+    if (super.keys_new.keys.A) {
         pokepad_load_description();
         play_sound(5);
         callback1_set(pokepad_idle);
@@ -380,12 +380,12 @@ void pokepad_show_components() {
 bool pokepad_init_function_outdoor() {
 
     u8 *registered = (u8*) var_access(POKEPAD_SHORTCUTS); //we interpret the var offset as 2 bytes
-    if (super->keys_new.keys.l && registered[0] != 0xFF) {
+    if (super.keys_new.keys.l && registered[0] != 0xFF) {
         if (pokepad_items[registered[0]].func) {
             pokepad_items[registered[0]].func(true);
             return true;
         }
-    } else if (super->keys_new.keys.r && registered[1] != 0xFF) {
+    } else if (super.keys_new.keys.r && registered[1] != 0xFF) {
         if (pokepad_items[registered[1]].func) {
             pokepad_items[registered[1]].func(true);
             return true;

@@ -11,7 +11,7 @@
 #include "constants/pokemon_attributes.h"
 
 void trigger_opponents_mega() {
-    u8 pokemon_in_battle = *battler_cnt;
+    u8 pokemon_in_battle = battler_cnt;
     int i = 0;
     while (i < pokemon_in_battle) {
 
@@ -39,7 +39,7 @@ void battle_cb_do_megas() {
     }
 
     //first we check if we have megas left to execute
-    u8 pokemon_in_battle = *battler_cnt;
+    u8 pokemon_in_battle = battler_cnt;
     int i = 0;
     while (i < pokemon_in_battle) {
 
@@ -115,7 +115,7 @@ bool can_player_trigger_mega() {
     }
 
     int i;
-    u8 pokemon_in_battle = *battler_cnt;
+    u8 pokemon_in_battle = battler_cnt;
     for (i = 0; i < pokemon_in_battle; i++) {
         if (battlers[i].trigger && !battler_is_opponent((u8) i)) {
             return 0;

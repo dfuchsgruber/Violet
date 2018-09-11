@@ -325,7 +325,7 @@ void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state *stat
 
 void pokedex_callback_feature_scanner_clear(){
     
-    pokedex_scanner_state *state = fmem->dex_mem->scanner_state;
+    pokedex_scanner_state *state = fmem.dex_mem->scanner_state;
     
     // Clear the oams
     for(int i = 0; i < 13; i++){
@@ -413,7 +413,7 @@ u8 str_pokedex_feature_scanner_super_rod[] = LANGDEP(PSTRING("Superangel"), PSTR
 
 void pokedex_callback_feature_scanner_load(){
     
-    pokedex_scanner_state *state = fmem->dex_mem->scanner_state;
+    pokedex_scanner_state *state = fmem.dex_mem->scanner_state;
     
     // Print the selected entry list
     switch(state->selected_area){
@@ -478,7 +478,7 @@ void pokedex_callback_feature_scanner_return(){
         free(bg_get_tilemap(1));
         tbox_free_all();
         
-        free(fmem->dex_mem->scanner_state);
+        free(fmem.dex_mem->scanner_state);
         
         pokedex_init_components();
         pokedex_update_list();
@@ -492,19 +492,19 @@ void pokedex_callback_feature_scanner_return(){
 void pokedex_callback_feature_scanner_idle(){
     generic_callback1();
     if(!fading_is_active()){
-        pokedex_scanner_state *state = fmem->dex_mem->scanner_state;
+        pokedex_scanner_state *state = fmem.dex_mem->scanner_state;
         pokedex_callback_feature_scanner_selection_fade(state);
-        if(super->keys_new.keys.right){
+        if(super.keys_new.keys.right){
             state->selected_area++;
             state->selected_area %= 4;
             callback1_set(pokedex_callback_feature_scanner_clear);
             play_sound(5);
-        }else if(super->keys_new.keys.left){
+        }else if(super.keys_new.keys.left){
             state->selected_area = (u8)(state->selected_area + 3);
             state->selected_area %= 4;
             callback1_set(pokedex_callback_feature_scanner_clear);
             play_sound(5);
-        }else if(super->keys_new.keys.B){
+        }else if(super.keys_new.keys.B){
             play_sound(5);
             callback1_set(pokedex_callback_feature_scanner_return);
             fadescreen_all(1, 0);
@@ -517,7 +517,7 @@ void pokedex_callback_init_feature_scanner() {
     generic_callback1();
     if (!fading_is_active()) {
         pokedex_scanner_state *state = malloc_and_clear(sizeof(pokedex_scanner_state));
-        fmem->dex_mem->scanner_state = state;
+        fmem.dex_mem->scanner_state = state;
         pokedex_free_maps();
         pokedex_feature_scanner_build_entries(state);
         _pokedex_callback_init_feature_scanner(state);

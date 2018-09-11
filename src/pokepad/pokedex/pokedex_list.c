@@ -20,32 +20,32 @@
 #include "agbmemory.h"
 
 bool pokedex_callback_list_mode_proceed() {
-    switch (fmem->dex_mem->list_mode) {
+    switch (fmem.dex_mem->list_mode) {
         case 1:
-            if (super->keys.keys.down) {
-                if (super->keys_new_rst.keys.down)
-                    fmem->dex_mem->list_fast_mode = true;
+            if (super.keys.keys.down) {
+                if (super.keys_new_rst.keys.down)
+                    fmem.dex_mem->list_fast_mode = true;
                 return true;
             }
             break;
         case 2:
-            if (super->keys.keys.up) {
-                if (super->keys_new_rst.keys.up)
-                    fmem->dex_mem->list_fast_mode = true;
+            if (super.keys.keys.up) {
+                if (super.keys_new_rst.keys.up)
+                    fmem.dex_mem->list_fast_mode = true;
                 return true;
             }
             break;
         case 3:
-            if (super->keys.keys.right) {
-                if (super->keys_new_rst.keys.right)
-                    fmem->dex_mem->list_fast_mode = true;
+            if (super.keys.keys.right) {
+                if (super.keys_new_rst.keys.right)
+                    fmem.dex_mem->list_fast_mode = true;
                 return true;
             }
             break;
         case 4:
-            if (super->keys.keys.left) {
-                if (super->keys_new_rst.keys.left)
-                    fmem->dex_mem->list_fast_mode = true;
+            if (super.keys.keys.left) {
+                if (super.keys_new_rst.keys.left)
+                    fmem.dex_mem->list_fast_mode = true;
                 return true;
             }
             break;
@@ -55,36 +55,36 @@ bool pokedex_callback_list_mode_proceed() {
 
 void pokedex_callback_list_enter_mode(u8 mode) {
     if (mode == 1 || mode == 3) {
-        fmem->dex_mem->cursor_anchor = true;
+        fmem.dex_mem->cursor_anchor = true;
     } else if (mode == 2 || mode == 4) {
-        fmem->dex_mem->cursor_anchor = false;
+        fmem.dex_mem->cursor_anchor = false;
     }
-    fmem->dex_mem->list_mode = mode;
-    fmem->dex_mem->list_fast_mode = false;
+    fmem.dex_mem->list_mode = mode;
+    fmem.dex_mem->list_fast_mode = false;
 }
 
 void pokedex_callback_list() {
     generic_callback1();
 
-    if (super->keys_new.keys.down) {
+    if (super.keys_new.keys.down) {
         pokedex_callback_list_enter_mode(1);
-    } else if (super->keys_new.keys.up) {
+    } else if (super.keys_new.keys.up) {
         pokedex_callback_list_enter_mode(2);
-    } else if (super->keys_new.keys.right) {
+    } else if (super.keys_new.keys.right) {
         pokedex_callback_list_enter_mode(3);
-    } else if (super->keys_new.keys.left) {
+    } else if (super.keys_new.keys.left) {
         pokedex_callback_list_enter_mode(4);
-    } else if (super->keys_new.keys.A) {
+    } else if (super.keys_new.keys.A) {
         //Todo enter page
-        if (fmem->dex_mem->list[fmem->dex_mem->current_list_index].seen) {
+        if (fmem.dex_mem->list[fmem.dex_mem->current_list_index].seen) {
             play_sound(5);
             callback1_set(pokedex_callback_init_entry);
             fadescreen_all(1, 0);
             return;
         }
-    } else if (super->keys_new.keys.B) {
+    } else if (super.keys_new.keys.B) {
         //Todo return to group selection
-        fmem->dex_mem->in_list = false;
+        fmem.dex_mem->in_list = false;
         callback1_set(pokedex_callback_group_selection);
         play_sound(5);
         return;
@@ -92,20 +92,20 @@ void pokedex_callback_list() {
     //No new key was pressed, check if we stay in mode
     if (pokedex_callback_list_mode_proceed()) {
         //We stay in mode (maybe we just enabled fast mode)
-        if (fmem->dex_mem->list_countdown) {
-            fmem->dex_mem->list_countdown--;
+        if (fmem.dex_mem->list_countdown) {
+            fmem.dex_mem->list_countdown--;
         } else {
             int mode_lo[] = {0, 1, -1, 8, -8};
-            u16 index_old = fmem->dex_mem->current_list_index;
-            int index_new = index_old + mode_lo[fmem->dex_mem->list_mode];
+            u16 index_old = fmem.dex_mem->current_list_index;
+            int index_new = index_old + mode_lo[fmem.dex_mem->list_mode];
             if (index_new < pokedex_get_first_seen())
                 index_new = pokedex_get_first_seen();
             if (index_new > pokedex_get_last_seen())
                 index_new = pokedex_get_last_seen();
             if (index_new != index_old) {
                 play_sound(5);
-                fmem->dex_mem->current_list_index = (u16) index_new;
-                fmem->dex_mem->list_countdown = fmem->dex_mem->list_fast_mode ? 0 : 8;
+                fmem.dex_mem->current_list_index = (u16) index_new;
+                fmem.dex_mem->list_countdown = fmem.dex_mem->list_fast_mode ? 0 : 8;
                 pokedex_update_list();
             }
         }
@@ -115,7 +115,7 @@ void pokedex_callback_list() {
 
 void pokedex_build_list() {
     pokedex_list_element *list = (pokedex_list_element*) malloc(POKEDEX_CNT * sizeof (pokedex_list_element));
-    fmem->dex_mem->list = list;
+    fmem.dex_mem->list = list;
     int list_size = 0;
     u16 i;
     int j;
@@ -148,15 +148,15 @@ void pokedex_build_list() {
 }
 
 void pokedex_update_list() {
-    pokedex_list_element *list = fmem->dex_mem->list;
-    fmem->dex_mem->current_species = list[fmem->dex_mem->current_list_index].species;
+    pokedex_list_element *list = fmem.dex_mem->list;
+    fmem.dex_mem->current_species = list[fmem.dex_mem->current_list_index].species;
     //find first and last element in list
-    int first = fmem->dex_mem->current_list_index - fmem->dex_mem->cursor_anchor - 3; //
+    int first = fmem.dex_mem->current_list_index - fmem.dex_mem->cursor_anchor - 3; //
     if (first < pokedex_get_first_seen())
         first = pokedex_get_first_seen();
     int last = first + 7;
     if (last > pokedex_get_last_seen())
-        //test(pokedex_get_last_seen(),fmem->dex_mem->current_list_index);
+        //test(pokedex_get_last_seen(),fmem.dex_mem->current_list_index);
         last = pokedex_get_last_seen();
     first = last - 7;
     if (first < pokedex_get_first_seen())
@@ -180,8 +180,8 @@ void pokedex_update_list() {
         //We create the number string
         pokedex_tbox_draw_num(POKEDEX_TBOX_LIST_NR, 0, list[first].species, 0xC, y_pixel);
 
-        //buf = strcat(buf, first == fmem->dex_mem->current_list_index ? str_arrow : str_none);
-        if (first == fmem->dex_mem->current_list_index) {
+        //buf = strcat(buf, first == fmem.dex_mem->current_list_index ? str_arrow : str_none);
+        if (first == fmem.dex_mem->current_list_index) {
             buf = strcat(buf, str_pokepad_pokedex_cursor);
         }
         if (list[first].seen) {

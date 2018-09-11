@@ -11,8 +11,8 @@ u8 *player_step_on_behavior(){
         //anygrass, execute player_step_function
         int i;
         for(i = 0; tile_any_grasses[i].bank != 0xFF; i++){
-            if ((*save1)->bank == tile_any_grasses[i].bank &&
-                    (*save1)->map == tile_any_grasses[i].map && 
+            if (save1->bank == tile_any_grasses[i].bank &&
+                    save1->map == tile_any_grasses[i].map && 
                     behavior == tile_any_grasses[i].triggered_by_behavior){
                 return tile_any_grasses[i].player_step_cb();
             }

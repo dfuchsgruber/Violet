@@ -106,7 +106,7 @@ void mugshot_create_oam(int side, int idx) {
 	oam_template *mugshot_template = malloc(sizeof (oam_template));
 	mugshot_template->tiles_tag = tag;
 	mugshot_template->pal_tag = tag;
-	if(!checkflag(0x806) && get_mapheader((*save1)->bank, (*save1)->map)->flash){
+	if(!checkflag(0x806) && get_mapheader(save1->bank, save1->map)->flash){
 		mugshot_template->oam = &mugshot_sprite_prio0;
 	}else{
 		mugshot_template->oam = &mugshot_sprite;
@@ -118,7 +118,7 @@ void mugshot_create_oam(int side, int idx) {
 
 	// Spawn the mugshot
 	s16 x = (s16) (0x20 + side * 0xB0);
-	fmem->mugshot_oam_id = oam_new_forward_search(mugshot_template, x, 0x50, 0);
+	fmem.mugshot_oam_id = oam_new_forward_search(mugshot_template, x, 0x50, 0);
 }
 
 void mugshot_create_text(int side, u8 *text) {
@@ -136,7 +136,7 @@ void mugshot_create_text(int side, u8 *text) {
 		tbox_clear_bottom_line(box_id);
 		tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 		tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
-		fmem->mugshot_tb_id = box_id;
+		fmem.mugshot_tb_id = box_id;
 
 	}else{
 		tboxdata tbdata = {
@@ -149,7 +149,7 @@ void mugshot_create_text(int side, u8 *text) {
 		tbox_border_draw(box_id, 1, 0xF);
 		tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 		tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
-		fmem->mugshot_tb_id = box_id;
+		fmem.mugshot_tb_id = box_id;
 	}
 }
 
@@ -175,7 +175,7 @@ void special_mugshot_show() {
 
 void special_mugshot_delete() {
 	// Delete the oam
-	u16 oam_id = fmem->mugshot_oam_id;
+	u16 oam_id = fmem.mugshot_oam_id;
 	u8 delete_oam_cb_id = big_callback_new(mugshot_delete_oam, 0);
 	big_callbacks[delete_oam_cb_id].params[0] = oam_id;
 	// Move the oam offscreen meanwhile
@@ -183,7 +183,7 @@ void special_mugshot_delete() {
 
 	// Delete the text
 	u8 delete_tb_cb_id = big_callback_new(mugshot_delete_text, 0);
-	big_callbacks[delete_tb_cb_id].params[0] = fmem->mugshot_tb_id;
+	big_callbacks[delete_tb_cb_id].params[0] = fmem.mugshot_tb_id;
 }
 
 void mugshot_delete_oam(u8 self) {
@@ -213,7 +213,7 @@ void special_show_name() {
 	}
 
 	// Show the text
-	u8 *text = overworld_script_state->pointer_banks[0];
+	u8 *text = overworld_script_state.pointer_banks[0];
 	int side = *var_access(0x8000);
 	mugshot_create_text(side, text);
 }
@@ -221,7 +221,7 @@ void special_show_name() {
 void special_delete_name() {
 	// Delete the text
 	u8 delete_tb_cb_id = big_callback_new(mugshot_delete_text, 0);
-	big_callbacks[delete_tb_cb_id].params[0] = fmem->mugshot_tb_id;
+	big_callbacks[delete_tb_cb_id].params[0] = fmem.mugshot_tb_id;
 }
 
 

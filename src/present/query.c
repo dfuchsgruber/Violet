@@ -82,7 +82,7 @@ void present_query_closure(){
     
     u8 *script = present_get_matching_md(md);
     if(script){
-        *overworld_script_virtual_ptr = script;
+        overworld_script_virtual_ptr = script;
         *var_access(0x800D) = 1;
     }else{
         *var_access(0x800D) = 0;

@@ -16,7 +16,7 @@ void egg_warm_update(){
     
     u16 *v_hatching_fastened_left = var_access(HATCHING_BOOST_STEPS);
     
-    if ((*save1)->bank == 3 && (*save1)->map == 6 && behavior == 0x28){
+    if (save1->bank == 3 && save1->map == 6 && behavior == 0x28){
         //restore 1000 to the var
         *v_hatching_fastened_left = 1000;
     }else{

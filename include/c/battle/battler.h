@@ -59,11 +59,11 @@ extern battler_status battler_statuses[4];
 extern u8 attack_targets;
 extern u8 attacking_battler;
 extern u8 defending_battler;
-extern u8 active_battle;
-extern u8 battler_oams;
+extern u8 active_battler;
+extern u8 battler_oams[];
 extern u8 battler_cnt;
-extern u16 battler_team_slots;
-extern u8 battler_attacking_order;
+extern u16 battler_team_slots[];
+extern u8 battler_attacking_order[];
 
 /**
  * Checks if a battler is an opponent

@@ -35,7 +35,7 @@ void init_anim_engine(u8 *script) {
     ae_memory *mem = malloc_and_clear(sizeof(ae_memory));
     big_callback_set_int(callback_id, 1, (int)mem);
     //dprintf("Anim engine setup @%x, var space @%x\n", mem, mem->vars);
-    fmem->ae_mem = mem;
+    fmem.ae_mem = mem;
     mem->current_programm = script;
     mem->callback_id = callback_id;
     mem->active = true;
@@ -747,7 +747,7 @@ void cmdx22_cry(ae_memory* mem) {
 
 void cmdx23_maintain() {
     callback1_set(callback_maintain);
-    super->callbacks[3] = NULL;
+    super.callbacks[3] = NULL;
 }
 
 void cmdx24_script_notify() {
@@ -856,7 +856,7 @@ void ae_mapreloader() {
 
 void cmdx2C_mapreload() {
     fadescreen_all(1, 0);
-    super->callbacks[1] = ae_mapreloader;
+    super.callbacks[1] = ae_mapreloader;
 }
 
 void cmdx2D_force_pals_to_black() {
@@ -935,7 +935,7 @@ void cmdx32_pal_restore_force_current(ae_memory *mem){
 void cmdx33_jump_if_female(ae_memory *mem){
     u8 *target = (u8*)anim_engine_read_word(mem);
     u16 target_frame = anim_engine_read_hword(mem);
-    if((*save2)->player_is_female){
+    if(save2->player_is_female){
         mem->current_programm = target;
         mem->current_frame = target_frame;
     }

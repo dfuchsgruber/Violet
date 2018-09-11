@@ -11,7 +11,7 @@
 mapheader *get_mapheader(u8 bank, u8 map) {
     if (dungeon_get_type()) {
         dungeon2_init();
-        return &(fmem->dmapheader);
+        return &(fmem.dmapheader);
     } else {
         return mapbanks[bank][map];
     }
@@ -21,11 +21,11 @@ mapfooter *get_mapfooter() {
 
     if (dungeon_get_type()) {
         dungeon2_init();
-        return &(fmem->dmapfooter);
+        return &(fmem.dmapfooter);
     }
 
     //return standard map header
-    u16 current_footer = (*save1)->current_footer_id;
+    u16 current_footer = save1->current_footer_id;
     if (current_footer) {
         return mapfooters[current_footer - 1];
     }

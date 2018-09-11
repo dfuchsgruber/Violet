@@ -101,7 +101,7 @@ u8 str_trainerschool_test_list[] = PSTRING("-");
 u8 str_trainerschool_test_cursor[] = PSTRING("▶");
 
 void trainerschool_test_load_answers(){
-    u8 question = fmem->tst_mem->current_question;
+    u8 question = fmem.tst_mem->current_question;
     dprintf("Question %d\n", question);
     int i;
     for(i = 0; i < 5; i++){
@@ -111,7 +111,7 @@ void trainerschool_test_load_answers(){
         
         if(i < trainerschool_test_questions[question].answer_cnt){
             strcpy(strbuf, 
-                    fmem->tst_mem->cursor == i ? str_trainerschool_test_cursor :
+                    fmem.tst_mem->cursor == i ? str_trainerschool_test_cursor :
                     str_trainerschool_test_list);
             strcat(strbuf, trainerschool_test_questions[question].answers[i]);
             tbox_print_string((u8)(i + 1), 2, 0, 0, 0, 0, 
@@ -130,8 +130,8 @@ void trainerschool_test_load_answers(){
 }
 
 void trainerschool_test_load_question(){
-    u8 question = fmem->tst_mem->current_question;
-    fmem->tst_mem->cursor = 0;
+    u8 question = fmem.tst_mem->current_question;
+    fmem.tst_mem->cursor = 0;
     //Print question
     
     tbox_flush_set(0, 0);
@@ -152,12 +152,12 @@ void trainerschool_test_done(){
 
 void trainerschool_test_question_done(){
     generic_callback1();
-    if(fmem->tst_mem->delay) fmem->tst_mem->delay--;
+    if(fmem.tst_mem->delay) fmem.tst_mem->delay--;
     else{
-        switch(fmem->tst_mem->frame){
+        switch(fmem.tst_mem->frame){
             case 0:
-                fmem->tst_mem->current_question++;
-                if(fmem->tst_mem->current_question == 10){
+                fmem.tst_mem->current_question++;
+                if(fmem.tst_mem->current_question == 10){
                     fadescreen_all(1, 0);
                     callback1_set(trainerschool_test_done);
                     return;
@@ -166,30 +166,30 @@ void trainerschool_test_question_done(){
                 play_sound(30);
                 bg_sync_display_and_show(1);
                 bg_display_sync();
-                oam_rotscale_free(&oams[fmem->tst_mem->answer_oam]);
-                oam_clear(&oams[fmem->tst_mem->answer_oam]);
+                oam_rotscale_free(&oams[fmem.tst_mem->answer_oam]);
+                oam_clear(&oams[fmem.tst_mem->answer_oam]);
                 lz77uncompwram(gfx_trainerschool_page_0Tiles, gp_tmp_buf);
                 lz77uncompwram(gfx_trainerschool_page_0Map, bg_get_tilemap(1));
                 bg_copy_vram(1, gp_tmp_buf, 0x1000, 0, 1);
                 bg_copy_vram(1, bg_get_tilemap(1), 0x800, 0, 2);
-                fmem->tst_mem->delay = 10;
-                fmem->tst_mem->frame++;
+                fmem.tst_mem->delay = 10;
+                fmem.tst_mem->frame++;
                 break;
             case 1:
                 lz77uncompwram(gfx_trainerschool_page_1Tiles, gp_tmp_buf);
                 lz77uncompwram(gfx_trainerschool_page_1Map, bg_get_tilemap(1));
                 bg_copy_vram(1, gp_tmp_buf, 0x1000, 0, 1);
                 bg_copy_vram(1, bg_get_tilemap(1), 0x800, 0, 2);
-                fmem->tst_mem->delay = 10;
-                fmem->tst_mem->frame++;
+                fmem.tst_mem->delay = 10;
+                fmem.tst_mem->frame++;
                 break;
             case 2:
                 lz77uncompwram(gfx_trainerschool_page_2Tiles, gp_tmp_buf);
                 lz77uncompwram(gfx_trainerschool_page_2Map, bg_get_tilemap(1));
                 bg_copy_vram(1, gp_tmp_buf, 0x1000, 0, 1);
                 bg_copy_vram(1, bg_get_tilemap(1), 0x800, 0, 2);
-                fmem->tst_mem->delay = 10;
-                fmem->tst_mem->frame++;
+                fmem.tst_mem->delay = 10;
+                fmem.tst_mem->frame++;
                 break;
             default:
                 bg_hide(1);
@@ -203,39 +203,39 @@ void trainerschool_test_question_done(){
 
 void trainerschool_test_idle(){
     generic_callback1();
-    if(super->keys_new.keys.down){
-        fmem->tst_mem->cursor++;
-        fmem->tst_mem->cursor = 
-        (u8)(fmem->tst_mem->cursor %
-                trainerschool_test_questions[fmem->tst_mem->current_question].answer_cnt);
+    if(super.keys_new.keys.down){
+        fmem.tst_mem->cursor++;
+        fmem.tst_mem->cursor = 
+        (u8)(fmem.tst_mem->cursor %
+                trainerschool_test_questions[fmem.tst_mem->current_question].answer_cnt);
         play_sound(5);
         trainerschool_test_load_answers();
-    }else if(super->keys_new.keys.up){
-        if(!fmem->tst_mem->cursor)fmem->tst_mem->cursor = (u8)
-                (trainerschool_test_questions[fmem->tst_mem->current_question].answer_cnt - 1);
-        else fmem->tst_mem->cursor--;
+    }else if(super.keys_new.keys.up){
+        if(!fmem.tst_mem->cursor)fmem.tst_mem->cursor = (u8)
+                (trainerschool_test_questions[fmem.tst_mem->current_question].answer_cnt - 1);
+        else fmem.tst_mem->cursor--;
         play_sound(5);
         trainerschool_test_load_answers();
-    }else if(super->keys_new.keys.A){
-        s16 y = (s16)(fmem->tst_mem->cursor * 16 + 83);
-        u8 question = fmem->tst_mem->current_question;
-        if(trainerschool_test_questions[question].correct_answer == fmem->tst_mem->cursor){
+    }else if(super.keys_new.keys.A){
+        s16 y = (s16)(fmem.tst_mem->cursor * 16 + 83);
+        u8 question = fmem.tst_mem->current_question;
+        if(trainerschool_test_questions[question].correct_answer == fmem.tst_mem->cursor){
             //correct answer
             fanfare(269);
             play_sound(12);
             (*var_access(TRAINERSCHOOL_CORRECT_ANSWERS))++;
-            fmem->tst_mem->answer_oam = oam_new_forward_search(
+            fmem.tst_mem->answer_oam = oam_new_forward_search(
                 &trainerschool_test_oam_template_correct, 168, y, 0);
-            fmem->tst_mem->delay = 0xC0;
-            fmem->tst_mem->frame = 0;
+            fmem.tst_mem->delay = 0xC0;
+            fmem.tst_mem->frame = 0;
             callback1_set(trainerschool_test_question_done);
         }else{
             fanfare(271);
             play_sound(12);
-            fmem->tst_mem->answer_oam = oam_new_forward_search(
+            fmem.tst_mem->answer_oam = oam_new_forward_search(
                 &trainerschool_test_oam_template_wrong, 168, y, 0);
-            fmem->tst_mem->delay = 0xC0;
-            fmem->tst_mem->frame = 0;
+            fmem.tst_mem->delay = 0xC0;
+            fmem.tst_mem->frame = 0;
             callback1_set(trainerschool_test_question_done);
         }
     }
@@ -307,8 +307,8 @@ void trainerschool_test_init_components(){
 void trainerschool_test_init(){
     generic_callback1();
     *var_access(TRAINERSCHOOL_CORRECT_ANSWERS) = 0;
-    fmem->tst_mem = (trainerschool_test_memory*) malloc_and_clear(sizeof(trainerschool_test_memory));
-    fmem->tst_mem->current_question = 0;
+    fmem.tst_mem = (trainerschool_test_memory*) malloc_and_clear(sizeof(trainerschool_test_memory));
+    fmem.tst_mem->current_question = 0;
     fadescreen_all(1, 0);
     callback1_set(trainerschool_test_init_components);
     setflag(MAP_BGN_AUTO_ALIGN_OFF);

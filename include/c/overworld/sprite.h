@@ -35,11 +35,11 @@ extern u8 ow_formation_32_32[];
 extern u8 ow_formation_64_64[];
 extern u8 ow_formation_16_16[];
 
-extern u8 ow_final_oam_16_32[];
-extern u8 ow_final_oam_128_64[];
-extern u8 ow_final_oam_64_64[];
-extern u8 ow_final_oam_32_32[];
-extern u8 ow_final_oam_16_16[];
+extern sprite ow_final_oam_16_32;
+extern sprite ow_final_oam_128_64;
+extern sprite ow_final_oam_64_64;
+extern sprite ow_final_oam_32_32;
+extern sprite ow_final_oam_16_16;
 
 
 typedef struct overworld_sprite {

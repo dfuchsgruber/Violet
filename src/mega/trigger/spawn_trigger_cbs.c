@@ -17,7 +17,7 @@ void trigger_cb(u8 self) {
 
 
     //first we check if we are at battle cb 1
-    if (super->callbacks[1] == battle_callback1) {
+    if (super.callbacks[1] == battle_callback1) {
 
         //proceed in animation
         if (!big_callbacks[self].params[0]) {
@@ -36,7 +36,7 @@ void trigger_cb(u8 self) {
 
         //we execute our fading stuff
         int i;
-        for (i = 0; i < *battler_cnt; i++) {
+        for (i = 0; i < battler_cnt; i++) {
             if (battlers[i].trigger && !battler_is_opponent((u8) i)) {
                 //we find the palette 
                 u8 oam_id = battler_oams[i];

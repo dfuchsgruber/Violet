@@ -23,9 +23,9 @@ typedef struct {
 } pal_resource;
 
 
-extern color pal_restore8;
-extern color pals;
-extern color pal_tmp;
+extern color pal_restore[];
+extern color pals[];
+extern color pal_tmp[];
 
 
 /**

@@ -32,7 +32,7 @@ extern battle_state_t battle_state;
 extern u8 battle_trainer_kind;
 extern u8 battle_result;
 extern u16 battle_trainer_id;
-extern u8 battle_stat_change;
+extern u8 battle_stat_change[];
 
 /**
  * Checks if the battle is a double battle

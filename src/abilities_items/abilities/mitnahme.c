@@ -49,8 +49,5 @@ void bsc_cmd_mitnahme(){
             pokemon_set_attribute(&player_pokemon[i], ATTRIBUTE_ITEM, mitnahme_pick_item(&player_pokemon[i]));
         }
     }
-    
-    
-    u8 **bsc_offset = (u8**)0x02023D74;
-    (*bsc_offset)++;
+    bsc_offset++;
 }

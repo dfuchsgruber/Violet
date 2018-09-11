@@ -37,7 +37,8 @@ typedef struct {
 bool (*pokemon_party_menu_continuation)();
 
 extern pokemon_party_menu_state_t pokemon_party_menu_state;
-extern u8 pokemon_party_menu_current_index = 0x0203B0A9;
+extern u8 pokemon_party_menu_current_index;
+extern u16 item_activated;
 
 /**
  * Fades the party menu back to overworld and executes the field move callback. Used as continuation

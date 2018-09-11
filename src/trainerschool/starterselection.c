@@ -222,7 +222,7 @@ void trainerschool_selection_idle(){
     if(!fading_is_active()){
         if(TSS_MEM->selected){
             //One pokeball is already opened and you selected a starter, only handle A;B for confirmation or abort
-            if(super->keys_new.keys.B){
+            if(super.keys_new.keys.B){
                 //Return to normal selection
                 play_sound(5);
                 tbox_flush_set(0, 0);
@@ -231,7 +231,7 @@ void trainerschool_selection_idle(){
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].anim_number = 0;
                 oam_gfx_anim_init(&oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]], 0);
                 TSS_MEM->selected = false;
-            }else if(super->keys_new.keys.A){
+            }else if(super.keys_new.keys.A){
                 *var_access(STARTER_SELECTED) = TSS_MEM->cursor;
                 *var_access(0x800D) = trainerschool_selection_species[TSS_MEM->cursor];
                 play_sound(5);
@@ -240,7 +240,7 @@ void trainerschool_selection_idle(){
             }
         }else{
             //Handle A;direction keys for opening and switching
-            if(super->keys_new.keys.right){
+            if(super.keys_new.keys.right){
                 play_sound(5);
                 trainerschool_selection_delete_species_text();
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 0;
@@ -249,7 +249,7 @@ void trainerschool_selection_idle(){
                 trainerschool_selection_show_species_text();
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 1;
                 
-            }else if(super->keys_new.keys.left){
+            }else if(super.keys_new.keys.left){
                 play_sound(5);
                 trainerschool_selection_delete_species_text();
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 0;
@@ -257,7 +257,7 @@ void trainerschool_selection_idle(){
                 if(TSS_MEM->cursor == 0xFF) TSS_MEM->cursor = 2;
                 trainerschool_selection_show_species_text();
                 oams[TSS_MEM->pokeball_oams[TSS_MEM->cursor]].private[2] = 1;
-            }else if(super->keys_new.keys.A){
+            }else if(super.keys_new.keys.A){
                 trainerschool_selection_select();
             }
         }

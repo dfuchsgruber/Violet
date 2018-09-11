@@ -87,7 +87,7 @@ void dungeon2_forest_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation
 
 
 void dungeon2_set_encounter_forest() {
-  dungeon_generator2 *dg2 = &(cmem->dg2);
+  dungeon_generator2 *dg2 = &(cmem.dg2);
   dungeon2_forest_init_state(dg2);
   pokemon_clear_opponent_party();
 
@@ -119,31 +119,31 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
 
   *var_access(DUNGEON_OVERWORLD_SPECIES) = super_rare_pokemon[0];
 
-  dprintf("Wild data grass %d\n", fmem->dwild_data_grass);
-  fmem->dwild_pokemon.grass = &(fmem->dwild_habitat_grass);
-  fmem->dwild_pokemon.water = NULL;
-  fmem->dwild_pokemon.other = NULL;
-  fmem->dwild_pokemon.rod = NULL;
-  fmem->dwild_habitat_grass.frequency = DTYPE_FOREST_WILD_POKEMON_FREQUENCY;
-  fmem->dwild_habitat_grass.data = fmem->dwild_data_grass;
+  dprintf("Wild data grass %d\n", fmem.dwild_data_grass);
+  fmem.dwild_pokemon.grass = &(fmem.dwild_habitat_grass);
+  fmem.dwild_pokemon.water = NULL;
+  fmem.dwild_pokemon.other = NULL;
+  fmem.dwild_pokemon.rod = NULL;
+  fmem.dwild_habitat_grass.frequency = DTYPE_FOREST_WILD_POKEMON_FREQUENCY;
+  fmem.dwild_habitat_grass.data = fmem.dwild_data_grass;
 
   // Each of the common pokemon has a 20% probability
-  fmem->dwild_data_grass[0].species = common_pokemon[0];
-  fmem->dwild_data_grass[1].species = common_pokemon[1];
-  fmem->dwild_data_grass[2].species = common_pokemon[2];
-  fmem->dwild_data_grass[3].species = common_pokemon[2];
-  fmem->dwild_data_grass[4].species = common_pokemon[3];
-  fmem->dwild_data_grass[5].species = common_pokemon[3];
+  fmem.dwild_data_grass[0].species = common_pokemon[0];
+  fmem.dwild_data_grass[1].species = common_pokemon[1];
+  fmem.dwild_data_grass[2].species = common_pokemon[2];
+  fmem.dwild_data_grass[3].species = common_pokemon[2];
+  fmem.dwild_data_grass[4].species = common_pokemon[3];
+  fmem.dwild_data_grass[5].species = common_pokemon[3];
 
   // The first rare pokemon has a 14% probability
-  fmem->dwild_data_grass[6].species = rare_pokemon[0];
-  fmem->dwild_data_grass[7].species = rare_pokemon[0];
-  fmem->dwild_data_grass[8].species = rare_pokemon[0];
+  fmem.dwild_data_grass[6].species = rare_pokemon[0];
+  fmem.dwild_data_grass[7].species = rare_pokemon[0];
+  fmem.dwild_data_grass[8].species = rare_pokemon[0];
 
   // The other rare pokemon has a 6% probability
-  fmem->dwild_data_grass[9].species = rare_pokemon[1];
-  fmem->dwild_data_grass[10].species = rare_pokemon[1];
-  fmem->dwild_data_grass[11].species = rare_pokemon[1];
+  fmem.dwild_data_grass[9].species = rare_pokemon[1];
+  fmem.dwild_data_grass[10].species = rare_pokemon[1];
+  fmem.dwild_data_grass[11].species = rare_pokemon[1];
 
   u8 mean = 0;
   u8 std_deviation = 0;
@@ -154,8 +154,8 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
   for(int i = 0; i < 12; i++) {
     dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,
         (i < 6) ? mean : (u8)(mean + std_deviation), std_deviation, dg2);
-    fmem->dwild_data_grass[i].level_min = level_min;
-    fmem->dwild_data_grass[i].level_max = level_max;
+    fmem.dwild_data_grass[i].level_min = level_min;
+    fmem.dwild_data_grass[i].level_max = level_max;
   }
 }
 

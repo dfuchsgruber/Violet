@@ -52,8 +52,8 @@ typedef struct pokemon {
 } pokemon;
 
 
-extern pokemon player_pokemon;
-extern pokemon opponent_pokemon;
+extern pokemon player_pokemon[];
+extern pokemon opponent_pokemon[];
 
 /**
  * Gets the attribute of a virtual pokemon

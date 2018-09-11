@@ -19,7 +19,7 @@
 #include "overworld/map_control.h"
 
 void pokemon_party_menu_opt_build(pokemon *base, u8 index) {
-    pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state->opt_state;
+    pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state.opt_state;
     opt_state->opt_cnt = 0;
     pokemon_party_menu_opt_add(opt_state->opts, &opt_state->opt_cnt, 0); //Adding summary
     //adding field moves
@@ -51,7 +51,7 @@ void pokemon_party_menu_opt_build(pokemon *base, u8 index) {
 u16 flags[] = {0x820, 0x821, 0x822, 0x823, 0x824, 0x825, 0x826};
 
 void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
-  pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state->opt_state;
+  pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state.opt_state;
     int index = opt_state->opts[pokemon_party_menu_opt_get_current()] - 0x12; //0x12 is outdoor base
     play_sound(0x5);
     if (field_move_initalizers[index].init_func) {
@@ -79,28 +79,28 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                         case 11:
                         default:
                             //Return to overworld
-                            pokemon_party_menu_state->callback = map_reload;
+                            pokemon_party_menu_state.callback = map_reload;
                             field_move_load_buffers(&player_pokemon[pokemon_party_menu_opt_get_current()], (u8) index);
                             break;
                         case 2:
                             //Fly
-                            pokemon_party_menu_state->callback = field_move_fly_init;
+                            pokemon_party_menu_state.callback = field_move_fly_init;
                             break;
                         case 7:
                             //Teleport 
                             map_load_namespace(buffer0,
-                            		get_mapheader((u8) (*save1)->healingplace.bank,
-                            				(u8) (*save1)->healingplace.map)->name_bank);
+                            		get_mapheader((u8) save1->healingplace.bank,
+                            				(u8) save1->healingplace.map)->name_bank);
                             string_decrypt(strbuf, (u8*) 0x084175B5);
                             pokemon_party_menu_print_question(callback_self);
-                            *((u16*) ((int) (pokemon_party_menu_state->opt_state) + 0x218)) = (u8) index;
+                            *((u16*) ((int) (pokemon_party_menu_state.opt_state) + 0x218)) = (u8) index;
                             return;
                         case 8:
                             //Dig
-                            map_load_namespace(buffer0, get_mapheader((u8) (*save1)->last_outdoor_bank, (u8) (*save1)->last_outdoor_map)->name_bank);
+                            map_load_namespace(buffer0, get_mapheader((u8) save1->last_outdoor_bank, (u8) save1->last_outdoor_map)->name_bank);
                             string_decrypt(strbuf, (u8*) 0x0841758A);
                             pokemon_party_menu_print_question(callback_self);
-                            *((u16*) ((int) (pokemon_party_menu_state->opt_state) + 0x218)) = (u8) index;
+                            *((u16*) ((int) (pokemon_party_menu_state.opt_state) + 0x218)) = (u8) index;
                             return;
                         case 9:
                         case 10:

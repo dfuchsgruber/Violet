@@ -52,8 +52,8 @@ bool trainerschool_wildbattle_initialize_secondary_starter() {
 		// Spawn the encounter with the seed algorithm
 		// Initialize the seed with the TID
 		int *tid_ptr = malloc(sizeof(int));
-		*tid_ptr = (*save2)->tid_0 | ((*save2)->tid_1 << 8) | ((*save2)->tid_2<< 16) |
-				((*save2)->tid_3 << 24);
+		*tid_ptr = save2->tid_0 | (save2->tid_1 << 8) | (save2->tid_2<< 16) |
+				(save2->tid_3 << 24);
 		gp_stack_push((int)tid_ptr);
 		// Determine the pid (apart from shinyness)
 		pid_t pid = {(u32)(trainerschool_wildbattle_secondary_starter_feature_generator() |

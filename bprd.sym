@@ -344,3 +344,4 @@ super = 0x03003040;
 tboxes = 0x020204B4;
 strbuf = 0x02021D18;
 buffer0 = 0x02021CD0;
+item_activated = 0x0203AD30;

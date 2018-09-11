@@ -16,9 +16,9 @@ typedef struct {
 	// TODO (research the state)
 } overworld_script_state_t;
 
-overworld_script_state_t *overworld_script_state;
+extern overworld_script_state_t overworld_script_state;
 
-u8 **overworld_script_virtual_ptr;
+extern u8 *overworld_script_virtual_ptr;
 
 /**
  * Script command to initialize a mart

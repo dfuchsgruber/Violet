@@ -13,18 +13,18 @@ int attacker_modify_satk(int satk){
     int weather_negating_ability_present = ability_execute(0x13, 0,
             WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
             0);
-    battler *attacker = &battlers[*attacking_battler];
+    battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case SOLARKRAFT:
-            if((*battle_weather & BATTLE_WEATHER_SUN) &&
+            if((battle_weather & BATTLE_WEATHER_SUN) &&
                     !weather_negating_ability_present) return satk + (satk / 2);
             break;
         case REGENMUT:
-            if((*battle_weather & BATTLE_WEATHER_RAIN) &&
+            if((battle_weather & BATTLE_WEATHER_RAIN) &&
                     !weather_negating_ability_present) return satk + (satk / 2);
             break;
         case KAELTEWAHN:
-            if((*battle_weather & BATTLE_WEATHER_HAIL) &&
+            if((battle_weather & BATTLE_WEATHER_HAIL) &&
                     !weather_negating_ability_present) return satk + (satk / 2);
             break;
         case UNGEBROCHEN:
@@ -44,10 +44,10 @@ int attacker_modify_atk(int atk){
     int weather_negating_ability_present = ability_execute(0x13, 0,
             WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
             0);
-    battler *attacker = &battlers[*attacking_battler];
+    battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case SANDHERZ:
-            if((*battle_weather & BATTLE_WEATHER_SUN) &&
+            if((battle_weather & BATTLE_WEATHER_SUN) &&
                     !weather_negating_ability_present) return atk + (atk / 2);
             break;
         case UNGEBROCHEN:
@@ -63,7 +63,7 @@ int attacker_modify_atk(int atk){
 }
 
 int defender_modify_def(int def){
-    battler *defender = &battlers[*defending_battler];
+    battler *defender = &battlers[defending_battler];
     switch(defender->item){
         case ITEM_EVOLITH:{
             bool defender_can_evolve = false;
@@ -84,7 +84,7 @@ int defender_modify_def(int def){
 }
 
 int defender_modify_sdef(int sdef){
-    battler *defender = &battlers[*defending_battler];
+    battler *defender = &battlers[defending_battler];
     switch(defender->item){
         case ITEM_EVOLITH:{
             bool defender_can_evolve = false;

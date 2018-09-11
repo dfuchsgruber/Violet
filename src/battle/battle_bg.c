@@ -203,8 +203,8 @@ u16 terrain_moves[] = {
 u16 bsc_cmd_xCC_set_terrain_based_move(){
     //Note that this is only a replacement for the first few parts of the function
     //The hook will redirect to a continuation of bsc_cmd_xCC of the vanilla game
-    *active_attack = terrain_moves[battle_bg_get_id()];
-    return *active_attack;
+    active_attack = terrain_moves[battle_bg_get_id()];
+    return active_attack;
 }
 battle_anim_bg battle_anim_bgs[] = {
         {(void*)0x8d1c9bc, (void*)0x8d1cfb4, (void*)0x8d1cfd4}, //0x0

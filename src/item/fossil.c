@@ -30,8 +30,7 @@ u16 fossil_species[5] = {
 void fossil_print_multichoice() {
 
     // Return 1 for success and 0 for failure
-    u16 *lastresult = var_access(0x800D);
-    *lastresult = 0;
+    lastresult = 0;
     
     // Iterate through all possible fossils
     dynamic_multichoice_t choices[5];
@@ -53,7 +52,7 @@ void fossil_print_multichoice() {
         if (multichoice(0, 0, 0, false)) {
             dprintf("Halting for dchoice\n");
             overworld_script_halt();
-            *lastresult = 1;
+            lastresult = 1;
         }
     }
 }

@@ -6,8 +6,8 @@
 
 
 u8 bsc_get_byte(){
-    u8 result = **bsc_offset;
-    (*bsc_offset)++;
+    u8 result = *bsc_offset;
+    (bsc_offset)++;
     return result;
 }
 
@@ -27,8 +27,8 @@ void bsc_cmd_custom_attack_anim(){
     u8 slot_target = bsc_get_byte();
     u8 *anim = (u8*)bsc_get_word();
     dprintf("User %d, Target %d, offset %d\n", slot_user, slot_target, anim);
-    slot_user = slot_user ? *attacking_battler : *defending_battler; //read the slot
-    slot_target = slot_target ? *attacking_battler : *defending_battler; //read the slot
+    slot_user = slot_user ? attacking_battler : defending_battler; //read the slot
+    slot_target = slot_target ? attacking_battler : defending_battler; //read the slot
     call_attack_anim_by_offset(slot_user, slot_target, anim);
     
     

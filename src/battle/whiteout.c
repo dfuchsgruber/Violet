@@ -21,14 +21,14 @@ void whiteout_reset_vars(){
 
 void trainerbattle_store_possible_loss_in_lastresult(){
     trainerbattle_continuation();
-    if(*battle_trainer_kind == 9 && (*battle_result == 3 || *battle_result == 2))
-        *lastresult = 0xFF;
+    if(battle_trainer_kind == 9 && (battle_result == 3 || battle_result == 2))
+        lastresult = 0xFF;
 }
 
 
 void whiteout_setup_warp(warp_save_t *target) {
 	int healing_place_idx = map_get_flightposition(
-			(*save1)->healingplace.bank, (*save1)->healingplace.map);
+			save1->healingplace.bank, save1->healingplace.map);
 	target->bank = (u8)(healing_places[healing_place_idx - 1].bank);
 	target->map = (u8)(healing_places[healing_place_idx - 1].map);
 	target->exit = 0xFF;
