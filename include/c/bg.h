@@ -149,7 +149,7 @@ extern "C" {
     /**
      * General purpose free memory ?
      */
-    void *gp_tmp_buf = (void*)0x0201C000;
+    extern u8 gp_tmp_buf[];
 
 #ifdef	__cplusplus
 }

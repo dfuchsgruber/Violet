@@ -136,7 +136,7 @@ oam_template pokedex_habitat_cursor_template = {
     &pokedex_habitat_cursor_sprite,
     pokedex_habitat_cursor_gfx_anim_table,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -144,9 +144,9 @@ oam_template pokedex_habitat_head_template = {
     0xA015,
     0xA015,
     &pokedex_habitat_head_sprite,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -156,7 +156,7 @@ oam_template pokedex_habitat_rarity_template = {
     &pokedex_habitat_cursor_sprite,
     pokedex_habitat_rarity_gfx_anim_table,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -166,7 +166,7 @@ oam_template pokedex_habitat_rod_template = {
     &pokedex_habitat_cursor_sprite,
     pokedex_habitat_rarity_gfx_anim_table,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 

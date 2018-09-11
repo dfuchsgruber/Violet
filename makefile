@@ -242,6 +242,7 @@ $(CONSTANTSH): $(CONSTANTS)
 	$(PYMAPCONSTEX) $(MAPPROJ)		
 	
 soundfont: $(BLDROM)
+	$(shell mkdir -p $(BLDPATH)/soundfont)
 	$(foreach vcg,000 001 002, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 

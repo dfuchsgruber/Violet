@@ -37,6 +37,12 @@ void play_sound(u16 sound_id);
 void playsong1(u16 song, u8 feature);
 
 /**
+ * Plays a song of possible ?
+ * @param song the song id to play
+ */
+void playsong2(u16 song);
+
+/**
  * Plays a song on fanfare player
  * @param song_id id of the song to play
  */

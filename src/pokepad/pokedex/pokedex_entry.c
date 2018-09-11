@@ -66,9 +66,9 @@ oam_template pokedex_form_template = {
     0xA00C,
     0xA00C,
     &pokedex_form_sprite,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -76,9 +76,9 @@ oam_template pokedex_pokepic_template = {
     0xA00A,
     0xA00A,
     &pokedex_pokepic_sprite,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 

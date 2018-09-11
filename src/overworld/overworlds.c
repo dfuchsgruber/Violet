@@ -24,9 +24,9 @@ static graphic overworld_sprite_deoxys_normal_sprites[] = {
 overworld_sprite ow_deoxys_normal = {
 	0xffff, 0x1103, 0x11ff, 0x200,
 	32, 32, 0x12, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_deoxys_normal_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_32_32, ow_formation_32_32,
+	ow_anim_standard_npc, overworld_sprite_deoxys_normal_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_registeel_sprites[] = {
@@ -44,9 +44,9 @@ static graphic overworld_sprite_registeel_sprites[] = {
 overworld_sprite ow_registeel = {
 	0xffff, 0x1104, 0x11ff, 0x200,
 	32, 32, 0x13, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_registeel_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_32_32, ow_formation_32_32,
+	ow_anim_standard_npc, overworld_sprite_registeel_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_regice_sprites[] = {
@@ -64,9 +64,9 @@ static graphic overworld_sprite_regice_sprites[] = {
 overworld_sprite ow_regice = {
 	0xffff, 0x1104, 0x11ff, 0x200,
 	32, 32, 0x13, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_regice_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_32_32, ow_formation_32_32,
+	ow_anim_standard_npc, overworld_sprite_regice_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_regirock_sprites[] = {
@@ -84,9 +84,9 @@ static graphic overworld_sprite_regirock_sprites[] = {
 overworld_sprite ow_regirock = {
 	0xffff, 0x1106, 0x11ff, 0x200,
 	32, 32, 0x15, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_regirock_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_32_32, ow_formation_32_32,
+	ow_anim_standard_npc, overworld_sprite_regirock_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_voltilamm_sprites[] = {
@@ -104,9 +104,9 @@ static graphic overworld_sprite_voltilamm_sprites[] = {
 overworld_sprite ow_voltilamm = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0x12, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_voltilamm_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_voltilamm_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_staralili_sprites[] = {
@@ -124,9 +124,9 @@ static graphic overworld_sprite_staralili_sprites[] = {
 overworld_sprite ow_staralili = {
 	0xffff, 0x1106, 0x11ff, 0x80,
 	16, 16, 0x15, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_16, OW_FORMATION_16_16,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_staralili_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_16, ow_formation_16_16,
+	ow_anim_standard_npc, overworld_sprite_staralili_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_larissa_sprites[] = {
@@ -144,9 +144,9 @@ static graphic overworld_sprite_larissa_sprites[] = {
 overworld_sprite ow_larissa = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0x15, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_larissa_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_larissa_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_elise_sprites[] = {
@@ -164,9 +164,9 @@ static graphic overworld_sprite_elise_sprites[] = {
 overworld_sprite ow_elise = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0x12, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_elise_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_elise_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_faun_young_sprites[] = {
@@ -184,9 +184,9 @@ static graphic overworld_sprite_faun_young_sprites[] = {
 overworld_sprite ow_faun_young = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0x14, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_faun_young_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_faun_young_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_egg_sprites[] = {
@@ -196,9 +196,9 @@ static graphic overworld_sprite_egg_sprites[] = {
 overworld_sprite ow_egg = {
 	0xffff, 0x1105, 0x11ff, 0x80,
 	16, 16, 0x44, 0x0, 0x0, 0x0,
-	OW_FINAL_OAM_16_16, OW_FORMATION_16_16,
-	OW_ANIM_NONE, overworld_sprite_egg_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_16, ow_formation_16_16,
+	ow_anim_none, overworld_sprite_egg_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_rin_sprites[] = {
@@ -216,9 +216,9 @@ static graphic overworld_sprite_rin_sprites[] = {
 overworld_sprite ow_rin = {
 	0xffff, 0x110b, 0x11ff, 0x100,
 	16, 32, 0x1a, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_rin_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_rin_sprites, 
+	oam_rotscale_anim_table_null
 };
 static graphic overworld_sprite_blaise_sprites[] = {
 	{&gfx_ow_blaise_0Tiles, 0x100, 0},
@@ -235,9 +235,9 @@ static graphic overworld_sprite_blaise_sprites[] = {
 overworld_sprite ow_blaise = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0x12, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_blaise_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_blaise_sprites, 
+	oam_rotscale_anim_table_null
 };
 static graphic overworld_sprite_mia_sprites[] = {
 	{&gfx_ow_mia_0Tiles, 0x100, 0},
@@ -254,9 +254,9 @@ static graphic overworld_sprite_mia_sprites[] = {
 overworld_sprite ow_mia = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0x14, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_mia_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_mia_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_lester_sprites[] = {
@@ -274,9 +274,9 @@ static graphic overworld_sprite_lester_sprites[] = {
 overworld_sprite ow_lester = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0x15, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_lester_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_lester_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_faun_sprites[] = {
@@ -294,9 +294,9 @@ static graphic overworld_sprite_faun_sprites[] = {
 overworld_sprite ow_faun = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0x15, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_faun_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_faun_sprites, 
+	oam_rotscale_anim_table_null
 };
 static graphic overworld_sprite_revolutionary_sprites[] = {
 	{&gfx_ow_revolutionary_0Tiles, 0x100, 0},
@@ -313,9 +313,9 @@ static graphic overworld_sprite_revolutionary_sprites[] = {
 overworld_sprite ow_revolutionary = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0x14, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_revolutionary_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_revolutionary_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_rival_sprites[] = {
@@ -333,9 +333,9 @@ static graphic overworld_sprite_rival_sprites[] = {
 overworld_sprite ow_rival = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0x12, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_rival_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_rival_sprites, 
+	oam_rotscale_anim_table_null
 };
 static graphic overworld_sprite_tann_sprites[] = {
 	{&gfx_ow_tann_0Tiles, 0x100, 0},
@@ -352,9 +352,9 @@ static graphic overworld_sprite_tann_sprites[] = {
 overworld_sprite ow_tann = {
 	0xffff, 0x1106, 0x11ff, 0x100,
 	16, 32, 0x15, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_tann_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_tann_sprites, 
+	oam_rotscale_anim_table_null
 };
 static graphic overworld_sprite_felix_sprites[] = {
 	{&gfx_ow_felix_0Tiles, 0x100, 0},
@@ -371,9 +371,9 @@ static graphic overworld_sprite_felix_sprites[] = {
 overworld_sprite ow_felix = {
 	0xffff, 0x1103, 0x11ff, 0x100,
 	16, 32, 0x12, 0x1, 0x0, 0x9,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_felix_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_felix_sprites, 
+	oam_rotscale_anim_table_null
 };
 static graphic overworld_sprite_albus_sprites[] = {
 	{&gfx_ow_albus_0Tiles, 0x100, 0},
@@ -390,9 +390,9 @@ static graphic overworld_sprite_albus_sprites[] = {
 overworld_sprite ow_albus = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0x14, 0x1, 0x0, 0x8,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_albus_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_albus_sprites, 
+	oam_rotscale_anim_table_null
 };
 static graphic overworld_sprite_violet_grunt_f_sprites[] = {
 	{&gfx_ow_violet_grunt_f_0Tiles, 0x100, 0},
@@ -409,9 +409,9 @@ static graphic overworld_sprite_violet_grunt_f_sprites[] = {
 overworld_sprite ow_violet_grunt_f = {
 	0xffff, 0x110b, 0x11ff, 0x100,
 	16, 32, 0x1a, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_violet_grunt_f_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_violet_grunt_f_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_violet_grunt_m_sprites[] = {
@@ -429,9 +429,9 @@ static graphic overworld_sprite_violet_grunt_m_sprites[] = {
 overworld_sprite ow_violet_grunt_m = {
 	0xffff, 0x110b, 0x11ff, 0x100,
 	16, 32, 0x1a, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_violet_grunt_m_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_violet_grunt_m_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_primus_sprites[] = {
@@ -449,9 +449,9 @@ static graphic overworld_sprite_primus_sprites[] = {
 overworld_sprite ow_primus = {
 	0xffff, 0x1105, 0x11ff, 0x100,
 	16, 32, 0x14, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_STANDARD_NPC, overworld_sprite_primus_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_primus_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_hiro_call_bike_sprites[] = {
@@ -466,9 +466,9 @@ static graphic overworld_sprite_hiro_call_bike_sprites[] = {
 overworld_sprite ow_hiro_call_bike = {
 	0xffff, 0x1109, 0x1102, 0x200,
 	32, 32, 0x18, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-	OW_ANIM_HIRO_CALL_BIKE, overworld_sprite_hiro_call_bike_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_32_32, ow_formation_32_32,
+	ow_anim_hiro_bike, overworld_sprite_hiro_call_bike_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_hiro_call2_sprites[] = {
@@ -486,9 +486,9 @@ static graphic overworld_sprite_hiro_call2_sprites[] = {
 overworld_sprite ow_hiro_call2 = {
 	0xffff, 0x1100, 0x1102, 0x100,
 	16, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_HIRO_CALL2, overworld_sprite_hiro_call2_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_hiro_call2, overworld_sprite_hiro_call2_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_hiro_rod_sprites[] = {
@@ -509,9 +509,9 @@ static graphic overworld_sprite_hiro_rod_sprites[] = {
 overworld_sprite ow_hiro_rod = {
 	0xffff, 0x1100, 0x1102, 0x200,
 	32, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-	OW_ANIM_HIRO_ROD, overworld_sprite_hiro_rod_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_32_32, ow_formation_32_32,
+	ow_anim_hiro_rod, overworld_sprite_hiro_rod_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 
@@ -533,9 +533,9 @@ static graphic overworld_sprite_hiroine_rod_sprites[] = {
 overworld_sprite ow_hiroine_rod = {
 	0xffff, 0x1100, 0x1102, 0x200,
 	32, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-	OW_ANIM_HIRO_ROD, overworld_sprite_hiroine_rod_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_32_32, ow_formation_32_32,
+	ow_anim_hiro_rod, overworld_sprite_hiroine_rod_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 
@@ -554,9 +554,9 @@ static graphic overworld_sprite_hiro_call_sprites[] = {
 overworld_sprite ow_hiro_call = {
 	0xffff, 0x1100, 0x1102, 0x100,
 	16, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_HIRO_CALL, overworld_sprite_hiro_call_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_hiro_call, overworld_sprite_hiro_call_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_hiroine_call_sprites[] = {
@@ -574,9 +574,9 @@ static graphic overworld_sprite_hiroine_call_sprites[] = {
 overworld_sprite ow_hiroine_call = {
 	0xffff, 0x1100, 0x1102, 0x100,
 	16, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_HIRO_CALL, overworld_sprite_hiroine_call_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_hiro_call, overworld_sprite_hiroine_call_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_hiro_sit_sprites[] = {
@@ -597,9 +597,9 @@ static graphic overworld_sprite_hiro_sit_sprites[] = {
 overworld_sprite ow_hiro_sit = {
 	0xffff, 0x1100, 0x11ff, 0x100,
 	16, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_HIRO_SIT, overworld_sprite_hiro_sit_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_hiro_sit, overworld_sprite_hiro_sit_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 
@@ -622,9 +622,9 @@ static graphic overworld_sprite_hiroine_sit_sprites[] = {
 overworld_sprite ow_hiroine_sit = {
 	0xffff, 0x1110, 0x11ff, 0x100,
 	16, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_HIRO_SIT, overworld_sprite_hiroine_sit_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_hiro_sit, overworld_sprite_hiroine_sit_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_hiro_sprites[] = {
@@ -653,9 +653,9 @@ static graphic overworld_sprite_hiro_sprites[] = {
 overworld_sprite ow_hiro = {
 	0xffff, 0x1100, 0x1102, 0x200,
 	16, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_HIRO, overworld_sprite_hiro_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_hiro, overworld_sprite_hiro_sprites, 
+	oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_mskate_sprites[] = {
@@ -673,9 +673,9 @@ static graphic overworld_sprite_mskate_sprites[] = {
 overworld_sprite ow_mskate = {
     0xFFFF, 0x1100 + 0, 0x1102, 0x200,
     32, 32, 0x10, 0x1, 0x0, 0x0,
-    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_mskate_sprites,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_32_32, ow_formation_32_32,
+    ow_anim_standard_npc, overworld_sprite_mskate_sprites,
+    oam_rotscale_anim_table_null
 };
 
 
@@ -694,9 +694,9 @@ static graphic overworld_sprite_fskate_sprites[] = {
 overworld_sprite ow_fskate = {
     0xFFFF, 0x1100 + 0, 0x1102, 0x200,
     32, 32, 0x10, 0x1, 0x0, 0x0,
-    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_fskate_sprites,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_32_32, ow_formation_32_32,
+    ow_anim_standard_npc, overworld_sprite_fskate_sprites,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_igva_sprites[] = {
@@ -714,9 +714,9 @@ static graphic overworld_sprite_igva_sprites[] = {
 overworld_sprite ow_igva = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_igva_sprites,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_igva_sprites,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_botogel_sprites[] = {
@@ -734,9 +734,9 @@ static graphic overworld_sprite_botogel_sprites[] = {
 overworld_sprite ow_botogel = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_botogel_sprites,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_botogel_sprites,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_bbship_sprites[] = {
@@ -754,9 +754,9 @@ static graphic overworld_sprite_bbship_sprites[] = {
 overworld_sprite ow_bbship = {
     0xFFFF, 0x1100 + 0x15, 0x11FF, 0x1000,
     128, 64, 0x1A, 0x0, 0x0, 0x0,
-    OW_FINAL_OAM_128_64, OW_FORMATION_128_64,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_bbship_sprites,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_128_64, ow_formation_128_64,
+    ow_anim_standard_npc, overworld_sprite_bbship_sprites,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_mpirate_sprites [] = {
@@ -774,9 +774,9 @@ static graphic overworld_sprite_mpirate_sprites [] = {
 overworld_sprite ow_mpirate = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_mpirate_sprites,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_mpirate_sprites,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_animal [] = {
@@ -794,9 +794,9 @@ static graphic overworld_sprite_shape_animal [] = {
 overworld_sprite ow_shape_animal = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_animal,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_animal,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_human [] = {
@@ -814,9 +814,9 @@ static graphic overworld_sprite_shape_human [] = {
 overworld_sprite ow_shape_human = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_human,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_human,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_tail [] = {
@@ -834,9 +834,9 @@ static graphic overworld_sprite_shape_tail [] = {
 overworld_sprite ow_shape_tail = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_tail,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_tail,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_snake [] = {
@@ -854,9 +854,9 @@ static graphic overworld_sprite_shape_snake [] = {
 overworld_sprite ow_shape_snake = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_snake,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_snake,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_winsect [] = {
@@ -874,9 +874,9 @@ static graphic overworld_sprite_shape_winsect [] = {
 overworld_sprite ow_shape_winsect = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_winsect,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_winsect,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_winged [] = {
@@ -894,9 +894,9 @@ static graphic overworld_sprite_shape_winged [] = {
 overworld_sprite ow_shape_winged = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_winged,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_winged,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_insect [] = {
@@ -914,9 +914,9 @@ static graphic overworld_sprite_shape_insect [] = {
 overworld_sprite ow_shape_insect = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_insect,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_insect,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_head [] = {
@@ -934,9 +934,9 @@ static graphic overworld_sprite_shape_head [] = {
 overworld_sprite ow_shape_head = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_head,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_head,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_arms [] = {
@@ -954,9 +954,9 @@ static graphic overworld_sprite_shape_arms [] = {
 overworld_sprite ow_shape_arms = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_arms,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_arms,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_legs [] = {
@@ -974,9 +974,9 @@ static graphic overworld_sprite_shape_legs [] = {
 overworld_sprite ow_shape_legs = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_legs,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_legs,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_tentacles [] = {
@@ -994,9 +994,9 @@ static graphic overworld_sprite_shape_tentacles [] = {
 overworld_sprite ow_shape_tentacles = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_tentacles,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_tentacles,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_fish [] = {
@@ -1014,9 +1014,9 @@ static graphic overworld_sprite_shape_fish [] = {
 overworld_sprite ow_shape_fish = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_fish,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_fish,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_ball [] = {
@@ -1034,9 +1034,9 @@ static graphic overworld_sprite_shape_ball [] = {
 overworld_sprite ow_shape_ball = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_ball,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_ball,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_shape_multi [] = {
@@ -1054,9 +1054,9 @@ static graphic overworld_sprite_shape_multi [] = {
 overworld_sprite ow_shape_multi = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_shape_multi,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_shape_multi,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_mistral [] = {
@@ -1074,9 +1074,9 @@ static graphic overworld_sprite_mistral [] = {
 overworld_sprite ow_mistral = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_mistral,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_mistral,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_manus [] = {
@@ -1094,9 +1094,9 @@ static graphic overworld_sprite_manus [] = {
 overworld_sprite ow_manus = {
     0xFFFF, 0x1100 + 4, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_manus,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_manus,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_altaria [] = {
@@ -1114,9 +1114,9 @@ static graphic overworld_sprite_altaria [] = {
 overworld_sprite ow_altaria = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x200,
     32, 32, 0x15, 0x1, 0x0, 0x0,
-    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-    OW_ANIM_HO_OH, overworld_sprite_altaria,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_32_32, ow_formation_32_32,
+    ow_anim_ho_oh, overworld_sprite_altaria,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_cloudrider_fem [] = {
@@ -1134,9 +1134,9 @@ static graphic overworld_sprite_cloudrider_fem [] = {
 overworld_sprite ow_cloudrider_fem = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x200,
     32, 32, 0x15, 0x1, 0x0, 0x0,
-    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_cloudrider_fem,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_32_32, ow_formation_32_32,
+    ow_anim_standard_npc, overworld_sprite_cloudrider_fem,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_cloudrider_male [] = {
@@ -1154,9 +1154,9 @@ static graphic overworld_sprite_cloudrider_male [] = {
 overworld_sprite ow_cloudrider_male = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x200,
     32, 32, 0x15, 0x1, 0x0, 0x0,
-    OW_FINAL_OAM_32_32, OW_FORMATION_32_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_cloudrider_male,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_32_32, ow_formation_32_32,
+    ow_anim_standard_npc, overworld_sprite_cloudrider_male,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_moltres [] = {
@@ -1174,9 +1174,9 @@ static graphic overworld_sprite_moltres [] = {
 overworld_sprite ow_moltres = {
     0xFFFF, 0x1100 + 3, 0x11FF, 0x800,
     64, 64, 0x12, 0x1, 0x0, 0,
-    OW_FINAL_OAM_64_64, OW_FORMATION_64_64,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_moltres,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_64_64, ow_formation_64_64,
+    ow_anim_standard_npc, overworld_sprite_moltres,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprites_diserakt [] = {
@@ -1194,9 +1194,9 @@ static graphic overworld_sprites_diserakt [] = {
 overworld_sprite ow_diserakt = {
     0xFFFF, 0x1100 + 4, 0x11FF, 0x100,
     16, 32, 0x13, 0x1, 0x0, 0x0,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprites_diserakt,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprites_diserakt,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_groudon [] = {
@@ -1214,9 +1214,9 @@ static graphic overworld_sprite_groudon [] = {
 overworld_sprite ow_groudon = {
     0xFFFF, 0x1100 + 3, 0x11FF, 0x800,
     64, 64, 0x12, 0x1, 0x0, 0,
-    OW_FINAL_OAM_64_64, OW_FORMATION_64_64,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_groudon,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_64_64, ow_formation_64_64,
+    ow_anim_standard_npc, overworld_sprite_groudon,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_rubys [] = {
@@ -1234,9 +1234,9 @@ static graphic overworld_sprite_rubys [] = {
 overworld_sprite ow_rubys = {
     0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
     16, 32, 0x15, 0x1, 0x0, 0x8,
-    OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-    OW_ANIM_STANDARD_NPC, overworld_sprite_rubys,
-    OAM_ROTSCALE_ANIM_TABLE_NULL
+    ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_rubys,
+    oam_rotscale_anim_table_null
 };
 
 static graphic overworld_sprite_hiroine_sprites[] = {
@@ -1265,9 +1265,29 @@ static graphic overworld_sprite_hiroine_sprites[] = {
 overworld_sprite ow_hiroine = {
 	0xffff, 0x1110, 0x1102, 0x200,
 	16, 32, 0x10, 0x1, 0x0, 0x0,
-	OW_FINAL_OAM_16_32, OW_FORMATION_16_32,
-	OW_ANIM_HIRO, overworld_sprite_hiroine_sprites, 
-	OAM_ROTSCALE_ANIM_TABLE_NULL
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_hiro, overworld_sprite_hiroine_sprites, 
+	oam_rotscale_anim_table_null
+};
+
+static graphic overworld_sprite_mother_sprites[] = {
+	{&gfx_ow_mother_0Tiles, 0x100, 0},
+	{&gfx_ow_mother_1Tiles, 0x100, 0},
+	{&gfx_ow_mother_2Tiles, 0x100, 0},
+	{&gfx_ow_mother_3Tiles, 0x100, 0},
+	{&gfx_ow_mother_4Tiles, 0x100, 0},
+	{&gfx_ow_mother_5Tiles, 0x100, 0},
+	{&gfx_ow_mother_6Tiles, 0x100, 0},
+	{&gfx_ow_mother_7Tiles, 0x100, 0},
+	{&gfx_ow_mother_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_mother = {
+	0xffff, 0x1103, 0x11ff, 0x100,
+	16, 32, 0x12, 0x1, 0x0, 0x0,
+	ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_mother_sprites,
+	oam_rotscale_anim_table_null
 };
 
 
@@ -1369,7 +1389,7 @@ overworld_sprite *overworld_sprites[] = {
 	(overworld_sprite*) 0x83a4644,
 	&ow_igva,//(overworld_sprite*) 0x96d85f0,
 	(overworld_sprite*) 0x83a45fc,
-	(overworld_sprite*) 0x83a4fb0,
+	&ow_mother, //(overworld_sprite*) 0x83a4fb0,
 	&ow_blaise, //(overworld_sprite*) 0x83a4500,
 //90
 	&ow_rin,

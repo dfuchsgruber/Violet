@@ -70,11 +70,11 @@ u32 get_tile_hash_by_facing(u8 facing, size_t m) {
     seq[1] = (u32)(pos[1]);
     seq[2] = (u32)((*save1)->map);
     seq[3] = (u32)((*save1)->bank);
-    return tmp_hash(seq, 4, m);
+    return tmp_hash(seq, 4) % m;
 }
 
 
-u32 tmp_hash(u32 seq[], size_t size, u32 m) {
+u32 tmp_hash(u32 seq[], size_t size) {
 	// Hashing according to https://stackoverflow.com/a/27216842/7292394
 	u32 seed = cmem->tmp_hash_seed;
 
@@ -85,7 +85,7 @@ u32 tmp_hash(u32 seq[], size_t size, u32 m) {
 		u32 i = idx < size ? seq[idx] : salt[idx - size];
 		seed = (u32)(seed ^ (i + 0x9e3779b9 + (seed << 6) + (seed >> 2)));
 	}
-	return seed % m;
+	return seed;
 }
 
 
@@ -108,7 +108,7 @@ u32 dungeon_hash(int dungeon_id) {
 	u32 seq[1];
 	seq[0] = (u32)dungeon_id;
 	// Hash the dungeon_id to 0, ..., 126
-	return tmp_hash(seq, 1, 127);
+	return tmp_hash(seq, 1) % 127;
 }
 
 bool dungeon_flag_check(int dungeon_id) {

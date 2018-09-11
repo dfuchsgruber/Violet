@@ -2522,13 +2522,13 @@ bsc_strings:
 	.global str_battle_x16d
 
 	str_battle_x16d:
-		.string "STRINGó hat kein\nkampffähiges Pokémon mehr!\pSpieler verlor gegen\nSTRINGê STRINGë!SHADOWight"
+		.string "STRINGó hat kein\nkampffähiges Pokémon mehr!\pSpieler verlor gegen\nSTRINGê STRINGë!"
 
 
 	.global str_battle_x16e
 
 	str_battle_x16e:
-		.string "STRINGó gab STRING \$ PreisgeldDOTS\pDOTSDOTSDOTSDOTS\pSTRINGó fällt in Ohnmacht!SHADOWight"
+		.string "STRINGó gab STRING \$ PreisgeldDOTS\pDOTSDOTSDOTSDOTS\pSTRINGó fällt in Ohnmacht!"
 
 
 	.global str_battle_x16f

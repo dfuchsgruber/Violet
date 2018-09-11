@@ -27,7 +27,7 @@ def ai_to_str(ai):
     else: return "TRAINER_AI_STRATEGY_NONE"
 
 
-for i in range(0, 0xB3):
+for i in range(0, 0x200):
     offset = trainer_base + i * 0x28
     trainer = "{\n\t//Trainer "+hex(i)+"\n"
     structure = rom.u8(offset) & 3

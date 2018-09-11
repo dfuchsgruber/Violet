@@ -13,7 +13,7 @@
 
 void custom_memory_init() {
   int zero = 0;
-  cpuset(&zero, cmem, CPUSET_FILL | CPUSET_SIZE(sizeof(custom_memory) >> 2) | CPUSET_WORD);
+  cpuset(&zero, &cmem, CPUSET_FILL | CPUSET_SIZE(sizeof(custom_memory) >> 2) | CPUSET_WORD);
   setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
 }
 

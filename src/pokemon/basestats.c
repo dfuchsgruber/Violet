@@ -31,7 +31,7 @@ basestat basestats[POKEMON_CNT] = {
     {
         45, 49, 49, 45, 65, 65, //basestat values (hp, att, def, spe, satk, sdef)
         TYPE_GRASS, TYPE_POISON, //types
-        180, //catch rate
+        215, //catch rate
         64, //exp yield
         {0, 0, 0, 0, 1, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
         ITEM_NONE, ITEM_NONE, //common, rare item
@@ -91,7 +91,7 @@ basestat basestats[POKEMON_CNT] = {
     {
         39, 52, 43, 65, 60, 50, //basestat values (hp, att, def, spe, satk, sdef)
         TYPE_FIRE, TYPE_FIRE, //types
-        180, //catch rate
+		215, //catch rate
         65, //exp yield
         {0, 0, 0, 1, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
         ITEM_NONE, ITEM_NONE, //common, rare item
@@ -151,7 +151,7 @@ basestat basestats[POKEMON_CNT] = {
     {
         44, 48, 65, 43, 50, 64, //basestat values (hp, att, def, spe, satk, sdef)
         TYPE_WATER, TYPE_WATER, //types
-        180, //catch rate
+		215, //catch rate
         66, //exp yield
         {0, 0, 1, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
         ITEM_NONE, ITEM_NONE, //common, rare item

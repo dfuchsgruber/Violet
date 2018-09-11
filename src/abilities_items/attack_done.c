@@ -103,15 +103,15 @@ void attack_done_prepeare_life_orb(){
 }
 
 void attack_done_prepeare_lernfaehig(){
-    stat_change[0x10] = 0x14;
-    stat_change[0x11] = 0;
-    stat_change[0x17] = (u8)gp_stack_pop();
+    battle_stat_change[0x10] = 0x14;
+    battle_stat_change[0x11] = 0;
+    battle_stat_change[0x17] = (u8)gp_stack_pop();
 }
 
 void attack_done_prepeare_hochmut(){
-    stat_change[0x10] = 0xF;
-    stat_change[0x11] = 0;
-    stat_change[0x17] = (u8)gp_stack_pop();
+    battle_stat_change[0x10] = 0xF;
+    battle_stat_change[0x11] = 0;
+    battle_stat_change[0x17] = (u8)gp_stack_pop();
 }
 
 void attack_done_prepeare_lebensraeuber(){

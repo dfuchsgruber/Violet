@@ -14,7 +14,7 @@ end
 .global str_0x8040c2
 
 str_0x8040c2:
-    .string "Wenn sich die Blicke zweier Trainer\ntreffen, kommt es unweigerlich zu\leinem Kampf. Also LOS!+"
+    .string "Wenn sich die Blicke zweier Trainer\ntreffen, kommt es unweigerlich zu\leinem Kampf. Los!"
         
         
 .global str_0x804122

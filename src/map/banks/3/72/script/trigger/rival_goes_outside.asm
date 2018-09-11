@@ -6,7 +6,6 @@
 .include "overworld_script.s"
 
 
-.global ow_script_movs_0x89d801
 ow_script_movs_0x89d801:
 .byte STEP_RIGHT
 .byte STEP_RIGHT
@@ -23,8 +22,8 @@ ow_script_movs_0x89d7ee:
 .byte STOP
 
 
-.global ow_script_0x89d6f0
-ow_script_0x89d6f0:
+.global ow_script_trainerschool_rival_goes_outside
+ow_script_trainerschool_rival_goes_outside:
 lockall
 applymovement 0x1 ow_script_movs_0x89d801
 waitmovement 0x0
@@ -71,9 +70,8 @@ ow_script_0x89d8a8:
 applymovement 0x1 ow_script_movs_0x89d808
 waitmovement 0x0
 hidesprite 0x1
-setflag TRAINERSCHOOL_RIVAL_INSIDE
-clearflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
-setvar STORY_PROGRESS 0x7
+setflag TRAINERSCHOOL_RIVAL_OUTSIDE @// Make him visible
+addvar TRAINERSCHOOL_PROGRESS 1
 end
 
 
@@ -123,11 +121,9 @@ return
 
 
 .ifdef LANG_GER
-.global str_0x89d77c
 
 str_0x89d77c:
-    .string "Wieso bist du denn noch nicht\ndraußen auf dem Pausenhof? Dass du\limmer so trödeln musst! Beeil dich\ljetzt aber!"
-        
+    .autostring 36 2 "Du bist noch nicht draußen?\nWirklich immer am Trödeln, unser PLAYER!"
         
 .elseif LANG_EN
 

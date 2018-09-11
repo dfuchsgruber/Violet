@@ -34,11 +34,17 @@ typedef struct {
     void *callback;
 } pokemon_party_menu_state_t;
 
+bool (*pokemon_party_menu_continuation)();
 
-pokemon_party_menu_state_t *pokemon_party_menu_state = (pokemon_party_menu_state_t*) 0x0203B09C;
-u8 *pokemon_party_menu_current_index = (u8*) 0x0203B0A9;
+extern pokemon_party_menu_state_t pokemon_party_menu_state;
+extern u8 pokemon_party_menu_current_index = 0x0203B0A9;
 
-
+/**
+ * Fades the party menu back to overworld and executes the field move callback. Used as continuation
+ * when field moves are triggered
+ * @return true
+ */
+bool pokemon_party_menu_return_and_execute_field_move();
 /**
  * Adds a byte to a list of pokemon party menu context sensitive options (summary, give, take..)
  * @param list the list
@@ -54,6 +60,10 @@ void pokemon_party_menu_opt_add(u8 *list, u8 *size, u8 value);
  */
 u8 pokemon_party_menu_opt_get_current();
 
+/**
+ * Returns the index of the pokemon currently selected in the pokemon party
+ */
+u8 pokemon_party_menu_get_current_index();
 /**
  * Callback to trigger a outdoor move from the pokemon party menu context sensitive options
  * @param self the own callback id

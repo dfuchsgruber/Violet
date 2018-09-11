@@ -12,8 +12,8 @@
 #include "pokemon/virtual.h"
 
 typedef struct {
-    build_field build;
-    u8 field_1;
+	u8 ivs;
+	union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -21,8 +21,8 @@ typedef struct {
 } trainer_pokemon_default_item_default_attacks;
 
 typedef struct {
-    build_field build;
-    u8 field_1;
+	u8 ivs;
+	union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -30,8 +30,8 @@ typedef struct {
 } trainer_pokemon_custom_item_default_attacks;
 
 typedef struct {
-    build_field build;
-    u8 field_1;
+	u8 ivs;
+	union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -40,8 +40,8 @@ typedef struct {
 } trainer_pokemon_default_item_custom_attacks;
 
 typedef struct {
-    build_field build;
-    u8 field_1;
+	u8 ivs;
+	union_build_field build;
     u8 level;
     u8 field_3;
     u16 species;
@@ -56,30 +56,30 @@ typedef union{
     trainer_pokemon_custom_item_custom_attacks custom_item_custom_attacks;
 } trainer_pokemon;
 
-#define TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(build, ability_bit, hidden_ability, shiny, level, species)\
+#define TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(ivs, build, ability_bit, hidden_ability, shiny, level, species)\
 {\
-        {build, ability_bit, hidden_ability, shiny}, \
-        0x0,\
+		ivs, \
+        {.bitfield = {build, ability_bit, hidden_ability, shiny}}, \
         level,\
         0,\
         species,\
          0x0 \
 }
 
-#define TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(build, ability_bit, hidden_ability, shiny, level, species, item)\
+#define TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(ivs, build, ability_bit, hidden_ability, shiny, level, species, item)\
 {\
-        {build, ability_bit, hidden_ability, shiny}, \
-        0x0,\
+		ivs, \
+        {.bitfield = {build, ability_bit, hidden_ability, shiny}}, \
         level,\
         0,\
         species,\
         item\
 }
 
-#define TRAINER_PARTY_DEFAULT_ITEM_CUSTOM_MOVES(build, ability_bit, hidden_ability, shiny, level, species, move0, move1, move2, move3)\
+#define TRAINER_PARTY_DEFAULT_ITEM_CUSTOM_MOVES(ivs, build, ability_bit, hidden_ability, shiny, level, species, move0, move1, move2, move3)\
 {\
-        {build, ability_bit, hidden_ability, shiny}, \
-        0x0,\
+		ivs, \
+        {.bitfield = {build, ability_bit, hidden_ability, shiny}}, \
         level,\
         0,\
         species,\
@@ -87,10 +87,10 @@ typedef union{
         0x0\
 }
 
-#define TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(build, ability_bit, hidden_ability, shiny, level, species, item, move0, move1, move2, move3)\
+#define TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(ivs, build, ability_bit, hidden_ability, shiny, level, species, item, move0, move1, move2, move3)\
 {\
-        {build, ability_bit, hidden_ability, shiny}, \
-        0x0,\
+		ivs, \
+        {.bitfield = {build, ability_bit, hidden_ability, shiny}}, \
         level,\
         0,\
         species,\
@@ -98,8 +98,12 @@ typedef union{
         {move0, move1, move2, move3}\
 }
 
-
-void build_trainer_poke(union union_build_field field, pokemon *poke);
+/**
+ * Builds / modifies a trainer pokemon based on its build field
+ * @param poke the pokemon to modify
+ * @param field the build field that encodes the information about the trainer
+ */
+void build_trainer_pokemon(pokemon *poke, union union_build_field field);
 
 trainer_pokemon_default_item_default_attacks trainer_party_x0[1];
 trainer_pokemon_default_item_default_attacks trainer_party_x1[1];
@@ -280,6 +284,16 @@ trainer_pokemon_default_item_default_attacks trainer_party_xaf[2];
 trainer_pokemon_default_item_default_attacks trainer_party_xb0[2];
 trainer_pokemon_default_item_default_attacks trainer_party_xb1[3];
 trainer_pokemon_default_item_default_attacks trainer_party_xb2[4];
-
-
+trainer_pokemon_default_item_default_attacks trainer_party_xb3[2];
+trainer_pokemon_default_item_default_attacks trainer_party_xb4[2];
+trainer_pokemon_default_item_default_attacks trainer_party_xb5[2];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xb6[3];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xb7[4];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xb8[4];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xb9[3];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xba[3];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xbb[3];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xbc[4];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xbd[4];
+trainer_pokemon_custom_item_custom_attacks trainer_party_xbe[4];
 #endif /* INCLUDE_C_TRAINER_PARTY_H_ */

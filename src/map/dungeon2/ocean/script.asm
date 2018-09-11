@@ -3,6 +3,7 @@
 .include "flags.s"
 .include "callstds.s"
 .include "ordinals.s"
+.include "attacks.s"
 
 .equ DTYPE_OCEAN, 3
 
@@ -21,26 +22,51 @@ ow_script_dungeon_ocean_collapsing:
 
 .ifdef LANG_GER
 str_dungeon_ocean_collapsing:
-	.autostring 36 2 "Die Höhle scheint nicht stabil zu sein...\pSchnell zum Ausgang, bevor sie einstürtzt!"
+	.autostring 36 2 "Die Wellen scheinen stärker zu werden...\pEs ist wohl sicherer, zurückzukehren!"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_ocean_collapsing:
-	.autostring 36 2 "The ocean does not seem to be stable...\pBetter find the exit before it collapses!"
+	.autostring 36 2 "The waves are getting bigger...\pBetter return now!"
 .endif
 
 
 .global ow_script_dungeon2_enter_ocean
+.global ow_script_dungeon2_enter_ocean_field
 
 ow_script_dungeon2_enter_ocean:
+	@ Check levelscript state ??
+	special 0x187
+	compare LASTRESULT 0x2
+	gotoif EQUAL ow_script_dungeon2_ocean_none
+
 	loadpointer 0x0 str_dungeon_enter_ocean_0
 	callstd MSG_KEEPOPEN
+
+	@ Check if the player has secret power
+
 	checkflag PLAYER_CAN_ENTER_DUNGEONS
 	gotoif 0 ow_script_dungeon2_dont_enter_ocean
+
+	checkattack ATTACK_GEHEIMPOWER
+	compare LASTRESULT 0x6
+	gotoif EQUAL ow_script_dungeon2_dont_enter_ocean
+	setanimation 0x0 LASTRESULT
+	bufferpartypokemon 0x0 LASTRESULT
+	bufferattack 0x1 ATTACK_GEHEIMPOWER
+
+	@ Ask if the dungeon is to be entered
+
 	loadpointer 0x0 str_dungeon_enter_ocean_1
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
 	gotoif 1 ow_script_dungeon2_dont_enter_ocean
+
+ow_script_dungeon2_enter_ocean_field:
+	@ Display animation
+	doanimation 0x2
+	nop
+	waitstate
     callasm dungeon2_seed_init
     setvar DUNGEON_TYPE DTYPE_OCEAN
     setvar DUNGEON_STEPS 0
@@ -51,22 +77,23 @@ ow_script_dungeon2_enter_ocean:
 
 ow_script_dungeon2_dont_enter_ocean:
 	closeonkeypress
+ow_script_dungeon2_ocean_none:
 	end
 
 .ifdef LANG_GER
 str_dungeon_enter_ocean_0:
-	.autostring 36 2 "Eine Höhle scheint sich hinter dieser Felswand zu verbergen..."
+	.autostring 36 2 "Die Felsen scheinen hier nicht sehr hoch aus dem Wasser zu ragen..."
 
 str_dungeon_enter_ocean_1:
-	.autostring 36 2 "Möchtest du das Laz.Gear benutzen, um die Höhle zu betreten?"
+	.autostring 36 2 "Möchtest du Geheimpower nutzen, um die Felsen zu überwinden?"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_enter_ocean_0:
-	.autostring 36 2 "There seems to be some kind of ocean behind this rock face..."
+	.autostring 36 2 "The rocks do not sick out very high here..."
 
 str_dungeon_enter_ocean_1:
-	.autostring 36 2 "Do you want to use the Laz.Gear in order to enter the ocean?"
+	.autostring 36 2 "Do you want to use Secret Power to overcome the rocks?"
 .endif
 
 

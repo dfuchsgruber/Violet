@@ -22,7 +22,7 @@ typedef struct {
 
 } stru_fading_cntrl;
 
-stru_fading_cntrl *fading_cntrl = (stru_fading_cntrl*) 0x02037AB8;
+extern stru_fading_cntrl fading_cntrl;
 
 /**
  * Checks if the fading control reports an active fading.

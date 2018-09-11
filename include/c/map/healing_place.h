@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_MAP_HEALING_PLACE_H_
 #define INCLUDE_C_MAP_HEALING_PLACE_H_
 
+#include "save.h"
+#include "tile/coordinate.h"
 
 #define NUM_HEALING_PLACES 21
 
@@ -18,5 +20,6 @@ typedef struct{
 
 stru_healing_place healing_places[NUM_HEALING_PLACES];
 u8 healing_place_target_persons[NUM_HEALING_PLACES];
+coordinate healing_place_target_coordinates[NUM_HEALING_PLACES];
 
 #endif /* INCLUDE_C_MAP_HEALING_PLACE_H_ */

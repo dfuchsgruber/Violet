@@ -44,10 +44,6 @@
 
 #define ATTR2_PRIO(x) (x<<10)
 
-
-#define OAM_ROTSCALE_ANIM_TABLE_NULL ((rotscale_frame**) 0x08231BCC)
-#define OAM_GFX_ANIM_TABLE_NULL ((gfx_frame**)0x08231Bc0)
-
 struct oam_object;
 typedef struct oam_object oam_object;
 struct gfx_frame;
@@ -121,7 +117,10 @@ typedef struct oam_object {
     u8 field43;
 } oam_object;
 
-oam_object* oams = (oam_object*) 0x0202063C;
+extern oam_object oams[];
+
+extern rotscale_frame *oam_rotscale_anim_table_null[];
+extern gfx_frame *oam_gfx_anim_table_null[];
 
 /**
  * Allocates an rotation-scale group in the OAM RAM

@@ -259,12 +259,12 @@ u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2, bool random_nodes)
     u8 *map_paths = malloc(sizeof(u8) * (size_t)(dg2->width * dg2->height));
 
 
-    int _dg2_space = DG2_WALL | (DG2_WALL << 8);
-    cpuset(&_dg2_space, map1, CPUSET_HALFWORD | CPUSET_FILL |
+    int _dg2_wall = DG2_WALL | (DG2_WALL << 8);
+    cpuset(&_dg2_wall, map1, CPUSET_HALFWORD | CPUSET_FILL |
             ((dg2->width * dg2->height) / 2));
-    cpuset(&_dg2_space, map2, CPUSET_HALFWORD | CPUSET_FILL |
+    cpuset(&_dg2_wall, map2, CPUSET_HALFWORD | CPUSET_FILL |
             ((dg2->width * dg2->height) / 2));
-    cpuset(&_dg2_space, map_paths, CPUSET_HALFWORD | CPUSET_FILL |
+    cpuset(&_dg2_wall, map_paths, CPUSET_HALFWORD | CPUSET_FILL |
             ((dg2->width * dg2->height) / 2));
 
     dungeon2_init_by_paths(map_paths, dg2, random_nodes);
@@ -281,4 +281,3 @@ u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2, bool random_nodes)
 
     return map1;
 }
-

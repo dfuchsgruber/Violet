@@ -52,8 +52,8 @@ typedef struct pokemon {
 } pokemon;
 
 
-pokemon *player_pokemon = (pokemon*) 0x02024284;
-pokemon *opponent_pokemon = (pokemon*) 0x0202402C;
+extern pokemon player_pokemon;
+extern pokemon opponent_pokemon;
 
 /**
  * Gets the attribute of a virtual pokemon
@@ -85,7 +85,19 @@ void pokemon_calculate_stats(pokemon *p);
 u8 pokemon_get_number_in_party();
 
 void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
-void pokemon_new(pokemon *space, u16 species, u8 level, u8 ev_split,
+
+/**
+ * Creates a new pokemon
+ * @param space where to create the pokemon
+ * @param species the species to create
+ * @param level the level of the pokemon to create
+ * @param fixed_ivs if < 32 all ivs are set to this value, otherwise random ivs
+ * @param pid_determined if true, the pokemon will gain a fixed pid
+ * @param pid if pid_determined true the pid the pokemon will gain
+ * @param tid_determined if true, the pokemon will gain a fixed tid
+ * @param tid if tid_determined true the tid the pokemon will gain
+ */
+void pokemon_new(pokemon *space, u16 species, u8 level, u8 fixed_ivs,
         bool pid_determined, pid_t pid, bool tid_determined, u32 tid);
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
@@ -103,10 +115,14 @@ void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
  * @param pid the pid to apply if pid_determined is set to true
  * @param tid_determined if the tid is already determined and given
  * @param tid the tid to apply if tid_determined is set to true
- * @param rnd_generator function that provides values in [0; x) with x < 512 to instaciate features
+ * @param feature_generator function that provides values in [0; x) with x < 512 to
+ * instaciate features (lower values mean more features)
+ * @param rng arbitrary rng to determine the pokemon entirely. If null the standard rng
+ * is used.
  */
 void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread,
-    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*rnd_generator)());
+    bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*feature_generator)(),
+	u16(*rng)());
 u8 get_pokemons_ability(pokemon *poke);
 u8 write_ability_into_dbuf(pokemon *poke);
 void special_heal_team_index();

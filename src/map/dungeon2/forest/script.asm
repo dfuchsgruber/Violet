@@ -2,6 +2,9 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "callstds.s"
+.include "items.s"
+.include "attacks.s"
+.include "ordinals.s"
 
 .equ DTYPE_FOREST, 1
 
@@ -30,21 +33,51 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 ow_script_test:
 setflag PLAYER_CAN_ENTER_DUNGEONS
-goto ow_script_dungeon2_enter_ocean
+setflag FRBADGE_5
+setflag FRBADGE_6
+setflag FRBADGE_7
+additem ITEM_VM03 1
+additem ITEM_TM43 1
+@ goto ow_script_dungeon2_enter_ocean
 end
 
 
 .global ow_script_dungeon2_enter_forest
+.global ow_script_dungeon2_enter_forest_field
 
 ow_script_dungeon2_enter_forest:
+	@ Check levelscript state ??
+	special 0x187
+	compare LASTRESULT 0x2
+	gotoif EQUAL ow_script_dungeon2_forest_none
+
 	loadpointer 0x0 str_dungeon_enter_forest_0
 	callstd MSG_KEEPOPEN
+
+	@ Check if the player has secret power
+
 	checkflag PLAYER_CAN_ENTER_DUNGEONS
 	gotoif 0 ow_script_dungeon2_dont_enter_forest
+
+	checkattack ATTACK_GEHEIMPOWER
+	compare LASTRESULT 0x6
+	gotoif EQUAL ow_script_dungeon2_dont_enter_forest
+	setanimation 0x0 LASTRESULT
+	bufferpartypokemon 0x0 LASTRESULT
+	bufferattack 0x1 ATTACK_GEHEIMPOWER
+
+	@ Ask if the dungeon is to be entered
+
 	loadpointer 0x0 str_dungeon_enter_forest_1
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
 	gotoif 1 ow_script_dungeon2_dont_enter_forest
+
+ow_script_dungeon2_enter_forest_field:
+	@ Display animation
+	doanimation 0x2
+	nop
+	waitstate
     callasm dungeon2_seed_init
     setvar DUNGEON_TYPE DTYPE_FOREST
     setvar DUNGEON_STEPS 0
@@ -55,6 +88,7 @@ ow_script_dungeon2_enter_forest:
 
 ow_script_dungeon2_dont_enter_forest:
 	closeonkeypress
+ow_script_dungeon2_forest_none:
 	end
 
 .ifdef LANG_GER
@@ -62,7 +96,7 @@ str_dungeon_enter_forest_0:
 	.autostring 36 2 "Das Unterholz scheint hier nicht all zu dicht zu sein..."
 
 str_dungeon_enter_forest_1:
-	.autostring 36 2 "Möchtest du das Laz.Gear benutzen, um das Unterholz zu erkunden?"
+	.autostring 36 2 "Möchtest du Geheimpower nutzen, um das Dickicht zu zerschneiden?"
 .endif
 
 .ifdef LANG_EN
@@ -70,5 +104,5 @@ str_dungeon_enter_forest_0:
 	.autostring 36 2 "The underwood seems to be light arround here..."
 
 str_dungeon_enter_forest_1:
-	.autostring 36 2 "Do you want to use the Laz.Gear in order to enter the underwood?"
+	.autostring 36 2 "Dou you want to use Secret Power to cut the thicket?"
 .endif

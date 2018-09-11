@@ -19,6 +19,8 @@ typedef struct {
     u32 not_usable_msg;
 } field_move_t;
 
+void (*field_move_overworld_continuation)();
+
 extern field_move_t field_move_initalizers[];
 
 /**
@@ -49,6 +51,8 @@ bool field_moves_usable();
  * @param index the field move index
  */
 void field_move_load_buffers(pokemon *pokemon, u8 index);
+
+extern u8 ow_script_dungeon_enter_field[];
 
 #endif	/* FIELDMOVES_H */
 

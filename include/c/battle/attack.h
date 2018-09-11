@@ -8,17 +8,17 @@
 #ifndef INCLUDE_C_BATTLE_ATTACK_H_
 #define INCLUDE_C_BATTLE_ATTACK_H_
 
-u16 *active_attack = (u16*) 0x02023D4A;
-u8 *active_attack_slot = (u8*)0x02023D48;
-u32 *attack_result = (u32*)0x02023DCC;
+extern u16 active_attack;
+extern u8 active_attack_slot;
+extern u32 attack_result;
 
-int *damage_to_apply = (int*)0x2023D50;
-int *damage_caused = (int*)0x02023D54;
+extern int damage_to_apply;
+extern int damage_caused;
 
-u8 *attack_anim_target_index = (u8*)0x02037F1B;
-u8 *attack_anim_user_index = (u8*)0x02037F1A;
-u16 *attack_anim_additional_animation = (u16*)0x2037F02;
-u8 *attack_anim_tasks_running = (u8*)0x02037EE2;
+extern u8 attack_anim_target_index;
+extern u8 attack_anim_user_index;
+extern u16 attack_anim_additional_animation;
+extern u8 attack_anim_tasks_running;
 
 void damage_apply_multiplier(int multiplier);
 

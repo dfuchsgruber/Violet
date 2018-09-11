@@ -23,14 +23,16 @@ typedef struct {
     u32 items_prohibited2 : 1;
     u32 flag_C : 1;
     u32 flag_D : 1;
-    u32 unkown : 18;
+    u32 unkown : 17;
+    u32 field_31 : 1;
 } battle_state_t;
 
 
-battle_state_t *battle_state = (battle_state_t*) 0x02022B4C;
-
-u16 *trainer_id = (u16*) 0x020386AE;
-u8 *stat_change = (u8*) 0x02023FC4;
+extern battle_state_t battle_state;
+extern u8 battle_trainer_kind;
+extern u8 battle_result;
+extern u16 battle_trainer_id;
+extern u8 battle_stat_change;
 
 /**
  * Checks if the battle is a double battle

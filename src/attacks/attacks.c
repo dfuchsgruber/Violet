@@ -1035,7 +1035,7 @@ attack attacks[ATTACK_CNT] = {
 		20, //PP
 		0, //Effect accuracy
 		TARGET_DEPENDS_ON_ATTACK,
-		0, //Priority
+		-5, //Priority
 		MAKES_CONTACT | MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
@@ -3660,7 +3660,7 @@ attack attacks[ATTACK_CNT] = {
 		20, //PP
 		0, //Effect accuracy
 		TARGET_DEPENDS_ON_ATTACK,
-		0, //Priority
+		-5, //Priority
 		MIRRORABLE,
 		0x0, //Effect table
 		CATEGORY_SPECIAL,

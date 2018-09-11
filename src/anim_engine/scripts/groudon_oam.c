@@ -302,9 +302,9 @@ oam_template oam_template_groudon_head = {
     0xA0A0,
     0xA0A0,
     &sprite_groudon_head,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     &graphic_groudon_head,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_callback_groudon_head
 };
 
@@ -312,9 +312,9 @@ oam_template oam_template_groudon_arm_left = {
     0xA0A1,
     0xA0A0,
     &sprite_groudon_32_16_front,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     &graphic_groudon_arm_left,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_callback_groudon_arm
 };
 
@@ -322,9 +322,9 @@ oam_template oam_template_groudon_arm_right = {
     0xA0A2,
     0xA0A0,
     &sprite_groudon_32_16_back,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     &graphic_groudon_arm_left,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_callback_groudon_arm
 };
 
@@ -332,9 +332,9 @@ oam_template oam_template_groudon_leg_left = {
     0xA0A3,
     0xA0A0,
     &sprite_groudon_32_16_front,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     &graphic_groudon_leg_left,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -342,9 +342,9 @@ oam_template oam_template_groudon_leg_right = {
     0xA0A4,
     0xA0A0,
     &sprite_groudon_32_16_back,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     &graphic_groudon_leg_right,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -352,9 +352,9 @@ oam_template oam_template_groudon_diserakt = {
     0xA0A5,
     0xA0A1,
     &sprite_groudon_head,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     &graphic_groudon_diserakt,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
     
 };

@@ -3220,4 +3220,5998 @@
 	0x0,// field_22
 	0x0,// field_23
 	(trainer_pokemon*) trainer_party_xb2
+},{
+	//Trainer 0xb3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER,
+	{0x3, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("BURKARD"), PSTRING("BURKARD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xb3
+},{
+	//Trainer 0xb4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ANGLER,
+	{0x3, false},//Encounter and gender
+	0x5e,// sprite
+	LANGDEP(PSTRING("RONNY"), PSTRING("RONNY")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xb4
+},{
+	//Trainer 0xb5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TRIATHLET,
+	{0xb, false},//Encounter and gender
+	0x29,// sprite
+	LANGDEP(PSTRING("RUFUS"), PSTRING("RUFUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xb5
+},{
+	//Trainer 0xb6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER,
+	{0xb, false},//Encounter and gender
+	0xf,// sprite
+	LANGDEP(PSTRING("KASPER"), PSTRING("KASPER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xb6
+},{
+	//Trainer 0xb7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PLANSCHER,
+	{0xb, true},//Encounter and gender
+	0x6,// sprite
+	LANGDEP(PSTRING("MINORA"), PSTRING("MINORA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xb7
+},{
+	//Trainer 0xb8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER,
+	{0xb, false},//Encounter and gender
+	0xf,// sprite
+	LANGDEP(PSTRING("ALVARO"), PSTRING("ALVARO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xb8
+},{
+	//Trainer 0xb9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_MATROSE,
+	{0xb, false},//Encounter and gender
+	0x55,// sprite
+	LANGDEP(PSTRING("LANZELOT"), PSTRING("LANZELOT")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xb9
+},{
+	//Trainer 0xba
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN,
+	{0xb, false},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("GISELA"), PSTRING("GISELA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xba
+},{
+	//Trainer 0xbb
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_WANDERER,
+	{0xb, false},//Encounter and gender
+	0x5a,// sprite
+	LANGDEP(PSTRING("LUZIUS"), PSTRING("LUZIUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xbb
+},{
+	//Trainer 0xbc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ANGLER,
+	{0xb, false},//Encounter and gender
+	0x5e,// sprite
+	LANGDEP(PSTRING("HEIME"), PSTRING("HEIME")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xbc
+},{
+	//Trainer 0xbd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER,
+	{0xb, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("SIEGFRIED"), PSTRING("SIEGFRIED")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xbd
+},{
+	//Trainer 0xbe
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN,
+	{0xb, false},//Encounter and gender
+	0x2c,// sprite
+	LANGDEP(PSTRING("SABRINA"), PSTRING("SABRINA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xbe
+},{
+	//Trainer 0xbf
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0xb, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("Feuer"), PSTRING("Feuer")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xbf
+},{
+	//Trainer 0xc0
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0xb, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("Geist"), PSTRING("Geist")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc0
+},{
+	//Trainer 0xc1
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0xb, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("6.Orden"), PSTRING("6.Orden")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc1
+},{
+	//Trainer 0xc2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_STRATEGY_NONE,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc2
+},{
+	//Trainer 0xc3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_STRATEGY_NONE,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc3
+},{
+	//Trainer 0xc4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_STRATEGY_NONE,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc4
+},{
+	//Trainer 0xc5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_STRATEGY_NONE,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc5
+},{
+	//Trainer 0xc6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_STRATEGY_NONE,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc6
+},{
+	//Trainer 0xc7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_STRATEGY_NONE,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc7
+},{
+	//Trainer 0xc8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_STRATEGY_NONE,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc8
+},{
+	//Trainer 0xc9
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x1b,// sprite
+	LANGDEP(PSTRING("VORS. RIN"), PSTRING("VORS. RIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xc9
+},{
+	//Trainer 0xca
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xca
+},{
+	//Trainer 0xcb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xcb
+},{
+	//Trainer 0xcc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x3e,// sprite
+	LANGDEP(PSTRING("ELITE GUARD"), PSTRING("ELITE GUARD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xcc
+},{
+	//Trainer 0xcd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x3e,// sprite
+	LANGDEP(PSTRING("ELITE GUARD"), PSTRING("ELITE GUARD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xcd
+},{
+	//Trainer 0xce
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x0, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xce
+},{
+	//Trainer 0xcf
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_BIKER,
+	{0x0, false},//Encounter and gender
+	0x5b,// sprite
+	LANGDEP(PSTRING("DARIUS"), PSTRING("DARIUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xcf
+},{
+	//Trainer 0xd0
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_BIKER,
+	{0x0, false},//Encounter and gender
+	0x5b,// sprite
+	LANGDEP(PSTRING("BLASIUS"), PSTRING("BLASIUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd0
+},{
+	//Trainer 0xd1
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_BIKER,
+	{0x0, false},//Encounter and gender
+	0x5b,// sprite
+	LANGDEP(PSTRING("GERALD"), PSTRING("GERALD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd1
+},{
+	//Trainer 0xd2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0x3, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("7.Orden"), PSTRING("7.Orden")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd2
+},{
+	//Trainer 0xd3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0x3, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("8.Orden"), PSTRING("8.Orden")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd3
+},{
+	//Trainer 0xd4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0x3, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("LIGA"), PSTRING("LIGA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd4
+},{
+	//Trainer 0xd5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DIEB,
+	{0x3, false},//Encounter and gender
+	0x5c,// sprite
+	LANGDEP(PSTRING("RALF"), PSTRING("RALF")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd5
+},{
+	//Trainer 0xd6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DIEB,
+	{0x3, false},//Encounter and gender
+	0x5c,// sprite
+	LANGDEP(PSTRING("BORIS"), PSTRING("BORIS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd6
+},{
+	//Trainer 0xd7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DIEB,
+	{0x3, false},//Encounter and gender
+	0x5c,// sprite
+	LANGDEP(PSTRING("RÜDIGER"), PSTRING("RÜDIGER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd7
+},{
+	//Trainer 0xd8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DIEB,
+	{0x3, false},//Encounter and gender
+	0x5c,// sprite
+	LANGDEP(PSTRING("ARNIE"), PSTRING("ARNIE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd8
+},{
+	//Trainer 0xd9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PKMN_RANGER,
+	{0x3, false},//Encounter and gender
+	0x8e,// sprite
+	LANGDEP(PSTRING("SIRIUS"), PSTRING("SIRIUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xd9
+},{
+	//Trainer 0xda
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_HEXE,
+	{0x3, true},//Encounter and gender
+	0xa,// sprite
+	LANGDEP(PSTRING("SIMONE"), PSTRING("SIMONE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xda
+},{
+	//Trainer 0xdb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_HEXE,
+	{0x3, true},//Encounter and gender
+	0xa,// sprite
+	LANGDEP(PSTRING("LUDWINA"), PSTRING("LUDWINA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xdb
+},{
+	//Trainer 0xdc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_HEXE,
+	{0x0, true},//Encounter and gender
+	0xa,// sprite
+	LANGDEP(PSTRING("HAUKE"), PSTRING("HAUKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xdc
+},{
+	//Trainer 0xdd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PSYCHO,
+	{0x0, true},//Encounter and gender
+	0x16,// sprite
+	LANGDEP(PSTRING("DENISE"), PSTRING("DENISE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xdd
+},{
+	//Trainer 0xde
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT,
+	{0x0, false},//Encounter and gender
+	0x41,// sprite
+	LANGDEP(PSTRING("KATY"), PSTRING("KATY")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xde
+},{
+	//Trainer 0xdf
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0xb, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("ALBIN"), PSTRING("ALBIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xdf
+},{
+	//Trainer 0xe0
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PKMN_TRAINER,
+	{0xb, false},//Encounter and gender
+	0x39,// sprite
+	LANGDEP(PSTRING("MAIKE"), PSTRING("MAIKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe0
+},{
+	//Trainer 0xe1
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PKMN_TRAINER,
+	{0xb, true},//Encounter and gender
+	0x39,// sprite
+	LANGDEP(PSTRING("MAIKE"), PSTRING("MAIKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe1
+},{
+	//Trainer 0xe2
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PKMN_TRAINER,
+	{0xb, true},//Encounter and gender
+	0x39,// sprite
+	LANGDEP(PSTRING("MAIKE"), PSTRING("MAIKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe2
+},{
+	//Trainer 0xe3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0xb, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("DESMOND"), PSTRING("DESMOND")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe3
+},{
+	//Trainer 0xe4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0xb, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("DESMOND"), PSTRING("DESMOND")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe4
+},{
+	//Trainer 0xe5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0xb, false},//Encounter and gender
+	0x17,// sprite
+	LANGDEP(PSTRING("DESMOND"), PSTRING("DESMOND")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe5
+},{
+	//Trainer 0xe6
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0xb, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe6
+},{
+	//Trainer 0xe7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ANGLER3,
+	{0xb, false},//Encounter and gender
+	0x5e,// sprite
+	LANGDEP(PSTRING("ALAIN"), PSTRING("ALAIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe7
+},{
+	//Trainer 0xe8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ANGLER3,
+	{0xb, false},//Encounter and gender
+	0x5e,// sprite
+	LANGDEP(PSTRING("AMADEUS"), PSTRING("AMADEUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe8
+},{
+	//Trainer 0xe9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ANGLER3,
+	{0xb, false},//Encounter and gender
+	0x5e,// sprite
+	LANGDEP(PSTRING("ANSGAR"), PSTRING("ANSGAR")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xe9
+},{
+	//Trainer 0xea
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("KONSTANTIN"), PSTRING("KONSTANTIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xea
+},{
+	//Trainer 0xeb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("ENNO"), PSTRING("ENNO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xeb
+},{
+	//Trainer 0xec
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("ERNST"), PSTRING("ERNST")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xec
+},{
+	//Trainer 0xed
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("UMBERTO"), PSTRING("UMBERTO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xed
+},{
+	//Trainer 0xee
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("IGNAZ"), PSTRING("IGNAZ")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xee
+},{
+	//Trainer 0xef
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("WINFRIED"), PSTRING("WINFRIED")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xef
+},{
+	//Trainer 0xf0
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("KEVIN"), PSTRING("KEVIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf0
+},{
+	//Trainer 0xf1
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("HAGEN"), PSTRING("HAGEN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf1
+},{
+	//Trainer 0xf2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("BASIL"), PSTRING("BASIL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf2
+},{
+	//Trainer 0xf3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("DAGOBERT"), PSTRING("DAGOBERT")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf3
+},{
+	//Trainer 0xf4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("MANUEL"), PSTRING("MANUEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf4
+},{
+	//Trainer 0xf5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("LEOPOLD"), PSTRING("LEOPOLD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf5
+},{
+	//Trainer 0xf6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("PEDRO"), PSTRING("PEDRO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf6
+},{
+	//Trainer 0xf7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("OSWALD"), PSTRING("OSWALD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf7
+},{
+	//Trainer 0xf8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMER2,
+	{0x8, false},//Encounter and gender
+	0x5f,// sprite
+	LANGDEP(PSTRING("THOMAS"), PSTRING("THOMAS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf8
+},{
+	//Trainer 0xf9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("REMIGIUS"), PSTRING("REMIGIUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xf9
+},{
+	//Trainer 0xfa
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("LEIF"), PSTRING("LEIF")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xfa
+},{
+	//Trainer 0xfb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("VOLKER"), PSTRING("VOLKER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xfb
+},{
+	//Trainer 0xfc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("LIONEL"), PSTRING("LIONEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xfc
+},{
+	//Trainer 0xfd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("KASPAR"), PSTRING("KASPAR")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xfd
+},{
+	//Trainer 0xfe
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("GERMAN"), PSTRING("GERMAN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xfe
+},{
+	//Trainer 0xff
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("GÖTZ"), PSTRING("GÖTZ")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_xff
+},{
+	//Trainer 0x100
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("HAJO"), PSTRING("HAJO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x100
+},{
+	//Trainer 0x101
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GLATZKOPF,
+	{0x0, false},//Encounter and gender
+	0x60,// sprite
+	LANGDEP(PSTRING("FERDINAND"), PSTRING("FERDINAND")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x101
+},{
+	//Trainer 0x102
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SPIELER,
+	{0x0, false},//Encounter and gender
+	0x61,// sprite
+	LANGDEP(PSTRING("JANNES"), PSTRING("JANNES")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x102
+},{
+	//Trainer 0x103
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SPIELER,
+	{0x0, false},//Encounter and gender
+	0x61,// sprite
+	LANGDEP(PSTRING("KUNIBERT"), PSTRING("KUNIBERT")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x103
+},{
+	//Trainer 0x104
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SPIELER,
+	{0x0, false},//Encounter and gender
+	0x61,// sprite
+	LANGDEP(PSTRING("DIRK"), PSTRING("DIRK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x104
+},{
+	//Trainer 0x105
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SPIELER,
+	{0x0, false},//Encounter and gender
+	0x61,// sprite
+	LANGDEP(PSTRING("MARCO"), PSTRING("MARCO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x105
+},{
+	//Trainer 0x106
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SPIELER,
+	{0x0, false},//Encounter and gender
+	0x61,// sprite
+	LANGDEP(PSTRING("BALTHASAR"), PSTRING("BALTHASAR")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x106
+},{
+	//Trainer 0x107
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SPIELER,
+	{0x0, false},//Encounter and gender
+	0x61,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x107
+},{
+	//Trainer 0x108
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SPIELER,
+	{0x0, false},//Encounter and gender
+	0x61,// sprite
+	LANGDEP(PSTRING("RICK"), PSTRING("RICK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x108
+},{
+	//Trainer 0x109
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x62,// sprite
+	LANGDEP(PSTRING("SALMA"), PSTRING("SALMA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x109
+},{
+	//Trainer 0x10a
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x62,// sprite
+	LANGDEP(PSTRING("ROBERTA"), PSTRING("ROBERTA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x10a
+},{
+	//Trainer 0x10b
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x62,// sprite
+	LANGDEP(PSTRING("RAMONA"), PSTRING("RAMONA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x10b
+},{
+	//Trainer 0x10c
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x62,// sprite
+	LANGDEP(PSTRING("LOLA"), PSTRING("LOLA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x10c
+},{
+	//Trainer 0x10d
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x62,// sprite
+	LANGDEP(PSTRING("SYLVIA"), PSTRING("SYLVIA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x10d
+},{
+	//Trainer 0x10e
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("DANIELA"), PSTRING("DANIELA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x10e
+},{
+	//Trainer 0x10f
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("KASSANDRA"), PSTRING("KASSANDRA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x10f
+},{
+	//Trainer 0x110
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("MELISSA"), PSTRING("MELISSA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x110
+},{
+	//Trainer 0x111
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x62,// sprite
+	LANGDEP(PSTRING("ILONA"), PSTRING("ILONA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x111
+},{
+	//Trainer 0x112
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x62,// sprite
+	LANGDEP(PSTRING("TIA"), PSTRING("TIA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x112
+},{
+	//Trainer 0x113
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHOENHEIT2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("LINA"), PSTRING("LINA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x113
+},{
+	//Trainer 0x114
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("KATJa"), PSTRING("KATJa")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x114
+},{
+	//Trainer 0x115
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("ALICE"), PSTRING("ALICE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x115
+},{
+	//Trainer 0x116
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("FRANCESCA"), PSTRING("FRANCESCA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x116
+},{
+	//Trainer 0x117
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWIMMERIN2,
+	{0x1, true},//Encounter and gender
+	0x63,// sprite
+	LANGDEP(PSTRING("MIRJAM"), PSTRING("MIRJAM")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x117
+},{
+	//Trainer 0x118
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PSYCHO2,
+	{0x4, false},//Encounter and gender
+	0x64,// sprite
+	LANGDEP(PSTRING("ALEX"), PSTRING("ALEX")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x118
+},{
+	//Trainer 0x119
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PSYCHO2,
+	{0x4, false},//Encounter and gender
+	0x64,// sprite
+	LANGDEP(PSTRING("BERTOLD"), PSTRING("BERTOLD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x119
+},{
+	//Trainer 0x11a
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PSYCHO2,
+	{0x4, false},//Encounter and gender
+	0x64,// sprite
+	LANGDEP(PSTRING("MAXIMILIAN"), PSTRING("MAXIMILIAN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x11a
+},{
+	//Trainer 0x11b
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PSYCHO2,
+	{0x4, false},//Encounter and gender
+	0x64,// sprite
+	LANGDEP(PSTRING("URBAN"), PSTRING("URBAN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x11b
+},{
+	//Trainer 0x11c
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ROCKER,
+	{0x0, false},//Encounter and gender
+	0x65,// sprite
+	LANGDEP(PSTRING("HUBERT"), PSTRING("HUBERT")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x11c
+},{
+	//Trainer 0x11d
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ROCKER,
+	{0x0, false},//Encounter and gender
+	0x65,// sprite
+	LANGDEP(PSTRING("XAVER"), PSTRING("XAVER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x11d
+},{
+	//Trainer 0x11e
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("BOB"), PSTRING("BOB")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x11e
+},{
+	//Trainer 0x11f
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("NINO"), PSTRING("NINO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x11f
+},{
+	//Trainer 0x120
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("CHUCK"), PSTRING("CHUCK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x120
+},{
+	//Trainer 0x121
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("REINHARD"), PSTRING("REINHARD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x121
+},{
+	//Trainer 0x122
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("JOHANN"), PSTRING("JOHANN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x122
+},{
+	//Trainer 0x123
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("WENDELIN"), PSTRING("WENDELIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x123
+},{
+	//Trainer 0x124
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("MILO"), PSTRING("MILO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x124
+},{
+	//Trainer 0x125
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JONGLEUR,
+	{0xb, false},//Encounter and gender
+	0x66,// sprite
+	LANGDEP(PSTRING("NATHAN"), PSTRING("NATHAN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x125
+},{
+	//Trainer 0x126
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DOMPTEUR,
+	{0xb, false},//Encounter and gender
+	0x67,// sprite
+	LANGDEP(PSTRING("HENRY"), PSTRING("HENRY")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x126
+},{
+	//Trainer 0x127
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DOMPTEUR,
+	{0xb, false},//Encounter and gender
+	0x67,// sprite
+	LANGDEP(PSTRING("EDGAR"), PSTRING("EDGAR")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x127
+},{
+	//Trainer 0x128
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DOMPTEUR,
+	{0xb, false},//Encounter and gender
+	0x67,// sprite
+	LANGDEP(PSTRING("JÖRG"), PSTRING("JÖRG")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x128
+},{
+	//Trainer 0x129
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DOMPTEUR,
+	{0xb, false},//Encounter and gender
+	0x67,// sprite
+	LANGDEP(PSTRING("HENDRIK"), PSTRING("HENDRIK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x129
+},{
+	//Trainer 0x12a
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DOMPTEUR,
+	{0xb, false},//Encounter and gender
+	0x67,// sprite
+	LANGDEP(PSTRING("OTFRIED"), PSTRING("OTFRIED")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x12a
+},{
+	//Trainer 0x12b
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_DOMPTEUR,
+	{0xb, false},//Encounter and gender
+	0x67,// sprite
+	LANGDEP(PSTRING("URS"), PSTRING("URS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x12b
+},{
+	//Trainer 0x12c
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("EILMAR"), PSTRING("EILMAR")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x12c
+},{
+	//Trainer 0x12d
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("JOSCHKA"), PSTRING("JOSCHKA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x12d
+},{
+	//Trainer 0x12e
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("FRITJOF"), PSTRING("FRITJOF")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x12e
+},{
+	//Trainer 0x12f
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("TILL"), PSTRING("TILL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x12f
+},{
+	//Trainer 0x130
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("GENADI"), PSTRING("GENADI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x130
+},{
+	//Trainer 0x131
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("EDWIN"), PSTRING("EDWIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x131
+},{
+	//Trainer 0x132
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("VITALI"), PSTRING("VITALI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x132
+},{
+	//Trainer 0x133
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("PASCAL"), PSTRING("PASCAL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x133
+},{
+	//Trainer 0x134
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("OTTOKAR"), PSTRING("OTTOKAR")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x134
+},{
+	//Trainer 0x135
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("ROMAN"), PSTRING("ROMAN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x135
+},{
+	//Trainer 0x136
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("AMATUS"), PSTRING("AMATUS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x136
+},{
+	//Trainer 0x137
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("ANDOLIN"), PSTRING("ANDOLIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x137
+},{
+	//Trainer 0x138
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("KARL"), PSTRING("KARL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x138
+},{
+	//Trainer 0x139
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("ARMIN"), PSTRING("ARMIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x139
+},{
+	//Trainer 0x13a
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("MALTE"), PSTRING("MALTE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x13a
+},{
+	//Trainer 0x13b
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("VINCENT"), PSTRING("VINCENT")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x13b
+},{
+	//Trainer 0x13c
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_VOGELFAENGER2,
+	{0x5, false},//Encounter and gender
+	0x68,// sprite
+	LANGDEP(PSTRING("ANTon"), PSTRING("ANTon")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x13c
+},{
+	//Trainer 0x13d
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("JUNICHI"), PSTRING("JUNICHI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x13d
+},{
+	//Trainer 0x13e
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("MELVIN"), PSTRING("MELVIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x13e
+},{
+	//Trainer 0x13f
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("SATORU"), PSTRING("SATORU")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x13f
+},{
+	//Trainer 0x140
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("EDMUND"), PSTRING("EDMUND")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x140
+},{
+	//Trainer 0x141
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("SHIGERU"), PSTRING("SHIGERU")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x141
+},{
+	//Trainer 0x142
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("HIROSHI"), PSTRING("HIROSHI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x142
+},{
+	//Trainer 0x143
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("YU"), PSTRING("YU")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x143
+},{
+	//Trainer 0x144
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("EUGEN"), PSTRING("EUGEN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x144
+},{
+	//Trainer 0x145
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_SCHWARZGURT2,
+	{0x4, false},//Encounter and gender
+	0x69,// sprite
+	LANGDEP(PSTRING("KENJI"), PSTRING("KENJI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x145
+},{
+	//Trainer 0x146
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x146
+},{
+	//Trainer 0x147
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x147
+},{
+	//Trainer 0x148
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x148
+},{
+	//Trainer 0x149
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x149
+},{
+	//Trainer 0x14a
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x14a
+},{
+	//Trainer 0x14b
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x14b
+},{
+	//Trainer 0x14c
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x14c
+},{
+	//Trainer 0x14d
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x14d
+},{
+	//Trainer 0x14e
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE,
+	{0x0, false},//Encounter and gender
+	0x6a,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x14e
+},{
+	//Trainer 0x14f
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("Ramon"), PSTRING("Ramon")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x14f
+},{
+	//Trainer 0x150
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("Mira"), PSTRING("Mira")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x150
+},{
+	//Trainer 0x151
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("Penis"), PSTRING("Penis")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x151
+},{
+	//Trainer 0x152
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("Eros"), PSTRING("Eros")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x152
+},{
+	//Trainer 0x153
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("Dieter"), PSTRING("Dieter")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x153
+},{
+	//Trainer 0x154
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("Robin"), PSTRING("Robin")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x154
+},{
+	//Trainer 0x155
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("URIEL"), PSTRING("URIEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x155
+},{
+	//Trainer 0x156
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("JONAS"), PSTRING("JONAS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x156
+},{
+	//Trainer 0x157
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("PATRICK"), PSTRING("PATRICK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x157
+},{
+	//Trainer 0x158
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("FABIAN"), PSTRING("FABIAN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x158
+},{
+	//Trainer 0x159
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("RONALD"), PSTRING("RONALD")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x159
+},{
+	//Trainer 0x15a
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("KAREL"), PSTRING("KAREL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x15a
+},{
+	//Trainer 0x15b
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_FORSCHER,
+	{0x3, false},//Encounter and gender
+	0x6b,// sprite
+	LANGDEP(PSTRING("ANGELO"), PSTRING("ANGELO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x15b
+},{
+	//Trainer 0x15c
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_BOSS,
+	{0x6, false},//Encounter and gender
+	0x6c,// sprite
+	LANGDEP(PSTRING("GIOVANNI"), PSTRING("GIOVANNI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x15c
+},{
+	//Trainer 0x15d
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_BOSS,
+	{0x6, false},//Encounter and gender
+	0x6c,// sprite
+	LANGDEP(PSTRING("GIOVANNI"), PSTRING("GIOVANNI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x15d
+},{
+	//Trainer 0x15e
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x6, false},//Encounter and gender
+	0x6c,// sprite
+	LANGDEP(PSTRING("GIOVANNI"), PSTRING("GIOVANNI")),
+	{ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x15e
+},{
+	//Trainer 0x15f
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x15f
+},{
+	//Trainer 0x160
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x160
+},{
+	//Trainer 0x161
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, true},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x161
+},{
+	//Trainer 0x162
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x162
+},{
+	//Trainer 0x163
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x163
+},{
+	//Trainer 0x164
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x164
+},{
+	//Trainer 0x165
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, true},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x165
+},{
+	//Trainer 0x166
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x166
+},{
+	//Trainer 0x167
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x167
+},{
+	//Trainer 0x168
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, true},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x168
+},{
+	//Trainer 0x169
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x169
+},{
+	//Trainer 0x16a
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, true},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x16a
+},{
+	//Trainer 0x16b
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x16b
+},{
+	//Trainer 0x16c
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, true},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x16c
+},{
+	//Trainer 0x16d
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x16d
+},{
+	//Trainer 0x16e
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x16e
+},{
+	//Trainer 0x16f
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, true},//Encounter and gender
+	0x4e,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x16f
+},{
+	//Trainer 0x170
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x170
+},{
+	//Trainer 0x171
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x171
+},{
+	//Trainer 0x172
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x172
+},{
+	//Trainer 0x173
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x173
+},{
+	//Trainer 0x174
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x174
+},{
+	//Trainer 0x175
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x175
+},{
+	//Trainer 0x176
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, true},//Encounter and gender
+	0x1b,// sprite
+	LANGDEP(PSTRING("VORS. RIN"), PSTRING("VORS. RIN")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x176
+},{
+	//Trainer 0x177
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x177
+},{
+	//Trainer 0x178
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x178
+},{
+	//Trainer 0x179
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x179
+},{
+	//Trainer 0x17a
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x17a
+},{
+	//Trainer 0x17b
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x17b
+},{
+	//Trainer 0x17c
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x17c
+},{
+	//Trainer 0x17d
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x17d
+},{
+	//Trainer 0x17e
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x17e
+},{
+	//Trainer 0x17f
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x17f
+},{
+	//Trainer 0x180
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x180
+},{
+	//Trainer 0x181
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x181
+},{
+	//Trainer 0x182
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x182
+},{
+	//Trainer 0x183
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x183
+},{
+	//Trainer 0x184
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x184
+},{
+	//Trainer 0x185
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x185
+},{
+	//Trainer 0x186
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x186
+},{
+	//Trainer 0x187
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEAM_VIOLET,
+	{0x6, false},//Encounter and gender
+	0x6d,// sprite
+	LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x187
+},{
+	//Trainer 0x188
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("RICHARD"), PSTRING("RICHARD")),
+	{ITEM_SUPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x188
+},{
+	//Trainer 0x189
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("NILS"), PSTRING("NILS")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x189
+},{
+	//Trainer 0x18a
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("DIEGO"), PSTRING("DIEGO")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x18a
+},{
+	//Trainer 0x18b
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("JÜRGEN"), PSTRING("JÜRGEN")),
+	{ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x18b
+},{
+	//Trainer 0x18c
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("NEPOMUK"), PSTRING("NEPOMUK")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x18c
+},{
+	//Trainer 0x18d
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("ERICH"), PSTRING("ERICH")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x18d
+},{
+	//Trainer 0x18e
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("RAIMUND"), PSTRING("RAIMUND")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x18e
+},{
+	//Trainer 0x18f
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("CHRISTIAN"), PSTRING("CHRISTIAN")),
+	{ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x18f
+},{
+	//Trainer 0x190
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("HIDEO"), PSTRING("HIDEO")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x190
+},{
+	//Trainer 0x191
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, false},//Encounter and gender
+	0x6e,// sprite
+	LANGDEP(PSTRING("MARKUS"), PSTRING("MARKUS")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x191
+},{
+	//Trainer 0x192
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("YVONNE"), PSTRING("YVONNE")),
+	{ITEM_SUPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x192
+},{
+	//Trainer 0x193
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("KAROLINE"), PSTRING("KAROLINE")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x193
+},{
+	//Trainer 0x194
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("ANNABEL"), PSTRING("ANNABEL")),
+	{ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x194
+},{
+	//Trainer 0x195
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("THERESA"), PSTRING("THERESA")),
+	{ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x195
+},{
+	//Trainer 0x196
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("NAOMI"), PSTRING("NAOMI")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x196
+},{
+	//Trainer 0x197
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("VERONIKA"), PSTRING("VERONIKA")),
+	{ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x197
+},{
+	//Trainer 0x198
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("GUIDO"), PSTRING("GUIDO")),
+	{ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x198
+},{
+	//Trainer 0x199
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER2,
+	{0x5, true},//Encounter and gender
+	0x6f,// sprite
+	LANGDEP(PSTRING("MICHAELA"), PSTRING("MICHAELA")),
+	{ITEM_HYPERTRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x199
+},{
+	//Trainer 0x19a
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TOP_VIER2,
+	{0xa, true},//Encounter and gender
+	0x70,// sprite
+	LANGDEP(PSTRING("LORELEI"), PSTRING("LORELEI")),
+	{ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x19a
+},{
+	//Trainer 0x19b
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TOP_VIER2,
+	{0xa, false},//Encounter and gender
+	0x71,// sprite
+	LANGDEP(PSTRING("BRUNO"), PSTRING("BRUNO")),
+	{ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x19b
+},{
+	//Trainer 0x19c
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TOP_VIER2,
+	{0xa, true},//Encounter and gender
+	0x72,// sprite
+	LANGDEP(PSTRING("AGATHE"), PSTRING("AGATHE")),
+	{ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x19c
+},{
+	//Trainer 0x19d
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TOP_VIER2,
+	{0xa, false},//Encounter and gender
+	0x73,// sprite
+	LANGDEP(PSTRING("SIEGFRIED"), PSTRING("SIEGFRIED")),
+	{ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x19d
+},{
+	//Trainer 0x19e
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x0, false},//Encounter and gender
+	0x74,// sprite
+	LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
+	{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x19e
+},{
+	//Trainer 0x19f
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x1, true},//Encounter and gender
+	0x75,// sprite
+	LANGDEP(PSTRING("Mia"), PSTRING("Mia")),
+	{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x19f
+},{
+	//Trainer 0x1a0
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x0, false},//Encounter and gender
+	0x76,// sprite
+	LANGDEP(PSTRING("Manus"), PSTRING("Manus")),
+	{ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_HYPERTRANK, ITEM_HYPERTRANK},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a0
+},{
+	//Trainer 0x1a1
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x1, true},//Encounter and gender
+	0x77,// sprite
+	LANGDEP(PSTRING("TENEBRUS"), PSTRING("TENEBRUS")),
+	{ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a1
+},{
+	//Trainer 0x1a2
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x0, false},//Encounter and gender
+	0x78,// sprite
+	LANGDEP(PSTRING("KOGA"), PSTRING("KOGA")),
+	{ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a2
+},{
+	//Trainer 0x1a3
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x0, false},//Encounter and gender
+	0x79,// sprite
+	LANGDEP(PSTRING("IGVA"), PSTRING("IGVA")),
+	{ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a3
+},{
+	//Trainer 0x1a4
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ARENALEITER,
+	{0x1, true},//Encounter and gender
+	0x7a,// sprite
+	LANGDEP(PSTRING("SABRINA"), PSTRING("SABRINA")),
+	{ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a4
+},{
+	//Trainer 0x1a5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN2,
+	{0xd, false},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("NIKOLAI"), PSTRING("NIKOLAI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a5
+},{
+	//Trainer 0x1a6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN2,
+	{0xd, false},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("ARTUR"), PSTRING("ARTUR")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a6
+},{
+	//Trainer 0x1a7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN2,
+	{0xd, false},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("CLAUDIO"), PSTRING("CLAUDIO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a7
+},{
+	//Trainer 0x1a8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN2,
+	{0xd, false},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("NORBERT"), PSTRING("NORBERT")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a8
+},{
+	//Trainer 0x1a9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN2,
+	{0xd, false},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("ABRAHAM"), PSTRING("ABRAHAM")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1a9
+},{
+	//Trainer 0x1aa
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1aa
+},{
+	//Trainer 0x1ab
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ab
+},{
+	//Trainer 0x1ac
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ac
+},{
+	//Trainer 0x1ad
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ad
+},{
+	//Trainer 0x1ae
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ae
+},{
+	//Trainer 0x1af
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1af
+},{
+	//Trainer 0x1b0
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b0
+},{
+	//Trainer 0x1b1
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b1
+},{
+	//Trainer 0x1b2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b2
+},{
+	//Trainer 0x1b3
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b3
+},{
+	//Trainer 0x1b4
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b4
+},{
+	//Trainer 0x1b5
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_RIVALE2,
+	{0x0, false},//Encounter and gender
+	0x7c,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b5
+},{
+	//Trainer 0x1b6
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_CHAMP2,
+	{0x0, false},//Encounter and gender
+	0x7d,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b6
+},{
+	//Trainer 0x1b7
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_CHAMP2,
+	{0x0, false},//Encounter and gender
+	0x7d,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b7
+},{
+	//Trainer 0x1b8
+	true,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_CHAMP2,
+	{0x0, false},//Encounter and gender
+	0x7d,// sprite
+	LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+	{ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	6,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b8
+},{
+	//Trainer 0x1b9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("WALBURGA"), PSTRING("WALBURGA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1b9
+},{
+	//Trainer 0x1ba
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("ANASTASIA"), PSTRING("ANASTASIA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ba
+},{
+	//Trainer 0x1bb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("TRUDLINDE"), PSTRING("TRUDLINDE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1bb
+},{
+	//Trainer 0x1bc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("PAULA"), PSTRING("PAULA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1bc
+},{
+	//Trainer 0x1bd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("BIRTE"), PSTRING("BIRTE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1bd
+},{
+	//Trainer 0x1be
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("ROSWITA"), PSTRING("ROSWITA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1be
+},{
+	//Trainer 0x1bf
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("BRUNHILDE"), PSTRING("BRUNHILDE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1bf
+},{
+	//Trainer 0x1c0
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("RUTH"), PSTRING("RUTH")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c0
+},{
+	//Trainer 0x1c1
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("JAIME"), PSTRING("JAIME")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c1
+},{
+	//Trainer 0x1c2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("MAREIKE"), PSTRING("MAREIKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c2
+},{
+	//Trainer 0x1c3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("MARIKA"), PSTRING("MARIKA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c3
+},{
+	//Trainer 0x1c4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("HANNELORE"), PSTRING("HANNELORE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c4
+},{
+	//Trainer 0x1c5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("MARIANNE"), PSTRING("MARIANNE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c5
+},{
+	//Trainer 0x1c6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN,
+	{0x3, true},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("NILOM"), PSTRING("NILOM")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c6
+},{
+	//Trainer 0x1c7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("MIRA"), PSTRING("MIRA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c7
+},{
+	//Trainer 0x1c8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c8
+},{
+	//Trainer 0x1c9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1c9
+},{
+	//Trainer 0x1ca
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ca
+},{
+	//Trainer 0x1cb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1cb
+},{
+	//Trainer 0x1cc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1cc
+},{
+	//Trainer 0x1cd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1cd
+},{
+	//Trainer 0x1ce
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("AMANDA"), PSTRING("AMANDA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ce
+},{
+	//Trainer 0x1cf
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("SELINA"), PSTRING("SELINA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1cf
+},{
+	//Trainer 0x1d0
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_EXORZISTIN,
+	{0x3, true},//Encounter and gender
+	0x7e,// sprite
+	LANGDEP(PSTRING("PANDORA"), PSTRING("PANDORA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d0
+},{
+	//Trainer 0x1d1
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_WANDERER,
+	{0xb, false},//Encounter and gender
+	0x5a,// sprite
+	LANGDEP(PSTRING("JENS"), PSTRING("JENS")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d1
+},{
+	//Trainer 0x1d2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("KIRSTEN"), PSTRING("KIRSTEN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d2
+},{
+	//Trainer 0x1d3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("JANKA"), PSTRING("JANKA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	5,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d3
+},{
+	//Trainer 0x1d4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("TABITHA"), PSTRING("TABITHA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d4
+},{
+	//Trainer 0x1d5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("HILDE"), PSTRING("HILDE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d5
+},{
+	//Trainer 0x1d6
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_BIKER,
+	{0x0, false},//Encounter and gender
+	0x5b,// sprite
+	LANGDEP(PSTRING("ZOLTAN"), PSTRING("ZOLTAN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d6
+},{
+	//Trainer 0x1d7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_CAMPER2,
+	{0x0, false},//Encounter and gender
+	0x56,// sprite
+	LANGDEP(PSTRING("HEINZ"), PSTRING("HEINZ")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d7
+},{
+	//Trainer 0x1d8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("MARION"), PSTRING("MARION")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d8
+},{
+	//Trainer 0x1d9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("IRENE"), PSTRING("IRENE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1d9
+},{
+	//Trainer 0x1da
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("VICKI"), PSTRING("VICKI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1da
+},{
+	//Trainer 0x1db
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("ARIANA"), PSTRING("ARIANA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	4,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1db
+},{
+	//Trainer 0x1dc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("KERSTIN"), PSTRING("KERSTIN")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1dc
+},{
+	//Trainer 0x1dd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_CAMPER2,
+	{0x0, false},//Encounter and gender
+	0x56,// sprite
+	LANGDEP(PSTRING("LAURENZ"), PSTRING("LAURENZ")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1dd
+},{
+	//Trainer 0x1de
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("ROXANA"), PSTRING("ROXANA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1de
+},{
+	//Trainer 0x1df
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("GUNDULA"), PSTRING("GUNDULA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1df
+},{
+	//Trainer 0x1e0
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("HEIDI"), PSTRING("HEIDI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e0
+},{
+	//Trainer 0x1e1
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PICKNICKER2,
+	{0x2, true},//Encounter and gender
+	0x57,// sprite
+	LANGDEP(PSTRING("JENNY"), PSTRING("JENNY")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e1
+},{
+	//Trainer 0x1e2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN2,
+	{0xd, false},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("TANKO"), PSTRING("TANKO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e2
+},{
+	//Trainer 0x1e3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GENTLEMAN2,
+	{0xd, false},//Encounter and gender
+	0x7b,// sprite
+	LANGDEP(PSTRING("SILVIO"), PSTRING("SILVIO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e3
+},{
+	//Trainer 0x1e4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ZWIL2,
+	{0x9, false},//Encounter and gender
+	0x7f,// sprite
+	LANGDEP(PSTRING("NORA&JO"), PSTRING("NORA&JO")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e4
+},{
+	//Trainer 0x1e5
+	true,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PRIMAPAAR,
+	{0x5, false},//Encounter and gender
+	0x80,// sprite
+	LANGDEP(PSTRING("TYRO&LORE"), PSTRING("TYRO&LORE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e5
+},{
+	//Trainer 0x1e6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JUNGES_GLUECK2,
+	{0x2, false},//Encounter and gender
+	0x81,// sprite
+	LANGDEP(PSTRING("SIRA&DENIZ"), PSTRING("SIRA&DENIZ")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e6
+},{
+	//Trainer 0x1e7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ZWIL2,
+	{0x9, false},//Encounter and gender
+	0x7f,// sprite
+	LANGDEP(PSTRING("BERTA&ENKE"), PSTRING("BERTA&ENKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e7
+},{
+	//Trainer 0x1e8
+	false,// Custom moves
+	true,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_MUEHLENSIPPE,
+	{0x4, false},//Encounter and gender
+	0x82,// sprite
+	LANGDEP(PSTRING("SERGIO&EVA"), PSTRING("SERGIO&EVA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e8
+},{
+	//Trainer 0x1e9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_JUNGES_GLUECK2,
+	{0x2, false},//Encounter and gender
+	0x81,// sprite
+	LANGDEP(PSTRING("LENA&UWE"), PSTRING("LENA&UWE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1e9
+},{
+	//Trainer 0x1ea
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GESCHWISTER2,
+	{0x8, false},//Encounter and gender
+	0x83,// sprite
+	LANGDEP(PSTRING("NORA&TOM"), PSTRING("NORA&TOM")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ea
+},{
+	//Trainer 0x1eb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GESCHWISTER2,
+	{0x8, false},//Encounter and gender
+	0x83,// sprite
+	LANGDEP(PSTRING("EWE&TOBI"), PSTRING("EWE&TOBI")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	true,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1eb
+},{
+	//Trainer 0x1ec
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER,
+	{0x0, true},//Encounter and gender
+	0x39,// sprite
+	LANGDEP(PSTRING("MAIKE"), PSTRING("MAIKE")),
+	{ITEM_TRANK, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ec
+},{
+	//Trainer 0x1ed
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER,
+	{0x0, false},//Encounter and gender
+	0x39,// sprite
+	LANGDEP(PSTRING("MAIKE"), PSTRING("MAIKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ed
+},{
+	//Trainer 0x1ee
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_ASS_TRAINER,
+	{0x0, false},//Encounter and gender
+	0x39,// sprite
+	LANGDEP(PSTRING("MAIKE"), PSTRING("MAIKE")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ee
+},{
+	//Trainer 0x1ef
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_KAEFERSAMMLER2,
+	{0x0, false},//Encounter and gender
+	0x53,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ef
+},{
+	//Trainer 0x1f0
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_KAEFERSAMMLER2,
+	{0x0, false},//Encounter and gender
+	0x53,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f0
+},{
+	//Trainer 0x1f1
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_KAEFERSAMMLER2,
+	{0x0, false},//Encounter and gender
+	0x53,// sprite
+	LANGDEP(PSTRING(""), PSTRING("")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f1
+},{
+	//Trainer 0x1f2
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("EGON"), PSTRING("EGON")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f2
+},{
+	//Trainer 0x1f3
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("EGON"), PSTRING("EGON")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f3
+},{
+	//Trainer 0x1f4
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("JANNIK"), PSTRING("JANNIK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f4
+},{
+	//Trainer 0x1f5
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GOERE2,
+	{0x1, true},//Encounter and gender
+	0x54,// sprite
+	LANGDEP(PSTRING("UNA"), PSTRING("UNA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f5
+},{
+	//Trainer 0x1f6
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GOERE2,
+	{0x1, true},//Encounter and gender
+	0x54,// sprite
+	LANGDEP(PSTRING("UNA"), PSTRING("UNA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f6
+},{
+	//Trainer 0x1f7
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("FRIEDER"), PSTRING("FRIEDER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f7
+},{
+	//Trainer 0x1f8
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("FRIEDER"), PSTRING("FRIEDER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f8
+},{
+	//Trainer 0x1f9
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("FRIEDER"), PSTRING("FRIEDER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	3,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1f9
+},{
+	//Trainer 0x1fa
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("JANNIK"), PSTRING("JANNIK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1fa
+},{
+	//Trainer 0x1fb
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GOERE2,
+	{0x1, true},//Encounter and gender
+	0x54,// sprite
+	LANGDEP(PSTRING("RICARDA"), PSTRING("RICARDA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1fb
+},{
+	//Trainer 0x1fc
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_GOERE2,
+	{0x1, true},//Encounter and gender
+	0x54,// sprite
+	LANGDEP(PSTRING("RICARDA"), PSTRING("RICARDA")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1fc
+},{
+	//Trainer 0x1fd
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_TEENAGER2,
+	{0x0, false},//Encounter and gender
+	0x52,// sprite
+	LANGDEP(PSTRING("JANNIK"), PSTRING("JANNIK")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1fd
+},{
+	//Trainer 0x1fe
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_WANDERER,
+	{0xb, false},//Encounter and gender
+	0x5a,// sprite
+	LANGDEP(PSTRING("KASPER"), PSTRING("KASPER")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	2,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1fe
+},{
+	//Trainer 0x1ff
+	false,// Custom moves
+	false,// Custom items
+	0x0,// field_0_filler
+	TRAINERCLASS_PKMN_PROF,
+	{0x0, false},//Encounter and gender
+	0x84,// sprite
+	LANGDEP(PSTRING("PROF. EICH"), PSTRING("PROF. EICH")),
+	{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+	false,//Dual battle
+	TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+	0x0,// field_1E
+	1,// Pokemon Count
+	0x0,// field_21
+	0x0,// field_22
+	0x0,// field_23
+	(trainer_pokemon*) trainer_party_x1ff
 }

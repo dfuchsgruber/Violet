@@ -1,7 +1,7 @@
 //trainer
-.org 0x0803D9B8
-	ldr r0, =hook_build_trainer_poke | 1
-	bx r0
+.org 0x08011264
+	ldr r2, =build_trainer | 1
+	bx r2
 	.pool
 
 .org 0x0802596C

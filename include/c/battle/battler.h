@@ -53,16 +53,17 @@ typedef struct battler_status{
 }battler_status;
 
 
-battler* battlers = (battler*) 0x02023BE4;
+extern battler battlers[4];
+extern battler_status battler_statuses[4];
 
-u8 *attack_targets = (u8*) 0x02023BD6;
-u8 *attacking_battler = (u8*)0x02023D6B;
-u8 *defending_battler = (u8*)0x02023D6C;
-u8 *active_battler = (u8*)0x02023BC4;
-u8 *battler_oams = (u8*) 0x02023D44;
-u8 *battler_cnt = (u8*) 0x02023BCC;
-u16 *battler_team_slots = (u16*) 0x02023BCE;
-u8 *battler_attacking_order = (u8*)0x02023BDE;
+extern u8 attack_targets;
+extern u8 attacking_battler;
+extern u8 defending_battler;
+extern u8 active_battle;
+extern u8 battler_oams;
+extern u8 battler_cnt;
+extern u16 battler_team_slots;
+extern u8 battler_attacking_order;
 
 /**
  * Checks if a battler is an opponent
@@ -71,6 +72,5 @@ u8 *battler_attacking_order = (u8*)0x02023BDE;
  */
 bool battler_is_opponent(u8 index);
 
-battler_status *battler_statuses = (battler_status*)0x02023E8C;
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

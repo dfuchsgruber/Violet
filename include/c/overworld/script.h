@@ -8,8 +8,17 @@
 #ifndef INCLUDE_C_OVERWORLD_SCRIPT_H_
 #define INCLUDE_C_OVERWORLD_SCRIPT_H_
 
+typedef struct {
+	u8 unkown[0x8];
+	u8 *script;
+	u8 unkown2[0x58];
+	u8 *pointer_banks[1]; // Might be there are more than one
+	// TODO (research the state)
+} overworld_script_state_t;
 
-u8 **overworld_script_virtual_ptr = (u8**) 0x020370A4;
+overworld_script_state_t *overworld_script_state;
+
+u8 **overworld_script_virtual_ptr;
 
 /**
  * Script command to initialize a mart

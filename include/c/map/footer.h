@@ -29,7 +29,7 @@ typedef struct mapfooter {
 
 
 extern mapfooter *mapfooters[];
-mapfooter *mapfooter_virtual = (mapfooter*)0x03004F90;
+extern mapfooter mapfooter_virtual;
 
 mapfooter *get_mapfooter();
 

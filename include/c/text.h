@@ -46,7 +46,7 @@ extern "C" {
      */
     u8* itoa(u8* dst, int value, u8 mode, u8 charlength);
 
-    tbox *tboxes = (tbox*)0x020204B4;
+    extern tbox tboxes[];
     
 
     /**
@@ -199,7 +199,11 @@ extern "C" {
      */
     void tbox_draw_type_icon_by_type_p1(u8 box_id, u8 type_p1, u16 additional, u16 y_pixel);
 
-
+    /**
+     * Clears the bottom line of the tbox (sets tile to color 0)
+     * @param box_id the box id to clear
+     */
+    void tbox_clear_bottom_line(u8 box_id);
 
     /**
      * Concatenates two strings (appends second to first string)
@@ -217,8 +221,8 @@ extern "C" {
      */
     u8* strcpy(u8* dst, u8* src);
 
-    u8 *strbuf = (u8*) 0x02021D18;
-    u8 *buffer0 = (u8*) 0x02021CD0;
+    extern u8 strbuf[];
+    extern u8 buffer0[];
 
 #ifdef	__cplusplus
 }

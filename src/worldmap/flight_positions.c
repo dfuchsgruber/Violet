@@ -32,7 +32,7 @@ int map_get_flightposition(u8 bank, u8 map){
             || flight_positions[i].map != 0xFF; i++){
         if(flight_positions[i].bank == bank
                 && flight_positions[i].map == map)
-            return i;
+            return i + 1;
     }
     return 0;
 }

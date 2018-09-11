@@ -92,7 +92,7 @@ oam_template pokedex_cursor_template = {
     &pokedex_cursor_sprite,
     pokedex_cursor_anims,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 

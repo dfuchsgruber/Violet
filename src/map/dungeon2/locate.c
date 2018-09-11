@@ -42,6 +42,8 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 
 	{3, 4, 0x35, 0x3, DTYPE_CAVE}, // Kaskada
 	{3, 1, 0x43, 0x6, DTYPE_CAVE}, // Meriana City
+	{3, 41, 0x12, 0x54, DTYPE_OCEAN}, // Route 2
+	// TODO locate ocean dungeons after rework of sea routes
     // TODO
 };
 
@@ -65,6 +67,13 @@ void dungeon_map_set_tiles() {
 				} else if (dungeon_locations[i].type == DTYPE_CAVE) {
 					// Cave: The coordinates are the only tile
 					block_set_by_pos((s16)(x + 7), (s16)(y + 7), 0x25F | BLOCK_SOLID);
+				} else if (dungeon_locations[i].type == DTYPE_OCEAN) {
+					// Ocean: The coordinates are the left-top most tile of the entrance
+					block_set_by_pos((s16)(x + 7), (s16)(y + 7), 0x26E | BLOCK_SOLID);
+					block_set_by_pos((s16)(x + 8), (s16)(y + 7), 0x26F | BLOCK_SOLID);
+					block_set_by_pos((s16)(x + 7), (s16)(y + 8), 0x276 | BLOCK_SOLID);
+					block_set_by_pos((s16)(x + 8), (s16)(y + 8), 0x277 | BLOCK_SOLID);
+
 				} else {
 					derrf("Unkown dungeon type to spawn %d\n", dungeon_locations[i].type);
 				}
@@ -88,6 +97,12 @@ int dungeon_get_location_idx(u8 bank, u8 map, s16 x, s16 y) {
 			if(bank == dungeon_locations[i].bank && map == dungeon_locations[i].map &&
 					x == dungeon_locations[i].x && y == dungeon_locations[i].y)
 			return i;
+		} else if (dungeon_locations[i].type == DTYPE_OCEAN) {
+			if (bank == dungeon_locations[i].bank && map == dungeon_locations[i].map &&
+					(x == dungeon_locations[i].x || x == dungeon_locations[i].x + 1) &&
+					(y == dungeon_locations[i].y || y == dungeon_locations[i].y + 1)) {
+				return i;
+			}
 		}
 	}
 	return -1;
@@ -115,4 +130,15 @@ int dungeon_map_entrance_get_type() {
 void dungeon_map_entrance_set_flag() {
 	int dungeon_idx = dungeon_get_location_idx_player_is_facing();
 	dungeon_flag_set(dungeon_idx);
+}
+
+
+void dungeon2_seed_init() {
+	int dungeon_idx = dungeon_get_location_idx_player_is_facing();
+	if (dungeon_idx == -1) {
+		derrf("No dungeon matches the current entrance for seed init\n");
+	}
+	u32 seq[1] = {(u32)dungeon_idx};
+	cmem->dg2.initial_seed = tmp_hash(seq, 1);
+	dprintf("Setup seed to %d\n", cmem->dg2.initial_seed);
 }

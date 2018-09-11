@@ -18,6 +18,7 @@
 
 void generic_callback1(){
     fading_proceed();
+    oam_anim_proceed();
     oam_proceed();
     oam_attributes_copy();
     graphic_queue_proceed();

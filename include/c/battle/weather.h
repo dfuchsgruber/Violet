@@ -8,6 +8,6 @@
 #ifndef INCLUDE_C_BATTLE_WEATHER_H_
 #define INCLUDE_C_BATTLE_WEATHER_H_
 
-u16 *battle_weather = (u16*) 0x02023F1C;
+extern u16 battle_weather;
 
 #endif /* INCLUDE_C_BATTLE_WEATHER_H_ */

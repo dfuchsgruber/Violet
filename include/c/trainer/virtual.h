@@ -30,7 +30,7 @@ typedef struct trainer_variables {
 } trainer_variables;
 
 
-trainer_variables *trainer_vars = (trainer_variables*) 0x020386AC;
+extern trainer_variables trainer_vars;
 
 /**
  * Loads the items of a trainer into the virutal trainer state
@@ -50,5 +50,10 @@ u16 trainer_get_unaligned_hword(void *src);
  * @return the flag
  */
 u16 trainer_get_flag();
+
+/**
+ * Continuation that is called after a trainerbattle ends
+ */
+void trainerbattle_continuation();
 
 #endif /* INCLUDE_C_TRAINER_VIRTUAL_H_ */

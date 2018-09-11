@@ -88,7 +88,9 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                             break;
                         case 7:
                             //Teleport 
-                            map_load_namespace(buffer0, get_mapheader((u8) (*save1)->healingplace_bank, (u8) (*save1)->healingplace_map)->name_bank);
+                            map_load_namespace(buffer0,
+                            		get_mapheader((u8) (*save1)->healingplace.bank,
+                            				(u8) (*save1)->healingplace.map)->name_bank);
                             string_decrypt(strbuf, (u8*) 0x084175B5);
                             pokemon_party_menu_print_question(callback_self);
                             *((u16*) ((int) (pokemon_party_menu_state->opt_state) + 0x218)) = (u8) index;

@@ -4,6 +4,7 @@
 #include "rtc.h"
 #include "constants/vars.h"
 #include "constants/items.h"
+#include "constants/flags.h"
 #include "tile/trash.h"
 #include "language.h"
 #include "vars.h"
@@ -35,6 +36,9 @@ void version_transfer(){
     while(*var_access(SGM_VER) != VERSION_LATEST){
         //transfer savegames to a higher version until we reach the latest
         switch(*var_access(SGM_VER)){
+        	case VERSION_ALPHA_2_2:
+				// Latest
+				break;
             case VERSION_ALPHA_2_1:
                 //Latest
                 break;
@@ -76,6 +80,25 @@ void version_upgrade_alpha_1_X_to_2_0(){
 void version_upgrade_alpha_2_0_to_2_1(){
     *var_access(SGM_VER) = VERSION_ALPHA_2_1;
     *var_access(BATTLE_BG_OVERRIDE) = 0;
+}
+
+void version_upgrade_alpha_2_1_to_2_2() {
+	*var_access(TRAINERSCHOOL_PROGRESS) = 10;
+	*var_access(TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS) = 1;
+	*var_access(TRAINERSCHOOL_GOODBYE_CNT) = 3;
+	setflag(TRAINERSCHOOL_MAY_INSIDE);
+	setflag(TRAINERSCHOOL_BLAISE_INSIDE);
+	setflag(TRAINERSCHOOL_FELIX_INSIDE);
+	setflag(TRAINERSCHOOL_MAY_OUTSIDE);
+	setflag(TRAINERSCHOOL_BLAISE_OUTSIDE);
+	setflag(TRAINERSCHOOL_FELIX_OUTSIDE);
+	setflag(TRAINERSCHOOL_TALKED_TO_FELIX);
+	setflag(TRAINERSCHOOL_FAUN_OUTSIDE);
+	setflag(TRAINERSCHOOL_TALKED_TO_BLAISE);
+	setflag(ROUTE_1_RIVAL);
+	setflag(TRAINERSCHOOL_RIVAL);
+	setflag(TRAINERSCHOOL_RIVAL_INSIDE);
+	setflag(TRAINERSCHOOL_FAUN_INSIDE);
 }
 
 u16 version_is_latest(){

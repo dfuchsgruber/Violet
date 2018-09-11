@@ -65,7 +65,7 @@ typedef union union_block_data {
 #define DIR_DIASE 7
 #define DIR_DIASW 8
 
-coordinate *walking_directions = (coordinate*) 0x083A638C;
+extern coordinate walking_directions[];
 
 
 /**
@@ -89,6 +89,14 @@ void player_get_position(s16 *x, s16 *y);
  * @return the block id at x, y
  */
 u16 block_get_by_pos(s16 x, s16 y);
+
+/**
+ * Sets the block id at a certain position together with its level
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @param block the id to set at x, y
+ */
+void block_set_by_pos_with_level(s16 x, s16 y, u16 block_and_level);
 
 #define BLOCK_SOLID 0xC00
 

@@ -26,17 +26,18 @@ u16 dungeon_ocean_items_common[] = {
     ITEM_PARA_HEILER,
     ITEM_GEGENGIFT,
     ITEM_SUPERSCHUTZ,
+	ITEM_PERLE,
     0xFFFF
 };
 
 u16 dungeon_ocean_items_rare[] = {
-    ITEM_FINSTERSTEIN,
+    ITEM_ABYSSPLATTE,
     ITEM_SONDERBONBON,
-    ITEM_STERNENSTAUB,
+    ITEM_RIESENPERLE,
     ITEM_AP_PLUS,
     ITEM_ELIXIER,
     ITEM_TOP_SCHUTZ,
-    ITEM_METALLMANTEL,
+	ITEM_ABYSSZAHN,
     0xFFFF
 };
 

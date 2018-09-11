@@ -28,15 +28,27 @@ ow_script_movs_0x8dcf2e:
 .global ow_script_0x8dce86
 ow_script_0x8dce86:
 lockall
+loadpointer 0 str_bewohner
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8dcf8d
 callstd MSG_KEEPOPEN
+special 0xF
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8de230
 callstd MSG_KEEPOPEN
+special 0xF
 sound 0x15
 applymovement 0x28 ow_script_movs_0x8dcf8a
 waitmovement 0x0
+loadpointer 0 str_bewohner
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8dcf36
 callstd MSG_KEEPOPEN
+special 0xF
 applymovement 0x28 ow_script_movs_0x8dcf31
 waitmovement 0x0
 setdooropened 0x2e 0x14
@@ -46,8 +58,12 @@ waitmovement 0x0
 hidesprite 0x28
 setdoorclosed 0x2e 0x14
 doorchange
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8dcee9
 callstd MSG
+special 0xF
 fadescreen 0x1
 hidesprite 0x27
 clearflag MERIANA_CITY_DUDE
@@ -58,28 +74,34 @@ end
 
 
 .ifdef LANG_GER
+
+str_bewohner:
+	.string "Bewohner"
+
+str_polizist:
+	.string "Polizist"
+
 .global str_0x8dcf8d
 
 str_0x8dcf8d:
-    .string "Mann: Damit kommen Sie nicht\ndurch. Wenn die Top Vier davon\lerfahren, werden Sie dafür büßen."
+	.autostring 36 2 "Denken Sie, dass sie damit durchkommen?\pWenn die Top Vier von Ihren schmutzigen Geschäften erfahren..."
         
         
 .global str_0x8de230
 
 str_0x8de230:
-    .string "Polizist: Ha! Ich weiß nicht,\nwovon Sie reden. Sie unterstellen\lder Polizei ungeheuerliche Dinge!\lIch könnte Sie inhaftieren wegen\lsolcher Anschuldigungen..."
-        
+	.autostring 36 2 "Sie unterstellen der Polizei hier Ungeheuerliches!\pIch könnte Sie inhaftieren lassen für solche Anschuldingen!"
         
 .global str_0x8dcf36
 
 str_0x8dcf36:
-    .string "Mann: Was fällt Ihnen ein?\nKorruptes Gesindel... Schon gut,\lich gehe, ich gehe..."
+    .autostring 36 2 "Inhaftieren?\pDOTS DOTS\pSchon gut, schon gut.\nSie haben gewonnen.\pIch lasse Sie in Ruhe!"
         
         
 .global str_0x8dcee9
 
 str_0x8dcee9:
-    .string "Polizist: Verdammter Bengel! ...\nIch sollte mich darum kümmern ..."
+    .autostring 36 2 "Dieser KerlDOTS\pIch sollte mich vielleicht um ihn kümmernDOTS"
         
         
 .elseif LANG_EN

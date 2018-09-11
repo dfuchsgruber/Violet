@@ -14,10 +14,11 @@ extern "C" {
 
 #include "types.h"
 #include "save.h"
-    
+
+#define VERSION_ALPHA_2_2 3
 #define VERSION_ALPHA_2_1 2
 #define VERSION_ALPHA_2_0 1
-#define VERSION_LATEST 2
+#define VERSION_LATEST 3
     
     
     void version_upgrade_alpha_1_X_to_2_0();

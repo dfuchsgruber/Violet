@@ -53,3 +53,10 @@
     ldr r1, =flightposition_by_id | 1
     bx r1
     .pool
+
+// Associate all maps with the Kanto map (default wm)
+.org 0x080C0234
+	ldr r0, =0x080C02A8 | 1
+	bx r0
+	.pool
+

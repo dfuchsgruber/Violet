@@ -12,7 +12,7 @@ typedef struct build {
     u8 nature : 5;
     u8 evs[6];
     u16 prefered_item;
-} build;
+} trainer_build_t;
 
 typedef struct build_field {
     u8 build : 5;
@@ -22,10 +22,10 @@ typedef struct build_field {
 
 } build_field;
 
-union union_build_field {
+typedef union union_build_field {
     u8 value;
     build_field bitfield;
-};
+} union_build_field ;
 
 
 #endif /* INCLUDE_C_TRAINER_BUILD_H_ */

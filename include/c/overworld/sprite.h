@@ -19,29 +19,27 @@
 #include "types.h"
 #include "oam.h"
 
+extern u8 ow_anim_standard_npc[];
+extern u8 ow_anim_ho_oh[];
+extern u8 ow_anim_hiro[];
+extern u8 ow_anim_hiro_sit[];
+extern u8 ow_anim_hiro_call[];
+extern u8 ow_anim_hiro_rod[];
+extern u8 ow_anim_hiro_call2[];
+extern u8 ow_anim_hiro_bike[];
+extern u8 ow_anim_none[];
 
-//We define the constant offsets for things we know
-#define OW_ANIM_STANDARD_NPC (void*)0x083A322C
-#define OW_ANIM_HO_OH (void*)0x083A3280
-#define OW_ANIM_HIRO (void*)0x083A3334
-#define OW_ANIM_HIRO_SIT (void*)0x83A3448
-#define OW_ANIM_HIRO_CALL (void*)0x83A34FC
-#define OW_ANIM_HIRO_ROD (void*)0x83A352C
-#define OW_ANIM_HIRO_CALL2 (void*)0x83A3500
-#define OW_ANIM_HIRO_CALL_BIKE (void*)0x83A3504
-#define OW_ANIM_NONE (void*)0x83A31D8
+extern u8 ow_formation_16_32[];
+extern u8 ow_formation_128_64[];
+extern u8 ow_formation_32_32[];
+extern u8 ow_formation_64_64[];
+extern u8 ow_formation_16_16[];
 
-#define OW_FORMATION_16_32 (void*)0x083A3660
-#define OW_FORMATION_128_64 (void*)0x083A3914
-#define OW_FORMATION_32_32 (void*)0x083A36B4
-#define OW_FORMATION_64_64 (void*)0x083A3794
-#define OW_FORMATION_16_16 (void*)0x83A360C
-
-#define OW_FINAL_OAM_16_32 (sprite*)0x083A35D4
-#define OW_FINAL_OAM_128_64 (sprite*)0x083A35A4
-#define OW_FINAL_OAM_64_64 (sprite*)0x083A35E4
-#define OW_FINAL_OAM_32_32 (sprite*)0x083A35DC
-#define OW_FINAL_OAM_16_16 (sprite*)0x83A35B4
+extern u8 ow_final_oam_16_32[];
+extern u8 ow_final_oam_128_64[];
+extern u8 ow_final_oam_64_64[];
+extern u8 ow_final_oam_32_32[];
+extern u8 ow_final_oam_16_16[];
 
 
 typedef struct overworld_sprite {
@@ -60,11 +58,6 @@ typedef struct overworld_sprite {
     void *animation; //NSE := Anim Pointer
     graphic *graphics; //NSE := equals Pointer 3
     rotscale_frame **rotscales; //No NSE equal
-
-
-
-    //TODO
-
 } overworld_sprite;
 
 extern const unsigned short gfx_ow_deoxys_normal_0Tiles[];
@@ -734,6 +727,15 @@ extern const unsigned short gfx_ow_hiroine_sit_2Tiles[];
 extern const unsigned short gfx_ow_botogel_0Tiles[];
 extern const unsigned short gfx_ow_botogel_1Tiles[];
 extern const unsigned short gfx_ow_botogel_2Tiles[];
+extern const unsigned short gfx_ow_mother_0Tiles[];
+extern const unsigned short gfx_ow_mother_1Tiles[];
+extern const unsigned short gfx_ow_mother_2Tiles[];
+extern const unsigned short gfx_ow_mother_3Tiles[];
+extern const unsigned short gfx_ow_mother_4Tiles[];
+extern const unsigned short gfx_ow_mother_5Tiles[];
+extern const unsigned short gfx_ow_mother_6Tiles[];
+extern const unsigned short gfx_ow_mother_7Tiles[];
+extern const unsigned short gfx_ow_mother_8Tiles[];
 
 
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */

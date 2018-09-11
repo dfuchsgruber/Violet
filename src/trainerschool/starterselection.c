@@ -98,7 +98,7 @@ oam_template oam_template_trainerschool_lockschal = {
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -107,7 +107,7 @@ oam_template oam_template_trainerschool_weluno = {
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -116,7 +116,7 @@ oam_template oam_template_trainerschool_seekid = {
     &sprite_trainerschool_starter,
     gfx_anim_table_trainerschool_starter,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -155,7 +155,7 @@ oam_template oam_template_trainerschool_pokeball = {
     &sprite_trainerschool_pokeball,
     gfx_anim_table_trainerschool_pokeball,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_callback_trainerschool_pokeball
 };
 

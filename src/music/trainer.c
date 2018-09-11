@@ -46,7 +46,7 @@ u16 battle_get_song() {
         //scan a lo_table
         int i = 0;
         while (trainer_music_table[i].id != 0xFFFF) {
-            if (trainer_music_table[i].id == trainers[*trainer_id].trainerclass) {
+            if (trainer_music_table[i].id == trainers[*battle_trainer_id].trainerclass) {
                 return trainer_music_table[i].value;
             }
             i++;

@@ -17,15 +17,18 @@
 
 #define GP_STACK_SIZE 16
 
+typedef struct warp_save_t {
+	u8 bank, map, exit;
+	s16 x, y;
+} warp_save_t;
+
 typedef struct saveblock1 {
     s16 x_cam_orig; //camera origin
     s16 y_cam_orig; //camera origin
     u8 bank;
     u8 map;
     u8 unkown_0[0x16];
-    s8 healingplace_bank;
-    u8 healingplace_map;
-    u8 unkown_1[0x6];
+    warp_save_t healingplace;
     u8 last_outdoor_bank;
     u8 last_outdoor_map;
     u8 unkown[0xA];
@@ -43,7 +46,12 @@ typedef struct saveblock1 {
 typedef struct saveblock2 {
     u8 player_name[0x8];
     u8 player_is_female;
-    u8 unkown_4[0xA];
+    u8 unkown_4;
+    u8 tid_0;
+    u8 tid_1;
+    u8 tid_2;
+    u8 tid_3;
+    u8 unkown_5[0x5];
     u8 detector_state; //original key swtiching
     u8 text_speed;
     u8 sound_state : 1;
@@ -137,10 +145,10 @@ typedef struct {
     
 } floating_memory;
 
-saveblock1 **save1 = (saveblock1**) 0x03004F58;
-saveblock2 **save2 = (saveblock2**) 0x03004F5C;
-custom_memory *cmem = (custom_memory*) 0x0203C200;
-floating_memory *fmem = (floating_memory*) 0x0203CEC4;
+extern saveblock1 *save1;
+extern saveblock2 *save2;
+extern custom_memory cmem;
+extern floating_memory fmem;
 
 /**
  * Increments a stat in the save file (key)
@@ -159,10 +167,9 @@ int save_get_key(u8 index);
  * Hashes a sequence based on the temporal seed (changes after some time)
  * @param sequence the sequence to hash
  * @param size the size of the sequence
- * @param m the number of buckets to hash into
  * @return the hash value of the sequence with the current temporal seed
  */
-u32 tmp_hash(u32 seq[], size_t size, u32 m);
+u32 tmp_hash(u32 seq[], size_t size);
 
 /**
  * Updates the seed for the tmp hash system if the cycle (one day) has passed

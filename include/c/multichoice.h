@@ -19,7 +19,7 @@ extern "C" {
         int size;
     } multichoice_t;
     
-    multichoice_t *multichoices = (multichoice_t*) 0x083DF9A0;
+    extern multichoice_t multichoices[];
 
     typedef struct{
 		u8 *text;

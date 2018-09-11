@@ -585,3 +585,15 @@
         bx r0
         .pool
 
+// Fix category for counter and mirror cape
+.org 0x0801F646
+		ldrb r6, [r0, #0xA] // Load the attack category instead of its type
+.org 0x0801F88C
+		cmp r6, #0 // Compare if the category == physical
+.org 0x0801F88E + 1
+		.byte 0xD1 // Change from 0xd8 = bhi to 0xd1 = bne
+.org 0x0801F910
+		cmp r6, #0 // Compare if the category == physical
+.org 0x0801F912 + 1
+		.byte 0xD0 // Change from 0xd9 = bls to 0xd0 = beq
+

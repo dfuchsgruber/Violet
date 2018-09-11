@@ -13,7 +13,7 @@ typedef struct {
     u16 params [0x10];
 } big_callback;
 
-big_callback *big_callbacks = (big_callback*) 0x03004FE0;
+extern big_callback big_callbacks[];
 
 
 /**

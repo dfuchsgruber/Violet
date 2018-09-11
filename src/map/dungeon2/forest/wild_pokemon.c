@@ -102,8 +102,8 @@ void dungeon2_set_encounter_forest() {
 
   pid_t p = {dungeon2_rnd(dg2)};
 
-  pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, (u8)level, 0, true, p, false, 0,
-      dungeon2_encounter_rnd_generator);
+  pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, (u8)level, 32, true, p, false, 0,
+      dungeon2_encounter_rnd_generator, dungeon2_encounter_rnd_generator);
 }
 
 void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {

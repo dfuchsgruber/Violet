@@ -25,7 +25,7 @@ typedef struct {
     u8 sprite;
     u8 name[12];
     u16 items[4];
-    int is_dual_battle;
+    u32 battle_state; // These flags are forced onto the battle state
     u16 ai;
     u16 field_1E;
     u8 pokemon_cnt;

@@ -93,9 +93,10 @@ map_events *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
     fmem->dpersons[0].target_index = 1;
     fmem->dpersons[0].script = ow_script_dungeon_encounter;
     fmem->dpersons[0].flag = 0x12;
+    fmem->dpersons[0].level = 1; // Surf
 
     // Determine how many items there will be
-    int num_items = (dungeon2_rnd_16(dg2) % (dg2->nodes - 2)) + 1;
+    int num_items = (dungeon2_rnd_16(dg2) % (dg2->nodes / 1 - 2)) + 1;
 
     for (int i = 0; i < num_items; i++) {
       int person_idx = i + 1;
@@ -132,12 +133,20 @@ void dungeon2_compute_ocean(){
 
     u8 *map = dungeon2_create_connected_layout(dg2, false);
 
+    // Further enlarge the dungeon
+
+    u8 *map2 = malloc(sizeof(u8) * (size_t)(dg2->width * dg2->height));
+    dungeon2_enlarge(map, map2, dg2);
+    //dungeon2_enlarge(map2, map, dg2);
+
+
     // temporarily double the number of nodes
-    dg2->nodes = (u8)(dg2->nodes * 3);
-    u8 *over = dungeon2_create_connected_layout(dg2, true);
-    dg2->nodes = (u8)(dg2->nodes / 3);
+    // dg2->nodes = (u8)(dg2->nodes * 2);
+    u8 *over = dungeon2_create_isolated_layout(dg2, 3, 3, false, 1);
+    // dg2->nodes = (u8)(dg2->nodes / 2);
     dungeon2_compute_blocks_ocean(map, over, dg2);
     free(map);
+    free(map2);
     free(over);
 
     mapheader_virtual->footer = &(fmem->dmapfooter);
@@ -177,6 +186,7 @@ void dungeon2_init_ocean(){
 void dungeon2_enter_ocean() {
   // Get the warp node (first node in the ocean)
   dungeon_generator2 *dg2 = &(cmem->dg2);
+  // dg2->initial_seed = 521151070;
   dungeon2_ocean_init_state(dg2);
   int nodes[dg2->nodes][2];
   dungeon2_get_nodes(nodes, dg2->nodes, dg2, false);

@@ -15,7 +15,7 @@ typedef struct{
     u8 y_start;
 } stru_map_displ_cntrl;
 
-stru_map_displ_cntrl *map_displ_cntrl = (stru_map_displ_cntrl*)0x03000E90;
+extern stru_map_displ_cntrl map_displ_cntrl;
 
 /**
  * Returns the state of an overworld flag (0 or != 0)

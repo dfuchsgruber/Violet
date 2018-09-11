@@ -19,7 +19,7 @@ typedef struct{
 }mart_state_t;
 
 
-mart_state_t *mart_state = (mart_state_t*)0x02039934;
+extern mart_state_t mart_state;
 
 /**
  * Opens a pokemart

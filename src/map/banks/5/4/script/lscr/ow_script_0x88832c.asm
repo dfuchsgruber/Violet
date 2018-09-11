@@ -113,6 +113,7 @@ ow_script_movs_0x8889e6:
 ow_script_movs_0x888a04:
 .byte STEP_DOWN
 .byte STEP_RIGHT
+.byte STEP_RIGHT
 .byte STOP
 
 
@@ -215,11 +216,6 @@ applymovement 0x7 ow_script_movs_0x888a16
 applymovement 0xff ow_script_movs_0x888a1d
 waitmovement 0x0
 loadpointer 0x0 str_0x888649
-callstd MSG
-applymovement 0x7 ow_script_movs_0x888a08
-applymovement 0xff ow_script_movs_0x888a0c
-waitmovement 0x0
-loadpointer 0x0 str_0x8886c2
 callstd MSG
 applymovement 0x7 ow_script_movs_0x8889e6
 waitmovement 0x0

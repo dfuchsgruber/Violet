@@ -60,7 +60,7 @@ extern "C" {
         
     } dungeon_generator2;
 
-#define NUM_DUNGEON_LOCATIONS 27
+#define NUM_DUNGEON_LOCATIONS 28
     
     typedef struct{
       u8 bank;
@@ -123,6 +123,19 @@ extern "C" {
      * @return 
      */
     u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2, bool random_nodes);
+
+    /**
+     * Creates a dungeon with isolated isles
+     * @param dg2 generator instance
+     * @param spread how wide spread isles are (std deviation of land blocks sampled next to
+     * nodes)
+     * @param denstiy how many blocks are sampled next to a node
+     * @param random_nodes if the nodes are random or should match the seed-based nodes
+     * @param exclude_node this node will not generate an isle (if all are disired set to num_nodes)
+     * @return the dg2 map
+     */
+    u8 *dungeon2_create_isolated_layout(dungeon_generator2 *dg2, int spread, size_t density,
+    		bool random_nodes, int exclude_node);
   
     /**
      * Creates the next generation map by counting the adjacent walls to a tile

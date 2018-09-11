@@ -111,6 +111,8 @@ map_events *dungeon2_init_events_forest(dungeon_generator2 *dg2){
       fmem->dpersons[person_idx].private = dungeon_forest_pick_item(dg2);
       fmem->dpersons[person_idx].script = ow_script_dungeon_item;
     }
+
+    fmem->dmapevents.person_cnt = (u8)(1 + num_items);
     return &(fmem->dmapevents);
 }
 

@@ -34,7 +34,7 @@ typedef struct mapheader {
 int dungeon_get_type();
 
 extern mapheader **mapbanks[];
-mapheader *mapheader_virtual = (mapheader*)0x02036DFC;
+extern mapheader mapheader_virtual;
 
 /**
  * Gets a mapheader by the current bank and map id

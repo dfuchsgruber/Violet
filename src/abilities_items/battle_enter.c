@@ -14,7 +14,7 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         *battle_weather = BATTLE_WEATHER_HAIL;
         dprintf("Hail triggered\n");
         battlescript_init_and_interrupt_battle(bsc_hagelalarm);
-        stat_change[0x17] = index;
+        battle_stat_change[0x17] = index;
         return true;
     }
     return false;

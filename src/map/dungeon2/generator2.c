@@ -13,11 +13,6 @@
 #include "agbmemory.h"
 #include "prng.h"
 
-void dungeon2_seed_init() {
-  u32 seed = (u32)(rnd16() << 16 | rnd16());
-  cmem->dg2.initial_seed = seed;
-  dprintf("Setup seed to %d\n", cmem->dg2.initial_seed);
-}
 
 void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bound, dungeon_generator2 *dg2){
     dprintf("Iterating map with nlb %d and hub %d\n", near_lower_bound, far_upper_bound);
@@ -97,7 +92,7 @@ void dungeon2_contract(u8 *map, u8 *map2, dungeon_generator2 *dg2){
             for(int k = 0; k < 4; k++){
                 int i = dg2_cross_neighbourhood[k][0];
                 int j = dg2_cross_neighbourhood[k][1];
-                if(map[(y + j) * dg2->height + x + i] == DG2_WALL)
+                if(map[(y + j) * dg2->width + x + i] == DG2_WALL)
                     adjacent_walls++;
             }
             if(adjacent_walls > 0 || map[y * dg2->width + x] == DG2_WALL)

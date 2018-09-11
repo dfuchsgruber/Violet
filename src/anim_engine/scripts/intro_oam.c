@@ -150,27 +150,27 @@ void oam_intro_deoxys_leviate(oam_object *self){
 oam_template oam_template_intro_deoxys_head = {
     0xADE4, 0xADE4,
     &oam_sprite_intro_deoxys_head,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_intro_deoxys_leviate,
 };
 
 oam_template oam_template_intro_deoxys_body = {
     0xADE5, 0xADE4,
     &oam_sprite_intro_deoxys_body,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_intro_deoxys_leviate
 };
 
 oam_template oam_template_intro_deoxys_bottom = {
     0xADE6, 0xADE4,
     &oam_sprite_intro_deoxys_bottom,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_intro_deoxys_leviate
 };
 
@@ -179,7 +179,7 @@ oam_template oam_template_intro_deoxys_arm_right = {
     &oam_sprite_intro_deoxys_arm_right,
     gfx_anim_table_intro_deoxys_arm_right,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_intro_deoxys_leviate
 };
 
@@ -189,7 +189,7 @@ oam_template oam_template_intro_deoxys_arm_left = {
     gfx_anim_table_intro_deoxys_arm_left,
     //GFX_ANIM_TABLE_NULL,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_intro_deoxys_leviate
 };
 

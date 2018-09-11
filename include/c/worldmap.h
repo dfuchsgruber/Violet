@@ -32,6 +32,21 @@ extern "C" {
     extern const unsigned short gfx_worldmapPal[];
 
     /**
+     * Returns the flightposition idx that corresponds to a bank, map tuple
+     * @param bank the mapbank
+     * @param map the mapid in the bank
+     * @return the corresponding flightposition idx + 1 or 0 if none matches
+     */
+    int map_get_flightposition(u8 bank, u8 map);
+
+    /**
+     * Returns the offset on a flight position by its index + 1
+     * @param idx_plus_one the index of the flight position plus one
+     * @return the flight pos offset
+     */
+    stru_flight_position *flightposition_by_id(int idx_plus_one);
+
+    /**
      * Gets the namespace id associated with a position on the worldmap
      * @param worldmap_index which worldmap to use
      * @param layer the town or locality layer

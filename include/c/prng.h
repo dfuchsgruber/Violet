@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-    u32 *_main_rnd = (u32*)0x03004F50;
+    extern u32 _main_rnd;
 
     void rnd_init(); //Initializes the main rng module (xorshift)
 

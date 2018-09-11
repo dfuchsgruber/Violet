@@ -15,4 +15,6 @@
  */
 u16 *var_access(u16 var);
 
+u16 lastresult;
+
 #endif /* INCLUDE_C_VARS_H_ */

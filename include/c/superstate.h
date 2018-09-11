@@ -35,7 +35,7 @@ typedef struct superstate {
 
 } superstate;
 
-superstate *super = (superstate*) 0x03003040;
+extern superstate super;
 
 /**
  * Generic callback1 that manages most of the game state (can be called inside other callback1s)

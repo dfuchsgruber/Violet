@@ -82,7 +82,7 @@ rotscale_frame *trainerschool_test_rotscale_table[] = {trainerschool_test_rotsca
 oam_template trainerschool_test_oam_template_correct = {
     0xA0E0, 0xA0E0,
     &trainerschool_test_sprite,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
     trainerschool_test_rotscale_table,
     oam_null_callback,
@@ -91,7 +91,7 @@ oam_template trainerschool_test_oam_template_correct = {
 oam_template trainerschool_test_oam_template_wrong = {
     0xA0E1, 0xA0E0,
     &trainerschool_test_sprite,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
     trainerschool_test_rotscale_table,
     oam_null_callback,

@@ -23,23 +23,6 @@
 #include "dma.h"
 #include "callbacks.h"
 
-/*
- * Probability density functions for each type of encounter
- * in percent. (Encounters are actually hardwired with these values)
- */
-
-u8 wild_pokemon_grass_pdf[12] = { 20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1 };
-
-u8 wild_pokemon_water_pdf[5] = { 60, 30, 5, 4, 1 };
-
-u8 wild_pokemon_rod_pdf[2] = { 70, 30 };
-
-u8 wild_pokemon_good_rod_pdf[3] = { 60, 20, 20 };
-
-u8 wild_pokemon_super_rod_pdf[5] = { 40, 40, 15, 4, 1 }; 
-
-u8 wild_pokemon_other_pdf[5] = { 60, 30, 5, 4, 1 };
-
 
 void _pokedex_feature_scanner_sort_entries_swap(u16 entries[][2], int i, int j){
     u16 tmp[2];
@@ -219,7 +202,7 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
         oam_vram_allocation_table_add(tag, tile, 16);
         oam_template icon_template = {
             tag, 0xFFFF, &pokedex_feature_scanner_icon_sprite, 
-            OAM_GFX_ANIM_TABLE_NULL, NULL, OAM_ROTSCALE_ANIM_TABLE_NULL, oam_null_callback
+            oam_gfx_anim_table_null, NULL, oam_rotscale_anim_table_null, oam_null_callback
         };
         state->oams[i] = oam_new_forward_search(&icon_template,
                 (s16)(12 + 118 * box_id), (s16)(48 + 16 * line), (u8)i

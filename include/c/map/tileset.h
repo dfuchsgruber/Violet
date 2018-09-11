@@ -41,12 +41,12 @@ typedef struct {
     tileset_animation *animations;
 } tileset_animation_header;
 
-u16 *tileset_anim_clk0 = (u16*)0x03000FAE;
-u16 *tileset_anim_clk0_cycle = (u16*)0x03000FB0;
-u16 *tileset_anim_clk1 = (u16*)0x03000FB2;
-u16 *tileset_anim_clk1_cycle = (u16*)0x03000FB4;
-void (**tileset_anim_0)(u16) = (void(**)(u16))0x03000FB8;
-void (**tileset_anim_1)(u16) = (void(**)(u16))0x03000FBC;
+extern u16 tileset_anim_clk0;
+extern u16 tileset_anim_clk0_cycle;
+extern u16 tileset_anim_clk1;
+extern u16 tileset_anim_clk1_cycle;
+extern void (*tileset_anim_0)(u16);
+extern void (*tileset_anim_1)(u16);
 
 u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header);
 

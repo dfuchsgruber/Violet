@@ -29,7 +29,7 @@ sprite sprite_aktania_sky_deoxys = {
 oam_template oam_template_aktania_sky_deoxys = {
     POKEMON_DEOXYS, POKEMON_DEOXYS,
     &sprite_aktania_sky_deoxys,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
     rs_table_aktania_sky_deoxys,
     oam_null_callback
@@ -39,7 +39,7 @@ oam_template oam_template_aktania_sky_deoxys = {
 oam_template oam_template_aktania_sky_regirock = {
     POKEMON_REGIROCK, POKEMON_REGIROCK,
     &sprite_aktania_sky_regis,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
     rs_table_aktania_sky_regis,
     oam_null_callback
@@ -48,7 +48,7 @@ oam_template oam_template_aktania_sky_regirock = {
 oam_template oam_template_aktania_sky_regice = {
     POKEMON_REGICE, POKEMON_REGICE,
     &sprite_aktania_sky_regis,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
     rs_table_aktania_sky_regis,
     oam_null_callback
@@ -57,7 +57,7 @@ oam_template oam_template_aktania_sky_regice = {
 oam_template oam_template_aktania_sky_registeel = {
     POKEMON_REGISTEEL, POKEMON_REGISTEEL,
     &sprite_aktania_sky_regis,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
     rs_table_aktania_sky_regis,
     oam_null_callback

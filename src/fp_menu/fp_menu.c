@@ -79,9 +79,9 @@ oam_template fp_menu_oam_poke_template = {
     0xA000,
     0xA000,
     &fp_menu_oam_poke_sprite,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     fp_menu_pokepic_callback
 };
 
@@ -107,9 +107,9 @@ oam_template fp_menu_oam_arrow_template_down = {
     0xA001,
     0xA001,
     &fp_menu_arrow_sprite_down,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -117,9 +117,9 @@ oam_template fp_menu_oam_arrow_template_up = {
     0xA001,
     0xA001,
     &fp_menu_arrow_sprite_up,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -127,9 +127,9 @@ oam_template fp_menu_oam_arrow_template_left = {
     0xA002,
     0xA001,
     &fp_menu_arrow_sprite_left,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -137,9 +137,9 @@ oam_template fp_menu_oam_arrow_template_right = {
     0xA002,
     0xA001,
     &fp_menu_arrow_sprite_right,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 

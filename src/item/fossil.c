@@ -68,7 +68,7 @@ void fossil_execute() {
             index--;
         } else {
             if(rtc_test()){
-                rtc_read(&cmem->fossil_gen_time);
+                rtc_read(&cmem.fossil_gen_time);
                 item_remove(fossils[i], 1);
                 *var_access(0x8004) = fossils[i];
                 *var_access(0x50D1) = fossil_species[i];
@@ -83,7 +83,7 @@ u16 fossil_is_finished(){
     rtc_timestamp t;
     rtc_read(&t);
     u64 seconds_current = rtc_timestamp_to_seconds(&t);
-    u64 seconds_generated = rtc_timestamp_to_seconds(&cmem->fossil_gen_time);
+    u64 seconds_generated = rtc_timestamp_to_seconds(&cmem.fossil_gen_time);
     if(seconds_current - seconds_generated > 60*60){
         return 1;
     }else{

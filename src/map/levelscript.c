@@ -3,6 +3,7 @@
 #include "map/levelscript.h"
 #include "dungeon/dungeon2.h"
 #include "save.h"
+#include "debug.h"
 
 void map_init_levelscript_4() {
     u8 *a = fmem->additional_levelscript_4;

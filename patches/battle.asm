@@ -195,7 +195,7 @@ blxr4:
     .pool
 
 .org 0x08080404
-    .word trainerbattle_after_battle | 1
+    .word trainerbattle_store_possible_loss_in_lastresult | 1
 
 .org 0x08080050
     .word hook_battle_result
@@ -204,12 +204,16 @@ blxr4:
 .org 0x807f4a0
 	.word str_whiteout
 
-.org 0x81abbce
-	.word str_pokecenter0
+.org 0x080BFEA0
+	ldr r1, =whiteout_setup_warp | 1
+	bx r1
+	.pool
 
-.org 0x81abbfa
-	.word str_pokecenter1
+.org 0x0807F530
+	.word ow_script_whiteout_joy
 
-.org 0x81abc03
-	.word str_pokecenter1
+
+.org 0x0807F550
+	.word ow_script_whiteout_mother
+
 

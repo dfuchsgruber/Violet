@@ -66,6 +66,7 @@ ow_script_0x89bb77:
 lockall
 setvar 0x8000 0x0
 loadpointer 0x0 str_0x89ba8d
+setvar 0x8000 0
 special 0xe
 loadpointer 0x0 str_0x89ba97
 callstd MSG
@@ -100,6 +101,7 @@ waitmovement 0x0
 checksound
 setvar 0x8000 0x0
 loadpointer 0x0 str_0x89ba8d
+setvar 0x8000 0
 special 0xe
 loadpointer 0x0 str_0x89ad96
 callstd MSG
@@ -108,6 +110,7 @@ applymovement 0x1 ow_script_movs_0x89adba
 waitmovement 0x0
 setvar 0x8000 0x0
 loadpointer 0x0 str_0x89ba8d
+setvar 0x8000 0
 special 0xe
 loadpointer 0x0 str_0x89ad05
 callstd MSG
@@ -123,7 +126,7 @@ end
 .global str_0x89ba8d
 
 str_0x89ba8d:
-    .string "Mutter:"
+    .string "Mutter"
         
         
 .global str_0x89ba97

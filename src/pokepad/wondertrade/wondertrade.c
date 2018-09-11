@@ -51,9 +51,9 @@ sprite sprite_wondertrade_badges = {
 oam_template oam_template_wondertrade_badges = {
     0xA004, 0xA004,
     &sprite_wondertrade_badges,
-    OAM_GFX_ANIM_TABLE_NULL,
+    oam_gfx_anim_table_null,
     NULL,
-    OAM_ROTSCALE_ANIM_TABLE_NULL,
+    oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
@@ -204,8 +204,8 @@ void wondertrade_spawn_pokemon() {
         tid *= ot_name[i++];
 
     pid_t p = {.value = 0};
-    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 0, false, p,
-        true, tid, wondertrade_next_seed);
+    pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 32, false, p,
+        true, tid, wondertrade_next_seed, NULL);
 
     //at last we define ot
     pokemon_set_attribute(&opponent_pokemon[0], ATTRIBUTE_OT_NAME, ot_name);

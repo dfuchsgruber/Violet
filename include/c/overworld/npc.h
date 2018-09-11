@@ -85,8 +85,8 @@ typedef struct {
     u8 unkown[3];
 } player_state_t;
 
-npc *npcs = (npc*) 0x02036E38;
-player_state_t *player_state = (player_state_t*) 0x02037078;
+extern npc npcs[];
+extern player_state_t player_state;
 
 /**
  * Checks if a tile is blocked for an npc in a given directions

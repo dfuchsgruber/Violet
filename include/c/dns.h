@@ -15,5 +15,5 @@ bool is_inside_map(u8 bank, u8 map);
 
 bool dns_on();
 
-u8 *built_in_shaders = (u8*) 0x02036E28;
+extern u8 built_in_shaders;
 #endif

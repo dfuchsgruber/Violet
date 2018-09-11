@@ -6,6 +6,11 @@
 #include "debug.h"
 #include "prng.h"
 #include "dungeon/dungeon2.h"
+#include "vars.h"
+#include "constants/vars.h"
+#include "overworld/script.h"
+
+extern u8 ow_script_trainerschool_wildbattle[];
 
 u16 map_wild_pokemon_get_current_table_id(){
     u16 i = 0;
@@ -52,6 +57,7 @@ u8 map_wildbattle_init_seed(u32 triggers_wildbattle) {
 int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
   u8 *byte_20386DC = (u8*)0x20386DC;
   if(*byte_20386DC == 1) return 0; // TODO: investigate
+  if (*var_access(TRAINERSCHOOL_PROGRESS) <= 5) return 0; // Can not encounter until >= 6
   wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
   u8 pdf_type;
   u32 triggers_wildbattle = block_get_field(current, BDATA_TRIGGERS_WILDBATTLE);
@@ -84,6 +90,67 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
     wildbattle_increase_chance(habitat->frequency);
     return 0;
   }
-  wildbattle_start();
+  if (*var_access(TRAINERSCHOOL_PROGRESS) <= 6) {
+	  // Start a wildbattle script instead
+	  dprintf("Started script\n");
+	  overworld_script_init(ow_script_trainerschool_wildbattle);
+  } else {
+	  wildbattle_start();
+  }
   return 1;
 }
+
+bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int pdf_type,
+		int icognito_letter) {
+	int idx = -1;
+	switch(pdf_type) {
+		case 0: {
+			idx = wildbattle_sample_from_pdf(wild_pokemon_grass_pdf, 12);
+			break;
+		}
+		case 1: {
+			idx = wildbattle_sample_from_pdf(wild_pokemon_water_pdf, 5);
+			break;
+		}
+		case 2 : {
+			idx = wildbattle_sample_from_pdf(wild_pokemon_other_pdf, 5);
+			break;
+		}
+		default : {
+			derrf("Unsupported pdf type %d\n", pdf_type);
+			break;
+		}
+	}
+	u8 level = wildbattle_sample_level(&(habitat->data[idx]));
+	if (wildbattle_is_allowed_by_repel(level)) {
+		if (*var_access(STORY_PROGRESS) < 8) {
+			return trainerschool_wildbattle_initialize_secondary_starter();
+		}
+
+		wildbattle_initialize_pokemon(habitat->data[idx].species, level, icognito_letter);
+		return true;
+	}
+	return false;
+}
+
+int wildbattle_sample_from_pdf(u8 *pdf, int size) {
+	int p = rnd16() % 100;
+	for (int i = 0; i < size; i++) {
+		if (p < pdf[i]) return i;
+		p -= pdf[i];
+	}
+	derrf("Pdf @x, size %d does not sum up to 100\n", pdf, size);
+	return -1;
+}
+
+u8 wild_pokemon_grass_pdf[12] = { 20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1 };
+
+u8 wild_pokemon_water_pdf[5] = { 35, 25, 20, 15, 5};
+
+u8 wild_pokemon_rod_pdf[2] = { 70, 30 };
+
+u8 wild_pokemon_good_rod_pdf[3] = { 60, 20, 20 };
+
+u8 wild_pokemon_super_rod_pdf[5] = { 40, 40, 15, 4, 1 };
+
+u8 wild_pokemon_other_pdf[5] = { 40, 20, 20, 10, 10 };

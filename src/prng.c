@@ -18,15 +18,15 @@ void rnd_init(){
 }
 
 u16 rnd16(){
-    return (u16)_prng_xorshift(_main_rnd);
+    return (u16)_prng_xorshift(&_main_rnd);
 }
 
 FIXED rnd_normal() {
-    return _prng_stdnormal(_main_rnd);
+    return _prng_stdnormal(&_main_rnd);
 }
 
 void rnd_main_set_seed(u32 seed){
-    *_main_rnd = seed;
+    _main_rnd = seed;
 }
 
 u32 _prng_xorshift(u32 *_seed){

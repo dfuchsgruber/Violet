@@ -1,10 +1,13 @@
-
 //wild poke
 .org 0x0803DA0C
 	ldr r1, =wild_poke_less_shinies | 1
 	bx r1
 	.pool
 
+.org 0x0806CB54
+	ldr r0, =wildbattle_trainerschool_hook_trigger_script | 1
+	bx r0
+	.pool
 
 .org 0x08082898
         ldr r0, =map_wild_pokemon_get_current_table_id | 1

@@ -2,16 +2,22 @@
 special_table equ 0x0815FCC0
 
 .org (special_table + (0x6 * 4))
-        .word spawn_mugshot | 1
+        .word special_mugshot_show | 1
         .pool
 
 .org (special_table + (0x7 * 4))
-        .word clear_mugshot | 1
+        .word special_mugshot_delete | 1
         .pool
 
 .org (special_table + (0xC * 4))
 	.word special_addkarma_wrap | 1
 	.pool
+
+.org (special_table + (0xE * 4))
+	.word special_show_name | 1
+
+.org (special_table + (0xF * 4))
+	.word special_delete_name | 1
 	
 .org (special_table + (0x13 * 4))
         .word pokeradar_spawn_pokemon | 1

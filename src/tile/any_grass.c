@@ -34,7 +34,7 @@ palette any_grass_pals[] = {
 
 oam_template any_grass_templates[] = {
     {0xFFFF, 0x1080, (sprite*)0x83A35B4, (gfx_frame**)0x83A52E0,
-    any_grass_graphics, OAM_ROTSCALE_ANIM_TABLE_NULL, (void (*)(oam_object *))0x80DB611}
+    any_grass_graphics, oam_rotscale_anim_table_null, (void (*)(oam_object *))0x80DB611}
 };
 
 
