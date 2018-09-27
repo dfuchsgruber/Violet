@@ -52,7 +52,8 @@
             "EVOLUTION_METHOD_LINK_CABLE_AND_ITEM",
             "EVOLUTION_METHOD_MALE_AND_STONE",
             "EVOLUTION_METHOD_HOLD_ITEM_AND_NIGHT",
-            "EVOLUTION_METHOD_FEMALE_AND_STONE"
+            "EVOLUTION_METHOD_FEMALE_AND_STONE",
+            "EVOLUTION_METHOD_HOLD_ITEM_AND_DAY"
         ]
     },
     "items" : {
@@ -120,7 +121,7 @@
             "ITEM_LEBEN_ORB",
             "ITEM_EVOLITH",
             "ITEM_SCHARFZAHN",
-            "ITEM_ITEM_3D",
+            "ITEM_OVALER_STEIN",
             "ITEM_ITEM_3E",
             "ITEM_KP_PLUS",
             "ITEM_PROTEIN",
@@ -653,7 +654,7 @@
             "POKEMON_GRANBULL",
             "POKEMON_MAMUTEL",
             "POKEMON_SCHEROX",
-            "POKEMON_POTTROTT",
+            "POKEMON_FLUFFELUFF",
             "POKEMON_SKARABORN",
             "POKEMON_KRYPPUK",
             "POKEMON_TEDDIURSA",
@@ -662,7 +663,7 @@
             "POKEMON_MAGCARGO",
             "POKEMON_QUIEKEL",
             "POKEMON_KEIFEL",
-            "POKEMON_CORASONN",
+            "POKEMON_MAMPFAXO",
             "POKEMON_REMORAID",
             "POKEMON_OCTILLERY",
             "POKEMON_BOTOGEL",
@@ -678,7 +679,7 @@
             "POKEMON_TRAUNMAGIL",
             "POKEMON_RABAUZ",
             "POKEMON_KAPOERA",
-            "POKEMON_KUSSILLA",
+            "POKEMON_SEN_LONG",
             "POKEMON_ELEKID",
             "POKEMON_MAGBY",
             "POKEMON_MILTANK",
@@ -765,7 +766,7 @@
             "POKEMON_ZWIRRFINST",
             "POKEMON_SCHMERBE",
             "POKEMON_WELSAR",
-            "POKEMON_LIEBISKUS",
+            "POKEMON_RIHORNIOR",
             "POKEMON_KREBSCORPS",
             "POKEMON_KREBUTACK",
             "POKEMON_BARSCHWA",
@@ -800,7 +801,7 @@
             "POKEMON_MEDITALIS",
             "POKEMON_WABLU",
             "POKEMON_ALTARIA",
-            "POKEMON_ISSO",
+            "POKEMON_KLINGPLIM",
             "POKEMON_ZWIRRLICHT",
             "POKEMON_ZWIRRKLOP",
             "POKEMON_PORYGON_Z",
@@ -826,8 +827,8 @@
             "POKEMON_STOLLRAK",
             "POKEMON_STOLLOSS",
             "POKEMON_FORMEO",
-            "POKEMON_VOLBEAT",
-            "POKEMON_ILLUMISE",
+            "POKEMON_WONNEIRA",
+            "POKEMON_MOBAI",
             "POKEMON_LILIEP",
             "POKEMON_WIELIE",
             "POKEMON_ANORITH",
@@ -1002,7 +1003,12 @@
             "G_KAISERAURA",
             "PHOTOGENESE",
             "EXTRADORN",
-            "CURATOR"
+            "CURATOR",
+            "FRUEHZUENDER",
+            "REICHE_ERNTE",
+            "ACHTLOS",
+            "HACK",
+            "FLUFFIG"
         ]
     },
     "pokemon_types" : {
@@ -1979,7 +1985,7 @@
             0x50F2 : "WONDERTRADE_CNT",
             0x50F4 : "TRAINERSCHOOL_CORRECT_ANSWERS",
             0x50F5 : "DUNGEON_TYPE",
-
+			0x50F6 : "TIME_TYPE",
             0x50F7 : "DETECTOR_FLAG",
             0x50F8 : "TRAINER_LEVEL_OVERRIDE",
             0x50F9 : "DIFFICULTY",
@@ -2004,6 +2010,14 @@
             4 : "HIGHER_OR_EQUAL",
             5 : "NOT_EQUAL"
         }
+    },
+    "time_types" : {
+    	"type" : "enum",
+        "base" : 0,
+        "values" : [
+            "TIME_TYPE_RTC",
+			"TIME_TYPE_INGAME_CLOCK"
+        ]
     },
     "callstds" : {
         "type" : "dict",

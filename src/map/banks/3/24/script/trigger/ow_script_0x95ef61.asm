@@ -61,25 +61,23 @@ trainerbattlecont 0x1 0xbc 0x0 str_0x95f326 str_0x95efd2 ow_script_0x95f001
 .global str_0x95f326
 
 str_0x95f326:
-    .string "PLAYER!\nLange nicht gesehen, du altes\lBumelz!\p... Bist du etwa auf dem Weg nach\nInferior, um dir einen Orden zu\lergattern?\pDa bin ich dir wohl schon zuvor\ngekommen.\pMeine Pokémon haben Igva in Grund\nund Boden gestampft!\pUnd jetzt werden wir das gleiche\nmit dir tun! "
-        
-        
+	.autostring 35 2 "PLAYER!\nLange nicht gesehen, du altes Bummelz!\pDu bist wohl auf dem Weg nach Inferior, um dir den Vulkan-Orden zu ergattern?\pDa bin ich dir wohl schon zuvor gekommen.\pWollen wir doch mal sehen, ob überhaupt für diese Arena bereit bist!"
+
 .global str_0x95efd2
 
 str_0x95efd2:
-    .string "Unmöglich!\nWieso besiegst du mich jedes Mal?"
+    .autostring 35 2 "Was?\nIch habe verloren?\pDu hast wirklich eine Glückssträhne, PLAYER!"
         
         
 .global str_0x95f255
 
 str_0x95f255:
-    .string "Nicht schlecht!\nHmm... Aber ich habe natürlich\lauch nicht alles gegeben.\pIch habe dich gewinnen lassen, ja\nso ist das tatsächlich.\pDu brauchst auf jeden Fall ein\nwenig Unterstützung im Kampf gegen\lIgva."
-        
-        
+	.autostring 35 2 "Alle Achtung, nicht schlecht gekämpft, PLAYER!\pWenn ich alles gegeben hätte, wäre das ganze natürlich anders ausgegangen.\pIch habe dich nämlich gewinnen lassen!\pJa, so ist das DOTS\pAuf jeden Fall wirst du so niemals den Vulkan-Orden bekommen.\pLass mich dir etwas helfen, PLAYER DOTS"
+
 .global str_0x95f051
 
 str_0x95f051:
-    .string "Diese Versteckte Maschine enthält\nSurfer, einen mächtigen\lWasserangriff.\pIch gebe ihn dir, damit du eine\nChance hast, Igva zu besiegen,\lnicht, weil ich nett sein will...\pDu bist mein Erzrivale, ja?\nIch helfe meinen Gegner nicht...\pWie auch immer...\nUm Surfer auch außerhalb des\lKampfes benutzen zu können und\ldamit über die Ozeane zu gleiten,\lmusst du zuerst den Hitzeorden\lerrungen haben.\pViel Glück, und beim nächsten Mal\nwerde ich siegen - äh ...\pIch meine, beim nächsten Mal werde\nich mich nicht zurückhalten!"
+    .autostring 35 2 "Diese Versteckte Maschine enthält Surfer, die perfekte Waffe im Kampf gegen das Feuer.\pDu brauchst mir nicht zu danken, immerhin will ich ja, dass du auch weiterhin ein interessanter Gegner bleibst DOTS\pUnd beim nächsten Mal werde ich alles geben.\pDa kannst du jede Hilfe brauchen!\pMan sieht sich, PLAYER!"
         
         
 .elseif LANG_EN

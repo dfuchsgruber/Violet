@@ -14,7 +14,7 @@ end
 .global str_0x935bdc
 
 str_0x935bdc:
-    .string "Meine Gedanken sind in der Zukunft\nund sehen eine Niederlage..."
+    .string "Meine Gedanken sind in der Zukunft\nund sehen eine NiederlageDOTS"
         
         
 .global str_0x935c48

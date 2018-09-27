@@ -147,6 +147,8 @@ QUOTE        = B1
 'ö'         = F5
 'ü'         = F6
 
+QUOTE_START = B2
+QUOTE_END = B3
 
 'ß'         = F9
 
@@ -355,9 +357,12 @@ ABILITY_NAME_PLAYER = FD 13
 TYPE = FD 14
 STAT_NAME = FD 15
 STATUS_NAME = FD 16
+LAST_ITEM = FD 16
 
 @ Miscellaneous
-POKEDOLLAR = FD A8
+@ POKEDOLLAR = FD A8
+POKEDOLLAR = B7
+
 
 @ indicates the end of a town/city name (before " TOWN" or " CITY")
 NAME_END = FC 00
@@ -437,5 +442,7 @@ KEY_DPAD       = F8 0C
 '\p' = FB @ new paragraph
 '\n' = FE @ new line
 
-
+\xF9 = F9
+\x13 = 13
+\x14 = 14
 

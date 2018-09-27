@@ -20,7 +20,7 @@ str_0x9592b0:
 .global str_0x95927d
 
 str_0x95927d:
-    .string "Hmpf...\nAber gegen Mistral hast du keine\lChance!"
+    .string "HmpfDOTS\nAber gegen Mistral hast du keine\lChance!"
         
         
 .elseif LANG_EN

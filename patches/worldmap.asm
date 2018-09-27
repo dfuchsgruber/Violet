@@ -60,3 +60,8 @@
 	bx r0
 	.pool
 
+.org 0x080C3CE0
+	ldr r0, =worldmap_locate_player | 1
+	bx r0
+	.pool
+

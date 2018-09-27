@@ -1120,7 +1120,7 @@ trainer trainers[TRAINER_CNT] = {
     false, // Custom moves
     true, // Custom items
     0x0, // field_0_filler
-    TRAINERCLASS_ASS_TRAINER,
+    TRAINERCLASS_PKMN_TRAINER,
     {
       0x0,
       true
@@ -1147,7 +1147,7 @@ trainer trainers[TRAINER_CNT] = {
     false, // Custom moves
     true, // Custom items
     0x0, // field_0_filler
-    TRAINERCLASS_ASS_TRAINER2,
+	TRAINERCLASS_PKMN_TRAINER,
     {
       0x1,
       true
@@ -1174,7 +1174,7 @@ trainer trainers[TRAINER_CNT] = {
     false, // Custom moves
     true, // Custom items
     0x0, // field_0_filler
-    TRAINERCLASS_ASS_TRAINER2,
+	TRAINERCLASS_PKMN_TRAINER,
     {
       0x1,
       true
@@ -2497,7 +2497,7 @@ trainer trainers[TRAINER_CNT] = {
     true, // Custom moves
     true, // Custom items
     0x0, // field_0_filler
-    TRAINERCLASS_ASS_TRAINER,
+	TRAINERCLASS_PKMN_TRAINER,
     {
       0x0,
       true
@@ -2524,7 +2524,7 @@ trainer trainers[TRAINER_CNT] = {
     true, // Custom moves
     true, // Custom items
     0x0, // field_0_filler
-    TRAINERCLASS_ASS_TRAINER,
+	TRAINERCLASS_PKMN_TRAINER,
     {
       0x0,
       true
@@ -2551,7 +2551,7 @@ trainer trainers[TRAINER_CNT] = {
     true, // Custom moves
     true, // Custom items
     0x0, // field_0_filler
-    TRAINERCLASS_ASS_TRAINER,
+	TRAINERCLASS_PKMN_TRAINER,
     {
       0x0,
       true
@@ -4122,7 +4122,7 @@ trainer trainers[TRAINER_CNT] = {
       0x2,
       true
     }, //Encounter and gender
-    0x3e, // sprite
+	0x3d, // sprite
     LANGDEP(PSTRING("Hedwig"), PSTRING("Hedwig")),
     {
       ITEM_NONE,

@@ -2,12 +2,12 @@
 #include "battle/battler.h"
 #include "battle/attack.h"
 #include "constants/abilities.h"
+#include "constants/attacks.h"
 #include "constants/attack_results.h"
 #include "attack.h"
 #include "debug.h"
 #include "constants/items.h"
 #include "battle/battlescript.h"
-
 
 void apply_final_damage_modifiers(){
     battler *attacker = &battlers[attacking_battler];
@@ -47,6 +47,18 @@ void apply_final_damage_modifiers(){
                 damage_apply_multiplier(1200);
             }
             break;
+        } case ACHTLOS : {
+        	if (active_attack == ATTACK_BODYCHECK ||
+        			active_attack == ATTACK_FLAMMENBLITZ ||
+        			active_attack == ATTACK_RISIKOTACKLE ||
+        			active_attack == ATTACK_SPRUNGKICK ||
+        			active_attack == ATTACK_STURZFLUG ||
+					active_attack == ATTACK_TURMKICK ||
+					active_attack == ATTACK_UEBERROLLER ||
+					active_attack == ATTACK_VOLTTACKLE) {
+                damage_apply_multiplier(1200);
+        	}
+        	break;
         }
     }
 }

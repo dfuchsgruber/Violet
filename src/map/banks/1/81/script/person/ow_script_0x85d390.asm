@@ -20,7 +20,7 @@ str_0x864949:
 .global str_0x86453a
 
 str_0x86453a:
-    .string "Deine Versuche werden spätestens\nan Mistral scheitern..."
+    .string "Deine Versuche werden spätestens\nan Mistral scheiternDOTS"
         
         
 .elseif LANG_EN

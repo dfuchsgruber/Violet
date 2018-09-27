@@ -30,19 +30,19 @@ end
 .global str_0x8f18a8
 
 str_0x8f18a8:
-    .string "Guten Tag!\nHast du Lust auf eine Fahrt mit\leinem unserer Kanus? Ein Tag\lkostet dich gerade einmal\p...\neine MILLION POKEDOLLAR!\pWas sagst du?"
+    .string "Guten Tag!\nHast du Lust auf eine Fahrt mit\leinem unserer Kanus? Ein Tag\lkostet dich gerade einmal\pDOTS\neine MILLION POKEDOLLAR!\pWas sagst du?"
         
         
 .global str_0x8f1821
 
 str_0x8f1821:
-    .string "...\pDu hast nicht genügend Geld?\nPah! Armer Schlucker!"
+    .string "DOTS\pDu hast nicht genügend Geld?\nPah! Armer Schlucker!"
         
         
 .global str_0x8f1865
 
 str_0x8f1865:
-    .string "Wiebitte? Warum denn nicht?\pDer Preis?\p...\pPah! Armer Schlucker!"
+    .string "Wiebitte? Warum denn nicht?\pDer Preis?\pDOTS\pPah! Armer Schlucker!"
         
         
 .elseif LANG_EN

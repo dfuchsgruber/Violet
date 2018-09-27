@@ -35,7 +35,7 @@ end
 .global str_0x87c237
 
 str_0x87c237:
-    .string "... ..."
+    .string "DOTS DOTS"
         
         
 .global str_0x87c116

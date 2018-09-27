@@ -13,7 +13,7 @@ end
 .global str_0x8f60c7
 
 str_0x8f60c7:
-    .string "Ein Pokémon könnte hier bestimmt\nhochkraxeln ..."
+    .string "Ein Pokémon könnte hier bestimmt\nhochkraxeln DOTS"
         
         
 .elseif LANG_EN

@@ -32,7 +32,7 @@ waitstate
 compare LASTRESULT 0x7f
 gotoif EQUAL ow_script_0x95c56e
 special 0x3f
-compare 0x8004 0xffff
+compare 0x8004 0
 gotoif EQUAL ow_script_0x95c3d3
 bufferitem 0x0 0x8004
 loadpointer 0x0 str_0x95c487
@@ -129,9 +129,8 @@ str_0x95c4b4:
 .global str_0x95c3e1
 
 str_0x95c3e1:
-    .string "Es sieht so aus, als hättest du\ndeine RealTimeClock nicht\laktiviert oder als würde diese\lnicht funktionieren.\pÜberprüfe bitte deinen Emulator\noder deine Plattform."
-        
-        
+	.autostring 35 2 "Es sieht so aus, als würde die interne Spielzeit nicht voranschreiten.\pBesuche am besten das Haus des Uhrenmachers, ehe du ein Fossil zur Restauration abgeben möchtest."
+
 .global str_0x95c579
 
 str_0x95c579:
@@ -147,7 +146,7 @@ str_0x95c509:
 .global str_0x95c2eb
 
 str_0x95c2eb:
-    .string "Ah, du bist es!\nEs ist uns gelungen, das Fossil zu\lrestaurieren.\pEs hat sich als BUFFER_1 entpuppt.\p...\n..."
+    .string "Ah, du bist es!\nEs ist uns gelungen, das Fossil zu\lrestaurieren.\pEs hat sich als BUFFER_1 entpuppt.\pDOTS\nDOTS"
         
         
 .global str_0x95c2d1

@@ -13,7 +13,7 @@ end
 .global str_0x8cb5ae
 
 str_0x8cb5ae:
-    .string "Was würde ich nur für einen\nRegenschirm geben..."
+    .string "Was würde ich nur für einen\nRegenschirm gebenDOTS"
         
         
 .elseif LANG_EN

@@ -942,3 +942,45 @@ lsr r0, #0x1A
     ldr r0, =_pokemon_get_egg_moves_stub | 1
     bx r0
     .pool
+
+
+// Nature names (decap)
+.org 0x08464F24
+	.word str_nature_robust
+	.word str_nature_solo
+	.word str_nature_hart
+	.word str_nature_frech
+	.word str_nature_mutig
+	.word str_nature_kuehn
+	.word str_nature_sanft
+	.word str_nature_pfiffig
+	.word str_nature_lasch
+	.word str_nature_locker
+	.word str_nature_maessig
+	.word str_nature_mild
+	.word str_nature_zaghaft
+	.word str_nature_hitzig
+	.word str_nature_ruhig
+	.word str_nature_still
+	.word str_nature_zart
+	.word str_nature_sacht
+	.word str_nature_kauzig
+	.word str_nature_forsch
+	.word str_nature_scheu
+	.word str_nature_hastig
+	.word str_nature_froh
+	.word str_nature_naiv
+	.word str_nature_ernst
+
+// Stats like Angriff, Vert., Init., Lv., ...
+.org 0x812b6e0
+	.word str_pokemon_stat_table
+.org 0x812b79c
+	.word str_pokemon_stat_table
+.org 0x812bedc
+	.word str_pokemon_stat_table
+
+// Stats for battle increase
+.org 0x083FD470
+	.word str_kp, str_angriff, str_vert, str_init, str_sp_ang
+	.word str_sp_ver, str_accuracy, str_flight_value

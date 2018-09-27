@@ -30,7 +30,7 @@ str_0x92f0aa:
 .global str_0x8c8d47
 
 str_0x8c8d47:
-    .string "Ah, ein neues Gesicht!\pDu scheinst genau hierher zu\npassen, zu all den anderen\lSchurken..."
+    .string "Ah, ein neues Gesicht!\pDu scheinst genau hierher zu\npassen, zu all den anderen\lSchurkenDOTS"
         
         
 .elseif LANG_EN

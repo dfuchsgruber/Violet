@@ -4,4 +4,6 @@
 .include "patches/string/battle.asm"
 .include "patches/string/pc.asm"
 .include "patches/string/mart.asm"
+.include "patches/string/item.asm"
+.include "patches/string/pokemon.asm"
 

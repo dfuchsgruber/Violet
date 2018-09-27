@@ -13,7 +13,7 @@ end
 .global str_0x965fe1
 
 str_0x965fe1:
-    .string "Ich traue mich nicht, den Vulkan\nzu besteigen...\pWas, wenn er gerade dann\nausbricht, während ich vor dem\lSchlot stehe?"
+    .string "Ich traue mich nicht, den Vulkan\nzu besteigenDOTS\pWas, wenn er gerade dann\nausbricht, während ich vor dem\lSchlot stehe?"
         
         
 .elseif LANG_EN

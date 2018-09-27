@@ -62,7 +62,7 @@ str_0x945f3c:
 .global str_0x946118
 
 str_0x946118:
-    .string "Vorzüglich!\nDu hast BUFFER_1-mal\lBUFFER_1 dabei!\pSoll ich nun einem deiner Pokémon\ndie Lichtkanone beibringen?"
+    .string "Vorzüglich!\nDu hast BUFFER_2-mal\lBUFFER_1 dabei!\pSoll ich nun einem deiner Pokémon\ndie Lichtkanone beibringen?"
         
         
 .global str_0x9461a3

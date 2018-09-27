@@ -76,6 +76,9 @@ goto ow_script_0x935a41
 .global ow_script_0x935a41
 ow_script_0x935a41:
 setflag BLACKOUT_BYPASS
+loadpointer 0 str_revolutionary
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x933bb4
 callstd MSG
 trainerbattlelosable 0x9 0x73 0x0 str_0x933c29 str_0x935b22
@@ -158,41 +161,43 @@ end
 
 
 .ifdef LANG_GER
+
+str_revolutionary:
+	.string "Revolutionär"
+
 .global str_0x933f08
 
 str_0x933f08:
-    .string "Begreifst du jetzt, was für\nein Ort das ist, PLAYER?\lPiraten, Händler und Schurken\lziehen hier die Fäden, im\lUntergrund.\lIch frage dich ganz offen:\lWie kann jemand ein derartiges\lSystem unterstützen, verteidigen?"
-        
+	.autostring 35 2 "Siehst du, was für ein abgrund hier unterhalb dieser schönen Stadt liegt?\pHier floriert die Krimialität wie nirgends sonst.\pUnd all das wird von den Top Vier tolleriert.\pDieser Markt befindet sich unter der Obhut von Devin, einem Mitglied der Pokémon-Liga."
         
 .global str_0x933c60
 
 str_0x933c60:
-    .string "PLAYER und Igva!\nDas hätte ich mir denken können,\ldass ihr einander findet.\pDich hätte ich an einem solchen\nOrt allerdings nicht erwartet,\lPLAYER, zugegeben.\pJetzt, wo du diesen Ort gesehen\nhast, willst du mich da immer noch\lbekämpfen?\p... ...\n... ...\pWie nobel von dir, du bist durch\nund durch Fauns Schüler.\lIch muss mir aber erst ein Bild\lvon deinen Kräften machen.\pWie wäre es, wenn du stattdessen\ngegen ihn hier antrittst?"
-        
+	.autostring 35 2 "Igva und DOTS\nPLAYER!\pWie klein die Welt doch ist, dass ihr euch iher begegnet.\pAuch wenn ich jemanden wie PLAYER hier nicht erwartet hätte.\pIgva versucht wohl, dich auf unsere Seite zu bringen.\pDu solltest deine Entscheidung aber nicht überstürzen, PLAYER.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDu willst mich herausfordern?\pDenkst du denn, dass du es mit mir aufnehmen kannst?\pVersuch dich doch erst einmal an ihm hier, dann werden wir sehen, ob du für einen Kampf gegen mich bereit bist DOTS"
+
         
 .global str_0x933bb4
 
 str_0x933bb4:
-    .string "Lord Albus Ansichten sind der\nSchlüssel zu einer besseren Welt.\pIch werde alles tun, um diese Welt\nherbeizuführen."
+	.autostring 35 2 "Ich werde alles tun, was in meiner Macht steht, um diese Welt zu einem besseren Ort zu machen."
         
         
 .global str_0x933c29
 
 str_0x933c29:
-    .string "Vergebt mir, Lord Albus.\nIch war zu schwach."
+    .autostring 35 2 "Vergebt mir, Albus DOTS\nIch war zu schwach DOTS"
         
         
 .global str_0x935b22
 
 str_0x935b22:
-    .string "Lord Albus, ich habe das Kind\nbesiegt, seid Ihr jetzt zufrieden?"
+    .string "Lord Albus, ich habe das Kind besiegt!"
         
         
 .global str_0x93661f
 
 str_0x93661f:
-    .string "Oh, keine schlechte\nVorstellung.\pIch sehe nun, was dich für Faun so\ninteressant gemacht hat.\pAber deinem Kampfstil konnte ich\nauch Zweifel aberkennen.\lDeine Überzeugung, für die Top\lVier zu kämpfen, bröckelt, nicht?"
-        
+	.autostring 35 2 "Du kämpfst nicht schlecht, PLAYER.\pAber bis du dich mit jemandem wie mir anlegen kannst, musst du noch viel an dir arbeiten.\pIch will dir einen Ratschlag mitgeben.\pDu solltest nicht leichtfertig Leute herausfordern, die dir offensichtlich überlegen sind.\pSo etwas kann schnell ins Auge gehen und nicht jeder ist dir so freundlich gesinnt, wie ich es bin.\pDOTS DOTS DOTS\pAußerdem DOTS\pWürde ich dich viel lieber in unseren Reihen begrüßen, anstatt mit dir zu kämpfen.\pMein Angebot, dich uns anzuschließen, steht noch immer."
         
 .global str_0x9365b7
 
@@ -203,20 +208,17 @@ str_0x9365b7:
 .global str_0x9362bd
 
 str_0x9362bd:
-    .string "Überstürze nichts, Igva.\pSiehst du nicht, dass der Junge im\nBegriff ist, seine Welt zu\lhinterfragen?\pDachtest du, dass diese Welt\nperfekt ist? Dass das alles hier\lbloß ein dummer Film oder ein\lSpiel ist?\pMenschen sind selbstsüchtig, und\nwenn man nicht im Laufe der\lJahrhunderte wieder und wieder\lgegen diese Selbstsucht\lrebelliert, wird Leid die Oberhand\lgewinnen.\pIch will dich nicht länger\nbelehren, du sollst aus freien\lStücken zu deinen Handlungen\lkommen.\pBedenke aber, dass du hinter\nallem, was du tust, stehen musst.\lSei dir jeder Konsequenz bewusst.\p...\pVielleicht kann ich dich eines\nTages in meinen Reihen begrüßen.\pVielleicht stehen wir uns auf dem\nletzten Schlachtfeld gegenüber.\pWer weiß, was die Zeit bringt?\pViel Glück bei deinem Weg,\nPLAYER."
-        
-        
+	.autostring 35 2 "Nichts überstürzen, Igva.\pIch will PLAYER nicht zu einer unüberlegten Narrheit zwingen.\pLass dir ruhig Zeit mit deiner Entscheidung.\pWenn es aber darauf ankommt, musst du ohne zu zögern hinter deinem Entschluss stehne können.\pBehalte das im Kopf, PLAYER."
+
 .global str_0x9360fc
 
 str_0x9360fc:
-    .string "PLAYER...\pLord Albus ist ein guter Mensch.\nUnd das bist du auch.\p...\pDu hättest ihn nicht besiegen\nkönnen, völlig ausgeschlossen.\pIch werde seinen Worten Folge\nleisten und dich ziehen lassen.\pNur einen Tipp will ich dir geben:\nWenn du mehr von der Schattenseite\lThetos sehen möchtest, solltest du\lManus, den Arenaleiter von Meriana\lCity herausfordern.\pDu erreichst den Ort sehr schnell\nüber den Wasserpfad, südlich von\lKaskada.\pAuf Wiedersehen!"
-        
+	.autostring 35 2 "PLAYER DOTS\nSiehst du, was für ein großartiger Mensch Albus ist?\pEr hätte dich mit Leichtigkeit besiegen können, doch obwohl du ihn herausgefordert hast, hat er dich verschont.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch werde seinen Worten folge leisten und dich ziehen lassen.\pLass dein Herz dir sagen, auf wessen Seite du in diesem Konflikt stehen willst.\pWenn du noch mehr von der dunklen Seite Thetos sehen willst, solltest du Manus, den Arenaleiter von Meriana City herausfordern.\pAuf Wiedersehen, PLAYER."
         
 .global str_0x9359bb
 
 str_0x9359bb:
-    .string "PLAYER, du solltest dich hier\netwas umsehen.\pDieser Ort ist der dunkle Spiegel\nunserer Gesellschaft.\pEntreiße der Welt ihre Maske!"
-        
+	.autostring 35 2 "PLAYER, sieh dich doch ruhig etwas um."
         
 .elseif LANG_EN
 

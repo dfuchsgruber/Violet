@@ -318,18 +318,18 @@ frame 160
     endframe
 
 frame 168
-    bg_override 2 gfx_anim_dark_aktania_back_1Tiles 0x6000 0 COPYSET
     bg_override 2 gfx_anim_dark_aktania_back_1Map 0x1000 0 COPYMAP
+    bg_override 2 gfx_anim_dark_aktania_back_1Tiles 0x6000 0 COPYSET
     endframe
 
 frame 176
-    bg_override 2 gfx_anim_dark_aktania_back_2Tiles 0x6000 0 COPYSET
     bg_override 2 gfx_anim_dark_aktania_back_2Map 0x1000 0 COPYMAP
+    bg_override 2 gfx_anim_dark_aktania_back_2Tiles 0x6000 0 COPYSET
     endframe
     
 frame 184
-    bg_override 2 gfx_anim_dark_aktania_back_3Tiles 0x6000 0 COPYSET
     bg_override 2 gfx_anim_dark_aktania_back_3Map 0x1000 0 COPYMAP
+    bg_override 2 gfx_anim_dark_aktania_back_3Tiles 0x6000 0 COPYSET
     endframe
 
 frame 260
@@ -455,9 +455,6 @@ frame 260
     script_notify
     end
     endframe
-    
-
-
 
 
 .align 4

@@ -13,7 +13,7 @@ end
 .global str_0x8c910d
 
 str_0x8c910d:
-    .string "Ich beobachte gerne Menschen in\nihren Kanus.\p...\pDas Wasser ist zweifellos das\nElement des Lebens!"
+    .string "Ich beobachte gerne Menschen in\nihren Kanus.\pDOTS\pDas Wasser ist zweifellos das\nElement des Lebens!"
         
         
 .elseif LANG_EN

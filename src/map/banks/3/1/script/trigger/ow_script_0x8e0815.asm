@@ -48,24 +48,64 @@ ow_script_0x8e0815:
 lockall
 applymovement 0xff ow_script_movs_0x8e1841
 waitmovement 0x0
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e17bd
 callstd MSG_KEEPOPEN
+special 0xF
+
+loadpointer 0 str_revo
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8e1748
 callstd MSG_KEEPOPEN
+special 0xF
+
 applymovement 0x2b ow_script_movs_0x8e1745
 applymovement 0x29 ow_script_movs_0x8e1742
 waitmovement 0x0
+
+loadpointer 0 str_revo
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e1702
 callstd MSG_KEEPOPEN
+special 0xF
+
+loadpointer 0 str_revo
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8e167c
 callstd MSG_KEEPOPEN
+special 0xF
+
+loadpointer 0 str_revo
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e162e
 callstd MSG_KEEPOPEN
+special 0xF
+
 applymovement 0x2b ow_script_movs_0x8e162b
 applymovement 0x29 ow_script_movs_0x8e162b
 waitmovement 0x0
+
+loadpointer 0 str_revo
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8e15cc
 callstd MSG_KEEPOPEN
+special 0xF
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
+loadpointer 0 str_police_laughs
+callstd MSG_KEEPOPEN
+special 0xF
+
 sound 0x15
 applymovement 0x2a ow_script_movs_0x8e162b
 waitmovement 0x0
@@ -73,10 +113,21 @@ applymovement 0x29 ow_script_movs_0x8e1521
 applymovement 0x2a ow_script_movs_0x8e1521
 applymovement 0x2b ow_script_movs_0x8e1521
 waitmovement 0x0
+
+loadpointer 0 str_revo
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e14fb
 callstd MSG_KEEPOPEN
+special 0xF
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e148e
 callstd MSG_KEEPOPEN
+special 0xF
+
 getplayerpos 0x8000 0x8001
 compare 0x8001 0x1e
 callif EQUAL ow_script_0x8e1470
@@ -84,42 +135,55 @@ compare 0x8001 0x20
 callif EQUAL ow_script_0x8e147c
 applymovement 0x2a ow_script_movs_0x8e146d
 waitmovement 0x0
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e12f8
 callstd MSG_KEEPOPEN
+special 0xF
+
 applymovement 0x2a ow_script_movs_0x8e1841
 waitmovement 0x0
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e11b9
 callstd MSG_KEEPOPEN
+special 0xF
+
 applymovement 0x2a ow_script_movs_0x8e162b
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e0f79
 callstd MSG_KEEPOPEN
+special 0xF
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-goto ow_script_0x8f6e54
+loadpointer 0x0 meriana_revo_choice
+multichoice 0x0 0x0 0x0 0x1
+setvar DYN_MULTICHOICE_ITEM_CNT 0x0
+compare LASTRESULT 0x0
+gotoif EQUAL ow_script_0x8e22eb
+
+
+call ow_script_0x8a1cc9
+loadpointer 0x0 str_0x8e0cdc
+callstd MSG_KEEPOPEN
+special 0x7
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
+trainerbattlecont 0x1 0x2c 0x0 str_0x8e0c9c str_0x8e0c71 ow_script_0x8e09cc
 
 .align 4
 meriana_revo_choice:
     .word str_meriana_revo_choice_0, 0
     .word str_meriana_revo_choice_1, 0
-    
 
-
-.global ow_script_0x8f6e54
-ow_script_0x8f6e54:
-loadpointer 0x0 meriana_revo_choice
-goto ow_script_0x8e1b14
-
-
-.global ow_script_0x8e1b14
-ow_script_0x8e1b14:
-multichoice 0x0 0x0 0x0 0x1
-setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8e22eb
-call ow_script_0x8a1cc9
-loadpointer 0x0 str_0x8e0cdc
-callstd MSG_KEEPOPEN
-special 0x7
-trainerbattlecont 0x1 0x2c 0x0 str_0x8e0c9c str_0x8e0c71 ow_script_0x8e09cc
 
 
 .global ow_script_movs_0x8e0c56
@@ -135,8 +199,14 @@ ow_script_movs_0x8e0c56:
 
 .global ow_script_0x8e09cc
 ow_script_0x8e09cc:
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e0c5e
 callstd MSG_KEEPOPEN
+special 0xF
+
 showsprite 0x2c
 showsprite 0x2d
 applymovement 0x2c ow_script_movs_0x8e0c56
@@ -150,17 +220,48 @@ applymovement 0x2a ow_script_movs_0x8e1521
 applymovement 0x2b ow_script_movs_0x8e1521
 applymovement 0xff ow_script_movs_0x8e1521
 waitmovement 0x0
+
+loadpointer 0 str_polizist
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8e0b99
 callstd MSG_KEEPOPEN
+special 0xF
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e0b24
 callstd MSG
+special 0xF
+
 fadescreen 0x1
 hidesprite 0x29
 hidesprite 0x2a
 hidesprite 0x2b
 hidesprite 0x2d
 fadescreen 0x0
-goto ow_script_0x8e1b5e
+applymovement 0xff ow_script_movs_0x8e1d9e
+waitmovement 0x0
+applymovement 0x2c ow_script_movs_0x8e0b21
+waitmovement 0x0
+
+loadpointer 0 str_bewohner
+setvar 0x8000 0
+special 0xE
+loadpointer 0x0 str_0x8e0aa8
+callstd MSG
+special 0xF
+
+fadescreen 0x1
+hidesprite 0x2c
+fadescreen 0x0
+setvar MERIANA_CITY_REVOLUTIONARY 3
+setflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
+setvar 0x8000 0x8
+special2 0x8000 0xc
+releaseall
+end
 
 
 .global ow_script_movs_0x8e1d9e
@@ -169,11 +270,6 @@ ow_script_movs_0x8e1d9e:
 .byte STOP
 
 
-.global ow_script_0x8e1b5e
-ow_script_0x8e1b5e:
-applymovement 0xff ow_script_movs_0x8e1d9e
-waitmovement 0x0
-goto ow_script_0x8e1da1
 
 
 .global ow_script_movs_0x8e0b21
@@ -182,26 +278,7 @@ ow_script_movs_0x8e0b21:
 .byte STOP
 
 
-.global ow_script_0x8e1da1
-ow_script_0x8e1da1:
-applymovement 0x2c ow_script_movs_0x8e0b21
-waitmovement 0x0
-loadpointer 0x0 str_0x8e0aa8
-callstd MSG_KEEPOPEN
-copyvarifnotzero 0x8000 ITEM_HYPERTRANK
-copyvarifnotzero 0x8001 1
-callstd ITEM_OBTAIN
-loadpointer 0x0 str_0x8e0a79
-callstd MSG
-fadescreen 0x1
-hidesprite 0x2c
-fadescreen 0x0
-setvar MERIANA_CITY_REVOLUTIONARY 0x80
-setflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
-setvar 0x8000 0x8
-special2 0x8000 0xc
-releaseall
-end
+
 
 
 .global ow_script_0x8e22eb
@@ -210,28 +287,41 @@ call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8e0f0b
 callstd MSG_KEEPOPEN
 special 0x7
+
+loadpointer 0 str_polizist
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8e0ef0
-callstd MSG_KEEPOPEN
-sound 0x41
-givemoney 0x5dc 0x0
-loadpointer 0x0 str_0x8e0edc
-callstd MSG_KEEPOPEN
-checksound
+callstd MSG
+special 0xF
+
+pause 64
+
+loadpointer 0 str_polizist
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8e0e4f
 callstd MSG
+special 0xF
+
 fadescreen 0x1
 hidesprite 0x2a
 fadescreen 0x0
 applymovement 0x2b ow_script_movs_0x8e1745
 applymovement 0x29 ow_script_movs_0x8e1742
 waitmovement 0x0
+
+loadpointer 0 str_revo
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8e0e17
 callstd MSG
+special 0xF
 fadescreen 0x1
 hidesprite 0x2b
 hidesprite 0x29
 fadescreen 0x0
-setvar MERIANA_CITY_REVOLUTIONARY 0x7f
+setvar MERIANA_CITY_REVOLUTIONARY 0x4
 setflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
 setvar 0x8000 0xfff2
 special2 0x8000 0xc
@@ -268,74 +358,82 @@ return
 .ifdef LANG_GER
 .global str_0x8e17bd
 
+str_polizist:
+	.string "Polizist"
+
+str_revo:
+	.string "Revolutionär"
+
+str_bewohner:
+	.string "Bewohner"
+
 str_0x8e17bd:
-    .string "Polizist Marq: Gut, ich lasse euch\nlaufen, dieses Mal. Vorausgesetzt,\lihr könnt mich entsprechend\lentlohnen, wie sich versteht..."
+	.autostring 36 2 "Revolutionsbewegung, was?\pDass ihr mir in die Arme lauft, ist wirklich Glück!\pIch werde euch festnehmen und hinter Gitter bringen!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pEs sei denn, natürlich, wir können uns auf anderen Wegen einig werdenDOTS"
         
         
 .global str_0x8e1748
 
 str_0x8e1748:
-    .string "Mann: Wir sind Revolutionäre. Wir\nverhandeln nicht mit\lEuresgleichen. Wir werden euer\lSystem zum Einsturz bringen!"
-        
+	.autostring 36 2 "Bestechung?\nNiemals!\pWir sind Teil der Revolutionsbewegung und würden niemals unsere Ideale für Geld verkaufen!\pEher wandern wir ins Gefängnis, als selbst Teil dieser korrupten Welt zu werden!"
         
 .global str_0x8e1702
 
 str_0x8e1702:
-    .string "Mann: Hey, warte mal. Willst du\nwirklich ins Gefängnis gehen?"
+	.autostring 36 2 "Moment, Moment!\nIst das dein Ernst?\pWillst du wirklich ins Gefängnis gehen?\pWas würde deine Familie denken?"
         
         
 .global str_0x8e167c
 
 str_0x8e167c:
-    .string "Mann: Kämpfen wir nicht für\nIdeale? Für eine Welt der\lGerechtigkeit und ohne Korruption?\lWollen wir wirklich unsere Werte\lverraten?"
+	.autostring 36 2 "NunjaDOTS DOTS DOTS\pAber treten wir nicht für eine gerechtere Welt ein?\pWollen wir das alles aufgeben, um uns selbst zu retten?"
         
         
 .global str_0x8e162e
 
 str_0x8e162e:
-    .string "Mann: Mach, was du willst. Ich\nwerde mein Leben nicht einfach so\lwegwerfen."
+    .autostring 36 2 "Wir sind normale Bürger, keine HeldenDOTS\pSoll jemand anderes sein Leben irgendwelchen Idealen opfernDOTS\pIch will nicht den Rest meines Lebens eingesperrt verbringen."
         
         
 .global str_0x8e15cc
 
 str_0x8e15cc:
-    .string "Wir nehmen dein Angebot an,\nPolizist. Wir werden dich\lbezahlen, wenn du uns passieren\llässt."
+    .autostring 36 2 "In Ordnung, Polizist!\nWir nehmen dein Angebot an.\pWenn du uns laufen lässt, werden wir dich dafür entlohnen!"
+
+str_police_laughs:
+	.autostring 36 2 "Haha! So weit ist es also her mit euren noblen Zielen.\pWer kann es euch verübeln?\pDas ist, wie die Welt funktioniertDOTS DOTS DOTS"
         
         
 .global str_0x8e14fb
 
 str_0x8e14fb:
-    .string "Mann: Hey, da belauscht uns\njemand!"
+    .autostring 36 2 "He! Da belauscht uns jemand!"
         
         
 .global str_0x8e148e
 
 str_0x8e148e:
-    .string "Marq: Hach, wie unerfreulich, ein\nZeuge.\l...\lNun, was machen wir nun mit dir...\lWas machen wir mit dir... "
+    .autostring 36 2 "Oh je! Ein Zeuge!\nDOTS DOTS DOTS\pWas mache ich nun bloß mit dir?"
         
         
 .global str_0x8e12f8
 
 str_0x8e12f8:
-    .string "Junge, du musst verstehen, wie\nunsere Welt funktioniert. An der\lSpitze, da sitzt ein einziger\lMann, der Champion, mächtig und\leinflussreich. Unter ihm die Top\lVier, die Herrscher Thetos. Und\ldann, dann kommen wir, die\leinfachen Menschen, die nichts\lhaben außer dem, was sie sich\lerarbeiten. Die Welt ist nicht\lgerecht, denn es ist die\lmenschliche Natur, Macht zu\lsuchen."
-        
-        
+	.autostring 36 2 "Du bist noch ein Kind, also lass mich dir begreiflch machen, wie unsere Welt eigentlich funktioniert.\pGanz oben stehen die Mächten, die Top Vier und ihr Champion.\pGemeinsam herrschen sie über Theto, wie immer es ihnen beliebt.\pUnd wir, die Polizei, bieten den Menschen im Gegenzug für diese Macht unseren Schutz.\pIst das nicht auch eine Form von Gerechtigkeit?\pSelbstverständlich, ist nicht alles in diesem System perfekt.\pSicherlich gibt es Ungerechtigkeiten hier und da."
+
 .global str_0x8e11b9
 
 str_0x8e11b9:
-    .string "Diese beiden Männer gehören den\nRevolutionären an, die das System\lder Top Vier stürzen wollen, im\lSinne einer gerechten Welt.\pSoll ich sie wirklich fangen? Soll\nich den Top Vier erlauben, ihre\lUnterdrückungsherrschaft\lforzusetzten? Oder ist es nicht\lsinnvoller, sie laufen zu lassen\lund daraus noch Profit zu ziehen?"
-        
-        
-.global str_0x8e0f79
+    .autostring 36 2 "Allerdings, wie sähe eine Welt aus, wie diese beiden Revolutionskämpfer sie sich wünschen?\pJeder dürfte tun und lassen, was immer er möchte.\pNiemand wäre mehr sicher.\nDOTS DOTS DOTS\pAnarchie und Chaos würden über unsere Welt hereinbrechen."
+
 
 str_0x8e0f79:
-    .string "Ich biete dir einen Anteil an.\nVerstehe meinen Standpunkt. Die\lWelt ist korrupt und wer sich der\lWelt nicht beugt, wird zerquetscht\lwie ein Käfer-Pokémon."
+	.autostring 36 2 "Und jetzt sag mir ehrlich, ob Menschen wie ich wirklich das Übel in dieser Welt sind oder nicht ein viel größeres Übel verhindern.\pWas sagst du, Kind?"
         
         
 .global str_meriana_revo_choice_0
 
 str_meriana_revo_choice_0:
-    .string "Bestechen lassen"
+    .string "Zustimmen"
         
         
 .global str_meriana_revo_choice_1
@@ -347,79 +445,63 @@ str_meriana_revo_choice_1:
 .global str_0x8e0cdc
 
 str_0x8e0cdc:
-    .string "Ich kann Sie nicht einfach\ndavonkommen lassen. Sie\lunterdrücken die Menschen dieser\lStadt!"
+    .autostring 36 2 "Sie haben Unrecht!\nSich einfach hilflos dem System auszuliefern, ist keine Lösung.\pJeder muss selbst daran arbeiten, die Welt zu einem besseren Ort zu machen.\pIch werde Sie nicht mit ihren korrupten Geschäften durchkommen lassen!"
         
         
 .global str_0x8e0c9c
 
 str_0x8e0c9c:
-    .string "So sei es dann der Kampf.\nBedauerlich, dass es so enden\lmuss."
+    .autostring 36 2 "Verdammtes Gör!\nDu bist eben doch nur ein naives Kind!\pAlso muss ich doch wohl oder übel bekämpfen!"
         
         
 .global str_0x8e0c71
 
 str_0x8e0c71:
-    .string "Dummer Junge... Du verstehst gar\nnichts!"
+    .autostring 36 2 "Verflucht! DOTS DOTS DOTS"
         
         
 .global str_0x8e0c5e
 
 str_0x8e0c5e:
-    .string "Das ... Nein ..."
+    .autostring 36 2 "Du einfältiges Kind!\pDenkst du, dass es klug ist, sich mit der Polizei anzulegen!"
         
         
 .global str_0x8e0b99
 
 str_0x8e0b99:
-    .string "Polizist: Wachtmeister Marq, ich\nhabe bereits von dubiosen\lAktivitäten gehört, und nun muss\lich sie mit eigenen Augen\lmiterleben! Ungeheuerlich!\lHiermit sind Sie festgenommen,\lalle drei!"
-        
+	.autostring 36 2 "Wachtmeister!\pIch wurde über Ihre korrupten Aktivitäten unterrichtet und wollte es nicht fassen.\pJetzt muss ich es jedoch mit eigenen Augen sehen!\pUngeheuerlich!\pSie sind verhaftet, alle drei!"
         
 .global str_0x8e0b24
 
 str_0x8e0b24:
-    .string "Nah. Hätte ich doch den Top Vier\nmehr gedient, als meinem eigenen\lReichtum, wäre ich nun in einer\lbesseren Lage..."
-        
+    .autostring 36 2 "Verlogener Kerl!\pAls hättest du nicht selbst genauso viel Dreck am Stecken!\pAber ich werde keinen Widerstand leisten.\pSoll doch jemand anders sich um diese Welt kümmern DOTS DOTS DOTS"
         
 .global str_0x8e0aa8
 
 str_0x8e0aa8:
-    .string "Danke, vielen Dank! Endlich\nhat jemand diesen Schurken zur\lStrecke gebracht.\lIch will mich dir erkenntlich\lzeigen."
-        
-        
-.global str_0x8e0a79
-
-str_0x8e0a79:
-    .string "Ich stehe in deiner Schuld.\pAuf Wiedersehen!"
+    .autostring 36 2 "Danke dir tausend Mal!\pEndlich hat jemand diesen korrupten Wachtmeister zur Strecke gebracht.\pWenn es auch ein kleiner Beitrag war, hast du diese Stadt zu einem besseren Ort gemacht.\pWir Bewohner stehen alle in deiner Schuld."
         
         
 .global str_0x8e0f0b
 
 str_0x8e0f0b:
-    .string "... Ich werde ... Ihr Geld nehmen.\pLassen Sie die Revolutionäre\nlaufen."
+    .autostring 36 2 "Vermutlich haben Sie RechtDOTS\pLassen Sie wenigstens die Revolutionäre laufen, wenn Sie selbst nicht den Schneid aufbringen können, etwas zum Besseren wenden zu wollen."
         
         
 .global str_0x8e0ef0
 
 str_0x8e0ef0:
-    .string "Eine weise Entscheidung."
-        
-        
-.global str_0x8e0edc
-
-str_0x8e0edc:
-    .string "PLAYER erhält 1500 POKEDOLLAR."
-        
+    .autostring 36 2 "Du bist nicht dumm, Kind.\pDu wirst sicher auch irgendwann merken, dass es nicht immer leicht ist, etwas zum Besseren zu wenden."
         
 .global str_0x8e0e4f
 
 str_0x8e0e4f:
-    .string "Du bist ein kluger Junge. Du\nverstehst, wie die Welt\lfunktioniert. Wir brauchen keine\lIdealisten, sondern Pragmatiker.\lWie mich, wie dich."
-        
+    .autostring 36 2 "Ganz im VertrauenDOTS\pEs ist nicht ratsam, sich mit den Top Vier oder denen, die ihnen unterstellt sind, anzulegen.\pSei klug genug, meinen Rat zu beherzigenDOTS DOTS DOTS"
         
 .global str_0x8e0e17
 
 str_0x8e0e17:
-    .string "Revolutionäre: Schnell, machen wir\nuns aus dem Staub!"
+    .autostring 36 2 "Schnell, machen wir nuns aus dem Staub!"
         
         
 .elseif LANG_EN

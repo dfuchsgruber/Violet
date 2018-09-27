@@ -66,7 +66,6 @@ u16 dungeon_ocean_wild_pokemon_good_rod[] = {
 	POKEMON_PERLU,
 	POKEMON_REMORAID,
 	POKEMON_KANIVANHA,
-	POKEMON_CORASONN,
 	0xFFFF
 };
 

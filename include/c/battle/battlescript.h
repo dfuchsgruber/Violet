@@ -60,4 +60,10 @@ void battlescript_init_and_interrupt_battle(u8 *bsc);
  */
 void battlescript_cmd_x06_apply_damage_modifiers();
 
+/**
+ * Battle script command 0xEA: recoveres used items
+ * structure: 0xEA [offset_failed_to_recover : word]
+ */
+void bsc_cmd_xEA_recycle_item();
+
 #endif /* INCLUDE_C_BATTLE_BATTLESCRIPT_H_ */

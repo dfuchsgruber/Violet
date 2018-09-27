@@ -99,6 +99,23 @@ void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
  */
 void pokemon_new(pokemon *space, u16 species, u8 level, u8 fixed_ivs,
         bool pid_determined, pid_t pid, bool tid_determined, u32 tid);
+
+/**
+ * Creates a new pokemon egg data (without actually setting the is_egg attribute).
+ * @param dst target adress to create the pokemon at
+ * @param species species to create an egg of
+ * @param set_catch_location_to_xFD if set, the catch location is set to 0xFD (whatever this means)
+ */
+void pokemon_new_egg(pokemon *dst, u16 species, bool set_catch_location_to_xFD);
+
+/**
+ * Tries to add the pokemon to the player's party. If this fails, it tries to add it to any box.
+ * Also OT-Name, TID and OT-Gender attributes of the pokemon are set.
+ * @param dst the pokemon to be added to the player's collection.
+ * @return 0 if added to the party, 1 if added to the box, 2 if everything failed
+ */
+int pokemon_give(pokemon *dst);
+
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
 /**

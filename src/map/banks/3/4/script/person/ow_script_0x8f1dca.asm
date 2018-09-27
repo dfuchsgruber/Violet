@@ -13,7 +13,7 @@ end
 .global str_0x8f1dd4
 
 str_0x8f1dd4:
-    .string "Diese Frau in dem Kanu...\nSie ist so wunderschön! Aber ich\lkann einfach nicht genug Mut\lfinden, sie anzusprechen!"
+    .string "Diese Frau in dem KanuDOTS\nSie ist so wunderschön! Aber ich\lkann einfach nicht genug Mut\lfinden, sie anzusprechen!"
         
         
 .elseif LANG_EN

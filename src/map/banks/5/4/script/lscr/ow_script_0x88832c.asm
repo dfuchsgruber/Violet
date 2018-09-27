@@ -291,7 +291,7 @@ str_0x888541:
 .global str_0x88861b
 
 str_0x88861b:
-    .string "Siehst du, kinderleicht.\n...\lWeiter geht\s!"
+    .string "Siehst du, kinderleicht.\nDOTS\lWeiter geht\s!"
         
         
 .global str_0x888649
@@ -321,7 +321,7 @@ str_0x8889cd:
 .global str_0x88887f
 
 str_0x88887f:
-    .string "Nichts zu danken! Ein Trank füllt\ndie KP eines Pokémon wieder auf.\lWenn also mal kein Pokestop in der\lNähe ist, sollte man immer einen\lTrank verwenden, um seine Pokémon\lzu erfrischen.\l...\lGut, das sind die wichtigsten\lEinrichtungen innerhalb eines\lPokestops. Komm mit nach draußen,\les gibt noch eine Sache, die ich\ldir zeigen will."
+    .string "Nichts zu danken! Ein Trank füllt\ndie KP eines Pokémon wieder auf.\lWenn also mal kein Pokestop in der\lNähe ist, sollte man immer einen\lTrank verwenden, um seine Pokémon\lzu erfrischen.\lDOTS\lGut, das sind die wichtigsten\lEinrichtungen innerhalb eines\lPokestops. Komm mit nach draußen,\les gibt noch eine Sache, die ich\ldir zeigen will."
         
         
 .elseif LANG_EN

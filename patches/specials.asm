@@ -9,6 +9,10 @@ special_table equ 0x0815FCC0
         .word special_mugshot_delete | 1
         .pool
 
+.org (special_table + (0x8 * 4))
+		.word time_test | 1
+		.pool
+
 .org (special_table + (0xC * 4))
 	.word special_addkarma_wrap | 1
 	.pool
@@ -24,7 +28,7 @@ special_table equ 0x0815FCC0
         .pool
 
 .org (special_table + (0x16 * 4))
-	.word special_get_rtc | 1
+	.word special_time_get | 1
 	.pool
 	
 .org (special_table +(0x17 * 4))

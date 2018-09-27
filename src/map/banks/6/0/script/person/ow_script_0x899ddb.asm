@@ -82,7 +82,7 @@ str_0x89a91d:
 .global str_0x89a88b
 
 str_0x89a88b:
-    .string "Dieses Item nennt sich BUFFER_1.\nEs ist ein Stein in dessen\lGegenwart sich Gengar seltsam\lverhält. Ich weiß jedoch nicht\lgenau, wie man ihn benuzt..."
+    .string "Dieses Item nennt sich BUFFER_1.\nEs ist ein Stein in dessen\lGegenwart sich Gengar seltsam\lverhält. Ich weiß jedoch nicht\lgenau, wie man ihn benuztDOTS"
         
         
 .elseif LANG_EN

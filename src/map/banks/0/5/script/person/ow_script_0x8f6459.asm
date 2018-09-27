@@ -13,7 +13,7 @@ end
 .global str_0x8fb1c7
 
 str_0x8fb1c7:
-    .string "Warum muss es hier auch so\nverflucht dunkel sein?\pStändig stolpere ich über ein\nKleinstein..."
+    .string "Warum muss es hier auch so\nverflucht dunkel sein?\pStändig stolpere ich über ein\nKleinsteinDOTS"
         
         
 .elseif LANG_EN

@@ -13,7 +13,7 @@ end
 .global str_0x91ff57
 
 str_0x91ff57:
-    .string "Endlich! Nach tagelanger Suche\nhabe ich den Weg nach Kaskada\lwieder gefunden. Nur zögere ich,\lmich erneut in eine Höhle zu\lbegeben..."
+    .string "Endlich! Nach tagelanger Suche\nhabe ich den Weg nach Kaskada\lwieder gefunden. Nur zögere ich,\lmich erneut in eine Höhle zu\lbegebenDOTS"
         
         
 .elseif LANG_EN

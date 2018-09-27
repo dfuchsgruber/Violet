@@ -266,3 +266,9 @@
         .word str_nein
 .org 0x83df380
         .word str_nein
+
+// Saving dialoge
+.org 0x0806FDD0
+		.word str_player
+.org 0x0806FDD4
+		.word str_badges

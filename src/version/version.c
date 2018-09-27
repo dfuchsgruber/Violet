@@ -5,12 +5,16 @@
 #include "constants/vars.h"
 #include "constants/items.h"
 #include "constants/flags.h"
+#include "constants/time_types.h"
 #include "tile/trash.h"
 #include "language.h"
 #include "vars.h"
 #include "flags.h"
 #include "worldmap.h"
 #include "item/item.h"
+#include "debug.h"
+#include "overworld/script.h"
+#include "text.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -23,16 +27,7 @@ u8 str_version_alpha_1_0[] = LANGDEP(
         "\pContinue your adventure in the east\nof the Rocky Desolation."));
 
 void version_transfer(){
-    
-    //Buffer the continuation string
-    u8 **pointerbank_0 = (u8**)0x03000F14;
-    switch(*var_access(SGM_VER)){
-        case 0:
-        default:
-            *pointerbank_0 = str_version_alpha_1_0;
-            break;
-    }
-    *var_access(0x8004) = (u16)(*var_access(SGM_VER) + 1);
+	*var_access(0x8004) = *var_access(SGM_VER);
     while(*var_access(SGM_VER) != VERSION_LATEST){
         //transfer savegames to a higher version until we reach the latest
         switch(*var_access(SGM_VER)){
@@ -40,7 +35,7 @@ void version_transfer(){
 				// Latest
 				break;
             case VERSION_ALPHA_2_1:
-                //Latest
+                version_upgrade_alpha_2_1_to_2_2();
                 break;
             case VERSION_ALPHA_2_0:
                 version_upgrade_alpha_2_0_to_2_1();
@@ -53,7 +48,11 @@ void version_transfer(){
             
         }
     }
-    *var_access(0x8005) = (u16)(*var_access(SGM_VER) + 1);
+	*var_access(0x8005) = *var_access(SGM_VER);
+	u8 str_version[] = LANGDEP(
+    		PSTRING("Alpha 2.2"),
+			PSTRING("Alpha 2.2."));
+	strcpy(buffer0, str_version);
 }
 
 /**
@@ -83,6 +82,7 @@ void version_upgrade_alpha_2_0_to_2_1(){
 }
 
 void version_upgrade_alpha_2_1_to_2_2() {
+    *var_access(SGM_VER) = VERSION_ALPHA_2_2;
 	*var_access(TRAINERSCHOOL_PROGRESS) = 10;
 	*var_access(TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS) = 1;
 	*var_access(TRAINERSCHOOL_GOODBYE_CNT) = 3;
@@ -99,6 +99,15 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	setflag(TRAINERSCHOOL_RIVAL);
 	setflag(TRAINERSCHOOL_RIVAL_INSIDE);
 	setflag(TRAINERSCHOOL_FAUN_INSIDE);
+	// Pick time system that works
+	if (rtc_test()) {
+		*var_access(TIME_TYPE) = TIME_TYPE_RTC;
+	} else {
+		*var_access(TIME_TYPE) = TIME_TYPE_INGAME_CLOCK;
+	}
+	time_reset_events();
+	// Reorder pokedex flags
+	version_transfer_pokedex();
 }
 
 u16 version_is_latest(){

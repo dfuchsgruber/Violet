@@ -35,8 +35,8 @@ end
 .global str_0x963705
 
 str_0x963705:
-    .string "Hallo PLAYER.\nDas hier ist mein Reich, die Welt\lder Flammen und der aufstrebenden\lGemüter und Geister.\pAber lass uns keine Zeit\nverlieren.\pDie Rüpel aus dieser Stadt zu\nvertreiben, wird nichts nützen,\lsolange Mistral noch immer in der\lNähe ist.\pWir sollten den Volcano erklimmen\nund ihn dort stellen.\pFolge mir einfach, wenn du bereit\nbist, aber beeile dich."
-        
+	.autostring 35 2 "Hallo PLAYER.\pWillkommen in Inferior.\pDu wirst leider keine Zeit haben, meine schöne Stadt zu bewundern.\pDie Rüpel von hier zu vertreiben, wird nichts nützen, solange der Kommandant von Team Violet noch sein Unwesen treibt.\pWir sollten uns auf zum Vulcano machen."
+
         
 .elseif LANG_EN
 

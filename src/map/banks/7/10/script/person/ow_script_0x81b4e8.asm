@@ -46,7 +46,7 @@ end
 .global str_0x81b548
 
 str_0x81b548:
-    .string "Oh! Ein Herausforderer! Nun...\nIch bin MIA, die Arenaleiterin der\lSILVANIA Arena. Ich habe mich auf\lPflanzenpokemon spezialisiert! Lass\lmich sehen, was du meiner Stärke\lentgegenzusetzten kannst!"
+    .string "Oh! Ein Herausforderer! NunDOTS\nIch bin MIA, die Arenaleiterin der\lSILVANIA Arena. Ich habe mich auf\lPflanzenpokemon spezialisiert! Lass\lmich sehen, was du meiner Stärke\lentgegenzusetzten kannst!"
         
         
 .global str_0x81b611

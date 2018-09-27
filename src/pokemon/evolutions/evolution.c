@@ -62,7 +62,7 @@ u16 pokemon_get_evolution(pokemon *p, u8 type, u16 arg){
                         if(!rtc_test())
                             dprintf("A Pokemon that evolves at day has leveled up but your RTC seems to be turned off!\n");
                         rtc_timestamp time = {0};
-                        rtc_read(&time);
+                        time_read(&time);
                         if(time.hour > 6 && time.hour < 22 && friendship >= 220)
                             return pokemon_evolutions[species][i].target;
                         break;
@@ -72,7 +72,7 @@ u16 pokemon_get_evolution(pokemon *p, u8 type, u16 arg){
                         if(!rtc_test())
                             dprintf("A Pokemon that evolves at night has leveled up but your RTC seems to be turned off!\n");
                         rtc_timestamp time = {0};
-                        rtc_read(&time);
+                        time_read(&time);
                         dprintf("Night evolution with friendship at %d\n", friendship);
                         if((time.hour <= 6 || time.hour >= 22) && friendship >= 220)
                             return pokemon_evolutions[species][i].target;
@@ -148,11 +148,24 @@ u16 pokemon_get_evolution(pokemon *p, u8 type, u16 arg){
                         break;
                     }
                     case EVOLUTION_METHOD_HOLD_ITEM_AND_NIGHT:{
-                        if(!rtc_test())
+                        if(!time_test())
                             dprintf("A Pokemon that evolves at night has leveled up but your RTC seems to be turned off!\n");
                         rtc_timestamp time = {0};
-                        rtc_read(&time);
+                        time_read(&time);
                         if((time.hour <= 6 || time.hour >= 22) &&
+                                held_item == pokemon_evolutions[species][i].condition){
+                            held_item = 0; //Remove this item
+                            pokemon_set_attribute(p, ATTRIBUTE_ITEM, &held_item);
+                            return pokemon_evolutions[species][i].target;
+                        }
+                        break;
+                    }
+                    case EVOLUTION_METHOD_HOLD_ITEM_AND_DAY:{
+                        if(!time_test())
+                            dprintf("A Pokemon that evolves at day has leveled up but your RTC seems to be turned off!\n");
+                        rtc_timestamp time = {0};
+                        time_read(&time);
+                        if((time.hour > 6 || time.hour < 22) &&
                                 held_item == pokemon_evolutions[species][i].condition){
                             held_item = 0; //Remove this item
                             pokemon_set_attribute(p, ATTRIBUTE_ITEM, &held_item);

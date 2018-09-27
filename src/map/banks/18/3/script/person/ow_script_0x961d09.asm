@@ -20,7 +20,7 @@ str_0x963252:
 .global str_0x9632aa
 
 str_0x9632aa:
-    .string "Ich aber sage nur...\nHust, hust..."
+    .string "Ich aber sage nurDOTS\nHust, hustDOTS"
         
         
 .elseif LANG_EN

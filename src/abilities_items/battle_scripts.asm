@@ -18,6 +18,9 @@
 .global bsc_tollwut_attack_boost
 .global bsc_lucid
 .global bsc_robustheit
+.global bsc_harvest
+.global bsc_hack
+.global bsc_fluffy
 
 bsc_wandlungskunst:
 printstring 0x184
@@ -176,5 +179,24 @@ printstring 0x18D
 waitmessage 0x40
 return
 
+bsc_harvest:
+recycleitem bsc_harvest_fail
+printstring 0x197
+waitmessage 0x40
+bsc_harvest_fail:
+end3
 
+bsc_hack:
+jumpifsecondarystatus 0 0x10000 bsc_hack_fail
+setincreasedcriticalchance
+printstring 0x198
+waitmessage 0x40
+bsc_hack_fail:
+end3
+
+bsc_fluffy:
+playanimation 0x1 0x1 0x2023FD4
+printstring 0x199
+waitmessage 0x40
+return
 

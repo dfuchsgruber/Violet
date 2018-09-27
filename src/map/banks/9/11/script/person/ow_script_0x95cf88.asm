@@ -13,7 +13,7 @@ end
 .global str_0x95cf92
 
 str_0x95cf92:
-    .string "Dass meine Frau ihren Vater bei\nuns wohnen lässt, stört mich\lprinzipiell zwar nicht...\pAber diese schrecklichen\nLebensweisheiten, mit denen er die\lFamilie bei Langeweile hält..."
+    .string "Dass meine Frau ihren Vater bei\nuns wohnen lässt, stört mich\lprinzipiell zwar nichtDOTS\pAber diese schrecklichen\nLebensweisheiten, mit denen er die\lFamilie bei Langeweile hältDOTS"
         
         
 .elseif LANG_EN

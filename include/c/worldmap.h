@@ -23,6 +23,27 @@ extern "C" {
         u16 field_6;
     } stru_flight_position;
     
+    typedef struct {
+    	u16 cursor_x, cursor_y;
+    	u8 unknown[0x10];
+    	u16 player_namespace;
+
+    } worldmap_state_t;
+
+    // A pattern consists of multiple shapes, each of which can have displacement from the
+    // position anchor and its own rectangular dimension. To associate a map with a shape use
+    // the respective field in the mapheader structure
+    typedef struct {
+    	u8 x, y, width, height;
+    } worldmap_shape_t;
+
+    typedef struct {
+    	int num_shapes;
+    	worldmap_shape_t *shapes;
+    } worldmap_pattern_t;
+
+    extern worldmap_state_t *worldmap_state;
+
     stru_flight_position flight_positions[NUM_FLIGHT_POSITONS];
 
 

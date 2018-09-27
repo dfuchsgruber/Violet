@@ -13,7 +13,7 @@ end
 .global str_0x94e9dc
 
 str_0x94e9dc:
-    .string "Es ist wichtig, einfach einmal\nabzuschalten und den Geist wandern\lzu lassen..."
+    .string "Es ist wichtig, einfach einmal\nabzuschalten und den Geist wandern\lzu lassenDOTS"
         
         
 .elseif LANG_EN

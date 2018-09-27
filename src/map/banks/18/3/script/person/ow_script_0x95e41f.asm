@@ -20,7 +20,7 @@ str_0x95e437:
 .global str_0x95e496
 
 str_0x95e496:
-    .string "Überall nur Asche und Feuer..."
+    .string "Überall nur Asche und FeuerDOTS"
         
         
 .elseif LANG_EN

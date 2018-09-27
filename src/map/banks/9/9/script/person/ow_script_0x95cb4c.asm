@@ -13,7 +13,7 @@ end
 .global str_0x95cb56
 
 str_0x95cb56:
-    .string "Glaubst du an einen Gott?\nManche verehren Arceus, den\lSchöpfer aller Dinge...\pIch weiß nicht, ob ich an etwas\nderart abstraktes glauben kann..."
+    .string "Glaubst du an einen Gott?\nManche verehren Arceus, den\lSchöpfer aller DingeDOTS\pIch weiß nicht, ob ich an etwas\nderart abstraktes glauben kannDOTS"
         
         
 .elseif LANG_EN

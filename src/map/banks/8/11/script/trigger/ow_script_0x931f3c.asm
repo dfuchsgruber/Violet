@@ -40,20 +40,42 @@ fadesong MUS_PIRATE
 special 0x113
 applymovement 0x7f ow_script_movs_0x9339f0
 waitmovement 0x0
+
+loadpointer 0 str_pirat
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93386b
 callstd MSG
+special 0xF
+
+loadpointer 0 str_pirat
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x9337e5
 callstd MSG
+special 0xF
 showsprite 0x1a
 pause 0x18
+
+loadpointer 0 str_pirat
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x933908
 callstd MSG
+special 0xF
+
 sound 0x15
 applymovement 0x18 ow_script_movs_0x933904
 applymovement 0x19 ow_script_movs_0x933904
 waitmovement 0x0
+
+loadpointer 0 str_pirat
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x9338d3
 callstd MSG
+special 0xF
+
 applymovement 0x1a ow_script_movs_0x931fc2
 applymovement 0x18 ow_script_movs_0x931fc5
 applymovement 0x19 ow_script_movs_0x931fc5
@@ -109,28 +131,31 @@ end
 
 
 .ifdef LANG_GER
+
+str_pirat:
+	.string "Pirat"
+
 .global str_0x93386b
 
 str_0x93386b:
-    .string "Das Leben als Pirat ist wirklich\nbefreiend!\pMein Bürojob bei der LaZ.Corp war\nein Leidensweg dagegen."
+	.autostring 35 2 "Das Leben als Pirat ist wirklich befreiend!\pNiemals wieder gehe ich zurück zu meinen Bürojob bei Laz.Corp!"
         
         
 .global str_0x9337e5
 
 str_0x9337e5:
-    .string "Oh ja! Das Leben auf See ist ein\nAbenteuer.\pUnd vom Lösegeld, das wir hier für\nunsere Gefangenen erwirken, lässt\les sich gut leben!"
-        
+	.autostring 35 2 "Oh ja!\nDas Leben auf See ist ein Abenteuer!\pUnd von dem Erlös, den wir hier für unsere gestohlenen Gegenstände und Pokémon einnehmen, lässt es sich sehr gut leben!"
         
 .global str_0x933908
 
 str_0x933908:
-    .string "Ahoi, Männer!\pWir stechen in See!\nKapitän Blackbeard hat alles\lverkaufen können."
+	.autostring 35 2 "Ahoi, Männer!\pWir stehen ich See!\pKapitän Blackbeard ist hier fertig!"
         
         
 .global str_0x9338d3
 
 str_0x9338d3:
-    .string "Aye! Wir haben verstanden!\nAlle Mann an Board!"
+    .autostring 35 2 "Aye! Wir haben verstanden!\pAlle Mann an Board!"
         
         
 .elseif LANG_EN

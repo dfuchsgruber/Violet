@@ -38,6 +38,8 @@ setflag FRBADGE_6
 setflag FRBADGE_7
 additem ITEM_VM03 1
 additem ITEM_TM43 1
+callasm debug_vars
+callasm debug_flags
 @ goto ow_script_dungeon2_enter_ocean
 end
 

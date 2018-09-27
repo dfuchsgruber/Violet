@@ -20,7 +20,7 @@ str_0x92d16d:
 .global str_0x92dd6f
 
 str_0x92dd6f:
-    .string "Es wäre hilfreich gewesen, weniger\nder Landschaft die Aufmerksamkeit\lzu schenken und mehr dem Kampf..."
+    .string "Es wäre hilfreich gewesen, weniger\nder Landschaft die Aufmerksamkeit\lzu schenken und mehr dem KampfDOTS"
         
         
 .elseif LANG_EN

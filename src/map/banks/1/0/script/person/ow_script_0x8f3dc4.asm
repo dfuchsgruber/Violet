@@ -81,7 +81,7 @@ end
 .global str_0x8f3e79
 
 str_0x8f3e79:
-    .string "Die Natur ist ein beeindruckendes\nKunstwerk...\lWenn du mir ein Pokémon zeigst,\ldass Natur-Kraft beherrscht, werde\lich mich erkenntlich zeigen.\lKennt eines deiner Pokémon die\lAttacke Natur-Kraft?"
+    .string "Die Natur ist ein beeindruckendes\nKunstwerkDOTS\lWenn du mir ein Pokémon zeigst,\ldass Natur-Kraft beherrscht, werde\lich mich erkenntlich zeigen.\lKennt eines deiner Pokémon die\lAttacke Natur-Kraft?"
         
         
 .global str_0x8f3f3e

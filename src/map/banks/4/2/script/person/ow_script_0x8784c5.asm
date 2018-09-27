@@ -13,7 +13,7 @@ end
 .global str_0x881901
 
 str_0x881901:
-    .string "Oh, hallo PLAYER! Wie geht es dir?\n...\lFreut mich! Grüße doch bitte deine\lMutter von mir."
+    .string "Oh, hallo PLAYER! Wie geht es dir?\nDOTS\lFreut mich! Grüße doch bitte deine\lMutter von mir."
         
         
 .elseif LANG_EN

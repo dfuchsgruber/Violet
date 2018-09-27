@@ -77,19 +77,18 @@ goto ow_script_0x92eac0
 .global str_0x8c90a0
 
 str_0x8c90a0:
-    .string "PLAYER, da bist du ja."
+    .autostring 35 2 "PLAYER, da bist du ja."
         
         
 .global str_0x8c8fec
 
 str_0x8c8fec:
-    .string "Hier herrscht das reinste Chaos!\nRevolutionäre und Polizisten\lbesetzen die Stadt. Sie liefern\lsich einen erbitterten Kampf. Wir\lsollten nach Opi suchen, und ihn\lunterstützen."
-        
+	.autostring 35 2 "Hier herrscht das reinste Chaos.\pDie Polizei hat die Stadt abgeriegelt.\pIrgendwo hier muss sich der Anführer der Revolution rumtreiben.\pWir sollten uns auf die Suche machen!"
         
 .global str_0x8c8fde
 
 str_0x8c8fde:
-    .string "... ... ..."
+    .autostring 35 2 "DOTS DOTS DOTS"
         
         
 .elseif LANG_EN

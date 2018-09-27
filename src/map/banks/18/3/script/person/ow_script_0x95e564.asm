@@ -20,7 +20,7 @@ str_0x95e57c:
 .global str_0x95e5cf
 
 str_0x95e5cf:
-    .string "Mit einem Hundemon am\nHöllenschlund spazieren gehen..."
+    .string "Mit einem Hundemon am\nHöllenschlund spazieren gehenDOTS"
         
         
 .elseif LANG_EN

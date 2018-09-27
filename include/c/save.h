@@ -18,7 +18,7 @@
 #define GP_STACK_SIZE 16
 
 typedef struct warp_save_t {
-	u8 bank, map, exit;
+	u8 bank, map, exit, field_3;
 	s16 x, y;
 } warp_save_t;
 
@@ -27,11 +27,14 @@ typedef struct saveblock1 {
     s16 y_cam_orig; //camera origin
     u8 bank;
     u8 map;
-    u8 unkown_0[0x16];
+    u8 last_exit;
+    u8 field_7;
+    s16 field_8, field_A; // this struct is very warp_like: field_8, field_A seem to be 0xFFFF
+    u8 unkown_1[0x8]; // probably also a warp save
+    warp_save_t last_map_multifloor; // ????
     warp_save_t healingplace;
-    u8 last_outdoor_bank;
-    u8 last_outdoor_map;
-    u8 unkown[0xA];
+    warp_save_t last_outdoor;
+    u8 unkown[0x4];
     u8 flash_circle_size;
     u8 field_31;
     u16 current_footer_id;
@@ -46,12 +49,15 @@ typedef struct saveblock1 {
 typedef struct saveblock2 {
     u8 player_name[0x8];
     u8 player_is_female;
-    u8 unkown_4;
+    u8 field_9;
     u8 tid_0;
     u8 tid_1;
     u8 tid_2;
     u8 tid_3;
-    u8 unkown_5[0x5];
+    u16 hours_played;
+    u8 minutes_played;
+    u8 seconds_played;
+    u8 milliseconds_played;
     u8 detector_state; //original key swtiching
     u8 text_speed;
     u8 sound_state : 1;

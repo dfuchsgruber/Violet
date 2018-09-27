@@ -81,25 +81,25 @@ str_0x92e752:
 .global str_0x92e6f1
 
 str_0x92e6f1:
-    .string "Eine spannende Geschichte, nicht?\pEines steht jedenfalls fest, sie\nist irgendwo da draußen... "
+    .string "Eine spannende Geschichte, nicht?\pEines steht jedenfalls fest, sie\nist irgendwo da draußenDOTS "
         
         
 .global str_0x92df22
 
 str_0x92df22:
-    .string "... ... ..."
+    .string "DOTS DOTS DOTS"
         
         
 .global str_0x92def0
 
 str_0x92def0:
-    .string "... ... ...\pErkennst du mich nicht?\p... ... ..."
+    .string "DOTS DOTS DOTS\pErkennst du mich nicht?\pDOTS DOTS DOTS"
         
         
 .global str_0x92e9aa
 
 str_0x92e9aa:
-    .string "Nah! Wie auch immer! Wir Hexen\nhaben eine uralte Geschichte und\lTradition...\pEs lohnt sich, darüber zu wissen."
+    .string "Nah! Wie auch immer! Wir Hexen\nhaben eine uralte Geschichte und\lTraditionDOTS\pEs lohnt sich, darüber zu wissen."
         
         
 .elseif LANG_EN

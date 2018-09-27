@@ -13,7 +13,7 @@ end
 .global str_0x93767f
 
 str_0x93767f:
-    .string "Im Laufe der Jahrtausende hat das\nWasser diesen Tunnel ausgespült.\lSo viele Sackgassen..."
+    .string "Im Laufe der Jahrtausende hat das\nWasser diesen Tunnel ausgespült.\lSo viele SackgassenDOTS"
         
         
 .elseif LANG_EN

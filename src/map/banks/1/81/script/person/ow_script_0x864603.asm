@@ -20,7 +20,7 @@ str_0x9661e8:
 .global str_0x966268
 
 str_0x966268:
-    .string "Oje! Keine Beförderung für mich..."
+    .string "Oje! Keine Beförderung für michDOTS"
         
         
 .elseif LANG_EN

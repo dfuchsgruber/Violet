@@ -38,14 +38,13 @@ end
 .global str_0x931867
 
 str_0x931867:
-    .string "Äh ja, verstehen\nSie, ich will Transformationen\lerzielen, ich benötige hohe\lEnergien. Können Sie nicht..."
+	.autostring 35 2 "Äh ja, verstehen Sie DOTS\pFür das Portal benötige ich sehr starke Magnetfelder DOTS"
         
         
 .global str_0x931636
 
 str_0x931636:
-    .string "Oh, hallo PLAYER!\pIch hatte dich ... äh ... an einem\nOrt wie diesem nicht erwartet.\pWas treibst du hier auch?\nNur Ganoven und anderes Gesindel\lkommt hier zusammen, nicht aber\lLeute von deinem Schlag!\p...\n...\pWas ich hier tue?\pNun ... äh ... ja ...\nIch erwerbe hier gewisse ... äh\p... Gerätschaften ...\pNicht, weil sie auf dem legalen\nMarkt zu teuer wären ...\pIch ... äh ...\nIch habe ganz vergessen, dass ich\leinen wichtigen Termin habe.\pMeine Forschungen dulden keinen\nAufschub.\p...\pAuf Wiedersehen, PLAYER!\nUnd grüße doch bitte Elise, mein\lkleines Mädchen, von mir."
-        
+	.autostring 35 2 "PLAYER!\nWas treibst du denn an einem solchen Ort?\pHier treibt sich doch nur Gesindel und Abschaum herum.\pDOTS DOTS DOTS\nWas ich hier tue?\pÄhm DOTS DOTS DOTS\nDOTS DOTS DOTS\pEs ist nicht so, dass Supermagneten auf dem legalen Markt zu kostspielig wären DOTS DOTS\pDOTS so ist es gewiss nicht!\pIch DOTS DOTS DOTS\nbin nur zufällig hier DOTS\pDa fällt mir ein, dass ich einen wichtigen Termin habe.\pMeine Forschungen dudlen keinen Auschub.\pGrüß meine Tochter Elise von mir, PLAYER!"
         
 .elseif LANG_EN
 

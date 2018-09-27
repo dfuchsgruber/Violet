@@ -13,7 +13,7 @@ end
 .global str_0x8f13dc
 
 str_0x8f13dc:
-    .string "Seit geraumer Zeit schon frage ich\nmich, was sich wohl in dieser\lHöhle befindet..."
+    .string "Seit geraumer Zeit schon frage ich\nmich, was sich wohl in dieser\lHöhle befindetDOTS"
         
         
 .elseif LANG_EN

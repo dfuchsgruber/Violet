@@ -20,7 +20,7 @@ str_0x73cdd2:
 .global str_0x73ce20
 
 str_0x73ce20:
-    .string "Der Ausgang..."
+    .string "Der AusgangDOTS"
         
         
 .elseif LANG_EN

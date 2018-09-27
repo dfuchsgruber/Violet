@@ -13,7 +13,7 @@ end
 .global str_0x95e11e
 
 str_0x95e11e:
-    .string "Weiter westwärts kommst du zum Fuß\ndes Volcanos, einem aktiven\lVulkan.\pDass jemand dort eine Stadt\nerrichtet hat, erscheint mir sehr\lfragwürdig..."
+    .string "Weiter westwärts kommst du zum Fuß\ndes Volcanos, einem aktiven\lVulkan.\pDass jemand dort eine Stadt\nerrichtet hat, erscheint mir sehr\lfragwürdigDOTS"
         
         
 .elseif LANG_EN

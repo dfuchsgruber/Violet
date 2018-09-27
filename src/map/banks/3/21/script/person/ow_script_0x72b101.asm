@@ -20,7 +20,7 @@ str_0x743970:
 .global str_0x8ede0e
 
 str_0x8ede0e:
-    .string "Am Brunnen konnte ich meine\nPokémon heilen...\pVielleicht war es aber auch bloß\neine Fata Morgana."
+    .string "Am Brunnen konnte ich meine\nPokémon heilenDOTS\pVielleicht war es aber auch bloß\neine Fata Morgana."
         
         
 .elseif LANG_EN

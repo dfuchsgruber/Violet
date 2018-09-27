@@ -11,6 +11,9 @@ ow_script_0x877c66:
 lock
 faceplayer
 showmoney 0x0 0x0 0x0
+loadpointer 0 str_rick
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8bfba9
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
@@ -22,16 +25,26 @@ end
 
 .global ow_script_0x89bdc5
 ow_script_0x89bdc5:
+checkmoney 150 0x0
+compare LASTRESULT 0x0
+gotoif EQUAL no_money
 paymoney 0x96 0x0
 loadpointer 0x0 str_0x812578
 callstd MSG_FACE
+special 0xF
 sound 0x41
 updatemoney 0x0 0x0 0x0
 loadpointer 0x0 str_0x812509
 callstd MSG_KEEPOPEN
 closeonkeypress
+
+loadpointer 0 str_rick
+setvar 0x8000 1
+special 0xE
+after_paying:
 loadpointer 0x0 str_0x81f8d2
 callstd MSG_FACE
+special 0xF
 cry POKEMON_STARAPTOR 0x0
 waitcry
 setweather 0
@@ -60,37 +73,47 @@ callstd MSG_FACE
 release
 end
 
+no_money:
+loadpointer 0 str_no_money
+callstd MSG_KEEPOPEN
+goto after_paying
+
 
 .ifdef LANG_GER
-.global str_0x8bfba9
 
+str_no_money:
+	.autostring 36 2 "Oh, wie unglücklich!\pScheint mir, als hättest du nicht genügend GeldDOTS\pIch bin aber kein Unmensch und werde dich trotzdem nach Aktania fliegen!"
+
+str_rick:
+	.string "Rick"
+
+.global str_0x8bfba9
 str_0x8bfba9:
-    .string "Hallo! Mein Name ist Rick.\nIch und mein Bruder Nick betreiben\ldiese Farm hier. Wir züchten\lMähikel, Voltilamm und\lVogelpokemon. Wenn du willst,\lbringt dich mein Staraptor von\lhier nach Aktania. Als\lGegenleistung verlange ich gerade\leinmal 150 POKEDOLLAR.\pWas sagst du? Willst du den\nService in Anspruch nehmen?"
-        
+    .autostring 36 2 "Hallo, junger Trainer!\pMein Bruder Nick und ich betreiben diese Farm hier.\pWir züchten Pokémon aller Art, darunter auch Vogelpokémon.\pWenn du wilslt, bringt dich mein Staraptor von hier nach Aktania.\pKlingt spannend, nicht?\pUnd das ganze kostet dich gerade einmal 150 POKEDOLLAR.\pWas sagst du?\nWillst du den Service in Anspruch nehmen?"
+
+
         
 .global str_0x812578
 
 str_0x812578:
-    .string "Toll! Also, 150 POKEDOLLAR, bitte!\n"
+    .autostring 36 2 "Toll! Also, 150 POKEDOLLAR, bitte!"
         
         
 .global str_0x812509
 
 str_0x812509:
-    .string "PLAYER bezahlt 150 POKEDOLLAR."
+    .autostring 36 2 "PLAYER bezahlt\n150 POKEDOLLAR."
         
         
 .global str_0x81f8d2
 
 str_0x81f8d2:
-    .string "Dankeschön...\nKomm bitte mit, mein Staraptor wird\ldich jetzt nach Aktania fliegen."
-        
-
+    .autostring 36 2 "DankeschönDOTS\pKomm bitte mit, mein Staraptor wird dich jetzt nach Aktania fliegen."
         
 .global str_0x812597
 
 str_0x812597:
-    .string "Ganz wie du willst. Solltest du\njedoch irgendwanneinmal nach\lAktania wollen, komm einfach zu\lmir."
+    .autostring 36 2 "Ganz wie du möchtest!\pSolltest du deine Meinung ändern, zögere nicht zu fragen!"
         
         
 

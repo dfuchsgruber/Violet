@@ -20,7 +20,7 @@ str_0x96646f:
 .global str_0x9664e4
 
 str_0x9664e4:
-    .string "Beachtlich...\nGegen Mistral hast du letztlich\laber keine Chancen..."
+    .string "BeachtlichDOTS\nGegen Mistral hast du letztlich\laber keine ChancenDOTS"
         
         
 .elseif LANG_EN

@@ -44,7 +44,7 @@ end
 .global str_0x8a4832
 
 str_0x8a4832:
-    .string "Ich bin ein weltweit angesehener\nHistoriker und habe die Urpsrünge\lsowohl der Menschen als auch der\lPokémon erforscht. Möchtest du\letwas darüber wissen? Doch sei\lgewarnt, es ist keine kurze\lGeschichte..."
+    .string "Ich bin ein weltweit angesehener\nHistoriker und habe die Urpsrünge\lsowohl der Menschen als auch der\lPokémon erforscht. Möchtest du\letwas darüber wissen? Doch sei\lgewarnt, es ist keine kurze\lGeschichteDOTS"
         
         
 .global str_0x8a4537
@@ -74,7 +74,7 @@ str_0x8a4108:
 .global str_0x8a4349
 
 str_0x8a4349:
-    .string "Tausend Leben sowohl von Menschen\nund Pokémon forderte der dritte\lgroße Krieg ein, die Sieger nahmen\lsich das Recht, legendäre Pokémon\lan sich zu fesseln und gaben\lsich selbst den Titel Götter. Sie\lzogen fort und wurden von da an\lnie wieder gesehen...\lEinen vierten Krieg gab es\lbisweilen nicht, denn viel zu\lgroß, war das Leid, dass der\ldritte Krieg heraufbeschworen\lhatte. Mensch und Pokémon leben\lSeite an Seite in Frieden und man\lkann nur hoffen, dass das so\lbleibt, findest du nicht?"
+    .string "Tausend Leben sowohl von Menschen\nund Pokémon forderte der dritte\lgroße Krieg ein, die Sieger nahmen\lsich das Recht, legendäre Pokémon\lan sich zu fesseln und gaben\lsich selbst den Titel Götter. Sie\lzogen fort und wurden von da an\lnie wieder gesehenDOTS\lEinen vierten Krieg gab es\lbisweilen nicht, denn viel zu\lgroß, war das Leid, dass der\ldritte Krieg heraufbeschworen\lhatte. Mensch und Pokémon leben\lSeite an Seite in Frieden und man\lkann nur hoffen, dass das so\lbleibt, findest du nicht?"
         
         
 .elseif LANG_EN

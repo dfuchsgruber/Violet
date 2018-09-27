@@ -13,7 +13,7 @@ end
 .global str_0x95cec0
 
 str_0x95cec0:
-    .string "Seit Tagen nun leidet meine\nTochter an schrecklichen\lAlbträumen..."
+    .string "Seit Tagen nun leidet meine\nTochter an schrecklichen\lAlbträumenDOTS"
         
         
 .elseif LANG_EN

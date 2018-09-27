@@ -14,7 +14,7 @@ end
 .global str_0x8feb10
 
 str_0x8feb10:
-    .string "Meine Pflanzen-Pokémon können sich\nmit der Trockenheit einer Wüste\lnicht wirklich anfreunden..."
+    .string "Meine Pflanzen-Pokémon können sich\nmit der Trockenheit einer Wüste\lnicht wirklich anfreundenDOTS"
         
         
 .global str_0x8feb72

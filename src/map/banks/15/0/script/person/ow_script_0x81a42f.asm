@@ -20,7 +20,7 @@ str_0x81a447:
 .global str_0x81a495
 
 str_0x81a495:
-    .string "Sterndu..."
+    .string "SternduDOTS"
         
         
 .elseif LANG_EN

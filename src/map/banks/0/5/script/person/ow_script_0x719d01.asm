@@ -20,7 +20,7 @@ str_0x71a83d:
 .global str_0x71a860
 
 str_0x71a860:
-    .string "Man hat mit gesagt, mit Vm Blitz\nkann man in Höhlen besser sehen..."
+    .string "Man hat mit gesagt, mit Vm Blitz\nkann man in Höhlen besser sehenDOTS"
         
         
 .elseif LANG_EN

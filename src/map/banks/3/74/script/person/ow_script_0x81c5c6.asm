@@ -20,7 +20,7 @@ str_0x8774d7:
 .global str_0x88adf9
 
 str_0x88adf9:
-    .string "Vielleicht werde ich nach goldenen\nKakteen suchen..."
+    .string "Vielleicht werde ich nach goldenen\nKakteen suchenDOTS"
         
         
 .elseif LANG_EN

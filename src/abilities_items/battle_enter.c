@@ -5,8 +5,8 @@
 #include "battle/weather.h"
 #include "battle/battlescript.h"
 #include "debug.h"
+#include "abilities.h"
 
-extern u8 bsc_hagelalarm[];
 
 bool abilities_battle_enter(u8 ability, u8 index) {
     dprintf("Battle enter for ability %d, index %d\n", ability, index);
@@ -15,6 +15,9 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         dprintf("Hail triggered\n");
         battlescript_init_and_interrupt_battle(bsc_hagelalarm);
         battle_stat_change[0x17] = index;
+        return true;
+    } else if (ability == HACK) {
+        battlescript_init_and_interrupt_battle(bsc_hack);
         return true;
     }
     return false;

@@ -13,7 +13,7 @@ end
 .global str_0x94c233
 
 str_0x94c233:
-    .string "Hast du je vom weißen Albus\ngehört?\pEr war einst Mitglied der Top Vier\nund leitet jetzt die edle\lRevolutionsbewegung.\pEr ist ja so edel, so großmüßtig\nund großherzig..."
+    .string "Hast du je vom weißen Albus\ngehört?\pEr war einst Mitglied der Top Vier\nund leitet jetzt die edle\lRevolutionsbewegung.\pEr ist ja so edel, so großmüßtig\nund großherzigDOTS"
         
         
 .elseif LANG_EN

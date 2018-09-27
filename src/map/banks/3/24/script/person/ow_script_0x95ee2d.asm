@@ -13,7 +13,7 @@ end
 .global str_0x95ee37
 
 str_0x95ee37:
-    .string "Ich würde mir gut überlegen, ob\nich weiter nach Westen gehe...\pEs heißt, dass die Hitze des\nVulcano einem das Hirn versengt..."
+    .string "Ich würde mir gut überlegen, ob\nich weiter nach Westen geheDOTS\pEs heißt, dass die Hitze des\nVulcano einem das Hirn versengtDOTS"
         
         
 .elseif LANG_EN

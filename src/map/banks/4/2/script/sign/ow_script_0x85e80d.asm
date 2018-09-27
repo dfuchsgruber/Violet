@@ -13,7 +13,7 @@ end
 .global str_0x8f4eff
 
 str_0x8f4eff:
-    .string "RIVALs Computer scheint das neuste\nModell zu sein!\p...\pIch sollte mich auf den Weg\nmachen."
+    .string "RIVALs Computer scheint das neuste\nModell zu sein!\pDOTS\pIch sollte mich auf den Weg\nmachen."
         
         
 .elseif LANG_EN

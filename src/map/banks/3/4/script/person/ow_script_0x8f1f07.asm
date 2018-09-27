@@ -13,7 +13,7 @@ end
 .global str_0x8f2194
 
 str_0x8f2194:
-    .string "Von einem Untergrundhandel weiß\nich nichts...\pWie, du hast nicht gefragt?"
+    .string "Von einem Untergrundhandel weiß\nich nichtsDOTS\pWie, du hast nicht gefragt?"
         
         
 .elseif LANG_EN

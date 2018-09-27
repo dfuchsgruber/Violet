@@ -27,6 +27,7 @@ def fetch_data(output_file, consts):
         if species == "Ho_oh": species = "Ho-Oh"
         elif species == "Maehikel": species = "Mähikel"
         elif species == "Porygon_z": species = "Porygon-Z"
+        elif species == "Sen_long": species = "Sen-Long"
         try:
             url = 'https://www.pokewiki.de/' + species
             split_url = list(urllib.parse.urlsplit(url))

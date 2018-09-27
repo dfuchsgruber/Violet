@@ -13,7 +13,7 @@ end
 .global str_0x95f573
 
 str_0x95f573:
-    .string "Der Aschhain ist ein kleiner Wald\nam Fuße eines kleinen Hügels.\pAlles dreht sich um das kleine, an\ndiesem Ort..."
+    .string "Der Aschhain ist ein kleiner Wald\nam Fuße eines kleinen Hügels.\pAlles dreht sich um das kleine, an\ndiesem OrtDOTS"
         
         
 .elseif LANG_EN

@@ -48,8 +48,14 @@ call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8ec9d0
 callstd MSG
 special 0x7
+
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8ec921
 callstd MSG
+special 0xF
+
 sound 0x15
 applymovement 0xff ow_script_movs_0x8ec91e
 waitmovement 0x0
@@ -61,14 +67,26 @@ call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8ec8ab
 callstd MSG
 special 0x7
+
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8ec84d
 callstd MSG
+special 0xF
+
 call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8ec7d7
 callstd MSG
 special 0x7
+
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8ec6df
 callstd MSG
+special 0xF
+
 call ow_script_0x89c5ee
 loadpointer 0x0 str_0x87e807
 callstd MSG
@@ -138,8 +156,14 @@ callstd MSG
 special 0x7
 applymovement 0x2 ow_script_movs_0x8f28b5
 waitmovement 0x0
+
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8f3668
 callstd MSG
+special 0xF
+
 applymovement 0x1 ow_script_movs_0x8f28b2
 waitmovement 0x0
 call ow_script_0x89c5ee
@@ -159,8 +183,14 @@ callstd MSG
 special 0x7
 applymovement 0x2 ow_script_movs_0x8f26b0
 waitmovement 0x0
+
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8f2607
 callstd MSG
+special 0xF
+
 sound 0x63
 showsprite 0x3
 checksound
@@ -169,8 +199,14 @@ applymovement 0x1 ow_script_movs_0x8eca2a
 applymovement 0x2 ow_script_movs_0x8eca2a
 applymovement 0xff ow_script_movs_0x8eca2a
 waitmovement 0x0
+
+loadpointer 0 str_police
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8f257b
 callstd MSG
+special 0xF
+
 call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8f0b3b
 callstd MSG
@@ -187,8 +223,14 @@ call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8f0a28
 callstd MSG
 special 0x7
+
+loadpointer 0 str_police
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8f0a11
 callstd MSG
+special 0xF
+
 applymovement 0x3 ow_script_movs_0x8f27c8
 waitmovement 0x0
 sound 0x9
@@ -206,16 +248,26 @@ goto ow_script_0x8c7d62
 
 .global ow_script_0x8c7d62
 ow_script_0x8c7d62:
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8f0984
 callstd MSG_KEEPOPEN
+special 0xF
+
 fanfare 0x13e
 loadpointer 0x0 str_0x8c7f7a
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
 additem ITEM_VM01 0x1
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8c7f9a
 callstd MSG
+special 0xF
+
 fadescreen 0x1
 hidesprite 0x2
 fadescreen 0x0
@@ -225,149 +277,148 @@ end
 
 
 .ifdef LANG_GER
+
+str_mia:
+	.string "Mia"
+
+str_police:
+	.string "Polizist"
+
 .global str_0x8eca2e
 
 str_0x8eca2e:
-    .string "Mit Team Violet und der\nRevolutionsarmee als Gegnern\lkönnen wir nicht standhalten.\lSelbst wir, von den Top Vier, sind\ldazu nicht im Stande..."
-        
+	.autostring 35 2 "Team Violet und die Revolutionsarmee gleichzeitig zu bekämpfen kann auch ich nicht bewerkstelligen DOTS"
+
         
 .global str_0x8eca11
 
 str_0x8eca11:
-    .string "Oh, PLAYER!\nDa bist du ja!"
+    .autostring 35 2 "Oh, PLAYER!\nDa bist du ja!"
         
         
 .global str_0x8ec9d0
 
 str_0x8ec9d0:
-    .string "Darf ich dir Mia vorstellen, die\nArenaleiterin Silvanias?"
+	.autostring 35 2 "Das ist Mia, die Arenaleiterin von Silvania."
         
         
 .global str_0x8ec921
 
 str_0x8ec921:
-    .string "Sehr erfreut! Danke, dass du uns\nim Kampf gegen Team Violet\lunterstützt.\pAls ich erfahren habe, dass Faun\nvon den Top Vier uns hilft, ist\lmir ein Stein vom Herzen gefallen."
-        
+	.autostring 35 2 "Freut mich!\nIch danke dir, dass du uns im Kampf gegen Team Violet unterstützen willst.\pDOTS DOTS DOTS\pIch muss ehrlich sagen, als ich erfahren habe, dass uns Faun von den Top Vier unterstützt, ist mir ein Stein vom Herzen gefallen DOTS"
         
 .global str_0x8ec8fc
 
 str_0x8ec8fc:
-    .string "Sie sind Mitglied der Top Vier?"
+    .autostring 35 2 "Herr Faun, Sie sind ein Mitglied der Top Vier?"
         
         
 .global str_0x8ec8ab
 
 str_0x8ec8ab:
-    .string "Oh, äh, ja! Ich bin zuständig für\ndie Regierung des östlichen Teils\lvon Theto."
+	.autostring 35 2 "Ja, das bin ich!\pDenkst du, ich würde mir anmaßen, euch Rotzlöffeln etwas beizubringen, wenn ich nicht selbst etwas vorzuweisen hätte?"
         
         
 .global str_0x8ec84d
 
 str_0x8ec84d:
-    .string "Faun ist ein berühmter\nTrainer. Viele sahen ihn sogar den\lPosten des Champs erklimmen."
+    .autostring 35 2 "Faun ist einer der Begründer der Top Vier.\pViele haben sich ihn sogar als Champion gewünscht!"
         
         
 .global str_0x8ec7d7
 
 str_0x8ec7d7:
-    .string "Nein, ich war diesbezüglich nie\nambitioniert.\pAber das tut auch nicht zur Sache,\nwir haben ein ernsthaftes Problem."
+    .autostring 35 2 "Ach, der Posten des Champions wäre nichts für mich gewesen.\pWir alle standen schon immer im Schatten von Lucius DOTS\pAber das tut jetzt nichts zur Sache.\pWir haben einige gewaltige Probleme, die die es zu lösen gilt!"
         
         
 .global str_0x8ec6df
-
 str_0x8ec6df:
-    .string "Ja, in der Tat. Augenzeugen\nberichten, beobachtet zu haben,\lwie Team Violet in den Zeitwald\leingefallen ist. Einige geben auch\lan, Professor Primus gesehen zu\lhaben. Wir müssen also davon\lausgehen, dass Team Violet eine\lGeisel genommen hat."
-        
+	.autostring 35 2 "Augenzeugen berichten, dass Team Violet den renomierten Physiker Professor Primus als Geisel genommen hat.\pSollte das zutreffen, wird die ganze Sache weitaus heikler DOTS"
+
         
 .global str_0x87e807
 
 str_0x87e807:
-    .string "Im Zeitwald lebt ein\nPokémon, welches in der Lage ist,\ldie Zeit selbst zu beugen. In\lmeiner Jugend bin ich ihm sogar\lbegegnet..."
-        
+	.autostring 35 2 "Ist Primus nicht für seine Forschung bezüglich der Raumzeit bekannt?\pDOTS DOTS DOTS\pDas würde zumindest einen Sinn ergeben.\pIm Silvania-Wald lebt ein Pokémon, das in der Lage ist, die Zeit zu manipulieren DOTS\pIch bin ihm in meinen jungen Tagen selbst einmal begegnet DOTS"
         
 .global str_0x8f28b9
 
 str_0x8f28b9:
-    .string "Meine Begegnung mit Celebi war\nbezeichnend. Noch heute träume ich\lvon diesem Moment...\pEs hat mich vor etwas gewarnt, vor\neiner Bedrohung. Wenn das Pokémon\ldamit Team Violet gemeint hat,\lsind wir in ernsthaften\lSchwierigkeiten. Celebi kennt die\lZeit besser als jedes andere\lWesen, es kennt die Vergangenheit,\ldie Gegenwart und auch ...\p...\p...\pdie Zukunft."
-        
+	.autostring 35 2 "Wenn ich an meine Begegnung mit Celebi zurückdenke DOTS\pIch erinnere mich! DOTS\pEs hat mich vor einer Bedrohung gewarnt, die Thetos Zukunft gefährden würde.\pWenn es sich dabei auf Team Violet bezogen hat, stehen wir vor womöglich gravierenden Schwierigkeiten."
         
 .global str_0x8f3668
 
 str_0x8f3668:
-    .string "Soll das heißen, dass Team\nViolet Celebi Schaden zufügen\lwill?"
+    .autostring 35 2 "Sie meinen doch nicht etwa, dass Team Violet dem Pokémon Celebi Schaden zufügen will, Lord Faun?"
         
         
 .global str_0x8f27cb
 
 str_0x8f27cb:
-    .string "Ich fürchte, dass es weitaus\nschlimmer sein könnte. Wenn Celebi\lmich damals vor Team Violet\lgewarnt hat, dann hat ihr Handeln\lAuswirkungen von unvorstellbarem\lAusmaß, so weitreichend, dass\lselbst die Zeit nicht verschont\lbleibt."
-        
+    .autostring 35 2 "Schlimmer noch.\pCelebi hat ein Gespür für die Zukunft.\pWomöglich ist es die Organisation Team Violet selbst, die das Fortbestehen der Region gefährdet."
         
 .global str_0x8f276d
 
 str_0x8f276d:
-    .string "Ich habe Team Violet\nüber den Zeitstein reden hören.\lVermutlich sind sie darauf aus!"
+    .autostring 35 2 "Ich habe einige Team Violet Rüpel über einen seltsamen Zeistein reden hören.\pSie haben Professor Tann in Bredouille gebracht, dass er ihnen etwas über diesen Stein verrät DOTS"
         
         
 .global str_0x8f26b3
 
 str_0x8f26b3:
-    .string "Der Zeitstein? Das ergibt Sinn.\nSeit dem Verhängnis von Aktania\lwidmet sich Professor Primus der\lErforschung der Zeitstruktur.\lDeswegen wird Team Violet ihn als\lGeisel genommen haben."
-        
+	.autostring 35 2 "Der Zeitstein ist ein legendäres Artefakt, in dem laut der Erzählung das Herz der Zeit selbst schlagen soll.\pDOTS DOTS DOTS\pWenn Team Violet es auf dieses Objekt abgesehen hat, würde es auch Sinn ergeben, warum sie Professor Primus als Geisel genommen haben."
+
         
 .global str_0x8f2607
 
 str_0x8f2607:
-    .string "Das ist schrecklich! Aber ich\nkann die Arena nicht noch länger\lunbeaufsichtigt lassen. Gut, dass\lsich nun ein Mitglied der Top Vier\lum die Angelegenheit kümmert."
-        
+    .autostring 35 2 "Sind diese Legenden denn wahr?\pDOTS DOTS DOTS\pIch bin wirklich froh, dass ein Mitglied der Top Vier sich darum kümmert DOTS DOTS DOTS"
         
 .global str_0x8f257b
 
 str_0x8f257b:
-    .string "Polizist: Lord Faun!\nEntschuldigen Sie, dass ich so\lhereinplatze, aber der Anführer\lder Revolutionsbewegung wurde nahe\lKaskada gesichtet."
+	.autostring 35 2 "Lord Faun!\pEntschuldigen Sie die Störung, aber der Anführer der Revolutionsbewegung wurde in Kaskada gewichtet!"
         
         
 .global str_0x8f0b3b
 
 str_0x8f0b3b:
-    .string "In Kaskada? Ich muss ihn\ntreffen... Vielleicht kann ich ihn\lvon seinem Vorhaben abbringen..."
+    .autostring 35 2 "In Kaskada?\pVielleicht hole ich ihn noch ein.\pWenn ich Albus überzeugen kann, von seiner irrsinnigen Idee abzulassen DOTS\pDOTS DOTS DOTS"
         
         
 .global str_0x8f0ad6
 
 str_0x8f0ad6:
-    .string "Entschuldige bitte, Mia, aber als\nTop Vier Mitglied muss ich der\lRevolutionsarmee gegenübertreten."
+    .autostring 35 2 "Es tut mir leid, Mia DOTS\pAber um den Revolutionsanführer aufzuhalten, bedarf es eines Top Vier Mitglieds.\pUnd ich hoffe, die Sache friedlich lösen zu können.\pIch vertraue dir und PLAYER die Lage an."
         
         
 .global str_0x8f0a28
 
 str_0x8f0a28:
-    .string "Außerdem habe ich vollstes\nVertrauen, dass PLAYER diese\lSituation in den Griff bekommt.\lEr ist ein vorzüglicher Trainer,\lund ich muss es wissen, denn ich\lhabe ihn ausgebildet."
-        
-        
+    .autostring 35 2 "Ich habe vertrauen, dass ihr die Sache in den Griff kriegt.\pImmerhin habe ich euch beide ausgebildet!"
+
+
 .global str_0x8f0a11
 
 str_0x8f0a11:
-    .string "Polizist: Gehen wir!"
+    .autostring 35 2 "Machen wir uns auf den Weg, Lord Faun!"
         
         
 .global str_0x8f0984
 
 str_0x8f0984:
-    .string "Wenn sich Faun auf dich\nverlässt, werde ich das auch tun.\lIch vertraue dir die Angelegenheit\lan."
-        
-        
+	.autostring 35 2 "Das ist gar nicht gut.\pEin Kommandant von Team Violet DOTS\pDas sind gefährliche Leute!\pDOTS DOTS DOTS\pAber wir haben wohl keine Wahl, was?\pWenn du im Silvania-Wald zurecht kommen willst, wirst du das hier benötigen."
+
 .global str_0x8c7f7a
 
 str_0x8c7f7a:
-    .string "Mia übergibt PLAYER\nZerschneider!"
+    .autostring 35 2 "Mia übergibt PLAYER\nZerschneider!"
         
         
 .global str_0x8c7f9a
 
 str_0x8c7f9a:
-    .string "Diese Versteckte Maschine nennt\nsich Zerschneider und kann\lGestrüpp und Pflanzen entfernen.\lIm Kampf gegen Team Violet sollte\lsie dir nützlich sein.\lIch werde zur Arena zurückkehren,\lwo du mich herausfordern kannst.\lErst nach einem Sieg über mich,\lwirst du in der Lage sein, die\lMaschine zu verwenden."
-        
+	.autostring 35 2 "Leider kannst du diese Versteckte Maschine erst benutzen, wenn du den Waldorden im Kampf gegen mich errungen hast.\pWir sollten diese Formalität also schnell über die Bühne bringen.\pAußerdem kann ich mir so ein Bild von deinen Fähigkeiten machen.\pWir werden jedes Bisschen Glück brauchen, dass wir kriegen können.\pIch werde in die Arena zurückkehren.\pWir sollten keine Zeit verlieren DOTS"
         
 .elseif LANG_EN
 

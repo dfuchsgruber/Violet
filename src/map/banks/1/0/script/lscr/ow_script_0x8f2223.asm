@@ -173,67 +173,66 @@ return
 .global str_0x8ed116
 
 str_0x8ed116:
-    .string "Es war vor langer Zeit, als der\nElan der Jugend in mir wohnte und\lich von der Legende des\lmysteriösen Zeitpokemon gehört\lhatte..."
-        
+	.autostring 35 2 "Vor einer halben Ewigkeit, als ich selbst noch ein Anfänger war, machte ich mich auf, nach dem legendären Pokémon Celebi zu suchen.\pIch hatte gehört, dass es im Silvania-Wald leben soll DOTS"
         
 .global str_0x8ed0b8
 
 str_0x8ed0b8:
-    .string "Das ist er also, der\nsagenumwobene Schrein, der dem\lZeitpokemon geweiht ist?"
+    .autostring 35 2 "Das muss der Schrein sein, der dem Pokémon Celebi geweiht ist DOTS"
         
         
 .global str_0x8ed06c
 
 str_0x8ed06c:
-    .string "Wo ist es denn nun, das Pokémon,\ndas die Zeit beeinflussen kann?"
+    .autostring 35 2 "Nur von Celebi selbst fehlt scheinbar jede Spur DOTS"
         
         
 .global str_0x8ed049
 
 str_0x8ed049:
-    .string "Was war das für ein Geräusch?"
+    .autostring 35 2 "Was war das für ein Geräusch?"
         
         
 .global str_0x8ed00c
 
 str_0x8ed00c:
-    .string "Das muss das legendäre Pokémon\nsein, das muss Celebi sein!"
+    .autostring 35 2 "Das DOTS DOTS DOTS\pDOTS muss das legendäre Pokémon Celebi sein!"
         
         
 .global str_0x8ecfea
 
 str_0x8ecfea:
-    .string "... Hilf mir, lieber Mensch ..."
+    .autostring 35 2 "DOTS Lieber Mensch!\pDOTS Hör mir zu, lieber Mensch!"
         
         
 .global str_0x8ecfd8
 
 str_0x8ecfd8:
-    .string "Eine Stimme?"
+    .autostring 35 2 "Eine Stimme?"
         
         
 .global str_0x8ecfb4
 
 str_0x8ecfb4:
-    .string "... Lieber Mensch, so hilf mir..."
+    .autostring 35 2 "DOTS Lieber Mensch!\pDOTS Ich will dich warnen! DOTS DOTS DOTS"
         
         
 .global str_0x8ecf8a
 
 str_0x8ecf8a:
-    .string "Spricht es ... über Thelepatie mit\nmir?"
+    .autostring 35 2 "Spricht es DOTS über Telepathie mit mir?"
         
         
 .global str_0x8ecdda
 
 str_0x8ecdda:
-    .string "... Sie haben die Zeit\ngeschändet...\p... Sie, die alles kontrollieren\p...\p... Sie haben den Fluss der Zeit\nmanipuliert und sie hergeführt ...\p... Die Zeit ist in Gefahr ...\p...\p... Doch du kannst helfen, lieber\nMensch ...\p... Dein Herz ist rein...\p...\p... Der Stein kann nicht länger\nbloß von mir behütet werden ...\p... Den größten Wächtern will ich\nihn vermachen ...\p... Und das Schicksal in deine\nHände legen, lieber Mensch ..."
+	.autostring 35 2 "DOTS Sie haben den Fluss der Zeit verändert DOTS\pUnd jetzt gerät alles außer Kontrolle DOTS\pDie Wesen aus dem All DOTS\pSie haben sie zu uns hergeführt!\pUnd durch die Kraft der Zeit werden sie uns finden DOTS DOTS DOTS\pDOTS Lieber Mensch!\pDein Herz ist rein.\nDu musst das verhindern.\pDas Herz der Zeit muss vor ihnen beschützt werden DOTS DOTS DOTS\pIch werde es den drei mächtigsten Wächtern anvertrauen DOTS\pUnd das Schicksal Thetos in deine Hände legen, lieber Mensch DOTS"
         
         
 .global str_0x8ecd2c
 
 str_0x8ecd2c:
-    .string "Noch heute geben mir diese Worte\nein Rätsel auf, doch bin ich\lsicher, dass meine Begegnung mit\lCelebi, dem Zeitpokemon, kein\lZufall war. Es wollte mich warnen,\ldoch wovor?"
+	.autostring 35 2 "Bis heute geben mir die Worte des Pokémons Celebi Rätsel auf.\pDoch mir wird immer mehr klar, dass es sich bei der Gefahr, vor der es mich warnen wollte, vielleicht um Team Violet handeln könnte DOTS"
         
         
 .elseif LANG_EN

@@ -13,7 +13,7 @@ end
 .global str_0x864574
 
 str_0x864574:
-    .string "Ich würde dir nicht empfehlen,\nnoch tiefer in den Vulkan zu\lwandern.\pNicht, dass es einen Weg gäbe..."
+    .string "Ich würde dir nicht empfehlen,\nnoch tiefer in den Vulkan zu\lwandern.\pNicht, dass es einen Weg gäbeDOTS"
         
         
 .elseif LANG_EN

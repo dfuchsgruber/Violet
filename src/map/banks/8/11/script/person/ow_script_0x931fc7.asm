@@ -138,13 +138,13 @@ str_blackmarket_3:
 .global str_0x933e82
 
 str_0x933e82:
-    .string "Na dann werde ich ... äh ...\nBUFFER_1 Murmeln nehmen, denke ich."
+    .string "Na dann werde ich DOTS äh DOTS\nBUFFER_1 Murmeln nehmen, denke ich."
         
         
 .global str_0x933e28
 
 str_0x933e28:
-    .string "Oh, was ein Pech!\pSieht so aus, als hättest du\nverloren!\pDas tut mir aufrichtig leid..."
+    .string "Oh, was ein Pech!\pSieht so aus, als hättest du\nverloren!\pDas tut mir aufrichtig leidDOTS"
         
         
 .global str_0x935ada

@@ -13,7 +13,7 @@ end
 .global str_0x94e61a
 
 str_0x94e61a:
-    .string "Aber sicher doch! Es wundert mich,\ndass ein Junge in deinem Alter\lüberhaupt Interesse an soetwas\lzeigt..."
+    .string "Aber sicher doch! Es wundert mich,\ndass ein Junge in deinem Alter\lüberhaupt Interesse an soetwas\lzeigtDOTS"
         
         
 .elseif LANG_EN

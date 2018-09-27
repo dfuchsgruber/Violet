@@ -74,6 +74,9 @@ item_effects equ 0x082527E0
     .word gfx_item_linkkabelTiles
     .word gfx_item_linkkabelPal
 
+.org item_resource + 0x3d * 8
+    .word gfx_item_ovaler_steinTiles
+    .word gfx_item_ovaler_steinPal
 
 
 //@Bike sound := 195

@@ -35,8 +35,7 @@ end
 .global str_0x93144c
 
 str_0x93144c:
-    .string "Wenn ich es mir recht\nüberlege...\pVielleicht sollte ich dich diesen\nOrt doch besser auf eigene Faust\lerkunden lassen.\pImmerhin sollst du selbst die\ndunklen Geheimnisse unserer Welt\lenthüllen.\pSuch mich einfach, wenn du dich\nhier etwas umgesehen hast."
-        
+	.autostring 35 2 "Wenn ich es mir recht überlege DOTS\pVielleicht solltest du diesen Ort auf eigene Faust erkunden.\pImmerhin solltest solltest du dir selbst ein Bild von den katastrophalen Verhältnissen in unserer Region machen.\pKomm einfach zu mir, wenn du dich hier etwas umgesehen hast."
         
 .elseif LANG_EN
 

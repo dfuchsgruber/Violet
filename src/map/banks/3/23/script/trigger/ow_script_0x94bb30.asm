@@ -31,7 +31,7 @@ end
 .global str_0x94d460
 
 str_0x94d460:
-    .string "Oh nein...\nDieses Gefühl des Schwindels...\pAls ob mich etwas aus dieser Welt\nhinfortreißt...\pUnd wegträgt...\nNicht schon wieder..."
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDieses Gefühl DOTS DOTS DOTS\pEs ist wie auf Route 3 DOTS DOTS DOTS\pNicht schon wieder DOTS DOTS DOTS!"
         
         
 .elseif LANG_EN

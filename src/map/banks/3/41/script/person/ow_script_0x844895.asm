@@ -36,7 +36,7 @@ end
 .global str_0x8448cd
 
 str_0x8448cd:
-    .string "Oh sieh mal, was ich dort auf dem\nBoden gefunden habe! Eine\lmerkwürdige Klaue... Willst du sie\lhaben?"
+    .string "Oh sieh mal, was ich dort auf dem\nBoden gefunden habe! Eine\lmerkwürdige KlaueDOTS Willst du sie\lhaben?"
         
         
 .global str_0x844937

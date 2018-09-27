@@ -5,7 +5,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
-
+.include "time_types.s"
 
 .global ow_script_0x892f40
 ow_script_0x892f40:
@@ -17,6 +17,13 @@ callasm custom_memory_init
 special 0x43 //version init
 call ow_script_0x8dcdd2
 setvar POKEPAD_SHORTCUTS 0xffff
+// Initialize time system
+setvar TIME_TYPE TIME_TYPE_RTC
+// Check if the rtc works
+special2 LASTRESULT 0x8
+compare LASTRESULT 0
+callif EQUAL change_time
+
 addvar STORY_PROGRESS 0x1 @//beforehand raise of storyvar to not trigger again at mapreload
 setflag MAP_BGN_AUTO_ALIGN_OFF
 setvar 0x8004 11
@@ -55,6 +62,9 @@ playsong MUS_ALABASTIA 0
 playsong2 MUS_ALABASTIA
 end
 
+change_time:
+	setvar TIME_TYPE TIME_TYPE_INGAME_CLOCK
+	return
 
 .global ow_script_0x8a1cc9
 ow_script_0x8a1cc9:
@@ -150,31 +160,31 @@ str_difficulty_very_hard:
 .global str_intro_0
 
 str_intro_0:
-    .string "...Kannst du mich hören?\n... ... ...\nLass es mich dir zeigen...\nSie kamen aus dem All..."
+    .string "DOTSKannst du mich hören?\nDOTS DOTS DOTS\nLass es mich dir zeigenDOTS\nSie kamen aus dem AllDOTS"
         
         
 .global str_intro_1
 
 str_intro_1:
-    .string "Sie kamen von weit her...\nSie wollten die Menschen...\n...vernichten..."
+    .string "Sie kamen von weit herDOTS\nSie wollten die MenschenDOTS\nDOTSvernichtenDOTS"
         
         
 .global str_intro_2
 
 str_intro_2:
-    .string "Sie waren zum Äußersten bereit...\nEin Kampf war unvermeidbar..."
+    .string "Sie waren zum Äußersten bereitDOTS\nEin Kampf war unvermeidbarDOTS"
         
         
 .global str_intro_3
 
 str_intro_3:
-    .string "Und auch wenn sie besiegt wurden...\nWerden sie gestärkt wiederkehren..."
+    .string "Und auch wenn sie besiegt wurdenDOTS\nWerden sie gestärkt wiederkehrenDOTS"
         
         
 .global str_0x8cf12f
 
 str_0x8cf12f:
-    .string "Was für ein seltsamer Traum...\nEr hat sich so real angefühlt!\p... Und was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\p... ... ...\n... ... ...\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der große Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!"
+    .string "Was für ein seltsamer TraumDOTS\nEr hat sich so real angefühlt!\pDOTS Und was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der große Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!"
         
         
 .elseif LANG_EN

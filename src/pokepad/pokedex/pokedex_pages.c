@@ -194,7 +194,7 @@ u16 pokedex_habitat_wald_page_12[3] = {
 };
 // Habitat wald, page 13
 u16 pokedex_habitat_wald_page_13[2] = {
-    POKEMON_VOLBEAT, POKEMON_ILLUMISE
+    POKEMON_WONNEIRA, POKEMON_MOBAI
 };
 // Habitat wald, page 14
 u16 pokedex_habitat_wald_page_14[2] = {
@@ -382,7 +382,7 @@ u16 pokedex_habitat_wasser_page_5[3] = {
 };
 // Habitat wasser, page 6
 u16 pokedex_habitat_wasser_page_6[4] = {
-    POKEMON_MAMUTEL, POKEMON_CORASONN, POKEMON_SCHLURPLEK, POKEMON_LIEBISKUS
+    POKEMON_MAMUTEL, POKEMON_MAMPFAXO, POKEMON_SCHLURPLEK, POKEMON_RIHORNIOR
 };
 // Habitat wasser, page 7
 u16 pokedex_habitat_wasser_page_7[2] = {
@@ -469,7 +469,7 @@ u16 pokedex_habitat_hoehle_page_6[3] = {
 };
 // Habitat hoehle, page 7
 u16 pokedex_habitat_hoehle_page_7[2] = {
-    POKEMON_ISSO, POKEMON_FROSDEDJE
+    POKEMON_KLINGPLIM, POKEMON_FROSDEDJE
 };
 // Habitat hoehle, page 8
 u16 pokedex_habitat_hoehle_page_8[2] = {
@@ -522,7 +522,7 @@ u16 pokedex_habitat_berg_page_6[4] = {
 };
 // Habitat berg, page 7
 u16 pokedex_habitat_berg_page_7[4] = {
-    POKEMON_POTTROTT, POKEMON_TEDDIURSA, POKEMON_URSARING, POKEMON_BOTOGEL
+    POKEMON_FLUFFELUFF, POKEMON_TEDDIURSA, POKEMON_URSARING, POKEMON_BOTOGEL
 };
 // Habitat berg, page 8
 u16 pokedex_habitat_berg_page_8[2] = {
@@ -660,7 +660,7 @@ u16 pokedex_habitat_stadt_page_4[3] = {
 };
 // Habitat stadt, page 5
 u16 pokedex_habitat_stadt_page_5[4] = {
-    POKEMON_KUSSILLA, POKEMON_GALAGLADI, POKEMON_TRAUNFUGIL, POKEMON_TRAUNMAGIL
+    POKEMON_SEN_LONG, POKEMON_GALAGLADI, POKEMON_TRAUNFUGIL, POKEMON_TRAUNMAGIL
 };
 // Habitat stadt, page 6
 u16 pokedex_habitat_stadt_page_6[4] = {

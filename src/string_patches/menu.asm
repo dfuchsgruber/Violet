@@ -1,5 +1,13 @@
 .ifdef LANG_GER
 
+	.global str_player
+	str_player:
+		.string "Spieler"
+
+	.global str_badges
+	str_badges:
+		.string "Orden"
+
 	.global str_pokemon
 
 	str_pokemon:
@@ -273,6 +281,15 @@
 		.string "Wähle PKMN oder zurück."
 
 .elseif LANG_EN
+
+
+	.global str_player
+	str_player:
+		.string "Player"
+
+	.global str_badges
+	str_badges:
+		.string "Badges"
 
 	.global str_pokemon
 

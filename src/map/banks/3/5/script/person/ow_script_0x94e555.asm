@@ -13,7 +13,7 @@ end
 .global str_0x94e55f
 
 str_0x94e55f:
-    .string "Gerüchten zufolge wird die\nLaz.Corp ihren giftigen Müll\leinfach durchs Abwasser los.\pIch frage mich, ob da etwas dran\nist..."
+    .string "Gerüchten zufolge wird die\nLaz.Corp ihren giftigen Müll\leinfach durchs Abwasser los.\pIch frage mich, ob da etwas dran\nistDOTS"
         
         
 .elseif LANG_EN

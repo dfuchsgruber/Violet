@@ -216,4 +216,12 @@ blxr4:
 .org 0x0807F550
 	.word ow_script_whiteout_mother
 
-
+// Obedience changes
+.org 0x0801D40A
+	ldr r0, =battle_obedience_get_max_level | 1
+	bl _blxr0
+	mov r6, r0
+	ldr r0, =0x0801D442 | 1
+_blxr0:
+	bx r0
+	.pool

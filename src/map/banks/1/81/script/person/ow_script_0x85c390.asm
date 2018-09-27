@@ -20,7 +20,7 @@ str_0x8643bf:
 .global str_0x9660f5
 
 str_0x9660f5:
-    .string "Team Violets Elite tritt hier auf.\nDu wurdest gewarnt..."
+    .string "Team Violets Elite tritt hier auf.\nDu wurdest gewarntDOTS"
         
         
 .elseif LANG_EN

@@ -23,10 +23,10 @@ end
 .ifdef LANG_GER
 
 str_before_test:
-    .autostring 36 2 "Oh man...\nIch bin so schlecht vorbereitet...\pWie soll ich nur jemals diesen Test bestehen?"
+    .autostring 36 2 "Oh manDOTS\nIch bin so schlecht vorbereitetDOTS\pWie soll ich nur jemals diesen Test bestehen?"
         
 str_after_test:
-	.autostring 36 2 "Schnief...\nSolche Fragen...\pKann doch niemand beantworten..."
+	.autostring 36 2 "SchniefDOTS\nSolche FragenDOTS\pKann doch niemand beantwortenDOTS"
         
 .elseif LANG_EN
 

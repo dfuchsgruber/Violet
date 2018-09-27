@@ -397,6 +397,9 @@ bsc_strings:
 .word str_battle_x194
 .word str_battle_x195
 .word str_battle_x196
+.word str_battle_x197
+.word str_battle_x198
+.word str_battle_x199
 
 @ // Define the strings
 
@@ -788,19 +791,19 @@ bsc_strings:
 	.global str_battle_x4c
 
 	str_battle_x4c:
-		.string "EFFECT_NAME hat alle KP!"
+		.string "EFFECT_NAME hat alle Kp!"
 
 
 	.global str_battle_x4d
 
 	str_battle_x4d:
-		.string "TYPE von\nSTRINGº erhöht\ldie SP. VER."
+		.string "TYPE von\nSTRINGº erhöht\ldie Sp. Ver."
 
 
 	.global str_battle_x4e
 
 	str_battle_x4e:
-		.string "TYPE von\nSTRINGº\lerhöht die VERTEIDIGUNG!"
+		.string "TYPE von\nSTRINGº\lerhöht die Verteidigung!"
 
 
 	.global str_battle_x4f
@@ -812,13 +815,13 @@ bsc_strings:
 	.global str_battle_x50
 
 	str_battle_x50:
-		.string "Team von EFFECT_NAME\nwird durch BODYGUARD geschützt!"
+		.string "Team von EFFECT_NAME\nwird durch Bodyguard geschützt!"
 
 
 	.global str_battle_x51
 
 	str_battle_x51:
-		.string "BODYGUARD von\nSTRINGSUPER_ER lässt nach!"
+		.string "Bodyguard von\nSTRINGSUPER_ER lässt nach!"
 
 
 	.global str_battle_x52
@@ -872,7 +875,7 @@ bsc_strings:
 	.global str_battle_x5a
 
 	str_battle_x5a:
-		.string "ATTACK_NAME setzt bei\nEFFECT_NAME\lKLAMMERGRIFF ein!"
+		.string "ATTACK_NAME setzt bei\nEFFECT_NAME\lKlammergriff ein!"
 
 
 	.global str_battle_x5b
@@ -884,13 +887,13 @@ bsc_strings:
 	.global str_battle_x5c
 
 	str_battle_x5c:
-		.string "EFFECT_NAME wurde von\nATTACK_NAME umWICKELt!"
+		.string "EFFECT_NAME wurde von\nATTACK_NAME umwickelt!"
 
 
 	.global str_battle_x5d
 
 	str_battle_x5d:
-		.string "EFFECT_NAME wurde von\nATTACK_NAME geSCHNAPPT!"
+		.string "EFFECT_NAME wurde von\nATTACK_NAME geschnappt!"
 
 
 	.global str_battle_x5e
@@ -914,13 +917,13 @@ bsc_strings:
 	.global str_battle_x61
 
 	str_battle_x61:
-		.string "STRINGº wird in\nWEISSNEBEL gehüllt!"
+		.string "STRINGº wird in\nWeissnebel gehüllt!"
 
 
 	.global str_battle_x62
 
 	str_battle_x62:
-		.string "ABILITY_NAME_PLAYER wird durch\nWEISSNEBEL geschützt!"
+		.string "ABILITY_NAME_PLAYER wird durch\nWeissnebel geschützt!"
 
 
 	.global str_battle_x63
@@ -950,7 +953,7 @@ bsc_strings:
 	.global str_battle_x67
 
 	str_battle_x67:
-		.string "ATTACK_NAME wird vom\nHAGELSTURM getroffen!"
+		.string "ATTACK_NAME wird vom\nHagelsturm getroffen!"
 
 
 	.global str_battle_x68
@@ -986,25 +989,25 @@ bsc_strings:
 	.global str_battle_x6d
 
 	str_battle_x6d:
-		.string "AUFRUHR von ABILITY_NAME_PLAYER\nhält es wach!"
+		.string "Aufruhr von ABILITY_NAME_PLAYER\nhält es wach!"
 
 
 	.global str_battle_x6e
 
 	str_battle_x6e:
-		.string "ATTACK_NAME wird durch\nAUFRUHR wach!"
+		.string "ATTACK_NAME wird durch\nAufruhr wach!"
 
 
 	.global str_battle_x6f
 
 	str_battle_x6f:
-		.string "ATTACK_NAME verursacht\nAUFRUHR!"
+		.string "ATTACK_NAME verursacht\nAufruhr!"
 
 
 	.global str_battle_x70
 
 	str_battle_x70:
-		.string "ATTACK_NAME macht\neinen AUFRUHR!"
+		.string "ATTACK_NAME macht\neinen Aufruhr!"
 
 
 	.global str_battle_x71
@@ -1016,31 +1019,31 @@ bsc_strings:
 	.global str_battle_x72
 
 	str_battle_x72:
-		.string "EFFECT_NAME kann bei dem\nAUFRUHR nicht schlafen!"
+		.string "EFFECT_NAME kann bei dem\nAufruhr nicht schlafen!"
 
 
 	.global str_battle_x73
 
 	str_battle_x73:
-		.string "ATTACK_NAME HORTET\nSTRING !"
+		.string "ATTACK_NAME hortet\nSTRING !"
 
 
 	.global str_battle_x74
 
 	str_battle_x74:
-		.string "ATTACK_NAME kann nicht\nweiter HORTEN!"
+		.string "ATTACK_NAME kann nicht\nweiter horten!"
 
 
 	.global str_battle_x75
 
 	str_battle_x75:
-		.string "EFFECT_NAME kann bei dem\nAUFRUHR nicht schlafen!"
+		.string "EFFECT_NAME kann bei dem\nAufruhr nicht schlafen!"
 
 
 	.global str_battle_x76
 
 	str_battle_x76:
-		.string "Aber der AUFRUHR hält\nEFFECT_NAME wach!"
+		.string "Aber der Aufruhr hält\nEFFECT_NAME wach!"
 
 
 	.global str_battle_x77
@@ -1088,25 +1091,25 @@ bsc_strings:
 	.global str_battle_x7e
 
 	str_battle_x7e:
-		.string "ATTACK_NAME setzt einen\nDELEGATOR ein!"
+		.string "ATTACK_NAME setzt einen\nDelegator ein!"
 
 
 	.global str_battle_x7f
 
 	str_battle_x7f:
-		.string "ATTACK_NAME hat bereits\neinen DELEGATOR!"
+		.string "ATTACK_NAME hat bereits\neinen Delegator!"
 
 
 	.global str_battle_x80
 
 	str_battle_x80:
-		.string "Der DELEGATOR steckt den\nSchlag für EFFECT_NAME\lein!\p"
+		.string "Der Delegator steckt den\nSchlag für EFFECT_NAME\lein!\p"
 
 
 	.global str_battle_x81
 
 	str_battle_x81:
-		.string "DELEGATOR von\nEFFECT_NAME lässt nach!\p"
+		.string "Delegator von\nEFFECT_NAME lässt nach!\p"
 
 
 	.global str_battle_x82
@@ -1118,7 +1121,7 @@ bsc_strings:
 	.global str_battle_x83
 
 	str_battle_x83:
-		.string "EFFECT_NAME verfällt in\nRASEREI!"
+		.string "EFFECT_NAME verfällt in\nRaserei!"
 
 
 	.global str_battle_x84
@@ -1142,13 +1145,13 @@ bsc_strings:
 	.global str_battle_x87
 
 	str_battle_x87:
-		.string "EFFECT_NAME gibt\neine ZUGABE!"
+		.string "EFFECT_NAME gibt\neine Zugabe!"
 
 
 	.global str_battle_x88
 
 	str_battle_x88:
-		.string "ZUGABE von ATTACK_NAME\nist beendet!"
+		.string "Zugabe von ATTACK_NAME\nist beendet!"
 
 
 	.global str_battle_x89
@@ -1160,7 +1163,7 @@ bsc_strings:
 	.global str_battle_x8a
 
 	str_battle_x8a:
-		.string "ATTACK_NAME setzt\nNACHAHMER bei STRING  ein!"
+		.string "ATTACK_NAME setzt\nNachahmer bei STRING  ein!"
 
 
 	.global str_battle_x8b
@@ -1196,37 +1199,37 @@ bsc_strings:
 	.global str_battle_x90
 
 	str_battle_x90:
-		.string "EFFECT_NAME bekommt\nNACHTMAHR!"
+		.string "EFFECT_NAME bekommt\nNachtmahr!"
 
 
 	.global str_battle_x91
 
 	str_battle_x91:
-		.string "ATTACK_NAME ist in\nNACHTMAHR gefangen!"
+		.string "ATTACK_NAME ist in\nNachtmahr gefangen!"
 
 
 	.global str_battle_x92
 
 	str_battle_x92:
-		.string "ATTACK_NAME nimmt einen\nTeil seiner KP und legt einen\lFLUCH auf EFFECT_NAME!"
+		.string "ATTACK_NAME nimmt einen\nTeil seiner Kp und legt einen\lFluch auf EFFECT_NAME!"
 
 
 	.global str_battle_x93
 
 	str_battle_x93:
-		.string "ATTACK_NAME wurde durch\nFLUCH verletzt!"
+		.string "ATTACK_NAME wurde durch\nFluch verletzt!"
 
 
 	.global str_battle_x94
 
 	str_battle_x94:
-		.string "Pokémon-Team von STRINGñ\nverteilt STACHELN um sich!"
+		.string "Pokémon-Team von STRINGñ\nverteilt Stacheln um sich!"
 
 
 	.global str_battle_x95
 
 	str_battle_x95:
-		.string "ABILITY_NAME_PLAYER wurde durch\nSTACHLER verletzt!"
+		.string "ABILITY_NAME_PLAYER wurde durch\nStachler verletzt!"
 
 
 	.global str_battle_x96
@@ -1238,7 +1241,7 @@ bsc_strings:
 	.global str_battle_x97
 
 	str_battle_x97:
-		.string "ABGESANG von ATTACK_NAME\nsteht bei STRING !"
+		.string "Abgesang von ATTACK_NAME\nsteht bei STRING !"
 
 
 	.global str_battle_x98
@@ -1250,19 +1253,19 @@ bsc_strings:
 	.global str_battle_x99
 
 	str_battle_x99:
-		.string "EFFECT_NAME setzt\nAUSDAUER ein!"
+		.string "EFFECT_NAME setzt\nAusdauer ein!"
 
 
 	.global str_battle_x9a
 
 	str_battle_x9a:
-		.string "INTENSITÄT STRING !"
+		.string "Intensität STRING !"
 
 
 	.global str_battle_x9b
 
 	str_battle_x9b:
-		.string "ATTACK_NAME nutzt seine\nKP und hebt den ANGR.-Wert!"
+		.string "ATTACK_NAME nutzt seine\nKp und hebt den Angr.-Wert!"
 
 
 	.global str_battle_x9c
@@ -1286,7 +1289,7 @@ bsc_strings:
 	.global str_battle_x9f
 
 	str_battle_x9f:
-		.string "ATTACK_NAME bläst den\nSTACHLER weg!"
+		.string "ATTACK_NAME bläst den\nStachler weg!"
 
 
 	.global str_battle_xa0
@@ -1346,13 +1349,13 @@ bsc_strings:
 	.global str_battle_xa9
 
 	str_battle_xa9:
-		.string "EFFECT_NAME wird von\nFOLTERKNECHT unterworfen!"
+		.string "EFFECT_NAME wird von\nFolterknecht unterworfen!"
 
 
 	.global str_battle_xaa
 
 	str_battle_xaa:
-		.string "ABILITY_NAME_OPPONENT kann\naufgrund von FOLTERKNECHT\pdie Attacke nicht 2-mal\nhintereinander einsetzen!"
+		.string "ABILITY_NAME_OPPONENT kann\naufgrund von Folterknecht\pdie Attacke nicht 2-mal\nhintereinander einsetzen!"
 
 
 	.global str_battle_xab
@@ -1364,13 +1367,13 @@ bsc_strings:
 	.global str_battle_xac
 
 	str_battle_xac:
-		.string "EFFECT_NAME fällt auf\nVERHÖHNER herein!"
+		.string "EFFECT_NAME fällt auf\nVerhöhner herein!"
 
 
 	.global str_battle_xad
 
 	str_battle_xad:
-		.string "ABILITY_NAME_OPPONENT kann\nTYPE nach VERHÖHNER\lnicht einsetzen!\p"
+		.string "ABILITY_NAME_OPPONENT kann\nTYPE nach Verhöhner\lnicht einsetzen!\p"
 
 
 	.global str_battle_xae
@@ -1394,13 +1397,13 @@ bsc_strings:
 	.global str_battle_xb1
 
 	str_battle_xb1:
-		.string "ATTACK_NAME spricht einen\nWUNSCHTRAUM aus!"
+		.string "ATTACK_NAME spricht einen\nWunschtraum aus!"
 
 
 	.global str_battle_xb2
 
 	str_battle_xb2:
-		.string "WUNSCHTRAUM von\nSTRING  erfüllt sich!"
+		.string "Wunschtraum von\nSTRING  erfüllt sich!"
 
 
 	.global str_battle_xb3
@@ -1454,13 +1457,13 @@ bsc_strings:
 	.global str_battle_xbb
 
 	str_battle_xbb:
-		.string "ATTACK_NAME möchte, dass\nder Gegner ein NACHSPIEL erträgt!"
+		.string "ATTACK_NAME möchte, dass\nder Gegner ein Nachspiel erträgt!"
 
 
 	.global str_battle_xbc
 
 	str_battle_xbc:
-		.string "STRING  von\nATTACK_NAME hat aufgrund\lvon NACHSPIEL alle AP verloren!"
+		.string "STRING  von\nATTACK_NAME hat aufgrund\lvon Nachspiel alle AP verloren!"
 
 
 	.global str_battle_xbd
@@ -1472,7 +1475,7 @@ bsc_strings:
 	.global str_battle_xbe
 
 	str_battle_xbe:
-		.string "TYPE von\nATTACK_NAME prallte am\lMAGIEMANTEL ab!"
+		.string "TYPE von\nATTACK_NAME prallte am\lMagiemantel ab!"
 
 
 	.global str_battle_xbf
@@ -1496,7 +1499,7 @@ bsc_strings:
 	.global str_battle_xc2
 
 	str_battle_xc2:
-		.string "STRINGè von\nABILITY_NAME_PLAYER erhöht\lseine INIT.!"
+		.string "STRINGè von\nABILITY_NAME_PLAYER erhöht\lseine Init.!"
 
 
 	.global str_battle_xc3
@@ -1514,7 +1517,7 @@ bsc_strings:
 	.global str_battle_xc5
 
 	str_battle_xc5:
-		.string "EFFECT_NAME füllt KP mit\nHilfe von STRINGç auf!"
+		.string "EFFECT_NAME füllt Kp mit\nHilfe von STRINGç auf!"
 
 
 	.global str_battle_xc6
@@ -1562,7 +1565,7 @@ bsc_strings:
 	.global str_battle_xcd
 
 	str_battle_xcd:
-		.string "STRINGè von\nABILITY_NAME_PLAYER vermindert\lANGRIFF von EFFECT_NAME!"
+		.string "STRINGè von\nABILITY_NAME_PLAYER vermindert\lAngriff von EFFECT_NAME!"
 
 
 	.global str_battle_xce
@@ -1580,7 +1583,7 @@ bsc_strings:
 	.global str_battle_xd0
 
 	str_battle_xd0:
-		.string "FÄHRTE von\nABILITY_NAME_PLAYER\perkennt PLAYER\nvon STRING !"
+		.string "Fährte von\nABILITY_NAME_PLAYER\perkennt PLAYER\nvon STRING !"
 
 
 	.global str_battle_xd1
@@ -1682,7 +1685,7 @@ bsc_strings:
 	.global str_battle_xe1
 
 	str_battle_xe1:
-		.string "Du kannst aus TRAINER-Kämpfen\nnicht fliehen!\p"
+		.string "Du kannst aus Trainer-Kämpfen\nnicht fliehen!\p"
 
 
 	.global str_battle_xe2
@@ -1718,7 +1721,7 @@ bsc_strings:
 	.global str_battle_xe7
 
 	str_battle_xe7:
-		.string "Der SPIEGELTRICK schlug fehl!"
+		.string "Der Spiegeltrick schlug fehl!"
 
 
 	.global str_battle_xe8
@@ -1808,19 +1811,19 @@ bsc_strings:
 	.global str_battle_xf6
 
 	str_battle_xf6:
-		.string "Aber es konnte nichts\nENTFESSELN!"
+		.string "Aber es konnte nichts\nentfesseln!"
 
 
 	.global str_battle_xf7
 
 	str_battle_xf7:
-		.string "Aber es konnte nichts\nVERZEHREN!"
+		.string "Aber es konnte nichts\nverzehren!"
 
 
 	.global str_battle_xf8
 
 	str_battle_xf8:
-		.string "Der Wind wurde zu einer\nHITZEWELLE!"
+		.string "Der Wind wurde zu einer\nHitzewelle!"
 
 
 	.global str_battle_xf9
@@ -1838,7 +1841,7 @@ bsc_strings:
 	.global str_battle_xfb
 
 	str_battle_xfb:
-		.string "Zu schwach, um einen DELEGATOR\neinzusetzen!"
+		.string "Zu schwach, um einen Delegator\neinzusetzen!"
 
 
 	.global str_battle_xfc
@@ -1886,7 +1889,7 @@ bsc_strings:
 	.global str_battle_x103
 
 	str_battle_x103:
-		.string "Der TRAINER hat den BALL\nabgeblockt!"
+		.string "Der Trainer hat den Ball\nabgeblockt!"
 
 
 	.global str_battle_x104
@@ -1898,7 +1901,7 @@ bsc_strings:
 	.global str_battle_x105
 
 	str_battle_x105:
-		.string "Es ist dem BALL ausgewichen! Dieses\nPokémon kann nicht gefangen werden!"
+		.string "Es ist dem Ball ausgewichen! Dieses\nPokémon kann nicht gefangen werden!"
 
 
 	.global str_battle_x106
@@ -1952,7 +1955,7 @@ bsc_strings:
 	.global str_battle_x10e
 
 	str_battle_x10e:
-		.string "RIVAL wurde auf\nSTRINGú PC übertragen."
+		.string "RIVAL wurde auf\nSTRINGú Pc übertragen."
 
 
 	.global str_battle_x10f
@@ -2030,13 +2033,13 @@ bsc_strings:
 	.global str_battle_x11b
 
 	str_battle_x11b:
-		.string "STRINGó hat einen STEin auf\nRIVAL geworfen."
+		.string "STRINGó hat einen Stein auf\nRIVAL geworfen."
 
 
 	.global str_battle_x11c
 
 	str_battle_x11c:
-		.string "STRINGó wirft einen KÖDER\nfür RIVAL aus."
+		.string "STRINGó wirft einen Köder\nfür RIVAL aus."
 
 
 	.global str_battle_x11d
@@ -2072,7 +2075,7 @@ bsc_strings:
 	.global str_battle_x122
 
 	str_battle_x122:
-		.string "PLAY_SEぢ ANSAGE: Du hast keine\nSAFARIBÄLLE mehr! Game over!\p"
+		.string "PLAY_SEぢ Ansage: Du hast keine\nSafaribälle mehr! Game over!\p"
 
 
 	.global str_battle_x123
@@ -2120,7 +2123,7 @@ bsc_strings:
 	.global str_battle_x12a
 
 	str_battle_x12a:
-		.string "STATUS_NAME füllte\nKP von ABILITY_NAME_PLAYER auf!"
+		.string "STATUS_NAME füllte\nKp von ABILITY_NAME_PLAYER auf!"
 
 
 	.global str_battle_x12b
@@ -2138,7 +2141,7 @@ bsc_strings:
 	.global str_battle_x12d
 
 	str_battle_x12d:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\lfüllte einige KP auf!"
+		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\lfüllte einige Kp auf!"
 
 
 	.global str_battle_x12e
@@ -2174,7 +2177,7 @@ bsc_strings:
 	.global str_battle_x133
 
 	str_battle_x133:
-		.string "STRINGね von\nATTACK_NAME füllt\leinige KP auf!"
+		.string "STRINGね von\nATTACK_NAME füllt\leinige Kp auf!"
 
 
 	.global str_battle_x134
@@ -2210,7 +2213,7 @@ bsc_strings:
 	.global str_battle_x139
 
 	str_battle_x139:
-		.string "Es saugt\nKLOAKENSOSSE auf!"
+		.string "Es saugt\nKloakensosse auf!"
 
 
 	.global str_battle_x13a
@@ -2246,7 +2249,7 @@ bsc_strings:
 	.global str_battle_x13f
 
 	str_battle_x13f:
-		.string "VM-Attacken können jetzt \nnicht vergessen werden.\p"
+		.string "Vm-Attacken können jetzt \nnicht vergessen werden.\p"
 
 
 	.global str_battle_x140
@@ -2300,7 +2303,7 @@ bsc_strings:
 	.global str_battle_x148
 
 	str_battle_x148:
-		.string "EFFECT_NAME wurde durch\nSANDGRAB gefangen!"
+		.string "EFFECT_NAME wurde durch\nSandgrab gefangen!"
 
 
 	.global str_battle_x149
@@ -2330,7 +2333,7 @@ bsc_strings:
 	.global str_battle_x14d
 
 	str_battle_x14d:
-		.string "Nun muss man einen BALL werfen,\noder? Ich... Ich werde mein Bestes\lgeben!"
+		.string "Nun muss man einen Ball werfen,\noder? Ich... Ich werde mein Bestes\lgeben!"
 
 
 	.global str_battle_x14e
@@ -2396,7 +2399,7 @@ bsc_strings:
 	.global str_battle_x158
 
 	str_battle_x158:
-		.string "Die BOXEN sind voll!\nDu kannst keines mehr fangen!\p"
+		.string "Die Boxen sind voll!\nDu kannst keines mehr fangen!\p"
 
 
 	.global str_battle_x159
@@ -2444,13 +2447,13 @@ bsc_strings:
 	.global str_battle_x160
 
 	str_battle_x160:
-		.string "TYPE von\nSTRINGº\lerhöht etwas die VERTEIDIGUNG!"
+		.string "TYPE von\nSTRINGº\lerhöht etwas die Verteidigung!"
 
 
 	.global str_battle_x161
 
 	str_battle_x161:
-		.string "Die SP. VER. wird etwas durch\nTYPE von\lSTRINGº erhöht."
+		.string "Die Sp. Ver. wird etwas durch\nTYPE von\lSTRINGº erhöht."
 
 
 	.global str_battle_x162
@@ -2510,7 +2513,7 @@ bsc_strings:
 	.global str_battle_x16b
 
 	str_battle_x16b:
-		.string "Tann: Hm! Grandios!\pBei einem Sieg erhältst du ein\nPreisgeld und deine Pokémon\lwerden stärker!\lKämpfe gegen andere TRAINER\lund stärke so deine Pokémon!\p"
+		.string "Tann: Hm! Grandios!\pBei einem Sieg erhältst du ein\nPreisgeld und deine Pokémon\lwerden stärker!\lKämpfe gegen andere Trainer\lund stärke so deine Pokémon!\p"
 
 
 	.global str_battle_x16c
@@ -2534,31 +2537,31 @@ bsc_strings:
 	.global str_battle_x16f
 
 	str_battle_x16f:
-		.string "BUFFER_2 wurde auf JEMANDES PC\nübertragen.\pEs wurde in BOX\nQUOTEBUFFER_1\q abgelegt."
+		.string "BUFFER_2 wurde auf den Pc\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1\q abgelegt."
 
 
 	.global str_battle_x170
 
 	str_battle_x170:
-		.string "BUFFER_2 wurde auf BILLs PC\nübertragen.\pEs wurde in BOX\nQUOTEBUFFER_1\q abgelegt."
+		.string "BUFFER_2 wurde auf den Pc\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1\q abgelegt."
 
 
 	.global str_battle_x171
 
 	str_battle_x171:
-		.string "BOX QUOTEBUFFER_3\q in\nJEMANDES PC ist voll.\pBUFFER_2 wurde in BOX\nQUOTEBUFFER_1\q übertragen."
+		.string "Box QUOTEBUFFER_3\q im\nPc ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1\q übertragen."
 
 
 	.global str_battle_x172
 
 	str_battle_x172:
-		.string "BOX QUOTEBUFFER_3\q in\nBILLs PC ist voll.\pBUFFER_2 wurde in BOX\nQUOTEBUFFER_1\q übertragen."
+		.string "Box QUOTEBUFFER_3\q im\nPc ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1\q übertragen."
 
 
 	.global str_battle_x173
 
 	str_battle_x173:
-		.string "Der POKéKUMPEL wirft einen\nSTATUS_NAME!"
+		.string "Der Pokékumpel wirft einen\nSTATUS_NAME!"
 
 
 	.global str_battle_x174
@@ -2576,7 +2579,7 @@ bsc_strings:
 	.global str_battle_x176
 
 	str_battle_x176:
-		.string "Beim Erklingen der FLÖTE\nwacht das Pokémon auf!"
+		.string "Beim Erklingen der Flöte\nwacht das Pokémon auf!"
 
 
 	.global str_battle_x177
@@ -2666,7 +2669,7 @@ bsc_strings:
 	.global str_battle_x185
 
 	str_battle_x185:
-		.string "STRINGè von\nABILITY_NAME_PLAYER steigert seinen\lANGR., senkt aber die\lVERT."
+		.string "STRINGè von\nABILITY_NAME_PLAYER steigert seinen\lAngr., senkt aber die\lVert."
 
 
 	.global str_battle_x186
@@ -2696,7 +2699,7 @@ bsc_strings:
 	.global str_battle_x18a
 
 	str_battle_x18a:
-		.string "ABILITY_NAME_PLAYER nutzt STRINGè,\nund verbraucht keine AP!"
+		.string "ABILITY_NAME_PLAYER nutzt STRINGè,\nund verbraucht keine Ap!"
 
 
 	.global str_battle_x18b
@@ -2769,6 +2772,16 @@ bsc_strings:
 
 	str_battle_x196:
 		.string "ATTACK_NAME verfällt in\nTollwut!"
+
+	str_battle_x197:
+		.string "ATTACK_NAME erntet\nLAST_ITEM!"
+
+	str_battle_x198:
+		.string "ATTACK_NAME nutzt einen\nHack und erhöht seine\lVolltrefferchance."
+
+	.global str_battle_x199
+	str_battle_x199:
+		.string "Das fluffige Fell von\nDEFENDING_MON verlangsamt\lATTACKING_MON stark!"
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -3289,12 +3302,12 @@ bsc_strings:
 	.global str_battle_x73
 
 	str_battle_x73:
-		.string "ATTACK_NAME STOCKPILED\nSTRING !"
+		.string "ATTACK_NAME STOCKpILED\nSTRING !"
 
 	.global str_battle_x74
 
 	str_battle_x74:
-		.string "ATTACK_NAME can\t\nSTOCKPILE any more!"
+		.string "ATTACK_NAME can\t\nSTOCKpILE any more!"
 
 	.global str_battle_x75
 
@@ -3839,7 +3852,7 @@ bsc_strings:
 	.global str_battle_xe1
 
 	str_battle_xe1:
-		.string "No! There\s no running\nfrom a TRAINER battle!\p"
+		.string "No! There\s no running\nfrom a Trainer battle!\p"
 
 	.global str_battle_xe2
 
@@ -4009,7 +4022,7 @@ bsc_strings:
 	.global str_battle_x103
 
 	str_battle_x103:
-		.string "The TRAINER blocked the BALL!"
+		.string "The Trainer blocked the Ball!"
 
 	.global str_battle_x104
 
@@ -4019,7 +4032,7 @@ bsc_strings:
 	.global str_battle_x105
 
 	str_battle_x105:
-		.string "It dodged the thrown BALL!\nThis POKéMON can\t be caught!"
+		.string "It dodged the thrown Ball!\nThis POKéMON can\t be caught!"
 
 	.global str_battle_x106
 
@@ -4164,7 +4177,7 @@ bsc_strings:
 	.global str_battle_x122
 
 	str_battle_x122:
-		.string "PLAY_SEぢ ANNOUNCER: You\re out of\nSAFARI BALLS! Game over!\p"
+		.string "PLAY_SEぢ ANNOUNCER: You\re out of\nSAFARI BallS! Game over!\p"
 
 	.global str_battle_x123
 
@@ -4379,7 +4392,7 @@ bsc_strings:
 	.global str_battle_x14d
 
 	str_battle_x14d:
-		.string "You throw a BALL now, right?\nIDOTS I\ll do my best!"
+		.string "You throw a Ball now, right?\nIDOTS I\ll do my best!"
 
 	.global str_battle_x14e
 
@@ -4529,7 +4542,7 @@ bsc_strings:
 	.global str_battle_x16b
 
 	str_battle_x16b:
-		.string "OAK: Hm! Excellent!\pIf you win, you earn prize money,\nand your POKéMON will grow!\pBattle other TRAINERS and make\nyour POKéMON strong!\p"
+		.string "OAK: Hm! Excellent!\pIf you win, you earn prize money,\nand your POKéMON will grow!\pBattle other TrainerS and make\nyour POKéMON strong!\p"
 
 	.global str_battle_x16c
 
@@ -4745,6 +4758,15 @@ bsc_strings:
 
 	str_battle_x196:
 		.string "ATTACK_NAME fell in\nrabies!"
+	str_battle_x197:
+		.string "ATTACK_NAME harvests\nLAST_ITEM!"
+
+	str_battle_x198:
+		.string "ATTACK_NAME uses a\nhack and increases its\ncritical hit ratio."
+
+	.global str_battle_x199
+	str_battle_x199:
+		.string "The fluffiness of\nDEFENDING_MON drastically slows\lATTACKING_MON!"
 
 .endif
 

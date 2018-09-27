@@ -440,7 +440,7 @@ basestat basestats[POKEMON_CNT] = {
         70, //base friendship
         0, //lvl up curve
         EGG_GROUP_FIELD, EGG_GROUP_FIELD, //egg groups
-        ROBUSTHEIT, ABILITY_NONE, //abilities
+        AP_SPARER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
         NOTSCHUTZ, //hidden ability
@@ -1343,7 +1343,7 @@ basestat basestats[POKEMON_CNT] = {
         ADRENALIN, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        MENTALKRAFT, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -1363,7 +1363,7 @@ basestat basestats[POKEMON_CNT] = {
         ADRENALIN, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        MENTALKRAFT, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -1503,7 +1503,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, STEINHAUPT, //abilities
         0, //safari rate
         5, //flip and color
-        LEBENSRAEUBER, //hidden ability
+		FELSENKERN, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -1563,7 +1563,7 @@ basestat basestats[POKEMON_CNT] = {
         ANGSTHASE, FEUERFAENGER, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        FLAMMKOERPER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -1583,7 +1583,7 @@ basestat basestats[POKEMON_CNT] = {
         ANGSTHASE, FEUERFAENGER, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		FLAMMKOERPER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -1603,7 +1603,7 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, TEMPOMACHER, //abilities
         50, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+        INNERE_KRAFT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -1623,7 +1623,7 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, TEMPOMACHER, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		INNERE_KRAFT, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -1643,7 +1643,7 @@ basestat basestats[POKEMON_CNT] = {
         MAGNETFALLE, ROBUSTHEIT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        SCHWEBE, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -1663,7 +1663,7 @@ basestat basestats[POKEMON_CNT] = {
         MAGNETFALLE, ROBUSTHEIT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		SCHWEBE, //hidden ability
         SHAPE_MULTI, //form
     },
 
@@ -1683,7 +1683,7 @@ basestat basestats[POKEMON_CNT] = {
         ADLERAUGE, KONZENTRATOR, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        ORKANSCHW, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -1703,7 +1703,7 @@ basestat basestats[POKEMON_CNT] = {
         ANGSTHASE, FRUEHWECKER, //abilities
         50, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        ALLROUNDER, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -1723,7 +1723,7 @@ basestat basestats[POKEMON_CNT] = {
         ANGSTHASE, FRUEHWECKER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        ALLROUNDER, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -1743,7 +1743,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        BARRIERE, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -1763,7 +1763,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+		BARRIERE, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -1783,7 +1783,7 @@ basestat basestats[POKEMON_CNT] = {
         DUFTNOTE, WERTEHALTER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+        AP_SPARER, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -1803,7 +1803,7 @@ basestat basestats[POKEMON_CNT] = {
         DUFTNOTE, WERTEHALTER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		AP_SPARER, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -1823,7 +1823,7 @@ basestat basestats[POKEMON_CNT] = {
         PANZERHAUT, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		INNERE_KRAFT, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -1843,7 +1843,7 @@ basestat basestats[POKEMON_CNT] = {
         PANZERHAUT, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		INNERE_KRAFT, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -1863,7 +1863,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHWEBE, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+        LEBENSRAEUBER, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -1883,7 +1883,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHWEBE, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -1903,7 +1903,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHWEBE, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -1923,7 +1923,7 @@ basestat basestats[POKEMON_CNT] = {
         STEINHAUPT, ROBUSTHEIT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        SANDHERZ, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -1943,7 +1943,7 @@ basestat basestats[POKEMON_CNT] = {
         INSOMNIA, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        LEBENSRAEUBER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -1963,7 +1963,7 @@ basestat basestats[POKEMON_CNT] = {
         INSOMNIA, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -1983,7 +1983,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, PANZERHAUT, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		TECHNIKER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -2003,7 +2003,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, PANZERHAUT, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		TECHNIKER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -2023,7 +2023,7 @@ basestat basestats[POKEMON_CNT] = {
         LAERMSCHUTZ, STATIK, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		FRUEHZUENDER, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -2043,7 +2043,7 @@ basestat basestats[POKEMON_CNT] = {
         LAERMSCHUTZ, STATIK, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		FRUEHZUENDER, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -2063,7 +2063,7 @@ basestat basestats[POKEMON_CNT] = {
         CHLOROPHYLL, ABILITY_NONE, //abilities
         75, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+        REICHE_ERNTE, //hidden ability
         SHAPE_MULTI, //form
     },
 
@@ -2083,7 +2083,7 @@ basestat basestats[POKEMON_CNT] = {
         CHLOROPHYLL, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		REICHE_ERNTE, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -2103,7 +2103,7 @@ basestat basestats[POKEMON_CNT] = {
         STEINHAUPT, BLITZFAENGER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        KAMPFPANZER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2123,7 +2123,7 @@ basestat basestats[POKEMON_CNT] = {
         STEINHAUPT, BLITZFAENGER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		KAMPFPANZER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2143,7 +2143,7 @@ basestat basestats[POKEMON_CNT] = {
         FLEXIBILITAET, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -2163,7 +2163,7 @@ basestat basestats[POKEMON_CNT] = {
         ADLERAUGE, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -2183,7 +2183,7 @@ basestat basestats[POKEMON_CNT] = {
         TEMPOMACHER, DOESIGKEIT, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+        WOLKE_SIEBEN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2243,7 +2243,7 @@ basestat basestats[POKEMON_CNT] = {
         BLITZFAENGER, STEINHAUPT, //abilities
         75, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        ACHTLOS, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -2263,7 +2263,7 @@ basestat basestats[POKEMON_CNT] = {
         BLITZFAENGER, STEINHAUPT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        ACHTLOS, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2300,10 +2300,10 @@ basestat basestats[POKEMON_CNT] = {
         35, //base friendship
         3, //lvl up curve
         EGG_GROUP_HUMAN, EGG_GROUP_HUMAN, //egg groups
-        ADLERAUGE, ABILITY_NONE, //abilities
+        ADLERAUGE, ZEITSPIEL, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+        STROLCH, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -2323,7 +2323,7 @@ basestat basestats[POKEMON_CNT] = {
         FRUEHWECKER, ABILITY_NONE, //abilities
         125, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        KONZENTRATOR, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2343,7 +2343,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        FEUCHTIGKEIT, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -2363,7 +2363,7 @@ basestat basestats[POKEMON_CNT] = {
         GIFTDORN, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		FEUCHTIGKEIT, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -2383,7 +2383,7 @@ basestat basestats[POKEMON_CNT] = {
         H2O_ABSORBER, H2O_ABSORBER, //abilities
         50, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		NEUTRALTORSO, //hidden ability
         SHAPE_TENTACLES, //form
     },
 
@@ -2403,7 +2403,7 @@ basestat basestats[POKEMON_CNT] = {
         H2O_ABSORBER, H2O_ABSORBER, //abilities
         75, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		NEUTRALTORSO, //hidden ability
         SHAPE_TENTACLES, //form
     },
 
@@ -2423,7 +2423,7 @@ basestat basestats[POKEMON_CNT] = {
         ERLEUCHTUNG, INNERE_KRAFT, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        ALLROUNDER, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -2443,7 +2443,7 @@ basestat basestats[POKEMON_CNT] = {
         ERLEUCHTUNG, INNERE_KRAFT, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		ALLROUNDER, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -2483,7 +2483,7 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, ABILITY_NONE, //abilities
         125, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        TECHNIKER, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
@@ -2503,7 +2503,7 @@ basestat basestats[POKEMON_CNT] = {
         WEGSPERRE, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        KAEMPFERHERZ, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -2523,7 +2523,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        AUFWERTUNG, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2543,7 +2543,7 @@ basestat basestats[POKEMON_CNT] = {
         FLAMMKOERPER, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        FEUERFAENGER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2563,7 +2563,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, ABILITY_NONE, //abilities
         125, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        HOCHMUT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -2583,7 +2583,7 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, ABILITY_NONE, //abilities
         125, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        TOLLWUT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -2623,7 +2623,7 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        HOCHMUT, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -2643,7 +2643,7 @@ basestat basestats[POKEMON_CNT] = {
         H2O_ABSORBER, PANZERHAUT, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        MULTISCHUPPE, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -2683,7 +2683,7 @@ basestat basestats[POKEMON_CNT] = {
         ANGSTHASE, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        ALLROUNDER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -2703,7 +2703,7 @@ basestat basestats[POKEMON_CNT] = {
         H2O_ABSORBER, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        NOTSCHUTZ, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -2723,7 +2723,7 @@ basestat basestats[POKEMON_CNT] = {
         VOLTABSORBER, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        STATIK, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -2743,7 +2743,7 @@ basestat basestats[POKEMON_CNT] = {
         FEUERFAENGER, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        FLAMMKOERPER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -2763,7 +2763,7 @@ basestat basestats[POKEMON_CNT] = {
         FAEHRTE, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+        HACK, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -2783,7 +2783,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, PANZERHAUT, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        KAMPFPANZER, //hidden ability
         SHAPE_TENTACLES, //form
     },
 
@@ -2803,7 +2803,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, PANZERHAUT, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		KAMPFPANZER, //hidden ability
         SHAPE_TENTACLES, //form
     },
 
@@ -2823,7 +2823,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, KAMPFPANZER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		KAMPFPANZER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -2843,7 +2843,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, KAMPFPANZER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		KAMPFPANZER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -2863,7 +2863,7 @@ basestat basestats[POKEMON_CNT] = {
         STEINHAUPT, ERZWINGER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		BEDROHER, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -2883,7 +2883,7 @@ basestat basestats[POKEMON_CNT] = {
         IMMUNITAET, SPECKSCHICHT, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		BARRIERE, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -2903,7 +2903,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		HAGELALARM, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -2923,7 +2923,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        BLITZFAENGER, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -2943,7 +2943,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        FEUERFAENGER, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -2963,7 +2963,7 @@ basestat basestats[POKEMON_CNT] = {
         EXPIDERMIS, ABILITY_NONE, //abilities
         100, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        NOTSCHUTZ, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -2983,7 +2983,7 @@ basestat basestats[POKEMON_CNT] = {
         EXPIDERMIS, ABILITY_NONE, //abilities
         125, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        NOTSCHUTZ, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -3003,7 +3003,7 @@ basestat basestats[POKEMON_CNT] = {
         KONZENTRATOR, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        MULTISCHUPPE, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3023,7 +3023,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+        ALLROUNDER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3043,7 +3043,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+        FAEHRTE, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3063,7 +3063,7 @@ basestat basestats[POKEMON_CNT] = {
         NOTDUENGER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        PHOTOGENESE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3083,7 +3083,7 @@ basestat basestats[POKEMON_CNT] = {
         NOTDUENGER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		PHOTOGENESE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3103,7 +3103,7 @@ basestat basestats[POKEMON_CNT] = {
         NOTDUENGER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		PHOTOGENESE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3123,7 +3123,7 @@ basestat basestats[POKEMON_CNT] = {
         GROSSBRAND, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        FEUERFAENGER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -3143,7 +3143,7 @@ basestat basestats[POKEMON_CNT] = {
         GROSSBRAND, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		FEUERFAENGER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3163,7 +3163,7 @@ basestat basestats[POKEMON_CNT] = {
         GROSSBRAND, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		FEUERFAENGER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3183,7 +3183,7 @@ basestat basestats[POKEMON_CNT] = {
         STURZBACH, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		WASSERTEMPO, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3203,7 +3203,7 @@ basestat basestats[POKEMON_CNT] = {
         STURZBACH, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		WASSERTEMPO, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3223,7 +3223,7 @@ basestat basestats[POKEMON_CNT] = {
         STURZBACH, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		WASSERTEMPO, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3243,7 +3243,7 @@ basestat basestats[POKEMON_CNT] = {
         FLAMMKOERPER, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        HEXAPLAGA, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -3263,7 +3263,7 @@ basestat basestats[POKEMON_CNT] = {
         FLAMMKOERPER, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+		HEXAPLAGA, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
@@ -3283,7 +3283,7 @@ basestat basestats[POKEMON_CNT] = {
         HAGELALARM, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        KAELTEWAHN, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3303,7 +3303,7 @@ basestat basestats[POKEMON_CNT] = {
         FLEXIBILITAET, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        UNGEBROCHEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -3323,7 +3323,7 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, FRUEHWECKER, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		TECHNIKER, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -3343,7 +3343,7 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, FRUEHWECKER, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        TECHNIKER, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -3363,7 +3363,7 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, INSOMNIA, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -3383,7 +3383,7 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, INSOMNIA, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -3403,7 +3403,7 @@ basestat basestats[POKEMON_CNT] = {
         KONZENTRATOR, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
@@ -3423,7 +3423,7 @@ basestat basestats[POKEMON_CNT] = {
         VOLTABSORBER, ERLEUCHTUNG, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		AP_SPARER, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -3443,7 +3443,7 @@ basestat basestats[POKEMON_CNT] = {
         VOLTABSORBER, ERLEUCHTUNG, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        H2O_ABSORBER, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -3463,7 +3463,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, STATIK, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		SCHWEBE, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -3483,7 +3483,7 @@ basestat basestats[POKEMON_CNT] = {
         EDELMUT, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		CURATOR, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -3503,7 +3503,7 @@ basestat basestats[POKEMON_CNT] = {
         LERNFAEHIG, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        CURATOR, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -3523,7 +3523,7 @@ basestat basestats[POKEMON_CNT] = {
         UEBEREIFER, EDELMUT, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+		CURATOR, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -3543,7 +3543,7 @@ basestat basestats[POKEMON_CNT] = {
         UEBEREIFER, EDELMUT, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+		CURATOR, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -3563,7 +3563,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, FRUEHWECKER, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        LUZID, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -3583,7 +3583,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, FRUEHWECKER, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		LUZID, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -3603,7 +3603,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        FLUFFIG, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3623,7 +3623,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		FLUFFIG, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3643,7 +3643,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        VOLTABSORBER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3663,7 +3663,7 @@ basestat basestats[POKEMON_CNT] = {
         CHLOROPHYLL, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        PHOTOGENESE, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -3683,7 +3683,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, KRAFTKOLOSS, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        UNGEBROCHEN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3703,7 +3703,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, KRAFTKOLOSS, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3723,7 +3723,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, STEINHAUPT, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        FELSENKERN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -3743,7 +3743,7 @@ basestat basestats[POKEMON_CNT] = {
         STROLCH, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        DUNKLE_MAGIE, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -3763,7 +3763,7 @@ basestat basestats[POKEMON_CNT] = {
         FEUERFAENGER, FLAMMKOERPER, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        SCHWEBE, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -3783,7 +3783,7 @@ basestat basestats[POKEMON_CNT] = {
         FEUERFAENGER, FLAMMKOERPER, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		SCHWEBE, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -3803,7 +3803,7 @@ basestat basestats[POKEMON_CNT] = {
         FEUERFAENGER, FLAMMKOERPER, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		SCHWEBE, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -3823,7 +3823,7 @@ basestat basestats[POKEMON_CNT] = {
         ANGSTHASE, MITNAHME, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+        ALLROUNDER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3843,7 +3843,7 @@ basestat basestats[POKEMON_CNT] = {
         LAERMSCHUTZ, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        KAELTEWAHN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3863,7 +3863,7 @@ basestat basestats[POKEMON_CNT] = {
         LAERMSCHUTZ, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		KAELTEWAHN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3883,7 +3883,7 @@ basestat basestats[POKEMON_CNT] = {
         MITNAHME, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		ALLROUNDER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3903,7 +3903,7 @@ basestat basestats[POKEMON_CNT] = {
         FEUCHTIGKEIT, H2O_ABSORBER, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        REGENMUT, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -3923,7 +3923,7 @@ basestat basestats[POKEMON_CNT] = {
         FEUCHTIGKEIT, H2O_ABSORBER, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		REGENMUT, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -3943,7 +3943,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+        LUZID, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3963,7 +3963,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+        DUNKLE_MAGIE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -3983,7 +3983,7 @@ basestat basestats[POKEMON_CNT] = {
         INSOMNIA, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+        ORKANSCHW, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -4003,7 +4003,7 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, TEMPOMACHER, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		INNERE_KRAFT, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -4023,7 +4023,7 @@ basestat basestats[POKEMON_CNT] = {
         INSOMNIA, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		ORKANSCHW, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4063,7 +4063,7 @@ basestat basestats[POKEMON_CNT] = {
         HAGELALARM, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+        SCHWEBE, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -4083,7 +4083,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, SANDSCHLEIER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -4103,7 +4103,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		PANZERHAUT, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -4123,7 +4123,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		PANZERHAUT, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -4140,10 +4140,10 @@ basestat basestats[POKEMON_CNT] = {
         70, //base friendship
         2, //lvl up curve
         EGG_GROUP_FIELD, EGG_GROUP_FIELD, //egg groups
-        VOLTABSORBER, VOLTABSORBER, //abilities
+		VOLTABSORBER, VOLTABSORBER, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		AUFWERTUNG, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -4163,7 +4163,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, SANDSCHLEIER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -4183,7 +4183,7 @@ basestat basestats[POKEMON_CNT] = {
         STEINHAUPT, ROBUSTHEIT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -4203,7 +4203,7 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, ANGSTHASE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		CHARMEBOLZEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -4223,7 +4223,7 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, BEDROHER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		CHARMEBOLZEN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -4243,7 +4243,7 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		FROSTSCHICHT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4263,28 +4263,28 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        TECHNIKER, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
     //POKEMON_POTTROTT
     {
-        20, 10, 230, 5, 10, 230, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_BUG, TYPE_ROCK, //types
-        190, //catch rate
-        80, //exp yield
-        {0, 0, 1, 0, 0, 1, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
-        ITEM_BEERENSAFT, ITEM_BEERENSAFT, //common, rare item
-        127, //gender
-        20, //egg cycles
+        90, 30, 15, 15, 40, 20, //basestat values (hp, att, def, spe, satk, sdef)
+        TYPE_NORMAL, TYPE_FAIRY, //types
+        170, //catch rate
+        109, //exp yield
+        {1, 0, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+        ITEM_SINELBEERE, ITEM_NONE, //common, rare item
+        191, //gender
+        10, //egg cycles
         70, //base friendship
-        3, //lvl up curve
-        EGG_GROUP_BUG, EGG_GROUP_BUG, //egg groups
-        ROBUSTHEIT, ABILITY_NONE, //abilities
+        4, //lvl up curve
+        EGG_GROUP_FAIRY, EGG_GROUP_FAIRY, //egg groups
+        CHARMEBOLZEN, ABILITY_NONE, //abilities
         0, //safari rate
-        2, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_INSECT, //form
+        9, //flip and color
+        FLUFFIG, //hidden ability
+        SHAPE_HUMANOID, //form
     },
 
     //POKEMON_SKARABORN
@@ -4303,7 +4303,7 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, ADRENALIN, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        HOCHMUT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -4320,10 +4320,10 @@ basestat basestats[POKEMON_CNT] = {
         35, //base friendship
         3, //lvl up curve
         EGG_GROUP_FIELD, EGG_GROUP_FIELD, //egg groups
-        ERZWINGER, ERZWINGER, //abilities
+        ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        DUNKLE_MAGIE, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -4343,8 +4343,8 @@ basestat basestats[POKEMON_CNT] = {
         MITNAHME, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_TAIL, //form
+		TOLLWUT, //hidden ability
+        SHAPE_HUMANOID, //form
     },
 
     //POKEMON_URSARING
@@ -4363,8 +4363,8 @@ basestat basestats[POKEMON_CNT] = {
         ADRENALIN, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_TAIL, //form
+		TOLLWUT, //hidden ability
+		SHAPE_HUMANOID, //form
     },
 
     //POKEMON_SCHNECKMAG
@@ -4383,7 +4383,7 @@ basestat basestats[POKEMON_CNT] = {
         MAGMAPANZER, FLAMMKOERPER, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        ROBUSTHEIT, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -4403,7 +4403,7 @@ basestat basestats[POKEMON_CNT] = {
         MAGMAPANZER, FLAMMKOERPER, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		ROBUSTHEIT, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -4423,7 +4423,7 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		FROSTSCHICHT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4443,28 +4443,28 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		FROSTSCHICHT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
-    //POKEMON_CORASONN
+    //POKEMON_MAMPFAXO
     {
-        55, 55, 85, 35, 65, 85, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_WATER, TYPE_ROCK, //types
-        60, //catch rate
-        113, //exp yield
-        {0, 0, 1, 0, 0, 1, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
-        ITEM_NONE, ITEM_PURPURSTUECK, //common, rare item
-        191, //gender
-        20, //egg cycles
-        70, //base friendship
-        4, //lvl up curve
-        EGG_GROUP_WATER_1, EGG_GROUP_WATER_3, //egg groups
-        UEBEREIFER, INNERE_KRAFT, //abilities
-        0, //safari rate
-        9, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_INSECT, //form
+        135, 85, 40, 5, 40, 85, //basestat values (hp, att, def, spe, satk, sdef)
+		TYPE_NORMAL, TYPE_NORMAL, //types
+		50, //catch rate
+		80, //exp yield
+		{1, 0, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+		ITEM_MARONBEERE, ITEM_MARONBEERE, //common, rare item
+		31, //gender
+		40, //egg cycles
+		70, //base friendship
+		5, //lvl up curve
+		EGG_GROUP_MONSTER, EGG_GROUP_MONSTER, //egg groups
+		MITNAHME, SPECKSCHICHT, //abilities
+		0, //safari rate
+		4, //flip and color
+		BARRIERE, //hidden ability
+		SHAPE_HUMANOID, //form
     },
 
     //POKEMON_REMORAID
@@ -4483,7 +4483,7 @@ basestat basestats[POKEMON_CNT] = {
         UEBEREIFER, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		ALLROUNDER, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -4503,7 +4503,7 @@ basestat basestats[POKEMON_CNT] = {
         SAUGNAPF, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		ALLROUNDER, //hidden ability
         SHAPE_TENTACLES, //form
     },
 
@@ -4523,7 +4523,7 @@ basestat basestats[POKEMON_CNT] = {
         MUNTERKEIT, UEBEREIFER, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        INSOMNIA, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -4543,7 +4543,7 @@ basestat basestats[POKEMON_CNT] = {
         TEMPOMACHER, DOESIGKEIT, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		WOLKE_SIEBEN, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -4563,7 +4563,7 @@ basestat basestats[POKEMON_CNT] = {
         ADLERAUGE, ROBUSTHEIT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		BARRIERE, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -4583,7 +4583,7 @@ basestat basestats[POKEMON_CNT] = {
         FRUEHWECKER, FEUERFAENGER, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+        SOLARKRAFT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4603,7 +4603,7 @@ basestat basestats[POKEMON_CNT] = {
         FRUEHWECKER, FEUERFAENGER, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		SOLARKRAFT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4623,7 +4623,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		FEUCHTIGKEIT, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -4643,7 +4643,7 @@ basestat basestats[POKEMON_CNT] = {
         MITNAHME, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        SPECKSCHICHT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4663,7 +4663,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		SPECKSCHICHT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4683,7 +4683,7 @@ basestat basestats[POKEMON_CNT] = {
         FAEHRTE, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		HACK, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -4703,7 +4703,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, MAGNETFALLE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        FELSENKERN, //hidden ability
         SHAPE_MULTI, //form
     },
 
@@ -4743,7 +4743,7 @@ basestat basestats[POKEMON_CNT] = {
         ADRENALIN, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -4763,28 +4763,28 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_TAIL, //form
     },
 
-    //POKEMON_KUSSILLA
+    //POKEMON_SEN_LONG
     {
-        45, 30, 15, 65, 85, 65, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_ICE, TYPE_PSYCHIC, //types
-        45, //catch rate
-        87, //exp yield
-        {0, 0, 0, 0, 1, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+        78, 60, 85, 36, 135, 91, //basestat values (hp, att, def, spe, satk, sdef)
+        TYPE_NORMAL, TYPE_DRAGON, //types
+        70, //catch rate
+        155, //exp yield
+        {1, 0, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
         ITEM_NONE, ITEM_NONE, //common, rare item
         254, //gender
         25, //egg cycles
         70, //base friendship
         0, //lvl up curve
-        EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED, //egg groups
-        DOESIGKEIT, ABILITY_NONE, //abilities
+        EGG_GROUP_MONSTER, EGG_GROUP_DRAGON, //egg groups
+        WOLKE_SIEBEN, DOESIGKEIT, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_HUMANOID, //form
+		AUFWERTUNG, //hidden ability
+        SHAPE_SNAKE, //form
     },
 
     //POKEMON_ELEKID
@@ -4803,7 +4803,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		AUFWERTUNG, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -4823,7 +4823,7 @@ basestat basestats[POKEMON_CNT] = {
         FLAMMKOERPER, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		FEUERFAENGER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -4883,7 +4883,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        VOLTABSORBER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4903,7 +4903,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        FEUERFAENGER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4923,7 +4923,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        H2O_ABSORBER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -4943,7 +4943,7 @@ basestat basestats[POKEMON_CNT] = {
         ADRENALIN, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -4963,7 +4963,7 @@ basestat basestats[POKEMON_CNT] = {
         EXPIDERMIS, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        EXPIDERMIS, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -4983,7 +4983,7 @@ basestat basestats[POKEMON_CNT] = {
         SANDSTURM, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -5003,7 +5003,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        MULTISCHUPPE, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -5023,7 +5023,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		PHOTOGENESE, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -5043,7 +5043,7 @@ basestat basestats[POKEMON_CNT] = {
         INNERE_KRAFT, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        INNERE_KRAFT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -5563,7 +5563,7 @@ basestat basestats[POKEMON_CNT] = {
         NOTDUENGER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -5583,7 +5583,7 @@ basestat basestats[POKEMON_CNT] = {
         NOTDUENGER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -5603,7 +5603,7 @@ basestat basestats[POKEMON_CNT] = {
         NOTDUENGER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		UNGEBROCHEN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -5623,7 +5623,7 @@ basestat basestats[POKEMON_CNT] = {
         GROSSBRAND, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		DUNKLE_MAGIE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -5643,7 +5643,7 @@ basestat basestats[POKEMON_CNT] = {
         GROSSBRAND, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		DUNKLE_MAGIE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -5663,7 +5663,7 @@ basestat basestats[POKEMON_CNT] = {
         GROSSBRAND, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		DUNKLE_MAGIE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -5683,7 +5683,7 @@ basestat basestats[POKEMON_CNT] = {
         STURZBACH, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		H2O_ABSORBER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -5703,7 +5703,7 @@ basestat basestats[POKEMON_CNT] = {
         STURZBACH, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		H2O_ABSORBER, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -5723,7 +5723,7 @@ basestat basestats[POKEMON_CNT] = {
         STURZBACH, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		H2O_ABSORBER, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -5743,7 +5743,7 @@ basestat basestats[POKEMON_CNT] = {
         ANGSTHASE, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        HOCHMUT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -5763,7 +5763,7 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		HOCHMUT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -5783,7 +5783,7 @@ basestat basestats[POKEMON_CNT] = {
         MITNAHME, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		TOLLWUT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -5803,7 +5803,7 @@ basestat basestats[POKEMON_CNT] = {
         MITNAHME, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+		TOLLWUT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -5823,7 +5823,7 @@ basestat basestats[POKEMON_CNT] = {
         PUDERABWEHR, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        ANGSTHASE, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -5863,7 +5863,7 @@ basestat basestats[POKEMON_CNT] = {
         HEXAPLAGA, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		ANPASSUNG, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
@@ -5903,7 +5903,7 @@ basestat basestats[POKEMON_CNT] = {
         PUDERABWEHR, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        FACETTENAUGE, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
@@ -5923,7 +5923,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, REGENGENUSS, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		REGENMUT, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -5943,7 +5943,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, REGENGENUSS, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		REGENMUT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -5963,7 +5963,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, REGENGENUSS, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		REGENMUT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -5983,7 +5983,7 @@ basestat basestats[POKEMON_CNT] = {
         CHLOROPHYLL, FRUEHWECKER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -6003,7 +6003,7 @@ basestat basestats[POKEMON_CNT] = {
         CHLOROPHYLL, FRUEHWECKER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -6023,7 +6023,7 @@ basestat basestats[POKEMON_CNT] = {
         CHLOROPHYLL, FRUEHWECKER, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -6043,7 +6043,7 @@ basestat basestats[POKEMON_CNT] = {
         FACETTENAUGE, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		TECHNIKER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -6063,7 +6063,7 @@ basestat basestats[POKEMON_CNT] = {
         TEMPOSCHUB, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		TECHNIKER, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
@@ -6103,7 +6103,7 @@ basestat basestats[POKEMON_CNT] = {
         ADRENALIN, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        ORKANSCHW, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -6123,7 +6123,7 @@ basestat basestats[POKEMON_CNT] = {
         ADRENALIN, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		ORKANSCHW, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -6163,7 +6163,7 @@ basestat basestats[POKEMON_CNT] = {
         SPORENWIRT, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        TECHNIKER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -6183,7 +6183,7 @@ basestat basestats[POKEMON_CNT] = {
         TEMPOMACHER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		AP_SPARER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -6203,7 +6203,7 @@ basestat basestats[POKEMON_CNT] = {
         ADLERAUGE, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        REGENGENUSS, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -6223,7 +6223,7 @@ basestat basestats[POKEMON_CNT] = {
         ADLERAUGE, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		REGENGENUSS, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -6243,7 +6243,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		TEMPOSCHUB, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -6263,7 +6263,7 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		TEMPOSCHUB, //hidden ability
         SHAPE_WINGED_INSECT, //form
     },
 
@@ -6283,7 +6283,7 @@ basestat basestats[POKEMON_CNT] = {
         AQUAHUELLE, DOESIGKEIT, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        ERZWINGER, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6303,7 +6303,7 @@ basestat basestats[POKEMON_CNT] = {
         AQUAHUELLE, DOESIGKEIT, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		ERZWINGER, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6323,7 +6323,7 @@ basestat basestats[POKEMON_CNT] = {
         CHARMEBOLZEN, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+        FLUFFIG, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -6343,7 +6343,7 @@ basestat basestats[POKEMON_CNT] = {
         CHARMEBOLZEN, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		FLUFFIG, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -6363,7 +6363,7 @@ basestat basestats[POKEMON_CNT] = {
         FARBWECHSEL, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        WANDLUNGSK, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -6423,7 +6423,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, MAGNETFALLE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		FELSENKERN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -6443,7 +6443,7 @@ basestat basestats[POKEMON_CNT] = {
         FLAMMKOERPER, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		FEUERFAENGER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -6463,7 +6463,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -6483,7 +6483,7 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		LUZID, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6503,28 +6503,28 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		LUZID, //hidden ability
         SHAPE_FISH, //form
     },
 
-    //POKEMON_LIEBISKUS
+    //RIHORNIOR
     {
-        43, 30, 55, 97, 40, 65, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_WATER, TYPE_WATER, //types
-        225, //catch rate
-        110, //exp yield
-        {0, 0, 0, 1, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
-        ITEM_HERZSCHUPPE, ITEM_NONE, //common, rare item
-        191, //gender
-        20, //egg cycles
-        70, //base friendship
-        4, //lvl up curve
-        EGG_GROUP_WATER_2, EGG_GROUP_WATER_2, //egg groups
-        WASSERTEMPO, ABILITY_NONE, //abilities
-        0, //safari rate
-        9, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_FISH, //form
+        115, 140, 130, 40, 55, 55, //basestat values (hp, att, def, spe, satk, sdef)
+        TYPE_GROUND, TYPE_ROCK, //types
+        30, //catch rate
+        225, //exp yield
+		{0, 3, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+		ITEM_NONE, ITEM_NONE, //common, rare item
+		127, //gender
+		20, //egg cycles
+		70, //base friendship
+		5, //lvl up curve
+		EGG_GROUP_MONSTER, EGG_GROUP_FIELD, //egg groups
+		BLITZFAENGER, STEINHAUPT, //abilities
+		0, //safari rate
+		7, //flip and color
+		ACHTLOS, //hidden ability
+		SHAPE_TAIL, //form
     },
 
     //POKEMON_KREBSCORPS
@@ -6543,7 +6543,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, PANZERHAUT, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        BEDROHER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -6563,7 +6563,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, PANZERHAUT, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		BEDROHER, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -6583,7 +6583,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        ANPASSUNG, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6603,7 +6603,7 @@ basestat basestats[POKEMON_CNT] = {
         NOTSCHUTZ, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+        MULTISCHUPPE, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -6623,7 +6623,7 @@ basestat basestats[POKEMON_CNT] = {
         RAUHAUT, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+        TEMPOSCHUB, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6643,7 +6643,7 @@ basestat basestats[POKEMON_CNT] = {
         RAUHAUT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		TEMPOSCHUB, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6663,7 +6663,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, AUSWEGSLOS, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        SANDHERZ, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -6723,7 +6723,7 @@ basestat basestats[POKEMON_CNT] = {
         KONZENTRATOR, KONZENTRATOR, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        STROLCH, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -6743,7 +6743,7 @@ basestat basestats[POKEMON_CNT] = {
         KONZENTRATOR, KONZENTRATOR, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+		ANPASSUNG, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -6763,7 +6763,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, BLITZFAENGER, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        BEDROHER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -6783,7 +6783,7 @@ basestat basestats[POKEMON_CNT] = {
         STATIK, BLITZFAENGER, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		BEDROHER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -6803,7 +6803,7 @@ basestat basestats[POKEMON_CNT] = {
         DOESIGKEIT, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+		BARRIERE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -6823,7 +6823,7 @@ basestat basestats[POKEMON_CNT] = {
         MAGMAPANZER, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		BARRIERE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -6843,7 +6843,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        KAELTEWAHN, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6863,7 +6863,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		KAELTEWAHN, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -6883,7 +6883,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		KAELTEWAHN, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -6903,7 +6903,7 @@ basestat basestats[POKEMON_CNT] = {
         SANDSCHLEIER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        EXTRADORN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -6923,7 +6923,7 @@ basestat basestats[POKEMON_CNT] = {
         SANDSCHLEIER, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		EXTRADORN, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -6943,7 +6943,7 @@ basestat basestats[POKEMON_CNT] = {
         KONZENTRATOR, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        AP_SPARER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -6963,7 +6963,7 @@ basestat basestats[POKEMON_CNT] = {
         KONZENTRATOR, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		SCHWEBE, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -7023,7 +7023,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, KRAFTKOLOSS, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        ANGSTHASE, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -7043,7 +7043,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, TEMPOMACHER, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		NOTSCHUTZ, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -7063,7 +7063,7 @@ basestat basestats[POKEMON_CNT] = {
         SPECKSCHICHT, TEMPOMACHER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		NOTSCHUTZ, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7083,7 +7083,7 @@ basestat basestats[POKEMON_CNT] = {
         PLUS, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        BLITZFAENGER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7103,7 +7103,7 @@ basestat basestats[POKEMON_CNT] = {
         MINUS, ABILITY_NONE, //abilities
         0, //safari rate
         2, //flip and color
-        ABILITY_NONE, //hidden ability
+        VOLTABSORBER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7123,7 +7123,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHERENMACHT, BEDROHER, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		AP_SPARER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7143,7 +7143,7 @@ basestat basestats[POKEMON_CNT] = {
         MENTALKRAFT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		TECHNIKER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7163,7 +7163,7 @@ basestat basestats[POKEMON_CNT] = {
         MENTALKRAFT, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		TECHNIKER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7183,7 +7183,7 @@ basestat basestats[POKEMON_CNT] = {
         INNERE_KRAFT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        WOLKE_SIEBEN, //hidden ability
         SHAPE_WINGED, //form
     },
 
@@ -7203,28 +7203,28 @@ basestat basestats[POKEMON_CNT] = {
         INNERE_KRAFT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		WOLKE_SIEBEN, //hidden ability
         SHAPE_WINGED, //form
     },
 
-    //POKEMON_ISSO
+    //POKEMON_KLINGPLIM
     {
-        95, 23, 48, 23, 23, 48, //basestat values (hp, att, def, spe, satk, sdef)
+        45, 30, 50, 45, 65, 50, //basestat values (hp, att, def, spe, satk, sdef)
         TYPE_PSYCHIC, TYPE_PSYCHIC, //types
-        125, //catch rate
-        44, //exp yield
-        {1, 0, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+        120, //catch rate
+        80, //exp yield
+        {0, 0, 0, 0, 1, 1, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
         ITEM_NONE, ITEM_NONE, //common, rare item
         127, //gender
-        20, //egg cycles
+        25, //egg cycles
         70, //base friendship
-        0, //lvl up curve
+        4, //lvl up curve
         EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED, //egg groups
-        WEGSPERRE, ABILITY_NONE, //abilities
+        SCHWEBE, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
         ABILITY_NONE, //hidden ability
-        SHAPE_TAIL, //form
+        SHAPE_ARMS, //form
     },
 
     //POKEMON_ZWIRRLICHT
@@ -7243,7 +7243,7 @@ basestat basestats[POKEMON_CNT] = {
         SCHWEBE, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -7263,7 +7263,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		LEBENSRAEUBER, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7283,7 +7283,7 @@ basestat basestats[POKEMON_CNT] = {
         ANPASSUNG, ABILITY_NONE, //abilities
         0, //safari rate
         0, //flip and color
-        ABILITY_NONE, //hidden ability
+		HACK, //hidden ability
         SHAPE_LEGS, //form
     },
 
@@ -7363,7 +7363,7 @@ basestat basestats[POKEMON_CNT] = {
         KLOAKENSOSSE, WERTEHALTER, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		AUFWERTUNG, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -7383,7 +7383,7 @@ basestat basestats[POKEMON_CNT] = {
         KLOAKENSOSSE, WERTEHALTER, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		AUFWERTUNG, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -7403,7 +7403,7 @@ basestat basestats[POKEMON_CNT] = {
         CHLOROPHYLL, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+        REICHE_ERNTE, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -7423,7 +7423,7 @@ basestat basestats[POKEMON_CNT] = {
         SANDSCHLEIER, SANDSCHLEIER, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7443,7 +7443,7 @@ basestat basestats[POKEMON_CNT] = {
         SANDSCHLEIER, SANDSCHLEIER, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7463,7 +7463,7 @@ basestat basestats[POKEMON_CNT] = {
         SANDSCHLEIER, SANDSCHLEIER, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		SANDHERZ, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7483,7 +7483,7 @@ basestat basestats[POKEMON_CNT] = {
         PANZERHAUT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        ROBUSTHEIT, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -7503,7 +7503,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		EXPIDERMIS, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -7523,7 +7523,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		EXPIDERMIS, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -7543,7 +7543,7 @@ basestat basestats[POKEMON_CNT] = {
         ERZWINGER, ABILITY_NONE, //abilities
         0, //safari rate
         9, //flip and color
-        ABILITY_NONE, //hidden ability
+		BEDROHER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -7563,7 +7563,7 @@ basestat basestats[POKEMON_CNT] = {
         INSOMNIA, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		STROLCH, //hidden ability
         SHAPE_BALL, //form
     },
 
@@ -7583,7 +7583,7 @@ basestat basestats[POKEMON_CNT] = {
         INSOMNIA, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+		STROLCH, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7603,7 +7603,7 @@ basestat basestats[POKEMON_CNT] = {
         EXPIDERMIS, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+        MULTISCHUPPE, //hidden ability
         SHAPE_SNAKE, //form
     },
 
@@ -7623,7 +7623,7 @@ basestat basestats[POKEMON_CNT] = {
         IMMUNITAET, ABILITY_NONE, //abilities
         0, //safari rate
         4, //flip and color
-        ABILITY_NONE, //hidden ability
+        HOCHMUT, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7643,7 +7643,7 @@ basestat basestats[POKEMON_CNT] = {
         WASSERTEMPO, STEINHAUPT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        ROBUSTHEIT, //hidden ability
         SHAPE_FISH, //form
     },
 
@@ -7663,7 +7663,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, STEINHAUPT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        FILTER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -7683,7 +7683,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, STEINHAUPT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		FILTER, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -7703,7 +7703,7 @@ basestat basestats[POKEMON_CNT] = {
         ROBUSTHEIT, STEINHAUPT, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		FILTER, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7727,44 +7727,44 @@ basestat basestats[POKEMON_CNT] = {
         SHAPE_BALL, //form
     },
 
-    //POKEMON_VOLBEAT
+    //POKEMON_WONNEIRA
     {
-        65, 73, 55, 85, 47, 75, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_BUG, TYPE_BUG, //types
-        150, //catch rate
-        146, //exp yield
-        {0, 0, 0, 1, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
-        ITEM_NONE, ITEM_NONE, //common, rare item
-        0, //gender
-        15, //egg cycles
-        70, //base friendship
-        1, //lvl up curve
-        EGG_GROUP_BUG, EGG_GROUP_HUMAN, //egg groups
-        ERLEUCHTUNG, HEXAPLAGA, //abilities
-        0, //safari rate
-        7, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_TAIL, //form
+		100, 5, 5, 30, 15, 65, //basestat values (hp, att, def, spe, satk, sdef)
+		TYPE_NORMAL, TYPE_NORMAL, //types
+		130, //catch rate
+		200, //exp yield
+		{1, 0, 0, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+		ITEM_NONE, ITEM_OVALER_STEIN, //common, rare item
+		254, //gender
+		40, //egg cycles
+		140, //base friendship
+		4, //lvl up curve
+		EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED, //egg groups
+		INNERE_KRAFT, EDELMUT, //abilities
+		125, //safari rate
+		9, //flip and color
+		CURATOR, //hidden ability
+		SHAPE_TAIL, //form
     },
 
-    //POKEMON_ILLUMISE
+    //POKEMON_MOBAI
     {
-        65, 47, 55, 85, 73, 75, //basestat values (hp, att, def, spe, satk, sdef)
-        TYPE_BUG, TYPE_BUG, //types
-        150, //catch rate
-        146, //exp yield
-        {0, 0, 0, 1, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
-        ITEM_NONE, ITEM_NONE, //common, rare item
-        254, //gender
-        15, //egg cycles
-        70, //base friendship
-        2, //lvl up curve
-        EGG_GROUP_BUG, EGG_GROUP_HUMAN, //egg groups
-        DOESIGKEIT, ABILITY_NONE, //abilities
-        0, //safari rate
-        6, //flip and color
-        ABILITY_NONE, //hidden ability
-        SHAPE_HUMANOID, //form
+		50, 80, 95, 10, 10, 45, //basestat values (hp, att, def, spe, satk, sdef)
+		TYPE_ROCK, TYPE_ROCK, //types
+		255, //catch rate
+		100, //exp yield
+		{0, 0, 1, 0, 0, 0, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+		ITEM_NONE, ITEM_NONE, //common, rare item
+		127, //gender
+		20, //egg cycles
+		70, //base friendship
+		0, //lvl up curve
+		EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED, //egg groups
+		ROBUSTHEIT, STEINHAUPT, //abilities
+		0, //safari rate
+		5, //flip and color
+		FELSENKERN, //hidden ability
+		SHAPE_HUMANOID, //form
     },
 
     //POKEMON_LILIEP
@@ -7783,7 +7783,7 @@ basestat basestats[POKEMON_CNT] = {
         SAUGNAPF, ABILITY_NONE, //abilities
         0, //safari rate
         6, //flip and color
-        ABILITY_NONE, //hidden ability
+		NOTDUENGER, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -7803,7 +7803,7 @@ basestat basestats[POKEMON_CNT] = {
         SAUGNAPF, ABILITY_NONE, //abilities
         0, //safari rate
         3, //flip and color
-        ABILITY_NONE, //hidden ability
+		NOTDUENGER, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -7823,7 +7823,7 @@ basestat basestats[POKEMON_CNT] = {
         KAMPFPANZER, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+        WASSERTEMPO, //hidden ability
         SHAPE_INSECT, //form
     },
 
@@ -7843,7 +7843,7 @@ basestat basestats[POKEMON_CNT] = {
         KAMPFPANZER, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		WASSERTEMPO, //hidden ability
         SHAPE_TAIL, //form
     },
 
@@ -7863,7 +7863,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, FAEHRTE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        LUZID, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7883,7 +7883,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, FAEHRTE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+		LUZID, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7903,7 +7903,7 @@ basestat basestats[POKEMON_CNT] = {
         SYNCHRO, FAEHRTE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+		LUZID, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7923,7 +7923,7 @@ basestat basestats[POKEMON_CNT] = {
         STEINHAUPT, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        ACHTLOS, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -7943,7 +7943,7 @@ basestat basestats[POKEMON_CNT] = {
         STEINHAUPT, ABILITY_NONE, //abilities
         0, //safari rate
         8, //flip and color
-        ABILITY_NONE, //hidden ability
+        EXPIDERMIS, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -7963,7 +7963,7 @@ basestat basestats[POKEMON_CNT] = {
         BEDROHER, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+        HOCHMUT, //hidden ability
         SHAPE_ANIMAL, //form
     },
 
@@ -7983,7 +7983,7 @@ basestat basestats[POKEMON_CNT] = {
         NEUTRALTORSO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		ALLROUNDER, //hidden ability
         SHAPE_HEAD, //form
     },
 
@@ -8003,7 +8003,7 @@ basestat basestats[POKEMON_CNT] = {
         NEUTRALTORSO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		ALLROUNDER, //hidden ability
         SHAPE_ARMS, //form
     },
 
@@ -8023,7 +8023,7 @@ basestat basestats[POKEMON_CNT] = {
         NEUTRALTORSO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		ALLROUNDER, //hidden ability
         SHAPE_MULTI, //form
     },
 
@@ -8043,7 +8043,7 @@ basestat basestats[POKEMON_CNT] = {
         NEUTRALTORSO, ABILITY_NONE, //abilities
         0, //safari rate
         5, //flip and color
-        ABILITY_NONE, //hidden ability
+        ROBUSTHEIT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -8063,7 +8063,7 @@ basestat basestats[POKEMON_CNT] = {
         NEUTRALTORSO, ABILITY_NONE, //abilities
         0, //safari rate
         1, //flip and color
-        ABILITY_NONE, //hidden ability
+		ROBUSTHEIT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 
@@ -8083,7 +8083,7 @@ basestat basestats[POKEMON_CNT] = {
         NEUTRALTORSO, ABILITY_NONE, //abilities
         0, //safari rate
         7, //flip and color
-        ABILITY_NONE, //hidden ability
+		ROBUSTHEIT, //hidden ability
         SHAPE_HUMANOID, //form
     },
 

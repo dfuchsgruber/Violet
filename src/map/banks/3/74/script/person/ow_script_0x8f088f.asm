@@ -30,7 +30,7 @@ str_0x8f461a:
 .global str_0x8f4d9d
 
 str_0x8f4d9d:
-    .string "... Äh ... in dieser Version bin\nich zwar noch hier, in der\lnächsten aber werde ich dir den\lWeg schon freigemacht haben!"
+    .string "DOTS Äh DOTS in dieser Version bin\nich zwar noch hier, in der\lnächsten aber werde ich dir den\lWeg schon freigemacht haben!"
         
         
 .elseif LANG_EN

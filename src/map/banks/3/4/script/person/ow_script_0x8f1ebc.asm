@@ -71,7 +71,7 @@ str_0x8f2063:
 .global str_0x8f20d3
 
 str_0x8f20d3:
-    .string "Dein Herz ist voller Hass...\nBefreie den Herz, es wird dich\lbefreien!"
+    .string "Dein Herz ist voller HassDOTS\nBefreie den Herz, es wird dich\lbefreien!"
         
         
 .global str_0x8f211b

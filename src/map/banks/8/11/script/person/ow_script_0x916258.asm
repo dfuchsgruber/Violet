@@ -22,14 +22,13 @@ end
 .global str_0x931d8f
 
 str_0x931d8f:
-    .string "... ... ...\n... ... ..."
+    .autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS"
         
         
 .global str_0x931bb9
 
 str_0x931bb9:
-    .string "PLAYER.\nDich hätte ich sicherlich nicht\lhier erwartet.\pDu hast dich weiterentwickelt, das\nist unverkennbar.\pDu bist als Trainer und Mensch\ngewachsen, wie ich.\pDieser Ort ist mir ein Dorn im\nAuge, denn er wurde von meinem\lVater ins Leben gerufen.\pEr ist ein mächtiger Trainer,\nmächtiger noch als Faun, dieser\lalte Narr.\pUnd ich werde ihn stürzen.\nEines Tages...\pVergiss nie, dass Macht in dieser\nWelt alles ist. Sieh dir diesen\lOrt an und werde dir dessen\lbewusst."
-        
+	.autostring 35 2 "PLAYER, dich hätte ich hier sicherlich nicht erwartet.\pDu fragst dich bestimmt, was ich hier treibe, nicht?\pDOTS DOTS DOTS\pWeißt du, dass dieser illegale Untergrundmarkt von einem Mitglied der Top Vier betrieben wird?\pDas klingt lächerlich, nicht?\pAber es ist wahr.\pMein Vater ist für diesen Untergrundmarkt verantwortlich.\pUnd genau deshalb, werde ich ihn zerstören.\pIch werde alles zerstören, was mein Vater sich aufgebaut hat.\pDas ist mein großes Ziel."
         
 .elseif LANG_EN
 

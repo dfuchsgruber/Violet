@@ -13,7 +13,7 @@ end
 .global str_0x94e744
 
 str_0x94e744:
-    .string "Verkatert und pleite...\nIch fühle mich fast wieder wie ein\lStudent..."
+    .string "Verkatert und pleiteDOTS\nIch fühle mich fast wieder wie ein\lStudentDOTS"
         
         
 .elseif LANG_EN

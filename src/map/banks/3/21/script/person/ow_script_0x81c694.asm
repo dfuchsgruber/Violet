@@ -20,7 +20,7 @@ str_0x81fb0d:
 .global str_0x81fb69
 
 str_0x81fb69:
-    .string "Wasser.... Wasser!!"
+    .string "WasserDOTS. Wasser!!"
         
         
 .elseif LANG_EN

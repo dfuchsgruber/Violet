@@ -50,25 +50,23 @@ end
 .global str_0x8aac71
 
 str_0x8aac71:
-    .string "Oh, PLAYER. Ich hätte es beinahe\nvergessen, dass auch ich für euch\lbeide ein Geschenk habe.\lSeit geraumer Zeit arbeite ich\lnämlich an einem System, dass\lhelfen soll, Trainer von überall\lmiteinander zu verbinden, den\lWundertausch.\lDie ganze Sache ist sehr aufregend\lund einfach zugleich: Man bietet\lein Pokémon aus seinem Team zum\lTausch an - dann wird dieses an\leinen Trainer irgendwo auf der\lWelt versandt und mal selbst\lerhält dessen verschicktes\lPokémon. Das Lustige dabei ist,\ldass du nie weißt, wo dein Pokémon\lhingeschickt wird und woher die\lPokémon, die man selbst erhält,\lwirklich stammen.\lIch werde die App auf deinem\lPokepad installieren, wenn du\lerlaubst."
-        
+	.autostring 36 2 "Ohje, PLAYER!\nBeinahe hätte ich vergessen, dass auch ich für euch noch ein Geschenk habe.\pSeit einiger Zeit widme ich mich nämlich einem System, das helfen soll, Trainer von überall miteinander zu verbinden.\pDieses System heißt Wundertausch und das Ganze ist, um ehrlich zu sein, unglaublich aufregend!\pMan bietet eines seiner Pokémon zum Tausch an.\pDann wird es an einen Trainer irgendwo auf der Welt versandt und man erhält dessen verschicktes Pokémon.\pMan weiß nie, wen dein Pokémon erreicht!\pSpannend nicht?\pIch werde die Wundertausch-App auf deinem Poképad installieren."
         
 .global str_0x8aa801
 
 str_0x8aa801:
-    .string "Elise hat die Wundertausch-App auf\ndem Pokepad installiert!"
+    .autostring 36 2 "Elise hat die Wundertausch-App auf dem Pokepad installiert!"
         
         
 .global str_0x8ab119
 
 str_0x8ab119:
-    .string "Je öfter du den Wundertausch\ndurchführst, desto höher steigt\lder Level der App. Ist dieser erst\lgroß genug, steigen auch die\lChancen seltene Pokémon zu\lerhalten. Manche von ihnen sind\lvon Züchtern herangezogen worden,\landere tragen seltene Items oder\lkennen ungewöhnliche Attacken, die\landere Trainer sie gelehrt haben.\pMein Traum ist es, die Barrieren\nder Räumlichkeit zwischen den\lTrainern zu durchbrechen und die\lWelt zu vereinigen. Es würde mich\lfreuen, wenn du mir dabei hilfst,\lindem du den Wundertausch oft\lbenutzt."
-        
+	.autostring 36 2 "Eine Sache noch.\pJe öfter du den Wundertausch benutzt, desto höher steigt dein Level.\pMit einem hohen Wundertausch-Level kannst du mit anderen erfahrenen Trainern tauschen, sodass du häufiger seltene Pokémon mit besonderen Fähigkeiten erhältst.\pDadurch lohnt es sich für jeden, die App häufig zu benutzen und die Menschen der Welt zu verbinden.\pDas ist mein großer Traum.\pIch würde mich freuen, wenn du mir hilfst, ihn zu verwirklichen und den Wundertausch oft benutzt."
         
 .global str_0x8a7951
 
 str_0x8a7951:
-    .string "In naher Zukunft schon werden\nviele Trainer den Wundertausch\lnutzen. Davon bin ich überzeugt!"
+    .autostring 36 2 "Bald schon werden alle Trainer dieser Welt den Wundertausch benutzen!\pDavon bin ich fest überzeugt!"
         
         
 .elseif LANG_EN

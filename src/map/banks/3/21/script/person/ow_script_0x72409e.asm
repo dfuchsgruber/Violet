@@ -20,7 +20,7 @@ str_0x72458c:
 .global str_0x7245ea
 
 str_0x7245ea:
-    .string "Gut, das Geheimnis ist, dass es\nhier 2 Brunnen geben soll! Bisher\lhabe ich aber noch keinen\lgefunden..."
+    .string "Gut, das Geheimnis ist, dass es\nhier 2 Brunnen geben soll! Bisher\lhabe ich aber noch keinen\lgefundenDOTS"
         
         
 .elseif LANG_EN

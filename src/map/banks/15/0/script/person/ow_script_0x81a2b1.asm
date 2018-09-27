@@ -14,7 +14,7 @@ end
 .global str_0x81a2c9
 
 str_0x81a2c9:
-    .string "Angeln ist nicht das Spannendste..."
+    .string "Angeln ist nicht das SpannendsteDOTS"
         
         
 .global str_0x81a2ee

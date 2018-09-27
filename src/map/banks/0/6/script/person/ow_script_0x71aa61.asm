@@ -20,7 +20,7 @@ str_0x71ad57:
 .global str_0x71b389
 
 str_0x71b389:
-    .string "Seltenheit bedeutet wohl nicht\nStärke..."
+    .string "Seltenheit bedeutet wohl nicht\nStärkeDOTS"
         
         
 .elseif LANG_EN

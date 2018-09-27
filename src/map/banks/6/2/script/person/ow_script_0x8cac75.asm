@@ -20,7 +20,7 @@ str_0x8cac8d:
 .global str_0x8cad12
 
 str_0x8cad12:
-    .string "Lester erwartet dich bereits. Du\nkannst es sicherlich mit ihm\laufnehmen, aber ob du gewinnen\lwirst, ist eine andere Sache..."
+    .string "Lester erwartet dich bereits. Du\nkannst es sicherlich mit ihm\laufnehmen, aber ob du gewinnen\lwirst, ist eine andere SacheDOTS"
         
         
 .elseif LANG_EN

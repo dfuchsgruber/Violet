@@ -603,7 +603,7 @@ song song_table[] = {
 	//Song 299
 	{(void*) 0x8a0086c, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 300
-	{mus_amonia, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_amonia2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 301
 	{mus_jorney, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 302

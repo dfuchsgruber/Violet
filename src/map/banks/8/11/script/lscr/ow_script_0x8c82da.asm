@@ -41,8 +41,7 @@ end
 .global str_0x8c80e4
 
 str_0x8c80e4:
-    .string "Sehr gut, du hast\nhergefunden.\pWo wir uns hier befinden?\nDas hier ist das dunkle Geheimnis\lKaskadas, die Schattenseite des\lSystems, dem wir unterworfen sind.\lEs ist ein geheimer Markt im\lUntergrund, der größte und\lberüchtigste des Kontinents.\lEr liegt direkt unterhalb\lKaskadas, sodass sogar Schiffe\lhier anlegen können.\lWas gehandelt wird?\lVerbotene Gegenstände, Falschgeld\lund sogar versklavte Pokémon...\lEs ist ein trauriger Ort, das\lhässliche Gesicht Thetos.\lKomm mit, ich führe dich herum."
-        
+	.autostring 35 2 "Sehr gut, du hast hergefunden, PLAYER!\pWo wir uns hier befinden?\pDas hier ist das dunkle Geheimnis von Kaskada.\pEin geheimer Markt im Untergrund, genauer gesagt der größte und berüchtigste in ganz Theto.\pEr liegt direkt unterhalb Kaskadas, sodass sogar Schiffe anlegen können.\pWas hier gehandelt wird?\pIllegale Objekte, Falschgeld, ja sogar mit Pokémon wird hier gehandelt.\pEs ist ein ganz und gar hässlicher Ort und das direkt vor den Augen der Top Vier.\pLass mich dich herumführen."
         
 .elseif LANG_EN
 

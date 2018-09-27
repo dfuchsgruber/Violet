@@ -26,9 +26,8 @@ end
 .global str_0x864813
 
 str_0x864813:
-    .string "PLAYER, wir sollten uns\nbeeilen.\pMistral befindet sich auf dem Weg\nin Richtung Gipfel.\pWir dürfen ihm nicht gestatten,\ndiesen Ort zu erreichen.\pAber sei auf der Hut:\nMistral war selbst Teil der\lRevolutionsbewegung, ehe er uns im\lStich gelassen hat.\pEr ist stark und zielstrebig, wir\nmüssen vorsichtig sein."
-        
-        
+	.autostring 35 2 "PLAYER, wir sollten uns beeilen.\pWeißt du, der Kommandant, mit dem wir es sicherlich noch zu tun bekommen DOTS\pEr war auch einmal Teil der Revolutionsbewegung DOTS\pDOTS und ein enger Freund von mir.\pDoch er hat uns im Stich gelassen DOTS\pDieser Kerl DOTS\nDOTS ist äußerst gefährlich.\pUm seine Ziele zu erreichen, schreckt er vor nichts zurück.\pWir müssen vorsichtig sein."
+
 .elseif LANG_EN
 
 .endif

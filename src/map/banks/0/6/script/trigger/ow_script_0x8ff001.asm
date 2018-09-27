@@ -158,68 +158,65 @@ return
 .global str_0x8ff6f3
 
 str_0x8ff6f3:
-    .string "Oh, hallo PLAYER!\nWie ich sehe wanderst du auch in\ldieser dunklen Höhle umher.\lBeherrscht eines deiner Pokémon\ldie Vm Blitz, könnte es etwas\lLicht ins Dunkel bringen. Leider\lscheinen weder du noch ich ein\lPokémon mit diesem Angriff zu\lbesitzen, wie unglücklich.\lWie läuft es bei dir? Hast du auch\lschon drei Arenaorden erringen\lkönnen? Ich selbst strebe den Rang\leines Arenaleiters vorerst an,\ldenn dieser ist der erste\lnotwendige Schritt auf dem Weg,\lein Mitglied der Top Vier zu\lwerden, so wie Opi.\lWo wir gerade von ihm sprechen,\lhat er dich auch kontaktiert, ihn\lbei der Bekämpfung der\lRevolutionäre in Kaskada zu\lhelfen?"
-        
+	.autostring 35 2 "PLAYER!\nWas für ein Zufall, dass wir uns hier begegnen.\pIch irre schon seit einiger Zeit in dieser Höhle umher.\pWenn nur eines meiner Pokémon die Versteckte Maschine Blitz beherrschen würde, käme ich vermutlich besser zurecht.\pBist du auch unterwegs nach Kaskada, um gegen die Revolutionsbewegung zu kämpfen?\pGerüchten zufolge hält sich dort ihr Anführer Albus auf.\pOpi ist vermutlich auch schon auf dem Weg dorthin."
         
 .global str_0x9454f8
 
 str_0x9454f8:
-    .string "Nein, Faun hat mich damit\nbeauftragt, Team Violet im\lZeitwald Paroli zu bieten."
+    .autostring 35 2 "Faun hat mich und die Arenaleiterin von Silvania damit beauftragt, Team Violet im Silvania-Wald zu bekämpfen.\pEr wollte sich der Revolutionäre selbst annehmen."
         
         
 .global str_0x94591f
 
 str_0x94591f:
-    .string "Ich verstehe.\nDann ist dir das wohl gelungen.\pIch muss dich wohl jetzt bitten,\nmir in Kaskada zu helfen.\pDie Revolutionäre sind äußert\ngefährlich, denn sie drohen mit\leinem Krieg.\pOpi hat mir oft von seiner Jugend\nerzählt, als er dem Land den\lFrieden der Top Vier gebracht hat.\pWir müssen diesen Frieden\nverteidigen."
+    .autostring 35 2 "Ich verstehe!\nDann ist dir das wohl gelungen?\pDOTS DOTS DOTS\pDiese Team Violet Rüpel sind nicht zu unterschätzen, denke ich DOTS\pAber die Revolutionsbewegung bedroht den Frieden der Region.\pWenn es ihnen gelingt, die Top Vier zu stürzen DOTS\pWer beschützt dann die Menschen in Theto?\pWollen wir in Kaskada nicht gemeinsam gegen diese Fanatiker kämpfen?"
         
         
 .global str_felsige_oednis_choice_0
 
 str_felsige_oednis_choice_0:
-    .string "Die Revolution bedroht den Frieden"
+    .string "Revolution bekämpfen"
         
         
 .global str_felsige_oednis_choice_1
 
 str_felsige_oednis_choice_1:
-    .string "Die Top Vier sind korrupt"
+    .string "Revolution verteidigen"
         
         
 .global str_0x945a65
 
 str_0x945a65:
-    .string "Ach, was ich dich noch\nfragen wollte - hast du zufällig\lBlaise getroffen?\pAnfangs sind wir zusammen gereist,\ndoch nach einiger Zeit hat er mich\labgehängt.\pEr ist auf einem gefährlichen\npersönlichen Kreuzzug gegen seinen\lVater, Devin von den Top Vier.\pEs ist nur zu leicht, dass man vom\nrechten Weg abkommt, wenn man nur\lauf Vergeltung aus ist..."
+	.autostring 35 2 "DOTS DOTS DOTS\pÜbrigens, hast du zufällig Blaise getroffen?\pIch mache mir wirklich Sorgen um ihn.\pEr ist so vom Hass auf seinen Vater zerfressen, dass ich ihm alles zutrauen würde.\pAber es sind genau Menschen wie Blaise, die die Hilfe von Freunden am Dringendsten brauchen."
         
         
 .global str_0x945bc8
 
 str_0x945bc8:
-    .string "Vermutlich wird es am\nklügsten sein, wenn wir uns auf\lnach Kaskada machen.\pDort sehen wir weiter, denke ich.\nOpi wird unsere Hilfe gebrauchen\lkönnen.\pBeeil dich bitte, PLAYER."
+    .autostring 35 2 "Wie auch immer DOTS\pEs ist wahrscheinlich am Klügsten, wir treffen uns in Kaskada und unterstützen dann Opi beim Kampf gegen den Revolutionsführer.\pLass mich nicht all zu lange warten, PLAYER!"
         
         
 .global str_0x945da0
 
 str_0x945da0:
-    .string "... ... ..."
+    .autostring 35 2 "DOTS DOTS DOTS"
         
         
 .global str_0x945daa
 
 str_0x945daa:
-    .string "Du wirkst recht\nunentschlossen.\pIch kann verstehen, dass du nicht\nunbedingt mit allen Entscheidungen\lder Top Vier konform gehst.\pTrotzdem bringen sie dem Kontinent\nein wichtiges Gut - den Frieden.\pUnd den müssen wir um jeden Preis\nverteidigen!"
-        
+    .autostring 35 2 "Willst du damit etwa sagen, dass du auf der Seite dieser Spinner stehst, PLAYER?\pIhre Ziele mögen sich ja zunächst ganz sinnvoll anhören DOTS\pAber überleg doch einmal!\pGäbe es die Top Vier nicht, hätten Organisation wie Team Violet Theto schon längst erobert.\pSicherlich ist nicht alles an diesem System perfekt, DOTS\pDOTS aber ist der Frieden, den die Top Vier uns bringen, das alles nicht irgendwo auch wert?\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
+
         
 .global str_0x945c7d
 
 str_0x945c7d:
-    .string "Richtig.\nDie Top Vier gewährleisten trotz\laller Probleme immer noch einen\lbeständigen Frieden.\pDie Menschen brauchen eine Lösung,\naber die sollte nicht der Krieg\lsein."
-        
+	.autostring 35 2 "Die Revolutionsbewegung bring uns vor allem Chaos.\pDeshalb muss sie gestoppt werden!"
         
 .global str_0x945d2b
 
 str_0x945d2b:
-    .string "Es wird Opi überglücklich\nmachen, dass zwei seiner\lSchützlinge das Erbe seines\lFriedens verteidigen wollen!"
-        
+    .autostring 35 2 "Es freut micht, dass du auch so denkst!\pDas wird Opi sicher stolz machen, dass zwei seiner Schützlinge für seine Sache kämpfen!"
         
 .elseif LANG_EN
 

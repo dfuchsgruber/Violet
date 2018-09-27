@@ -13,7 +13,7 @@ end
 .global str_0x81fc05
 
 str_0x81fc05:
-    .string "Diese Wüste ist nichts für mein\nHerz. Die ständigen Täuschungen\lder Fata Morganas belasten mich zu\lsehr..."
+    .string "Diese Wüste ist nichts für mein\nHerz. Die ständigen Täuschungen\lder Fata Morganas belasten mich zu\lsehrDOTS"
         
         
 .elseif LANG_EN

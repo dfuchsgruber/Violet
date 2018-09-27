@@ -428,8 +428,8 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     0x677,
     // POKEMON_SCHEROX
     0x477,
-    // POKEMON_POTTROTT
-    0xb56,
+    // POKEMON_FLUFFELUFF
+    0,
     // POKEMON_SKARABORN
     0x277,
     // POKEMON_KRYPPUK
@@ -653,7 +653,7 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_WELSAR
     0xb86,
     // POKEMON_LIEBISKUS
-    0xa46,
+    0,
     // POKEMON_KREBSCORPS
     0x877,
     // POKEMON_KREBUTACK
@@ -1363,8 +1363,8 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     0x846,
     // POKEMON_KAPOERA
     0x367,
-    // POKEMON_KUSSILLA
-    0xd35,
+    // POKEMON_SEN_LONG
+    0,
     // POKEMON_ELEKID
     0xa76,
     // POKEMON_MAGBY
@@ -1659,10 +1659,10 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     0x188,
     // POKEMON_FORMEO
     0xf34,
-    // POKEMON_VOLBEAT
-    0x666,
-    // POKEMON_ILLUMISE
-    0x756,
+    // POKEMON_WONNEIRA
+    0,
+    // POKEMON_MOBAI
+    0,
     // POKEMON_LILIEP
     0x667,
     // POKEMON_WIELIE
@@ -2492,8 +2492,8 @@ u8 pokemon_altitude[POKEMON_CNT] = {
     0xc,
     // POKEMON_ALTARIA
     0x8,
-    // POKEMON_ISSO
-    0x0,
+    // POKEMON_KLINGPLIM
+    0x8,
     // POKEMON_ZWIRRLICHT
     0x9,
     // POKEMON_ZWIRRKLOP

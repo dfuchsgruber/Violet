@@ -13,7 +13,7 @@ end
 .global str_0x8f6e7f
 
 str_0x8f6e7f:
-    .string "...Alte Windmühle...\pDie Schrift ist verblasst..."
+    .string "DOTSAlte WindmühleDOTS\pDie Schrift ist verblasstDOTS"
         
         
 .elseif LANG_EN

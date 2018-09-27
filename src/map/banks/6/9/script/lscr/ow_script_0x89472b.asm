@@ -47,7 +47,7 @@ applymovement 0x1 ow_script_movs_0x830940
 applymovement 0xff ow_script_movs_0x830943
 waitmovement 0x0
 call ow_script_0x893aca
-trainerbattlecont 0x1 0x19e 0x0 str_0x8cafb5 str_0x8cb08b ow_script_0x8947e3
+trainerbattlecont 0x1 0xb6 0x0 str_0x8cafb5 str_0x8cb08b ow_script_0x8947e3
 
 
 .global ow_script_0x8947e3
@@ -93,47 +93,44 @@ return
 
 
 .ifdef LANG_GER
+
 .global str_0x8cae89
 
 str_0x8cae89:
-    .string "Aufseher: Nun verkünde ich hiermit\nden Kampf zwischen Lester und\lPLAYER um den Antikorden. Möge der\lKampf beginnen!"
+	.autostring 36 2 "Es beginnt nun der Kampf zwischen Lester und PLAYER um den Antikorden.\pIch erwarte einen fairen Kampf!"
         
         
 .global str_0x8cafb5
 
 str_0x8cafb5:
-    .string "Ich mag dich, du scheinst\ndie nötige Ehrfurcht vor diesem\lOrt zu besitzen. Aber glaub nicht,\ldass ich mich deswegen\lzurückhalten werde. Meine\lGestein-Pokémon sind hart in der\lVerteidigung und im Angriff."
-        
+	.autostring 36 2 "Auch wenn du mir sympatisch bist, werde ich mich nicht zurückhalten.\pMeine Gestein-Pokémon werden dich das fürchten lehren!"
         
 .global str_0x8cb08b
 
 str_0x8cb08b:
-    .string "Beeindruckend. Deine Pokémon haben\nmich zerschmettert wie Graphit.\lDen Antikorden hast du dir redlich\lverdient, PLAYER."
+    .autostring 36 2 "Beeindruckend gekämpft!\pSelbst meine felsenharten Gestein-Pokémon konnten dir nichts entgegensetzen."
         
         
 .global str_0x8cb101
 
 str_0x8cb101:
-    .string "Unter den heiligen Hallen des\nTempels der Wächter hast du mich\lgeschlagen und deine Stärke\lbezeugt. Die Wächter haben dich\lanerkannt und dir Kraft geliehen.\lNimm den Orden als Zeichen deiner\lLeistung."
-        
+	.autostring 36 2 "Du hast hervorragend gekämpft!\pDen Antikorden hast du dir redlich verdient!"
         
 .global str_0x897c8a
 
 str_0x897c8a:
-    .string "PLAYER hat den Antikorden von\nLester erhalten!"
+    .autostring 36 2 "PLAYER hat den Antikorden von Lester erhalten!"
         
         
 .global str_0x8cb1cc
 
 str_0x8cb1cc:
-    .string "Mit diesem Orden kannst du die\nVersteckte Maschine Blitz\laußerhalb des Kampfs einsetzen.\lFerner möchte ich dir das hier\lüberreichen, als Symbol meiner\lpersönlichen Wertschätzung."
-        
+	.autostring 36 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Blitz außerhalb des Kampfes zu nutzen.\pZudem gehorchen dir getauschte Pokémon bis Level 30.\pDOTS DOTS DOTS\pDarüber hinaus will ich dir noch etwas als Symbol meiner persönlichen Wertschätzung überreichen."
         
 .global str_0x8cb281
 
 str_0x8cb281:
-    .string "Diese Technische Maschine enthält\ndie Attacke Felsgrab. Sie schadet\ldem Gegner und verlangsamt ihn\lzusätzlich dazu. Ideal für alle\lGestein-Pokémon, die nicht all zu\lflink sind.\pUnser Kampf war eine Bereicherung\nfür mich. Verlasse nun diesen Ort\lund setzte deine Reise fort. Der\lGeist der Wächter möge dich auf\lewig begleiten."
-        
+	.autostring 36 2 "Diese Technische Maschine enthält die Attacke Felsgrab.\pSie ist eine meiner Lieblingsattacken, weil sie den Gegner schadet und gleichzeitig verlangsamt.\pEin idealer Angriff für langsamere Pokémon, wie etwa meine Gestein-Typen.\pIch hoffe, sie wird dir auf deiner Reise nützen.\pBegleite mich nun bitte aus der Untergrund-Arena."
         
 .elseif LANG_EN
 

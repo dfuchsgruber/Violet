@@ -13,7 +13,7 @@ end
 .global str_0x8a36f1
 
 str_0x8a36f1:
-    .string "Als Forscherin habe ich die ganze\nWelt bereist und meinen Beitrag\lzur Entdeckung der Mega-Evolution\lgeleistet... Guten Gewissens haben\lich, mein Mann und unsere Kinder\lund Enkel uns hier niedergelassen."
+    .string "Als Forscherin habe ich die ganze\nWelt bereist und meinen Beitrag\lzur Entdeckung der Mega-Evolution\lgeleistetDOTS Guten Gewissens haben\lich, mein Mann und unsere Kinder\lund Enkel uns hier niedergelassen."
         
         
 .elseif LANG_EN

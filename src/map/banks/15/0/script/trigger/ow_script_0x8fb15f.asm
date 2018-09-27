@@ -46,7 +46,7 @@ setvar LASTTALKED 0x36
 faceplayer
 
 setflag PKMNMENU
-pause 0x40
+pause 32
 call ow_script_0x8d3f23
 settrainerflag 0x19
 trainerbattlecont 0x1 0x19 0x0 str_0x8d3efa str_0x8d3bb9 ow_script_0x8d4033
@@ -64,8 +64,14 @@ applymovement 0x33 ow_script_movs_0x8d3ef2
 applymovement 0x34 ow_script_movs_0x8d3ef2
 applymovement 0x35 ow_script_movs_0x8d3ef2
 waitmovement 0x0
+
+loadpointer 0 str_police
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8d38fe
 callstd MSG
+special 0xF
+
 applymovement 0x36 mov_4
 call ow_script_0x8d3f23
 loadpointer 0x0 str_0x8d3f8b
@@ -121,8 +127,12 @@ applymovement 0x32 ow_script_movs_0x8d36f1
 applymovement 0x33 ow_script_movs_0x8d36f1
 applymovement 0x34 ow_script_movs_0x8d36f1
 applymovement 0x35 ow_script_movs_0x8d36f1
+loadpointer 0 str_police
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8d371c
 callstd MSG
+special 0xF
 waitmovement 0x0
 fadescreen 0x1
 hidesprite 0x32
@@ -196,68 +206,65 @@ return
 .global str_0x8d3efa
 
 str_0x8d3efa:
-    .string "Polizist: Hey du da!\nStehen geblieben!"
+    .autostring 35 2 "Halt!\nStehengeblieben!"
         
         
 .global str_0x8d3bb9
 
 str_0x8d3bb9:
-    .string "Argh! Ihr verdammten Team Violet\nRüpel!"
+    .autostring 35 2 "Argh!\nIhr verdammten Team Violet Rüpel!"
         
+str_police:
+	.string "Polizisten"
+
         
 .global str_0x8d38fe
 
 str_0x8d38fe:
-    .string "Polizisten: Herr Wachtmeister!\nWir stehen Ihnen zur Seite!"
+    .autostring 36 2 "Herr Wachtmeister!\pKommen Sie zurecht?"
         
         
 .global str_0x8d3f8b
 
 str_0x8d3f8b:
-    .string "Polizist: Nicht nötig, Männer. Ich\nhabe die Situation im Griff."
+    .autostring 36 2 "Argh!\nDieser Team Violet Rüpel hier ist hartnäckig!"
         
         
 .global str_0x8d3be3
 
 str_0x8d3be3:
-    .string "Polizist: ... ... ... ...\n... ... ... ... ... ...\pNein, du siehst nicht aus, wie\neiner von denen. Du bist kein\lMitglied von Team Violet.\lEntschuldige bitte, Junge. Mein\lName ist Oberwachtmeister\lHarrenfeld, ich kommandiere die\lPolizei in diesem Bezirk Thetos.\pWir haben Informationen erhalten,\ndass eine ganze Division der\lOrganisation Team Violet auf den\lWeg nach Silvania ist.\p... ... ...\n.... .... ....\pNun, wir haben alle verfügbaren\nKräfte angefordert, aber ich bin\lmir nicht sicher, ob wir es mit\leiner ganzen Division aufnehmen\lkönnen. Sollte einer der drei\lKommandanten die Gruppe\leskortieren, könnte das Probleme\lbedeuten.\p... ... ...\n... ... ...\pNun, du machst den Eindruck, ein\nganz passabler Trainer zu sein.\lKönntest du uns nicht helfen, Team\lViolet zu bekämpfen?"
-        
-        
+	.autostring 36 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pHmm DOTS\nDu siehst bei genauerer Betrachtung gar nicht aus, wie ein Mitglied von Team Violet.\pEntschuldige bitte, ich habe dich wohl verwechselt, Kindchen.\pMein Name ist Wachtmeister Harrenfeld und ich bin auf der Jagd nach einer Kommandantin von Team Violet.\pWir haben Informationen erhalten, dass sie mit ihrer Division auf dem Weg nach Silvania ist.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWenn wir sie dingfest machen können, finden wir vielleicht etwas über den Kopf der Organisation heraus DOTS\pUnd da du ein ganz passabler Trainer zu sein scheinst DOTS DOTS DOTS\pWas meinst du?\nWürdest du uns vielleicht helfen, diese Kommandantin aufzuspüren und zu bekämpfen?"
 .global str_0x8d3858
 
 str_0x8d3858:
-    .string "Team Violet ist auch mein Feind.\pSie haben den Vater meines besten\nFreundes bedroht und werden dafür\lbezahlen. Sie können auf meine\lHilfe zählen, Herr Wachtmeister!"
-        
+	.autostring 36 2 "Ich bin auch schon mit diesen Rüpel aneinandergeraten.\pAlso werde ich Ihnen selbstverständlich helfen, Herr Wachtmeister!"
         
 .global str_0x8d375f
 
 str_0x8d375f:
-    .string "Wachtmeister  Ha!\pSehr schön, du bist ein\nausgesprochen herzlicher Mensch.\pIm Kampf gegen diese\nVerbrecherbande können wir jede\lUnterstützung gebrauchen.\pWir werden uns auf den Weg nach\nSilvania machen, wo du dann zu uns\lstoßen kannst."
-        
+	.autostring 36 2 "Du bist wirklich ein mutiges Kind, das muss ich dir lassen!\pTreib es aber nicht zu weit.\pSolltest du auf die Kommandantin treffen, überlasse es lieber den Erwachsenen, die Sache zu regeln!"
         
 .global str_0x8d36f8
 
 str_0x8d36f8:
-    .string "Wir ziehen ab! Auf nach Silvania!"
+    .autostring 36 2 "Wir ziehen ab!\nAuf nach Silvania!"
         
         
 .global str_0x8d371c
 
 str_0x8d371c:
-    .string "Polizisten: Aye, Sir!"
+    .autostring 36 2 "Ja, Sir!"
         
         
 .global str_0x8d3aaf
 
 str_0x8d3aaf:
-    .string "Nein, ich werde nicht Ihre Arbeit\nerldigen. Sie sind Wachtmeister\ldieses Bezirks und verpflichtet,\lfür Ordnung zu sorgen.\pIch habe selbst Angelegenheiten\nmit Team Violet zu regeln und\lwerde Ihnen daher nicht im Weg\lstehen. Rechnen dürfen Sie mit mir\ljedoch nicht."
-        
-        
+	.autostring 36 2 "Verlangen Sie allen ernstes, dass ein Kind Ihre Arbeit erledigt und auf Verbrecherjagd geht?\pEs ist Ihre Aufgabe, für Recht und Ordnung zu sorgen, nicht meine!\pAllerdings bin ich selbst auch schon an die Rüpel von Team Violet geraten und werde mich von diesen Leuten sicherlich nicht besiegen lassen."
+
 .global str_0x8d39ed
 
 str_0x8d39ed:
-    .string "Wachmeister  Hmpf!\pDu scheinst keinen Funken Anstand\nzu besitzen. Wie dem auch sei, wir\lsind auf deine Hilfe nicht\langewiesen. Wir werden der Team\lViolet Division Einhalt gebieten."
-        
+	.autostring 36 2 "Hmpf!\nDu rotzfreches Balg!\pWas meinst du, mit wem du hier sprichst?\pWir brauchen deine Hilfe ohnehin nicht!\pKomm uns ja nicht in die Quere!\pDOTS DOTS DOTS"
         
 .elseif LANG_EN
 

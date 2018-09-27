@@ -951,11 +951,12 @@ void cmdx34_setflag(ae_memory *mem){
 void cmdx35_pal_restore_snapshot(ae_memory *mem){
     if(anim_engine_read_byte(mem)){
         //Create snapshot pal_restore
-        if(!mem->pal_restore_save){
+        if(mem->pal_restore_save){
             dprintf("Warning: Trying to snapshot pal restore when there is already a snapshot!\n");
-            mem->pal_restore_save = malloc(sizeof(color) * 1024);
         }
-        //cpuset(pal_restore, mem->pal_restore_save, 0x4000100);
+        mem->pal_restore_save = malloc(sizeof(color) * 1024);
+        // Do not save the restore! This causes mapreload to not fade into black
+        // cpuset(pal_restore, mem->pal_restore_save, 0x4000100);
         cpuset(pal_tmp, &(mem->pal_restore_save[512]), 0x4000100);
         dprintf("Pal restore snap alloc\n");
     }else{
@@ -1002,37 +1003,39 @@ void _obj_move_trig_trace(anim_engine_task *self){
     int period = vars[4];
     bool on_y_axis = vars[5];
     int trig_func = vars[6];
-    FIXED d;
     FIXED fperiod = INT_TO_FIXED(period);
     FIXED famplitude = INT_TO_FIXED(amplitude);
     FIXED fx = FIXED_DIV(INT_TO_FIXED(frame), fperiod);
     FIXED fxprev = FIXED_DIV(INT_TO_FIXED(frame - 1), fperiod);
-
+    FIXED (*eval_func)(FIXED);
     switch(trig_func){
         case 0: //sine function
-            d = FIXED_SIN(fx) - FIXED_SIN(fxprev);
+        	eval_func = FIXED_SIN;
             break;
         case 1: //cosine function
-            d = FIXED_COS(fx) - FIXED_COS(fxprev);
+        	eval_func = FIXED_COS;
             break;
         case 2: //tangens function
-            d = FIXED_TAN(fx) - FIXED_TAN(fxprev);
+        	eval_func = FIXED_TAN;
             break;
         case 3: //sine function
-            d = FIXED_TRIANGLE_SIN(fx) - FIXED_TRIANGLE_SIN(fxprev);
+            eval_func = FIXED_TRIANGLE_SIN;
             break;
         case 4: //cosine function
-            d = FIXED_TRIANGLE_COS(fx) - FIXED_TRIANGLE_COS(fxprev);
+            eval_func = FIXED_TRIANGLE_COS;
             break;
         case 5: //tangens function
-            d = FIXED_TRIANGLE_TAN(fx) - FIXED_TRIANGLE_TAN(fxprev);
+            eval_func = FIXED_TRIANGLE_TAN;
             break;
         default: return;
     }
-    d = FIXED_MUL(famplitude, d);
-    int dist = FIXED_TO_INT(d);
-    if(on_y_axis)oams[oam_id].y = (s16)(oams[oam_id].y + dist);
-    else oams[oam_id].x = (s16)(oams[oam_id].x + dist);
+
+    // Evaluate the function at the current and previous frame
+    int current = FIXED_TO_INT(FIXED_MUL(famplitude, eval_func(fx)));
+    int prev = FIXED_TO_INT(FIXED_MUL(famplitude, eval_func(fxprev)));
+    int d = current - prev;
+    if(on_y_axis)oams[oam_id].y = (s16)(oams[oam_id].y + d);
+    else oams[oam_id].x = (s16)(oams[oam_id].x + d);
 }
 
 

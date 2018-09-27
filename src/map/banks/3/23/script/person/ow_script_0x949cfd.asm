@@ -15,16 +15,29 @@ checkflag ROUTE_5_CLOUD_RECEIVED
 gotoif EQUAL ow_script_0x94ba17
 lock
 faceplayer
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94b8ae
 callstd MSG_KEEPOPEN
+special 0xF
+
 checkflag ROUTE_3_MILL_SAVED_ALTARIA_EGG
 gotoif EQUAL ow_script_0x94bff4
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x949ddc
 callstd MSG_KEEPOPEN
+special 0xF
+
 checkitem ITEM_ITEM_10B 0x1
 compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x94c10c
 closeonkeypress
+special 0xF
 release
 end
 
@@ -40,13 +53,14 @@ ow_script_0x94c10c:
 sound 0x15
 applymovement 0x800f ow_script_movs_0x94c6c7
 waitmovement 0x0
-goto ow_script_0x949d36
 
-
-.global ow_script_0x949d36
-ow_script_0x949d36:
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94c615
 callstd MSG_KEEPOPEN
+special 0xF
+
 fanfare 0x13e
 additem ITEM_FAHRRAD 0x1
 loadpointer 0x0 str_0x94bc55
@@ -54,20 +68,22 @@ callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
 removeitem ITEM_ITEM_10B 0x1
+
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94ba96
 callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x94c596
 callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x94ba21
 callstd MSG
+special 0xF
 setflag ROUTE_5_CLOUD_RECEIVED
 end
 
 
-.global ow_script_0x94bff4
-ow_script_0x94bff4:
-fadesong MUS_CLOUDS
-goto ow_script_0x94be7e
 
 
 .global ow_script_movs_0x94be6d
@@ -83,8 +99,9 @@ ow_script_movs_0x94bc7c:
 .byte STOP
 
 
-.global ow_script_0x94be7e
-ow_script_0x94be7e:
+.global ow_script_0x94bff4
+ow_script_0x94bff4:
+fadesong MUS_CLOUDS
 closeonkeypress
 cry POKEMON_ALTARIA 0x0
 waitcry
@@ -92,8 +109,15 @@ sound 0x15
 applymovement 0xff ow_script_movs_0x94be6d
 applymovement 0x800f ow_script_movs_0x94be6d
 waitmovement 0x0
+
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94be36
 callstd MSG
+special 0xF
+
 cry POKEMON_ALTARIA 0x0
 waitcry
 clearflag PKMNMENU
@@ -105,20 +129,41 @@ call ow_script_0x94be24
 call ow_script_0x94be70
 cry POKEMON_ALTARIA 0x0
 waitcry
+
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94bdbf
 callstd MSG
+special 0xF
+
 cry POKEMON_ALTARIA 0x0
 waitcry
 cry POKEMON_ALTARIA 0x0
 waitcry
+
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94bd31
 callstd MSG
+special 0xF
+
 cry POKEMON_ALTARIA 0x0
 waitcry
 cry POKEMON_ALTARIA 0x0
 waitcry
+
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94bc7f
 callstd MSG
+special 0xF
+
 cry POKEMON_ALTARIA 0x0
 waitcry
 applymovement 0x800f ow_script_movs_0x94bc7c
@@ -131,8 +176,13 @@ waitfanfare
 closeonkeypress
 cry POKEMON_ALTARIA 0x0
 waitcry
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94bf95
 callstd MSG
+special 0xF
 fadescreen 0x1
 cry POKEMON_ALTARIA 0x0
 waitcry
@@ -140,23 +190,19 @@ cry POKEMON_ALTARIA 0x0
 waitcry
 hidesprite 0xd
 fadescreen 0x0
-goto ow_script_0x94c103
-
-
-.global ow_script_0x94c103
-ow_script_0x94c103:
 fadesong MUS_ROUTE_3_10_AND_ROUTE_16_22
-goto ow_script_0x94c5f5
 
 
-.global ow_script_0x94c5f5
-ow_script_0x94c5f5:
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94bb88
 callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x94c596
 callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x94ba21
 callstd MSG
+special 0xF
 setflag PKMNMENU
 setflag ROUTE_5_CLOUD_RECEIVED
 release
@@ -196,28 +242,36 @@ return
 
 .global ow_script_0x94ba17
 ow_script_0x94ba17:
+
+loadpointer 0 str_priest
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94ba21
 callstd MSG_FACE
+special 0xF
 end
 
 
 .ifdef LANG_GER
 .global str_0x94b8ae
 
+str_priest:
+	.string "Wolkenpriester"
+
 str_0x94b8ae:
-    .string "Ich bin ein Priester des\nhimmlischen Volkes.\pWir sind eine traditionsreiche\nNation, musst du wissen.\pWir beherrschen die geheime Kunst\ndes Wolkenwebens.\pMenschen können auf gewobenen\nWolken in die Lüfte steigen und\lfliegen.\p... ...\pDu willst eine gewobene Wolke\nbesitzen?\pTut mir leid, aber ich kann dir\nnicht ohne Weiteres etwas\lderartiges nicht überlassen."
-        
+	.autostring 35 2 "Hallo, junger Trainer!\pIch bin ein Priester der Wolken.\pWir haben eine traditionsreiche Kultur, musst du wissen.\pAußerdem beherrschen wir die Kunst des Wolkenwebens.\pMenschen können auf gewobenen Wolken schweben.\pDOTS DOTS DOTS\pLeider kann ich dir so eine Wolke nicht einfach überlassen.\pNur, wer sich durch Hingabe als würdig erweist, erhält das Privileg, auf einer gewobenen Wolke zu fliegen."
         
 .global str_0x949ddc
 
 str_0x949ddc:
-    .string "Allerdings...\n...\pWeißt du, Professor Tann, ein\nArchäologe hat ein wertvolles\lArtefakt unseres Volkes entdeckt.\pAnstatt es uns aber zu geben, hat\ner es dem Museum von Orina City\lübergeben.\pWenn du uns dieses Artefakt\nwiederbeschaffst...\pHast du deine Treue gegenüber dem\nhimmlischen Volk bewiesen und ich\lwerde dir eine gewobene Wolke\lvermachen."
+	.autostring 35 2 "Allerdings DOTS DOTS DOTS\pIch könnte eine Ausnahme machen, vorausgesetzt, du bist bereit, eine Gegenleistung zu erbringen.\pDer Archäologe Professor Tann hat vor einier Zeit ein Artefakt entdeckt, das eigentlich unsere Kultur hätte zugestanden.\pStattdessen aber hat man es in das Orina City Museum gebracht.\pWenn du uns das Wolkenherz aus dem Museum beschaffen kannst, werde ich dir im Gegenzug eine Wolke weben."
+
         
         
 .global str_0x94c615
 
 str_0x94c615:
-    .string "Oh? Du hast das Wolkenherz\ntatsächlich mitgebracht?\pIch muss mich vielmals bei dir\nbedanken, du bist ein Held.\pNun kann ich dir die gewobene\nWolke mit gutem Herzen\lüberreichen."
+	.autostring 35 2 "Oh? Du hast es tatsächlich dabei, das Wolkenherz?\pIch muss mich bei dir bedanken, du hast unserer Kultur einen großen Gefallen erwiesen.\pIch kann dir nun guten Gewissens eine Wolke weben."
         
         
 .global str_0x94bc55
@@ -229,56 +283,55 @@ str_0x94bc55:
 .global str_0x94ba96
 
 str_0x94ba96:
-    .string "Das Wolkenherz ist ein heiliges\nRelikt, das von Rechtswegen her\ldem Volk der Wolkenmenschen\lgehören muss.\pDie gewobene Wolke ist als\nBelohnung nur fair."
-        
-        
+	.autostring 35 2 "Das Wolkenherz ist ein uraltes Relikt, das schon viele Generationen vor uns in Ehren gehalten haben.\pEs gehört den Wolkenmenschen und sollte nicht in einem Museum ausgestellt werden."
+
 .global str_0x94c596
 
 str_0x94c596:
-    .string "Du kannst auf einer gewobenen\nWolke auch reiten, als wäre sie\lein Fahrad oder ein Skateboard."
+    .autostring 35 2 "Du kannst auf einer Wolke wie auf einem Fahrad die Landschaft schneller erkunden."
         
         
 .global str_0x94ba21
 
 str_0x94ba21:
-    .string "Wenn du am Boden den Schatten\neiner tieffliegenden Wolke siehst,\lkannst du auf deiner gewobenen\lWolke emporsteigen."
+    .autostring 35 2 "Wenn du am Boden den Schatten einer tiefliegenden Wolke erkennst, kannst du auf deiner gewobenen Wolke in den Himmel emporsteigen."
         
         
 .global str_0x94be36
 
 str_0x94be36:
-    .string "Was ist das?\nEs hört sich an wie Ruf eines\lAltarias!"
+    .autostring 35 2 "Wie, was ist das?\pDer Ruf eines Altarias?"
         
         
 .global str_0x94bdbf
 
 str_0x94bdbf:
-    .string "Das ist... das ist ...\nEin goldenes Altaria!\lDass ich das mit meinen eigenen\lAugen bewundern darf!"
+    .autostring 35 2 "Ist das ein goldenes Altaria?\pSo etwas habe ich noch nie gesehen!"
         
         
 .global str_0x94bd31
 
 str_0x94bd31:
-    .string "Es ... es will dir etwas sagen!\nDas goldene Altaria spricht mit\ldir...\pIch werde es übersetzten, ich kann\ndie Sprache der Wolken verstehen."
+    .autostring 35 2 "Es DOTS DOTS DOTS\nscheint sich bei dir für etwas bedanken zu wollen DOTS"
         
         
 .global str_0x94bc7f
 
 str_0x94bc7f:
-    .string "Das goldene Altaria sagt, du\nhättest sein Ei beschützt, in\leiner Mühle auf Route 3.\pEs will dir seinen Dank\naussprechen und dir...\pEine von ihm selbst gewobene\nWolke schenken!"
+	.autostring 35 2 "Weißt du, warum das Altaria in deiner Schuld steht?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pSo so! Du hast sein Ei beschützt?\pSag das doch gleich!\pJemand, der einem solchen Pokémon selbstlos seine Hilfe geschenkt hat, ist sicherlich würdig, eine gewobene Wolke zu besitzen."
         
         
 .global str_0x94bf95
 
 str_0x94bf95:
-    .string "Das Altaria möchte sich\nverabschieden, es wird wieder in\ldie unendlichen Weiten\ldavongleiten."
+    .autostring 35 2 "Das Altaria verabschiedet sich von dir.\pEs ist ein wirklich rührender Augenblick!"
         
         
 .global str_0x94bb88
 
 str_0x94bb88:
-    .string "Du bist ein wahrer Glückspliz.\nNur wenige Menschen besitzen eine\lgewobene Wolke und noch weniger\leine, die von einem Altaria selbst\lgeschaffen wurde.\pDanke, dass ich diesen Augenblick\nmiterleben durfte!"
-        
+	.autostring 35 2 "Du bist ein wirklich bemerkenswertes Kind.\pDu hast außerordentliches Glück, ein goldenes Altaria mit eigenen Augen zu sehen.\pNicht viele Menschen können das von sich behaupten."
+
         
 .elseif LANG_EN
 

@@ -43,21 +43,19 @@ end
 .global str_0x8ec458
 
 str_0x8ec458:
-    .string "Oh, hallo PLAYER!\nIch habe gerade alle Hände voll zu\ltun. Es heißt, der Anführer der\lRevoultion sei hier gesichtet\lworden.\lDie Revolutionsarmee strebt einen\lSturz der Top Vier an, um eine\lneue Weltordnung der Gerechtigkeit\lzu errichten. Ihre Ideale mögen\lnoch so nobel sein, bedeutet eine\lRevolution doch Krieg und Krieg\lbedeutet, dass die Bevölkerung\lThetos leiden."
-        
+	.autostring 35 2 "PLAYER!\nIch habe alle Hände voll zu tun.\pMan hat Albus, den Anführer der Revolutionsbewegung hier gesichtet.\pDie Revolutionäre sind die wohl gefährlichste Gruppe unserer Zeit.\pWenn es ihnen gelingt, die Regierung zu stürzen, versinkt der Kontinent im Chaos.\pNoch dazu belagert eine Kommandantin dieser Violet Punks den Silvania-Wald.\pDOTS DOTS DOTS\nIch kann mich nicht beiden Problemen gleichzeitig widmen DOTS"
         
 .global str_0x8e8f9d
 
 str_0x8e8f9d:
-    .string "Herr Faun, ich komme aus einem\nanderen Grund. Team Violet\lbelagert den Silvania-Wald und die\lArenaleiterin Mia ist nirgends\laufzufinden."
+    .autostring 35 2 "Ich kann mich ja der Kommandantin von Team Violet annehmen."
         
         
 .global str_0x8e8da8
 
 str_0x8e8da8:
-    .string "Team Violet!? Diese Gruppierung\nsind ebenso Schurken. An ihrer\lSpitze stehen einige,\lambitionierte Männer und Frauen,\ldie der Masse einreden, die Welt\lmüsse gewaltsam unterworfen\lwerden. Sie geben den Mitgliedern\ldas Gefühl von Zugehörigkeit und\lwerben so immer weitere\lGefolgsleute an.\lDieser Bedrohung müssen wir uns\lunbedingt annehmen. Der Champion\lselbst hat verlauten lassen, Team\lViolet höchste Priorität zu\lschenken.\lIch werde nach Mia suchen,\lPLAYER. Wir treffen uns in ihrem Haus,\lin Silvania."
-        
-        
+    .autostring 35 2 "PLAYER!\nIch habe volles Vertrauen in dich, aber ich denke nicht, dass du einem Kommandanten von Team Violet gewachsen bist.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWenn ich es mir recht überlege, sollten wir das mit der Arenaleiterin von Silvania absprechen.\pWir treffen uns in ihrem Haus in Silvania.\pIch zähle auf dich, PLAYER."
+
 .elseif LANG_EN
 
 .endif

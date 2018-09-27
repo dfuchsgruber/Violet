@@ -138,19 +138,19 @@ str_0x89ba97:
 .global str_0x947c6c
 
 str_0x947c6c:
-    .string "PLAYER, du Schlafmütze!\pDie Prüfung beginnt gleich\nund du bist noch gar nicht\lrichtig aus den Federn gekommen!\pWenn wir zu spät\nkommen, wird uns Faun eine\lordentliche Standpauke halten und\lwir wissen ja, wie er sein kann...\pAlso los! Komm in die Gänge!\pIch gebe dir eine halbe Minute!"
+    .string "PLAYER, du Schlafmütze!\pDie Prüfung beginnt gleich\nund du bist noch gar nicht\lrichtig aus den Federn gekommen!\pWenn wir zu spät\nkommen, wird uns Faun eine\lordentliche Standpauke halten und\lwir wissen ja, wie er sein kannDOTS\pAlso los! Komm in die Gänge!\pIch gebe dir eine halbe Minute!"
         
         
 .global str_0x89ad96
 
 str_0x89ad96:
-    .string "Was für ein Auftritt..."
+    .string "Was für ein AuftrittDOTS"
         
         
 .global str_0x89ad05
 
 str_0x89ad05:
-    .string "RIVAL hatte schon immer etwas von\neinem Hitzkopf an sich...\pDu solltest ihn lieber nicht\nwarten lassen, befürchte ich.\pUnd natürlich viel\nGlück bei deiner Prüfung, Liebling!"
+    .string "RIVAL hatte schon immer etwas von\neinem Hitzkopf an sichDOTS\pDu solltest ihn lieber nicht\nwarten lassen, befürchte ich.\pUnd natürlich viel\nGlück bei deiner Prüfung, Liebling!"
         
         
 .elseif LANG_EN

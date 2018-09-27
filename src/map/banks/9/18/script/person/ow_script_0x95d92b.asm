@@ -13,7 +13,7 @@ end
 .global str_0x95d935
 
 str_0x95d935:
-    .string "Wir dicken Leute haben nicht viele\nFreunde, musst du wissen.\pBloß die kleinen Kinder verachten\nuns nicht wegen unserer Figur..."
+    .string "Wir dicken Leute haben nicht viele\nFreunde, musst du wissen.\pBloß die kleinen Kinder verachten\nuns nicht wegen unserer FigurDOTS"
         
         
 .elseif LANG_EN

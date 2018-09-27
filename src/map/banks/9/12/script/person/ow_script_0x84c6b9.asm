@@ -13,7 +13,7 @@ end
 .global str_0x84c6c3
 
 str_0x84c6c3:
-    .string "Zzz... Schnarch ...\nGraaäh... Zzz... Zzz..."
+    .string "ZzzDOTS Schnarch DOTS\nGraaähDOTS ZzzDOTS ZzzDOTS"
         
         
 .elseif LANG_EN

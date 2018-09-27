@@ -2,18 +2,15 @@
 #include "constants/items.h"
 #include "battle/battler.h"
 #include "battle/attack.h"
+#include "battle/state.h"
 #include "battle/weather.h"
 #include "battle/battlescript.h"
 #include "constants/abilities.h"
 #include "constants/battle_weathers.h"
 #include "debug.h"
 #include "abilities.h"
-
-extern u8 bsc_recoil[];
-extern u8 bsc_heal[];
-extern u8 bsc_tollwut[];
-extern u8 bsc_tollwut_attack_boost[];
-extern u8 bsc_lucid[];
+#include "prng.h"
+#include "constants/items.h"
 
 void turn_end_apply_recoil_dmg(battler *target){
     int dmg = target->max_hp / 8;
@@ -26,8 +23,10 @@ bool turn_end(u8 ability, battler *target){
     int weather_negating_ability_present = ability_execute(0x13, 0,
             WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
             0);
-    dprintf("Turn end abilties triggered, ability %d, wnegpres %d\n", ability,
-            weather_negating_ability_present);
+    dprintf("Turn end abilties triggered, ability %d, weather negated %d, attacking battler %d, "
+    		"consumed item %d\n",
+    		ability, weather_negating_ability_present,
+			attacking_battler, battle_state->items_consumed[attacking_battler]);
     if(ability == SOLARKRAFT && (battle_weather & BATTLE_WEATHER_SUN) &&
             !weather_negating_ability_present){
         dprintf("Solarkraft triggered\n");
@@ -61,6 +60,15 @@ bool turn_end(u8 ability, battler *target){
             target->stat_changes[4] < 12){
         battlescript_init_and_interrupt_battle(bsc_lucid);
         return true;
+    } else if (ability == REICHE_ERNTE && (
+    		(rnd16() & 1) ||
+    		((battle_weather & BATTLE_WEATHER_SUN) && !weather_negating_ability_present)) &&
+    		battle_state->items_consumed[attacking_battler] >= ITEM_AMRENABEERE &&
+			battle_state->items_consumed[attacking_battler] <= ITEM_ENIGMABEERE
+    		){
+    	// Recycle the item
+    	battlescript_init_and_interrupt_battle(bsc_harvest);
+    	return true;
     }
     return false;
 }

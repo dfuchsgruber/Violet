@@ -44,6 +44,7 @@ addvar STORY_PROGRESS 0x1
 setvar 0x8004 0x4
 special 0x19
 waitstate
+pause 64
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x94d69f
 callstd MSG
@@ -124,55 +125,53 @@ end
 .global str_0x94d6db
 
 str_0x94d6db:
-    .string "Ist das erneut eine Vision?\n... ... ...\pDoch was ist das für ein dunkler,\nbeängstigender Ort?\pEs wirkt so, als hätten violette\nKristalle die Welt verschlungen..."
+	.autostring 35 2 "Ist das\nDOTS DOTS DOTS\pDOTS wieder eine Vision?\pAber was ist das für ein beängstigender Ort?\pDas alles hier kommt mir überhaupt nicht bekannt vor DOTS"
         
         
 .global str_0x94d69f
 
 str_0x94d69f:
-    .string "Ein trister, lebloser Ort...\nWas hat das nur zu bedeuten?"
+    .autostring 35 2 "Überall ist Dunkelheit DOTS"
         
         
 .global str_0x94d65f
 
 str_0x94d65f:
-    .string "Sind das etwa Faun und Larissa?\nWarum sind sie an diesem Ort?"
+    .autostring 35 2 "Sind das etwa Faun und Larissa?\pWarum sind sie an diesem Ort?"
         
         
 .global str_0x94d5ec
 
 str_0x94d5ec:
-    .string "Faun, ich bin froh, Euch\nhier zu treffen.\pIch hatte fast befürchtet, Ihr\nwürdet nicht kommen."
+    .autostring 35 2 "Faun, ich bin froh, Sie hier zu treffen.\pIch hatte schon Angst, dass niemand auftauchen würde DOTS"
         
         
 .global str_0x94d4e4
 
 str_0x94d4e4:
-    .string "Ach Mädchen, ich hätte genug\nGrund gehabt, dich wie die anderen\lzu versetzten.\pAber trotz allem, was passiert\nist, bleibe ich noch immer ein\lMitglied der Top Vier.\pAuch wenn von der Welt, die ich\ngeschworen habe zu beschützen,\lnicht mehr viel übrig ist..."
-        
+    .autostring 35 2 "Ich fürchte, dass die anderen Mitglieder der Top Vier inzwischen nicht mehr am Leben sind.\pVielleicht wollen sie sich auch nicht der Gefahr ausetzten, entdeckt zu werden DOTS\pWer weiß DOTS DOTS DOTS"
         
 .global str_0x94d210
 
 str_0x94d210:
-    .string "Ich bedaure zutiefst, was\npassiert ist, und ich gebe zu,\ldass es hätte verhindert werden\lkönnen.\pDoch es war unmöglich, die\nEreignisse zu antizpieren, die\lunsere Welt in diese finstere\lSphäre gestürzt haben..."
-        
+	.autostring 35 2 "Bedauernswert.\nAber wir haben nicht viel Zeit.\pWenn wir diese Katastrophe doch einfach nur verhindert hätten!\pAber wer hätte ahnen können, dass wir uns einmal in dieser aussichtslosen Lage befinden?"
+
         
 .global str_0x94d09a
 
 str_0x94d09a:
-    .string "Das ist nicht länger von\nBedeutung. Was zählt, ist die\lTatsache, dass wir noch immer\lleben.\pDiese Welt mag verloren sein, aber\nwir werden unsere Hoffnung nicht\lverlieren.\pUnsere Freunde und Familien haben\nnicht umsonst ihr Leben gelassen.\pLarissa, es gilt nun, dich zu\nbeweisen. Wir werden uns nicht\lalles nehmen lassen."
-        
-        
+	.autostring 35 2 "Wir haben die Bedrohung durch Team Violet wohl massiv unterschätzt.\pDas schließt mich natürlich ein.\pVielleicht ist unsere Welt wirklich bereits verloren DOTS\pUnd diese dunkle Sphäre ist die Zukunft Thetos DOTS\pAber solange auch nur ein Mensch noch am Leben ist, müssen wir kämpfen.\pLarissa!\nVergiss nicht, wer du bist!\pWenn uns jemand anführen soll, musst du diese Person sein!"
+
 .global str_0x94c54b
 
 str_0x94c54b:
-    .string "Unmöglich!\nSie haben uns gefunden!"
+    .autostring 35 2 "Unmöglich!\nSie haben uns gefunden!"
         
         
 .global str_0x94c524
 
 str_0x94c524:
-    .string "Das ist unser Ende..."
+    .autostring 35 2 "Das ist unser EndeDOTS"
         
         
 .elseif LANG_EN

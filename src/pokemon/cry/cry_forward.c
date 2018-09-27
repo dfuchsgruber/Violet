@@ -1112,10 +1112,10 @@ pokemon_cry pokemon_cries_forward [POKEMON_CNT] = {
         {0x20, 0x3c, 0x0, 0x0}
 , (void*) 0x85f2c48, {
             0xff, 0x0, 0xff, 0x0}},
-    // POKEMON_CORASONN
+    // POKEMON_MAMPFAXO
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x85f393c, {
+, cry_446, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_REMORAID
     {
@@ -1195,7 +1195,7 @@ pokemon_cry pokemon_cries_forward [POKEMON_CNT] = {
     // POKEMON_KUSSILLA
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x8603c08, {
+, cry_780, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_ELEKID
     {
@@ -1630,7 +1630,7 @@ pokemon_cry pokemon_cries_forward [POKEMON_CNT] = {
     // POKEMON_LIEBISKUS
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x8681528, {
+, cry_464, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_KREBSCORPS
     {
@@ -1805,7 +1805,7 @@ pokemon_cry pokemon_cries_forward [POKEMON_CNT] = {
     // POKEMON_ISSO
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x8618470, {
+, cry_433, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_ZWIRRLICHT
     {
@@ -1935,12 +1935,12 @@ pokemon_cry pokemon_cries_forward [POKEMON_CNT] = {
     // POKEMON_VOLBEAT
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x8676b00, {
+, cry_440, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_ILLUMISE
     {
         {0x20, 0x3c, 0x0, 0x0}
-, (void*) 0x8677688, {
+, cry_438, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_LILIEP
     {

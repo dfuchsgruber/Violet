@@ -14,7 +14,7 @@ end
 .global str_0x937767
 
 str_0x937767:
-    .string "Der Fang in einer Höhle könnte\ndurchaus besser sein...\lOb ich am Fluss mehr Glück habe?"
+    .string "Der Fang in einer Höhle könnte\ndurchaus besser seinDOTS\lOb ich am Fluss mehr Glück habe?"
         
         
 .global str_0x9377c1

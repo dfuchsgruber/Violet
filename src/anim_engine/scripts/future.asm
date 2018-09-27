@@ -47,15 +47,15 @@ frame 34
     endframe
 
 
-frame 34+128
+frame 34+248
     fadescreen 0 0 512 32 0 16
     endframe
 
-frame 66+128
+frame 66+248
     force_pals_to_black
     endframe
 
-frame 67+128
+frame 67+248
     mapreload
     script_notify
     end

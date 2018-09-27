@@ -440,13 +440,13 @@ str_may_picks:
 	.autostring 36 2 "Nun denn, Maike, zuletzt bist du an der Reihe."
 
 str_may_disappointed:
-	.autostring 36 2 "Dass auch ausgerechnet ich das letzte Pokémon bekommen muss..."
+	.autostring 36 2 "Dass auch ausgerechnet ich das letzte Pokémon bekommen mussDOTS"
 
 str_may_received_pkmn:
 	.autostring 36 2 "Ich hoffe, dass du mit deinem Pokemon zufrieden bist."
 
 str_may_dots:
-	.autostring 36 2 "...\nSicher, Herr Faun!"
+	.autostring 36 2 "DOTS\nSicher, Herr Faun!"
 
 str_to_tall_grass:
 	.autostring 36 2 "Dann hätten wir das erledigt!\pBeginnen wir mit dem ersten Feldtest. Folgt mir zum hohen Gras."
@@ -470,10 +470,10 @@ str_faun_angry_at_blaise:
 	.autostring 36 2 "Dieser verdammte Bengel! Devin wird außer sich sein!"
 
 str_continue_with_field_test:
-	.autostring 36 2 "... ...\nSein Vater wird dem Jungen schon noch Vernunft beibringen.\pLassen wir uns aber von diesem Vorfall nicht irritieren.\pFelix, dann beginnst du eben die Prüfung."
+	.autostring 36 2 "DOTS DOTS\nSein Vater wird dem Jungen schon noch Vernunft beibringen.\pLassen wir uns aber von diesem Vorfall nicht irritieren.\pFelix, dann beginnst du eben die Prüfung."
 
 str_felix_starts_test:
-	.autostring 36 2 "Jawohl, Opi -\nÄhm... Herr Faun!"
+	.autostring 36 2 "Jawohl, Opi -\nÄhmDOTS Herr Faun!"
 
 str_hand_felix_balls:
 	.autostring 36 2 "Du erhältst von mir fünf Pokébälle.\pVersuche, das Pokémon mit ihnen einzufangen."
@@ -506,7 +506,7 @@ str_rival_results:
 	.autostring 36 2 "Diese Spannung ist ja kaum auszuhalten!"
 
 str_results_rival:
-	.autostring 36 2 "Im schriftlichen Test hast du keine einzige Frage richtig beantwortet...\pDafür warst du ein echtes Naturtalent im Umgang mit Pokémon.\pWeder Kämpfen noch Fangen haben dir Schwierigkeiten bereitet.\pWeil du dein kümmerliches Wissen offenbar recht gut mit Fertigkeiten ausgleichen kannst, bin ich gewillt, auch dir zu gratulieren.\pAuch du darfst dich reinsten Gewissens einen Trainer nennen!"
+	.autostring 36 2 "Im schriftlichen Test hast du keine einzige Frage richtig beantwortetDOTS\pDafür warst du ein echtes Naturtalent im Umgang mit Pokémon.\pWeder Kämpfen noch Fangen haben dir Schwierigkeiten bereitet.\pWeil du dein kümmerliches Wissen offenbar recht gut mit Fertigkeiten ausgleichen kannst, bin ich gewillt, auch dir zu gratulieren.\pAuch du darfst dich reinsten Gewissens einen Trainer nennen!"
 
 str_rival_glad:
 	.autostring 36 2 "Alles andere hätte mich auch überrascht!\pDanke, Herr Faun!"
@@ -521,7 +521,7 @@ str_results_may:
 	.autostring 36 2 "Nun gut.\nIm schriftlichen Test hast du immerhin drei Antworten richtig beantworten können.\pIm Feldtest hast du dich nicht schlecht geschlagen, aber du bist nicht besonders sicher im Umgang mit Pokémon.\pMaike! Wenn du als Trainer bestehen willst, musst du Vertrauen in dich und deine Pokémon finden."
 
 str_may_understands:
-	.autostring 36 2 "I-Ich verstehe, Herr Faun...\pEs t-tut mir leid."
+	.autostring 36 2 "I-Ich verstehe, Herr FaunDOTS\pEs t-tut mir leid."
 
 str_results_may2:
 	.autostring 36 2 "Ich bin aber überzeugt, dass du das Zeug hast, ein erfolgreicher Pokémon-Trainer zu sein.\pImmerhin warst du meine Schülerin.\pDaher darf ich auch dir gratulieren, du hast deine Prüfungen bestanden!"
@@ -530,7 +530,7 @@ str_may_glad:
 	.autostring 36 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich zu meinem Freund aus Hoenn aufholen können!"
 
 str_final_talk:
-	.autostring 36 2 "Hach! Wie die Zeit an einem vorbeifliegt!\pFür mich seid ihr noch immer die kleinen Rotzlöffel, die leichtsinnig ins hohe Gras gerannt wären, hätte man sie nicht davon abgehalten.\pAber nun...\nSeid ihr zu fähigen Trainern herangewachsen.\pIch könnte nicht zufriedener mit euch sein. Allerdings ist dies erst der Anfang, ihr Bälger!\pWenn ihr diese Schule heute verlasst, werdet ihr auf euch allein gestellt sein.\pWobei auch das nicht ganz zutrifft, denn ihr habt nun eure Pokémon als Partner an eurer Seite.\pWisst diesen besonderen Bund zwischen Trainer und Pokémon zu schätzen, Kinder!\pIch bin überzeugt, dass ihr es weit bringen könnt.\pMacht mich stolz, euer Lehrer gewesen zu sein!\pIn diesem Sinne, viel Erfolg auf eurer Reise, Kinder!"
+	.autostring 36 2 "Hach! Wie die Zeit an einem vorbeifliegt!\pFür mich seid ihr noch immer die kleinen Rotzlöffel, die leichtsinnig ins hohe Gras gerannt wären, hätte man sie nicht davon abgehalten.\pAber nunDOTS\nSeid ihr zu fähigen Trainern herangewachsen.\pIch könnte nicht zufriedener mit euch sein. Allerdings ist dies erst der Anfang, ihr Bälger!\pWenn ihr diese Schule heute verlasst, werdet ihr auf euch allein gestellt sein.\pWobei auch das nicht ganz zutrifft, denn ihr habt nun eure Pokémon als Partner an eurer Seite.\pWisst diesen besonderen Bund zwischen Trainer und Pokémon zu schätzen, Kinder!\pIch bin überzeugt, dass ihr es weit bringen könnt.\pMacht mich stolz, euer Lehrer gewesen zu sein!\pIn diesem Sinne, viel Erfolg auf eurer Reise, Kinder!"
 
 .elseif LANG_EN
 

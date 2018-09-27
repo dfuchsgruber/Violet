@@ -13,7 +13,7 @@ end
 .global str_0x926e0c
 
 str_0x926e0c:
-    .string "Ich vermisse die alten Zeiten...\pVor den Top Vier...\pAls die Welt noch voller Abenteuer\nwar...\pJetzt bleibt mir noch das Rauschen\nder Wasserfälle...\pUnd die Erinnerungen..."
+    .string "Ich vermisse die alten ZeitenDOTS\pVor den Top VierDOTS\pAls die Welt noch voller Abenteuer\nwarDOTS\pJetzt bleibt mir noch das Rauschen\nder WasserfälleDOTS\pUnd die ErinnerungenDOTS"
         
         
 .elseif LANG_EN

@@ -13,7 +13,7 @@ end
 .global str_0x8e6508
 
 str_0x8e6508:
-    .string "Südlich von hier liegt Ceometria,\ndie Insel der Toten.\pWann immer ein Trainer einen\nVerlust betrauern muss, besucht er\ldiesen Ort..."
+    .string "Südlich von hier liegt Ceometria,\ndie Insel der Toten.\pWann immer ein Trainer einen\nVerlust betrauern muss, besucht er\ldiesen OrtDOTS"
         
         
 .elseif LANG_EN

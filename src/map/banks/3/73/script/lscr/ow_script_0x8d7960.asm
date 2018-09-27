@@ -95,23 +95,17 @@ call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d79fe
 callstd MSG
 special 0x7
-fadescreen 0x1
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
-goto ow_script_0x8d7bed
 
 
-.global ow_script_0x8d7bed
-ow_script_0x8d7bed:
 setvar STORY_PROGRESS 0x14
 setvar 0x8004 0x10
 special 0x19
 waitstate
 clearflag TRANS_DISABLE
-setvar STORY_PROGRESS 0x14
-special 0xb
+
 lockall
-fadescreen 0x0
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d7bbb
 callstd MSG
@@ -147,6 +141,9 @@ cry POKEMON_DEOXYS 0x0
 waitcry
 call ow_script_0x8d7a10
 sound 0x50
+// Execute one proper fadescreen in order to flood pal_restore with correct shaders
+// after anim engine with sepia effect and the modified fadescreen system this is needed tho
+fadescreen 0x3
 fadescreen 0x2
 checksound
 sound 0x50
@@ -285,19 +282,7 @@ special 0x7
 goto ow_script_0x8d9328
 
 
-.global ow_script_0x8d9328
-ow_script_0x8d9328:
-goto ow_script_0x8e09b9
 
-
-.global ow_script_0x8e09b9
-ow_script_0x8e09b9:
-special 0x114
-setvar 0x8004 0x11
-special 0x19
-waitstate
-showsprite 0x13
-goto ow_script_0x8dbff9
 
 
 .global ow_script_movs_0x8dc3fb
@@ -320,9 +305,13 @@ ow_script_movs_0x8dc3fb:
 .byte STEP_DOWN_FAST
 .byte STOP
 
-
-.global ow_script_0x8dbff9
-ow_script_0x8dbff9:
+.global ow_script_0x8d9328
+ow_script_0x8d9328:
+special 0x114
+setvar 0x8004 0x11
+special 0x19
+waitstate
+showsprite 0x13
 clearflag PKMNMENU
 setweather 0x5
 doweather
@@ -336,6 +325,7 @@ special 0x113
 applymovement 0x7f ow_script_movs_0x8dc3fb
 waitmovement 0x0
 sound 0x50
+fadescreen 0x3 // Force one "proper" fadescreen to copy the pal to pal_restore as well
 fadescreen 0x2
 call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8dc39d
@@ -439,12 +429,6 @@ setvar 0x8004 0x12
 special 0x19
 waitstate
 clearflag TRANS_DISABLE
-
-goto ow_script_0x8e1aa9
-
-
-.global ow_script_0x8e1aa9
-ow_script_0x8e1aa9:
 pause 0x1
 cry POKEMON_DEOXYS 0x0
 call ow_script_0x8d7a10
@@ -459,11 +443,6 @@ waitcry
 fadescreen 0x1
 //callasm 0x919d791
 writebytetooffset 0x0 0x2036e28
-goto ow_script_0x92df2f
-
-
-.global ow_script_0x92df2f
-ow_script_0x92df2f:
 setflag AKTANIA_FLASHBACK_DONE
 warpmuted 0xf 0x0 0xff 0x2e 0x2c
 end
@@ -504,103 +483,100 @@ return
 .global str_0x8d79cd
 
 str_0x8d79cd:
-    .string "... Was sind das für Bilder, die\nich sehe? ..."
+	.autostring 36 2 "DOTS DOTS DOTS\pWas geschieht hier?\pIch sehe diese Bilder vor meinem inneren Auge, aber die Vision ist klar und deutlich DOTS"
         
         
 .global str_0x8d79fe
 
 str_0x8d79fe:
-    .string "Ein Erdbeben?!?"
+    .autostring 36 2 "War das ein Erdbeben?"
         
         
 .global str_0x8d7bbb
 
 str_0x8d7bbb:
-    .string "Ein Meteorit?!?\pWas hat das zu bedeuten?"
+    .autostring 36 2 "Da ist wieder dieser Meteorit und das Wesen, das sich auf ihm befunden hat DOTS"
         
         
 .global str_0x8d7b5b
 
 str_0x8d7b5b:
-    .string "Was ist das für ein Pokémon?\pIst es etwa mit dem Meteor hierher\ngekommen?"
+    .autostring 36 2 "Ist diese Wesen ein DOTS\pDOTS DOTS DOTS\pDOTS Pokémon?"
         
         
 .global str_0x8d7ae9
 
 str_0x8d7ae9:
-    .string "Oh nein! Es scheint, als würde es\nangreifen wollen!"
+    .autostring 36 2 "Es wirkt aggressiv DOTS"
         
         
 .global str_0x8d7ed8
 
 str_0x8d7ed8:
-    .string "All die Menschen! Sie sind\nverschwunden!\lDieses Monster ... es zerstört\ldiese Stadt!"
+    .autostring 36 2 "Die Menschen!\pSie sind alle verschwunden!\pDOTS DOTS DOTS\pIst dieses Pokémon dafür verantwortlich?"
         
         
 .global str_0x8d7eab
 
 str_0x8d7eab:
-    .string "Es läuft Amok! Es muss aufgehalten\nwerden!"
+    .autostring 36 2 "Dieses Pokémon muss aufgehalten werden!"
         
         
 .global str_0x8d7e03
 
 str_0x8d7e03:
-    .string "Diese Stadt...\pKann es sein? ...\pIst das hier Aktanias Zerstörung\nin der Vergangenheit?"
+	.autostring 36 2 "Und diese Stadt DOTS\pSie sieht aus, wie DOTS\pDOTS DOTS DOTS\pDOTS wie Aktania!"
         
         
 .global str_0x8d8100
 
 str_0x8d8100:
-    .string "Der Tempel!..."
+    .autostring 36 2 "Und das ist der Tempel!\pDas hier ist tatsächlich Aktania!"
         
         
 .global str_0x8d80ca
 
 str_0x8d80ca:
-    .string "Das ist doch ...\n... ...\pLester! Das ist Lester!"
-        
-        
+    .autostring 36 2 "Und auch Lester scheint im Tempel zu sein DOTS"
+
 .global str_0x8d803f
 
 str_0x8d803f:
-    .string "Stopp diesen Wahnsinn, du Monster!\pIch, als Arenaleiter dieser\nantiken Stadt, werde es dir nicht\lgewähren, noch mehr Unheil\lanzurichten!"
-        
+	.autostring 36 2 "Was um alles in der Welt geht hier vor sich?\pWas ist das für ein Ding?"
         
 .global str_0x8d7fa0
 
 str_0x8d7fa0:
-    .string "Ihr Wächter Aktanias, ihr Monster\nder Antike, ihr Wächtergolems!\lIch beschwöre euch, tut eure\lPflicht, schützt diesen heiligen\lOrt, vertreibt den Angreifer!"
-        
+	.autostring 36 2 "Ich werde dir nicht erlauben, die Stadt, die bereits viele Generationen vor mir beschützt haben, zu zerstören!\pIch werde dir die antiken Kräfte, über die ich wache, entgegensetzen!\pDOTS DOTS DOTS\pIch beschwöre die Wächter Aktanias!"
         
 .global str_0x8dc40d
 
 str_0x8dc40d:
-    .string "Was geht hier vor?"
+    .autostring 36 2 "DOTS Was geht hier vor? DOTS"
         
         
 .global str_0x8dc39d
 
 str_0x8dc39d:
-    .string "Wächter der Felsen, Golem der\nSteine!\pZeig dich, du mächtiges Ungetüm\nder Antike! Regirock!"
+	.autostring 36 2 "Wächter des Gesteins, ich rufe dich herbei!\pLeihe mir deine Kraft, Regirock!"
         
         
 .global str_0x8dc346
 
 str_0x8dc346:
-    .string "Bringer der Eiszeit, Wächter der\nGletscher!\pZeige dich, du uraltes Geschöpf!\nRegice!"
+	.autostring 36 2 "Zeige dich, Wächter des ewigen Eises!\pLeihe mir deine Kraft, Regice!"
         
         
 .global str_0x8dc2ea
 
 str_0x8dc2ea:
-    .string "Hülle der Unzerstörbarkeit, ewige\nLegierung!\lIch beschwöre dich, Wächtergolem!\lRegisteel!"
+    .autostring 36 2 "Ich beschwöre dich, unverwüstliches Metall!\pLehe mir deine Kraft, Registeel!"
         
         
 .global str_0x8e195c
 
 str_0x8e195c:
-    .string "Verteidigt diesen heiligen Ort,\nvernichtet den Angreifer!"
+    .autostring 36 2 "Ihr drei Wächter dieser Stadt, die ihr schon Jahrhundertelang diesen Ort beschützt habt!\pErfüllt eure Pflicht und vertreibt den Angreifer!"
         
         
 .elseif LANG_EN

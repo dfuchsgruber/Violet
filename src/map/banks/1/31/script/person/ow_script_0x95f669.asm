@@ -20,7 +20,7 @@ str_0x95f681:
 .global str_0x95f6f4
 
 str_0x95f6f4:
-    .string "Deine Herausforderung ist wohl das\nEnde meiner Wanderschaft..."
+    .string "Deine Herausforderung ist wohl das\nEnde meiner WanderschaftDOTS"
         
         
 .elseif LANG_EN

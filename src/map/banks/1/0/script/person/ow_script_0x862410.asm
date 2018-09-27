@@ -13,7 +13,7 @@ end
 .global str_0x8f384c
 
 str_0x8f384c:
-    .string "Vor einiger Zeit gab es großen\nAufruhr in Theto, als ein junges\lTrainertalent den Champion\lentthront hat.\lNiemand weiß so recht, wo der\lbesiegte Champion geblieben ist..."
+    .string "Vor einiger Zeit gab es großen\nAufruhr in Theto, als ein junges\lTrainertalent den Champion\lentthront hat.\lNiemand weiß so recht, wo der\lbesiegte Champion geblieben istDOTS"
         
         
 .elseif LANG_EN

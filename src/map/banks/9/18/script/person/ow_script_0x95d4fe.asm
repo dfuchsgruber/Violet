@@ -128,7 +128,7 @@ str_0x95d5a7:
 .global str_0x95d659
 
 str_0x95d659:
-    .string "Hmm...\nEs sieht so aus, als könnte sich\ldieses Pokémon an keine Attacke\lerinnern..."
+    .string "HmmDOTS\nEs sieht so aus, als könnte sich\ldieses Pokémon an keine Attacke\lerinnernDOTS"
         
         
 .global str_0x95d6ba

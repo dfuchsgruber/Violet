@@ -178,115 +178,108 @@ ow_moves_0x96ef91:
 .global str_0x971e16
 
 str_0x971e16:
-	.string "Mistral: Was um alles in der Welt?\n... ... ...\pWas ist geschehen?\nWo bin ich hier?"
+	.autostring 35 2 "Was um alles in der Welt?"
 
 
 .global str_0x971d73
 
 str_0x971d73:
-	.string "???: PLAYER, Mistral.\nEndlich begegne ich euch."
+	.autostring 35 2 "Mistral, PLAYER!\pEs wurde Zeit, dass wir einander begegnen."
 
 
 .global str_0x971d60
 
 str_0x971d60:
-	.string "PLAYER: Wer bist du?"
+	.autostring 35 2 "Wer bist du?"
 
 
 .global str_0x971c82
 
 str_0x971c82:
-	.string "???: Verzeiht bitte, dass ich es\nversäumt habe, mich vorzustellen.\lMein Name ist Rubys, und ich bin\lder Retter eurer Leben.\pDer Ausbruch des Vulcanos und der\nAmoklauf des legendären Pokémons\lGroudon wurde verhindert."
-
+	.autostring 35 2 "Mein Name ist Rubys.\pIch habe das antike Pokémon Groudon beruhigt und den Ausbruch des Volcanos verhindert.\pFolglich DOTS\nDOTS verdankt ihr mir eure Leben."
 
 .global str_0x971c05
 
 str_0x971c05:
-	.string "Mistral: Ich verstehe es nicht.\nHast du das getan?\lIst es dein Werk, dass wir am\lLeben sind?\lHast du uns hierher gebracht?"
+	.autostring 35 2 "Unsinn!\pKein Mensch ist zu so etwas in der Lage!\pWo um alles in der Welt sind wir hier?"
 
 
 .global str_0x953d08
 
 str_0x953d08:
-	.string "Rubys: Das ist korrekt.\nIch habe euch beide bereits seit\llangem beobachtet.\pWir befinden uns hier in einer\nDimension, die über der euch\lbekannten Raumzeit liegt.\pDieses Reich trägt den Namen Arc.\nIhr befindet euch in der Festung\lArc Skrim, meiner Residenz.\pDie Arc wird von höherdimensionalen\nWesen wie mir bewohnt, den\lChronen.\pEin Chron besizt ein viel\numfassenderes Verständnis für das\lZeitgefüge als ihr Menschen.\pIch kenne die Zukunft und die\nVergangenheit, der\lGegenwartsbegriff hat für mich\lkeine Bedeutung.\pZeit ist für mich eine Dimension\nwie Höhe oder Breite."
-
+	.autostring 35 2 "Ein Mensch wäre dazu sicherlich nicht im Stande, ja.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWir befinden uns hier an einem Ort jenseits der Welt, die euch bekannt ist.\pDieses Reich trägt den Namen Arc.\pUm genauer zu sein, ihr befindet euch in meiner Festung, der Arc Skrim.\pDie Arc wird von Wesen, die sich Chronen nennen, bewohnt.\pWir Chronen existieren jenseits der Zeit, wie ihr sie kennt.\pFür uns sind Vergangenheit, Gegenwart und Zukunft völlig gehaltlose Begriffe.\pEs ist uns Chronen eigentlich strengstens untersagt, jemals mit eurer Welt zu interagieren DOTS"
 
 .global str_0x9718d8
 
 str_0x9718d8:
-	.string "PLAYER: Entschuldige, dass ich dich\nunterbrechen muss.\pSelbst, wenn das, was du uns\nerzählst, wahr ist...\pWenn du wirklich das gottähnliche\nWesen bist, das du beschreibst...\pWieso hast du uns gerettet?\nWieso hast du den Vulkanausbruch\lverhindert?"
+	.autostring 35 2 "Verstehe ich das richtig?\pDu willst uns Glauben machen, dass du eine Art Gott bist?\pUnd selbst, wenn das der Wahrheit entsprechen sollte DOTS\pWieso hast du all das getan?\pWieso sind Mistral und ich hier?"
 
 
 .global str_0x9717c3
 
 str_0x9717c3:
-	.string "Rubys: Natürlich.\nIch werde versuchen, euch so viel\lwie möglich zu erklären.\lDazu aber muss ich sehr weit\lausholen."
+	.autostring 35 2 "Ihr habt viele Fragen.\pDas ist nur verständlich.\pUm euch meine Motive aber verständlich zu machen, muss ich sehr weit ausholen."
 
 
 .global str_0x971424
 
 str_0x971424:
-	.string "Rubys: Vor Äonen, als das\nUniversum erst wenige\lJahrmillionen alt war, entstand in\lunendlichen Weiten das erste\lLeben.\pBegeistert von der Tragweite des\nEreignisses beschloss ich, ihm\lbeizuwohnen.\pDen Chronen ist es verboten, die\nArc zu verlassen, unsere Aufgabe\ldient der Wahrung einer Zeitlinie,\ldie als geltend deklariert wurde.\pJedes Eingreifen unsererseits\ngefährdet diese perfekte,\lallgemein anerkannte Zeitlinie.\pDoch ich ignorierte jenes\nheiligste Gesetz im Glabuen, dass\lmeine Anwesenheit keinen Einfluss\lauf die Geschichte haben sollte.\pIch irrte.\pMeine Anwesenheit allein kreierte\nwohl einen Ablauf, der schließlich\lin einem Ereignis mündete, das ihr\lals die Katastrophe von Aktania\lkennt.\pMeine Anwesenheit bei der\nEntstehung des ersten Lebens also\lwar es, die den Meteor leztlich\lauf diese Welt schickte und damit\leine Zeitlinie schuf, welche wir\lChronen nicht vorhersehen können.\pNichts ist, wie es sein sollte."
-
+	.autostring 35 2 "Meine Geschichte beginnt vor unvorstellbar vielen Jahren.\pEuer Universum war praktisch erst entstanden und zum ersten Mal überhaupt, würde Leben in der weiten trostlosen Kälte des Alls entstehen.\pBegeistert von diesem Ereignis, setzte ich mich über unsere Gesetze hinweg und betrat eure Welt, um selbst Zeuge dieses Augenblicks zu werden, unwissend, was ich damit in Gang setzten würde.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMit meinem Erscheinen in eurer Welt veränderte ich den Lauf der Dinge, der für euer Universum vorgesehen war.\pIch kann es mir selbst nicht gänzlich erklären DOTS\pDOTS aber indem ich diesem Ereignis beiwohnte, brachte ich dieses erste Leben direkt auf eure Welt.\pMein Engreifen führte schließlich zur Katastrophe von Aktania, als eines der ersten Lebewesen auf einem Meteor in eure Welt gelangte.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAb diesem Zeitpunkt, gerieten die Dinge außer Kontrolle."
 
 .global str_0x96fd7a
 
 str_0x96fd7a:
-	.string "Ich schickte euch beiden Visionen,\ndie sowohl die Vergangenheit als\lauch die Zukunft dieser neuen\lZeitlinie portraitieren sollten.\pIch wollte euch beiden bewusst\nmachen, welche Wichtigkeit euer\lGelingen für diese Zeit hat.\pEure Aufgabe ist es einzig, meine\nFehler zu korrigieren.\pIhr sollt die Zeitlinie zurück in\nihre angedachten Bahnen lenken."
+	.autostring 35 2 "Mehr und mehr entzog sich eure Welt der Kontrolle der Chronen.\pEs enstand eine Zeitlinie, die niemals existieren sollte.\pVergeblich schickte ich euch beiden Visionen, die euch eure Rolle in all dem begreiflich machen sollten.\pIch zeigte euch die Vergangenheit, als die Wesen aus dem All auf euren Planeten kamen.\pIch ließ euch die Zukunft sehen.\pEine Welt, die völlig von Finsternis verschlungen ist DOTS"
 
 
 .global str_0x96fa81
 
 str_0x96fa81:
-	.string "Mistral: Du warst also für diese\nBilder verantwortlich?\lFür die Zerstörung Aktanias und\ldie dunkle Welt der Zukunft?\pWarum ich? Warum PLAYER?"
-
+	.autostring 35 2 "Das heißt, dass du für diese Visionen verantwortlich warst?\pHat PLAYER sie etwa auch erlebt?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAber warum ich?\nWarum PLAYER?"
 
 .global str_0x96f811
 
 str_0x96f811:
-	.string "Rubys: Das ist eine Frage, die ich\nzu beantworten nicht im Stande\lbin.\pDiese Zeitlinie entbehrt jeder\nKontrolle durch mich, ich kann sie\lnicht lenken oder maßgeblich\lbeeinflussen.\pDer Grund dafür ist eure Existenz.\pIhr seid in keiner Zeit\nvorgesehen, in keiner Rechnung\ltaucht euer Name auf.\pIhr seid mir ein Mysterium, nicht\nzuletzt, weil euer Schicksal nicht\lder Kontrolle der Chronen\lunterliegt.\pIhr seid die einzigen Menschen,\ndie wir nicht erschaffen oder\lauslöschen können.\pUnd ich weiß, dass diese Tatsache\neine Bedeutung hat.\pIch weiß, dass unter allen\nMenschen nur ihr in der Lage seid,\ldie Zeitlinie zu richten."
-
+	.autostring 35 2 "Das ist wohl die interessanteste aller Fragen.\pIch kann sie euch leider nicht beantworten.\pIhr beiden seid der Grund, weshalb die Chronen nicht mehr in der Lage sind, die Zeitlinie eurer Welt zu beeinflussen.\pWeil ihr existiert, können wir die Dinge nicht berichtigen."
 
 .global str_0x96f680
 
 str_0x96f680:
-	.string "PLAYER: Mistral und ich..\nWir sind...?"
+	.autostring 35 2 "Mistral und ich sind DOTS DOTS DOTS"
 
 
 .global str_0x96f55c
 
 str_0x96f55c:
-	.string "Rubys: Ich weiß nicht was ihr\nseid.\pWie Licht und Dunkelheit scheint\nihr neue Elemente einer Welt zu\lsein, die nie hätte sein dürfen.\pMistral, PLAYER.\pDer Diserakt muss wieder vereint\nwerden.\pEr muss zurück zu Celebi, dem\nZeitpokémon gebracht werden, wo er\lsicher bis ans Ende der Zeit\llagert."
-
+	.autostring 35 2 "Ich kann euch ehrlich nicht sagen, was ihr seid.\pDeshalb sind die Chronen der Überzeugung, dass wenn man euch aus der Geschichte tilgen würde, die Dinge wieder ins Lot kämen.\pIch allerdings bin anderer Ansicht.\pIch denke nicht, dass euer Tod die Dinge wieder geraderücken kann.\pGanz im Gegenteil.\nIch vermute, dass es an euch liegt, die Zukunft, die eurer Welt droht, zu verhindern.\pHabt ihr das verstanden?\pIhr müsst den Diserakt, den Stein der Zeit, um jeden Preis beschützen.\pWenn er in die falschen Hände gerät, wird eure Welt in eine endlose Dunkelheit gestürzt DOTS"
 
 .global str_0x96f427
 
 str_0x96f427:
-	.string "Mistral: Was kümmert es mich?\nDer Diserakt besitzt die Macht,\leine Waffe zu erschaffen, deren\lZerstörungsausmaß unendlich ist.\pWenn ich so mächtig bin, wie du\nmir glauben machen willst, dann\lwerde ich diese Waffe benutzen,\ldie Welt zu unterwerfen.\pDann hat deine ach so dunkle\nZukunft keine Bedeutung mehr."
+	.autostring 35 2 "Das klingt ja alles höchst interessant.\pAber ich habe keine Lust, Teil irgendeines göttlichen Dramas zu sein.\pMich interessiert nicht, was mit unserer Welt passiert.\pHörst du Rubys?\pDu vernichtest mich lieber an Ort und Stelle.\pWenn du mich zurückschickst DOTS DOTS DOTS\pDOTS werde ich da weitermachen, wo ich aufgehört habe!"
 
 
 .global str_0x96ef94
 
 str_0x96ef94:
-	.string "PLAYER: Das kann nicht dein\nErnst sein?\lWas, wenn deine Waffe genau jene\lZukunft herbeiführt?"
+	.autostring 35 2 "Das kann nicht dein Ernst sein, Mistral!\pHast du denn überhaupt zugehört?\pWir müssen zusammen arbeiten, wenn wir verhindern wollen, dass die Visionen, die Rubys uns geschickt hat, Realität werden!"
 
 
 .global str_0x96edc1
 
 str_0x96edc1:
-	.string "Rubys: Schweigt.\nIch weiß nicht, welche Handlung\lwelche Folgen verursachen.\lIch kann nicht ausschließen, dass\lMistrals Herangehensweise falsch\list.\lIch kann euch nicht helfen.\lIch habe euch gerettet, weil es in\lmeiner Macht stand.\lDoch ich fürchte, dass die anderen\lChronen mir dies künftig\luntersagen werden.\lUnter Umständen wird meine\lExistenz getilgt."
-
+	.autostring 35 2 "Schweigt, alle beide!\pIch bin nicht länger in der Lage, eure Zeitlinie zu verstehen.\pDie Zukunft eurer Welt ist DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS sie ist ungewiss.\pNie zuvor haben wir Chronen uns in einer solchen Lage befunden.\pIhr selbst müsst entscheiden, wie ihr mit der Situation umgehen wollt.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
 
 .global str_0x96ef26
 
 str_0x96ef26:
-	.string "Ich werde euch nun wieder in eure\nWelt zurückschicken."
+	.autostring 35 2 "Ich werde euch nun wieder in eure Welt zurückschicken."
 
 
 .global str_0x96ef5f
 
 str_0x96ef5f:
-	.string "Hoffentlich begegnen wir einander\nnicht wieder."
+	.autostring 35 2 "Hoffentlich werden wir einander nie wieder sehen DOTS"
 
 .elseif LANG_EN
 

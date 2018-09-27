@@ -49,9 +49,6 @@ gotoif EQUAL ow_script_0x8bf102
 compare STARTER_SELECTED 0x1
 gotoif EQUAL ow_script_0x8bf12d
 call ow_script_0x8bf7fb
-loadpointer 0x0 str_0x8bfe09
-callstd MSG_KEEPOPEN
-special 0x7
 trainerbattlecont 0x1 0x2b 0x0 str_0x8bf5bc str_0x8bf5d1 ow_script_0x8bf158
 
 
@@ -96,30 +93,24 @@ return
 .global ow_script_0x8bf12d
 ow_script_0x8bf12d:
 call ow_script_0x8bf7fb
-loadpointer 0x0 str_0x8bfe09
-callstd MSG_KEEPOPEN
-special 0x7
 trainerbattlecont 0x1 0x2a 0x0 str_0x8bf5bc str_0x8bf5d1 ow_script_0x8bf158
 
 
 .global ow_script_0x8bf102
 ow_script_0x8bf102:
 call ow_script_0x8bf7fb
-loadpointer 0x0 str_0x8bfe09
-callstd MSG_KEEPOPEN
-special 0x7
 trainerbattlecont 0x1 0x29 0x0 str_0x8bf5bc str_0x8bf5d1 ow_script_0x8bf158
 
 
 .global ow_script_0x8bf0a0
 ow_script_0x8bf0a0:
 call ow_script_0x8bf7fb
+loop:
 loadpointer 0x0 str_0x8bf745
 callstd MSG_KEEPOPEN
-special 0x7
 multichoice 8 8 0 1
 compare LASTRESULT 0x1
-callif EQUAL ow_script_0x8bf0a0
+gotoif EQUAL loop
 goto ow_script_0x8bf0c1
 
 
@@ -133,51 +124,42 @@ str_0x8bf724:
 .global str_0x8bf610
 
 str_0x8bf610:
-    .string "So ein Zufall, dass wir uns hier\ntreffen? Bist du etwa auch auf den\lWeg nach Aktania, um deinen ersten\lArena Orden zu erringen?\lWie wäre es, wenn du mir zuerst\ldein Können unter Beweis stellst.\lSeit ich die Trainerschule\lverlassen habe, bin ich viel\lstärker geworden."
-        
-        
+	.autostring 36 2 "Bist du etwa auf dem Weg nach Silvania?\pDa wirst du dich etwas gedulden müssen, denn aus der Farm im Norden sind die Voltilamm entlaufen und blockieren den Weg.\pDOTS DOTS DOTS\pAber weißt duDOTS\pDOTSwir könnten doch solangeDOTS\pDOTS einen Kampf austragen, meinst du nicht?"
+
 .global str_0x8bfe09
 
-str_0x8bfe09:
-    .string "Meine Pokémon sind nicht mehr zu\nbremsen!"
-        
-        
-.global str_0x8bf5bc
-
 str_0x8bf5bc:
-    .string "Nimm dich in Acht!"
+    .autostring 36 2 "Vielleicht bin ich ja diesmal stark genug, einen schwierigen Kampf zu gewinnenDOTS"
         
         
 .global str_0x8bf5d1
 
 str_0x8bf5d1:
-    .string "Unglaublich wie stark du geworden\nbist! Einfach unglaublich!"
+    .autostring 36 2 "DOTS DOTS DOTS\nErneut eine NiederlageDOTS"
         
         
 .global str_0x8bf3f9
 
 str_0x8bf3f9:
-    .string "Scheinbar hast du auch nicht\nauf der faulen Haut herumgelegen!\lDu bist wirklich ganz schön stark\lgeworden. Versuch dich doch in der\lArena von Aktania, du kannst das\lsicherlich schaffen.\lWie du dort hingelangst? Dort oben\lbetreiben zwei nette Herren namens\lNick und Rick eine Farm. Sie\lzüchten auch Vögel, die dich von\lhier nach Aktania bringen können.\lFrag die beiden doch einfach mal!\lUnd bevor ich es vergesse: Ich\lhabe ein Geschenk für dich!"
-        
+    .autostring 36 2 "Irgendwie hatte ich schon erwartet, dass du mich besiegst, PLAYERDOTS\pIch bin einfach ein lausiger TrainerDOTS DOTS DOTS\pAnstatt hier zu warten, bis die Farmer ihre Voltilamm wieder eingefangen haben, könntest du einen Abstecher in Aktania machen.\pDie Leute von der Farm betreiben einen Flugservice, sodass du die Insel leicht erreichen kannst.\pSieh dir am besten auf dieser Karte an, wohin sie dich bringen."
         
 .global str_0x8bf3dc
 
 str_0x8bf3dc:
-    .string "PLAYER erhält eine Karte."
+    .autostring 36 2 "PLAYER erhält eine Karte."
         
         
 .global str_0x8bf2f0
 
 str_0x8bf2f0:
-    .string "Die Karte kann oft sehr nützlich\nsein. Wirf ruhig einen Blick\ldarauf.\pDer Kampf hat Spaß gemacht. Wir\nsehen uns, PLAYER!"
+    .autostring 36 2 "Aktania liegt nördlich von hier.\pMit dem Flugservice der Farmer solltest du die Insel sehr schnell erreichen.\pDort befindet sich auch eine Arena, die du herausfordern kannst.\pIch traue mir das allerdings nach meiner Niederlage nicht mehr zuDOTS\pIch weiß wirklich nicht, ob ich das Zeug zum Trainer habe, PLAYERDOTS\pUnd ich will meinen Freund aus Hoenn nicht enttäuschen, weißt duDOTS DOTS DOTS\pDer Druck istDOTS DOTS DOTS\pEgal, lassen wir dasDOTS\pDOTS DOTS DOTS\pEs war schön, dich wiederzusehen, PLAYER.\pHalt die Ohren steif!"
         
         
 .global str_0x8bf745
 
 str_0x8bf745:
-    .string "Ich kann dich doch nicht nach\nAktania gehen lassen, ohne zu\lwissen, ob du die Arena überhaupt\lmeistern kannst.\pWas sagst du? Lass uns kämpfen!"
-        
-        
+	.autostring 36 2 "PLAYERDOTS DOTS DOTS\pBitte, dieser Kampf könnte mir ein bisschen Selbstvertrauen verschaffenDOTS\pUnd das kann ich sehr gut gebrauchenDOTS"
+
 .elseif LANG_EN
 
 .endif

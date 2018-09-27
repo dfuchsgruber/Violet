@@ -14,7 +14,7 @@ end
 .global str_0x880f63
 
 str_0x880f63:
-    .string "Es gibt in jeder Stadt einen\nPOKESTOP. Ich hörte, dass in allen\lPOKESTOPs das Sortiment zwar\lgleich ist, aber laufend erweitert\lwird."
+    .string "Es gibt in jeder Stadt einen\Pokéstop. Ich hörte, dass in allen\lPokéstops das Sortiment zwar\lgleich ist, aber laufend erweitert\lwird."
         
         
 .elseif LANG_EN

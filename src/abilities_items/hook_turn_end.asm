@@ -19,5 +19,5 @@ end_withbsc:
 ldr r0, =0x801BADF
 bx r0
 end_event:
-ldr r4, =0x0801BB2D
+ldr r4, =0x0801BB2E | 1
 bx r4

@@ -60,7 +60,7 @@ end
 .global str_0x8cade0
 
 str_0x8cade0:
-    .string "Dieser Ort ist heilig. Niemand\ndarf ihn je betreten, der nicht\lseinen Eid gegenüber den Wächtern\lgeschworen hat.\p...\nBeeilen wir uns."
+    .string "Dieser Ort ist heilig. Niemand\ndarf ihn je betreten, der nicht\lseinen Eid gegenüber den Wächtern\lgeschworen hat.\pDOTS\nBeeilen wir uns."
         
         
 .elseif LANG_EN

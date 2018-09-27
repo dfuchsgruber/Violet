@@ -20,7 +20,7 @@ str_0x8a8910:
 .global str_0x8a896a
 
 str_0x8a896a:
-    .string "Oh je. Ich glaube, da hab ich wohl\neinen Kurzschluss verursacht..."
+    .string "Oh je. Ich glaube, da hab ich wohl\neinen Kurzschluss verursachtDOTS"
         
         
 .elseif LANG_EN

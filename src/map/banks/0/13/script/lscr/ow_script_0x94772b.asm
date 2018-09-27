@@ -39,9 +39,9 @@ special 0x24
 applymovement 0xc ow_script_movs_0x947948
 call ow_script_0x92f097
 loadpointer 0x0 str_0x94794f
-callstd MSG
+callstd MSG_KEEPOPEN
+waitmovement 0
 special 0x7
-pause 0x20
 call ow_script_0x92f097
 loadpointer 0x0 str_0x9477c9
 callstd MSG
@@ -76,32 +76,32 @@ end
 .global str_0x947967
 
 str_0x947967:
-    .string "Die Beben haben\nnachgelassen?\pUnd Groudon...\nist verschwunden?\pWas hat das zu bedeuten?"
+	.autostring 35 2 "Die Beben haben nachgelassen DOTS\pUnd DOTS DOTS DOTS\pGroudon ist verschwunden?\nAber wie?"
         
         
 .global str_0x9479c7
 
 str_0x9479c7:
-    .string "Offenbar hatten wir Glück\nim Unglück...\pDie Lage hat sich beruhigt, was\nmich in meinen Handlungen\lbestärkt.\pMein Weg scheint mir nun klar, ich\nsehe mein Schicksal..."
+	.autostring 35 2 "Nenn es Glück im Unglück, Igva.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWie es scheint, hat sich die Lage beruhigt.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pUnd ich bin nun entschlossener denn je.\pIch sehe meinen Weg ganz deutlich vor mir.\pDOTS DOTS DOTS"
         
         
 .global str_0x94794f
 
 str_0x94794f:
-    .string "Warte, Mistral!"
+    .autostring 35 2 "Warte, Mistral!"
         
         
 .global str_0x9477c9
 
 str_0x9477c9:
-    .string "... Ich verstehe\nehrlichgesagt nicht, was hier\lvorgefallen ist...\pAber es scheint so, als wären wir\nmit einem blauen Auge davon\lgekommen.\pPLAYER!\nIch möchte dir für alles danken.\pIch weiß, dass du eigentlich nach\nInferior gekommen bist, um einen\lArenaorden zu erringen.\pAls Arenaleiterin werde ich dir\ndiesen Wunsch nicht länger\lversagen.\pFordere mich in Inferiors Arena\nheraus!"
-        
+	.autostring 35 2 "DOTS DOTS DOTS\pIch verstehe das alles überhaupt nicht?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAber offenbar sind wir mit einem blauen Auge davon gekommen.\pPLAYER!\nIch muss dir für deine Hilfe danken!\pDein Sieg über Mistral hat vielleicht unser aller Leben gerettet.\pUnd ich habe natürlich auch nicht vergessen, weshalb du überhaupt nach Inferior gekommen bist.\pWenn du auf einen Arenakampf aus bist, werde ich dich liebend gerne erwarten!\pPLAYER!\nIch bin schon ganz aufgeregt, gegen dich zu kämpfen!\pDu weißt, wo du mich findest!"
+
         
 .global str_0x8fb998
 
 str_0x8fb998:
-    .string "Du hast nun das Ende der\nAlpha-Version von Pokémon Violet\lerreicht. Das Spiel endet\lvorrübergehend an diesem Punkt.\lDu wirst nun in eine Höhle auf\lRoute 2 gebracht, welche aus zwei\lRäumen besteht.\lIn einem der Räume findest du den\lEntwickler des Spiels vor, im\landeren nichts. Um deinen\lSpielstand in die nächste Version\lzu übertragen, musst du das Spiel\lin dem Raum speichern, in welchem\lsich NICHT der Entwickler Wodka\lbefindet."
-        
+	.autostring 35 2 "Dies ist das Ende der Alpha-Version von Pokémon Violet.\pDu wirst nun in eine Höhle auf Route 2 gebracht.\pDort MUSST du dein Spiel speichern, wann immer du es auf die nächste Version übertragen möchtest.\pSichere den Spielstand, in dem Raum, in dem sich NICHT das Relaxo, welches den Entwickler des Spiels verkörpert, befindet.\pSicher das Spiel in dem Raum in dem sich KEINE Person findet.\pIch hoffe, du hattest Spaß beim Spielen und wirst dein Abenteuer fortsetzten, wenn die nächste Version erscheint!"
+
         
 .elseif LANG_EN
 

@@ -13,7 +13,7 @@ end
 .global str_0x811138
 
 str_0x811138:
-    .string "Aktania war einst eine schöne Stadt\nam Strand. Jedes Jahr hatten wir\ltausende Besucher hier, aber dann\lkam der schwarze Nebel und hat den\lganzen Strand vernebelt und die\lStadt verdunkelt... "
+    .string "Aktania war einst eine schöne Stadt\nam Strand. Jedes Jahr hatten wir\ltausende Besucher hier, aber dann\lkam der schwarze Nebel und hat den\lganzen Strand vernebelt und die\lStadt verdunkeltDOTS "
         
         
 .elseif LANG_EN

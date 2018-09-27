@@ -20,7 +20,7 @@ str_0x8e1d3e:
 .global str_0x8e2ad4
 
 str_0x8e2ad4:
-    .string "In einem Vergnügungspark habe ich\nihn das letzte Mal gesehen..."
+    .string "In einem Vergnügungspark habe ich\nihn das letzte Mal gesehenDOTS"
         
         
 .elseif LANG_EN

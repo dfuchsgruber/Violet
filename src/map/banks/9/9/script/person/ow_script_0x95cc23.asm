@@ -57,7 +57,7 @@ str_0x95ccac:
 .global str_0x95cc70
 
 str_0x95cc70:
-    .string "Oh...! Es scheint, du hast keinen\nPlatz in deinem Beutel!"
+    .string "OhDOTS! Es scheint, du hast keinen\nPlatz in deinem Beutel!"
         
         
 .elseif LANG_EN

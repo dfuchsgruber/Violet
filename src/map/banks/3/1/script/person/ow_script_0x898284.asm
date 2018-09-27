@@ -13,7 +13,7 @@ end
 .global str_0x8a20ee
 
 str_0x8a20ee:
-    .string "Mit der versteckten Maschiene\nZertrümmerer kann man diese Felsen\lzerschmettern... Jedoch muss der\lTrainer auch die nötige\lQualifikation besitzen, meine ich."
+    .string "Mit der versteckten Maschiene\nZertrümmerer kann man diese Felsen\lzerschmetternDOTS Jedoch muss der\lTrainer auch die nötige\lQualifikation besitzen, meine ich."
         
         
 .elseif LANG_EN

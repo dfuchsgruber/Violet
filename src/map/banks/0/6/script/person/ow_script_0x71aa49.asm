@@ -20,7 +20,7 @@ str_0x71acf5:
 .global str_0x71ad42
 
 str_0x71ad42:
-    .string "Ich brauche Blitz..."
+    .string "Ich brauche BlitzDOTS"
         
         
 .elseif LANG_EN

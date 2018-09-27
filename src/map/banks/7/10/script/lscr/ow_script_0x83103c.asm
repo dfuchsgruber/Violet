@@ -49,13 +49,20 @@ callstd MSG
 applymovement 0x3 ow_script_movs_0x8310d6
 applymovement 0xff ow_script_movs_0x8310d9
 waitmovement 0x0
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 trainerbattlecont 0x1 0xb7 0x0 str_0x83114c str_0x8311a8 ow_script_0x83108d
 
 
 .global ow_script_0x83108d
 ow_script_0x83108d:
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8311c0
 callstd MSG
+special 0xF
 fanfare 0x104
 loadpointer 0x0 str_0x8f2a1f
 callstd MSG_KEEPOPEN
@@ -68,8 +75,6 @@ end
 
 .global ow_script_0x85fc97
 ow_script_0x85fc97:
-clearflag FRBADGE_3
-clearflag FRBADGE_4
 loadpointer 0x0 str_0x8f36ad
 callstd MSG
 copyvarifnotzero 0x8000 ITEM_TM19
@@ -81,8 +86,12 @@ end
 
 .global ow_script_0x85f329
 ow_script_0x85f329:
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8f3750
 callstd MSG
+special 0xF
 warpmuted 0x3 0x3 0x8 0x20 0x12
 release
 end
@@ -91,45 +100,47 @@ end
 .ifdef LANG_GER
 .global str_0x8310dc
 
+str_mia:
+	.string "Mia"
+
 str_0x8310dc:
-    .string "Nun gut! Der Kampf in der\nSilvania-Arena möge nun beginnen!\lDer Herausforderer PLAYER tritt\lgegen Mia an."
+    .autostring 35 2 "Es beginnt nun der Kampf zwischen Mia und PLAYER um den Wald-Orden."
         
         
 .global str_0x83114c
 
 str_0x83114c:
-    .string "Denke nicht, dass ich mich\nzurückhalte! Ich gebe alles!"
+    .autostring 35 2 "Auch wenn einiges auf dem Spiel steht DOTS\pDOTS werde ich alles geben!\pZeig mir, dass du in der Lage bist, es mit einem Kommandanten von Team Violet aufzunehmen!"
         
         
 .global str_0x8311a8
 
 str_0x8311a8:
-    .string "Unfassbar, unglaublich!"
+    .autostring 35 2 "Unglaublich!\nDu bist wirklich stark!"
         
         
 .global str_0x8311c0
 
 str_0x8311c0:
-    .string "Dieser Kampf war wirklich\nüberragend! Den Ranken-Orden\lhast du dir redlich verdient!"
+    .autostring 35 2 "Du kämpfst wirklich besser als die meisten Anfänger, denen ich bisher begegnet bin.\pDen Wald-Orden hast du dir auf jeden Fall verdient!"
         
         
 .global str_0x8f2a1f
 
 str_0x8f2a1f:
-    .string "PLAYER hat den Ranken-Orden\nerhalten!"
+    .autostring 35 2 "PLAYER hat den Wald-Orden erhalten!"
         
         
 .global str_0x8f36ad
 
 str_0x8f36ad:
-    .string "Nun hast du wirklich bewiesen,\ndass du es mit Team Violet\laufnehmen kannst.\lNimm außerdem noch diese\pTechnische Maschine, sie wird\ndeine Pokémon stärker machen."
+	.autostring 35 2 "Dieser Orden erlaubt dir, die Versteckte Maschine Zerschneider außerhalb des Kampfes anzuwenden.\pAußerdem gehorchen dir getauschte Pokémon nun bis Level 40.\pIch vertraue dir, dass du es mit einem Kommandanten von Team Violet aufnehmen kannst.\pLass mich dir noch etwas geben, das deine Pokémon noch stärker macht."
         
         
 .global str_0x8f3750
 
 str_0x8f3750:
-    .string "Diese Technische Maschine enthält\nGigasauger. Sie fügt deinem Gegner\lSchaden zu und stellt die Kraft\ldes Anwenders gleichzeitig wieder\lher. Die perfekte Waffe im Kampf\lgegen Team Violet.\lIch bitte dich, rette den Wald,\lvertreibe diese bösen Menschen!"
-        
+    .autostring 35 2 "Diese Technische Maschine enthält Gigasauger.\pSie fügt dem Gegner Schaden zu und regeneriert die eigenen Kp.\pVielleicht kannst du sie im Kampf gegen Team Violet einsetzten.\pWir sollten jetzt aber keine Zeit mehr verlieren.\pAuf in den Silvania-Wald DOTS"
         
 .elseif LANG_EN
 

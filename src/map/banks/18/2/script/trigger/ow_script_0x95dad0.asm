@@ -50,20 +50,17 @@ end
 .global str_0x95dbb7
 
 str_0x95dbb7:
-    .string "Hallo PLAYER.\nIch bin gerade deinem kleinen\lFreund RIVAL über den Weg\lgelaufen.\pEr scheint sich gemacht zu haben,\nganz ähnlich wie du.\pBist du deinem Ziel näher\ngekommen?\lOder fühlst du dich deinem Traum\lferner als zuvor?\pIch habe eine Niederlage erlitten,\neine vernichtende, wie man meinen\lkönnte.\pMein Vater ist ein Gegner, den ich\nunterschätzt habe..."
-        
+	.autostring 35 2 "PLAYER DOTS\nErst treffe ich hier auf RIVAL, dann auf dich DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWeißt du, wie es ist, eine vernichtende Niederlage beigebracht zu bekommen?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch habe meinen Vater herausgefordert DOTS\pDOTS doch gegen ein Mitglied der Top Vier hatte ich wohl keine Chance.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
         
 .global str_0x95dd1d
 
 str_0x95dd1d:
-    .string "Und dennoch oder gerade deswegen\nwerde ich nicht aufgeben.\pMein Vater hat es verdient,\nvernichtet zu werden. Von mir.\pIch war zu nachlässig, zu weich.\nSei gnadenlos, rücksichtslos.\pIch halte nicht viel von\nFreundschaften, dieser nervige\lFelix Bengel sollte das begriffen\lhaben.\pIch frage mich, ob wir kämpfen\nsollten, ob ich mich dir stellen\lwill und komme zu dem Schluss,\ldass ich auch dich unterschätzt\lhaben könnte.\pWenn ich meinen Vater gestürzt\nhabe, PLAYER - und das ist ein\lVersprechen - werde ich dich\lzerstampfen und nach dir den Rest\lder Welt."
-        
+    .autostring 35 2 "Dieses selbstgefällige Grinsen auf seinem Gesicht DOTS\pDOTS Er hat mich nicht einmal ernst genommen DOTS DOTS DOTS"
         
 .global str_0x95db3f
 
 str_0x95db3f:
-    .string "Jede Niederlage bringt mich dem\nendgültigen Sieg näher.\pUnd vor diesem Tag solltest du,\nsollte sich jeder fürchten..."
-        
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pIch weiß gar nicht, warum ich dir das erzähle.\pWas interessiert dich mein Versagen DOTS\pIn Zukunft werde ich nicht mehr verlieren.\pDie Sache mit meinem Vater\nDOTS ist noch nicht vorbei DOTS"
         
 .elseif LANG_EN
 

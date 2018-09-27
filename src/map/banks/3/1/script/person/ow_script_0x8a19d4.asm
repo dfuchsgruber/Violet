@@ -47,14 +47,14 @@ end
 
 .global ow_script_0x9455aa
 ow_script_0x9455aa:
-setvar 0x8000 0x69
+setvar 0x8000 ITEM_RIESENPILZ
 setvar 0x8001 0x1
-checkitem ITEM_RIESENPILZ 0x3
+checkitem ITEM_MINIPILZ 0x3
 compare LASTRESULT 0x1
 gotoif LESS ow_script_0x9455d9
-setvar 0x8000 0x68
+setvar 0x8000 ITEM_MINIPILZ
 setvar 0x8001 0x3
-removeitem ITEM_RIESENPILZ 0x3
+removeitem ITEM_MINIPILZ 0x3
 goto ow_script_0x9455e4
 
 
@@ -67,7 +67,7 @@ return
 
 .global ow_script_0x9455d9
 ow_script_0x9455d9:
-removeitem ITEM_SPV_ORB_N 0x1
+removeitem ITEM_RIESENPILZ 0x1
 goto ow_script_0x9455e4
 
 
@@ -89,12 +89,12 @@ return
 
 .global ow_script_0x945619
 ow_script_0x945619:
-setvar 0x8000 0x67
+setvar 0x8000 ITEM_MINIPILZ
 setvar 0x8001 0x3
 checkitem ITEM_MINIPILZ 0x3
 compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x9455ee
-setvar 0x8000 0x68
+setvar 0x8000 ITEM_RIESENPILZ
 setvar 0x8001 0x1
 checkitem ITEM_RIESENPILZ 0x1
 compare LASTRESULT 0x1
@@ -105,13 +105,13 @@ goto ow_script_0x945662
 
 .global ow_script_0x945662
 ow_script_0x945662:
-bufferitem 0x0 0x8000
-buffernumber 0x1 0x8001
 return
 
 
 .global ow_script_0x9455ee
 ow_script_0x9455ee:
+bufferitem 0x0 0x8000
+buffernumber 0x1 0x8001
 setvar LASTRESULT 0x1
 goto ow_script_0x945662
 

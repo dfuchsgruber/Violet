@@ -217,7 +217,7 @@
     gfx_pkmn_species_210_pokemon_granbull_iconTiles,
     gfx_pkmn_species_211_pokemon_mamutel_iconTiles,
     gfx_pkmn_species_212_pokemon_scherox_iconTiles,
-    gfx_pkmn_species_213_pokemon_pottrott_iconTiles,
+    gfx_pkmn_species_213_pokemon_fluffeluff_iconTiles,
     gfx_pkmn_species_214_pokemon_skaraborn_iconTiles,
     gfx_pkmn_species_215_pokemon_kryppuk_iconTiles,
     gfx_pkmn_species_216_pokemon_teddiursa_iconTiles,
@@ -226,7 +226,7 @@
     gfx_pkmn_species_219_pokemon_magcargo_iconTiles,
     gfx_pkmn_species_220_pokemon_quiekel_iconTiles,
     gfx_pkmn_species_221_pokemon_keifel_iconTiles,
-    gfx_pkmn_species_222_pokemon_corasonn_iconTiles,
+    gfx_pkmn_species_222_pokemon_mampfaxo_iconTiles,
     gfx_pkmn_species_223_pokemon_remoraid_iconTiles,
     gfx_pkmn_species_224_pokemon_octillery_iconTiles,
     gfx_pkmn_species_225_pokemon_botogel_iconTiles,
@@ -242,7 +242,7 @@
     gfx_pkmn_species_235_pokemon_traunmagil_iconTiles,
     gfx_pkmn_species_236_pokemon_rabauz_iconTiles,
     gfx_pkmn_species_237_pokemon_kapoera_iconTiles,
-    gfx_pkmn_species_238_pokemon_kussilla_iconTiles,
+    gfx_pkmn_species_238_pokemon_sen_long_iconTiles,
     gfx_pkmn_species_239_pokemon_elekid_iconTiles,
     gfx_pkmn_species_240_pokemon_magby_iconTiles,
     gfx_pkmn_species_241_pokemon_miltank_iconTiles,
@@ -329,7 +329,7 @@
     gfx_pkmn_species_322_pokemon_zwirrfinst_iconTiles,
     gfx_pkmn_species_323_pokemon_schmerbe_iconTiles,
     gfx_pkmn_species_324_pokemon_welsar_iconTiles,
-    gfx_pkmn_species_325_pokemon_liebiskus_iconTiles,
+    gfx_pkmn_species_325_pokemon_rihornior_iconTiles,
     gfx_pkmn_species_326_pokemon_krebscorps_iconTiles,
     gfx_pkmn_species_327_pokemon_krebutack_iconTiles,
     gfx_pkmn_species_328_pokemon_barschwa_iconTiles,
@@ -364,7 +364,7 @@
     gfx_pkmn_species_357_pokemon_meditalis_iconTiles,
     gfx_pkmn_species_358_pokemon_wablu_iconTiles,
     gfx_pkmn_species_359_pokemon_altaria_iconTiles,
-    gfx_pkmn_species_360_pokemon_isso_iconTiles,
+    gfx_pkmn_species_360_pokemon_klingplim_iconTiles,
     gfx_pkmn_species_361_pokemon_zwirrlicht_iconTiles,
     gfx_pkmn_species_362_pokemon_zwirrklop_iconTiles,
     gfx_pkmn_species_363_pokemon_porygon_z_iconTiles,
@@ -390,8 +390,8 @@
     gfx_pkmn_species_383_pokemon_stollrak_iconTiles,
     gfx_pkmn_species_384_pokemon_stolloss_iconTiles,
     gfx_pkmn_species_385_pokemon_formeo_iconTiles,
-    gfx_pkmn_species_386_pokemon_volbeat_iconTiles,
-    gfx_pkmn_species_387_pokemon_illumise_iconTiles,
+    gfx_pkmn_species_386_pokemon_wonneira_iconTiles,
+    gfx_pkmn_species_387_pokemon_mobai_iconTiles,
     gfx_pkmn_species_388_pokemon_liliep_iconTiles,
     gfx_pkmn_species_389_pokemon_wielie_iconTiles,
     gfx_pkmn_species_390_pokemon_anorith_iconTiles,
@@ -875,8 +875,8 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x2,
     // POKEMON_SCHEROX
     0x0,
-    // POKEMON_POTTROTT
-    0x1,
+    // POKEMON_FLUFFELUFF
+    0x0,
     // POKEMON_SKARABORN
     0x2,
     // POKEMON_KRYPPUK
@@ -894,7 +894,7 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     // POKEMON_KEIFEL
     0x2,
     // POKEMON_CORASONN
-    0x0,
+    0x2,
     // POKEMON_REMORAID
     0x0,
     // POKEMON_OCTILLERY
@@ -925,8 +925,8 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x2,
     // POKEMON_KAPOERA
     0x2,
-    // POKEMON_KUSSILLA
-    0x1,
+    // POKEMON_SEN_LONG
+    0x0,
     // POKEMON_ELEKID
     0x1,
     // POKEMON_MAGBY
@@ -1170,7 +1170,7 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     // POKEMON_ALTARIA
     0x0,
     // POKEMON_ISSO
-    0x0,
+    0x2,
     // POKEMON_ZWIRRLICHT
     0x0,
     // POKEMON_ZWIRRKLOP
@@ -1224,7 +1224,7 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     // POKEMON_VOLBEAT
     0x0,
     // POKEMON_ILLUMISE
-    0x2,
+    0x1,
     // POKEMON_LILIEP
     0x2,
     // POKEMON_WIELIE

@@ -2227,8 +2227,8 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 	},
 	{
 		//Entry 222
-		LANGDEP(PSTRING("Koralle"), PSTRING("Coral")),
-		6, 50,//Height & weight
+		LANGDEP(PSTRING("Nimmersatt"), PSTRING("Nimmersatt")),
+		6, 1500,//Height & weight
 		str_pokedex_data_222_page_0, str_pokedex_data_222_page_1,
 		0,//unused
 		410, 15,//Pokemon scale, displacement
@@ -2387,8 +2387,8 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 	},
 	{
 		//Entry 238
-		LANGDEP(PSTRING("Kuss"), PSTRING("Kiss")),
-		4, 60,//Height & weight
+		LANGDEP(PSTRING("Gelassen"), PSTRING("Gelassen")),
+		30, 1850,//Height & weight
 		str_pokedex_data_238_page_0, str_pokedex_data_238_page_1,
 		0,//unused
 		440, 19,//Pokemon scale, displacement
@@ -3137,8 +3137,8 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 	},
 	{
 		//Entry 313
-		LANGDEP(PSTRING("Libelle"), PSTRING("Firefly")),
-		7, 177,//Height & weight
+		LANGDEP(PSTRING("Spielhaus"), PSTRING("Spielhaus")),
+		6, 244,//Height & weight
 		str_pokedex_data_313_page_0, str_pokedex_data_313_page_1,
 		0,//unused
 		442, 65532,//Pokemon scale, displacement
@@ -3147,8 +3147,8 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 	},
 	{
 		//Entry 314
-		LANGDEP(PSTRING("Libelle"), PSTRING("Firefly")),
-		6, 177,//Height & weight
+		LANGDEP(PSTRING("Bonsai"), PSTRING("Bonsai")),
+		5, 150,//Height & weight
 		str_pokedex_data_314_page_0, str_pokedex_data_314_page_1,
 		0,//unused
 		572, 65532,//Pokemon scale, displacement
@@ -3607,8 +3607,8 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 	},
 	{
 		//Entry 360
-		LANGDEP(PSTRING("Strahlekind"), PSTRING("Bright")),
-		6, 140,//Height & weight
+		LANGDEP(PSTRING("Glöckchen"), PSTRING("Bell")),
+		2, 6,//Height & weight
 		str_pokedex_data_360_page_0, str_pokedex_data_360_page_1,
 		0,//unused
 		453, 17,//Pokemon scale, displacement
@@ -3707,8 +3707,8 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 	},
 	{
 		//Entry 370
-		LANGDEP(PSTRING("Rendezvous"), PSTRING("Rendezvous")),
-		6, 87,//Height & weight
+		LANGDEP(PSTRING("Bohrer"), PSTRING("Drill")),
+		24, 2828,//Height & weight
 		str_pokedex_data_370_page_0, str_pokedex_data_370_page_1,
 		0,//unused
 		371, 2,//Pokemon scale, displacement

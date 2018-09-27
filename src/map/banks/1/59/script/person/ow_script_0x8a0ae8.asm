@@ -10,10 +10,12 @@ end
 
 
 .ifdef LANG_GER
+
+str_police:
 .global str_0x927e54
 
 str_0x927e54:
-    .string "Argh! So viele von diesen\nverfluchten Revolutionären...\pAber der große Lord Faun wird\ndiesen rebellischen Verbrechern\leinen Denkzettel verpassen!"
+	.autostring 35 2 "Argh!\pDiese verdammten Revolutionäre!\pAber Lord Faun wird diesen Regierungsfeinden einen Denkzettel verpassen!"
         
         
 .elseif LANG_EN

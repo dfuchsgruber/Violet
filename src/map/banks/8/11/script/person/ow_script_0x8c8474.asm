@@ -13,7 +13,7 @@ end
 .global str_0x8c847e
 
 str_0x8c847e:
-    .string "Streng genommen ist er natürlich\nverboten, Fallen für Käfer-\lPokémon zu kaufen...\pAndererseits...\pWie sonst soll ich der größte\nKäfersammler aller Zeiten werden?"
+    .string "Streng genommen ist er natürlich\nverboten, Fallen für Käfer-\lPokémon zu kaufenDOTS\pAndererseitsDOTS\pWie sonst soll ich der größte\nKäfersammler aller Zeiten werden?"
         
         
 .elseif LANG_EN

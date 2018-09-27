@@ -49,20 +49,16 @@ end
 .global str_0x92ee2b
 
 str_0x92ee2b:
-    .string "Nah, hallo!\pDein Auftreten, deine\nAusstrahlung...\pDu musst PLAYER sein!\nUm dich kursieren bereits einige\lspannende Gerüchte.\pIn Kreisen der Arenaleiter loben\nLester aus Aktania und Mia aus\lSilvania dein Talent.\pUnd selbst in anderer Gesellschaft\nsind bereits die einen oder\landeren Augen auf deine Generation\lgerichtet...\p...\n...\pWie stehst du zu dieser Welt?\nWie stehst du zu dem System, das\luns beherrscht?\lHast du deine Entscheidung bereits\lgefällt?\lWeißt du, auf welcher Seite du\lkämpfen wirst?\pBevor du antwortest, solltest du\naber die ganze Wahrheit kennen.\pLass mich dir das wahre Gesicht\nunserer Welt zeigen."
-        
-        
+	.autostring 35 2 "Nah, hallo!\nSo wie du mir aussiehst, könntest du doch glatt DOTS\pDOTS DOTS DOTS\pDu musst PLAYER sein, nicht?\pÜber dich kursieren schon spannende Gerüchte!\pStimmt es, dass du einen Kommandanten von Team Violet besiegt hast?\pWirklich interessant!\nDOTS DOTS DOTS\pSag mir einmal, was hältst du von der Revolution?\pWas hältst du von den Top Vier?\pWärst du bereit, einen Schritt weiterzugehen, und in die dunklen Geheimnisse dieser Region einzutauchen?"
 .global str_0x92ecf0
 
 str_0x92ecf0:
-    .string "Wusste ich doch, dass du darauf\neingehen würdest!\pKomm einfach zu dem exklusiven\nKlubhaus im Südosten Kaskadas.\lDie geheime Eintrittsparole lautet\lKrieg den Schwachen.\p...\n...\pOh, und mein Name ist Igva!"
-        
-        
+	.autostring 35 2 "Ich wusste, dass du darauf eingehen würdest.\pKomm zum Klubhaus im Südosten der Stadt.\pDie geheime Eintrittsparole lautet QUOTE_STARTNachtschwarzQUOTE_END.\pDOTS DOTS DOTS\pWer ich bin?\nMein Name ist Igva!"
+
 .global str_0x92edce
 
 str_0x92edce:
-    .string "Huh. Ich hätte dich anders\neingeschätzt.\pKomm wieder, wenn du es dir anders\nüberlegt hast."
-        
+    .autostring 35 2 "Ich hätte dich anders eingeschätzt.\pKomm zu mir, wenn du deine Meinung geändert hast DOTS"
         
 .elseif LANG_EN
 

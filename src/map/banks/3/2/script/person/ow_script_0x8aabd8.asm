@@ -13,7 +13,7 @@ end
 .global str_0x8c0ff2
 
 str_0x8c0ff2:
-    .string "Aktania, die Insel der ewigen\nSonne!\l...\pKaum zu glauben, dass dieser Ort\nmal ein Strandresort war, oder?"
+    .string "Aktania, die Insel der ewigen\nSonne!\lDOTS\pKaum zu glauben, dass dieser Ort\nmal ein Strandresort war, oder?"
         
         
 .elseif LANG_EN

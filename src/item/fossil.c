@@ -47,8 +47,7 @@ void fossil_print_multichoice() {
     *var_access(0x4077) = displayed;
     dprintf("Displaying %d choices\n", displayed);
     if (displayed) {
-        void **script_state_pointers = (void**) 0x03000F14;
-        *script_state_pointers = choices;
+        overworld_script_state.pointer_banks[0] = (u8*) choices;
         if (multichoice(0, 0, 0, false)) {
             dprintf("Halting for dchoice\n");
             overworld_script_halt();
@@ -66,8 +65,9 @@ void fossil_execute() {
         if (index) {
             index--;
         } else {
+        	dprintf("RTC working : %d\n", rtc_test());
             if(rtc_test()){
-                rtc_read(&cmem.fossil_gen_time);
+                time_read(&cmem.fossil_gen_time);
                 item_remove(fossils[i], 1);
                 *var_access(0x8004) = fossils[i];
                 *var_access(0x50D1) = fossil_species[i];
@@ -80,7 +80,7 @@ void fossil_execute() {
 
 u16 fossil_is_finished(){
     rtc_timestamp t;
-    rtc_read(&t);
+    time_read(&t);
     u64 seconds_current = rtc_timestamp_to_seconds(&t);
     u64 seconds_generated = rtc_timestamp_to_seconds(&cmem.fossil_gen_time);
     if(seconds_current - seconds_generated > 60*60){

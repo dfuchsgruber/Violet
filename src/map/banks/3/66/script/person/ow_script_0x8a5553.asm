@@ -15,8 +15,7 @@ end
 .global str_0x8a679f
 
 str_0x8a679f:
-    .string "Ich frage mich, was welche Pokémon\nich mir als erstes fangen werde!\lBestimmt werde ich mehr Pokémon im\lPokedex registrieren, als du!"
-        
+	.autostring 36 2 "Ich werde ganz sicher mehr Pokémon in meiner Pokédex-app registrieren, als du!"
         
 .elseif LANG_EN
 

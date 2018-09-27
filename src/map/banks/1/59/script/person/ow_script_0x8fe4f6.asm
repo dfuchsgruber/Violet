@@ -13,7 +13,7 @@ end
 .global str_0x92dce2
 
 str_0x92dce2:
-    .string "Ein Blick aufs Meer genügt, mein\nHerz mit Sehensucht zu erfüllen.\pWie gerne ich doch auf einem\nLapras in den Sonnenunterang\lsegeln würde..."
+    .string "Ein Blick aufs Meer genügt, mein\nHerz mit Sehensucht zu erfüllen.\pWie gerne ich doch auf einem\nLapras in den Sonnenunterang\lsegeln würdeDOTS"
         
         
 .elseif LANG_EN

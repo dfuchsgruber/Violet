@@ -20,7 +20,7 @@ str_0x8e101d:
 .global str_0x8e1060
 
 str_0x8e1060:
-    .string "Wüsten sind trocken und heiß..."
+    .string "Wüsten sind trocken und heißDOTS"
         
         
 .elseif LANG_EN

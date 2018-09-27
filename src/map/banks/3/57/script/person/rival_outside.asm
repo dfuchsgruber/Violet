@@ -136,7 +136,7 @@ mov_face_left:
 
 .ifdef LANG_GER
 str_make_may_appear:
-	.autostring 36 2 "PLAYER, da bist du ja!\nMal ehrlich, dieser Test war doch lachhaft, oder?\pWer soll auf solche Fragen denn antworten können..."
+	.autostring 36 2 "PLAYER, da bist du ja!\nMal ehrlich, dieser Test war doch lachhaft, oder?\pWer soll auf solche Fragen denn antworten könnenDOTS"
 
 str_after_may_appeared:
 	.autostring 36 2 "Sieh mal, da ist Maike.\pWie es ihr wohl in dem Test ergangen ist?"

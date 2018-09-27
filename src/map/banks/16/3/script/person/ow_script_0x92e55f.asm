@@ -13,7 +13,7 @@ end
 .global str_0x93ba54
 
 str_0x93ba54:
-    .string "Die Wanderung entlang des\nWasserpfades ist sehr beliebt\lunter Wanderern.\pAllein die Vorstellung unter einem\ngewaltigen Fluss zu marschieren...\pUnfassbar, nicht?"
+    .string "Die Wanderung entlang des\nWasserpfades ist sehr beliebt\lunter Wanderern.\pAllein die Vorstellung unter einem\ngewaltigen Fluss zu marschierenDOTS\pUnfassbar, nicht?"
         
         
 .elseif LANG_EN

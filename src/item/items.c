@@ -4,6 +4,7 @@
 #include "item/description.h"
 #include "constants/item_pockets.h"
 #include "language.h"
+#include "constants/items.h"
 
 item items[] = {
 	{
@@ -909,7 +910,7 @@ item items[] = {
 	},{
 		//ITEM_SCHARFZAHN
 		LANGDEP(PSTRING("Scharfzahn"), PSTRING("????????")),
-		0x0, //index
+		0x3c, //index
 		0, //price
 		30, //holding_effect_id
 		10, //holding_effect_param
@@ -923,9 +924,9 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_3D
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		LANGDEP(PSTRING("Ovaler Stein"), PSTRING("Oval Rock")),
+		0x3d, //index
+		6000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3d_item_item_3d,
@@ -5468,7 +5469,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VMTM_BOX
-		LANGDEP(PSTRING("Vm/tm-Box"), PSTRING("TM CASE")),
+		LANGDEP(PSTRING("Vm/Tm-Box"), PSTRING("TM CASE")),
 		0x16c, //index
 		0, //price
 		0, //holding_effect_id

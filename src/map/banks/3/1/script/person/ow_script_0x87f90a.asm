@@ -48,7 +48,7 @@ end
 .global str_0x8a29c0
 
 str_0x8a29c0:
-    .string "Hjaaa! Huuu! Baaa! Kara!\nDiese Kampftechnik habe ich eigens\lentwickelt. Eines Tages werde ich\lsogar Manus damit übertrumpfen!\l...\lHier, nimm das und trainiere deine\lPokémon selbst so wie ich es tue!"
+    .string "Hjaaa! Huuu! Baaa! Kara!\nDiese Kampftechnik habe ich eigens\lentwickelt. Eines Tages werde ich\lsogar Manus damit übertrumpfen!\lDOTS\lHier, nimm das und trainiere deine\lPokémon selbst so wie ich es tue!"
         
         
 .global str_0x8a2922

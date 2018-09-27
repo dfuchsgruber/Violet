@@ -14,7 +14,7 @@ end
 .global str_0x71ac32
 
 str_0x71ac32:
-    .string "Ich frage mich, wo der Ausgang\nist... Ich irre schon seit Stunden\ldurch diese Höhlen..."
+    .string "Ich frage mich, wo der Ausgang\nistDOTS Ich irre schon seit Stunden\ldurch diese HöhlenDOTS"
         
         
 .global str_0x71ac8d

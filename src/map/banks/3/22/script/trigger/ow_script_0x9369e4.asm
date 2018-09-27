@@ -84,26 +84,24 @@ return
 .global str_0x936bf6
 
 str_0x936bf6:
-    .string "... ... Du ...\n... ... ... ..."
+    .autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS"
         
         
 .global str_0x936ba2
 
 str_0x936ba2:
-    .string "Du hast das auch gespürt,\nnicht?\pDu bist so gar nicht wie all die\nanderen..."
+    .autostring 35 2 "Was DOTS\nDOTS DOTS DOTS\pDOTS war das für ein seltsames Gefühl?"
         
         
 .global str_0x936c2f
 
 str_0x936c2f:
-    .string "Erlaube mir, mich vorzustellen.\pMein Name ist Mistral, und ich bin\n... ein Suchender, so würde ich es\lnennen.\pIch suche nach einer Bestimmung,\neinem Sinn und einer Aufgabe.\pEtwas in dieser Welt, das mich\ngrößer macht, das mich erhöht.\p... ...\n... ...\pHast du je von den drei legendären\nTrainern gehört?\pIch werde es dir erzählen."
-        
+	.autostring 35 2 "Mein Name ist Mistral.\pIch bin auf der Suche nach einer Macht, wie sie noch kein Trainer vor mir je besessen hat.\pHast du je von den drei legendären Trainern gehört, die vor vielen Jahren die Pokémon-Liga gegründet haben?"
         
 .global str_0x937369
 
 str_0x937369:
-    .string "Die drei legendären Trainer haben\nsich wahrlich einen Namen gemacht.\nUnd ich werde ihnen nachfolgen.\pMein Interesse gilt den legendären\nPokémon und ihrer Macht.\pUnd ich bin durch und durch\nPragmat. Ich werde vor nichts\lzurückschrecken, um diese Macht zu\lerlangen...\pIch weiß nicht, wieso ich dir all\ndas erzähle, aber ich spüre eine\lVerbindung unserer Schicksale...\pDabei bin ich nicht einmal\nüberzeugt, ob es etwas wie das\lSchicksal wirklich gibt...\pVerrätst du mir noch deinen Namen?\n...\pPLAYER, also.\pIn dir lodert das selbe Feuer wie\nin meiner Seele.\pDu bist ebenso ambitioniert wie\nich.\pIrgendwann in naher Zukunft werden\nwir kämpfen.\pBis dahin will ich, dass du zu\neiner Herausforderung wirst.\lVersprich mir das."
-        
+	.autostring 35 2 "Diese drei Trainer haben die Welt verändert.\pUnd das will auch ich tun.\pUm aber etwas zu bewirken, muss man Macht besitzen.\pUnd diese Macht liegt bei den legendären Pokémon.\pWer diese Pokémon kontrolliert, wird zum Herrscher über den Rest der Welt.\pDOTS DOTS DOTS\pIch weiß gar nicht, warum ich dir das überhaupt erzähle DOTS\pAber irgendetwas sagt mir, dass sich unsere Wege schon bald wieder kreuzen werden DOTS"
         
 .elseif LANG_EN
 

@@ -14,7 +14,8 @@
 #include "battle/state.h"
 #include "trainer/trainer.h"
 
-u8 ev_finals[6] = {0x16, 0x17, 0x18, 0x21, 0x2F, 0x30};
+u8 ev_finals[6] = {ATTRIBUTE_COOLNESS, ATTRIBUTE_BEAUTY, ATTRIBUTE_CUTENESS,
+		ATTRIBUTE_SMARTNESS, ATTRIBUTE_TOUGHNESS, ATTRIBUTE_SHEEN};
 
 static trainer_build_t trainer_builds [14] = {
 
@@ -108,8 +109,8 @@ void build_trainer_pokemon_default_item_default_attacks(pokemon *dst,
 
 int build_trainer(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id == 0x400) return 0; // No idea, but in vanilla they do it, so...
-	if (!battle_state.items_prohibited && !battle_state.items_prohibited2
-			&& !battle_state.field_31 && battle_state.trainer_battle) {
+	if (!battle_flags.items_prohibited && !battle_flags.items_prohibited2
+			&& !battle_flags.field_31 && battle_flags.trainer_battle) {
 		// Build trainer
 		pokemon_clear_opponent_party();
 		// To generate a trainer consistent pid we use a pseudo rng
@@ -138,7 +139,7 @@ int build_trainer(pokemon *dst_party, u16 trainer_id) {
 		}
 		gp_stack_pop();
 		free(state);
-		u32 *battle_state_ptr = (u32*)(&battle_state);
+		u32 *battle_state_ptr = (u32*)(&battle_flags);
 		*battle_state_ptr |= trainers[trainer_id].battle_state;
 		return trainers[trainer_id].pokemon_cnt;
 	}

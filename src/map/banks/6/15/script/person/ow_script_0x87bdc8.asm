@@ -69,13 +69,13 @@ str_0x87c7c7:
 .global str_0x87c738
 
 str_0x87c738:
-    .string "Sieh ihn dir einfach an, ich werde\ndaraus nicht schlau..."
+    .string "Sieh ihn dir einfach an, ich werde\ndaraus nicht schlauDOTS"
         
         
 .global str_0x87c77f
 
 str_0x87c77f:
-    .string "Wie du willst. Ich werde diesen\nseltsamen Stein weiter\luntersuchen..."
+    .string "Wie du willst. Ich werde diesen\nseltsamen Stein weiter\luntersuchenDOTS"
         
         
 .global str_0x87c5fa

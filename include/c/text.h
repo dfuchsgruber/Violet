@@ -44,7 +44,7 @@ extern "C" {
      * @param charlength Size in characters
      * @return dst
      */
-    u8* itoa(u8* dst, int value, u8 mode, u8 charlength);
+    u8* itoa(u8* dst, int value, u8 radix, u8 num_chars);
 
     extern tbox tboxes[];
     
@@ -221,8 +221,28 @@ extern "C" {
      */
     u8* strcpy(u8* dst, u8* src);
 
+    /**
+     * Transforms the type of a pokemon into a string
+     * @param dst destination for the string
+     * @param type the type to load
+     * @return first character after the string ends
+     */
+    u8 *typetoa(u8 *dst, u8 type);
+
+    /**
+     * Transforms the type of a pokemon into a string that has at most 8 characters. No
+     * abbreviations.
+     * @param dst destination for the string
+     * @param type the type to load
+     * @return first character after the string ends
+     */
+    u8 *typetoa_long(u8 *dst, u8 type);
+
     extern u8 strbuf[];
     extern u8 buffer0[];
+    extern u8 buffer1[];
+    extern u8 str_types[][7];
+    extern u8 str_types_long[][8];
 
 #ifdef	__cplusplus
 }

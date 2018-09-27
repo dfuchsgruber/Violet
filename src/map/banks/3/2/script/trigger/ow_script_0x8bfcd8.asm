@@ -47,8 +47,8 @@ end
 .global str_0x8c0738
 
 str_0x8c0738:
-    .string "Oh, ein neues Gesicht hier in\ndieser Stadt. Das geschieht in\lletzter Zeit recht häufig.\lVerzeih\ mir, dass ich mich noch\lnicht vorgestellt habe. Mein Name\list Lester, und ich bin der\lBürgermeister von Aktania, wenn\lman es denn so nennen will.\lIch will nicht lügen: Die Insel\list ein trostloser Ort, aber meine\lFamilie lebt seit Generationen\lhier und hält den Tempel so gut\les geht in Schuss.\lKomm mich doch dort einmal\lbesuchen. Vor einigen Jahren, habe\lich den Tempel zu einer Arena\lumfunktioniert. Du kannst mich\ldort gerne herausfordern, wenn du\ldich mir gewachsen fühlst.\lBis dahin - genieße das, was von\lder einstigen Sommerinsel übrig\lgeblieben ist."
-        
+	.autostring 35 2 "Oh, wieder ein neues Gesicht in dieser Stadt.\pDas geschieht in letzter Zeit ungewöhnlich häufig.\pDOTS DOTS DOTS\nEntschuldige, ich habe mich noch gar nicht vorgestellt.\pMein Name ist Lester und ich bin der Arenaleiter dieser DOTS DOTS DOTS\pdieser Überreste einer einst wundervollen Stadt.\pNun ist diese Insel ein trostloser Ort, aber es ist mein Vermächtnis, über Aktania zu wachen.\pIch vermute, dass ein Trainer wie du mich herausfordern möchte.\pSollte dies der Fall sein, komm in den Tempel im Osten der Stadt.\pDort können wir einen Kampf austragen, solltest du darauf aus sein.\pUnd vielleicht kannst du diesem Ort ja doch etwas abgewinnen und deinen Aufenthalt zumindest ein wenig genießen."
+
         
 .elseif LANG_EN
 

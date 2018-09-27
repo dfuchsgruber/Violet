@@ -27,11 +27,9 @@ call ow_script_0x92f097
 loadpointer 0x0 str_0x9665c5
 callstd MSG
 special 0x7
-fadescreen 0x1
-special 0x0
-fanfare 0x19
-waitfanfare
-fadescreen 0x0
+
+call ow_script_healing_sequence
+
 call ow_script_0x92f097
 loadpointer 0x0 str_0x96659a
 callstd MSG
@@ -53,13 +51,12 @@ end
 .global str_0x9665c5
 
 str_0x9665c5:
-    .string "PLAYER,\ndu bist wirklich kaum aufzuhalten.\pIch konnte dich gar nicht\neinholen, so schnell hast du\ldiesem Violet-Pack eingeheizt!\pVor uns liegt der Gipfel des\nVolcanos...\pMistral hat ihn unglücklicherweise\nwohl schon erreicht.\pWir sollten uns beeilen, ehe es\nzum Schlimmsten kommt.\pIch werde mich um deine\nangeschlagenen Pokémon kümmern..."
-        
+	.autostring 35 2 "Du hast wirklich ein ordentliches Tempo drauf!\pPuh!\nBevor wir uns aber auf zum Gipfel machen, sollten wir unseren Pokémon eine kurze Verschnaufpause gönnen.\pWir können es uns nicht leisten, nicht mit ganzer Kraft dort anzutreten."
         
 .global str_0x96659a
 
 str_0x96659a:
-    .string "Los, wir dürfen keine Zeit\nverlieren!"
+    .autostring 35 2 "Auf jetzt!\nWir dürfen keine Zeit mehr verlieren."
         
         
 .elseif LANG_EN

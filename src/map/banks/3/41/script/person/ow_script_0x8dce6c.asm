@@ -1,20 +1,9 @@
 .include "overworld_script.s"
-
+.include "species.s"
 
 .global ow_script_0x8dce6c
 ow_script_0x8dce6c:
-bufferstring 0x0 str_0x8dce7d
-setvar 0x8000 0x148
-goto ow_script_0x8d421d
+setvar 0x8000 POKEMON_BARSCHWA
+goto ow_script_find_egg
+end
 
-
-.ifdef LANG_GER
-.global str_0x8dce7d
-
-str_0x8dce7d:
-    .string "Wasser-"
-        
-        
-.elseif LANG_EN
-
-.endif

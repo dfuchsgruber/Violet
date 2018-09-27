@@ -2,6 +2,7 @@
 #include "karma.h"
 #include "constants/vars.h"
 #include "vars.h"
+#include "debug.h"
 
 int modify_price_money(int price_money) {
 
@@ -14,24 +15,24 @@ int modify_price_money(int price_money) {
             new_price_money /= 3;
             break;
         case 3:
-            new_price_money >>= 1;
+            new_price_money /= 2;
             break;
         case 1:
-            new_price_money += (new_price_money >> 1);
+            new_price_money += (new_price_money / 2);
             break;
         case 0:
-            new_price_money <<= 1;
+            new_price_money *= 1;
             break;
     }
 
     //Applying karma
-    int factor = 0x100 - ((s16) (*var_access(KARMA_VALUE)));
+    int factor = 0x100 - ((s16)(*var_access(KARMA_VALUE)));
     new_price_money *= factor;
-    new_price_money >>= 8;
+    new_price_money /= 0x100;
 
     u16 *credit = var_access(BANK_CREDIT);
     if (*credit) {
-        int to_pay = new_price_money - (new_price_money >> 2);
+        int to_pay = new_price_money - (new_price_money / 4);
         if (to_pay > *credit) {
             to_pay = *credit;
         }

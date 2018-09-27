@@ -674,187 +674,184 @@ return
 .global str_0x969e0b
 
 str_0x969e0b:
-    .string "Mistral!\nWas hast du vor?\lWeißt du denn, was du hier tust?"
+    .autostring 35 2 "Mistral!\nWas hast du vor?\pWeißt du denn, was du hier tust?"
         
         
 .global str_0x96a758
 
 str_0x96a758:
-    .string "Igva, du bist naiv wie eh\nund je.\pDass ihr Revolutionäre immer noch\nexistiert, ist mir ein Rätsel.\pEuer Anführer hat außer schön\nklingenden Sprüchen und Krieg doch\lnichts zu bieten?\pIhr redet von Aufstand und\nNeuerung, aber habt keine Lösungen\lanzubieten.\pIhr führt die Menschen in einen\nKrieg, der ihnen nichts bringt.\pUnd dann nennst du mich einen\nUnmenschen?"
-        
-        
+	.autostring 35 2 "Igva!\nMit dir hätte ich in tausend Jahren nicht gerechnet.\pBist du immernoch Mitglied bei diesen schwachsinningen Schwärmern von Revolutionären?\pEine Welt, in der Gerechtigkeit die oberste Maxime sein soll DOTS\pDOTS was für ein naiver Unfug DOTS"
+
 .global str_0x96a8cd
 
 str_0x96a8cd:
-    .string "Nein, du irrst dich!\nUnser Kampf ist nobel, deiner nur\legoistisch!\pDu hast uns im Stich gelassen, um\nMacht zu finden.\pUnd nun willst du den Zeitstein\nrauben, wissend, dass du damit den\lWächter der Landmassen erweckst\lund seinen Zorn über dieses Land\lschickst?\pIst dir bewusst, was das legendäre\nPokémon Groudon für eine\lschrecklich vernichtende Kreatur\list?"
-        
+	.autostring 35 2 "Unsere Bemühungen sind sicherlich kein Unfug!\pMit jemandem wie Albus an unserer Seite, wird es uns gelingen, die Welt zu einem besseren Ort zu machen.\pDu hast uns DOTS\nDOTS du hast mich im Stich gelassen, Mistral!\pUnd wofür?\nWas willst du mit diesen Verbrechern von Team Violet?\pIst dir bewusst, welche Ziele sie verfolgen?"
+
         
 .global str_0x969d1d
 
 str_0x969d1d:
-    .string "Hahaha!\nUnd dir ist nie in den Sinn\lgekommen, dass ich genau das\lprovozieren will?\pDass es mir mehr um die\nWiedererweckung Groudons geht, als\ldiesen dummen Stein?\l...\pAber sieh nur, Igva.\nDein neuer Begleiter ist\leingetroffen."
+	.autostring 35 2 "Ach Igva, ich vergesse immer wieder wie einfältig du doch bist!\pWeißt du nicht, dass meine eigenen Ziele für mich stets im Vordergrund stehen?\pTeam Violet bietet mir eine Möglichkeit, endlich die Macht der legendären Pokémon für mich nutzen zu können.\pDOTS DOTS DOTS\pSieh nur, Igva.\nDein neuer Begleiter ist eingetroffen!"
         
         
 .global str_0x969a22
 
 str_0x969a22:
-    .string "Herzlich willkommen,\nPLAYER!\pUns scheint doch etwas zu\nverbinden, wenn ich dich hier mit\lmeiner alten Partnerin treffe.\pEinst war ich Teil ihrer\neinfältigen Revolustionsbewegung,\lehe ich erkannt habe, dass ich so\lniemals Macht erlangen kann.\pNun stehen wir hier schicksalshaft\neinander gegenüber.\pVor uns der Schlot eines Vulkans,\nin dessen Herzen eine der\lmächtigsten Kreaturen der Welt\lschlummert.\pAm Ende des Weges ein Teil des\nlegendären Steins der Zeit, des\lDiserakts.\pWas Rin nicht in Erfahrung bringen\nkonnte, weiß ich längst:\pIn drei Teile wurde der Zeitstein\ngespalten, den drei Wächtern der\lWelt anvertraut.\pSieh ihn dir an, den Zeitstein,\ndiese überwältigende Aura der\lMacht, dieses pulsierende\lSchimmern.\lEs ist fast bezaubernd..."
-        
+	.autostring 35 2 "Willkommen, PLAYER!\pIch habe dich erwartet!\pDass du hier mit meiner ehemaligen Partnerin eintriffst, hat mich aber überrascht.\pPass nur auf, das Mädchen wird schnell anhänglich.\pDu fragst dich sicherlich, warum ich meine gesamte Divison hierher gebracht habe, nicht?\pDu musst wissen, dass Team Violet hinter einem Artefakt namens Diserakt her ist.\pUrsprünglich sollte das Pokémon Celebi diesen Stein, in dem das Herz der Zeit schlägt, bewachen.\pAllerdings DOTS DOTS DOTS\pDOTS hat es diese Aufgabe in weiser Voraussicht weitaus stärkeren Wächtern anvertraut.\pDer Stein ist nun in drei Teile gespalten, und einer von ihnen befindet sich direkt hier, im Krater des Vulcanos."
+
         
 .global str_0x96eab0
 
 str_0x96eab0:
-    .string "Der Stein wird sich bald im Besitz\ndes Teams Violet befinden und\leine Waffe erschaffen, deren Macht\lunvergleichlich groß sein soll.\lUnd ich werde mich weder von euch\lnoch sonst irgendjemandem\laufhalten lassen."
+	.autostring 35 2 "Er ist wunderschön, nicht wahr?\pTeam Violet will die grenzenlose Energie, die der Stein liefern kann, verwenden, um eine vernichtende Waffe zu kreieren.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDoch wenn ich ehrlich sein soll DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pHabe ich daran kein Interesse.\pMich interessiert das Wesen, welches den Zeitstein bewacht!"
         
         
 .global str_0x96abb4
 
 str_0x96abb4:
-    .string "Wir dürfen das nicht\ngeschehen lassen.\lDer Diserakt hält den Fluss der\lZeit aufrecht - wer ihm die\lEnerige entzieht, lähmt die\lZeitstruktur.\lAußerdem wird das Entfernen des\lDiserakts das Wächterpokémon\lGroudon auf den Plan rufen.\lInferior wird diese Katastrophe\lnicht überstehen können."
+    .autostring 35 2 "PLAYER!\nWir dürfen das nicht geschehen lassen.\pDas Pokémon, das an diesem Ort schlummert DOTS\pEs ist eine grauenvolle Bestie.\pWenn Mistral sie erzürnt, befinden wir uns alle in höchster Gefahr!"
         
         
 .global str_0x96ab03
 
 str_0x96ab03:
-    .string "Mistral ist nicht aufzuhalten.\nDas Fragment des Zeitsteins wird\luns zu den Herrschern der Welt\lerheben!"
+    .autostring 35 2 "Mistral ist nicht aufzuhalten.\pDas Fragment des Zeitsteins wird uns zu den Herrschern der Welt\lerheben!"
         
         
 .global str_0x96ab6d
 
 str_0x96ab6d:
-    .string "Du kommst ohnehin zu spät, um uns\nnun noch zu stoppen."
+    .autostring 35 2 "Du kommst viel zu spät, um uns nun noch zu stoppen."
         
         
 .global str_0x96aa55
 
 str_0x96aa55:
-    .string "Mistral vollbringt, was Rin nicht\nerreichen konnte.\pEr wird alle drei Teile des\nDiserakts finden und vereinen."
+    .autostring 35 2 "Mistral wird das vollenden, was Rin nicht gelungen ist.\pEr wird alle Teile des Diserakts vereinen und Team Violet wird aufsteigen!"
         
         
 .global str_0x96aac6
 
 str_0x96aac6:
-    .string "Stell dich ihm nicht in den Weg,\noder du wirst vernichtet!"
+    .autostring 35 2 "Stell dich ihm nicht in den Weg, Kindchen, wenn du an deinem Leben hängst."
         
         
 .global str_0x96a618
 
 str_0x96a618:
-    .string "Ich bin der Punkt, an dem du\nscheitern wirst.\pMistrals Aufgabe ist zu wichtig,\nals dass ich dir erlauben könnte,\leinzugreifen."
-        
+	.autostring 35 2 "Bis hierher und nicht weiter!\pHier ist das Ende der Fahnenstange, du Rotznase!\pIch werde nicht erlauben, in Mistrals Pläne einzugreifen."
+
         
 .global str_0x969f24
 
 str_0x969f24:
-    .string "Unmöglich.\nDu kannst ihn nicht stoppen!"
+    .autostring 35 2 "Unmöglich!\nDu darfst Mistral nicht stoppen!"
         
         
 .global str_0x96ae6e
 
 str_0x96ae6e:
-    .string "Ihr beiden kommt zu spät.\nDer Diserakt ist mein."
+	.autostring 35 2 "Ihr kommt zu spät!\pDer Diserakt DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS gehört nun mir!"
         
         
 .global str_0x96adf1
 
 str_0x96adf1:
-    .string "Mistral, bitte!\pWenn ich dir je etwas bedeutet\nhabe, tu es nicht!"
+    .autostring 35 2 "Mistral, bitte!\pWenn ich dir je auch nur irgendetwas bedeutet habe, dann hör jetzt auf!\pEs ist noch nicht zu spät!\pMerkst du denn nicht, dass du von Machtsucht völlig zerfressen bist?"
         
         
 .global str_0x96ada6
 
 str_0x96ada6:
-    .string "Schweig!\nDummes Mädchen!\pErzittert vor der Kraft des\nDiserakts!"
+    .autostring 35 2 "Du dummes Mädchen, halt endlich deinen Mund!\pDeine herzerwärmenden Ansprachen werden mich nicht von meinem Vorhaben abbringen."
         
         
 .global str_0x96ad59
 
 str_0x96ad59:
-    .string "Oh bei Arceus!\nDas ist das Wächterpokémon\lGroudon...\lEs... es ..."
+    .autostring 35 2 "Oh nein, der Wächter\nDOTS DOTS DOTS"
         
         
 .global str_0x96a698
 
 str_0x96a698:
-    .string "Es ist endlich aus seinem\nSchlaf erwacht!"
+    .autostring 35 2 "DOTS DOTS DOTS ist endlich aus seinem Schlaf erwacht!"
         
         
 .global str_0x96ebfd
 
 str_0x96ebfd:
-    .string "Das ist unser aller Ende!\nGroudon wird alles verwüsten und\lzerstören!"
+    .autostring 35 2 "Das ist unser Ende!\pDas Monster wird jeden von uns vernichten DOTS"
         
         
 .global str_0x96b05d
 
 str_0x96b05d:
-    .string "Da stehst du vor mir,\ndu mächtiges, mächtiges Wesen!\pDeine Kraft soll fortan an mich\ngebunden sein.\pHier erhebe ich das Magmaherz, das\nuralte Artefakt, um deine wahre\lKraft zu entfesseln!"
-        
+	.autostring 35 2 "Komm her, Groudon!\pIch habe keine Angst vor dir!\pKomm zu mir, deinem neuen Gebieter!\pIch bin der Besitzer deiner Seele, des Magmeherzes!\pIch werde deine uralte Kraft erneut entfesseln!"
         
 .global str_0x97138c
 
 str_0x97138c:
-    .string "Was? Groudon ist...\nVerschwunden?"
+    .autostring 35 2 "Es DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS ist verschwunden?"
         
         
 .global str_0x96f1be
 
 str_0x96f1be:
-    .string "Törrichtes Gör!\nGroudon ist nicht verschwunden...\pEs ist unter meiner Kontrolle!\pDas Magmaherz, welches ich aus dem\nMuseum von Orina City gestohlen\lhabe, verleiht Groudon seine\lursprüngliche Macht...\pEs erhebt es in seine Kaiserform!\pMein Wort ist Groudons Befehl!\pMein Wille seine Handlung!\pMein Geist seine Macht!\pGroudons Kaiserform birgt ein\nunvorstellbares Maß an Vernichtung\lund Chaos - Planeten werden wie\lKäferpokémon zerschmettert und\lHimmel wie Kerzen in Brand\lgesetzt!\pHahaha! Hahaha!\pAlso!\pPLAYER!\pIch fordere dich heraus!\pBrenne! Schreie!\pIch werde dich vernichten!"
-        
+	.autostring 35 2 "Dummes Mädchen!\nHast du es nicht begriffen?\pDuch das Magmaherz, das ich aus dem Museum von Orina City gestohlen habe, habe ich nun die Kontrolle über das legendäre Pokémon Groudon.\pUnd da es nun wieder mit seinem Herzen vereint ist, wird es sich in seine eigentliche Kaiserform erheben!\pHahaha!\nHahaha! Haha!\pIch bin unbesiegbar!\pIch werde alles und jeden verbrennen, der sich mir in den Weg stellt.\pDie Welt wird einen Terror erleben, wie es ihn bislang noch nie gegeben hat!\pHahaha!\nHahaha!\pAlso!\pPLAYER!\pEs ist nun endlich an der Zeit, dich herauszufordern!"
         
 .global str_0x96f0ee
 
 str_0x96f0ee:
-    .string "Dieser Kampf wird über das\nSchicksal dieser Welt entscheiden!\pWer darf herrschen, wer muss\ngehorchen?"
+    .autostring 35 2 "Betrachte es als Ehre, mein erstes Opfer zu werden.\pHahaha!\nHahaha!\pIch werde dich vernichten, PLAYER!\pSchreie! Schreie!\pBrenne!"
         
         
 .global str_0x96f156
 
 str_0x96f156:
-    .string "... Das ist ... völlig ...\nabsurd! ...\pDu hast ... Groudon ... besiegt?\nIn seiner Kaiserform?"
+	.autostring 35 2 "DOTS Das ist vollkommen DOTS absurd!\pDu hast DOTS DOTS DOTS\pDu hast Groudon besiegt?\nIn seiner Kaiserform?"
         
         
 .global str_0x9713b5
 
 str_0x9713b5:
-    .string "...\n... ... ... ...\pDas ... ist ...\n...\p... du hast Groudon besiegt?"
+    .string "DOTS\nDOTS DOTS DOTS DOTS\pDas DOTS ist DOTS\nDOTS\pDOTS du hast Groudon besiegt?"
         
         
 .global str_0x96fd16
 
 str_0x96fd16:
-    .string "Nein!\nEs entzieht sich meiner Kontrolle!"
+    .autostring 35 2 "Wie kann das sein?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pGroudon entzieht sich meiner Kontrolle?"
         
         
 .global str_0x96fd4a
 
 str_0x96fd4a:
-    .string "Es wird alles und jeden hier\nvernichten!"
+    .autostring 35 2 "Unmöglich!\pEs wird alles in Schutt und Asche legen!\pWir müssen von hier weg!"
         
         
 .global str_0x96fc90
 
 str_0x96fc90:
-    .string "Wir werden es nicht\nschaffen!\lDer Vulkan ist im Begriff\lauszubrechen.\lDer Abstieg wird ein heißer Tod!\lWir sind am Ende!"
+    .autostring 35 2 "Wir werden es niemals rechtzeitig schaffen.\pDieser Ort wird unser Grab!\pWir werden lebendig verbrennen!"
         
         
 .global str_0x97300a
 
 str_0x97300a:
-    .string "Was habe ich getan?\nJetzt werden wir...\lWerden wir...\pAlle...\nsterben!"
+    .autostring 35 2 "Ich verstehe nicht DOTS\pWieso DOTS DOTS DOTS\pIch darf noch nicht sterben!"
         
         
 .global str_0x972330
 
 str_0x972330:
-    .string "Wir sind geliefert.\nDer Tod, er hat uns gefunden!"
+    .autostring 35 2 "Das ist das Ende!"
         
         
 .global str_0x972313
 
 str_0x972313:
-    .string "Nicht."
+    .autostring 35 2 "Nein."
         
         
 .elseif LANG_EN

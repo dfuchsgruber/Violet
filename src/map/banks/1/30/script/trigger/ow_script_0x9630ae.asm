@@ -85,7 +85,7 @@ return
 .global str_0x963098
 
 str_0x963098:
-    .string "Grueeeeh! ..."
+    .string "Grueeeeh! DOTS"
         
         
 .global str_0x96305b

@@ -111,26 +111,23 @@ return
 .global str_0x8e627c
 
 str_0x8e627c:
-    .string "Oh, PLAYER!\nDu machst dich wohl auch auf den\lWeg nach Kaskada? Sei gewarnt, die\lWüste im Osten ist tückisch. Aber\lich habe ja bereits meinen zweiten\lArena-Orden errungen. Für mich\lwird das ein Kinderspiel werden!\lWie steht es um deine Pokémon?\lKannst du mir immer noch\lentgegentreten?"
-        
+	.autostring 35 2 "PLAYER!\nDu machst dich wohl auf den Weg nach Kaskada?\pIch warne dich, im Osten lauert eine tückische Wüste.\pAllerdings habe ich ja auch bereits zwei Arena-Orden erkämpft.\pFür mich wird das ein Kinderspiel DOTS\pWie sieht es um deine Fähigkeiten aus?"
         
 .global str_0x8e6231
 
 str_0x8e6231:
-    .string "Du bist ein verfluchter\nGlückspilz. Meine Arena-Orden\lsprechen für mich!"
-        
+    .autostring 35 2 "Du und dein verfluchtes Glück!\pMeine Arenaorden sprechen ja wohl für mich!"
         
 .global str_0x8e6164
 
 str_0x8e6164:
-    .string "Reines Glück! Du kannst im Grunde\nkein besserer Trainer sein, als\lich, denn ich besitze mehr\lArena-Orden als du!\p...\p...\pNicht weniger hast du ein bisschen\nKönnen bewiesen. Das hier sollte\ldir helfen..."
-        
+	.autostring 35 2 "Pures Glück!\pDu kannst gar kein besserer Trainer sein als ich, weil ich mehr Arena-Orden besitze als du!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAch, fast hätte ich vergessen, dass ich dir von Papi etwas geben soll."
         
 .global str_0x9681e9
 
 str_0x9681e9:
-    .string "Der Detektor findet versteckte\nGegenstände, die dem bloßen Auge\lentgehen.\pDu musst ihn dafür nicht einmal\neinschalten, er aktiviert sich\lautomatisch, wenn du dich in die\lNähe eines versteckten Gegenstands\lbegibst.\pDu kannst den Alarm in den\nOptionen auch ausschalten, wenn du\lmöchtest.\p...\pWie dem auch sei!\nIch werde mich wieder auf den Weg\lmachen!\lBeim nächsten Mal gewinne ich!"
-        
+	.autostring 35 2 "Der Detektor findet Gegenstände, die dem bloßen Auge leicht entgehen können.\pDafür musst du ihn nicht einmal einschalten.\pEr aktiviert sich automatisch in der Nähe eines versteckten Items.\pDiese Funktion kannst du auch in den Optionen ausschalten.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWie auch immer!\nIch mache mich auf den Weg nach Kaskada!\pBei unserem nächsten Treffen bin ich siegreich!"
+
         
 .elseif LANG_EN
 

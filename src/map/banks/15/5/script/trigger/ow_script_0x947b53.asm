@@ -10,21 +10,36 @@
 ow_script_0x947b53:
 setvar LASTTALKED 0x1
 lockall
+loadpointer 0 str_dieb
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8d4859
 callstd MSG
+special 0xF
+
 applymovement 1 mov_2
+
+loadpointer 0 str_dieb
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8d4782
 callstd MSG
+special 0xF
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
+
 compare LASTRESULT 0x1
 gotoif LESS ow_script_0x8d44b9
 call ow_script_0x8a1cc9
+
 loadpointer 0x0 str_0x8d46e0
 callstd MSG
 special 0x7
+loadpointer 0 str_dieb
+setvar 0x8000 0
+special 0xE
 trainerbattlecont 0x1 0x26 0x0 str_0x8d46bb str_0x8d469f ow_script_0x8d44dd
 
 mov_2:
@@ -40,8 +55,12 @@ ow_script_0x8d44dd:
 clearflag ROUTE_3_MILL_SAVED_ALTARIA_EGG
 setvar 0x8000 0xfff8
 special2 0x8000 0xc
+loadpointer 0 str_dieb
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x8d4585
 callstd MSG
+special 0xF
 goto ow_script_0x8d4513
 
 
@@ -51,7 +70,7 @@ fadescreen 0x1
 hidesprite 0x1
 pause 0x18
 fadescreen 0x0
-setvar ROUTE_3_MILL_ALTARIA_EGG 0x1
+setvar ROUTE_3_MILL_ALTARIA_EGG_SCRIPT 0x1
 releaseall
 end
 
@@ -62,6 +81,9 @@ call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d4644
 callstd MSG
 special 0x7
+loadpointer 0 str_dieb
+setvar 0x8000 0
+special 0xE
 trainerbattlecont 0x1 0x26 0x0 str_0x8d4604 str_0x8d469f ow_script_0x8d44f8
 
 
@@ -80,20 +102,21 @@ goto ow_script_0x8d4513
 .ifdef LANG_GER
 .global str_0x8d4859
 
+str_dieb:
+	.string "Dieb"
+
 str_0x8d4859:
-    .string "Kekeke! Jetzt werde ich mir dieses\nAltaria-Ei unter den Nagel reißen!"
-        
+	.autostring 36 2 "Hehe!\nJetzt kann ich mir endlich dieses Ei unter den Nagel reißen!"
         
 .global str_0x8d4782
 
 str_0x8d4782:
-    .string "Wer bist du denn?\nWeißt du, hier nistet ein goldenes\lAltaria und scheinbar hat es ein\lEi gelegt. Was denkst du, wie viel\lwohl so ein goldenes Wablu wert\list?\lAber du kriegst nichts davon! Das\list mein Ei!"
-        
+	.autostring 36 2 "Was? Wer bist du denn?\pWeißt du etwa auch von dem goldenen Altaria, das hier nistet?\pKeine Chance, sein Ei ist kostbar und ich werde es mir unter den Nagel reißen!"
         
 .global str_mill_choice_0
 
 str_mill_choice_0:
-    .string "Ei nehmen"
+    .string "Ei selbst nehmen"
         
         
 .global str_mill_choice_1
@@ -105,43 +128,43 @@ str_mill_choice_1:
 .global str_0x8d46e0
 
 str_0x8d46e0:
-    .string "Du denkst also, dass du dieses Ei\neinfach so nehmen kannst?\pNichts da, ich werde mir das\nPrachtstück holen."
+    .autostring 36 2 "Denkst du, ich überlasse dir das Ei einfach so?\pGanz schön naiv, von dir!"
         
         
 .global str_0x8d46bb
 
 str_0x8d46bb:
-    .string "Was? Unsinn! Dieses Ei gehört mir!"
+    .autostring 36 2 "Du bist ja gerissen!\pAber nichts da!\pIch habe das Prachtstück schon länger im Auge!"
         
         
 .global str_0x8d469f
 
 str_0x8d469f:
-    .string "Unmöglich! Das schöne Ei!"
+    .autostring 36 2 "Verdammt!\nDas schöne Ei DOTS"
         
         
 .global str_0x8d4585
 
 str_0x8d4585:
-    .string "Wah! Du bist stark. Gegen dich\nkann ich nichts ausrichten. Nimm\ldir doch dieses dumme Ei, ich\lwollte es ohnehin nicht haben!"
+    .autostring 36 2 "Wah!\nDu bist zu stark!\pDann nimm dir das verdammte Ei doch!\pMir hätte es sowieso nur Ärger gemacht!"
         
         
 .global str_0x8d4644
 
 str_0x8d4644:
-    .string "Dieses Ei gehört der Mutter und du\nwirst es ihr nicht wegnehmen.\lDafür werde ich sorgen."
+    .autostring 36 2 "Ich werde nicht zulassen, dass dem Altaria sein Ei stiehlst!"
         
         
 .global str_0x8d4604
 
 str_0x8d4604:
-    .string "Kekeke! Dieses Ei wirst du mir\nschon wegnehmen müssen, Junge!"
+    .autostring 36 2 "Hehe!\pDann wirst du es wohl verteidigen müssen!"
         
         
 .global str_0x8d4525
 
 str_0x8d4525:
-    .string "Wah! Du bist stark! Was hast du\ndenn davon, dieses blöde Ei zu\lbeschützen?\pIch verzieh\ mich!"
+    .autostring 36 2 "Urgh!\pWas hast du denn davon dieses dumme Ei zu beschützen?\pDOTS DOTS DOTS\pIch verziehe michDOTS"
         
         
 .elseif LANG_EN

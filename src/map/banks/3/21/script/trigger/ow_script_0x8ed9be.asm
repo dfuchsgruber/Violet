@@ -155,44 +155,39 @@ return
 .global str_0x8eda29
 
 str_0x8eda29:
-    .string "Oh, hallo PLAYER!\pWie mir scheint, bist du auch auf\ndem Weg nach Kaskada. Aber zuerst\lerwartet dich hier eine wirklich\lgrauenvolle Wüste.\pWollen wir mal sehen, ob du mir\ngewachsen bist!"
-        
+	.autostring 35 2 "Hallo PLAYER!\pDu bist wohl auch auf dem Weg nach Kaskada, oder?\pIch sage dir eins, diese Wüste ist wirklich eine Hölle DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWas sagst du? DOTS\pWürdest du bitte noch einmal gegen mich kämpfen?"
         
 .global str_0x8edae8
 
 str_0x8edae8:
-    .string "Wieso kann ich nicht auch einmal\neinen Sieg erringen?"
+    .autostring 35 2 "Wieso verliere ich so viele Kämpfe\pDOTS DOTS DOTS"
         
         
 .global str_0x8ffbb5
 
 str_0x8ffbb5:
-    .string "Unfassbar... Ich verliere einen\nKampf nach dem anderen. Vielleicht\lhab einfach nicht das Zeug, ein\lTrainer zu sein..."
-        
+	.autostring 35 2 "DOTS DOTS DOTS\pIch weiß wirklich nicht DOTS\pOb es noch einen Sinn hat DOTS\pWeiterzumachen DOTS\pDOTS DOTS DOTS"
         
 .global str_0x8ffb51
 
 str_0x8ffb51:
-    .string "Lass dich nicht unterkriegen,\nMaike. Du bist weit gekommen und\lwirst es noch viel weiter bringen."
+    .autostring 35 2 "Lass dich nicht unterkriegen, Maike!\pDu musst nur mit mehr Selbstvertrauen kämpfen!"
         
         
 .global str_0x8ff97b
 
 str_0x8ff97b:
-    .string "Ja, du hast vermutlich\nrecht. Ich darf mich nicht\lunterkriegen lassen. Mein Bruder\lwürde auf mich voller Scham\lherabblicken, wenn er mich jetzt\lso sehen würde!\p...\p...\pWie dem auch sei, die Wüste, die\nuns erwartet, ist kein Ponita-Hof.\lMan hat mir zwar gesagt, dass es\lauch einen Brunnen geben soll,\ldoch habe ich mich wegen der\lvielen Fata Morganen schnell\lverirrt.\lDu kannst dir nie sicher sein, ob\lder Weg, den du einschlägst, nicht\lin eine Sackgasse führt."
-        
-        
+	.autostring 35 2 "Selbstvertrauen?\pAber wie soll ich Selbstvertrauen aufbauen, wenn ich andauernd verliere?\pMein Freund aus Hoenn DOTS\pIch werde niemals auf einer Augenhöhe mit ihm sein DOTS\pIch bin einfach nicht für dieses Leben gemacht DOTS\pDOTS DOTS DOTS"
+
 .global str_0x8edd68
 
 str_0x8edd68:
-    .string "Fast hätte ich es vergessen! Mein\nBruder Brix aus Hoenn hat mir\leinige seltene Items überreicht,\ldie ich in seinem Namen an\ltalentierte Trainer aushändigen\lsoll."
-        
+	.autostring 35 2 "Weißt du, PLAYER DOTS\pIch finde, dass ich dir das hier geben sollte DOTS"
         
 .global str_0x8edba7
 
 str_0x8edba7:
-    .string "Der Ep-Teiler ermöglicht es,\nPokémon zu trainieren, ohne dass\ldiese am Kampf teilnehmen müssen.\pJedes Pokémon, dass dieses Item\nträgt, erhält automatisch einen\lTeil der verdienten\lErfahrungspunkte. Ich hoffe, du\lkannst ihn gut gebrauchen.\pIch für meinen Teil aber, werde\nmich nun wieder auf den Weg\lmachen. Ich werde alles daran\lsetzten, ein besserer Trainer zu\lwerden, sodass ich eines Tages\lmeinem Bruder voller Stolz in die\lAugen blicken kann."
-        
+	.autostring 35 2 "Der Ep-Teiler war ein Geschenk meines Freundes aus Hoenn DOTS\pAber so ein nützliches Item ist in deinen fähigen Händen sicher besser aufgehoben DOTS\pAn mir wäre er nur verschwendet DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS"
         
 .elseif LANG_EN
 

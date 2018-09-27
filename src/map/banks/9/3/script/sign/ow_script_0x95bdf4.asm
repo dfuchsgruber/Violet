@@ -171,7 +171,7 @@ str_0x95bcb7:
 .global str_0x95bc47
 
 str_0x95bc47:
-    .string "Wundervoll! Ich bräuchte dann nur\nnoch deinen Namen bitte?\p... ...\n... ... ...\pPLAYER also.\nEinen Moment bitte..."
+    .string "Wundervoll! Ich bräuchte dann nur\nnoch deinen Namen bitte?\pDOTS DOTS\nDOTS DOTS DOTS\pPLAYER also.\nEinen Moment bitteDOTS"
         
         
 .global str_0x95bc02

@@ -13,7 +13,7 @@ end
 .global str_0x94e407
 
 str_0x94e407:
-    .string "Das kupferfarbene Gebäude im\nNorden der Stadt ist eine Bank.\pAber wenn du mich fragst, solltest\ndu dir von diesen Leuten kein Geld\lleihen..."
+    .string "Das kupferfarbene Gebäude im\nNorden der Stadt ist eine Bank.\pAber wenn du mich fragst, solltest\ndu dir von diesen Leuten kein Geld\lleihenDOTS"
         
         
 .elseif LANG_EN

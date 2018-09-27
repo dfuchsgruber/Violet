@@ -20,7 +20,7 @@ str_0x744635:
 .global str_0x7446c2
 
 str_0x7446c2:
-    .string "Mein Tuska...."
+    .string "Mein TuskaDOTS."
         
         
 .elseif LANG_EN

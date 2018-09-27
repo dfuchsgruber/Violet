@@ -13,7 +13,7 @@ end
 .global str_0x93bcb5
 
 str_0x93bcb5:
-    .string "Manus wird von vielen für einen\ngroßen Mann gehalten...\lIch vertrete eine andere\lAuffassung, aber derartiges sollte\lman nicht zu laut sagen."
+    .string "Manus wird von vielen für einen\ngroßen Mann gehaltenDOTS\lIch vertrete eine andere\lAuffassung, aber derartiges sollte\lman nicht zu laut sagen."
         
         
 .elseif LANG_EN

@@ -13,7 +13,7 @@ end
 .global str_0x8f38f8
 
 str_0x8f38f8:
-    .string "Die Revolutionsbewegung fordert\nFreiheit und ein Ende der\lKorruption.\lKeine schlechten Forderungen, wenn\lman bedenkt, wie sich die Welt\lentwickelt hat..."
+    .string "Die Revolutionsbewegung fordert\nFreiheit und ein Ende der\lKorruption.\lKeine schlechten Forderungen, wenn\lman bedenkt, wie sich die Welt\lentwickelt hatDOTS"
         
         
 .elseif LANG_EN

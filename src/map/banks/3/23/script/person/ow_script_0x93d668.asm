@@ -20,7 +20,7 @@ str_0x948c85:
 .global str_0x9497f6
 
 str_0x9497f6:
-    .string "Dass du nicht einmal den Anstand\nhast, zu verlieren..."
+    .string "Dass du nicht einmal den Anstand\nhast, zu verlierenDOTS"
         
         
 .elseif LANG_EN

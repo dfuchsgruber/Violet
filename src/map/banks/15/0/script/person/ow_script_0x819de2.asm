@@ -14,7 +14,7 @@ end
 .global str_0x819dfa
 
 str_0x819dfa:
-    .string "Pflanzen können so viel gutes tun.\nMan kann sie sogar rauchen... Ahh!"
+    .string "Pflanzen können so viel gutes tun.\nMan kann sie sogar rauchenDOTS Ahh!"
         
         
 .global str_0x819e42

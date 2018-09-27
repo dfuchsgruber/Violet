@@ -118,4 +118,8 @@ u8 ability_names[][13] = {
 	LANGDEP(PSTRING("Photogenese"), PSTRING("Photorecover")),
 	LANGDEP(PSTRING("Extradorn"), PSTRING("Extrathorn")),
 	LANGDEP(PSTRING("Curator"), PSTRING("Curator")),
+	LANGDEP(PSTRING("Frühzünder"), PSTRING("Early Fuze")),
+	LANGDEP(PSTRING("Reiche Ernte"), PSTRING("Harvest")),
+	LANGDEP(PSTRING("Hack"), PSTRING("Hack")),
+	LANGDEP(PSTRING("Fluffig"), PSTRING("Fluffy"))
 };

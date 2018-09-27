@@ -118,6 +118,10 @@ ability_descriptions:
     .word str_ability_descr_0x71
     .word str_ability_descr_0x72
     .word str_ability_descr_0x73
+    .word str_ability_descr_0x74
+    .word str_ability_descr_0x75
+    .word str_ability_descr_0x76
+    .word str_ability_descr_0x77
 
 @ // Define the strings
 
@@ -143,7 +147,7 @@ ability_descriptions:
 	.global str_ability_descr_0x3
 
 	str_ability_descr_0x3:
-		.string "Erhöht INIT. nach und nach."
+		.string "Erhöht Init. nach und nach."
 
 
 	.global str_ability_descr_0x4
@@ -257,7 +261,7 @@ ability_descriptions:
 	.global str_ability_descr_0x16
 
 	str_ability_descr_0x16:
-		.string "Senkt ANGR. des Gegners."
+		.string "Senkt Angr. des Gegners."
 
 
 	.global str_ability_descr_0x17
@@ -323,13 +327,13 @@ ability_descriptions:
 	.global str_ability_descr_0x21
 
 	str_ability_descr_0x21:
-		.string "Steigert INIT. bei Regen."
+		.string "Steigert Init. bei Regen."
 
 
 	.global str_ability_descr_0x22
 
 	str_ability_descr_0x22:
-		.string "INIT. + bei Sonnenschein."
+		.string "Init. + bei Sonnenschein."
 
 
 	.global str_ability_descr_0x23
@@ -347,7 +351,7 @@ ability_descriptions:
 	.global str_ability_descr_0x25
 
 	str_ability_descr_0x25:
-		.string "Steigert ANGR."
+		.string "Steigert Angr."
 
 
 	.global str_ability_descr_0x26
@@ -389,7 +393,7 @@ ability_descriptions:
 	.global str_ability_descr_0x2c
 
 	str_ability_descr_0x2c:
-		.string "KP-Anstieg bei Regen."
+		.string "Kp-Anstieg bei Regen."
 
 
 	.global str_ability_descr_0x2d
@@ -401,7 +405,7 @@ ability_descriptions:
 	.global str_ability_descr_0x2e
 
 	str_ability_descr_0x2e:
-		.string "Steigert AP des Gegners."
+		.string "Steigert Ap des Gegners."
 
 
 	.global str_ability_descr_0x2f
@@ -437,7 +441,7 @@ ability_descriptions:
 	.global str_ability_descr_0x34
 
 	str_ability_descr_0x34:
-		.string "Verhindert ANGR.-Reduz."
+		.string "Verhindert Angr.-Reduz."
 
 
 	.global str_ability_descr_0x35
@@ -467,13 +471,13 @@ ability_descriptions:
 	.global str_ability_descr_0x39
 
 	str_ability_descr_0x39:
-		.string "Bildet ein Team mit MINUN."
+		.string "Bildet ein Team mit Minun."
 
 
 	.global str_ability_descr_0x3a
 
 	str_ability_descr_0x3a:
-		.string "Bildet ein Team mit PLUSLE."
+		.string "Bildet ein Team mit Plusle."
 
 
 	.global str_ability_descr_0x3b
@@ -497,13 +501,13 @@ ability_descriptions:
 	.global str_ability_descr_0x3e
 
 	str_ability_descr_0x3e:
-		.string "Steigert ANGR. bei Leiden."
+		.string "Steigert Angr. bei Leiden."
 
 
 	.global str_ability_descr_0x3f
 
 	str_ability_descr_0x3f:
-		.string "Steigert VERT. bei Leiden."
+		.string "Steigert Vert. bei Leiden."
 
 
 	.global str_ability_descr_0x40
@@ -515,7 +519,7 @@ ability_descriptions:
 	.global str_ability_descr_0x41
 
 	str_ability_descr_0x41:
-		.string "Erhöht PFL.-Att. i. d. Not."
+		.string "Erhöht Plf.-Att. i. d. Not."
 
 
 	.global str_ability_descr_0x42
@@ -569,7 +573,7 @@ ability_descriptions:
 	.global str_ability_descr_0x4a
 
 	str_ability_descr_0x4a:
-		.string "Steigert ANGR."
+		.string "Steigert Angr."
 
 
 	.global str_ability_descr_0x4b
@@ -658,7 +662,7 @@ ability_descriptions:
 
 	.global str_ability_descr_0x59
 
-	str_ability_descr_0x59:
+	str_ability_descr_0x59: @// Tollwut
 		.string "Steigert Angr, senkt. Vert."
 
 
@@ -688,7 +692,7 @@ ability_descriptions:
 
 	.global str_ability_descr_0x5e
 
-	str_ability_descr_0x5e:
+	str_ability_descr_0x5e: @//Lernfähig
 		.string "Erhöht Gen. bei gesch. Att."
 
 
@@ -811,11 +815,25 @@ ability_descriptions:
 	str_ability_descr_0x72:
 		.string "Verursacht Schaden nach Berührung."
 
-
 	.global str_ability_descr_0x73
 
 	str_ability_descr_0x73:
 		.string "Vorzeitige Kp Regeneration."
+
+	str_ability_descr_0x74:
+		.string "Selbstzerst. Att. treffen früher."
+
+	str_ability_descr_0x75: @// Reiche-Ernte
+		.string "Stellt Beeren wieder her."
+
+	str_ability_descr_0x76: @// Achtlos
+		.string "Verstärkt Rückstoss-Attacken."
+
+	str_ability_descr_0x77: @// Hack
+		.string "Höhere Volltrefferchance."
+
+	str_ability_descr_0x78: @// Fluffig
+		.string "Verlangsamt Gegner bei Berührung."
 
 
 .elseif LANG_EN
@@ -1393,6 +1411,24 @@ ability_descriptions:
 
 	str_ability_descr_0x72:
 		.string "Causes damage after touch move."
+
+	str_ability_descr_0x73:
+		.string "Early Hp-regeneration."
+
+	str_ability_descr_0x74:
+		.string "Selfdest. Att. hit early."
+
+	str_ability_descr_0x75: @//Reiche-Ernte
+		.string "Recovers berries"
+
+	str_ability_descr_0x76: @// Achtlos
+		.string "Boosts recoil attacks."
+
+	str_ability_descr_0x77: @// Hack
+		.string "Higher critical hir ratio."
+
+	str_ability_descr_0x78: @// Fluffig
+		.string "Slows opp. when touched."
 
 .endif
 

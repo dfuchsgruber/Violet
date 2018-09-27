@@ -172,7 +172,7 @@ str_after_battle_lost:
 	.autostring 36 2 "Dass ich der bessere Trainer von uns beiden bin, wissen wir wohl beide, PLAYER.\pAber du hast dich gut geschlagen."
 
 str_may_lost:
-	.autostring 36 2 "I-Ich habe verloren...\pIch bin eine Schande für diese Schule..."
+	.autostring 36 2 "I-Ich habe verlorenDOTS\pIch bin eine Schande für diese SchuleDOTS"
 
 str_felix_won:
 	.autostring 36 2 "Rede doch keinen Unsinn, Maike!\pDu hast gut gekämpft! Du brauchst nur etwas mehr Vertrauen in dich und deine Pokémon!"
@@ -184,7 +184,7 @@ str_final_call_felix:
 	.autostring 36 2 "Felix, du bist wieder als Erster an der Reihe.\pKomm zu mir, Junge!"
 
 str_award_felix:
-	.autostring 36 2 "Im schriftlichen Test konntest du sieben Fragen richtig beantworten...\pAusgezeichnet!\pEin Pokémon zu fangen hat dir keine Probleme bereitet und deinen Kampf hast du gewonnen.\pGlückwunsch, du hast es geschafft Bursche!\pAb heute darfst du dich einen Trainer nennen!"
+	.autostring 36 2 "Im schriftlichen Test konntest du sieben Fragen richtig beantwortenDOTS\pAusgezeichnet!\pEin Pokémon zu fangen hat dir keine Probleme bereitet und deinen Kampf hast du gewonnen.\pGlückwunsch, du hast es geschafft Bursche!\pAb heute darfst du dich einen Trainer nennen!"
 
 str_felix_awarded:
 	.autostring 36 2 "Hihi! Danke Opi - ähm, Herr Faun!\pDu warst wirklich ein großartiger Lehrer!"

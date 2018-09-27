@@ -35,19 +35,19 @@ end
 .global str_0x8f14e8
 
 str_0x8f14e8:
-    .string "Der Pfad für den du dich\nentschieden hast...\pDu hast ein reines Herz...\pEs wird dich weit bringen..."
+    .string "Der Pfad für den du dich\nentschieden hastDOTS\pDu hast ein reines HerzDOTS\pEs wird dich weit bringenDOTS"
         
         
 .global str_0x8f156e
 
 str_0x8f156e:
-    .string "Mir scheint, du bist dir deiner\nSelbst noch nicht sicher. Folge\ldeinem Herzen, lass es für dich\lentscheiden..."
+    .string "Mir scheint, du bist dir deiner\nSelbst noch nicht sicher. Folge\ldeinem Herzen, lass es für dich\lentscheidenDOTS"
         
         
 .global str_0x8f15df
 
 str_0x8f15df:
-    .string "Ich sehe deine Entschlossenheit...\pDu würdest alles tun, um deinen\nWillen durchzusetzten...\pNoch ist es nicht zu spät,\numzukehren..."
+    .string "Ich sehe deine EntschlossenheitDOTS\pDu würdest alles tun, um deinen\nWillen durchzusetztenDOTS\pNoch ist es nicht zu spät,\numzukehrenDOTS"
         
         
 .elseif LANG_EN

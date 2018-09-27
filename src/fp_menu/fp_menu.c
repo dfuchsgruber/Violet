@@ -447,7 +447,7 @@ void pokemon_set_fp_applied(pokemon *target, int stat, u8 value) {
 }
 
 u8 pokemon_get_fp_applied(pokemon *target, int stat) {
-    return (u8) pokemon_get_attribute(target, fp_menu_attributes_fp_applied[stat], NULL);
+    return (u8) pokemon_get_attribute(target, fp_menu_attributes_fp_applied[stat], NULL) & 0x7F;
 }
 
 color fp_menu_pokepic_anim_colors[6] = {

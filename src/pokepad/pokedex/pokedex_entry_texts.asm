@@ -2666,7 +2666,7 @@ str_pokedex_data_221_page_1:
 .global str_pokedex_data_222_page_0
 
 str_pokedex_data_222_page_0:
-	.string "Sie schließen sich in Gruppen zusammen\nund bilden Inseln, auf denen im Südmeer\nMenschen leben."
+	.string "Unter seinem langen Fell versteckt es\nNahrung. Aber es vergisst, dass es sie\ndort versteckt hat."
 
 
 .global str_pokedex_data_222_page_1
@@ -2858,7 +2858,7 @@ str_pokedex_data_237_page_1:
 .global str_pokedex_data_238_page_0
 
 str_pokedex_data_238_page_0:
-	.string "Es wippt mit dem Kopf langsam vor und\nzurück, als versuche es, jemanden zu\nküssen."
+	.string "Wenn eines der Kinder, mit denen es\nbefreundet ist, von jemandem gehänselt\nwird, sucht es das Haus des Übeltäters\nauf und brennt es nieder."
 
 
 .global str_pokedex_data_238_page_1
@@ -3758,7 +3758,7 @@ str_pokedex_data_312_page_1:
 .global str_pokedex_data_313_page_0
 
 str_pokedex_data_313_page_0:
-	.string "Es lebt in der Nähe von reinen Teichen.\nNachts leuchtet sein Hinterteil und es\nkommuniziert durch dessen Blinken\nmit Artgenossen."
+	.string "In seinem Beutel trägt es einen\nrunden, eiförmigen Stein, den es\nFreunden gibt."
 
 
 .global str_pokedex_data_313_page_1
@@ -3770,7 +3770,7 @@ str_pokedex_data_313_page_1:
 .global str_pokedex_data_314_page_0
 
 str_pokedex_data_314_page_0:
-	.string "Es veranlasst VOLBEAT Zeichen in\nden Nachthimmel zu schreiben. Es gibt\nForscher, die seine Muster untersuchen."
+	.string "Es sieht aus, als würde es\nimmer weinen. Dabei reguliert\nes nur seinen Wasserhaushalt."
 
 
 .global str_pokedex_data_314_page_1
@@ -4322,7 +4322,7 @@ str_pokedex_data_359_page_1:
 .global str_pokedex_data_360_page_0
 
 str_pokedex_data_360_page_0:
-	.string "Es zieht normalerweise im Rudel umher.\nZum Schlafen drängen sie sich ganz\neng in einer Höhle zusammen."
+	.string "Es ruft, indem es eine Kugel in\nseiner Kehle bewegt. Es bewegt\nsich mit eiligen Hopsern fort."
 
 
 .global str_pokedex_data_360_page_1
@@ -4442,7 +4442,7 @@ str_pokedex_data_369_page_1:
 .global str_pokedex_data_370_page_0
 
 str_pokedex_data_370_page_0:
-	.string "Während der Laichzeit versammeln\nsich zahllose LIEBISKUS in den\nKorallenriffen. Daher erstrahlt das\nWasser rosa."
+	.string "Es feuer Kleinstein aus seinen\nHandflächen. Durch seine Schützer\nerträgt es sogar Vulkanausbrüche."
 
 
 .global str_pokedex_data_370_page_1
@@ -6867,7 +6867,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_222_page_0
 
 	str_pokedex_data_222_page_0:
-		.string "In a south sea nation, the people live in\ncommunities that are built on groups of\nthese POKéMON."
+		.string "It hides food under its long fur,\nbut forgets that it has put it\nthere."
 
 	.global str_pokedex_data_222_page_1
 
@@ -7027,7 +7027,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_238_page_0
 
 	str_pokedex_data_238_page_0:
-		.string "It always rocks its head slowly backwards\nand forwards as if it is trying to kiss\nsomeone."
+		.string "If one of the children it befriends is\nbullied, it burns the house of\nthe bully to ashes."
 
 	.global str_pokedex_data_238_page_1
 
@@ -8347,7 +8347,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_370_page_0
 
 	str_pokedex_data_370_page_0:
-		.string "During the spawning season, countless\nLUVDISC congregate at coral reefs,\nturning the waters pink."
+		.string "It fires Geodude from its palms.\nBecause of its protector it\neven endures vulcanic eruptions."
 
 	.global str_pokedex_data_370_page_1
 

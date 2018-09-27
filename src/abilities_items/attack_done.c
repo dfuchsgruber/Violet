@@ -12,13 +12,8 @@
 #include "constants/attack_results.h"
 #include "constants/attacks.h"
 #include "constants/attack_flags.h"
-
-extern u8 bsc_life_orb[];
-extern u8 bsc_lernfaehig[];
-extern u8 bsc_hochmut[];
-extern u8 bsc_lebensraeuber[];
-extern u8 bsc_curator[];
-extern u8 bsc_extradorn[];
+#include "math.h"
+#include "abilities.h"
 
 void attack_done(u8 index){
     battler *attacker = &battlers[attacking_battler];
@@ -90,8 +85,16 @@ void attack_done(u8 index){
             (attacks[active_attack].flags & MAKES_CONTACT)){
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_extradorn;
-        
-        
+    } else if(defender->ability == FLUFFIG && (attacks[active_attack].flags & MAKES_CONTACT)) {
+    	if (attacker->stat_changes[3] > 0) {
+    		// Trigger fluffy
+    		attacker->stat_changes[3] = (u8) max(0, attacker->stat_changes[3] - 2);
+    	    battle_stat_change[0x10] = 0x18;
+    	    battle_stat_change[0x11] = 0;
+    	    battle_stat_change[0x17] = attacking_battler;
+            battlescript_callstack_push_next_command();
+            bsc_offset = bsc_fluffy;
+    	}
     }
 }
 

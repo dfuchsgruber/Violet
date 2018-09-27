@@ -16,8 +16,14 @@ setvar 0x8004 0x26
 special 0x1b
 waitmovement 0x0
 faceplayer
+
+loadpointer 0 str_police
+setvar 0x8000 1
+special 0xe
 loadpointer 0x0 str_0x95590d
 callstd MSG
+special 0xf
+
 applymovement 0xff ow_script_movs_0x95590a
 waitmovement 0x0
 setvar 0x8004 0x26
@@ -30,12 +36,14 @@ end
 
 
 .ifdef LANG_GER
+
+str_police:
+.string "Polizist"
+
 .global str_0x95590d
 
 str_0x95590d:
-    .string "Ich bin untröstlich, aber der Rosa\nFaun hat eine Straßensperre\langeordnet, um die zwei Divisionen\ldes Team Violet, die sich derzeit\lin seinem Regierungsbereich\laufhalten, festzumachen.\pIch kann dich nicht passieren\nlassen."
-        
-        
+	.autostring 35 2 "Ich bin untröstlich, aber es wurde eine Straßensperre angeordnet, um die zwei Divisionen von Team Violet, die sich derzeit im Osten Thetos aufhalten, dingfest zu machen.\pIch kann dich nicht passieren lassen!"
 .elseif LANG_EN
 
 .endif

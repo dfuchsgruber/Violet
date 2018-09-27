@@ -446,169 +446,160 @@ goto ow_script_0x92df8a
 .global str_0x92d01d
 
 str_0x92d01d:
-    .string "... ... ...\pDir nach all der Zeit\ngegenüberzutreten ...\p...\pSo viel hat sich verändert, so\nviel ist geschehen ...\pWieso, Albus? Wieso tust du das?"
+	.autostring 35 2 "DOTS DOTS DOTS\pAlbus!\nDOTS DOTS DOTS\pDass wir uns nach all der Zeit unter solchen Umständen wieder begegnen DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
+
         
         
 .global str_0x92cf46
 
 str_0x92cf46:
-    .string "Alter Freund, es tut mir\nweh, dass wir unter diesen\lUmständen zusammenkommen.\pAber wir beide wissen, dass das\nSystem, dem wir gedient haben, das\lSystem, das wir selbst erschaffen\lhaben, uns entglitten ist."
+	.autostring 35 2 "Faun, mein alter Freund.\pEs tut mir wirklich im Herzen weh, dass wir uns hier als Feinde gegenüberstehen.\pAber du weißt so gut wie ich, dass das System, das wir selbst einst erschaffen haben, uns längst schon entglitten ist."
+
         
         
 .global str_0x92ce82
 
 str_0x92ce82:
-    .string "Entglitten? Du hast dich von\nunserem Lebenswerk abgewendet.\lErinnerst du dich? Die Top Vier,\ldie Pokemon Liga. All das. Sie\lwaren unser Werk, unser\lVermächtnis.\pUnd nun trittst du es mit Füßen!"
-        
-        
+	.autostring 35 2 "Entglitten?\nDas ist eine sehr bequeme Ausrede, sich vor der Aufgabe zu drücken, einen Kontinent zu regieren.\pErinnerst du dich nicht an früher?\pSollte die Pokémon-Liga nicht unser Vermächtnis sein?"
+
 .global str_0x928b41
 
 str_0x928b41:
-    .string "Du tust mir unrecht. Ich habe so\nlange daran festgehalten, wie ich\les nur irgendwie verantworten\lkonnte.\pAber Korruption und Machtsucht\nhaben unsere Ideale infiziert und\leine kranke Regierung\lhervorgebracht.\pErkennst du es nicht? Siehst du\nnicht, was aus dieser Welt\lgeworden ist?\pDein eigener Schüler Devin ist der\nKönig des Untergrunds, die Polizei\lkümmert sich nicht um das Gesetz\lsondern bloß um einen gefüllten\lGeldbeutel.\pDie Feinde der Freiheit sind unter\neuch, Faun. Sie sind an deiner\lSeite. Der neue Champion, der\lLucius vertrieben hat...\pEr wird diese Welt nicht retten\nkönnen.\pVerstehst du nicht? Wir müssen\ndiese Aufgabe selbst in die Hand\lnehmen, wie wir es vor all den\lJahren getan haben."
-        
+	.autostring 35 2 "Es ist keine Ausrede, Faun.\pIch habe so lange für die Pokémon-Liga gekämpft, wie ich es mit meinem Gewissen vereinbaren konnte.\pAber Korruption und Machtsucht haben unsere Ideale von damals infiziert DOTS\pErkennst du es nicht?\nDiese Regierung ist nicht mehr zu retten.\pEs ist heute wie damals unsere Pflicht, diese Welt zu verändern.\pUnd für die Veränderung zum Besseren werden wir kämpfen.\pDu, Faun, solltest an meiner Seite dafür eintreten DOTS"
         
 .global str_0x928a7f
 
 str_0x928a7f:
-    .string "Du irrst dich, Albus. Du irrst\ndich.\pDeine Motive sind edel, aber eine\nneue Revolution wird nichts\lbewirken. Hunderte Menschen werden\lunter dem Krieg, den du diesem\lKontinent bringst, leiden."
-        
+	.autostring 35 2 "Du irrst dich, Albus.\pIch kann verstehen, warum du dich gegen Thetos Regierung auflehnst.\pIch kann es wirklich sehr gut verstehen.\pAber du bringst den Menschen einen Krieg, in dem es keine Gewinner gibt.\pSelbst, wenn dein Vorhaben gelingen sollte DOTS\pWas kommt danach?\pWer sagt dir, dass nicht eben das gleiche System wieder entsteht?\pWir haben Verantwortung für das Land, das wir damals erobert haben.\pDiese Verantwortung jetzt einfach aufzugeben DOTS DOTS DOTS\pIst feige!"
+
         
 .global str_0x928a11
 
 str_0x928a11:
-    .string "... ...\nDas Meer ...\lEs hat mich schon immer\lfasziniert...\l...\lEs ist voller Frieden und\lHarmonie...\l..."
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pVielleicht ist es das, Faun DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
         
         
 .global str_0x9288c7
 
 str_0x9288c7:
-    .string "Ich kenne dich, Faun.\pDu bist mein Freund.\pWir sind wie Brüder füreinander.\pDu wirst mich nicht bekämpfen und\nich werde dich nicht bekämpfen.\pJedoch werde ich mein Vorhaben\nnicht aufgeben, denn ich weiß,\ldass ich das Richtige tue.\lDu bist ein guter Mensch, Faun.\pAuch du wirst begreifen, dass ich\nim Recht liege.\pIrgendwann."
-        
+	.autostring 35 2 "Faun.\nWir du bist für mich wie ein Bruder.\pAuch, wenn wir in diesem Krieg nicht auf der selben Seite stehen DOTS\pIch werde niemals gegen dich kämpfen.\pAber ich werde mein Vorhaben auch nicht einfach aufgeben.\pIch weiß, dass ich im Recht bin.\pDu bist ein gutherziger Mensch, Faun.\pVielleicht siehst du auch eines Tages ein, dass die Revolution notwendig ist DOTS"
         
 .global str_0x9286da
 
 str_0x9286da:
-    .string "Bist du nicht der Junge, der mir\nauf Route 2 begegnet ist?\l...\lDu bist ein Schüler Fauns?\lDie Welt ist wahrlich klein. Ich\lhoffe, du bist nicht gekommen,\ldich unserer Sache in den Weg zu\lstellen.\lJa, ich bin der Kopf der\lRevolutionsbewegung, Albus.\lIm Kampf für Freiheit und\lGerechtigkeit bin ich unermüdlich.\lMöglicherweise kannst du, anders\lals dein Lehrer, zur Einsicht\lfinden und dich meiner Sache\lanschließen.\lEines steht aber fest:\lUnsere Wege werden sich wieder\lkreuzen."
+	.autostring 35 2 "Hu?\nDu bist doch das Kind, dem ich auf Route 2 begegnet bin?\pDu bist also ein Schüler von Faun?\pIch hoffe, dass du nicht mit der Absicht gekommen bist, dich unserer Sache in den Weg zu stellen.\pWie du sicherlich inzwischen bemerkt hast, bin ich der Anführer der Revolutionsbewegung.\pVielleicht kommst du ja, anders als dein Lehrer, zur Erkenntnis, dass das System der Top Vier gestürzt werden muss.\pEines Tages wirst du dich entscheiden müssen, auf wessen Seite du stehst.\pDOTS DOTS DOTS\nAber ich will dich nicht überrumpeln.\pLeb wohl, junger Trainer."
         
         
 .global str_0x9286b8
 
 str_0x9286b8:
-    .string "Albus, warte..."
+    .autostring 35 2 "Albus, warte DOTS DOTS"
         
         
 .global str_0x928594
 
 str_0x928594:
-    .string "Hallo, PLAYER.\pDu bist Albus also bereits\nbegegnet.\pEr ist der Anführer der\nRevolutionsbewegung und mein\p...\pFreund...\pEr war es zumindest. Früher\neroberten wir gemeinsam den\lKontinent und gründeten die Top\lVier, musst du wissen.\pJetzt aber hat er sich gegen sein\neigenes System verschworen..."
-        
+	.autostring 35 2 "PLAYER.\nDer Mann, dem du eben begegnet bist, ist Albus, der Anführer der Revolutionsbewegung.\pEr ist DOTS\nDOTS DOTS DOTS\pDOTS er war ein enger Freund von mir, aber das liegt eine Ewigkeit zurück.\pGemeinsam waren wir an der Gründung der Pokémon-Liga beteiligt.\pAber jetzt stellt Albus sich gegen das System, das er selbst mitaufgebaut hat DOTS"
         
 .global str_0x92dc49
 
 str_0x92dc49:
-    .string "Felix! Was verschlägt dich\ndenn hierher?"
+    .autostring 35 2 "Felix?\nDu bist auch hier?"
         
         
 .global str_0x92dbcf
 
 str_0x92dbcf:
-    .string "Hallo Opi, hallo PLAYER!\pIch bin gekommen, um dich im Kampf\ngegen die Revolutionäre zu\lunterstützen, Opi, was sonst?"
+	.autostring 35 2 "Aber sicher doch, Opi!\pIch bin gekommen, um dir im Kampf gegen die Revolutionäre zu helfen!"
         
         
 .global str_0x92db7f
 
 str_0x92db7f:
-    .string "Nun, da bist du zu spät, ihr\nAnführer ist mir eben durch die\lFinger gegangen."
+    .autostring 35 2 "He!\nDa bist zu spät dran, Junge.\pIhr Anführer ist mir eben durch die Lappen gegangen."
         
         
 .global str_0x92db39
 
 str_0x92db39:
-    .string "War das der grün vermummte Mann,\ndem ich dort oben begegnet bin?"
+    .autostring 35 2 "Was?\nIhr Anführer?\pSag mir nicht, dass das der Mann in Grün war, der eben auf dem Berg an mir vorbeigegangen ist!"
         
         
 .global str_0x92db05
 
 str_0x92db05:
-    .string "Wie ungünstig! Ich hätte ihn\nüberwältigen sollen."
+    .autostring 35 2 "Mist!\nIch hätte ihn überwältigen sollen!"
         
         
 .global str_0x935f18
 
 str_0x935f18:
-    .string "Rede keinen Unfug, Felix.\nAlbus\ Fertigkeiten im Kampf sind\ldeinen um Lichtjahre voraus.\lImmerhin waren wir einst Partner,\lwir sind ebenbürtig."
-        
+	.autostring 35 2 "Hahaha!\nRede doch keinen Unfug, Bursche!\pAlbus Fertigkeiten sind deinen weit voraus.\pEr hätte dich im Handumdrehen erledigt."
         
 .global str_0x92d98d
 
 str_0x92d98d:
-    .string "Du unterschätzt uns immer noch,\nOpi! Wir sind deine Schüler!\pWer sagt, dass wir nicht längst\nüber deine Generation\lhinausgewachsen sind?\pWer sagt, dass die Ära, die du uns\nvorausgesagt hast, nicht schon\lgekommen ist?"
-        
+	.autostring 35 2 "Du unterschätzt mich ja immer noch Opi!\pIch habe schon zwei Arena-Orden errungen!\pUnd du denkst immer noch, dass ihr Erwachsenen uns überlegen sind?\pDu hast doch gar keine Vorstellung davon, wie stark ich inzwischen geworden bin!\pPLAYER hier hat es sogar geschafft, einen Kommandanten von Team Violet zu besiegen!"
         
 .global str_0x936ef3
 
 str_0x936ef3:
-    .string "Gjahaha! Gjahahap\nDu erinnerst mich an meine Jugend,\lFelix. Unverbesserlich\loptimistisch und naiv!\pNein, ihr zwei seid noch nicht\nso weit uns Veteranen\lherauszufordern.\pAber der Tag wird kommen, da ihr\nglänzen könnt und Menschen wie\lAlbus oder mich ablösen werdet."
-        
+	.autostring 35 2 "Hahaha!\nHahaa DOTS\pNun mach mal halblang, du Rotzlöffel.\pIhr beide seid sicherlich auf einem guten Weg, starke Trainer zu werden, aber Leuten wie Albus oder mir könnt ihr noch lange nicht das Wasser reichen."
         
 .global str_0x92d7c0
 
 str_0x92d7c0:
-    .string "Bis dahin aber müsst ihr noch\neiniges leisten, euch beweisen.\lKämpft mit Herz und lasst euch von\leuren Entscheidungen nicht\labbringen."
-        
+	.autostring 35 2 "Bis der Tag kommt, an dem ihr in der Lage seid, solche Kaliber herauszufordern, müsst ihr noch einiges leisten!\pAber ich bin sicher, dass ihr das Zeug dazu habt!"
         
 .global str_0x93a4de
 
 str_0x93a4de:
-    .string "Ich finde es unfair, dass Opi uns\nimmer noch wie Kinder behandelt...\lSieht er nicht, dass wir\linzwischen unseren eigenen Weg\lgehen?\lWir werden ihm wohl beweisen\lmüssen, dass wir zu etwas taugen.\lIch werde meinen Plan, Arenaleiter\lzu werden, über den Haufen werfen.\lPLAYER, lass uns keine kleinen Ziele\lfassen.\lLass uns direkt nach den Sternen\lgreifen.\lLass uns den Titel des Champions\lanstreben!"
-        
+	.autostring 35 2 "Es ist unfair, dass Opi uns immer noch wie kleine Kinder behandelt DOTS\pWir sind mittlerweile ernstzunehmende Trainer geworden, meinst du nicht?\pDOTS DOTS DOTS\pAber wenn wir ihm das nicht zeigen, werden wir seinen Respekt nie verdienen!\pWir müssen einfach noch stärker werden, PLAYER.\pUnd dann werden wir eines Tages selbst den Champion herausfordern!"
         
 .global str_0x92e6d7
 
 str_0x92e6d7:
-    .string "Was sagst du dazu?"
+    .autostring 35 2 "Was sagst du dazu?"
         
         
 .global str_0x92e662
 
 str_0x92e662:
-    .string "Nur, wenn man seine\nTräume hoch ansetzt, kann man\lGröße erlangen.\pWir werden die Welt erobern, auf\nunsere Art!"
+	.autostring 35 2 "Wir werden auf jeden Fall die großen Trainer unserer Zeit übertreffen.\pDaran führt kein Weg vorbei!"
         
         
 .global str_0x92e5ea
 
 str_0x92e5ea:
-    .string "Das ist die richtige Einstellung!\pWie einst Opi und seine beiden\nGefährten, werden wir uns diese\lWelt zu Füßen legen!"
+    .autostring 35 2 "Das ist die richtige Einstellung!\pIn ein paar Jahren wird man sich von uns Geschichten erzählen, wie man sie von Opi kennt!"
         
         
 .global str_0x92e221
 
 str_0x92e221:
-    .string "Übrigens, ich bin auf dem Weg\nhierher unserem alten\lKlassenkameraden Blaise begegnet.\pEr scheint sich ebenfalls gut zu\nmachen, hat sogar einige\lArenaorden errungen. Nur seine\lhasszerfressene Art ist er noch\lnicht los geworden.\pHat aber etwas sehr interessantes\nerzählt, über eine Kampftechnik,\ldie sich Mega-Evolution nennt.\p... ...\p... ...\pIch dachte mir bereits, dass du\nauch nicht viel darüber weißt. Es\lscheint sich um eine Art der\lEvolution zu handlen, welche von\leinem Trainer nur ausgelöst werden\lkann, wenn sein Pokémon und er\leine enge Bindung zueinander\lhaben.\pWarum Faun uns dieses Geheimnis\nwohl vorenthalten hat?\pWir werden wohl auf eigene Faust\nherausfinden müssen, was es damit\lauf sich hat."
-        
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pÜbrigens PLAYER,\nhast du je etwas von einer Technik namens Mega-Evolution gehört?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDas dachte ich mir bereits.\pOpi hat uns in der Schule nichts darüber beigebracht.\pDoch wenn man dem, was ich gehört habe, Glauben schenkt, handelt es sich um eine Möglichkeit, durch die enge Freundschaft zwischen Trainer und Pokémon im Kampf dessen verstecktes Potenzial zum Vorschein zu bringen.\pDOTS DOTS DOTS\pWas meinst du, wie stark wir erst werden, wenn wir diese Technik beherrschen?"
         
 .global str_0x92e138
 
 str_0x92e138:
-    .string "Weißt du...\nManchmal starre ich stundenlang in\lden Himmel und frage mich, was es\ljenseits unserer Welt gibt...\lIst dort draußen noch Leben?\lWerden wir ihm begegnen?\lDie Welt ist so riesig, größer\lnoch als unsere Träume.\l...\l..."
-        
+	.autostring 35 2 "Es gibt noch so viel, dass wir nicht über die Welt der Pokémon wissen.\pUnd genau das macht das Abenteuer so unglaublich spannend!"
+
         
 .global str_0x92e024
 
 str_0x92e024:
-    .string "Weißt du, für den Anfang wäre es\nsicherlich hilfreich, wenn wir Opi\lim Kampf gegen die Revolutionäre\lunterstützen könnten.\pLass uns in Kaskada nach dem in\ngrün vermummten Mann, Albus,\lsuchen und ihn stellen.\pOpi wird sicherlich beeindruckt\nsein, wenn wir ihn fassen können."
-        
+	.autostring 35 2 "Aber lass uns die eigentlichen Probleme nicht aus den Augen verlieren, PLAYER!\pWir sollten uns gegen diese Revolutionsbewegung kämpfen!\pAm besten suchen wir in Kaskada nach Albus, ihrem Anführer.\pWenn wir ihn gemeinsam besiegen könnten, wäre Opi sicherlich schwer beeindruckt!"
         
 .global str_0x92e4e6
 
 str_0x92e4e6:
-    .string "Vielleicht ist es doch\nsinnvoller, sich auf kleine Ziele\lzu berufen. Niemand kann unendlich\lgroße Stufen erklimmen."
+    .autostring 35 2 "Und du meinst, wir sind stark genug, es mit dem Anführer der Revolutionsbewegung aufzunehmen?"
         
         
 .global str_0x92e56f
 
 str_0x92e56f:
-    .string "Vermutlich hast du du Recht. Opi\nund seine beiden Gefährten haben\lsich ihren Ruhm auch über viele\lJahre hinweg erkämpft."
+    .autostring 35 2 "Willst du damit sagen, dass du denkst, wir wären zu schwach für so ein Vorhaben?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDas können wir nur herausfinden, wenn wir es versuchen!"
         
         
 .elseif LANG_EN

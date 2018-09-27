@@ -20,8 +20,12 @@ lock
 faceplayer
 checkflag FRBADGE_2
 gotoif EQUAL ow_script_0x830ee4
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8f078d
 callstd MSG
+special 0xF
 applymovement 0x3 ow_script_movs_0x830eef
 waitmovement 0x0
 hidesprite 0x3
@@ -32,23 +36,30 @@ end
 
 .global ow_script_0x830ee4
 ow_script_0x830ee4:
+loadpointer 0 str_mia
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8f08c4
 callstd MSG
+special 0xF
 release
 end
 
 
 .ifdef LANG_GER
+
+str_mia:
+	.string "Mia"
+
 .global str_0x8f078d
 
 str_0x8f078d:
-    .string "PLAYER, wie schön dich hier\nzu treffen. Du brauchst wohl den\lRanken-Orden, um den Zeitwald zu\lmeistern.\lAuch wenn ich ihn dir nur zu gerne\lkampflos überreichen würde, damit\ldu Team Violet vertreiben kannst,\lmuss ich die Regeln befolgen.\lFolge mir in die Arena!"
-        
-        
+	.autostring 35 2 "PLAYER.\nDa bist du ja.\pKommen wir gleich zur Sache.\pAuch wenn einiges auf dem Spiel steht, werde ich dir den Wald-Orden nicht kampflos überreichen.\pLass uns in die Kampfarena gehen DOTS"
+
 .global str_0x8f08c4
 
 str_0x8f08c4:
-    .string "Du hast unfassbar gekämpft. Team\nViolet sollte für dich kein\lProblem darstellen."
+    .autostring 35 2 "Faun hat dich wirklich ausgezeichnet ausgebildet.\pDas muss ich wirklich eingestehen."
         
         
 .elseif LANG_EN

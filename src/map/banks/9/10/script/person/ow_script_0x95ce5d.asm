@@ -13,7 +13,7 @@ end
 .global str_0x95ce67
 
 str_0x95ce67:
-    .string "Es ... verfolgt ...\nmich ...\lDer Mondschatten ...\lDar ... Dark ... Darkrai..."
+    .string "Es DOTS verfolgt DOTS\nmich DOTS\lDer Mondschatten DOTS\lDar DOTS Dark DOTS DarkraiDOTS"
         
         
 .elseif LANG_EN

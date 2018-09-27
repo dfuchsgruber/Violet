@@ -13,8 +13,7 @@ end
 .global str_0x93155a
 
 str_0x93155a:
-    .string "Sei gegrüßt!\pMeine Wenigkeit verkauft Protonen-\nbeschleuniger.\pMeine besten Stücke verleihen den\nTeilchen Energien von bis zu\lsieben Terra-Elektronenvolt.\pWie, du weißt nicht wovon ich\nspreche?\pVerschwinde, du Banause!"
-        
+	.autostring 35 2 "Sei gegrüßt!\pMeine Wenigkeit verkauft leistungsfähige Supermagneten.\pDOTS DOTS DOTS\pDu weißt wohl gar nicht, von was ich spreche, was?"
         
 .elseif LANG_EN
 

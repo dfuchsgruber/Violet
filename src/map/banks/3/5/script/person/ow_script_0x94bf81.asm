@@ -13,7 +13,7 @@ end
 .global str_0x94def6
 
 str_0x94def6:
-    .string "Mann: Cecilia, du bist die Wärme\nund das Licht in meinem Leben.\lOhne dich herrscht Winter in\lmeinem Herzen und ich will keine\lSekunde mehr frieren müssen für\lden Rest meines Lebens.\l...\pWillst du meine Frau werden?\pFrau: Oh, das kommt ...\nüberraschend...\pMann: Was soll das heißen?"
+    .string "Mann: Cecilia, du bist die Wärme\nund das Licht in meinem Leben.\lOhne dich herrscht Winter in\lmeinem Herzen und ich will keine\lSekunde mehr frieren müssen für\lden Rest meines Lebens.\lDOTS\pWillst du meine Frau werden?\pFrau: Oh, das kommt DOTS\nüberraschendDOTS\pMann: Was soll das heißen?"
         
         
 .elseif LANG_EN

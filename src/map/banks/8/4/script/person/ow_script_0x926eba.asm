@@ -174,19 +174,19 @@ str_0x19626e:
 .global str_0x1963a6
 
 str_0x1963a6:
-    .string " in wirklich guter\nName!\pKümmere dich gut um BUFFER_1!"
+    .autostring 35 2 "Das ist ein wirklich guter Name!\pKümmere dich gut um BUFFER_1!"
         
         
 .global str_0x1963e0
 
 str_0x1963e0:
-    .string "Oh, mhm...\nDas ist eigentlich ein Ei!"
+    .string "Oh, mhmDOTS\nDas ist eigentlich ein Ei!"
         
         
 .global str_0x926f3e
 
 str_0x926f3e:
-    .string "...\pDu scheinst nicht der Typ Mensch\nzu sein, der seinen Pokémon Namen\lgibt.\pSie sind nicht deine Freunde,\nsondern dienen dir bloß als\lWerkzeuge, nicht wahr?"
+    .string "DOTS\pDu scheinst nicht der Typ Mensch\nzu sein, der seinen Pokémon Namen\lgibt.\pSie sind nicht deine Freunde,\nsondern dienen dir bloß als\lWerkzeuge, nicht wahr?"
         
         
 .elseif LANG_EN

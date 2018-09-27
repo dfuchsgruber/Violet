@@ -66,7 +66,7 @@ str_0x926b9d:
 .global str_0x926c53
 
 str_0x926c53:
-    .string "Nichts passiert..."
+    .string "Nichts passiertDOTS"
         
         
 .global str_0x926beb

@@ -3,7 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
-
+.include "species.s"
 
 .global ow_script_0x8d48d3
 ow_script_0x8d48d3:
@@ -16,10 +16,9 @@ end
 
 .global ow_script_0x8d48b1
 ow_script_0x8d48b1:
-bufferstring 0x0 str_0x8d48cd
-setvar 0x8000 0x166
 setvar NEXT_POKEMON_SHINY 0x1
-call ow_script_0x8d421d
+setvar 0x8000 POKEMON_WABLU
+call ow_script_find_egg
 setvar NEXT_POKEMON_SHINY 0x0
 end
 
@@ -29,13 +28,6 @@ end
 
 str_0x8d48e6:
     .string "Das Ei eines goldenen Altarias."
-        
-        
-.global str_0x8d48cd
-
-str_0x8d48cd:
-    .string "Flug"
-        
         
 .elseif LANG_EN
 

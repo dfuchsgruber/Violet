@@ -8,5 +8,5 @@
 special_addkarma_wrap:
 push {lr}
 mov r0, r5
-bl addkarma
+bl karma_add
 pop {pc}

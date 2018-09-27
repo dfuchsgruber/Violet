@@ -25,10 +25,15 @@ typedef struct {
     u32 flag_D : 1;
     u32 unkown : 17;
     u32 field_31 : 1;
+} battle_flags_t;
+
+typedef struct {
+	u8 unkown[0xB8];
+	u16 items_consumed[4]; // one item per batler
 } battle_state_t;
 
-
-extern battle_state_t battle_state;
+extern battle_flags_t battle_flags;
+extern battle_state_t *battle_state;
 extern u8 battle_trainer_kind;
 extern u8 battle_result;
 extern u16 battle_trainer_id;

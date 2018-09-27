@@ -23,10 +23,10 @@ end
 .ifdef LANG_GER
 
 str_before_test:
-    .autostring 36 2 "PLAYER...\nHeute auch noch zu spät kommen!\pDu weißt doch wie Opi sein kann!"
+    .autostring 36 2 "PLAYERDOTS\nHeute auch noch zu spät kommen!\pDu weißt doch wie Opi sein kann!"
 
 str_after_test:
-	.autostring 36 2 "Was für ein unsinnger Test!\pWer soll solche Fragen denn beantworten können?\pWas hat sich Opi dabei nur gedacht..."
+	.autostring 36 2 "Was für ein unsinnger Test!\pWer soll solche Fragen denn beantworten können?\pWas hat sich Opi dabei nur gedachtDOTS"
         
 .elseif LANG_EN
 

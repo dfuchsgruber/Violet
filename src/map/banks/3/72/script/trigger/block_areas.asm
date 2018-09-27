@@ -66,10 +66,10 @@ mov_up:
 
 .ifdef LANG_GER
 str:
-    .autostring 36 2 "Ich sollte unverzüglich ins Klassenzimmer.\pFaun wird ohnehin schon rasend sein..."
+    .autostring 36 2 "Ich sollte unverzüglich ins Klassenzimmer.\pFaun wird ohnehin schon rasend seinDOTS"
 
 str2:
-	.autostring 36 2 "Ich gehe besser auf den Hof..."
+	.autostring 36 2 "Ich gehe besser auf den HofDOTS"
         
 .elseif LANG_EN
 

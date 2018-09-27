@@ -13,7 +13,7 @@ end
 .global str_0x8cee15
 
 str_0x8cee15:
-    .string "Aktania - die Stadt des ewigen\nSonnenscheins\p...\p...\pDer Text ist durchgestrichen..."
+    .string "Aktania - die Stadt des ewigen\nSonnenscheins\pDOTS\pDOTS\pDer Text ist durchgestrichenDOTS"
         
         
 .elseif LANG_EN

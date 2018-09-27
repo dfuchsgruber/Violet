@@ -13,7 +13,7 @@ end
 .global str_0x9581f2
 
 str_0x9581f2:
-    .string "Ich bin dafür verantwortlich, dass\naus den Simuatlionen des\lvirtuellen Pokémons Porygon ein\lmaterielles Objekt entsteht...\pDie Chemie zur Erschaffung eines\nPokémons ist keineswegs trivial."
+    .string "Ich bin dafür verantwortlich, dass\naus den Simuatlionen des\lvirtuellen Pokémons Porygon ein\lmaterielles Objekt entstehtDOTS\pDie Chemie zur Erschaffung eines\nPokémons ist keineswegs trivial."
         
         
 .elseif LANG_EN

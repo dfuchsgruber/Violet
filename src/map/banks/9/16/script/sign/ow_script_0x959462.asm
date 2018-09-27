@@ -32,7 +32,7 @@ str_0x95a56d:
 .global str_0x959487
 
 str_0x959487:
-    .string "... Das Schild wurde\ndurchgestrichen ..."
+    .string "DOTS Das Schild wurde\ndurchgestrichen DOTS"
         
         
 .elseif LANG_EN

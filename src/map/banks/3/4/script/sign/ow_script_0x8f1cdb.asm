@@ -45,19 +45,19 @@ return
 .global str_0x8f1d5b
 
 str_0x8f1d5b:
-    .string " PLAYER klopft an \n...\l... ...\lParole?"
+    .string " PLAYER klopft an \nDOTS\lDOTS DOTS\lParole?"
         
         
 .global str_kaskada_parole_choice_0
 
 str_kaskada_parole_choice_0:
-    .string "... ... ..."
+    .string "DOTS DOTS DOTS"
         
         
 .global str_kaskada_parole_choice_1
 
 str_kaskada_parole_choice_1:
-    .string "Krieg den Schwachen"
+    .string "Nachtschwarz"
         
         
 .global str_0x8f1d1f

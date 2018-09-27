@@ -13,7 +13,7 @@ end
 .global str_0x8e0932
 
 str_0x8e0932:
-    .string "Der amtierende Champion soll\näußert bescheiden sein. Niemand\lweiß, wer er oder sie ist..."
+    .string "Der amtierende Champion soll\näußert bescheiden sein. Niemand\lweiß, wer er oder sie istDOTS"
         
         
 .elseif LANG_EN

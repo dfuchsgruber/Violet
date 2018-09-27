@@ -20,7 +20,7 @@ str_0x89837f:
 .global str_0x89989f
 
 str_0x89989f:
-    .string "Vielleicht sind meine Pokémon auch\ndoch nur süß..."
+    .string "Vielleicht sind meine Pokémon auch\ndoch nur süßDOTS"
         
         
 .elseif LANG_EN

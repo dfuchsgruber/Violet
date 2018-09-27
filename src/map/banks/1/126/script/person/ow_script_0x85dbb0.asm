@@ -20,7 +20,7 @@ str_0x96628c:
 .global str_0x9662f7
 
 str_0x9662f7:
-    .string "Na gut, ich gehe nach Hause..."
+    .string "Na gut, ich gehe nach HauseDOTS"
         
         
 .elseif LANG_EN

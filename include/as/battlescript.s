@@ -1204,9 +1204,9 @@
 .byte 0xE9
 .endm
 
-.macro recycleitem recycleitem_address
+.macro recycleitem fail_contiuation
 .byte 0xEA
-.word \recycleitem_address
+.word \fail_contiuation
 .endm
 
 .macro settypetoterrain settypetoterrain_address

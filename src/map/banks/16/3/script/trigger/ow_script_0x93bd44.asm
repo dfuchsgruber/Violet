@@ -51,26 +51,50 @@ call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c76b
 callstd MSG
 special 0x7
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93c7d3
 callstd MSG
+special 0xF
+
 call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c80f
 callstd MSG
 special 0x7
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93c62b
 callstd MSG
+special 0xF
+
 call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c56c
 callstd MSG
 special 0x7
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93c4d7
 callstd MSG
+special 0xF
+
 call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c41a
 callstd MSG
 special 0x7
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93c1f6
 callstd MSG
+special 0xF
+
 call ow_script_0x8a2791
 loadpointer 0x0 str_0x93bf80
 callstd MSG
@@ -80,13 +104,25 @@ waitmovement 0x0
 sound 0x9
 checksound
 hidesprite 0x17
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93bf57
 callstd MSG
+special 0xF
+
 sound 0x15
 applymovement 0x16 ow_script_movs_0x93bf53
 waitmovement 0x0
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93bf25
 callstd MSG
+special 0xF
+
 applymovement 0x7f ow_script_movs_0x93be44
 waitmovement 0x0
 special 0x114
@@ -94,8 +130,14 @@ setvar 0x8004 0x16
 special 0x1b
 waitmovement 0x0
 faceplayer
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93be4c
 callstd MSG
+special 0xF
+
 setvar 0x8004 0x16
 setvar 0x8005 0x18
 setvar 0x8006 0x4b
@@ -115,74 +157,73 @@ end
 .global str_0x93c76b
 
 str_0x93c76b:
-    .string "Hab dich hier also\nendlich gefunden, Manus.\lDu bist der Arenaleiter von\lMeriana City, nicht?"
+	.autostring 35 2 "Du bist wohl Manus, der Arenaleiter von Meriana City, nicht?"
         
+str_manus:
+	.string "Manus"
         
 .global str_0x93c7d3
 
 str_0x93c7d3:
-    .string "Manus: Ganz recht, der bin ich.\nUnd wer bist du, Mädchen?"
+	.autostring 35 2 "Das mag schon sein, Mädchen.\pUnd wer bist du bitte?"
         
         
 .global str_0x93c80f
 
 str_0x93c80f:
-    .string "Oh, ich bin niemand\nbesonderes, bloß eine Künstlerin.\lMein Name ist Larissa.\pIch habe mir geschworen, Tugend\nund Ritterlichkeit zurück in die\lWelt zu bringen."
+	.autostring 35 2 "Mein Name ist Larissa DOTS\pUnd ich habe den Vorsatz, die Dinge in Theto zum Besseren zu wenden.\pIch werde Tugend und Ehre wieder zurück in diese Welt bringen."
         
         
 .global str_0x93c62b
 
 str_0x93c62b:
-    .string "Viel Glück dabei, Kind.\nFalls du es nicht bemerkt hast,\lmit Theto geht es bergab.\pSeit Lucius, der Champion\ngeschlagen wurde, tobt das Chaos.\lTeam Violet, eine Revolution...\pVersuch doch in einer anderen Welt\netwas zu bewirken, Mädchen.\lHier verschwendest du nur deine\lZeit, würde ich sagen."
-        
+	.autostring 35 2 "Haha!\nViel Glück dabei, Kindchen.\pFalls es dir nicht aufgefallen ist, Theto ist nicht mehr zu retten.\pSeitdem der Lucius, der ehemalige Champion geschlagen wurde, tobt das Chaos.\pTeam Violet terrorisiert die Bürger, und die wissen nichts besseres zu tun, als eine Revolution gegen die zu beginnen, unter deren Schutz sie stehen.\pDOTS DOTS DOTS\nVersteh einer Welt!"
+
         
 .global str_0x93c56c
 
 str_0x93c56c:
-    .string "Nur sagt man dir nach,\nselbst eine der Ursachen für den\lZustand des Kontinents zu sein.\pIst es nicht so, dass auch du von\neinem ominösen Schwarzmarkthandel\lin Kaskada profitierst?"
-        
+	.autostring 35 2 "Das sagt sich so leicht, Manus.\pAber die Wahrheit ist doch, dass auch du Verantwortung für die Zustände trägst.\pBist du nicht als Arenaleiter auch dazu verpflichtet, die Lage Thetos zum Besseren zu wenden?\pUnd es nicht sogar so, dass du selbst eine nicht unbedeutende Figur im Untergrundhandel bist?\pDen Gerüchten zufolge gehören du und Devin von den Top Vier zu einem kleinen Kreis sehr gefährlicher und korrupter Menschen DOTS"
+
         
 .global str_0x93c4d7
 
 str_0x93c4d7:
-    .string "Was fällt dir ein?\pWeißt du eigentlich, dass du hier\nmit einem Arenaleiter sprichst?\pIch könnte dich an Ort und Stelle\nvernichten, du Göre!"
-        
+	.autostring 35 2 "Was fällt dir eigentlich ein, du dumme Göre?\pDu sprichst hier mit einem Arenaleiter!\pIch sollte dich an Ort und Stelle zur Rechenschaft ziehen, du freches Balg!"
+
         
 .global str_0x93c41a
 
 str_0x93c41a:
-    .string "Ich interpretiere das als\nGeständnis.\lWie mir scheint, muss einiges\lgetan werden.\lDie Korruption und Unehrlichkeit\lsind tief in die Regierung Thetos\lverstrickt, wie mir scheint."
-        
-        
+	.autostring 35 2 "Also habe ich Recht damit?\pDOTS DOTS DOTS\pHier in Theto muss wirklich einiges getan werden DOTS"
+
 .global str_0x93c1f6
 
 str_0x93c1f6:
-    .string "So etwas Lächerliches!\nFang\ doch am besten damit an, den\lneuen Champion zu finden.\lNachdem Lucius geschlagen und\lvertrieben wurde, hat sich das\lBalg aus dem Staub gemacht und\lTheto allein gelassen.\pNicht einmal wir Arenaleiter\nwissen, wer es überhaupt ist!\lVielleicht kann dir der Champion\lja bei deinen aberwitzigen Plänen\lhelfen.\pOder du machst bei dieser\nhirnrissigen Revolution mit.\lSchließt dich dem Verräter Albus\lan. Früher ein Top Vier Mitglied\lund jetzt will er alles bekämpfen,\lwofür er gelebt hat.\lScher\ dich doch zum Teufel!"
-        
+	.autostring 35 2 "So etwas Lächerliches!\pSuch doch erst einmal den neuen Champion.\pSoll der sich endlich seiner Aufgabe stellen und Ordnung in diese Region bringen.\pAber nein, der hat sich ja aus dem Staub gemacht.\pErst vertreibt er Lucius, dann überlässt er Theto den Händen der Revolution.\pGeh mir aus den Augen, Kind!"
+
         
 .global str_0x93bf80
 
 str_0x93bf80:
-    .string "... ... ...\nIch kann deinen Zorn verstehen...\lAber glaubst du nicht...\lNein...\lDu wirst noch von mir hören,\lManus."
-        
-        
+	.autostring 35 2 "DOTS DOTS DOTS\pIch kann sehr gut verstehen, wie du dich fühlst.\pDas gibt dir aber nicht das Recht, selbst alle Verantwortung, die du als Arenaleiter trägst, aufzugeben.\pDu wirst noch von mir hören, Manus."
+
 .global str_0x93bf57
 
 str_0x93bf57:
-    .string "... ... ...\nDiese Göre ..."
+    .autostring 35 2 "Was fällt diesem unverschämten Mädchen eigentlich ein?"
         
         
 .global str_0x93bf25
 
 str_0x93bf25:
-    .string "Hast du uns etwa belauscht,\nBursche?"
-        
+    .autostring 35 2 "Hey, du da!\nHast du uns etwa belauscht?"
         
 .global str_0x93be4c
 
 str_0x93be4c:
-    .string "Ho! Dein Gesichtsausdruck!\nDu scheinst aus einem harten Holz\lgeschnizt zu sein!\lKomm doch in meine Arena in\lMeriana City und fordere mich\lheraus!\lIch sehne mich seit langem nach\leiner echten Herausforderung."
-        
+	.autostring 35 2 "Was hältst du von dem, was diese einfältige Göre da zum Besten gegeben hat?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAch, was rede ich denn da!\pWas interessieren solche Dinge einen Trainer, wie du es bist.\pIn deinen Augen sehe ich Kampfgeist, und das gefällt mir!\pDu bist sicher gekommen, um mich herauszufordern.\pAls Arenaleiter von Meriana City nehme ich diese Herausforderung selbstverständlich an!\pKomm in meine Arena und wir können unseren Kampf austragen, Kindchen!"
+
         
 .elseif LANG_EN
 

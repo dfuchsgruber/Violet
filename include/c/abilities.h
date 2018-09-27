@@ -34,5 +34,22 @@ u8 ability_execute(u8 state, u8 attacker, u8 unkown, u8
 extern u8 ability_names[ABILITY_CNT][0xD];
 u8 *ability_descriptions[ABILITY_CNT];
 
+// End of turn abilities
+extern u8 bsc_recoil[];
+extern u8 bsc_heal[];
+extern u8 bsc_tollwut[];
+extern u8 bsc_tollwut_attack_boost[];
+extern u8 bsc_lucid[];
+extern u8 bsc_harvest[];
+extern u8 bsc_hagelalarm[];
+extern u8 bsc_hack[];
+extern u8 bsc_life_orb[];
+extern u8 bsc_lernfaehig[];
+extern u8 bsc_hochmut[];
+extern u8 bsc_lebensraeuber[];
+extern u8 bsc_curator[];
+extern u8 bsc_extradorn[];
+extern u8 bsc_fluffy[];
+
 
 #endif

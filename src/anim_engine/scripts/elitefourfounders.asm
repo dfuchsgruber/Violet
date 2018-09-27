@@ -199,44 +199,43 @@ fmap:
 	.global str_anim_engine_elitefounders_0
 
 	str_anim_engine_elitefounders_0:
-		.string "Vor vielen Jahren eroberten drei\nTrainer das Land im Sturm...\pSie waren der Beginn einer neuen\nÄra, dem Zeitalter der Top Vier."
+		.autostring 32 2 "Vor vielen Jahren kamen drei Trainer nach Theto DOTS\pIhre Ankunft läutete eine neue Ära ein DOTS"
 
 
 	.global str_anim_engine_elitefounders_1
 
 	str_anim_engine_elitefounders_1:
-		.string "Faun, die Pinke\nFaust, der\nnoch heute die\nRegion regiert..."
+		.string "Faun,\ndie Pinke\nFaust.\nÄltester\nder Top Vier."
 
 
 	.global str_anim_engine_elitefounders_2
 
 	str_anim_engine_elitefounders_2:
-		.string "Albus, der Weiße\nRitter, Begründer\nder Revolution..."
+		.string "Albus,\nder Weiße Ritter.\nBegründer der\nRevolution."
 
 
 	.global str_anim_engine_elitefounders_3
 
 	str_anim_engine_elitefounders_3:
-		.string "Ihnen allen aber ging\nvor allem einer voran..."
+		.autostring 32 4 "Einer aber war ihnen allen überlegen DOTS"
 
 
 	.global str_anim_engine_elitefounders_4
 
 	str_anim_engine_elitefounders_4:
-		.string "Lucius, der\nGraue\nDrachen-\njäger,\nder sich\nmit\nGöttern\nmisst..."
+		.string "Lucius, der\nGraue\nDrachen-\njäger,\nder lange\nunbesiegt\nwar\nDOTS"
 
 
 	.global str_anim_engine_elitefounders_5
 
 	str_anim_engine_elitefounders_5:
-		.string " Der einst\n stärkste\n Trainer\n Thetos,\n der\n ehemalige\n ... ...\n Champion!"
+		.string " Der einst\n stärkste\n Trainer\n Thetos,\n der\n ehemalige\n DOTS DOTS \n Champion!"
 
 
 	.global str_anim_engine_elitefounders_6
 
 	str_anim_engine_elitefounders_6:
-		.string "Gemeinsam brachten sie Theto\nDekaden des Friedens...\pEhe sie ihren Differenzen nicht\nlänger beilegen konnten...\pUnd schließlich gingen alle drei\nihrer Wege...\pUnd überließen Theto\ndem Schicksal..."
-
+		.string "Sie gründeten in Theto die\nPokémon-Liga und brachten\pder Region lange Jahre des\nFriedens DOTS DOTS DOTS\pEhe sie ihren Differenzen nicht\nlänger beiligen konnten.\pUnd schließlich gingen alle\ndrei ihrer Wege DOTS"
 .elseif LANG_EN
 .endif
 

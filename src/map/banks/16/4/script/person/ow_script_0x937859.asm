@@ -40,7 +40,7 @@ str_0x937a0a:
 .global str_0x937917
 
 str_0x937917:
-    .string "Diese Versteckte Maschine enthält\nFliegen, einen Flug-Angriff.\lUm ihn außerhalb des Kampfes zu\lbenutzen, benötigst du jedoch den\lOrden von Meriana City.\lManus, der Arenaleiter, soll ein\lharter Brocken sein...\lEr darf dieses Haus nie finden!"
+    .string "Diese Versteckte Maschine enthält\nFliegen, einen Flug-Angriff.\lUm ihn außerhalb des Kampfes zu\lbenutzen, benötigst du jedoch den\lOrden von Meriana City.\lManus, der Arenaleiter, soll ein\lharter Brocken seinDOTS\lEr darf dieses Haus nie finden!"
         
         
 .global str_0x937890

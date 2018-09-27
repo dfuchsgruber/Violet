@@ -46,14 +46,11 @@ end
 .global str_0x92ec17
 
 str_0x92ec17:
-    .string "Was ist das für ein seltsames\nGefühl? ... ... ...\p... ... ... ... ...\pIch fühle mich so schwindlig...\n... ... ... ... ...\pIch falle... falle..."
-        
-        
+	.autostring 35 2 "Was ist das für ein seltsames Gefühl?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMir wird schwarz DOTS DOTS DOTS\nvor den AugenDOTS DOTS DOTS"
 .global str_0x92eb38
 
 str_0x92eb38:
-    .string "Was bei Arceus war das? Was haben\ndiese Bilder zu bedeuten?\pSind diese Visionen Wirklichkeit,\nbin ich Zeuge der Zerstörung\lAktanias geworden?\pIch muss in Erfahrung bringen, was\nes damit auf sich hat!"
-        
+    .autostring 36 2 "Was bei Arceus war das denn?\pEs hat sich so ähnlich angefühlt, wie mein Traum vor KurzemDOTS\pOb da ein Zusammenhang besteht?\pUnd was ich da gesehen habeDOTS DOTS DOTS\pWar das die Katastrophe, die für die Zerstörung Aktanias verantwortlich ist?\pWas war das für ein seltsames Pokémon?\pUnd ist es mit dem Meteoriten hierher gelangt?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pZu viele FragenDOTS DOTS DOTS\pIch kann mir noch keinen Reim darauf machenDOTS DOTS DOTS"
         
 .elseif LANG_EN
 

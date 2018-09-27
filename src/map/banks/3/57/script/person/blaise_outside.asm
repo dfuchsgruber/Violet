@@ -38,10 +38,10 @@ mov_exclam:
 
 .ifdef LANG_GER
 str_before_faun_appeared:
-	.autostring 36 2 "Wirklich eine Unverschämtheit, dass uns der Knacker nach diesem Test auch noch Warten lässt...\pMein Vater hätte mich nie auf diese Schule schicken dürfen..."
+	.autostring 36 2 "Wirklich eine Unverschämtheit, dass uns der Knacker nach diesem Test auch noch Warten lässtDOTS\pMein Vater hätte mich nie auf diese Schule schicken dürfenDOTS"
 
 str_has_received_pkmn:
-	.autostring 36 2 "Scheint, als hätte diese Schule doch ihr Gutes.\pEin solches Pokémon sieht man nicht alle Tage..."
+	.autostring 36 2 "Scheint, als hätte diese Schule doch ihr Gutes.\pEin solches Pokémon sieht man nicht alle TageDOTS"
 
 .elseif LANG_EN
 

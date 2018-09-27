@@ -95,26 +95,46 @@ showsprite 0xa
 setflag PKMNMENU
 applymovement 0xa ow_script_movs_0x949189
 waitmovement 0x0
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 trainerbattlecont 0x1 0xb8 0x0 str_0x948a7f str_0x948b5a ow_script_0x94b868
 
 
 .global ow_script_0x94b868
 ow_script_0x94b868:
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x94907f
 callstd MSG_KEEPOPEN
+special 0xF
+
 fanfare 0x104
 loadpointer 0x0 str_0x949053
 callstd MSG_KEEPOPEN
 waitfanfare
 setflag FRBADGE_3
 setflag MERIANA_CITY_ELISE_VISIBLE
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x948eb4
 callstd MSG_KEEPOPEN
+special 0xF
+
 copyvarifnotzero 0x8000 ITEM_TM01
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
+
+loadpointer 0 str_manus
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x948d53
 callstd MSG_KEEPOPEN
+special 0xF
 closeonkeypress
 addvar STORY_PROGRESS 0x1
 warpmuted 0x3 0x1 0x2 0x0 0x0
@@ -131,11 +151,11 @@ ow_script_movs_0x93d563:
 
 .global ow_script_0x93d210
 ow_script_0x93d210:
-setvar 0x8005 0x8
+setvar 0x800A 0x8
 clearflag PKMNMENU
-showsprite 0x8005
+showsprite 0x800A
 setflag PKMNMENU
-applymovement 0x8005 ow_script_movs_0x93d563
+applymovement 0x800A ow_script_movs_0x93d563
 waitmovement 0x0
 trainerbattlecont 0x1 0x83 0x0 str_0x948a18 str_0x948c44 ow_script_0x93d358
 
@@ -149,9 +169,9 @@ ow_script_movs_0x93d567:
 
 .global ow_script_0x93d358
 ow_script_0x93d358:
-applymovement 0x8005 ow_script_movs_0x93d567
+applymovement 0x800A ow_script_movs_0x93d567
 waitmovement 0x0
-hidesprite 0x8005
+hidesprite 0x800A
 applymovement 0x7 ow_script_movs_0x93cd29
 waitmovement 0x0
 applymovement 0xff ow_script_movs_0x93cd2c
@@ -227,33 +247,33 @@ return
 
 .global ow_script_0x93d156
 ow_script_0x93d156:
-setvar 0x8005 0x9
+setvar 0x800A 0x9
 clearflag PKMNMENU
-showsprite 0x8005
+showsprite 0x800A
 setflag PKMNMENU
-applymovement 0x8005 ow_script_movs_0x93d563
+applymovement 0x800A ow_script_movs_0x93d563
 waitmovement 0x0
 trainerbattlecont 0x1 0x82 0x0 str_0x93d182 str_0x93d1dd ow_script_0x93d358
 
 
 .global ow_script_0x93d0a3
 ow_script_0x93d0a3:
-setvar 0x8005 0x8
+setvar 0x800A 0x8
 clearflag PKMNMENU
-showsprite 0x8005
+showsprite 0x800A
 setflag PKMNMENU
-applymovement 0x8005 ow_script_movs_0x93d563
+applymovement 0x800A ow_script_movs_0x93d563
 waitmovement 0x0
 trainerbattlecont 0x1 0x81 0x0 str_0x93d0cf str_0x93d123 ow_script_0x93d358
 
 
 .global ow_script_0x93d077
 ow_script_0x93d077:
-setvar 0x8005 0x9
+setvar 0x800A 0x9
 clearflag PKMNMENU
-showsprite 0x8005
+showsprite 0x800A
 setflag PKMNMENU
-applymovement 0x8005 ow_script_movs_0x93d563
+applymovement 0x800A ow_script_movs_0x93d563
 waitmovement 0x0
 trainerbattlecont 0x1 0x80 0x0 str_0x93d4e4 str_0x93d52c ow_script_0x93d358
 
@@ -312,6 +332,10 @@ goto ow_script_0x93cd2e
 
 
 .ifdef LANG_GER
+
+str_manus:
+	.string "Manus"
+
 .global str_0x93cbff
 
 str_0x93cbff:
@@ -321,39 +345,37 @@ str_0x93cbff:
 .global str_0x948a7f
 
 str_0x948a7f:
-    .string "Manus: Sieh an, du hast es also\nbis hier geschafft.\pIch wusste, dass du ein Kämpfer\nbist!\pJetzt zeig mir, wie zäh du bist?\nKannst du dich gegen meine Schläge\lverteidigen?\lUnd viel wichtiger: Kannst du\lzurückschlagen?"
+	.autostring 35 2 "Sieht an!\nDass du es bis hierher schaffen würdest, war mir klar.\pJetzt aber beginnt die wahre Kraftprobe!\pWie zähl bist du wirklich?\pKannst du dich gegen meinen Schläge zur Wehr setzten?\pUnd viel wichtiger, kannst du auch zurückschlagen?"
         
         
 .global str_0x948b5a
 
 str_0x948b5a:
-    .string "Starke Sache! Nicht einmal meine\nrohe Muskelkraft konnte dich in\lzerschmettern."
+	.autostring 35 2 "Starke Sache!\nDu hast meiner rohen Muskelkraft widerstanden!"
         
         
 .global str_0x94907f
 
 str_0x94907f:
-    .string "Manus: Außerordentlich!\nDu bist so stark, wie du wirkst.\pDein verbissener Kampfstil und\ndeine Zähigkeit haben dir den Sieg\lbeschert.\pDieses dumme Mädchen im Wasserpfad\nvorhin hat genau diese wichtigen\lEigenschaften nicht.\pLass mich dir den Faustorden\nüberreichen."
-        
+	.autostring 35 2 "Außerordentlich stark!\pDu hast einen verbissen Kampfstil!\pDas gefällt mir!\pDen Faust-Orden hast du dir redlich verdient!"
         
 .global str_0x949053
 
 str_0x949053:
-    .string "PLAYER hat den Faustorden\nvon Manus erhalten."
+    .autostring 35 2 "PLAYER hat den Faust-Orden von Manus erhalten."
         
         
 .global str_0x948eb4
 
 str_0x948eb4:
-    .string "Der Faustorden erlaubt es dir, die\nVersteckte Maschine Fliegen\laußerhalb des Kampfes einzusetzen.\pFür deine außerordentliche\nLeistung im Ring möchte ich dir\laußerdem das hier überreichen."
-        
+	.autostring 35 2 "Der Faust-Orden erlaubt es dir, die Versteckte Maschine Fliegen außerhalb des Kampfes einzusetzten.\pAußerdem gehorchen dir alle Pokémon bis Level 50.\pZudem möchte ich dir das hier überreichen."
+
         
 .global str_0x948d53
 
 str_0x948d53:
-    .string "Diese Tm enthält Power-Punch,\nden mächtigsten aller Schläge!\lKeiner kann der Wucht standhalten.\pDer Preis dafür ist, dass der\nAnwender eine Runde Energien\lfokussieren muss, ohne dabei\lgetroffen zu werden.\lDu siehst, dass Raffinesse und\lStärke diesen Angriff so\leinzigartig machen.\pUnd nun Junge, verlasse den Ring\nund zeige der Welt dein\lKämpferherz!"
-        
-        
+	.autostring 35 2 "Diese Tm enthält Power-Punch, den mächtigsten aller Schläge!\pAllerdings erfordert es Fokus, um diesen Schlag auszuführen.\pNur ein wahrer Kämpfer weiß diese Technik richtig einzusetzten.\pUnd nun Kindchen, verlasse diesen Kampfring und halte an deinem verbissenen Kampfgeist fest."
+
 .global str_0x948a18
 
 str_0x948a18:

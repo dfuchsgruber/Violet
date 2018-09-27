@@ -288,7 +288,7 @@ str_mays_turn:
 	.autostring 36 2 "Fein! Dann fehlst du nur noch du, Maike!\pKomm zu mir!"
 
 str_may_insecure:
-	.autostring 36 2 "Uh, ähm - okay!\nIch komme schon..."
+	.autostring 36 2 "Uh, ähm - okay!\nIch komme schonDOTS"
 
 str_give_may_balls:
 	.autostring 36 2 "Auch du erhältst von mir fünf Pokébälle.\pGib dein Bestes!"
@@ -300,7 +300,7 @@ str_may_done:
 	.autostring 36 2 "Sehr gut gemacht, Maike!\pBravo!\nZurück mit dir in die Reihe."
 
 str_may_glad:
-	.autostring 36 2 "Ta-Tatsächlich?\nHabe ich es geschafft?\pSuper! Das hätte ich ehrlich nicht gedacht..."
+	.autostring 36 2 "Ta-Tatsächlich?\nHabe ich es geschafft?\pSuper! Das hätte ich ehrlich nicht gedachtDOTS"
 
 str_catching_test_done:
 	.autostring 36 2 "Ausgezeichnet!\nDamit hättet ihr diesen Teil der Prüfung schon einmal hinter euch.\pNun müsst ihr noch euer Kampfgeschick auf die Probe stellen, indem ihr gegeneinander antretet.\pPLAYER, RIVAL! Ihr bildet das erste Gegnerpaar.\pMaike und Felix das zweite.\pFindet euch auf dem Kampfplatz zusammen, wir beginnen unverzüglich."

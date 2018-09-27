@@ -91,7 +91,7 @@ u32 tmp_hash(u32 seq[], size_t size) {
 
 void tmp_hash_new_seed() {
 	cmem.tmp_hash_seed = (u32)((rnd16() << 16) | rnd16());
-    rtc_read(&(cmem.a_gen_time));
+    time_read(&(cmem.a_gen_time));
 
 }
 
@@ -139,7 +139,7 @@ void tmp_hash_update_seed() {
     //cpuset(0, &(cmem.flag_extension[0x40]), CPUSET_WORD | CPUSET_FILL | 8);
     
     rtc_timestamp current_time;
-    rtc_read(&current_time);
+    time_read(&current_time);
 
     int day_difference = (current_time.year * 365 + current_time.month * 30 + current_time.day) -
             (cmem.a_gen_time.year * 365 + cmem.a_gen_time.month * 30 + cmem.a_gen_time.day);

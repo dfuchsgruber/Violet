@@ -10,6 +10,9 @@
 ow_script_0x8127a9:
 lock
 faceplayer
+loadpointer 0 str_rick
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8127cb
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
@@ -45,6 +48,7 @@ end
 ow_script_0x8127f3:
 loadpointer 0x0 str_0x8127fe
 callstd MSG_FACE
+special 0xF
 release
 end
 
@@ -52,26 +56,25 @@ end
 .ifdef LANG_GER
 .global str_0x8127cb
 
+
+
 str_0x8127cb:
-    .string "Willst du wieder zurück nach Route\n3?"
+    .autostring 36 2 "Willst du wieder zurück nach Route 3?"
         
         
 .global str_0x8dc0e4
 
 str_0x8dc0e4:
-    .string "Mein Staraptor wird dich jetzt\nzurückbringen."
+    .autostring 36 2 "Mein Staraptor wird dich jetzt zurückbringen."
         
-        
-.global str_0x118d600
-
-str_0x118d600:
-    .string "    È î  Ç   Ç   ÎÈ   À \n\n\n\n\n\n    É   Â  ヲょÌ ィょÌÊ   Éリ ぞÁÁÒぞ    LEFT_ARROWょÌË   Ñぞ"
+str_rick:
+	.string "Rick"
         
         
 .global str_0x8127fe
 
 str_0x8127fe:
-    .string "Gut, wenn du wieder zurück willst,\nkomm einfach zu mir."
+    .autostring 36 2 "Solltest du deine Meinung ändern, weißt du ja, wo du mich findest."
         
         
 .elseif LANG_EN

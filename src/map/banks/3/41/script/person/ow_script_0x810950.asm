@@ -14,13 +14,13 @@ end
 .global str_0x810968
 
 str_0x810968:
-    .string "Ich fühle, was andere fühlen..."
+    .string "Ich fühle, was andere fühlenDOTS"
         
         
 .global str_0x810989
 
 str_0x810989:
-    .string "Ich fühle..."
+    .string "Ich fühleDOTS"
         
         
 .elseif LANG_EN

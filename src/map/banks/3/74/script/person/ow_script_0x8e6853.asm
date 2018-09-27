@@ -1,8 +1,8 @@
 .include "overworld_script.s"
-
+.include "species.s"
 
 .global ow_script_0x8e6853
 ow_script_0x8e6853:
-bufferstring 0x0 str_0x8dce63
-setvar 0x8000 0x71
-goto ow_script_0x8d421d
+setvar 0x8000 POKEMON_FLUFFELUFF
+call ow_script_find_egg
+end

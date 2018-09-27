@@ -24,8 +24,9 @@ goto ow_script_0x95e6bd
 .global ow_script_0x95e6bd
 ow_script_0x95e6bd:
 loadpointer 0x0 str_0x95eb33
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
+callstd MSG_KEEPOPEN
+multichoice 8 8 0 1
+compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x95e771
 special 0x7
 sound 0x15
@@ -57,25 +58,25 @@ goto ow_script_0x95e6bd
 .global str_0x95e7e5
 
 str_0x95e7e5:
-    .string "Willkommen in meiner Welt,\nPLAYER!\pHattest du mich hier nicht\nerwartet?\pDabei bin ich doch selbst in\ndieser Gegend aufgewachsen...\pHabe ich nicht erwähnt, dass ich\naus Inferior stamme?\p... ...\nUnd dass ich Arenaleiterin der\lStadt bin weißt du also auch\lnicht?\pHuch, entschuldige bitte...\nDas bleibt aber unter uns, ja?\lDass ein Arenaleiter sich gegen\ldie Top Vier stellt und insgeheim\ldie Revolution unterstützt...\pNunja...\nDa wären wir auch schon wieder an\ldem Punkt angekommen, an dem ich\ldich um deine Hilfe bitten muss.\pIch kann und möchte mich nicht auf\ndie Top Vier verlassen, das kannst\ldu sicherlich verstehen.\pEin hochrangiges Mitglied des Team\nViolet hat unsere Stadt besetzt.\pIhr Anführer heißt Mistral und ich\nweiß nicht, ob ich alleine mit ihm\lfertig werde.\pAber zusammen - hihi - ähm, werden\nwir ihn sicherlich besiegen\lkönnen."
-        
-        
+	.autostring 35 2 "Hallo PLAYER!\pÜberrascht, mich hier zu treffen?\pDu musst wissen, dass ich hier aufgewachsen bin.\pAußerdem bin ich DOTS DOTS DOTS\pDOTS DOTS DOTS naja, wie soll ich sagen DOTS\pDOTS Arenaleiter von Inferior.\pDas bleibt aber unter uns, ja?\pWenn die Menschen wüssten, dass ein Arenaleiter heimlich Teil der Revolutionsbewegung ist DOTS\pAber dein Timing ist perfekt, PLAYER.\pMan erzählt sich, dass eine Division von Team Violet in der Nähe des Volcano ihr Unwesen treibt.\pAuch ein Kommandant soll unter ihnen gewesen sein.\pMit den Kommandanten von Team Violet ist nicht zu spaßen DOTS\pAlso wäre es toll, wenn du mir vielleicht etwas unter die Arme greifen könntest.\pImmerhin sollst du ja schon einmal einen Kommandanten von Team Violet besiegt haben.\pNoch dazu kommt DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pSagen wir einfach, dass ich nicht alleine gegen diese Divison vorgehen will."
+
+
 .global str_0x95eb33
 
 str_0x95eb33:
-    .string "Was sagst du dazu?\nHilfst du mir?"
+    .autostring 35 2 "Was sagst du dazu?\nHilfst du mir?"
         
         
 .global str_0x95e710
 
 str_0x95e710:
-    .string "Ich wusste, dass ich auf dich\nzählen kann, PLAYER.\pWir treffen uns in Inferior,\nwestlich von hier!"
+    .autostring 35 2 "Ich wusste, dass ich auf dich zählen kann, PLAYER.\pWir treffen uns in Inferior, westlich von hier!"
         
         
 .global str_0x95e77f
 
 str_0x95e77f:
-    .string "Hey! Du kannst mich nicht einfach\nso im Stich lassen, PLAYER!\lWir sind doch - äh - Freunde?\lOder nicht?"
+    .autostring 35 2 "Hey! Du kannst mich nicht einfach so im Stich lassen, PLAYER!\pWir sind doch Freunde, oder nicht?"
         
         
 .elseif LANG_EN

@@ -14,13 +14,13 @@ end
 .global str_0x92ddd7
 
 str_0x92ddd7:
-    .string "Wärst du eine Blume, würde ich\ndich pflücken, du bist so hübsch\lanzusehen..."
+    .string "Wärst du eine Blume, würde ich\ndich pflücken, du bist so hübsch\lanzusehenDOTS"
         
         
 .global str_0x92de26
 
 str_0x92de26:
-    .string "Unglücklicherweise aber hast du\nnun mich gepflückt... Findest du\lmich etwa auch anziehend?"
+    .string "Unglücklicherweise aber hast du\nnun mich gepflücktDOTS Findest du\lmich etwa auch anziehend?"
         
         
 .elseif LANG_EN

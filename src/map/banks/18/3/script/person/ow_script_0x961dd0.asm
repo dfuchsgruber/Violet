@@ -20,7 +20,7 @@ str_0x96364e:
 .global str_0x96368c
 
 str_0x96368c:
-    .string "Wuah! Dein Feuer war heißer als\ndas meine..."
+    .string "Wuah! Dein Feuer war heißer als\ndas meineDOTS"
         
         
 .elseif LANG_EN

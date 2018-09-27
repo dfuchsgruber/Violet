@@ -3,45 +3,16 @@
 #include "debug.h"
 #include "vars.h"
 
-static gpio *gpios = (gpio *) 0x080000C4;
-
-u16 special_get_rtc() {
-
-    rtc_timestamp stamp = {0, 0, 0, 0, 0, 0, 0};
-    rtc_read(&stamp);
-    switch (*var_access(0x8004)) {
-
-        case 0:
-            return stamp.year;
-        case 1:
-            return stamp.month;
-        case 2:
-            return stamp.day;
-        case 3:
-            return stamp.day_of_week;
-        case 4:
-            return stamp.hour;
-        case 5:
-            return stamp.minute;
-        case 6:
-            return stamp.second;
-        default:
-            return 0;
-            ;
-    }
-
-}
-
 
 /**
  * Reads the current time information and stores it into the timestamp space
  **/
 void rtc_read(rtc_timestamp *s) {
 
-    gpios->out = 5; //pins are all out except sio, which is in
+    gpios.out = 5; //pins are all out except sio, which is in
 
-    gpios->cntrl = 1; //r/w
-    gpios->out = 7; //pins are all out
+    gpios.cntrl = 1; //r/w
+    gpios.out = 7; //pins are all out
 
     //init cs = LOW, !sck = HIGH
     gpio_set_data(HIGH, LOW, LOW);
@@ -52,7 +23,7 @@ void rtc_read(rtc_timestamp *s) {
 
     rtc_send_byte(0x65);
 
-    gpios->out = 5; //pins are all out except sio, which is in
+    gpios.out = 5; //pins are all out except sio, which is in
 
     //Now we can read bytewise
     s->year = to_dec(rtc_read_byte());
@@ -81,7 +52,7 @@ u8 rtc_read_byte() {
         gpio_set_data(HIGH, LOW, LOW); //time the clock again
         rtc_chip_wait();
 
-        value |= ((gpios->data & 2) << i);
+        value |= ((gpios.data & 2) << i);
         i++;
     }
     return (u8) (value >> 1);
@@ -124,7 +95,7 @@ void gpio_set_data(bool sck, bool sio, bool cs) {
 
 
     u16 value = (u16) (sck | (sio << 1) | (cs << 2));
-    gpios->data = value;
+    gpios.data = value;
 
 
 
@@ -143,6 +114,6 @@ u64 rtc_timestamp_to_seconds(rtc_timestamp *t){
 bool rtc_test(){
     //performs a rtc read and checks if everything was null
     rtc_timestamp t;
-    rtc_read(&t);
+    time_read(&t);
     return t.day || t.day_of_week || t.hour || t.minute || t.month || t.second || t.year;
 }

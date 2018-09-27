@@ -47,14 +47,13 @@ end
 .global str_0x8ca8f9
 
 str_0x8ca8f9:
-    .string "Einst erbauten meine Vorfahren\ndiese Räumlichkeiten um den\lWächtern ihre Dankbarkeit zu\lzeigen. Die Schriftzeichen sind\lin der heutigen Blindenschrift\lverfasst. Damals vermochten nur\ldie Geweihten Priester sie zu\lentziffern. Komm mit, ich führe\ldich in die Arena."
-        
+	.autostring 36 2 "Vor langer Zeit erbauten meine Vorfahren diesen Tempel und die Wunderwerke darin.\pIch werde dich jetzt in die Kampfarena im Untergrund führen."
+
         
 .global str_0x8ca83f
 
 str_0x8ca83f:
-    .string "Ich kann dir leider nicht\ngestatten, die heiligen\lGrabstädten der Golems zu\lbetreten. Nur jene, die ihr Leben\lder Wache verschrieben haben,\ldürfen diese heiligen Statuen\lerblicken."
-        
+	.autostring 36 2 "Ich werde auch in Zukunft über diesen Ort wachen, wie es die Tradition meiner Familie ist.\pAuf dieses Vermächtnis bin ich äußerst stolz."
         
 .elseif LANG_EN
 

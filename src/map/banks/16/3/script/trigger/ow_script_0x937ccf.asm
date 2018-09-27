@@ -14,8 +14,13 @@ setvar 0x8004 0xe
 special 0x1b
 waitmovement 0x0
 faceplayer
+
+loadpointer 0 str_obdach
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x93824f
 callstd MSG_KEEPOPEN
+special 0xF
 showmoney 0xc 0x0 0x0
 goto ow_script_0x937cf4
 
@@ -54,8 +59,12 @@ choice:
 ow_script_0x937df9:
 sound 0x41
 updatemoney 0xc 0x0 0x0
+loadpointer 0 str_obdach
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x937e0e
 callstd MSG
+special 0xF
 goto ow_script_0x937e34
 
 
@@ -77,8 +86,12 @@ end
 
 .global ow_script_0x937e5f
 ow_script_0x937e5f:
+loadpointer 0 str_obdach
+setvar 0x8000 0
+special 0xE
 loadpointer 0x0 str_0x937e6d
 callstd MSG_KEEPOPEN
+special 0xF
 goto ow_script_0x937cf4
 
 
@@ -114,10 +127,15 @@ goto ow_script_0x937e34
 
 
 .ifdef LANG_GER
+
+str_obdach:
+	.string "Obdachloser"
+
 .global str_0x93824f
 
 str_0x93824f:
-    .string "-Hust-\n-Keuch-\lArgh! Ich bin ...\lHast du vielleicht etwas Geld für\lmich?\lBitte, ich habe Hunger und Durst!"
+    .autostring 35 2 "DOTS Hust DOTS\nDOTS Keuch DOTS\pArgh!\nDOTS DOTS DOTS\pKind, kannst du mir vielleicht etwas Geld geben?\pIch bitte dich DOTS\nDOTS Hust DOTS\pIch bin so hungrig DOTS"
+
         
         
 .global str_0x938223
@@ -153,7 +171,7 @@ str_route_4_homeless_choice3:
 .global str_0x937e0e
 
 str_0x937e0e:
-    .string "Vielen ...\n-Hust-\l-Keuch-\lDank ...."
+    .autostring 35 2 "Vielen DOTS\nDOTS Hust DOST\pDOTS Keuch DOTS\nDOTS Dank DOTS."
         
         
 .global str_0x937e6d
@@ -165,7 +183,7 @@ str_0x937e6d:
 .global str_0x937dbf
 
 str_0x937dbf:
-    .string "-Keuch-\nHerzloser Junge...\l... Kein Respekt ...\l-Keuch-"
+    .autostring 35 2 "DOTS Herzlose DOTS\nDOTS Rotznase DOTS\pDOTS Keuch DOTS\nDOTS Hust DOTS"
         
         
 .elseif LANG_EN

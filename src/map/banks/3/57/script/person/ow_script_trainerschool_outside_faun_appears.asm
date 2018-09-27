@@ -149,7 +149,7 @@ str_call_blaise:
 	.autostring 36 2 "Blaise, du bist der Erste.\pKomm nach vorne und wähle eines der Pokémon, die ich mitgebracht habe."
 
 str_blaise_received_pkmn:
-	.autostring 36 2 "Ich bin wirklich überrascht, dass man uns so seltene Examplare anvertraut..."
+	.autostring 36 2 "Ich bin wirklich überrascht, dass man uns so seltene Examplare anvertrautDOTS"
 
 str_call_felix:
 	.autostring 36 2 "Als nächstes bist du an der Reihe, Felix.\pKomm zu mir und such dir ein Pokémon aus, Kleiner!"
@@ -161,10 +161,10 @@ str_angry_at_felix:
 	.autostring 36 2 "Ich habe dir schon tausendmal gesagt, dass du mich hier Herr Faun zu nennen hast, Rotzlöffel!"
 
 str_felix_apologize:
-	.autostring 36 2 "Ähm... Tut mir wirklich leid, Herr Faun! Ehrlich!"
+	.autostring 36 2 "ÄhmDOTS Tut mir wirklich leid, Herr Faun! Ehrlich!"
 
 str_after_felix:
-	.autostring 36 2 "Schon gut, schon gut...\pZurück mit dir in die Reihe, Felix!"
+	.autostring 36 2 "Schon gut, schon gutDOTS\pZurück mit dir in die Reihe, Felix!"
 
 str_call_player:
 	.autostring 36 2 "Nun denn, PLAYER, komm zu mir!"

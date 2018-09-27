@@ -6,6 +6,7 @@
 #include "constants/pokemon_types.h"
 #include "constants/attack_categories.h"
 #include "constants/abilities.h"
+#include "constants/attacks.h"
 
 s8 attack_priority_get(u16 attack, u8 user){
     s8 prio = attacks[attack].priority;
@@ -19,6 +20,9 @@ s8 attack_priority_get(u16 attack, u8 user){
         case STROLCH:
             if(attacks[attack].category == CATEGORY_STATUS) prio++;
             break;
+        case FRUEHZUENDER:
+        	if (attack == ATTACK_FINALE || attack == ATTACK_EXPLOSION)  prio++;
+        	break;
         case ZEITSPIEL:
             prio--;
     }

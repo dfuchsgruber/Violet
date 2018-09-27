@@ -40,13 +40,13 @@ end
 .global str_0x8f4305
 
 str_0x8f4305:
-    .string "Du schon wieder! Du hast mich und\nmeine Pokémon in Meriana City\lschon besiegt...\lHier, nimm das und lass mich\lgefälligst in Ruhe!"
+    .string "Du schon wieder! Du hast mich und\nmeine Pokémon in Meriana City\lschon besiegtDOTS\lHier, nimm das und lass mich\lgefälligst in Ruhe!"
         
         
 .global str_0x8ef5ca
 
 str_0x8ef5ca:
-    .string "Buhu! Ich wollte doch nur etwas\nbewirken..."
+    .string "Buhu! Ich wollte doch nur etwas\nbewirkenDOTS"
         
         
 .elseif LANG_EN

@@ -9,6 +9,7 @@
 ow_script_0x93d59c:
 lock
 faceplayer
+buffernumber 0 WONDERTRADE_CNT
 call ow_script_0x8a7f80
 loadpointer 0x0 str_0x949632
 callstd MSG_YES_NO
@@ -54,31 +55,30 @@ end
 .global str_0x949632
 
 str_0x949632:
-    .string "Oh, hallo PLAYER!\nIch wollte dich nicht überrumpeln.\lWie ich sehe, hast du gerade die\lArena von Meriana City gemeistert.\lIch habe ich mich in letzter Zeit\lselbst etwas am Kämpfen versucht.\lWie wäre es mit einem Kampf?"
+	.autostring 35 2 "Oh, hallo PLAYER!\nEntschuldige, ich wollte dich nicht überrumpeln.\pBenutzt du auch die Wundertausch-App?\pIch sehe, du hast ihn bereits BUFFER_1 mal verwendet.\pDas freut mich!\pIch habe mich zuletzt selbst auch am Kämpfen versucht.\pNa was sagst du, hättest du Lust auf einen Kampf?"
         
         
 .global str_0x94948c
 
 str_0x94948c:
-    .string "Ich habe mir eine Reihe ganz\nnetter Pokémon aus dem\lWundertausch zusammengestellt.\pSehen wir mal, ob ich als Trainer\nauch etwas tauge."
-        
+	.autostring 35 2 "Meine Pokémon habe ich allesamt aus dem Wundertausch erhalten.\pWollen wir doch einmal sehen, wie ich mich so schlage."
         
 .global str_0x949515
 
 str_0x949515:
-    .string "Ich habe mich in dir keine Sekunde\nlang getäuscht.\pDu bist ein beeindruckender\nTrainer, PLAYER."
+    .autostring 35 2 "Das überrascht mich nicht.\nMir hätte eigentlich klar sein sollen, dass ein Anfänger wie ich keine Chance hat."
         
         
 .global str_0x94918c
 
 str_0x94918c:
-    .string "Ich habe es kommen sehen.\nAber schlecht habe ich mich nicht\lgeschlagen, oder?\pVielleicht mache ich das Kämpfen\nja zu meinem neuen Hobby, neben\lder ganzen Forschung.\pWo wir gerade beim Thema sind:\nLaz. Corp, die Firma, bei der ich\lbeschäftigt bin, hat ein komplett\lvirtuelles Pokémon kreiert.\pDu solltest dir das unbedingt\nansehen.\pEs wird auch Professor Tann im\nHinblick auf den Pokédex helfen.\pDer Hauptsitz der Laz.Corp ist in\nOrina City. Das liegt westlich von\lRoute 2, wo das Labor von\lProfessor Tann ist.\lWenn du dich an der Kreuzung, die\lnördlich zur Route 3 führt,\lwestlich bewegst, solltest du\lfrüher oder später Orina City\lerreichen.\pVon mir hast du aber nicht\nerfahren, dass es gelungen ist,\lein künstliches Pokémon zu\lerschaffen, ja?\pBis dann, PLAYER."
-        
+	.autostring 35 2 "Du kämpfst wirklich auserordentlich gut, PLAYER.\pWas meinst du, wie habe ich mich geschlagen?\pVielleicht wird das Kämpfen ja zu meinem neuen Hobby.\pDie viele Forschung kann schon auch einmal recht trocken werden DOTS\pWo wir gerade beim Thema sind.\pDie Laz.Corp, das Unternehmen, bei dem ich beschäftigt bin, hat ein komplett virtuelles Pokémon erschaffen.\pDas dürfte dich interessieren, nicht?\pEs wird auch für deine Pokédex-App interessante Daten liefern.\pDer Hauptsitz der Laz.Corp liegt in Orina City, westlich von Route 2, wo das Labor von Professor Tann ist.\pKomm mich doch dort einmal besuchen.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pVon mir hast du das mit dem virtuellen Pokémon aber nicht erfahren, ja?"
+
         
 .global str_0x949581
 
 str_0x949581:
-    .string "Oh, ich verstehe schon.\nDu willst deinen erschöpften\lPokémon sicherlich eine Pause\lgönnen.\pVergiss mich aber nicht!\pWenn du mich schlägst, verrate ich\ndir auch ein Geheimnis!"
+	.autostring 35 2 "Oh, ich verstehe schon.\pDu willst deinen erschöpften Pokémon sicherlich eine Pause gönnen.\pAber ein nein akzeptiere ich als Antwort nicht!\pKomm wieder, wenn du dich erholt hast.\pSolltest du mich schlagen, verrate ich dir auch ein interessantes Geheimnis!"
         
         
 .elseif LANG_EN

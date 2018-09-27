@@ -44,7 +44,7 @@ str_0x89be1d:
 .global str_0x89ae00
 
 str_0x89ae00:
-    .string "RIVAL ist mein bester Freund...\nDas könnte ich nicht über mich\lbringen..."
+    .string "RIVAL ist mein bester FreundDOTS\nDas könnte ich nicht über mich\lbringenDOTS"
         
         
 .global str_0x89be67

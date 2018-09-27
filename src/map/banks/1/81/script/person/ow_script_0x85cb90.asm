@@ -14,13 +14,13 @@ end
 .global str_0x947e42
 
 str_0x947e42:
-    .string "Diese Hitze... willst du wirklich\nkämpfen? Urgh..."
+    .string "Diese HitzeDOTS willst du wirklich\nkämpfen? UrghDOTS"
         
         
 .global str_0x9636ba
 
 str_0x9636ba:
-    .string "Urgh... Verschwinde einfach...\nÄchz... So heiß..."
+    .string "UrghDOTS Verschwinde einfachDOTS\nÄchzDOTS So heißDOTS"
         
         
 .elseif LANG_EN

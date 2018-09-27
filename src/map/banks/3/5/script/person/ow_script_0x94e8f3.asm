@@ -13,7 +13,7 @@ end
 .global str_0x94e8fd
 
 str_0x94e8fd:
-    .string "Kennst du die Tochter von\nProfessor Primus?\pSie ist ein wirklich bezauberndes\nMädchen...\pAber ich traue mich nicht, ihr\nmeine Bewunderung zu gestehen..."
+    .string "Kennst du die Tochter von\nProfessor Primus?\pSie ist ein wirklich bezauberndes\nMädchenDOTS\pAber ich traue mich nicht, ihr\nmeine Bewunderung zu gestehenDOTS"
         
         
 .elseif LANG_EN

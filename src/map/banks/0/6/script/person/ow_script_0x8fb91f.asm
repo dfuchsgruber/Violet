@@ -51,6 +51,10 @@ applymovement 0xff ow_script_movs_0x8fe73d
 waitmovement 0x0
 checksound
 setflag PKMNMENU
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 trainerbattlecont 0x1 0x58 0x0 str_0x8fe6cd str_0x8fe674 ow_script_0x8fe2d1
 
 
@@ -68,24 +72,35 @@ ow_script_movs_0x8fe47c:
 
 .global ow_script_0x8fe2d1
 ow_script_0x8fe2d1:
+
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8fe5f1
 callstd MSG
+special 0xF
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 loadpointer 0x0 choice1
 multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8fe785
+
 call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8fe57c
 callstd MSG
 special 0x7
+
 applymovement 0xff ow_script_movs_0x8fe783
 waitmovement 0x0
 setvar 0x8005 0xf8
 special2 0x8005 0xc
+
+
 loadpointer 0x0 str_0x8fe51d
-callstd MSG
+callstd MSG_KEEPOPEN
+
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 loadpointer 0x0 choice2
 multichoice 0x0 0x0 0x0 0x1
@@ -101,6 +116,7 @@ callif EQUAL ow_script_0x8fe513
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe518
 fanfare 0x13e
+@// Receive fossil
 loadpointer 0x0 str_0x8fe4dd
 callstd MSG_KEEPOPEN
 waitfanfare
@@ -109,8 +125,14 @@ compare 0x8005 0x20
 callif EQUAL ow_script_0x8fe4bb
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe4cc
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8fe47f
 callstd MSG
+special 0xF
+
 applymovement LASTTALKED ow_script_movs_0x8fe47c
 waitmovement 0x0
 sound 0x17
@@ -118,8 +140,13 @@ compare 0x8005 0x20
 callif EQUAL ow_script_0x8fe518
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe513
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8fe443
 callstd MSG
+special 0xF
 goto ow_script_0x8fee78
 
 .align 4
@@ -139,8 +166,14 @@ compare 0x8005 0x20
 callif EQUAL ow_script_0x8fe425
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe431
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8fe3db
 callstd MSG
+special 0xF
+
 fadescreen 0x1
 hidesprite LASTTALKED
 fadescreen 0x0
@@ -250,14 +283,23 @@ call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8fee9e
 callstd MSG
 special 0x7
+
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8fea2c
 callstd MSG
+special 0xF
+
 applymovement 0xff ow_script_movs_0x8fe783
 waitmovement 0x0
 setvar 0x8005 0x8
 special2 0x8005 0xc
+
 loadpointer 0x0 str_0x8fe51d
-callstd MSG
+callstd MSG_KEEPOPEN
+
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 loadpointer 0x0 choice2
 multichoice 0x0 0x0 0x0 0x1
@@ -286,14 +328,27 @@ compare 0x8005 0x20
 callif EQUAL ow_script_0x8fe518
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe513
+
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8fe443
 callstd MSG
+special 0xF
+
 compare 0x8005 0x20
 callif EQUAL ow_script_0x8fe425
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe431
+
+
+loadpointer 0 str_maniac
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8fe8d0
 callstd MSG
+special 0xF
 fadescreen 0x1
 hidesprite LASTTALKED
 fadescreen 0x0
@@ -314,46 +369,45 @@ return
 
 
 .ifdef LANG_GER
+
+str_maniac:
+	.string "Ruinenmaniac"
+
 .global str_0x8fe75c
 
 str_0x8fe75c:
-    .string "Der Stein sieht aus wie ein\nFossil..."
+    .autostring 35 2 "Der Stein sieht aus wie ein FossilDOTS"
         
         
 .global str_0x8fe6cd
 
 str_0x8fe6cd:
-    .string "Du da! Stop! Diese Fossilien dort\nhabe ich schon seit Jahren\lgesucht, also stehen sie auch mir\lzu, nicht dir!"
+    .autostring 35 2 "Du da! Halt!\nDiese Fossilien habe ich bereits seit Jahren gesucht!\pSie stehen mir zu, nicht dir!"
         
         
 .global str_0x8fe674
 
 str_0x8fe674:
-    .string "Das ... das ist nicht möglich!\nMein Leben lang habe ich nach\ldiesen Fossilien gesucht."
+    .autostring 35 2 "Das DOTS das ist nicht möglich!\pMein Leben lang habe ich nach diesen Fossilien gesucht."
         
         
 .global str_0x8fe5f1
 
 str_0x8fe5f1:
-    .string "Mein ganzes Leben habe ich der\nSuche nach Fossilien gewidmet und\ljetzt, da ich sie gefunden habe,\lkommt ein anderer mir zuvor..."
+    .autostring 35 2  "Mein ganzes Leben habe ich der Suche nach Fossilien gewidmet und jetzt, da ich sie gefunden habe, kommt ein anderer mir zuvorDOTS"
         
-        
-.global str_0x8fe5b8
 
-str_0x8fe5b8:
-    .string "GqゼËbqゼË"
-        
         
 .global str_0x8fe57c
 
 str_0x8fe57c:
-    .string "Diese Fossilien gehören mir, du\nhast kein Anrecht darauf!"
+    .autostring 35 2 "Diese Fossilien gehören mir, du hast kein Anrecht darauf!"
         
         
 .global str_0x8fe51d
 
 str_0x8fe51d:
-    .string "Welches der Fossilien möchtest du\nzuerst aufnehmen?"
+    .autostring 35 2 "Welches der Fossilien möchtest du\nzuerst aufnehmen?"
         
         
 .global str_fossil_choice_0
@@ -383,50 +437,48 @@ str_fossil_choice_3:
 .global str_0x8fe4dd
 
 str_0x8fe4dd:
-    .string "PLAYER hat das BUFFER_1\nerhalten!"
+    .autostring 35 2 "PLAYER hat das BUFFER_1\nerhalten!"
         
         
 .global str_0x8fe47f
 
 str_0x8fe47f:
-    .string "Von dir lasse ich mir meinen Traum\nnicht zunichte machen!"
+    .autostring 35 2 "Von dir lasse mich mir die Fossilien nicht wegnehmen!"
         
         
 .global str_0x8fe443
 
 str_0x8fe443:
-    .string "Der Ruinenmaniac hat das\nverbleidende Fossil genommen!"
+    .autostring 35 2 "Der Ruinenmaniac hat das verbleidende Fossil genommen!"
         
         
 .global str_0x8fe3db
 
 str_0x8fe3db:
-    .string "Adios, du frecher Bengel! Hättest\nmir beinahe den Lebenstraum\lzerstört!"
+    .autostring 35 2 "Du freches Kind!\pDass du die Frechheit besitzt, auch nur eines der Fossilien zu beanspruchen DOTS"
         
         
 .global str_0x927398
 
 str_0x927398:
-    .string "Das BUFFER_1 zerbröselte,\nda kein Platz im Beutel ist."
+    .autostring 35 2 "Das BUFFER_1 zerbröselte, da kein Platz im Beutel ist."
         
         
 .global str_0x8fee9e
 
 str_0x8fee9e:
-    .string "Ich will dir deinen Lebenstraum\nnicht zunichte machen.\pGlücklicherweise sind dort zwei\nFossilien, ich schlage vor, dass\ljeder von uns eines für sich\lbehalten darf."
+    .autostring 35 2 "Ich war vor dir hier, also habe ich auch ein Recht auf die Fossilien.\pAllerdings befinden sich dort ohnehin zwei Stück.\pWie wäre es, wenn jeder ein Fossil erhält?"
         
         
 .global str_0x8fea2c
 
 str_0x8fea2c:
-    .string "Du bist sehr großzügig. Dein\nAngebot will ich gerne annehmen.\pUnd weil du mir gegenüber so\nfreundlich bist, darfst du zuerst\leines der Fossilien auswählen."
-        
+	.autostring 35 2 "Ah, ich sehe, du lässt mit dir reden.\pAlso gut, dann nimmt jeder ein Fossil.\pIch lasse dir gerne den Vortritt, Kindchen!"
         
 .global str_0x8fe8d0
 
 str_0x8fe8d0:
-    .string "Endlich konnte ich meinen großen\nTraum in Erfüllung gehen lassen!\pFossilien sind versteinerte\nPokémon und mittels hoch\lentwickelter Technologie kann man\lsie sogar wieder zu neuem Leben\lerwecken.\pDie Laz.Corp betreibt aufwändige\nForschungen in diesem Bereich.\lIhren Hauptsitz hat sie in Orina\lCity. Ein Besuch kann nicht\lschaden.\pAuf Wiedersehen!"
-        
+	.autostring 35 2 "Endlich habe ich ein Fossil gefunden!\pDie Laz.Corp in Orina City arbeitet an einem Projekt, bei dem es darum geht, Pokémon aus Fossilien zu restaurieren.\pDu solltest der Firma einen Besuch abstatten!"
         
 .elseif LANG_EN
 

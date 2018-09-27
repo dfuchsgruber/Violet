@@ -13,7 +13,7 @@ end
 .global str_0x192a92
 
 str_0x192a92:
-    .string "Du kannst den PC in der Ecke dort\ndrüben benutzen!\pDarauf hat man mich am Empfang\nfreundlicherweise hingewiesen."
+    .autostring 36 2 "In der Ecke steht der Pc.\pDort kannst du Pokémon lagern, solltest du keinen Platz in deinem Team haben."
         
         
 .elseif LANG_EN

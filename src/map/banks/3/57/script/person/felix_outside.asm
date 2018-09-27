@@ -92,7 +92,7 @@ mov_face_down:
 
 .ifdef LANG_GER
 str_before_faun_appeared:
-	.autostring 36 2 "Opi ist manchmal schon ein seltsamer Kauz...\pAber vielleicht ist er gerade deshalb ein guter Lehrer!"
+	.autostring 36 2 "Opi ist manchmal schon ein seltsamer KauzDOTS\pAber vielleicht ist er gerade deshalb ein guter Lehrer!"
 
 str_has_received_pkmn:
 	.autostring 36 2 "Opi ist oft sehr streng, aber dafür ein herzensguter Mensch!\pEr ist sogar bereit, uns seine seltensten Pokémon anzuvertrauen!"

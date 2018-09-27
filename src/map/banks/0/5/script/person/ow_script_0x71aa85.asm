@@ -20,7 +20,7 @@ str_0x71aa9d:
 .global str_0x71aae0
 
 str_0x71aae0:
-    .string "So viele Pokémon..."
+    .string "So viele PokémonDOTS"
         
         
 .elseif LANG_EN

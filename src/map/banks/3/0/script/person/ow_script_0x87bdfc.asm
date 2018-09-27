@@ -13,7 +13,7 @@ end
 .global str_0x89bed9
 
 str_0x89bed9:
-    .string "Sieh mal, ich habe ein Pokémon.\nLos Azurill!\l...\lEs kuschelt lieber mit mir als zu\lkämpfen..."
+    .string "Sieh mal, ich habe ein Pokémon.\nLos Azurill!\lDOTS\lEs kuschelt lieber mit mir als zu\lkämpfenDOTS"
         
         
 .elseif LANG_EN

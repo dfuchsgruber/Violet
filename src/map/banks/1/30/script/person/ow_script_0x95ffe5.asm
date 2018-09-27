@@ -20,7 +20,7 @@ str_0x962cce:
 .global str_0x962d24
 
 str_0x962d24:
-    .string "Dir fehlt die Gallanz!\nRüpelhaftes Benehmen..."
+    .string "Dir fehlt die Gallanz!\nRüpelhaftes BenehmenDOTS"
         
         
 .elseif LANG_EN

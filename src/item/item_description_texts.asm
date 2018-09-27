@@ -368,7 +368,7 @@
 	.global str_item_desc_x3d_item_item_3d
 
 	str_item_desc_x3d_item_item_3d:
-		.string " ????"
+		.string "Dieeser besondere, eiförmige Stein\nhilft manchen Pokémon bei ihrer\nEvolution."
 
 
 	.global str_item_desc_x3e_item_item_3e
@@ -2558,7 +2558,7 @@
 	.global str_item_desc_x3d_item_item_3d
 
 	str_item_desc_x3d_item_item_3d:
-		.string "?????"
+		.string "This special, oval rock helps\nsome Pokémon with their evolution."
 
 	.global str_item_desc_x3e_item_item_3e
 

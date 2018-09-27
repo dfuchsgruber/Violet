@@ -20,7 +20,7 @@ str_0x93690c:
 .global str_0x9368a9
 
 str_0x9368a9:
-    .string "Wenn sich meine Niederlage erst\nherumgesprochen hat...\pAlle werden sie in Meriana City\nangeln..."
+    .string "Wenn sich meine Niederlage erst\nherumgesprochen hatDOTS\pAlle werden sie in Meriana City\nangelnDOTS"
         
         
 .elseif LANG_EN

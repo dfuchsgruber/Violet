@@ -118,3 +118,13 @@ overworld_pals equ 0x083A501C
 
 .org 0x0815F914 + 4 * 0x97
     .word script_cmd_x97_fadescreen | 1
+
+// Overworld script std strings
+.org 0x0806BE74
+	.word ow_script_string_stds
+
+// Giveegg
+.org 0x080A02A0
+	ldr r1, = overworld_script_giveegg | 1
+	bx r1
+	.pool

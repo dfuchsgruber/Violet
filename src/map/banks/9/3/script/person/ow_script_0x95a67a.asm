@@ -13,7 +13,7 @@ end
 .global str_0x95ab3b
 
 str_0x95ab3b:
-    .string "Ich bewache die Rücklagen der\nOrina City Bank.\lOb ich nur ein einzelner Polizist\lbin?\pÄhm...! Nein! Natürlich nicht.\nHinter dieser Türe sind noch\lhundert weitere..."
+    .string "Ich bewache die Rücklagen der\nOrina City Bank.\lOb ich nur ein einzelner Polizist\lbin?\pÄhmDOTS! Nein! Natürlich nicht.\nHinter dieser Türe sind noch\lhundert weitereDOTS"
         
         
 .elseif LANG_EN

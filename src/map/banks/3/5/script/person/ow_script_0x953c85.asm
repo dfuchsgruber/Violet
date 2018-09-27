@@ -34,7 +34,7 @@ end
 .global str_0x9552a7
 
 str_0x9552a7:
-    .string "Ich bin fertig mit der Laz.Corp.\nProfessor Primus\ Wahn von einem\linterdimensionalen Portal geht\lentschieden zu weit.\lDass er die radioaktiven Abfälle\leinfach so unverfroren entsorgt...\lSo kann ich nicht arbeiten."
+    .string "Ich bin fertig mit der Laz.Corp.\nProfessor Primus\ Wahn von einem\linterdimensionalen Portal geht\lentschieden zu weit.\lDass er die radioaktiven Abfälle\leinfach so unverfroren entsorgtDOTS\lSo kann ich nicht arbeiten."
         
         
 .global str_0x955217

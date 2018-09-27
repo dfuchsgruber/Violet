@@ -65,25 +65,25 @@ end
 .global str_0x958549
 
 str_0x958549:
-    .string "Hallo PLAYER!\nIch will dich nicht länger auf die\lFolter spannen.\pEs ist den Forschern hier\ngelungen, ein Pokémon, das am\lComputer gestaltet wurde, in die\lRealität umzusetzten.\pSein Name ist Porygon und da ich\nvon deinen Fähigkeiten als Trainer\lviel halte, konnte ich den\lPräsidenten der Laz.Corp davon\lüberzeugen, dir ein Exemplar\lanzuvertrauen."
-        
+   .autostring 35 2 "Hallo PLAYER!\nIch will dich nicht länger auf die Folter spannen.\pUnserer Forschungsgruppe ist es gelungen, ein Pokémon am Computer zu entwerfen und es dann Realität werden zu lassen.\pWir haben es Porygon genannt, aber über seine Fähigkeiten wissen wir praktisch nichts.\pDu bist der perfekte Kandidat, so ein Pokémon aufzuziehen, finde ich!\pIch werde dir ein Exemplar anvertrauen."
         
 .global str_0x958498
 
 str_0x958498:
-    .string "PLAYER hat ein Porygon erhalten."
+    .autostring 35 2 "PLAYER hat ein Porygon\nerhalten."
         
         
 .global str_0x95839d
 
 str_0x95839d:
-    .string "Ich bin gespannt, welche\nFähigkeiten du in diesem Pokémon\lzum Vorschein bringen wirst.\p...\nNun muss ich aber wieder selbst an\ldie Arbeit.\pEs gibt da noch die ein oder\nandere Feldstudie, die für\lProfssor Tann erledigt werden\lmuss.\pWir sehen uns, PLAYER."
+
+	.autostring 35 2 "Ich bin mir sicher, dass du Fähigkeiten in diesem Pokémon zum Vorschein bringen kannst, die wir Entwickler uns niemals hätten vorstellen können.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pNun muss ich aber wieder zurück an die Arbeit.\pWir sehen uns, PLAYER."
         
         
 .global str_0x9584c8
 
 str_0x9584c8:
-    .string "Wie schade, du scheinst keinen\nPlatz mehr auf deinem PC zu haben.\pKomm doch wieder, wenn du das\nPorygon entgegennehmen kannst."
+    .autostring 35 2 "Wie schade, du scheinst keinen Platz mehr auf deinem PC zu haben.\pKomm doch wieder, wenn du das Porygon entgegennehmen kannst."
         
         
 .elseif LANG_EN

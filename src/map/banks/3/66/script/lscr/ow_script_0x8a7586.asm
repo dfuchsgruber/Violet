@@ -315,7 +315,7 @@ setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 loadpointer 0x0 str_0x8a992f
 callstd MSG
 loadpointer 0x0 choice
-multichoice 0x0 0x0 0x0 0x0
+multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8a9640
@@ -411,200 +411,192 @@ return
 .global str_0x8a7f97
 
 str_0x8a7f97:
-    .string "Mein Sohn und PLAYER.\nDa seid ihr, zwei frisch gebackene\lTrainer und schon stark genug, es\lmit den Schergen von Team Violet\laufzunehmen. Keiner weiß so recht,\lwas diese Gruppe eigentlich im\lSchilde führt, aber scheinbar sind\lsie hinter einem Objekt namens\lZeitstein her. Ich als Archeologe\lmuss zugeben, bereits von diesem\lominösen Stein gehört zu haben. Er\lwird in vielen Legenden erwähnt\lund soll den Fluss der Zeit\laufrecht erhalten... Wo er liegt\lweiß aber keiner!\l...\l...\lNun aber genug dazu. Ich wollte\leuch ohnehin aus einem anderem\lGrund sehen: Auch ich wollte euch\lbeide auf eurem neuen Weg\lunterstützen.\pElise, würdest du?"
-        
-        
+	.autostring 36 2 "PLAYER und mein eigener Sohn!\pZwei frisch gebackene Trainer!\pUnd schon stark genug, diesen alten Herren aus einer misslichen Lage zu befreien.\pDiese Team Violet Rüpel werden zu einem echten Problem in Theto.\pIn letzter Zeit gehen sie immer agressiver gegen die Bürger vor.\pUnd was dieser Wirbel um einen Zeitstein bedeuten soll, kann ich mir auch nicht recht erklären.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWie dem auch sei.\nDa ihr nun endlich die Trainerschule und den alten Faun hinter euch gelassen habt, will ich euch auf dem Weg, den ihr nun bestreitet, unterstützen.\pElise, würdest du bitteDOTS"
+
 .global str_0x8a7f3d
 
 str_0x8a7f3d:
-    .string "Oh ja, sofort, Professor\nTann! Ich bin schon auf dem Weg!"
+    .autostring 36 2 "Natürlich, Professor Tann.\pIch bin schon unterwegsDOTS"
         
         
 .global str_0x8a7e8d
 
 str_0x8a7e8d:
-    .string "Darf ich vorstellen? Meine\nAssistentin Elise. Sie ist die\lTochter eines Kollegen von mir und\lhilft mir, beim Digitalisieren\lmeiner archeologischen Studien."
-        
+	.autostring 36 2 "Darf ich vorstellen?\nMeine Assistentin Elise.\pSie ist die Tochte eines befreundeten Professors und selbst ein wahres Forschungass.\pSie forscht in der Laz.Corp an der Virtualisierung von Pokémon-Daten.\pScheinbar sind dazu auch die Ergebnisse meiner Forschung relevant.\pDOTS DOTS DOTS"
         
 .global str_0x8a7dbf
 
 str_0x8a7dbf:
-    .string "In der Tat, ich bin die\nTochter von Professor Primus,\leinem angesehenen Physiker der\lThetoregion. Als Angestellte der\lLaZ. Cooperation bin ich\lmaßgeblich an der Entwicklung des\lPokepads beteiligt."
+	.autostring 36 2 "Freut mich außerordentlich!\pIch sammle allerlei Daten, die für die Entwicklung des Poképads relevant sein könnten."
         
         
 .global str_0x8a7930
 
 str_0x8a7930:
-    .string "Ihr kennt das Pokepad nicht?"
+    .string "Ihr kennt das Poképad nicht?"
         
         
 .global str_0x8a78f1
 
 str_0x8a78f1:
-    .string "Das ist der Grund, wieso ich sie\nherbestellt habe, Elise."
+    .autostring 36 2 "Deswegen habe ich sie ja herbestellt."
         
         
 .global str_0x8a7830
 
 str_0x8a7830:
-    .string "Natürlich! Ich Dummerchen. Das\nPokepad ist ein Gadget, auf dem\lman die verschiedensten Apps\linstallieren kann. Schon bald wird\lein Trainerdasein ohne das Pokepad\lnicht mehr denkbar sein."
-        
-        
+	.autostring 36 2 "Ach natürlich! Wie dumm von mir.\pDas Poképad ist der Höhepunkt unserer Technologie.\pEin Muss für jeden Trainer!\pMit einer Vielzahl an Apps, die man für das Poképad installieren kann, wird eine Trainerkarriere ohne es bald nicht mehr denkbar sein!"
+
 .global str_0x8a77ae
 
 str_0x8a77ae:
-    .string "Ganz genau. Und als Starthilfe\ngewissermaßen will ich euch beiden\ljeweils eines dieser Geräte\lschenken."
+    .autostring 36 2 "Ganz genau!\pUnd als Starthilfe will ich euch beiden jeweils eines dieser Geräte schenken."
         
         
 .global str_0x8a7789
 
 str_0x8a7789:
-    .string "Wirklich? Fantastisch, Papi!\nJuhu!"
+    .autostring 36 2 "Wirklich? Fantastisch, Papi!\nJuhu!"
         
         
 .global str_0x8a776a
 
 str_0x8a776a:
-    .string "Vielen Dank, Professor Tann."
+    .autostring 36 2 "Vielen Dank, Professor Tann."
         
         
 .global str_0x8aa319
 
 str_0x8aa319:
-    .string "PLAYER hat das Pokepad\nerhalten!"
+    .autostring 36 2 "PLAYER hat das Poképad erhalten!"
         
         
 .global str_0x8a7751
 
 str_0x8a7751:
-    .string "Danke, Elise!"
+    .autostring 36 2 "Danke, Elise!"
         
         
 .global str_0x8a76ee
 
 str_0x8a76ee:
-    .string "Aber das soll noch nicht alles\nsein. Mein nächtes Geschenk ist\lmit einer Bitte verbunden."
+    .autostring 36 2 "Das ganze ist allerdings mit einer Bitte verbunden."
         
         
 .global str_0x8aabee
 
 str_0x8aabee:
-    .string "Einer Bitte? Du bist schon\nwieder so ein Spielverderber,\lPapi!"
+    .autostring 36 2 "Och, du bist ein immer so ein Spielverderber, Papi!"
         
         
 .global str_0x8aa57d
 
 str_0x8aa57d:
-    .string "Ich darf doch bitten! Der\nProfessor macht dir ein Geschenk,\ldu könntest ruhig mal etwas\lDankbarkeit zeigen..."
+    .autostring 35 2 "Ich darf doch bitten!\pDein Vater macht dir ein Geschenk, also könntest du ruhig etwas mehr Dankbarkeit zeigen!"
         
         
 .global str_0x8aa381
 
 str_0x8aa381:
-    .string "Ach, das macht gar nichts, Elise.\nIch kenne meinen Sohn gut genug,\lum zu wissen, dass er nur Späße\lmacht...\lWie dem auch sei - vor vielen\lJahren entwickelte ein genialer\lKopf namens Professor Eich den\lPokedex, ein Gerät, welches Daten\lüber gesehene und gefangene\lPokémon aufzeichnet. Mit der\lEntwicklung des Pokepads sah man\lden Pokedex immer seltener, bis\ldieser schließlich digitalisiert\lund ins Pokepad integriert wurde.\lWenn ihr erlaubt, würde ich gerne\ldie Pokedex-App auf eurem Pokepad\linstallieren."
-        
+	.autostring 35 2 "Haha!\pMein Sohn meint es doch gar nicht so, er ist nur immer etwas hitzköpfig.\pGanz genauso, wie ich es früher war.\pBei der Bitte handelt es sich um Folgendes:\pEin anderer Kollege von mir namens Eich sammelt Daten über die Pokémon auf unserer Welt.\pDazu entwickelte er den Pokédex, welcher Informationen über gesehene Pokémon aufzeichnet.\pNun hat die Laz.Corp die Funktionalität dieses Pokédex aber bereits Digitalisiert und eine App für das Poképad entwickelt, die Aufzeichnungen über gesehene Pokémon anfertigt.\pIch würde diese App gerne auf euren Poképads installieren und euch darum bitten, möglichst viele verschiedene Pokémonarten einzufangen und so Daten zu sammeln."
+
         
 .global str_0x8aa372
 
 str_0x8aa372:
-    .string "Danke, Papi!"
+    .autostring 36 2 "Geht in Ordnung!\nDanke Papi!"
         
         
 .global str_0x8aa338
 
 str_0x8aa338:
-    .string "Die Pokedex-App wurde auf dem\nPokepad installiert!"
+    .autostring 36 2 "Die Pokedex-App wurde auf dem Poképad installiert!"
         
         
 .global str_0x8aa305
 
 str_0x8aa305:
-    .string "Dankesehr, Elise."
+    .autostring 36 2 "Dankesehr, Elise."
         
         
 .global str_0x8aa27f
 
 str_0x8aa27f:
-    .string "Gut, gut. Hätten wir das also auch\nabgehakt. Ich nehme an, ihr beiden\lhabt in der Trainerschule gelernt,\lwie man ein Pokémon fängt?"
-        
+	.autostring 36 2 "Sehr schön!\pIch wusste, dass ich mich auf euch verlassen kann.\pIch nehme an, ihr beiden habt in der Trainerschule gelernt, wie man Pokémon fängt?"
         
 .global str_0x8aa22a
 
 str_0x8aa22a:
-    .string "Natürlich, Papi! Herr Faun hat uns\nalles beigebracht, was ein Trainer\lkönnen muss!"
+    .autostring 36 2 "Natürlich Papi!\pHerr Faun hat uns alles beigebracht, was ein Trainer wissen muss!"
         
         
 .global str_0x8aa1b8
 
 str_0x8aa1b8:
-    .string "Sprecht ihr etwa von dem Faun? Dem\nruhmreichen Trainer vergangener\lTage? Den, den sie die \rosa\lFaust\ nannten?"
+    .autostring 36 2 "Sprecht ihr von dem Faun?\pDem großen Trainer, der in der VergangenheitDOTS"
         
         
 .global str_0x8aa184
 
 str_0x8aa184:
-    .string "Kennst du etwa noch einen anderen\nFaun, Elise?"
+    .autostring 36 2 "Kennst du etwa noch einen anderen Faun?"
         
         
 .global str_0x8a9f82
 
 str_0x8a9f82:
-    .string "Faun war früher ein mal ein großer\nTrainer, eine Berühmtheit, wenn\lman so will. Doch irgendwann im\lLeben kommt der Punkt, da man\letwas an kommende Generationen\lweitergeben will und so hat Faun\leine Trainerschule eröffnet, um\langehenden Trainern sein Wissen\lmitzugeben.\lUm aber aufs Thema zurückzukommen:\lDer Pokedex registriert Daten,\lwenn ihr einem Pokémon begegnet.\lFangt ihr es, so speichert er noch\lmehr Informationen darüber ab.\lNatürlich braucht ihr, um Pokémon\lfangen zu können, erst einmal\lPokebälle."
-        
+	.autostring 36 2 "Ihr müsst wissen, dass Faun eine wahre Trainerlegende ist.\pAber irgendwann im Leben kommt einmal der Punkt, an dem man etwas an die nächste Generation weitergeben will.\pDeswegen hat Faun seine Schule eröffnet, denke ich.\pUm aber wieder aufs Thema zurückzukommen.\pBitte versucht, viele verschiedene Pokémon einzufangen und so wertvolle Daten zu sammeln.\pDafür benötigt ihr natürlich Pokébälle und großzügig, wie ich bin, werde ich euch auch diese schenken."
         
 .global str_0x8a9c83
 
 str_0x8a9c83:
-    .string "RIVAL hat 5 Pokebälle erhalten!"
+    .autostring 36 2 "RIVAL hat 5 Pokebälle erhalten!"
         
         
 .global str_0x8a9a4c
 
 str_0x8a9a4c:
-    .string "Ich kann es noch immer nicht\nfassen - ich habe euch beide schon\lgekannt, da habt ihr noch im\lKindbett gelegen und jetzt zieht\lihr hinaus in die weite Welt, auf\lder Suche nach Ruhm und Stärke.\lWenn ich euch einen Rat auf den\lWeg mitgeben will, dann diesen:\lKämpft nicht für Macht, kämpft\lnicht für Achtung, kämpft nicht\lohne Herz. Pokémon sind Lebewesen\lwie wir Menschen, gleichgestellt.\lWir messen einander im Kampf des\lSpaßes halber, nicht um zu\lvernichten. Nur, wer ein starkes\lBand zwischen sich und seinen\lPokémon spannt, kann in dieser\lWelt erfolgreich sein."
+    .autostring 36 2 "Hach, da werde ich wirklich nostalgisch, wenn ich euch beide ansehe.\pIch erinnere mich noch an meine Jugend!\pDas waren Zeiten, als die Top Vier das Land gerade eroberten.\pIch frage mich, wie eure Generation diese Welt bewegen wird!"
         
         
 .global str_0x8a99f1
 
 str_0x8a99f1:
-    .string "Das war eine schöne Ansprache,\nProfessor. Wirklich fesselnd und\lnur allzu zutreffend."
+    .autostring 36 2 "Ich bin mir sicher, dass man von den beiden noch viel hören wird!"
         
         
 .global str_0x8a9950
 
 str_0x8a9950:
-    .string "Du warst schon immer einer, der\nviel redet, Papi! Immer diese öden\lAnsprachen. Es ist doch\lselbstverständlich, dass Trainer\lund Pokémon Freunde werden müssen!"
-        
+    .autostring 36 2 "Und wie man von mir hören wird!\pEs würde mich nicht überraschen, wenn ich eines Tages als Champion an der Spitze dieser Region stehe!"
+
         
 .global str_0x8a992f
 
 str_0x8a992f:
-    .string "(Was antwortest du?)"
+    .autostring 36 2 "(Was antwortest du?)"
         
         
 .global str_0x8a9771
 
 str_0x8a9771:
-    .string "Ich danke Ihnen vielmals,\nProfessor, auch wenn es sehr naiv\list, zu glauben, dass Freundschaft\lund Liebe allein in dieser Welt\lbestehen können. Nur wer ehrgeizig\lsein Ziel nicht aus den Augen\lverliert, kann auch erfolgreich\lsein. Natürlich enstehen auch\ldabei Freunschaften. Ihre Worte\lsind hoffnungsvoll, und voller\lHoffnung werde ich mich dieser\lWelt stellen."
-        
+	.autostring 36 2 "Auch ich werde mir in der Trainerwelt einen Namen machen.\pEines Tages werde ich auch die Top Vier selbst herausfordern!"
         
 .global str_0x8ab043
 
 str_0x8ab043:
-    .string "Es freut mich, wenn auch meine\nIdeale in der kommenden Generation\lweiterleben. Die Hoffnung, die ich\leuch beiden auf den Weg gebe, wird\lder Grundstein für eine neue Zeit\lsein, eure Zeit."
-        
+    .autostring 36 2 "Das sind großartige Ziele, die ihr euch da gesetzt habt!\pIch bin mir sicher, dass ihr erreichen werdet, wovon ihr träumt!\pUnd nun will ich euch nicht weiter aufhalten."
         
 .global str_0x8aafd4
 
 str_0x8aafd4:
-    .string "Auch ich wünsche euch beiden viel\nGlück auf eurem Weg. Bei Fragen\lstehe ich euch gerne mit Rat zur\lSeite."
+	.autostring 36 2 "Ich bin auch überzeugt, dass ihr das Zeug zu großen Trainer habt!"
         
         
 .global str_0x8a965b
 
 str_0x8a965b:
-    .string "Ich danke Ihnen vielmals,\nProfessor. In Ihren Worten steckt\lnichts als die Wahrheit. Wahre\lKraft findet man nur in dem Band,\ldas Mensch und Pokémon\lgleichermaßen vereint. Ihre Worte\lsind voller Hoffnung, und diese\lHoffnung werde ich hinaustragen in\ldieser weite Welt! "
-        
+    .autostring 36 2 "Mein oberstes Ziel ist es, den Menschen und Pokémon in dieser Region zu helfen.\pDaran werde ich alles setzten."
         
 .global str_0x8ad201
 
@@ -615,13 +607,13 @@ str_0x8ad201:
 .global str_route_2_lab_choice_0
 
 str_route_2_lab_choice_0:
-    .string "Zustimmen"
+    .string "Den Menschen helfen"
         
         
 .global str_route_2_lab_choice_1
 
 str_route_2_lab_choice_1:
-    .string "Widersprechen"
+    .string "Ruhm erringen"
         
         
 .elseif LANG_EN

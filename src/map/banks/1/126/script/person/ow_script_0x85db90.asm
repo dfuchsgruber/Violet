@@ -20,7 +20,7 @@ str_0x8646a4:
 .global str_0x864721
 
 str_0x864721:
-    .string "Urgh... Diese vernichtende,\nzermürbende Hitze..."
+    .string "UrghDOTS Diese vernichtende,\nzermürbende HitzeDOTS"
         
         
 .elseif LANG_EN

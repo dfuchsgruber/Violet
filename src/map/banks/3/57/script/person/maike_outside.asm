@@ -127,28 +127,28 @@ mov_exclam:
 
 .ifdef LANG_GER
 str_make_both_appear:
-	.autostring 35 2 "Oh, hallo PLAYER...\nIch bin immer noch am Boden zerstört wegen dieses schriftlichen Tests...\pWeißt du, mein Freund aus Hoenn, er ist so ein talentierter Trainer und ich bin dagegen..."
+	.autostring 35 2 "Oh, hallo PLAYERDOTS\nIch bin immer noch am Boden zerstört wegen dieses schriftlichen TestsDOTS\pWeißt du, mein Freund aus Hoenn, er ist so ein talentierter Trainer und ich bin dagegenDOTS"
 
 str_after_both_appeared:
-	.autostring 36 2 "Also sind jetzt auch Felix und Blaise auf dem Hof, fehlt nur noch Herr Faun..."
+	.autostring 36 2 "Also sind jetzt auch Felix und Blaise auf dem Hof, fehlt nur noch Herr FaunDOTS"
 
 str_after_both_appeared_2:
-	.autostring 36 2 "Wenn ich diesen Test heute vergeige, kann ich meinem Freund nicht mehr unter die Augen treten..."
+	.autostring 36 2 "Wenn ich diesen Test heute vergeige, kann ich meinem Freund nicht mehr unter die Augen tretenDOTS"
 
 str_will_receive_pkmn:
 	.autostring 36 2 "Ich bin schon ganz gespannt, welches Pokémon ich bekomme!\pIch will ein so starker Trainer werden, wie mein Freund aus Hoenn."
 
 str_catch_pkmn:
-	.autostring 36 2 "Dass man mir das letzte Pokémon einfach aufzwingt, gefällt mir nicht, PLAYER.\pVielleicht kann ich ja ein anderes Pokémon einfangen, das mir gefällt..."
+	.autostring 36 2 "Dass man mir das letzte Pokémon einfach aufzwingt, gefällt mir nicht, PLAYER.\pVielleicht kann ich ja ein anderes Pokémon einfangen, das mir gefälltDOTS"
 
 str_battle:
-	.autostring 36 2 "Ach... ich will eigentlich gar nicht kämpfen...\pWeißt du, PLAYER, ich traue mir das ganze Trainer-Sein ehrlichgesagt noch nicht zu..."
+	.autostring 36 2 "AchDOTS ich will eigentlich gar nicht kämpfenDOTS\pWeißt du, PLAYER, ich traue mir das ganze Trainer-Sein ehrlichgesagt noch nicht zuDOTS"
 
 str_results:
-	.autostring 36 2 "Ich bin sehr nervös...\pImmerhin konnte ich Felix nicht besiegen.\pIch hoffe nur, dass ich nicht durch die Prüfung gefallen bin!"
+	.autostring 36 2 "Ich bin sehr nervösDOTS\pImmerhin konnte ich Felix nicht besiegen.\pIch hoffe nur, dass ich nicht durch die Prüfung gefallen bin!"
 
 str_goodbye:
-	.autostring 36 2 "PLAYER...\nIch bin glücklich und ängstlich zugleich.\pDer Schatten meines Freundes aus Hoenn reicht sehr weit...\pOb ich jemals mit ihm auf Augenhöhe sein werde?\pIch frage mich, ob ich dem gewachsen bin, was vor mir liegt.\pAber ich muss mein Leben allein bewältigen, meinst du nicht, PLAYER?\pJa, Verantwortung, die muss ich jetzt übernehmen.\pWir werden uns sicher wiedersehen.\pLebe wohl, bis dahin, PLAYER!"
+	.autostring 36 2 "PLAYERDOTS\nIch bin glücklich und ängstlich zugleich.\pDer Schatten meines Freundes aus Hoenn reicht sehr weitDOTS\pOb ich jemals mit ihm auf Augenhöhe sein werde?\pIch frage mich, ob ich dem gewachsen bin, was vor mir liegt.\pAber ich muss mein Leben allein bewältigen, meinst du nicht, PLAYER?\pJa, Verantwortung, die muss ich jetzt übernehmen.\pWir werden uns sicher wiedersehen.\pLebe wohl, bis dahin, PLAYER!"
 
 .elseif LANG_EN
 

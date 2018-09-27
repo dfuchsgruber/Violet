@@ -1816,19 +1816,19 @@ str_0x89d956:
 .global str_0x980cd8
 
 str_0x980cd8:
-    .string "PLAYER, RIVAL!\pWas haltet ihr denn von den\nGerüchten, die man sich erzählt?\lDer Klassenbeste soll ein\lschillerndes Pokémon von Faun\lbekommen.\pAufregend nicht? Mein Bruder\nhat mir einmal von schillernden\lPokémon erzählt.\pSie sind sehr selten und\nglitzern in einer für die Art\lunübliche Farbe.\pAllerdings mache ich\nmir keine zu großen Hoffnungen..."
+    .string "PLAYER, RIVAL!\pWas haltet ihr denn von den\nGerüchten, die man sich erzählt?\lDer Klassenbeste soll ein\lschillerndes Pokémon von Faun\lbekommen.\pAufregend nicht? Mein Bruder\nhat mir einmal von schillernden\lPokémon erzählt.\pSie sind sehr selten und\nglitzern in einer für die Art\lunübliche Farbe.\pAllerdings mache ich\nmir keine zu großen HoffnungenDOTS"
         
         
 .global str_0x89e366
 
 str_0x89e366:
-    .string "Und das ist Blaise.\pEr ist ein ziemlicher Miesepeter,\nwenn du mich fragst.\pWenn er einmal etwas sagt, ist\nes eigentlich nie sonderlich nett..."
+    .string "Und das ist Blaise.\pEr ist ein ziemlicher Miesepeter,\nwenn du mich fragst.\pWenn er einmal etwas sagt, ist\nes eigentlich nie sonderlich nettDOTS"
         
         
 .global str_0x89e350
 
 str_0x89e350:
-    .string "Diese Schule macht mich krank..."
+    .string "Diese Schule macht mich krankDOTS"
         
         
 .global str_0x89e03c
@@ -1846,7 +1846,7 @@ str_0x89e210:
 .global str_0x89df52
 
 str_0x89df52:
-    .string "Hallo Leute!\pHattet ihr ein gutes Gefühl bei\nder Prüfung?\pIch denke, dass Faun keinen von\nuns wirklich durchfallen lassen\lwürde...\pBis auf mich vielleicht, wenn\nich es mir so recht überlege!"
+    .string "Hallo Leute!\pHattet ihr ein gutes Gefühl bei\nder Prüfung?\pIch denke, dass Faun keinen von\nuns wirklich durchfallen lassen\lwürdeDOTS\pBis auf mich vielleicht, wenn\nich es mir so recht überlege!"
         
         
 .global str_0x89df1e
@@ -1858,13 +1858,13 @@ str_0x89df1e:
 .global str_0x89de07
 
 str_0x89de07:
-    .string "Das kann dir noch gleichgültiger\nsein als mir.\pVom Auswendiglernen ist noch\nniemand ein guter Trainer geworden.\pDiese ganze Trainerschule ist\neine völlig hinfällige Einrichtung.\pFaun will nicht einsehen,\ndass seine glorreichen Tage\lgezählt sind und versucht jetzt mit\laller Mühe einen Beitrag zu leisten...\pWäre mein dummer Vater\nnicht, hätte ich diesem ganzen\lKindergarten hier entgehen können."
+    .string "Das kann dir noch gleichgültiger\nsein als mir.\pVom Auswendiglernen ist noch\nniemand ein guter Trainer geworden.\pDiese ganze Trainerschule ist\neine völlig hinfällige Einrichtung.\pFaun will nicht einsehen,\ndass seine glorreichen Tage\lgezählt sind und versucht jetzt mit\laller Mühe einen Beitrag zu leistenDOTS\pWäre mein dummer Vater\nnicht, hätte ich diesem ganzen\lKindergarten hier entgehen können."
         
         
 .global str_0x89ee4c
 
 str_0x89ee4c:
-    .string "Du hast Recht, RIVAL!\pBlaise ist wirklich unmöglich..."
+    .string "Du hast Recht, RIVAL!\pBlaise ist wirklich unmöglichDOTS"
         
         
 .global str_0x89eda2
@@ -1888,7 +1888,7 @@ str_0x89ea85:
 .global str_0x89ea1d
 
 str_0x89ea1d:
-    .string "Zumindest ein kleiner Ausgleich für\ndiese Farce..."
+    .string "Zumindest ein kleiner Ausgleich für\ndiese FarceDOTS"
         
         
 .global str_0x89e9d4
@@ -1990,7 +1990,7 @@ str_0x8a0269:
 .global str_0x8a01ae
 
 str_0x8a01ae:
-    .string "Peinlich..."
+    .string "PeinlichDOTS"
         
         
 .global str_0x8a001e
@@ -2032,13 +2032,13 @@ str_0x89fba5:
 .global str_0x8a039f
 
 str_0x8a039f:
-    .string "Argh! Dieser Narr! Er kommt viel zu\nsehr nach seinem Vater...\p...\pLassen wir uns davon aber nicht\nabbringen."
+    .string "Argh! Dieser Narr! Er kommt viel zu\nsehr nach seinem VaterDOTS\pDOTS\pLassen wir uns davon aber nicht\nabbringen."
         
         
 .global str_0x8a0376
 
 str_0x8a0376:
-    .string "Maike, würdest du bitte - ähm..."
+    .string "Maike, würdest du bitte - ähmDOTS"
         
         
 .global str_0x8a035f
@@ -2050,7 +2050,7 @@ str_0x8a035f:
 .global str_0x8a02fb
 
 str_0x8a02fb:
-    .string "Puh! Diese wilden Pokémon sind ganz\nschon furchteinflößend..."
+    .string "Puh! Diese wilden Pokémon sind ganz\nschon furchteinflößendDOTS"
         
         
 .global str_0x89ff93
@@ -2140,7 +2140,7 @@ str_0x8a3129:
 .global str_0x8a3e3e
 
 str_0x8a3e3e:
-    .string "Verloren? So werde ich doch nie mit\nmeinem Bruder Brix gleichziehen\lkönnen..."
+    .string "Verloren? So werde ich doch nie mit\nmeinem Bruder Brix gleichziehen\lkönnenDOTS"
         
         
 .global str_0x8a3e79
@@ -2218,13 +2218,13 @@ str_0x8a7b26:
 .global str_0x8a7af9
 
 str_0x8a7af9:
-    .string "Oh ok. Ich werde mein Bestes geben.\nIch darf nicht scheitern..."
+    .string "Oh ok. Ich werde mein Bestes geben.\nIch darf nicht scheiternDOTS"
         
         
 .global str_0x8a7ad0
 
 str_0x8a7ad0:
-    .string "Na gut! Dann werde ich es\nversuchen..."
+    .string "Na gut! Dann werde ich es\nversuchenDOTS"
         
         
 .global str_0x8a7aa5
@@ -2236,7 +2236,7 @@ str_0x8a7aa5:
 .global str_0x8a7a8a
 
 str_0x8a7a8a:
-    .string "Hab ich es... geschafft?"
+    .string "Hab ich esDOTS geschafft?"
         
         
 .global str_0x8a7a63

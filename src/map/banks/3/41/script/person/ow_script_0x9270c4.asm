@@ -43,13 +43,13 @@ str_0x8abe1c:
 .global str_0x8ab77f
 
 str_0x8ab77f:
-    .string "Das Linkkabel simuliert einen\nechten Pokémon Tausch, sodass\ljene, die sich erst im Tausch\lentwickeln, auf diese Weise zu\lihrer Evolution gelangen können.\lIst es nicht grotesk, wozu unsere\lTechnik fähig ist? Pokémon zur\lEvolution zwingen? ...\lAber nicht mit mir... Soll die\lLaz.Corp doch machen, was sie für\lrichtig hält. Ich halte mich da ab\ljetzt raus!"
+    .string "Das Linkkabel simuliert einen\nechten Pokémon Tausch, sodass\ljene, die sich erst im Tausch\lentwickeln, auf diese Weise zu\lihrer Evolution gelangen können.\lIst es nicht grotesk, wozu unsere\lTechnik fähig ist? Pokémon zur\lEvolution zwingen? DOTS\lAber nicht mit mirDOTS Soll die\lLaz.Corp doch machen, was sie für\lrichtig hält. Ich halte mich da ab\ljetzt raus!"
         
         
 .global str_0x8ab6bf
 
 str_0x8ab6bf:
-    .string "Mein Boss wollte, dass ich ein\nRaum-Zeit-Portal konstruiere, dass\ldie Lebensenergie von Pokémon als\lEnergiequelle nutzt... Ab diesem\lPunkt war mir klar, dass es so\lnicht weitergehen kann..."
+    .string "Mein Boss wollte, dass ich ein\nRaum-Zeit-Portal konstruiere, dass\ldie Lebensenergie von Pokémon als\lEnergiequelle nutztDOTS Ab diesem\lPunkt war mir klar, dass es so\lnicht weitergehen kannDOTS"
         
         
 .elseif LANG_EN

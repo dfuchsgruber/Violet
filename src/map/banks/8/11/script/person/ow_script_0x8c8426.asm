@@ -13,7 +13,7 @@ end
 .global str_0x8c8430
 
 str_0x8c8430:
-    .string "Die Bezahlung für besagte Waren\nkann ich nur bar entgegennehmen..."
+    .string "Die Bezahlung für besagte Waren\nkann ich nur bar entgegennehmenDOTS"
         
         
 .elseif LANG_EN

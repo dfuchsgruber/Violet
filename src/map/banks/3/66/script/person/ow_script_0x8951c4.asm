@@ -12,14 +12,9 @@ call ow_script_0x895cf9
 loadpointer 0x0 str_0x843a47
 callstd MSG
 special 0x7
-fadescreen 0x1
-sound 0x119
-special 0x0
-fadescreen 0x2
-fadescreen 0x1
-fadescreen 0x2
-fadescreen 0x1
-fadescreen 0x0
+
+call ow_script_healing_sequence
+
 checkflag MERIANA_CITY_VIOLET_GRUNTS
 playsong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY 0x0
 call ow_script_0x895cf9
@@ -43,13 +38,13 @@ return
 .global str_0x843a47
 
 str_0x843a47:
-    .string "Oh, du und deine Pokémon sehen ja\nschrecklich erschöpft aus! Setzt\leuch doch erstmal zu mir und ruht\leuch aus."
+	.autostring 36 2 "Du und deine Pokémon sehen ja schrecklich erschöpft aus!\pSetz dich doch erst einmal eine Weile hin und ruh dich aus!"
         
         
 .global str_0x843aba
 
 str_0x843aba:
-    .string "Oh, schon viel besser, PLAYER!\nUnd jetzt gib alles, zeig es der\lWelt!"
+	.autostring 36 2 "Na siehst du?\pDu und deine Pokémon sehen schon wieder ganz fit aus!"
         
         
 .elseif LANG_EN

@@ -36,8 +36,7 @@ return
 .global str_0x8ca6c5
 
 str_0x8ca6c5:
-    .string "Ah, PLAYER. Du hast also zum Tempel\ngefunden.\lFrüher einmal war dieser Ort ein\lriesiges Bauwerk, doch hat die\lWelle den Tempel nahezu zerstört.\lGemeinsam mit Manus aus Meriana\lCity habe ich im Untergrund eine\lKampfarena errichtet. Wir sehen\luns dort."
-        
+	.autostring 36 2 "Sehr schön, du bist also gekommen.\pIch bin von echtem Kampfgeist fasnziniert.\pVor vielen Jahrhunderten hat man in diesem Tempel den Golem-Pokémon gehuldigt.\pSeit dem Vorfall vor einiger Zeit ist von den einst beeindruckenden Kunstwerken nicht mehr viel zu sehen.\pDaher habe ich im Untergrund eine Kampfarena ausgehoben.\pDort werden wirst du mich herausfordern!"
         
 .elseif LANG_EN
 

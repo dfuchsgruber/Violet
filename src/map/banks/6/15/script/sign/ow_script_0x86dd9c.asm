@@ -66,13 +66,13 @@ end
 .global str_0x87cae0
 
 str_0x87cae0:
-    .string "Ein seltsamer Stein, der golden\nschimmert. Ab und an wirkt es so,\lals würde er sich bewegen..."
+    .string "Ein seltsamer Stein, der golden\nschimmert. Ab und an wirkt es so,\lals würde er sich bewegenDOTS"
         
         
 .global str_0x87caba
 
 str_0x87caba:
-    .string "PLAYER untersucht den Stein näher..."
+    .string "PLAYER untersucht den Stein näherDOTS"
         
         
 .global str_0x87ca86

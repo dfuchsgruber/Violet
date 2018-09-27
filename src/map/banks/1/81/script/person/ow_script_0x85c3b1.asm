@@ -14,7 +14,7 @@ end
 .global str_0x864425
 
 str_0x864425:
-    .string "Eindringling.. Ich... schwitze..\nKampf!"
+    .string "Eindringling.. IchDOTS schwitze..\nKampf!"
         
         
 .global str_0x86444f
