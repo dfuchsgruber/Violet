@@ -18,7 +18,7 @@ call ow_script_0x8a7f80
 loadpointer 0x0 str_0x955b31
 callstd MSG_KEEPOPEN
 special 0x7
-copyvarifnotzero 0x8000 ITEM_EICHS_PAKET
+copyvarifnotzero 0x8000 ITEM_ZUGANGSKARTE
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 call ow_script_0x8a7f80

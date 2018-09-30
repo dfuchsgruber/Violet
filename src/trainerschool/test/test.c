@@ -297,6 +297,7 @@ void trainerschool_test_init_components(){
         
         fadescreen_all(0, 0);
         callback1_set(trainerschool_test_idle);
+        vblank_handler_set(generic_vblank_handler);
 
         bg_virtual_sync(0);
         bg_virtual_sync(1);

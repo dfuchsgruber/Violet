@@ -14,6 +14,7 @@
 access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
     {0, 9, 13, 0, 8}, //Cybernetik
     {ORINA_CITY_VIOLET_GRUNTS, 9, 15, 0, 3}, //Fossil
+	{SECRET_POWER_LAB_ACCESS, 9, 19, 0, 2}, // Geheimpower
     {0, 9, 14, 1, 0} //Atrium
 };
 
@@ -64,7 +65,7 @@ void access_card_execute_elevator() {
             }
             map_event_warp w = get_mapheader(access_card_elements[i].bank, access_card_elements[i].map)->events->warps[access_card_elements[i].exit];
 
-            warp_history_set(0, access_card_elements[i].bank, access_card_elements[i].map, 0xFF, w.x, w.y);
+            warp_last_map_set(0, access_card_elements[i].bank, access_card_elements[i].map, 0xFF, w.x, w.y);
             break;
 
         }

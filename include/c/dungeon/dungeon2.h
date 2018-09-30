@@ -22,6 +22,9 @@ extern "C" {
     #define DG2_RND_MULTIPLIER 0x41C64E6D
     #define DG2_RND_INCREMENT 0x6073
 
+#define DG2_BANK 126
+#define DG2_MAP 126
+
 #define DTYPE_FOREST 1
 #define DTYPE_CAVE 2
 #define DTYPE_OCEAN 3
@@ -54,13 +57,13 @@ extern "C" {
         // Size of margin in which nodes can not be placed in
         u8 margin;
         
-        coordinate previous_position;
+        coordinate_t previous_position;
         u8 previous_bank, previous_map;
         
         
     } dungeon_generator2;
 
-#define NUM_DUNGEON_LOCATIONS 28
+#define NUM_DUNGEON_LOCATIONS 32
     
     typedef struct{
       u8 bank;

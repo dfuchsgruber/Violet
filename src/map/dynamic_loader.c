@@ -9,7 +9,7 @@
 
 
 mapheader *get_mapheader(u8 bank, u8 map) {
-    if (dungeon_get_type()) {
+    if (dungeon_get_type() && bank == DG2_BANK && map == DG2_MAP) {
         dungeon2_init();
         return &(fmem.dmapheader);
     } else {

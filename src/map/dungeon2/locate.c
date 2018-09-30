@@ -43,6 +43,11 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 	{3, 4, 0x35, 0x3, DTYPE_CAVE}, // Kaskada
 	{3, 1, 0x43, 0x6, DTYPE_CAVE}, // Meriana City
 	{3, 41, 0x12, 0x54, DTYPE_OCEAN}, // Route 2
+	{3, 41, 0x37, 0x22, DTYPE_CAVE},
+
+	{3, 7, 0x4, 0x17, DTYPE_CAVE},
+	{3, 7, 0x26, 0x4, DTYPE_CAVE},
+	{3, 7, 0x45, 0xE, DTYPE_CAVE},
 	// TODO locate ocean dungeons after rework of sea routes
     // TODO
 };

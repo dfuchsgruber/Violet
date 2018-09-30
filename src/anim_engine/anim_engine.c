@@ -747,7 +747,7 @@ void cmdx22_cry(ae_memory* mem) {
 
 void cmdx23_maintain() {
     callback1_set(callback_maintain);
-    super.callbacks[3] = NULL;
+    vblank_handler_set(generic_vblank_handler);
 }
 
 void cmdx24_script_notify() {

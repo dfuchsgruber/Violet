@@ -99,6 +99,12 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	setflag(TRAINERSCHOOL_RIVAL);
 	setflag(TRAINERSCHOOL_RIVAL_INSIDE);
 	setflag(TRAINERSCHOOL_FAUN_INSIDE);
+	setflag(ROUTE_2_FELIX);
+    setflag(ROUTE_3_MAY);
+    worldmap_flag_state_set(WM_ORINA_CITY);
+    worldmap_flag_state_set(WM_AKTANIA);
+    worldmap_flag_set(WM_ORINA_CITY);
+    worldmap_flag_set(WM_AKTANIA);
 	// Pick time system that works
 	if (rtc_test()) {
 		*var_access(TIME_TYPE) = TIME_TYPE_RTC;

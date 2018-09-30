@@ -206,7 +206,7 @@ void pokedex_callback_init_entry_load_elements(){
     fading_cntrl_reset();
     oam_palette_allocation_reset();
     tbox_free_all();
-    callback3_set(NULL);
+    vblank_handler_set(NULL);
     dma0_reset_callback();
     bg_reset(0);
     bg_setup(0, pokedex_bg_entry_configs, 4);
@@ -269,6 +269,7 @@ void pokedex_callback_init_entry() {
         pokedex_callback_init_entry_load_elements();
         big_callback_delete_all();
         callback1_set(pokedex_callback_entry_idle);
+        vblank_handler_set(generic_vblank_handler);
         fadescreen_all(0, 0);
         
     }
@@ -343,7 +344,7 @@ u8 pokedex_init_entry_from_battle(u16 species){
     
     //Set the pokedex callback3
     void (*pokedex_cb3)() = (void(*)())(0x08102714 | 1);
-    callback3_set(pokedex_cb3);
+    vblank_handler_set(pokedex_cb3);
     
     return cb_id;
 }

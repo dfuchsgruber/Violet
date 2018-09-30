@@ -31,9 +31,9 @@ typedef struct saveblock1 {
     u8 field_7;
     s16 field_8, field_A; // this struct is very warp_like: field_8, field_A seem to be 0xFFFF
     u8 unkown_1[0x8]; // probably also a warp save
-    warp_save_t last_map_multifloor; // ????
+    warp_save_t last_map; // ????
     warp_save_t healingplace;
-    warp_save_t last_outdoor;
+    warp_save_t last_outdoor_map;
     u8 unkown[0x4];
     u8 flash_circle_size;
     u8 field_31;

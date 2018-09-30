@@ -3,7 +3,9 @@
 #include "battle/battlescript.h"
 #include "mega.h"
 #include "debug.h"
-
+#include "battle/bg.h"
+#include "constants/battle_bgs.h"
+#include "constants/pokemon_types.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -14,6 +16,7 @@ u8 bsc_get_byte(){
 int bsc_get_word(){
     return bsc_get_byte() + (bsc_get_byte() << 8) + (bsc_get_byte() << 16) +
             (bsc_get_byte() << 24);
+    bsc_offset += 4;
 }
 
 

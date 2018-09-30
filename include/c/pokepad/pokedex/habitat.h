@@ -31,7 +31,7 @@ typedef struct {
 
     void pokedex_habitat_callback_idle();
     void pokedex_habitat_callback_init_entry();
-    void pokedex_habitats_load_for_species(u16 *unpacked_map);
+    void pokedex_habitats_load_for_species(u16 *bg0map);
     int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species);
     int pokedex_get_namespace_of_species_add_pair_if_not_present(pokedex_habitat_pair *dst, int cnt, u8 namespace, u8 propability, u8 type);
 

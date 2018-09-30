@@ -17,6 +17,7 @@
 #include "flags.h"
 #include "map/namespace.h"
 #include "overworld/map_control.h"
+#include "constants/map_types.h"
 
 void pokemon_party_menu_opt_build(pokemon *base, u8 index) {
     pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state.opt_state;
@@ -48,7 +49,7 @@ void pokemon_party_menu_opt_build(pokemon *base, u8 index) {
 }
 
 
-u16 flags[] = {0x820, 0x821, 0x822, 0x823, 0x824, 0x825, 0x826};
+u16 fieldmove_flags[] = {0x820, 0x821, 0x822, 0x823, 0x824, 0x825, 0x826};
 
 void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
   pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state.opt_state;
@@ -60,7 +61,7 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
         tbox_flush_and_free_if_present(&opt_state->box_id_options);
         if (!field_moves_usable() && !map_is_x40_x0()) {
             //HM Moves are bound to a flag
-            if (index <= 6 && !checkflag(flags[index])) {
+            if (index <= 6 && !checkflag(fieldmove_flags[index])) {
                 //Render text "Neuer Orden muss errungen werden"
                 u8 *text_new_badge = (u8*) 0x8416940;
                 pokemon_party_menu_init_text_rendering(text_new_badge, 1);
@@ -97,7 +98,9 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                             return;
                         case 8:
                             //Dig
-                            map_load_namespace(buffer0, get_mapheader((u8) save1->last_outdoor_bank, (u8) save1->last_outdoor_map)->name_bank);
+                            map_load_namespace(buffer0,
+                            		get_mapheader(save1->last_outdoor_map.bank,
+                            				save1->last_outdoor_map.map)->name_bank);
                             string_decrypt(strbuf, (u8*) 0x0841758A);
                             pokemon_party_menu_print_question(callback_self);
                             *((u16*) ((int) (pokemon_party_menu_state.opt_state) + 0x218)) = (u8) index;
@@ -141,4 +144,9 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
         //Wait until player presses key and then return to selection
         big_callbacks[callback_self].function = pokemon_party_menu_wait_for_keypress_and_return_to_opts;
     }
+}
+
+bool map_type_enables_fly_or_teleport(u8 type) {
+	return (type == MAP_TYPE_ROUTE || type == MAP_TYPE_VILLAGE || type == MAP_TYPE_TYPE_06 ||
+			type == MAP_TYPE_CITY || type == MAP_TYPE_UNDERWATER);
 }

@@ -27,3 +27,12 @@
 
 .org 0x083dfc14
 	.word str_vm_tm_box
+
+.org 0x08453dec
+	.word str_item_walk
+
+.org 0x08453ddc
+	.word str_item_open
+
+.org 0x08453de4
+	.word str_item_open

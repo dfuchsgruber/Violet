@@ -1035,7 +1035,7 @@ pokemon_cry pokemon_cries_backward [POKEMON_CNT] = {
     // POKEMON_ELEVOLTEK
     {
         {0x30, 0x3c, 0x0, 0x0}
-, cry_462, {
+, cry_466, {
             0xff, 0x0, 0xff, 0x0}},
     // POKEMON_SKORGLA
     {

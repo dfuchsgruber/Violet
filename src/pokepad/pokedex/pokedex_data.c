@@ -106,36 +106,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 10
-		LANGDEP(PSTRING("Rotkehlchen"), PSTRING("Worm")),
-		3, 29,//Height & weight
-		str_pokedex_data_10_page_0, str_pokedex_data_10_page_1,
-		0,//unused
-		549, 20,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 11
-		LANGDEP(PSTRING("Funkenregen"), PSTRING("Cocoon")),
-		7, 160,//Height & weight
-		str_pokedex_data_11_page_0, str_pokedex_data_11_page_1,
-		0,//unused
-		350, 18,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 12
-		LANGDEP(PSTRING("Stichflamme"), PSTRING("Butterfly")),
-		12, 320,//Height & weight
-		str_pokedex_data_12_page_0, str_pokedex_data_12_page_1,
-		0,//unused
-		312, 2,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 13
 		LANGDEP(PSTRING("Raupe"), PSTRING("Hairy bug")),
 		3, 32,//Height & weight
@@ -163,96 +133,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		366, 2,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 16
-		LANGDEP(PSTRING("Star"), PSTRING("Tiny bird")),
-		3, 18,//Height & weight
-		str_pokedex_data_16_page_0, str_pokedex_data_16_page_1,
-		0,//unused
-		492, 18,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 17
-		LANGDEP(PSTRING("Star"), PSTRING("Bird")),
-		11, 300,//Height & weight
-		str_pokedex_data_17_page_0, str_pokedex_data_17_page_1,
-		0,//unused
-		334, 11,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 18
-		LANGDEP(PSTRING("Star"), PSTRING("Bird")),
-		15, 395,//Height & weight
-		str_pokedex_data_18_page_0, str_pokedex_data_18_page_1,
-		0,//unused
-		269, 65534,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 19
-		LANGDEP(PSTRING("Bronze"), PSTRING("Mouse")),
-		3, 35,//Height & weight
-		str_pokedex_data_19_page_0, str_pokedex_data_19_page_1,
-		0,//unused
-		481, 18,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 20
-		LANGDEP(PSTRING("Bronzeglock"), PSTRING("Mouse")),
-		7, 185,//Height & weight
-		str_pokedex_data_20_page_0, str_pokedex_data_20_page_1,
-		0,//unused
-		401, 14,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 21
-		LANGDEP(PSTRING("Ritt"), PSTRING("Tiny bird")),
-		3, 20,//Height & weight
-		str_pokedex_data_21_page_0, str_pokedex_data_21_page_1,
-		0,//unused
-		571, 19,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 22
-		LANGDEP(PSTRING("Ritt"), PSTRING("Beak")),
-		12, 380,//Height & weight
-		str_pokedex_data_22_page_0, str_pokedex_data_22_page_1,
-		0,//unused
-		282, 65535,//Pokemon scale, displacement
-		272, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 23
-		LANGDEP(PSTRING("Baumstumpf"), PSTRING("Snake")),
-		20, 69,//Height & weight
-		str_pokedex_data_23_page_0, str_pokedex_data_23_page_1,
-		0,//unused
-		298, 13,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 24
-		LANGDEP(PSTRING("Urgehölz"), PSTRING("Cobra")),
-		35, 650,//Height & weight
-		str_pokedex_data_24_page_0, str_pokedex_data_24_page_1,
-		0,//unused
-		256, 0,//Pokemon scale, displacement
-		296, 1,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -356,26 +236,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 35
-		LANGDEP(PSTRING("Einblütler"), PSTRING("Fairy")),
-		6, 75,//Height & weight
-		str_pokedex_data_35_page_0, str_pokedex_data_35_page_1,
-		0,//unused
-		425, 18,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 36
-		LANGDEP(PSTRING("Garten"), PSTRING("Fairy")),
-		13, 400,//Height & weight
-		str_pokedex_data_36_page_0, str_pokedex_data_36_page_1,
-		0,//unused
-		256, 3,//Pokemon scale, displacement
-		272, 65535,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 37
 		LANGDEP(PSTRING("Fuchs"), PSTRING("Fox")),
 		6, 99,//Height & weight
@@ -392,6 +252,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		str_pokedex_data_38_page_0, str_pokedex_data_38_page_1,
 		0,//unused
 		339, 6,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 213
+		LANGDEP(PSTRING("Schimmel"), PSTRING("Mold")),
+		6, 205,//Height & weight
+		str_pokedex_data_213_page_0, str_pokedex_data_213_page_1,
+		0,//unused
+		485, 16,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -436,6 +306,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 169
+		LANGDEP(PSTRING("Fledermaus"), PSTRING("Bat")),
+		18, 750,//Height & weight
+		str_pokedex_data_169_page_0, str_pokedex_data_169_page_1,
+		0,//unused
+		279, 65535,//Pokemon scale, displacement
+		313, 2,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 43
 		LANGDEP(PSTRING("Unkraut"), PSTRING("Weed")),
 		5, 54,//Height & weight
@@ -466,22 +346,12 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 46
-		LANGDEP(PSTRING("Unreif"), PSTRING("Mushroom")),
-		3, 54,//Height & weight
-		str_pokedex_data_46_page_0, str_pokedex_data_46_page_1,
+		//Entry 182
+		LANGDEP(PSTRING("Blume"), PSTRING("Flower")),
+		4, 58,//Height & weight
+		str_pokedex_data_182_page_0, str_pokedex_data_182_page_1,
 		0,//unused
-		546, 21,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 47
-		LANGDEP(PSTRING("Bindung"), PSTRING("Mushroom")),
-		10, 295,//Height & weight
-		str_pokedex_data_47_page_0, str_pokedex_data_47_page_1,
-		0,//unused
-		307, 8,//Pokemon scale, displacement
+		472, 19,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -522,26 +392,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		str_pokedex_data_51_page_0, str_pokedex_data_51_page_1,
 		0,//unused
 		384, 14,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 52
-		LANGDEP(PSTRING("Dornfrucht"), PSTRING("Scratch cat")),
-		4, 42,//Height & weight
-		str_pokedex_data_52_page_0, str_pokedex_data_52_page_1,
-		0,//unused
-		480, 17,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 53
-		LANGDEP(PSTRING("Dornkugel"), PSTRING("Classy cat")),
-		10, 320,//Height & weight
-		str_pokedex_data_53_page_0, str_pokedex_data_53_page_1,
-		0,//unused
-		320, 10,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -603,36 +453,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		256, 65535,//Pokemon scale, displacement
 		312, 2,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 60
-		LANGDEP(PSTRING("Schwert"), PSTRING("Tadpole")),
-		6, 124,//Height & weight
-		str_pokedex_data_60_page_0, str_pokedex_data_60_page_1,
-		0,//unused
-		353, 17,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 61
-		LANGDEP(PSTRING("Schwerter"), PSTRING("Tadpole")),
-		10, 200,//Height & weight
-		str_pokedex_data_61_page_0, str_pokedex_data_61_page_1,
-		0,//unused
-		288, 10,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 62
-		LANGDEP(PSTRING("Königstich"), PSTRING("Tadpole")),
-		13, 540,//Height & weight
-		str_pokedex_data_62_page_0, str_pokedex_data_62_page_1,
-		0,//unused
-		256, 5,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -816,6 +636,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 199
+		LANGDEP(PSTRING("Monarch"), PSTRING("Royal")),
+		20, 795,//Height & weight
+		str_pokedex_data_199_page_0, str_pokedex_data_199_page_1,
+		0,//unused
+		265, 65535,//Pokemon scale, displacement
+		330, 4,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 81
 		LANGDEP(PSTRING("Magnet"), PSTRING("Magnet")),
 		3, 60,//Height & weight
@@ -833,6 +663,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		293, 65532,//Pokemon scale, displacement
 		273, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 172
+		LANGDEP(PSTRING("Magnetgebie"), PSTRING("Tiny mouse")),
+		3, 20,//Height & weight
+		str_pokedex_data_172_page_0, str_pokedex_data_172_page_1,
+		0,//unused
+		508, 17,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -966,6 +806,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 208
+		LANGDEP(PSTRING("Stahlboa"), PSTRING("Iron snake")),
+		92, 4000,//Height & weight
+		str_pokedex_data_208_page_0, str_pokedex_data_208_page_1,
+		0,//unused
+		278, 65535,//Pokemon scale, displacement
+		557, 13,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 96
 		LANGDEP(PSTRING("Hypnose"), PSTRING("Hypnosis")),
 		10, 324,//Height & weight
@@ -1066,6 +916,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 236
+		LANGDEP(PSTRING("Racker"), PSTRING("Scuffle")),
+		7, 210,//Height & weight
+		str_pokedex_data_236_page_0, str_pokedex_data_236_page_1,
+		0,//unused
+		292, 8,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 106
 		LANGDEP(PSTRING("Kicker"), PSTRING("Kicking")),
 		15, 498,//Height & weight
@@ -1086,6 +946,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 237
+		LANGDEP(PSTRING("Kopfstand"), PSTRING("Handstand")),
+		14, 480,//Height & weight
+		str_pokedex_data_237_page_0, str_pokedex_data_237_page_1,
+		0,//unused
+		256, 2,//Pokemon scale, displacement
+		257, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 108
 		LANGDEP(PSTRING("Schlecker"), PSTRING("Licking")),
 		12, 655,//Height & weight
@@ -1093,6 +963,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		272, 3,//Pokemon scale, displacement
 		272, 65533,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 226
+		LANGDEP(PSTRING("Flugrochen"), PSTRING("Kite")),
+		21, 2200,//Height & weight
+		str_pokedex_data_226_page_0, str_pokedex_data_226_page_1,
+		0,//unused
+		275, 0,//Pokemon scale, displacement
+		360, 6,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -1136,22 +1016,12 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 113
-		LANGDEP(PSTRING("Ei"), PSTRING("Egg")),
-		11, 346,//Height & weight
-		str_pokedex_data_113_page_0, str_pokedex_data_113_page_1,
+		//Entry 370
+		LANGDEP(PSTRING("Bohrer"), PSTRING("Drill")),
+		24, 2828,//Height & weight
+		str_pokedex_data_370_page_0, str_pokedex_data_370_page_1,
 		0,//unused
-		257, 6,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 114
-		LANGDEP(PSTRING("Finsternis"), PSTRING("Vine")),
-		5, 110,//Height & weight
-		str_pokedex_data_114_page_0, str_pokedex_data_114_page_1,
-		0,//unused
-		451, 15,//Pokemon scale, displacement
+		371, 2,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -1186,23 +1056,43 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 118
-		LANGDEP(PSTRING("Gleit"), PSTRING("Goldfish")),
-		6, 150,//Height & weight
-		str_pokedex_data_118_page_0, str_pokedex_data_118_page_1,
+		//Entry 230
+		LANGDEP(PSTRING("Drache"), PSTRING("Dragon")),
+		18, 1520,//Height & weight
+		str_pokedex_data_230_page_0, str_pokedex_data_230_page_1,
 		0,//unused
-		379, 4,//Pokemon scale, displacement
+		257, 1,//Pokemon scale, displacement
+		293, 1,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 313
+		LANGDEP(PSTRING("Spielhaus"), PSTRING("Spielhaus")),
+		6, 244,//Height & weight
+		str_pokedex_data_313_page_0, str_pokedex_data_313_page_1,
+		0,//unused
+		442, 65532,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 119
-		LANGDEP(PSTRING("Gleit"), PSTRING("Goldfish")),
-		13, 390,//Height & weight
-		str_pokedex_data_119_page_0, str_pokedex_data_119_page_1,
+		//Entry 113
+		LANGDEP(PSTRING("Ei"), PSTRING("Egg")),
+		11, 346,//Height & weight
+		str_pokedex_data_113_page_0, str_pokedex_data_113_page_1,
 		0,//unused
-		304, 1,//Pokemon scale, displacement
-		288, 65534,//Trainer scale, displacement
+		257, 6,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 242
+		LANGDEP(PSTRING("Freude"), PSTRING("Happiness")),
+		15, 468,//Height & weight
+		str_pokedex_data_242_page_0, str_pokedex_data_242_page_1,
+		0,//unused
+		256, 3,//Pokemon scale, displacement
+		310, 3,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -1226,12 +1116,62 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 122
-		LANGDEP(PSTRING("Kreischer"), PSTRING("Barrier")),
-		7, 10,//Height & weight
-		str_pokedex_data_122_page_0, str_pokedex_data_122_page_1,
+		//Entry 239
+		LANGDEP(PSTRING("Elektro"), PSTRING("Electric")),
+		6, 235,//Height & weight
+		str_pokedex_data_239_page_0, str_pokedex_data_239_page_1,
 		0,//unused
-		407, 65528,//Pokemon scale, displacement
+		363, 13,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 125
+		LANGDEP(PSTRING("Elektro"), PSTRING("Electric")),
+		11, 300,//Height & weight
+		str_pokedex_data_125_page_0, str_pokedex_data_125_page_1,
+		0,//unused
+		330, 7,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 206
+		LANGDEP(PSTRING("Donnerkeil"), PSTRING("Land snake")),
+		15, 140,//Height & weight
+		str_pokedex_data_206_page_0, str_pokedex_data_206_page_1,
+		0,//unused
+		284, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 240
+		LANGDEP(PSTRING("Glutherd"), PSTRING("Live coal")),
+		7, 214,//Height & weight
+		str_pokedex_data_240_page_0, str_pokedex_data_240_page_1,
+		0,//unused
+		284, 11,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 126
+		LANGDEP(PSTRING("Brenner"), PSTRING("Spitfire")),
+		13, 445,//Height & weight
+		str_pokedex_data_126_page_0, str_pokedex_data_126_page_1,
+		0,//unused
+		293, 4,//Pokemon scale, displacement
+		272, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 324
+		LANGDEP(PSTRING("Detonation"), PSTRING("Coal")),
+		5, 804,//Height & weight
+		str_pokedex_data_324_page_0, str_pokedex_data_324_page_1,
+		0,//unused
+		392, 9,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -1246,33 +1186,13 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 124
-		LANGDEP(PSTRING("Klinge"), PSTRING("Human shape")),
-		14, 406,//Height & weight
-		str_pokedex_data_124_page_0, str_pokedex_data_124_page_1,
+		//Entry 212
+		LANGDEP(PSTRING("Kneifer"), PSTRING("Pincer")),
+		18, 1180,//Height & weight
+		str_pokedex_data_212_page_0, str_pokedex_data_212_page_1,
 		0,//unused
-		256, 3,//Pokemon scale, displacement
-		300, 1,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 125
-		LANGDEP(PSTRING("Elektro"), PSTRING("Electric")),
-		11, 300,//Height & weight
-		str_pokedex_data_125_page_0, str_pokedex_data_125_page_1,
-		0,//unused
-		330, 7,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 126
-		LANGDEP(PSTRING("Brenner"), PSTRING("Spitfire")),
-		13, 445,//Height & weight
-		str_pokedex_data_126_page_0, str_pokedex_data_126_page_1,
-		0,//unused
-		293, 4,//Pokemon scale, displacement
-		272, 65534,//Trainer scale, displacement
+		282, 0,//Pokemon scale, displacement
+		282, 0,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -1376,6 +1296,56 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 163
+		LANGDEP(PSTRING("Neuschnee"), PSTRING("Owl")),
+		7, 212,//Height & weight
+		str_pokedex_data_163_page_0, str_pokedex_data_163_page_1,
+		0,//unused
+		380, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 196
+		LANGDEP(PSTRING("Sonne"), PSTRING("Sun")),
+		9, 265,//Height & weight
+		str_pokedex_data_196_page_0, str_pokedex_data_196_page_1,
+		0,//unused
+		363, 12,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 197
+		LANGDEP(PSTRING("Mondschein"), PSTRING("Moonlight")),
+		10, 270,//Height & weight
+		str_pokedex_data_197_page_0, str_pokedex_data_197_page_1,
+		0,//unused
+		317, 9,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 46
+		LANGDEP(PSTRING("Unreif"), PSTRING("Mushroom")),
+		3, 54,//Height & weight
+		str_pokedex_data_46_page_0, str_pokedex_data_46_page_1,
+		0,//unused
+		546, 21,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 47
+		LANGDEP(PSTRING("Bindung"), PSTRING("Mushroom")),
+		10, 295,//Height & weight
+		str_pokedex_data_47_page_0, str_pokedex_data_47_page_1,
+		0,//unused
+		307, 8,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 137
 		LANGDEP(PSTRING("Virtuell"), PSTRING("Virtual")),
 		8, 365,//Height & weight
@@ -1383,6 +1353,46 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		328, 7,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 233
+		LANGDEP(PSTRING("Virtuell"), PSTRING("Virtual")),
+		6, 325,//Height & weight
+		str_pokedex_data_233_page_0, str_pokedex_data_233_page_1,
+		0,//unused
+		320, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 315
+		LANGDEP(PSTRING("Virtuell"), PSTRING("Thorn")),
+		9, 340,//Height & weight
+		str_pokedex_data_315_page_0, str_pokedex_data_315_page_1,
+		0,//unused
+		677, 20,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 222
+		LANGDEP(PSTRING("Nimmersatt"), PSTRING("Nimmersatt")),
+		6, 1500,//Height & weight
+		str_pokedex_data_222_page_0, str_pokedex_data_222_page_1,
+		0,//unused
+		410, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 143
+		LANGDEP(PSTRING("Tagträumer"), PSTRING("Sleeping")),
+		21, 4600,//Height & weight
+		str_pokedex_data_143_page_0, str_pokedex_data_143_page_1,
+		0,//unused
+		275, 1,//Pokemon scale, displacement
+		408, 7,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -1433,16 +1443,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		275, 65535,//Pokemon scale, displacement
 		317, 2,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 143
-		LANGDEP(PSTRING("Tagträumer"), PSTRING("Sleeping")),
-		21, 4600,//Height & weight
-		str_pokedex_data_143_page_0, str_pokedex_data_143_page_1,
-		0,//unused
-		275, 1,//Pokemon scale, displacement
-		408, 7,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -1616,42 +1616,92 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 161
-		LANGDEP(PSTRING("Fackel"), PSTRING("Scout")),
-		8, 60,//Height & weight
-		str_pokedex_data_161_page_0, str_pokedex_data_161_page_1,
+		//Entry 174
+		LANGDEP(PSTRING("Einblütler"), PSTRING("Balloon")),
+		3, 10,//Height & weight
+		str_pokedex_data_174_page_0, str_pokedex_data_174_page_1,
 		0,//unused
-		439, 12,//Pokemon scale, displacement
+		457, 65535,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 162
-		LANGDEP(PSTRING("Sonne"), PSTRING("Long body")),
-		18, 325,//Height & weight
-		str_pokedex_data_162_page_0, str_pokedex_data_162_page_1,
+		//Entry 35
+		LANGDEP(PSTRING("Einblütler"), PSTRING("Fairy")),
+		6, 75,//Height & weight
+		str_pokedex_data_35_page_0, str_pokedex_data_35_page_1,
 		0,//unused
-		346, 10,//Pokemon scale, displacement
+		425, 18,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 163
-		LANGDEP(PSTRING("Neuschnee"), PSTRING("Owl")),
-		7, 212,//Height & weight
-		str_pokedex_data_163_page_0, str_pokedex_data_163_page_1,
+		//Entry 36
+		LANGDEP(PSTRING("Garten"), PSTRING("Fairy")),
+		13, 400,//Height & weight
+		str_pokedex_data_36_page_0, str_pokedex_data_36_page_1,
 		0,//unused
-		380, 15,//Pokemon scale, displacement
+		256, 3,//Pokemon scale, displacement
+		272, 65535,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 16
+		LANGDEP(PSTRING("Star"), PSTRING("Tiny bird")),
+		3, 18,//Height & weight
+		str_pokedex_data_16_page_0, str_pokedex_data_16_page_1,
+		0,//unused
+		492, 18,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 164
-		LANGDEP(PSTRING("Wrestling"), PSTRING("Owl")),
-		16, 408,//Height & weight
-		str_pokedex_data_164_page_0, str_pokedex_data_164_page_1,
+		//Entry 17
+		LANGDEP(PSTRING("Star"), PSTRING("Bird")),
+		11, 300,//Height & weight
+		str_pokedex_data_17_page_0, str_pokedex_data_17_page_1,
 		0,//unused
-		278, 2,//Pokemon scale, displacement
+		334, 11,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 18
+		LANGDEP(PSTRING("Star"), PSTRING("Bird")),
+		15, 395,//Height & weight
+		str_pokedex_data_18_page_0, str_pokedex_data_18_page_1,
+		0,//unused
+		269, 65534,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 10
+		LANGDEP(PSTRING("Rotkehlchen"), PSTRING("Worm")),
+		3, 29,//Height & weight
+		str_pokedex_data_10_page_0, str_pokedex_data_10_page_1,
+		0,//unused
+		549, 20,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 11
+		LANGDEP(PSTRING("Funkenregen"), PSTRING("Cocoon")),
+		7, 160,//Height & weight
+		str_pokedex_data_11_page_0, str_pokedex_data_11_page_1,
+		0,//unused
+		350, 18,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 12
+		LANGDEP(PSTRING("Stichflamme"), PSTRING("Butterfly")),
+		12, 320,//Height & weight
+		str_pokedex_data_12_page_0, str_pokedex_data_12_page_1,
+		0,//unused
+		312, 2,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -1696,66 +1746,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 169
-		LANGDEP(PSTRING("Fledermaus"), PSTRING("Bat")),
-		18, 750,//Height & weight
-		str_pokedex_data_169_page_0, str_pokedex_data_169_page_1,
-		0,//unused
-		279, 65535,//Pokemon scale, displacement
-		313, 2,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 170
-		LANGDEP(PSTRING("Angler"), PSTRING("Angler")),
-		5, 120,//Height & weight
-		str_pokedex_data_170_page_0, str_pokedex_data_170_page_1,
-		0,//unused
-		424, 65534,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 171
-		LANGDEP(PSTRING("Leuchte"), PSTRING("Light")),
-		12, 225,//Height & weight
-		str_pokedex_data_171_page_0, str_pokedex_data_171_page_1,
-		0,//unused
-		269, 6,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 172
-		LANGDEP(PSTRING("Magnetgebie"), PSTRING("Tiny mouse")),
-		3, 20,//Height & weight
-		str_pokedex_data_172_page_0, str_pokedex_data_172_page_1,
-		0,//unused
-		508, 17,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 173
-		LANGDEP(PSTRING("Jubilierer"), PSTRING("Star shape")),
-		3, 30,//Height & weight
-		str_pokedex_data_173_page_0, str_pokedex_data_173_page_1,
-		0,//unused
-		462, 22,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 174
-		LANGDEP(PSTRING("Einblütler"), PSTRING("Balloon")),
-		3, 10,//Height & weight
-		str_pokedex_data_174_page_0, str_pokedex_data_174_page_1,
-		0,//unused
-		457, 65535,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 175
 		LANGDEP(PSTRING("Zackenball"), PSTRING("Spike ball")),
 		3, 15,//Height & weight
@@ -1772,6 +1762,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		str_pokedex_data_176_page_0, str_pokedex_data_176_page_1,
 		0,//unused
 		424, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 173
+		LANGDEP(PSTRING("Jubilierer"), PSTRING("Star shape")),
+		3, 30,//Height & weight
+		str_pokedex_data_173_page_0, str_pokedex_data_173_page_1,
+		0,//unused
+		462, 22,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -1826,42 +1826,52 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 182
-		LANGDEP(PSTRING("Blume"), PSTRING("Flower")),
-		4, 58,//Height & weight
-		str_pokedex_data_182_page_0, str_pokedex_data_182_page_1,
+		//Entry 21
+		LANGDEP(PSTRING("Ritt"), PSTRING("Tiny bird")),
+		3, 20,//Height & weight
+		str_pokedex_data_21_page_0, str_pokedex_data_21_page_1,
 		0,//unused
-		472, 19,//Pokemon scale, displacement
+		571, 19,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 183
-		LANGDEP(PSTRING("Aquamaus"), PSTRING("Aqua mouse")),
-		4, 85,//Height & weight
-		str_pokedex_data_183_page_0, str_pokedex_data_183_page_1,
-		0,//unused
-		476, 19,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 184
-		LANGDEP(PSTRING("Aquahase"), PSTRING("Aqua rabbit")),
-		8, 285,//Height & weight
-		str_pokedex_data_184_page_0, str_pokedex_data_184_page_1,
-		0,//unused
-		448, 15,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 185
-		LANGDEP(PSTRING("Imitation"), PSTRING("Imitation")),
+		//Entry 22
+		LANGDEP(PSTRING("Ritt"), PSTRING("Beak")),
 		12, 380,//Height & weight
-		str_pokedex_data_185_page_0, str_pokedex_data_185_page_1,
+		str_pokedex_data_22_page_0, str_pokedex_data_22_page_1,
 		0,//unused
-		305, 7,//Pokemon scale, displacement
+		282, 65535,//Pokemon scale, displacement
+		272, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 60
+		LANGDEP(PSTRING("Schwert"), PSTRING("Tadpole")),
+		6, 124,//Height & weight
+		str_pokedex_data_60_page_0, str_pokedex_data_60_page_1,
+		0,//unused
+		353, 17,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 61
+		LANGDEP(PSTRING("Schwerter"), PSTRING("Tadpole")),
+		10, 200,//Height & weight
+		str_pokedex_data_61_page_0, str_pokedex_data_61_page_1,
+		0,//unused
+		288, 10,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 62
+		LANGDEP(PSTRING("Königstich"), PSTRING("Tadpole")),
+		13, 540,//Height & weight
+		str_pokedex_data_62_page_0, str_pokedex_data_62_page_1,
+		0,//unused
+		256, 5,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -1916,6 +1926,16 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 193
+		LANGDEP(PSTRING("Libelle"), PSTRING("Clear wing")),
+		12, 380,//Height & weight
+		str_pokedex_data_193_page_0, str_pokedex_data_193_page_1,
+		0,//unused
+		274, 65532,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 191
 		LANGDEP(PSTRING("Frostbaum"), PSTRING("Seed")),
 		3, 18,//Height & weight
@@ -1936,12 +1956,32 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 193
-		LANGDEP(PSTRING("Libelle"), PSTRING("Clear wing")),
-		12, 380,//Height & weight
-		str_pokedex_data_193_page_0, str_pokedex_data_193_page_1,
+		//Entry 298
+		LANGDEP(PSTRING("Gepunktet"), PSTRING("Polka dot")),
+		2, 20,//Height & weight
+		str_pokedex_data_298_page_0, str_pokedex_data_298_page_1,
 		0,//unused
-		274, 65532,//Pokemon scale, displacement
+		603, 21,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 183
+		LANGDEP(PSTRING("Aquamaus"), PSTRING("Aqua mouse")),
+		4, 85,//Height & weight
+		str_pokedex_data_183_page_0, str_pokedex_data_183_page_1,
+		0,//unused
+		476, 19,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 184
+		LANGDEP(PSTRING("Aquahase"), PSTRING("Aqua rabbit")),
+		8, 285,//Height & weight
+		str_pokedex_data_184_page_0, str_pokedex_data_184_page_1,
+		0,//unused
+		448, 15,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -1966,26 +2006,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 196
-		LANGDEP(PSTRING("Sonne"), PSTRING("Sun")),
-		9, 265,//Height & weight
-		str_pokedex_data_196_page_0, str_pokedex_data_196_page_1,
-		0,//unused
-		363, 12,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 197
-		LANGDEP(PSTRING("Mondschein"), PSTRING("Moonlight")),
-		10, 270,//Height & weight
-		str_pokedex_data_197_page_0, str_pokedex_data_197_page_1,
-		0,//unused
-		317, 9,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 198
 		LANGDEP(PSTRING("Finsternis"), PSTRING("Darkness")),
 		5, 21,//Height & weight
@@ -1993,16 +2013,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		401, 65528,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 199
-		LANGDEP(PSTRING("Monarch"), PSTRING("Royal")),
-		20, 795,//Height & weight
-		str_pokedex_data_199_page_0, str_pokedex_data_199_page_1,
-		0,//unused
-		265, 65535,//Pokemon scale, displacement
-		330, 4,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -2026,22 +2036,22 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 202
-		LANGDEP(PSTRING("Schneegebie"), PSTRING("Patient")),
-		68, 285,//Height & weight
-		str_pokedex_data_202_page_0, str_pokedex_data_202_page_1,
+		//Entry 314
+		LANGDEP(PSTRING("Bonsai"), PSTRING("Bonsai")),
+		5, 150,//Height & weight
+		str_pokedex_data_314_page_0, str_pokedex_data_314_page_1,
 		0,//unused
-		517, 4,//Pokemon scale, displacement
+		572, 65532,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 203
-		LANGDEP(PSTRING("Langhals"), PSTRING("Long neck")),
-		15, 415,//Height & weight
-		str_pokedex_data_203_page_0, str_pokedex_data_203_page_1,
+		//Entry 185
+		LANGDEP(PSTRING("Imitation"), PSTRING("Imitation")),
+		12, 380,//Height & weight
+		str_pokedex_data_185_page_0, str_pokedex_data_185_page_1,
 		0,//unused
-		281, 2,//Pokemon scale, displacement
+		305, 7,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -2066,16 +2076,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 206
-		LANGDEP(PSTRING("Donnerkeil"), PSTRING("Land snake")),
-		15, 140,//Height & weight
-		str_pokedex_data_206_page_0, str_pokedex_data_206_page_1,
-		0,//unused
-		284, 15,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 207
 		LANGDEP(PSTRING("Flugskorpi"), PSTRING("Flyscorpion")),
 		11, 648,//Height & weight
@@ -2086,13 +2086,13 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 208
-		LANGDEP(PSTRING("Stahlboa"), PSTRING("Iron snake")),
-		92, 4000,//Height & weight
-		str_pokedex_data_208_page_0, str_pokedex_data_208_page_1,
+		//Entry 203
+		LANGDEP(PSTRING("Langhals"), PSTRING("Long neck")),
+		15, 415,//Height & weight
+		str_pokedex_data_203_page_0, str_pokedex_data_203_page_1,
 		0,//unused
-		278, 65535,//Pokemon scale, displacement
-		557, 13,//Trainer scale, displacement
+		281, 2,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -2116,36 +2116,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 211
-		LANGDEP(PSTRING("Doppelzahn"), PSTRING("Balloon")),
-		18, 1004,//Height & weight
-		str_pokedex_data_211_page_0, str_pokedex_data_211_page_1,
-		0,//unused
-		777, 0,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 212
-		LANGDEP(PSTRING("Kneifer"), PSTRING("Pincer")),
-		18, 1180,//Height & weight
-		str_pokedex_data_212_page_0, str_pokedex_data_212_page_1,
-		0,//unused
-		282, 0,//Pokemon scale, displacement
-		282, 0,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 213
-		LANGDEP(PSTRING("Schimmel"), PSTRING("Mold")),
-		6, 205,//Height & weight
-		str_pokedex_data_213_page_0, str_pokedex_data_213_page_1,
-		0,//unused
-		485, 16,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 214
 		LANGDEP(PSTRING("Einzelhorn"), PSTRING("Single horn")),
 		15, 540,//Height & weight
@@ -2153,16 +2123,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		285, 0,//Pokemon scale, displacement
 		283, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 215
-		LANGDEP(PSTRING("Verboten"), PSTRING("Sharp claw")),
-		9, 280,//Height & weight
-		str_pokedex_data_215_page_0, str_pokedex_data_215_page_1,
-		0,//unused
-		413, 65533,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -2226,12 +2186,12 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 222
-		LANGDEP(PSTRING("Nimmersatt"), PSTRING("Nimmersatt")),
-		6, 1500,//Height & weight
-		str_pokedex_data_222_page_0, str_pokedex_data_222_page_1,
+		//Entry 211
+		LANGDEP(PSTRING("Doppelzahn"), PSTRING("Balloon")),
+		18, 1004,//Height & weight
+		str_pokedex_data_211_page_0, str_pokedex_data_211_page_1,
 		0,//unused
-		410, 15,//Pokemon scale, displacement
+		777, 0,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
@@ -2256,6 +2216,36 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
+		//Entry 164
+		LANGDEP(PSTRING("Wrestling"), PSTRING("Owl")),
+		16, 408,//Height & weight
+		str_pokedex_data_164_page_0, str_pokedex_data_164_page_1,
+		0,//unused
+		278, 2,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 238
+		LANGDEP(PSTRING("Gelassen"), PSTRING("Gelassen")),
+		30, 1850,//Height & weight
+		str_pokedex_data_238_page_0, str_pokedex_data_238_page_1,
+		0,//unused
+		440, 19,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 215
+		LANGDEP(PSTRING("Verboten"), PSTRING("Sharp claw")),
+		9, 280,//Height & weight
+		str_pokedex_data_215_page_0, str_pokedex_data_215_page_1,
+		0,//unused
+		413, 65533,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
 		//Entry 225
 		LANGDEP(PSTRING("Lieferant"), PSTRING("Delivery")),
 		9, 160,//Height & weight
@@ -2263,16 +2253,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		293, 8,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 226
-		LANGDEP(PSTRING("Flugrochen"), PSTRING("Kite")),
-		21, 2200,//Height & weight
-		str_pokedex_data_226_page_0, str_pokedex_data_226_page_1,
-		0,//unused
-		275, 0,//Pokemon scale, displacement
-		360, 6,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -2306,16 +2286,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 230
-		LANGDEP(PSTRING("Drache"), PSTRING("Dragon")),
-		18, 1520,//Height & weight
-		str_pokedex_data_230_page_0, str_pokedex_data_230_page_1,
-		0,//unused
-		257, 1,//Pokemon scale, displacement
-		293, 1,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 231
 		LANGDEP(PSTRING("Langrüssel"), PSTRING("Long nose")),
 		5, 335,//Height & weight
@@ -2336,23 +2306,53 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 233
-		LANGDEP(PSTRING("Virtuell"), PSTRING("Virtual")),
-		6, 325,//Height & weight
-		str_pokedex_data_233_page_0, str_pokedex_data_233_page_1,
+		//Entry 170
+		LANGDEP(PSTRING("Angler"), PSTRING("Angler")),
+		5, 120,//Height & weight
+		str_pokedex_data_170_page_0, str_pokedex_data_170_page_1,
 		0,//unused
-		320, 15,//Pokemon scale, displacement
+		424, 65534,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 234
-		LANGDEP(PSTRING("Kompass"), PSTRING("Big horn")),
-		14, 712,//Height & weight
-		str_pokedex_data_234_page_0, str_pokedex_data_234_page_1,
+		//Entry 171
+		LANGDEP(PSTRING("Leuchte"), PSTRING("Light")),
+		12, 225,//Height & weight
+		str_pokedex_data_171_page_0, str_pokedex_data_171_page_1,
 		0,//unused
-		277, 65535,//Pokemon scale, displacement
-		277, 0,//Trainer scale, displacement
+		269, 6,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 23
+		LANGDEP(PSTRING("Baumstumpf"), PSTRING("Snake")),
+		20, 69,//Height & weight
+		str_pokedex_data_23_page_0, str_pokedex_data_23_page_1,
+		0,//unused
+		298, 13,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 24
+		LANGDEP(PSTRING("Urgehölz"), PSTRING("Cobra")),
+		35, 650,//Height & weight
+		str_pokedex_data_24_page_0, str_pokedex_data_24_page_1,
+		0,//unused
+		256, 0,//Pokemon scale, displacement
+		296, 1,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 122
+		LANGDEP(PSTRING("Kreischer"), PSTRING("Barrier")),
+		7, 10,//Height & weight
+		str_pokedex_data_122_page_0, str_pokedex_data_122_page_1,
+		0,//unused
+		407, 65528,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -2366,53 +2366,23 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 236
-		LANGDEP(PSTRING("Racker"), PSTRING("Scuffle")),
-		7, 210,//Height & weight
-		str_pokedex_data_236_page_0, str_pokedex_data_236_page_1,
+		//Entry 118
+		LANGDEP(PSTRING("Gleit"), PSTRING("Goldfish")),
+		6, 150,//Height & weight
+		str_pokedex_data_118_page_0, str_pokedex_data_118_page_1,
 		0,//unused
-		292, 8,//Pokemon scale, displacement
+		379, 4,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 237
-		LANGDEP(PSTRING("Kopfstand"), PSTRING("Handstand")),
-		14, 480,//Height & weight
-		str_pokedex_data_237_page_0, str_pokedex_data_237_page_1,
+		//Entry 119
+		LANGDEP(PSTRING("Gleit"), PSTRING("Goldfish")),
+		13, 390,//Height & weight
+		str_pokedex_data_119_page_0, str_pokedex_data_119_page_1,
 		0,//unused
-		256, 2,//Pokemon scale, displacement
-		257, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 238
-		LANGDEP(PSTRING("Gelassen"), PSTRING("Gelassen")),
-		30, 1850,//Height & weight
-		str_pokedex_data_238_page_0, str_pokedex_data_238_page_1,
-		0,//unused
-		440, 19,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 239
-		LANGDEP(PSTRING("Elektro"), PSTRING("Electric")),
-		6, 235,//Height & weight
-		str_pokedex_data_239_page_0, str_pokedex_data_239_page_1,
-		0,//unused
-		363, 13,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 240
-		LANGDEP(PSTRING("Glutherd"), PSTRING("Live coal")),
-		7, 214,//Height & weight
-		str_pokedex_data_240_page_0, str_pokedex_data_240_page_1,
-		0,//unused
-		284, 11,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
+		304, 1,//Pokemon scale, displacement
+		288, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -2426,13 +2396,53 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 242
-		LANGDEP(PSTRING("Freude"), PSTRING("Happiness")),
-		15, 468,//Height & weight
-		str_pokedex_data_242_page_0, str_pokedex_data_242_page_1,
+		//Entry 293
+		LANGDEP(PSTRING("Landhai"), PSTRING("Whisper")),
+		6, 163,//Height & weight
+		str_pokedex_data_293_page_0, str_pokedex_data_293_page_1,
 		0,//unused
-		256, 3,//Pokemon scale, displacement
-		310, 3,//Trainer scale, displacement
+		373, 16,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 294
+		LANGDEP(PSTRING("Höhle"), PSTRING("Big voice")),
+		10, 405,//Height & weight
+		str_pokedex_data_294_page_0, str_pokedex_data_294_page_1,
+		0,//unused
+		356, 8,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 295
+		LANGDEP(PSTRING("Rasanz"), PSTRING("Loud noise")),
+		21, 840,//Height & weight
+		str_pokedex_data_295_page_0, str_pokedex_data_295_page_1,
+		0,//unused
+		284, 1,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 161
+		LANGDEP(PSTRING("Fackel"), PSTRING("Scout")),
+		8, 60,//Height & weight
+		str_pokedex_data_161_page_0, str_pokedex_data_161_page_1,
+		0,//unused
+		439, 12,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 162
+		LANGDEP(PSTRING("Sonne"), PSTRING("Long body")),
+		18, 325,//Height & weight
+		str_pokedex_data_162_page_0, str_pokedex_data_162_page_1,
+		0,//unused
+		346, 10,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -2766,146 +2776,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 276
-		LANGDEP(PSTRING("Schwälblein"), PSTRING("Tinyswallow")),
-		3, 23,//Height & weight
-		str_pokedex_data_276_page_0, str_pokedex_data_276_page_1,
-		0,//unused
-		465, 20,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 277
-		LANGDEP(PSTRING("Schwalbe"), PSTRING("Swallow")),
-		7, 198,//Height & weight
-		str_pokedex_data_277_page_0, str_pokedex_data_277_page_1,
-		0,//unused
-		428, 13,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 278
-		LANGDEP(PSTRING("Seemöwe"), PSTRING("Seagull")),
-		6, 95,//Height & weight
-		str_pokedex_data_278_page_0, str_pokedex_data_278_page_1,
-		0,//unused
-		295, 65534,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 279
-		LANGDEP(PSTRING("Wasservogel"), PSTRING("Water bird")),
-		12, 280,//Height & weight
-		str_pokedex_data_279_page_0, str_pokedex_data_279_page_1,
-		0,//unused
-		288, 1,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 280
-		LANGDEP(PSTRING("Gefühl"), PSTRING("Feeling")),
-		4, 66,//Height & weight
-		str_pokedex_data_280_page_0, str_pokedex_data_280_page_1,
-		0,//unused
-		457, 18,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 281
-		LANGDEP(PSTRING("Emotion"), PSTRING("Emotion")),
-		8, 202,//Height & weight
-		str_pokedex_data_281_page_0, str_pokedex_data_281_page_1,
-		0,//unused
-		354, 10,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 282
-		LANGDEP(PSTRING("Umarmung"), PSTRING("Embrace")),
-		16, 484,//Height & weight
-		str_pokedex_data_282_page_0, str_pokedex_data_282_page_1,
-		0,//unused
-		277, 0,//Pokemon scale, displacement
-		276, 65535,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 283
-		LANGDEP(PSTRING("Wassergeher"), PSTRING("Pond skater")),
-		5, 17,//Height & weight
-		str_pokedex_data_283_page_0, str_pokedex_data_283_page_1,
-		0,//unused
-		375, 17,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 284
-		LANGDEP(PSTRING("Auge"), PSTRING("Eyeball")),
-		8, 36,//Height & weight
-		str_pokedex_data_284_page_0, str_pokedex_data_284_page_1,
-		0,//unused
-		378, 65535,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 285
-		LANGDEP(PSTRING("Pilz"), PSTRING("Mushroom")),
-		4, 45,//Height & weight
-		str_pokedex_data_285_page_0, str_pokedex_data_285_page_1,
-		0,//unused
-		513, 20,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 286
-		LANGDEP(PSTRING("Pilz"), PSTRING("Mushroom")),
-		12, 392,//Height & weight
-		str_pokedex_data_286_page_0, str_pokedex_data_286_page_1,
-		0,//unused
-		324, 6,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 287
-		LANGDEP(PSTRING("Faulpelz"), PSTRING("Slacker")),
-		8, 240,//Height & weight
-		str_pokedex_data_287_page_0, str_pokedex_data_287_page_1,
-		0,//unused
-		291, 16,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 288
-		LANGDEP(PSTRING("Wildaffe"), PSTRING("Wild monkey")),
-		14, 465,//Height & weight
-		str_pokedex_data_288_page_0, str_pokedex_data_288_page_1,
-		0,//unused
-		301, 1,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 289
-		LANGDEP(PSTRING("Müssig"), PSTRING("Lazy")),
-		20, 1305,//Height & weight
-		str_pokedex_data_289_page_0, str_pokedex_data_289_page_1,
-		0,//unused
-		277, 5,//Pokemon scale, displacement
-		326, 3,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 290
 		LANGDEP(PSTRING("Vorbereiter"), PSTRING("Trainee")),
 		5, 55,//Height & weight
@@ -2936,273 +2806,93 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 293
-		LANGDEP(PSTRING("Landhai"), PSTRING("Whisper")),
-		6, 163,//Height & weight
-		str_pokedex_data_293_page_0, str_pokedex_data_293_page_1,
+		//Entry 276
+		LANGDEP(PSTRING("Schwälblein"), PSTRING("Tinyswallow")),
+		3, 23,//Height & weight
+		str_pokedex_data_276_page_0, str_pokedex_data_276_page_1,
 		0,//unused
-		373, 16,//Pokemon scale, displacement
+		465, 20,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 294
-		LANGDEP(PSTRING("Höhle"), PSTRING("Big voice")),
-		10, 405,//Height & weight
-		str_pokedex_data_294_page_0, str_pokedex_data_294_page_1,
+		//Entry 277
+		LANGDEP(PSTRING("Schwalbe"), PSTRING("Swallow")),
+		7, 198,//Height & weight
+		str_pokedex_data_277_page_0, str_pokedex_data_277_page_1,
 		0,//unused
-		356, 8,//Pokemon scale, displacement
+		428, 13,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 295
-		LANGDEP(PSTRING("Rasanz"), PSTRING("Loud noise")),
-		21, 840,//Height & weight
-		str_pokedex_data_295_page_0, str_pokedex_data_295_page_1,
+		//Entry 285
+		LANGDEP(PSTRING("Pilz"), PSTRING("Mushroom")),
+		4, 45,//Height & weight
+		str_pokedex_data_285_page_0, str_pokedex_data_285_page_1,
 		0,//unused
-		284, 1,//Pokemon scale, displacement
+		513, 20,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 296
-		LANGDEP(PSTRING("Wellenspiel"), PSTRING("Guts")),
-		10, 864,//Height & weight
-		str_pokedex_data_296_page_0, str_pokedex_data_296_page_1,
+		//Entry 286
+		LANGDEP(PSTRING("Pilz"), PSTRING("Mushroom")),
+		12, 392,//Height & weight
+		str_pokedex_data_286_page_0, str_pokedex_data_286_page_1,
 		0,//unused
-		256, 9,//Pokemon scale, displacement
+		324, 6,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 297
-		LANGDEP(PSTRING("Aura"), PSTRING("Arm thrust")),
-		23, 2538,//Height & weight
-		str_pokedex_data_297_page_0, str_pokedex_data_297_page_1,
+		//Entry 327
+		LANGDEP(PSTRING("Punkt-panda"), PSTRING("Spot panda")),
+		11, 50,//Height & weight
+		str_pokedex_data_327_page_0, str_pokedex_data_327_page_1,
 		0,//unused
-		268, 65535,//Pokemon scale, displacement
-		375, 6,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 298
-		LANGDEP(PSTRING("Gepunktet"), PSTRING("Polka dot")),
-		2, 20,//Height & weight
-		str_pokedex_data_298_page_0, str_pokedex_data_298_page_1,
-		0,//unused
-		603, 21,//Pokemon scale, displacement
+		321, 9,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 299
-		LANGDEP(PSTRING("Kompass"), PSTRING("Compass")),
-		10, 970,//Height & weight
-		str_pokedex_data_299_page_0, str_pokedex_data_299_page_1,
+		//Entry 278
+		LANGDEP(PSTRING("Seemöwe"), PSTRING("Seagull")),
+		6, 95,//Height & weight
+		str_pokedex_data_278_page_0, str_pokedex_data_278_page_1,
 		0,//unused
-		256, 9,//Pokemon scale, displacement
-		289, 1,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 300
-		LANGDEP(PSTRING("Kätzchen"), PSTRING("Kitten")),
-		6, 110,//Height & weight
-		str_pokedex_data_300_page_0, str_pokedex_data_300_page_1,
-		0,//unused
-		492, 18,//Pokemon scale, displacement
+		295, 65534,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 301
-		LANGDEP(PSTRING("Eingebildet"), PSTRING("Prim")),
-		11, 326,//Height & weight
-		str_pokedex_data_301_page_0, str_pokedex_data_301_page_1,
+		//Entry 279
+		LANGDEP(PSTRING("Wasservogel"), PSTRING("Water bird")),
+		12, 280,//Height & weight
+		str_pokedex_data_279_page_0, str_pokedex_data_279_page_1,
 		0,//unused
-		322, 9,//Pokemon scale, displacement
+		288, 1,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 302
-		LANGDEP(PSTRING("Greifer"), PSTRING("Darkness")),
-		5, 110,//Height & weight
-		str_pokedex_data_302_page_0, str_pokedex_data_302_page_1,
+		//Entry 283
+		LANGDEP(PSTRING("Wassergeher"), PSTRING("Pond skater")),
+		5, 17,//Height & weight
+		str_pokedex_data_283_page_0, str_pokedex_data_283_page_1,
 		0,//unused
-		451, 15,//Pokemon scale, displacement
+		375, 17,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 303
-		LANGDEP(PSTRING("Schwindler"), PSTRING("Deceiver")),
-		6, 115,//Height & weight
-		str_pokedex_data_303_page_0, str_pokedex_data_303_page_1,
+		//Entry 284
+		LANGDEP(PSTRING("Auge"), PSTRING("Eyeball")),
+		8, 36,//Height & weight
+		str_pokedex_data_284_page_0, str_pokedex_data_284_page_1,
 		0,//unused
-		466, 15,//Pokemon scale, displacement
-		256, 65533,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 304
-		LANGDEP(PSTRING("Eisenpanzer"), PSTRING("Iron armor")),
-		4, 600,//Height & weight
-		str_pokedex_data_304_page_0, str_pokedex_data_304_page_1,
-		0,//unused
-		419, 21,//Pokemon scale, displacement
+		378, 65535,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 305
-		LANGDEP(PSTRING("Eisenpanzer"), PSTRING("Iron armor")),
-		9, 1200,//Height & weight
-		str_pokedex_data_305_page_0, str_pokedex_data_305_page_1,
-		0,//unused
-		275, 11,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 306
-		LANGDEP(PSTRING("Eisenpanzer"), PSTRING("Iron armor")),
-		21, 3600,//Height & weight
-		str_pokedex_data_306_page_0, str_pokedex_data_306_page_1,
-		0,//unused
-		274, 65535,//Pokemon scale, displacement
-		374, 7,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 307
-		LANGDEP(PSTRING("Meditation"), PSTRING("Meditate")),
-		6, 112,//Height & weight
-		str_pokedex_data_307_page_0, str_pokedex_data_307_page_1,
-		0,//unused
-		465, 17,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 308
-		LANGDEP(PSTRING("Meditation"), PSTRING("Meditate")),
-		13, 315,//Height & weight
-		str_pokedex_data_308_page_0, str_pokedex_data_308_page_1,
-		0,//unused
-		298, 2,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 309
-		LANGDEP(PSTRING("Gewitter"), PSTRING("Lightning")),
-		6, 152,//Height & weight
-		str_pokedex_data_309_page_0, str_pokedex_data_309_page_1,
-		0,//unused
-		290, 16,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 310
-		LANGDEP(PSTRING("Entladung"), PSTRING("Discharge")),
-		15, 402,//Height & weight
-		str_pokedex_data_310_page_0, str_pokedex_data_310_page_1,
-		0,//unused
-		256, 1,//Pokemon scale, displacement
-		257, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 311
-		LANGDEP(PSTRING("Jubel"), PSTRING("Cheering")),
-		4, 42,//Height & weight
-		str_pokedex_data_311_page_0, str_pokedex_data_311_page_1,
-		0,//unused
-		515, 65527,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 312
-		LANGDEP(PSTRING("Jubel"), PSTRING("Cheering")),
-		4, 42,//Height & weight
-		str_pokedex_data_312_page_0, str_pokedex_data_312_page_1,
-		0,//unused
-		512, 65529,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 313
-		LANGDEP(PSTRING("Spielhaus"), PSTRING("Spielhaus")),
-		6, 244,//Height & weight
-		str_pokedex_data_313_page_0, str_pokedex_data_313_page_1,
-		0,//unused
-		442, 65532,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 314
-		LANGDEP(PSTRING("Bonsai"), PSTRING("Bonsai")),
-		5, 150,//Height & weight
-		str_pokedex_data_314_page_0, str_pokedex_data_314_page_1,
-		0,//unused
-		572, 65532,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 315
-		LANGDEP(PSTRING("Virtuell"), PSTRING("Thorn")),
-		9, 340,//Height & weight
-		str_pokedex_data_315_page_0, str_pokedex_data_315_page_1,
-		0,//unused
-		677, 20,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 316
-		LANGDEP(PSTRING("Magen"), PSTRING("Stomach")),
-		4, 103,//Height & weight
-		str_pokedex_data_316_page_0, str_pokedex_data_316_page_1,
-		0,//unused
-		593, 22,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 317
-		LANGDEP(PSTRING("Giftbeutel"), PSTRING("Poison bag")),
-		17, 800,//Height & weight
-		str_pokedex_data_317_page_0, str_pokedex_data_317_page_1,
-		0,//unused
-		256, 5,//Pokemon scale, displacement
-		345, 4,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 318
-		LANGDEP(PSTRING("Gnadenlos"), PSTRING("Savage")),
-		8, 208,//Height & weight
-		str_pokedex_data_318_page_0, str_pokedex_data_318_page_1,
-		0,//unused
-		362, 0,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 319
-		LANGDEP(PSTRING("Brutal"), PSTRING("Brutal")),
-		18, 888,//Height & weight
-		str_pokedex_data_319_page_0, str_pokedex_data_319_page_1,
-		0,//unused
-		265, 0,//Pokemon scale, displacement
-		342, 4,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -3226,173 +2916,73 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 322
-		LANGDEP(PSTRING("Taubheit"), PSTRING("Numb")),
-		7, 240,//Height & weight
-		str_pokedex_data_322_page_0, str_pokedex_data_322_page_1,
+		//Entry 300
+		LANGDEP(PSTRING("Kätzchen"), PSTRING("Kitten")),
+		6, 110,//Height & weight
+		str_pokedex_data_300_page_0, str_pokedex_data_300_page_1,
 		0,//unused
-		310, 14,//Pokemon scale, displacement
+		492, 18,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 323
-		LANGDEP(PSTRING("Ausbruch"), PSTRING("Eruption")),
-		19, 2200,//Height & weight
-		str_pokedex_data_323_page_0, str_pokedex_data_323_page_1,
+		//Entry 301
+		LANGDEP(PSTRING("Eingebildet"), PSTRING("Prim")),
+		11, 326,//Height & weight
+		str_pokedex_data_301_page_0, str_pokedex_data_301_page_1,
 		0,//unused
-		256, 6,//Pokemon scale, displacement
-		345, 4,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 324
-		LANGDEP(PSTRING("Detonation"), PSTRING("Coal")),
-		5, 804,//Height & weight
-		str_pokedex_data_324_page_0, str_pokedex_data_324_page_1,
-		0,//unused
-		392, 9,//Pokemon scale, displacement
+		322, 9,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 325
-		LANGDEP(PSTRING("Sprungfeder"), PSTRING("Bounce")),
-		7, 306,//Height & weight
-		str_pokedex_data_325_page_0, str_pokedex_data_325_page_1,
+		//Entry 352
+		LANGDEP(PSTRING("Farbenspiel"), PSTRING("Color swap")),
+		10, 220,//Height & weight
+		str_pokedex_data_352_page_0, str_pokedex_data_352_page_1,
 		0,//unused
-		423, 15,//Pokemon scale, displacement
+		316, 8,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 326
-		LANGDEP(PSTRING("Manipulator"), PSTRING("Manipulate")),
-		9, 715,//Height & weight
-		str_pokedex_data_326_page_0, str_pokedex_data_326_page_1,
+		//Entry 343
+		LANGDEP(PSTRING("Lehmpuppe"), PSTRING("Clay doll")),
+		5, 215,//Height & weight
+		str_pokedex_data_343_page_0, str_pokedex_data_343_page_1,
 		0,//unused
-		358, 9,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 327
-		LANGDEP(PSTRING("Punkt-panda"), PSTRING("Spot panda")),
-		11, 50,//Height & weight
-		str_pokedex_data_327_page_0, str_pokedex_data_327_page_1,
-		0,//unused
-		321, 9,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
+		384, 18,//Pokemon scale, displacement
+		256, 65533,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 328
-		LANGDEP(PSTRING("Ameisenlöwe"), PSTRING("Ant pit")),
-		7, 150,//Height & weight
-		str_pokedex_data_328_page_0, str_pokedex_data_328_page_1,
+		//Entry 344
+		LANGDEP(PSTRING("Lehmpuppe"), PSTRING("Clay doll")),
+		15, 1080,//Height & weight
+		str_pokedex_data_344_page_0, str_pokedex_data_344_page_1,
 		0,//unused
-		298, 15,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 329
-		LANGDEP(PSTRING("Vibration"), PSTRING("Vibration")),
-		11, 153,//Height & weight
-		str_pokedex_data_329_page_0, str_pokedex_data_329_page_1,
-		0,//unused
-		370, 15,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
+		256, 3,//Pokemon scale, displacement
+		280, 0,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 330
-		LANGDEP(PSTRING("Mystik"), PSTRING("Mystic")),
-		20, 820,//Height & weight
-		str_pokedex_data_330_page_0, str_pokedex_data_330_page_1,
+		//Entry 299
+		LANGDEP(PSTRING("Kompass"), PSTRING("Compass")),
+		10, 970,//Height & weight
+		str_pokedex_data_299_page_0, str_pokedex_data_299_page_1,
 		0,//unused
-		280, 0,//Pokemon scale, displacement
-		299, 2,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 331
-		LANGDEP(PSTRING("Kaktus"), PSTRING("Cactus")),
-		4, 513,//Height & weight
-		str_pokedex_data_331_page_0, str_pokedex_data_331_page_1,
-		0,//unused
-		455, 19,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
+		256, 9,//Pokemon scale, displacement
+		289, 1,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 332
-		LANGDEP(PSTRING("Vogelschock"), PSTRING("Scarecrow")),
-		13, 774,//Height & weight
-		str_pokedex_data_332_page_0, str_pokedex_data_332_page_1,
+		//Entry 234
+		LANGDEP(PSTRING("Kompass"), PSTRING("Big horn")),
+		14, 712,//Height & weight
+		str_pokedex_data_234_page_0, str_pokedex_data_234_page_1,
 		0,//unused
-		327, 3,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 333
-		LANGDEP(PSTRING("Wollvogel"), PSTRING("Cotton bird")),
-		4, 12,//Height & weight
-		str_pokedex_data_333_page_0, str_pokedex_data_333_page_1,
-		0,//unused
-		422, 65528,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 334
-		LANGDEP(PSTRING("Summsel"), PSTRING("Humming")),
-		11, 206,//Height & weight
-		str_pokedex_data_334_page_0, str_pokedex_data_334_page_1,
-		0,//unused
-		327, 0,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 335
-		LANGDEP(PSTRING("Frettkatz"), PSTRING("Cat ferret")),
-		13, 403,//Height & weight
-		str_pokedex_data_335_page_0, str_pokedex_data_335_page_1,
-		0,//unused
-		256, 2,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 336
-		LANGDEP(PSTRING("Reisszahn"), PSTRING("Fang snake")),
-		27, 525,//Height & weight
-		str_pokedex_data_336_page_0, str_pokedex_data_336_page_1,
-		0,//unused
-		275, 6,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 337
-		LANGDEP(PSTRING("Meteorit"), PSTRING("Meteorite")),
-		10, 1680,//Height & weight
-		str_pokedex_data_337_page_0, str_pokedex_data_337_page_1,
-		0,//unused
-		300, 1,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 338
-		LANGDEP(PSTRING("Meteorit"), PSTRING("Meteorite")),
-		12, 1540,//Height & weight
-		str_pokedex_data_338_page_0, str_pokedex_data_338_page_1,
-		0,//unused
-		328, 65533,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
+		277, 65535,//Pokemon scale, displacement
+		277, 0,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -3436,23 +3026,613 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 343
-		LANGDEP(PSTRING("Lehmpuppe"), PSTRING("Clay doll")),
-		5, 215,//Height & weight
-		str_pokedex_data_343_page_0, str_pokedex_data_343_page_1,
+		//Entry 349
+		LANGDEP(PSTRING("Fisch"), PSTRING("Fish")),
+		6, 74,//Height & weight
+		str_pokedex_data_349_page_0, str_pokedex_data_349_page_1,
 		0,//unused
-		384, 18,//Pokemon scale, displacement
+		423, 3,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 350
+		LANGDEP(PSTRING("Zartheit"), PSTRING("Tender")),
+		62, 1620,//Height & weight
+		str_pokedex_data_350_page_0, str_pokedex_data_350_page_1,
+		0,//unused
+		282, 65535,//Pokemon scale, displacement
+		382, 7,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 318
+		LANGDEP(PSTRING("Gnadenlos"), PSTRING("Savage")),
+		8, 208,//Height & weight
+		str_pokedex_data_318_page_0, str_pokedex_data_318_page_1,
+		0,//unused
+		362, 0,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 319
+		LANGDEP(PSTRING("Brutal"), PSTRING("Brutal")),
+		18, 888,//Height & weight
+		str_pokedex_data_319_page_0, str_pokedex_data_319_page_1,
+		0,//unused
+		265, 0,//Pokemon scale, displacement
+		342, 4,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 328
+		LANGDEP(PSTRING("Ameisenlöwe"), PSTRING("Ant pit")),
+		7, 150,//Height & weight
+		str_pokedex_data_328_page_0, str_pokedex_data_328_page_1,
+		0,//unused
+		298, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 329
+		LANGDEP(PSTRING("Vibration"), PSTRING("Vibration")),
+		11, 153,//Height & weight
+		str_pokedex_data_329_page_0, str_pokedex_data_329_page_1,
+		0,//unused
+		370, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 330
+		LANGDEP(PSTRING("Mystik"), PSTRING("Mystic")),
+		20, 820,//Height & weight
+		str_pokedex_data_330_page_0, str_pokedex_data_330_page_1,
+		0,//unused
+		280, 0,//Pokemon scale, displacement
+		299, 2,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 296
+		LANGDEP(PSTRING("Wellenspiel"), PSTRING("Guts")),
+		10, 864,//Height & weight
+		str_pokedex_data_296_page_0, str_pokedex_data_296_page_1,
+		0,//unused
+		256, 9,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 297
+		LANGDEP(PSTRING("Aura"), PSTRING("Arm thrust")),
+		23, 2538,//Height & weight
+		str_pokedex_data_297_page_0, str_pokedex_data_297_page_1,
+		0,//unused
+		268, 65535,//Pokemon scale, displacement
+		375, 6,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 309
+		LANGDEP(PSTRING("Gewitter"), PSTRING("Lightning")),
+		6, 152,//Height & weight
+		str_pokedex_data_309_page_0, str_pokedex_data_309_page_1,
+		0,//unused
+		290, 16,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 310
+		LANGDEP(PSTRING("Entladung"), PSTRING("Discharge")),
+		15, 402,//Height & weight
+		str_pokedex_data_310_page_0, str_pokedex_data_310_page_1,
+		0,//unused
+		256, 1,//Pokemon scale, displacement
+		257, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 322
+		LANGDEP(PSTRING("Taubheit"), PSTRING("Numb")),
+		7, 240,//Height & weight
+		str_pokedex_data_322_page_0, str_pokedex_data_322_page_1,
+		0,//unused
+		310, 14,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 323
+		LANGDEP(PSTRING("Ausbruch"), PSTRING("Eruption")),
+		19, 2200,//Height & weight
+		str_pokedex_data_323_page_0, str_pokedex_data_323_page_1,
+		0,//unused
+		256, 6,//Pokemon scale, displacement
+		345, 4,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 363
+		LANGDEP(PSTRING("Applaus"), PSTRING("Clap")),
+		8, 395,//Height & weight
+		str_pokedex_data_363_page_0, str_pokedex_data_363_page_1,
+		0,//unused
+		315, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 364
+		LANGDEP(PSTRING("Spielball"), PSTRING("Ball roll")),
+		11, 876,//Height & weight
+		str_pokedex_data_364_page_0, str_pokedex_data_364_page_1,
+		0,//unused
+		338, 12,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 365
+		LANGDEP(PSTRING("Eisbrecher"), PSTRING("Ice break")),
+		14, 1506,//Height & weight
+		str_pokedex_data_365_page_0, str_pokedex_data_365_page_1,
+		0,//unused
+		305, 2,//Pokemon scale, displacement
+		277, 0,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 331
+		LANGDEP(PSTRING("Kaktus"), PSTRING("Cactus")),
+		4, 513,//Height & weight
+		str_pokedex_data_331_page_0, str_pokedex_data_331_page_1,
+		0,//unused
+		455, 19,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 332
+		LANGDEP(PSTRING("Vogelschock"), PSTRING("Scarecrow")),
+		13, 774,//Height & weight
+		str_pokedex_data_332_page_0, str_pokedex_data_332_page_1,
+		0,//unused
+		327, 3,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 361
+		LANGDEP(PSTRING("Schneehut"), PSTRING("Snow hat")),
+		7, 168,//Height & weight
+		str_pokedex_data_361_page_0, str_pokedex_data_361_page_1,
+		0,//unused
+		380, 14,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 362
+		LANGDEP(PSTRING("Antlitz"), PSTRING("Face")),
+		15, 2565,//Height & weight
+		str_pokedex_data_362_page_0, str_pokedex_data_362_page_1,
+		0,//unused
+		256, 3,//Pokemon scale, displacement
+		344, 2,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 202
+		LANGDEP(PSTRING("Schneegebie"), PSTRING("Patient")),
+		68, 285,//Height & weight
+		str_pokedex_data_202_page_0, str_pokedex_data_202_page_1,
+		0,//unused
+		517, 4,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 337
+		LANGDEP(PSTRING("Meteorit"), PSTRING("Meteorite")),
+		10, 1680,//Height & weight
+		str_pokedex_data_337_page_0, str_pokedex_data_337_page_1,
+		0,//unused
+		300, 1,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 338
+		LANGDEP(PSTRING("Meteorit"), PSTRING("Meteorite")),
+		12, 1540,//Height & weight
+		str_pokedex_data_338_page_0, str_pokedex_data_338_page_1,
+		0,//unused
+		328, 65533,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 52
+		LANGDEP(PSTRING("Dornfrucht"), PSTRING("Scratch cat")),
+		4, 42,//Height & weight
+		str_pokedex_data_52_page_0, str_pokedex_data_52_page_1,
+		0,//unused
+		480, 17,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 53
+		LANGDEP(PSTRING("Dornkugel"), PSTRING("Classy cat")),
+		10, 320,//Height & weight
+		str_pokedex_data_53_page_0, str_pokedex_data_53_page_1,
+		0,//unused
+		320, 10,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 325
+		LANGDEP(PSTRING("Sprungfeder"), PSTRING("Bounce")),
+		7, 306,//Height & weight
+		str_pokedex_data_325_page_0, str_pokedex_data_325_page_1,
+		0,//unused
+		423, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 326
+		LANGDEP(PSTRING("Manipulator"), PSTRING("Manipulate")),
+		9, 715,//Height & weight
+		str_pokedex_data_326_page_0, str_pokedex_data_326_page_1,
+		0,//unused
+		358, 9,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 311
+		LANGDEP(PSTRING("Jubel"), PSTRING("Cheering")),
+		4, 42,//Height & weight
+		str_pokedex_data_311_page_0, str_pokedex_data_311_page_1,
+		0,//unused
+		515, 65527,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 312
+		LANGDEP(PSTRING("Jubel"), PSTRING("Cheering")),
+		4, 42,//Height & weight
+		str_pokedex_data_312_page_0, str_pokedex_data_312_page_1,
+		0,//unused
+		512, 65529,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 303
+		LANGDEP(PSTRING("Schwindler"), PSTRING("Deceiver")),
+		6, 115,//Height & weight
+		str_pokedex_data_303_page_0, str_pokedex_data_303_page_1,
+		0,//unused
+		466, 15,//Pokemon scale, displacement
 		256, 65533,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 344
-		LANGDEP(PSTRING("Lehmpuppe"), PSTRING("Clay doll")),
-		15, 1080,//Height & weight
-		str_pokedex_data_344_page_0, str_pokedex_data_344_page_1,
+		//Entry 307
+		LANGDEP(PSTRING("Meditation"), PSTRING("Meditate")),
+		6, 112,//Height & weight
+		str_pokedex_data_307_page_0, str_pokedex_data_307_page_1,
 		0,//unused
-		256, 3,//Pokemon scale, displacement
-		280, 0,//Trainer scale, displacement
+		465, 17,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 308
+		LANGDEP(PSTRING("Meditation"), PSTRING("Meditate")),
+		13, 315,//Height & weight
+		str_pokedex_data_308_page_0, str_pokedex_data_308_page_1,
+		0,//unused
+		298, 2,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 333
+		LANGDEP(PSTRING("Wollvogel"), PSTRING("Cotton bird")),
+		4, 12,//Height & weight
+		str_pokedex_data_333_page_0, str_pokedex_data_333_page_1,
+		0,//unused
+		422, 65528,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 334
+		LANGDEP(PSTRING("Summsel"), PSTRING("Humming")),
+		11, 206,//Height & weight
+		str_pokedex_data_334_page_0, str_pokedex_data_334_page_1,
+		0,//unused
+		327, 0,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 355
+		LANGDEP(PSTRING("Requiem"), PSTRING("Requiem")),
+		8, 150,//Height & weight
+		str_pokedex_data_355_page_0, str_pokedex_data_355_page_1,
+		0,//unused
+		376, 13,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 356
+		LANGDEP(PSTRING("Wink"), PSTRING("Beckon")),
+		16, 306,//Height & weight
+		str_pokedex_data_356_page_0, str_pokedex_data_356_page_1,
+		0,//unused
+		256, 2,//Pokemon scale, displacement
+		299, 2,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 302
+		LANGDEP(PSTRING("Greifer"), PSTRING("Darkness")),
+		5, 110,//Height & weight
+		str_pokedex_data_302_page_0, str_pokedex_data_302_page_1,
+		0,//unused
+		451, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 287
+		LANGDEP(PSTRING("Faulpelz"), PSTRING("Slacker")),
+		8, 240,//Height & weight
+		str_pokedex_data_287_page_0, str_pokedex_data_287_page_1,
+		0,//unused
+		291, 16,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 288
+		LANGDEP(PSTRING("Wildaffe"), PSTRING("Wild monkey")),
+		14, 465,//Height & weight
+		str_pokedex_data_288_page_0, str_pokedex_data_288_page_1,
+		0,//unused
+		301, 1,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 289
+		LANGDEP(PSTRING("Müssig"), PSTRING("Lazy")),
+		20, 1305,//Height & weight
+		str_pokedex_data_289_page_0, str_pokedex_data_289_page_1,
+		0,//unused
+		277, 5,//Pokemon scale, displacement
+		326, 3,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 316
+		LANGDEP(PSTRING("Magen"), PSTRING("Stomach")),
+		4, 103,//Height & weight
+		str_pokedex_data_316_page_0, str_pokedex_data_316_page_1,
+		0,//unused
+		593, 22,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 317
+		LANGDEP(PSTRING("Giftbeutel"), PSTRING("Poison bag")),
+		17, 800,//Height & weight
+		str_pokedex_data_317_page_0, str_pokedex_data_317_page_1,
+		0,//unused
+		256, 5,//Pokemon scale, displacement
+		345, 4,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 357
+		LANGDEP(PSTRING("Obst"), PSTRING("Fruit")),
+		20, 1000,//Height & weight
+		str_pokedex_data_357_page_0, str_pokedex_data_357_page_1,
+		0,//unused
+		283, 65535,//Pokemon scale, displacement
+		371, 6,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 19
+		LANGDEP(PSTRING("Bronze"), PSTRING("Mouse")),
+		3, 35,//Height & weight
+		str_pokedex_data_19_page_0, str_pokedex_data_19_page_1,
+		0,//unused
+		481, 18,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 20
+		LANGDEP(PSTRING("Bronzeglock"), PSTRING("Mouse")),
+		7, 185,//Height & weight
+		str_pokedex_data_20_page_0, str_pokedex_data_20_page_1,
+		0,//unused
+		401, 14,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 366
+		LANGDEP(PSTRING("Muschel"), PSTRING("Bivalve")),
+		4, 525,//Height & weight
+		str_pokedex_data_366_page_0, str_pokedex_data_366_page_1,
+		0,//unused
+		691, 22,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 367
+		LANGDEP(PSTRING("Tiefsee"), PSTRING("Deep sea")),
+		17, 270,//Height & weight
+		str_pokedex_data_367_page_0, str_pokedex_data_367_page_1,
+		0,//unused
+		307, 1,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 368
+		LANGDEP(PSTRING("Südsee"), PSTRING("South sea")),
+		18, 226,//Height & weight
+		str_pokedex_data_368_page_0, str_pokedex_data_368_page_1,
+		0,//unused
+		278, 5,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 359
+		LANGDEP(PSTRING("Desaster"), PSTRING("Disaster")),
+		12, 470,//Height & weight
+		str_pokedex_data_359_page_0, str_pokedex_data_359_page_1,
+		0,//unused
+		301, 1,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 353
+		LANGDEP(PSTRING("Puppe"), PSTRING("Puppet")),
+		6, 23,//Height & weight
+		str_pokedex_data_353_page_0, str_pokedex_data_353_page_1,
+		0,//unused
+		440, 65533,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 354
+		LANGDEP(PSTRING("Marionette"), PSTRING("Marionette")),
+		11, 125,//Height & weight
+		str_pokedex_data_354_page_0, str_pokedex_data_354_page_1,
+		0,//unused
+		262, 9,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 336
+		LANGDEP(PSTRING("Reisszahn"), PSTRING("Fang snake")),
+		27, 525,//Height & weight
+		str_pokedex_data_336_page_0, str_pokedex_data_336_page_1,
+		0,//unused
+		275, 6,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 335
+		LANGDEP(PSTRING("Frettkatz"), PSTRING("Cat ferret")),
+		13, 403,//Height & weight
+		str_pokedex_data_335_page_0, str_pokedex_data_335_page_1,
+		0,//unused
+		256, 2,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 369
+		LANGDEP(PSTRING("Bestand"), PSTRING("Longevity")),
+		10, 234,//Height & weight
+		str_pokedex_data_369_page_0, str_pokedex_data_369_page_1,
+		0,//unused
+		316, 5,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 114
+		LANGDEP(PSTRING("Finsternis"), PSTRING("Vine")),
+		5, 110,//Height & weight
+		str_pokedex_data_114_page_0, str_pokedex_data_114_page_1,
+		0,//unused
+		451, 15,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 304
+		LANGDEP(PSTRING("Eisenpanzer"), PSTRING("Iron armor")),
+		4, 600,//Height & weight
+		str_pokedex_data_304_page_0, str_pokedex_data_304_page_1,
+		0,//unused
+		419, 21,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 305
+		LANGDEP(PSTRING("Eisenpanzer"), PSTRING("Iron armor")),
+		9, 1200,//Height & weight
+		str_pokedex_data_305_page_0, str_pokedex_data_305_page_1,
+		0,//unused
+		275, 11,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 306
+		LANGDEP(PSTRING("Eisenpanzer"), PSTRING("Iron armor")),
+		21, 3600,//Height & weight
+		str_pokedex_data_306_page_0, str_pokedex_data_306_page_1,
+		0,//unused
+		274, 65535,//Pokemon scale, displacement
+		374, 7,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 351
+		LANGDEP(PSTRING("Wetter"), PSTRING("Weather")),
+		3, 8,//Height & weight
+		str_pokedex_data_351_page_0, str_pokedex_data_351_page_1,
+		0,//unused
+		435, 65531,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 360
+		LANGDEP(PSTRING("Glöckchen"), PSTRING("Bell")),
+		2, 6,//Height & weight
+		str_pokedex_data_360_page_0, str_pokedex_data_360_page_1,
+		0,//unused
+		453, 17,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 358
+		LANGDEP(PSTRING("Windspiel"), PSTRING("Wind chime")),
+		6, 10,//Height & weight
+		str_pokedex_data_358_page_0, str_pokedex_data_358_page_1,
+		0,//unused
+		505, 65532,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -3496,223 +3676,43 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 349
-		LANGDEP(PSTRING("Fisch"), PSTRING("Fish")),
-		6, 74,//Height & weight
-		str_pokedex_data_349_page_0, str_pokedex_data_349_page_1,
+		//Entry 280
+		LANGDEP(PSTRING("Gefühl"), PSTRING("Feeling")),
+		4, 66,//Height & weight
+		str_pokedex_data_280_page_0, str_pokedex_data_280_page_1,
 		0,//unused
-		423, 3,//Pokemon scale, displacement
+		457, 18,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 350
-		LANGDEP(PSTRING("Zartheit"), PSTRING("Tender")),
-		62, 1620,//Height & weight
-		str_pokedex_data_350_page_0, str_pokedex_data_350_page_1,
+		//Entry 281
+		LANGDEP(PSTRING("Emotion"), PSTRING("Emotion")),
+		8, 202,//Height & weight
+		str_pokedex_data_281_page_0, str_pokedex_data_281_page_1,
 		0,//unused
-		282, 65535,//Pokemon scale, displacement
-		382, 7,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 351
-		LANGDEP(PSTRING("Wetter"), PSTRING("Weather")),
-		3, 8,//Height & weight
-		str_pokedex_data_351_page_0, str_pokedex_data_351_page_1,
-		0,//unused
-		435, 65531,//Pokemon scale, displacement
+		354, 10,//Pokemon scale, displacement
 		256, 65534,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 352
-		LANGDEP(PSTRING("Farbenspiel"), PSTRING("Color swap")),
-		10, 220,//Height & weight
-		str_pokedex_data_352_page_0, str_pokedex_data_352_page_1,
+		//Entry 282
+		LANGDEP(PSTRING("Umarmung"), PSTRING("Embrace")),
+		16, 484,//Height & weight
+		str_pokedex_data_282_page_0, str_pokedex_data_282_page_1,
 		0,//unused
-		316, 8,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 353
-		LANGDEP(PSTRING("Puppe"), PSTRING("Puppet")),
-		6, 23,//Height & weight
-		str_pokedex_data_353_page_0, str_pokedex_data_353_page_1,
-		0,//unused
-		440, 65533,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
+		277, 0,//Pokemon scale, displacement
+		276, 65535,//Trainer scale, displacement
 		0,//unused
 	},
 	{
-		//Entry 354
-		LANGDEP(PSTRING("Marionette"), PSTRING("Marionette")),
-		11, 125,//Height & weight
-		str_pokedex_data_354_page_0, str_pokedex_data_354_page_1,
-		0,//unused
-		262, 9,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 355
-		LANGDEP(PSTRING("Requiem"), PSTRING("Requiem")),
-		8, 150,//Height & weight
-		str_pokedex_data_355_page_0, str_pokedex_data_355_page_1,
-		0,//unused
-		376, 13,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 356
-		LANGDEP(PSTRING("Wink"), PSTRING("Beckon")),
-		16, 306,//Height & weight
-		str_pokedex_data_356_page_0, str_pokedex_data_356_page_1,
-		0,//unused
-		256, 2,//Pokemon scale, displacement
-		299, 2,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 357
-		LANGDEP(PSTRING("Obst"), PSTRING("Fruit")),
-		20, 1000,//Height & weight
-		str_pokedex_data_357_page_0, str_pokedex_data_357_page_1,
-		0,//unused
-		283, 65535,//Pokemon scale, displacement
-		371, 6,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 358
-		LANGDEP(PSTRING("Windspiel"), PSTRING("Wind chime")),
-		6, 10,//Height & weight
-		str_pokedex_data_358_page_0, str_pokedex_data_358_page_1,
-		0,//unused
-		505, 65532,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 359
-		LANGDEP(PSTRING("Desaster"), PSTRING("Disaster")),
-		12, 470,//Height & weight
-		str_pokedex_data_359_page_0, str_pokedex_data_359_page_1,
-		0,//unused
-		301, 1,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 360
-		LANGDEP(PSTRING("Glöckchen"), PSTRING("Bell")),
-		2, 6,//Height & weight
-		str_pokedex_data_360_page_0, str_pokedex_data_360_page_1,
-		0,//unused
-		453, 17,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 361
-		LANGDEP(PSTRING("Schneehut"), PSTRING("Snow hat")),
-		7, 168,//Height & weight
-		str_pokedex_data_361_page_0, str_pokedex_data_361_page_1,
-		0,//unused
-		380, 14,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 362
-		LANGDEP(PSTRING("Antlitz"), PSTRING("Face")),
-		15, 2565,//Height & weight
-		str_pokedex_data_362_page_0, str_pokedex_data_362_page_1,
+		//Entry 124
+		LANGDEP(PSTRING("Klinge"), PSTRING("Human shape")),
+		14, 406,//Height & weight
+		str_pokedex_data_124_page_0, str_pokedex_data_124_page_1,
 		0,//unused
 		256, 3,//Pokemon scale, displacement
-		344, 2,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 363
-		LANGDEP(PSTRING("Applaus"), PSTRING("Clap")),
-		8, 395,//Height & weight
-		str_pokedex_data_363_page_0, str_pokedex_data_363_page_1,
-		0,//unused
-		315, 15,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 364
-		LANGDEP(PSTRING("Spielball"), PSTRING("Ball roll")),
-		11, 876,//Height & weight
-		str_pokedex_data_364_page_0, str_pokedex_data_364_page_1,
-		0,//unused
-		338, 12,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 365
-		LANGDEP(PSTRING("Eisbrecher"), PSTRING("Ice break")),
-		14, 1506,//Height & weight
-		str_pokedex_data_365_page_0, str_pokedex_data_365_page_1,
-		0,//unused
-		305, 2,//Pokemon scale, displacement
-		277, 0,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 366
-		LANGDEP(PSTRING("Muschel"), PSTRING("Bivalve")),
-		4, 525,//Height & weight
-		str_pokedex_data_366_page_0, str_pokedex_data_366_page_1,
-		0,//unused
-		691, 22,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 367
-		LANGDEP(PSTRING("Tiefsee"), PSTRING("Deep sea")),
-		17, 270,//Height & weight
-		str_pokedex_data_367_page_0, str_pokedex_data_367_page_1,
-		0,//unused
-		307, 1,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 368
-		LANGDEP(PSTRING("Südsee"), PSTRING("South sea")),
-		18, 226,//Height & weight
-		str_pokedex_data_368_page_0, str_pokedex_data_368_page_1,
-		0,//unused
-		278, 5,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 369
-		LANGDEP(PSTRING("Bestand"), PSTRING("Longevity")),
-		10, 234,//Height & weight
-		str_pokedex_data_369_page_0, str_pokedex_data_369_page_1,
-		0,//unused
-		316, 5,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 370
-		LANGDEP(PSTRING("Bohrer"), PSTRING("Drill")),
-		24, 2828,//Height & weight
-		str_pokedex_data_370_page_0, str_pokedex_data_370_page_1,
-		0,//unused
-		371, 2,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
+		300, 1,//Trainer scale, displacement
 		0,//unused
 	},
 	{
@@ -3806,26 +3806,6 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 	},
 	{
-		//Entry 380
-		LANGDEP(PSTRING("Äon"), PSTRING("Eon")),
-		14, 400,//Height & weight
-		str_pokedex_data_380_page_0, str_pokedex_data_380_page_1,
-		0,//unused
-		291, 2,//Pokemon scale, displacement
-		256, 65534,//Trainer scale, displacement
-		0,//unused
-	},
-	{
-		//Entry 381
-		LANGDEP(PSTRING("Äon"), PSTRING("Eon")),
-		20, 600,//Height & weight
-		str_pokedex_data_381_page_0, str_pokedex_data_381_page_1,
-		0,//unused
-		273, 0,//Pokemon scale, displacement
-		313, 3,//Trainer scale, displacement
-		0,//unused
-	},
-	{
 		//Entry 382
 		LANGDEP(PSTRING("Seegründler"), PSTRING("Sea basin")),
 		45, 3520,//Height & weight
@@ -3853,6 +3833,26 @@ pokedex_data dex_data[POKEDEX_CNT + 1] = {
 		0,//unused
 		286, 65535,//Pokemon scale, displacement
 		483, 9,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 380
+		LANGDEP(PSTRING("Äon"), PSTRING("Eon")),
+		14, 400,//Height & weight
+		str_pokedex_data_380_page_0, str_pokedex_data_380_page_1,
+		0,//unused
+		291, 2,//Pokemon scale, displacement
+		256, 65534,//Trainer scale, displacement
+		0,//unused
+	},
+	{
+		//Entry 381
+		LANGDEP(PSTRING("Äon"), PSTRING("Eon")),
+		20, 600,//Height & weight
+		str_pokedex_data_381_page_0, str_pokedex_data_381_page_1,
+		0,//unused
+		273, 0,//Pokemon scale, displacement
+		313, 3,//Trainer scale, displacement
 		0,//unused
 	},
 	{

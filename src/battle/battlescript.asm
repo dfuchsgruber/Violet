@@ -232,14 +232,14 @@ battle_script_cmds:
 	.word 0x802cb7d
 	.word 0x802cc59
 	.word 0x802ccd5
-	.word 0x802cd29
+	.word bsc_cmd_xE4_secret_power
 	.word bsc_cmd_mitnahme
 	.word 0x802cec9
 	.word 0x802cf31
 	.word 0x802cf71
 	.word 0x802d029
 	.word 0x802d0e1
-	.word 0x802d189
+	.word bsc_cmd_xEB_set_type_to_terrain
 	.word 0x802d239
 	.word 0x802d2fd
 	.word 0x802d351

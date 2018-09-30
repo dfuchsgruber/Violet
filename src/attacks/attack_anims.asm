@@ -294,7 +294,7 @@ attack_anims:
 		.word 0x81d6ed2 @//attack_heilung
 		.word 0x81d02da @//attack_nachspiel
 		.word 0x81d83df @//attack_uebernahme
-		.word 0x81d8f4a @//attack_geheimpower
+		.word attack_script_secret_power @0x81d8f4a //attack_geheimpower
 		.word 0x81d83f9 @//attack_taucher
 		.word 0x81d7123 @//attack_armstoss
 		.word 0x81d0302 @//attack_tarnung
@@ -435,3 +435,8 @@ attack_script_tsunami:
         .hword 0x1, 0x3, 0x1, 0x0, 0xe, 0x7fff, 0xe
         waitstate 
         end 
+
+attack_script_secret_power:
+	loadcallback attack_anim_task_secret_power 0x5 0
+	end
+

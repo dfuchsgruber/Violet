@@ -25,6 +25,7 @@
 #include "constants/person_behaviours.h"
 #include "tile/block.h"
 #include "data_structures.h"
+#include "constants/map_types.h"
 
 extern tileset maptileset0;
 extern tileset maptileset15;
@@ -47,7 +48,7 @@ mapheader *dungeon2_init_header_cave(dungeon_generator2 *dg2) {
     fmem.dmapheader.map_index = 0x1c1; //test index
     fmem.dmapheader.flash = 0;
     fmem.dmapheader.weather = MAP_WEATHER_INSIDE;
-    fmem.dmapheader.type = 0;
+    fmem.dmapheader.type = MAP_TYPE_INSIDE;
     fmem.dmapheader.show_name = 0;
     fmem.dmapheader.battle_style = 0;
     fmem.dmapheader.events = dungeon2_init_events_cave(dg2);
@@ -183,12 +184,15 @@ void dungeon2_enter_cave() {
   s16 x = (s16)(nodes[0][0]);
   s16 y = (s16)(nodes[0][1]);
 
-  warp_setup(save1->bank, save1->map, 0xFF, x, y);
+  warp_setup(DG2_BANK, DG2_MAP, 0xFF, x, y);
+  warp_update_last_outdoor_map(save1->x_cam_orig, save1->y_cam_orig);
+  warp_last_map_set(0, save1->bank, save1->map, 0xFF, (s16)(save1->x_cam_orig - 7),
+		  (s16)(save1->y_cam_orig - 7));
   warp_setup_callbacks();
   warp_enable_flags();
 
   // Setup warpback
-  player_get_position(&(dg2->previous_position.x), &(dg2->previous_position.y));
+  player_get_coordinates(&(dg2->previous_position.x), &(dg2->previous_position.y));
   dg2->previous_position.x = (s16)(dg2->previous_position.x - 7);
   dg2->previous_position.y = (s16)(dg2->previous_position.y - 7);
   dg2->previous_bank = save1->bank;

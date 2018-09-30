@@ -50,7 +50,7 @@ void set_trashflag(u8 facing) {
 u32 get_tile_hash_by_facing(u8 facing, size_t m) {
 
     s16 pos[2];
-    player_get_position(&pos[0], &pos[1]);
+    player_get_coordinates(&pos[0], &pos[1]);
     switch (facing) {
         case 1://down
             pos[1]++;

@@ -101,7 +101,7 @@ void pokepad_init_components() {
     fading_cntrl_reset();
     oam_palette_allocation_reset();
     //dma0_cb_reset();
-    callback3_set(NULL);
+    vblank_handler_set(NULL);
     bg_reset(1);
     bg_setup(0, pokepad_bg_cnfgs, 2);
 
@@ -173,6 +173,7 @@ void pokepad_init_components() {
     fmem.pad_mem->color_cb = big_callback_new(pokepad_callback_background_anim, 0);
     pal_set_all_to_black();
     callback1_set(pokepad_show_components);
+    vblank_handler_set(generic_vblank_handler);
 }
 
 void pokepad_load_description() {

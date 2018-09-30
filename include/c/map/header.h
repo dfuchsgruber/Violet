@@ -51,4 +51,19 @@ mapheader *get_mapheader(u8 bank, u8 map);
  */
 bool map_is_x40_x0();
 
+/**
+ * Returns the idx of a warp on a certain map or -1 if there is no warp.
+ * @param map the map to check on
+ * @param position the position where the warp is required to be
+ * @return the warp idx or -1 if there is no warp
+ */
+s8 map_get_warp_idx_by_position(mapheader *map, position_t *position);
+
+/**
+ * Checks if a map type represents an outside map.
+ * @param map_type the map type
+ * @return if the map represents an outside map
+ */
+bool map_type_is_outside (u8 map_type);
+
 #endif /* INCLUDE_C_MAP_HEADER_H_ */

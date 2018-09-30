@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_BATTLE_ATTACK_H_
 #define INCLUDE_C_BATTLE_ATTACK_H_
 
+#include "attack.h"
+
 extern u16 active_attack;
 extern u8 active_attack_slot;
 extern u32 attack_result;
@@ -21,5 +23,9 @@ extern u16 attack_anim_additional_animation[];
 extern u8 attack_anim_tasks_running;
 
 void damage_apply_multiplier(int multiplier);
+
+extern u8 *attack_anim_script;
+
+extern u8 *attack_anims[];
 
 #endif /* INCLUDE_C_BATTLE_ATTACK_H_ */

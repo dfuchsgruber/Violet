@@ -76,31 +76,42 @@ u8 worldmap0_position_data [] = {
 
 };
 
+// Standard shapes
+worldmap_shape_t worldmap_shape_1x1_no_displacement = {0, 0, 1, 1};
 
-worldmap_shape_t worldmap_shape_1x1_no_displacement = {
-	0, 0, 1, 1// no displacement, 1x1 shape
-};
+worldmap_shape_t worldmap_shape_1x2_no_displacement = {0, 0, 1, 2};
 
-worldmap_shape_t worldmap_shape_route_2_vertical = {
-	0, 0, 1, 3
-};
+worldmap_shape_t worldmap_shape_2x1_no_displacement = {0, 0, 2, 1};
 
-worldmap_shape_t worldmap_shape_route_2_horizontal = {
-	1, 2, 3, 1
-};
+worldmap_shape_t worldmap_shape_route_2_vertical = {0, 0, 1, 3};
+
+worldmap_shape_t worldmap_shape_route_2_horizontal = {1, 2, 3, 1};
+
+worldmap_shape_t worldmap_shape_route_2_clockmaker = {3, 2, 1, 1};
 
 worldmap_shape_t *worldmap_pattern_1x1[1] = {
 	&worldmap_shape_1x1_no_displacement
 };
 
-worldmap_shape_t *worldmap_pattern_route_2[2] = {
-	&worldmap_shape_route_2_vertical, &worldmap_shape_route_2_horizontal
+worldmap_shape_t *worldmap_pattern_route_2[3] = {
+	&worldmap_shape_route_2_vertical, &worldmap_shape_route_2_horizontal,
+	&worldmap_shape_route_2_clockmaker
 };
 
 worldmap_shape_t worldmap_shape_feslige_oednis_east = {1, 0, 1, 1};
 
-worldmap_shape_t worldmap_pattern_felige_oednis = {
+worldmap_shape_t *worldmap_pattern_felige_oednis[2] = {
 	&worldmap_shape_1x1_no_displacement, &worldmap_shape_feslige_oednis_east
+};
+
+worldmap_shape_t worldmap_shape_route_6_east = {2, 0, 1, 1};
+
+worldmap_shape_t *worldmap_pattern_route_6[2] = {
+	&worldmap_shape_2x1_no_displacement, &worldmap_shape_route_6_east
+};
+
+worldmap_shape_t *worldmap_pattern_route_1[1] = {
+	&worldmap_shape_1x2_no_displacement
 };
 
 worldmap_shape_t **worldmap0_namespace_patterns[] = {
@@ -117,12 +128,12 @@ worldmap_shape_t **worldmap0_namespace_patterns[] = {
 	worldmap_pattern_1x1, // MAP_SAFFRONIA_CITY
 	worldmap_pattern_1x1, // MAP_NAMESPACE_99
 	worldmap_pattern_1x1, // MAP_NAMESPACE_100
-	worldmap_pattern_1x1, // MAP_ROUTE_1
+	worldmap_pattern_route_1, // MAP_ROUTE_1
 	worldmap_pattern_1x1, // MAP_ROUTE_3
 	worldmap_pattern_felige_oednis, // MAP_FELSIGE_OEDNIS
-	worldmap_pattern_1x1, // MAP_ROUTE_4
+	worldmap_pattern_route_1, // MAP_ROUTE_4
 	worldmap_pattern_1x1, // MAP_ROUTE_5
-	worldmap_pattern_1x1, // MAP_ROUTE_6
+	worldmap_pattern_route_6, // MAP_ROUTE_6
 	worldmap_pattern_1x1, // MAP_ROUTE_7
 	worldmap_pattern_1x1, // MAP_ROUTE_8
 	worldmap_pattern_1x1, // MAP_ROUTE_9
@@ -215,7 +226,7 @@ worldmap_shape_t **worldmap0_namespace_patterns[] = {
 	worldmap_pattern_1x1, // MAP_PRISMANIA_EINK
 };
 
-coordinate worldmap0_namespace_position_assoc[] = {
+coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0x15, 0xb}, // MAP_AMONIA
 	{0x15, 0x8}, // MAP_MERIANA_CITY
 	{0x15, 0x0}, // MAP_AKTANIA
@@ -229,12 +240,12 @@ coordinate worldmap0_namespace_position_assoc[] = {
 	{0x0, 0x0}, // MAP_SAFFRONIA_CITY
 	{0x0, 0x0}, // MAP_NAMESPACE_99
 	{0x0, 0x0}, // MAP_NAMESPACE_100
-	{0x15, 0xa}, // MAP_ROUTE_1
+	{0x15, 0x9}, // MAP_ROUTE_1
 	{0x11, 0x5}, // MAP_ROUTE_3
 	{0x13, 0x5}, // MAP_FELSIGE_OEDNIS
 	{0x15, 0x6}, // MAP_ROUTE_4
 	{0x10, 0x6}, // MAP_ROUTE_5
-	{0xE, 0x6}, // MAP_ROUTE_6
+	{0xC, 0x6}, // MAP_ROUTE_6
 	{0x0, 0x0}, // MAP_ROUTE_7
 	{0x0, 0x0}, // MAP_ROUTE_8
 	{0x0, 0x0}, // MAP_ROUTE_9
@@ -348,7 +359,6 @@ void worldmap_locate_player() {
 	case MAP_TYPE_VILLAGE:
 	case MAP_TYPE_CITY:
 	case MAP_TYPE_ROUTE:
-	case MAP_TYPE_UNDERWATER:
 	case MAP_TYPE_TYPE_06:
 		// x, y from save
 		x = save1->x_cam_orig;
@@ -358,19 +368,20 @@ void worldmap_locate_player() {
 	case MAP_TYPE_BASEMENT:
 	case MAP_TYPE_TYPE_07:
 	case MAP_TYPE_INSIDE:
+	case MAP_TYPE_UNDERWATER:
 		// Load everything from last outdoor map
-		bank = save1->last_outdoor.bank;
-		map = save1->last_outdoor.map;
-		x = save1->last_outdoor.x;
-		y = save1->last_outdoor.y;
+		bank = save1->last_outdoor_map.bank;
+		map = save1->last_outdoor_map.map;
+		x = save1->last_outdoor_map.x;
+		y = save1->last_outdoor_map.y;
 		worldmap_state->player_namespace = get_mapheader(bank, map)->name_bank;
 		break;
 	case MAP_TYPE_SECRET_BASE:
-		// Load everything from last_map_multifloor
-		bank = save1->last_map_multifloor.bank;
-		map = save1->last_map_multifloor.map;
-		x = save1->last_map_multifloor.x;
-		y = save1->last_map_multifloor.y;
+		// Load everything from last_map
+		bank = save1->last_map.bank;
+		map = save1->last_map.map;
+		x = save1->last_map.x;
+		y = save1->last_map.y;
 		worldmap_state->player_namespace = get_mapheader(bank, map)->name_bank;
 		break;
 	default:
@@ -378,6 +389,7 @@ void worldmap_locate_player() {
 		return;
 	}
 	mapheader *header = get_mapheader(bank, map);
+	dprintf("Locating player on %d.%d at coordinates %d, %d\n", bank, map, x, y);
 	int map_width = (int)header->footer->width;
 	int map_height = (int)header->footer->height;
 	// Find the shape in the pattern of namespace

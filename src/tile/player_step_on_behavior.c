@@ -4,7 +4,7 @@
 
 u8 *player_step_on_behavior(){
     s16 pos[2];
-    player_get_position(&pos[0], &pos[1]);
+    player_get_coordinates(&pos[0], &pos[1]);
     u8 behavior = (u8)block_get_behaviour_by_pos(pos[0], pos[1]);
     
     if(behavior == 0xBB){

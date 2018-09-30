@@ -26,7 +26,7 @@ u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
     1, 1, 3, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0xFF
 };
 
-coordinate healing_place_target_coordinates[NUM_HEALING_PLACES] = {
+coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
 		{0x12, 0x6}, // Healing place 1
 		{0x7, 0x4}, // Healing place 2
 		{0x7, 0x4}, // Healing place 3

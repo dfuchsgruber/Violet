@@ -20,6 +20,7 @@
 #include "agbmemory.h"
 #include "bios.h"
 #include "worldmap.h"
+#include "dma.h"
 
 extern const unsigned short gfx_pokedex_habitat_rarityTiles[];
 extern const unsigned short gfx_pokedex_habitat_rodTiles[];
@@ -27,10 +28,8 @@ extern const unsigned short gfx_pokedex_habitat_uiTiles[];
 extern const unsigned short gfx_pokedex_habitat_uiMap[];
 extern const unsigned short gfx_pokedex_habitat_uiPal[];
 extern const unsigned short gfx_pokedex_habitat_rarityPal[];
-
-extern const unsigned short gfx_worldmap_4bppTiles[];
-extern const unsigned short gfx_worldmap_4bppPal[];
-extern const unsigned short gfx_worldmap_4bppMap[];
+extern const unsigned short gfx_pokedex_habitat_maskTiles[];
+extern const unsigned short gfx_pokedex_habitat_maskPal[];
 
 extern const unsigned short gfx_hiro_headTiles[];
 extern const unsigned short gfx_hiroine_headTiles[];
@@ -41,17 +40,17 @@ bg_config pokedex_bg_habitat_configs [] = {
     {0, 0, 31, 0, 0, 0},
     {1, 0, 30, 0, 0, 2},
     {2, 3, 29, 0, 0, 1},
-    {3, 1, 28, 0, 0, 3}
+    {3, 1, 28, 0, 1, 3}
 };
 
 tboxdata pokedex_habitat_tboxes [] = {
-    {0, 6, 0, 24, 2, 15, 1}, //Title Line := 0x0
-    {0, 1, 4, 5, 2, 15, 49}, //Grass := 0x1
-    {0, 1, 8, 5, 2, 15, 59}, //Water := 0x2
-    {0, 1, 12, 5, 2, 15, 69}, //Rod := 0x3
-    {0, 1, 16, 5, 2, 15, 79}, //Radar := 0x4
-    {1, 6, 2, 15, 2, 13, 89}, //Namespace := 0x5 on BG 1
-    {1, 9, 10, 20, 2, 13, 119}, //Not found := 0x6 on BG 1
+    {0, 6, 0, 24, 2, 15, 2}, //Title Line := 0x0
+    {0, 1, 4, 5, 2, 15, 50}, //Grass := 0x1
+    {0, 1, 8, 5, 2, 15, 60}, //Water := 0x2
+    {0, 1, 12, 5, 2, 15, 70}, //Rod := 0x3
+    {0, 1, 16, 5, 2, 15, 80}, //Radar := 0x4
+    {1, 6, 2, 15, 2, 13, 90}, //Namespace := 0x5 on BG 1
+    {1, 9, 10, 20, 2, 13, 120}, //Not found := 0x6 on BG 1
     {0xFF, 0, 0, 0, 0, 0, 0},
 };
 
@@ -173,13 +172,30 @@ oam_template pokedex_habitat_rod_template = {
 tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
 
 int *worldmap_tilemaps[4] = {
-    (int*) gfx_worldmap_4bppMap,
+    (int*) gfx_worldmapMap,
     (int*) 0x083F0354,
     (int*) 0x083F0464,
     (int*) 0x080C0564
 };
 
 u8 *namespace_worldmap_associations = (u8*) 0x083F12FC;
+
+void pokedex_habitat_draw_scanline(u16 colev) {
+	// Initialize the scanline
+	for (int i = 0; i < 32; i++) {
+		dma0_scanline_frames[0][i] = 0xA0F;
+		dma0_scanline_frames[1][i] = 0xA0F;
+	}
+	for (int i = 32; i < 240; i++) {
+		dma0_scanline_frames[0][i] = colev;
+		dma0_scanline_frames[1][i] = colev;
+	}
+	dma0_scanline_flipflop_t flipflop = {.bytes = {.flipflop_cntrl = 1, .defaults_field_16_17 = 0}};
+	dma0_init_scanline((void*)0x04000052,
+			DMA_ENABLE | DMA_TIMING_HBLANK | DMA_REPEAT | DMA_SRC_INCREMENT | DMA_DST_RELOAD |
+			DMA_SIZE(1),
+			flipflop);
+}
 
 void pokedex_init_habitat() {
     generic_callback1();
@@ -210,7 +226,7 @@ void pokedex_init_habitat() {
         fading_cntrl_reset();
         oam_palette_allocation_reset();
         tbox_free_all();
-        callback3_set(NULL);
+        vblank_handler_set(NULL);
         bg_reset(0);
         bg_setup(0, pokedex_bg_habitat_configs, 4); //we use same configs as we want to use each bg seperatly
 
@@ -226,14 +242,18 @@ void pokedex_init_habitat() {
         io_set(0x18, 0);
         io_set(0x1C, (u16) (-24));
 
+        dma0_reset_callback();
+        pokedex_habitat_draw_scanline(0x1F0F);
+
         u16 *gp_tmp = (u16*) 0x0201C000;
 
-        lz77uncompvram(gfx_worldmap_4bppTiles, (void*) 0x06004000);
+        lz77uncompvram(gfx_worldmapTiles, (void*) 0x06004000);
         lz77uncompwram(worldmap_tilemaps[fmem.dex_mem->current_worldmap], gp_tmp);
         lz77uncompvram(gfx_pokedex_habitat_uiTiles, (void*) 0x0600C000);
         lz77uncompwram(gfx_pokedex_habitat_uiMap, bg2map);
+        lz77uncompvram(gfx_pokedex_habitat_maskTiles, (void*) 0x06000000);
 
-        pokedex_habitats_load_for_species(gp_tmp);
+        pokedex_habitats_load_for_species(bg1map);
 
         //unpack the tilemap to 32 width
         for (i = 0; i < 20; i++) {
@@ -249,7 +269,7 @@ void pokedex_init_habitat() {
 
         tbox_flush_set(0, 0);
         tbox_tilemap_draw(0);
-        u8 str_title[] = LANGDEP(PSTRING("Fundorte v."), PSTRING("Habitats of"));
+        u8 str_title[] = LANGDEP(PSTRING("Fundorte v. "), PSTRING("Habitats of "));
         u8 *title = strcpy(strbuf, str_title);
         title = strcat(title, pokemon_names[fmem.dex_mem->current_species]);
         tbox_print_string(0, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
@@ -277,9 +297,9 @@ void pokedex_init_habitat() {
         tbox_print_string(4, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_habitat_radar);
 
         //pal
-        pal_copy(gfx_worldmap_4bppPal, 0, 32);
-        pal_copy(gfx_worldmap_4bppPal, 32, 32);
+        pal_copy(gfx_worldmapPal, 0, 4 * 16);
         pal_decompress(gfx_pokedex_habitat_uiPal, 4 * 16, 32);
+        pal_decompress(gfx_pokedex_habitat_maskPal, 5 * 16, 32);
         pal_copy((void*) 0x83EEAB2, (u16) ((16 + oam_allocate_palette(0xA014))*16), 30);
         pal_decompress(gfx_pokedex_habitat_rarityPal, (u16) ((16 + oam_allocate_palette(0xA016))*16), 32);
         //load_comp_pal_into_RAM(gfx_pokedex_habitat_rodPal, (u16)((16+allocate_obj_pal(0xA017))*16), 32);
@@ -313,6 +333,7 @@ void pokedex_init_habitat() {
         pokedex_habitats_update();
 
         callback1_set(pokedex_habitat_callback_idle);
+        vblank_handler_set(generic_vblank_handler);
         fmem.dex_mem->habitat_cursor_is_moving = false;
         fadescreen_all(0, 0);
 
@@ -371,10 +392,14 @@ void pokedex_habitat_callback_idle() {
                 if (++fmem.dex_mem->habitat_fading_index == 8)
                     fmem.dex_mem->habitat_fading_mode = 1;
             }
-            int i;
-            for (i = 0; i < 32; i++) {
-                color over = {0x001F};
-                pals[32 + i] = color_alpha_blend(pal_restore[32 + i], over, fmem.dex_mem->habitat_fading_index);
+				if (fmem.dex_mem->habitat_found) {
+				int ea = fmem.dex_mem->habitat_fading_index;
+				int eb = 16 - ea;
+				u16 colev = (u16)((eb << 8) | ea);
+				pokedex_habitat_draw_scanline(colev);
+            } else {
+            	// Standard transparency always
+				pokedex_habitat_draw_scanline(0xA0F);
             }
             fmem.dex_mem->habitat_fading_countdown = 2;
         }
@@ -413,13 +438,17 @@ void pokedex_habitat_callback_idle() {
     }
 }
 
-void pokedex_habitats_load_for_species(u16 *unpacked_map) {
+void pokedex_habitats_load_for_species(u16 *bg1map) {
     pokedex_habitat_pair *habitats = malloc(0x1000);
     fmem.dex_mem->habitats = habitats;
     int habitat_size = pokedex_get_namespaces_of_species(habitats, fmem.dex_mem->current_species);
     fmem.dex_mem->habitat_size = habitat_size;
     fmem.dex_mem->habitat_found = false;
-    u8 current_namespace = get_mapheader(save1->bank, save1->map)->name_bank;
+
+    // Locate the player on the map (use the old worldmap routine)
+    worldmap_state_t *wm_state = malloc(sizeof(worldmap_state));
+    worldmap_state = wm_state;
+    worldmap_locate_player();
 
     //test(habitats, habitat_size);
 
@@ -430,14 +459,14 @@ void pokedex_habitats_load_for_species(u16 *unpacked_map) {
                 u8 namespace = worldmap_get_namespace_by_pos(fmem.dex_mem->current_worldmap, (u8) k, (u16) i, (u16) j);
                 if (namespace != 0xC5) {
                     //Lets check if the namespace is present in our list
-                    if (namespace == current_namespace) {
+                    if (j == worldmap_state->cursor_x && i == worldmap_state->cursor_y) {
                         fmem.dex_mem->habitat_cursor_x = j;
                         fmem.dex_mem->habitat_cursor_y = i;
                     }
                     for (l = 0; l < habitat_size; l++) {
                         if (habitats[l]._namespace == namespace) {
-                            //now we need to change the palette of the corresponding tile
-                            unpacked_map[(i + 4)*30 + j + 4] |= 0x2000;
+                        	// Set red block
+                            bg1map[(i + 4) * 32 + j + 7] = 0x5001;
                             fmem.dex_mem->habitat_found = true;
                             break;
                         }
@@ -446,6 +475,8 @@ void pokedex_habitats_load_for_species(u16 *unpacked_map) {
             }
         }
     }
+
+    free(wm_state);
 }
 
 void pokedex_habitats_load_namespace() {

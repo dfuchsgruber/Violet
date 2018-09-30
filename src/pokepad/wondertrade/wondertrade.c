@@ -26,6 +26,7 @@
 #include "music.h"
 #include "overworld/pokemon_party_menu.h"
 #include "overworld/script.h"
+#include "dma.h"
 
 extern const unsigned short gfx_wondertrade_bg_upperTiles[];
 extern const unsigned short gfx_wondertrade_bg_upperMap[];
@@ -254,6 +255,7 @@ void wondertrade_callback_after_selection() {
             io_set(0x54, 0);
             io_bic(0, 0x6000);
             callback1_set(wondertrade_show_components);
+            vblank_handler_set(generic_vblank_handler);
         }
         //now we need to spawn a pokemon for the wondertrade
     }
@@ -349,8 +351,8 @@ void wondertrade_init_components() {
     big_callback_delete_all();
     fading_cntrl_reset();
     oam_palette_allocation_reset();
-    //dma0_cb_reset();
-    callback3_set(NULL);
+    dma0_reset_callback();
+	vblank_handler_set(generic_vblank_handler);
     bg_reset(0);
     bg_setup(0, wondertrade_bg_cnfgs, 3);
 

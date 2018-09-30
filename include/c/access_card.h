@@ -14,8 +14,8 @@ extern "C" {
 
 #include "types.h"
 
-#define ACCESS_CARD_ELEMENT_CNT 3
-#define ACCESS_CARD_INDEX_ATRIUM 2
+#define ACCESS_CARD_ELEMENT_CNT 4
+#define ACCESS_CARD_INDEX_ATRIUM 3
 
     extern u8 **access_card_element_names;
 

@@ -354,7 +354,7 @@ void pokedex_init_components() {
     fading_cntrl_reset();
     oam_palette_allocation_reset();
     //dma0_cb_reset();
-    callback3_set(NULL);
+    vblank_handler_set(NULL);
     bg_reset(0);
     bg_setup(0, pokedex_bg_main_configs, 4);
 
@@ -444,6 +444,7 @@ void pokedex_init_components() {
 
     fadescreen_all(0, 0);
     callback1_set(pokedex_show_components);
+    vblank_handler_set(generic_vblank_handler);
 
     bg_virtual_sync(0);
     bg_virtual_sync(1);

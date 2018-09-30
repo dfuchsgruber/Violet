@@ -79,7 +79,7 @@ u8 *any_grass_player_step_null(){
  * @param pos
  * @return 
  */
-u8 tile_any_grass_init(coordinate *pos){
+u8 tile_any_grass_init(coordinate_t *pos){
     int i;
     int *overworld_effect_state = (int*)0x020386E0;
     s16 x = (s16)overworld_effect_state[0];

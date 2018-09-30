@@ -15,7 +15,7 @@ extern int fata_morgana_blocks_cnt[1];
 void do_fata_morgana(){
     if (save1->map == DESERT_MAP && save1->bank == DESERT_BANK) {
         s16 coordinates[2];
-        player_get_position(&coordinates[0], &coordinates[1]);
+        player_get_coordinates(&coordinates[0], &coordinates[1]);
         //dprintf("Player at x %x, y %x\n", coordinates[0], coordinates[1]);
         
         

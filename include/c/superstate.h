@@ -43,6 +43,11 @@ extern superstate super;
 void generic_callback1();
 
 /**
+ * Generic vblank handler
+ */
+void generic_vblank_handler();
+
+/**
  * Sets the callback1
  * @param f the callback function to set
  */
@@ -58,6 +63,6 @@ void callback2_set(void (*f)());
  * Sets the callback3
  * @param f the callback function to set
  */
-void callback3_set(void (*f)());
+void vblank_handler_set(void (*f)());
 
 #endif

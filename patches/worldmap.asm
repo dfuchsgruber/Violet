@@ -65,3 +65,9 @@
 	bx r0
 	.pool
 
+// Always locate player via the locate routine
+.org 0x080C3F00
+	ldr r0, =0x080C42EA | 1
+	bx r0
+	.pool
+

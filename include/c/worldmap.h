@@ -27,6 +27,8 @@ extern "C" {
     	u16 cursor_x, cursor_y;
     	u8 unknown[0x10];
     	u16 player_namespace;
+    	u8 unkown2[0xE];
+    	u16 tiles[0x80]; // whatever those tiles may be...
 
     } worldmap_state_t;
 
@@ -50,6 +52,7 @@ extern "C" {
     int *worldmap_tilemaps[4];
     u8 *namespace_worldmap_associations;
     extern const unsigned short gfx_worldmapTiles[];
+    extern const unsigned short gfx_worldmapMap[];
     extern const unsigned short gfx_worldmapPal[];
 
     /**
@@ -88,6 +91,11 @@ extern "C" {
      * @param flag the flag to set
      */
     void worldmap_flag_set(u16 flag);
+
+    /**
+     * Locates the player on the current worldmap (saves x, y to the worldmap state).
+     */
+    void worldmap_locate_player();
 
 #ifdef	__cplusplus
 }

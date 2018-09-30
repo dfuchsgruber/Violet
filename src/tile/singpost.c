@@ -13,7 +13,7 @@ u8 *singpost_behavior_xBC(){
     //trigger script by block id (since we do not have enough behaviorbytes...)
     s16 x, y;
     u8 facing = player_get_facing();
-    player_get_position(&x, &y);
+    player_get_coordinates(&x, &y);
     x = (s16)(x + walking_directions[facing].x);
     y = (s16)(y + walking_directions[facing].y);
     u16 block_id = block_get_by_pos(x, y) & 0x3FF;
@@ -121,7 +121,7 @@ u16 singpost_get_flag(u32 fields, u8 field_id){
 
 void mushroom_create(){
     s16 pos[2];
-    player_get_position(&pos[0], &pos[1]);
+    player_get_coordinates(&pos[0], &pos[1]);
     u32 seq[4] = {(u32)pos[0], (u32)pos[1], (u32)(save1->bank), (u32)(save1->map)};
     u32 h = tmp_hash(seq, 4) % 3;
     if(h){

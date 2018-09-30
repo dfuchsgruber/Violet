@@ -38,6 +38,7 @@ extern u8 battle_trainer_kind;
 extern u8 battle_result;
 extern u16 battle_trainer_id;
 extern u8 battle_stat_change[];
+extern u8 battle_effects[4]; // Probably there even more, 0x3 is the target effect
 
 /**
  * Checks if the battle is a double battle

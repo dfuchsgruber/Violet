@@ -39,10 +39,10 @@ map_event_person pokeradar_map_event_person = {
     0,
 };
 
-bool pokeradar_determine_position(coordinate *result) {
+bool pokeradar_determine_position(coordinate_t *result) {
     s16 camera_pos[2];
-    player_get_position(&camera_pos[0], &camera_pos[1]);
-    coordinate *candidates = (coordinate*) malloc(sizeof (coordinate)*15 * 11); //Every tile could be a candidate
+    player_get_coordinates(&camera_pos[0], &camera_pos[1]);
+    coordinate_t *candidates = (coordinate_t*) malloc(sizeof (coordinate_t)*15 * 11); //Every tile could be a candidate
     int candidate_cnt = 0;
     int i, j;
     for (i = -7; i <= 7; i++) {
@@ -106,7 +106,7 @@ void pokeradar_init(bool is_outdoor) {
 u8 pokeradar_prepeare() {
     if (!checkflag(POKERADAR_POKEMON_SPAWNED))
         return 4; //already spawned a poke
-    coordinate npc_pos;
+    coordinate_t npc_pos;
     u16 wild_table_entry = map_wild_pokemon_get_current_table_id();
     if (wild_table_entry != 0xFFFF) {
         if (wild_pokemon[wild_table_entry].other) {
@@ -196,7 +196,7 @@ bool pokeradar_step() {
         } else {
             //pos change
             *var_access(POKERADAR_ENEMY_STATE) = 0;
-            coordinate npc_pos;
+            coordinate_t npc_pos;
             if (pokeradar_determine_position(&npc_pos)) {
                 cmem.pokeradar_person.x = (s16) (npc_pos.x - 7);
                 cmem.pokeradar_person.y = (s16) (npc_pos.y - 7);

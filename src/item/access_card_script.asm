@@ -12,6 +12,7 @@ access_card_element_names:
 access_card_element_names_r:
     .word str_access_card_cyber
     .word str_access_card_fossil
+    .word str_access_card_geheimpower
     .word str_access_card_atrium
 
 @ // Strings
@@ -26,6 +27,9 @@ access_card_element_names_r:
 	str_access_card_cyber:
 		.string "8F Cybernetik"
 
+	str_access_card_geheimpower:
+		.string "2F Geheimpower"
+
 	str_access_card_already_there:
 		.string "Du befindest dich bereits auf\ndieser Ebene."
 
@@ -39,6 +43,9 @@ access_card_element_names_r:
 
 	str_access_card_cyber:
 		.string "9F Cybernetics"
+
+	str_access_card_geheimpower:
+		.string "2F Secret Power"
 
 	str_access_card_already_there:
 		.string "But you are already on that\nfloor!"

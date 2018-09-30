@@ -11,7 +11,7 @@
 
 void egg_warm_update(){
     s16 pos[2];
-    player_get_position(&pos[0], &pos[1]);
+    player_get_coordinates(&pos[0], &pos[1]);
     u8 behavior = (u8)block_get_behaviour_by_pos(pos[0], pos[1]);
     
     u16 *v_hatching_fastened_left = var_access(HATCHING_BOOST_STEPS);

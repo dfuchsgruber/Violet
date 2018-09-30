@@ -375,5 +375,6 @@ void trainerschool_selection_init(){
     TSS_MEM->cursor = 1;
     fadescreen_all(1, 0);
     callback1_set(trainerschool_selection_init_components);
+    vblank_handler_set(generic_vblank_handler);
     setflag(MAP_BGN_AUTO_ALIGN_OFF);
 }

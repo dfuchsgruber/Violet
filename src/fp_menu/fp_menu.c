@@ -205,6 +205,7 @@ void fp_menu_callback_init() {
         pal_decompress(gfx_fp_menu_arrow_upPal, (u16) (256 + arrow_pal * 16), 32);
 
         callback1_set(fp_menu_callback_show);
+        vblank_handler_set(generic_vblank_handler);
         pal_set_all_to_black(); //we avoid the 1frame show of a pal
 
         bg_virtual_sync(0);

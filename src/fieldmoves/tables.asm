@@ -68,6 +68,8 @@ pokemon_party_menu_opts:  @format : string, function pointer
     .word 0x81245f5
     .word attack_names + ATTACK_GEHEIMPOWER * 13
     .word 0x81245f5
+    .word attack_names + ATTACK_KRAXLER * 13
+    .word 0x81245f5
 
 .global field_moves
 
@@ -86,6 +88,7 @@ field_moves:
     .hword 0x87
     .hword 0xe6
     .hword ATTACK_GEHEIMPOWER
+    .hword ATTACK_KRAXLER
     .hword 0xFFFF
 
 .global field_move_descriptions
@@ -106,13 +109,21 @@ field_move_descriptions:
 .word 0x8417569
 .word 0x8417554
 .word str_desc_field_move_secret_power
+.word str_desc_field_move_rock_climb
 
 .ifdef LANG_GER
 	str_desc_field_move_secret_power:
 		.string "Erkunde verst. Areale"
+
+	str_desc_field_move_rock_climb:
+		.string "Kraxle Felswände empor"
+
 .elseif LANG_EN
 	str_desc_field_move_secret_power:
 		.string "Discover hidden areas"
+
+	str_desc_field_move_rock_climb:
+		.string "Climb rock faces"
 .endif
 
 
@@ -146,6 +157,8 @@ field_move_initalizers:
 .word 0x80de2ed
 .word 0xd
 .word field_move_secret_power_init
+.word 0xd
+.word field_move_rock_climb_init
 .word 0xd
 @.word 0x80f6985 @
 @.word 0xd

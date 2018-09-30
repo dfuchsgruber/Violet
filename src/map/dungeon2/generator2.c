@@ -119,7 +119,7 @@ int dungeon2_flood_fill(u8 *map, u8 *map2, dungeon_generator2 *dg2){
     }while(map[y * height + x] == DG2_WALL);
     
     int filled_tiles = 0;
-    coordinate *stack = malloc((size_t)((int)sizeof(coordinate) * width * height));
+    coordinate_t *stack = malloc((size_t)((int)sizeof(coordinate_t) * width * height));
     stack[0].x = x;
     stack[0].y = y;
     int stack_size = 1;

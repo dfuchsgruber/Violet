@@ -22,3 +22,8 @@
     ldr r1, =pokemon_party_menu_opt_outdoor_move | 1
     bx r1
     .pool
+
+.org 0x0805621C
+	ldr r1, =map_type_enables_fly_or_teleport | 1
+	bx r1
+	.pool

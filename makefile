@@ -89,6 +89,7 @@ CONSTANTSH=$(shell ($(PYMAPCONSTEX) --get $(MAPPROJ)))
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
 COBJS= $(CSRC:%.c=$(BLDPATH)/%.o)
+CDEP = $(COBJS:%.o=%.d)
 	
 MIDAS= $(MIDSRC:%.mid=$(BLDPATH)/%.s)
 MIDOBJS= $(MIDAS:%.s=%.o)
@@ -110,20 +111,23 @@ MAPTILESETOBJS = $(MAPTILESETAS:%.s=%.o)
 
 .PHONY: all clean soundfont
 
-$(ASOBJS1): $(BLDPATH)/%.o: %.asm $(CONSTANTSH)
+$(ASOBJS1): $(BLDPATH)/%.o: %.asm
 	$(shell mkdir -p $(dir $@))
 	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE) 
 	$(AS) $(ASFLAGS)  $(BLDPATH)/$*.i -o $@
 
-$(ASOBJS2): $(BLDPATH)/%.o: %.s $(CONSTANTSH)
+$(ASOBJS2): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE)   
 	$(AS) $(ASFLAGS)  $(BLDPATH)/$*.i -o $@
 	
-$(COBJS): $(BLDPATH)/%.o: %.c $(CONSTANTSH)
+-include $(CDEP)
+
+$(COBJS): $(BLDPATH)/%.o: %.c
 	$(shell mkdir -p $(dir $@))
+	@echo "$<"
 	$(PYPREPROC) -o $(BLDPATH)/$*.c $< $(CHARMAP) $(CLANGMACRO)   
-	$(CC) $(CFLAGS) $(BLDPATH)/$*.c -o $@
+	$(CC) $(CFLAGS) -MMD $(BLDPATH)/$*.c -o $@
 	
 $(MIDAS): $(BLDPATH)/%.s: %.mid
 	$(shell mkdir -p $(dir $@))
@@ -165,7 +169,7 @@ $(MAPAS): $(BLDPATH)/%.s: %.pmh
 	$(shell mkdir -p $(dir $@))
 	$(PYMAP2S) -o $@ $< $(MAPPROJ)
 
-$(MAPOBJS): %.o: %.s $(CONSTANTSH)
+$(MAPOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) $< -o $@
 	
@@ -247,6 +251,7 @@ soundfont: $(BLDROM)
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
 $(BLDROM): $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
+	@echo "$(CDEP)"
 	@echo "Creating rom object..."
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)

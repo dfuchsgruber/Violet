@@ -3,6 +3,9 @@
     .word startmenu_init_pokepad | 1
     .word str_pokemon
 
+.org 0x083A71E0
+	.word str_pokepad_description
+
 //Pokeradar
 .org 0x0805FDB0
     ldr r3, =person_get_by_target_index | 1

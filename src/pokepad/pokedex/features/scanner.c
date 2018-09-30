@@ -170,7 +170,7 @@ void _pokedex_callback_init_feature_scanner(pokedex_scanner_state *state){
     fading_cntrl_reset();
     oam_palette_allocation_reset();
     tbox_free_all();
-    callback3_set(NULL);
+    vblank_handler_set(NULL);
     dma0_reset_callback();
     big_callback_delete_all();
     bg_reset(0);
@@ -524,6 +524,7 @@ void pokedex_callback_init_feature_scanner() {
         pokedex_feature_scanner_print_generic_list(state->entries_grass, state->num_entries_grass);
         pokedex_feature_scanner_draw_generic_icons(state, state->entries_grass, state->num_entries_grass);
         callback1_set(pokedex_callback_feature_scanner_clear);
+        vblank_handler_set(generic_vblank_handler);
         fadescreen_all(0, 0);
     }
 }

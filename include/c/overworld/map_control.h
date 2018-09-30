@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_OVERWORLD_MAP_CONTROL_H_
 #define INCLUDE_C_OVERWORLD_MAP_CONTROL_H_
 
+
 typedef struct{
     u8 _unkown;
     u8 _unkown_2;
@@ -46,6 +47,15 @@ void map_reload_no_fading();
 void warp_setup(u8 bank, u8 map, u8 exit, s16 x, s16 y);
 
 /**
+ * Performs warp setup based on an event on a map.
+ * @param bank the bank the warp targets
+ * @param map the map inside the bank the warp targets
+ * @param warp_idx the idx of the warp targeted by the triggering warp
+
+ */
+void warp_setup_by_event (u8 target_bank, u8 target_map, u8 warp_idx);
+
+/**
  * Sets up callbacks to execute the warping process setup by warp_setup
  */
 void warp_setup_callbacks();
@@ -78,14 +88,40 @@ void warp_enable_flags();
 
 /**
  * Sets the warp history (last used warp)
- * @param index index in the warp history
+ * @param unused not used
  * @param bank target map bank
  * @param map target map id
  * @param exit target warp
  * @param x x coordiante if exit == 0xFF
  * @param y y coordinate if exit == 0xFF
  */
-void warp_history_set(u8 index, u8 bank, u8 map, u8 exit, s16 x, s16 y);
+void warp_last_map_set(int unused, u8 bank, u8 map, u8 exit, s16 x, s16 y);
+
+/**
+ * Sets the last map to a map and the current player coordinates.
+ * @param bank the bank to set
+ * @param map the map to set
+ * @param warp_idx the warp index to set
+ */
+void warp_last_map_set_on_current_position(u8 bank, u8 map, s8 warp_idx);
+
+/**
+ * Updates the last outdoor map to the current map if and only if the current map is an outdoor
+ * map and the target map is not an outdoor map.
+ * @param x position on the current map (+7 because of borders)
+ * @param y position on the current map (+7 because of borders)
+ */
+void warp_update_last_outdoor_map (s16 x, s16 y);
+
+/**
+ * Sets a map and position to the last outdoor map visited by the player.
+ * @param bank the bank of the last outdoor map
+ * @param map the map index of the last outdoor map
+ * @param exit the warp index on the last outdoor map (or -1)
+ * @param x the x coordinate on the last outdoor map (or -1)
+ * @param y the y coordinate on the last outdoor map (or -1)
+ */
+void warp_set_last_outdoor_map (u8 bank, u8 map, s8 exit, s16 x, s16 y);
 
 /**
  * Frees all components of the overworld (i.e. virtual maps)

@@ -8,6 +8,11 @@
 #include "color.h"
 #include "bios.h"
 #include "vars.h"
+#include "battle/battler.h"
+#include "battle/battlescript.h"
+#include "battle/state.h"
+#include "constants/battle_bgs.h"
+#include "constants/pokemon_types.h"
 
 battle_bg battle_bgs[29] = {
     // Battle street
@@ -172,11 +177,59 @@ u8 battle_bg_get_id(){
     //dprintf("Battle bg var override is %d\n", *var_override);
     if(*var_override)
         return (u8)(*var_override - 1);
-    coordinate pos;
-    player_get_position(&pos.x, &pos.y);
+    coordinate_t pos;
+    player_get_coordinates(&pos.x, &pos.y);
     u8 bg_id = (u8)block_get_field_by_pos(pos.x, pos.y, 3);
     return bg_id;
 }
+
+
+void bsc_cmd_xEB_set_type_to_terrain() {
+	bsc_offset++;
+	u8 type;
+	switch (battle_bg_get_id()) {
+	case BATTLE_BG_GRASS:
+		type = TYPE_GRASS;
+		break;
+	case BATTLE_BG_GYM:
+		type = TYPE_FIGHTING;
+		break;
+	case BATTLE_BG_CAVE:
+	case BATTLE_BG_MOUNTAIN:
+	case BATTLE_BG_MUSEUM:
+		type = TYPE_ROCK;
+		break;
+	case BATTLE_BG_MILL:
+	case BATTLE_BG_CLOUD:
+		type = TYPE_FLYING;
+		break;
+	case BATTLE_BG_OCEAN:
+	case BATTLE_BG_SHORE:
+	case BATTLE_BG_POND:
+	case BATTLE_BG_WATER_CAVE:
+		type = TYPE_WATER;
+		break;
+	case BATTLE_BG_DESERT:
+		type = TYPE_GROUND;
+		break;
+	case BATTLE_BG_FIRE:
+		type = TYPE_FIRE;
+		break;
+	default:
+	case BATTLE_BG_EVOLUTION:
+	case BATTLE_BG_CAPTURE:
+	case BATTLE_BG_STREET:
+		type = TYPE_NORMAL;
+		break;
+	}
+	if (type == battlers[attacking_battler].type1 ||
+			type == battlers[attacking_battler].type2) {
+		bsc_offset = (u8*)bsc_get_word();
+	} else {
+		bsc_offset += 4;
+	}
+}
+
 
 u16 terrain_moves[] = {
     ATTACK_STERNSCHAUER,

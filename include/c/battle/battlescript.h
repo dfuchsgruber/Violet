@@ -66,4 +66,10 @@ void battlescript_cmd_x06_apply_damage_modifiers();
  */
 void bsc_cmd_xEA_recycle_item();
 
+/**
+ * Returns a word from the current bsc pointer and increments by 4.
+ * @return the word
+ */
+int bsc_get_word();
+
 #endif /* INCLUDE_C_BATTLE_BATTLESCRIPT_H_ */

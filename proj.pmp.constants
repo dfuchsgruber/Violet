@@ -409,7 +409,7 @@
             "ITEM_VM08",
             "ITEM_ITEM_15B",
             "ITEM_ITEM_15C",
-            "ITEM_EICHS_PAKET",
+            "ITEM_ZUGANGSKARTE",
             "ITEM_POKEFLOETE",
             "ITEM__OEFFNER",
             "ITEM_RAD_COUPON",
@@ -1816,13 +1816,15 @@
             0x909 : "TRAINERSCHOOL_FAUN_OUTSIDE",
             0x90A : "AKTANIA_GENGARNITE",
 			0x90B : "TRAINERSCHOOL_TALKED_TO_BLAISE",
-
+			0x90C : "ROUTE_2_FELIX",
+			0x90D : "ROUTE_2_EAST_ITEM_0",
+			0x90E : "ROUTE_2_EAST_ITEM_1",
             0x90F : "BLACKOUT_BYPASS",
             0x910 : "TRANS_PALETTE_FETCH",
             0x911 : "TRANS_DISABLE",
             0x912 : "CAUGHT_POKEDEX_DISABLE",
             0x913 : "TILESET_ANIM_DISABLE",
-
+			0x914 : "ROUTE_2_EAST_ITEM_2",
             0x915 : "WONDERTRADE",
             0x916 : "MAP_BGN_AUTO_ALIGN_OFF",
             0x917 : "POKERADAR_POKEMON_SPAWNED",
@@ -1895,7 +1897,7 @@
             0x95B : "VOLCANO_ITEM_4",
             0x95C : "VOLCANO_ITEM_5",
             0x95D : "VOLCANO_ITEM_6",
-
+			0x95E : "ROUTE_2_EAST_EGG_0",
             0x95F : "VOLCANO_DISERAKT",
             0x960 : "INFERIOR_VIOLET_GRUNTS",
             0x961 : "VOLCANO_ITEM_0",
@@ -1909,9 +1911,9 @@
             0x969 : "TRAINER_TIPP_DNS",
             0x96a : "TRAINER_TIPP_CLOUD",
             0x96b : "ROUTE_3_MAY",
-
+			0x96C : "ROUTE_2_EAST_ITEM_3",
             0x96D : "VOLCANO_PEAK_IGVA_MISTRAL_2",
-
+			0x96E : "SECRET_POWER_LAB_ACCESS",
             0x96F : "ROUTE_2_ITEM_0",
             0x970 : "ROUTE_2_ITEM_1",
             0x971 : "ROUTE_2_ITEM_3",
@@ -2708,6 +2710,72 @@
             64 : "BATTLE_WEATHER_SUN_DROUGHT",
             128 : "BATTLE_WEATHER_HAIL"
         }
+    },
+    "battle_bgs" : {
+    	"type" : "enum",
+    	"base" : 0,
+    	"values" : [
+    		"BATTLE_BG_STREET",
+    		"BATTLE_BG_GRASS",
+    		"BATTLE_BG_MOUNTAIN",
+    		"BATTLE_BG_POND",
+    		"BATTLE_BG_CLOUD",
+    		"BATTLE_BG_SHORE",
+    		"BATTLE_BG_OCEAN",
+    		"BATTLE_BG_CAVE",
+    		"BATTLE_BG_DESERT",
+    		"BATTLE_BG_GYM",
+    		"BATTLE_BG_WATER_CAVE",
+    		"BATTLE_BG_MUSEUM",
+    		"BATTLE_BG_FIRE",
+    		"BATTLE_BG_EVOLUTION",
+    		"BATTLE_BG_CAPTURE",
+    		"BATTLE_BG_MILL"
+    	]
+    },
+    "battle_effects" : {
+    	"type" : "enum",
+    	"base" : 0,
+    	"values" : [
+    		"BATTLE_EFFECT_NONE",
+    		"BATTLE_EFFECT_SLEEP",
+    		"BATTLE_EFFECT_POISON",
+    		"BATTLE_EFFECT_FIRE",
+    		"BATTLE_EFFECT_ICE",
+    		"BATTLE_EFFECT_PARALYSIS",
+    		"BATTLE_EFFECT_BAD_POISON",
+    		"BATTLE_EFFECT_CONFUSION",
+    		"BATTLE_EFFECT_FLINCH",
+    		"BATTLE_EFFECT_TRI_ATTACK",
+    		"BATTLE_EFFECT_UPROAR",
+    		"BATTLE_EFFECT_COINS",
+    		"BATTLE_EFFECT_LOCK_IN_MOVE",
+    		"BATTLE_EFFECT_RESIDUAL_DAMAGE",
+    		"BATTLE_EFFECT_RECOIL",
+    		"BATTLE_EFFECT_RAISE_ATTACK",
+    		"BATTLE_EFFECT_RAISE_DEFENSE",
+    		"BATTLE_EFFECT_RAISE_INITIATIVE",
+    		"BATTLE_EFFECT_RAISE_SPECIAL_ATTACK",
+    		"BATTLE_EFFECT_RAISE_SPECIAL_DEFENSE",
+    		"BATTLE_EFFECT_RAISE_ACCURACY",
+    		"BATTLE_EFFECT_RAISE_EVASIVENESS",
+    		"BATTLE_EFFECT_LOWER_ATTACK",
+    		"BATTLE_EFFECT_LOWER_DEFENSE",
+    		"BATTLE_EFFECT_LOWER_INITIATIVE",
+    		"BATTLE_EFFECT_LOWER_SPECIAL_ATTACK",
+    		"BATTLE_EFFECT_LOWER_SPECIAL_DEFENSE",
+    		"BATTLE_EFFECT_LOWER_ACCURACY",
+    		"BATTLE_EFFECT_LOWER_EVASIVENESS",
+    		"BATTLE_EFFECT_RECHARGE"
+    	]
+    },
+    "block_hm_usage" : {
+        "type" : "dict",
+        "values" : {
+            0 : "HM_USAGE_NONE",
+            (2**0) : "HM_USAGE_CUT",
+            (2**1) : "HM_USAGE_SURF",
+            (2**4) : "HM_USAGE_ROCK_CLIMB"
+        }
     }
-
 }

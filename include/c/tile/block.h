@@ -18,10 +18,10 @@
 
 typedef struct bdata {
     u32 behavior : 9;
-    u32 hm_usage : 5;
+    u32 hm_usage : 5; // probably flags
     u32 field_2 : 4;
     u32 field_3 : 6;
-    u32 field_4 : 3; //if 0 no wildbattle triggered, 1 fetch data from wild grass table, 2 water
+    u32 wild_pokemon_type : 3; //if 0 no wildbattle triggered, 1 fetch data from wild grass table, 2 water
     u32 field_5 : 2;
     u32 field_6 : 2;
     u32 field_7 : 1;
@@ -65,7 +65,7 @@ typedef union union_block_data {
 #define DIR_DIASE 7
 #define DIR_DIASW 8
 
-extern coordinate walking_directions[];
+extern coordinate_t walking_directions[];
 
 
 /**
@@ -80,7 +80,7 @@ void map_draw_block(s16 x, s16 y);
  * @param x offset to store the x coordinate
  * @param y offset to store the y coordinate
  */
-void player_get_position(s16 *x, s16 *y);
+void player_get_coordinates(s16 *x, s16 *y);
 
 /**
  * Returns the id of a block at a certain position

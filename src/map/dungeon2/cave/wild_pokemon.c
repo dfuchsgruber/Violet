@@ -82,7 +82,7 @@ void dungeon2_set_encounter_cave() {
   u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
   u8 mean = 0, std_deviation = 0;
   dungeon2_cave_wild_pokemon_level_distribution(&mean, &std_deviation);
-  mean = (u8)(mean + 2 * std_deviation); // High level for this pokemon
+  mean = (u8)(mean + std_deviation + std_deviation / 2); // High level for this pokemon
 
   int level = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(INT_TO_FIXED(std_deviation),
         dungeon2_rnd_normal(dg2))));

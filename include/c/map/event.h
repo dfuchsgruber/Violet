@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_MAP_EVENT_H_
 #define INCLUDE_C_MAP_EVENT_H_
 
+#include "tile/coordinate.h"
+#include "map/header.h"
+
 typedef struct map_event_person {
     u8 target_index; //scripts use this as target reference
     u8 overworld_index; //the picture to be displayed
@@ -79,5 +82,6 @@ typedef struct map_events {
  * @return pointer to the person
  */
 map_event_person *map_get_person(u8 target_idx, u8 map_id, u8 bank);
+
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

@@ -28,6 +28,9 @@ items:
     .word 0
 
 .ifdef LANG_GER
+.global str_pokepad_description
+	str_pokepad_description:
+		.string "Nutze verschiedene Apps, die auf\ndem Poképad installiert wurden."
 
 	str_pokepad_wondertrade:
 		.string "Wundertausch"
@@ -48,6 +51,10 @@ items:
 		.string "Spüre seltene Pokémon in der\nNähe auf."
 
 .elseif LANG_EN
+
+.global str_pokepad_description
+	str_pokepad_description:
+		.string "Use the various apps that were\ninstalled for the Poképad."
 
 	str_pokepad_wondertrade:
 		.string "Wondertrade"

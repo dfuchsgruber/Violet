@@ -12,7 +12,7 @@
 
 void special_prepeare_player_facing() {
     s16 coordinates [2];
-    player_get_position(&coordinates[0], &coordinates[1]);
+    player_get_coordinates(&coordinates[0], &coordinates[1]);
     u8 pers_id = (u8) (*var_access(0x800F)); //Get LASTTALKED
     u8 npc_id;
     if (!npc_get_id_by_overworld_id(pers_id, save1->map, save1->bank, &npc_id)) {

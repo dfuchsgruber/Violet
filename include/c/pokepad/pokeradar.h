@@ -16,7 +16,7 @@
     extern u8 *script_pokeradar_flee;
 
     bool pokeradar_npc_alert(u8 npc_id);
-    bool pokeradar_determine_position(coordinate *result);
+    bool pokeradar_determine_position(coordinate_t *result);
     void pokeradar_callback_return_to_ow_and_init_script();
     void pokeradar_init(bool is_outdoor);
     u8 pokeradar_prepeare();
