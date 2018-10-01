@@ -31,6 +31,9 @@ links = {
     267 : 0x17b,
     268 : 0x72,
     257 : 0x3e,
+    440 : 405, # Groudon-Regent -> Groudon
+    441 : 317 # Kecleon Purple -> Kecleon
+
 }
 
 

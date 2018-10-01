@@ -1,0 +1,1 @@
+{'type': 'enum', 'base': 513, 'values': ['LANGUAGE_JAP', 'LANGUAGE_ENG', 'LANGUAGE_FRA', 'LANGAUGE_ITA', 'LANGUAGE_GER', 'LANGUAGE_KOR', 'LANGUAGE_ESP']}

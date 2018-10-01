@@ -6,6 +6,7 @@
 #include "language.h"
 #include "agbmemory.h"
 #include "vars.h"
+#include "debug.h"
 
 u8 str_present_query[] = LANGDEP(
     PSTRING("Geschenkcode?"),
@@ -43,12 +44,17 @@ void (*pstring_query_string_initializers[])() = {
 };
 
 extern u8 ow_script_present_0[];
+extern u8 ow_script_present_purple_kecleon[];
 
 present_t presents[NUM_PRESENTS] = {
     {
         {0x62, 0xb7, 0xfb, 0xdf, 0xfa, 0x6a, 0x4e, 0x18},
         ow_script_present_0     
-    }
+    },
+	{
+		{214, 45, 234, 154, 148, 135, 48, 215},
+		ow_script_present_purple_kecleon
+	}
 };
 
 u8 *present_get_matching_md(u8 *md){
@@ -78,6 +84,9 @@ void present_query_closure(){
     strcpy(input, buffer0);
     u8 md[SHA3_MDLEN] = {0};
     sha3(input, md);
+    for (int i = 0; i < SHA3_MDLEN; i++) {
+    	dprintf("Input md[%d]: %d\n", i, md[i]);
+    }
     
     
     u8 *script = present_get_matching_md(md);

@@ -4,7 +4,7 @@
 .global map_17_2_wild_grass
 .align 4
 map_17_2_wild_grass:
-.byte 0x1 @// Frequency in 1/256
+.byte 2 @// Frequency in 1/256
 .byte 0, 0, 0
 .word map_17_2_wild_grass_entries
 

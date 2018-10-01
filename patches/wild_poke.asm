@@ -1,9 +1,3 @@
-//wild poke
-.org 0x0803DA0C
-	ldr r1, =wild_poke_less_shinies | 1
-	bx r1
-	.pool
-
 .org 0x0806CB54
 	ldr r0, =wildbattle_trainerschool_hook_trigger_script | 1
 	bx r0
@@ -22,6 +16,16 @@
 .org 0x08082C20
 		ldr r2, =map_wildbattle_init | 1
 		bx r2
+		.pool
+
+.org 0x0803DCB8
+		mov r0, r5
+		ldr r1, =pokemon_new_pid_with_nature | 1
+		bl blxr1x0803DCB8
+		mov r4, r0
+		ldr r1, =0x0803DCD8 | 1
+		blxr1x0803DCB8:
+		bx r1
 		.pool
 
 .org 0x8082cb0

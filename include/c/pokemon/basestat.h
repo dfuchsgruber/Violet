@@ -10,6 +10,8 @@
 
 #include "pokemon/count.h"
 
+#define LINKED_PKMN_CNT 1
+
 typedef struct {
     u8 base_hp;
     u8 base_atk;
@@ -49,5 +51,7 @@ typedef struct {
 
 
 basestat basestats[POKEMON_CNT];
+
+u16 pokemon_linked[LINKED_PKMN_CNT];
 
 #endif /* INCLUDE_C_POKEMON_BASESTAT_H_ */

@@ -83,11 +83,12 @@ WAVSRC:=$(call rwildcard,asset/cry/,*.wav)
 SAMPLESRC:=$(call rwildcard,asset/sample/,*.bin)
 MAPTILESETSRC:=$(call rwildcard,src/,*.pts)
 MAPSRC:=$(call rwildcard,src/,*.pmh)
-CONSTANTS=$(MAPPROJ).constants
-CONSTANTSH=$(shell ($(PYMAPCONSTEX) --get $(MAPPROJ)))
+CONSTANTS=$(call rwildcard,constants/,*.const)
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
+ASDEP1 = $(ASOBJS1:%.o=%.d)
 ASOBJS2= $(ASSRC2:%.s=$(BLDPATH)/%.o)
+ASDEP2= $(ASOBJS1:%.o=%.d)
 COBJS= $(CSRC:%.c=$(BLDPATH)/%.o)
 CDEP = $(COBJS:%.o=%.d)
 	
@@ -105,23 +106,38 @@ SAMPLEOBJS = $(SAMPLEAS:%.s=%.o)
 	
 MAPAS = $(MAPSRC:%.pmh=$(BLDPATH)/%.s)
 MAPOBJS = $(MAPAS:%.s=%.o)
+MAPDEP = $(MAPOBJS:%.o=%.d)
 
 MAPTILESETAS = $(MAPTILESETSRC:%.pts=$(BLDPATH)/%.s)
 MAPTILESETOBJS = $(MAPTILESETAS:%.s=%.o)
+MAPTSDEP = $(MAPTILESETOBJS:%.o=%.d)
+
+CONSTANTSHAS=$(CONSTANTS:%.const=include/as/%.s)
+CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 
 .PHONY: all clean soundfont
 
+$(CONSTANTSHAS): include/as/%.s: %.const
+	$(shell mkdir -p $(dir $@))
+	$(PYMAPCONSTEX) -t as $< $@
+	
+$(CONSTANTSHC): include/c/%.h: %.const
+	$(shell mkdir -p $(dir $@))
+	$(PYMAPCONSTEX) -t c $< $@
+
 $(ASOBJS1): $(BLDPATH)/%.o: %.asm
 	$(shell mkdir -p $(dir $@))
+	@echo "$<"
 	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE) 
-	$(AS) $(ASFLAGS)  $(BLDPATH)/$*.i -o $@
+	$(AS) $(ASFLAGS) --MD $(BLDPATH)/$*.d $(BLDPATH)/$*.i -o $@
 
 $(ASOBJS2): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
 	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE)   
-	$(AS) $(ASFLAGS)  $(BLDPATH)/$*.i -o $@
-	
--include $(CDEP)
+	$(AS) $(ASFLAGS) --MD $(BLDPATH)/$*.d $(BLDPATH)/$*.i -o $@
+
+-include $(CDEP) $(ASDEP1) $(ASDEP2) $(MAPDEP) $(MAPTSDEP)
+
 
 $(COBJS): $(BLDPATH)/%.o: %.c
 	$(shell mkdir -p $(dir $@))
@@ -171,15 +187,17 @@ $(MAPAS): $(BLDPATH)/%.s: %.pmh
 
 $(MAPOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) $< -o $@
+	@echo "$<"
+	$(AS) $(ASFLAGS) --MD $*.d $< -o $@
 	
 $(MAPTILESETAS): $(BLDPATH)/%.s: %.pts
 	$(shell mkdir -p $(dir $@))
-	$(PYSET2S)  -o $@ $<
+	$(PYSET2S) -o $@ $(MAPPROJ) $<
 
 $(MAPTILESETOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
-	$(AS) $(ASFLAGS) $< -o $@
+	@echo "$<"
+	$(AS) $(ASFLAGS) --MD $*.d $< -o $@
 	
 
 # Map project
@@ -239,19 +257,14 @@ $(BLDPATH)/map.o: $(MAPOBJS) $(MAPTILESETOBJS) $(BLDPATH)/$(basename $(MAPPROJ))
 $(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS)
 	@echo "Collecting src files..."
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/src.o $(ASOBJS1) $(ASOBJS2) $(COBJS)
-	
-# Building constants
-$(CONSTANTSH): $(CONSTANTS)
-	@echo "Exporting constants..."
-	$(PYMAPCONSTEX) $(MAPPROJ)		
+		
 	
 soundfont: $(BLDROM)
 	$(shell mkdir -p $(BLDPATH)/soundfont)
 	$(foreach vcg,000 001 002, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
-$(BLDROM): $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
-	@echo "$(CDEP)"
+$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	@echo "Creating rom object..."
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
@@ -261,4 +274,3 @@ all: $(BLDROM) soundfont
 		
 clean:
 	rm -rf $(BLDPATH)
-	rm -rf $(CONSTANTSH)

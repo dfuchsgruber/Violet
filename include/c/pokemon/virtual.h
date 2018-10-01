@@ -22,7 +22,8 @@ typedef union {
     struct {
         u32 ability : 1;
         u32 gender_partial : 7;
-        u32 shinyness : 16;
+        u32 is_shiny : 1;
+        u32 unused : 15;
         u32 nature : 5;
         u32 form : 3;
     } fields;
@@ -53,6 +54,7 @@ typedef struct pokemon {
 
 
 extern pokemon player_pokemon[];
+extern u8 player_pokemon_cnt;
 extern pokemon opponent_pokemon[];
 
 /**
@@ -64,6 +66,14 @@ extern pokemon opponent_pokemon[];
 int pokemon_get_attribute(pokemon* p, int requested_attribute, void *result);
 
 /**
+ * Gets the attribute of a virtual pokemon's substructre
+ * @param p The offset of the virtual pokemon
+ * @param requested_attribute idx of the attribute to get
+ * @param result Storage for the result if it is no scalar type (pass 0 otherwise)
+ */
+int pokemon_get_substructure_attribute(pokemon *p, int requested_attribute, void *result);
+
+/**
  * Sets the attribute of a virtual pokemon
  * @param p The offset of the virutal pokemon
  * @param requested_attribute Id of the attribute to set
@@ -71,12 +81,28 @@ int pokemon_get_attribute(pokemon* p, int requested_attribute, void *result);
  */
 void pokemon_set_attribute(pokemon* p, int requested_attribute, void* value);
 
+/**
+ * Sets the attribute of a virtual pokemon's substructure
+ * @param p The offset of the virutal pokemon
+ * @param requested_attribute idx of the attribute to set
+ * @param value Pointer to the value to apply
+ */
+void pokemon_set_substructure_attribute(pokemon* p, int requested_attribute, void* value);
 
 /**
  * Calculates the stats of a pokemon.
  * @param p Pokemon to calculate the stats of
  */
 void pokemon_calculate_stats(pokemon *p);
+
+/**
+ * Returns a pokemon that is placed on the boxes. Note that this pokemon is in compressed format,
+ * i.e. it only contains of substructure and thus substructure getters and setters have to be used.
+ * @param box_idx the index of the box of the pokemon
+ * @param idx the index of the pokemon inside the given box
+ * @return the pokemon instance (substructure only)
+ */
+pokemon *pokemon_get_by_box(int box_idx, int idx);
 
 /**
  * Gets the number of pokemon in the player's party
@@ -116,6 +142,27 @@ void pokemon_new_egg(pokemon *dst, u16 species, bool set_catch_location_to_xFD);
  */
 int pokemon_give(pokemon *dst);
 
+/**
+ * Tries to add the pokemon to the player's party. If this fails, it tries to add it to any box.
+ * Also OT-Name, TID and OT-Gender attributes of the pokemon are kept and not set to the player's.
+ * @param dst the pokemon to be added to the player's collection.
+ * @return 0 if added to the party, 1 if added to the box, 2 if everything failed
+ */
+int pokemon_give_with_player_not_ot(pokemon *p);
+
+/**
+ * Tries to put a pokemon on the box system.
+ * @param dst the pokemon to put.
+ * @return 1 on success, 2 on failure
+ */
+int pokemon_to_box(pokemon *dst);
+
+/**
+ * Enables the hidden ability on a pokemon.
+ * @param p the pokemon to enable its hidden ability on
+ */
+void pokemon_set_hidden_ability(pokemon *p);
+
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
 /**
@@ -140,6 +187,14 @@ void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);
 void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_spread,
     bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*feature_generator)(),
 	u16(*rng)());
+
+/**
+ * Generates tid based on a ot_name.
+ * @param ot_name the original trainer name
+ * @return the tid as product of all characters
+ */
+u32 tid_by_ot_name(u8 *ot_name);
+
 u8 get_pokemons_ability(pokemon *poke);
 u8 write_ability_into_dbuf(pokemon *poke);
 void special_heal_team_index();
@@ -170,5 +225,11 @@ void pokemon_clear(pokemon *p);
  * Clears the entire party of the opponent
  */
 void pokemon_clear_opponent_party();
+
+/**
+ * Creates a valid pid for a pokemon.
+ * @return the pid
+ */
+pid_t pokemon_new_pid();
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

@@ -444,7 +444,8 @@ palette pokemon_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_437_pokemon_icognito_z_frontspritePal, 437, 0},
     {gfx_pkmn_species_438_pokemon_icognito_exclamation_frontspritePal, 438, 0},
     {gfx_pkmn_species_439_pokemon_icognito_question_frontspritePal, 439, 0},
-    {gfx_pkmn_species_440_pokemon_groudon_e_frontspritePal, 440, 0}
+    {gfx_pkmn_species_440_pokemon_groudon_e_frontspritePal, 440, 0},
+	{gfx_pkmn_species_441_pokemon_kecleon_p_frontspritePal, 441, 0}
 };
 
 
@@ -889,5 +890,6 @@ palette pokemon_shiny_pals[POKEMON_CNT] = {
     {gfx_pkmn_species_437_pokemon_icognito_z_backspritePal, 437, 0},
     {gfx_pkmn_species_438_pokemon_icognito_exclamation_backspritePal, 438, 0},
     {gfx_pkmn_species_439_pokemon_icognito_question_backspritePal, 439, 0},
-    {gfx_pkmn_species_440_pokemon_groudon_e_backspritePal, 440, 0}
+    {gfx_pkmn_species_440_pokemon_groudon_e_frontspritePal, 440, 0},
+    {gfx_pkmn_species_441_pokemon_kecleon_p_backspritePal, 441, 0}
 };

@@ -2060,7 +2060,7 @@
 	.global str_item_desc_x157_item_vm05
 
 	str_item_desc_x157_item_vm05:
-		.string "Erzeugt helles\nLicht, das die\ngegnerische\nGenauigkeit senkt."
+		.string "Erzeugt helles\nLicht, das nie\nverfehlt."
 
 
 	.global str_item_desc_x158_item_vm06
@@ -2078,7 +2078,7 @@
 	.global str_item_desc_x15a_item_vm08
 
 	str_item_desc_x15a_item_vm08:
-		.string "Der Anwender\ntaucht in der 1.\nRunde unter und\ntrifft in Runde 2."
+		.string "Erklimmt Felswände und\nverwirrt den Gegner\neventuell."
 
 
 	.global str_item_desc_x15b_item_item_15b
@@ -3983,7 +3983,7 @@
 	.global str_item_desc_x15a_item_vm08
 
 	str_item_desc_x15a_item_vm08:
-		.string "The user dives\nunderwater on the\nfirst turn and\nstrikes next turn."
+		.string "Climbs rock faces\nand possibly confuses\nthe opponent."
 
 	.global str_item_desc_x15b_item_item_15b
 

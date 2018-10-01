@@ -113,6 +113,12 @@ wild_pokemon:
 @// 1.126
 	.byte 1, 126, 0, 0
 	.word map_1_126_wild_grass, 0, 0, 0
+@// 3.7, route2_east
+	.byte 3, 7, 0, 0
+	.word map_3_7_route2_east_wild_grass, 0, map_3_7_route2_east_wild_other, 0
+@// 11.2 route_2_east_clouds
+	.byte 11, 2, 0, 0
+	.word map_11_2_route_2_east_clouds_wild_grass, 0, 0, 0
 @// END
 	.byte 0xFF, 0xFF, 0xFF, 0xFF
 	.word 0, 0, 0, 0

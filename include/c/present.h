@@ -60,7 +60,7 @@ extern "C" {
 
     pstring_query_string *pstring_query_strings[6];
 
-    #define NUM_PRESENTS 1
+    #define NUM_PRESENTS 2
     
     typedef struct{
         u8 md[SHA3_MDLEN];

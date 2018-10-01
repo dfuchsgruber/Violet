@@ -14,6 +14,7 @@
 #include "trainerschool_test.h"
 #include "rtc.h"
 #include "fp_menu.h"
+#include "pokemon/virtual.h"
 
 #define GP_STACK_SIZE 16
 
@@ -55,14 +56,21 @@ typedef struct saveblock2 {
     u8 tid_2;
     u8 tid_3;
     u16 hours_played;
+    // 0x10
     u8 minutes_played;
     u8 seconds_played;
     u8 milliseconds_played;
     u8 detector_state; //original key swtiching
+    // 0x14
     u8 text_speed;
     u8 sound_state : 1;
     u8 unkown_2 : 7;
-    u8 unkown_3[0x12];
+    u8 unkown_3[0x2];
+    u8 unkown_4[0x4];
+    pid_t icognito_pid;
+    // 0x20
+    pid_t pandir_pid;
+    u8 unkown_5[0x4];
     u8 pokedex_caught_flags[0x34]; //416 flags
     u8 pokedex_seen_flags[0x34]; //416 flags
 } saveblock2;

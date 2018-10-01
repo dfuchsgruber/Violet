@@ -445,7 +445,8 @@ graphic pokemon_backsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_437_pokemon_icognito_z_backspriteTiles, 0x800, 437},
     {gfx_pkmn_species_438_pokemon_icognito_exclamation_backspriteTiles, 0x800, 438},
     {gfx_pkmn_species_439_pokemon_icognito_question_backspriteTiles, 0x800, 439},
-    {gfx_pkmn_species_440_pokemon_groudon_e_backspriteTiles, 0x800, 440}
+    {gfx_pkmn_species_440_pokemon_groudon_e_backspriteTiles, 0x800, 440},
+    {gfx_pkmn_species_441_pokemon_kecleon_p_backspriteTiles, 0x800, 441}
     
     
 };

@@ -36,7 +36,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
       pid.value = (u32) (rng() | rng() << 16);
 
     if (!feature_generator()) {
-        pid.fields.shinyness = 0;
+        pid.fields.is_shiny = 1;
     }
     pokemon_new(p, species, level, default_iv, true, pid, tid_determined, tid);
     //now we add ivs

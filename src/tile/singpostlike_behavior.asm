@@ -36,6 +36,9 @@ beq trigger_any_behavior
 cmp r4, #0xB1
 beq trigger_dungeon_entry
 
+cmp r4, #0xBD
+beq trigger_rock_climb
+
 
 ret:
 ldr r0, =0x0806D15F
@@ -71,10 +74,15 @@ b exec_trigger_cloud
 
 trigger_dungeon_entry:
 ldr r0, =ow_script_dungeon_enter
+b ret_s
+
+trigger_rock_climb:
+ldr r0, =ow_script_rock_climb
 ret_s:
 pop {r4-r5}
 pop {r1}
 bx r1
+
 
 _checkflag:
 ldr r1, =checkflag

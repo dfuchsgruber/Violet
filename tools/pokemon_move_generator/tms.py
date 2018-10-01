@@ -60,7 +60,7 @@ tms_3rd_gen = {
     'Blitz' : ('VM', 5),
     'Zertrümmerer' : ('VM', 6),
     'Kaskade' : ('VM', 7),
-    'Taucher' : ('VM', 8)
+    'Kraxler' : ('VM', 8)
 }
 
 def tm_list_by_availible_moves(availible_moves):

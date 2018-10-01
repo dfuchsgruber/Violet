@@ -58,7 +58,7 @@ void build_trainer_pokemon_custom_item_default_attacks(pokemon *dst,
 	// Obtain the prng state that was seeded with the trainer id
 	u32 *prng_state = (u32*)gp_stack_peek();
 	pid_t pid = {_prng_xorshift(prng_state)};
-	pid.fields.shinyness = 0x201;
+	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
 	build_trainer_pokemon(dst, party->build);
 	// Custom item
@@ -70,7 +70,7 @@ void build_trainer_pokemon_custom_item_custom_attacks(pokemon *dst,
 	// Obtain the prng state that was seeded with the trainer id
 	u32 *prng_state = (u32*)gp_stack_peek();
 	pid_t pid = {_prng_xorshift(prng_state)};
-	pid.fields.shinyness = 0x201;
+	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
 	build_trainer_pokemon(dst, party->build);
 	// Custom item
@@ -87,7 +87,7 @@ void build_trainer_pokemon_default_item_custom_attacks(pokemon *dst,
 	// Obtain the prng state that was seeded with the trainer id
 	u32 *prng_state = (u32*)gp_stack_peek();
 	pid_t pid = {_prng_xorshift(prng_state)};
-	pid.fields.shinyness = 0x201;
+	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
 	build_trainer_pokemon(dst, party->build);
 	// Custom attacks
@@ -102,7 +102,7 @@ void build_trainer_pokemon_default_item_default_attacks(pokemon *dst,
 	// Obtain the prng state that was seeded with the trainer id
 	u32 *prng_state = (u32*)gp_stack_peek();
 	pid_t pid = {_prng_xorshift(prng_state)};
-	pid.fields.shinyness = 0x201;
+	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
 	build_trainer_pokemon(dst, party->build);
 }
@@ -170,7 +170,7 @@ void build_trainer_pokemon(pokemon *poke, union union_build_field field) {
 	}
 
 	pid_t p = {(u32)pokemon_get_attribute(poke, 0, 0)};
-	p.fields.shinyness = field.bitfield.shinyness ? 0 : 0x201;
+	p.fields.is_shiny = field.bitfield.shinyness ? 1 : 0;
 	if (p.fields.nature < 0x19)
 		p.fields.nature = (trainer_builds[field.bitfield.build].nature);
 	pokemon_set_attribute(poke, 0, &p);
@@ -178,9 +178,9 @@ void build_trainer_pokemon(pokemon *poke, union union_build_field field) {
 	u8 ability = field.bitfield.ability & 1;
 	pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
 
-	u8 poke_coolness_field = (u8) (pokemon_get_attribute(poke, 0x16, 0) & 0x7F);
-	poke_coolness_field = (u8) (poke_coolness_field | (field.bitfield.hability << 7));
-	pokemon_set_attribute(poke, 0x16, &poke_coolness_field);
+	if (field.bitfield.hability) {
+		pokemon_set_hidden_ability(poke);
+	}
 
 	if (!pokemon_get_attribute(poke, 0xC, 0)) {
 		pokemon_set_attribute(poke, 0xC, &trainer_builds[field.bitfield.build].prefered_item);

@@ -445,6 +445,7 @@ u16 pokedex_order[POKEMON_CNT - 1] = {
 	0, // POKEMON_ICOGNITO_EXCLAMATION
 	0, // POKEMON_ICOGNITO_QUESTION
 	0, // POKEMON_GROUDON_REGENT
+	293 // POKEMON_KECLEON_P
 };
 
 u16 pokemon_get_display_number(u16 species) {

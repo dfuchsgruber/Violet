@@ -1,0 +1,1 @@
+{'type': 'enum', 'base': 0, 'values': ['POCKET_NONE', 'POCKET_ITEMS', 'POCKET_KEY_ITEMS', 'POCKET_POKEBALLS', 'POCKET_TM_HM', 'POCKET_BERRIES']}

@@ -131,6 +131,12 @@ void pokedex_build_list() {
             }
             j++;
         }
+        for (int j = 0; j < LINKED_PKMN_CNT; j++) {
+        	if (i == pokemon_linked[j]) {
+        		is_mega_target = true;
+        		break;
+        	}
+        }
         if (!is_mega_target) {
             //Add the pokemon to list with its dex number
             list[list_size].species = i;

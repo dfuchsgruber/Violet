@@ -883,7 +883,9 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     0x647,
     // POKEMON_GROUDON
-    0x887
+    0x887,
+    // POKEMON_KECLEON_PURPLE
+    0x687
 };
 
 u32 pokemon_enemy_y[POKEMON_CNT] = {
@@ -1768,7 +1770,9 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     0xd35,
     // POKEMON_GROUDON
-    0x188
+    0x188,
+    // POKEMON_KECLEON
+    0x367
 };
 
 u8 pokemon_altitude[POKEMON_CNT] = {
@@ -2653,6 +2657,7 @@ u8 pokemon_altitude[POKEMON_CNT] = {
     // POKEMON_ICOGNITO_QUESTION
     0x0,
     // POKEMON_GROUDON
+    0x0,
+    // POKEMON_KECLEON
     0x0
-
 };

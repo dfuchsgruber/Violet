@@ -465,6 +465,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_438_pokemon_icognito_exclamation_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_439_pokemon_icognito_question_frontspriteTiles[];
     extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_frontspriteTiles[];
+    extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_frontspriteTiles[];
 
     extern const unsigned short gfx_pkmn_species_000_pokemon_pokemon_0_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_001_pokemon_bisasam_backspriteTiles[];
@@ -907,6 +908,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_438_pokemon_icognito_exclamation_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_439_pokemon_icognito_question_backspriteTiles[];
     extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_backspriteTiles[];
+    extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_backspriteTiles[];
 
     extern const unsigned short gfx_pkmn_species_000_pokemon_pokemon_0_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_001_pokemon_bisasam_frontspritePal[];
@@ -1349,6 +1351,7 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_438_pokemon_icognito_exclamation_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_439_pokemon_icognito_question_frontspritePal[];
     extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_frontspritePal[];
+    extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_frontspritePal[];
 
     extern const unsigned short gfx_pkmn_species_000_pokemon_pokemon_0_backspritePal[];
     extern const unsigned short gfx_pkmn_species_001_pokemon_bisasam_backspritePal[];
@@ -1790,7 +1793,8 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_437_pokemon_icognito_z_backspritePal[];
     extern const unsigned short gfx_pkmn_species_438_pokemon_icognito_exclamation_backspritePal[];
     extern const unsigned short gfx_pkmn_species_439_pokemon_icognito_question_backspritePal[];
-    extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_backspritePal[];
+    extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_frontspritePal[];
+    extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_backspritePal[];
 
 
     extern const unsigned short gfx_pkmn_species_000_pokemon_pokemon_0_iconTiles[];
@@ -2234,5 +2238,6 @@ u16 icon_pals[3][16];
     extern const unsigned short gfx_pkmn_species_438_pokemon_icognito_exclamation_iconTiles[];
     extern const unsigned short gfx_pkmn_species_439_pokemon_icognito_question_iconTiles[];
     extern const unsigned short gfx_pkmn_species_440_pokemon_groudon_e_iconTiles[];
+    extern const unsigned short gfx_pkmn_species_441_pokemon_kecleon_p_iconTiles[];
 
 #endif /* INCLUDE_C_POKEMON_SPRITES_H_ */

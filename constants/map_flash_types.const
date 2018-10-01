@@ -1,0 +1,1 @@
+{'type': 'enum', 'base': 0, 'values': ['FLASH_NONE', 'DARK_FLASH_USABLE', 'DARK_FLASH_NOT_USABLE']}

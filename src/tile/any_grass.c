@@ -18,6 +18,8 @@
 
 extern const unsigned int gfx_grass_ashTiles[];
 extern const unsigned short gfx_grass_ashPal[];
+extern unsigned int gfx_rock_climb_animTiles[];
+extern unsigned int gfx_rock_climb_animPal[];
 
 
 graphic any_grass_graphics[] = {
@@ -37,7 +39,33 @@ oam_template any_grass_templates[] = {
     any_grass_graphics, oam_rotscale_anim_table_null, (void (*)(oam_object *))0x80DB611}
 };
 
+gfx_frame rock_climb_gfx_anim[] = {
+		{0, 10}, {1, 10}, {2, 10}, {3, 10}, {4, 10}, {GFX_ANIM_END, 0}
+};
 
+gfx_frame *rock_climb_gfx_anim_table[] = {rock_climb_gfx_anim};
+
+graphic rock_climb_graphics[] = {
+		{&gfx_rock_climb_animTiles[0 * 16 * 16 / 8], 16 * 16 / 2, 0},
+		{&gfx_rock_climb_animTiles[1 * 16 * 16 / 8], 16 * 16 / 2, 0},
+		{&gfx_rock_climb_animTiles[2 * 16 * 16 / 8], 16 * 16 / 2, 0},
+		{&gfx_rock_climb_animTiles[3 * 16 * 16 / 8], 16 * 16 / 2, 0},
+		{&gfx_rock_climb_animTiles[4 * 16 * 16 / 8], 16 * 16 / 2, 0},
+	    {NULL, 16 * 16 / 2, 0}
+};
+
+sprite rock_climb_sprite = {
+		ATTR0_SHAPE_SQUARE, ATTR1_SIZE_16_16, ATTR2_PRIO(1), 0
+};
+
+oam_template rock_climb_template = {
+		0xFFFF, 0x7731, &rock_climb_sprite, rock_climb_gfx_anim_table, rock_climb_graphics,
+		oam_rotscale_anim_table_null, oam_null_callback
+};
+
+palette rock_climb_pal = {
+		gfx_rock_climb_animPal, 0x7731, 0
+};
 
 any_grass tile_any_grasses[ANY_GRASS_CNT] = {
     {0, 0, 2, true, (oam_template *)0x083A52E4, NULL, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
@@ -46,6 +74,7 @@ any_grass tile_any_grasses[ANY_GRASS_CNT] = {
     {18, 3, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
     {1, 30, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
     {0, 12, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
+	{0, 0, 0xBD, true, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
     {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub, any_grass_player_step_null} 
 };
 
@@ -53,12 +82,16 @@ void any_grass_step(){
     play_sound(0x15C);
 }
 
+void rock_climb_step(){
+	play_sound(0x7C);
+}
+
 bool tile_is_any_grass(u8 behavior){
     return behavior == 0x3; //we abuse "tall grass" byte for any grass
 }
 
 bool tile_is_high_grass(u8 behavior){
-    return behavior == 2 || behavior == 0xD1 || behavior == 0xBb;
+    return behavior == 2 || behavior == 0xD1 || behavior == 0xBb || behavior == 0xBD;
 }
 
 
@@ -81,9 +114,8 @@ u8 *any_grass_player_step_null(){
  */
 u8 tile_any_grass_init(coordinate_t *pos){
     int i;
-    int *overworld_effect_state = (int*)0x020386E0;
-    s16 x = (s16)overworld_effect_state[0];
-    s16 y = (s16)overworld_effect_state[1];
+    s16 x = (s16)overworld_effect_state.x;
+    s16 y = (s16)overworld_effect_state.y;
     u8 behavior = (u8)block_get_behaviour_by_pos(x, y);
     for(i = 0; tile_any_grasses[i].bank != 0xFF || tile_any_grasses[i].map != 0xFF; i++){
         if(tile_any_grasses[i].triggered_by_behavior == behavior &&(

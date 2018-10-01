@@ -8824,6 +8824,26 @@ basestat basestats[POKEMON_CNT] = {
         0, //flip and color
         ABILITY_NONE, //hidden ability
         SHAPE_TAIL, //form
+    },
+
+    //POKEMON_KECLEON
+    {
+        95, 120, 80, 95, 65, 135, //basestat values (hp, att, def, spe, satk, sdef)
+        TYPE_NORMAL, TYPE_NORMAL, //types
+        200, //catch rate
+        132, //exp yield
+        {0, 0, 0, 1, 0, 1, 0}, //ev yield (hp, atk, def, spe, satk, sdef)
+        ITEM_NONE, ITEM_PERSIMBEERE, //common, rare item
+        127, //gender
+        20, //egg cycles
+        70, //base friendship
+        3, //lvl up curve
+        EGG_GROUP_FIELD, EGG_GROUP_FIELD, //egg groups
+        FARBWECHSEL, ABILITY_NONE, //abilities
+        0, //safari rate
+        3, //flip and color
+        WANDLUNGSK, //hidden ability
+        SHAPE_TAIL, //form
     }
 
 

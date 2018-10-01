@@ -56,6 +56,8 @@ pokemon_party_menu_opts:  @format : string, function pointer
     .word 0x81245f5
     .word attack_names + ATTACK_KASKADE * 13
     .word 0x81245f5
+    .word attack_names + ATTACK_KRAXLER * 13
+    .word 0x81245f5
     .word attack_names + ATTACK_TELEPORT * 13
     .word 0x81245f5
     .word attack_names + ATTACK_SCHAUFLER * 13
@@ -67,8 +69,6 @@ pokemon_party_menu_opts:  @format : string, function pointer
     .word attack_names + ATTACK_LOCKDUFT * 13
     .word 0x81245f5
     .word attack_names + ATTACK_GEHEIMPOWER * 13
-    .word 0x81245f5
-    .word attack_names + ATTACK_KRAXLER * 13
     .word 0x81245f5
 
 .global field_moves
@@ -82,13 +82,13 @@ field_moves:
     .hword 0x39
     .hword 0xf9
     .hword 0x7f
+    .hword ATTACK_KRAXLER
     .hword 0x64
     .hword 0x5b
     .hword 0xd0
     .hword 0x87
     .hword 0xe6
     .hword ATTACK_GEHEIMPOWER
-    .hword ATTACK_KRAXLER
     .hword 0xFFFF
 
 .global field_move_descriptions
@@ -103,13 +103,13 @@ field_move_descriptions:
 .word 0x84174c5
 .word 0x8417508
 .word 0x8417522
+.word str_desc_field_move_rock_climb
 .word 0x8417573
 .word 0x8417543
 .word 0x8417569
 .word 0x8417569
 .word 0x8417554
 .word str_desc_field_move_secret_power
-.word str_desc_field_move_rock_climb
 
 .ifdef LANG_GER
 	str_desc_field_move_secret_power:
@@ -146,6 +146,8 @@ field_move_initalizers:
 .word 0xd
 .word 0x8124b49
 .word 0xd
+.word field_move_rock_climb_init
+.word 0xd
 .word 0x80f6985
 .word 0xd
 .word 0x80c9c31
@@ -158,8 +160,6 @@ field_move_initalizers:
 .word 0xd
 .word field_move_secret_power_init
 .word 0xd
-.word field_move_rock_climb_init
-.word 0xd
 @.word 0x80f6985 @
 @.word 0xd
 
@@ -169,10 +169,18 @@ field_move_initalizers:
 	str_fp_menu:
 		.string "Fleiß-Punkte"
 
+.global str_fieldmove_usable_with_new_bade
+	str_fieldmove_usable_with_new_bade:
+		.autostring 35 2 "Erst einsetzbar, wenn ein neuer Orden errungen wurde.PAUSE_UNTIL_PRESS"
+
 .elseif LANG_EN
 
 	str_fp_menu:
 		.string "Effort Values"
+
+.global str_fieldmove_usable_with_new_bade
+	str_fieldmove_usable_with_new_bade:
+		.autostring 35 2 "Requires a new badge to be used.PAUSE_UNTIL_PRESS"
 
 .endif
 

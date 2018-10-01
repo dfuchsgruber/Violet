@@ -13,6 +13,10 @@ special_table equ 0x0815FCC0
 		.word time_test | 1
 		.pool
 
+.org (special_table + (0x9 * 4))
+		.word rock_climb_block_is_climbable | 1
+		.pool
+
 .org (special_table + (0xC * 4))
 	.word special_addkarma_wrap | 1
 	.pool

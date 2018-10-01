@@ -15,6 +15,7 @@
 #include "debug.h"
 #include "overworld/script.h"
 #include "text.h"
+#include "pokemon/virtual.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -114,6 +115,20 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	time_reset_events();
 	// Reorder pokedex flags
 	version_transfer_pokedex();
+
+	// Pokemon pid structure has changed as well
+	// Update the party
+	for (int i = 0; i < 6; i++) {
+		version_alpha_2_2_fix_pid(&player_pokemon[i]);
+		pokemon_calculate_stats(&player_pokemon[i]);
+	}
+	// Update the boxes
+	for (int box_idx = 0; box_idx < 15; box_idx++) {
+		for (int idx = 0; idx < 30; idx++) {
+			version_alpha_2_2_fix_pid(pokemon_get_by_box(box_idx, idx));
+		}
+	}
+
 }
 
 u16 version_is_latest(){

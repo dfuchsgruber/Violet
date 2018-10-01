@@ -150,3 +150,9 @@ item_effects equ 0x082527E0
         .word item_effect_evolution_stone //Dark Stone
         .word item_effect_evolution_stone //Sparkle Stone
         .word item_effect_evolution_stone //Light Stone
+
+.org 0x08125adc
+	.word tm_hm_to_attack
+
+.org 0x08125afc
+	.word tm_hm_to_attack

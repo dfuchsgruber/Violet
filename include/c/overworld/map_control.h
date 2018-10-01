@@ -10,8 +10,8 @@
 
 
 typedef struct{
-    u8 _unkown;
-    u8 _unkown_2;
+    u8 x_start_pixel;
+    u8 y_start_pixel;
     u8 x_start;
     u8 y_start;
 } stru_map_displ_cntrl;

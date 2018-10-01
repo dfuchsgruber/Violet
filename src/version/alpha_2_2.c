@@ -10,6 +10,23 @@
 #include "mega.h"
 #include "save.h"
 #include "agbmemory.h"
+#include "pokemon/virtual.h"
+#include "version.h"
+#include "constants/pokemon_attributes.h"
+
+void version_alpha_2_2_fix_pid(pokemon *target) {
+	if (pokemon_get_substructure_attribute(target, ATTRIBUTE_SPECIES, 0) == 0) return;
+	_pid_t_old old = {.value = (u32)pokemon_get_substructure_attribute(target, ATTRIBUTE_PID, 0)};
+	pid_t p = {.value = 0};
+	p.fields.ability = old.fields.ability;
+	p.fields.gender_partial = old.fields.gender_partial;
+	p.fields.is_shiny = old.fields.shinyness <= 512 ? 1 : 0;
+	int nature = old.fields.nature;
+	if (nature >= 25) nature /= 2;
+	p.fields.nature = (u8)(nature & 31);
+	p.fields.form = 0;
+	pokemon_set_substructure_attribute(target, ATTRIBUTE_PID, &p);
+}
 
 u16 pokedex_order_old[POKEMON_CNT - 1] = {
     // POKEMON_BISASAM

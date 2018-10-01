@@ -858,15 +858,14 @@ pshinysparkledone:
     
 //This pid is plugged into pokedex
 .org 0x08104C20
-    mov r0, #0
-    sub r0, #1
-    bx lr
+    ldr r1, =pokedex_get_pid | 1
+    bx r1
+    .pool
 
 
 .org 0x080838DC
     //pokepic pid generation must not be shiny
     mov r3, #0
-    sub r3, #1
 
 //evaluate contest stats as ev/4
 
@@ -984,3 +983,9 @@ lsr r0, #0x1A
 .org 0x083FD470
 	.word str_kp, str_angriff, str_vert, str_init, str_sp_ang
 	.word str_sp_ver, str_accuracy, str_flight_value
+
+.org 0x0803DA00
+	ldr r0, = pokemon_new_pid_hook | 1
+	bx r0
+	.pool
+

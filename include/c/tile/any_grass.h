@@ -10,7 +10,7 @@
 
 #include "oam.h"
 
-#define ANY_GRASS_CNT 7
+#define ANY_GRASS_CNT 8
 
 typedef struct{
     u8 bank;
@@ -23,10 +23,22 @@ typedef struct{
     u8 *(*player_step_cb)();
 }any_grass;
 
+typedef struct {
+	int x, y;
+	int height;
+	int bg_priority;
+	int target_ow_and_their_map; // (target_ow << 8) | target_ow_map
+	int target_ow_bank;
+	int origin_map_and_bank; // (map << 8) | bank
+	int field_1C;
+} overworld_effect_state_t;
 
-any_grass tile_any_grasses[7];
+extern overworld_effect_state_t overworld_effect_state;
+
+any_grass tile_any_grasses[ANY_GRASS_CNT];
 
 
+void rock_climb_step();
 void any_grass_step();
 u8 *ash_grass_player_step();
 u8 *any_grass_player_step_null();

@@ -192,6 +192,15 @@ u16 wondertrade_next_seed() {
     return (u16) ((rnd16() & 511) / (wondertrade_get_level() + 1));
 }
 
+u32 tid_by_ot_name(u8 *ot_name) {
+	u32 tid = 1;
+	int i = 0;
+	while(ot_name[i] != 0xFF) {
+        tid *= ot_name[i++];
+	}
+    return tid;
+}
+
 void wondertrade_spawn_pokemon() {
     u16 species = wondertrade_select_pokemon();
 
@@ -199,10 +208,7 @@ void wondertrade_spawn_pokemon() {
     u8 *ot_name = species == POKEMON_MEW ? str_wondertrade_name0 :
             wondertrade_ot_names[rnd16() % 36];
 
-    u32 tid = 1;
-    int i = 0;
-    while (ot_name[i] != 0xFF)
-        tid *= ot_name[i++];
+    u32 tid = tid_by_ot_name(ot_name);
 
     pid_t p = {.value = 0};
     pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, 5, 32, false, p,

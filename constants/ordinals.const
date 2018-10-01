@@ -1,0 +1,1 @@
+{'type': 'dict', 'values': {'LESS': 0, 'EQUAL': 1, 'HIGHER': 2, 'LESS_OR_EQUAL': 3, 'HIGHER_OR_EQUAL': 4, 'NOT_EQUAL': 5}}

@@ -53,6 +53,7 @@ bool field_moves_usable();
 void field_move_load_buffers(pokemon *pokemon, u8 index);
 
 extern u8 ow_script_dungeon_enter_field[];
+extern u8 ow_script_execute_rock_climb[];
 
 #endif	/* FIELDMOVES_H */
 

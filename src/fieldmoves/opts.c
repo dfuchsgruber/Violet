@@ -18,6 +18,7 @@
 #include "map/namespace.h"
 #include "overworld/map_control.h"
 #include "constants/map_types.h"
+#include "constants/flags.h"
 
 void pokemon_party_menu_opt_build(pokemon *base, u8 index) {
     pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state.opt_state;
@@ -49,7 +50,10 @@ void pokemon_party_menu_opt_build(pokemon *base, u8 index) {
 }
 
 
-u16 fieldmove_flags[] = {0x820, 0x821, 0x822, 0x823, 0x824, 0x825, 0x826};
+u16 fieldmove_flags[] = {FRBADGE_1, FRBADGE_2, FRBADGE_3, FRBADGE_4, FRBADGE_5, FRBADGE_6,
+		FRBADGE_7, FRBADGE_8};
+
+extern u8 str_fieldmove_usable_with_new_bade[];
 
 void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
   pokemon_party_menu_opt_state_t *opt_state = pokemon_party_menu_state.opt_state;
@@ -61,10 +65,9 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
         tbox_flush_and_free_if_present(&opt_state->box_id_options);
         if (!field_moves_usable() && !map_is_x40_x0()) {
             //HM Moves are bound to a flag
-            if (index <= 6 && !checkflag(fieldmove_flags[index])) {
+            if (index <= 7 && !checkflag(fieldmove_flags[index])) {
                 //Render text "Neuer Orden muss errungen werden"
-                u8 *text_new_badge = (u8*) 0x8416940;
-                pokemon_party_menu_init_text_rendering(text_new_badge, 1);
+                pokemon_party_menu_init_text_rendering(str_fieldmove_usable_with_new_bade, 1);
                 big_callbacks[callback_self].function = pokemon_party_menu_wait_for_text_rendering;
                 return;
             } else {
@@ -77,7 +80,9 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                         case 4:
                         case 5:
                         case 6:
-                        case 11:
+                        case 7:
+                        case 12:
+                        case 13:
                         default:
                             //Return to overworld
                             pokemon_party_menu_state.callback = map_reload;
@@ -87,7 +92,7 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                             //Fly
                             pokemon_party_menu_state.callback = field_move_fly_init;
                             break;
-                        case 7:
+                        case 8:
                             //Teleport 
                             map_load_namespace(buffer0,
                             		get_mapheader((u8) save1->healingplace.bank,
@@ -96,7 +101,7 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                             pokemon_party_menu_print_question(callback_self);
                             *((u16*) ((int) (pokemon_party_menu_state.opt_state) + 0x218)) = (u8) index;
                             return;
-                        case 8:
+                        case 9:
                             //Dig
                             map_load_namespace(buffer0,
                             		get_mapheader(save1->last_outdoor_map.bank,
@@ -105,8 +110,8 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                             pokemon_party_menu_print_question(callback_self);
                             *((u16*) ((int) (pokemon_party_menu_state.opt_state) + 0x218)) = (u8) index;
                             return;
-                        case 9:
                         case 10:
+                        case 11:
                             //Softboiled, etc. -> Select Pokemon for heal
                             field_move_softboiled_init(callback_self);
                             return;
@@ -120,7 +125,7 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                         field_move_surfer_print_error();
                     } else {
                         u8 string = (u8) field_move_initalizers[index].not_usable_msg;
-                        if (!index) { //Flash has two different error messages
+                        if (index == 0) { //Flash has two different error messages
                             if (checkflag(0x806)) {
                                 string = 12; //Flash was already used
                             } else {

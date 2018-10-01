@@ -5,6 +5,7 @@
 .include "items.s"
 .include "attacks.s"
 .include "ordinals.s"
+.include "species.s"
 
 .equ DTYPE_FOREST, 1
 
@@ -32,12 +33,16 @@ str_dungeon_forest_collapsing:
 
 .global ow_script_test
 ow_script_test:
+givepokemon POKEMON_KECLEON_PURPLE 35 0 0 0 0
+end
 setflag PLAYER_CAN_ENTER_DUNGEONS
 setflag FRBADGE_5
 setflag FRBADGE_6
 setflag FRBADGE_7
 additem ITEM_VM03 1
 additem ITEM_TM43 1
+additem ITEM_VM08 1
+setflag FRBADGE_8
 callasm debug_vars
 callasm debug_flags
 @ goto ow_script_dungeon2_enter_ocean
