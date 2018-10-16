@@ -1,1 +1,13 @@
-{'type': 'enum', 'base': 0, 'values': ['NONE', 'SOUTH', 'NORTH', 'WEST', 'EAST', 'DIVE', 'RETURN_FROM_DIVE']}
+{
+	"type": "enum",
+	"values": [
+		"NONE",
+		"SOUTH",
+		"NORTH",
+		"WEST",
+		"EAST",
+		"DIVE",
+		"RETURN_FROM_DIVE"
+	],
+	"base": 0
+}

@@ -72,7 +72,7 @@ typedef struct map_events {
     map_event_warp *warps;
     map_event_script *scripts;
     map_event_signpost *signposts;
-} map_events;
+} map_event_header_t;
 
 /**
  * Returns a person based on its target index and a bank, map tuple to identify it

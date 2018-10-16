@@ -12,7 +12,7 @@
 typedef struct {
     u8 type;
     MISALIGNED_32 levelscript;
-} levelscript_head;
+} levelscript_header_t;
 
 
 /**

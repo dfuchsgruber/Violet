@@ -40,7 +40,7 @@ void update_timezone() {
 
 bool is_inside_map(u8 bank, u8 map) {
 
-    mapheader *head = get_mapheader(bank, map);
+    map_header_t *head = get_mapheader(bank, map);
     u8 type = head->type;
     return (type == 4) || (type == 8) || (type == 9);
 }

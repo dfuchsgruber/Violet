@@ -377,9 +377,9 @@ extern "C" {
 
     int dg2_cross_neighbourhood[4][2];
 
-    map_connections dungeon2_connections;
+    map_connection_header_t dungeon2_connections;
 
-    levelscript_head dungeon2_lscr[1];
+    levelscript_header_t dungeon2_lscr[1];
 
 #ifdef	__cplusplus
 }

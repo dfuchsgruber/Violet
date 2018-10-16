@@ -37,7 +37,7 @@ map_block dungeon2_ocean_map_empty[DG2_OCEAN_WIDTH * DG2_OCEAN_HEIGHT] = {0};
 extern u8 ow_script_dungeon_encounter[];
 extern u8 ow_script_dungeon_item[];
 
-mapheader *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
+map_header_t *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
 
     //save1->flash_circle_size = 1;
     dprintf("D2 header init\n");
@@ -55,7 +55,7 @@ mapheader *dungeon2_init_header_ocean(dungeon_generator2 *dg2) {
     return &(fmem.dmapheader);
 }
 
-mapfooter *dungeon2_init_footer_ocean(dungeon_generator2 *dg2){
+map_footer_t *dungeon2_init_footer_ocean(dungeon_generator2 *dg2){
     dprintf("D2 footer init\n");
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
@@ -68,7 +68,7 @@ mapfooter *dungeon2_init_footer_ocean(dungeon_generator2 *dg2){
     return &(fmem.dmapfooter);
 }
 
-map_events *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
+map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
     dprintf("D2 event init, dg2 seed %d, num nodes %d\n", dg2->initial_seed, dg2->nodes);
     (void)dg2;
 

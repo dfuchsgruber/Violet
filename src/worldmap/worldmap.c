@@ -388,7 +388,7 @@ void worldmap_locate_player() {
 		derrf("Unkown map type %d\n", get_mapheader(bank, map)->type);
 		return;
 	}
-	mapheader *header = get_mapheader(bank, map);
+	map_header_t *header = get_mapheader(bank, map);
 	dprintf("Locating player on %d.%d at coordinates %d, %d\n", bank, map, x, y);
 	int map_width = (int)header->footer->width;
 	int map_height = (int)header->footer->height;

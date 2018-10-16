@@ -66,11 +66,11 @@
      */
     void dungeon2_compute_blocks_cave(u8 *map, u8 *over, dungeon_generator2 *dg2);
 
-    mapheader *dungeon2_init_header_cave(dungeon_generator2 *dg2);
+    map_header_t *dungeon2_init_header_cave(dungeon_generator2 *dg2);
 
-    map_events *dungeon2_init_events_cave(dungeon_generator2 *dgen);
+    map_event_header_t *dungeon2_init_events_cave(dungeon_generator2 *dgen);
 
-    mapfooter *dungeon2_init_footer_cave(dungeon_generator2 *dg2);
+    map_footer_t *dungeon2_init_footer_cave(dungeon_generator2 *dg2);
 
     /**
      * Returns an item obtainable in the cave dungeon

@@ -11,9 +11,9 @@
 #include "agbmemory.h"
 #include "prng.h"
 
-map_connections dungeon2_connections = {0, NULL};
+map_connection_header_t dungeon2_connections = {0, NULL};
 
-levelscript_head dungeon2_lscr [] = {
+levelscript_header_t dungeon2_lscr [] = {
     {0, {0, 0, 0, 0} }
 };
 

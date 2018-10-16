@@ -25,16 +25,16 @@ typedef struct mapfooter {
     u8 border_width;
     u8 border_height;
     u16 padding;
-} mapfooter;
+} map_footer_t;
 
 
-extern mapfooter *mapfooters[];
-extern mapfooter mapfooter_virtual;
+extern map_footer_t *mapfooters[];
+extern map_footer_t mapfooter_virtual;
 
-mapfooter *get_mapfooter();
+map_footer_t *get_mapfooter();
 
-void tile_init(mapfooter *foot);
+void tile_init(map_footer_t *foot);
 
-void map_delta_to_map_tile(mapfooter *foot, u16 map_tile_id, s16 x_relative, s16 y_relative);
+void map_delta_to_map_tile(map_footer_t *foot, u16 map_tile_id, s16 x_relative, s16 y_relative);
 
 #endif /* INCLUDE_C_MAP_FOOTER_H_ */

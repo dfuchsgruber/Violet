@@ -24,6 +24,6 @@ typedef struct map_connection {
 typedef struct map_connections {
     u32 count;
     map_connection *connections;
-} map_connections;
+} map_connection_header_t;
 
 #endif /* INCLUDE_C_MAP_CONNECTION_H_ */

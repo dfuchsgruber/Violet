@@ -1,1 +1,9 @@
-{'type': 'enum', 'base': 0, 'values': ['CATEGORY_PHYSICAL', 'CATEGORY_SPECIAL', 'CATEGORY_STATUS']}
+{
+	"type": "enum",
+	"values": [
+		"CATEGORY_PHYSICAL",
+		"CATEGORY_SPECIAL",
+		"CATEGORY_STATUS"
+	],
+	"base": 0
+}

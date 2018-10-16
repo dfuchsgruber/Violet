@@ -8,7 +8,7 @@
 #include "vars.h"
 
 
-mapheader *get_mapheader(u8 bank, u8 map) {
+map_header_t *get_mapheader(u8 bank, u8 map) {
     if (dungeon_get_type() && bank == DG2_BANK && map == DG2_MAP) {
         dungeon2_init();
         return &(fmem.dmapheader);
@@ -17,7 +17,7 @@ mapheader *get_mapheader(u8 bank, u8 map) {
     }
 }
 
-mapfooter *get_mapfooter() {
+map_footer_t *get_mapfooter() {
 
     if (dungeon_get_type()) {
         dungeon2_init();
@@ -29,7 +29,7 @@ mapfooter *get_mapfooter() {
     if (current_footer) {
         return mapfooters[current_footer - 1];
     }
-    return (mapfooter*) 0;
+    return (map_footer_t*) 0;
 }
 
 int dungeon_get_type() {

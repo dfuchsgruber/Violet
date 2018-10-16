@@ -142,9 +142,9 @@ typedef struct {
     u16 tile_anim_clks_0[8];
     u16 tile_anim_clks_1[8];
     trainerschool_test_memory *tst_mem;
-    mapheader dmapheader;
-    mapfooter dmapfooter;
-    map_events dmapevents;
+    map_header_t dmapheader;
+    map_footer_t dmapfooter;
+    map_event_header_t dmapevents;
     map_event_person dpersons[DMAP_PERSONS];
     map_event_warp dwarps[DMAP_WARPS];
     wild_pokemon_data dwild_pokemon;

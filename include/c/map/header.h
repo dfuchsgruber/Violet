@@ -14,15 +14,15 @@
 #include "map/header.h"
 #include "map/event.h"
 
-typedef struct mapheader {
-    mapfooter *footer;
-    map_events *events;
-    levelscript_head *levelscripts;
-    map_connections *connections;
+typedef struct map_header_t {
+    map_footer_t *footer;
+    map_event_header_t *events;
+    levelscript_header_t *levelscripts;
+    map_connection_header_t *connections;
     u16 music;
-    u16 map_index; //main table is used when map is loaded
-    u8 name_bank;
-    u8 flash;
+    u16 footer_idx; //main table is used when map is loaded
+    u8 map_namespace;
+    u8 flash_type;
     u8 weather;
     u8 type;
     u8 worldmap_shape_id; // Used to associate the map with a shape in the worldmap pattern of the namespace
@@ -30,12 +30,12 @@ typedef struct mapheader {
     u8 show_name;
     u8 battle_style;
 
-} mapheader;
+} map_header_t;
 
 int dungeon_get_type();
 
-extern mapheader **mapbanks[];
-extern mapheader mapheader_virtual;
+extern map_header_t **mapbanks[];
+extern map_header_t mapheader_virtual;
 
 /**
  * Gets a mapheader by the current bank and map id
@@ -43,7 +43,7 @@ extern mapheader mapheader_virtual;
  * @param map the desired map id
  * @return the mapheader object
  */
-mapheader *get_mapheader(u8 bank, u8 map);
+map_header_t *get_mapheader(u8 bank, u8 map);
 
 /**
  * Checks if the current map is 40.0
@@ -57,7 +57,7 @@ bool map_is_x40_x0();
  * @param position the position where the warp is required to be
  * @return the warp idx or -1 if there is no warp
  */
-s8 map_get_warp_idx_by_position(mapheader *map, position_t *position);
+s8 map_get_warp_idx_by_position(map_header_t *map, position_t *position);
 
 /**
  * Checks if a map type represents an outside map.

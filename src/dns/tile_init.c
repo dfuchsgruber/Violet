@@ -19,7 +19,7 @@ extern tileset maptileset302795;
 extern tileset maptileset242637;
 extern tileset maptileset251828;
 
-void tile_init(mapfooter *foot) {
+void tile_init(map_footer_t *foot) {
 
     if (*var_access(SHADER_STATE) == 1 && !built_in_shaders && dns_on()) {
 
@@ -110,18 +110,18 @@ void tile_init(mapfooter *foot) {
     }
 }
 
-void tileset_load_pal_as_ts0(mapfooter *foot){
+void tileset_load_pal_as_ts0(map_footer_t *foot){
     fmem.current_tileset_1 = foot->tileset1;
     overworld_load_tileset_pal(foot->tileset1, 0, 0xE0);
 
 }
 
-void tileset_load_pal_as_ts1(mapfooter *foot){
+void tileset_load_pal_as_ts1(map_footer_t *foot){
     fmem.current_tileset_2 = foot->tileset2;
     overworld_load_tileset_pal(foot->tileset2, 0x70, 0xC0);
 }
 
-void map_change_load_ts1_pal(mapfooter *foot){
+void map_change_load_ts1_pal(map_footer_t *foot){
     tileset *t = foot->tileset2;
     if(fmem.current_tileset_2 != t){
         tileset_load_pal_as_ts1(foot);

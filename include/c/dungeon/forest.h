@@ -44,11 +44,11 @@
      */
     void dungeon2_compute_blocks_forest(u8 *map, u8 *over, dungeon_generator2 *dg2);
 
-    mapheader *dungeon2_init_header_forest(dungeon_generator2 *dg2);
+    map_header_t *dungeon2_init_header_forest(dungeon_generator2 *dg2);
 
-    map_events *dungeon2_init_events_forest(dungeon_generator2 *dgen);
+    map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dgen);
 
-    mapfooter *dungeon2_init_footer_forest(dungeon_generator2 *dg2);
+    map_footer_t *dungeon2_init_footer_forest(dungeon_generator2 *dg2);
 
     /**
      * Returns an item obtainable in the forest dungeon
