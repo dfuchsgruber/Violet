@@ -88,9 +88,9 @@ u8 str_tv_violet[] = LANGDEP(
 		);
 
 u8 str_tv_champion_report[] = LANGDEP(
-		PSTRING("...Es läuft eine Talkshow:\pKlaus: Nun Uli, wissen wir denn\nschon etwas über "
-				"unseren neuen\lChampion?\pNein Klaus, ich fürchte, dass\nsich der neue Champion "
-				"äußert\lbedeckt hält. Ich habe aber\lgehört, er solle noch sehr jung\lsein.\p"
+		PSTRING("...Es läuft eine Talkshow:\pKlaus: Nun, Uli, wissen wir denn\nschon etwas über "
+				"unseren neuen\lChampion?\pNein, Klaus, ich fürchte, dass\nsich der neue Champion "
+				"äußerst\lbedeckt hält. Ich habe aber\lgehört, er solle noch sehr jung\lsein.\p"
 				"Klaus: Er? Ich hörte von einer\nFrau..."
 				),
 		PSTRING("Not translated yet.")

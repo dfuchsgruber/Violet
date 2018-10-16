@@ -140,7 +140,7 @@ str_0x8f36ad:
 .global str_0x8f3750
 
 str_0x8f3750:
-    .autostring 35 2 "Diese Technische Maschine enthält Gigasauger.\pSie fügt dem Gegner Schaden zu und regeneriert die eigenen Kp.\pVielleicht kannst du sie im Kampf gegen Team Violet einsetzten.\pWir sollten jetzt aber keine Zeit mehr verlieren.\pAuf in den Silvania-Wald DOTS"
+    .autostring 35 2 "Diese Technische Maschine enthält Gigasauger.\pSie fügt dem Gegner Schaden zu und regeneriert die eigenen KP.\pVielleicht kannst du sie im Kampf gegen Team Violet einsetzten.\pWir sollten jetzt aber keine Zeit mehr verlieren.\pAuf in den Silvania-Wald DOTS"
         
 .elseif LANG_EN
 

@@ -15,7 +15,7 @@ fp_menu_names:
 .global str_fp_menu_kp
 
 	str_fp_menu_kp:
-		.string "Kp"
+		.string "KP"
 
 	str_fp_menu_atk:
 		.string "Angr."
@@ -27,10 +27,10 @@ fp_menu_names:
 		.string "Init."
 
 	str_fp_menu_satk:
-		.string "Sp. Angr."
+		.string "SP. Angr."
 
 	str_fp_menu_sdef:
-		.string "Sp. Vert."
+		.string "SP. Vert."
 
 	str_fp_menu_plus:
 		.string "+"
@@ -41,7 +41,7 @@ fp_menu_names:
 .elseif LANG_EN
 
 	str_fp_menu_kp:
-		.string "Hp"
+		.string "HP"
 
 	str_fp_menu_atk:
 		.string "Atk."
@@ -53,10 +53,10 @@ fp_menu_names:
 		.string "Speed"
 
 	str_fp_menu_satk:
-		.string "Sp. Atk."
+		.string "SP. Atk."
 
 	str_fp_menu_sdef:
-		.string "Sp. Def."
+		.string "SP. Def."
 
 	str_fp_menu_plus:
 		.string "+"
