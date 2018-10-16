@@ -171,7 +171,7 @@ str_route_4_homeless_choice3:
 .global str_0x937e0e
 
 str_0x937e0e:
-    .autostring 35 2 "Vielen DOTS\nDOTS Hust DOST\pDOTS Keuch DOTS\nDOTS Dank DOTS."
+    .autostring 35 2 "Vielen DOTS\nDOTS Hust DOTS\pDOTS Keuch DOTS\nDOTS Dank DOTS."
         
         
 .global str_0x937e6d
