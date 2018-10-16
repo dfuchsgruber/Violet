@@ -3697,7 +3697,7 @@ bsc_strings:
 	.global str_battle_xc2
 
 	str_battle_xc2:
-		.string Speed
+		.string "ABILITY_NAME_PLAYER\s STRINGè\nraised its Speed!"
 
 	.global str_battle_xc3
 

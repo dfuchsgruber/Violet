@@ -2583,7 +2583,7 @@
 	.global str_item_desc_x42_item_carbon
 
 	str_item_desc_x42_item_carbon:
-		.string Speed
+		.string "A nutritious drink for POKéMON.\nIt raises the base Speed stat of\none POKéMON."
 
 	.global str_item_desc_x43_item_kalzium
 
@@ -2638,7 +2638,7 @@
 	.global str_item_desc_x4d_item_x_tempo
 
 	str_item_desc_x4d_item_x_tempo:
-		.string Speed
+		.string "Raises the Speed stat of POKéMON\nin battle. Wears off if the POKéMON\nis withdrawn."
 
 	.global str_item_desc_x4e_item_x_treffer
 
@@ -3103,7 +3103,7 @@
 	.global str_item_desc_xaa_item_salkabeere
 
 	str_item_desc_xaa_item_salkabeere:
-		.string Speed
+		.string "When held by a POKéMON, it raises\nthe Speed stat in a pinch."
 
 	.global str_item_desc_xab_item_tahaybeere
 
@@ -3158,7 +3158,7 @@
 	.global str_item_desc_xb5_item_machoband
 
 	str_item_desc_xb5_item_machoband:
-		.string Speed
+		.string .string "An item to be held by a POKéMON.\nIt promotes strong growth but\nlowers Speed while it is held."
 
 	.global str_item_desc_xb6_item_ep_teiler
 
