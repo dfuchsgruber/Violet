@@ -74,7 +74,7 @@ no_place_in_boxes:
 		.string "Es tut mir leid, aber diesen\nGeschenkcode hast du wohl schon\leingelöst!\pEin Geschenkcode kann nur ein\neinziges Mal benutzt werden."
 
 	str_no_place_in_boxes:
-		.autostring 35 2 "Es tut mir leid, aber es sieht so aus, als hättest du weder im Team noch auf deinen Pc Boxen Platz für das Pokémon DOTS"
+		.autostring 35 2 "Es tut mir leid, aber es sieht so aus, als hättest du weder im Team noch auf deinen PC Boxen Platz für das Pokémon DOTS"
 
 .elseif LANG_EN
 
@@ -95,6 +95,6 @@ no_place_in_boxes:
 		.string "I am afraid but it seems that you\nalready used this present code.\pEvery single present code can\nonly be used once however."
 
 	str_no_place_in_boxes:
-		.autostring 35 2 "I am most sorry, but it appears that neither in your party nor your Pc boxes you seem to have room for this Pokémon DOTS"
+		.autostring 35 2 "I am most sorry, but it appears that neither in your party nor your PC boxes you seem to have room for this Pokémon DOTS"
 .endif
     

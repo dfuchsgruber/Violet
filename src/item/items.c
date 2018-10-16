@@ -24,7 +24,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MEISTERBALL
-		LANGDEP(PSTRING("Meisterball"), PSTRING("MASTER BALL")),
+		LANGDEP(PSTRING("Meisterball"), PSTRING("Master Ball")),
 		0x1, //index
 		0, //price
 		0, //holding_effect_id
@@ -39,7 +39,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HYPERBALL
-		LANGDEP(PSTRING("Hyperball"), PSTRING("ULTRA BALL")),
+		LANGDEP(PSTRING("Hyperball"), PSTRING("Ultra Ball")),
 		0x2, //index
 		1200, //price
 		0, //holding_effect_id
@@ -54,7 +54,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERBALL
-		LANGDEP(PSTRING("Superball"), PSTRING("GREAT BALL")),
+		LANGDEP(PSTRING("Superball"), PSTRING("Great Ball")),
 		0x3, //index
 		600, //price
 		0, //holding_effect_id
@@ -69,7 +69,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEBALL
-		LANGDEP(PSTRING("Pokéball"), PSTRING("POKé BALL")),
+		LANGDEP(PSTRING("Pokéball"), PSTRING("Poké Ball")),
 		0x4, //index
 		200, //price
 		0, //holding_effect_id
@@ -84,7 +84,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SAFARIBALL
-		LANGDEP(PSTRING("Safariball"), PSTRING("SAFARI BALL")),
+		LANGDEP(PSTRING("Safariball"), PSTRING("Safari Ball")),
 		0x5, //index
 		0, //price
 		0, //holding_effect_id
@@ -99,7 +99,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NETZBALL
-		LANGDEP(PSTRING("Netzball"), PSTRING("NET BALL")),
+		LANGDEP(PSTRING("Netzball"), PSTRING("Net Ball")),
 		0x6, //index
 		1000, //price
 		0, //holding_effect_id
@@ -114,7 +114,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAUCHBALL
-		LANGDEP(PSTRING("Tauchball"), PSTRING("DIVE BALL")),
+		LANGDEP(PSTRING("Tauchball"), PSTRING("Dive Ball")),
 		0x7, //index
 		1000, //price
 		0, //holding_effect_id
@@ -129,7 +129,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NESTBALL
-		LANGDEP(PSTRING("Nestball"), PSTRING("NEST BALL")),
+		LANGDEP(PSTRING("Nestball"), PSTRING("Nest Ball")),
 		0x8, //index
 		1000, //price
 		0, //holding_effect_id
@@ -144,7 +144,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WIEDERBALL
-		LANGDEP(PSTRING("Wiederball"), PSTRING("REPEAT BALL")),
+		LANGDEP(PSTRING("Wiederball"), PSTRING("Repeat Ball")),
 		0x9, //index
 		1000, //price
 		0, //holding_effect_id
@@ -159,7 +159,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TIMERBALL
-		LANGDEP(PSTRING("Timerball"), PSTRING("TIMER BALL")),
+		LANGDEP(PSTRING("Timerball"), PSTRING("Timer Ball")),
 		0xa, //index
 		1000, //price
 		0, //holding_effect_id
@@ -174,7 +174,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LUXUSBALL
-		LANGDEP(PSTRING("Luxusball"), PSTRING("LUXURY BALL")),
+		LANGDEP(PSTRING("Luxusball"), PSTRING("Luxury Ball")),
 		0xb, //index
 		0, //price
 		0, //holding_effect_id
@@ -189,7 +189,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PREMIERBALL
-		LANGDEP(PSTRING("Premierball"), PSTRING("PREMIER BALL")),
+		LANGDEP(PSTRING("Premierball"), PSTRING("Premier Ball")),
 		0xc, //index
 		200, //price
 		0, //holding_effect_id
@@ -204,7 +204,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRANK
-		LANGDEP(PSTRING("Trank"), PSTRING("POTION")),
+		LANGDEP(PSTRING("Trank"), PSTRING("Potion")),
 		0xd, //index
 		300, //price
 		0, //holding_effect_id
@@ -219,7 +219,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GEGENGIFT
-		LANGDEP(PSTRING("Gegengift"), PSTRING("ANTIDOTE")),
+		LANGDEP(PSTRING("Gegengift"), PSTRING("Antidote")),
 		0xe, //index
 		250, //price
 		0, //holding_effect_id
@@ -234,7 +234,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FEUERHEILER
-		LANGDEP(PSTRING("Feuerheiler"), PSTRING("BURN HEAL")),
+		LANGDEP(PSTRING("Feuerheiler"), PSTRING("Burn Heal")),
 		0xf, //index
 		250, //price
 		0, //holding_effect_id
@@ -249,7 +249,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EISHEILER
-		LANGDEP(PSTRING("Eisheiler"), PSTRING("ICE HEAL")),
+		LANGDEP(PSTRING("Eisheiler"), PSTRING("Ice Heal")),
 		0x10, //index
 		250, //price
 		0, //holding_effect_id
@@ -264,7 +264,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AUFWECKER
-		LANGDEP(PSTRING("Aufwecker"), PSTRING("AWAKENING")),
+		LANGDEP(PSTRING("Aufwecker"), PSTRING("Awakening")),
 		0x11, //index
 		250, //price
 		0, //holding_effect_id
@@ -279,7 +279,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PARA_HEILER
-		LANGDEP(PSTRING("Para-Heiler"), PSTRING("PARLYZ HEAL")),
+		LANGDEP(PSTRING("Para-Heiler"), PSTRING("Parlyz Heal")),
 		0x12, //index
 		200, //price
 		0, //holding_effect_id
@@ -294,7 +294,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_GENESUNG
-		LANGDEP(PSTRING("Top-Genesung"), PSTRING("FULL RESTORE")),
+		LANGDEP(PSTRING("Top-Genesung"), PSTRING("Full Restore")),
 		0x13, //index
 		3000, //price
 		0, //holding_effect_id
@@ -309,7 +309,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_TRANK
-		LANGDEP(PSTRING("Top-Trank"), PSTRING("MAX POTION")),
+		LANGDEP(PSTRING("Top-Trank"), PSTRING("Max Potion")),
 		0x14, //index
 		2500, //price
 		0, //holding_effect_id
@@ -324,7 +324,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HYPERTRANK
-		LANGDEP(PSTRING("Hypertrank"), PSTRING("HYPER POTION")),
+		LANGDEP(PSTRING("Hypertrank"), PSTRING("Hyper Potion")),
 		0x15, //index
 		1200, //price
 		0, //holding_effect_id
@@ -339,7 +339,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERTRANK
-		LANGDEP(PSTRING("Supertrank"), PSTRING("SUPER POTION")),
+		LANGDEP(PSTRING("Supertrank"), PSTRING("Super Potion")),
 		0x16, //index
 		700, //price
 		0, //holding_effect_id
@@ -354,7 +354,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HYPERHEILER
-		LANGDEP(PSTRING("Hyperheiler"), PSTRING("FULL HEAL")),
+		LANGDEP(PSTRING("Hyperheiler"), PSTRING("Full Heal")),
 		0x17, //index
 		600, //price
 		0, //holding_effect_id
@@ -369,7 +369,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BELEBER
-		LANGDEP(PSTRING("Beleber"), PSTRING("REVIVE")),
+		LANGDEP(PSTRING("Beleber"), PSTRING("Revive")),
 		0x18, //index
 		1500, //price
 		0, //holding_effect_id
@@ -384,7 +384,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_BELEBER
-		LANGDEP(PSTRING("Top-Beleber"), PSTRING("MAX REVIVE")),
+		LANGDEP(PSTRING("Top-Beleber"), PSTRING("Max Revive")),
 		0x19, //index
 		4000, //price
 		0, //holding_effect_id
@@ -399,7 +399,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAFELWASSER
-		LANGDEP(PSTRING("Tafelwasser"), PSTRING("FRESH WATER")),
+		LANGDEP(PSTRING("Tafelwasser"), PSTRING("Fresh Water")),
 		0x1a, //index
 		200, //price
 		0, //holding_effect_id
@@ -414,7 +414,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPRUDEL
-		LANGDEP(PSTRING("Sprudel"), PSTRING("SODA POP")),
+		LANGDEP(PSTRING("Sprudel"), PSTRING("Soda Pop")),
 		0x1b, //index
 		300, //price
 		0, //holding_effect_id
@@ -429,7 +429,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LIMONADE
-		LANGDEP(PSTRING("Limonade"), PSTRING("LEMONADE")),
+		LANGDEP(PSTRING("Limonade"), PSTRING("Lemonade")),
 		0x1c, //index
 		350, //price
 		0, //holding_effect_id
@@ -444,7 +444,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUHMUH_MILCH
-		LANGDEP(PSTRING("Kuhmuh-Milch"), PSTRING("MOOMOO MILK")),
+		LANGDEP(PSTRING("Kuhmuh-Milch"), PSTRING("Moomoo Milk")),
 		0x1d, //index
 		500, //price
 		0, //holding_effect_id
@@ -459,7 +459,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ENERGIESTAUB
-		LANGDEP(PSTRING("Energiestaub"), PSTRING("ENERGYPOWDER")),
+		LANGDEP(PSTRING("Energiestaub"), PSTRING("Energypowder")),
 		0x1e, //index
 		500, //price
 		0, //holding_effect_id
@@ -474,7 +474,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KRAFTWURZEL
-		LANGDEP(PSTRING("Kraftwurzel"), PSTRING("ENERGY ROOT")),
+		LANGDEP(PSTRING("Kraftwurzel"), PSTRING("Energy Root")),
 		0x1f, //index
 		800, //price
 		0, //holding_effect_id
@@ -489,7 +489,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HEILPUDER
-		LANGDEP(PSTRING("Heilpuder"), PSTRING("HEAL POWDER")),
+		LANGDEP(PSTRING("Heilpuder"), PSTRING("Heal Powder")),
 		0x20, //index
 		450, //price
 		0, //holding_effect_id
@@ -504,7 +504,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VITALKRAUT
-		LANGDEP(PSTRING("Vitalkraut"), PSTRING("REVIVAL HERB")),
+		LANGDEP(PSTRING("Vitalkraut"), PSTRING("Revival Herb")),
 		0x21, //index
 		2800, //price
 		0, //holding_effect_id
@@ -519,7 +519,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AETHER
-		LANGDEP(PSTRING("Äther"), PSTRING("ETHER")),
+		LANGDEP(PSTRING("Äther"), PSTRING("Ether")),
 		0x22, //index
 		1200, //price
 		0, //holding_effect_id
@@ -534,7 +534,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_AETHER
-		LANGDEP(PSTRING("Top-äther"), PSTRING("MAX ETHER")),
+		LANGDEP(PSTRING("Top-Äther"), PSTRING("Max Ether")),
 		0x23, //index
 		2000, //price
 		0, //holding_effect_id
@@ -549,7 +549,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ELIXIER
-		LANGDEP(PSTRING("Elixier"), PSTRING("ELIXIR")),
+		LANGDEP(PSTRING("Elixier"), PSTRING("Elixir")),
 		0x24, //index
 		3000, //price
 		0, //holding_effect_id
@@ -564,7 +564,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_ELIXIER
-		LANGDEP(PSTRING("Top-Elixier"), PSTRING("MAX ELIXIR")),
+		LANGDEP(PSTRING("Top-Elixier"), PSTRING("Max Elixir")),
 		0x25, //index
 		4500, //price
 		0, //holding_effect_id
@@ -579,7 +579,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LAVAKEKS
-		LANGDEP(PSTRING("Lavakeks"), PSTRING("LAVA COOKIE")),
+		LANGDEP(PSTRING("Lavakeks"), PSTRING("Lava Cookie")),
 		0x26, //index
 		200, //price
 		0, //holding_effect_id
@@ -594,7 +594,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLAUE_FLOETE
-		LANGDEP(PSTRING("Blaue Flöte"), PSTRING("BLUE FLUTE")),
+		LANGDEP(PSTRING("Blaue Flöte"), PSTRING("Blue Flute")),
 		0x27, //index
 		100, //price
 		0, //holding_effect_id
@@ -609,7 +609,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GELBE_FLOETE
-		LANGDEP(PSTRING("Gelbe Flöte"), PSTRING("YELLOW FLUTE")),
+		LANGDEP(PSTRING("Gelbe Flöte"), PSTRING("Yellow Flute")),
 		0x28, //index
 		200, //price
 		0, //holding_effect_id
@@ -624,7 +624,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROTE_FLOETE
-		LANGDEP(PSTRING("Rote Flöte"), PSTRING("RED FLUTE")),
+		LANGDEP(PSTRING("Rote Flöte"), PSTRING("Red Flute")),
 		0x29, //index
 		300, //price
 		0, //holding_effect_id
@@ -639,7 +639,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHW_FLOETE
-		LANGDEP(PSTRING("Schw. Flöte"), PSTRING("BLACK FLUTE")),
+		LANGDEP(PSTRING("Schw. Flöte"), PSTRING("Black Flute")),
 		0x2a, //index
 		400, //price
 		0, //holding_effect_id
@@ -654,7 +654,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WEISSE_FLOETE
-		LANGDEP(PSTRING("Weisse Flöte"), PSTRING("WHITE FLUTE")),
+		LANGDEP(PSTRING("Weisse Flöte"), PSTRING("White Flute")),
 		0x2b, //index
 		500, //price
 		0, //holding_effect_id
@@ -669,7 +669,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BEERENSAFT
-		LANGDEP(PSTRING("Beerensaft"), PSTRING("BERRY JUICE")),
+		LANGDEP(PSTRING("Beerensaft"), PSTRING("Berry Juice")),
 		0x2c, //index
 		100, //price
 		1, //holding_effect_id
@@ -684,7 +684,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ZAUBERASCHE
-		LANGDEP(PSTRING("Zauberasche"), PSTRING("SACRED ASH")),
+		LANGDEP(PSTRING("Zauberasche"), PSTRING("Sacred Ash")),
 		0x2d, //index
 		200, //price
 		0, //holding_effect_id
@@ -699,7 +699,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUESTENSALZ
-		LANGDEP(PSTRING("Küstensalz"), PSTRING("SHOAL SALT")),
+		LANGDEP(PSTRING("Küstensalz"), PSTRING("Shoal Salt")),
 		0x2e, //index
 		20, //price
 		0, //holding_effect_id
@@ -714,7 +714,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUESTENSCHALE
-		LANGDEP(PSTRING("Küstenschale"), PSTRING("SHOAL SHELL")),
+		LANGDEP(PSTRING("Küstenschale"), PSTRING("Shoal Shell")),
 		0x2f, //index
 		20, //price
 		0, //holding_effect_id
@@ -729,7 +729,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PURPURSTUECK
-		LANGDEP(PSTRING("Purpurstück"), PSTRING("RED SHARD")),
+		LANGDEP(PSTRING("Purpurstück"), PSTRING("Red Shard")),
 		0x30, //index
 		200, //price
 		0, //holding_effect_id
@@ -744,7 +744,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_INDIGOSTUECK
-		LANGDEP(PSTRING("Indigostück"), PSTRING("BLUE SHARD")),
+		LANGDEP(PSTRING("Indigostück"), PSTRING("Blue Shard")),
 		0x31, //index
 		200, //price
 		0, //holding_effect_id
@@ -759,7 +759,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GELBSTUECK
-		LANGDEP(PSTRING("Gelbstück"), PSTRING("YELLOW SHARD")),
+		LANGDEP(PSTRING("Gelbstück"), PSTRING("Yellow Shard")),
 		0x32, //index
 		200, //price
 		0, //holding_effect_id
@@ -774,7 +774,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRUENSTUECK
-		LANGDEP(PSTRING("Grünstück"), PSTRING("GREEN SHARD")),
+		LANGDEP(PSTRING("Grünstück"), PSTRING("Green Shard")),
 		0x33, //index
 		200, //price
 		0, //holding_effect_id
@@ -954,7 +954,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KP_PLUS
-		LANGDEP(PSTRING("Kp-Plus"), PSTRING("HP UP")),
+		LANGDEP(PSTRING("KP-Plus"), PSTRING("HP Up")),
 		0x3f, //index
 		9800, //price
 		0, //holding_effect_id
@@ -969,7 +969,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PROTEIN
-		LANGDEP(PSTRING("Protein"), PSTRING("PROTEIN")),
+		LANGDEP(PSTRING("Protein"), PSTRING("Protein")),
 		0x40, //index
 		9800, //price
 		0, //holding_effect_id
@@ -984,7 +984,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EISEN
-		LANGDEP(PSTRING("Eisen"), PSTRING("IRON")),
+		LANGDEP(PSTRING("Eisen"), PSTRING("Iron")),
 		0x41, //index
 		9800, //price
 		0, //holding_effect_id
@@ -999,7 +999,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_CARBON
-		LANGDEP(PSTRING("Carbon"), PSTRING("CARBOS")),
+		LANGDEP(PSTRING("Carbon"), PSTRING("Carbos")),
 		0x42, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1014,7 +1014,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KALZIUM
-		LANGDEP(PSTRING("Kalzium"), PSTRING("CALCIUM")),
+		LANGDEP(PSTRING("Kalzium"), PSTRING("Calcium")),
 		0x43, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1029,7 +1029,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SONDERBONBON
-		LANGDEP(PSTRING("Sonderbonbon"), PSTRING("RARE CANDY")),
+		LANGDEP(PSTRING("Sonderbonbon"), PSTRING("Rare Candy")),
 		0x44, //index
 		4800, //price
 		0, //holding_effect_id
@@ -1044,7 +1044,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AP_PLUS
-		LANGDEP(PSTRING("Ap-Plus"), PSTRING("PP UP")),
+		LANGDEP(PSTRING("AP-Plus"), PSTRING("PP Up")),
 		0x45, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1059,7 +1059,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ZINK
-		LANGDEP(PSTRING("Zink"), PSTRING("ZINC")),
+		LANGDEP(PSTRING("Zink"), PSTRING("Zinc")),
 		0x46, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1074,7 +1074,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AP_TOP
-		LANGDEP(PSTRING("Ap-Top"), PSTRING("PP MAX")),
+		LANGDEP(PSTRING("AP-Top"), PSTRING("PP Max")),
 		0x47, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1104,7 +1104,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MEGABLOCK
-		LANGDEP(PSTRING("Megablock"), PSTRING("GUARD SPEC.")),
+		LANGDEP(PSTRING("Megablock"), PSTRING("Guard Spec.")),
 		0x49, //index
 		700, //price
 		0, //holding_effect_id
@@ -1119,7 +1119,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGRIFFPLUS
-		LANGDEP(PSTRING("Angriffplus"), PSTRING("DIRE HIT")),
+		LANGDEP(PSTRING("Angriffplus"), PSTRING("Dire Hit")),
 		0x4a, //index
 		650, //price
 		0, //holding_effect_id
@@ -1134,7 +1134,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_ANGRIFF
-		LANGDEP(PSTRING("X-Angriff"), PSTRING("X ATTACK")),
+		LANGDEP(PSTRING("X-Angriff"), PSTRING("X Attack")),
 		0x4b, //index
 		500, //price
 		0, //holding_effect_id
@@ -1149,7 +1149,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_ABWEHR
-		LANGDEP(PSTRING("X-Abwehr"), PSTRING("X DEFEND")),
+		LANGDEP(PSTRING("X-Abwehr"), PSTRING("X Defend")),
 		0x4c, //index
 		550, //price
 		0, //holding_effect_id
@@ -1164,7 +1164,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_TEMPO
-		LANGDEP(PSTRING("X-Tempo"), PSTRING("X SPEED")),
+		LANGDEP(PSTRING("X-Tempo"), PSTRING("X Speed")),
 		0x4d, //index
 		350, //price
 		0, //holding_effect_id
@@ -1179,7 +1179,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_TREFFER
-		LANGDEP(PSTRING("X-Treffer"), PSTRING("X ACCURACY")),
+		LANGDEP(PSTRING("X-Treffer"), PSTRING("X Accuracy")),
 		0x4e, //index
 		950, //price
 		0, //holding_effect_id
@@ -1194,7 +1194,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_X_SPEZIAL
-		LANGDEP(PSTRING("X-Spezial"), PSTRING("X SPECIAL")),
+		LANGDEP(PSTRING("X-Spezial"), PSTRING("X Special")),
 		0x4f, //index
 		350, //price
 		0, //holding_effect_id
@@ -1209,7 +1209,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEPUPPE
-		LANGDEP(PSTRING("Poképuppe"), PSTRING("POKé DOLL")),
+		LANGDEP(PSTRING("Poképuppe"), PSTRING("Poké Doll")),
 		0x50, //index
 		1000, //price
 		0, //holding_effect_id
@@ -1224,7 +1224,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ENECO_RUTE
-		LANGDEP(PSTRING("Eneco-Rute"), PSTRING("FLUFFY TAIL")),
+		LANGDEP(PSTRING("Eneco-Rute"), PSTRING("Fluffy Tail")),
 		0x51, //index
 		1000, //price
 		0, //holding_effect_id
@@ -1254,7 +1254,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERSCHUTZ
-		LANGDEP(PSTRING("Superschutz"), PSTRING("SUPER REPEL")),
+		LANGDEP(PSTRING("Superschutz"), PSTRING("Super Repel")),
 		0x53, //index
 		500, //price
 		0, //holding_effect_id
@@ -1269,7 +1269,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TOP_SCHUTZ
-		LANGDEP(PSTRING("Top-Schutz"), PSTRING("MAX REPEL")),
+		LANGDEP(PSTRING("Top-Schutz"), PSTRING("Max Repel")),
 		0x54, //index
 		700, //price
 		0, //holding_effect_id
@@ -1284,7 +1284,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FLUCHTSEIL
-		LANGDEP(PSTRING("Fluchtseil"), PSTRING("ESCAPE ROPE")),
+		LANGDEP(PSTRING("Fluchtseil"), PSTRING("Escape Rope")),
 		0x55, //index
 		550, //price
 		0, //holding_effect_id
@@ -1299,7 +1299,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHUTZ
-		LANGDEP(PSTRING("Schutz"), PSTRING("REPEL")),
+		LANGDEP(PSTRING("Schutz"), PSTRING("Repel")),
 		0x56, //index
 		350, //price
 		0, //holding_effect_id
@@ -1404,7 +1404,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SONNENSTEIN
-		LANGDEP(PSTRING("Sonnenstein"), PSTRING("SUN STONE")),
+		LANGDEP(PSTRING("Sonnenstein"), PSTRING("Sun Stone")),
 		0x5d, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1419,7 +1419,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MONDSTEIN
-		LANGDEP(PSTRING("Mondstein"), PSTRING("MOON STONE")),
+		LANGDEP(PSTRING("Mondstein"), PSTRING("Moon Stone")),
 		0x5e, //index
 		0, //price
 		0, //holding_effect_id
@@ -1434,7 +1434,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FEUERSTEIN
-		LANGDEP(PSTRING("Feuerstein"), PSTRING("FIRE STONE")),
+		LANGDEP(PSTRING("Feuerstein"), PSTRING("Fire Stone")),
 		0x5f, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1449,7 +1449,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DONNERSTEIN
-		LANGDEP(PSTRING("Donnerstein"), PSTRING("THUNDERSTONE")),
+		LANGDEP(PSTRING("Donnerstein"), PSTRING("Thunderstone")),
 		0x60, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1464,7 +1464,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WASSERSTEIN
-		LANGDEP(PSTRING("Wasserstein"), PSTRING("WATER STONE")),
+		LANGDEP(PSTRING("Wasserstein"), PSTRING("Water Stone")),
 		0x61, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1479,7 +1479,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLATTSTEIN
-		LANGDEP(PSTRING("Blattstein"), PSTRING("LEAF STONE")),
+		LANGDEP(PSTRING("Blattstein"), PSTRING("Leaf Stone")),
 		0x62, //index
 		2100, //price
 		0, //holding_effect_id
@@ -1554,7 +1554,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MINIPILZ
-		LANGDEP(PSTRING("Minipilz"), PSTRING("TINYMUSHROOM")),
+		LANGDEP(PSTRING("Minipilz"), PSTRING("Tinymushroom")),
 		0x67, //index
 		500, //price
 		0, //holding_effect_id
@@ -1569,7 +1569,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RIESENPILZ
-		LANGDEP(PSTRING("Riesenpilz"), PSTRING("BIG MUSHROOM")),
+		LANGDEP(PSTRING("Riesenpilz"), PSTRING("Big Mushroom")),
 		0x68, //index
 		5000, //price
 		0, //holding_effect_id
@@ -1599,7 +1599,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PERLE
-		LANGDEP(PSTRING("Perle"), PSTRING("PEARL")),
+		LANGDEP(PSTRING("Perle"), PSTRING("Pearl")),
 		0x6a, //index
 		1400, //price
 		0, //holding_effect_id
@@ -1614,7 +1614,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RIESENPERLE
-		LANGDEP(PSTRING("Riesenperle"), PSTRING("BIG PEARL")),
+		LANGDEP(PSTRING("Riesenperle"), PSTRING("Big Pearl")),
 		0x6b, //index
 		7500, //price
 		0, //holding_effect_id
@@ -1629,7 +1629,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_STERNENSTAUB
-		LANGDEP(PSTRING("Sternenstaub"), PSTRING("STARDUST")),
+		LANGDEP(PSTRING("Sternenstaub"), PSTRING("Stardust")),
 		0x6c, //index
 		2000, //price
 		0, //holding_effect_id
@@ -1644,7 +1644,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_STERNENSTUECK
-		LANGDEP(PSTRING("Sternenstück"), PSTRING("STAR PIECE")),
+		LANGDEP(PSTRING("Sternenstück"), PSTRING("Star Piece")),
 		0x6d, //index
 		9800, //price
 		0, //holding_effect_id
@@ -1659,7 +1659,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NUGGET
-		LANGDEP(PSTRING("Nugget"), PSTRING("NUGGET")),
+		LANGDEP(PSTRING("Nugget"), PSTRING("Nugget")),
 		0x6e, //index
 		10000, //price
 		0, //holding_effect_id
@@ -1674,7 +1674,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HERZSCHUPPE
-		LANGDEP(PSTRING("Herzschuppe"), PSTRING("HEART SCALE")),
+		LANGDEP(PSTRING("Herzschuppe"), PSTRING("Heart Scale")),
 		0x6f, //index
 		100, //price
 		0, //holding_effect_id
@@ -1824,7 +1824,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_79
-		LANGDEP(PSTRING("Zigzachsbrief"), PSTRING("ORANGE MAIL")),
+		LANGDEP(PSTRING("Zigzachsbrief"), PSTRING("Orange Mail")),
 		0x79, //index
 		50, //price
 		0, //holding_effect_id
@@ -1839,7 +1839,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HAFENBRIEF
-		LANGDEP(PSTRING("Hafenbrief"), PSTRING("HARBOR MAIL")),
+		LANGDEP(PSTRING("Hafenbrief"), PSTRING("Harbor Mail")),
 		0x7a, //index
 		50, //price
 		0, //holding_effect_id
@@ -1854,7 +1854,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GLITZERBRIEF
-		LANGDEP(PSTRING("Glitzerbrief"), PSTRING("GLITTER MAIL")),
+		LANGDEP(PSTRING("Glitzerbrief"), PSTRING("Glitter Mail")),
 		0x7b, //index
 		50, //price
 		0, //holding_effect_id
@@ -1869,7 +1869,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EILBRIEF
-		LANGDEP(PSTRING("Eilbrief"), PSTRING("MECH MAIL")),
+		LANGDEP(PSTRING("Eilbrief"), PSTRING("Mech Mail")),
 		0x7c, //index
 		50, //price
 		0, //holding_effect_id
@@ -1884,7 +1884,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WALDBRIEF
-		LANGDEP(PSTRING("Waldbrief"), PSTRING("WOOD MAIL")),
+		LANGDEP(PSTRING("Waldbrief"), PSTRING("Wood Mail")),
 		0x7d, //index
 		50, //price
 		0, //holding_effect_id
@@ -1899,7 +1899,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WELLENBRIEF
-		LANGDEP(PSTRING("Wellenbrief"), PSTRING("WAVE MAIL")),
+		LANGDEP(PSTRING("Wellenbrief"), PSTRING("Wave Mail")),
 		0x7e, //index
 		50, //price
 		0, //holding_effect_id
@@ -1914,7 +1914,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PERLENBRIEF
-		LANGDEP(PSTRING("Perlenbrief"), PSTRING("BEAD MAIL")),
+		LANGDEP(PSTRING("Perlenbrief"), PSTRING("Bead Mail")),
 		0x7f, //index
 		50, //price
 		0, //holding_effect_id
@@ -1929,7 +1929,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DUNKELBRIEF
-		LANGDEP(PSTRING("Dunkelbrief"), PSTRING("SHADOW MAIL")),
+		LANGDEP(PSTRING("Dunkelbrief"), PSTRING("Shadow Mail")),
 		0x80, //index
 		50, //price
 		0, //holding_effect_id
@@ -1944,7 +1944,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TROPENBRIEF
-		LANGDEP(PSTRING("Tropenbrief"), PSTRING("TROPIC MAIL")),
+		LANGDEP(PSTRING("Tropenbrief"), PSTRING("Tropic Mail")),
 		0x81, //index
 		50, //price
 		0, //holding_effect_id
@@ -1959,7 +1959,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRAUMBRIEF
-		LANGDEP(PSTRING("Traumbrief"), PSTRING("DREAM MAIL")),
+		LANGDEP(PSTRING("Traumbrief"), PSTRING("Dream Mail")),
 		0x82, //index
 		50, //price
 		0, //holding_effect_id
@@ -1974,7 +1974,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EDELBRIEF
-		LANGDEP(PSTRING("Edelbrief"), PSTRING("FAB MAIL")),
+		LANGDEP(PSTRING("Edelbrief"), PSTRING("Fab Mail")),
 		0x83, //index
 		50, //price
 		0, //holding_effect_id
@@ -1989,7 +1989,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RETROBRIEF
-		LANGDEP(PSTRING("Retrobrief"), PSTRING("RETRO MAIL")),
+		LANGDEP(PSTRING("Retrobrief"), PSTRING("Retro Mail")),
 		0x84, //index
 		50, //price
 		0, //holding_effect_id
@@ -2004,7 +2004,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AMRENABEERE
-		LANGDEP(PSTRING("Amrenabeere"), PSTRING("CHERI BERRY")),
+		LANGDEP(PSTRING("Amrenabeere"), PSTRING("Cheri Berry")),
 		0x85, //index
 		20, //price
 		2, //holding_effect_id
@@ -2019,7 +2019,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MARONBEERE
-		LANGDEP(PSTRING("Maronbeere"), PSTRING("CHESTO BERRY")),
+		LANGDEP(PSTRING("Maronbeere"), PSTRING("Chesto Berry")),
 		0x86, //index
 		20, //price
 		3, //holding_effect_id
@@ -2034,7 +2034,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PIRSIFBEERE
-		LANGDEP(PSTRING("Pirsifbeere"), PSTRING("PECHA BERRY")),
+		LANGDEP(PSTRING("Pirsifbeere"), PSTRING("Pecha Berry")),
 		0x87, //index
 		20, //price
 		4, //holding_effect_id
@@ -2049,7 +2049,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FRAGIABEERE
-		LANGDEP(PSTRING("Fragiabeere"), PSTRING("RAWST BERRY")),
+		LANGDEP(PSTRING("Fragiabeere"), PSTRING("Rawst Berry")),
 		0x88, //index
 		20, //price
 		5, //holding_effect_id
@@ -2064,7 +2064,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WILBIRBEERE
-		LANGDEP(PSTRING("Wilbirbeere"), PSTRING("ASPEAR BERRY")),
+		LANGDEP(PSTRING("Wilbirbeere"), PSTRING("Aspear Berry")),
 		0x89, //index
 		20, //price
 		6, //holding_effect_id
@@ -2079,7 +2079,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_JONAGOBEERE
-		LANGDEP(PSTRING("Jonagobeere"), PSTRING("LEPPA BERRY")),
+		LANGDEP(PSTRING("Jonagobeere"), PSTRING("Leppa Berry")),
 		0x8a, //index
 		20, //price
 		7, //holding_effect_id
@@ -2094,7 +2094,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SINELBEERE
-		LANGDEP(PSTRING("Sinelbeere"), PSTRING("ORAN BERRY")),
+		LANGDEP(PSTRING("Sinelbeere"), PSTRING("Oran Berry")),
 		0x8b, //index
 		20, //price
 		1, //holding_effect_id
@@ -2109,7 +2109,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PERSIMBEERE
-		LANGDEP(PSTRING("Persimbeere"), PSTRING("PERSIM BERRY")),
+		LANGDEP(PSTRING("Persimbeere"), PSTRING("Persim Berry")),
 		0x8c, //index
 		20, //price
 		8, //holding_effect_id
@@ -2124,7 +2124,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PRUNUSBEERE
-		LANGDEP(PSTRING("Prunusbeere"), PSTRING("LUM BERRY")),
+		LANGDEP(PSTRING("Prunusbeere"), PSTRING("Lum Berry")),
 		0x8d, //index
 		20, //price
 		9, //holding_effect_id
@@ -2139,7 +2139,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TSITRUBEERE
-		LANGDEP(PSTRING("Tsitrubeere"), PSTRING("SITRUS BERRY")),
+		LANGDEP(PSTRING("Tsitrubeere"), PSTRING("Sitrus Berry")),
 		0x8e, //index
 		20, //price
 		1, //holding_effect_id
@@ -2154,7 +2154,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GIEFEBEERE
-		LANGDEP(PSTRING("Giefebeere"), PSTRING("FIGY BERRY")),
+		LANGDEP(PSTRING("Giefebeere"), PSTRING("Figy Berry")),
 		0x8f, //index
 		20, //price
 		10, //holding_effect_id
@@ -2169,7 +2169,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WIKIBEERE
-		LANGDEP(PSTRING("Wikibeere"), PSTRING("WIKI BERRY")),
+		LANGDEP(PSTRING("Wikibeere"), PSTRING("Wiki Berry")),
 		0x90, //index
 		20, //price
 		11, //holding_effect_id
@@ -2184,7 +2184,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MAGOBEERE
-		LANGDEP(PSTRING("Magobeere"), PSTRING("MAGO BERRY")),
+		LANGDEP(PSTRING("Magobeere"), PSTRING("Mago Berry")),
 		0x91, //index
 		20, //price
 		12, //holding_effect_id
@@ -2199,7 +2199,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GAUVEBEERE
-		LANGDEP(PSTRING("Gauvebeere"), PSTRING("AGUAV BERRY")),
+		LANGDEP(PSTRING("Gauvebeere"), PSTRING("Aguav Berry")),
 		0x92, //index
 		20, //price
 		13, //holding_effect_id
@@ -2214,7 +2214,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_YAPABEERE
-		LANGDEP(PSTRING("Yapabeere"), PSTRING("IAPAPA BERRY")),
+		LANGDEP(PSTRING("Yapabeere"), PSTRING("Iapapa Berry")),
 		0x93, //index
 		20, //price
 		14, //holding_effect_id
@@ -2229,7 +2229,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HIMMIHBEERE
-		LANGDEP(PSTRING("Himmihbeere"), PSTRING("RAZZ BERRY")),
+		LANGDEP(PSTRING("Himmihbeere"), PSTRING("Razz Berry")),
 		0x94, //index
 		20, //price
 		0, //holding_effect_id
@@ -2244,7 +2244,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MORBBEERE
-		LANGDEP(PSTRING("Morbbeere"), PSTRING("BLUK BERRY")),
+		LANGDEP(PSTRING("Morbbeere"), PSTRING("Bluk Berry")),
 		0x95, //index
 		20, //price
 		0, //holding_effect_id
@@ -2259,7 +2259,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NANABBEERE
-		LANGDEP(PSTRING("Nanabbeere"), PSTRING("NANAB BERRY")),
+		LANGDEP(PSTRING("Nanabbeere"), PSTRING("Nanab Berry")),
 		0x96, //index
 		20, //price
 		0, //holding_effect_id
@@ -2274,7 +2274,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NIRBEBEERE
-		LANGDEP(PSTRING("Nirbebeere"), PSTRING("WEPEAR BERRY")),
+		LANGDEP(PSTRING("Nirbebeere"), PSTRING("Wepear Berry")),
 		0x97, //index
 		20, //price
 		0, //holding_effect_id
@@ -2289,7 +2289,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SANANABEERE
-		LANGDEP(PSTRING("Sananabeere"), PSTRING("PINAP BERRY")),
+		LANGDEP(PSTRING("Sananabeere"), PSTRING("Pinap Berry")),
 		0x98, //index
 		20, //price
 		0, //holding_effect_id
@@ -2304,7 +2304,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRANABEERE
-		LANGDEP(PSTRING("Granabeere"), PSTRING("POMEG BERRY")),
+		LANGDEP(PSTRING("Granabeere"), PSTRING("Pomeg Berry")),
 		0x99, //index
 		20, //price
 		0, //holding_effect_id
@@ -2319,7 +2319,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SETANGBEERE
-		LANGDEP(PSTRING("Setangbeere"), PSTRING("KELPSY BERRY")),
+		LANGDEP(PSTRING("Setangbeere"), PSTRING("Kelpsy Berry")),
 		0x9a, //index
 		20, //price
 		0, //holding_effect_id
@@ -2334,7 +2334,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_QUALOTBEERE
-		LANGDEP(PSTRING("Qualotbeere"), PSTRING("QUALOT BERRY")),
+		LANGDEP(PSTRING("Qualotbeere"), PSTRING("Qualot Berry")),
 		0x9b, //index
 		20, //price
 		0, //holding_effect_id
@@ -2349,7 +2349,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HONMELBEERE
-		LANGDEP(PSTRING("Honmelbeere"), PSTRING("HONDEW BERRY")),
+		LANGDEP(PSTRING("Honmelbeere"), PSTRING("Hondew Berry")),
 		0x9c, //index
 		20, //price
 		0, //holding_effect_id
@@ -2364,7 +2364,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LABRUSBEERE
-		LANGDEP(PSTRING("Labrusbeere"), PSTRING("GREPA BERRY")),
+		LANGDEP(PSTRING("Labrusbeere"), PSTRING("Grepa Berry")),
 		0x9d, //index
 		20, //price
 		0, //holding_effect_id
@@ -2379,7 +2379,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAMOTBEERE
-		LANGDEP(PSTRING("Tamotbeere"), PSTRING("TAMATO BERRY")),
+		LANGDEP(PSTRING("Tamotbeere"), PSTRING("Tamato Berry")),
 		0x9e, //index
 		20, //price
 		0, //holding_effect_id
@@ -2394,7 +2394,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SAIMBEERE
-		LANGDEP(PSTRING("Saimbeere"), PSTRING("CORNN BERRY")),
+		LANGDEP(PSTRING("Saimbeere"), PSTRING("Cornn Berry")),
 		0x9f, //index
 		20, //price
 		0, //holding_effect_id
@@ -2409,7 +2409,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MAGOSTBEERE
-		LANGDEP(PSTRING("Magostbeere"), PSTRING("MAGOST BERRY")),
+		LANGDEP(PSTRING("Magostbeere"), PSTRING("Magost Berry")),
 		0xa0, //index
 		20, //price
 		0, //holding_effect_id
@@ -2424,7 +2424,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RABUTABEERE
-		LANGDEP(PSTRING("Rabutabeere"), PSTRING("RABUTA BERRY")),
+		LANGDEP(PSTRING("Rabutabeere"), PSTRING("Rabuta Berry")),
 		0xa1, //index
 		20, //price
 		0, //holding_effect_id
@@ -2439,7 +2439,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRONZIBEERE
-		LANGDEP(PSTRING("Tronzibeere"), PSTRING("NOMEL BERRY")),
+		LANGDEP(PSTRING("Tronzibeere"), PSTRING("Nomel Berry")),
 		0xa2, //index
 		20, //price
 		0, //holding_effect_id
@@ -2454,7 +2454,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KIWANBEERE
-		LANGDEP(PSTRING("Kiwanbeere"), PSTRING("SPELON BERRY")),
+		LANGDEP(PSTRING("Kiwanbeere"), PSTRING("Spelon Berry")),
 		0xa3, //index
 		20, //price
 		0, //holding_effect_id
@@ -2469,7 +2469,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PALLMBEERE
-		LANGDEP(PSTRING("Pallmbeere"), PSTRING("PAMTRE BERRY")),
+		LANGDEP(PSTRING("Pallmbeere"), PSTRING("Pamtre Berry")),
 		0xa4, //index
 		20, //price
 		0, //holding_effect_id
@@ -2484,7 +2484,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WASMELBEERE
-		LANGDEP(PSTRING("Wasmelbeere"), PSTRING("WATMEL BERRY")),
+		LANGDEP(PSTRING("Wasmelbeere"), PSTRING("Watmel Berry")),
 		0xa5, //index
 		20, //price
 		0, //holding_effect_id
@@ -2499,7 +2499,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DURINBEERE
-		LANGDEP(PSTRING("Durinbeere"), PSTRING("DURIN BERRY")),
+		LANGDEP(PSTRING("Durinbeere"), PSTRING("Durin Berry")),
 		0xa6, //index
 		20, //price
 		0, //holding_effect_id
@@ -2514,7 +2514,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MYRTILBEERE
-		LANGDEP(PSTRING("Myrtilbeere"), PSTRING("BELUE BERRY")),
+		LANGDEP(PSTRING("Myrtilbeere"), PSTRING("Belue Berry")),
 		0xa7, //index
 		20, //price
 		0, //holding_effect_id
@@ -2529,7 +2529,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LYDZIBEERE
-		LANGDEP(PSTRING("Lydzibeere"), PSTRING("LIECHI BERRY")),
+		LANGDEP(PSTRING("Lydzibeere"), PSTRING("Liechi Berry")),
 		0xa8, //index
 		20, //price
 		15, //holding_effect_id
@@ -2544,7 +2544,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LINGANBEERE
-		LANGDEP(PSTRING("Linganbeere"), PSTRING("GANLON BERRY")),
+		LANGDEP(PSTRING("Linganbeere"), PSTRING("Ganlon Berry")),
 		0xa9, //index
 		20, //price
 		16, //holding_effect_id
@@ -2559,7 +2559,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SALKABEERE
-		LANGDEP(PSTRING("Salkabeere"), PSTRING("SALAC BERRY")),
+		LANGDEP(PSTRING("Salkabeere"), PSTRING("Salac Berry")),
 		0xaa, //index
 		20, //price
 		17, //holding_effect_id
@@ -2574,7 +2574,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAHAYBEERE
-		LANGDEP(PSTRING("Tahaybeere"), PSTRING("PETAYA BERRY")),
+		LANGDEP(PSTRING("Tahaybeere"), PSTRING("Petaya Berry")),
 		0xab, //index
 		20, //price
 		18, //holding_effect_id
@@ -2589,7 +2589,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_APIKOBEERE
-		LANGDEP(PSTRING("Apikobeere"), PSTRING("APICOT BERRY")),
+		LANGDEP(PSTRING("Apikobeere"), PSTRING("Apicot Berry")),
 		0xac, //index
 		20, //price
 		19, //holding_effect_id
@@ -2604,7 +2604,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LANSATBEERE
-		LANGDEP(PSTRING("Lansatbeere"), PSTRING("LANSAT BERRY")),
+		LANGDEP(PSTRING("Lansatbeere"), PSTRING("Lansat Berry")),
 		0xad, //index
 		20, //price
 		20, //holding_effect_id
@@ -2619,7 +2619,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KRAMBOBEERE
-		LANGDEP(PSTRING("Krambobeere"), PSTRING("STARF BERRY")),
+		LANGDEP(PSTRING("Krambobeere"), PSTRING("Starf Berry")),
 		0xae, //index
 		20, //price
 		21, //holding_effect_id
@@ -2634,7 +2634,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ENIGMABEERE
-		LANGDEP(PSTRING("Enigmabeere"), PSTRING("ENIGMA BERRY")),
+		LANGDEP(PSTRING("Enigmabeere"), PSTRING("Enigma Berry")),
 		0xaf, //index
 		20, //price
 		0, //holding_effect_id
@@ -2694,7 +2694,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLENDPUDER
-		LANGDEP(PSTRING("Blendpuder"), PSTRING("BRIGHTPOWDER")),
+		LANGDEP(PSTRING("Blendpuder"), PSTRING("Brightpowder")),
 		0xb3, //index
 		10, //price
 		22, //holding_effect_id
@@ -2709,7 +2709,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHLOHKRAUT
-		LANGDEP(PSTRING("Schlohkraut"), PSTRING("WHITE HERB")),
+		LANGDEP(PSTRING("Schlohkraut"), PSTRING("White Herb")),
 		0xb4, //index
 		100, //price
 		23, //holding_effect_id
@@ -2724,7 +2724,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MACHOBAND
-		LANGDEP(PSTRING("Machoband"), PSTRING("MACHO BRACE")),
+		LANGDEP(PSTRING("Machoband"), PSTRING("Macho Brace")),
 		0xb5, //index
 		3000, //price
 		24, //holding_effect_id
@@ -2739,7 +2739,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EP_TEILER
-		LANGDEP(PSTRING("Ep-Teiler"), PSTRING("EXP. SHARE")),
+		LANGDEP(PSTRING("EP-Teiler"), PSTRING("Exp. Share")),
 		0xb6, //index
 		3000, //price
 		25, //holding_effect_id
@@ -2754,7 +2754,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FLINKKLAUE
-		LANGDEP(PSTRING("Flinkklaue"), PSTRING("QUICK CLAW")),
+		LANGDEP(PSTRING("Flinkklaue"), PSTRING("Quick Claw")),
 		0xb7, //index
 		100, //price
 		26, //holding_effect_id
@@ -2769,7 +2769,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SANFTGLOCKE
-		LANGDEP(PSTRING("Sanftglocke"), PSTRING("SOOTHE BELL")),
+		LANGDEP(PSTRING("Sanftglocke"), PSTRING("Soothe Bell")),
 		0xb8, //index
 		100, //price
 		27, //holding_effect_id
@@ -2784,7 +2784,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MENTALKRAUT
-		LANGDEP(PSTRING("Mentalkraut"), PSTRING("MENTAL HERB")),
+		LANGDEP(PSTRING("Mentalkraut"), PSTRING("Mental Herb")),
 		0xb9, //index
 		100, //price
 		28, //holding_effect_id
@@ -2799,7 +2799,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WAHLBAND
-		LANGDEP(PSTRING("Wahlband"), PSTRING("CHOICE BAND")),
+		LANGDEP(PSTRING("Wahlband"), PSTRING("Choice Band")),
 		0xba, //index
 		100, //price
 		29, //holding_effect_id
@@ -2814,7 +2814,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KING_STEIN
-		LANGDEP(PSTRING("King-Stein"), PSTRING("KING\S ROCK")),
+		LANGDEP(PSTRING("King-Stein"), PSTRING("King\s Rock")),
 		0xbb, //index
 		100, //price
 		30, //holding_effect_id
@@ -2829,7 +2829,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SILBERSTAUB
-		LANGDEP(PSTRING("Silberstaub"), PSTRING("SILVERPOWDER")),
+		LANGDEP(PSTRING("Silberstaub"), PSTRING("Silverpowder")),
 		0xbc, //index
 		100, //price
 		31, //holding_effect_id
@@ -2844,7 +2844,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MUENZAMULETT
-		LANGDEP(PSTRING("Münzamulett"), PSTRING("AMULET COIN")),
+		LANGDEP(PSTRING("Münzamulett"), PSTRING("Amulet Coin")),
 		0xbd, //index
 		100, //price
 		32, //holding_effect_id
@@ -2859,7 +2859,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHUTZBAND
-		LANGDEP(PSTRING("Schutzband"), PSTRING("CLEANSE TAG")),
+		LANGDEP(PSTRING("Schutzband"), PSTRING("Cleanse Tag")),
 		0xbe, //index
 		200, //price
 		33, //holding_effect_id
@@ -2874,7 +2874,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEELENTAU
-		LANGDEP(PSTRING("Seelentau"), PSTRING("SOUL DEW")),
+		LANGDEP(PSTRING("Seelentau"), PSTRING("Soul Dew")),
 		0xbf, //index
 		200, //price
 		34, //holding_effect_id
@@ -2889,7 +2889,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ABYSSZAHN
-		LANGDEP(PSTRING("Abysszahn"), PSTRING("DEEPSEATOOTH")),
+		LANGDEP(PSTRING("Abysszahn"), PSTRING("Deepseatooth")),
 		0xc0, //index
 		200, //price
 		35, //holding_effect_id
@@ -2904,7 +2904,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ABYSSPLATTE
-		LANGDEP(PSTRING("Abyssplatte"), PSTRING("DEEPSEASCALE")),
+		LANGDEP(PSTRING("Abyssplatte"), PSTRING("Deepseascale")),
 		0xc1, //index
 		200, //price
 		36, //holding_effect_id
@@ -2919,7 +2919,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RAUCHBALL
-		LANGDEP(PSTRING("Rauchball"), PSTRING("SMOKE BALL")),
+		LANGDEP(PSTRING("Rauchball"), PSTRING("Smoke Ball")),
 		0xc2, //index
 		200, //price
 		37, //holding_effect_id
@@ -2934,7 +2934,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EWIGSTEIN
-		LANGDEP(PSTRING("Ewigstein"), PSTRING("EVERSTONE")),
+		LANGDEP(PSTRING("Ewigstein"), PSTRING("Everstone")),
 		0xc3, //index
 		200, //price
 		38, //holding_effect_id
@@ -2949,7 +2949,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FOKUS_BAND
-		LANGDEP(PSTRING("Fokus-Band"), PSTRING("FOCUS BAND")),
+		LANGDEP(PSTRING("Fokus-Band"), PSTRING("Focus Band")),
 		0xc4, //index
 		200, //price
 		39, //holding_effect_id
@@ -2964,7 +2964,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GLUECKS_EI
-		LANGDEP(PSTRING("Glücks-Ei"), PSTRING("LUCKY EGG")),
+		LANGDEP(PSTRING("Glücks-Ei"), PSTRING("Lucky Egg")),
 		0xc5, //index
 		200, //price
 		40, //holding_effect_id
@@ -2979,7 +2979,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCOPE_LINSE
-		LANGDEP(PSTRING("Scope-Linse"), PSTRING("SCOPE LENS")),
+		LANGDEP(PSTRING("Scope-Linse"), PSTRING("Scope Lens")),
 		0xc6, //index
 		200, //price
 		41, //holding_effect_id
@@ -2994,7 +2994,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_METALLMANTEL
-		LANGDEP(PSTRING("Metallmantel"), PSTRING("METAL COAT")),
+		LANGDEP(PSTRING("Metallmantel"), PSTRING("Metal Coat")),
 		0xc7, //index
 		100, //price
 		42, //holding_effect_id
@@ -3009,7 +3009,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_UEBERRESTE
-		LANGDEP(PSTRING("Überreste"), PSTRING("LEFTOVERS")),
+		LANGDEP(PSTRING("Überreste"), PSTRING("Leftovers")),
 		0xc8, //index
 		200, //price
 		43, //holding_effect_id
@@ -3024,7 +3024,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DRACHENHAUT
-		LANGDEP(PSTRING("Drachenhaut"), PSTRING("DRAGON SCALE")),
+		LANGDEP(PSTRING("Drachenhaut"), PSTRING("Dragon Scale")),
 		0xc9, //index
 		2100, //price
 		44, //holding_effect_id
@@ -3039,7 +3039,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUGELBLITZ
-		LANGDEP(PSTRING("Kugelblitz"), PSTRING("LIGHT BALL")),
+		LANGDEP(PSTRING("Kugelblitz"), PSTRING("Light Ball")),
 		0xca, //index
 		100, //price
 		45, //holding_effect_id
@@ -3054,7 +3054,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PUDERSAND
-		LANGDEP(PSTRING("Pudersand"), PSTRING("SOFT SAND")),
+		LANGDEP(PSTRING("Pudersand"), PSTRING("Soft Sand")),
 		0xcb, //index
 		100, //price
 		46, //holding_effect_id
@@ -3069,7 +3069,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRANITSTEIN
-		LANGDEP(PSTRING("Granitstein"), PSTRING("HARD STONE")),
+		LANGDEP(PSTRING("Granitstein"), PSTRING("Hard Stone")),
 		0xcc, //index
 		100, //price
 		47, //holding_effect_id
@@ -3084,7 +3084,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WUNDERSAAT
-		LANGDEP(PSTRING("Wundersaat"), PSTRING("MIRACLE SEED")),
+		LANGDEP(PSTRING("Wundersaat"), PSTRING("Miracle Seed")),
 		0xcd, //index
 		100, //price
 		48, //holding_effect_id
@@ -3099,7 +3099,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHATTENGLAS
-		LANGDEP(PSTRING("Schattenglas"), PSTRING("BLACKGLASSES")),
+		LANGDEP(PSTRING("Schattenglas"), PSTRING("Blackglasses")),
 		0xce, //index
 		100, //price
 		49, //holding_effect_id
@@ -3114,7 +3114,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCHWARZGURT
-		LANGDEP(PSTRING("Schwarzgurt"), PSTRING("BLACK BELT")),
+		LANGDEP(PSTRING("Schwarzgurt"), PSTRING("Black Belt")),
 		0xcf, //index
 		100, //price
 		50, //holding_effect_id
@@ -3129,7 +3129,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MAGNET
-		LANGDEP(PSTRING("Magnet"), PSTRING("MAGNET")),
+		LANGDEP(PSTRING("Magnet"), PSTRING("Magnet")),
 		0xd0, //index
 		100, //price
 		51, //holding_effect_id
@@ -3144,7 +3144,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ZAUBERWASSER
-		LANGDEP(PSTRING("Zauberwasser"), PSTRING("MYSTIC WATER")),
+		LANGDEP(PSTRING("Zauberwasser"), PSTRING("Mystic Water")),
 		0xd1, //index
 		100, //price
 		52, //holding_effect_id
@@ -3159,7 +3159,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HACKATTACK
-		LANGDEP(PSTRING("Hackattack"), PSTRING("SHARP BEAK")),
+		LANGDEP(PSTRING("Hackattack"), PSTRING("Sharp Beak")),
 		0xd2, //index
 		100, //price
 		53, //holding_effect_id
@@ -3174,7 +3174,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GIFTSTICH
-		LANGDEP(PSTRING("Giftstich"), PSTRING("POISON BARB")),
+		LANGDEP(PSTRING("Giftstich"), PSTRING("Poison Barb")),
 		0xd3, //index
 		100, //price
 		54, //holding_effect_id
@@ -3189,7 +3189,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EWIGES_EIS
-		LANGDEP(PSTRING("Ewiges Eis"), PSTRING("NEVERMELTICE")),
+		LANGDEP(PSTRING("Ewiges Eis"), PSTRING("Nevermeltice")),
 		0xd4, //index
 		100, //price
 		55, //holding_effect_id
@@ -3204,7 +3204,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BANNSTICKER
-		LANGDEP(PSTRING("Bannsticker"), PSTRING("SPELL TAG")),
+		LANGDEP(PSTRING("Bannsticker"), PSTRING("Spell Tag")),
 		0xd5, //index
 		100, //price
 		56, //holding_effect_id
@@ -3219,7 +3219,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KRUEMMLOEFFEL
-		LANGDEP(PSTRING("Krümmlöffel"), PSTRING("TWISTEDSPOON")),
+		LANGDEP(PSTRING("Krümmlöffel"), PSTRING("Twistedspoon")),
 		0xd6, //index
 		100, //price
 		57, //holding_effect_id
@@ -3234,7 +3234,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HOLZKOHLE
-		LANGDEP(PSTRING("Holzkohle"), PSTRING("CHARCOAL")),
+		LANGDEP(PSTRING("Holzkohle"), PSTRING("Charcoal")),
 		0xd7, //index
 		9800, //price
 		58, //holding_effect_id
@@ -3249,7 +3249,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DRACHENZAHN
-		LANGDEP(PSTRING("Drachenzahn"), PSTRING("DRAGON FANG")),
+		LANGDEP(PSTRING("Drachenzahn"), PSTRING("Dragon Fang")),
 		0xd8, //index
 		100, //price
 		59, //holding_effect_id
@@ -3264,7 +3264,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEIDENSCHAL
-		LANGDEP(PSTRING("Seidenschal"), PSTRING("SILK SCARF")),
+		LANGDEP(PSTRING("Seidenschal"), PSTRING("Silk Scarf")),
 		0xd9, //index
 		100, //price
 		60, //holding_effect_id
@@ -3279,7 +3279,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_UP_GRADE
-		LANGDEP(PSTRING("Up-Grade"), PSTRING("UP-GRADE")),
+		LANGDEP(PSTRING("Up-Grade"), PSTRING("Up-Grade")),
 		0xda, //index
 		2100, //price
 		61, //holding_effect_id
@@ -3294,7 +3294,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEEGESANG
-		LANGDEP(PSTRING("Seegesang"), PSTRING("SHELL BELL")),
+		LANGDEP(PSTRING("Seegesang"), PSTRING("Shell Bell")),
 		0xdb, //index
 		200, //price
 		62, //holding_effect_id
@@ -3309,7 +3309,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SEERAUCH
-		LANGDEP(PSTRING("Seerauch"), PSTRING("SEA INCENSE")),
+		LANGDEP(PSTRING("Seerauch"), PSTRING("Sea Incense")),
 		0xdc, //index
 		9600, //price
 		52, //holding_effect_id
@@ -3324,7 +3324,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LAXRAUCH
-		LANGDEP(PSTRING("Laxrauch"), PSTRING("LAX INCENSE")),
+		LANGDEP(PSTRING("Laxrauch"), PSTRING("Lax Incense")),
 		0xdd, //index
 		9600, //price
 		22, //holding_effect_id
@@ -3339,7 +3339,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LUCKY_PUNCH
-		LANGDEP(PSTRING("Lucky Punch"), PSTRING("LUCKY PUNCH")),
+		LANGDEP(PSTRING("Lucky Punch"), PSTRING("Lucky Punch")),
 		0xde, //index
 		10, //price
 		63, //holding_effect_id
@@ -3354,7 +3354,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_METALLSTAUB
-		LANGDEP(PSTRING("Metallstaub"), PSTRING("METAL POWDER")),
+		LANGDEP(PSTRING("Metallstaub"), PSTRING("Metal Powder")),
 		0xdf, //index
 		10, //price
 		64, //holding_effect_id
@@ -3369,7 +3369,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KAMPFKNOCHEN
-		LANGDEP(PSTRING("Kampfknochen"), PSTRING("THICK CLUB")),
+		LANGDEP(PSTRING("Kampfknochen"), PSTRING("Thick Club")),
 		0xe0, //index
 		500, //price
 		65, //holding_effect_id
@@ -3384,7 +3384,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LAUCHSTANGE
-		LANGDEP(PSTRING("Lauchstange"), PSTRING("STICK")),
+		LANGDEP(PSTRING("Lauchstange"), PSTRING("Stick")),
 		0xe1, //index
 		200, //price
 		66, //holding_effect_id
@@ -3819,7 +3819,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROTER_SCHAL
-		LANGDEP(PSTRING("Roter Schal"), PSTRING("RED SCARF")),
+		LANGDEP(PSTRING("Roter Schal"), PSTRING("Red Scarf")),
 		0xfe, //index
 		100, //price
 		0, //holding_effect_id
@@ -3834,7 +3834,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLAUER_SCHAL
-		LANGDEP(PSTRING("Blauer Schal"), PSTRING("BLUE SCARF")),
+		LANGDEP(PSTRING("Blauer Schal"), PSTRING("Blue Scarf")),
 		0xff, //index
 		100, //price
 		0, //holding_effect_id
@@ -3849,7 +3849,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROSA_SCHAL
-		LANGDEP(PSTRING("Rosa Schal"), PSTRING("PINK SCARF")),
+		LANGDEP(PSTRING("Rosa Schal"), PSTRING("Pink Scarf")),
 		0x100, //index
 		100, //price
 		0, //holding_effect_id
@@ -3864,7 +3864,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GRUENER_SCHAL
-		LANGDEP(PSTRING("Grüner Schal"), PSTRING("GREEN SCARF")),
+		LANGDEP(PSTRING("Grüner Schal"), PSTRING("Green Scarf")),
 		0x101, //index
 		100, //price
 		0, //holding_effect_id
@@ -3879,7 +3879,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GELBER_SCHAL
-		LANGDEP(PSTRING("Gelber Schal"), PSTRING("YELLOW SCARF")),
+		LANGDEP(PSTRING("Gelber Schal"), PSTRING("Yellow Scarf")),
 		0x102, //index
 		100, //price
 		0, //holding_effect_id
@@ -3894,7 +3894,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EILRAD
-		LANGDEP(PSTRING("Eilrad"), PSTRING("MACH BIKE")),
+		LANGDEP(PSTRING("Eilrad"), PSTRING("Mach Bike")),
 		0x103, //index
 		0, //price
 		0, //holding_effect_id
@@ -3909,7 +3909,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MUENZKORB
-		LANGDEP(PSTRING("Münzkorb"), PSTRING("COIN CASE")),
+		LANGDEP(PSTRING("Münzkorb"), PSTRING("Coin Case")),
 		0x104, //index
 		0, //price
 		0, //holding_effect_id
@@ -3924,7 +3924,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DETEKTOR
-		LANGDEP(PSTRING("Detektor"), PSTRING("ITEMFINDER")),
+		LANGDEP(PSTRING("Detektor"), PSTRING("Itemfinder")),
 		0x105, //index
 		0, //price
 		0, //holding_effect_id
@@ -3939,7 +3939,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGEL
-		LANGDEP(PSTRING("Angel"), PSTRING("OLD ROD")),
+		LANGDEP(PSTRING("Angel"), PSTRING("Old Rod")),
 		0x106, //index
 		0, //price
 		0, //holding_effect_id
@@ -3954,7 +3954,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PROFIANGEL
-		LANGDEP(PSTRING("Profiangel"), PSTRING("GOOD ROD")),
+		LANGDEP(PSTRING("Profiangel"), PSTRING("Good Rod")),
 		0x107, //index
 		0, //price
 		0, //holding_effect_id
@@ -3969,7 +3969,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERANGEL
-		LANGDEP(PSTRING("Superangel"), PSTRING("SUPER ROD")),
+		LANGDEP(PSTRING("Superangel"), PSTRING("Super Rod")),
 		0x108, //index
 		0, //price
 		0, //holding_effect_id
@@ -3984,7 +3984,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BOOTSTICKET
-		LANGDEP(PSTRING("Bootsticket"), PSTRING("S.S. TICKET")),
+		LANGDEP(PSTRING("Bootsticket"), PSTRING("S.S. Ticket")),
 		0x109, //index
 		0, //price
 		0, //holding_effect_id
@@ -3999,7 +3999,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WETTB_KARTE
-		LANGDEP(PSTRING("Wettb.-Karte"), PSTRING("CONTEST PASS")),
+		LANGDEP(PSTRING("Wettb.-Karte"), PSTRING("Contest Pass")),
 		0x10a, //index
 		0, //price
 		0, //holding_effect_id
@@ -4029,7 +4029,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WAILMERKANNE
-		LANGDEP(PSTRING("Wailmerkanne"), PSTRING("WAILMER PAIL")),
+		LANGDEP(PSTRING("Wailmerkanne"), PSTRING("Wailmer Pail")),
 		0x10c, //index
 		0, //price
 		0, //holding_effect_id
@@ -4044,7 +4044,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DEVON_WAREN
-		LANGDEP(PSTRING("Devon-Waren"), PSTRING("DEVON GOODS")),
+		LANGDEP(PSTRING("Devon-Waren"), PSTRING("Devon Goods")),
 		0x10d, //index
 		0, //price
 		0, //holding_effect_id
@@ -4059,7 +4059,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ASCHETASCHE
-		LANGDEP(PSTRING("Aschetasche"), PSTRING("SOOT SACK")),
+		LANGDEP(PSTRING("Aschetasche"), PSTRING("Soot Sack")),
 		0x10e, //index
 		0, //price
 		0, //holding_effect_id
@@ -4074,7 +4074,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KELLEROEFFNER
-		LANGDEP(PSTRING("Kelleröffner"), PSTRING("BASEMENT KEY")),
+		LANGDEP(PSTRING("Kelleröffner"), PSTRING("Basement Key")),
 		0x10f, //index
 		0, //price
 		0, //holding_effect_id
@@ -4089,7 +4089,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KUNSTRAD
-		LANGDEP(PSTRING("Kunstrad"), PSTRING("ACRO BIKE")),
+		LANGDEP(PSTRING("Kunstrad"), PSTRING("Acro Bike")),
 		0x110, //index
 		0, //price
 		0, //holding_effect_id
@@ -4104,7 +4104,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BOX
-		LANGDEP(PSTRING("Box"), PSTRING("POKEBLOCK CASE")),
+		LANGDEP(PSTRING("Box"), PSTRING("Pokéblock Case")),
 		0x111, //index
 		0, //price
 		0, //holding_effect_id
@@ -4119,7 +4119,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BRIEF
-		LANGDEP(PSTRING("Brief"), PSTRING("LETTER")),
+		LANGDEP(PSTRING("Brief"), PSTRING("Letter")),
 		0x112, //index
 		0, //price
 		0, //holding_effect_id
@@ -4134,7 +4134,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AEON_TICKET
-		LANGDEP(PSTRING("äon-Ticket"), PSTRING("EON TICKET")),
+		LANGDEP(PSTRING("äon-Ticket"), PSTRING("Eon Ticket")),
 		0x113, //index
 		0, //price
 		0, //holding_effect_id
@@ -4149,7 +4149,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPIRITKERN
-		LANGDEP(PSTRING("Spiritkern"), PSTRING("RED ORB")),
+		LANGDEP(PSTRING("Spiritkern"), PSTRING("Red Orb")),
 		0x114, //index
 		0, //price
 		0, //holding_effect_id
@@ -4164,7 +4164,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLAUE_KUGEL
-		LANGDEP(PSTRING("Blaue Kugel"), PSTRING("BLUE ORB")),
+		LANGDEP(PSTRING("Blaue Kugel"), PSTRING("Blue Orb")),
 		0x115, //index
 		0, //price
 		0, //holding_effect_id
@@ -4179,7 +4179,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SCANNER
-		LANGDEP(PSTRING("Scanner"), PSTRING("SCANNER")),
+		LANGDEP(PSTRING("Scanner"), PSTRING("Scanner")),
 		0x116, //index
 		0, //price
 		0, //holding_effect_id
@@ -4194,7 +4194,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WUESTENGLAS
-		LANGDEP(PSTRING("Wüstenglas"), PSTRING("GO-GOGGLES")),
+		LANGDEP(PSTRING("Wüstenglas"), PSTRING("Go-Goggles")),
 		0x117, //index
 		0, //price
 		0, //holding_effect_id
@@ -4209,7 +4209,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_METEORIT
-		LANGDEP(PSTRING("Meteorit"), PSTRING("METEORITE")),
+		LANGDEP(PSTRING("Meteorit"), PSTRING("Meteorite")),
 		0x118, //index
 		0, //price
 		0, //holding_effect_id
@@ -4224,7 +4224,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K1_SCHLUESSEL
-		LANGDEP(PSTRING("K1-Schlüssel"), PSTRING("RM. 1 KEY")),
+		LANGDEP(PSTRING("K1-Schlüssel"), PSTRING("RM. 1 Key")),
 		0x119, //index
 		0, //price
 		0, //holding_effect_id
@@ -4239,7 +4239,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K2_SCHLUESSEL
-		LANGDEP(PSTRING("K2-Schlüssel"), PSTRING("RM. 2 KEY")),
+		LANGDEP(PSTRING("K2-Schlüssel"), PSTRING("RM. 2 Key")),
 		0x11a, //index
 		0, //price
 		0, //holding_effect_id
@@ -4254,7 +4254,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K4_SCHLUESSEL
-		LANGDEP(PSTRING("K4-Schlüssel"), PSTRING("RM. 4 KEY")),
+		LANGDEP(PSTRING("K4-Schlüssel"), PSTRING("RM. 4 Key")),
 		0x11b, //index
 		0, //price
 		0, //holding_effect_id
@@ -4269,7 +4269,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_K6_SCHLUESSEL
-		LANGDEP(PSTRING("K6-Schlüssel"), PSTRING("RM. 6 KEY")),
+		LANGDEP(PSTRING("K6-Schlüssel"), PSTRING("RM. 6 Key")),
 		0x11c, //index
 		0, //price
 		0, //holding_effect_id
@@ -4284,7 +4284,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_L_SCHLUESSEL
-		LANGDEP(PSTRING("L.-Schlüssel"), PSTRING("STORAGE KEY")),
+		LANGDEP(PSTRING("L.-Schlüssel"), PSTRING("Storage Key")),
 		0x11d, //index
 		0, //price
 		0, //holding_effect_id
@@ -4299,7 +4299,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WURZELFOSSIL
-		LANGDEP(PSTRING("Wurzelfossil"), PSTRING("ROOT FOSSIL")),
+		LANGDEP(PSTRING("Wurzelfossil"), PSTRING("Root Fossil")),
 		0x11e, //index
 		0, //price
 		0, //holding_effect_id
@@ -4314,7 +4314,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KLAUENFOSSIL
-		LANGDEP(PSTRING("Klauenfossil"), PSTRING("CLAW FOSSIL")),
+		LANGDEP(PSTRING("Klauenfossil"), PSTRING("Claw Fossil")),
 		0x11f, //index
 		0, //price
 		0, //holding_effect_id
@@ -4329,7 +4329,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DEVON_SCOPE
-		LANGDEP(PSTRING("Devon-Scope"), PSTRING("DEVON SCOPE")),
+		LANGDEP(PSTRING("Devon-Scope"), PSTRING("Devon Scope")),
 		0x120, //index
 		0, //price
 		0, //holding_effect_id
@@ -4344,7 +4344,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM01
-		LANGDEP(PSTRING("Tm01"), PSTRING("TM01")),
+		LANGDEP(PSTRING("TM01"), PSTRING("TM01")),
 		0x121, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4359,7 +4359,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM02
-		LANGDEP(PSTRING("Tm02"), PSTRING("TM02")),
+		LANGDEP(PSTRING("TM02"), PSTRING("TM02")),
 		0x122, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4374,7 +4374,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM03
-		LANGDEP(PSTRING("Tm03"), PSTRING("TM03")),
+		LANGDEP(PSTRING("TM03"), PSTRING("TM03")),
 		0x123, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4389,7 +4389,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM04
-		LANGDEP(PSTRING("Tm04"), PSTRING("TM04")),
+		LANGDEP(PSTRING("TM04"), PSTRING("TM04")),
 		0x124, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4404,7 +4404,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM05
-		LANGDEP(PSTRING("Tm05"), PSTRING("TM05")),
+		LANGDEP(PSTRING("TM05"), PSTRING("TM05")),
 		0x125, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4419,7 +4419,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM06
-		LANGDEP(PSTRING("Tm06"), PSTRING("TM06")),
+		LANGDEP(PSTRING("TM06"), PSTRING("TM06")),
 		0x126, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4434,7 +4434,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM07
-		LANGDEP(PSTRING("Tm07"), PSTRING("TM07")),
+		LANGDEP(PSTRING("TM07"), PSTRING("TM07")),
 		0x127, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4449,7 +4449,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM08
-		LANGDEP(PSTRING("Tm08"), PSTRING("TM08")),
+		LANGDEP(PSTRING("TM08"), PSTRING("TM08")),
 		0x128, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4464,7 +4464,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM09
-		LANGDEP(PSTRING("Tm09"), PSTRING("TM09")),
+		LANGDEP(PSTRING("TM09"), PSTRING("TM09")),
 		0x129, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4479,7 +4479,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM10
-		LANGDEP(PSTRING("Tm10"), PSTRING("TM10")),
+		LANGDEP(PSTRING("TM10"), PSTRING("TM10")),
 		0x12a, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4494,7 +4494,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM11
-		LANGDEP(PSTRING("Tm11"), PSTRING("TM11")),
+		LANGDEP(PSTRING("TM11"), PSTRING("TM11")),
 		0x12b, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4509,7 +4509,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM12
-		LANGDEP(PSTRING("Tm12"), PSTRING("TM12")),
+		LANGDEP(PSTRING("TM12"), PSTRING("TM12")),
 		0x12c, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4524,7 +4524,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM13
-		LANGDEP(PSTRING("Tm13"), PSTRING("TM13")),
+		LANGDEP(PSTRING("TM13"), PSTRING("TM13")),
 		0x12d, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4539,7 +4539,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM14
-		LANGDEP(PSTRING("Tm14"), PSTRING("TM14")),
+		LANGDEP(PSTRING("TM14"), PSTRING("TM14")),
 		0x12e, //index
 		5500, //price
 		0, //holding_effect_id
@@ -4554,7 +4554,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM15
-		LANGDEP(PSTRING("Tm15"), PSTRING("TM15")),
+		LANGDEP(PSTRING("TM15"), PSTRING("TM15")),
 		0x12f, //index
 		7500, //price
 		0, //holding_effect_id
@@ -4569,7 +4569,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM16
-		LANGDEP(PSTRING("Tm16"), PSTRING("TM16")),
+		LANGDEP(PSTRING("TM16"), PSTRING("TM16")),
 		0x130, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4584,7 +4584,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM17
-		LANGDEP(PSTRING("Tm17"), PSTRING("TM17")),
+		LANGDEP(PSTRING("TM17"), PSTRING("TM17")),
 		0x131, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4599,7 +4599,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM18
-		LANGDEP(PSTRING("Tm18"), PSTRING("TM18")),
+		LANGDEP(PSTRING("TM18"), PSTRING("TM18")),
 		0x132, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4614,7 +4614,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM19
-		LANGDEP(PSTRING("Tm19"), PSTRING("TM19")),
+		LANGDEP(PSTRING("TM19"), PSTRING("TM19")),
 		0x133, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4629,7 +4629,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM20
-		LANGDEP(PSTRING("Tm20"), PSTRING("TM20")),
+		LANGDEP(PSTRING("TM20"), PSTRING("TM20")),
 		0x134, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4644,7 +4644,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM21
-		LANGDEP(PSTRING("Tm21"), PSTRING("TM21")),
+		LANGDEP(PSTRING("TM21"), PSTRING("TM21")),
 		0x135, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4659,7 +4659,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM22
-		LANGDEP(PSTRING("Tm22"), PSTRING("TM22")),
+		LANGDEP(PSTRING("TM22"), PSTRING("TM22")),
 		0x136, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4674,7 +4674,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM23
-		LANGDEP(PSTRING("Tm23"), PSTRING("TM23")),
+		LANGDEP(PSTRING("TM23"), PSTRING("TM23")),
 		0x137, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4689,7 +4689,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM24
-		LANGDEP(PSTRING("Tm24"), PSTRING("TM24")),
+		LANGDEP(PSTRING("TM24"), PSTRING("TM24")),
 		0x138, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4704,7 +4704,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM25
-		LANGDEP(PSTRING("Tm25"), PSTRING("TM25")),
+		LANGDEP(PSTRING("TM25"), PSTRING("TM25")),
 		0x139, //index
 		5500, //price
 		0, //holding_effect_id
@@ -4719,7 +4719,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM26
-		LANGDEP(PSTRING("Tm26"), PSTRING("TM26")),
+		LANGDEP(PSTRING("TM26"), PSTRING("TM26")),
 		0x13a, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4734,7 +4734,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM27
-		LANGDEP(PSTRING("Tm27"), PSTRING("TM27")),
+		LANGDEP(PSTRING("TM27"), PSTRING("TM27")),
 		0x13b, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4749,7 +4749,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM28
-		LANGDEP(PSTRING("Tm28"), PSTRING("TM28")),
+		LANGDEP(PSTRING("TM28"), PSTRING("TM28")),
 		0x13c, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4764,7 +4764,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM29
-		LANGDEP(PSTRING("Tm29"), PSTRING("TM29")),
+		LANGDEP(PSTRING("TM29"), PSTRING("TM29")),
 		0x13d, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4779,7 +4779,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM30
-		LANGDEP(PSTRING("Tm30"), PSTRING("TM30")),
+		LANGDEP(PSTRING("TM30"), PSTRING("TM30")),
 		0x13e, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4794,7 +4794,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM31
-		LANGDEP(PSTRING("Tm31"), PSTRING("TM31")),
+		LANGDEP(PSTRING("TM31"), PSTRING("TM31")),
 		0x13f, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4809,7 +4809,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM32
-		LANGDEP(PSTRING("Tm32"), PSTRING("TM32")),
+		LANGDEP(PSTRING("TM32"), PSTRING("TM32")),
 		0x140, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4824,7 +4824,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM33
-		LANGDEP(PSTRING("Tm33"), PSTRING("TM33")),
+		LANGDEP(PSTRING("TM33"), PSTRING("TM33")),
 		0x141, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4839,7 +4839,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM34
-		LANGDEP(PSTRING("Tm34"), PSTRING("TM34")),
+		LANGDEP(PSTRING("TM34"), PSTRING("TM34")),
 		0x142, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4854,7 +4854,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM35
-		LANGDEP(PSTRING("Tm35"), PSTRING("TM35")),
+		LANGDEP(PSTRING("TM35"), PSTRING("TM35")),
 		0x143, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4869,7 +4869,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM36
-		LANGDEP(PSTRING("Tm36"), PSTRING("TM36")),
+		LANGDEP(PSTRING("TM36"), PSTRING("TM36")),
 		0x144, //index
 		1000, //price
 		0, //holding_effect_id
@@ -4884,7 +4884,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM37
-		LANGDEP(PSTRING("Tm37"), PSTRING("TM37")),
+		LANGDEP(PSTRING("TM37"), PSTRING("TM37")),
 		0x145, //index
 		2000, //price
 		0, //holding_effect_id
@@ -4899,7 +4899,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM38
-		LANGDEP(PSTRING("Tm38"), PSTRING("TM38")),
+		LANGDEP(PSTRING("TM38"), PSTRING("TM38")),
 		0x146, //index
 		5500, //price
 		0, //holding_effect_id
@@ -4914,7 +4914,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM39
-		LANGDEP(PSTRING("Tm39"), PSTRING("TM39")),
+		LANGDEP(PSTRING("TM39"), PSTRING("TM39")),
 		0x147, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4929,7 +4929,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM40
-		LANGDEP(PSTRING("Tm40"), PSTRING("TM40")),
+		LANGDEP(PSTRING("TM40"), PSTRING("TM40")),
 		0x148, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4944,7 +4944,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM41
-		LANGDEP(PSTRING("Tm41"), PSTRING("TM41")),
+		LANGDEP(PSTRING("TM41"), PSTRING("TM41")),
 		0x149, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4959,7 +4959,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM42
-		LANGDEP(PSTRING("Tm42"), PSTRING("TM42")),
+		LANGDEP(PSTRING("TM42"), PSTRING("TM42")),
 		0x14a, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4974,7 +4974,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM43
-		LANGDEP(PSTRING("Tm43"), PSTRING("TM43")),
+		LANGDEP(PSTRING("TM43"), PSTRING("TM43")),
 		0x14b, //index
 		3000, //price
 		0, //holding_effect_id
@@ -4989,7 +4989,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM44
-		LANGDEP(PSTRING("Tm44"), PSTRING("TM44")),
+		LANGDEP(PSTRING("TM44"), PSTRING("TM44")),
 		0x14c, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5004,7 +5004,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM45
-		LANGDEP(PSTRING("Tm45"), PSTRING("TM45")),
+		LANGDEP(PSTRING("TM45"), PSTRING("TM45")),
 		0x14d, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5019,7 +5019,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM46
-		LANGDEP(PSTRING("Tm46"), PSTRING("TM46")),
+		LANGDEP(PSTRING("TM46"), PSTRING("TM46")),
 		0x14e, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5034,7 +5034,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM47
-		LANGDEP(PSTRING("Tm47"), PSTRING("TM47")),
+		LANGDEP(PSTRING("TM47"), PSTRING("TM47")),
 		0x14f, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5049,7 +5049,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM48
-		LANGDEP(PSTRING("Tm48"), PSTRING("TM48")),
+		LANGDEP(PSTRING("TM48"), PSTRING("TM48")),
 		0x150, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5064,7 +5064,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM49
-		LANGDEP(PSTRING("Tm49"), PSTRING("TM49")),
+		LANGDEP(PSTRING("TM49"), PSTRING("TM49")),
 		0x151, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5079,7 +5079,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TM50
-		LANGDEP(PSTRING("Tm50"), PSTRING("TM50")),
+		LANGDEP(PSTRING("TM50"), PSTRING("TM50")),
 		0x152, //index
 		3000, //price
 		0, //holding_effect_id
@@ -5094,7 +5094,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM01
-		LANGDEP(PSTRING("Vm01"), PSTRING("HM01")),
+		LANGDEP(PSTRING("VM01"), PSTRING("HM01")),
 		0x153, //index
 		0, //price
 		0, //holding_effect_id
@@ -5109,7 +5109,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM02
-		LANGDEP(PSTRING("Vm02"), PSTRING("HM02")),
+		LANGDEP(PSTRING("VM02"), PSTRING("HM02")),
 		0x154, //index
 		0, //price
 		0, //holding_effect_id
@@ -5124,7 +5124,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM03
-		LANGDEP(PSTRING("Vm03"), PSTRING("HM03")),
+		LANGDEP(PSTRING("VM03"), PSTRING("HM03")),
 		0x155, //index
 		0, //price
 		0, //holding_effect_id
@@ -5139,7 +5139,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM04
-		LANGDEP(PSTRING("Vm04"), PSTRING("HM04")),
+		LANGDEP(PSTRING("VM04"), PSTRING("HM04")),
 		0x156, //index
 		0, //price
 		0, //holding_effect_id
@@ -5154,7 +5154,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM05
-		LANGDEP(PSTRING("Vm05"), PSTRING("HM05")),
+		LANGDEP(PSTRING("VM05"), PSTRING("HM05")),
 		0x157, //index
 		0, //price
 		0, //holding_effect_id
@@ -5169,7 +5169,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM06
-		LANGDEP(PSTRING("Vm06"), PSTRING("HM06")),
+		LANGDEP(PSTRING("VM06"), PSTRING("HM06")),
 		0x158, //index
 		0, //price
 		0, //holding_effect_id
@@ -5184,7 +5184,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM07
-		LANGDEP(PSTRING("Vm07"), PSTRING("HM07")),
+		LANGDEP(PSTRING("VM07"), PSTRING("HM07")),
 		0x159, //index
 		0, //price
 		0, //holding_effect_id
@@ -5199,7 +5199,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VM08
-		LANGDEP(PSTRING("Vm08"), PSTRING("HM08")),
+		LANGDEP(PSTRING("VM08"), PSTRING("HM08")),
 		0x15a, //index
 		0, //price
 		0, //holding_effect_id
@@ -5244,7 +5244,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EICHS_PAKET
-		LANGDEP(PSTRING("Zugangskarte"), PSTRING("OAK\S PARCEL")),
+		LANGDEP(PSTRING("Zugangskarte"), PSTRING("Oak\s Parcel")),
 		0x15d, //index
 		0, //price
 		0, //holding_effect_id
@@ -5259,7 +5259,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEFLOETE
-		LANGDEP(PSTRING("Pok▶löte"), PSTRING("POKé FLUTE")),
+		LANGDEP(PSTRING("Pok▶löte"), PSTRING("Poké Flute")),
 		0x15e, //index
 		0, //price
 		0, //holding_effect_id
@@ -5274,7 +5274,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM__OEFFNER
-		LANGDEP(PSTRING("?-öffner"), PSTRING("SECRET KEY")),
+		LANGDEP(PSTRING("?-öffner"), PSTRING("Secret Key")),
 		0x15f, //index
 		0, //price
 		0, //holding_effect_id
@@ -5289,7 +5289,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RAD_COUPON
-		LANGDEP(PSTRING("Rad-Coupon"), PSTRING("BIKE VOUCHER")),
+		LANGDEP(PSTRING("Rad-Coupon"), PSTRING("Bike Voucher")),
 		0x160, //index
 		0, //price
 		0, //holding_effect_id
@@ -5304,7 +5304,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PKMCORDER
-		LANGDEP(PSTRING("Pkmcorder"), PSTRING("GOLD TEETH")),
+		LANGDEP(PSTRING("Pkmcorder"), PSTRING("Gold Teeth")),
 		0x161, //index
 		0, //price
 		0, //holding_effect_id
@@ -5319,7 +5319,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ALTBERNSTEIN
-		LANGDEP(PSTRING("Altbernstein"), PSTRING("OLD AMBER")),
+		LANGDEP(PSTRING("Altbernstein"), PSTRING("Old Amber")),
 		0x162, //index
 		0, //price
 		0, //holding_effect_id
@@ -5334,7 +5334,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TUEROEFFNER
-		LANGDEP(PSTRING("Türöffner"), PSTRING("CARD KEY")),
+		LANGDEP(PSTRING("Türöffner"), PSTRING("Card Key")),
 		0x163, //index
 		0, //price
 		0, //holding_effect_id
@@ -5349,7 +5349,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LIFTOEFFNER
-		LANGDEP(PSTRING("Liftöffner"), PSTRING("LIFT KEY")),
+		LANGDEP(PSTRING("Liftöffner"), PSTRING("Lift Key")),
 		0x164, //index
 		0, //price
 		0, //holding_effect_id
@@ -5364,7 +5364,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HELIXFOSSIL
-		LANGDEP(PSTRING("Helixfossil"), PSTRING("HELIX FOSSIL")),
+		LANGDEP(PSTRING("Helixfossil"), PSTRING("Helix Fossil")),
 		0x165, //index
 		0, //price
 		0, //holding_effect_id
@@ -5379,7 +5379,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DOMFOSSIL
-		LANGDEP(PSTRING("Domfossil"), PSTRING("DOME FOSSIL")),
+		LANGDEP(PSTRING("Domfossil"), PSTRING("Dome Fossil")),
 		0x166, //index
 		0, //price
 		0, //holding_effect_id
@@ -5394,7 +5394,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SILPH_SCOPE
-		LANGDEP(PSTRING("Silph Scope"), PSTRING("SILPH SCOPE")),
+		LANGDEP(PSTRING("Silph Scope"), PSTRING("Silph Scope")),
 		0x167, //index
 		0, //price
 		0, //holding_effect_id
@@ -5409,7 +5409,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_FAHRRAD
-		LANGDEP(PSTRING("Wolke"), PSTRING("BICYCLE")),
+		LANGDEP(PSTRING("Wolke"), PSTRING("Bicycle")),
 		0x1ff, //index
 		0, //price
 		0, //holding_effect_id
@@ -5424,7 +5424,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KARTE
-		LANGDEP(PSTRING("Karte"), PSTRING("TOWN MAP")),
+		LANGDEP(PSTRING("Karte"), PSTRING("Town Map")),
 		0x169, //index
 		0, //price
 		0, //holding_effect_id
@@ -5439,7 +5439,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KAMPFFAHNDER
-		LANGDEP(PSTRING("Kampffahnder"), PSTRING("VS SEEKER")),
+		LANGDEP(PSTRING("Kampffahnder"), PSTRING("VS Seeker")),
 		0x16a, //index
 		0, //price
 		0, //holding_effect_id
@@ -5454,7 +5454,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RUHMESDATEI
-		LANGDEP(PSTRING("Ruhmesdatei"), PSTRING("FAME CHECKER")),
+		LANGDEP(PSTRING("Ruhmesdatei"), PSTRING("Fame Checker")),
 		0x16b, //index
 		0, //price
 		0, //holding_effect_id
@@ -5469,7 +5469,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VMTM_BOX
-		LANGDEP(PSTRING("Vm/Tm-Box"), PSTRING("TM CASE")),
+		LANGDEP(PSTRING("Vm/Tm-Box"), PSTRING("TM Case")),
 		0x16c, //index
 		0, //price
 		0, //holding_effect_id
@@ -5484,7 +5484,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BEERENTUETE
-		LANGDEP(PSTRING("Beerentüte"), PSTRING("BERRY POUCH")),
+		LANGDEP(PSTRING("Beerentüte"), PSTRING("Berry Pouch")),
 		0x16d, //index
 		0, //price
 		0, //holding_effect_id
@@ -5499,7 +5499,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LEHRKANAL
-		LANGDEP(PSTRING("Lehrkanal"), PSTRING("TEACHY TV")),
+		LANGDEP(PSTRING("Lehrkanal"), PSTRING("Teachy TV")),
 		0x16e, //index
 		0, //price
 		0, //holding_effect_id
@@ -5514,7 +5514,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRI_PASS
-		LANGDEP(PSTRING("Tri-Pass"), PSTRING("TRI-PASS")),
+		LANGDEP(PSTRING("Tri-Pass"), PSTRING("Tri-Pass")),
 		0x16f, //index
 		0, //price
 		0, //holding_effect_id
@@ -5529,7 +5529,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BUNT_PASS
-		LANGDEP(PSTRING("Bunt-Pass"), PSTRING("RAINBOW PASS")),
+		LANGDEP(PSTRING("Bunt-Pass"), PSTRING("Rainbow Pass")),
 		0x170, //index
 		0, //price
 		0, //holding_effect_id
@@ -5544,7 +5544,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MEGA_AMULETT
-		LANGDEP(PSTRING("Mega-Amulett"), PSTRING("TEA")),
+		LANGDEP(PSTRING("Mega-Amulett"), PSTRING("Tea")),
 		0x171, //index
 		0, //price
 		0, //holding_effect_id
@@ -5559,7 +5559,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_GEHEIMTICKET
-		LANGDEP(PSTRING("Geheimticket"), PSTRING("MYSTICTICKET")),
+		LANGDEP(PSTRING("Geheimticket"), PSTRING("Mysticticket")),
 		0x172, //index
 		0, //price
 		0, //holding_effect_id
@@ -5574,7 +5574,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AURORATICKET
-		LANGDEP(PSTRING("Auroraticket"), PSTRING("AURORATICKET")),
+		LANGDEP(PSTRING("Auroraticket"), PSTRING("Auroraticket")),
 		0x173, //index
 		0, //price
 		0, //holding_effect_id
@@ -5589,7 +5589,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PUDERDOESCHEN
-		LANGDEP(PSTRING("Puderdöschen"), PSTRING("POWDER JAR")),
+		LANGDEP(PSTRING("Puderdöschen"), PSTRING("Powder Jar")),
 		0x174, //index
 		0, //price
 		0, //holding_effect_id
@@ -5604,7 +5604,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RUBIN
-		LANGDEP(PSTRING("Rubin"), PSTRING("RUBY")),
+		LANGDEP(PSTRING("Rubin"), PSTRING("Ruby")),
 		0x175, //index
 		0, //price
 		0, //holding_effect_id
@@ -5619,7 +5619,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SAPHIR
-		LANGDEP(PSTRING("Saphir"), PSTRING("SAPPHIRE")),
+		LANGDEP(PSTRING("Saphir"), PSTRING("Sapphire")),
 		0x176, //index
 		0, //price
 		0, //holding_effect_id

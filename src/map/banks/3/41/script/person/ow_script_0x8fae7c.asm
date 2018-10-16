@@ -306,32 +306,33 @@ str_0x8dcd2f:
         
 .global str_0x1a8bc9
 
+@ ToDo: Investigate sentences containing the word "PC"
 str_0x1a8bc9:
-    .string "Es ist kein Platz mehr für Pokémon\nvorhanden!\pDie Pokémon BOXEN sind voll und\nes kann kein Pokémon mehr\labgelegt werden!"
+    .string "Es ist kein Platz mehr für Pokémon\nvorhanden!\pDie Pokémon Boxen sind voll und\nes kann kein Pokémon mehr\labgelegt werden!"
         
         
 .global str_0x1a8ac7
 
 str_0x1a8ac7:
-    .string "BUFFER_2 wurde auf BILLs PC\nübertragen.\pEs wurde in BOX\nQUOTEBUFFER_1QUOTE abgelegt."
+    .string "BUFFER_2 wurde auf BILLs PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
         
         
 .global str_0x1a8b4b
 
 str_0x1a8b4b:
-    .string "BOX QUOTEBUFFER_3QUOTE in\nBILLs PC ist voll.\pBUFFER_2 wurde in BOX\nQUOTEBUFFER_1QUOTE übertragen."
+    .string "Box QUOTEBUFFER_3QUOTE in\nBILLs PC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
         
         
 .global str_0x1a8a83
 
 str_0x1a8a83:
-    .string "BUFFER_2 wurde auf JEMANDES PC\nübertragen.\pEs wurde in BOX\nQUOTEBUFFER_1QUOTE abgelegt."
+    .string "BUFFER_2 wurde auf JEMANDES PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
         
         
 .global str_0x1a8b08
 
 str_0x1a8b08:
-    .string "BOX QUOTEBUFFER_3QUOTE in\nJEMANDES PC ist voll.\pBUFFER_2 wurde in BOX\nQUOTEBUFFER_1QUOTE übertragen."
+    .string "Box QUOTEBUFFER_3QUOTE in\nJEMANDES PC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
         
         
 .global str_0x8dcba5

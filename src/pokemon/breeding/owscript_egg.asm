@@ -50,7 +50,7 @@ str_got_egg:
 	.autostring 35 2 "PLAYER hat das\nBUFFER_1-Ei erhalten!"
 
 str_no_place:
-	.autostring 35 2 "Es scheint jedoch so, als hättest du weder im Team noch auf dem Pc Platz dafür DOTS\pPLAYER lässt das\nBUFFER_1-Ei liegen DOTS"
+	.autostring 35 2 "Es scheint jedoch so, als hättest du weder im Team noch auf dem PC Platz dafür DOTS\pPLAYER lässt das\nBUFFER_1-Ei liegen DOTS"
 
 str_in_box:
 	.autostring 35 2 "Es wurde in BUFFER_2\nabgelegt."

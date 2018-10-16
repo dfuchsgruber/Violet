@@ -1,6 +1,7 @@
 .include "callstds.s"
 .include "overworld_script.s"
 
+@ ToDo: Investigate the letter-casing
 
 .global ow_script_0x816e62
 ow_script_0x816e62:

@@ -2,6 +2,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 
+@ ToDo: Investigate the letter-casing
 
 .global ow_script_0x8185e5
 ow_script_0x8185e5:

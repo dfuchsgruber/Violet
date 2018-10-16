@@ -19,7 +19,7 @@ trainer trainers[TRAINER_CNT] = {
       false
     }, //Encounter and gender
     0x6d, // sprite
-    LANGDEP(PSTRING("RÜPEL"), PSTRING("RÜPEL")),
+    LANGDEP(PSTRING("Rüpel"), PSTRING("Rüpel")),
     {
       ITEM_NONE,
       ITEM_NONE,
@@ -4947,7 +4947,7 @@ trainer trainers[TRAINER_CNT] = {
 		TRAINERCLASS_RIVALE,
 		{0x0, false},//Encounter and gender
 		0x6a,// sprite
-		LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+		LANGDEP(PSTRING("Björn"), PSTRING("Björn")),
 		{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
 		false,//Dual battle
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
@@ -4965,7 +4965,7 @@ trainer trainers[TRAINER_CNT] = {
 		TRAINERCLASS_RIVALE,
 		{0x0, false},//Encounter and gender
 		0x6a,// sprite
-		LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+		LANGDEP(PSTRING("Björn"), PSTRING("Björn")),
 		{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
 		false,//Dual battle
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
@@ -4983,7 +4983,7 @@ trainer trainers[TRAINER_CNT] = {
 		TRAINERCLASS_RIVALE,
 		{0x0, false},//Encounter and gender
 		0x6a,// sprite
-		LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+		LANGDEP(PSTRING("Björn"), PSTRING("Björn")),
 		{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
 		false,//Dual battle
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
@@ -5001,7 +5001,7 @@ trainer trainers[TRAINER_CNT] = {
 			TRAINERCLASS_RIVALE,
 			{0x0, false},//Encounter and gender
 			0x6a,// sprite
-			LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+			LANGDEP(PSTRING("Björn"), PSTRING("Björn")),
 			{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
 			false,//Dual battle
 			TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
@@ -5019,7 +5019,7 @@ trainer trainers[TRAINER_CNT] = {
 			TRAINERCLASS_RIVALE,
 			{0x0, false},//Encounter and gender
 			0x6a,// sprite
-			LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+			LANGDEP(PSTRING("Björn"), PSTRING("Björn")),
 			{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
 			false,//Dual battle
 			TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
@@ -5037,7 +5037,7 @@ trainer trainers[TRAINER_CNT] = {
 			TRAINERCLASS_RIVALE,
 			{0x0, false},//Encounter and gender
 			0x6a,// sprite
-			LANGDEP(PSTRING("BJÖRN"), PSTRING("BJÖRN")),
+			LANGDEP(PSTRING("Björn"), PSTRING("Björn")),
 			{ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
 			false,//Dual battle
 			TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,

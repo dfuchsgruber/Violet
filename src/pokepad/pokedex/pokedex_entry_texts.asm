@@ -770,7 +770,7 @@ str_pokedex_data_63_page_1:
 .global str_pokedex_data_64_page_0
 
 str_pokedex_data_64_page_0:
-	.string "Es geschah eines Morgens: Ein\nJunge mit zusätzlichen sensorischen\nKräften erwachte in seinem Bett und\nwurde zu KADABRA."
+	.string "Es geschah eines Morgens: Ein\nJunge mit zusätzlichen sensorischen\nKräften erwachte in seinem Bett und\nwurde zu Kadabra."
 
 
 .global str_pokedex_data_64_page_1
@@ -902,7 +902,7 @@ str_pokedex_data_74_page_1:
 .global str_pokedex_data_75_page_0
 
 str_pokedex_data_75_page_0:
-	.string "Gib Acht, wenn du in den Bergen wanderst.\nGEOROK könnte den Berg herunter-\nrollen, ohne zu bremsen."
+	.string "Gib Acht, wenn du in den Bergen wanderst.\nGeorok könnte den Berg herunter-\nrollen, ohne zu bremsen."
 
 
 .global str_pokedex_data_75_page_1
@@ -962,7 +962,7 @@ str_pokedex_data_79_page_1:
 .global str_pokedex_data_80_page_0
 
 str_pokedex_data_80_page_0:
-	.string "Als FLEGMON im Wasser jagen ging,\nbiss ihn ein MUSCHAS. Dadurch\nentwickelte es sich zu LAHMUS."
+	.string "Als Flegmon im Wasser jagen ging,\nbiss ihn ein Muschas. Dadurch\nentwickelte es sich zu Lahmus."
 
 
 .global str_pokedex_data_80_page_1
@@ -974,7 +974,7 @@ str_pokedex_data_80_page_1:
 .global str_pokedex_data_81_page_0
 
 str_pokedex_data_81_page_0:
-	.string "Es bewegt sich schwebend. Seine\nMagnete an den Seiten entladen eine\nDONNERWELLE nach der nächsten."
+	.string "Es bewegt sich schwebend. Seine\nMagnete an den Seiten entladen eine\nDonnerwelle nach der nächsten."
 
 
 .global str_pokedex_data_81_page_1
@@ -986,7 +986,7 @@ str_pokedex_data_81_page_1:
 .global str_pokedex_data_82_page_0
 
 str_pokedex_data_82_page_0:
-	.string "Schließen sich mehrere MAGNETILO\nzusammen, entsteht dieses Pokémon.\nEs entlädt kräftige Hochspannungs-\nmagnetwellen."
+	.string "Schließen sich mehrere Magnetilo\nzusammen, entsteht dieses Pokémon.\nEs entlädt kräftige Hochspannungs-\nmagnetwellen."
 
 
 .global str_pokedex_data_82_page_1
@@ -1058,7 +1058,7 @@ str_pokedex_data_87_page_1:
 .global str_pokedex_data_88_page_0
 
 str_pokedex_data_88_page_0:
-	.string "Schlamm, der Röntgenstrahlung vom\nMond ausgesetzt war, wurde zu\nSLEIMA. Es isst am liebsten dreckige\nDinge."
+	.string "Schlamm, der Röntgenstrahlung vom\nMond ausgesetzt war, wurde zu\nSleima. Es isst am liebsten dreckige\nDinge."
 
 
 .global str_pokedex_data_88_page_1
@@ -1118,7 +1118,7 @@ str_pokedex_data_92_page_1:
 .global str_pokedex_data_93_page_0
 
 str_pokedex_data_93_page_0:
-	.string "Falls du im Dunkeln das Gefühl hast,\nbeobachtet zu werden und niemand ist\nzu sehen, ist es bestimmt ALPOLLO."
+	.string "Falls du im Dunkeln das Gefühl hast,\nbeobachtet zu werden und niemand ist\nzu sehen, ist es bestimmt Alpollo."
 
 
 .global str_pokedex_data_93_page_1
@@ -1202,7 +1202,7 @@ str_pokedex_data_99_page_1:
 .global str_pokedex_data_100_page_0
 
 str_pokedex_data_100_page_0:
-	.string "Eine Lebensform, deren Ursprung\nungeklärt ist. Man sagt, es setzt\nKREIDESCHREI oder plötzlich\nFINALE ein."
+	.string "Eine Lebensform, deren Ursprung\nungeklärt ist. Man sagt, es setzt\nKreideschrei oder plötzlich\nFinale ein."
 
 
 .global str_pokedex_data_100_page_1
@@ -1322,7 +1322,7 @@ str_pokedex_data_109_page_1:
 .global str_pokedex_data_110_page_0
 
 str_pokedex_data_110_page_0:
-	.string "Sehr selten führt eine plötzliche\nMutation eines Zwillings-SMOGON\nzu einer Verbindung zu SMOGMOG."
+	.string "Sehr selten führt eine plötzliche\nMutation eines Zwillings-Smogon\nzu einer Verbindung zu Smogmog."
 
 
 .global str_pokedex_data_110_page_1
@@ -1334,7 +1334,7 @@ str_pokedex_data_110_page_1:
 .global str_pokedex_data_111_page_0
 
 str_pokedex_data_111_page_0:
-	.string "Stark, aber nicht allzu klug, kann\ndieses Pokémon sogar Hochhäuser\nmit seinem TACKLE-Angriff zum\nEinsturz bringen."
+	.string "Stark, aber nicht allzu klug, kann\ndieses Pokémon sogar Hochhäuser\nmit seinem Tackle-Angriff zum\nEinsturz bringen."
 
 
 .global str_pokedex_data_111_page_1
@@ -1382,7 +1382,7 @@ str_pokedex_data_114_page_1:
 .global str_pokedex_data_115_page_0
 
 str_pokedex_data_115_page_0:
-	.string "Das Weibchen zieht seinen Nachwuchs\nin seiner Bauchtasche auf. Auch im\nAngriff ist es talentiert und setzt\nKOMETENHIEB ein."
+	.string "Das Weibchen zieht seinen Nachwuchs\nin seiner Bauchtasche auf. Auch im\nAngriff ist es talentiert und setzt\nKometenhieb ein."
 
 
 .global str_pokedex_data_115_page_1
@@ -1538,7 +1538,7 @@ str_pokedex_data_127_page_1:
 .global str_pokedex_data_128_page_0
 
 str_pokedex_data_128_page_0:
-	.string "Wenn es TACKLE einsetzt,\ngeißelt es mit seinen drei Schwänzen\nwiederholt seinen Körper."
+	.string "Wenn es Tackle einsetzt,\ngeißelt es mit seinen drei Schwänzen\nwiederholt seinen Körper."
 
 
 .global str_pokedex_data_128_page_1
@@ -1562,7 +1562,7 @@ str_pokedex_data_129_page_1:
 .global str_pokedex_data_130_page_0
 
 str_pokedex_data_130_page_0:
-	.string "Es ist von Natur aus sehr aggressiv.\nDer HYPERSTRAHL, den es aus\nseinem Maul verschießt, äschert\nseine Gegner ein."
+	.string "Es ist von Natur aus sehr aggressiv.\nDer Hyperstrahl, den es aus\nseinem Maul verschießt, äschert\nseine Gegner ein."
 
 
 .global str_pokedex_data_130_page_1
@@ -1850,7 +1850,7 @@ str_pokedex_data_153_page_1:
 .global str_pokedex_data_154_page_0
 
 str_pokedex_data_154_page_0:
-	.string "MEGANIE kann mit seinem Atem abgestorbene\nGräser und Pflanzen reanimieren. Sie sind\ndann wieder gesund."
+	.string "Meganie kann mit seinem Atem abgestorbene\nGräser und Pflanzen reanimieren. Sie sind\ndann wieder gesund."
 
 
 .global str_pokedex_data_154_page_1
@@ -2066,7 +2066,7 @@ str_pokedex_data_171_page_1:
 .global str_pokedex_data_172_page_0
 
 str_pokedex_data_172_page_0:
-	.string "Ein besonderes Magnetfeld ordnete\nMAGNETons Molekühle neu und es\nentwickelte sich zu MAGNEZONE."
+	.string "Ein besonderes Magnetfeld ordnete\nMAGNETons Molekühle neu und es\nentwickelte sich zu Magnezone."
 
 
 .global str_pokedex_data_172_page_1
@@ -2102,7 +2102,7 @@ str_pokedex_data_174_page_1:
 .global str_pokedex_data_175_page_0
 
 str_pokedex_data_175_page_0:
-	.string "Ein Sprichwort besagt, dass Glück dem\nwiderfährt, dem es gelingt, ein\nschlafendes TOGEPI zu wecken."
+	.string "Ein Sprichwort besagt, dass Glück dem\nwiderfährt, dem es gelingt, ein\nschlafendes Togepi zu wecken."
 
 
 .global str_pokedex_data_175_page_1
@@ -2390,7 +2390,7 @@ str_pokedex_data_198_page_1:
 .global str_pokedex_data_199_page_0
 
 str_pokedex_data_199_page_0:
-	.string "Als FLEGMON in den Kopf gebissen wurde,\nfloss Gift in seinen Kopf und setzte eine\ngewaltige Kraft frei."
+	.string "Als Flegmon in den Kopf gebissen wurde,\nfloss Gift in seinen Kopf und setzte eine\ngewaltige Kraft frei."
 
 
 .global str_pokedex_data_199_page_1
@@ -2498,7 +2498,7 @@ str_pokedex_data_207_page_1:
 .global str_pokedex_data_208_page_0
 
 str_pokedex_data_208_page_0:
-	.string "Man sagt, dass ein ONIX, das über 100\nJahre alt ist, hart wie ein Diamant sein\nsoll."
+	.string "Man sagt, dass ein Onix, das über 100\nJahre alt ist, hart wie ein Diamant sein\nsoll."
 
 
 .global str_pokedex_data_208_page_1
@@ -2522,7 +2522,7 @@ str_pokedex_data_209_page_1:
 .global str_pokedex_data_210_page_0
 
 str_pokedex_data_210_page_0:
-	.string "Weil seine Reißzähne so schwer sind, ist\nsein Kopf gesenkt. Sein BISS ist jedoch\nschmerzhaft."
+	.string "Weil seine Reißzähne so schwer sind, ist\nsein Kopf gesenkt. Sein Biss ist jedoch\nschmerzhaft."
 
 
 .global str_pokedex_data_210_page_1
@@ -2558,7 +2558,7 @@ str_pokedex_data_212_page_1:
 .global str_pokedex_data_213_page_0
 
 str_pokedex_data_213_page_0:
-	.string "Es sammelt BEEREN in seiner Schale. Um\nsich vor Attacken zu schützen, versteckt\nes sich unter Steinen."
+	.string "Es sammelt Beeren in seiner Schale. Um\nsich vor Attacken zu schützen, versteckt\nes sich unter Steinen."
 
 
 .global str_pokedex_data_213_page_1
@@ -2678,7 +2678,7 @@ str_pokedex_data_222_page_1:
 .global str_pokedex_data_223_page_0
 
 str_pokedex_data_223_page_0:
-	.string "Mit seiner Rückenflosse saugt es sich an\nder Unterseite eines MANTAX fest und lebt\nvon Speiseresten."
+	.string "Mit seiner Rückenflosse saugt es sich an\nder Unterseite eines Mantax fest und lebt\nvon Speiseresten."
 
 
 .global str_pokedex_data_223_page_1
@@ -2690,7 +2690,7 @@ str_pokedex_data_223_page_1:
 .global str_pokedex_data_224_page_0
 
 str_pokedex_data_224_page_0:
-	.string "Es verkriecht sich instinktiv in Felshöhlen.\nWird es müde, raubt es das Versteck eines\nfremden OCTILLERY."
+	.string "Es verkriecht sich instinktiv in Felshöhlen.\nWird es müde, raubt es das Versteck eines\nfremden Octillery."
 
 
 .global str_pokedex_data_224_page_1
@@ -2930,7 +2930,7 @@ str_pokedex_data_243_page_1:
 .global str_pokedex_data_244_page_0
 
 str_pokedex_data_244_page_0:
-	.string "Dieses Pokémon jagt über das Land und\nman sagt, in jedem neuen Vulkan wird ein\nENTEI geboren."
+	.string "Dieses Pokémon jagt über das Land und\nman sagt, in jedem neuen Vulkan wird ein\nEntei geboren."
 
 
 .global str_pokedex_data_244_page_1
@@ -3014,7 +3014,7 @@ str_pokedex_data_250_page_1:
 .global str_pokedex_data_251_page_0
 
 str_pokedex_data_251_page_0:
-	.string "Wenn CELEBI in einem Wald verschwindet,\nlässt es laut Legende ein Ei aus der\nZukunft zurück."
+	.string "Wenn Celebi in einem Wald verschwindet,\nlässt es laut Legende ein Ei aus der\nZukunft zurück."
 
 
 .global str_pokedex_data_251_page_1
@@ -3050,7 +3050,7 @@ str_pokedex_data_253_page_1:
 .global str_pokedex_data_254_page_0
 
 str_pokedex_data_254_page_0:
-	.string "Sein eisernes Schwert erlegte einst\nein BRUTALANDA. Seit dem gilt\nes als unzerstörbar."
+	.string "Sein eisernes Schwert erlegte einst\nein Brutalanda. Seit dem gilt\nes als unzerstörbar."
 
 
 .global str_pokedex_data_254_page_1
@@ -3266,7 +3266,7 @@ str_pokedex_data_271_page_1:
 .global str_pokedex_data_272_page_0
 
 str_pokedex_data_272_page_0:
-	.string "Der Rhythmus von Partymusik bringt\ndas Blut von KAPPALORES in\nWallung und es wird dadurch\nstärker."
+	.string "Der Rhythmus von Partymusik bringt\ndas Blut von Kappalores in\nWallung und es wird dadurch\nstärker."
 
 
 .global str_pokedex_data_272_page_1
@@ -3278,7 +3278,7 @@ str_pokedex_data_272_page_1:
 .global str_pokedex_data_273_page_0
 
 str_pokedex_data_273_page_0:
-	.string "Verhält es sich regungslos, kann man\nes nicht von echten Nüssen unterschei-\nden. Es hat Freude daran, TAUBSI bei\nder Nahrungssuche zu überraschen."
+	.string "Verhält es sich regungslos, kann man\nes nicht von echten Nüssen unterschei-\nden. Es hat Freude daran, Taubsi bei\nder Nahrungssuche zu überraschen."
 
 
 .global str_pokedex_data_273_page_1
@@ -3290,7 +3290,7 @@ str_pokedex_data_273_page_1:
 .global str_pokedex_data_274_page_0
 
 str_pokedex_data_274_page_0:
-	.string "Sie leben in Löchern, die sie in große\nBäume gebohrt haben. Der Ton von\nBLANAS\ Grasflöte erfüllt die Zuhörer\nmit Schrecken."
+	.string "Sie leben in Löchern, die sie in große\nBäume gebohrt haben. Der Ton von\nBlanas\ Grasflöte erfüllt die Zuhörer\nmit Schrecken."
 
 
 .global str_pokedex_data_274_page_1
@@ -3386,7 +3386,7 @@ str_pokedex_data_281_page_1:
 .global str_pokedex_data_282_page_0
 
 str_pokedex_data_282_page_0:
-	.string "Es kann die Zukunft vorhersagen.\nBeschützt es seinen TRAINER, erreicht\nseine Kraft den Höhepunkt."
+	.string "Es kann die Zukunft vorhersagen.\nBeschützt es seinen Trainer, erreicht\nseine Kraft den Höhepunkt."
 
 
 .global str_pokedex_data_282_page_1
@@ -3506,7 +3506,7 @@ str_pokedex_data_291_page_1:
 .global str_pokedex_data_292_page_0
 
 str_pokedex_data_292_page_0:
-	.string "Ein sehr spezielles Pokémon, das\nirgendwie in einem Pokéball auftaucht,\nwenn NINCADA sich entwickelt."
+	.string "Ein sehr spezielles Pokémon, das\nirgendwie in einem Pokéball auftaucht,\nwenn Nincada sich entwickelt."
 
 
 .global str_pokedex_data_292_page_1
@@ -3590,7 +3590,7 @@ str_pokedex_data_298_page_1:
 .global str_pokedex_data_299_page_0
 
 str_pokedex_data_299_page_0:
-	.string "Seine magnetische Nase zeigt stets gen\nNorden. Reisende überprüfen NASGNET,\num sich zu orientieren."
+	.string "Seine magnetische Nase zeigt stets gen\nNorden. Reisende überprüfen Nasgnet,\num sich zu orientieren."
 
 
 .global str_pokedex_data_299_page_1
@@ -3614,7 +3614,7 @@ str_pokedex_data_300_page_1:
 .global str_pokedex_data_301_page_0
 
 str_pokedex_data_301_page_0:
-	.string "Der Liebling aller trendbewussten\nweiblichen TRAINER. Diese Pokémon\nwerden in Wettkämpfen wegen ihres\nStils und Fells eingesetzt."
+	.string "Der Liebling aller trendbewussten\nweiblichen Trainer. Diese Pokémon\nwerden in Wettkämpfen wegen ihres\nStils und Fells eingesetzt."
 
 
 .global str_pokedex_data_301_page_1
@@ -3902,7 +3902,7 @@ str_pokedex_data_324_page_1:
 .global str_pokedex_data_325_page_0
 
 str_pokedex_data_325_page_0:
-	.string "Offensichtlich stirbt es, wenn es nicht\nmehr umherspringt. Es trägt eine Perle\nvon PERLU auf seinem Kopf."
+	.string "Offensichtlich stirbt es, wenn es nicht\nmehr umherspringt. Es trägt eine Perle\nvon Perlu auf seinem Kopf."
 
 
 .global str_pokedex_data_325_page_1
@@ -3926,7 +3926,7 @@ str_pokedex_data_326_page_1:
 .global str_pokedex_data_327_page_0
 
 str_pokedex_data_327_page_0:
-	.string "Es gibt keine zwei PANDIR, deren Muster\nidentisch sind. Die Gegner werden durch\nseine holprigen Bewegungen verwirrt."
+	.string "Es gibt keine zwei Pandir, deren Muster\nidentisch sind. Die Gegner werden durch\nseine holprigen Bewegungen verwirrt."
 
 
 .global str_pokedex_data_327_page_1
@@ -4010,7 +4010,7 @@ str_pokedex_data_333_page_1:
 .global str_pokedex_data_334_page_0
 
 str_pokedex_data_334_page_0:
-	.string "Falls du eine wunderschöne Melodie\ntief aus den Bergen weit weg von Menschen\nhörst, ist das bestimmt das Summen von\nALTARIA."
+	.string "Falls du eine wunderschöne Melodie\ntief aus den Bergen weit weg von Menschen\nhörst, ist das bestimmt das Summen von\nAltaria."
 
 
 .global str_pokedex_data_334_page_1
@@ -4022,7 +4022,7 @@ str_pokedex_data_334_page_1:
 .global str_pokedex_data_335_page_0
 
 str_pokedex_data_335_page_0:
-	.string "Falls es VIPITIS begegnet, brizzelt sein\nFell und es geht in Kampfstellung. Seine\nscharfen Klauen sind seine beste\nWaffe."
+	.string "Falls es Vipitis begegnet, brizzelt sein\nFell und es geht in Kampfstellung. Seine\nscharfen Klauen sind seine beste\nWaffe."
 
 
 .global str_pokedex_data_335_page_1
@@ -4082,7 +4082,7 @@ str_pokedex_data_339_page_1:
 .global str_pokedex_data_340_page_0
 
 str_pokedex_data_340_page_0:
-	.string "Sein Nest baut es am Grund von Sümpfen.\nEs frisst alles, wenn es nur lebendig ist.\nWELSAR frisst einfach alles."
+	.string "Sein Nest baut es am Grund von Sümpfen.\nEs frisst alles, wenn es nur lebendig ist.\nWelsar frisst einfach alles."
 
 
 .global str_pokedex_data_340_page_1
@@ -4202,7 +4202,7 @@ str_pokedex_data_349_page_1:
 .global str_pokedex_data_350_page_0
 
 str_pokedex_data_350_page_0:
-	.string "MILOTIC ist atemberaubend schön. Man\nsagt, dass diejenigen, die es sehen,\nvergessen zu kämpfen."
+	.string "Milotic ist atemberaubend schön. Man\nsagt, dass diejenigen, die es sehen,\nvergessen zu kämpfen."
 
 
 .global str_pokedex_data_350_page_1
@@ -4334,7 +4334,7 @@ str_pokedex_data_360_page_1:
 .global str_pokedex_data_361_page_0
 
 str_pokedex_data_361_page_0:
-	.string "Man sagt, dass ein Haus, das von einem\nSCHNEPPKE besucht wurde, aufblüht.\nEs kann Kälte von bis zu minus 100\nGrad Celsius überstehen."
+	.string "Man sagt, dass ein Haus, das von einem\nSchneppke besucht wurde, aufblüht.\nEs kann Kälte von bis zu minus 100\nGrad Celsius überstehen."
 
 
 .global str_pokedex_data_361_page_1
@@ -4370,7 +4370,7 @@ str_pokedex_data_363_page_1:
 .global str_pokedex_data_364_page_0
 
 str_pokedex_data_364_page_0:
-	.string "Um neue Dinge zu riechen und zu fühlen,\nberührt es sie mit seiner Nase. Es spielt,\nindem es SEEMOPS auf seiner Nase\njongliert."
+	.string "Um neue Dinge zu riechen und zu fühlen,\nberührt es sie mit seiner Nase. Es spielt,\nindem es Seemops auf seiner Nase\njongliert."
 
 
 .global str_pokedex_data_364_page_1
@@ -4514,7 +4514,7 @@ str_pokedex_data_375_page_1:
 .global str_pokedex_data_376_page_0
 
 str_pokedex_data_376_page_0:
-	.string "Es entsteht, wenn zwei METANG\nverschmelzen. Man sagt, dass es mit\nseinen vier Gehirnen sogar einem\nSupercomputer überlegen wäre."
+	.string "Es entsteht, wenn zwei Metang\nverschmelzen. Man sagt, dass es mit\nseinen vier Gehirnen sogar einem\nSupercomputer überlegen wäre."
 
 
 .global str_pokedex_data_376_page_1
@@ -4598,7 +4598,7 @@ str_pokedex_data_382_page_1:
 .global str_pokedex_data_383_page_0
 
 str_pokedex_data_383_page_0:
-	.string "Dieses legendäre Pokémon soll das\nLand verkörpern. Es ist in einen Schlaf\ngefallen, nachdem es mit KYOGRE\ngekämpft hat."
+	.string "Dieses legendäre Pokémon soll das\nLand verkörpern. Es ist in einen Schlaf\ngefallen, nachdem es mit Kyogre\ngekämpft hat."
 
 
 .global str_pokedex_data_383_page_1
@@ -4634,7 +4634,7 @@ str_pokedex_data_385_page_1:
 .global str_pokedex_data_386_page_0
 
 str_pokedex_data_386_page_0:
-	.string "Dieses DEOXYS hat sich in seine\naggressive Form verwandelt. Es kann\nGegner täuschen, indem es sein\nErscheinungsbild ändert."
+	.string "Dieses Deoxys hat sich in seine\naggressive Form verwandelt. Es kann\nGegner täuschen, indem es sein\nErscheinungsbild ändert."
 
 
 .global str_pokedex_data_386_page_1
@@ -4647,7 +4647,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_0_page_0
 
 	str_pokedex_data_0_page_0:
-		.string "This is a newly discovered POKéMON. It is\ncurrently under investigation. No detailed\ninformation is available at this time."
+		.string "This is a newly discovered Pokémon. It is\ncurrently under investigation. No detailed\ninformation is available at this time."
 
 	.global str_pokedex_data_0_page_1
 
@@ -4657,7 +4657,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_1_page_0
 
 	str_pokedex_data_1_page_0:
-		.string "There is a plant seed on its back right\nfrom the day this POKéMON is born.\nThe seed slowly grows larger."
+		.string "There is a plant seed on its back right\nfrom the day this Pokémon is born.\nThe seed slowly grows larger."
 
 	.global str_pokedex_data_1_page_1
 
@@ -4707,7 +4707,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_6_page_0
 
 	str_pokedex_data_6_page_0:
-		.string "Its wings can carry this POKéMON close to\nan altitude of 4,600 feet. It blows out\nfire at very high temperatures."
+		.string "Its wings can carry this Pokémon close to\nan altitude of 4,600 feet. It blows out\nfire at very high temperatures."
 
 	.global str_pokedex_data_6_page_1
 
@@ -4727,7 +4727,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_8_page_0
 
 	str_pokedex_data_8_page_0:
-		.string "This POKéMON is very popular as a pet.\nIts fur-covered tail is a symbol of its\nlongevity."
+		.string "This Pokémon is very popular as a pet.\nIts fur-covered tail is a symbol of its\nlongevity."
 
 	.global str_pokedex_data_8_page_1
 
@@ -4767,7 +4767,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_12_page_0
 
 	str_pokedex_data_12_page_0:
-		.string "The wings are protected by rain-repellent\ndust. As a result, this POKéMON can fly\nabout even in rain."
+		.string "The wings are protected by rain-repellent\ndust. As a result, this Pokémon can fly\nabout even in rain."
 
 	.global str_pokedex_data_12_page_1
 
@@ -4787,7 +4787,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_14_page_0
 
 	str_pokedex_data_14_page_0:
-		.string "This POKéMON is in a temporary stage\nwhile making its body. It is almost\ncompletely unable to move on its own."
+		.string "This Pokémon is in a temporary stage\nwhile making its body. It is almost\ncompletely unable to move on its own."
 
 	.global str_pokedex_data_14_page_1
 
@@ -4817,7 +4817,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_17_page_0
 
 	str_pokedex_data_17_page_0:
-		.string "The claws on its feet are well developed.\nIt can carry prey such as an EXEGGCUTE\nto its nest over 60 miles away."
+		.string "The claws on its feet are well developed.\nIt can carry prey such as an Exeggcute\nto its nest over 60 miles away."
 
 	.global str_pokedex_data_17_page_1
 
@@ -4857,7 +4857,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_21_page_0
 
 	str_pokedex_data_21_page_0:
-		.string "It busily flits around here and there.\nEven if it is frail, it can be a tough\nfoe that uses MIRROR MOVE."
+		.string "It busily flits around here and there.\nEven if it is frail, it can be a tough\nfoe that uses Mirror Move."
 
 	.global str_pokedex_data_21_page_1
 
@@ -5237,7 +5237,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_59_page_0
 
 	str_pokedex_data_59_page_0:
-		.string "A POKéMON that is described in Chinese\nlegends. It is said to race at an\nunbelievable speed."
+		.string "A Pokémon that is described in Chinese\nlegends. It is said to race at an\nunbelievable speed."
 
 	.global str_pokedex_data_59_page_1
 
@@ -5287,7 +5287,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_64_page_0
 
 	str_pokedex_data_64_page_0:
-		.string "It happened one morning - a boy with\nextrasensory powers awoke in bed\ntransformed into KADABRA."
+		.string "It happened one morning - a boy with\nextrasensory powers awoke in bed\ntransformed into Kadabra."
 
 	.global str_pokedex_data_64_page_1
 
@@ -5397,7 +5397,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_75_page_0
 
 	str_pokedex_data_75_page_0:
-		.string "Be careful while hiking on mountain trails.\nGRAVELER may come rolling down the path\nwithout slowing."
+		.string "Be careful while hiking on mountain trails.\nGraveler may come rolling down the path\nwithout slowing."
 
 	.global str_pokedex_data_75_page_1
 
@@ -5447,7 +5447,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_80_page_0
 
 	str_pokedex_data_80_page_0:
-		.string "When a SLOWPOKE went hunting in the sea,\nits tail was bitten by a SHELLDER. That\nmade it evolve into SLOWBRO."
+		.string "When a Slowpoke went hunting in the sea,\nits tail was bitten by a Shellder. That\nmade it evolve into Slowbro."
 
 	.global str_pokedex_data_80_page_1
 
@@ -5457,7 +5457,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_81_page_0
 
 	str_pokedex_data_81_page_0:
-		.string "It moves while constantly hovering.\nIt discharges THUNDER WAVE and so on\nfrom the units at its sides."
+		.string "It moves while constantly hovering.\nIt discharges Thunder Wave and so on\nfrom the units at its sides."
 
 	.global str_pokedex_data_81_page_1
 
@@ -5467,7 +5467,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_82_page_0
 
 	str_pokedex_data_82_page_0:
-		.string "A linked cluster formed of several\nMAGNEMITE. It discharges powerful\nmagnetic waves at high voltage."
+		.string "A linked cluster formed of several\nMagnemite. It discharges powerful\nmagnetic waves at high voltage."
 
 	.global str_pokedex_data_82_page_1
 
@@ -5487,7 +5487,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_84_page_0
 
 	str_pokedex_data_84_page_0:
-		.string "A two-headed POKéMON that was discovered\nas a sudden mutation. It runs at a pace\nof over 60 miles per hour."
+		.string "A two-headed Pokémon that was discovered\nas a sudden mutation. It runs at a pace\nof over 60 miles per hour."
 
 	.global str_pokedex_data_84_page_1
 
@@ -5527,7 +5527,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_88_page_0
 
 	str_pokedex_data_88_page_0:
-		.string "Sludge exposed to X rays from the moon\ntransformed into GRIMER. It loves feeding\non filthy things."
+		.string "Sludge exposed to X rays from the moon\ntransformed into Grimer. It loves feeding\non filthy things."
 
 	.global str_pokedex_data_88_page_1
 
@@ -5577,7 +5577,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_93_page_0
 
 	str_pokedex_data_93_page_0:
-		.string "If you get the feeling of being watched\nin darkness when nobody is around,\nHAUNTER is there."
+		.string "If you get the feeling of being watched\nin darkness when nobody is around,\nHaunter is there."
 
 	.global str_pokedex_data_93_page_1
 
@@ -5647,7 +5647,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_100_page_0
 
 	str_pokedex_data_100_page_0:
-		.string "A life-form whose identity is unknown.\nIt is said to SCREECH or suddenly\nSELFDESTRUCT."
+		.string "A life-form whose identity is unknown.\nIt is said to Screech or suddenly\nSelfdestruct."
 
 	.global str_pokedex_data_100_page_1
 
@@ -5717,7 +5717,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_107_page_0
 
 	str_pokedex_data_107_page_0:
-		.string "The spirit of a pro boxer has infused this\nPOKéMON. It throws punches that are\nfaster than a bullet train."
+		.string "The spirit of a pro boxer has infused this\nPokémon. It throws punches that are\nfaster than a bullet train."
 
 	.global str_pokedex_data_107_page_1
 
@@ -5747,7 +5747,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_110_page_0
 
 	str_pokedex_data_110_page_0:
-		.string "Very rarely, a sudden mutation can result\nin two small KOFFING twins becoming\nconjoined as a WEEZING."
+		.string "Very rarely, a sudden mutation can result\nin two small Koffing twins becoming\nconjoined as a Weezing."
 
 	.global str_pokedex_data_110_page_1
 
@@ -5757,7 +5757,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_111_page_0
 
 	str_pokedex_data_111_page_0:
-		.string "Strong, but not too bright, this POKéMON\ncan shatter even a skyscraper with its\ncharging TACKLES."
+		.string "Strong, but not too bright, this Pokémon\ncan shatter even a skyscraper with its\ncharging Tackles."
 
 	.global str_pokedex_data_111_page_1
 
@@ -5787,7 +5787,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_114_page_0
 
 	str_pokedex_data_114_page_0:
-		.string "Blue plant vines cloak the POKéMON\s\nidentity in a tangled mass. It entangles\nanything that gets close."
+		.string "Blue plant vines cloak the Pokémon\s\nidentity in a tangled mass. It entangles\nanything that gets close."
 
 	.global str_pokedex_data_114_page_1
 
@@ -5797,7 +5797,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_115_page_0
 
 	str_pokedex_data_115_page_0:
-		.string "The female raises its offspring in a pouch\non its belly. It is skilled at attacking\nusing COMET PUNCH."
+		.string "The female raises its offspring in a pouch\non its belly. It is skilled at attacking\nusing Comet Punch."
 
 	.global str_pokedex_data_115_page_1
 
@@ -5857,7 +5857,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_121_page_0
 
 	str_pokedex_data_121_page_0:
-		.string "This POKéMON has a geometric body.\nBecause of its body, the locals suspect\nthat it is an alien creature."
+		.string "This Pokémon has a geometric body.\nBecause of its body, the locals suspect\nthat it is an alien creature."
 
 	.global str_pokedex_data_121_page_1
 
@@ -5927,7 +5927,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_128_page_0
 
 	str_pokedex_data_128_page_0:
-		.string "When it is about to TACKLE, it whips\nits body repeatedly with its three\nlong tails."
+		.string "When it is about to Tackle, it whips\nits body repeatedly with its three\nlong tails."
 
 	.global str_pokedex_data_128_page_1
 
@@ -5937,7 +5937,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_129_page_0
 
 	str_pokedex_data_129_page_0:
-		.string "It is virtually worthless in terms of both\npower and speed. It is the most weak and\npathetic POKéMON in the world."
+		.string "It is virtually worthless in terms of both\npower and speed. It is the most weak and\npathetic Pokémon in the world."
 
 	.global str_pokedex_data_129_page_1
 
@@ -5947,7 +5947,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_130_page_0
 
 	str_pokedex_data_130_page_0:
-		.string "It has an extremely aggressive nature.\nThe HYPER BEAM it shoots from its mouth\ntotally incinerates all targets."
+		.string "It has an extremely aggressive nature.\nThe Hyper Beam it shoots from its mouth\ntotally incinerates all targets."
 
 	.global str_pokedex_data_130_page_1
 
@@ -5977,7 +5977,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_133_page_0
 
 	str_pokedex_data_133_page_0:
-		.string "An extremely rare POKéMON that may\nevolve in a number of different ways\ndepending on stimuli."
+		.string "An extremely rare Pokémon that may\nevolve in a number of different ways\ndepending on stimuli."
 
 	.global str_pokedex_data_133_page_1
 
@@ -6017,7 +6017,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_137_page_0
 
 	str_pokedex_data_137_page_0:
-		.string "Using the most advanced technologies,\nscientists finally succeeded in making the\nfirst artificial POKéMON."
+		.string "Using the most advanced technologies,\nscientists finally succeeded in making the\nfirst artificial Pokémon."
 
 	.global str_pokedex_data_137_page_1
 
@@ -6027,7 +6027,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_138_page_0
 
 	str_pokedex_data_138_page_0:
-		.string "A prehistoric POKéMON that lived in the\nprimordial sea, it swims by twisting its\n10 tentacles about."
+		.string "A prehistoric Pokémon that lived in the\nprimordial sea, it swims by twisting its\n10 tentacles about."
 
 	.global str_pokedex_data_138_page_1
 
@@ -6047,7 +6047,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_140_page_0
 
 	str_pokedex_data_140_page_0:
-		.string "This POKéMON was regenerated from the\nfossil of an ancient creature. It protects\nitself with a hard shell."
+		.string "This Pokémon was regenerated from the\nfossil of an ancient creature. It protects\nitself with a hard shell."
 
 	.global str_pokedex_data_140_page_1
 
@@ -6087,7 +6087,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_144_page_0
 
 	str_pokedex_data_144_page_0:
-		.string "One of the legendary bird POKéMON.\nWith its long tail trailing behind, its\nflying form is magnificent."
+		.string "One of the legendary bird Pokémon.\nWith its long tail trailing behind, its\nflying form is magnificent."
 
 	.global str_pokedex_data_144_page_1
 
@@ -6097,7 +6097,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_145_page_0
 
 	str_pokedex_data_145_page_0:
-		.string "One of the legendary bird POKéMON.\nWhile it is flying, it makes crackling and\nsnapping sounds."
+		.string "One of the legendary bird Pokémon.\nWhile it is flying, it makes crackling and\nsnapping sounds."
 
 	.global str_pokedex_data_145_page_1
 
@@ -6107,7 +6107,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_146_page_0
 
 	str_pokedex_data_146_page_0:
-		.string "One of the legendary bird POKéMON.\nThose seeing it are overwhelmed by its\norange wings that seem to be on fire."
+		.string "One of the legendary bird Pokémon.\nThose seeing it are overwhelmed by its\norange wings that seem to be on fire."
 
 	.global str_pokedex_data_146_page_1
 
@@ -6147,7 +6147,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_150_page_0
 
 	str_pokedex_data_150_page_0:
-		.string "A POKéMON whose genetic code was\nrepeatedly recombined for research.\nIt turned vicious as a result."
+		.string "A Pokémon whose genetic code was\nrepeatedly recombined for research.\nIt turned vicious as a result."
 
 	.global str_pokedex_data_150_page_1
 
@@ -6157,7 +6157,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_151_page_0
 
 	str_pokedex_data_151_page_0:
-		.string "A POKéMON of South America that was\nthought to have been extinct. It is very\nintelligent and learns any move."
+		.string "A Pokémon of South America that was\nthought to have been extinct. It is very\nintelligent and learns any move."
 
 	.global str_pokedex_data_151_page_1
 
@@ -6187,7 +6187,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_154_page_0
 
 	str_pokedex_data_154_page_0:
-		.string "MEGANIUM\s breath has the power to revive\ndead grass and plants. It can make them\nhealthy again."
+		.string "Meganium\s breath has the power to revive\ndead grass and plants. It can make them\nhealthy again."
 
 	.global str_pokedex_data_154_page_1
 
@@ -6207,7 +6207,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_156_page_0
 
 	str_pokedex_data_156_page_0:
-		.string "This POKéMON is fully covered by\nnonflammable fur. It can withstand any\nkind of fire attack."
+		.string "This Pokémon is fully covered by\nnonflammable fur. It can withstand any\nkind of fire attack."
 
 	.global str_pokedex_data_156_page_1
 
@@ -6267,7 +6267,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_162_page_0
 
 	str_pokedex_data_162_page_0:
-		.string "There is no telling where its tail begins.\nDespite its short legs, it is quick at\nhunting RATTATA."
+		.string "There is no telling where its tail begins.\nDespite its short legs, it is quick at\nhunting Rattata."
 
 	.global str_pokedex_data_162_page_1
 
@@ -6297,7 +6297,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_165_page_0
 
 	str_pokedex_data_165_page_0:
-		.string "When the weather turns cold, numerous\nLEDYBA gather from everywhere to cluster\nand keep each other warm."
+		.string "When the weather turns cold, numerous\nLedyba gather from everywhere to cluster\nand keep each other warm."
 
 	.global str_pokedex_data_165_page_1
 
@@ -6377,7 +6377,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_173_page_0
 
 	str_pokedex_data_173_page_0:
-		.string "When numerous meteors illuminate the\nnight sky, sightings of CLEFFA strangely\nincrease."
+		.string "When numerous meteors illuminate the\nnight sky, sightings of Cleffa strangely\nincrease."
 
 	.global str_pokedex_data_173_page_1
 
@@ -6397,7 +6397,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_175_page_0
 
 	str_pokedex_data_175_page_0:
-		.string "A proverb claims that happiness will come\nto anyone who can make a sleeping TOGEPI\nstand up."
+		.string "A proverb claims that happiness will come\nto anyone who can make a sleeping Togepi\nstand up."
 
 	.global str_pokedex_data_175_page_1
 
@@ -6637,7 +6637,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_199_page_0
 
 	str_pokedex_data_199_page_0:
-		.string "When its head was bitten, toxins entered\nSLOWPOKE\s head and unlocked an\nextraordinary power."
+		.string "When its head was bitten, toxins entered\nSlowpoke\s head and unlocked an\nextraordinary power."
 
 	.global str_pokedex_data_199_page_1
 
@@ -6727,7 +6727,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_208_page_0
 
 	str_pokedex_data_208_page_0:
-		.string "It is said that if an ONIX lives for over\n100 years, its composition changes to\nbecome diamond-like."
+		.string "It is said that if an Onix lives for over\n100 years, its composition changes to\nbecome diamond-like."
 
 	.global str_pokedex_data_208_page_1
 
@@ -6747,7 +6747,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_210_page_0
 
 	str_pokedex_data_210_page_0:
-		.string "Because its fangs are too heavy, it\nalways keeps its head tilted down.\nHowever, its BITE is powerful."
+		.string "Because its fangs are too heavy, it\nalways keeps its head tilted down.\nHowever, its Bite is powerful."
 
 	.global str_pokedex_data_210_page_1
 
@@ -6777,7 +6777,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_213_page_0
 
 	str_pokedex_data_213_page_0:
-		.string "It stores BERRIES inside its shell.\nTo avoid attacks, it hides beneath rocks\nand remains completely still."
+		.string "It stores Berries inside its shell.\nTo avoid attacks, it hides beneath rocks\nand remains completely still."
 
 	.global str_pokedex_data_213_page_1
 
@@ -6797,7 +6797,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_215_page_0
 
 	str_pokedex_data_215_page_0:
-		.string "Vicious in nature, it drives PIDGEY from\ntheir nests and feasts on the eggs that\nare left behind."
+		.string "Vicious in nature, it drives Pidgey from\ntheir nests and feasts on the eggs that\nare left behind."
 
 	.global str_pokedex_data_215_page_1
 
@@ -6877,7 +6877,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_223_page_0
 
 	str_pokedex_data_223_page_0:
-		.string "Using its dorsal fin as a suction pad, it\nclings to a MANTINE\s underside to\nscavenge for leftovers."
+		.string "Using its dorsal fin as a suction pad, it\nclings to a Mantine\s underside to\nscavenge for leftovers."
 
 	.global str_pokedex_data_223_page_1
 
@@ -6887,7 +6887,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_224_page_0
 
 	str_pokedex_data_224_page_0:
-		.string "It instinctively sneaks into rocky holes.\nIf it gets sleepy, it steals the nest of a\nfellow OCTILLERY."
+		.string "It instinctively sneaks into rocky holes.\nIf it gets sleepy, it steals the nest of a\nfellow Octillery."
 
 	.global str_pokedex_data_224_page_1
 
@@ -6937,7 +6937,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_229_page_0
 
 	str_pokedex_data_229_page_0:
-		.string "Upon hearing its eerie howls, other\nPOKéMON get the shivers and head straight\nback to their nests."
+		.string "Upon hearing its eerie howls, other\nPokémon get the shivers and head straight\nback to their nests."
 
 	.global str_pokedex_data_229_page_1
 
@@ -7037,7 +7037,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_239_page_0
 
 	str_pokedex_data_239_page_0:
-		.string "Even in the most vicious storm, this\nPOKéMON plays happily if thunder rumbles\nin the sky."
+		.string "Even in the most vicious storm, this\nPokémon plays happily if thunder rumbles\nin the sky."
 
 	.global str_pokedex_data_239_page_1
 
@@ -7067,7 +7067,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_242_page_0
 
 	str_pokedex_data_242_page_0:
-		.string "It has a very compassionate nature. If it\nsees a sick POKéMON, it will nurse the\nsufferer back to health."
+		.string "It has a very compassionate nature. If it\nsees a sick Pokémon, it will nurse the\nsufferer back to health."
 
 	.global str_pokedex_data_242_page_1
 
@@ -7077,7 +7077,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_243_page_0
 
 	str_pokedex_data_243_page_0:
-		.string "This POKéMON races across the\nland while barking a cry that sounds\nlike crashing thunder."
+		.string "This Pokémon races across the\nland while barking a cry that sounds\nlike crashing thunder."
 
 	.global str_pokedex_data_243_page_1
 
@@ -7087,7 +7087,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_244_page_0
 
 	str_pokedex_data_244_page_0:
-		.string "A POKéMON that races across the land.\nIt is said that one is born every time a\nnew volcano appears."
+		.string "A Pokémon that races across the land.\nIt is said that one is born every time a\nnew volcano appears."
 
 	.global str_pokedex_data_244_page_1
 
@@ -7097,7 +7097,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_245_page_0
 
 	str_pokedex_data_245_page_0:
-		.string "This POKéMON races across the land.\nIt is said that north winds will somehow\nblow whenever it appears."
+		.string "This Pokémon races across the land.\nIt is said that north winds will somehow\nblow whenever it appears."
 
 	.global str_pokedex_data_245_page_1
 
@@ -7157,7 +7157,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_251_page_0
 
 	str_pokedex_data_251_page_0:
-		.string "When CELEBI disappears deep in a forest,\nit is said to leave behind an egg it\nbrought from the future."
+		.string "When Celebi disappears deep in a forest,\nit is said to leave behind an egg it\nbrought from the future."
 
 	.global str_pokedex_data_251_page_1
 
@@ -7267,7 +7267,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_262_page_0
 
 	str_pokedex_data_262_page_0:
-		.string "It will always obey the commands of a\nskilled TRAINER. Its behavior arises from\nits living in packs in ancient times."
+		.string "It will always obey the commands of a\nskilled Trainer. Its behavior arises from\nits living in packs in ancient times."
 
 	.global str_pokedex_data_262_page_1
 
@@ -7277,7 +7277,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_263_page_0
 
 	str_pokedex_data_263_page_0:
-		.string "A POKéMON with abundant curiosity.\nIt shows an interest in everything, so it\nalways zigs and zags."
+		.string "A Pokémon with abundant curiosity.\nIt shows an interest in everything, so it\nalways zigs and zags."
 
 	.global str_pokedex_data_263_page_1
 
@@ -7367,7 +7367,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_272_page_0
 
 	str_pokedex_data_272_page_0:
-		.string "The rhythm of bright, festive music\nactivates LUDICOLO\s cells, making it more\npowerful."
+		.string "The rhythm of bright, festive music\nactivates Ludicolo\s cells, making it more\npowerful."
 
 	.global str_pokedex_data_272_page_1
 
@@ -7377,7 +7377,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_273_page_0
 
 	str_pokedex_data_273_page_0:
-		.string "If it remains still, it becomes impossible\nto distinguish from real nuts. It delights\nin surprising foraging PIDGEY."
+		.string "If it remains still, it becomes impossible\nto distinguish from real nuts. It delights\nin surprising foraging Pidgey."
 
 	.global str_pokedex_data_273_page_1
 
@@ -7387,7 +7387,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_274_page_0
 
 	str_pokedex_data_274_page_0:
-		.string "They live in holes bored in large trees.\nThe sound of NUZLEAF\s grass flute fills\nlisteners with dread."
+		.string "They live in holes bored in large trees.\nThe sound of Nuzleaf\s grass flute fills\nlisteners with dread."
 
 	.global str_pokedex_data_274_page_1
 
@@ -7397,7 +7397,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_275_page_0
 
 	str_pokedex_data_275_page_0:
-		.string "A POKéMON that was feared as a forest\nguardian. It can read the foe\s mind and\ntake preemptive action."
+		.string "A Pokémon that was feared as a forest\nguardian. It can read the foe\s mind and\ntake preemptive action."
 
 	.global str_pokedex_data_275_page_1
 
@@ -7437,7 +7437,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_279_page_0
 
 	str_pokedex_data_279_page_0:
-		.string "It is a flying transporter that carries\nsmall POKéMON in its beak. It bobs on the\nwaves to rest its wings."
+		.string "It is a flying transporter that carries\nsmall Pokémon in its beak. It bobs on the\nwaves to rest its wings."
 
 	.global str_pokedex_data_279_page_1
 
@@ -7447,7 +7447,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_280_page_0
 
 	str_pokedex_data_280_page_0:
-		.string "It is highly attuned to the emotions of\npeople and POKéMON. It hides if it senses\nhostility."
+		.string "It is highly attuned to the emotions of\npeople and Pokémon. It hides if it senses\nhostility."
 
 	.global str_pokedex_data_280_page_1
 
@@ -7457,7 +7457,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_281_page_0
 
 	str_pokedex_data_281_page_0:
-		.string "The cheerful spirit of its TRAINER gives\nit energy for its psychokinetic power.\nIt spins and dances when happy."
+		.string "The cheerful spirit of its Trainer gives\nit energy for its psychokinetic power.\nIt spins and dances when happy."
 
 	.global str_pokedex_data_281_page_1
 
@@ -7467,7 +7467,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_282_page_0
 
 	str_pokedex_data_282_page_0:
-		.string "It has the power to predict the future.\nIts power peaks when it is protecting its\nTRAINER."
+		.string "It has the power to predict the future.\nIts power peaks when it is protecting its\nTrainer."
 
 	.global str_pokedex_data_282_page_1
 
@@ -7537,7 +7537,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_289_page_0
 
 	str_pokedex_data_289_page_0:
-		.string "It is the world\s most slothful POKéMON.\nHowever, it can exert horrifying power by\nreleasing pent-up energy all at once."
+		.string "It is the world\s most slothful Pokémon.\nHowever, it can exert horrifying power by\nreleasing pent-up energy all at once."
 
 	.global str_pokedex_data_289_page_1
 
@@ -7557,7 +7557,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_291_page_0
 
 	str_pokedex_data_291_page_0:
-		.string "This POKéMON is so quick, it is said to\nbe able to avoid any attack. It loves to\nfeed on tree sap."
+		.string "This Pokémon is so quick, it is said to\nbe able to avoid any attack. It loves to\nfeed on tree sap."
 
 	.global str_pokedex_data_291_page_1
 
@@ -7567,7 +7567,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_292_page_0
 
 	str_pokedex_data_292_page_0:
-		.string "A most peculiar POKéMON that somehow\nappears in a POKé BALL when a NINCADA\nevolves."
+		.string "A most peculiar Pokémon that somehow\nappears in a Poké Ball when a Nincada\nevolves."
 
 	.global str_pokedex_data_292_page_1
 
@@ -7607,7 +7607,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_296_page_0
 
 	str_pokedex_data_296_page_0:
-		.string "It grows stronger by enduring harsh\ntraining. It is a gutsy POKéMON that can\nwithstand any attack."
+		.string "It grows stronger by enduring harsh\ntraining. It is a gutsy Pokémon that can\nwithstand any attack."
 
 	.global str_pokedex_data_296_page_1
 
@@ -7637,7 +7637,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_299_page_0
 
 	str_pokedex_data_299_page_0:
-		.string "Its magnetic nose consistently faces\nnorth. Travelers check NOSEPASS to get\ntheir bearings."
+		.string "Its magnetic nose consistently faces\nnorth. Travelers check Nosepass to get\ntheir bearings."
 
 	.global str_pokedex_data_299_page_1
 
@@ -7657,7 +7657,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_301_page_0
 
 	str_pokedex_data_301_page_0:
-		.string "The favorite of trend-conscious\nfemale TRAINERS, they are used in\ncompetition for their style and fur."
+		.string "The favorite of trend-conscious\nfemale Trainers, they are used in\ncompetition for their style and fur."
 
 	.global str_pokedex_data_301_page_1
 
@@ -7787,7 +7787,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_314_page_0
 
 	str_pokedex_data_314_page_0:
-		.string "It guides VOLBEAT to draw signs in night\nskies. There are scientists that study the\npatterns it creates."
+		.string "It guides Volbeat to draw signs in night\nskies. There are scientists that study the\npatterns it creates."
 
 	.global str_pokedex_data_314_page_1
 
@@ -7857,7 +7857,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_321_page_0
 
 	str_pokedex_data_321_page_0:
-		.string "It is among the largest of all POKéMON.\nIt herds prey in a pack then swallows the\nmassed prey in one gulp."
+		.string "It is among the largest of all Pokémon.\nIt herds prey in a pack then swallows the\nmassed prey in one gulp."
 
 	.global str_pokedex_data_321_page_1
 
@@ -7897,7 +7897,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_325_page_0
 
 	str_pokedex_data_325_page_0:
-		.string "It apparently dies if it stops bouncing\nabout. It carries a pearl from CLAMPERL\non its head."
+		.string "It apparently dies if it stops bouncing\nabout. It carries a pearl from Clamperl\non its head."
 
 	.global str_pokedex_data_325_page_1
 
@@ -7917,7 +7917,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_327_page_0
 
 	str_pokedex_data_327_page_0:
-		.string "No two SPINDA are said to have identical\npatterns. It confuses foes with its\nstumbling motions."
+		.string "No two Spinda are said to have identical\npatterns. It confuses foes with its\nstumbling motions."
 
 	.global str_pokedex_data_327_page_1
 
@@ -7987,7 +7987,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_334_page_0
 
 	str_pokedex_data_334_page_0:
-		.string "If you hear a beautiful melody trilling\ndeep among mountains far from people,\nit is ALTARIA\s humming."
+		.string "If you hear a beautiful melody trilling\ndeep among mountains far from people,\nit is Altaria\s humming."
 
 	.global str_pokedex_data_334_page_1
 
@@ -7997,7 +7997,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_335_page_0
 
 	str_pokedex_data_335_page_0:
-		.string "If it comes across a SEVIPER, its fur\nbristles and it assumes its battle pose.\nIts sharp claws are its best weapon."
+		.string "If it comes across a Seviper, its fur\nbristles and it assumes its battle pose.\nIts sharp claws are its best weapon."
 
 	.global str_pokedex_data_335_page_1
 
@@ -8047,7 +8047,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_340_page_0
 
 	str_pokedex_data_340_page_0:
-		.string "It makes its nest at the bottom of \nswamps. It will eat anything - if it is\nalive, WHISCASH will eat it."
+		.string "It makes its nest at the bottom of \nswamps. It will eat anything - if it is\nalive, Whiscash will eat it."
 
 	.global str_pokedex_data_340_page_1
 
@@ -8117,7 +8117,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_347_page_0
 
 	str_pokedex_data_347_page_0:
-		.string "It is a kind of POKéMON progenitor.\nIt uses its extending claws to catch prey\nhiding among rocks on the seafloor."
+		.string "It is a kind of Pokémon progenitor.\nIt uses its extending claws to catch prey\nhiding among rocks on the seafloor."
 
 	.global str_pokedex_data_347_page_1
 
@@ -8147,7 +8147,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_350_page_0
 
 	str_pokedex_data_350_page_0:
-		.string "MILOTIC is breathtakingly beautiful.\nThose that see it are said to forget their\ncombative spirits."
+		.string "Milotic is breathtakingly beautiful.\nThose that see it are said to forget their\ncombative spirits."
 
 	.global str_pokedex_data_350_page_1
 
@@ -8187,7 +8187,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_354_page_0
 
 	str_pokedex_data_354_page_0:
-		.string "Strong feelings of hatred turned a puppet\ninto a POKéMON. If it opens its mouth,\nits cursed energy escapes."
+		.string "Strong feelings of hatred turned a puppet\ninto a Pokémon. If it opens its mouth,\nits cursed energy escapes."
 
 	.global str_pokedex_data_354_page_1
 
@@ -8257,7 +8257,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_361_page_0
 
 	str_pokedex_data_361_page_0:
-		.string "It is said that a home visited by a\nSNORUNT will prosper. It can withstand\ncold of minus 150 degrees Fahrenheit."
+		.string "It is said that a home visited by a\nSnorunt will prosper. It can withstand\ncold of minus 150 degrees Fahrenheit."
 
 	.global str_pokedex_data_361_page_1
 
@@ -8287,7 +8287,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_364_page_0
 
 	str_pokedex_data_364_page_0:
-		.string "It touches new things with its nose to\ntest for smell and feel. It plays by\nspinning SPHEAL on its nose."
+		.string "It touches new things with its nose to\ntest for smell and feel. It plays by\nspinning Spheal on its nose."
 
 	.global str_pokedex_data_364_page_1
 
@@ -8407,7 +8407,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_376_page_0
 
 	str_pokedex_data_376_page_0:
-		.string "It is formed by two METANG fusing.\nIts four brains are said to be superior\nto a supercomputer."
+		.string "It is formed by two Metang fusing.\nIts four brains are said to be superior\nto a supercomputer."
 
 	.global str_pokedex_data_376_page_1
 
@@ -8467,7 +8467,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_382_page_0
 
 	str_pokedex_data_382_page_0:
-		.string "This POKéMON is said to have\nexpanded the sea by bringing heavy rains.\nIt has the power to control water."
+		.string "This Pokémon is said to have\nexpanded the sea by bringing heavy rains.\nIt has the power to control water."
 
 	.global str_pokedex_data_382_page_1
 
@@ -8477,7 +8477,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_383_page_0
 
 	str_pokedex_data_383_page_0:
-		.string "This legendary POKéMON is said to\nrepresent the land. It went to sleep after\ndueling KYOGRE."
+		.string "This legendary Pokémon is said to\nrepresent the land. It went to sleep after\ndueling Kyogre."
 
 	.global str_pokedex_data_383_page_1
 
@@ -8507,7 +8507,7 @@ str_pokedex_data_386_page_1:
 	.global str_pokedex_data_386_page_0
 
 	str_pokedex_data_386_page_0:
-		.string "This DEOXYS has transformed into its\naggressive guise. It can fool enemies by\naltering its appearance."
+		.string "This Deoxys has transformed into its\naggressive guise. It can fool enemies by\naltering its appearance."
 
 	.global str_pokedex_data_386_page_1
 
