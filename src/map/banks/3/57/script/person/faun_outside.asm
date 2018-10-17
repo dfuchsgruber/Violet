@@ -319,9 +319,12 @@ call ow_script_0x89c5ee
 loadpointer 0 str_player_receives_pokeballs
 callstd MSG
 special 0x7
-copyvarifnotzero 0x8000 ITEM_POKEBALL
-copyvarifnotzero 0x8001 5
-callstd ITEM_OBTAIN
+additem ITEM_POKEBALL 5
+fanfare 0x101
+loadpointer 0x0 str_pokeball_obtention_message
+callstd MSG_KEEPOPEN
+waitfanfare
+closeonkeypress
 addvar TRAINERSCHOOL_PROGRESS 1
 setvar TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS 1
 releaseall
@@ -489,6 +492,9 @@ str_faun_calls_player:
 
 str_player_receives_pokeballs:
 	.autostring 36 2 "PLAYER, du erhältst jetzt von mir fünf Pokébälle.\pVersuche auch du, das Pokémon einzufangen!"
+
+str_pokeball_obtention_message:
+	.autostring 36 2 "Fünf Pokébälle erhalten."
 
 str_player_has_to_catch:
 	.autostring 36 2 "PLAYER! Begib dich endlich ins hohe Gras!"
