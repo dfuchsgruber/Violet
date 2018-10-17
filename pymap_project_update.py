@@ -189,6 +189,7 @@ for label in project.tilesets:
     with open(project.tilesets[label]) as f:
         tileset_old = json.load(f)
     
+    """
     # Reshape the palette using np
     palette = np.array(tileset_old['palettes']).reshape((-1, 16, 3))
     # print(label, palette.shape)
@@ -201,9 +202,25 @@ for label in project.tilesets:
     tileset['animation_initialize'] = tileset.pop('init_func')
     del tileset['symbol']
     tileset['palettes'] = palette
+    """
+    tileset = tileset_old.copy()
+    # Fix blocks
+    blocks = np.array(tileset_old['blocks']).rehsape((-1, ))
+    blocks = list(map(lambda block: [
+            block & 1023,
+            (block >> 10) & 1,
+            (block >> 11) & 1,
+            (block >> 12) & 15
+        ]), blocks.tolist())
+    blocks = np.array(blocks).reshape((-1, 4))
+    print(blocks.shape)
+    tileset['blocks'] = blocks.tolist()
+
     assert_structure_equality(tileset, pymap.model.tileset.tileset_type)
     # Try to assembly the tileset
     pymap.model.tileset.tileset_type.to_assembly(tileset, [])
+
+    raise RuntimeException
 
     with open(project.tilesets[label], 'w+') as f:
         json.dump({
