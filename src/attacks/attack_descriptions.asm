@@ -708,7 +708,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_ultraschall
 
 	str_attack_desc_attack_ultraschall:
-		.string "Schockwellen, die\nstets 20 Kp Scha-\nden anrichten,\nwerden ausgestoßen."
+		.string "Schockwellen, die\nstets 20 KP Scha-\nden anrichten,\nwerden ausgestoßen."
 
 
 	.global str_attack_desc_attack_aussetzer
@@ -852,13 +852,13 @@ attack_descriptions:
 	.global str_attack_desc_attack_egelsamen
 
 	str_attack_desc_attack_egelsamen:
-		.string "Gegner wird\nbepflanzt und\nverliert jede\nRunde Kp."
+		.string "Gegner wird\nbepflanzt und\nverliert jede\nRunde KP."
 
 
 	.global str_attack_desc_attack_wachstum
 
 	str_attack_desc_attack_wachstum:
-		.string "Der Körper wächst\nund Sp. Ang.\nwird erhöht."
+		.string "Der Körper wächst\nund SP. Ang.\nwird erhöht."
 
 
 	.global str_attack_desc_attack_rasierblatt
@@ -906,7 +906,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_drachenwut
 
 	str_attack_desc_attack_drachenwut:
-		.string "Stößt Schockwellen\naus, die stets\n40 Kp Schaden\nanrichten."
+		.string "Stößt Schockwellen\naus, die stets\n40 KP Schaden\nanrichten."
 
 
 	.global str_attack_desc_attack_feuerwirbel
@@ -978,7 +978,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_psychokinese
 
 	str_attack_desc_attack_psychokinese:
-		.string "Starke Psycho-\nAttacke, die evtl.\ndie Sp. Ver.\nsenkt."
+		.string "Starke Psycho-\nAttacke, die evtl.\ndie SP. Ver.\nsenkt."
 
 
 	.global str_attack_desc_attack_hypnose
@@ -1014,7 +1014,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_teleport
 
 	str_attack_desc_attack_teleport:
-		.string "Fliehe sofort vor\nwilden PKMN.\nWarp zum letzten\nPKMN-CENTER."
+		.string "Fliehe sofort vor\nwilden PKMN.\nWarp zum letzten\nPKMN-Center."
 
 
 	.global str_attack_desc_attack_nachtnebel
@@ -1044,7 +1044,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_genesung
 
 	str_attack_desc_attack_genesung:
-		.string "Max. Kp des\nAnwenders wird\nbis zur Hälfte\naufgefüllt."
+		.string "Max. KP des\nAnwenders wird\nbis zur Hälfte\naufgefüllt."
 
 
 	.global str_attack_desc_attack_haertner
@@ -1092,7 +1092,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_lichtschild
 
 	str_attack_desc_attack_lichtschild:
-		.string "Erzeugt Lichtwand\nund senkt Schaden\ndurch Sp. Ang.\nfür 5 Runden."
+		.string "Erzeugt Lichtwand\nund senkt Schaden\ndurch SP. Ang.\nfür 5 Runden."
 
 
 	.global str_attack_desc_attack_dunkelnebel
@@ -1212,7 +1212,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_amnesie
 
 	str_attack_desc_attack_amnesie:
-		.string "Gedächtnisverlust,\nder die Sp. \nVer. deutlich\nerhöht."
+		.string "Gedächtnisverlust,\nder die SP. \nVer. deutlich\nerhöht."
 
 
 	.global str_attack_desc_attack_psykraft
@@ -1224,7 +1224,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_weichei
 
 	str_attack_desc_attack_weichei:
-		.string "Max. Kp d. Anwen-\nders werden halb\naufgefüllt. Team-\nheilung möglich."
+		.string "Max. KP d. Anwen-\nders werden halb\naufgefüllt. Team-\nheilung möglich."
 
 
 	.global str_attack_desc_attack_turmkick
@@ -1350,7 +1350,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_erholung
 
 	str_attack_desc_attack_erholung:
-		.string "Anwender schläft 2\nRunden, um Kp\nund Status voll\nzu erneuern."
+		.string "Anwender schläft 2\nRunden, um KP\nund Status voll\nzu erneuern."
 
 
 	.global str_attack_desc_attack_steinhagel
@@ -1386,19 +1386,19 @@ attack_descriptions:
 	.global str_attack_desc_attack_superzahn
 
 	str_attack_desc_attack_superzahn:
-		.string "Greift mit scharfen\nReißzähnen an.\nGegnerische Kp\nwerden halbiert."
+		.string "Greift mit scharfen\nReißzähnen an.\nGegnerische KP\nwerden halbiert."
 
 
 	.global str_attack_desc_attack_schlitzer
 
 	str_attack_desc_attack_schlitzer:
-		.string "Hieb mit Klauen\noder Ähnlichem.\nHohe Volltreffer-\nquote."
+		.string "Hieb mit Klauen\noder Ähnlichem.\nHohe Volltreffer-\nQUOTE."
 
 
 	.global str_attack_desc_attack_delegator
 
 	str_attack_desc_attack_delegator:
-		.string "Lockvogel, der 1/4\nder max. Kp des\nAnwenders besitzt."
+		.string "Lockvogel, der 1/4\nder max. KP des\nAnwenders besitzt."
 
 
 	.global str_attack_desc_attack_verzweifler
@@ -1476,7 +1476,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_luftstoss
 
 	str_attack_desc_attack_luftstoss:
-		.string "Erzeugt Luftstrudel\ngegen Gegner.\nHohe Volltreffer-\nquote."
+		.string "Erzeugt Luftstrudel\ngegen Gegner.\nHohe Volltreffer-\nQUOTE."
 
 
 	.global str_attack_desc_attack_baumwollsaat
@@ -1488,7 +1488,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_gegenschlag
 
 	str_attack_desc_attack_gegenschlag:
-		.string "Richtet mehr\nSchaden an,\nwenn eigene Kp\nniedrig sind."
+		.string "Richtet mehr\nSchaden an,\nwenn eigene KP\nniedrig sind."
 
 
 	.global str_attack_desc_attack_groll
@@ -1536,7 +1536,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_bauchtrommel
 
 	str_attack_desc_attack_bauchtrommel:
-		.string "Maximiert den\nAngr.-Wert,\nopfert jedoch die\nHälfte seiner Kp."
+		.string "Maximiert den\nAngr.-Wert,\nopfert jedoch die\nHälfte seiner KP."
 
 
 	.global str_attack_desc_attack_matschbombe
@@ -1632,7 +1632,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_ausdauer
 
 	str_attack_desc_attack_ausdauer:
-		.string "1 Kp bleibt stets\nübrig. Misserfolg\nbei Wiederholung\nmöglich."
+		.string "1 KP bleibt stets\nübrig. Misserfolg\nbei Wiederholung\nmöglich."
 
 
 	.global str_attack_desc_attack_charme
@@ -1650,7 +1650,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_trugschlag
 
 	str_attack_desc_attack_trugschlag:
-		.string "Ein Angriff, der\ndem Gegner\nzumindest 1 Kp\nlässt."
+		.string "Ein Angriff, der\ndem Gegner\nzumindest 1 KP\nlässt."
 
 
 	.global str_attack_desc_attack_angeberei
@@ -1662,7 +1662,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_milchgetraenk
 
 	str_attack_desc_attack_milchgetraenk:
-		.string "Max. Kp d. Anwen-\nders werden halb\naufgefüllt. Team-\nheilung möglich."
+		.string "Max. KP d. Anwen-\nders werden halb\naufgefüllt. Team-\nheilung möglich."
 
 
 	.global str_attack_desc_attack_funkensprung
@@ -1716,7 +1716,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_geschenk
 
 	str_attack_desc_attack_geschenk:
-		.string "Eine Bombe als\nGeschenk. Es\nkann auch Kp\nwieder herstellen."
+		.string "Eine Bombe als\nGeschenk. Es\nkann auch KP\nwieder herstellen."
 
 
 	.global str_attack_desc_attack_frustration
@@ -1734,7 +1734,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_leidteiler
 
 	str_attack_desc_attack_leidteiler:
-		.string "Addiert Kp von\nAnwender und\nGegner. Teilt\ngerecht auf."
+		.string "Addiert KP von\nAnwender und\nGegner. Teilt\ngerecht auf."
 
 
 	.global str_attack_desc_attack_laeuterfeuer
@@ -1818,19 +1818,19 @@ attack_descriptions:
 	.global str_attack_desc_attack_morgengrauen
 
 	str_attack_desc_attack_morgengrauen:
-		.string "Füllt Kp des\nAnwenders auf.\nDie Menge hängt\nvom Wetter ab."
+		.string "Füllt KP des\nAnwenders auf.\nDie Menge hängt\nvom Wetter ab."
 
 
 	.global str_attack_desc_attack_synthese
 
 	str_attack_desc_attack_synthese:
-		.string "Füllt Kp des\nAnwenders auf.\nDie Menge hängt\nvom Wetter ab."
+		.string "Füllt KP des\nAnwenders auf.\nDie Menge hängt\nvom Wetter ab."
 
 
 	.global str_attack_desc_attack_mondschein
 
 	str_attack_desc_attack_mondschein:
-		.string "Füllt Kp des\nAnwenders auf.\nDie Menge hängt\nvom Wetter ab."
+		.string "Füllt KP des\nAnwenders auf.\nDie Menge hängt\nvom Wetter ab."
 
 
 	.global str_attack_desc_attack_innere_kraft
@@ -1842,7 +1842,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_kreuzhieb
 
 	str_attack_desc_attack_kreuzhieb:
-		.string "Doppelter Hieb.\nHohe Volltreffer-\nquote."
+		.string "Doppelter Hieb.\nHohe Volltreffer-\nQUOTE."
 
 
 	.global str_attack_desc_attack_windhose
@@ -1866,7 +1866,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_knirscher
 
 	str_attack_desc_attack_knirscher:
-		.string "Reißt mit scharfen\nReißzähnen zu\nund senkt evtl.\ndie Sp. Ver."
+		.string "Reißt mit scharfen\nReißzähnen zu\nund senkt evtl.\ndie SP. Ver."
 
 
 	.global str_attack_desc_attack_fokuswelle
@@ -1896,13 +1896,13 @@ attack_descriptions:
 	.global str_attack_desc_attack_spukball
 
 	str_attack_desc_attack_spukball:
-		.string "Bewirft Gegner mit\ngruseligem Ball\nund senkt evtl.\ndie Sp. Ver."
+		.string "Bewirft Gegner mit\ngruseligem Ball\nund senkt evtl.\ndie SP. Ver."
 
 
 	.global str_attack_desc_attack_seher
 
 	str_attack_desc_attack_seher:
-		.string "Zwei Runden nach-\ndem SEHER einge-\nsetzt wurde erfolgt\ndie Attacke."
+		.string "Zwei Runden nach-\ndem Seher einge-\nsetzt wurde erfolgt\ndie Attacke."
 
 
 	.global str_attack_desc_attack_zertruemmerer
@@ -1920,7 +1920,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_pruegler
 
 	str_attack_desc_attack_pruegler:
-		.string "Das Team nimmt ak-\ntiv am Kampf teil.\nJe mehr POKéMON,\ndesto stärker."
+		.string "Das Team nimmt ak-\ntiv am Kampf teil.\nJe mehr Pokémon,\ndesto stärker."
 
 
 	.global str_attack_desc_attack_mogelhieb
@@ -1944,13 +1944,13 @@ attack_descriptions:
 	.global str_attack_desc_attack_entfessler
 
 	str_attack_desc_attack_entfessler:
-		.string "Entlädt die Kraft,\ndie während Ein-\nsatz von HORTER\ngesammelt wurde."
+		.string "Entlädt die Kraft,\ndie während Ein-\nsatz von Horter\ngesammelt wurde."
 
 
 	.global str_attack_desc_attack_verzehrer
 
 	str_attack_desc_attack_verzehrer:
-		.string "Absorbiert die\ngeHORTETE Kraft,\num Kp aufzufüllen."
+		.string "Absorbiert die\ngehortete Kraft,\num KP aufzufüllen."
 
 
 	.global str_attack_desc_attack_hitzewelle
@@ -1962,7 +1962,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_hagelsturm
 
 	str_attack_desc_attack_hagelsturm:
-		.string "Hagelsturm für 5\nRunden. Schadet\nallen, außer\nEIS-POKéMON."
+		.string "Hagelsturm für 5\nRunden. Schadet\nallen, außer\nEis-Pokémon."
 
 
 	.global str_attack_desc_attack_folterknecht
@@ -1974,7 +1974,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_schmeichler
 
 	str_attack_desc_attack_schmeichler:
-		.string "Schmeichelt Geg-\nner, um ihn zu\nverwirren. Erhöht\ndessen Sp. Ang."
+		.string "Schmeichelt Geg-\nner, um ihn zu\nverwirren. Erhöht\ndessen SP. Ang."
 
 
 	.global str_attack_desc_attack_irrlicht
@@ -2052,7 +2052,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_wunschtraum
 
 	str_attack_desc_attack_wunschtraum:
-		.string "Ein Wunsch, der Kp\nauffüllt. Die\nErfüllung braucht\nZeit."
+		.string "Ein Wunsch, der KP\nauffüllt. Die\nErfüllung braucht\nZeit."
 
 
 	.global str_attack_desc_attack_zuschuss
@@ -2064,7 +2064,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_verwurzler
 
 	str_attack_desc_attack_verwurzler:
-		.string "Verwurzelung füllt\njede Runde Kp auf.\nAustausch ist\nunmöglich."
+		.string "Verwurzelung füllt\njede Runde KP auf.\nAustausch ist\nunmöglich."
 
 
 	.global str_attack_desc_attack_kraftkoloss
@@ -2094,7 +2094,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_durchbruch
 
 	str_attack_desc_attack_durchbruch:
-		.string "Durchbricht Barri-\neren wie LICHT-\nSCHILD und\nREFLEKTOR."
+		.string "Durchbricht Barri-\neren wie Licht-\nschild und\nReflektor."
 
 
 	.global str_attack_desc_attack_gaehner
@@ -2112,19 +2112,19 @@ attack_descriptions:
 	.global str_attack_desc_attack_notsituation
 
 	str_attack_desc_attack_notsituation:
-		.string "Wird stärker, wenn\nKp des Anwenders\ngeringer als Kp des\nGegners sind."
+		.string "Wird stärker, wenn\nKp des Anwenders\ngeringer als KP des\nGegners sind."
 
 
 	.global str_attack_desc_attack_eruption
 
 	str_attack_desc_attack_eruption:
-		.string "Je höher die Kp\ndes Benutzers sind,\ndesto mehr Schaden\nwird angerichtet."
+		.string "Je höher die KP\ndes Benutzers sind,\ndesto mehr Schaden\nwird angerichtet."
 
 
 	.global str_attack_desc_attack_wertwechsel
 
 	str_attack_desc_attack_wertwechsel:
-		.string "Anwender tauscht\nSpezialfähigkeit mit\ngegnerischem\nPOKéMON."
+		.string "Anwender tauscht\nSpezialfähigkeit mit\ngegnerischem\nPokémon."
 
 
 	.global str_attack_desc_attack_begrenzer
@@ -2172,7 +2172,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_tarnung
 
 	str_attack_desc_attack_tarnung:
-		.string "Die Elementklasse\ndes POKéMON\nhängt vom Ort ab."
+		.string "Die Elementklasse\ndes Pokémon\nhängt vom Ort ab."
 
 
 	.global str_attack_desc_attack_schweifglanz
@@ -2202,13 +2202,13 @@ attack_descriptions:
 	.global str_attack_desc_attack_taumeltanz
 
 	str_attack_desc_attack_taumeltanz:
-		.string "Ein Wackeltanz,\nder alle\nPOKéMON im \nKampf verwirrt."
+		.string "Ein Wackeltanz,\nder alle\nPokémon im \nKampf verwirrt."
 
 
 	.global str_attack_desc_attack_feuerfeger
 
 	str_attack_desc_attack_feuerfeger:
-		.string "Starker Tritt mit\nhoher Volltreffer-\nquote. Verursacht\nevtl. Verbrennung."
+		.string "Starker Tritt mit\nhoher Volltreffer-\nQUOTE. Verursacht\nevtl. Verbrennung."
 
 
 	.global str_attack_desc_attack_lehmsuhler
@@ -2232,7 +2232,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_tagedieb
 
 	str_attack_desc_attack_tagedieb:
-		.string "Durch Müßiggang\nwird die Hälfte der\nmax. Kp aufgefüllt."
+		.string "Durch Müßiggang\nwird die Hälfte der\nmax. KP aufgefüllt."
 
 
 	.global str_attack_desc_attack_schallwelle
@@ -2304,7 +2304,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_hitzekoller
 
 	str_attack_desc_attack_hitzekoller:
-		.string "Angriff mit voller\nKraft, der den Sp.\nAng. d. Anwenders \ndeutlich senkt."
+		.string "Angriff mit voller\nKraft, der den SP.\nAng. d. Anwenders \ndeutlich senkt."
 
 
 	.global str_attack_desc_attack_schnueffler
@@ -2328,7 +2328,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_metallsound
 
 	str_attack_desc_attack_metallsound:
-		.string "Stößt einen spitzen\nSchrei aus, der\ndie Sp. Ver.\nd. Gegners senkt."
+		.string "Stößt einen spitzen\nSchrei aus, der\ndie SP. Ver.\nd. Gegners senkt."
 
 
 	.global str_attack_desc_attack_grasfloete
@@ -2352,7 +2352,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_fontraenen
 
 	str_attack_desc_attack_fontraenen:
-		.string "Ist wirkungsvoller,\nwenn Kp des\nAnwenders hoch\nsind."
+		.string "Ist wirkungsvoller,\nwenn KP des\nAnwenders hoch\nsind."
 
 
 	.global str_attack_desc_attack_ampelleuchte
@@ -2496,13 +2496,13 @@ attack_descriptions:
 	.global str_attack_desc_attack_gedankengut
 
 	str_attack_desc_attack_gedankengut:
-		.string "Erhöht Sp. Ang.\nund Sp. Ver.\ndurch\nKonzentration."
+		.string "Erhöht SP. Ang.\nund Sp. Ver.\ndurch\nKonzentration."
 
 
 	.global str_attack_desc_attack_laubklinge
 
 	str_attack_desc_attack_laubklinge:
-		.string "Hieb mit scharf-\nkantigem Blatt.\nHohe Volltreffer-\nquote."
+		.string "Hieb mit scharf-\nkantigem Blatt.\nHohe Volltreffer-\nQUOTE."
 
 
 	.global str_attack_desc_attack_drachentanz
@@ -2776,7 +2776,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_diebeskuss
 
 	str_attack_desc_attack_diebeskuss:
-		.string "Kuss, der\neinen Teil der\ngegnerischen Kp\nstiehlt."
+		.string "Kuss, der\neinen Teil der\ngegnerischen KP\nstiehlt."
 
 
 	.global str_attack_desc_attack_knuddler
@@ -2836,7 +2836,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_holzgeweih
 
 	str_attack_desc_attack_holzgeweih:
-		.string "Hölzernes Geweih\nstiehlt dem Gegner\neinige Kp."
+		.string "Hölzernes Geweih\nstiehlt dem Gegner\neinige KP."
 
 
 	.global str_attack_desc_attack_kaeferbiss
@@ -2957,7 +2957,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_schwerttanz
 
 	str_attack_desc_attack_schwerttanz:
-		.string "A frenetic dance of\nfighting. It sharply\nraises the ATTACK\nstat."
+		.string "A frenetic dance of\nfighting. It sharply\nraises the Attack\nstat."
 
 	.global str_attack_desc_attack_zerschneider
 
@@ -3082,7 +3082,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_rutenschlag
 
 	str_attack_desc_attack_rutenschlag:
-		.string "The user wags its\ntail cutely, making\nthe foe lower its\nDEFENSE stat."
+		.string "The user wags its\ntail cutely, making\nthe foe lower its\nDefense stat."
 
 	.global str_attack_desc_attack_giftstachel
 
@@ -3102,7 +3102,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_silberblick
 
 	str_attack_desc_attack_silberblick:
-		.string "The foe is given an\nintimidating look\nthat lowers its\nDEFENSE stat."
+		.string "The foe is given an\nintimidating look\nthat lowers its\nDefense stat."
 
 	.global str_attack_desc_attack_biss
 
@@ -3112,7 +3112,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_heuler
 
 	str_attack_desc_attack_heuler:
-		.string "The user growls in\na cute way, making\nthe foe lower its\nATTACK stat."
+		.string "The user growls in\na cute way, making\nthe foe lower its\nAttack stat."
 
 	.global str_attack_desc_attack_brueller
 
@@ -3142,7 +3142,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_saeure
 
 	str_attack_desc_attack_saeure:
-		.string "The foe is sprayed\nwith a harsh, hide-\nmelting acid that\nmay lower DEFENSE."
+		.string "The foe is sprayed\nwith a harsh, hide-\nmelting acid that\nmay lower Defense."
 
 	.global str_attack_desc_attack_glut
 
@@ -3192,12 +3192,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_blubbstrahl
 
 	str_attack_desc_attack_blubbstrahl:
-		.string "A spray of bubbles\nstrikes the foe.\nIt may lower the\nfoe\s SPEED stat."
+		.string "A spray of bubbles\nstrikes the foe.\nIt may lower the\nfoe\s Speed stat."
 
 	.global str_attack_desc_attack_aurorastrahl
 
 	str_attack_desc_attack_aurorastrahl:
-		.string "A rainbow-colored\nattack beam.\nIt may lower the\nfoe\s ATTACK stat."
+		.string "A rainbow-colored\nattack beam.\nIt may lower the\nfoe\s Attack stat."
 
 	.global str_attack_desc_attack_hyperstrahl
 
@@ -3257,7 +3257,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_wachstum
 
 	str_attack_desc_attack_wachstum:
-		.string "The user\s body is\nforced to grow,\nraising the Sp.\nATK stat."
+		.string "The user\s body is\nforced to grow,\nraising the SP.\nAtk stat."
 
 	.global str_attack_desc_attack_rasierblatt
 
@@ -3292,7 +3292,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_fadenschuss
 
 	str_attack_desc_attack_fadenschuss:
-		.string "The foe is bound\nwith strings shot\nfrom the mouth to\nreduce its SPEED."
+		.string "The foe is bound\nwith strings shot\nfrom the mouth to\nreduce its Speed."
 
 	.global str_attack_desc_attack_drachenwut
 
@@ -3332,7 +3332,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_erdbeben
 
 	str_attack_desc_attack_erdbeben:
-		.string "An earthquake that\nstrikes all POKéMON\nin battle excluding\nthe user."
+		.string "An earthquake that\nstrikes all Pokémon\nin battle excluding\nthe user."
 
 	.global str_attack_desc_attack_geofissur
 
@@ -3357,7 +3357,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_psychokinese
 
 	str_attack_desc_attack_psychokinese:
-		.string "A strong telekinetic\nattack. It may also\nlower the foe\s\nSp. DEF stat."
+		.string "A strong telekinetic\nattack. It may also\nlower the foe\s\nSp. Def stat."
 
 	.global str_attack_desc_attack_hypnose
 
@@ -3367,12 +3367,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_meditation
 
 	str_attack_desc_attack_meditation:
-		.string "The user meditates\nto awaken its power\nand raise its\nATTACK stat."
+		.string "The user meditates\nto awaken its power\nand raise its\nAttack stat."
 
 	.global str_attack_desc_attack_agilitaet
 
 	str_attack_desc_attack_agilitaet:
-		.string "The user relaxes\nand lightens its\nbody to sharply\nboost its SPEED."
+		.string "The user relaxes\nand lightens its\nbody to sharply\nboost its Speed."
 
 	.global str_attack_desc_attack_ruckzuckhieb
 
@@ -3387,7 +3387,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_teleport
 
 	str_attack_desc_attack_teleport:
-		.string "Use it to flee from\nany wild POKéMON.\nAlso warps to the\nlast POKé CENTER."
+		.string "Use it to flee from\nany wild Pokémon.\nAlso warps to the\nlast Poké Center."
 
 	.global str_attack_desc_attack_nachtnebel
 
@@ -3402,7 +3402,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_kreideschrei
 
 	str_attack_desc_attack_kreideschrei:
-		.string "An ear-splitting\nscreech is emitted\nto sharply reduce\nthe foe\s DEFENSE."
+		.string "An ear-splitting\nscreech is emitted\nto sharply reduce\nthe foe\s Defense."
 
 	.global str_attack_desc_attack_doppelteam
 
@@ -3417,7 +3417,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_haertner
 
 	str_attack_desc_attack_haertner:
-		.string "The user stiffens\nall the muscles in\nits body to raise\nits DEFENSE stat."
+		.string "The user stiffens\nall the muscles in\nits body to raise\nits Defense stat."
 
 	.global str_attack_desc_attack_komprimator
 
@@ -3437,27 +3437,27 @@ attack_descriptions:
 	.global str_attack_desc_attack_panzerschutz
 
 	str_attack_desc_attack_panzerschutz:
-		.string "The user withdraws\nits body in its hard\nshell, raising its\nDEFENSE stat."
+		.string "The user withdraws\nits body in its hard\nshell, raising its\nDefense stat."
 
 	.global str_attack_desc_attack_einigler
 
 	str_attack_desc_attack_einigler:
-		.string "The user curls up\nto conceal weak\nspots and raise its\nDEFENSE stat."
+		.string "The user curls up\nto conceal weak\nspots and raise its\nDefense stat."
 
 	.global str_attack_desc_attack_barriere
 
 	str_attack_desc_attack_barriere:
-		.string "The user creates a\nsturdy wall that\nsharply raises its\nDEFENSE stat."
+		.string "The user creates a\nsturdy wall that\nsharply raises its\nDefense stat."
 
 	.global str_attack_desc_attack_lichtschild
 
 	str_attack_desc_attack_lichtschild:
-		.string "A wall of light\ncuts damage from\nSp. ATK attacks\nfor five turns."
+		.string "A wall of light\ncuts damage from\nSp. Atk attacks\nfor five turns."
 
 	.global str_attack_desc_attack_dunkelnebel
 
 	str_attack_desc_attack_dunkelnebel:
-		.string "Eliminates all stat\nchanges among all\nPOKéMON engaged in\nbattle."
+		.string "Eliminates all stat\nchanges among all\nPokémon engaged in\nbattle."
 
 	.global str_attack_desc_attack_reflektor
 
@@ -3537,7 +3537,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_schaedelwumme
 
 	str_attack_desc_attack_schaedelwumme:
-		.string "The user raises its\nDEFENSE in the 1st\nturn, then attacks\nin the 2nd turn."
+		.string "The user raises its\nDefense in the 1st\nturn, then attacks\nin the 2nd turn."
 
 	.global str_attack_desc_attack_dornkanone
 
@@ -3547,12 +3547,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_umklammerung
 
 	str_attack_desc_attack_umklammerung:
-		.string "The foe is attacked\nwith long tentacles\nor vines. It may\nlower SPEED."
+		.string "The foe is attacked\nwith long tentacles\nor vines. It may\nlower Speed."
 
 	.global str_attack_desc_attack_amnesie
 
 	str_attack_desc_attack_amnesie:
-		.string "Forgets about\nsomething and\nsharply raises\nSp. DEF."
+		.string "Forgets about\nsomething and\nsharply raises\nSp. Def."
 
 	.global str_attack_desc_attack_psykraft
 
@@ -3612,7 +3612,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_blubber
 
 	str_attack_desc_attack_blubber:
-		.string "A spray of bubbles\nhits the foe.\nIt may lower the\nfoe\s SPEED stat."
+		.string "A spray of bubbles\nhits the foe.\nIt may lower the\nfoe\s Speed stat."
 
 	.global str_attack_desc_attack_irrschlag
 
@@ -3642,7 +3642,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_saeurepanzer
 
 	str_attack_desc_attack_saeurepanzer:
-		.string "The user alters its\ncells to liquefy\nitself and sharply\nraise DEFENSE."
+		.string "The user alters its\ncells to liquefy\nitself and sharply\nraise Defense."
 
 	.global str_attack_desc_attack_krabbhammer
 
@@ -3682,7 +3682,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_schaerfer
 
 	str_attack_desc_attack_schaerfer:
-		.string "The user reduces\nits polygon count\nto sharpen edges\nand raise ATTACK."
+		.string "The user reduces\nits polygon count\nto sharpen edges\nand raise Attack."
 
 	.global str_attack_desc_attack_umwandlung
 
@@ -3757,7 +3757,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_fluch
 
 	str_attack_desc_attack_fluch:
-		.string "A move that works\ndifferently for the\nGHOST-type and all\nthe other types."
+		.string "A move that works\ndifferently for the\nGhost-type and all\nthe other types."
 
 	.global str_attack_desc_attack_dreschflegel
 
@@ -3777,7 +3777,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_baumwollsaat
 
 	str_attack_desc_attack_baumwollsaat:
-		.string "Cotton-like spores\ncling to the foe,\nsharply reducing\nits SPEED stat."
+		.string "Cotton-like spores\ncling to the foe,\nsharply reducing\nits Speed stat."
 
 	.global str_attack_desc_attack_gegenschlag
 
@@ -3807,7 +3807,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_grimasse
 
 	str_attack_desc_attack_grimasse:
-		.string "Frightens the foe\nwith a scary face\nto sharply reduce\nits SPEED."
+		.string "Frightens the foe\nwith a scary face\nto sharply reduce\nits Speed."
 
 	.global str_attack_desc_attack_finte
 
@@ -3822,7 +3822,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_bauchtrommel
 
 	str_attack_desc_attack_bauchtrommel:
-		.string "The user maximizes\nits ATTACK stat at\nthe cost of half\nits full HP."
+		.string "The user maximizes\nits Attack stat at\nthe cost of half\nits full HP."
 
 	.global str_attack_desc_attack_matschbombe
 
@@ -3867,7 +3867,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_eissturm
 
 	str_attack_desc_attack_eissturm:
-		.string "A chilling wind is\nused to attack.\nIt also lowers the\nSPEED stat."
+		.string "A chilling wind is\nused to attack.\nIt also lowers the\nSpeed stat."
 
 	.global str_attack_desc_attack_scanner
 
@@ -3892,7 +3892,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_sandsturm
 
 	str_attack_desc_attack_sandsturm:
-		.string "A 5-turn sandstorm\nthat damages all\ntypes except ROCK,\nGROUND, and STEEL."
+		.string "A 5-turn sandstorm\nthat damages all\ntypes except Rock,\nGround, and Steel."
 
 	.global str_attack_desc_attack_gigasauger
 
@@ -3907,7 +3907,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_charme
 
 	str_attack_desc_attack_charme:
-		.string "The foe is charmed\nby the user\s cute\nappeals, sharply\ncutting its ATTACK."
+		.string "The foe is charmed\nby the user\s cute\nappeals, sharply\ncutting its Attack."
 
 	.global str_attack_desc_attack_walzer
 
@@ -3922,7 +3922,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_angeberei
 
 	str_attack_desc_attack_angeberei:
-		.string "A move that makes\nthe foe confused,\nbut also sharply\nraises its ATTACK."
+		.string "A move that makes\nthe foe confused,\nbut also sharply\nraises its Attack."
 
 	.global str_attack_desc_attack_milchgetraenk
 
@@ -3942,7 +3942,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_stahlfluegel
 
 	str_attack_desc_attack_stahlfluegel:
-		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user\s DEFENSE."
+		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user\s Defense."
 
 	.global str_attack_desc_attack_horrorblick
 
@@ -3967,7 +3967,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_rueckkehr
 
 	str_attack_desc_attack_rueckkehr:
-		.string "This attack move\ngrows more powerful\nthe more the user\nlikes its TRAINER."
+		.string "This attack move\ngrows more powerful\nthe more the user\nlikes its Trainer."
 
 	.global str_attack_desc_attack_geschenk
 
@@ -3977,7 +3977,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_frustration
 
 	str_attack_desc_attack_frustration:
-		.string "This attack move\ngrows more powerful\nthe less the user\nlikes its TRAINER."
+		.string "This attack move\ngrows more powerful\nthe less the user\nlikes its Trainer."
 
 	.global str_attack_desc_attack_bodyguard
 
@@ -3997,7 +3997,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_intensitaet
 
 	str_attack_desc_attack_intensitaet:
-		.string "A ground-shaking\nattack against all\nstanding POKéMON.\nIts power varies."
+		.string "A ground-shaking\nattack against all\nstanding Pokémon.\nIts power varies."
 
 	.global str_attack_desc_attack_wuchtschlag
 
@@ -4032,22 +4032,22 @@ attack_descriptions:
 	.global str_attack_desc_attack_turbodreher
 
 	str_attack_desc_attack_turbodreher:
-		.string "An attack that\nfrees the user from\nBIND, WRAP, LEECH\nSEED, and SPIKES."
+		.string "An attack that\nfrees the user from\nBind, Wrap, Leech\nSeed, and Spikes."
 
 	.global str_attack_desc_attack_lockduft
 
 	str_attack_desc_attack_lockduft:
-		.string "Allures the foe to\nreduce evasiveness.\nIt also attracts\nwild POKéMON."
+		.string "Allures the foe to\nreduce evasiveness.\nIt also attracts\nwild Pokémon."
 
 	.global str_attack_desc_attack_eisenschweif
 
 	str_attack_desc_attack_eisenschweif:
-		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe\s DEFENSE stat."
+		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe\s Defense stat."
 
 	.global str_attack_desc_attack_metallklaue
 
 	str_attack_desc_attack_metallklaue:
-		.string "The foe is attacked\nwith steel claws.\nIt may also raise\nthe user\s ATTACK."
+		.string "The foe is attacked\nwith steel claws.\nIt may also raise\nthe user\s Attack."
 
 	.global str_attack_desc_attack_ueberwurf
 
@@ -4087,17 +4087,17 @@ attack_descriptions:
 	.global str_attack_desc_attack_regentanz
 
 	str_attack_desc_attack_regentanz:
-		.string "A heavy rain falls\nfor five turns,\npowering up WATER-\ntype moves."
+		.string "A heavy rain falls\nfor five turns,\npowering up Water-\ntype moves."
 
 	.global str_attack_desc_attack_sonnentag
 
 	str_attack_desc_attack_sonnentag:
-		.string "The sun blazes for\nfive turns, powering\nup FIRE-type\nmoves."
+		.string "The sun blazes for\nfive turns, powering\nup Fire-type\nmoves."
 
 	.global str_attack_desc_attack_knirscher
 
 	str_attack_desc_attack_knirscher:
-		.string "The foe is crunched\nwith sharp fangs.\nIt may lower the\nfoe\s Sp. DEF."
+		.string "The foe is crunched\nwith sharp fangs.\nIt may lower the\nfoe\s SP. Def."
 
 	.global str_attack_desc_attack_fokuswelle
 
@@ -4122,7 +4122,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_spukball
 
 	str_attack_desc_attack_spukball:
-		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe\s Sp. DEF."
+		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe\s SP. Def."
 
 	.global str_attack_desc_attack_seher
 
@@ -4132,7 +4132,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_zertruemmerer
 
 	str_attack_desc_attack_zertruemmerer:
-		.string "An attack that may\nalso cut DEFENSE.\nIt can also smash\ncracked boulders."
+		.string "An attack that may\nalso cut Defense.\nIt can also smash\ncracked boulders."
 
 	.global str_attack_desc_attack_whirlpool
 
@@ -4142,7 +4142,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_pruegler
 
 	str_attack_desc_attack_pruegler:
-		.string "All party POKéMON\njoin in the attack.\nThe more allies,\nthe more damage."
+		.string "All party Pokémon\njoin in the attack.\nThe more allies,\nthe more damage."
 
 	.global str_attack_desc_attack_mogelhieb
 
@@ -4162,12 +4162,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_entfessler
 
 	str_attack_desc_attack_entfessler:
-		.string "The power built\nusing STOCKpILE is\nreleased at once\nfor attack."
+		.string "The power built\nusing Stockpile is\nreleased at once\nfor attack."
 
 	.global str_attack_desc_attack_verzehrer
 
 	str_attack_desc_attack_verzehrer:
-		.string "The energy it built\nusing STOCKpILE is\nabsorbed to restore\nHP."
+		.string "The energy it built\nusing Stockpile is\nabsorbed to restore\nHP."
 
 	.global str_attack_desc_attack_hitzewelle
 
@@ -4177,7 +4177,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_hagelsturm
 
 	str_attack_desc_attack_hagelsturm:
-		.string "A hailstorm lasting\nfive turns damages\nall POKéMON except\nthe ICE-type."
+		.string "A hailstorm lasting\nfive turns damages\nall Pokémon except\nthe Ice-type."
 
 	.global str_attack_desc_attack_folterknecht
 
@@ -4187,7 +4187,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_schmeichler
 
 	str_attack_desc_attack_schmeichler:
-		.string "Flattery is used to\nconfuse the foe,\nbut its Sp. ATK\nalso rises."
+		.string "Flattery is used to\nconfuse the foe,\nbut its SP. Atk\nalso rises."
 
 	.global str_attack_desc_attack_irrlicht
 
@@ -4197,7 +4197,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_memento_mori
 
 	str_attack_desc_attack_memento_mori:
-		.string "The user faints,\nbut sharply lowers\nthe foe\s ATTACK\nand Sp. ATK."
+		.string "The user faints,\nbut sharply lowers\nthe foe\s Attack\nand SP. Atk."
 
 	.global str_attack_desc_attack_fassade
 
@@ -4227,7 +4227,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_ladevorgang
 
 	str_attack_desc_attack_ladevorgang:
-		.string "The user charges\npower to boost the\nELECTRIC move it\nuses next."
+		.string "The user charges\npower to boost the\nElectric move it\nuses next."
 
 	.global str_attack_desc_attack_verhoehner
 
@@ -4257,7 +4257,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_zuschuss
 
 	str_attack_desc_attack_zuschuss:
-		.string "The user randomly\npicks and uses a\nmove of an allied\nPOKéMON."
+		.string "The user randomly\npicks and uses a\nmove of an allied\nPokémon."
 
 	.global str_attack_desc_attack_verwurzler
 
@@ -4267,12 +4267,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_kraftkoloss
 
 	str_attack_desc_attack_kraftkoloss:
-		.string "A powerful attack,\nbut it also lowers\nthe user\s ATTACK\nand DEFENSE stats."
+		.string "A powerful attack,\nbut it also lowers\nthe user\s Attack\nand Defense stats."
 
 	.global str_attack_desc_attack_magiemantel
 
 	str_attack_desc_attack_magiemantel:
-		.string "Reflects back the\nfoe\s LEECH SEED\nand any status-\ndamaging move."
+		.string "Reflects back the\nfoe\s Leech Seed\nand any status-\ndamaging move."
 
 	.global str_attack_desc_attack_aufbereitung
 
@@ -4287,7 +4287,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_durchbruch
 
 	str_attack_desc_attack_durchbruch:
-		.string "An attack that also\nbreaks any barrier\nlike LIGHT SCREEN\nand REFLECT."
+		.string "An attack that also\nbreaks any barrier\nlike Light Screen\nand Reflect."
 
 	.global str_attack_desc_attack_gaehner
 
@@ -4357,27 +4357,27 @@ attack_descriptions:
 	.global str_attack_desc_attack_schweifglanz
 
 	str_attack_desc_attack_schweifglanz:
-		.string "The user flashes a\nlight that sharply\nraises its Sp. ATK\nstat."
+		.string "The user flashes a\nlight that sharply\nraises its SP. Atk\nstat."
 
 	.global str_attack_desc_attack_scheinwerfer
 
 	str_attack_desc_attack_scheinwerfer:
-		.string "A burst of light\ninjures the foe. It\nmay also lower the\nfoe\s Sp. DEF."
+		.string "A burst of light\ninjures the foe. It\nmay also lower the\nfoe\s SP. Def."
 
 	.global str_attack_desc_attack_nebelball
 
 	str_attack_desc_attack_nebelball:
-		.string "A flurry of down\nhits the foe. It\nmay also lower the\nfoe\s Sp. ATK."
+		.string "A flurry of down\nhits the foe. It\nmay also lower the\nfoe\s SP. Atk."
 
 	.global str_attack_desc_attack_daunenreigen
 
 	str_attack_desc_attack_daunenreigen:
-		.string "The foe is covered\nwith a mass of down\nthat sharply cuts\nthe ATTACK stat."
+		.string "The foe is covered\nwith a mass of down\nthat sharply cuts\nthe Attack stat."
 
 	.global str_attack_desc_attack_taumeltanz
 
 	str_attack_desc_attack_taumeltanz:
-		.string "A wobbly dance\nthat confuses all\nthe POKéMON in\nbattle."
+		.string "A wobbly dance\nthat confuses all\nthe Pokémon in\nbattle."
 
 	.global str_attack_desc_attack_feuerfeger
 
@@ -4387,7 +4387,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_lehmsuhler
 
 	str_attack_desc_attack_lehmsuhler:
-		.string "Weakens ELECTRIC-\ntype attacks while\nthe user is in the\nbattle."
+		.string "Weakens Electric-\ntype attacks while\nthe user is in the\nbattle."
 
 	.global str_attack_desc_attack_frostbeule
 
@@ -4417,7 +4417,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_zermalmklaue
 
 	str_attack_desc_attack_zermalmklaue:
-		.string "The foe is attacked\nwith sharp claws.\nIt may also lower\nthe foe\s DEFENSE."
+		.string "The foe is attacked\nwith sharp claws.\nIt may also lower\nthe foe\s Defense."
 
 	.global str_attack_desc_attack_lohekanonade
 
@@ -4432,7 +4432,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_sternhieb
 
 	str_attack_desc_attack_sternhieb:
-		.string "The foe is hit with\na hard, fast punch.\nIt may also raise\nthe user\s ATTACK."
+		.string "The foe is hit with\na hard, fast punch.\nIt may also raise\nthe user\s Attack."
 
 	.global str_attack_desc_attack_erstauner
 
@@ -4452,7 +4452,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_trugtraene
 
 	str_attack_desc_attack_trugtraene:
-		.string "The user feigns\ncrying to sharply\nlower the foe\s\nSp. DEF stat."
+		.string "The user feigns\ncrying to sharply\nlower the foe\s\nSp. Def stat."
 
 	.global str_attack_desc_attack_windschnitt
 
@@ -4462,7 +4462,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_hitzekoller
 
 	str_attack_desc_attack_hitzekoller:
-		.string "An intense attack\nthat also sharply\nreduces the user\s\nSp. ATK stat."
+		.string "An intense attack\nthat also sharply\nreduces the user\s\nSp. Atk stat."
 
 	.global str_attack_desc_attack_schnueffler
 
@@ -4472,7 +4472,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_felsgrab
 
 	str_attack_desc_attack_felsgrab:
-		.string "Boulders are hurled\nat the foe. It also\nlowers the foe\s\nSPEED if it hits."
+		.string "Boulders are hurled\nat the foe. It also\nlowers the foe\s\nSpeed if it hits."
 
 	.global str_attack_desc_attack_silberhauch
 
@@ -4482,7 +4482,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_metallsound
 
 	str_attack_desc_attack_metallsound:
-		.string "A horrible metallic\nscreech is used to\nsharply lower the\nfoe\s Sp. DEF."
+		.string "A horrible metallic\nscreech is used to\nsharply lower the\nfoe\s SP. Def."
 
 	.global str_attack_desc_attack_grasfloete
 
@@ -4492,12 +4492,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_spasskanone
 
 	str_attack_desc_attack_spasskanone:
-		.string "The foe is made to\nlaugh, reducing its\nATTACK and DEFENSE\nstats."
+		.string "The foe is made to\nlaugh, reducing its\nAttack and Defense\nstats."
 
 	.global str_attack_desc_attack_kosmik_kraft
 
 	str_attack_desc_attack_kosmik_kraft:
-		.string "The user absorbs a\nmystic power to\nraise its DEFENSE\nand Sp. DEF."
+		.string "The user absorbs a\nmystic power to\nraise its Defense\nand SP. Def."
 
 	.global str_attack_desc_attack_fontraenen
 
@@ -4557,7 +4557,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_eisenabwehr
 
 	str_attack_desc_attack_eisenabwehr:
-		.string "The user hardens\nits body\s surface\nto sharply raise its\nDEFENSE stat."
+		.string "The user hardens\nits body\s surface\nto sharply raise its\nDefense stat."
 
 	.global str_attack_desc_attack_rueckentzug
 
@@ -4567,7 +4567,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_jauler
 
 	str_attack_desc_attack_jauler:
-		.string "The user howls to\nraise its spirit and\nboost its ATTACK\nstat."
+		.string "The user howls to\nraise its spirit and\nboost its Attack\nstat."
 
 	.global str_attack_desc_attack_drachenklaue
 
@@ -4582,7 +4582,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_protzer
 
 	str_attack_desc_attack_protzer:
-		.string "The user bulks up\nits body to boost\nboth its ATTACK and\nDEFENSE stats."
+		.string "The user bulks up\nits body to boost\nboth its Attack and\nDefense stats."
 
 	.global str_attack_desc_attack_sprungfeder
 
@@ -4592,7 +4592,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_lehmschuss
 
 	str_attack_desc_attack_lehmschuss:
-		.string "The user attacks by\nhurling mud.\nIt also reduces the\nfoe\s SPEED."
+		.string "The user attacks by\nhurling mud.\nIt also reduces the\nfoe\s Speed."
 
 	.global str_attack_desc_attack_giftschweif
 
@@ -4617,12 +4617,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_nassmacher
 
 	str_attack_desc_attack_nassmacher:
-		.string "Weakens FIRE-type\nattacks while the\nuser is in the\nbattle."
+		.string "Weakens Fire-type\nattacks while the\nuser is in the\nbattle."
 
 	.global str_attack_desc_attack_gedankengut
 
 	str_attack_desc_attack_gedankengut:
-		.string "The user focuses\nits mind to raise\nthe Sp. ATK and\nSp. DEF stats."
+		.string "The user focuses\nits mind to raise\nthe SP. Atk and\nSp. Def stats."
 
 	.global str_attack_desc_attack_laubklinge
 
@@ -4632,7 +4632,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_drachentanz
 
 	str_attack_desc_attack_drachentanz:
-		.string "A mystic, powerful\ndance that boosts\nthe user\s ATTACK\nand SPEED stats."
+		.string "A mystic, powerful\ndance that boosts\nthe user\s Attack\nand Speed stats."
 
 	.global str_attack_desc_attack_felswurf
 
@@ -4657,7 +4657,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_psyschub
 
 	str_attack_desc_attack_psyschub:
-		.string "An intense attack\nthat also sharply\nreduces the user\s\nSp. ATK stat."
+		.string "An intense attack\nthat also sharply\nreduces the user\s\nSp. Atk stat."
 
 	str_attack_desc_attack_filler:
 		.string "-"
@@ -4905,7 +4905,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_holzgeweih
 
 	str_attack_desc_attack_holzgeweih:
-		.string "Wooden Horns\nleech Hp from\ntarget."
+		.string "Wooden Horns\nleech HP from\ntarget."
 
 	.global str_attack_desc_attack_kaeferbiss
 

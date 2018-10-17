@@ -393,7 +393,7 @@ ability_descriptions:
 	.global str_ability_descr_0x2c
 
 	str_ability_descr_0x2c:
-		.string "Kp-Anstieg bei Regen."
+		.string "KP-Anstieg bei Regen."
 
 
 	.global str_ability_descr_0x2d
@@ -405,7 +405,7 @@ ability_descriptions:
 	.global str_ability_descr_0x2e
 
 	str_ability_descr_0x2e:
-		.string "Steigert Ap des Gegners."
+		.string "Steigert AP des Gegners."
 
 
 	.global str_ability_descr_0x2f
@@ -723,13 +723,13 @@ ability_descriptions:
 	.global str_ability_descr_0x63
 
 	str_ability_descr_0x63:
-		.string "Anw. steigert Sp.Angr. im Schlaf."
+		.string "Anw. steigert SP.-Angr. im Schlaf."
 
 
 	.global str_ability_descr_0x64
 
 	str_ability_descr_0x64:
-		.string "Mehr Stärke bei unter 1/2 Kp."
+		.string "Mehr Stärke bei unter 1/2 KP."
 
 
 	.global str_ability_descr_0x65
@@ -807,7 +807,7 @@ ability_descriptions:
 	.global str_ability_descr_0x71
 
 	str_ability_descr_0x71:
-		.string "Kp Regeneration in Sonne, Regen schadet."
+		.string "KP Regeneration in Sonne, Regen schadet."
 
 
 	.global str_ability_descr_0x72
@@ -818,7 +818,7 @@ ability_descriptions:
 	.global str_ability_descr_0x73
 
 	str_ability_descr_0x73:
-		.string "Vorzeitige Kp Regeneration."
+		.string "Vorzeitige KP Regeneration."
 
 	str_ability_descr_0x74:
 		.string "Selbstzerst. Att. treffen früher."
@@ -845,7 +845,7 @@ ability_descriptions:
 	.global str_ability_descr_0x1
 
 	str_ability_descr_0x1:
-		.string "Helps repel wild POKéMON."
+		.string "Helps repel wild Pokémon."
 
 	.global str_ability_descr_0x2
 
@@ -855,7 +855,7 @@ ability_descriptions:
 	.global str_ability_descr_0x3
 
 	str_ability_descr_0x3:
-		.string "Gradually boosts SPEED."
+		.string "Gradually boosts Speed."
 
 	.global str_ability_descr_0x4
 
@@ -950,7 +950,7 @@ ability_descriptions:
 	.global str_ability_descr_0x16
 
 	str_ability_descr_0x16:
-		.string "Lowers the foe\s ATTACK."
+		.string "Lowers the foe\s Attack."
 
 	.global str_ability_descr_0x17
 
@@ -970,7 +970,7 @@ ability_descriptions:
 	.global str_ability_descr_0x1a
 
 	str_ability_descr_0x1a:
-		.string "Not hit by GROUND attacks."
+		.string "Not hit by Ground attacks."
 
 	.global str_ability_descr_0x1b
 
@@ -1005,12 +1005,12 @@ ability_descriptions:
 	.global str_ability_descr_0x21
 
 	str_ability_descr_0x21:
-		.string "Raises SPEED in rain."
+		.string "Raises Speed in rain."
 
 	.global str_ability_descr_0x22
 
 	str_ability_descr_0x22:
-		.string "Raises SPEED in sunshine."
+		.string "Raises Speed in sunshine."
 
 	.global str_ability_descr_0x23
 
@@ -1025,7 +1025,7 @@ ability_descriptions:
 	.global str_ability_descr_0x25
 
 	str_ability_descr_0x25:
-		.string "Raises ATTACK."
+		.string "Raises Attack."
 
 	.global str_ability_descr_0x26
 
@@ -1050,7 +1050,7 @@ ability_descriptions:
 	.global str_ability_descr_0x2a
 
 	str_ability_descr_0x2a:
-		.string "Traps STEEL-type POKéMON."
+		.string "Traps Steel-type Pokémon."
 
 	.global str_ability_descr_0x2b
 
@@ -1100,7 +1100,7 @@ ability_descriptions:
 	.global str_ability_descr_0x34
 
 	str_ability_descr_0x34:
-		.string "Prevents ATTACK reduction."
+		.string "Prevents Attack reduction."
 
 	.global str_ability_descr_0x35
 
@@ -1125,12 +1125,12 @@ ability_descriptions:
 	.global str_ability_descr_0x39
 
 	str_ability_descr_0x39:
-		.string "Powers up with MINUS."
+		.string "Powers up with Minus."
 
 	.global str_ability_descr_0x3a
 
 	str_ability_descr_0x3a:
-		.string "Powers up with PLUS."
+		.string "Powers up with Plus."
 
 	.global str_ability_descr_0x3b
 
@@ -1150,12 +1150,12 @@ ability_descriptions:
 	.global str_ability_descr_0x3e
 
 	str_ability_descr_0x3e:
-		.string "Ups ATTACK if suffering."
+		.string "Ups Attack if suffering."
 
 	.global str_ability_descr_0x3f
 
 	str_ability_descr_0x3f:
-		.string "Ups DEFENSE if suffering."
+		.string "Ups Defense if suffering."
 
 	.global str_ability_descr_0x40
 
@@ -1165,22 +1165,22 @@ ability_descriptions:
 	.global str_ability_descr_0x41
 
 	str_ability_descr_0x41:
-		.string "Ups GRASS moves in a pinch."
+		.string "Ups Grass moves in a pinch."
 
 	.global str_ability_descr_0x42
 
 	str_ability_descr_0x42:
-		.string "Ups FIRE moves in a pinch."
+		.string "Ups Fire moves in a pinch."
 
 	.global str_ability_descr_0x43
 
 	str_ability_descr_0x43:
-		.string "Ups WATER moves in a pinch."
+		.string "Ups Water moves in a pinch."
 
 	.global str_ability_descr_0x44
 
 	str_ability_descr_0x44:
-		.string "Ups BUG moves in a pinch."
+		.string "Ups Bug moves in a pinch."
 
 	.global str_ability_descr_0x45
 
@@ -1210,7 +1210,7 @@ ability_descriptions:
 	.global str_ability_descr_0x4a
 
 	str_ability_descr_0x4a:
-		.string "Raises ATTACK."
+		.string "Raises Attack."
 
 	.global str_ability_descr_0x4b
 
@@ -1245,7 +1245,7 @@ ability_descriptions:
 	.global str_ability_descr_0x51
 
 	str_ability_descr_0x51:
-		.string "Half damage at full Hp."
+		.string "Half damage at full HP."
 
 	.global str_ability_descr_0x52
 
@@ -1340,7 +1340,7 @@ ability_descriptions:
 	.global str_ability_descr_0x64
 
 	str_ability_descr_0x64:
-		.string "Doubles strength at low Hp."
+		.string "Doubles strength at low HP."
 
 	.global str_ability_descr_0x65
 
@@ -1405,7 +1405,7 @@ ability_descriptions:
 	.global str_ability_descr_0x71
 
 	str_ability_descr_0x71:
-		.string "Hp regeneration in sun, rain damages."
+		.string "HP regeneration in sun, rain damages."
 
 	.global str_ability_descr_0x72
 
@@ -1413,7 +1413,7 @@ ability_descriptions:
 		.string "Causes damage after touch move."
 
 	str_ability_descr_0x73:
-		.string "Early Hp-regeneration."
+		.string "Early HP-regeneration."
 
 	str_ability_descr_0x74:
 		.string "Selfdest. Att. hit early."

@@ -158,7 +158,7 @@ str_0x95c2d1:
 .global str_0x95c353
 
 str_0x95c353:
-    .string "Sieht so aus, als hättest du auf\ndeinem Pc keinen Platz mehr für\lweitere Pokémon.\pKomm wieder, wenn du Platz\ngeschaffen hast."
+    .string "Sieht so aus, als hättest du auf\ndeinem PC keinen Platz mehr für\lweitere Pokémon.\pKomm wieder, wenn du Platz\ngeschaffen hast."
         
         
 .elseif LANG_EN

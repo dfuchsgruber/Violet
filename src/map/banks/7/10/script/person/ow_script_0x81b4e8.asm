@@ -46,7 +46,7 @@ end
 .global str_0x81b548
 
 str_0x81b548:
-    .string "Oh! Ein Herausforderer! NunDOTS\nIch bin MIA, die Arenaleiterin der\lSILVANIA Arena. Ich habe mich auf\lPflanzenpokemon spezialisiert! Lass\lmich sehen, was du meiner Stärke\lentgegenzusetzten kannst!"
+    .string "Oh! Ein Herausforderer! NunDOTS\nIch bin Mia, die Arenaleiterin der\lSilvania Arena. Ich habe mich auf\lPflanzenpokemon spezialisiert! Lass\lmich sehen, was du meiner Stärke\lentgegenzusetzten kannst!"
         
         
 .global str_0x81b611
@@ -64,19 +64,19 @@ str_0x81b6b4:
 .global str_0x81b747
 
 str_0x81b747:
-    .string "PLAYER erhält den WIESENORDEN von\nMIA.ぁß ñ¡ÁÁ"
+    .string "PLAYER erhält den Wiesenorden von\nMia.ぁß ñ¡ÁÁ"
         
         
 .global str_0x81b772
 
 str_0x81b772:
-    .string "Der WIESENORDEN ermöglicht es dir\ndie VM Zerschneider auch außerhalb\leines Kampfes einzusetzten. Nimm\ldas hier, als Geschenk von mir, für\ldeine Glanzleistung in unserem\lKampf."
+    .string "Der Wiesenorden ermöglicht es dir\ndie VM Zerschneider auch außerhalb\leines Kampfes einzusetzten. Nimm\ldas hier, als Geschenk von mir, für\ldeine Glanzleistung in unserem\lKampf."
         
         
 .global str_0x81b828
 
 str_0x81b828:
-    .string "Diese TM enthält GIGASAUGER. Sie\nsaugt dem Gegner KP ab und fügt sie\ldeinem eigenen hinzu. Eine famose\lAttacke für alle Pflanzenpokemon.\l"
+    .string "Diese TM enthält Gigasauger. Sie\nsaugt dem Gegner KP ab und fügt sie\ldeinem eigenen hinzu. Eine famose\lAttacke für alle Pflanzenpokemon.\l"
         
         
 .global str_0x81b652

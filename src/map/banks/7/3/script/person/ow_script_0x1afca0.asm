@@ -20,7 +20,7 @@ end
 .global str_0x1b46c9
 
 str_0x1b46c9:
-    .string "Pokémon JOURNAL\pSonderreportage: ARENALEITERIN\nMISTY aus AZURIA CITY!\pMISTY vergöttert angeblich\nLORELEI von den TOP VIER."
+    .string "Pokémon Journal\pSonderreportage: Arenaleiterin\nMisty aus Azuria City!\pMisty vergöttert angeblich\nLorelei von den Top Vier."
         
         
 .elseif LANG_EN

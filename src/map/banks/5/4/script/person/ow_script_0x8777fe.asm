@@ -14,7 +14,7 @@ end
 .global str_0x880e00
 
 str_0x880e00:
-    .string "Im Pokéstop kannst du sowohl deine\nPokémon heilen lassen, als auch\lnützliche Items für den Inventar\lkaufen."
+    .string "Im Pokéstop kannst du sowohl deine\nPokémon heilen lassen, als auch\lnützliche Items für dein Inventar\lkaufen."
         
         
 .elseif LANG_EN

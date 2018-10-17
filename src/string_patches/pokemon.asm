@@ -3,7 +3,7 @@
 // Stats for stat drops, etc.
 .global str_kp
 str_kp:
-	.string "Kp"
+	.string "KP"
 
 .global str_angriff
 str_angriff:
@@ -15,12 +15,12 @@ str_vert:
 
 .global str_sp_ang
 str_sp_ang:
-	.string "Sp. Ang."
+	.string "SP. Ang."
 
 
 .global str_sp_ver
 str_sp_ver:
-	.string "Sp. Vert."
+	.string "SP. Vert."
 
 .global str_accuracy
 str_accuracy:
@@ -59,7 +59,7 @@ str_wesen:
 str_idnr:
 	.string "Id-Nr."
 str_ap:
-	.string "Ap"
+	.string "AP"
 str_staerke:
 	.string "Stärke"
 str_genau:

@@ -24,13 +24,13 @@ end
 .global str_0x81b37f
 
 str_0x81b37f:
-    .string "Hallo! Lass mich raten, du willst\neinige Tipps für die Arena?\lNun, diese Arena spezialisiert sich\lauf Plfanzen Pokémon. Der Leiter\lMIA benutzt sie eindrucksvoll. Am\lbesten kannst du ihr mit Flug oder\lFeuer Pokémon begegnen."
+    .string "Hallo! Lass mich raten, du willst\neinige Tipps für die Arena?\lNun, diese Arena spezialisiert sich\lauf Plfanzen Pokémon. Der Leiter\lMia benutzt sie eindrucksvoll. Am\lbesten kannst du ihr mit Flug oder\lFeuer Pokémon begegnen."
         
         
 .global str_0x81b354
 
 str_0x81b354:
-    .string "Ich wusste, dass du MIA schlagen\nkannst."
+    .string "Ich wusste, dass du Mia schlagen\nkannst."
         
         
 .elseif LANG_EN

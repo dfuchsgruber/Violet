@@ -56,7 +56,7 @@ void attack_init_trigger_abilities(){
     battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case WANDLUNGSK:{
-            dprintf("Lauched ability 'WANDLUNGSK'");
+            dprintf("Lauched ability 'Wandlungsk.'");
             u8 attack_type = attacks[active_attack].type;
             if(attacker->type1 != attack_type || attacker->type2 != attack_type){
                 attacker->type1 = attack_type;
@@ -103,7 +103,7 @@ void attack_init_trigger_abilities(){
                 attacker->custom_status |= CUSTOM_STATUS_AP_SPARER;
                 battlescript_callstack_push_next_command();
                 bsc_offset = bsc_ap_sparer;
-                dprintf("Ap sparer triggered for attacker %d\n", 
+                dprintf("AP sparer triggered for attacker %d\n", 
                         attacking_battler);
                 bsc_buffers[0] = 0xFD;
                 bsc_buffers[1] = 3;

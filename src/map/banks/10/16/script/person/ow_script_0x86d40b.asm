@@ -40,7 +40,7 @@ end
 .global str_0x86d444
 
 str_0x86d444:
-    .string "PLAYER! Freut mich, dich zu\nsehen. Im Namen der Stadt INFERIOR\lund der ganzen Region möchte ich\ldir für deine Unterstützung am\lVULCANO danken. Ich bin\lzuversichtlich, dass du es schaffen\lwirst, den Orden zu erinngen. Wenn\ldu aber glaubst, ich würde nicht\lalles geben, dann irrst du dich,\lkomm mit mir!"
+    .string "PLAYER! Freut mich, dich zu\nsehen. Im Namen der Stadt Inferior\lund der ganzen Region möchte ich\ldir für deine Unterstützung am\lVulcano danken. Ich bin\lzuversichtlich, dass du es schaffen\lwirst, den Orden zu erinngen. Wenn\ldu aber glaubst, ich würde nicht\lalles geben, dann irrst du dich,\lkomm mit mir!"
         
         
 .global str_0x86d584

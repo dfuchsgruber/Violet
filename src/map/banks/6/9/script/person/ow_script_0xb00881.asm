@@ -64,13 +64,13 @@ str_0xb00b22:
 .global str_0xb00a3a
 
 str_0xb00a3a:
-    .string "PLAYERerhält den FELSORDEN von\nLESTER."
+    .string "PLAYERerhält den Felsorden von\nLester."
         
         
 .global str_0xb00a65
 
 str_0xb00a65:
-    .string "Der FELSORDEN lässt dich die VM\nBlitz außerhalb eines Kampfes\leinsetzten. Außerdem gehorchen dir\lalle Pokémon bis Level 10.\lNimm auch noch das hier, es ist ein\lpersönliches Geschenk."
+    .string "Der Felsorden lässt dich die VM\nBlitz außerhalb eines Kampfes\leinsetzten. Außerdem gehorchen dir\lalle Pokémon bis Level 10.\lNimm auch noch das hier, es ist ein\lpersönliches Geschenk."
         
         
 .global str_0xb00bba

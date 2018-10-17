@@ -136,7 +136,7 @@ return
 .global str_0x1a8188
 
 str_0x1a8188:
-    .string "Willkommen im Pokestop!\pWir heilen deine Pokémon und\nmachen sie wieder fit!"
+    .string "Willkommen im Pokéstop!\pWir heilen deine Pokémon und\nmachen sie wieder fit!"
         
         
 .global str_0x1a8219

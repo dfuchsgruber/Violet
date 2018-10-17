@@ -80,7 +80,7 @@
 	.global str_item_desc_xd_item_trank
 
 	str_item_desc_xd_item_trank:
-		.string "Die Kp eines Pokémon\nwerden um 20 Punkte aufgefüllt."
+		.string "Die KP eines Pokémon\nwerden um 20 Punkte aufgefüllt."
 
 
 	.global str_item_desc_xe_item_gegengift
@@ -116,25 +116,25 @@
 	.global str_item_desc_x13_item_top_genesung
 
 	str_item_desc_x13_item_top_genesung:
-		.string "Stellt gesamte Kp und Status\neines Pokémon wieder her."
+		.string "Stellt gesamte KP und Status\neines Pokémon wieder her."
 
 
 	.global str_item_desc_x14_item_top_trank
 
 	str_item_desc_x14_item_top_trank:
-		.string "Füllt die Kp eines Pokémon\nvollständig auf."
+		.string "Füllt die KP eines Pokémon\nvollständig auf."
 
 
 	.global str_item_desc_x15_item_hypertrank
 
 	str_item_desc_x15_item_hypertrank:
-		.string "Füllt die Kp eines Pokémon um\n200 Punkte auf."
+		.string "Füllt die KP eines Pokémon um\n200 Punkte auf."
 
 
 	.global str_item_desc_x16_item_supertrank
 
 	str_item_desc_x16_item_supertrank:
-		.string "Füllt die Kp eines Pokémon um\n50 Punkte auf."
+		.string "Füllt die KP eines Pokémon um\n50 Punkte auf."
 
 
 	.global str_item_desc_x17_item_hyperheiler
@@ -146,49 +146,49 @@
 	.global str_item_desc_x18_item_beleber
 
 	str_item_desc_x18_item_beleber:
-		.string "Belebt ein Pokémon und füllt\ndessen Kp zur Hälfte wieder auf."
+		.string "Belebt ein Pokémon und füllt\ndessen KP zur Hälfte wieder auf."
 
 
 	.global str_item_desc_x19_item_top_beleber
 
 	str_item_desc_x19_item_top_beleber:
-		.string "Belebt ein Pokémon und füllt\ndie Kp vollständig wieder auf."
+		.string "Belebt ein Pokémon und füllt\ndie KP vollständig wieder auf."
 
 
 	.global str_item_desc_x1a_item_tafelwasser
 
 	str_item_desc_x1a_item_tafelwasser:
-		.string "Ein stilles Wasser mit hohem\nMineralienanteil, das die Kp eines\nPokémon um 50 Punkte auffüllt."
+		.string "Ein stilles Wasser mit hohem\nMineralienanteil, das die KP eines\nPokémon um 50 Punkte auffüllt."
 
 
 	.global str_item_desc_x1b_item_sprudel
 
 	str_item_desc_x1b_item_sprudel:
-		.string "Ein sprudelndes Mineralwasser,\ndas die Kp eines Pokémon\num 60 Punkte auffüllt."
+		.string "Ein sprudelndes Mineralwasser,\ndas die KP eines Pokémon\num 60 Punkte auffüllt."
 
 
 	.global str_item_desc_x1c_item_limonade
 
 	str_item_desc_x1c_item_limonade:
-		.string "Ein süßes Getränk, das die Kp eines\nPokémon um 80 Punkte auffüllt."
+		.string "Ein süßes Getränk, das die KP eines\nPokémon um 80 Punkte auffüllt."
 
 
 	.global str_item_desc_x1d_item_kuhmuh_milch
 
 	str_item_desc_x1d_item_kuhmuh_milch:
-		.string "Vitaminreiche Milch, welche die Kp\neines Pokémon um\n100 Punkte auffüllt."
+		.string "Vitaminreiche Milch, welche die KP\neines Pokémon um\n100 Punkte auffüllt."
 
 
 	.global str_item_desc_x1e_item_energiestaub
 
 	str_item_desc_x1e_item_energiestaub:
-		.string "Ein bitteres Pulver, das die Kp\neines Pokémon um\n50 Punkte auffüllt."
+		.string "Ein bitteres Pulver, das die KP\neines Pokémon um\n50 Punkte auffüllt."
 
 
 	.global str_item_desc_x1f_item_kraftwurzel
 
 	str_item_desc_x1f_item_kraftwurzel:
-		.string "Eine bittere Wurzel, welche die Kp\neines Pokémon um\n200 Punkte auffüllt."
+		.string "Eine bittere Wurzel, welche die KP\neines Pokémon um\n200 Punkte auffüllt."
 
 
 	.global str_item_desc_x20_item_heilpuder
@@ -200,31 +200,31 @@
 	.global str_item_desc_x21_item_vitalkraut
 
 	str_item_desc_x21_item_vitalkraut:
-		.string "Ein bitteres Kraut, das besiegte\nPokémon belebt und die Kp\nvollständig auffüllt."
+		.string "Ein bitteres Kraut, das besiegte\nPokémon belebt und die KP\nvollständig auffüllt."
 
 
 	.global str_item_desc_x22_item_aether
 
 	str_item_desc_x22_item_aether:
-		.string "Füllt Ap einer ausgewählten Attacke\neines Pokémon um 10 Punkte auf."
+		.string "Füllt AP einer ausgewählten Attacke\neines Pokémon um 10 Punkte auf."
 
 
 	.global str_item_desc_x23_item_top_aether
 
 	str_item_desc_x23_item_top_aether:
-		.string "Füllt Ap einer ausgewählten Attacke\neines Pokémon vollständig auf."
+		.string "Füllt AP einer ausgewählten Attacke\neines Pokémon vollständig auf."
 
 
 	.global str_item_desc_x24_item_elixier
 
 	str_item_desc_x24_item_elixier:
-		.string "Füllt alle Ap aller Attacken eines\nPokémon um 10 Punkte auf."
+		.string "Füllt alle AP aller Attacken eines\nPokémon um 10 Punkte auf."
 
 
 	.global str_item_desc_x25_item_top_elixier
 
 	str_item_desc_x25_item_top_elixier:
-		.string "Füllt alle Ap aller Attacken eines\nPokémon vollständig auf."
+		.string "Füllt alle AP aller Attacken eines\nPokémon vollständig auf."
 
 
 	.global str_item_desc_x26_item_lavakeks
@@ -266,13 +266,13 @@
 	.global str_item_desc_x2c_item_beerensaft
 
 	str_item_desc_x2c_item_beerensaft:
-		.string "Reiner Fruchtsaft, der die Kp eines\nPokémon um 20 Punkte auffüllt."
+		.string "Reiner Fruchtsaft, der die KP eines\nPokémon um 20 Punkte auffüllt."
 
 
 	.global str_item_desc_x2d_item_zauberasche
 
 	str_item_desc_x2d_item_zauberasche:
-		.string "Belebt und erfrischt alle besiegten\nPokémon und füllt deren Kp\nvollständig wieder auf."
+		.string "Belebt und erfrischt alle besiegten\nPokémon und füllt deren KP\nvollständig wieder auf."
 
 
 	.global str_item_desc_x2e_item_kuestensalz
@@ -350,7 +350,7 @@
 	.global str_item_desc_x3a_item_leben_orb
 
 	str_item_desc_x3a_item_leben_orb:
-		.string "Ein Item zum Tragen.\nVerstärkt Attacken, aber jede\nAttacke kostet Kp."
+		.string "Ein Item zum Tragen.\nVerstärkt Attacken, aber jede\nAttacke kostet KP."
 
 
 	.global str_item_desc_x3b_item_evolith
@@ -416,7 +416,7 @@
 	.global str_item_desc_x45_item_ap_plus
 
 	str_item_desc_x45_item_ap_plus:
-		.string "Hebt die maximale Anzahl der Ap\neiner Attacke eines Pokémon."
+		.string "Hebt die maximale Anzahl der AP\neiner Attacke eines Pokémon."
 
 
 	.global str_item_desc_x46_item_zink
@@ -428,7 +428,7 @@
 	.global str_item_desc_x47_item_ap_top
 
 	str_item_desc_x47_item_ap_top:
-		.string "Maximiert die Anzahl der Ap\neiner Attacke eines Pokémon."
+		.string "Maximiert die Anzahl der AP\neiner Attacke eines Pokémon."
 
 
 	.global str_item_desc_x48_item_item_48
@@ -446,37 +446,37 @@
 	.global str_item_desc_x4a_item_angriffplus
 
 	str_item_desc_x4a_item_angriffplus:
-		.string "Hebt die Volltrefferquote des Pkmn\nim Kampf. Die Wirkung wird mit\ndem Tausch des Pokémon beendet."
+		.string "Hebt die Volltrefferquote des PKMN\nim Kampf. Die Wirkung wird mit\ndem Tausch des Pokémon beendet."
 
 
 	.global str_item_desc_x4b_item_x_angriff
 
 	str_item_desc_x4b_item_x_angriff:
-		.string "Hebt den Angr.-Wert eines Pkmn\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
+		.string "Hebt den Angr.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
 
 
 	.global str_item_desc_x4c_item_x_abwehr
 
 	str_item_desc_x4c_item_x_abwehr:
-		.string "Hebt den Vert.-Wert eines Pkmn\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
+		.string "Hebt den Vert.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
 
 
 	.global str_item_desc_x4d_item_x_tempo
 
 	str_item_desc_x4d_item_x_tempo:
-		.string "Hebt den Init.-Wert eines Pkmn\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
+		.string "Hebt den Init.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
 
 
 	.global str_item_desc_x4e_item_x_treffer
 
 	str_item_desc_x4e_item_x_treffer:
-		.string "Hebt die Genauigkeit eines Pkmn\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
+		.string "Hebt die Genauigkeit eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
 
 
 	.global str_item_desc_x4f_item_x_spezial
 
 	str_item_desc_x4f_item_x_spezial:
-		.string "Hebt den Sp. Ang.-Wert eines Pkmn\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
+		.string "Hebt den SP. Ang.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."
 
 
 	.global str_item_desc_x50_item_pokepuppe
@@ -830,13 +830,13 @@
 	.global str_item_desc_x8a_item_jonagobeere
 
 	str_item_desc_x8a_item_jonagobeere:
-		.string "Item (Tragen) füllt Ap im Kampf um\n10 Punkte auf."
+		.string "Item (Tragen) füllt AP im Kampf um\n10 Punkte auf."
 
 
 	.global str_item_desc_x8b_item_sinelbeere
 
 	str_item_desc_x8b_item_sinelbeere:
-		.string "Item (Tragen) füllt Kp im Kampf um\n10 Punkte auf."
+		.string "Item (Tragen) füllt KP im Kampf um\n10 Punkte auf."
 
 
 	.global str_item_desc_x8c_item_persimbeere
@@ -854,37 +854,37 @@
 	.global str_item_desc_x8e_item_tsitrubeere
 
 	str_item_desc_x8e_item_tsitrubeere:
-		.string "Item (Tragen) füllt Kp im Kampf um\n30 Punkte auf."
+		.string "Item (Tragen) füllt KP im Kampf um\n30 Punkte auf."
 
 
 	.global str_item_desc_x8f_item_giefebeere
 
 	str_item_desc_x8f_item_giefebeere:
-		.string "Item (Tragen) füllt im Kampf Kp\nauf, bewirkt aber evtl. Verwirrung."
+		.string "Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."
 
 
 	.global str_item_desc_x90_item_wikibeere
 
 	str_item_desc_x90_item_wikibeere:
-		.string "Item (Tragen) füllt im Kampf Kp\nauf, bewirkt aber evtl. Verwirrung."
+		.string "Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."
 
 
 	.global str_item_desc_x91_item_magobeere
 
 	str_item_desc_x91_item_magobeere:
-		.string "Item (Tragen) füllt im Kampf Kp\nauf, bewirkt aber evtl. Verwirrung."
+		.string "Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."
 
 
 	.global str_item_desc_x92_item_gauvebeere
 
 	str_item_desc_x92_item_gauvebeere:
-		.string "Item (Tragen) füllt im Kampf Kp\nauf, bewirkt aber evtl. Verwirrung."
+		.string "Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."
 
 
 	.global str_item_desc_x93_item_yapabeere
 
 	str_item_desc_x93_item_yapabeere:
-		.string "Item (Tragen) füllt im Kampf Kp\nauf, bewirkt aber evtl. Verwirrung."
+		.string "Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."
 
 
 	.global str_item_desc_x94_item_himmihbeere
@@ -1028,13 +1028,13 @@
 	.global str_item_desc_xab_item_tahaybeere
 
 	str_item_desc_xab_item_tahaybeere:
-		.string "Item (Tragen) hebt Sp. Ang.-Wert\nin einer Notlage."
+		.string "Item (Tragen) hebt SP. Ang.-Wert\nin einer Notlage."
 
 
 	.global str_item_desc_xac_item_apikobeere
 
 	str_item_desc_xac_item_apikobeere:
-		.string "Item (Tragen) hebt Sp. Ver.-Wert\nin einer Notlage."
+		.string "Item (Tragen) hebt SP. Ver.-Wert\nin einer Notlage."
 
 
 	.global str_item_desc_xad_item_lansatbeere
@@ -1148,19 +1148,19 @@
 	.global str_item_desc_xbf_item_seelentau
 
 	str_item_desc_xbf_item_seelentau:
-		.string "Ein Item, das von Latios oder\nLatias getragen werden kann. Es\nhebt Sp. Ang. & Sp. Ver."
+		.string "Ein Item, das von Latios oder\nLatias getragen werden kann. Es\nhebt SP. Ang. & SP. Ver."
 
 
 	.global str_item_desc_xc0_item_abysszahn
 
 	str_item_desc_xc0_item_abysszahn:
-		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt Sp. Ang. für Perlu!"
+		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt SP. Ang. für Perlu!"
 
 
 	.global str_item_desc_xc1_item_abyssplatte
 
 	str_item_desc_xc1_item_abyssplatte:
-		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt Sp. Ver. für Perlu!"
+		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt SP. Ver. für Perlu!"
 
 
 	.global str_item_desc_xc2_item_rauchball
@@ -1202,7 +1202,7 @@
 	.global str_item_desc_xc8_item_ueberreste
 
 	str_item_desc_xc8_item_ueberreste:
-		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfüllt im Kampf stetig Kp auf."
+		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfüllt im Kampf stetig KP auf."
 
 
 	.global str_item_desc_xc9_item_drachenhaut
@@ -1214,7 +1214,7 @@
 	.global str_item_desc_xca_item_kugelblitz
 
 	str_item_desc_xca_item_kugelblitz:
-		.string "Ein Item, das von Pikachu\ngetragen werden kann. Es erhöht\nseinen Sp. Ang.-Wert."
+		.string "Ein Item, das von Pikachu\ngetragen werden kann. Es erhöht\nseinen SP. Ang.-Wert."
 
 
 	.global str_item_desc_xcb_item_pudersand
@@ -1316,7 +1316,7 @@
 	.global str_item_desc_xdb_item_seegesang
 
 	str_item_desc_xdb_item_seegesang:
-		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfüllt im Kampf stetig Kp auf."
+		.string "Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfüllt im Kampf stetig KP auf."
 
 
 	.global str_item_desc_xdc_item_seerauch
@@ -1754,7 +1754,7 @@
 	.global str_item_desc_x124_item_tm04
 
 	str_item_desc_x124_item_tm04:
-		.string "Erhöht SP. ANG.\nund SP. VER.\ndurch\nKonzentration."
+		.string "Erhöht SP. Ang.\nund SP. Ver.\ndurch\nKonzentration."
 
 
 	.global str_item_desc_x125_item_tm05
@@ -1772,13 +1772,13 @@
 	.global str_item_desc_x127_item_tm07
 
 	str_item_desc_x127_item_tm07:
-		.string "Hagelsturm für 5\nRunden. Schadet\nallen, außer\nEIS-POKéMON."
+		.string "Hagelsturm für 5\nRunden. Schadet\nallen, außer\nEis-Pokémon."
 
 
 	.global str_item_desc_x128_item_tm08
 
 	str_item_desc_x128_item_tm08:
-		.string "Pumpt den Körper\nauf, um den ANGR.\nund die VERT. \nzu erhöhen."
+		.string "Pumpt den Körper\nauf, um den Angr.\nund die Vert. \nzu erhöhen."
 
 
 	.global str_item_desc_x129_item_tm09
@@ -1826,7 +1826,7 @@
 	.global str_item_desc_x130_item_tm16
 
 	str_item_desc_x130_item_tm16:
-		.string "Erzeugt Lichtwand\nund senkt Schaden\ndurch SP. ANG.\nfür 5 Runden."
+		.string "Erzeugt Lichtwand\nund senkt Schaden\ndurch SP. Ang.\nfür 5 Runden."
 
 
 	.global str_item_desc_x131_item_tm17
@@ -1868,7 +1868,7 @@
 	.global str_item_desc_x137_item_tm23
 
 	str_item_desc_x137_item_tm23:
-		.string "Attacke mit hartem\nEisenschweif.\nSenkt evtl. den\nVERT.-Wert."
+		.string "Attacke mit hartem\nEisenschweif.\nSenkt evtl. den\nVert.-Wert."
 
 
 	.global str_item_desc_x138_item_tm24
@@ -1892,7 +1892,7 @@
 	.global str_item_desc_x13b_item_tm27
 
 	str_item_desc_x13b_item_tm27:
-		.string "Angriff, dessen\nKraft bei Freund-\nschaft zum TRAI-\nNER größer wird."
+		.string "Angriff, dessen\nKraft bei Freund-\nschaft zum Trai-\nner größer wird."
 
 
 	.global str_item_desc_x13c_item_tm28
@@ -1904,19 +1904,19 @@
 	.global str_item_desc_x13d_item_tm29
 
 	str_item_desc_x13d_item_tm29:
-		.string "Starke Psycho-\nAttacke, die evtl.\ndie SP. VER.\nsenkt."
+		.string "Starke Psycho-\nAttacke, die evtl.\ndie SP. Ver.\nsenkt."
 
 
 	.global str_item_desc_x13e_item_tm30
 
 	str_item_desc_x13e_item_tm30:
-		.string "Bewirft Gegner mit\ngruseligem Ball\nund senkt evtl.\ndie SP. VER."
+		.string "Bewirft Gegner mit\ngruseligem Ball\nund senkt evtl.\ndie SP. Ver."
 
 
 	.global str_item_desc_x13f_item_tm31
 
 	str_item_desc_x13f_item_tm31:
-		.string "Durchbricht Barri-\neren wie LICHT-\nSCHILD und\nREFLEKTOR."
+		.string "Durchbricht Barri-\neren wie Licht-\nschild und\nReflektor."
 
 
 	.global str_item_desc_x140_item_tm32
@@ -1964,7 +1964,7 @@
 	.global str_item_desc_x147_item_tm39
 
 	str_item_desc_x147_item_tm39:
-		.string "Angriff mit Felsen.\nBei Erfolg wird\nder INIT.-Wert des\nGegners gesenkt."
+		.string "Angriff mit Felsen.\nBei Erfolg wird\nder Init.-Wert des\nGegners gesenkt."
 
 
 	.global str_item_desc_x148_item_tm40
@@ -1982,7 +1982,7 @@
 	.global str_item_desc_x14a_item_tm42
 
 	str_item_desc_x14a_item_tm42:
-		.string "Erhöht ANGR. nach\nVerbrennung,\nParalyse oder\nVergiftung."
+		.string "Erhöht Angr. nach\nVerbrennung,\nParalyse oder\nVergiftung."
 
 
 	.global str_item_desc_x14b_item_tm43
@@ -2012,13 +2012,13 @@
 	.global str_item_desc_x14f_item_tm47
 
 	str_item_desc_x14f_item_tm47:
-		.string "Trifft den Gegner\nmit Stahlflügeln.\nAnwenders VERT.\nsteigt evtl."
+		.string "Trifft den Gegner\nmit Stahlflügeln.\nAnwenders Vert.\nsteigt evtl."
 
 
 	.global str_item_desc_x150_item_tm48
 
 	str_item_desc_x150_item_tm48:
-		.string "Anwender tauscht\nSpezialfähigkeit mit\ngegnerischem\nPOKéMON."
+		.string "Anwender tauscht\nSpezialfähigkeit mit\ngegnerischem\nPokémon."
 
 
 	.global str_item_desc_x151_item_tm49
@@ -2030,7 +2030,7 @@
 	.global str_item_desc_x152_item_tm50
 
 	str_item_desc_x152_item_tm50:
-		.string "Angriff mit voller\nKraft, der den SP.\nANG. d. Anwenders \ndeutlich senkt."
+		.string "Angriff mit voller\nKraft, der den SP.\nAng. d. Anwenders \ndeutlich senkt."
 
 
 	.global str_item_desc_x153_item_vm01
@@ -2066,7 +2066,7 @@
 	.global str_item_desc_x158_item_vm06
 
 	str_item_desc_x158_item_vm06:
-		.string "Zertrümmernder An-\ngriff, auch bei\nSteinen. Senkt evtl.\ndie VERT."
+		.string "Zertrümmernder An-\ngriff, auch bei\nSteinen. Senkt evtl.\ndie Vert."
 
 
 	.global str_item_desc_x159_item_vm07
@@ -2156,7 +2156,7 @@
 	.global str_item_desc_x167_item_silph_scope
 
 	str_item_desc_x167_item_silph_scope:
-		.string "Eine Linse, mit der unsichtbare Pkmn\nsichtbar werden. Sie wurde von\nder Silph Co. hergestellt."
+		.string "Eine Linse, mit der unsichtbare PKMN\nsichtbar werden. Sie wurde von\nder Silph Co. hergestellt."
 
 
 	.global str_item_desc_x168_item_fahrrad
@@ -2258,237 +2258,237 @@
 	.global str_item_desc_x1_item_meisterball
 
 	str_item_desc_x1_item_meisterball:
-		.string "The best BALL with the ultimate\nperformance. It will catch any wild\nPOKéMON without fail."
+		.string "The best Ball with the ultimate\nperformance. It will catch any wild\nPokémon without fail."
 
 	.global str_item_desc_x2_item_hyperball
 
 	str_item_desc_x2_item_hyperball:
-		.string "A very high-grade BALL that offers\na higher POKéMON catch rate than\na GREAT BALL."
+		.string "A very high-grade Ball that offers\na higher Pokémon catch rate than\na Great Ball."
 
 	.global str_item_desc_x3_item_superball
 
 	str_item_desc_x3_item_superball:
-		.string "A good, quality BALL that offers\na higher POKéMON catch rate than\na standard POKé BALL."
+		.string "A good, quality Ball that offers\na higher Pokémon catch rate than\na standard Poké Ball."
 
 	.global str_item_desc_x4_item_pokeball
 
 	str_item_desc_x4_item_pokeball:
-		.string "A BALL thrown to catch a wild\nPOKéMON. It is designed in a\ncapsule style."
+		.string "A Ball thrown to catch a wild\nPokémon. It is designed in a\ncapsule style."
 
 	.global str_item_desc_x5_item_safariball
 
 	str_item_desc_x5_item_safariball:
-		.string "A special BALL that is used only in\nthe SAFARI ZONE. It is finished in\na camouflage pattern."
+		.string "A special Ball that is used only in\nthe Safari Zone. It is finished in\na camouflage pattern."
 
 	.global str_item_desc_x6_item_netzball
 
 	str_item_desc_x6_item_netzball:
-		.string "A somewhat different BALL that\nworks especially well on WATER- and\nBUG-type POKéMON."
+		.string "A somewhat different Ball that\nworks especially well on Water- and\nBug-type Pokémon."
 
 	.global str_item_desc_x7_item_tauchball
 
 	str_item_desc_x7_item_tauchball:
-		.string "A somewhat different BALL that\nworks especially well on POKéMON\ndeep in the sea."
+		.string "A somewhat different Ball that\nworks especially well on Pokémon\ndeep in the sea."
 
 	.global str_item_desc_x8_item_nestball
 
 	str_item_desc_x8_item_nestball:
-		.string "A somewhat different BALL that\nworks especially well on weaker\nPOKéMON."
+		.string "A somewhat different Ball that\nworks especially well on weaker\nPokémon."
 
 	.global str_item_desc_x9_item_wiederball
 
 	str_item_desc_x9_item_wiederball:
-		.string "A somewhat different BALL that\nworks especially well on POKéMON\ncaught before."
+		.string "A somewhat different Ball that\nworks especially well on Pokémon\ncaught before."
 
 	.global str_item_desc_xa_item_timerball
 
 	str_item_desc_xa_item_timerball:
-		.string "A somewhat different BALL that\nbecomes progressively better the\nmore turns there are in a battle."
+		.string "A somewhat different Ball that\nbecomes progressively better the\nmore turns there are in a battle."
 
 	.global str_item_desc_xb_item_luxusball
 
 	str_item_desc_xb_item_luxusball:
-		.string "A comfortable BALL that makes a\ncaptured wild POKéMON quickly grow\nfriendly."
+		.string "A comfortable Ball that makes a\ncaptured wild Pokémon quickly grow\nfriendly."
 
 	.global str_item_desc_xc_item_premierball
 
 	str_item_desc_xc_item_premierball:
-		.string "A rare BALL that has been\nspecially made to commemorate an\nevent of some sort."
+		.string "A rare Ball that has been\nspecially made to commemorate an\nevent of some sort."
 
 	.global str_item_desc_xd_item_trank
 
 	str_item_desc_xd_item_trank:
-		.string "A spray-type wound medicine.\nIt restores the HP of one POKéMON\nby 20 points."
+		.string "A spray-type wound medicine.\nIt restores the HP of one Pokémon\nby 20 points."
 
 	.global str_item_desc_xe_item_gegengift
 
 	str_item_desc_xe_item_gegengift:
-		.string "A spray-type medicine.\nIt heals one POKéMON from a\npoisoning."
+		.string "A spray-type medicine.\nIt heals one Pokémon from a\npoisoning."
 
 	.global str_item_desc_xf_item_feuerheiler
 
 	str_item_desc_xf_item_feuerheiler:
-		.string "A spray-type medicine.\nIt heals one POKéMON of a burn."
+		.string "A spray-type medicine.\nIt heals one Pokémon of a burn."
 
 	.global str_item_desc_x10_item_eisheiler
 
 	str_item_desc_x10_item_eisheiler:
-		.string "A spray-type medicine.\nIt defrosts a frozen POKéMON."
+		.string "A spray-type medicine.\nIt defrosts a frozen Pokémon."
 
 	.global str_item_desc_x11_item_aufwecker
 
 	str_item_desc_x11_item_aufwecker:
-		.string "A spray-type medicine.\nIt awakens a sleeping POKéMON."
+		.string "A spray-type medicine.\nIt awakens a sleeping Pokémon."
 
 	.global str_item_desc_x12_item_para_heiler
 
 	str_item_desc_x12_item_para_heiler:
-		.string "A spray-type medicine.\nIt heals one POKéMON from\nparalysis."
+		.string "A spray-type medicine.\nIt heals one Pokémon from\nparalysis."
 
 	.global str_item_desc_x13_item_top_genesung
 
 	str_item_desc_x13_item_top_genesung:
-		.string "A medicine that fully restores the\nHP and heals any status problems\nof one POKéMON."
+		.string "A medicine that fully restores the\nHP and heals any status problems\nof one Pokémon."
 
 	.global str_item_desc_x14_item_top_trank
 
 	str_item_desc_x14_item_top_trank:
-		.string "A spray-type wound medicine.\nIt fully restores the HP of one\nPOKéMON."
+		.string "A spray-type wound medicine.\nIt fully restores the HP of one\nPokémon."
 
 	.global str_item_desc_x15_item_hypertrank
 
 	str_item_desc_x15_item_hypertrank:
-		.string "A spray-type wound medicine.\nIt restores the HP of one POKéMON\nby 200 points."
+		.string "A spray-type wound medicine.\nIt restores the HP of one Pokémon\nby 200 points."
 
 	.global str_item_desc_x16_item_supertrank
 
 	str_item_desc_x16_item_supertrank:
-		.string "A spray-type wound medicine.\nIt restores the HP of one POKéMON\nby 50 points."
+		.string "A spray-type wound medicine.\nIt restores the HP of one Pokémon\nby 50 points."
 
 	.global str_item_desc_x17_item_hyperheiler
 
 	str_item_desc_x17_item_hyperheiler:
-		.string "A spray-type medicine.\nIt heals all the status problems of\none POKéMON."
+		.string "A spray-type medicine.\nIt heals all the status problems of\none Pokémon."
 
 	.global str_item_desc_x18_item_beleber
 
 	str_item_desc_x18_item_beleber:
-		.string "A medicine that revives a fainted\nPOKéMON, restoring HP by half the\nmaximum amount."
+		.string "A medicine that revives a fainted\nPokémon, restoring HP by half the\nmaximum amount."
 
 	.global str_item_desc_x19_item_top_beleber
 
 	str_item_desc_x19_item_top_beleber:
-		.string "A medicine that revives a fainted\nPOKéMON, restoring HP fully."
+		.string "A medicine that revives a fainted\nPokémon, restoring HP fully."
 
 	.global str_item_desc_x1a_item_tafelwasser
 
 	str_item_desc_x1a_item_tafelwasser:
-		.string "Water with a high mineral content.\nIt restores the HP of one POKéMON\nby 50 points."
+		.string "Water with a high mineral content.\nIt restores the HP of one Pokémon\nby 50 points."
 
 	.global str_item_desc_x1b_item_sprudel
 
 	str_item_desc_x1b_item_sprudel:
-		.string "A fizzy soda drink.\nIt restores the HP of one POKéMON\nby 60 points."
+		.string "A fizzy soda drink.\nIt restores the HP of one Pokémon\nby 60 points."
 
 	.global str_item_desc_x1c_item_limonade
 
 	str_item_desc_x1c_item_limonade:
-		.string "A very sweet drink.\nIt restores the HP of one POKéMON\nby 80 points."
+		.string "A very sweet drink.\nIt restores the HP of one Pokémon\nby 80 points."
 
 	.global str_item_desc_x1d_item_kuhmuh_milch
 
 	str_item_desc_x1d_item_kuhmuh_milch:
-		.string "Highly nutritious milk.\nIt restores the HP of one POKéMON\nby 100 points."
+		.string "Highly nutritious milk.\nIt restores the HP of one Pokémon\nby 100 points."
 
 	.global str_item_desc_x1e_item_energiestaub
 
 	str_item_desc_x1e_item_energiestaub:
-		.string "A very bitter medicine powder.\nIt restores the HP of one POKéMON\nby 50 points."
+		.string "A very bitter medicine powder.\nIt restores the HP of one Pokémon\nby 50 points."
 
 	.global str_item_desc_x1f_item_kraftwurzel
 
 	str_item_desc_x1f_item_kraftwurzel:
-		.string "A very bitter root.\nIt restores the HP of one POKéMON\nby 200 points."
+		.string "A very bitter root.\nIt restores the HP of one Pokémon\nby 200 points."
 
 	.global str_item_desc_x20_item_heilpuder
 
 	str_item_desc_x20_item_heilpuder:
-		.string "A very bitter medicine powder.\nIt heals all the status problems of\none POKéMON."
+		.string "A very bitter medicine powder.\nIt heals all the status problems of\none Pokémon."
 
 	.global str_item_desc_x21_item_vitalkraut
 
 	str_item_desc_x21_item_vitalkraut:
-		.string "A very bitter medicinal herb.\nIt revives a fainted POKéMON,\nrestoring HP fully."
+		.string "A very bitter medicinal herb.\nIt revives a fainted Pokémon,\nrestoring HP fully."
 
 	.global str_item_desc_x22_item_aether
 
 	str_item_desc_x22_item_aether:
-		.string "Restores a selected move\s PP by\n10 points for one POKéMON."
+		.string "Restores a selected move\s PP by\n10 points for one Pokémon."
 
 	.global str_item_desc_x23_item_top_aether
 
 	str_item_desc_x23_item_top_aether:
-		.string "Fully restores a selected move\s PP\nfor one POKéMON."
+		.string "Fully restores a selected move\s PP\nfor one Pokémon."
 
 	.global str_item_desc_x24_item_elixier
 
 	str_item_desc_x24_item_elixier:
-		.string "Restores the PP of all moves for\none POKéMON by 10 points each."
+		.string "Restores the PP of all moves for\none Pokémon by 10 points each."
 
 	.global str_item_desc_x25_item_top_elixier
 
 	str_item_desc_x25_item_top_elixier:
-		.string "Fully restores the PP of all moves\nfor one POKéMON."
+		.string "Fully restores the PP of all moves\nfor one Pokémon."
 
 	.global str_item_desc_x26_item_lavakeks
 
 	str_item_desc_x26_item_lavakeks:
-		.string "LAVARIDGE TOWN\s local specialty.\nIt heals all the status problems of\none POKéMON."
+		.string "Lavaridge Town\s local specialty.\nIt heals all the status problems of\none Pokémon."
 
 	.global str_item_desc_x27_item_blaue_floete
 
 	str_item_desc_x27_item_blaue_floete:
-		.string "A blue glass flute that awakens\na sleeping POKéMON."
+		.string "A blue glass flute that awakens\na sleeping Pokémon."
 
 	.global str_item_desc_x28_item_gelbe_floete
 
 	str_item_desc_x28_item_gelbe_floete:
-		.string "A yellow glass flute that snaps one\nPOKéMON out of confusion."
+		.string "A yellow glass flute that snaps one\nPokémon out of confusion."
 
 	.global str_item_desc_x29_item_rote_floete
 
 	str_item_desc_x29_item_rote_floete:
-		.string "A red glass flute that snaps one\nPOKéMON out of infatuation."
+		.string "A red glass flute that snaps one\nPokémon out of infatuation."
 
 	.global str_item_desc_x2a_item_schw_floete
 
 	str_item_desc_x2a_item_schw_floete:
-		.string "A black glass flute.\nWhen blown, it makes wild POKéMON\nless likely to appear."
+		.string "A black glass flute.\nWhen blown, it makes wild Pokémon\nless likely to appear."
 
 	.global str_item_desc_x2b_item_weisse_floete
 
 	str_item_desc_x2b_item_weisse_floete:
-		.string "A white glass flute.\nWhen blown, it makes wild POKéMON\nmore likely to appear."
+		.string "A white glass flute.\nWhen blown, it makes wild Pokémon\nmore likely to appear."
 
 	.global str_item_desc_x2c_item_beerensaft
 
 	str_item_desc_x2c_item_beerensaft:
-		.string "A 100% pure juice.\nIt restores the HP of one POKéMON\nby 20 points."
+		.string "A 100% pure juice.\nIt restores the HP of one Pokémon\nby 20 points."
 
 	.global str_item_desc_x2d_item_zauberasche
 
 	str_item_desc_x2d_item_zauberasche:
-		.string "Revives all fainted POKéMON,\nrestoring HP fully."
+		.string "Revives all fainted Pokémon,\nrestoring HP fully."
 
 	.global str_item_desc_x2e_item_kuestensalz
 
 	str_item_desc_x2e_item_kuestensalz:
-		.string "Pure salt obtained from deep inside\nthe SHOAL CAVE. It is extremely\nsalty."
+		.string "Pure salt obtained from deep inside\nthe Shoal Cave. It is extremely\nsalty."
 
 	.global str_item_desc_x2f_item_kuestenschale
 
 	str_item_desc_x2f_item_kuestenschale:
-		.string "A pretty seashell found deep inside\nthe SHOAL CAVE. It is striped in\nblue and white."
+		.string "A pretty seashell found deep inside\nthe Shoal Cave. It is striped in\nblue and white."
 
 	.global str_item_desc_x30_item_purpurstueck
 
@@ -2568,47 +2568,47 @@
 	.global str_item_desc_x3f_item_kp_plus
 
 	str_item_desc_x3f_item_kp_plus:
-		.string "A nutritious drink for POKéMON.\nIt raises the base HP of one\nPOKéMON."
+		.string "A nutritious drink for Pokémon.\nIt raises the base HP of one\nPokémon."
 
 	.global str_item_desc_x40_item_protein
 
 	str_item_desc_x40_item_protein:
-		.string "A nutritious drink for POKéMON.\nIt raises the base ATTACK stat of\none POKéMON."
+		.string "A nutritious drink for Pokémon.\nIt raises the base Attack stat of\none Pokémon."
 
 	.global str_item_desc_x41_item_eisen
 
 	str_item_desc_x41_item_eisen:
-		.string "A nutritious drink for POKéMON.\nIt raises the base DEFENSE stat of\none POKéMON."
+		.string "A nutritious drink for Pokémon.\nIt raises the base Defense stat of\none Pokémon."
 
 	.global str_item_desc_x42_item_carbon
 
 	str_item_desc_x42_item_carbon:
-		.string "A nutritious drink for POKéMON.\nIt raises the base SPEED stat of\none POKéMON."
+		.string "A nutritious drink for POKéMON.\nIt raises the base Speed stat of\none POKéMON."
 
 	.global str_item_desc_x43_item_kalzium
 
 	str_item_desc_x43_item_kalzium:
-		.string "A nutritious drink for POKéMON.\nIt raises the base SP. ATK stat\nof one POKéMON."
+		.string "A nutritious drink for Pokémon.\nIt raises the base SP. Atk stat\nof one Pokémon."
 
 	.global str_item_desc_x44_item_sonderbonbon
 
 	str_item_desc_x44_item_sonderbonbon:
-		.string "A candy that is packed with energy.\nIt raises the level of a POKéMON\nby one."
+		.string "A candy that is packed with energy.\nIt raises the level of a Pokémon\nby one."
 
 	.global str_item_desc_x45_item_ap_plus
 
 	str_item_desc_x45_item_ap_plus:
-		.string "Slightly raises the maximum PP of\na selected move for one POKéMON."
+		.string "Slightly raises the maximum PP of\na selected move for one Pokémon."
 
 	.global str_item_desc_x46_item_zink
 
 	str_item_desc_x46_item_zink:
-		.string "A nutritious drink for POKéMON.\nIt raises the base SP. DEF stat\nof one POKéMON."
+		.string "A nutritious drink for Pokémon.\nIt raises the base SP. Def stat\nof one Pokémon."
 
 	.global str_item_desc_x47_item_ap_top
 
 	str_item_desc_x47_item_ap_top:
-		.string "Raises the PP of a selected move\nto its maximum level for one\nPOKéMON."
+		.string "Raises the PP of a selected move\nto its maximum level for one\nPokémon."
 
 	.global str_item_desc_x48_item_item_48
 
@@ -2618,47 +2618,47 @@
 	.global str_item_desc_x49_item_megablock
 
 	str_item_desc_x49_item_megablock:
-		.string "An item that prevents stat reduction\namong party POKéMON for five turns\nafter use."
+		.string "An item that prevents stat reduction\namong party Pokémon for five turns\nafter use."
 
 	.global str_item_desc_x4a_item_angriffplus
 
 	str_item_desc_x4a_item_angriffplus:
-		.string "Raises the critical-hit ratio of\nPOKéMON in battle. Wears off if the\nPOKéMON is withdrawn."
+		.string "Raises the critical-hit ratio of\nPokémon in battle. Wears off if the\nPokémon is withdrawn."
 
 	.global str_item_desc_x4b_item_x_angriff
 
 	str_item_desc_x4b_item_x_angriff:
-		.string "Raises the ATTACK stat of POKéMON\nin battle. Wears off if the POKéMON\nis withdrawn."
+		.string "Raises the Attack stat of Pokémon\nin battle. Wears off if the Pokémon\nis withdrawn."
 
 	.global str_item_desc_x4c_item_x_abwehr
 
 	str_item_desc_x4c_item_x_abwehr:
-		.string "Raises the DEFENSE stat of POKéMON\nin battle. Wears off if the POKéMON\nis withdrawn."
+		.string "Raises the Defense stat of Pokémon\nin battle. Wears off if the Pokémon\nis withdrawn."
 
 	.global str_item_desc_x4d_item_x_tempo
 
 	str_item_desc_x4d_item_x_tempo:
-		.string "Raises the SPEED stat of POKéMON\nin battle. Wears off if the POKéMON\nis withdrawn."
+		.string "Raises the Speed stat of POKéMON\nin battle. Wears off if the POKéMON\nis withdrawn."
 
 	.global str_item_desc_x4e_item_x_treffer
 
 	str_item_desc_x4e_item_x_treffer:
-		.string "Raises the accuracy stat of\nPOKéMON in battle. Wears off if the\nPOKéMON is withdrawn."
+		.string "Raises the accuracy stat of\nPokémon in battle. Wears off if the\nPokémon is withdrawn."
 
 	.global str_item_desc_x4f_item_x_spezial
 
 	str_item_desc_x4f_item_x_spezial:
-		.string "Raises the SP. ATK stat of\nPOKéMON in battle. Wears off if the\nPOKéMON is withdrawn."
+		.string "Raises the SP. Atk stat of\nPokémon in battle. Wears off if the\nPokémon is withdrawn."
 
 	.global str_item_desc_x50_item_pokepuppe
 
 	str_item_desc_x50_item_pokepuppe:
-		.string "An attractive doll.\nUse it to flee from any battle with\na wild POKéMON."
+		.string "An attractive doll.\nUse it to flee from any battle with\na wild Pokémon."
 
 	.global str_item_desc_x51_item_eneco_rute
 
 	str_item_desc_x51_item_eneco_rute:
-		.string "An attractive item.\nUse it to flee from any battle with\na wild POKéMON."
+		.string "An attractive item.\nUse it to flee from any battle with\na wild Pokémon."
 
 	.global str_item_desc_x52_item_item_52
 
@@ -2668,12 +2668,12 @@
 	.global str_item_desc_x53_item_superschutz
 
 	str_item_desc_x53_item_superschutz:
-		.string "Prevents weak wild POKéMON from\nappearing for 200 steps."
+		.string "Prevents weak wild Pokémon from\nappearing for 200 steps."
 
 	.global str_item_desc_x54_item_top_schutz
 
 	str_item_desc_x54_item_top_schutz:
-		.string "Prevents weak wild POKéMON from\nappearing for 250 steps."
+		.string "Prevents weak wild Pokémon from\nappearing for 250 steps."
 
 	.global str_item_desc_x55_item_fluchtseil
 
@@ -2683,7 +2683,7 @@
 	.global str_item_desc_x56_item_schutz
 
 	str_item_desc_x56_item_schutz:
-		.string "Prevents weak wild POKéMON from\nappearing for 100 steps."
+		.string "Prevents weak wild Pokémon from\nappearing for 100 steps."
 
 	.global str_item_desc_x57_item_item_57
 
@@ -2718,32 +2718,32 @@
 	.global str_item_desc_x5d_item_sonnenstein
 
 	str_item_desc_x5d_item_sonnenstein:
-		.string "A peculiar stone that makes certain\nspecies of POKéMON evolve.\nIt is as red as the sun."
+		.string "A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is as red as the sun."
 
 	.global str_item_desc_x5e_item_mondstein
 
 	str_item_desc_x5e_item_mondstein:
-		.string "A peculiar stone that makes certain\nspecies of POKéMON evolve.\nIt is as black as the night sky."
+		.string "A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is as black as the night sky."
 
 	.global str_item_desc_x5f_item_feuerstein
 
 	str_item_desc_x5f_item_feuerstein:
-		.string "A peculiar stone that makes certain\nspecies of POKéMON evolve.\nIt is colored orange."
+		.string "A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is colored orange."
 
 	.global str_item_desc_x60_item_donnerstein
 
 	str_item_desc_x60_item_donnerstein:
-		.string "A peculiar stone that makes certain\nspecies of POKéMON evolve.\nIt has a thunderbolt pattern."
+		.string "A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt has a thunderbolt pattern."
 
 	.global str_item_desc_x61_item_wasserstein
 
 	str_item_desc_x61_item_wasserstein:
-		.string "A peculiar stone that makes certain\nspecies of POKéMON evolve.\nIt is a clear light blue."
+		.string "A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is a clear light blue."
 
 	.global str_item_desc_x62_item_blattstein
 
 	str_item_desc_x62_item_blattstein:
-		.string "A peculiar stone that makes certain\nspecies of POKéMON evolve.\nIt has a leaf pattern."
+		.string "A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt has a leaf pattern."
 
 	.global str_item_desc_x63_item_linkkabel
 
@@ -2858,112 +2858,112 @@
 	.global str_item_desc_x79_item_79
 
 	str_item_desc_x79_item_79:
-		.string "A piece of MAIL featuring a cute\nZIGZAGOON print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nZigzagoon print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x7a_item_hafenbrief
 
 	str_item_desc_x7a_item_hafenbrief:
-		.string "A piece of MAIL featuring a cute\nWINGULL print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nWingull print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x7b_item_glitzerbrief
 
 	str_item_desc_x7b_item_glitzerbrief:
-		.string "A piece of MAIL featuring a cute\nPIKACHU print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nPikachu print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x7c_item_eilbrief
 
 	str_item_desc_x7c_item_eilbrief:
-		.string "A piece of MAIL featuring a cute\nMAGNEMITE print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nMagnemite print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x7d_item_waldbrief
 
 	str_item_desc_x7d_item_waldbrief:
-		.string "A piece of MAIL featuring a cute\nSLAKOTH print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nSlakoth print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x7e_item_wellenbrief
 
 	str_item_desc_x7e_item_wellenbrief:
-		.string "A piece of MAIL featuring a cute\nWAILMER print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nWailmer print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x7f_item_perlenbrief
 
 	str_item_desc_x7f_item_perlenbrief:
-		.string "A piece of MAIL to be held by a\nPOKéMON. It will bear the print of\nthe POKéMON holding it."
+		.string "A piece of Mail to be held by a\nPokémon. It will bear the print of\nthe Pokémon holding it."
 
 	.global str_item_desc_x80_item_dunkelbrief
 
 	str_item_desc_x80_item_dunkelbrief:
-		.string "A piece of MAIL featuring a cute\nDUSKULL print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nDuskull print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x81_item_tropenbrief
 
 	str_item_desc_x81_item_tropenbrief:
-		.string "A piece of MAIL featuring a cute\nBELLOSSOM print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a cute\nBellossom print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x82_item_traumbrief
 
 	str_item_desc_x82_item_traumbrief:
-		.string "A piece of MAIL to be held by a\nPOKéMON. It will bear the print of\nthe POKéMON holding it."
+		.string "A piece of Mail to be held by a\nPokémon. It will bear the print of\nthe Pokémon holding it."
 
 	.global str_item_desc_x83_item_edelbrief
 
 	str_item_desc_x83_item_edelbrief:
-		.string "A piece of MAIL featuring a\ngorgeous, extravagant print.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a\ngorgeous, extravagant print.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x84_item_retrobrief
 
 	str_item_desc_x84_item_retrobrief:
-		.string "A piece of MAIL featuring a print\nof three cute POKéMON.\nIt is to be held by a POKéMON."
+		.string "A piece of Mail featuring a print\nof three cute Pokémon.\nIt is to be held by a Pokémon."
 
 	.global str_item_desc_x85_item_amrenabeere
 
 	str_item_desc_x85_item_amrenabeere:
-		.string "When held by a POKéMON, it will be\nused in battle to heal paralysis."
+		.string "When held by a Pokémon, it will be\nused in battle to heal paralysis."
 
 	.global str_item_desc_x86_item_maronbeere
 
 	str_item_desc_x86_item_maronbeere:
-		.string "When held by a POKéMON, it will be\nused in battle to wake up."
+		.string "When held by a Pokémon, it will be\nused in battle to wake up."
 
 	.global str_item_desc_x87_item_pirsifbeere
 
 	str_item_desc_x87_item_pirsifbeere:
-		.string "When held by a POKéMON, it will be\nused in battle to cure poison."
+		.string "When held by a Pokémon, it will be\nused in battle to cure poison."
 
 	.global str_item_desc_x88_item_fragiabeere
 
 	str_item_desc_x88_item_fragiabeere:
-		.string "When held by a POKéMON, it will be\nused in battle to heal a burn."
+		.string "When held by a Pokémon, it will be\nused in battle to heal a burn."
 
 	.global str_item_desc_x89_item_wilbirbeere
 
 	str_item_desc_x89_item_wilbirbeere:
-		.string "When held by a POKéMON, it will be\nused in battle for defrosting."
+		.string "When held by a Pokémon, it will be\nused in battle for defrosting."
 
 	.global str_item_desc_x8a_item_jonagobeere
 
 	str_item_desc_x8a_item_jonagobeere:
-		.string "When held by a POKéMON, it will be\nused in battle to restore 10 PP."
+		.string "When held by a Pokémon, it will be\nused in battle to restore 10 PP."
 
 	.global str_item_desc_x8b_item_sinelbeere
 
 	str_item_desc_x8b_item_sinelbeere:
-		.string "When held by a POKéMON, it will be\nused in battle to restore 10 HP."
+		.string "When held by a Pokémon, it will be\nused in battle to restore 10 HP."
 
 	.global str_item_desc_x8c_item_persimbeere
 
 	str_item_desc_x8c_item_persimbeere:
-		.string "When held by a POKéMON, it will be\nused in battle to lift confusion."
+		.string "When held by a Pokémon, it will be\nused in battle to lift confusion."
 
 	.global str_item_desc_x8d_item_prunusbeere
 
 	str_item_desc_x8d_item_prunusbeere:
-		.string "When held by a POKéMON, it will be\nused in battle to heal any problem."
+		.string "When held by a Pokémon, it will be\nused in battle to heal any problem."
 
 	.global str_item_desc_x8e_item_tsitrubeere
 
 	str_item_desc_x8e_item_tsitrubeere:
-		.string "When held by a POKéMON, it will be\nused in battle to restore 30 HP."
+		.string "When held by a Pokémon, it will be\nused in battle to restore 30 HP."
 
 	.global str_item_desc_x8f_item_giefebeere
 
@@ -3093,37 +3093,37 @@
 	.global str_item_desc_xa8_item_lydzibeere
 
 	str_item_desc_xa8_item_lydzibeere:
-		.string "When held by a POKéMON, it raises\nthe ATTACK stat in a pinch."
+		.string "When held by a Pokémon, it raises\nthe Attack stat in a pinch."
 
 	.global str_item_desc_xa9_item_linganbeere
 
 	str_item_desc_xa9_item_linganbeere:
-		.string "When held by a POKéMON, it raises\nthe DEFENSE stat in a pinch."
+		.string "When held by a Pokémon, it raises\nthe Defense stat in a pinch."
 
 	.global str_item_desc_xaa_item_salkabeere
 
 	str_item_desc_xaa_item_salkabeere:
-		.string "When held by a POKéMON, it raises\nthe SPEED stat in a pinch."
+		.string "When held by a POKéMON, it raises\nthe Speed stat in a pinch."
 
 	.global str_item_desc_xab_item_tahaybeere
 
 	str_item_desc_xab_item_tahaybeere:
-		.string "When held by a POKéMON, it raises\nthe SP. ATK stat in a pinch."
+		.string "When held by a Pokémon, it raises\nthe SP. Atk stat in a pinch."
 
 	.global str_item_desc_xac_item_apikobeere
 
 	str_item_desc_xac_item_apikobeere:
-		.string "When held by a POKéMON, it raises\nthe SP. DEF stat in a pinch."
+		.string "When held by a Pokémon, it raises\nthe SP. Def stat in a pinch."
 
 	.global str_item_desc_xad_item_lansatbeere
 
 	str_item_desc_xad_item_lansatbeere:
-		.string "When held by a POKéMON, it raises\nthe critical-hit ratio in a pinch."
+		.string "When held by a Pokémon, it raises\nthe critical-hit ratio in a pinch."
 
 	.global str_item_desc_xae_item_krambobeere
 
 	str_item_desc_xae_item_krambobeere:
-		.string "When held by a POKéMON, it sharply\nraises one stat in a pinch."
+		.string "When held by a Pokémon, it sharply\nraises one stat in a pinch."
 
 	.global str_item_desc_xaf_item_enigmabeere
 
@@ -3148,237 +3148,237 @@
 	.global str_item_desc_xb3_item_blendpuder
 
 	str_item_desc_xb3_item_blendpuder:
-		.string "An item to be held by a POKéMON.\nIt casts a tricky glare that lowers\nthe opponent\s accuracy."
+		.string "An item to be held by a Pokémon.\nIt casts a tricky glare that lowers\nthe opponent\s accuracy."
 
 	.global str_item_desc_xb4_item_schlohkraut
 
 	str_item_desc_xb4_item_schlohkraut:
-		.string "An item to be held by a POKéMON.\nIt restores any lowered stat in\nbattle. It can be used only once."
+		.string "An item to be held by a Pokémon.\nIt restores any lowered stat in\nbattle. It can be used only once."
 
 	.global str_item_desc_xb5_item_machoband
 
 	str_item_desc_xb5_item_machoband:
-		.string "An item to be held by a POKéMON.\nIt promotes strong growth but\nlowers SPEED while it is held."
+		.string .string "An item to be held by a POKéMON.\nIt promotes strong growth but\nlowers Speed while it is held."
 
 	.global str_item_desc_xb6_item_ep_teiler
 
 	str_item_desc_xb6_item_ep_teiler:
-		.string "An item to be held by a POKéMON.\nThe holder gets a share of EXP.\npoints without having to battle."
+		.string "An item to be held by a Pokémon.\nThe holder gets a share of Exp.\npoints without having to battle."
 
 	.global str_item_desc_xb7_item_flinkklaue
 
 	str_item_desc_xb7_item_flinkklaue:
-		.string "An item to be held by a POKéMON.\nA light and sharp claw. The holder\nmay be able to strike first."
+		.string "An item to be held by a Pokémon.\nA light and sharp claw. The holder\nmay be able to strike first."
 
 	.global str_item_desc_xb8_item_sanftglocke
 
 	str_item_desc_xb8_item_sanftglocke:
-		.string "An item to be held by a POKéMON.\nA bell with a comforting chime that\nmakes the holder calm and friendly."
+		.string "An item to be held by a Pokémon.\nA bell with a comforting chime that\nmakes the holder calm and friendly."
 
 	.global str_item_desc_xb9_item_mentalkraut
 
 	str_item_desc_xb9_item_mentalkraut:
-		.string "An item to be held by a POKéMON.\nIt snaps the holder out of\ninfatuation. It can be used once."
+		.string "An item to be held by a Pokémon.\nIt snaps the holder out of\ninfatuation. It can be used once."
 
 	.global str_item_desc_xba_item_wahlband
 
 	str_item_desc_xba_item_wahlband:
-		.string "An item to be held by a POKéMON.\nIt powers up one move, which\nbecomes the only usable one."
+		.string "An item to be held by a Pokémon.\nIt powers up one move, which\nbecomes the only usable one."
 
 	.global str_item_desc_xbb_item_king_stein
 
 	str_item_desc_xbb_item_king_stein:
-		.string "An item to be held by a POKéMON.\nIt may cause the foe to flinch\nupon taking damage."
+		.string "An item to be held by a Pokémon.\nIt may cause the foe to flinch\nupon taking damage."
 
 	.global str_item_desc_xbc_item_silberstaub
 
 	str_item_desc_xbc_item_silberstaub:
-		.string "An item to be held by a POKéMON.\nA shiny silver powder that boosts\nthe power of BUG-type moves."
+		.string "An item to be held by a Pokémon.\nA shiny silver powder that boosts\nthe power of Bug-type moves."
 
 	.global str_item_desc_xbd_item_muenzamulett
 
 	str_item_desc_xbd_item_muenzamulett:
-		.string "An item to be held by a POKéMON.\nIt doubles the battle money if the\nholding POKéMON takes part."
+		.string "An item to be held by a Pokémon.\nIt doubles the battle money if the\nholding Pokémon takes part."
 
 	.global str_item_desc_xbe_item_schutzband
 
 	str_item_desc_xbe_item_schutzband:
-		.string "An item to be held by a POKéMON.\nIt repels wild POKéMON if the\nholder is first in the party."
+		.string "An item to be held by a Pokémon.\nIt repels wild Pokémon if the\nholder is first in the party."
 
 	.global str_item_desc_xbf_item_seelentau
 
 	str_item_desc_xbf_item_seelentau:
-		.string "An orb to be held by a LATIOS or\nLATIAS. It raises the SP. ATK\nand SP. DEF stats."
+		.string "An orb to be held by a Latios or\nLatias. It raises the SP. Atk\nand SP. Def stats."
 
 	.global str_item_desc_xc0_item_abysszahn
 
 	str_item_desc_xc0_item_abysszahn:
-		.string "An item to be held by a POKéMON.\nA fang that gleams a sharp silver.\nIt raises the SP. ATK stat."
+		.string "An item to be held by a Pokémon.\nA fang that gleams a sharp silver.\nIt raises the SP. Atk stat."
 
 	.global str_item_desc_xc1_item_abyssplatte
 
 	str_item_desc_xc1_item_abyssplatte:
-		.string "An item to be held by a POKéMON.\nA scale that shines a faint pink.\nIt raises the SP. DEF stat."
+		.string "An item to be held by a Pokémon.\nA scale that shines a faint pink.\nIt raises the SP. Def stat."
 
 	.global str_item_desc_xc2_item_rauchball
 
 	str_item_desc_xc2_item_rauchball:
-		.string "An item to be held by a POKéMON.\nThe holding POKéMON can flee from\nany wild POKéMON for sure."
+		.string "An item to be held by a Pokémon.\nThe holding Pokémon can flee from\nany wild Pokémon for sure."
 
 	.global str_item_desc_xc3_item_ewigstein
 
 	str_item_desc_xc3_item_ewigstein:
-		.string "An item to be held by a POKéMON.\nThe holding POKéMON is prevented\nfrom evolving."
+		.string "An item to be held by a Pokémon.\nThe holding Pokémon is prevented\nfrom evolving."
 
 	.global str_item_desc_xc4_item_fokus_band
 
 	str_item_desc_xc4_item_fokus_band:
-		.string "An item to be held by a POKéMON.\nThe holding POKéMON may endure an\nattack, leaving just 1 HP."
+		.string "An item to be held by a Pokémon.\nThe holding Pokémon may endure an\nattack, leaving just 1 HP."
 
 	.global str_item_desc_xc5_item_gluecks_ei
 
 	str_item_desc_xc5_item_gluecks_ei:
-		.string "An item to be held by a POKéMON.\nAn egg filled with happiness that\nearns extra EXP. points in battle."
+		.string "An item to be held by a Pokémon.\nAn egg filled with happiness that\nearns extra Exp. points in battle."
 
 	.global str_item_desc_xc6_item_scope_linse
 
 	str_item_desc_xc6_item_scope_linse:
-		.string "An item to be held by a POKéMON.\nA lens that boosts the critical-hit\nratio of the holding POKéMON."
+		.string "An item to be held by a Pokémon.\nA lens that boosts the critical-hit\nratio of the holding Pokémon."
 
 	.global str_item_desc_xc7_item_metallmantel
 
 	str_item_desc_xc7_item_metallmantel:
-		.string "An item to be held by a POKéMON.\nA special metallic film that boosts\nthe power of STEEL-type moves."
+		.string "An item to be held by a Pokémon.\nA special metallic film that boosts\nthe power of Steel-type moves."
 
 	.global str_item_desc_xc8_item_ueberreste
 
 	str_item_desc_xc8_item_ueberreste:
-		.string "An item to be held by a POKéMON.\nThe holding POKéMON gradually\nregains HP during battle."
+		.string "An item to be held by a Pokémon.\nThe holding Pokémon gradually\nregains HP during battle."
 
 	.global str_item_desc_xc9_item_drachenhaut
 
 	str_item_desc_xc9_item_drachenhaut:
-		.string "A thick and tough scale.\nA DRAGON-type POKéMON may be\nholding it."
+		.string "A thick and tough scale.\nA Dragon-type Pokémon may be\nholding it."
 
 	.global str_item_desc_xca_item_kugelblitz
 
 	str_item_desc_xca_item_kugelblitz:
-		.string "An orb to be held by a PIKACHU\nthat raises the SP. ATK stat.\nTouching it may cause a shock."
+		.string "An orb to be held by a Pikachu\nthat raises the SP. Atk stat.\nTouching it may cause a shock."
 
 	.global str_item_desc_xcb_item_pudersand
 
 	str_item_desc_xcb_item_pudersand:
-		.string "An item to be held by a POKéMON.\nA loose, silky sand that boosts the\npower of GROUND-type moves."
+		.string "An item to be held by a Pokémon.\nA loose, silky sand that boosts the\npower of Ground-type moves."
 
 	.global str_item_desc_xcc_item_granitstein
 
 	str_item_desc_xcc_item_granitstein:
-		.string "An item to be held by a POKéMON.\nAn unbreakable stone that boosts\nthe power of ROCK-type moves."
+		.string "An item to be held by a Pokémon.\nAn unbreakable stone that boosts\nthe power of Rock-type moves."
 
 	.global str_item_desc_xcd_item_wundersaat
 
 	str_item_desc_xcd_item_wundersaat:
-		.string "An item to be held by a POKéMON.\nA seed imbued with life that boosts\nthe power of GRASS-type moves."
+		.string "An item to be held by a Pokémon.\nA seed imbued with life that boosts\nthe power of Grass-type moves."
 
 	.global str_item_desc_xce_item_schattenglas
 
 	str_item_desc_xce_item_schattenglas:
-		.string "An item to be held by a POKéMON.\nA shady-looking pair of glasses\nthat boosts DARK-type moves."
+		.string "An item to be held by a Pokémon.\nA shady-looking pair of glasses\nthat boosts Dark-type moves."
 
 	.global str_item_desc_xcf_item_schwarzgurt
 
 	str_item_desc_xcf_item_schwarzgurt:
-		.string "An item to be held by a POKéMON.\nA belt that boosts determination\nand FIGHTING-type moves."
+		.string "An item to be held by a Pokémon.\nA belt that boosts determination\nand Fighting-type moves."
 
 	.global str_item_desc_xd0_item_magnet
 
 	str_item_desc_xd0_item_magnet:
-		.string "An item to be held by a POKéMON.\nA powerful magnet that boosts the\npower of ELECTRIC-type moves."
+		.string "An item to be held by a Pokémon.\nA powerful magnet that boosts the\npower of Electric-type moves."
 
 	.global str_item_desc_xd1_item_zauberwasser
 
 	str_item_desc_xd1_item_zauberwasser:
-		.string "An item to be held by a POKéMON.\nA teardrop-shaped gem that boosts\nthe power of WATER-type moves."
+		.string "An item to be held by a Pokémon.\nA teardrop-shaped gem that boosts\nthe power of Water-type moves."
 
 	.global str_item_desc_xd2_item_hackattack
 
 	str_item_desc_xd2_item_hackattack:
-		.string "An item to be held by a POKéMON.\nA long, sharp beak that boosts the\npower of FLYING-type moves."
+		.string "An item to be held by a Pokémon.\nA long, sharp beak that boosts the\npower of Flying-type moves."
 
 	.global str_item_desc_xd3_item_giftstich
 
 	str_item_desc_xd3_item_giftstich:
-		.string "An item to be held by a POKéMON.\nA small, poisonous barb that boosts\nthe power of POISON-type moves."
+		.string "An item to be held by a Pokémon.\nA small, poisonous barb that boosts\nthe power of Poison-type moves."
 
 	.global str_item_desc_xd4_item_ewiges_eis
 
 	str_item_desc_xd4_item_ewiges_eis:
-		.string "An item to be held by a POKéMON.\nA piece of ice that repels heat\nand boosts ICE-type moves."
+		.string "An item to be held by a Pokémon.\nA piece of ice that repels heat\nand boosts Ice-type moves."
 
 	.global str_item_desc_xd5_item_bannsticker
 
 	str_item_desc_xd5_item_bannsticker:
-		.string "An item to be held by a POKéMON.\nA sinister, eerie tag that boosts\nGHOST-type moves."
+		.string "An item to be held by a Pokémon.\nA sinister, eerie tag that boosts\nGhost-type moves."
 
 	.global str_item_desc_xd6_item_kruemmloeffel
 
 	str_item_desc_xd6_item_kruemmloeffel:
-		.string "An item to be held by a POKéMON.\nA spoon imbued with telekinetic\npower boosts PSYCHIC-type moves."
+		.string "An item to be held by a Pokémon.\nA spoon imbued with telekinetic\npower boosts Psychic-type moves."
 
 	.global str_item_desc_xd7_item_holzkohle
 
 	str_item_desc_xd7_item_holzkohle:
-		.string "An item to be held by a POKéMON.\nA combustible fuel that boosts the\npower of FIRE-type moves."
+		.string "An item to be held by a Pokémon.\nA combustible fuel that boosts the\npower of Fire-type moves."
 
 	.global str_item_desc_xd8_item_drachenzahn
 
 	str_item_desc_xd8_item_drachenzahn:
-		.string "An item to be held by a POKéMON.\nA hard and sharp fang that boosts\nthe power of DRAGON-type moves."
+		.string "An item to be held by a Pokémon.\nA hard and sharp fang that boosts\nthe power of Dragon-type moves."
 
 	.global str_item_desc_xd9_item_seidenschal
 
 	str_item_desc_xd9_item_seidenschal:
-		.string "An item to be held by a POKéMON.\nA sumptuous scarf that boosts the\npower of NORMAL-type moves."
+		.string "An item to be held by a Pokémon.\nA sumptuous scarf that boosts the\npower of Normal-type moves."
 
 	.global str_item_desc_xda_item_up_grade
 
 	str_item_desc_xda_item_up_grade:
-		.string "A transparent device filled with all\nsorts of data.\nIt is made by SILPH CO."
+		.string "A transparent device filled with all\nsorts of data.\nIt is made by Silph Co."
 
 	.global str_item_desc_xdb_item_seegesang
 
 	str_item_desc_xdb_item_seegesang:
-		.string "An item to be held by a POKéMON.\nThe holding POKéMON regains some\nHP upon striking the foe."
+		.string "An item to be held by a Pokémon.\nThe holding Pokémon regains some\nHP upon striking the foe."
 
 	.global str_item_desc_xdc_item_seerauch
 
 	str_item_desc_xdc_item_seerauch:
-		.string "An item to be held by a POKéMON.\nIt slightly boosts the power of\nWATER-type moves."
+		.string "An item to be held by a Pokémon.\nIt slightly boosts the power of\nWater-type moves."
 
 	.global str_item_desc_xdd_item_laxrauch
 
 	str_item_desc_xdd_item_laxrauch:
-		.string "An item to be held by a POKéMON.\nIts tricky aroma slightly reduces\nthe foe\s accuracy."
+		.string "An item to be held by a Pokémon.\nIts tricky aroma slightly reduces\nthe foe\s accuracy."
 
 	.global str_item_desc_xde_item_lucky_punch
 
 	str_item_desc_xde_item_lucky_punch:
-		.string "A glove to be held by a CHANSEY.\nIt raises CHANSEY\s critical-hit\nratio."
+		.string "A glove to be held by a Chansey.\nIt raises Chansey\s critical-hit\nratio."
 
 	.global str_item_desc_xdf_item_metallstaub
 
 	str_item_desc_xdf_item_metallstaub:
-		.string "A fine, hard powder to be held by\na DITTO.\nIt raises DITTO\s DEFENSE stat."
+		.string "A fine, hard powder to be held by\na Ditto.\nIt raises Ditto\s Defense stat."
 
 	.global str_item_desc_xe0_item_kampfknochen
 
 	str_item_desc_xe0_item_kampfknochen:
-		.string "A hard bone of some sort to be\nheld by a CUBONE or MAROWAK.\nIt raises the ATTACK stat."
+		.string "A hard bone of some sort to be\nheld by a Cubone or Marowak.\nIt raises the Attack stat."
 
 	.global str_item_desc_xe1_item_lauchstange
 
 	str_item_desc_xe1_item_lauchstange:
-		.string "A stick of leek to be held by a\nFARFETCH\D. It raises FARFETCH\D\s\ncritical-hit ratio."
+		.string "A stick of leek to be held by a\nFarfetch\D. It raises Farfetch\D\s\ncritical-hit ratio."
 
 	.global str_item_desc_xe2_item_bisaflornit
 
@@ -3523,27 +3523,27 @@
 	.global str_item_desc_xfe_item_roter_schal
 
 	str_item_desc_xfe_item_roter_schal:
-		.string "An item to be held by a POKéMON.\nIt boosts the holding POKéMON\s\nCOOL condition in CONTESTS."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nCool condition in Contests."
 
 	.global str_item_desc_xff_item_blauer_schal
 
 	str_item_desc_xff_item_blauer_schal:
-		.string "An item to be held by a POKéMON.\nIt boosts the holding POKéMON\s\nBEAUTY condition in CONTESTS."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nBeauty condition in Contests."
 
 	.global str_item_desc_x100_item_rosa_schal
 
 	str_item_desc_x100_item_rosa_schal:
-		.string "An item to be held by a POKéMON.\nIt boosts the holding POKéMON\s\nCUTE condition in CONTESTS."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nCute condition in Contests."
 
 	.global str_item_desc_x101_item_gruener_schal
 
 	str_item_desc_x101_item_gruener_schal:
-		.string "An item to be held by a POKéMON.\nIt boosts the holding POKéMON\s\nSMART condition in CONTESTS."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nSMart condition in Contests."
 
 	.global str_item_desc_x102_item_gelber_schal
 
 	str_item_desc_x102_item_gelber_schal:
-		.string "An item to be held by a POKéMON.\nIt boosts the holding POKéMON\s\nTOUGH condition in CONTESTS."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nTough condition in Contests."
 
 	.global str_item_desc_x103_item_eilrad
 
@@ -3553,7 +3553,7 @@
 	.global str_item_desc_x104_item_muenzkorb
 
 	str_item_desc_x104_item_muenzkorb:
-		.string "A case for holding COINS obtained\nat the GAME CORNER.\nIt holds up to 9,999 COINS."
+		.string "A case for holding Coins obtained\nat the Game Corner.\nIt holds up to 9,999 Coins."
 
 	.global str_item_desc_x105_item_detektor
 
@@ -3563,27 +3563,27 @@
 	.global str_item_desc_x106_item_angel
 
 	str_item_desc_x106_item_angel:
-		.string "An old and beat-up fishing rod.\nUse it by any body of water to \nfish for wild POKéMON."
+		.string "An old and beat-up fishing rod.\nUse it by any body of water to \nfish for wild Pokémon."
 
 	.global str_item_desc_x107_item_profiangel
 
 	str_item_desc_x107_item_profiangel:
-		.string "A new, good-quality fishing rod.\nUse it by any body of water to \nfish for wild POKéMON."
+		.string "A new, good-quality fishing rod.\nUse it by any body of water to \nfish for wild Pokémon."
 
 	.global str_item_desc_x108_item_superangel
 
 	str_item_desc_x108_item_superangel:
-		.string "An awesome, high-tech fishing rod.\nUse it by any body of water to fish\nfor wild POKéMON."
+		.string "An awesome, high-tech fishing rod.\nUse it by any body of water to fish\nfor wild Pokémon."
 
 	.global str_item_desc_x109_item_bootsticket
 
 	str_item_desc_x109_item_bootsticket:
-		.string "The ticket required for sailing on\nthe ferry S.S. ANNE.\nIt has a drawing of a ship on it."
+		.string "The ticket required for sailing on\nthe ferry S.S. Anne.\nIt has a drawing of a ship on it."
 
 	.global str_item_desc_x10a_item_wettb_karte
 
 	str_item_desc_x10a_item_wettb_karte:
-		.string "The pass required for entering\nPOKéMON CONTESTS. It has a\ndrawing of an award ribbon on it."
+		.string "The pass required for entering\nPokémon Contests. It has a\ndrawing of an award ribbon on it."
 
 	.global str_item_desc_x10b_item_item_10b
 
@@ -3593,12 +3593,12 @@
 	.global str_item_desc_x10c_item_wailmerkanne
 
 	str_item_desc_x10c_item_wailmerkanne:
-		.string "A nifty watering pail.\nUse it to promote strong growth in\nBERRIES planted in soft soil."
+		.string "A nifty watering pail.\nUse it to promote strong growth in\nBerries planted in soft soil."
 
 	.global str_item_desc_x10d_item_devon_waren
 
 	str_item_desc_x10d_item_devon_waren:
-		.string "A package that contains mechanical\nparts of some sort made by the\nDEVON CORPORATION."
+		.string "A package that contains mechanical\nparts of some sort made by the\nDevon Corporation."
 
 	.global str_item_desc_x10e_item_aschetasche
 
@@ -3608,7 +3608,7 @@
 	.global str_item_desc_x10f_item_kelleroeffner
 
 	str_item_desc_x10f_item_kelleroeffner:
-		.string "The key to NEW MAUVILLE, which\nwas constructed beneath MAUVILLE\nCITY."
+		.string "The key to New Mauville, which\nwas constructed beneath Mauville\nCity."
 
 	.global str_item_desc_x110_item_kunstrad
 
@@ -3618,12 +3618,12 @@
 	.global str_item_desc_x111_item_box
 
 	str_item_desc_x111_item_box:
-		.string "A case for holding POKEBLOCKS made\nwith a BERRY BLENDER. It releases\none POKEBLOCK when shaken."
+		.string "A case for holding Pokéblocks made\nwith a Berry Blender. It releases\none Pokéblock when shaken."
 
 	.global str_item_desc_x112_item_brief
 
 	str_item_desc_x112_item_brief:
-		.string "An extremely important letter to\nSTEVEN from the PRESIDENT of the\nDEVON CORPORATION."
+		.string "An extremely important letter to\nSteven from the President of the\nDevon Corporation."
 
 	.global str_item_desc_x113_item_aeon_ticket
 
@@ -3648,52 +3648,52 @@
 	.global str_item_desc_x117_item_wuestenglas
 
 	str_item_desc_x117_item_wuestenglas:
-		.string "A pair of protective goggles.\nThey enable a TRAINER to travel\nthrough even desert sandstorms."
+		.string "A pair of protective goggles.\nThey enable a Trainer to travel\nthrough even desert sandstorms."
 
 	.global str_item_desc_x118_item_meteorit
 
 	str_item_desc_x118_item_meteorit:
-		.string "A meteorite that fell from space\nonto MT. MOON long ago.\nIt is very lumpy and hard."
+		.string "A meteorite that fell from space\nonto MT. Moon long ago.\nIt is very lumpy and hard."
 
 	.global str_item_desc_x119_item_k1_schluessel
 
 	str_item_desc_x119_item_k1_schluessel:
-		.string "A key that opens the door to Room\n1 inside the ABANDONED SHIP.\nIt is old and looks easily broken."
+		.string "A key that opens the door to Room\n1 inside the Abandoned Ship.\nIt is old and looks easily broken."
 
 	.global str_item_desc_x11a_item_k2_schluessel
 
 	str_item_desc_x11a_item_k2_schluessel:
-		.string "A key that opens the door to Room\n2 inside the ABANDONED SHIP.\nIt is old and looks easily broken."
+		.string "A key that opens the door to Room\n2 inside the Abandoned Ship.\nIt is old and looks easily broken."
 
 	.global str_item_desc_x11b_item_k4_schluessel
 
 	str_item_desc_x11b_item_k4_schluessel:
-		.string "A key that opens the door to Room\n4 inside the ABANDONED SHIP.\nIt is old and looks easily broken."
+		.string "A key that opens the door to Room\n4 inside the Abandoned Ship.\nIt is old and looks easily broken."
 
 	.global str_item_desc_x11c_item_k6_schluessel
 
 	str_item_desc_x11c_item_k6_schluessel:
-		.string "A key that opens the door to Room\n6 inside the ABANDONED SHIP.\nIt is old and looks easily broken."
+		.string "A key that opens the door to Room\n6 inside the Abandoned Ship.\nIt is old and looks easily broken."
 
 	.global str_item_desc_x11d_item_l_schluessel
 
 	str_item_desc_x11d_item_l_schluessel:
-		.string "A key that opens the storage hold\ninside the ABANDONED SHIP.\nIt is old and looks easily broken."
+		.string "A key that opens the storage hold\ninside the Abandoned Ship.\nIt is old and looks easily broken."
 
 	.global str_item_desc_x11e_item_wurzelfossil
 
 	str_item_desc_x11e_item_wurzelfossil:
-		.string "A fossil of an ancient, seafloor-\ndwelling POKéMON. It appears to be\npart of a plant root."
+		.string "A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a plant root."
 
 	.global str_item_desc_x11f_item_klauenfossil
 
 	str_item_desc_x11f_item_klauenfossil:
-		.string "A fossil of an ancient, seafloor-\ndwelling POKéMON. It appears to be\npart of a claw."
+		.string "A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a claw."
 
 	.global str_item_desc_x120_item_devon_scope
 
 	str_item_desc_x120_item_devon_scope:
-		.string "A scope that signals the presence\nof any unseeable POKéMON.\nIt is made by the DEVON CORP."
+		.string "A scope that signals the presence\nof any unseeable Pokémon.\nIt is made by the Devon Corp."
 
 	.global str_item_desc_x121_item_tm01
 
@@ -3713,7 +3713,7 @@
 	.global str_item_desc_x124_item_tm04
 
 	str_item_desc_x124_item_tm04:
-		.string "The user focuses\nits mind to raise\nthe SP. ATK and\nSP. DEF stats."
+		.string "The user focuses\nits mind to raise\nthe SP. Atk and\nSP. Def stats."
 
 	.global str_item_desc_x125_item_tm05
 
@@ -3728,12 +3728,12 @@
 	.global str_item_desc_x127_item_tm07
 
 	str_item_desc_x127_item_tm07:
-		.string "A hailstorm lasting\nfive turns damages\nall POKéMON except\nthe ICE-type."
+		.string "A hailstorm lasting\nfive turns damages\nall Pokémon except\nthe Ice-type."
 
 	.global str_item_desc_x128_item_tm08
 
 	str_item_desc_x128_item_tm08:
-		.string "The user bulks up\nits body to boost\nboth its ATTACK and\nDEFENSE stats."
+		.string "The user bulks up\nits body to boost\nboth its Attack and\nDefense stats."
 
 	.global str_item_desc_x129_item_tm09
 
@@ -3748,7 +3748,7 @@
 	.global str_item_desc_x12b_item_tm11
 
 	str_item_desc_x12b_item_tm11:
-		.string "The sun blazes for\nfive turns, powering\nup FIRE-type\nmoves."
+		.string "The sun blazes for\nfive turns, powering\nup Fire-type\nmoves."
 
 	.global str_item_desc_x12c_item_tm12
 
@@ -3773,7 +3773,7 @@
 	.global str_item_desc_x130_item_tm16
 
 	str_item_desc_x130_item_tm16:
-		.string "A wall of light\ncuts damage from\nSP. ATK attacks\nfor five turns."
+		.string "A wall of light\ncuts damage from\nSP. Atk attacks\nfor five turns."
 
 	.global str_item_desc_x131_item_tm17
 
@@ -3783,7 +3783,7 @@
 	.global str_item_desc_x132_item_tm18
 
 	str_item_desc_x132_item_tm18:
-		.string "A heavy rain falls\nfor five turns,\npowering up WATER-\ntype moves."
+		.string "A heavy rain falls\nfor five turns,\npowering up Water-\ntype moves."
 
 	.global str_item_desc_x133_item_tm19
 
@@ -3798,7 +3798,7 @@
 	.global str_item_desc_x135_item_tm21
 
 	str_item_desc_x135_item_tm21:
-		.string "This attack move\ngrows more powerful\nthe less the user\nlikes its TRAINER."
+		.string "This attack move\ngrows more powerful\nthe less the user\nlikes its Trainer."
 
 	.global str_item_desc_x136_item_tm22
 
@@ -3808,7 +3808,7 @@
 	.global str_item_desc_x137_item_tm23
 
 	str_item_desc_x137_item_tm23:
-		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe\s DEFENSE stat."
+		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe\s Defense stat."
 
 	.global str_item_desc_x138_item_tm24
 
@@ -3823,12 +3823,12 @@
 	.global str_item_desc_x13a_item_tm26
 
 	str_item_desc_x13a_item_tm26:
-		.string "An earthquake that\nstrikes all POKéMON\nin battle excluding\nthe user."
+		.string "An earthquake that\nstrikes all Pokémon\nin battle excluding\nthe user."
 
 	.global str_item_desc_x13b_item_tm27
 
 	str_item_desc_x13b_item_tm27:
-		.string "This attack move\ngrows more powerful\nthe more the user\nlikes its TRAINER."
+		.string "This attack move\ngrows more powerful\nthe more the user\nlikes its Trainer."
 
 	.global str_item_desc_x13c_item_tm28
 
@@ -3838,17 +3838,17 @@
 	.global str_item_desc_x13d_item_tm29
 
 	str_item_desc_x13d_item_tm29:
-		.string "A strong telekinetic\nattack. It may also\nlower the foe\s\nSP. DEF stat."
+		.string "A strong telekinetic\nattack. It may also\nlower the foe\s\nSP. Def stat."
 
 	.global str_item_desc_x13e_item_tm30
 
 	str_item_desc_x13e_item_tm30:
-		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe\s SP. DEF."
+		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe\s SP. Def."
 
 	.global str_item_desc_x13f_item_tm31
 
 	str_item_desc_x13f_item_tm31:
-		.string "An attack that also\nbreaks any barrier\nlike LIGHT SCREEN\nand REFLECT."
+		.string "An attack that also\nbreaks any barrier\nlike Light Screen\nand Reflect."
 
 	.global str_item_desc_x140_item_tm32
 
@@ -3878,7 +3878,7 @@
 	.global str_item_desc_x145_item_tm37
 
 	str_item_desc_x145_item_tm37:
-		.string "A 5-turn sandstorm\nthat damages all\ntypes except ROCK,\nGROUND, and STEEL."
+		.string "A 5-turn sandstorm\nthat damages all\ntypes except Rock,\nGround, and Steel."
 
 	.global str_item_desc_x146_item_tm38
 
@@ -3888,7 +3888,7 @@
 	.global str_item_desc_x147_item_tm39
 
 	str_item_desc_x147_item_tm39:
-		.string "Boulders are hurled\nat the foe. It also\nlowers the foe\s\nSPEED if it hits."
+		.string "Boulders are hurled\nat the foe. It also\nlowers the foe\s\nSpeed if it hits."
 
 	.global str_item_desc_x148_item_tm40
 
@@ -3928,7 +3928,7 @@
 	.global str_item_desc_x14f_item_tm47
 
 	str_item_desc_x14f_item_tm47:
-		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user\s DEFENSE."
+		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user\s Defense."
 
 	.global str_item_desc_x150_item_tm48
 
@@ -3943,7 +3943,7 @@
 	.global str_item_desc_x152_item_tm50
 
 	str_item_desc_x152_item_tm50:
-		.string "An intense attack\nthat also sharply\nreduces the user\s\nSP. ATK stat."
+		.string "An intense attack\nthat also sharply\nreduces the user\s\nSP. Atk stat."
 
 	.global str_item_desc_x153_item_vm01
 
@@ -3973,7 +3973,7 @@
 	.global str_item_desc_x158_item_vm06
 
 	str_item_desc_x158_item_vm06:
-		.string "An attack that may\nalso cut DEFENSE.\nIt can also smash\ncracked boulders."
+		.string "An attack that may\nalso cut Defense.\nIt can also smash\ncracked boulders."
 
 	.global str_item_desc_x159_item_vm07
 
@@ -3998,62 +3998,62 @@
 	.global str_item_desc_x15d_item_eichs_paket
 
 	str_item_desc_x15d_item_eichs_paket:
-		.string "A parcel to be delivered to PROF.\nOAK from VIRIDIAN CITY\s POKéMON\nMART."
+		.string "A parcel to be delivered to Prof.\nOak from Viridian City\s Pokémon\nMart."
 
 	.global str_item_desc_x15e_item_pokefloete
 
 	str_item_desc_x15e_item_pokefloete:
-		.string "A flute that is said to instantly\nawaken any POKéMON. It has a\nlovely tone."
+		.string "A flute that is said to instantly\nawaken any Pokémon. It has a\nlovely tone."
 
 	.global str_item_desc_x15f_item__oeffner
 
 	str_item_desc_x15f_item__oeffner:
-		.string "The key to CINNABAR ISLAND GYM\s\nfront door. It is colored red and\ndecorated."
+		.string "The key to Cinnabar Island Gym\s\nfront door. It is colored red and\ndecorated."
 
 	.global str_item_desc_x160_item_rad_coupon
 
 	str_item_desc_x160_item_rad_coupon:
-		.string "Take this voucher to the BIKE SHOP\nin CERULEAN CITY and exchange it\nfor a bicycle."
+		.string "Take this voucher to the Bike Shop\nin Cerulean City and exchange it\nfor a bicycle."
 
 	.global str_item_desc_x161_item_pkmcorder
 
 	str_item_desc_x161_item_pkmcorder:
-		.string "A set of false teeth lost by the\nSAFARI ZONE\S WARDEN. It makes his\nsmile sparkle."
+		.string "A set of false teeth lost by the\nSafari Zone\s Warden. It makes his\nsmile sparkle."
 
 	.global str_item_desc_x162_item_altbernstein
 
 	str_item_desc_x162_item_altbernstein:
-		.string "A piece of amber that contains\nthe genes of an ancient POKéMON.\nIt is clear with a reddish tint."
+		.string "A piece of amber that contains\nthe genes of an ancient Pokémon.\nIt is clear with a reddish tint."
 
 	.global str_item_desc_x163_item_tueroeffner
 
 	str_item_desc_x163_item_tueroeffner:
-		.string "A card-type key that unlocks doors\nin SILPH CO.\s HEAD OFFICE in\nSAFFRON CITY."
+		.string "A card-type key that unlocks doors\nin Silph Co.\s Head Office in\nSaffron City."
 
 	.global str_item_desc_x164_item_liftoeffner
 
 	str_item_desc_x164_item_liftoeffner:
-		.string "A key that operates the elevator\nin TEAM ROCKET\s HIDEOUT.\nIt bears the TEAM ROCKET logo."
+		.string "A key that operates the elevator\nin Team Rocket\s Hideout.\nIt bears the Team Rocket logo."
 
 	.global str_item_desc_x165_item_helixfossil
 
 	str_item_desc_x165_item_helixfossil:
-		.string "A fossil of an ancient, seafloor-\ndwelling POKéMON. It appears to be\npart of a seashell."
+		.string "A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a seashell."
 
 	.global str_item_desc_x166_item_domfossil
 
 	str_item_desc_x166_item_domfossil:
-		.string "A fossil of an ancient, seafloor-\ndwelling POKéMON. It appears to be\npart of a shell."
+		.string "A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a shell."
 
 	.global str_item_desc_x167_item_silph_scope
 
 	str_item_desc_x167_item_silph_scope:
-		.string "A scope that makes unseeable\nPOKéMON visible.\nIt is made by SILPH CO."
+		.string "A scope that makes unseeable\nPokémon visible.\nIt is made by Silph Co."
 
 	.global str_item_desc_x168_item_fahrrad
 
 	str_item_desc_x168_item_fahrrad:
-		.string "A folding bicycle that allows\nfaster movement than the RUNNING\nSHOES."
+		.string "A folding bicycle that allows\nfaster movement than the Running\nShoes."
 
 	.global str_item_desc_x169_item_karte
 
@@ -4063,7 +4063,7 @@
 	.global str_item_desc_x16a_item_kampffahnder
 
 	str_item_desc_x16a_item_kampffahnder:
-		.string "A device that indicates TRAINERS\nwho want to battle. The battery\ncharges while traveling."
+		.string "A device that indicates Trainers\nwho want to battle. The battery\ncharges while traveling."
 
 	.global str_item_desc_x16b_item_ruhmesdatei
 
@@ -4073,27 +4073,27 @@
 	.global str_item_desc_x16c_item_vmtm_box
 
 	str_item_desc_x16c_item_vmtm_box:
-		.string "A case that holds TMs and HMs.\nIt is attached to the BAG\s\ncompartment for important items."
+		.string "A case that holds TMs and HMs.\nIt is attached to the Bag\s\ncompartment for important items."
 
 	.global str_item_desc_x16d_item_beerentuete
 
 	str_item_desc_x16d_item_beerentuete:
-		.string "A pouch for carrying BERRIES.\nIt is attached to the BAG\s\ncompartment for important items."
+		.string "A pouch for carrying Berries.\nIt is attached to the Bag\s\ncompartment for important items."
 
 	.global str_item_desc_x16e_item_lehrkanal
 
 	str_item_desc_x16e_item_lehrkanal:
-		.string "A television set that is tuned to\na program with useful tips for\nnovice TRAINERS."
+		.string "A television set that is tuned to\na program with useful tips for\nnovice Trainers."
 
 	.global str_item_desc_x16f_item_tri_pass
 
 	str_item_desc_x16f_item_tri_pass:
-		.string "A pass for ferries between ONE,\nTWO, and THREE ISLAND.\nIt has a drawing of three islands."
+		.string "A pass for ferries between One,\nTwo, and Three Island.\nIt has a drawing of three islands."
 
 	.global str_item_desc_x170_item_bunt_pass
 
 	str_item_desc_x170_item_bunt_pass:
-		.string "A pass for ferries between\nVERMILION and the SEVII ISLANDS.\nIt features a drawing of a rainbow."
+		.string "A pass for ferries between\nVermilion and the Sevii Islands.\nIt features a drawing of a rainbow."
 
 	.global str_item_desc_x171_item_mega_amulett
 
@@ -4103,17 +4103,17 @@
 	.global str_item_desc_x172_item_geheimticket
 
 	str_item_desc_x172_item_geheimticket:
-		.string "A ticket required to board the ship\nto NAVEL ROCK.\nIt glows with a mystic light."
+		.string "A ticket required to board the ship\nto Navel Rock.\nIt glows with a mystic light."
 
 	.global str_item_desc_x173_item_auroraticket
 
 	str_item_desc_x173_item_auroraticket:
-		.string "A ticket required to board the ship\nto BIRTH ISLAND.\nIt glows beautifully."
+		.string "A ticket required to board the ship\nto Birth Island.\nIt glows beautifully."
 
 	.global str_item_desc_x174_item_puderdoeschen
 
 	str_item_desc_x174_item_puderdoeschen:
-		.string "A jar for storing BERRY POWDER\nmade using a BERRY CRUSHER."
+		.string "A jar for storing Berry Powder\nmade using a Berry Crusher."
 
 	.global str_item_desc_x175_item_rubin
 

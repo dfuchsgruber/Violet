@@ -229,7 +229,7 @@ fmap:
 	.global str_anim_engine_elitefounders_5
 
 	str_anim_engine_elitefounders_5:
-		.string " Der einst\n stärkste\n Trainer\n Thetos,\n der\n ehemalige\n DOTS DOTS \n Champion!"
+		.string "Der einst\n stärkste\n Trainer\n Thetos,\n der\n ehemalige\n DOTS DOTS \n Champion!"
 
 
 	.global str_anim_engine_elitefounders_6

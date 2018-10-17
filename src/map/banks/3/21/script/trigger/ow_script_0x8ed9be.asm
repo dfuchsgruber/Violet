@@ -187,7 +187,7 @@ str_0x8edd68:
 .global str_0x8edba7
 
 str_0x8edba7:
-	.autostring 35 2 "Der Ep-Teiler war ein Geschenk meines Freundes aus Hoenn DOTS\pAber so ein nützliches Item ist in deinen fähigen Händen sicher besser aufgehoben DOTS\pAn mir wäre er nur verschwendet DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS"
+	.autostring 35 2 "Der EP-Teiler war ein Geschenk meines Freundes aus Hoenn DOTS\pAber so ein nützliches Item ist in deinen fähigen Händen sicher besser aufgehoben DOTS\pAn mir wäre er nur verschwendet DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS"
         
 .elseif LANG_EN
 
