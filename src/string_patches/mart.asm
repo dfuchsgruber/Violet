@@ -14,7 +14,7 @@
 	.global str_mart_bye
 
 	str_mart_bye:
-		.string "Au revior!"
+		.string "Au revoir!"
 
 
 .elseif LANG_EN
@@ -31,6 +31,6 @@
 	.global str_mart_bye
 
 	str_mart_bye:
-		.string "Au revior!"
+		.string "Au revoir!"
 
 .endif
