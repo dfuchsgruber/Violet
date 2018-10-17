@@ -282,7 +282,7 @@ str_well_done_rival:
 	.autostring 36 2 "Gut gemacht, RIVAL!\pSo muss das sein. Komm zurück in die Reihe."
 
 str_rival_says_was_easy:
-	.autostring 36 2 "Wie ich gesagt habe, ein Kinderspiel!"
+	.autostring 36 2 "Wie ich gesagt habe:\nEin Kinderspiel!"
 
 str_mays_turn:
 	.autostring 36 2 "Fein! Dann fehlst du nur noch du, Maike!\pKomm zu mir!"

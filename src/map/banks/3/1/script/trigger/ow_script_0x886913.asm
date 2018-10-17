@@ -149,7 +149,7 @@ str_0x8869ab:
 .global str_0x886a80
 
 str_0x886a80:
-    .string "Diesen Ort nennt man Pokestop.\nJeder Trainer hat sozusagen die\lPflicht dort vorbeizuschauen,\lsobald er eine neue Stadt\lerreicht. Komm, gehen wir hinein."
+    .string "Diesen Ort nennt man Pokéstop.\nJeder Trainer hat sozusagen die\lPflicht dort vorbeizuschauen,\lsobald er eine neue Stadt\lerreicht. Komm, gehen wir hinein."
         
         
 .elseif LANG_EN
