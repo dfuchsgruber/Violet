@@ -1,1 +1,78 @@
-{"footer": {"size": [5, 7], "borders": [[8, 8], [8, 8]], "tsp": "maptileset12", "tss": "maptileset45", "border_size": [2, 2], "blocks": [[1795, 1768, 1768, 1768, 1796], [1803, 1776, 1776, 1776, 1804], [1811, 1784, 1784, 1784, 1812], [13061, 13077, 13077, 13077, 13061], [13077, 13069, 13069, 13069, 13077], [13061, 13062, 13063, 13070, 13061], [1032, 1050, 1051, 1052, 1032]]}, "persons": [{"target_index": 1, "picture": 0, "field_2": 0, "field_3": 0, "x": 0, "y": 6, "level": 0, "behaviour": "BEHAVIOUR_KEINE_BEWEGUNG", "behaviour_range": 0, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "0", "flag": "0x0 | 0x8000", "field_16": 0, "field_17": 0, "type": 0}], "warps": [{"x": 2, "y": 5, "level": 0, "target_warp": 127, "target_bank": 127, "target_map": 127, "type": 1}], "signposts": [{"x": 0, "y": 2, "level": 0, "sign_type": 0, "field_6": 0, "field_7": 0, "item_id": "0", "hidden": "0", "count": "0", "script": "ow_script_0x9554aa", "structure": 0, "type": 3}], "triggers": [], "levelscript_header": "lscr_0x719804", "connections": [], "music": "MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY", "id": 464, "name_bank": "MAP_ORINA_CITY", "flash_type": "FLASH_NONE", "weather": "MAP_WEATHER_INSIDE", "type": "MAP_TYPE_INSIDE", "field_18": 0, "field_1a": 0, "show_name": "DONT_SHOW", "battle_style": "BATTLE_TYPE_RANDOM", "key": "src/map/banks/9/17/map_9_17.pmh", "symbol": "map_9_17"}
+{
+	"type": "header",
+	"label": "map_9_17",
+	"data": {
+		"footer": "map_footer_464",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 1,
+			"persons": [
+				{
+					"target_index": 1,
+					"picture": 0,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 0,
+					"y": 6,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
+					"behaviour_range": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "0x0 | 0x8000",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				}
+			],
+			"warps": [
+				{
+					"x": 2,
+					"y": 5,
+					"level": 0,
+					"target_bank": 127,
+					"target_map": 127,
+					"target_warp_idx": 127
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": 0,
+					"y": 2,
+					"level": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"type": 0,
+					"value": {
+						"script": "ow_script_0x9554aa",
+						"item": [
+							"0",
+							"0",
+							0,
+							0
+						]
+					}
+				}
+			]
+		},
+		"levelscripts": "lscr_0x719804",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY",
+		"footer_idx": 464,
+		"namespace": "MAP_ORINA_CITY",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"field_18": 0,
+		"show_name": "DONT_SHOW",
+		"field_1A": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	}
+}

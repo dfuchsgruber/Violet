@@ -1,1 +1,204 @@
-{"footer": {"borders": [[8, 8], [8, 8]], "tss": "maptileset258462", "tsp": "maptileset12", "blocks": [[1674, 1675, 1675, 1675, 1675, 1675, 1675, 1675, 1676, 1032, 1032, 1032, 1032], [1678, 1677, 1677, 1677, 1677, 1677, 1677, 1677, 1679, 1032, 1032, 1032, 1032], [1678, 1677, 1677, 1677, 1677, 1677, 1677, 1677, 1679, 1032, 1032, 1032, 1032], [1682, 1683, 1684, 12973, 12975, 12973, 12975, 12949, 12950, 1032, 1032, 1032, 1032], [1690, 1695, 1692, 1691, 1719, 1691, 1719, 1691, 1694, 1032, 1032, 1032, 1032], [1698, 12963, 1700, 12963, 1700, 12963, 1700, 12963, 1702, 1032, 1032, 1032, 1032], [1698, 12937, 1708, 12937, 1708, 12937, 1708, 12937, 1681, 1680, 1680, 1696, 1032], [1698, 12937, 1715, 12937, 1715, 12937, 1715, 12937, 1688, 1689, 1689, 1704, 1032], [1698, 12937, 12937, 12937, 12937, 12937, 12937, 12937, 1697, 12965, 12965, 1702, 1032], [1706, 12976, 12937, 12937, 12937, 12937, 12937, 12937, 12937, 12937, 12976, 1710, 1032], [1714, 1720, 12937, 12987, 700, 12989, 12937, 12937, 12937, 12937, 1720, 1718, 1032], [1032, 1032, 1032, 1050, 1051, 1052, 1032, 1032, 1032, 1032, 1032, 1032, 1032]], "size": [13, 12], "border_size": [2, 2]}, "music": "MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY", "symbol": "map_9_3", "show_name": "DONT_SHOW", "name_bank": "MAP_ORINA_CITY", "warps": [{"target_map": 5, "y": 10, "target_bank": 3, "level": 0, "x": 4, "type": 1, "target_warp": 3}], "field_18": 0, "triggers": [], "type": "MAP_TYPE_INSIDE", "flash_type": "FLASH_NONE", "field_1a": 0, "signposts": [{"sign_type": 0, "x": 3, "hidden": "0", "count": "0", "type": 3, "field_6": 0, "y": 4, "structure": 0, "level": 0, "item_id": "0", "script": "ow_script_0x95bdf4", "field_7": 0}], "key": "../map/9/3/map_9_3.pmh", "id": 273, "persons": [{"type": 0, "is_trainer": 0, "script": "ow_script_0x84b0b8", "y": 8, "target_index": 1, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 22, "field_16": 0, "flag": "0x0", "x": 7, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_LINKS", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "0", "y": 8, "target_index": 2, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 55, "field_16": 0, "flag": "0x0", "x": 9, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "0", "y": 8, "target_index": 3, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 18, "field_16": 0, "flag": "0x0", "x": 10, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "ow_script_0x95a67a", "y": 5, "target_index": 4, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 60, "field_16": 0, "flag": "0x0", "x": 1, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "0", "y": 5, "target_index": 5, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 23, "field_16": 0, "flag": "0x0", "x": 5, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "0", "y": 5, "target_index": 6, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 19, "field_16": 0, "flag": "0x0", "x": 7, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "ow_script_0x84b0f7", "y": 8, "target_index": 7, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 32, "field_16": 0, "flag": "0x0", "x": 5, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_RECHTS", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "ow_script_0x95a5ff", "y": 9, "target_index": 8, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 30, "field_16": 0, "flag": "0x0", "x": 9, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_OBEN__LINKS__RECHTS", "behaviour_range": 0, "field_b": 0}], "weather": "MAP_WEATHER_INSIDE", "connections": [], "battle_style": "BATTLE_TYPE_RANDOM", "levelscript_header": "lscr_0x71dc28"}
+{
+	"type": "header",
+	"label": "map_9_3",
+	"data": {
+		"footer": "map_footer_273",
+		"events": {
+			"person_cnt": 8,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 1,
+			"persons": [
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x84b0b8",
+					"y": 8,
+					"target_index": 1,
+					"field_3": 0,
+					"picture": 22,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 7,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_LINKS",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "0",
+					"y": 8,
+					"target_index": 2,
+					"field_3": 0,
+					"picture": 55,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 9,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "0",
+					"y": 8,
+					"target_index": 3,
+					"field_3": 0,
+					"picture": 18,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 10,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x95a67a",
+					"y": 5,
+					"target_index": 4,
+					"field_3": 0,
+					"picture": 60,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 1,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "0",
+					"y": 5,
+					"target_index": 5,
+					"field_3": 0,
+					"picture": 23,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 5,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "0",
+					"y": 5,
+					"target_index": 6,
+					"field_3": 0,
+					"picture": 19,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 7,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x84b0f7",
+					"y": 8,
+					"target_index": 7,
+					"field_3": 0,
+					"picture": 32,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 5,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_RECHTS",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x95a5ff",
+					"y": 9,
+					"target_index": 8,
+					"field_3": 0,
+					"picture": 30,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 9,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_OBEN__LINKS__RECHTS",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				}
+			],
+			"warps": [
+				{
+					"target_map": 5,
+					"y": 10,
+					"target_bank": 3,
+					"level": 0,
+					"x": 4,
+					"target_warp_idx": 3
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": 3,
+					"field_6": 0,
+					"y": 4,
+					"level": 0,
+					"field_7": 0,
+					"type": 0,
+					"value": {
+						"script": "ow_script_0x95bdf4",
+						"item": [
+							"0",
+							"0",
+							0,
+							0
+						]
+					}
+				}
+			]
+		},
+		"levelscripts": "lscr_0x71dc28",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY",
+		"footer_idx": 273,
+		"namespace": "MAP_ORINA_CITY",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"field_18": 0,
+		"show_name": "DONT_SHOW",
+		"field_1A": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	}
+}

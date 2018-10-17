@@ -1,1 +1,238 @@
-{"footer": {"size": [20, 10], "borders": [[8, 8], [8, 8]], "tsp": "maptileset12", "tss": "maptileset14", "border_size": [2, 2], "blocks": [[1696, 1747, 1737, 1738, 1668, 1668, 1668, 1670, 1671, 1668, 1668, 1669, 1668, 1686, 1687, 1668, 1668, 1668, 1668, 1668], [1704, 1677, 1739, 1740, 1705, 1706, 1707, 1678, 1679, 1708, 1709, 1122, 1676, 1694, 1695, 1705, 1757, 1757, 1757, 1757], [1712, 12948, 13005, 13006, 1713, 1714, 1715, 12944, 12944, 1716, 1717, 12949, 13029, 13029, 12937, 1735, 12997, 12997, 1758, 1759], [12984, 12929, 13029, 13029, 1721, 1724, 1724, 1688, 1724, 1724, 1725, 12929, 12929, 12929, 12937, 1734, 12929, 12929, 1766, 1767], [12984, 12929, 12929, 12929, 13029, 13029, 13065, 13065, 13065, 13029, 13029, 12929, 12929, 12929, 12937, 1719, 12929, 12929, 1782, 1783], [12984, 13053, 13053, 12929, 12937, 12929, 13073, 13073, 13073, 12929, 12929, 12937, 12937, 12929, 12937, 1719, 12929, 12929, 1766, 1767], [12984, 1692, 1693, 12929, 13045, 12929, 13073, 13073, 13073, 12929, 12929, 12937, 12937, 12929, 12937, 1734, 12929, 12929, 1774, 1775], [12984, 1700, 1701, 12929, 13053, 12929, 12929, 12929, 12929, 12929, 12929, 12937, 12937, 12929, 12937, 1713, 13007, 13007, 13012, 13015], [12961, 13029, 13029, 12929, 13029, 12929, 12994, 12995, 12996, 12929, 12929, 12937, 12937, 12929, 12937, 1721, 1724, 1724, 1724, 1773], [1032, 1032, 1032, 1032, 1032, 1032, 1050, 1051, 1052, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 8, 8]]}, "persons": [{"target_index": 1, "picture": 64, "field_2": 0, "field_3": 0, "x": 7, "y": 2, "level": 3, "behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN", "behaviour_range": 17, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "ow_script_0x16a9a8", "flag": "0x0", "field_16": 0, "field_17": 0, "type": 0}, {"target_index": 2, "picture": 61, "field_2": 0, "field_3": 0, "x": 12, "y": 5, "level": 3, "behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN", "behaviour_range": 17, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "ow_script_0x16a9b1", "flag": "0x0", "field_16": 0, "field_17": 0, "type": 0}, {"target_index": 3, "picture": 26, "field_2": 0, "field_3": 0, "x": 5, "y": 4, "level": 3, "behaviour": "BEHAVIOUR_GEHE_HIN_UND_HER", "behaviour_range": 17, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "ow_script_0x815b96", "flag": "0x0", "field_16": 0, "field_17": 0, "type": 0}, {"target_index": 4, "picture": 117, "field_2": 0, "field_3": 0, "x": 8, "y": 2, "level": 3, "behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN", "behaviour_range": 17, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "ow_script_0x803ed2", "flag": "0x0", "field_16": 0, "field_17": 0, "type": 0}, {"target_index": 6, "picture": 0, "field_2": 0, "field_3": 0, "x": 2, "y": 1, "level": 0, "behaviour": "BEHAVIOUR_VERSTECKT", "behaviour_range": 17, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "ow_script_0x1afca0", "flag": "0x9d", "field_16": 0, "field_17": 0, "type": 0}, {"target_index": 7, "picture": 0, "field_2": 0, "field_3": 0, "x": 3, "y": 1, "level": 0, "behaviour": "BEHAVIOUR_VERSTECKT", "behaviour_range": 17, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "ow_script_0x1afca0", "flag": "0x9d", "field_16": 0, "field_17": 0, "type": 0}, {"target_index": 7, "picture": 68, "field_2": 0, "field_3": 0, "x": 16, "y": 5, "level": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS", "behaviour_range": 0, "field_b": 0, "is_trainer": 0, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "0", "flag": "0x0", "field_16": 0, "field_17": 0, "type": 0}, {"target_index": 0, "picture": 174, "field_2": 0, "field_3": 0, "x": 16, "y": 4, "level": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS", "behaviour_range": 0, "field_b": 0, "is_trainer": false, "is_trainer_padding": 0, "field_d": 0, "alert_radius": 0, "script": "ow_script_botogel", "flag": 0, "field_16": 0, "field_17": 0, "type": 0}], "warps": [{"x": 7, "y": 8, "level": 0, "target_warp": 7, "target_bank": 3, "target_map": 3, "type": 1}], "signposts": [{"x": 15, "y": 5, "level": 0, "sign_type": 0, "field_6": 0, "field_7": 0, "item_id": "0", "hidden": "0", "count": "0", "script": "ow_script_0x95df87", "structure": 0, "type": 3}, {"x": 12, "y": 0, "level": 0, "sign_type": 0, "field_6": 0, "field_7": 0, "item_id": "0", "hidden": "0", "count": "0", "script": "ow_script_0x81c4d0", "structure": 0, "type": 3}, {"x": 15, "y": 4, "level": 0, "sign_type": 0, "field_6": 0, "field_7": 0, "item_id": "0", "hidden": "0", "count": "0", "script": "ow_script_botogel", "structure": 0, "type": 3}], "triggers": [], "levelscript_header": "lscr_0x16a999", "connections": [], "music": "MUS_POKEMON_CENTER_AND_POKEMON_MARKT_AND_LINK_ZENTRALE", "id": 8, "name_bank": "MAP_SILVANIA", "flash_type": "FLASH_NONE", "weather": "MAP_WEATHER_INSIDE", "type": "MAP_TYPE_INSIDE", "field_18": 0, "field_1a": 0, "show_name": "DONT_SHOW", "battle_style": "BATTLE_TYPE_RANDOM", "key": "src/map/banks/7/3/map_7_3.pmh", "symbol": "map_7_3"}
+{
+	"type": "header",
+	"label": "map_7_3",
+	"data": {
+		"footer": "map_footer_8",
+		"events": {
+			"person_cnt": 8,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 3,
+			"persons": [
+				{
+					"target_index": 1,
+					"picture": 64,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 7,
+					"y": 2,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 17,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_0x16a9a8",
+					"flag": "0x0",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"target_index": 2,
+					"picture": 61,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 12,
+					"y": 5,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 17,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_0x16a9b1",
+					"flag": "0x0",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"target_index": 3,
+					"picture": 26,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 5,
+					"y": 4,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_GEHE_HIN_UND_HER",
+					"behaviour_range": 17,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_0x815b96",
+					"flag": "0x0",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"target_index": 4,
+					"picture": 117,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 8,
+					"y": 2,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 17,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_0x803ed2",
+					"flag": "0x0",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"target_index": 6,
+					"picture": 0,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 2,
+					"y": 1,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_VERSTECKT",
+					"behaviour_range": 17,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_0x1afca0",
+					"flag": "0x9d",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"target_index": 7,
+					"picture": 0,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 3,
+					"y": 1,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_VERSTECKT",
+					"behaviour_range": 17,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_0x1afca0",
+					"flag": "0x9d",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"target_index": 7,
+					"picture": 68,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 16,
+					"y": 5,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "0x0",
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"target_index": 0,
+					"picture": 174,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 16,
+					"y": 4,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"is_trainer": false,
+					"alert_radius": 0,
+					"script": "ow_script_botogel",
+					"flag": 0,
+					"field_16": 0,
+					"field_D": 0,
+					"field_B": 0
+				}
+			],
+			"warps": [
+				{
+					"x": 7,
+					"y": 8,
+					"level": 0,
+					"target_bank": 3,
+					"target_map": 3,
+					"target_warp_idx": 7
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": 15,
+					"y": 5,
+					"level": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"type": 0,
+					"value": {
+						"script": "ow_script_0x95df87",
+						"item": [
+							"0",
+							"0",
+							0,
+							0
+						]
+					}
+				},
+				{
+					"x": 12,
+					"y": 0,
+					"level": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"type": 0,
+					"value": {
+						"script": "ow_script_0x81c4d0",
+						"item": [
+							"0",
+							"0",
+							0,
+							0
+						]
+					}
+				},
+				{
+					"x": 15,
+					"y": 4,
+					"level": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"type": 0,
+					"value": {
+						"script": "ow_script_botogel",
+						"item": [
+							"0",
+							"0",
+							0,
+							0
+						]
+					}
+				}
+			]
+		},
+		"levelscripts": "lscr_0x16a999",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_POKEMON_CENTER_AND_POKEMON_MARKT_AND_LINK_ZENTRALE",
+		"footer_idx": 8,
+		"namespace": "MAP_SILVANIA",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"field_18": 0,
+		"show_name": "DONT_SHOW",
+		"field_1A": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	}
+}

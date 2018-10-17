@@ -1,1 +1,130 @@
-{"footer": {"borders": [[8, 8], [8, 8]], "tss": "maptileset241959", "tsp": "maptileset12", "blocks": [[1733, 1707, 1707, 1707, 1707, 1707, 1707, 1707, 1707, 1707, 1707, 1708, 1032], [1717, 1718, 1719, 1675, 1683, 1721, 1722, 1738, 1736, 1737, 1715, 1716, 1032], [1717, 1678, 1672, 1723, 1723, 1734, 1735, 1746, 13059, 1847, 1723, 1716, 1032], [1717, 12950, 12951, 13016, 13016, 13125, 13126, 13016, 13016, 13016, 13016, 1798, 1032], [1717, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 1716, 1032], [1799, 12984, 12984, 13017, 13018, 12984, 12984, 12984, 12984, 12984, 12984, 1716, 1032], [1717, 13024, 13006, 13025, 13026, 12984, 12984, 12984, 13091, 1032, 1032, 1032, 1032], [1807, 13011, 1750, 12984, 12984, 13114, 13112, 13113, 1835, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1858, 1856, 1857, 1032, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1831, 1823, 1823, 1823, 1823, 1673, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1682, 1680, 1675, 1683, 1680, 1681, 1032], [1831, 1823, 1823, 1823, 1823, 1823, 1690, 1688, 1688, 1688, 1688, 1681, 1032], [1682, 1668, 1669, 1800, 1801, 1802, 1680, 13092, 13016, 13016, 13016, 1681, 1032], [1682, 1676, 1677, 1808, 13073, 1810, 1688, 12984, 13100, 13101, 12984, 1681, 1032], [1682, 12948, 12949, 13016, 13016, 12984, 12984, 12984, 1844, 1845, 12984, 1681, 1032], [1804, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 12984, 1805, 1032], [1682, 13024, 13006, 12984, 13017, 13018, 12984, 12984, 13004, 13005, 12984, 1681, 1032], [1812, 13011, 1750, 12984, 13025, 13026, 12984, 696, 17112, 17112, 696, 1681, 1032], [1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032, 1032]], "size": [13, 25], "border_size": [2, 2]}, "music": "MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY", "symbol": "map_9_11", "show_name": "DONT_SHOW", "name_bank": "MAP_ORINA_CITY", "warps": [{"target_map": 5, "y": 7, "target_bank": 3, "level": 0, "x": 6, "type": 1, "target_warp": 6}, {"target_map": 11, "y": 2, "target_bank": 9, "level": 0, "x": 8, "type": 1, "target_warp": 2}, {"target_map": 11, "y": 19, "target_bank": 9, "level": 0, "x": 4, "type": 1, "target_warp": 1}], "field_18": 0, "triggers": [], "type": "MAP_TYPE_INSIDE", "flash_type": "FLASH_NONE", "field_1a": 0, "signposts": [], "key": "../map/9/11/map_9_11.pmh", "id": 413, "persons": [{"type": 0, "is_trainer": 0, "script": "ow_script_0x95cf04", "y": 3, "target_index": 2, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 32, "field_16": 0, "flag": "0x0", "x": 2, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "ow_script_0x95cf88", "y": 4, "target_index": 2, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 30, "field_16": 0, "flag": "0x0", "x": 7, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_HERUMGEHEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "ow_script_0x95d0c2", "y": 22, "target_index": 3, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 17, "field_16": 0, "flag": "0x0", "x": 8, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_HERUMGEHEN", "behaviour_range": 0, "field_b": 0}, {"type": 0, "is_trainer": 0, "script": "ow_script_0x95d045", "y": 21, "target_index": 4, "field_17": 0, "field_3": 0, "is_trainer_padding": 0, "picture": 23, "field_16": 0, "flag": "0x0", "x": 3, "field_2": 0, "level": 0, "field_d": 0, "alert_radius": 0, "behaviour": "BEHAVIOUR_UMHERBLICKEN", "behaviour_range": 0, "field_b": 0}], "weather": "MAP_WEATHER_INSIDE", "connections": [], "battle_style": "BATTLE_TYPE_RANDOM", "levelscript_header": "lscr_0x719110"}
+{
+	"type": "header",
+	"label": "map_9_11",
+	"data": {
+		"footer": "map_footer_413",
+		"events": {
+			"person_cnt": 4,
+			"warp_cnt": 3,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x95cf04",
+					"y": 3,
+					"target_index": 2,
+					"field_3": 0,
+					"picture": 32,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 2,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x95cf88",
+					"y": 4,
+					"target_index": 2,
+					"field_3": 0,
+					"picture": 30,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 7,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x95d0c2",
+					"y": 22,
+					"target_index": 3,
+					"field_3": 0,
+					"picture": 17,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 8,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x95d045",
+					"y": 21,
+					"target_index": 4,
+					"field_3": 0,
+					"picture": 23,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 3,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0
+				}
+			],
+			"warps": [
+				{
+					"target_map": 5,
+					"y": 7,
+					"target_bank": 3,
+					"level": 0,
+					"x": 6,
+					"target_warp_idx": 6
+				},
+				{
+					"target_map": 11,
+					"y": 2,
+					"target_bank": 9,
+					"level": 0,
+					"x": 8,
+					"target_warp_idx": 2
+				},
+				{
+					"target_map": 11,
+					"y": 19,
+					"target_bank": 9,
+					"level": 0,
+					"x": 4,
+					"target_warp_idx": 1
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "lscr_0x719110",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY",
+		"footer_idx": 413,
+		"namespace": "MAP_ORINA_CITY",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"field_18": 0,
+		"show_name": "DONT_SHOW",
+		"field_1A": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	}
+}
