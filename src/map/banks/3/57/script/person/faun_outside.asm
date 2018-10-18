@@ -533,7 +533,7 @@ str_results_may2:
 	.autostring 36 2 "Ich bin aber überzeugt, dass du das Zeug hast, ein erfolgreicher Pokémon-Trainer zu sein.\pImmerhin warst du meine Schülerin.\pDaher darf ich auch dir gratulieren, du hast deine Prüfungen bestanden!"
 
 str_may_glad:
-	.autostring 36 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich meinen Freund aus Hoenn aufholen können!"
+	.autostring 36 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich meinen Freund aus Hoenn einholen können!"
 
 str_final_talk:
 	.autostring 36 2 "Hach! Wie die Zeit an einem vorbeifliegt!\pFür mich seid ihr noch immer die kleinen Rotzlöffel, die leichtsinnig ins hohe Gras gerannt wären, hätte man sie nicht davon abgehalten.\pAber nunDOTS\nSeid ihr zu fähigen Trainern herangewachsen.\pIch könnte nicht zufriedener mit euch sein. Allerdings ist dies erst der Anfang, ihr Bälger!\pWenn ihr diese Schule heute verlasst, werdet ihr auf euch allein gestellt sein.\pWobei auch das nicht ganz zutrifft, denn ihr habt nun eure Pokémon als Partner an eurer Seite.\pWisst diesen besonderen Bund zwischen Trainer und Pokémon zu schätzen, Kinder!\pIch bin überzeugt, dass ihr es weit bringen könnt.\pMacht mich stolz, euer Lehrer gewesen zu sein!\pIn diesem Sinne, viel Erfolg auf eurer Reise, Kinder!"
