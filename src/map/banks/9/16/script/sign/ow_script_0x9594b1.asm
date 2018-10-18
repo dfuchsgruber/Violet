@@ -26,7 +26,7 @@ end
 .global str_0x95a5b5
 
 str_0x95a5b5:
-    .string "QUOTEDas Wolkenherz - es glitzert in\nden Regenbogenfarben im LichtQUOTE"
+    .string "QUOTE_STARTDas Wolkenherz - es glitzert in\nden Regenbogenfarben im LichtQUOTE_END"
         
         
 

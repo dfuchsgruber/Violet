@@ -26,7 +26,7 @@ end
 .global str_0x95a56d
 
 str_0x95a56d:
-    .string "QUOTEDas Magmaherz - die Essenz der\nErde und LandmassenQUOTE"
+    .string "QUOTE_STARTDas Magmaherz - die Essenz der\nErde und LandmassenQUOTE_END"
         
         
 .global str_0x959487
