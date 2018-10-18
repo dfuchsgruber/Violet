@@ -142,7 +142,7 @@ str_catch_pkmn:
 	.autostring 36 2 "Dass man mir das letzte Pokémon einfach aufzwingt, gefällt mir nicht, PLAYER.\pVielleicht kann ich ja ein anderes Pokémon einfangen, das mir gefälltDOTS"
 
 str_battle:
-	.autostring 36 2 "AchDOTS ich will eigentlich gar nicht kämpfenDOTS\pWeißt du, PLAYER, ich traue mir das ganze Trainer-Sein ehrlichgesagt noch nicht zuDOTS"
+	.autostring 36 2 "AchDOTS ich will eigentlich gar nicht kämpfenDOTS\pWeißt du, PLAYER, ich traue mir das ganze Trainer-Sein ehrlich gesagt noch nicht zuDOTS"
 
 str_results:
 	.autostring 36 2 "Ich bin sehr nervösDOTS\pImmerhin konnte ich Felix nicht besiegen.\pIch hoffe nur, dass ich nicht durch die Prüfung gefallen bin!"

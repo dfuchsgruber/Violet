@@ -319,9 +319,12 @@ call ow_script_0x89c5ee
 loadpointer 0 str_player_receives_pokeballs
 callstd MSG
 special 0x7
-copyvarifnotzero 0x8000 ITEM_POKEBALL
-copyvarifnotzero 0x8001 5
-callstd ITEM_OBTAIN
+additem ITEM_POKEBALL 5
+fanfare 0x101
+loadpointer 0x0 str_pokeball_obtention_message
+callstd MSG_KEEPOPEN
+waitfanfare
+closeonkeypress
 addvar TRAINERSCHOOL_PROGRESS 1
 setvar TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS 1
 releaseall
@@ -422,7 +425,7 @@ mov_may_back:
 .ifdef LANG_GER
 
 str_show_player_pkmn:
-	.autostring 36 2 "Also PLAYER, bleiben noch drei Pokémon, aus denen du wählen kannst. Triff deine Entscheidung mit bedacht!"
+	.autostring 36 2 "Also PLAYER, bleiben noch drei Pokémon, aus denen du wählen kannst. Triff deine Entscheidung mit Bedacht!"
 
 str_player_received_b1:
     .string "PLAYER hat ein BUFFER_1\nerhalten!"
@@ -452,10 +455,10 @@ str_to_tall_grass:
 	.autostring 36 2 "Dann hätten wir das erledigt!\pBeginnen wir mit dem ersten Feldtest. Folgt mir zum hohen Gras."
 
 str_tall_grass:
-	.autostring 36 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert, ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
+	.autostring 36 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert. Ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
 
 str_call_blaise:
-	.autostring 36 2 "Blaise, na wirds bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
+	.autostring 36 2 "Blaise, na wird's bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
 
 str_blaise_refuses:
 	.autostring 36 2 "Nein, ich denke eher nicht."
@@ -464,7 +467,7 @@ str_call_blaise_again:
 	.autostring 36 2 "Wie bitte? Du undankbares Gör! Wer glaubst du denn, dass du bist? Meinst du, dein Vater wird es gerne hören, dass du mir Ungehorsam leistest?"
 
 str_blaise_leaves:
-	.autostring 36 2 "Es ist mir herzlich egal, was mein Vater denkt. Ich habe beschlossen, mich nicht länger von ihm kontrollieren zu lassen. Also ist mir Ihre Abschlussprüfung ebenfalls gleichgültig. Natürlich danke ich Ihnen auch, für das Pokémon, das sie mir anvertraut haben. Allerdings halte ich nichts von dieser Schule oder anderen Institution, an der mein Vater seine Finger im Spiel hat.\pIn diesem Sinne, lebt wohl!"
+	.autostring 36 2 "Es ist mir herzlich egal, was mein Vater denkt. Ich habe beschlossen, mich nicht länger von ihm kontrollieren zu lassen. Also ist mir Ihre Abschlussprüfung ebenfalls gleichgültig. Natürlich danke ich Ihnen auch, für das Pokémon, das sie mir anvertraut haben. Allerdings halte ich nichts von dieser Schule oder anderen Institutionen, in denen mein Vater seine Finger im Spiel hat.\pIn diesem Sinne, lebt wohl!"
 
 str_faun_angry_at_blaise:
 	.autostring 36 2 "Dieser verdammte Bengel! Devin wird außer sich sein!"
@@ -476,7 +479,7 @@ str_felix_starts_test:
 	.autostring 36 2 "Jawohl, Opi -\nÄhmDOTS Herr Faun!"
 
 str_hand_felix_balls:
-	.autostring 36 2 "Du erhältst von mir fünf Pokébälle.\pVersuche, das Pokémon mit ihnen einzufangen."
+	.autostring 36 2 "Du erhältst von mir fünf Pokébälle.\pVersuche, ein Pokémon mit ihnen einzufangen."
 
 str_felix_done_catching:
 	.autostring 36 2 "Geschafft!"
@@ -489,6 +492,9 @@ str_faun_calls_player:
 
 str_player_receives_pokeballs:
 	.autostring 36 2 "PLAYER, du erhältst jetzt von mir fünf Pokébälle.\pVersuche auch du, das Pokémon einzufangen!"
+
+str_pokeball_obtention_message:
+	.autostring 36 2 "Fünf Pokébälle erhalten."
 
 str_player_has_to_catch:
 	.autostring 36 2 "PLAYER! Begib dich endlich ins hohe Gras!"
@@ -527,7 +533,7 @@ str_results_may2:
 	.autostring 36 2 "Ich bin aber überzeugt, dass du das Zeug hast, ein erfolgreicher Pokémon-Trainer zu sein.\pImmerhin warst du meine Schülerin.\pDaher darf ich auch dir gratulieren, du hast deine Prüfungen bestanden!"
 
 str_may_glad:
-	.autostring 36 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich zu meinem Freund aus Hoenn aufholen können!"
+	.autostring 36 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich meinen Freund aus Hoenn einholen können!"
 
 str_final_talk:
 	.autostring 36 2 "Hach! Wie die Zeit an einem vorbeifliegt!\pFür mich seid ihr noch immer die kleinen Rotzlöffel, die leichtsinnig ins hohe Gras gerannt wären, hätte man sie nicht davon abgehalten.\pAber nunDOTS\nSeid ihr zu fähigen Trainern herangewachsen.\pIch könnte nicht zufriedener mit euch sein. Allerdings ist dies erst der Anfang, ihr Bälger!\pWenn ihr diese Schule heute verlasst, werdet ihr auf euch allein gestellt sein.\pWobei auch das nicht ganz zutrifft, denn ihr habt nun eure Pokémon als Partner an eurer Seite.\pWisst diesen besonderen Bund zwischen Trainer und Pokémon zu schätzen, Kinder!\pIch bin überzeugt, dass ihr es weit bringen könnt.\pMacht mich stolz, euer Lehrer gewesen zu sein!\pIn diesem Sinne, viel Erfolg auf eurer Reise, Kinder!"
