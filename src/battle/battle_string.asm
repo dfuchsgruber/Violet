@@ -2537,25 +2537,25 @@ bsc_strings:
 	.global str_battle_x16f
 
 	str_battle_x16f:
-		.string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1\q abgelegt."
+		.string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTE_STARTBUFFER_1QUOTE_END abgelegt."
 
 
 	.global str_battle_x170
 
 	str_battle_x170:
-		.string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1\q abgelegt."
+		.string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTE_STARTBUFFER_1QUOTE_END abgelegt."
 
 
 	.global str_battle_x171
 
 	str_battle_x171:
-		.string "Box QUOTEBUFFER_3\q im\nPC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1\q übertragen."
+		.string "Box QUOTE_STARTBUFFER_3QUOTE_END im\nPC ist voll.\pBUFFER_2 wurde in Box\nQUOTE_STARTBUFFER_1QUOTE_END übertragen."
 
 
 	.global str_battle_x172
 
 	str_battle_x172:
-		.string "Box QUOTEBUFFER_3\q im\nPC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1\q übertragen."
+		.string "Box QUOTE_STARTBUFFER_3QUOTE_END im\nPC ist voll.\pBUFFER_2 wurde in Box\nQUOTE_STARTBUFFER_1QUOTE_END übertragen."
 
 
 	.global str_battle_x173
@@ -4562,22 +4562,22 @@ bsc_strings:
 	.global str_battle_x16f
 
 	str_battle_x16f:
-		.string "BUFFER_2 was transferred to\nthe PC.\pIt was placed in \nBox QUOTEBUFFER_1.\q"
+		.string "BUFFER_2 was transferred to\nthe PC.\pIt was placed in \nBox QUOTE_STARTBUFFER_1.QUOTE_END"
 
 	.global str_battle_x170
 
 	str_battle_x170:
-		.string "BUFFER_2 was transferred to\nthe PC.\pIt was placed in \nBox QUOTEBUFFER_1.\q"
+		.string "BUFFER_2 was transferred to\nthe PC.\pIt was placed in \nBox QUOTE_STARTBUFFER_1.QUOTE_END"
 
 	.global str_battle_x171
 
 	str_battle_x171:
-		.string "Box QUOTEBUFFER_3\q on\nthe PC was full.\pBUFFER_2 was transferred to\nBox QUOTEBUFFER_1.\q"
+		.string "Box QUOTE_STARTBUFFER_3QUOTE_END on\nthe PC was full.\pBUFFER_2 was transferred to\nBox QUOTE_STARTBUFFER_1.QUOTE_END"
 
 	.global str_battle_x172
 
 	str_battle_x172:
-		.string "Box QUOTEBUFFER_3\q on\nthe PC was full.\pBUFFER_2 was transferred to\nBox QUOTEBUFFER_1.\q"
+		.string "Box QUOTE_STARTBUFFER_3QUOTE_END on\nthe PC was full.\pBUFFER_2 was transferred to\nBox QUOTE_STARTBUFFER_1.QUOTE_END"
 
 	.global str_battle_x173
 

@@ -2446,13 +2446,13 @@ str_0x1a83ae:
 .global str_0x9589f7
 
 str_0x9589f7:
-    .string "BUFFER_2 wurde an das Lagerungs-\nSystem gesendet.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
+    .string "BUFFER_2 wurde an das Lagerungs-\nSystem gesendet.\pEs wurde in Box\nQUOTE_STARTBUFFER_1QUOTE_END abgelegt."
         
         
 .global str_0x9589ae
 
 str_0x9589ae:
-    .string "Box QUOTEBUFFER_3QUOTE im\nLagerungssystem ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
+    .string "Box QUOTE_STARTBUFFER_3QUOTE_END im\nLagerungssystem ist voll.\pBUFFER_2 wurde in Box\nQUOTE_STARTBUFFER_1QUOTE_END übertragen."
         
         
 .elseif LANG_EN

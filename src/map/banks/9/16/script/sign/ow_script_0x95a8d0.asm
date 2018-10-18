@@ -13,7 +13,7 @@ end
 .global str_0x95a8da
 
 str_0x95a8da:
-    .string "Hinter der Vitrine liegt ein\nFossil, dessen Konturen scharf\lzu sein scheinen.\lDas Fossil ist mit QUOTEDomfossilQUOTE\lbetitelt."
+    .string "Hinter der Vitrine liegt ein\nFossil, dessen Konturen scharf\lzu sein scheinen.\lDas Fossil ist mit QUOTE_STARTDomfossilQUOTE_END\lbetitelt."
         
         
 .elseif LANG_EN

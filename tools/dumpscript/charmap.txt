@@ -147,6 +147,8 @@ QUOTE        = B1
 'ö'         = F5
 'ü'         = F6
 
+QUOTE_START = B2
+QUOTE_END = B3
 
 'ß'         = F9
 
