@@ -458,7 +458,7 @@ str_tall_grass:
 	.autostring 36 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert. Ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
 
 str_call_blaise:
-	.autostring 36 2 "Blaise, na wird's bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
+	.autostring 35 2 "Blaise, na wird es bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
 
 str_blaise_refuses:
 	.autostring 36 2 "Nein, ich denke eher nicht."
@@ -494,7 +494,7 @@ str_player_receives_pokeballs:
 	.autostring 36 2 "PLAYER, du erhältst jetzt von mir fünf Pokébälle.\pVersuche auch du, das Pokémon einzufangen!"
 
 str_pokeball_obtention_message:
-	.autostring 36 2 "Fünf Pokébälle erhalten."
+	.autostring 35 2 "Fünf Pokébälle erhalten."
 
 str_player_has_to_catch:
 	.autostring 36 2 "PLAYER! Begib dich endlich ins hohe Gras!"
