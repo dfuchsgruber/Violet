@@ -106,7 +106,7 @@ void mugshot_create_oam(int side, int idx) {
 	oam_template *mugshot_template = malloc(sizeof (oam_template));
 	mugshot_template->tiles_tag = tag;
 	mugshot_template->pal_tag = tag;
-	if(!checkflag(0x806) && get_mapheader(save1->bank, save1->map)->flash){
+	if(!checkflag(0x806) && get_mapheader(save1->bank, save1->map)->flash_type){
 		mugshot_template->oam = &mugshot_sprite_prio0;
 	}else{
 		mugshot_template->oam = &mugshot_sprite;

@@ -16,7 +16,7 @@ end
 .global str_0x818ef3
 
 str_0x818ef3:
-    .string "HIHI"
+    .string "Hihi."
         
         
 .elseif LANG_EN

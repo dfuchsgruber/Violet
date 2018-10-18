@@ -54,6 +54,19 @@ signpost_item_type = agb.types.BitfieldType('u32', [
     ('chunk', None, 3)
 ])
 
+# Behaviour for map tilesets
+
+tileset_behaviour_type = agb.types.BitfieldType('u32', [
+    ('behaviour', None, 9),
+    ('hm_usage', 'block_hm_usage', 5),
+    ('field_2', None, 4),
+    ('field_3', None, 6),
+    ('encounter_type', None, 3),
+    ('field_5', None, 2),
+    ('field_6', None, 2),
+    ('field_7', None, 1)
+])
+
 # Map connections
 
 connection_type = agb.types.Structure([
@@ -91,6 +104,7 @@ models_to_export = {
     'flag' : flag_type,
     'var' : var_type,
     'song' : song_type,
+    'tileset.behaviour' : tileset_behaviour_type,
     'map_namespace' : namespace_type,
     'map_flash_type' : flash_type_type,
     'map_weather' : weather_type,

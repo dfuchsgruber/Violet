@@ -202,7 +202,7 @@ void pokedex_init_habitat() {
     if (!fading_is_active()) {
 
         //we find the current worldmap
-        u8 current_namespace = get_mapheader(save1->bank, save1->map)->name_bank;
+        u8 current_namespace = get_mapheader(save1->bank, save1->map)->map_namespace;
         int i, j;
         fmem.dex_mem->current_worldmap = 0;
         if (current_namespace >= 0x8F) {

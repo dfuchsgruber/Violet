@@ -145,7 +145,7 @@
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"behaviour_range": 0,
-					"is_trainer": false,
+					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": "ow_script_botogel",
 					"flag": 0,

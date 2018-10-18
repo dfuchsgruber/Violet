@@ -96,7 +96,7 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                             //Teleport 
                             map_load_namespace(buffer0,
                             		get_mapheader((u8) save1->healingplace.bank,
-                            				(u8) save1->healingplace.map)->name_bank);
+                            				(u8) save1->healingplace.map)->map_namespace);
                             string_decrypt(strbuf, (u8*) 0x084175B5);
                             pokemon_party_menu_print_question(callback_self);
                             *((u16*) ((int) (pokemon_party_menu_state.opt_state) + 0x218)) = (u8) index;
@@ -105,7 +105,7 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
                             //Dig
                             map_load_namespace(buffer0,
                             		get_mapheader(save1->last_outdoor_map.bank,
-                            				save1->last_outdoor_map.map)->name_bank);
+                            				save1->last_outdoor_map.map)->map_namespace);
                             string_decrypt(strbuf, (u8*) 0x0841758A);
                             pokemon_party_menu_print_question(callback_self);
                             *((u16*) ((int) (pokemon_party_menu_state.opt_state) + 0x218)) = (u8) index;

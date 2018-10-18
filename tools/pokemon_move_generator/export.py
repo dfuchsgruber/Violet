@@ -7,10 +7,32 @@ from . import link
 from . import evolutions
 from . import normalize
 
+def species_name_by_idx(species, constants):
+    """ Creates a readable species name based on its idx. This is
+    used for generating meaningfull comments.
+    
+    Parameters:
+    -----------
+    species : int
+        The desired species
+    constants: pymap.constants.Constants
+        The constant tables.
+    
+    Return:
+    -------
+    name : str
+        The readable name of the species
+    """
+    for name in constants['species']:
+        if constants['species'][name] == species:
+            return name
+    raise RuntimeError(f'Unassignable species {species}')
+    
+
 def moveset_label_by_id(species_id, constants):
     """ Creates a moveset label based on the
     species id of a pokemon"""
-    species = constants.constantize(species_id, "species")[8:].lower()
+    species = species_name_by_idx(species_id, constants)[8:].lower()
     return "moveset_pokemon_" + species
 
 preamble = """/**
@@ -67,8 +89,8 @@ def export_egg_moves(linked, symbol, constants,
         link_type, pkmn = _link
         if link_type == link.REAL and evolutions.is_basis_stage(prevolutions, i):
             if not len(pkmn.attacks_breed): continue
-            output += "\t// " + constants.constantize(i, "species")[8:].capitalize() + "\n"
-            output += "\t20000 + " + constants.constantize(i, "species") + ", "
+            output += "\t// " + species_name_by_idx(i, constants)[8:].capitalize() + "\n"
+            output += "\t20000 + " + species_name_by_idx(i, constants) + ", "
             for attack in pkmn.attacks_breed:
                 output += attack + ", "
             output += "\n"
@@ -171,7 +193,7 @@ def export_tm_move_compatibility(linked, symbol, constants):
     # Create the compatibility array (8 bytes for each pkmn)
     output += "u8 " + symbol + "[POKEMON_CNT][8] = {\n"
     for i, _link in enumerate(linked):
-        output += "\t// " + constants.constantize(i, "species")[8:].capitalize() + "\n"
+        output += "\t// " + species_name_by_idx(i, constants)[8:].capitalize() + "\n"
         link_type, pkmn = _link
         if link_type == link.LINKED:
             # Unlink
@@ -205,7 +227,7 @@ def export_move_tutor_compatibility(linked, symbol, constants):
     # Create the compatibility array (8 bytes for each pkmn)
     output = "u32 " + symbol + "[POKEMON_CNT] = {\n"
     for i, _link in enumerate(linked):
-        output += "\t// " + constants.constantize(i, "species")[8:].capitalize() + "\n"
+        output += "\t// " + species_name_by_idx(i, constants)[8:].capitalize() + "\n"
         link_type, pkmn = _link
         if link_type == link.LINKED:
             # Unlink
@@ -225,7 +247,7 @@ def export_move_tutor_compatibility(linked, symbol, constants):
 def inaccessible_set_label_by_id(species_id, constants):
     """ Creates a inaccessible set label based on the
     species id of a pokemon"""
-    species = constants.constantize(species_id, "species")[8:].lower()
+    species = species_name_by_idx(species_id, constants)[8:].lower()
     return "inaccessible_moves_pokemon_" + species
 
 def export_inaccessible_array(inaccessebile_attacks, label):

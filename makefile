@@ -11,9 +11,7 @@ MID2AGB=@mid2agb
 #MID2AGB=/media/d/romhacking/midi2agb/midi2agb
 PY3=@python3
 BIN2S=@bin2s.py
-PYSET2S=@pyset2s.py
 PYMAP2S=@pymap2s.py
-PYPROJ2S=@pyproj2s.py
 PYPREPROC=@pypreproc.py
 PYMAPCONSTEX=pymapconstex.py
 READELF=@arm-none-eabi-readelf
@@ -57,9 +55,10 @@ PKMNINACESSIBLEMOVES=pokemon_inacessible_moves
 PKMNCRAWLEREXTERN=tools/pokemon_move_generator/data.py
 
 
-# Fata morgana lookup table generator settings 
-# Define the map the fata morgana is executed on
-DESERTMAP=src/map/banks/3/21/map_3_21.pmh
+# Fata morgana lookup table generator settings
+FATAMORGANAGEN=tools/fata_morgana_lut.py
+# Define the footer the fata morgana is executed on
+DESERTFOOTER=src/map/banks/3/21/map_footer_91.pmf
 # Define the symbol of the lookup table
 FATAMORGANALUT=fata_morgana_blocks
 # Define the symbol of the lookup table size
@@ -83,6 +82,7 @@ WAVSRC:=$(call rwildcard,asset/cry/,*.wav)
 SAMPLESRC:=$(call rwildcard,asset/sample/,*.bin)
 MAPTILESETSRC:=$(call rwildcard,src/,*.pts)
 MAPSRC:=$(call rwildcard,src/,*.pmh)
+MAPFOOTERSRC=$(call rwildcard,src/,*.pmf)
 CONSTANTS=$(call rwildcard,constants/,*.const)
 
 ASOBJS1= $(ASSRC1:%.asm=$(BLDPATH)/%.o)
@@ -108,9 +108,13 @@ MAPAS = $(MAPSRC:%.pmh=$(BLDPATH)/%.s)
 MAPOBJS = $(MAPAS:%.s=%.o)
 MAPDEP = $(MAPOBJS:%.o=%.d)
 
+MAPFOOTERAS = $(MAPFOOTERSRC:%.pmf=$(BLDPATH)/%.s)
+MAPFOOTEROBJS = $(MAPFOOTERAS:%.s=%.o)
+MAPFOOTERDEP = $(MAPFOOTEROBJS:%.o=%.d)
+
 MAPTILESETAS = $(MAPTILESETSRC:%.pts=$(BLDPATH)/%.s)
 MAPTILESETOBJS = $(MAPTILESETAS:%.s=%.o)
-MAPTSDEP = $(MAPTILESETOBJS:%.o=%.d)
+MAPTILESETDEP = $(MAPTILESETOBJS:%.o=%.d)
 
 CONSTANTSHAS=$(CONSTANTS:%.const=include/as/%.s)
 CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
@@ -136,7 +140,7 @@ $(ASOBJS2): $(BLDPATH)/%.o: %.s
 	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE)   
 	$(AS) $(ASFLAGS) --MD $(BLDPATH)/$*.d $(BLDPATH)/$*.i -o $@
 
--include $(CDEP) $(ASDEP1) $(ASDEP2) $(MAPDEP) $(MAPTSDEP)
+-include $(CDEP) $(ASDEP1) $(ASDEP2) $(MAPDEP) $(MAPFOOTERDEP) $(MAPTILESETDEP)
 
 
 $(COBJS): $(BLDPATH)/%.o: %.c
@@ -183,36 +187,42 @@ $(SAMPLEOBJS): %.o: %.s
 	
 $(MAPAS): $(BLDPATH)/%.s: %.pmh
 	$(shell mkdir -p $(dir $@))
-	$(PYMAP2S) -o $@ $< $(MAPPROJ)
+	$(PYMAP2S) $< $(MAPPROJ) -o $@
 
 $(MAPOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
-	@echo "$<"
+	$(AS) $(ASFLAGS) --MD $*.d $< -o $@
+	
+$(MAPFOOTERAS): $(BLDPATH)/%.s: %.pmf
+	$(shell mkdir -p $(dir $@))
+	$(PYMAP2S) $< $(MAPPROJ) -o $@
+	
+$(MAPFOOTEROBJS): %.o: %.s
+	$(shell mkdir -p $(dir $@))
 	$(AS) $(ASFLAGS) --MD $*.d $< -o $@
 	
 $(MAPTILESETAS): $(BLDPATH)/%.s: %.pts
 	$(shell mkdir -p $(dir $@))
-	$(PYSET2S) -o $@ $(MAPPROJ) $<
+	$(PYMAP2S) $< $(MAPPROJ) -o $@
 
 $(MAPTILESETOBJS): %.o: %.s
 	$(shell mkdir -p $(dir $@))
-	@echo "$<"
 	$(AS) $(ASFLAGS) --MD $*.d $< -o $@
 	
 
 # Map project
 $(BLDPATH)/$(basename $(MAPPROJ)).o: $(MAPPROJ)
 #	Compile pmp map project
-	@echo "Building map from project $(MAPPROJ)..." 
-	$(PYPROJ2S) -b mapbanks -f mapfooters -o $(BLDPATH)/$(basename $(MAPPROJ)).s $(MAPPROJ)
+	@echo "Building map from project $(MAPPROJ)..."
+	$(PYMAP2S) $(MAPPROJ) $(MAPPROJ) -o $(BLDPATH)/$(basename $(MAPPROJ)).s -p --headertable mapbanks --footertable mapfooters
 	$(AS) $(ASFLAGS) $(BLDPATH)/$(basename $(MAPPROJ)).s -o $(BLDPATH)/$(basename $(MAPPROJ)).o
 	
 	
 # Fata morgana lookup table
-$(BLDPATH)/fata_morgana.o: $(DESERTMAP)
+$(BLDPATH)/fata_morgana.o: $(DESERTFOOTER)
 #	Run python script for generating a sorted list of morgana tiles
-	@echo "Creating fata morgana lookup table $(FATAMORGANALUT) of size $(FATAMORGANALUTSIZE) based on $(DESERTMAP)..."
-	$(PY3) tools/fata_morgana_gen.py $(DESERTMAP) $(BLDPATH)/fata_morgana.s $(FATAMORGANALUT) $(FATAMORGANALUTSIZE)
+	@echo "Creating fata morgana lookup table $(FATAMORGANALUT) of size $(FATAMORGANALUTSIZE) based on $(DESERTFOOTER)..."
+	$(PY3) $(FATAMORGANAGEN) -o $(BLDPATH)/fata_morgana.s $(DESERTFOOTER) $(FATAMORGANALUT) $(FATAMORGANALUTSIZE) $(MAPPROJ)
 	$(AS) $(ASFLAGS) $(BLDPATH)/fata_morgana.s -o $(BLDPATH)/fata_morgana.o
 
 	
@@ -226,10 +236,10 @@ $(BLDPATH)/pkmnmoves.o: $(PKMNCRAWLERDATA) $(BLDPATH)/src.o $(PKMNCRAWLEREXTERN)
 	$(READELF) -S $(BLDPATH)/src.o | grep ".text" > $(LINKEDTEXTHEADER)
 	@echo "Dumping offset of $(PKMNEVOTABLE) into $(LINKEDEVOTABLEHEADER)..."
 	$(READELF) -s $(BLDPATH)/src.o | grep $(PKMNEVOTABLE) > $(LINKEDEVOTABLEHEADER)
-	$(PY3) tools/pokemon_move_generator.py $(MAPPROJ) $(BLDPATH)/src.o $(LINKEDTEXTHEADER) \
+	$(PY3) tools/pokemon_move_generator.py -o  $(BLDPATH)/pkmnmoves.c $(MAPPROJ) $(BLDPATH)/src.o $(LINKEDTEXTHEADER) \
 	$(LINKEDEVOTABLEHEADER) $(PKMNEVOTABLE) $(PKMNLVLUPATTACKS) $(PKMNEGGMOVES) \
 	$(PKMNTMCOMPATIBILITY) $(PKMNMOVETUTORCOMPATIBILITY) $(PKMNINACESSIBLEMOVES) \
-	$(PKMNCRAWLERDATA) $(BLDPATH)/pkmnmoves.c
+	$(PKMNCRAWLERDATA)
 	$(CC) $(CFLAGS) $(BLDPATH)/pkmnmoves.c -o $(BLDPATH)/pkmnmoves.o
 	
 
@@ -247,10 +257,10 @@ $(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(BLDPATH)/asset/mus.o
 	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS))" > $(BLDPATH)/asset.ld
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/mus.o 
 	
-$(BLDPATH)/map.o: $(MAPOBJS) $(MAPTILESETOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BLDPATH)/fata_morgana.o
+$(BLDPATH)/map.o: $(MAPOBJS) $(MAPTILESETOBJS) $(MAPFOOTEROBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BLDPATH)/fata_morgana.o
 #	Create a ld script
 	@echo "Collecting map objects..."
-	@echo "INPUT($(MAPOBJS) $(MAPTILESETOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o)" > $(BLDPATH)/map.ld
+	@echo "INPUT($(MAPOBJS) $(MAPTILESETOBJS) $(MAPFOOTEROBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o)" > $(BLDPATH)/map.ld
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/map.ld --relocatable -o $(BLDPATH)/map.o $(BLDPATH)/fata_morgana.o 
 	
 	

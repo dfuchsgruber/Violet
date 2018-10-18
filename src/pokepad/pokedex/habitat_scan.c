@@ -9,7 +9,7 @@ int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
     
     while (wild_pokemon[i].bank != 0xFF) {
 
-        u8 namespace = (u8) (get_mapheader(wild_pokemon[i].bank, wild_pokemon[i].map)->name_bank);
+        u8 namespace = (u8) (get_mapheader(wild_pokemon[i].bank, wild_pokemon[i].map)->map_namespace);
 
         //now we check each table if it contains the pokemon and if it does add it to the list
         //Grass table

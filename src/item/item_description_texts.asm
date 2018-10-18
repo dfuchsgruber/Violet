@@ -3158,7 +3158,7 @@
 	.global str_item_desc_xb5_item_machoband
 
 	str_item_desc_xb5_item_machoband:
-		.string .string "An item to be held by a POKéMON.\nIt promotes strong growth but\nlowers Speed while it is held."
+		.string "An item to be held by a POKéMON.\nIt promotes strong growth but\nlowers Speed while it is held."
 
 	.global str_item_desc_xb6_item_ep_teiler
 

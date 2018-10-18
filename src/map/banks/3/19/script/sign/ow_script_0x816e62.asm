@@ -14,7 +14,7 @@ end
 .global str_0x823a89
 
 str_0x823a89:
-    .string "ROUTE 1: Verbindungsstrecke\nAMONIA - MERIANA CITY"
+    .string "Route 1: Verbindungsstrecke\nAmonia - Meriana City"
         
         
 .elseif LANG_EN

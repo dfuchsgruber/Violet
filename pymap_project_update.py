@@ -29,7 +29,7 @@ def blocks_typecast(blocks):
     """ Splits the values of a 2d block array into lists for bitfields. """
     return [
         [
-            [block & (1 << 10), block >> 10] for block in line
+            [block & 1023, block >> 10] for block in line
         ] for line in blocks
     ]
 

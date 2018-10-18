@@ -18,7 +18,7 @@ end
 .global str_0x87aad8
 
 str_0x87aad8:
-    .string "BIBOR! BIBOR!"
+    .string "Bibor! Bibor!"
         
         
 .elseif LANG_EN

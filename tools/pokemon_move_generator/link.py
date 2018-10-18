@@ -68,10 +68,13 @@ def update_and_link(pkmns, constants):
     for species in data.updates:
         pkmns[species] = merge_pkmns(pkmns[species], data.updates[species])
     
+    species_constants = constants['species']
+    num_species = int(species_constants[max(species_constants, key=lambda key: int(species_constants.__getitem__(key)))]) + 1
+    #print(f'Linking for {num_species} species.')
     # Apply links: Transform dict species->pkmn to an arary
 
     linked = []
-    for species in range(len(constants.values("species"))):
+    for species in range(num_species):
         pkmn = pkmns.get(species)
         if pkmn:
             normalize.normalize_pokemon(pkmn, constants)

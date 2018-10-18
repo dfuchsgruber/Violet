@@ -363,7 +363,7 @@ void worldmap_locate_player() {
 		// x, y from save
 		x = save1->x_cam_orig;
 		y = save1->y_cam_orig;
-		worldmap_state->player_namespace = mapheader_virtual.name_bank;
+		worldmap_state->player_namespace = mapheader_virtual.map_namespace;
 		break;
 	case MAP_TYPE_BASEMENT:
 	case MAP_TYPE_TYPE_07:
@@ -374,7 +374,7 @@ void worldmap_locate_player() {
 		map = save1->last_outdoor_map.map;
 		x = save1->last_outdoor_map.x;
 		y = save1->last_outdoor_map.y;
-		worldmap_state->player_namespace = get_mapheader(bank, map)->name_bank;
+		worldmap_state->player_namespace = get_mapheader(bank, map)->map_namespace;
 		break;
 	case MAP_TYPE_SECRET_BASE:
 		// Load everything from last_map
@@ -382,7 +382,7 @@ void worldmap_locate_player() {
 		map = save1->last_map.map;
 		x = save1->last_map.x;
 		y = save1->last_map.y;
-		worldmap_state->player_namespace = get_mapheader(bank, map)->name_bank;
+		worldmap_state->player_namespace = get_mapheader(bank, map)->map_namespace;
 		break;
 	default:
 		derrf("Unkown map type %d\n", get_mapheader(bank, map)->type);

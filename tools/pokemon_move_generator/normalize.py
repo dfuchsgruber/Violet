@@ -29,7 +29,7 @@ def normalize_lvlup_attacks(lvlup_attacks, constants):
         # Normalize the attack and check if it is
         # part of the moveset base
         normalized_attack = normalize_attack_string(attack)
-        if normalized_attack in constants.values("attacks"):
+        if normalized_attack in constants['attacks']:
             normalized.append((lvl, normalized_attack))
         else:
             not_in_moveset_base.add(str((normalized_attack, attack)))
@@ -48,7 +48,7 @@ def normalize_attack_set(attacks, constants):
         # Normalize the attack and check if it is
         # part of the moveset base
         normalized_attack = normalize_attack_string(attack)
-        if normalized_attack in constants.values("attacks"):
+        if normalized_attack in constants['attacks']:
             normalized.add(normalized_attack)
         else:
             not_in_moveset_base.add(str((normalized_attack, attack)))
@@ -67,7 +67,7 @@ def normalize_tutor_attacks(tutor_attacks, constants):
         # Normalize the attack and check if it is
         # part of the moveset base
         normalized_attack = normalize_attack_string(tutor_attacks[index])
-        if normalized_attack in constants.values("attacks"):
+        if normalized_attack in constants['attacks']:
             normalized[index] = normalized_attack
         else:
             not_in_moveset_base.add(str((normalized_attack, tutor_attacks[index])))
@@ -88,7 +88,7 @@ def normalize_tm_attacks(tm_attacks, constants):
         # Normalize the attack and check if it is
         # part of the moveset base
         normalized_attack = normalize_attack_string(attack)
-        if normalized_attack in constants.values("attacks"):
+        if normalized_attack in constants['attacks']:
             if tm.startswith("TM"):
                 normalized.append(("tm", int(tm[2:]), normalized_attack))
             elif tm.startswith("VM"):

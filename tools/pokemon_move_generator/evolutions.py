@@ -56,14 +56,17 @@ def parse_evolutions(rom, offset_evolution_table, constants):
     and returns a list that holds the prevolution of
     a pokemon or None if no such prevolution"""
     
-    prevolutions = [None for _ in range(len(constants.values("species")))]
+    species_constants = constants['species']
+    num_species = int(species_constants[max(species_constants, key=lambda key: int(species_constants.__getitem__(key)))]) + 1
+
+    prevolutions = [None] * num_species
     # Iterate through the evolution table
-    for i in range(len(constants.values("species"))):
+    for i in range(num_species):
         for j in range(5):
             offset = offset_evolution_table + i * 40 + j * 8
-            method = rom.u16(offset)
+            method = rom.u16[offset]
             if not method: continue
-            target = rom.u16(offset + 4)
+            target = rom.u16[offset + 4]
             prevolutions[target] = i
     
     return prevolutions
