@@ -86,7 +86,7 @@
 	.global str_pc_move_items_desc
 
 	str_pc_move_items_desc:
-		.string "Items, gehalten vom Pokémon\nim Team oder in der Box bewegen."
+		.string "Items, gehalten von Pokémon\nim Team oder in der Box bewegen."
 
 
 	.global str_pc_adieu

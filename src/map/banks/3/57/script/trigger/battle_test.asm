@@ -184,10 +184,10 @@ str_final_call_felix:
 	.autostring 36 2 "Felix, du bist wieder als Erster an der Reihe.\pKomm zu mir, Junge!"
 
 str_award_felix:
-	.autostring 36 2 "Im schriftlichen Test konntest du sieben Fragen richtig beantwortenDOTS\pAusgezeichnet!\pEin Pokémon zu fangen hat dir keine Probleme bereitet und deinen Kampf hast du gewonnen.\pGlückwunsch, du hast es geschafft Bursche!\pAb heute darfst du dich einen Trainer nennen!"
+	.autostring 36 2 "Im schriftlichen Test konntest du sieben Fragen richtig beantwortenDOTS\pAusgezeichnet!\pEin Pokémon zu fangen hat dir keine Probleme bereitet und deinen Kampf hast du gewonnen.\pGlückwunsch, du hast es geschafft, Bursche!\pAb heute darfst du dich einen Trainer nennen!"
 
 str_felix_awarded:
-	.autostring 36 2 "Hihi! Danke Opi - ähm, Herr Faun!\pDu warst wirklich ein großartiger Lehrer!"
+	.autostring 36 2 "Hihi! Danke, Opi - ähm, Herr Faun!\pDu warst wirklich ein großartiger Lehrer!"
 
 str_final_call_player:
 	.autostring 36 2 "Machen wir mit dir weiter, PLAYER!\pAngetreten!"

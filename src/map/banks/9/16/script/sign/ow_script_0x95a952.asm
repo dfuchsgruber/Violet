@@ -13,7 +13,7 @@ end
 .global str_0x95a95c
 
 str_0x95a95c:
-    .string "Hinter der Vitrine liegt ein\nFossil, dessen Kontruen eine\lglitschige Wölbung aufweisen.\pEs wurde mit QUOTEHelixfossilQUOTE\nbetitelt."
+    .string "Hinter der Vitrine liegt ein\nFossil, dessen Kontruen eine\lglitschige Wölbung aufweisen.\pEs wurde mit QUOTE_STARTHelixfossilQUOTE_END\nbetitelt."
         
         
 .elseif LANG_EN

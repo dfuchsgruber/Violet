@@ -314,25 +314,25 @@ str_0x1a8bc9:
 .global str_0x1a8ac7
 
 str_0x1a8ac7:
-    .string "BUFFER_2 wurde auf den Pc\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
+    .string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
         
         
 .global str_0x1a8b4b
 
 str_0x1a8b4b:
-    .string "Box QUOTEBUFFER_3QUOTE\nauf dem Pc ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
+    .string "Box QUOTEBUFFER_3QUOTE\nauf dem PC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
         
         
 .global str_0x1a8a83
 
 str_0x1a8a83:
-    .string "BUFFER_2 wurde auf den Pc\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
+    .string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
         
         
 .global str_0x1a8b08
 
 str_0x1a8b08:
-    .string "Box QUOTEBUFFER_3QUOTE\nauf dem Pc ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
+    .string "Box QUOTEBUFFER_3QUOTE\nauf dem PC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
         
         
 .global str_0x8dcba5
