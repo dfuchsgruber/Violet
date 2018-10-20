@@ -145,8 +145,8 @@ DOTS        = B0
 'ö'         = F5
 'ü'         = F6
 
-QUOTE_START = B2
-QUOTE_END = B3
+QUOTE_START = B1
+QUOTE_END   = B2
 
 'ß'         = F9
 
