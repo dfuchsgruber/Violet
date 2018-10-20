@@ -13,7 +13,7 @@ end
 .global str_0x8a359d
 
 str_0x8a359d:
-    .string "Mein Vater hat die Mytologie der\nPokémon Welt studiert. Sein Werk\lträgt den Titel QUOTE_STARTUnsere Welt - vom\lEi zum PokémonQUOTE_END und ist weltweit\lein Bestseller. Ich bin sehr stolz\ldeswegen."
+    .string "Mein Vater hat die Mythologie der\nPokémon Welt studiert. Sein Werk\lträgt den Titel QUOTE_STARTUnsere Welt - vom\lEi zum PokémonQUOTE_END und ist weltweit\lein Bestseller. Ich bin sehr stolz\ldeswegen."
         
         
 .elseif LANG_EN

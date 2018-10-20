@@ -13,7 +13,7 @@ end
 .global str_0x8a1f57
 
 str_0x8a1f57:
-    .string "Die Stadt der Berge, nennt man\nMeriana City mancherorts. Es\lheißt, dass hier der Arenaleiter\lKamillo aus Hoenn ausgebildet\lwurde. Seit dem zieht dieser Ort\lviele Kampf-Trainer an."
+    .string "QUOTE_STARTDie Stadt der BergeQUOTE_END, nennt man\nMeriana City mancherorts. Es\lheißt, dass hier der Arenaleiter\lKamillo aus Hoenn ausgebildet\lwurde. Seit dem zieht dieser Ort\lviele Kampf-Trainer an."
         
         
 .elseif LANG_EN

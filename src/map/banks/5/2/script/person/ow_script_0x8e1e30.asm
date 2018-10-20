@@ -90,7 +90,7 @@ str_0x8e07ee:
 .global str_0x8e066f
 
 str_0x8e066f:
-	.autostring 36 2 "Nanu? Wer bist du denn?\pDOTS DOTS DOTS\pDu hast den Streit zwischen mir und dem Polizisten angehört?\pWeißt du, die Polizei in Theto ist bis aufs Mark korrupt.\pSie nutzen schamlos ihre Macht aus, um den Bewohnern ihre Willkür aufzuzwingen.\pUnd obwohl sie den Top Vier unterstehen, haben die Polizisten nichts zu befürchten.\pSelbst, wenn man sie auf frischer Tat ertappen würdeDOTS"
+	.autostring 36 2 "Nanu? Wer bist du denn?\pDOTS DOTS DOTS\pDu hast den Streit zwischen mir und dem Polizisten mitgehört?\pWeißt du, die Polizei in Theto ist bis auf\s Mark korrupt.\pSie nutzen schamlos ihre Macht aus, um den Bewohnern ihre Willkür aufzuzwingen.\pUnd obwohl sie den Top Vier unterstehen, haben die Polizisten nichts zu befürchten.\pSelbst, wenn man sie auf frischer Tat ertappen würdeDOTS"
 
 .global str_0x8de630
 

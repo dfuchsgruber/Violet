@@ -1900,7 +1900,7 @@ str_0x89e9d4:
 .global str_0x89e939
 
 str_0x89e939:
-    .string "Danke Opi - ähm ich meine natürlich\nHerr Faun!\pMit diesem Pokémon an meiner\nSeite kann mich kein Hindernis\lstoppen!"
+    .string "Danke, Opi - ähm ich meine natürlich\nHerr Faun!\pMit diesem Pokémon an meiner\nSeite kann mich kein Hindernis\lstoppen!"
         
         
 .global str_0x89e90e

@@ -13,7 +13,7 @@ end
 .global str_0x8a3523
 
 str_0x8a3523:
-    .string "Wir leben hier zusammen mit den\nEltern meines Mannes. Eine große\lFamilie um sich zu haben, ist doch\letwas tolles, nicht?"
+    .string "Wir leben hier zusammen mit den\nEltern meines Mannes. Eine große\lFamilie um sich zu haben ist doch\letwas tolles, nicht?"
         
         
 .elseif LANG_EN
