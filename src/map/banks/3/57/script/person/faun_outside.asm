@@ -458,7 +458,7 @@ str_tall_grass:
 	.autostring 36 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert. Ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
 
 str_call_blaise:
-	.autostring 35 2 "Blaise, na wird es bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
+	.autostring 35 2 "Blaise, na wird\s bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
 
 str_blaise_refuses:
 	.autostring 36 2 "Nein, ich denke eher nicht."
