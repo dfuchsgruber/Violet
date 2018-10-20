@@ -13,7 +13,7 @@ end
 .global str_0x8a0763
 
 str_0x8a0763:
-    .string "Der Angriff eines Pokémon bestimmt\nüber die Stärke seiner physischen\lAngriffe. Der Spezial-Angriff\ldagegen stärkt die speziellen\lAttacken. Ähnlich verhält es sich\lmit den Verteidigungswerten."
+    .string "Der Angriff eines Pokémons bestimmt\nüber die Stärke seiner physischen\lAngriffe. Der Spezial-Angriff\ldagegen stärkt die speziellen\lAttacken. Ähnlich verhält es sich\lmit den Verteidigungswerten."
         
         
 .elseif LANG_EN

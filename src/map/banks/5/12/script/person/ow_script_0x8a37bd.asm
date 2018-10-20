@@ -50,7 +50,7 @@ str_0x8a4832:
 .global str_0x8a4537
 
 str_0x8a4537:
-    .string "Am Anfang war alles nichts als auf\neinem Punkt vereinigte Energie,\ldie sich ausgedehnt hat. In Person\leines Pokémons trat die\lursprüngliche Macht, wie ich sie\lnenne, die alles erschaffen hat,\lin unsere Welt. Die Legende\lspricht von einem Ei, aus dem es\lgeschlüft ist. Wie dem auch sei,\lerschuf es mit seiner Willenkraft\ldie Raumzeit, die die Entstehung\lvon räumlicher Materie eintlang\leiner Zeit ermöglichte. Zudem\lschuf es die Welt, jenseits der\lUnseren, gewissermaßen eine Welt,\ldie die unsere instande hält und\lkatalyisert, die Zerrwelt. In\lunserer Welt aber schuf es dann\ldas Pokémon, von dem alle anderen\labstammen, Mew. Mit dem Schaffen\lder Planeten und Sonnen gelang es\lMew, einen Planeten mit Menschen\lund Pokémon zu besiedeln.\lMöchtest du mehr wissen?"
+    .string "Am Anfang war alles nichts bis auf\neinen Punkt vereinigte Energie,\ldie sich ausgedehnt hat. In Person\leines Pokémons trat die\lursprüngliche Macht, wie ich sie\lnenne, die alles erschaffen hat,\lin unsere Welt. Die Legende\lspricht von einem Ei, aus dem es\lgeschlüft ist. Wie dem auch sei,\lerschuf es mit seiner Willenkraft\ldie Raumzeit, die die Entstehung\lvon räumlicher Materie eintlang\leiner Zeit ermöglichte. Zudem\lschuf es die Welt, jenseits der\lUnseren, gewissermaßen eine Welt,\ldie die unsere instande hält und\lkatalyisert, die Zerrwelt. In\lunserer Welt aber schuf es dann\ldas Pokémon, von dem alle anderen\labstammen, Mew. Mit dem Schaffen\lder Planeten und Sonnen gelang es\lMew, einen Planeten mit Menschen\lund Pokémon zu besiedeln.\lMöchtest du mehr wissen?"
         
         
 .global str_0x8a382c
