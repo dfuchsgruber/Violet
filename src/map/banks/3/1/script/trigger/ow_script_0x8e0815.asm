@@ -418,7 +418,7 @@ str_0x8e148e:
 .global str_0x8e12f8
 
 str_0x8e12f8:
-	.autostring 36 2 "Du bist noch ein Kind, also lass mich dir begreiflch machen, wie unsere Welt eigentlich funktioniert.\pGanz oben stehen die Mächten, die Top Vier und ihr Champion.\pGemeinsam herrschen sie über Theto, wie immer es ihnen beliebt.\pUnd wir, die Polizei, bieten den Menschen im Gegenzug für diese Macht unseren Schutz.\pIst das nicht auch eine Form von Gerechtigkeit?\pSelbstverständlich, ist nicht alles in diesem System perfekt.\pSicherlich gibt es Ungerechtigkeiten hier und da."
+	.autostring 36 2 "Du bist noch ein Kind, also lass mich dir begreiflch machen, wie unsere Welt eigentlich funktioniert.\pGanz oben stehen die Mächte, die Top Vier und ihr Champion.\pGemeinsam herrschen sie über Theto, wie immer es ihnen beliebt.\pUnd wir, die Polizei, bieten den Menschen im Gegenzug für diese Macht unseren Schutz.\pIst das nicht auch eine Form von Gerechtigkeit?\pSelbstverständlich, ist nicht alles in diesem System perfekt.\pSicherlich gibt es Ungerechtigkeiten hier und da."
 
 .global str_0x8e11b9
 

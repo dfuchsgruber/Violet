@@ -84,7 +84,7 @@ str_polizist:
 .global str_0x8dcf8d
 
 str_0x8dcf8d:
-	.autostring 36 2 "Denken Sie, dass sie damit durchkommen?\pWenn die Top Vier von Ihren schmutzigen Geschäften erfahrenDOTS"
+	.autostring 36 2 "Denken Sie, dass sie damit durchkommen?\pWenn die Top Vier von Ihren schmutzigen Geschäften erfährtDOTS"
         
         
 .global str_0x8de230
