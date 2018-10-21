@@ -1144,7 +1144,7 @@ trainer trainers[TRAINER_CNT] = {
   },
   {
     //Trainer 0x2a
-    true,//false, // Custom moves
+    false, // Custom moves
     true, // Custom items
     0x0, // field_0_filler
 	TRAINERCLASS_PKMN_TRAINER,
@@ -1167,7 +1167,7 @@ trainer trainers[TRAINER_CNT] = {
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
-    (trainer_pokemon * ) maike_test// trainer_party_x2a
+    (trainer_pokemon * ) trainer_party_x2a
   },
   {
     //Trainer 0x2b
