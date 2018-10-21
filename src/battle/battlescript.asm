@@ -208,7 +208,7 @@ battle_script_cmds:
 	.word 0x802bc65
 	.word 0x802bd01
 	.word 0x802bd4d
-	.word 0x802bdb1
+	.word bsc_cmd_xCC_set_terrain_based_move
 	.word 0x802be25
 	.word 0x802bea9
 	.word 0x802bf01

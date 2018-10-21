@@ -232,6 +232,13 @@ trainer_pokemon_custom_item_default_attacks trainer_party_x29[] = {
 	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,15,POKEMON_SEEKID,ITEM_TSITRUBEERE)
 };
 
+trainer_pokemon_custom_item_custom_attacks maike_test[2] = {
+
+		TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(0x0, 0x0,0x0,false,false,14,POKEMON_STARALILI,ITEM_TSITRUBEERE, ATTACK_BLUBBER, 0, 0, 0),
+		TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(0x0, 0x0,0x0,false,false,15,POKEMON_LOCKSCHAL,ITEM_TSITRUBEERE, ATTACK_NATUR_KRAFT, 0, 0, 0)
+
+};
+
 trainer_pokemon_custom_item_default_attacks trainer_party_x2a[] = {
 	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,14,POKEMON_STARALILI,ITEM_TSITRUBEERE),
 	TRAINER_PARTY_CUSTOM_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,15,POKEMON_LOCKSCHAL,ITEM_TSITRUBEERE)

@@ -67,6 +67,12 @@ void battlescript_cmd_x06_apply_damage_modifiers();
 void bsc_cmd_xEA_recycle_item();
 
 /**
+ * Pushes a target script as return adress to the battlescript stack.
+ * @param script the target script
+ */
+void battlescript_callstack_push(u8 *script);
+
+/**
  * Returns a word from the current bsc pointer and increments by 4.
  * @return the word
  */
