@@ -39,6 +39,11 @@ MAPPROJ=proj.pmp
 SYMBOLDUMP=$(BLDPATH)/symbols
 
 # Pokemon crawler settings
+SPECIESCONSTANTTABLE=species
+PKLPATH=pkl
+MOVESETPKL=$(addprefix $(PKLPATH)/, $(addsuffix .pkl, $(shell tools/pokemon_move_generator/get_species.py $(MAPPROJ) $(SPECIESCONSTANTTABLE))))
+
+# Deprecated (soon at least...)
 PKMNCRAWLERDATA=$(BLDPATH)/pkmncrawlerdata.pkl
 # Define the symbol of the evolution talbe (linked elf is parsed by movegenerator)
 PKMNEVOTABLE=pokemon_evolutions
@@ -242,7 +247,9 @@ $(BLDPATH)/pkmnmoves.o: $(PKMNCRAWLERDATA) $(BLDPATH)/src.o $(PKMNCRAWLEREXTERN)
 	$(PKMNCRAWLERDATA)
 	$(CC) $(CFLAGS) $(BLDPATH)/pkmnmoves.c -o $(BLDPATH)/pkmnmoves.o
 	
-
+$(MOVESETPKL):
+	$(shell mkdir -p $(dir $@))
+	tools/pokemon_move_generator/crawler.py $(notdir $(basename $@)) $@
 
 	
 # Intermediate object files (large input lists are not supported by console)
@@ -280,7 +287,8 @@ $(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
 	#$(PY3) tools/index.py
 	
-all: $(BLDROM) soundfont
+all: $(BLDROM) soundfont $(MOVESETPKL)
+	@echo "sp: $(MOVESETPKL)"
 		
 clean:
 	rm -rf $(BLDPATH)
