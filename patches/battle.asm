@@ -90,18 +90,6 @@
 	.word bsc_strings
 
 
-.org 0x0802BDBC
-    //This is fragile, no command must be changed or inserted 
-    //as the space exactly suffices to perform the hook
-        ldr r2, =bsc_cmd_xCC_set_terrain_based_move | 1
-        bl _blxr2
-        mov r1, #0
-        ldr r2, =0x0802BDD0 | 1
-_blxr2:
-        bx r2
-        .pool
-        
-
 .org 0x0800F1E4
         ldr r1, =battle_bg_load | 1
         bx r1

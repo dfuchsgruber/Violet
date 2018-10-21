@@ -13,6 +13,7 @@
 #include "battle/state.h"
 #include "constants/battle_bgs.h"
 #include "constants/pokemon_types.h"
+#include "attack.h"
 
 battle_bg battle_bgs[29] = {
     // Battle street
@@ -253,11 +254,13 @@ u16 terrain_moves[] = {
     ATTACK_SCHNABEL, //mill
 };
 
-u16 bsc_cmd_xCC_set_terrain_based_move(){
-    //Note that this is only a replacement for the first few parts of the function
-    //The hook will redirect to a continuation of bsc_cmd_xCC of the vanilla game
+void bsc_cmd_xCC_set_terrain_based_move(){
+	battle_flags.flag_A = 0;
     active_attack = terrain_moves[battle_bg_get_id()];
-    return active_attack;
+	defending_battler = attack_get_target_of_active_battler(active_attack, false);
+	u8 *attack_script = attack_effects[attacks[active_attack].effect];
+	battlescript_callstack_push(attack_script);
+	bsc_offset++;
 }
 battle_anim_bg battle_anim_bgs[] = {
         {(void*)0x8d1c9bc, (void*)0x8d1cfb4, (void*)0x8d1cfd4}, //0x0

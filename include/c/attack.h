@@ -38,6 +38,10 @@ extern "C" {
     }type_effectiveness;
     
     attack attacks[ATTACK_CNT];
+    /**
+     * Battle scripts for each attack effect.
+     */
+    extern u8 *attack_effects[];
 
     /**
      * Checks if an attack is a hidden machine

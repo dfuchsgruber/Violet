@@ -6,7 +6,7 @@
 #include "trainer/trainer.h"
 #include "trainer/party.h"
 #include "language.h"
-
+trainer_pokemon_custom_item_custom_attacks maike_test[2];
 trainer trainers[TRAINER_CNT] = {
   {
     //Trainer 0x0
