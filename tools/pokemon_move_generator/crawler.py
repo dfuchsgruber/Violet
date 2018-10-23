@@ -12,13 +12,13 @@ import pymap.project
 import warnings
 import valid_attacks
 
-def parse_html(html, generation=7):
+def parse_html(text, generation=7):
     """ Parses the html of a pokemon. 
     
     Parameters:
     -----------
-    html : str
-        The html to parse.
+    text : list of str
+        The non-empty lines of the html.
     generation : int
         The generation the movesets are based on.
 
@@ -30,8 +30,11 @@ def parse_html(html, generation=7):
     # The html of pokewiki unfortunately are not well formatted.
     # Therefore we use *URGH* RegEx to parse an html (never do that, I guess...)
     # Works here though...
-    soup = BeautifulSoup(html, "html5lib")
-    text = [line.strip() for line in soup.get_text().splitlines() if line.strip()]
+
+    
+    with open('test.txt', 'w+') as f:
+        f.write('\n'.join(text))
+
 
     pokemon = {
         'accessible_attacks' : set()
@@ -51,11 +54,187 @@ def parse_html(html, generation=7):
     # Parse tm / hm attacks
     pokemon['accessible_attacks'].update()
 
+    # Parse basestats
+    pokemon['basestats'] = parse_basestats(text)
+    pokemon['ev_yield'] = parse_ev_yield(text)
+
+    # Parse abilities
+    pokemon['abilities'], pokemon['hidden_ability'] = parse_abilities(text)
+
+    # Parse catch rate, base friendship
+    pokemon['catch_rate'] = int(text[text.index('Fangrate') + 1].split(' ')[0])
+    pokemon['base_friendship'] = int(text[text.index('Start-Freundschaft')+ 1])
+    pokemon['gender'] = text[text.index('Geschlecht') + 1]
+    pokemon['egg_groups'] = parse_egg_groups(text)
+    pokemon['egg_cycles'] = parse_egg_cycles(text)
+    pokemon['exp_type'] = text[text.index('EP bis Lv. 100') + 1]
+    pokemon['category'] = text[text.index('Kategorie') + 1]
+    pokemon['height'] = float(text[text.index('Größe') + 1].split(' ')[0].replace(',', '.'))
+    pokemon['weight'] = float(text[text.index('Gewicht') + 1].split(' ')[0].replace(',', '.'))
+    pokemon['dex_entry'] = parse_dex_entry(text)
+    
+    # A lot of data can not be crawled
+    pokemon['types'] = [None, None]
+    pokemon['exp_yield'] = None
+    pokemon['safari'] = None
+    pokemon['flip_and_color'] = None
+    pokemon['items'] = [None, None] # Parsing items is a pain, we use our post-linking system to fix this
+    pokemon['form'] = None
+
+def parse_egg_cycles(text):
+    """ Parses the egg cycles of a pokemon.
+    
+    Parameters:
+    -----------
+    text : list of str
+        The non-empty lines of the html.
+
+    Returns:
+    --------
+    egg_cycles : int
+        The egg cycles of this pokemon.
+    """
+    egg_cylces_text = text[text.index('Ei-Zyklen') + 1]
+    if egg_cylces_text == 'unbekannt':
+        return 1
+    return int(egg_cylces_text)
+
+def parse_dex_entry(text, games=('X', 'XY')):
+    """ Parses the dex entry of a pokemon.
+    
+    Parameters:
+    -----------
+    text : list of str
+        The non-empty lines of the html.
+    games : iterable of strings
+        The abbreviations for the game of which the text to obtain from
+        in decreasing order.
+        Default: ('X', 'XY') for Pokémon X.
+
+    Returns:
+    --------
+    egg_groups : list of str
+        The egg groups of a pokemon.
+    """
+    idx = text.index('Pokédex-Einträge')
+    for game in games:
+        try:
+            idx = text.index(game, idx) + 1
+            break
+        except:
+            continue
+    return text[idx]
 
 
+def parse_egg_groups(text):
+    """ Parses the egg group(s) of a pokemon.
+    
+    Parameters:
+    -----------
+    text : list of str
+        The non-empty lines of the html.
+
+    Returns:
+    --------
+    egg_groups : list of str
+        The egg groups of a pokemon.
+    """
+    if 'Ei-Gruppe' in text:
+        # Only one egg group
+        egg_group = text[text.index('Ei-Gruppe') + 1]
+        return [egg_group, egg_group]
+    elif 'Ei-Gruppen' in text:
+        # Two egg groups
+        return text[text.index('Ei-Gruppen') + 1].split(', ')
+
+
+
+
+def parse_abilities(text):
+    """ Parses the abilities attacks of a pokemon. 
+    
+    Parameters:
+    -----------
+    text : list of str
+        The non-empty lines of the html.
+
+    Returns:
+    --------
+    abilities, hidden_ability : list, str or None
+        Dict mapping from basestat names to their values.
+    """
+    hidden_ability = None
+    try:
+        idx = text.index('Fähigkeiten') + 1
+    except:
+        # If the pokemon only has one ability the stirng is truncated
+        idx = text.index('Fähigkeit') + 1
+    sections = text[idx].split('  ')
+    if len(sections) > 1:
+        # Section[1] contains hidden abilitiy and mega ability
+        subsections = sections[1].split(' ')
+        for ability, ability_type in zip(subsections[0::2], subsections[1::2]):
+            if ability_type == '(VF)':
+                hidden_ability = ability
+                break
+    
+    abilities = sections[0].split(' ')
+    if len(abilities) == 1:
+        abilities.append(None)
+    
+    return abilities, hidden_ability
+    
+
+
+
+def parse_basestats(text):
+    """ Parses the basestats attacks of a pokemon. 
+    
+    Parameters:
+    -----------
+    text : list of str
+        The non-empty lines of the html.
+
+    Returns:
+    --------
+    basestats : dict
+        Dict mapping from basestat names to their values.
+    """
+    basestats = {}
+
+    # Find the start tag 'Basiswerte'
+    idx = text.index('Basiswerte') + 10
+    for idx in range(idx, idx + 6 * 9, 9):
+        basestats[text[idx]] = int(text[idx + 2])
+    return basestats
+
+def parse_ev_yield(text):
+    """ Parses the basestats ev yield of a pokemon. 
+    
+    Parameters:
+    -----------
+    text : list of str
+        The non-empty lines of the html.
+
+    Returns:
+    --------
+    ev_yield : dict
+        Dict mapping from basestat names to their values.
+    """
+    ev_yield = {}
+
+    # Find the start tag 'Basiswerte'
+    idx = text.index('Basiswerte') + 10
+    for idx in range(idx, idx + 6 * 9, 9):
+        ev_yield_text = text[idx + 1]
+        # Some Pokémon had their ev yield changed
+        if '*' in ev_yield_text:
+            ev_yield_text = ev_yield_text[:ev_yield_text.index('*')]
+        ev_yield[text[idx]] = int(ev_yield_text)
+    return ev_yield
 
 def parse_levelup_attacks(text, generation=7):
-    """ Parses the html of a pokemon. 
+    """ Parses the levelup attacks of a pokemon. 
     
     Parameters:
     -----------
@@ -260,6 +439,15 @@ if __name__ == '__main__':
         species_lowercase = "Porygon-Z"
     elif species_lowercase == "Sen_long":
         species_lowercase = "Sen-Long"
+
+    # Appearantly pokewiki now holds sites /{number}.html for each entry...
+    # Thus all POKEMON_{number} paddings have to be ignored by force
+    try:
+        int(species_lowercase, 0)
+        species_lowercase = f'not_dex_{species_lowercase}'
+    except:
+        pass
+
     # Build url
     try:
         url = f'https://www.pokewiki.de/{species_lowercase}'
@@ -268,11 +456,16 @@ if __name__ == '__main__':
         url = urllib.parse.urlunsplit(url_split)
         # print(f'Fetching {url} for species {species_lowercase}')
         html = urllib.request.urlopen(url)
-        pokemon = parse_html(html, generation=args.generation)
+        soup = BeautifulSoup(html, "html5lib")
+        text = [line.strip() for line in soup.get_text().splitlines() if line.strip()]
     except Exception as e:
         warnings.warn(f'Could not fetch {url}: {e}')
-        pokemon = None
-    
+        # Dump None
+        with open(args.output, 'wb') as f:
+            pickle.dump(None, f)
+        exit(0)
+
+    pokemon = parse_html(text, generation=args.generation)
     with open(args.output, 'wb') as f:
         pickle.dump(pokemon, f)
 

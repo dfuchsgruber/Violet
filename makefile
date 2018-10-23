@@ -249,7 +249,7 @@ $(BLDPATH)/pkmnmoves.o: $(PKMNCRAWLERDATA) $(BLDPATH)/src.o $(PKMNCRAWLEREXTERN)
 	
 $(MOVESETPKL):
 	$(shell mkdir -p $(dir $@))
-	tools/pokemon_move_generator/crawler.py $(notdir $(basename $@)) $@
+	tools/pokemon_generator/crawler.py $(notdir $(basename $@)) tools/pokemon_generator/species_to_idx.json $@
 
 	
 # Intermediate object files (large input lists are not supported by console)
@@ -288,7 +288,6 @@ $(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(
 	#$(PY3) tools/index.py
 	
 all: $(BLDROM) soundfont $(MOVESETPKL)
-	@echo "sp: $(MOVESETPKL)"
 		
 clean:
 	rm -rf $(BLDPATH)
