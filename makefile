@@ -287,7 +287,7 @@ $(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
 	#$(PY3) tools/index.py
 	
-all: $(BLDROM) soundfont $(MOVESETPKL)
+all: $(BLDROM) soundfont
 		
 clean:
 	rm -rf $(BLDPATH)
