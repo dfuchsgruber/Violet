@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
-import pokebase
 import argparse
 import json
 import pickle
 import requests
 import urllib
+
+LANGUAGE='de'
+VERSION_GROUP='sun-moon'
 
 def get_url(*args):
     """ Gets the url of a resource. 
@@ -39,7 +41,7 @@ def get_resource(url):
     response.raise_for_status()
     return response.json()
 
-def get_name(names, language='de'):
+def get_name(names, language=LANGUAGE):
     """ Returns the name of a resource in a certain language.
     
     Parameters:
@@ -88,8 +90,46 @@ if __name__ == '__main__':
         pokemon['capture_rate'] = pokemon_species['capture_rate']
         pokemon['base_happiness'] = pokemon_species['base_happiness']
         pokemon['egg_cycles'] = pokemon_species['hatch_counter']
-  
-        print(get_resource('https://pokeapi.co/api/v2/growth-rate/'))
+        pokemon['color'] = get_name(get_resource(pokemon_species['color']['url'])['names'])
+        # Shape is only available in english...
+        pokemon['shape'] = get_name(get_resource(pokemon_species['shape']['url'])['names'], language='en')
+        
+        pokemon_resource = get_resource(get_url('pokemon', idx))
+        pokemon['height'] = pokemon_resource['height']
+        pokemon['weight'] = pokemon_resource['weight']
+        pokemon['base_experience'] = pokemon_resource['base_experience']
+        
+        # Parse abilities
+        pokemon['hidden_ability'] = None
+        pokemon['abilities'] = []
+        for entry in pokemon_resource['abilities']:
+            abilitiy_resource = get_resource(entry['ability']['url'])
+            ability_name = get_name(abilitiy_resource['names'])
+            if entry['is_hidden']:
+                pokemon['hidden_ability'] = ability_name
+            else:
+                pokemon['abilities'].append(ability_name)
+
+        # Parse stats
+        pokemon['stats'] = {}
+        pokemon['ev_yield'] = {}
+        for element in pokemon_resource['stats']:
+            name = get_name(get_resource(element['stat']['url'])['names'])
+            pokemon['stats'][name] = element['base_stat']
+            pokemon['ev_yield'][name] = element['effort']
+
+        # Parse movesets
+        pokemon['levelup_moves'] = []
+        pokemon['egg_moves'] = {}
+        # TM and tutor moves are later generated based on the 'accessible_moves'
+        pokemon['accessible_moves'] = {}
+
+        for element in pokemon_resource['moves']:
+            pass
+
+        
+
+
 
 
         
