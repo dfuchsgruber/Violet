@@ -68,3 +68,6 @@ bld/
 psg_data.raw
 goldensun_synth.raw
 base/
+
+# Virtual Environments
+.venv/
