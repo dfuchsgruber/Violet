@@ -70,8 +70,8 @@ FATAMORGANALUT=fata_morgana_blocks
 FATAMORGANALUTSIZE=fata_morgana_blocks_cnt
 
 # Soundfont ripper
-PSG_DATA=/media/d/romhacking/gba-mus-ripper/psg_data.raw
-GOLDENSUN_SYNTH=/media/d/romhacking/gba-mus-ripper/goldensun_synth.raw
+PSG_DATA=psg_data.raw
+GOLDENSUN_SYNTH=goldensun_synth.raw
 
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))#
 
