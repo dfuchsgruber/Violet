@@ -1,13 +1,3 @@
-bld/
-base/
-/base
-make.bat
-/bld
-nbproject/
-.vscode/
-/.vscode
-.project
-
 # Constants
 include/c/constants*
 include/as/constants*
@@ -70,3 +60,11 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# Build Results
+bld/
+
+# Resources
+psg_data.raw
+goldensun_synth.raw
+base/
