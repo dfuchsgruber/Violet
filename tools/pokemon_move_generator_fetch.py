@@ -19,7 +19,8 @@ from pymap import project
 def fetch_data(output_file, consts):
     """ Fetches data from pokewiki and caches it as python pickles"""
     pkmns = {}
-    for i, species in enumerate(consts.values("species")):
+    for i, species in enumerate(consts['species']):
+        i = consts['species'][species]
         #for i, species in ((21, 'POKEMON_Mähikel'), (250, 'POKEMON_Ho-Oh')):
         #for old, new in (("ae", "ä"), ("ue", "ü"), ("oe", "ö"), ("AE", "Ä"), ("OE", "Ö"), ("UE", "Ü")):
         #    species = species.replace(old, new)
@@ -58,7 +59,7 @@ if __name__ == "__main__":
             print("Usage ./fetch.py directory project\nStores pickles inside directory.")
             exit()
 
-    proj = project.Project.load_project(args[1])
+    proj = project.Project(args[1])
 
 
     fetch_data(args[0], proj.constants)
