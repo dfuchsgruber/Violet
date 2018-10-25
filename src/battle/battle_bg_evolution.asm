@@ -20,7 +20,7 @@ battle_bg_evolution1:
     ldr r1, =callback4_set
     bl bxr1
     mov r0, #0
-    ldr r1, =callback3_set
+    ldr r1, =vblank_handler_set
     bl bxr1
     ldr r1, =0x080CDFC4 | 1
 bxr1:

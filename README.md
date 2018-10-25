@@ -11,15 +11,16 @@ The build process of this repository requires you to have installed:
 - [armips](https://github.com/Kingcom/armips)
 - [python 3.X](https://www.python.org/)
 - [Midi2Agb](https://github.com/ipatix/midi2agb) - not currently but at some point
-- [soundFontRipper](https://github.com/WodkaRHR/gba-mus-ripper)
+- [SoundFontRipper]
 ### Python
 - [pyagb](https://github.com/WodkaRHR/pyagb)
-### Rom
-- A german firered rom (download is illegal!)
+### Resources
+- A german firered rom (download is illegal!) located at `./base/bprd.gba`
+- `psg_data.raw` from [SoundFontRipper] located at `./psg_data.raw`
+- `goldensun_synth.raw` from [SoundFontRipper] located at `./goldensun_synth.raw`
 
 ## Configuration
-
-After fulfilling the requirements place the rom file at `base/bprd.gba`. Adjust the commands in the `makefile` to execute the binaries above.
+Adjust the commands in the `makefile` to execute the binaries above.
 
 ## Building
 
@@ -28,6 +29,5 @@ Simply run the makefile:
 $ make all
 ```
 
-
-
-
+<!--- References -->
+[SoundFontRipper]: https://github.com/WodkaRHR/gba-mus-ripper
