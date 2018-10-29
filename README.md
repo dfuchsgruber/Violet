@@ -13,7 +13,9 @@ The build process of this repository requires you to have installed:
 - [Midi2Agb](https://github.com/ipatix/midi2agb) - not currently but at some point
 - [SoundFontRipper]
 ### Python
-- [pyagb](https://github.com/WodkaRHR/pyagb)
+This project provides a `Pipfile` for automatically installing all `pip`-dependencies.  
+Either invoke `pipenv install --system` in order to install the dependencies system-wide, or `pipenv install` in order to create a new virtual environment with the dependencies installed. Please refer to [the docs](https://docs.pipenv.org/) for further information.
+
 ### Resources
 - A german firered rom (download is illegal!) located at `./base/bprd.gba`
 - `psg_data.raw` from [SoundFontRipper] located at `./psg_data.raw`
