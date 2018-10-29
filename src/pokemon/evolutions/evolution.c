@@ -43,7 +43,7 @@ u16 pokemon_get_evolution(pokemon *p, u8 type, u16 arg){
                     int j;
                     for(j = 0; j < 4; j++){
                         u16 attack = (u16)pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1 + j), 0);
-                        if(attacks[attack].type == TYPE_FAIRY)
+                        if(attacks[attack].type == TYPE_FEE)
                             return POKEMON_FEELINARA;
                     }
                 }

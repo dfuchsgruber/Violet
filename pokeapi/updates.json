@@ -1,0 +1,5618 @@
+{
+	"POKEMON_POKEMON_0": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_BISASAM": {
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 3
+	},
+	"POKEMON_BISAKNOSP": {
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 3
+	},
+	"POKEMON_BISAFLOR": {
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 3
+	},
+	"POKEMON_GLUMANDA": {
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 0
+	},
+	"POKEMON_GLUTEXO": {
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 0
+	},
+	"POKEMON_GLURAK": {
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 0
+	},
+	"POKEMON_SCHIGGY": {
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"hidden_ability": "Regenmut",
+		"color": 1
+	},
+	"POKEMON_SCHILLOK": {
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"hidden_ability": "Regenmut",
+		"color": 1
+	},
+	"POKEMON_TURTOK": {
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"hidden_ability": "Regenmut",
+		"color": 1
+	},
+	"POKEMON_DARTIRI": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Orkanschw",
+		"color": 0
+	},
+	"POKEMON_DARTIGNIS": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Orkanschw",
+		"color": 0
+	},
+	"POKEMON_FIARO": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Orkanschw",
+		"color": 0
+	},
+	"POKEMON_HORNLIU": {
+		"ability_0": "Puderabwehr",
+		"ability_1": null,
+		"hidden_ability": "Giftdorn",
+		"color": 5
+	},
+	"POKEMON_KOKUNA": {
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"hidden_ability": "Panzerhaut",
+		"color": 2
+	},
+	"POKEMON_BIBOR": {
+		"ability_0": "Extradorn",
+		"ability_1": null,
+		"hidden_ability": "Hexaplaga",
+		"color": 2
+	},
+	"POKEMON_STARALILI": {
+		"ability_0": "Adlerauge",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 5
+	},
+	"POKEMON_STARAVIA": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 5
+	},
+	"POKEMON_STARAPTOR": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 5
+	},
+	"POKEMON_BRONZEL": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 1
+	},
+	"POKEMON_BRONZONG": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 1
+	},
+	"POKEMON_MAEHIKEL": {
+		"ability_0": "Ap_sparer",
+		"ability_1": null,
+		"hidden_ability": "Notschutz",
+		"color": 3
+	},
+	"POKEMON_CHEVRUMM": {
+		"ability_0": "Ap_sparer",
+		"ability_1": null,
+		"hidden_ability": "Notschutz",
+		"color": 3
+	},
+	"POKEMON_PARAGONI": {
+		"ability_0": "Innere_kraft",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 3
+	},
+	"POKEMON_TROMBORK": {
+		"ability_0": "Innere_kraft",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 3
+	},
+	"POKEMON_PIKACHU": {
+		"ability_0": "Statik",
+		"ability_1": null,
+		"hidden_ability": "Lernfaehig",
+		"color": 2
+	},
+	"POKEMON_RAICHU": {
+		"ability_0": "Statik",
+		"ability_1": null,
+		"hidden_ability": "Lernfaehig",
+		"color": 2
+	},
+	"POKEMON_SANDAN": {
+		"ability_0": "Sandschleier",
+		"ability_1": null,
+		"hidden_ability": "Sandherz",
+		"color": 2
+	},
+	"POKEMON_SANDAMER": {
+		"ability_0": "Sandschleier",
+		"ability_1": null,
+		"hidden_ability": "Sandherz",
+		"color": 2
+	},
+	"POKEMON_NIDORANW": {
+		"ability_0": "Giftdorn",
+		"ability_1": null,
+		"hidden_ability": "Blitzfaenger",
+		"color": 1
+	},
+	"POKEMON_NIDORINA": {
+		"ability_0": "Giftdorn",
+		"ability_1": null,
+		"hidden_ability": "Blitzfaenger",
+		"color": 1
+	},
+	"POKEMON_NIDOQUEEN": {
+		"ability_0": "Giftdorn",
+		"ability_1": null,
+		"hidden_ability": "Blitzfaenger",
+		"color": 1
+	},
+	"POKEMON_NIDORANM": {
+		"ability_0": "Giftdorn",
+		"ability_1": null,
+		"hidden_ability": "Bedroher",
+		"color": 6
+	},
+	"POKEMON_NIDORINO": {
+		"ability_0": "Giftdorn",
+		"ability_1": null,
+		"hidden_ability": "Bedroher",
+		"color": 6
+	},
+	"POKEMON_NIDOKING": {
+		"ability_0": "Giftdorn",
+		"ability_1": null,
+		"hidden_ability": "Bedroher",
+		"color": 6
+	},
+	"POKEMON_FLOETTE": {
+		"ability_0": "Lernfaehig",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 8
+	},
+	"POKEMON_FLORGES": {
+		"ability_0": "Lernfaehig",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 8
+	},
+	"POKEMON_VULPIX": {
+		"ability_0": "Feuerfaenger",
+		"ability_1": null,
+		"hidden_ability": "Solarkraft",
+		"color": 5
+	},
+	"POKEMON_VULNONA": {
+		"ability_0": "Feuerfaenger",
+		"ability_1": null,
+		"hidden_ability": "Solarkraft",
+		"color": 2
+	},
+	"POKEMON_PUMMELUFF": {
+		"ability_0": "Charmebolzen",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_KNUDDELUFF": {
+		"ability_0": "Charmebolzen",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_ZUBAT": {
+		"ability_0": "Konzentrator",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 6
+	},
+	"POKEMON_GOLBAT": {
+		"ability_0": "Konzentrator",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 6
+	},
+	"POKEMON_MYRAPLA": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Sporenwirt",
+		"color": 1
+	},
+	"POKEMON_DUFLOR": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Sporenwirt",
+		"color": 1
+	},
+	"POKEMON_GIFLOR": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Sporenwirt",
+		"color": 0
+	},
+	"POKEMON_FOLIPURBA": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Lernfaehig",
+		"color": 0
+	},
+	"POKEMON_FEELINARA": {
+		"ability_0": "Ap_sparer",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_WATTZAPF": {
+		"ability_0": "Facettenauge",
+		"ability_1": null,
+		"hidden_ability": "Statik",
+		"color": 2
+	},
+	"POKEMON_VOLTULA": {
+		"ability_0": "Facettenauge",
+		"ability_1": null,
+		"hidden_ability": "Statik",
+		"color": 2
+	},
+	"POKEMON_DIGDA": {
+		"ability_0": "Sandschleier",
+		"ability_1": "Auswegslos",
+		"hidden_ability": "Techniker",
+		"color": 5
+	},
+	"POKEMON_DIGDRI": {
+		"ability_0": "Sandschleier",
+		"ability_1": "Auswegslos",
+		"hidden_ability": "Techniker",
+		"color": 5
+	},
+	"POKEMON_KASTADUR": {
+		"ability_0": "Rauhaut",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 7
+	},
+	"POKEMON_TENTANTEL": {
+		"ability_0": "Rauhaut",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 7
+	},
+	"POKEMON_ENTON": {
+		"ability_0": "Feuchtigkeit",
+		"ability_1": "Wolke_sieben",
+		"hidden_ability": "Luzid",
+		"color": 2
+	},
+	"POKEMON_ENTORON": {
+		"ability_0": "Feuchtigkeit",
+		"ability_1": "Wolke_sieben",
+		"hidden_ability": "Luzid",
+		"color": 1
+	},
+	"POKEMON_MENKI": {
+		"ability_0": "Munterkeit",
+		"ability_1": null,
+		"hidden_ability": "Tollwut",
+		"color": 5
+	},
+	"POKEMON_RASAFF": {
+		"ability_0": "Munterkeit",
+		"ability_1": null,
+		"hidden_ability": "Tollwut",
+		"color": 5
+	},
+	"POKEMON_FUKANO": {
+		"ability_0": "Bedroher",
+		"ability_1": "Feuerfaenger",
+		"hidden_ability": "Ungebrochen",
+		"color": 5
+	},
+	"POKEMON_ARKANI": {
+		"ability_0": "Bedroher",
+		"ability_1": "Feuerfaenger",
+		"hidden_ability": "Ungebrochen",
+		"color": 5
+	},
+	"POKEMON_GRAMOKLES": {
+		"ability_0": "Robustheit",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 7
+	},
+	"POKEMON_DUOKLES": {
+		"ability_0": "Robustheit",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 5
+	},
+	"POKEMON_DURENGARD": {
+		"ability_0": "Taktikwechs",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 7
+	},
+	"POKEMON_ABRA": {
+		"ability_0": "Synchro",
+		"ability_1": "Konzentrator",
+		"hidden_ability": "Ap_sparer",
+		"color": 5
+	},
+	"POKEMON_KADABRA": {
+		"ability_0": "Synchro",
+		"ability_1": "Konzentrator",
+		"hidden_ability": "Luzid",
+		"color": 5
+	},
+	"POKEMON_SIMSALA": {
+		"ability_0": "Synchro",
+		"ability_1": "Konzentrator",
+		"hidden_ability": "Luzid",
+		"color": 5
+	},
+	"POKEMON_MACHOLLO": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 7
+	},
+	"POKEMON_MASCHOCK": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 7
+	},
+	"POKEMON_MACHOMEI": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 7
+	},
+	"POKEMON_KNOFENSA": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Notduenger",
+		"color": 3
+	},
+	"POKEMON_ULTRIGARIA": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Notduenger",
+		"color": 3
+	},
+	"POKEMON_SARZENIA": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Notduenger",
+		"color": 3
+	},
+	"POKEMON_TENTACHA": {
+		"ability_0": "Neutraltorso",
+		"ability_1": "Kloakensosse",
+		"hidden_ability": "Lebensraeuber",
+		"color": 1
+	},
+	"POKEMON_TENTOXA": {
+		"ability_0": "Neutraltorso",
+		"ability_1": "Kloakensosse",
+		"hidden_ability": "Lebensraeuber",
+		"color": 1
+	},
+	"POKEMON_KLEINSTEIN": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Felsenkern",
+		"color": 5
+	},
+	"POKEMON_GEOROK": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Felsenkern",
+		"color": 5
+	},
+	"POKEMON_GEOWAZ": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Felsenkern",
+		"color": 5,
+		"levelup_moves": [
+			[
+				"Glut",
+				25
+			],
+			[
+				"Hei\u00dfstein",
+				35
+			],
+			[
+				"Eruption",
+				45
+			]
+		]
+	},
+	"POKEMON_PONITA": {
+		"ability_0": "Angsthase",
+		"ability_1": "Feuerfaenger",
+		"hidden_ability": "Flammkoerper",
+		"color": 2
+	},
+	"POKEMON_GALLOPA": {
+		"ability_0": "Angsthase",
+		"ability_1": "Feuerfaenger",
+		"hidden_ability": "Flammkoerper",
+		"color": 2
+	},
+	"POKEMON_FLEGMON": {
+		"ability_0": "Doesigkeit",
+		"ability_1": "Tempomacher",
+		"hidden_ability": "Innere_kraft",
+		"color": 9
+	},
+	"POKEMON_LAHMUS": {
+		"ability_0": "Doesigkeit",
+		"ability_1": "Tempomacher",
+		"hidden_ability": "Innere_kraft",
+		"color": 9
+	},
+	"POKEMON_MAGNETILO": {
+		"ability_0": "Magnetfalle",
+		"ability_1": "Robustheit",
+		"hidden_ability": "Schwebe",
+		"color": 7
+	},
+	"POKEMON_MAGNETON": {
+		"ability_0": "Magnetfalle",
+		"ability_1": "Robustheit",
+		"hidden_ability": "Schwebe",
+		"color": 7
+	},
+	"POKEMON_PORENTA": {
+		"ability_0": "Adlerauge",
+		"ability_1": "Konzentrator",
+		"hidden_ability": "Orkanschw",
+		"color": 5
+	},
+	"POKEMON_DODU": {
+		"ability_0": "Angsthase",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Allrounder",
+		"color": 5
+	},
+	"POKEMON_DODRI": {
+		"ability_0": "Angsthase",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Allrounder",
+		"color": 5
+	},
+	"POKEMON_JUROB": {
+		"ability_0": "Speckschicht",
+		"ability_1": null,
+		"hidden_ability": "Barriere",
+		"color": 8
+	},
+	"POKEMON_JUGONG": {
+		"ability_0": "Speckschicht",
+		"ability_1": null,
+		"hidden_ability": "Barriere",
+		"color": 8
+	},
+	"POKEMON_SLEIMA": {
+		"ability_0": "Duftnote",
+		"ability_1": "Wertehalter",
+		"hidden_ability": "Ap_sparer",
+		"color": 6
+	},
+	"POKEMON_SLEIMOK": {
+		"ability_0": "Duftnote",
+		"ability_1": "Wertehalter",
+		"hidden_ability": "Ap_sparer",
+		"color": 6
+	},
+	"POKEMON_MUSCHAS": {
+		"ability_0": "Panzerhaut",
+		"ability_1": null,
+		"hidden_ability": "Innere_kraft",
+		"color": 6
+	},
+	"POKEMON_AUSTOS": {
+		"ability_0": "Panzerhaut",
+		"ability_1": null,
+		"hidden_ability": "Innere_kraft",
+		"color": 6
+	},
+	"POKEMON_NEBULAK": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 6
+	},
+	"POKEMON_ALPOLLO": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 6
+	},
+	"POKEMON_GENGAR": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 6
+	},
+	"POKEMON_ONIX": {
+		"ability_0": "Steinhaupt",
+		"ability_1": "Robustheit",
+		"hidden_ability": "Sandherz",
+		"color": 7
+	},
+	"POKEMON_TRAUMATO": {
+		"ability_0": "Insomnia",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 2
+	},
+	"POKEMON_HYPNO": {
+		"ability_0": "Insomnia",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 2
+	},
+	"POKEMON_KRABBY": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Panzerhaut",
+		"hidden_ability": "Techniker",
+		"color": 0
+	},
+	"POKEMON_KINGLER": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Panzerhaut",
+		"hidden_ability": "Techniker",
+		"color": 0
+	},
+	"POKEMON_VOLTOBAL": {
+		"ability_0": "Laermschutz",
+		"ability_1": "Statik",
+		"hidden_ability": "Fruehzuender",
+		"color": 0
+	},
+	"POKEMON_LEKTROBAL": {
+		"ability_0": "Laermschutz",
+		"ability_1": "Statik",
+		"hidden_ability": "Fruehzuender",
+		"color": 0
+	},
+	"POKEMON_OWEI": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Reiche_ernte",
+		"color": 9
+	},
+	"POKEMON_KOKOWEI": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Reiche_ernte",
+		"color": 2
+	},
+	"POKEMON_TRAGOSSO": {
+		"ability_0": "Steinhaupt",
+		"ability_1": "Blitzfaenger",
+		"hidden_ability": "Kampfpanzer",
+		"color": 5
+	},
+	"POKEMON_KNOGGA": {
+		"ability_0": "Steinhaupt",
+		"ability_1": "Blitzfaenger",
+		"hidden_ability": "Kampfpanzer",
+		"color": 5
+	},
+	"POKEMON_KICKLEE": {
+		"ability_0": "Flexibilitaet",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 5
+	},
+	"POKEMON_NOCKCHAN": {
+		"ability_0": "Adlerauge",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 5
+	},
+	"POKEMON_SCHLURP": {
+		"ability_0": "Tempomacher",
+		"ability_1": "Doesigkeit",
+		"hidden_ability": "Wolke_sieben",
+		"color": 9
+	},
+	"POKEMON_SMOGON": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 6
+	},
+	"POKEMON_SMOGMOG": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 6
+	},
+	"POKEMON_RIHORN": {
+		"ability_0": "Blitzfaenger",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Achtlos",
+		"color": 7
+	},
+	"POKEMON_RIZEROS": {
+		"ability_0": "Blitzfaenger",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Achtlos",
+		"color": 7
+	},
+	"POKEMON_CHANEIRA": {
+		"ability_0": "Innere_kraft",
+		"ability_1": "Edelmut",
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_ZOBIRIS": {
+		"ability_0": "Adlerauge",
+		"ability_1": "Zeitspiel",
+		"hidden_ability": "Strolch",
+		"color": 6
+	},
+	"POKEMON_KANGAMA": {
+		"ability_0": "Fruehwecker",
+		"ability_1": null,
+		"hidden_ability": "Konzentrator",
+		"color": 5
+	},
+	"POKEMON_SEEPER": {
+		"ability_0": "Wassertempo",
+		"ability_1": null,
+		"hidden_ability": "Feuchtigkeit",
+		"color": 1
+	},
+	"POKEMON_SEEMON": {
+		"ability_0": "Giftdorn",
+		"ability_1": null,
+		"hidden_ability": "Feuchtigkeit",
+		"color": 1
+	},
+	"POKEMON_QUABBEL": {
+		"ability_0": "H2o_absorber",
+		"ability_1": "H2o_absorber",
+		"hidden_ability": "Neutraltorso",
+		"color": 0
+	},
+	"POKEMON_APOQUALLYP": {
+		"ability_0": "H2o_absorber",
+		"ability_1": "H2o_absorber",
+		"hidden_ability": "Neutraltorso",
+		"color": 0
+	},
+	"POKEMON_STERNDU": {
+		"ability_0": "Erleuchtung",
+		"ability_1": "Innere_kraft",
+		"hidden_ability": "Allrounder",
+		"color": 5
+	},
+	"POKEMON_STARMIE": {
+		"ability_0": "Erleuchtung",
+		"ability_1": "Innere_kraft",
+		"hidden_ability": "Allrounder",
+		"color": 6
+	},
+	"POKEMON_TRAUNFUGIL": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 7
+	},
+	"POKEMON_SICHLOR": {
+		"ability_0": "Hexaplaga",
+		"ability_1": null,
+		"hidden_ability": "Techniker",
+		"color": 3
+	},
+	"POKEMON_GALAGLADI": {
+		"ability_0": "Wegsperre",
+		"ability_1": null,
+		"hidden_ability": "Kaempferherz",
+		"color": 8
+	},
+	"POKEMON_ELEKTEK": {
+		"ability_0": "Statik",
+		"ability_1": null,
+		"hidden_ability": "Aufwertung",
+		"color": 8
+	},
+	"POKEMON_MAGMAR": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 0
+	},
+	"POKEMON_PINSIR": {
+		"ability_0": "Scherenmacht",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 5
+	},
+	"POKEMON_TAUROS": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Tollwut",
+		"color": 5
+	},
+	"POKEMON_KARPADOR": {
+		"ability_0": "Wassertempo",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 0
+	},
+	"POKEMON_GARADOS": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 1
+	},
+	"POKEMON_LAPRAS": {
+		"ability_0": "H2o_absorber",
+		"ability_1": "Panzerhaut",
+		"hidden_ability": "Multischuppe",
+		"color": 1
+	},
+	"POKEMON_DITTO": {
+		"ability_0": "Flexibilitaet",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 6
+	},
+	"POKEMON_EVOLI": {
+		"ability_0": "Angsthase",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 5
+	},
+	"POKEMON_AQUANA": {
+		"ability_0": "H2o_absorber",
+		"ability_1": null,
+		"hidden_ability": "Notschutz",
+		"color": 1
+	},
+	"POKEMON_BLITZA": {
+		"ability_0": "Voltabsorber",
+		"ability_1": null,
+		"hidden_ability": "Statik",
+		"color": 2
+	},
+	"POKEMON_FLAMARA": {
+		"ability_0": "Feuerfaenger",
+		"ability_1": null,
+		"hidden_ability": "Flammkoerper",
+		"color": 0
+	},
+	"POKEMON_PORYGON": {
+		"ability_0": "Faehrte",
+		"ability_1": null,
+		"hidden_ability": "Hack",
+		"color": 9
+	},
+	"POKEMON_AMONITAS": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Panzerhaut",
+		"hidden_ability": "Kampfpanzer",
+		"color": 1
+	},
+	"POKEMON_AMOROSO": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Panzerhaut",
+		"hidden_ability": "Kampfpanzer",
+		"color": 1
+	},
+	"POKEMON_KABUTO": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Kampfpanzer",
+		"hidden_ability": "Kampfpanzer",
+		"color": 5
+	},
+	"POKEMON_KABUTOPS": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Kampfpanzer",
+		"hidden_ability": "Kampfpanzer",
+		"color": 5
+	},
+	"POKEMON_AERODACTYL": {
+		"ability_0": "Steinhaupt",
+		"ability_1": "Erzwinger",
+		"hidden_ability": "Bedroher",
+		"color": 6
+	},
+	"POKEMON_RELAXO": {
+		"ability_0": "Immunitaet",
+		"ability_1": "Speckschicht",
+		"hidden_ability": "Barriere",
+		"color": 4
+	},
+	"POKEMON_ARKTOS": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Hagelalarm",
+		"color": 1
+	},
+	"POKEMON_ZAPDOS": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Blitzfaenger",
+		"color": 2
+	},
+	"POKEMON_LAVADOS": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 2
+	},
+	"POKEMON_DRATINI": {
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"hidden_ability": "Notschutz",
+		"color": 1
+	},
+	"POKEMON_DRAGONIR": {
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"hidden_ability": "Notschutz",
+		"color": 1
+	},
+	"POKEMON_DRAGORAN": {
+		"ability_0": "Konzentrator",
+		"ability_1": null,
+		"hidden_ability": "Multischuppe",
+		"color": 5
+	},
+	"POKEMON_MEWTU": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 6
+	},
+	"POKEMON_MEW": {
+		"ability_0": "Synchro",
+		"ability_1": null,
+		"hidden_ability": "Faehrte",
+		"color": 9
+	},
+	"POKEMON_ENDIVIE": {
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 3
+	},
+	"POKEMON_LORBLATT": {
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 3
+	},
+	"POKEMON_MEGANIE": {
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 3
+	},
+	"POKEMON_FEURIGEL": {
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 2
+	},
+	"POKEMON_IGELAVAR": {
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 2
+	},
+	"POKEMON_TORNUPTO": {
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 2
+	},
+	"POKEMON_KARNIMANI": {
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"hidden_ability": "Wassertempo",
+		"color": 1
+	},
+	"POKEMON_TYRACROC": {
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"hidden_ability": "Wassertempo",
+		"color": 1
+	},
+	"POKEMON_IMPERGATOR": {
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"hidden_ability": "Wassertempo",
+		"color": 1
+	},
+	"POKEMON_IGNIVOR": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Hexaplaga",
+		"color": 8
+	},
+	"POKEMON_RAMOTH": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Hexaplaga",
+		"color": 8
+	},
+	"POKEMON_GLAZIOLA": {
+		"ability_0": "Hagelalarm",
+		"ability_1": null,
+		"hidden_ability": "Kaeltewahn",
+		"color": 1
+	},
+	"POKEMON_RESLADERO": {
+		"ability_0": "Flexibilitaet",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 1
+	},
+	"POKEMON_LEDYBA": {
+		"ability_0": "Hexaplaga",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Techniker",
+		"color": 0
+	},
+	"POKEMON_LEDIAN": {
+		"ability_0": "Hexaplaga",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Techniker",
+		"color": 0
+	},
+	"POKEMON_WEBARAK": {
+		"ability_0": "Hexaplaga",
+		"ability_1": "Insomnia",
+		"hidden_ability": "Lebensraeuber",
+		"color": 3
+	},
+	"POKEMON_ARIADOS": {
+		"ability_0": "Hexaplaga",
+		"ability_1": "Insomnia",
+		"hidden_ability": "Lebensraeuber",
+		"color": 0
+	},
+	"POKEMON_IKSBAT": {
+		"ability_0": "Konzentrator",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 6
+	},
+	"POKEMON_LAMPI": {
+		"ability_0": "Voltabsorber",
+		"ability_1": "Erleuchtung",
+		"hidden_ability": "Ap_sparer",
+		"color": 1
+	},
+	"POKEMON_LANTURN": {
+		"ability_0": "Voltabsorber",
+		"ability_1": "Erleuchtung",
+		"hidden_ability": "H2o_absorber",
+		"color": 1
+	},
+	"POKEMON_MAGNEZONE": {
+		"ability_0": "Statik",
+		"ability_1": "Statik",
+		"hidden_ability": "Schwebe",
+		"color": 2
+	},
+	"POKEMON_TOGEKISS": {
+		"ability_0": "Edelmut",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_FLABEBE": {
+		"ability_0": "Lernfaehig",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 8
+	},
+	"POKEMON_TOGEPI": {
+		"ability_0": "Uebereifer",
+		"ability_1": "Edelmut",
+		"hidden_ability": "Curator",
+		"color": 8
+	},
+	"POKEMON_TOGETIC": {
+		"ability_0": "Uebereifer",
+		"ability_1": "Edelmut",
+		"hidden_ability": "Curator",
+		"color": 8
+	},
+	"POKEMON_NATU": {
+		"ability_0": "Synchro",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Luzid",
+		"color": 3
+	},
+	"POKEMON_XATU": {
+		"ability_0": "Synchro",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Luzid",
+		"color": 3
+	},
+	"POKEMON_VOLTILAMM": {
+		"ability_0": "Statik",
+		"ability_1": null,
+		"hidden_ability": "Fluffig",
+		"color": 8
+	},
+	"POKEMON_WAATY": {
+		"ability_0": "Statik",
+		"ability_1": null,
+		"hidden_ability": "Fluffig",
+		"color": 9
+	},
+	"POKEMON_AMPHAROS": {
+		"ability_0": "Statik",
+		"ability_1": null,
+		"hidden_ability": "Voltabsorber",
+		"color": 2
+	},
+	"POKEMON_BLUBELLA": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 3
+	},
+	"POKEMON_MARILL": {
+		"ability_0": "Speckschicht",
+		"ability_1": "Kraftkoloss",
+		"hidden_ability": "Ungebrochen",
+		"color": 1
+	},
+	"POKEMON_AZUMARILL": {
+		"ability_0": "Speckschicht",
+		"ability_1": "Kraftkoloss",
+		"hidden_ability": "Ungebrochen",
+		"color": 1
+	},
+	"POKEMON_MOGELBAUM": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Felsenkern",
+		"color": 5
+	},
+	"POKEMON_CLAVION": {
+		"ability_0": "Strolch",
+		"ability_1": null,
+		"hidden_ability": "Dunkle_magie",
+		"color": 7
+	},
+	"POKEMON_LICHTEL": {
+		"ability_0": "Feuerfaenger",
+		"ability_1": "Flammkoerper",
+		"hidden_ability": "Schwebe",
+		"color": 8
+	},
+	"POKEMON_LATERNECTO": {
+		"ability_0": "Feuerfaenger",
+		"ability_1": "Flammkoerper",
+		"hidden_ability": "Schwebe",
+		"color": 4
+	},
+	"POKEMON_SKELABRA": {
+		"ability_0": "Feuerfaenger",
+		"ability_1": "Flammkoerper",
+		"hidden_ability": "Schwebe",
+		"color": 4
+	},
+	"POKEMON_GRIFFEL": {
+		"ability_0": "Angsthase",
+		"ability_1": "Mitnahme",
+		"hidden_ability": "Allrounder",
+		"color": 6
+	},
+	"POKEMON_SHNEBEDECK": {
+		"ability_0": "Laermschutz",
+		"ability_1": null,
+		"hidden_ability": "Kaeltewahn",
+		"color": 2
+	},
+	"POKEMON_REXBLISAR": {
+		"ability_0": "Laermschutz",
+		"ability_1": null,
+		"hidden_ability": "Kaeltewahn",
+		"color": 2
+	},
+	"POKEMON_AMBIDIFFEL": {
+		"ability_0": "Mitnahme",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 6
+	},
+	"POKEMON_FELINO": {
+		"ability_0": "Feuchtigkeit",
+		"ability_1": "H2o_absorber",
+		"hidden_ability": "Regenmut",
+		"color": 1
+	},
+	"POKEMON_MORLORD": {
+		"ability_0": "Feuchtigkeit",
+		"ability_1": "H2o_absorber",
+		"hidden_ability": "Regenmut",
+		"color": 1
+	},
+	"POKEMON_PSIANA": {
+		"ability_0": "Synchro",
+		"ability_1": null,
+		"hidden_ability": "Luzid",
+		"color": 6
+	},
+	"POKEMON_NACHTARA": {
+		"ability_0": "Synchro",
+		"ability_1": null,
+		"hidden_ability": "Dunkle_magie",
+		"color": 4
+	},
+	"POKEMON_KRAMURX": {
+		"ability_0": "Insomnia",
+		"ability_1": null,
+		"hidden_ability": "Orkanschw",
+		"color": 4
+	},
+	"POKEMON_LASCHOKING": {
+		"ability_0": "Doesigkeit",
+		"ability_1": "Tempomacher",
+		"hidden_ability": "Innere_kraft",
+		"color": 9
+	},
+	"POKEMON_KRAMSHEF": {
+		"ability_0": "Insomnia",
+		"ability_1": null,
+		"hidden_ability": "Orkanschw",
+		"color": 4
+	},
+	"POKEMON_ICOGNITO": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 0
+	},
+	"POKEMON_FROSDEDJE": {
+		"ability_0": "Hagelalarm",
+		"ability_1": null,
+		"hidden_ability": "Schwebe",
+		"color": 4
+	},
+	"POKEMON_SKORGRO": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Sandschleier",
+		"hidden_ability": "Sandherz",
+		"color": 6
+	},
+	"POKEMON_TANNZA": {
+		"ability_0": "Robustheit",
+		"ability_1": null,
+		"hidden_ability": "Panzerhaut",
+		"color": 7
+	},
+	"POKEMON_FORSTELLKA": {
+		"ability_0": "Robustheit",
+		"ability_1": null,
+		"hidden_ability": "Panzerhaut",
+		"color": 6
+	},
+	"POKEMON_ELEVOLTEK": {
+		"ability_0": "Voltabsorber",
+		"ability_1": "Voltabsorber",
+		"hidden_ability": "Aufwertung",
+		"color": 2
+	},
+	"POKEMON_SKORGLA": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Sandschleier",
+		"hidden_ability": "Sandherz",
+		"color": 6
+	},
+	"POKEMON_STAHLOS": {
+		"ability_0": "Steinhaupt",
+		"ability_1": "Robustheit",
+		"hidden_ability": "Sandherz",
+		"color": 7
+	},
+	"POKEMON_SNUBBULL": {
+		"ability_0": "Bedroher",
+		"ability_1": "Angsthase",
+		"hidden_ability": "Charmebolzen",
+		"color": 9
+	},
+	"POKEMON_GRANBULL": {
+		"ability_0": "Bedroher",
+		"ability_1": "Bedroher",
+		"hidden_ability": "Charmebolzen",
+		"color": 6
+	},
+	"POKEMON_MAMUTEL": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": "Frostschicht",
+		"color": 5
+	},
+	"POKEMON_SCHEROX": {
+		"ability_0": "Hexaplaga",
+		"ability_1": null,
+		"hidden_ability": "Techniker",
+		"color": 0
+	},
+	"POKEMON_FLUFFELUFF": {
+		"ability_0": "Charmebolzen",
+		"ability_1": null,
+		"hidden_ability": "Fluffig",
+		"color": 9
+	},
+	"POKEMON_SKARABORN": {
+		"ability_0": "Hexaplaga",
+		"ability_1": "Adrenalin",
+		"hidden_ability": "Hochmut",
+		"color": 1
+	},
+	"POKEMON_KRYPPUK": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Dunkle_magie",
+		"color": 7
+	},
+	"POKEMON_TEDDIURSA": {
+		"ability_0": "Mitnahme",
+		"ability_1": null,
+		"hidden_ability": "Tollwut",
+		"color": 7
+	},
+	"POKEMON_URSARING": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Tollwut",
+		"color": 5
+	},
+	"POKEMON_SCHNECKMAG": {
+		"ability_0": "Magmapanzer",
+		"ability_1": "Flammkoerper",
+		"hidden_ability": "Robustheit",
+		"color": 0
+	},
+	"POKEMON_MAGCARGO": {
+		"ability_0": "Magmapanzer",
+		"ability_1": "Flammkoerper",
+		"hidden_ability": "Robustheit",
+		"color": 0
+	},
+	"POKEMON_QUIEKEL": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": "Frostschicht",
+		"color": 5
+	},
+	"POKEMON_KEIFEL": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": "Frostschicht",
+		"color": 5
+	},
+	"POKEMON_MAMPFAXO": {
+		"ability_0": "Mitnahme",
+		"ability_1": "Speckschicht",
+		"hidden_ability": "Barriere",
+		"color": 4
+	},
+	"POKEMON_REMORAID": {
+		"ability_0": "Uebereifer",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 7
+	},
+	"POKEMON_OCTILLERY": {
+		"ability_0": "Saugnapf",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 0
+	},
+	"POKEMON_BOTOGEL": {
+		"ability_0": "Munterkeit",
+		"ability_1": "Uebereifer",
+		"hidden_ability": "Insomnia",
+		"color": 0
+	},
+	"POKEMON_SCHLURPLEK": {
+		"ability_0": "Tempomacher",
+		"ability_1": "Doesigkeit",
+		"hidden_ability": "Wolke_sieben",
+		"color": 9
+	},
+	"POKEMON_PANZAERON": {
+		"ability_0": "Adlerauge",
+		"ability_1": "Robustheit",
+		"hidden_ability": "Barriere",
+		"color": 7
+	},
+	"POKEMON_HUNDUSTER": {
+		"ability_0": "Fruehwecker",
+		"ability_1": "Feuerfaenger",
+		"hidden_ability": "Solarkraft",
+		"color": 4
+	},
+	"POKEMON_HUNDEMON": {
+		"ability_0": "Fruehwecker",
+		"ability_1": "Feuerfaenger",
+		"hidden_ability": "Solarkraft",
+		"color": 4
+	},
+	"POKEMON_SEEDRAKING": {
+		"ability_0": "Wassertempo",
+		"ability_1": null,
+		"hidden_ability": "Feuchtigkeit",
+		"color": 1
+	},
+	"POKEMON_PHANPY": {
+		"ability_0": "Mitnahme",
+		"ability_1": null,
+		"hidden_ability": "Speckschicht",
+		"color": 1
+	},
+	"POKEMON_DONPHAN": {
+		"ability_0": "Robustheit",
+		"ability_1": null,
+		"hidden_ability": "Speckschicht",
+		"color": 7
+	},
+	"POKEMON_PORYGON2": {
+		"ability_0": "Faehrte",
+		"ability_1": null,
+		"hidden_ability": "Hack",
+		"color": 0
+	},
+	"POKEMON_VOLUMINAS": {
+		"ability_0": "Robustheit",
+		"ability_1": "Magnetfalle",
+		"hidden_ability": "Felsenkern",
+		"color": 7
+	},
+	"POKEMON_TRAUNMAGIL": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 7
+	},
+	"POKEMON_RABAUZ": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 6
+	},
+	"POKEMON_KAPOERA": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Ungebrochen",
+		"color": 5
+	},
+	"POKEMON_SEN_LONG": {
+		"ability_0": "Wolke_sieben",
+		"ability_1": "Doesigkeit",
+		"hidden_ability": "Aufwertung",
+		"color": 9
+	},
+	"POKEMON_ELEKID": {
+		"ability_0": "Statik",
+		"ability_1": null,
+		"hidden_ability": "Aufwertung",
+		"color": 9
+	},
+	"POKEMON_MAGBY": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 0
+	},
+	"POKEMON_MILTANK": {
+		"ability_0": "Speckschicht",
+		"ability_1": null,
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_HEITEIRA": {
+		"ability_0": "Innere_kraft",
+		"ability_1": "Edelmut",
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_RAIKOU": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Voltabsorber",
+		"color": 2
+	},
+	"POKEMON_ENTEI": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 5
+	},
+	"POKEMON_SUICUNE": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "H2o_absorber",
+		"color": 1
+	},
+	"POKEMON_LARVITAR": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Sandherz",
+		"color": 3
+	},
+	"POKEMON_PUPITAR": {
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"hidden_ability": "Expidermis",
+		"color": 7
+	},
+	"POKEMON_DESPOTAR": {
+		"ability_0": "Sandsturm",
+		"ability_1": null,
+		"hidden_ability": "Sandherz",
+		"color": 3
+	},
+	"POKEMON_LUGIA": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Multischuppe",
+		"color": 8
+	},
+	"POKEMON_HO_OH": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Photogenese",
+		"color": 0
+	},
+	"POKEMON_CELEBI": {
+		"ability_0": "Innere_kraft",
+		"ability_1": null,
+		"hidden_ability": "Innere_kraft",
+		"color": 3
+	},
+	"POKEMON_BISAFLORM": {
+		"basestats": {
+			"KP": 80,
+			"Angriff": 100,
+			"Verteidigung": 123,
+			"Initiative": 80,
+			"Spezialangriff": 122,
+			"Spezialverteidigung": 120
+		},
+		"type_0": "Pflanze",
+		"type_1": "Gift",
+		"capture_rate": 3,
+		"exp_yield": 255,
+		"ev_yield": [
+			2,
+			0,
+			0,
+			0,
+			1,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 120,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Speckschicht",
+		"ability_1": "Speckschicht",
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_BISAFLOR"
+	},
+	"POKEMON_GLURAKM": {
+		"basestats": {
+			"KP": 78,
+			"Angriff": 145,
+			"Verteidigung": 111,
+			"Initiative": 100,
+			"Spezialangriff": 130,
+			"Spezialverteidigung": 85
+		},
+		"type_0": "Feuer",
+		"type_1": "Drache",
+		"capture_rate": 3,
+		"exp_yield": 255,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 120,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Schwebe",
+		"ability_1": "Schwebe",
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_GLURAK"
+	},
+	"POKEMON_AQUANAM": {
+		"basestats": {
+			"KP": 130,
+			"Angriff": 65,
+			"Verteidigung": 95,
+			"Initiative": 80,
+			"Spezialangriff": 125,
+			"Spezialverteidigung": 115
+		},
+		"type_0": "Wasser",
+		"type_1": "Eis",
+		"capture_rate": 3,
+		"exp_yield": 140,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			1,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 120,
+		"base_happiness": 70,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Regengenuss",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 1,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_AQUANA"
+	},
+	"POKEMON_BLITZAM": {
+		"basestats": {
+			"KP": 65,
+			"Angriff": 65,
+			"Verteidigung": 60,
+			"Initiative": 145,
+			"Spezialangriff": 135,
+			"Spezialverteidigung": 95
+		},
+		"type_0": "Elektro",
+		"type_1": "Fee",
+		"capture_rate": 45,
+		"exp_yield": 255,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			2,
+			1,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 35,
+		"base_happiness": 70,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Temposchub",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 2,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_BLITZA"
+	},
+	"POKEMON_FLAMARM": {
+		"basestats": {
+			"KP": 65,
+			"Angriff": 145,
+			"Verteidigung": 100,
+			"Initiative": 90,
+			"Spezialangriff": 95,
+			"Spezialverteidigung": 110
+		},
+		"type_0": "Feuer",
+		"type_1": "Stahl",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			2,
+			0,
+			1,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 35,
+		"base_happiness": 70,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Magnetfalle",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_FLAMARA"
+	},
+	"POKEMON_DURENGARDA": {
+		"basestats": {
+			"KP": 60,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 60,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Stahl",
+		"type_1": "Geist",
+		"capture_rate": 35,
+		"exp_yield": 244,
+		"ev_yield": [
+			0,
+			2,
+			0,
+			0,
+			1,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium",
+		"egg_group_0": "Mineral",
+		"egg_group_1": "Mineral",
+		"ability_0": "Taktikwechs",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 7,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_DURENGARD"
+	},
+	"POKEMON_IN": {
+		"basestats": {
+			"KP": 90,
+			"Angriff": 135,
+			"Verteidigung": 70,
+			"Initiative": 110,
+			"Spezialangriff": 135,
+			"Spezialverteidigung": 70
+		},
+		"type_0": "Feuer",
+		"type_1": "Unlicht",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			2,
+			0,
+			1,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Feuerfaenger",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_GAME": {
+		"basestats": {
+			"KP": 75,
+			"Angriff": 95,
+			"Verteidigung": 70,
+			"Initiative": 155,
+			"Spezialangriff": 140,
+			"Spezialverteidigung": 70
+		},
+		"type_0": "Wasser",
+		"type_1": "Drache",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			3,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 0,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_TURTOKM": {
+		"basestats": {
+			"KP": 79,
+			"Angriff": 103,
+			"Verteidigung": 120,
+			"Initiative": 78,
+			"Spezialangriff": 135,
+			"Spezialverteidigung": 115
+		},
+		"type_0": "Wasser",
+		"type_1": "Wasser",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			0,
+			3,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Notschutz",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 1,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_TURTOK"
+	},
+	"POKEMON_AMPHARAOSM": {
+		"basestats": {
+			"KP": 90,
+			"Angriff": 95,
+			"Verteidigung": 105,
+			"Initiative": 45,
+			"Spezialangriff": 165,
+			"Spezialverteidigung": 110
+		},
+		"type_0": "Elektro",
+		"type_1": "Drache",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			2,
+			1,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Notschutz",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 2,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_AMPHAROS"
+	},
+	"POKEMON_GENGARM": {
+		"basestats": {
+			"KP": 60,
+			"Angriff": 65,
+			"Verteidigung": 80,
+			"Initiative": 130,
+			"Spezialangriff": 170,
+			"Spezialverteidigung": 95
+		},
+		"type_0": "Geist",
+		"type_1": "Gift",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			3,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 120,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Wegsperre",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 6,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_GENGAR"
+	},
+	"POKEMON_BIBORM": {
+		"basestats": {
+			"KP": 65,
+			"Angriff": 160,
+			"Verteidigung": 95,
+			"Initiative": 140,
+			"Spezialangriff": 45,
+			"Spezialverteidigung": 95
+		},
+		"type_0": "Kaefer",
+		"type_1": "Gift",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 120,
+		"base_happiness": 70,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_BIBOR"
+	},
+	"POKEMON_ALTARIAM": {
+		"basestats": {
+			"KP": 75,
+			"Angriff": 70,
+			"Verteidigung": 125,
+			"Initiative": 100,
+			"Spezialangriff": 125,
+			"Spezialverteidigung": 155
+		},
+		"type_0": "Drache",
+		"type_1": "Elektro",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			1,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 120,
+		"base_happiness": 70,
+		"growth_rate": "Slow_then_very_fast",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_ALTARIA"
+	},
+	"POKEMON_GEOWAZM": {
+		"basestats": {
+			"KP": 80,
+			"Angriff": 175,
+			"Verteidigung": 185,
+			"Initiative": 35,
+			"Spezialangriff": 55,
+			"Spezialverteidigung": 125
+		},
+		"type_0": "Gestein",
+		"type_1": "Feuer",
+		"capture_rate": 45,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			1,
+			2,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 15,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Feuerfaenger",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 5,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_GEOWAZ"
+	},
+	"POKEMON_SENGOM": {
+		"basestats": {
+			"KP": 73,
+			"Angriff": 145,
+			"Verteidigung": 80,
+			"Initiative": 135,
+			"Spezialangriff": 60,
+			"Spezialverteidigung": 80
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 90,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			3,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Slow_then_very_fast",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Temposchub",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_SENGO"
+	},
+	"POKEMON_VIPITISM": {
+		"basestats": {
+			"KP": 73,
+			"Angriff": 140,
+			"Verteidigung": 100,
+			"Initiative": 100,
+			"Spezialangriff": 115,
+			"Spezialverteidigung": 100
+		},
+		"type_0": "Gift",
+		"type_1": "Gift",
+		"capture_rate": 90,
+		"exp_yield": 240,
+		"ev_yield": [
+			0,
+			2,
+			0,
+			0,
+			1,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Fast_then_very_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "Temposchub",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_VIPITIS"
+	},
+	"POKEMON_ZOBIRISM": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 100,
+			"Verteidigung": 110,
+			"Initiative": 50,
+			"Spezialangriff": 65,
+			"Spezialverteidigung": 110
+		},
+		"type_0": "Unlicht",
+		"type_1": "Gestein",
+		"capture_rate": 45,
+		"exp_yield": 180,
+		"ev_yield": [
+			0,
+			1,
+			2,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 127,
+		"egg_cycles": 25,
+		"base_happiness": 35,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 6,
+		"hidden_ability": null,
+		"form": "Quadruped",
+        "move_link" : "POKEMON_ZOBIRIS"
+	},
+	"POKEMON_10d": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_10e": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_10f": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_110": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_111": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_112": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_113": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_114": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 150,
+			"Verteidigung": 50,
+			"Initiative": 150,
+			"Spezialangriff": 150,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 3,
+		"exp_yield": 1,
+		"ev_yield": [
+			2,
+			2,
+			2,
+			2,
+			2,
+			2,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 4,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_LOCKSCHAL": {
+		"basestats": {
+			"KP": 50,
+			"Angriff": 56,
+			"Verteidigung": 65,
+			"Initiative": 53,
+			"Spezialangriff": 40,
+			"Spezialverteidigung": 40
+		},
+		"type_0": "Pflanze",
+		"type_1": "Pflanze",
+		"capture_rate": 45,
+		"exp_yield": 65,
+		"ev_yield": [
+			0,
+			1,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Pflanze",
+		"egg_group_1": "Humanotyp",
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 3,
+		"hidden_ability": "Ungebrochen",
+		"form": "Legs",
+		"levelup_moves": [
+			[
+				"Pfund",
+				1
+			],
+			[
+				"H\u00e4rtner",
+				1
+			],
+			[
+				"Rasierblatt",
+				7
+			],
+			[
+				"Natur-Kraft",
+				12
+			],
+			[
+				"Zornklinge",
+				15
+			],
+			[
+				"Energiefokus",
+				19
+			],
+			[
+				"Laubklinge",
+				23
+			],
+			[
+				"Eisenabwehr",
+				27
+			],
+			[
+				"Schwerttanz",
+				33
+			],
+			[
+				"Schlitzer",
+				35
+			],
+			[
+				"Klingensturm",
+				39
+			],
+			[
+				"Wirbelwind",
+				44
+			]
+		],
+		"accessible_moves": [
+			"Steinkante",
+			"Reflektor",
+			"Geheimpower",
+			"Kraftreserve",
+			"Gigasauger",
+			"Steinhagel",
+			"Verh\u00f6hner",
+			"Zertr\u00fcmmerer",
+			"Frustration",
+			"Lichtkanone",
+			"Gifthieb",
+			"Durchbruch",
+			"Fokussto\u00df",
+			"Aero-Ass",
+			"Erhohlung",
+			"Lichtschild",
+			"Kreuzschere",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Schaufler",
+			"Protzer",
+			"Sonnentag",
+			"St\u00e4rke",
+			"Kugelsaat",
+			"Anziehung",
+			"Solarstrahl",
+			"Zerschneider",
+			"Felsgrab",
+			"Toxin",
+			"Delegator",
+			"Fassade",
+			"Energieball",
+			"Doppelteam",
+			"Schutzschild"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_STICHSCHAL": {
+		"basestats": {
+			"KP": 70,
+			"Angriff": 90,
+			"Verteidigung": 90,
+			"Initiative": 70,
+			"Spezialangriff": 65,
+			"Spezialverteidigung": 60
+		},
+		"type_0": "Pflanze",
+		"type_1": "Pflanze",
+		"capture_rate": 45,
+		"exp_yield": 141,
+		"ev_yield": [
+			0,
+			1,
+			1,
+			2,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Pflanze",
+		"egg_group_1": "Humanotyp",
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 3,
+		"hidden_ability": "Ungebrochen",
+		"form": "Humanoid",
+		"levelup_moves": [
+			[
+				"Pfund",
+				1
+			],
+			[
+				"H\u00e4rtner",
+				1
+			],
+			[
+				"Rasierblatt",
+				1
+			],
+			[
+				"Natur-Kraft",
+				1
+			],
+			[
+				"Zornklinge",
+				1
+			],
+			[
+				"Energiefokus",
+				14
+			],
+			[
+				"Geduld",
+				19
+			],
+			[
+				"Laubklinge",
+				24
+			],
+			[
+				"Eisenabwehr",
+				29
+			],
+			[
+				"Schwerttanz",
+				34
+			],
+			[
+				"Schlitzer",
+				37
+			],
+			[
+				"Klingensturm",
+				42
+			],
+			[
+				"Wirbelwind",
+				48
+			]
+		],
+		"accessible_moves": [
+			"Steinkante",
+			"Reflektor",
+			"Geheimpower",
+			"Kraftreserve",
+			"Gigasauger",
+			"Steinhagel",
+			"Verh\u00f6hner",
+			"Zertr\u00fcmmerer",
+			"Frustration",
+			"Lichtkanone",
+			"Gifthieb",
+			"Durchbruch",
+			"Fokussto\u00df",
+			"Aero-Ass",
+			"Erhohlung",
+			"Lichtschild",
+			"Kreuzschere",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Schaufler",
+			"Protzer",
+			"Sonnentag",
+			"St\u00e4rke",
+			"Kugelsaat",
+			"Anziehung",
+			"Solarstrahl",
+			"Zerschneider",
+			"Felsgrab",
+			"Toxin",
+			"Delegator",
+			"Fassade",
+			"Energieball",
+			"Doppelteam",
+			"Schutzschild"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_STAHLSTICH": {
+		"basestats": {
+			"KP": 95,
+			"Angriff": 115,
+			"Verteidigung": 115,
+			"Initiative": 95,
+			"Spezialangriff": 65,
+			"Spezialverteidigung": 70
+		},
+		"type_0": "Pflanze",
+		"type_1": "Stahl",
+		"capture_rate": 45,
+		"exp_yield": 208,
+		"ev_yield": [
+			0,
+			2,
+			1,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Pflanze",
+		"egg_group_1": "Humanotyp",
+		"ability_0": "Notduenger",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 3,
+		"hidden_ability": "Ungebrochen",
+		"form": "Humanoid",
+		"levelup_moves": [
+			[
+				"Pfund",
+				1
+			],
+			[
+				"H\u00e4rtner",
+				1
+			],
+			[
+				"Geduld",
+				1
+			],
+			[
+				"Rasierblatt",
+				1
+			],
+			[
+				"Natur-Kraft",
+				1
+			],
+			[
+				"Zornklinge",
+				1
+			],
+			[
+				"Energiefokus",
+				14
+			],
+			[
+				"Laubklinge",
+				24
+			],
+			[
+				"Eisenabwehr",
+				29
+			],
+			[
+				"Schwerttanz",
+				34
+			],
+			[
+				"Stahlstreich",
+				36
+			],
+			[
+				"Schlitzer",
+				40
+			],
+			[
+				"Klingensturm",
+				43
+			],
+			[
+				"Nahkampf",
+				49
+			],
+			[
+				"Wirbelwind",
+				55
+			],
+			[
+				"Schallstich",
+				61
+			]
+		],
+		"accessible_moves": [
+			"Steinkante",
+			"Reflektor",
+			"Geheimpower",
+			"Kraftreserve",
+			"Hyperstrahl",
+			"Gigasauger",
+			"Steinhagel",
+			"Verh\u00f6hner",
+			"Zertr\u00fcmmerer",
+			"Frustration",
+			"Lichtkanone",
+			"Gifthieb",
+			"Durchbruch",
+			"Fokussto\u00df",
+			"Aero-Ass",
+			"Erhohlung",
+			"Lichtschild",
+			"Kreuzschere",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Power-Punch",
+			"Schaufler",
+			"Protzer",
+			"Sonnentag",
+			"St\u00e4rke",
+			"Kugelsaat",
+			"Anziehung",
+			"Solarstrahl",
+			"Felsgrab",
+			"Zerschneider",
+			"Toxin",
+			"Delegator",
+			"Fassade",
+			"Flora-Statue",
+			"Energieball",
+			"Doppelteam",
+			"Schutzschild"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_WELUNO": {
+		"basestats": {
+			"KP": 45,
+			"Angriff": 59,
+			"Verteidigung": 40,
+			"Initiative": 45,
+			"Spezialangriff": 65,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Feuer",
+		"type_1": "Feuer",
+		"capture_rate": 45,
+		"exp_yield": 65,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			1,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Feld",
+		"egg_group_1": "Monster",
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": "Dunkle_magie",
+		"form": "Quadruped",
+		"levelup_moves": [
+			[
+				"Kratzer",
+				1
+			],
+			[
+				"Jauler",
+				1
+			],
+			[
+				"Glut",
+				7
+			],
+			[
+				"Biss",
+				11
+			],
+			[
+				"Schn\u00fcffler",
+				19
+			],
+			[
+				"Br\u00fcller",
+				23
+			],
+			[
+				"Flammenrad",
+				27
+			],
+			[
+				"Kopfnuss",
+				31
+			],
+			[
+				"Bodycheck",
+				34
+			],
+			[
+				"Knirscher",
+				38
+			],
+			[
+				"Flammenblitz",
+				44
+			]
+		],
+		"accessible_moves": [
+			"Flammenwurf",
+			"Hitzekoller",
+			"Geheimpower",
+			"Kraftreserve",
+			"Steinhagel",
+			"Verh\u00f6hner",
+			"Zertr\u00fcmmerer",
+			"Blitz",
+			"Folterknecht",
+			"Frustration",
+			"Lichtkanone",
+			"Erholung",
+			"Spukball",
+			"Fokussto\u00df",
+			"Aero-Ass",
+			"Feuerzahn",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Donnerzahn",
+			"Psychokinese",
+			"Gedankengut",
+			"Schaufler",
+			"Sonnentag",
+			"St\u00e4rke",
+			"Feuersturm",
+			"Anziehung",
+			"Solarstrahl",
+			"Wertewechsel",
+			"Eisenschweif",
+			"\u00dcbernahme",
+			"Felsgrab",
+			"Zerschneider",
+			"Toxin",
+			"Delegator",
+			"Fassade",
+			"Doppelteam",
+			"Schutzschild",
+			"Finsteraura"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_ORTHODOS": {
+		"basestats": {
+			"KP": 75,
+			"Angriff": 85,
+			"Verteidigung": 60,
+			"Initiative": 65,
+			"Spezialangriff": 85,
+			"Spezialverteidigung": 60
+		},
+		"type_0": "Feuer",
+		"type_1": "Unlicht",
+		"capture_rate": 45,
+		"exp_yield": 142,
+		"ev_yield": [
+			0,
+			1,
+			0,
+			0,
+			1,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Feld",
+		"egg_group_1": "Monster",
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": "Dunkle_magie",
+		"form": "Quadruped",
+		"levelup_moves": [
+			[
+				"Kratzer",
+				1
+			],
+			[
+				"Jauler",
+				1
+			],
+			[
+				"Glut",
+				7
+			],
+			[
+				"Biss",
+				11
+			],
+			[
+				"Feuerzahn",
+				16
+			],
+			[
+				"Schn\u00fcffler",
+				19
+			],
+			[
+				"Br\u00fcller",
+				23
+			],
+			[
+				"Flammenrad",
+				27
+			],
+			[
+				"Kopfnuss",
+				31
+			],
+			[
+				"Bodycheck",
+				34
+			],
+			[
+				"Knirscher",
+				39
+			],
+			[
+				"Knuddler",
+				43
+			],
+			[
+				"Finsteraura",
+				48
+			],
+			[
+				"Flammenblitz",
+				53
+			]
+		],
+		"accessible_moves": [
+			"Flammenwurf",
+			"Hitzekoller",
+			"Geheimpower",
+			"Kraftreserve",
+			"Steinhagel",
+			"Verh\u00f6hner",
+			"Zertr\u00fcmmerer",
+			"Blitz",
+			"Folterknecht",
+			"Frustration",
+			"Lichtkanone",
+			"Erholung",
+			"Spukball",
+			"Fokussto\u00df",
+			"Aero-Ass",
+			"Feuerzahn",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Donnerzahn",
+			"Psychokinese",
+			"Gedankengut",
+			"Schaufler",
+			"Sonnentag",
+			"St\u00e4rke",
+			"Feuersturm",
+			"Anziehung",
+			"Solarstrahl",
+			"Wertewechsel",
+			"Eisenschweif",
+			"\u00dcbernahme",
+			"Felsgrab",
+			"Zerschneider",
+			"Toxin",
+			"Delegator",
+			"Fassade",
+			"Doppelteam",
+			"Schutzschild",
+			"Finsteraura"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_ZERBERTRES": {
+		"basestats": {
+			"KP": 80,
+			"Angriff": 125,
+			"Verteidigung": 62,
+			"Initiative": 90,
+			"Spezialangriff": 120,
+			"Spezialverteidigung": 65
+		},
+		"type_0": "Feuer",
+		"type_1": "Unlicht",
+		"capture_rate": 45,
+		"exp_yield": 209,
+		"ev_yield": [
+			0,
+			3,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Feld",
+		"egg_group_1": "Monster",
+		"ability_0": "Grossbrand",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": "Dunkle_magie",
+		"form": "Quadruped",
+		"levelup_moves": [
+			[
+				"Kratzer",
+				1
+			],
+			[
+				"Jauler",
+				1
+			],
+			[
+				"Donnerzahn",
+				1
+			],
+			[
+				"Feuersturm",
+				1
+			],
+			[
+				"Raub",
+				1
+			],
+			[
+				"Glut",
+				7
+			],
+			[
+				"Biss",
+				11
+			],
+			[
+				"Feuerzahn",
+				16
+			],
+			[
+				"Schn\u00fcffler",
+				19
+			],
+			[
+				"Br\u00fcller",
+				23
+			],
+			[
+				"Flammenrad",
+				27
+			],
+			[
+				"Kopfnuss",
+				31
+			],
+			[
+				"Bodycheck",
+				34
+			],
+			[
+				"Zornfeuer",
+				36
+			],
+			[
+				"Knirscher",
+				41
+			],
+			[
+				"Knuddler",
+				45
+			],
+			[
+				"Finsteraura",
+				51
+			],
+			[
+				"Flammenblitz",
+				56
+			],
+			[
+				"Supernova",
+				60
+			]
+		],
+		"accessible_moves": [
+			"Flammenwurf",
+			"Hitzekoller",
+			"Geheimpower",
+			"Kraftreserve",
+			"Hyperstrahl",
+			"Steinhagel",
+			"Verh\u00f6hner",
+			"Zertr\u00fcmmerer",
+			"Blitz",
+			"Folterknecht",
+			"Frustration",
+			"Lichtkanone",
+			"Erholung",
+			"Spukball",
+			"Lohekanonade",
+			"Fokussto\u00df",
+			"Aero-Ass",
+			"Feuerzahn",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Donnerzahn",
+			"Psychokinese",
+			"Gedankengut",
+			"Schaufler",
+			"Sonnentag",
+			"St\u00e4rke",
+			"Feuersturm",
+			"Anziehung",
+			"Solarstrahl",
+			"Wertewechsel",
+			"Eisenschweif",
+			"\u00dcbernahme",
+			"Felsgrab",
+			"Zerschneider",
+			"Toxin",
+			"Delegator",
+			"Erdbeben",
+			"Fassade",
+			"Doppelteam",
+			"Schutzschild",
+			"Finsteraura"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_SEEKID": {
+		"basestats": {
+			"KP": 45,
+			"Angriff": 57,
+			"Verteidigung": 45,
+			"Initiative": 75,
+			"Spezialangriff": 57,
+			"Spezialverteidigung": 50
+		},
+		"type_0": "Wasser",
+		"type_1": "Wasser",
+		"capture_rate": 45,
+		"exp_yield": 65,
+		"ev_yield": [
+			0,
+			1,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Drache",
+		"egg_group_1": "Wasser_1",
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 1,
+		"hidden_ability": "H2o_absorber",
+		"form": "Upright",
+		"levelup_moves": [
+			[
+				"Pfund",
+				1
+			],
+			[
+				"Silberblick",
+				1
+			],
+			[
+				"Aquaknarre",
+				7
+			],
+			[
+				"Ruckzuckhieb",
+				11
+			],
+			[
+				"Konfustrahl",
+				17
+			],
+			[
+				"Wickel",
+				21
+			],
+			[
+				"Windhose",
+				24
+			],
+			[
+				"Finte",
+				29
+			],
+			[
+				"Feuerodem",
+				31
+			],
+			[
+				"Hypnose",
+				35
+			],
+			[
+				"Hydropumpe",
+				44
+			]
+		],
+		"accessible_moves": [
+			"Reflektor",
+			"Geheimpower",
+			"Drachenpuls",
+			"Kraftreserve",
+			"Kaskade",
+			"Zertr\u00fcmmerer",
+			"Verh\u00f6hner",
+			"Blitz",
+			"Folterknecht",
+			"Frustration",
+			"Lichtkanone",
+			"Erholung",
+			"Fokussto\u00df",
+			"Regentanz",
+			"Taucher",
+			"Lichtschild",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Blizzard",
+			"Gedankengut",
+			"St\u00e4rke",
+			"Hagelsturm",
+			"Anziehung",
+			"Surfer",
+			"Wertewechsel",
+			"\u00dcbernahme",
+			"Felsgrab",
+			"Toxin",
+			"Delegator",
+			"Draco-Meteor",
+			"Eisstrahl",
+			"Fassade",
+			"Doppelteam",
+			"Schutzschild",
+			"Bodyguard",
+			"Finsteraura"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_SEESKULL": {
+		"basestats": {
+			"KP": 55,
+			"Angriff": 85,
+			"Verteidigung": 65,
+			"Initiative": 95,
+			"Spezialangriff": 85,
+			"Spezialverteidigung": 65
+		},
+		"type_0": "Wasser",
+		"type_1": "Wasser",
+		"capture_rate": 45,
+		"exp_yield": 143,
+		"ev_yield": [
+			0,
+			2,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Drache",
+		"egg_group_1": "Wasser_1",
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 1,
+		"hidden_ability": "H2o_absorber",
+		"form": "Squiggle",
+		"levelup_moves": [
+			[
+				"Pfund",
+				1
+			],
+			[
+				"Silberblick",
+				1
+			],
+			[
+				"Aquaknarre",
+				7
+			],
+			[
+				"Ruckzuckhieb",
+				11
+			],
+			[
+				"Aquawelle",
+				16
+			],
+			[
+				"Konfustrahl",
+				19
+			],
+			[
+				"Wickel",
+				23
+			],
+			[
+				"Windhose",
+				26
+			],
+			[
+				"Finte",
+				31
+			],
+			[
+				"Feuerodem",
+				33
+			],
+			[
+				"Nassschweif",
+				37
+			],
+			[
+				"Hypnose",
+				41
+			],
+			[
+				"Drachenpuls",
+				47
+			],
+			[
+				"Hydropumpe",
+				51
+			]
+		],
+		"accessible_moves": [
+			"Reflektor",
+			"Geheimpower",
+			"Drachenpuls",
+			"Kraftreserve",
+			"Kaskade",
+			"Zertr\u00fcmmerer",
+			"Verh\u00f6hner",
+			"Blitz",
+			"Folterknecht",
+			"Frustration",
+			"Lichtkanone",
+			"Erholung",
+			"Spukball",
+			"Fokussto\u00df",
+			"Regentanz",
+			"Taucher",
+			"Lichtschild",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Blizzard",
+			"Psychokinese",
+			"Gedankengut",
+			"St\u00e4rke",
+			"Hagelsturm",
+			"Anziehung",
+			"Surfer",
+			"Wertewechsel",
+			"Eisenschweif",
+			"\u00dcbernahme",
+			"Felsgrab",
+			"Toxin",
+			"Aquahaubitze",
+			"Delegator",
+			"Draco-Meteor",
+			"Eisstrahl",
+			"Fassade",
+			"Doppelteam",
+			"Schutzschild",
+			"Bodyguard",
+			"Finsteraura"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_SKULLYDRA": {
+		"basestats": {
+			"KP": 75,
+			"Angriff": 95,
+			"Verteidigung": 70,
+			"Initiative": 135,
+			"Spezialangriff": 125,
+			"Spezialverteidigung": 70
+		},
+		"type_0": "Wasser",
+		"type_1": "Drache",
+		"capture_rate": 45,
+		"exp_yield": 210,
+		"ev_yield": [
+			0,
+			3,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 31,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Drache",
+		"egg_group_1": "Wasser_1",
+		"ability_0": "Sturzbach",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 1,
+		"hidden_ability": "H2o_absorber",
+		"form": "Squiggle",
+		"levelup_moves": [
+			[
+				"Pfund",
+				1
+			],
+			[
+				"Silberblick",
+				1
+			],
+			[
+				"Drachentanz",
+				1
+			],
+			[
+				"Genesung",
+				1
+			],
+			[
+				"Aquaknarre",
+				7
+			],
+			[
+				"Ruckzuckhieb",
+				11
+			],
+			[
+				"Aquawelle",
+				16
+			],
+			[
+				"Konfustrahl",
+				19
+			],
+			[
+				"Wickel",
+				23
+			],
+			[
+				"Windhose",
+				26
+			],
+			[
+				"Finte",
+				31
+			],
+			[
+				"Feuerodem",
+				33
+			],
+			[
+				"Tsunami",
+				36
+			],
+			[
+				"Drachenpuls",
+				41
+			],
+			[
+				"Nassschweif",
+				46
+			],
+			[
+				"Hypnose",
+				51
+			],
+			[
+				"Hydropumpe",
+				55
+			],
+			[
+				"Wasserspalt",
+				62
+			]
+		],
+		"accessible_moves": [
+			"Reflektor",
+			"Geheimpower",
+			"Drachenpuls",
+			"Kraftreserve",
+			"Kaskade",
+			"Hyperstrahl",
+			"Zertr\u00fcmmerer",
+			"Verh\u00f6hner",
+			"Blitz",
+			"Folterknecht",
+			"Frustration",
+			"Lichtkanone",
+			"Erholung",
+			"Spukball",
+			"Fokussto\u00df",
+			"Regentanz",
+			"Taucher",
+			"Lichtschild",
+			"R\u00fcckkehr",
+			"Br\u00fcller",
+			"Raub",
+			"Blizzard",
+			"Psychokinese",
+			"Gedankengut",
+			"St\u00e4rke",
+			"Hagelsturm",
+			"Anziehung",
+			"Surfer",
+			"Wertewechsel",
+			"Eisenschweif",
+			"\u00dcbernahme",
+			"Felsgrab",
+			"Toxin",
+			"Aquahaubitze",
+			"Delegator",
+			"Draco-Meteor",
+			"Eisstrahl",
+			"Fassade",
+			"Doppelteam",
+			"Schutzschild",
+			"Bodyguard",
+			"Finsteraura"
+		],
+		"egg_moves": []
+	},
+	"POKEMON_FIFFYEN": {
+		"ability_0": "Angsthase",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 7
+	},
+	"POKEMON_MAGNAYEN": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 7
+	},
+	"POKEMON_ZIGZACHS": {
+		"ability_0": "Mitnahme",
+		"ability_1": null,
+		"hidden_ability": "Tollwut",
+		"color": 5
+	},
+	"POKEMON_GERADAKS": {
+		"ability_0": "Mitnahme",
+		"ability_1": null,
+		"hidden_ability": "Tollwut",
+		"color": 8
+	},
+	"POKEMON_WAUMPEL": {
+		"ability_0": "Puderabwehr",
+		"ability_1": null,
+		"hidden_ability": "Angsthase",
+		"color": 0
+	},
+	"POKEMON_SCHALOKO": {
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 8
+	},
+	"POKEMON_PAPINELLA": {
+		"ability_0": "Hexaplaga",
+		"ability_1": null,
+		"hidden_ability": "Anpassung",
+		"color": 2
+	},
+	"POKEMON_PANEKON": {
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 6
+	},
+	"POKEMON_PUDOX": {
+		"ability_0": "Puderabwehr",
+		"ability_1": null,
+		"hidden_ability": "Facettenauge",
+		"color": 3
+	},
+	"POKEMON_LOTURZEL": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Regengenuss",
+		"hidden_ability": "Regenmut",
+		"color": 3
+	},
+	"POKEMON_LOMBRERO": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Regengenuss",
+		"hidden_ability": "Regenmut",
+		"color": 3
+	},
+	"POKEMON_KAPPALORES": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Regengenuss",
+		"hidden_ability": "Regenmut",
+		"color": 3
+	},
+	"POKEMON_SAMURZEL": {
+		"ability_0": "Chlorophyll",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Lebensraeuber",
+		"color": 5
+	},
+	"POKEMON_BLANAS": {
+		"ability_0": "Chlorophyll",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Lebensraeuber",
+		"color": 5
+	},
+	"POKEMON_TENGULIST": {
+		"ability_0": "Chlorophyll",
+		"ability_1": "Fruehwecker",
+		"hidden_ability": "Lebensraeuber",
+		"color": 5
+	},
+	"POKEMON_NINCADA": {
+		"ability_0": "Facettenauge",
+		"ability_1": null,
+		"hidden_ability": "Techniker",
+		"color": 7
+	},
+	"POKEMON_NINJASK": {
+		"ability_0": "Temposchub",
+		"ability_1": null,
+		"hidden_ability": "Techniker",
+		"color": 2
+	},
+	"POKEMON_NINJATOM": {
+		"ability_0": "Wunderwache",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 5
+	},
+	"POKEMON_SCHWALBINI": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Orkanschw",
+		"color": 1
+	},
+	"POKEMON_SCHWALBOSS": {
+		"ability_0": "Adrenalin",
+		"ability_1": null,
+		"hidden_ability": "Orkanschw",
+		"color": 1
+	},
+	"POKEMON_KNILZ": {
+		"ability_0": "Sporenwirt",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 5
+	},
+	"POKEMON_KAPILZ": {
+		"ability_0": "Sporenwirt",
+		"ability_1": null,
+		"hidden_ability": "Techniker",
+		"color": 3
+	},
+	"POKEMON_PANDIR": {
+		"ability_0": "Tempomacher",
+		"ability_1": null,
+		"hidden_ability": "Ap_sparer",
+		"color": 3
+	},
+	"POKEMON_WINGULL": {
+		"ability_0": "Adlerauge",
+		"ability_1": null,
+		"hidden_ability": "Regengenuss",
+		"color": 8
+	},
+	"POKEMON_PELIPPER": {
+		"ability_0": "Adlerauge",
+		"ability_1": null,
+		"hidden_ability": "Regengenuss",
+		"color": 2
+	},
+	"POKEMON_GEHWEIHER": {
+		"ability_0": "Wassertempo",
+		"ability_1": null,
+		"hidden_ability": "Temposchub",
+		"color": 1
+	},
+	"POKEMON_MASKEREGEN": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Temposchub",
+		"color": 1
+	},
+	"POKEMON_WAILMER": {
+		"ability_0": "Aquahuelle",
+		"ability_1": "Doesigkeit",
+		"hidden_ability": "Erzwinger",
+		"color": 1
+	},
+	"POKEMON_WAILORD": {
+		"ability_0": "Aquahuelle",
+		"ability_1": "Doesigkeit",
+		"hidden_ability": "Erzwinger",
+		"color": 1
+	},
+	"POKEMON_ENECO": {
+		"ability_0": "Charmebolzen",
+		"ability_1": null,
+		"hidden_ability": "Fluffig",
+		"color": 9
+	},
+	"POKEMON_ENEKORO": {
+		"ability_0": "Charmebolzen",
+		"ability_1": null,
+		"hidden_ability": "Fluffig",
+		"color": 6
+	},
+	"POKEMON_KECLEON": {
+		"ability_0": "Farbwechsel",
+		"ability_1": null,
+		"hidden_ability": "Wandlungskunst",
+		"color": 3
+	},
+	"POKEMON_PUPPANCE": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 5
+	},
+	"POKEMON_LEPUMENTAS": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 4
+	},
+	"POKEMON_NASGNET": {
+		"ability_0": "Robustheit",
+		"ability_1": "Magnetfalle",
+		"hidden_ability": "Felsenkern",
+		"color": 7
+	},
+	"POKEMON_MAGBRANT": {
+		"ability_0": "Flammkoerper",
+		"ability_1": null,
+		"hidden_ability": "Feuerfaenger",
+		"color": 5
+	},
+	"POKEMON_ZWIRRFINST": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 6
+	},
+	"POKEMON_SCHMERBE": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": "Luzid",
+		"color": 7
+	},
+	"POKEMON_WELSAR": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": "Luzid",
+		"color": 1
+	},
+	"POKEMON_RIHORNIOR": {
+		"ability_0": "Blitzfaenger",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Achtlos",
+		"color": 7
+	},
+	"POKEMON_KREBSCORPS": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Panzerhaut",
+		"hidden_ability": "Bedroher",
+		"color": 0
+	},
+	"POKEMON_KREBUTACK": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Panzerhaut",
+		"hidden_ability": "Bedroher",
+		"color": 0
+	},
+	"POKEMON_BARSCHWA": {
+		"ability_0": "Wassertempo",
+		"ability_1": null,
+		"hidden_ability": "Anpassung",
+		"color": 5
+	},
+	"POKEMON_MILOTIC": {
+		"ability_0": "Notschutz",
+		"ability_1": null,
+		"hidden_ability": "Multischuppe",
+		"color": 9
+	},
+	"POKEMON_KANIVANHA": {
+		"ability_0": "Rauhaut",
+		"ability_1": null,
+		"hidden_ability": "Temposchub",
+		"color": 0
+	},
+	"POKEMON_TOHAIDO": {
+		"ability_0": "Rauhaut",
+		"ability_1": null,
+		"hidden_ability": "Temposchub",
+		"color": 1
+	},
+	"POKEMON_KNACKLION": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Auswegslos",
+		"hidden_ability": "Sandherz",
+		"color": 5
+	},
+	"POKEMON_VIBRAVA": {
+		"ability_0": "Schwebe",
+		"ability_1": "Schwebe",
+		"hidden_ability": null,
+		"color": 3
+	},
+	"POKEMON_LIBELLDRA": {
+		"ability_0": "Schwebe",
+		"ability_1": "Schwebe",
+		"hidden_ability": null,
+		"color": 3
+	},
+	"POKEMON_RIOLU": {
+		"ability_0": "Konzentrator",
+		"ability_1": "Konzentrator",
+		"hidden_ability": "Strolch",
+		"color": 2
+	},
+	"POKEMON_LUCARIO": {
+		"ability_0": "Konzentrator",
+		"ability_1": "Konzentrator",
+		"hidden_ability": "Anpassung",
+		"color": 5
+	},
+	"POKEMON_FRIZELBLIZ": {
+		"ability_0": "Statik",
+		"ability_1": "Blitzfaenger",
+		"hidden_ability": "Bedroher",
+		"color": 3
+	},
+	"POKEMON_VOLTENSO": {
+		"ability_0": "Statik",
+		"ability_1": "Blitzfaenger",
+		"hidden_ability": "Bedroher",
+		"color": 2
+	},
+	"POKEMON_CAMAUB": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": "Barriere",
+		"color": 2
+	},
+	"POKEMON_CAMERUPT": {
+		"ability_0": "Magmapanzer",
+		"ability_1": null,
+		"hidden_ability": "Barriere",
+		"color": 0
+	},
+	"POKEMON_SEEMOPS": {
+		"ability_0": "Speckschicht",
+		"ability_1": null,
+		"hidden_ability": "Kaeltewahn",
+		"color": 1
+	},
+	"POKEMON_SEEJONG": {
+		"ability_0": "Speckschicht",
+		"ability_1": null,
+		"hidden_ability": "Kaeltewahn",
+		"color": 1
+	},
+	"POKEMON_WALRAISA": {
+		"ability_0": "Speckschicht",
+		"ability_1": null,
+		"hidden_ability": "Kaeltewahn",
+		"color": 1
+	},
+	"POKEMON_TUSKA": {
+		"ability_0": "Sandschleier",
+		"ability_1": null,
+		"hidden_ability": "Extradorn",
+		"color": 3
+	},
+	"POKEMON_NOKTUSKA": {
+		"ability_0": "Sandschleier",
+		"ability_1": null,
+		"hidden_ability": "Extradorn",
+		"color": 3
+	},
+	"POKEMON_SCHNEPPKE": {
+		"ability_0": "Konzentrator",
+		"ability_1": null,
+		"hidden_ability": "Ap_sparer",
+		"color": 7
+	},
+	"POKEMON_FIRNONTOR": {
+		"ability_0": "Konzentrator",
+		"ability_1": null,
+		"hidden_ability": "Schwebe",
+		"color": 7
+	},
+	"POKEMON_LUNASTEIN": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 2
+	},
+	"POKEMON_SONNFEL": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 0
+	},
+	"POKEMON_AZURILL": {
+		"ability_0": "Speckschicht",
+		"ability_1": "Kraftkoloss",
+		"hidden_ability": "Angsthase",
+		"color": 1
+	},
+	"POKEMON_SPOINK": {
+		"ability_0": "Speckschicht",
+		"ability_1": "Tempomacher",
+		"hidden_ability": "Notschutz",
+		"color": 4
+	},
+	"POKEMON_GROINK": {
+		"ability_0": "Speckschicht",
+		"ability_1": "Tempomacher",
+		"hidden_ability": "Notschutz",
+		"color": 6
+	},
+	"POKEMON_PLUSLE": {
+		"ability_0": "Plus",
+		"ability_1": null,
+		"hidden_ability": "Blitzfaenger",
+		"color": 2
+	},
+	"POKEMON_MINUN": {
+		"ability_0": "Minus",
+		"ability_1": null,
+		"hidden_ability": "Voltabsorber",
+		"color": 2
+	},
+	"POKEMON_FLUNKIFER": {
+		"ability_0": "Scherenmacht",
+		"ability_1": "Bedroher",
+		"hidden_ability": "Ap_sparer",
+		"color": 4
+	},
+	"POKEMON_MEDITIE": {
+		"ability_0": "Mentalkraft",
+		"ability_1": null,
+		"hidden_ability": "Techniker",
+		"color": 1
+	},
+	"POKEMON_MEDITALIS": {
+		"ability_0": "Mentalkraft",
+		"ability_1": null,
+		"hidden_ability": "Techniker",
+		"color": 0
+	},
+	"POKEMON_WABLU": {
+		"ability_0": "Innere_kraft",
+		"ability_1": null,
+		"hidden_ability": "Wolke_sieben",
+		"color": 1
+	},
+	"POKEMON_ALTARIA": {
+		"ability_0": "Innere_kraft",
+		"ability_1": null,
+		"hidden_ability": "Wolke_sieben",
+		"color": 1,
+		"levelup_moves": [
+			[
+				"Donnerblitz",
+				40
+			],
+			[
+				"Himmelsfeger",
+				60
+			]
+		]
+	},
+	"POKEMON_KLINGPLIM": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 1
+	},
+	"POKEMON_ZWIRRLICHT": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 4
+	},
+	"POKEMON_ZWIRRKLOP": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Lebensraeuber",
+		"color": 4
+	},
+	"POKEMON_PORYGON_Z": {
+		"ability_0": "Anpassung",
+		"ability_1": null,
+		"hidden_ability": "Hack",
+		"color": 0
+	},
+	"POKEMON_BUMMELZ": {
+		"ability_0": "Schnarchnase",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 5
+	},
+	"POKEMON_MUNTIER": {
+		"ability_0": "Munterkeit",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 8
+	},
+	"POKEMON_LETARKING": {
+		"ability_0": "Schnarchnase",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 5
+	},
+	"POKEMON_SCHLUPPUCK": {
+		"ability_0": "Kloakensosse",
+		"ability_1": "Wertehalter",
+		"hidden_ability": "Aufwertung",
+		"color": 3
+	},
+	"POKEMON_SCHLUKWECH": {
+		"ability_0": "Kloakensosse",
+		"ability_1": "Wertehalter",
+		"hidden_ability": "Aufwertung",
+		"color": 6
+	},
+	"POKEMON_TROPIUS": {
+		"ability_0": "Chlorophyll",
+		"ability_1": null,
+		"hidden_ability": "Reiche_ernte",
+		"color": 3
+	},
+	"POKEMON_KAUMALAT": {
+		"ability_0": "Sandschleier",
+		"ability_1": "Sandschleier",
+		"hidden_ability": "Sandherz",
+		"color": 9
+	},
+	"POKEMON_KNARKSEL": {
+		"ability_0": "Sandschleier",
+		"ability_1": "Sandschleier",
+		"hidden_ability": "Sandherz",
+		"color": 1
+	},
+	"POKEMON_KNAKRACK": {
+		"ability_0": "Sandschleier",
+		"ability_1": "Sandschleier",
+		"hidden_ability": "Sandherz",
+		"color": 1
+	},
+	"POKEMON_PERLU": {
+		"ability_0": "Panzerhaut",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 1
+	},
+	"POKEMON_AALABYSS": {
+		"ability_0": "Wassertempo",
+		"ability_1": null,
+		"hidden_ability": "Expidermis",
+		"color": 1
+	},
+	"POKEMON_SAGANABYSS": {
+		"ability_0": "Wassertempo",
+		"ability_1": null,
+		"hidden_ability": "Expidermis",
+		"color": 9
+	},
+	"POKEMON_ABSOL": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": "Bedroher",
+		"color": 9
+	},
+	"POKEMON_SHUPPET": {
+		"ability_0": "Insomnia",
+		"ability_1": null,
+		"hidden_ability": "Strolch",
+		"color": 4
+	},
+	"POKEMON_BANETTE": {
+		"ability_0": "Insomnia",
+		"ability_1": null,
+		"hidden_ability": "Strolch",
+		"color": 4
+	},
+	"POKEMON_VIPITIS": {
+		"ability_0": "Expidermis",
+		"ability_1": null,
+		"hidden_ability": "Multischuppe",
+		"color": 4,
+		"accessible_moves": [
+			"Nassschweif"
+		]
+	},
+	"POKEMON_SENGO": {
+		"ability_0": "Immunitaet",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 4
+	},
+	"POKEMON_RELICANTH": {
+		"ability_0": "Wassertempo",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Robustheit",
+		"color": 7
+	},
+	"POKEMON_STOLLUNIOR": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Filter",
+		"color": 7
+	},
+	"POKEMON_STOLLRAK": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Filter",
+		"color": 7
+	},
+	"POKEMON_STOLLOSS": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Filter",
+		"color": 7
+	},
+	"POKEMON_FORMEO": {
+		"ability_0": "Prognose",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 8
+	},
+	"POKEMON_WONNEIRA": {
+		"ability_0": "Innere_kraft",
+		"ability_1": "Edelmut",
+		"hidden_ability": "Curator",
+		"color": 9
+	},
+	"POKEMON_MOBAI": {
+		"ability_0": "Robustheit",
+		"ability_1": "Steinhaupt",
+		"hidden_ability": "Felsenkern",
+		"color": 5
+	},
+	"POKEMON_LILIEP": {
+		"ability_0": "Saugnapf",
+		"ability_1": null,
+		"hidden_ability": "Notduenger",
+		"color": 6
+	},
+	"POKEMON_WIELIE": {
+		"ability_0": "Saugnapf",
+		"ability_1": null,
+		"hidden_ability": "Notduenger",
+		"color": 3
+	},
+	"POKEMON_ANORITH": {
+		"ability_0": "Kampfpanzer",
+		"ability_1": null,
+		"hidden_ability": "Wassertempo",
+		"color": 7
+	},
+	"POKEMON_ARMALDO": {
+		"ability_0": "Kampfpanzer",
+		"ability_1": null,
+		"hidden_ability": "Wassertempo",
+		"color": 7
+	},
+	"POKEMON_TRASLA": {
+		"ability_0": "Synchro",
+		"ability_1": "Faehrte",
+		"hidden_ability": "Luzid",
+		"color": 8
+	},
+	"POKEMON_KIRLIA": {
+		"ability_0": "Synchro",
+		"ability_1": "Faehrte",
+		"hidden_ability": "Luzid",
+		"color": 8
+	},
+	"POKEMON_GUARDEVOIR": {
+		"ability_0": "Synchro",
+		"ability_1": "Faehrte",
+		"hidden_ability": "Luzid",
+		"color": 8
+	},
+	"POKEMON_KINDWURM": {
+		"ability_0": "Steinhaupt",
+		"ability_1": null,
+		"hidden_ability": "Achtlos",
+		"color": 1
+	},
+	"POKEMON_DRASCHEL": {
+		"ability_0": "Steinhaupt",
+		"ability_1": null,
+		"hidden_ability": "Expidermis",
+		"color": 8
+	},
+	"POKEMON_BRUTALANDA": {
+		"ability_0": "Bedroher",
+		"ability_1": null,
+		"hidden_ability": "Hochmut",
+		"color": 1
+	},
+	"POKEMON_TANHEL": {
+		"ability_0": "Neutraltorso",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 1
+	},
+	"POKEMON_METANG": {
+		"ability_0": "Neutraltorso",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 1
+	},
+	"POKEMON_METAGROSS": {
+		"ability_0": "Neutraltorso",
+		"ability_1": null,
+		"hidden_ability": "Allrounder",
+		"color": 1
+	},
+	"POKEMON_REGIROCK": {
+		"ability_0": "Neutraltorso",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 5
+	},
+	"POKEMON_REGICE": {
+		"ability_0": "Neutraltorso",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 1
+	},
+	"POKEMON_REGISTEEL": {
+		"ability_0": "Neutraltorso",
+		"ability_1": null,
+		"hidden_ability": "Robustheit",
+		"color": 7
+	},
+	"POKEMON_KYOGRE": {
+		"ability_0": "Niesel",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 1
+	},
+	"POKEMON_GROUDON": {
+		"ability_0": "Duerre",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 0
+	},
+	"POKEMON_RAYQUAZA": {
+		"ability_0": "Klimaschutz",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 3
+	},
+	"POKEMON_LATIAS": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 0
+	},
+	"POKEMON_LATIOS": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 1
+	},
+	"POKEMON_JIRACHI": {
+		"ability_0": "Edelmut",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 2
+	},
+	"POKEMON_DEOXYS": {
+		"ability_0": "Erzwinger",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 2
+	},
+	"POKEMON_PALIMPALIM": {
+		"ability_0": "Schwebe",
+		"ability_1": null,
+		"hidden_ability": null,
+		"color": 1
+	},
+	"POKEMON_EGG": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_B": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_C": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_D": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_E": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_F": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_G": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_H": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_I": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_J": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_K": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_L": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_M": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_N": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_O": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_P": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_Q": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_R": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_S": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_T": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_U": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_V": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_W": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_X": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_Y": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_Z": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_EXCLAMATION": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_ICOGNITO_QUESTION": {
+		"basestats": {
+			"KP": 0,
+			"Angriff": 0,
+			"Verteidigung": 0,
+			"Initiative": 0,
+			"Spezialangriff": 0,
+			"Spezialverteidigung": 0
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 0,
+		"exp_yield": 0,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 0,
+		"egg_cycles": 0,
+		"base_happiness": 0,
+		"growth_rate": "Medium",
+		"egg_group_0": "Wasser_1",
+		"egg_group_1": "Wasser_1",
+		"ability_0": null,
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Quadruped"
+	},
+	"POKEMON_GROUDON_REGENT": {
+		"basestats": {
+			"KP": 100,
+			"Angriff": 195,
+			"Verteidigung": 150,
+			"Initiative": 95,
+			"Spezialangriff": 125,
+			"Spezialverteidigung": 105
+		},
+		"type_0": "Boden",
+		"type_1": "Feuer",
+		"capture_rate": 5,
+		"exp_yield": 255,
+		"ev_yield": [
+			0,
+			3,
+			0,
+			0,
+			0,
+			0,
+			0
+		],
+		"common_item": null,
+		"rare_item": null,
+		"gender_ratio": 255,
+		"egg_cycles": 120,
+		"base_happiness": 0,
+		"growth_rate": "Slow",
+		"egg_group_0": "Unbekannt",
+		"egg_group_1": "Unbekannt",
+		"ability_0": "R_kaiseraura",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 0,
+		"hidden_ability": null,
+		"form": "Upright",
+        "move_link" : "POKEMON_GROUDON"
+	},
+	"POKEMON_KECLEON_PURPLE": {
+		"basestats": {
+			"KP": 95,
+			"Angriff": 120,
+			"Verteidigung": 80,
+			"Initiative": 95,
+			"Spezialangriff": 65,
+			"Spezialverteidigung": 135
+		},
+		"type_0": "Normal",
+		"type_1": "Normal",
+		"capture_rate": 200,
+		"exp_yield": 132,
+		"ev_yield": [
+			0,
+			0,
+			0,
+			1,
+			0,
+			1,
+			0
+		],
+		"common_item": null,
+		"rare_item": "Persimbeere",
+		"gender_ratio": 127,
+		"egg_cycles": 20,
+		"base_happiness": 70,
+		"growth_rate": "Medium_slow",
+		"egg_group_0": "Feld",
+		"egg_group_1": "Feld",
+		"ability_0": "Farbwechsel",
+		"ability_1": null,
+		"safari_rate": 0,
+		"color": 3,
+		"hidden_ability": "Wandlungskunst",
+		"form": "Upright",
+        "move_link" : "POKEMON_KECLEON"
+	}
+}

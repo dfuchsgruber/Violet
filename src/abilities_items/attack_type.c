@@ -18,16 +18,16 @@ u8 attack_type_by_ability(u16 attack){
         switch(attacker->ability){
             case ZENITHAUT:
                 damage_apply_multiplier(1300);
-                return TYPE_FLYING;
+                return TYPE_FLUG;
             case KAEMPFERHERZ:
                 damage_apply_multiplier(1300);
-                return TYPE_FIGHTING;
+                return TYPE_KAMPF;
             case DONNERAURA:
                 damage_apply_multiplier(1300);
-                return TYPE_ELECTRIC;
+                return TYPE_ELEKTRO;
             case FROSTSCHICHT:
                 damage_apply_multiplier(1300);
-                return TYPE_ICE;
+                return TYPE_EIS;
         }
     }
     return attacks[attack].type;

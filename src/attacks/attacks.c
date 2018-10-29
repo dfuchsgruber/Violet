@@ -40,7 +40,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		50, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		25, //PP
 		0, //Effect accuracy
@@ -115,7 +115,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		75, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -130,7 +130,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x5, //Effect-id (in table)
 		75, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -145,7 +145,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		75, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -235,7 +235,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		65, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -250,7 +250,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x95, //Effect-id (in table)
 		40, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		100, //Accuracy
 		35, //PP
 		0, //Effect accuracy
@@ -265,7 +265,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		60, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		100, //Accuracy
 		35, //PP
 		0, //Effect accuracy
@@ -295,7 +295,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x9b, //Effect-id (in table)
 		70, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		95, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -340,7 +340,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		35, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -370,7 +370,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2c, //Effect-id (in table)
 		30, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -400,7 +400,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2d, //Effect-id (in table)
 		70, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		95, //Accuracy
 		25, //PP
 		0, //Effect accuracy
@@ -415,7 +415,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		60, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		85, //Accuracy
 		15, //PP
 		30, //Effect accuracy
@@ -430,7 +430,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x17, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -610,7 +610,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2, //Effect-id (in table)
 		15, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		35, //PP
 		30, //Effect accuracy
@@ -625,7 +625,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4d, //Effect-id (in table)
 		25, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		20, //PP
 		20, //Effect accuracy
@@ -640,7 +640,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1d, //Effect-id (in table)
 		14, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		85, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -670,7 +670,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		60, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		25, //PP
 		30, //Effect accuracy
@@ -775,7 +775,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x45, //Effect-id (in table)
 		40, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		30, //PP
 		10, //Effect accuracy
@@ -790,7 +790,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		40, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		25, //PP
 		10, //Effect accuracy
@@ -805,7 +805,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		95, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -820,7 +820,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2e, //Effect-id (in table)
 		0, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		0, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -835,7 +835,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		40, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		25, //PP
 		0, //Effect accuracy
@@ -850,7 +850,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		120, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		80, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -865,7 +865,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		95, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -880,7 +880,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x5, //Effect-id (in table)
 		95, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		100, //Accuracy
 		10, //PP
 		10, //Effect accuracy
@@ -895,7 +895,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x5, //Effect-id (in table)
 		120, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		70, //Accuracy
 		5, //PP
 		10, //Effect accuracy
@@ -910,7 +910,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4c, //Effect-id (in table)
 		65, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		20, //PP
 		10, //Effect accuracy
@@ -925,7 +925,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x46, //Effect-id (in table)
 		65, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		20, //PP
 		10, //Effect accuracy
@@ -940,7 +940,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x44, //Effect-id (in table)
 		65, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		100, //Accuracy
 		20, //PP
 		10, //Effect accuracy
@@ -970,7 +970,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		35, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		100, //Accuracy
 		35, //PP
 		0, //Effect accuracy
@@ -985,7 +985,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		80, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1000,7 +1000,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x30, //Effect-id (in table)
 		80, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		80, //Accuracy
 		25, //PP
 		0, //Effect accuracy
@@ -1015,7 +1015,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc4, //Effect-id (in table)
 		1, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1030,7 +1030,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		89, //Effect-id (in table)
 		1, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1045,7 +1045,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x57, //Effect-id (in table)
 		1, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1060,7 +1060,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		80, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -1075,7 +1075,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3, //Effect-id (in table)
 		20, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1090,7 +1090,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3, //Effect-id (in table)
 		40, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -1105,7 +1105,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x54, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		90, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -1135,7 +1135,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		55, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		95, //Accuracy
 		25, //PP
 		0, //Effect accuracy
@@ -1150,7 +1150,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x97, //Effect-id (in table)
 		120, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -1165,7 +1165,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x42, //Effect-id (in table)
 		0, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		75, //Accuracy
 		35, //PP
 		0, //Effect accuracy
@@ -1180,7 +1180,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x43, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		75, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -1195,7 +1195,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		75, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -1210,7 +1210,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1b, //Effect-id (in table)
 		120, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		20, //PP
 		100, //Effect accuracy
@@ -1225,7 +1225,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x14, //Effect-id (in table)
 		0, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		95, //Accuracy
 		40, //PP
 		0, //Effect accuracy
@@ -1240,7 +1240,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x29, //Effect-id (in table)
 		1, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -1255,7 +1255,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2a, //Effect-id (in table)
 		15, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		70, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -1270,7 +1270,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		40, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		30, //PP
 		10, //Effect accuracy
@@ -1285,7 +1285,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		95, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -1300,7 +1300,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x43, //Effect-id (in table)
 		0, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1315,7 +1315,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x98, //Effect-id (in table)
 		120, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		70, //Accuracy
 		10, //PP
 		30, //Effect accuracy
@@ -1330,7 +1330,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		50, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		90, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -1345,7 +1345,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x93, //Effect-id (in table)
 		100, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -1360,7 +1360,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x26, //Effect-id (in table)
 		1, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		30, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -1375,7 +1375,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x9b, //Effect-id (in table)
 		60, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -1390,7 +1390,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x21, //Effect-id (in table)
 		0, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		85, //Accuracy
 		10, //PP
 		100, //Effect accuracy
@@ -1405,7 +1405,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4c, //Effect-id (in table)
 		50, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		25, //PP
 		10, //Effect accuracy
@@ -1420,7 +1420,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x48, //Effect-id (in table)
 		90, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		10, //PP
 		10, //Effect accuracy
@@ -1435,7 +1435,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		60, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1450,7 +1450,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xa, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		40, //PP
 		0, //Effect accuracy
@@ -1465,7 +1465,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x34, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -1510,7 +1510,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x99, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1525,7 +1525,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x57, //Effect-id (in table)
 		1, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -1645,7 +1645,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x31, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -1660,7 +1660,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xb, //Effect-id (in table)
 		0, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		0, //Accuracy
 		40, //PP
 		0, //Effect accuracy
@@ -1690,7 +1690,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x33, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -1705,7 +1705,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x23, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -1720,7 +1720,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x19, //Effect-id (in table)
 		0, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		0, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -1735,7 +1735,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x41, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1795,7 +1795,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x9, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -1840,7 +1840,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		20, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		30, //PP
 		30, //Effect accuracy
@@ -1855,7 +1855,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2, //Effect-id (in table)
 		20, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		70, //Accuracy
 		20, //PP
 		40, //Effect accuracy
@@ -1870,7 +1870,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2, //Effect-id (in table)
 		65, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		20, //PP
 		30, //Effect accuracy
@@ -1885,7 +1885,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		65, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		85, //Accuracy
 		20, //PP
 		10, //Effect accuracy
@@ -1900,7 +1900,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		85, //Accuracy
 		5, //PP
 		10, //Effect accuracy
@@ -1915,7 +1915,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		105, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -1930,7 +1930,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2a, //Effect-id (in table)
 		35, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		75, //Accuracy
 		10, //PP
 		100, //Effect accuracy
@@ -2005,7 +2005,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x36, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -2020,7 +2020,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x17, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		80, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -2050,7 +2050,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2d, //Effect-id (in table)
 		85, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		90, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -2080,7 +2080,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x8, //Effect-id (in table)
 		100, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -2095,7 +2095,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x42, //Effect-id (in table)
 		0, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		55, //Accuracy
 		40, //PP
 		0, //Effect accuracy
@@ -2125,7 +2125,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3, //Effect-id (in table)
 		20, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -2155,7 +2155,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4b, //Effect-id (in table)
 		140, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		90, //Accuracy
 		5, //PP
 		30, //Effect accuracy
@@ -2185,7 +2185,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x46, //Effect-id (in table)
 		20, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		30, //PP
 		10, //Effect accuracy
@@ -2215,7 +2215,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -2230,7 +2230,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x11, //Effect-id (in table)
 		60, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -2245,7 +2245,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x58, //Effect-id (in table)
 		1, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		80, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -2275,7 +2275,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x33, //Effect-id (in table)
 		0, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		0, //Accuracy
 		40, //PP
 		0, //Effect accuracy
@@ -2290,7 +2290,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		90, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		85, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2335,7 +2335,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2c, //Effect-id (in table)
 		50, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		90, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2350,7 +2350,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x25, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2365,7 +2365,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		75, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		90, //Accuracy
 		10, //PP
 		30, //Effect accuracy
@@ -2515,7 +2515,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x68, //Effect-id (in table)
 		10, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		90, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2530,7 +2530,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x69, //Effect-id (in table)
 		40, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		10, //PP
 		100, //Effect accuracy
@@ -2545,7 +2545,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6a, //Effect-id (in table)
 		0, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2575,7 +2575,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6b, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -2590,7 +2590,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x7d, //Effect-id (in table)
 		60, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		25, //PP
 		10, //Effect accuracy
@@ -2620,7 +2620,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6d, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		0, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2665,7 +2665,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		100, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		95, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -2680,7 +2680,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3c, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		85, //Accuracy
 		40, //PP
 		0, //Effect accuracy
@@ -2695,7 +2695,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x63, //Effect-id (in table)
 		1, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -2710,7 +2710,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x64, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2725,7 +2725,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x5, //Effect-id (in table)
 		40, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		100, //Accuracy
 		25, //PP
 		10, //Effect accuracy
@@ -2755,7 +2755,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x67, //Effect-id (in table)
 		40, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -2785,7 +2785,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x11, //Effect-id (in table)
 		60, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -2800,7 +2800,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x31, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FAIRY,
+		TYPE_FEE,
 		75, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -2830,7 +2830,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2, //Effect-id (in table)
 		90, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		10, //PP
 		30, //Effect accuracy
@@ -2845,7 +2845,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x49, //Effect-id (in table)
 		20, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		100, //Accuracy
 		10, //PP
 		100, //Effect accuracy
@@ -2860,7 +2860,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x49, //Effect-id (in table)
 		65, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		85, //Accuracy
 		10, //PP
 		50, //Effect accuracy
@@ -2875,7 +2875,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x70, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -2890,7 +2890,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		100, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		50, //Accuracy
 		5, //PP
 		100, //Effect accuracy
@@ -2920,7 +2920,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x62, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		0, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -2950,7 +2950,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x46, //Effect-id (in table)
 		55, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		95, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -2965,7 +2965,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6f, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		0, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -2980,7 +2980,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1d, //Effect-id (in table)
 		25, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		80, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -3010,7 +3010,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1b, //Effect-id (in table)
 		120, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		100, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -3025,7 +3025,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x73, //Effect-id (in table)
 		0, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		0, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -3040,7 +3040,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3, //Effect-id (in table)
 		60, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -3070,7 +3070,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3a, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FAIRY,
+		TYPE_FEE,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -3085,7 +3085,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x75, //Effect-id (in table)
 		30, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		90, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -3145,7 +3145,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		65, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		20, //PP
 		30, //Effect accuracy
@@ -3160,7 +3160,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		85, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -3175,7 +3175,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x8a, //Effect-id (in table)
 		70, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		90, //Accuracy
 		25, //PP
 		10, //Effect accuracy
@@ -3325,7 +3325,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x7d, //Effect-id (in table)
 		100, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		95, //Accuracy
 		5, //PP
 		50, //Effect accuracy
@@ -3340,7 +3340,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x7e, //Effect-id (in table)
 		1, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -3355,7 +3355,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		76, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		50, //Accuracy
 		5, //PP
 		100, //Effect accuracy
@@ -3370,7 +3370,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		120, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		85, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -3385,7 +3385,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		60, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		100, //Accuracy
 		20, //PP
 		30, //Effect accuracy
@@ -3430,7 +3430,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x80, //Effect-id (in table)
 		40, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -3475,7 +3475,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x45, //Effect-id (in table)
 		100, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		75, //Accuracy
 		15, //PP
 		30, //Effect accuracy
@@ -3490,7 +3490,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x8b, //Effect-id (in table)
 		50, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		95, //Accuracy
 		35, //PP
 		10, //Effect accuracy
@@ -3505,7 +3505,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4e, //Effect-id (in table)
 		70, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -3535,7 +3535,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x85, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		0, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -3580,7 +3580,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		100, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		80, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -3595,7 +3595,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x92, //Effect-id (in table)
 		40, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		100, //Accuracy
 		20, //PP
 		20, //Effect accuracy
@@ -3610,7 +3610,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x88, //Effect-id (in table)
 		0, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		0, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -3625,7 +3625,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x89, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		0, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -3640,7 +3640,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x48, //Effect-id (in table)
 		80, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		15, //PP
 		20, //Effect accuracy
@@ -3655,7 +3655,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		144, //Effect-id (in table)
 		1, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -3700,7 +3700,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x8c, //Effect-id (in table)
 		60, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		100, //Accuracy
 		5, //PP
 		10, //Effect accuracy
@@ -3715,7 +3715,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x48, //Effect-id (in table)
 		80, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		15, //PP
 		20, //Effect accuracy
@@ -3730,7 +3730,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x94, //Effect-id (in table)
 		80, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		90, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -3745,7 +3745,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		85, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		15, //PP
 		50, //Effect accuracy
@@ -3760,7 +3760,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2a, //Effect-id (in table)
 		15, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		70, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -3775,7 +3775,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x9a, //Effect-id (in table)
 		10, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -3865,7 +3865,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		100, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		90, //Accuracy
 		10, //PP
 		10, //Effect accuracy
@@ -3880,7 +3880,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xa4, //Effect-id (in table)
 		0, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		0, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -3895,7 +3895,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xa5, //Effect-id (in table)
 		0, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -3910,7 +3910,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xa6, //Effect-id (in table)
 		0, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -3925,7 +3925,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xa7, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		75, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -3940,7 +3940,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xa8, //Effect-id (in table)
 		0, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -3970,7 +3970,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xaa, //Effect-id (in table)
 		150, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4030,7 +4030,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xae, //Effect-id (in table)
 		0, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4045,7 +4045,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xaf, //Effect-id (in table)
 		0, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4075,7 +4075,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xb1, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -4090,7 +4090,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xb2, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -4135,7 +4135,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xb5, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4150,7 +4150,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xb6, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4165,7 +4165,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xb7, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -4195,7 +4195,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xb9, //Effect-id (in table)
 		60, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -4210,7 +4210,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xba, //Effect-id (in table)
 		75, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -4240,7 +4240,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xbc, //Effect-id (in table)
 		20, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		20, //PP
 		100, //Effect accuracy
@@ -4270,7 +4270,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xbe, //Effect-id (in table)
 		150, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4285,7 +4285,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xbf, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -4300,7 +4300,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc0, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -4330,7 +4330,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc2, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4345,7 +4345,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc3, //Effect-id (in table)
 		0, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -4375,7 +4375,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		95, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -4390,7 +4390,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1d, //Effect-id (in table)
 		15, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4420,7 +4420,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x35, //Effect-id (in table)
 		0, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4435,7 +4435,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x48, //Effect-id (in table)
 		70, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		5, //PP
 		50, //Effect accuracy
@@ -4450,7 +4450,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x47, //Effect-id (in table)
 		70, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		5, //PP
 		50, //Effect accuracy
@@ -4465,7 +4465,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3a, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -4495,7 +4495,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc8, //Effect-id (in table)
 		85, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		90, //Accuracy
 		10, //PP
 		10, //Effect accuracy
@@ -4510,7 +4510,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc9, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -4525,7 +4525,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x75, //Effect-id (in table)
 		30, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		90, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4540,7 +4540,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x96, //Effect-id (in table)
 		60, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		15, //PP
 		30, //Effect accuracy
@@ -4585,7 +4585,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xca, //Effect-id (in table)
 		50, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		15, //PP
 		30, //Effect accuracy
@@ -4615,7 +4615,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x50, //Effect-id (in table)
 		150, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		90, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4630,7 +4630,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x50, //Effect-id (in table)
 		150, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		90, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4645,7 +4645,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x8b, //Effect-id (in table)
 		100, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		85, //Accuracy
 		10, //PP
 		20, //Effect accuracy
@@ -4660,7 +4660,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x96, //Effect-id (in table)
 		30, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		15, //PP
 		30, //Effect accuracy
@@ -4690,7 +4690,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x66, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		0, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4705,7 +4705,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3e, //Effect-id (in table)
 		0, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4720,7 +4720,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		55, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		95, //Accuracy
 		25, //PP
 		0, //Effect accuracy
@@ -4735,7 +4735,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xcc, //Effect-id (in table)
 		140, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		90, //Accuracy
 		5, //PP
 		100, //Effect accuracy
@@ -4765,7 +4765,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x46, //Effect-id (in table)
 		50, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		80, //Accuracy
 		10, //PP
 		100, //Effect accuracy
@@ -4780,7 +4780,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x8c, //Effect-id (in table)
 		60, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		5, //PP
 		10, //Effect accuracy
@@ -4795,7 +4795,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3e, //Effect-id (in table)
 		0, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		85, //Accuracy
 		40, //PP
 		0, //Effect accuracy
@@ -4810,7 +4810,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1, //Effect-id (in table)
 		0, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		55, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -4840,7 +4840,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xce, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4855,7 +4855,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xbe, //Effect-id (in table)
 		150, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4870,7 +4870,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4c, //Effect-id (in table)
 		75, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -4885,7 +4885,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x11, //Effect-id (in table)
 		60, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4900,7 +4900,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x96, //Effect-id (in table)
 		80, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		100, //Accuracy
 		30, //PP
 		10, //Effect accuracy
@@ -4915,7 +4915,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xcf, //Effect-id (in table)
 		85, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		90, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -4930,7 +4930,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2a, //Effect-id (in table)
 		15, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		70, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -4945,7 +4945,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x26, //Effect-id (in table)
 		1, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		30, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -4960,7 +4960,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x49, //Effect-id (in table)
 		95, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		85, //Accuracy
 		10, //PP
 		30, //Effect accuracy
@@ -4975,7 +4975,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1d, //Effect-id (in table)
 		15, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -4990,7 +4990,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x11, //Effect-id (in table)
 		60, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5005,7 +5005,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1d, //Effect-id (in table)
 		10, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -5020,7 +5020,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x33, //Effect-id (in table)
 		0, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		0, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5065,7 +5065,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		80, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5080,7 +5080,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x50, //Effect-id (in table)
 		150, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		90, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -5095,7 +5095,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xd0, //Effect-id (in table)
 		0, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5110,7 +5110,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x9b, //Effect-id (in table)
 		85, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		85, //Accuracy
 		5, //PP
 		30, //Effect accuracy
@@ -5125,7 +5125,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x46, //Effect-id (in table)
 		55, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		95, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -5140,7 +5140,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xd1, //Effect-id (in table)
 		50, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		25, //PP
 		10, //Effect accuracy
@@ -5170,7 +5170,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc6, //Effect-id (in table)
 		120, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5185,7 +5185,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x11, //Effect-id (in table)
 		60, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5200,7 +5200,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xd2, //Effect-id (in table)
 		0, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5215,7 +5215,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xd3, //Effect-id (in table)
 		0, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5230,7 +5230,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		70, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5245,7 +5245,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xd4, //Effect-id (in table)
 		0, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5260,7 +5260,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1d, //Effect-id (in table)
 		25, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		80, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -5275,7 +5275,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x11, //Effect-id (in table)
 		60, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5290,7 +5290,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4c, //Effect-id (in table)
 		60, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		20, //PP
 		20, //Effect accuracy
@@ -5305,7 +5305,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x94, //Effect-id (in table)
 		120, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		85, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -5320,7 +5320,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xcc, //Effect-id (in table)
 		140, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		90, //Accuracy
 		5, //PP
 		100, //Effect accuracy
@@ -5350,7 +5350,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xdd, //Effect-id (in table)
 		100, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		90, //Accuracy
 		10, //PP
 		100, //Effect accuracy
@@ -5365,7 +5365,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x11, //Effect-id (in table)
 		90, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5380,7 +5380,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2, //Effect-id (in table)
 		80, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		20, //PP
 		30, //Effect accuracy
@@ -5395,7 +5395,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x16, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		70, //Accuracy
 		5, //PP
 		10, //Effect accuracy
@@ -5410,7 +5410,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x67, //Effect-id (in table)
 		40, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -5425,7 +5425,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		80, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		15, //PP
 		20, //Effect accuracy
@@ -5440,7 +5440,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xd9, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -5455,7 +5455,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xda, //Effect-id (in table)
 		65, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		95, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -5470,7 +5470,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xdb, //Effect-id (in table)
 		65, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		95, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -5485,7 +5485,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		70, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5500,7 +5500,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		80, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5515,7 +5515,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		100, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		80, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -5530,7 +5530,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xc6, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		100, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -5545,7 +5545,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x34, //Effect-id (in table)
 		0, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		0, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5560,7 +5560,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		90, //Base Power
-		TYPE_ROCK,
+		TYPE_GESTEIN,
 		85, //Accuracy
 		20, //PP
 		33, //Effect accuracy
@@ -5575,7 +5575,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xcc, //Effect-id (in table)
 		140, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		90, //Accuracy
 		5, //PP
 		100, //Effect accuracy
@@ -5590,7 +5590,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xde, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FIGHTING,
+		TYPE_KAMPF,
 		100, //Accuracy
 		5, //PP
 		100, //Effect accuracy
@@ -5605,7 +5605,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x16, //Effect-id (in table)
 		80, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		100, //Accuracy
 		10, //PP
 		20, //Effect accuracy
@@ -5620,7 +5620,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xcc, //Effect-id (in table)
 		140, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		90, //Accuracy
 		5, //PP
 		100, //Effect accuracy
@@ -5635,7 +5635,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		90, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		90, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -5650,7 +5650,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		80, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		90, //Accuracy
 		15, //PP
 		20, //Effect accuracy
@@ -5665,7 +5665,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x16, //Effect-id (in table)
 		80, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		10, //PP
 		10, //Effect accuracy
@@ -5680,7 +5680,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x67, //Effect-id (in table)
 		40, //Base Power
-		TYPE_GHOST,
+		TYPE_GEIST,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -5710,7 +5710,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x67, //Effect-id (in table)
 		80, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		5, //PP
 		0, //Effect accuracy
@@ -5725,7 +5725,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		70, //Base Power
-		TYPE_DARK,
+		TYPE_UNLICHT,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5740,7 +5740,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		80, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5755,7 +5755,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x16, //Effect-id (in table)
 		90, //Base Power
-		TYPE_GROUND,
+		TYPE_BODEN,
 		100, //Accuracy
 		10, //PP
 		10, //Effect accuracy
@@ -5770,7 +5770,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		90, //Base Power
-		TYPE_DRAGON,
+		TYPE_DRACHE,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -5785,7 +5785,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x67, //Effect-id (in table)
 		40, //Base Power
-		TYPE_ICE,
+		TYPE_EIS,
 		100, //Accuracy
 		30, //PP
 		0, //Effect accuracy
@@ -5800,7 +5800,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xdc, //Effect-id (in table)
 		65, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		95, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -5815,7 +5815,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x67, //Effect-id (in table)
 		40, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5830,7 +5830,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		104, //Effect-id (in table)
 		35, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		90, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5845,7 +5845,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2b, //Effect-id (in table)
 		115, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		80, //Accuracy
 		15, //PP
 		30, //Effect accuracy
@@ -5860,7 +5860,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xe0, //Effect-id (in table)
 		85, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		20, //PP
 		30, //Effect accuracy
@@ -5875,7 +5875,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x50, //Effect-id (in table)
 		250, //Base Power
-		TYPE_PSYCHIC,
+		TYPE_PSYCHO,
 		85, //Accuracy
 		20, //PP
 		0, //Effect accuracy
@@ -5890,7 +5890,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		4, //Effect-id (in table)
 		70, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		90, //Accuracy
 		15, //PP
 		100, //Effect accuracy
@@ -5905,7 +5905,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		76, //Effect-id (in table)
 		115, //Base Power
-		TYPE_WATER,
+		TYPE_WASSER,
 		100, //Accuracy
 		5, //PP
 		25, //Effect accuracy
@@ -5920,7 +5920,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x67, //Effect-id (in table)
 		75, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -5935,7 +5935,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3, //Effect-id (in table)
 		50, //Base Power
-		TYPE_FAIRY,
+		TYPE_FEE,
 		100, //Accuracy
 		35, //PP
 		30, //Effect accuracy
@@ -5950,7 +5950,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		90, //Base Power
-		TYPE_FAIRY,
+		TYPE_FEE,
 		90, //Accuracy
 		10, //PP
 		20, //Effect accuracy
@@ -5965,7 +5965,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		95, //Base Power
-		TYPE_FAIRY,
+		TYPE_FEE,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -5980,7 +5980,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		80, //Base Power
-		TYPE_FAIRY,
+		TYPE_FEE,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
@@ -5995,7 +5995,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x0, //Effect-id (in table)
 		40, //Base Power
-		TYPE_FAIRY,
+		TYPE_FEE,
 		100, //Accuracy
 		15, //PP
 		30, //Effect accuracy
@@ -6010,7 +6010,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x2, //Effect-id (in table)
 		75, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		40, //PP
 		50, //Effect accuracy
@@ -6025,7 +6025,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1d, //Effect-id (in table)
 		20, //Base Power
-		TYPE_POISON,
+		TYPE_GIFT,
 		100, //Accuracy
 		15, //PP
 		0, //Effect accuracy
@@ -6055,7 +6055,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		95, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		85, //Accuracy
 		20, //PP
 		40, //Effect accuracy
@@ -6070,7 +6070,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x6, //Effect-id (in table)
 		100, //Base Power
-		TYPE_ELECTRIC,
+		TYPE_ELEKTRO,
 		100, //Accuracy
 		10, //PP
 		20, //Effect accuracy
@@ -6085,7 +6085,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x1f, //Effect-id (in table)
 		85, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		95, //Accuracy
 		15, //PP
 		20, //Effect accuracy
@@ -6100,7 +6100,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x3, //Effect-id (in table)
 		75, //Base Power
-		TYPE_GRASS,
+		TYPE_PFLANZE,
 		100, //Accuracy
 		30, //PP
 		10, //Effect accuracy
@@ -6115,7 +6115,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		60, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		25, //PP
 		10, //Effect accuracy
@@ -6130,7 +6130,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xe1, //Effect-id (in table)
 		95, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		15, //PP
 		10, //Effect accuracy
@@ -6145,7 +6145,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0xe2, //Effect-id (in table)
 		40, //Base Power
-		TYPE_FIRE,
+		TYPE_FEUER,
 		100, //Accuracy
 		20, //PP
 		100, //Effect accuracy
@@ -6160,7 +6160,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x16, //Effect-id (in table)
 		90, //Base Power
-		TYPE_BUG,
+		TYPE_KAEFER,
 		100, //Accuracy
 		10, //PP
 		10, //Effect accuracy
@@ -6175,7 +6175,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4c, //Effect-id (in table)
 		120, //Base Power
-		TYPE_FLYING,
+		TYPE_FLUG,
 		70, //Accuracy
 		10, //PP
 		30, //Effect accuracy
@@ -6190,7 +6190,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		111,//0xE3, //Effect-id (in table)
 		0, //Base Power
-		TYPE_STEEL,
+		TYPE_STAHL,
 		100, //Accuracy
 		10, //PP
 		0, //Effect accuracy
