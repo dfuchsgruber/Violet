@@ -18,7 +18,7 @@ if __name__ == '__main__':
     project = pymap.project.Project(args.project)
 
     # Retrieve the footer
-    footer_type = project.model['footer.footer']
+    footer_type = project.model['footer']
     with open(args.footer) as f:
         footer = json.load(f)
 

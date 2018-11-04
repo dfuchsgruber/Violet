@@ -748,28 +748,28 @@
 	.word pokedex_habitats
 
 .org 0x8088f18
-	.word dex_data
+	.word pokedex_entries
 
 .org 0x8088f40
-	.word dex_data
+	.word pokedex_entries
 
 .org 0x8088f54
-	.word dex_data
+	.word pokedex_entries
 
 .org 0x8105b0c
-	.word dex_data
+	.word pokedex_entries
 
 .org 0x8105b94
-	.word dex_data
+	.word pokedex_entries
 
 .org 0x8105be0
-	.word dex_data
+	.word pokedex_entries
 
 .org 0x8105db8
-	.word dex_data
+	.word pokedex_entries
 
 .org 0x8106744
-	.word dex_data
+	.word pokedex_entries
 
 //footprint disable
 

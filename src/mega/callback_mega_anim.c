@@ -18,7 +18,7 @@
 
 u8 str_mega_reacts[] = LANGDEP(
 		PSTRING("BUFFER_2 von BUFFER_1\nreagiert auf PLAYER von BUFFER_3."),
-		PSTRING("BUFFER_1\s BUFFER_2\nreacts to BUFFER_3\s PLAYER.")
+		PSTRING("BUFFER_1\'s BUFFER_2\nreacts to BUFFER_3\'s PLAYER.")
 );
 
 u8 str_mega_opp[] = LANGDEP(
@@ -38,7 +38,7 @@ u8 str_regent_evolved[] = LANGDEP(
 
 u8 str_aura_pulses[] = LANGDEP(
 		PSTRING("Die Aura von BUFFER_1\npulsiert!"),
-		PSTRING("BUFFER_1\s aura begins\nto pulse!")
+		PSTRING("BUFFER_1\'s aura begins\nto pulse!")
 );
 
 

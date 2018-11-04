@@ -1,5 +1,5 @@
 {
-	"type": "tileset",
+	"type": "tileset_primary",
 	"label": "maptileset0",
 	"data": {
 		"palettes": [
@@ -38988,6 +38988,5 @@
 		"field_3": 0,
 		"animation_initialize": "tileset_0_anim_init",
 		"palette_displaced": 0
-	},
-	"is_primary": true
+	}
 }

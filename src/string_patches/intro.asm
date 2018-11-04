@@ -109,12 +109,12 @@
 	.global str_intro_board_2
 
 	str_intro_board_2:
-		.string "But be aware! Things are not\nalways what they seem to be.\nSinister men will cross your path\nand a vicious group threatens the\ncountry while\nrebellious forces\nmake their impact\non Theto\s government."
+		.string "But be aware! Things are not\nalways what they seem to be.\nSinister men will cross your path\nand a vicious group threatens the\ncountry while\nrebellious forces\nmake their impact\non Theto\'s government."
 
 	.global str_intro_prof_0
 
 	str_intro_prof_0:
-		.string "Welcome to the region Theto!\pMy name is professor Tann and I am\none of the world\s leading\larchaeologists.\pMy passion is the restauration of\nancient history.\pDoing so I always trust in the\nsupport of my Pokémon.\p\n"
+		.string "Welcome to the region Theto!\pMy name is professor Tann and I am\none of the world\'s leading\larchaeologists.\pMy passion is the restauration of\nancient history.\pDoing so I always trust in the\nsupport of my Pokémon.\p\n"
 
 	.global str_intro_prof_1
 
@@ -154,17 +154,17 @@
 	.global str_intro_prof_6
 
 	str_intro_prof_6:
-		.string "That\s right...\nYour name is PLAYER."
+		.string "That\'s right...\nYour name is PLAYER."
 
 	.global str_intro_prof_7
 
 	str_intro_prof_7:
-		.string "This is my son, he has a somewhat\nfiery temper.\pSince your very childhood you two\nhave been unseperable best\lfriends.\pLet\s test you right here.\nWhat is your best friend\s name?"
+		.string "This is my son, he has a somewhat\nfiery temper.\pSince your very childhood you two\nhave been unseperable best\lfriends.\pLet\'s test you right here.\nWhat is your best friend\'s name?"
 
 	.global str_intro_prof_8
 
 	str_intro_prof_8:
-		.string "Correct! That\s my son\s name!\p"
+		.string "Correct! That\'s my son\'s name!\p"
 
 	.global str_intro_prof_9
 

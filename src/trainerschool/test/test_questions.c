@@ -60,7 +60,7 @@ u8 *str_trainerschool_test_question_2_answers[] = {
 
 u8 str_trainerschool_test_question_3[] = LANGDEP(
     PSTRING("Welches dieser\nItems hat den\nhöchsten Wert?"),
-    PSTRING("Which of these\nitems is the\most valuable?"));
+    PSTRING("Which of these\nitems is the\nmost valuable?"));
 u8 str_trainerschool_test_question_3_answer_0[] = LANGDEP(
     PSTRING("Maronbeere"), PSTRING("Chesto Berry"));
 u8 str_trainerschool_test_question_3_answer_1[] = LANGDEP(

@@ -2814,7 +2814,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_KING_STEIN
-		LANGDEP(PSTRING("King-Stein"), PSTRING("King\s Rock")),
+		LANGDEP(PSTRING("King-Stein"), PSTRING("King\'s Rock")),
 		0xbb, //index
 		100, //price
 		30, //holding_effect_id
@@ -5244,7 +5244,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_EICHS_PAKET
-		LANGDEP(PSTRING("Zugangskarte"), PSTRING("Oak\s Parcel")),
+		LANGDEP(PSTRING("Zugangskarte"), PSTRING("Oak\'s Parcel")),
 		0x15d, //index
 		0, //price
 		0, //holding_effect_id

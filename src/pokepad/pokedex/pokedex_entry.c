@@ -293,7 +293,7 @@ void pokedex_entry_from_battle_cb(u8 self){
                 } else if (super.keys.keys.right) {
                     //first we count the lines in page1
                     u16 dex_id = pokedex_get_id(fmem.dex_mem->current_species);
-                    pokedex_data *data = pokedex_get_data(dex_id);
+                    pokedex_entry *data = pokedex_get_data(dex_id);
                     //we count the lines
                     int i;
                     int line_cnt = 1;
@@ -411,7 +411,7 @@ void pokedex_callback_entry_idle() {
 
         } else if (super.keys.keys.right) {
             //first we count the lines in page1
-            pokedex_data *data = pokedex_get_data(fmem.dex_mem->list[fmem.dex_mem->current_list_index].dex_id);
+            pokedex_entry *data = pokedex_get_data(fmem.dex_mem->list[fmem.dex_mem->current_list_index].dex_id);
             //we count the lines
             int i;
             int line_cnt = 1;

@@ -291,7 +291,7 @@ str_0x888541:
 .global str_0x88861b
 
 str_0x88861b:
-    .string "Siehst du, kinderleicht.\nDOTS\lWeiter geht\s!"
+    .string "Siehst du, kinderleicht.\nDOTS\lWeiter geht\'s!"
         
         
 .global str_0x888649

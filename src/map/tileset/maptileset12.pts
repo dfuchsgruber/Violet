@@ -1,5 +1,5 @@
 {
-	"type": "tileset",
+	"type": "tileset_primary",
 	"label": "maptileset12",
 	"data": {
 		"gfx": "gfx_maptileset12Tiles",
@@ -38988,6 +38988,5 @@
 		"field_3": 0,
 		"animation_initialize": "0",
 		"palette_displaced": 0
-	},
-	"is_primary": true
+	}
 }

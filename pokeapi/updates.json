@@ -1,12 +1,12 @@
 {
 	"POKEMON_POKEMON_0": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -32,465 +32,549 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped"
 	},
 	"POKEMON_BISASAM": {
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 1
 	},
 	"POKEMON_BISAKNOSP": {
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 2
 	},
 	"POKEMON_BISAFLOR": {
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 3
 	},
 	"POKEMON_GLUMANDA": {
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 4
 	},
 	"POKEMON_GLUTEXO": {
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 5
 	},
 	"POKEMON_GLURAK": {
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 6
 	},
 	"POKEMON_SCHIGGY": {
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"hidden_ability": "Regenmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 7
 	},
 	"POKEMON_SCHILLOK": {
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"hidden_ability": "Regenmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 8
 	},
 	"POKEMON_TURTOK": {
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"hidden_ability": "Regenmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 9
 	},
 	"POKEMON_DARTIRI": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 167
 	},
 	"POKEMON_DARTIGNIS": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 168
 	},
 	"POKEMON_FIARO": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 169
 	},
 	"POKEMON_HORNLIU": {
 		"ability_0": "Puderabwehr",
 		"ability_1": null,
 		"hidden_ability": "Giftdorn",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 10
 	},
 	"POKEMON_KOKUNA": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": "Panzerhaut",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 11
 	},
 	"POKEMON_BIBOR": {
 		"ability_0": "Extradorn",
 		"ability_1": null,
 		"hidden_ability": "Hexaplaga",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 12
 	},
 	"POKEMON_STARALILI": {
 		"ability_0": "Adlerauge",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 164
 	},
 	"POKEMON_STARAVIA": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 165
 	},
 	"POKEMON_STARAPTOR": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 166
 	},
 	"POKEMON_BRONZEL": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 345
 	},
 	"POKEMON_BRONZONG": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 346,
+		"genus" : "Bronzegl."
 	},
 	"POKEMON_MAEHIKEL": {
 		"ability_0": "Ap_sparer",
 		"ability_1": null,
 		"hidden_ability": "Notschutz",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 182
 	},
 	"POKEMON_CHEVRUMM": {
 		"ability_0": "Ap_sparer",
 		"ability_1": null,
 		"hidden_ability": "Notschutz",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 183
 	},
 	"POKEMON_PARAGONI": {
 		"ability_0": "Innere_kraft",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 232
 	},
 	"POKEMON_TROMBORK": {
 		"ability_0": "Innere_kraft",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 233
 	},
 	"POKEMON_PIKACHU": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Lernfaehig",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 13
 	},
 	"POKEMON_RAICHU": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Lernfaehig",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 14
 	},
 	"POKEMON_SANDAN": {
 		"ability_0": "Sandschleier",
 		"ability_1": null,
 		"hidden_ability": "Sandherz",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 15
 	},
 	"POKEMON_SANDAMER": {
 		"ability_0": "Sandschleier",
 		"ability_1": null,
 		"hidden_ability": "Sandherz",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 16
 	},
 	"POKEMON_NIDORANW": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
-		"color": 1
+		"safari_rate": 50,
+		"dex_number": 17
 	},
 	"POKEMON_NIDORINA": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
-		"color": 1
+		"safari_rate": 75,
+		"dex_number": 18
 	},
 	"POKEMON_NIDOQUEEN": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 19
 	},
 	"POKEMON_NIDORANM": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Bedroher",
-		"color": 6
+		"safari_rate": 50,
+		"dex_number": 20
 	},
 	"POKEMON_NIDORINO": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Bedroher",
-		"color": 6
+		"safari_rate": 75,
+		"dex_number": 21
 	},
 	"POKEMON_NIDOKING": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Bedroher",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 22
 	},
 	"POKEMON_FLOETTE": {
 		"ability_0": "Lernfaehig",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 162
 	},
 	"POKEMON_FLORGES": {
 		"ability_0": "Lernfaehig",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 163
 	},
 	"POKEMON_VULPIX": {
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
 		"hidden_ability": "Solarkraft",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 23
 	},
 	"POKEMON_VULNONA": {
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
 		"hidden_ability": "Solarkraft",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 24
 	},
 	"POKEMON_PUMMELUFF": {
 		"ability_0": "Charmebolzen",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 26
 	},
 	"POKEMON_KNUDDELUFF": {
 		"ability_0": "Charmebolzen",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 27
 	},
 	"POKEMON_ZUBAT": {
 		"ability_0": "Konzentrator",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 28
 	},
 	"POKEMON_GOLBAT": {
 		"ability_0": "Konzentrator",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 29
 	},
 	"POKEMON_MYRAPLA": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Sporenwirt",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 31
 	},
 	"POKEMON_DUFLOR": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Sporenwirt",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 32
 	},
 	"POKEMON_GIFLOR": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Sporenwirt",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 33
 	},
 	"POKEMON_FOLIPURBA": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Lernfaehig",
-		"color": 0
+		"safari_rate": 50,
+		"dex_number": 132
 	},
 	"POKEMON_FEELINARA": {
 		"ability_0": "Ap_sparer",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 133
 	},
 	"POKEMON_WATTZAPF": {
 		"ability_0": "Facettenauge",
 		"ability_1": null,
 		"hidden_ability": "Statik",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 35
 	},
 	"POKEMON_VOLTULA": {
 		"ability_0": "Facettenauge",
 		"ability_1": null,
 		"hidden_ability": "Statik",
-		"color": 2
+		"safari_rate": 75,
+		"dex_number": 36
 	},
 	"POKEMON_DIGDA": {
 		"ability_0": "Sandschleier",
 		"ability_1": "Auswegslos",
 		"hidden_ability": "Techniker",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 37
 	},
 	"POKEMON_DIGDRI": {
 		"ability_0": "Sandschleier",
 		"ability_1": "Auswegslos",
 		"hidden_ability": "Techniker",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 38
 	},
 	"POKEMON_KASTADUR": {
 		"ability_0": "Rauhaut",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 325
 	},
 	"POKEMON_TENTANTEL": {
 		"ability_0": "Rauhaut",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 326
 	},
 	"POKEMON_ENTON": {
 		"ability_0": "Feuchtigkeit",
 		"ability_1": "Wolke_sieben",
 		"hidden_ability": "Luzid",
-		"color": 2
+		"safari_rate": 50,
+		"dex_number": 39
 	},
 	"POKEMON_ENTORON": {
 		"ability_0": "Feuchtigkeit",
 		"ability_1": "Wolke_sieben",
 		"hidden_ability": "Luzid",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 40
 	},
 	"POKEMON_MENKI": {
 		"ability_0": "Munterkeit",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 41,
+		"genus" : "Schw./ Affe"
 	},
 	"POKEMON_RASAFF": {
 		"ability_0": "Munterkeit",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 42,
+		"genus" : "Schw./ Affe"
 	},
 	"POKEMON_FUKANO": {
 		"ability_0": "Bedroher",
 		"ability_1": "Feuerfaenger",
 		"hidden_ability": "Ungebrochen",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 43
 	},
 	"POKEMON_ARKANI": {
 		"ability_0": "Bedroher",
 		"ability_1": "Feuerfaenger",
 		"hidden_ability": "Ungebrochen",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 44
 	},
 	"POKEMON_GRAMOKLES": {
 		"ability_0": "Robustheit",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 7
+		"safari_rate": 50,
+		"dex_number": 184,
+		"genus" : "Klingenkr."
 	},
 	"POKEMON_DUOKLES": {
 		"ability_0": "Robustheit",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 185,
+		"genus" : "Klingenkr."
 	},
 	"POKEMON_DURENGARD": {
 		"ability_0": "Taktikwechs",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 186,
+		"genus" : "Königskl."
 	},
 	"POKEMON_ABRA": {
 		"ability_0": "Synchro",
 		"ability_1": "Konzentrator",
 		"hidden_ability": "Ap_sparer",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 45
 	},
 	"POKEMON_KADABRA": {
 		"ability_0": "Synchro",
 		"ability_1": "Konzentrator",
 		"hidden_ability": "Luzid",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 46
 	},
 	"POKEMON_SIMSALA": {
 		"ability_0": "Synchro",
 		"ability_1": "Konzentrator",
 		"hidden_ability": "Luzid",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 47
 	},
 	"POKEMON_MACHOLLO": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 48
 	},
 	"POKEMON_MASCHOCK": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 49
 	},
 	"POKEMON_MACHOMEI": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 50
 	},
 	"POKEMON_KNOFENSA": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Notduenger",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 51
 	},
 	"POKEMON_ULTRIGARIA": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Notduenger",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 52
 	},
 	"POKEMON_SARZENIA": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Notduenger",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 53
 	},
 	"POKEMON_TENTACHA": {
 		"ability_0": "Neutraltorso",
 		"ability_1": "Kloakensosse",
 		"hidden_ability": "Lebensraeuber",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 54
 	},
 	"POKEMON_TENTOXA": {
 		"ability_0": "Neutraltorso",
 		"ability_1": "Kloakensosse",
 		"hidden_ability": "Lebensraeuber",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 55
 	},
 	"POKEMON_KLEINSTEIN": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Felsenkern",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 56
 	},
 	"POKEMON_GEOROK": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Felsenkern",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 57
 	},
 	"POKEMON_GEOWAZ": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Felsenkern",
-		"color": 5,
+		"safari_rate": 0,
 		"levelup_moves": [
 			[
 				"Glut",
@@ -504,1066 +588,1253 @@
 				"Eruption",
 				45
 			]
-		]
+		],
+		"dex_number": 58
 	},
 	"POKEMON_PONITA": {
 		"ability_0": "Angsthase",
 		"ability_1": "Feuerfaenger",
 		"hidden_ability": "Flammkoerper",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 59
 	},
 	"POKEMON_GALLOPA": {
 		"ability_0": "Angsthase",
 		"ability_1": "Feuerfaenger",
 		"hidden_ability": "Flammkoerper",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 60
 	},
 	"POKEMON_FLEGMON": {
 		"ability_0": "Doesigkeit",
 		"ability_1": "Tempomacher",
 		"hidden_ability": "Innere_kraft",
-		"color": 9
+		"safari_rate": 50,
+		"dex_number": 61
 	},
 	"POKEMON_LAHMUS": {
 		"ability_0": "Doesigkeit",
 		"ability_1": "Tempomacher",
 		"hidden_ability": "Innere_kraft",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 62
 	},
 	"POKEMON_MAGNETILO": {
 		"ability_0": "Magnetfalle",
 		"ability_1": "Robustheit",
 		"hidden_ability": "Schwebe",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 64
 	},
 	"POKEMON_MAGNETON": {
 		"ability_0": "Magnetfalle",
 		"ability_1": "Robustheit",
 		"hidden_ability": "Schwebe",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 65
 	},
 	"POKEMON_PORENTA": {
 		"ability_0": "Adlerauge",
 		"ability_1": "Konzentrator",
 		"hidden_ability": "Orkanschw",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 67
 	},
 	"POKEMON_DODU": {
 		"ability_0": "Angsthase",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Allrounder",
-		"color": 5
+		"safari_rate": 50,
+		"dex_number": 68
 	},
 	"POKEMON_DODRI": {
 		"ability_0": "Angsthase",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Allrounder",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 69
 	},
 	"POKEMON_JUROB": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
 		"hidden_ability": "Barriere",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 70
 	},
 	"POKEMON_JUGONG": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
 		"hidden_ability": "Barriere",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 71
 	},
 	"POKEMON_SLEIMA": {
 		"ability_0": "Duftnote",
 		"ability_1": "Wertehalter",
 		"hidden_ability": "Ap_sparer",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 72
 	},
 	"POKEMON_SLEIMOK": {
 		"ability_0": "Duftnote",
 		"ability_1": "Wertehalter",
 		"hidden_ability": "Ap_sparer",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 73
 	},
 	"POKEMON_MUSCHAS": {
 		"ability_0": "Panzerhaut",
 		"ability_1": null,
 		"hidden_ability": "Innere_kraft",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 74
 	},
 	"POKEMON_AUSTOS": {
 		"ability_0": "Panzerhaut",
 		"ability_1": null,
 		"hidden_ability": "Innere_kraft",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 75
 	},
 	"POKEMON_NEBULAK": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 76
 	},
 	"POKEMON_ALPOLLO": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 77
 	},
 	"POKEMON_GENGAR": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 78,
+		"dex_entry": "Es versteckt sich im Schatten. Man sagt, wenn sich ein Gengar versteckt, kühlt es sich um 5 Grad ab."
 	},
 	"POKEMON_ONIX": {
 		"ability_0": "Steinhaupt",
 		"ability_1": "Robustheit",
 		"hidden_ability": "Sandherz",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 79
 	},
 	"POKEMON_TRAUMATO": {
 		"ability_0": "Insomnia",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 81
 	},
 	"POKEMON_HYPNO": {
 		"ability_0": "Insomnia",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 82
 	},
 	"POKEMON_KRABBY": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Panzerhaut",
 		"hidden_ability": "Techniker",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 83
 	},
 	"POKEMON_KINGLER": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Panzerhaut",
 		"hidden_ability": "Techniker",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 84
 	},
 	"POKEMON_VOLTOBAL": {
 		"ability_0": "Laermschutz",
 		"ability_1": "Statik",
 		"hidden_ability": "Fruehzuender",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 85
 	},
 	"POKEMON_LEKTROBAL": {
 		"ability_0": "Laermschutz",
 		"ability_1": "Statik",
 		"hidden_ability": "Fruehzuender",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 86
 	},
 	"POKEMON_OWEI": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Reiche_ernte",
-		"color": 9
+		"safari_rate": 75,
+		"dex_number": 87
 	},
 	"POKEMON_KOKOWEI": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Reiche_ernte",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 88
 	},
 	"POKEMON_TRAGOSSO": {
 		"ability_0": "Steinhaupt",
 		"ability_1": "Blitzfaenger",
 		"hidden_ability": "Kampfpanzer",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 89
 	},
 	"POKEMON_KNOGGA": {
 		"ability_0": "Steinhaupt",
 		"ability_1": "Blitzfaenger",
 		"hidden_ability": "Kampfpanzer",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 90
 	},
 	"POKEMON_KICKLEE": {
 		"ability_0": "Flexibilitaet",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 92
 	},
 	"POKEMON_NOCKCHAN": {
 		"ability_0": "Adlerauge",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 93
 	},
 	"POKEMON_SCHLURP": {
 		"ability_0": "Tempomacher",
 		"ability_1": "Doesigkeit",
 		"hidden_ability": "Wolke_sieben",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 95
 	},
 	"POKEMON_SMOGON": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 97
 	},
 	"POKEMON_SMOGMOG": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 98
 	},
 	"POKEMON_RIHORN": {
 		"ability_0": "Blitzfaenger",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Achtlos",
-		"color": 7
+		"safari_rate": 75,
+		"dex_number": 99
 	},
 	"POKEMON_RIZEROS": {
 		"ability_0": "Blitzfaenger",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Achtlos",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 100,
+		"dex_entry": "Durch seine panzerähnliche Körperfülle kann es in bis zu 2 000 Grad heißer Lava leben."
 	},
 	"POKEMON_CHANEIRA": {
 		"ability_0": "Innere_kraft",
 		"ability_1": "Edelmut",
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 125,
+		"dex_number": 107
 	},
 	"POKEMON_ZOBIRIS": {
 		"ability_0": "Adlerauge",
 		"ability_1": "Zeitspiel",
 		"hidden_ability": "Strolch",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 356
 	},
 	"POKEMON_KANGAMA": {
 		"ability_0": "Fruehwecker",
 		"ability_1": null,
 		"hidden_ability": "Konzentrator",
-		"color": 5
+		"safari_rate": 125,
+		"dex_number": 102
 	},
 	"POKEMON_SEEPER": {
 		"ability_0": "Wassertempo",
 		"ability_1": null,
 		"hidden_ability": "Feuchtigkeit",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 103
 	},
 	"POKEMON_SEEMON": {
 		"ability_0": "Giftdorn",
 		"ability_1": null,
 		"hidden_ability": "Feuchtigkeit",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 104
 	},
 	"POKEMON_QUABBEL": {
 		"ability_0": "H2o_absorber",
 		"ability_1": "H2o_absorber",
 		"hidden_ability": "Neutraltorso",
-		"color": 0
+		"safari_rate": 50,
+		"dex_number": 236
 	},
 	"POKEMON_APOQUALLYP": {
 		"ability_0": "H2o_absorber",
 		"ability_1": "H2o_absorber",
 		"hidden_ability": "Neutraltorso",
-		"color": 0
+		"safari_rate": 75,
+		"dex_number": 237
 	},
 	"POKEMON_STERNDU": {
 		"ability_0": "Erleuchtung",
 		"ability_1": "Innere_kraft",
 		"hidden_ability": "Allrounder",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 109
 	},
 	"POKEMON_STARMIE": {
 		"ability_0": "Erleuchtung",
 		"ability_1": "Innere_kraft",
 		"hidden_ability": "Allrounder",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 110
 	},
 	"POKEMON_TRAUNFUGIL": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 234
 	},
 	"POKEMON_SICHLOR": {
 		"ability_0": "Hexaplaga",
 		"ability_1": null,
 		"hidden_ability": "Techniker",
-		"color": 3
+		"safari_rate": 125,
+		"dex_number": 117
 	},
 	"POKEMON_GALAGLADI": {
 		"ability_0": "Wegsperre",
 		"ability_1": null,
 		"hidden_ability": "Kaempferherz",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 370
 	},
 	"POKEMON_ELEKTEK": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Aufwertung",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 112
 	},
 	"POKEMON_MAGMAR": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 115,
+		"dex_entry" : "Es wurde in der Nähe eines Vulkans gefunden. Die Körpertemperatur dieses Feuerspuckers liegt bei fast 1 200 Grad."
 	},
 	"POKEMON_PINSIR": {
 		"ability_0": "Scherenmacht",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 5
+		"safari_rate": 125,
+		"dex_number": 119
 	},
 	"POKEMON_TAUROS": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
-		"color": 5
+		"safari_rate": 125,
+		"dex_number": 120
 	},
 	"POKEMON_KARPADOR": {
 		"ability_0": "Wassertempo",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 0
+		"safari_rate": 25,
+		"dex_number": 121
 	},
 	"POKEMON_GARADOS": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 122
 	},
 	"POKEMON_LAPRAS": {
 		"ability_0": "H2o_absorber",
 		"ability_1": "Panzerhaut",
 		"hidden_ability": "Multischuppe",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 123
 	},
 	"POKEMON_DITTO": {
 		"ability_0": "Flexibilitaet",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 124
 	},
 	"POKEMON_EVOLI": {
 		"ability_0": "Angsthase",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 125
 	},
 	"POKEMON_AQUANA": {
 		"ability_0": "H2o_absorber",
 		"ability_1": null,
 		"hidden_ability": "Notschutz",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 126
 	},
 	"POKEMON_BLITZA": {
 		"ability_0": "Voltabsorber",
 		"ability_1": null,
 		"hidden_ability": "Statik",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 127
 	},
 	"POKEMON_FLAMARA": {
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
 		"hidden_ability": "Flammkoerper",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 128,
+		"dex_entry" : "In seinem Körper befindet sich eine Flamme. Seine Körpertemperatur liegt vor dem Kampf bei 900 Grad."
 	},
 	"POKEMON_PORYGON": {
 		"ability_0": "Faehrte",
 		"ability_1": null,
 		"hidden_ability": "Hack",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 134
 	},
 	"POKEMON_AMONITAS": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Panzerhaut",
 		"hidden_ability": "Kampfpanzer",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 139
 	},
 	"POKEMON_AMOROSO": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Panzerhaut",
 		"hidden_ability": "Kampfpanzer",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 140
 	},
 	"POKEMON_KABUTO": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Kampfpanzer",
 		"hidden_ability": "Kampfpanzer",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 141
 	},
 	"POKEMON_KABUTOPS": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Kampfpanzer",
 		"hidden_ability": "Kampfpanzer",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 142
 	},
 	"POKEMON_AERODACTYL": {
 		"ability_0": "Steinhaupt",
 		"ability_1": "Erzwinger",
 		"hidden_ability": "Bedroher",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 143
 	},
 	"POKEMON_RELAXO": {
 		"ability_0": "Immunitaet",
 		"ability_1": "Speckschicht",
 		"hidden_ability": "Barriere",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 138
 	},
 	"POKEMON_ARKTOS": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Hagelalarm",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 144
 	},
 	"POKEMON_ZAPDOS": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 145
 	},
 	"POKEMON_LAVADOS": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 146
 	},
 	"POKEMON_DRATINI": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": "Notschutz",
-		"color": 1
+		"safari_rate": 100,
+		"dex_number": 147
 	},
 	"POKEMON_DRAGONIR": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": "Notschutz",
-		"color": 1
+		"safari_rate": 125,
+		"dex_number": 148
 	},
 	"POKEMON_DRAGORAN": {
 		"ability_0": "Konzentrator",
 		"ability_1": null,
 		"hidden_ability": "Multischuppe",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 149
 	},
 	"POKEMON_MEWTU": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 150
 	},
 	"POKEMON_MEW": {
 		"ability_0": "Synchro",
 		"ability_1": null,
 		"hidden_ability": "Faehrte",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 151
 	},
 	"POKEMON_ENDIVIE": {
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 152
 	},
 	"POKEMON_LORBLATT": {
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 153
 	},
 	"POKEMON_MEGANIE": {
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 154
 	},
 	"POKEMON_FEURIGEL": {
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 155
 	},
 	"POKEMON_IGELAVAR": {
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 156
 	},
 	"POKEMON_TORNUPTO": {
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 157
 	},
 	"POKEMON_KARNIMANI": {
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"hidden_ability": "Wassertempo",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 158
 	},
 	"POKEMON_TYRACROC": {
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"hidden_ability": "Wassertempo",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 159
 	},
 	"POKEMON_IMPERGATOR": {
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"hidden_ability": "Wassertempo",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 160
 	},
 	"POKEMON_IGNIVOR": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Hexaplaga",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 242
 	},
 	"POKEMON_RAMOTH": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Hexaplaga",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 243
 	},
 	"POKEMON_GLAZIOLA": {
 		"ability_0": "Hagelalarm",
 		"ability_1": null,
 		"hidden_ability": "Kaeltewahn",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 129
 	},
 	"POKEMON_RESLADERO": {
 		"ability_0": "Flexibilitaet",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 221
 	},
 	"POKEMON_LEDYBA": {
 		"ability_0": "Hexaplaga",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Techniker",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 170
 	},
 	"POKEMON_LEDIAN": {
 		"ability_0": "Hexaplaga",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Techniker",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 171
 	},
 	"POKEMON_WEBARAK": {
 		"ability_0": "Hexaplaga",
 		"ability_1": "Insomnia",
 		"hidden_ability": "Lebensraeuber",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 172
 	},
 	"POKEMON_ARIADOS": {
 		"ability_0": "Hexaplaga",
 		"ability_1": "Insomnia",
 		"hidden_ability": "Lebensraeuber",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 173
 	},
 	"POKEMON_IKSBAT": {
 		"ability_0": "Konzentrator",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 30
 	},
 	"POKEMON_LAMPI": {
 		"ability_0": "Voltabsorber",
 		"ability_1": "Erleuchtung",
 		"hidden_ability": "Ap_sparer",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 230
 	},
 	"POKEMON_LANTURN": {
 		"ability_0": "Voltabsorber",
 		"ability_1": "Erleuchtung",
 		"hidden_ability": "H2o_absorber",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 231
 	},
 	"POKEMON_MAGNEZONE": {
 		"ability_0": "Statik",
 		"ability_1": "Statik",
 		"hidden_ability": "Schwebe",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 66,
+		"genus" : "Magnetgeb."
 	},
 	"POKEMON_TOGEKISS": {
 		"ability_0": "Edelmut",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 176
 	},
 	"POKEMON_FLABEBE": {
 		"ability_0": "Lernfaehig",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 161
 	},
 	"POKEMON_TOGEPI": {
 		"ability_0": "Uebereifer",
 		"ability_1": "Edelmut",
 		"hidden_ability": "Curator",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 174
 	},
 	"POKEMON_TOGETIC": {
 		"ability_0": "Uebereifer",
 		"ability_1": "Edelmut",
 		"hidden_ability": "Curator",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 175
 	},
 	"POKEMON_NATU": {
 		"ability_0": "Synchro",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Luzid",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 177
 	},
 	"POKEMON_XATU": {
 		"ability_0": "Synchro",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Luzid",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 178
 	},
 	"POKEMON_VOLTILAMM": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 179
 	},
 	"POKEMON_WAATY": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 180
 	},
 	"POKEMON_AMPHAROS": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Voltabsorber",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 181
 	},
 	"POKEMON_BLUBELLA": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 34
 	},
 	"POKEMON_MARILL": {
 		"ability_0": "Speckschicht",
 		"ability_1": "Kraftkoloss",
 		"hidden_ability": "Ungebrochen",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 196
 	},
 	"POKEMON_AZUMARILL": {
 		"ability_0": "Speckschicht",
 		"ability_1": "Kraftkoloss",
 		"hidden_ability": "Ungebrochen",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 197
 	},
 	"POKEMON_MOGELBAUM": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Felsenkern",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 204
 	},
 	"POKEMON_CLAVION": {
 		"ability_0": "Strolch",
 		"ability_1": null,
 		"hidden_ability": "Dunkle_magie",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 187
 	},
 	"POKEMON_LICHTEL": {
 		"ability_0": "Feuerfaenger",
 		"ability_1": "Flammkoerper",
 		"hidden_ability": "Schwebe",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 188
 	},
 	"POKEMON_LATERNECTO": {
 		"ability_0": "Feuerfaenger",
 		"ability_1": "Flammkoerper",
 		"hidden_ability": "Schwebe",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 189
 	},
 	"POKEMON_SKELABRA": {
 		"ability_0": "Feuerfaenger",
 		"ability_1": "Flammkoerper",
 		"hidden_ability": "Schwebe",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 190
 	},
 	"POKEMON_GRIFFEL": {
 		"ability_0": "Angsthase",
 		"ability_1": "Mitnahme",
 		"hidden_ability": "Allrounder",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 191
 	},
 	"POKEMON_SHNEBEDECK": {
 		"ability_0": "Laermschutz",
 		"ability_1": null,
 		"hidden_ability": "Kaeltewahn",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 193
 	},
 	"POKEMON_REXBLISAR": {
 		"ability_0": "Laermschutz",
 		"ability_1": null,
 		"hidden_ability": "Kaeltewahn",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 194
 	},
 	"POKEMON_AMBIDIFFEL": {
 		"ability_0": "Mitnahme",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 192
 	},
 	"POKEMON_FELINO": {
 		"ability_0": "Feuchtigkeit",
 		"ability_1": "H2o_absorber",
 		"hidden_ability": "Regenmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 198
 	},
 	"POKEMON_MORLORD": {
 		"ability_0": "Feuchtigkeit",
 		"ability_1": "H2o_absorber",
 		"hidden_ability": "Regenmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 199
 	},
 	"POKEMON_PSIANA": {
 		"ability_0": "Synchro",
 		"ability_1": null,
 		"hidden_ability": "Luzid",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 130
 	},
 	"POKEMON_NACHTARA": {
 		"ability_0": "Synchro",
 		"ability_1": null,
 		"hidden_ability": "Dunkle_magie",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 131
 	},
 	"POKEMON_KRAMURX": {
 		"ability_0": "Insomnia",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 200
 	},
 	"POKEMON_LASCHOKING": {
 		"ability_0": "Doesigkeit",
 		"ability_1": "Tempomacher",
 		"hidden_ability": "Innere_kraft",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 63
 	},
 	"POKEMON_KRAMSHEF": {
 		"ability_0": "Insomnia",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 201
 	},
 	"POKEMON_ICOGNITO": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 202
 	},
 	"POKEMON_FROSDEDJE": {
 		"ability_0": "Hagelalarm",
 		"ability_1": null,
 		"hidden_ability": "Schwebe",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 322,
+		"genus" : "Schneegeb.",
+		"dex_entry" : "Sein eisiger Atem mit -50 Grad friert Gegner ein. Was aussieht wie sein Körper, ist tatsächlich hohl."
 	},
 	"POKEMON_SKORGRO": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Sandschleier",
 		"hidden_ability": "Sandherz",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 208
 	},
 	"POKEMON_TANNZA": {
 		"ability_0": "Robustheit",
 		"ability_1": null,
 		"hidden_ability": "Panzerhaut",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 205
 	},
 	"POKEMON_FORSTELLKA": {
 		"ability_0": "Robustheit",
 		"ability_1": null,
 		"hidden_ability": "Panzerhaut",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 206
 	},
 	"POKEMON_ELEVOLTEK": {
 		"ability_0": "Voltabsorber",
 		"ability_1": "Voltabsorber",
 		"hidden_ability": "Aufwertung",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 113
 	},
 	"POKEMON_SKORGLA": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Sandschleier",
 		"hidden_ability": "Sandherz",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 207
 	},
 	"POKEMON_STAHLOS": {
 		"ability_0": "Steinhaupt",
 		"ability_1": "Robustheit",
 		"hidden_ability": "Sandherz",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 80
 	},
 	"POKEMON_SNUBBULL": {
 		"ability_0": "Bedroher",
 		"ability_1": "Angsthase",
 		"hidden_ability": "Charmebolzen",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 209
 	},
 	"POKEMON_GRANBULL": {
 		"ability_0": "Bedroher",
 		"ability_1": "Bedroher",
 		"hidden_ability": "Charmebolzen",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 210
 	},
 	"POKEMON_MAMUTEL": {
 		"ability_0": "Doesigkeit",
 		"ability_1": null,
 		"hidden_ability": "Frostschicht",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 218,
+		"genus" : "Doppelstoß."
 	},
 	"POKEMON_SCHEROX": {
 		"ability_0": "Hexaplaga",
 		"ability_1": null,
 		"hidden_ability": "Techniker",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 118
 	},
 	"POKEMON_FLUFFELUFF": {
 		"ability_0": "Charmebolzen",
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 25
 	},
 	"POKEMON_SKARABORN": {
 		"ability_0": "Hexaplaga",
 		"ability_1": "Adrenalin",
 		"hidden_ability": "Hochmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 211
 	},
 	"POKEMON_KRYPPUK": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Dunkle_magie",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 223
 	},
 	"POKEMON_TEDDIURSA": {
 		"ability_0": "Mitnahme",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 212
 	},
 	"POKEMON_URSARING": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 213
 	},
 	"POKEMON_SCHNECKMAG": {
 		"ability_0": "Magmapanzer",
 		"ability_1": "Flammkoerper",
 		"hidden_ability": "Robustheit",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 214
 	},
 	"POKEMON_MAGCARGO": {
 		"ability_0": "Magmapanzer",
 		"ability_1": "Flammkoerper",
 		"hidden_ability": "Robustheit",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 215
 	},
 	"POKEMON_QUIEKEL": {
 		"ability_0": "Doesigkeit",
 		"ability_1": null,
 		"hidden_ability": "Frostschicht",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 216
 	},
 	"POKEMON_KEIFEL": {
 		"ability_0": "Doesigkeit",
 		"ability_1": null,
 		"hidden_ability": "Frostschicht",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 217
 	},
 	"POKEMON_MAMPFAXO": {
 		"ability_0": "Mitnahme",
 		"ability_1": "Speckschicht",
 		"hidden_ability": "Barriere",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 137
 	},
 	"POKEMON_REMORAID": {
 		"ability_0": "Uebereifer",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 219
 	},
 	"POKEMON_OCTILLERY": {
 		"ability_0": "Saugnapf",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 220
 	},
 	"POKEMON_BOTOGEL": {
 		"ability_0": "Munterkeit",
 		"ability_1": "Uebereifer",
 		"hidden_ability": "Insomnia",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 224
 	},
 	"POKEMON_SCHLURPLEK": {
 		"ability_0": "Tempomacher",
 		"ability_1": "Doesigkeit",
 		"hidden_ability": "Wolke_sieben",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 96
 	},
 	"POKEMON_PANZAERON": {
 		"ability_0": "Adlerauge",
 		"ability_1": "Robustheit",
 		"hidden_ability": "Barriere",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 225
 	},
 	"POKEMON_HUNDUSTER": {
 		"ability_0": "Fruehwecker",
 		"ability_1": "Feuerfaenger",
 		"hidden_ability": "Solarkraft",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 226
 	},
 	"POKEMON_HUNDEMON": {
 		"ability_0": "Fruehwecker",
 		"ability_1": "Feuerfaenger",
 		"hidden_ability": "Solarkraft",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 227
 	},
 	"POKEMON_SEEDRAKING": {
 		"ability_0": "Wassertempo",
 		"ability_1": null,
 		"hidden_ability": "Feuchtigkeit",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 105
 	},
 	"POKEMON_PHANPY": {
 		"ability_0": "Mitnahme",
 		"ability_1": null,
 		"hidden_ability": "Speckschicht",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 228
 	},
 	"POKEMON_DONPHAN": {
 		"ability_0": "Robustheit",
 		"ability_1": null,
 		"hidden_ability": "Speckschicht",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 229
 	},
 	"POKEMON_PORYGON2": {
 		"ability_0": "Faehrte",
 		"ability_1": null,
 		"hidden_ability": "Hack",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 135
 	},
 	"POKEMON_VOLUMINAS": {
 		"ability_0": "Robustheit",
 		"ability_1": "Magnetfalle",
 		"hidden_ability": "Felsenkern",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 297
 	},
 	"POKEMON_TRAUNMAGIL": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 235
 	},
 	"POKEMON_RABAUZ": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 91
 	},
 	"POKEMON_KAPOERA": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Ungebrochen",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 94
 	},
 	"POKEMON_SEN_LONG": {
 		"ability_0": "Wolke_sieben",
 		"ability_1": "Doesigkeit",
 		"hidden_ability": "Aufwertung",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 222,
+		"genus" : "Gelassenh."
 	},
 	"POKEMON_ELEKID": {
 		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Aufwertung",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 111
 	},
 	"POKEMON_MAGBY": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 114,
+		"dex_entry" : "Seine Körpertemperatur misst 600 Grad. Beim Ein- und Ausatmen springen glühende Kohlenstücke aus seinem Mund."
 	},
 	"POKEMON_MILTANK": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 238
 	},
 	"POKEMON_HEITEIRA": {
 		"ability_0": "Innere_kraft",
 		"ability_1": "Edelmut",
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 108
 	},
 	"POKEMON_RAIKOU": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Voltabsorber",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 244
 	},
 	"POKEMON_ENTEI": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 245
 	},
 	"POKEMON_SUICUNE": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "H2o_absorber",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 246
 	},
 	"POKEMON_LARVITAR": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Sandherz",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 247
 	},
 	"POKEMON_PUPITAR": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": "Expidermis",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 248
 	},
 	"POKEMON_DESPOTAR": {
 		"ability_0": "Sandsturm",
 		"ability_1": null,
 		"hidden_ability": "Sandherz",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 249
 	},
 	"POKEMON_LUGIA": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Multischuppe",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 250
 	},
 	"POKEMON_HO_OH": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Photogenese",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 251
 	},
 	"POKEMON_CELEBI": {
 		"ability_0": "Innere_kraft",
 		"ability_1": null,
 		"hidden_ability": "Innere_kraft",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 252
 	},
 	"POKEMON_BISAFLORM": {
+		"name": "Bisaflor",
 		"basestats": {
-			"KP": 80,
-			"Angriff": 100,
-			"Verteidigung": 123,
-			"Initiative": 80,
-			"Spezialangriff": 122,
-			"Spezialverteidigung": 120
+			"hp": 80,
+			"attack": 100,
+			"defense": 123,
+			"speed": 80,
+			"special-attack": 122,
+			"special-defense": 120
 		},
 		"type_0": "Pflanze",
 		"type_1": "Gift",
@@ -1589,19 +1860,24 @@
 		"ability_0": "Speckschicht",
 		"ability_1": "Speckschicht",
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_BISAFLOR"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_BISAFLOR",
+		"dex_number": 0
 	},
 	"POKEMON_GLURAKM": {
+		"name": "Glurak",
 		"basestats": {
-			"KP": 78,
-			"Angriff": 145,
-			"Verteidigung": 111,
-			"Initiative": 100,
-			"Spezialangriff": 130,
-			"Spezialverteidigung": 85
+			"hp": 78,
+			"attack": 145,
+			"defense": 111,
+			"speed": 100,
+			"special-attack": 130,
+			"special-defense": 85
 		},
 		"type_0": "Feuer",
 		"type_1": "Drache",
@@ -1627,19 +1903,24 @@
 		"ability_0": "Schwebe",
 		"ability_1": "Schwebe",
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_GLURAK"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_GLURAK",
+		"dex_number": 0
 	},
 	"POKEMON_AQUANAM": {
+		"name": "Aquana",
 		"basestats": {
-			"KP": 130,
-			"Angriff": 65,
-			"Verteidigung": 95,
-			"Initiative": 80,
-			"Spezialangriff": 125,
-			"Spezialverteidigung": 115
+			"hp": 130,
+			"attack": 65,
+			"defense": 95,
+			"speed": 80,
+			"special-attack": 125,
+			"special-defense": 115
 		},
 		"type_0": "Wasser",
 		"type_1": "Eis",
@@ -1665,19 +1946,24 @@
 		"ability_0": "Regengenuss",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 1,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_AQUANA"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_AQUANA",
+		"dex_number": 0
 	},
 	"POKEMON_BLITZAM": {
+		"name": "Blitza",
 		"basestats": {
-			"KP": 65,
-			"Angriff": 65,
-			"Verteidigung": 60,
-			"Initiative": 145,
-			"Spezialangriff": 135,
-			"Spezialverteidigung": 95
+			"hp": 65,
+			"attack": 65,
+			"defense": 60,
+			"speed": 145,
+			"special-attack": 135,
+			"special-defense": 95
 		},
 		"type_0": "Elektro",
 		"type_1": "Fee",
@@ -1703,19 +1989,24 @@
 		"ability_0": "Temposchub",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 2,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_BLITZA"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_BLITZA",
+		"dex_number": 0
 	},
 	"POKEMON_FLAMARM": {
+		"name": "Flamara",
 		"basestats": {
-			"KP": 65,
-			"Angriff": 145,
-			"Verteidigung": 100,
-			"Initiative": 90,
-			"Spezialangriff": 95,
-			"Spezialverteidigung": 110
+			"hp": 65,
+			"attack": 145,
+			"defense": 100,
+			"speed": 90,
+			"special-attack": 95,
+			"special-defense": 110
 		},
 		"type_0": "Feuer",
 		"type_1": "Stahl",
@@ -1741,19 +2032,24 @@
 		"ability_0": "Magnetfalle",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_FLAMARA"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_FLAMARA",
+		"dex_number": 0
 	},
 	"POKEMON_DURENGARDA": {
+		"name": "Durengard",
 		"basestats": {
-			"KP": 60,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 60,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 60,
+			"attack": 150,
+			"defense": 50,
+			"speed": 60,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Stahl",
 		"type_1": "Geist",
@@ -1779,19 +2075,23 @@
 		"ability_0": "Taktikwechs",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 7,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_DURENGARD"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_DURENGARD",
+		"dex_number": 0
 	},
 	"POKEMON_IN": {
 		"basestats": {
-			"KP": 90,
-			"Angriff": 135,
-			"Verteidigung": 70,
-			"Initiative": 110,
-			"Spezialangriff": 135,
-			"Spezialverteidigung": 70
+			"hp": 90,
+			"attack": 135,
+			"defense": 70,
+			"speed": 110,
+			"special-attack": 135,
+			"special-defense": 70
 		},
 		"type_0": "Feuer",
 		"type_1": "Unlicht",
@@ -1817,18 +2117,22 @@
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_GAME": {
 		"basestats": {
-			"KP": 75,
-			"Angriff": 95,
-			"Verteidigung": 70,
-			"Initiative": 155,
-			"Spezialangriff": 140,
-			"Spezialverteidigung": 70
+			"hp": 75,
+			"attack": 95,
+			"defense": 70,
+			"speed": 155,
+			"special-attack": 140,
+			"special-defense": 70
 		},
 		"type_0": "Wasser",
 		"type_1": "Drache",
@@ -1854,18 +2158,23 @@
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_TURTOKM": {
+		"name": "Turtok",
 		"basestats": {
-			"KP": 79,
-			"Angriff": 103,
-			"Verteidigung": 120,
-			"Initiative": 78,
-			"Spezialangriff": 135,
-			"Spezialverteidigung": 115
+			"hp": 79,
+			"attack": 103,
+			"defense": 120,
+			"speed": 78,
+			"special-attack": 135,
+			"special-defense": 115
 		},
 		"type_0": "Wasser",
 		"type_1": "Wasser",
@@ -1891,19 +2200,24 @@
 		"ability_0": "Notschutz",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 1,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_TURTOK"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_TURTOK",
+		"dex_number": 0
 	},
 	"POKEMON_AMPHARAOSM": {
+		"name": "Ampharos",
 		"basestats": {
-			"KP": 90,
-			"Angriff": 95,
-			"Verteidigung": 105,
-			"Initiative": 45,
-			"Spezialangriff": 165,
-			"Spezialverteidigung": 110
+			"hp": 90,
+			"attack": 95,
+			"defense": 105,
+			"speed": 45,
+			"special-attack": 165,
+			"special-defense": 110
 		},
 		"type_0": "Elektro",
 		"type_1": "Drache",
@@ -1929,19 +2243,24 @@
 		"ability_0": "Notschutz",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 2,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_AMPHAROS"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_AMPHAROS",
+		"dex_number": 0
 	},
 	"POKEMON_GENGARM": {
+		"name": "Gengar",
 		"basestats": {
-			"KP": 60,
-			"Angriff": 65,
-			"Verteidigung": 80,
-			"Initiative": 130,
-			"Spezialangriff": 170,
-			"Spezialverteidigung": 95
+			"hp": 60,
+			"attack": 65,
+			"defense": 80,
+			"speed": 130,
+			"special-attack": 170,
+			"special-defense": 95
 		},
 		"type_0": "Geist",
 		"type_1": "Gift",
@@ -1967,19 +2286,24 @@
 		"ability_0": "Wegsperre",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 6,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_GENGAR"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_GENGAR",
+		"dex_number": 0
 	},
 	"POKEMON_BIBORM": {
+		"name": "Bibor",
 		"basestats": {
-			"KP": 65,
-			"Angriff": 160,
-			"Verteidigung": 95,
-			"Initiative": 140,
-			"Spezialangriff": 45,
-			"Spezialverteidigung": 95
+			"hp": 65,
+			"attack": 160,
+			"defense": 95,
+			"speed": 140,
+			"special-attack": 45,
+			"special-defense": 95
 		},
 		"type_0": "Kaefer",
 		"type_1": "Gift",
@@ -2005,19 +2329,24 @@
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_BIBOR"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_BIBOR",
+		"dex_number": 0
 	},
 	"POKEMON_ALTARIAM": {
+		"name": "Altaria",
 		"basestats": {
-			"KP": 75,
-			"Angriff": 70,
-			"Verteidigung": 125,
-			"Initiative": 100,
-			"Spezialangriff": 125,
-			"Spezialverteidigung": 155
+			"hp": 75,
+			"attack": 70,
+			"defense": 125,
+			"speed": 100,
+			"special-attack": 125,
+			"special-defense": 155
 		},
 		"type_0": "Drache",
 		"type_1": "Elektro",
@@ -2043,19 +2372,24 @@
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_ALTARIA"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_ALTARIA",
+		"dex_number": 0
 	},
 	"POKEMON_GEOWAZM": {
+		"name": "Geowaz",
 		"basestats": {
-			"KP": 80,
-			"Angriff": 175,
-			"Verteidigung": 185,
-			"Initiative": 35,
-			"Spezialangriff": 55,
-			"Spezialverteidigung": 125
+			"hp": 80,
+			"attack": 175,
+			"defense": 185,
+			"speed": 35,
+			"special-attack": 55,
+			"special-defense": 125
 		},
 		"type_0": "Gestein",
 		"type_1": "Feuer",
@@ -2081,19 +2415,24 @@
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 5,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_GEOWAZ"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_GEOWAZ",
+		"dex_number": 0
 	},
 	"POKEMON_SENGOM": {
+		"name": "Sengo",
 		"basestats": {
-			"KP": 73,
-			"Angriff": 145,
-			"Verteidigung": 80,
-			"Initiative": 135,
-			"Spezialangriff": 60,
-			"Spezialverteidigung": 80
+			"hp": 73,
+			"attack": 145,
+			"defense": 80,
+			"speed": 135,
+			"special-attack": 60,
+			"special-defense": 80
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2119,19 +2458,24 @@
 		"ability_0": "Temposchub",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_SENGO"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_SENGO",
+		"dex_number": 0
 	},
 	"POKEMON_VIPITISM": {
+		"name": "Vipitis",
 		"basestats": {
-			"KP": 73,
-			"Angriff": 140,
-			"Verteidigung": 100,
-			"Initiative": 100,
-			"Spezialangriff": 115,
-			"Spezialverteidigung": 100
+			"hp": 73,
+			"attack": 140,
+			"defense": 100,
+			"speed": 100,
+			"special-attack": 115,
+			"special-defense": 100
 		},
 		"type_0": "Gift",
 		"type_1": "Gift",
@@ -2157,19 +2501,24 @@
 		"ability_0": "Temposchub",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_VIPITIS"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_VIPITIS",
+		"dex_number": 0
 	},
 	"POKEMON_ZOBIRISM": {
+		"name": "Zobiris",
 		"basestats": {
-			"KP": 50,
-			"Angriff": 100,
-			"Verteidigung": 110,
-			"Initiative": 50,
-			"Spezialangriff": 65,
-			"Spezialverteidigung": 110
+			"hp": 50,
+			"attack": 100,
+			"defense": 110,
+			"speed": 50,
+			"special-attack": 65,
+			"special-defense": 110
 		},
 		"type_0": "Unlicht",
 		"type_1": "Gestein",
@@ -2195,19 +2544,23 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 6,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped",
-        "move_link" : "POKEMON_ZOBIRIS"
+		"shape": "Quadruped",
+		"move_link": "POKEMON_ZOBIRIS",
+		"dex_number": 0
 	},
 	"POKEMON_10d": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2233,18 +2586,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_10e": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2270,18 +2627,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_10f": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2307,18 +2668,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_110": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2344,18 +2709,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_111": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2381,18 +2750,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_112": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2418,18 +2791,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_113": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2455,18 +2832,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_114": {
 		"basestats": {
-			"KP": 50,
-			"Angriff": 150,
-			"Verteidigung": 50,
-			"Initiative": 150,
-			"Spezialangriff": 150,
-			"Spezialverteidigung": 50
+			"hp": 50,
+			"attack": 150,
+			"defense": 50,
+			"speed": 150,
+			"special-attack": 150,
+			"special-defense": 50
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -2492,18 +2873,27 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 4,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_LOCKSCHAL": {
+		"name" : "Lockschal",
+		"genus" : "Locke",
+		"dex_entry" : "Es ist überaus stolz auf seine Haarpracht. Es träumt davon, mit einem Schwert zu kämpfen.",
+		"height" : 5,
+		"weight" : 50,
 		"basestats": {
-			"KP": 50,
-			"Angriff": 56,
-			"Verteidigung": 65,
-			"Initiative": 53,
-			"Spezialangriff": 40,
-			"Spezialverteidigung": 40
+			"hp": 50,
+			"attack": 56,
+			"defense": 65,
+			"speed": 53,
+			"special-attack": 40,
+			"special-defense": 40
 		},
 		"type_0": "Pflanze",
 		"type_1": "Pflanze",
@@ -2529,9 +2919,12 @@
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 3,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "Ungebrochen",
-		"form": "Legs",
+		"shape": "Legs",
 		"levelup_moves": [
 			[
 				"Pfund",
@@ -2600,7 +2993,7 @@
 			"Erhohlung",
 			"Lichtschild",
 			"Kreuzschere",
-			"R\u00fcckkehr",
+			"Rckkehr",
 			"Br\u00fcller",
 			"Raub",
 			"Schaufler",
@@ -2619,16 +3012,22 @@
 			"Doppelteam",
 			"Schutzschild"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 253
 	},
 	"POKEMON_STICHSCHAL": {
+		"name" : "Stichschal",
+		"genus" : "Schwert",
+		"dex_entry" : "Sowohl sein Schwert als auch seine Panzerung sind aus Eichenholz. Es ist äußerst edelmütig.",
+		"height" : 9,
+		"weight" : 216,
 		"basestats": {
-			"KP": 70,
-			"Angriff": 90,
-			"Verteidigung": 90,
-			"Initiative": 70,
-			"Spezialangriff": 65,
-			"Spezialverteidigung": 60
+			"hp": 70,
+			"attack": 90,
+			"defense": 90,
+			"speed": 70,
+			"special-attack": 65,
+			"special-defense": 60
 		},
 		"type_0": "Pflanze",
 		"type_1": "Pflanze",
@@ -2654,9 +3053,12 @@
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 3,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "Ungebrochen",
-		"form": "Humanoid",
+		"shape": "Humanoid",
 		"levelup_moves": [
 			[
 				"Pfund",
@@ -2748,16 +3150,22 @@
 			"Doppelteam",
 			"Schutzschild"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 254
 	},
 	"POKEMON_STAHLSTICH": {
+		"name" : "Stahlstich",
+		"genus" : "Ritter",
+		"dex_entry" : "Mit seinem eisernen Schwert erlegte es einst ein Brutalanda. Seitdem gilt die Klinge als legendär.",
+		"height" : 18,
+		"weight" : 1337,
 		"basestats": {
-			"KP": 95,
-			"Angriff": 115,
-			"Verteidigung": 115,
-			"Initiative": 95,
-			"Spezialangriff": 65,
-			"Spezialverteidigung": 70
+			"hp": 95,
+			"attack": 115,
+			"defense": 115,
+			"speed": 95,
+			"special-attack": 65,
+			"special-defense": 70
 		},
 		"type_0": "Pflanze",
 		"type_1": "Stahl",
@@ -2783,9 +3191,12 @@
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 3,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "Ungebrochen",
-		"form": "Humanoid",
+		"shape": "Humanoid",
 		"levelup_moves": [
 			[
 				"Pfund",
@@ -2892,16 +3303,22 @@
 			"Doppelteam",
 			"Schutzschild"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 255
 	},
 	"POKEMON_WELUNO": {
+		"name" : "Weluno",
+		"genus" : "Welpe",
+		"dex_entry" : "Es ist leicht reizbar und verfügt über einen starken Kiefer. Seine Bisse sind können schmerzhaft sein.",
+		"height" : 4,
+		"weight" : 25,
 		"basestats": {
-			"KP": 45,
-			"Angriff": 59,
-			"Verteidigung": 40,
-			"Initiative": 45,
-			"Spezialangriff": 65,
-			"Spezialverteidigung": 50
+			"hp": 45,
+			"attack": 59,
+			"defense": 40,
+			"speed": 45,
+			"special-attack": 65,
+			"special-defense": 50
 		},
 		"type_0": "Feuer",
 		"type_1": "Feuer",
@@ -2927,9 +3344,12 @@
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "Dunkle_magie",
-		"form": "Quadruped",
+		"shape": "Quadruped",
 		"levelup_moves": [
 			[
 				"Kratzer",
@@ -3017,16 +3437,24 @@
 			"Schutzschild",
 			"Finsteraura"
 		],
-		"egg_moves": []
+		"egg_moves": [
+			"Donnerzahn"
+		],
+		"dex_number": 256
 	},
 	"POKEMON_ORTHODOS": {
+		"name" : "Orthodos",
+		"genus" : "Orthos",
+		"dex_entry" : "Ein Ring versiegelt seine wahre Kraft. Es heißt, dies sei der Fluch eines Guardevoirs.",
+		"height" : 9,
+		"weight" : 195,
 		"basestats": {
-			"KP": 75,
-			"Angriff": 85,
-			"Verteidigung": 60,
-			"Initiative": 65,
-			"Spezialangriff": 85,
-			"Spezialverteidigung": 60
+			"hp": 75,
+			"attack": 85,
+			"defense": 60,
+			"speed": 65,
+			"special-attack": 85,
+			"special-defense": 60
 		},
 		"type_0": "Feuer",
 		"type_1": "Unlicht",
@@ -3052,9 +3480,12 @@
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "Dunkle_magie",
-		"form": "Quadruped",
+		"shape": "Quadruped",
 		"levelup_moves": [
 			[
 				"Kratzer",
@@ -3154,16 +3585,22 @@
 			"Schutzschild",
 			"Finsteraura"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 257
 	},
 	"POKEMON_ZERBERTRES": {
+		"name" : "Zerbertres",
+		"genus" : "Zerberus",
+		"dex_entry" : "Jeder seiner drei Köpfe ist in der Lage, Feuer zu speien. Wird es zornig, versengt es seine Gegner.",
+		"height" : 19,
+		"weight" : 520,
 		"basestats": {
-			"KP": 80,
-			"Angriff": 125,
-			"Verteidigung": 62,
-			"Initiative": 90,
-			"Spezialangriff": 120,
-			"Spezialverteidigung": 65
+			"hp": 80,
+			"attack": 125,
+			"defense": 62,
+			"speed": 90,
+			"special-attack": 120,
+			"special-defense": 65
 		},
 		"type_0": "Feuer",
 		"type_1": "Unlicht",
@@ -3189,9 +3626,12 @@
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "Dunkle_magie",
-		"form": "Quadruped",
+		"shape": "Quadruped",
 		"levelup_moves": [
 			[
 				"Kratzer",
@@ -3199,10 +3639,6 @@
 			],
 			[
 				"Jauler",
-				1
-			],
-			[
-				"Donnerzahn",
 				1
 			],
 			[
@@ -3314,16 +3750,22 @@
 			"Schutzschild",
 			"Finsteraura"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 258
 	},
 	"POKEMON_SEEKID": {
+		"name" : "Seekid",
+		"genus" : "Wassermolch",
+		"dex_entry" : "Es gilt als äußerst verschlagen und kann mit seinem Schweif heftige Hiebe austeilen.",
+		"height" : 4,
+		"weight" : 76,
 		"basestats": {
-			"KP": 45,
-			"Angriff": 57,
-			"Verteidigung": 45,
-			"Initiative": 75,
-			"Spezialangriff": 57,
-			"Spezialverteidigung": 50
+			"hp": 45,
+			"attack": 57,
+			"defense": 45,
+			"speed": 75,
+			"special-attack": 57,
+			"special-defense": 50
 		},
 		"type_0": "Wasser",
 		"type_1": "Wasser",
@@ -3349,9 +3791,12 @@
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 1,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "H2o_absorber",
-		"form": "Upright",
+		"shape": "Upright",
 		"levelup_moves": [
 			[
 				"Pfund",
@@ -3437,16 +3882,22 @@
 			"Bodyguard",
 			"Finsteraura"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 259
 	},
 	"POKEMON_SEESKULL": {
+		"name" : "Seeskull",
+		"genus" : "Delphin",
+		"dex_entry" : "Mit seinem starken Schweif kann es gewaltige Wellen erzeugen. Im Wasser gilt es als äußert agil.",
+		"height" : 7,
+		"weight" : 280,
 		"basestats": {
-			"KP": 55,
-			"Angriff": 85,
-			"Verteidigung": 65,
-			"Initiative": 95,
-			"Spezialangriff": 85,
-			"Spezialverteidigung": 65
+			"hp": 55,
+			"attack": 85,
+			"defense": 65,
+			"speed": 95,
+			"special-attack": 85,
+			"special-defense": 65
 		},
 		"type_0": "Wasser",
 		"type_1": "Wasser",
@@ -3472,9 +3923,12 @@
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 1,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "H2o_absorber",
-		"form": "Squiggle",
+		"shape": "Squiggle",
 		"levelup_moves": [
 			[
 				"Pfund",
@@ -3576,16 +4030,22 @@
 			"Bodyguard",
 			"Finsteraura"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 260
 	},
 	"POKEMON_SKULLYDRA": {
+		"name" : "Skullydra",
+		"genus" : "Seeschlange",
+		"dex_entry" : "Unterwasser ist es so schnell, dass es schwerfällt, es wahrzunehmen. Weil es sich mit den Knochen seiner Beute schmückt, nennt man es denn Geist der Meere.",
+		"height" : 15,
+		"weight" : 819,
 		"basestats": {
-			"KP": 75,
-			"Angriff": 95,
-			"Verteidigung": 70,
-			"Initiative": 135,
-			"Spezialangriff": 125,
-			"Spezialverteidigung": 70
+			"hp": 75,
+			"attack": 95,
+			"defense": 70,
+			"speed": 135,
+			"special-attack": 125,
+			"special-defense": 70
 		},
 		"type_0": "Wasser",
 		"type_1": "Drache",
@@ -3611,9 +4071,12 @@
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 1,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": "H2o_absorber",
-		"form": "Squiggle",
+		"shape": "Squiggle",
 		"levelup_moves": [
 			[
 				"Pfund",
@@ -3732,451 +4195,526 @@
 			"Bodyguard",
 			"Finsteraura"
 		],
-		"egg_moves": []
+		"egg_moves": [],
+		"dex_number": 261
 	},
 	"POKEMON_FIFFYEN": {
 		"ability_0": "Angsthase",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 262
 	},
 	"POKEMON_MAGNAYEN": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 263
 	},
 	"POKEMON_ZIGZACHS": {
 		"ability_0": "Mitnahme",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 264
 	},
 	"POKEMON_GERADAKS": {
 		"ability_0": "Mitnahme",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 265
 	},
 	"POKEMON_WAUMPEL": {
 		"ability_0": "Puderabwehr",
 		"ability_1": null,
 		"hidden_ability": "Angsthase",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 266
 	},
 	"POKEMON_SCHALOKO": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 267
 	},
 	"POKEMON_PAPINELLA": {
 		"ability_0": "Hexaplaga",
 		"ability_1": null,
 		"hidden_ability": "Anpassung",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 268
 	},
 	"POKEMON_PANEKON": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 269
 	},
 	"POKEMON_PUDOX": {
 		"ability_0": "Puderabwehr",
 		"ability_1": null,
 		"hidden_ability": "Facettenauge",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 270
 	},
 	"POKEMON_LOTURZEL": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Regengenuss",
 		"hidden_ability": "Regenmut",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 271
 	},
 	"POKEMON_LOMBRERO": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Regengenuss",
 		"hidden_ability": "Regenmut",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 272
 	},
 	"POKEMON_KAPPALORES": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Regengenuss",
 		"hidden_ability": "Regenmut",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 273
 	},
 	"POKEMON_SAMURZEL": {
 		"ability_0": "Chlorophyll",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Lebensraeuber",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 274
 	},
 	"POKEMON_BLANAS": {
 		"ability_0": "Chlorophyll",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Lebensraeuber",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 275
 	},
 	"POKEMON_TENGULIST": {
 		"ability_0": "Chlorophyll",
 		"ability_1": "Fruehwecker",
 		"hidden_ability": "Lebensraeuber",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 276
 	},
 	"POKEMON_NINCADA": {
 		"ability_0": "Facettenauge",
 		"ability_1": null,
 		"hidden_ability": "Techniker",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 277
 	},
 	"POKEMON_NINJASK": {
 		"ability_0": "Temposchub",
 		"ability_1": null,
 		"hidden_ability": "Techniker",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 278
 	},
 	"POKEMON_NINJATOM": {
 		"ability_0": "Wunderwache",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 279
 	},
 	"POKEMON_SCHWALBINI": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 280
 	},
 	"POKEMON_SCHWALBOSS": {
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 281
 	},
 	"POKEMON_KNILZ": {
 		"ability_0": "Sporenwirt",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 282
 	},
 	"POKEMON_KAPILZ": {
 		"ability_0": "Sporenwirt",
 		"ability_1": null,
 		"hidden_ability": "Techniker",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 283
 	},
 	"POKEMON_PANDIR": {
 		"ability_0": "Tempomacher",
 		"ability_1": null,
 		"hidden_ability": "Ap_sparer",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 284
 	},
 	"POKEMON_WINGULL": {
 		"ability_0": "Adlerauge",
 		"ability_1": null,
 		"hidden_ability": "Regengenuss",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 285
 	},
 	"POKEMON_PELIPPER": {
 		"ability_0": "Adlerauge",
 		"ability_1": null,
 		"hidden_ability": "Regengenuss",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 286
 	},
 	"POKEMON_GEHWEIHER": {
 		"ability_0": "Wassertempo",
 		"ability_1": null,
 		"hidden_ability": "Temposchub",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 287
 	},
 	"POKEMON_MASKEREGEN": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Temposchub",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 288
 	},
 	"POKEMON_WAILMER": {
 		"ability_0": "Aquahuelle",
 		"ability_1": "Doesigkeit",
 		"hidden_ability": "Erzwinger",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 289
 	},
 	"POKEMON_WAILORD": {
 		"ability_0": "Aquahuelle",
 		"ability_1": "Doesigkeit",
 		"hidden_ability": "Erzwinger",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 290
 	},
 	"POKEMON_ENECO": {
 		"ability_0": "Charmebolzen",
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 291
 	},
 	"POKEMON_ENEKORO": {
 		"ability_0": "Charmebolzen",
 		"ability_1": null,
 		"hidden_ability": "Fluffig",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 292
 	},
 	"POKEMON_KECLEON": {
 		"ability_0": "Farbwechsel",
 		"ability_1": null,
-		"hidden_ability": "Wandlungskunst",
-		"color": 3
+		"hidden_ability": "Wandlungsk",
+		"safari_rate": 0,
+		"dex_number": 293
 	},
 	"POKEMON_PUPPANCE": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 294
 	},
 	"POKEMON_LEPUMENTAS": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 295
 	},
 	"POKEMON_NASGNET": {
 		"ability_0": "Robustheit",
 		"ability_1": "Magnetfalle",
 		"hidden_ability": "Felsenkern",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 296
 	},
 	"POKEMON_MAGBRANT": {
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Feuerfaenger",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 116,
+		"dex_entry" : "Aus den Enden seiner Arme schießen Feuerbälle mit 2 000 Grad. Es lebt in Vulkankratern."
 	},
 	"POKEMON_ZWIRRFINST": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 338
 	},
 	"POKEMON_SCHMERBE": {
 		"ability_0": "Doesigkeit",
 		"ability_1": null,
 		"hidden_ability": "Luzid",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 298
 	},
 	"POKEMON_WELSAR": {
 		"ability_0": "Doesigkeit",
 		"ability_1": null,
 		"hidden_ability": "Luzid",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 299
 	},
 	"POKEMON_RIHORNIOR": {
 		"ability_0": "Blitzfaenger",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Achtlos",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 101
 	},
 	"POKEMON_KREBSCORPS": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Panzerhaut",
 		"hidden_ability": "Bedroher",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 300
 	},
 	"POKEMON_KREBUTACK": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Panzerhaut",
 		"hidden_ability": "Bedroher",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 301
 	},
 	"POKEMON_BARSCHWA": {
 		"ability_0": "Wassertempo",
 		"ability_1": null,
 		"hidden_ability": "Anpassung",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 302
 	},
 	"POKEMON_MILOTIC": {
 		"ability_0": "Notschutz",
 		"ability_1": null,
 		"hidden_ability": "Multischuppe",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 303
 	},
 	"POKEMON_KANIVANHA": {
 		"ability_0": "Rauhaut",
 		"ability_1": null,
 		"hidden_ability": "Temposchub",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 304
 	},
 	"POKEMON_TOHAIDO": {
 		"ability_0": "Rauhaut",
 		"ability_1": null,
 		"hidden_ability": "Temposchub",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 305
 	},
 	"POKEMON_KNACKLION": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Auswegslos",
 		"hidden_ability": "Sandherz",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 306
 	},
 	"POKEMON_VIBRAVA": {
 		"ability_0": "Schwebe",
 		"ability_1": "Schwebe",
 		"hidden_ability": null,
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 307
 	},
 	"POKEMON_LIBELLDRA": {
 		"ability_0": "Schwebe",
 		"ability_1": "Schwebe",
 		"hidden_ability": null,
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 308
 	},
 	"POKEMON_RIOLU": {
 		"ability_0": "Konzentrator",
 		"ability_1": "Konzentrator",
 		"hidden_ability": "Strolch",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 309
 	},
 	"POKEMON_LUCARIO": {
 		"ability_0": "Konzentrator",
 		"ability_1": "Konzentrator",
 		"hidden_ability": "Anpassung",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 310
 	},
 	"POKEMON_FRIZELBLIZ": {
 		"ability_0": "Statik",
 		"ability_1": "Blitzfaenger",
 		"hidden_ability": "Bedroher",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 311
 	},
 	"POKEMON_VOLTENSO": {
 		"ability_0": "Statik",
 		"ability_1": "Blitzfaenger",
 		"hidden_ability": "Bedroher",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 312
 	},
 	"POKEMON_CAMAUB": {
 		"ability_0": "Doesigkeit",
 		"ability_1": null,
 		"hidden_ability": "Barriere",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 313
 	},
 	"POKEMON_CAMERUPT": {
 		"ability_0": "Magmapanzer",
 		"ability_1": null,
 		"hidden_ability": "Barriere",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 314
 	},
 	"POKEMON_SEEMOPS": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
 		"hidden_ability": "Kaeltewahn",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 315
 	},
 	"POKEMON_SEEJONG": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
 		"hidden_ability": "Kaeltewahn",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 316
 	},
 	"POKEMON_WALRAISA": {
 		"ability_0": "Speckschicht",
 		"ability_1": null,
 		"hidden_ability": "Kaeltewahn",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 317
 	},
 	"POKEMON_TUSKA": {
 		"ability_0": "Sandschleier",
 		"ability_1": null,
 		"hidden_ability": "Extradorn",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 318
 	},
 	"POKEMON_NOKTUSKA": {
 		"ability_0": "Sandschleier",
 		"ability_1": null,
 		"hidden_ability": "Extradorn",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 319
 	},
 	"POKEMON_SCHNEPPKE": {
 		"ability_0": "Konzentrator",
 		"ability_1": null,
 		"hidden_ability": "Ap_sparer",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 320
 	},
 	"POKEMON_FIRNONTOR": {
 		"ability_0": "Konzentrator",
 		"ability_1": null,
 		"hidden_ability": "Schwebe",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 321
 	},
 	"POKEMON_LUNASTEIN": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 323
 	},
 	"POKEMON_SONNFEL": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 324
 	},
 	"POKEMON_AZURILL": {
 		"ability_0": "Speckschicht",
 		"ability_1": "Kraftkoloss",
 		"hidden_ability": "Angsthase",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 195
 	},
 	"POKEMON_SPOINK": {
 		"ability_0": "Speckschicht",
 		"ability_1": "Tempomacher",
 		"hidden_ability": "Notschutz",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 327
 	},
 	"POKEMON_GROINK": {
 		"ability_0": "Speckschicht",
 		"ability_1": "Tempomacher",
 		"hidden_ability": "Notschutz",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 328
 	},
 	"POKEMON_PLUSLE": {
 		"ability_0": "Plus",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 329
 	},
 	"POKEMON_MINUN": {
 		"ability_0": "Minus",
 		"ability_1": null,
 		"hidden_ability": "Voltabsorber",
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 330
 	},
 	"POKEMON_FLUNKIFER": {
 		"ability_0": "Scherenmacht",
 		"ability_1": "Bedroher",
 		"hidden_ability": "Ap_sparer",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 331
 	},
 	"POKEMON_MEDITIE": {
 		"ability_0": "Mentalkraft",
 		"ability_1": null,
 		"hidden_ability": "Techniker",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 332
 	},
 	"POKEMON_MEDITALIS": {
 		"ability_0": "Mentalkraft",
 		"ability_1": null,
 		"hidden_ability": "Techniker",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 333
 	},
 	"POKEMON_WABLU": {
 		"ability_0": "Innere_kraft",
 		"ability_1": null,
 		"hidden_ability": "Wolke_sieben",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 334
 	},
 	"POKEMON_ALTARIA": {
 		"ability_0": "Innere_kraft",
 		"ability_1": null,
 		"hidden_ability": "Wolke_sieben",
-		"color": 1,
+		"safari_rate": 0,
 		"levelup_moves": [
 			[
 				"Donnerblitz",
@@ -4186,331 +4724,384 @@
 				"Himmelsfeger",
 				60
 			]
-		]
+		],
+		"dex_number": 335
 	},
 	"POKEMON_KLINGPLIM": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 361
 	},
 	"POKEMON_ZWIRRLICHT": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 336
 	},
 	"POKEMON_ZWIRRKLOP": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Lebensraeuber",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 337
 	},
 	"POKEMON_PORYGON_Z": {
 		"ability_0": "Anpassung",
 		"ability_1": null,
 		"hidden_ability": "Hack",
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 136
 	},
 	"POKEMON_BUMMELZ": {
 		"ability_0": "Schnarchnase",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 339
 	},
 	"POKEMON_MUNTIER": {
 		"ability_0": "Munterkeit",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 340
 	},
 	"POKEMON_LETARKING": {
 		"ability_0": "Schnarchnase",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 341
 	},
 	"POKEMON_SCHLUPPUCK": {
 		"ability_0": "Kloakensosse",
 		"ability_1": "Wertehalter",
 		"hidden_ability": "Aufwertung",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 342
 	},
 	"POKEMON_SCHLUKWECH": {
 		"ability_0": "Kloakensosse",
 		"ability_1": "Wertehalter",
 		"hidden_ability": "Aufwertung",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 343
 	},
 	"POKEMON_TROPIUS": {
 		"ability_0": "Chlorophyll",
 		"ability_1": null,
 		"hidden_ability": "Reiche_ernte",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 344
 	},
 	"POKEMON_KAUMALAT": {
 		"ability_0": "Sandschleier",
 		"ability_1": "Sandschleier",
 		"hidden_ability": "Sandherz",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 239
 	},
 	"POKEMON_KNARKSEL": {
 		"ability_0": "Sandschleier",
 		"ability_1": "Sandschleier",
 		"hidden_ability": "Sandherz",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 240
 	},
 	"POKEMON_KNAKRACK": {
 		"ability_0": "Sandschleier",
 		"ability_1": "Sandschleier",
 		"hidden_ability": "Sandherz",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 241
 	},
 	"POKEMON_PERLU": {
 		"ability_0": "Panzerhaut",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 347
 	},
 	"POKEMON_AALABYSS": {
 		"ability_0": "Wassertempo",
 		"ability_1": null,
 		"hidden_ability": "Expidermis",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 348
 	},
 	"POKEMON_SAGANABYSS": {
 		"ability_0": "Wassertempo",
 		"ability_1": null,
 		"hidden_ability": "Expidermis",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 349
 	},
 	"POKEMON_ABSOL": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": "Bedroher",
-		"color": 9
+		"safari_rate": 0,
+		"dex_number": 350
 	},
 	"POKEMON_SHUPPET": {
 		"ability_0": "Insomnia",
 		"ability_1": null,
 		"hidden_ability": "Strolch",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 351
 	},
 	"POKEMON_BANETTE": {
 		"ability_0": "Insomnia",
 		"ability_1": null,
 		"hidden_ability": "Strolch",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 352
 	},
 	"POKEMON_VIPITIS": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": "Multischuppe",
-		"color": 4,
+		"safari_rate": 0,
 		"accessible_moves": [
 			"Nassschweif"
-		]
+		],
+		"dex_number": 353
 	},
 	"POKEMON_SENGO": {
 		"ability_0": "Immunitaet",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 4
+		"safari_rate": 0,
+		"dex_number": 354
 	},
 	"POKEMON_RELICANTH": {
 		"ability_0": "Wassertempo",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Robustheit",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 355
 	},
 	"POKEMON_STOLLUNIOR": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Filter",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 357
 	},
 	"POKEMON_STOLLRAK": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Filter",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 358
 	},
 	"POKEMON_STOLLOSS": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Filter",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 359
 	},
 	"POKEMON_FORMEO": {
 		"ability_0": "Prognose",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 360
 	},
 	"POKEMON_WONNEIRA": {
 		"ability_0": "Innere_kraft",
 		"ability_1": "Edelmut",
 		"hidden_ability": "Curator",
-		"color": 9
+		"safari_rate": 125,
+		"dex_number": 106
 	},
 	"POKEMON_MOBAI": {
 		"ability_0": "Robustheit",
 		"ability_1": "Steinhaupt",
 		"hidden_ability": "Felsenkern",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 203
 	},
 	"POKEMON_LILIEP": {
 		"ability_0": "Saugnapf",
 		"ability_1": null,
 		"hidden_ability": "Notduenger",
-		"color": 6
+		"safari_rate": 0,
+		"dex_number": 363
 	},
 	"POKEMON_WIELIE": {
 		"ability_0": "Saugnapf",
 		"ability_1": null,
 		"hidden_ability": "Notduenger",
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 364
 	},
 	"POKEMON_ANORITH": {
 		"ability_0": "Kampfpanzer",
 		"ability_1": null,
 		"hidden_ability": "Wassertempo",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 365
 	},
 	"POKEMON_ARMALDO": {
 		"ability_0": "Kampfpanzer",
 		"ability_1": null,
 		"hidden_ability": "Wassertempo",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 366
 	},
 	"POKEMON_TRASLA": {
 		"ability_0": "Synchro",
 		"ability_1": "Faehrte",
 		"hidden_ability": "Luzid",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 367
 	},
 	"POKEMON_KIRLIA": {
 		"ability_0": "Synchro",
 		"ability_1": "Faehrte",
 		"hidden_ability": "Luzid",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 368
 	},
 	"POKEMON_GUARDEVOIR": {
 		"ability_0": "Synchro",
 		"ability_1": "Faehrte",
 		"hidden_ability": "Luzid",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 369
 	},
 	"POKEMON_KINDWURM": {
 		"ability_0": "Steinhaupt",
 		"ability_1": null,
 		"hidden_ability": "Achtlos",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 371
 	},
 	"POKEMON_DRASCHEL": {
 		"ability_0": "Steinhaupt",
 		"ability_1": null,
 		"hidden_ability": "Expidermis",
-		"color": 8
+		"safari_rate": 0,
+		"dex_number": 372
 	},
 	"POKEMON_BRUTALANDA": {
 		"ability_0": "Bedroher",
 		"ability_1": null,
 		"hidden_ability": "Hochmut",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 373
 	},
 	"POKEMON_TANHEL": {
 		"ability_0": "Neutraltorso",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 374
 	},
 	"POKEMON_METANG": {
 		"ability_0": "Neutraltorso",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 375
 	},
 	"POKEMON_METAGROSS": {
 		"ability_0": "Neutraltorso",
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 376
 	},
 	"POKEMON_REGIROCK": {
 		"ability_0": "Neutraltorso",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 5
+		"safari_rate": 0,
+		"dex_number": 377
 	},
 	"POKEMON_REGICE": {
 		"ability_0": "Neutraltorso",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 378
 	},
 	"POKEMON_REGISTEEL": {
 		"ability_0": "Neutraltorso",
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
-		"color": 7
+		"safari_rate": 0,
+		"dex_number": 379
 	},
 	"POKEMON_KYOGRE": {
 		"ability_0": "Niesel",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 380
 	},
 	"POKEMON_GROUDON": {
-		"ability_0": "Duerre",
+		"ability_0": "Wandlungsk",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 381
 	},
 	"POKEMON_RAYQUAZA": {
 		"ability_0": "Klimaschutz",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 3
+		"safari_rate": 0,
+		"dex_number": 382
 	},
 	"POKEMON_LATIAS": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 0
+		"safari_rate": 0,
+		"dex_number": 383
 	},
 	"POKEMON_LATIOS": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 384
 	},
 	"POKEMON_JIRACHI": {
 		"ability_0": "Edelmut",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 385
 	},
 	"POKEMON_DEOXYS": {
 		"ability_0": "Erzwinger",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 2
+		"safari_rate": 0,
+		"dex_number": 386
 	},
 	"POKEMON_PALIMPALIM": {
 		"ability_0": "Schwebe",
 		"ability_1": null,
 		"hidden_ability": null,
-		"color": 1
+		"safari_rate": 0,
+		"dex_number": 362
 	},
 	"POKEMON_EGG": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4536,18 +5127,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_B": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4573,18 +5168,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_C": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4610,18 +5209,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_D": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4647,18 +5250,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_E": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4684,18 +5291,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_F": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4721,18 +5332,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_G": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4758,18 +5373,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_H": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4795,18 +5414,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_I": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4832,18 +5455,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_J": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4869,18 +5496,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_K": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4906,18 +5537,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_L": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4943,18 +5578,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_M": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -4980,18 +5619,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_N": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5017,18 +5660,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_O": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5054,18 +5701,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_P": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5091,18 +5742,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_Q": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5128,18 +5783,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_R": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5165,18 +5824,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_S": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5202,18 +5865,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_T": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5239,18 +5906,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_U": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5276,18 +5947,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_V": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5313,18 +5988,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_W": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5350,18 +6029,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_X": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5387,18 +6070,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_Y": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5424,18 +6111,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_Z": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5461,18 +6152,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_EXCLAMATION": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5498,18 +6193,22 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_ICOGNITO_QUESTION": {
 		"basestats": {
-			"KP": 0,
-			"Angriff": 0,
-			"Verteidigung": 0,
-			"Initiative": 0,
-			"Spezialangriff": 0,
-			"Spezialverteidigung": 0
+			"hp": 0,
+			"attack": 0,
+			"defense": 0,
+			"speed": 0,
+			"special-attack": 0,
+			"special-defense": 0
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5535,18 +6234,23 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Quadruped"
+		"shape": "Quadruped",
+		"dex_number": 0
 	},
 	"POKEMON_GROUDON_REGENT": {
+		"name": "Groudon",
 		"basestats": {
-			"KP": 100,
-			"Angriff": 195,
-			"Verteidigung": 150,
-			"Initiative": 95,
-			"Spezialangriff": 125,
-			"Spezialverteidigung": 105
+			"hp": 100,
+			"attack": 195,
+			"defense": 150,
+			"speed": 95,
+			"special-attack": 125,
+			"special-defense": 105
 		},
 		"type_0": "Boden",
 		"type_1": "Feuer",
@@ -5572,19 +6276,24 @@
 		"ability_0": "R_kaiseraura",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 0,
+		"color_and_flip": [
+			0,
+			"None"
+		],
 		"hidden_ability": null,
-		"form": "Upright",
-        "move_link" : "POKEMON_GROUDON"
+		"shape": "Upright",
+		"move_link": "POKEMON_GROUDON",
+		"dex_number": 0
 	},
 	"POKEMON_KECLEON_PURPLE": {
+		"name": "Kecleon",
 		"basestats": {
-			"KP": 95,
-			"Angriff": 120,
-			"Verteidigung": 80,
-			"Initiative": 95,
-			"Spezialangriff": 65,
-			"Spezialverteidigung": 135
+			"hp": 95,
+			"attack": 120,
+			"defense": 80,
+			"speed": 95,
+			"special-attack": 65,
+			"special-defense": 135
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
@@ -5600,7 +6309,7 @@
 			0
 		],
 		"common_item": null,
-		"rare_item": "Persimbeere",
+		"rare_item": null,
 		"gender_ratio": 127,
 		"egg_cycles": 20,
 		"base_happiness": 70,
@@ -5610,9 +6319,13 @@
 		"ability_0": "Farbwechsel",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color": 3,
-		"hidden_ability": "Wandlungskunst",
-		"form": "Upright",
-        "move_link" : "POKEMON_KECLEON"
+		"color_and_flip": [
+			0,
+			"None"
+		],
+		"hidden_ability": "Wandlungsk",
+		"shape": "Upright",
+		"move_link": "POKEMON_KECLEON",
+		"dex_number": 293
 	}
 }

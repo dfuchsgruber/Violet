@@ -413,5 +413,5 @@ u8 attack_names[][13] = {
 	LANGDEP(PSTRING("Nitroladung"), PSTRING("Nitro Charge")),
 	LANGDEP(PSTRING("Käfergebrumm"), PSTRING("Bug Buzz")),
 	LANGDEP(PSTRING("Tornado"), PSTRING("Tornado")),
-	LANGDEP(PSTRING("Königsschild"), PSTRING("King\s Shield")),
+	LANGDEP(PSTRING("Königsschild"), PSTRING("King\'s Shield")),
 };

@@ -11,17 +11,15 @@ MID2AGB=@mid2agb
 #MID2AGB=/media/d/romhacking/midi2agb/midi2agb
 PY3=@python3
 BIN2S=@bin2s.py
-PYMAP2S=@pymap2s.py
+PYMAP2S=pymap2s.py
 PYPREPROC=@pypreproc.py
 PYMAPCONSTEX=pymapconstex.py
 READELF=@arm-none-eabi-readelf
 SOUNDFONTRIPPER=sound_font_ripper
 
 # Py-Preprocessor settings (pypreproc.py)
-CHARMAP=charmap.txt
 LANGUAGE=LANG_GER
 #LANGUAGE=LANG_EN
-CLANGMACRO=PSTRING
 
 # Define compiler flags
 ASFLAGS=-mthumb -Iinclude/as/ -Iinclude/as/constants/ -mcpu=arm7tdmi -march=armv4t --defsym $(LANGUAGE)=1
@@ -42,23 +40,6 @@ SYMBOLDUMP=$(BLDPATH)/symbols
 SPECIESCONSTANTTABLE=species
 PKLPATH=pkl
 MOVESETPKL=$(addprefix $(PKLPATH)/, $(addsuffix .pkl, $(shell tools/pokemon_move_generator/get_species.py $(MAPPROJ) $(SPECIESCONSTANTTABLE))))
-
-# Deprecated (soon at least...)
-PKMNCRAWLERDATA=$(BLDPATH)/pkmncrawlerdata.pkl
-# Define the symbol of the evolution talbe (linked elf is parsed by movegenerator)
-PKMNEVOTABLE=pokemon_evolutions
-# Define a file that contains information about the .text section of the linked file
-# and also location and size of the evolution table
-LINKEDTEXTHEADER=$(BLDPATH)/linked.o.text
-LINKEDEVOTABLEHEADER=$(BLDPATH)/linked.o.evotable
-PKMNLVLUPATTACKS=pokemon_moves
-PKMNEGGMOVES=pokemon_egg_moves
-PKMNTMCOMPATIBILITY=pokemon_tm_compatibility
-PKMNMOVETUTORCOMPATIBILITY=pokemon_move_tutor_compatibility
-PKMNINACESSIBLEMOVES=pokemon_inacessible_moves
-# Define a file that contains all manual pokemon moveset (changes)
-PKMNCRAWLEREXTERN=tools/pokemon_move_generator/data.py
-
 
 # Fata morgana lookup table generator settings
 FATAMORGANAGEN=tools/fata_morgana_lut.py
@@ -124,7 +105,9 @@ MAPTILESETDEP = $(MAPTILESETOBJS:%.o=%.d)
 CONSTANTSHAS=$(CONSTANTS:%.const=include/as/%.s)
 CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 
-.PHONY: all clean soundfont
+include pokeapi/makefile
+
+.PHONY: all clean soundfont test
 
 $(CONSTANTSHAS): include/as/%.s: %.const
 	$(shell mkdir -p $(dir $@))
@@ -137,21 +120,21 @@ $(CONSTANTSHC): include/c/%.h: %.const
 $(ASOBJS1): $(BLDPATH)/%.o: %.asm
 	$(shell mkdir -p $(dir $@))
 	@echo "$<"
-	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE) 
+	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(MAPPROJ)
 	$(AS) $(ASFLAGS) --MD $(BLDPATH)/$*.d $(BLDPATH)/$*.i -o $@
 
 $(ASOBJS2): $(BLDPATH)/%.o: %.s
 	$(shell mkdir -p $(dir $@))
-	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(CHARMAP) $(LANGUAGE)   
+	$(PYPREPROC) -o $(BLDPATH)/$*.i $< $(MAPPROJ)   
 	$(AS) $(ASFLAGS) --MD $(BLDPATH)/$*.d $(BLDPATH)/$*.i -o $@
 
--include $(CDEP) $(ASDEP1) $(ASDEP2) $(MAPDEP) $(MAPFOOTERDEP) $(MAPTILESETDEP)
+-include $(CDEP) $(ASDEP1) $(ASDEP2) $(MAPDEP) $(MAPFOOTERDEP) $(MAPTILESETDEP) $(EXPORTED_STATS_DEP)
 
 
 $(COBJS): $(BLDPATH)/%.o: %.c
 	$(shell mkdir -p $(dir $@))
 	@echo "$<"
-	$(PYPREPROC) -o $(BLDPATH)/$*.c $< $(CHARMAP) $(CLANGMACRO)   
+	$(PYPREPROC) -o $(BLDPATH)/$*.c $< $(MAPPROJ)   
 	$(CC) $(CFLAGS) -MMD $(BLDPATH)/$*.c -o $@
 	
 $(MIDAS): $(BLDPATH)/%.s: %.mid
@@ -231,27 +214,6 @@ $(BLDPATH)/fata_morgana.o: $(DESERTFOOTER)
 	$(AS) $(ASFLAGS) $(BLDPATH)/fata_morgana.s -o $(BLDPATH)/fata_morgana.o
 
 	
-# Pokemon crawler
-$(PKMNCRAWLERDATA): 
-	@echo "Fetching pokemon data form pokewiki.de..."
-	$(PY3) tools/pokemon_move_generator_fetch.py $(PKMNCRAWLERDATA)	$(MAPPROJ)
-	
-$(BLDPATH)/pkmnmoves.o: $(PKMNCRAWLERDATA) $(BLDPATH)/src.o $(PKMNCRAWLEREXTERN)
-	@echo "Dumping .text header of linked.o elf into $(LINKEDTEXTHEADER)..."
-	$(READELF) -S $(BLDPATH)/src.o | grep ".text" > $(LINKEDTEXTHEADER)
-	@echo "Dumping offset of $(PKMNEVOTABLE) into $(LINKEDEVOTABLEHEADER)..."
-	$(READELF) -s $(BLDPATH)/src.o | grep $(PKMNEVOTABLE) > $(LINKEDEVOTABLEHEADER)
-	$(PY3) tools/pokemon_move_generator.py -o  $(BLDPATH)/pkmnmoves.c $(MAPPROJ) $(BLDPATH)/src.o $(LINKEDTEXTHEADER) \
-	$(LINKEDEVOTABLEHEADER) $(PKMNEVOTABLE) $(PKMNLVLUPATTACKS) $(PKMNEGGMOVES) \
-	$(PKMNTMCOMPATIBILITY) $(PKMNMOVETUTORCOMPATIBILITY) $(PKMNINACESSIBLEMOVES) \
-	$(PKMNCRAWLERDATA)
-	$(CC) $(CFLAGS) $(BLDPATH)/pkmnmoves.c -o $(BLDPATH)/pkmnmoves.o
-	
-$(MOVESETPKL):
-	$(shell mkdir -p $(dir $@))
-	tools/pokemon_generator/crawler.py $(notdir $(basename $@)) tools/pokemon_generator/species_to_idx.json $@
-
-	
 # Intermediate object files (large input lists are not supported by console)
 
 $(BLDPATH)/asset/mus.o: $(MIDOBJS)
@@ -281,9 +243,9 @@ soundfont: $(BLDROM)
 	$(foreach vcg,000 001 002, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
-$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
+$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ)
 	@echo "Creating rom object..."
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/pkmnmoves.o $(BLDPATH)/src.o
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ)
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)
 	#$(PY3) tools/index.py
 	

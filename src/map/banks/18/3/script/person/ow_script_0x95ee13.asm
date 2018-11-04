@@ -20,7 +20,7 @@ str_0x95f49e:
 .global str_0x95f53d
 
 str_0x95f53d:
-    .string "Du scheinst recht zäh zu sein,\nverbrenn\ dich nicht."
+    .string "Du scheinst recht zäh zu sein,\nverbrenn\' dich nicht."
         
         
 .elseif LANG_EN

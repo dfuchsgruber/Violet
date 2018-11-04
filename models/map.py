@@ -116,6 +116,5 @@ models_to_export = {
     'event.signpost_item' : signpost_item_type,
     'connection.direction' : connection_direction_type,
     'connection.connection' : connection_type,
-    'header.header' : header_type
+    'header' : header_type
 }
-

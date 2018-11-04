@@ -920,7 +920,7 @@ ability_descriptions:
 	.global str_ability_descr_0x10
 
 	str_ability_descr_0x10:
-		.string "Changes type to foe\s move."
+		.string "Changes type to foe's move."
 
 	.global str_ability_descr_0x11
 
@@ -950,12 +950,12 @@ ability_descriptions:
 	.global str_ability_descr_0x16
 
 	str_ability_descr_0x16:
-		.string "Lowers the foe\s Attack."
+		.string "Lowers the foe's Attack."
 
 	.global str_ability_descr_0x17
 
 	str_ability_descr_0x17:
-		.string "Prevents the foe\s escape."
+		.string "Prevents the foe's escape."
 
 	.global str_ability_descr_0x18
 
@@ -1070,7 +1070,7 @@ ability_descriptions:
 	.global str_ability_descr_0x2e
 
 	str_ability_descr_0x2e:
-		.string "Raises foe\s PP usage."
+		.string "Raises foe's PP usage."
 
 	.global str_ability_descr_0x2f
 
@@ -1280,7 +1280,7 @@ ability_descriptions:
 	.global str_ability_descr_0x58
 
 	str_ability_descr_0x58:
-		.string "User becomes moves\ type."
+		.string "User becomes moves' type."
 
 	.global str_ability_descr_0x59
 
@@ -1295,17 +1295,17 @@ ability_descriptions:
 	.global str_ability_descr_0x5b
 
 	str_ability_descr_0x5b:
-		.string "User\s status moves attack first."
+		.string "User's status moves attack first."
 
 	.global str_ability_descr_0x5c
 
 	str_ability_descr_0x5c:
-		.string "User\s Fly moves attack first."
+		.string "User's Fly moves attack first."
 
 	.global str_ability_descr_0x5d
 
 	str_ability_descr_0x5d:
-		.string "User\s Dark moves attack first."
+		.string "User's Dark moves attack first."
 
 	.global str_ability_descr_0x5e
 
@@ -1365,7 +1365,7 @@ ability_descriptions:
 	.global str_ability_descr_0x69
 
 	str_ability_descr_0x69:
-		.string "Boots moves of user\s type."
+		.string "Boots moves of user's type."
 
 	.global str_ability_descr_0x6a
 
@@ -1375,7 +1375,7 @@ ability_descriptions:
 	.global str_ability_descr_0x6b
 
 	str_ability_descr_0x6b:
-		.string "Boosts moves of not user\s type."
+		.string "Boosts moves of not user's type."
 
 	.global str_ability_descr_0x6c
 

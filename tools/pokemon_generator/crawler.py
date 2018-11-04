@@ -80,11 +80,20 @@ def get_name(resource, language=LANGUAGE):
             return name['name']
     raise RuntimeError(f'Language {language} not found in {resource}') 
 
+# Translate a stat name to an index
+stat_to_idx = {
+    'hp' : 0,
+    'attack' : 1,
+    'defense' : 2,
+    'speed' : 3,
+    'special-attack' : 4,
+    'special-defense' : 5
+}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Fetches and preprocesses data for each pokemon from pokewiki.de.')
     parser.add_argument('project', help='the pymap project which holds the species constants')
-    parser.add_argument('output', help='output pickle containing the pokemon data')
+    parser.add_argument('-o', dest='output', help='output pickle containing the pokemon data')
     parser.add_argument('--version_group', dest='version_group', help='The version group the movesets are based on.', default=VERSION_GROUP)
     parser.add_argument('--cache', dest='cache', action='store_true', help='If set all data crawled will be cached.')
     args = parser.parse_args()
@@ -103,42 +112,65 @@ if __name__ == '__main__':
             pokemon_species = get_resource(get_url('pokemon-species', idx), cache=cache)
 
             pokemon['name'] = get_name(pokemon_species)
-            pokemon['egg_groups'] = [
+            egg_groups = [
                 get_name(get_resource(egg_group['url'], cache=cache))
                 for egg_group in pokemon_species['egg_groups']
-                ]
-            pokemon['gender_rate'] = pokemon_species['gender_rate'] # in 1/8
+                ] * 2
+            pokemon['egg_group_0'] = egg_groups[0]
+            pokemon['egg_group_1'] = egg_groups[1]
+            
+            gender_ratio = pokemon_species['gender_rate']
+            if gender_ratio >= 0:
+                gender_ratio = int(round(gender_ratio / 8 * 254))
+            else:
+                gender_ratio = 255
+            pokemon['gender_ratio'] = gender_ratio
             pokemon['capture_rate'] = pokemon_species['capture_rate']
             pokemon['base_happiness'] = pokemon_species['base_happiness']
             pokemon['egg_cycles'] = pokemon_species['hatch_counter']
-            pokemon['color'] = get_name(get_resource(pokemon_species['color']['url'], cache=cache))
+            pokemon['color_and_flip'] = [0, get_name(get_resource(pokemon_species['color']['url'], cache=cache))]
             # Shape is only available in english...
             pokemon['shape'] = get_name(get_resource(pokemon_species['shape']['url'], cache=cache), language='en')
             pokemon['growth_rate'] = pokemon_species['growth_rate']['name']
 
+            pokemon['dex_entry'] = None
+            # Parse dex entries
+            for dex_entry in pokemon_species['flavor_text_entries']:
+                if dex_entry['language']['name'] == LANGUAGE:
+                    pokemon['dex_entry'] = dex_entry['flavor_text'].replace('\n', ' ') # Linebreaks will be calculated at compile time
+            
+            pokemon['genus'] = ''
+            # Parse the genera
+            for genus in pokemon_species['genera']:
+                if genus['language']['name'] == LANGUAGE:
+                    pokemon['genus'] = genus['genus']
+
             pokemon_resource = get_resource(get_url('pokemon', idx), cache=cache)
             pokemon['height'] = pokemon_resource['height']
             pokemon['weight'] = pokemon_resource['weight']
-            pokemon['base_experience'] = pokemon_resource['base_experience']
+            pokemon['exp_yield'] = min(255, pokemon_resource['base_experience']) # Gen3 only supports bytes
             
             # Parse abilities
             pokemon['hidden_ability'] = None
-            pokemon['abilities'] = {}
+            pokemon['ability_0'] = None
+            pokemon['ability_1'] = None
             for entry in pokemon_resource['abilities']:
                 abilitiy_resource = get_resource(entry['ability']['url'], cache=cache)
                 ability_name = get_name(abilitiy_resource)
                 if entry['is_hidden']:
                     pokemon['hidden_ability'] = ability_name
                 else:
-                    pokemon['abilities'][entry['slot']] = ability_name
+                    slot = int(entry['slot']) - 1
+                    pokemon[f'ability_{slot}'] = ability_name
 
             # Parse stats
-            pokemon['stats'] = {}
-            pokemon['ev_yield'] = {}
+            pokemon['basestats'] = {}
+            pokemon['ev_yield'] = [0] * 7
+
             for element in pokemon_resource['stats']:
-                name = get_name(get_resource(element['stat']['url'], cache=cache))
-                pokemon['stats'][name] = element['base_stat']
-                pokemon['ev_yield'][name] = element['effort']
+                name = element['stat']['name']
+                pokemon['basestats'][name] = element['base_stat']
+                pokemon['ev_yield'][stat_to_idx[name]] = element['effort']
 
             # Parse movesets
             pokemon['levelup_moves'] = []
@@ -157,10 +189,10 @@ if __name__ == '__main__':
                         elif move_learn_method == METHOD_EGG:
                             pokemon['egg_moves'].add(move)
                         pokemon['accessible_moves'].add(move)
-            
-            pokemon['held_items'] = {}
-
+        
             # Parse held items
+            pokemon['common_item'] = 0
+            pokemon['rare_item'] = 0
             for element in pokemon_resource['held_items']:
                 # Check if this element is associated with the version group
                 for version_details in element['version_details']:
@@ -169,13 +201,15 @@ if __name__ == '__main__':
                         # This item is assigned to a version of the version group
                         rarity = version_details['rarity']
                         name = get_name(get_resource(element['item']['url'], cache=cache))
-                        pokemon['held_items'][rarity] = name
+                        pokemon['common_item' if rarity == 5 else 'rare_item'] = name
 
-            pokemon['types'] = {}
+            pokemon['type_0'] = None
+            pokemon['type_1'] = None
             # Parse types
             for element in pokemon_resource['types']:
                 name = get_name(get_resource(element['type']['url'], cache=cache))
-                pokemon['types'][element['slot']] = name
+                slot = int(element['slot']) - 1
+                pokemon[f'type_{slot}'] = name
             
         else:
             pokemon = None

@@ -13,7 +13,7 @@ end
 .global str_0x8e1081
 
 str_0x8e1081:
-    .string "Dieser Ort trägt den Namen\n\Felsige Ödnis\ zurecht.\lIn dieser Savanne findet man\linteressante Pokémon."
+    .string "Dieser Ort trägt den Namen\nFelsige Ödnis zurecht.\lIn dieser Savanne findet man\linteressante Pokémon."
         
         
 .elseif LANG_EN

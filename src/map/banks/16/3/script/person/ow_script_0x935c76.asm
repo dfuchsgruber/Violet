@@ -14,13 +14,13 @@ end
 .global str_0x9376da
 
 str_0x9376da:
-    .string "Hieb und Schlag!\nWie ich\s mag!\lTritt und Kick!\lHalten mich fit!"
+    .string "Hieb und Schlag!\nWie ich\'s mag!\lTritt und Kick!\lHalten mich fit!"
         
         
 .global str_0x93771d
 
 str_0x93771d:
-    .string "Wie, was schon aus?\nHast\ einiges drauf!\lIch lern dazu!\lKarate! Kung Fu!"
+    .string "Wie, was schon aus?\nHast einiges drauf!\lIch lern dazu!\lKarate! Kung Fu!"
         
         
 .elseif LANG_EN

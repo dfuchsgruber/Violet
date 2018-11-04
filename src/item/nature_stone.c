@@ -20,7 +20,7 @@ void item_field_nature_stone(u8 self) {
 
 u8 str_nature_stone_sucess[] = LANGDEP(
     PSTRING("Das Wesen von BUFFER_1 hat\nsich geändert.PAUSE_UNTIL_PRESS"),
-    PSTRING("BUFFER_1\s nature has\nchanged.PAUSE_UNTIL_PRESS"));
+    PSTRING("BUFFER_1\'s nature has\nchanged.PAUSE_UNTIL_PRESS"));
 
 void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure)(u8)) {
 

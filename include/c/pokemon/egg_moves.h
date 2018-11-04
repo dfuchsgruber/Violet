@@ -10,7 +10,7 @@
 
 #include "egg_moves.h"
 
-extern u16 pokemon_egg_moves[];
+extern u16 *pokemon_egg_moves[];
 
 /**
  * Returns a pointer to a list of attacks describing the egg moves obtainable by
