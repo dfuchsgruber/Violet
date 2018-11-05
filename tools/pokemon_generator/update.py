@@ -2,7 +2,7 @@
 
 import argparse, json, pickle
 from pymap import project
-import tms, move_tutor
+from export import tms, move_tutor
 
 
 def merge(target, source):

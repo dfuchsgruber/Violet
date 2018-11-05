@@ -35,30 +35,30 @@ ev_yield_type = agb.types.BitfieldType('u16', [
 ])
 
 stat_type = agb.types.Structure([
-    ('basestats', 'stats.basestats'),
-    ('type_0', 'stats.pokemon_type'),
-    ('type_1', 'stats.pokemon_type'),
+    ('basestats', 'basestats.basestats'),
+    ('type_0', 'basestats.pokemon_type'),
+    ('type_1', 'basestats.pokemon_type'),
     ('capture_rate', 'u8'),
     ('exp_yield', 'u8'),
-    ('ev_yield', 'stats.ev_yield'),
+    ('ev_yield', 'basestats.ev_yield'),
     ('common_item', 'item'),
     ('rare_item', 'item'),
     ('gender_ratio', 'u8'),
     ('egg_cycles', 'u8'),
     ('base_happiness', 'u8'),
-    ('growth_rate', 'stats.pokemon_growth_rate'),
+    ('growth_rate', 'basestats.pokemon_growth_rate'),
     ('egg_group_0', 'egg_group'),
     ('egg_group_1', 'egg_group'),
     ('ability_0', 'ability'),
     ('ability_1', 'ability'),
     ('safari_rate', 'u8'),
-    ('color_and_flip', 'stats.color_and_flip'),
+    ('color_and_flip', 'basestats.color_and_flip'),
     ('hidden_ability', 'ability'),
     ('shape', 'pokemon_shape')
 ])
 
 stats_type = agb.types.ArrayType(
-    'stats.stat',
+    'basestats.stat',
     (lambda project, context, parents: len(project.constants['species']))
 )
 
@@ -68,17 +68,17 @@ levelup_move_type = agb.types.BitfieldType('u16', [
 ])
 
 levelup_move_array_type = agb.types.VariableLengthArrayType(
-    'stats.levelup_move',
+    'basestats.levelup_move',
     [511, 127]
 )
 
 levelup_move_array_pointer_type = agb.types.PointerType(
-    'stats.levelup_move_array',
+    'basestats.levelup_move_array',
     (lambda project, context, parents: (f'moveset_{context[-1]}', 2, False))
 )
 
 levelup_moves_type = agb.types.ArrayType(
-    'stats.levelup_move_array_pointer',
+    'basestats.levelup_move_array_pointer',
     (lambda project, context, parents: len(project.constants['species']))
 )
 
@@ -88,12 +88,12 @@ move_array_type = agb.types.VariableLengthArrayType(
 )
 
 egg_move_array_pointer_type = agb.types.PointerType(
-    'stats.move_array',
+    'basestats.move_array',
     (lambda project, context, parents: (f'egg_moves_{context[-1]}', 2, False))
 )
 
 egg_moves_type = agb.types.ArrayType(
-    'stats.egg_move_array_pointer',
+    'basestats.egg_move_array_pointer',
     (lambda project, context, parents: len(project.constants['species']))
 )
 
@@ -103,7 +103,7 @@ tm_compatibility_type = agb.types.ArrayType(
 )
 
 tm_compatibilities_type = agb.types.ArrayType(
-    'stats.tm_compatibility',
+    'basestats.tm_compatibility',
     (lambda project, context, parents: len(project.constants['species']))
 )
 
@@ -113,19 +113,19 @@ tutor_compatibilities_type = agb.types.ArrayType(
 )
 
 accessible_move_array_pointer_type = agb.types.PointerType(
-    'stats.move_array',
+    'basestats.move_array',
     (lambda project, context, parents: (f'accessible_moves_{context[-1]}', 2, False))
 )
 
 accessible_moves_type = agb.types.ArrayType(
-    'stats.accessible_move_array_pointer',
+    'basestats.accessible_move_array_pointer',
     (lambda project, context, parents: len(project.constants['species']))
 )
 
 pokemon_name_type = agb.types.StringType(fixed_size=11)
 
 pokemon_names_type = agb.types.ArrayType(
-    'stats.pokemon_name',
+    'basestats.pokemon_name',
     (lambda project, context, parents: len(project.constants['species']))
 )
 
@@ -163,31 +163,31 @@ pokedex_entries_type = agb.types.ArrayType(
 )
 
 models_to_export = {
-    'stats.basestats' : basestat_type,
-    'stats.pokemon_type' : pokemon_type_type,
-    'stats.pokemon_growth_rate' : pokemon_growth_rate_type,
-    'stats.ev_yield' : ev_yield_type,
+    'basestats.basestats' : basestat_type,
+    'basestats.pokemon_type' : pokemon_type_type,
+    'basestats.pokemon_growth_rate' : pokemon_growth_rate_type,
+    'basestats.ev_yield' : ev_yield_type,
     'item' : item_type,
     'egg_group' : egg_group_type,
     'ability' : ability_type,
     'pokemon_shape' : pokemon_shape_type,
-    'stats.stat' : stat_type,
-    'stats.color_and_flip' : color_and_flip_type,
-    'stats' : stats_type,
-    'stats.levelup_move' : levelup_move_type,
-    'stats.levelup_move_array' : levelup_move_array_type,
-    'stats.levelup_move_array_pointer' : levelup_move_array_pointer_type,
+    'basestats.stat' : stat_type,
+    'basestats.color_and_flip' : color_and_flip_type,
+    'basestats' : stats_type,
+    'basestats.levelup_move' : levelup_move_type,
+    'basestats.levelup_move_array' : levelup_move_array_type,
+    'basestats.levelup_move_array_pointer' : levelup_move_array_pointer_type,
     'levelup_moves' : levelup_moves_type,
     'move' : move_type,
-    'stats.move_array' : move_array_type,
-    'stats.egg_move_array_pointer' : egg_move_array_pointer_type,
+    'basestats.move_array' : move_array_type,
+    'basestats.egg_move_array_pointer' : egg_move_array_pointer_type,
     'egg_moves' : egg_moves_type,
-    'stats.tm_compatibility' : tm_compatibility_type,
+    'basestats.tm_compatibility' : tm_compatibility_type,
     'tm_compatibilities' : tm_compatibilities_type,
     'tutor_compatibilities' : tutor_compatibilities_type,
-    'stats.accessible_move_array_pointer' : accessible_move_array_pointer_type,
+    'basestats.accessible_move_array_pointer' : accessible_move_array_pointer_type,
     'accessible_moves' : accessible_moves_type,
-    'stats.pokemon_name' : pokemon_name_type,
+    'basestats.pokemon_name' : pokemon_name_type,
     'pokemon_names' : pokemon_names_type,
     'pokedex_order' : pokedex_order_type,
     'pokedex.entry_string' : pokedex_entry_string_type,
