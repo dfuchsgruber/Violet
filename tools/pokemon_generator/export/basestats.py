@@ -2,7 +2,7 @@
 
 from . import constant
 
-def export_basestats(stats, project, basestat_type='basestats'):
+def export_basestats(stats, project, language='LANG_GER'):
     """ Creates a structure for pokemon basestats.
     
     Parameters:
@@ -11,6 +11,8 @@ def export_basestats(stats, project, basestat_type='basestats'):
         A list of dicts representing the updated pokemon.
     project : pymap.project.Project
         The pymap project.
+    language : str
+        The language to export the structure in.
         
     Returns:
     --------

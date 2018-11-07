@@ -92,7 +92,7 @@ void pokedex_entry_load_strings() {
 
     tbox_flush_set(1, 0);
     tbox_tilemap_draw(1);
-    u8 str_form[] = LANGDEP(PSTRING("Form"), LANGDEP("Form"));
+    u8 str_form[] = LANGDEP(PSTRING("Form"), PSTRING("Form"));
     tbox_print_string(1, 2, 96, 0, 0, 0, &pokedex_fontcolmap, 0, str_form);
     u8 str_data[] = LANGDEP(PSTRING("Gr.\nGew."), PSTRING("Sz.\nWgt."));
     tbox_print_string(1, 2, 4, 15, 0, 0, &pokedex_fontcolmap, 0, str_data);

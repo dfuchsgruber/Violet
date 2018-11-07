@@ -3,7 +3,7 @@
 from . import constant
 from functools import partial
 
-def export_accessible_moves(stats, project):
+def export_accessible_moves(stats, project, language='LANG_GER'):
     """ Creates a structure for accessible moves.
     
     Parameters:
@@ -12,6 +12,8 @@ def export_accessible_moves(stats, project):
         A list of dicts representing the updated pokemon.
     project : pymap.project.Project
         The pymap project.
+    language : str
+        The language to export the structure in.
         
     Returns:
     --------

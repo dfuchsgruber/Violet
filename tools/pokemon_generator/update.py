@@ -3,7 +3,7 @@
 import argparse, json, pickle
 from pymap import project
 from export import tms, move_tutor
-
+import copy
 
 def merge(target, source):
     """ Merges all keys from target recursively into source.
@@ -17,7 +17,7 @@ def merge(target, source):
         The source dict from which overwrite values are taken.
     """
     for key in source:
-        if key in target:
+        if key in target: 
             # Decide what to do based on the type of the value
             if isinstance(target[key], list):
                 target[key] += source[key]
@@ -68,6 +68,8 @@ if __name__ == '__main__':
 
     project = project.Project(args.project)
     
+    species_links = []
+
     for species in updates:
         update = updates[species]
         idx = project.constants['species'][species]
@@ -77,14 +79,19 @@ if __name__ == '__main__':
         else:
             # Simply use the update as stat set
             stats[idx] = update
-        # Apply move links if present
-        if 'move_link' in update:
-            link_target = update['move_link']
-            # print(f'Move link for {species} to {link_target}')
+        # Apply species links if present
+        if 'species_link' in update:
+            link_target = update['species_link']
             link_idx = project.constants['species'][link_target]
-            stats[idx]['levelup_moves'] = stats[link_idx]['levelup_moves']
-            stats[idx]['accessible_moves'] = stats[link_idx]['accessible_moves']
-            stats[idx]['egg_moves'] = stats[link_idx]['egg_moves']
+            species_links.append((idx, link_idx))
+
+
+    for idx, link_idx in species_links:
+        # Copy the target
+        stat = copy.deepcopy(stats[link_idx])
+        # Update the target
+        merge(stat, stats[idx])
+        stats[idx] = stat
 
     # Create move sets for each species
     for stat in stats:

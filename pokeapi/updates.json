@@ -110,6 +110,9 @@
 		"dex_number": 167
 	},
 	"POKEMON_DARTIGNIS": {
+		"name" : {
+			"LANG_EN" : "Fletchin."
+		},
 		"ability_0": "Flammkoerper",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
@@ -178,7 +181,10 @@
 		"hidden_ability": "Robustheit",
 		"safari_rate": 0,
 		"dex_number": 346,
-		"genus" : "Bronzegl."
+		"genus" : {
+			"LANG_GER" : "Bronzegl.",
+			"LANG_EN" : "Bronze Bell"
+		}
 	},
 	"POKEMON_MAEHIKEL": {
 		"ability_0": "Ap_sparer",
@@ -279,6 +285,9 @@
 		"dex_number": 22
 	},
 	"POKEMON_FLOETTE": {
+		"genus" : {
+			"LANG_EN" : "Single Bl."
+		},
 		"ability_0": "Lernfaehig",
 		"ability_1": null,
 		"hidden_ability": "Curator",
@@ -363,6 +372,9 @@
 		"dex_number": 132
 	},
 	"POKEMON_FEELINARA": {
+		"genus" : {
+			"LANG_EN" : "Intertwin."
+		},
 		"ability_0": "Ap_sparer",
 		"ability_1": null,
 		"hidden_ability": "Curator",
@@ -431,7 +443,10 @@
 		"hidden_ability": "Tollwut",
 		"safari_rate": 0,
 		"dex_number": 41,
-		"genus" : "Schw./ Affe"
+		"genus" : {
+			"LANG_GER" : "Schw./ Affe",
+			"LANG_EN" : "Pig / Ape"
+		}
 	},
 	"POKEMON_RASAFF": {
 		"ability_0": "Munterkeit",
@@ -439,8 +454,11 @@
 		"hidden_ability": "Tollwut",
 		"safari_rate": 0,
 		"dex_number": 42,
-		"genus" : "Schw./ Affe"
-	},
+		"genus" : {
+			"LANG_GER" : "Schw./ Affe",
+			"LANG_EN" : "Pig / Ape"
+		}
+ 	},
 	"POKEMON_FUKANO": {
 		"ability_0": "Bedroher",
 		"ability_1": "Feuerfaenger",
@@ -461,7 +479,10 @@
 		"hidden_ability": "Hochmut",
 		"safari_rate": 50,
 		"dex_number": 184,
-		"genus" : "Klingenkr."
+		"genus" : {
+			"LANG_GER" : "Klingenkr.",
+			"LANG_EN" : "Blade Power"
+		}
 	},
 	"POKEMON_DUOKLES": {
 		"ability_0": "Robustheit",
@@ -469,7 +490,10 @@
 		"hidden_ability": "Hochmut",
 		"safari_rate": 0,
 		"dex_number": 185,
-		"genus" : "Klingenkr."
+		"genus" : {
+			"LANG_GER" : "Klingenkr.",
+			"LANG_EN" : "Blade Power"
+		}
 	},
 	"POKEMON_DURENGARD": {
 		"ability_0": "Taktikwechs",
@@ -477,7 +501,10 @@
 		"hidden_ability": null,
 		"safari_rate": 0,
 		"dex_number": 186,
-		"genus" : "Königskl."
+		"genus" : {
+			"LANG_GER" : "Königskl.",
+			"LANG_EN" : "Kings Blade"
+		}
 	},
 	"POKEMON_ABRA": {
 		"ability_0": "Synchro",
@@ -716,7 +743,10 @@
 		"hidden_ability": "Lebensraeuber",
 		"safari_rate": 0,
 		"dex_number": 78,
-		"dex_entry": "Es versteckt sich im Schatten. Man sagt, wenn sich ein Gengar versteckt, kühlt es sich um 5 Grad ab."
+		"dex_entry": {
+			"LANG_GER" : "Es versteckt sich im Schatten. Man sagt, wenn sich ein Gengar versteckt, kühlt es sich um 5 Grad ab.",
+			"LANG_EN" : "It hides in shadows. It is said that if Gengar is hiding, it cools the area by nearly 10 degrees Fahrenheit."
+		}
 	},
 	"POKEMON_ONIX": {
 		"ability_0": "Steinhaupt",
@@ -843,7 +873,10 @@
 		"hidden_ability": "Achtlos",
 		"safari_rate": 0,
 		"dex_number": 100,
-		"dex_entry": "Durch seine panzerähnliche Körperfülle kann es in bis zu 2 000 Grad heißer Lava leben."
+		"dex_entry": {
+			"LANG_GER" : "Durch seine panzerähnliche Körperfülle kann es in bis zu 2 000 Grad heißer Lava leben.",
+			"LANG_EN" : "Protected by an armor-like hide, it is capable of living in molten lava of 3,600 degrees Fahrenheit."
+		}
 	},
 	"POKEMON_CHANEIRA": {
 		"ability_0": "Innere_kraft",
@@ -942,7 +975,10 @@
 		"hidden_ability": "Feuerfaenger",
 		"safari_rate": 0,
 		"dex_number": 115,
-		"dex_entry" : "Es wurde in der Nähe eines Vulkans gefunden. Die Körpertemperatur dieses Feuerspuckers liegt bei fast 1 200 Grad."
+		"dex_entry" : {
+			"LANG_GER" : "Es wurde in der Nähe eines Vulkans gefunden. Die Körpertemperatur dieses Feuerspuckers liegt bei fast 1 200 Grad.",
+			"LANG_EN" : "Found near the mouth of a volcano. This fire-breather's body temperature is nearly 2,200 degrees Fahrenheit."
+		}
 	},
 	"POKEMON_PINSIR": {
 		"ability_0": "Scherenmacht",
@@ -1013,7 +1049,10 @@
 		"hidden_ability": "Flammkoerper",
 		"safari_rate": 0,
 		"dex_number": 128,
-		"dex_entry" : "In seinem Körper befindet sich eine Flamme. Seine Körpertemperatur liegt vor dem Kampf bei 900 Grad."
+		"dex_entry" : {
+			"LANG_GER" : "In seinem Körper befindet sich eine Flamme. Seine Körpertemperatur liegt vor dem Kampf bei 900 Grad.",
+			"LANG_EN" : "It has a flame sac in its body. Its body temperature tops 1,650 degrees Fahrenheit before battle."
+		}
 	},
 	"POKEMON_PORYGON": {
 		"ability_0": "Faehrte",
@@ -1266,7 +1305,10 @@
 		"hidden_ability": "Schwebe",
 		"safari_rate": 0,
 		"dex_number": 66,
-		"genus" : "Magnetgeb."
+		"genus" : {
+			"LANG_GER" : "Magnetgeb.",
+			"LANG_EN" : "Magnet Area"
+		}
 	},
 	"POKEMON_TOGEKISS": {
 		"ability_0": "Edelmut",
@@ -1276,6 +1318,9 @@
 		"dex_number": 176
 	},
 	"POKEMON_FLABEBE": {
+		"genus" : {
+			"LANG_EN" : "Single Bl."
+		},
 		"ability_0": "Lernfaehig",
 		"ability_1": null,
 		"hidden_ability": "Curator",
@@ -1477,10 +1522,19 @@
 		"hidden_ability": "Schwebe",
 		"safari_rate": 0,
 		"dex_number": 322,
-		"genus" : "Schneegeb.",
-		"dex_entry" : "Sein eisiger Atem mit -50 Grad friert Gegner ein. Was aussieht wie sein Körper, ist tatsächlich hohl."
+		"genus" : {
+			"LANG_GER" : "Schneegeb.",
+			"LANG_EN" : "Snow Land"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Sein eisiger Atem mit -50 Grad friert Gegner ein. Was aussieht wie sein Körper, ist tatsächlich hohl.",
+			"LANG_EN" : "It freezes foes with an icy breath nearly -60 degrees Fahrenheit. What seems to be its body is actually hollow. "
+		}
 	},
 	"POKEMON_SKORGRO": {
+		"genus" : {
+			"LANG_EN" : "Fang Scorp."
+		},
 		"ability_0": "Scherenmacht",
 		"ability_1": "Sandschleier",
 		"hidden_ability": "Sandherz",
@@ -1509,6 +1563,9 @@
 		"dex_number": 113
 	},
 	"POKEMON_SKORGLA": {
+		"genus" : {
+			"LANG_EN" : "Fly Scorp."
+		},
 		"ability_0": "Scherenmacht",
 		"ability_1": "Sandschleier",
 		"hidden_ability": "Sandherz",
@@ -1542,7 +1599,10 @@
 		"hidden_ability": "Frostschicht",
 		"safari_rate": 0,
 		"dex_number": 218,
-		"genus" : "Doppelstoß."
+		"genus" : {
+			"LANG_GER" : "Doppelstoß.",
+			"LANG_EN" : "Twin Tusk"
+		}
 	},
 	"POKEMON_SCHEROX": {
 		"ability_0": "Hexaplaga",
@@ -1732,7 +1792,10 @@
 		"hidden_ability": "Aufwertung",
 		"safari_rate": 0,
 		"dex_number": 222,
-		"genus" : "Gelassenh."
+		"genus" : {
+			"LANG_GER" : "Gelassenh.",
+			"LANG_EN" : "Placid"
+		}
 	},
 	"POKEMON_ELEKID": {
 		"ability_0": "Statik",
@@ -1747,7 +1810,10 @@
 		"hidden_ability": "Feuerfaenger",
 		"safari_rate": 0,
 		"dex_number": 114,
-		"dex_entry" : "Seine Körpertemperatur misst 600 Grad. Beim Ein- und Ausatmen springen glühende Kohlenstücke aus seinem Mund."
+		"dex_entry" : {
+			"LANG_GER" : "Seine Körpertemperatur misst 600 Grad. Beim Ein- und Ausatmen springen glühende Kohlenstücke aus seinem Mund.",
+			"LANG_EN" : "It's small, but its body temperature is over 1 100 degrees Fahrenheit. Embers escape its mouth and nose when it breathes."
+		}
 	},
 	"POKEMON_MILTANK": {
 		"ability_0": "Speckschicht",
@@ -1827,7 +1893,6 @@
 		"dex_number": 252
 	},
 	"POKEMON_BISAFLORM": {
-		"name": "Bisaflor",
 		"basestats": {
 			"hp": 80,
 			"attack": 100,
@@ -1838,39 +1903,14 @@
 		},
 		"type_0": "Pflanze",
 		"type_1": "Gift",
-		"capture_rate": 3,
 		"exp_yield": 255,
-		"ev_yield": [
-			2,
-			0,
-			0,
-			0,
-			1,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 120,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Speckschicht",
 		"ability_1": "Speckschicht",
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_BISAFLOR",
+		"species_link": "POKEMON_BISAFLOR",
 		"dex_number": 0
 	},
 	"POKEMON_GLURAKM": {
-		"name": "Glurak",
 		"basestats": {
 			"hp": 78,
 			"attack": 145,
@@ -1881,39 +1921,14 @@
 		},
 		"type_0": "Feuer",
 		"type_1": "Drache",
-		"capture_rate": 3,
 		"exp_yield": 255,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 120,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Schwebe",
 		"ability_1": "Schwebe",
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_GLURAK",
+		"species_link": "POKEMON_GLURAK",
 		"dex_number": 0
 	},
 	"POKEMON_AQUANAM": {
-		"name": "Aquana",
 		"basestats": {
 			"hp": 130,
 			"attack": 65,
@@ -1924,39 +1939,14 @@
 		},
 		"type_0": "Wasser",
 		"type_1": "Eis",
-		"capture_rate": 3,
 		"exp_yield": 140,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			1,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 120,
-		"base_happiness": 70,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Regengenuss",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_AQUANA",
+		"species_link": "POKEMON_AQUANA",
 		"dex_number": 0
 	},
 	"POKEMON_BLITZAM": {
-		"name": "Blitza",
 		"basestats": {
 			"hp": 65,
 			"attack": 65,
@@ -1967,39 +1957,14 @@
 		},
 		"type_0": "Elektro",
 		"type_1": "Fee",
-		"capture_rate": 45,
 		"exp_yield": 255,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			2,
-			1,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 35,
-		"base_happiness": 70,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Temposchub",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_BLITZA",
+		"species_link": "POKEMON_BLITZA",
 		"dex_number": 0
 	},
 	"POKEMON_FLAMARM": {
-		"name": "Flamara",
 		"basestats": {
 			"hp": 65,
 			"attack": 145,
@@ -2010,39 +1975,13 @@
 		},
 		"type_0": "Feuer",
 		"type_1": "Stahl",
-		"capture_rate": 45,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			2,
-			0,
-			1,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 35,
-		"base_happiness": 70,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Magnetfalle",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_FLAMARA",
+		"species_link": "POKEMON_FLAMARA",
 		"dex_number": 0
 	},
 	"POKEMON_DURENGARDA": {
-		"name": "Durengard",
 		"basestats": {
 			"hp": 60,
 			"attack": 150,
@@ -2051,123 +1990,16 @@
 			"special-attack": 150,
 			"special-defense": 50
 		},
-		"type_0": "Stahl",
-		"type_1": "Geist",
-		"capture_rate": 35,
-		"exp_yield": 244,
-		"ev_yield": [
-			0,
-			2,
-			0,
-			0,
-			1,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 20,
-		"base_happiness": 70,
-		"growth_rate": "Medium",
-		"egg_group_0": "Mineral",
-		"egg_group_1": "Mineral",
-		"ability_0": "Taktikwechs",
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_DURENGARD",
+		"species_link": "POKEMON_DURENGARD",
 		"dex_number": 0
 	},
 	"POKEMON_IN": {
-		"basestats": {
-			"hp": 90,
-			"attack": 135,
-			"defense": 70,
-			"speed": 110,
-			"special-attack": 135,
-			"special-defense": 70
-		},
-		"type_0": "Feuer",
-		"type_1": "Unlicht",
-		"capture_rate": 45,
-		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			2,
-			0,
-			1,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 20,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": "Feuerfaenger",
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_GAME": {
-		"basestats": {
-			"hp": 75,
-			"attack": 95,
-			"defense": 70,
-			"speed": 155,
-			"special-attack": 140,
-			"special-defense": 70
-		},
-		"type_0": "Wasser",
-		"type_1": "Drache",
-		"capture_rate": 45,
-		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			3,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 20,
-		"base_happiness": 0,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": "Expidermis",
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_TURTOKM": {
-		"name": "Turtok",
 		"basestats": {
 			"hp": 79,
 			"attack": 103,
@@ -2178,39 +2010,14 @@
 		},
 		"type_0": "Wasser",
 		"type_1": "Wasser",
-		"capture_rate": 45,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			0,
-			3,
-			0,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 31,
-		"egg_cycles": 20,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Notschutz",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_TURTOK",
+		"species_link": "POKEMON_TURTOK",
 		"dex_number": 0
 	},
 	"POKEMON_AMPHARAOSM": {
-		"name": "Ampharos",
 		"basestats": {
 			"hp": 90,
 			"attack": 95,
@@ -2221,39 +2028,14 @@
 		},
 		"type_0": "Elektro",
 		"type_1": "Drache",
-		"capture_rate": 45,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			2,
-			1,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 20,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Notschutz",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_AMPHAROS",
+		"species_link": "POKEMON_AMPHAROS",
 		"dex_number": 0
 	},
 	"POKEMON_GENGARM": {
-		"name": "Gengar",
 		"basestats": {
 			"hp": 60,
 			"attack": 65,
@@ -2264,39 +2046,14 @@
 		},
 		"type_0": "Geist",
 		"type_1": "Gift",
-		"capture_rate": 45,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			3,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 120,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Wegsperre",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_GENGAR",
+		"species_link": "POKEMON_GENGAR",
 		"dex_number": 0
 	},
 	"POKEMON_BIBORM": {
-		"name": "Bibor",
 		"basestats": {
 			"hp": 65,
 			"attack": 160,
@@ -2307,39 +2064,14 @@
 		},
 		"type_0": "Kaefer",
 		"type_1": "Gift",
-		"capture_rate": 45,
 		"exp_yield": 240,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 120,
-		"base_happiness": 70,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Schwebe",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_BIBOR",
+		"species_link": "POKEMON_BIBOR",
 		"dex_number": 0
 	},
 	"POKEMON_ALTARIAM": {
-		"name": "Altaria",
 		"basestats": {
 			"hp": 75,
 			"attack": 70,
@@ -2350,39 +2082,14 @@
 		},
 		"type_0": "Drache",
 		"type_1": "Elektro",
-		"capture_rate": 45,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			1,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 120,
-		"base_happiness": 70,
-		"growth_rate": "Slow_then_very_fast",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Schwebe",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_ALTARIA",
+		"species_link": "POKEMON_ALTARIA",
 		"dex_number": 0
 	},
 	"POKEMON_GEOWAZM": {
-		"name": "Geowaz",
 		"basestats": {
 			"hp": 80,
 			"attack": 175,
@@ -2393,39 +2100,14 @@
 		},
 		"type_0": "Gestein",
 		"type_1": "Feuer",
-		"capture_rate": 45,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			1,
-			2,
-			0,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 15,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Feuerfaenger",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_GEOWAZ",
+		"species_link": "POKEMON_GEOWAZ",
 		"dex_number": 0
 	},
 	"POKEMON_SENGOM": {
-		"name": "Sengo",
 		"basestats": {
 			"hp": 73,
 			"attack": 145,
@@ -2436,39 +2118,14 @@
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
-		"capture_rate": 90,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			3,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 20,
-		"base_happiness": 70,
-		"growth_rate": "Slow_then_very_fast",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Temposchub",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_SENGO",
+		"species_link": "POKEMON_SENGO",
 		"dex_number": 0
 	},
 	"POKEMON_VIPITISM": {
-		"name": "Vipitis",
 		"basestats": {
 			"hp": 73,
 			"attack": 140,
@@ -2479,39 +2136,14 @@
 		},
 		"type_0": "Gift",
 		"type_1": "Gift",
-		"capture_rate": 90,
 		"exp_yield": 240,
-		"ev_yield": [
-			0,
-			2,
-			0,
-			0,
-			1,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 20,
-		"base_happiness": 70,
-		"growth_rate": "Fast_then_very_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "Temposchub",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_VIPITIS",
+		"species_link": "POKEMON_VIPITIS",
 		"dex_number": 0
 	},
 	"POKEMON_ZOBIRISM": {
-		"name": "Zobiris",
 		"basestats": {
 			"hp": 50,
 			"attack": 100,
@@ -2522,369 +2154,50 @@
 		},
 		"type_0": "Unlicht",
 		"type_1": "Gestein",
-		"capture_rate": 45,
 		"exp_yield": 180,
-		"ev_yield": [
-			0,
-			1,
-			2,
-			0,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 25,
-		"base_happiness": 35,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": null,
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Quadruped",
-		"move_link": "POKEMON_ZOBIRIS",
+		"species_link": "POKEMON_ZOBIRIS",
 		"dex_number": 0
 	},
 	"POKEMON_10d": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_10e": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_10f": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_110": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_111": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_112": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_113": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_114": {
-		"basestats": {
-			"hp": 50,
-			"attack": 150,
-			"defense": 50,
-			"speed": 150,
-			"special-attack": 150,
-			"special-defense": 50
-		},
-		"type_0": "Normal",
-		"type_1": "Normal",
-		"capture_rate": 3,
-		"exp_yield": 1,
-		"ev_yield": [
-			2,
-			2,
-			2,
-			2,
-			2,
-			2,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Medium",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
-		"ability_0": null,
-		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
-		"hidden_ability": null,
-		"shape": "Quadruped",
-		"dex_number": 0
+		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_LOCKSCHAL": {
-		"name" : "Lockschal",
-		"genus" : "Locke",
-		"dex_entry" : "Es ist überaus stolz auf seine Haarpracht. Es träumt davon, mit einem Schwert zu kämpfen.",
+		"name" : {
+			"LANG_GER" : "Lockschal",
+			"LANG_EN" : "Lockshel"
+		},
+		"genus" : {
+			"LANG_GER" : "Lock",
+			"LANG_EN" : "Lock"
+		},
+		"dex_entry" :{
+			"LANG_GER" : "Es ist überaus stolz auf seine Haarpracht. Es träumt davon, mit einem Schwert zu kämpfen.",
+			"LANG_EN" : "It is most proud of its hair. It dreams of fighting with a sword one day."
+		},
 		"height" : 5,
 		"weight" : 50,
 		"basestats": {
@@ -3016,9 +2329,18 @@
 		"dex_number": 253
 	},
 	"POKEMON_STICHSCHAL": {
-		"name" : "Stichschal",
-		"genus" : "Schwert",
-		"dex_entry" : "Sowohl sein Schwert als auch seine Panzerung sind aus Eichenholz. Es ist äußerst edelmütig.",
+		"name" : {
+			"LANG_GER" : "Stichschal",
+			"LANG_EN" : "Piershel"
+		},
+		"genus" : {
+			"LANG_GER" : "Schwert",
+			"LANG_EN" : "Sword"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Sowohl sein Schwert als auch seine Panzerung sind aus Eichenholz. Es ist äußerst edelmütig.",
+			"LANG_EN" : "Its sword as well as its armor are made of oak wood. It behaves very noble."
+		},
 		"height" : 9,
 		"weight" : 216,
 		"basestats": {
@@ -3154,9 +2476,18 @@
 		"dex_number": 254
 	},
 	"POKEMON_STAHLSTICH": {
-		"name" : "Stahlstich",
-		"genus" : "Ritter",
-		"dex_entry" : "Mit seinem eisernen Schwert erlegte es einst ein Brutalanda. Seitdem gilt die Klinge als legendär.",
+		"name" : {
+			"LANG_GER" : "Stahlstich",
+			"LANG_EN" : "Ironpierce"
+		},
+		"genus" : {
+			"LANG_GER": "Ritter",
+			"LANG_EN" : "Knight"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Mit seinem eisernen Schwert erlegte es einst ein Brutalanda. Seitdem gilt die Klinge als legendär.",
+			"LANG_EN" : "With its iron sword it once slayed a Salamance. Ever since the blade is considered legendary."
+		},
 		"height" : 18,
 		"weight" : 1337,
 		"basestats": {
@@ -3307,9 +2638,18 @@
 		"dex_number": 255
 	},
 	"POKEMON_WELUNO": {
-		"name" : "Weluno",
-		"genus" : "Welpe",
-		"dex_entry" : "Es ist leicht reizbar und verfügt über einen starken Kiefer. Seine Bisse sind können schmerzhaft sein.",
+		"name" : {
+			"LANG_GER" : "Weluno",
+			"LANG_EN" : "Pupuno"
+		},
+		"genus" : {
+			"LANG_GER" : "Welpe",
+			"LANG_EN" : "Puppy"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Es ist leicht reizbar und verfügt über einen starken Kiefer. Seine Bisse sind können schmerzhaft sein.",
+			"LANG_EN" : "It gets angry very easily and has strong jaws. Its bites can be very painful."
+		},
 		"height" : 4,
 		"weight" : 25,
 		"basestats": {
@@ -3443,9 +2783,18 @@
 		"dex_number": 256
 	},
 	"POKEMON_ORTHODOS": {
-		"name" : "Orthodos",
-		"genus" : "Orthos",
-		"dex_entry" : "Ein Ring versiegelt seine wahre Kraft. Es heißt, dies sei der Fluch eines Guardevoirs.",
+		"name" : {
+			"LANG_GER" : "Orthodos",
+			"LANG_EN" : "Orthodos"
+		},
+		"genus" : {
+			"LANG_GER" : "Orthos",
+			"LANG_EN" : "Orthos"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Ein Ring versiegelt seine wahre Kraft. Es heißt, dies sei der Fluch eines Guardevoirs.",
+			"LANG_EN" : "A ring seals its true power. Legends tell, this is due to the curse of a Guardevoir."
+		},
 		"height" : 9,
 		"weight" : 195,
 		"basestats": {
@@ -3589,9 +2938,18 @@
 		"dex_number": 257
 	},
 	"POKEMON_ZERBERTRES": {
-		"name" : "Zerbertres",
-		"genus" : "Zerberus",
-		"dex_entry" : "Jeder seiner drei Köpfe ist in der Lage, Feuer zu speien. Wird es zornig, versengt es seine Gegner.",
+		"name" : {
+			"LANG_GER" : "Zerbertres",
+			"LANG_EN" : "Cerbertres"
+		},
+		"genus" : {
+			"LANG_GER" : "Zerberus",
+			"LANG_EN" : "Cerberus"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Jeder seiner drei Köpfe ist in der Lage, Feuer zu speien. Wird es zornig, versengt es seine Gegner.",
+			"LANG_EN" : "Each of its three heads is able to breathe fire. In its wrath, it burns its foes."
+		},
 		"height" : 19,
 		"weight" : 520,
 		"basestats": {
@@ -3754,9 +3112,18 @@
 		"dex_number": 258
 	},
 	"POKEMON_SEEKID": {
-		"name" : "Seekid",
-		"genus" : "Wassermolch",
-		"dex_entry" : "Es gilt als äußerst verschlagen und kann mit seinem Schweif heftige Hiebe austeilen.",
+		"name" : {
+			"LANG_GER" : "Seekid",
+			"LANG_EN" : "Seakid"
+		},
+		"genus" : {
+			"LANG_GER" : "Wassermolch",
+			"LANG_EN" : "Newt"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Es gilt als äußerst verschlagen und kann mit seinem Schweif heftige Hiebe austeilen.",
+			"LANG_EN" : "It is considered very treacherous and can deal severe damage with its tail."
+		},
 		"height" : 4,
 		"weight" : 76,
 		"basestats": {
@@ -3886,9 +3253,18 @@
 		"dex_number": 259
 	},
 	"POKEMON_SEESKULL": {
-		"name" : "Seeskull",
-		"genus" : "Delphin",
-		"dex_entry" : "Mit seinem starken Schweif kann es gewaltige Wellen erzeugen. Im Wasser gilt es als äußert agil.",
+		"name" : {
+			"LANG_GER" : "Seeskull",
+			"LANG_EN" : "Seaskull"
+		},
+		"genus" : {
+			"LANG_GER" : "Delphin",
+			"LANG_EN" : "Dolphin"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Mit seinem starken Schweif kann es gewaltige Wellen erzeugen. Im Wasser gilt es als äußert agil.",
+			"LANG_EN" : "With its mighty tail it can cause big waves. Underwater it is considered very agile."
+		},
 		"height" : 7,
 		"weight" : 280,
 		"basestats": {
@@ -4034,9 +3410,18 @@
 		"dex_number": 260
 	},
 	"POKEMON_SKULLYDRA": {
-		"name" : "Skullydra",
-		"genus" : "Seeschlange",
-		"dex_entry" : "Unterwasser ist es so schnell, dass es schwerfällt, es wahrzunehmen. Weil es sich mit den Knochen seiner Beute schmückt, nennt man es denn Geist der Meere.",
+		"name" : {
+			"LANG_GER" : "Skullydra",
+			"LANG_EN" : "Skullydra"
+		},
+		"genus" : {
+			"LANG_GER" : "Seeschlange",
+			"LANG_EN" : "Sea Serpent"
+		},
+		"dex_entry" : {
+			"LANG_GER" : "Unterwasser ist es so schnell, dass es schwerfällt, es wahrzunehmen. Weil es sich mit den Knochen seiner Beute schmückt, nennt man es denn Geist der Meere.",
+			"LANG_EN" : "Its underwater speed is so high, that it is hardly ever seen. Since it decorates itself with the bones of its prey, some call it the Ghost of the Sea."
+		},
 		"height" : 15,
 		"weight" : 819,
 		"basestats": {
@@ -4213,6 +3598,9 @@
 		"dex_number": 263
 	},
 	"POKEMON_ZIGZACHS": {
+		"genus" : {
+			"LANG_EN" : "Tiny Rac."
+		},
 		"ability_0": "Mitnahme",
 		"ability_1": null,
 		"hidden_ability": "Tollwut",
@@ -4325,6 +3713,9 @@
 		"dex_number": 279
 	},
 	"POKEMON_SCHWALBINI": {
+		"genus" : {
+			"LANG_EN" : "Tiny Swal."
+		},
 		"ability_0": "Adrenalin",
 		"ability_1": null,
 		"hidden_ability": "Orkanschw",
@@ -4449,7 +3840,10 @@
 		"hidden_ability": "Feuerfaenger",
 		"safari_rate": 0,
 		"dex_number": 116,
-		"dex_entry" : "Aus den Enden seiner Arme schießen Feuerbälle mit 2 000 Grad. Es lebt in Vulkankratern."
+		"dex_entry" : {
+			"LANG_GER" : "Aus den Enden seiner Arme schießen Feuerbälle mit 2 000 Grad. Es lebt in Vulkankratern.",
+			"LANG_EN" : "It blasts fireballs of over 3,600 degrees Fahrenheit from the ends of its arms. It lives in volcanic craters."
+		}
 	},
 	"POKEMON_ZWIRRFINST": {
 		"ability_0": "Erzwinger",
@@ -6243,7 +5637,6 @@
 		"dex_number": 0
 	},
 	"POKEMON_GROUDON_REGENT": {
-		"name": "Groudon",
 		"basestats": {
 			"hp": 100,
 			"attack": 195,
@@ -6254,39 +5647,14 @@
 		},
 		"type_0": "Boden",
 		"type_1": "Feuer",
-		"capture_rate": 5,
 		"exp_yield": 255,
-		"ev_yield": [
-			0,
-			3,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 255,
-		"egg_cycles": 120,
-		"base_happiness": 0,
-		"growth_rate": "Slow",
-		"egg_group_0": "Unbekannt",
-		"egg_group_1": "Unbekannt",
 		"ability_0": "R_kaiseraura",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": null,
-		"shape": "Upright",
-		"move_link": "POKEMON_GROUDON",
+		"species_link": "POKEMON_GROUDON",
 		"dex_number": 0
 	},
 	"POKEMON_KECLEON_PURPLE": {
-		"name": "Kecleon",
 		"basestats": {
 			"hp": 95,
 			"attack": 120,
@@ -6297,35 +5665,11 @@
 		},
 		"type_0": "Normal",
 		"type_1": "Normal",
-		"capture_rate": 200,
 		"exp_yield": 132,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			1,
-			0,
-			1,
-			0
-		],
-		"common_item": null,
-		"rare_item": null,
-		"gender_ratio": 127,
-		"egg_cycles": 20,
-		"base_happiness": 70,
-		"growth_rate": "Medium_slow",
-		"egg_group_0": "Feld",
-		"egg_group_1": "Feld",
 		"ability_0": "Farbwechsel",
 		"ability_1": null,
-		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
 		"hidden_ability": "Wandlungsk",
-		"shape": "Upright",
-		"move_link": "POKEMON_KECLEON",
+		"species_link": "POKEMON_KECLEON",
 		"dex_number": 293
 	}
 }

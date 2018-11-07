@@ -2,7 +2,7 @@
 
 from . import constant
 
-def export_levelup_moves(stats, project):
+def export_levelup_moves(stats, project, language='LANG_GER'):
     """ Creates a structure for levelup moves.
     
     Parameters:
@@ -11,6 +11,8 @@ def export_levelup_moves(stats, project):
         A list of dicts representing the updated pokemon.
     project : pymap.project.Project
         The pymap project.
+    language : str
+        The language to export the structure in.
         
     Returns:
     --------

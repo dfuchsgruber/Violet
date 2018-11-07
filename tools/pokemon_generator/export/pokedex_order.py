@@ -1,6 +1,6 @@
 # Export pokemon order
 
-def export_pokedex_order(stats, project):
+def export_pokedex_order(stats, project, language='LANG_GER'):
     """ Creates a structure for pokedex order.
     
     Parameters:
@@ -9,6 +9,8 @@ def export_pokedex_order(stats, project):
         A list of dicts representing the updated pokemon.
     project : pymap.project.Project
         The pymap project.
+    language : str
+        The language to export the structure in.
         
     Returns:
     --------

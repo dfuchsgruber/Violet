@@ -8,11 +8,13 @@ import urllib
 import pymap.project
 import cache.cache as pokeapi_cache
 from species_to_idx import species_to_idx
+import language
 
-LANGUAGE='de'
+LANGUAGE='de' # This is language the constants are in (do not change!)
 VERSION_GROUP='sun-moon'
 METHOD_LEVEL_UP = 'Level up'
 METHOD_EGG = 'Ei'
+
 
 def get_url(*args):
     """ Gets the url of a resource. 
@@ -111,7 +113,7 @@ if __name__ == '__main__':
             # Process the species information
             pokemon_species = get_resource(get_url('pokemon-species', idx), cache=cache)
 
-            pokemon['name'] = get_name(pokemon_species)
+            pokemon['name'] = {lang : get_name(pokemon_species, language=value) for lang, value in language.languages.items()}
             egg_groups = [
                 get_name(get_resource(egg_group['url'], cache=cache))
                 for egg_group in pokemon_species['egg_groups']
@@ -133,17 +135,24 @@ if __name__ == '__main__':
             pokemon['shape'] = get_name(get_resource(pokemon_species['shape']['url'], cache=cache), language='en')
             pokemon['growth_rate'] = pokemon_species['growth_rate']['name']
 
-            pokemon['dex_entry'] = None
+            pokemon['dex_entry'] = {}
             # Parse dex entries
             for dex_entry in pokemon_species['flavor_text_entries']:
-                if dex_entry['language']['name'] == LANGUAGE:
-                    pokemon['dex_entry'] = dex_entry['flavor_text'].replace('\n', ' ') # Linebreaks will be calculated at compile time
+                for lang, value in language.languages.items():
+                    if dex_entry['language']['name'] == value:
+                        # Check if the version group matches
+                        version = get_resource(dex_entry['version']['url'], cache=cache)['version_group']['name']
+                        if version == args.version_group or version == 'x-y': # For some pokemon the database is incomplete
+                            pokemon['dex_entry'][lang] = dex_entry['flavor_text'].replace('\n', ' ') # Linebreaks will be calculated at compile time
+                            for sequence in ('\u00ad ', '\u00ad', '\f', '”'): # Remove -, new page chars, and the Pokémon suffix from the genus
+                                pokemon['dex_entry'][lang] = pokemon['dex_entry'][lang].replace(sequence, '')
             
-            pokemon['genus'] = ''
+            pokemon['genus'] = {}
             # Parse the genera
             for genus in pokemon_species['genera']:
-                if genus['language']['name'] == LANGUAGE:
-                    pokemon['genus'] = genus['genus']
+                for lang, value in language.languages.items():
+                    if genus['language']['name'] == value:
+                        pokemon['genus'][lang] = genus['genus'].replace(' Pokémon', '') # Remove the Pokémon suffix
 
             pokemon_resource = get_resource(get_url('pokemon', idx), cache=cache)
             pokemon['height'] = pokemon_resource['height']

@@ -20,13 +20,14 @@ if __name__ == '__main__':
         ('pokemonnames', 'pokemon_names', 'pokemon_names', pokemon_names.export_pokemon_names),
         ('pokedexorder', 'pokedex_order', 'pokedex_order', pokedex_order.export_pokedex_order),
         ('pokedexentries', 'pokedex_entries', 'pokedex_entries',
-            lambda stats, project: pokedex_entries.export_pokedex_entries(stats, project, pokedex_order.export_pokedex_order(stats, project))
+            lambda stats, project, language='LANG_GER': pokedex_entries.export_pokedex_entries(stats, project, pokedex_order.export_pokedex_order(stats, project), language=language)
         )
     )
 
     parser = argparse.ArgumentParser(description='Exports base stats and move tables.')
     parser.add_argument('input', help='File that contains the pokemon stats and movesets.')
     parser.add_argument('project', help='The pymap project.')
+    parser.add_argument('--language', help='The language to export the structures in.', dest='language', default='LANG_GER')
 
     # Add arguments for file types to export
     for name, default_file_type, default_label, _ in types_to_export:
@@ -47,5 +48,5 @@ if __name__ == '__main__':
             json.dump({
                 'label' : getattr(args, f'{name}label'),
                 'type' : getattr(args, f'{name}filetype'),
-                'data' : export_func(stats, project)
+                'data' : export_func(stats, project, language=args.language)
             }, f, indent=project.config['json']['indent'])

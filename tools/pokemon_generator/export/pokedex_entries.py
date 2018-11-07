@@ -1,6 +1,6 @@
 # Export pokedex entries
 
-def export_pokedex_entries(stats, project, pokedex_order, num_entries=386):
+def export_pokedex_entries(stats, project, pokedex_order, num_entries=386, language='LANG_GER'):
     """ Creates a structure for pokedex entries.
     
     Parameters:
@@ -13,6 +13,8 @@ def export_pokedex_entries(stats, project, pokedex_order, num_entries=386):
         The entry numbers of each species.
     num_entries:
         How many pokedex entries there are.
+    language : str
+        The language to export the structure in.
         
     Returns:
     --------
@@ -37,9 +39,9 @@ def export_pokedex_entries(stats, project, pokedex_order, num_entries=386):
         if pokedex_number > 0:
             # Update the dex entry
             if 'genus' in stat:
-                pokedex_entries[pokedex_number]['genus'] = stat['genus']
+                pokedex_entries[pokedex_number]['genus'] = stat['genus'][language]
             if 'dex_entry' in stat:
-                pokedex_entries[pokedex_number]['entry_string_0'] = stat['dex_entry']
+                pokedex_entries[pokedex_number]['entry_string_0'] = stat['dex_entry'][language]
             if 'weight' in stat:
                 pokedex_entries[pokedex_number]['weight'] = stat['weight']
             if 'height' in stat:
