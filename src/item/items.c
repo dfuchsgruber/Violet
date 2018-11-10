@@ -834,7 +834,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_DUBIOSDISK
-		LANGDEP(PSTRING("Dubiosdisk"), PSTRING("????????")),
+		LANGDEP(PSTRING("Dubiosdisc"), PSTRING("????????")),
 		0x37, //index
 		2100, //price
 		0, //holding_effect_id

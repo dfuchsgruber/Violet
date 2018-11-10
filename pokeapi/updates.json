@@ -658,7 +658,16 @@
 		"ability_1": "Robustheit",
 		"hidden_ability": "Schwebe",
 		"safari_rate": 0,
-		"dex_number": 65
+		"dex_number": 65,
+		"evolutions" : {
+			"POKEMON_MAGNEZONE" : {
+				"trigger" : "On_Map",
+				"argument" : {
+					"bank" : 255,
+					"map_idx" : 255
+				}
+			}
+		}
 	},
 	"POKEMON_PORENTA": {
 		"ability_0": "Adlerauge",
@@ -1027,7 +1036,23 @@
 		"ability_1": null,
 		"hidden_ability": "Allrounder",
 		"safari_rate": 0,
-		"dex_number": 125
+		"dex_number": 125,
+		"evolutions" : {
+			"POKEMON_FOLIPURBA" : {
+				"trigger" : "On_Map",
+				"argument" : {
+					"bank" : 255,
+					"map_idx" : 255
+				}
+			},
+			"POKEMON_GLAZIOLA" : {
+				"trigger" : "On_Map",
+				"argument" : {
+					"bank" : 255,
+					"map_idx" : 255
+				}
+			}
+		}
 	},
 	"POKEMON_AQUANA": {
 		"ability_0": "H2o_absorber",
@@ -3619,14 +3644,33 @@
 		"ability_1": null,
 		"hidden_ability": "Angsthase",
 		"safari_rate": 0,
-		"dex_number": 266
+		"dex_number": 266,
+		"evolutions" : {
+			"POKEMON_SCHALOKO" : {
+				"trigger" : "Pid_even",
+				"argument" : 7,
+				"baby_trigger_item" : null
+			},
+			"POKEMON_PANEKON" : {
+				"trigger" : "Pid_odd",
+				"argument" : 7,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_SCHALOKO": {
 		"ability_0": "Expidermis",
 		"ability_1": null,
 		"hidden_ability": null,
 		"safari_rate": 0,
-		"dex_number": 267
+		"dex_number": 267,
+		"evolutions" : {
+			"POKEMON_PANEKON" : {
+				"trigger" : "Level_up",
+				"argument" : 255,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_PAPINELLA": {
 		"ability_0": "Hexaplaga",
@@ -3696,7 +3740,14 @@
 		"ability_1": null,
 		"hidden_ability": "Techniker",
 		"safari_rate": 0,
-		"dex_number": 277
+		"dex_number": 277,
+		"evolutions" : {
+			"POKEMON_NINJATOM" : {
+				"trigger" : "Spawn_Second",
+				"argument" : 20,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_NINJASK": {
 		"ability_0": "Temposchub",
@@ -3832,7 +3883,16 @@
 		"ability_1": "Magnetfalle",
 		"hidden_ability": "Felsenkern",
 		"safari_rate": 0,
-		"dex_number": 296
+		"dex_number": 296,
+		"evolutions" : {
+			"POKEMON_VOLUMINAS" : {
+				"trigger" : "On_Map",
+				"argument" : {
+					"bank" : 255,
+					"map_idx" : 255
+				}
+			}
+		}
 	},
 	"POKEMON_MAGBRANT": {
 		"ability_0": "Flammkoerper",
@@ -3841,7 +3901,7 @@
 		"safari_rate": 0,
 		"dex_number": 116,
 		"dex_entry" : {
-			"LANG_GER" : "Aus den Enden seiner Arme schießen Feuerbälle mit 2 000 Grad. Es lebt in Vulkankratern.",
+			"LANG_GER" : "Aus den Enden seiner Arme schießen Feuerbälle mit 2,000 Grad. Es lebt in Vulkankratern.",
 			"LANG_EN" : "It blasts fireballs of over 3,600 degrees Fahrenheit from the ends of its arms. It lives in volcanic craters."
 		}
 	},

@@ -1,9 +1,8 @@
 
-//evolution_table equ 0x8900000 //*TODO*/
 
 //evolutions
-.org 0x08045878
-	ldr r1, =get_pokemons_basis_stage | 1
+.org 0x08045874
+	ldr r1, =pokemon_get_basis_stage | 1
 	bx r1
 	.pool
 

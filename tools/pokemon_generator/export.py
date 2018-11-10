@@ -21,7 +21,8 @@ if __name__ == '__main__':
         ('pokedexorder', 'pokedex_order', 'pokedex_order', pokedex_order.export_pokedex_order),
         ('pokedexentries', 'pokedex_entries', 'pokedex_entries',
             lambda stats, project, language='LANG_GER': pokedex_entries.export_pokedex_entries(stats, project, pokedex_order.export_pokedex_order(stats, project), language=language)
-        )
+        ),
+        ('evolutions', 'evolutions', 'pokemon_evolutions', evolution.export_evolutions)
     )
 
     parser = argparse.ArgumentParser(description='Exports base stats and move tables.')
@@ -44,9 +45,10 @@ if __name__ == '__main__':
     # Export types
 
     for name, _, _, export_func in types_to_export:
+        data = export_func(stats, project, language=args.language)
         with open(getattr(args, name), 'w+', encoding=project.config['json']['encoding']) as f:
             json.dump({
                 'label' : getattr(args, f'{name}label'),
                 'type' : getattr(args, f'{name}filetype'),
-                'data' : export_func(stats, project, language=args.language)
+                'data' : data
             }, f, indent=project.config['json']['indent'])

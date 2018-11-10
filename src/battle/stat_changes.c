@@ -66,16 +66,7 @@ int defender_modify_def(int def){
     battler *defender = &battlers[defending_battler];
     switch(defender->item){
         case ITEM_EVOLITH:{
-            bool defender_can_evolve = false;
-            int i;
-            for(i = 0; i < 5; i++){
-                if(pokemon_evolutions[defender->species][i].method !=
-                        EVOLUTION_METHOD_NONE){
-                    defender_can_evolve = true;
-                    break;
-                }
-            }
-            if(defender_can_evolve) 
+        	if(pokemon_can_evolve(defender->species))
                 def *= 2;
         }
             
@@ -87,16 +78,7 @@ int defender_modify_sdef(int sdef){
     battler *defender = &battlers[defending_battler];
     switch(defender->item){
         case ITEM_EVOLITH:{
-            bool defender_can_evolve = false;
-            int i;
-            for(i = 0; i < 5; i++){
-                if(pokemon_evolutions[defender->species][i].method !=
-                        EVOLUTION_METHOD_NONE){
-                    defender_can_evolve = true;
-                    break;
-                }
-            }
-            if(defender_can_evolve) 
+            if(pokemon_can_evolve(defender->species))
                 sdef *= 2;
         }
             

@@ -8,7 +8,7 @@ import urllib
 import pymap.project
 import cache.cache as pokeapi_cache
 from species_to_idx import species_to_idx
-import language
+import language, evolution
 
 LANGUAGE='de' # This is language the constants are in (do not change!)
 VERSION_GROUP='sun-moon'
@@ -80,7 +80,125 @@ def get_name(resource, language=LANGUAGE):
     for name in resource['names']:
         if name['language']['name'] == language:
             return name['name']
-    raise RuntimeError(f'Language {language} not found in {resource}') 
+    raise RuntimeError(f'Language {language} not found in {resource}')
+
+
+
+def parse_evolution_chain_entry(entry, species_idx, baby_trigger_item=None, cache=None, language='de'):
+    """ Reursively parses an entry in the evolution chain.
+    
+    Parameters:
+    -----------
+    entry : dict
+        The evolution chain entry, possibly nested.
+    species_idx : int
+        The original dex value of the species.
+    baby_trigger_item : str or None
+        The item for triggering the baby breeding.
+    cache : dict or None
+        An optional cache instance.
+    language : str
+        The language 
+    
+    Returns:
+    --------
+    evolutions : dict or None
+        A dict representing the evolutions of a pokemon.
+    """
+    entry_idx = get_resource(entry['species']['url'], cache=cache)['id']
+    if species_idx == entry_idx:
+        # Found the entry of this species in the evolution chain
+        evolutions = {}
+        # Parse all evolutions of this species
+        for target in entry['evolves_to']:
+            target_idx = get_resource(target['species']['url'], cache=cache)['id']
+            target_species = None
+            for species, idx in species_to_idx.items():
+                if idx == target_idx:
+                    target_species = species
+                    break
+            if target_species is None:
+                raise RuntimeError(f'Evolution target with species index {target_idx} not in species_to_idx as value.')
+            evolutions[target_species] = {}
+            # Parse evolution details
+            evolution_details = target['evolution_details'][0]
+            trigger, argument = parse_evolution_method(evolution_details, cache=cache)
+            evolutions[target_species]['trigger'] = trigger
+            evolutions[target_species]['argument'] = argument
+            evolutions[target_species]['baby_trigger_item'] = baby_trigger_item if entry['is_baby'] else None
+        return evolutions
+    else:
+        # Recursively explore the evolution tree
+        for target in entry['evolves_to']:
+            evolutions = parse_evolution_chain_entry(target, species_idx, baby_trigger_item=baby_trigger_item, cache=cache, language=language)
+            if evolutions is not None:
+                return evolutions
+    # In this branch of the evolution tree no match was found
+    return None
+
+        
+def parse_evolution_method(evolution_details, cache=None):
+    """ Parses the evolution method of a evolution chain entry. That is,
+    the trigger and arguments are infered and an evolution method is generated
+    that only demans a single argument.
+    
+    Parameters:
+    -----------
+    evolution_details : dict
+        The evolution details.
+    cache : dict or None
+        An optional cache instance.
+
+    Returns:
+    --------
+    evolution_method : str
+        The evolution method.
+    argument : str or int
+        The argument.
+    """
+    # Note that the following methods are not properly integrated into the Api and have to be part of the updates therefore
+    # PID-based: Pid_even, Pid_odd
+    # Map-based: On_Map
+    # Shed : Shedinja
+    trigger_type = evolution_details['trigger']['name']
+    if trigger_type == 'level-up': 
+        # Level Up induced evolution
+        if evolution_details['min_happiness'] is not None: 
+            # Friendship based evolution
+            return evolution.get_friendship_evolution(evolution_details), evolution_details['min_happiness']
+        elif evolution_details['relative_physical_stats'] is not None:
+            # Tyrouge evolution line
+            return evolution.get_physical_stat_based_evolution(evolution_details), evolution_details['min_level']
+        elif evolution_details['min_beauty'] is not None:
+            # Milotic
+            return 'Beauty', evolution_details['min_beauty']
+        elif evolution_details['held_item'] is not None:
+            # Parse the item
+            item_name = get_name(get_resource(evolution_details['held_item']['url'], cache=cache))
+            return evolution.get_held_item_based_evolution(evolution_details), item_name
+        elif evolution_details['known_move'] is not None:
+            move = get_name(get_resource(evolution_details['known_move']['url'], cache=cache))
+            return 'Know_Move', move
+        elif evolution_details['known_move_type'] is not None:
+            move_type = get_name(get_resource(evolution_details['known_move_type']['url'], cache=cache))
+            return 'Know_Move_Type', move_type
+        else:
+            return 'Level_Up', evolution_details['min_level']
+    elif trigger_type == 'trade':
+        # Trade based evolutions will become link-cable based
+        if evolution_details['held_item'] is not None:
+            return 'Link_Cable_and_Item', get_name(get_resource(evolution_details['held_item']['url'], cache=cache))
+        else:
+            return 'Stone', 'Linkkabel'
+    elif trigger_type == 'use-item':
+        argument = get_name(get_resource(evolution_details['item']['url'], cache=cache))
+        return evolution.get_stone_based_evolution(evolution_details), argument
+    elif trigger_type == 'shed':
+        return 'Spawn_Second', evolution_details['min_level']
+    else:
+        raise RuntimeError(f'Unsupported trigger type {trigger_type} for evolution {evolution_details}')
+
+            
 
 # Translate a stat name to an index
 stat_to_idx = {
@@ -134,6 +252,13 @@ if __name__ == '__main__':
             # Shape is only available in english...
             pokemon['shape'] = get_name(get_resource(pokemon_species['shape']['url'], cache=cache), language='en')
             pokemon['growth_rate'] = pokemon_species['growth_rate']['name']
+
+            # Parse evolutions
+            evolution_chain = get_resource(pokemon_species['evolution_chain']['url'], cache=cache)
+            baby_trigger_item = None
+            if evolution_chain['baby_trigger_item'] is not None:
+                baby_trigger_item = get_name(get_resource(evolution_chain['baby_trigger_item']['url'], cache=cache))
+            pokemon['evolutions'] = parse_evolution_chain_entry(evolution_chain['chain'], idx, baby_trigger_item=baby_trigger_item, cache=cache)
 
             pokemon['dex_entry'] = {}
             # Parse dex entries
