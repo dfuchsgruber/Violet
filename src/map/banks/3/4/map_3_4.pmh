@@ -771,12 +771,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8f1c53",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -788,12 +788,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8f1c87",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -805,12 +805,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8f1cb5",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -822,12 +822,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8f1cdb",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -839,12 +839,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8f1dac",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -856,12 +856,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8fed46",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				}
 			]

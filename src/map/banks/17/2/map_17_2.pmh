@@ -159,12 +159,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_TOP_BELEBER",
-							47,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_TOP_BELEBER",
+							"flag": 47,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				}
 			]

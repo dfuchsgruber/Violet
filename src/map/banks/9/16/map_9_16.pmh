@@ -376,12 +376,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x959462",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -393,12 +393,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x959462",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -410,12 +410,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x9594b1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -427,12 +427,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x9594b1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -444,12 +444,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x9594b1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -461,12 +461,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x9594b1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -478,12 +478,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95aa6b",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -495,12 +495,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95aa6b",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -512,12 +512,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95aa88",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -529,12 +529,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95aa88",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -546,12 +546,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95aa88",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -563,12 +563,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95aa88",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -580,12 +580,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x95838b",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -597,12 +597,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x95838b",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -614,12 +614,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x9594c3",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -631,12 +631,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x9594c3",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -648,12 +648,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x95a7e5",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -665,12 +665,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x95a7e5",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -682,12 +682,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x95a869",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -699,12 +699,12 @@
 					"type": 1,
 					"value": {
 						"script": "ow_script_0x95a869",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -716,12 +716,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a8d0",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -733,12 +733,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a8d0",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -750,12 +750,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a952",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -767,12 +767,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a952",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -784,12 +784,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a9da",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -801,12 +801,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a9da",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -818,12 +818,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a9da",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -835,12 +835,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95a9da",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				}
 			]

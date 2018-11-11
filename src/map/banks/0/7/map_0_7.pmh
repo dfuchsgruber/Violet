@@ -237,12 +237,12 @@
 					"type": 5,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_AP_PLUS",
-							38,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_AP_PLUS",
+							"flag": 38,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -254,12 +254,12 @@
 					"type": 5,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_TOP_AETHER",
-							39,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_TOP_AETHER",
+							"flag": 39,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				}
 			]

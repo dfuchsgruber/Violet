@@ -83,12 +83,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x878711",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -100,12 +100,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x80067e",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -117,12 +117,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8002ec",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -134,12 +134,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_TRANK",
-							1,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_TRANK",
+							"flag": 1,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -151,12 +151,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_ELIXIER",
-							2,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_ELIXIER",
+							"flag": 2,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				}
 			]

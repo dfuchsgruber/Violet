@@ -982,12 +982,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x8104f8",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -999,12 +999,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1016,12 +1016,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x86b31f",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1033,12 +1033,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1050,12 +1050,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1067,12 +1067,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1084,12 +1084,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1101,12 +1101,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1118,12 +1118,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1135,12 +1135,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1152,12 +1152,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1169,12 +1169,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1186,12 +1186,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1203,12 +1203,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1220,12 +1220,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1237,12 +1237,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1254,12 +1254,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1271,12 +1271,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x87aac1",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1288,12 +1288,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_PRUNUSBEERE",
-							10,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_PRUNUSBEERE",
+							"flag": 10,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1305,12 +1305,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_HERZSCHUPPE",
-							11,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_HERZSCHUPPE",
+							"flag": 11,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1322,12 +1322,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_SUPERSCHUTZ",
-							12,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_SUPERSCHUTZ",
+							"flag": 12,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -1339,12 +1339,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_BELEBER",
-							13,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_BELEBER",
+							"flag": 13,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				}
 			]

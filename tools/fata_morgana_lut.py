@@ -28,9 +28,9 @@ if __name__ == '__main__':
     
     # Consider all blocks with idx >= 0x320 (this is hardcoded but w/e...)
     data = [
-        (x + 7, y + 7, footer['blocks'][y][x][0])
+        (x + 7, y + 7, footer['blocks'][y][x]['block_idx'])
         for y, x in itertools.product(range(footer['height']), range(footer['width']))
-        if footer['blocks'][y][x][0] >= 0x320
+        if footer['blocks'][y][x]['block_idx'] >= 0x320
     ]
 
     blocks = [

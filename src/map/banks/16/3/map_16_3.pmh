@@ -539,12 +539,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_BELEBER",
-							42,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_BELEBER",
+							"flag": 42,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -556,12 +556,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_SONDERBONBON",
-							43,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_SONDERBONBON",
+							"flag": 43,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -573,12 +573,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_HERZSCHUPPE",
-							44,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_HERZSCHUPPE",
+							"flag": 44,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -590,12 +590,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_NONE",
-							0,
-							1,
-							2
-						]
+						"item": {
+							"item": "ITEM_NONE",
+							"flag": 0,
+							"amount": 1,
+							"chunk": 2
+						}
 					}
 				}
 			]

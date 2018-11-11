@@ -325,12 +325,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_TOP_SCHUTZ",
-							60,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_TOP_SCHUTZ",
+							"flag": 60,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -342,12 +342,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_FLUCHTSEIL",
-							61,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_FLUCHTSEIL",
+							"flag": 61,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				}
 			]

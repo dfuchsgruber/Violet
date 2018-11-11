@@ -156,12 +156,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_FEUERHEILER",
-							50,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_FEUERHEILER",
+							"flag": 50,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				}
 			]

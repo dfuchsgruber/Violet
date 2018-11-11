@@ -175,12 +175,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x95df87",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -192,12 +192,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x81c4d0",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -209,12 +209,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_botogel",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				}
 			]

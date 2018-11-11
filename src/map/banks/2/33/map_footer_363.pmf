@@ -4,448 +4,448 @@
 	"data": {
 		"border": [
 			[
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			]
 		],
 		"tileset_primary": "maptileset12",
 		"tileset_secondary": "maptileset60",
 		"blocks": [
 			[
-				[
-					681,
-					1
-				],
-				[
-					681,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					681,
-					0
-				],
-				[
-					681,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					681,
-					0
-				],
-				[
-					681,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 681,
+					"level": 1
+				},
+				{
+					"block_idx": 681,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 681,
+					"level": 0
+				},
+				{
+					"block_idx": 681,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 681,
+					"level": 0
+				},
+				{
+					"block_idx": 681,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			],
 			[
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					689,
-					0
-				],
-				[
-					680,
-					0
-				],
-				[
-					680,
-					0
-				]
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 689,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				},
+				{
+					"block_idx": 680,
+					"level": 0
+				}
 			]
 		],
 		"width": 10,

@@ -567,12 +567,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_ELIXIER",
-							51,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_ELIXIER",
+							"flag": 51,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -584,12 +584,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_TOP_TRANK",
-							52,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_TOP_TRANK",
+							"flag": 52,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -601,12 +601,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_NONE",
-							0,
-							3,
-							1
-						]
+						"item": {
+							"item": "ITEM_NONE",
+							"flag": 0,
+							"amount": 3,
+							"chunk": 1
+						}
 					}
 				},
 				{
@@ -618,12 +618,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_NONE",
-							1,
-							4,
-							1
-						]
+						"item": {
+							"item": "ITEM_NONE",
+							"flag": 1,
+							"amount": 4,
+							"chunk": 1
+						}
 					}
 				},
 				{
@@ -635,12 +635,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_NONE",
-							2,
-							1,
-							1
-						]
+						"item": {
+							"item": "ITEM_NONE",
+							"flag": 2,
+							"amount": 1,
+							"chunk": 1
+						}
 					}
 				}
 			]

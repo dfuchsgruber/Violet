@@ -825,12 +825,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_STERNENSTAUB",
-							19,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_STERNENSTAUB",
+							"flag": 19,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -842,12 +842,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_STERNENSTAUB",
-							20,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_STERNENSTAUB",
+							"flag": 20,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -859,12 +859,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_HYPERBALL",
-							21,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_HYPERBALL",
+							"flag": 21,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -876,12 +876,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_ELIXIER",
-							22,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_ELIXIER",
+							"flag": 22,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -893,12 +893,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_TSITRUBEERE",
-							23,
-							5,
-							0
-						]
+						"item": {
+							"item": "ITEM_TSITRUBEERE",
+							"flag": 23,
+							"amount": 5,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -910,12 +910,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_BELEBER",
-							24,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_BELEBER",
+							"flag": 24,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -927,12 +927,12 @@
 					"type": 7,
 					"value": {
 						"script": "0",
-						"item": [
-							"ITEM_HERZSCHUPPE",
-							25,
-							1,
-							0
-						]
+						"item": {
+							"item": "ITEM_HERZSCHUPPE",
+							"flag": 25,
+							"amount": 1,
+							"chunk": 0
+						}
 					}
 				}
 			]

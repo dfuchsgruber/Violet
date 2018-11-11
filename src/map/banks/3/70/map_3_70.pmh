@@ -137,12 +137,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x83f981",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				},
 				{
@@ -154,12 +154,12 @@
 					"type": 0,
 					"value": {
 						"script": "ow_script_0x83f981",
-						"item": [
-							"0",
-							"0",
-							0,
-							0
-						]
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
 					}
 				}
 			]
