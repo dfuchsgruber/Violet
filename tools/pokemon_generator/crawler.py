@@ -9,6 +9,7 @@ import pymap.project
 import cache.cache as pokeapi_cache
 from species_to_idx import species_to_idx
 import language, evolution
+import export.constant
 
 LANGUAGE='de' # This is language the constants are in (do not change!)
 VERSION_GROUP='sun-moon'
@@ -304,17 +305,19 @@ if __name__ == '__main__':
             pokemon['accessible_moves'] = set()
 
             for element in pokemon_resource['moves']:
-                # Only consider moves of one version group
+                # Only consider only levelup and egg moves from the matching version group
                 for version_group_details in element['version_group_details']:
+                    move = get_name(get_resource(element['move']['url'], cache=cache))
+                    if export.constant.attack_to_constant(project, move) is None:
+                        continue # Move not represented in this game
                     if version_group_details['version_group']['name'] == args.version_group:
                         move_learn_method = get_name(get_resource(version_group_details['move_learn_method']['url'], cache=cache))
-                        move = get_name(get_resource(element['move']['url'], cache=cache))
                         if move_learn_method == METHOD_LEVEL_UP:
                             pokemon['levelup_moves'].append((move, version_group_details['level_learned_at']))
                         elif move_learn_method == METHOD_EGG:
                             pokemon['egg_moves'].add(move)
-                        pokemon['accessible_moves'].add(move)
-        
+                    pokemon['accessible_moves'].add(move) # Also add moves from non-matching version groups
+
             # Parse held items
             pokemon['common_item'] = 0
             pokemon['rare_item'] = 0
