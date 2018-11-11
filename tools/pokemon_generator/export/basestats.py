@@ -44,8 +44,8 @@ def export_basestats(stats, project, language='LANG_GER'):
                 else:
                     basestat[key] = 0
         # The color is nested, treat it differently
-        color = basestat['color_and_flip'][1]
-        basestat['color_and_flip'][1] = constant.strfix(f'POKEMON_COLOR_{color}'.upper())
+        color = basestat['color_and_flip']['color']
+        basestat['color_and_flip']['color'] = constant.strfix(f'POKEMON_COLOR_{color}'.upper())
         # The item may not be present
         for key in ('common_item', 'rare_item'):
             item = basestat[key]

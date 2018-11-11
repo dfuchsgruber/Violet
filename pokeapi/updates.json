@@ -12,15 +12,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -32,10 +32,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped"
 	},
@@ -2237,15 +2237,15 @@
 		"type_1": "Pflanze",
 		"capture_rate": 45,
 		"exp_yield": 65,
-		"ev_yield": [
-			0,
-			1,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 1,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -2257,10 +2257,10 @@
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Gruen"
+		},
 		"hidden_ability": "Ungebrochen",
 		"shape": "Legs",
 		"levelup_moves": [
@@ -2380,15 +2380,15 @@
 		"type_1": "Pflanze",
 		"capture_rate": 45,
 		"exp_yield": 141,
-		"ev_yield": [
-			0,
-			1,
-			1,
-			2,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 2,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -2400,10 +2400,10 @@
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Gruen"
+		},
 		"hidden_ability": "Ungebrochen",
 		"shape": "Humanoid",
 		"levelup_moves": [
@@ -2527,15 +2527,15 @@
 		"type_1": "Stahl",
 		"capture_rate": 45,
 		"exp_yield": 208,
-		"ev_yield": [
-			0,
-			2,
-			1,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 2,
+			"defense" : 1,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -2547,10 +2547,10 @@
 		"ability_0": "Notduenger",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Gruen"
+		},
 		"hidden_ability": "Ungebrochen",
 		"shape": "Humanoid",
 		"levelup_moves": [
@@ -2689,15 +2689,15 @@
 		"type_1": "Feuer",
 		"capture_rate": 45,
 		"exp_yield": 65,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			1,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 1,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -2709,10 +2709,10 @@
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Rot"
+		},
 		"hidden_ability": "Dunkle_magie",
 		"shape": "Quadruped",
 		"levelup_moves": [
@@ -2834,15 +2834,15 @@
 		"type_1": "Unlicht",
 		"capture_rate": 45,
 		"exp_yield": 142,
-		"ev_yield": [
-			0,
-			1,
-			0,
-			0,
-			1,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 2,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -2854,10 +2854,10 @@
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Rot"
+		},
 		"hidden_ability": "Dunkle_magie",
 		"shape": "Quadruped",
 		"levelup_moves": [
@@ -2989,15 +2989,15 @@
 		"type_1": "Unlicht",
 		"capture_rate": 45,
 		"exp_yield": 209,
-		"ev_yield": [
-			0,
-			3,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 1,
+			"special-attack" : 2,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -3009,10 +3009,10 @@
 		"ability_0": "Grossbrand",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Rot"
+		},
 		"hidden_ability": "Dunkle_magie",
 		"shape": "Quadruped",
 		"levelup_moves": [
@@ -3163,15 +3163,15 @@
 		"type_1": "Wasser",
 		"capture_rate": 45,
 		"exp_yield": 65,
-		"ev_yield": [
-			0,
-			1,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 1,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -3183,10 +3183,10 @@
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Blau"
+		},
 		"hidden_ability": "H2o_absorber",
 		"shape": "Upright",
 		"levelup_moves": [
@@ -3304,15 +3304,15 @@
 		"type_1": "Wasser",
 		"capture_rate": 45,
 		"exp_yield": 143,
-		"ev_yield": [
-			0,
-			2,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 2,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -3324,10 +3324,10 @@
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Blau"
+		},
 		"hidden_ability": "H2o_absorber",
 		"shape": "Squiggle",
 		"levelup_moves": [
@@ -3461,15 +3461,15 @@
 		"type_1": "Drache",
 		"capture_rate": 45,
 		"exp_yield": 210,
-		"ev_yield": [
-			0,
-			3,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 2,
+			"special-attack" : 1,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 31,
@@ -3481,10 +3481,10 @@
 		"ability_0": "Sturzbach",
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "Blau"
+		},
 		"hidden_ability": "H2o_absorber",
 		"shape": "Squiggle",
 		"levelup_moves": [
@@ -4561,15 +4561,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4581,10 +4581,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4602,15 +4602,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4622,10 +4622,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4643,15 +4643,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4663,10 +4663,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4684,15 +4684,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4704,10 +4704,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4725,15 +4725,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4745,10 +4745,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4766,15 +4766,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4786,10 +4786,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4807,15 +4807,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4827,10 +4827,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4848,15 +4848,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4868,10 +4868,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4889,15 +4889,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4909,10 +4909,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4930,15 +4930,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4950,10 +4950,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -4971,15 +4971,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -4991,10 +4991,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5012,15 +5012,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5032,10 +5032,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5053,15 +5053,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5073,10 +5073,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5094,15 +5094,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5114,10 +5114,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5135,15 +5135,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5155,10 +5155,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5176,15 +5176,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5196,10 +5196,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5217,15 +5217,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5237,10 +5237,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5258,15 +5258,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5278,10 +5278,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5299,15 +5299,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5319,10 +5319,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5340,15 +5340,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5360,10 +5360,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5381,15 +5381,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5401,10 +5401,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5422,15 +5422,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5442,10 +5442,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5463,15 +5463,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5483,10 +5483,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5504,15 +5504,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5524,10 +5524,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5545,15 +5545,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5565,10 +5565,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5586,15 +5586,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5606,10 +5606,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5627,15 +5627,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5647,10 +5647,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0
@@ -5668,15 +5668,15 @@
 		"type_1": "Normal",
 		"capture_rate": 0,
 		"exp_yield": 0,
-		"ev_yield": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		],
+		"ev_yield": {
+			"hp" : 0,
+			"attack" : 0,
+			"defense" : 0,
+			"speed" : 0,
+			"special-attack" : 0,
+			"special-defense" : 0,
+			"Padding" : 0
+		},
 		"common_item": null,
 		"rare_item": null,
 		"gender_ratio": 0,
@@ -5688,10 +5688,10 @@
 		"ability_0": null,
 		"ability_1": null,
 		"safari_rate": 0,
-		"color_and_flip": [
-			0,
-			"None"
-		],
+		"color_and_flip": {
+			"flip" : 0,
+			"color" : "None"
+		},
 		"hidden_ability": null,
 		"shape": "Quadruped",
 		"dex_number": 0

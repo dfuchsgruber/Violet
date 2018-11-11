@@ -24,10 +24,13 @@ def export_levelup_moves(stats, project, language='LANG_GER'):
         moveset = stat.get('levelup_moves', None)
         if moveset is not None:
             # Each move is a tuple name, level
-            moveset = map(lambda move: (constant.attack_to_constant(project, move[0]), move[1]), moveset)
+            moveset = map(lambda move: {
+                'move' : constant.attack_to_constant(project, move[0]),
+                'level' : move[1]
+                }, moveset)
             # Only consider moves in the game
-            moveset = filter(lambda move: move[0] is not None, moveset)
+            moveset = filter(lambda entry: entry['move'] is not None, moveset)
             # Sort moveset by level
-            moveset = sorted(moveset, key=lambda move: move[1])
+            moveset = sorted(moveset, key=lambda entry: entry['level'])
         levelup_moves.append(moveset)
     return levelup_moves

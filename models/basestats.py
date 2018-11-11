@@ -69,7 +69,7 @@ levelup_move_type = agb.types.BitfieldType('u16', [
 
 levelup_move_array_type = agb.types.VariableLengthArrayType(
     'basestats.levelup_move',
-    [511, 127]
+    {'move' : 511, 'level' : 127}
 )
 
 levelup_move_array_pointer_type = agb.types.PointerType(

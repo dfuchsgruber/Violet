@@ -198,18 +198,6 @@ def parse_evolution_method(evolution_details, cache=None):
     else:
         raise RuntimeError(f'Unsupported trigger type {trigger_type} for evolution {evolution_details}')
 
-            
-
-# Translate a stat name to an index
-stat_to_idx = {
-    'hp' : 0,
-    'attack' : 1,
-    'defense' : 2,
-    'speed' : 3,
-    'special-attack' : 4,
-    'special-defense' : 5
-}
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Fetches and preprocesses data for each pokemon from pokewiki.de.')
     parser.add_argument('project', help='the pymap project which holds the species constants')
@@ -248,7 +236,10 @@ if __name__ == '__main__':
             pokemon['capture_rate'] = pokemon_species['capture_rate']
             pokemon['base_happiness'] = pokemon_species['base_happiness']
             pokemon['egg_cycles'] = pokemon_species['hatch_counter']
-            pokemon['color_and_flip'] = [0, get_name(get_resource(pokemon_species['color']['url'], cache=cache))]
+            pokemon['color_and_flip'] = {
+                'flip' : 0,
+                'color' : get_name(get_resource(pokemon_species['color']['url'], cache=cache))
+            }
             # Shape is only available in english...
             pokemon['shape'] = get_name(get_resource(pokemon_species['shape']['url'], cache=cache), language='en')
             pokemon['growth_rate'] = pokemon_species['growth_rate']['name']
@@ -299,12 +290,12 @@ if __name__ == '__main__':
 
             # Parse stats
             pokemon['basestats'] = {}
-            pokemon['ev_yield'] = [0] * 7
+            pokemon['ev_yield'] = {'Padding' : 0}
 
             for element in pokemon_resource['stats']:
                 name = element['stat']['name']
                 pokemon['basestats'][name] = element['base_stat']
-                pokemon['ev_yield'][stat_to_idx[name]] = element['effort']
+                pokemon['ev_yield'][name] = element['effort']
 
             # Parse movesets
             pokemon['levelup_moves'] = []
