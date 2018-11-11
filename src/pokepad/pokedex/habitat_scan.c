@@ -36,7 +36,7 @@ int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
                 if (j < 1)
                     probability++;
                 //check if the namespace is already registered with this style
-                cnt = pokedex_get_namespace_of_species_add_pair_if_not_present(dst, cnt, namespace, probability, HABITAT_TYPE_WATER);
+                cnt = pokedex_get_namespace_of_species_add_pair_if_not_present(dst, cnt, namespace, probability, HABITAT_TYPE_WASSER);
             }
         }
 

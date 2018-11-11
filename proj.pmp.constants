@@ -37,5 +37,7 @@
 	"battle_weathers": "constants/battle_weathers.const",
 	"battle_bgs": "constants/battle_bgs.const",
 	"battle_effects": "constants/battle_effects.const",
-	"block_hm_usage": "constants/block_hm_usage.const"
+	"block_hm_usage": "constants/block_hm_usage.const",
+	"pokemon_growth_rates" : "constants/pokemon_growth_rates.const",
+	"pokemon_colors" : "constants/pokemon_colors.const"
 }

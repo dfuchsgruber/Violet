@@ -12,10 +12,10 @@ s8 attack_priority_get(u16 attack, u8 user){
     s8 prio = attacks[attack].priority;
     switch(battlers[user].ability){
         case ORKANSCHW:
-            if(attacks[attack].type == TYPE_FLYING) prio++;
+            if(attacks[attack].type == TYPE_FLUG) prio++;
             break;
         case DUNKLE_MAGIE:
-            if(attacks[attack].type == TYPE_DARK) prio++;
+            if(attacks[attack].type == TYPE_UNLICHT) prio++;
             break;
         case STROLCH:
             if(attacks[attack].category == CATEGORY_STATUS) prio++;

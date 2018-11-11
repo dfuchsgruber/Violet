@@ -48,8 +48,8 @@ bool protect_attack_succeeds(){
     }else{
         //regular protect
         if(!(attacks[active_attack].flags & AFFECTED_BY_PROTECT)) return true;
-        if(active_attack == ATTACK_FLUCH && attacker->type1 != TYPE_GHOST &&
-                attacker->type2 != TYPE_GHOST) return true; //curse succeeds
+        if(active_attack == ATTACK_FLUCH && attacker->type1 != TYPE_GEIST &&
+                attacker->type2 != TYPE_GEIST) return true; //curse succeeds
         if(attack_needs_charging(active_attack)){
             //check if the user has done the charging round or is starting the
             //charge

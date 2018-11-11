@@ -20,7 +20,7 @@ str_0x959205:
 .global str_0x9591cb
 
 str_0x9591cb:
-    .string "Was? Du hast mich besiegt?\nDu hast \was auf dem Kasten!"
+    .string "Was? Du hast mich besiegt?\nDu hast \'was auf dem Kasten!"
         
         
 .elseif LANG_EN

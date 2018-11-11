@@ -3027,7 +3027,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_sandwirbel
 
 	str_attack_desc_attack_sandwirbel:
-		.string "A lot of sand is\nhurled in the foe\s\nface, reducing its\naccuracy."
+		.string "A lot of sand is\nhurled in the foe\'s\nface, reducing its\naccuracy."
 
 	.global str_attack_desc_attack_kopfnuss
 
@@ -3192,12 +3192,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_blubbstrahl
 
 	str_attack_desc_attack_blubbstrahl:
-		.string "A spray of bubbles\nstrikes the foe.\nIt may lower the\nfoe\s Speed stat."
+		.string "A spray of bubbles\nstrikes the foe.\nIt may lower the\nfoe\'s Speed stat."
 
 	.global str_attack_desc_attack_aurorastrahl
 
 	str_attack_desc_attack_aurorastrahl:
-		.string "A rainbow-colored\nattack beam.\nIt may lower the\nfoe\s Attack stat."
+		.string "A rainbow-colored\nattack beam.\nIt may lower the\nfoe\'s Attack stat."
 
 	.global str_attack_desc_attack_hyperstrahl
 
@@ -3232,7 +3232,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_geowurf
 
 	str_attack_desc_attack_geowurf:
-		.string "A gravity-fed throw\nthat causes damage\nmatching the user\s\nlevel."
+		.string "A gravity-fed throw\nthat causes damage\nmatching the user\'s\nlevel."
 
 	.global str_attack_desc_attack_staerke
 
@@ -3257,7 +3257,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_wachstum
 
 	str_attack_desc_attack_wachstum:
-		.string "The user\s body is\nforced to grow,\nraising the SP.\nAtk stat."
+		.string "The user\'s body is\nforced to grow,\nraising the SP.\nAtk stat."
 
 	.global str_attack_desc_attack_rasierblatt
 
@@ -3357,7 +3357,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_psychokinese
 
 	str_attack_desc_attack_psychokinese:
-		.string "A strong telekinetic\nattack. It may also\nlower the foe\s\nSp. Def stat."
+		.string "A strong telekinetic\nattack. It may also\nlower the foe\'s\nSp. Def stat."
 
 	.global str_attack_desc_attack_hypnose
 
@@ -3392,7 +3392,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_nachtnebel
 
 	str_attack_desc_attack_nachtnebel:
-		.string "An attack with a\nmirage that inflicts\ndamage matching\nthe user\s level."
+		.string "An attack with a\nmirage that inflicts\ndamage matching\nthe user\'s level."
 
 	.global str_attack_desc_attack_mimikry
 
@@ -3402,7 +3402,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_kreideschrei
 
 	str_attack_desc_attack_kreideschrei:
-		.string "An ear-splitting\nscreech is emitted\nto sharply reduce\nthe foe\s Defense."
+		.string "An ear-splitting\nscreech is emitted\nto sharply reduce\nthe foe\'s Defense."
 
 	.global str_attack_desc_attack_doppelteam
 
@@ -3412,7 +3412,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_genesung
 
 	str_attack_desc_attack_genesung:
-		.string "A self-healing move\nthat restores HP by\nup to half of the\nuser\s maximum HP."
+		.string "A self-healing move\nthat restores HP by\nup to half of the\nuser\'s maximum HP."
 
 	.global str_attack_desc_attack_haertner
 
@@ -3427,7 +3427,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_rauchwolke
 
 	str_attack_desc_attack_rauchwolke:
-		.string "An obscuring cloud\nof smoke or ink\nreduces the foe\s\naccuracy."
+		.string "An obscuring cloud\nof smoke or ink\nreduces the foe\'s\naccuracy."
 
 	.global str_attack_desc_attack_konfustrahl
 
@@ -3527,7 +3527,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_schnapper
 
 	str_attack_desc_attack_schnapper:
-		.string "The foe is clamped\nand squeezed by\nthe user\s shell for\ntwo to five turns."
+		.string "The foe is clamped\nand squeezed by\nthe user\'s shell for\ntwo to five turns."
 
 	.global str_attack_desc_attack_sternschauer
 
@@ -3612,7 +3612,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_blubber
 
 	str_attack_desc_attack_blubber:
-		.string "A spray of bubbles\nhits the foe.\nIt may lower the\nfoe\s Speed stat."
+		.string "A spray of bubbles\nhits the foe.\nIt may lower the\nfoe\'s Speed stat."
 
 	.global str_attack_desc_attack_irrschlag
 
@@ -3627,7 +3627,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_blitz
 
 	str_attack_desc_attack_blitz:
-		.string "A blast of light\nthat cuts the foe\s\naccuracy. It also\nilluminates caves."
+		.string "A blast of light\nthat cuts the foe\'s\naccuracy. It also\nilluminates caves."
 
 	.global str_attack_desc_attack_psywelle
 
@@ -3697,7 +3697,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_superzahn
 
 	str_attack_desc_attack_superzahn:
-		.string "The user attacks\nwith sharp fangs\nand halves the\nfoe\s HP."
+		.string "The user attacks\nwith sharp fangs\nand halves the\nfoe\'s HP."
 
 	.global str_attack_desc_attack_schlitzer
 
@@ -3727,17 +3727,17 @@ attack_descriptions:
 	.global str_attack_desc_attack_raub
 
 	str_attack_desc_attack_raub:
-		.string "An attack that may\ntake the foe\s held\nitem if the user\nisn\t holding one."
+		.string "An attack that may\ntake the foe\'s held\nitem if the user\nisn\'t holding one."
 
 	.global str_attack_desc_attack_spinnennetz
 
 	str_attack_desc_attack_spinnennetz:
-		.string "Ensnares the foe \nwith sticky string\nso it doesn\t flee\nor switch out."
+		.string "Ensnares the foe \nwith sticky string\nso it doesn\'t flee\nor switch out."
 
 	.global str_attack_desc_attack_willensleser
 
 	str_attack_desc_attack_willensleser:
-		.string "The user predicts\nthe foe\s action to\nensure its next\nattack hits."
+		.string "The user predicts\nthe foe\'s action to\nensure its next\nattack hits."
 
 	.global str_attack_desc_attack_nachtmahr
 
@@ -3832,17 +3832,17 @@ attack_descriptions:
 	.global str_attack_desc_attack_lehmschelle
 
 	str_attack_desc_attack_lehmschelle:
-		.string "Mud is hurled in\nthe foe\s face to\ninflict damage and\nlower its accuracy."
+		.string "Mud is hurled in\nthe foe\'s face to\ninflict damage and\nlower its accuracy."
 
 	.global str_attack_desc_attack_octazooka
 
 	str_attack_desc_attack_octazooka:
-		.string "Ink is blasted in\nthe foe\s face or\neyes to damage and\nlower accuracy."
+		.string "Ink is blasted in\nthe foe\'s face or\neyes to damage and\nlower accuracy."
 
 	.global str_attack_desc_attack_stachler
 
 	str_attack_desc_attack_stachler:
-		.string "A trap of spikes is\nlaid around the\nfoe\s party to hurt\nfoes switching in."
+		.string "A trap of spikes is\nlaid around the\nfoe\'s party to hurt\nfoes switching in."
 
 	.global str_attack_desc_attack_blitzkanone
 
@@ -3852,7 +3852,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_gesichte
 
 	str_attack_desc_attack_gesichte:
-		.string "Completely negates\nthe foe\s efforts to\nheighten its ability\nto evade."
+		.string "Completely negates\nthe foe\'s efforts to\nheighten its ability\nto evade."
 
 	.global str_attack_desc_attack_abgangsbund
 
@@ -3907,7 +3907,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_charme
 
 	str_attack_desc_attack_charme:
-		.string "The foe is charmed\nby the user\s cute\nappeals, sharply\ncutting its Attack."
+		.string "The foe is charmed\nby the user\'s cute\nappeals, sharply\ncutting its Attack."
 
 	.global str_attack_desc_attack_walzer
 
@@ -3942,7 +3942,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_stahlfluegel
 
 	str_attack_desc_attack_stahlfluegel:
-		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user\s Defense."
+		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user\'s Defense."
 
 	.global str_attack_desc_attack_horrorblick
 
@@ -3982,12 +3982,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_bodyguard
 
 	str_attack_desc_attack_bodyguard:
-		.string "It protects the\nuser\s party from\nall status problems\nfor five turns."
+		.string "It protects the\nuser\'s party from\nall status problems\nfor five turns."
 
 	.global str_attack_desc_attack_leidteiler
 
 	str_attack_desc_attack_leidteiler:
-		.string "The user adds its\nHP to the foe\s HP,\nthen equally shares\nthe total HP."
+		.string "The user adds its\nHP to the foe\'s HP,\nthen equally shares\nthe total HP."
 
 	.global str_attack_desc_attack_laeuterfeuer
 
@@ -4002,7 +4002,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_wuchtschlag
 
 	str_attack_desc_attack_wuchtschlag:
-		.string "The foe is punched\nwith the user\s full\npower. It confuses\nthe foe if it hits."
+		.string "The foe is punched\nwith the user\'s full\npower. It confuses\nthe foe if it hits."
 
 	.global str_attack_desc_attack_vielender
 
@@ -4042,12 +4042,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_eisenschweif
 
 	str_attack_desc_attack_eisenschweif:
-		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe\s Defense stat."
+		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe\'s Defense stat."
 
 	.global str_attack_desc_attack_metallklaue
 
 	str_attack_desc_attack_metallklaue:
-		.string "The foe is attacked\nwith steel claws.\nIt may also raise\nthe user\s Attack."
+		.string "The foe is attacked\nwith steel claws.\nIt may also raise\nthe user\'s Attack."
 
 	.global str_attack_desc_attack_ueberwurf
 
@@ -4057,17 +4057,17 @@ attack_descriptions:
 	.global str_attack_desc_attack_morgengrauen
 
 	str_attack_desc_attack_morgengrauen:
-		.string "Restores the user\s\nHP. The amount of\nHP regained varies\nwith the weather."
+		.string "Restores the user\'s\nHP. The amount of\nHP regained varies\nwith the weather."
 
 	.global str_attack_desc_attack_synthese
 
 	str_attack_desc_attack_synthese:
-		.string "Restores the user\s\nHP. The amount of\nHP regained varies\nwith the weather."
+		.string "Restores the user\'s\nHP. The amount of\nHP regained varies\nwith the weather."
 
 	.global str_attack_desc_attack_mondschein
 
 	str_attack_desc_attack_mondschein:
-		.string "Restores the user\s\nHP. The amount of\nHP regained varies\nwith the weather."
+		.string "Restores the user\'s\nHP. The amount of\nHP regained varies\nwith the weather."
 
 	.global str_attack_desc_attack_innere_kraft
 
@@ -4097,12 +4097,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_knirscher
 
 	str_attack_desc_attack_knirscher:
-		.string "The foe is crunched\nwith sharp fangs.\nIt may lower the\nfoe\s SP. Def."
+		.string "The foe is crunched\nwith sharp fangs.\nIt may lower the\nfoe\'s SP. Def."
 
 	.global str_attack_desc_attack_fokuswelle
 
 	str_attack_desc_attack_fokuswelle:
-		.string "A retaliation move\nthat pays back the\nfoe\s special attack\ndouble."
+		.string "A retaliation move\nthat pays back the\nfoe\'s special attack\ndouble."
 
 	.global str_attack_desc_attack_psycho_plus
 
@@ -4117,12 +4117,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_antik_kraft
 
 	str_attack_desc_attack_antik_kraft:
-		.string "An ancient power is\nused to attack. It\nmay also raise all\nthe user\s stats."
+		.string "An ancient power is\nused to attack. It\nmay also raise all\nthe user\'s stats."
 
 	.global str_attack_desc_attack_spukball
 
 	str_attack_desc_attack_spukball:
-		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe\s SP. Def."
+		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe\'s SP. Def."
 
 	.global str_attack_desc_attack_seher
 
@@ -4197,7 +4197,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_memento_mori
 
 	str_attack_desc_attack_memento_mori:
-		.string "The user faints,\nbut sharply lowers\nthe foe\s Attack\nand SP. Atk."
+		.string "The user faints,\nbut sharply lowers\nthe foe\'s Attack\nand SP. Atk."
 
 	.global str_attack_desc_attack_fassade
 
@@ -4212,7 +4212,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_riechsalz
 
 	str_attack_desc_attack_riechsalz:
-		.string "Doubly effective on\na paralyzed foe,\nbut it also cures\nthe foe\s paralysis."
+		.string "Doubly effective on\na paralyzed foe,\nbut it also cures\nthe foe\'s paralysis."
 
 	.global str_attack_desc_attack_spotlight
 
@@ -4222,7 +4222,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_natur_kraft
 
 	str_attack_desc_attack_natur_kraft:
-		.string "An attack that\nchanges type\ndepending on the\nuser\s location."
+		.string "An attack that\nchanges type\ndepending on the\nuser\'s location."
 
 	.global str_attack_desc_attack_ladevorgang
 
@@ -4237,7 +4237,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_rechte_hand
 
 	str_attack_desc_attack_rechte_hand:
-		.string "A move that boosts\nthe power of the\nally\s attack in a\nbattle."
+		.string "A move that boosts\nthe power of the\nally\'s attack in a\nbattle."
 
 	.global str_attack_desc_attack_trickbetrug
 
@@ -4247,7 +4247,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_rollentausch
 
 	str_attack_desc_attack_rollentausch:
-		.string "The user mimics the\nfoe completely and\ncopies the foe\s\nability."
+		.string "The user mimics the\nfoe completely and\ncopies the foe\'s\nability."
 
 	.global str_attack_desc_attack_wunschtraum
 
@@ -4262,17 +4262,17 @@ attack_descriptions:
 	.global str_attack_desc_attack_verwurzler
 
 	str_attack_desc_attack_verwurzler:
-		.string "The user lays roots\nthat restore HP on\nevery turn.\nIt can\t switch out."
+		.string "The user lays roots\nthat restore HP on\nevery turn.\nIt can\'t switch out."
 
 	.global str_attack_desc_attack_kraftkoloss
 
 	str_attack_desc_attack_kraftkoloss:
-		.string "A powerful attack,\nbut it also lowers\nthe user\s Attack\nand Defense stats."
+		.string "A powerful attack,\nbut it also lowers\nthe user\'s Attack\nand Defense stats."
 
 	.global str_attack_desc_attack_magiemantel
 
 	str_attack_desc_attack_magiemantel:
-		.string "Reflects back the\nfoe\s Leech Seed\nand any status-\ndamaging move."
+		.string "Reflects back the\nfoe\'s Leech Seed\nand any status-\ndamaging move."
 
 	.global str_attack_desc_attack_aufbereitung
 
@@ -4297,7 +4297,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_abschlag
 
 	str_attack_desc_attack_abschlag:
-		.string "Knocks down the\nfoe\s held item to\nprevent its use\nduring the battle."
+		.string "Knocks down the\nfoe\'s held item to\nprevent its use\nduring the battle."
 
 	.global str_attack_desc_attack_notsituation
 
@@ -4307,7 +4307,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_eruption
 
 	str_attack_desc_attack_eruption:
-		.string "The higher the\nuser\s HP, the more\npowerful this\nattack becomes."
+		.string "The higher the\nuser\'s HP, the more\npowerful this\nattack becomes."
 
 	.global str_attack_desc_attack_wertwechsel
 
@@ -4332,7 +4332,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_uebernahme
 
 	str_attack_desc_attack_uebernahme:
-		.string "Steals the effects\nof the foe\s\nhealing or status-\nchanging move."
+		.string "Steals the effects\nof the foe\'s\nhealing or status-\nchanging move."
 
 	.global str_attack_desc_attack_geheimpower
 
@@ -4352,7 +4352,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_tarnung
 
 	str_attack_desc_attack_tarnung:
-		.string "Alters the user\s\ntype depending on\nthe location\s\nterrain."
+		.string "Alters the user\'s\ntype depending on\nthe location\'s\nterrain."
 
 	.global str_attack_desc_attack_schweifglanz
 
@@ -4362,12 +4362,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_scheinwerfer
 
 	str_attack_desc_attack_scheinwerfer:
-		.string "A burst of light\ninjures the foe. It\nmay also lower the\nfoe\s SP. Def."
+		.string "A burst of light\ninjures the foe. It\nmay also lower the\nfoe\'s SP. Def."
 
 	.global str_attack_desc_attack_nebelball
 
 	str_attack_desc_attack_nebelball:
-		.string "A flurry of down\nhits the foe. It\nmay also lower the\nfoe\s SP. Atk."
+		.string "A flurry of down\nhits the foe. It\nmay also lower the\nfoe\'s SP. Atk."
 
 	.global str_attack_desc_attack_daunenreigen
 
@@ -4417,22 +4417,22 @@ attack_descriptions:
 	.global str_attack_desc_attack_zermalmklaue
 
 	str_attack_desc_attack_zermalmklaue:
-		.string "The foe is attacked\nwith sharp claws.\nIt may also lower\nthe foe\s Defense."
+		.string "The foe is attacked\nwith sharp claws.\nIt may also lower\nthe foe\'s Defense."
 
 	.global str_attack_desc_attack_lohekanonade
 
 	str_attack_desc_attack_lohekanonade:
-		.string "The foe is hit with\na huge explosion.\nThe user can\t move\non the next turn."
+		.string "The foe is hit with\na huge explosion.\nThe user can\'t move\non the next turn."
 
 	.global str_attack_desc_attack_aquahaubitze
 
 	str_attack_desc_attack_aquahaubitze:
-		.string "The foe is hit with\na watery cannon.\nThe user can\t move\non the next turn."
+		.string "The foe is hit with\na watery cannon.\nThe user can\'t move\non the next turn."
 
 	.global str_attack_desc_attack_sternhieb
 
 	str_attack_desc_attack_sternhieb:
-		.string "The foe is hit with\na hard, fast punch.\nIt may also raise\nthe user\s Attack."
+		.string "The foe is hit with\na hard, fast punch.\nIt may also raise\nthe user\'s Attack."
 
 	.global str_attack_desc_attack_erstauner
 
@@ -4447,12 +4447,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_aromakur
 
 	str_attack_desc_attack_aromakur:
-		.string "A soothing scent is\nreleased to heal\nall status problems\nin the user\s party."
+		.string "A soothing scent is\nreleased to heal\nall status problems\nin the user\'s party."
 
 	.global str_attack_desc_attack_trugtraene
 
 	str_attack_desc_attack_trugtraene:
-		.string "The user feigns\ncrying to sharply\nlower the foe\s\nSp. Def stat."
+		.string "The user feigns\ncrying to sharply\nlower the foe\'s\nSp. Def stat."
 
 	.global str_attack_desc_attack_windschnitt
 
@@ -4462,27 +4462,27 @@ attack_descriptions:
 	.global str_attack_desc_attack_hitzekoller
 
 	str_attack_desc_attack_hitzekoller:
-		.string "An intense attack\nthat also sharply\nreduces the user\s\nSp. Atk stat."
+		.string "An intense attack\nthat also sharply\nreduces the user\'s\nSp. Atk stat."
 
 	.global str_attack_desc_attack_schnueffler
 
 	str_attack_desc_attack_schnueffler:
-		.string "Completely negates\nthe foe\s efforts to\nheighten its ability\nto evade."
+		.string "Completely negates\nthe foe\'s efforts to\nheighten its ability\nto evade."
 
 	.global str_attack_desc_attack_felsgrab
 
 	str_attack_desc_attack_felsgrab:
-		.string "Boulders are hurled\nat the foe. It also\nlowers the foe\s\nSpeed if it hits."
+		.string "Boulders are hurled\nat the foe. It also\nlowers the foe\'s\nSpeed if it hits."
 
 	.global str_attack_desc_attack_silberhauch
 
 	str_attack_desc_attack_silberhauch:
-		.string "The foe is attacked\nwith a silver dust.\nIt may raise all\nthe user\s stats."
+		.string "The foe is attacked\nwith a silver dust.\nIt may raise all\nthe user\'s stats."
 
 	.global str_attack_desc_attack_metallsound
 
 	str_attack_desc_attack_metallsound:
-		.string "A horrible metallic\nscreech is used to\nsharply lower the\nfoe\s SP. Def."
+		.string "A horrible metallic\nscreech is used to\nsharply lower the\nfoe\'s SP. Def."
 
 	.global str_attack_desc_attack_grasfloete
 
@@ -4502,7 +4502,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_fontraenen
 
 	str_attack_desc_attack_fontraenen:
-		.string "The higher the\nuser\s HP, the more\npowerful this\nattack becomes."
+		.string "The higher the\nuser\'s HP, the more\npowerful this\nattack becomes."
 
 	.global str_attack_desc_attack_ampelleuchte
 
@@ -4537,7 +4537,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_lehmbruehe
 
 	str_attack_desc_attack_lehmbruehe:
-		.string "The user attacks\nwith muddy water.\nIt may also lower\nthe foe\s accuracy."
+		.string "The user attacks\nwith muddy water.\nIt may also lower\nthe foe\'s accuracy."
 
 	.global str_attack_desc_attack_kugelsaat
 
@@ -4547,7 +4547,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_aero_ass
 
 	str_attack_desc_attack_aero_ass:
-		.string "An extremely fast\nattack against one\ntarget. It can\t be\nevaded."
+		.string "An extremely fast\nattack against one\ntarget. It can\'t be\nevaded."
 
 	.global str_attack_desc_attack_eisspeer
 
@@ -4557,12 +4557,12 @@ attack_descriptions:
 	.global str_attack_desc_attack_eisenabwehr
 
 	str_attack_desc_attack_eisenabwehr:
-		.string "The user hardens\nits body\s surface\nto sharply raise its\nDefense stat."
+		.string "The user hardens\nits body\'s surface\nto sharply raise its\nDefense stat."
 
 	.global str_attack_desc_attack_rueckentzug
 
 	str_attack_desc_attack_rueckentzug:
-		.string "The user blocks the\nfoe\s way with arms\nspread wide to\nprevent escape."
+		.string "The user blocks the\nfoe\'s way with arms\nspread wide to\nprevent escape."
 
 	.global str_attack_desc_attack_jauler
 
@@ -4577,7 +4577,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_fauna_statue
 
 	str_attack_desc_attack_fauna_statue:
-		.string "The foe is hit with\nan enormous branch.\nThe user can\t move\non the next turn."
+		.string "The foe is hit with\nan enormous branch.\nThe user can\'t move\non the next turn."
 
 	.global str_attack_desc_attack_protzer
 
@@ -4592,7 +4592,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_lehmschuss
 
 	str_attack_desc_attack_lehmschuss:
-		.string "The user attacks by\nhurling mud.\nIt also reduces the\nfoe\s Speed."
+		.string "The user attacks by\nhurling mud.\nIt also reduces the\nfoe\'s Speed."
 
 	.global str_attack_desc_attack_giftschweif
 
@@ -4602,7 +4602,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_bezirzer
 
 	str_attack_desc_attack_bezirzer:
-		.string "A cutely executed\nattack that also\nsteals the foe\s\nhold item."
+		.string "A cutely executed\nattack that also\nsteals the foe\'s\nhold item."
 
 	.global str_attack_desc_attack_volttackle
 
@@ -4632,7 +4632,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_drachentanz
 
 	str_attack_desc_attack_drachentanz:
-		.string "A mystic, powerful\ndance that boosts\nthe user\s Attack\nand Speed stats."
+		.string "A mystic, powerful\ndance that boosts\nthe user\'s Attack\nand Speed stats."
 
 	.global str_attack_desc_attack_felswurf
 
@@ -4642,7 +4642,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_schockwelle
 
 	str_attack_desc_attack_schockwelle:
-		.string "A rapid jolt of\nelectricity strikes\nthe foe. It can\t\nbe evaded."
+		.string "A rapid jolt of\nelectricity strikes\nthe foe. It can\'t\nbe evaded."
 
 	.global str_attack_desc_attack_aquawelle
 
@@ -4657,7 +4657,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_psyschub
 
 	str_attack_desc_attack_psyschub:
-		.string "An intense attack\nthat also sharply\nreduces the user\s\nSp. Atk stat."
+		.string "An intense attack\nthat also sharply\nreduces the user\'s\nSp. Atk stat."
 
 	str_attack_desc_attack_filler:
 		.string "-"
@@ -4745,7 +4745,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_lichtkanone
 
 	str_attack_desc_attack_lichtkanone:
-		.string "Bright rays\nthat may lower\nfoe\s Sp.Def."
+		.string "Bright rays\nthat may lower\nfoe\'s Sp.Def."
 
 	.global str_attack_desc_attack_draco_meteor
 
@@ -4760,7 +4760,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_energieball
 
 	str_attack_desc_attack_energieball:
-		.string "Floral energie\nthat may lower\nfoe\s Sp.Def."
+		.string "Floral energie\nthat may lower\nfoe\'s Sp.Def."
 
 	.global str_attack_desc_attack_schattenstoss
 
@@ -4790,7 +4790,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_erdkraefte
 
 	str_attack_desc_attack_erdkraefte:
-		.string "Eruptions\nthat may lower\nfoe\s Sp.Def."
+		.string "Eruptions\nthat may lower\nfoe\'s Sp.Def."
 
 	.global str_attack_desc_attack_drachenpuls
 
@@ -4830,7 +4830,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_stahlstreich
 
 	str_attack_desc_attack_stahlstreich:
-		.string "Knight\s strike\nthat randomly\nraises Atk.\nor Def."
+		.string "Knight\'s strike\nthat randomly\nraises Atk.\nor Def."
 
 	.global str_attack_desc_attack_kinesiswelle
 
@@ -4880,7 +4880,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_bienenstich
 
 	str_attack_desc_attack_bienenstich:
-		.string "Bee\s stich\nthat most likely\ncauses poison."
+		.string "Bee\'s stich\nthat most likely\ncauses poison."
 
 	.global str_attack_desc_attack_schwarmstich
 
@@ -4910,7 +4910,7 @@ attack_descriptions:
 	.global str_attack_desc_attack_kaeferbiss
 
 	str_attack_desc_attack_kaeferbiss:
-		.string "Bug\s bite\nthat causes\ndamage."
+		.string "Bug\'s bite\nthat causes\ndamage."
 
 	.global str_attack_desc_attack_falterreigen
 

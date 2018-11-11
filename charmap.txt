@@ -77,9 +77,11 @@ RIGHT_ARROW = 7C
 '-'         = AE
 DOTS        = B0
 '‘'         = B3
-'\''         = B4
-'♂'         = B5
-'♀'         = B6
+'’' 		= B3
+'''        = B4
+'\''        = B4
+'♂'         = FD A6
+'♀'         = FD A7
 '\$'         = B7
 ','         = B8
 '×'         = B9
@@ -147,6 +149,8 @@ DOTS        = B0
 
 QUOTE_START = B1
 QUOTE_END   = B2
+„ = B1
+“ = B2
 
 'ß'         = F9
 
@@ -443,4 +447,3 @@ KEY_DPAD       = F8 0C
 \xF9 = F9
 \x13 = 13
 \x14 = 14
-

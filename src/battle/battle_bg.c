@@ -190,31 +190,31 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 	u8 type;
 	switch (battle_bg_get_id()) {
 	case BATTLE_BG_GRASS:
-		type = TYPE_GRASS;
+		type = TYPE_PFLANZE;
 		break;
 	case BATTLE_BG_GYM:
-		type = TYPE_FIGHTING;
+		type = TYPE_KAMPF;
 		break;
 	case BATTLE_BG_CAVE:
 	case BATTLE_BG_MOUNTAIN:
 	case BATTLE_BG_MUSEUM:
-		type = TYPE_ROCK;
+		type = TYPE_GESTEIN;
 		break;
 	case BATTLE_BG_MILL:
 	case BATTLE_BG_CLOUD:
-		type = TYPE_FLYING;
+		type = TYPE_FLUG;
 		break;
 	case BATTLE_BG_OCEAN:
 	case BATTLE_BG_SHORE:
 	case BATTLE_BG_POND:
 	case BATTLE_BG_WATER_CAVE:
-		type = TYPE_WATER;
+		type = TYPE_WASSER;
 		break;
 	case BATTLE_BG_DESERT:
-		type = TYPE_GROUND;
+		type = TYPE_BODEN;
 		break;
 	case BATTLE_BG_FIRE:
-		type = TYPE_FIRE;
+		type = TYPE_FEUER;
 		break;
 	default:
 	case BATTLE_BG_EVOLUTION:

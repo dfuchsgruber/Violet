@@ -60,7 +60,7 @@ use:
 .elseif LANG_EN
 
 	str_repel_wore_off:
-		.string "Repel\s effect wore off..."
+		.string "Repel’s effect wore off..."
 
 	str_repel_renew:
 		.string "Use BUFFER_1?"

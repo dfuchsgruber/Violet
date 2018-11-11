@@ -2423,12 +2423,12 @@
 	.global str_item_desc_x22_item_aether
 
 	str_item_desc_x22_item_aether:
-		.string "Restores a selected move\s PP by\n10 points for one Pokémon."
+		.string "Restores a selected move’s PP by\n10 points for one Pokémon."
 
 	.global str_item_desc_x23_item_top_aether
 
 	str_item_desc_x23_item_top_aether:
-		.string "Fully restores a selected move\s PP\nfor one Pokémon."
+		.string "Fully restores a selected move’s PP\nfor one Pokémon."
 
 	.global str_item_desc_x24_item_elixier
 
@@ -2443,7 +2443,7 @@
 	.global str_item_desc_x26_item_lavakeks
 
 	str_item_desc_x26_item_lavakeks:
-		.string "Lavaridge Town\s local specialty.\nIt heals all the status problems of\none Pokémon."
+		.string "Lavaridge Town’s local specialty.\nIt heals all the status problems of\none Pokémon."
 
 	.global str_item_desc_x27_item_blaue_floete
 
@@ -3148,7 +3148,7 @@
 	.global str_item_desc_xb3_item_blendpuder
 
 	str_item_desc_xb3_item_blendpuder:
-		.string "An item to be held by a Pokémon.\nIt casts a tricky glare that lowers\nthe opponent\s accuracy."
+		.string "An item to be held by a Pokémon.\nIt casts a tricky glare that lowers\nthe opponent’s accuracy."
 
 	.global str_item_desc_xb4_item_schlohkraut
 
@@ -3358,17 +3358,17 @@
 	.global str_item_desc_xdd_item_laxrauch
 
 	str_item_desc_xdd_item_laxrauch:
-		.string "An item to be held by a Pokémon.\nIts tricky aroma slightly reduces\nthe foe\s accuracy."
+		.string "An item to be held by a Pokémon.\nIts tricky aroma slightly reduces\nthe foe’s accuracy."
 
 	.global str_item_desc_xde_item_lucky_punch
 
 	str_item_desc_xde_item_lucky_punch:
-		.string "A glove to be held by a Chansey.\nIt raises Chansey\s critical-hit\nratio."
+		.string "A glove to be held by a Chansey.\nIt raises Chansey’s critical-hit\nratio."
 
 	.global str_item_desc_xdf_item_metallstaub
 
 	str_item_desc_xdf_item_metallstaub:
-		.string "A fine, hard powder to be held by\na Ditto.\nIt raises Ditto\s Defense stat."
+		.string "A fine, hard powder to be held by\na Ditto.\nIt raises Ditto’s Defense stat."
 
 	.global str_item_desc_xe0_item_kampfknochen
 
@@ -3378,7 +3378,7 @@
 	.global str_item_desc_xe1_item_lauchstange
 
 	str_item_desc_xe1_item_lauchstange:
-		.string "A stick of leek to be held by a\nFarfetch\D. It raises Farfetch\D\s\ncritical-hit ratio."
+		.string "A stick of leek to be held by a\nFarfetch’D. It raises Farfetch’D’s\ncritical-hit ratio."
 
 	.global str_item_desc_xe2_item_bisaflornit
 
@@ -3523,27 +3523,27 @@
 	.global str_item_desc_xfe_item_roter_schal
 
 	str_item_desc_xfe_item_roter_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nCool condition in Contests."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nCool condition in Contests."
 
 	.global str_item_desc_xff_item_blauer_schal
 
 	str_item_desc_xff_item_blauer_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nBeauty condition in Contests."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nBeauty condition in Contests."
 
 	.global str_item_desc_x100_item_rosa_schal
 
 	str_item_desc_x100_item_rosa_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nCute condition in Contests."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nCute condition in Contests."
 
 	.global str_item_desc_x101_item_gruener_schal
 
 	str_item_desc_x101_item_gruener_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nSMart condition in Contests."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nSMart condition in Contests."
 
 	.global str_item_desc_x102_item_gelber_schal
 
 	str_item_desc_x102_item_gelber_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon\s\nTough condition in Contests."
+		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nTough condition in Contests."
 
 	.global str_item_desc_x103_item_eilrad
 
@@ -3793,7 +3793,7 @@
 	.global str_item_desc_x134_item_tm20
 
 	str_item_desc_x134_item_tm20:
-		.string "It protects the\nuser\s party from\nall status problems\nfor five turns."
+		.string "It protects the\nuser’s party from\nall status problems\nfor five turns."
 
 	.global str_item_desc_x135_item_tm21
 
@@ -3808,7 +3808,7 @@
 	.global str_item_desc_x137_item_tm23
 
 	str_item_desc_x137_item_tm23:
-		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe\s Defense stat."
+		.string "An attack with a\nsteel-hard tail.\nIt may lower the\nfoe’s Defense stat."
 
 	.global str_item_desc_x138_item_tm24
 
@@ -3838,12 +3838,12 @@
 	.global str_item_desc_x13d_item_tm29
 
 	str_item_desc_x13d_item_tm29:
-		.string "A strong telekinetic\nattack. It may also\nlower the foe\s\nSP. Def stat."
+		.string "A strong telekinetic\nattack. It may also\nlower the foe’s\nSP. Def stat."
 
 	.global str_item_desc_x13e_item_tm30
 
 	str_item_desc_x13e_item_tm30:
-		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe\s SP. Def."
+		.string "A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe’s SP. Def."
 
 	.global str_item_desc_x13f_item_tm31
 
@@ -3863,7 +3863,7 @@
 	.global str_item_desc_x142_item_tm34
 
 	str_item_desc_x142_item_tm34:
-		.string "A rapid jolt of\nelectricity strikes\nthe foe. It can\t\nbe evaded."
+		.string "A rapid jolt of\nelectricity strikes\nthe foe. It can’t\nbe evaded."
 
 	.global str_item_desc_x143_item_tm35
 
@@ -3888,12 +3888,12 @@
 	.global str_item_desc_x147_item_tm39
 
 	str_item_desc_x147_item_tm39:
-		.string "Boulders are hurled\nat the foe. It also\nlowers the foe\s\nSpeed if it hits."
+		.string "Boulders are hurled\nat the foe. It also\nlowers the foe’s\nSpeed if it hits."
 
 	.global str_item_desc_x148_item_tm40
 
 	str_item_desc_x148_item_tm40:
-		.string "An extremely fast\nattack against one\ntarget. It can\t be\nevaded."
+		.string "An extremely fast\nattack against one\ntarget. It can’t be\nevaded."
 
 	.global str_item_desc_x149_item_tm41
 
@@ -3923,12 +3923,12 @@
 	.global str_item_desc_x14e_item_tm46
 
 	str_item_desc_x14e_item_tm46:
-		.string "An attack that may\ntake the foe\s held\nitem if the user\nisn\t holding one."
+		.string "An attack that may\ntake the foe’s held\nitem if the user\nisn’t holding one."
 
 	.global str_item_desc_x14f_item_tm47
 
 	str_item_desc_x14f_item_tm47:
-		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user\s Defense."
+		.string "The foe is hit with\nwings of steel.\nIt may also raise\nthe user’s Defense."
 
 	.global str_item_desc_x150_item_tm48
 
@@ -3938,12 +3938,12 @@
 	.global str_item_desc_x151_item_tm49
 
 	str_item_desc_x151_item_tm49:
-		.string "Steals the effects\nof the foe\s\nhealing or status-\nchanging move."
+		.string "Steals the effects\nof the foe’s\nhealing or status-\nchanging move."
 
 	.global str_item_desc_x152_item_tm50
 
 	str_item_desc_x152_item_tm50:
-		.string "An intense attack\nthat also sharply\nreduces the user\s\nSP. Atk stat."
+		.string "An intense attack\nthat also sharply\nreduces the user’s\nSP. Atk stat."
 
 	.global str_item_desc_x153_item_vm01
 
@@ -3968,7 +3968,7 @@
 	.global str_item_desc_x157_item_vm05
 
 	str_item_desc_x157_item_vm05:
-		.string "A blast of light\nthat cuts the foe\s\naccuracy. It also\nilluminates caves."
+		.string "A blast of light\nthat cuts the foe’s\naccuracy. It also\nilluminates caves."
 
 	.global str_item_desc_x158_item_vm06
 
@@ -3998,7 +3998,7 @@
 	.global str_item_desc_x15d_item_eichs_paket
 
 	str_item_desc_x15d_item_eichs_paket:
-		.string "A parcel to be delivered to Prof.\nOak from Viridian City\s Pokémon\nMart."
+		.string "A parcel to be delivered to Prof.\nOak from Viridian City’s Pokémon\nMart."
 
 	.global str_item_desc_x15e_item_pokefloete
 
@@ -4008,7 +4008,7 @@
 	.global str_item_desc_x15f_item__oeffner
 
 	str_item_desc_x15f_item__oeffner:
-		.string "The key to Cinnabar Island Gym\s\nfront door. It is colored red and\ndecorated."
+		.string "The key to Cinnabar Island Gym’s\nfront door. It is colored red and\ndecorated."
 
 	.global str_item_desc_x160_item_rad_coupon
 
@@ -4018,7 +4018,7 @@
 	.global str_item_desc_x161_item_pkmcorder
 
 	str_item_desc_x161_item_pkmcorder:
-		.string "A set of false teeth lost by the\nSafari Zone\s Warden. It makes his\nsmile sparkle."
+		.string "A set of false teeth lost by the\nSafari Zone’s Warden. It makes his\nsmile sparkle."
 
 	.global str_item_desc_x162_item_altbernstein
 
@@ -4028,12 +4028,12 @@
 	.global str_item_desc_x163_item_tueroeffner
 
 	str_item_desc_x163_item_tueroeffner:
-		.string "A card-type key that unlocks doors\nin Silph Co.\s Head Office in\nSaffron City."
+		.string "A card-type key that unlocks doors\nin Silph Co.’s Head Office in\nSaffron City."
 
 	.global str_item_desc_x164_item_liftoeffner
 
 	str_item_desc_x164_item_liftoeffner:
-		.string "A key that operates the elevator\nin Team Rocket\s Hideout.\nIt bears the Team Rocket logo."
+		.string "A key that operates the elevator\nin Team Rocket’s Hideout.\nIt bears the Team Rocket logo."
 
 	.global str_item_desc_x165_item_helixfossil
 
@@ -4068,17 +4068,17 @@
 	.global str_item_desc_x16b_item_ruhmesdatei
 
 	str_item_desc_x16b_item_ruhmesdatei:
-		.string "A device that enables you to\nrecall what you\ve heard and seen\nabout famous people."
+		.string "A device that enables you to\nrecall what you’ve heard and seen\nabout famous people."
 
 	.global str_item_desc_x16c_item_vmtm_box
 
 	str_item_desc_x16c_item_vmtm_box:
-		.string "A case that holds TMs and HMs.\nIt is attached to the Bag\s\ncompartment for important items."
+		.string "A case that holds TMs and HMs.\nIt is attached to the Bag’s\ncompartment for important items."
 
 	.global str_item_desc_x16d_item_beerentuete
 
 	str_item_desc_x16d_item_beerentuete:
-		.string "A pouch for carrying Berries.\nIt is attached to the Bag\s\ncompartment for important items."
+		.string "A pouch for carrying Berries.\nIt is attached to the Bag’s\ncompartment for important items."
 
 	.global str_item_desc_x16e_item_lehrkanal
 

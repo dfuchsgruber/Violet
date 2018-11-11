@@ -1,7 +1,7 @@
 {
 	"type": "enum",
 	"values": [
-		"ABILITY_NONE",
+		"ABILITY_NONE", 
 		"DUFTNOTE",
 		"NIESEL",
 		"TEMPOSCHUB",

@@ -1,0 +1,113 @@
+{
+	"type": "header",
+	"label": "map_5_11",
+	"data": {
+		"footer": "map_footer_433",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 2,
+			"persons": [
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x8a218c",
+					"y": 5,
+					"target_index": 1,
+					"field_3": 0,
+					"picture": 33,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 9,
+					"field_2": 0,
+					"level": 3,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
+					"behaviour_range": 17,
+					"field_D": 0,
+					"field_B": 0
+				},
+				{
+					"is_trainer": 0,
+					"script": "ow_script_0x8a2195",
+					"y": 7,
+					"target_index": 2,
+					"field_3": 0,
+					"picture": 22,
+					"field_16": 0,
+					"flag": "0x0",
+					"x": 3,
+					"field_2": 0,
+					"level": 3,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 17,
+					"field_D": 0,
+					"field_B": 0
+				}
+			],
+			"warps": [
+				{
+					"target_map": 1,
+					"y": 7,
+					"target_bank": 3,
+					"level": 0,
+					"x": 6,
+					"target_warp_idx": 6
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": 8,
+					"field_6": 0,
+					"y": 1,
+					"level": 0,
+					"field_7": 0,
+					"type": 0,
+					"value": {
+						"script": "ow_script_0x802a96",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					}
+				},
+				{
+					"x": 9,
+					"field_6": 0,
+					"y": 1,
+					"level": 0,
+					"field_7": 0,
+					"type": 0,
+					"value": {
+						"script": "ow_script_0x802a96",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					}
+				}
+			]
+		},
+		"levelscripts": "lscr_0x71a260",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY",
+		"footer_idx": 433,
+		"namespace": "MAP_MERIANA_CITY",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"field_18": 0,
+		"show_name": "DONT_SHOW",
+		"field_1A": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	}
+}

@@ -28,17 +28,17 @@ u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
             }
             return bsc_flinch_aura;
         }else if(defender_ability == R_KAISERAURA){
-            if(attacks[used_attack].type == TYPE_WATER){
+            if(attacks[used_attack].type == TYPE_WASSER){
                 return bsc_flinch_raura;
             }
         }else if(defender_ability == B_KAISERAURA){
-            if(attacks[used_attack].type == TYPE_FIRE){
+            if(attacks[used_attack].type == TYPE_FEUER){
                 return bsc_flinch_baura;
             }
         }else if(defender_ability == G_KAISERAURA){
-            if(attacks[used_attack].type == TYPE_WATER || 
-                    attacks[used_attack].type == TYPE_FIRE || 
-                    attacks[used_attack].type == TYPE_GRASS){
+            if(attacks[used_attack].type == TYPE_WASSER ||
+                    attacks[used_attack].type == TYPE_FEUER ||
+                    attacks[used_attack].type == TYPE_PFLANZE){
                 return bsc_flinch_gaura;
             }
         }

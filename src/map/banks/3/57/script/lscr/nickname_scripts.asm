@@ -2266,7 +2266,7 @@ str_0x8a8ecd:
 .global str_0x8a8eb7
 
 str_0x8a8eb7:
-    .string "Na gut, los geht\s!"
+    .string "Na gut, los geht\'s!"
         
         
 .global str_0x8a8e74

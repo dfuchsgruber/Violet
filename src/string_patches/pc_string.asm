@@ -584,7 +584,7 @@
 	.global str_pc_connection
 
 	str_pc_connection:
-		.string "Connecting to PLAYER\s PC..."
+		.string "Connecting to PLAYER\'s PC..."
 
 	.global str_pc_take
 
@@ -849,7 +849,7 @@
 	.global str_pc_17
 
 	str_pc_17:
-		.string "Can\t release an egg!"
+		.string "Can\'t release an egg!"
 
 	.global str_pc_18
 
@@ -914,7 +914,7 @@
 	.global str_pc_30
 
 	str_pc_30:
-		.string "Can\t store a letter!"
+		.string "Can\'t store a letter!"
 
 	.global str_pc_action_0
 

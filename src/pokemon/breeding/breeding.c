@@ -9,17 +9,12 @@ void _pokemon_get_egg_moves_stub(){
 }
 
 u16 *pokemon_get_egg_moves(u16 species, int *size){
-    // First find the proper table entry
     *size = 0;
-    int i = 0;
-    while(pokemon_egg_moves[i] != 0xFFFF){
-        if(pokemon_egg_moves[i] >= 20000 && pokemon_egg_moves[i] - 20000 == species)
-            break;
-        i++;
+    u16 *egg_moves = pokemon_egg_moves[species];
+    if (egg_moves) {
+		while(egg_moves[*size] != 0xFFFF) {
+			(*size)++;
+		}
     }
-    // If no match simply return null
-    if(pokemon_egg_moves[i] == 0xFFFF) return NULL;
-    while(pokemon_egg_moves[i + 1 + *size] < 20000)
-        (*size)++;
-    return &pokemon_egg_moves[i + 1];
+    return egg_moves;
 }

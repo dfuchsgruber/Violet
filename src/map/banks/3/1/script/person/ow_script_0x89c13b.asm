@@ -13,7 +13,7 @@ end
 .global str_0x8a2b06
 
 str_0x8a2b06:
-    .string "Es heißt, die Kampf-Angriffe von\nManus\ Pokémon könnten Felsen\lzertrümmern. Ob das wohl wahr ist?"
+    .string "Es heißt, die Kampf-Angriffe von\nManus\' Pokémon könnten Felsen\lzertrümmern. Ob das wohl wahr ist?"
         
         
 .elseif LANG_EN
