@@ -63,8 +63,12 @@ docs/_build/
 
 # Build Results
 bld/
+pkl/
 
 # Resources
 psg_data.raw
 goldensun_synth.raw
 base/
+
+# Virtual Environments
+.venv/
