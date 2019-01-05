@@ -10,34 +10,34 @@ entry_type = agb.types.Structure([
     ('species', 'species')
 ])
 
-entries_grass_type = agb.types.ArrayType(
+entries_grass_type = agb.types.FixedSizeArrayType(
     'wild_pokemon.entry',
-    (lambda project, context, parents: 12)
+    (lambda project, context: 12)
 )
 
-entries_water_type = agb.types.ArrayType(
+entries_water_type = agb.types.FixedSizeArrayType(
     'wild_pokemon.entry',
-    (lambda project, context, parents: 5)
+    (lambda project, context: 5)
 )
 
-entries_other_type = agb.types.ArrayType(
+entries_other_type = agb.types.FixedSizeArrayType(
     'wild_pokemon.entry',
-    (lambda project, context, parents: 5)
+    (lambda project, context: 5)
 )
 
-entries_odd_rod_type = agb.types.ArrayType(
+entries_odd_rod_type = agb.types.FixedSizeArrayType(
     'wild_pokemon.entry',
-    (lambda project, context, parents: 2)
+    (lambda project, context: 2)
 )
 
-entries_good_rod_type = agb.types.ArrayType(
+entries_good_rod_type = agb.types.FixedSizeArrayType(
     'wild_pokemon.entry',
-    (lambda project, context, parents: 3)
+    (lambda project, context: 3)
 )
 
-entries_super_rod_type = agb.types.ArrayType(
+entries_super_rod_type = agb.types.FixedSizeArrayType(
     'wild_pokemon.entry',
-    (lambda project, context, parents: 5)
+    (lambda project, context: 5)
 )
 
 entries_rod_type = agb.types.Structure([

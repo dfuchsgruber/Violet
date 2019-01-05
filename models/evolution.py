@@ -9,7 +9,7 @@ evolution_entry_type = agb.types.Structure([
     ('baby_trigger_item', 'item')
 ])
 
-evolution_entries_type = agb.types.VariableLengthArrayType(
+evolution_entries_type = agb.types.UnboundedArrayType(
     'evolution.entry', {
         'method' : 'EVOLUTION_METHOD_NONE',
         'argument' : {
@@ -30,9 +30,9 @@ evolution_argument_map_type = agb.types.Structure([
     ('map_idx', 'u8')
 ])
 
-evolutions_type = agb.types.ArrayType(
+evolutions_type = agb.types.FixedSizeArrayType(
     'evolution.entries_pointer',
-    lambda project, context, parents: len(project.constants['species'])
+    lambda project, context: len(project.constants['species'])
 )
 
 def evolution_argument_get_type(project, context, parents):

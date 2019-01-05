@@ -1,8 +1,8 @@
 import agb.types
 
-pokedex_order_type = agb.types.ArrayType(
+pokedex_order_type = agb.types.FixedSizeArrayType(
     'u16',
-    lambda project, context, parents: len(project.constants['species']) - 1
+    lambda project, context: len(project.constants['species']) - 1
 )
 
 pokedex_entry_string_type = agb.types.StringType(box_size=(35, 255))
@@ -28,9 +28,9 @@ pokdex_entry_type = agb.types.Structure([
     ('field_1E', 'u16')
 ])
 
-pokedex_entries_type = agb.types.ArrayType(
+pokedex_entries_type = agb.types.FixedSizeArrayType(
     'pokedex.entry',
-    lambda project, context, parents: 386 + 1
+    lambda project, context: 386 + 1
 )
 
 models_to_export = {

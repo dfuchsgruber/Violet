@@ -57,9 +57,9 @@ stat_type = agb.types.Structure([
     ('shape', 'pokemon_shape')
 ])
 
-stats_type = agb.types.ArrayType(
+stats_type = agb.types.FixedSizeArrayType(
     'basestats.stat',
-    (lambda project, context, parents: len(project.constants['species']))
+    (lambda project, context: len(project.constants['species']))
 )
 
 levelup_move_type = agb.types.BitfieldType('u16', [
@@ -67,7 +67,7 @@ levelup_move_type = agb.types.BitfieldType('u16', [
     ('level', None, 7)
 ])
 
-levelup_move_array_type = agb.types.VariableLengthArrayType(
+levelup_move_array_type = agb.types.UnboundedArrayType(
     'basestats.levelup_move',
     {'move' : 511, 'level' : 127}
 )
@@ -77,12 +77,12 @@ levelup_move_array_pointer_type = agb.types.PointerType(
     (lambda project, context, parents: (f'moveset_{context[-1]}', 2, False))
 )
 
-levelup_moves_type = agb.types.ArrayType(
+levelup_moves_type = agb.types.FixedSizeArrayType(
     'basestats.levelup_move_array_pointer',
-    (lambda project, context, parents: len(project.constants['species']))
+    (lambda project, context: len(project.constants['species']))
 )
 
-move_array_type = agb.types.VariableLengthArrayType(
+move_array_type = agb.types.UnboundedArrayType(
     'move',
     0xFFFF
 )
@@ -92,24 +92,24 @@ egg_move_array_pointer_type = agb.types.PointerType(
     (lambda project, context, parents: (f'egg_moves_{context[-1]}', 2, False))
 )
 
-egg_moves_type = agb.types.ArrayType(
+egg_moves_type = agb.types.FixedSizeArrayType(
     'basestats.egg_move_array_pointer',
-    (lambda project, context, parents: len(project.constants['species']))
+    (lambda project, context: len(project.constants['species']))
 )
 
-tm_compatibility_type = agb.types.ArrayType(
+tm_compatibility_type = agb.types.FixedSizeArrayType(
     'u8',
     (lambda project, context, parents: 8)
 )
 
-tm_compatibilities_type = agb.types.ArrayType(
+tm_compatibilities_type = agb.types.FixedSizeArrayType(
     'basestats.tm_compatibility',
-    (lambda project, context, parents: len(project.constants['species']))
+    (lambda project, context: len(project.constants['species']))
 )
 
-tutor_compatibilities_type = agb.types.ArrayType(
+tutor_compatibilities_type = agb.types.FixedSizeArrayType(
     'u32',
-    (lambda project, context, parents: len(project.constants['species']))
+    (lambda project, context: len(project.constants['species']))
 )
 
 accessible_move_array_pointer_type = agb.types.PointerType(
@@ -117,16 +117,16 @@ accessible_move_array_pointer_type = agb.types.PointerType(
     (lambda project, context, parents: (f'accessible_moves_{context[-1]}', 2, False))
 )
 
-accessible_moves_type = agb.types.ArrayType(
+accessible_moves_type = agb.types.FixedSizeArrayType(
     'basestats.accessible_move_array_pointer',
-    (lambda project, context, parents: len(project.constants['species']))
+    (lambda project, context: len(project.constants['species']))
 )
 
 pokemon_name_type = agb.types.StringType(fixed_size=11)
 
-pokemon_names_type = agb.types.ArrayType(
+pokemon_names_type = agb.types.FixedSizeArrayType(
     'basestats.pokemon_name',
-    (lambda project, context, parents: len(project.constants['species']))
+    (lambda project, context: len(project.constants['species']))
 )
 
 models_to_export = {
