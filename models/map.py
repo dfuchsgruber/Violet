@@ -16,35 +16,35 @@ battle_style_type = agb.types.ScalarType('u8', constant='map_battle_styles')
 
 # Events
 person_type = agb.types.Structure([
-    ('target_index', 'u8'),
-    ('picture', 'u8'),
-    ('field_2', 'u8'),
-    ('field_3', 'u8'),
-    ('x', 's16'),
-    ('y', 's16'),
-    ('level', 'u8'),
-    ('behaviour', 'person_behaviour'),
-    ('behaviour_range', 'u8'),
-    ('field_B', 'u8'),
-    ('is_trainer', 'u8'),
-    ('field_D', 'u8'),
-    ('alert_radius', 'u16'),
-    ('script', 'ow_script_pointer'),
-    ('flag', 'flag'),
-    ('field_16', 'u16')
+    ('target_index', 'u8', 0),
+    ('picture', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('x', 's16', 0),
+    ('y', 's16', 0),
+    ('level', 'u8', 0),
+    ('behaviour', 'person_behaviour', 0),
+    ('behaviour_range', 'u8', 0),
+    ('field_B', 'u8', 0),
+    ('is_trainer', 'u8', 0),
+    ('field_D', 'u8', 0),
+    ('alert_radius', 'u16', 0),
+    ('script', 'ow_script_pointer', 0),
+    ('flag', 'flag', 0),
+    ('field_16', 'u16', 0)
 ])
 
 
 trigger_type = agb.types.Structure([
-    ('x', 's16'),
-    ('y', 's16'),
-    ('level', 'u8'),
-    ('field_5', 'u8'),
-    ('var', 'var'),
-    ('value', 'u16'),
-    ('field_A', 'u8'),
-    ('field_B', 'u8'),
-    ('script', 'ow_script_pointer')
+    ('x', 's16', 0),
+    ('y', 's16', 0),
+    ('level', 'u8', 0),
+    ('field_5', 'u8'), 0,
+    ('var', 'var', 0),
+    ('value', 'u16', 0),
+    ('field_A', 'u8', 0),
+    ('field_B', 'u8', 0),
+    ('script', 'ow_script_pointer', 0)
 ])
 
 signpost_item_type = agb.types.BitfieldType('u32', [
@@ -70,31 +70,31 @@ tileset_behaviour_type = agb.types.BitfieldType('u32', [
 # Map connections
 
 connection_type = agb.types.Structure([
-    ('direction', 'connection.direction'),
-    ('displacement', 's32'),
-    ('bank', 'u8'),
-    ('map_idx', 'u8'),
-    ('field_A', 'u8'),
-    ('field_B', 'u8')
+    ('direction', 'connection.direction', 0),
+    ('displacement', 's32', 0),
+    ('bank', 'u8', 0),
+    ('map_idx', 'u8', 0),
+    ('field_A', 'u8', 0),
+    ('field_B', 'u8', 0)
 ])
 
 # Map header
 
 header_type = agb.types.Structure([
-    ('footer', 'footer_pointer'),
-    ('events', 'header.event_header_pointer'),
-    ('levelscripts', 'levelscript_header_pointer'),
-    ('connections', 'header.connection_header_pointer'),
-    ('music', 'song'),
-    ('footer_idx', 'u16'),
-    ('namespace', 'map_namespace'),
-    ('flash_type', 'map_flash_type'),
-    ('weather', 'map_weather'),
-    ('type', 'map_type'),
-    ('field_18', 'u8'),
-    ('show_name', 'map_show_name'),
-    ('field_1A', 'u8'),
-    ('battle_style', 'map_battle_style')
+    ('footer', 'footer_pointer', 0),
+    ('events', 'header.event_header_pointer', 0),
+    ('levelscripts', 'levelscript_header_pointer', 0),
+    ('connections', 'header.connection_header_pointer', 0),
+    ('music', 'song', 0),
+    ('footer_idx', 'u16', 0),
+    ('namespace', 'map_namespace', 0),
+    ('flash_type', 'map_flash_type', 0),
+    ('weather', 'map_weather', 0),
+    ('type', 'map_type', 0),
+    ('field_18', 'u8', 0),
+    ('show_name', 'map_show_name', 0),
+    ('field_1A', 'u8', 0),
+    ('battle_style', 'map_battle_style', 0)
 ], hidden_members=set([
     'events', 'connections'
 ]))

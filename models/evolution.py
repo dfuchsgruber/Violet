@@ -3,10 +3,10 @@ import agb.types
 evolution_method_type = agb.types.ScalarType('u16', constant='evolution_methods')
 
 evolution_entry_type = agb.types.Structure([
-    ('method', 'evolution.method'),
-    ('argument', 'evolution.argument'),
+    ('method', 'evolution.method', 0),
+    ('argument', 'evolution.argument', 0),
     ('target', 'species'), # Defined in wild_pokemon model
-    ('baby_trigger_item', 'item')
+    ('baby_trigger_item', 'item', 0)
 ])
 
 evolution_entries_type = agb.types.UnboundedArrayType(
@@ -26,8 +26,8 @@ evolution_entries_pointer_type = agb.types.PointerType(
 )
 
 evolution_argument_map_type = agb.types.Structure([
-    ('bank', 'u8'),
-    ('map_idx', 'u8')
+    ('bank', 'u8', 0),
+    ('map_idx', 'u8', 0)
 ])
 
 evolutions_type = agb.types.FixedSizeArrayType(

@@ -16,12 +16,12 @@ color_and_flip_type = agb.types.BitfieldType('u8', [
 ])
 
 basestat_type = agb.types.Structure([
-    ('hp', 'u8'),
-    ('attack', 'u8'),
-    ('defense', 'u8'),
-    ('speed', 'u8'),
-    ('special-attack', 'u8'),
-    ('special-defense', 'u8')
+    ('hp', 'u8', 0),
+    ('attack', 'u8', 0),
+    ('defense', 'u8', 0),
+    ('speed', 'u8', 0),
+    ('special-attack', 'u8', 0),
+    ('special-defense', 'u8', 0)
 ])
 
 ev_yield_type = agb.types.BitfieldType('u16', [
@@ -35,26 +35,26 @@ ev_yield_type = agb.types.BitfieldType('u16', [
 ])
 
 stat_type = agb.types.Structure([
-    ('basestats', 'basestats.basestats'),
-    ('type_0', 'basestats.pokemon_type'),
-    ('type_1', 'basestats.pokemon_type'),
-    ('capture_rate', 'u8'),
-    ('exp_yield', 'u8'),
-    ('ev_yield', 'basestats.ev_yield'),
-    ('common_item', 'item'),
-    ('rare_item', 'item'),
-    ('gender_ratio', 'u8'),
-    ('egg_cycles', 'u8'),
-    ('base_happiness', 'u8'),
-    ('growth_rate', 'basestats.pokemon_growth_rate'),
-    ('egg_group_0', 'egg_group'),
-    ('egg_group_1', 'egg_group'),
-    ('ability_0', 'ability'),
-    ('ability_1', 'ability'),
-    ('safari_rate', 'u8'),
-    ('color_and_flip', 'basestats.color_and_flip'),
-    ('hidden_ability', 'ability'),
-    ('shape', 'pokemon_shape')
+    ('basestats', 'basestats.basestats', 0),
+    ('type_0', 'basestats.pokemon_type', 0),
+    ('type_1', 'basestats.pokemon_type', 0),
+    ('capture_rate', 'u8', 0),
+    ('exp_yield', 'u8', 0),
+    ('ev_yield', 'basestats.ev_yield', 0),
+    ('common_item', 'item', 0),
+    ('rare_item', 'item', 0),
+    ('gender_ratio', 'u8', 0),
+    ('egg_cycles', 'u8', 0),
+    ('base_happiness', 'u8', 0),
+    ('growth_rate', 'basestats.pokemon_growth_rate', 0),
+    ('egg_group_0', 'egg_group', 0),
+    ('egg_group_1', 'egg_group', 0),
+    ('ability_0', 'ability', 0),
+    ('ability_1', 'ability', 0),
+    ('safari_rate', 'u8', 0),
+    ('color_and_flip', 'basestats.color_and_flip', 0),
+    ('hidden_ability', 'ability', 0),
+    ('shape', 'pokemon_shape', 0)
 ])
 
 stats_type = agb.types.FixedSizeArrayType(

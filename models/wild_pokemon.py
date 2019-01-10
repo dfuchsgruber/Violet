@@ -5,9 +5,9 @@ import agb.types
 species_type = agb.types.ScalarType('u16', constant='species')
 
 entry_type = agb.types.Structure([
-    ('level_min', 'u8'),
-    ('level_max', 'u8'),
-    ('species', 'species')
+    ('level_min', 'u8', 0),
+    ('level_max', 'u8', 0),
+    ('species', 'species', 0)
 ])
 
 entries_grass_type = agb.types.FixedSizeArrayType(
@@ -41,9 +41,9 @@ entries_super_rod_type = agb.types.FixedSizeArrayType(
 )
 
 entries_rod_type = agb.types.Structure([
-    ('odd_rod', 'wild_pokemon.entries_odd_rod'),
-    ('good_rod', 'wild_pokemon.entries_good_rod'),
-    ('super_rod', 'wild_pokemon.entries_super_rod')
+    ('odd_rod', 'wild_pokemon.entries_odd_rod', 0),
+    ('good_rod', 'wild_pokemon.entries_good_rod', 0),
+    ('super_rod', 'wild_pokemon.entries_super_rod', 0)
 ])
 
 entries_grass_pointer_type = agb.types.PointerType(
@@ -67,43 +67,43 @@ entries_rod_pointer_type = agb.types.PointerType(
 )
 
 habitat_grass_type = agb.types.Structure([
-    ('frequency', 'u8'),
-    ('field_1', 'u8'),
-    ('field_2', 'u8'),
-    ('field_3', 'u8'),
-    ('wild_pokemon.entries_grass_pointer')
+    ('frequency', 'u8', 0),
+    ('field_1', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('wild_pokemon.entries_grass_pointer', 0)
 ])
 
 habitat_water_type = agb.types.Structure([
-    ('frequency', 'u8'),
-    ('field_1', 'u8'),
-    ('field_2', 'u8'),
-    ('field_3', 'u8'),
-    ('wild_pokemon.entries_water_pointer')
+    ('frequency', 'u8', 0),
+    ('field_1', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('wild_pokemon.entries_water_pointer', 0)
 ])
 
 habitat_water_type = agb.types.Structure([
-    ('frequency', 'u8'),
-    ('field_1', 'u8'),
-    ('field_2', 'u8'),
-    ('field_3', 'u8'),
-    ('wild_pokemon.entries_water_pointer')
+    ('frequency', 'u8', 0),
+    ('field_1', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('wild_pokemon.entries_water_pointer', 0)
 ])
 
 habitat_rod_type = agb.types.Structure([
-    ('frequency', 'u8'),
-    ('field_1', 'u8'),
-    ('field_2', 'u8'),
-    ('field_3', 'u8'),
-    ('wild_pokemon.entries_rod_pointer')
+    ('frequency', 'u8', 0),
+    ('field_1', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('wild_pokemon.entries_rod_pointer', 0)
 ])
 
 habitat_other_type = agb.types.Structure([
-    ('frequency', 'u8'),
-    ('field_1', 'u8'),
-    ('field_2', 'u8'),
-    ('field_3', 'u8'),
-    ('wild_pokemon.entries_other_pointer')
+    ('frequency', 'u8', 0),
+    ('field_1', 'u8', 0),
+    ('field_2', 'u8', 0),
+    ('field_3', 'u8', 0),
+    ('wild_pokemon.entries_other_pointer', 0)
 ])
 
 habitat_grass_pointer_type = agb.types.PointerType(

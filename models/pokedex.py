@@ -15,17 +15,17 @@ pokdex_entry_string_pointer_type = agb.types.PointerType(
 pokedex_genus_string_type = agb.types.StringType(fixed_size=12)
 
 pokdex_entry_type = agb.types.Structure([
-    ('genus', 'pokedex.genus_string'),
-    ('height', 'u16'),
-    ('weight', 'u16'),
-    ('entry_string_0', 'pokedex.entry_string_pointer'),
-    ('entry_string_1', 'pokedex.entry_string_pointer'),
-    ('field_14', 'u16'),
-    ('pokemon_scale', 'u16'),
-    ('pokemon_displace', 'u16'),
-    ('trainer_scale', 'u16'),
-    ('trainer_displace', 'u16'),
-    ('field_1E', 'u16')
+    ('genus', 'pokedex.genus_string', 0),
+    ('height', 'u16', 0),
+    ('weight', 'u16', 0),
+    ('entry_string_0', 'pokedex.entry_string_pointer', 0),
+    ('entry_string_1', 'pokedex.entry_string_pointer', 0),
+    ('field_14', 'u16', 0),
+    ('pokemon_scale', 'u16', 0),
+    ('pokemon_displace', 'u16', 0),
+    ('trainer_scale', 'u16', 0),
+    ('trainer_displace', 'u16', 0),
+    ('field_1E', 'u16', 0)
 ])
 
 pokedex_entries_type = agb.types.FixedSizeArrayType(
