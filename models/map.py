@@ -39,7 +39,7 @@ trigger_type = agb.types.Structure([
     ('x', 's16', 0),
     ('y', 's16', 0),
     ('level', 'u8', 0),
-    ('field_5', 'u8'), 0,
+    ('field_5', 'u8', 0),
     ('var', 'var', 0),
     ('value', 'u16', 0),
     ('field_A', 'u8', 0),
