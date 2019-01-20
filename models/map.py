@@ -96,7 +96,7 @@ header_type = agb.types.Structure([
     ('field_1A', 'u8', 0),
     ('battle_style', 'map_battle_style', 0)
 ], hidden_members=set([
-    'events', 'connections'
+    'events', 'connections', 'footer', 'footer_idx', 'namespace'
 ]))
 
 # Export new models
