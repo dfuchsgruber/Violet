@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pyagb = {ref = "rework", git = "https://github.com/WodkaRHR/pyagb.git"}
 "beautifulsoup4" = "*"
 "html5lib" = "*"
+pyagb = {ref = "rework", git = "https://github.com/WodkaRHR/pyagb"}
 
 [dev-packages]
 pylint = "*"
