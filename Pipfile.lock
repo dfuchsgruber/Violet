@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8f768edc07fa12e4c720394d91016a588f4d3206636b9519bcdd4b866f93d19b"
+            "sha256": "e8b73a37cc2cc5ed0ccaee67901d5ae7cd6271525d6bf20d0437b197339c96f6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -34,8 +34,8 @@
             "version": "==1.0.1"
         },
         "pyagb": {
-            "git": "https://github.com/WodkaRHR/pyagb",
-            "ref": "3f0a3c0e199d3975d61833532b0e0dd3268e830d"
+            "git": "https://github.com/WodkaRHR/pyagb.git",
+            "ref": "84ce796eb15104610ea5d831296d7f62281e7650"
         },
         "six": {
             "hashes": [
