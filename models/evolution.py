@@ -5,7 +5,7 @@ evolution_method_type = agb.types.ScalarType('u16', constant='evolution_methods'
 evolution_entry_type = agb.types.Structure([
     ('method', 'evolution.method', 0),
     ('argument', 'evolution.argument', 0),
-    ('target', 'species'), # Defined in wild_pokemon model
+    ('target', 'species', 0), # Defined in wild_pokemon model
     ('baby_trigger_item', 'item', 0)
 ])
 

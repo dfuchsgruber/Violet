@@ -99,7 +99,7 @@ egg_moves_type = agb.types.FixedSizeArrayType(
 
 tm_compatibility_type = agb.types.FixedSizeArrayType(
     'u8',
-    (lambda project, context, parents: 8)
+    (lambda project, context: 8)
 )
 
 tm_compatibilities_type = agb.types.FixedSizeArrayType(
