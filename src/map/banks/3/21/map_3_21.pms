@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_3_21",
 	"data": {
 		"footer": "map_footer_91",
 		"events": {
@@ -23,9 +21,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8ffe00",
 					"flag": "FELSIGE_ODNIS_OPTIONAL_VIOLET_GRUNT",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 2,
@@ -41,9 +39,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x81f97d",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 3,
@@ -57,11 +55,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x71a79a",
+					"script": "0",
 					"flag": "FELISGE_ODNIS_ITEM_8",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_HYPERTRANK"
 				},
 				{
 					"target_index": 4,
@@ -77,9 +75,9 @@
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "PKMNMENU",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 5,
@@ -95,9 +93,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x81f986",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 6,
@@ -113,9 +111,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x7240b6",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 7,
@@ -131,9 +129,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x81f98f",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 8,
@@ -147,11 +145,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x81c686",
+					"script": "0",
 					"flag": "FELISGE_ODNIS_ITEM_9",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_VM05"
 				},
 				{
 					"target_index": 9,
@@ -167,9 +165,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x72b101",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 10,
@@ -183,11 +181,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x71acd9",
+					"script": "0",
 					"flag": "FELSIGE_ODNIS_ITEM_10",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_BELEBER"
 				},
 				{
 					"target_index": 11,
@@ -201,11 +199,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x819c34",
+					"script": "0",
 					"flag": "FELISGE_ODNIS_ITEM_11",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_TM17"
 				},
 				{
 					"target_index": 12,
@@ -221,9 +219,9 @@
 					"alert_radius": 4,
 					"script": "ow_script_0x743daf",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 13,
@@ -239,9 +237,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x86c236",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 15,
@@ -257,9 +255,9 @@
 					"alert_radius": 2,
 					"script": "ow_script_0x744752",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 16,
@@ -275,9 +273,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x81c694",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 17,
@@ -293,9 +291,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x81fcc0",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 15,
@@ -311,9 +309,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x73ced1",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 19,
@@ -329,9 +327,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x7453d4",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 20,
@@ -345,11 +343,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x81c54c",
+					"script": "0",
 					"flag": "FELSIGE_ODNIS_ITEM_12",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_HYPERHEILER"
 				},
 				{
 					"target_index": 21,
@@ -365,9 +363,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x86c209",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 22,
@@ -383,9 +381,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x72409e",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 23,
@@ -401,9 +399,9 @@
 					"alert_radius": 4,
 					"script": "ow_script_0x735291",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 24,
@@ -419,9 +417,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x86c1f4",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 25,
@@ -437,9 +435,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x81fcb7",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 78,
@@ -453,11 +451,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x71cac8",
+					"script": "0",
 					"flag": "FELSIGE_ODNIS_ITEM_14",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_TOP_SCHUTZ"
 				},
 				{
 					"target_index": 26,
@@ -473,9 +471,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x1c1a76",
 					"flag": "0x15",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 27,
@@ -491,9 +489,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x86c216",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 28,
@@ -509,9 +507,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x86c22d",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -910,5 +908,7 @@
 		"show_name": "SHOW_VILLAGE",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_3_21",
+	"type": "header"
 }

@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_7_1",
 	"data": {
 		"footer": "map_footer_182",
 		"events": {
@@ -19,13 +17,13 @@
 					"x": 6,
 					"picture": 22,
 					"script": "ow_script_0x8364ca",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 5,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -37,13 +35,13 @@
 					"x": 8,
 					"picture": 20,
 					"script": "ow_script_0x87f98b",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 3,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -55,13 +53,13 @@
 					"x": 2,
 					"picture": 27,
 					"script": "ow_script_0x8e1b6d",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 3,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -100,5 +98,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_7_1",
+	"type": "header"
 }

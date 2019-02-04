@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_4_0",
 	"data": {
 		"footer": "map_footer_1",
 		"events": {
@@ -12,7 +10,6 @@
 				{
 					"picture": 88,
 					"level": 0,
-					"field_16": 0,
 					"target_index": 1,
 					"flag": "0x0",
 					"field_3": 0,
@@ -25,12 +22,12 @@
 					"field_2": 0,
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"picture": 72,
 					"level": 0,
-					"field_16": 0,
 					"target_index": 2,
 					"flag": "AMONIA_RIVAL_INSIDE_PLAYER_HOUSE",
 					"field_3": 0,
@@ -43,7 +40,8 @@
 					"field_2": 0,
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -82,5 +80,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_4_0",
+	"type": "header"
 }

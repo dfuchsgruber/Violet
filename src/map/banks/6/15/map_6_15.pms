@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_6_15",
 	"data": {
 		"footer": "map_footer_445",
 		"events": {
@@ -16,7 +14,6 @@
 					"target_index": 1,
 					"field_3": 0,
 					"picture": 56,
-					"field_16": 0,
 					"flag": "0x0",
 					"x": 4,
 					"field_2": 0,
@@ -25,7 +22,8 @@
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"behaviour_range": 17,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -74,5 +72,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_6_15",
+	"type": "header"
 }

@@ -109,7 +109,7 @@ map_event_header_t *dungeon2_init_events_forest(dungeon_generator2 *dg2){
       fmem.dpersons[person_idx].target_index = (u8)(person_idx + 1);
       fmem.dpersons[person_idx].overworld_index = 92;
       fmem.dpersons[person_idx].flag = (u16)(0x13 + i);
-      fmem.dpersons[person_idx].private = dungeon_forest_pick_item(dg2);
+      fmem.dpersons[person_idx].item = dungeon_forest_pick_item(dg2);
       fmem.dpersons[person_idx].script = ow_script_dungeon_item;
     }
 

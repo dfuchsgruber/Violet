@@ -102,6 +102,9 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	setflag(TRAINERSCHOOL_FAUN_INSIDE);
 	setflag(ROUTE_2_FELIX);
     setflag(ROUTE_3_MAY);
+    clearflag(POKEDEX_FEATURE_0);
+    clearflag(POKEDEX_FEATURE_1);
+    clearflag(POKEDEX_FEATURE_2);
     worldmap_flag_state_set(WM_ORINA_CITY);
     worldmap_flag_state_set(WM_AKTANIA);
     worldmap_flag_set(WM_ORINA_CITY);

@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_3_41",
 	"data": {
 		"footer": "map_footer_110",
 		"events": {
@@ -23,9 +21,9 @@
 					"alert_radius": 2,
 					"script": "ow_script_0x8a9625",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 4,
@@ -41,9 +39,9 @@
 					"alert_radius": 4,
 					"script": "ow_script_0x8a875c",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 7,
@@ -59,9 +57,9 @@
 					"alert_radius": 4,
 					"script": "ow_script_0x8a683c",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 8,
@@ -77,9 +75,9 @@
 					"alert_radius": 4,
 					"script": "ow_script_0x80f39f",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 9,
@@ -95,9 +93,9 @@
 					"alert_radius": 4,
 					"script": "ow_script_0x80f348",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 10,
@@ -113,9 +111,9 @@
 					"alert_radius": 1,
 					"script": "ow_script_0x8a79e8",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 11,
@@ -131,9 +129,9 @@
 					"alert_radius": 3,
 					"script": "ow_script_0x8aa963",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 12,
@@ -149,9 +147,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x803dab",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 13,
@@ -167,9 +165,9 @@
 					"alert_radius": 3,
 					"script": 0,
 					"flag": 0,
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 14,
@@ -185,9 +183,9 @@
 					"alert_radius": 6,
 					"script": 0,
 					"flag": 0,
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 18,
@@ -203,9 +201,9 @@
 					"alert_radius": 5,
 					"script": "ow_script_0x8a89d3",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 19,
@@ -221,9 +219,9 @@
 					"alert_radius": 7,
 					"script": "ow_script_0x810950",
 					"flag": 0,
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 26,
@@ -239,9 +237,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x844895",
 					"flag": "MERIANA_CITY_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 27,
@@ -255,11 +253,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810c8b",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_6",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_BELEBER"
 				},
 				{
 					"target_index": 28,
@@ -273,11 +271,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810c7d",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_POKEBALL"
 				},
 				{
 					"target_index": 29,
@@ -291,11 +289,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810c6f",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_1",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_AETHER"
 				},
 				{
 					"target_index": 30,
@@ -309,11 +307,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810c61",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_2",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_GEGENGIFT"
 				},
 				{
 					"target_index": 31,
@@ -327,11 +325,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810c53",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_3",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_SCHUTZ"
 				},
 				{
 					"target_index": 32,
@@ -345,11 +343,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810c45",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_5",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_TRANK"
 				},
 				{
 					"target_index": 33,
@@ -363,11 +361,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810c37",
+					"script": "0",
 					"flag": "TRAINERSCHOOL_FAUN_INSIDE",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_TRANK"
 				},
 				{
 					"target_index": 34,
@@ -383,9 +381,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x810e25",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 35,
@@ -401,9 +399,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x810e25",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 36,
@@ -419,9 +417,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x810e25",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 37,
@@ -437,9 +435,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x810e25",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 38,
@@ -455,9 +453,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x810e25",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 39,
@@ -473,9 +471,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x810e25",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 40,
@@ -491,9 +489,9 @@
 					"alert_radius": 0,
 					"script": 0,
 					"flag": 0,
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 43,
@@ -509,9 +507,9 @@
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 44,
@@ -527,9 +525,9 @@
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 45,
@@ -545,9 +543,9 @@
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 46,
@@ -563,9 +561,9 @@
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 93,
@@ -581,9 +579,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x1c1963",
 					"flag": "0x13",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 77,
@@ -599,9 +597,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x9270c4",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 41,
@@ -617,9 +615,9 @@
 					"alert_radius": 2,
 					"script": "ow_script_0x8a3c95",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 92,
@@ -633,11 +631,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x867da9",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_4",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_BLATTSTEIN"
 				},
 				{
 					"target_index": 62,
@@ -653,9 +651,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8fae7c",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 82,
@@ -671,9 +669,9 @@
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "PKMNMENU",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 98,
@@ -689,9 +687,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8ac1aa",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 42,
@@ -707,9 +705,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x860960",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 42,
@@ -725,9 +723,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8dce6c",
 					"flag": "ROUTE_2_EGG_0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 106,
@@ -743,9 +741,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8de68e",
 					"flag": 0,
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 75,
@@ -761,9 +759,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8e1126",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 69,
@@ -779,9 +777,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x92eca8",
 					"flag": "ROUTE_2_ALBUS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 74,
@@ -795,11 +793,11 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8e1946",
+					"script": "0",
 					"flag": "ROUTE_2_ITEM_5",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": "ITEM_PARA_HEILER"
 				},
 				{
 					"target_index": 76,
@@ -815,9 +813,9 @@
 					"alert_radius": 3,
 					"script": 0,
 					"flag": 0,
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 68,
@@ -833,9 +831,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8dca38",
 					"flag": "ROUTE_2_ALBUS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 67,
@@ -851,9 +849,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8dc594",
 					"flag": "ROUTE_2_ALBUS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 66,
@@ -869,9 +867,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8dc44d",
 					"flag": "ROUTE_2_ALBUS",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"target_index": 50,
@@ -887,9 +885,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x93d5cd",
 					"flag": "ROUTE_2_EGG_1",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -1397,5 +1395,7 @@
 		"show_name": "SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_3_41",
+	"type": "header"
 }

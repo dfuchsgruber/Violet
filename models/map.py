@@ -31,7 +31,7 @@ person_type = agb.types.Structure([
     ('alert_radius', 'u16', 0),
     ('script', 'ow_script_pointer', 0),
     ('flag', 'flag', 0),
-    ('field_16', 'u16', 0)
+    ('item', 'item', 0)
 ])
 
 

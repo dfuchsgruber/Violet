@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_10_16",
 	"data": {
 		"footer": "map_footer_15",
 		"events": {
@@ -16,7 +14,6 @@
 					"target_index": 1,
 					"field_3": 0,
 					"picture": 86,
-					"field_16": 0,
 					"flag": "0x0",
 					"x": 20,
 					"field_2": 0,
@@ -25,7 +22,8 @@
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
 					"behaviour_range": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"is_trainer": 1,
@@ -34,7 +32,6 @@
 					"target_index": 2,
 					"field_3": 0,
 					"picture": 24,
-					"field_16": 0,
 					"flag": "0x0",
 					"x": 12,
 					"field_2": 0,
@@ -43,7 +40,8 @@
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
 					"behaviour_range": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"is_trainer": 1,
@@ -52,7 +50,6 @@
 					"target_index": 3,
 					"field_3": 0,
 					"picture": 26,
-					"field_16": 0,
 					"flag": "0x0",
 					"x": 12,
 					"field_2": 0,
@@ -61,7 +58,8 @@
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
 					"behaviour_range": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"is_trainer": 1,
@@ -70,7 +68,6 @@
 					"target_index": 4,
 					"field_3": 0,
 					"picture": 18,
-					"field_16": 0,
 					"flag": "0x0",
 					"x": 20,
 					"field_2": 0,
@@ -79,7 +76,8 @@
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"behaviour_range": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -118,5 +116,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_ARENA"
-	}
+	},
+	"label": "map_10_16",
+	"type": "header"
 }

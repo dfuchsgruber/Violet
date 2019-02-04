@@ -9,7 +9,6 @@
 #define INCLUDE_C_MAP_EVENT_H_
 
 #include "tile/coordinate.h"
-#include "map/header.h"
 
 typedef struct map_event_person {
     u8 target_index; //scripts use this as target reference
@@ -28,7 +27,7 @@ typedef struct map_event_person {
     u16 alert_radius;
     u8 *script;
     u16 flag;
-    u16 private; // space to store anything you like, was padding
+    u16 item;
 
 } map_event_person;
 
@@ -82,6 +81,15 @@ typedef struct map_events {
  * @return pointer to the person
  */
 map_event_person *map_get_person(u8 target_idx, u8 map_id, u8 bank);
+
+/**
+ * Gets the script of an person event.
+ * @param target_idx target index of the person
+ * @param map_id the person is on
+ * @param bank mapbank which contains the map the person is on
+ * @return the script associated with the person event
+ */
+u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank);
 
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_3_3",
 	"data": {
 		"footer": "map_footer_81",
 		"events": {
@@ -19,13 +17,13 @@
 					"x": 26,
 					"picture": 50,
 					"script": "0",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 7,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "SILVANIA_GRUNTS",
@@ -37,13 +35,13 @@
 					"x": 27,
 					"picture": 49,
 					"script": "0",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 7,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -55,13 +53,13 @@
 					"x": 18,
 					"picture": 18,
 					"script": "ow_script_0x813162",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 17,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -73,13 +71,13 @@
 					"x": 25,
 					"picture": 32,
 					"script": "ow_script_0x813b0a",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 29,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -91,13 +89,13 @@
 					"x": 18,
 					"picture": 27,
 					"script": "ow_script_0x8141b3",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 30,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -109,13 +107,13 @@
 					"x": 14,
 					"picture": 23,
 					"script": "ow_script_0x8139e8",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 24,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x12",
@@ -127,13 +125,13 @@
 					"x": 26,
 					"picture": 95,
 					"script": "ow_script_0x1c1963",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 8,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -145,13 +143,13 @@
 					"x": 17,
 					"picture": 120,
 					"script": "ow_script_0x816c6f",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 17,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -163,13 +161,13 @@
 					"x": 0,
 					"picture": 0,
 					"script": "ow_script_0x8185e5",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 46,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -181,13 +179,13 @@
 					"x": 0,
 					"picture": 0,
 					"script": "ow_script_0x85bb91",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 45,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x13",
@@ -199,13 +197,13 @@
 					"x": 27,
 					"picture": 95,
 					"script": "ow_script_0x1c1963",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 8,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -217,13 +215,13 @@
 					"x": 10,
 					"picture": 19,
 					"script": "ow_script_0x8ded20",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 13,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -235,13 +233,13 @@
 					"x": 28,
 					"picture": 17,
 					"script": "ow_script_0x8df117",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 14,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -521,5 +519,7 @@
 		"show_name": "SHOW_VILLAGE",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_3_3",
+	"type": "header"
 }

@@ -1,6 +1,4 @@
 {
-	"type": "tileset_primary",
-	"label": "maptileset0",
 	"data": {
 		"palettes": [
 			[
@@ -34742,7 +34740,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x0",
@@ -34762,17 +34760,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"field_3": "0x2",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
-			},
-			{
-				"behaviour": "0x0",
+				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x2",
@@ -34795,6 +34783,16 @@
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
+				"field_3": "0x2",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_6": "0x0",
+				"field_7": "0x0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
@@ -34952,7 +34950,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x0",
@@ -34972,7 +34970,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x0",
@@ -35282,7 +35280,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x0",
@@ -35292,17 +35290,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"field_3": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
-			},
-			{
-				"behaviour": "0x0",
+				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x0",
@@ -35362,7 +35350,7 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x0",
@@ -35372,7 +35360,17 @@
 				"field_7": "0x0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"field_3": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_6": "0x0",
+				"field_7": "0x0"
+			},
+			{
+				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"field_3": "0x0",
@@ -38988,5 +38986,7 @@
 		"field_3": 0,
 		"animation_initialize": "tileset_0_anim_init",
 		"palette_displaced": 0
-	}
+	},
+	"label": "maptileset0",
+	"type": "tileset_primary"
 }

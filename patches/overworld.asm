@@ -128,3 +128,9 @@ overworld_pals equ 0x083A501C
 	ldr r1, = overworld_script_giveegg | 1
 	bx r1
 	.pool
+
+// Pokeballs without scripts
+.org 0x0805FC20
+	ldr r3, =person_get_script | 1
+	bx r3
+	.pool

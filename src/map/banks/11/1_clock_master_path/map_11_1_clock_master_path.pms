@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_11_1_clock_master_path",
 	"data": {
 		"footer": "map_footer_4",
 		"events": {
@@ -63,5 +61,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_11_1_clock_master_path",
+	"type": "header"
 }

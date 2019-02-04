@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_5_11",
 	"data": {
 		"footer": "map_footer_433",
 		"events": {
@@ -16,7 +14,6 @@
 					"target_index": 1,
 					"field_3": 0,
 					"picture": 33,
-					"field_16": 0,
 					"flag": "0x0",
 					"x": 9,
 					"field_2": 0,
@@ -25,7 +22,8 @@
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"behaviour_range": 17,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"is_trainer": 0,
@@ -34,7 +32,6 @@
 					"target_index": 2,
 					"field_3": 0,
 					"picture": 22,
-					"field_16": 0,
 					"flag": "0x0",
 					"x": 3,
 					"field_2": 0,
@@ -43,7 +40,8 @@
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
 					"behaviour_range": 17,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -109,5 +107,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_5_11",
+	"type": "header"
 }

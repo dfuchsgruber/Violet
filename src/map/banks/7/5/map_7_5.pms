@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_7_5",
 	"data": {
 		"footer": "map_footer_12",
 		"events": {
@@ -19,13 +17,13 @@
 					"x": 13,
 					"picture": 39,
 					"script": "ow_script_0x81afdd",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 9,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"is_trainer": 1,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -37,13 +35,13 @@
 					"x": 4,
 					"picture": 81,
 					"script": "ow_script_0x830eb6",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 4,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
 					"is_trainer": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -55,13 +53,13 @@
 					"x": 12,
 					"picture": 22,
 					"script": "ow_script_0x81b238",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 12,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"is_trainer": 1,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -73,13 +71,13 @@
 					"x": 4,
 					"picture": 40,
 					"script": "ow_script_0x81b139",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 13,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"is_trainer": 1,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				},
 				{
 					"flag": "0x0",
@@ -91,13 +89,13 @@
 					"x": 8,
 					"picture": 18,
 					"script": "ow_script_0x81b0a3",
-					"field_16": 0,
 					"field_2": 0,
 					"y": 7,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
 					"is_trainer": 1,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -192,5 +190,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_7_5",
+	"type": "header"
 }

@@ -1,6 +1,4 @@
 {
-	"type": "header",
-	"label": "map_3_75",
 	"data": {
 		"footer": "map_footer_448",
 		"events": {
@@ -23,9 +21,9 @@
 					"alert_radius": 0,
 					"script": "ow_script_0x8efcec",
 					"flag": "0x0",
-					"field_16": 0,
 					"field_D": 0,
-					"field_B": 0
+					"field_B": 0,
+					"item": 0
 				}
 			],
 			"warps": [
@@ -72,5 +70,7 @@
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
-	}
+	},
+	"label": "map_3_75",
+	"type": "header"
 }
