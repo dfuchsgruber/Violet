@@ -23,7 +23,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -41,7 +45,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -59,7 +67,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -77,7 +89,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -95,7 +111,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -113,7 +133,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -131,7 +155,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -149,7 +177,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -167,7 +199,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -185,7 +221,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -203,7 +243,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -221,7 +265,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -239,7 +287,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -257,7 +309,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 1,
@@ -275,7 +331,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -293,7 +353,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 1,
@@ -311,7 +375,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -329,7 +397,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -347,7 +419,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -365,7 +441,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -383,7 +463,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_FINSTERSTEIN"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_FINSTERSTEIN",
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -401,7 +485,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -419,7 +507,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -437,7 +529,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -455,7 +551,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -473,7 +573,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -491,7 +595,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -509,7 +617,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_SUPERBALL"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_SUPERBALL",
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -527,7 +639,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -545,7 +661,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -563,7 +683,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -581,11 +705,15 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x916919",
+					"script": "0",
 					"y": 20,
 					"target_index": 33,
 					"field_3": 0,
@@ -599,7 +727,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": "PERSON_EGG",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SHUPPET"
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -617,7 +749,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -635,7 +771,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				}
 			],
 			"warps": [

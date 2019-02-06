@@ -13,7 +13,7 @@
 typedef struct map_event_person {
     u8 target_index; //scripts use this as target reference
     u8 overworld_index; //the picture to be displayed
-    u8 field_2;
+    u8 script_std;
     u8 field_3;
     s16 x;
     s16 y;
@@ -27,7 +27,7 @@ typedef struct map_event_person {
     u16 alert_radius;
     u8 *script;
     u16 flag;
-    u16 item;
+    u16 value;
 
 } map_event_person;
 

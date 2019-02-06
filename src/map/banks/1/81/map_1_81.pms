@@ -23,7 +23,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 1,
@@ -41,7 +45,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 1,
@@ -59,7 +67,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 1,
@@ -77,7 +89,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -95,7 +111,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_FEUERSTEIN"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_FEUERSTEIN",
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -113,7 +133,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 1,
@@ -131,7 +155,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -149,7 +177,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_BELEBER"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_BELEBER",
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -167,7 +199,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_HYPERTRANK"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_HYPERTRANK",
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -185,7 +221,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -203,7 +243,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 1,
@@ -221,7 +265,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -239,7 +287,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -257,7 +309,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_FEUERHEILER"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_FEUERHEILER",
+						"species": 0
+					}
 				},
 				{
 					"is_trainer": 0,
@@ -275,7 +331,11 @@
 					"behaviour_range": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_MAGMAISIERER"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_MAGMAISIERER",
+						"species": 0
+					}
 				}
 			],
 			"warps": [

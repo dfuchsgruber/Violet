@@ -23,7 +23,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 4,
@@ -41,7 +45,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 7,
@@ -59,7 +67,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 8,
@@ -77,7 +89,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 9,
@@ -95,7 +111,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 10,
@@ -113,7 +133,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 11,
@@ -131,7 +155,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 12,
@@ -149,7 +177,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 13,
@@ -167,7 +199,11 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 14,
@@ -185,7 +221,11 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 18,
@@ -203,7 +243,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 19,
@@ -221,7 +265,11 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 26,
@@ -239,7 +287,11 @@
 					"flag": "MERIANA_CITY_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 27,
@@ -257,7 +309,11 @@
 					"flag": "ROUTE_2_ITEM_6",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_BELEBER"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_BELEBER",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 28,
@@ -275,7 +331,11 @@
 					"flag": "ROUTE_2_ITEM_0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_POKEBALL"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_POKEBALL",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 29,
@@ -293,7 +353,11 @@
 					"flag": "ROUTE_2_ITEM_1",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_AETHER"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_AETHER",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 30,
@@ -311,7 +375,11 @@
 					"flag": "ROUTE_2_ITEM_2",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_GEGENGIFT"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_GEGENGIFT",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 31,
@@ -329,7 +397,11 @@
 					"flag": "ROUTE_2_ITEM_3",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_SCHUTZ"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_SCHUTZ",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 32,
@@ -347,7 +419,11 @@
 					"flag": "ROUTE_2_ITEM_5",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_TRANK"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_TRANK",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 33,
@@ -365,7 +441,11 @@
 					"flag": "TRAINERSCHOOL_FAUN_INSIDE",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_TRANK"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_TRANK",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 34,
@@ -383,7 +463,11 @@
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 35,
@@ -401,7 +485,11 @@
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 36,
@@ -419,7 +507,11 @@
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 37,
@@ -437,7 +529,11 @@
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 38,
@@ -455,7 +551,11 @@
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 39,
@@ -473,7 +573,11 @@
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 40,
@@ -491,7 +595,11 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 43,
@@ -509,7 +617,11 @@
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 44,
@@ -527,7 +639,11 @@
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 45,
@@ -545,7 +661,11 @@
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 46,
@@ -563,7 +683,11 @@
 					"flag": "ROUTE_2_TANN_AND_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 93,
@@ -581,7 +705,11 @@
 					"flag": "0x13",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 77,
@@ -599,7 +727,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 41,
@@ -617,7 +749,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 92,
@@ -635,7 +771,11 @@
 					"flag": "ROUTE_2_ITEM_4",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_BLATTSTEIN"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_BLATTSTEIN",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 62,
@@ -653,7 +793,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 82,
@@ -671,7 +815,11 @@
 					"flag": "PKMNMENU",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 98,
@@ -689,7 +837,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 42,
@@ -707,7 +859,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 42,
@@ -721,11 +877,15 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8dce6c",
+					"script": "0",
 					"flag": "ROUTE_2_EGG_0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": "PERSON_EGG",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_BARSCHWA"
+					}
 				},
 				{
 					"target_index": 106,
@@ -743,7 +903,11 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 75,
@@ -761,7 +925,11 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 69,
@@ -779,7 +947,11 @@
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 74,
@@ -797,7 +969,11 @@
 					"flag": "ROUTE_2_ITEM_5",
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_PARA_HEILER"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_PARA_HEILER",
+						"species": 0
+					}
 				},
 				{
 					"target_index": 76,
@@ -815,7 +991,11 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 68,
@@ -833,7 +1013,11 @@
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 67,
@@ -851,7 +1035,11 @@
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 66,
@@ -869,7 +1057,11 @@
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"target_index": 50,
@@ -883,11 +1075,15 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x93d5cd",
+					"script": "0",
 					"flag": "ROUTE_2_EGG_1",
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": "PERSON_EGG",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ELEKID"
+					}
 				}
 			],
 			"warps": [

@@ -14,11 +14,23 @@ types_type = agb.types.ScalarType('u8', constant='map_types')
 show_name_type = agb.types.ScalarType('u8', constant='map_show_name_types')
 battle_style_type = agb.types.ScalarType('u8', constant='map_battle_styles')
 
+person_script_std_type = agb.types.UnionType({
+        'item' : 'item',
+        'species' : 'species',
+    },
+    lambda project, context, parents: {
+        'PERSON_ITEM' : 'item',
+        'PERSON_EGG' : 'species',
+    }.get(parents[-1]['script_std'], 'item')
+)
+
+person_script_std_type_type = agb.types.ScalarType('u8', constant='person_script_stds')
+
 # Events
 person_type = agb.types.Structure([
     ('target_index', 'u8', 0),
     ('picture', 'u8', 0),
-    ('field_2', 'u8', 0),
+    ('script_std', 'person_script_std', 0),
     ('field_3', 'u8', 0),
     ('x', 's16', 0),
     ('y', 's16', 0),
@@ -31,7 +43,7 @@ person_type = agb.types.Structure([
     ('alert_radius', 'u16', 0),
     ('script', 'ow_script_pointer', 0),
     ('flag', 'flag', 0),
-    ('item', 'item', 0)
+    ('value', 'event.person.script_std', 0)
 ])
 
 
@@ -103,6 +115,8 @@ header_type = agb.types.Structure([
 
 models_to_export = {
     'person_behaviour' : person_behaviour_type,
+    'person_script_std' : person_script_std_type_type,
+    'event.person.script_std' : person_script_std_type,
     'flag' : flag_type,
     'var' : var_type,
     'song' : song_type,

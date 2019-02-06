@@ -1,0 +1,8 @@
+{
+	"type": "dict",
+	"values": {
+		"PERSON_SCRIPT": 0,
+		"PERSON_ITEM": 1,
+		"PERSON_EGG": 2
+	}
+}

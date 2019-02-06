@@ -23,7 +23,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 60,
@@ -41,7 +45,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 69,
@@ -59,7 +67,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 23,
@@ -77,7 +89,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 27,
@@ -95,7 +111,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 29,
@@ -113,7 +133,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 26,
@@ -131,7 +155,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 18,
@@ -149,7 +177,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 24,
@@ -167,7 +199,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 35,
@@ -185,7 +221,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 19,
@@ -203,7 +243,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 24,
@@ -221,7 +265,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 30,
@@ -239,7 +287,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 20,
@@ -257,7 +309,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 17,
@@ -275,7 +331,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 41,
@@ -293,7 +353,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 32,
@@ -311,7 +375,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 52,
@@ -329,7 +397,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 18,
@@ -347,7 +419,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 22,
@@ -365,7 +441,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 48,
@@ -383,7 +463,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 26,
@@ -401,7 +485,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 57,
@@ -419,7 +507,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 32,
@@ -437,7 +529,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 29,
@@ -455,7 +551,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 18,
@@ -473,7 +573,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 55,
@@ -491,7 +595,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 35,
@@ -509,7 +617,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 58,
@@ -527,7 +639,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 78,
@@ -545,7 +661,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 27,
@@ -563,7 +683,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 78,
@@ -581,7 +705,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 16,
@@ -599,7 +727,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 92,
@@ -617,7 +749,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": "ITEM_HYPERBALL"
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_HYPERBALL",
+						"species": 0
+					}
 				},
 				{
 					"picture": 32,
@@ -635,7 +771,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				},
 				{
 					"picture": 86,
@@ -653,7 +793,11 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"item": 0
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				}
 			],
 			"warps": [

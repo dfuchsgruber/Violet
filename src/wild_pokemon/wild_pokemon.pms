@@ -1,0 +1,4303 @@
+{
+	"type": "wild_pokemon",
+	"label": "wild_pokemon",
+	"data": [
+		{
+			"bank": 3,
+			"map_idx": 0,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 9,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 33,
+						"level_max": 35,
+						"species": "POKEMON_LOTURZEL"
+					},
+					{
+						"level_min": 33,
+						"level_max": 35,
+						"species": "POKEMON_MASKEREGEN"
+					},
+					{
+						"level_min": 33,
+						"level_max": 35,
+						"species": "POKEMON_LOTURZEL"
+					},
+					{
+						"level_min": 33,
+						"level_max": 35,
+						"species": "POKEMON_MASKEREGEN"
+					},
+					{
+						"level_min": 34,
+						"level_max": 35,
+						"species": "POKEMON_LOTURZEL"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 66,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 11,
+							"level_max": 11,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 11,
+							"level_max": 1,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 22,
+							"level_max": 25,
+							"species": "POKEMON_FLEGMON"
+						},
+						{
+							"level_min": 22,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 22,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 35,
+							"level_max": 38,
+							"species": "POKEMON_FLEGMON"
+						},
+						{
+							"level_min": 35,
+							"level_max": 38,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 35,
+							"level_max": 38,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 35,
+							"level_max": 38,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 35,
+							"level_max": 38,
+							"species": "POKEMON_FLEGMON"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 1,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 15,
+				"field_1": 25,
+				"field_2": 67,
+				"field_3": 1,
+				"entries": [
+					{
+						"level_min": 25,
+						"level_max": 30,
+						"species": "POKEMON_LOTURZEL"
+					},
+					{
+						"level_min": 25,
+						"level_max": 30,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 25,
+						"level_max": 30,
+						"species": "POKEMON_LOTURZEL"
+					},
+					{
+						"level_min": 27,
+						"level_max": 30,
+						"species": "POKEMON_LOMBRERO"
+					},
+					{
+						"level_min": 27,
+						"level_max": 32,
+						"species": "POKEMON_LOMBRERO"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 88,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 9,
+							"level_max": 12,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 9,
+							"level_max": 13,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 2,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 0,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 23,
+						"level_max": 29,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 24,
+						"level_max": 30,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 25,
+						"level_max": 31,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 30,
+						"level_max": 33,
+						"species": "POKEMON_PELIPPER"
+					},
+					{
+						"level_min": 30,
+						"level_max": 33,
+						"species": "POKEMON_PELIPPER"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 124,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 6,
+							"level_max": 12,
+							"species": "POKEMON_QUABBEL"
+						},
+						{
+							"level_min": 6,
+							"level_max": 12,
+							"species": "POKEMON_QUABBEL"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 6,
+							"level_max": 12,
+							"species": "POKEMON_QUABBEL"
+						},
+						{
+							"level_min": 6,
+							"level_max": 12,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 6,
+							"level_max": 12,
+							"species": "POKEMON_TENTACHA"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 6,
+							"level_max": 12,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_APOQUALLYP"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_APOQUALLYP"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_TENTOXA"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_TENTOXA"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 6,
+			"map_idx": 2,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 19,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 39,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_FIFFYEN"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_DARTIRI"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_FIFFYEN"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_ZIGZACHS"
+					},
+					{
+						"level_min": 2,
+						"level_max": 2,
+						"species": "POKEMON_STARALILI"
+					},
+					{
+						"level_min": 2,
+						"level_max": 2,
+						"species": "POKEMON_STARALILI"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_STARALILI"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_FIFFYEN"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_STARALILI"
+					},
+					{
+						"level_min": 4,
+						"level_max": 4,
+						"species": "POKEMON_STARALILI"
+					},
+					{
+						"level_min": 5,
+						"level_max": 5,
+						"species": "POKEMON_STARALILI"
+					},
+					{
+						"level_min": 4,
+						"level_max": 4,
+						"species": "POKEMON_STARALILI"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 0,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 8,
+						"level_max": 10,
+						"species": "POKEMON_FUKANO"
+					},
+					{
+						"level_min": 7,
+						"level_max": 11,
+						"species": "POKEMON_NIDORANW"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_NIDORANM"
+					},
+					{
+						"level_min": 7,
+						"level_max": 11,
+						"species": "POKEMON_SNUBBULL"
+					},
+					{
+						"level_min": 8,
+						"level_max": 12,
+						"species": "POKEMON_SNUBBULL"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 76,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 3,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 23,
+						"level_max": 28,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 24,
+						"level_max": 28,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 24,
+						"level_max": 29,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 26,
+						"level_max": 28,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 26,
+						"level_max": 28,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 27,
+						"level_max": 29,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 27,
+						"level_max": 29,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 28,
+						"level_max": 30,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 28,
+						"level_max": 30,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 32,
+						"level_max": 32,
+						"species": "POKEMON_KRAMURX"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 57,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 21,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 2,
+						"level_max": 3,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 2,
+						"level_max": 3,
+						"species": "POKEMON_FIFFYEN"
+					},
+					{
+						"level_min": 2,
+						"level_max": 3,
+						"species": "POKEMON_ZIGZACHS"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_FIFFYEN"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_ZIGZACHS"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_FIFFYEN"
+					},
+					{
+						"level_min": 3,
+						"level_max": 3,
+						"species": "POKEMON_ZIGZACHS"
+					},
+					{
+						"level_min": 3,
+						"level_max": 4,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 3,
+						"level_max": 4,
+						"species": "POKEMON_FIFFYEN"
+					},
+					{
+						"level_min": 3,
+						"level_max": 4,
+						"species": "POKEMON_ZIGZACHS"
+					}
+				]
+			},
+			"water": {
+				"frequency": 6,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 5,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 5,
+						"level_max": 15,
+						"species": "POKEMON_QUABBEL"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_TENTOXA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_TENTOXA"
+					}
+				]
+			},
+			"other": {
+				"frequency": 0,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 9,
+						"level_max": 11,
+						"species": "POKEMON_ABRA"
+					},
+					{
+						"level_min": 7,
+						"level_max": 11,
+						"species": "POKEMON_HORNLIU"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_ABRA"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_WATTZAPF"
+					},
+					{
+						"level_min": 9,
+						"level_max": 12,
+						"species": "POKEMON_WATTZAPF"
+					}
+				]
+			},
+			"rod": {
+				"frequency": 20,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_SEEPER"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_SEEPER"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_SEEPER"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_SEEPER"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_SEEMON"
+						},
+						{
+							"level_min": 35,
+							"level_max": 40,
+							"species": "POKEMON_SEEPER"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 72,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 41,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 16,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_FRIZELBLIZ"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_TRASLA"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_WAUMPEL"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_TRASLA"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_KOKUNA"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_HORNLIU"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_MENKI"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_ABRA"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_MENKI"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_MENKI"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_MENKI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 10,
+						"species": "POKEMON_BIBOR"
+					}
+				]
+			},
+			"water": {
+				"frequency": 7,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 20,
+						"level_max": 25,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 20,
+						"level_max": 25,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 25,
+						"level_max": 30,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 30,
+						"level_max": 35,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_AZUMARILL"
+					}
+				]
+			},
+			"other": {
+				"frequency": 151,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 9,
+						"level_max": 12,
+						"species": "POKEMON_VOLTOBAL"
+					},
+					{
+						"level_min": 9,
+						"level_max": 12,
+						"species": "POKEMON_ZIGZACHS"
+					},
+					{
+						"level_min": 10,
+						"level_max": 14,
+						"species": "POKEMON_SAMURZEL"
+					},
+					{
+						"level_min": 10,
+						"level_max": 14,
+						"species": "POKEMON_SAMURZEL"
+					},
+					{
+						"level_min": 10,
+						"level_max": 15,
+						"species": "POKEMON_SAMURZEL"
+					}
+				]
+			},
+			"rod": {
+				"frequency": 49,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 9,
+							"level_max": 11,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 9,
+							"level_max": 11,
+							"species": "POKEMON_TENTACHA"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_TENTOXA"
+						},
+						{
+							"level_min": 1,
+							"level_max": 1,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 70,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 9,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_ONIX"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_ONIX"
+					},
+					{
+						"level_min": 5,
+						"level_max": 8,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 5,
+						"level_max": 8,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 5,
+						"level_max": 8,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 6,
+						"level_max": 8,
+						"species": "POKEMON_ONIX"
+					},
+					{
+						"level_min": 6,
+						"level_max": 8,
+						"species": "POKEMON_BRONZEL"
+					},
+					{
+						"level_min": 7,
+						"level_max": 8,
+						"species": "POKEMON_BRONZEL"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 15,
+			"map_idx": 0,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 16,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 9,
+						"level_max": 12,
+						"species": "POKEMON_VOLTILAMM"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_KNOFENSA"
+					},
+					{
+						"level_min": 9,
+						"level_max": 13,
+						"species": "POKEMON_MYRAPLA"
+					},
+					{
+						"level_min": 9,
+						"level_max": 13,
+						"species": "POKEMON_MAEHIKEL"
+					},
+					{
+						"level_min": 7,
+						"level_max": 14,
+						"species": "POKEMON_VOLTILAMM"
+					},
+					{
+						"level_min": 9,
+						"level_max": 13,
+						"species": "POKEMON_KNOFENSA"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_MYRAPLA"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_MAEHIKEL"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_VOLTILAMM"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_VOLTILAMM"
+					},
+					{
+						"level_min": 8,
+						"level_max": 11,
+						"species": "POKEMON_KNOFENSA"
+					},
+					{
+						"level_min": 15,
+						"level_max": 15,
+						"species": "POKEMON_WAATY"
+					}
+				]
+			},
+			"water": {
+				"frequency": 11,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_LOTURZEL"
+					},
+					{
+						"level_min": 28,
+						"level_max": 33,
+						"species": "POKEMON_LOMBRERO"
+					},
+					{
+						"level_min": 28,
+						"level_max": 30,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 30,
+						"level_max": 35,
+						"species": "POKEMON_AZUMARILL"
+					},
+					{
+						"level_min": 30,
+						"level_max": 38,
+						"species": "POKEMON_AZUMARILL"
+					}
+				]
+			},
+			"other": {
+				"frequency": 130,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 10,
+						"level_max": 14,
+						"species": "POKEMON_MOGELBAUM"
+					},
+					{
+						"level_min": 10,
+						"level_max": 14,
+						"species": "POKEMON_CLAVION"
+					},
+					{
+						"level_min": 10,
+						"level_max": 14,
+						"species": "POKEMON_SCHLURP"
+					},
+					{
+						"level_min": 12,
+						"level_max": 14,
+						"species": "POKEMON_MOGELBAUM"
+					},
+					{
+						"level_min": 14,
+						"level_max": 16,
+						"species": "POKEMON_CLAVION"
+					}
+				]
+			},
+			"rod": {
+				"frequency": 0,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 9,
+							"level_max": 13,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 11,
+							"level_max": 14,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 15,
+			"map_idx": 4,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 6,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_STARAVIA"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_DARTIRI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_STARALILI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_DARTIRI"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 10,
+						"level_max": 13,
+						"species": "POKEMON_DARTIRI"
+					},
+					{
+						"level_min": 14,
+						"level_max": 17,
+						"species": "POKEMON_STARAVIA"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 3,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 17,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 30,
+						"level_max": 30,
+						"species": "POKEMON_SEEPER"
+					},
+					{
+						"level_min": 30,
+						"level_max": 30,
+						"species": "POKEMON_SEEPER"
+					},
+					{
+						"level_min": 30,
+						"level_max": 30,
+						"species": "POKEMON_SEEPER"
+					},
+					{
+						"level_min": 30,
+						"level_max": 35,
+						"species": "POKEMON_SEEMON"
+					},
+					{
+						"level_min": 35,
+						"level_max": 38,
+						"species": "POKEMON_SEEDRAKING"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 10,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 13,
+							"level_max": 16,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 13,
+							"level_max": 16,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 1,
+			"map_idx": 0,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 9,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_SAMURZEL"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_KNILZ"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_WAUMPEL"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_MYRAPLA"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_SAMURZEL"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_KNILZ"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_SCHALOKO"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_KNILZ"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_PANEKON"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_PUDOX"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_BLANAS"
+					},
+					{
+						"level_min": 20,
+						"level_max": 24,
+						"species": "POKEMON_TENGULIST"
+					}
+				]
+			},
+			"water": {
+				"frequency": 10,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 35,
+						"level_max": 35,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 35,
+						"level_max": 35,
+						"species": "POKEMON_GEHWEIHER"
+					},
+					{
+						"level_min": 35,
+						"level_max": 37,
+						"species": "POKEMON_GEHWEIHER"
+					},
+					{
+						"level_min": 37,
+						"level_max": 37,
+						"species": "POKEMON_ENTORON"
+					},
+					{
+						"level_min": 40,
+						"level_max": 40,
+						"species": "POKEMON_ENTORON"
+					}
+				]
+			},
+			"other": {
+				"frequency": 138,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 20,
+						"level_max": 25,
+						"species": "POKEMON_PARAGONI"
+					},
+					{
+						"level_min": 20,
+						"level_max": 25,
+						"species": "POKEMON_TANNZA"
+					},
+					{
+						"level_min": 20,
+						"level_max": 25,
+						"species": "POKEMON_KASTADUR"
+					},
+					{
+						"level_min": 20,
+						"level_max": 25,
+						"species": "POKEMON_PARAGONI"
+					},
+					{
+						"level_min": 20,
+						"level_max": 25,
+						"species": "POKEMON_KASTADUR"
+					}
+				]
+			},
+			"rod": {
+				"frequency": 38,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 14,
+							"level_max": 14,
+							"species": "POKEMON_SCHMERBE"
+						},
+						{
+							"level_min": 14,
+							"level_max": 14,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 36,
+							"level_max": 36,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 36,
+							"level_max": 36,
+							"species": "POKEMON_WELSAR"
+						},
+						{
+							"level_min": 36,
+							"level_max": 36,
+							"species": "POKEMON_WELSAR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 48,
+							"level_max": 48,
+							"species": "POKEMON_WELSAR"
+						},
+						{
+							"level_min": 48,
+							"level_max": 48,
+							"species": "POKEMON_WELSAR"
+						},
+						{
+							"level_min": 48,
+							"level_max": 48,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 55,
+							"level_max": 55,
+							"species": "POKEMON_WELSAR"
+						},
+						{
+							"level_min": 55,
+							"level_max": 55,
+							"species": "POKEMON_WELSAR"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 0,
+			"map_idx": 5,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 2,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 15,
+						"level_max": 18,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 15,
+						"level_max": 18,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 15,
+						"level_max": 18,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 15,
+						"level_max": 18,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 15,
+						"level_max": 18,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 15,
+						"level_max": 18,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 15,
+						"level_max": 18,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 16,
+						"level_max": 19,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 16,
+						"level_max": 19,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 16,
+						"level_max": 19,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 17,
+						"level_max": 20,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 22,
+						"level_max": 22,
+						"species": "POKEMON_SANDAN"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 0,
+			"map_idx": 6,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 4,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 16,
+						"level_max": 19,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_NASGNET"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_NASGNET"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 17,
+						"level_max": 20,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 17,
+						"level_max": 20,
+						"species": "POKEMON_NASGNET"
+					},
+					{
+						"level_min": 17,
+						"level_max": 20,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 18,
+						"level_max": 21,
+						"species": "POKEMON_STOLLUNIOR"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 0,
+			"map_idx": 7,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 1,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 20,
+						"level_max": 22,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 18,
+						"level_max": 22,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 18,
+						"level_max": 22,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 18,
+						"level_max": 22,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 18,
+						"level_max": 22,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 18,
+						"level_max": 18,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 22,
+						"level_max": 22,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 22,
+						"level_max": 17,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 17,
+						"level_max": 17,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 18,
+						"level_max": 18,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 19,
+						"level_max": 21,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 26,
+						"level_max": 26,
+						"species": "POKEMON_AZUMARILL"
+					}
+				]
+			},
+			"water": {
+				"frequency": 10,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 25,
+						"level_max": 32,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 25,
+						"level_max": 32,
+						"species": "POKEMON_KREBSCORPS"
+					},
+					{
+						"level_min": 27,
+						"level_max": 33,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 25,
+						"level_max": 34,
+						"species": "POKEMON_KINGLER"
+					},
+					{
+						"level_min": 30,
+						"level_max": 35,
+						"species": "POKEMON_KINGLER"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 30,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 20,
+							"level_max": 22,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 20,
+							"level_max": 22,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 20,
+							"level_max": 22,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 20,
+							"level_max": 22,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 20,
+							"level_max": 22,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 20,
+							"level_max": 22,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 20,
+							"level_max": 24,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 20,
+							"level_max": 24,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 20,
+							"level_max": 24,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 25,
+							"level_max": 25,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 21,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 17,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_KNACKLION"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_PUPPANCE"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_KNACKLION"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_PUPPANCE"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 17,
+						"level_max": 19,
+						"species": "POKEMON_SANDAN"
+					},
+					{
+						"level_min": 19,
+						"level_max": 22,
+						"species": "POKEMON_SANDAN"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 154,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 16,
+						"level_max": 19,
+						"species": "POKEMON_TUSKA"
+					},
+					{
+						"level_min": 16,
+						"level_max": 20,
+						"species": "POKEMON_TUSKA"
+					},
+					{
+						"level_min": 16,
+						"level_max": 21,
+						"species": "POKEMON_TUSKA"
+					},
+					{
+						"level_min": 18,
+						"level_max": 22,
+						"species": "POKEMON_SANDAMER"
+					},
+					{
+						"level_min": 25,
+						"level_max": 25,
+						"species": "POKEMON_SANDAMER"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 67,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 3,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 19,
+						"level_max": 21,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 19,
+						"level_max": 22,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 19,
+						"level_max": 23,
+						"species": "POKEMON_DIGDA"
+					},
+					{
+						"level_min": 20,
+						"level_max": 24,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 24,
+						"level_max": 26,
+						"species": "POKEMON_MACHOLLO"
+					}
+				]
+			},
+			"water": {
+				"frequency": 15,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 35,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 37,
+						"level_max": 37,
+						"species": "POKEMON_TENTOXA"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 6,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 20,
+							"level_max": 20,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 20,
+							"level_max": 20,
+							"species": "POKEMON_TENTACHA"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 40,
+							"level_max": 40,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 40,
+							"level_max": 40,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 40,
+							"level_max": 40,
+							"species": "POKEMON_TENTOXA"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 40,
+							"level_max": 40,
+							"species": "POKEMON_TENTOXA"
+						},
+						{
+							"level_min": 40,
+							"level_max": 40,
+							"species": "POKEMON_TENTOXA"
+						},
+						{
+							"level_min": 50,
+							"level_max": 50,
+							"species": "POKEMON_TENTOXA"
+						},
+						{
+							"level_min": 50,
+							"level_max": 50,
+							"species": "POKEMON_TENTOXA"
+						},
+						{
+							"level_min": 50,
+							"level_max": 50,
+							"species": "POKEMON_TENTOXA"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 74,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 23,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 13,
+						"level_max": 16,
+						"species": "POKEMON_PONITA"
+					},
+					{
+						"level_min": 13,
+						"level_max": 16,
+						"species": "POKEMON_MAEHIKEL"
+					},
+					{
+						"level_min": 13,
+						"level_max": 16,
+						"species": "POKEMON_MYRAPLA"
+					},
+					{
+						"level_min": 13,
+						"level_max": 16,
+						"species": "POKEMON_RIHORN"
+					},
+					{
+						"level_min": 14,
+						"level_max": 16,
+						"species": "POKEMON_PONITA"
+					},
+					{
+						"level_min": 14,
+						"level_max": 16,
+						"species": "POKEMON_MAEHIKEL"
+					},
+					{
+						"level_min": 14,
+						"level_max": 16,
+						"species": "POKEMON_PONITA"
+					},
+					{
+						"level_min": 14,
+						"level_max": 16,
+						"species": "POKEMON_RIHORN"
+					},
+					{
+						"level_min": 15,
+						"level_max": 17,
+						"species": "POKEMON_MAEHIKEL"
+					},
+					{
+						"level_min": 15,
+						"level_max": 17,
+						"species": "POKEMON_TAUROS"
+					},
+					{
+						"level_min": 15,
+						"level_max": 17,
+						"species": "POKEMON_TAUROS"
+					},
+					{
+						"level_min": 18,
+						"level_max": 18,
+						"species": "POKEMON_TAUROS"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 134,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 13,
+						"level_max": 17,
+						"species": "POKEMON_PONITA"
+					},
+					{
+						"level_min": 13,
+						"level_max": 17,
+						"species": "POKEMON_KNACKLION"
+					},
+					{
+						"level_min": 13,
+						"level_max": 17,
+						"species": "POKEMON_SKORGLA"
+					},
+					{
+						"level_min": 14,
+						"level_max": 17,
+						"species": "POKEMON_SKORGLA"
+					},
+					{
+						"level_min": 16,
+						"level_max": 18,
+						"species": "POKEMON_SKORGLA"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 4,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 13,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 30,
+						"level_max": 30,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 30,
+						"level_max": 30,
+						"species": "POKEMON_KANIVANHA"
+					},
+					{
+						"level_min": 30,
+						"level_max": 30,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_TENTACHA"
+					}
+				]
+			},
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 8,
+			"map_idx": 11,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 13,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 26,
+						"level_max": 32,
+						"species": "POKEMON_QUABBEL"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 26,
+						"level_max": 29,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 27,
+						"level_max": 33,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 30,
+						"level_max": 34,
+						"species": "POKEMON_KRABBY"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 0,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 21,
+							"level_max": 24,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 21,
+							"level_max": 24,
+							"species": "POKEMON_QUABBEL"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KRABBY"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_QUABBEL"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_QUABBEL"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KINGLER"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 1,
+			"map_idx": 59,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 7,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_SPOINK"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_SPOINK"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_SPOINK"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_SPOINK"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_PELIPPER"
+					}
+				]
+			},
+			"water": {
+				"frequency": 0,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 32,
+						"level_max": 32,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 32,
+						"level_max": 34,
+						"species": "POKEMON_QUABBEL"
+					},
+					{
+						"level_min": 32,
+						"level_max": 34,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 33,
+						"level_max": 35,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 35,
+						"level_max": 36,
+						"species": "POKEMON_WAILMER"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 25,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 23,
+							"level_max": 25,
+							"species": "POKEMON_QUABBEL"
+						},
+						{
+							"level_min": 23,
+							"level_max": 25,
+							"species": "POKEMON_QUABBEL"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 23,
+							"level_max": 25,
+							"species": "POKEMON_REMORAID"
+						},
+						{
+							"level_min": 23,
+							"level_max": 25,
+							"species": "POKEMON_REMORAID"
+						},
+						{
+							"level_min": 23,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KINGLER"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 22,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 21,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 21,
+						"level_max": 25,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 21,
+						"level_max": 25,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 21,
+						"level_max": 25,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 21,
+						"level_max": 25,
+						"species": "POKEMON_LOTURZEL"
+					},
+					{
+						"level_min": 21,
+						"level_max": 25,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 21,
+						"level_max": 25,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 21,
+						"level_max": 25,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 22,
+						"level_max": 25,
+						"species": "POKEMON_LOMBRERO"
+					},
+					{
+						"level_min": 22,
+						"level_max": 26,
+						"species": "POKEMON_LOMBRERO"
+					},
+					{
+						"level_min": 25,
+						"level_max": 28,
+						"species": "POKEMON_MASCHOCK"
+					},
+					{
+						"level_min": 25,
+						"level_max": 28,
+						"species": "POKEMON_MASCHOCK"
+					}
+				]
+			},
+			"water": {
+				"frequency": 2,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 5,
+						"level_max": 10,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 10,
+						"level_max": 20,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 20,
+						"level_max": 30,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 30,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_TENTACHA"
+					}
+				]
+			},
+			"other": {
+				"frequency": 159,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_WINGULL"
+					},
+					{
+						"level_min": 21,
+						"level_max": 26,
+						"species": "POKEMON_FELINO"
+					},
+					{
+						"level_min": 23,
+						"level_max": 25,
+						"species": "POKEMON_PANDIR"
+					},
+					{
+						"level_min": 23,
+						"level_max": 25,
+						"species": "POKEMON_PANDIR"
+					},
+					{
+						"level_min": 28,
+						"level_max": 28,
+						"species": "POKEMON_PANDIR"
+					}
+				]
+			},
+			"rod": {
+				"frequency": 20,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_TENTACHA"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KRABBY"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KINGLER"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 16,
+			"map_idx": 3,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 4,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 21,
+						"level_max": 24,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 21,
+						"level_max": 24,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 21,
+						"level_max": 24,
+						"species": "POKEMON_MENKI"
+					},
+					{
+						"level_min": 21,
+						"level_max": 24,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 21,
+						"level_max": 24,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 21,
+						"level_max": 24,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 23,
+						"level_max": 25,
+						"species": "POKEMON_GEOROK"
+					},
+					{
+						"level_min": 23,
+						"level_max": 25,
+						"species": "POKEMON_KRABBY"
+					},
+					{
+						"level_min": 23,
+						"level_max": 25,
+						"species": "POKEMON_MENKI"
+					},
+					{
+						"level_min": 25,
+						"level_max": 26,
+						"species": "POKEMON_MENKI"
+					},
+					{
+						"level_min": 27,
+						"level_max": 27,
+						"species": "POKEMON_MASCHOCK"
+					},
+					{
+						"level_min": 27,
+						"level_max": 27,
+						"species": "POKEMON_MASCHOCK"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": {
+				"frequency": 84,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 16,
+							"level_max": 19,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 15,
+							"level_max": 20,
+							"species": "POKEMON_KRABBY"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KRABBY"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_KRABBY"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 0,
+							"level_max": 0,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 23,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 21,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_MINUN"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_PLUSLE"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_MINUN"
+					},
+					{
+						"level_min": 23,
+						"level_max": 26,
+						"species": "POKEMON_PLUSLE"
+					},
+					{
+						"level_min": 24,
+						"level_max": 26,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 25,
+						"level_max": 28,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_MEDITIE"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_MEDITIE"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 161,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 25,
+						"level_max": 28,
+						"species": "POKEMON_SNUBBULL"
+					},
+					{
+						"level_min": 26,
+						"level_max": 28,
+						"species": "POKEMON_SPOINK"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 29,
+						"level_max": 32,
+						"species": "POKEMON_SPOINK"
+					},
+					{
+						"level_min": 32,
+						"level_max": 34,
+						"species": "POKEMON_SPOINK"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 17,
+			"map_idx": 2,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 2,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 24,
+						"level_max": 28,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 25,
+						"level_max": 28,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 26,
+						"level_max": 29,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 26,
+						"level_max": 29,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 27,
+						"level_max": 29,
+						"species": "POKEMON_WABLU"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_SCHWALBOSS"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 5,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 1,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 5,
+						"level_max": 10,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 10,
+						"level_max": 20,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 20,
+						"level_max": 30,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 30,
+						"level_max": 35,
+						"species": "POKEMON_TENTACHA"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_TENTACHA"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 10,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_SEEPER"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KRABBY"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_SEEPER"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_MUSCHAS"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_SEEPER"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_ENTON"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 3,
+			"map_idx": 24,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 2,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 25,
+						"level_max": 32,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 25,
+						"level_max": 32,
+						"species": "POKEMON_MARILL"
+					},
+					{
+						"level_min": 25,
+						"level_max": 30,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 30,
+						"level_max": 35,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 35,
+						"level_max": 40,
+						"species": "POKEMON_ENTON"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 20,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KREBSCORPS"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_QUABBEL"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KREBSCORPS"
+						},
+						{
+							"level_min": 20,
+							"level_max": 30,
+							"species": "POKEMON_DUOKLES"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_GARADOS"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_ENTON"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_ENTON"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 18,
+			"map_idx": 2,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 4,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 25,
+						"level_max": 28,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 25,
+						"level_max": 27,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 25,
+						"level_max": 27,
+						"species": "POKEMON_MACHOLLO"
+					},
+					{
+						"level_min": 26,
+						"level_max": 27,
+						"species": "POKEMON_ZUBAT"
+					},
+					{
+						"level_min": 26,
+						"level_max": 28,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 27,
+						"level_max": 29,
+						"species": "POKEMON_GOLBAT"
+					},
+					{
+						"level_min": 28,
+						"level_max": 30,
+						"species": "POKEMON_MASCHOCK"
+					},
+					{
+						"level_min": 29,
+						"level_max": 32,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 30,
+						"level_max": 33,
+						"species": "POKEMON_CAMAUB"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 18,
+			"map_idx": 3,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 24,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_VULPIX"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 25,
+						"level_max": 29,
+						"species": "POKEMON_VULPIX"
+					},
+					{
+						"level_min": 25,
+						"level_max": 29,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 25,
+						"level_max": 29,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 25,
+						"level_max": 29,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_VULPIX"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 27,
+						"level_max": 32,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 29,
+						"level_max": 34,
+						"species": "POKEMON_MAGMAR"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 79,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_FUKANO"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_HUNDUSTER"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_FUKANO"
+					},
+					{
+						"level_min": 27,
+						"level_max": 32,
+						"species": "POKEMON_HUNDUSTER"
+					},
+					{
+						"level_min": 36,
+						"level_max": 36,
+						"species": "POKEMON_PANZAERON"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 1,
+			"map_idx": 30,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 9,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 27,
+						"level_max": 30,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 27,
+						"level_max": 30,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 27,
+						"level_max": 30,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 27,
+						"level_max": 30,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 27,
+						"level_max": 30,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 27,
+						"level_max": 30,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 28,
+						"level_max": 31,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 28,
+						"level_max": 31,
+						"species": "POKEMON_GEOROK"
+					},
+					{
+						"level_min": 29,
+						"level_max": 32,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 30,
+						"level_max": 32,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 30,
+						"level_max": 33,
+						"species": "POKEMON_GEOROK"
+					},
+					{
+						"level_min": 33,
+						"level_max": 35,
+						"species": "POKEMON_MAGCARGO"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 145,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 29,
+						"level_max": 32,
+						"species": "POKEMON_VULPIX"
+					},
+					{
+						"level_min": 29,
+						"level_max": 32,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 29,
+						"level_max": 33,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 30,
+						"level_max": 34,
+						"species": "POKEMON_VULPIX"
+					},
+					{
+						"level_min": 32,
+						"level_max": 37,
+						"species": "POKEMON_MAGMAR"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 6,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": null,
+			"water": {
+				"frequency": 1,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 5,
+						"level_max": 10,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 10,
+						"level_max": 20,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 20,
+						"level_max": 30,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 30,
+						"level_max": 40,
+						"species": "POKEMON_ENTON"
+					},
+					{
+						"level_min": 30,
+						"level_max": 40,
+						"species": "POKEMON_SMOGON"
+					}
+				]
+			},
+			"other": null,
+			"rod": {
+				"frequency": 10,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": {
+					"odd_rod": [
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 5,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"good_rod": [
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 5,
+							"level_max": 15,
+							"species": "POKEMON_KARPADOR"
+						}
+					],
+					"super_rod": [
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 15,
+							"level_max": 25,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 25,
+							"level_max": 35,
+							"species": "POKEMON_KARPADOR"
+						},
+						{
+							"level_min": 30,
+							"level_max": 40,
+							"species": "POKEMON_GARADOS"
+						}
+					]
+				}
+			}
+		},
+		{
+			"bank": 0,
+			"map_idx": 12,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 28,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 27,
+						"level_max": 32,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 29,
+						"level_max": 33,
+						"species": "POKEMON_GEOROK"
+					},
+					{
+						"level_min": 29,
+						"level_max": 33,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 30,
+						"level_max": 33,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 33,
+						"level_max": 34,
+						"species": "POKEMON_GEOROK"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 1,
+			"map_idx": 81,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 3,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 26,
+						"level_max": 32,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 26,
+						"level_max": 32,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 26,
+						"level_max": 32,
+						"species": "POKEMON_GEOROK"
+					},
+					{
+						"level_min": 26,
+						"level_max": 32,
+						"species": "POKEMON_GEOROK"
+					},
+					{
+						"level_min": 26,
+						"level_max": 32,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 31,
+						"level_max": 32,
+						"species": "POKEMON_MAGMAR"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 1,
+			"map_idx": 82,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 3,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_SMOGON"
+					},
+					{
+						"level_min": 26,
+						"level_max": 30,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_CAMAUB"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_SMOGON"
+					},
+					{
+						"level_min": 27,
+						"level_max": 32,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_SMOGON"
+					},
+					{
+						"level_min": 28,
+						"level_max": 33,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 29,
+						"level_max": 33,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 32,
+						"level_max": 34,
+						"species": "POKEMON_SMOGON"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 50,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 5,
+						"level_max": 20,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 10,
+						"level_max": 20,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 15,
+						"level_max": 30,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 25,
+						"level_max": 40,
+						"species": "POKEMON_GEOROK"
+					},
+					{
+						"level_min": 30,
+						"level_max": 40,
+						"species": "POKEMON_GEOROK"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 1,
+			"map_idx": 126,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 2,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 26,
+						"level_max": 31,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 26,
+						"level_max": 31,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 26,
+						"level_max": 31,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 26,
+						"level_max": 31,
+						"species": "POKEMON_SMOGON"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 27,
+						"level_max": 31,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 27,
+						"level_max": 32,
+						"species": "POKEMON_SMOGON"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_KLEINSTEIN"
+					},
+					{
+						"level_min": 28,
+						"level_max": 33,
+						"species": "POKEMON_MAGBY"
+					},
+					{
+						"level_min": 29,
+						"level_max": 33,
+						"species": "POKEMON_SCHNECKMAG"
+					},
+					{
+						"level_min": 33,
+						"level_max": 35,
+						"species": "POKEMON_SMOGON"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		},
+		{
+			"bank": 3,
+			"map_idx": 7,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 24,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 4,
+						"level_max": 7,
+						"species": "POKEMON_KNOFENSA"
+					},
+					{
+						"level_min": 4,
+						"level_max": 7,
+						"species": "POKEMON_NIDORANW"
+					},
+					{
+						"level_min": 4,
+						"level_max": 7,
+						"species": "POKEMON_FLABEBE"
+					},
+					{
+						"level_min": 4,
+						"level_max": 7,
+						"species": "POKEMON_NIDORANM"
+					},
+					{
+						"level_min": 4,
+						"level_max": 7,
+						"species": "POKEMON_ENECO"
+					},
+					{
+						"level_min": 4,
+						"level_max": 7,
+						"species": "POKEMON_NIDORANW"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_NIDORANM"
+					},
+					{
+						"level_min": 5,
+						"level_max": 7,
+						"species": "POKEMON_NIDORANM"
+					},
+					{
+						"level_min": 6,
+						"level_max": 7,
+						"species": "POKEMON_ENECO"
+					},
+					{
+						"level_min": 6,
+						"level_max": 7,
+						"species": "POKEMON_KNOFENSA"
+					},
+					{
+						"level_min": 8,
+						"level_max": 8,
+						"species": "POKEMON_NIDORANW"
+					},
+					{
+						"level_min": 8,
+						"level_max": 8,
+						"species": "POKEMON_NIDORANM"
+					}
+				]
+			},
+			"water": null,
+			"other": {
+				"frequency": 130,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 7,
+						"level_max": 9,
+						"species": "POKEMON_TANNZA"
+					},
+					{
+						"level_min": 7,
+						"level_max": 9,
+						"species": "POKEMON_SAMURZEL"
+					},
+					{
+						"level_min": 7,
+						"level_max": 9,
+						"species": "POKEMON_BUMMELZ"
+					},
+					{
+						"level_min": 7,
+						"level_max": 9,
+						"species": "POKEMON_TANNZA"
+					},
+					{
+						"level_min": 10,
+						"level_max": 11,
+						"species": "POKEMON_SAMURZEL"
+					}
+				]
+			},
+			"rod": null
+		},
+		{
+			"bank": 11,
+			"map_idx": 2,
+			"field_2": 0,
+			"field_3": 0,
+			"grass": {
+				"frequency": 3,
+				"field_1": 0,
+				"field_2": 0,
+				"field_3": 0,
+				"entries": [
+					{
+						"level_min": 24,
+						"level_max": 27,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 23,
+						"level_max": 27,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 24,
+						"level_max": 28,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 25,
+						"level_max": 28,
+						"species": "POKEMON_SCHWALBINI"
+					},
+					{
+						"level_min": 26,
+						"level_max": 29,
+						"species": "POKEMON_DARTIGNIS"
+					},
+					{
+						"level_min": 26,
+						"level_max": 29,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 27,
+						"level_max": 29,
+						"species": "POKEMON_KRAMURX"
+					},
+					{
+						"level_min": 28,
+						"level_max": 32,
+						"species": "POKEMON_STARAVIA"
+					}
+				]
+			},
+			"water": null,
+			"other": null,
+			"rod": null
+		}
+	]
+}
