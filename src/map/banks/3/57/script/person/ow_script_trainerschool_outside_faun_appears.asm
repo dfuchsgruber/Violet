@@ -37,17 +37,15 @@ waitmovement 0x0
 applymovement 0x3 mov_face_down
 applymovement 0x5 mov_face_down
 applymovement 0xFF mov_face_down
-waitmovement 0
-
+waitmovement 0x0
 call ow_script_0x89c5ee
 loadpointer 0 str_faun_announces_pkmn
 callstd MSG
 special 0x7
-
+lockall // prevents the 'moonwalk bug'
 pause 40
 applymovement 4 mov_smile
 waitmovement 0
-
 call ow_script_0x89c5ee
 loadpointer 0 str_call_blaise
 callstd MSG
@@ -140,34 +138,34 @@ mov_face_down:
 
 .ifdef LANG_GER
 str_faun_appears:
-	.autostring 36 2 "So, ihr Grünschnäbel!\pJetzt wird es ernst, wir beginnen mit dem Feldtest.\pAlle in einer Reihe aufstellen!"
+	.autostring 35 2 "So, ihr Grünschnäbel!\pJetzt wird es ernst, wir beginnen mit dem Feldtest.\pAlle in einer Reihe aufstellen!"
 
 str_faun_announces_pkmn:
-	.autostring 36 2 "Der Feldtest setzt sich aus zwei Komponenten zusammen.\pZuerst müsst ihr ein wildes Pokémon einfangen.\pIm Anschluss werdet ihr dann gegeneinander im Kampf antreten.\pZuallererst aber erhaltet ihr von mir ein Pokémon, das euch fortan unterstützen wird. Es ist von nun an euer wichtigster Partner und Freund, den ihr zu respektieren habt."
+	.autostring 35 2 "Der Feldtest setzt sich aus zwei Komponenten zusammen.\pZuerst müsst ihr ein wildes Pokémon einfangen.\pIm Anschluss werdet ihr dann gegeneinander im Kampf antreten.\pZuallererst aber erhaltet ihr von mir ein Pokémon, das euch fortan unterstützen wird. Es ist von nun an euer wichtigster Partner und Freund, den ihr zu respektieren habt."
 
 str_call_blaise:
-	.autostring 36 2 "Blaise, du bist der Erste.\pKomm nach vorne und wähle eines der Pokémon, die ich mitgebracht habe."
+	.autostring 35 2 "Blaise, du bist der Erste.\pKomm nach vorne und wähle eines der Pokémon, die ich mitgebracht habe."
 
 str_blaise_received_pkmn:
-	.autostring 36 2 "Ich bin wirklich überrascht, dass man uns so seltene Examplare anvertrautDOTS"
+	.autostring 35 2 "Ich bin wirklich überrascht, dass man uns so seltene Examplare anvertrautDOTS"
 
 str_call_felix:
-	.autostring 36 2 "Als nächstes bist du an der Reihe, Felix.\pKomm zu mir und such dir ein Pokémon aus, Kleiner!"
+	.autostring 35 2 "Als nächstes bist du an der Reihe, Felix.\pKomm zu mir und such dir ein Pokémon aus, Kleiner!"
 
 str_felix_received_pkmn:
-	.autostring 36 2 "Alles klar, Opi!\nIch wähle dieses hier!"
+	.autostring 35 2 "Alles klar, Opi!\nIch wähle dieses hier!"
 
 str_angry_at_felix:
-	.autostring 36 2 "Ich habe dir schon tausendmal gesagt, dass du mich hier Herr Faun zu nennen hast, Rotzlöffel!"
+	.autostring 35 2 "Ich habe dir schon tausendmal gesagt, dass du mich hier Herr Faun zu nennen hast, Rotzlöffel!"
 
 str_felix_apologize:
-	.autostring 36 2 "ÄhmDOTS Tut mir wirklich leid, Herr Faun! Ehrlich!"
+	.autostring 35 2 "ÄhmDOTS Tut mir wirklich leid, Herr Faun! Ehrlich!"
 
 str_after_felix:
-	.autostring 36 2 "Schon gut, schon gutDOTS\pZurück mit dir in die Reihe, Felix!"
+	.autostring 35 2 "Schon gut, schon gutDOTS\pZurück mit dir in die Reihe, Felix!"
 
 str_call_player:
-	.autostring 36 2 "Nun denn, PLAYER, komm zu mir!"
+	.autostring 35 2 "Nun denn, PLAYER, komm zu mir!"
 
 .elseif LANG_EN
 
