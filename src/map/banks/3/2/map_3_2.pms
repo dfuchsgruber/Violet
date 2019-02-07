@@ -5,7 +5,7 @@
 			"person_cnt": 19,
 			"warp_cnt": 10,
 			"trigger_cnt": 3,
-			"signpost_cnt": 7,
+			"signpost_cnt": 6,
 			"persons": [
 				{
 					"target_index": 1,
@@ -643,23 +643,6 @@
 							"flag": 30,
 							"amount": 1,
 							"chunk": 0
-						}
-					}
-				},
-				{
-					"x": 21,
-					"y": 8,
-					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 7,
-					"value": {
-						"script": "0",
-						"item": {
-							"item": "ITEM_NONE",
-							"flag": 2,
-							"amount": 1,
-							"chunk": 2
 						}
 					}
 				}

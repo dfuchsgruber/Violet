@@ -5,7 +5,7 @@
 			"person_cnt": 23,
 			"warp_cnt": 3,
 			"trigger_cnt": 7,
-			"signpost_cnt": 4,
+			"signpost_cnt": 3,
 			"persons": [
 				{
 					"target_index": 1,
@@ -621,8 +621,8 @@
 			],
 			"signposts": [
 				{
-					"x": 11,
-					"y": 18,
+					"x": "11",
+					"y": "18",
 					"level": 0,
 					"field_6": 0,
 					"field_7": 0,
@@ -668,23 +668,6 @@
 							"flag": 44,
 							"amount": 1,
 							"chunk": 0
-						}
-					}
-				},
-				{
-					"x": 16,
-					"y": 29,
-					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 7,
-					"value": {
-						"script": "0",
-						"item": {
-							"item": "ITEM_NONE",
-							"flag": 0,
-							"amount": 1,
-							"chunk": 2
 						}
 					}
 				}

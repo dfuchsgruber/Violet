@@ -118,16 +118,3 @@ u16 singpost_get_flag(u32 fields, u8 field_id){
     }
     
 }
-
-void mushroom_create(){
-    s16 pos[2];
-    player_get_coordinates(&pos[0], &pos[1]);
-    u32 seq[4] = {(u32)pos[0], (u32)pos[1], (u32)(save1->bank), (u32)(save1->map)};
-    u32 h = tmp_hash(seq, 4) % 3;
-    if(h){
-        *var_access(0x8005) = ITEM_MINIPILZ;
-    }else{
-        *var_access(0x8005) = ITEM_RIESENPILZ;
-    }
-    
-}

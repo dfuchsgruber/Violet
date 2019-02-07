@@ -129,9 +129,7 @@ special_table equ 0x0815FCC0
         .word special_ash_can_store | 1
         .pool
 
-.org (special_table + (0x47 * 4))
-        .word mushroom_create | 1
-        .pool
+// use special 0x47
 
 .org (special_table + (0x48 * 4))
         .word repel_use | 1

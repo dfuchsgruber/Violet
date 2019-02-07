@@ -66,13 +66,8 @@ no_item: @found coins or ash
     gotoif 0x1 0x81A978C @coin find
     compare 0x8007 0x1
     gotoif 0x1 ashfind
-    compare 0x8007 0x2
-    gotoif 0x1 mushroomfind
     end
 
-mushroomfind:
-    special 0x47
-    goto hidden_item_add
 
 ashfind:
     special2 0x8000 0x46 @checks if ashbag has space, adds ash in 0x8006 and buffers the endamount in [buffer1] (=\b\02)
