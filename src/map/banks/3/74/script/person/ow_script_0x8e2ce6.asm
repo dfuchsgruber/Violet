@@ -51,7 +51,7 @@ lock
 loadpointer 0x0 str_0x8e2e62
 callstd MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_BEERENSAFT
-copyvarifnotzero 0x8001 ITEM_TOP_BELEBER
+copyvarifnotzero 0x8001 25
 callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x8e3064
 callstd MSG

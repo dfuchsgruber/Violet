@@ -86,7 +86,7 @@ PYAGBDEP=$(PYAGBOBJS:%.o=%.d)
 CONSTANTSHAS=$(CONSTANTS:%.const=include/as/%.s)
 CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 
-include pokeapi/makefile tools/fata_morgana/makefile
+include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile
 
 .PHONY: all clean soundfont test
 

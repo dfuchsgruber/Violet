@@ -19,7 +19,7 @@ gotoif EQUAL ow_script_0x8deafd
 loadpointer 0x0 str_0x8deadb
 callstd MSG
 copyvarifnotzero 0x8000 ITEM_BEERENSAFT
-copyvarifnotzero 0x8001 ITEM_TOP_BELEBER
+copyvarifnotzero 0x8001 5
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x87f3c1

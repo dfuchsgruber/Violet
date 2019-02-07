@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+from symbols import parse_symbols
+from pymap.project import Project, _canonical_form
+from collections import defaultdict
+import os, re
+from pprint import pprint
+import argparse, pickle
+
+def get_item_index(rompath, symbolspath, projectpath):
+    """ Creates an index for items. """
+    with open(rompath, 'rb') as f:
+        rom = f.read()
+    symbols = parse_symbols(symbolspath)
+    project = Project(projectpath)
+
+    items = {
+        item : [] for item in project.constants['items']
+    }
+
+    # Parse script files
+    root = 'src/map/banks'
+    for subdir, dirs, files in os.walk(root):
+        for file in files:
+            filepath = subdir + os.sep + file
+            if filepath.endswith('.asm'):
+                with open(filepath) as f:
+                    matches = re.findall('copyvarifnotzero 0x8000 (.*)$\ncopyvarifnotzero 0x8001 (.*)', f.read(), flags=re.M)
+                    if len(matches): 
+                        # Reconstruct the bank and map idx and context from the path
+                        bank, map_idx, _type, context = re.findall(f'{root}/(.*?)/(.*?)/(.*?)/(.*?)/.*', filepath)[0]
+                        bank, map_idx = _canonical_form(bank), _canonical_form(map_idx)
+                        label, path, namespace = project.headers[bank][map_idx]
+                        for item, amount in matches:
+                            items[item].append({
+                                'type' : _type,
+                                'context' : context,
+                                'bank' : bank,
+                                'map_idx' : map_idx,
+                                'map_label' : label,
+                                'namespace' : namespace,
+                                'amount' : amount,
+                            })
+
+    # Parse person and signpost items
+    for bank in project.headers:
+        for map_idx in project.headers[bank]:
+            header, label, namespace = project.load_header(bank, map_idx)
+            for person in header['events']['persons']:
+                if person['script_std'] == 'PERSON_ITEM':
+                    items[person['value']['item']].append({
+                        'type' : 'pokeball',
+                        'bank' : bank,
+                        'map_idx' : map_idx,
+                        'flag' : person['flag'],
+                        'namespace' : namespace,
+                    })
+            for sign in header['events']['signposts']:
+                item = sign['value']['item']['item']
+                if item in items:
+                    items[item].append({
+                        'type' : 'hidden',
+                        'bank' : bank,
+                        'map_idx' : map_idx,
+                        'flag' : sign['value']['item']['flag'],
+                        'namespace' : namespace,
+                        'amount' : sign['value']['item']['amount'],
+                        'chunk' : sign['value']['item']['chunk'],
+                    })
+    return items
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Creates an index pickle for all items.')
+    parser.add_argument('rom', help='the built rom')
+    parser.add_argument('symbols', help='the symbol dump of armips')
+    parser.add_argument('project', help='the pymap project which holds the items constants')
+    parser.add_argument('-o', dest='output', help='output pickle containing the items')
+    args = parser.parse_args()
+
+    items = get_item_index(args.rom, args.symbols, args.project)
+    with open(args.output, 'wb') as f:
+        pickle.dump(items, f)

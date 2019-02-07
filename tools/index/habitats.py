@@ -1,11 +1,12 @@
-#!/usr/bin/env/python3
+#!/usr/bin/env python3
 
 from symbols import parse_symbols
 from pymap.project import Project, _canonical_form
 from collections import defaultdict
 from pprint import pprint
+import argparse, pickle
 
-def get_habitat_index(rompath, symbolspath, projectpath, species_constants='species'):
+def get_habitat_index(rompath, symbolspath, projectpath):
     """ Builds the index for the habitats of each species. """
     with open(rompath, 'rb') as f:
         rom = f.read()
@@ -77,16 +78,27 @@ def get_habitat_index(rompath, symbolspath, projectpath, species_constants='spec
                 'rod' : rod_type,
             })
 
+    # Eggs
+    for bank in project.headers:
+        for map_idx in project.headers[bank]:
+            header, label, namespace = project.load_header(bank, map_idx)
+            for person in header['events']['persons']:
+                if person['script_std'] == 'PERSON_EGG':
+                    habitats[person['value']['species']].append({
+                        'type' : 'egg',
+                        'bank' : bank,
+                        'map_idx' : map_idx,
+                        'label' : label,
+                        'namespace' : namespace,
+                    })
+
     # Event Pokémon
-    habitats['POKEMON_PORYGON'] = {
+    habitats['POKEMON_PORYGON'] = [{
         'type' : 'event',
         'description' : 'from Elise after the third badge',
-    }
+    }]
         
     return habitats
-
-
-
 
 
 def parse_habitat(habitat):
@@ -111,5 +123,14 @@ def parse_habitat(habitat):
         encountered_species[species][1] = max(encountered_species[species][1], lvl_max)
     return encountered_species
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Creates an index pickle for all species habitats.')
+    parser.add_argument('rom', help='the built rom')
+    parser.add_argument('symbols', help='the symbol dump of armips')
+    parser.add_argument('project', help='the pymap project which holds the species constants')
+    parser.add_argument('-o', dest='output', help='output pickle containing the habitats')
+    args = parser.parse_args()
 
-pprint(get_habitat_index('bld/violet.gba', 'bld/symbols', 'proj.pmp'))
+    habitats = get_habitat_index(args.rom, args.symbols, args.project)
+    with open(args.output, 'wb') as f:
+        pickle.dump(habitats, f)
