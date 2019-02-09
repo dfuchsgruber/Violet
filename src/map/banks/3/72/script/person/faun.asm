@@ -23,9 +23,9 @@ before_test:
 
 .ifdef LANG_GER
 str_after_test:
-	.autostring 36 2 "Ein unfairer Test?\nWas soll das heißen?\pDenkst du, Kleiner, dass du da draußen immer nur mit Fragen konfrontiert wirst, deren Antwort du hier gelernt hast?\pNur nicht unterkriegen lassen, der Feldtest steht ja noch an!"
+	.autostring 35 2 "Ein unfairer Test?\nWas soll das heißen?\pDenkst du, Kleiner, dass du da draußen immer nur mit Fragen konfrontiert wirst, deren Antwort du hier gelernt hast?\pNur nicht unterkriegen lassen, der Feldtest steht ja noch an!"
 str_before_test:
-	.autostring 36 2 "PLAYER, du Schlafmütze!\nHehe!\pHusch auf deinen Platz, oder du fällst durch, Kleiner!"
+	.autostring 35 2 "PLAYER, du Schlafmütze!\nHehe!\pHusch auf deinen Platz, oder du fällst durch, Kleiner!"
         
 .elseif LANG_EN
 

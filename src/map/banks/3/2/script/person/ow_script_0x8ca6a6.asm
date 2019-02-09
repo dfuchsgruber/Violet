@@ -36,7 +36,7 @@ return
 .global str_0x8ca6c5
 
 str_0x8ca6c5:
-	.autostring 36 2 "Sehr schön, du bist also gekommen.\pIch bin von echtem Kampfgeist fasnziniert.\pVor vielen Jahrhunderten hat man in diesem Tempel den Golem-Pokémon gehuldigt.\pSeit dem Vorfall vor einiger Zeit ist von den einst beeindruckenden Kunstwerken nicht mehr viel zu sehen.\pDaher habe ich im Untergrund eine Kampfarena ausgehoben.\pDort werden wirst du mich herausfordern!"
+	.autostring 35 2 "Sehr schön, du bist also gekommen.\pIch bin von echtem Kampfgeist fasnziniert.\pVor vielen Jahrhunderten hat man in diesem Tempel den Golem-Pokémon gehuldigt.\pSeit dem Vorfall vor einiger Zeit ist von den einst beeindruckenden Kunstwerken nicht mehr viel zu sehen.\pDaher habe ich im Untergrund eine Kampfarena ausgehoben.\pDort werden wirst du mich herausfordern!"
         
 .elseif LANG_EN
 

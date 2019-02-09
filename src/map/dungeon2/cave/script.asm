@@ -22,12 +22,12 @@ ow_script_dungeon_cave_collapsing:
 
 .ifdef LANG_GER
 str_dungeon_cave_collapsing:
-	.autostring 36 2 "Die Höhle scheint nicht stabil zu sein...\pSchnell zum Ausgang, bevor sie einstürtzt!"
+	.autostring 35 2 "Die Höhle scheint nicht stabil zu sein...\pSchnell zum Ausgang, bevor sie einstürtzt!"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_cave_collapsing:
-	.autostring 36 2 "The cave does not seem to be stable...\pBetter find the exit before it collapses!"
+	.autostring 35 2 "The cave does not seem to be stable...\pBetter find the exit before it collapses!"
 .endif
 
 
@@ -83,18 +83,18 @@ ow_script_dungeon2_cave_none:
 
 .ifdef LANG_GER
 str_dungeon_enter_cave_0:
-	.autostring 36 2 "Eine Höhle scheint sich hinter dieser Felswand zu verbergen..."
+	.autostring 35 2 "Eine Höhle scheint sich hinter dieser Felswand zu verbergen..."
 
 str_dungeon_enter_cave_1:
-	.autostring 36 2 "Möchtest du Geheimpower nutzen, um die Felswand aufzubrechen?"
+	.autostring 35 2 "Möchtest du Geheimpower nutzen, um die Felswand aufzubrechen?"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_enter_cave_0:
-	.autostring 36 2 "There seems to be some kind of cave behind this rock face..."
+	.autostring 35 2 "There seems to be some kind of cave behind this rock face..."
 
 str_dungeon_enter_cave_1:
-	.autostring 36 2 "Do you want to use Secret Power to break the rock face open?"
+	.autostring 35 2 "Do you want to use Secret Power to break the rock face open?"
 .endif
 
 

@@ -136,28 +136,28 @@ mov_face_left:
 
 .ifdef LANG_GER
 str_make_may_appear:
-	.autostring 36 2 "PLAYER, da bist du ja!\nMal ehrlich, dieser Test war doch lachhaft, oder?\pWer soll auf solche Fragen denn antworten könnenDOTS"
+	.autostring 35 2 "PLAYER, da bist du ja!\nMal ehrlich, dieser Test war doch lachhaft, oder?\pWer soll auf solche Fragen denn antworten könnenDOTS"
 
 str_after_may_appeared:
-	.autostring 36 2 "Sieh mal, da ist Maike.\pWie es ihr wohl in dem Test ergangen ist?"
+	.autostring 35 2 "Sieh mal, da ist Maike.\pWie es ihr wohl in dem Test ergangen ist?"
 
 str_after_may_appeared_2:
-	.autostring 36 2 "Wo bleibt denn nun Faun?\nIch bin schon ganz heiß auf diesen Feldtest!"
+	.autostring 35 2 "Wo bleibt denn nun Faun?\nIch bin schon ganz heiß auf diesen Feldtest!"
 
 str_will_receive_pkmn:
-	.autostring 36 2 "PLAYER! Auf jetzt!\pIch habe nicht den ganzen Tag Zeit, auf deine Entscheidung zu warten. Ich will auch ein Pokémon haben!"
+	.autostring 35 2 "PLAYER! Auf jetzt!\pIch habe nicht den ganzen Tag Zeit, auf deine Entscheidung zu warten. Ich will auch ein Pokémon haben!"
 
 str_catch_pkmn:
-	.autostring 36 2 "Du brauchst für alles eine Ewigkeit!\pLos, mach schon! Fang das Pokémon ein!"
+	.autostring 35 2 "Du brauchst für alles eine Ewigkeit!\pLos, mach schon! Fang das Pokémon ein!"
 
 str_battle:
-	.autostring 36 2 "Na los, PLAYER!\nWorauf wartest du? Ab mit dir auf deine Position und dann zeige ich dir einmal, was mein Talent alles bewirken kann!"
+	.autostring 35 2 "Na los, PLAYER!\nWorauf wartest du? Ab mit dir auf deine Position und dann zeige ich dir einmal, was mein Talent alles bewirken kann!"
 
 str_results:
-	.autostring 36 2 "Viel Glück, PLAYER!\nDu wirst es brauchen!"
+	.autostring 35 2 "Viel Glück, PLAYER!\nDu wirst es brauchen!"
 
 str_goodbye:
-	.autostring 36 2 "Endlich, PLAYER! Es ist soweit! Wir sind beide Trainer!\pNun können wir endlich unseren Traum leben! Die Welt ist ein einziges Abenteuer, das wir nun endlich bestreiten dürfen!\pBist du nicht auch aufgeregt?\pNatürlich werde ich dir immer ein wenig voraus sein, das ist dir wohl klar, oder?\pWenn du mich einholen willst, solltest du dich beeilen!"
+	.autostring 35 2 "Endlich, PLAYER! Es ist soweit! Wir sind beide Trainer!\pNun können wir endlich unseren Traum leben! Die Welt ist ein einziges Abenteuer, das wir nun endlich bestreiten dürfen!\pBist du nicht auch aufgeregt?\pNatürlich werde ich dir immer ein wenig voraus sein, das ist dir wohl klar, oder?\pWenn du mich einholen willst, solltest du dich beeilen!"
 
 .elseif LANG_EN
 

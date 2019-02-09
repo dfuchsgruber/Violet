@@ -15,7 +15,7 @@ end
 .global str_0x8a679f
 
 str_0x8a679f:
-	.autostring 36 2 "Ich werde ganz sicher mehr Pokémon in meiner Pokédex-app registrieren, als du!"
+	.autostring 35 2 "Ich werde ganz sicher mehr Pokémon in meiner Pokédex-app registrieren, als du!"
         
 .elseif LANG_EN
 

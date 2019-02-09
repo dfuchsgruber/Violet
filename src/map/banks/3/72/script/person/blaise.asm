@@ -23,10 +23,10 @@ end
 .ifdef LANG_GER
 
 str_before_test:
-    .autostring 36 2 "DOTS DOTS DOTS"
+    .autostring 35 2 "DOTS DOTS DOTS"
         
 str_after_test:
-	.autostring 36 2 "Dieser verrückte alte KnackerDOTS\pWas für ein lächerlicher TestDOTS"
+	.autostring 35 2 "Dieser verrückte alte KnackerDOTS\pWas für ein lächerlicher TestDOTS"
         
 .elseif LANG_EN
 

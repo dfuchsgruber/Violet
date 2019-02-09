@@ -124,41 +124,41 @@ str_0x8bf724:
 .global str_0x8bf610
 
 str_0x8bf610:
-	.autostring 36 2 "Bist du etwa auf dem Weg nach Silvania?\pDa wirst du dich etwas gedulden müssen, denn aus der Farm im Norden sind die Voltilamm entlaufen und blockieren den Weg.\pDOTS DOTS DOTS\pAber weißt duDOTS\pDOTSwir könnten doch solangeDOTS\pDOTS einen Kampf austragen, meinst du nicht?"
+	.autostring 35 2 "Bist du etwa auf dem Weg nach Silvania?\pDa wirst du dich etwas gedulden müssen, denn aus der Farm im Norden sind die Voltilamm entlaufen und blockieren den Weg.\pDOTS DOTS DOTS\pAber weißt duDOTS\pDOTSwir könnten doch solangeDOTS\pDOTS einen Kampf austragen, meinst du nicht?"
 
 .global str_0x8bfe09
 
 str_0x8bf5bc:
-    .autostring 36 2 "Vielleicht bin ich ja diesmal stark genug, einen schwierigen Kampf zu gewinnenDOTS"
+    .autostring 35 2 "Vielleicht bin ich ja diesmal stark genug, einen schwierigen Kampf zu gewinnenDOTS"
         
         
 .global str_0x8bf5d1
 
 str_0x8bf5d1:
-    .autostring 36 2 "DOTS DOTS DOTS\nErneut eine NiederlageDOTS"
+    .autostring 35 2 "DOTS DOTS DOTS\nErneut eine NiederlageDOTS"
         
         
 .global str_0x8bf3f9
 
 str_0x8bf3f9:
-    .autostring 36 2 "Irgendwie hatte ich schon erwartet, dass du mich besiegst, PLAYERDOTS\pIch bin einfach ein lausiger TrainerDOTS DOTS DOTS\pAnstatt hier zu warten, bis die Farmer ihre Voltilamm wieder eingefangen haben, könntest du einen Abstecher in Aktania machen.\pDie Leute von der Farm betreiben einen Flugservice, sodass du die Insel leicht erreichen kannst.\pSieh dir am besten auf dieser Karte an, wohin sie dich bringen."
+    .autostring 35 2 "Irgendwie hatte ich schon erwartet, dass du mich besiegst, PLAYERDOTS\pIch bin einfach ein lausiger TrainerDOTS DOTS DOTS\pAnstatt hier zu warten, bis die Farmer ihre Voltilamm wieder eingefangen haben, könntest du einen Abstecher in Aktania machen.\pDie Leute von der Farm betreiben einen Flugservice, sodass du die Insel leicht erreichen kannst.\pSieh dir am besten auf dieser Karte an, wohin sie dich bringen."
         
 .global str_0x8bf3dc
 
 str_0x8bf3dc:
-    .autostring 36 2 "PLAYER erhält eine Karte."
+    .autostring 35 2 "PLAYER erhält eine Karte."
         
         
 .global str_0x8bf2f0
 
 str_0x8bf2f0:
-    .autostring 36 2 "Aktania liegt nördlich von hier.\pMit dem Flugservice der Farmer solltest du die Insel sehr schnell erreichen.\pDort befindet sich auch eine Arena, die du herausfordern kannst.\pIch traue mir das allerdings nach meiner Niederlage nicht mehr zuDOTS\pIch weiß wirklich nicht, ob ich das Zeug zum Trainer habe, PLAYERDOTS\pUnd ich will meinen Freund aus Hoenn nicht enttäuschen, weißt duDOTS DOTS DOTS\pDer Druck istDOTS DOTS DOTS\pEgal, lassen wir dasDOTS\pDOTS DOTS DOTS\pEs war schön, dich wiederzusehen, PLAYER.\pHalt die Ohren steif!"
+    .autostring 35 2 "Aktania liegt nördlich von hier.\pMit dem Flugservice der Farmer solltest du die Insel sehr schnell erreichen.\pDort befindet sich auch eine Arena, die du herausfordern kannst.\pIch traue mir das allerdings nach meiner Niederlage nicht mehr zuDOTS\pIch weiß wirklich nicht, ob ich das Zeug zum Trainer habe, PLAYERDOTS\pUnd ich will meinen Freund aus Hoenn nicht enttäuschen, weißt duDOTS DOTS DOTS\pDer Druck istDOTS DOTS DOTS\pEgal, lassen wir dasDOTS\pDOTS DOTS DOTS\pEs war schön, dich wiederzusehen, PLAYER.\pHalt die Ohren steif!"
         
         
 .global str_0x8bf745
 
 str_0x8bf745:
-	.autostring 36 2 "PLAYERDOTS DOTS DOTS\pBitte, dieser Kampf könnte mir ein bisschen Selbstvertrauen verschaffenDOTS\pUnd das kann ich sehr gut gebrauchenDOTS"
+	.autostring 35 2 "PLAYERDOTS DOTS DOTS\pBitte, dieser Kampf könnte mir ein bisschen Selbstvertrauen verschaffenDOTS\pUnd das kann ich sehr gut gebrauchenDOTS"
 
 .elseif LANG_EN
 

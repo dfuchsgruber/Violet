@@ -123,7 +123,7 @@ return
 .ifdef LANG_GER
 
 str_0x89d77c:
-    .autostring 36 2 "Du bist noch nicht draußen?\nWirklich immer am Trödeln, unser PLAYER!"
+    .autostring 35 2 "Du bist noch nicht draußen?\nWirklich immer am Trödeln, unser PLAYER!"
         
 .elseif LANG_EN
 

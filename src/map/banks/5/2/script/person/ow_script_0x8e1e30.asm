@@ -84,30 +84,30 @@ str_bewohner:
 	.string "Bewohner"
 
 str_0x8e07ee:
-	.autostring 36 2 "DOTSDiese verdammte korrupte Polizei\pDOTS DOTS DOTS"
+	.autostring 35 2 "DOTSDiese verdammte korrupte Polizei\pDOTS DOTS DOTS"
         
         
 .global str_0x8e066f
 
 str_0x8e066f:
-	.autostring 36 2 "Nanu? Wer bist du denn?\pDOTS DOTS DOTS\pDu hast den Streit zwischen mir und dem Polizisten mitgehört?\pWeißt du, die Polizei in Theto ist bis auf\'s Mark korrupt.\pSie nutzen schamlos ihre Macht aus, um den Bewohnern ihre Willkür aufzuzwingen.\pUnd obwohl sie den Top Vier unterstehen, haben die Polizisten nichts zu befürchten.\pSelbst, wenn man sie auf frischer Tat ertappen würdeDOTS"
+	.autostring 35 2 "Nanu? Wer bist du denn?\pDOTS DOTS DOTS\pDu hast den Streit zwischen mir und dem Polizisten mitgehört?\pWeißt du, die Polizei in Theto ist bis auf\'s Mark korrupt.\pSie nutzen schamlos ihre Macht aus, um den Bewohnern ihre Willkür aufzuzwingen.\pUnd obwohl sie den Top Vier unterstehen, haben die Polizisten nichts zu befürchten.\pSelbst, wenn man sie auf frischer Tat ertappen würdeDOTS"
 
 .global str_0x8de630
 
 str_0x8de630:
-    .autostring 36 2 "Du hast wirklich einen gewissen Heldenmut, dich mit der Polizei anzulegen.\pHast du je darüber nachgedacht, dich der Revolutionsbewegung anzuschließen?"
+    .autostring 35 2 "Du hast wirklich einen gewissen Heldenmut, dich mit der Polizei anzulegen.\pHast du je darüber nachgedacht, dich der Revolutionsbewegung anzuschließen?"
         
         
 .global str_0x8e1de2
 
 str_0x8e1de2:
-    .autostring 36 2 "Das System, in dem wir leben, ist von Grund auf marode.\pDie Korruption reicht sogar bis zu den Top Vier selbstDOTS"
+    .autostring 35 2 "Das System, in dem wir leben, ist von Grund auf marode.\pDie Korruption reicht sogar bis zu den Top Vier selbstDOTS"
         
         
 .global str_0x8de430
 
 str_0x8de430:
-	.autostring 36 2 "Selbst, wenn man einen der Übeltäter bei der Polizei bloßstellen könnte, würde man nichts erreichen.\pDie Polizei hat durch die Top Vier so gut wie jede BefugnisDOTS"
+	.autostring 35 2 "Selbst, wenn man einen der Übeltäter bei der Polizei bloßstellen könnte, würde man nichts erreichen.\pDie Polizei hat durch die Top Vier so gut wie jede BefugnisDOTS"
         
 .elseif LANG_EN
 

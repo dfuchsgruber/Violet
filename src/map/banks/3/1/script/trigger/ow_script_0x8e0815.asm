@@ -368,66 +368,66 @@ str_bewohner:
 	.string "Bewohner"
 
 str_0x8e17bd:
-	.autostring 36 2 "Revolutionsbewegung, was?\pDass ihr mir in die Arme lauft, ist wirklich Glück!\pIch werde euch festnehmen und hinter Gitter bringen!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pEs sei denn, natürlich, wir können uns auf anderen Wegen einig werdenDOTS"
+	.autostring 35 2 "Revolutionsbewegung, was?\pDass ihr mir in die Arme lauft, ist wirklich Glück!\pIch werde euch festnehmen und hinter Gitter bringen!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pEs sei denn, natürlich, wir können uns auf anderen Wegen einig werdenDOTS"
         
         
 .global str_0x8e1748
 
 str_0x8e1748:
-	.autostring 36 2 "Bestechung?\nNiemals!\pWir sind Teil der Revolutionsbewegung und würden niemals unsere Ideale für Geld verkaufen!\pEher wandern wir ins Gefängnis, als selbst Teil dieser korrupten Welt zu werden!"
+	.autostring 35 2 "Bestechung?\nNiemals!\pWir sind Teil der Revolutionsbewegung und würden niemals unsere Ideale für Geld verkaufen!\pEher wandern wir ins Gefängnis, als selbst Teil dieser korrupten Welt zu werden!"
         
 .global str_0x8e1702
 
 str_0x8e1702:
-	.autostring 36 2 "Moment, Moment!\nIst das dein Ernst?\pWillst du wirklich ins Gefängnis gehen?\pWas würde deine Familie denken?"
+	.autostring 35 2 "Moment, Moment!\nIst das dein Ernst?\pWillst du wirklich ins Gefängnis gehen?\pWas würde deine Familie denken?"
         
         
 .global str_0x8e167c
 
 str_0x8e167c:
-	.autostring 36 2 "NunjaDOTS DOTS DOTS\pAber treten wir nicht für eine gerechtere Welt ein?\pWollen wir das alles aufgeben, um uns selbst zu retten?"
+	.autostring 35 2 "NunjaDOTS DOTS DOTS\pAber treten wir nicht für eine gerechtere Welt ein?\pWollen wir das alles aufgeben, um uns selbst zu retten?"
         
         
 .global str_0x8e162e
 
 str_0x8e162e:
-    .autostring 36 2 "Wir sind normale Bürger, keine HeldenDOTS\pSoll jemand anderes sein Leben irgendwelchen Idealen opfernDOTS\pIch will nicht den Rest meines Lebens eingesperrt verbringen."
+    .autostring 35 2 "Wir sind normale Bürger, keine HeldenDOTS\pSoll jemand anderes sein Leben irgendwelchen Idealen opfernDOTS\pIch will nicht den Rest meines Lebens eingesperrt verbringen."
         
         
 .global str_0x8e15cc
 
 str_0x8e15cc:
-    .autostring 36 2 "In Ordnung, Polizist!\nWir nehmen dein Angebot an.\pWenn du uns laufen lässt, werden wir dich dafür entlohnen!"
+    .autostring 35 2 "In Ordnung, Polizist!\nWir nehmen dein Angebot an.\pWenn du uns laufen lässt, werden wir dich dafür entlohnen!"
 
 str_police_laughs:
-	.autostring 36 2 "Haha! So weit ist es also her mit euren noblen Zielen.\pWer kann es euch verübeln?\pDas ist, wie die Welt funktioniertDOTS DOTS DOTS"
+	.autostring 35 2 "Haha! So weit ist es also her mit euren noblen Zielen.\pWer kann es euch verübeln?\pDas ist, wie die Welt funktioniertDOTS DOTS DOTS"
         
         
 .global str_0x8e14fb
 
 str_0x8e14fb:
-    .autostring 36 2 "He! Da belauscht uns jemand!"
+    .autostring 35 2 "He! Da belauscht uns jemand!"
         
         
 .global str_0x8e148e
 
 str_0x8e148e:
-    .autostring 36 2 "Oh je! Ein Zeuge!\nDOTS DOTS DOTS\pWas mache ich nun bloß mit dir?"
+    .autostring 35 2 "Oh je! Ein Zeuge!\nDOTS DOTS DOTS\pWas mache ich nun bloß mit dir?"
         
         
 .global str_0x8e12f8
 
 str_0x8e12f8:
-	.autostring 36 2 "Du bist noch ein Kind, also lass mich dir begreiflch machen, wie unsere Welt eigentlich funktioniert.\pGanz oben stehen die Mächte, die Top Vier und ihr Champion.\pGemeinsam herrschen sie über Theto, wie immer es ihnen beliebt.\pUnd wir, die Polizei, bieten den Menschen im Gegenzug für diese Macht unseren Schutz.\pIst das nicht auch eine Form von Gerechtigkeit?\pSelbstverständlich, ist nicht alles in diesem System perfekt.\pSicherlich gibt es Ungerechtigkeiten hier und da."
+	.autostring 35 2 "Du bist noch ein Kind, also lass mich dir begreiflch machen, wie unsere Welt eigentlich funktioniert.\pGanz oben stehen die Mächte, die Top Vier und ihr Champion.\pGemeinsam herrschen sie über Theto, wie immer es ihnen beliebt.\pUnd wir, die Polizei, bieten den Menschen im Gegenzug für diese Macht unseren Schutz.\pIst das nicht auch eine Form von Gerechtigkeit?\pSelbstverständlich, ist nicht alles in diesem System perfekt.\pSicherlich gibt es Ungerechtigkeiten hier und da."
 
 .global str_0x8e11b9
 
 str_0x8e11b9:
-    .autostring 36 2 "Allerdings, wie sähe eine Welt aus, wie diese beiden Revolutionskämpfer sie sich wünschen?\pJeder dürfte tun und lassen, was immer er möchte.\pNiemand wäre mehr sicher.\nDOTS DOTS DOTS\pAnarchie und Chaos würden über unsere Welt hereinbrechen."
+    .autostring 35 2 "Allerdings, wie sähe eine Welt aus, wie diese beiden Revolutionskämpfer sie sich wünschen?\pJeder dürfte tun und lassen, was immer er möchte.\pNiemand wäre mehr sicher.\nDOTS DOTS DOTS\pAnarchie und Chaos würden über unsere Welt hereinbrechen."
 
 
 str_0x8e0f79:
-	.autostring 36 2 "Und jetzt sag mir ehrlich, ob Menschen wie ich wirklich das Übel in dieser Welt sind oder nicht ein viel größeres Übel verhindern.\pWas sagst du, Kind?"
+	.autostring 35 2 "Und jetzt sag mir ehrlich, ob Menschen wie ich wirklich das Übel in dieser Welt sind oder nicht ein viel größeres Übel verhindern.\pWas sagst du, Kind?"
         
         
 .global str_meriana_revo_choice_0
@@ -445,63 +445,63 @@ str_meriana_revo_choice_1:
 .global str_0x8e0cdc
 
 str_0x8e0cdc:
-    .autostring 36 2 "Sie haben Unrecht!\nSich einfach hilflos dem System auszuliefern, ist keine Lösung.\pJeder muss selbst daran arbeiten, die Welt zu einem besseren Ort zu machen.\pIch werde Sie nicht mit ihren korrupten Geschäften durchkommen lassen!"
+    .autostring 35 2 "Sie haben Unrecht!\nSich einfach hilflos dem System auszuliefern, ist keine Lösung.\pJeder muss selbst daran arbeiten, die Welt zu einem besseren Ort zu machen.\pIch werde Sie nicht mit ihren korrupten Geschäften durchkommen lassen!"
         
         
 .global str_0x8e0c9c
 
 str_0x8e0c9c:
-    .autostring 36 2 "Verdammtes Gör!\nDu bist eben doch nur ein naives Kind!\pAlso muss ich doch wohl oder übel bekämpfen!"
+    .autostring 35 2 "Verdammtes Gör!\nDu bist eben doch nur ein naives Kind!\pAlso muss ich doch wohl oder übel bekämpfen!"
         
         
 .global str_0x8e0c71
 
 str_0x8e0c71:
-    .autostring 36 2 "Verflucht! DOTS DOTS DOTS"
+    .autostring 35 2 "Verflucht! DOTS DOTS DOTS"
         
         
 .global str_0x8e0c5e
 
 str_0x8e0c5e:
-    .autostring 36 2 "Du einfältiges Kind!\pDenkst du, dass es klug ist, sich mit der Polizei anzulegen!"
+    .autostring 35 2 "Du einfältiges Kind!\pDenkst du, dass es klug ist, sich mit der Polizei anzulegen!"
         
         
 .global str_0x8e0b99
 
 str_0x8e0b99:
-	.autostring 36 2 "Wachtmeister!\pIch wurde über Ihre korrupten Aktivitäten unterrichtet und wollte es nicht fassen.\pJetzt muss ich es jedoch mit eigenen Augen sehen!\pUngeheuerlich!\pSie sind verhaftet, alle drei!"
+	.autostring 35 2 "Wachtmeister!\pIch wurde über Ihre korrupten Aktivitäten unterrichtet und wollte es nicht fassen.\pJetzt muss ich es jedoch mit eigenen Augen sehen!\pUngeheuerlich!\pSie sind verhaftet, alle drei!"
         
 .global str_0x8e0b24
 
 str_0x8e0b24:
-    .autostring 36 2 "Verlogener Kerl!\pAls hättest du nicht selbst genauso viel Dreck am Stecken!\pAber ich werde keinen Widerstand leisten.\pSoll doch jemand anders sich um diese Welt kümmern DOTS DOTS DOTS"
+    .autostring 35 2 "Verlogener Kerl!\pAls hättest du nicht selbst genauso viel Dreck am Stecken!\pAber ich werde keinen Widerstand leisten.\pSoll doch jemand anders sich um diese Welt kümmern DOTS DOTS DOTS"
         
 .global str_0x8e0aa8
 
 str_0x8e0aa8:
-    .autostring 36 2 "Danke dir tausend Mal!\pEndlich hat jemand diesen korrupten Wachtmeister zur Strecke gebracht.\pWenn es auch ein kleiner Beitrag war, hast du diese Stadt zu einem besseren Ort gemacht.\pWir Bewohner stehen alle in deiner Schuld."
+    .autostring 35 2 "Danke dir tausend Mal!\pEndlich hat jemand diesen korrupten Wachtmeister zur Strecke gebracht.\pWenn es auch ein kleiner Beitrag war, hast du diese Stadt zu einem besseren Ort gemacht.\pWir Bewohner stehen alle in deiner Schuld."
         
         
 .global str_0x8e0f0b
 
 str_0x8e0f0b:
-    .autostring 36 2 "Vermutlich haben Sie RechtDOTS\pLassen Sie wenigstens die Revolutionäre laufen, wenn Sie selbst nicht den Schneid aufbringen können, etwas zum Besseren wenden zu wollen."
+    .autostring 35 2 "Vermutlich haben Sie RechtDOTS\pLassen Sie wenigstens die Revolutionäre laufen, wenn Sie selbst nicht den Schneid aufbringen können, etwas zum Besseren wenden zu wollen."
         
         
 .global str_0x8e0ef0
 
 str_0x8e0ef0:
-    .autostring 36 2 "Du bist nicht dumm, Kind.\pDu wirst sicher auch irgendwann merken, dass es nicht immer leicht ist, etwas zum Besseren zu wenden."
+    .autostring 35 2 "Du bist nicht dumm, Kind.\pDu wirst sicher auch irgendwann merken, dass es nicht immer leicht ist, etwas zum Besseren zu wenden."
         
 .global str_0x8e0e4f
 
 str_0x8e0e4f:
-    .autostring 36 2 "Ganz im VertrauenDOTS\pEs ist nicht ratsam, sich mit den Top Vier oder denen, die ihnen unterstellt sind, anzulegen.\pSei klug genug, meinen Rat zu beherzigenDOTS DOTS DOTS"
+    .autostring 35 2 "Ganz im VertrauenDOTS\pEs ist nicht ratsam, sich mit den Top Vier oder denen, die ihnen unterstellt sind, anzulegen.\pSei klug genug, meinen Rat zu beherzigenDOTS DOTS DOTS"
         
 .global str_0x8e0e17
 
 str_0x8e0e17:
-    .autostring 36 2 "Schnell, machen wir nuns aus dem Staub!"
+    .autostring 35 2 "Schnell, machen wir nuns aus dem Staub!"
         
         
 .elseif LANG_EN

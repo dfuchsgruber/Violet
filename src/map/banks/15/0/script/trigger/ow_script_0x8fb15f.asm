@@ -221,50 +221,50 @@ str_police:
 .global str_0x8d38fe
 
 str_0x8d38fe:
-    .autostring 36 2 "Herr Wachtmeister!\pKommen Sie zurecht?"
+    .autostring 35 2 "Herr Wachtmeister!\pKommen Sie zurecht?"
         
         
 .global str_0x8d3f8b
 
 str_0x8d3f8b:
-    .autostring 36 2 "Argh!\nDieser Team Violet Rüpel hier ist hartnäckig!"
+    .autostring 35 2 "Argh!\nDieser Team Violet Rüpel hier ist hartnäckig!"
         
         
 .global str_0x8d3be3
 
 str_0x8d3be3:
-	.autostring 36 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pHmm DOTS\nDu siehst bei genauerer Betrachtung gar nicht aus, wie ein Mitglied von Team Violet.\pEntschuldige bitte, ich habe dich wohl verwechselt, Kindchen.\pMein Name ist Wachtmeister Harrenfeld und ich bin auf der Jagd nach einer Kommandantin von Team Violet.\pWir haben Informationen erhalten, dass sie mit ihrer Division auf dem Weg nach Silvania ist.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWenn wir sie dingfest machen können, finden wir vielleicht etwas über den Kopf der Organisation heraus DOTS\pUnd da du ein ganz passabler Trainer zu sein scheinst DOTS DOTS DOTS\pWas meinst du?\nWürdest du uns vielleicht helfen, diese Kommandantin aufzuspüren und zu bekämpfen?"
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pHmm DOTS\nDu siehst bei genauerer Betrachtung gar nicht aus, wie ein Mitglied von Team Violet.\pEntschuldige bitte, ich habe dich wohl verwechselt, Kindchen.\pMein Name ist Wachtmeister Harrenfeld und ich bin auf der Jagd nach einer Kommandantin von Team Violet.\pWir haben Informationen erhalten, dass sie mit ihrer Division auf dem Weg nach Silvania ist.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWenn wir sie dingfest machen können, finden wir vielleicht etwas über den Kopf der Organisation heraus DOTS\pUnd da du ein ganz passabler Trainer zu sein scheinst DOTS DOTS DOTS\pWas meinst du?\nWürdest du uns vielleicht helfen, diese Kommandantin aufzuspüren und zu bekämpfen?"
 .global str_0x8d3858
 
 str_0x8d3858:
-	.autostring 36 2 "Ich bin auch schon mit diesen Rüpel aneinandergeraten.\pAlso werde ich Ihnen selbstverständlich helfen, Herr Wachtmeister!"
+	.autostring 35 2 "Ich bin auch schon mit diesen Rüpel aneinandergeraten.\pAlso werde ich Ihnen selbstverständlich helfen, Herr Wachtmeister!"
         
 .global str_0x8d375f
 
 str_0x8d375f:
-	.autostring 36 2 "Du bist wirklich ein mutiges Kind, das muss ich dir lassen!\pTreib es aber nicht zu weit.\pSolltest du auf die Kommandantin treffen, überlasse es lieber den Erwachsenen, die Sache zu regeln!"
+	.autostring 35 2 "Du bist wirklich ein mutiges Kind, das muss ich dir lassen!\pTreib es aber nicht zu weit.\pSolltest du auf die Kommandantin treffen, überlasse es lieber den Erwachsenen, die Sache zu regeln!"
         
 .global str_0x8d36f8
 
 str_0x8d36f8:
-    .autostring 36 2 "Wir ziehen ab!\nAuf nach Silvania!"
+    .autostring 35 2 "Wir ziehen ab!\nAuf nach Silvania!"
         
         
 .global str_0x8d371c
 
 str_0x8d371c:
-    .autostring 36 2 "Ja, Sir!"
+    .autostring 35 2 "Ja, Sir!"
         
         
 .global str_0x8d3aaf
 
 str_0x8d3aaf:
-	.autostring 36 2 "Verlangen Sie allen ernstes, dass ein Kind Ihre Arbeit erledigt und auf Verbrecherjagd geht?\pEs ist Ihre Aufgabe, für Recht und Ordnung zu sorgen, nicht meine!\pAllerdings bin ich selbst auch schon an die Rüpel von Team Violet geraten und werde mich von diesen Leuten sicherlich nicht besiegen lassen."
+	.autostring 35 2 "Verlangen Sie allen ernstes, dass ein Kind Ihre Arbeit erledigt und auf Verbrecherjagd geht?\pEs ist Ihre Aufgabe, für Recht und Ordnung zu sorgen, nicht meine!\pAllerdings bin ich selbst auch schon an die Rüpel von Team Violet geraten und werde mich von diesen Leuten sicherlich nicht besiegen lassen."
 
 .global str_0x8d39ed
 
 str_0x8d39ed:
-	.autostring 36 2 "Hmpf!\nDu rotzfreches Balg!\pWas meinst du, mit wem du hier sprichst?\pWir brauchen deine Hilfe ohnehin nicht!\pKomm uns ja nicht in die Quere!\pDOTS DOTS DOTS"
+	.autostring 35 2 "Hmpf!\nDu rotzfreches Balg!\pWas meinst du, mit wem du hier sprichst?\pWir brauchen deine Hilfe ohnehin nicht!\pKomm uns ja nicht in die Quere!\pDOTS DOTS DOTS"
         
 .elseif LANG_EN
 

@@ -78,23 +78,23 @@ mov_cam_back:
 .global str_0x8e225d
 
 str_0x8e225d:
-	.autostring 36 2 "Hallo, junger Trainer.\pBist du auch gekommen, um den Blick aufs Meer zu genießen?\pHast du vielleicht die Zeit, ein wenig dem Schwachsinn eines alten Mannes zu lauschen?"
+	.autostring 35 2 "Hallo, junger Trainer.\pBist du auch gekommen, um den Blick aufs Meer zu genießen?\pHast du vielleicht die Zeit, ein wenig dem Schwachsinn eines alten Mannes zu lauschen?"
         
 .global str_0x8e1e69
 
 str_0x8e1e69:
-	.autostring 36 2 "Weißt du, wie das Regierungssystem in Theto entstanden ist?\pVor einiger Zeit taten sich drei äußerst starke Trainer zusammen und begannen den Kontinent gewaltsam zu erobern.\pEs dauerte nicht lange, da hatten sie die Herrschaft über Theto errungen.\pZwischenzeitlich hatten sich aber einige andere Trainer dem Trio angeschlossen, sodass der Kontinent schließlich unter den Stärksten von ihnen aufgeteilt wurde.\pAn ihrer Spitze stand der mächtigste Trainer, der sich fortan Champion nannte.\pTheto selbst unterteilte man in vier Gebiete, jedes von einem enorm mächtigen Trainer regiert, dessen Aufgabe es war, der Region Schutz zu bieten.\pDiese vier Trainer nennen wir heute die Top Vier und zusammen mit dem Champion bilden sie die Pokémon-Liga.\pSpäter installierte man Instiutionen wie die Landespolizei, die als Arm der Top Vier für Recht und Ordnung sorgen sollten.\pDoch im Laufe der Zeit DOTS DOTS DOTS\pAls neue Trainertalente die Posten der Top Vier besetzten, geriet das System langsam aber sicher außer Kontrolle.\pKorruption und Machtgier sowie Konflikte unter den Top Vier brachten den Bürgern viel Leid.\pDie Missstände in Theto werden von Tag zu Tag untragbarerDOTS DOTS\pUnd darum haben die Menschen irgendwann begonnen, gegen die Top Vier aufzubegehren.\pAus diesem Aufbegehren enstand schließlich die Revolutionsbewegung."
+	.autostring 35 2 "Weißt du, wie das Regierungssystem in Theto entstanden ist?\pVor einiger Zeit taten sich drei äußerst starke Trainer zusammen und begannen den Kontinent gewaltsam zu erobern.\pEs dauerte nicht lange, da hatten sie die Herrschaft über Theto errungen.\pZwischenzeitlich hatten sich aber einige andere Trainer dem Trio angeschlossen, sodass der Kontinent schließlich unter den Stärksten von ihnen aufgeteilt wurde.\pAn ihrer Spitze stand der mächtigste Trainer, der sich fortan Champion nannte.\pTheto selbst unterteilte man in vier Gebiete, jedes von einem enorm mächtigen Trainer regiert, dessen Aufgabe es war, der Region Schutz zu bieten.\pDiese vier Trainer nennen wir heute die Top Vier und zusammen mit dem Champion bilden sie die Pokémon-Liga.\pSpäter installierte man Instiutionen wie die Landespolizei, die als Arm der Top Vier für Recht und Ordnung sorgen sollten.\pDoch im Laufe der Zeit DOTS DOTS DOTS\pAls neue Trainertalente die Posten der Top Vier besetzten, geriet das System langsam aber sicher außer Kontrolle.\pKorruption und Machtgier sowie Konflikte unter den Top Vier brachten den Bürgern viel Leid.\pDie Missstände in Theto werden von Tag zu Tag untragbarerDOTS DOTS\pUnd darum haben die Menschen irgendwann begonnen, gegen die Top Vier aufzubegehren.\pAus diesem Aufbegehren enstand schließlich die Revolutionsbewegung."
         
         
 .global str_0x8de830
 
 str_0x8de830:
-	.autostring 36 2 "Wir alle müssen irgendwann entscheiden, wem wir unsere Treue leisten.\pDen Top Vier, deren Stärke der Region Stabilität sichert, oder den Bürgern, die ihn bewohnen.\pEgal, wie du dich entscheidest, Kind, lass es eine Entscheidung des Gewissens sein.\pDOTS DOTS DOTS\pNun habe ich aber genug sinniert, ich lasse dich nun wieder in Ruhe.\pVielleicht begnenen wir uns noch einmal, das kann man nie wissen."
+	.autostring 35 2 "Wir alle müssen irgendwann entscheiden, wem wir unsere Treue leisten.\pDen Top Vier, deren Stärke der Region Stabilität sichert, oder den Bürgern, die ihn bewohnen.\pEgal, wie du dich entscheidest, Kind, lass es eine Entscheidung des Gewissens sein.\pDOTS DOTS DOTS\pNun habe ich aber genug sinniert, ich lasse dich nun wieder in Ruhe.\pVielleicht begnenen wir uns noch einmal, das kann man nie wissen."
 
 .global str_0x9312b4
 
 str_0x9312b4:
-    .autostring 36 2 "DOTS DOTS DOTS\pDas kann ich dir natürlich nicht verübeln.\pGeh nur, ich werde es einem Kind schon nachsehenDOTS"
+    .autostring 35 2 "DOTS DOTS DOTS\pDas kann ich dir natürlich nicht verübeln.\pGeh nur, ich werde es einem Kind schon nachsehenDOTS"
         
         
 .elseif LANG_EN

@@ -22,12 +22,12 @@ ow_script_dungeon_ocean_collapsing:
 
 .ifdef LANG_GER
 str_dungeon_ocean_collapsing:
-	.autostring 36 2 "Die Wellen scheinen stärker zu werden...\pEs ist wohl sicherer, zurückzukehren!"
+	.autostring 35 2 "Die Wellen scheinen stärker zu werden...\pEs ist wohl sicherer, zurückzukehren!"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_ocean_collapsing:
-	.autostring 36 2 "The waves are getting bigger...\pBetter return now!"
+	.autostring 35 2 "The waves are getting bigger...\pBetter return now!"
 .endif
 
 
@@ -82,18 +82,18 @@ ow_script_dungeon2_ocean_none:
 
 .ifdef LANG_GER
 str_dungeon_enter_ocean_0:
-	.autostring 36 2 "Die Felsen scheinen hier nicht sehr hoch aus dem Wasser zu ragen..."
+	.autostring 35 2 "Die Felsen scheinen hier nicht sehr hoch aus dem Wasser zu ragen..."
 
 str_dungeon_enter_ocean_1:
-	.autostring 36 2 "Möchtest du Geheimpower nutzen, um die Felsen zu überwinden?"
+	.autostring 35 2 "Möchtest du Geheimpower nutzen, um die Felsen zu überwinden?"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_enter_ocean_0:
-	.autostring 36 2 "The rocks do not sick out very high here..."
+	.autostring 35 2 "The rocks do not sick out very high here..."
 
 str_dungeon_enter_ocean_1:
-	.autostring 36 2 "Do you want to use Secret Power to overcome the rocks?"
+	.autostring 35 2 "Do you want to use Secret Power to overcome the rocks?"
 .endif
 
 

@@ -23,12 +23,12 @@ ow_script_dungeon_forest_collapsing:
 
 .ifdef LANG_GER
 str_dungeon_forest_collapsing:
-	.autostring 36 2 "Irgendetwas scheint im Unterholz zu lauern...\pEs ist vermutlich besser, den Ort zu verlassen!"
+	.autostring 35 2 "Irgendetwas scheint im Unterholz zu lauern...\pEs ist vermutlich besser, den Ort zu verlassen!"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_forest_collapsing:
-	.autostring 36 2 "Something seems to lurk in the underwood...\pBetter leave this place!"
+	.autostring 35 2 "Something seems to lurk in the underwood...\pBetter leave this place!"
 .endif
 
 .global ow_script_test
@@ -100,16 +100,16 @@ ow_script_dungeon2_forest_none:
 
 .ifdef LANG_GER
 str_dungeon_enter_forest_0:
-	.autostring 36 2 "Das Unterholz scheint hier nicht all zu dicht zu sein..."
+	.autostring 35 2 "Das Unterholz scheint hier nicht all zu dicht zu sein..."
 
 str_dungeon_enter_forest_1:
-	.autostring 36 2 "Möchtest du Geheimpower nutzen, um das Dickicht zu zerschneiden?"
+	.autostring 35 2 "Möchtest du Geheimpower nutzen, um das Dickicht zu zerschneiden?"
 .endif
 
 .ifdef LANG_EN
 str_dungeon_enter_forest_0:
-	.autostring 36 2 "The underwood seems to be light arround here..."
+	.autostring 35 2 "The underwood seems to be light arround here..."
 
 str_dungeon_enter_forest_1:
-	.autostring 36 2 "Dou you want to use Secret Power to cut the thicket?"
+	.autostring 35 2 "Dou you want to use Secret Power to cut the thicket?"
 .endif

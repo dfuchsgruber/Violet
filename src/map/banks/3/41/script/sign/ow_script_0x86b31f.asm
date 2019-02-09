@@ -13,7 +13,7 @@ end
 .global str_0x87aba7
 
 str_0x87aba7:
-    .autostring 36 2 "Achtung!\pWilde Bibor!\nBei Stichen sofort Gegengift auftragen!"
+    .autostring 35 2 "Achtung!\pWilde Bibor!\nBei Stichen sofort Gegengift auftragen!"
         
         
 .elseif LANG_EN

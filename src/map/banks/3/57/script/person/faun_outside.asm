@@ -425,118 +425,118 @@ mov_may_back:
 .ifdef LANG_GER
 
 str_show_player_pkmn:
-	.autostring 36 2 "Also PLAYER, bleiben noch drei Pokémon, aus denen du wählen kannst. Triff deine Entscheidung mit Bedacht!"
+	.autostring 35 2 "Also PLAYER, bleiben noch drei Pokémon, aus denen du wählen kannst. Triff deine Entscheidung mit Bedacht!"
 
 str_player_received_b1:
     .string "PLAYER hat ein BUFFER_1\nerhalten!"
 
 str_player_received_pkmn:
-	.autostring 36 2 "Ah, ein BUFFER_1,\neine sehr gute Wahl!\pNun aber zurück mit dir in die Reihe!"
+	.autostring 35 2 "Ah, ein BUFFER_1,\neine sehr gute Wahl!\pNun aber zurück mit dir in die Reihe!"
 
 str_rival_picks:
-	.autostring 36 2 "So, RIVAL, jetzt ist es an der Zeit für dich, zu wählen!"
+	.autostring 35 2 "So, RIVAL, jetzt ist es an der Zeit für dich, zu wählen!"
 
 str_rival_says_thanks:
-	.autostring 36 2 "Dieses Pokémon ist perfekt. Damit werde ich unschlagbar sein!"
+	.autostring 35 2 "Dieses Pokémon ist perfekt. Damit werde ich unschlagbar sein!"
 
 str_may_picks:
-	.autostring 36 2 "Nun denn, Maike, zuletzt bist du an der Reihe."
+	.autostring 35 2 "Nun denn, Maike, zuletzt bist du an der Reihe."
 
 str_may_disappointed:
-	.autostring 36 2 "Dass auch ausgerechnet ich das letzte Pokémon bekommen mussDOTS"
+	.autostring 35 2 "Dass auch ausgerechnet ich das letzte Pokémon bekommen mussDOTS"
 
 str_may_received_pkmn:
-	.autostring 36 2 "Ich hoffe, dass du mit deinem Pokemon zufrieden bist."
+	.autostring 35 2 "Ich hoffe, dass du mit deinem Pokemon zufrieden bist."
 
 str_may_dots:
-	.autostring 36 2 "DOTS\nSicher, Herr Faun!"
+	.autostring 35 2 "DOTS\nSicher, Herr Faun!"
 
 str_to_tall_grass:
-	.autostring 36 2 "Dann hätten wir das erledigt!\pBeginnen wir mit dem ersten Feldtest. Folgt mir zum hohen Gras."
+	.autostring 35 2 "Dann hätten wir das erledigt!\pBeginnen wir mit dem ersten Feldtest. Folgt mir zum hohen Gras."
 
 str_tall_grass:
-	.autostring 36 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert. Ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
+	.autostring 35 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert. Ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
 
 str_call_blaise:
 	.autostring 35 2 "Blaise, na wird bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
 
 str_blaise_refuses:
-	.autostring 36 2 "Nein, ich denke eher nicht."
+	.autostring 35 2 "Nein, ich denke eher nicht."
 
 str_call_blaise_again:
-	.autostring 36 2 "Wie bitte? Du undankbares Gör! Wer glaubst du denn, dass du bist? Meinst du, dein Vater wird es gerne hören, dass du mir Ungehorsam leistest?"
+	.autostring 35 2 "Wie bitte? Du undankbares Gör! Wer glaubst du denn, dass du bist? Meinst du, dein Vater wird es gerne hören, dass du mir Ungehorsam leistest?"
 
 str_blaise_leaves:
-	.autostring 36 2 "Es ist mir herzlich egal, was mein Vater denkt. Ich habe beschlossen, mich nicht länger von ihm kontrollieren zu lassen. Also ist mir Ihre Abschlussprüfung ebenfalls gleichgültig. Natürlich danke ich Ihnen auch, für das Pokémon, das sie mir anvertraut haben. Allerdings halte ich nichts von dieser Schule oder anderen Institutionen, in denen mein Vater seine Finger im Spiel hat.\pIn diesem Sinne, lebt wohl!"
+	.autostring 35 2 "Es ist mir herzlich egal, was mein Vater denkt. Ich habe beschlossen, mich nicht länger von ihm kontrollieren zu lassen. Also ist mir Ihre Abschlussprüfung ebenfalls gleichgültig. Natürlich danke ich Ihnen auch, für das Pokémon, das sie mir anvertraut haben. Allerdings halte ich nichts von dieser Schule oder anderen Institutionen, in denen mein Vater seine Finger im Spiel hat.\pIn diesem Sinne, lebt wohl!"
 
 str_faun_angry_at_blaise:
-	.autostring 36 2 "Dieser verdammte Bengel! Devin wird außer sich sein!"
+	.autostring 35 2 "Dieser verdammte Bengel! Devin wird außer sich sein!"
 
 str_continue_with_field_test:
-	.autostring 36 2 "DOTS DOTS\nSein Vater wird dem Jungen schon noch Vernunft beibringen.\pLassen wir uns aber von diesem Vorfall nicht irritieren.\pFelix, dann beginnst du eben die Prüfung."
+	.autostring 35 2 "DOTS DOTS\nSein Vater wird dem Jungen schon noch Vernunft beibringen.\pLassen wir uns aber von diesem Vorfall nicht irritieren.\pFelix, dann beginnst du eben die Prüfung."
 
 str_felix_starts_test:
-	.autostring 36 2 "Jawohl, Opi -\nÄhmDOTS Herr Faun!"
+	.autostring 35 2 "Jawohl, Opi -\nÄhmDOTS Herr Faun!"
 
 str_hand_felix_balls:
-	.autostring 36 2 "Du erhältst von mir fünf Pokébälle.\pVersuche, ein Pokémon mit ihnen einzufangen."
+	.autostring 35 2 "Du erhältst von mir fünf Pokébälle.\pVersuche, ein Pokémon mit ihnen einzufangen."
 
 str_felix_done_catching:
-	.autostring 36 2 "Geschafft!"
+	.autostring 35 2 "Geschafft!"
 
 str_faun_admires_felix:
-	.autostring 36 2 "Sehr gut, Kleiner! So will ich das sehen!\pZurück mit dir in die Reihe!"
+	.autostring 35 2 "Sehr gut, Kleiner! So will ich das sehen!\pZurück mit dir in die Reihe!"
 
 str_faun_calls_player:
-	.autostring 36 2 "PLAYER, jetzt musst du dein Können unter Beweis stellen.\pKomm her zu mir."
+	.autostring 35 2 "PLAYER, jetzt musst du dein Können unter Beweis stellen.\pKomm her zu mir."
 
 str_player_receives_pokeballs:
-	.autostring 36 2 "PLAYER, du erhältst jetzt von mir fünf Pokébälle.\pVersuche auch du, das Pokémon einzufangen!"
+	.autostring 35 2 "PLAYER, du erhältst jetzt von mir fünf Pokébälle.\pVersuche auch du, das Pokémon einzufangen!"
 
 str_pokeball_obtention_message:
 	.autostring 35 2 "Fünf Pokébälle erhalten."
 
 str_player_has_to_catch:
-	.autostring 36 2 "PLAYER! Begib dich endlich ins hohe Gras!"
+	.autostring 35 2 "PLAYER! Begib dich endlich ins hohe Gras!"
 
 str_battle:
-	.autostring 36 2 "Was treibst du denn da, PLAYER?\pAb mit dir auf deine Position!"
+	.autostring 35 2 "Was treibst du denn da, PLAYER?\pAb mit dir auf deine Position!"
 
 str_results_player:
-	.autostring 36 2 "Na, wollen wir doch mal sehen, PLAYER!\pDie theoretische Prüfung hast du mit BUFFER_1 korrekten Antworten absolviert.\pDu konntest ein Pokémon fangen und hast dich im Kampf bewiesen!\pAuch dir darf ich gratulieren, Kind!\pDu bist nun ein echter Trainer!"
+	.autostring 35 2 "Na, wollen wir doch mal sehen, PLAYER!\pDie theoretische Prüfung hast du mit BUFFER_1 korrekten Antworten absolviert.\pDu konntest ein Pokémon fangen und hast dich im Kampf bewiesen!\pAuch dir darf ich gratulieren, Kind!\pDu bist nun ein echter Trainer!"
 
 str_player_back:
-	.autostring 36 2 "Reihe dich wieder ein, PLAYER.\pAls nächstes ist RIVAL dran!"
+	.autostring 35 2 "Reihe dich wieder ein, PLAYER.\pAls nächstes ist RIVAL dran!"
 
 str_rival_results:
-	.autostring 36 2 "Diese Spannung ist ja kaum auszuhalten!"
+	.autostring 35 2 "Diese Spannung ist ja kaum auszuhalten!"
 
 str_results_rival:
-	.autostring 36 2 "Im schriftlichen Test hast du keine einzige Frage richtig beantwortetDOTS\pDafür warst du ein echtes Naturtalent im Umgang mit Pokémon.\pWeder Kämpfen noch Fangen haben dir Schwierigkeiten bereitet.\pWeil du dein kümmerliches Wissen offenbar recht gut mit Fertigkeiten ausgleichen kannst, bin ich gewillt, auch dir zu gratulieren.\pAuch du darfst dich reinsten Gewissens einen Trainer nennen!"
+	.autostring 35 2 "Im schriftlichen Test hast du keine einzige Frage richtig beantwortetDOTS\pDafür warst du ein echtes Naturtalent im Umgang mit Pokémon.\pWeder Kämpfen noch Fangen haben dir Schwierigkeiten bereitet.\pWeil du dein kümmerliches Wissen offenbar recht gut mit Fertigkeiten ausgleichen kannst, bin ich gewillt, auch dir zu gratulieren.\pAuch du darfst dich reinsten Gewissens einen Trainer nennen!"
 
 str_rival_glad:
-	.autostring 36 2 "Alles andere hätte mich auch überrascht!\pDanke, Herr Faun!"
+	.autostring 35 2 "Alles andere hätte mich auch überrascht!\pDanke, Herr Faun!"
 
 str_call_may:
-	.autostring 36 2 "Also dann! Zum Schluss bist du an der Reihe, Maike.\pKomm zu mir!"
+	.autostring 35 2 "Also dann! Zum Schluss bist du an der Reihe, Maike.\pKomm zu mir!"
 
 str_may_insecure:
-	.autostring 36 2 "O-Ojee!"
+	.autostring 35 2 "O-Ojee!"
 
 str_results_may:
-	.autostring 36 2 "Nun gut.\nIm schriftlichen Test hast du immerhin drei Antworten richtig beantworten können.\pIm Feldtest hast du dich nicht schlecht geschlagen, aber du bist nicht besonders sicher im Umgang mit Pokémon.\pMaike! Wenn du als Trainer bestehen willst, musst du Vertrauen in dich und deine Pokémon finden."
+	.autostring 35 2 "Nun gut.\nIm schriftlichen Test hast du immerhin drei Antworten richtig beantworten können.\pIm Feldtest hast du dich nicht schlecht geschlagen, aber du bist nicht besonders sicher im Umgang mit Pokémon.\pMaike! Wenn du als Trainer bestehen willst, musst du Vertrauen in dich und deine Pokémon finden."
 
 str_may_understands:
-	.autostring 36 2 "I-Ich verstehe, Herr FaunDOTS\pEs t-tut mir leid."
+	.autostring 35 2 "I-Ich verstehe, Herr FaunDOTS\pEs t-tut mir leid."
 
 str_results_may2:
-	.autostring 36 2 "Ich bin aber überzeugt, dass du das Zeug hast, ein erfolgreicher Pokémon-Trainer zu sein.\pImmerhin warst du meine Schülerin.\pDaher darf ich auch dir gratulieren, du hast deine Prüfungen bestanden!"
+	.autostring 35 2 "Ich bin aber überzeugt, dass du das Zeug hast, ein erfolgreicher Pokémon-Trainer zu sein.\pImmerhin warst du meine Schülerin.\pDaher darf ich auch dir gratulieren, du hast deine Prüfungen bestanden!"
 
 str_may_glad:
-	.autostring 36 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich meinen Freund aus Hoenn einholen können!"
+	.autostring 35 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich meinen Freund aus Hoenn einholen können!"
 
 str_final_talk:
-	.autostring 36 2 "Hach! Wie die Zeit an einem vorbeifliegt!\pFür mich seid ihr noch immer die kleinen Rotzlöffel, die leichtsinnig ins hohe Gras gerannt wären, hätte man sie nicht davon abgehalten.\pAber nunDOTS\nSeid ihr zu fähigen Trainern herangewachsen.\pIch könnte nicht zufriedener mit euch sein. Allerdings ist dies erst der Anfang, ihr Bälger!\pWenn ihr diese Schule heute verlasst, werdet ihr auf euch allein gestellt sein.\pWobei auch das nicht ganz zutrifft, denn ihr habt nun eure Pokémon als Partner an eurer Seite.\pWisst diesen besonderen Bund zwischen Trainer und Pokémon zu schätzen, Kinder!\pIch bin überzeugt, dass ihr es weit bringen könnt.\pMacht mich stolz, euer Lehrer gewesen zu sein!\pIn diesem Sinne, viel Erfolg auf eurer Reise, Kinder!"
+	.autostring 35 2 "Hach! Wie die Zeit an einem vorbeifliegt!\pFür mich seid ihr noch immer die kleinen Rotzlöffel, die leichtsinnig ins hohe Gras gerannt wären, hätte man sie nicht davon abgehalten.\pAber nunDOTS\nSeid ihr zu fähigen Trainern herangewachsen.\pIch könnte nicht zufriedener mit euch sein. Allerdings ist dies erst der Anfang, ihr Bälger!\pWenn ihr diese Schule heute verlasst, werdet ihr auf euch allein gestellt sein.\pWobei auch das nicht ganz zutrifft, denn ihr habt nun eure Pokémon als Partner an eurer Seite.\pWisst diesen besonderen Bund zwischen Trainer und Pokémon zu schätzen, Kinder!\pIch bin überzeugt, dass ihr es weit bringen könnt.\pMacht mich stolz, euer Lehrer gewesen zu sein!\pIn diesem Sinne, viel Erfolg auf eurer Reise, Kinder!"
 
 .elseif LANG_EN
 

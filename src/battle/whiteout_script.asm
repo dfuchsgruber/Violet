@@ -73,16 +73,16 @@ mov_look_down_delayed:
 
 .ifdef LANG_GER
 str_mother_before:
-	.autostring 36 2 "PLAYER!\pDu hast sicherlich viel erlebt!\pDu solltest dich kurz hier ausruhen."
+	.autostring 35 2 "PLAYER!\pDu hast sicherlich viel erlebt!\pDu solltest dich kurz hier ausruhen."
 
 str_mother_after:
-	.autostring 36 2 "Fantastisch!\pDeine Pokémon sehen wieder fit aus!"
+	.autostring 35 2 "Fantastisch!\pDeine Pokémon sehen wieder fit aus!"
 
 str_joy_before:
-	.autostring 36 2 "Zunächst solltest du deine Pokémon vollständig heilen."
+	.autostring 35 2 "Zunächst solltest du deine Pokémon vollständig heilen."
 
 str_joy_after:
-	.autostring 36 2 "Deine Pokémon wurden vollständig geheilt.\pWir hoffen, du kommst groß raus!"
+	.autostring 35 2 "Deine Pokémon wurden vollständig geheilt.\pWir hoffen, du kommst groß raus!"
 
 .global str_whiteout
 str_whiteout:

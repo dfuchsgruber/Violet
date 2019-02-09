@@ -72,13 +72,13 @@ mov_down:
 
 .ifdef LANG_GER
 str:
-    .autostring 36 2 "Ich sollte mich nicht zu weit von der Gruppe entfernen, Faun wird jeden Moment kommenDOTS"
+    .autostring 35 2 "Ich sollte mich nicht zu weit von der Gruppe entfernen, Faun wird jeden Moment kommenDOTS"
 
 str_receive_pkmn:
-	.autostring 36 2 "Wo willst du denn hin, PLAYER! Komm gefälligst hierher!"
+	.autostring 35 2 "Wo willst du denn hin, PLAYER! Komm gefälligst hierher!"
 
 str_trainerschool_say_goodbye:
-	.autostring 36 2 "Ich sollte mich von meinen Mitschülern verabschieden."
+	.autostring 35 2 "Ich sollte mich von meinen Mitschülern verabschieden."
 
 .elseif LANG_EN
 

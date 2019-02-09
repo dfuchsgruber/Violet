@@ -38,13 +38,13 @@ return
 .global str_0x843a47
 
 str_0x843a47:
-	.autostring 36 2 "Du und deine Pokémon sehen ja schrecklich erschöpft aus!\pSetz dich doch erst einmal eine Weile hin und ruh dich aus!"
+	.autostring 35 2 "Du und deine Pokémon sehen ja schrecklich erschöpft aus!\pSetz dich doch erst einmal eine Weile hin und ruh dich aus!"
         
         
 .global str_0x843aba
 
 str_0x843aba:
-	.autostring 36 2 "Na siehst du?\pDu und deine Pokémon sehen schon wieder ganz fit aus!"
+	.autostring 35 2 "Na siehst du?\pDu und deine Pokémon sehen schon wieder ganz fit aus!"
         
         
 .elseif LANG_EN

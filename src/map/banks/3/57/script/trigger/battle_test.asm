@@ -154,43 +154,43 @@ mov_face_right:
 	.ifdef LANG_GER
 
 str_announce_battle:
-	.autostring 36 2 "Nun denn, ihr Bälger!\pZeit für den wahren Härtetest. Ihr tretet nun in einem Kampf gegeneinander an.\pWenn ihr diese Prüfung bestehen wollt, gebt alles!"
+	.autostring 35 2 "Nun denn, ihr Bälger!\pZeit für den wahren Härtetest. Ihr tretet nun in einem Kampf gegeneinander an.\pWenn ihr diese Prüfung bestehen wollt, gebt alles!"
 
 str_rival_challange:
-	.autostring 36 2 "PLAYER! Das ist der Tag, von dem wir geträumt haben!\pWir beide gegenüber in einem Pokémon-Kampf.\pIch werde dir eine Lektion erteilen!"
+	.autostring 35 2 "PLAYER! Das ist der Tag, von dem wir geträumt haben!\pWir beide gegenüber in einem Pokémon-Kampf.\pIch werde dir eine Lektion erteilen!"
 
 str_won:
-	.autostring 36 2 "Moment! Das kann nicht sein! Du hast geschummelt, ich will nochmal!"
+	.autostring 35 2 "Moment! Das kann nicht sein! Du hast geschummelt, ich will nochmal!"
 
 str_lost:
-	.autostring 36 2 "Tja, ich bin dir immer einen Schritt voraus!"
+	.autostring 35 2 "Tja, ich bin dir immer einen Schritt voraus!"
 
 str_after_battle_won:
-	.autostring 36 2 "Das war ein einfacher Ausrutscher! Nichts weiter!\pIch bin der bessere Trainer von uns beiden, PLAYER. Das wissen wir wohl beide!"
+	.autostring 35 2 "Das war ein einfacher Ausrutscher! Nichts weiter!\pIch bin der bessere Trainer von uns beiden, PLAYER. Das wissen wir wohl beide!"
 
 str_after_battle_lost:
-	.autostring 36 2 "Dass ich der bessere Trainer von uns beiden bin, wissen wir wohl beide, PLAYER.\pAber du hast dich gut geschlagen."
+	.autostring 35 2 "Dass ich der bessere Trainer von uns beiden bin, wissen wir wohl beide, PLAYER.\pAber du hast dich gut geschlagen."
 
 str_may_lost:
-	.autostring 36 2 "I-Ich habe verlorenDOTS\pIch bin eine Schande für diese SchuleDOTS"
+	.autostring 35 2 "I-Ich habe verlorenDOTS\pIch bin eine Schande für diese SchuleDOTS"
 
 str_felix_won:
-	.autostring 36 2 "Rede doch keinen Unsinn, Maike!\pDu hast gut gekämpft! Du brauchst nur etwas mehr Vertrauen in dich und deine Pokémon!"
+	.autostring 35 2 "Rede doch keinen Unsinn, Maike!\pDu hast gut gekämpft! Du brauchst nur etwas mehr Vertrauen in dich und deine Pokémon!"
 
 str_announce_end:
-	.autostring 36 2 "Ausgezeichnet! Damit sind wir auch schon am Ende der Prüfung angelangt.\pReiht euch wieder auf, dann teile ich euch eure Ergebnisse mit!"
+	.autostring 35 2 "Ausgezeichnet! Damit sind wir auch schon am Ende der Prüfung angelangt.\pReiht euch wieder auf, dann teile ich euch eure Ergebnisse mit!"
 
 str_final_call_felix:
-	.autostring 36 2 "Felix, du bist wieder als Erster an der Reihe.\pKomm zu mir, Junge!"
+	.autostring 35 2 "Felix, du bist wieder als Erster an der Reihe.\pKomm zu mir, Junge!"
 
 str_award_felix:
-	.autostring 36 2 "Im schriftlichen Test konntest du sieben Fragen richtig beantwortenDOTS\pAusgezeichnet!\pEin Pokémon zu fangen hat dir keine Probleme bereitet und deinen Kampf hast du gewonnen.\pGlückwunsch, du hast es geschafft, Bursche!\pAb heute darfst du dich einen Trainer nennen!"
+	.autostring 35 2 "Im schriftlichen Test konntest du sieben Fragen richtig beantwortenDOTS\pAusgezeichnet!\pEin Pokémon zu fangen hat dir keine Probleme bereitet und deinen Kampf hast du gewonnen.\pGlückwunsch, du hast es geschafft, Bursche!\pAb heute darfst du dich einen Trainer nennen!"
 
 str_felix_awarded:
-	.autostring 36 2 "Hihi! Danke, Opi - ähm, Herr Faun!\pDu warst wirklich ein großartiger Lehrer!"
+	.autostring 35 2 "Hihi! Danke, Opi - ähm, Herr Faun!\pDu warst wirklich ein großartiger Lehrer!"
 
 str_final_call_player:
-	.autostring 36 2 "Machen wir mit dir weiter, PLAYER!\pAngetreten!"
+	.autostring 35 2 "Machen wir mit dir weiter, PLAYER!\pAngetreten!"
 
 .elseif LANG_EN
 

@@ -232,12 +232,12 @@ str_0x8a17ec:
 .global str_0x8a1608
 
 str_0x8a1608:
-    .autostring 36 2 "Hey, du Rotzlöffel!\pHast du uns etwa belauscht?\pHast du denn überhaupt eine Ahnung, wer wir sind?\pWir, vom Team Violet, werden in Zukunft über Theto herrschen.\pDu solltest dich uns besser nicht in den Weg stellen!"
+    .autostring 35 2 "Hey, du Rotzlöffel!\pHast du uns etwa belauscht?\pHast du denn überhaupt eine Ahnung, wer wir sind?\pWir, vom Team Violet, werden in Zukunft über Theto herrschen.\pDu solltest dich uns besser nicht in den Weg stellen!"
         
 .global str_0x8a158f
 
 str_0x8a158f:
-	.autostring 36 2 "Ich gebe dir einen Vorgeschmack darauf, was passiert, wenn man sich mit Team Violet anlegt!"
+	.autostring 35 2 "Ich gebe dir einen Vorgeschmack darauf, was passiert, wenn man sich mit Team Violet anlegt!"
         
         
 .global str_0x8a15bf
@@ -249,34 +249,34 @@ str_0x8a15bf:
 .global str_0x8a14b2
 
 str_0x8a14b2:
-	.autostring 36 2 "Ich DOTS DOTS!\pWie konnte ich gegen einen Grünschnabel wie dich verlieren?\pDOTS DOTS DOTS\pDu hast uns schon zu viel Zeit gekostet.\pMerk dir unseren Namen!"
+	.autostring 35 2 "Ich DOTS DOTS!\pWie konnte ich gegen einen Grünschnabel wie dich verlieren?\pDOTS DOTS DOTS\pDu hast uns schon zu viel Zeit gekostet.\pMerk dir unseren Namen!"
         
 .global str_0x8a146b
 
 str_0x8a146b:
-	.autostring 36 2 "Und DOTS DOTS DOTS\nIch habe keine Zeit, mich mit dir herumzuschlagen!"
+	.autostring 35 2 "Und DOTS DOTS DOTS\nIch habe keine Zeit, mich mit dir herumzuschlagen!"
         
         
 .global str_0x8f2375
 
 str_0x8f2375:
-	.autostring 36 2 "Eleganz, Anmut, Stärke!\pDu hast Talent, junger Trainer.\pTrotzdem bist du noch ein Neuling, werde nicht zu übermütig, dich mit den Schergen von Team Violet anzulegen.\pErlaube mir, mich vorzustellen.\pMein Name ist Larissa und zur Zeit bereise ich die Region, um mich mit ihr vertraut zu machen.\pDiese Leute, die du eben getroffen hast, gehören einer verbrecherischen Organisation namens Team Violet an.\pVor einiger Zeit sind sie wie aus dem Nichts erschienen und haben begonnen, Leute zu rekrutieren.\pIhre Versprechungen sind zahlreich und oft auch widersprüchlich.\pMancherorts werben sie mit der Herrschaft über die Region, anderswo versprechen sie Frieden.\pGefährlich ist diese Truppe aber allemal, findest du nicht?"
+	.autostring 35 2 "Eleganz, Anmut, Stärke!\pDu hast Talent, junger Trainer.\pTrotzdem bist du noch ein Neuling, werde nicht zu übermütig, dich mit den Schergen von Team Violet anzulegen.\pErlaube mir, mich vorzustellen.\pMein Name ist Larissa und zur Zeit bereise ich die Region, um mich mit ihr vertraut zu machen.\pDiese Leute, die du eben getroffen hast, gehören einer verbrecherischen Organisation namens Team Violet an.\pVor einiger Zeit sind sie wie aus dem Nichts erschienen und haben begonnen, Leute zu rekrutieren.\pIhre Versprechungen sind zahlreich und oft auch widersprüchlich.\pMancherorts werben sie mit der Herrschaft über die Region, anderswo versprechen sie Frieden.\pGefährlich ist diese Truppe aber allemal, findest du nicht?"
         
 .global str_0x8f2c1e
 
 str_0x8f2c1e:
-	.autostring 36 2 "Zögerst du etwa mit deiner Antwort?\pHabe ich mich wohl in dir getäuscht, als ich gemeint habe, etwas Heldenmut in deinen Augen aufleuchten zu sehen?"
+	.autostring 35 2 "Zögerst du etwa mit deiner Antwort?\pHabe ich mich wohl in dir getäuscht, als ich gemeint habe, etwas Heldenmut in deinen Augen aufleuchten zu sehen?"
         
         
 .global str_0x8a1cdd
 
 str_0x8a1cdd:
-	.autostring 36 2 "Nachdem ich ohnehin auch bereits in ihr Visier geraten bin, werde auch ich mich diesen Rüpeln von Team Violet in den Weg stellen, wo immer sie mir begegnen."
+	.autostring 35 2 "Nachdem ich ohnehin auch bereits in ihr Visier geraten bin, werde auch ich mich diesen Rüpeln von Team Violet in den Weg stellen, wo immer sie mir begegnen."
         
 .global str_0x8f2c62
 
 str_0x8f2c62:
-	.autostring 36 2 "Wie nobel!\pAber sei vorsichtig, nicht alle Mitglieder von Team Violet sind so erbärmliche Gestalten wie die beiden eben.\pDie Kommandanten der Divisionen sind enorm gefährlich.\pÜberlasse diese Kaliber lieben der Polizei oder den Top Vier, verstanden?\pIch bin gespannt, ob wir uns wiedersehen, junger Trainer.\pWer weiß, vielleicht bringst du es zu wahrer Größe!"
+	.autostring 35 2 "Wie nobel!\pAber sei vorsichtig, nicht alle Mitglieder von Team Violet sind so erbärmliche Gestalten wie die beiden eben.\pDie Kommandanten der Divisionen sind enorm gefährlich.\pÜberlasse diese Kaliber lieben der Polizei oder den Top Vier, verstanden?\pIch bin gespannt, ob wir uns wiedersehen, junger Trainer.\pWer weiß, vielleicht bringst du es zu wahrer Größe!"
         
 str_violet_grunt:
 	.string "Team Violet Rüpel"

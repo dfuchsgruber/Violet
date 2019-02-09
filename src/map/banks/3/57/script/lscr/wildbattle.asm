@@ -255,55 +255,55 @@ mov_face_down:
 .ifdef LANG_GER
 
 str_whatya_doin:
-	.autostring 36 2 "Was treibst du denn da, PLAYER?\pDu sollst das Pokémon einfangen! Gleich noch einmal!"
+	.autostring 35 2 "Was treibst du denn da, PLAYER?\pDu sollst das Pokémon einfangen! Gleich noch einmal!"
 
 str_fainted:
-	.autostring 36 2 "Das war ja eine schwache Vorstellung!\pIch bringe deine Pokémon wieder auf Vordermann, und du versuchst es erneut!"
+	.autostring 35 2 "Das war ja eine schwache Vorstellung!\pIch bringe deine Pokémon wieder auf Vordermann, und du versuchst es erneut!"
 
 str_healed:
-	.autostring 36 2 "So, dein Pokémon ist wieder bei Kräften.\pEnttäusche mich kein zweites Mal, PLAYER!"
+	.autostring 35 2 "So, dein Pokémon ist wieder bei Kräften.\pEnttäusche mich kein zweites Mal, PLAYER!"
 
 str_wasted:
 	.autostring 35 2 "Du hast alle Pokébälle aufgebraucht?\pEine Schande ist das!\nKomm zu mir, ich werde dir ein paar neue geben."
 
 str_wasted_balls_and_lost:
-	.autostring 36 2 "Und deine Pokébälle hast du auch aufgebraucht?\pDas ist unerhört! Ich gebe dir ein paar neue und du siehst zu, dass du dich besser anstellst!"
+	.autostring 35 2 "Und deine Pokébälle hast du auch aufgebraucht?\pDas ist unerhört! Ich gebe dir ein paar neue und du siehst zu, dass du dich besser anstellst!"
 
 str_caught:
-	.autostring 36 2 "Sehr gut gemacht, PLAYER!\pZurück mit dir in die Reihe!"
+	.autostring 35 2 "Sehr gut gemacht, PLAYER!\pZurück mit dir in die Reihe!"
 
 str_call_rival:
-	.autostring 36 2 "Als nächstes bist du an der Reihe, RIVAL.\pKomm zu mir, ich werde dir Pokébälle aushändigen."
+	.autostring 35 2 "Als nächstes bist du an der Reihe, RIVAL.\pKomm zu mir, ich werde dir Pokébälle aushändigen."
 
 str_rival_says_easy:
-	.autostring 36 2 "Immer her damit!\nDas wird ein Kinderspiel!"
+	.autostring 35 2 "Immer her damit!\nDas wird ein Kinderspiel!"
 
 str_well_done_rival:
-	.autostring 36 2 "Gut gemacht, RIVAL!\pSo muss das sein. Komm zurück in die Reihe."
+	.autostring 35 2 "Gut gemacht, RIVAL!\pSo muss das sein. Komm zurück in die Reihe."
 
 str_rival_says_was_easy:
-	.autostring 36 2 "Wie ich gesagt habe:\nEin Kinderspiel!"
+	.autostring 35 2 "Wie ich gesagt habe:\nEin Kinderspiel!"
 
 str_mays_turn:
-	.autostring 36 2 "Fein! Dann fehlst du nur noch du, Maike!\pKomm zu mir!"
+	.autostring 35 2 "Fein! Dann fehlst du nur noch du, Maike!\pKomm zu mir!"
 
 str_may_insecure:
-	.autostring 36 2 "Uh, ähm - okay!\nIch komme schonDOTS"
+	.autostring 35 2 "Uh, ähm - okay!\nIch komme schonDOTS"
 
 str_give_may_balls:
-	.autostring 36 2 "Auch du erhältst von mir fünf Pokébälle.\pGib dein Bestes!"
+	.autostring 35 2 "Auch du erhältst von mir fünf Pokébälle.\pGib dein Bestes!"
 
 str_may_screams:
-	.autostring 36 2 "Whaaa!"
+	.autostring 35 2 "Whaaa!"
 
 str_may_done:
-	.autostring 36 2 "Sehr gut gemacht, Maike!\pBravo!\nZurück mit dir in die Reihe."
+	.autostring 35 2 "Sehr gut gemacht, Maike!\pBravo!\nZurück mit dir in die Reihe."
 
 str_may_glad:
-	.autostring 36 2 "Ta-Tatsächlich?\nHabe ich es geschafft?\pSuper! Das hätte ich ehrlich nicht gedachtDOTS"
+	.autostring 35 2 "Ta-Tatsächlich?\nHabe ich es geschafft?\pSuper! Das hätte ich ehrlich nicht gedachtDOTS"
 
 str_catching_test_done:
-	.autostring 36 2 "Ausgezeichnet!\nDamit hättet ihr diesen Teil der Prüfung schon einmal hinter euch.\pNun müsst ihr noch euer Kampfgeschick auf die Probe stellen, indem ihr gegeneinander antretet.\pPLAYER, RIVAL! Ihr bildet das erste Gegnerpaar.\pMaike und Felix das zweite.\pFindet euch auf dem Kampfplatz zusammen, wir beginnen unverzüglich."
+	.autostring 35 2 "Ausgezeichnet!\nDamit hättet ihr diesen Teil der Prüfung schon einmal hinter euch.\pNun müsst ihr noch euer Kampfgeschick auf die Probe stellen, indem ihr gegeneinander antretet.\pPLAYER, RIVAL! Ihr bildet das erste Gegnerpaar.\pMaike und Felix das zweite.\pFindet euch auf dem Kampfplatz zusammen, wir beginnen unverzüglich."
 
 .elseif LANG_EN
 

@@ -92,22 +92,22 @@ mov_face_down:
 
 .ifdef LANG_GER
 str_before_faun_appeared:
-	.autostring 36 2 "Opi ist manchmal schon ein seltsamer KauzDOTS\pAber vielleicht ist er gerade deshalb ein guter Lehrer!"
+	.autostring 35 2 "Opi ist manchmal schon ein seltsamer KauzDOTS\pAber vielleicht ist er gerade deshalb ein guter Lehrer!"
 
 str_has_received_pkmn:
-	.autostring 36 2 "Opi ist oft sehr streng, aber dafür ein herzensguter Mensch!\pEr ist sogar bereit, uns seine seltensten Pokémon anzuvertrauen!"
+	.autostring 35 2 "Opi ist oft sehr streng, aber dafür ein herzensguter Mensch!\pEr ist sogar bereit, uns seine seltensten Pokémon anzuvertrauen!"
 
 str_catch_pkmn:
-	.autostring 36 2 "Keine Sorge, PLAYER.\nEs ist wirklich kinderleicht! Nur keine Scheu!"
+	.autostring 35 2 "Keine Sorge, PLAYER.\nEs ist wirklich kinderleicht! Nur keine Scheu!"
 
 str_battle:
-	.autostring 36 2 "Lass uns unser Bestes geben, PLAYER.\pMehr können wir ohnehin nicht tun."
+	.autostring 35 2 "Lass uns unser Bestes geben, PLAYER.\pMehr können wir ohnehin nicht tun."
 
 str_results:
-	.autostring 36 2 "Ich bin ja so glücklich!\nOpi ist sicherlich stolz auf mich!"
+	.autostring 35 2 "Ich bin ja so glücklich!\nOpi ist sicherlich stolz auf mich!"
 
 str_goodbye:
-	.autostring 36 2 "Da sind wir, PLAYER!\pWas tun wir nun?\nHast du Pläne?\pIch denke, ich werde mich auf die Suche nach Blaise machen.\pEr mag zwar wie ein Idiot wirken, aber im Grunde ist auch er nur Opfer der Tyrannei seines Vaters.\pWas solche Menschen brauchen, sind Freunde, die trotz allem zu ihnen stehen.\pFreundschaft! Das ist es, worauf es ankommt.\pMeinst du nicht auch, PLAYER?\pVielleicht werden wir uns wieder begegnen. Ich freue mich schon darauf!"
+	.autostring 35 2 "Da sind wir, PLAYER!\pWas tun wir nun?\nHast du Pläne?\pIch denke, ich werde mich auf die Suche nach Blaise machen.\pEr mag zwar wie ein Idiot wirken, aber im Grunde ist auch er nur Opfer der Tyrannei seines Vaters.\pWas solche Menschen brauchen, sind Freunde, die trotz allem zu ihnen stehen.\pFreundschaft! Das ist es, worauf es ankommt.\pMeinst du nicht auch, PLAYER?\pVielleicht werden wir uns wieder begegnen. Ich freue mich schon darauf!"
 
 .elseif LANG_EN
 

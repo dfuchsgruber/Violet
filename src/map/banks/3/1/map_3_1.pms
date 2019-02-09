@@ -5,7 +5,7 @@
 			"person_cnt": 39,
 			"warp_cnt": 8,
 			"trigger_cnt": 9,
-			"signpost_cnt": 7,
+			"signpost_cnt": 9,
 			"persons": [
 				{
 					"target_index": 1,
@@ -1151,6 +1151,40 @@
 							"amount": 1,
 							"chunk": 0
 						}
+					}
+				},
+				{
+					"x": "61",
+					"y": "9",
+					"level": 0,
+					"type": "7",
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_BELEBER",
+							"flag": "65",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
+				},
+				{
+					"x": "52",
+					"y": "22",
+					"level": 0,
+					"type": "7",
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_AETHER",
+							"flag": "64",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
 					}
 				}
 			]

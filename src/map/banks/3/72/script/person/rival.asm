@@ -23,10 +23,10 @@ end
 .ifdef LANG_GER
 
 str_before_test:
-    .autostring 36 2 "Wegen dir habe ich von Faun eine Standpauke bekommen!\pBeste Freunde können auch mal ein Klotz am Bein sein, wie es scheint!"
+    .autostring 35 2 "Wegen dir habe ich von Faun eine Standpauke bekommen!\pBeste Freunde können auch mal ein Klotz am Bein sein, wie es scheint!"
         
 str_after_test:
-	.autostring 36 2 "Das ist ja lachhaft!\nWas sich Faun wohl bei diesem Test gedacht hat?\pLachhaft, wirklich!"
+	.autostring 35 2 "Das ist ja lachhaft!\nWas sich Faun wohl bei diesem Test gedacht hat?\pLachhaft, wirklich!"
         
 .elseif LANG_EN
 

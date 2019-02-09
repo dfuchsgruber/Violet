@@ -97,40 +97,40 @@ return
 .global str_0x8cae89
 
 str_0x8cae89:
-	.autostring 36 2 "Es beginnt nun der Kampf zwischen Lester und PLAYER um den Antikorden.\pIch erwarte einen fairen Kampf!"
+	.autostring 35 2 "Es beginnt nun der Kampf zwischen Lester und PLAYER um den Antikorden.\pIch erwarte einen fairen Kampf!"
         
         
 .global str_0x8cafb5
 
 str_0x8cafb5:
-	.autostring 36 2 "Auch wenn du mir sympatisch bist, werde ich mich nicht zurückhalten.\pMeine Gestein-Pokémon werden dich das fürchten lehren!"
+	.autostring 35 2 "Auch wenn du mir sympatisch bist, werde ich mich nicht zurückhalten.\pMeine Gestein-Pokémon werden dich das fürchten lehren!"
         
 .global str_0x8cb08b
 
 str_0x8cb08b:
-    .autostring 36 2 "Beeindruckend gekämpft!\pSelbst meine felsenharten Gestein-Pokémon konnten dir nichts entgegensetzen."
+    .autostring 35 2 "Beeindruckend gekämpft!\pSelbst meine felsenharten Gestein-Pokémon konnten dir nichts entgegensetzen."
         
         
 .global str_0x8cb101
 
 str_0x8cb101:
-	.autostring 36 2 "Du hast hervorragend gekämpft!\pDen Antikorden hast du dir redlich verdient!"
+	.autostring 35 2 "Du hast hervorragend gekämpft!\pDen Antikorden hast du dir redlich verdient!"
         
 .global str_0x897c8a
 
 str_0x897c8a:
-    .autostring 36 2 "PLAYER hat den Antikorden von Lester erhalten!"
+    .autostring 35 2 "PLAYER hat den Antikorden von Lester erhalten!"
         
         
 .global str_0x8cb1cc
 
 str_0x8cb1cc:
-	.autostring 36 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Blitz außerhalb des Kampfes zu nutzen.\pZudem gehorchen dir getauschte Pokémon bis Level 30.\pDOTS DOTS DOTS\pDarüber hinaus will ich dir noch etwas als Symbol meiner persönlichen Wertschätzung überreichen."
+	.autostring 35 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Blitz außerhalb des Kampfes zu nutzen.\pZudem gehorchen dir getauschte Pokémon bis Level 30.\pDOTS DOTS DOTS\pDarüber hinaus will ich dir noch etwas als Symbol meiner persönlichen Wertschätzung überreichen."
         
 .global str_0x8cb281
 
 str_0x8cb281:
-	.autostring 36 2 "Diese Technische Maschine enthält die Attacke Felsgrab.\pSie ist eine meiner Lieblingsattacken, weil sie den Gegner schadet und gleichzeitig verlangsamt.\pEin idealer Angriff für langsamere Pokémon, wie etwa meine Gestein-Typen.\pIch hoffe, sie wird dir auf deiner Reise nützen.\pBegleite mich nun bitte aus der Untergrund-Arena."
+	.autostring 35 2 "Diese Technische Maschine enthält die Attacke Felsgrab.\pSie ist eine meiner Lieblingsattacken, weil sie den Gegner schadet und gleichzeitig verlangsamt.\pEin idealer Angriff für langsamere Pokémon, wie etwa meine Gestein-Typen.\pIch hoffe, sie wird dir auf deiner Reise nützen.\pBegleite mich nun bitte aus der Untergrund-Arena."
         
 .elseif LANG_EN
 

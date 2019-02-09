@@ -59,13 +59,13 @@ end
 
 
 str_0x8127cb:
-    .autostring 36 2 "Willst du wieder zurück nach Route 3?"
+    .autostring 35 2 "Willst du wieder zurück nach Route 3?"
         
         
 .global str_0x8dc0e4
 
 str_0x8dc0e4:
-    .autostring 36 2 "Mein Staraptor wird dich jetzt zurückbringen."
+    .autostring 35 2 "Mein Staraptor wird dich jetzt zurückbringen."
         
 str_rick:
 	.string "Rick"
@@ -74,7 +74,7 @@ str_rick:
 .global str_0x8127fe
 
 str_0x8127fe:
-    .autostring 36 2 "Solltest du deine Meinung ändern, weißt du ja, wo du mich findest."
+    .autostring 35 2 "Solltest du deine Meinung ändern, weißt du ja, wo du mich findest."
         
         
 .elseif LANG_EN

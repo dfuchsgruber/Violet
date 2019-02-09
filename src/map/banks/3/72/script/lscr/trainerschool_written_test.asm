@@ -285,19 +285,19 @@ mov_x:
 .ifdef LANG_GER
 
 str_rival_to_player:
-	.autostring 36 2 "PLAYER! Wir sind schon viel zu spät! Wenn ich wegen deiner Trödelei die Abschlussprüfung in den Sand setzte, dannDOTS!\pBeeilung jetzt!"
+	.autostring 35 2 "PLAYER! Wir sind schon viel zu spät! Wenn ich wegen deiner Trödelei die Abschlussprüfung in den Sand setzte, dannDOTS!\pBeeilung jetzt!"
 
 str_faun_to_player:
-	.autostring 36 2 "PLAYER!\pDa bist ja endlich!\nHehe! Ich hatte schon befürchtet,\ldu und RIVAL würdet kneifen!\pNimm PlatzDOTS"
+	.autostring 35 2 "PLAYER!\pDa bist ja endlich!\nHehe! Ich hatte schon befürchtet,\ldu und RIVAL würdet kneifen!\pNimm PlatzDOTS"
 
 str_faun_announce:
-	.autostring 36 2 "So ihr Bälger!\nHeute ist es so weit und ihr werdet nach meiner harten Ausbildung zu echten Trainern!\pZuerst werde ich euer Wissen in einer schriftlichen Prüfung abfragen.\pDann geht es nach draußen, wo ihr einen Feldtest bestehen müsst.\pIch bin mir sicher, dass ihr alle das nicht vergeigen werdet!\pIch teile nun die Fragebögen aus.\pKeinen Mucks will ich dabei hören!"
+	.autostring 35 2 "So ihr Bälger!\nHeute ist es so weit und ihr werdet nach meiner harten Ausbildung zu echten Trainern!\pZuerst werde ich euer Wissen in einer schriftlichen Prüfung abfragen.\pDann geht es nach draußen, wo ihr einen Feldtest bestehen müsst.\pIch bin mir sicher, dass ihr alle das nicht vergeigen werdet!\pIch teile nun die Fragebögen aus.\pKeinen Mucks will ich dabei hören!"
         
 str_test_begins:
-	.autostring 36 2 "Na dann! Viel Glück\pIhr werdet es brauchenDOTS\nHehe!"
+	.autostring 35 2 "Na dann! Viel Glück\pIhr werdet es brauchenDOTS\nHehe!"
         
 str_test_over:
-	.autostring 36 2 "Gut, das wars!\nStifte weg!\pDas war ein kleiner Vorgeschmack auf das Trainer-Dasein!\pKeine Bange, der Feldtest macht ein Stück mehr Spaß!"
+	.autostring 35 2 "Gut, das wars!\nStifte weg!\pDas war ein kleiner Vorgeschmack auf das Trainer-Dasein!\pKeine Bange, der Feldtest macht ein Stück mehr Spaß!"
         
 str_after_test:
 	.autostring 35 2 "Sehr schön!\nIch werde mir eure Antworten ansehen und ihr könnt erst einmal durchschnaufen.\pWir treffen uns auf dem Hof, wo der Feldtest stattfindet.\pDas wird ein Spaß werden, meint ihr nicht auch?"

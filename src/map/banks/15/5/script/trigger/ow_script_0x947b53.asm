@@ -106,12 +106,12 @@ str_dieb:
 	.string "Dieb"
 
 str_0x8d4859:
-	.autostring 36 2 "Hehe!\nJetzt kann ich mir endlich dieses Ei unter den Nagel reißen!"
+	.autostring 35 2 "Hehe!\nJetzt kann ich mir endlich dieses Ei unter den Nagel reißen!"
         
 .global str_0x8d4782
 
 str_0x8d4782:
-	.autostring 36 2 "Was? Wer bist du denn?\pWeißt du etwa auch von dem goldenen Altaria, das hier nistet?\pKeine Chance, sein Ei ist kostbar und ich werde es mir unter den Nagel reißen!"
+	.autostring 35 2 "Was? Wer bist du denn?\pWeißt du etwa auch von dem goldenen Altaria, das hier nistet?\pKeine Chance, sein Ei ist kostbar und ich werde es mir unter den Nagel reißen!"
         
 .global str_mill_choice_0
 
@@ -128,43 +128,43 @@ str_mill_choice_1:
 .global str_0x8d46e0
 
 str_0x8d46e0:
-    .autostring 36 2 "Denkst du, ich überlasse dir das Ei einfach so?\pGanz schön naiv, von dir!"
+    .autostring 35 2 "Denkst du, ich überlasse dir das Ei einfach so?\pGanz schön naiv, von dir!"
         
         
 .global str_0x8d46bb
 
 str_0x8d46bb:
-    .autostring 36 2 "Du bist ja gerissen!\pAber nichts da!\pIch habe das Prachtstück schon länger im Auge!"
+    .autostring 35 2 "Du bist ja gerissen!\pAber nichts da!\pIch habe das Prachtstück schon länger im Auge!"
         
         
 .global str_0x8d469f
 
 str_0x8d469f:
-    .autostring 36 2 "Verdammt!\nDas schöne Ei DOTS"
+    .autostring 35 2 "Verdammt!\nDas schöne Ei DOTS"
         
         
 .global str_0x8d4585
 
 str_0x8d4585:
-    .autostring 36 2 "Wah!\nDu bist zu stark!\pDann nimm dir das verdammte Ei doch!\pMir hätte es sowieso nur Ärger gemacht!"
+    .autostring 35 2 "Wah!\nDu bist zu stark!\pDann nimm dir das verdammte Ei doch!\pMir hätte es sowieso nur Ärger gemacht!"
         
         
 .global str_0x8d4644
 
 str_0x8d4644:
-    .autostring 36 2 "Ich werde nicht zulassen, dass dem Altaria sein Ei stiehlst!"
+    .autostring 35 2 "Ich werde nicht zulassen, dass dem Altaria sein Ei stiehlst!"
         
         
 .global str_0x8d4604
 
 str_0x8d4604:
-    .autostring 36 2 "Hehe!\pDann wirst du es wohl verteidigen müssen!"
+    .autostring 35 2 "Hehe!\pDann wirst du es wohl verteidigen müssen!"
         
         
 .global str_0x8d4525
 
 str_0x8d4525:
-    .autostring 36 2 "Urgh!\pWas hast du denn davon dieses dumme Ei zu beschützen?\pDOTS DOTS DOTS\pIch verziehe michDOTS"
+    .autostring 35 2 "Urgh!\pWas hast du denn davon dieses dumme Ei zu beschützen?\pDOTS DOTS DOTS\pIch verziehe michDOTS"
         
         
 .elseif LANG_EN

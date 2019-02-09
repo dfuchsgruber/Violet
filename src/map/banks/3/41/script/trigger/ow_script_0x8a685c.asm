@@ -389,91 +389,91 @@ str_violet_grunt:
 .global str_0x8a7134
 
 str_0x8a7134:
-	.autostring 36 2 "Spiel hier nicht den Dummen!\pWenn du uns nicht verrätst, was wir wissen wollen, wirst du uns kennenlernen!"
+	.autostring 35 2 "Spiel hier nicht den Dummen!\pWenn du uns nicht verrätst, was wir wissen wollen, wirst du uns kennenlernen!"
         
         
 .global str_0x8a70a9
 
 str_0x8a70a9:
-    .autostring 36 2 "Ich habe es euch doch schon gesagt!\pIch bin zwar ein Archäologe, aber von einem Zeistein habe ich noch nie zuvor gehört!"
+    .autostring 35 2 "Ich habe es euch doch schon gesagt!\pIch bin zwar ein Archäologe, aber von einem Zeistein habe ich noch nie zuvor gehört!"
         
         
 .global str_0x8a7027
 
 str_0x8a7027:
-    .autostring 36 2 "Das kaufen wir dir aber nicht ab!\pDu willst es also wirklich darauf ankommen lassen?"
+    .autostring 35 2 "Das kaufen wir dir aber nicht ab!\pDu willst es also wirklich darauf ankommen lassen?"
         
         
 .global str_0x8a6f8a
 
 str_0x8a6f8a:
-    .autostring 36 2 "PLAYER!\pPerfektes Timing!\pDas Labor meines Vaters befindet sich hier und ich wollte ihm einen Besuch abstatten."
+    .autostring 35 2 "PLAYER!\pPerfektes Timing!\pDas Labor meines Vaters befindet sich hier und ich wollte ihm einen Besuch abstatten."
         
         
 .global str_0x8a6f16
 
 str_0x8a6f16:
-    .autostring 36 2 "Was ist denn hier los?\pWer sind diese Leute und was haben Sie mit meinem Vater zu schaffen?"
+    .autostring 35 2 "Was ist denn hier los?\pWer sind diese Leute und was haben Sie mit meinem Vater zu schaffen?"
         
         
 .global str_0x8a6bac
 
 str_0x8a6bac:
-    .autostring 36 2 "Lasst den Professor in Ruhe!"
+    .autostring 35 2 "Lasst den Professor in Ruhe!"
         
         
 .global str_0x8a6b82
 
 str_0x8a6b82:
-    .autostring 36 2 "RIVAL! PLAYER!\nIhr seid meine Retter in der Not!"
+    .autostring 35 2 "RIVAL! PLAYER!\nIhr seid meine Retter in der Not!"
         
         
 .global str_0x8a6bfa
 
 str_0x8a6bfa:
-	.autostring 36 2 "Dieses Kind schon wieder!\pHast du deine Lektion noch nicht gelernt, dich nicht mit uns anzulegen?\pDu wirst noch einsehen, dass man sich nicht in Angelegenheiten einmischen sollte, die einen nichts angehen!"
+	.autostring 35 2 "Dieses Kind schon wieder!\pHast du deine Lektion noch nicht gelernt, dich nicht mit uns anzulegen?\pDu wirst noch einsehen, dass man sich nicht in Angelegenheiten einmischen sollte, die einen nichts angehen!"
         
 .global str_0x8a6b0d
 
 str_0x8a6b0d:
-    .autostring 36 2 "Alles klar PLAYER!\pJeder von uns nimmt sich einen dieser Idioten vor.\pWer schneller fertig ist, bekommt den Dritten ab!"
+    .autostring 35 2 "Alles klar PLAYER!\pJeder von uns nimmt sich einen dieser Idioten vor.\pWer schneller fertig ist, bekommt den Dritten ab!"
         
         
 .global str_0x8a6ac8
 
 str_0x8a6ac8:
-    .autostring 36 2 "Wir werden deinen Vater auf jeden Fall retten!"
+    .autostring 35 2 "Wir werden deinen Vater auf jeden Fall retten!"
         
         
 .global str_0x8a69df
 
 str_0x8a69df:
-    .autostring 36 2 "Du Rotzlöffel!\pJetzt wirst du aufgemischt!"
+    .autostring 35 2 "Du Rotzlöffel!\pJetzt wirst du aufgemischt!"
 .global str_0x8a6a97
 
 str_0x8a6a97:
-    .autostring 36 2 "DOTS DOTS DOTS\nDu kleiner RotzlöffelDOTS"
+    .autostring 35 2 "DOTS DOTS DOTS\nDu kleiner RotzlöffelDOTS"
 
 str_0x8a752d:
-    .autostring 36 2 "Das kann doch nicht sein, dass ich von so einem Balg besiegt werde!"
+    .autostring 35 2 "Das kann doch nicht sein, dass ich von so einem Balg besiegt werde!"
 
 
 .global str_0x8a7502
 
 str_0x8a7502:
-    .autostring 36 2 "Verdammt!\pDer Kleine hat mich überrumpelt!"
+    .autostring 35 2 "Verdammt!\pDer Kleine hat mich überrumpelt!"
 
 
 .global str_0x8a74d8
 
 str_0x8a74d8:
-    .autostring 36 2 "Wir sollten uns vom Acker machen!"
+    .autostring 35 2 "Wir sollten uns vom Acker machen!"
 
 
 .global str_0x8a73a9
 
 str_0x8a73a9:
-    .autostring 36 2 "RIVAL, PLAYERDOTS\pIhr seid wirklich genau richtig gekommen.\pWer weiß, was mir diese Schergen angetan hätten, wenn ihr nicht eingeschritten wärt.\pSie haben darauf bestanden, dass ich ihnen verrate, wo man einen gewissen Zeitstein findet.\pIch wollte ihnen klar machen, dass ich von einem solchen Zeitstein noch nie etwas gehört habe, aber diese Rüpel wollten nicht hören.\pAber lasst uns das nicht hier draußen besprechen, kommt doch mit in mein Labor."
+    .autostring 35 2 "RIVAL, PLAYERDOTS\pIhr seid wirklich genau richtig gekommen.\pWer weiß, was mir diese Schergen angetan hätten, wenn ihr nicht eingeschritten wärt.\pSie haben darauf bestanden, dass ich ihnen verrate, wo man einen gewissen Zeitstein findet.\pIch wollte ihnen klar machen, dass ich von einem solchen Zeitstein noch nie etwas gehört habe, aber diese Rüpel wollten nicht hören.\pAber lasst uns das nicht hier draußen besprechen, kommt doch mit in mein Labor."
         
 .elseif LANG_EN
 

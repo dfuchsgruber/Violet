@@ -116,10 +116,10 @@ str_violet:
 	.string "Team Violet Rüpel"
 
 str_r1:
-	.autostring 36 2 "Beeilen wir uns besser, Rin wartet schon auf uns DOTS"
+	.autostring 35 2 "Beeilen wir uns besser, Rin wartet schon auf uns DOTS"
 
 str_r2:
-	.autostring 36 2 "Ja und sie wird schnell launisch, wenn man sie warten lässt DOTS"
+	.autostring 35 2 "Ja und sie wird schnell launisch, wenn man sie warten lässt DOTS"
 
         
 .elseif LANG_EN

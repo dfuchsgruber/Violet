@@ -84,24 +84,24 @@ str_polizist:
 .global str_0x8dcf8d
 
 str_0x8dcf8d:
-	.autostring 36 2 "Denken Sie, dass Sie damit durchkommen?\pWenn die Top Vier von Ihren schmutzigen Geschäften erfahrenDOTS"
+	.autostring 35 2 "Denken Sie, dass Sie damit durchkommen?\pWenn die Top Vier von Ihren schmutzigen Geschäften erfahrenDOTS"
         
         
 .global str_0x8de230
 
 str_0x8de230:
-	.autostring 36 2 "Sie unterstellen der Polizei hier Ungeheuerliches!\pIch könnte Sie inhaftieren lassen für solche Anschuldingen!"
+	.autostring 35 2 "Sie unterstellen der Polizei hier Ungeheuerliches!\pIch könnte Sie inhaftieren lassen für solche Anschuldingen!"
         
 .global str_0x8dcf36
 
 str_0x8dcf36:
-    .autostring 36 2 "Inhaftieren?\pDOTS DOTS\pSchon gut, schon gut.\nSie haben gewonnen.\pIch lasse Sie in Ruhe!"
+    .autostring 35 2 "Inhaftieren?\pDOTS DOTS\pSchon gut, schon gut.\nSie haben gewonnen.\pIch lasse Sie in Ruhe!"
         
         
 .global str_0x8dcee9
 
 str_0x8dcee9:
-    .autostring 36 2 "Dieser KerlDOTS\pIch sollte mich vielleicht um ihn kümmernDOTS"
+    .autostring 35 2 "Dieser KerlDOTS\pIch sollte mich vielleicht um ihn kümmernDOTS"
         
         
 .elseif LANG_EN

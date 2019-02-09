@@ -47,13 +47,13 @@ end
 .global str_0x8ca8f9
 
 str_0x8ca8f9:
-	.autostring 36 2 "Vor langer Zeit erbauten meine Vorfahren diesen Tempel und die Wunderwerke darin.\pIch werde dich jetzt in die Kampfarena im Untergrund führen."
+	.autostring 35 2 "Vor langer Zeit erbauten meine Vorfahren diesen Tempel und die Wunderwerke darin.\pIch werde dich jetzt in die Kampfarena im Untergrund führen."
 
         
 .global str_0x8ca83f
 
 str_0x8ca83f:
-	.autostring 36 2 "Ich werde auch in Zukunft über diesen Ort wachen, wie es die Tradition meiner Familie ist.\pAuf dieses Vermächtnis bin ich äußerst stolz."
+	.autostring 35 2 "Ich werde auch in Zukunft über diesen Ort wachen, wie es die Tradition meiner Familie ist.\pAuf dieses Vermächtnis bin ich äußerst stolz."
         
 .elseif LANG_EN
 
