@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_110",
 	"data": {
 		"border": [
 			[
@@ -26706,12 +26704,594 @@
 					"block_idx": 461,
 					"level": 1
 				}
+			],
+			[
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 496,
+					"level": 0
+				},
+				{
+					"block_idx": 497,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 496,
+					"level": 0
+				},
+				{
+					"block_idx": 497,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 504,
+					"level": 0
+				},
+				{
+					"block_idx": 505,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 504,
+					"level": 0
+				},
+				{
+					"block_idx": 505,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				},
+				{
+					"block_idx": 461,
+					"level": 0
+				}
 			]
 		],
 		"width": 72,
-		"height": 92,
+		"height": 94,
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_110",
+	"type": "footer"
 }

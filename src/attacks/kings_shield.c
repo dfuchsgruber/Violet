@@ -20,7 +20,7 @@ void bsc_command_setprotect_apply_kings_shield(){
         fmem.battle_custom_status[attacking_battler] |= CUSTOM_STATUS_KINGS_SHIELD;
         u8 *x02023E82 = (u8*)0x02023E82;
         *x02023E82 = 2;
-        battler_statuses[attacking_battler].unkown[0] |= 1;
+        battler_statuses[attacking_battler].protect = true;
     }
 }
 

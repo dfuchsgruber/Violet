@@ -29,6 +29,8 @@ typedef union {
     } fields;
 } pid_t;
 
+#define STATUS_CONDITION_SLEEP 7
+
 typedef struct pokemon {
     pid_t pid;
     u32 tid;

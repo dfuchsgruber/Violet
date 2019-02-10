@@ -1180,7 +1180,7 @@
 					"value": {
 						"item": {
 							"item": "ITEM_AETHER",
-							"flag": "64",
+							"flag": "2",
 							"amount": "1",
 							"chunk": 0
 						},

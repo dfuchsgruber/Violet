@@ -49,12 +49,54 @@ typedef struct battler {
 #define CUSTOM_STATUS_KINGS_SHIED_DROP (1 << 2)
 
 typedef struct battler_status{
-    u8 unkown[16];
+    u32 protect : 1;
+    u32 endure : 1;
+    u32 out_of_moves : 1;
+    u32 helping_hand : 1;
+    u32 bounce : 1;
+    u32 steal : 1;
+    u32 bit_6 : 1;
+    u32 immobility : 1;
+    u32 hurt_in_confusion : 1;
+    u32 target_unaffected : 1;
+    u32 charging : 1;
+    u32 flee : 2;
+    u32 used_imprisoned_move : 1;
+    u32 love_immobility : 1;
+    u32 used_disabled_move : 1;
+    u32 used_taunted_move : 1;
+    u32 bit_10 : 1;
+    u32 flinched : 1;
+    u32 not_first_strike : 1;
+	int physical_damage;
+	int special_damage;
+	u8 physical_damage_battler;
+	u8 special_damage_battler;
 }battler_status;
+
+typedef struct battler_damage_taken_stru {
+	u8 stat_dropped : 1;
+	u8 lighting_rod : 1;
+	u8 restored_sprite : 1;
+	u8 intimdated_foe : 1;
+	u8 traced : 1;
+	u8 pp_unaffected_by_pressure : 1;
+	u8 bit_6;
+	u8 used_focus_band : 1;
+	int damage;
+	int physical_damage;
+	int special_damage;
+	u8 physical_damage_battler;
+	u8 special_damage_battler;
+} battler_damage_taken_stru;
+
 
 
 extern battler battlers[4];
 extern battler_status battler_statuses[4];
+extern battler_damage_taken_stru battler_damage_taken[4];
+
+#define DAMAGE_CAUSED ((battler_damage_taken[defending_battler].physical_damage != 0 || battler_damage_taken[defending_battler].special_damage != 0))
 
 extern u8 attack_targets;
 extern u8 attacking_battler;

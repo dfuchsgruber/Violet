@@ -159,7 +159,7 @@
 						"script": "0",
 						"item": {
 							"item": "ITEM_ELIXIER",
-							"flag": 2,
+							"flag": "64",
 							"amount": 1,
 							"chunk": 0
 						}

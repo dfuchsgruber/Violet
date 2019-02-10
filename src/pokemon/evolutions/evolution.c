@@ -22,13 +22,15 @@
 u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
     u16 species = (u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
     u16 held_item = (u16) pokemon_get_attribute(p, ATTRIBUTE_ITEM, 0);
+	dprintf("Pokemon evolutions[species] @%x\n", pokemon_evolutions[species]);
     if (pokemon_evolutions[species]) {
-        pokemon_evolution *evolutions = *pokemon_evolutions[species];
+        pokemon_evolution *evolutions = pokemon_evolutions[species];
         switch (type) {
         case TYPE_LEVEL_UP:
         {   //The usual case
             arg = (u8) pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0);
             for (int i = 0; evolutions[i].method != EVOLUTION_METHOD_NONE; i++) {
+            	dprintf("Checking evolution index %d with method %d @ %x\n", i, evolutions[i].method, &evolutions[i]);
                 switch (evolutions[i].method) {
                 case EVOLUTION_METHOD_FRIENDSHIP:
                 {
@@ -233,7 +235,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
 
 bool pokemon_can_evolve (u16 species) {
     if (pokemon_evolutions[species]) {
-        pokemon_evolution *evolutions = *pokemon_evolutions[species];
+        pokemon_evolution *evolutions = pokemon_evolutions[species];
         // Has at least one evolution
         return evolutions[0].method != EVOLUTION_METHOD_NONE;
     }
@@ -243,7 +245,7 @@ bool pokemon_can_evolve (u16 species) {
 u16 pokemon_get_basis_stage (u16 species) {
 	for (u16 i = 0; i < POKEMON_CNT; i++) {
 		if (pokemon_evolutions[i]) {
-	        pokemon_evolution *evolutions = *pokemon_evolutions[i];
+	        pokemon_evolution *evolutions = pokemon_evolutions[i];
 			for (int j = 0; evolutions[j].method != EVOLUTION_METHOD_NONE; j++) {
 				if (evolutions[j].target == species) {
 					return pokemon_get_basis_stage(i);

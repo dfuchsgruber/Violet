@@ -6011,12 +6011,13 @@ attack attacks[ATTACK_CNT] = {
 		0x2, //Effect-id (in table)
 		75, //Base Power
 		TYPE_KAEFER,
-		100, //Accuracy
-		40, //PP
+		95, //Accuracy
+		20, //PP
 		50, //Effect accuracy
 		SELECTED_TARGET,
 		0, //Priority
-		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE,
+		AFFECTED_BY_PROTECT | AFFECTED_BY_MAGIC_COAT | MIRRORABLE | MAKES_CONTACT |
+		TRIGGERS_KINGS_ROCK,
 		0x0, //Effect table
 		CATEGORY_PHYSICAL,
 		0x0 //Padding
@@ -6115,7 +6116,7 @@ attack attacks[ATTACK_CNT] = {
 	{
 		0x4, //Effect-id (in table)
 		60, //Base Power
-		TYPE_FEUER,
+		TYPE_KAEFER,
 		100, //Accuracy
 		25, //PP
 		10, //Effect accuracy

@@ -2549,9 +2549,9 @@ u8 pokemon_altitude[POKEMON_CNT] = {
     // POKEMON_FORMEO
     0x10,
     // POKEMON_VOLBEAT
-    0xc,
+    0,
     // POKEMON_ILLUMISE
-    0xa,
+    0,
     // POKEMON_LILIEP
     0x0,
     // POKEMON_WIELIE

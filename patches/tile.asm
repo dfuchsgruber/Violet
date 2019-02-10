@@ -131,3 +131,9 @@
     .word str_pc_move, str_pc_move_desc
     .word str_pc_move_items, str_pc_move_items_desc
     .word str_pc_adieu, str_pc_adieu
+
+// Disable FRD's random spawning hidden items
+.org 0x0815D60C
+	bx lr
+.org 0x0815D4D8
+	bx lr

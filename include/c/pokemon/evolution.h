@@ -17,7 +17,7 @@ typedef struct {
         u16 baby_trigger_item;
     } pokemon_evolution;
 
-extern pokemon_evolution **pokemon_evolutions[POKEMON_CNT];
+extern pokemon_evolution *pokemon_evolutions[POKEMON_CNT];
 
 /**
  * Gets the basis stage of a species

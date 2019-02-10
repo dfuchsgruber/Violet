@@ -148,7 +148,25 @@
 		"ability_1": null,
 		"hidden_ability": "Hexaplaga",
 		"safari_rate": 0,
-		"dex_number": 12
+		"dex_number": 12,
+		"basestats": {
+			"hp": 45,
+			"attack": 115,
+			"defense": 60,
+			"speed": 95,
+			"special-attack": 75,
+			"special-defense": 50
+		},
+		"levelup_moves": [
+			[
+				"Bienenstich",
+				17
+			],
+			[
+				"Schwarmstich",
+				35
+			]
+		]
 	},
 	"POKEMON_STARALILI": {
 		"ability_0": "Adlerauge",
@@ -2354,7 +2372,14 @@
 			"Schutzschild"
 		],
 		"egg_moves": [],
-		"dex_number": 253
+		"dex_number": 253,
+		"evolutions" : {
+			"POKEMON_STICHSCHAL" : {
+				"trigger" : "Level_up",
+				"argument" : 16,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_STICHSCHAL": {
 		"name" : {
@@ -2501,7 +2526,14 @@
 			"Schutzschild"
 		],
 		"egg_moves": [],
-		"dex_number": 254
+		"dex_number": 254,
+		"evolutions" : {
+			"POKEMON_STAHLSTICH" : {
+				"trigger" : "Level_up",
+				"argument" : 36,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_STAHLSTICH": {
 		"name" : {
@@ -2808,7 +2840,14 @@
 		"egg_moves": [
 			"Donnerzahn"
 		],
-		"dex_number": 256
+		"dex_number": 256,
+		"evolutions" : {
+			"POKEMON_ORTHODOS" : {
+				"trigger" : "Level_up",
+				"argument" : 16,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_ORTHODOS": {
 		"name" : {
@@ -2963,7 +3002,14 @@
 			"Finsteraura"
 		],
 		"egg_moves": [],
-		"dex_number": 257
+		"dex_number": 257,
+		"evolutions" : {
+			"POKEMON_ZERBERTRES" : {
+				"trigger" : "Level_up",
+				"argument" : 36,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_ZERBERTRES": {
 		"name" : {
@@ -3278,7 +3324,14 @@
 			"Finsteraura"
 		],
 		"egg_moves": [],
-		"dex_number": 259
+		"dex_number": 259,
+		"evolutions" : {
+			"POKEMON_SEESKULL" : {
+				"trigger" : "Level_up",
+				"argument" : 16,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_SEESKULL": {
 		"name" : {
@@ -3435,7 +3488,14 @@
 			"Finsteraura"
 		],
 		"egg_moves": [],
-		"dex_number": 260
+		"dex_number": 260,
+		"evolutions" : {
+			"POKEMON_SKULLYDRA" : {
+				"trigger" : "Level_up",
+				"argument" : 36,
+				"baby_trigger_item" : null
+			}
+		}
 	},
 	"POKEMON_SKULLYDRA": {
 		"name" : {
@@ -3670,7 +3730,7 @@
 		"evolutions" : {
 			"POKEMON_PANEKON" : {
 				"trigger" : "Level_up",
-				"argument" : 255,
+				"argument" : 10,
 				"baby_trigger_item" : null
 			}
 		}

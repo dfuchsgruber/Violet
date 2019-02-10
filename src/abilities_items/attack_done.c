@@ -22,7 +22,7 @@ void attack_done(u8 index){
     if(attacker->item == ITEM_LEBEN_ORB && attacker->current_hp &&
             !(attack_result & (ATTACK_FAILED | ATTACK_MISSED |
             ATTACK_NO_EFFECT)) && attacks[active_attack].base_power &&
-            !(battler_statuses[attacking_battler].unkown[1] & 1)){
+            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
         //inflict life-orb damage
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_life_orb;
@@ -45,7 +45,7 @@ void attack_done(u8 index){
     }else if(attacker->ability == HOCHMUT && !(attack_result & (ATTACK_MISSED |
             ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
             attacks[active_attack].base_power &&
-            !(battler_statuses[attacking_battler].unkown[1] & 1)
+            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED
             && defender->current_hp && attacker->stat_changes[1] < 12){
         if(gp_stack_push(index)){
             attacker->stat_changes[1]++; //accuracy boost
@@ -58,7 +58,8 @@ void attack_done(u8 index){
     }else if(attacker->ability == LEBENSRAEUBER && !(attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
             attacks[active_attack].base_power && attacker->current_hp <
-            attacker->max_hp){
+            attacker->max_hp &&
+            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_lebensraeuber;
     }else if(attacker->ability == CURATOR && !(attack_result & (
@@ -74,15 +75,15 @@ void attack_done(u8 index){
             active_attack == ATTACK_AROMAKUR ||
             active_attack == ATTACK_VITALGLOCKE ||
             active_attack == ATTACK_MILCHGETRAENK
-            
-            )){
+            ) && !battler_statuses[attacking_battler].hurt_in_confusion){
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_curator;
         
     }else if(attacker->ability == EXTRADORN && !(attack_result & (
             ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
             defender->current_hp && 
-            (attacks[active_attack].flags & MAKES_CONTACT)){
+            (attacks[active_attack].flags & MAKES_CONTACT) &&
+            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
         battlescript_callstack_push_next_command();
         bsc_offset = bsc_extradorn;
     } else if(defender->ability == FLUFFIG && (attacks[active_attack].flags & MAKES_CONTACT)) {

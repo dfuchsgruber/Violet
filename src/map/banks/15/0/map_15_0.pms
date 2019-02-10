@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_221",
 		"events": {
-			"person_cnt": 53,
+			"person_cnt": 52,
 			"warp_cnt": 6,
 			"trigger_cnt": 7,
 			"signpost_cnt": 9,
@@ -416,28 +416,6 @@
 					"is_trainer": 1,
 					"alert_radius": 0,
 					"script": "ow_script_0x81a316",
-					"flag": "0x0",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0
-					}
-				},
-				{
-					"target_index": 27,
-					"picture": 57,
-					"field_2": 0,
-					"field_3": 0,
-					"x": 18,
-					"y": 45,
-					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 0,
-					"is_trainer": 1,
-					"alert_radius": 0,
-					"script": "ow_script_0x81a42f",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,

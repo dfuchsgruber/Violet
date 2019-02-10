@@ -408,8 +408,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 52,
-					"y": 50,
+					"x": "61",
+					"y": "42",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
 					"behaviour_range": 0,
@@ -1545,7 +1545,7 @@
 		},
 		"levelscripts": "lscr_0x726e98",
 		"connections": {
-			"connection_cnt": 4,
+			"connection_cnt": 3,
 			"connections": [
 				{
 					"direction": "NORTH",
@@ -1562,14 +1562,6 @@
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 23
-				},
-				{
-					"direction": "SOUTH",
-					"displacement": 0,
-					"bank": 3,
-					"field_A": 0,
-					"field_B": 0,
-					"map_idx": 24
 				},
 				{
 					"direction": "EAST",

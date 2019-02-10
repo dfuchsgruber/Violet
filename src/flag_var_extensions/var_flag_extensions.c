@@ -42,7 +42,6 @@ bool checkflag(u16 flag) {
 }
 
 void setflag(u16 flag) {
-
     if (flag >= 0x8000) {
         clearflag((u16) (flag - 0x8000));
     } else {

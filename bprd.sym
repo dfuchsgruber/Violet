@@ -375,3 +375,4 @@ pokemon_get_by_box = 0x0808BE34 | 1;
 pokemon_to_box = 0x08040A90 | 1;
 player_pokemon_cnt = 0x02024029;
 attack_get_target_of_active_battler = 0x0801CFE0 | 1;
+battler_damage_taken = 0x02023ECC;
