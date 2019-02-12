@@ -45,7 +45,7 @@ map_header_t *dungeon2_init_header_cave(dungeon_generator2 *dg2) {
     fmem.dmapheader.levelscripts = dungeon2_lscr;
     fmem.dmapheader.connections = &dungeon2_connections;
     fmem.dmapheader.music = 0x14b;
-    fmem.dmapheader.map_namespace = 0xB0; //test index
+    fmem.dmapheader.map_namespace = mapheader_virtual.map_namespace; //test index
     fmem.dmapheader.flash_type = 0;
     fmem.dmapheader.weather = MAP_WEATHER_INSIDE;
     fmem.dmapheader.type = MAP_TYPE_INSIDE;

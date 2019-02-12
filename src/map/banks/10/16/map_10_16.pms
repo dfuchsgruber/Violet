@@ -128,10 +128,10 @@
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_DYNAMIC_FOG",
 		"type": "MAP_TYPE_INSIDE",
-		"field_18": 0,
 		"show_name": "DONT_SHOW",
 		"field_1A": 0,
-		"battle_style": "BATTLE_TYPE_ARENA"
+		"battle_style": "BATTLE_TYPE_ARENA",
+		"bike_usable": 0
 	},
 	"label": "map_10_16",
 	"type": "header"

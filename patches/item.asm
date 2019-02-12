@@ -156,3 +156,16 @@ item_effects equ 0x082527E0
 
 .org 0x08125afc
 	.word tm_hm_to_attack
+
+.org 0x080A13A4
+	.word str_cant_dismount_cloud
+
+// Prevent the player form dismounting the clound on underwater maps
+.org 0x080A133E
+	ldr r1, =map_is_cloud | 1
+	bl _bxr1
+	ldr r1, =0x080A137E | 1
+	bx r1
+_bxr1:
+	bx r1
+	.pool

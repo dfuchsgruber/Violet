@@ -103,7 +103,7 @@ header_type = agb.types.Structure([
     ('flash_type', 'map_flash_type', 0),
     ('weather', 'map_weather', 0),
     ('type', 'map_type', 0),
-    ('field_18', 'u8', 0),
+    ('bike_usable', 'u8', 0),
     ('show_name', 'map_show_name', 0),
     ('field_1A', 'u8', 0),
     ('battle_style', 'map_battle_style', 0)

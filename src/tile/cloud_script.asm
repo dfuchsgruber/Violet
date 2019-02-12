@@ -87,7 +87,12 @@ script_cloud_facings:
     .word script_cloud_force_left
     .word script_cloud_force_right
 
+.global str_cant_dismount_cloud
+
 .ifdef LANG_GER
+
+	str_cant_dismount_cloud:
+		.autostring 35 2 "Du kannst hier nicht von der Wolke absteigen.PAUSE_UNTIL_PRESS"
 
 	str_use_cloud:
 		.string "Die Wolken scheinen hier tief zu\nschweben.\pMöchtest du auf deine Wolke\nsteigen?"
@@ -105,6 +110,9 @@ script_cloud_facings:
 		.string "Die Wolken scheinen hier tief zu\nschweben..."
 
 .elseif LANG_EN
+
+	str_cant_dismount_cloud:
+		.autostring 35 2 "You can't dismount the cloud here.PAUSE_UNTIL_PRESS"
 
 	str_use_cloud:
 		.string "The clouds seem to be floating\nnear the ground.\npDo you want to ascend\nby using your cloud?"
