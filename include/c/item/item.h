@@ -27,8 +27,17 @@ typedef struct {
     void (*field_28)(u8);
 } item;
 
-
 item items[ITEM_CNT];
+
+typedef struct {
+	u8 hold_effect;
+	u8 type;
+} item_hold_effect_type_boost_stru;
+
+#define ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE 17
+
+extern item_hold_effect_type_boost_stru
+item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
 
 
 /**
@@ -36,7 +45,13 @@ item items[ITEM_CNT];
  * @param item_id The item id
  * @return The effect parameter
  */
-u8 get_item_effect_param(u16 item_id);
+u8 item_get_hold_effect_parameter(u16 item_id);
+/**
+ * Returns the holding effect  of an item.
+ * @param item_id The item id
+ * @return The effect
+ */
+u8 item_get_hold_effect(u16 item_id);
 
 /**
  * Select the target of an item effect

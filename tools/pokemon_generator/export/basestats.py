@@ -32,6 +32,8 @@ def export_basestats(stats, project, language='LANG_GER'):
         for key in set_keys:
             del basestat[key]
 
+        if basestat['type_1'] is None: basestat['type_1'] = basestat['type_0']
+
         # Add prefixes to match the constants
         for keys, prefix in ((('type_0', 'type_1'), 'TYPE_'),
             (('growth_rate', ), 'GROWTH_RATE_'),

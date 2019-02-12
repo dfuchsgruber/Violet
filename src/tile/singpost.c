@@ -28,8 +28,9 @@ u8 *singpost_behavior_xBC(){
                     return NULL;
                 //mushroom can be found, we decide which one
                 *var_access(0x8004) = flag;
-                if(get_tile_hash_by_facing(facing, 3)){
-                    //2/3 chance for mini mushroom
+                dprintf("Tile hash for mushroom type %d\n", get_tile_hash_by_facing(facing, 5));
+                if(get_tile_hash_by_facing(facing, 5)){
+                    //4/5 chance for mini mushroom
                     *var_access(0x8005) = ITEM_MINIPILZ;
                 }else{
                     *var_access(0x8005) = ITEM_RIESENPILZ;

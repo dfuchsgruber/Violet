@@ -11,8 +11,8 @@ void generate_trash_item(u8 facing) {
 
     u16 item = 0;
     if (!check_trashflag(facing)) {
-
         u32 hash = (u32)get_tile_hash_by_facing(facing, 97);
+        dprintf("Trash hash value is %d\n", hash);
         if (!hash) {
             //Leftovers
             item = ITEM_UEBERRESTE;

@@ -10,6 +10,12 @@
 
 #include <stdbool.h>
 
+#define STAT_ATTACK 0
+#define STAT_DEFENSE 1
+#define STAT_INITIATIVE 2
+#define STAT_SPECIAL_ATTACK 3
+#define STAT_SPECIAL_DEFENSE 4
+
 typedef struct battler {
     u16 species;
     u16 stats[5];
@@ -101,6 +107,7 @@ extern battler_damage_taken_stru battler_damage_taken[4];
 extern u8 attack_targets;
 extern u8 attacking_battler;
 extern u8 defending_battler;
+extern u8 defending_battler_ability;
 extern u8 active_battler;
 extern u8 battler_oams[];
 extern u8 battler_cnt;

@@ -75,6 +75,7 @@ def get_tm_compatibility(tm_list):
     compatbililty = [0] * 8
     for move, tm_type in tm_list:
         prefix, idx = tm_type
+        idx -= 1
         if prefix == 'VM':
             idx += 50
         compatbililty[idx // 8] |= 1 << (idx & 7)

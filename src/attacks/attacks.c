@@ -3723,7 +3723,7 @@ attack attacks[ATTACK_CNT] = {
 		0, //Priority
 		AFFECTED_BY_PROTECT | MIRRORABLE,
 		0x0, //Effect table
-		CATEGORY_PHYSICAL,
+		CATEGORY_SPECIAL,
 		0x0 //Padding
 	},
 	// ATTACK_SEHER

@@ -53,7 +53,7 @@ u16 battle_get_song() {
         }
         return MUS_KAMPF_GEGEN_RIVALEN_GARY;
     }
-    if (battle_flags.flag_C || battle_flags.flag_D) {
+    if (battle_flags.flag_C || battle_flags.legendary) {
         return MUS_KAMPF_GEGEN_WILDES_POKEMON;
     }
     return MUS_KAMPF_GEGEN_WILDES_POKEMON;

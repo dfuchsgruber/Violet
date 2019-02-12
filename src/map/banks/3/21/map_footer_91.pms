@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_91",
 	"data": {
 		"border": [
 			[
@@ -5764,7 +5762,7 @@
 				},
 				{
 					"block_idx": 695,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 703,
@@ -5772,7 +5770,7 @@
 				},
 				{
 					"block_idx": 712,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 216,
@@ -25793,5 +25791,7 @@
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_91",
+	"type": "footer"
 }

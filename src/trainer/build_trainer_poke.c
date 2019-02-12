@@ -109,7 +109,7 @@ void build_trainer_pokemon_default_item_default_attacks(pokemon *dst,
 
 int build_trainer(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id == 0x400) return 0; // No idea, but in vanilla they do it, so...
-	if (!battle_flags.items_prohibited && !battle_flags.items_prohibited2
+	if (!battle_flags.battle_tower && !battle_flags.ereader_trainer
 			&& !battle_flags.field_31 && battle_flags.trainer_battle) {
 		// Build trainer
 		pokemon_clear_opponent_party();

@@ -21,6 +21,7 @@ extern u8 attack_anim_target_index;
 extern u8 attack_anim_user_index;
 extern u16 attack_anim_additional_animation[];
 extern u8 attack_anim_tasks_running;
+extern u16 move_power;
 
 /**
  * Probably associates a battler with an attack, and finds the target(s)...

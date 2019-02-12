@@ -111,6 +111,7 @@ ow_script_movs_0x937090:
 
 .global ow_script_0x936ffe
 ow_script_0x936ffe:
+special 0
 clearflag BLACKOUT_BYPASS
 applymovement 0xff ow_script_movs_0x935b64
 waitmovement 0x0

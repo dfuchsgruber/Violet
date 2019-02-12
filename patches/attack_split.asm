@@ -14,8 +14,10 @@
         bx r0
         .pool
 
-.org 0x0803F290
-        lsl r0, #0 //prevent fairy type (???) from not causing any dmg
+.org 0x0803F28C
+        ldr r0, =hook_dmg_calc_pick_satk | 1
+        bx r0
+        .pool
 
 .org 0x081375E0
         ldr r0, =load_split_chart3 | 1

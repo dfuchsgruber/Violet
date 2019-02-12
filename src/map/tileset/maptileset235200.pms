@@ -1,6 +1,4 @@
 {
-	"type": "tileset_secondary",
-	"label": "maptileset235200",
 	"data": {
 		"blocks": [
 			[
@@ -23546,5 +23544,7 @@
 		"field_3": 0,
 		"animation_initialize": "0",
 		"palette_displaced": 0
-	}
+	},
+	"label": "maptileset235200",
+	"type": "tileset_secondary"
 }
