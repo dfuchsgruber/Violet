@@ -50,6 +50,7 @@ extern u8 bsc_lebensraeuber[];
 extern u8 bsc_curator[];
 extern u8 bsc_extradorn[];
 extern u8 bsc_fluffy[];
+extern u8 bsc_eschat[];
 
 
 #endif

@@ -23,7 +23,9 @@ typedef union {
         u32 ability : 1;
         u32 gender_partial : 7;
         u32 is_shiny : 1;
-        u32 unused : 15;
+        u32 hidden_power_type : 5;
+        u32 hidden_power_strength : 3;
+        u32 unused : 7;
         u32 nature : 5;
         u32 form : 3;
     } fields;
@@ -233,5 +235,44 @@ void pokemon_clear_opponent_party();
  * @return the pid
  */
 pid_t pokemon_new_pid();
+
+/**
+ * Creates a valid pid for a pokemon using a certain prng.
+ * @param rnd prng function that yields random 16-bit values
+ * @return the pid
+ */
+pid_t pokemon_new_pid_by_prng(u16 (*rnd)());
+
+/**
+ * Sets the effective evs of a pokemon (in multiples of 4).
+ * @param p the pokemon
+ * @param stat the stat index to set the ev of
+ * @param ev the ev value in multiples of 4
+ */
+void pokemon_set_effective_ev(pokemon *p, int stat, u8 ev);
+
+/**
+ * Returns the effective ev of a pokemon.
+ * @param p the pokemon
+ * @param stat the stat index to get the ev of
+ * @return the ev value in multiples of 4
+ */
+u8 pokemon_get_effective_ev(pokemon *p, int stat);
+
+/**
+ * Sets the potential ev of a pokemon.
+ * @param p the pokemon
+ * @param stat the stat index to get the ev of
+ * @ev the potential ev value
+ */
+void pokemon_set_potential_ev(pokemon *p, int stat, u8 ev);
+
+/**
+ * Returns the potential ev of a pokemon.
+ * @param p the pokemon
+ * @param stat the stat index to set the ev of
+ * @return ev the potential ev value
+ */
+u8 pokemon_get_potential_ev(pokemon *p, int stat);
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

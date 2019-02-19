@@ -42,7 +42,7 @@ u16 battle_get_song() {
         *battle_music = 0;
         return forced_mus;
     }
-    if (battle_flags.trainer_battle) {
+    if (battle_flags & BATTLE_TRAINER) {
         //scan a lo_table
         int i = 0;
         while (trainer_music_table[i].id != 0xFFFF) {
@@ -53,7 +53,7 @@ u16 battle_get_song() {
         }
         return MUS_KAMPF_GEGEN_RIVALEN_GARY;
     }
-    if (battle_flags.flag_C || battle_flags.legendary) {
+    if ((battle_flags & BATTLE_12) || (battle_flags & BATTLE_LEGENDARY)) {
         return MUS_KAMPF_GEGEN_WILDES_POKEMON;
     }
     return MUS_KAMPF_GEGEN_WILDES_POKEMON;

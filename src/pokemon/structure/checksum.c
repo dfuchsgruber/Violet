@@ -9,23 +9,31 @@
 #include "constants/vars.h"
 #include "math.h"
 #include "debug.h"
+#include "constants/pokemon_stat_names.h"
 
-pid_t pokemon_new_pid() {
+pid_t pokemon_new_pid_by_prng(u16 (*rnd)()) {
 	pid_t p;
-	p.fields.ability = (u8)(rnd16() & 1);
+	p.fields.ability = (u8)(rnd() & 1);
 	p.fields.form = 0;
-	p.fields.gender_partial = (u8)(rnd16() & 127);
-	p.fields.nature = (u8)((rnd16() % 25) & 31);
+	p.fields.gender_partial = (u8)(rnd() & 127);
+	p.fields.nature = (u8)((rnd() % 25) & 31);
+	p.fields.hidden_power_type = (u8)((rnd() % 18) & 31);
+	p.fields.hidden_power_strength = (u8)(rnd() & 7);
 
 	// Use slash count to increase the shiny rate
 	int splash_cnt = min(99, save_get_key(0x1A));
 
-	if (rnd16() % 1000 <= splash_cnt / 10) {
+	if (rnd() % 1000 <= splash_cnt / 10) {
 		// Shiny rate of exactly 0.1% + (#Splash used) * 0.01% and maximum at 1%
 		p.fields.is_shiny = 1;
 	} else {
 		p.fields.is_shiny = 0;
 	}
+	return p;
+}
+
+pid_t pokemon_new_pid() {
+	pid_t p = pokemon_new_pid_by_prng(rnd16);
 
 	// Force shinyness via variable
 	u16 *next_shiny_pokemon = var_access(NEXT_POKEMON_SHINY);

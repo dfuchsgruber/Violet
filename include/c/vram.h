@@ -10,6 +10,10 @@
 
 #include "types.h"
 
+#define CHARBASE(x) ((void*)(0x06000000 + 0x4000 * x))
+#define MAPBASE(x) ((u16*)(0x06000000 + 0x800 * x))
+#define OAMCHARBASE(x) ((void*)(0x06010000 + 32 * x))
+
 // Bitfield for a single bg map entry in text mode
 typedef struct {
   u16 tile_number : 10;

@@ -122,6 +122,10 @@ ability_descriptions:
     .word str_ability_descr_0x75
     .word str_ability_descr_0x76
     .word str_ability_descr_0x77
+    .word str_ability_descr_0x78
+    .word str_ability_descr_0x79
+    .word str_ability_descr_0x7a
+    .word str_ability_descr_0x7b
 
 @ // Define the strings
 
@@ -835,6 +839,15 @@ ability_descriptions:
 	str_ability_descr_0x78: @// Fluffig
 		.string "Verlangsamt Gegner bei Berührung."
 
+	str_ability_descr_0x79: @// Superschütze
+		.string "Verstärkt Volltreffer."
+
+	str_ability_descr_0x7a: @// Glückspilz
+		.string "Volltreffer wahrscheinlicher."
+
+	str_ability_descr_0x7b: @// Prophezeihung
+		.string "St. Volltr., Fluchtw. und Gen."
+
 
 .elseif LANG_EN
 	.global str_ability_descr_0x0
@@ -1429,6 +1442,15 @@ ability_descriptions:
 
 	str_ability_descr_0x78: @// Fluffig
 		.string "Slows opp. when touched."
+
+	str_ability_descr_0x79: @// Superschütze
+		.string "Boosts critical hits."
+
+	str_ability_descr_0x7a: @// Glückspilz
+		.string "Makes Critical hits more likely."
+
+	str_ability_descr_0x7b: @// Prophezeihung
+		.string "Boosts crit. chance and evasion."
 
 .endif
 

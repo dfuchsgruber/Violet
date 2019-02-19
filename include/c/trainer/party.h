@@ -103,7 +103,7 @@ typedef union{
  * @param poke the pokemon to modify
  * @param field the build field that encodes the information about the trainer
  */
-void build_trainer_pokemon(pokemon *poke, union union_build_field field);
+void trainer_pokemon_new(pokemon *poke, union union_build_field field);
 
 trainer_pokemon_default_item_default_attacks trainer_party_x0[1];
 trainer_pokemon_default_item_default_attacks trainer_party_x1[1];

@@ -26,6 +26,7 @@ typedef struct {
 extern color pal_restore[];
 extern color pals[];
 extern color pal_tmp[];
+extern color typechart_icon_pal[16];
 
 
 /**

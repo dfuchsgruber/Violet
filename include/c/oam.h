@@ -91,6 +91,17 @@ typedef struct {
     void (*callback)(oam_object *self);
 } oam_template;
 
+#define OAM_FLAG_ACTIVE 0x1
+#define OAM_FLAG_CENTERED 0x2
+#define OAM_FLAG_INVISIBLE 0x4
+#define OAM_FLAG_HFLIP 0x100
+#define OAM_FLAG_VFLIP 0x200
+#define OAM_FLAG_GFX_ANIM_START 0x400
+#define OAM_FLAG_ROTSCALE_ANIM_START 0x800
+#define OAM_FLAG_GFX_ANIM_END 0x1000
+#define OAM_FLAG_GFX_ROTSCALE_ANIM_END 0x2000
+#define OAM_FLAG_SPRITES 0x4000
+
 typedef struct oam_object {
     sprite final_oam;
     gfx_frame **animation_table;
@@ -110,11 +121,11 @@ typedef struct oam_object {
     u8 anim_delay;
     u8 counter;
     u16 private[8];
-    u8 bitfield2;
-    u8 bitfield;
+    u16 flags;
     u16 base_tile;
-    u8 field42;
-    u8 field43;
+    u8 sprite_idx : 6;
+    u8 sprite_mode : 2;
+    u8 priority_on_layer;
 } oam_object;
 
 extern oam_object oams[];

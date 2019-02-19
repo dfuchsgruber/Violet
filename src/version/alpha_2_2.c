@@ -13,6 +13,7 @@
 #include "pokemon/virtual.h"
 #include "version.h"
 #include "constants/pokemon_attributes.h"
+#include "prng.h"
 
 void version_alpha_2_2_fix_pid(pokemon *target) {
 	if (pokemon_get_substructure_attribute(target, ATTRIBUTE_SPECIES, 0) == 0) return;
@@ -25,6 +26,8 @@ void version_alpha_2_2_fix_pid(pokemon *target) {
 	if (nature >= 25) nature /= 2;
 	p.fields.nature = (u8)(nature & 31);
 	p.fields.form = 0;
+	p.fields.hidden_power_type = (u8)(rnd16() & 18);
+	p.fields.hidden_power_strength = (u8)(rnd16() & 7);
 	pokemon_set_substructure_attribute(target, ATTRIBUTE_PID, &p);
 }
 

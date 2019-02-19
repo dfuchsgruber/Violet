@@ -3,6 +3,8 @@
 #include "item/item.h"
 #include "item/description.h"
 #include "constants/item_pockets.h"
+#include "constants/item_hold_effects.h"
+#include "constants/item_weather_rock_types.h"
 #include "language.h"
 #include "constants/items.h"
 
@@ -3744,12 +3746,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F9
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_desc_xf9_item_item_f9,
+		LANGDEP(PSTRING("Eisbrocken"), PSTRING("Ice Rock")),
+		0xF9, //index
+		200, //price
+		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
+		WEATHER_ROCK_HAIL, //holding_effect_param
+		str_item_desc_xf9_item_eisbrocken,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3759,12 +3761,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FA
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_desc_xfa_item_item_fa,
+		LANGDEP(PSTRING("Nassbrocken"), PSTRING("Damp Rock")),
+		0xFA, //index
+		200, //price
+		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
+		WEATHER_ROCK_RAIN, //holding_effect_param
+		str_item_desc_xfa_item_nassbrocken,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3774,12 +3776,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FB
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_desc_xfb_item_item_fb,
+		LANGDEP(PSTRING("Glattbrocken"), PSTRING("Smooth Rock")),
+		0xFB, //index
+		200, //price
+		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
+		WEATHER_ROCK_SANDSTORM, //holding_effect_param
+		str_item_desc_xfb_item_glattbrocken,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3789,12 +3791,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FC
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_desc_xfc_item_item_fc,
+		LANGDEP(PSTRING("Heißbrocken"), PSTRING("Heat Rock")),
+		0xFC, //index
+		200, //price
+		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
+		WEATHER_ROCK_SUN, //holding_effect_param
+		str_item_desc_xfc_item_heissbrocken,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3804,12 +3806,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_FD
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
+		LANGDEP(PSTRING("Lichtlehm"), PSTRING("Light Clay")),
+		0xFD, //index
+		200, //price
+		HOLD_EFFECT_LIGHT_CLAY, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xfd_item_item_fd,
+		str_item_desc_xFD_item_lichtlehm,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type

@@ -438,8 +438,8 @@ void pokedex_init_components() {
     pal_decompress(gfx_pokedex_bottom_0Pal, 32, 32);
     pal_copy(pokedex_colors, 15 * 16, 16);
     pal_copy(pokedex_colors_nr, 14 * 16, 32);
-    pal_copy((void*) 0x08E95DDC, 3 * 16, 32);
-    pal_copy((void*) 0x08E95DBC, 4 * 16, 32);
+    pal_copy(typechart_icon_pal, 3 * 16, 32);
+    pal_copy(typechart_icon_pal, 4 * 16, 32);
     pal_set_all_to_black();
 
     fadescreen_all(0, 0);

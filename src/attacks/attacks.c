@@ -5708,7 +5708,7 @@ attack attacks[ATTACK_CNT] = {
 	},
 	// ATTACK_TIEFSCHLAG
 	{
-		0x67, //Effect-id (in table)
+		0xe4, //Effect-id (in table)
 		80, //Base Power
 		TYPE_UNLICHT,
 		100, //Accuracy

@@ -4,6 +4,8 @@
 #include "battle/state.h"
 #include "battle/weather.h"
 #include "battle/battlescript.h"
+#include "battle/battler.h"
+#include "constants/pokemon_stat_names.h"
 #include "debug.h"
 #include "abilities.h"
 
@@ -14,11 +16,20 @@ bool abilities_battle_enter(u8 ability, u8 index) {
         battle_weather = BATTLE_WEATHER_HAIL;
         dprintf("Hail triggered\n");
         battlescript_init_and_interrupt_battle(bsc_hagelalarm);
-        battle_stat_change[0x17] = index;
+    	bsc_global.battler_idx = index;
         return true;
     } else if (ability == HACK) {
         battlescript_init_and_interrupt_battle(bsc_hack);
         return true;
+    } else if (ability == ESCHAT) {
+    	bsc_global.battler_idx = index;
+    	battlescript_init_and_interrupt_battle(bsc_eschat);
+    	return true;
+    } else if (ability == TOLLWUT && (battlers[index].stat_changes[STAT_ATTACK] < 7 ||
+    		battlers[index].stat_changes[STAT_DEFENSE] > 0
+			|| battlers[index].stat_changes[STAT_SPECIAL_DEFENSE] > 0)) {
+		battlescript_init_and_interrupt_battle(bsc_tollwut);
+		return true;
     }
     return false;
     

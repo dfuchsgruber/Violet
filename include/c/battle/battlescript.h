@@ -11,6 +11,39 @@
 extern u32 bsc_status_flags;
 extern u8 bsc_buffers[];
 extern u8 *bsc_offset;
+extern u8 bsc_effect_to_apply;
+
+typedef struct {
+	u8 stat_change;
+	u8 field_1;
+	u8 field_2;
+	u8 field_3;
+	int field_4;
+	u8 field_8;
+	u8 field_9;
+	u8 field_A;
+	u8 field_B;
+	u8 field_C;
+	u8 field_D;
+	u16 field_E;
+	u8 animation;
+	u8 field_11;
+	u8 field_12;
+	u8 field_13;
+	u8 field_14;
+	u8 field_15;
+	u8 field_16;
+	u8 battler_idx;
+	u8 field_18;
+	u8 field_19;
+	u8 status_effect;
+	u8 field_1B;
+	u8 field_1C;
+	u8 field_1D;
+	u8 field_1E;
+} battlescript_global_stru;
+
+extern battlescript_global_stru bsc_global;
 
 /**
  * Loads the graphic for the attack "transform"

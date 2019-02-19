@@ -1,6 +1,6 @@
 //trainer
 .org 0x08011264
-	ldr r2, =build_trainer | 1
+	ldr r2, =trainer_build_party | 1
 	bx r2
 	.pool
 

@@ -773,7 +773,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_BLATTSTEIN",
+						"item": "ITEM_AP_PLUS",
 						"species": 0
 					}
 				},

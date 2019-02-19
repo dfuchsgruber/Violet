@@ -305,7 +305,7 @@ void pokedex_init_habitat() {
         //load_comp_pal_into_RAM(gfx_pokedex_habitat_rodPal, (u16)((16+allocate_obj_pal(0xA017))*16), 32);
         const void *head_pal = save2->player_is_female ? gfx_hiroine_headPal : gfx_hiro_headPal;
         pal_copy(head_pal, (u16) ((16 + oam_allocate_palette(0xA015))*16), 32);
-        pal_copy(transparency_black_box_pals, 16 * 13, 32);
+        pal_copy(tbox_palettes_transparency, 16 * 13, 32);
         pal_set_all_to_black();
 
         //oam

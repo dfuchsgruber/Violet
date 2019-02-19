@@ -973,11 +973,11 @@ lsr r0, #0x1A
 
 // Stats like Angriff, Vert., Init., Lv., ...
 .org 0x812b6e0
-	.word str_pokemon_stat_table
+	.word pokemon_stat_names
 .org 0x812b79c
-	.word str_pokemon_stat_table
+	.word pokemon_stat_names
 .org 0x812bedc
-	.word str_pokemon_stat_table
+	.word pokemon_stat_names
 
 // Stats for battle increase
 .org 0x083FD470

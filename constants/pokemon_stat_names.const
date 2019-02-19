@@ -1,0 +1,14 @@
+{
+	"type" : "enum",
+	"base" : 0,
+	"values" : [
+		"STAT_HP",
+		"STAT_ATTACK",
+		"STAT_DEFENSE",
+		"STAT_SPEED",
+		"STAT_SPECIAL_ATTACK",
+		"STAT_SPECIAL_DEFENSE",
+		"STAT_ACCURACY",
+		"STAT_EVASION"
+	]
+}

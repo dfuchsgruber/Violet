@@ -66,6 +66,20 @@ def get_item_index(rompath, symbolspath, projectpath):
                         'amount' : sign['value']['item']['amount'],
                         'chunk' : sign['value']['item']['chunk'],
                     })
+
+    # Parse dungeon items
+    datatype = project.model['item_list']
+    for dungeon in ('cave', 'forest', 'ocean'):
+        for rarity in ('common', 'rare'):
+            offset = symbols[f'dungeon_{dungeon}_items_{rarity}']
+            for item in datatype.from_data(rom, offset, project, [], []):
+                items[item].append({
+                    'type' : 'dungeon',
+                    'dungeon' : dungeon,
+                    'rarity' : rarity
+                })
+
+
     return items
 
 if __name__ == '__main__':

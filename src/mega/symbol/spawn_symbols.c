@@ -86,7 +86,7 @@ void symbol_callback(oam_object *self) {
         u8 *healthbar_oam_id_by_slot = (u8*) 0x3004F40;
         u8 hp_oam = healthbar_oam_id_by_slot[slot];
 
-        if (!(oams[hp_oam].bitfield2 & 4)) { //checking if the healthbox is invisible (indicated by bitfield2 bit 2
+        if (!(oams[hp_oam].flags & OAM_FLAG_INVISIBLE)) { //checking if the healthbox is invisible (indicated by bitfield2 bit 2
 
             int dxmin = battler_is_opponent(slot) ? 30 : 36; //the x value to subtract from the start to position the icon rightly
 
@@ -99,7 +99,7 @@ void symbol_callback(oam_object *self) {
             self->y = (s16) (oams[hp_oam].y - 2);
             self->y2 = (s16) (oams[hp_oam].y2);
 
-            self->bitfield2 = (u8) (self->bitfield2 & (~0x4)); //visible
+            self->flags &= (u16) (~OAM_FLAG_INVISIBLE); //visible
 
             u16 base_tile = (u16) (self->private[1]+ mega_symbol_tile_displacement(species));
 
@@ -110,6 +110,6 @@ void symbol_callback(oam_object *self) {
     }
 
     //This point is reached, we hide the oam
-    self->bitfield2 = (u16) (self->bitfield2 | 0x4); //invisible
+    self->flags |= OAM_FLAG_INVISIBLE;  //invisible
 
 }

@@ -36,15 +36,20 @@ extern "C" {
      */
     u8 digits_dec(int value);
 
+#define ITOA_NO_PADDING 0
+#define ITOA_PAD_SPACES 1
+#define ITOA_PAD_ZEROS 2
+
     /**
      * Transforms an integer into a string
      * @param dst Destination of the string
      * @param value The value to transform
-     * @param mode Mode of transformation (base)
-     * @param charlength Size in characters
+     * @param mode how to pad the string
+     * @param num_chars the maximal number of characters the string should have. If the number
+     * exceeds this value, '?' is displayed
      * @return dst
      */
-    u8* itoa(u8* dst, int value, u8 radix, u8 num_chars);
+    u8* itoa(u8* dst, int value, int padding, u8 num_chars);
 
     extern tbox tboxes[];
     
@@ -194,10 +199,10 @@ extern "C" {
      * Draws the icon for a type on a textbox
      * @param box_id the box id
      * @param type_p1 the type to draw
-     * @param additional the x displacement
-     * @param y_pixel the y displacement
+     * @param x_offset the x displacement
+     * @param y_offset the y displacement
      */
-    void tbox_draw_type_icon_by_type_p1(u8 box_id, u8 type_p1, u16 additional, u16 y_pixel);
+    void tbox_draw_type_icon_by_type_p1(u8 box_id, u8 type_p1, u16 x_offset, u16 y_offset);
 
     /**
      * Clears the bottom line of the tbox (sets tile to color 0)

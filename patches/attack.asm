@@ -597,3 +597,5 @@
 .org 0x0801F912 + 1
 		.byte 0xD0 // Change from 0xd9 = bls to 0xd0 = beq
 
+.org 0x0801E4FC
+	.word critical_hit_chances

@@ -13,9 +13,7 @@
 #include "agbmemory.h"
 #include "battle/state.h"
 #include "trainer/trainer.h"
-
-u8 ev_finals[6] = {ATTRIBUTE_COOLNESS, ATTRIBUTE_BEAUTY, ATTRIBUTE_CUTENESS,
-		ATTRIBUTE_SMARTNESS, ATTRIBUTE_TOUGHNESS, ATTRIBUTE_SHEEN};
+#include "save.h"
 
 static trainer_build_t trainer_builds [14] = {
 
@@ -53,26 +51,28 @@ static trainer_build_t trainer_builds [14] = {
 
 };
 
-void build_trainer_pokemon_custom_item_default_attacks(pokemon *dst,
+u16 trainer_pokemon_prng() {
+	return (u16)_prng_xorshift(&(fmem.trainer_prng_state));
+}
+
+void trainer_pokemon_new_custom_item_default_attacks(pokemon *dst,
 		trainer_pokemon_custom_item_default_attacks *party) {
 	// Obtain the prng state that was seeded with the trainer id
-	u32 *prng_state = (u32*)gp_stack_peek();
-	pid_t pid = {_prng_xorshift(prng_state)};
+	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
-	build_trainer_pokemon(dst, party->build);
+	trainer_pokemon_new(dst, party->build);
 	// Custom item
 	pokemon_set_attribute(dst, ATTRIBUTE_ITEM, &(party->item));
 }
 
-void build_trainer_pokemon_custom_item_custom_attacks(pokemon *dst,
+void trainer_pokemon_new_custom_item_custom_attacks(pokemon *dst,
 		trainer_pokemon_custom_item_custom_attacks *party) {
 	// Obtain the prng state that was seeded with the trainer id
-	u32 *prng_state = (u32*)gp_stack_peek();
-	pid_t pid = {_prng_xorshift(prng_state)};
+	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
-	build_trainer_pokemon(dst, party->build);
+	trainer_pokemon_new(dst, party->build);
 	// Custom item
 	pokemon_set_attribute(dst, ATTRIBUTE_ITEM, &(party->item));
 	// Custom attacks
@@ -82,14 +82,13 @@ void build_trainer_pokemon_custom_item_custom_attacks(pokemon *dst,
 	}
 }
 
-void build_trainer_pokemon_default_item_custom_attacks(pokemon *dst,
+void trainer_pokemon_new_default_item_custom_attacks(pokemon *dst,
 		trainer_pokemon_default_item_custom_attacks *party) {
 	// Obtain the prng state that was seeded with the trainer id
-	u32 *prng_state = (u32*)gp_stack_peek();
-	pid_t pid = {_prng_xorshift(prng_state)};
+	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
-	build_trainer_pokemon(dst, party->build);
+	trainer_pokemon_new(dst, party->build);
 	// Custom attacks
 	for (int i = 0; i < 4; i++) {
 		pokemon_set_attribute(dst, (u8)(ATTRIBUTE_ATTACK1 + i), &(party->moves[i]));
@@ -97,59 +96,52 @@ void build_trainer_pokemon_default_item_custom_attacks(pokemon *dst,
 	}
 }
 
-void build_trainer_pokemon_default_item_default_attacks(pokemon *dst,
+void trainer_pokemon_new_default_item_default_attacks(pokemon *dst,
 		trainer_pokemon_default_item_default_attacks *party) {
 	// Obtain the prng state that was seeded with the trainer id
-	u32 *prng_state = (u32*)gp_stack_peek();
-	pid_t pid = {_prng_xorshift(prng_state)};
+	pid_t pid = pokemon_new_pid_by_prng(trainer_pokemon_prng);
 	pid.fields.is_shiny = 0;
 	pokemon_new(dst, party->species, party->level, party->ivs, true, pid, false, 0);
-	build_trainer_pokemon(dst, party->build);
+	trainer_pokemon_new(dst, party->build);
 }
 
-int build_trainer(pokemon *dst_party, u16 trainer_id) {
+int trainer_build_party(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id == 0x400) return 0; // No idea, but in vanilla they do it, so...
-	if (!battle_flags.battle_tower && !battle_flags.ereader_trainer
-			&& !battle_flags.field_31 && battle_flags.trainer_battle) {
+	if (!(battle_flags & BATTLE_TOWER) && !(battle_flags & BATTLE_EREADER)
+			&& !(battle_flags & BATTLE_31) && (battle_flags & BATTLE_TRAINER)) {
 		// Build trainer
 		pokemon_clear_opponent_party();
 		// To generate a trainer consistent pid we use a pseudo rng
-		u32 *state = malloc(sizeof(u32));
-		*state = trainer_id;
-		gp_stack_push((int)state);
+		fmem.trainer_prng_state = trainer_id;
 		for (int i = 0; i < trainers[trainer_id].pokemon_cnt; i++) {
 			if (trainers[trainer_id].uses_custom_items &&
 					trainers[trainer_id].uses_custom_moves) {
 				trainer_pokemon_custom_item_custom_attacks* party =
 						(trainer_pokemon_custom_item_custom_attacks*)trainers[trainer_id].party;
-				build_trainer_pokemon_custom_item_custom_attacks(&dst_party[i], &party[i]);
+				trainer_pokemon_new_custom_item_custom_attacks(&dst_party[i], &party[i]);
 			} else if (trainers[trainer_id].uses_custom_items) {
 				trainer_pokemon_custom_item_default_attacks* party =
 						(trainer_pokemon_custom_item_default_attacks*)trainers[trainer_id].party;
-				build_trainer_pokemon_custom_item_default_attacks(&dst_party[i], &party[i]);
+				trainer_pokemon_new_custom_item_default_attacks(&dst_party[i], &party[i]);
 			} else if (trainers[trainer_id].uses_custom_moves) {
 				trainer_pokemon_default_item_custom_attacks* party =
 						(trainer_pokemon_default_item_custom_attacks*)trainers[trainer_id].party;
-				build_trainer_pokemon_default_item_custom_attacks(&dst_party[i], &party[i]);
+				trainer_pokemon_new_default_item_custom_attacks(&dst_party[i], &party[i]);
 			} else {
 				trainer_pokemon_default_item_default_attacks* party =
 						(trainer_pokemon_default_item_default_attacks*)trainers[trainer_id].party;
-				build_trainer_pokemon_default_item_default_attacks(&dst_party[i], &party[i]);
+				trainer_pokemon_new_default_item_default_attacks(&dst_party[i], &party[i]);
 			}
 		}
-		gp_stack_pop();
-		free(state);
-		u32 *battle_state_ptr = (u32*)(&battle_flags);
-		*battle_state_ptr |= trainers[trainer_id].battle_state;
+		battle_flags |= trainers[trainer_id].battle_state;
 		return trainers[trainer_id].pokemon_cnt;
 	}
 	return 0;
 }
 
 
-void build_trainer_pokemon(pokemon *poke, union union_build_field field) {
+void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 	// Obtain the prng state that was seeded with the trainer id
-	u32 *prng_state = (u32*)gp_stack_peek();
 	if (!field.value) {
 		switch (*(var_access(DIFFICULTY))) {
 			case 0:
@@ -166,14 +158,14 @@ void build_trainer_pokemon(pokemon *poke, union union_build_field field) {
 				field.bitfield.build = 10;
 				break;
 		}
-		field.bitfield.ability = (u8) (_prng_xorshift(prng_state) & 1); //random ability still
+		field.bitfield.ability = (u8) (trainer_pokemon_prng() & 1); //random ability still
 	}
 
 	pid_t p = {(u32)pokemon_get_attribute(poke, 0, 0)};
 	p.fields.is_shiny = field.bitfield.shinyness ? 1 : 0;
 	if (p.fields.nature < 0x19)
 		p.fields.nature = (trainer_builds[field.bitfield.build].nature);
-	pokemon_set_attribute(poke, 0, &p);
+	pokemon_set_attribute(poke, ATTRIBUTE_PID, &p);
 
 	u8 ability = field.bitfield.ability & 1;
 	pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
@@ -189,8 +181,7 @@ void build_trainer_pokemon(pokemon *poke, union union_build_field field) {
 	int i;
 	for (i = 0; i < 6; i++) {
 		u8 effective_ev = (u8) (trainer_builds[field.bitfield.build].evs[i] >> 2);
-		effective_ev = (u8) ((pokemon_get_attribute(poke, ev_finals[i], 0) & 0xC0) | effective_ev);
-		pokemon_set_attribute(poke, ev_finals[i], &effective_ev);
+		pokemon_set_effective_ev(poke, i, effective_ev);
 	}
 	pokemon_calculate_stats(poke);
 }

@@ -13,6 +13,7 @@
 extern u16 active_attack;
 extern u8 active_attack_slot;
 extern u32 attack_result;
+extern u8 critical_hit_multiplier;
 
 extern int damage_to_apply;
 extern int damage_caused;
@@ -22,6 +23,7 @@ extern u8 attack_anim_user_index;
 extern u16 attack_anim_additional_animation[];
 extern u8 attack_anim_tasks_running;
 extern u16 move_power;
+extern u16 moves_used[4];
 
 /**
  * Probably associates a battler with an attack, and finds the target(s)...
@@ -37,5 +39,8 @@ void damage_apply_multiplier(int multiplier);
 extern u8 *attack_anim_script;
 
 extern u8 *attack_anims[];
+
+// Battlescript for attack failed, reduces pp
+extern u8 bsc_attack_failed_pp_reduce[];
 
 #endif /* INCLUDE_C_BATTLE_ATTACK_H_ */

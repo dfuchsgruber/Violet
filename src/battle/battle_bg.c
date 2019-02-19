@@ -255,7 +255,7 @@ u16 terrain_moves[] = {
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){
-	battle_flags.roamer = 0;
+	battle_flags &= (u32)(~BATTLE_ROAMER);
     active_attack = terrain_moves[battle_bg_get_id()];
 	defending_battler = attack_get_target_of_active_battler(active_attack, false);
 	u8 *attack_script = attack_effects[attacks[active_attack].effect];

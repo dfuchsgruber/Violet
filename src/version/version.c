@@ -105,6 +105,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
     clearflag(POKEDEX_FEATURE_0);
     clearflag(POKEDEX_FEATURE_1);
     clearflag(POKEDEX_FEATURE_2);
+    clearflag(ROUTE_6_ITEM_1); // Changed to "Heißbrocken", make it obtainable
     worldmap_flag_state_set(WM_ORINA_CITY);
     worldmap_flag_state_set(WM_AKTANIA);
     worldmap_flag_set(WM_ORINA_CITY);

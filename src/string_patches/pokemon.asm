@@ -15,12 +15,12 @@ str_vert:
 
 .global str_sp_ang
 str_sp_ang:
-	.string "SP. Ang."
+	.string "Sp. Ang."
 
 
 .global str_sp_ver
 str_sp_ver:
-	.string "SP. Vert."
+	.string "Sp. Vert."
 
 .global str_accuracy
 str_accuracy:
@@ -59,13 +59,13 @@ str_wesen:
 str_idnr:
 	.string "Id-Nr."
 str_ap:
-	.string "AP"
+	.string "Ap"
 str_staerke:
 	.string "Stärke"
 str_genau:
 	.string "Genau."
 str_bsg:
-	.string "BSG"
+	.string "Bsg"
 str_basis_items:
 	.string "Basis-Items"
 str_pokebaelle:
@@ -99,8 +99,8 @@ str_vm_attacke:
 str_entwicklung:
 	.string "Entwicklung"
 
-.global str_pokemon_stat_table
-str_pokemon_stat_table:
+.global pokemon_stat_names
+pokemon_stat_names:
 	.word 0
 	.word str_kp
 	.word str_erf_punkte

@@ -143,15 +143,11 @@ table_type = agb.types.UnboundedArrayType(
     }
 )
 
-species_list = agb.types.UnboundedArrayType(
-    'species', 0xFFFF
-)
 
 # Export models
 
 models_to_export = {
     'species' : species_type,
-    'species_list' : species_list,
     'wild_pokemon.entry' : entry_type,
     'wild_pokemon.entries_grass' : entries_grass_type,
     'wild_pokemon.entries_water' : entries_water_type,

@@ -3,6 +3,7 @@
 #include "debug.h"
 #include "attack.h"
 #include "battle/battler.h"
+#include "battle/state.h"
 #include "constants/pokemon_types.h"
 #include "constants/attack_categories.h"
 #include "constants/abilities.h"

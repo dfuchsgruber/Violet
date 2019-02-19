@@ -931,14 +931,14 @@
 	},
 	"POKEMON_SEEPER": {
 		"ability_0": "Wassertempo",
-		"ability_1": null,
+		"ability_1": "Superschuetze",
 		"hidden_ability": "Feuchtigkeit",
 		"safari_rate": 0,
 		"dex_number": 103
 	},
 	"POKEMON_SEEMON": {
 		"ability_0": "Giftdorn",
-		"ability_1": null,
+		"ability_1": "Superschuetze",
 		"hidden_ability": "Feuchtigkeit",
 		"safari_rate": 0,
 		"dex_number": 104
@@ -1390,14 +1390,14 @@
 	"POKEMON_NATU": {
 		"ability_0": "Synchro",
 		"ability_1": "Fruehwecker",
-		"hidden_ability": "Luzid",
+		"hidden_ability": "Eschat",
 		"safari_rate": 0,
 		"dex_number": 177
 	},
 	"POKEMON_XATU": {
 		"ability_0": "Synchro",
 		"ability_1": "Fruehwecker",
-		"hidden_ability": "Luzid",
+		"hidden_ability": "Eschat",
 		"safari_rate": 0,
 		"dex_number": 178
 	},
@@ -1729,14 +1729,14 @@
 	},
 	"POKEMON_REMORAID": {
 		"ability_0": "Uebereifer",
-		"ability_1": null,
+		"ability_1": "Superschuetze",
 		"hidden_ability": "Allrounder",
 		"safari_rate": 0,
 		"dex_number": 219
 	},
 	"POKEMON_OCTILLERY": {
 		"ability_0": "Saugnapf",
-		"ability_1": null,
+		"ability_1": "Superschuetze",
 		"hidden_ability": "Allrounder",
 		"safari_rate": 0,
 		"dex_number": 220
@@ -1778,7 +1778,7 @@
 	},
 	"POKEMON_SEEDRAKING": {
 		"ability_0": "Wassertempo",
-		"ability_1": null,
+		"ability_1": "Superschuetze",
 		"hidden_ability": "Feuchtigkeit",
 		"safari_rate": 0,
 		"dex_number": 105
@@ -4358,8 +4358,8 @@
 	},
 	"POKEMON_ABSOL": {
 		"ability_0": "Erzwinger",
-		"ability_1": null,
-		"hidden_ability": "Bedroher",
+		"ability_1": "Glueckspilz",
+		"hidden_ability": "Eschat",
 		"safari_rate": 0,
 		"dex_number": 350
 	},

@@ -54,6 +54,26 @@ item_effects equ 0x082527E0
     .word gfx_item_bibornitTiles
     .word gfx_item_bibornitPal
 
+.org item_resource + 0xF9 * 8
+	.word gfx_item_eisbrockenTiles
+	.word gfx_item_eisbrockenPal
+
+.org item_resource + 0xFA * 8
+	.word gfx_item_nassbrockenTiles
+	.word gfx_item_nassbrockenPal
+
+.org item_resource + 0xFB * 8
+	.word gfx_item_glattbrockenTiles
+	.word gfx_item_glattbrockenPal
+
+.org item_resource + 0xFC * 8
+	.word gfx_item_heissbrockenTiles
+	.word gfx_item_heissbrockenPal
+
+.org item_resource + 0xFD * 8
+	.word gfx_item_lichtlehmTiles
+	.word gfx_item_lichtlehmPal
+
 .org item_resource + 0x10B * 8
     .word gfx_item_wolkenherzTiles
     .word gfx_item_wolkenherzPal

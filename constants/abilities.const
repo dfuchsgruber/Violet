@@ -121,7 +121,10 @@
 		"REICHE_ERNTE",
 		"ACHTLOS",
 		"HACK",
-		"FLUFFIG"
+		"FLUFFIG",
+		"SUPERSCHUETZE",
+		"GLUECKSPILZ",
+		"ESCHAT"
 	],
 	"base": 0
 }

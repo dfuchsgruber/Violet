@@ -120,6 +120,10 @@ u8 ability_names[][13] = {
 	LANGDEP(PSTRING("Curator"), PSTRING("Curator")),
 	LANGDEP(PSTRING("Frühzünder"), PSTRING("Early Fuze")),
 	LANGDEP(PSTRING("Reiche Ernte"), PSTRING("Harvest")),
-	LANGDEP(PSTRING("Hack"), PSTRING("Hack")),
-	LANGDEP(PSTRING("Fluffig"), PSTRING("Fluffy"))
+	LANGDEP(PSTRING("Achtlos"), PSTRING("Reckless")),
+	LANGDEP(PSTRING("Hacker"), PSTRING("Hacker")),
+	LANGDEP(PSTRING("Fluffig"), PSTRING("Fluffy")),
+	LANGDEP(PSTRING("Superschütze"), PSTRING("Sniper")),
+	LANGDEP(PSTRING("Glückspilz"), PSTRING("Super Luck")),
+	LANGDEP(PSTRING("Eschat"), PSTRING("Eschat")),
 };

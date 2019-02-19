@@ -4,7 +4,7 @@
 
 .align 4
     attack_effects:
-    .word 0x81dab90 @0x0
+    .word bsc_attack_effect_hit @0x0
     .word 0x81dabfd @0x1
     .word 0x81dac6c @0x2
     .word 0x81dac77 @0x3
@@ -16,17 +16,17 @@
     .word 0x81dadef @0x9
     .word 0x81dae07 @0xa
     .word 0x81dae12 @0xb
-    .word 0x81dab90 @0xc
+    .word bsc_attack_effect_hit @0xc
     .word 0x81dae1d @0xd
-    .word 0x81dab90 @0xe
-    .word 0x81dab90 @0xf
+    .word bsc_attack_effect_hit @0xe
+    .word bsc_attack_effect_hit @0xf
     .word 0x81dae28 @0x10
-    .word 0x81dab90 @0x11
+    .word bsc_attack_effect_hit @0x11
     .word 0x81dae71 @0x12
     .word 0x81dae7c @0x13
     .word 0x81dae87 @0x14
-    .word 0x81dab90 @0x15
-    .word 0x81dab90 @0x16
+    .word bsc_attack_effect_hit @0x15
+    .word bsc_attack_effect_hit @0x16
     .word 0x81dae92 @0x17
     .word 0x81dae9d @0x18
     .word 0x81daf02 @0x19
@@ -47,7 +47,7 @@
     .word 0x81db212 @0x28
     .word 0x81db229 @0x29
     .word 0x81db258 @0x2a
-    .word 0x81dab90 @0x2b
+    .word bsc_attack_effect_hit @0x2b
     .word 0x81db289 @0x2c
     .word 0x81db2a1 @0x2d
     .word 0x81db2f2 @0x2e
@@ -59,16 +59,16 @@
     .word 0x81db39e @0x34
     .word 0x81db3a9 @0x35
     .word 0x81db3b4 @0x36
-    .word 0x81dab90 @0x37
-    .word 0x81dab90 @0x38
+    .word bsc_attack_effect_hit @0x37
+    .word bsc_attack_effect_hit @0x38
     .word 0x81db3bf @0x39
     .word 0x81db3d2 @0x3a
     .word 0x81db3dd @0x3b
     .word 0x81db3e8 @0x3c
-    .word 0x81dab90 @0x3d
+    .word bsc_attack_effect_hit @0x3d
     .word 0x81db3f3 @0x3e
-    .word 0x81dab90 @0x3f
-    .word 0x81dab90 @0x40
+    .word bsc_attack_effect_hit @0x3f
+    .word bsc_attack_effect_hit @0x40
     .word 0x81db3fe @0x41
     .word 0x81db411 @0x42
     .word 0x81db472 @0x43
@@ -78,11 +78,11 @@
     .word 0x81db510 @0x47
     .word 0x81db51b @0x48
     .word 0x81db526 @0x49
-    .word 0x81dab90 @0x4a
+    .word bsc_attack_effect_hit @0x4a
     .word 0x81db531 @0x4b
     .word 0x81db559 @0x4c
     .word 0x81db564 @0x4d
-    .word 0x81dab90 @0x4e
+    .word bsc_attack_effect_hit @0x4e
     .word 0x81db57c @0x4f
     .word 0x81db5bf @0x50
     .word 0x81db5dd @0x51
@@ -100,21 +100,21 @@
     .word 0x81db766 @0x5d
     .word 0x81db77b @0x5e
     .word 0x81db79d @0x5f
-    .word 0x81dab90 @0x60
+    .word bsc_attack_effect_hit @0x60
     .word 0x81db7bc @0x61
     .word 0x81db7fe @0x62
     .word 0x81db80f @0x63
     .word 0x81db815 @0x64
-    .word 0x81dab90 @0x65
+    .word bsc_attack_effect_hit @0x65
     .word 0x81db831 @0x66
-    .word 0x81dab90 @0x67
+    .word bsc_attack_effect_hit @0x67
     .word 0x81db876 @0x68
     .word 0x81db959 @0x69
     .word 0x81db964 @0x6a
     .word 0x81db996 @0x6b
     .word 0x81db9d0 @0x6c
     .word 0x81db9dd @0x6d
-    .word 0x81dab90 @0x6e
+    .word bsc_attack_effect_hit @0x6e
     .word 0x81dbaa6 @0x6f
     .word 0x81dbab9 @0x70
     .word 0x81dbace @0x71
@@ -132,10 +132,10 @@
     .word 0x81dbc07 @0x7d
     .word 0x81dbc12 @0x7e
     .word 0x81dbc25 @0x7f
-    .word 0x81dab90 @0x80
+    .word bsc_attack_effect_hit @0x80
     .word 0x81dbc52 @0x81
     .word 0x81dbc5d @0x82
-    .word 0x81dab90 @0x83
+    .word bsc_attack_effect_hit @0x83
     .word 0x81dbc8c @0x84
     .word 0x81dbc8c @0x85
     .word 0x81dbc8c @0x86
@@ -145,7 +145,7 @@
     .word 0x81dbcc1 @0x8a
     .word 0x81dbccc @0x8b
     .word 0x81dbcd7 @0x8c
-    .word 0x81dab90 @0x8d
+    .word bsc_attack_effect_hit @0x8d
     .word 0x81dbce2 @0x8e
     .word 0x81dbd04 @0x8f
     .word 0x81dbd19 @0x90
@@ -167,7 +167,7 @@
     .word 0x81dc0c6 @0xa0
     .word 0x81dc0d9 @0xa1
     .word 0x81dc11b @0xa2
-    .word 0x81dab90 @0xa3
+    .word bsc_attack_effect_hit @0xa3
     .word 0x81dc138 @0xa4
     .word 0x81dc141 @0xa5
     .word 0x81dc15d @0xa6
@@ -217,7 +217,7 @@
     .word 0x81dc689 @0xd2
     .word 0x81dc819 @0xd3
     .word 0x81dc891 @0xd4
-    .word bsc_attack_effect_xd5 @0xd5
+    .word bsc_attack_effect_xd5 @0xd5, Tarnung??
     .word bsc_attack_effect_xd6 @0xd6
     .word bsc_attack_effect_xd7 @0xd7
     .word bsc_attack_effect_xd8 @0xd8
@@ -232,19 +232,20 @@
     .word bsc_attack_effect_xe1 @0xe1
     .word bsc_attack_effect_xe2 @0xe2
     .word 0x81dbaa6 @0xe3 kings shield
+    .word bsc_attack_effect_sucker_punch @0xe4
 
 
 bsc_attack_effect_xd5:
-    setbyte 0x2023E85 0x58
-    goto 0x81DAB90
+    setbyte bsc_effect_to_apply 0x58
+    goto bsc_attack_effect_hit
 
 bsc_attack_effect_xd6:
-    setbyte 0x2023E85 0x59
-    goto 0x81DAB90
+    setbyte bsc_effect_to_apply 0x59
+    goto bsc_attack_effect_hit
 
 bsc_attack_effect_xd7:
     attackcanceler
-    accuracycheck 0x81DABEE 0x0
+    accuracycheck bsc_miss_pp_reduce 0x0
     attackstring
     ppreduce
     calculatedamage
@@ -259,9 +260,9 @@ bsc_attack_effect_xd7:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte 0x2023E85 0xE6
+    setbyte bsc_effect_to_apply 0xE6
     seteffectwithchancetarget
-    setbyte 0x2023E85 0x3
+    setbyte bsc_effect_to_apply 0x3
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x0
     setbyte 0x2023FD8 0x0
@@ -269,15 +270,15 @@ bsc_attack_effect_xd7:
     end
 
 bsc_attack_effect_xd8:
-    setbyte 0x2023E85 0x57
+    setbyte bsc_effect_to_apply 0x57
     seteffectwithchancetarget
-    setbyte 0x2023E85 0x5A
+    setbyte bsc_effect_to_apply 0x5A
     seteffectwithchancetarget
-    goto 0x81DAB90
+    goto bsc_attack_effect_hit
 
 bsc_attack_effect_xd9:
     attackcanceler
-    accuracycheck 0x81DABEE 0x0
+    accuracycheck bsc_miss_pp_reduce 0x0
     attackstring
     ppreduce
     calculatedamage
@@ -292,19 +293,19 @@ bsc_attack_effect_xd9:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte 0x2023E85 0xE6
+    setbyte bsc_effect_to_apply 0xE6
     seteffectwithchancetarget
-    setbyte 0x2023E85 0x3
+    setbyte bsc_effect_to_apply 0x3
     seteffectwithchancetarget
-    goto 0x81DABD7
+    goto bsc_faint_pokemon
 
 bsc_attack_effect_xda:
-    setbyte 0x2023E85 0x4
-    goto bsc_0x8AEF07
+    setbyte bsc_effect_to_apply 0x4
+    goto bsc_effect_and_flinch
 
-bsc_0x8AEF07:
+bsc_effect_and_flinch:
     attackcanceler
-    accuracycheck 0x81DABEE 0x0
+    accuracycheck bsc_miss_pp_reduce 0x0
     attackstring
     ppreduce
     calculatedamage
@@ -320,21 +321,21 @@ bsc_0x8AEF07:
     resultmessage
     waitmessage 0x40
     seteffectwithchancetarget
-    setbyte 0x2023E85 0x8
+    setbyte bsc_effect_to_apply 0x8
     seteffectwithchancetarget
-    goto 0x81DABD7
+    goto bsc_faint_pokemon
 
 bsc_attack_effect_xdb:
-    setbyte 0x2023E85 0x5
-    goto bsc_0x8AEF07
+    setbyte bsc_effect_to_apply 0x5
+    goto bsc_effect_and_flinch
 
 bsc_attack_effect_xdc:
-    setbyte 0x2023E85 0x3
-    goto bsc_0x8AEF07
+    setbyte bsc_effect_to_apply 0x3
+    goto bsc_effect_and_flinch
 
 bsc_attack_effect_xdd:
     attackcanceler
-    accuracycheck 0x81DABEE 0x0
+    accuracycheck bsc_miss_pp_reduce 0x0
     attackstring
     ppreduce
     calculatedamage
@@ -349,19 +350,19 @@ bsc_attack_effect_xdd:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    jumpifbyte 0x4 0x2023DCC 0x29 0x81DABD7
-    jumpifstat 0x1 0x0 0x3 0x0 0x81DABD7
+    jumpifbyte 0x4 attack_result 0x29 bsc_faint_pokemon
+    jumpifstat 0x1 0x0 0x3 0x0 bsc_faint_pokemon
     setbyte 0x2023FDF 0x0
     playstatchangeanimation 0x1 0x8 0x9
     setbyte 0x2023FDE 0x93
-    statbuffchange 0xC1 0x81DABD7
-    printfromtable 0x83FE534
+    statbuffchange 0xC1 bsc_faint_pokemon
+    printfromtable bsc_failure_strings
     waitmessage 0x40
-    goto 0x81DABD7
+    goto bsc_faint_pokemon
 
 bsc_attack_effect_xde:
     attackcanceler
-    accuracycheck 0x81DABEE 0x0
+    accuracycheck bsc_miss_pp_reduce 0x0
     attackstring
     ppreduce
     calculatedamage
@@ -376,15 +377,15 @@ bsc_attack_effect_xde:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte 0x2023E85 0xD7
+    setbyte bsc_effect_to_apply 0xD7
     seteffectwithchancetarget
-    setbyte 0x2023E85 0xDA
+    setbyte bsc_effect_to_apply 0xDA
     seteffectwithchancetarget
-    goto 0x81DABD7
+    goto bsc_faint_pokemon
 
 bsc_attack_effect_xdf:
-    setbyte 0x2023E85 0x45
-    goto 0x81DAB90
+    setbyte bsc_effect_to_apply 0x45
+    goto bsc_attack_effect_hit
 
 bsc_attack_effect_xe0:
     jumpifhalfword 0x1 0x2023D4A 0x39 bsc_attack_effect_xe0_cont
@@ -393,7 +394,7 @@ bsc_attack_effect_xe0:
     setbyte 0x2023FD2 0x2
 bsc_attack_effect_xe0_cont:
     attackcanceler
-    accuracycheck 0x81DABEE 0x0
+    accuracycheck bsc_miss_pp_reduce 0x0
     attackstring
     ppreduce
     calculatedamage
@@ -408,9 +409,9 @@ bsc_attack_effect_xe0_cont:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte 0x2023E85 0x4F
+    setbyte bsc_effect_to_apply 0x4F
     seteffectwithchancetarget
-    setbyte 0x2023E85 0x50
+    setbyte bsc_effect_to_apply 0x50
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x8000000
     setbyte 0x2023FD8 0x0
@@ -432,22 +433,22 @@ bsc_attack_effect_xe1_cont0:
     setbyte 0x2023FDE 0x14
     statbuffchange 0x41 bsc_attack_effect_xe1_cont1
     jumpifbyte 0x0 0x2023E87 0x2 bsc_attack_effect_xe1_cont1
-    printfromtable 0x83FE534
+    printfromtable bsc_failure_strings
     waitmessage 0x40
 bsc_attack_effect_xe1_cont1:
     setbyte 0x2023FDE 0x15
     statbuffchange 0x41 bsc_attack_effect_xe1_cont2
     jumpifbyte 0x0 0x2023E87 0x2 bsc_attack_effect_xe1_cont2
-    printfromtable 0x83FE534
+    printfromtable bsc_failure_strings
     waitmessage 0x40
 bsc_attack_effect_xe1_cont2:
     setbyte 0x2023FDE 0x13
     statbuffchange 0x41 0x81DABDE
     jumpifbyte 0x0 0x2023E87 0x2 0x81DABDE
-    printfromtable 0x83FE534
+    printfromtable bsc_failure_strings
     waitmessage 0x40
-    goto 0x81DABEE
+    goto bsc_miss_pp_reduce
 
 bsc_attack_effect_xe2:
-    setbyte 0x2023E85 0x51
-    goto 0x81DAB90
+    setbyte bsc_effect_to_apply 0x51
+    goto bsc_attack_effect_hit

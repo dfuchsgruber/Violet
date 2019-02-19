@@ -7,7 +7,7 @@
 
 #ifndef BG_H
 #define	BG_H
-
+#include "types.h"
 #include "text.h"
 #include "vram.h"
 
@@ -23,7 +23,6 @@ extern "C" {
         u32 color_mode : 1;
         u32 priority : 2;
     } bg_config;
-
 
     /**
      * Sets all four bgs up according to the configurations passed.

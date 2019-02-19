@@ -1277,3 +1277,8 @@
 .byte 0xF9
 .word \function
 .endm
+
+@// Meta macros
+.macro setstatchange stat:req amount:req decrease:req
+setbyte bsc_status_effect_to_apply \stat | \amount << 4 | \decrease << 7
+.endm

@@ -8,9 +8,36 @@
 #ifndef INCLUDE_C_POKEMON_SPRITES_H_
 #define INCLUDE_C_POKEMON_SPRITES_H_
 
+#include "pokemon/virtual.h"
 #include "pokemon/count.h"
 #include "oam.h"
 
+/**
+ * Loads the gfx of a pokemon.
+ * @param g the graphic to load, should match the is_frontsprite parameter
+ * @param dst memory to place the gfx in
+ * @param species the species to load
+ * @param pid the pid of the pokemon (for Unown, Spinda)
+ * @param is_frontsprite wether to load a front- or backsprite
+ */
+void pokemon_load_gfx(graphic *g, void *dst, u16 species, pid_t pid, bool is_frontsprite);
+
+/**
+ * Loads the gfx of a pokemon. What is the difference between pokemon_load_gfx? Who knows...
+ * @param g the graphic to load, should match the is_frontsprite parameter
+ * @param dst memory to place the gfx in
+ * @param species the species to load
+ * @param pid the pid of the pokemon (for Unown, Spinda)
+ * @param is_frontsprite wether to load a front- or backsprite
+ */
+void pokemon_load_gfx2(graphic *g, void *dst, u16 species, pid_t pid, bool is_frontsprite);
+
+/**
+ * Returns the palette that matches a pokemon.
+ * @param p the pokemon to retrieve the palette of
+ * @return pointer to the palette structure
+ */
+palette *pokemon_get_palette(pokemon *p);
 
 graphic pokemon_frontsprites[POKEMON_CNT];
 graphic pokemon_backsprites[POKEMON_CNT];

@@ -1,7 +1,7 @@
 #include "types.h"
 #include "color.h"
 
-const color transparency_black_box_pals [] = {
+const color tbox_palettes_transparency [] = {
     {0x0},
     {0x0},
     {0x7FFF},
@@ -165,5 +165,5 @@ const color transparency_black_box_pals [] = {
 };
 
 void transparency_load_black_box_pals(){
-    pal_copy(transparency_black_box_pals, 13*16, 32*3);
+    pal_copy(tbox_palettes_transparency, 13*16, 32*3);
 }

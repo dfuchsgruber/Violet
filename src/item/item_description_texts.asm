@@ -1492,35 +1492,30 @@
 	str_item_desc_xf8_item_item_f8:
 		.string " ????"
 
+	.global str_item_desc_xf9_item_eisbrocken
 
-	.global str_item_desc_xf9_item_item_f9
+	str_item_desc_xf9_item_eisbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of hail."
 
-	str_item_desc_xf9_item_item_f9:
-		.string " ????"
+	.global str_item_desc_xfa_item_nassbrocken
 
+	str_item_desc_xfa_item_nassbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of rain."
 
-	.global str_item_desc_xfa_item_item_fa
+	.global str_item_desc_xfb_item_glattbrocken
 
-	str_item_desc_xfa_item_item_fa:
-		.string " ????"
+	str_item_desc_xfb_item_glattbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of sandstrom."
 
+	.global str_item_desc_xfc_item_heissbrocken
 
-	.global str_item_desc_xfb_item_item_fb
+	str_item_desc_xfc_item_heissbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of sunshine."
 
-	str_item_desc_xfb_item_item_fb:
-		.string " ????"
+	.global str_item_desc_xFD_item_lichtlehm
 
-
-	.global str_item_desc_xfc_item_item_fc
-
-	str_item_desc_xfc_item_item_fc:
-		.string " ????"
-
-
-	.global str_item_desc_xfd_item_item_fd
-
-	str_item_desc_xfd_item_item_fd:
-		.string " ????"
+	str_item_desc_xFD_item_lichtlehm:
+		.string "Ein Item zum Tragen. Verlängert\ndie Dauer von Lichtschild und\nReflektor."
 
 
 	.global str_item_desc_xfe_item_roter_schal
@@ -3495,30 +3490,30 @@
 	str_item_desc_xf8_item_item_f8:
 		.string "?????"
 
-	.global str_item_desc_xf9_item_item_f9
+	.global str_item_desc_xf9_item_eisbrocken
 
-	str_item_desc_xf9_item_item_f9:
-		.string "?????"
+	str_item_desc_xf9_item_eisbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of hail."
 
-	.global str_item_desc_xfa_item_item_fa
+	.global str_item_desc_xfa_item_nassbrocken
 
-	str_item_desc_xfa_item_item_fa:
-		.string "?????"
+	str_item_desc_xfa_item_nassbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of rain."
 
-	.global str_item_desc_xfb_item_item_fb
+	.global str_item_desc_xfb_item_glattbrocken
 
-	str_item_desc_xfb_item_item_fb:
-		.string "?????"
+	str_item_desc_xfb_item_glattbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of sandstrom."
 
-	.global str_item_desc_xfc_item_item_fc
+	.global str_item_desc_xfc_item_heissbrocken
 
-	str_item_desc_xfc_item_item_fc:
-		.string "?????"
+	str_item_desc_xfc_item_heissbrocken:
+		.string "An item to be held by a Pokémon.\nIt extends the duration of sunshine."
 
-	.global str_item_desc_xfd_item_item_fd
+	.global str_item_desc_xFD_item_lichtlehm
 
-	str_item_desc_xfd_item_item_fd:
-		.string "?????"
+	str_item_desc_xFD_item_lichtlehm:
+		.string "An item to be held by a Pokémon.\nExtends the duration of Light Screen\nand Reflect."
 
 	.global str_item_desc_xfe_item_roter_schal
 

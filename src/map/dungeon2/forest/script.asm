@@ -33,6 +33,9 @@ str_dungeon_forest_collapsing:
 
 .global ow_script_test
 ow_script_test:
+givepokemon POKEMON_LEDYBA 12 0 0 0 0
+additem ITEM_LICHTLEHM 1
+end
 givepokemon POKEMON_KECLEON_PURPLE 35 0 0 0 0
 end
 setflag PLAYER_CAN_ENTER_DUNGEONS

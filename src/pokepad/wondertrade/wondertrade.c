@@ -518,7 +518,7 @@ void wondertrade_init_components() {
     //pal
     pal_decompress(gfx_wondertrade_bg_upperPal, 0, 32);
     pal_decompress(gfx_wondertrade_bg_lowerPal, 1 * 16, 32);
-    pal_copy(transparency_black_box_pals, 15 * 16, 32);
+    pal_copy(tbox_palettes_transparency, 15 * 16, 32);
     if (!fmem.wtrade_mem->usable) {
         //greyscale all pals
         int i;
@@ -529,8 +529,8 @@ void wondertrade_init_components() {
             pal_restore[i] = n;
         }
     }
-    pal_copy(transparency_black_box_pals, 13 * 16, 32);
-    pal_copy(transparency_black_box_pals, 14 * 16, 32);
+    pal_copy(tbox_palettes_transparency, 13 * 16, 32);
+    pal_copy(tbox_palettes_transparency, 14 * 16, 32);
 
     pal_set_all_to_black();
 

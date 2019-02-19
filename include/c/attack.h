@@ -12,8 +12,9 @@
 extern "C" {
 #endif
 
+#include "pokemon/virtual.h"
+
 #define ATTACK_CNT 413
-    
 
     typedef struct{
         u8 effect;
@@ -56,6 +57,20 @@ extern "C" {
      * @return if the attack needs charing
      */
     bool attack_needs_charging(u16 move);
+
+    /**
+     * Returns the type of hidden power based on a pokemon's pid.
+     * @param pid the pid of a pokemon
+     * @return its hidden power type
+     */
+    u8 hidden_power_get_type(pid_t pid);
+
+    /**
+     * Returns the base power of hidden power based on a pokemon's pid.
+     * @param pid the pid of a pokemon
+     * @return its hidden power base power
+     */
+    u8 hidden_power_get_base_power(pid_t pid);
 
 #ifdef	__cplusplus
 }

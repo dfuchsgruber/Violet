@@ -129,8 +129,8 @@ battle_script_cmds:
 	.word 0x80271b9
 	.word 0x802725d
 	.word 0x80272d9
-	.word 0x8027441
-	.word 0x8027495
+	.word bsc_cmd_x7D_setrain
+	.word bsc_cmd_x7E_setreflect
 	.word 0x8027561
 	.word 0x8027621
 	.word 0x80276a1
@@ -150,10 +150,10 @@ battle_script_cmds:
 	.word 0x80282a5
 	.word 0x802859d
 	.word 0x8028741
-	.word 0x80287d5
+	.word bsc_cmd_x92_setlightscreen
 	.word 0x80288a1
 	.word 0x8028bf5
-	.word 0x8028c31
+	.word bsc_cmd_x95_setsandstorm
 	.word 0x8028c89
 	.word 0x8028e29
 	.word 0x8028fe1
@@ -191,20 +191,20 @@ battle_script_cmds:
 	.word 0x802af0d
 	.word 0x802afb5
 	.word 0x802b0d9
-	.word 0x802b26d
+	.word bsc_cmd_xBB_setsunny
 	.word 0x802b2c5
 	.word 0x802b345
 	.word 0x802b38d
 	.word 0x802b4d9
 	.word 0x802b509
-	.word 0x802b611
+	.word bsc_cmd_xC1_hiddenpowercalc
 	.word 0x802b70d
 	.word 0x802b781
 	.word 0x802b8a9
 	.word 0x802bab9
 	.word 0x802bb3d
 	.word 0x802bbcd
-	.word 0x802bc0d
+	.word bsc_cmd_xC8_sethail
 	.word 0x802bc65
 	.word 0x802bd01
 	.word 0x802bd4d

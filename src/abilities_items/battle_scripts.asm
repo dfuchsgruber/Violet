@@ -1,4 +1,5 @@
 .include "battlescript.s"
+.include "constants/pokemon_stats.s"
 
 .global bsc_wandlungskunst
 .global bsc_stance_change_to_attack
@@ -21,6 +22,7 @@
 .global bsc_harvest
 .global bsc_hack
 .global bsc_fluffy
+.global bsc_eschat
 
 bsc_wandlungskunst:
 printstring 0x184
@@ -139,9 +141,9 @@ bsc_tollwut:
 printstring 0x196
 waitmessage 0x40
 callasm turn_end_tollwut_attack_boost
-setbyte 0x2023FDE 0x92
+setbyte bsc_status_effect_to_apply 0x92
 call bsc_turn_end_statchange
-setbyte 0x2023FDE 0x95
+setbyte bsc_status_effect_to_apply 0x95
 call bsc_turn_end_statchange
 end3
 
@@ -162,7 +164,7 @@ bsc_turn_end_stat_change_failure:
 return
 
 bsc_tollwut_attack_boost:
-setbyte 0x2023FDE 0x11
+setbyte bsc_status_effect_to_apply 0x11
 call bsc_turn_end_statchange
 return
 
@@ -170,7 +172,7 @@ return
 bsc_lucid:
 printstring 0x18E
 waitmessage 0x40
-setbyte 0x2023FDE 0x14
+setbyte bsc_status_effect_to_apply 0x14
 call bsc_turn_end_statchange
 end3
 
@@ -200,3 +202,11 @@ printstring 0x199
 waitmessage 0x40
 return
 
+bsc_eschat:
+printstring 0x19A
+waitmessage 0x40
+setstatchange STAT_ACCURACY 1 0
+call bsc_turn_end_statchange
+setstatchange STAT_EVASION 1 0
+call bsc_turn_end_statchange
+end3

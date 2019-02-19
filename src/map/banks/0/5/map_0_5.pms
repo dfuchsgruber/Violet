@@ -421,7 +421,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_EVOLITH",
+						"item": "ITEM_TOP_BELEBER",
 						"species": 0
 					}
 				}

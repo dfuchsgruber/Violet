@@ -400,6 +400,7 @@ bsc_strings:
 .word str_battle_x197
 .word str_battle_x198
 .word str_battle_x199
+.word str_battle_x19A
 
 @ // Define the strings
 
@@ -2783,6 +2784,11 @@ bsc_strings:
 	str_battle_x199:
 		.string "Das fluffige Fell von\nDEFENDING_MON verlangsamt\lATTACKING_MON stark!"
 
+	.global str_battle_x19A
+	str_battle_x19A:
+
+		.string "STRINGè von\nABILITY_NAME_PLAYER lässt\les eine düstere Zukunft sehen."
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -4767,6 +4773,10 @@ bsc_strings:
 	.global str_battle_x199
 	str_battle_x199:
 		.string "The fluffiness of\nDEFENDING_MON drastically slows\lATTACKING_MON!"
+
+	.global str_battle_x19A
+	str_battle_x19A:
+		.string "ABILITY_NAME_PLAYER's\nSTRINGè makes\lit see a dark future."
 
 .endif
 

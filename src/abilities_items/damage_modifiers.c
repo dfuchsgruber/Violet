@@ -60,6 +60,12 @@ void apply_final_damage_modifiers(){
         	}
         	break;
         }
+        case SUPERSCHUETZE: {
+        	if (critical_hit_multiplier > 1) {
+        		damage_apply_multiplier(1500);
+        	}
+        	break;
+        }
     }
 }
 

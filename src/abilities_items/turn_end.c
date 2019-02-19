@@ -52,10 +52,6 @@ bool turn_end(u8 ability, battler *target){
         damage_to_apply = -dmg;
         battlescript_init_and_interrupt_battle(bsc_heal);
         return true;
-    }else if(ability == TOLLWUT && (target->stat_changes[1] < 7 ||
-            target->stat_changes[2] > 0 || target->stat_changes[5] > 0)){
-        battlescript_init_and_interrupt_battle(bsc_tollwut);
-        return true;
     }else if(ability == LUZID && (target->status1 & STATUS1_SLEEPING) &&
             target->stat_changes[4] < 12){
         battlescript_init_and_interrupt_battle(bsc_lucid);

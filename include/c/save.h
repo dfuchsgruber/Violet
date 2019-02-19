@@ -14,6 +14,7 @@
 #include "trainerschool_test.h"
 #include "rtc.h"
 #include "fp_menu.h"
+#include "ev_menu.h"
 #include "pokemon/virtual.h"
 
 #define GP_STACK_SIZE 16
@@ -62,7 +63,7 @@ typedef struct saveblock2 {
     u8 milliseconds_played;
     u8 detector_state; //original key swtiching
     // 0x14
-    u8 text_speed;
+    u8 tbox_style;
     u8 sound_state : 1;
     u8 unkown_2 : 7;
     u8 unkown_3[0x2];
@@ -127,6 +128,7 @@ typedef struct {
     wondertrade_memory *wtrade_mem;
     pokedex_memory *dex_mem;
     fp_memory *fp_mem;
+    ev_menu_state_stru *ev_menu_state;
     u8 *additional_levelscript_4;
     u16 dmart[32]; //max 32 items per mart
     ae_memory *ae_mem;
@@ -156,6 +158,7 @@ typedef struct {
     wild_pokemon_entry dwild_data_water[5];
     wild_pokemon_entry dwild_data_radar[5];
     wild_pokemon_entry dwild_data_rod[10];
+    u32 trainer_prng_state;
     
 } floating_memory;
 

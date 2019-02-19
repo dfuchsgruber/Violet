@@ -2,27 +2,27 @@
 .global transparency_load_styled_border_pal
 
 .align 4
-style_ressource:
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
-    .word 0x0847015C //tileset of border
-    .word transparency_black_box_pals
+tbox_styles_transparent:
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
+    .word tbox_style_0_tiles //tileset of border
+    .word tbox_palettes_transparency
 
 .align 2
 .thumb
@@ -34,7 +34,7 @@ str r0, [sp]
 bl transparency_load_black_pal
 cmp r0, #0
 beq tbox_standard
-ldr r1, =transparency_black_box_pals
+ldr r1, =tbox_palettes_transparency
 b tbox_end
 tbox_standard:
 ldr r1, =gfx_text_stdPal
@@ -58,10 +58,10 @@ mov r1, r0
 mov r0, r5
 cmp r1, #0
 beq styled_standard
-ldr r5, =style_ressource
+ldr r5, =tbox_styles_transparent
 b styled_end
 styled_standard:
-ldr r5, =0x847127C @standard palettes
+ldr r5, =tbox_styles @standard palettes
 styled_end:
 lsl r4, #3
 add r1, r4, r5
