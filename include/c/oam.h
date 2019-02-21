@@ -133,6 +133,8 @@ extern oam_object oams[];
 extern rotscale_frame *oam_rotscale_anim_table_null[];
 extern gfx_frame *oam_gfx_anim_table_null[];
 
+extern u8 oam_rotscale_disabled;
+
 /**
  * Allocates an rotation-scale group in the OAM RAM
  * @return The id of the allocated rotation-scale group
@@ -306,5 +308,14 @@ void oam_attributes_copy();
  * Executes all oam animations for the next frame (gfx and rotscal)
  */
 void oam_anim_proceed();
+
+/**
+ * Returns the index of the affine group the oam uses or 0 if the oam does not use affine
+ * transformations.
+ * @param o the object to get the rotscale group of
+ * @return the index of the affine group or 0
+ */
+u8 oam_rotscale_get(oam_object *o);
+
 
 #endif

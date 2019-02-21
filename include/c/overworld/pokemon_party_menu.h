@@ -38,6 +38,7 @@ bool (*pokemon_party_menu_continuation)();
 
 extern pokemon_party_menu_state_t pokemon_party_menu_state;
 extern u8 pokemon_party_menu_current_index;
+extern u8 pokemon_party_menu_current_index2;
 extern u16 item_activated;
 
 /**
@@ -137,5 +138,10 @@ void pokemon_party_menu_init(u8 a, u8 b, u8 c, u8 d, u8 e, void (*func1)(),
  * Frees all components of the pokemon party menu
  */
 void pokemon_party_menu_free();
+
+/**
+ * Callback1 that returns to the pokemon party menu.
+ */
+void pokemon_party_menu_return_callback();
 
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

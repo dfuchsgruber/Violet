@@ -8,7 +8,7 @@
 #include "pokemon/virtual.h"
 #include "constants/pokemon_stat_names.h"
 #include "constants/pokemon_attributes.h"
-
+#include "debug.h"
 
 u8 effective_ev_attributes[6] = {
 		[STAT_HP] = ATTRIBUTE_COOLNESS,
@@ -26,6 +26,7 @@ u8 potential_ev_attributes[6] = {
 };
 
 void pokemon_set_effective_ev(pokemon *p, int stat, u8 ev) {
+	dprintf("Set ev for stat %d to %d\n", stat, ev);
 	int value = pokemon_get_attribute(p, effective_ev_attributes[stat], 0) & (~0x3F);
 	value |= ev;
 	pokemon_set_attribute(p, effective_ev_attributes[stat], &value);

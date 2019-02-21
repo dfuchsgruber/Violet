@@ -3,7 +3,7 @@
 // Stats for stat drops, etc.
 .global str_kp
 str_kp:
-	.string "KP"
+	.string "Kp"
 
 .global str_angriff
 str_angriff:

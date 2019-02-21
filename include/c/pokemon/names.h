@@ -22,12 +22,13 @@ extern u8 pokemon_names[POKEMON_CNT][11];
 #define POKEMON_STAT_NAME_TYPE 10
 
 extern u8 *pokemon_stat_names[];
+extern u8 *pokemon_stat_names_abbreviated[];
 
 /**
  * Returns the string that represents the stat of a pokemon.
  * @param stat a stat that corresponds to a pokemon_stat_name constant that is visible outside battle
  * @return the stat name string or NULL
  */
-u8 *pokemon_get_state_name(u8 stat);
+u8 *pokemon_get_stat_name(u8 stat);
 
 #endif /* INCLUDE_C_POKEMON_NAMES_H_ */
