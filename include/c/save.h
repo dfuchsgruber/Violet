@@ -13,7 +13,6 @@
 #include "multichoice.h"
 #include "trainerschool_test.h"
 #include "rtc.h"
-#include "fp_menu.h"
 #include "ev_menu.h"
 #include "pokemon/virtual.h"
 
@@ -127,7 +126,7 @@ typedef struct {
     pokepad_memory *pad_mem;
     wondertrade_memory *wtrade_mem;
     pokedex_memory *dex_mem;
-    fp_memory *fp_mem;
+    void *fp_mem;
     ev_menu_state_stru *ev_menu_state;
     u8 *additional_levelscript_4;
     u16 dmart[32]; //max 32 items per mart

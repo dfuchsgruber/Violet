@@ -118,7 +118,8 @@ void ev_menu_callback_return();
  */
 void ev_menu_callback_setup();
 
-bg_config ev_menu_bg_configs[2];
+#define EV_MENU_BG_COUNT 3
+bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT];
 
 
 #define EV_MENU_TBOX_COUNT 13
@@ -141,7 +142,6 @@ tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1];
 extern u16 gfx_ev_menu_bgTiles[];
 extern u16 gfx_ev_menu_bgMap[];
 extern u16 gfx_ev_menu_bgPal[];
-extern u16 gfx_ev_menu_triangleTiles[];
-extern u16 gfx_ev_menu_trianglePal[];
+extern u16 gfx_ev_menu_hexagonPal[];
 
 #endif /* INCLUDE_C_EV_MENU_H_ */

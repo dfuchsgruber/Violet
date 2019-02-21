@@ -34,6 +34,7 @@
 #include "gpu.h"
 #include "vram.h"
 #include "constants/species.h"
+#include "transparency.h"
 
 tbox_font_colormap ev_menu_font_colormap_std_dark = {
     0, 2, 1, 3
@@ -43,18 +44,23 @@ tbox_font_colormap ev_menu_font_colormap_std_light = {
     0, 1, 2, 3
 };
 
-tbox_font_colormap ev_menu_font_colormap_red = {
-    0, 1, 5, 3
+tbox_font_colormap ev_menu_font_colormap_std_transparent = {
+    1, 2, 1, 1
 };
 
-tbox_font_colormap ev_menu_font_colormap_blue = {
-    0, 1, 9, 3
+tbox_font_colormap ev_menu_font_colormap_plus = {
+    0, 1, 6, 3
+};
+
+tbox_font_colormap ev_menu_font_colormap_minus = {
+    0, 1, 4, 3
 };
 
 sprite ev_menu_oam_sprite = {.attr1 = ATTR1_SIZE_64_64};
 
 sprite ev_menu_oam_sprite_semi_transparent = {
-		.attr0 = ATTR0_ROTSCALE | ATTR0_MODE_SEMI_TRANSPARENT, .attr1 = ATTR1_SIZE_64_64};
+		.attr0 = ATTR0_ROTSCALE | ATTR0_MODE_SEMI_TRANSPARENT, .attr1 = ATTR1_SIZE_64_64,
+		.attr2 = ATTR2_PRIO(1)};
 
 
 oam_template ev_menu_oam_template_pokemon = {
@@ -89,6 +95,10 @@ oam_template ev_menu_oam_template_ev_hexagon = {
 
 void ev_menu_set_pixel(int x, int y) {
 	x += 32; y += 32; // Shift to the center
+	if (x < 0 || x >= 64 || y < 0 || y >= 64) {
+		dprintf("Attempt to set pixel outside the stat chart (%d, %d)\n", x ,y);
+		return;
+	}
 	int *sprite = fmem.ev_menu_state->render_sprite;
 	u8 color = fmem.ev_menu_state->render_color;
 	int tile_x = x >> 3, tile_y = y >> 3;
@@ -111,11 +121,11 @@ void ev_menu_load_stat() {
 	if (!is_egg) {
 		u8 nature = pokemon_get_nature(p);
 		if (nature / 5 + 1 == fmem.ev_menu_state->stat_idx){
-			stat_name_colormap = &ev_menu_font_colormap_red;
+			stat_name_colormap = &ev_menu_font_colormap_plus;
 			u8 str_up[] = PSTRING("UP_ARROW");
 			strcat(strbuf, str_up);
 		} else if (nature % 5 + 1 == fmem.ev_menu_state->stat_idx) {
-			stat_name_colormap = &ev_menu_font_colormap_blue;
+			stat_name_colormap = &ev_menu_font_colormap_minus;
 			u8 str_down[] = PSTRING("DOWN_ARROW");
 			strcat(strbuf, str_down);
 		}
@@ -158,15 +168,15 @@ void ev_menu_load_stat() {
 void ev_menu_load_iv_chart() {
 	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
 	FIXED iv_ratios[6] = {0};
-	if (!pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0)) {
-		for (int i = 0; i < 6; i++) {
-			FIXED iv = INT_TO_FIXED(pokemon_get_attribute(p, (u8)(ATTRIBUTE_HP_IV + i), 0) +
-					EV_MENU_IV_CHART_MIN_VALUE);
-			iv_ratios[i] = FIXED_DIV(iv, INT_TO_FIXED(31 + EV_MENU_IV_CHART_MIN_VALUE));
-		}
+	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
+	for (int i = 0; i < 6; i++) {
+		FIXED iv = INT_TO_FIXED(
+				(is_egg ? 0 : pokemon_get_attribute(p, (u8)(ATTRIBUTE_HP_IV + i), 0)) +
+				EV_MENU_IV_CHART_MIN_VALUE);
+		iv_ratios[i] = FIXED_DIV(iv, INT_TO_FIXED(31 + EV_MENU_IV_CHART_MIN_VALUE));
 	}
 	fmem.ev_menu_state->render_sprite = fmem.ev_menu_state->iv_hexagon_sprite;
-	fmem.ev_menu_state->render_color = 12;
+	fmem.ev_menu_state->render_color = 1;
 	memset(fmem.ev_menu_state->render_sprite, 0, 0x800);
 	gpu_render_polygon_by_radius(iv_ratios, 6, 31, ev_menu_set_pixel);
 	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_iv_hexagon_tile),
@@ -177,14 +187,14 @@ void ev_menu_load_iv_chart() {
 void ev_menu_load_ev_chart() {
 	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
 	FIXED ev_ratios[6] = {0};
-	if (!pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0)) {;
-		for (int i = 0; i < 6; i++) {
-			FIXED ev = INT_TO_FIXED(pokemon_get_effective_ev(p, i) + EV_MENU_EV_CHART_MIN_VALUE);
-			ev_ratios[i] = FIXED_DIV(ev, INT_TO_FIXED(63 + EV_MENU_EV_CHART_MIN_VALUE));
-		}
+	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);
+	for (int i = 0; i < 6; i++) {
+		FIXED ev = INT_TO_FIXED(
+				(is_egg ? 0 : pokemon_get_effective_ev(p, i)) + EV_MENU_EV_CHART_MIN_VALUE);
+		ev_ratios[i] = FIXED_DIV(ev, INT_TO_FIXED(63 + EV_MENU_EV_CHART_MIN_VALUE));
 	}
 	fmem.ev_menu_state->render_sprite = fmem.ev_menu_state->ev_hexagon_sprite;
-	fmem.ev_menu_state->render_color = 12;
+	fmem.ev_menu_state->render_color = 1;
 	memset(fmem.ev_menu_state->render_sprite, 0, 0x800);
 	gpu_render_polygon_by_radius(ev_ratios, 6, 31, ev_menu_set_pixel);
 	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_ev_hexagon_tile),
@@ -401,26 +411,34 @@ void ev_menu_callback_setup() {
         oam_reset();
         oam_palette_allocation_reset();
         bg_reset(0);
-        bg_setup(0, ev_menu_bg_configs, 2);
+        bg_setup(0, ev_menu_bg_configs, EV_MENU_BG_COUNT);
         bg_sync_display_and_show(0);
         bg_sync_display_and_show(1);
+        bg_sync_display_and_show(2);
         bg_display_sync();
         bg_virtual_map_displace(0, 0, 0);
         bg_virtual_set_displace(0, 0, 0);
         bg_virtual_map_displace(1, 0, 0);
         bg_virtual_set_displace(1, 0, 0);
+        bg_virtual_map_displace(2, 0, 0);
+        bg_virtual_set_displace(2, 0, 0);
         io_set(0x10, 0);
         io_set(0x12, 0);
         io_set(0x14, 0);
         io_set(0x16, 0);
+        io_set(0x18, 0);
+        io_set(0x1A, 0);
 
         // Drop old bgs and allocate new backgrounds
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));
+        free(bg_get_tilemap(2));
         void *bg0map = malloc_and_clear(0x800);
         void *bg1map = malloc_and_clear(0x800);
+        void *bg2map = malloc_and_clear(0x800);
         bg_set_tilemap(0, bg0map);
         bg_set_tilemap(1, bg1map);
+        bg_set_tilemap(2, bg2map);
         lz77uncompwram(gfx_ev_menu_bgMap, bg1map);
         lz77uncompvram(gfx_ev_menu_bgTiles, CHARBASE(0));
 
@@ -480,7 +498,7 @@ void ev_menu_callback_setup() {
 
 		u16 oam_iv_hexagon_tile = oam_vram_alloc(64);
         oam_vram_allocation_table_add(EV_MENU_OAM_IV_HEXAGON_TAG, oam_iv_hexagon_tile, 64);
-        oam_allocate_palette(EV_MENU_OAM_IV_HEXAGON_TAG);
+        u8 iv_hexagon_pal = oam_allocate_palette(EV_MENU_OAM_IV_HEXAGON_TAG);
         fmem.ev_menu_state->oam_iv_hexagon_tile = oam_iv_hexagon_tile;
         fmem.ev_menu_state->oam_iv_hexagon_idx = oam_new_forward_search(
         		&ev_menu_oam_template_iv_hexagon, 15 * 8, 9 * 8, 0);
@@ -488,7 +506,7 @@ void ev_menu_callback_setup() {
 
 		u16 oam_ev_hexagon_tile = oam_vram_alloc(64);
         oam_vram_allocation_table_add(EV_MENU_OAM_EV_HEXAGON_TAG, oam_ev_hexagon_tile, 64);
-        oam_allocate_palette(EV_MENU_OAM_EV_HEXAGON_TAG);
+        u8 ev_hexagon_pal = oam_allocate_palette(EV_MENU_OAM_EV_HEXAGON_TAG);
         fmem.ev_menu_state->oam_ev_hexagon_tile = oam_ev_hexagon_tile;
         fmem.ev_menu_state->oam_ev_hexagon_idx = oam_new_forward_search(
         		&ev_menu_oam_template_ev_hexagon, 25 * 8, 9 * 8, 0);
@@ -498,10 +516,14 @@ void ev_menu_callback_setup() {
         // Load palettes
         pal_decompress(gfx_ev_menu_bgPal, 0, 32);
         pal_copy(typechart_icon_pal, 16, 32);
+        pal_decompress(gfx_ev_menu_hexagonPal, (u16)(256 + 16 * iv_hexagon_pal), 32);
+        pal_decompress(gfx_ev_menu_hexagonPal, (u16)(256 + 16 * ev_hexagon_pal), 32);
+        pal_copy(tbox_palettes_transparency, 14 * 16, 32);
         pal_set_all_to_black();
 
         bg_virtual_sync(0);
         bg_virtual_sync(1);
+        bg_virtual_sync(2);
 
         callback1_set(ev_menu_callback_show);
         vblank_handler_set(generic_vblank_handler);
@@ -520,9 +542,10 @@ void ev_menu_init(u8 self) {
     big_callback_delete(self);
 }
 
-bg_config ev_menu_bg_configs[2] = {
+bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT] = {
 	{.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 0, .size = 0, .color_mode = 0},
-	{.bg_id = 1, .char_base = 0, .map_base = 30, .priority = 1, .size = 0, .color_mode = 0},
+	{.bg_id = 1, .char_base = 0, .map_base = 30, .priority = 2, .size = 0, .color_mode = 0},
+	{.bg_id = 2, .char_base = 1, .map_base = 29, .priority = 1, .size = 0, .color_mode = 0},
 };
 
 tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1] = {
@@ -535,7 +558,7 @@ tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1] = {
 			.start_tile = 91},
 	[EV_MENU_TBOX_HIDDEN_POWER_STRENGTH] = {.bg_id = 0, .x = 6, .y = 18, .w = 4, .h = 2, .pal = 15,
 			.start_tile = 99},
-	[EV_MENU_TBOX_CHART_STATS] = {.bg_id = 0, .x = 10, .y = 4, .w = 20, .h = 10,
+	[EV_MENU_TBOX_CHART_STATS] = {.bg_id = 2, .x = 10, .y = 4, .w = 20, .h = 10,
 			.pal = 15, .start_tile = 107 },
 	[EV_MENU_TBOX_IV_CHART_HEADER] = {.bg_id = 0, .x = 11, .y = 2, .w = 8, .h = 2, .pal = 15,
 			.start_tile = 307},
