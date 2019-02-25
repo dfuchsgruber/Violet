@@ -11,10 +11,10 @@
 void gpu_render_line(int x0, int y0, int x1, int y1, void (*set_pixel)(int, int)) {
 	int dx = x1 - x0;
 	int dy = y1 - y0;
-	int inc_x = sign(dx);
-	int inc_y = sign(dy);
-	dx = abs(dx);
-	dy = abs(dy);
+	int inc_x = SGN(dx);
+	int inc_y = SGN(dy);
+	dx = ABS(dx);
+	dy = ABS(dy);
 
 	int pdx, pdy, ddx, ddy, dslow, dfast;
 

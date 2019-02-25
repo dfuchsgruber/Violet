@@ -26,32 +26,11 @@
         bx r0
         .pool
 
-.org 0x08014F9C
-        ldr r0, =hook_attack_priorities | 1
-        bx r0
-        .pool
-
 .org 0x0801F5AC
         ldr r0, =hook_sturdy | 1
         bx r0
         .pool
 
-
-//scarf
-.org 0x8014DC0
-	ldr r2, =scarf_poke1_hook | 1
-	bx r2
-	.pool
-
-.org 0x8014EA4
-	ldr r2, =scarf_poke2_hook | 1
-	bx r2
-	.pool
-	
-.org 0x0803EE4C
-	ldr r0, =choice_band_on_0 | 1
-	bx r0
-	.pool
 
 
 //abilities
@@ -76,7 +55,7 @@
 
 .org 0x8023F56
 //load hidden ability
-        ldr r1, =write_ability_into_dbuf_by_battler_slot | 1
+        ldr r1, =battler_load_ability_as_defender_by_slot | 1
         bl blxr1
         b lhiddenab0done
 blxr1:
@@ -86,7 +65,7 @@ blxr1:
 lhiddenab0done:
 
 .org 0x80130CC
-        ldr r1, =write_ability_into_dbuf_by_battler_slot | 1
+        ldr r1, =battler_load_ability_as_defender_by_slot | 1
         bl blxr1
         b lhiddenab1done
         .pool
@@ -98,7 +77,7 @@ lhiddenab1done:
 //Bericht
     ldr r0, [r6]
     add r0, r8
-    ldr r1, =write_ability_into_dbuf | 1
+    ldr r1, =battler_load_ability_as_defender | 1
     bl blxr1
     b bhiddenabdone
     lsl r0, #0
@@ -107,7 +86,7 @@ lhiddenab1done:
 bhiddenabdone:
 
 .org 0x08040C7C
-    ldr r1, =get_pokemons_ability | 1
+    ldr r1, =pokemon_get_ability | 1
     bx r1
     .pool
 

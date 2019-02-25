@@ -6,6 +6,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "time_types.s"
+.include "story_states.s"
 
 .global ow_script_0x892f40
 ow_script_0x892f40:
@@ -17,6 +18,7 @@ callasm custom_memory_init
 special 0x43 //version init
 call ow_script_0x8dcdd2
 setvar POKEPAD_SHORTCUTS 0xffff
+setvar STORY_STATE STORY_STATE_NONE
 // Initialize time system
 setvar TIME_TYPE TIME_TYPE_RTC
 // Check if the rtc works

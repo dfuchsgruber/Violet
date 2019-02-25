@@ -45,7 +45,7 @@
 		"hidden_ability": "Photogenese",
 		"safari_rate": 0,
 		"dex_number": 1,
-		"catch_rate" : 200
+		"capture_rate" : 200
 	},
 	"POKEMON_BISAKNOSP": {
 		"ability_0": "Notduenger",
@@ -67,7 +67,7 @@
 		"hidden_ability": "Ungebrochen",
 		"safari_rate": 0,
 		"dex_number": 4,
-		"catch_rate" : 200
+		"capture_rate" : 200
 	},
 	"POKEMON_GLUTEXO": {
 		"ability_0": "Grossbrand",
@@ -89,7 +89,7 @@
 		"hidden_ability": "Regenmut",
 		"safari_rate": 0,
 		"dex_number": 7,
-		"catch_rate" : 200
+		"capture_rate" : 200
 	},
 	"POKEMON_SCHILLOK": {
 		"ability_0": "Sturzbach",

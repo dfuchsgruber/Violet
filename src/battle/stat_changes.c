@@ -2,86 +2,95 @@
 #include "debug.h"
 #include "battle/battler.h"
 #include "battle/weather.h"
+#include "battle/state.h"
 #include "pokemon/evolution.h"
 #include "constants/abilities.h"
 #include "constants/battle_weathers.h"
 #include "constants/items.h"
 #include "constants/evolution_methods.h"
 #include "abilities.h"
+#include "item/item.h"
+#include "constants/item_hold_effects.h"
+#include "item/custom.h"
 
 int attacker_modify_satk(int satk){
-    int weather_negating_ability_present = ability_execute(0x13, 0,
-            WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
-            0);
-    battler *attacker = &battlers[attacking_battler];
-    switch(attacker->ability){
-        case SOLARKRAFT:
-            if((battle_weather & BATTLE_WEATHER_SUN) &&
-                    !weather_negating_ability_present) return satk + (satk / 2);
-            break;
-        case REGENMUT:
-            if((battle_weather & BATTLE_WEATHER_RAIN) &&
-                    !weather_negating_ability_present) return satk + (satk / 2);
-            break;
-        case KAELTEWAHN:
-            if((battle_weather & BATTLE_WEATHER_HAIL) &&
-                    !weather_negating_ability_present) return satk + (satk / 2);
-            break;
-        case UNGEBROCHEN:
-            if(attacker->current_hp <= attacker->max_hp / 2) 
-                return satk + (satk / 3);
-            break;
-        case HITZEWAHN:
-            if(attacker->status1 & STATUS1_BURNED)
-                return satk +(satk / 2);
-            break;
-            
+	if (WEATHER_HAS_EFFECT) {
+		switch(battlers[attacking_battler].ability){
+			case SOLARKRAFT:
+				if(battle_weather & BATTLE_WEATHER_SUN_ANY) satk += satk / 2;
+				break;
+			case REGENMUT:
+				if(battle_weather & BATTLE_WEATHER_RAIN_ANY) satk += satk / 2;
+				break;
+			case KAELTEWAHN:
+				if(battle_weather & BATTLE_WEATHER_HAIL_ANY) satk += satk / 2;
+				break;
+			case UNGEBROCHEN:
+				if(battlers[attacking_battler].current_hp <=
+						battlers[attacking_battler].max_hp / 2) satk += satk / 3;
+				break;
+			case HITZEWAHN:
+				if(battlers[attacking_battler].status1 & STATUS1_BURNED) satk += satk / 2;
+				break;
+		}
+	}
+    u16 item = battlers[attacking_battler].item;
+    u8 hold_effect = items[item].holding_effect_id;
+    u8 hold_effect_param = items[item].holding_effect_param;
+    if (item == ITEM_ENIGMABEERE) {
+    	hold_effect = enigma_berries[attacking_battler].hold_effect;
+    	hold_effect_param = enigma_berries[attacking_battler].hold_effect_parameter;
     }
+    if (hold_effect == HOLD_EFFECT_CHOICE_ITEM && hold_effect_param == CHOICE_ITEM_SPECS)
+    	satk += satk / 2;
     return satk;
 }
 
 int attacker_modify_atk(int atk){
-    int weather_negating_ability_present = ability_execute(0x13, 0,
-            WOLKE_SIEBEN, 0, 0) || ability_execute(0x13, 0, KLIMASCHUTZ, 0,
-            0);
-    battler *attacker = &battlers[attacking_battler];
-    switch(attacker->ability){
-        case SANDHERZ:
-            if((battle_weather & BATTLE_WEATHER_SUN) &&
-                    !weather_negating_ability_present) return atk + (atk / 2);
-            break;
-        case UNGEBROCHEN:
-            if(attacker->current_hp <= attacker->max_hp / 2) 
-                return atk + (atk / 3);
-            break;
-        case GIFTWAHN:
-            if(attacker->status1 & (STATUS1_POISONED | STATUS1_BADLY_POISONED))
-                return atk + (atk / 2);
-            break;
+	if (WEATHER_HAS_EFFECT) {
+		switch(battlers[attacking_battler].ability){
+			case SANDHERZ:
+				if(battle_weather & BATTLE_WEATHER_SANDSTORM_ANY) atk += atk / 2;
+				break;
+			case UNGEBROCHEN:
+				if(battlers[attacking_battler].current_hp <= battlers[attacking_battler].max_hp / 2)
+					atk += atk / 3;
+				break;
+			case GIFTWAHN:
+				if(battlers[attacking_battler].status1 & STATUS1_POISONED_ANY) atk += atk / 2;
+				break;
+		}
+	}
+    u16 item = battlers[attacking_battler].item;
+    u8 hold_effect = items[item].holding_effect_id;
+    u8 hold_effect_param = items[item].holding_effect_param;
+    if (item == ITEM_ENIGMABEERE) {
+    	hold_effect = enigma_berries[attacking_battler].hold_effect;
+    	hold_effect_param = enigma_berries[attacking_battler].hold_effect_parameter;
     }
+    if (hold_effect == HOLD_EFFECT_CHOICE_ITEM && hold_effect_param == CHOICE_ITEM_BAND)
+    	atk += (atk / 2);
     return atk;
 }
 
 int defender_modify_def(int def){
-    battler *defender = &battlers[defending_battler];
-    switch(defender->item){
-        case ITEM_EVOLITH:{
-        	if(pokemon_can_evolve(defender->species))
-                def *= 2;
-        }
-            
+    u16 item = battlers[defending_battler].item;
+    u8 hold_effect = items[item].holding_effect_id;
+    if (item == ITEM_ENIGMABEERE) {
+    	hold_effect = enigma_berries[defending_battler].hold_effect;
     }
+    if (hold_effect == HOLD_EFFECT_EVOLITE)
+    	def += (def / 2);
     return def;
 }
 
 int defender_modify_sdef(int sdef){
-    battler *defender = &battlers[defending_battler];
-    switch(defender->item){
-        case ITEM_EVOLITH:{
-            if(pokemon_can_evolve(defender->species))
-                sdef *= 2;
-        }
-            
+    u16 item = battlers[defending_battler].item;
+    u8 hold_effect = items[item].holding_effect_id;
+    if (item == ITEM_ENIGMABEERE) {
+    	hold_effect = enigma_berries[defending_battler].hold_effect;
     }
+    if (hold_effect == HOLD_EFFECT_EVOLITE)
+    	sdef += (sdef / 2);
     return sdef;
 }

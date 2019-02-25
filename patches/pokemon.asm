@@ -989,3 +989,33 @@ lsr r0, #0x1A
 	bx r0
 	.pool
 
+// Breeding
+.org 0x08045EA4
+	ldr r2, =breeding_alter_egg_species | 1
+	bx r2
+	.pool
+
+.org 0x080459C4
+	ldr r2, =breeding_inherit_ivs | 1
+	bx r2
+	.pool
+
+.org 0x08046054
+	ldr r3, =breeding_pokemon_new | 1
+	bx r3
+	.pool
+
+.org 0x080458F4
+	ldr r1, =breeding_spawn_egg | 1
+	bx r1
+	.pool
+
+.org 0x08045924
+	ldr r1, =breeding_spawn_male_egg | 1
+	bx r1
+	.pool
+
+.org 0x08045F04
+	ldr r2, =breeding_get_egg_species_and_parents | 1
+	bx r2
+	.pool

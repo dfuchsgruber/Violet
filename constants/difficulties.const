@@ -1,0 +1,11 @@
+{
+	"type" : "enum",
+	"base" : 0,
+	"values" : [
+		"DIFFICULTY_VERY_EASY",
+		"DIFFICULTY_EASY",
+		"DIFFICULTY_NORMAL",
+		"DIFFICULTY_HARD",
+		"DIFFICULTY_VERY_HARD"
+	]
+}

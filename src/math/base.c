@@ -23,32 +23,6 @@ FIXED FIXED_SQRT(FIXED x) {
   }
 }
 
-int max(int a, int b) {
-  if (a > b) return a;
-  return b;
-}
-
-int min(int a, int b) {
-  if (a < b) return a;
-  return b;
-}
-
-int abs(int i) {
-    if (i < 0) {
-        return -i;
-    }
-    return i;
-}
-
-int sign(int i) {
-    if (i < 0) {
-        return -1;
-    } else if (i > 0) {
-        return 1;
-    }
-    return 0;
-}
-
 int hwt(int x, int th, int n0){
     int ex = x / th;
     int div = 1 << ex;

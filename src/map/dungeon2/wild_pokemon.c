@@ -46,10 +46,10 @@ void dungeon2_wild_pokemon_sample_level_boundaries(u8 *level_min, u8 *level_max,
       dungeon2_rnd_normal(dg2)));
   FIXED fx2 = FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(INT_TO_FIXED(std_deviation),
       dungeon2_rnd_normal(dg2)));
-  int x1 = min(100, max(2, FIXED_TO_INT(fx1)));
-  int x2 = min(100, max(2, FIXED_TO_INT(fx2)));
-  *level_min = (u8)min(x1, x2);
-  *level_max = (u8)max(x1, x2);
+  int x1 = MIN(100, MAX(2, FIXED_TO_INT(fx1)));
+  int x2 = MIN(100, MAX(2, FIXED_TO_INT(fx2)));
+  *level_min = (u8)MIN(x1, x2);
+  *level_max = (u8)MAX(x1, x2);
 }
 
 

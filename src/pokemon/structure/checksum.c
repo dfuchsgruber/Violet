@@ -10,6 +10,7 @@
 #include "math.h"
 #include "debug.h"
 #include "constants/pokemon_stat_names.h"
+#include "constants/pokemon_attributes.h"
 
 pid_t pokemon_new_pid_by_prng(u16 (*rnd)()) {
 	pid_t p;
@@ -21,7 +22,7 @@ pid_t pokemon_new_pid_by_prng(u16 (*rnd)()) {
 	p.fields.hidden_power_strength = (u8)(rnd() & 7);
 
 	// Use slash count to increase the shiny rate
-	int splash_cnt = min(99, save_get_key(0x1A));
+	int splash_cnt = MIN(99, save_get_key(SAVE_KEY_SPLASH_USED));
 
 	if (rnd() % 1000 <= splash_cnt / 10) {
 		// Shiny rate of exactly 0.1% + (#Splash used) * 0.01% and maximum at 1%
@@ -55,7 +56,7 @@ pid_t pokemon_new_pid_with_nature(int nature) {
 u16 pokemon_calculate_checksum(pokemon *p){
     //We automatically return the value the checksum is later compared with,
     //This way we do not need any checksums
-    return p->checksum;
+    return p->box.checksum;
 }
 
 u8 pokemon_nature_by_pid(pid_t p){
@@ -68,7 +69,8 @@ u8 pokemon_nature_by_pid(pid_t p){
 }
 
 u8 pokemon_get_nature(pokemon *p){
-    return pokemon_nature_by_pid(p->pid);
+	pid_t pid = {.value = (u32)pokemon_get_attribute(p, ATTRIBUTE_PID, 0)};
+    return pokemon_nature_by_pid(pid);
 }
 
 bool pokemon_is_shiny(u32 tid, pid_t p){

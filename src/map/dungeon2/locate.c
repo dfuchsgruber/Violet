@@ -24,7 +24,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 
     {15, 0, 0x9, 0x2C, DTYPE_FOREST}, // Route 3
     {3, 3, 0x17, 0xE, DTYPE_FOREST}, // Silvania,
-    {3, 74, 0x11, 0xB, DTYPE_FOREST}, // Feslige Oednis
+    {3, 74, 0x13, 0x4, DTYPE_FOREST}, // Feslige Oednis
     {3, 74, 0x8, 0x10, DTYPE_FOREST},
     {3, 22, 0x6, 0x26, DTYPE_FOREST}, // Route 4
 

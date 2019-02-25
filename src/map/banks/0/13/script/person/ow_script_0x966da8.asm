@@ -5,6 +5,7 @@
 .include "species.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "story_states.s"
 
 
 .global ow_script_movs_0x96aa3b
@@ -605,6 +606,7 @@ goto ow_script_0x9730a3
 
 .global ow_script_0x9730a3
 ow_script_0x9730a3:
+setvar STORY_STATE STORY_STATE_VULCANO_CLEAR
 sound 0x64
 checksound
 setvar 0x8004 0xa

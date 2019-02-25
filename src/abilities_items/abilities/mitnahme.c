@@ -43,7 +43,7 @@ void bsc_cmd_mitnahme(){
     for (i = 0; i < 6; i++){
         if(!pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_ITEM, 0) && 
                 !pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_IS_EGG, 0) &&
-                get_pokemons_ability(&player_pokemon[i]) == MITNAHME &&
+                pokemon_get_ability(&player_pokemon[i]) == MITNAHME &&
                 rnd16() % 10){
             //Trigger 'Mitnahme' on this pokemon
             pokemon_set_attribute(&player_pokemon[i], ATTRIBUTE_ITEM, mitnahme_pick_item(&player_pokemon[i]));

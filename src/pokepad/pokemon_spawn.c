@@ -1,6 +1,6 @@
 #include "types.h"
 #include "pokemon/virtual.h"
-#include "pokemon/egg_moves.h"
+#include "pokemon/breeding.h"
 #include "pokemon/basestat.h"
 #include "pokepad/state.h"
 #include "debug.h"

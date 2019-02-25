@@ -16,6 +16,7 @@
 #include "overworld/script.h"
 #include "text.h"
 #include "pokemon/virtual.h"
+#include "constants/story_states.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -87,6 +88,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	*var_access(TRAINERSCHOOL_PROGRESS) = 10;
 	*var_access(TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS) = 1;
 	*var_access(TRAINERSCHOOL_GOODBYE_CNT) = 3;
+	*var_access(STORY_STATE) = STORY_STATE_VULCANO_CLEAR;
 	setflag(TRAINERSCHOOL_MAY_INSIDE);
 	setflag(TRAINERSCHOOL_BLAISE_INSIDE);
 	setflag(TRAINERSCHOOL_FELIX_INSIDE);
@@ -123,7 +125,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
 	// Pokemon pid structure has changed as well
 	// Update the party
 	for (int i = 0; i < 6; i++) {
-		version_alpha_2_2_fix_pid(&player_pokemon[i]);
+		version_alpha_2_2_fix_pid(&player_pokemon[i].box);
 		pokemon_calculate_stats(&player_pokemon[i]);
 	}
 	// Update the boxes

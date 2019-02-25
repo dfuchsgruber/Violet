@@ -89,7 +89,7 @@ void attack_done(u8 index){
     } else if(defender->ability == FLUFFIG && (attacks[active_attack].flags & MAKES_CONTACT)) {
     	if (attacker->stat_changes[3] > 0) {
     		// Trigger fluffy
-    		attacker->stat_changes[3] = (u8) max(0, attacker->stat_changes[3] - 2);
+    		attacker->stat_changes[3] = (u8) MAX(0, attacker->stat_changes[3] - 2);
     	    battle_stat_change[0x10] = 0x18;
     	    battle_stat_change[0x11] = 0;
     	    battle_stat_change[0x17] = attacking_battler;

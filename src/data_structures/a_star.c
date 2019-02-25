@@ -75,7 +75,7 @@ int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker) {
                     return path_length;
                 }
                 //we add the neighbour to the queue and to closed list, since there is no possibilty for a shorter way (due to the fact that the graph is a tile based graph)
-                int prio_nei = dist_next + abs(x_nei - to_x) + abs(y_nei - to_y) + 1; //We use x+y as heuristic and 1 as edge weight
+                int prio_nei = dist_next + ABS(x_nei - to_x) + ABS(y_nei - to_y) + 1; //We use x+y as heuristic and 1 as edge weight
                 hashmap_put((u32) key_nei, key_current, map); //Set parent of neighbour node to the current node
                 binary_heap_insert((u32) prio_nei, key_nei, heap);
             }

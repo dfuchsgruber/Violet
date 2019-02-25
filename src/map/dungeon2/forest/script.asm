@@ -33,6 +33,11 @@ str_dungeon_forest_collapsing:
 
 .global ow_script_test
 ow_script_test:
+setvar 0x8004 6
+special 0x19
+waitstate
+end
+
 givepokemon POKEMON_LEDYBA 12 0 0 0 0
 additem ITEM_LICHTLEHM 1
 end

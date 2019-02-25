@@ -38,8 +38,8 @@ u8 *dungeon2_create_isolated_layout(dungeon_generator2 *dg2, int spread, size_t 
 	  for (size_t j = 0; j < density; j++) {
 		  int x2 = x + FIXED_TO_INT(FIXED_MUL(INT_TO_FIXED(spread), dungeon2_rnd_normal(dg2)));
 		  int y2 = y + FIXED_TO_INT(FIXED_MUL(INT_TO_FIXED(spread), dungeon2_rnd_normal(dg2)));
-		  x2 = min(max(1, x2), dg2->width - 2);
-		  y2 = min(max(1, y2), dg2->height - 2);
+		  x2 = MIN(MAX(1, x2), dg2->width - 2);
+		  y2 = MIN(MAX(1, y2), dg2->height - 2);
 		  map1[x2 + y2 * dg2->width] = DG2_SPACE;
 	  }
   }

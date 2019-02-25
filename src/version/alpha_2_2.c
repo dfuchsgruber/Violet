@@ -15,9 +15,9 @@
 #include "constants/pokemon_attributes.h"
 #include "prng.h"
 
-void version_alpha_2_2_fix_pid(pokemon *target) {
-	if (pokemon_get_substructure_attribute(target, ATTRIBUTE_SPECIES, 0) == 0) return;
-	_pid_t_old old = {.value = (u32)pokemon_get_substructure_attribute(target, ATTRIBUTE_PID, 0)};
+void version_alpha_2_2_fix_pid(box_pokemon *target) {
+	if (box_pokemon_get_attribute(target, ATTRIBUTE_SPECIES, 0) == 0) return;
+	_pid_t_old old = {.value = (u32)box_pokemon_get_attribute(target, ATTRIBUTE_PID, 0)};
 	pid_t p = {.value = 0};
 	p.fields.ability = old.fields.ability;
 	p.fields.gender_partial = old.fields.gender_partial;
@@ -26,9 +26,9 @@ void version_alpha_2_2_fix_pid(pokemon *target) {
 	if (nature >= 25) nature /= 2;
 	p.fields.nature = (u8)(nature & 31);
 	p.fields.form = 0;
-	p.fields.hidden_power_type = (u8)(rnd16() & 18);
+	p.fields.hidden_power_type = (u8)((rnd16() % 18) & 31);
 	p.fields.hidden_power_strength = (u8)(rnd16() & 7);
-	pokemon_set_substructure_attribute(target, ATTRIBUTE_PID, &p);
+	box_pokemon_set_attribute(target, ATTRIBUTE_PID, &p);
 }
 
 u16 pokedex_order_old[POKEMON_CNT - 1] = {

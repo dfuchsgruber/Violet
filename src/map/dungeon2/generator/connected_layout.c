@@ -33,7 +33,7 @@ int dungeon2_node_distance(int nodes[][2], int idx, dungeon_generator2 *dg2) {
     int dx = nodes[idx][0] - nodes[i][0];
     int dy = nodes[idx][1] - nodes[i][1];
     FIXED l2_dist = FIXED_SQRT(INT_TO_FIXED(dx * dx + dy * dy));
-    min_dist = min(min_dist, l2_dist);
+    min_dist = MIN(min_dist, l2_dist);
     mean_dist = FIXED_ADD(mean_dist, l2_dist);
     //dprintf("L2 dist %d, Mean dist %d\n", FIXED_TO_INT(l2_dist), FIXED_TO_INT(mean_dist));
   }
@@ -165,10 +165,10 @@ void dungeon2_connect_nodes_sp_next_step(int p[2], int q[2], dungeon_generator2 
   (void)dg2;
   int dx = q[0] - p[0];
   int dy = q[1] - p[1];
-  if (abs(dx) > abs(dy)) {
-    p[0] += sign(dx);
+  if (ABS(dx) > ABS(dy)) {
+    p[0] += SGN(dx);
   } else {
-    p[1] += sign(dy);
+    p[1] += SGN(dy);
   }
 }
 

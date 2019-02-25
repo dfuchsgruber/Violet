@@ -15,6 +15,7 @@
 #include "rtc.h"
 #include "ev_menu.h"
 #include "pokemon/virtual.h"
+#include "pokemon/breeding.h"
 
 #define GP_STACK_SIZE 16
 
@@ -41,7 +42,12 @@ typedef struct saveblock1 {
     u16 current_footer_id;
     //0x34
     u8 unkown_2[0x8AC];
+    // 0x8e0
     map_event_person persons[256];
+    // 0x20E0
+    u8 unkown_3[0xEA0];
+    // 0x2F80
+    daycare_stru daycare;
     //TODO
 
 
@@ -82,7 +88,10 @@ typedef struct custom_memory {
     u8 gp_freespace[0x100];
     u16 var_extension[0x100]; //Additional 256 vars (0x5000-0x50FF)
     u8 dungeon_flags[0x10]; // mapheader dmapheader (part I)
-    u8 unused0[0xC]; // mapheader dmapheader (part II);
+    pid_t daycare_offspring_pid; // FRLG's desing does not allow for an entire word to be stored...
+    u8 daycare_offspring_has_hidden_ability;
+    u8 daycare_offspring_male; // Volbeat and Nidoran may alter their gender when breeding (y tho?)
+    u8 unused0[0x6]; // mapheader dmapheader (part II);
     u8 unused1[0x1C]; // mapfooter dmapfooter;
     
     //Dungeon Memory I
@@ -165,6 +174,9 @@ extern saveblock1 *save1;
 extern saveblock2 *save2;
 extern custom_memory cmem;
 extern floating_memory fmem;
+
+#define SAVE_KEY_SPLASH_USED 0x1A
+#define SAVE_KEY_EGGS_HATCHED 0xD
 
 /**
  * Increments a stat in the save file (key)

@@ -87,7 +87,6 @@ applymovement 0x12 ow_script_movs_0x8ff0da
 waitmovement 0x0
 hidesprite 0x12
 addvar STORY_PROGRESS 0x1
-addvar DIFFICULTY_LEVEL_RANGE 0x2
 releaseall
 end
 

@@ -210,15 +210,15 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                     break;
                 case EVOLUTION_METHOD_MALE_AND_STONE:
                 {
-                    u8 gender = pokemon_get_gender(p);
-                    if (gender == 0 && evolutions[i].condition == arg)
+                    u8 gender = pokemon_get_gender(&p->box);
+                    if (gender == GENDER_MALE && evolutions[i].condition == arg)
                         return evolutions[i].target;
                     break;
                 }
                 case EVOLUTION_METHOD_FEMALE_AND_STONE:
                 {
-                    u8 gender = pokemon_get_gender(p);
-                    if (gender == 0xFE && evolutions[i].condition == arg)
+                    u8 gender = pokemon_get_gender(&p->box);
+                    if (gender == GENDER_FEMALE && evolutions[i].condition == arg)
                         return evolutions[i].target;
                     break;
                 }

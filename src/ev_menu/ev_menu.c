@@ -120,11 +120,13 @@ void ev_menu_load_stat() {
 	u8 str_stat_name_width = string_get_width(2, strbuf, 0);
 	if (!is_egg) {
 		u8 nature = pokemon_get_nature(p);
-		if (nature / 5 + 1 == fmem.ev_menu_state->stat_idx){
+		int stat_increased = nature / 5 + 1, stat_decreased = nature % 5 + 1;
+		if (stat_increased == fmem.ev_menu_state->stat_idx && stat_increased != stat_decreased){
 			stat_name_colormap = &ev_menu_font_colormap_plus;
 			u8 str_up[] = PSTRING("UP_ARROW");
 			strcat(strbuf, str_up);
-		} else if (nature % 5 + 1 == fmem.ev_menu_state->stat_idx) {
+		} else if (stat_decreased == fmem.ev_menu_state->stat_idx
+				&& stat_increased != stat_decreased) {
 			stat_name_colormap = &ev_menu_font_colormap_minus;
 			u8 str_down[] = PSTRING("DOWN_ARROW");
 			strcat(strbuf, str_down);
@@ -138,7 +140,7 @@ void ev_menu_load_stat() {
 
 	int iv = pokemon_get_attribute(p, (u8)(ATTRIBUTE_HP_IV + fmem.ev_menu_state->stat_idx), 0);
 	int effective_ev = pokemon_get_effective_ev(p, fmem.ev_menu_state->stat_idx) * 4;
-	int potential_ev = min(252, pokemon_get_potential_ev(p, fmem.ev_menu_state->stat_idx) & ~3);
+	int potential_ev = MIN(252, pokemon_get_potential_ev(p, fmem.ev_menu_state->stat_idx) & ~3);
 	tbox_flush_set(EV_MENU_TBOX_CURRENT_IV, 0);
 	tbox_tilemap_draw(EV_MENU_TBOX_CURRENT_IV);
 	if (!is_egg) {
@@ -338,7 +340,7 @@ void ev_menu_big_callback_jump(u8 self) {
 	if (t >= INT_TO_FIXED(1)){
 		big_callback_delete(self);
 	} else {
-		FIXED dy = abs(8 * FIXED_SIN(t));
+		FIXED dy = ABS(8 * FIXED_SIN(t));
 		oams[fmem.ev_menu_state->oam_pokepic_idx].y2 = (s16)(-FIXED_TO_INT(dy));
 		t = FIXED_ADD(t, INT_TO_FIXED(1) >> 4); // t += 1/16
 		big_callback_set_int(self, 0, t);

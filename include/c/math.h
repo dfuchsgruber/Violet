@@ -93,20 +93,6 @@ FIXED FIXED_ERFINV(FIXED x);
 FIXED FIXED_PROBIT_INV(FIXED p);
 
 /**
- * Returns the absolute value of an integer
- * @param x the integer
- * @return the absolute value |x|
- */
-int abs(int x);
-
-/**
- * Returns the sign of an integer
- * @param x the integer
- * @return sign(x)
- */
-int sign(int i);
-
-/**
  * Decay of value n0 at time step t with hwt th
  * @param x the current time value
  * @param th time step amount for the value to half
@@ -132,21 +118,6 @@ int ggt(int a, int b);
  */
 int kgv(int a, int b);
 
-/**
- * Maximum of a and b
- * @param a first value
- * @param b second value
- * @return max(a, b)
- */
-int max(int a, int b);
-
-/**
- * Minimum of a and b
- * @param a first value
- * @param b second value
- * @return min(a, b)
- */
-int min(int a, int b);
 
 
 #endif

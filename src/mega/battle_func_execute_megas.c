@@ -78,7 +78,7 @@ void battle_cb_do_megas() {
                 current_battler->max_hp = (u16) pokemon_get_attribute(pokemon_offset, 0x3A, 0);
 
                 
-                current_battler->ability = get_pokemons_ability(pokemon_offset);
+                current_battler->ability = pokemon_get_ability(pokemon_offset);
 
                 //Type update
                 current_battler->type1 = basestats[target].type1;

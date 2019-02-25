@@ -81,7 +81,9 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
         play_sound(114);
         //Now we compute the new nature
         u32 new_nature = (u32) (new_positive * 5 + new_negative);
-        player_pokemon[pokemon_party_menu_current_index].pid.fields.nature = new_nature & 0x1F;
+        poke_pid.fields.nature = new_nature & 0x1F;
+        pokemon_set_attribute(&player_pokemon[pokemon_party_menu_current_index],
+        		ATTRIBUTE_PID, &poke_pid);
         pokemon_calculate_stats(&player_pokemon[pokemon_party_menu_current_index]);
         //Todo remove item and return to bag
         item_remove(item_activated, 1);

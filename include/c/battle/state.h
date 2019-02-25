@@ -83,7 +83,7 @@ typedef struct {
     u8 field_7D;
     u8 field_7E;
     u8 form_to_change_into;
-    u8 chosen_moves[4];
+    u8 chosen_move_slots[4];
     u8 state_id_after_selection_script[4];
     u8 field_88;
     u8 field_89;
@@ -163,6 +163,7 @@ extern u16 battle_trainer_id;
 extern u8 battle_stat_change[];
 extern u8 battle_effects[4]; // Probably there even more, 0x3 is the target effect
 extern u16 battle_dynamic_base_power;
+extern u16 battle_current_turn_seed; // Random state that is fixed for one turn
 
 /**
  * Checks if the battle is a double battle

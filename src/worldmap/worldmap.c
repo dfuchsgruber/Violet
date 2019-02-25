@@ -396,8 +396,8 @@ void worldmap_locate_player() {
 	worldmap_shape_t *shape = worldmap0_namespace_patterns[worldmap_state->player_namespace - 0x58]
 										 [header->worldmap_shape_id];
 
-	int segment_width = max(1, map_width / shape->width);
-	int segment_height = max(1, map_height / shape->height);
+	int segment_width = MAX(1, map_width / shape->width);
+	int segment_height = MAX(1, map_height / shape->height);
 	int segment_x = x / segment_width;
 	int segment_y = y / segment_height;
 	dprintf("Shape idx %d, shape width %d, height %d\n",

@@ -19,9 +19,9 @@ void bsc_cmd_xC1_hiddenpowercalc() {
 }
 
 u8 hidden_power_get_type(pid_t pid) {
-	return pid.fields.hidden_power_type;
+	return (u8)(pid.fields.hidden_power_type % 18);
 }
 
 u8 hidden_power_get_base_power(pid_t pid) {
-	return (u8)(30 + (40 * pid.fields.hidden_power_strength) / 8);
+	return (u8)(30 + (40 * (pid.fields.hidden_power_strength & 7)) / 8);
 }

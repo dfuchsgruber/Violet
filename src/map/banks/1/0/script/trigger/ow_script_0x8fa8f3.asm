@@ -5,6 +5,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "story_states.s"
 
 
 .global ow_script_movs_0x8037d4
@@ -414,6 +415,7 @@ hidesprite 0x24
 hidesprite 0x1e
 fadescreen 0x0
 addvar STORY_PROGRESS 0x1
+setvar STORY_STATE STORY_STATE_SILVANIA_FOREST_CLEAR
 releaseall
 end
 

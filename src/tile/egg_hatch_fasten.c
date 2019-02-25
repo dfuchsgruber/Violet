@@ -29,7 +29,7 @@ void egg_warm_update(){
 bool pokemon_party_has_flamebody(){
     u8 pokemon_cnt = pokemon_get_number_in_party();
     while(--pokemon_cnt){
-        if(get_pokemons_ability(&player_pokemon[pokemon_cnt]) == FLAMMKOERPER)
+        if(pokemon_get_ability(&player_pokemon[pokemon_cnt]) == FLAMMKOERPER)
             return true;
     }
     return false;

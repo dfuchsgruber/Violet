@@ -1,6 +1,7 @@
 #ifndef H_ABILITIES
 #define H_ABILITIES
 
+#include "constants/ability_contexts.h"
 
 #define ABILITY_CNT 0x71
 
@@ -23,13 +24,17 @@ u8 ability_get(u16 species, u8 fields);
  * Executes the abilities for a certain battle state
  * @param state the battle state
  * @param attacker attacking battler
- * @param unkown TODO
+ * @param ability the ability to count / check for
  * @param defender_ability the ability of the defending battler
  * @param active_attack the currently used attack
  * @return whether an ability was triggered in the current state
  */
-u8 ability_execute(u8 state, u8 attacker, u8 unkown, u8
+u8 ability_execute(u8 state, u8 attacker, u8 attacker_ability, u8
     defender_ability, u16 active_attack);
+
+#define ABILITY_ON_TARGET_SIDE(battler_idx, ability)(ability_execute(ABILITY_CONTEXT_CHECK_TARGET_SIDE, battler, ability, 0, 0))
+#define ABILITY_PRESENT(ability)(ability_execute(ABILITY_CONTEXT_CHECK_PRESENT, 0, ability, 0, 0))
+#define ABILITY_PRESENT2(ability)(ability_execute(ABILITYEFFECT_FIELD_SPORT, 0, ability, 0, 0))
 
 extern u8 ability_names[ABILITY_CNT][0xD];
 u8 *ability_descriptions[ABILITY_CNT];

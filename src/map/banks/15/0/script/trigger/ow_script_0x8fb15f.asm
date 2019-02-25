@@ -177,7 +177,6 @@ goto ow_script_0x8e22e1
 
 .global ow_script_0x8e22e1
 ow_script_0x8e22e1:
-addvar DIFFICULTY_LEVEL_RANGE 0x1
 goto ow_script_0x8d3691
 
 

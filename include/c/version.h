@@ -38,7 +38,7 @@ typedef union {
  * Fixes a pokemon which is in the format of version < 2.2
  * @param target the pokemon to fix (might be in compressed format)
  */
-void version_alpha_2_2_fix_pid(pokemon *target);
+void version_alpha_2_2_fix_pid(box_pokemon *target);
     
     void version_upgrade_alpha_1_X_to_2_0();
     void version_upgrade_alpha_2_0_to_2_1();

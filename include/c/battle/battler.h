@@ -195,6 +195,31 @@ extern u8 battler_attacking_order[];
 extern u32 battler_statuses3[4];
 extern u8 item_target_battler;
 
+#define STAT_CHANGE_MULTIPLIER_DIVIDEND 0
+#define STAT_CHANGE_MULTIPLIER_DIVISOR 1
+extern u8 battle_stat_change_multipliers[][2];
+
+#define STAT_CHANGE_APPLY_MULTIPLIER(value, stat)(((value) * battle_stat_change_multipliers[stat][STAT_CHANGE_MULTIPLIER_DIVIDEND]) / battle_stat_change_multipliers[stat][STAT_CHANGE_MULTIPLIER_DIVISOR])
+
+
+extern u8 battler_action_chosen[4];
+
+#define BATTLER_ACTION_MOVE 0
+#define BATTLER_ACTION_ITEM 1
+#define BATTLER_ACTION_SWITCH 2
+#define BATTLER_ACTION_RUN 3
+#define BATTLER_ACTION_SAFARI_WATCH_CAREFULLY 4
+#define BATTLER_ACTION_SAFARI_BALL 5
+#define BATTLER_ACTION_SAFARI_POKEBLOCK 6
+#define BATTLER_ACTION_SAFARI_GO_NEAR 7
+#define BATTLER_ACTION_SAFARI_RUN 8
+#define BATTLER_ACTION_WALLY_THROW 9
+#define BATTLER_ACTION_EXEC_SCRIPT 10
+#define BATTLER_ACTION_TRY_FINISH 11
+#define BATTLER_ACTION_FINISHED 12
+
+
+
 /**
  * Checks if a battler is an opponent
  * @param index The battler index
@@ -220,5 +245,11 @@ u8 battlers_alive(int side);
  * @return position position of the battler
  */
 u8 battler_get_position(u8 battler_idx);
+
+/**
+ * Gets the effective speed of a battler, considering paralysis, items, abilities, etc.
+ * @return the effective speed value of the battler
+ */
+int battler_get_effective_speed(u8 battler_idx);
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

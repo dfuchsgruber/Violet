@@ -45,7 +45,7 @@ void bsc_command_x04_critcalc() {
 			battlers[attacking_battler].species == POKEMON_PORENTA) critical_level += 2;
 	if (battlers[attacking_battler].ability == GLUECKSPILZ ||
 			battlers[attacking_battler].ability == ESCHAT) critical_level++;
-	critical_level = min(critical_level, 4);
+	critical_level = MIN(critical_level, 4);
 
 	// Roll for a critical hit
 	if (battlers[defending_battler].ability != KAMPFPANZER &&

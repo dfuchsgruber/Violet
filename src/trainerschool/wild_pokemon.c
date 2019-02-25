@@ -15,6 +15,7 @@
 #include "save.h"
 #include "data_structures.h"
 #include "agbmemory.h"
+#include "constants/pokemon_attributes.h"
 
 u16 trainerschool_wildbattle_secondary_starter_prng() {
 	u32 *state = (u32*)gp_stack_peek();
@@ -63,7 +64,10 @@ bool trainerschool_wildbattle_initialize_secondary_starter() {
 			trainerschool_wildbattle_secondary_starter_prng);
 		// If all ten questions were answered correctly, set the pokemon to shiny
 		if (*var_access(TRAINERSCHOOL_CORRECT_ANSWERS) == 10) {
-			opponent_pokemon[0].pid.fields.is_shiny = 1;
+			pid_t pid = {
+					.value = (u32)pokemon_get_attribute(&opponent_pokemon[0], ATTRIBUTE_PID, 0)};
+			pid.fields.is_shiny = 1;
+			pokemon_set_attribute(&opponent_pokemon[0], ATTRIBUTE_PID, &pid);
 		}
 		gp_stack_pop();
 		free(tid_ptr);

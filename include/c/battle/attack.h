@@ -36,6 +36,14 @@ u8 attack_get_target_of_active_battler(u16 attack, bool ignore_attack_targets);
 
 void damage_apply_multiplier(int multiplier);
 
+/**
+ * Returns the priority of an attack considering its user, i.e. abilities.
+ * @param attack the attack to get the priority of
+ * @param battler_idx the battler that uses the attack
+ * @return the attack priority
+ */
+s8 battle_attack_priority_get(u16 attack, u8 battler_idx);
+
 extern u8 *attack_anim_script;
 
 extern u8 *attack_anims[];

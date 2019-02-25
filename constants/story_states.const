@@ -1,0 +1,9 @@
+{
+	"type" : "enum",
+	"base" : 0,
+	"values" : [
+		"STORY_STATE_NONE",
+		"STORY_STATE_SILVANIA_FOREST_CLEAR",
+		"STORY_STATE_VULCANO_CLEAR"
+	]
+}

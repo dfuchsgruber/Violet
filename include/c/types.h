@@ -7,7 +7,6 @@
 #define LOW 0
 #define HIGH 1
 
-
 typedef unsigned char u8;
 typedef unsigned short int u16;
 typedef unsigned int u32;
@@ -38,12 +37,16 @@ typedef struct {
 } int_pair;
 
 
+#define MIN(x,y) ((x) < (y) ? (x) : (y))
+#define MAX(x,y) ((x) > (y) ? (x) : (y))
+#define ABS(x) ((x) < 0 ? (-(x)) : (x))
+#define SGN(x) ((x < 0 ? -1 : (x > 0 ? 1 : 0)))
+
 typedef s32 FIXED;
 #define FIXED_SHIFT 16
 
 #define INT_MAX 0x7FFFFFFF
 #define INT_MIN -0x7FFFFFF
-
 
 /**
  * Adds fixed point numbers

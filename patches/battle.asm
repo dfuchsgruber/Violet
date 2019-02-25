@@ -213,3 +213,8 @@ blxr4:
 _blxr0:
 	bx r0
 	.pool
+
+.org 0x08014C5C
+	ldr r3, =priority_compare | 1
+	bx r3
+	.pool

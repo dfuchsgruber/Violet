@@ -4,6 +4,8 @@
 #include "pokemon/virtual.h"
 #include "constants/natures.h"
 #include "constants/pokemon_attributes.h"
+#include "constants/difficulties.h"
+#include "constants/story_states.h"
 #include "vars.h"
 #include "prng.h"
 #include "data_structures.h"
@@ -14,42 +16,8 @@
 #include "battle/state.h"
 #include "trainer/trainer.h"
 #include "save.h"
+#include "constants/trainer_builds.h"
 
-static trainer_build_t trainer_builds [14] = {
-
-    {0x19,
-        {0, 0, 0, 0, 0, 0}, 0}, //None
-    {NATURE_HART,
-        {4, 252, 0, 252, 0, 0}, 0}, //physical sweep attack preference
-    {NATURE_FROH,
-        {4, 252, 0, 252, 0, 0}, 0}, //physical sweep init preference
-    {NATURE_MAESSIG,
-        {4, 0, 252, 252, 0, 0}, 0}, //special sweep sattack preference
-
-    {NATURE_SCHEU,
-        {4, 0, 252, 252, 0, 0}, 0}, //special sweep init preference
-    {NATURE_KUEHN,
-        {252, 0, 252, 0, 0, 4}, 0}, //physical wall attack minus
-    {NATURE_PFIFFIG,
-        {252, 0, 252, 0, 0, 4}, 0}, //physical wall sattack minus
-    {NATURE_STILL,
-        {252, 0, 4, 0, 0, 252}, 0}, //special wall attack minus
-
-    {NATURE_SACHT,
-        {252, 0, 4, 0, 0, 252}, 0}, //special wall sattack minus
-    {0x19,
-        {40, 40, 40, 40, 40, 40}, 0}, //balanced weak
-    {0x19,
-        {85, 85, 85, 85, 85, 85}, 0}, //balanced strong
-    {NATURE_NAIV,
-        {0, 252, 0, 4, 252, 0}, 0}, //mixed sweeper
-
-    {NATURE_HART,
-        {252, 252, 0, 4, 0, 0}, 0}, //tanky phyiscal
-    {NATURE_MAESSIG,
-        {252, 0, 0, 4, 252, 0}, 0} //tanky special 
-
-};
 
 u16 trainer_pokemon_prng() {
 	return (u16)_prng_xorshift(&(fmem.trainer_prng_state));
@@ -141,47 +109,59 @@ int trainer_build_party(pokemon *dst_party, u16 trainer_id) {
 
 
 void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
-	// Obtain the prng state that was seeded with the trainer id
-	if (!field.value) {
-		switch (*(var_access(DIFFICULTY))) {
-			case 0:
-			case 1:
-			case 2:
-			default:
-				return;
-			case 3:
-				//difficult
-				field.bitfield.build = 9;
-				break;
-			case 4:
-				//very difficult
-				field.bitfield.build = 10;
-				break;
+	pid_t pid = {.value = (u32)pokemon_get_attribute(poke, 0, 0)};
+	u8 ev_difficulty = 0; // EVs that are applied due to difficulty
+	switch(*var_access(DIFFICULTY)) {
+		case DIFFICULTY_HARD: ev_difficulty = 7; break; // 28 EVs on each stat
+		case DIFFICULTY_VERY_HARD: ev_difficulty = 21; break; // 84 EVs on each stat
 		}
-		field.bitfield.ability = (u8) (trainer_pokemon_prng() & 1); //random ability still
+	if (field.bitfield.build_idx == TRAINER_BUILD_NONE) {
+		// Distribute evs according to difficulty
+		for (int i = 0; i < 6; i++) {
+			pokemon_set_effective_ev(poke, i, ev_difficulty);
+			pokemon_set_potential_ev(poke, i, (u8)(4 * ev_difficulty));
+		}
+	} else {
+		// Apply the build of the trainer
+		u8 effective_ev_story = 0;
+		switch(*var_access(STORY_STATE)) {
+		case STORY_STATE_SILVANIA_FOREST_CLEAR: effective_ev_story = 7; break;
+		case STORY_STATE_VULCANO_CLEAR: effective_ev_story = 15; break;
+		}
+		effective_ev_story = (u8)(effective_ev_story + ev_difficulty);
+		for (int i = 0; i < 6; i++) {
+			u8 ev = trainer_builds[field.bitfield.build_idx].evs[i];
+			if (ev == 255) ev = effective_ev_story;
+			pokemon_set_effective_ev(poke, i, ev);
+			pokemon_set_potential_ev(poke, i, (u8)(4 * ev));
+		}
+		// Apply nature if present
+		u8 nature = trainer_builds[field.bitfield.build_idx].nature;
+		if (nature != 255) {
+			pid.fields.nature = (u8)(nature & 0x1F);
+		}
+		// Apply hidden power type
+		u8 hidden_power_type = trainer_builds[field.bitfield.build_idx].hidden_power_type;
+		if (hidden_power_type != 255) {
+			pid.fields.hidden_power_type = (u8)(hidden_power_type & 0x1F);
+		}
+		// Apply hidden power strength
+		u8 hidden_power_strength = trainer_builds[field.bitfield.build_idx].hidden_power_strength;
+		if (hidden_power_strength != 255) {
+			pid.fields.hidden_power_strength = (u8)(hidden_power_strength & 7);
+		}
+		// Apply the ability bit to the pokemon
+		int ability = field.bitfield.ability > 0;
+		pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
 	}
+	pid.fields.is_shiny = field.bitfield.is_shiny > 0;
+	pokemon_set_attribute(poke, ATTRIBUTE_PID, &pid);
+	if (field.bitfield.has_hidden_ability)
+			pokemon_set_hidden_ability(poke);
 
-	pid_t p = {(u32)pokemon_get_attribute(poke, 0, 0)};
-	p.fields.is_shiny = field.bitfield.shinyness ? 1 : 0;
-	if (p.fields.nature < 0x19)
-		p.fields.nature = (trainer_builds[field.bitfield.build].nature);
-	pokemon_set_attribute(poke, ATTRIBUTE_PID, &p);
-
-	u8 ability = field.bitfield.ability & 1;
-	pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
-
-	if (field.bitfield.hability) {
-		pokemon_set_hidden_ability(poke);
-	}
-
-	if (!pokemon_get_attribute(poke, 0xC, 0)) {
-		pokemon_set_attribute(poke, 0xC, &trainer_builds[field.bitfield.build].prefered_item);
-	}
-
-	int i;
-	for (i = 0; i < 6; i++) {
-		u8 effective_ev = (u8) (trainer_builds[field.bitfield.build].evs[i] >> 2);
-		pokemon_set_effective_ev(poke, i, effective_ev);
+	if (!pokemon_get_attribute(poke, ATTRIBUTE_ITEM, 0)) {
+		pokemon_set_attribute(poke, ATTRIBUTE_ITEM,
+				&trainer_builds[field.bitfield.build_idx].prefered_item);
 	}
 	pokemon_calculate_stats(poke);
 }

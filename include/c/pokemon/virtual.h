@@ -33,16 +33,90 @@ typedef union {
 
 #define STATUS_CONDITION_SLEEP 7
 
+
+typedef struct {
+	u16 species;
+	u16 item;
+	u32 exp;
+	u8 pp_up;
+	u8 friendship;
+} pokemon_substructure_section_A;
+
+typedef struct {
+	u16 moves[4];
+	u8 pp[4];
+} pokemon_substructure_section_B;
+
+typedef struct {
+	u8 evs[6];
+	u8 contest_stats[6];
+} pokemon_substructure_section_C;
+
+typedef struct {
+	u8 pokerus;
+	u8 catch_location;
+
+	u16 catch_level:7;
+	u16 catch_game:4;
+	u16 pokeball:4;
+	u16 ot_gender:1;
+
+	u32 hp_iv:5;
+	u32 attack_iv:5;
+	u32 defense_iv:5;
+	u32 speed_iv:5;
+	u32 special_attack_iv:5;
+	u32 special_defense_iv:5;
+	u32 is_egg:1;
+	u32 ability:1;
+
+	u32 coolness_ribbons:3;
+	u32 beatuy_ribbons:3;
+	u32 cuteness_ribbons:3;
+	u32 smartness_ribbons:3;
+	u32 toughness_ribbons:3;
+	u32 champion_ribbon:1;
+	u32 winning_ribbon:1;
+	u32 victory_ribbon:1;
+	u32 artist_ribbon:1;
+	u32 effort_ribbon:1;
+	u32 gift_ribbon_1:1;
+	u32 gift_ribbon_2:1;
+	u32 gift_ribbon_3:1;
+	u32 gift_ribbon_4:1;
+	u32 gift_ribbon_5:1;
+	u32 gift_ribbon_6:1;
+	u32 gift_ribbon_7:1;
+	u32 fateful_encounter:4;
+	u32 obedient:1;
+} pokemon_substructure_section_D;
+
+typedef union {
+	pokemon_substructure_section_A section_A;
+	pokemon_substructure_section_B section_B;
+	pokemon_substructure_section_C section_C;
+	pokemon_substructure_section_D section_D;
+	u16 values[6];
+} pokemon_substructure_section;
+
+typedef struct {
+	pid_t pid;
+	u32 tid;
+	u8 nickname[10];
+	u8 language;
+	u8 is_bad_egg : 1;
+	u8 has_species : 1;
+	u8 is_egg : 1;
+	u8 unused : 5;
+	u8 ot_name[7];
+	marking markings;
+	u16 checksum;
+	u16 padding;
+	pokemon_substructure_section encrypted_substructure[4];
+} box_pokemon;
+
 typedef struct pokemon {
-    pid_t pid;
-    u32 tid;
-    u8 nickname [10];
-    u16 language;
-    u8 ot_name [7];
-    marking markings;
-    u16 checksum;
-    u16 padding;
-    u16 encrypted_substructure [24];
+    box_pokemon box;
     u32 status_condition;
     u8 level;
     u8 pokerus_remaining_byte;
@@ -51,9 +125,8 @@ typedef struct pokemon {
     u16 attack;
     u16 defense;
     u16 speed;
-    u16 sattack;
-    u16 sdefense;
-
+    u16 special_attack;
+    u16 special_defense;
 } pokemon;
 
 
@@ -75,7 +148,7 @@ int pokemon_get_attribute(pokemon* p, int requested_attribute, void *result);
  * @param requested_attribute idx of the attribute to get
  * @param result Storage for the result if it is no scalar type (pass 0 otherwise)
  */
-int pokemon_get_substructure_attribute(pokemon *p, int requested_attribute, void *result);
+int box_pokemon_get_attribute(box_pokemon *p, int requested_attribute, void *result);
 
 /**
  * Sets the attribute of a virtual pokemon
@@ -91,7 +164,7 @@ void pokemon_set_attribute(pokemon* p, int requested_attribute, void* value);
  * @param requested_attribute idx of the attribute to set
  * @param value Pointer to the value to apply
  */
-void pokemon_set_substructure_attribute(pokemon* p, int requested_attribute, void* value);
+void box_pokemon_set_attribute(box_pokemon* p, int requested_attribute, void* value);
 
 /**
  * Calculates the stats of a pokemon.
@@ -106,7 +179,7 @@ void pokemon_calculate_stats(pokemon *p);
  * @param idx the index of the pokemon inside the given box
  * @return the pokemon instance (substructure only)
  */
-pokemon *pokemon_get_by_box(int box_idx, int idx);
+box_pokemon *pokemon_get_by_box(int box_idx, int idx);
 
 /**
  * Gets the number of pokemon in the player's party
@@ -199,8 +272,14 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
  */
 u32 tid_by_ot_name(u8 *ot_name);
 
-u8 get_pokemons_ability(pokemon *poke);
-u8 write_ability_into_dbuf(pokemon *poke);
+/**
+ * Checks if a pokemon has its hidden ability.
+ * @param p the pokemon to load the hidden ability from
+ * @return if the pokemon has its hidden ability
+ */
+bool pokemon_has_hidden_ability(box_pokemon *p);
+u8 pokemon_get_ability(pokemon *poke);
+u8 battler_load_ability_as_defender(pokemon *poke);
 void special_heal_team_index();
 void pokemon_team_remove();
 void pokemon_team_knows_hm();
@@ -211,12 +290,15 @@ bool pokemon_knows_hm(pokemon *p);
  */
 void pokemon_heal_player_party();
 
+#define GENDER_MALE 0
+#define GENDER_FEMALE 254
+#define GENDER_NONE 255
 /**
  *
- * @param p
+ * @param p the pokemon to get the gender of
  * @return 0 := male, 0xFE := female i guess? 0xFF := no gender at all
  */
-u8 pokemon_get_gender(pokemon *p);
+u8 pokemon_get_gender(box_pokemon *p);
 
 u8 pokemon_get_nature(pokemon *target);
 

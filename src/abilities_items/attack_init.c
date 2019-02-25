@@ -42,7 +42,7 @@ void stance_change_change_species(u8 target, u16 species){
             ATTRIBUTE_CURRENT_HP, 0);
     battlers[target].max_hp = (u16) pokemon_get_attribute(pokemon,
              ATTRIBUTE_TOTAL_HP, 0);
-    battlers[target].ability = get_pokemons_ability(pokemon);
+    battlers[target].ability = pokemon_get_ability(pokemon);
     battlers[target].type1 = basestats[species].type1;
     battlers[target].type1 = basestats[species].type2;
 

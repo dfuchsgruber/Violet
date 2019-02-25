@@ -29,7 +29,7 @@ void dungeon2_iterate(u8 *map, u8 *map2, int near_lower_bound, int far_upper_bou
             int fn = 0;
             for(int i = -2; i <= 2; i++){
                 for(int j = -2; j <= 2; j++){
-                    if(abs(i) == 2 && abs(j) == 2) continue;
+                    if(ABS(i) == 2 && ABS(j) == 2) continue;
                     if(map[(y + j) * dg2->width + x + i] == DG2_WALL)
                         fn++;
                 }

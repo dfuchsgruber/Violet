@@ -110,7 +110,7 @@ void dungeon2_set_encounter_ocean() {
 
   int level = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(INT_TO_FIXED(std_deviation),
         dungeon2_rnd_normal(dg2))));
-  level = max(min(level, 100), 2);
+  level = MAX(MIN(level, 100), 2);
 
   pid_t p = {dungeon2_rnd(dg2)};
 

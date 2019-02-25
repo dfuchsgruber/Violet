@@ -7,6 +7,7 @@
 #include "constants/item_weather_rock_types.h"
 #include "language.h"
 #include "constants/items.h"
+#include "item/custom.h"
 
 item items[] = {
 	{
@@ -899,7 +900,7 @@ item items[] = {
 		LANGDEP(PSTRING("Evolith"), PSTRING("????????")),
 		0x3b, //index
 		200, //price
-		0, //holding_effect_id
+		HOLD_EFFECT_EVOLITE, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3b_item_evolith,
 		0, //field_18
@@ -2670,7 +2671,7 @@ item items[] = {
 		0xb1, //index
 		100, //price
 		29, //holding_effect_id
-		2, //holding_effect_param
+		CHOICE_ITEM_SPECS, //holding_effect_param
 		str_item_desc_xb1_item_wahlglas,
 		0, //field_18
 		POCKET_ITEMS, //pocket
@@ -2685,7 +2686,7 @@ item items[] = {
 		0xb2, //index
 		100, //price
 		29, //holding_effect_id
-		1, //holding_effect_param
+		CHOICE_ITEM_SCARF, //holding_effect_param
 		str_item_desc_xb2_item_wahlschal,
 		0, //field_18
 		POCKET_ITEMS, //pocket
@@ -2805,7 +2806,7 @@ item items[] = {
 		0xba, //index
 		100, //price
 		29, //holding_effect_id
-		0, //holding_effect_param
+		CHOICE_ITEM_BAND, //holding_effect_param
 		str_item_desc_xba_item_wahlband,
 		0, //field_18
 		POCKET_ITEMS, //pocket
@@ -3731,10 +3732,10 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F8
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
+		LANGDEP(PSTRING("Lahmrauch"), PSTRING("Full Incense")),
+		0xF8, //index
+		5000, //price
+		HOLD_EFFECT_FULL_INCENSE, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf8_item_item_f8,
 		0, //field_18
