@@ -19705,8 +19705,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -19715,8 +19715,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19725,8 +19725,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19735,8 +19735,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19745,8 +19745,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19755,8 +19755,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19765,8 +19765,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19775,8 +19775,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19785,8 +19785,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19795,8 +19795,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19805,8 +19805,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19815,8 +19815,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19825,8 +19825,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19835,8 +19835,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19845,8 +19845,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19855,8 +19855,8 @@
 				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19865,8 +19865,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19875,8 +19875,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19885,8 +19885,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19895,8 +19895,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19905,8 +19905,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19915,8 +19915,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19925,8 +19925,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19935,8 +19935,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19945,8 +19945,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19955,8 +19955,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19965,8 +19965,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19975,8 +19975,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19985,8 +19985,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -19995,8 +19995,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20005,8 +20005,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20015,8 +20015,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20025,8 +20025,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20035,8 +20035,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20045,8 +20045,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20055,8 +20055,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20065,8 +20065,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20075,8 +20075,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20085,8 +20085,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20095,8 +20095,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20105,8 +20105,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20115,8 +20115,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x69",
@@ -20125,8 +20125,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20135,8 +20135,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20145,8 +20145,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20155,8 +20155,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20165,8 +20165,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20175,8 +20175,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x84",
@@ -20185,8 +20185,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20195,8 +20195,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20205,8 +20205,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20215,8 +20215,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20225,8 +20225,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20235,8 +20235,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20245,8 +20245,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20255,8 +20255,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20265,8 +20265,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20275,8 +20275,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20285,8 +20285,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20295,8 +20295,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20305,8 +20305,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20315,8 +20315,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20325,8 +20325,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20335,8 +20335,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20345,8 +20345,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20355,8 +20355,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20365,8 +20365,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20375,8 +20375,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20385,8 +20385,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20395,8 +20395,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20405,8 +20405,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20415,8 +20415,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20425,8 +20425,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20435,8 +20435,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20445,8 +20445,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20455,8 +20455,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20465,8 +20465,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20475,8 +20475,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20485,8 +20485,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20495,8 +20495,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20505,8 +20505,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20515,8 +20515,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20525,8 +20525,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20535,8 +20535,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20545,8 +20545,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20555,8 +20555,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20565,8 +20565,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20575,8 +20575,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20585,8 +20585,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20595,8 +20595,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20605,8 +20605,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20615,8 +20615,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20625,8 +20625,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20635,8 +20635,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20645,8 +20645,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20655,8 +20655,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20665,8 +20665,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20675,8 +20675,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20685,8 +20685,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20695,8 +20695,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20705,8 +20705,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20715,8 +20715,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20725,8 +20725,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20735,8 +20735,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20745,8 +20745,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20755,8 +20755,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20765,8 +20765,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20775,8 +20775,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20785,8 +20785,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20795,8 +20795,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20805,8 +20805,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20815,8 +20815,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20825,8 +20825,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20835,8 +20835,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20845,8 +20845,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20855,8 +20855,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20865,8 +20865,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20875,8 +20875,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -20885,8 +20885,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x60",
@@ -20895,8 +20895,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20905,8 +20905,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20915,8 +20915,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20925,8 +20925,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20935,8 +20935,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20945,8 +20945,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20955,8 +20955,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20965,8 +20965,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20975,8 +20975,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20985,8 +20985,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -20995,8 +20995,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21005,8 +21005,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21015,8 +21015,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21025,8 +21025,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21035,8 +21035,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21045,8 +21045,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21055,8 +21055,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21065,8 +21065,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21075,8 +21075,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21085,8 +21085,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21095,8 +21095,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21105,8 +21105,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21115,8 +21115,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21125,8 +21125,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21135,8 +21135,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21145,8 +21145,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21155,8 +21155,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21165,8 +21165,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21175,8 +21175,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21185,8 +21185,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21195,8 +21195,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21205,8 +21205,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21215,8 +21215,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21225,8 +21225,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21235,8 +21235,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21245,8 +21245,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21255,8 +21255,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21265,8 +21265,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21275,8 +21275,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21285,8 +21285,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21295,8 +21295,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21305,8 +21305,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21315,8 +21315,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21325,8 +21325,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21335,8 +21335,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21345,8 +21345,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21355,8 +21355,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21365,8 +21365,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21375,8 +21375,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x60",
@@ -21385,8 +21385,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21395,8 +21395,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21405,8 +21405,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -21415,8 +21415,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21425,8 +21425,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21435,8 +21435,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21445,8 +21445,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21455,8 +21455,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21465,8 +21465,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21475,8 +21475,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21485,8 +21485,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21495,8 +21495,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21505,8 +21505,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21515,8 +21515,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21525,8 +21525,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21535,8 +21535,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21545,8 +21545,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21555,8 +21555,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21565,8 +21565,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21575,8 +21575,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21585,8 +21585,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21595,8 +21595,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21605,8 +21605,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21615,8 +21615,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21625,8 +21625,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21635,8 +21635,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21645,8 +21645,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21655,8 +21655,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21665,8 +21665,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21675,8 +21675,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21685,8 +21685,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -21695,8 +21695,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x65",
@@ -21705,8 +21705,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21715,8 +21715,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21725,8 +21725,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21735,8 +21735,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21745,8 +21745,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21755,8 +21755,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21765,8 +21765,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21775,8 +21775,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21785,8 +21785,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21795,8 +21795,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21805,8 +21805,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21815,8 +21815,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21825,8 +21825,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21835,8 +21835,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21845,8 +21845,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21855,8 +21855,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21865,8 +21865,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21875,8 +21875,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21885,8 +21885,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21895,8 +21895,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21905,8 +21905,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21915,8 +21915,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21925,8 +21925,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21935,8 +21935,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21945,8 +21945,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21955,8 +21955,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21965,8 +21965,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21975,8 +21975,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21985,8 +21985,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -21995,8 +21995,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22005,8 +22005,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22015,8 +22015,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22025,8 +22025,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22035,8 +22035,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22045,8 +22045,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22055,8 +22055,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22065,8 +22065,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22075,8 +22075,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22085,8 +22085,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22095,8 +22095,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22105,8 +22105,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22115,8 +22115,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22125,8 +22125,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22135,8 +22135,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22145,8 +22145,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22155,8 +22155,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22165,8 +22165,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22175,8 +22175,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22185,8 +22185,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22195,8 +22195,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22205,8 +22205,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22215,8 +22215,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22225,8 +22225,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22235,8 +22235,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22245,8 +22245,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22255,8 +22255,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22265,8 +22265,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22275,8 +22275,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22285,8 +22285,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22295,8 +22295,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22305,8 +22305,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22315,8 +22315,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22325,8 +22325,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22335,8 +22335,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22345,8 +22345,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22355,8 +22355,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22365,8 +22365,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22375,8 +22375,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22385,8 +22385,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22395,8 +22395,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x1ff",
@@ -22405,8 +22405,8 @@
 				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
-				"field_6": "0x3",
-				"field_7": "0x1"
+				"field_7": "0x1",
+				"priority": "0x3"
 			},
 			{
 				"behaviour": "0x128",
@@ -22415,8 +22415,8 @@
 				"field_3": "0x7e",
 				"encounter_type": "0x0",
 				"field_5": "0x1",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x70",
@@ -22425,8 +22425,8 @@
 				"field_3": "0x77",
 				"encounter_type": "0x0",
 				"field_5": "0x1",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x1fc",
@@ -22435,8 +22435,8 @@
 				"field_3": "0x71",
 				"encounter_type": "0x0",
 				"field_5": "0x1",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -22445,8 +22445,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x14f",
@@ -22455,8 +22455,8 @@
 				"field_3": "0xaf",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa2",
@@ -22465,8 +22465,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x1",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x1",
@@ -22475,8 +22475,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22485,8 +22485,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22495,8 +22495,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22505,8 +22505,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22515,8 +22515,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22525,8 +22525,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22535,8 +22535,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22545,8 +22545,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22555,8 +22555,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22565,8 +22565,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22575,8 +22575,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22585,8 +22585,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22595,8 +22595,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22605,8 +22605,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22615,8 +22615,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22625,8 +22625,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22635,8 +22635,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22645,8 +22645,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22655,8 +22655,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22665,8 +22665,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22675,8 +22675,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22685,8 +22685,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22695,8 +22695,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -22705,8 +22705,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -22715,8 +22715,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22725,8 +22725,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22735,8 +22735,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22745,8 +22745,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22755,8 +22755,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22765,8 +22765,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22775,8 +22775,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22785,8 +22785,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22795,8 +22795,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22805,8 +22805,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22815,8 +22815,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22825,8 +22825,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22835,8 +22835,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22845,8 +22845,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22855,8 +22855,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22865,8 +22865,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22875,8 +22875,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22885,8 +22885,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22895,8 +22895,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22905,8 +22905,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22915,8 +22915,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -22925,8 +22925,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22935,8 +22935,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22945,8 +22945,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22955,8 +22955,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22965,8 +22965,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22975,8 +22975,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22985,8 +22985,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -22995,8 +22995,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23005,8 +23005,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23015,8 +23015,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23025,8 +23025,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23035,8 +23035,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23045,8 +23045,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23055,8 +23055,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23065,8 +23065,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23075,8 +23075,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23085,8 +23085,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23095,8 +23095,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23105,8 +23105,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23115,8 +23115,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23125,8 +23125,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0x0",
@@ -23135,8 +23135,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -23145,8 +23145,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23155,8 +23155,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23165,8 +23165,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23175,8 +23175,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23185,8 +23185,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23195,8 +23195,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23205,8 +23205,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23215,8 +23215,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23225,8 +23225,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23235,8 +23235,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23245,8 +23245,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23255,8 +23255,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23265,8 +23265,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23275,8 +23275,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23285,8 +23285,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23295,8 +23295,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23305,8 +23305,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23315,8 +23315,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23325,8 +23325,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23335,8 +23335,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23345,8 +23345,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0x0",
@@ -23355,8 +23355,8 @@
 				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23365,8 +23365,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23375,8 +23375,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23385,8 +23385,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23395,8 +23395,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
-				"field_6": "0x0",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x0"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23405,8 +23405,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23415,8 +23415,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23425,8 +23425,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23435,8 +23435,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23445,8 +23445,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23455,8 +23455,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23465,8 +23465,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23475,8 +23475,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23485,8 +23485,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23495,8 +23495,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23505,8 +23505,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23515,8 +23515,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23525,8 +23525,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			},
 			{
 				"behaviour": "0xa7",
@@ -23535,8 +23535,8 @@
 				"field_3": "0xa7",
 				"encounter_type": "0x2",
 				"field_5": "0x2",
-				"field_6": "0x1",
-				"field_7": "0x0"
+				"field_7": "0x0",
+				"priority": "0x1"
 			}
 		],
 		"gfx_compressed": 1,

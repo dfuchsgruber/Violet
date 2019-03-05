@@ -5047,5 +5047,50 @@ trainer trainers[TRAINER_CNT] = {
 			0x0,// field_22
 			0x0,// field_23
 			(trainer_pokemon*) trainer_party_xbe
-		}
+		},
+		[0xbf] = {
+				.trainerclass = TRAINERCLASS_HITZKOPF, .sprite = 0x12,
+				.encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Frenzis"),
+						PSTRING("Frencis")), .pokemon_cnt = 3,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+				.party = (trainer_pokemon*) trainer_party_xbf_inferior_gym
+		},
+		[0xc0] = {
+				.trainerclass = TRAINERCLASS_SCHOENHEIT, .sprite = 0xC,
+				.encounter_and_gender = {1, 1}, .name = LANGDEP(PSTRING("Iylsa"),
+						PSTRING("Iylsa")), .pokemon_cnt = 1,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+				.party = (trainer_pokemon*) trainer_party_xc0_inferior_gym
+		},
+		[0xc1] = {
+				.trainerclass = TRAINERCLASS_PICKNICKER3, .sprite = 0x56,
+				.encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Ferrys"),
+						PSTRING("Ferrys")), .pokemon_cnt = 2,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+				.party = (trainer_pokemon*) trainer_party_xc1_inferior_gym
+		},
+		[0xc2] = {
+				.trainerclass = TRAINERCLASS_GENTLEMAN, .sprite = 0x17,
+				.encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Olaver"),
+						PSTRING("Olaver")), .pokemon_cnt = 3,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+				.party = (trainer_pokemon*) trainer_party_xc2_inferior_gym
+		},
+		[0xc3] = {
+				.trainerclass = TRAINERCLASS_DRACHENPROFI, .sprite = 45,
+				.encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Vismayr"),
+						PSTRING("Vismayr")), .pokemon_cnt = 1,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+				.party = (trainer_pokemon*) trainer_party_xc3_inferior_gym
+		},
+		[0xc4] = {
+				.trainerclass = TRAINERCLASS_ARENALEITER, .sprite = 121,
+				.encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Igva"),
+						PSTRING("Igva")), .pokemon_cnt = 4,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+				.items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_SUPERTRANK, ITEM_NONE},
+				.party = (trainer_pokemon*) trainer_party_xc4_inferior_gymleader,
+				.uses_custom_items = true, .uses_custom_moves = true
+		},
 };

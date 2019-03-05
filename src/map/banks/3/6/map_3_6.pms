@@ -35,12 +35,12 @@
 					"target_index": 2,
 					"flag": "0x0",
 					"field_3": 0,
-					"x": 44,
+					"x": "43",
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
 					"behaviour_range": 0,
 					"script": "ow_script_0x860237",
-					"y": 20,
+					"y": "20",
 					"field_2": 0,
 					"is_trainer": 0,
 					"field_D": 0,
@@ -253,9 +253,9 @@
 			"warps": [
 				{
 					"level": 0,
-					"target_bank": 10,
+					"target_bank": "10",
 					"y": 19,
-					"target_map": 16,
+					"target_map": "0",
 					"x": 44,
 					"target_warp_idx": 0
 				},

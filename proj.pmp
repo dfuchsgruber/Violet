@@ -453,6 +453,11 @@
 				"map_10_0_inferior_gym",
 				"src/map/banks/10/0/map_10_0_inferior_gym.pms",
 				"MAP_INFERIOR"
+			],
+			"1": [
+				"map_10_1_inferior_gym_arena",
+				"src/map/banks/10/1/map_10_1_inferior_gym_arena.pms",
+				"MAP_INFERIOR"
 			]
 		},
 		"15": {
@@ -918,6 +923,10 @@
 		"map_footer_16_inferior_gym": [
 			16,
 			"src/map/banks/10/0/map_footer_16_inferior_gym.pms"
+		],
+		"map_footer_17_inferior_gym_arena": [
+			17,
+			"src/map/banks/10/1/map_footer_17_inferior_gym_arena.pms"
 		]
 	},
 	"tilesets_primary": {
