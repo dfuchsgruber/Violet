@@ -17,6 +17,7 @@
 #include "trainer/trainer.h"
 #include "save.h"
 #include "constants/trainer_builds.h"
+#include "debug.h"
 
 
 u16 trainer_pokemon_prng() {
@@ -157,7 +158,7 @@ void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 	pid.fields.is_shiny = field.bitfield.is_shiny > 0;
 	pokemon_set_attribute(poke, ATTRIBUTE_PID, &pid);
 	if (field.bitfield.has_hidden_ability)
-			pokemon_set_hidden_ability(poke);
+			pokemon_set_hidden_ability(&poke->box);
 
 	if (!pokemon_get_attribute(poke, ATTRIBUTE_ITEM, 0)) {
 		pokemon_set_attribute(poke, ATTRIBUTE_ITEM,

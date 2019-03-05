@@ -415,3 +415,5 @@ battle_stat_change_multipliers = 0x0825DDD1;
 battle_current_turn_seed = 0x02023E80;
 battler_action_chosen = 0x2023D7C;
 str_egg = 0x0825F762;
+summary_egg_memo_fontcolmap = 0x08465068;
+summary_state = 0x0203B140;

@@ -28,7 +28,7 @@ void present_give_purple_kecleon() {
 	for (int i = 0; i < 6; i++) {
 		pokemon_set_attribute(p, (u8)(ATTRIBUTE_HP_IV + i), &iv);
 	}
-	pokemon_set_hidden_ability(p);
+	pokemon_set_hidden_ability(&p->box);
 	int result = pokemon_give_with_player_not_ot(p);
 	if (result != 2) {
 		pokedex_operator(POKEMON_KECLEON_PURPLE, POKEDEX_SET | POKEDEX_SEEN, true);

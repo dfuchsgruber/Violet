@@ -1,6 +1,4 @@
 {
-	"type": "tileset_secondary",
-	"label": "maptileset251828",
 	"data": {
 		"behaviours": [
 			{
@@ -23546,5 +23544,7 @@
 		"field_3": 0,
 		"animation_initialize": "tileset_251828_anim_init",
 		"palette_displaced": 0
-	}
+	},
+	"label": "maptileset251828",
+	"type": "tileset_secondary"
 }

@@ -1019,3 +1019,25 @@ lsr r0, #0x1A
 	ldr r2, =breeding_get_egg_species_and_parents | 1
 	bx r2
 	.pool
+
+.org 0x08046B00
+	ldr r2, =egg_hatched_pokemon_new | 1
+	bx r2
+	.pool
+
+.org 0x0806D680
+	.word ow_script_egg_hatch
+
+// Summary
+
+.org 0x08137A0C
+	ldr r0, =summary_print_egg_memo | 1
+	bx r0
+	.pool
+
+
+.org 0x08464F88
+	.word str_summary_egg_memo_duration_very_long
+	.word str_summary_egg_memo_duration_long
+	.word str_summary_egg_memo_duration_soon
+	.word str_summary_egg_memo_duration_very_soon

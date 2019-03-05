@@ -55,7 +55,7 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
     }
     //now we add hidden ability
     if (feature_generator() < 16)
-    	pokemon_set_hidden_ability(p);
+    	pokemon_set_hidden_ability(&p->box);
 
     int r;
     //now we add egg moves

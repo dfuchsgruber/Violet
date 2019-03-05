@@ -74,4 +74,11 @@ void overworld_script_init_muted(u8 *script);
  */
 bool multichoice(u8 x, u8 y, u8 choice, bool forced_choice);
 
+/**
+ * Gives an egg to the player.
+ * @param species the species to create an egg of
+ * @return the result of giving the egg
+ */
+u16 overworld_script_giveegg(u16 species);
+
 #endif /* INCLUDE_C_OVERWORLD_SCRIPT_H_ */

@@ -91,6 +91,11 @@ typedef struct {
 	u32 obedient:1;
 } pokemon_substructure_section_D;
 
+#define CATCH_LOCATION_FATEFUL_ENCOUNTER 255
+#define CATCH_LOCATION_OVERWORLD_EGG 252
+#define CATCH_LOCATION_SPECIAL_EGG 253
+#define CATCH_LOCATION_INGAME_TRADE 254
+
 typedef union {
 	pokemon_substructure_section_A section_A;
 	pokemon_substructure_section_B section_B;
@@ -207,9 +212,9 @@ void pokemon_new(pokemon *space, u16 species, u8 level, u8 fixed_ivs,
  * Creates a new pokemon egg data (without actually setting the is_egg attribute).
  * @param dst target adress to create the pokemon at
  * @param species species to create an egg of
- * @param set_catch_location_to_xFD if set, the catch location is set to 0xFD (whatever this means)
+ * @param set_special_catch_location if set, the catch location is set to CATCH_LOCATION_SPECIAL_EGG
  */
-void pokemon_new_egg(pokemon *dst, u16 species, bool set_catch_location_to_xFD);
+void pokemon_new_egg(pokemon *dst, u16 species, bool set_special_catch_location);
 
 /**
  * Tries to add the pokemon to the player's party. If this fails, it tries to add it to any box.
@@ -217,7 +222,7 @@ void pokemon_new_egg(pokemon *dst, u16 species, bool set_catch_location_to_xFD);
  * @param dst the pokemon to be added to the player's collection.
  * @return 0 if added to the party, 1 if added to the box, 2 if everything failed
  */
-int pokemon_give(pokemon *dst);
+u8 pokemon_give(pokemon *dst);
 
 /**
  * Tries to add the pokemon to the player's party. If this fails, it tries to add it to any box.
@@ -238,7 +243,8 @@ int pokemon_to_box(pokemon *dst);
  * Enables the hidden ability on a pokemon.
  * @param p the pokemon to enable its hidden ability on
  */
-void pokemon_set_hidden_ability(pokemon *p);
+void pokemon_set_hidden_ability(box_pokemon *p);
+
 
 u16 pokemon_append_attack(pokemon *p, u16 attack);
 void pokemon_rotate_and_push_attack(pokemon *p, u16 attack);

@@ -2,6 +2,7 @@
 .include "callstds.s"
 .include "vars.s"
 .include "ordinals.s"
+.include "species.s"
 
 .global ow_script_find_egg
 ow_script_find_egg:
@@ -16,7 +17,7 @@ loadpointer 0 str_got_egg
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
-giveegg 0x8000 @// 0x8010 holds the box, 0x8011 the id in box
+special2 LASTRESULT 0x47
 compare LASTRESULT 2
 gotoif EQUAL no_place
 compare LASTRESULT 1

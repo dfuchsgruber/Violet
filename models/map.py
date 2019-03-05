@@ -75,7 +75,7 @@ tileset_behaviour_type = agb.types.BitfieldType('u32', [
     ('field_3', None, 6),
     ('encounter_type', None, 3),
     ('field_5', None, 2),
-    ('field_6', None, 2),
+    ('priority', None, 2),
     ('field_7', None, 1)
 ])
 

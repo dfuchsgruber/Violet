@@ -36,7 +36,7 @@ typedef struct {
 
 } trainer;
 
-trainer trainers [TRAINER_CNT];
+trainer trainers[TRAINER_CNT];
 
 /**
  * Checks the flag of a trainer

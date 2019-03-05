@@ -21,8 +21,8 @@ int pokemon_give_with_player_not_ot(pokemon *p) {
 	return pokemon_to_box(p);
 }
 
-void pokemon_set_hidden_ability(pokemon *p) {
-	int hp_ev_earned = pokemon_get_attribute(p, ATTRIBUTE_COOLNESS, NULL);
+void pokemon_set_hidden_ability(box_pokemon *p) {
+	int hp_ev_earned = box_pokemon_get_attribute(p, ATTRIBUTE_COOLNESS, NULL);
 	hp_ev_earned |= 0x80;
-	pokemon_set_attribute(p, ATTRIBUTE_COOLNESS, &hp_ev_earned);
+	box_pokemon_set_attribute(p, ATTRIBUTE_COOLNESS, &hp_ev_earned);
 }

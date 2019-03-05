@@ -269,7 +269,7 @@ void ev_menu_load_pokemon() {
 	if (!is_egg) {
 		itoa(strbuf, hidden_power_get_base_power(pid), ITOA_NO_PADDING, 2);
 		tbox_print_string(EV_MENU_TBOX_HIDDEN_POWER_STRENGTH, 2, 2, 0, 0, 0,
-				&ev_menu_font_colormap_std_dark,0, strbuf);
+				&ev_menu_font_colormap_std_light,0, strbuf);
 	} else {
 		tbox_sync(EV_MENU_TBOX_HIDDEN_POWER_STRENGTH, TBOX_SYNC_SET);
 	}
@@ -545,9 +545,9 @@ void ev_menu_init(u8 self) {
 }
 
 bg_config ev_menu_bg_configs[EV_MENU_BG_COUNT] = {
-	{.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 0, .size = 0, .color_mode = 0},
+	{.bg_id = 0, .char_base = 2, .map_base = 31, .priority = 1, .size = 0, .color_mode = 0},
 	{.bg_id = 1, .char_base = 0, .map_base = 30, .priority = 2, .size = 0, .color_mode = 0},
-	{.bg_id = 2, .char_base = 1, .map_base = 29, .priority = 1, .size = 0, .color_mode = 0},
+	{.bg_id = 2, .char_base = 1, .map_base = 29, .priority = 0, .size = 0, .color_mode = 0},
 };
 
 tboxdata ev_menu_tboxes[EV_MENU_TBOX_COUNT + 1] = {

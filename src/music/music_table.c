@@ -745,7 +745,9 @@ song song_table[] = {
   //Song 370
   {mus_glyphs, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 371
-  {mus_riding_cloud, SONG_TYPE_SONG, SONG_TYPE_SONG}
+  {mus_riding_cloud, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	// Song 372, (=0x174)
+  {mus_gymleader_new, SONG_TYPE_SONG, SONG_TYPE_SONG},
         
 
 };

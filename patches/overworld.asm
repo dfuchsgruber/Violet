@@ -125,7 +125,7 @@ overworld_pals equ 0x083A501C
 
 // Giveegg
 .org 0x080A02A0
-	ldr r1, = overworld_script_giveegg | 1
+	ldr r1, = overworld_script_give_egg | 1
 	bx r1
 	.pool
 

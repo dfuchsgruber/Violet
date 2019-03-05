@@ -33,9 +33,12 @@ str_dungeon_forest_collapsing:
 
 .global ow_script_test
 ow_script_test:
+settrainerflag 0xb7
+trainerbattlecont 0x1 0xb7 0x0 str_0x83114c str_0x8311a8 ow_script_0x83108d
 setvar 0x8004 6
 special 0x19
 waitstate
+cont_end:
 end
 
 givepokemon POKEMON_LEDYBA 12 0 0 0 0

@@ -448,6 +448,11 @@
 				"map_10_22",
 				"src/map/banks/10/22/map_10_22.pms",
 				"MAP_INFERIOR"
+			],
+			"0": [
+				"map_10_0_inferior_gym",
+				"src/map/banks/10/0/map_10_0_inferior_gym.pms",
+				"MAP_INFERIOR"
 			]
 		},
 		"15": {
@@ -909,6 +914,10 @@
 		"map_footer_11": [
 			11,
 			"/media/d/romhacking/Violet_Sources/src/map/banks/11/2_route_2_east_clouds/map_footer_11.pms"
+		],
+		"map_footer_16_inferior_gym": [
+			16,
+			"src/map/banks/10/0/map_footer_16_inferior_gym.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -944,7 +953,8 @@
 		"maptileset17": "src/map/tileset/maptileset17.pms",
 		"maptileset3": "src/map/tileset/maptileset3.pms",
 		"maptileset2": "src/map/tileset/maptileset2.pms",
-		"maptileset60": "src/map/tileset/maptileset60.pms"
+		"maptileset60": "src/map/tileset/maptileset60.pms",
+		"maptileset_inferior_gym": "src/map/tileset/maptileset_inferior_gym.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -979,6 +989,7 @@
 		"gfx_maptileset291108Tiles": "asset/gfx/tileset/gfx_maptileset291108.png",
 		"gfx_maptileset26Tiles": "asset/gfx/tileset/gfx_maptileset26.png",
 		"gfx_maptileset13Tiles": "asset/gfx/tileset/gfx_maptileset13.png",
-		"gfx_maptileset60Tiles": "asset/gfx/tileset/gfx_maptileset60.png"
+		"gfx_maptileset60Tiles": "asset/gfx/tileset/gfx_maptileset60.png",
+		"gfx_maptileset_inferior_gymTiles": "asset/gfx/tileset/gfx_maptileset_inferior_gym.png"
 	}
 }
