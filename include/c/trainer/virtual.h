@@ -8,12 +8,6 @@
 #ifndef INCLUDE_C_TRAINER_VIRTUAL_H_
 #define INCLUDE_C_TRAINER_VIRTUAL_H_
 
-typedef struct trainer_items {
-    u16 items[4];
-    u8 cnt;
-
-} trainer_items;
-
 typedef struct trainer_variables {
     u16 kind_of_battle;
     u16 trainer_id;
@@ -33,10 +27,9 @@ typedef struct trainer_variables {
 extern trainer_variables trainer_vars;
 
 /**
- * Loads the items of a trainer into the virutal trainer state
- * @param t_items the items a trainer possesses
+ * Sets the trainer ai up.
  */
-void load_trainer_items(trainer_items *t_items);
+void trainer_load_ai();
 
 /**
  * Reads an unaligned hword form the trainer build mini script

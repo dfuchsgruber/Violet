@@ -280,7 +280,7 @@ bsc_failure_strings = 0x083FE4C0;
 bsc_faint_pokemon = 0x081DABD7;
 critical_hit_multiplier = 0x02023D71;
 bsc_status_effect_to_apply = 0x2023FDE;
-
+battle_struct = 0x02023FF4;
 enigma_berries = 0x02023F54;
 lastresult = 0x020370D0;
 battle_trainer_id = 0x020386AE;
@@ -417,3 +417,4 @@ battler_action_chosen = 0x2023D7C;
 str_egg = 0x0825F762;
 summary_egg_memo_fontcolmap = 0x08465068;
 summary_state = 0x0203B140;
+trainer_load_ai = 0x080C6F58 | 1;

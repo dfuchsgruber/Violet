@@ -10,8 +10,8 @@
 	.pool
 	
 	
-.org 0x080C6F38
-	ldr r0, =hook_trainer_items | 1
+.org 0x080C6EC4
+	ldr r0, =trainer_load_items_and_ai | 1
 	bx r0
 	.pool
 

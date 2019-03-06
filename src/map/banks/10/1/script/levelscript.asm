@@ -44,6 +44,11 @@ call ow_script_0x92f097
 loadpointer 0 str_leave
 callstd MSG
 special 0x7
+cleartrainerflag 0xBF
+cleartrainerflag 0xC0
+cleartrainerflag 0xC1
+cleartrainerflag 0xC2
+cleartrainerflag 0xC3
 warpmuted 3 6 0 0 0
 waitstate
 releaseall

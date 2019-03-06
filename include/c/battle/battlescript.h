@@ -43,7 +43,13 @@ typedef struct {
 	u8 field_1E;
 } battlescript_global_stru;
 
+typedef struct {
+	u8 *scripts[8];
+	u8 size;
+} battlescript_stack_t;
+
 extern battlescript_global_stru bsc_global;
+
 
 /**
  * Loads the graphic for the attack "transform"

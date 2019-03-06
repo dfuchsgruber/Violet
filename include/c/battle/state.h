@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_BATTLE_STATE_H_
 #define INCLUDE_C_BATTLE_STATE_H_
 
+#include "battle/battlescript.h"
+
 #define BATTLE_DOUBLE 0x1
 #define BATTLE_LINK 0x2
 #define BATTLE_WILD 0x4
@@ -22,6 +24,7 @@
 #define BATTLE_EREADER 0x800
 #define BATTLE_12 0x1000
 #define BATTLE_LEGENDARY 0x2000
+#define BATTLE_FACTORY 0x80000
 #define BATTLE_31 0x80000000
 
 
@@ -154,7 +157,45 @@ typedef struct {
     u8 field_2A2;
 } battle_state_t;
 
+typedef struct {
+	void (*callbacks[8])(void);
+	u8 size;
+} battle_callbacks_stack_t;
 
+// Maybe in FRLG this differs, do not trust this too much...
+typedef struct {
+	u8 state;
+	u8 moveset_idx;
+	u16 current_move;
+	s8 score[4];
+	u32 result;
+	u32 flags;
+	u8 action;
+	u8 logic_idx;
+	u8 field_12[6];
+	u8 rng[4];
+} battle_ai_state;
+
+typedef struct {
+	u8 unkown[32];
+	u8 abilities[4];
+	u8 item_effects[4];
+	u16 trainer_items[4];
+	u8 trainer_item_count;
+} battle_history_t;
+
+typedef struct {
+	void *secret_base; // maybe?
+	void *flags; // maybe?
+	battlescript_stack_t *battle_script_stack;
+	battle_callbacks_stack_t *battle_callbacks_stack;
+	u16 *stats_before_level_up;
+	battle_ai_state *ai_state;
+	battle_history_t *history;
+	battlescript_stack_t *ai_script_stack;
+} battle_struct_t;
+
+extern battle_struct_t *battle_struct;
 extern u32 battle_flags;
 extern battle_state_t *battle_state;
 extern u8 battle_trainer_kind;

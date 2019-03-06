@@ -2,54 +2,54 @@
 #include "trainer/virtual.h"
 #include "constants/items.h"
 #include "constants/vars.h"
+#include "constants/flags.h"
 #include "vars.h"
 #include "flags.h"
+#include "battle/state.h"
+#include "agbmemory.h"
+#include "trainer/virtual.h"
+#include "trainer/trainer.h"
+#include "constants/difficulties.h"
+#include "debug.h"
 
-void load_trainer_items(trainer_items *t_items) {
-
-
-    u16 difficulty = *var_access(DIFFICULTY);
-
-    //First we get difficulty
-    switch (difficulty) {
-
-        case 0:
-            //Very easy, trainer have no items
-            t_items->items[0] = 0;
-            t_items->items[1] = 0;
-            t_items->items[2] = 0;
-            t_items->items[3] = 0;
-            t_items->cnt = 0;
-            break;
-        case 3:
-        case 4:
-        {
-
-
-            //Hard, trainer have game stage depending items
-            //Very hard, trainer have full restore and +2 items in every case
-            u16 trainer_item = ITEM_TRANK;
-            u8 additional_items = 1;
-            if (checkflag(0x820)) {
-                trainer_item = ITEM_SUPERTRANK;
-                additional_items++;
-            }
-            if (checkflag(0x822)) {
-                trainer_item = ITEM_HYPERTRANK;
-                additional_items++;
-            }
-            if (checkflag(0x824) || difficulty == 4) {
-                trainer_item = ITEM_TOP_GENESUNG;
-                additional_items++;
-            }
-
-            u8 i;
-            for (i = 0; i < additional_items && t_items->cnt < 4; i++) {
-                t_items->items[t_items->cnt] = trainer_item;
-                t_items->cnt++;
-            }
-            break;
-        }
-
-    }
+void trainer_load_items_and_ai() {
+	memset(battle_struct->history, 0, sizeof(battle_history_t));
+	if (trainer_vars.trainer_id != 0x400 &&
+			!(battle_flags & (BATTLE_LINK | BATTLE_SAFARI | BATTLE_EREADER | BATTLE_TOWER |
+					BATTLE_FACTORY))) { // Why the hell is the factory in here???
+		for (int i = 0; i < 4; i++) {
+			u16 item = trainers[trainer_vars.trainer_id].items[i];
+			if (item) {
+				battle_struct->history->
+				trainer_items[battle_struct->history->trainer_item_count++] = item;
+				dprintf("Load trainer item %d\n", item);
+			}
+		}
+		switch(*var_access(DIFFICULTY)) {
+		case DIFFICULTY_HARD:
+		case DIFFICULTY_VERY_HARD: {
+			u16 additional_item = ITEM_TRANK;
+			int additional_items = 1;
+			if (checkflag(FRBADGE_6) || *var_access(DIFFICULTY) == DIFFICULTY_VERY_HARD) {
+				additional_item = ITEM_TOP_GENESUNG;
+				additional_items = 4;
+			} else if (checkflag(FRBADGE_4)) {
+				additional_item = ITEM_HYPERTRANK;
+				additional_items = 3;
+			} else if (checkflag(FRBADGE_2)) {
+				additional_item = ITEM_SUPERTRANK;
+				additional_items = 2;
+			}
+			// Add these items to the trainer as well if there are slots
+			while(additional_items > 0 && battle_struct->history->trainer_item_count < 4) {
+				battle_struct->history->
+					trainer_items[battle_struct->history->trainer_item_count++] = additional_item;
+				additional_items--;
+				dprintf("Addded additional item %d\n", additional_item);
+			}
+		}
+		}
+	}
+	trainer_load_ai();
 }
+
