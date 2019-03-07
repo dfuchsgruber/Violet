@@ -1,6 +1,6 @@
 # Constants
-include/c/constants*
-include/as/constants*
+Violet/include/c/constants
+Violet/include/as/constants/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
