@@ -53,4 +53,36 @@ extern u8 str_egg[];
  */
 u16 *pokemon_get_egg_moves(u16 species, int *size);
 
+/**
+ * Gets the compatibility score for the pokemon currently in the daycare
+ * @param daycare the daycare structure
+ * @return the compatilbilty score for the pokemon in the daycare
+ */
+u8 daycare_get_compatibility_score(daycare_stru *daycare);
+
+/**
+ * Creates an egg in the daycare using the daycare structure of the first saveblock.
+ */
+void _daycare_spawn_egg();
+
+/**
+ * Calculates how many steps the current egg cycle needs.
+ * @return the length of a cycle for an egg
+ */
+u8 breeding_get_cycle_steps();
+
+/**
+ * Checks if the player party contains at least one pokemon with flame body.
+ * @return if the player party has at least one pokemon with flame body.
+ */
+bool pokemon_player_party_has_flamebody();
+
+/**
+ * Creates a new egg found in the overworld of some species.
+ * @param species the species to create an egg of
+ * @paran catch_location the catch location assigned with the egg
+ * @param dst the memory to place the pokemon at
+ */
+void overworld_egg_new(u16 species, int catch_location, pokemon *dst);
+
 #endif /* INCLUDE_C_POKEMON_EGG_MOVES_H_ */

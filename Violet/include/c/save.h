@@ -91,19 +91,9 @@ typedef struct custom_memory {
     pid_t daycare_offspring_pid; // FRLG's desing does not allow for an entire word to be stored...
     u8 daycare_offspring_has_hidden_ability;
     u8 daycare_offspring_male; // Volbeat and Nidoran may alter their gender when breeding (y tho?)
-    u8 unused0[0x6]; // mapheader dmapheader (part II);
-    u8 unused1[0x1C]; // mapfooter dmapfooter;
-    
-    //Dungeon Memory I
-    u8 unused2[0x14]; // wild_pokemon_data dwild_data;
-    u8 unused3[0x8]; // dwild_habitat_grass;
-    u8 unused4[0x8]; // wild_pokemon_habitat dwild_habitat_water;
-    u8 unused5[0x8]; // wild_pokemon_habitat dwild_habitat_rod;
-    u8 unused6[0x8]; // wild_pokemon_habitat dwild_habitat_radar;
-    u8 unused7[0xC]; // Deprecated (0x30 bytes)
-    u8 unused8[0x14]; // map_events devents;
-    u8 unused9[0x10]; // map_event_warp ladder;
-    u8 unused10[0x18 * 5]; // map_event_person dpers[5];
+    box_pokemon incubator_slots[3];
+    u8 incubator_ready;
+    u8 unused[14];
     
     //trash memory (generall a vector memory)
     u8 trash_flags[16];

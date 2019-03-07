@@ -9,10 +9,14 @@
 #include "constants/languages.h"
 #include "constants/items.h"
 #include "constants/flags.h"
+#include "constants/vars.h"
+#include "vars.h"
 #include "prng.h"
 #include "math.h"
 #include "flags.h"
 #include "pokemon/evolution.h"
+#include "constants/abilities.h"
+#include "pokepad/incubator.h"
 
 void _pokemon_get_egg_moves_stub(){
     derrf("Rom called old invalid stub for pokemon_get_egg_moves!\n");
@@ -144,4 +148,74 @@ void breeding_spawn_male_egg(daycare_stru *daycare) {
 	cmem.daycare_offspring_male = true;
 	cmem.daycare_offspring_has_hidden_ability = breeding_inherit_hidden_ability(daycare);
 	setflag(FLAG_DAYCARE_EGG_SPAWNED);
+}
+
+bool pokemon_party_has_flamebody(){
+    for(int i = 0; i < player_pokemon_cnt; i++){
+        if(pokemon_get_ability(&player_pokemon[i]) == FLAMMKOERPER)
+            return true;
+    }
+    return false;
+}
+
+u8 breeding_get_cycle_steps() {
+  int cycle = 255;
+  int hot_spring_boost = *var_access(HATCHING_BOOST_STEPS) + 1000;
+  cycle *= 1000;
+  cycle /= hot_spring_boost;
+  if (pokemon_party_has_flamebody())
+    cycle /= 2;
+  return (u8)(MAX(1, MIN(255, cycle)));
+}
+
+u8 daycare_proceed(daycare_stru *daycare) {
+  int pokemon_in_daycare = 0;
+  for (int i = 0; i < 2; i++) {
+    if (box_pokemon_get_attribute(&daycare->pokemon[i].pokemon, ATTRIBUTE_SANITY_HAS_SPECIES, 0)) {
+      daycare->pokemon[i].step_counter++;
+      pokemon_in_daycare++;
+    }
+  }
+  // Breed the pokemon in daycare
+  if (!daycare->offspring_present && pokemon_in_daycare == 2 &&
+      (daycare->pokemon[1].step_counter & 0xFF) == 0xFF) {
+    u8 score = daycare_get_compatibility_score(daycare);
+    if (score > (rnd16() * 100u) / 0xFFFF) {
+      _daycare_spawn_egg();
+    }
+  }
+  // Hatch eggs
+  if (++daycare->step_counter >= breeding_get_cycle_steps()) {
+    daycare->step_counter = 0;
+    for (u16 i = 0; i < player_pokemon_cnt; i++) {
+      if (!pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_IS_EGG, 0)) continue;
+      if (pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_SANITY_IS_BAD_EGG, 0)) continue;
+      int steps = pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_HAPPINESS, 0);
+      if (steps != 0) {
+        steps--;
+        pokemon_set_attribute(&player_pokemon[i], ATTRIBUTE_HAPPINESS, &steps);
+      } else {
+        // Hatch this pokemon
+        *var_access(0x8004) = i;
+        return true;
+      }
+    }
+    // Proceed incubator
+    for (int i = 0; i < incubator_available_slots(); i++) {
+      if (cmem.incubator_ready & (1 << i)) continue; // This egg is already breed entirely
+      if (!box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_IS_EGG, 0)) continue;
+      if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SANITY_IS_BAD_EGG, 0))
+        continue;
+      int steps = box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, 0);
+      if (steps != 0) {
+        steps = MAX(0, steps - 2);
+        box_pokemon_set_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, &steps);
+      } else {
+        cmem.incubator_ready |= (u8)(1 << i);
+        *var_access(0x8004) = (u16)(i + 6);
+        return true;
+      }
+    }
+  }
+  return false;
 }

@@ -1028,6 +1028,11 @@ lsr r0, #0x1A
 .org 0x0806D680
 	.word ow_script_egg_hatch
 
+.org 0x080461C8
+	ldr r1, =daycare_proceed | 1
+	bx r1
+	.pool
+
 // Summary
 
 .org 0x08137A0C

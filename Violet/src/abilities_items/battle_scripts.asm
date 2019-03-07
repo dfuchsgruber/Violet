@@ -1,5 +1,5 @@
 .include "battlescript.s"
-.include "constants/pokemon_stats.s"
+.include "constants/pokemon_stat_names.s"
 
 .global bsc_wandlungskunst
 .global bsc_stance_change_to_attack

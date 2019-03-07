@@ -148,3 +148,7 @@ special_table equ 0x0815FCC0
 .org (special_table+ (0x4B * 4))
 		.word dungeon_map_entrance_get_type | 1
 		.pool
+
+.org (special_table + (0x4C * 4))
+		.word special_overworld_script_give_egg_into_incubator_slots | 1
+		.pool

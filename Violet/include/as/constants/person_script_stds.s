@@ -1,0 +1,3 @@
+.equ PERSON_SCRIPT, 0
+.equ PERSON_ITEM, 1
+.equ PERSON_EGG, 2

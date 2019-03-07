@@ -1,0 +1,9 @@
+.equ DONT_SHOW, 0
+.equ SHOW, 1
+.equ MAP_SHOW_NAME_2, 2
+.equ MAP_SHOW_NAME_3, 3
+.equ MAP_SHOW_NAME_4, 4
+.equ MAP_SHOW_NAME_5, 5
+.equ SHOW_VILLAGE, 6
+.equ MAP_SHOW_NAME_7, 7
+.equ SHOW_CITY, 13

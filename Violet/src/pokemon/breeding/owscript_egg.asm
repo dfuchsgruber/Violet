@@ -17,11 +17,16 @@ loadpointer 0 str_got_egg
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
+// Try to put it into the incubator first
+special2 LASTRESULT 0x4C
+compare LASTRESULT 255
+gotoif NOT_EQUAL in_incubator
 special2 LASTRESULT 0x47
 compare LASTRESULT 2
 gotoif EQUAL no_place
 compare LASTRESULT 1
 callif EQUAL in_box
+egg_obtained:
 fadescreen 1
 hidesprite LASTTALKED
 fadescreen 0
@@ -37,6 +42,12 @@ no_place:
 loadpointer 0 str_no_place
 callstd MSG
 return
+
+in_incubator:
+loadpointer 0 str_in_incubator
+callstd MSG_KEEPOPEN
+closeonkeypress
+goto egg_obtained
 
 dont_pickup:
 closeonkeypress
@@ -55,7 +66,11 @@ str_no_place:
 
 str_in_box:
 	.autostring 35 2 "Es wurde in BUFFER_2\nabgelegt."
+str_in_incubator:
+	.autostring 34 2 "Es wurde im Inkubator abgelegt."
 
 .elseif LANG_EN
+str_in_incubator:
+	.autostring 34 2 "It was placed in the incubator."
 
 .endif

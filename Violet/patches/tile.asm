@@ -65,11 +65,6 @@
 .org 0x08398EA8
     .word 0x7B313F52
 
-.org 0x08046294
-    ldr r1, =pokemon_hatch_decrement_hook | 1
-    bx r1
-    .pool
-
 
 //hidden items
 .org 0x080CC604
