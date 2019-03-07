@@ -4,6 +4,7 @@
 #include "dungeon/dungeon2.h"
 #include "pokepad/state.h"
 #include "pokepad/pokedex/state.h"
+#include "pokepad/incubator.h"
 #include "map/wild_pokemon.h"
 #include "map/event.h"
 #include "map/header.h"
@@ -93,7 +94,7 @@ typedef struct custom_memory {
     u8 daycare_offspring_male; // Volbeat and Nidoran may alter their gender when breeding (y tho?)
     box_pokemon incubator_slots[3];
     u8 incubator_ready;
-    u8 unused[14];
+    u8 unused[13];
     
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
@@ -125,7 +126,7 @@ typedef struct {
     pokepad_memory *pad_mem;
     wondertrade_memory *wtrade_mem;
     pokedex_memory *dex_mem;
-    void *fp_mem;
+    incubator_state_stru *incubator_state;
     ev_menu_state_stru *ev_menu_state;
     u8 *additional_levelscript_4;
     u16 dmart[32]; //max 32 items per mart

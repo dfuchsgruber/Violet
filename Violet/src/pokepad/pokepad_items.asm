@@ -1,3 +1,5 @@
+.include "flags.s"
+
 .global pokepad_items
 
 .align 4
@@ -21,6 +23,11 @@ items:
     .word str_pokepad_pokeradar
     .word pokeradar_init //should be initilaizer func
     .word str_pokepad_pokeradar_desc //should be descr
+    // Incubator
+    .word 0x828//FLAG_INCUBATOR
+    .word str_pokepad_incubator
+    .word incubator_initialize
+    .word str_pokepad_incubator_desc
     
     .word 0xFFFF
     .word 0
@@ -50,6 +57,12 @@ items:
 	str_pokepad_pokeradar_desc:
 		.string "Spüre seltene Pokémon in der\nNähe auf."
 
+	str_pokepad_incubator:
+		.string "Inkubator"
+
+	str_pokepad_incubator_desc:
+		.string "Brüte Eier aus und überprüfe\nderen Status."
+
 .elseif LANG_EN
 
 .global str_pokepad_description
@@ -73,4 +86,10 @@ items:
 
 	str_pokepad_pokeradar_desc:
 		.string "Traces rare Pokémon\nnearby."
+
+	str_pokepad_incubator:
+		.string "Incubator"
+
+	str_pokepad_incubator_desc:
+		.string "Hatch eggs and check their status."
 .endif

@@ -149,21 +149,43 @@ extern "C" {
      */
     void tbox_sync_with_virtual_bg_and_init_all(tboxdata *boxes);
 
+
+#define TBOX_MESSAGE_NUM_TILES 0x28
     /**
-     * Initializes the border of a textbox
+     * Loads tileset and palette of the standard textbox gfx for messages.
+     * @param box_id The id of the textbox
+     * @param set_displace Offset of the border in pixels
+     * @param dst_color The first color the border uses
+     */
+    void tbox_message_init(u8 box_id, u16 set_displace, u16 dst_color);
+
+#define TBOX_CONTEXT_BORDER_NUM_TILES 0x12 // 0x12 Tiles are copied but it seems only 0x8 are used
+
+    /**
+     * Initializes the border of a textbox for context menus with the border according to the
+     * style set by the player.
+     * @param box_id The id of the textbox
+     * @param set_displace Offset of the border in pixels
+     * @param dst_color The first color the border uses
+     */
+    void tbox_context_init_border_set_style(u8 box_id, u16 set_displace, u16 dst_color);
+
+#define TBOX_MESSAGE_BORDER_NUM_TILES 0x8
+    /**
+     * Initializes the border of a textbox to display messages with default style.
      * @param box_id The id of the textbox
      * @param set_displace Offset of the border in pixels
      * @param dst_color The first color the border uses (probably wrong tho)
      */
-    void tbox_border_init(u8 box_id, u16 set_displace, u16 dst_color);
+    void tbox_message_init_border(u8 box_id, u16 set_displace, u16 dst_color);
 
     /**
      * Draws the border of a textbox
      * @param box_id The id of the textbox
-     * @param map_displace Offset of border in tiles (i.e. on the tilemap)
+     * @param tile the tile index the border uses
      * @param dst_pal The palette the border uses
      */
-    void tbox_border_draw(u8 box_id, u16 map_displace, u8 dest_pal);
+    void tbox_border_draw(u8 box_id, u16 tile, u8 dest_pal);
 
     /**
      * Flushes the border of a textbox
