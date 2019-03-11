@@ -363,7 +363,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 6,
-					"script": "ow_script_trainerschool_written_test",
+					"script": "ow_script_trainerschool_start_exam",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"

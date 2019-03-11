@@ -65,9 +65,9 @@ mov_look_right:
 .byte STOP
 
 
-.global ow_script_trainerschool_written_test
+.global ow_script_trainerschool_start_exam
 
-ow_script_trainerschool_written_test:
+ow_script_trainerschool_start_exam:
 lockall
 @ All npcs (+ player) look up
 applymovement 0xff mov_look_up
@@ -128,20 +128,20 @@ checksound
 applymovement 0x9 mov_faun_back
 waitmovement 0x0
 call ow_script_0x89c5ee
-loadpointer 0x0 str_test_begins
+loadpointer 0x0 str_exam_begins
 callstd MSG
 special 0x7
-@ Test begins - start cutscene
+@ Exam begins - start cutscene
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 playsong MUS_JEROPARDY 0x0
 setvar 0x8000 0x0
 @ setvar STORY_PROGRESS 0x6
-callasm trainerschool_test_init
+callasm trainerschool_exam_init
 waitstate
 clearflag TRANS_DISABLE
 fadescreen 0x0
-@ Let npcs react to test
+@ Let npcs react to exam
 sound 0x15
 applymovement 3 mov_exclam
 waitmovement 0
@@ -155,10 +155,10 @@ sound 0x15
 applymovement 2 mov_question
 waitmovement 0
 pause 128
-@ Test is over
+@ Exam is over
 fadesong MUS_TRAINERSCHOOL
 call ow_script_0x89c5ee
-loadpointer 0x0 str_test_over
+loadpointer 0x0 str_exam_over
 callstd MSG
 special 0x7
 @ Faun collects the sheets
@@ -195,7 +195,7 @@ checksound
 applymovement 0x9 mov_faun_back
 waitmovement 0x0
 call ow_script_0x89c5ee
-loadpointer 0x0 str_after_test
+loadpointer 0x0 str_after_exam
 callstd MSG
 special 0x7
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
@@ -293,13 +293,13 @@ str_faun_to_player:
 str_faun_announce:
 	.autostring 35 2 "So ihr Bälger!\nHeute ist es so weit und ihr werdet nach meiner harten Ausbildung zu echten Trainern!\pZuerst werde ich euer Wissen in einer schriftlichen Prüfung abfragen.\pDann geht es nach draußen, wo ihr einen Feldtest bestehen müsst.\pIch bin mir sicher, dass ihr alle das nicht vergeigen werdet!\pIch teile nun die Fragebögen aus.\pKeinen Mucks will ich dabei hören!"
         
-str_test_begins:
+str_exam_begins:
 	.autostring 35 2 "Na dann! Viel Glück\pIhr werdet es brauchenDOTS\nHehe!"
         
-str_test_over:
+str_exam_over:
 	.autostring 35 2 "Gut, das wars!\nStifte weg!\pDas war ein kleiner Vorgeschmack auf das Trainer-Dasein!\pKeine Bange, der Feldtest macht ein Stück mehr Spaß!"
         
-str_after_test:
+str_after_exam:
 	.autostring 35 2 "Sehr schön!\nIch werde mir eure Antworten ansehen und ihr könnt erst einmal durchschnaufen.\pWir treffen uns auf dem Hof, wo der Feldtest stattfindet.\pDas wird ein Spaß werden, meint ihr nicht auch?"
         
 .elseif LANG_EN
