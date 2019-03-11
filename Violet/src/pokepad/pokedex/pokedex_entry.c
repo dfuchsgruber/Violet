@@ -339,7 +339,7 @@ u8 pokedex_init_entry_from_battle(u16 species){
     u8 cb_id = big_callback_new(pokedex_entry_from_battle_cb, 0);
     big_callbacks[cb_id].params[0] = 0;
     big_callbacks[cb_id].params[1] = 120; //countdown
-    fading_cntrl.field_8 &= 0x7F;
+    fading_control.buffer_transfer_enabled = false;
     fadescreen(0xFFFFFFFF, 0, 16, 0, 0xFFFF);
     
     //Set the pokedex callback3

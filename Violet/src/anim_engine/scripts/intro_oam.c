@@ -39,7 +39,8 @@ gfx_frame gfx_anim_intro_meteor[] = {
 gfx_frame *gfx_anim_table_intro_meteor[] = {gfx_anim_intro_meteor};
 
 rotscale_frame rotscal_anim_intro_meteor[] = {
-    {0x200, 0x200, 0, 0, 0}, {-8, -8, 0, 63, 0}, {ROTSCALE_ANIM_END, 0, 0, 0, 0} 
+    {.affine = {0x200, 0x200, 0, 0, 0}}, {.affine = {-8, -8, 0, 63, 0}},
+    {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
 rotscale_frame *rotscale_anim_table_intro_meteor[] = {rotscal_anim_intro_meteor};
@@ -220,7 +221,7 @@ gfx_frame gfx_anim_intro_waves[] = {
 gfx_frame *gfx_anim_table_intro_waves[] = {gfx_anim_intro_waves};
 
 rotscale_frame rotscal_anim_intro_waves[] = {
-    {0x200, 0x200, 0, 0, 0}, {ROTSCALE_ANIM_END, 0, 0, 0, 0}
+    {.affine = {0x200, 0x200, 0, 0, 0}}, {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
 rotscale_frame *rotscale_anim_table_intro_waves[] = {rotscal_anim_intro_waves};

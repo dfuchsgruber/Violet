@@ -73,7 +73,8 @@ sprite trainerschool_test_sprite = {
 
 
 rotscale_frame trainerschool_test_rotscal_anim[] = {
-    {0x200, 0x200, 0, 0, 0}, {-36, -36, 0, 12, 0}, {ROTSCALE_ANIM_END, 0, 0, 0, 0} 
+    {.affine = {0x200, 0x200, 0, 0, 0}}, {.affine = {-36, -36, 0, 12, 0}},
+    {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
 rotscale_frame *trainerschool_test_rotscale_table[] = {trainerschool_test_rotscal_anim};

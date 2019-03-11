@@ -15,14 +15,15 @@ typedef struct {
     u16 scale;
     u16 color : 15;
     u16 active : 1;
-    u8 field_8;
+    u8 field_8 : 7;
+    u8 buffer_transfer_enabled : 1;
     u8 field_9;
     u8 field_A;
     u8 field_B;
 
 } stru_fading_cntrl;
 
-extern stru_fading_cntrl fading_cntrl;
+extern stru_fading_cntrl fading_control;
 
 /**
  * Checks if the fading control reports an active fading.

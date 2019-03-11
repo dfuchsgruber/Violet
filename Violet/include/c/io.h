@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_IO_H_
 #define INCLUDE_C_IO_H_
 
+#define IO_BGHOFS(x) (0x10 + ((x) << 2))
+#define IO_BGVOFS(x) (0x12 + ((x) << 2))
+
 #define IO_BLDCNT 0x50
 #define IO_BLDCNT_BG0_FIRST 1
 #define IO_BLDCNT_BG1_FIRST 2

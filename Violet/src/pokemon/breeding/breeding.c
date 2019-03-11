@@ -206,10 +206,10 @@ u8 daycare_proceed(daycare_stru *daycare) {
       if (!box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_IS_EGG, 0)) continue;
       if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SANITY_IS_BAD_EGG, 0))
         continue;
-      int steps = box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, 0);
-      if (steps != 0) {
-        steps = MAX(0, steps - 2);
-        box_pokemon_set_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, &steps);
+      int cycles = box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, 0);
+      if (cycles != 0) {
+        cycles = MAX(0, cycles - 2);
+        box_pokemon_set_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, &cycles);
       } else {
         cmem.incubator_ready |= (u8)(1 << i);
         *var_access(0x8004) = (u16)(i + 6);

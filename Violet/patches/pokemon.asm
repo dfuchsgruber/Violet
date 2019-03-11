@@ -1033,6 +1033,12 @@ lsr r0, #0x1A
 	bx r1
 	.pool
 
+.org 0x08046104
+	.word str_egg
+
+.org 0x080461a8
+	.word str_egg
+
 // Summary
 
 .org 0x08137A0C

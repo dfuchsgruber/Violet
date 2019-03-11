@@ -10,12 +10,9 @@
 #include "fading.h"
 
 /*
- * 
+ *
  */
 bool fading_is_active() {
-    if ((*((u8*) (0x02037AB8 + 7))) & 0x80) {
-        return true;
-    }
-    return false;
+    return fading_control.active;
 }
 

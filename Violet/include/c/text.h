@@ -141,7 +141,7 @@ extern "C" {
      * @param str The string to print
      */
     void tbox_print_string(u8 box_id, u8 font, u16 x, u16 y, u8 line_spacing_upper,
-        u8 line_spacing_lower, tbox_font_colormap* color_map, u8 print_charbase, u8* str);
+        u8 line_spacing_lower, tbox_font_colormap* color_map, u8 speed, u8* str);
 
     /**
      * Initializes multiple boxes on the virtual background
@@ -149,6 +149,33 @@ extern "C" {
      */
     void tbox_sync_with_virtual_bg_and_init_all(tboxdata *boxes);
 
+    /**
+     * Returns the speed value used for tboxes according to the user settings.
+     * @return the speed value used for tboxes according to the user settings
+     */
+    u8 tbox_get_set_speed();
+
+    /**
+     * Uses a big callback to display a text and sets the callback function to a continuation
+     * afterwards.
+     * @param callback_idx the callback to use
+     * @param box_idx the box to display the message in
+     * @param border_start_tile the tile the border is located at
+     * @param border_palette the palette is located at
+     * @param font the font to display the message in
+     * @param speed the speed to display the message in
+     * @param text the text to display
+     * @param continuation the function the callback executes after the text has been printed
+     */
+    void tbox_print_string_and_continue(u8 callback_idx, u8 box_idx, u16 border_start_tile,
+        u8 border_palette, u8 font, u8 speed, const u8 *text, void (*continuation)(u8));
+
+    /**
+     * Removes a dialog textbox.
+     * @param tbox_idx the index of the textbox
+     * @param copy_to_vram if the changes shall trigger a vram copy request
+     */
+    void tbox_remove_dialog(u8 tbox_idx, u8 copy_to_vram);
 
 #define TBOX_MESSAGE_NUM_TILES 0x28
     /**

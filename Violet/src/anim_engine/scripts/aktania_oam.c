@@ -6,13 +6,13 @@
 #include "constants/species.h"
 
 rotscale_frame rs_frames_aktania_sky_regis[] = {
-    {0x60, 0x60, 0, 0, 0},
-    {ROTSCALE_ANIM_END, 0, 0, 0, 0}
+    {.affine = {0x60, 0x60, 0, 0, 0}},
+    {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
 rotscale_frame rs_frames_aktania_sky_deoxys[] = {
-    {0xC0, 0xC0, 0, 0, 0},
-    {ROTSCALE_ANIM_END, 0, 0, 0, 0}
+    {.affine = {0xC0, 0xC0, 0, 0, 0}},
+    {.command = {ROTSCALE_ANIM_END, 0, 0, 0}}
 };
 
 rotscale_frame *rs_table_aktania_sky_regis[] = {rs_frames_aktania_sky_regis};

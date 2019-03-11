@@ -15,6 +15,8 @@
 #include "save.h"
 #include "pokepad/incubator.h"
 
+u8 str_egg[] = LANGDEP(PSTRING("Ei"), PSTRING("Egg"));
+
 void overworld_egg_new(u16 species, int catch_location, pokemon *dst) {
   pokemon_new_egg(dst, species, true);
   // Apply 31-ivs

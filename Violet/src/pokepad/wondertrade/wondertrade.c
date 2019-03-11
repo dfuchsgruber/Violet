@@ -27,6 +27,7 @@
 #include "overworld/pokemon_party_menu.h"
 #include "overworld/script.h"
 #include "dma.h"
+#include "data_structures.h"
 
 extern const unsigned short gfx_wondertrade_bg_upperTiles[];
 extern const unsigned short gfx_wondertrade_bg_upperMap[];
@@ -227,10 +228,9 @@ bool wondertrade_can_pokemon_be_sent() {
 }
 
 void wondertrade_callback_after_selection() {
-    u16 *result = (u16*) 0x020370C0;
-    u16 *tmp_from_outdoor = (u16*) 0x020370C2;
-    if (*result >= 6) {
-        if (*tmp_from_outdoor) {
+    int from_outdoor = gp_stack_pop();
+    if (*var_access(0x8004) >= 6) {
+        if (from_outdoor) {
             callback1_set(map_reload);
         } else {
             callback1_set(pokepad_callback_init);
@@ -242,15 +242,14 @@ void wondertrade_callback_after_selection() {
                 (*var_access(WONDERTRADE_CNT))++;
             }
             *var_access(WONDERTRADE_STEPS_TO_ENABLE) = 0;
-            *tmp_from_outdoor = *result; //var8005 <- var8004
+            *var_access(0x8005) = *var_access(0x8004); //var8005 <- var8004
             //now we initialize the ingame trade
-            void **unkown_func_ptr = (void**) 0x3004F70;
-            *unkown_func_ptr = ingame_trade_unknown_func;
+            ingame_trade_unkown_callback = ingame_trade_unknown_func;
             callback1_set(ingame_trade_init_callback);
 
         } else {
             fmem.wtrade_mem = (wondertrade_memory*) malloc(sizeof (wondertrade_memory));
-            fmem.wtrade_mem->from_outdoor = (bool) (*tmp_from_outdoor);
+            fmem.wtrade_mem->from_outdoor = from_outdoor;
             fmem.wtrade_mem->error_m = true;
             fmem.wtrade_mem->usable = true;
             fmem.wtrade_mem->cursor = 0;
@@ -270,14 +269,10 @@ void wondertrade_callback_after_selection() {
 void wondertrade_callback_init_selection() {
     generic_callback1();
     if (!fading_is_active()) {
-        u8 *flag = (u8*) 0x02037AC0;
-        *flag |= 0x80;
-        void **launch_func = (void **) 0x03004F74;
-        *launch_func = (void**) 0x08128435;
+        fading_control.buffer_transfer_enabled = true;
+        gp_stack_push(fmem.wtrade_mem->from_outdoor);
         pokemon_party_menu_init(3, 0, 0xB, 0, 0,
-            (void (*)())0x0811FB5D, wondertrade_callback_after_selection); // <---------- This init function is the resume callback from selection
-        u16 *tmp_from_outdoor = (u16*) 0x020370C2;
-        *tmp_from_outdoor = fmem.wtrade_mem->from_outdoor;
+            sub_811FB5C, wondertrade_callback_after_selection);
         wondertrade_free_components();
     }
 }

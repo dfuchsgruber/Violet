@@ -140,6 +140,20 @@ extern u8 player_pokemon_cnt;
 extern pokemon opponent_pokemon[];
 
 /**
+ * Compactifies the player party, i.e. fills empty slots upwards. One should also update the
+ * pokemon count after removing a pokemon using player_party_recount_pokemon.
+ * @returns the first slot thats was previosly emptied but due to compactifing was filled with a
+ * succeeding party pokemon, or -1 instead.
+ */
+s16 player_pokemon_compact();
+
+/**
+ * Updates player_pokemon_cnt by counting pokemon with a non zero species.
+ * @return the number of pokemon in the player party
+ */
+u8 player_pokemon_recount_pokemon();
+
+/**
  * Gets the attribute of a virtual pokemon
  * @param p The offset of the virtual pokemon
  * @param requested_attribute Id of the attribute to get
@@ -238,6 +252,13 @@ int pokemon_give_with_player_not_ot(pokemon *p);
  * @return 1 on success, 2 on failure
  */
 int pokemon_to_box(pokemon *dst);
+
+/**
+ * Gets the name of a box
+ * @param box_idx the index of the box to get the name of
+ * @return the name of the box
+ */
+u8 *box_get_name(u8 box_idx);
 
 /**
  * Enables the hidden ability on a pokemon.

@@ -10,11 +10,6 @@
 #define GFX_ANIM_JUMP 0xFFFE
 #define GFX_ANIM_END 0xFFFF
 
-#define ROTSCALE_ANIM_LOOP_START 0x7FFC
-#define ROTSCALE_ANIM_JUMP_LOOP_START 0x7FFD
-#define ROTSCALE_ANIM_JUMP 0x7FFE
-#define ROTSCALE_ANIM_END 0x7FFF
-
 #define ATTR0_ROTSCALE 0x100
 #define ATTR0_DSIZE 0x200
 #define ATTR0_OBJDISABLE 0x200
@@ -66,12 +61,26 @@ typedef struct graphic {
     u16 tag;
 } graphic;
 
-typedef struct rotscale_frame {
-    s16 scale_delta_x;
-    s16 scale_delta_y;
-    u8 rot_delta;
+#define ROTSCALE_ANIM_DURATION_SET_TO_VALUES 0
+#define ROTSCALE_ANIM_LOOP_START 0x7FFC
+#define ROTSCALE_ANIM_JUMP_LOOP_START 0x7FFD
+#define ROTSCALE_ANIM_JUMP 0x7FFE
+#define ROTSCALE_ANIM_END 0x7FFF
+
+typedef union rotscale_frame {
+  struct {
+    s16 affine_x_value;
+    s16 affine_y_value;
+    u8 rotation;
     u8 duration;
     u16 field_6;
+  } affine;
+  struct {
+    u16 command;
+    u16 parameter;
+    u16 field_4;
+    u16 field_6;
+  } command;
 } rotscale_frame;
 
 typedef struct sprite {

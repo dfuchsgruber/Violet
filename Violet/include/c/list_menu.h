@@ -92,5 +92,13 @@ int list_menu_process_input(u8 list_menu_handler_callback_idx);
  */
 void list_menu_get_scroll_and_row(u8 list_menu_handler_callback_idx, u16 *scroll_offset, u16 *row);
 
+/**
+ * Removes a list menu handler.
+ * @param list_menu_handler_callback_idx callback index of the list menu handler
+ * @param scroll_offset if not null, places the current scroll offset at this memory location
+ * @param selected_row if not null, places the currently selected row at this memory location
+ */
+void list_menu_remove(u8 list_menu_handler_callback_idx, u16 *scroll_offset, u16 *selected_row);
+
 
 #endif /* INCLUDE_C_LIST_MENU_H_ */

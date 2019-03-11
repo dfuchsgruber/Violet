@@ -129,10 +129,17 @@ void pokemon_party_menu_return_to();
  * @param c TODO
  * @param d TODO
  * @param e TODO
+ * @param big_callback some big callback that is executed at some point (much descriptive, yes!)
  * @param return_callback the callback to execute when returning from the pokemon party menu
  */
-void pokemon_party_menu_init(u8 a, u8 b, u8 c, u8 d, u8 e, void (*func1)(),
+void pokemon_party_menu_init(u8 a, u8 b, u8 c, u8 d, u8 e, void (*big_callback)(u8),
     void (*return_callback)());
+
+/**
+ * Some callback function. Seems to fit well as big_callback parameter for pokemon_party_menu_init.
+ * @param self self-reference to the callback
+ */
+void sub_811FB5C(u8 self);
 
 /**
  * Frees all components of the pokemon party menu
