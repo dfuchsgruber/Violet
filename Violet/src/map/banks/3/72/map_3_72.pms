@@ -4,7 +4,7 @@
 		"events": {
 			"person_cnt": 11,
 			"warp_cnt": 2,
-			"trigger_cnt": 13,
+			"trigger_cnt": 15,
 			"signpost_cnt": 0,
 			"persons": [
 				{
@@ -411,6 +411,28 @@
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
+				},
+				{
+					"x": "14",
+					"y": "33",
+					"level": 0,
+					"field_5": 0,
+					"var": "TRAINERSCHOOL_PROGRESS",
+					"value": "1",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_trainerschool_lock_classroom"
+				},
+				{
+					"x": "14",
+					"y": "34",
+					"level": 0,
+					"field_5": 0,
+					"var": "TRAINERSCHOOL_PROGRESS",
+					"value": "1",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_trainerschool_lock_classroom2"
 				}
 			],
 			"signposts": []
