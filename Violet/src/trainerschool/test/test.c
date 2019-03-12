@@ -242,7 +242,7 @@ void trainerschool_test_idle(){
     }
 }
 
-void trainerschool_test_init_components(){
+void trainerschool_exam_init_components(){
     generic_callback1();
     if(!fading_is_active()){
         //init gfx and stuff
@@ -306,13 +306,13 @@ void trainerschool_test_init_components(){
     }
 }
 
-void trainerschool_test_init(){
+void trainerschool_exam_init(){
     generic_callback1();
     *var_access(TRAINERSCHOOL_CORRECT_ANSWERS) = 0;
     fmem.tst_mem = (trainerschool_test_memory*) malloc_and_clear(sizeof(trainerschool_test_memory));
     fmem.tst_mem->current_question = 0;
     fadescreen_all(1, 0);
-    callback1_set(trainerschool_test_init_components);
+    callback1_set(trainerschool_exam_init_components);
     setflag(MAP_BGN_AUTO_ALIGN_OFF);
 }
 
