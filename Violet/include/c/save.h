@@ -93,8 +93,7 @@ typedef struct custom_memory {
     u8 daycare_offspring_has_hidden_ability;
     u8 daycare_offspring_male; // Volbeat and Nidoran may alter their gender when breeding (y tho?)
     box_pokemon incubator_slots[3];
-    u8 incubator_ready;
-    u8 unused[13];
+    u8 unused[14];
     
     //trash memory (generall a vector memory)
     u8 trash_flags[16];

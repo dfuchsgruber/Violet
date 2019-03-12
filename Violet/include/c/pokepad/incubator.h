@@ -19,6 +19,7 @@ typedef struct {
   u8 oam_egg_idx;
   u8 oam_egg_icons_idx[3];
   u8 oam_egg_progress_bars_idx[3][2]; // Two progress bars per egg
+  u8 oam_selection[2];
   u8 context_menu_callback_idx;
   u8 imported_party_idx;
   u8 hide_current_egg_icon; // If set, the current egg icon is hidden
@@ -26,6 +27,8 @@ typedef struct {
 } incubator_state_stru;
 
 #define INCUBATOR_EGG_TAG POKEMON_EGG
+#define INCUBATOR_SELECTION_TAG_LEFT 0x1496
+#define INCUBATOR_SELECTION_TAG_RIGHT 0x1497
 #define INCUBATOR_EGG_ICON_TAG 0x1498
 #define INCUBATOR_EGG_PROGRESS_TAG 0x1499
 
@@ -111,15 +114,27 @@ void incubator_clear();
 #define INCUBATOR_TBOX_MESSAGE 5
 #define INCUBATOR_TBOX_START_TILE (1 + TBOX_CONTEXT_BORDER_NUM_TILES + TBOX_MESSAGE_NUM_TILES)
 
+// How many pixels the temperature can span maximally
+#define INCUBATOR_TEMPERATURE_PIXELS 98
+
 tboxdata incubator_tboxes[INCUBATOR_TBOX_CNT + 1];
 
 extern u16 gfx_incubator_ui_0Tiles[];
 extern u16 gfx_incubator_ui_0Map[];
 extern u16 gfx_incubator_ui_0Pal[];
+extern u16 gfx_incubator_ui_boxTiles[];
+extern u16 gfx_incubator_ui_boxMap[];
+extern u16 gfx_incubator_ui_boxPal[];
+extern u16 gfx_incubator_ui_box_greyPal[];
 extern u16 gfx_incubator_ui_1Tiles[];
 extern u16 gfx_incubator_ui_1Map[];
 extern u16 gfx_incubator_ui_1Pal[];
 extern u16 gfx_incubator_progress_barTiles[];
 extern u16 gfx_incubator_progress_barPal[];
+extern u16 gfx_incubator_ui_glassTiles[];
+extern u16 gfx_incubator_ui_glassPal[];
+extern u16 gfx_incubator_ui_glassMap[];
+extern u16 gfx_incubator_selectionTiles[];
+extern u16 gfx_incubator_selectionPal[];
 
 #endif /* INCLUDE_C_POKEPAD_INCUBATOR_H_ */

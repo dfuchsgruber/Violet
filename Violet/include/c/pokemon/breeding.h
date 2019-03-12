@@ -41,6 +41,8 @@ typedef struct {
 	u8 step_counter;
 } daycare_stru;
 
+#define BREEDING_CYCLES_HATCH_IMMEDIATLEY 255
+
 extern u16 *pokemon_egg_moves[];
 extern u8 str_egg[];
 
@@ -70,6 +72,17 @@ void _daycare_spawn_egg();
  * @return the length of a cycle for an egg
  */
 u8 breeding_get_cycle_steps();
+
+/**
+ * Checks if an egg can hatch.
+ * @param egg the egg to check for hatching
+ * @param consider_zero_cycles if eggs with 0 remaining cycles will be hatching
+ * @param consider_immediate_hatching if eggs marked as immediate will be hatching
+ * @param proceed_cycles the amount of cycles the egg will be decremented
+ * @return if the egg can hatch. If no egg is given, false will be returned.
+ */
+bool box_pokemon_hatching_proceed(box_pokemon *egg, bool consider_zero_cycles,
+    bool consider_immediate_hatching, u8 proceed_cycles);
 
 /**
  * Checks if the player party contains at least one pokemon with flame body.

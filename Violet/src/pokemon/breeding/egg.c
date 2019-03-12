@@ -55,7 +55,6 @@ int special_overworld_script_give_egg_into_incubator_slots() {
       pokemon *tmp = malloc(sizeof(pokemon));
       overworld_egg_new(*var_access(0x8000), CATCH_LOCATION_SPECIAL_EGG, tmp);
       memcpy(&cmem.incubator_slots[i], tmp, sizeof(box_pokemon));
-      cmem.incubator_ready |= (u8)(~(1 << i));
       free(tmp);
       return i;
     }

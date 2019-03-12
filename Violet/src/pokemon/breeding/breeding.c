@@ -168,6 +168,19 @@ u8 breeding_get_cycle_steps() {
   return (u8)(MAX(1, MIN(255, cycle)));
 }
 
+bool box_pokemon_hatching_proceed(box_pokemon *egg, bool consider_zero_cycles,
+    bool consider_immediate_hatching, u8 proceed_cycles) {
+  if (!box_pokemon_get_attribute(egg, ATTRIBUTE_IS_EGG, 0)) return false;
+  if (box_pokemon_get_attribute(egg, ATTRIBUTE_SANITY_IS_BAD_EGG, 0)) return false;
+  int cycles = box_pokemon_get_attribute(egg, ATTRIBUTE_HAPPINESS, 0);
+  dprintf("Proceed egg @%x with %d cycles\n", egg, cycles);
+  if ((cycles == BREEDING_CYCLES_HATCH_IMMEDIATLEY && consider_immediate_hatching) ||
+      (consider_zero_cycles && cycles == 0)) return true;
+  if (cycles != BREEDING_CYCLES_HATCH_IMMEDIATLEY) cycles = MAX(0, cycles - proceed_cycles);
+  box_pokemon_set_attribute(egg, ATTRIBUTE_HAPPINESS, &cycles);
+  return false;
+}
+
 u8 daycare_proceed(daycare_stru *daycare) {
   int pokemon_in_daycare = 0;
   for (int i = 0; i < 2; i++) {
@@ -184,17 +197,19 @@ u8 daycare_proceed(daycare_stru *daycare) {
       _daycare_spawn_egg();
     }
   }
+  // Check the entire party for immediate hatches, do not proceed cycles
+  for (u16 i = 0; i < player_pokemon_cnt; i++) {
+    if (box_pokemon_hatching_proceed(&player_pokemon[i].box, false, true, 0)) {
+      // Hatch this pokemon as it was marked as immediate
+      *var_access(0x8004) = i;
+      return true;
+    }
+  }
   // Hatch eggs
   if (++daycare->step_counter >= breeding_get_cycle_steps()) {
     daycare->step_counter = 0;
     for (u16 i = 0; i < player_pokemon_cnt; i++) {
-      if (!pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_IS_EGG, 0)) continue;
-      if (pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_SANITY_IS_BAD_EGG, 0)) continue;
-      int steps = pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_HAPPINESS, 0);
-      if (steps != 0) {
-        steps--;
-        pokemon_set_attribute(&player_pokemon[i], ATTRIBUTE_HAPPINESS, &steps);
-      } else {
+      if (box_pokemon_hatching_proceed(&player_pokemon[i].box, true, true, 1)) {
         // Hatch this pokemon
         *var_access(0x8004) = i;
         return true;
@@ -202,16 +217,10 @@ u8 daycare_proceed(daycare_stru *daycare) {
     }
     // Proceed incubator
     for (int i = 0; i < incubator_available_slots(); i++) {
-      if (cmem.incubator_ready & (1 << i)) continue; // This egg is already breed entirely
-      if (!box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_IS_EGG, 0)) continue;
-      if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SANITY_IS_BAD_EGG, 0))
-        continue;
-      int cycles = box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, 0);
-      if (cycles != 0) {
-        cycles = MAX(0, cycles - 2);
+      if (box_pokemon_hatching_proceed(&cmem.incubator_slots[i], true, false, 2)){
+        // Mark the pokemon to hatch immediatley
+        int cycles = BREEDING_CYCLES_HATCH_IMMEDIATLEY;
         box_pokemon_set_attribute(&cmem.incubator_slots[i], ATTRIBUTE_HAPPINESS, &cycles);
-      } else {
-        cmem.incubator_ready |= (u8)(1 << i);
         *var_access(0x8004) = (u16)(i + 6);
         return true;
       }

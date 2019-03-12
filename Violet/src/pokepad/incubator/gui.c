@@ -32,19 +32,28 @@
 #include "vars.h"
 #include "overworld/pokemon_party_menu.h"
 #include "data_structures.h"
+#include "math.h"
+#include "constants/vars.h"
 
 sprite oam_sprite_incubator_egg = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64,
-    .attr2 = ATTR2_PRIO(0)};
+    .attr2 = ATTR2_PRIO(2)};
 
 sprite oam_sprite_incubator_progress_bar = {.attr0 = ATTR0_SHAPE_HORIZONTAL,
-    .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(3)};
+    .attr1 = ATTR1_SIZE_32_8, .attr2 = ATTR2_PRIO(2)};
 
 sprite oam_sprite_incubator_egg_icon = {.attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE,
     .attr1 = ATTR1_SIZE_32_32, .attr2 = ATTR2_PRIO(1)
 };
 
+sprite oam_sprite_incubator_selection = {.attr0 = ATTR0_SHAPE_HORIZONTAL,
+    .attr1 = ATTR1_SIZE_32_64, .attr2 = ATTR2_PRIO(1)};
+
 graphic graphic_incubator_progress_bar = {.size = (32 * 8 / 2),
     .tag = INCUBATOR_EGG_PROGRESS_TAG, .sprite = gfx_incubator_progress_barTiles
+};
+
+graphic graphic_incubator_selection = {.size = (64 * 64 / 2),
+    .tag = INCUBATOR_SELECTION_TAG_LEFT, .sprite = gfx_incubator_selectionTiles
 };
 
 gfx_frame gfx_animation_incubator_egg_icon[] = {
@@ -54,6 +63,14 @@ gfx_frame gfx_animation_incubator_egg_icon[] = {
 
 gfx_frame *gfx_animation_table_incubator_egg_icon[] = {
     gfx_animation_incubator_egg_icon
+};
+
+gfx_frame gfx_animation_incubator_selection_right[] = {
+    {.data = 32, .duration = 0}, {.data = GFX_ANIM_END}
+};
+
+gfx_frame *gfx_animation_table_incubator_selection_right[] = {
+    gfx_animation_incubator_selection_right
 };
 
 rotscale_frame rotscale_animation_incubator_egg_icon_none[] = {
@@ -79,9 +96,15 @@ rotscale_frame *rotscale_animation_table_incubator_egg_icon[] = {
     rotscale_animation_incubator_egg_icon_expand
 };
 
+void incubator_oam_egg_callback(oam_object *self) {
+  int frame = (self->private[0]++) << 10;
+  int dy = 2 * FIXED_SIN(frame);
+  self->y2 = (s16)(FIXED_TO_INT(dy));
+}
+
 oam_template oam_template_incubator_egg = {
     .oam = &oam_sprite_incubator_egg, .tiles_tag = INCUBATOR_EGG_TAG, .pal_tag = INCUBATOR_EGG_TAG,
-    .callback = oam_null_callback, .graphics = NULL, .animation = oam_gfx_anim_table_null,
+    .callback = incubator_oam_egg_callback, .graphics = NULL, .animation = oam_gfx_anim_table_null,
     .rotscale = oam_rotscale_anim_table_null
 };
 
@@ -98,6 +121,19 @@ oam_template oam_template_incubator_egg_icon = {
     .callback = oam_null_callback, .graphics = NULL,
     .animation = gfx_animation_table_incubator_egg_icon,
     .rotscale = rotscale_animation_table_incubator_egg_icon
+};
+
+oam_template oam_template_incubator_selection_left = {
+    .oam = &oam_sprite_incubator_selection, .tiles_tag = INCUBATOR_SELECTION_TAG_LEFT,
+    .pal_tag = INCUBATOR_SELECTION_TAG_LEFT, .callback = oam_null_callback, .graphics = NULL,
+    .animation = oam_gfx_anim_table_null, .rotscale = oam_rotscale_anim_table_null
+};
+
+oam_template oam_template_incubator_selection_right = {
+    .oam = &oam_sprite_incubator_selection, .tiles_tag = INCUBATOR_SELECTION_TAG_LEFT,
+    .pal_tag = INCUBATOR_SELECTION_TAG_LEFT, .callback = oam_null_callback, .graphics = NULL,
+    .animation = gfx_animation_table_incubator_selection_right,
+    .rotscale = oam_rotscale_anim_table_null
 };
 
 bg_config incubator_bg_configs[4] = {
@@ -127,6 +163,19 @@ void incubator_context_menu_item_print_callback(u8 tbox_idx, int idx, u8 y) {
   (void)y;
 }
 
+void incubator_load_temperature() {
+  u16 pixels = (u16)(((1000 - *var_access(HATCHING_BOOST_STEPS)) * INCUBATOR_TEMPERATURE_PIXELS)
+      / 1000);
+  io_set(IO_BGVOFS(3), (u16)(-pixels));
+}
+
+void incubator_load_selection() {
+  for (int i = 0; i < 2; i++) {
+    oams[fmem.incubator_state->oam_selection[i]].y = (s16)(8 *
+        (6 + 4 * fmem.incubator_state->cursor_idx) + 12);
+  }
+}
+
 void incubator_load_current_egg() {
   tbox_flush_set(INCUBATOR_TBOX_EGG, 0);
   tbox_tilemap_draw(INCUBATOR_TBOX_EGG);
@@ -139,12 +188,12 @@ void incubator_load_current_egg() {
     box_pokemon_get_attribute(current_pokemon, ATTRIBUTE_NICKNAME, strbuf);
     u8 str_egg_width = string_get_width(2, strbuf, 0);
     tbox_print_string(INCUBATOR_TBOX_EGG, 2,
-        (u8)((incubator_tboxes[INCUBATOR_TBOX_EGG].w * 8 - str_egg_width) / 2), 0, 0, 0,
+        (u8)((incubator_tboxes[INCUBATOR_TBOX_EGG].w * 8 - str_egg_width) / 2), 2, 0, 0,
         &incubator_font_colormap_std_light, 0, strbuf);
-    tbox_draw_type_icon_by_type_p1(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type1 + 1), 0, 0);
+    tbox_draw_type_icon_by_type_p1(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type1 + 1), 0, 3);
     if (basestats[species].type1 != basestats[species].type2) {
       tbox_draw_type_icon_by_type_p1(INCUBATOR_TBOX_TYPES, (u8) (basestats[species].type2 + 1),
-          32, 0);
+          32, 3);
     }
     oams[fmem.incubator_state->oam_egg_idx].flags &= (u16)(~OAM_FLAG_INVISIBLE);
   } else {
@@ -158,25 +207,64 @@ void incubator_load_current_egg() {
       &incubator_font_colormap_std_light, 0, str_none);
 }
 
-void incubator_load_eggs() {
-  for (int i = 0; i < 3; i++) {
-    if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SPECIES, 0)) {
-      if (!(fmem.incubator_state->hide_current_egg_icon && fmem.incubator_state->cursor_idx == i))
-        oams[fmem.incubator_state->oam_egg_icons_idx[i]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
-      int egg_progress = incubator_egg_get_progress(&cmem.incubator_slots[i]);
-      dprintf("Progress for egg %d: %d\n", i, egg_progress);
-      for (int j = 0; j < 2; j++) {
-        oams[fmem.incubator_state->oam_egg_progress_bars_idx[i][j]].flags &=
-            (u16)(~OAM_FLAG_INVISIBLE);
-        oams[fmem.incubator_state->oam_egg_progress_bars_idx[i][j]].x2 = (s16)(egg_progress - 64);
+void incubator_redraw_progress_bar(int slot) {
+  // Edit the progress bars
+  int egg_progress = incubator_egg_get_progress(&cmem.incubator_slots[slot]);
+  for (int j = 0; j < 2; j++) {
+    oams[fmem.incubator_state->oam_egg_progress_bars_idx[slot][j]].flags &=
+        (u16)(~OAM_FLAG_INVISIBLE);
+    // Draw grey veritcal lines onto the vram according to process
+    u16 base_tile = oam_vram_get_tile((u16)(INCUBATOR_EGG_PROGRESS_TAG + 2 * slot + j));
+    for (int k = 0; k < 4; k++) {
+      int progress = MIN(8, MAX(0, egg_progress - j * 32 - 8 * k));
+      // Keep only the first 8 - progress rows (i.e. bits in a tile line)
+      u32 mask = (u32)(0xFFFFFFFF) >> (4 * (8 - progress));
+      u32 over = (u32)(0x11111111) << (4 * progress);
+      for (int l = 0; l < 8; l++) {
+        // Clear vertical line l
+        OAMCHARBASE(base_tile + k)[l] &= mask;
+        OAMCHARBASE(base_tile + k)[l] |= over;
       }
+    }
+  }
+}
+
+void incubator_load_eggs() {
+  // Clear background 1
+  bg_text_tile *bg1_tilemap = bg_get_tilemap(1);
+  lz77uncompwram(gfx_incubator_ui_glassMap, bg1_tilemap);
+  // Buffer boxes
+  bg_text_tile *box_tilemap = malloc(sizeof(bg_text_tile) * 14 * 3);
+  lz77uncompwram(gfx_incubator_ui_boxMap, box_tilemap);
+  for (int i = 0; i < 3; i++) {
+    bool is_egg = box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SPECIES, 0);
+    if (i < incubator_available_slots()) {
+      // Spawn the box for a potential egg
+      for (int yy = 0; yy < 3; yy++) {
+        for (int xx = 0; xx < 14; xx++) {
+          bg_text_tile *tile = &bg1_tilemap[32 * (6 + 4 * i + yy) + xx + 10];
+          *tile = box_tilemap[14 * yy + xx];
+          tile->tile_number = (u16)((tile->tile_number + 64) & 0x3FF);
+          if (!is_egg)
+            tile->palette = 3;
+        }
+      }
+      incubator_redraw_progress_bar(i);
     } else {
-      oams[fmem.incubator_state->oam_egg_icons_idx[i]].flags |= OAM_FLAG_INVISIBLE;
+      // Hide progress bars
       for (int j = 0; j < 2; j++) {
         oams[fmem.incubator_state->oam_egg_progress_bars_idx[i][j]].flags |= OAM_FLAG_INVISIBLE;
       }
     }
+    if (is_egg) {
+      if (!(fmem.incubator_state->hide_current_egg_icon && fmem.incubator_state->cursor_idx == i))
+        oams[fmem.incubator_state->oam_egg_icons_idx[i]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    } else {
+      oams[fmem.incubator_state->oam_egg_icons_idx[i]].flags |= OAM_FLAG_INVISIBLE;
+    }
   }
+  bg_virtual_sync(1);
+  free(box_tilemap);
 }
 
 void incubator_free_components() {
@@ -246,11 +334,11 @@ void incubator_callback_wait_for_egg_icon_animation(u8 self) {
 
 void incubator_remove_egg_from_ui(int slot) {
   oam_rotscale_anim_init(&oams[fmem.incubator_state->oam_egg_icons_idx[slot]], 1);
+  incubator_load_eggs();
+  // Make the egg icon re-appear for its animation
+  oams[fmem.incubator_state->oam_egg_icons_idx[slot]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
   if (fmem.incubator_state->cursor_idx == slot)
     oams[fmem.incubator_state->oam_egg_idx].flags |= OAM_FLAG_INVISIBLE;
-  for (int i = 0; i < 2; i++) {
-    oams[fmem.incubator_state->oam_egg_progress_bars_idx[slot][i]].flags |= OAM_FLAG_INVISIBLE;
-  }
   u8 callback_idx = big_callback_new(incubator_callback_wait_for_egg_icon_animation, 0);
   big_callbacks[callback_idx].params[0] = 64;
   big_callbacks[callback_idx].params[1] = (u16)(slot);
@@ -381,7 +469,6 @@ void incubator_callback1_party_menu_continuation() {
       ATTRIBUTE_IS_EGG, 0) && box_pokemon_get_attribute(target, ATTRIBUTE_SPECIES, 0) == 0) {
     // Import the pokemon
     memcpy(target, &player_pokemon[party_idx], sizeof(box_pokemon));
-    cmem.incubator_ready &= (u8)(~(1 << fmem.incubator_state->cursor_idx));
     pokemon_clear(&player_pokemon[party_idx]);
     player_pokemon_compact();
     player_pokemon_recount_pokemon();
@@ -436,10 +523,12 @@ void incubator_callback1_idle() {
       fmem.incubator_state->cursor_idx++;
       play_sound(5);
       incubator_load_current_egg();
+      incubator_load_selection();
     } else if (super.keys_new.keys.up && fmem.incubator_state->cursor_idx > 0) {
       fmem.incubator_state->cursor_idx--;
       play_sound(5);
       incubator_load_current_egg();
+      incubator_load_selection();
     } else if (super.keys_new.keys.B) {
       fadescreen_all(1, 0);
       play_sound(5);
@@ -485,6 +574,20 @@ void incubator_callback1_show() {
   bg_sync_display_and_show(2);
   bg_sync_display_and_show(3);
   bg_display_sync();
+  fadescreen_all(0, 0);
+  io_set(IO_WIN0H, IO_WINH(0, 80));
+  io_set(IO_WIN1H, IO_WINH(0, 255));
+  io_set(IO_WIN0V, IO_WINV(0, 255));
+  io_set(IO_WIN1V, IO_WINV(0, 255));
+  // Window 1 contains every layer except fx, Window 0 contians every layer and fx
+  io_set(IO_WININ, IO_WININOUT_OBJ(0) |
+      IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(0, 1) | IO_WININOUT_BG(0, 2) | IO_WININOUT_BG(0, 3) |
+      IO_WININOUT_BG(1, 0) | IO_WININOUT_BG(1, 1) | IO_WININOUT_BG(1, 2) | IO_WININOUT_BG(1, 3) |
+      IO_WININOUT_OBJ(1) | IO_WININOUT_FX(0));
+  io_set(IO_WINOUT, IO_WININOUT_BG(0, 0) | IO_WININOUT_BG(1, 0));
+  io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG1_FIRST | IO_BLDCNT_OBJ_SECOND |
+      IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND | IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND);
+  io_set(IO_BLDALPHA, IO_BLDALPHA_EVA(7) | IO_BLDALPHA_EVB(11));
   callback1_set(fmem.incubator_state->idle_callback);
 }
 
@@ -496,7 +599,9 @@ void incubator_initialize_ui() {
   dma0_reset_callback();
   vblank_handler_set(NULL);
   bg_reset(0);
-  io_set(IO_BLDCNT, 0);
+  io_set(IO_DISPCNT, IO_DISPCNT_H_BANK_INTERVAL_OBJ_PROCESSING |
+      IO_DISPCNT_OAM_CHARACTER_MAPPING_ONE_DIMENSIONAL | IO_DISPCNT_BG(0) | IO_DISPCNT_BG(1) |
+      IO_DISPCNT_BG(2) | IO_DISPCNT_BG(3) | IO_DISPCNT_OBJ | IO_DISPCNT_WIN0 | IO_DISPCNT_WIN1);
   io_set(IO_BGHOFS(0), 0);
   io_set(IO_BGVOFS(0), 0);
   io_set(IO_BGHOFS(1), 0);
@@ -504,7 +609,7 @@ void incubator_initialize_ui() {
   io_set(IO_BGHOFS(2), 0);
   io_set(IO_BGVOFS(2), 0);
   io_set(IO_BGHOFS(3), 0);
-  io_set(IO_BGVOFS(3), 0);
+  incubator_load_temperature();
   bg_setup(0, incubator_bg_configs, 4);
   bg_set_tilemap(0, malloc_and_clear(0x800));
   bg_set_tilemap(1, malloc_and_clear(0x800));
@@ -519,52 +624,72 @@ void incubator_initialize_ui() {
   u8 str_title[] = LANGDEP(PSTRING("Inkubator"), PSTRING("Incubator"));
   u8 str_title_width = string_get_width(2, str_title, 0);
   tbox_print_string(INCUBATOR_TBOX_TITLE, 2,
-      (u16)(incubator_tboxes[INCUBATOR_TBOX_TITLE].w * 8 - str_title_width) / 2, 0, 0, 0,
+      (u16)(incubator_tboxes[INCUBATOR_TBOX_TITLE].w * 8 - str_title_width) / 2, 4, 0, 0,
       &incubator_font_colormap_std_light, 0, str_title);
 
   lz77uncompwram(gfx_incubator_ui_0Map, bg_get_tilemap(2));
   lz77uncompwram(gfx_incubator_ui_1Map, bg_get_tilemap(3));
   lz77uncompvram(gfx_incubator_ui_0Tiles, CHARBASE(0));
   lz77uncompvram(gfx_incubator_ui_1Tiles, CHARBASE(3));
-  lz77uncompvram(gfx_incubator_ui_1Tiles, CHARBASE(1));
+  lz77uncompvram(gfx_incubator_ui_glassTiles, CHARBASE(1));
+  lz77uncompvram(gfx_incubator_ui_boxTiles, &CHARBASE(1)[8 * 64]); // 64 Tiles displacement for the box
   oam_load_graphic(&pokemon_frontsprites[POKEMON_EGG]);
-  oam_load_graphic(&graphic_incubator_progress_bar);
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 2; j++) {
+      graphic g = graphic_incubator_progress_bar;
+      g.tag = (u16)(INCUBATOR_EGG_PROGRESS_TAG + 2 * i + j);
+      oam_load_graphic(&g);
+    }
+  }
   u16 oam_egg_icon_tile = oam_vram_alloc(32);
   oam_vram_allocation_table_add(INCUBATOR_EGG_ICON_TAG, oam_egg_icon_tile, 32);
   cpuset(pokemon_icons[POKEMON_EGG], OAMCHARBASE(oam_egg_icon_tile),
       CPUSET_COPY | CPUSET_HALFWORD | CPUSET_SIZE(0x200));
-
+  oam_load_graphic(&graphic_incubator_selection);
 
   // Load palettes
   pal_decompress(pokemon_pals[POKEMON_EGG].pal,
       (u16)(16 * (16 + oam_allocate_palette(INCUBATOR_EGG_TAG))), 32);
-  pal_decompress(gfx_incubator_progress_barPal,
-      (u16)(16 * (16 + oam_allocate_palette(INCUBATOR_EGG_PROGRESS_TAG))), 32);
+  for (int i = 0; i < 3; i++) {
+    pal_decompress(gfx_incubator_progress_barPal,
+        (u16)(16 * (16 + oam_allocate_palette((u16)(INCUBATOR_EGG_PROGRESS_TAG + i)))), 32);
+  }
   pal_copy(icon_pals[pokemon_icon_usage[POKEMON_EGG]],
       (u16)(16 * (16 + oam_allocate_palette(INCUBATOR_EGG_ICON_TAG))), 32);
+  pal_decompress(gfx_incubator_selectionPal,
+      (u16)(16 * (16 + oam_allocate_palette(INCUBATOR_SELECTION_TAG_LEFT))), 32);
   pal_decompress(gfx_incubator_ui_0Pal, 0, 32);
   pal_decompress(gfx_incubator_ui_1Pal, 16, 32);
+  pal_decompress(gfx_incubator_ui_boxPal, 32, 32);
+  pal_decompress(gfx_incubator_ui_box_greyPal, 48, 32);
+  pal_decompress(gfx_incubator_ui_glassPal, 64, 32);
   pal_copy(typechart_icon_pal, 12 * 16, 32);
   pal_set_all_to_black();
 
   fmem.incubator_state->oam_egg_idx = oam_new_forward_search(&oam_template_incubator_egg,
-      5 * 8, 11 * 8, 0);
+      5 * 8, 12 * 8 + 4, 0);
   oams[fmem.incubator_state->oam_egg_idx].flags |= OAM_FLAG_INVISIBLE;
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 2; j++) {
+      oam_template tmpl = oam_template_incubator_progress_bar;
+      tmpl.pal_tag = (u16)(INCUBATOR_EGG_PROGRESS_TAG + i);
+      tmpl.tiles_tag = (u16)(INCUBATOR_EGG_PROGRESS_TAG + 2 * i + j);
       fmem.incubator_state->oam_egg_progress_bars_idx[i][j] = oam_new_forward_search(
-          &oam_template_incubator_progress_bar, (s16)(128 + j * 32), (s16)(60 + i * 32), 0);
+          &tmpl, (s16)(128 + j * 32), (s16)(60 + i * 32), 0);
       oams[fmem.incubator_state->oam_egg_progress_bars_idx[i][j]].flags |= OAM_FLAG_INVISIBLE;
     }
     fmem.incubator_state->oam_egg_icons_idx[i] = oam_new_forward_search(
-        &oam_template_incubator_egg_icon, 96, (s16)(60 + i * 32), 0);
+        &oam_template_incubator_egg_icon, 96, (s16)(56 + i * 32), 0);
     oam_gfx_anim_init(&oams[fmem.incubator_state->oam_egg_icons_idx[i]], 0);
     oams[fmem.incubator_state->oam_egg_icons_idx[i]].flags |= OAM_FLAG_INVISIBLE;
   }
+  fmem.incubator_state->oam_selection[0] = oam_new_forward_search(
+      &oam_template_incubator_selection_left, 112, 0, 0);
+  fmem.incubator_state->oam_selection[1] = oam_new_forward_search(
+      &oam_template_incubator_selection_right, 112 + 64, 0, 0);
+  incubator_load_selection();
 
   incubator_load_current_egg();
-
-  fadescreen_all(0, 0);
   callback1_set(incubator_callback1_show);
   vblank_handler_set(generic_vblank_handler);
 
@@ -595,11 +720,11 @@ void incubator_initialize(bool from_outdoor) {
 }
 
 tboxdata incubator_tboxes[INCUBATOR_TBOX_CNT + 1] = {
-  [INCUBATOR_TBOX_TITLE] = {.bg_id = 0, .x = 11, .y = 1, .w = 8, .h = 2, .pal = 14,
+  [INCUBATOR_TBOX_TITLE] = {.bg_id = 0, .x = 11, .y = 0, .w = 8, .h = 2, .pal = 14,
       .start_tile = INCUBATOR_TBOX_START_TILE},
-  [INCUBATOR_TBOX_EGG] = {.bg_id = 0, .x = 3, .y = 5, .w = 4, .h = 2, .pal = 14,
+  [INCUBATOR_TBOX_EGG] = {.bg_id = 0, .x = 3, .y = 3, .w = 4, .h = 2, .pal = 14,
       .start_tile = INCUBATOR_TBOX_START_TILE + 16},
-  [INCUBATOR_TBOX_TYPES] = {.bg_id = 0, .x = 1, .y = 16, .w = 8, .h = 2, .pal = 12,
+  [INCUBATOR_TBOX_TYPES] = {.bg_id = 0, .x = 12, .y = 3, .w = 8, .h = 2, .pal = 12,
       .start_tile = INCUBATOR_TBOX_START_TILE + 24},
   [INCUBATOR_TBOX_CONTEXT_MENU_EGG] = {.bg_id = 0, .x = 20, .y = 13, .w = 9, .h = 6, .pal = 14,
       .start_tile = INCUBATOR_TBOX_START_TILE + 40},

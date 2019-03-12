@@ -22,13 +22,11 @@ typedef struct {
 typedef union {
   bg_text_tile text;
   u16 text_value;
-  // In rs each byte only holds
-  u8 rs;
 } bg_tile;
 
-#define CHARBASE(x) ((int*)(0x06000000 + 0x4000 * x))
-#define MAPBASE(x) ((bg_tile*)(0x06000000 + 0x800 * x))
-#define OAMCHARBASE(x) ((int*)(0x06010000 + 32 * x))
+#define CHARBASE(x) ((u32*)(0x06000000 + 0x4000 * (x)))
+#define MAPBASE(x) ((bg_tile*)(0x06000000 + 0x800 * (x)))
+#define OAMCHARBASE(x) ((u32*)(0x06010000 + 32 * (x)))
 
 /**
  * Copies all graphics in the graphic queue to their destinations using the DMA

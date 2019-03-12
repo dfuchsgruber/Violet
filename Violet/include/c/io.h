@@ -8,6 +8,20 @@
 #ifndef INCLUDE_C_IO_H_
 #define INCLUDE_C_IO_H_
 
+#define IO_DISPCNT 0x0
+#define IO_DISPCNT_BG_MODE(x) (x)
+#define IO_DISPCNT_CGB_MODE 8
+#define IO_DISPCNT_DISPLAY_FRAME 16
+#define IO_DISPCNT_H_BANK_INTERVAL_OBJ_PROCESSING 32
+#define IO_DISPCNT_OAM_CHARACTER_MAPPING_ONE_DIMENSIONAL 64
+#define IO_DISPCNT_OAM_CHARACTER_MAPPING_TWO_DIMENSIONAL 0
+#define IO_DISPCNT_FORCED_BLANK 128
+#define IO_DISPCNT_BG(bg) ((bg) << 8)
+#define IO_DISPCNT_OBJ 0x1000
+#define IO_DISPCNT_WIN0 0x2000
+#define IO_DISPCNT_WIN1 0x4000
+#define IO_DISPCNT_OBJWIN 0x8000
+
 #define IO_BGHOFS(x) (0x10 + ((x) << 2))
 #define IO_BGVOFS(x) (0x12 + ((x) << 2))
 
@@ -31,6 +45,21 @@
 #define IO_BLDALPHA 0x52
 #define IO_BLDALPHA_EVA(x) (x)
 #define IO_BLDALPHA_EVB(x) (x << 8)
+
+#define IO_WININOUT_BG(win,bg) (1 << ((bg) + 8 * (win)))
+#define IO_WININOUT_OBJ(win) (16 << (8 * (win)))
+#define IO_WININOUT_FX(win) (32 << (8 * (win)))
+#define IO_WININ 0x48
+#define IO_WINOUT 0x4C
+
+#define IO_WINH(left,right) ((right) | ((left) << 8))
+#define IO_WINV(up,down) ((down) | ((up) << 8))
+#define IO_WIN0H 0x40
+#define IO_WIN1H 0x42
+#define IO_WIN0V 0x44
+#define IO_WIN1V 0x46
+
+
 
 /**
  * Sets the value of an IO register in the next frame
