@@ -29,11 +29,11 @@ end
 str_wie:
 	.autostring 35 2 "Wie?"
 str_incubator_hatchable:
-	.autostring 34 2 "Ein Ei im Inkubator scheint bald zu schlüpfen!"
+	.autostring 34 2 "Ein Ei im Inkubator scheint bald soweit zu sein!\pFüge es deinem Team hinzu, damit es schlüpfen kann."
 .elseif LANG_EN
 str_wie:
 	.autostring 35 2 "Huh?"
 str_incubator_hatchable:
-	.autostring 34 2 "An egg inside the incubator seems to be hatching soon!"
+	.autostring 34 2 "An egg inside the incubator seems to be ready soon!\pAdd it to your team for it to be able to hatch."
 .endif
 

@@ -218,3 +218,26 @@ _blxr0:
 	ldr r3, =priority_compare | 1
 	bx r3
 	.pool
+
+// healthbars
+.org 0x0826012C
+	.word gfx_healthbar_player_single_battleTiles
+.org 0x08260134
+	.word gfx_healthbar_opponent_single_battleTiles
+.org 0x0826013C
+	.word gfx_healthbar_player_double_battleTiles
+.org 0x08260144
+	.word gfx_healthbar_player_double_battleTiles
+.org 0x0826014C
+	.word gfx_healthbar_opponent_double_battleTiles
+.org 0x08260154
+	.word gfx_healthbar_opponent_double_battleTiles
+.org 0x0826015C
+	.word gfx_healthbar_safariTiles
+.org 0x08260184
+	.word gfx_healthbar_player_single_battlePal
+.org 0x082603a0
+	.word gfx_healthbar_player_single_battlePal
+.org 0x082603a8
+	.word gfx_healthbar_player_single_battlePal
+
