@@ -4,7 +4,7 @@
 		"events": {
 			"person_cnt": 11,
 			"warp_cnt": 2,
-			"trigger_cnt": 13,
+			"trigger_cnt": 15,
 			"signpost_cnt": 0,
 			"persons": [
 				{
@@ -274,40 +274,40 @@
 					"y": 32,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_right",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "TRAINERSCHOOL_PROGRESS"
 				},
 				{
 					"x": 26,
 					"y": 33,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_right",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "TRAINERSCHOOL_PROGRESS"
 				},
 				{
 					"x": 26,
 					"y": 34,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_right",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "TRAINERSCHOOL_PROGRESS"
 				},
 				{
 					"x": 21,
 					"y": 38,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
+					"value": "6",
 					"script": "ow_script_trainerschool_lock_down",
 					"field_A": 0,
 					"field_B": 0,
@@ -362,55 +362,77 @@
 					"y": 34,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
-					"script": "ow_script_trainerschool_written_test",
+					"value": "1",
+					"script": "ow_script_trainerschool_start_exam",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "TRAINERSCHOOL_PROGRESS"
 				},
 				{
 					"x": 20,
 					"y": 28,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_up",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "TRAINERSCHOOL_PROGRESS"
 				},
 				{
 					"x": 21,
 					"y": 28,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_up",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "TRAINERSCHOOL_PROGRESS"
 				},
 				{
 					"x": 22,
 					"y": 28,
 					"level": 0,
 					"field_5": 0,
-					"value": 6,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_up",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "STORY_PROGRESS"
+					"var": "TRAINERSCHOOL_PROGRESS"
 				},
 				{
 					"x": 21,
 					"y": 38,
 					"level": 0,
 					"field_5": 0,
-					"value": 7,
+					"value": "7",
 					"script": "ow_script_trainerschool_lock_down",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
+				},
+				{
+					"x": "14",
+					"y": "33",
+					"level": 0,
+					"field_5": 0,
+					"var": "TRAINERSCHOOL_PROGRESS",
+					"value": "1",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_trainerschool_lock_classroom"
+				},
+				{
+					"x": "14",
+					"y": "34",
+					"level": 0,
+					"field_5": 0,
+					"var": "TRAINERSCHOOL_PROGRESS",
+					"value": "1",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_trainerschool_lock_classroom2"
 				}
 			],
 			"signposts": []
