@@ -458,16 +458,16 @@ str_tall_grass:
 	.autostring 35 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert. Ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
 
 str_call_blaise:
-	.autostring 35 2 "Blaise, na wird bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
+	.autostring 35 2 "Blaise, na wird's bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
 
 str_blaise_refuses:
 	.autostring 35 2 "Nein, ich denke eher nicht."
 
 str_call_blaise_again:
-	.autostring 35 2 "Wie bitte? Du undankbares Gör! Wer glaubst du denn, dass du bist? Meinst du, dein Vater wird es gerne hören, dass du mir Ungehorsam leistest?"
+	.autostring 35 2 "Wie bitte? Du undankbares Gör! Was glaubst du denn, wer du bist? Meinst du, dein Vater wird es gerne hören, dass du mir Ungehorsam leistest?"
 
 str_blaise_leaves:
-	.autostring 35 2 "Es ist mir herzlich egal, was mein Vater denkt. Ich habe beschlossen, mich nicht länger von ihm kontrollieren zu lassen. Also ist mir Ihre Abschlussprüfung ebenfalls gleichgültig. Natürlich danke ich Ihnen auch, für das Pokémon, das sie mir anvertraut haben. Allerdings halte ich nichts von dieser Schule oder anderen Institutionen, in denen mein Vater seine Finger im Spiel hat.\pIn diesem Sinne, lebt wohl!"
+	.autostring 35 2 "Es ist mir herzlich egal, was mein Vater denkt. Ich habe beschlossen, mich nicht länger von ihm kontrollieren zu lassen. Also ist mir Ihre Abschlussprüfung ebenfalls gleichgültig. Natürlich danke ich Ihnen auch, für das Pokémon, das Sie mir anvertraut haben. Allerdings halte ich nichts von dieser Schule oder anderen Institutionen, in denen mein Vater seine Finger im Spiel hat.\pIn diesem Sinne, lebt wohl!"
 
 str_faun_angry_at_blaise:
 	.autostring 35 2 "Dieser verdammte Bengel! Devin wird außer sich sein!"
