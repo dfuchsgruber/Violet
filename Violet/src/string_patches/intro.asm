@@ -74,7 +74,7 @@
 	.global str_intro_prof_7
 
 	str_intro_prof_7:
-		.string "Dies ist mein Sohn, ein ziemlicher\nHitzkopf!\pSeit eurer frühsten Kindheit seid\nihr unzertrennliche beste Freunde.\pWollen wir dich einmal auf die\nProbe stellen.\pWie war noch gleich sein Name?"
+		.string "Dies ist mein Sohn, ein ziemlicher\nHitzkopf!\pSeit eurer frühsten Kindheit seid\nihr unzertrennliche, beste Freunde.\pWollen wir dich einmal auf die\nProbe stellen.\pWie war noch gleich sein Name?"
 
 
 	.global str_intro_prof_8
