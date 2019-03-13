@@ -180,11 +180,7 @@ waitmovement 0
 applymovement 0xFF mov_face_right
 applymovement 0x4 mov_face_left
 waitmovement 0
-fadescreen 1
-sound 0x119
-checksound
-pause 80
-fadescreen 0
+call ow_script_healing_sequence
 @ Might also have lost all balls
 checkitem ITEM_POKEBALL 1
 compare LASTRESULT 0x1
