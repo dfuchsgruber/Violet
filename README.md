@@ -7,8 +7,9 @@ The build process of this repository requires you to have installed:
 ### Tools
 - [devkitPro](https://sourceforge.net/projects/devkitpro/)
 - [armips](https://github.com/Kingcom/armips)
-- [python 3.X](https://www.python.org/)
-- [Midi2Agb](https://github.com/ipatix/midi2agb) - not currently but at some point
+- [python 3](https://www.python.org/)
+- [wav2wagb](https://github.com/ipatix/wav2agb)
+- [mid2agb](https://hackromtools.altervista.org/sappy-mid2agb/)
 - [SoundFontRipper]
 
 ### Python
@@ -33,6 +34,9 @@ $ make all
 ## Adding and Testing Ingame-Features
 There is a map called `map_4_3_debug` where you can place scripts or npcs for entering experimental scenarios.  
 You can get to the map by loading the cheat file located at `Violet/sav/Debug Mode.clt` and holding <kbd>L</kbd> + <kbd>R</kbd> and <kbd>A</kbd> while examining the console in the player's room.
+
+## ToDo
+  - Make use of [Midi2Agb](https://github.com/ipatix/midi2agb) instead of `mid2agb`.
 
 <!--- References -->
 [SoundFontRipper]: https://github.com/WodkaRHR/gba-mus-ripper
