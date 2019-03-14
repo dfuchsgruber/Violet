@@ -20,6 +20,7 @@ extern const unsigned int gfx_grass_ashTiles[];
 extern const unsigned short gfx_grass_ashPal[];
 extern unsigned int gfx_rock_climb_animTiles[];
 extern unsigned int gfx_rock_climb_animPal[];
+extern u32 gfx_shallow_waterTiles[];
 
 
 graphic any_grass_graphics[] = {
@@ -65,6 +66,14 @@ oam_template rock_climb_template = {
 
 palette rock_climb_pal = {
 		gfx_rock_climb_animPal, 0x7731, 0
+};
+
+graphic shallow_water_graphics[] = {
+    {&gfx_shallow_waterTiles[0], 0x80, 0},
+    {&gfx_shallow_waterTiles[0x20], 0x80, 0},
+    {&gfx_shallow_waterTiles[0x40], 0x80, 0},
+    {&gfx_shallow_waterTiles[0x60], 0x80, 0},
+    {&gfx_shallow_waterTiles[0x80], 0x80, 0},
 };
 
 any_grass tile_any_grasses[ANY_GRASS_CNT] = {

@@ -184,6 +184,11 @@
 				"map_3_7_route_2_east",
 				"src/map/banks/3/7/map_3_7_route2_east.pms",
 				"MAP_ROUTE_2"
+			],
+			"8": [
+				"map_3_8_route_8",
+				"src/map/banks/3/8/3_8_map_3_8_route_8.pms",
+				"MAP_ROUTE_8"
 			]
 		},
 		"4": {
@@ -205,6 +210,11 @@
 			"4": [
 				"map_4_4",
 				"src/map/banks/4/4/map_4_4.pms",
+				"MAP_AMONIA"
+			],
+			"3": [
+				"map_4_3_debug",
+				"src/map/banks/4/3/map_4_3_debug.pms",
 				"MAP_AMONIA"
 			]
 		},
@@ -284,6 +294,11 @@
 			"15": [
 				"map_6_15",
 				"src/map/banks/6/15/map_6_15.pms",
+				"MAP_AKTANIA"
+			],
+			"4": [
+				"map_6_4_aktania_gengar_house",
+				"src/map/banks/6/4/map_6_4_aktania_gengar_house.pms",
 				"MAP_AKTANIA"
 			]
 		},
@@ -541,7 +556,8 @@
 				"src/map/banks/11/2_route_2_east_clouds/map_11_2_route_2_east_clouds.pms",
 				"MAP_ROUTE_2"
 			]
-		}
+		},
+		"12": {}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -927,6 +943,18 @@
 		"map_footer_17_inferior_gym_arena": [
 			17,
 			"src/map/banks/10/1/map_footer_17_inferior_gym_arena.pms"
+		],
+		"map_footer_18_route_8": [
+			18,
+			"src/map/banks/3/8/map_footer_18_route_8.pms"
+		],
+		"map_footer_19_aktania_gengar_house": [
+			19,
+			"src/map/banks/6/4/map_footer_19_aktania_gengar_house.pms"
+		],
+		"map_footer_20_debug": [
+			20,
+			"src/map/banks/4/3/map_footer_20_debug.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -963,7 +991,8 @@
 		"maptileset3": "src/map/tileset/maptileset3.pms",
 		"maptileset2": "src/map/tileset/maptileset2.pms",
 		"maptileset60": "src/map/tileset/maptileset60.pms",
-		"maptileset_inferior_gym": "src/map/tileset/maptileset_inferior_gym.pms"
+		"maptileset_inferior_gym": "src/map/tileset/maptileset_inferior_gym.pms",
+		"maptileset_laubdorf": "src/map/tileset/maptileset_laubdorf.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -999,6 +1028,7 @@
 		"gfx_maptileset26Tiles": "asset/gfx/tileset/gfx_maptileset26.png",
 		"gfx_maptileset13Tiles": "asset/gfx/tileset/gfx_maptileset13.png",
 		"gfx_maptileset60Tiles": "asset/gfx/tileset/gfx_maptileset60.png",
-		"gfx_maptileset_inferior_gymTiles": "asset/gfx/tileset/gfx_maptileset_inferior_gym.png"
+		"gfx_maptileset_inferior_gymTiles": "asset/gfx/tileset/gfx_maptileset_inferior_gym.png",
+		"gfx_maptileset_laubdorfTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf.png"
 	}
 }

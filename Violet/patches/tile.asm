@@ -65,6 +65,10 @@
 .org 0x08398EA8
     .word 0x7B313F52
 
+// Overwrite gfx for the shallow water overworld effect
+.org 0x083A534C + 0xC
+	.word shallow_water_graphics
+
 
 //hidden items
 .org 0x080CC604
@@ -132,3 +136,9 @@
 	bx lr
 .org 0x0815D4D8
 	bx lr
+
+.org 0x0806D4AC
+	ldr r3, =tile_trigger_water_scripts | 1
+	bx r3
+	.pool
+

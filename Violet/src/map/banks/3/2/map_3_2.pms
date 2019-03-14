@@ -487,8 +487,8 @@
 					"x": 45,
 					"y": 31,
 					"level": 0,
-					"target_bank": 0,
-					"target_map": 8,
+					"target_bank": "6",
+					"target_map": "4",
 					"target_warp_idx": 0
 				},
 				{
@@ -662,7 +662,7 @@
 		"show_name": "SHOW_VILLAGE",
 		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM",
-		"bike_usable": 0
+		"bike_usable": "1"
 	},
 	"label": "map_3_2",
 	"type": "header"

@@ -38,7 +38,7 @@
 	.global str_item_pc_no_mail
 
 	str_item_pc_no_mail:
-		.string "Hier ist kein Brief."
+		.string "Hier ist kein Brief.PAUSE_UNTIL_PRESS"
 
 
 .elseif LANG_EN

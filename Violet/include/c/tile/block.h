@@ -141,6 +141,40 @@ u8 block_get_level(s16 x, s16 y);
  * @param behavior the bevhavior to check
  * @return if the tile behavior is reflective
  */
-bool tile_is_reflective_water(u8 behavior);
+bool behaviour_is_reflective_water(u8 behavior);
+
+/**
+ * Checks if a tile's behavior is water, but too strong of a stream to surf on.
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a strong stream of water
+ */
+bool behaviour_is_surf_strong_stream(u8 behaviour);
+
+/**
+ * Checks if a tile's behavior is that of a waterfall.
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a waterfall
+ */
+bool behaviour_is_waterfall(u8 behaviour);
+
+/**
+ * Checks if at least one pokemon of the player has surf
+ * @return if at least one pokemon of the player has surf
+ */
+bool player_pokemon_has_surf();
+
+/**
+ * Checks if the player can surf on the tile he is facing. If he already is surfing false is
+ * returned.
+ * @return if the player can trigger a new surf on the tile currently faced
+ */
+bool player_can_use_surf_on_tile_faced();
+
+/**
+ * Checks if the player can use waterfall in his current state, i.e. if he is facing upwards.
+ * @return if the player can use waterfall in his current state
+ */
+bool player_can_use_waterfall_on_tile_faced();
+
 
 #endif /* INCLUDE_C_TILE_BLOCK_H_ */

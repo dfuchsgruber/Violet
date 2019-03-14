@@ -1,0 +1,54 @@
+{
+	"data": {
+		"footer": "map_footer_20_debug",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 0,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": 0,
+					"picture": 0,
+					"script_std": 0,
+					"field_3": 0,
+					"x": 0,
+					"y": 0,
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": 0,
+		"footer_idx": 20,
+		"namespace": "MAP_AMONIA",
+		"flash_type": 0,
+		"weather": 0,
+		"type": 0,
+		"bike_usable": 0,
+		"show_name": 0,
+		"field_1A": 0,
+		"battle_style": 0
+	},
+	"label": "map_4_3_debug",
+	"type": "header"
+}

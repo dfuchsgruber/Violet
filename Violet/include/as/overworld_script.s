@@ -939,7 +939,7 @@
 
 .macro doanimation animid
 .byte 0x9c
-.byte \animid
+.hword \animid
 .endm
 
 .macro setanimation animid var

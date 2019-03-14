@@ -30479,7 +30479,31 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 37,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 6
+				},
+				{
+					"tile_idx": 38,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 6
+				},
+				{
+					"tile_idx": 602,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 6
+				},
+				{
+					"tile_idx": 603,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 6
+				},
+				{
+					"tile_idx": 513,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
@@ -30491,48 +30515,42 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 515,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 481,
+					"palette_idx": 3,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				}
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 33,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 0
+					"palette_idx": 6
+				},
+				{
+					"tile_idx": 34,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 6
+				},
+				{
+					"tile_idx": 598,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 6
+				},
+				{
+					"tile_idx": 599,
+					"horizontal_flip": 0,
+					"vertical_flip": 0,
+					"palette_idx": 6
 				},
 				{
 					"tile_idx": 0,
@@ -30541,37 +30559,19 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 512,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 481,
+					"palette_idx": 3,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
+					"tile_idx": 514,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
@@ -32820,14 +32820,14 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"field_3": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1"
+				"behaviour": "0",
+				"hm_usage": "0",
+				"field_2": "0",
+				"field_3": "0",
+				"encounter_type": "0",
+				"field_5": "0",
+				"field_7": "0",
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
@@ -36827,7 +36827,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x10",
@@ -36837,7 +36837,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x10",
@@ -36847,7 +36847,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x10",
@@ -36910,8 +36910,8 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
+				"behaviour": "0x13",
+				"hm_usage": "0x3",
 				"field_2": "0x0",
 				"field_3": "0x0",
 				"encounter_type": "0x0",
@@ -36997,7 +36997,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x10",
@@ -38560,20 +38560,20 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "0x10",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x6",
+				"field_3": "0x3",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "0x10",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x6",
+				"field_3": "0x3",
 				"encounter_type": "0x2",
 				"field_5": "0x0",
 				"field_7": "0x0",

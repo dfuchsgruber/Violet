@@ -50,7 +50,7 @@ void pokemon_party_menu_opt_build(pokemon *base, u8 index) {
 }
 
 
-u16 fieldmove_flags[] = {FRBADGE_1, FRBADGE_2, FRBADGE_3, FRBADGE_4, FRBADGE_5, FRBADGE_6,
+u16 fieldmove_flags[] = {FRBADGE_1, FRBADGE_2, FRBADGE_3, FRBADGE_5, FRBADGE_4, FRBADGE_6,
 		FRBADGE_7, FRBADGE_8};
 
 extern u8 str_fieldmove_usable_with_new_bade[];
