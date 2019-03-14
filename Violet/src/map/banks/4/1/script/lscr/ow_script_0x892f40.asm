@@ -126,7 +126,7 @@ difficulty_choices:
 .global str_0x89553b
 
 str_0x89553b:
-    .string "Wähle zunächst den\nSchwierigkeitsgrad aus, in dem du\ldas Spiel spielen möchtest.\pAchtung: Diese Entscheidung ist\nendgültig.\pDu kannst sie während\ndes Spielverlaufes nicht ändern!"
+    .string "Wähle zunächst den\nSchwierigkeitsgrad aus, in dem du\ldas Spiel spielen möchtest.\pAchtung: Diese Entscheidung ist\nendgültig.\pDu kannst sie während\ndes Spielverlaufs nicht ändern!"
         
         
 .global str_difficulty_very_easy

@@ -334,22 +334,22 @@
 					"y": 20,
 					"level": 0,
 					"field_5": 0,
-					"value": 9,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_exit",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "TRAINERSCHOOL_PROGRESS"
+					"var": "TRAINERSCHOOL_DONE"
 				},
 				{
 					"x": 41,
 					"y": 20,
 					"level": 0,
 					"field_5": 0,
-					"value": 9,
+					"value": "0",
 					"script": "ow_script_trainerschool_lock_exit",
 					"field_A": 0,
 					"field_B": 0,
-					"var": "TRAINERSCHOOL_PROGRESS"
+					"var": "TRAINERSCHOOL_DONE"
 				}
 			],
 			"signposts": [

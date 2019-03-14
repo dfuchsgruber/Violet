@@ -141,7 +141,7 @@ u8 *str_trainerschool_test_question_6_answers[] = {
 };
 
 u8 str_trainerschool_test_question_7[] = LANGDEP(
-    PSTRING("Welcher dieser\nAngriffe\n verursacht den\nmeisten Schaden?"),
+    PSTRING("Welcher dieser\nAngriffe\nverursacht den\nmeisten Schaden?"),
     PSTRING("Which of these\nattacks causes\nthe most\ndamage?"));
 u8 str_trainerschool_test_question_7_answer_0[] = LANGDEP(
     PSTRING("Giftzahn"), PSTRING("Poison Fang"));
