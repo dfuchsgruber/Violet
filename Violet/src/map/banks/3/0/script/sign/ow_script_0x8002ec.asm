@@ -13,7 +13,7 @@ end
 .global str_0x80062f
 
 str_0x80062f:
-    .string "Amonia - Das Dorf der Ruhe."
+    .string "Amonia - Das Dorf der Ruhe"
         
         
 .elseif LANG_EN

@@ -13,7 +13,7 @@ end
 .global str_0x800688
 
 str_0x800688:
-    .string "PLAYERs Haus.ツ"
+    .string "PLAYERs Hausツ"
         
         
 .elseif LANG_EN

@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_432",
 	"data": {
 		"border": [
 			[
@@ -324,11 +322,11 @@
 				},
 				{
 					"block_idx": 744,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 745,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 691,
@@ -414,7 +412,7 @@
 				},
 				{
 					"block_idx": 699,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 699,
@@ -724,7 +722,7 @@
 				},
 				{
 					"block_idx": 774,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 8,
@@ -814,7 +812,7 @@
 				},
 				{
 					"block_idx": 692,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 8,
@@ -904,7 +902,7 @@
 				},
 				{
 					"block_idx": 782,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 8,
@@ -1833,5 +1831,7 @@
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_432",
+	"type": "footer"
 }
