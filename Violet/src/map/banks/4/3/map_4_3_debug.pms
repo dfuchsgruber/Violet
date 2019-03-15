@@ -2,11 +2,33 @@
 	"data": {
 		"footer": "map_footer_20_debug",
 		"events": {
-			"person_cnt": 0,
+			"person_cnt": 1,
 			"warp_cnt": 0,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
-			"persons": [],
+			"persons": [
+				{
+					"target_index": 0,
+					"picture": "41",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "10",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_battle_test",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
 			"warps": [],
 			"triggers": [],
 			"signposts": [
