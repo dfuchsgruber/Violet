@@ -21,7 +21,7 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"alert_radius": 0,
-					"script": 0,
+					"script": "ow_script_aktania_gengarnite",
 					"flag": 0,
 					"value": {
 						"item": 0,

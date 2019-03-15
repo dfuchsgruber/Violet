@@ -327,6 +327,7 @@ tileset_anim_clk1 = 0x03000FB2;
 tileset_anim_clk1_cycle = 0x03000FB4;
 tileset_anim_0 = 0x03000FB8;
 tileset_anim_1 = 0x03000FBC;
+tileset_anim_proceed = 0x0806FF20 | 1;
 map_displ_cntrl = 0x03000E90;
 npcs = 0x02036E38;
 player_state = 0x02037078;

@@ -73,7 +73,7 @@ extern "C" {
      * @param bgid The bg id to target
      * @return Pointer to the tilemap
      */
-    bg_text_tile* bg_get_tilemap(u8 bgid);
+    bg_tile* bg_get_tilemap(u8 bgid);
 
     /**
      * Resets all bgs

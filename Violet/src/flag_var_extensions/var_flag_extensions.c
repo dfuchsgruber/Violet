@@ -31,7 +31,6 @@ u16 *var_access_ext(u16 var) {
 }
 
 bool checkflag(u16 flag) {
-
     if (flag >= 0x8000) return !checkflag((u16) (flag - 0x8000));
     u8 *off = flag_access(flag);
     if (off) {

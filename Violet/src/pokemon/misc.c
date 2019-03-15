@@ -30,3 +30,12 @@ bool pokemon_knows_hm(pokemon *p){
     }
     return false;
 }
+
+u16 player_party_contains_species() {
+  u16 species = *var_access(0x8004);
+  for (u16 i = 0; i < player_pokemon_cnt; i++) {
+    if (pokemon_get_attribute(&player_pokemon[i], ATTRIBUTE_SPECIES, 0) == species)
+      return i;
+  }
+  return 6;
+}

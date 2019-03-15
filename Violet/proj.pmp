@@ -955,6 +955,10 @@
 		"map_footer_20_debug": [
 			20,
 			"src/map/banks/4/3/map_footer_20_debug.pms"
+		],
+		"map_footer_22_river_puzzle": [
+			22,
+			"src/map/banks/3/8/map_footer_22_river_puzzle.pms"
 		]
 	},
 	"tilesets_primary": {

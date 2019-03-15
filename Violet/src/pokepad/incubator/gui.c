@@ -231,7 +231,7 @@ void incubator_redraw_progress_bar(int slot) {
 
 void incubator_load_eggs() {
   // Clear background 1
-  bg_text_tile *bg1_tilemap = bg_get_tilemap(1);
+  bg_text_tile *bg1_tilemap = (bg_text_tile*)bg_get_tilemap(1);
   lz77uncompwram(gfx_incubator_ui_glassMap, bg1_tilemap);
   // Buffer boxes
   bg_text_tile *box_tilemap = malloc(sizeof(bg_text_tile) * 14 * 3);

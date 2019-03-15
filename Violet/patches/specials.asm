@@ -152,3 +152,7 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x4C * 4))
 		.word special_overworld_script_give_egg_into_incubator_slots | 1
 		.pool
+
+.org (special_table + (0x4D * 4))
+		.word player_party_contains_species | 1
+		.pool

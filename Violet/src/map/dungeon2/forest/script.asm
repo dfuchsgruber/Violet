@@ -34,11 +34,13 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 ow_script_test:
 setflag TRANS_DISABLE
+callasm river_puzzle_initialize
+end
+
+setflag TRANS_DISABLE
 callasm incubator_initialize
 waitstate
 end
-
-
 settrainerflag 0xb7
 trainerbattlecont 0x1 0xb7 0x0 str_0x83114c str_0x8311a8 ow_script_0x83108d
 setvar 0x8004 6

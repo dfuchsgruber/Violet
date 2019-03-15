@@ -9,6 +9,7 @@
 #define INCLUDE_C_MAP_TILESET_H_
 
 #include "tile/block.h"
+#include "bg.h"
 
 typedef struct map_tileset_info {
     u8 compression_used;
@@ -23,7 +24,7 @@ typedef struct tileset {
     map_tileset_info info;
     void *graphic;
     u16 *colors; //6 * 16 colors
-    void *blocks;
+    bg_tile *blocks;
     void *(*animation_init)();
     block_data *behaviours;
 } tileset;
@@ -56,5 +57,10 @@ void generic_tileset_anim_proceed_all(tileset_animation_header *anim_header,
         u16 clk);
 
 void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);
+
+/**
+ * Proceeds tileset animation callbacks and clocks. Called by the overworld_proceed function.
+ */
+void tileset_anim_proceed();
 
 #endif /* INCLUDE_C_MAP_TILESET_H_ */

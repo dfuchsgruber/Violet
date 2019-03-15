@@ -122,11 +122,12 @@ typedef struct {
     u8 battle_bg_index;
     u8 unused_2;
     u8 unused_3;
-    pokepad_memory *pad_mem;
+    pokepad_memory *pad_mem; // TODO: migrate pointers to the gp state
     wondertrade_memory *wtrade_mem;
     pokedex_memory *dex_mem;
     incubator_state_stru *incubator_state;
     ev_menu_state_stru *ev_menu_state;
+    void *gp_state;
     u8 *additional_levelscript_4;
     u16 dmart[32]; //max 32 items per mart
     ae_memory *ae_mem;
