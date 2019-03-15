@@ -119,7 +119,7 @@ ow_script_dungeon2_forest_none:
 
 .ifdef LANG_GER
 str_dungeon_enter_forest_0:
-	.autostring 35 2 "Das Unterholz scheint hier nicht all zu dicht zu sein..."
+	.autostring 35 2 "Das Unterholz scheint hier nicht allzu dicht zu sein..."
 
 str_dungeon_enter_forest_1:
 	.autostring 35 2 "Möchtest du Geheimpower nutzen, um das Dickicht zu zerschneiden?"
