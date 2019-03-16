@@ -1,3 +1,6 @@
+.include "callstds.s"
+.include "mugshot_alignment.s"
+
 .macro nop 
 .byte 0x0
 .endm
@@ -1257,3 +1260,36 @@
 .hword \movement
 .endm
 
+# Custom Macros
+.macro load_mugshot person alignment=MUGSHOT_LEFT
+    setvar 0x8000 \alignment
+    setvar 0x8001 \person
+.endm
+
+.macro call_draw_mugshot
+    special 0x6
+.endm
+
+.macro call_hide_mugshot
+    special 0x7
+.endm
+
+.macro show_mugshot_message message_type=MSG
+    call_draw_mugshot
+    callstd \message_type
+    call_hide_mugshot
+.endm
+
+.macro draw_mugshot person alignment=MUGSHOT_LEFT
+    load_mugshot \person \alignment
+    call_draw_mugshot
+.endm
+
+.macro hide_mugshot
+    call_hide_mugshot
+.endm
+
+.macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG
+    load_mugshot \person \alignment
+    show_mugshot_message \message_type
+.endm
