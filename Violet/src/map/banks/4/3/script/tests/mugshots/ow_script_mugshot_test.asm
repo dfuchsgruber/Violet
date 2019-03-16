@@ -9,22 +9,22 @@
 ow_script_mugshot_test:
     lock
     faceplayer
-    loadpointer 0x0 text1
+    loadpointer 0x0 introduction
     show_mugshot MUGSHOT_HIRO
-    loadpointer 0x0 text2
+    loadpointer 0x0 thisisme
     show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT
-    loadpointer 0x0 text3
+    loadpointer 0x0 joke
     show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
-    loadpointer 0x0 text4
+    loadpointer 0x0 confusion
     draw_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT
-    loadpointer 0x0 text5
+    loadpointer 0x0 blaise
     callstd MSG
-    loadpointer 0x0 text6
+    loadpointer 0x0 neuer
     callstd MSG
     hide_mugshot
-    loadpointer 0x0 text7
+    loadpointer 0x0 reaction
     show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT MSG_KEEPOPEN
-    loadpointer 0x0 text8
+    loadpointer 0x0 question
     show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT MSG_YES_NO
     compare LASTRESULT 0x0
     callif EQUAL script_yes
@@ -34,39 +34,39 @@ ow_script_mugshot_test:
     end
 
 script_yes:
-    loadpointer 0x0 text9
+    loadpointer 0x0 yes_text
     return
 
 script_no:
-    loadpointer 0x0 text10
+    loadpointer 0x0 no_text
     return
 
-text1:
+introduction:
     .autostring 35 2 "Hallo, ich bin PLAYER"
 
-text2:
+thisisme:
     .autostring 35 2 "Kann nicht sein!\nIch bin doch PLAYER!"
 
-text3:
+joke:
     .autostring 35 2 "Scherz, ich bin Faun."
 
-text4:
+confusion:
     .autostring 35 2 "ÄhDOTS was!?"
 
-text5:
+blaise:
     .autostring 35 2 "Oder vielleicht bin ich auch Blaise, der dich mal eben zulabern will, oderDOTS"
 
-text6:
+neuer:
     .autostring 35 2 "Vielleicht bin ich auch Manuel Neuer!"
 
-text7:
+reaction:
     .autostring 35 2 "WTF!?"
 
-text8:
+question:
     .autostring 35 2 "Ist das Manuel Neuer!?"
 
-text9:
+yes_text:
     .autostring 35 2 "Ich war von Anfang an misstrauisch!"
 
-text10:
+no_text:
     .autostring 35 2 "Das denke ich auch."
