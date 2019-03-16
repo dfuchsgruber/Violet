@@ -10,6 +10,7 @@
 #include "vars.h"
 #include "item/item.h"
 #include "overworld/script.h"
+#include "list_menu.h"
 
 u16 fossils [5] = {
     ITEM_ALTBERNSTEIN,
@@ -33,13 +34,13 @@ void fossil_print_multichoice() {
     lastresult = 0;
     
     // Iterate through all possible fossils
-    dynamic_multichoice_t choices[5];
+    list_menu_item choices[5];
     int i;
     u16 displayed = 0;
     for (i = 0; i < 5; i++) {
         if(item_check(fossils[i], 1)){
             choices[displayed].text = items[fossils[i]].name;
-            choices[displayed].field_4 = 0;
+            choices[displayed].idx = i;
             displayed++;
         }
     }

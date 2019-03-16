@@ -14,6 +14,7 @@
 #include "agbmemory.h"
 #include "overworld/map_control.h"
 #include "overworld/script.h"
+#include "language.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -170,7 +171,13 @@ void special_mugshot_show() {
     int side = *var_access(0x8000);
     int idx = *var_access(0x8001);
     mugshot_create_oam(side, idx);
-	mugshot_create_text(side, mugshots[idx].name);
+  if (*var_access(0x8002)) {
+    mugshot_create_text(side, mugshots[idx].name);
+  }
+  else {
+    u8 str_name_unknown[] = PSTRING("???");
+    mugshot_create_text(side, str_name_unknown);
+  }
 }
 
 void special_mugshot_delete() {

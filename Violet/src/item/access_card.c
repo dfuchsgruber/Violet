@@ -9,7 +9,7 @@
 #include "overworld/script.h"
 #include "overworld/map_control.h"
 #include "vars.h"
-
+#include "list_menu.h"
 
 access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
     {0, 9, 13, 0, 8}, //Cybernetik
@@ -21,7 +21,7 @@ access_card_element access_card_elements [ACCESS_CARD_ELEMENT_CNT] = {
 void access_card_print_multichoice() {
 
     //iterate through all access cards
-	dynamic_multichoice_t *d_elements = malloc_and_clear(sizeof(dynamic_multichoice_t) * ACCESS_CARD_ELEMENT_CNT);
+  list_menu_item *d_elements = malloc_and_clear(sizeof(list_menu_item) * ACCESS_CARD_ELEMENT_CNT);
     int i;
     u16 displayed = 0;
     for (i = 0; i < ACCESS_CARD_ELEMENT_CNT; i++) {

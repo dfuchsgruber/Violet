@@ -21,11 +21,6 @@ extern "C" {
     
     extern multichoice_t multichoices[];
 
-    typedef struct{
-		u8 *text;
-		int field_4;
-	} dynamic_multichoice_t;
-
 
 #ifdef	__cplusplus
 }
