@@ -29,6 +29,8 @@
         "MUGSHOT_PRIMUS",
         "MUGSHOT_IGVA",
         "MUGSHOT_BLACKBEARD",
-        "MUGSHOT_HIROINE"
+        "MUGSHOT_HIROINE",
+
+        "MUGSHOT_PLAYER"
     ]
 }
