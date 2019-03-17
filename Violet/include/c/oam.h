@@ -326,5 +326,13 @@ void oam_anim_proceed();
  */
 u8 oam_rotscale_get(oam_object *o);
 
+/**
+ * Flips an oam (i.e. turns the current flip if set)
+ * @param o the oam object to flip
+ * @param horizontal_flip if horizontal flip shall be changed
+ * @param vertical_flip if vertical flip shall be changed
+ */
+void oam_flip(oam_object *o, bool horizontal_flip, bool vertical_flip);
+
 
 #endif

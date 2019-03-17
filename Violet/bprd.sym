@@ -217,6 +217,7 @@ dma3_queue_proceed = 0x0806feb9;
 tbox_proceed = 0x08002d69;
 big_callback_proceed = 0x080774dd;
 oam_anim_proceed = 0x08006add;
+oam_flip = 0x08008054 | 1;
 bg_decompress_vram = 0x80F6B0d;
 titlescreen_handle = 0x08078B89;
 battlescript_callstack_push_next_command = 0x080174C9;

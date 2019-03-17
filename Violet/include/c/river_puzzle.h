@@ -15,8 +15,11 @@
 
 #define RIVER_PUZZLE_WEST 0
 #define RIVER_PUZZLE_EAST 1
-#define RIVER_PUZZLE_BOAT_WEST 2
-#define RIVER_PUZZLE_BOAT_EAST 3
+#define RIVER_PUZZLE_POSITION_BOAT_WEST 6
+#define RIVER_PUZZLE_POSITION_BOAT_EAST 7
+#define RIVER_PUZZLE_BOAT_EMPTY 255
+#define RIVER_PUZZLE_INTO_BOAT 0
+#define RIVER_PUZZLE_FROM_BOAT 1
 
 typedef struct {
   u8 boat_oam;
@@ -27,6 +30,7 @@ typedef struct {
   u8 cursor_side; // The side where the cursor is
   u8 cursor; // Where the cursor is at
   u8 callback_idx_list;
+  u8 delay;
 } river_puzzle_state_t;
 
 #define RIVER_PUZZLE_STATE ((river_puzzle_state_t*) fmem.gp_state)
@@ -36,6 +40,11 @@ typedef struct {
  * @param self self-reference to the callback structures
  */
 void river_puzzle_callback_idle(u8 self);
+
+/**
+ * Draws the context information for the current selection on the river puzzle.
+ */
+void river_puzzle_draw_context_information();
 
 extern const u16 gfx_river_puzzle_uiTiles[];
 extern const u16 gfx_river_puzzle_uiMap[];
@@ -53,6 +62,7 @@ extern const u16 gfx_river_puzzle_cursorPal[];
 extern const u8 str_river_puzzle_help[];
 extern const u8 str_river_puzzle_confirm_exit[];
 extern const u8 str_river_puzzle_invalid_configuration[];
+extern const u8 str_river_puzzle_solved[];
 
 #define RIVER_PUZZLE_BABY_POKEMON 1
 #define RIVER_PUZZLE_LINE(x) ((x) << 1)
