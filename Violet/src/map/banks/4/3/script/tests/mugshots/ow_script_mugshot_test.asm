@@ -12,11 +12,11 @@ ow_script_mugshot_test:
     loadpointer 0x0 whoami
     show_mugshot MUGSHOT_HIRO,MUGSHOT_LEFT,,1
     loadpointer 0x0 no_plan
-    show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT
+    show_player_mugshot MUGSHOT_RIGHT
     loadpointer 0x0 introduction
     show_mugshot MUGSHOT_HIRO
     loadpointer 0x0 thisisme
-    show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT
+    show_player_mugshot MUGSHOT_RIGHT
     loadpointer 0x0 joke
     show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
     loadpointer 0x0 confusion
@@ -27,13 +27,13 @@ ow_script_mugshot_test:
     callstd MSG
     hide_mugshot
     loadpointer 0x0 reaction
-    show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT MSG_KEEPOPEN
+    show_player_mugshot MUGSHOT_RIGHT MSG_KEEPOPEN
     loadpointer 0x0 question
-    show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT MSG_YES_NO
+    show_player_mugshot MUGSHOT_RIGHT MSG_YES_NO
     compare LASTRESULT 0x0
     callif EQUAL script_yes
     callif NOT_EQUAL script_no
-    show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT
+    show_player_mugshot MUGSHOT_RIGHT
     release
     end
 
