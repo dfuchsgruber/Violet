@@ -2,7 +2,7 @@
 .include "callstds.s"
 .include "ordinals.s"
 .include "vars.s"
-.include "mugshot.s"
+.include "mugshot_character.s"
 .include "mugshot_alignment.s"
 
 .global ow_script_mugshot_test
