@@ -5093,4 +5093,39 @@ trainer trainers[TRAINER_CNT] = {
 				.party = (trainer_pokemon*) trainer_party_xc4_inferior_gymleader,
 				.uses_custom_items = true, .uses_custom_moves = true
 		},
+		[0xc5] = {
+		    .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 16,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Puk"),
+            PSTRING("Puc")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xc5_route_8_trainer_0
+		},
+    [0xc6] = {
+        .trainerclass = TRAINERCLASS_ANGLER, .sprite = 0x26,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Lanzelod"),
+            PSTRING("Lancelod")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xc6_route_8_trainer_1
+    },
+    [0xc7] = {
+        .trainerclass = TRAINERCLASS_KAEFERSAMMLER, .sprite = 0x43,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Myrko"),
+            PSTRING("Myrco")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xc7_route_8_trainer_2
+    },
+    [0xc8] = {
+        .trainerclass = TRAINERCLASS_PKMN_ZUECHTER, .sprite = 59,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Kathy"),
+            PSTRING("Kathy")), .pokemon_cnt = 5,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xc8_route_8_trainer_3
+    },
+    [0xc9] = {
+        .trainerclass = TRAINERCLASS_TRIATHLET, .sprite = 42,
+        .encounter_and_gender = {4, 1}, .name = LANGDEP(PSTRING("Nyna"),
+            PSTRING("Nyna")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xc9_route_8_trainer_4
+    }
 };

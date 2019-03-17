@@ -18,7 +18,7 @@ def get_item_index(rompath, symbolspath, projectpath):
     }
 
     # Parse script files
-    root = 'src/map/banks'
+    root = 'Violet/src/map/banks'
     for subdir, dirs, files in os.walk(root):
         for file in files:
             filepath = subdir + os.sep + file
@@ -45,27 +45,36 @@ def get_item_index(rompath, symbolspath, projectpath):
     for bank in project.headers:
         for map_idx in project.headers[bank]:
             header, label, namespace = project.load_header(bank, map_idx)
-            for person in header['events']['persons']:
-                if person['script_std'] == 'PERSON_ITEM':
-                    items[person['value']['item']].append({
-                        'type' : 'pokeball',
-                        'bank' : bank,
-                        'map_idx' : map_idx,
-                        'flag' : person['flag'],
-                        'namespace' : namespace,
-                    })
-            for sign in header['events']['signposts']:
-                item = sign['value']['item']['item']
-                if item in items:
-                    items[item].append({
-                        'type' : 'hidden',
-                        'bank' : bank,
-                        'map_idx' : map_idx,
-                        'flag' : sign['value']['item']['flag'],
-                        'namespace' : namespace,
-                        'amount' : sign['value']['item']['amount'],
-                        'chunk' : sign['value']['item']['chunk'],
-                    })
+            for person_idx, person in enumerate(header['events']['persons']):
+                try:
+                    if person['script_std'] == 'PERSON_ITEM':
+                        items[person['value']['item']].append({
+                            'type' : 'pokeball',
+                            'bank' : bank,
+                            'map_idx' : map_idx,
+                            'flag' : person['flag'],
+                            'namespace' : namespace,
+                        })
+                except Exception as e:
+                    print(f'Error in parsing item of person {person_idx} on map {bank},{map_idx}')
+                    raise e
+            for sign_idx, sign in enumerate(header['events']['signposts']):
+                try:
+                    item = sign['value']['item']['item']
+                    if item in items:
+                        items[item].append({
+                            'type' : 'hidden',
+                            'bank' : bank,
+                            'map_idx' : map_idx,
+                            'flag' : sign['value']['item']['flag'],
+                            'namespace' : namespace,
+                            'amount' : sign['value']['item']['amount'],
+                            'chunk' : sign['value']['item']['chunk'],
+                        })
+                except Exception as e:
+                    print(f'Error in parsing item of sign {sign_idx} on map {bank},{map_idx}')
+                    raise e
+
 
     # Parse dungeon items
     datatype = project.model['item_list']

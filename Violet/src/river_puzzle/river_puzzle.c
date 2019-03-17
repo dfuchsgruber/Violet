@@ -30,6 +30,7 @@
 #include "vars.h"
 #include "constants/vars.h"
 #include "constants/songs.h"
+#include "overworld/script.h"
 
 tbox_font_colormap river_puzzle_font_colmap_std = {
     4, 1, 2, 4
@@ -275,6 +276,7 @@ void river_puzzle_callback_exit(u8 self) {
     free(bg_get_tilemap(3));
     free(fmem.gp_state);
     callback1_set(map_reload);
+    overworld_script_resume();
     big_callback_delete(self);
   }
 }
@@ -426,6 +428,15 @@ void river_puzzle_cursor_move_left() {
   }
 }
 
+void river_puzzle_callback_wait_for_fanfare(u8 self) {
+  if (!big_callback_is_active(fanfare_callback_wait)) {
+    tbox_print_string_and_continue(self, RIVER_PUZZLE_TBOX_MESSAGE,
+        RIVER_PUZZLE_UI_NUM_TILES + TBOX_CONTEXT_BORDER_NUM_TILES, 15, 2, tbox_get_set_speed(),
+        str_river_puzzle_solved, river_puzzle_callback_solved);
+  }
+}
+
+
 void river_puzzle_callback_idle(u8 self) {
   if (RIVER_PUZZLE_STATE->delay) {
     RIVER_PUZZLE_STATE->delay--;
@@ -436,9 +447,7 @@ void river_puzzle_callback_idle(u8 self) {
       // River puzzle done
       fanfare(MUS_SOUND_GLUCKWUNSCH2);
       *var_access(LASTRESULT) = 1;
-      tbox_print_string_and_continue(self, RIVER_PUZZLE_TBOX_MESSAGE,
-          RIVER_PUZZLE_UI_NUM_TILES + TBOX_CONTEXT_BORDER_NUM_TILES, 15, 2, tbox_get_set_speed(),
-          str_river_puzzle_solved, river_puzzle_callback_solved);
+      big_callbacks[self].function = river_puzzle_callback_wait_for_fanfare;
       return;
     }
     // Process keys

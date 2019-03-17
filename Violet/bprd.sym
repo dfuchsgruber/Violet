@@ -443,3 +443,4 @@ player_pokemon_recount_pokemon = 0x08040B3C | 1;
 box_get_name = 0x0808BE70 | 1;
 sub_811FB5C = 0x811FB5C | 1;
 ingame_trade_unkown_callback = 0x03004F70;
+fanfare_callback_wait = 0x08071C20 | 1;

@@ -49,6 +49,12 @@ void playsong2(u16 song);
 void fanfare(u16 song_id);
 
 /**
+ * Callback that waits for the current fanfare and resumes to the normal song.
+ * @param self self-reference in the big_callbacks array
+ */
+void fanfare_callback_wait(u8 self);
+
+/**
  * Gets the song to play in battle
  * @param The song id to play
  */

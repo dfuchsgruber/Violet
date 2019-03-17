@@ -82,15 +82,19 @@ def get_habitat_index(rompath, symbolspath, projectpath):
     for bank in project.headers:
         for map_idx in project.headers[bank]:
             header, label, namespace = project.load_header(bank, map_idx)
-            for person in header['events']['persons']:
-                if person['script_std'] == 'PERSON_EGG':
-                    habitats[person['value']['species']].append({
-                        'type' : 'egg',
-                        'bank' : bank,
-                        'map_idx' : map_idx,
-                        'label' : label,
-                        'namespace' : namespace,
-                    })
+            try:
+                for person in header['events']['persons']:
+                    if person['script_std'] == 'PERSON_EGG':
+                        habitats[person['value']['species']].append({
+                            'type' : 'egg',
+                            'bank' : bank,
+                            'map_idx' : map_idx,
+                            'label' : label,
+                            'namespace' : namespace,
+                        })
+            except Exception as e:
+                print(f'Error in map {bank},{map_idx}')
+                raise e
 
     # Event Pokémon
     habitats['POKEMON_PORYGON'] = [{
