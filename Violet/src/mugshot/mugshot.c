@@ -170,14 +170,10 @@ void special_mugshot_show() {
 	// Create the actual mugshot
     int side = *var_access(0x8000);
     int idx = *var_access(0x8001);
+	int is_known = *var_access(0x8002);
+	u8 unknown_name[] = PSTRING("???");
     mugshot_create_oam(side, idx);
-  if (*var_access(0x8002)) {
-    mugshot_create_text(side, mugshots[idx].name);
-  }
-  else {
-    u8 str_name_unknown[] = PSTRING("???");
-    mugshot_create_text(side, str_name_unknown);
-  }
+	mugshot_create_text(side, is_known == 0 ? unknown_name : mugshots[idx].name);
 }
 
 void special_mugshot_delete() {
