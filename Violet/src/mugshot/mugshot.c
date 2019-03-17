@@ -15,6 +15,7 @@
 #include "overworld/map_control.h"
 #include "overworld/script.h"
 #include "language.h"
+#include "constants/mugshots.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -57,6 +58,10 @@ mugshot mugshots[] = {
     {&gfx_mug_blackbeardTiles, &gfx_mug_blackbeardPal, str_mug_blackbeard},
     {&gfx_mug_hiroineTiles, &gfx_mug_hiroinePal, str_mug_hiro}
 };
+
+void mugshot_load_player() {
+	*var_access(0x8001) = *var_access(0x8001) == 0 ? MUGSHOT_HIROINE : MUGSHOT_HIRO;
+}
 
 void tbox_clear_bottom_line(u8 box_id) {
     int first_tile = tboxes[box_id].boxdata.w * (tboxes[box_id].boxdata.h - 1);
@@ -170,14 +175,10 @@ void special_mugshot_show() {
 	// Create the actual mugshot
     int side = *var_access(0x8000);
     int idx = *var_access(0x8001);
+	int is_known = *var_access(0x8002);
+	u8 unknown_name[] = PSTRING("???");
     mugshot_create_oam(side, idx);
-  if (*var_access(0x8002)) {
-    mugshot_create_text(side, mugshots[idx].name);
-  }
-  else {
-    u8 str_name_unknown[] = PSTRING("???");
-    mugshot_create_text(side, str_name_unknown);
-  }
+	mugshot_create_text(side, is_known == 0 ? unknown_name : mugshots[idx].name);
 }
 
 void special_mugshot_delete() {

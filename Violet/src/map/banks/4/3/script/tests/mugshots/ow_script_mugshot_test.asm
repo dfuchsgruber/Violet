@@ -2,13 +2,17 @@
 .include "callstds.s"
 .include "ordinals.s"
 .include "vars.s"
-.include "mugshot.s"
+.include "mugshot_character.s"
 .include "mugshot_alignment.s"
 
 .global ow_script_mugshot_test
 ow_script_mugshot_test:
     lock
     faceplayer
+    loadpointer 0x0 whoami
+    show_mugshot MUGSHOT_HIRO,MUGSHOT_LEFT,,1
+    loadpointer 0x0 no_plan
+    show_mugshot MUGSHOT_HIRO MUGSHOT_RIGHT
     loadpointer 0x0 introduction
     show_mugshot MUGSHOT_HIRO
     loadpointer 0x0 thisisme
@@ -41,8 +45,14 @@ script_no:
     loadpointer 0x0 no_text
     return
 
+whoami:
+    .autostring 35 2 "Weisst du, wer ich bin?"
+
+no_plan:
+    .autostring 35 2 "UffDOTS Keine Ahnung, deine Textbox ist nicht beschriftetDOTS"
+
 introduction:
-    .autostring 35 2 "Hallo, ich bin PLAYER"
+    .autostring 35 2 "Ich bin PLAYER"
 
 thisisme:
     .autostring 35 2 "Kann nicht sein!\nIch bin doch PLAYER!"

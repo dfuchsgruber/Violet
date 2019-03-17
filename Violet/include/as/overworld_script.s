@@ -1,5 +1,7 @@
 .include "callstds.s"
+.include "mugshot_character.s"
 .include "mugshot_alignment.s"
+.include "vars.s"
 
 .macro nop 
 .byte 0x0
@@ -1261,9 +1263,22 @@
 .endm
 
 # Custom Macros
-.macro load_mugshot person alignment=MUGSHOT_LEFT
+.macro load_mugshot person alignment=MUGSHOT_LEFT mask_name=0
     setvar 0x8000 \alignment
     setvar 0x8001 \person
+
+    .if \mask_name == 0x1
+        setvar 0x8002 0x0
+    .else
+        setvar 0x8002 0x1
+    .endif
+.endm
+
+.macro load_player_mugshot alignment=MUGSHOT_LEFT mask_name=0
+    load_mugshot 0 \alignment \mask_name
+    checkgender
+    copyvar LASTRESULT 0x8001
+    callasm mugshot_load_player
 .endm
 
 .macro call_draw_mugshot
@@ -1280,16 +1295,27 @@
     call_hide_mugshot
 .endm
 
-.macro draw_mugshot person alignment=MUGSHOT_LEFT
-    load_mugshot \person \alignment
+.macro draw_mugshot person alignment=MUGSHOT_LEFT mask_name=0
+    load_mugshot \person \alignment \mask_name
     call_draw_mugshot
 .endm
+
+.macro draw_player_mugshot alignment=MUGSHOT_LEFT mask_name=0
+    load_player_mugshot \alignment \mask_name
+    call_draw_mugshot
+.endm
+
 
 .macro hide_mugshot
     call_hide_mugshot
 .endm
 
-.macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG
-    load_mugshot \person \alignment
+.macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0
+    load_mugshot \person \alignment \mask_name
+    show_mugshot_message \message_type
+.endm
+
+.macro show_player_mugshot alignment=MUGSHOT_LEFT message_type=MSG mask_name=0
+    load_player_mugshot \alignment \mask_name
     show_mugshot_message \message_type
 .endm
