@@ -15,7 +15,7 @@
 #include "overworld/map_control.h"
 #include "overworld/script.h"
 #include "language.h"
-#include "constants/mugshots.h"
+#include "constants/mugshot_character.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -173,12 +173,15 @@ void special_mugshot_show() {
 	}
 
 	// Create the actual mugshot
-    int side = *var_access(0x8000);
-    int idx = *var_access(0x8001);
+  int side = *var_access(0x8000);
+  int idx = *var_access(0x8001);
+  if (idx == MUGSHOT_PLAYER) {
+    idx = save2->player_is_female ? MUGSHOT_HIROINE : MUGSHOT_HIRO;
+  }
 	int is_known = *var_access(0x8002);
 	u8 unknown_name[] = PSTRING("???");
     mugshot_create_oam(side, idx);
-	mugshot_create_text(side, is_known == 0 ? unknown_name : mugshots[idx].name);
+	mugshot_create_text(side, is_known ? mugshots[idx].name : unknown_name);
 }
 
 void special_mugshot_delete() {
