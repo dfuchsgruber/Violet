@@ -1,9 +1,0 @@
-#ifndef H_CONST_BLOCK_HM_USAGE
-#define H_CONST_BLOCK_HM_USAGE
-enum block_hm_usage {
-HM_USAGE_NONE = 0,
-HM_USAGE_CUT = 1,
-HM_USAGE_SURF = 2,
-HM_USAGE_ROCK_CLIMB = 16,
-};
-#endif

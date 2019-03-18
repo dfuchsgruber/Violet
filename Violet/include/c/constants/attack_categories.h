@@ -1,8 +1,0 @@
-#ifndef H_CONST_ATTACK_CATEGORIES
-#define H_CONST_ATTACK_CATEGORIES
-enum attack_categories {
-CATEGORY_PHYSICAL = 0,
-CATEGORY_SPECIAL = 1,
-CATEGORY_STATUS = 2,
-};
-#endif
