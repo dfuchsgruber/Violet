@@ -40,5 +40,15 @@
 	"block_hm_usage": "constants/block_hm_usage.const",
 	"pokemon_growth_rates" : "constants/pokemon_growth_rates.const",
 	"pokemon_colors" : "constants/pokemon_colors.const",
-	"person_script_stds" : "constants/person_script_stds.const"
+	"person_script_stds" : "constants/person_script_stds.const",
+	"ability_contexts" : "constants/ability_contexts.const",
+	"item_hold_effects" : "constants/item_hold_effects.const",
+	"difficulties" : "constants/difficulties.const",
+	"item_weather_rock_types" : "constants/item_weather_rock_types.const",
+	"pokemon_stat_names" : "constants/pokemon_stat_names.const",
+	"story_states" : "constants/story_states.const",
+	"trainer_builds" : "constants/trainer_builds.const",
+	"wild_pokemon_densities" : "constants/wild_pokemon_densities.const",
+	"mugshot_alignment" : "constants/mugshot_alignment.const",
+	"mugshot_character" : "constants/mugshot_character.const"
 }
