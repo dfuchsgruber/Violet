@@ -26,13 +26,13 @@
 	.global str_intro_prof_1
 
 	str_intro_prof_1:
-		.string "Das hier...\p"
+		.string "Das hierDOTS\p"
 
 
 	.global str_intro_prof_2
 
 	str_intro_prof_2:
-		.string "... ist eines dieser sogenannten\nPokémon.\p\n"
+		.string "DOTSist eines dieser sogenannten\nPokémon.\p\n"
 
 
 	.global str_intro_prof_3
@@ -68,7 +68,7 @@
 	.global str_intro_prof_6
 
 	str_intro_prof_6:
-		.string "Genau...\nDu heißt also PLAYER."
+		.string "GenauDOTS\nDu heißt also PLAYER."
 
 
 	.global str_intro_prof_7
@@ -78,14 +78,20 @@
 
 
 	.global str_intro_prof_8
-
+	
 	str_intro_prof_8:
-		.string "Korrekt! So heißt mein Sohn!\p"
+		.string "DOTSah, war es RIVAL?"
 
 
 	.global str_intro_prof_9
 
 	str_intro_prof_9:
+		.string "Korrekt! So heißt mein Sohn!\p"
+
+
+	.global str_intro_prof_10
+
+	str_intro_prof_10:
 		.string "PLAYER!\nDeine Reise in die sagenhafte\lRegion Theto beginnt nun endlich!\pAuf deiner langen Straße des\nLernens wirst du Bekanntschaften\lschließen, Feinde bezwingen und\lüber dich hinauswachsen.\pBis zur Spitze wird dich dein\nEhrgeiz bringen!\pDas ist dein Traum!\nLebe ihn!\p"
 
 
@@ -119,12 +125,12 @@
 	.global str_intro_prof_1
 
 	str_intro_prof_1:
-		.string "This...\p"
+		.string "ThisDOTS\p"
 
 	.global str_intro_prof_2
 
 	str_intro_prof_2:
-		.string "... is one of these so called\nPokémon.\p\n"
+		.string "DOTSis one of these so called\nPokémon.\p\n"
 
 	.global str_intro_prof_3
 
@@ -154,21 +160,26 @@
 	.global str_intro_prof_6
 
 	str_intro_prof_6:
-		.string "That\'s right...\nYour name is PLAYER."
+		.string "That\'s rightDOTS\nYour name is PLAYER."
 
 	.global str_intro_prof_7
 
 	str_intro_prof_7:
-		.string "This is my son, he has a somewhat\nfiery temper.\pSince your very childhood you two\nhave been unseperable best\lfriends.\pLet\'s test you right here.\nWhat is your best friend\'s name?"
+		.string "This is my son, he has a somewhat\nfiery temper.\pSince your very childhood you two\nhave been unseperable best\lfriends.\pLet's test you right here.\nWhat is your best friend's name?"
 
 	.global str_intro_prof_8
 
 	str_intro_prof_8:
-		.string "Correct! That\'s my son\'s name!\p"
+		.string "DOTSah, was it RIVAL?"
 
 	.global str_intro_prof_9
 
 	str_intro_prof_9:
+		.string "Correct! That\'s my son\'s name!\p"
+
+	.global str_intro_prof_10
+
+	str_intro_prof_10:
 		.string " PLAYER!\nYour journey into the Theto region\lwill finally begin.\pOn the long road of learning you\nwill meet various people, fight\lnumerous enemies and overcome your\lown limits.\pYour ambitions will bring you to\nthe very top of this world.\pThis is your dream!\nNow live it!\p"
 
 	.global str_player_std_new_name

@@ -60,10 +60,12 @@
     .word str_intro_prof_6
 .org 0x081307C4
     .word str_intro_prof_7
-.org 0x0813064C
+.org 0x08130548
     .word str_intro_prof_8
-.org 0x08130914
+.org 0x0813064C
     .word str_intro_prof_9
+.org 0x08130914
+    .word str_intro_prof_10
 
 .org 0x0812FFE8
     .word str_intro_prof_boy
