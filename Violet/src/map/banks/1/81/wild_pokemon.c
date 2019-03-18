@@ -33,11 +33,3 @@ wild_pokemon_entry wild_pokemon_1_81_grass_entries[12] = {
 wild_pokemon_habitat wild_pokemon_1_81_grass = {
 	.frequency = 3, .data = wild_pokemon_1_81_grass_entries
 };
-
-wild_pokemon_data wild_pokemon_1_81 = {
-	.bank = 1, .map = 81,
-	.grass = &wild_pokemon_1_81_grass,
-	.water = NULL,
-	.other = NULL,
-	.rod = NULL,
-};

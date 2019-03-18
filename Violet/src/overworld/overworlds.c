@@ -1290,6 +1290,25 @@ overworld_sprite ow_mother = {
 	oam_rotscale_anim_table_null
 };
 
+static graphic overworld_sprite_drampa_sprites[] = {
+  {&gfx_ow_drampaTiles[0 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[2 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[4 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[0 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[1 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[2 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[3 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[4 * 32 * 32 / 2 / 2], 0x200, 0},
+  {&gfx_ow_drampaTiles[5 * 32 * 32 / 2 / 2], 0x200, 0},
+};
+
+overworld_sprite ow_drampa = {
+  0xffff, 0x1104, 0x11ff, 0x200,
+  32, 32, 0x13, 0x1, 0x0, 0x8,
+  &ow_final_oam_32_32, ow_formation_32_32,
+  ow_anim_standard_npc, overworld_sprite_drampa_sprites,
+  oam_rotscale_anim_table_null
+};
 
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
@@ -1486,6 +1505,7 @@ overworld_sprite *overworld_sprites[] = {
         &ow_rubys,
 //174 
         &ow_botogel,
+        &ow_drampa,
 
 };
 

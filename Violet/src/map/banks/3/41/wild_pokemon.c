@@ -44,7 +44,7 @@ wild_pokemon_entry wild_pokemon_3_41_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
 		{.level_min = 30, .level_max = 35, .species = POKEMON_MARILL},
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
-		{.level_min = 35, .level_max = 40, .species = POKEMON_AZUMARILL},
+		{.level_min = 30, .level_max = 35, .species = POKEMON_AZUMARILL},
 };
 
 wild_pokemon_habitat wild_pokemon_3_41_water = {
@@ -93,12 +93,4 @@ wild_pokemon_entry wild_pokemon_3_41_rod_entries[10] = {
 
 wild_pokemon_habitat wild_pokemon_3_41_rod = {
 	.frequency = 49, .data = wild_pokemon_3_41_rod_entries
-};
-
-wild_pokemon_data wild_pokemon_3_41 = {
-	.bank = 3, .map = 41,
-	.grass = &wild_pokemon_3_41_grass,
-	.water = &wild_pokemon_3_41_water,
-	.other = &wild_pokemon_3_41_other,
-	.rod = &wild_pokemon_3_41_rod,
 };

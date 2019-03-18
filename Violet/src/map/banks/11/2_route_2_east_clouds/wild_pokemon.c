@@ -33,11 +33,3 @@ wild_pokemon_entry wild_pokemon_11_2_route_2_east_clouds_grass_entries[12] = {
 wild_pokemon_habitat wild_pokemon_11_2_route_2_east_clouds_grass = {
 	.frequency = 3, .data = wild_pokemon_11_2_route_2_east_clouds_grass_entries
 };
-
-wild_pokemon_data wild_pokemon_11_2_route_2_east_clouds = {
-	.bank = 11, .map = 2,
-	.grass = &wild_pokemon_11_2_route_2_east_clouds_grass,
-	.water = NULL,
-	.other = NULL,
-	.rod = NULL,
-};

@@ -40,11 +40,11 @@ wild_pokemon_entry wild_pokemon_3_57_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_1_30_PERCENT] = 
 		{.level_min = 5, .level_max = 15, .species = POKEMON_QUABBEL},
 	[WILD_POKEMON_DENSITY_WATER_2_5_PERCENT] = 
-		{.level_min = 35, .level_max = 40, .species = POKEMON_TENTACHA},
+		{.level_min = 30, .level_max = 35, .species = POKEMON_TENTACHA},
 	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
-		{.level_min = 35, .level_max = 40, .species = POKEMON_TENTOXA},
+		{.level_min = 30, .level_max = 35, .species = POKEMON_TENTOXA},
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
-		{.level_min = 35, .level_max = 40, .species = POKEMON_TENTOXA},
+		{.level_min = 30, .level_max = 35, .species = POKEMON_TENTOXA},
 };
 
 wild_pokemon_habitat wild_pokemon_3_57_water = {
@@ -93,12 +93,4 @@ wild_pokemon_entry wild_pokemon_3_57_rod_entries[10] = {
 
 wild_pokemon_habitat wild_pokemon_3_57_rod = {
 	.frequency = 20, .data = wild_pokemon_3_57_rod_entries
-};
-
-wild_pokemon_data wild_pokemon_3_57 = {
-	.bank = 3, .map = 57,
-	.grass = &wild_pokemon_3_57_grass,
-	.water = &wild_pokemon_3_57_water,
-	.other = &wild_pokemon_3_57_other,
-	.rod = &wild_pokemon_3_57_rod,
 };

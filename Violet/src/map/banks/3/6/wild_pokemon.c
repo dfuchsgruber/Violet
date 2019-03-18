@@ -11,9 +11,9 @@ wild_pokemon_entry wild_pokemon_3_6_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_2_5_PERCENT] = 
 		{.level_min = 20, .level_max = 30, .species = POKEMON_ENTON},
 	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
-		{.level_min = 30, .level_max = 40, .species = POKEMON_ENTON},
+		{.level_min = 25, .level_max = 35, .species = POKEMON_ENTON},
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
-		{.level_min = 30, .level_max = 40, .species = POKEMON_SMOGON},
+		{.level_min = 25, .level_max = 35, .species = POKEMON_SMOGON},
 };
 
 wild_pokemon_habitat wild_pokemon_3_6_water = {
@@ -45,12 +45,4 @@ wild_pokemon_entry wild_pokemon_3_6_rod_entries[10] = {
 
 wild_pokemon_habitat wild_pokemon_3_6_rod = {
 	.frequency = 10, .data = wild_pokemon_3_6_rod_entries
-};
-
-wild_pokemon_data wild_pokemon_3_6 = {
-	.bank = 3, .map = 6,
-	.grass = NULL,
-	.water = &wild_pokemon_3_6_water,
-	.other = NULL,
-	.rod = &wild_pokemon_3_6_rod,
 };

@@ -50,5 +50,7 @@
 	"trainer_builds" : "constants/trainer_builds.const",
 	"wild_pokemon_densities" : "constants/wild_pokemon_densities.const",
 	"mugshot_alignment" : "constants/mugshot_alignment.const",
-	"mugshot_character" : "constants/mugshot_character.const"
+	"mugshot_character" : "constants/mugshot_character.const",
+	"battle_results" : "constants/battle_results.const",
+	"specials" : "constants/specials.const"
 }

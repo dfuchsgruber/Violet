@@ -44,7 +44,7 @@ wild_pokemon_entry wild_pokemon_3_22_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
 		{.level_min = 30, .level_max = 35, .species = POKEMON_TENTACHA},
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
-		{.level_min = 35, .level_max = 40, .species = POKEMON_TENTACHA},
+		{.level_min = 30, .level_max = 35, .species = POKEMON_TENTACHA},
 };
 
 wild_pokemon_habitat wild_pokemon_3_22_water = {
@@ -93,12 +93,4 @@ wild_pokemon_entry wild_pokemon_3_22_rod_entries[10] = {
 
 wild_pokemon_habitat wild_pokemon_3_22_rod = {
 	.frequency = 20, .data = wild_pokemon_3_22_rod_entries
-};
-
-wild_pokemon_data wild_pokemon_3_22 = {
-	.bank = 3, .map = 22,
-	.grass = &wild_pokemon_3_22_grass,
-	.water = &wild_pokemon_3_22_water,
-	.other = &wild_pokemon_3_22_other,
-	.rod = &wild_pokemon_3_22_rod,
 };

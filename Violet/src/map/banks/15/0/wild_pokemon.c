@@ -44,7 +44,7 @@ wild_pokemon_entry wild_pokemon_15_0_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
 		{.level_min = 30, .level_max = 35, .species = POKEMON_AZUMARILL},
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
-		{.level_min = 30, .level_max = 38, .species = POKEMON_AZUMARILL},
+		{.level_min = 27, .level_max = 35, .species = POKEMON_AZUMARILL},
 };
 
 wild_pokemon_habitat wild_pokemon_15_0_water = {
@@ -93,12 +93,4 @@ wild_pokemon_entry wild_pokemon_15_0_rod_entries[10] = {
 
 wild_pokemon_habitat wild_pokemon_15_0_rod = {
 	.frequency = 0, .data = wild_pokemon_15_0_rod_entries
-};
-
-wild_pokemon_data wild_pokemon_15_0 = {
-	.bank = 15, .map = 0,
-	.grass = &wild_pokemon_15_0_grass,
-	.water = &wild_pokemon_15_0_water,
-	.other = &wild_pokemon_15_0_other,
-	.rod = &wild_pokemon_15_0_rod,
 };

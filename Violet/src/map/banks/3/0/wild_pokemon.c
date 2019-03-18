@@ -46,11 +46,3 @@ wild_pokemon_entry wild_pokemon_3_0_rod_entries[10] = {
 wild_pokemon_habitat wild_pokemon_3_0_rod = {
 	.frequency = 66, .data = wild_pokemon_3_0_rod_entries
 };
-
-wild_pokemon_data wild_pokemon_3_0 = {
-	.bank = 3, .map = 0,
-	.grass = NULL,
-	.water = &wild_pokemon_3_0_water,
-	.other = NULL,
-	.rod = &wild_pokemon_3_0_rod,
-};

@@ -32943,11 +32943,21 @@
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"field_3": "0x2",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
@@ -32993,51 +33003,41 @@
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"field_3": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
@@ -33463,31 +33463,31 @@
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
@@ -33523,11 +33523,11 @@
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
+				"field_3": "0x2",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
@@ -33587,7 +33587,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",
@@ -33597,7 +33597,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "1"
 			},
 			{
 				"behaviour": "0x0",

@@ -736,6 +736,7 @@ extern const unsigned short gfx_ow_mother_5Tiles[];
 extern const unsigned short gfx_ow_mother_6Tiles[];
 extern const unsigned short gfx_ow_mother_7Tiles[];
 extern const unsigned short gfx_ow_mother_8Tiles[];
+extern const unsigned short gfx_ow_drampaTiles[];
 
 
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */

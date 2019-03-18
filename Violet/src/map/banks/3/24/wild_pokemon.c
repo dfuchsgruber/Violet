@@ -13,7 +13,7 @@ wild_pokemon_entry wild_pokemon_3_24_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
 		{.level_min = 30, .level_max = 35, .species = POKEMON_ENTON},
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
-		{.level_min = 35, .level_max = 40, .species = POKEMON_ENTON},
+		{.level_min = 30, .level_max = 35, .species = POKEMON_ENTON},
 };
 
 wild_pokemon_habitat wild_pokemon_3_24_water = {
@@ -45,12 +45,4 @@ wild_pokemon_entry wild_pokemon_3_24_rod_entries[10] = {
 
 wild_pokemon_habitat wild_pokemon_3_24_rod = {
 	.frequency = 20, .data = wild_pokemon_3_24_rod_entries
-};
-
-wild_pokemon_data wild_pokemon_3_24 = {
-	.bank = 3, .map = 24,
-	.grass = NULL,
-	.water = &wild_pokemon_3_24_water,
-	.other = NULL,
-	.rod = &wild_pokemon_3_24_rod,
 };

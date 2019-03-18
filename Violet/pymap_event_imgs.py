@@ -15,8 +15,9 @@ with open(base, 'rb') as f:
     rom = f.read()
 
 picture_idx_to_png = {
-    173 : "asset/gfx/overworld/rubys/gfx_ow_rubys_0.png",
-    174 : "asset/gfx/overworld/botogel/gfx_ow_botogel_0.png",
+    173 : "asset/gfx/overworld/npcs/rubys/gfx_ow_rubys_0.png",
+    174 : "asset/gfx/overworld/npcs/botogel/gfx_ow_botogel_0.png",
+    175 : "asset/gfx/overworld/npcs/drampa/gfx_ow_drampa.png.display"
 }
 
 def event_to_image(event, event_type, project):

@@ -77,11 +77,3 @@ wild_pokemon_entry wild_pokemon_0_7_rod_entries[10] = {
 wild_pokemon_habitat wild_pokemon_0_7_rod = {
 	.frequency = 30, .data = wild_pokemon_0_7_rod_entries
 };
-
-wild_pokemon_data wild_pokemon_0_7 = {
-	.bank = 0, .map = 7,
-	.grass = &wild_pokemon_0_7_grass,
-	.water = &wild_pokemon_0_7_water,
-	.other = NULL,
-	.rod = &wild_pokemon_0_7_rod,
-};

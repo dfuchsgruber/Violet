@@ -50,11 +50,3 @@ wild_pokemon_entry wild_pokemon_3_74_other_entries[5] = {
 wild_pokemon_habitat wild_pokemon_3_74_other = {
 	.frequency = 134, .data = wild_pokemon_3_74_other_entries
 };
-
-wild_pokemon_data wild_pokemon_3_74 = {
-	.bank = 3, .map = 74,
-	.grass = &wild_pokemon_3_74_grass,
-	.water = NULL,
-	.other = &wild_pokemon_3_74_other,
-	.rod = NULL,
-};

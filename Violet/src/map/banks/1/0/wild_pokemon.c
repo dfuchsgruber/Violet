@@ -40,11 +40,11 @@ wild_pokemon_entry wild_pokemon_1_0_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_1_30_PERCENT] = 
 		{.level_min = 35, .level_max = 35, .species = POKEMON_GEHWEIHER},
 	[WILD_POKEMON_DENSITY_WATER_2_5_PERCENT] = 
-		{.level_min = 35, .level_max = 37, .species = POKEMON_GEHWEIHER},
+		{.level_min = 33, .level_max = 35, .species = POKEMON_GEHWEIHER},
 	[WILD_POKEMON_DENSITY_WATER_3_4_PERCENT] = 
-		{.level_min = 37, .level_max = 37, .species = POKEMON_ENTORON},
+		{.level_min = 35, .level_max = 35, .species = POKEMON_ENTORON},
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
-		{.level_min = 40, .level_max = 40, .species = POKEMON_ENTORON},
+		{.level_min = 35, .level_max = 35, .species = POKEMON_ENTORON},
 };
 
 wild_pokemon_habitat wild_pokemon_1_0_water = {
@@ -93,12 +93,4 @@ wild_pokemon_entry wild_pokemon_1_0_rod_entries[10] = {
 
 wild_pokemon_habitat wild_pokemon_1_0_rod = {
 	.frequency = 38, .data = wild_pokemon_1_0_rod_entries
-};
-
-wild_pokemon_data wild_pokemon_1_0 = {
-	.bank = 1, .map = 0,
-	.grass = &wild_pokemon_1_0_grass,
-	.water = &wild_pokemon_1_0_water,
-	.other = &wild_pokemon_1_0_other,
-	.rod = &wild_pokemon_1_0_rod,
 };
