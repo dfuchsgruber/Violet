@@ -1,8 +1,0 @@
-#ifndef H_CONST_MAP_FLASH_TYPES
-#define H_CONST_MAP_FLASH_TYPES
-enum map_flash_types {
-FLASH_NONE = 0,
-DARK_FLASH_USABLE = 1,
-DARK_FLASH_NOT_USABLE = 2,
-};
-#endif
