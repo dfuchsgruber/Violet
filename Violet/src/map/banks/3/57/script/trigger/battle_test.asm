@@ -5,6 +5,7 @@
 .include "ordinals.s"
 .include "flags.s"
 .include "items.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_battle_test
 
@@ -16,17 +17,15 @@ applymovement 5 mov_face_up
 applymovement 7 mov_face_up
 applymovement 0xFF mov_face_up
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_announce_battle
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 3 mov_face_right
 applymovement 7 mov_face_right
 applymovement 0xFF mov_face_left
 applymovement 5 mov_face_left
 waitmovement 0
 pause 32
-call ow_script_0x89ba6e
+draw_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 loadpointer 0 str_rival_challange
 callstd MSG_KEEPOPEN
 compare STARTER_SELECTED 0
@@ -53,69 +52,51 @@ after_battle:
 compare LASTRESULT 0xFF
 gotoif EQUAL lost_battle
 won_battle:
-call ow_script_0x89ba6e
 loadpointer 0 str_after_battle_won
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 may_felix_battle:
 clearflag BLACKOUT_BYPASS
 special 0x113
 applymovement 0x7f mov_cam_to_may_felix
 waitmovement 0x0
-call ow_script_0x89db71
 loadpointer 0 str_may_lost
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 loadpointer 0 str_felix_won
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 0x7F mov_cam_back
 waitmovement 0
 special 0x114
 @ Battles are over
-call ow_script_0x89c5ee
 loadpointer 0 str_announce_end
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 7 mov_face_up
 applymovement 0xFF mov_player_row
 applymovement 5 mov_may_row
 applymovement 3 mov_rival_row
 waitmovement 0
 @ Award felix
-call ow_script_0x89c5ee
 loadpointer 0 str_final_call_felix
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 7 mov_felix_to_faun
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_award_felix
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 fanfare 0x13E
 waitfanfare
-call ow_script_0x89e1fc
 loadpointer 0 str_felix_awarded
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 7 mov_felix_back
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_final_call_player
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 addvar TRAINERSCHOOL_PROGRESS 1
 releaseall
 end
 
 lost_battle:
 special 0
-call ow_script_0x89ba6e
 loadpointer 0 str_after_battle_lost
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 goto may_felix_battle
 
 mov_felix_back:

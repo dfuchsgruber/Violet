@@ -4,6 +4,7 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x89bf97
@@ -35,10 +36,8 @@ pause 0x20
 sound 0x15
 applymovement 0x6 ow_script_movs_0x89bf97
 waitmovement 0x0
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x89bf76
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 0x6 ow_script_movs_0x89bf9b
 waitmovement 0x0
 fadesong MUS_ROUTE_1_AND_TUNNELPFAD

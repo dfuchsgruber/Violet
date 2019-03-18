@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8a17e7
@@ -154,45 +155,28 @@ compare 0x8001 0x1a
 callif EQUAL ow_script_0x8a27ae
 applymovement 0x5 ow_script_movs_0x8a27a5
 waitmovement 0x0
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x8f2375
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 sound 0x15
 applymovement 0x5 ow_script_movs_0x8a1e5c
 waitmovement 0x0
 checksound
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x8f2c1e
-callstd MSG
-special 0x7
-call ow_script_0x8a1cc9
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8a1cdd
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 sound 0x5
 applymovement 0x5 ow_script_movs_0x8a1cc6
 waitmovement 0x0
 checksound
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x8f2c62
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 applymovement 0x5 ow_script_movs_0x8a1c28
 waitmovement 0x0
 hidesprite 0x5
 setvar STORY_PROGRESS 0xc
 releaseall
 end
-
-
-.global ow_script_0x8a2791
-ow_script_0x8a2791:
-setvar 0x8000 0x1
-setvar 0x8001 0x17
-setvar 0x8002 0xe
-special 0x6
-return
 
 
 .global ow_script_movs_0x8a27ba

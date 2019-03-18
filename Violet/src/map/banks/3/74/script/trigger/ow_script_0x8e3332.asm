@@ -6,6 +6,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8e63b5
@@ -54,7 +55,7 @@ goto ow_script_0x8fb3fe
 
 .global ow_script_0x8fb3fe
 ow_script_0x8fb3fe:
-call ow_script_0x89ba6e
+draw_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 compare STARTER_SELECTED 0x0
 gotoif EQUAL ow_script_0x8e33a7
 compare STARTER_SELECTED 0x1
@@ -64,18 +65,14 @@ trainerbattlecont 0x1 0xbb 0x0 str_0x8e627c str_0x8e6231 ow_script_0x8e63b7
 
 .global ow_script_0x8e63b7
 ow_script_0x8e63b7:
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x8e6164
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 setflag DETEKTOR_ID
 copyvarifnotzero 0x8000 ITEM_DETEKTOR
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x9681e9
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 fadescreen 0x1
 hidesprite 0x11
 fadescreen 0x0

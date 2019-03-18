@@ -1,16 +1,17 @@
 .include "callstds.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x916258
 ow_script_0x916258:
-call ow_script_0x89e33c
+draw_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
 loadpointer 0x0 str_0x931d8f
 callstd MSG
 faceplayer
 loadpointer 0x0 str_0x931bb9
 callstd MSG_FACE
-special 0x7
+hide_mugshot
 fadescreen 0x1
 hidesprite 0x800f
 fadescreen 0x0

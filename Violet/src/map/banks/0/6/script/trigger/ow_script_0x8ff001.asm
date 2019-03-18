@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8ff26e
@@ -50,18 +51,12 @@ applymovement 0x12 ow_script_movs_0x8ff26e
 waitmovement 0x0
 applymovement 0xff ow_script_movs_0x8ff96a
 waitmovement 0x0
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x8ff6f3
-callstd MSG
-special 0x7
-call ow_script_0x8a1cc9
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0x0 str_0x9454f8
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x94591f
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_KEEPOPEN
 setvar DYN_MULTICHOICE_ITEM_CNT 0x2
 loadpointer 0x0 choice
 multichoice 0x0 0x0 0x0 0x1
@@ -71,14 +66,14 @@ compare 0x8004 0x0
 callif EQUAL ow_script_0x8ff277
 compare 0x8004 0x1
 callif EQUAL ow_script_0x8ff296
+draw_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
+callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x945a65
 callstd MSG
-special 0x7
+hide_mugshot
 pause 0x28
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x945bc8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 compare 0x8005 0x5
 callif EQUAL ow_script_0x8ff0e5
 compare 0x8005 0x4
@@ -124,25 +119,17 @@ return
 
 .global ow_script_0x8ff296
 ow_script_0x8ff296:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x945da0
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x945daa
-callstd MSG_KEEPOPEN
 return
 
 
 .global ow_script_0x8ff277
 ow_script_0x8ff277:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x945c7d
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x945d2b
-callstd MSG_KEEPOPEN
 return
 
 

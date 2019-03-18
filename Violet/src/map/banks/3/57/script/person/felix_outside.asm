@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_felix_outside
 ow_script_trainerschool_felix_outside:
@@ -26,10 +27,8 @@ end
 goodbye:
 lock
 faceplayer
-call ow_script_0x89e1fc
 loadpointer 0 str_goodbye
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 setvar 0x8004 7
 setvar 0x8005 0x29
 setvar 0x8006 0x14
@@ -46,27 +45,21 @@ release
 goto ow_script_trainerschool_finish
 
 results:
-call ow_script_0x89e1fc
 loadpointer 0 str_results
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
 end
 
 
 battle:
-call ow_script_0x89e1fc
 loadpointer 0 str_battle
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
 end
 
 make_faun_appear:
 lock
 faceplayer
-call ow_script_0x89e1fc
 loadpointer 0 str_before_faun_appeared
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 setflag TRAINERSCHOOL_TALKED_TO_FELIX
 checkflag TRAINERSCHOOL_TALKED_TO_BLAISE
 gotoif EQUAL ow_script_trainerschool_outside_faun_appears
@@ -74,17 +67,13 @@ release
 end
 
 has_received_pkmn:
-call ow_script_0x89e1fc
 loadpointer 0 str_has_received_pkmn
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
 end
 
 catch_pkmn:
-call ow_script_0x89e1fc
 loadpointer 0 str_catch_pkmn
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
 end
 
 mov_face_down:

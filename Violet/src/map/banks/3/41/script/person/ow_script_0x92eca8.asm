@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8dea30
@@ -16,14 +17,14 @@ ow_script_movs_0x8dea30:
 ow_script_0x92eca8:
 lock
 faceplayer
-call ow_script_0x8e63f4
+draw_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8e225d
 callstd MSG_KEEPOPEN
 multichoice 8 8 0 1
 compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x947e76
 closeonkeypress
-special 0x7
+hide_mugshot
 special 0x113
 applymovement 0x7F mov_cam
 waitmovement 0
@@ -31,18 +32,14 @@ waitmovement 0
 fadesong MUS_REVOLUTION
 applymovement 0x800f ow_script_movs_0x8dea30
 waitmovement 0x0
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x8e1e69
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 applymovement 0x7F mov_cam_back
 waitmovement 0
 special 0x114
 faceplayer
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x8de830
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 fadescreen 0x1
 hidesprite 0x800f
 fadescreen 0x0
@@ -55,17 +52,8 @@ end
 ow_script_0x947e76:
 loadpointer 0x0 str_0x9312b4
 callstd MSG_FACE
-special 0x7
+hide_mugshot
 end
-
-
-.global ow_script_0x8e63f4
-ow_script_0x8e63f4:
-setvar 0x8000 0x0
-setvar 0x8001 0x14
-setvar 0x8002 0xe
-special 0x6
-return
 
 mov_cam:
 	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STOP

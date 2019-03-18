@@ -2,6 +2,7 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8c8300
@@ -23,10 +24,8 @@ ow_script_movs_0x8c8300:
 ow_script_0x8c82da:
 lockall
 pause 0x28
-call ow_script_0x92f097
 loadpointer 0x0 str_0x8c80e4
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 applymovement 0x2 ow_script_movs_0x8c8300
 waitmovement 0x0
 hidesprite 0x2

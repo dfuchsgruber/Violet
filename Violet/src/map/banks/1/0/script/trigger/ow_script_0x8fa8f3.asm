@@ -6,6 +6,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "story_states.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8037d4
@@ -47,60 +48,33 @@ special 0x113
 applymovement 0x7f ow_script_movs_0x8f4d2c
 waitmovement 0x0
 special 0x114
-call ow_script_0x8f4d18
 loadpointer 0x0 str_0x8f4c85
-callstd MSG
-special 0x7
-call ow_script_0x8f4d04
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8f4c4b
-callstd MSG
-special 0x7
-call ow_script_0x8f4d18
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f4b7b
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x1e ow_script_movs_0x8f4b78
 waitmovement 0x0
 pause 0x38
-call ow_script_0x8f4d04
 loadpointer 0x0 str_0x8f4aee
-callstd MSG
-special 0x7
-call ow_script_0x8f4d18
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f4ab8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x1e ow_script_movs_0x8f4ab5
 waitmovement 0x0
-call ow_script_0x8f4d04
 loadpointer 0x0 str_0x8f49f3
-callstd MSG
-special 0x7
-call ow_script_0x8f4d18
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f49c5
-callstd MSG
-special 0x7
-call ow_script_0x8f4d04
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8f48ca
-callstd MSG
-special 0x7
-call ow_script_0x8f4d18
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f4823
-callstd MSG
-special 0x7
-call ow_script_0x8f4d04
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8f4755
-callstd MSG
-special 0x7
-call ow_script_0x8f4d18
-goto ow_script_0x8fbc5c
-
-
-.global ow_script_0x8fbc5c
-ow_script_0x8fbc5c:
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f46fc
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 goto ow_script_0x8f5143
 
 
@@ -158,40 +132,30 @@ applymovement 0x1e ow_script_movs_0x8f5a8d
 applymovement 0x1f ow_script_movs_0x8f5a8d
 applymovement 0x20 ow_script_movs_0x8f5a8d
 applymovement 0x5 ow_script_movs_0x8f5a8d
-call ow_script_0x8a1cc9
+draw_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f5a63
 callstd MSG
 waitmovement 0x0
-special 0x7
-call ow_script_0x8f4d04
+hide_mugshot
 loadpointer 0x0 str_0x8f59e8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 applymovement 0x5 ow_script_movs_0x8f505f
 waitmovement 0x0
-call ow_script_0x8f4d18
+draw_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8f59cf
 callstd MSG
 applymovement 0x5 ow_script_movs_0x8f5140
 loadpointer 0x0 str_0x8f56b8
 callstd MSG
-special 0x7
-call ow_script_0x8a1cc9
+hide_mugshot
 loadpointer 0x0 str_0x8f5628
-callstd MSG
-special 0x7
-call ow_script_0x8f4d18
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f5514
-callstd MSG
-special 0x7
-call ow_script_0x8a1cc9
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8f5425
-callstd MSG
-special 0x7
-call ow_script_0x8f4d18
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f52c9
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x20 ow_script_movs_0x8f52c0
 applymovement 0x1f ow_script_movs_0x8f52c4
 waitmovement 0x0
@@ -230,17 +194,15 @@ ow_script_movs_0x8f5eac:
 ow_script_0x8fa888:
 loadpointer 0x0 str_0x8f5edb
 callstd MSG
-call ow_script_0x8f4d18
 loadpointer 0x0 str_0x8f5eb8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x20 ow_script_movs_0x8f5eb0
 applymovement 0x1f ow_script_movs_0x8f5eb4
 waitmovement 0x0
 applymovement 0x5 ow_script_movs_0x8f5eac
 waitmovement 0x0
 pause 0x20
-call ow_script_0x8f4d18
+draw_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 setvar BATTLE_SONG_OVERRIDE MUS_KAMPF_GEGEN_ARENALEITER_HOENN
 trainerbattlecont 0x1 0x4c 0x0 str_0x8f5d92 str_0x8f5d31 ow_script_0x8fab2c
 
@@ -314,16 +276,12 @@ setvar SONG_OVERRIDE 0
 applymovement 0xff ow_script_movs_0x8f6d19
 waitmovement 0x0
 clearflag TRANS_DISABLE
-call ow_script_0x8f4d18
 loadpointer 0x0 str_0x8fa9e7
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x5 ow_script_movs_0x8f6d16
 waitmovement 0x0
-call ow_script_0x8f4d18
 loadpointer 0x0 str_0x8f6cfb
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 fadescreen 0x1
 hidesprite 0x5
 hidesprite 0x1f
@@ -336,10 +294,8 @@ fadescreen 0x0
 playsong VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN 0
 applymovement 0x1e ow_script_movs_0x8f6cf5
 waitmovement 0x0
-call ow_script_0x8f4d04
 loadpointer 0x0 str_0x8f6c09
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 clearflag PKMNMENU
 showsprite 0x24
 applymovement 0x24 ow_script_movs_0x8f6c01
@@ -347,37 +303,29 @@ waitmovement 0x0
 sound 0x15
 applymovement 0x24 ow_script_movs_0x8f6bfe
 waitmovement 0x0
-call ow_script_0x8a7f80
 loadpointer 0x0 str_0x8f6be9
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 applymovement 0x1e ow_script_movs_0x8f6be5
 waitmovement 0x0
 applymovement 0xff ow_script_movs_0x8f6a5d
 waitmovement 0x0
-call ow_script_0x8f4d04
 loadpointer 0x0 str_0x8f6bb4
-callstd MSG
-special 0x7
-call ow_script_0x8a7f80
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f6b22
-callstd MSG
-special 0x7
-call ow_script_0x8f4d04
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+draw_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f6ae5
 callstd MSG
 applymovement 0x1e ow_script_movs_0x8f6ae2
 waitmovement 0x0
 loadpointer 0x0 str_0x8f6a60
 callstd MSG
-special 0x7
+hide_mugshot
 applymovement 0x24 ow_script_movs_0x8f6ae2
 waitmovement 0x0
-call ow_script_0x8a7f80
 loadpointer 0x0 str_0x8f68d7
-callstd MSG
-special 0x7
-call ow_script_0x8f4d04
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+draw_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f68a8
 callstd MSG_KEEPOPEN
 sound 0x15
@@ -386,30 +334,20 @@ applymovement 0xff ow_script_movs_0x8f68a4
 waitmovement 0x0
 loadpointer 0x0 str_0x8f6749
 callstd MSG
-special 0x7
-call ow_script_0x8a7f80
+hide_mugshot
 loadpointer 0x0 str_0x8f6725
-callstd MSG
-special 0x7
-call ow_script_0x8f4d04
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8f6626
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT MSG_KEEPOPEN
 applymovement 0x24 ow_script_movs_0x8f6ae2
 applymovement 0xff ow_script_movs_0x8f6a5d
 waitmovement 0x0
-call ow_script_0x8a7f80
 loadpointer 0x0 str_0x8f65b0
-callstd MSG
-special 0x7
-call ow_script_0x8a1cc9
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8f64bc
-callstd MSG
-special 0x7
-call ow_script_0x8a7f80
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8f6465
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 fadescreen 0x1
 hidesprite 0x24
 hidesprite 0x1e
@@ -418,24 +356,6 @@ addvar STORY_PROGRESS 0x1
 setvar STORY_STATE STORY_STATE_SILVANIA_FOREST_CLEAR
 releaseall
 end
-
-
-.global ow_script_0x8f4d04
-ow_script_0x8f4d04:
-setvar 0x8000 0x0
-setvar 0x8001 0x18
-setvar 0x8002 0xe
-special 0x6
-return
-
-
-.global ow_script_0x8f4d18
-ow_script_0x8f4d18:
-setvar 0x8000 0x1
-setvar 0x8001 0x0
-setvar 0x8002 0xe
-special 0x6
-return
 
 
 .global ow_script_movs_0x8f5aaf

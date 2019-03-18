@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "songs.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x94794b
@@ -20,32 +21,26 @@ ow_script_movs_0x947948:
 .global ow_script_0x94772b
 ow_script_0x94772b:
 lockall
-call ow_script_0x92f097
 loadpointer 0x0 str_0x947967
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 pause 0x1
 applymovement 0xc ow_script_movs_0x94794b
 waitmovement 0x0
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x9479c7
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
 setvar 0x8004 0xb
 setvar 0x8005 0x11
 setvar 0x8006 0x22
 special 0x24
 applymovement 0xc ow_script_movs_0x947948
-call ow_script_0x92f097
+draw_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 loadpointer 0x0 str_0x94794f
 callstd MSG_KEEPOPEN
 waitmovement 0
-special 0x7
-call ow_script_0x92f097
+hide_mugshot
 loadpointer 0x0 str_0x9477c9
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 setvar 0x8004 0xc
 setvar 0x8005 0x11
 setvar 0x8006 0x22

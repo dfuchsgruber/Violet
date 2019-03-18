@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x95f864
@@ -25,10 +26,8 @@ gotoif EQUAL ow_script_0x95fe6b
 compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x95fa47
 
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x95f9d1
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_KEEPOPEN
 loadpointer 0 str_girl
 setvar 0x8000 1
 special 0xE
@@ -72,10 +71,8 @@ end
 
 .global ow_script_0x95fa47
 ow_script_0x95fa47:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x95fa93
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_KEEPOPEN
 
 loadpointer 0 str_girl
 setvar 0x8000 1
@@ -91,10 +88,8 @@ ow_script_0x95fe6b:
 checkmoney 0x5dc 0x0
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x95fcc6
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x95fc52
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_KEEPOPEN
 sound 0x41
 
 @//Give money

@@ -2,6 +2,7 @@
 .include "overworld_script.s"
 .include "vars.s"
 .include "ordinals.s"
+.include "mugshot.s"
 
 .global ow_script_route_2_felix
 ow_script_route_2_felix:
@@ -11,15 +12,11 @@ special 0x1B
 waitmovement 0
 setvar LASTTALKED 0x3
 faceplayer
-call ow_script_0x89e1fc
 loadpointer 0 str_hello
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 call ow_script_healing_sequence
-call ow_script_0x89e1fc
 loadpointer 0 str_after_healing
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 setvar 0x8004 0x36
 setvar 0x8005 0x7
 setvar 0x8006 0x19

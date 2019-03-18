@@ -5,6 +5,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8ffc55
@@ -33,7 +34,7 @@ compare 0x8004 0xf
 callif EQUAL ow_script_0x8ffc5d
 applymovement 0x800f ow_script_movs_0x8ffc55
 waitmovement 0x0
-call ow_script_0x8bf7fb
+draw_mugshot MUGSHOT_MAY MUGSHOT_LEFT
 compare STARTER_SELECTED 0x0
 gotoif EQUAL ow_script_0x8ffc2d
 compare STARTER_SELECTED 0x1
@@ -49,34 +50,24 @@ ow_script_movs_0x8ede0c:
 
 .global ow_script_0x8edb20
 ow_script_0x8edb20:
-call ow_script_0x8bf7fb
 loadpointer 0x0 str_0x8ffbb5
-callstd MSG
-special 0x7
-call ow_script_0x8a1cc9
+show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
 loadpointer 0x0 str_0x8ffb51
-callstd MSG
-special 0x7
-call ow_script_0x8bf7fb
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8ff97b
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
 pause 0x20
 sound 0x15
 applymovement 0x800f ow_script_movs_0x8ede0c
 waitmovement 0x0
 checksound
-call ow_script_0x8bf7fb
 loadpointer 0x0 str_0x8edd68
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_LEFT MSG_KEEPOPEN
 copyvarifnotzero 0x8000 ITEM_EP_TEILER
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
-call ow_script_0x8bf7fb
 loadpointer 0x0 str_0x8edba7
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
 goto ow_script_0x926a3c
 
 

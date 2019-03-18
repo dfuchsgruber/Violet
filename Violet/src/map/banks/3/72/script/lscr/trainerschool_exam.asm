@@ -4,15 +4,14 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 .global ow_script_0x89c150
 ow_script_0x89c150:
 @ Move rival to his place
 lockall
-call ow_script_0x89ba6e
 loadpointer 0x0 str_rival_to_player
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 0x1 mov_rival_to_place
 waitmovement 0
 applymovement 0xFF mov_step_up
@@ -51,10 +50,8 @@ ow_script_trainerschool_faun_call_out:
 lockall
 applymovement 0x9 mov_look_right
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 str_faun_to_player
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 addvar TRAINERSCHOOL_PROGRESS 1
 releaseall
 end
@@ -82,10 +79,8 @@ special 0x113
 fadesong 0
 applymovement 0x7f mov_cam_to_faun
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 str_faun_announce
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0x7f mov_cam_back
 waitmovement 0x0
 special 0x114
@@ -127,10 +122,8 @@ checksound
 @ Faun walks back
 applymovement 0x9 mov_faun_back
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 str_exam_begins
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 @ Exam begins - start cutscene
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
@@ -157,10 +150,8 @@ waitmovement 0
 pause 128
 @ Exam is over
 fadesong MUS_TRAINERSCHOOL
-call ow_script_0x89c5ee
 loadpointer 0x0 str_exam_over
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 @ Faun collects the sheets
 applymovement 0x9 mov_faun_to_felix
 waitmovement 0x0
@@ -194,10 +185,8 @@ special 0x8e
 checksound
 applymovement 0x9 mov_faun_back
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 str_after_exam
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 addvar STORY_PROGRESS 1
 addvar TRAINERSCHOOL_PROGRESS 1

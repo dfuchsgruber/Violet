@@ -6,6 +6,7 @@
 .include "flags.s"
 .include "items.s"
 .include "songs.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_faun_outside
 ow_script_trainerschool_faun_outside:
@@ -25,16 +26,12 @@ results:
 lock
 faceplayer
 buffernumber 0 TRAINERSCHOOL_CORRECT_ANSWERS
-call ow_script_0x89c5ee
 loadpointer 0 str_results_player
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 fanfare 0x13E
 waitfanfare
-call ow_script_0x89c5ee
 loadpointer 0 str_player_back
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 setvar 0x8004 0xFF
 setvar 0x8005 0x29
 setvar 0x8006 0x11
@@ -45,56 +42,36 @@ applymovement 4 mov_face_down
 waitmovement 0
 applymovement 3 mov_result_rival_to_faun
 waitmovement 0
-call ow_script_0x89ba6e
 loadpointer 0 str_rival_results
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 loadpointer 0 str_results_rival
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 fanfare 0x13E
 waitfanfare
-call ow_script_0x89ba6e
 loadpointer 0 str_rival_glad
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 3 mov_result_rival_back
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_call_may
-callstd MSG
-special 0x7
-call ow_script_0x89db71
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_insecure
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 applymovement 5 mov_result_may_to_faun
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_results_may
-callstd MSG
-special 0x7
-call ow_script_0x89db71
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_understands
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 loadpointer 0 str_results_may2
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 fanfare 0x13E
 waitfanfare
-call ow_script_0x89db71
 loadpointer 0 str_may_glad
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 applymovement 5 mov_result_may_back
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_final_talk
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 4 mov_faun_leaves
 waitmovement 0
 applymovement 3 mov_face_down
@@ -111,17 +88,13 @@ release
 end
 
 battle:
-call ow_script_0x89c5ee
 loadpointer 0 str_battle
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
 end
 
 receive_pkmn:
-call ow_script_0x89c5ee
 loadpointer 0 str_show_player_pkmn
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 callasm trainerschool_selection_init
 waitstate
 copyvar 0x8004 LASTRESULT
@@ -138,10 +111,8 @@ special 0x16F
 
 @ player has received their pkmn, move them back
 
-call ow_script_0x89c5ee
 loadpointer 0 str_player_received_pkmn
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 setvar 0x8004 0xFF
 setvar 0x8005 0x27
 setvar 0x8006 0x12
@@ -150,52 +121,38 @@ waitmovement 0
 applymovement 0xFF mov_face_down
 waitmovement 0
 
-call ow_script_0x89c5ee
 loadpointer 0 str_rival_picks
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0x3 mov_rival_to_faun
 waitmovement 0x0
 pause 32
 applymovement 0x3 mov_dinplace
 waitmovement 0
-call ow_script_0x89ba6e
 loadpointer 0 str_rival_says_thanks
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 0x3 mov_rival_back
 waitmovement 0
 
 @ May comes to Faun
-call ow_script_0x89c5ee
 loadpointer 0 str_may_picks
-callstd MSG
-special 0x7
-call ow_script_0x89db71
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_disappointed
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 applymovement 0x5 mov_may_to_faun
 waitmovement 0
 pause 32
 applymovement 0x5 mov_dinplace
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_may_received_pkmn
-callstd MSG
-special 0x7
-call ow_script_0x89db71
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_dots
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 applymovement 0x5 mov_may_back
 waitmovement 0
 
 @ Initiate the catch sequence
-call ow_script_0x89c5ee
 loadpointer 0 str_to_tall_grass
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 
 @ Move the npcs to the tall grass
 applymovement 0x4 mov_faun_to_grass_1
@@ -207,22 +164,16 @@ applymovement 0x7 mov_blaise_to_grass
 applymovement 0x4 mov_faun_to_grass_2
 applymovement 0xFF mov_player_to_grass
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_tall_grass
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 @ Blaise leaves
 fadesong 0
 pause 64
-call ow_script_0x89c5ee
 loadpointer 0 str_call_blaise
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 pause 32
-call ow_script_0x89e33c
 loadpointer 0 str_blaise_refuses
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
 sound 0x15
 applymovement 0x4 mov_exclam
 applymovement 0x3 mov_right_exclam
@@ -230,14 +181,10 @@ applymovement 0xFF mov_right_exclam
 applymovement 0x5 mov_left_exclam
 applymovement 0x7 mov_right_exclam
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_call_blaise_again
-callstd MSG
-special 0x7
-call ow_script_0x89e33c
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_blaise_leaves
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
 applymovement 0x3 mov_face_down
 applymovement 0xFF mov_face_down
 applymovement 0x5 mov_face_down
@@ -248,10 +195,8 @@ sound 0x9
 hidesprite 0x6
 checksound
 pause 32
-call ow_script_0x89c5ee
 loadpointer 0 str_faun_angry_at_blaise
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 pause 40
 fadesong MUS_TRAINERSCHOOL
 
@@ -260,21 +205,15 @@ applymovement 0x3 mov_face_up
 applymovement 0xFF mov_face_up
 applymovement 0x5 mov_face_up
 applymovement 0x7 mov_face_up
-call ow_script_0x89c5ee
 loadpointer 0 str_continue_with_field_test
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 @ Felix catches his pkmn
-call ow_script_0x89e1fc
 loadpointer 0 str_felix_starts_test
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 0x7 mov_felix_to_faun
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_hand_felix_balls
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0x7 mov_uinplace
 waitmovement 0x0
 applymovement 0x4 mov_face_up
@@ -289,21 +228,15 @@ sound 10
 applymovement 0x7 mov_double_jump
 waitmovement 0
 checksound
-call ow_script_0x89e1fc
 loadpointer 0 str_felix_done_catching
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0 str_faun_admires_felix
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0x4 mov_face_down
 applymovement 0x7 mov_felix_catching_back
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_faun_calls_player
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 addvar TRAINERSCHOOL_PROGRESS 1
 releaseall
 end
@@ -315,10 +248,8 @@ faceplayer
 setflag BLACKOUT_BYPASS
 setflag CAUGHT_POKEDEX_DISABLE
 removeitem ITEM_POKEBALL 5
-call ow_script_0x89c5ee
 loadpointer 0 str_player_receives_pokeballs
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 additem ITEM_POKEBALL 5
 fanfare 0x101
 loadpointer 0x0 str_pokeball_obtention_message
@@ -332,10 +263,8 @@ end
 
 catch_pokemon:
 @ This state means the player is to catch wild pokemon as he already has balls
-call ow_script_0x89c5ee
 loadpointer 0 str_player_has_to_catch
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
 end
 
 mov_faun_leaves:

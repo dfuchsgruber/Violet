@@ -3,14 +3,13 @@
 .include "overworld_script.s"
 .include "vars.s"
 .include "ordinals.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_lock_right
 ow_script_trainerschool_lock_right:
 lockall
-call ow_script_0x8a1cc9
 loadpointer 0 str
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER
 applymovement 0xFF mov_left
 waitmovement 0
 releaseall
@@ -19,10 +18,8 @@ end
 .global ow_script_trainerschool_lock_up
 ow_script_trainerschool_lock_up:
 lockall
-call ow_script_0x8a1cc9
 loadpointer 0 str
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER
 applymovement 0xFF mov_down
 waitmovement 0
 releaseall
@@ -57,10 +54,8 @@ sound 0x15
 applymovement 0x9 mov_shout
 applymovement 0xFF mov_look_left
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 lock_classroom_str
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 return
 
 .global ow_script_trainerschool_lock_down
@@ -68,20 +63,16 @@ ow_script_trainerschool_lock_down:
 lockall
 compare STORY_PROGRESS 7
 gotoif LESS written_test_not_done
-call ow_script_0x8a1cc9
 loadpointer 0 str2
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER
 applymovement 0xFF mov_up
 waitmovement 0
 releaseall
 end
 
 written_test_not_done:
-call ow_script_0x8a1cc9
 loadpointer 0 str
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER
 applymovement 0xFF mov_up
 waitmovement 0
 releaseall

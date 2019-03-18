@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x95f474
@@ -15,7 +16,7 @@ setvar 0x8004 0xb
 special 0x1b
 waitmovement 0x0
 faceplayer
-call ow_script_0x92f097
+draw_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 loadpointer 0x0 str_0x95e7e5
 callstd MSG_KEEPOPEN
 goto ow_script_0x95e6bd
@@ -28,14 +29,12 @@ callstd MSG_KEEPOPEN
 multichoice 8 8 0 1
 compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x95e771
-special 0x7
+hide_mugshot
 sound 0x15
 applymovement 0x800f ow_script_movs_0x8a1cc6
 waitmovement 0x0
-call ow_script_0x92f097
 loadpointer 0x0 str_0x95e710
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 setvar 0x8004 0xb
 setvar 0x8005 0x1d
 setvar 0x8006 0x17

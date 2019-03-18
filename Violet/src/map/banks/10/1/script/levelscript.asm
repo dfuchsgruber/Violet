@@ -3,6 +3,7 @@
 .include "flags.s"
 .include "movements.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 .global ow_script_inferior_gym_battle
 ow_script_inferior_gym_battle:
@@ -20,30 +21,24 @@ callstd MSG
 applymovement 0x2 mov_igva
 applymovement 0xff mov_player
 waitmovement 0x0
-call ow_script_0x92f097
+draw_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 trainerbattlecont 0x1 0xc4 0x0 str_challange str_defeat ow_script_after_battle
 ow_script_after_battle:
-call ow_script_0x92f097
 loadpointer 0 str_after_battle
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 loadpointer 0x0 str_receive_badge
 fanfare 0x104
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
 setflag FRBADGE_4
-call ow_script_0x92f097
 loadpointer 0 str_tm
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 copyvarifnotzero 0x8000 ITEM_TM50
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
-call ow_script_0x92f097
 loadpointer 0 str_leave
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 cleartrainerflag 0xBF
 cleartrainerflag 0xC0
 cleartrainerflag 0xC1

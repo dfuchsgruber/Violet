@@ -6,6 +6,7 @@
 .include "vars.s"
 .include "overworld_script.s"
 .include "story_states.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x96aa3b
@@ -66,35 +67,25 @@ special 0x113
 applymovement 0x7f ow_script_movs_0x96aa3b
 waitmovement 0x0
 playsong MUS_MISTRAL 0x0
-call ow_script_0x92f097
 loadpointer 0x0 str_0x969e0b
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 pause 0x1
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96a758
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
-call ow_script_0x92f097
 loadpointer 0x0 str_0x96a8cd
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 pause 0x1
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x969d1d
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
 applymovement 0x7f ow_script_movs_0x969d17
 waitmovement 0x0
 special 0x114
 applymovement 0xff ow_script_movs_0x969d10
 waitmovement 0x0
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x969a22
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
 special 0x113
 applymovement 0x7f ow_script_movs_0x969a0d
@@ -195,19 +186,15 @@ ow_script_movs_0x96abad:
 
 .global ow_script_0x96acf2
 ow_script_0x96acf2:
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96eab0
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 applymovement 0x2 ow_script_movs_0x96ace1
 waitmovement 0x0
 applymovement 0xff ow_script_movs_0x96acdb
 applymovement 0x1 ow_script_movs_0x96acde
 waitmovement 0x0
-call ow_script_0x92f097
 loadpointer 0x0 str_0x96abb4
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 applymovement 0xff ow_script_movs_0x96aba6
 applymovement 0x1 ow_script_movs_0x96abad
 waitmovement 0x0
@@ -262,18 +249,12 @@ applymovement 0xff ow_script_movs_0x96ebaf
 waitmovement 0x0
 applymovement 0x2 ow_script_movs_0x96aeaa
 waitmovement 0x0
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96ae6e
-callstd MSG
-special 0x7
-call ow_script_0x92f097
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 loadpointer 0x0 str_0x96adf1
-callstd MSG
-special 0x7
-call ow_script_0x936c1c
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 loadpointer 0x0 str_0x96ada6
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 applymovement 0x2 ow_script_movs_0x96ada3
 waitmovement 0x0
 fadesong 0
@@ -282,15 +263,11 @@ hidesprite 0x9
 checksound
 pause 0x40
 call ow_script_0x96ebb2
-call ow_script_0x92f097
 loadpointer 0x0 str_0x96ad59
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 call ow_script_0x8d7a10
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96a698
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 goto ow_script_0x96ebc4
 
 
@@ -335,10 +312,8 @@ movesprite2 0x1 0x11 0xe
 clearflag TRANS_DISABLE
 clearflag INFERIOR_VIOLET_GRUNTS
 pause 0x40
-call ow_script_0x92f097
 loadpointer 0x0 str_0x96ebfd
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 special 0x113
 call ow_script_0x96b124
 call ow_script_0x96b124
@@ -349,10 +324,8 @@ call ow_script_0x96b124
 call ow_script_0x96b124
 cry POKEMON_GROUDON 0x1
 waitcry
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96b05d
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 setvar LASTRESULT 0x1
 sound 0xd1
 setanimation 0x0 0x10
@@ -396,16 +369,12 @@ ow_script_movs_0x96f1b6:
 
 .global ow_script_0x96f088
 ow_script_0x96f088:
-call ow_script_0x92f097
 loadpointer 0x0 str_0x97138c
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 applymovement 0x2 ow_script_movs_0x96f408
 waitmovement 0x0
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96f1be
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 applymovement 0x7f ow_script_movs_0x96f1b9
 waitmovement 0x0
 special 0x114
@@ -420,7 +389,7 @@ goto ow_script_0x971404
 ow_script_0x971404:
 special 0x114
 setvar SONG_OVERRIDE 0xffff
-call ow_script_0x936c1c
+draw_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 trainerbattlecont 0x1 0xaa 0x0 str_0x96f0ee str_0x96f156 ow_script_0x96fbaa
 
 
@@ -494,10 +463,8 @@ ow_script_movs_0x972fe0:
 
 .global ow_script_0x96fbaa
 ow_script_0x96fbaa:
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x9713b5
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 call ow_script_0x8d7a10
 fadescreen 0x3
 cry POKEMON_GROUDON 0x0
@@ -512,16 +479,12 @@ applymovement 0xff ow_script_movs_0x96fba6
 applymovement 0x1 ow_script_movs_0x96fba6
 applymovement 0x2 ow_script_movs_0x96fba6
 call ow_script_0x972ff2
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96fd16
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
 call ow_script_0x972ff2
-call ow_script_0x92f097
 loadpointer 0x0 str_0x96fd4a
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 pause 0x1
 call ow_script_0x9718a4
 applymovement 0x1 ow_script_movs_0x9718b4
@@ -540,10 +503,8 @@ goto ow_script_0x279768
 .global ow_script_0x279768
 ow_script_0x279768:
 call ow_script_0x972ff2
-call ow_script_0x92f097
 loadpointer 0x0 str_0x96fc90
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 pause 0x1
 setvar 0x8004 0x8
 special 0x19
@@ -573,10 +534,8 @@ applymovement 0xa ow_script_movs_0x971dd2
 pause 0x10
 cry POKEMON_GROUDON 0x0
 waitcry
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x97300a
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 cry POKEMON_GROUDON 0x0
 call ow_script_0x972ff2
 applymovement 0xa ow_script_movs_0x9730a0
@@ -585,10 +544,8 @@ goto ow_script_0x971dd7
 
 .global ow_script_0x971dd7
 ow_script_0x971dd7:
-call ow_script_0x92f097
 loadpointer 0x0 str_0x972330
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 cry POKEMON_GROUDON 0x0
 call ow_script_0x972ff2
 waitcry
@@ -597,10 +554,8 @@ fadesong 0
 setvar 0x8004 0x9
 special 0x19
 waitstate
-call ow_script_0x97231c
 loadpointer 0x0 str_0x972313
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RUBYS MUGSHOT_LEFT
 goto ow_script_0x9730a3
 
 
@@ -619,15 +574,6 @@ goto ow_script_0x966e64
 .global ow_script_0x966e64
 ow_script_0x966e64:
 end
-
-
-.global ow_script_0x97231c
-ow_script_0x97231c:
-setvar 0x8000 0x1
-setvar 0x8001 0x11
-setvar 0x8002 0xe
-special 0x6
-return
 
 
 .global ow_script_0x972ff2

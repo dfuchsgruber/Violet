@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_outside_faun_appears
 ow_script_trainerschool_outside_faun_appears:
@@ -21,10 +22,8 @@ applymovement 6 mov_exclam
 applymovement 7 mov_exclam
 waitmovement 0x0
 
-call ow_script_0x89c5ee
 loadpointer 0 str_faun_appears
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 
 @ Move npcs into a row
 applymovement 3 mov_2l_2d
@@ -38,18 +37,14 @@ applymovement 0x3 mov_face_down
 applymovement 0x5 mov_face_down
 applymovement 0xFF mov_face_down
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0 str_faun_announces_pkmn
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 lockall // prevents the 'moonwalk bug'
 pause 40
 applymovement 4 mov_smile
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_call_blaise
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 
 @ Move Blaise to Faun
 applymovement 6 mov_1d
@@ -57,17 +52,13 @@ waitmovement 0
 pause 32
 applymovement 6 mov_dinplace
 waitmovement 0
-call ow_script_0x89e33c
 loadpointer 0 str_blaise_received_pkmn
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
 applymovement 6 mov_blaise_back
 waitmovement 0
 
-call ow_script_0x89c5ee
 loadpointer 0 str_call_felix
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 
 @ Move Felix to Faun
 applymovement 7 mov_felix_to_faun
@@ -75,32 +66,22 @@ waitmovement 0
 pause 32
 applymovement 7 mov_dinplace
 waitmovement 0
-call ow_script_0x89e1fc
 loadpointer 0 str_felix_received_pkmn
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 sound 0x15
 applymovement 4 mov_double_exclam
 waitmovement 4
-call ow_script_0x89c5ee
 loadpointer 0 str_angry_at_felix
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_felix_apologize
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0 str_after_felix
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 7 mov_felix_back
 waitmovement 0
 
-call ow_script_0x89c5ee
 loadpointer 0 str_call_player
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 addvar TRAINERSCHOOL_PROGRESS 1
 releaseall
 end

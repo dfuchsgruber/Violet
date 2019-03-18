@@ -5,6 +5,7 @@
 .include "ordinals.s"
 .include "flags.s"
 .include "items.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_wildbattle
 
@@ -17,12 +18,12 @@ gotoif EQUAL caught_pkmn
 checkitem ITEM_POKEBALL 1
 compare LASTRESULT 0x1
 gotoif LESS wasted_balls
-call ow_script_0x89c5ee
+draw_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 4 mov_face_up
 waitmovement 0
 loadpointer 0 str_whatya_doin
 callstd MSG
-special 7
+hide_mugshot
 releaseall
 end
 
@@ -39,10 +40,8 @@ goto rm_pokeballs
 no_more_balls:
 applymovement 4 mov_face_up
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_caught
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 setvar 0x8004 0xFF
 setvar 0x8005 0x22
 setvar 0x8006 0x10
@@ -53,16 +52,12 @@ applymovement 0xFF mov_face_up
 waitmovement 0
 pause 32
 @ May does the test
-call ow_script_0x89c5ee
 loadpointer 0 str_call_rival
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 3 mov_rival_to_faun
 waitmovement 0
-call ow_script_0x89ba6e
 loadpointer 0 str_rival_says_easy
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 0x3 mov_uinplace
 waitmovement 0x0
 applymovement 0x4 mov_face_up
@@ -78,40 +73,30 @@ applymovement 0x3 mov_double_jump
 waitmovement 0
 checksound
 pause 64
-call ow_script_0x89c5ee
 loadpointer 0 str_well_done_rival
-callstd MSG
-special 7
-call ow_script_0x89ba6e
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_rival_says_was_easy
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 3 mov_rival_back
 waitmovement 0
 applymovement 0x4 mov_face_down
 waitmovement 0
 @ Maike does the catching test
-call ow_script_0x89c5ee
 loadpointer 0 str_mays_turn
-callstd MSG
-special 7
-call ow_script_0x89db71
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_may_insecure
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
 applymovement 5 mov_may_to_faun
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_give_may_balls
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0x5 mov_uinplace
 waitmovement 0x0
 applymovement 0x4 mov_face_up
 applymovement 0x5 mov_into_grass
 waitmovement 0
 pause 40
-call ow_script_0x89db71
+draw_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 loadpointer 0x0 str_may_screams
 callstd MSG_KEEPOPEN
 sound 10
@@ -123,24 +108,18 @@ applymovement 0x5 mov_double_jump
 waitmovement 0
 checksound
 closeonkeypress
-special 0x7
+hide_mugshot
 pause 64
-call ow_script_0x89c5ee
 loadpointer 0 str_may_done
-callstd MSG
-special 7
-call ow_script_0x89db71
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_may_glad
-callstd MSG
-special 7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 applymovement 5 mov_may_back
 waitmovement 0
 applymovement 0x4 mov_face_down
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_catching_test_done
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 3 mov_rival_to_battle_field
 applymovement 7 mov_felix_to_battle_field
 applymovement 4 mov_faun_to_battle_field
@@ -153,10 +132,8 @@ end
 wasted_balls:
 applymovement 4 mov_face_up
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_wasted
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 subvar TRAINERSCHOOL_PROGRESS 1
 releaseall
 end
@@ -165,10 +142,8 @@ end
 player_fainted:
 applymovement 4 mov_face_up
 waitmovement 0
-call ow_script_0x89c5ee
 loadpointer 0 str_fainted
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 releaseall
 @ Heal player
 special 0
@@ -185,18 +160,14 @@ call ow_script_healing_sequence
 checkitem ITEM_POKEBALL 1
 compare LASTRESULT 0x1
 gotoif LESS wasted_balls_and_lost
-call ow_script_0x89c5ee
 loadpointer 0 str_healed
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 releaseall
 end
 
 wasted_balls_and_lost:
-call ow_script_0x89c5ee
 loadpointer 0 str_wasted_balls_and_lost
-callstd MSG
-special 7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 copyvarifnotzero 0x8000 ITEM_POKEBALL
 copyvarifnotzero 0x8001 5
 callstd ITEM_OBTAIN

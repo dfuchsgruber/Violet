@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8c90b9
@@ -28,16 +29,12 @@ applymovement 0x3 ow_script_movs_0x8c90b9
 waitmovement 0x0
 compare KARMA_VALUE 0x7fff
 gotoif HIGHER ow_script_0x8c8fc8
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x8c90a0
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 0x3 ow_script_movs_0x8c909d
 waitmovement 0x0
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x8c8fec
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 goto ow_script_0x92eac0
 
 
@@ -66,10 +63,8 @@ end
 
 .global ow_script_0x8c8fc8
 ow_script_0x8c8fc8:
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x8c8fde
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 goto ow_script_0x92eac0
 
 

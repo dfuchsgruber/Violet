@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x91fece
@@ -37,10 +38,8 @@ multichoice 0x0 0x0 0x0 0x1
 setvar DYN_MULTICHOICE_ITEM_CNT 0x0
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x90fdce
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x90fd48
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0 str_violet
 setvar 0x8000 0
 special 0xE
@@ -70,10 +69,8 @@ end
 
 .global ow_script_0x90fdce
 ow_script_0x90fdce:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x90fe3d
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 
 loadpointer 0 str_violet
 setvar 0x8000 0

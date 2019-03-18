@@ -1,13 +1,14 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x94bb30
 ow_script_0x94bb30:
 lockall
 fadesong 0
-call ow_script_0x8a1cc9
+draw_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x94d460
 callstd MSG
 fadescreen 0x1

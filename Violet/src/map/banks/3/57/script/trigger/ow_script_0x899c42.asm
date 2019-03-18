@@ -4,6 +4,7 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x899c63
@@ -40,10 +41,8 @@ ow_script_movs_0x89bfe7:
 
 .global ow_script_0x89c06b
 ow_script_0x89c06b:
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x89bfed
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 0x1 ow_script_movs_0x89bfe7
 waitmovement 0x0
 sound 0x9

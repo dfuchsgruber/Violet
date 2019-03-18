@@ -2,23 +2,20 @@
 .include "overworld_script.s"
 .include "vars.s"
 .include "ordinals.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_faun
 ow_script_trainerschool_faun:
 compare TRAINERSCHOOL_PROGRESS 2
 gotoif LESS before_test
-call ow_script_0x89c5ee
 loadpointer 0x0 str_after_test
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
 end
 
 @ Before the written test
 before_test:
-	call ow_script_0x89c5ee
 	loadpointer 0x0 str_before_test
-	callstd MSG_FACE
-	special 0x7
+	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
 	end
 
 .ifdef LANG_GER

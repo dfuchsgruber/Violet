@@ -5,6 +5,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x92d0b8
@@ -83,40 +84,26 @@ special 0x113
 applymovement 0x7f ow_script_movs_0x92d0b8
 waitmovement 0x0
 special 0x114
-call ow_script_0x89c5ee
 loadpointer 0x0 str_0x92d01d
-callstd MSG
-special 0x7
-call ow_script_0x8e63f4
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_0x92cf46
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x92ce82
-callstd MSG
-special 0x7
-call ow_script_0x8e63f4
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_0x928b41
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 loadpointer 0x0 str_0x928a7f
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0xc ow_script_movs_0x928a7c
 waitmovement 0x0
 applymovement 0xb ow_script_movs_0x92d0b8
 waitmovement 0x0
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x928a11
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 applymovement 0xb ow_script_movs_0x928a0e
 waitmovement 0x0
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x9288c7
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 applymovement 0xb ow_script_movs_0x9288c3
 waitmovement 0x0
 sound 0x15
@@ -128,23 +115,18 @@ applymovement 0x7f ow_script_movs_0x9288c3
 applymovement 0xb ow_script_movs_0x9288ba
 waitmovement 0x0
 special 0x114
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x9286da
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 applymovement 0xff ow_script_movs_0x9286d6
 waitmovement 0x0
 applymovement 0xb ow_script_movs_0x9312ac
 pause 0x40
-call ow_script_0x89c5ee
 loadpointer 0x0 str_0x9286b8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0xc ow_script_movs_0x92e56b
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 str_0x928594
-callstd MSG
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 goto ow_script_0x92d67a
 
 
@@ -240,7 +222,6 @@ ow_script_movs_0x92d7b6:
 
 .global ow_script_0x92d67a
 ow_script_0x92d67a:
-special 0x7
 showsprite 0xd
 applymovement 0xd ow_script_movs_0x92dc7e
 waitmovement 0x0
@@ -248,34 +229,22 @@ sound 0x15
 applymovement 0xc ow_script_movs_0x92dc7a
 applymovement 0xff ow_script_movs_0x92dc7a
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 str_0x92dc49
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_0x92dbcf
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0x0 str_0x92db7f
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0xd ow_script_movs_0x92db7c
 waitmovement 0x0
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x92db39
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 0xd ow_script_movs_0x92da68
 waitmovement 0x0
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x92db05
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0x0 str_0x935f18
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0xc ow_script_movs_0x92da70
 waitmovement 0x0
 applymovement 0xd ow_script_movs_0x92da6b
@@ -283,23 +252,17 @@ waitmovement 0x0
 applymovement 0xff ow_script_movs_0x92da68
 applymovement 0xc ow_script_movs_0x92da68
 waitmovement 0x0
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x92d98d
-callstd MSG
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0x0 str_0x936ef3
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0xc ow_script_movs_0x92d849
 waitmovement 0x0
 applymovement 0xd ow_script_movs_0x92db7c
 applymovement 0xff ow_script_movs_0x92db7c
 waitmovement 0x0
-call ow_script_0x89c5ee
 loadpointer 0x0 str_0x92d7c0
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0xc ow_script_movs_0x92d7a5
 waitmovement 0x0
 applymovement 0xff ow_script_movs_0x93a4d4
@@ -323,23 +286,17 @@ ow_script_movs_0x92e6ef:
 .global ow_script_0x92dc84
 ow_script_0x92dc84:
 pause 0x40
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x93a4de
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 0xd ow_script_movs_0x92e6ec
 applymovement 0xff ow_script_movs_0x92e6ef
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x92e6d7
-callstd MSG_YES_NO
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_YES_NO
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x93a667
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x92e662
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
+draw_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0x0 str_0x92e5ea
 callstd MSG
 goto ow_script_0x92df8a
@@ -378,19 +335,15 @@ ow_script_movs_0x93c1e9:
 ow_script_0x92df8a:
 loadpointer 0x0 str_0x92e221
 callstd MSG
-special 0x7
+hide_mugshot
 applymovement 0xd ow_script_movs_0x92e21e
 applymovement 0xff ow_script_movs_0x92e21e
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x92e138
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 0xd ow_script_movs_0x92e6ec
 applymovement 0xff ow_script_movs_0x92e6ef
-call ow_script_0x89e1fc
 loadpointer 0x0 str_0x92e024
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 applymovement 0xff ow_script_movs_0x92e021
 waitmovement 0x0
 applymovement 0xd ow_script_movs_0x93c1e9
@@ -432,11 +385,9 @@ end
 
 .global ow_script_0x93a667
 ow_script_0x93a667:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x92e4e6
-callstd MSG
-special 0x7
-call ow_script_0x89e1fc
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
+draw_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 loadpointer 0x0 str_0x92e56f
 callstd MSG_KEEPOPEN
 goto ow_script_0x92df8a

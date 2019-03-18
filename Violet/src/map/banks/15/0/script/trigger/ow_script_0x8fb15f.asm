@@ -5,6 +5,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x8fb15f
@@ -47,7 +48,7 @@ faceplayer
 
 setflag PKMNMENU
 pause 32
-call ow_script_0x8d3f23
+draw_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 settrainerflag 0x19
 trainerbattlecont 0x1 0x19 0x0 str_0x8d3efa str_0x8d3bb9 ow_script_0x8d4033
 
@@ -73,25 +74,17 @@ callstd MSG
 special 0xF
 
 applymovement 0x36 mov_4
-call ow_script_0x8d3f23
 loadpointer 0x0 str_0x8d3f8b
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 applymovement 0x36 mov_1
-call ow_script_0x8d3f23
 loadpointer 0x0 str_0x8d3be3
-callstd MSG_YES_NO
-special 0x7
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG_YES_NO
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8d3734
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d3858
-callstd MSG
-special 0x7
-call ow_script_0x8d3f23
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8d375f
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 setvar 0x8006 0xa
 goto ow_script_0x8d3691
 
@@ -119,10 +112,8 @@ ow_script_0x8d3691:
 special2 0x8006 0xc
 applymovement 0x36 ow_script_movs_0x8d36f5
 waitmovement 0x0
-call ow_script_0x8d3f23
 loadpointer 0x0 str_0x8d36f8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 applymovement 0x32 ow_script_movs_0x8d36f1
 applymovement 0x33 ow_script_movs_0x8d36f1
 applymovement 0x34 ow_script_movs_0x8d36f1
@@ -152,25 +143,12 @@ releaseall
 end
 
 
-.global ow_script_0x8d3f23
-ow_script_0x8d3f23:
-setvar 0x8000 0x1
-setvar 0x8001 0x13
-setvar 0x8002 0xe
-special 0x6
-return
-
-
 .global ow_script_0x8d3734
 ow_script_0x8d3734:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d3aaf
-callstd MSG
-special 0x7
-call ow_script_0x8d3f23
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8d39ed
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 setvar 0x8006 0xfff5
 goto ow_script_0x8e22e1
 
