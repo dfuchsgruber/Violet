@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x92e99c
@@ -49,10 +50,8 @@ ow_script_0x92ded4:
 faceplayer
 loadpointer 0x0 str_0x92df22
 callstd MSG
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x92def0
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 release
 end
 

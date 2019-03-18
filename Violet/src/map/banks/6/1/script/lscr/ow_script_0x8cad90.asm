@@ -3,6 +3,7 @@
 .include "flags.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8cadd5
@@ -35,10 +36,8 @@ ow_script_movs_0x8caddd:
 
 .global ow_script_0x8cad90
 ow_script_0x8cad90:
-call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8cade0
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT MSG_FACE
 applymovement 0xff ow_script_movs_0x8cadd5
 applymovement 0x1 ow_script_movs_0x8cadcd
 waitmovement 0x0

@@ -5,6 +5,7 @@
 .include "species.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8d79c9
@@ -75,10 +76,8 @@ ow_script_movs_0x8d7b4e:
 .global ow_script_0x8d7960
 ow_script_0x8d7960:
 
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d79cd
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 lockall
 call ow_script_0x8d7a10
 sound 0x15
@@ -91,10 +90,8 @@ waitmovement 0x0
 lockall
 checksound
 pause 0x24
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d79fe
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 
@@ -106,10 +103,8 @@ waitstate
 clearflag TRANS_DISABLE
 
 lockall
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d7bbb
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 special 0x113
 applymovement 0x7f ow_script_movs_0x8d7ba7
 waitmovement 0x0
@@ -117,10 +112,8 @@ playsong MUS_DEOXYS_ERSCHEINT 0x0
 cry POKEMON_DEOXYS 0x0
 waitcry
 call ow_script_0x8d7a10
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d7b5b
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
 waitcry
 cry POKEMON_DEOXYS 0x0
@@ -133,10 +126,8 @@ waitcry
 call ow_script_0x8d7a10
 call ow_script_0x8d7b1f
 call ow_script_0x8d7b1f
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d7ae9
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
 waitcry
 call ow_script_0x8d7a10
@@ -197,17 +188,13 @@ ow_script_movs_0x8d7e64:
 
 .global ow_script_0x8d7d8a
 ow_script_0x8d7d8a:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d7ed8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
 call ow_script_0x8d7a10
 waitcry
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d7eab
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 applymovement 0x9 ow_script_movs_0x8d7e5d
 applymovement 0x7f ow_script_movs_0x8d7e5d
 waitmovement 0x0
@@ -215,10 +202,8 @@ cry POKEMON_DEOXYS 0x0
 applymovement 0x9 ow_script_movs_0x8d7e64
 applymovement 0x7f ow_script_movs_0x8d7e64
 waitmovement 0x0
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d7e03
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
 call ow_script_0x8d7a10
 goto ow_script_0x8d7f2e
@@ -258,27 +243,19 @@ hidesprite 0x8
 hidesprite 0xa
 applymovement 0x7f ow_script_movs_0x8d8111
 waitmovement 0x0
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d8100
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 showsprite 0xa
 applymovement 0xa ow_script_movs_0x8d80fd
 waitmovement 0x0
 fadesong 0
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8d80ca
-callstd MSG
-special 0x7
-call ow_script_0x8c09e6
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8d803f
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 playsong MUS_SPIELHALLE_VERSION_3 0x0
-call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8d7fa0
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 goto ow_script_0x8d9328
 
 
@@ -316,10 +293,8 @@ clearflag PKMNMENU
 setweather 0x5
 doweather
 call ow_script_0x8d7a10
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8dc40d
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 special 0x114
 special 0x113
 applymovement 0x7f ow_script_movs_0x8dc3fb
@@ -327,10 +302,8 @@ waitmovement 0x0
 sound 0x50
 fadescreen 0x3 // Force one "proper" fadescreen to copy the pal to pal_restore as well
 fadescreen 0x2
-call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8dc39d
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 sound 0x50
 fadescreen 0x2
 call ow_script_0x8d7a10
@@ -347,10 +320,8 @@ fadescreen 0x2
 call ow_script_0x8d7a10
 sound 0x50
 fadescreen 0x2
-call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8dc346
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 sound 0x50
 fadescreen 0x2
 call ow_script_0x8d7a10
@@ -367,10 +338,8 @@ fadescreen 0x2
 call ow_script_0x8d7a10
 sound 0x50
 fadescreen 0x2
-call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8dc2ea
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 sound 0x50
 fadescreen 0x2
 call ow_script_0x8d7a10
@@ -396,10 +365,8 @@ ow_script_movs_0x8e1959:
 
 .global ow_script_0x8e1584
 ow_script_0x8e1584:
-call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8e195c
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
 waitcry
 sound 0x80

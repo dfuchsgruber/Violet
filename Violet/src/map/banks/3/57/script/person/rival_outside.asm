@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_rival_outside
 ow_script_trainerschool_rival_outside:
@@ -26,10 +27,8 @@ end
 goodbye:
 lock
 faceplayer
-call ow_script_0x89ba6e
 loadpointer 0 str_goodbye
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 setvar 0x8004 3
 setvar 0x8005 0x28
 setvar 0x8006 0x14
@@ -46,18 +45,14 @@ release
 goto ow_script_trainerschool_finish
 
 results:
-call ow_script_0x89ba6e
 loadpointer 0 str_results
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 end
 
 
 battle:
-call ow_script_0x89ba6e
 loadpointer 0 str_battle
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 end
 
 make_may_appear:
@@ -66,10 +61,8 @@ checkflag TRAINERSCHOOL_MAY_OUTSIDE
 gotoif EQUAL may_already_appeared
 lock
 faceplayer
-call ow_script_0x89ba6e
 loadpointer 0 str_make_may_appear
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 sound 0x9
 checksound
 showsprite 0x5
@@ -81,10 +74,8 @@ waitmovement 0
 pause 16
 applymovement 0xFF mov_face_down
 waitmovement 0
-call ow_script_0x89ba6e
 loadpointer 0 str_after_may_appeared
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 0x3 mov_face_right
 applymovement 0xFF mov_face_right
 waitmovement 0
@@ -101,25 +92,19 @@ release
 end
 
 may_already_appeared:
-call ow_script_0x89ba6e
 loadpointer 0 str_after_may_appeared_2
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 releaseall
 end
 
 will_receive_pkmn:
-call ow_script_0x89ba6e
 loadpointer 0 str_will_receive_pkmn
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 end
 
 catch_pokemon:
-call ow_script_0x89ba6e
 loadpointer 0 str_catch_pkmn
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 end
 
 mov_exclam:

@@ -5,6 +5,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8e1841
@@ -169,10 +170,8 @@ compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8e22eb
 
 
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8e0cdc
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_KEEPOPEN
 
 loadpointer 0 str_polizist
 setvar 0x8000 1
@@ -283,10 +282,8 @@ ow_script_movs_0x8e0b21:
 
 .global ow_script_0x8e22eb
 ow_script_0x8e22eb:
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8e0f0b
-callstd MSG_KEEPOPEN
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_KEEPOPEN
 
 loadpointer 0 str_polizist
 setvar 0x8000 1

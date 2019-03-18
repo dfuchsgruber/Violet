@@ -2,6 +2,7 @@
 .include "callstds.s"
 .include "flags.s"
 .include "ordinals.s"
+.include "mugshot.s"
 
 .global ow_script_inferior_gym_trainer_0
 ow_script_inferior_gym_trainer_0:
@@ -126,20 +127,16 @@ checkflag FRBADGE_4
 gotoif EQUAL badge_obtained
 lock
 faceplayer
-call ow_script_0x92f097
 loadpointer 0x0 str_igva_before_battle
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 warpmuted 10 1 255 0xF 0x4
 waitstate
 release
 end
 
 badge_obtained:
-call ow_script_0x92f097
 loadpointer 0x0 str_igva_after_battle
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT MSG_FACE
 end
 
 .ifdef LANG_GER

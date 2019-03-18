@@ -2,6 +2,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x955382
@@ -41,46 +42,29 @@ choice:
 
 .global ow_script_0x955527
 ow_script_0x955527:
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x95553d
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 goto ow_script_0x9554da
 
 
 .global ow_script_0x9555df
 ow_script_0x9555df:
-call ow_script_0x955687
 loadpointer 0x0 str_0x9555f5
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_BLACKBEARD MUGSHOT_RIGHT
 goto ow_script_0x9554da
-
-
-.global ow_script_0x955687
-ow_script_0x955687:
-setvar 0x8000 0x1
-setvar 0x8001 0x1a
-setvar 0x8002 0xe
-special 0x6
-return
 
 
 .global ow_script_0x9555c9
 ow_script_0x9555c9:
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x95569b
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 goto ow_script_0x9554da
 
 
 .global ow_script_0x9555b3
 ow_script_0x9555b3:
-call ow_script_0x8f4d18
 loadpointer 0x0 str_0x955726
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 goto ow_script_0x9554da
 
 

@@ -3,6 +3,7 @@
 .include "overworld_script.s"
 .include "vars.s"
 .include "ordinals.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_lock_grass
 ow_script_trainerschool_lock_grass:
@@ -41,38 +42,28 @@ lockout:
 
 
 goodbye:
-	call ow_script_0x8a1cc9
 	loadpointer 0 str_trainerschool_say_goodbye
-	callstd MSG
-	special 0x7
+	show_mugshot MUGSHOT_PLAYER
 	return
 
 faun_not_arrived:
-	call ow_script_0x8a1cc9
 	loadpointer 0 str
-	callstd MSG
-	special 0x7
+	show_mugshot MUGSHOT_PLAYER
 	return
 
 receive_pkmn:
-	call ow_script_0x89c5ee
 	loadpointer 0 str_receive_pkmn
-	callstd MSG
-	special 0x7
+	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 	return
 
 receive_pokeballs:
-	call ow_script_0x89c5ee
 	loadpointer 0 str_receive_pkmn
-	callstd MSG
-	special 0x7
+	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 	return
 
 fight_wild_pokemon:
-	call ow_script_0x89c5ee
 	loadpointer 0 str_fight_wild_pokemon
-	callstd MSG
-	special 0x7
+	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 	return
 
 mov_up:

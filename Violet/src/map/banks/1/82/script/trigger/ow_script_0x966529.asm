@@ -3,6 +3,7 @@
 .include "flags.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x9665c2
@@ -23,17 +24,13 @@ setvar 0x8004 0x2
 special 0x1b
 waitmovement 0x0
 faceplayer
-call ow_script_0x92f097
 loadpointer 0x0 str_0x9665c5
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 
 call ow_script_healing_sequence
 
-call ow_script_0x92f097
 loadpointer 0x0 str_0x96659a
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 setvar 0x8004 0x2
 setvar 0x8005 0x1c
 setvar 0x8006 0x5

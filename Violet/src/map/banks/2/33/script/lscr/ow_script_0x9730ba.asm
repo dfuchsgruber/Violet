@@ -4,105 +4,78 @@
 .include "movements.s"
 .include "songs.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_0x9730ba
 
 ow_script_0x9730ba:
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x971e16
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
-call ow_script_0x97231c
 loadpointer 0x0 str_0x971d73
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 pause 0x1
 setvar SONG_OVERRIDE 0x0
 playsong MUS_PUNKTLOCH_AND_TANIBOSCHLUSSEL_AND_ICOGNITO_KAMMERN 0x0
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x971d60
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 pause 0x1
 applymovement 0x1 ow_moves_0x971d5d
 waitmovement 0x0
-call ow_script_0x97231c
 loadpointer 0x0 str_0x971c82
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 pause 0x1
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x971c05
-callstd MSG
-special 0x7
-call ow_script_0x97231c
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 loadpointer 0x0 str_0x953d08
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 pause 0x1
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x9718d8
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 pause 0x1
-call ow_script_0x97231c
 loadpointer 0x0 str_0x9717c3
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 pause 0x1
 playsong MUS_SPIELHALLE_VERSION_3 0x0
 fadescreen 0x1
-call ow_script_0x97231c
+draw_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 loadpointer 0x0 str_0x971424
 callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x96fd7a
 callstd MSG
-special 0x7
+hide_mugshot
 pause 0x1
 fadesong MUS_PUNKTLOCH_AND_TANIBOSCHLUSSEL_AND_ICOGNITO_KAMMERN
 fadescreen 0x0
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96fa81
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
-call ow_script_0x97231c
 loadpointer 0x0 str_0x96f811
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 pause 0x1
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x96f680
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 pause 0x1
-call ow_script_0x97231c
 loadpointer 0x0 str_0x96f55c
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 pause 0x1
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x96f427
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 applymovement 0xff ow_moves_0x96eff0
 waitmovement 0x0
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x96ef94
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 pause 0x1
 applymovement 0xff ow_moves_0x96ef91
 waitmovement 0x0
-call ow_script_0x97231c
+draw_mugshot MUGSHOT_RUBYS MUGSHOT_RIGHT
 loadpointer 0x0 str_0x96edc1
 callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x96ef26
 callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x96ef5f
 callstd MSG
-special 0x7
+hide_mugshot
 pause 0x1
 addvar STORY_PROGRESS 0x1
 setflag PKMNMENU
@@ -120,36 +93,6 @@ checksound
 warpmuted 0x0 0xd 0xff 0x11 0x1a
 waitstate
 end
-
-
-.global ow_script_0x97231c
-
-ow_script_0x97231c:
-setvar 0x8000 0x1
-setvar 0x8001 0x11
-setvar 0x8002 0xe
-special 0x6
-return
-
-
-.global ow_script_0x8a1cc9
-
-ow_script_0x8a1cc9:
-setvar 0x8000 0x0
-setvar 0x8001 0xc
-setvar 0x8002 0xe
-special 0x6
-return
-
-
-.global ow_script_0x936c1c
-
-ow_script_0x936c1c:
-setvar 0x8000 0x0
-setvar 0x8001 0x2
-setvar 0x8002 0xe
-special 0x6
-return
 
 
 .global ow_moves_0x971d5d

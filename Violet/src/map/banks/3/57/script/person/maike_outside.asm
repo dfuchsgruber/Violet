@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_maike_outside
 ow_script_trainerschool_maike_outside:
@@ -26,10 +27,8 @@ end
 goodbye:
 lock
 faceplayer
-call ow_script_0x89db71
 loadpointer 0 str_goodbye
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 setvar 0x8004 5
 setvar 0x8005 0x29
 setvar 0x8006 0x14
@@ -46,17 +45,13 @@ release
 goto ow_script_trainerschool_finish
 
 results:
-call ow_script_0x89db71
 loadpointer 0 str_results
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
 end
 
 battle:
-call ow_script_0x89db71
 loadpointer 0 str_battle
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
 end
 
 make_felix_and_blaise_appear:
@@ -65,10 +60,8 @@ checkflag TRAINERSCHOOL_FELIX_OUTSIDE
 gotoif EQUAL felix_already_appeared
 lock
 faceplayer
-call ow_script_0x89db71
 loadpointer 0 str_make_both_appear
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 sound 0x9
 checksound
 showsprite 0x7
@@ -83,10 +76,8 @@ applymovement 0x3 mov_exclam
 applymovement 0x5 mov_exclam
 waitmovement 0
 pause 16
-call ow_script_0x89db71
 loadpointer 0 str_after_both_appeared
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 
 applymovement 0x6 mov_1u
 applymovement 0x7 mov_1u
@@ -98,25 +89,19 @@ mov_1u:
 	.byte STEP_UP, STEP_UP, STOP
 
 felix_already_appeared:
-call ow_script_0x89db71
 loadpointer 0 str_after_both_appeared_2
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
 releaseall
 end
 
 will_receive_pkmn:
-call ow_script_0x89db71
 loadpointer 0 str_will_receive_pkmn
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
 end
 
 catch_pkmn:
-call ow_script_0x89db71
 loadpointer 0 str_catch_pkmn
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
 end
 
 mov_face_down:

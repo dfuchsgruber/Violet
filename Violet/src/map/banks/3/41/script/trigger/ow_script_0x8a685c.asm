@@ -5,6 +5,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "vars.s"
+.include "mugshot.s"
 
 .global ow_script_movs_0x8a71a0
 ow_script_movs_0x8a71a0:
@@ -84,10 +85,8 @@ loadpointer 0x0 str_0x8a7134
 callstd MSG
 special 0xF
 
-call ow_script_0x8a7095
 loadpointer 0x0 str_0x8a70a9
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
 
 loadpointer 0 str_violet_grunt
 setvar 0x8000 1
@@ -112,24 +111,18 @@ applymovement 0x52 ow_script_movs_0x8a7006
 waitmovement 0x0
 applymovement 0xff ow_script_movs_0x8a7003
 waitmovement 0x0
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x8a6f8a
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 sound 0x15
 applymovement 0x52 ow_script_movs_0x8a71a0
 waitmovement 0x0
 checksound
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x8a6f16
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 applymovement 0xff ow_script_movs_0x8a69da
 waitmovement 0x0
-call ow_script_0x8a1cc9
 loadpointer 0x0 str_0x8a6bac
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_FACE
 sound 0x15
 applymovement 0x2b ow_script_movs_0x8a6ac4
 applymovement 0x2c ow_script_movs_0x8a6ac4
@@ -137,10 +130,8 @@ applymovement 0x2d ow_script_movs_0x8a6ac4
 applymovement 0x2e ow_script_movs_0x8a6ac4
 waitmovement 0x0
 checksound
-call ow_script_0x8a7095
 loadpointer 0x0 str_0x8a6b82
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
 
 loadpointer 0 str_violet_grunt
 setvar 0x8000 1
@@ -151,14 +142,10 @@ special 0xF
 
 applymovement 0xff ow_script_movs_0x8a7003
 waitmovement 0x0
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x8a6b0d
-callstd MSG
-special 0x7
-call ow_script_0x8a1cc9
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8a6ac8
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_FACE
 getplayerpos 0x8000 0x8001
 compare 0x8001 0x37
 callif EQUAL ow_script_0x8a6d2a
@@ -231,22 +218,11 @@ fadescreen 0x0
 applymovement 0x52 ow_script_movs_0x8a73a5
 applymovement 0xff ow_script_movs_0x8a73a1
 waitmovement 0x0
-call ow_script_0x8a7095
 loadpointer 0x0 str_0x8a73a9
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
 setvar STORY_PROGRESS 0xe
 warp 0x3 0x42 0x0 0x0 0x0
 end
-
-
-.global ow_script_0x8a7095
-ow_script_0x8a7095:
-setvar 0x8000 0x1
-setvar 0x8001 0xb
-setvar 0x8002 0xe
-special 0x6
-return
 
 
 .global ow_script_0x8a91b8

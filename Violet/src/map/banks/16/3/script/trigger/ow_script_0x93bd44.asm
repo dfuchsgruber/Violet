@@ -2,6 +2,7 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x93be3f
@@ -47,10 +48,8 @@ lockall
 special 0x113
 applymovement 0x7f ow_script_movs_0x93be3f
 waitmovement 0x0
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c76b
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 
 loadpointer 0 str_manus
 setvar 0x8000 0
@@ -59,10 +58,8 @@ loadpointer 0x0 str_0x93c7d3
 callstd MSG
 special 0xF
 
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c80f
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 
 loadpointer 0 str_manus
 setvar 0x8000 0
@@ -71,10 +68,8 @@ loadpointer 0x0 str_0x93c62b
 callstd MSG
 special 0xF
 
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c56c
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 
 loadpointer 0 str_manus
 setvar 0x8000 0
@@ -83,10 +78,8 @@ loadpointer 0x0 str_0x93c4d7
 callstd MSG
 special 0xF
 
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x93c41a
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 
 loadpointer 0 str_manus
 setvar 0x8000 0
@@ -95,10 +88,8 @@ loadpointer 0x0 str_0x93c1f6
 callstd MSG
 special 0xF
 
-call ow_script_0x8a2791
 loadpointer 0x0 str_0x93bf80
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT
 applymovement 0x17 ow_script_movs_0x93bf7b
 waitmovement 0x0
 sound 0x9

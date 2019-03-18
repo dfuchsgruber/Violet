@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "flags.s"
+.include "mugshot.s"
 
 .global ow_script_trainerschool_blaise_outside
 ow_script_trainerschool_blaise_outside:
@@ -16,10 +17,8 @@ gotoif EQUAL has_received_pkmn
 make_faun_appear:
 lock
 faceplayer
-call ow_script_0x89e33c
 loadpointer 0 str_before_faun_appeared
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
 setflag TRAINERSCHOOL_TALKED_TO_BLAISE
 checkflag TRAINERSCHOOL_TALKED_TO_FELIX
 gotoif EQUAL ow_script_trainerschool_outside_faun_appears
@@ -27,10 +26,8 @@ release
 end
 
 has_received_pkmn:
-call ow_script_0x89e33c
 loadpointer 0 str_has_received_pkmn
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT MSG_FACE
 end
 
 mov_exclam:

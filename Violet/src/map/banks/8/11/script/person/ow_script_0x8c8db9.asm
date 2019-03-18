@@ -1,6 +1,7 @@
 .include "callstds.s"
 .include "movements.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8c8e03
@@ -11,18 +12,14 @@ ow_script_movs_0x8c8e03:
 
 .global ow_script_0x8c8db9
 ow_script_0x8c8db9:
-call ow_script_0x8f4d04
 loadpointer 0x0 str_0x931867
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 sound 0x15
 applymovement 0x800f ow_script_movs_0x8c8e03
 waitmovement 0x0
 faceplayer
-call ow_script_0x8f4d04
 loadpointer 0x0 str_0x931636
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 lockall
 setvar 0x8004 0xe
 setvar 0x8005 0x1c

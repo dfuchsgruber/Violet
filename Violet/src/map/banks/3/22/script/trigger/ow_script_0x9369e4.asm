@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "songs.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x9369e4
@@ -15,23 +16,21 @@ special 0x1b
 waitmovement 0x0
 faceplayer
 fadesong 0
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x936bf6
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
 setvar 0x8004 0x3
 special 0x19
 waitstate
 clearflag TRANS_DISABLE
-call ow_script_0x936c1c
+draw_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 loadpointer 0x0 str_0x936ba2
 callstd MSG_KEEPOPEN
 playsong MUS_MISTRAL 0x0
 loadpointer 0x0 str_0x936c2f
 callstd MSG
-special 0x7
+hide_mugshot
 goto ow_script_0x937652
 
 
@@ -50,10 +49,8 @@ goto ow_script_0x936d7a
 
 .global ow_script_0x936d7a
 ow_script_0x936d7a:
-call ow_script_0x936c1c
 loadpointer 0x0 str_0x937369
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 setvar 0x8004 0xb
 setvar 0x8005 0xf
 setvar 0x8006 0x16
@@ -69,15 +66,6 @@ fadesong MUS_ROUTE_1_AND_TUNNELPFAD
 addvar STORY_PROGRESS 0x1
 releaseall
 end
-
-
-.global ow_script_0x936c1c
-ow_script_0x936c1c:
-setvar 0x8000 0x0
-setvar 0x8001 0x2
-setvar 0x8002 0xe
-special 0x6
-return
 
 
 .ifdef LANG_GER

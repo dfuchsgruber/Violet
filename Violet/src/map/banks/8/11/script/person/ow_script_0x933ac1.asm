@@ -3,6 +3,7 @@
 .include "movements.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x933e11
@@ -47,10 +48,8 @@ checkflag KASKADA_BLACKMARET_BB_SHIP
 gotoif LESS ow_script_0x933fe1
 lock
 faceplayer
-call ow_script_0x92f097
 loadpointer 0x0 str_0x933f08
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 showsprite 0x1d
 showsprite 0x1e
 showsprite 0x1f
@@ -62,10 +61,8 @@ waitmovement 0x0
 sound 0x15
 applymovement 0xff ow_script_movs_0x933e0d
 waitmovement 0x0
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x933c60
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 applymovement 0x1d ow_script_movs_0x933c58
 waitmovement 0x0
 applymovement 0xff ow_script_movs_0x933c5d
@@ -115,22 +112,16 @@ special 0
 clearflag BLACKOUT_BYPASS
 applymovement 0xff ow_script_movs_0x935b64
 waitmovement 0x0
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x93661f
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 applymovement 0xff ow_script_movs_0x935c46
 waitmovement 0x0
-call ow_script_0x92f097
 loadpointer 0x0 str_0x9365b7
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 applymovement 0xff ow_script_movs_0x935b64
 waitmovement 0x0
-call ow_script_0x8e63f4
 loadpointer 0x0 str_0x9362bd
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
 fadescreen 0x1
 hidesprite 0x1d
 hidesprite 0x1e
@@ -138,10 +129,8 @@ hidesprite 0x1f
 fadescreen 0x0
 applymovement 0xff ow_script_movs_0x935c46
 waitmovement 0x0
-call ow_script_0x92f097
 loadpointer 0x0 str_0x9360fc
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 applymovement 0x20 ow_script_movs_0x937090
 waitmovement 0x0
 hidesprite 0x20
@@ -153,10 +142,8 @@ end
 ow_script_0x933fe1:
 lock
 faceplayer
-call ow_script_0x92f097
 loadpointer 0x0 str_0x9359bb
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 release
 end
 

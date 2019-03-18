@@ -1,6 +1,7 @@
 .include "callstds.s"
 .include "movements.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8ca7be
@@ -13,23 +14,12 @@ ow_script_movs_0x8ca7be:
 
 .global ow_script_0x8ca6a6
 ow_script_0x8ca6a6:
-call ow_script_0x8c09e6
 loadpointer 0x0 str_0x8ca6c5
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT MSG_FACE
 applymovement 0x800f ow_script_movs_0x8ca7be
 waitmovement 0x0
 hidesprite 0x800f
 end
-
-
-.global ow_script_0x8c09e6
-ow_script_0x8c09e6:
-setvar 0x8000 0x0
-setvar 0x8001 0xd
-setvar 0x8002 0xf
-special 0x6
-return
 
 
 .ifdef LANG_GER

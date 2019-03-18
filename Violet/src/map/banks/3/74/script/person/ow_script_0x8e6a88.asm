@@ -3,6 +3,7 @@
 .include "flags.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_movs_0x8ec5cb
@@ -18,18 +19,12 @@ sound 0x15
 applymovement 0x800f ow_script_movs_0x8ec5cb
 waitmovement 0x0
 faceplayer
-call ow_script_0x89c5ee
 loadpointer 0x0 str_0x8ec458
-callstd MSG_FACE
-special 0x7
-call ow_script_0x8a1cc9
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
 loadpointer 0x0 str_0x8e8f9d
-callstd MSG_FACE
-special 0x7
-call ow_script_0x89c5ee
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_FACE
 loadpointer 0x0 str_0x8e8da8
-callstd MSG_FACE
-special 0x7
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
 fadescreen 0x1
 hidesprite 0x800f
 clearflag SILVANIA_FAUN_AND_MIA

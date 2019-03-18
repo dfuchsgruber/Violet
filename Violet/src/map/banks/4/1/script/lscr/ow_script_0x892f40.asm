@@ -7,6 +7,7 @@
 .include "overworld_script.s"
 .include "time_types.s"
 .include "story_states.s"
+.include "mugshot.s"
 
 .global ow_script_0x892f40
 ow_script_0x892f40:
@@ -55,11 +56,11 @@ setflag MAP_BGN_AUTO_ALIGN_OFF
 waitstate
 clearflag MAP_BGN_AUTO_ALIGN_OFF
 pause 0x80
-call ow_script_0x8a1cc9
+draw_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8cf12f
 callstd MSG_KEEPOPEN
 closeonkeypress
-special 0x7
+hide_mugshot
 playsong MUS_ALABASTIA 0
 playsong2 MUS_ALABASTIA
 end
@@ -67,18 +68,6 @@ end
 change_time:
 	setvar TIME_TYPE TIME_TYPE_INGAME_CLOCK
 	return
-
-.global ow_script_0x8a1cc9
-ow_script_0x8a1cc9:
-setvar 0x8000 0x0
-setvar 0x8001 0xc
-checkgender
-compare LASTRESULT 0
-gotoif 1 boy
-setvar 0x8001 0x1B
-boy:
-special 0x6
-return
 
 
 .global ow_script_0x8dcdd2

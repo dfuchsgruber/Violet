@@ -1,15 +1,14 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 .global ow_script_0x858dec
 ow_script_0x858dec:
 lockall
-call ow_script_0x92f097
 loadpointer 0x0 str_0x864813
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 setvar 0x8004 0xd
 setvar LASTTALKED 0xd
 setvar 0x8005 0x1c

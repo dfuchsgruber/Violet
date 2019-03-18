@@ -4,6 +4,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "mugshot.s"
 
 
 ow_script_movs_0x89d801:
@@ -32,10 +33,8 @@ compare 0x8005 0x21
 callif EQUAL ow_script_0x89d7f1
 applymovement 0xff ow_script_movs_0x89d7ee
 waitmovement 0x0
-call ow_script_0x89ba6e
 loadpointer 0x0 str_0x89d77c
-callstd MSG
-special 0x7
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 goto ow_script_0x8f6e05
 
 
