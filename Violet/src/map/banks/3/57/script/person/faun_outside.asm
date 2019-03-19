@@ -106,7 +106,7 @@ loadpointer 0x0 str_player_received_b1
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
-call ow_script_0x893bb5
+call ow_script_set_nickname
 setflag PKMNMENU
 special 0x16F
 
@@ -273,7 +273,10 @@ waitmovement 0x0
 end
 
 mov_faun_leaves_1:
-	.byte STEP_LEFT, STEP_LEFT, STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_RIGHT, STEP_DOWN, STOP
+	.byte STEP_LEFT, STEP_LEFT, STEP_DOWN, STEP_DOWN, STOP
+
+mov_faun_leaves_2:
+	.byte STEP_DOWN, STEP_DOWN, STEP_RIGHT, STEP_DOWN, STOP
 
 mov_result_may_back:
 	.byte STEP_RIGHT, STEP_RIGHT, STEP_DOWN, LOOK_UP, STOP
