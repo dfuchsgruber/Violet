@@ -1,0 +1,41 @@
+{
+	"data": {
+		"footer": "map_footer_23_laubdorf",
+		"events": {
+			"person_cnt": 0,
+			"warp_cnt": 0,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [],
+			"warps": [],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 1,
+			"connections": [
+				{
+					"direction": "SOUTH",
+					"displacement": "-17",
+					"bank": "3",
+					"map_idx": "8",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": 0,
+		"footer_idx": 23,
+		"namespace": "MAP_LAUBDORF",
+		"flash_type": 0,
+		"weather": 0,
+		"type": 0,
+		"bike_usable": 0,
+		"show_name": 0,
+		"field_1A": 0,
+		"battle_style": 0
+	},
+	"label": "map_3_9_laubdorf",
+	"type": "header"
+}

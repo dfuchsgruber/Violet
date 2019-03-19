@@ -370,7 +370,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "13",
-					"y": "50",
+					"y": "51",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"behaviour_range": 0,
@@ -490,8 +490,17 @@
 		},
 		"levelscripts": "map_3_8_route_3_levelscripts",
 		"connections": {
-			"connection_cnt": 0,
-			"connections": []
+			"connection_cnt": 1,
+			"connections": [
+				{
+					"direction": "NORTH",
+					"displacement": "17",
+					"bank": "3",
+					"map_idx": "9",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
 		},
 		"music": "MUS_ROUTE_1_AND_TUNNELPFAD",
 		"footer_idx": 18,

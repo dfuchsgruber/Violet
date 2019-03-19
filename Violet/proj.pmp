@@ -189,6 +189,11 @@
 				"map_3_8_route_8",
 				"src/map/banks/3/8/3_8_map_3_8_route_8.pms",
 				"MAP_ROUTE_8"
+			],
+			"9": [
+				"map_3_9_laubdorf",
+				"src/map/banks/3/9/map_3_9_laubdorf.pms",
+				"MAP_LAUBDORF"
 			]
 		},
 		"4": {
@@ -959,6 +964,10 @@
 		"map_footer_22_river_puzzle": [
 			22,
 			"src/map/banks/3/8/map_footer_22_river_puzzle.pms"
+		],
+		"map_footer_23_laubdorf": [
+			23,
+			"src/map/banks/3/9/map_footer_23_laubdorf.pms"
 		]
 	},
 	"tilesets_primary": {

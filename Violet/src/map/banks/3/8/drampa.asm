@@ -56,12 +56,14 @@ ow_script_route_8_drampa:
 	clearflag FLAG_IN_BATTLE
 	special2 LASTRESULT SPECIAL_GET_BATTLE_RESULT
 	compare LASTRESULT BATTLE_RESULT_WON
-	gotoif EQUAL drampa_fainted_or_caught
+	gotoif EQUAL drampa_fainted
 	compare LASTRESULT BATTLE_RESULT_RAN
 	gotoif EQUAL drampa_fled
 	compare LASTRESULT BATTLE_RESULT_PLAYER_TELEPORTED
 	gotoif EQUAL drampa_fled
-drampa_fainted_or_caught:
+	setflag SEN_LONG_CAUGHT
+	end
+drampa_fainted:
 	setflag SEN_LONG_CAUGHT
 hide_drampa:
 	fadescreen 1
@@ -88,7 +90,7 @@ str_watched:
 str_drampa_growl:
 	.autostring 34 2 "Gryoo Ga Ga GaDOTS"
 str_drampa_fled:
-	.autostring 34 2 "Drampa flog davonDOTS"
+	.autostring 34 2 "Sen-Long flog davonDOTS"
 
 .elseif LANG_EN
 str_watched:
