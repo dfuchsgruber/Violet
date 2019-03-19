@@ -26,12 +26,16 @@ release
 end
 
 has_received_pkmn:
+lock
 loadpointer 0 str_has_received_pkmn
 show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT MSG_FACE
+applymovement 0x6 mov_face_down
+waitmovement 0
+release
 end
 
-mov_exclam:
-	.byte LOOK_DOWN, SAY_EXCLAM, STOP
+mov_face_down:
+	.byte LOOK_DOWN, STOP
 
 .ifdef LANG_GER
 str_before_faun_appeared:

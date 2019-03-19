@@ -72,12 +72,13 @@ applymovement 5 mov_result_may_back
 waitmovement 0
 loadpointer 0 str_final_talk
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
-applymovement 4 mov_faun_leaves
+applymovement 4 mov_faun_leaves_1
 waitmovement 0
 applymovement 3 mov_face_down
 applymovement 5 mov_face_down
 applymovement 7 mov_face_down
 applymovement 0xFF mov_face_down
+applymovement 4 mov_faun_leaves_2
 waitmovement 0
 sound 0x9
 hidesprite 4
@@ -256,6 +257,8 @@ loadpointer 0x0 str_pokeball_obtention_message
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
+applymovement 0x4 mov_face_up
+waitmovement 0x0
 addvar TRAINERSCHOOL_PROGRESS 1
 setvar TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS 1
 releaseall
@@ -265,9 +268,11 @@ catch_pokemon:
 @ This state means the player is to catch wild pokemon as he already has balls
 loadpointer 0 str_player_has_to_catch
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
+applymovement 0x4 mov_face_up
+waitmovement 0x0
 end
 
-mov_faun_leaves:
+mov_faun_leaves_1:
 	.byte STEP_LEFT, STEP_LEFT, STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_RIGHT, STEP_DOWN, STOP
 
 mov_result_may_back:
@@ -453,7 +458,7 @@ str_may_insecure:
 	.autostring 35 2 "O-Ojee!"
 
 str_results_may:
-	.autostring 35 2 "Nun gut.\nIm schriftlichen Test hast du immerhin drei Antworten richtig beantworten können.\pIm Feldtest hast du dich nicht schlecht geschlagen, aber du bist nicht besonders sicher im Umgang mit Pokémon.\pMaike! Wenn du als Trainer bestehen willst, musst du Vertrauen in dich und deine Pokémon finden."
+	.autostring 35 2 "Nun gut.\nIm schriftlichen Test hast du immerhin drei Fragen richtig beantworten können.\pIm Feldtest hast du dich nicht schlecht geschlagen, aber du bist nicht besonders sicher im Umgang mit Pokémon.\pMaike! Wenn du als Trainer bestehen willst, musst du Vertrauen in dich und deine Pokémon finden."
 
 str_may_understands:
 	.autostring 35 2 "I-Ich verstehe, Herr FaunDOTS\pEs t-tut mir leid."

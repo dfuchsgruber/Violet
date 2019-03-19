@@ -44,16 +44,6 @@ addvar TRAINERSCHOOL_GOODBYE_CNT 1
 release
 goto ow_script_trainerschool_finish
 
-results:
-loadpointer 0 str_results
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
-end
-
-battle:
-loadpointer 0 str_battle
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
-end
-
 make_felix_and_blaise_appear:
 @ Check if may already appeared
 checkflag TRAINERSCHOOL_FELIX_OUTSIDE
@@ -97,18 +87,37 @@ end
 will_receive_pkmn:
 loadpointer 0 str_will_receive_pkmn
 show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+applymovement 0x5 mov_face_down
+waitmovement 0
 end
 
 catch_pkmn:
 loadpointer 0 str_catch_pkmn
 show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+applymovement 0x5 mov_face_up
+waitmovement 0
 end
+
+battle:
+loadpointer 0 str_battle
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+end
+
+results:
+loadpointer 0 str_results
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+applymovement 0x5 mov_face_up
+waitmovement 0
+end
+
+mov_exclam:
+	.byte LOOK_DOWN, SAY_EXCLAM, STOP
 
 mov_face_down:
 	.byte LOOK_DOWN, STOP
 
-mov_exclam:
-	.byte LOOK_DOWN, SAY_EXCLAM, STOP
+mov_face_up:
+	.byte LOOK_UP, STOP
 
 .ifdef LANG_GER
 str_make_both_appear:

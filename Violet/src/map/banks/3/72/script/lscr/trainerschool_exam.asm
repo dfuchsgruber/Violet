@@ -277,7 +277,7 @@ str_rival_to_player:
 	.autostring 35 2 "PLAYER! Wir sind schon viel zu spät! Wenn ich wegen deiner Trödelei die Abschlussprüfung in den Sand setzte, dannDOTS!\pBeeilung jetzt!"
 
 str_faun_to_player:
-	.autostring 35 2 "PLAYER!\pDa bist ja endlich!\nHehe! Ich hatte schon befürchtet,\ldu und RIVAL würdet kneifen!\pNimm PlatzDOTS"
+	.autostring 35 2 "PLAYER!\pDa bist du ja endlich!\nHehe! Ich hatte schon befürchtet,\ldu und RIVAL würdet kneifen!\pNimm PlatzDOTS"
 
 str_faun_announce:
 	.autostring 35 2 "So ihr Bälger!\nHeute ist es so weit und ihr werdet nach meiner harten Ausbildung zu echten Trainern!\pZuerst werde ich euer Wissen in einer schriftlichen Prüfung abfragen.\pDann geht es nach draußen, wo ihr einen Feldtest bestehen müsst.\pIch bin mir sicher, dass ihr alle das nicht vergeigen werdet!\pIch teile nun die Fragebögen aus.\pKeinen Mucks will ich dabei hören!"

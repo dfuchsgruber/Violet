@@ -29,6 +29,7 @@ releaseall
 end
 
 caught_pkmn:
+special SPECIAL_HEAL
 setvar TRAINERSCHOOL_ALLOWED_TO_ENTER_GRASS 0
 clearflag CAUGHT_POKEDEX_DISABLE
 @ remove pokeballs
@@ -52,7 +53,7 @@ applymovement 4 mov_face_down
 applymovement 0xFF mov_face_up
 waitmovement 0
 pause 32
-@ May does the test
+@ Rival does the catching test
 loadpointer 0 str_call_rival
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 3 mov_rival_to_faun
@@ -82,7 +83,7 @@ applymovement 3 mov_rival_back
 waitmovement 0
 applymovement 0x4 mov_face_down
 waitmovement 0
-@ Maike does the catching test
+@ May does the catching test
 loadpointer 0 str_mays_turn
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_may_insecure
@@ -179,7 +180,7 @@ mov_faun_to_battle_field:
 	.byte STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, LOOK_DOWN, STOP
 
 mov_may_to_battle_field:
-	.byte STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, LOOK_LEFT, STOP
+	.byte STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, LOOK_LEFT, STOP
 
 mov_felix_to_battle_field:
 	.byte STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STOP
@@ -188,7 +189,7 @@ mov_rival_to_battle_field:
 	.byte STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STOP
 
 mov_may_back:
-	.byte STEP_DOWN, STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_DOWN, LOOK_UP, STOP
+	.byte STEP_DOWN, STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_DOWN, LOOK_UP, STOP
 
 mov_may_to_faun:
 	.byte STEP_UP, STEP_LEFT, STEP_LEFT, LOOK_UP, STOP

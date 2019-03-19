@@ -44,17 +44,6 @@ addvar TRAINERSCHOOL_GOODBYE_CNT 1
 release
 goto ow_script_trainerschool_finish
 
-results:
-loadpointer 0 str_results
-show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
-end
-
-
-battle:
-loadpointer 0 str_battle
-show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
-end
-
 make_faun_appear:
 lock
 faceplayer
@@ -69,15 +58,35 @@ end
 has_received_pkmn:
 loadpointer 0 str_has_received_pkmn
 show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
+applymovement 0x7 mov_face_down
+waitmovement 0
 end
 
 catch_pkmn:
 loadpointer 0 str_catch_pkmn
 show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
+applymovement 0x7 mov_face_up
+waitmovement 0
+end
+
+
+battle:
+loadpointer 0 str_battle
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
+end
+
+results:
+loadpointer 0 str_results
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT MSG_FACE
+applymovement 0x7 mov_face_up
+waitmovement 0
 end
 
 mov_face_down:
 	.byte LOOK_DOWN, STOP
+
+mov_face_up:
+	.byte LOOK_UP, STOP
 
 .ifdef LANG_GER
 str_before_faun_appeared:
