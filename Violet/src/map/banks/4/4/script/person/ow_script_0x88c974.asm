@@ -13,7 +13,7 @@ end
 .global str_0x8a08b0
 
 str_0x8a08b0:
-    .string "Einst war ich ein glorreicher\nTrainer. Aber nun DOTS. nun DOTS bin\lich ein alter GreisDOTS"
+    .string "Einst war ich ein glorreicher\nTrainer.\lAber nunDOTS\lNunDOTS bin ich ein alter GreisDOTS"
         
         
 .elseif LANG_EN
