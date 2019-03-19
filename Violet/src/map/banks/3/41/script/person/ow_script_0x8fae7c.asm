@@ -113,7 +113,7 @@ return
 .global ow_script_0x880ba0
 ow_script_0x880ba0:
 call ow_script_0x880bd9
-loadpointer 0x0 str_0x1a83ae
+loadpointer 0x0 str_set_nickname
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x880bcd
@@ -122,7 +122,7 @@ return
 
 .global ow_script_0x880bcd
 ow_script_0x880bcd:
-call ow_script_0x1aba65
+call show_box_nickname_form
 call ow_script_0x1aba6e
 return
 
@@ -187,7 +187,7 @@ goto ow_script_0x8c8acf
 
 .global ow_script_0x8c8acf
 ow_script_0x8c8acf:
-loadpointer 0x0 str_0x1a83ae
+loadpointer 0x0 str_set_nickname
 callstd MSG_YES_NO
 compare LASTRESULT 0x1
 gotoif EQUAL ow_script_0x931332
