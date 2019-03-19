@@ -95,9 +95,9 @@ void mugshot_create_oam(int side, int idx) {
 		int i;
 		for (i = 0; i < 16; i++) {
 			u16 original = dma3s[i + (pal + 0x10)*0x10];
-			color co = {original};
-			color over = {0}; //black
-			color n = color_alpha_blend(co, over, 3);
+			color_t co = {original};
+			color_t over = {0}; //black
+			color_t n = color_alpha_blend(co, over, 3);
 			dma3s[i + (pal + 0x10)*0x10] = n.value;
 		}
 	}

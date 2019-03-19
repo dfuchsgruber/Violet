@@ -270,8 +270,8 @@ void groudon_anim_diserakt_cb (u8 self){
     int dst_pal = oam_palette_get_index(0xA0A1) + 16;
     int i;
     for(i = 0; i < 8; i++){
-        color d = {dst_col};
-        color n = color_alpha_blend(pal_restore[dst_pal*16+i], d, intensity);
+        color_t d = {dst_col};
+        color_t n = color_alpha_blend(pal_restore[dst_pal*16+i], d, intensity);
         pals[dst_pal*16+i] = n;
     }
     
@@ -291,7 +291,7 @@ void groudon_cb_grey_fade(u8 self){
             u16 middle_int = (u16)((pal_restore[i].rgb.blue + pal_restore[i].rgb.red
                 + pal_restore[i].rgb.green) / 3);
            
-            color middle_col = {(u16)((middle_int << 5) | (middle_int << 10)| middle_int)};
+            color_t middle_col = {(u16)((middle_int << 5) | (middle_int << 10)| middle_int)};
             
             pals[i] = color_alpha_blend(pal_restore[i], middle_col, (u8)intensity);
         }

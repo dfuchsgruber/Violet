@@ -138,7 +138,7 @@ void attack_anim_stance_change_sprite_change(u8 self){
     battlescript_transform_load_graphic(target, target, 0);
     mega_disable_blurr(target);
     
-    color oam_color = {.value = attack_anim_additional_animation[0]};
+    color_t oam_color = {.value = attack_anim_additional_animation[0]};
     u8 oam_pal = (u8)(oams[target_oam].final_oam.attr2 >> 12);
     pal_blend((u16)(oam_pal * 16 + 256), 16, 16, oam_color);
     

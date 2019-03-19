@@ -23,7 +23,7 @@ typedef struct ae_memory {
     u8 *links [8];
     u16 lframes [8];
     u16 vars[16];
-    color *pal_restore_save;
+    color_t *pal_restore_save;
     anim_engine_task *root;
 } ae_memory;
 

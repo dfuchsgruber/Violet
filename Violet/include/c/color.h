@@ -3,31 +3,30 @@
 #ifndef COLOR
 #define COLOR
 
-typedef struct rgb {
+typedef struct {
     u16 red : 5;
     u16 green : 5;
     u16 blue : 5;
     u16 unused : 1;
-} rgb;
+} rgb_t;
 
-typedef union color {
+typedef union {
     u16 value;
-    rgb rgb;
-
-} color;
+    rgb_t rgb;
+} color_t;
 
 typedef struct {
-    color *palette;
+    color_t *palette;
     u16 tag;
     u16 filler;
 } pal_resource;
 
 
-extern color pal_restore[];
-extern color pals[];
-extern color pal_tmp[];
-extern color typechart_icon_pal[16];
-extern color tbox_pokeball_pal[16];
+extern color_t pal_restore[];
+extern color_t pals[];
+extern color_t pal_tmp[];
+extern color_t typechart_icon_pal[16];
+extern color_t tbox_pokeball_pal[16];
 
 
 /**
@@ -37,7 +36,7 @@ extern color tbox_pokeball_pal[16];
  * @param alpha Alpha channel intensity
  * @return The blended color
  */
-color color_alpha_blend(color original, color overlay, u8 alpha);
+color_t color_alpha_blend(color_t original, color_t overlay, u8 alpha);
 
 /**
  * Performs color multiplication to blend colors into one another
@@ -45,7 +44,7 @@ color color_alpha_blend(color original, color overlay, u8 alpha);
  * @param overlay Target color
  * @return The blended color
  */
-color color_multiply(color original, color overlay);
+color_t color_multiply(color_t original, color_t overlay);
 
 /**
  * Performs color alpha blending and multiplication both
@@ -54,14 +53,14 @@ color color_multiply(color original, color overlay);
  * @param alpha Alpha channel intensity
  * @return The blended color
  */
-color color_blend_and_multiply(color original, color overlay, u8 alpha);
+color_t color_blend_and_multiply(color_t original, color_t overlay, u8 alpha);
 
 /**
  * Transforms a color into grayscale
  * @param original The color to transform
  * @return The grayscaled color
  */
-color color_to_grayscale(color original);
+color_t color_to_grayscale(color_t original);
 
 /**
  * Blends colors using (probably) alpha blending
@@ -70,7 +69,7 @@ color color_to_grayscale(color original);
  * @param intensity Intensity of the blending (0-15)
  * @param target_color Color to blend into
  */
-void pal_blend(u16 color_index, u16 num_colors, u8 intesity, color target_color);
+void pal_blend(u16 color_index, u16 num_colors, u8 intesity, color_t target_color);
 
 /**
  * Copies a palette (uncompressed) into palette buffers

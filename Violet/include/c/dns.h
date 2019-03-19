@@ -1,8 +1,11 @@
 #ifndef H_DNS
 #define H_DNS
 
-void dns_blend_colors(u16 start_col, u16 col_cnt, color overlay, u8 alpha);
-color dns_get_over();
+#include "types.h"
+#include "color.h"
+
+void dns_blend_colors(u16 start_col, u16 col_cnt, color_t overlay, u8 alpha);
+color_t dns_get_over();
 u8 dns_get_alpha();
 void dns_apply_shaders(u16 start_col, u16 col_cnt);
 

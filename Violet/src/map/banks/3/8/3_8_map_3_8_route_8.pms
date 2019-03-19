@@ -494,7 +494,7 @@
 			"connections": [
 				{
 					"direction": "NORTH",
-					"displacement": "17",
+					"displacement": "16",
 					"bank": "3",
 					"map_idx": "9",
 					"field_A": 0,

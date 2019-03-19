@@ -17,7 +17,7 @@
 			"connections": [
 				{
 					"direction": "SOUTH",
-					"displacement": "-17",
+					"displacement": "-16",
 					"bank": "3",
 					"map_idx": "8",
 					"field_A": 0,
@@ -25,16 +25,16 @@
 				}
 			]
 		},
-		"music": 0,
+		"music": "MUS_LAUBDORF",
 		"footer_idx": 23,
 		"namespace": "MAP_LAUBDORF",
-		"flash_type": 0,
-		"weather": 0,
-		"type": 0,
-		"bike_usable": 0,
-		"show_name": 0,
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_VILLAGE",
+		"bike_usable": "1",
+		"show_name": "SHOW_VILLAGE",
 		"field_1A": 0,
-		"battle_style": 0
+		"battle_style": "BATTLE_TYPE_RANDOM"
 	},
 	"label": "map_3_9_laubdorf",
 	"type": "header"

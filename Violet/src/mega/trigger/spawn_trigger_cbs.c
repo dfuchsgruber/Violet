@@ -41,7 +41,7 @@ void trigger_cb(u8 self) {
                 //we find the palette 
                 u8 oam_id = battler_oams[i];
                 u8 pal = (u8) (((oams[oam_id].final_oam.attr2 >> 12) & 15) + 16);
-                color white = {.value = 0x7FFF};
+                color_t white = {.value = 0x7FFF};
                 pal_blend((u16) (pal << 4), 16, (u8) (big_callbacks[self].params[1]), white);
             }
         }

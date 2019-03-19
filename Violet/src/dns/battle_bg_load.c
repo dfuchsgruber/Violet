@@ -16,17 +16,17 @@ void battle_bg_load(u8 bg_id) {
 
     if (*var_access(SHADER_STATE) && dns_on()) {
 
-        color *buf = (color*) malloc(0x60);
-        color *prebuf = (color*) 0x02037ACC;
+        color_t *buf = (color_t*) malloc(0x60);
+        color_t *prebuf = (color_t*) 0x02037ACC;
         lz77uncompwram(battle_bgs[bg_id].pal, prebuf);
 
-        color over = dns_get_over();
+        color_t over = dns_get_over();
         u8 alpha = dns_get_alpha();
 
         int i;
         for (i = 0; i < 0x30; i++) {
-            color original = prebuf[i];
-            color new = color_blend_and_multiply(original, over, alpha);
+            color_t original = prebuf[i];
+            color_t new = color_blend_and_multiply(original, over, alpha);
             buf[i] = new;
         }
 

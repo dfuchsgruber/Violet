@@ -132,11 +132,11 @@ void wondertrade_color_callback(u8 self) {
 
         //Now we do the fading process
         int i;
-        color overlay = {0x3FFF};
+        color_t overlay = {0x3FFF};
         for (i = 0; i < 32; i++) {
             if ((i & 0xF) == 2 || (i & 0xF) == 4 || (i & 0xF) == 8) {
                 if ((fmem.wtrade_mem->cursor == 1 && i >= 16) || (!fmem.wtrade_mem->cursor && i < 16)) {
-                    color new = color_alpha_blend(pal_restore[i + 13 * 16], overlay, (u8) big_callbacks[self].params[1]);
+                    color_t new = color_alpha_blend(pal_restore[i + 13 * 16], overlay, (u8) big_callbacks[self].params[1]);
                     pals[i + 13 * 16] = new;
                 } else {
                     pals[i + 13 * 16] = pal_restore[i + 13 * 16];
@@ -517,9 +517,9 @@ void wondertrade_init_components() {
     if (!fmem.wtrade_mem->usable) {
         //greyscale all pals
         int i;
-        color black = {0};
+        color_t black = {0};
         for (i = 0; i < 512; i++) {
-            color n = color_to_grayscale(pal_restore[i]);
+            color_t n = color_to_grayscale(pal_restore[i]);
             n = color_alpha_blend(n, black, 11);
             pal_restore[i] = n;
         }

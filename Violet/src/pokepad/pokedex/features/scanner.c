@@ -157,7 +157,7 @@ sprite pokedex_feature_scanner_icon_sprite = {
     ATTR0_SHAPE_SQUARE, ATTR1_SIZE_32_32, 0, 0
 };
 
-color pokedex_feature_scanner_text_colors[16] = {
+color_t pokedex_feature_scanner_text_colors[16] = {
     {0}, {.rgb = {7, 9, 10}}, {.rgb = {31, 31, 31}}, {0}, {0}, {0}, {0}, {0},
     {0}, {.rgb = {20, 24, 30}}, {0}, {0}, {0}, {0}, {0}, {0}
 };
@@ -314,8 +314,8 @@ void pokedex_callback_feature_scanner_selection_fade(pokedex_scanner_state *stat
     fy = FIXED_ADD(INT_TO_FIXED(4), fy);
     u8 alpha = (u8)FIXED_TO_INT(fy);
     for(int i = 0; i < 4; i++){
-        color blended = pal_restore[12 + i];
-        color white = {.rgb = {31, 31, 31}};
+        color_t blended = pal_restore[12 + i];
+        color_t white = {.rgb = {31, 31, 31}};
         if(i == state->selected_area){
             blended = color_alpha_blend(pal_restore[12 + i], white, alpha);
         }

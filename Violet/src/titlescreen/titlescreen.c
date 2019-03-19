@@ -31,7 +31,7 @@ extern const unsigned short gfx_ts_titlePal[];
 
 extern const unsigned short gfx_ts_bgTiles[];
 extern const unsigned short gfx_ts_bgMap[];
-extern const color gfx_ts_bgPal[];
+extern const color_t gfx_ts_bgPal[];
 
 const unsigned short *ts_deoxysTiles[] = {
     gfx_ts_deoxys_0Tiles,
@@ -98,12 +98,12 @@ void ts_color_anim(u16 *vars){
             }
         }
         
-        color col_pure_violet = {0};
+        color_t col_pure_violet = {0};
         col_pure_violet.rgb.blue = 31;
         col_pure_violet.rgb.red = 31;
         int i;
         for (i = 6; i < 12; i++){
-            color n = color_alpha_blend(gfx_ts_bgPal[i], col_pure_violet, (u8)vars[5]);
+            color_t n = color_alpha_blend(gfx_ts_bgPal[i], col_pure_violet, (u8)vars[5]);
             //kinda ugly to push directly into restore, but this way we force a
             //100% correctness even at fadescreen
             pal_restore[12*16+i] = n;

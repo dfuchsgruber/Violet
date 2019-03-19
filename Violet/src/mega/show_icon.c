@@ -132,7 +132,7 @@ void icon_callback(oam_object *self) {
 
             //getting the palette
             u16 palid = self->private[2];
-            color white = {.value = 0x7FFF};
+            color_t white = {.value = 0x7FFF};
             pal_blend((u16) (0x100 + palid * 0x10), 0x7, (u8) (self->private[4]) >> 1, white);
             if (!self->private[3]) {
                 //we rise the color bits

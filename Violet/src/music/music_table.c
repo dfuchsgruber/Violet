@@ -748,6 +748,8 @@ song song_table[] = {
   {mus_riding_cloud, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	// Song 372, (=0x174)
   {mus_gymleader_new, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 373, (=0x175)
+  {mus_laubdorf, SONG_TYPE_SONG, SONG_TYPE_SONG},
         
 
 };

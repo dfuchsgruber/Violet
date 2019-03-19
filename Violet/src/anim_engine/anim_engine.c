@@ -696,10 +696,10 @@ void anim_engine_fader(anim_engine_task *self) {
     //now we do the fading loop
     int c = vars[1];
     int max = vars[2] + c;
-    color over = {vars[0]};
+    color_t over = {vars[0]};
     while (c < max) {
-        color b = pal_restore[c];
-        color n = color_alpha_blend(b, over, intensity);
+        color_t b = pal_restore[c];
+        color_t n = color_alpha_blend(b, over, intensity);
         pals[c] = n;
         c++;
     }
@@ -954,7 +954,7 @@ void cmdx35_pal_restore_snapshot(ae_memory *mem){
         if(mem->pal_restore_save){
             dprintf("Warning: Trying to snapshot pal restore when there is already a snapshot!\n");
         }
-        mem->pal_restore_save = malloc(sizeof(color) * 1024);
+        mem->pal_restore_save = malloc(sizeof(color_t) * 1024);
         // Do not save the restore! This causes mapreload to not fade into black
         // cpuset(pal_restore, mem->pal_restore_save, 0x4000100);
         cpuset(pal_tmp, &(mem->pal_restore_save[512]), 0x4000100);

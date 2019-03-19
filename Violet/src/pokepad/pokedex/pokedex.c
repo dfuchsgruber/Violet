@@ -303,7 +303,7 @@ void pokedex_callback_group_selection() {
             pokedex_group_window_set();
             play_sound(5);
         }
-        color over = {0x7FFF};
+        color_t over = {0x7FFF};
         pals[17] = color_alpha_blend(pal_restore[17], over, fmem.dex_mem->group_fading_index);
 
 
@@ -412,10 +412,10 @@ void pokedex_init_components() {
 
     pal_decompress(gfx_pokedex_uiPal, 0, 32);
     //Now we decide weather we want to clear features
-    const color cols_active [2] = {
+    const color_t cols_active [2] = {
         {0x6754},
         {0x56D0}};
-    const color cols_inactive [2] = {
+    const color_t cols_inactive [2] = {
         {0x3E0C},
         {0x35E8}};
     if (checkflag(POKEDEX_FEATURE_0)) {

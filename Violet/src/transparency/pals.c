@@ -1,7 +1,7 @@
 #include "types.h"
 #include "color.h"
 
-const color tbox_palettes_transparency [] = {
+const color_t tbox_palettes_transparency [] = {
     {0x0},
     {0x0},
     {0x7FFF},

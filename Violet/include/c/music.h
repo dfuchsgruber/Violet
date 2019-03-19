@@ -143,6 +143,7 @@ extern const unsigned char mus_glyphs[];
 extern const unsigned char mus_riding_cloud[];
 extern const unsigned char mus_amonia2[];
 extern const unsigned char mus_gymleader_new[];
+extern const unsigned char mus_laubdorf[];
 
 #endif	/* MUSIC_H */
 

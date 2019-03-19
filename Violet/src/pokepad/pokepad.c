@@ -201,7 +201,7 @@ void pokepad_callback_background_anim(u8 self) {
 
         int i;
         for (i = 14; i < 16; i++) {
-            color over = {0x1F};
+            color_t over = {0x1F};
             pals[i] = color_alpha_blend(pal_restore[i], over, (u8) (big_callbacks[self].params[1] >> 2));
         }
     }

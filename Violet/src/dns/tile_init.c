@@ -18,95 +18,108 @@ extern tileset maptileset249598;
 extern tileset maptileset302795;
 extern tileset maptileset242637;
 extern tileset maptileset251828;
+extern tileset maptileset_laubdorf;
+
 
 void tile_init(map_footer_t *foot) {
 
+  color_t dns_color_light_yellow = {.rgb = {.red = 232 / 8, .green = 216 / 8, .blue = 104 / 8}};
+  color_t dns_color_light_yellow_dark = {.rgb = {.red = 216 / 8, .green = 168 / 8, .blue = 48 / 8}};
+  color_t dns_color_light_yellow_weak_dark = {.rgb = {.red = 248 / 8, .green = 200 / 8,
+      .blue = 112 / 8}};
+  color_t dns_color_light_yellow_light = {.rgb = {.red = 248 / 8, .green = 232 / 8,
+      .blue = 192 / 8}};
+
     if (*var_access(SHADER_STATE) == 1 && !built_in_shaders && dns_on()) {
-
-        u16 *pal_save_copy = (u16*) 0x020371F8;
-
         if (foot->tileset1 == &maptileset0) {
             //Tileset1 = 0
-            pal_save_copy[0x21] = 0x377D;
-            pal_save_copy[0x22] = 0x377D;
-            pal_save_copy[0x25] = 0x1ABB;
+            pal_restore[0x21] = dns_color_light_yellow;
+            pal_restore[0x22] = dns_color_light_yellow;
+            pal_restore[0x25] = dns_color_light_yellow_dark;
         }
-        if(foot->tileset2 == &maptileset245157){
+        if (foot->tileset2 == &maptileset245157) {
             //Orina City TS2
-            pal_save_copy[7*16+7] = 0x3FBF;
-            pal_save_copy[7*16+6] = 0x377D;
-            pal_save_copy[7*16+13] = 0x377D;
-            pal_save_copy[7*16+14] = 0x1ABB;
-            pal_save_copy[7*16+10] = 0x1ABB;
+            pal_restore[7*16+7] = dns_color_light_yellow_weak_dark;
+            pal_restore[7*16+6] = dns_color_light_yellow;
+            pal_restore[7*16+13] = dns_color_light_yellow;
+            pal_restore[7*16+14] = dns_color_light_yellow_dark;
+            pal_restore[7*16+10] = dns_color_light_yellow_dark;
             
-            pal_save_copy[11*16+7] = 0x3FBF;
-            pal_save_copy[11*16+6] = 0x377D;
-            pal_save_copy[11*16+13] = 0x377D;
-            pal_save_copy[11*16+14] = 0x1ABB;
-            pal_save_copy[11*16+10] = 0x1ABB;
+            pal_restore[11*16+7] = dns_color_light_yellow_weak_dark;
+            pal_restore[11*16+6] = dns_color_light_yellow;
+            pal_restore[11*16+13] = dns_color_light_yellow;
+            pal_restore[11*16+14] = dns_color_light_yellow_dark;
+            pal_restore[11*16+10] = dns_color_light_yellow_dark;
             
-            pal_save_copy[8*16+8] = 0x377D;
-            pal_save_copy[8*16+13] = 0x377D;
-            pal_save_copy[8*16+14] = 0x377D;
-            pal_save_copy[8*16+15] = 0x1ABB;
+            pal_restore[8*16+8] = dns_color_light_yellow;
+            pal_restore[8*16+13] = dns_color_light_yellow;
+            pal_restore[8*16+14] = dns_color_light_yellow;
+            pal_restore[8*16+15] = dns_color_light_yellow_dark;
             
-            pal_save_copy[9*16+12] = 0x377D;
-            pal_save_copy[9*16+15] = 0x377D;
-            pal_save_copy[9*16+11] = 0x1ABB;
-            
-        }else if(foot->tileset2 == &maptileset4){
+            pal_restore[9*16+12] = dns_color_light_yellow;
+            pal_restore[9*16+15] = dns_color_light_yellow;
+            pal_restore[9*16+11] = dns_color_light_yellow_dark;
+        } else if (foot->tileset2 == &maptileset4) {
             //Route 5, enlighten torches
-            pal_save_copy[8*16+14] = 0x05DB;
-            pal_save_copy[8*16+15] = 0x0ADE;
-        }else if(foot->tileset2 == &maptileset1){
+            pal_restore[8*16+14].value = 0x05DB;
+            pal_restore[8*16+15].value = 0x0ADE;
+        } else if (foot->tileset2 == &maptileset1) {
             //Route 1, Trainerschool
-            pal_save_copy[8*16+3] = 0x1ABB;
-            pal_save_copy[8*16+4] = 0x377D;
-            pal_save_copy[8*16+5] = 0x377D;
-            pal_save_copy[8*16+6] = 0x3FBF;
+            pal_restore[8*16+3] = dns_color_light_yellow_dark;
+            pal_restore[8*16+4] = dns_color_light_yellow;
+            pal_restore[8*16+5] = dns_color_light_yellow;
+            pal_restore[8*16+6] = dns_color_light_yellow_weak_dark;
             
-            pal_save_copy[10*16+2] = 0x377D;
-            pal_save_copy[10*16+3] = 0x1ABB;
-        }else if(foot->tileset2 == &maptileset249598){
+            pal_restore[10*16+2] = dns_color_light_yellow;
+            pal_restore[10*16+3] = dns_color_light_yellow_dark;
+        } else if (foot->tileset2 == &maptileset249598) {
             //Aktania
-            pal_save_copy[8*16+4] = 0x3FBF;
-            pal_save_copy[8*16+5] = 0x1ABB;
-            pal_save_copy[8*16+14] = 0x377D;
-        }else if(foot->tileset2 == &maptileset2){
+            pal_restore[8*16+4] = dns_color_light_yellow_weak_dark;
+            pal_restore[8*16+5] = dns_color_light_yellow_dark;
+            pal_restore[8*16+14] = dns_color_light_yellow;
+        } else if (foot->tileset2 == &maptileset2) {
             //Route 2, Meriana City
-            pal_save_copy[7*16+12] = 0x377D;
-            pal_save_copy[7*16+13] = 0x1ABB;
-            pal_save_copy[10*16+10] = 0x1ABB;
-            pal_save_copy[10*16+11] = 0x377D;
-            pal_save_copy[10*16+12] = 0x377D;
-            pal_save_copy[10*16+13] = 0x3FBF;
-        }else if(foot->tileset2 == &maptileset3){
+            pal_restore[7*16+12] = dns_color_light_yellow;
+            pal_restore[7*16+13] = dns_color_light_yellow_dark;
+            pal_restore[10*16+10] = dns_color_light_yellow_dark;
+            pal_restore[10*16+11] = dns_color_light_yellow;
+            pal_restore[10*16+12] = dns_color_light_yellow;
+            pal_restore[10*16+13] = dns_color_light_yellow_weak_dark;
+        } else if (foot->tileset2 == &maptileset3) {
             //Route 3
-            pal_save_copy[10*16+10] = 0x377D;
-            pal_save_copy[10*16+12] = 0x1ABB;
-        }else if(foot->tileset2 == &maptileset302795){
+            pal_restore[10*16+10] = dns_color_light_yellow;
+            pal_restore[10*16+12] = dns_color_light_yellow_dark;
+        } else if (foot->tileset2 == &maptileset302795) {
             //Silvania
-            pal_save_copy[8*16+2] = 0x1ABB;
-            pal_save_copy[8*16+11] = 0x377D;
-        }else if(foot->tileset2 == &maptileset242637){
-            pal_save_copy[11*16+2] = 0x377D;
-            pal_save_copy[11*16+7] = 0x1ABB;
-        }else if(foot->tileset2 == &maptileset251828){
+            pal_restore[8*16+2] = dns_color_light_yellow_dark;
+            pal_restore[8*16+11] = dns_color_light_yellow;
+        } else if (foot->tileset2 == &maptileset242637) {
+            pal_restore[11*16+2] = dns_color_light_yellow;
+            pal_restore[11*16+7] = dns_color_light_yellow_dark;
+        } else if (foot->tileset2 == &maptileset251828) {
             //Inferior, Route 6, Vulcano, Ashhain
-            pal_save_copy[11*16+2] = 0x0CFA;
-            pal_save_copy[11*16+9] = 0x1A3F;
-            pal_save_copy[11*16+10] = 0x0D5D;
-            pal_save_copy[11*16+12] = 0x12BF;
-            pal_save_copy[7*16+5] = 0x21DF;
-            pal_save_copy[7*16+6] = 0x21DC;
-            pal_save_copy[7*16+7] = 0x2D96;
-            pal_save_copy[7*16+8] = 0x2954;
-            pal_save_copy[7*16+9] = 0x00D9;
-            pal_save_copy[7*16+10] = 0x00D2;
-            pal_save_copy[7*16+11] = 0x0C7E;
-            pal_save_copy[7*16+12] = 0x025E;
+            pal_restore[11*16+2].value = 0x0CFA;
+            pal_restore[11*16+9].value = 0x1A3F;
+            pal_restore[11*16+10].value = 0x0D5D;
+            pal_restore[11*16+12].value = 0x12BF;
+            pal_restore[7*16+5].value = 0x21DF;
+            pal_restore[7*16+6].value = 0x21DC;
+            pal_restore[7*16+7].value = 0x2D96;
+            pal_restore[7*16+8].value = 0x2954;
+            pal_restore[7*16+9].value = 0x00D9;
+            pal_restore[7*16+10].value = 0x00D2;
+            pal_restore[7*16+11].value = 0x0C7E;
+            pal_restore[7*16+12].value = 0x025E;
+        } else if (foot->tileset2 == &maptileset_laubdorf) {
+            pal_restore[7 * 16 + 14] = dns_color_light_yellow_dark;
+            pal_restore[7 * 16 + 15] = dns_color_light_yellow;
+            pal_restore[8 * 16 + 13] = dns_color_light_yellow_dark;
+            pal_restore[8 * 16 + 14] = dns_color_light_yellow;
+            pal_restore[8 * 16 + 15] = dns_color_light_yellow_light;
+            pal_restore[9 * 16 + 13] = dns_color_light_yellow_dark;
+            pal_restore[9 * 16 + 14] = dns_color_light_yellow;
+            pal_restore[9 * 16 + 15] = dns_color_light_yellow_light;
         }
-        
     }
 }
 
