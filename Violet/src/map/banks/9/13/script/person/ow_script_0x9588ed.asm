@@ -39,7 +39,7 @@ callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
 bufferpokemon 0x0 POKEMON_PORYGON
-call ow_script_0x893bb5
+call ow_script_set_nickname
 loadpointer 0x0 str_0x95839d
 show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 addvar STORY_PROGRESS 0x1

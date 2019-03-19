@@ -2,6 +2,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "specials.s"
 
 
 .global ow_script_0x8a122a
@@ -18,7 +19,7 @@ callstd MSG
 special 0xF
 fadescreen 0x1
 fanfare 0x0
-special 0x0
+special SPECIAL_HEAL
 waitfanfare
 fadescreen 0x0
 loadpointer 0x0 str_0x89ba8d

@@ -101,10 +101,10 @@ mov_shout:
 
 .ifdef LANG_GER
 str:
-    .autostring 35 2 "Ich sollte unverzüglich ins Klassenzimmer.\pFaun wird ohnehin schon rasend seinDOTS"
+    .autostring 35 2 "Ich sollte besser schnell\nin unser Klassenzimmer.\pFaun wird ohnehin schon rasend seinDOTS"
 
 str2:
-	.autostring 35 2 "Ich gehe besser auf den HofDOTS"
+	.autostring 35 2 "Ich gehe besser auf den HofDOTS\nDer Feldtest fängt sicher gleich an."
 
 lock_classroom_str:
 	.autostring 34 2 "PLAYER!\nDu willst dich doch nicht etwa drücken?\pSetz' dich gefälligst hin!"

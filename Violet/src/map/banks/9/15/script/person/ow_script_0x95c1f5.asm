@@ -94,7 +94,7 @@ loadpointer 0x0 str_0x95c2d1
 callstd MSG_KEEPOPEN
 waitfanfare
 closeonkeypress
-call ow_script_0x893bb5
+call ow_script_set_nickname
 clearflag FOSSIL_IS_CURRENTLY_RESTAURATED
 goto ow_script_0x95c56e
 

@@ -33,9 +33,20 @@ compare 0x8005 0x21
 callif EQUAL ow_script_0x89d7f1
 applymovement 0xff ow_script_movs_0x89d7ee
 waitmovement 0x0
-loadpointer 0x0 str_0x89d77c
+checkgender
+compare LASTRESULT 0x0
+callif EQUAL hurry_m
+callif NOT_EQUAL hurry_f
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 goto ow_script_0x8f6e05
+
+hurry_m:
+    loadpointer 0x0 str_hurry_m
+    return
+
+hurry_f:
+    loadpointer 0x0 str_hurry_f
+    return
 
 
 .global ow_script_0x8f6e05
@@ -121,8 +132,11 @@ return
 
 .ifdef LANG_GER
 
-str_0x89d77c:
+str_hurry_m:
     .autostring 35 2 "Du bist noch nicht draußen?\nWirklich immer am Trödeln, unser PLAYER!"
+
+str_hurry_f:
+    .autostring 35 2 "Du bist noch nicht draußen?\nWirklich immer am Trödeln, unsere PLAYER!"
         
 .elseif LANG_EN
 

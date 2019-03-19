@@ -42,7 +42,7 @@ ow_script_present_purple_kecleon:
 	loadpointer 0 str_received_kecleon
 	callstd MSG_KEEPOPEN
 	waitfanfare
-	call ow_script_0x893bb5
+	call ow_script_set_nickname
 	closeonkeypress
 	setflag PRESENT_PURPLE_KECLEON
 	release

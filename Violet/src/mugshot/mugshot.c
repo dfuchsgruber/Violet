@@ -59,10 +59,6 @@ mugshot mugshots[] = {
     {&gfx_mug_hiroineTiles, &gfx_mug_hiroinePal, str_mug_hiro}
 };
 
-void mugshot_load_player() {
-	*var_access(0x8001) = *var_access(0x8001) == 0 ? MUGSHOT_HIROINE : MUGSHOT_HIRO;
-}
-
 void tbox_clear_bottom_line(u8 box_id) {
     int first_tile = tboxes[box_id].boxdata.w * (tboxes[box_id].boxdata.h - 1);
     int i;

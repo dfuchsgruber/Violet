@@ -1,6 +1,7 @@
 .include "callstds.s"
 .include "movements.s"
 .include "overworld_script.s"
+.include "specials.s"
 
 .global ow_script_whiteout_mother
 
@@ -27,7 +28,7 @@ ow_script_healing_sequence:
 fadescreen 0x1
 fanfare 0x100
 waitfanfare
-special 0x0
+special SPECIAL_HEAL
 fadescreen 0x0
 return
 
@@ -55,7 +56,7 @@ nop
 checkanimation 0x19
 applymovement 0x800f mov_look_down_delayed
 waitmovement 0x0
-special 0x0
+special SPECIAL_HEAL
 return
 
 mov_joy_bow_down:
