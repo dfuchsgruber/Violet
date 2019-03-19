@@ -175,7 +175,7 @@ str_intro_3:
 .global str_0x8cf12f
 
 str_0x8cf12f:
-    .string "Was für ein seltsamer TraumDOTS\nEr hat sich so real angefühlt!\pDOTS Und was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der große Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!"
+    .string "Was für ein seltsamer TraumDOTS\nEr hat sich so real angefühlt!\pDOTSund was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der große Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!"
         
         
 .elseif LANG_EN

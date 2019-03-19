@@ -4,8 +4,8 @@
 #include "language.h"
 #include "vars.h"
 
-//Text format :=...Es laufen [XXX]:YYYYYYY....
-//Beispiel: Es laeuft eine Doku: Blablabla
+//Text format :=…Es laufen [XXX]:YYYYYYY…
+//Beispiel: …Es läuft eine Doku: Blablabla…
 
 void load_tv_text() {
 
@@ -41,7 +41,7 @@ u8 *get_tv_text() {
 
 u8 str_tv_albus[] = LANGDEP(
 		PSTRING(
-				"... Es läuft eine Exklusiv-Sendung\nder Theto-Polizei:\pBürger Thetos, der "
+				"DOTSEs läuft eine Exklusiv-Sendung\nder Theto-Polizei:\pBürger Thetos, der "
 				"gefährliche\nAnführer der Revolutionsbewegung\lAblus wurde nahe Kaskada\l"
 				"gesichtet.\pEr gilt als gefährlichste\nPersönlichkeit des Kontinents.\pAls "
 				"ehemaliges Mitglied der Top\nVier ist größte Vorsicht geboten.\pJeder "
@@ -49,7 +49,7 @@ u8 str_tv_albus[] = LANGDEP(
 				"sich dennoch fern von\njeder grün gekleideten Gestalt!"
 				),
 		PSTRING(
-				"... An exclusive report of the\nTheto police department:\lDear citizens, the "
+				"DOTSAn exclusive report of the\nTheto police department:\lDear citizens, the "
 				"most dangerous\lleader of the Revolutionary\lMovement Albus is claimed to be\l"
 				"seen in Kaskada.\pHe is known for being the most\nwanted personality on the "
 				"entire\lcontinent.\pAs former member of the Elite Four\nhe is to be met with "
@@ -59,7 +59,7 @@ u8 str_tv_albus[] = LANGDEP(
 		);
 
 u8 str_tv_violet[] = LANGDEP(
-		PSTRING("... Es läuft eine Theto-Polizei\nSondersendung:\pOberwachtmeister Harren: Lassen\n"
+		PSTRING("DOTSEs läuft eine Theto-Polizei\nSondersendung:\pOberwachtmeister Harren: Lassen\n"
 				"Sie uns über die Organsation Team\lViolet sprechen.\pDie verbrecherische "
 				"Organisation\nist in drei Fraktionen unterteilt,\lan deren Spitze jeweils "
 				"mächtige\lVorstände stehen.\pReporter: Drei Vorstände also?\nUnd wer sind diese "
@@ -73,7 +73,7 @@ u8 str_tv_violet[] = LANGDEP(
 				"Vorstand auch der\lstärkste in den Reihen der\lOrganisation sein.\pLeider aber "
 				"hält er sich, ebenso\nwie der Anührer der Bande, sehr\lbedeckt."
 				),
-		PSTRING("... An exclusive report of the\nTheto police department:\pChief Harren: Let us "
+		PSTRING("DOTSAn exclusive report of the\nTheto police department:\pChief Harren: Let us "
 				"talk about\nthe criminal organisation Team\lViolet.\pThey are organzied as three\n"
 				"seperate divisions led by an\lpowerfull Admin.\pReporter: So three Admins? And "
 				"who\nare those dangerous criminals?\pChief Harren: The third division\nis led by "
@@ -88,16 +88,16 @@ u8 str_tv_violet[] = LANGDEP(
 		);
 
 u8 str_tv_champion_report[] = LANGDEP(
-		PSTRING("...Es läuft eine Talkshow:\pKlaus: Nun, Uli, wissen wir denn\nschon etwas über "
+		PSTRING("DOTSEs läuft eine Talkshow:\pKlaus: Nun, Uli, wissen wir denn\nschon etwas über "
 				"unseren neuen\lChampion?\pNein, Klaus, ich fürchte, dass\nsich der neue Champion "
 				"äußerst\lbedeckt hält. Ich habe aber\lgehört, er solle noch sehr jung\lsein.\p"
-				"Klaus: Er? Ich hörte von einer\nFrau..."
+				"Klaus: Er? Ich hörte von einer\nFrau…"
 				),
 		PSTRING("Not translated yet.")
 		);
 
 u8 str_tv_primus[] = LANGDEP(
-		PSTRING(" ...Es laufen die Nachrichten:\pSprecher: Noch immer haben wir\nkeine Neuigkeiten "
+		PSTRING("DOTSEs laufen die Nachrichten:\pSprecher: Noch immer haben wir\nkeine Neuigkeiten "
 				"vom vermissten\lProfessor Primus.\pEr gilt seit vier Tagen als\nvermisst. "
 				"Zeugenangaben zufolge\lwurde er von Schergen der\lOrganisation Team Violet "
 				"enführt.\pPrimus gilt als führender\nWissenschaftler auf dem Gebiet der\l"
@@ -107,7 +107,7 @@ u8 str_tv_primus[] = LANGDEP(
 		);
 
 u8 str_tv_aktania[] = LANGDEP(
-		PSTRING(" ... Es läuft eine History-Doku:\pErzähler: Das Verhängnis von\nAktania, eine "
+		PSTRING("DOTSEs läuft eine History-Doku:\pErzähler: Das Verhängnis von\nAktania, eine "
 				"Tragödie, die den\lganzen Kontinent ergriffen hat.\pAls ein Meteorit aus dem all "
 				"vor\nder Küste des einstigen\lFerienparadises Aktania einschlug,\lsollte sich das "
 				"Leben auf der\lInsel für immer verändern.\pViele Menschen fielen der\nKatastrophe "
