@@ -1,6 +1,7 @@
 {
 	"type" : "dict",
 	"values" : {
+		"SPECIAL_HEAL": 0,
 		"SPECIAL_GET_BATTLE_RESULT" : 180
 	}
 }

@@ -5,6 +5,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "mugshot.s"
+.include "specials.s"
 
 
 .global ow_script_movs_0x8a17e7
@@ -41,7 +42,7 @@ ow_script_movs_0x8a1603:
 ow_script_0x8a13c5:
 lockall
 playsong MUS_VIOLET_ENCOUNTER 0x0
-special 0x0
+special SPECIAL_HEAL
 applymovement 0x7f ow_script_movs_0x8a17e7
 waitmovement 0x0
 

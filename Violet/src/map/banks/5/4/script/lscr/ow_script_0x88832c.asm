@@ -5,6 +5,7 @@
 .include "callstds.s"
 .include "vars.s"
 .include "overworld_script.s"
+.include "specials.s"
 
 
 .global ow_script_movs_0x888a24
@@ -265,7 +266,7 @@ nop
 checkanimation 0x19
 applymovement 0x1 ow_script_movs_0x1aa41f
 waitmovement 0x0
-special 0x0
+special SPECIAL_HEAL
 return
 
 

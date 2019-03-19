@@ -10,6 +10,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "mugshot.s"
+.include "specials.s"
 
 
 .global ow_script_movs_0x89dc15
@@ -945,7 +946,7 @@ goto ow_script_0x8a5fe1
 
 .global ow_script_0x8a5fe1
 ow_script_0x8a5fe1:
-special 0x0
+special SPECIAL_HEAL
 call ow_script_0x8a0ce9
 additem ITEM_POKEBALL 0xa
 compare TRAINERSCHOOL_CORRECT_ANSWERS 0xa
@@ -1445,7 +1446,7 @@ goto ow_script_0x8a04ab
 
 .global ow_script_0x8a116d
 ow_script_0x8a116d:
-special 0x0
+special SPECIAL_HEAL
 loadpointer 0x0 str_0x8a22df
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 goto ow_script_0x8a04ab

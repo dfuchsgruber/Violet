@@ -3,6 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "specials.s"
 
 
 .global ow_script_0x83c1cf
@@ -128,7 +129,7 @@ nop
 checkanimation 0x19
 applymovement 0x800f ow_script_movs_0x1aa41f
 waitmovement 0x0
-special 0x0
+special SPECIAL_HEAL
 return
 
 

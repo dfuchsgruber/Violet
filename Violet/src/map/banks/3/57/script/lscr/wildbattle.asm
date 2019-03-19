@@ -6,6 +6,7 @@
 .include "flags.s"
 .include "items.s"
 .include "mugshot.s"
+.include "specials.s"
 
 .global ow_script_trainerschool_wildbattle
 
@@ -146,7 +147,7 @@ loadpointer 0 str_fainted
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 releaseall
 @ Heal player
-special 0
+special SPECIAL_HEAL
 setvar 0x8004 0xFF
 setvar 0x8005 0x22
 setvar 0x8006 0xE

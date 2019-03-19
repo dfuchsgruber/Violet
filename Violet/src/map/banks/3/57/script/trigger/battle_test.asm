@@ -6,6 +6,7 @@
 .include "flags.s"
 .include "items.s"
 .include "mugshot.s"
+.include "specials.s"
 
 .global ow_script_trainerschool_battle_test
 
@@ -94,7 +95,7 @@ releaseall
 end
 
 lost_battle:
-special 0
+special SPECIAL_HEAL
 loadpointer 0 str_after_battle_lost
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 goto may_felix_battle
