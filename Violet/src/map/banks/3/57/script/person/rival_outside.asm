@@ -24,26 +24,6 @@ compare TRAINERSCHOOL_PROGRESS 8
 gotoif HIGHER goodbye
 end
 
-goodbye:
-lock
-faceplayer
-loadpointer 0 str_goodbye
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
-setvar 0x8004 3
-setvar 0x8005 0x28
-setvar 0x8006 0x14
-special 0x24
-waitmovement 0
-applymovement 3 mov_face_down
-waitmovement 0
-sound 9
-hidesprite 3
-checksound
-pause 32
-addvar TRAINERSCHOOL_GOODBYE_CNT 1
-release
-goto ow_script_trainerschool_finish
-
 make_may_appear:
 @ Check if may already appeared
 checkflag TRAINERSCHOOL_MAY_OUTSIDE
@@ -112,6 +92,34 @@ show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 applymovement 0x3 mov_face_up
 waitmovement 0
 end
+
+goodbye:
+lock
+faceplayer
+loadpointer 0 str_goodbye
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+setvar 0x8004 3
+setvar 0x8005 0x28
+getplayerpos 0x8005 0x8006
+compare 0x8006 0x12
+callif EQUAL rearrange_coordinate
+setvar 0x8006 0x14
+special 0x24
+waitmovement 0
+applymovement 3 mov_face_down
+waitmovement 0
+sound 9
+hidesprite 3
+checksound
+pause 32
+addvar TRAINERSCHOOL_GOODBYE_CNT 1
+release
+goto ow_script_trainerschool_finish
+
+rearrange_coordinate:
+@ Rearrange the x-coordinate to move the rival to
+setvar 0x8005 0x29
+return
 
 mov_exclam:
 	.byte LOOK_DOWN, SAY_EXCLAM, STOP
