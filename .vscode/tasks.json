@@ -1,0 +1,85 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "make",
+                "-j$(nproc)",
+                "all"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/Violet"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "bash.exe",
+                        "args": [
+                            "-c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Index",
+            "type": "shell",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "make",
+                "-j$(nproc)",
+                "index"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/Violet"
+            },
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "bash.exe",
+                        "args": [
+                            "-c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "pipenv",
+            "args": [
+                "run",
+                "make",
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/Violet"
+            },
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "bash.exe",
+                        "args": [
+                            "-c"
+                        ]
+                    }
+                }
+            },
+            "problemMatcher": []
+        }
+    ]
+}

@@ -72,3 +72,6 @@ base/
 
 # Virtual Environments
 .venv/
+
+# VSCode stuff
+ipch/ 

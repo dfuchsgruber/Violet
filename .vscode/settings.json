@@ -1,0 +1,10 @@
+{
+    "C_Cpp.default.includePath": [
+        "${workspaceRoot}/Violet/include/c"
+    ],
+    "C_Cpp.default.cStandard": "c99",
+    "files.associations": {
+        "*.const" : "json",
+        "*.pms" : "json"
+    }
+}
