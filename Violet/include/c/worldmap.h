@@ -48,6 +48,13 @@ extern "C" {
 
     stru_flight_position flight_positions[NUM_FLIGHT_POSITONS];
 
+    typedef struct {
+        u8 bank;
+        u8 map_idx;
+        u8 flight_position_idx;
+    } flight_position_association_t;
+
+    flight_position_association_t flight_position_associations[108];
 
     int *worldmap_tilemaps[4];
     u8 *namespace_worldmap_associations;
@@ -96,6 +103,11 @@ extern "C" {
      * Locates the player on the current worldmap (saves x, y to the worldmap state).
      */
     void worldmap_locate_player();
+
+#define WORLDMAP_FLAG_CHECK_INVALID 0
+#define WORLDMAP_FLAG_CHECK_NO_FLAG 1
+#define WORLDMAP_FLAG_CHECK_SET 2
+#define WORLDMAP_FLAG_CHECK_UNSET 3
 
 #ifdef	__cplusplus
 }

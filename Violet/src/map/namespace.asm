@@ -166,7 +166,7 @@ map_namespaces:
 	.global str_mapnamespace_96
 
 	str_mapnamespace_96:
-		.string "Zinnoberinsel"
+		.string "Laubdorf"
 
 
 	.global str_mapnamespace_97

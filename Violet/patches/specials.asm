@@ -156,3 +156,11 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x4D * 4))
 		.word player_party_contains_species | 1
 		.pool
+
+.org (special_table + (0x4E * 4))
+                .word special_daycare_egg_new_into_incubator | 1
+                .pool
+
+.org (special_table + (0x4F * 4))
+                .word incubator_has_empty_slots | 1
+                .pool

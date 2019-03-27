@@ -4,7 +4,13 @@
     ],
     "C_Cpp.default.cStandard": "c99",
     "files.associations": {
-        "*.const" : "json",
-        "*.pms" : "json"
-    }
+        "*.const": "json",
+        "*.pms": "json",
+        "flags.h": "c",
+        "worldmap.h": "c",
+        "breeding.h": "c",
+        "basestat.h": "c",
+        "move_tutor.h": "c"
+    },
+    "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

@@ -562,7 +562,18 @@
 				"MAP_ROUTE_2"
 			]
 		},
-		"12": {}
+		"12": {
+			"0": [
+				"map_12_0_laubdorf_pokemon_center",
+				"src/map/banks/12/0/map_12_0_laubdorf_pokemon_center.pms",
+				"MAP_LAUBDORF"
+			],
+			"1": [
+				"map_12_1_laubdorf_daycare",
+				"src/map/banks/12/1/map_12_1_laubdorf_daycare.pms",
+				"MAP_LAUBDORF"
+			]
+		}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -968,6 +979,10 @@
 		"map_footer_23_laubdorf": [
 			23,
 			"src/map/banks/3/9/map_footer_23_laubdorf.pms"
+		],
+		"map_footer_24_laubdorf_daycare": [
+			24,
+			"src/map/banks/12/1/map_footer_24_laubdorf_daycare.pms"
 		]
 	},
 	"tilesets_primary": {

@@ -18,6 +18,13 @@ int incubator_available_slots() {
   return 2; // For testing
 }
 
+bool incubator_has_empty_slots() {
+  for (int i = 0; i < incubator_available_slots(); i++) {
+    if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) return true;
+  }
+  return false;
+}
+
 int incubator_egg_get_progress(box_pokemon *egg) {
   int species = box_pokemon_get_attribute(egg, ATTRIBUTE_SPECIES, 0);
   if (species == 0) return 0;

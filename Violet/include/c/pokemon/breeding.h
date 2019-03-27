@@ -36,10 +36,15 @@ typedef struct {
 typedef struct {
 	daycare_pokemon pokemon[2];
 	u16 offspring_present : 1;
-	u16 offspring_nature : 15;
+	u16 offspring_unused : 15;
 	// u16 offspring_personality_lower; // why would you only store this, thats akward!
 	u8 step_counter;
+	u8 padding[3];
 } daycare_stru;
+
+typedef struct {
+	daycare_pokemon pokemon;
+} mini_daycare_stru;
 
 #define BREEDING_CYCLES_HATCH_IMMEDIATLEY 255
 
@@ -97,5 +102,28 @@ bool pokemon_player_party_has_flamebody();
  * @param dst the memory to place the pokemon at
  */
 void overworld_egg_new(u16 species, int catch_location, pokemon *dst);
+
+/**
+ * Creates the egg moves for a pokemon.
+ * @param egg the egg to create
+ * @param father father pokemon 
+ * @param mother mother pokemon
+ */
+void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *mother);
+
+/**
+ * Adds a move to the egg if any of its parents knows it.
+ * @param egg the egg to add moves to
+ * @param father the father pokemon
+ * @param mother the mother pokemon
+ * @param move the move to add to the egg
+ */
+void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father, box_pokemon *mother, u16 move);
+
+/**
+ * Removes the egg from the daycare
+ * @param daycare the daycare structure
+ */
+void daycare_remove_egg(daycare_stru *daycare);
 
 #endif /* INCLUDE_C_POKEMON_EGG_MOVES_H_ */

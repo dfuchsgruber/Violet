@@ -24,16 +24,19 @@ def get_item_index(rompath, symbolspath, projectpath):
             filepath = subdir + os.sep + file
             if filepath.endswith('.asm'):
                 with open(filepath) as f:
-                    matches = re.findall('copyvarifnotzero 0x8000 (.*)$\ncopyvarifnotzero 0x8001 (.*)', f.read(), flags=re.M)
-                    if len(matches): 
+                    content = f.read()
+                    # Match callstd giveitems
+                    matches = list(re.findall('copyvarifnotzero 0x8000 (.*)$\ncopyvarifnotzero 0x8001 (.*)', content, flags=re.M)) + list(re.findall('additem (.*) (.*)\n', content, flags=re.M))
+                    mx = list(re.findall('additem (.*) (.*)\n', content, flags=re.M))
+                    if len(mx) or '8fb91f' in filepath:
+                        print(mx)
+                    if len(matches):
                         # Reconstruct the bank and map idx and context from the path
-                        bank, map_idx, _type, context = re.findall(f'{root}/(.*?)/(.*?)/(.*?)/(.*?)/.*', filepath)[0]
-                        bank, map_idx = _canonical_form(bank), _canonical_form(map_idx)
-                        label, path, namespace = project.headers[bank][map_idx]
+                        bank, map_idx = re.findall(f'{root}/(.*?)/(.*?)/.*', filepath)[0]
                         for item, amount in matches:
                             items[item].append({
-                                'type' : _type,
-                                'context' : context,
+                                'type' : 'script',
+                                'context' : '',
                                 'bank' : bank,
                                 'map_idx' : map_idx,
                                 'map_label' : label,

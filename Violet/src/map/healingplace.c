@@ -19,6 +19,7 @@ stru_healing_place healing_places[NUM_HEALING_PLACES] = {
     {8, 0}, // Healing place 5
     {9, 1}, // Healing place 6
     {10, 12}, // Healing place 7
+	{12, 0}, // Healing place 8, Laubdorf
     {0xFFFF, 0xFFFF}
 };
 
@@ -34,6 +35,7 @@ coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
 		{0x7, 0x4}, // Healing place 5
 		{0x7, 0x4}, // Healing place 6
 		{0x7, 0x4}, // Healing place 7
+		{0x7, 0x4}, // Healing place 8, Laubdorf
 		{-1, -1}
 };
 

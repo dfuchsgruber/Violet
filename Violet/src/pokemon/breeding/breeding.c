@@ -1,6 +1,7 @@
 #include "types.h"
 #include "pokemon/breeding.h"
 #include "pokemon/basestat.h"
+#include "pokemon/moves.h"
 #include "attack.h"
 #include "debug.h"
 #include "save.h"
@@ -17,6 +18,7 @@
 #include "pokemon/evolution.h"
 #include "constants/abilities.h"
 #include "pokepad/incubator.h"
+#include "agbmemory.h"
 
 void _pokemon_get_egg_moves_stub(){
     derrf("Rom called old invalid stub for pokemon_get_egg_moves!\n");
@@ -140,6 +142,7 @@ void breeding_spawn_egg(daycare_stru *daycare) {
 	cmem.daycare_offspring_pid = breeding_new_pid(daycare);
 	cmem.daycare_offspring_male = (rnd16() & 1) > 0;
 	cmem.daycare_offspring_has_hidden_ability = breeding_inherit_hidden_ability(daycare);
+	daycare->offspring_present = 1;
 	setflag(FLAG_DAYCARE_EGG_SPAWNED);
 }
 
@@ -147,7 +150,70 @@ void breeding_spawn_male_egg(daycare_stru *daycare) {
 	cmem.daycare_offspring_pid = breeding_new_pid(daycare);
 	cmem.daycare_offspring_male = true;
 	cmem.daycare_offspring_has_hidden_ability = breeding_inherit_hidden_ability(daycare);
+	daycare->offspring_present = 1;
 	setflag(FLAG_DAYCARE_EGG_SPAWNED);
+}
+
+void breeding_egg_new_into_incubator(daycare_stru *daycare) {
+  pokemon tmp;
+  u8 parents[2];
+  u16 species = breeding_get_egg_species_and_parents(daycare, parents);
+  breeding_alter_egg_species(&species, daycare);
+  breeding_pokemon_new(&tmp, species, daycare);
+  breeding_inherit_ivs(&tmp, daycare);
+  breeding_egg_create_moves(&tmp, &daycare->pokemon[parents[1]].pokemon, &daycare->pokemon[parents[0]].pokemon);
+  u8 is_egg = 1;
+  pokemon_set_attribute(&tmp, ATTRIBUTE_IS_EGG, &is_egg);
+	for (int i = 0; i < incubator_available_slots(); i++) {
+    if (box_pokemon_get_attribute(&cmem.incubator_slots[i], ATTRIBUTE_SPECIES, 0) == 0) {
+      memcpy(&cmem.incubator_slots[i], &tmp, sizeof(box_pokemon));
+			daycare_remove_egg(daycare);
+  		return;
+		}
+	}
+}
+
+void breeding_egg_add_move_if_known_by_parent(pokemon *egg, box_pokemon *father, box_pokemon *mother, u16 move) {
+	for (int j = 0; j < 4; j++) {
+		if (box_pokemon_get_attribute(father, ATTRIBUTE_ATTACK1 + j, 0) == move ||
+				box_pokemon_get_attribute(mother, ATTRIBUTE_ATTACK1 + j, 0) == move) {
+			if (pokemon_append_attack(egg, move) == 0xFFFF) {
+				pokemon_rotate_and_push_attack(egg, move);
+			}
+			return;
+		}
+	}
+}
+
+void breeding_egg_create_moves(pokemon *egg, box_pokemon *father, box_pokemon *mother) {
+	u16 species = (u16) pokemon_get_attribute(egg, ATTRIBUTE_SPECIES, 0);
+
+	// Scan if any parent has any of its levelup moves
+	for(int i = 0; pokemon_moves[species][i].move_id != 511; i++) {
+		breeding_egg_add_move_if_known_by_parent(egg, father, mother, pokemon_moves[species][i].move_id);
+	}
+	
+	// Scan for move tutor moves that can be inherited from both parents
+	for (u8 i = 0; i < 32; i++) {
+		if (pokemon_move_tutor_compatibility[species] & (u32)(1 << i)) {
+			breeding_egg_add_move_if_known_by_parent(egg, father, mother, move_tutor_get_attack(i));
+		}
+	}
+
+	// Scan for egg moves that can be inherited from both parents
+	int num_egg_moves = 0;
+	u16 *egg_moves = pokemon_get_egg_moves(species, &num_egg_moves);
+	for (int i = 0; i < num_egg_moves; i++) {
+		breeding_egg_add_move_if_known_by_parent(egg, father, mother, egg_moves[i]);
+	}
+}
+
+bool daycare_egg_spawned(daycare_stru *daycare) {
+	return daycare->offspring_present;
+}
+
+void special_daycare_egg_new_into_incubator() {
+	breeding_egg_new_into_incubator(&save1->daycare);
 }
 
 bool pokemon_party_has_flamebody(){

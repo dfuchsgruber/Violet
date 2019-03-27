@@ -71,3 +71,16 @@
 	bx r0
 	.pool
 
+.org 0x080c3794
+    ldr r1, =worldmap_lower_layer_check | 1
+    bx r1
+    .pool
+
+.org 0x080c3a30
+    ldr r1, =worldmap_upper_layer_check | 1
+    bx r1
+    .pool
+
+.org 0x080c5460
+    .word flight_position_associations
+    

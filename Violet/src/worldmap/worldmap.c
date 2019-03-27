@@ -14,7 +14,7 @@ u8 worldmap0_position_data [] = {
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x60, ____, ____, ____, 
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6c, ____, ____, ____,
 
@@ -123,7 +123,7 @@ worldmap_shape_t **worldmap0_namespace_patterns[] = {
 	worldmap_pattern_1x1, // MAP_ORINA_CITY
 	worldmap_pattern_1x1, // MAP_INFERIOR
 	worldmap_pattern_1x1, // MAP_CEOMETRIA
-	worldmap_pattern_1x1, // MAP_ZINNOBERINSEL
+	worldmap_pattern_1x1, // MAP_LAUBDORF
 	worldmap_pattern_1x1, // MAP_INDIGO_PLATEAU
 	worldmap_pattern_1x1, // MAP_SAFFRONIA_CITY
 	worldmap_pattern_1x1, // MAP_NAMESPACE_99
@@ -235,7 +235,7 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0xF, 0x6}, // MAP_ORINA_CITY
 	{0xB, 0x6}, // MAP_INFERIOR
 	{0x0, 0x0}, // MAP_CEOMETRIA
-	{0x0, 0x0}, // MAP_ZINNOBERINSEL
+	{0x12, 0x2}, // MAP_LAUBDORF
 	{0x0, 0x0}, // MAP_INDIGO_PLATEAU
 	{0x0, 0x0}, // MAP_SAFFRONIA_CITY
 	{0x0, 0x0}, // MAP_NAMESPACE_99

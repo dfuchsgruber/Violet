@@ -33,25 +33,28 @@ typedef struct saveblock1 {
     u8 last_exit;
     u8 field_7;
     s16 field_8, field_A; // this struct is very warp_like: field_8, field_A seem to be 0xFFFF
-    u8 unkown_1[0x8]; // probably also a warp save
+    u8 unknown_1[0x8]; // probably also a warp save
     warp_save_t last_map; // ????
     warp_save_t healingplace;
     warp_save_t last_outdoor_map;
-    u8 unkown[0x4];
+    u8 unknown[0x4];
     u8 flash_circle_size;
     u8 field_31;
     u16 current_footer_id;
     //0x34
-    u8 unkown_2[0x8AC];
+    u8 unknown_2_1[604];
+    u32 money;
+    u8 unknown_2_2[1612];
     // 0x8e0
     map_event_person persons[256];
     // 0x20E0
-    u8 unkown_3[0xEA0];
+    u8 unknown_3[3088];
+    u16 mail_words[2][9]; // Might be there are more than 2 mails
+    u8 unknown_4[620];
     // 0x2F80
     daycare_stru daycare;
-    //TODO
-
-
+    u8 unknown_5[3066];
+    mini_daycare_stru mini_daycare;
 } saveblock1;
 
 typedef struct saveblock2 {
@@ -71,15 +74,17 @@ typedef struct saveblock2 {
     // 0x14
     u8 tbox_style;
     u8 sound_state : 1;
-    u8 unkown_2 : 7;
-    u8 unkown_3[0x2];
-    u8 unkown_4[0x4];
+    u8 unknown_2 : 7;
+    u8 unknown_3[0x2];
+    u8 unknown_4[0x4];
     pid_t icognito_pid;
     // 0x20
     pid_t pandir_pid;
-    u8 unkown_5[0x4];
+    u8 unknown_5[0x4];
     u8 pokedex_caught_flags[0x34]; //416 flags
     u8 pokedex_seen_flags[0x34]; //416 flags
+    u8 unknown_6[3728];
+    u32 money;
 } saveblock2;
 
 typedef struct custom_memory {

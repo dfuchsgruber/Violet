@@ -780,7 +780,7 @@
         
 //move tutor
 .org 0x08120BDC
-    ldr r1, =move_tutor_get_attack_id | 1
+    ldr r1, =move_tutor_get_attack | 1
     bx r1
     .pool
 
@@ -1038,6 +1038,14 @@ lsr r0, #0x1A
 
 .org 0x080461a8
 	.word str_egg
+
+.org 0x080465c8
+	.word compatibility_strings
+
+.org 0x08045bd4
+	ldr r3, =breeding_egg_create_moves | 1
+	bx r3
+	.pool
 
 // Summary
 
