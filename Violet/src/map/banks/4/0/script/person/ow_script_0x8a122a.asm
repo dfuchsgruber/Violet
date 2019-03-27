@@ -17,11 +17,7 @@ special 0xe
 loadpointer 0x0 str_0x8a0c83
 callstd MSG
 special 0xF
-fadescreen 0x1
-fanfare 0x0
-special SPECIAL_HEAL
-waitfanfare
-fadescreen 0x0
+call ow_script_healing_sequence
 loadpointer 0x0 str_0x89ba8d
 setvar 0x8000 0
 special 0xe
