@@ -44,6 +44,15 @@ extern "C" {
     	worldmap_shape_t *shapes;
     } worldmap_pattern_t;
 
+    typedef struct {
+        u8 bank;
+        u8 map_idx;
+        u8 shape_idx;
+    } worldmap_shape_association_t;
+
+    #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 5
+    worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
+
     extern worldmap_state_t *worldmap_state;
 
     stru_flight_position flight_positions[NUM_FLIGHT_POSITONS];
@@ -103,6 +112,14 @@ extern "C" {
      * Locates the player on the current worldmap (saves x, y to the worldmap state).
      */
     void worldmap_locate_player();
+
+    /**
+     * Returns the index in the pattern table for a certain map to locate the player.
+     * @param bank the bank of the map to locate
+     * @param map_idx the map index of the map to locate in the given bank
+     * @return shape_idx the index of the shape in the pattern table of the namespace of the map
+     */
+    u8 worldmap_get_shape_idx(u8 bank, u8 map_idx);
 
 #define WORLDMAP_FLAG_CHECK_INVALID 0
 #define WORLDMAP_FLAG_CHECK_NO_FLAG 1

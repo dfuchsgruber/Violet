@@ -433,8 +433,8 @@
 		"type": "MAP_TYPE_VILLAGE",
 		"bike_usable": "1",
 		"show_name": "SHOW_VILLAGE",
-		"field_1A": 0,
-		"battle_style": "BATTLE_TYPE_RANDOM"
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"level": 0
 	},
 	"label": "map_3_9_laubdorf",
 	"type": "header"

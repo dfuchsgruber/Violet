@@ -222,9 +222,9 @@
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_CITY",
 		"show_name": "SHOW",
-		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM",
-		"bike_usable": "1"
+		"bike_usable": "1",
+		"level": 0
 	},
 	"label": "map_3_0",
 	"type": "header"

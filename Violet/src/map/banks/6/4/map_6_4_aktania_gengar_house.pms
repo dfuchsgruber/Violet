@@ -55,8 +55,8 @@
 		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": 0,
 		"show_name": "DONT_SHOW",
-		"field_1A": 0,
-		"battle_style": "BATTLE_TYPE_RANDOM"
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"level": 0
 	},
 	"label": "map_6_4_aktania_gengar_house",
 	"type": "header"

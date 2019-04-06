@@ -55,8 +55,8 @@
 		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": 0,
 		"show_name": "DONT_SHOW",
-		"field_1A": 0,
-		"battle_style": 0
+		"battle_style": 0,
+		"level": 0
 	},
 	"label": "map_12_1_laubdorf_daycare",
 	"type": "header"

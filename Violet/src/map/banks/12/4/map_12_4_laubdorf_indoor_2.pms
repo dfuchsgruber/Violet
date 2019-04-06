@@ -97,8 +97,8 @@
 		"type": 0,
 		"bike_usable": 0,
 		"show_name": 0,
-		"field_1A": 0,
-		"battle_style": 0
+		"battle_style": 0,
+		"level": 0
 	},
 	"label": "map_12_4_laubdorf_indoor_2",
 	"type": "header"

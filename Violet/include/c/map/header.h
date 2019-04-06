@@ -27,7 +27,7 @@ typedef struct map_header_t {
     u8 type;
     u8 bike_usable;
     u8 show_name;
-    u8 worldmap_shape_id; // Used to associate the map with a shape in the worldmap pattern of the namespace
+    s8 level;
     u8 battle_style;
 
 } map_header_t;

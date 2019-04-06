@@ -160,8 +160,8 @@
 		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": 0,
 		"show_name": "DONT_SHOW",
-		"field_1A": 0,
-		"battle_style": "BATTLE_TYPE_ARENA"
+		"battle_style": "BATTLE_TYPE_ARENA",
+		"level": 0
 	},
 	"label": "map_10_0_inferior_gym",
 	"type": "header"

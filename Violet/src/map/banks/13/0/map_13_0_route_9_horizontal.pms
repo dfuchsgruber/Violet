@@ -269,8 +269,8 @@
 		"type": "MAP_TYPE_ROUTE",
 		"bike_usable": "1",
 		"show_name": "DONT_SHOW",
-		"field_1A": "1",
-		"battle_style": "BATTLE_TYPE_RANDOM"
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"level": 0
 	},
 	"label": "map_13_0_route_9_horizontal",
 	"type": "header"

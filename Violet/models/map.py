@@ -105,7 +105,7 @@ header_type = agb.types.Structure([
     ('type', 'map_type', 0),
     ('bike_usable', 'u8', 0),
     ('show_name', 'map_show_name', 0),
-    ('field_1A', 'u8', 0),
+    ('level', 's8', 0),
     ('battle_style', 'map_battle_style', 0)
 ], hidden_members=set([
     'events', 'connections', 'footer', 'footer_idx', 'namespace'

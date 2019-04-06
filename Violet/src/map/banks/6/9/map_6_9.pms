@@ -112,9 +112,9 @@
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_INSIDE",
 		"show_name": "DONT_SHOW",
-		"field_1A": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM",
-		"bike_usable": 0
+		"bike_usable": 0,
+		"level": 0
 	},
 	"label": "map_6_9",
 	"type": "header"

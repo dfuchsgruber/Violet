@@ -357,6 +357,23 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 #define MAP_TYPE_INSIDE 0x8
 #define MAP_TYPE_SECRET_BASE 0x9
 
+ worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS] = {
+	 {.bank = 3, .map_idx = 21, .shape_idx = 1},
+	 {.bank = 3, .map_idx = 24, .shape_idx = 1},
+	 {.bank = 3, .map_idx = 7, .shape_idx = 1},
+	 {.bank = 11, .map_idx = 1, .shape_idx = 1},
+	 {.bank = 13, .map_idx = 0, .shape_idx = 1}
+ };
+
+
+u8 worldmap_get_shape_idx(u8 bank, u8 map_idx) {
+	for (int i = 0; i < NUM_WORLDMAP_SHAPE_ASSOCIATIONS; i++) {
+		if (worldmap_shape_associations[i].bank == bank && worldmap_shape_associations[i].map_idx == map_idx) {
+			return worldmap_shape_associations[i].shape_idx;
+		}
+	}
+	return 0;
+}
 
 void worldmap_locate_player() {
 	u8 bank = save1->bank;
@@ -401,15 +418,14 @@ void worldmap_locate_player() {
 	int map_width = (int)header->footer->width;
 	int map_height = (int)header->footer->height;
 	// Find the shape in the pattern of namespace
+	u8 shape_idx = worldmap_get_shape_idx(bank, map);
 	worldmap_shape_t *shape = worldmap0_namespace_patterns[worldmap_state->player_namespace - 0x58]
-										 [header->worldmap_shape_id];
+										 [shape_idx];
 
 	int segment_width = MAX(1, map_width / shape->width);
 	int segment_height = MAX(1, map_height / shape->height);
 	int segment_x = x / segment_width;
 	int segment_y = y / segment_height;
-	dprintf("Shape idx %d, shape width %d, height %d\n",
-			header->worldmap_shape_id, shape->x, shape->y);
 	dprintf("Map width %d, height %d\n", map_width, map_height);
 	dprintf("Segment width %d, height %d\n", segment_width, segment_height);
 	dprintf("Segment x %d, y %d\n", segment_x, segment_y);

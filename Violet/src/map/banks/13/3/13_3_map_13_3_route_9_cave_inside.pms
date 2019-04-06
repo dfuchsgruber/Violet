@@ -55,8 +55,8 @@
 		"type": "MAP_TYPE_BASEMENT",
 		"bike_usable": "1",
 		"show_name": "DONT_SHOW",
-		"field_1A": 0,
-		"battle_style": "BATTLE_TYPE_RANDOM"
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"level": 0
 	},
 	"label": "map_13_3_route_9_cave_inside",
 	"type": "header"
