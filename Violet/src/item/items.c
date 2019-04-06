@@ -3737,7 +3737,7 @@ item items[] = {
 		5000, //price
 		HOLD_EFFECT_FULL_INCENSE, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf8_item_item_f8,
+		str_item_desc_xf8_item_lahmrauch,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3822,12 +3822,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROTER_SCHAL
-		LANGDEP(PSTRING("Roter Schal"), PSTRING("Red Scarf")),
+		LANGDEP(PSTRING("Steinrauch"), PSTRING("Rock Incense")),
 		0xfe, //index
-		100, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_desc_xfe_item_roter_schal,
+		9600, //price
+		HOLD_EFFECT_ROCK_POWER, //holding_effect_id
+		20, //holding_effect_param
+		str_item_desc_xfe_item_steinrauch,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3837,12 +3837,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_BLAUER_SCHAL
-		LANGDEP(PSTRING("Blauer Schal"), PSTRING("Blue Scarf")),
+		LANGDEP(PSTRING("Scheuchrauch"), PSTRING("Pure Incense")),
 		0xff, //index
-		100, //price
-		0, //holding_effect_id
+		9600, //price
+		HOLD_EFFECT_REPEL, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xff_item_blauer_schal,
+		str_item_desc_xff_item_scheuchrauch,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3852,12 +3852,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ROSA_SCHAL
-		LANGDEP(PSTRING("Rosa Schal"), PSTRING("Pink Scarf")),
+		LANGDEP(PSTRING("Glücksrauch"), PSTRING("Luck Incense")),
 		0x100, //index
-		100, //price
-		0, //holding_effect_id
+		9600, //price
+		HOLD_EFFECT_DOUBLE_PRIZE, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x100_item_rosa_schal,
+		str_item_desc_x100_item_gluecksrauch,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type

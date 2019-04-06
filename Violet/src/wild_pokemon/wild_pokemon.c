@@ -283,7 +283,24 @@ wild_pokemon_data wild_pokemon[] = {
 	    .rod = &wild_pokemon_3_8_rod,
 	},
 	{
+		.bank = 3, .map = 9,
+		.water = &wild_pokemon_laubdorf_water, .rod = &wild_pokemon_laubdorf_rod,
+		.grass = NULL, .other = NULL
+	},
+	{
+		.bank = 3, .map = 10,
+		.water = &wild_pokemon_route_9_water, .rod = &wild_pokemon_route_9_rod,
+		.grass = NULL, .other = NULL
+
+	},
+	{
+		.bank = 13, .map = 0,
+		.water = &wild_pokemon_route_9_water, .rod = &wild_pokemon_route_9_rod,
+		.grass = NULL, .other = NULL
+
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
-	}
+	},
 };

@@ -54,6 +54,10 @@ item_effects equ 0x082527E0
     .word gfx_item_bibornitTiles
     .word gfx_item_bibornitPal
 
+.org item_resource + 0xF8 * 8
+    .word gfx_item_lahmrauchTiles
+    .word gfx_item_lahmrauchPal
+
 .org item_resource + 0xF9 * 8
 	.word gfx_item_eisbrockenTiles
 	.word gfx_item_eisbrockenPal
@@ -74,9 +78,25 @@ item_effects equ 0x082527E0
 	.word gfx_item_lichtlehmTiles
 	.word gfx_item_lichtlehmPal
 
+.org item_resource + 0xFE * 8
+    .word gfx_item_steinrauchTiles
+    .word gfx_item_steinrauchPal
+
+.org item_resource + 0xFF * 8
+    .word gfx_item_scheuchrauchTiles
+    .word gfx_item_scheuchrauchPal
+
+.org item_resource + 0x100 * 8
+    .word gfx_item_gluecksrauchTiles
+    .word gfx_item_gluecksrauchPal
+
 .org item_resource + 0x10B * 8
     .word gfx_item_wolkenherzTiles
     .word gfx_item_wolkenherzPal
+
+.org item_resource + 0x114 * 8
+    .word gfx_item_spiritkernTiles
+    .word gfx_item_spiritkernPal
 
 .org item_resource + 0x15D * 8
     .word gfx_item_zugangskarteTiles

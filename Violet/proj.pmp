@@ -194,6 +194,11 @@
 				"map_3_9_laubdorf",
 				"src/map/banks/3/9/map_3_9_laubdorf.pms",
 				"MAP_LAUBDORF"
+			],
+			"10": [
+				"map_3_10_route_9_vertical",
+				"src/map/banks/12/4/3_10_map_3_10_route_9.pms",
+				"MAP_ROUTE_9"
 			]
 		},
 		"4": {
@@ -572,6 +577,43 @@
 				"map_12_1_laubdorf_daycare",
 				"src/map/banks/12/1/map_12_1_laubdorf_daycare.pms",
 				"MAP_LAUBDORF"
+			],
+			"2": [
+				"map_12_2_laubdorf_indoor_0",
+				"src/map/banks/12/2/map_12_2_laubdorf_indoor_0.pms",
+				"MAP_LAUBDORF"
+			],
+			"3": [
+				"map_12_3_laubdorf_indoor_1",
+				"src/map/banks/12/3/map_12_3_laubdorf_indoor_1.pms",
+				"MAP_LAUBDORF"
+			],
+			"4": [
+				"map_12_4_laubdorf_indoor_2",
+				"src/map/banks/12/4/map_12_4_laubdorf_indoor_2.pms",
+				"MAP_LAUBDORF"
+			]
+		},
+		"13": {
+			"0": [
+				"map_13_0_route_9_horizontal",
+				"src/map/banks/13/0/map_13_0_route_9_horizontal.pms",
+				"MAP_ROUTE_9"
+			],
+			"1": [
+				"map_13_1_route_9_house",
+				"src/map/banks/13/1/13_1_map_13_1_route_9_house.pms",
+				"MAP_ROUTE_9"
+			],
+			"2": [
+				"map_13_2_route_9_cave_entrance",
+				"src/map/banks/13/2/13_2_map_13_2_route_9_cave_entrance.pms",
+				"MAP_ROUTE_9"
+			],
+			"3": [
+				"map_13_3_route_9_cave_inside",
+				"src/map/banks/13/3/13_3_map_13_3_route_9_cave_inside.pms",
+				"MAP_ROUTE_9"
 			]
 		}
 	},
@@ -983,6 +1025,22 @@
 		"map_footer_24_laubdorf_daycare": [
 			24,
 			"src/map/banks/12/1/map_footer_24_laubdorf_daycare.pms"
+		],
+		"map_footer_25_route_9": [
+			25,
+			"src/map/banks/3/10/map_3_10_route_9.pms"
+		],
+		"map_footer_26_route_9_horizontal": [
+			26,
+			"src/map/banks/13/0/map_footer_26_route_9_horizontal.pms"
+		],
+		"map_footer_27_route_9_cave_entrance": [
+			27,
+			"src/map/banks/13/2/map_footer_27_route_9_cave_entrance.pms"
+		],
+		"map_footer_29_route_9_cave_inside": [
+			29,
+			"src/map/banks/13/3/map_footer_29_route_9_cave_inside.pms"
 		]
 	},
 	"tilesets_primary": {

@@ -750,6 +750,7 @@ song song_table[] = {
   {mus_gymleader_new, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 373, (=0x175)
   {mus_laubdorf, SONG_TYPE_SONG, SONG_TYPE_SONG},
-        
+  // Song 374, (=0x176)
+  {mus_ceometria2, SONG_TYPE_SONG, SONG_TYPE_SONG}
 
 };

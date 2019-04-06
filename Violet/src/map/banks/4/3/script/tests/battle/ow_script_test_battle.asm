@@ -31,7 +31,7 @@ give:
 
 teach:
     setvar 0x8005 0x12
-    call ow_script_0x1c9086
+    call ow_script_move_tutor_do
     return
 
 start_text:

@@ -5,13 +5,14 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
-
+.include "move_tutor.s"
+.include "specials.s"
 
 .global ow_script_0x8a19d4
 ow_script_0x8a19d4:
 loadpointer 0x0 str_0x94568f
 callstd MSG_FACE
-call ow_script_0x945619
+call move_tutor_item_check
 gotoif EQUAL ow_script_0x8faec2
 end
 
@@ -34,19 +35,19 @@ loadpointer 0x0 str_0x8a1be6
 callstd MSG
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
-setvar 0x8005 0x12
-call ow_script_0x1c9086
+setvar 0x8005 MOVE_TUTOR_STEINHAGEL
+call ow_script_move_tutor_do
 clearflag TRANS_DISABLE
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8a1a57
-call ow_script_0x9455aa
-loadpointer 0x0 str_0x94618b
+call ow_script_move_tutor_pay_items
+loadpointer 0x0 str_move_tutor_pay_items
 callstd MSG
 end
 
 
-.global ow_script_0x9455aa
-ow_script_0x9455aa:
+.global ow_script_move_tutor_pay_items
+ow_script_move_tutor_pay_items:
 setvar 0x8000 ITEM_RIESENPILZ
 setvar 0x8001 0x1
 checkitem ITEM_MINIPILZ 0x3
@@ -78,42 +79,37 @@ callstd MSG
 end
 
 
-.global ow_script_0x1c9086
-ow_script_0x1c9086:
-special 0x18d
+.global ow_script_move_tutor_do
+ow_script_move_tutor_do:
+special SPECIAL_MOVE_TUTOR_SELECT_POKEMON
 waitstate
 lock
 faceplayer
 return
 
 
-.global ow_script_0x945619
-ow_script_0x945619:
+.global move_tutor_item_check
+move_tutor_item_check:
 setvar 0x8000 ITEM_MINIPILZ
 setvar 0x8001 0x3
 checkitem ITEM_MINIPILZ 0x3
 compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x9455ee
+gotoif EQUAL buffer_move_tutor_item
 setvar 0x8000 ITEM_RIESENPILZ
 setvar 0x8001 0x1
 checkitem ITEM_RIESENPILZ 0x1
 compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x9455ee
+gotoif EQUAL buffer_move_tutor_item
 setvar LASTRESULT 0x0
-goto ow_script_0x945662
-
-
-.global ow_script_0x945662
-ow_script_0x945662:
+item_check_return:
 return
 
 
-.global ow_script_0x9455ee
-ow_script_0x9455ee:
+buffer_move_tutor_item:
 bufferitem 0x0 0x8000
 buffernumber 0x1 0x8001
 setvar LASTRESULT 0x1
-goto ow_script_0x945662
+goto item_check_return
 
 
 .ifdef LANG_GER
@@ -135,9 +131,8 @@ str_0x8a1be6:
     .string "Schön, schön!\nWelches deiner Pokémon soll\lSteinhagel lernen?"
         
         
-.global str_0x94618b
-
-str_0x94618b:
+.global str_move_tutor_pay_items
+str_move_tutor_pay_items:
     .string "PLAYER übergibt\nBUFFER_2-mal BUFFER_1."
         
         

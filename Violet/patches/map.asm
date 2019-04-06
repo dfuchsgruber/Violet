@@ -32,6 +32,10 @@
 .org 0x80c4f70
 	.word map_namespaces
 
+.org 0x080c4ef8 // map is prismania city einkaufscenter
+    mov r0, #0
+    bx lr
+
 
 //**************TEST FOR SCRIPTS AND MAPS ! REMOVE!!! 
 .org 0x081656C4

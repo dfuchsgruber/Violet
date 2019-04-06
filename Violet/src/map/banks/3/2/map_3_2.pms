@@ -650,8 +650,17 @@
 		},
 		"levelscripts": "lscr_0x718de8",
 		"connections": {
-			"connection_cnt": 0,
-			"connections": []
+			"connection_cnt": 1,
+			"connections": [
+				{
+					"direction": "WEST",
+					"displacement": "6",
+					"bank": "13",
+					"map_idx": "0",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
 		},
 		"music": "MUS_EILAND_4_5_AZALEA_CITY_AND_EBENHOLZ_CITY_REMIX",
 		"footer_idx": 80,

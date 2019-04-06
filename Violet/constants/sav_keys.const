@@ -1,6 +1,8 @@
 {
     "type" : "dict",
     "values" : {
+        "SAV_KEY_EGGS_HATCHED" : 13,
+        "SAV_KEY_MAP_TRANSITIONS_INTO_RAIN" : 40,
         "SAV_KEY_POKEMON_GIVEN_INTO_DAYCARE" : 47
     }
 }

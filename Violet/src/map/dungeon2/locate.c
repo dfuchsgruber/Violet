@@ -26,28 +26,34 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
     {3, 3, 0x17, 0xE, DTYPE_FOREST}, // Silvania,
     {3, 74, 0x13, 0x4, DTYPE_FOREST}, // Feslige Oednis
     {3, 74, 0x8, 0x10, DTYPE_FOREST},
-    {3, 22, 0x6, 0x26, DTYPE_FOREST}, // Route 4
 
+    {3, 22, 0x6, 0x26, DTYPE_FOREST}, // Route 4
     {3, 23, 0x3A, 0x10, DTYPE_FOREST}, // Route 5
     {3, 23, 0x20, 0x11, DTYPE_FOREST},
     {3, 23, 0x20, 0x1E, DTYPE_FOREST},
+
     {3, 1, 0x20, 0x8, DTYPE_CAVE}, // Meriana City
     {3, 74, 0x2E, 0x4, DTYPE_CAVE}, // Feslige Odenis
-
     {1, 59, 0x18, 0x1A, DTYPE_CAVE}, // Kuestenberg
     {3, 57, 0x34, 0x1F, DTYPE_FOREST}, // Trainerschule
+
     {3, 41, 0x2C, 0x14, DTYPE_CAVE}, // Route 2,
     {1, 0, 0x23, 0x2A, DTYPE_FOREST}, // Silvania Wald
 	{3, 74, 0x2F, 0x14, DTYPE_CAVE}, // Felsige Odenis
-
 	{3, 4, 0x35, 0x3, DTYPE_CAVE}, // Kaskada
+
 	{3, 1, 0x43, 0x6, DTYPE_CAVE}, // Meriana City
 	{3, 41, 0x12, 0x54, DTYPE_OCEAN}, // Route 2
 	{3, 41, 0x37, 0x22, DTYPE_CAVE},
-
 	{3, 7, 0x4, 0x17, DTYPE_CAVE},
+
 	{3, 7, 0x26, 0x4, DTYPE_CAVE},
 	{3, 7, 0x45, 0xE, DTYPE_CAVE},
+	{3, 8, 0x23, 0x27, DTYPE_CAVE}, // Route 8
+	{3, 10, 0x4, 0x37, DTYPE_OCEAN}, // Route 9
+
+	{3, 10, 0x1, 0x1f, DTYPE_OCEAN},
+	{3, 10, 0x19, 0x3, DTYPE_OCEAN},
 	// TODO locate ocean dungeons after rework of sea routes
     // TODO
 };

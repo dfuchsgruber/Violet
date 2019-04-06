@@ -1487,30 +1487,30 @@
 		.string " ????"
 
 
-	.global str_item_desc_xf8_item_item_f8
+	.global str_item_desc_xf8_item_lahmrauch
 
-	str_item_desc_xf8_item_item_f8:
-		.string " ????"
+	str_item_desc_xf8_item_lahmrauch:
+		.autostring 30 3 "Ein Item zum Tragen. Dieses exotische Duftkraut macht den Träger benommen und langsam."
 
 	.global str_item_desc_xf9_item_eisbrocken
 
 	str_item_desc_xf9_item_eisbrocken:
-		.string "An item to be held by a Pokémon.\nIt extends the duration of hail."
+		.autostring 30 3 "Ein Item zum Tragen.\nVerlängert die dauer von Hagelsturm."
 
 	.global str_item_desc_xfa_item_nassbrocken
 
 	str_item_desc_xfa_item_nassbrocken:
-		.string "An item to be held by a Pokémon.\nIt extends the duration of rain."
+		.autostring 30 3 "Ein Item zum Tragen.\nVerlängert die Dauer von Regentanz."
 
 	.global str_item_desc_xfb_item_glattbrocken
 
 	str_item_desc_xfb_item_glattbrocken:
-		.string "An item to be held by a Pokémon.\nIt extends the duration of sandstrom."
+		.autostring 30 3 "Ein Item zum Tragen.\nVerlängert die Dauer von Sandsturm."
 
 	.global str_item_desc_xfc_item_heissbrocken
 
 	str_item_desc_xfc_item_heissbrocken:
-		.string "An item to be held by a Pokémon.\nIt extends the duration of sunshine."
+		.autostring 30 3 "Ein Item zum Tragen.\nVerlängert die Dauer von Sonnentag."
 
 	.global str_item_desc_xFD_item_lichtlehm
 
@@ -1518,22 +1518,22 @@
 		.string "Ein Item zum Tragen. Verlängert\ndie Dauer von Lichtschild und\nReflektor."
 
 
-	.global str_item_desc_xfe_item_roter_schal
+	.global str_item_desc_xfe_item_steinrauch
 
-	str_item_desc_xfe_item_roter_schal:
-		.string "Ein Item, das ein Pokémon trägt,\num den Cool.-Wert im\nWettbewerb zu erhöhen."
-
-
-	.global str_item_desc_xff_item_blauer_schal
-
-	str_item_desc_xff_item_blauer_schal:
-		.string "Ein Item, das ein Pokémon trägt,\num den Schön.-Wert im\nWettbewerb zu erhöhen."
+	str_item_desc_xfe_item_steinrauch:
+		.autostring 30 3 "Ein Item zum Tragen. Dieses exotische Duftkraut verstärkt Attacken vom Typ Gestein."
 
 
-	.global str_item_desc_x100_item_rosa_schal
+	.global str_item_desc_xff_item_scheuchrauch
 
-	str_item_desc_x100_item_rosa_schal:
-		.string "Ein Item, das ein Pokémon trägt,\num den Anmut-Wert im\nWettbewerb zu erhöhen."
+	str_item_desc_xff_item_scheuchrauch:
+		.autostring 30 3 "Ein Item zum Tragen. Reduziert Begegnungen mit wilden Pokémon, wenn der Träger an erster Stelle steht."
+
+
+	.global str_item_desc_x100_item_gluecksrauch
+
+	str_item_desc_x100_item_gluecksrauch:
+		.autostring 30 3 "Ein Item zum Tragen. Es bringt doppeltes Preisgeld, wenn der Träger am Kampf teilnimmt."
 
 
 	.global str_item_desc_x101_item_gruener_schal
@@ -3485,10 +3485,10 @@
 	str_item_desc_xf7_item_item_f7:
 		.string "?????"
 
-	.global str_item_desc_xf8_item_item_f8
+	.global str_item_desc_xf8_item_lahmrauch
 
-	str_item_desc_xf8_item_item_f8:
-		.string "?????"
+	str_item_desc_xf8_item_lahmrauch:
+		.autostring 30 3 "An item to be held by a Pokémon.\nSlows a Pokémon down."
 
 	.global str_item_desc_xf9_item_eisbrocken
 
@@ -3515,20 +3515,20 @@
 	str_item_desc_xFD_item_lichtlehm:
 		.string "An item to be held by a Pokémon.\nExtends the duration of Light Screen\nand Reflect."
 
-	.global str_item_desc_xfe_item_roter_schal
+	.global str_item_desc_xfe_item_steinrauch
 
-	str_item_desc_xfe_item_roter_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nCool condition in Contests."
+	str_item_desc_xfe_item_steinrauch:
+		.autostring 30 3 "An item to be held by a Pokémon.\nIt boosts the attack of rock type moves."
 
-	.global str_item_desc_xff_item_blauer_schal
+	.global str_item_desc_xff_item_scheuchrauch
 
-	str_item_desc_xff_item_blauer_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nBeauty condition in Contests."
+	str_item_desc_xff_item_scheuchrauch:
+		.autostring 30 3 "An item to be held by a Pokémon.\nMakes encounters with wild pokemon more unlikely."
 
-	.global str_item_desc_x100_item_rosa_schal
+	.global str_item_desc_x100_item_gluecksrauch
 
-	str_item_desc_x100_item_rosa_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nCute condition in Contests."
+	str_item_desc_x100_item_gluecksrauch:
+		.autostring 30 3 "An item to be held by a Pokémon.\nDoubles the price money received after a battle."
 
 	.global str_item_desc_x101_item_gruener_schal
 

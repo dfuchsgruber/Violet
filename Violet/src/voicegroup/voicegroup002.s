@@ -1215,11 +1215,11 @@ voicegroup002:
 
 @**************** Voice 121 ****************@
 
-		.byte	0xc
+		.byte	DrumTable
 		.byte	0x3c
 		.byte	0x0
 		.byte	0x0
-		.word	0x0
+		.word	0x08488598
 		.byte	0,2,6,0
 
 

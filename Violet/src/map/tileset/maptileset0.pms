@@ -31629,52 +31629,52 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 430,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 4
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 431,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 4
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 446,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 4
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 447,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 4
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 121,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 122,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 137,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 138,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
-					"palette_idx": 1
+					"palette_idx": 0
 				}
 			],
 			[
@@ -37190,7 +37190,7 @@
 				"priority": "0x0"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37200,7 +37200,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37210,7 +37210,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37270,7 +37270,7 @@
 				"priority": "0x0"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37280,7 +37280,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37290,7 +37290,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37350,7 +37350,7 @@
 				"priority": "0x0"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37360,7 +37360,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37370,7 +37370,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37430,7 +37430,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37440,7 +37440,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37450,7 +37450,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37590,7 +37590,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37600,7 +37600,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37610,7 +37610,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37670,7 +37670,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37680,7 +37680,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",
@@ -37690,7 +37690,7 @@
 				"priority": "0x1"
 			},
 			{
-				"behaviour": "0x115",
+				"behaviour": "0x15",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"field_3": "0x6",

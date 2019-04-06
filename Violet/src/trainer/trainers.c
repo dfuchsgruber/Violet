@@ -5127,5 +5127,103 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Nyna")), .pokemon_cnt = 1,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_xc9_route_8_trainer_4
-    }
+    },
+    [0xCA] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Thereza"),
+            PSTRING("Thereza")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xcA_route_9_trainer_0
+    },
+    [0xCB] = {
+        .trainerclass = TRAINERCLASS_PLANSCHER, .sprite = 7,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Weyrner"),
+            PSTRING("Weyrner")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xcb_route_9_trainer_1
+    },
+    [0xCC] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Kylian"),
+            PSTRING("Kylian")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xcc_route_9_trainer_2
+    },
+    [0xCD] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Selena"),
+            PSTRING("Selena")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xcd_route_9_trainer_3
+    },
+    [0xCE] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Doug"),
+            PSTRING("Doug")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xce_route_9_trainer_4
+    },
+    [0xCF] = {
+        .trainerclass = TRAINERCLASS_TRIATHLET, .sprite = 41,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Jeyns"),
+            PSTRING("Jeyns")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xcf_route_9_trainer_5
+    },
+    [0xD0] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Maara"),
+            PSTRING("Maara")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd0_route_9_trainer_6
+    },
+    [0xD1] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Olyvia"),
+            PSTRING("Olyvia")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd1_route_9_trainer_7
+    },
+    [0xD2] = {
+        .trainerclass = TRAINERCLASS_ANGLER, .sprite = 0x26,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Meysut"),
+            PSTRING("Meysut")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd2_route_9_trainer_8
+    },
+    [0xD3] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Kyarl"),
+            PSTRING("Kyarl")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd3_route_9_trainer_9
+    },
+    [0xD4] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Ozlav"),
+            PSTRING("Ozlav")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd4_route_9_trainer_10
+    },
+    [0xD5] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Kreanita"),
+            PSTRING("Creanita")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd5_route_9_trainer_11
+    },
+    [0xD6] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Nimba"),
+            PSTRING("Nimba")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd6_route_9_trainer_12
+    },
+    [0xD7] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Myatt"),
+            PSTRING("Myatt")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xd7_route_9_trainer_13
+    },
 };

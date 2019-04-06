@@ -18,6 +18,8 @@ ow_script_map_12_0_laubdorf_pokemon_center_person_2:
 	callstd MSG_FACE
 	end
 
+
+
 .ifdef LANG_GER
 str_0:
 	.autostring 34 2 "Wusstest du, dass ein Pokémon stets die besten Gene seiner Eltern erbt?\pSo wird jede Generation an Pokémon immer stärker.\pAllerdings können auch ganz zufällig noch effektivere Mutationen auftreten!"

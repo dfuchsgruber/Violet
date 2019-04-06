@@ -3,7 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
-
+.include "move_tutor.s"
 
 .global ow_script_0x945577
 ow_script_0x945577:
@@ -11,8 +11,9 @@ lock
 faceplayer
 loadpointer 0x0 str_0x945f3c
 callstd MSG_KEEPOPEN
-call ow_script_0x945619
-gotoif EQUAL ow_script_0x9460a5
+call move_tutor_item_check
+compare LASTRESULT 0
+gotoif NOT_EQUAL ow_script_0x9460a5
 closeonkeypress
 release
 end
@@ -32,13 +33,13 @@ loadpointer 0x0 str_0x9461a3
 callstd MSG
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH
-setvar 0x8005 0x7
-call ow_script_0x1c9086
+setvar 0x8005 MOVE_TUTOR_LICHTKANONE
+call ow_script_move_tutor_do
 clearflag TRANS_DISABLE
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x94610c
-call ow_script_0x9455aa
-loadpointer 0x0 str_0x94618b
+call ow_script_move_tutor_pay_items
+loadpointer 0x0 str_move_tutor_pay_items
 callstd MSG
 end
 

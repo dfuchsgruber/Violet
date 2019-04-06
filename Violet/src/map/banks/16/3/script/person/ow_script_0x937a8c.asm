@@ -3,7 +3,7 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
-
+.include "specials.s"
 
 .global ow_script_0x937a8c
 ow_script_0x937a8c:
@@ -14,7 +14,7 @@ gotoif EQUAL ow_script_0x937c8a
 loadpointer 0x0 str_0x937bb1
 callstd MSG_KEEPOPEN
 setvar 0x8004 0x1
-special2 0x800d 0xd4
+special2 0x800d SPECIAL_POKEDEX_GET_STATS
 buffernumber 0x2 0x8006
 compare 0x8006 25
 gotoif LESS ow_script_0x8f3bfd

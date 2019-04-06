@@ -74,21 +74,21 @@ wild_pokemon_entry wild_pokemon_3_41_rod_entries[10] = {
 	[WILD_POKEMON_DENSITY_OLD_ROD_1_30_PERCENT] = 
 		{.level_min = 9, .level_max = 11, .species = POKEMON_TENTACHA},
 	[WILD_POKEMON_DENSITY_GOOD_ROD_0_60_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_KARPADOR},
+		{.level_min = 25, .level_max = 35, .species = POKEMON_KARPADOR},
 	[WILD_POKEMON_DENSITY_GOOD_ROD_1_20_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_TENTACHA},
+		{.level_min = 25, .level_max = 35, .species = POKEMON_TENTACHA},
 	[WILD_POKEMON_DENSITY_GOOD_ROD_2_20_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_KARPADOR},
+		{.level_min = 25, .level_max = 35, .species = POKEMON_KARPADOR},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_0_40_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_KARPADOR},
+		{.level_min = 25, .level_max = 35, .species = POKEMON_KARPADOR},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_1_40_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_TENTACHA},
+		{.level_min = 45, .level_max = 50, .species = POKEMON_TENTACHA},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_2_15_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_KARPADOR},
+		{.level_min = 45, .level_max = 50, .species = POKEMON_KARPADOR},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_3_4_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_TENTOXA},
+		{.level_min = 45, .level_max = 50, .species = POKEMON_TENTOXA},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_4_1_PERCENT] = 
-		{.level_min = 1, .level_max = 1, .species = POKEMON_GARADOS},
+		{.level_min = 45, .level_max = 55, .species = POKEMON_GARADOS},
 };
 
 wild_pokemon_habitat wild_pokemon_3_41_rod = {

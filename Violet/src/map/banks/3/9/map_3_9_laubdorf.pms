@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_23_laubdorf",
 		"events": {
-			"person_cnt": 14,
+			"person_cnt": 15,
 			"warp_cnt": 5,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
+			"signpost_cnt": 2,
 			"persons": [
 				{
 					"target_index": "1",
@@ -300,6 +300,27 @@
 						"item": 0,
 						"species": 0
 					}
+				},
+				{
+					"target_index": "15",
+					"picture": "55",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "26",
+					"y": "13",
+					"level": "0",
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_laubdorf_assistant",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				}
 			],
 			"warps": [
@@ -324,38 +345,81 @@
 					"y": "25",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "2",
+					"target_bank": "12"
 				},
 				{
 					"x": "9",
 					"y": "33",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "3",
+					"target_bank": "12"
 				},
 				{
 					"x": "30",
 					"y": "42",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "4",
+					"target_bank": "12"
 				}
 			],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "22",
+					"y": "42",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_laubdorf_sign_0"
+					}
+				},
+				{
+					"x": "28",
+					"y": "33",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_laubdorf_sign_1"
+					}
+				}
+			]
 		},
 		"levelscripts": "map_3_9_laubdorf_levelscripts",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "SOUTH",
 					"displacement": "-16",
 					"bank": "3",
 					"map_idx": "8",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "NORTH",
+					"displacement": "4",
+					"bank": "3",
+					"map_idx": "10",
 					"field_A": 0,
 					"field_B": 0
 				}

@@ -12,10 +12,16 @@
 #include "save.h"
 #include "constants/pokemon_attributes.h"
 #include "pokemon/basestat.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
+#include "flags.h"
+#include "vars.h"
 
 int incubator_available_slots() {
-  // TODO:
-  return 2; // For testing
+  if (checkflag(FLAG_INCUBATOR)) {
+    return *var_access(INCUBATOR_SLOTS);
+  }
+  return 0;
 }
 
 bool incubator_has_empty_slots() {

@@ -46,6 +46,7 @@ one_pokemon_in_daycare:
     call display_level_gained
     loadpointer 0 str_ask_second_pokemon
     callstd MSG_YES_NO
+    compare LASTRESULT 1
     gotoif EQUAL add_pokemon_to_daycare
 ask_if_pokemon_should_be_removed:
     loadpointer 0 str_remove_pokemon
@@ -104,6 +105,7 @@ add_pokemon_to_daycare:
 ask_if_second_pokemon_should_be_added:
     loadpointer 0 str_ask_second_pokemon
     callstd MSG_YES_NO
+    compare LASTRESULT 1
     gotoif EQUAL add_pokemon_to_daycare
     goto goodbye
 

@@ -24,7 +24,7 @@ items:
     .word pokeradar_init //should be initilaizer func
     .word str_pokepad_pokeradar_desc //should be descr
     // Incubator
-    .word 0x828//FLAG_INCUBATOR
+    .word FLAG_INCUBATOR
     .word str_pokepad_incubator
     .word incubator_initialize
     .word str_pokepad_incubator_desc

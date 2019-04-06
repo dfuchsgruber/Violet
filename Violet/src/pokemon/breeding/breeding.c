@@ -51,6 +51,21 @@ void breeding_alter_egg_species(u16 *species, daycare_stru *daycare) {
 			*species = POKEMON_RELAXO; // Can't breed Munchlax without lax incense
 		}
 		break;
+	case POKEMON_MOBAI:
+		if (mother_item != ITEM_STEINRAUCH && father_item != ITEM_STEINRAUCH) {
+			*species = POKEMON_MOGELBAUM; // Can't breed Mobai without rock incense
+		}
+		break;
+	case POKEMON_KLINGPLIM:
+		if (mother_item != ITEM_SCHEUCHRAUCH && father_item != ITEM_SCHEUCHRAUCH) {
+			*species = POKEMON_PALIMPALIM;
+		}
+		break;
+	case POKEMON_WONNEIRA:
+		if (mother_item != ITEM_GLUECKSRAUCH && father_item != ITEM_GLUECKSRAUCH) {
+			*species = POKEMON_CHANEIRA;
+		}
+		break;
 	} // Wobuffet and Wynaut have been removed from the dex (who likes them anyway?)
 }
 

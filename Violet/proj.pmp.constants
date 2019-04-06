@@ -53,5 +53,6 @@
 	"mugshot_character" : "constants/mugshot_character.const",
 	"battle_results" : "constants/battle_results.const",
 	"specials" : "constants/specials.const",
-	"sav_keys" : "constants/sav_keys.const"
+	"sav_keys" : "constants/sav_keys.const",
+	"levelscript_types" : "constants/levelscript_types.const"
 }

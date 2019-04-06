@@ -19,7 +19,7 @@
 					"behaviour_range": 17,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x83c1cf",
+					"script": "ow_script_0x16b06a",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -218,7 +218,7 @@
 				}
 			]
 		},
-		"levelscripts": 0,
+		"levelscripts": "map_12_0_laubdorf_pokecenter_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

@@ -34,7 +34,7 @@ wild_pokemon_entry wild_pokemon_3_24_rod_entries[10] = {
 	[WILD_POKEMON_DENSITY_SUPER_ROD_0_40_PERCENT] = 
 		{.level_min = 15, .level_max = 25, .species = POKEMON_KREBSCORPS},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_1_40_PERCENT] = 
-		{.level_min = 20, .level_max = 30, .species = POKEMON_DUOKLES},
+		{.level_min = 20, .level_max = 30, .species = POKEMON_KARPADOR},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_2_15_PERCENT] = 
 		{.level_min = 15, .level_max = 25, .species = POKEMON_GARADOS},
 	[WILD_POKEMON_DENSITY_SUPER_ROD_3_4_PERCENT] = 

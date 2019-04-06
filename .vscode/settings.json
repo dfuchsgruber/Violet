@@ -10,7 +10,10 @@
         "worldmap.h": "c",
         "breeding.h": "c",
         "basestat.h": "c",
-        "move_tutor.h": "c"
+        "move_tutor.h": "c",
+        "item_hold_effects.h": "c",
+        "wild_pokemon.h": "c",
+        "party.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

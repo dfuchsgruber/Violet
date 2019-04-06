@@ -164,3 +164,18 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x4F * 4))
                 .word incubator_has_empty_slots | 1
                 .pool
+
+.org (special_table + (0x50 * 4))
+                .word route_9_cave_puzzle_get_state | 1
+
+.org (special_table + (0x51 * 4))
+                .word route_9_cave_puzzle_set_last_rock | 1
+
+.org (special_table + (0x52 * 4))
+                .word route_9_cave_puzzle_get_last_rock | 1
+
+.org (special_table + (0x53 * 4))
+                .word route_9_cave_puzzle_rock | 1
+
+.org (special_table + (0x54 * 4))
+                .word route_9_cave_puzzle_reset | 1

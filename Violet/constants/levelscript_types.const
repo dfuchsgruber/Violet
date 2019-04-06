@@ -1,0 +1,13 @@
+{
+    "type" : "enum",
+    "base" : 1,
+    "values" : [
+        "LEVELSCRIPT_TYPE_ON_LOAD",
+        "LEVELSCRIPT_TYPE_ON_FRAME_TABLE",
+        "LEVELSCRIPT_TYPE_ON_TRANSITION",
+        "LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE",
+        "LEVELSCRIPT_TYPE_ON_RESUME",
+        "LEVELSCRIPT_TYPE_ON_DIVE_WARP",
+        "LEVELSCRIPT_TYPE_ON_RETURN_TO_OVERWORLD"
+    ]
+}
