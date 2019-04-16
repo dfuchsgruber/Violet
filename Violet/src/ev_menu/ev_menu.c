@@ -320,7 +320,7 @@ bool ev_menu_increase_effective_ev() {
 }
 
 void ev_menu_callback_return() {
-    if (!fading_is_active()) {
+    if (!fading_is_active() && cry_has_finished()) {
     	pokemon_party_menu_current_index2 = fmem.ev_menu_state->party_idx;
         free(bg_get_tilemap(0));
         free(bg_get_tilemap(1));

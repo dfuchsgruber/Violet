@@ -214,6 +214,8 @@ wild_pokemon_habitat wild_pokemon_laubdorf_water;
 wild_pokemon_habitat wild_pokemon_laubdorf_rod;
 wild_pokemon_habitat wild_pokemon_route_9_water;
 wild_pokemon_habitat wild_pokemon_route_9_rod;
-
+wild_pokemon_habitat wild_pokemon_route_10_water;
+wild_pokemon_habitat wild_pokemon_route_10_rod;
+wild_pokemon_habitat wild_pokemon_route_10_clouds_grass;
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

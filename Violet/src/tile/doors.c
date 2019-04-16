@@ -14,6 +14,7 @@ u8 door_animation_8_palettes[] = {7, 7, 7, 7, 7, 7, 7, 7};
 u8 door_animation_9_palettes[] = {8, 8, 8, 8, 8, 8, 8, 8};
 u8 door_animation_10_palettes[] = {7, 7, 7, 7, 7, 7, 7, 7};
 u8 door_animation_11_palettes[] = {9, 9, 9, 9, 9, 9, 9, 9};
+u8 door_animation_12_palettes[] = {8, 8, 8, 8, 8, 8, 8, 8};
 
 extern u32 gfx_tileset_door_anim_0Tiles[];
 extern u32 gfx_tileset_door_anim_1Tiles[];
@@ -27,6 +28,7 @@ extern u32 gfx_tileset_door_anim_8Tiles[];
 extern u32 gfx_tileset_door_anim_9Tiles[];
 extern u32 gfx_tileset_door_anim_10Tiles[];
 extern u32 gfx_tileset_door_anim_11Tiles[];
+extern u32 gfx_tileset_door_anim_12Tiles[];
 
 door_animation door_animations[] = {
     {0x2AA, 0, 0, gfx_tileset_door_anim_0Tiles, door_animation_0_palettes},
@@ -41,6 +43,7 @@ door_animation door_animations[] = {
     {0x36a, 1, 0, gfx_tileset_door_anim_9Tiles, door_animation_9_palettes},
     {0x291, 1, 0, gfx_tileset_door_anim_10Tiles, door_animation_10_palettes},
     {0x2D9, 0, 0, gfx_tileset_door_anim_11Tiles, door_animation_11_palettes},
+    {0x2DD, 0, 0, gfx_tileset_door_anim_12Tiles, door_animation_12_palettes},
     {0, 0, 0, 0, 0}
 };
 

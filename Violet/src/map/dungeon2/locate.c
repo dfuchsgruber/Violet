@@ -53,8 +53,15 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 	{3, 10, 0x4, 0x37, DTYPE_OCEAN}, // Route 9
 
 	{3, 10, 0x1, 0x1f, DTYPE_OCEAN},
-	{3, 10, 0x19, 0x3, DTYPE_OCEAN},
-	// TODO locate ocean dungeons after rework of sea routes
+	{3, 11, 0x2, 0x8, DTYPE_OCEAN}, // Route 10
+	{3, 11, 0x3, 0x16, DTYPE_OCEAN},
+	{3, 11, 0x1, 0x26, DTYPE_OCEAN},
+
+	{3, 11, 0x1, 0x44, DTYPE_OCEAN},
+	{3, 11, 0x23, 0x1C, DTYPE_OCEAN},
+	{3, 11, 0x25, 0x6, DTYPE_OCEAN},
+	{3, 11, 0x22, 0x39, DTYPE_OCEAN},
+
     // TODO
 };
 

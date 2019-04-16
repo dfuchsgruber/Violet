@@ -1,17 +1,18 @@
 .include "vars.s"
+.include "levelscript_types.s"
 
 .global lscr_0x71dfbc
 
 lscr_0x71dfbc:
-	.byte 0x4
-.word lscr_0x71dfb2
+	.byte LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE
+	.word levelscript_player_set_on_cloud
 	.byte 0x0
 
 
 .align 4
-.global lscr_0x71dfb2
+.global levelscript_player_set_on_cloud
 
-lscr_0x71dfb2:
+levelscript_player_set_on_cloud:
 	.hword MERIANA_ARENA_TRIGGER, 0x0
-	.word ow_script_0x80ed2e
+	.word ow_script_set_player_on_cloud
 	.hword 0x0

@@ -12,11 +12,11 @@ u8 worldmap0_position_data [] = {
     //   [0]   [1]   [2]  [3]   [4]   [5]   [6]   [7]   [8]   [9]    [A]  [B]   [C]   [D]   [E]    [F]  [10]  [11]  [12]  [13]  [14]
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6d, 0x6d, 0x6d, 0x5a, 
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6d, ____, ____, ____, 
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6d, ____, ____, 0x6e, 
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x60, ____, ____, ____, 
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x60, ____, ____, 0x6e, 
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6c, ____, ____, ____,
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6c, ____, ____, 0x6e,
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x7e, ____, ____, 0x87,
 
@@ -28,9 +28,9 @@ u8 worldmap0_position_data [] = {
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x7a, 0x7a, 0x7a, 0x7a, 0x59,
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x65,
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6f, ____, ____, ____, 0x65,
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0xa2, 0x65,
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6f, ____, ____, 0xa2, 0x65,
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x58,
 
@@ -89,9 +89,11 @@ worldmap_shape_t worldmap_shape_route_2_horizontal = {1, 2, 3, 1};
 
 worldmap_shape_t worldmap_shape_route_2_clockmaker = {3, 2, 1, 1};
 
-worldmap_shape_t worldmap_shape_route_9_vertical = {.x = 0x12, .y = 0, .width = 1, .height = 2};
+worldmap_shape_t worldmap_shape_route_9_vertical = {.x = 0, .y = 0, .width = 1, .height = 2};
 
-worldmap_shape_t worldmap_shape_route_9_horizontal = {.x = 0x13, .y = 0, .width = 2, .height = 1};
+worldmap_shape_t worldmap_shape_route_9_horizontal = {.x = 1, .y = 0, .width = 2, .height = 1};
+
+worldmap_shape_t worldmap_shape_route_10_vertical = {.x = 0, .y = 0, .width = 1, .height = 3};
 
 worldmap_shape_t *worldmap_pattern_1x1[1] = {
 	&worldmap_shape_1x1_no_displacement
@@ -122,6 +124,14 @@ worldmap_shape_t *worldmap_pattern_route_9[2] = {
 	&worldmap_shape_route_9_vertical, &worldmap_shape_route_9_horizontal
 };
 
+worldmap_shape_t *worldmap_pattern_route_10[1] = {
+	&worldmap_shape_route_10_vertical
+};
+
+worldmap_shape_t *worldmap_pattern_route_11[1] = {
+	&worldmap_shape_1x2_no_displacement
+};
+
 worldmap_shape_t **worldmap0_namespace_patterns[] = {
 	worldmap_pattern_1x1, // MAP_AMONIA
 	worldmap_pattern_1x1, // MAP_MERIANA_CITY
@@ -145,8 +155,8 @@ worldmap_shape_t **worldmap0_namespace_patterns[] = {
 	worldmap_pattern_1x1, // MAP_ROUTE_7
 	worldmap_pattern_1x1, // MAP_ROUTE_8
 	worldmap_pattern_route_9, // MAP_ROUTE_9
-	worldmap_pattern_1x1, // MAP_ROUTE_10
-	worldmap_pattern_1x1, // MAP_ROUTE_11
+	worldmap_pattern_route_10, // MAP_ROUTE_10
+	worldmap_pattern_route_11, // MAP_ROUTE_11
 	worldmap_pattern_1x1, // MAP_ROUTE_12
 	worldmap_pattern_1x1, // MAP_ROUTE_13
 	worldmap_pattern_1x1, // MAP_ROUTE_14
@@ -256,9 +266,9 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0xC, 0x6}, // MAP_ROUTE_6
 	{0x0, 0x0}, // MAP_ROUTE_7
 	{0x12, 0x3}, // MAP_ROUTE_8
-	{0x0, 0x0}, // MAP_ROUTE_9
-	{0x0, 0x0}, // MAP_ROUTE_10
-	{0x0, 0x0}, // MAP_ROUTE_11
+	{0x12, 0x0}, // MAP_ROUTE_9
+	{0x15, 0x1}, // MAP_ROUTE_10
+	{0x11, 0xA}, // MAP_ROUTE_11
 	{0x0, 0x0}, // MAP_ROUTE_12
 	{0x0, 0x0}, // MAP_ROUTE_13
 	{0x0, 0x0}, // MAP_ROUTE_14
@@ -282,7 +292,7 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0x0, 0x0}, // MAP_SIEGESSTRASSE
 	{0x0, 0x0}, // MAP_ROCKET_HQ
 	{0x0, 0x0}, // MAP_NAMESPACE_134
-	{0x0, 0x0}, // MAP_KUESTENBERG
+	{0x15, 0x4}, // MAP_KUESTENBERG
 	{0x0, 0x0}, // MAP_SAFARI_ZONE
 	{0x0, 0x0}, // MAP_POKEMON_LIGA
 	{0x0, 0x0}, // MAP_VULCANO

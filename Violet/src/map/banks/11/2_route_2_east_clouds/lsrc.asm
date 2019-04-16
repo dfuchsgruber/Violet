@@ -1,14 +1,8 @@
-.include "vars.s"
+.include "levelscript_types.s"
 
 .global lscr_route_2_east_clouds
 
 lscr_route_2_east_clouds:
-	.byte 0x4
-.word type_4
+	.byte LEVELSCRIPT_TYPE_ON_WARP_INTO_MAP_TABLE
+	.word levelscript_player_set_on_cloud
 	.byte 0x0
-
-
-type_4:
-	.hword MERIANA_ARENA_TRIGGER, 0x0
-	.word ow_script_0x80ed2e
-	.hword 0x0

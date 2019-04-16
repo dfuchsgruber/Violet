@@ -866,7 +866,7 @@
 					}
 				},
 				{
-					"target_index": 42,
+					"target_index": "76",
 					"picture": 101,
 					"field_2": 0,
 					"field_3": 0,
@@ -884,7 +884,7 @@
 					"script_std": "PERSON_EGG",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_BARSCHWA"
+						"species": "POKEMON_KANIVANHA"
 					}
 				},
 				{
@@ -1545,7 +1545,7 @@
 		},
 		"levelscripts": "lscr_0x726e98",
 		"connections": {
-			"connection_cnt": 3,
+			"connection_cnt": 4,
 			"connections": [
 				{
 					"direction": "NORTH",
@@ -1570,6 +1570,14 @@
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 7
+				},
+				{
+					"direction": "SOUTH",
+					"displacement": "14",
+					"bank": "3",
+					"map_idx": "12",
+					"field_A": 0,
+					"field_B": 0
 				}
 			]
 		},

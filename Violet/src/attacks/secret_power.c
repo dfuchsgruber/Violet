@@ -53,6 +53,9 @@ void bsc_cmd_xE4_secret_power() {
 	case BATTLE_BG_FIRE:
 		battle_effects[3] = BATTLE_EFFECT_FIRE;
 		break;
+	case BATTLE_BG_GRAVEYARD:
+		battle_effects[3] = BATTLE_EFFECT_LOWER_SPECIAL_DEFENSE;
+		break;
 	default:
 	case BATTLE_BG_EVOLUTION:
 	case BATTLE_BG_CAPTURE:

@@ -44,6 +44,7 @@ extern const unsigned short gfx_battle_bg_pondTiles[];
 extern const unsigned short gfx_battle_bg_shoreTiles[];
 extern const unsigned short gfx_battle_bg_streetTiles[];
 extern const unsigned short gfx_battle_bg_watercaveTiles[];
+extern const unsigned short gfx_battle_bg_graveyardTiles[];
 
 extern const unsigned short gfx_battle_bg_capturedPal[];
 extern const unsigned short gfx_battle_bg_cavePal[];
@@ -61,6 +62,7 @@ extern const unsigned short gfx_battle_bg_pondPal[];
 extern const unsigned short gfx_battle_bg_shorePal[];
 extern const unsigned short gfx_battle_bg_streetPal[];
 extern const unsigned short gfx_battle_bg_watercavePal[];
+extern const unsigned short gfx_battle_bg_graveyardPal[];
 
 extern const unsigned short gfx_battle_bg_capturedMap[];
 extern const unsigned short gfx_battle_bg_caveMap[];
@@ -78,6 +80,7 @@ extern const unsigned short gfx_battle_bg_pondMap[];
 extern const unsigned short gfx_battle_bg_shoreMap[];
 extern const unsigned short gfx_battle_bg_streetMap[];
 extern const unsigned short gfx_battle_bg_watercaveMap[];
+extern const unsigned short gfx_battle_bg_graveyardMap[];
 
 // Battle anim bg
 extern const unsigned short gfx_stance_changeTiles[];

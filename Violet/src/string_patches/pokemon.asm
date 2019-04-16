@@ -100,6 +100,7 @@ str_entwicklung:
 	.string "Entwicklung"
 
 .global pokemon_stat_names
+.align 4
 pokemon_stat_names:
 	.word 0
 	.word str_kp

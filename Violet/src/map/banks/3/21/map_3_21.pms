@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_91",
 		"events": {
-			"person_cnt": 28,
+			"person_cnt": 29,
 			"warp_cnt": 3,
 			"trigger_cnt": 4,
 			"signpost_cnt": 18,
@@ -621,6 +621,27 @@
 					"value": {
 						"item": 0,
 						"species": 0
+					}
+				},
+				{
+					"target_index": "33",
+					"picture": "101",
+					"script_std": "PERSON_EGG",
+					"field_3": 0,
+					"x": "71",
+					"y": "38",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_FELSIGE_OEDNISS_EGG_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KAUMALAT"
 					}
 				}
 			],

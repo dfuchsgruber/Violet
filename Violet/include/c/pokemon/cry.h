@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_POKEMON_CRY_H_
 #define INCLUDE_C_POKEMON_CRY_H_
 
+#include "types.h"
 #include "pokemon/count.h"
 
 typedef struct {
@@ -25,6 +26,19 @@ pokemon_cry pokemon_cries_backward[POKEMON_CNT];
  * @param feature Feature for the cry
  */
 void pokemon_play_cry(u16 species, u8 feature);
+
+/**
+ * Big callback to proceed the cry delay and return the volume to normal once the cry has finished.
+ * @param self self-reference in the big_callback list
+ */
+void cry_proceed(u8 self);
+
+/**
+ * Checks if a cry has finished and if so, clears something (maybe volume related?). This
+ * function is recommended to be checked in each frame after a cry has been launched.
+ * @return if any cry has finished (i.e. cry_proceed is not an active big_callback)
+ */
+bool cry_has_finished();
 
 // Extern cries from wav2agb
 

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_143",
 		"events": {
-			"person_cnt": 22,
+			"person_cnt": 23,
 			"warp_cnt": 2,
 			"trigger_cnt": 1,
 			"signpost_cnt": 1,
@@ -490,6 +490,27 @@
 						"item": 0,
 						"species": 0
 					}
+				},
+				{
+					"target_index": "23",
+					"picture": "101",
+					"script_std": "PERSON_EGG",
+					"field_3": 0,
+					"x": "25",
+					"y": "10",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_KUESTENBERG_EGG_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FLUNKIFER"
+					}
 				}
 			],
 			"warps": [
@@ -545,7 +566,7 @@
 		},
 		"levelscripts": "lscr_0x16215f",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "SOUTH",
@@ -554,6 +575,14 @@
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 4
+				},
+				{
+					"direction": "NORTH",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": "11",
+					"field_A": 0,
+					"field_B": 0
 				}
 			]
 		},

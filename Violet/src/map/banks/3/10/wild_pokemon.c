@@ -17,7 +17,7 @@ wild_pokemon_entry wild_pokemon_route_9_water_entries[5] = {
 };
 
 wild_pokemon_habitat wild_pokemon_route_9_water = {
-	.frequency = 9, .data = wild_pokemon_route_9_water_entries
+	.frequency = 4, .data = wild_pokemon_route_9_water_entries
 };
 
 wild_pokemon_entry wild_pokemon_route_9_rod_entries[10] = {

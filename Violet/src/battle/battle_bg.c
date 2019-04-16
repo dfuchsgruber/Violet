@@ -144,7 +144,14 @@ battle_bg battle_bgs[29] = {
         NULL,
         gfx_battle_bg_millPal
     },
-    // Battle bg 28
+    // Battle bg graveyard 15
+    [BATTLE_BG_GRAVEYARD] = {
+        gfx_battle_bg_graveyardTiles,
+        gfx_battle_bg_graveyardMap,
+        NULL,
+        NULL,
+        gfx_battle_bg_graveyardPal
+    },
 
 };
 
@@ -222,6 +229,9 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 	case BATTLE_BG_STREET:
 		type = TYPE_NORMAL;
 		break;
+    case BATTLE_BG_GRAVEYARD:
+        type = TYPE_GEIST;
+        break;
 	}
 	if (type == battlers[attacking_battler].type1 ||
 			type == battlers[attacking_battler].type2) {
@@ -230,7 +240,6 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 		bsc_offset += 4;
 	}
 }
-
 
 u16 terrain_moves[] = {
     ATTACK_STERNSCHAUER,
@@ -252,6 +261,7 @@ u16 terrain_moves[] = {
     0, //evolution
     0, //captured
     ATTACK_SCHNABEL, //mill
+    [BATTLE_BG_GRAVEYARD] = ATTACK_SPUKBALL
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

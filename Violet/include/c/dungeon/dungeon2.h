@@ -63,7 +63,7 @@ extern "C" {
         
     } dungeon_generator2;
 
-#define NUM_DUNGEON_LOCATIONS 34
+#define NUM_DUNGEON_LOCATIONS 40
     
     typedef struct{
       u8 bank;

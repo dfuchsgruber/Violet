@@ -5,6 +5,9 @@
     "C_Cpp.default.cStandard": "c99",
     "files.associations": {
         "*.const": "json",
-        "*.pms": "json"
-    }
+        "*.pms": "json",
+        "wild_pokemon.h": "c",
+        "bg.h": "c"
+    },
+    "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }
