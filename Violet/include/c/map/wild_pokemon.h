@@ -217,5 +217,7 @@ wild_pokemon_habitat wild_pokemon_route_9_rod;
 wild_pokemon_habitat wild_pokemon_route_10_water;
 wild_pokemon_habitat wild_pokemon_route_10_rod;
 wild_pokemon_habitat wild_pokemon_route_10_clouds_grass;
+wild_pokemon_habitat wild_pokemon_route_11_water;
+wild_pokemon_habitat wild_pokemon_route_11_rod;
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

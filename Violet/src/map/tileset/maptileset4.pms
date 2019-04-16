@@ -6,3841 +6,3841 @@
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x2",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
-				"field_3": "0x1",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_GRASS"
 			},
 			{
 				"behaviour": "0x2",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
-				"field_3": "0x1",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_GRASS"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0xd0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x1",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0xb9",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x1ff",
 				"hm_usage": "0x1f",
 				"field_2": "0x3",
-				"field_3": "0xff",
 				"encounter_type": "0x7",
 				"field_5": "0x3",
 				"field_7": "0x1",
-				"priority": "0x3"
+				"priority": "0x3",
+				"battle_bg": "0xff"
 			},
 			{
 				"behaviour": "0x23",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1e",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1e"
 			},
 			{
 				"behaviour": "0x1f",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1e",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1e"
 			},
 			{
 				"behaviour": "0x1f",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x4",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_CLOUD"
 			},
 			{
 				"behaviour": "0xb8",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
-				"field_3": "0xc1",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xc1"
 			},
 			{
 				"behaviour": "0x1",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xb0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xb0"
 			},
 			{
 				"behaviour": "0xd3",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0xd5",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0xd5"
 			},
 			{
 				"behaviour": "0xb0",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
-				"field_3": "0xb0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xb0"
 			},
 			{
 				"behaviour": "0x14",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x15",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x15"
 			},
 			{
 				"behaviour": "0x1b",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x23",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x23"
 			},
 			{
 				"behaviour": "0x122",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x23",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x23"
 			},
 			{
 				"behaviour": "0x131",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x1db",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xdc",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xdc"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x130",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x24",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x24"
 			},
 			{
 				"behaviour": "0x13",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1e",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1e"
 			},
 			{
 				"behaviour": "0x1f",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x16",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x16"
 			},
 			{
 				"behaviour": "0x17",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1c",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0x1c"
 			},
 			{
 				"behaviour": "0x61",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x25",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x25"
 			},
 			{
 				"behaviour": "0x24",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x25",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x25"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x1",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x2a",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2a"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x1e3",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xe4",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xe4"
 			},
 			{
 				"behaviour": "0x12c",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x23",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x23"
 			},
 			{
 				"behaviour": "0x14",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0x61",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x61"
 			},
 			{
 				"behaviour": "0x60",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x61",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x61"
 			},
 			{
 				"behaviour": "0x60",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x15",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0x15"
 			},
 			{
 				"behaviour": "0xa8",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
-				"field_3": "0xc9",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xc9"
 			},
 			{
 				"behaviour": "0x4",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xb0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xb0"
 			},
 			{
 				"behaviour": "0xdb",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0xdd",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0xdd"
 			},
 			{
 				"behaviour": "0xb0",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
-				"field_3": "0xb0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xb0"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x23",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x22",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x22"
 			},
 			{
 				"behaviour": "0x131",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x1e3",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xe4",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xe4"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x128",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x34",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x34"
 			},
 			{
 				"behaviour": "0x13",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x16",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x16"
 			},
 			{
 				"behaviour": "0x17",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1e",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1e"
 			},
 			{
 				"behaviour": "0x1f",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1e",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1e"
 			},
 			{
 				"behaviour": "0x1f",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x13",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x13"
 			},
 			{
 				"behaviour": "0x13",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x13",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x13"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x2a",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2a"
 			},
 			{
 				"behaviour": "0x1db",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xdc",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xdc"
 			},
 			{
 				"behaviour": "0x1e0",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0xe2",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xe2"
 			},
 			{
 				"behaviour": "0x12c",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1b",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1b"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0x1e",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1f",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1f"
 			},
 			{
 				"behaviour": "0xb0",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
-				"field_3": "0xa8",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xa8"
 			},
 			{
 				"behaviour": "0xbe",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xc9",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xc9"
 			},
 			{
 				"behaviour": "0xdb",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0xdd",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0xdd"
 			},
 			{
 				"behaviour": "0xb0",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
-				"field_3": "0xb0",
 				"encounter_type": "0x6",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xb0"
 			},
 			{
 				"behaviour": "0x24",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x25",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x25"
 			},
 			{
 				"behaviour": "0x1",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0x2a",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2a"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x1db",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0xdc",
 				"encounter_type": "0x5",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xdc"
 			},
 			{
 				"behaviour": "0x1e0",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0xe2",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0xe2"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x2b",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x2b"
 			},
 			{
 				"behaviour": "0x12b",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x28",
 				"encounter_type": "0x1",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x28"
 			},
 			{
 				"behaviour": "0x134",
 				"hm_usage": "0x8",
 				"field_2": "0x0",
-				"field_3": "0x14",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0x14"
 			},
 			{
 				"behaviour": "0x1d",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0x1e",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x1e"
 			},
 			{
 				"behaviour": "0x1f",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x24",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x24"
 			},
 			{
 				"behaviour": "0x60",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0x61",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x61"
 			},
 			{
 				"behaviour": "0x60",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x1d",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0x1d"
 			},
 			{
 				"behaviour": "0x1c",
 				"hm_usage": "0x18",
 				"field_2": "0x0",
-				"field_3": "0x1d",
 				"encounter_type": "0x0",
 				"field_5": "0x2",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0x1d"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			},
 			{
 				"behaviour": "0x16",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
-				"field_3": "0x17",
 				"encounter_type": "0x4",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0"
+				"priority": "0x0",
+				"battle_bg": "0x17"
 			}
 		],
 		"blocks": [

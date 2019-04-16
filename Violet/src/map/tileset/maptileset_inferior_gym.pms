@@ -19707,3841 +19707,3841 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x56",
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": "0",
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": "0x54",
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x58",
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": "0x57",
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x55",
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": "9",
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "9",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": "0x65",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "9",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "9",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_GYM"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": "1"
+				"priority": "1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
-				"field_3": "0x0",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1"
+				"priority": "0x1",
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"field_3": 0,
 				"encounter_type": 0,
 				"field_5": 0,
 				"field_7": 0,
-				"priority": 0
+				"priority": 0,
+				"battle_bg": "0"
 			}
 		]
 	},
