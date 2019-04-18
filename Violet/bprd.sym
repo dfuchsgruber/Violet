@@ -447,3 +447,5 @@ fanfare_callback_wait = 0x08071C20 | 1;
 daycare_remove_egg = 0x08045e74 | 1;
 cry_proceed = 0x08072198 | 1;
 cry_has_finished = 0x08072104 | 1;
+overworld_effect_gfx_anim_table_grass = 0x83A52E0;
+overworld_effect_oam_callback_grass = 0x080db610 | 1;

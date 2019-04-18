@@ -10,7 +10,7 @@
 
 #include "oam.h"
 
-#define ANY_GRASS_CNT 8
+#define ANY_GRASS_CNT 9
 
 typedef struct{
     u8 bank;
@@ -42,5 +42,11 @@ void rock_climb_step();
 void any_grass_step();
 u8 *ash_grass_player_step();
 u8 *any_grass_player_step_null();
+
+/**
+ * Callback for an oam spawned by the overworld effect of grass.
+ * @param reference to the oam object
+ */
+void overworld_effect_oam_callback_grass(oam_object *self);
 
 #endif /* INCLUDE_C_TILE_ANY_GRASS_H_ */

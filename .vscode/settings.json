@@ -7,7 +7,10 @@
         "*.const": "json",
         "*.pms": "json",
         "wild_pokemon.h": "c",
-        "bg.h": "c"
+        "bg.h": "c",
+        "music.h": "c",
+        "color.h": "c",
+        "any_grass.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

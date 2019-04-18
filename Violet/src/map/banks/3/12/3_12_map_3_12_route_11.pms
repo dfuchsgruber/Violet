@@ -308,13 +308,21 @@
 		},
 		"levelscripts": 0,
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "NORTH",
 					"displacement": "-14",
 					"bank": "3",
 					"map_idx": "41",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "SOUTH",
+					"displacement": "-16",
+					"bank": "3",
+					"map_idx": "13",
 					"field_A": 0,
 					"field_B": 0
 				}

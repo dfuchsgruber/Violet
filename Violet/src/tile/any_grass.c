@@ -21,9 +21,16 @@ extern const unsigned short gfx_grass_ashPal[];
 extern unsigned int gfx_rock_climb_animTiles[];
 extern unsigned int gfx_rock_climb_animPal[];
 extern u32 gfx_shallow_waterTiles[];
+extern u32 gfx_graveyard_grassTiles[];
+extern color_t gfx_graveyard_grassPal[16];
 
+extern gfx_frame *overworld_effect_gfx_anim_table_grass[];
 
-graphic any_grass_graphics[] = {
+sprite overworld_effect_grass_sprite = {
+    ATTR0_SHAPE_SQUARE, ATTR1_SIZE_16_16, ATTR2_PRIO(2), 0
+};
+
+graphic ash_grass_graphics[] = {
     {&gfx_grass_ashTiles[0x0], 0x80, 0},
     {&gfx_grass_ashTiles[0x20], 0x80, 0},
     {&gfx_grass_ashTiles[0x40], 0x80, 0},
@@ -31,13 +38,24 @@ graphic any_grass_graphics[] = {
     {NULL, 0x80, 0}
 };
 
+graphic graveyard_grass_graphics[] = {
+    {&gfx_graveyard_grassTiles[0], 0x80, 0},
+    {&gfx_graveyard_grassTiles[0x20], 0x80, 0},
+    {&gfx_graveyard_grassTiles[0x40], 0x80, 0},
+    {&gfx_graveyard_grassTiles[0x60], 0x80, 0},
+    {NULL, 0x80, 0}
+};
+
 palette any_grass_pals[] = {
-    {gfx_grass_ashPal, 0x1080, 0}
+    {gfx_grass_ashPal, 0x1080, 0},
+    {gfx_graveyard_grassPal, 0x1081, 0}
 };
 
 oam_template any_grass_templates[] = {
-    {0xFFFF, 0x1080, (sprite*)0x83A35B4, (gfx_frame**)0x83A52E0,
-    any_grass_graphics, oam_rotscale_anim_table_null, (void (*)(oam_object *))0x80DB611}
+    {0xFFFF, 0x1080, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    ash_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
+    {0xFFFF, 0x1081, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    graveyard_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass}
 };
 
 gfx_frame rock_climb_gfx_anim[] = {
@@ -84,6 +102,7 @@ any_grass tile_any_grasses[ANY_GRASS_CNT] = {
     {1, 30, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
     {0, 12, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
 	{0, 0, 0xBD, true, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
+	{3, 12, 0xBb, false, &any_grass_templates[1], &any_grass_pals[1], any_grass_step, any_grass_player_step_null},
     {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub, any_grass_player_step_null} 
 };
 

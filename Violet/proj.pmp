@@ -209,6 +209,11 @@
 				"map_3_12_route_11",
 				"src/map/banks/3/12/3_12_map_3_12_route_11.pms",
 				"MAP_ROUTE_11"
+			],
+			"13": [
+				"map_3_13_ceometria",
+				"src/map/banks/3/13/map_3_13_ceometria.pms",
+				"MAP_CEOMETRIA"
 			]
 		},
 		"4": {
@@ -1070,6 +1075,10 @@
 		"map_footer_32_route_11": [
 			32,
 			"src/map/banks/3/12/map_footer_32_route_11.pms"
+		],
+		"map_footer_33_ceometria": [
+			33,
+			"src/map/banks/3/13/map_footer_33_ceometria.pms"
 		]
 	},
 	"tilesets_primary": {
