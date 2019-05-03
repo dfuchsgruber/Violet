@@ -119,6 +119,10 @@ extern "C" {
     extern const unsigned short gfx_mug_primusPal[];
     extern const unsigned short gfx_mug_hiroineTiles[];
     extern const unsigned short gfx_mug_hiroinePal[];
+    extern const unsigned short gfx_mug_teahTiles[];
+    extern const unsigned short gfx_mug_teahPal[];
+    extern const unsigned short gfx_mug_narcissaTiles[];
+    extern const unsigned short gfx_mug_narcissaPal[];
 
     extern u8 str_mug_mistral[];
     extern u8 str_mug_hiro[];
@@ -143,6 +147,8 @@ extern "C" {
     extern u8 str_mug_larissa[];
     extern u8 str_mug_primus[];
     extern u8 str_mug_celebi[];
+    extern u8 str_mug_teah[];
+    extern u8 str_mug_narcissa[];
 
 #ifdef	__cplusplus
 }

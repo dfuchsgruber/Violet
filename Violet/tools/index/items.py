@@ -26,8 +26,7 @@ def get_item_index(rompath, symbolspath, projectpath):
                 with open(filepath) as f:
                     content = f.read()
                     # Match callstd giveitems
-                    matches = list(re.findall('copyvarifnotzero 0x8000 (.*)$\ncopyvarifnotzero 0x8001 (.*)', content, flags=re.M)) + list(re.findall('additem (.*) (.*)\n', content, flags=re.M))
-                    mx = list(re.findall('additem (.*) (.*)\n', content, flags=re.M))
+                    matches = list(re.findall('copyvarifnotzero 0x8000 (.*)$\n.*copyvarifnotzero 0x8001 (.*)', content, flags=re.M)) + list(re.findall('additem (.*) (.*)\n', content, flags=re.M))
                     if len(matches):
                         # Reconstruct the bank and map idx and context from the path
                         bank, map_idx = re.findall(f'{root}/(.*?)/(.*?)/.*', filepath)[0]

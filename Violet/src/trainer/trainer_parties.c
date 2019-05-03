@@ -1294,4 +1294,51 @@ trainer_pokemon_default_item_default_attacks trainer_party_xe9_route_11_trainer_
   TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_TOHAIDO),
 };
 
+trainer_pokemon_default_item_default_attacks trainer_party_xea_forest_cemetery_trainer_0[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_ALPOLLO),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_ZWIRRLICHT),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_PARAGONI),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xeb_forest_cemetery_trainer_1[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_ARIADOS),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_SICHLOR),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xec_forest_cemetery_trainer_2[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_BANETTE),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_NEBULAK),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_LICHTEL),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xed_forest_cemetery_trainer_3[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_LATERNECTO),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 41, POKEMON_SIMSALA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_TENGULIST),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xee_forest_cemetery_trainer_4[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 44, POKEMON_SKELABRA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xef_forest_cemetery_trainer_5[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_SHUPPET),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_ALPOLLO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xf0_forest_cemetery_trainer_6[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 43, POKEMON_TROMBORK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xf1_forest_cemetery_trainer_7[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_BRONZEL),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_HYPNO),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_GOLBAT),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_xf2_forest_cemetery_trainer_8[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 41, POKEMON_SLEIMA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_SMOGON),
+};
+
 

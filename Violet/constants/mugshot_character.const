@@ -30,7 +30,8 @@
         "MUGSHOT_IGVA",
         "MUGSHOT_BLACKBEARD",
         "MUGSHOT_HIROINE",
-
-        "MUGSHOT_PLAYER"
+        "MUGSHOT_PLAYER",
+        "MUGSHOT_TEAH",
+        "MUGSHOT_NARCISSA"
     ]
 }

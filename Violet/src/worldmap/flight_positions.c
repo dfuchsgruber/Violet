@@ -12,7 +12,7 @@ stru_flight_position flight_positions[NUM_FLIGHT_POSITONS] = {
     {3, 4, 31, 51, 0}, // Kaskada
     {3, 5, 31, 26, 0}, // Orina City
     {3, 6, 28, 17, 0}, // Inferior
-    {3, 7, 47, 17, 0}, // Unused
+    {3, 13, 0x13, 0x12, 0}, // Ceometria
     {3, 9, 0x12, 0x2b, 0}, // Laubdorf
     {3, 8, 14, 12, 0}, // Unused
     {3, 10, 24, 39, 0},
@@ -68,7 +68,7 @@ flight_position_association_t flight_position_associations[108] = {
     [MAP_ROUTE_24 - 0x58] = {.bank = 3, .map_idx = 43, .flight_position_idx = 0},
     [MAP_ROUTE_25 - 0x58] = {.bank = 3, .map_idx = 44, .flight_position_idx = 0},
     [MAP_SILVANIA_WALD - 0x58] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
-    [MAP_PKMN_FRIEDHOF - 0x58] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
+    [MAP_WALDFRIEDHOF - 0x58] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
     [MAP_NAMESPACE_128 - 0x58] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
     [MAP_ASCHHAIN - 0x58] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
     [MAP_TUNNELPFAD - 0x58] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},

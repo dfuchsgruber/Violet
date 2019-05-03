@@ -43,12 +43,14 @@ ow_script_ceometria_person_5:
 
 ow_script_ceometria_person_6:
     loadpointer 0 str_6
-    callstd MSG_FACE
+    callstd MSG_KEEPOPEN
+    release
     end
 
 ow_script_ceometria_person_7:
     loadpointer 0 str_7
-    callstd MSG_FACE
+    callstd MSG_KEEPOPEN
+    release
     end
 
 ow_script_ceometria_person_8:

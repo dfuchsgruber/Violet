@@ -10,7 +10,10 @@
 
 #include "oam.h"
 
-#define ANY_GRASS_CNT 9
+#define ANY_GRASS_CNT 10
+
+#define ANY_GRASS_ASH 0
+#define ANY_GRASS_GRAVEYARD 1
 
 typedef struct{
     u8 bank;

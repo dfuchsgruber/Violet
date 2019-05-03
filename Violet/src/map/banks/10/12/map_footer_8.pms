@@ -852,6 +852,6 @@
 		"border_height": 2,
 		"field_1A": 0
 	},
-	"label": "map_footer_8",
+	"label": "map_footer_8_pokestop",
 	"type": "footer"
 }

@@ -32,7 +32,7 @@ u8 worldmap0_position_data [] = {
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6f, ____, ____, 0xa2, 0x65,
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x58,
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x5f, ____, ____, ____, 0x58,
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 
 
@@ -252,7 +252,7 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0x15, 0x5}, // MAP_KASKADA
 	{0xF, 0x6}, // MAP_ORINA_CITY
 	{0xB, 0x6}, // MAP_INFERIOR
-	{0x0, 0x0}, // MAP_CEOMETRIA
+	{0x11, 0xB}, // MAP_CEOMETRIA
 	{0x12, 0x2}, // MAP_LAUBDORF
 	{0x0, 0x0}, // MAP_INDIGO_PLATEAU
 	{0x0, 0x0}, // MAP_SAFFRONIA_CITY
@@ -268,7 +268,7 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0x12, 0x3}, // MAP_ROUTE_8
 	{0x12, 0x0}, // MAP_ROUTE_9
 	{0x15, 0x1}, // MAP_ROUTE_10
-	{0x11, 0xA}, // MAP_ROUTE_11
+	{0x11, 0x9}, // MAP_ROUTE_11
 	{0x0, 0x0}, // MAP_ROUTE_12
 	{0x0, 0x0}, // MAP_ROUTE_13
 	{0x0, 0x0}, // MAP_ROUTE_14

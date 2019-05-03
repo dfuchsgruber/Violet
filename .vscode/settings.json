@@ -10,7 +10,9 @@
         "bg.h": "c",
         "music.h": "c",
         "color.h": "c",
-        "any_grass.h": "c"
+        "any_grass.h": "c",
+        "map_namespaces.h": "c",
+        "sprite.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

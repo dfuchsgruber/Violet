@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_465",
 	"data": {
 		"border": [
 			[
@@ -1383,5 +1381,7 @@
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_465_indoor_layout_two_levels_5",
+	"type": "footer"
 }

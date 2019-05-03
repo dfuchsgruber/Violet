@@ -751,6 +751,8 @@ song song_table[] = {
   // Song 373, (=0x175)
   {mus_laubdorf, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 374, (=0x176)
+  {mus_ceometria2, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 375, (=0x177) TODO: compose and insert the cemetery theme, you lazy piece of ...
   {mus_ceometria2, SONG_TYPE_SONG, SONG_TYPE_SONG}
 
 };

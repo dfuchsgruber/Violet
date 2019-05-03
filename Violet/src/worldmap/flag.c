@@ -30,6 +30,8 @@ u8 worldmap_lower_layer_check(u8 namespace) {
 		flag = WM_INFERIOR; break;
 	case MAP_LAUBDORF:
 		flag = WM_LAUBDORF; break;
+	case MAP_CEOMETRIA:
+		flag = WM_CEOMETRIA; break;
 	case 0xC5:
 		return WORLDMAP_FLAG_CHECK_INVALID;
 	default: return WORLDMAP_FLAG_CHECK_NO_FLAG;

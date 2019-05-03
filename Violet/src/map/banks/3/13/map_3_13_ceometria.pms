@@ -3,9 +3,9 @@
 		"footer": "map_footer_33_ceometria",
 		"events": {
 			"person_cnt": 11,
-			"warp_cnt": 0,
+			"warp_cnt": 4,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
+			"signpost_cnt": 3,
 			"persons": [
 				{
 					"target_index": "1",
@@ -105,7 +105,7 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"alert_radius": 0,
-					"script": 0,
+					"script": "ow_script_ceometria_person_4",
 					"flag": 0,
 					"value": {
 						"item": 0,
@@ -199,7 +199,7 @@
 				{
 					"target_index": "10",
 					"picture": "92",
-					"script_std": 0,
+					"script_std": "PERSON_ITEM",
 					"field_3": 0,
 					"x": "42",
 					"y": "33",
@@ -239,19 +239,112 @@
 					}
 				}
 			],
-			"warps": [],
+			"warps": [
+				{
+					"x": "19",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": "19"
+				},
+				{
+					"x": "18",
+					"y": "6",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "1",
+					"target_bank": "19"
+				},
+				{
+					"x": "38",
+					"y": "16",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "2",
+					"target_bank": "19"
+				},
+				{
+					"x": "34",
+					"y": "27",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "4",
+					"target_bank": "19"
+				}
+			],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "21",
+					"y": "18",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ceometria_sign_town"
+					}
+				},
+				{
+					"x": "41",
+					"y": "16",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ceometria_sign_move_deleter"
+					}
+				},
+				{
+					"x": "9",
+					"y": "40",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ceometria_sign_arena"
+					}
+				}
+			]
 		},
-		"levelscripts": 0,
+		"levelscripts": "map_3_13_ceometria_levelscripts",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "NORTH",
 					"displacement": "16",
 					"bank": "3",
 					"map_idx": "12",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "EAST",
+					"displacement": "6",
+					"bank": "3",
+					"map_idx": "14",
 					"field_A": 0,
 					"field_B": 0
 				}

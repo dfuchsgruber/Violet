@@ -5352,4 +5352,68 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_xe9_route_11_trainer_8
     },
+    [0xEA] = {
+        .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
+        .encounter_and_gender = {1, 1}, .name = LANGDEP(PSTRING("Elsa"),
+            PSTRING("Elsa")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xea_forest_cemetery_trainer_0
+    },
+    [0xEB] = {
+        .trainerclass = TRAINERCLASS_KAEFERSAMMLER, .sprite = 66,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Distas"),
+            PSTRING("Distas")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xeb_forest_cemetery_trainer_1
+    },
+    [0xEC] = {
+        .trainerclass = TRAINERCLASS_EXORZISTIN, .sprite = 126,
+        .encounter_and_gender = {1, 1}, .name = LANGDEP(PSTRING("Ureia"),
+            PSTRING("Ureya")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xec_forest_cemetery_trainer_2
+    },
+    [0xED] = {
+        .trainerclass = TRAINERCLASS_ASS_TRAINER, .sprite = 8,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Deiter"),
+            PSTRING("Deiter")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_SUPER_EFFECTIVE | TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xed_forest_cemetery_trainer_3,
+        .items = {ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE}
+    },
+    [0xEE] = {
+        .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Erica"),
+            PSTRING("Erica")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xee_forest_cemetery_trainer_4
+    },
+    [0xEF] = {
+        .trainerclass = TRAINERCLASS_PSYCHO, .sprite = 21,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Nepumuk"),
+            PSTRING("Nepumuk")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xef_forest_cemetery_trainer_5
+    },
+    [0xF0] = {
+        .trainerclass = TRAINERCLASS_EXORZISTIN, .sprite = 126,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Aurelia"),
+            PSTRING("Aurelia")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xf0_forest_cemetery_trainer_6
+    },
+    [0xF1] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 78,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Rüpel H."),
+            PSTRING("Grunt H.")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xf1_forest_cemetery_trainer_7
+    },
+    [0xF2] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 109,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Rüpel F."),
+            PSTRING("Grunt F.")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_xf2_forest_cemetery_trainer_8
+    },
 };

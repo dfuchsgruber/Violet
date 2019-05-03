@@ -32,14 +32,17 @@ picture_idx_to_png = {
     49 : 'asset/gfx/overworld/npcs/violet_grunt_m/gfx_ow_violet_grunt_m_0.png',
     50 : 'asset/gfx/overworld/npcs/violet_grunt_f/gfx_ow_violet_grunt_f_0.png',
     66 : 'asset/gfx/overworld/npcs/albus/gfx_ow_albus_0.png',
+    67 : 'asset/gfx/overworld/npcs/blackbeard/gfx_ow_blackbeard.png.display',
     69 : 'asset/gfx/overworld/npcs/felix/gfx_ow_felix_0.png',
     71 : 'asset/gfx/overworld/npcs/tann/gfx_ow_tann_0.png',
     72 : 'asset/gfx/overworld/npcs/rival/gfx_ow_rival_0.png',
+    75 : 'asset/gfx/overworld/npcs/narcissa/gfx_ow_narcissa.png.display',
     78 : 'asset/gfx/overworld/npcs/revolutionary/gfx_ow_revolutionary_0.png',
     79 : 'asset/gfx/overworld/npcs/faun/gfx_ow_faun_0.png',
     80 : 'asset/gfx/overworld/npcs/lester/gfx_ow_lester_0.png',
     81 : 'asset/gfx/overworld/npcs/mia/gfx_ow_mia_0.png',
     82 : 'asset/gfx/overworld/npcs/manus/gfx_ow_manus_0.png',
+    83 : 'asset/gfx/overworld/npcs/teah/gfx_ow_teah.png.display',
     86 : 'asset/gfx/overworld/npcs/igva/gfx_ow_igva_0.png',
     88 : 'asset/gfx/overworld/npcs/mother/gfx_ow_mother_0.png',
     89 : 'asset/gfx/overworld/npcs/blaise/gfx_ow_blaise_0.png',
@@ -122,6 +125,7 @@ class Event_to_image:
                 if pal_offset is None: return None
                 image = agbimage.Image(rom[gfx_offset : gfx_offset + (width * height // 2)], width, height, depth=4)
                 palette = agbpalette.from_data(rom[pal_offset : pal_offset + 16 * 2])
+                # print(f'{hex(gfx_offset)}, {hex(pal_offset)}, {picture_idx}, {pal_tag}')
                 image = image.to_pil_image(palette.to_pil_palette(), transparent=0)
             else:
                 return None

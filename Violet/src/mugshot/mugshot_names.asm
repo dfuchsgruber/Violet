@@ -130,6 +130,13 @@
 	str_mug_primus:
 		.string "Prof. Primus"
 
+.global str_mug_teah
+	str_mug_teah:
+		.string "Teah"
+.global str_mug_narcissa
+	str_mug_narcissa:
+		.string "Narzissa"
+
 
 .elseif LANG_EN
 .endif

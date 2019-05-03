@@ -27,7 +27,7 @@ extern color_t gfx_graveyard_grassPal[16];
 extern gfx_frame *overworld_effect_gfx_anim_table_grass[];
 
 sprite overworld_effect_grass_sprite = {
-    ATTR0_SHAPE_SQUARE, ATTR1_SIZE_16_16, ATTR2_PRIO(2), 0
+    ATTR0_SHAPE_SQUARE, ATTR1_SIZE_16_16, ATTR2_PRIO(3), 0
 };
 
 graphic ash_grass_graphics[] = {
@@ -47,14 +47,14 @@ graphic graveyard_grass_graphics[] = {
 };
 
 palette any_grass_pals[] = {
-    {gfx_grass_ashPal, 0x1080, 0},
-    {gfx_graveyard_grassPal, 0x1081, 0}
+    [ANY_GRASS_ASH] = {gfx_grass_ashPal, 0x1080, 0},
+    [ANY_GRASS_GRAVEYARD] = {gfx_graveyard_grassPal, 0x1081, 0}
 };
 
 oam_template any_grass_templates[] = {
-    {0xFFFF, 0x1080, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    [ANY_GRASS_ASH] = {0xFFFF, 0x1080, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     ash_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
-    {0xFFFF, 0x1081, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    [ANY_GRASS_GRAVEYARD] = {0xFFFF, 0x1081, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     graveyard_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass}
 };
 
@@ -97,12 +97,15 @@ graphic shallow_water_graphics[] = {
 any_grass tile_any_grasses[ANY_GRASS_CNT] = {
     {0, 0, 2, true, (oam_template *)0x083A52E4, NULL, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
     {0, 0, 3, true, (oam_template *)0x083A5800, NULL, any_grass_step, any_grass_player_step_null},
-    {3, 24, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
-    {18, 3, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
-    {1, 30, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
-    {0, 12, 0xBb, false, &any_grass_templates[0], &any_grass_pals[0], any_grass_step, ash_grass_player_step},
+    {3, 24, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
+    {18, 3, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
+    {1, 30, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
+    {0, 12, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
 	{0, 0, 0xBD, true, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
-	{3, 12, 0xBb, false, &any_grass_templates[1], &any_grass_pals[1], any_grass_step, any_grass_player_step_null},
+	{3, 12, 0xBb, false, &any_grass_templates[ANY_GRASS_GRAVEYARD], &any_grass_pals[ANY_GRASS_GRAVEYARD], 
+        any_grass_step, any_grass_player_step_null},
+	{3, 14, 0xBb, false, &any_grass_templates[ANY_GRASS_GRAVEYARD], &any_grass_pals[ANY_GRASS_GRAVEYARD], 
+        any_grass_step, any_grass_player_step_null},
     {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub, any_grass_player_step_null} 
 };
 

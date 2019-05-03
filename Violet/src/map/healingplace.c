@@ -19,12 +19,13 @@ stru_healing_place healing_places[NUM_HEALING_PLACES] = {
     {8, 0}, // Healing place 5
     {9, 1}, // Healing place 6
     {10, 12}, // Healing place 7
-	{12, 0}, // Healing place 8, Laubdorf
+	{12, 0}, // Healing place 8, Laubdorf,
+	{19, 0}, // Healing place 9, Ceometria
     {0xFFFF, 0xFFFF}
 };
 
 u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
-    1, 1, 3, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0xFF
+    1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0xFF
 };
 
 coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
@@ -36,6 +37,7 @@ coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
 		{0x7, 0x4}, // Healing place 6
 		{0x7, 0x4}, // Healing place 7
 		{0x7, 0x4}, // Healing place 8, Laubdorf
+		{0x7, 0x4}, // Healing place 9, Ceometria
 		{-1, -1}
 };
 

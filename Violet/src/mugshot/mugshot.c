@@ -56,7 +56,10 @@ mugshot mugshots[] = {
     {&gfx_mug_primusTiles, &gfx_mug_primusPal, str_mug_primus},
     {&gfx_mug_igvaTiles, &gfx_mug_igvaPal, str_mug_igva},
     {&gfx_mug_blackbeardTiles, &gfx_mug_blackbeardPal, str_mug_blackbeard},
-    {&gfx_mug_hiroineTiles, &gfx_mug_hiroinePal, str_mug_hiro}
+    {&gfx_mug_hiroineTiles, &gfx_mug_hiroinePal, str_mug_hiro},
+
+	[MUGSHOT_TEAH] = {&gfx_mug_teahTiles, &gfx_mug_teahPal, str_mug_teah},
+	[MUGSHOT_NARCISSA] = {&gfx_mug_narcissaTiles, &gfx_mug_narcissaPal, str_mug_narcissa}
 };
 
 void tbox_clear_bottom_line(u8 box_id) {

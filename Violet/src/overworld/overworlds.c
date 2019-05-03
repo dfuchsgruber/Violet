@@ -1310,6 +1310,66 @@ overworld_sprite ow_drampa = {
   oam_rotscale_anim_table_null
 };
 
+static graphic overworld_sprite_blackbeard_sprites[] = {
+	{&gfx_ow_blackbeardTiles[0 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[1 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[2 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[3 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[4 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[5 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[6 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[7 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_blackbeardTiles[8 * 16 * 32 / 2 / 2], 0x100, 0},
+};
+
+overworld_sprite ow_blackbeard = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    &ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_blackbeard_sprites,
+    oam_rotscale_anim_table_null
+};
+
+static graphic overworld_sprite_teah_sprites[] = {
+	{&gfx_ow_teahTiles[0 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[1 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[2 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[3 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[4 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[5 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[6 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[7 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_teahTiles[8 * 16 * 32 / 2 / 2], 0x100, 0},
+};
+
+overworld_sprite ow_teah = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    &ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_teah_sprites,
+    oam_rotscale_anim_table_null
+};
+
+static graphic overworld_sprite_narcissa_sprites[] = {
+	{&gfx_ow_narcissaTiles[0 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[1 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[2 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[3 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[4 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[5 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[6 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[7 * 16 * 32 / 2 / 2], 0x100, 0},
+	{&gfx_ow_narcissaTiles[8 * 16 * 32 / 2 / 2], 0x100, 0},
+};
+
+overworld_sprite ow_narcissa = {
+    0xFFFF, 0x1100 + 0xB, 0x11FF, 0x100,
+	16, 32, 0x1A, 0x1, 0x0, 0x0,
+    &ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_narcissa_sprites,
+    oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1385,7 +1445,7 @@ overworld_sprite *overworld_sprites[] = {
 	(overworld_sprite*) 0x83a41c4,
 	(overworld_sprite*) 0x83a4398,
 	&ow_albus,//(overworld_sprite*) 0x83a43bc,
-	(overworld_sprite*) 0x83a41e8,
+	&ow_blackbeard,// (overworld_sprite*) 0x83a41e8,
 	(overworld_sprite*) 0x83a432c,
 	&ow_felix,//(overworld_sprite*) 0x83a4350,
 //70
@@ -1394,7 +1454,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_rival, //(overworld_sprite*) 0x83a46f8,
 	(overworld_sprite*) 0x83a4668,
 	(overworld_sprite*) 0x83a46d4,
-	(overworld_sprite*) 0x83a4524,
+	&ow_narcissa, //(overworld_sprite*) 0x83a4524,
 	(overworld_sprite*) 0x83a468c,
 	(overworld_sprite*) 0x83a46b0,
 	&ow_revolutionary,//(overworld_sprite*) 0x83a429c,
@@ -1403,7 +1463,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_lester,//(overworld_sprite*) 0x83a4548,
 	&ow_mia, //(overworld_sprite*) 0x83a456c,
 	&ow_manus,//(overworld_sprite*) 0x96d7e58,
-	(overworld_sprite*) 0x83a45b4,
+	&ow_teah, //(overworld_sprite*) 0x83a45b4,
 	(overworld_sprite*) 0x83a45d8,
 	(overworld_sprite*) 0x83a4644,
 	&ow_igva,//(overworld_sprite*) 0x96d85f0,

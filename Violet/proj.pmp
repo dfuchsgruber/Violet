@@ -214,6 +214,11 @@
 				"map_3_13_ceometria",
 				"src/map/banks/3/13/map_3_13_ceometria.pms",
 				"MAP_CEOMETRIA"
+			],
+			"14": [
+				"map_3_14_forest_cemetery",
+				"src/map/banks/3/14/map_3_14_forest_cemetery.pms",
+				"MAP_WALDFRIEDHOF"
 			]
 		},
 		"4": {
@@ -637,6 +642,40 @@
 				"src/map/banks/14/0/map_14_0_route_10_clouds.pms",
 				"MAP_ROUTE_10"
 			]
+		},
+		"19": {
+			"0": [
+				"map_19_0_ceometria_pokestop",
+				"src/map/banks/19/0/map_19_0_ceometria_pokestop.pms",
+				"MAP_CEOMETRIA"
+			],
+			"1": [
+				"map_19_1_ceometria_indoor_0",
+				"src/map/banks/19/1/map_19_1_ceometria_indoor_0.pms",
+				"MAP_CEOMETRIA"
+			],
+			"2": [
+				"map_19_2_ceometria_indoor_1",
+				"src/map/banks/19/2/map_19_2_ceometria_indoor_1.pms",
+				"MAP_CEOMETRIA"
+			],
+			"3": [
+				"map_19_3_ceometria_indoor_2",
+				"src/map/banks/19/3/map_19_3_ceometria_indoor_2.pms",
+				"MAP_CEOMETRIA"
+			],
+			"4": [
+				"map_19_4_ceometria_indoor_3",
+				"src/map/banks/19/4/map_19_4_ceometria_indoor_3.pms",
+				"MAP_CEOMETRIA"
+			]
+		},
+		"20": {
+			"0": [
+				"map_20_0_forest_cemetery_teahs_house",
+				"src/map/banks/20/0/map_20_0_forest_cemetery_teahs_house.pms",
+				"MAP_WALDFRIEDHOF"
+			]
 		}
 	},
 	"footers": {
@@ -796,37 +835,9 @@
 			3,
 			"src/map/banks/4/2/map_footer_3.pms"
 		],
-		"map_footer_432": [
-			432,
-			"src/map/banks/4/4/map_footer_432.pms"
-		],
-		"map_footer_276": [
-			276,
-			"src/map/banks/5/0/map_footer_276.pms"
-		],
-		"map_footer_266": [
-			266,
-			"src/map/banks/5/2/map_footer_266.pms"
-		],
-		"map_footer_8": [
-			8,
-			"src/map/banks/10/12/map_footer_8.pms"
-		],
-		"map_footer_433": [
-			433,
-			"src/map/banks/5/11/map_footer_433.pms"
-		],
-		"map_footer_434": [
-			434,
-			"src/map/banks/5/12/map_footer_434.pms"
-		],
 		"map_footer_456": [
 			456,
 			"src/map/banks/5/13/map_footer_456.pms"
-		],
-		"map_footer_180": [
-			180,
-			"src/map/banks/6/0/map_footer_180.pms"
 		],
 		"map_footer_181": [
 			181,
@@ -836,21 +847,9 @@
 			28,
 			"src/map/banks/6/2/map_footer_28.pms"
 		],
-		"map_footer_10": [
-			10,
-			"src/map/banks/6/3/map_footer_10.pms"
-		],
 		"map_footer_393": [
 			393,
 			"src/map/banks/6/9/map_footer_393.pms"
-		],
-		"map_footer_437": [
-			437,
-			"src/map/banks/6/13/map_footer_437.pms"
-		],
-		"map_footer_439": [
-			439,
-			"src/map/banks/6/14/map_footer_439.pms"
 		],
 		"map_footer_445": [
 			445,
@@ -860,10 +859,6 @@
 			182,
 			"src/map/banks/7/1/map_footer_182.pms"
 		],
-		"map_footer_6": [
-			6,
-			"src/map/banks/7/8/map_footer_6.pms"
-		],
 		"map_footer_12": [
 			12,
 			"src/map/banks/7/5/map_footer_12.pms"
@@ -872,30 +867,6 @@
 			394,
 			"src/map/banks/7/10/map_footer_394.pms"
 		],
-		"map_footer_21": [
-			21,
-			"src/map/banks/8/4/map_footer_21.pms"
-		],
-		"map_footer_396": [
-			396,
-			"src/map/banks/8/6/map_footer_396.pms"
-		],
-		"map_footer_397": [
-			397,
-			"src/map/banks/8/7/map_footer_397.pms"
-		],
-		"map_footer_398": [
-			398,
-			"src/map/banks/8/8/map_footer_398.pms"
-		],
-		"map_footer_451": [
-			451,
-			"src/map/banks/8/9/map_footer_451.pms"
-		],
-		"map_footer_452": [
-			452,
-			"src/map/banks/8/10/map_footer_452.pms"
-		],
 		"map_footer_453": [
 			453,
 			"src/map/banks/8/11/map_footer_453.pms"
@@ -903,22 +874,6 @@
 		"map_footer_273": [
 			273,
 			"src/map/banks/9/3/map_footer_273.pms"
-		],
-		"map_footer_411": [
-			411,
-			"src/map/banks/9/9/map_footer_411.pms"
-		],
-		"map_footer_412": [
-			412,
-			"src/map/banks/9/10/map_footer_412.pms"
-		],
-		"map_footer_413": [
-			413,
-			"src/map/banks/9/11/map_footer_413.pms"
-		],
-		"map_footer_414": [
-			414,
-			"src/map/banks/9/12/map_footer_414.pms"
 		],
 		"map_footer_460": [
 			460,
@@ -940,10 +895,6 @@
 			464,
 			"src/map/banks/9/17/map_footer_464.pms"
 		],
-		"map_footer_465": [
-			465,
-			"src/map/banks/9/18/map_footer_465.pms"
-		],
 		"map_footer_14": [
 			14,
 			"src/map/banks/9/19/map_footer_14.pms"
@@ -951,14 +902,6 @@
 		"map_footer_15": [
 			15,
 			"src/map/banks/10/16/map_footer_15.pms"
-		],
-		"map_footer_418": [
-			418,
-			"src/map/banks/10/20/map_footer_418.pms"
-		],
-		"map_footer_469": [
-			469,
-			"src/map/banks/10/22/map_footer_469.pms"
 		],
 		"map_footer_221": [
 			221,
@@ -1004,10 +947,6 @@
 			363,
 			"src/map/banks/2/33/map_footer_363.pms"
 		],
-		"map_footer_9": [
-			9,
-			"src/map/banks/11/0_clock_master_house/map_footer_9.pms"
-		],
 		"map_footer_4": [
 			4,
 			"src/map/banks/11/1_clock_master_path/map_footer_4.pms"
@@ -1027,10 +966,6 @@
 		"map_footer_18_route_8": [
 			18,
 			"src/map/banks/3/8/map_footer_18_route_8.pms"
-		],
-		"map_footer_19_aktania_gengar_house": [
-			19,
-			"src/map/banks/6/4/map_footer_19_aktania_gengar_house.pms"
 		],
 		"map_footer_20_debug": [
 			20,
@@ -1079,11 +1014,120 @@
 		"map_footer_33_ceometria": [
 			33,
 			"src/map/banks/3/13/map_footer_33_ceometria.pms"
+		],
+		"map_footer_276_indoor_layout_0": [
+			276,
+			"src/map/banks/5/0/map_footer_276.pms"
+		],
+		"map_footer_266_indoor_layout_two_levels_0": [
+			266,
+			"src/map/banks/5/2/map_footer_266.pms"
+		],
+		"map_footer_433_indoor_layout_1": [
+			433,
+			"src/map/banks/5/11/map_footer_433.pms"
+		],
+		"map_footer_434_indoor_layout_2": [
+			434,
+			"src/map/banks/5/12/map_footer_434.pms"
+		],
+		"map_footer_432_indoor_layout_3": [
+			432,
+			"src/map/banks/4/4/map_footer_432.pms"
+		],
+		"map_footer_180_indoor_layout_4": [
+			180,
+			"src/map/banks/6/0/map_footer_180.pms"
+		],
+		"map_footer_10_indoor_layout_5": [
+			10,
+			"src/map/banks/6/3/map_footer_10.pms"
+		],
+		"map_footer_indoor_layout_6": [
+			19,
+			"src/map/banks/6/4/map_footer_19_aktania_gengar_house.pms"
+		],
+		"map_footer_437_indoor_layout_7": [
+			437,
+			"src/map/banks/6/13/map_footer_437.pms"
+		],
+		"map_footer_439_indoor_layout_8": [
+			439,
+			"src/map/banks/6/14/map_footer_439.pms"
+		],
+		"map_footer_6_indoor_layout_9": [
+			6,
+			"src/map/banks/7/8/map_footer_6.pms"
+		],
+		"map_footer_8_pokestop": [
+			8,
+			"src/map/banks/10/12/map_footer_8.pms"
+		],
+		"map_footer_21_indoor_layout_10": [
+			21,
+			"src/map/banks/8/4/map_footer_21.pms"
+		],
+		"map_footer_396_indoor_layout_11": [
+			396,
+			"src/map/banks/8/6/map_footer_396.pms"
+		],
+		"map_footer_397_indoor_layout_12": [
+			397,
+			"src/map/banks/8/7/map_footer_397.pms"
+		],
+		"map_footer_398_indoor_layout_13": [
+			398,
+			"src/map/banks/8/8/map_footer_398.pms"
+		],
+		"map_footer_451_indoor_layout_14": [
+			451,
+			"src/map/banks/8/9/map_footer_451.pms"
+		],
+		"map_footer_452_indoor_layout_15": [
+			452,
+			"src/map/banks/8/10/map_footer_452.pms"
+		],
+		"map_footer_411_indoor_layout_two_levels_1": [
+			411,
+			"src/map/banks/9/9/map_footer_411.pms"
+		],
+		"map_footer_412_indoor_layout_two_levels_2": [
+			412,
+			"src/map/banks/9/10/map_footer_412.pms"
+		],
+		"map_footer_413_indoor_layout_two_levels_3": [
+			413,
+			"src/map/banks/9/11/map_footer_413.pms"
+		],
+		"map_footer_414_indoor_layout_two_levels_4": [
+			414,
+			"src/map/banks/9/12/map_footer_414.pms"
+		],
+		"map_footer_465_indoor_layout_two_levels_5": [
+			465,
+			"src/map/banks/9/18/map_footer_465.pms"
+		],
+		"map_footer_418_indoor_layout_16": [
+			418,
+			"src/map/banks/10/20/map_footer_418.pms"
+		],
+		"map_footer_469_indoor_layout_17": [
+			469,
+			"src/map/banks/10/22/map_footer_469.pms"
+		],
+		"map_footer_9_indoor_layout_18": [
+			9,
+			"src/map/banks/11/0_clock_master_house/map_footer_9.pms"
+		],
+		"map_footer_34_forest_cemetery": [
+			34,
+			"src/map/banks/3/14/map_footer_34_forest_cemetery.pms"
 		]
 	},
 	"tilesets_primary": {
 		"maptileset0": "src/map/tileset/maptileset0.pms",
-		"maptileset12": "src/map/tileset/maptileset12.pms"
+		"maptileset12": "src/map/tileset/maptileset12.pms",
+		"maptileset_ceometria_additional_blocks": "src/map/tileset/maptileset_ceometria_additional_blocks.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",

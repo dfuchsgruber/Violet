@@ -352,7 +352,7 @@ map_namespaces:
 	.global str_mapnamespace_127
 
 	str_mapnamespace_127:
-		.string "PKMN-Friedhof"
+		.string "Waldfriedhof"
 
 
 	.global str_mapnamespace_128

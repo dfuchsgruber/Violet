@@ -130,5 +130,5 @@ str_dungeon_enter_forest_0:
 	.autostring 35 2 "The underwood seems to be light arround here..."
 
 str_dungeon_enter_forest_1:
-	.autostring 35 2 "Dou you want to use Secret Power to cut the thicket?"
+	.autostring 35 2 "Do you want to use Secret Power to cut the thicket?"
 .endif

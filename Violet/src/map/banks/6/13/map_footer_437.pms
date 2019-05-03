@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_437",
 	"data": {
 		"border": [
 			[
@@ -572,138 +570,14 @@
 					"block_idx": 8,
 					"level": 1
 				}
-			],
-			[
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				}
-			],
-			[
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				}
-			],
-			[
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 0
-				},
-				{
-					"block_idx": 8,
-					"level": 1
-				}
 			]
 		],
 		"width": 10,
-		"height": 16,
+		"height": 13,
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_437_indoor_layout_7",
+	"type": "footer"
 }
