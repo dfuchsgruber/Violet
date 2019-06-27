@@ -9,6 +9,7 @@
 #include "music.h"
 #include "vars.h"
 #include "flags.h"
+#include "dns.h"
 
 /*
  * Per each map on each bank we get an additional gras animation by this routine (a table determines which one)
@@ -156,15 +157,16 @@ u8 tile_any_grass_init(coordinate_t *pos){
             if(tile_any_grasses[i].init_func)
                 tile_any_grasses[i].init_func();
             
-            //Load appropriate palette if present
+            // Load appropriate palette if present
             if(tile_any_grasses[i].pal){
-                u8 pal_id = oam_palette_get_index(tile_any_grasses[i].pal->tag);
-                if(pal_id == 0xFF)
-                    pal_id = oam_allocate_palette(tile_any_grasses[i].pal->tag);
-                u16 color = (u16)(pal_id * 16 + 256);
+                u8 pal_idx = oam_palette_get_index(tile_any_grasses[i].pal->tag);
+                if(pal_idx == 0xFF)
+                    pal_idx = oam_allocate_palette(tile_any_grasses[i].pal->tag);
+                u16 color = (u16)(pal_idx * 16 + 256);
                 pal_copy(tile_any_grasses[i].pal->pal, color, 32);
-                pal_apply_shader(pal_id);
-                pal_apply_fading(pal_id);
+                dns_apply_shaders((u16)(16 * (pal_idx + 16)), 16);
+                pal_apply_shader(pal_idx);
+                // pal_apply_fading(pal_idx);
             }
             
             //Instanciate appropriate template

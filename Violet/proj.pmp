@@ -668,6 +668,26 @@
 				"map_19_4_ceometria_indoor_3",
 				"src/map/banks/19/4/map_19_4_ceometria_indoor_3.pms",
 				"MAP_CEOMETRIA"
+			],
+			"5": [
+				"map_19_5_ceometria_gym_entrance",
+				"src/map/banks/19/5/map_19_5_ceometria_gym_waiting_room.pms",
+				"MAP_CEOMETRIA"
+			],
+			"6": [
+				"map_19_6_ceometria_waiting_room",
+				"src/map/banks/19/6/map_19_6_ceometria_waiting_room.pms",
+				"MAP_CEOMETRIA"
+			],
+			"7": [
+				"map_19_7_ceometria_gym_punishment_room",
+				"src/map/banks/19/7/map_19_7_ceometria_gym_punishment_room.pms",
+				"MAP_CEOMETRIA"
+			],
+			"8": [
+				"map_19_8_ceometria_gym_leader_room",
+				"src/map/banks/19/8/map_19_8_ceometria_gym_leader_room.pms",
+				"MAP_CEOMETRIA"
 			]
 		},
 		"20": {
@@ -1122,6 +1142,18 @@
 		"map_footer_34_forest_cemetery": [
 			34,
 			"src/map/banks/3/14/map_footer_34_forest_cemetery.pms"
+		],
+		"map_footer_35_ceometria_gym_waiting_room": [
+			35,
+			"src/map/banks/19/5/map_footer_35_ceometria_gym_waiting_room.pms"
+		],
+		"map_footer_36_ceometria_gym_punishment_room": [
+			36,
+			"src/map/banks/19/7/map_footer_36_ceometria_gym_punishment_room.pms"
+		],
+		"map_footer_34_ceometria_gym_leader_room": [
+			37,
+			"src/map/banks/19/8/map_footer_34_ceometria_gym_leader_room.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1161,7 +1193,8 @@
 		"maptileset60": "src/map/tileset/maptileset60.pms",
 		"maptileset_inferior_gym": "src/map/tileset/maptileset_inferior_gym.pms",
 		"maptileset_laubdorf": "src/map/tileset/maptileset_laubdorf.pms",
-		"maptileset_ceometria": "src/map/tileset/maptileset_ceometria.pms"
+		"maptileset_ceometria": "src/map/tileset/maptileset_ceometria.pms",
+		"maptileset_ceometria_gym": "src/map/tileset/maptileset_ceometria_gym.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1199,6 +1232,7 @@
 		"gfx_maptileset60Tiles": "asset/gfx/tileset/gfx_maptileset60.png",
 		"gfx_maptileset_inferior_gymTiles": "asset/gfx/tileset/gfx_maptileset_inferior_gym.png",
 		"gfx_maptileset_laubdorfTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf.png",
-		"gfx_maptileset_ceometriaTiles": "asset/gfx/tileset/gfx_maptileset_ceometria.png"
+		"gfx_maptileset_ceometriaTiles": "asset/gfx/tileset/gfx_maptileset_ceometria.png",
+		"gfx_maptileset_ceometria_gymTiles": "asset/gfx/tileset/gfx_maptileset_ceometria_gym.png"
 	}
 }

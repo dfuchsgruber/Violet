@@ -12,7 +12,13 @@
         "color.h": "c",
         "any_grass.h": "c",
         "map_namespaces.h": "c",
-        "sprite.h": "c"
+        "sprite.h": "c",
+        "save.h": "c",
+        "ceometria_gym.h": "c",
+        "prng.h": "c",
+        "flags.h": "c",
+        "script.h": "c",
+        "text.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

@@ -213,11 +213,11 @@ str_narcissa_5:
 str_player_0:
     .autostring 34 2 "Mein Name ist PLAYER und ich habe Rin bereits zuvor besiegt.\pIch werde Team Violet aufhalten."
 str_teah_7:
-    .autostring 34 2 "Du bist das Kind, das Rin im Silvania-Wald besiegt hat?\pUnd auch das legendäre Pokémon Groudon sollst du bezwungen haben.\pIch habe deine Ankunft vorhergesehen.\pDu wirst einen interessanten Gegner abgeben."
+    .autostring 34 2 "Du bist das Kind, das Rin im Silvania-Wald besiegt hat?\pUnd auch das legendäre Pokémon Groudon sollst du bezwungen haben.\pMerkwürdig, dass ich deine Ankunft nicht kommen gesehen habeDOTS"
 str_narcissa_6:
     .autostring 34 2 "PLAYER also.\pJa, der Name kommt mir nicht unbekannt vor.\pWie schön, dass du dich Team Violets annimmst.\pJemand, der in der Lage ist, ein legendäres Pokémon zu besiegen, kann es weit bringen.\pDu könntest dir von meiner Großartigkeit einiges abschauen!"
 str_teah_8:
-    .autostring 34 2 "EigenartigDOTS\nIch kann für PLAYER keine Zukunft erkennenDOTS\pAls würde etwas meinen Blick trübenDOTS\pBesitzt du etwa kein Schicksal?\pDu bist eine interessante Person.\pIch erwarte dich in meiner Arena.\pIch rechne damit, dass du mir einen würdigen Kampf liefern wirst."
+    .autostring 34 2 "EigenartigDOTS\pFür PLAYER kann ich keine Zukunft vorhersehen.\pEs ist, als würde etwas meine Sicht trüben.\pBesitzt du kein Schicksal?\pDu bist eine interessante Person.\pIch weiß, dass du gekommen bist, um mich herauszufordern, aber die Zeit für unseren Kampf ist noch nicht reifDOTS"
 str_narcissa_7:
     .autostring 34 2 "Es kann frustrierend sein, jemandem wie mir nachzueifern.\pGröße und Eleganz sind unter anderem auch angeboren.\pRin besitzt sie beide nicht.\pAber duDOTS\nDOTSdu könntest eines Tages vielleicht sogar bei uns großen Trainern mitspielen, wer weißDOTS\pAm Besten hältst du Rin auf, bevor sie ihre versunkene Stadt findet.\pWer weiß, was für niederträchtige Pläne diese Gruppe hat."
 
@@ -265,11 +265,11 @@ str_narcissa_5
 str_player_0:
     .autostring 34 2 "My name is PLAYER and I have defeated Rin once before.\pI will stop Team Violet."
 str_teah_7:
-    .autostring 34 2 "You are the child that defeated Rin in the Silvania-Forest?\pAnd also it is said that you overcame the legendary Pokémon Groudon.\pI have forseen your arrival.\pYou will make an interesting opponent."
+    .autostring 34 2 "You are the child that defeated Rin in the Silvania-Forest?\pAnd also it is said that you overcame the legendary Pokémon Groudon.\pHow strange that I have not foreseen your arrival."
 str_narcissa_6:
     .autostring 34 2 "PLAYER it is.\pYes, this name is not entirely unknown to me.\pHow nice of you to take on Team Violet.\pSomeone who was able to defeat a legendary Pokémon surely has some potential.\pYou could learn a lot of my greatness!"
 str_teah_8:
-    .autostring 34 2 "How curiousDOTS\nI can't see your future, PLAYERDOTS\pIt's like something would darken my sight.\pDon't you have a destiny?\pYou are an interesting person.\pI await you in my gym.\pI know that you will provide me with a proper fight!"
+    .autostring 34 2 "How curiousDOTS\nI can't see your future, PLAYERDOTS\pIt's like something would darken my sight.\pDon't you have a destiny?\pYou are an interesting person.\pI know that you came two challange me, but the time for our battle has not yet come, my intuition tells meDOTS"
 str_narcissa_7:
     .autostring 34 2 "It can be frustrating to emulate somebody like me.\pPeople are partly born with greatness and elegance.\pRin doesn't have either of those.\pYou on the other sideDOTS\nDOTSyou could one day even play with us great trainers, who knowsDOTS\pThe best would be to stop Rin before she finds her sunken city.\pWho knows what spiteful schemes this Team Violet group has woven."
 .endif

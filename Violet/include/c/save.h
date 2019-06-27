@@ -17,6 +17,7 @@
 #include "ev_menu.h"
 #include "pokemon/virtual.h"
 #include "pokemon/breeding.h"
+#include "map/ceometria_gym.h"
 
 #define GP_STACK_SIZE 16
 
@@ -114,6 +115,8 @@ typedef struct custom_memory {
     // wild_pokemon_entry dwild_data_water[5];
     // wild_pokemon_entry dwild_data_rod[10];
     // wild_pokemon_entry dwild_data_radar[5];
+
+    ceometria_gym_state_t ceometria_gym_state;
 
 } custom_memory;
 

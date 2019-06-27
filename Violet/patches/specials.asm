@@ -179,3 +179,9 @@ special_table equ 0x0815FCC0
 
 .org (special_table + (0x54 * 4))
                 .word route_9_cave_puzzle_reset | 1
+
+.org (special_table + (0x55 * 4))
+                .word ceometria_gym_person_buffer_target_room | 1
+
+.org (special_table + (0x56 * 4))
+                .word ceometria_gym_waiting_room_person_get_script
