@@ -1,4 +1,5 @@
 .global bsc_strings
+.global battle_string_decrypt_trainer_name
 
 .align 4
 bsc_strings:

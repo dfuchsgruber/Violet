@@ -1143,17 +1143,21 @@
 			34,
 			"src/map/banks/3/14/map_footer_34_forest_cemetery.pms"
 		],
-		"map_footer_35_ceometria_gym_waiting_room": [
-			35,
-			"src/map/banks/19/5/map_footer_35_ceometria_gym_waiting_room.pms"
-		],
 		"map_footer_36_ceometria_gym_punishment_room": [
 			36,
 			"src/map/banks/19/7/map_footer_36_ceometria_gym_punishment_room.pms"
 		],
-		"map_footer_34_ceometria_gym_leader_room": [
+		"map_footer_35_ceometria_gym_entrance": [
+			35,
+			"src/map/banks/19/5/map_footer_35_ceometria_gym_waiting_room.pms"
+		],
+		"map_footer_37_ceometria_gym_leader_room": [
 			37,
 			"src/map/banks/19/8/map_footer_34_ceometria_gym_leader_room.pms"
+		],
+		"map_footer_38_ceometria_gym_waiting_room": [
+			38,
+			"src/map/banks/19/6/map_footer_38_ceometria_gym_waiting_room.pms"
 		]
 	},
 	"tilesets_primary": {

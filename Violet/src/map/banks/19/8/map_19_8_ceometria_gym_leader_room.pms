@@ -1,13 +1,22 @@
 {
 	"data": {
-		"footer": "map_footer_34_ceometria_gym_leader_room",
+		"footer": "map_footer_37_ceometria_gym_leader_room",
 		"events": {
 			"person_cnt": 0,
-			"warp_cnt": 0,
+			"warp_cnt": 1,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [],
-			"warps": [],
+			"warps": [
+				{
+					"x": "3",
+					"y": "12",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "13",
+					"target_bank": "3"
+				}
+			],
 			"triggers": [],
 			"signposts": []
 		},
@@ -16,16 +25,16 @@
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": 0,
+		"music": "MUS_ARENA_AND_TOP_4_LOTTE",
 		"footer_idx": 37,
 		"namespace": "MAP_CEOMETRIA",
-		"flash_type": 0,
-		"weather": 0,
-		"type": 0,
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": 0,
-		"show_name": 0,
+		"show_name": "DONT_SHOW",
 		"level": 0,
-		"battle_style": 0
+		"battle_style": "BATTLE_TYPE_ARENA"
 	},
 	"label": "map_19_8_ceometria_gym_leader_room",
 	"type": "header"

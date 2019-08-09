@@ -349,5 +349,4 @@ trainer_pokemon_default_item_default_attacks trainer_party_xf0_forest_cemetery_t
 trainer_pokemon_default_item_default_attacks trainer_party_xf1_forest_cemetery_trainer_7[3];
 trainer_pokemon_default_item_default_attacks trainer_party_xf2_forest_cemetery_trainer_8[2];
 
-
 #endif /* INCLUDE_C_TRAINER_PARTY_H_ */

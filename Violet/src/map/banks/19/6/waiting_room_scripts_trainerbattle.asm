@@ -19,6 +19,7 @@ ow_script_ceometria_gym_trainer_variant_0:
    loadpointer 0 str_after_0
    callstd MSG_FACE
    end
+
 ow_script_ceometria_gym_trainer_variant_1:
    trainerbattlestd 0 0xF4 0 str_before_1 str_after_1
    loadpointer 0 str_after_1

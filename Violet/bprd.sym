@@ -449,3 +449,4 @@ cry_proceed = 0x08072198 | 1;
 cry_has_finished = 0x08072104 | 1;
 overworld_effect_gfx_anim_table_grass = 0x83A52E0;
 overworld_effect_oam_callback_grass = 0x080db610 | 1;
+attack_get_pp = 0x08040f1c | 1;

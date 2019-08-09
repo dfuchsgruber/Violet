@@ -1340,5 +1340,3 @@ trainer_pokemon_default_item_default_attacks trainer_party_xf2_forest_cemetery_t
   TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 41, POKEMON_SLEIMA),
   TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_SMOGON),
 };
-
-

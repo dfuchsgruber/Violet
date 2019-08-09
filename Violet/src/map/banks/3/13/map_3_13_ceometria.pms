@@ -3,7 +3,7 @@
 		"footer": "map_footer_33_ceometria",
 		"events": {
 			"person_cnt": 11,
-			"warp_cnt": 4,
+			"warp_cnt": 5,
 			"trigger_cnt": 0,
 			"signpost_cnt": 3,
 			"persons": [
@@ -270,6 +270,14 @@
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": "4",
+					"target_bank": "19"
+				},
+				{
+					"x": "13",
+					"y": "37",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "5",
 					"target_bank": "19"
 				}
 			],

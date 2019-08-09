@@ -1,6 +1,10 @@
 	
 special_table equ 0x0815FCC0
 
+.org (special_table + (0x0 * 4))
+        .word player_party_heal | 1
+        .pool
+
 .org (special_table + (0x6 * 4))
         .word special_mugshot_show | 1
         .pool
@@ -63,7 +67,7 @@ special_table equ 0x0815FCC0
         .pool
 
 .org (special_table + (0x26 * 4))
-        .word special_heal_team_index | 1
+        .word special_player_party_heal_index | 1
         .pool
 
 .org (special_table + (0x2B * 4))
@@ -184,4 +188,13 @@ special_table equ 0x0815FCC0
                 .word ceometria_gym_person_buffer_target_room | 1
 
 .org (special_table + (0x56 * 4))
-                .word ceometria_gym_waiting_room_person_get_script
+                .word ceometria_gym_waiting_room_person_get_script | 1
+
+.org (special_table + (0x57 * 4))
+                .word ceometria_gym_punishment_room_get_script | 1
+
+.org (special_table + (0x58 * 4))
+                .word ceometria_gym_punishment_get_eligible_index | 1
+
+.org (special_table + (0x59 * 4))
+                .word ceometria_gym_get_number_waiting_rooms | 1

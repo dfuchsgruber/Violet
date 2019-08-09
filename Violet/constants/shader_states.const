@@ -1,0 +1,11 @@
+{
+	"type": "enum",
+	"values": [
+        "SHADER_NONE",
+        "SHADER_NIGHT",
+        "SHADER_MORNING",
+        "SHADER_EVENING",
+        "SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM"
+	],
+	"base": 0
+}

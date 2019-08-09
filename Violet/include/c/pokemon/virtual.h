@@ -31,8 +31,16 @@ typedef union {
     } fields;
 } pid_t;
 
+#define STATUS_CONDITION_NONE 0
 #define STATUS_CONDITION_SLEEP 7
-
+#define STATUS_CONDITION_POISON 8
+#define STATUS_CONDITION_BURN 16
+#define STATUS_CONDITION_FREEZE 32
+#define STATUS_CONDITION_PARALYSIS 64
+#define STATUS_CONDITION_BAD_POISON 128
+#define STATUS_CONDITION_BAD_POISON_COUNTER 0xF00
+#define STATUS_CONDITION_POISON_ANY (STATUS_CONDITION_POISON | STATUS_CONDITION_BAD_POISON)
+#define STATUS_CONDITION_ANY (STATUS_CONDITION_SLEEP | STATUS_CONDITION_POISON | STATUS_CONDITION_BURN | STATUS_CONDITION_FREEZE | STATUS_CONDITION_PARALYSIS | STATUS_CONDITION_BAD_POISON)
 
 typedef struct {
 	u16 species;
@@ -307,7 +315,10 @@ u32 tid_by_ot_name(u8 *ot_name);
 bool pokemon_has_hidden_ability(box_pokemon *p);
 u8 pokemon_get_ability(pokemon *poke);
 u8 battler_load_ability_as_defender(pokemon *poke);
-void special_heal_team_index();
+/**
+ * Special that heals the players party pokemon located at index stored in variable 0x8004
+ */
+void special_player_party_heal_index();
 void pokemon_team_remove();
 void pokemon_team_knows_hm();
 bool pokemon_knows_hm(pokemon *p);
@@ -383,5 +394,26 @@ void pokemon_set_potential_ev(pokemon *p, int stat, u8 ev);
  * @return ev the potential ev value
  */
 u8 pokemon_get_potential_ev(pokemon *p, int stat);
+
+/**
+ * Calculates how many pp a move has in total given its pp up values.
+ * @param attack the move to check the total pp of
+ * @param pp_ups the bitfield indicating the pp ups used
+ * @param index the index of the move on the pokemon
+ * @returns the maximal pp of the move
+ **/
+u8 attack_get_pp(u16 attack, u8 pp_ups, u8 index);
+
+/**
+ * Restores hp, pp and status of a pokemon.
+ * @param dst the pokemon to heal
+ **/
+void pokemon_heal(pokemon *dst);
+
+/**
+ * Checks if a pokémon is at its full health (hp, pp, status)
+ * @return if a pokémon has max hp, pp and no primary status condition
+ **/
+bool pokemon_is_healed(pokemon *dst);
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

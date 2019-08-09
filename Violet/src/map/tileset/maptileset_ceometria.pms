@@ -22304,7 +22304,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "0x60",
 				"hm_usage": 0,
 				"field_2": 0,
 				"encounter_type": 0,

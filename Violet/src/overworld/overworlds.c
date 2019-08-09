@@ -8,6 +8,7 @@
 #include "types.h"
 #include "overworld/sprite.h"
 #include "vars.h"
+#include "debug.h"
 
 static graphic overworld_sprite_deoxys_normal_sprites[] = {
 	{&gfx_ow_deoxys_normal_0Tiles, 0x200, 0},
@@ -1572,6 +1573,7 @@ overworld_sprite *overworld_sprites[] = {
 
 overworld_sprite *overworld_get (u8 picture){
     if(picture >= 0xF0){
+		dprintf("Picture is %d\n", *var_access((u16)(0x4010+picture-0xF0)));
         return overworld_sprites[*var_access((u16)(0x4010+picture-0xF0))];
     }
     return overworld_sprites[picture];

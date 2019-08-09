@@ -4102,25 +4102,25 @@
 			],
 			[
 				{
-					"tile_idx": 726,
+					"tile_idx": 755,
 					"palette_idx": 7,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 727,
+					"tile_idx": 755,
 					"palette_idx": 7,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 742,
+					"tile_idx": 755,
 					"palette_idx": 7,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 743,
+					"tile_idx": 755,
 					"palette_idx": 7,
 					"horizontal_flip": 0,
 					"vertical_flip": 0
@@ -4252,28 +4252,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 755,
+					"palette_idx": 7,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 755,
+					"palette_idx": 7,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 755,
+					"palette_idx": 7,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 755,
+					"palette_idx": 7,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 729,
@@ -4802,28 +4802,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 752,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 753,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 768,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 769,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 752,
@@ -4852,28 +4852,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 752,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 753,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 768,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 769,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -5054,14 +5054,14 @@
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 642,
@@ -5154,14 +5154,14 @@
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 642,
@@ -5704,14 +5704,14 @@
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 642,
@@ -5754,14 +5754,14 @@
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 642,
@@ -5804,14 +5804,14 @@
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 641,
 					"palette_idx": 7,
-					"horizontal_flip": 1,
-					"vertical_flip": 1
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 642,
@@ -19787,7 +19787,17 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": 0,
@@ -19857,7 +19867,17 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": 0,
@@ -19927,7 +19947,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": 0,
@@ -19964,27 +19984,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
+				"behaviour": "0x60",
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": 0,
@@ -20164,7 +20164,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": 0,
+				"behaviour": "0x32",
 				"hm_usage": 0,
 				"field_2": 0,
 				"battle_bg": 0,
@@ -20577,6 +20577,96 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": 0,
+				"field_7": 0
+			},
+			{
+				"behaviour": "0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"priority": "0x1",
+				"field_7": "0x0"
+			},
+			{
+				"behaviour": "0x65",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"priority": "0x1",
+				"field_7": "0x0"
+			},
+			{
+				"behaviour": "0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"priority": "0x1",
+				"field_7": "0x0"
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": "1",
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": "1",
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": "1",
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": "1",
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": "1",
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
@@ -20607,17 +20697,27 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
-				"priority": 0,
+				"priority": "1",
 				"field_7": 0
 			},
 			{
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
+				"encounter_type": 0,
+				"field_5": 0,
+				"priority": "0",
+				"field_7": 0
+			},
+			{
+				"behaviour": 0,
+				"hm_usage": 0,
+				"field_2": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",
@@ -20637,7 +20737,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",
@@ -20647,57 +20747,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",
@@ -20707,17 +20757,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": 0,
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",
@@ -20727,7 +20767,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",
@@ -20737,7 +20777,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",
@@ -20747,7 +20787,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",
@@ -20757,47 +20797,7 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": "1",
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": "1",
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": "1",
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
-				"encounter_type": 0,
-				"field_5": 0,
-				"priority": "1",
-				"field_7": 0
-			},
-			{
-				"behaviour": 0,
-				"hm_usage": 0,
-				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_GYM",
 				"encounter_type": 0,
 				"field_5": 0,
 				"priority": "1",

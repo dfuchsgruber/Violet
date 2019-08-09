@@ -18,6 +18,7 @@
 #include "pokemon/virtual.h"
 #include "pokemon/breeding.h"
 #include "map/ceometria_gym.h"
+#include "trainer/party.h"
 
 #define GP_STACK_SIZE 16
 
@@ -166,6 +167,7 @@ typedef struct {
     wild_pokemon_entry dwild_data_radar[5];
     wild_pokemon_entry dwild_data_rod[10];
     u32 trainer_prng_state;
+    trainer_pokemon_custom_item_custom_attacks dynamic_trainer_party[3];
     
 } floating_memory;
 

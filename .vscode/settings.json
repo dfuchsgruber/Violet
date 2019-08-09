@@ -18,7 +18,15 @@
         "prng.h": "c",
         "flags.h": "c",
         "script.h": "c",
-        "text.h": "c"
+        "text.h": "c",
+        "typeinfo": "c",
+        "map_types.h": "c",
+        "dns.h": "c",
+        "pokemon_attributes.h": "c",
+        "virtual.h": "c",
+        "species.h": "c",
+        "build.h": "c",
+        "trainer_builds.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

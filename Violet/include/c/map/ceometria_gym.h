@@ -11,7 +11,10 @@ enum ceometria_gym_room_types {
     CEOMETRIA_GYM_BURNING_ROOM = 4,
     CEOMETRIA_GYM_PARALYSING_ROOM = 5,
     CEOMETRIA_GYM_SLEEPING_ROOM = 6,
-    CEOMETRIA_GYM_HEALING_ROOM = 7
+    CEOMETRIA_GYM_HEALING_ROOM = 7,
+    CEOMETRIA_GYM_REDUCE_HP_ROOM = 8,
+    CEOMETRIA_GYM_REDUCE_PP_ROOM = 9,
+    CEOMETRIA_GYM_POISON_ROOM = 10,
 };
 
 enum ceometria_gym_person_types {
@@ -28,9 +31,9 @@ typedef struct {
     struct {
         u8 type : 2;
         u8 target : 2;
-        u8 variant : 4;
+        u8 variant : 3;
+        u8 is_present : 1;
     } persons[4];
-
 } ceometria_gym_state_t;
 
 /**
@@ -61,6 +64,19 @@ void ceometria_gym_waiting_room_person_get_script();
  **/
 void ceometria_gym_person_buffer_target_room();
 
+/**
+ * Checks if a certain room type resembles a negative room.
+ * @param type the room type to check
+ * @return if the room type resembles a negative room
+ **/
+bool ceometria_gym_room_is_negative(u8 type);
+
+/**
+ * Creates a virtual dynamic trainer party for trainers in the ceometria gym.
+ * @param min_level the minimal level of the party pokemon
+ * @param max_level the maximal level of the party pokemon
+ **/
+void ceometria_gym_build_trainer_party(u8 min_level, u8 max_level);
 
 extern u8 ow_script_ceometria_gym_say_nothing_variant_0[];
 extern u8 ow_script_ceometria_gym_say_nothing_variant_1[];
@@ -78,5 +94,33 @@ extern u8 ow_script_ceometria_gym_trainer_variant_4[];
 extern u8 ow_script_ceometria_gym_trainer_variant_5[];
 extern u8 ow_script_ceometria_gym_trainer_variant_6[];
 extern u8 ow_script_ceometria_gym_trainer_variant_7[];
+extern u8 ow_script_ceometria_gym_reveal_room_nothing[];
+extern u8 ow_script_ceometria_gym_reveal_room_trainer[];
+extern u8 ow_script_ceometria_gym_reveal_room_poison[];
+extern u8 ow_script_ceometria_gym_reveal_room_sleep[];
+extern u8 ow_script_ceometria_gym_reveal_room_paralysis[];
+extern u8 ow_script_ceometria_gym_reveal_room_burn[];
+extern u8 ow_script_ceometria_gym_reveal_room_frozen[];
+extern u8 ow_script_ceometria_gym_reveal_room_healing[];
+extern u8 ow_script_ceometria_gym_reveal_room_reduce_any[];
+extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_0[];
+extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_1[];
+extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_2[];
+extern u8 ow_script_ceometria_gym_hint_room_not_negative_variant_3[];
+extern u8 ow_script_ceometria_gym_hint_room_negative_variant_0[];
+extern u8 ow_script_ceometria_gym_hint_room_negative_variant_1[];
+extern u8 ow_script_ceometria_gym_hint_room_negative_variant_2[];
+extern u8 ow_script_ceometria_gym_hint_room_negative_variant_3[];
+extern u8 ow_script_ceometria_gym_punishment_nothing[];
+extern u8 ow_script_ceometria_gym_punishment_healing[];
+extern u8 ow_script_ceometria_gym_punishment_poison[];
+extern u8 ow_script_ceometria_gym_punishment_bad_poison[];
+extern u8 ow_script_ceometria_gym_punishment_burn[];
+extern u8 ow_script_ceometria_gym_punishment_sleep[];
+extern u8 ow_script_ceometria_gym_punishment_freeze[];
+extern u8 ow_script_ceometria_gym_punishment_paralysis[];
+extern u8 ow_script_ceometria_gym_punishment_trainer[];
+extern u8 ow_script_ceometria_gym_punishment_reduce_hp[];
+extern u8 ow_script_ceometria_gym_punishment_reduce_pp[];
 
 #endif
