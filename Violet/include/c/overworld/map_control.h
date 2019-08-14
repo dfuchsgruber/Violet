@@ -128,4 +128,9 @@ void warp_set_last_outdoor_map (u8 bank, u8 map, s8 exit, s16 x, s16 y);
  */
 void overworld_free();
 
+/**
+ * Callback1 that triggers a mapreload. Used if the overworld interface was not visible previously.
+ **/
+void overworld_return_to();
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

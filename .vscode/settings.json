@@ -26,7 +26,11 @@
         "virtual.h": "c",
         "species.h": "c",
         "build.h": "c",
-        "trainer_builds.h": "c"
+        "trainer_builds.h": "c",
+        "vars.h": "c",
+        "map_control.h": "c",
+        "map_weathers.h": "c",
+        "weather.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

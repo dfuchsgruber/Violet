@@ -1,80 +1,98 @@
 #include "types.h"
+#include "bios.h"
 #include "rtc.h"
 #include "color.h"
 #include "dns.h"
 #include "constants/vars.h"
 #include "constants/shader_states.h"
 #include "vars.h"
+#include "save.h"
 
-u8 dns_get_alpha() {
-    u16 timezone = *var_access(SHADER_STATE);
-    u8 alpha = 0;
-    if (timezone == SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM) {
-        alpha = 11;
-    } else if (dns_on()) {
-        switch (timezone) {
-            case SHADER_NIGHT:
-            case SHADER_MORNING:
-            { //night
-                alpha = 14;
-                break;
-            }
-            case SHADER_EVENING:
-            { //evening
-                alpha = 13;
-                break;
-            }
+
+color_t dns_get_overlay(u8 shader_state) {
+    switch (shader_state) {
+        case SHADER_NIGHT: {
+            color_t overlay = {.rgb = {.red = 6, .green = 8, .blue = 19}};
+            return overlay;
+        }
+        case SHADER_MORNING: {
+            color_t overlay = {.rgb = {.red = 31, .green = 15, .blue = 25}};
+            return overlay;
+        }
+        case SHADER_EVENING: {
+            color_t overlay = {.rgb = {.red = 29, .green = 15, .blue = 10}};
+            return overlay;
+        }
+        case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM: {
+            color_t overlay = {.rgb = {.red = 6, .green = 8, .blue = 19}};
+            return overlay;
+        }
+        default: {
+            color_t overlay = {.value = 0};
+            return overlay;
         }
     }
-    return alpha;
 }
 
-color_t dns_get_over() {
-    u16 timezone = *var_access(SHADER_STATE);
-    u16 o = 0;
-    if (timezone == SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM) {
-        o = 0x4D06;
-    } else if (dns_on()) {
-        switch (timezone) {
-            case SHADER_NIGHT:
-            { //night
-                o = 0x4D06;
-                break;
-            }
-            case SHADER_MORNING:
-            { //morning
-                o = 0x65ff;
-                break;
-            }
-            case SHADER_EVENING:
-            { //evening
-                o = 0x29fd;
-                break;
-            }
-        }
+u8 dns_get_alpha(u8 shader_state) {
+    switch (shader_state) {
+        case SHADER_NIGHT:
+            return 14;
+        case SHADER_MORNING:
+            return 14;
+        case SHADER_EVENING:
+            return 13;
+        case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM:
+            return 11;
+        default:
+            return 0;
     }
-    color_t over = {o};
-    return over;
 }
 
-void dns_apply_shaders(u16 start_col, u16 col_cnt) {
-    int shader_state = *var_access(SHADER_STATE);
-    if (
-        (dns_on() && (shader_state == SHADER_NIGHT || shader_state == SHADER_EVENING || shader_state == SHADER_MORNING)) ||
-        (shader_state == SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM)
-    )
-    if (*var_access(SHADER_STATE) && dns_on()) {
-        dns_blend_colors(start_col, col_cnt, dns_get_over(), dns_get_alpha());
+void pal_apply_shaders(u16 start_color, u16 number_colors) {
+    // Default shaders
+    switch (pal_shaders) {
+        case SHADER_GREYSCALE:
+            pal_apply_greyscale(&pal_restore[start_color], number_colors);
+            break;
+        case SHADER_SEPIA:
+            pal_apply_sepia(&pal_restore[start_color], number_colors);
+            break;
+        case SHADER_GREYSCALE_AND_BACKUP:
+            pal_apply_greyscale(&pal_restore[start_color], number_colors);
+            pal_update_backup(start_color, number_colors);
+            break;
+        case SHADER_NIGHT:
+        case SHADER_MORNING:
+        case SHADER_EVENING:
+            if (dns_on()) {
+                dns_blend_colors(start_color, number_colors, 
+                dns_get_overlay(pal_shaders), dns_get_alpha(pal_shaders));
+            }
+            break;
+        case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM:
+            dns_blend_colors(start_color, number_colors, 
+                dns_get_overlay(pal_shaders), dns_get_alpha(pal_shaders));
+            break;
+        default:
+            return;
     }
+    cpuset(&pal_restore[start_color], &pals[start_color], CPUSET_HALFWORD | CPUSET_COPY | CPUSET_HALFWORD_SIZE(number_colors * sizeof(color_t)));
 }
 
 void dns_blend_colors(u16 start_col, u16 col_cnt, color_t overlay, u8 alpha) {
-    u16 end_col = (u16) (start_col + col_cnt);
-    while (start_col < end_col) {
-        color_t original = pal_restore[start_col];
-        color_t new = color_blend_and_multiply(original, overlay, alpha);
-        pal_restore[start_col] = new;
-        pals[start_col] = new;
-        start_col++;
+    if (dns_on()) {
+        u16 end_col = (u16) (start_col + col_cnt);
+        for (;start_col < end_col; start_col++) {
+            pal_restore[start_col] = color_blend_and_multiply(pal_restore[start_col], overlay, alpha);;
+        }
     }
+}
+
+void pal_apply_shaders_by_palette_idx(u8 pal_idx, u8 number_palettes) {
+    pal_apply_shaders((u16)(pal_idx * 16), (u16)(number_palettes * 16));
+}
+
+void pal_apply_shaders_by_oam_palette_idx(u8 oam_pal_idx) {
+    pal_apply_shaders((u16)(oam_pal_idx * 16 + 256), 16);
 }

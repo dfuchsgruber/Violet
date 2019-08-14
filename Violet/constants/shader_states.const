@@ -1,11 +1,13 @@
 {
-	"type": "enum",
-	"values": [
-        "SHADER_NONE",
-        "SHADER_NIGHT",
-        "SHADER_MORNING",
-        "SHADER_EVENING",
-        "SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM"
-	],
-	"base": 0
+	"type": "dict",
+	"values": {
+        "SHADER_NONE" : 0,
+        "SHADER_GREYSCALE" : 1,
+        "SHADER_SEPIA" : 2,
+        "SHADER_GREYSCALE_AND_BACKUP" : 3,
+        "SHADER_NIGHT" : 4,
+        "SHADER_MORNING" : 5,
+        "SHADER_EVENING" : 6,
+        "SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM" : 7
+        }
 }

@@ -85,7 +85,7 @@ map_event_header_t *dungeon2_init_events_cave(dungeon_generator2 *dg2){
 
     // Place the super rare pokemon at the second node
     cpuset(&zero, &(fmem.dpersons[0]), CPUSET_FILL | CPUSET_HALFWORD |
-        CPUSET_SIZE(sizeof(map_event_person) >> 2));
+        CPUSET_HALFWORD_SIZE(sizeof(map_event_person)));
     fmem.dpersons[0].x = (s16)(nodes[1][0]);
     fmem.dpersons[0].y = (s16)(nodes[1][1]);
     u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
@@ -102,7 +102,7 @@ map_event_header_t *dungeon2_init_events_cave(dungeon_generator2 *dg2){
       int person_idx = i + 1;
       int node_idx = i + 2;
       cpuset(&zero, &(fmem.dpersons[person_idx]), CPUSET_FILL | CPUSET_HALFWORD |
-          CPUSET_SIZE(sizeof(map_event_person) >> 2));
+          CPUSET_HALFWORD_SIZE(sizeof(map_event_person)));
 
       fmem.dpersons[person_idx].x = (s16)(nodes[node_idx][0]);
       fmem.dpersons[person_idx].y = (s16)(nodes[node_idx][1]);

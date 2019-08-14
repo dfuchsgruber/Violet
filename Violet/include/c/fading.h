@@ -8,11 +8,10 @@
 #ifndef INCLUDE_C_FADING_H_
 #define INCLUDE_C_FADING_H_
 
-
-
 typedef struct {
     u32 affects;
-    u16 scale;
+    u16 alpha : 5;
+    u16 target_alpha : 5;
     u16 color : 15;
     u16 active : 1;
     u8 field_8 : 7;

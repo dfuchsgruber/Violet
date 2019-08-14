@@ -331,9 +331,8 @@ void cmdx0F_load_obj_pal(ae_memory* mem) {
     if(pal_id == 0xFF)return;
     
     if(mode){
-        void *nbuf = (void*) 0x02037ACC;
-        lz77uncompwram(pal, nbuf);
-        pal = nbuf;
+        lz77uncompwram(pal, pal_tmp);
+        pal = pal_tmp;
     }
     
     cpuset(pal, &pal_restore[(pal_id + 16) * 16], 16);
@@ -639,9 +638,8 @@ void cmdx1D_loadpal(ae_memory* mem) {
     u8 force = anim_engine_read_byte(mem);
 
     if (cflag) {
-        void *nbuf = (void*) 0x02037ACC;
-        lz77uncompwram(pal, nbuf);
-        pal = nbuf;
+        lz77uncompwram(pal, pal_tmp);
+        pal = pal_tmp;
     }
 
     cpuset(pal, &pal_restore[destcol], bytecount >> 1);
@@ -976,13 +974,12 @@ void cmdx36_load_obj_pal_from_struct(ae_memory *mem){
     u8 pal_id = oam_allocate_palette(p->tag);
     u8 mode = anim_engine_read_byte(mem);
     u8 force = anim_engine_read_byte(mem);
-    if(pal_id == 0xFF)return;
+    if (pal_id == 0xFF) return;
     
     const void *pal = p->pal;
     if(mode){
-        void *nbuf = (void*) 0x02037ACC;
-        lz77uncompwram(pal, nbuf);
-        pal = nbuf;
+        lz77uncompwram(pal, pal_tmp);
+        pal = pal_tmp;
     }
     
     cpuset(pal, &pal_restore[(pal_id + 16) * 16], 16);

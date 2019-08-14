@@ -2,16 +2,11 @@
 #include "color.h"
 
 color_t color_alpha_blend(color_t original, color_t overlay, u8 alpha) {
-
-    int i_alpha = 16 - alpha;
-    int red = ((overlay.rgb.red * alpha) >> 4) + ((original.rgb.red * i_alpha) >> 4);
-    int green = ((overlay.rgb.green * alpha) >> 4) + ((original.rgb.green * i_alpha) >> 4);
-    int blue = ((overlay.rgb.blue * alpha) >> 4) + ((original.rgb.blue * i_alpha) >> 4);
-    u16 value = (u16) (red | (green << 5) | (blue << 10));
-    color_t c = {value};
-    return c;
-
-
+    int r = original.rgb.red + ((alpha * (overlay.rgb.red - original.rgb.red)) >> 4);
+    int g = original.rgb.green + ((alpha * (overlay.rgb.green - original.rgb.green)) >> 4);
+    int b = original.rgb.blue + ((alpha * (overlay.rgb.blue - original.rgb.blue)) >> 4);
+    color_t blended = {.rgb = {.red = (u8)(r & 31), .green = (u8)(g & 31), .blue = (u8)(b & 31)}};
+    return blended;
 }
 
 color_t color_multiply(color_t original, color_t overlay) {

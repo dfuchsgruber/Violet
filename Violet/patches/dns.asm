@@ -1,17 +1,16 @@
+.org 0x080598cc
+	ldr r2, =pal_apply_shaders | 1
+	bx r2
+	.pool
 
-.org 0x080598CC
-	ldr r2, =dns_hook_apply_shaders | 1
-	bx r2
-	.pool
-	
 .org 0x08059948
-	ldr r2, =dns_hook_apply_shaders2 | 1
+	ldr r2, =pal_apply_shaders_by_palette_idx | 1
 	bx r2
 	.pool
-	
-.org 0x080834FC
-	ldr r1, =dns_hook_apply_shaders3 | 1
-	bx r1
+
+.org 0x080834fc
+	ldr r2, =pal_apply_shaders_by_oam_palette_idx | 1
+	bx r2
 	.pool
 	
 .org 0x08056824

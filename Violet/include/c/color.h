@@ -22,12 +22,16 @@ typedef struct {
 } pal_resource;
 
 
-extern color_t pal_restore[];
-extern color_t pals[];
-extern color_t pal_tmp[];
+// Backup of palettes prior to application of fading effects
+extern color_t pal_restore[512];
+// Synced with the palette RAM using the DMA3
+extern color_t pals[512];
+// Used for temporarily storing palettes when decompressing
+extern color_t pal_tmp[512];
 extern color_t typechart_icon_pal[16];
 extern color_t tbox_pokeball_pal[16];
-
+// ?
+extern color_t pal_backup[512];
 
 /**
  * Alpha blends a single color
@@ -97,16 +101,67 @@ void pal_proceed();
 void pal_set_all_to_black();
 
 /**
- * Applies a shader to a palette based on the pal in pal_restore
- * @param ow_pal the palette id
- */
-void pal_apply_shader(u8 ow_pal);
+ * Updates the pal_backup buffer with the values form pal_restore
+ * @param start_color the first color to update
+ * @param number_colors how many colors should be updated
+ **/
+void pal_update_backup(u16 start_color, u16 number_colors);
 
 /**
- * Applies the current fading state to a palette based on the pal in pal_restore
- * @param ow_pal the palette id
- */
-void pal_apply_fading(u8 ow_pal);
+ * Applies an in-place greyscale filter to a set of colors.
+ * @param src the set of colors to modify
+ * @param the size of the color set to modify
+ **/
+void pal_apply_greyscale(color_t *src, u16 number_colors);
 
+/**
+ * Applies an in-place sepia filter to a set of colors.
+ * @param src the set of colors to modify
+ * @param the size of the color set to modify
+ **/
+void pal_apply_sepia(color_t *src, u16 number_colors);
+
+/**
+ * Applies active palette shaders (sepia, greyscale, dns filter) to the pal_restore.
+ * @param start_color the first color to affect
+ * @param number_colors the number of colors to be affected
+ **/
+void pal_apply_shaders(u16 start_color, u16 number_colors);
+
+/**
+ * Applies active palette shaders (sepia, greyscale, dns filter) to the pal_restore given a palette idx and a number of palettes.
+ * @param pal_idx the index of the first palette to affect
+ * @param number_palettes the number of palettes to affect
+ **/
+void pal_apply_shaders_by_palette_idx(u8 pal_idx, u8 number_palettes);
+
+/**
+ * Applies active palette shaders (sepia, greyscale, dns filter) to the pal_restore given a oam palette idx.
+ * @param oam_pal_idx the index of the oam palette
+ **/
+void pal_apply_shaders_by_oam_palette_idx(u8 oam_pal_idx);
+
+/**
+ * Applies alpha blending to a set of colors using the pal_restore to create colors in pals.
+ * @param start_color the first color to blend
+ * @param number_colors the number of consecutive colors to affect
+ * @param alpha the alpha value of the blending
+ * @param overlay the overlay color that is blended
+ **/
+void pal_alpha_blending(u16 start_color, u16 number_colors, u8 alpha, color_t overlay);
+
+/**
+ * Applies a gamma shift to a set of colors using the pal_restore to create colors in pals.
+ * @param pal_idx the first palatte that is affected by the gamma shift
+ * @param number_pals the number of consecutive palettes affected by the gamma shift
+ * @param gamma the gamma value
+ **/
+void pal_gamma_shift(u8 pal_idx, u8 number_pals, s8 gamma);
+
+/**
+ * Applies fading effects to the oam palette.
+ * @param oam_pal_idx the oam palette idx to affect
+ **/
+void pal_oam_apply_fading(u8 oam_pal_idx);
 
 #endif

@@ -437,7 +437,7 @@ void dungeon2_compute_blocks_cave(u8 *map, u8 *over, dungeon_generator2 *dg2){
   u8 *map2 = malloc(sizeof(u8) * (size_t)(dg2->width * dg2->height));
   int _dg2_wall = DG2_WALL | (DG2_WALL << 8);
   cpuset(&_dg2_wall, map2, CPUSET_HALFWORD | CPUSET_FILL |
-          ((dg2->width * dg2->height) / 2));
+          CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
   dungeon2_cave_remove_walls(map, map2, dg2);
   dungeon2_cave_draw_map(map2, WALL_SET_LEVEL, dg2);
   dungeon2_cave_remove_walls(map2, map, dg2);

@@ -156,15 +156,6 @@ battle_bg battle_bgs[29] = {
 };
 
 
-
-void battle_bg_load(u8 id){
-    id = battle_bg_get_id();
-    lz77uncompvram(battle_bgs[id].tileset, (void*) 0x6008000);
-    lz77uncompvram(battle_bgs[id].tilemap, (void*) 0x600d000);
-    pal_decompress(battle_bgs[id].pal, 0x20, 0x60);
-}
-
-
 void battle_bg_load_anim(u8 id){
     (void)id;
     id = battle_bg_get_id();

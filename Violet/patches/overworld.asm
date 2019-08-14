@@ -134,3 +134,14 @@ overworld_pals equ 0x083A501C
 	ldr r3, =person_get_script | 1
 	bx r3
 	.pool
+
+.org 0x0807a9f0
+    ldr r1, = pal_oam_apply_fading | 1
+    bx r1
+    .pool
+
+.org 0x0807a55c
+    ldr r2, = overworld_weather_static_fog_pal_blend | 1
+    bx r2
+    .pool
+

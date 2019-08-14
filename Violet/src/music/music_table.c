@@ -601,7 +601,7 @@ song song_table[] = {
 	//Song 298
 	{mus_wild_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 299
-	{(void*) 0x8a0086c, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_wild_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 300
 	{mus_amonia2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 301
@@ -667,7 +667,7 @@ song song_table[] = {
 	//Song 331
 	{mus_cave, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 332
-	{(void*) 0x8a0be4c, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_cave, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 333
 	{(void*) 0x86efc24, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 334
@@ -681,7 +681,7 @@ song song_table[] = {
 	//Song 338
 	{(void*) 0x86f3e50, SONG_TYPE_FANFARE, SONG_TYPE_FANFARE},
 	//Song 339
-	{(void*) 0x86f3fa0, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{(void*) 0x86f5fd8, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 340
 	{(void*) 0x86f7150, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 341
@@ -752,7 +752,7 @@ song song_table[] = {
   {mus_laubdorf, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 374, (=0x176)
   {mus_ceometria2, SONG_TYPE_SONG, SONG_TYPE_SONG},
-  // Song 375, (=0x177) TODO: compose and insert the cemetery theme, you lazy piece of ...
-  {mus_ceometria2, SONG_TYPE_SONG, SONG_TYPE_SONG}
+  // Song 375, (=0x177)
+  {mus_forest_cemetery, SONG_TYPE_SONG, SONG_TYPE_SONG}
 
 };

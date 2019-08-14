@@ -31,7 +31,7 @@ void tile_init(map_footer_t *foot) {
   color_t dns_color_light_yellow_light = {.rgb = {.red = 248 / 8, .green = 232 / 8,
       .blue = 192 / 8}};
 
-    if (*var_access(SHADER_STATE) == SHADER_NIGHT && !built_in_shaders && dns_on()) {
+    if (dns_on()) {
         if (foot->tileset1 == &maptileset0) {
             //Tileset1 = 0
             pal_restore[0x21] = dns_color_light_yellow;

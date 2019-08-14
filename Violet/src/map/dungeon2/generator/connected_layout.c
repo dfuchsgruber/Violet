@@ -261,16 +261,16 @@ u8 *dungeon2_create_connected_layout(dungeon_generator2 *dg2, bool random_nodes)
 
     int _dg2_wall = DG2_WALL | (DG2_WALL << 8);
     cpuset(&_dg2_wall, map1, CPUSET_HALFWORD | CPUSET_FILL |
-            ((dg2->width * dg2->height) / 2));
+            CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
     cpuset(&_dg2_wall, map2, CPUSET_HALFWORD | CPUSET_FILL |
-            ((dg2->width * dg2->height) / 2));
+            CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
     cpuset(&_dg2_wall, map_paths, CPUSET_HALFWORD | CPUSET_FILL |
-            ((dg2->width * dg2->height) / 2));
+            CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
 
     dungeon2_init_by_paths(map_paths, dg2, random_nodes);
 
     // Copy the paths map to map1
-    cpuset(map_paths, map1, CPUSET_HALFWORD | CPUSET_COPY | ((dg2->width * dg2->height) / 2));
+    cpuset(map_paths, map1, CPUSET_HALFWORD | CPUSET_COPY | CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
     dungeon2_enlarge(map1, map2, dg2);
     dungeon2_contract(map2, map1, dg2);
     dungeon2_apply(map_paths, map1, DG2_SPACE, dg2);

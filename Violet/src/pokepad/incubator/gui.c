@@ -644,7 +644,7 @@ void incubator_initialize_ui() {
   u16 oam_egg_icon_tile = oam_vram_alloc(32);
   oam_vram_allocation_table_add(INCUBATOR_EGG_ICON_TAG, oam_egg_icon_tile, 32);
   cpuset(pokemon_icons[POKEMON_EGG], OAMCHARBASE(oam_egg_icon_tile),
-      CPUSET_COPY | CPUSET_HALFWORD | CPUSET_SIZE(0x200));
+      CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(0x400));
   oam_load_graphic(&graphic_incubator_selection);
 
   // Load palettes

@@ -4071,7 +4071,7 @@ item items[] = {
 		1, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
-		(void(*)(u8))0x9008ad5, //field_usage
+		(void(*)(u8))item_ashbag_field, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28

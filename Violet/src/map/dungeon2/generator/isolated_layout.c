@@ -22,9 +22,9 @@ u8 *dungeon2_create_isolated_layout(dungeon_generator2 *dg2, int spread, size_t 
 
   int _dg2_wall = DG2_WALL | (DG2_WALL << 8);
   cpuset(&_dg2_wall, map1, CPUSET_HALFWORD | CPUSET_FILL |
-          ((dg2->width * dg2->height) / 2));
+          CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
   cpuset(&_dg2_wall, map2, CPUSET_HALFWORD | CPUSET_FILL |
-          ((dg2->width * dg2->height) / 2));
+          CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
 
   int nodes[dg2->nodes][2];
   dungeon2_get_nodes(nodes, dg2->nodes, dg2, random_nodes);

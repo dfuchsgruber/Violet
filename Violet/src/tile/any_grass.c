@@ -10,6 +10,7 @@
 #include "vars.h"
 #include "flags.h"
 #include "dns.h"
+#include "overworld/weather.h"
 
 /*
  * Per each map on each bank we get an additional gras animation by this routine (a table determines which one)
@@ -160,13 +161,14 @@ u8 tile_any_grass_init(coordinate_t *pos){
             // Load appropriate palette if present
             if(tile_any_grasses[i].pal){
                 u8 pal_idx = oam_palette_get_index(tile_any_grasses[i].pal->tag);
-                if(pal_idx == 0xFF)
+                if(pal_idx == 0xFF) {
                     pal_idx = oam_allocate_palette(tile_any_grasses[i].pal->tag);
+                    //derrf("Allocated new %d for tag %x and template wants %x\n", pal_idx, tile_any_grasses[i].pal->tag, tile_any_grasses[i].temp->pal_tag);
+                }
                 u16 color = (u16)(pal_idx * 16 + 256);
                 pal_copy(tile_any_grasses[i].pal->pal, color, 32);
-                dns_apply_shaders((u16)(16 * (pal_idx + 16)), 16);
-                pal_apply_shader(pal_idx);
-                // pal_apply_fading(pal_idx);
+                pal_apply_shaders_by_oam_palette_idx(pal_idx);
+                pal_oam_apply_fading(pal_idx);
             }
             
             //Instanciate appropriate template

@@ -109,7 +109,7 @@ int dungeon2_flood_fill(u8 *map, u8 *map2, dungeon_generator2 *dg2){
     
     //Initialize map2 with walls only
     int _dg2_wall = DG2_WALL | (DG2_WALL << 8);
-    cpuset(&_dg2_wall, map2, CPUSET_FILL | CPUSET_HALFWORD | (width * height / 2));
+    cpuset(&_dg2_wall, map2, CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(width * height));
     
     //Find a root for flood fill (hope it is part of the biggest connected subgraph)
     s16 x, y;
@@ -190,9 +190,9 @@ u8 *dungeon2_create_patch_layout(dungeon_generator2 *dg2, bool random_nodes){
     u8 *map2 = malloc((u32)(dg2->width * dg2->height));
     int _dg2_space = DG2_WALL | (DG2_WALL << 8);
     cpuset(&_dg2_space, map1, CPUSET_HALFWORD | CPUSET_FILL | 
-            ((dg2->width * dg2->height) / 2));
+            CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
     cpuset(&_dg2_space, map2, CPUSET_HALFWORD | CPUSET_FILL | 
-            ((dg2->width * dg2->height) / 2));
+            CPUSET_HALFWORD_SIZE(dg2->width * dg2->height));
     dungeon_init_unconnected_nodes(map1, dg2, random_nodes);
     dungeon2_enlarge(map1, map2, dg2);
     dungeon2_enlarge(map2, map1, dg2);
