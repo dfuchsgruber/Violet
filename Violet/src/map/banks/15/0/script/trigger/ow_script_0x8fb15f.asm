@@ -7,7 +7,6 @@
 .include "overworld_script.s"
 .include "mugshot.s"
 
-
 .global ow_script_0x8fb15f
 ow_script_0x8fb15f:
 setvar LASTTALKED 0x36
@@ -50,7 +49,7 @@ setflag PKMNMENU
 pause 32
 draw_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 settrainerflag 0x19
-trainerbattlecont 0x1 0x19 0x0 str_0x8d3efa str_0x8d3bb9 ow_script_0x8d4033
+trainerbattlecont 0x1 0x19 0x0 str_0 str_1 ow_script_0x8d4033
 
 mov_0:
 .byte 0, STOP
@@ -69,21 +68,28 @@ waitmovement 0x0
 loadpointer 0 str_police
 setvar 0x8000 0
 special 0xE
-loadpointer 0x0 str_0x8d38fe
+loadpointer 0x0 str_2
 callstd MSG
 special 0xF
 
 applymovement 0x36 mov_4
-loadpointer 0x0 str_0x8d3f8b
+loadpointer 0x0 str_3
 show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 applymovement 0x36 mov_1
-loadpointer 0x0 str_0x8d3be3
+loadpointer 0x0 str_4
 show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG_YES_NO
+pause 0x40
+sound 0x15
+applymovement 0x36 mov_x62
+waitmovement 0
+loadpointer 0x0 str_5
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG_YES_NO
+
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x8d3734
-loadpointer 0x0 str_0x8d3858
+loadpointer 0x0 str_player_yes
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-loadpointer 0x0 str_0x8d375f
+loadpointer 0x0 str_harrenfeld_yes
 show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 setvar 0x8006 0xa
 goto ow_script_0x8d3691
@@ -112,7 +118,7 @@ ow_script_0x8d3691:
 special2 0x8006 0xc
 applymovement 0x36 ow_script_movs_0x8d36f5
 waitmovement 0x0
-loadpointer 0x0 str_0x8d36f8
+loadpointer 0x0 str_6
 show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 applymovement 0x32 ow_script_movs_0x8d36f1
 applymovement 0x33 ow_script_movs_0x8d36f1
@@ -121,7 +127,7 @@ applymovement 0x35 ow_script_movs_0x8d36f1
 loadpointer 0 str_police
 setvar 0x8000 0
 special 0xE
-loadpointer 0x0 str_0x8d371c
+loadpointer 0x0 str_police2
 callstd MSG
 special 0xF
 waitmovement 0x0
@@ -145,9 +151,9 @@ end
 
 .global ow_script_0x8d3734
 ow_script_0x8d3734:
-loadpointer 0x0 str_0x8d3aaf
+loadpointer 0x0 str_player_no
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-loadpointer 0x0 str_0x8d39ed
+loadpointer 0x0 str_harrenfeld_no
 show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 setvar 0x8006 0xfff5
 goto ow_script_0x8e22e1
@@ -180,69 +186,60 @@ return
 
 
 .ifdef LANG_GER
-.global str_0x8d3efa
 
-str_0x8d3efa:
-    .autostring 35 2 "Halt!\nStehengeblieben!"
-        
-        
-.global str_0x8d3bb9
-
-str_0x8d3bb9:
-    .autostring 35 2 "Argh!\nIhr verdammten Team Violet Rüpel!"
-        
+str_0:
+    .autostring 34 2 "Hey du da!\nStehen geblieben!\pIch lasse euch von Team Violet keinen Fuß nach Silvania setzen!"
+str_1:
+    .autostring 34 2 "Uff!\nIch habe mich von einem Team Violet Rüpel überrumpeln lassenDOTS"
 str_police:
 	.string "Polizisten"
-
-        
-.global str_0x8d38fe
-
-str_0x8d38fe:
-    .autostring 35 2 "Herr Wachtmeister!\pKommen Sie zurecht?"
-        
-        
-.global str_0x8d3f8b
-
-str_0x8d3f8b:
-    .autostring 35 2 "Argh!\nDieser Team Violet Rüpel hier ist hartnäckig!"
-        
-        
-.global str_0x8d3be3
-
-str_0x8d3be3:
-	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pHmm DOTS\nDu siehst bei genauerer Betrachtung gar nicht aus, wie ein Mitglied von Team Violet.\pEntschuldige bitte, ich habe dich wohl verwechselt, Kindchen.\pMein Name ist Wachtmeister Harrenfeld und ich bin auf der Jagd nach einer Kommandantin von Team Violet.\pWir haben Informationen erhalten, dass sie mit ihrer Division auf dem Weg nach Silvania ist.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWenn wir sie dingfest machen können, finden wir vielleicht etwas über den Kopf der Organisation heraus DOTS\pUnd da du ein ganz passabler Trainer zu sein scheinst DOTS DOTS DOTS\pWas meinst du?\nWürdest du uns vielleicht helfen, diese Kommandantin aufzuspüren und zu bekämpfen?"
-.global str_0x8d3858
-
-str_0x8d3858:
-	.autostring 35 2 "Ich bin auch schon mit diesen Rüpel aneinandergeraten.\pAlso werde ich Ihnen selbstverständlich helfen, Herr Wachtmeister!"
-        
-.global str_0x8d375f
-
-str_0x8d375f:
-	.autostring 35 2 "Du bist wirklich ein mutiges Kind, das muss ich dir lassen!\pTreib es aber nicht zu weit.\pSolltest du auf die Kommandantin treffen, überlasse es lieber den Erwachsenen, die Sache zu regeln!"
-        
-.global str_0x8d36f8
-
-str_0x8d36f8:
-    .autostring 35 2 "Wir ziehen ab!\nAuf nach Silvania!"
-        
-        
-.global str_0x8d371c
-
-str_0x8d371c:
-    .autostring 35 2 "Ja, Sir!"
-        
-        
-.global str_0x8d3aaf
-
-str_0x8d3aaf:
-	.autostring 35 2 "Verlangen Sie allen ernstes, dass ein Kind Ihre Arbeit erledigt und auf Verbrecherjagd geht?\pEs ist Ihre Aufgabe, für Recht und Ordnung zu sorgen, nicht meine!\pAllerdings bin ich selbst auch schon an die Rüpel von Team Violet geraten und werde mich von diesen Leuten sicherlich nicht besiegen lassen."
-
-.global str_0x8d39ed
-
-str_0x8d39ed:
-	.autostring 35 2 "Hmpf!\nDu rotzfreches Balg!\pWas meinst du, mit wem du hier sprichst?\pWir brauchen deine Hilfe ohnehin nicht!\pKomm uns ja nicht in die Quere!\pDOTS DOTS DOTS"
+str_2:
+    .autostring 34 2 "Junior-Komissar Harrenfeld, sind Sie verletzt?"
+str_3:
+    .autostring 34 2 "Dieser Team Violet Rüpel hier ist außerordentlich starkDOTS"
+str_4:
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pWobei du bei genauerer Betrachtung gar nicht aussiehst, wie ein Mitglied von Team VioletDOTS"
+str_5:
+    .autostring 34 2 "Wie bitte?\nDu bist gar kein Team Violet Rüpel?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDas tut mir schrecklich leidDOTS\pIch bin neu bei der Polizei von Theto und war wohl etwas übermütig in meiner DienstpflichtDOTS\pWir sind auf der Jagd nach Rin, einer Kommandantin von Team Violet.\pDie Kommandanten dieser Organisation sind nicht zu unterschätzen, musst du wissen.\pUnd wenn wir einen von ihnen dingfest machen können, finden wir vielleicht etwas über den Kopf der Organisation heraus.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDu scheinst ein ganz passabler Trainer zu sein.\pDeine Unterstützung im Kampf gegen diese Rüpel könnte entscheidend sein.\pIch weiß, ich überrumple dich sicherlich mit dieser Bitte, aber würdest du uns helfen, Rin zu bekämpfen?"
+str_player_yes:
+	.autostring 34 2 "Team Violet ist Professor Tann, den Vater meines besten Freundes angegangen.\pWenn ich helfen kann, diese Bande zu stoppen, kannst du mit meiner Hilfe rechnen."
+str_harrenfeld_yes:
+    .autostring 34 2 "Du bist wirklich unglaublich!\pDie gesamte Polizei von Theto steht zutiefst in deiner Schuld!"
+str_player_no:
+    .autostring 34 2 "Erst greifst du mich unüberlegt an und dann hast du die Frechheit, mich um meine Unterstützung zu fragen?"
+str_harrenfeld_no:
+    .autostring 34 2 "Was?\nDOTS DOTS DOTS\pMit dieser Antwort habe nich nun wirklich nicht gerechnetDOTS\pAber ich verstehe schon!\pIch kann es dir nicht übel nehmen.\pDie Kommandanten von Team Violet sind wirklich angsteinflößende Trainer und es bedarf mutigen Menschen, sie zu stoppen.\pImmerhin ist es ja auch gerade meine Pflicht, diesen Gesetzlosen entgegenzutreten."
+str_6:
+    .autostring 34 2 "Alles klar!\nAuf nach Silvania!\pRin von Team Violet muss gestoppt werden!\pWir dürfen keine Zeit verlieren!"
+str_police2:
+    .autostring 34 2 "Verstanden, Junior-Kommissar Harrenfeld!"
         
 .elseif LANG_EN
-
+str_0:
+    .autostring 34 2 "Hey you!\nHalt immediately!\pI won't let you Team Violet guys set a foot into Silvania!"
+str_1:
+    .autostring 34 2 "Yikes!\nI have been defeated by one of those Violet guysDOTS"
+str_police:
+    .string "Policemen"
+str_2:
+    .autostring 34 2 "Junior comissioner Harrenfield, are you injured?"
+str_3:
+    .autostring 34 2 "This Team Violet grunt is pretty strongDOTS"
+str_4:
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pThen again you do not look like a member of Team Violet on second glanceDOTS"
+str_5:
+    .autostring 34 2 "Come again?\nYou are not a member of Team Violet?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pI am so terribly sorryDOTS\pI am new at the police of Theto and probably too reckless in my new dutiesDOTS\pWe are currently chasing down Rin, a commander of Team Violet.\pThe commanders of this organization are not to be underestimated.\pAnd if we can hunt down on of them we might get information on the head of this group.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pYou seem to be a somewhat passable trainer.\pYour help in fighting against those grunts could be decisive.\pI know I am overwhelming you probably with this request but would maybe help us to fight Rin?"
+str_player_yes:
+    .autostring 34 2 "Team Violet already attacked Professor Tann, the father of my best friend.\pIf I can help stopping these guys you can count on my help."
+str_harrenfeld_yes:
+    .autostring 34 2 "You really are amazing!\pThe entire police of Theto is deeply indebted to you!"
+str_player_no:
+    .autostring 34 2 "First you attack me without second consideration and then you have the audacity to request my support?"
+str_harrenfeld_no:
+    .autostring 34 2 "What?\nDOTS DOTS DOTS\pI did not expect this answer.\pBut I do understand.\pI have to admit that you are right.\pThe commanders of Team Violet really are fearsome trainers and it demands a bold and brave man to stop them.\pFurthermore, it even is my very duty to put a hold to the crimes of those people."
+str_6:
+    .autostring 34 2 "All set!\nLet's go to Silvania!\pRin of Team Violet has to be stopped.\pWe mustn't lose any more time!"
+str_police2:
+    .autostring 34 2 "Alright, junior comissioner Harrenfield!"
+        
 .endif

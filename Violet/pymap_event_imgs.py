@@ -34,6 +34,7 @@ picture_idx_to_png = {
     66 : 'asset/gfx/overworld/npcs/albus/gfx_ow_albus_0.png',
     67 : 'asset/gfx/overworld/npcs/blackbeard/gfx_ow_blackbeard.png.display',
     69 : 'asset/gfx/overworld/npcs/felix/gfx_ow_felix_0.png',
+    70 : 'asset/gfx/overworld/npcs/harrenfeld/gfx_ow_harrenfeld_0.png',
     71 : 'asset/gfx/overworld/npcs/tann/gfx_ow_tann_0.png',
     72 : 'asset/gfx/overworld/npcs/rival/gfx_ow_rival_0.png',
     75 : 'asset/gfx/overworld/npcs/narcissa/gfx_ow_narcissa.png.display',

@@ -1371,6 +1371,27 @@ overworld_sprite ow_narcissa = {
     oam_rotscale_anim_table_null
 };
 
+
+graphic overworld_sprite_harrenfeld_sprites [] = {
+    {&gfx_ow_harrenfeld_0Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_1Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_2Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_3Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_4Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_5Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_6Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_7Tiles, 0x100, 0},
+    {&gfx_ow_harrenfeld_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_harrenfeld = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    &ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_harrenfeld_sprites,
+    oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1450,7 +1471,7 @@ overworld_sprite *overworld_sprites[] = {
 	(overworld_sprite*) 0x83a432c,
 	&ow_felix,//(overworld_sprite*) 0x83a4350,
 //70
-	(overworld_sprite*) 0x83a4374,
+	&ow_harrenfeld, //(overworld_sprite*) 0x83a4374,
 	&ow_tann,//(overworld_sprite*) 0x83a4230,
 	&ow_rival, //(overworld_sprite*) 0x83a46f8,
 	(overworld_sprite*) 0x83a4668,

@@ -30,7 +30,10 @@
         "vars.h": "c",
         "map_control.h": "c",
         "map_weathers.h": "c",
-        "weather.h": "c"
+        "weather.h": "c",
+        "movements.h": "c",
+        "trainer.h": "c",
+        "language.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

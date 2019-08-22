@@ -132,6 +132,7 @@ field_move_fly_init = 0x080C50B1;
 map_load_namespace = 0x080C4FB1;
 pokemon_party_menu_print_question = 0x08124815;
 npc_apply_movement = 0x0809754D;
+npc_movement_target_person_idx = 0x020370b0;
 big_callback_set_int = 0x0807764D;
 big_callback_get_int = 0x08077685;
 npc_is_tile_blocked = 0x080636AD;

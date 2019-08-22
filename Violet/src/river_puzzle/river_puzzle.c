@@ -643,7 +643,7 @@ void river_puzzle_callback1_initialize() {
 
     // Load palettes
     pal_decompress(gfx_river_puzzle_uiPal, 13 * 16, 32);
-    pal_copy(map_footer_22_river_puzzle.tileset1->colors, 0, 7 * 16);
+    pal_copy(map_footer_22_river_puzzle.tileset1->colors, 0, sizeof(color_t) * 7 * 16);
     pal_decompress(gfx_river_puzzle_boatPal,
         (u16)(16 * (16 + oam_allocate_palette(RIVER_PUZZLE_BOAT_TAG))), 32);
     pal_set_all_to_black();

@@ -32,7 +32,12 @@ str_dungeon_forest_collapsing:
 .endif
 
 .global ow_script_test
+
 ow_script_test:
+clearflag FLAG_FOREST_CEMETERY_DONE
+setvar STORY_PROGRESS 0x37
+end
+
 setflag TRANS_DISABLE
 callasm river_puzzle_initialize
 end

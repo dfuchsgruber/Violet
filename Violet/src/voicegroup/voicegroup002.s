@@ -1225,12 +1225,12 @@ voicegroup002:
 
 @**************** Voice 122 ****************@
 
-		.byte	0xc
-		.byte	0x3c
+		.byte	DirectSound
+		.byte	Cn3
 		.byte	0x0
 		.byte	0x0
-		.word	0x0
-		.byte	0,2,6,0
+		.word	snd_stell_drum
+		.byte	0xFF, 0xEB, 0x67, 0xB2
 
 
 @**************** Voice 123 ****************@

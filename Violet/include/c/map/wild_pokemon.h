@@ -221,5 +221,9 @@ wild_pokemon_habitat wild_pokemon_route_11_water;
 wild_pokemon_habitat wild_pokemon_route_11_rod;
 wild_pokemon_habitat wild_pokemon_forest_cemetery_grass;
 wild_pokemon_habitat wild_pokemon_forest_cemetery_other;
+wild_pokemon_habitat wild_pokemon_route_12_east_water;
+wild_pokemon_habitat wild_pokemon_route_12_east_rod;
+wild_pokemon_habitat wild_pokemon_route_12_east_grass;
+wild_pokemon_habitat wild_pokemon_route_12_east_other;
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

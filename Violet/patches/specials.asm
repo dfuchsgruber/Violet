@@ -52,7 +52,7 @@ special_table equ 0x0815FCC0
         .pool
 
 .org (special_table + (0x1A * 4))
-        .word special_prepeare_player_facing | 1
+        .word special_player_facing | 1
         .pool
 .org (special_table + (0x1B * 4))
         .word special_move_npc_to_player | 1

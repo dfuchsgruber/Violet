@@ -30,8 +30,8 @@ typedef struct {
     u8 next_weather;
     u8 weather_gfx_loaded;
     u8 unknown2[33];
-    u8 fog_oam_pal_idxs[6]; // These palettes correspond to fog oams and have a different filter
-    u8 fog_oam_number_pal_idxs;
+    u8 static_fog_affected_pal_idxs[6]; // These palettes correspond to fog oams and have a different filter
+    u8 static_fot_number_affected_pal_idxs;
 } overworld_weather_stru;
 
 extern overworld_weather_stru overworld_weather;

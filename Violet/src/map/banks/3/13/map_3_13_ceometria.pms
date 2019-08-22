@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_33_ceometria",
 		"events": {
-			"person_cnt": 11,
+			"person_cnt": 12,
 			"warp_cnt": 5,
-			"trigger_cnt": 0,
+			"trigger_cnt": 5,
 			"signpost_cnt": 3,
 			"persons": [
 				{
@@ -237,6 +237,27 @@
 						"item": "ITEM_MONDSTEIN",
 						"species": 0
 					}
+				},
+				{
+					"target_index": "12",
+					"picture": "27",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "54",
+					"y": "16",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				}
 			],
 			"warps": [
@@ -281,7 +302,63 @@
 					"target_bank": "19"
 				}
 			],
-			"triggers": [],
+			"triggers": [
+				{
+					"x": "48",
+					"y": "15",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x37",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_ceometria_trigger_0"
+				},
+				{
+					"x": "48",
+					"y": "16",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x37",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_ceometria_trigger_0"
+				},
+				{
+					"x": "48",
+					"y": "17",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x37",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_ceometria_trigger_0"
+				},
+				{
+					"x": "48",
+					"y": "18",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x37",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_ceometria_trigger_0"
+				},
+				{
+					"x": "48",
+					"y": "19",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x37",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_ceometria_trigger_0"
+				}
+			],
 			"signposts": [
 				{
 					"x": "21",
@@ -338,7 +415,7 @@
 		},
 		"levelscripts": "map_3_13_ceometria_levelscripts",
 		"connections": {
-			"connection_cnt": 2,
+			"connection_cnt": 3,
 			"connections": [
 				{
 					"direction": "NORTH",
@@ -353,6 +430,14 @@
 					"displacement": "6",
 					"bank": "3",
 					"map_idx": "14",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "WEST",
+					"displacement": "-9",
+					"bank": "3",
+					"map_idx": "15",
 					"field_A": 0,
 					"field_B": 0
 				}

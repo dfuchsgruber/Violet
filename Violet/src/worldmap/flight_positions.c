@@ -39,7 +39,7 @@ flight_position_association_t flight_position_associations[108] = {
     [MAP_CEOMETRIA - 0x58] = {.bank = 3, .map_idx = 7, .flight_position_idx = 8},
     [MAP_LAUBDORF - 0x58] = {.bank = 3, .map_idx = 8, .flight_position_idx = 9},
     [MAP_INDIGO_PLATEAU - 0x58] = {.bank = 3, .map_idx = 9, .flight_position_idx = 10},
-    [MAP_SAFFRONIA_CITY - 0x58] = {.bank = 3, .map_idx = 10, .flight_position_idx = 11},
+    [MAP_HAWEILAND - 0x58] = {.bank = 3, .map_idx = 10, .flight_position_idx = 11},
     [MAP_NAMESPACE_99 - 0x58] = {.bank = 3, .map_idx = 22, .flight_position_idx = 12},
     [MAP_NAMESPACE_100 - 0x58] = {.bank = 3, .map_idx = 28, .flight_position_idx = 13},
     [MAP_ROUTE_1 - 0x58] = {.bank = 3, .map_idx = 19, .flight_position_idx = 0},

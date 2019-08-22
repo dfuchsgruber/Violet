@@ -323,6 +323,11 @@ wild_pokemon_data wild_pokemon[] = {
 		.water = NULL, .rod = NULL
 	},
 	{
+		.bank = 3, .map = 15,
+		.grass = &wild_pokemon_route_12_east_grass, .other = &wild_pokemon_route_12_east_other,
+		.water = &wild_pokemon_route_12_east_water, .rod = &wild_pokemon_route_12_east_rod
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
 	},

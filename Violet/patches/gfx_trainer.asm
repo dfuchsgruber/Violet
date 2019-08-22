@@ -86,3 +86,5 @@ trainergfx 116,gfx_trainer_lesterTiles,gfx_trainer_lesterPal
 trainergfx 117,gfx_trainer_miaTiles,gfx_trainer_miaPal
 trainergfx 137,gfx_trainer_violet_grunt_fTiles,gfx_trainer_violet_grunt_fPal
 trainergfx 121,gfx_trainer_igvaTiles, gfx_trainer_igvaPal
+trainergfx 26,gfx_trainer_harrenfeldTiles,gfx_trainer_harrenfeldPal
+

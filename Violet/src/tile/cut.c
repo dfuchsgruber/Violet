@@ -25,5 +25,6 @@ u16 cut_table[][2] = {
 	{0x313, 0x296}, // Ash Grass
 	{0x314, 0x297}, // Ash Grass
 	{0x31F, 0x310}, // Ash Grass
+	{0x2D0, 0x348}, // Haweiland Grass
         {0xFFFF, 0xFFFF}
 };

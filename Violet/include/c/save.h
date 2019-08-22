@@ -129,8 +129,7 @@ typedef struct {
     u8 dmap_blocks_initialized : 1;
     u8 dmap_unused : 6;
     u8 battle_bg_index;
-    u8 unused_2;
-    u8 unused_3;
+    u8 npc_facing_movements[2];
     pokepad_memory *pad_mem; // TODO: migrate pointers to the gp state
     wondertrade_memory *wtrade_mem;
     pokedex_memory *dex_mem;

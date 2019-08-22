@@ -219,6 +219,21 @@
 				"map_3_14_forest_cemetery",
 				"src/map/banks/3/14/map_3_14_forest_cemetery.pms",
 				"MAP_WALDFRIEDHOF"
+			],
+			"15": [
+				"map_3_15_route_12_east",
+				"src/map/banks/3/15/map_3_15_route_12.pms",
+				"MAP_ROUTE_12"
+			],
+			"16": [
+				"map_3_16_route_12_west",
+				"src/map/banks/3/16/map_3_16_route_12_west.pms",
+				"MAP_ROUTE_12"
+			],
+			"17": [
+				"map_3_17_haweiland",
+				"src/map/banks/3/17/map_3_17_haweiland.pms",
+				"MAP_HAWEILAND"
 			]
 		},
 		"4": {
@@ -696,7 +711,8 @@
 				"src/map/banks/20/0/map_20_0_forest_cemetery_teahs_house.pms",
 				"MAP_WALDFRIEDHOF"
 			]
-		}
+		},
+		"21": {}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -1158,6 +1174,18 @@
 		"map_footer_38_ceometria_gym_waiting_room": [
 			38,
 			"src/map/banks/19/6/map_footer_38_ceometria_gym_waiting_room.pms"
+		],
+		"map_footer_39_route_12": [
+			39,
+			"src/map/banks/3/15/map_footer_39_route_12.pms"
+		],
+		"map_footer_40_route_12_west": [
+			40,
+			"src/map/banks/3/16/map_footer_40_route_12_west.pms"
+		],
+		"map_footer_41_haweiland": [
+			41,
+			"src/map/banks/3/17/map_footer_41_haweiland.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1198,7 +1226,8 @@
 		"maptileset_inferior_gym": "src/map/tileset/maptileset_inferior_gym.pms",
 		"maptileset_laubdorf": "src/map/tileset/maptileset_laubdorf.pms",
 		"maptileset_ceometria": "src/map/tileset/maptileset_ceometria.pms",
-		"maptileset_ceometria_gym": "src/map/tileset/maptileset_ceometria_gym.pms"
+		"maptileset_ceometria_gym": "src/map/tileset/maptileset_ceometria_gym.pms",
+		"maptileset_haweiland": "src/map/tileset/gfx_maptileset_haweiland.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1237,6 +1266,7 @@
 		"gfx_maptileset_inferior_gymTiles": "asset/gfx/tileset/gfx_maptileset_inferior_gym.png",
 		"gfx_maptileset_laubdorfTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf.png",
 		"gfx_maptileset_ceometriaTiles": "asset/gfx/tileset/gfx_maptileset_ceometria.png",
-		"gfx_maptileset_ceometria_gymTiles": "asset/gfx/tileset/gfx_maptileset_ceometria_gym.png"
+		"gfx_maptileset_ceometria_gymTiles": "asset/gfx/tileset/gfx_maptileset_ceometria_gym.png",
+		"gfx_maptileset_haweilandTiles": "asset/gfx/tileset/gfx_maptileset_haweiland.png"
 	}
 }

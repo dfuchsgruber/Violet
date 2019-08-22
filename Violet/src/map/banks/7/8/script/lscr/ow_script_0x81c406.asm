@@ -179,12 +179,8 @@ applymovement 0x2 ow_script_movs_0x8eca2a
 applymovement 0xff ow_script_movs_0x8eca2a
 waitmovement 0x0
 
-loadpointer 0 str_police
-setvar 0x8000 0
-special 0xE
 loadpointer 0x0 str_0x8f257b
-callstd MSG
-special 0xF
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
 
 loadpointer 0x0 str_0x8f0b3b
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT

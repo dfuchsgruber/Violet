@@ -231,6 +231,9 @@ bool npc_get_id_by_overworld_id(u8 overworld_id, u8 map, u8 bank, u8 *result);
  */
 void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, u8 *moves);
 
+// Person idx that is targeted by npc_apply_movement
+u8 npc_movement_target_person_idx;
+
 /**
  * Sets the player state and executes the tile animation based on a movement he takes
  * @param movement the movement of the player anim

@@ -740,6 +740,14 @@ extern const unsigned short gfx_ow_drampaTiles[];
 extern const unsigned short gfx_ow_blackbeardTiles[];
 extern const unsigned short gfx_ow_teahTiles[];
 extern const unsigned short gfx_ow_narcissaTiles[];
-
+extern const unsigned short gfx_ow_harrenfeld_0Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_1Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_2Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_3Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_4Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_5Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_6Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_7Tiles[];
+extern const unsigned short gfx_ow_harrenfeld_8Tiles[];
 
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */

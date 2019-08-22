@@ -32,7 +32,7 @@ u8 worldmap0_position_data [] = {
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6f, ____, ____, 0xa2, 0x65,
 
-        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x5f, ____, ____, ____, 0x58,
+        ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 0x6e, 0x70, 0x70, 0x70, 0x5f, 0x7F, ____, ____, 0x58,
 
         ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, 
 
@@ -95,6 +95,8 @@ worldmap_shape_t worldmap_shape_route_9_horizontal = {.x = 1, .y = 0, .width = 2
 
 worldmap_shape_t worldmap_shape_route_10_vertical = {.x = 0, .y = 0, .width = 1, .height = 3};
 
+worldmap_shape_t worldmap_shape_route_12_east = {.x = 2, .y = 0, .width = 1, .height = 1};
+
 worldmap_shape_t *worldmap_pattern_1x1[1] = {
 	&worldmap_shape_1x1_no_displacement
 };
@@ -130,6 +132,10 @@ worldmap_shape_t *worldmap_pattern_route_10[1] = {
 
 worldmap_shape_t *worldmap_pattern_route_11[1] = {
 	&worldmap_shape_1x2_no_displacement
+};
+
+worldmap_shape_t *worldmap_pattern_route_12[2] = {
+	&worldmap_shape_2x1_no_displacement, &worldmap_shape_route_12_east
 };
 
 worldmap_shape_t **worldmap0_namespace_patterns[] = {
@@ -255,7 +261,7 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0x11, 0xB}, // MAP_CEOMETRIA
 	{0x12, 0x2}, // MAP_LAUBDORF
 	{0x0, 0x0}, // MAP_INDIGO_PLATEAU
-	{0x0, 0x0}, // MAP_SAFFRONIA_CITY
+	{0xD, 0xB}, // MAP_HAWEILAND
 	{0x0, 0x0}, // MAP_NAMESPACE_99
 	{0x0, 0x0}, // MAP_NAMESPACE_100
 	{0x15, 0x9}, // MAP_ROUTE_1
@@ -269,7 +275,7 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0x12, 0x0}, // MAP_ROUTE_9
 	{0x15, 0x1}, // MAP_ROUTE_10
 	{0x11, 0x9}, // MAP_ROUTE_11
-	{0x0, 0x0}, // MAP_ROUTE_12
+	{0xE, 0xB}, // MAP_ROUTE_12
 	{0x0, 0x0}, // MAP_ROUTE_13
 	{0x0, 0x0}, // MAP_ROUTE_14
 	{0x0, 0x0}, // MAP_ROUTE_15
@@ -284,7 +290,7 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	{0x0, 0x0}, // MAP_ROUTE_24
 	{0x0, 0x0}, // MAP_ROUTE_25
 	{0x12, 0x4}, // MAP_SILVANIA_WALD
-	{0x0, 0x0}, // MAP_PKMN_FRIEDHOF
+	{0x12, 0xB}, // MAP_WALDFRIEDHOF
 	{0x0, 0x0}, // MAP_NAMESPACE_128
 	{0xD, 0x5}, // MAP_ASCHHAIN
 	{0x0, 0x0}, // MAP_TUNNELPFAD
@@ -372,7 +378,8 @@ coordinate_t worldmap0_namespace_position_assoc[] = {
 	 {.bank = 3, .map_idx = 24, .shape_idx = 1},
 	 {.bank = 3, .map_idx = 7, .shape_idx = 1},
 	 {.bank = 11, .map_idx = 1, .shape_idx = 1},
-	 {.bank = 13, .map_idx = 0, .shape_idx = 1}
+	 {.bank = 13, .map_idx = 0, .shape_idx = 1},
+	 {.bank = 3, .map_idx = 15, .shape_idx = 1}
  };
 
 

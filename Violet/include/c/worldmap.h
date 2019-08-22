@@ -50,7 +50,7 @@ extern "C" {
         u8 shape_idx;
     } worldmap_shape_association_t;
 
-    #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 5
+    #define NUM_WORLDMAP_SHAPE_ASSOCIATIONS 6
     worldmap_shape_association_t worldmap_shape_associations[NUM_WORLDMAP_SHAPE_ASSOCIATIONS];
 
     extern worldmap_state_t *worldmap_state;

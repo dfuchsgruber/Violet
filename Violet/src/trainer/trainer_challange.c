@@ -7,35 +7,38 @@
 #include "data_structures.h"
 #include "constants/flags.h"
 #include "constants/trainerclasses.h"
+#include "constants/movements.h"
 #include "flags.h"
 #include "vars.h"
+#include "constants/vars.h"
 
-void special_prepeare_player_facing() {
+void special_player_facing() {
     s16 coordinates [2];
     player_get_coordinates(&coordinates[0], &coordinates[1]);
-    u8 pers_id = (u8) (*var_access(0x800F)); //Get LASTTALKED
+    u8 pers_id = (u8) (*var_access(LASTTALKED)); //Get LASTTALKED
     u8 npc_id;
     if (!npc_get_id_by_overworld_id(pers_id, save1->map, save1->bank, &npc_id)) {
         s16 npc_x = npcs[npc_id].dest_x;
         s16 npc_y = npcs[npc_id].dest_y;
-        u8 facing = 0;
         if (coordinates[0] < npc_x) {
             //player has to face right
-            facing = 3;
+            fmem.npc_facing_movements[0] = LOOK_RIGHT;
         } else if (coordinates[0] > npc_x) {
             //player has to face left
-            facing = 2;
+            fmem.npc_facing_movements[0] = LOOK_LEFT;
         } else if (coordinates[1] < npc_y) {
             //player has to face down
-            facing = 0;
+            fmem.npc_facing_movements[0] = LOOK_DOWN;
         } else if (coordinates[1] > npc_y) {
             //player has to face up
-            facing = 1;
+            fmem.npc_facing_movements[0] = LOOK_UP;
         }
-        *var_access(0x800D) = (u16) (0xFE00 | facing); //pseudo movement code : FACING, 0xFE
+        fmem.npc_facing_movements[1] = STOP;
     } else {
-        *var_access(0x800D) = 0xFE;
+        fmem.npc_facing_movements[0] = STOP;
     }
+    npc_apply_movement(0xFF, save1->map, save1->bank, fmem.npc_facing_movements);
+    npc_movement_target_person_idx = 0xFF;
 }
 
 bool special_x36_check_loaded_trainerflag() {
