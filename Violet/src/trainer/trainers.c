@@ -5503,11 +5503,11 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_xfe_route_12_trainer_2
     },
     [0xFF] = {
-        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 0x6F,
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
         .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Obola"),
             PSTRING("Obola")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
-        .party = (trainer_pokemon*) trainer_party_xfe_route_12_trainer_2,
+        .party = (trainer_pokemon*) trainer_party_xff_route_12_trainer_3,
         .items = {ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE}
     },
     [0x100] = {
@@ -5518,10 +5518,10 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x100_route_12_trainer_4
     },
     [0x101] = {
-        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 0x6F,
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
         .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Nadyine"),
             PSTRING("Nadyine")), .pokemon_cnt = 2,
-        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x101_route_12_trainer_5,
     },
     [0x102] = {
@@ -5532,10 +5532,10 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x102_route_12_trainer_6,
     },
     [0x103] = {
-        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 0x6F,
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
         .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Cordula"),
             PSTRING("Cordula")), .pokemon_cnt = 1,
-        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x103_route_12_trainer_7,
     },
     [0x104] = {
@@ -5551,6 +5551,84 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Royman")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x105_route_12_trainer_9
+    },
+    [0x106] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Basil"),
+            PSTRING("Basil")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x106_route_12_trainer_10,
+    },
+    [0x107] = {
+        .trainerclass = TRAINERCLASS_MATROSE, .sprite = 53,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Popei"),
+            PSTRING("Popei")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x107_route_12_trainer_11,
+    },
+    [0x108] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Carmena"),
+            PSTRING("Carmena")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x108_route_12_trainer_12,
+    },
+    [0x109] = {
+        .trainerclass = TRAINERCLASS_SCHNOESEL, .sprite = 0xD,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Deytar"),
+            PSTRING("Deytar")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x109_route_12_trainer_13,
+        .items = {ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_NONE, ITEM_NONE}
+    },
+    [0x10a] = {
+        .trainerclass = TRAINERCLASS_PLANSCHER, .sprite = 6,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Alaisya"),
+            PSTRING("Alaisya")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x10a_route_12_trainer_14
+    },
+    [0x10b] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Tormen"),
+            PSTRING("Tormen")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x10b_route_12_trainer_15,
+    },
+    [0x10c] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3c,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Maira"),
+            PSTRING("Maira")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x10c_route_12_trainer_16,
+    },
+    [0x10d] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Hanneys"),
+            PSTRING("Hanneys")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x10d_route_12_trainer_17,
+    },
+    [0x10e] = {
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Balana"),
+            PSTRING("Balana")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x10e_route_12_trainer_18,
+    },
+    [0x10f] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Byanca"),
+            PSTRING("Byanca")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x10f_route_12_trainer_19,
+    },
+    [0x110] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Taufel"),
+            PSTRING("Taufel")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x110_route_12_trainer_20,
     },
 };
 

@@ -49,7 +49,7 @@ u8 trainer_class_names[][13] = {
 	LANGDEP(PSTRING("PKMN-Züchter"), PSTRING("PKMN Breeder")),
 	LANGDEP(PSTRING("PKMN-Ranger"), PSTRING("PKMN Ranger")),
 	LANGDEP(PSTRING("Magma Boss"), PSTRING("Magma Leader")),
-	LANGDEP(PSTRING("Team Magma"), PSTRING("Team Magma")),
+	LANGDEP(PSTRING("Pirat"), PSTRING("Pirate")),
 	LANGDEP(PSTRING("Göre"), PSTRING("Lass")),
 	LANGDEP(PSTRING("Käfersammler"), PSTRING("Bug Catcher")),
 	LANGDEP(PSTRING("Picknicker"), PSTRING("Hiker")),

@@ -87,4 +87,5 @@ trainergfx 117,gfx_trainer_miaTiles,gfx_trainer_miaPal
 trainergfx 137,gfx_trainer_violet_grunt_fTiles,gfx_trainer_violet_grunt_fPal
 trainergfx 121,gfx_trainer_igvaTiles, gfx_trainer_igvaPal
 trainergfx 26,gfx_trainer_harrenfeldTiles,gfx_trainer_harrenfeldPal
+trainergfx 25,gfx_trainer_pirateTiles,gfx_trainer_piratePal
 

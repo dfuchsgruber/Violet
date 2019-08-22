@@ -1527,7 +1527,7 @@
 	.global str_item_desc_xff_item_scheuchrauch
 
 	str_item_desc_xff_item_scheuchrauch:
-		.autostring 30 3 "Ein Item zum Tragen. Reduziert Begegnungen mit wilden Pokémon, wenn der Träger an erster Stelle steht."
+		.string "Ein Item, das ein Pokémon trägt. Es\nkann wilde Pokémon abhalten, wenn\nder Träger an erster Stelle steht."
 
 
 	.global str_item_desc_x100_item_gluecksrauch
