@@ -6,30 +6,16 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "pipenv",
+            "command": "docker-compose",
             "args": [
-                "run",
-                "make",
-                "-j$(nproc)",
-                "all"
+                "up"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/Violet"
+                "cwd": "${workspaceFolder}"
             },
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },
-            "windows": {
-                "options": {
-                    "shell": {
-                        "executable": "bash.exe",
-                        "args": [
-                            "--login",
-                            "-c"
-                        ]
-                    }
-                }
             },
             "problemMatcher": []
         }
