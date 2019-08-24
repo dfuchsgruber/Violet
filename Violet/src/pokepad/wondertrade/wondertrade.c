@@ -171,9 +171,11 @@ u16 wondertrade_select_pokemon() {
         case 3:
             if (r < 16)
                 table++;
+            __attribute__ ((fallthrough));
         case 2:
             if (r < 64)
                 table++;
+            __attribute__ ((fallthrough));
         case 1:
             if (r < 128)
                 table++;
@@ -461,8 +463,10 @@ void wondertrade_init_components() {
     switch (lvl) {
         case 3:
             displacement += 4;
+            __attribute__ ((fallthrough));
         case 2:
             displacement += 4;
+            __attribute__ ((fallthrough));
         case 1:
             displacement += 4;
             break;
