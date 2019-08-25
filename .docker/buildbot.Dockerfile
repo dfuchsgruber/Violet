@@ -14,7 +14,6 @@ RUN apt-get update --fix-missing
 RUN apt-get install -y \
         libgl1-mesa-dev \
         gcc-arm-none-eabi \
-        dos2unix \
         cmake \
         bc \
         python3-pip
