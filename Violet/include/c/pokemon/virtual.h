@@ -216,6 +216,8 @@ u8 pokemon_get_number_in_party();
 
 void pokemon_load_name_as_string(pokemon *pokemon, u8 *buffer);
 
+#define POKEMON_NEW_RANDOM_IVS 32
+
 /**
  * Creates a new pokemon
  * @param space where to create the pokemon
@@ -306,6 +308,16 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 ev_sp
  * @return the tid as product of all characters
  */
 u32 tid_by_ot_name(u8 *ot_name);
+
+/**
+ * Creates a new pokemon and sets its ivs.
+ * @param dst where to create the new pokemon
+ * @param species the species of the pokemon to create
+ * @param level the level of the pokemon to create
+ * @param ivs the ivs of the pokemon to create
+ * @param pid the pid of the pokemon to create
+ **/
+void pokemon_new_and_set_ivs(pokemon *dst, u16 species, u8 level, u32 ivs, pid_t pid);
 
 /**
  * Checks if a pokemon has its hidden ability.

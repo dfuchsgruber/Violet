@@ -17,6 +17,9 @@
 #include "text.h"
 #include "pokemon/virtual.h"
 #include "constants/story_states.h"
+#include "tile/hidden_item.h"
+#include "pokemon/roamer.h"
+#include "constants/roamers.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -136,7 +139,25 @@ void version_upgrade_alpha_2_1_to_2_2() {
 			version_alpha_2_2_fix_pid(pokemon_get_by_box(box_idx, idx));
 		}
 	}
-
+    // Clear all hidden flags that are respawnable
+    for (int i = 0; i < 15; i++) {
+        for (int j = 0; j < 8; j++) {
+            if (hidden_item_respawnable[i].flags_10_percent[j] != 0xFF) {
+                clearflag((u16)(hidden_item_respawnable[i].flags_10_percent[j] + 1000));
+            }
+            if (hidden_item_respawnable[i].flags_30_percent[j] != 0xFF) {
+                clearflag((u16)(hidden_item_respawnable[i].flags_30_percent[j] + 1000));
+            }
+            if (hidden_item_respawnable[i].flags_40_percent[j] != 0xFF) {
+                clearflag((u16)(hidden_item_respawnable[i].flags_40_percent[j] + 1000));
+            }
+        }
+    }
+    // Roamers
+    roamer_reset_all();
+    if (checkflag(ASCHHAIN_LAVADOS)) {
+        roamer_initialize(ROAMER_LAVADOS);
+    }
 }
 
 u16 version_is_latest(){

@@ -5,7 +5,8 @@
 .include "species.s"
 .include "vars.s"
 .include "overworld_script.s"
-
+.include "specials.s"
+.include "roamers.s"
 
 .global ow_script_movs_0x801223
 ow_script_movs_0x801223:
@@ -55,8 +56,10 @@ sound 0x80
 applymovement 0x9 ow_script_movs_0x8e1959
 waitmovement 0x0
 special 0x114
-setvar 0x8004 0x92
-special 0x163
+setvar 0x8004 POKEMON_LAVADOS
+special SPECIAL_SET_AS_SEEN
+setvar 0x8004 ROAMER_LAVADOS
+special SPECIAL_ROAMER_RESET_AND_INITIALIZE
 hidesprite 0x9
 addvar ASCHHAIN_LAVADOS_VAR 0x1
 playsong MUS_LAVA 0x0

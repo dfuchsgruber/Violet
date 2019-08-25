@@ -35,6 +35,8 @@ typedef struct {
 
 } wild_pokemon_data;
 
+u8 wild_pokemon_disabled;
+
 extern wild_pokemon_data wild_pokemon[];
 
 /**

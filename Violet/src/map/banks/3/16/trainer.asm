@@ -80,6 +80,7 @@ ow_script_route_12_trainer_16:
     end
 ow_script_route_12_trainer_17:
     trainerbattlestd 0 0x10d 0 str_trainer12_challange str_trainer12_defeat
+    callasm _test_flags
     loadpointer 0 str_trainer12_defeat
     callstd MSG_FACE
     end

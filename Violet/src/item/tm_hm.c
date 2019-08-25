@@ -6,6 +6,7 @@
  */
 #include "types.h"
 #include "constants/attacks.h"
+#include "item/item.h"
 
 u16 tm_hm_to_attack[58] = {
 	 ATTACK_POWER_PUNCH,

@@ -6,6 +6,8 @@
 .include "attacks.s"
 .include "ordinals.s"
 .include "species.s"
+.include "roamers.s"
+.include "specials.s"
 
 .equ DTYPE_FOREST, 1
 
@@ -34,6 +36,11 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 
 ow_script_test:
+setvar 0x8004 ROAMER_LAVADOS
+special SPECIAL_ROAMER_RESET_AND_INITIALIZE
+setflag POKEDEX_FEATURE_0
+end
+
 clearflag FLAG_FOREST_CEMETERY_DONE
 setvar STORY_PROGRESS 0x37
 end

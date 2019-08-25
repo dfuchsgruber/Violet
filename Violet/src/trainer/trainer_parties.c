@@ -1449,7 +1449,7 @@ trainer_pokemon_default_item_default_attacks trainer_party_x10f_route_12_trainer
   TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_OCTILLERY),
 };
 
-trainer_pokemon_default_item_default_attacks trainer_party_x10f_route_13_trainer_20[3] = {
+trainer_pokemon_default_item_default_attacks trainer_party_x110_route_12_trainer_20[3] = {
   TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_PELIPPER),
   TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_SCHILLOK),
   TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_KAPPALORES),

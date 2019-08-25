@@ -51,7 +51,6 @@ wild_pokemon_habitat wild_pokemon_route_12_east_other = {
   .frequency = 128, .data = wild_pokemon_route_12_east_other_entries
 };
 
-
 wild_pokemon_entry wild_pokemon_route_12_east_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_0_60_PERCENT] = 
 		{.level_min = 37, .level_max = 41, .species = POKEMON_WINGULL},
@@ -64,6 +63,7 @@ wild_pokemon_entry wild_pokemon_route_12_east_water_entries[5] = {
 	[WILD_POKEMON_DENSITY_WATER_3_1_PERCENT] = 
 		{.level_min = 39, .level_max = 42, .species = POKEMON_WAILMER},
 };
+
 
 wild_pokemon_habitat wild_pokemon_route_12_east_water = {
 	.frequency = 4, .data = wild_pokemon_route_12_east_water_entries

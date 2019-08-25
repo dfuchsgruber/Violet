@@ -21,9 +21,13 @@ def print_habitat_index(habitats):
 def print_item_index(items):
     """ Creates a readable version of the item index. """
     index = ''
-    for item, locations in items.items():
-        index += f'{item}\n'
-        for location in locations:
+    for item, data in items.items():
+        attack = data.get('attack', None)
+        if attack:
+            index += f'{item} ({attack})\n'
+        else:
+            index += f'{item}\n'
+        for location in data['locations']:
             bank = location.get('bank', None)
             map_idx = location.get('map_idx', None)
             namespace = location.get('namespace', None)
@@ -34,8 +38,8 @@ def print_item_index(items):
 def print_hidden_index(items):
     """ Creates a readable version of all used hidden flags so far. """
     chunks = defaultdict(lambda: defaultdict(list))
-    for item, locations in items.items():
-        for location in locations:
+    for item, data in items.items():
+        for location in data['locations']:
             if location['type'] == 'hidden':
                 bank = location.get('bank', None)
                 map_idx = location.get('map_idx', None)

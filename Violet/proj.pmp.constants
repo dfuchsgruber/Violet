@@ -56,5 +56,6 @@
 	"sav_keys" : "constants/sav_keys.const",
 	"levelscript_types" : "constants/levelscript_types.const",
 	"shader_states" : "constants/shader_states.const",
-	"pokemon_statuses" : "constants/pokemon_statuses.const"
+	"pokemon_statuses" : "constants/pokemon_statuses.const",
+	"roamers" : "constants/roamers.const"
 }

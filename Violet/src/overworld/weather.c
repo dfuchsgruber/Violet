@@ -16,7 +16,7 @@ color_t overworld_weather_static_fog_get_overlay_color() {
 }
 
 void pal_oam_apply_fading(u8 oam_pal_idx) {
-    dprintf("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
+    // dprintf("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
     u8 pal_idx = (u8)(oam_pal_idx + 16);
     if (overworld_weather.pal_processing_state == OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN) {
         if (overworld_weather.field_1738) {

@@ -95,25 +95,32 @@ u16 hidden_flag_by_chunk(u8 flag, u8 hidden_chunk){
     }
 }
 
+void _test_flags() {
+    for (u16 i = 1000; i < 1100; i++) {
+        if (checkflag(i)) {
+            dprintf("flag set %d\n", i);
+        }
+    }
+}
 
-u16 singpost_get_flag(u32 fields, u8 field_id){
-    u32 hidden_chunk = (fields >> 29) & 3;
+
+u16 singpost_get_flag(hidden_item_t hidden_item, u8 field_id){
     switch(field_id){
         case 0:
             //item id
-            return (u16) fields;
+            return (u16)hidden_item.item;
         case 1:
             //hidden flag
-            return hidden_flag_by_chunk((u8)(fields >> 16) & 0xFF, (u8)hidden_chunk);
+            return hidden_flag_by_chunk((u8)hidden_item.flag, (u8)hidden_item.chunk);
         case 2:
             //cnt
-            return (u8)(fields >> 24) & 0x1F;
+            return (u8)hidden_item.amount;
         case 3:
             //detector disable
-            return (u8)(fields >> 31) & 1;
+            return (u8)hidden_item.detector_disabled;
         case 4:
             //hidden chunk
-            return (u8)hidden_chunk;
+            return (u8)hidden_item.chunk;
         default:
             return 0;
     }

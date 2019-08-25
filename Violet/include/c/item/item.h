@@ -109,5 +109,6 @@ void item_remove_from_pc(u16 item, u16 quantity);
  */
 bool item_check(u16 item, u16 quantity);
 
+u16 tm_hm_to_attack[58];
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

@@ -13,7 +13,7 @@
 	typedef struct {
         int num_entries_grass, num_entries_water, num_entries_other,
                 num_entries_rod, num_entries_good_rod, num_entries_super_rod;
-        u16 entries_grass[12][2];
+        u16 entries_grass[13][2]; // Potenial 13st slot for a roamer
         u16 entries_water[5][2];
         u16 entries_other[5][2];
         u16 entries_rod[2][2];

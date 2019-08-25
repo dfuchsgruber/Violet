@@ -19,6 +19,7 @@
 #include "pokemon/breeding.h"
 #include "map/ceometria_gym.h"
 #include "trainer/party.h"
+#include "pokemon/roamer.h"
 
 #define GP_STACK_SIZE 16
 
@@ -112,12 +113,10 @@ typedef struct custom_memory {
     
     //Dungeon Memory II
     dungeon_generator2 dg2;
-    // wild_pokemon_entry dwild_data_grass[12];
-    // wild_pokemon_entry dwild_data_water[5];
-    // wild_pokemon_entry dwild_data_rod[10];
-    // wild_pokemon_entry dwild_data_radar[5];
-
     ceometria_gym_state_t ceometria_gym_state;
+    roamer_state_t roamers[NUM_ROAMERS];
+    roamer_history_entry_t roamer_histories[NUM_ROAMERS][3];
+    roamer_history_entry_t roamer_locations[NUM_ROAMERS];
 
 } custom_memory;
 
@@ -167,6 +166,7 @@ typedef struct {
     wild_pokemon_entry dwild_data_rod[10];
     u32 trainer_prng_state;
     trainer_pokemon_custom_item_custom_attacks dynamic_trainer_party[3];
+    u8 roamer_last_encountered;
     
 } floating_memory;
 

@@ -14,6 +14,9 @@
 #include "constants/battle_bgs.h"
 #include "constants/pokemon_types.h"
 #include "attack.h"
+#include "save.h"
+#include "map/tileset.h"
+#include "debug.h"
 
 battle_bg battle_bgs[29] = {
     // Battle street
@@ -152,7 +155,12 @@ battle_bg battle_bgs[29] = {
         NULL,
         gfx_battle_bg_graveyardPal
     },
-
+    [BATTLE_BG_HAWEILAND] = {
+        gfx_battle_bg_haweilandTiles,
+        gfx_battle_bg_haweilandMap,
+        NULL, NULL,
+        gfx_battle_bg_haweilandPal
+    }
 };
 
 
@@ -179,6 +187,11 @@ u8 battle_bg_get_id(){
     coordinate_t pos;
     player_get_coordinates(&pos.x, &pos.y);
     u8 bg_id = (u8)block_get_field_by_pos(pos.x, pos.y, 3);
+    // In regions that use the Haweiland-Tileset, the shore background is replaced by the haweiland tileset
+    // dprintf("bgid %d, ts2 %x, mtshaw %x\n", bg_id, &mapfooter_virtual.tileset2, &maptileset_haweiland);
+    if (bg_id == BATTLE_BG_SHORE && mapheader_virtual.footer->tileset2 == &maptileset_haweiland) {
+        bg_id = BATTLE_BG_HAWEILAND;
+    }
     return bg_id;
 }
 
@@ -204,6 +217,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 		break;
 	case BATTLE_BG_OCEAN:
 	case BATTLE_BG_SHORE:
+    case BATTLE_BG_HAWEILAND:
 	case BATTLE_BG_POND:
 	case BATTLE_BG_WATER_CAVE:
 		type = TYPE_WASSER;
@@ -252,7 +266,8 @@ u16 terrain_moves[] = {
     0, //evolution
     0, //captured
     ATTACK_SCHNABEL, //mill
-    [BATTLE_BG_GRAVEYARD] = ATTACK_SPUKBALL
+    [BATTLE_BG_GRAVEYARD] = ATTACK_SPUKBALL,
+    [BATTLE_BG_HAWEILAND] = ATTACK_EIERBOMBE
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

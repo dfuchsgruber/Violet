@@ -63,4 +63,17 @@ void overworld_load_tileset_pal(tileset *t, u16 dst_col, u16 bytecnt);
  */
 void tileset_anim_proceed();
 
+extern tileset maptileset0;
+extern tileset maptileset1;
+extern tileset maptileset2;
+extern tileset maptileset3;
+extern tileset maptileset4;
+extern tileset maptileset245157;
+extern tileset maptileset249598;
+extern tileset maptileset302795;
+extern tileset maptileset242637;
+extern tileset maptileset251828;
+extern tileset maptileset_laubdorf;
+extern tileset maptileset_haweiland;
+
 #endif /* INCLUDE_C_MAP_TILESET_H_ */

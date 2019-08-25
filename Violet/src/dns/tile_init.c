@@ -9,18 +9,6 @@
 #include "constants/shader_states.h"
 #include "vars.h"
 
-extern tileset maptileset0;
-extern tileset maptileset1;
-extern tileset maptileset2;
-extern tileset maptileset3;
-extern tileset maptileset4;
-extern tileset maptileset245157;
-extern tileset maptileset249598;
-extern tileset maptileset302795;
-extern tileset maptileset242637;
-extern tileset maptileset251828;
-extern tileset maptileset_laubdorf;
-
 
 void tile_init(map_footer_t *foot) {
 

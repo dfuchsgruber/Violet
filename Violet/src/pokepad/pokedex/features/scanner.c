@@ -64,6 +64,23 @@ int _pokedex_feature_scanner_build_entries(wild_pokemon_entry *wild_entries,
     return num_entries;
 }
 
+void pokedex_feature_scanner_entries_add_roamers(pokedex_scanner_state *state) {
+    for (int i = 0; i < NUM_ROAMERS; i++) {
+        if (cmem.roamers[i].is_present && cmem.roamer_locations[i].bank == save1->bank && cmem.roamer_locations[i].map_idx == save1->map) {
+            // 50% probability that the roamer appears, so all percentages must be multiplied by 1/2
+            // If multiple roamers were present at this map, only the first roamer appears, so we only list one
+            int total_percentage_values = 0;
+            for (int j = 0; j < state->num_entries_grass; j++) {
+                state->entries_grass[j][1] = (u16)(MAX(1, state->entries_grass[j][1] / 2));
+                total_percentage_values += state->entries_grass[j][1];
+            }
+            state->entries_grass[state->num_entries_grass][0] = roamer_species[i];
+            state->entries_grass[state->num_entries_grass][1] = (u16)(100 - total_percentage_values); // Make probabilities sum up to 100 in case of rounding issues
+            state->num_entries_grass++;
+        }
+    }
+}
+
 int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
     wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
     if(!wild_pokemon_header) return -1;
@@ -77,6 +94,7 @@ int pokedex_feature_scanner_build_entries(pokedex_scanner_state *state){
         _pokedex_feature_scanner_sort_entries(state->entries_grass, 
                 state->num_entries_grass);
     }
+    pokedex_feature_scanner_entries_add_roamers(state);
     
     // Build the water entries
     state->num_entries_water = 0;
@@ -299,7 +317,6 @@ void pokedex_feature_scanner_print_generic_list(u16 entries[][2], int size){
         strcat(strbuf, str_pokedex_feature_scanner_percent);
         tbox_print_string(box_id, 2, 70, (u16)(16 * line), 0, 0,
                 &pokedex_feature_scanner_fontcolmap, 0, strbuf);
-        
         
         dprintf("Printing species %d with p %d\n", species, prob);
     }

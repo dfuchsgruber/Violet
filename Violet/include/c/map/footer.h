@@ -29,7 +29,6 @@ typedef struct mapfooter {
 
 
 extern map_footer_t *mapfooters[];
-extern map_footer_t mapfooter_virtual;
 
 map_footer_t *get_mapfooter();
 

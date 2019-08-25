@@ -1,4 +1,6 @@
 .include "overworld_script.s"
+.include "flags.s"
+.include "specials.s"
 
 .global script_use_cloud_ref
 .global script_use_cloud_back_ref
@@ -20,9 +22,10 @@ script_use_cloud:
     gotoif 0 script_use_cloud_no
     loadpointer 0 str_cloud_used
 cloud_exec:
-    special 0x2B
+    setflag ROAMER_LOCATIONS_FIXED
+    special SPECIAL_SET_PLAYER_ON_CLOUD
     callstd 6
-    special 0x2C
+    special SPECIAL_CLOUD_WARP
     waitstate
     end
 
@@ -37,27 +40,31 @@ script_use_cloud_no:
     end
 
 script_cloud_force_down:
-    special 0x2B
+    special SPECIAL_SET_PLAYER_ON_CLOUD
 script_face_down:
     spriteface 0xFF 1
+    clearflag ROAMER_LOCATIONS_FIXED
     end
 
 script_cloud_force_up:
-    special 0x2B
+    special SPECIAL_SET_PLAYER_ON_CLOUD
 script_face_up:
     spriteface 0xFF 2
+    clearflag ROAMER_LOCATIONS_FIXED
     end
 
 script_cloud_force_left:
-    special 0x2B
+    special SPECIAL_SET_PLAYER_ON_CLOUD
 script_face_left:
     spriteface 0xFF 3
+    clearflag ROAMER_LOCATIONS_FIXED
     end
 
 script_cloud_force_right:
-    special 0x2B
+    special SPECIAL_SET_PLAYER_ON_CLOUD
 script_face_right:
     spriteface 0xFF 4
+    clearflag ROAMER_LOCATIONS_FIXED
     end
 
 

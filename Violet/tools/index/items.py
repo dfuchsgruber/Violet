@@ -14,7 +14,9 @@ def get_item_index(rompath, symbolspath, projectpath):
     project = Project(projectpath)
 
     items = {
-        item : [] for item in project.constants['items']
+        item : {
+            'locations' : [],
+        } for item in project.constants['items']
     }
 
     # Parse script files
@@ -31,7 +33,7 @@ def get_item_index(rompath, symbolspath, projectpath):
                         # Reconstruct the bank and map idx and context from the path
                         bank, map_idx = re.findall(f'{root}/(.*?)/(.*?)/.*', filepath)[0]
                         for item, amount in matches:
-                            items[item].append({
+                            items[item]['locations'].append({
                                 'type' : 'script',
                                 'context' : '',
                                 'bank' : bank,
@@ -46,7 +48,7 @@ def get_item_index(rompath, symbolspath, projectpath):
             for person_idx, person in enumerate(header['events']['persons']):
                 try:
                     if person['script_std'] == 'PERSON_ITEM':
-                        items[person['value']['item']].append({
+                        items[person['value']['item']]['locations'].append({
                             'type' : 'pokeball',
                             'bank' : bank,
                             'map_idx' : map_idx,
@@ -60,7 +62,7 @@ def get_item_index(rompath, symbolspath, projectpath):
                 try:
                     item = sign['value']['item']['item']
                     if item in items:
-                        items[item].append({
+                        items[item]['locations'].append({
                             'type' : 'hidden',
                             'bank' : bank,
                             'map_idx' : map_idx,
@@ -80,12 +82,21 @@ def get_item_index(rompath, symbolspath, projectpath):
         for rarity in ('common', 'rare'):
             offset = symbols[f'dungeon_{dungeon}_items_{rarity}']
             for item in datatype.from_data(rom, offset, project, [], []):
-                items[item].append({
+                items[item]['locations'].append({
                     'type' : 'dungeon',
                     'dungeon' : dungeon,
                     'rarity' : rarity
                 })
-
+    # Add attacks that TM/HMs correspond to
+    tm_hm_to_attack = project.model['tm_hm_to_attack'].from_data(rom, symbols['tm_hm_to_attack'], project, [], [])
+    for item in items:
+        match = re.match('ITEM_(T|V)M([0-9]+)', item)
+        if match is not None:
+            if match.groups()[0] == 'T':
+                attack = tm_hm_to_attack[int(match.groups()[1]) - 1]
+            elif match.groups()[0] == 'V':
+                attack = tm_hm_to_attack[int(match.groups()[1]) - 1 + 50]
+            items[item]['attack'] = attack
 
     return items
 

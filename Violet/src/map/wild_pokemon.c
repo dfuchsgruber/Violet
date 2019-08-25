@@ -9,6 +9,7 @@
 #include "vars.h"
 #include "constants/vars.h"
 #include "overworld/script.h"
+#include "pokemon/roamer.h"
 
 extern u8 ow_script_trainerschool_wildbattle[];
 
@@ -50,13 +51,12 @@ u8 map_wildbattle_init_seed(u32 triggers_wildbattle) {
   if(frequency >= 80) return 0;
   if(frequency <= 9) return 8;
   u8 result = (u8)(8 - (frequency / 10));
-  dprintf("Result is %d\n", result);
+  // dprintf("Result is %d\n", result);
   return result;
 }
 
 int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
-  u8 *byte_20386DC = (u8*)0x20386DC;
-  if(*byte_20386DC == 1) return 0; // TODO: investigate
+  if(wild_pokemon_disabled) return 0;
   if (*var_access(TRAINERSCHOOL_PROGRESS) <= 5) return 0; // Can not encounter until >= 6
   wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
   u8 pdf_type;
@@ -86,6 +86,15 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
     wildbattle_increase_chance(habitat->frequency);
     return 0;
   }
+  // Check if a roamer appears
+  if (wild_pokemon_spawn_roamer()) {
+    dprintf("Roamer to be spawned, allowed by repel %d\n", wildbattle_is_allowed_by_repel(ROAMER_LEVEL));
+    if (wildbattle_is_allowed_by_repel(ROAMER_LEVEL)) {
+      battle_initialize_roamer();
+      return true;
+    }
+  }
+
   if(!wildbattle_initialize_by_habitat(habitat, pdf_type, 1)) {
     wildbattle_increase_chance(habitat->frequency);
     return 0;

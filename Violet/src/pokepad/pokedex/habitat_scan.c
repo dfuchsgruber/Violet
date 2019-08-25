@@ -2,6 +2,9 @@
 #include "pokepad/pokedex/habitat.h"
 #include "map/header.h"
 #include "map/wild_pokemon.h"
+#include "pokemon/roamer.h"
+#include "save.h"
+#include "constants/map_namespaces.h"
 
 int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
     int cnt = 0;
@@ -66,6 +69,14 @@ int pokedex_get_namespaces_of_species(pokedex_habitat_pair *dst, u16 species) {
             }
         }
         i++;
+    }
+
+    int roamer_idx = species_to_roamer_idx(species);
+    if (roamer_idx != 1) {
+        u8 namespace = roamer_get_namespace(roamer_idx);
+        if (namespace != MAP_NAMESPACE_NONE) {
+            cnt = pokedex_get_namespace_of_species_add_pair_if_not_present(dst, cnt, namespace, 1, HABITAT_TYPE_GRASS);
+        }
     }
 
     return cnt;

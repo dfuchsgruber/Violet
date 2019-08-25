@@ -936,6 +936,22 @@ lsr r0, #0x1A
     lsl r0, #0
     lsl r0, #0
 
+// pokemon_set_attribute fix for ATTRIBUTE_IVs
+.org 0x08040992
+	
+	ldr r2, [r5, #4]
+	mov r1, #3
+	lsl r1, #30
+	and r2, r1 // Clear the lower 30 bit of the iv field (6 time 5-bits)
+	ldr r1, [r4] // Load the entire iv field
+	lsl r1, #2
+	lsr r1, #2 // Isolate 30-bit
+	orr r1, r2
+	str r1, [r5, #4]
+	ldr r0, = 0x080409da | 1
+	bx r0
+	.pool
+
 // Breeding
 .org 0x08045B2C
     ldr r0, =_pokemon_get_egg_moves_stub | 1
@@ -1060,3 +1076,40 @@ lsr r0, #0x1A
 	.word str_summary_egg_memo_duration_long
 	.word str_summary_egg_memo_duration_soon
 	.word str_summary_egg_memo_duration_very_soon
+
+// Roamers
+
+.org 0x8141d04
+	ldr r0, = roamer_reset_all | 1
+	bx r0
+	.pool
+
+.org 0x08141ed8
+	ldr r0, = roamer_history_update | 1
+	bx r0
+	.pool
+
+.org 0x08141e84
+	ldr r0, = roamer_randomize_position_all | 1
+	bx r0
+	.pool
+
+.org 0x08141ed8
+	ldr r0, = roamer_move_all | 1
+	bx r0
+	.pool
+
+.org 0x0814205c
+	ldr r0, = wild_pokemon_spawn_roamer | 1
+	bx r0
+	.pool
+
+.org 0x08142098
+	ldr r0, = roamer_last_encountered_update_and_randomize_position | 1
+	bx r0
+	.pool
+
+.org 0x081420cc
+	ldr r0, = roamer_last_encountered_set_not_present | 1
+	bx r0
+	.pool

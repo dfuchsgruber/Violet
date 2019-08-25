@@ -33,7 +33,18 @@
         "weather.h": "c",
         "movements.h": "c",
         "trainer.h": "c",
-        "language.h": "c"
+        "language.h": "c",
+        "items.h": "c",
+        "item.h": "c",
+        "attack.h": "c",
+        "footer.h": "c",
+        "tileset.h": "c",
+        "hidden_item.h": "c",
+        "roamer.h": "c",
+        "types.h": "c",
+        "memory.h": "c",
+        "agbmemory.h": "c",
+        "math.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }
