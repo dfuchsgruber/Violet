@@ -86,12 +86,15 @@ PYAGBDEP=$(PYAGBOBJS:%.o=%.d)
 CONSTANTSHAS=$(CONSTANTS:%.const=include/as/%.s)
 CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 
+OPENPAREN := (
+CLOSEPAREN := )
+
 include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile
 
 define build_list
-	@echo "INPUT(" > $(1);
-	@$(foreach file,$(2),echo "    $(file)" >> $(1);)
-	@echo ")" >> $(1);
+	$(file >$(1),INPUT$(OPENPAREN))
+	$(foreach file,$(2),$(file >>$(1),    $(file)))
+	$(file >>$(1),$(CLOSEPAREN))
 endef
 
 .PHONY: all clean soundfont test
