@@ -74,14 +74,15 @@ FIXED FIXED_SIN(FIXED theta) {
   switch(quadrant_idx) {
     case 2:
       result = -1;
-      // no break
+      __attribute__ ((fallthrough));
     case 0: {
       // First quadrant
       return result * sin_lut[lut_idx];
     }
-    case 3:
+    case 3: {
       result = -1;
-      // no break
+      __attribute__ ((fallthrough));
+    }
     case 1: {
       // Second quadrant
       // For exactly 90 degrees return 1.0

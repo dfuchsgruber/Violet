@@ -523,7 +523,7 @@ void anim_engine_text_renderer(anim_engine_task *t) {
                     return; //no token for line break, so we wait
                 }
             }
-            //fallthrough
+            __attribute__ ((fallthrough));
         }
         default:
         {

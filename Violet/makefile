@@ -86,7 +86,16 @@ PYAGBDEP=$(PYAGBOBJS:%.o=%.d)
 CONSTANTSHAS=$(CONSTANTS:%.const=include/as/%.s)
 CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 
+OPENPAREN := (
+CLOSEPAREN := )
+
 include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile
+
+define build_list
+	$(file >$(1),INPUT$(OPENPAREN))
+	$(foreach file,$(2),$(file >>$(1),    $(file)))
+	$(file >>$(1),$(CLOSEPAREN))
+endef
 
 .PHONY: all clean soundfont test
 
@@ -172,22 +181,24 @@ $(BLDPATH)/$(basename $(MAPPROJ)).o: $(MAPPROJ)
 
 $(BLDPATH)/asset/mus.o: $(MIDOBJS)
 	@echo "Collecting midi objects..."
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/asset/mus.o $(MIDOBJS)
+	$(call build_list,$(BLDPATH)/midi.ld,$(MIDOBJS))
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/midi.ld --relocatable -o $(BLDPATH)/asset/mus.o
 
 $(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(BLDPATH)/asset/mus.o 
 #	Create a ld script
-	@echo "INPUT($(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS))" > $(BLDPATH)/asset.ld
+	$(call build_list,$(BLDPATH)/asset.ld,$(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS))
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/mus.o 
 	
 $(BLDPATH)/map.o: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BLDPATH)/fata_morgana.o
 #	Create a ld script
-	@echo "INPUT($(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o)" > $(BLDPATH)/map.ld
+	$(call build_list,$(BLDPATH)/map.ld,$(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o)
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/map.ld --relocatable -o $(BLDPATH)/map.o $(BLDPATH)/fata_morgana.o 
 	
 	
 $(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS)
 	@echo "Collecting src files..."
-	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/src.o $(ASOBJS1) $(ASOBJS2) $(COBJS)
+	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS))
+	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/sources.ld --relocatable -o $(BLDPATH)/src.o
 		
 	
 soundfont: $(BLDROM)
