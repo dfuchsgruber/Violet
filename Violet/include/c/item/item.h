@@ -9,7 +9,7 @@
 #define INCLUDE_C_ITEM_ITEM_H_
 
 #include "item/count.h"
-
+#include "constants/items.h"
 
 typedef struct {
     u8 name[14];
@@ -29,6 +29,8 @@ typedef struct {
 
 item items[ITEM_CNT];
 
+u8 *item_effects[ITEM_ENIGMABEERE - ITEM_TRANK];
+
 typedef struct {
 	u8 hold_effect;
 	u8 type;
@@ -39,7 +41,7 @@ typedef struct {
 extern item_hold_effect_type_boost_stru
 item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
 
-
+void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
 /**
  * Returns the holding effect parameter of an item.
  * @param item_id The item id

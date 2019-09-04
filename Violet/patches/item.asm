@@ -1,10 +1,8 @@
 
 item_resource equ 0x083D3BE8
-item_effects equ 0x082527E0
 
 .org 0x0815F914 + (0x88*4)
     .word script_cmd_x88_pokemart3 | 1
-
 
 .org item_resource + 0x34 * 8
     .word gfx_item_magmaisiererTiles
@@ -17,6 +15,10 @@ item_effects equ 0x082527E0
 .org item_resource + 0x3B * 8
     .word gfx_item_evolithTiles
     .word gfx_item_evolithPal
+
+.org item_resource + 0x48 * 8
+    .word gfx_item_goldbonbonTiles
+    .word gfx_item_goldbonbonPal
 
 .org item_resource + 0x64 * 8
     .word gfx_item_finstersteinTiles
@@ -191,6 +193,12 @@ item_effects equ 0x082527E0
         .word item_effect_evolution_stone //Sparkle Stone
         .word item_effect_evolution_stone //Light Stone
 
+.org item_effects + 4 * (0x44 - 13)
+        .word item_effect_rare_candy
+
+.org item_effects + 4 * (0x48 - 13)
+        .word item_effect_gold_candy
+
 .org 0x08125adc
 	.word tm_hm_to_attack
 
@@ -209,3 +217,15 @@ item_effects equ 0x082527E0
 _bxr1:
 	bx r1
 	.pool
+
+//  Hooks for level up items
+.org 0x0804172a
+    ldr r0, = item_effect_level_up_apply_hook | 1
+    bx r0
+    .pool
+
+
+.org 0x08042644
+    ldr r0, = item_effect_level_up_unapplicable_hook | 1
+    bx r0 
+    .pool

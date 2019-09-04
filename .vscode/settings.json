@@ -44,7 +44,14 @@
         "types.h": "c",
         "memory.h": "c",
         "agbmemory.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "superstate.h": "c",
+        "oam.h": "c",
+        "custom.h": "c",
+        "basestat.h": "c",
+        "callbacks.h": "c",
+        "count.h": "c",
+        "description.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

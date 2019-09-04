@@ -80,7 +80,7 @@ extern u8 str_item_desc_x44_item_sonderbonbon[];
 extern u8 str_item_desc_x45_item_ap_plus[];
 extern u8 str_item_desc_x46_item_zink[];
 extern u8 str_item_desc_x47_item_ap_top[];
-extern u8 str_item_desc_x48_item_item_48[];
+extern u8 str_item_desc_x48_item_goldbonbon[];
 extern u8 str_item_desc_x49_item_megablock[];
 extern u8 str_item_desc_x4a_item_angriffplus[];
 extern u8 str_item_desc_x4b_item_x_angriff[];

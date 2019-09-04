@@ -49,9 +49,11 @@ typedef struct {
     u8 form;
 } basestat;
 
-
 basestat basestats[POKEMON_CNT];
 
+u32 pokemon_experience_tables[6][101];
+
+// Those species are "linked" to other species
 u16 pokemon_linked[LINKED_PKMN_CNT];
 
 #endif /* INCLUDE_C_POKEMON_BASESTAT_H_ */

@@ -2,6 +2,7 @@
 #define H_SUPERSTATE
 
 #include "types.h"
+#include "oam.h"
 
 typedef union {
 
@@ -28,10 +29,16 @@ typedef struct superstate {
     //key section
     key keys;
     key keys_new;
-    key keys_held2;
+    key keys_inv;
     key keys_remapped; //by options (L->A, R->B)
     key keys_new_rst; //keys are registered as new here when pressed long enough
-    u16 key_press_countdown;
+    key keys_countdown;
+    u16 keys_watched;
+    key watched_keys;
+    u16 oam_attributes[128][4];
+    u8 state;
+    u8 disable_oams : 1;
+    u8 in_battle : 1;
 
 } superstate;
 

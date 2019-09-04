@@ -1,3 +1,3 @@
 #!/bin/sh
 pipenv install
-pipenv run make -j$(nproc) -C Violet all
+pipenv run make -j$(nproc) -C Violet index

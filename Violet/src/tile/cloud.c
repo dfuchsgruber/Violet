@@ -16,7 +16,8 @@ u8 *cloud_trigger(bool back) {
     if (item_check(ITEM_FAHRRAD, 1)) {
     	// Check if the player is facing a warp
     	position_t pos;
-    	player_get_position_faced(&pos);
+    	// player_get_position_faced(&pos);
+		player_get_position(&pos);
     	s8 warp_idx = map_get_warp_idx_by_position(&mapheader_virtual, &pos);
     	if (warp_idx != -1) {
 			if (back) {
@@ -35,7 +36,8 @@ u8 *cloud_trigger(bool back) {
 
 void cloud_enter() {
 	position_t pos;
-	player_get_position_faced(&pos);
+	// player_get_position_faced(&pos);
+	player_get_position(&pos);
 	s8 warp_idx = map_get_warp_idx_by_position(&mapheader_virtual, &pos);
 	map_event_warp *w = &(mapheader_virtual.events->warps[warp_idx]);
 	warp_setup_by_event(w->target_bank, w->target_map, w->target_warp_id);

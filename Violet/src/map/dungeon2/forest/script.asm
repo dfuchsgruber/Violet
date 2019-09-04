@@ -36,6 +36,13 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 
 ow_script_test:
+additem ITEM_SONDERBONBON 99
+additem ITEM_GOLDBONBON 99
+end
+warp 11 2 255 0x1a 0
+waitstate
+end
+
 setvar 0x8004 ROAMER_LAVADOS
 special SPECIAL_ROAMER_RESET_AND_INITIALIZE
 setflag POKEDEX_FEATURE_0

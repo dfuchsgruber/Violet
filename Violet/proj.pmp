@@ -1191,7 +1191,8 @@
 	"tilesets_primary": {
 		"maptileset0": "src/map/tileset/maptileset0.pms",
 		"maptileset12": "src/map/tileset/maptileset12.pms",
-		"maptileset_ceometria_additional_blocks": "src/map/tileset/maptileset_ceometria_additional_blocks.pms"
+		"maptileset_ceometria_additional_blocks": "src/map/tileset/maptileset_ceometria_additional_blocks.pms",
+		"maptileset_clouds": "src/map/tileset/maptileset_clouds.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
@@ -1231,7 +1232,8 @@
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
-		"gfx_maptileset0Tiles": "asset/gfx/tileset/gfx_maptileset0.png"
+		"gfx_maptileset0Tiles": "asset/gfx/tileset/gfx_maptileset0.png",
+		"gfx_maptileset_cloudsTiles": "asset/gfx/tileset/gfx_maptileset_clouds.png"
 	},
 	"gfxs_secondary": {
 		"gfx_maptileset302795Tiles": "asset/gfx/tileset/gfx_maptileset302795.png",

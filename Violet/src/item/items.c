@@ -1092,16 +1092,16 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_48
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		LANGDEP(PSTRING("Goldbonbon"), PSTRING("Gold Candy")),
+		0x48, //index
+		14400, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x48_item_item_48,
+		str_item_desc_x48_item_goldbonbon,
 		0, //field_18
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		1, //type
+		(void(*)(u8))0x80a1821, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28

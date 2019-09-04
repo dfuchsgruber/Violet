@@ -13,8 +13,7 @@
 #include "music.h"
 
 void item_field_nature_stone(u8 self) {
-    void **item_callback_after_poke_selection = (void**) 0x03005DE8;
-    *item_callback_after_poke_selection = item_nature_stone;
+    item_callback_after_pokemon_selected = item_nature_stone;
     item_select_target_pokemon(self);
 }
 

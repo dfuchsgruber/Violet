@@ -431,10 +431,10 @@
 		.string "Maximiert die Anzahl der AP\neiner Attacke eines Pokémon."
 
 
-	.global str_item_desc_x48_item_item_48
+	.global str_item_desc_x48_item_goldbonbon
 
-	str_item_desc_x48_item_item_48:
-		.string " ????"
+	str_item_desc_x48_item_goldbonbon:
+		.string "Ein besonderes Bonbon, das\nden Level eines Pokémon um\nbis zu drei anhebt."
 
 
 	.global str_item_desc_x49_item_megablock
@@ -2605,10 +2605,10 @@
 	str_item_desc_x47_item_ap_top:
 		.string "Raises the PP of a selected move\nto its maximum level for one\nPokémon."
 
-	.global str_item_desc_x48_item_item_48
+	.global str_item_desc_x48_item_goldbonbon
 
-	str_item_desc_x48_item_item_48:
-		.string "?????"
+	str_item_desc_x48_item_goldbonbon:
+		.string "A special candy. It raises\nthe level of a Pokémon by up to\nthree."
 
 	.global str_item_desc_x49_item_megablock
 

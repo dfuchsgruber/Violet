@@ -463,3 +463,6 @@ hidden_item_respawnable = 0x084790c0;
 pokemon_new_and_set_ivs = 0x0803de68 | 1;
 wild_pokemon_disabled = 0x020386dc;
 battle_initialize_roamer = 0x0807f6f0 | 1;
+item_callback_after_pokemon_selected = 0x03005DE8;
+pokemon_experience_tables = 0x08253a08;
+item_effects = 0x082527e0;
