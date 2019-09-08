@@ -491,10 +491,10 @@
 		.string "Ein tolles Item. Fliehe damit aus\njedem Kampf mit einem wilden\nPokémon."
 
 
-	.global str_item_desc_x52_item_item_52
+	.global str_item_desc_x52_item_suessbonbon
 
-	str_item_desc_x52_item_item_52:
-		.string " ????"
+	str_item_desc_x52_item_suessbonbon:
+		.string "Ein zuckersüßes Bonbon, das\nein Pokémon zutraulicher\nmacht."
 
 
 	.global str_item_desc_x53_item_superschutz
@@ -2655,10 +2655,10 @@
 	str_item_desc_x51_item_eneco_rute:
 		.string "An attractive item.\nUse it to flee from any battle with\na wild Pokémon."
 
-	.global str_item_desc_x52_item_item_52
+	.global str_item_desc_x52_item_suessbonbon
 
-	str_item_desc_x52_item_item_52:
-		.string "?????"
+	str_item_desc_x52_item_suessbonbon:
+		.string "A very sweet candy that\nmakes a Pokémon happier."
 
 	.global str_item_desc_x53_item_superschutz
 

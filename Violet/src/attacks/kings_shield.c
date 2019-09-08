@@ -71,7 +71,7 @@ void bsc_push_kings_shield_drop(){
 }
 
 void kings_shield_prepeare_drop(){
-    battle_stat_change[0x10] = 0x16;
-    battle_stat_change[0x11] = 0;
-    battle_stat_change[0x17] = attacking_battler;
+    battle_scripting.animation_arguments[0] = 0x16;
+    battle_scripting.animation_arguments[1] = 0;
+    battle_scripting.battler_idx = attacking_battler;
 }

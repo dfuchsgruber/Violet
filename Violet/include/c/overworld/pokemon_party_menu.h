@@ -151,4 +151,11 @@ void pokemon_party_menu_free();
  */
 void pokemon_party_menu_return_callback();
 
+/**
+ * Gets the index in a party of a pokemon considering reordering due to inbattle-switches.
+ * @param the current index, possibly after switching
+ * @return the index of the pokemon in the player party array
+ **/ 
+u8 player_party_get_reordered_idx(u8 party_idx);
+
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

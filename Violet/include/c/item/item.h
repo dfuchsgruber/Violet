@@ -10,6 +10,7 @@
 
 #include "item/count.h"
 #include "constants/items.h"
+#include "item/item_effect.h"
 
 typedef struct {
     u8 name[14];
@@ -29,7 +30,6 @@ typedef struct {
 
 item items[ITEM_CNT];
 
-u8 *item_effects[ITEM_ENIGMABEERE - ITEM_TRANK];
 
 typedef struct {
 	u8 hold_effect;
@@ -42,6 +42,9 @@ extern item_hold_effect_type_boost_stru
 item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
 
 void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
+
+#define ITEM_HAS_TABLE_EFFECT(item) ((item) >= ITEM_TRANK && (item) <= (ITEM_ENIGMABEERE))
+
 /**
  * Returns the holding effect parameter of an item.
  * @param item_id The item id
@@ -110,6 +113,12 @@ void item_remove_from_pc(u16 item, u16 quantity);
  * @return if the player's bag contains the item(s)
  */
 bool item_check(u16 item, u16 quantity);
+
+/**
+ * Item function for items that use an effect from the effect table.
+ * @param self reference to the callback
+ **/
+void item_field_by_effect_table(u8 self);
 
 u16 tm_hm_to_attack[58];
 

@@ -90,7 +90,7 @@ extern u8 str_item_desc_x4e_item_x_treffer[];
 extern u8 str_item_desc_x4f_item_x_spezial[];
 extern u8 str_item_desc_x50_item_pokepuppe[];
 extern u8 str_item_desc_x51_item_eneco_rute[];
-extern u8 str_item_desc_x52_item_item_52[];
+extern u8 str_item_desc_x52_item_suessbonbon[];
 extern u8 str_item_desc_x53_item_superschutz[];
 extern u8 str_item_desc_x54_item_top_schutz[];
 extern u8 str_item_desc_x55_item_fluchtseil[];

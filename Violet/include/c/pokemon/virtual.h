@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_POKEMON_VIRTUAL_H_
 #define INCLUDE_C_POKEMON_VIRTUAL_H_
 
+#include "types.h"
+
 typedef struct marking {
     u8 circle : 1;
     u8 square : 1;
@@ -416,6 +418,11 @@ u8 pokemon_get_potential_ev(pokemon *p, int stat);
  **/
 u8 attack_get_pp(u16 attack, u8 pp_ups, u8 index);
 
+// Masks for isolating the pp ups of a certain move
+extern u8 pokemon_pp_up_set_masks[4];
+extern u8 pokemon_pp_up_clear_masks[4];
+extern u8 pokemon_pp_up_add_masks[4];
+
 /**
  * Restores hp, pp and status of a pokemon.
  * @param dst the pokemon to heal
@@ -427,5 +434,24 @@ void pokemon_heal(pokemon *dst);
  * @return if a pokémon has max hp, pp and no primary status condition
  **/
 bool pokemon_is_healed(pokemon *dst);
+
+/**
+ * Checks if a party pokemon has a certain status condition.
+ * @param p the pokemon to check
+ * @param party_idx which index the pokemon has in the party
+ * @param status_mask the conditions to check for
+ * @return if the pokemon has the status condition
+ **/ 
+bool pokemon_has_status_condition(pokemon *p, int party_idx, u32 status_mask);
+
+/**
+ * Checks if a party pokemon has a certain status condition and if so, removes it.
+ * @param p the pokemon to check
+ * @param party_idx which index the pokemon has in the party
+ * @param status_mask the conditions to check for
+ * @param battler_idx the idx of the battler associated with the pokemon. If no battler is associated, pass the value 4.
+ * @return if the pokemon has the status condition
+ **/ 
+bool pokemon_remove_status_condition(pokemon *p, int party_idx, u32 status_mask, u8 battler_idx);
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

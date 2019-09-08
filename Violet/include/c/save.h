@@ -20,6 +20,7 @@
 #include "map/ceometria_gym.h"
 #include "trainer/party.h"
 #include "pokemon/roamer.h"
+#include "item/item_effect.h"
 
 #define GP_STACK_SIZE 16
 
@@ -58,6 +59,10 @@ typedef struct saveblock1 {
     daycare_stru daycare;
     u8 unknown_5[3066];
     mini_daycare_stru mini_daycare;
+    u8 field_12300[196];
+    roamer_state_t unused;
+    u8 field_12524[28];
+    item_effect_t enigma_berry_item_effect;
 } saveblock1;
 
 typedef struct saveblock2 {
@@ -124,6 +129,7 @@ typedef struct custom_memory {
 #define DMAP_WARPS 1
 
 typedef struct {
+    int _hook_tmp_; // This variable is used to save r0 values while trying to hook something that uses r0-r3 already
     u8 dmap_header_initialized : 1;
     u8 dmap_blocks_initialized : 1;
     u8 dmap_unused : 6;

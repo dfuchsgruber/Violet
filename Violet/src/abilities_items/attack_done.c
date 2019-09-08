@@ -90,9 +90,9 @@ void attack_done(u8 index){
     	if (attacker->stat_changes[3] > 0) {
     		// Trigger fluffy
     		attacker->stat_changes[3] = (u8) MAX(0, attacker->stat_changes[3] - 2);
-    	    battle_stat_change[0x10] = 0x18;
-    	    battle_stat_change[0x11] = 0;
-    	    battle_stat_change[0x17] = attacking_battler;
+    	    battle_scripting.animation_arguments[0] = 0x18;
+    	    battle_scripting.animation_arguments[1] = 0;
+    	    battle_scripting.battler_idx = attacking_battler;
             battlescript_callstack_push_next_command();
             bsc_offset = bsc_fluffy;
     	}
@@ -107,15 +107,15 @@ void attack_done_prepeare_life_orb(){
 }
 
 void attack_done_prepeare_lernfaehig(){
-    battle_stat_change[0x10] = 0x14;
-    battle_stat_change[0x11] = 0;
-    battle_stat_change[0x17] = (u8)gp_stack_pop();
+    battle_scripting.animation_arguments[0] = 0x14;
+    battle_scripting.animation_arguments[1] = 0;
+    battle_scripting.battler_idx = (u8)gp_stack_pop();
 }
 
 void attack_done_prepeare_hochmut(){
-    battle_stat_change[0x10] = 0xF;
-    battle_stat_change[0x11] = 0;
-    battle_stat_change[0x17] = (u8)gp_stack_pop();
+    battle_scripting.animation_arguments[0] = 0xF;
+    battle_scripting.animation_arguments[1] = 0;
+    battle_scripting.battler_idx = (u8)gp_stack_pop();
 }
 
 void attack_done_prepeare_lebensraeuber(){

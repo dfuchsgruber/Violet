@@ -13,12 +13,6 @@
 #include "rtc.h"
 #include "save.h"
 
-#define TYPE_LEVEL_UP 0
-#define TYPE_TRADE_EVO 1
-#define TYPE_ITEM_TRIGGER 2
-#define TYPE_ITEM_TRIGGER2 3
-#define TYPE_ITEM_TRIGGER_AND_REMOVE 4
-
 u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
     u16 species = (u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
     u16 held_item = (u16) pokemon_get_attribute(p, ATTRIBUTE_ITEM, 0);
@@ -26,7 +20,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
     if (pokemon_evolutions[species]) {
         pokemon_evolution *evolutions = pokemon_evolutions[species];
         switch (type) {
-        case TYPE_LEVEL_UP:
+        case EVOLUTION_TRIGGER_LEVEL_UP:
         {   //The usual case
             arg = (u8) pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0);
             for (int i = 0; evolutions[i].method != EVOLUTION_METHOD_NONE; i++) {
@@ -182,12 +176,12 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
             }
             break;
         }
-        case TYPE_TRADE_EVO:
+        case EVOLUTION_TRIGGER_TRADE_EVO:
             // Deprecated as trade evo does not exist
             break;
-        case TYPE_ITEM_TRIGGER:
-        case TYPE_ITEM_TRIGGER2:
-        case TYPE_ITEM_TRIGGER_AND_REMOVE:
+        case EVOLUTION_TRIGGER_ITEM:
+        case EVOLUTION_TRIGGER_ITEM2:
+        case EVOLUTION_TRIGGER_ITEM_AND_REMOVE_HOLD_ITEM:
         {
             //Check for evolutions triggered by an item
             int i;
@@ -200,7 +194,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 case EVOLUTION_METHOD_LINK_CABLE_AND_ITEM:
                     if (arg == ITEM_LINKKABEL &&
                             evolutions[i].condition == held_item) {
-                        if (type == TYPE_ITEM_TRIGGER_AND_REMOVE) {
+                        if (type == EVOLUTION_TRIGGER_ITEM_AND_REMOVE_HOLD_ITEM) {
                             held_item = 0;
                             pokemon_set_attribute(p, ATTRIBUTE_ITEM, & held_item);
                         }

@@ -9,6 +9,7 @@
 #define INCLUDE_C_BATTLE_STATE_H_
 
 #include "battle/battlescript.h"
+#include "item/item_effect.h"
 
 #define BATTLE_DOUBLE 0x1
 #define BATTLE_LINK 0x2
@@ -32,7 +33,7 @@
 typedef struct {
 	u8 name[7];
 	u8 hold_effect;
-	u8 item_effect[18];
+	item_effect_t item_effect;
 	u8 hold_effect_parameter;
 	u8 filler; // ???
 } enigma_berry_stru;
@@ -163,6 +164,33 @@ typedef struct {
 	u8 size;
 } battle_callbacks_stack_t;
 
+typedef struct {
+    u8 player_faint_cnt;
+    u8 opponent_faint_cnt;
+    u8 player_switches_cnt;
+    u8 healing_items_cnt;
+    u8 revives_cnt;
+    u8 player_damaged : 1;
+    u8 master_ball_used : 1;
+    u8 ball_used : 4;
+    u8 shiny_wild_pokemon : 1;
+    u16 player_species_0;
+    u8 player_nickname_0[11];
+    u8 turns_cnt;
+    u8 player_nickname_1[11];
+    u8 pokeblock_cnt;
+    u16 opponent_last_species;
+    u16 player_last_used_move;
+    u16 opponent_last_used_move;
+    u16 player_species_2;
+    u16 caught_species;
+    u8 caught_nickname[11];
+    u8 field_0x35;
+    u8 catch_attempts[11];
+} battle_results_t;
+
+extern battle_results_t battle_results;
+
 // Maybe in FRLG this differs, do not trust this too much...
 typedef struct {
 	u8 state;
@@ -202,7 +230,6 @@ extern battle_state_t *battle_state;
 extern u8 battle_trainer_kind;
 extern u8 battle_result;
 extern u16 battle_trainer_id;
-extern u8 battle_stat_change[];
 extern u8 battle_effects[4]; // Probably there even more, 0x3 is the target effect
 extern u16 battle_dynamic_base_power;
 extern u16 battle_current_turn_seed; // Random state that is fixed for one turn

@@ -51,7 +51,19 @@
         "basestat.h": "c",
         "callbacks.h": "c",
         "count.h": "c",
-        "description.h": "c"
+        "description.h": "c",
+        "item_effects.h": "c",
+        "battler.h": "c",
+        "state.h": "c",
+        "pokemon_party_menu.h": "c",
+        "item_effect.h": "c",
+        "item_hold_effects.h": "c",
+        "namespace.h": "c",
+        "evolution.h": "c",
+        "functional": "c",
+        "pokemon_stat_names.h": "c",
+        "item_effect_types.h": "c",
+        "names.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

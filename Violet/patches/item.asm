@@ -20,6 +20,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_goldbonbonTiles
     .word gfx_item_goldbonbonPal
 
+.org item_resource + 0x52 * 8
+    .word gfx_item_suessbonbonTiles
+    .word gfx_item_suessbonbonPal
+
 .org item_resource + 0x64 * 8
     .word gfx_item_finstersteinTiles
     .word gfx_item_finstersteinPal
@@ -185,19 +189,75 @@ item_resource equ 0x083D3BE8
 
 .org 0x809ab90
 	.word items
+    
+.org 0x803a1b0
+	.word item_effects
 
-//item effects (only used for evo stones so far)
-.org item_effects + 4 * (99 - 13)
-        .word item_effect_evolution_stone //Link Cable
-        .word item_effect_evolution_stone //Dark Stone
-        .word item_effect_evolution_stone //Sparkle Stone
-        .word item_effect_evolution_stone //Light Stone
 
-.org item_effects + 4 * (0x44 - 13)
-        .word item_effect_rare_candy
+.org 0x8041448
+	.word item_effects
 
-.org item_effects + 4 * (0x48 - 13)
-        .word item_effect_gold_candy
+
+.org 0x8042424
+	.word item_effects
+
+
+.org 0x8042b30
+	.word item_effects
+
+
+.org 0x8042d3c
+	.word item_effects
+
+
+.org 0x812509c
+	.word item_effects
+
+
+.org 0x812579c
+	.word item_effects
+
+
+.org 0x8126d14
+	.word item_effects
+
+
+// r0-r3 are used already, so the hook is wrapped by something that saves r4
+.org 0x080412e4
+    push {r1}
+    ldr r1, =fmem
+    str r0, [r1]
+    pop {r1}
+    ldr r0, =item_effect_apply | 1
+    bx r0
+    .pool
+
+    
+// r0-r3 are used already, so the hook is wrapped by something that saves r4
+.org 0x08042314
+    push {r1}
+    ldr r1, =fmem
+    str r0, [r1]
+    pop {r1}
+    ldr r0, =item_effect_unapplicable | 1
+    bx r0
+    .pool
+
+
+.org 0x08042b08
+    ldr r3, =_item_effect_get_hp_healed_offset | 1
+    bx r3
+    .pool
+
+.org 0x08126cb8
+    ldr r1, = item_get_effect_type | 1
+    bx r1
+    .pool
+
+.org 0x081250a8
+    ldr r1, = item_effect_print_result | 1
+    bx r1
+    .pool
 
 .org 0x08125adc
 	.word tm_hm_to_attack
@@ -217,15 +277,3 @@ item_resource equ 0x083D3BE8
 _bxr1:
 	bx r1
 	.pool
-
-//  Hooks for level up items
-.org 0x0804172a
-    ldr r0, = item_effect_level_up_apply_hook | 1
-    bx r0
-    .pool
-
-
-.org 0x08042644
-    ldr r0, = item_effect_level_up_unapplicable_hook | 1
-    bx r0 
-    .pool

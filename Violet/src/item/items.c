@@ -216,7 +216,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -231,7 +231,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -246,7 +246,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -261,7 +261,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -276,7 +276,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -291,7 +291,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -306,7 +306,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -321,7 +321,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -336,7 +336,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -351,7 +351,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -366,7 +366,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -381,7 +381,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -396,7 +396,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -411,7 +411,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -426,7 +426,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -441,7 +441,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -456,7 +456,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -471,7 +471,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -486,7 +486,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -501,7 +501,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -516,7 +516,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -591,7 +591,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -606,7 +606,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -681,7 +681,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -966,7 +966,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -981,7 +981,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -996,7 +996,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -1011,7 +1011,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -1026,7 +1026,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -1071,7 +1071,7 @@ item items[] = {
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -1091,7 +1091,7 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_48
+		//ITEM_GOLDBONBON
 		LANGDEP(PSTRING("Goldbonbon"), PSTRING("Gold Candy")),
 		0x48, //index
 		14400, //price
@@ -1241,17 +1241,17 @@ item items[] = {
 		(void(*)(u8))0x80a20fd, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_52
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		//ITEM_SUESSBONBON
+		LANGDEP(PSTRING("Süßbonbon"), PSTRING("Sweet Candy")),
+		0x52, //index
+		2800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x52_item_item_52,
+		str_item_desc_x52_item_suessbonbon,
 		0, //field_18
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		1, //type
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2016,7 +2016,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2031,7 +2031,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2046,7 +2046,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2061,7 +2061,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2076,7 +2076,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2106,7 +2106,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2136,7 +2136,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -2151,7 +2151,7 @@ item items[] = {
 		0, //field_18
 		POCKET_BERRIES, //pocket
 		1, //type
-		(void(*)(u8))0x80a17cd, //field_usage
+		(void(*)(u8))item_field_by_effect_table, //field_usage
 		(void(*)(u8))0x1, //battle_usage1
 		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28

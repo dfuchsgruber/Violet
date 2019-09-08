@@ -51,6 +51,39 @@ typedef struct {
 extern battlescript_global_stru bsc_global;
 
 
+typedef struct  {
+    u32 pain_split_damage;
+    u32 bide_damage;
+    u8 multihit_string[6];
+    u8 damage_multiplier;
+    u8 charging_move_string_idx;
+    u8 animation_arguments[2];
+    u16 tripple_kick_power;
+    u8 field_0x14;
+    u8 battler_using_ability;
+    u8 multihit_move_effect;
+    u8 battler_idx;
+    u8 animation_user;
+    u8 animation_targets;
+    u8 stat_change;
+    u8 stat_change_animation_played;
+    u8 field_0x1c;
+    u8 battle_style;
+    u8 field_0x1e;
+    u8 learn_move_state;
+    u8 field_0x20;
+    u8 reshow_main_state;
+    u8 reshow_helper_state;
+    u8 heal_item_amount;
+    u8 windows_type;
+    u8 multiplayer_idx;
+    u8 special_trainer_battle_type;
+} battle_scripting_t;
+
+extern battle_scripting_t battle_scripting;
+
+
+
 /**
  * Loads the graphic for the attack "transform"
  * @param user_index battler index of the user

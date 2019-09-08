@@ -36,8 +36,18 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 
 ow_script_test:
+setvar 0x8000 ITEM_KUESTENSALZ
+loop:
+	additem 0x8000 10
+	addvar 0x8000 1
+	compare 0x8000 ITEM_ENIGMABEERE
+	gotoif 0 loop
+end
+
+
 additem ITEM_SONDERBONBON 99
 additem ITEM_GOLDBONBON 99
+additem ITEM_SUESSBONBON 99
 end
 warp 11 2 255 0x1a 0
 waitstate

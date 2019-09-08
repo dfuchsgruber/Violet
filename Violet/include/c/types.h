@@ -107,6 +107,6 @@ static inline FIXED INT_TO_FIXED(int a) {
   return a << FIXED_SHIFT;
 }
 
-
+extern u32 int_bitmasks[32];
 
 #endif

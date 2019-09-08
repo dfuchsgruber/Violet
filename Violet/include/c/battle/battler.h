@@ -119,6 +119,44 @@ typedef struct battler_status{
 	u8 special_damage_battler;
 } battler_status;
 
+
+typedef struct  {
+    u32 pid;
+    u16 disabled_move;
+    u16 encore_move;
+    u8 protect;
+    u8 stockpile_counter;
+    u8 substitue_hp;
+    u8 disable_timer : 4;
+    u8 disable_timer_start : 4;
+    u8 encored_move_idx;
+    u8 field_0xd;
+    u8 encore_timer : 4;
+    u8 encore_timer_start : 4;
+    u8 perish_song_timer : 4;
+    u8 perish_song_timer_start : 4;
+    u8 furry_cutter_timer;
+    u8 rollout_timer : 4;
+    u8 rollout_timer_start : 4;
+    u8 charge_timer : 4;
+    u8 charge_timer_start : 4;
+    u8 taunt_timer : 4;
+    u8 taunt_timer_2 : 4;
+    u8 prevents_escape;
+    u8 cant_miss;
+    u8 is_first_turn;
+    u8 field_0x17;
+    u8 truant_counter : 1;
+    u8 truant_switch_in_hack : 1;
+    u8 filler_18_2 : 2;
+    u8 mimicked_moves : 4;
+    u8 recharge_timer;
+    u8 field_0x1a;
+    u8 field_0x1b;
+} battler_disable_t;
+
+extern battler_disable_t battler_disable[4];
+
 typedef struct battler_damage_taken_stru {
 	u8 stat_dropped : 1;
 	u8 lighting_rod : 1;
@@ -180,6 +218,7 @@ extern battler_damage_taken_stru battler_damage_taken[4];
 extern battle_side_timer_stru battle_side_timers[2];
 extern battle_side_status_stru battle_side_statuses[2];
 extern battler_timer_stru battler_timers;
+extern u8 battlers_absent;
 
 #define DAMAGE_CAUSED ((battler_damage_taken[defending_battler].physical_damage != 0 || battler_damage_taken[defending_battler].special_damage != 0))
 
@@ -190,7 +229,7 @@ extern u8 defending_battler_ability;
 extern u8 active_battler;
 extern u8 battler_oams[];
 extern u8 battler_cnt;
-extern u16 battler_team_slots[];
+extern u8 battler_team_slots[4];
 extern u8 battler_attacking_order[];
 extern u32 battler_statuses3[4];
 extern u8 item_target_battler;
@@ -251,5 +290,12 @@ u8 battler_get_position(u8 battler_idx);
  * @return the effective speed value of the battler
  */
 int battler_get_effective_speed(u8 battler_idx);
+
+/**
+ * Loads a pokemon from the player party as a battler.
+ * @param battler_idx into which battler slot to load the pokemon
+ * @param party_idx which pokemon of the player party to load
+ **/
+void battler_load_from_player_party(u8 battler_idx, u8 party_idx);
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */
