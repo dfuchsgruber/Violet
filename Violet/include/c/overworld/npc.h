@@ -76,14 +76,18 @@ typedef struct {
     u8 state;
     u8 bike;
     u8 running2;
-    u8 running1;
-    u8 std_oam_id;
-    u8 player_npc_id;
+    u8 tile_state;
+    u8 oam_idx;
+    u8 npc_idx;
     u8 is_locked;
     u8 gender;
     u8 mode;
     u8 unkown[3];
 } player_state_t;
+
+#define PLAYER_STATE_WALKING 1
+#define PLAYER_STATE_BIKING 2
+#define PLAYER_STATE_SURFING 8
 
 extern npc npcs[];
 extern player_state_t player_state;
@@ -252,5 +256,49 @@ void npc_player_set_bike_state(u8 state);
  * @return the facing of the player
  */
 u8 player_get_facing();
+
+/**
+ * Stops the movements of all non-player npcs
+ **/
+void npc_stop_all_movements_but_players();
+
+/**
+ * A callback that is executed when the player transits from water (surfing) to land (walking / biking).
+ * @param self self-reference
+ **/
+void player_transition_water_to_land_callback(u8 self);
+
+/**
+ * Checks if the animation of a npc has finished.
+ * @param n the npc to check if it has its animation finished
+ * @return if the npc has its animation finished
+ **/
+bool npc_animation_finished(npc *n);
+
+/**
+ * Updates the picture of an npc.
+ * @param n the npc to update the picture of
+ * @param picture the picture that the npc is supposed to show
+ **/
+void npc_update_picture(npc *n, u8 picture);
+
+/**
+ * Gets the movement idx for facing in a certain direction.
+ * @param direction the direction to face into
+ * @return the movement idx associated with this facing direction for facing
+ **/
+u8 npc_get_facing_movement_by_direction(u8 direction);
+
+/**
+ * Executes a facing move of an npc.
+ * @param n the npc that executes the facing move
+ * @param movement the movement to execute. This is supposed to resemble a facing move.
+ **/
+void npc_do_facing_move(npc *n, u8 movement);
+
+/**
+ * Updates the delay field of oams associated with npcs for all npcs present.
+ **/
+void npc_update_oam_delay_all();
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

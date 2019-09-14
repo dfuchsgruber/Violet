@@ -1228,7 +1228,8 @@
 		"maptileset_laubdorf": "src/map/tileset/maptileset_laubdorf.pms",
 		"maptileset_ceometria": "src/map/tileset/maptileset_ceometria.pms",
 		"maptileset_ceometria_gym": "src/map/tileset/maptileset_ceometria_gym.pms",
-		"maptileset_haweiland": "src/map/tileset/gfx_maptileset_haweiland.pms"
+		"maptileset_haweiland": "src/map/tileset/gfx_maptileset_haweiland.pms",
+		"maptileset_cloud_ruins": "src/map/tileset/maptileset_cloud_ruins.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1269,6 +1270,7 @@
 		"gfx_maptileset_laubdorfTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf.png",
 		"gfx_maptileset_ceometriaTiles": "asset/gfx/tileset/gfx_maptileset_ceometria.png",
 		"gfx_maptileset_ceometria_gymTiles": "asset/gfx/tileset/gfx_maptileset_ceometria_gym.png",
-		"gfx_maptileset_haweilandTiles": "asset/gfx/tileset/gfx_maptileset_haweiland.png"
+		"gfx_maptileset_haweilandTiles": "asset/gfx/tileset/gfx_maptileset_haweiland.png",
+		"gfx_maptileset_cloud_ruinsTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins.png"
 	}
 }

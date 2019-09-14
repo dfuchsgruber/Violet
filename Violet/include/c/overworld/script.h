@@ -59,6 +59,11 @@ void overworld_script_resume();
 void overworld_script_set_active();
 
 /**
+ * Changes the overworld script state to inactive
+ **/
+void overworld_script_set_inactive();
+
+/**
  * Initializes a muted overworld script
  * @param script the script to initialize
  */

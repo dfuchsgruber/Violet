@@ -7,16 +7,18 @@
 #define NUMBER_ITEM_EFFECT_FUNCTIONS 9
 
 typedef struct {
+    // 0x0
     u8 x_attack : 4;
     u8 increase_critical_ratio : 2;
     u8 sacred_ash : 1;
     u8 heal_infatuation : 1;
-
+    // 0x1
     u8 x_speed : 4;
     u8 x_defense : 4;
+    // 0x2
     u8 x_special_attack : 4;
     u8 x_accuracy : 4;
-
+    // 0x3
     u8 heal_confusion : 1;
     u8 heal_paralysis : 1;
     u8 heal_freeze : 1;
@@ -25,7 +27,7 @@ typedef struct {
     u8 heal_sleep : 1;
     u8 increase_level : 1;
     u8 creates_mist : 1;
-
+    // 0x4
     u8 increase_ev_hp : 1;
     u8 increase_ev_attack : 1;
     u8 heal_hp : 1;
@@ -34,7 +36,7 @@ typedef struct {
     u8 pp_up : 1;
     u8 revives : 1;
     u8 trigger_evolution : 1;
-
+    // 0x5
     u8 increase_ev_defense : 1;
     u8 increase_ev_speed : 1;
     u8 increase_ev_special_defense : 1;
@@ -43,8 +45,7 @@ typedef struct {
     u8 increase_friendship_low : 1;
     u8 increase_friendship_mid : 1;
     u8 increase_friendship_high : 1;
-
-    // Arguments
+    // 0x6 - Arguments
     u8 level;
     s8 evs[6];
     u8 hp;
@@ -52,7 +53,6 @@ typedef struct {
     s8 friendship_low;
     s8 friendship_mid;
     s8 friendship_high;
-    u8 filler;
 
 } item_effect_t;
 

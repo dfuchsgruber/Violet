@@ -145,3 +145,12 @@ overworld_pals equ 0x083A501C
     bx r2
     .pool
 
+.org 0x0805d0f8
+    ldr r1, = player_transition_water_to_land | 1
+    bx r1 
+    .pool
+
+.org 0x0805d240
+    ldr r1, = player_transition_water_to_land_callback_update_npc | 1
+    bx r1
+    .pool

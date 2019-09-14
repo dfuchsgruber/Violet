@@ -66,4 +66,15 @@ s8 map_get_warp_idx_by_position(map_header_t *map, position_t *position);
  */
 bool map_type_is_outside (u8 map_type);
 
+/**
+ * Checks if the virtual map header is a cloud map.
+ * @return if the map is a cloud map
+ **/
+bool map_is_cloud();
+
+/**
+ * Plays the current map song if it is not already playing, i.e. after surfing or biking.
+ **/
+void map_current_play_song_if_not_playing();
+
 #endif /* INCLUDE_C_MAP_HEADER_H_ */

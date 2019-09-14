@@ -750,4 +750,15 @@ extern const unsigned short gfx_ow_harrenfeld_6Tiles[];
 extern const unsigned short gfx_ow_harrenfeld_7Tiles[];
 extern const unsigned short gfx_ow_harrenfeld_8Tiles[];
 
+
+#define OVERWORLD_PLAYER_PICTURE_CONTEXT_WALKING 0
+#define OVERWORLD_PLAYER_PICTURE_CONTEXT_BIKING 1
+
+/**
+ * Gets the picture of the player in a given context.
+ * @param context the context the player is in
+ * @return the picture of the player
+ **/
+u8 player_get_overworld_picture(u8 context);
+
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */

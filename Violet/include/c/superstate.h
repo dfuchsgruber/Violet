@@ -72,4 +72,9 @@ void callback2_set(void (*f)());
  */
 void vblank_handler_set(void (*f)());
 
+/**
+ * Updates the context of the game.
+ **/
+void game_context_update();
+
 #endif

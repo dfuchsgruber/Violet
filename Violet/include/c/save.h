@@ -41,7 +41,10 @@ typedef struct saveblock1 {
     warp_save_t last_map; // ????
     warp_save_t healingplace;
     warp_save_t last_outdoor_map;
-    u8 unknown[0x4];
+    u8 player_is_surfing;
+    u8 field_45;
+    u8 map_weather;
+    u8 dynamic_weather_idx;
     u8 flash_circle_size;
     u8 field_31;
     u16 current_footer_id;
@@ -50,19 +53,20 @@ typedef struct saveblock1 {
     u32 money;
     u8 unknown_2_2[1612];
     // 0x8e0
-    map_event_person persons[256];
+    map_event_person persons[64];
     // 0x20E0
-    u8 unknown_3[3088];
+    u8 field_3808[7696];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];
     // 0x2F80
     daycare_stru daycare;
-    u8 unknown_5[3066];
-    mini_daycare_stru mini_daycare;
-    u8 field_12300[196];
-    roamer_state_t unused;
+    u8 field_12444[52];
+    roamer_state_t roamer;
+    u8 roamer_old_overhead[12]; // 12 bytes were retrieved refactoring the old roamer
     u8 field_12524[28];
     item_effect_t enigma_berry_item_effect;
+    u8 field_12570[2942];
+    mini_daycare_stru mini_daycare;
 } saveblock1;
 
 typedef struct saveblock2 {
@@ -214,5 +218,10 @@ void tmp_hash_update_seed();
  * Randomly generates a new seed for the tmp hash system
  */
 void tmp_hash_new_seed();
+
+/**
+ * Sets the surfing field in save1 to false
+ **/
+void save_set_player_non_surfing();
 
 #endif

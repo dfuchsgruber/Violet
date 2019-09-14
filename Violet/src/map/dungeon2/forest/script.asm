@@ -36,6 +36,16 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 
 ow_script_test:
+braille braille1
+waitkeypress
+waitmsg
+closeonkeypress
+end
+
+braille1:
+.autostring 34 2 "BRAILLE_HBRAILLE_CBRAILLE_KBRAILLE_,"
+
+
 setvar 0x8000 ITEM_KUESTENSALZ
 loop:
 	additem 0x8000 10

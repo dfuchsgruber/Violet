@@ -334,5 +334,10 @@ u8 oam_rotscale_get(oam_object *o);
  */
 void oam_flip(oam_object *o, bool horizontal_flip, bool vertical_flip);
 
+/**
+ * Clears an oam and releases all tiles used for its gfx animation.
+ * @param o the oam to clear
+ **/
+void oam_clear_and_free_vram(oam_object *o);
 
 #endif

@@ -39,7 +39,7 @@ typedef struct {
 	u16 offspring_unused : 15;
 	// u16 offspring_personality_lower; // why would you only store this, thats akward!
 	u8 step_counter;
-	u8 padding[3];
+	u8 field_283;
 } daycare_stru;
 
 typedef struct {

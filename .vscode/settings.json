@@ -63,7 +63,9 @@
         "functional": "c",
         "pokemon_stat_names.h": "c",
         "item_effect_types.h": "c",
-        "names.h": "c"
+        "names.h": "c",
+        "npc.h": "c",
+        "header.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }
