@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_472",
 		"events": {
-			"person_cnt": 4,
-			"warp_cnt": 3,
+			"person_cnt": 5,
+			"warp_cnt": 7,
 			"trigger_cnt": 0,
 			"signpost_cnt": 3,
 			"persons": [
@@ -54,12 +54,12 @@
 				{
 					"is_trainer": 0,
 					"script": "ow_script_0x86591b",
-					"y": 2,
+					"y": "1",
 					"target_index": 3,
 					"field_3": 0,
 					"picture": 0,
 					"flag": "0x0",
-					"x": 1,
+					"x": "3",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -94,6 +94,27 @@
 						"item": "ITEM_LINKKABEL",
 						"species": 0
 					}
+				},
+				{
+					"target_index": "5",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "10",
+					"y": "21",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_VULCANO_GEWOAZNIT",
+					"value": {
+						"item": "ITEM_GEOWAZNIT",
+						"species": 0
+					}
 				}
 			],
 			"warps": [
@@ -120,6 +141,38 @@
 					"level": 0,
 					"x": 14,
 					"target_warp_idx": 0
+				},
+				{
+					"x": "8",
+					"y": "24",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": "21"
+				},
+				{
+					"x": "9",
+					"y": "24",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": 0,
+					"target_bank": "21"
+				},
+				{
+					"x": "9",
+					"y": "25",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": 0,
+					"target_bank": "21"
+				},
+				{
+					"x": "8",
+					"y": "25",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": 0,
+					"target_bank": "21"
 				}
 			],
 			"triggers": [],

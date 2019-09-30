@@ -65,9 +65,9 @@ frame 130
     endframe
 
 frame 131
-    spawn_big_cb groudon_bg_scroll_cb 0 3
-    .hword 0,0,0
-    spawn_big_cb groudon_bg_scroll_all 0 0
+    //spawn_big_cb groudon_bg_scroll_cb 0 3
+    //.hword 0,0,0
+    //spawn_big_cb groudon_bg_scroll_all 0 0
     fadescreen 0 16 240 128 16 0
     endframe
 

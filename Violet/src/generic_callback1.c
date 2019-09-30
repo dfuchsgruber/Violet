@@ -17,11 +17,11 @@
 #include "callbacks.h"
 
 void generic_callback1(){
+    big_callback_proceed();
     fading_proceed();
+    tbox_proceed();
     oam_anim_proceed();
     oam_proceed();
-    tbox_proceed();
-    big_callback_proceed();
     u16 *hword_x02038604 = (u16*)0x02038604;
     *hword_x02038604 = 0; //no idea why to do this, but needs to be done for some reason
 }

@@ -65,7 +65,10 @@
         "item_effect_types.h": "c",
         "names.h": "c",
         "npc.h": "c",
-        "header.h": "c"
+        "header.h": "c",
+        "cloud.h": "c",
+        "party.h": "c",
+        "wild_pokemon_densities.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

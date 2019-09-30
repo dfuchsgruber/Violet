@@ -3582,7 +3582,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_EE
-		LANGDEP(PSTRING("Magmaherz"), PSTRING("????????")),
+		LANGDEP(PSTRING("Magmaherz"), PSTRING("Magma Soul")),
 		0xee, //index
 		0, //price
 		0, //holding_effect_id
@@ -3597,12 +3597,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_EF
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
+		LANGDEP(PSTRING("Geowaznit"), PSTRING("Golemnite")),
 		0x0, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xef_item_item_ef,
+		str_item_desc_xef_item_geowaznit,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type

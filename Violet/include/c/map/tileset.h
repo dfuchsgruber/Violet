@@ -75,5 +75,6 @@ extern tileset maptileset242637;
 extern tileset maptileset251828;
 extern tileset maptileset_laubdorf;
 extern tileset maptileset_haweiland;
+extern tileset maptileset_clouds;
 
 #endif /* INCLUDE_C_MAP_TILESET_H_ */

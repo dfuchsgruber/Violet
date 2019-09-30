@@ -67,7 +67,7 @@ u8 attack_names[][13] = {
 	LANGDEP(PSTRING("Hyperstrahl"), PSTRING("Hyper Beam")),
 	LANGDEP(PSTRING("Schnabel"), PSTRING("Peck")),
 	LANGDEP(PSTRING("Bohrschnabel"), PSTRING("Drill Peck")),
-	LANGDEP(PSTRING("überroller"), PSTRING("Submission")),
+	LANGDEP(PSTRING("Überroller"), PSTRING("Submission")),
 	LANGDEP(PSTRING("Fußkick"), PSTRING("Low Kick")),
 	LANGDEP(PSTRING("Konter"), PSTRING("Counter")),
 	LANGDEP(PSTRING("Geowurf"), PSTRING("Seismic Toss")),

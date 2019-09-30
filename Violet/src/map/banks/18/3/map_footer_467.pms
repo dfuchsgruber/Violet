@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_467",
 	"data": {
 		"border": [
 			[
@@ -10771,11 +10769,11 @@
 					"level": 12
 				},
 				{
-					"block_idx": 652,
+					"block_idx": 856,
 					"level": 12
 				},
 				{
-					"block_idx": 652,
+					"block_idx": 857,
 					"level": 12
 				},
 				{
@@ -11093,11 +11091,11 @@
 					"level": 1
 				},
 				{
-					"block_idx": 652,
+					"block_idx": 864,
 					"level": 12
 				},
 				{
-					"block_idx": 652,
+					"block_idx": 865,
 					"level": 12
 				},
 				{
@@ -15811,5 +15809,7 @@
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_467",
+	"type": "footer"
 }

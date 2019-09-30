@@ -67,6 +67,11 @@
 				"map_1_31",
 				"src/map/banks/1/31/map_1_31.pms",
 				"MAP_ASCHHAIN"
+			],
+			"1": [
+				"map_silvania_wald_clouds",
+				"src/map/banks/1/1/map_silvania_wald_clouds.pms",
+				"MAP_SILVANIA_WALD"
 			]
 		},
 		"3": {
@@ -261,6 +266,11 @@
 				"map_4_3_debug",
 				"src/map/banks/4/3/map_4_3_debug.pms",
 				"MAP_AMONIA"
+			],
+			"5": [
+				"map_amonia_clouds",
+				"src/map/banks/4/5/map_amonia_clouds.pms",
+				"MAP_AMONIA"
 			]
 		},
 		"5": {
@@ -292,6 +302,11 @@
 			"13": [
 				"map_5_13",
 				"src/map/banks/5/13/map_5_13.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"1": [
+				"map_meriana_city_clouds",
+				"src/map/banks/5/1/map_meriana_city_clouds.pms",
 				"MAP_MERIANA_CITY"
 			]
 		},
@@ -377,6 +392,11 @@
 				"map_7_10",
 				"src/map/banks/7/10/map_7_10.pms",
 				"MAP_SILVANIA"
+			],
+			"0": [
+				"map_silvania_clouds",
+				"src/map/banks/7/0/map_silvania_clouds.pms",
+				"MAP_SILVANIA"
 			]
 		},
 		"8": {
@@ -418,6 +438,11 @@
 			"11": [
 				"map_8_11",
 				"src/map/banks/8/11/map_8_11.pms",
+				"MAP_KASKADA"
+			],
+			"1": [
+				"map_kaskada_clouds",
+				"src/map/banks/8/1/map_kaskada_clouds.pms",
 				"MAP_KASKADA"
 			]
 		},
@@ -486,6 +511,16 @@
 				"map_9_19_laz_corp_secret_power_lab",
 				"src/map/banks/9/19/map_9_19_laz_corp_secret_power_lab.pms",
 				"MAP_ORINA_CITY"
+			],
+			"0": [
+				"map_orina_city_clouds",
+				"src/map/banks/9/0/map_orina_city_clouds.pms",
+				"MAP_ORINA_CITY"
+			],
+			"2": [
+				"map_orina_city_inside_0",
+				"src/map/banks/9/2/map_orina_city_inside_0.pms",
+				"MAP_ORINA_CITY"
 			]
 		},
 		"10": {
@@ -518,6 +553,11 @@
 				"map_10_1_inferior_gym_arena",
 				"src/map/banks/10/1/map_10_1_inferior_gym_arena.pms",
 				"MAP_INFERIOR"
+			],
+			"2": [
+				"map_inferior_clouds",
+				"src/map/banks/10/2/map_inferior_clouds.pms",
+				"MAP_INFERIOR"
 			]
 		},
 		"15": {
@@ -540,6 +580,11 @@
 				"map_15_5",
 				"src/map/banks/15/5/map_15_5.pms",
 				"MAP_ROUTE_3"
+			],
+			"2": [
+				"map_route_3_clouds",
+				"src/map/banks/15/2/map_route_3_clouds.pms",
+				"MAP_ROUTE_3"
 			]
 		},
 		"16": {
@@ -551,6 +596,11 @@
 			"4": [
 				"map_16_4",
 				"src/map/banks/16/4/map_16_4.pms",
+				"MAP_ROUTE_4"
+			],
+			"0": [
+				"map_route_4_clouds",
+				"src/map/banks/16/0/map_route_4_clouds.pms",
 				"MAP_ROUTE_4"
 			]
 		},
@@ -576,6 +626,11 @@
 				"map_18_3",
 				"src/map/banks/18/3/map_18_3.pms",
 				"MAP_ROUTE_6"
+			],
+			"0": [
+				"map_route_6_clouds",
+				"src/map/banks/18/0/map_route_6_clouds.pms",
+				"MAP_ROUTE_6"
 			]
 		},
 		"2": {
@@ -599,6 +654,11 @@
 			"2": [
 				"map_11_2_route_2_east_clouds",
 				"src/map/banks/11/2_route_2_east_clouds/map_11_2_route_2_east_clouds.pms",
+				"MAP_ROUTE_2"
+			],
+			"3": [
+				"map_route_2_north_clouds",
+				"src/map/banks/11/3_route_2_north_clouds/map_route_2_north_clouds.pms",
 				"MAP_ROUTE_2"
 			]
 		},
@@ -712,7 +772,20 @@
 				"MAP_WALDFRIEDHOF"
 			]
 		},
-		"21": {}
+		"21": {
+			"0": [
+				"map_vulcano_clouds",
+				"src/map/banks/21/0/map_vulcano_clouds.pms",
+				"MAP_VULCANO"
+			]
+		},
+		"22": {
+			"0": [
+				"map_felisge_oednis_clouds",
+				"src/map/banks/22/0/map_felisge_oednis_clouds.pms",
+				"MAP_FELSIGE_OEDNIS"
+			]
+		}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -1186,6 +1259,58 @@
 		"map_footer_41_haweiland": [
 			41,
 			"src/map/banks/3/17/map_footer_41_haweiland.pms"
+		],
+		"map_footer_route_2_clouds_north": [
+			42,
+			"src/map/banks/11/3_route_2_north_clouds/map_footer_route_2_clouds_north.pms"
+		],
+		"map_footer_orina_city_clouds": [
+			43,
+			"src/map/banks/9/0/map_footer_orina_city_clouds.pms"
+		],
+		"map_footer_route_6_clouds": [
+			44,
+			"src/map/banks/18/0/map_footer_route_6_clouds.pms"
+		],
+		"map_footer_inferior_clouds": [
+			45,
+			"src/map/banks/10/2/map_footer_inferior_clouds.pms"
+		],
+		"map_footer_vulcano_clouds": [
+			46,
+			"src/map/banks/21/0/map_footer_vulcano_clouds.pms"
+		],
+		"map_footer_meriana_city_clouds": [
+			47,
+			"src/map/banks/5/1/map_footer_meriana_city_clouds.pms"
+		],
+		"map_footer_amonia_clouds": [
+			48,
+			"src/map/banks/4/5/map_footer_amonia_clouds.pms"
+		],
+		"map_footer_route_4_clouds": [
+			49,
+			"src/map/banks/16/0/map_footer_route_4_clouds.pms"
+		],
+		"map_footer_kaskada_clouds": [
+			50,
+			"src/map/banks/8/1/map_footer_kaskada_clouds.pms"
+		],
+		"map_footer_felsige_oednis_clouds": [
+			51,
+			"src/map/banks/22/0/map_footer_felsige_oednis_clouds.pms"
+		],
+		"map_footer_silvania_clouds": [
+			52,
+			"src/map/banks/7/0/map_footer_silvania_clouds.pms"
+		],
+		"map_footer_silvania_wald_clouds": [
+			53,
+			"src/map/banks/1/1/map_footer_silvania_wald_clouds.pms"
+		],
+		"map_footer_route_3_clouds": [
+			54,
+			"src/map/banks/15/2/map_footer_route_3_clouds.pms"
 		]
 	},
 	"tilesets_primary": {

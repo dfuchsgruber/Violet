@@ -301,4 +301,16 @@ void npc_do_facing_move(npc *n, u8 movement);
  **/
 void npc_update_oam_delay_all();
 
+/**
+ * Callback that lets the player transit to a biking state.
+ * @param self self reference
+ **/
+void player_transition_to_bike(u8 self);
+
+/**
+ * Checks if the player state disables them to use a bike
+ * @return if the current player state and position disables biking
+ **/
+bool player_state_disables_bike();
+
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

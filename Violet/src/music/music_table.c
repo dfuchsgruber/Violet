@@ -753,6 +753,8 @@ song song_table[] = {
   // Song 374, (=0x176)
   {mus_ceometria2, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 375, (=0x177)
-  {mus_forest_cemetery, SONG_TYPE_SONG, SONG_TYPE_SONG}
+  {mus_forest_cemetery, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 376 = (0x178)
+  {mus_haweiland, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

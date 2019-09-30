@@ -42,7 +42,6 @@ void player_transition_water_to_land_callback_update_npc(u8 self) {
         oam_clear_and_free_vram(oams + npcs[player_state.npc_idx].oam_surf);
         big_callback_delete(self);
     }
-
 }
 
 /** Validating the saveblock1 offsets

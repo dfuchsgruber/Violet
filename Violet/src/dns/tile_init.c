@@ -25,6 +25,11 @@ void tile_init(map_footer_t *foot) {
             pal_restore[0x21] = dns_color_light_yellow;
             pal_restore[0x22] = dns_color_light_yellow;
             pal_restore[0x25] = dns_color_light_yellow_dark;
+        } else if (foot->tileset1 == &maptileset_clouds) {
+            color_t col_flame_yellow = {.rgb = {.red = 31, .green = 25, .blue = 7}};
+            color_t col_flame_orange = {.rgb = {.red = 31, .green = 17, .blue = 7}};
+            pal_restore[2 * 16 + 14] = col_flame_yellow;
+            pal_restore[2 * 16 + 15] = col_flame_orange;
         }
         if (foot->tileset2 == &maptileset245157) {
             //Orina City TS2

@@ -10,12 +10,12 @@
 				{
 					"is_trainer": 0,
 					"script": "ow_script_0x88c974",
-					"y": 7,
+					"y": "5",
 					"target_index": 1,
 					"field_3": 0,
 					"picture": 32,
 					"flag": "0x0",
-					"x": 10,
+					"x": "9",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -32,12 +32,12 @@
 				{
 					"is_trainer": 0,
 					"script": "ow_script_0x8922a4",
-					"y": 7,
+					"y": "5",
 					"target_index": 2,
 					"field_3": 0,
 					"picture": 23,
 					"flag": "0x0",
-					"x": 4,
+					"x": "3",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -55,10 +55,10 @@
 			"warps": [
 				{
 					"target_map": 0,
-					"y": 9,
+					"y": "7",
 					"target_bank": 3,
 					"level": 0,
-					"x": 7,
+					"x": "6",
 					"target_warp_idx": 2
 				}
 			],

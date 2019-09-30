@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_92",
 	"data": {
 		"border": [
 			[
@@ -1875,7 +1873,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 12,
+					"block_idx": 1,
 					"level": 12
 				},
 				{
@@ -1981,11 +1979,11 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 307,
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 308,
 					"level": 12
 				},
 				{
@@ -2119,11 +2117,11 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 304,
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 305,
 					"level": 12
 				},
 				{
@@ -4453,7 +4451,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 12
 				},
 				{
@@ -4469,7 +4467,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 1
 				},
 				{
@@ -4591,7 +4589,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 94,
 					"level": 0
 				},
 				{
@@ -4607,8 +4605,8 @@
 					"level": 16
 				},
 				{
-					"block_idx": 1,
-					"level": 16
+					"block_idx": 103,
+					"level": 1
 				},
 				{
 					"block_idx": 1,
@@ -4729,7 +4727,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 30,
+					"block_idx": 36,
 					"level": 12
 				},
 				{
@@ -4737,7 +4735,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 1
 				},
 				{
@@ -4875,8 +4873,8 @@
 					"level": 1
 				},
 				{
-					"block_idx": 30,
-					"level": 16
+					"block_idx": 36,
+					"level": 1
 				},
 				{
 					"block_idx": 31,
@@ -4887,7 +4885,7 @@
 					"level": 16
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 17,
 					"level": 16
 				},
 				{
@@ -5707,7 +5705,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 1
 				},
 				{
@@ -5833,7 +5831,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 12
 				},
 				{
@@ -5845,8 +5843,8 @@
 					"level": 1
 				},
 				{
-					"block_idx": 30,
-					"level": 16
+					"block_idx": 36,
+					"level": 1
 				},
 				{
 					"block_idx": 31,
@@ -5869,7 +5867,7 @@
 					"level": 1
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 1
 				},
 				{
@@ -5971,7 +5969,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 94,
 					"level": 0
 				},
 				{
@@ -6007,8 +6005,8 @@
 					"level": 16
 				},
 				{
-					"block_idx": 1,
-					"level": 16
+					"block_idx": 103,
+					"level": 1
 				},
 				{
 					"block_idx": 38,
@@ -6109,7 +6107,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 94,
 					"level": 0
 				},
 				{
@@ -6141,7 +6139,7 @@
 					"level": 16
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 17,
 					"level": 16
 				},
 				{
@@ -6247,7 +6245,7 @@
 					"level": 12
 				},
 				{
-					"block_idx": 30,
+					"block_idx": 36,
 					"level": 12
 				},
 				{
@@ -6523,11 +6521,11 @@
 					"level": 12
 				},
 				{
-					"block_idx": 46,
+					"block_idx": 100,
 					"level": 12
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 12
 				},
 				{
@@ -6661,11 +6659,11 @@
 					"level": 16
 				},
 				{
-					"block_idx": 31,
+					"block_idx": 37,
 					"level": 16
 				},
 				{
-					"block_idx": 30,
+					"block_idx": 36,
 					"level": 12
 				},
 				{
@@ -6673,11 +6671,11 @@
 					"level": 12
 				},
 				{
-					"block_idx": 47,
+					"block_idx": 101,
 					"level": 12
 				},
 				{
-					"block_idx": 46,
+					"block_idx": 100,
 					"level": 12
 				},
 				{
@@ -6811,11 +6809,11 @@
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 103,
 					"level": 12
 				},
 				{
-					"block_idx": 1,
+					"block_idx": 103,
 					"level": 12
 				},
 				{
@@ -10245,5 +10243,7 @@
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_92",
+	"type": "footer"
 }

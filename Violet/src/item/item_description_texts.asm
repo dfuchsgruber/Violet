@@ -1433,10 +1433,10 @@
 		.string " ????"
 
 
-	.global str_item_desc_xef_item_item_ef
+	.global str_item_desc_xef_item_geowaznit
 
-	str_item_desc_xef_item_item_ef:
-		.string " ????"
+	str_item_desc_xef_item_geowaznit:
+		.string "Wird er von einem Geowaz\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."
 
 
 	.global str_item_desc_xf0_item_item_f0
@@ -3440,10 +3440,10 @@
 	str_item_desc_xee_item_item_ee:
 		.string "?????"
 
-	.global str_item_desc_xef_item_item_ef
+	.global str_item_desc_xef_item_geowaznit
 
-	str_item_desc_xef_item_item_ef:
-		.string "?????"
+	str_item_desc_xef_item_geowaznit:
+		.string "If held by a Golem in\nbattle it can perform\na mega evolution."
 
 	.global str_item_desc_xf0_item_item_f0
 

@@ -89,7 +89,7 @@ goto ow_script_0x8fbc6c
 .global ow_script_0x8fbc6c
 ow_script_0x8fbc6c:
 writebytetooffset 0x2 0x2036e28
-warpmuted 0x1 0x0 0x8 0x0 0x0
+warpmuted 0x1 0x1 0x0 0x0 0x0
 addvar STORY_PROGRESS 0x1
 waitstate
 end
@@ -193,12 +193,10 @@ waitmovement 0x0
 loadpointer 0x0 str_0x8f0a28
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 
-loadpointer 0 str_police
-setvar 0x8000 0
-special 0xE
+
+
 loadpointer 0x0 str_0x8f0a11
-callstd MSG
-special 0xF
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG
 
 applymovement 0x3 ow_script_movs_0x8f27c8
 waitmovement 0x0
@@ -249,9 +247,6 @@ end
 
 str_mia:
 	.string "Mia"
-
-str_police:
-	.string "Polizist"
 
 .global str_0x8eca2e
 

@@ -179,57 +179,49 @@ void groudon_anim_step_cb(u8 self){
 
 
 /**
- * 
- * formula for earthquake y(x):
+ * formula for earthquake y(x, i, s, T):
  * intensity := i
  * speed := s, T := 4 * s
  * cushion := c
  * frame(running index) := x
  * y(x) = i * sin( x * T / (2 * pi) ) * (0.5 ^ (x * cushion / (T * T)))
- * 
- * @param self
- * 
  */
+int groudon_anim_earthquake_displacement(int frame, int period, int amplitude, int cushion) {
+    FIXED sin_arg = FIXED_DIV(INT_TO_FIXED(frame), INT_TO_FIXED(period));
+    FIXED trig_applied = FIXED_MUL(FIXED_SIN(sin_arg), INT_TO_FIXED(amplitude));
+    // Apply decay function
+    int decay = hwt(frame/period, period/cushion, 0x10000);
+    return (FIXED_TO_INT(trig_applied) * decay) / 0x10000;
+}
+
 void groudon_anim_earthquake_cb(u8 self){
     //params [intensity] [speed] [duration] [cushion]
-    
     int amplitude = big_callbacks[self].params[0];
     int period = big_callbacks[self].params[1] * 4;
     int duration = big_callbacks[self].params[2];
     int cushion = big_callbacks[self].params[3];
-    int frame = big_callbacks[self].params[4];
-    int y;
+    int frame = big_callbacks[self].params[4]++;
     
-    u16 *slast = &(big_callbacks[self].params[5]);
-    
-    if(frame > duration){
+    if(frame >= duration){
         big_callback_delete(self);
-    }else{
-        //y(x) = A * sin(x * T / (2pi)) * hwt(x, T/2, 1)
-        //T := 4 * speed
-        FIXED fperiod = INT_TO_FIXED(period);
-        FIXED x = FIXED_DIV(INT_TO_FIXED(frame), fperiod);
-        FIXED fy = FIXED_SIN(x);
-        fy = FIXED_MUL(INT_TO_FIXED(amplitude), fy);
-        y = FIXED_TO_INT(fy);
-        //if(frame)debug4(y, z, amplitude, w);
-
-        int ht = hwt(frame/period, period/cushion, 0x10000);
-        y *= ht;
-        y /= 0x10000;
-        int i;
-            for(i = 0; i < 5; i++){
-                oams[fmem.ae_mem->vars[i]].x2 = (s16)(y);
-            }
-            io_set(0x14, (u16)(io_get(0x14)-y+(*slast)));
-            io_set(0x18, (u16)(io_get(0x18)-y+(*slast)));
-            io_set(0x10, (u16)(io_get(0x10)-y+(*slast)));
-            *slast = (u16)y;
-        big_callbacks[self].params[4]++;
+    }else {
+        int dy = groudon_anim_earthquake_displacement(frame + 1, period, amplitude, cushion) - 
+            groudon_anim_earthquake_displacement(frame, period, amplitude, cushion);
+        for(int i = 0; i < 5; i++){
+            oams[fmem.ae_mem->vars[i]].x = (s16)(dy + oams[fmem.ae_mem->vars[i]].x);
+        }
+        if (frame > 0) {
+            // Use the dy from last frame to match the oam timingint 
+            int dy_last = groudon_anim_earthquake_displacement(frame, period, amplitude, cushion) - 
+            groudon_anim_earthquake_displacement(frame - 1, period, amplitude, cushion);
+            io_set(0x14, (u16)(io_get(0x14) - dy_last));
+            io_set(0x18, (u16)(io_get(0x18) - dy_last));
+            io_set(0x10, (u16)(io_get(0x10) - dy_last));
+        }
+        
+            
     }
 }
-    
-   
 
 void groudon_anim_diserakt_cb (u8 self){
     

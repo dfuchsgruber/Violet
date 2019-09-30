@@ -494,3 +494,5 @@ npc_do_facing_move = 0x0805c06c | 1;
 npc_update_oam_delay_all = 0x08068a64 | 1;
 oam_clear_and_free_vram = 0x08007200 | 1;
 game_context_update = 0x0812b3ac | 1;
+player_transition_to_bike = 0x080a13f0 | 1;
+player_state_disables_bike = 0x080bd62c | 1;

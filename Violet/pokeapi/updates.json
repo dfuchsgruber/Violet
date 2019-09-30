@@ -2135,7 +2135,7 @@
 		"species_link": "POKEMON_ALTARIA",
 		"dex_number": 0
 	},
-	"POKEMON_GEOWAZM": {
+	"POKEMON_MEGA_GEOWAZ": {
 		"basestats": {
 			"hp": 80,
 			"attack": 175,
@@ -4563,7 +4563,7 @@
 		"dex_number": 380
 	},
 	"POKEMON_GROUDON": {
-		"ability_0": "Wandlungsk",
+		"ability_0": "Duerre",
 		"ability_1": null,
 		"hidden_ability": null,
 		"safari_rate": 0,

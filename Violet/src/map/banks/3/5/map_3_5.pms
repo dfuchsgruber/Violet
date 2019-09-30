@@ -3,7 +3,7 @@
 		"footer": "map_footer_83",
 		"events": {
 			"person_cnt": 49,
-			"warp_cnt": 10,
+			"warp_cnt": 15,
 			"trigger_cnt": 15,
 			"signpost_cnt": 9,
 			"persons": [
@@ -1000,12 +1000,12 @@
 				{
 					"is_trainer": 1,
 					"script": "ow_script_0x95880b",
-					"y": 51,
+					"y": "61",
 					"target_index": 46,
 					"field_3": 0,
 					"picture": 49,
 					"flag": "ORINA_CITY_MISTRALS_GRUNTS | 0x8000",
-					"x": 66,
+					"x": "0",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 2,
@@ -1166,6 +1166,46 @@
 					"level": 0,
 					"x": 26,
 					"target_warp_idx": 0
+				},
+				{
+					"x": "57",
+					"y": "51",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "2",
+					"target_bank": "9"
+				},
+				{
+					"x": "61",
+					"y": "48",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "0",
+					"target_bank": "9"
+				},
+				{
+					"x": "62",
+					"y": "48",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "0",
+					"target_bank": "9"
+				},
+				{
+					"x": "62",
+					"y": "49",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "0",
+					"target_bank": "9"
+				},
+				{
+					"x": "61",
+					"y": "49",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "0",
+					"target_bank": "9"
 				}
 			],
 			"triggers": [

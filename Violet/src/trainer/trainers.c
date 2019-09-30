@@ -695,7 +695,7 @@ trainer trainers[TRAINER_CNT] = {
       0xa,
       false
     }, //Encounter and gender
-    0x0, // sprite
+    16, // sprite
     LANGDEP(PSTRING("Harrenfeld"), PSTRING("Harrenfeld")),
     {
       ITEM_NONE,
@@ -5629,6 +5629,141 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Taufel")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x110_route_12_trainer_20,
+    },
+    [0x111] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x47,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Laurena"),
+            PSTRING("Laurena")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x111_route_2_clouds_trainer_0,
+    },
+    [0x112] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x48,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Luc"),
+            PSTRING("Luc")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x112_route_2_clouds_trainer_1,
+    },
+    [0x113] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x48,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Adam"),
+            PSTRING("Adam")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x113_route_2_clouds_trainer_2,
+    },
+    [0x114] = {
+        .trainerclass = TRAINERCLASS_EXPERTE, .sprite = 0x57,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Aygna"),
+            PSTRING("Aygna")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x114_route_2_clouds_trainer_3,
+    },
+    [0x115] = {
+        .trainerclass = TRAINERCLASS_VOGELFAENGER, .sprite = 0x2e,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Magnus"),
+            PSTRING("Magnus")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x115_route_2_clouds_trainer_4,
+    },
+    [0x116] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Sakim"),
+            PSTRING("Sakim")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x116_route_5_clouds_trainer_2,
+    },
+    [0x117] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x48,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Jonathis"),
+            PSTRING("Jonathis")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x117_orina_city_clouds_trainer_0,
+    },
+    [0x118] = {
+        .trainerclass = TRAINERCLASS_ASS_TRAINER, .sprite = 0x6f,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Margot"),
+            PSTRING("Margot")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x118_orina_city_clouds_trainer_1,
+        .items = {ITEM_TOP_GENESUNG, ITEM_HYPERTRANK, ITEM_HYPERHEILER}
+    },
+    [0x119] = {
+        .trainerclass = TRAINERCLASS_RUINENMANIAC, .sprite = 0x4,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Makaf"),
+            PSTRING("Makaf")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x119_orina_city_clouds_trainer_2,
+        .items = {ITEM_TOP_GENESUNG, ITEM_HYPERTRANK, ITEM_HYPERHEILER}
+    },
+    [0x11A] = {
+        .trainerclass = TRAINERCLASS_PKMN_RANGER, .sprite = 0x3d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Katje"),
+            PSTRING("Katje")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x11a_route_6_clouds_trainer_0,
+    },
+    [0x11B] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x48,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Richavid"),
+            PSTRING("Richavid")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x11b_route_6_clouds_trainer_1,
+    },
+    [0x11C] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x47,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Missa"),
+            PSTRING("Missa")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x11c_inferior_clouds_trainer_0,
+    },
+    [0x11D] = {
+        .trainerclass = TRAINERCLASS_GOERE, .sprite = 0x41,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Birta"),
+            PSTRING("Birta")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x11d_route_4_clouds_trainer_0,
+    },
+    [0x11E] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x47,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Clary"),
+            PSTRING("Clary")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x11e_route_4_clouds_trainer_1,
+    },
+    [0x11F] = {
+        .trainerclass = TRAINERCLASS_RUINENMANIAC, .sprite = 0x4,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Loxodon"),
+            PSTRING("Loxodon")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x11f_kaskada_clouds_trainer_0,
+    },
+    [0x120] = {
+        .trainerclass = TRAINERCLASS_TEENAGER, .sprite = 0x52,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Fritz"),
+            PSTRING("Fritz")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x120_kaskada_clouds_trainer_1,
+    },
+    [0x121] = {
+        .trainerclass = TRAINERCLASS_GOERE, .sprite = 0x41,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Schika"),
+            PSTRING("Schika")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x121_felsige_oednis_clouds_trainer_0,
+    },
+    [0x122] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x48,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Horatio"),
+            PSTRING("Horatio")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x122_felsige_oednis_clouds_trainer_1,
+    },
+    [0x123] = {
+        .trainerclass = TRAINERCLASS_WOLKENREITER, .sprite = 0x47,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Kaja"),
+            PSTRING("Kaja")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x123_silvania_clouds_trainer_0,
     },
 };
 

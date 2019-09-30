@@ -3,14 +3,16 @@
 
 extern u16 gfx_tileset_clouds_anim_waterTiles[];
 extern u16 gfx_tileset_clouds_anim_waterfallTiles[];
+extern u16 gfx_tileset_clouds_anim_torchTiles[];
 
 tileset_animation tileset_clouds_animations[] = {
     {.cycle = 4, .speed = 16, .start_tile = 0x100, .num_tiles = 52, .gfx = gfx_tileset_clouds_anim_waterTiles},
     {.cycle = 4, .speed = 16, .start_tile = 0x134, .num_tiles = 10, .gfx = gfx_tileset_clouds_anim_waterfallTiles},
+    {.cycle = 4, .speed = 16, .start_tile = 0x147, .num_tiles = 2, .gfx = gfx_tileset_clouds_anim_torchTiles},
 };
 
 tileset_animation_header tileset_clouds_animation_head = {
-    2, tileset_clouds_animations
+    3, tileset_clouds_animations
 };
 
 

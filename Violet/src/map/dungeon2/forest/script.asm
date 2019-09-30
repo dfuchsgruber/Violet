@@ -36,6 +36,25 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 
 ow_script_test:
+sound 0xd1
+setanimation 0x0 0x47
+setanimation 0x1 0x1d
+setanimation 0x2 0x0
+doanimation 0x36
+checkanimation 0x36
+setvar 0x8004 0x6
+setflag TRANS_DISABLE
+special 0x19
+waitstate
+settrainerflag 0xaa
+trainerbattlecont 0x1 0xaa 0x0 str_0x96f0ee str_0x96f156 ow_script_0x96fbaa
+end
+
+
+warp 3 17 255 0x1e 0x15
+waitstate
+end
+
 braille braille1
 waitkeypress
 waitmsg

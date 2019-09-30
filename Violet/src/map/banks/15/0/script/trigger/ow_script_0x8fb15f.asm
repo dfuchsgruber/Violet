@@ -74,10 +74,10 @@ special 0xF
 
 applymovement 0x36 mov_4
 loadpointer 0x0 str_3
-show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG
 applymovement 0x36 mov_1
 loadpointer 0x0 str_4
-show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG_YES_NO
+show_mugshot MUGSHOT_HARRENFELD MUGSHOT_RIGHT MSG
 pause 0x40
 sound 0x15
 applymovement 0x36 mov_x62

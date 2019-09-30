@@ -6,6 +6,7 @@ extern u16 gfx_tileset_0_anim_1Tiles[];
 extern u16 gfx_tileset_0_anim_2Tiles[];
 extern u16 gfx_tileset_0_anim_3Tiles[];
 extern u16 gfx_tileset_0_anim_4Tiles[];
+extern u16 gfx_tileset_0_anim_5Tiles[];
 
 tileset_animation tileset_0_animations[] = {
     {
@@ -22,7 +23,7 @@ tileset_animation tileset_0_animations[] = {
     },
     {
         4, 16, 480, 10, gfx_tileset_0_anim_4Tiles
-    }
+    },
 };
 
 tileset_animation_header tileset_0_animations_head = {

@@ -3,7 +3,7 @@
 		"footer": "map_footer_447",
 		"events": {
 			"person_cnt": 27,
-			"warp_cnt": 3,
+			"warp_cnt": 7,
 			"trigger_cnt": 3,
 			"signpost_cnt": 3,
 			"persons": [
@@ -626,6 +626,38 @@
 					"target_bank": 0,
 					"target_map": 5,
 					"target_warp_idx": 0
+				},
+				{
+					"x": "19",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": "22"
+				},
+				{
+					"x": "20",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": 0,
+					"target_bank": "22"
+				},
+				{
+					"x": "20",
+					"y": "9",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": 0,
+					"target_bank": "22"
+				},
+				{
+					"x": "19",
+					"y": "9",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": 0,
+					"target_bank": "22"
 				}
 			],
 			"triggers": [

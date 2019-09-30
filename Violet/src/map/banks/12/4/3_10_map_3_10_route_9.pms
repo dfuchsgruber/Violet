@@ -168,7 +168,7 @@
 					"is_trainer": "1",
 					"field_D": 0,
 					"alert_radius": "2",
-					"script": "ow_script_route_9_trainer_4",
+					"script": "ow_script_route_9_trainer_5",
 					"flag": 0,
 					"value": {
 						"item": 0,
@@ -189,7 +189,7 @@
 					"is_trainer": "1",
 					"field_D": 0,
 					"alert_radius": "3",
-					"script": 0,
+					"script": "ow_script_route_9_trainer_6",
 					"flag": 0,
 					"value": {
 						"item": 0,

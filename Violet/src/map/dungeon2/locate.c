@@ -49,7 +49,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 
 	{3, 7, 0x26, 0x4, DTYPE_CAVE},
 	{3, 7, 0x45, 0xE, DTYPE_CAVE},
-	{3, 8, 0x23, 0x27, DTYPE_CAVE}, // Route 8
+	{3, 8, 0x23, 0x27, DTYPE_FOREST}, // Route 8
 	{3, 10, 0x4, 0x37, DTYPE_OCEAN}, // Route 9
 
 	{3, 10, 0x1, 0x1f, DTYPE_OCEAN},

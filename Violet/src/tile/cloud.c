@@ -75,3 +75,24 @@ void warp_to_pos_with_facing() {
     clearflag(TRANS_PALETTE_FETCH);
 }
 
+static u16 cloud_dismountable_blocks[] = {
+	0xD8, 0xD9, 0xDA, 0xDB, 0xDC, 0xDD, 0xDE, 0xDF, 
+	0xE2, 0xEA, 0xF2, 0xE4, 0xE5, 0xCA, 0xCB, 0xCC, 
+	0xC6, 0xCE, 0xD6, 0xEC, 0xF4,
+	0xFF
+};
+
+bool cloud_not_dismountable() {
+	if (map_is_cloud() && !player_state_disables_bike()) {
+		// On cloud maps only on certain blocks the player can dismount
+		position_t pos;
+		player_get_position(&pos);
+		u16 block = block_get_by_pos(pos.coordinates.x, pos.coordinates.y);
+		for (int i = 0; cloud_dismountable_blocks[i] != 0xFF; i++) {
+			if (block == cloud_dismountable_blocks[i]) return false;
+		}
+		return true;
+	}
+	return false;
+}
+

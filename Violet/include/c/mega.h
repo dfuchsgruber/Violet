@@ -3,7 +3,7 @@
 
 
 #define MEGA_ICON_TAG 0x134F
-#define MEGA_CNT 4
+#define MEGA_CNT 5
 
 #include "battle/battler.h"
 #include "oam.h"

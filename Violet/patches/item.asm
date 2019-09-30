@@ -270,7 +270,7 @@ item_resource equ 0x083D3BE8
 
 // Prevent the player form dismounting the clound on underwater maps
 .org 0x080A133E
-	ldr r1, =map_is_cloud | 1
+	ldr r1, =cloud_not_dismountable | 1
 	bl _bxr1
 	ldr r1, =0x080A137E | 1
 	bx r1

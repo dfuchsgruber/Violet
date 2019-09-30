@@ -147,6 +147,7 @@ extern const unsigned char mus_laubdorf[];
 extern const unsigned char mus_ceometria2[];
 extern const unsigned char mus_surfer[];
 extern const unsigned char mus_forest_cemetery[];
+extern const unsigned char mus_haweiland[];
 
 #endif	/* MUSIC_H */
 
