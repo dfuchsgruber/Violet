@@ -1,6 +1,6 @@
 {
 	"data": {
-		"footer": "map_footer_silvania_wald_clouds",
+		"footer": "map_footer_silvania_wald_flashback",
 		"events": {
 			"person_cnt": 2,
 			"warp_cnt": 1,
@@ -79,6 +79,6 @@
 		"level": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
 	},
-	"label": "map_silvania_wald_clouds",
+	"label": "map_silvania_wald_flashback",
 	"type": "header"
 }

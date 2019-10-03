@@ -150,7 +150,7 @@ str_0x971c05:
 .global str_0x953d08
 
 str_0x953d08:
-	.autostring 35 2 "Ein Mensch wäre dazu sicherlich nicht im Stande, ja.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWir befinden uns hier an einem Ort jenseits der Welt, die euch bekannt ist.\pDieses Reich trägt den Namen Arc.\pUm genauer zu sein, ihr befindet euch in meiner Festung, der Arc Skrim.\pDie Arc wird von Wesen, die sich Chronen nennen, bewohnt.\pWir Chronen existieren jenseits der Zeit, wie ihr sie kennt.\pFür uns sind Vergangenheit, Gegenwart und Zukunft völlig gehaltlose Begriffe.\pEs ist uns Chronen eigentlich strengstens untersagt, jemals mit eurer Welt zu interagieren DOTS"
+	.autostring 35 2 "Ein Mensch wäre dazu sicherlich nicht im Stande, ja.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWir befinden uns hier an einem Ort jenseits der Welt, die euch bekannt ist.\pDieses Reich trägt den Namen Arc.\pUm genauer zu sein, ihr befindet euch in meiner Festung, der Arc Skrim.\pDie Arc wird von Wesen, die sich Chronen nennen, bewohnt.\pWir Chronen existieren jenseits der Zeit, wie ihr sie kennt.\pFür uns sind Vergangenheit, Gegenwart und Zukunft völlig gehaltlose Begriffe."
 
 .global str_0x9718d8
 
@@ -161,18 +161,17 @@ str_0x9718d8:
 .global str_0x9717c3
 
 str_0x9717c3:
-	.autostring 35 2 "Ihr habt viele Fragen.\pDas ist nur verständlich.\pUm euch meine Motive aber verständlich zu machen, muss ich sehr weit ausholen."
-
+	.autostring 34 2 "Ihr habt viele Fragen.\pDas ist nur verständlich.\pEigentlich ist es nicht meine Absicht, euch über die Zusammenhänge ins Bild zu setzen.\pDoch sehe ich mich nun gezwungen, gegen die mir auferlegten Gesetze zu verstoßen, und euch zumindest ein wenig aufzuklären."
 
 .global str_0x971424
 
 str_0x971424:
-	.autostring 35 2 "Meine Geschichte beginnt vor unvorstellbar vielen Jahren.\pEuer Universum war praktisch erst entstanden und zum ersten Mal überhaupt, würde Leben in der weiten trostlosen Kälte des Alls entstehen.\pBegeistert von diesem Ereignis, setzte ich mich über unsere Gesetze hinweg und betrat eure Welt, um selbst Zeuge dieses Augenblicks zu werden, unwissend, was ich damit in Gang setzten würde.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMit meinem Erscheinen in eurer Welt veränderte ich den Lauf der Dinge, der für euer Universum vorgesehen war.\pIch kann es mir selbst nicht gänzlich erklären DOTS\pDOTS aber indem ich diesem Ereignis beiwohnte, brachte ich dieses erste Leben direkt auf eure Welt.\pMein Engreifen führte schließlich zur Katastrophe von Aktania, als eines der ersten Lebewesen auf einem Meteor in eure Welt gelangte.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAb diesem Zeitpunkt, gerieten die Dinge außer Kontrolle."
+	.autostring 34 2 "Die Aufgabe der Chronen ist es, dafür zu sorgen, dass die Geschichte einen Weg einschlägt, der vor langer Zeit vorgesehen wurde und dem sich eure Welt zu fügen hat.\pDoch durch gewisse Umstände ist es nun der Fall, dass eure Welt von diesem Schicksal abgekommen zu sein scheint.\pDie Folgen dieser Divergenz sind selbst den Chronen nicht völlig klar, denn der Verlauf dieser neuen Geschichte scheint nahezu im Dunkeln zu liegen.\pAls jedoch das Unglück von Aktania sich ereignete, und mit einem Meteor etwas auf eure Welt kam, das diese völlig zu vernichten im Stande ist, stand fest, dass die Dinge außer Kontrolle geraten warenDOTSDOTSDOTS"
 
 .global str_0x96fd7a
 
 str_0x96fd7a:
-	.autostring 35 2 "Mehr und mehr entzog sich eure Welt der Kontrolle der Chronen.\pEs enstand eine Zeitlinie, die niemals existieren sollte.\pVergeblich schickte ich euch beiden Visionen, die euch eure Rolle in all dem begreiflich machen sollten.\pIch zeigte euch die Vergangenheit, als die Wesen aus dem All auf euren Planeten kamen.\pIch ließ euch die Zukunft sehen.\pEine Welt, die völlig von Finsternis verschlungen ist DOTS"
+	.autostring 34 2 "Eure Zeitline bewegt sich auf eine Katastrophe vor, deren Ursache ich nicht völlig absehen kann.\pIch zeigte euch beiden bereits, auf welches Desaster sich eure Welt zu bewegt und welches schreckliche Schicksal ihr bevorsteht.\pEine Welt voller Dunkelheit, beherrscht von Wesen, die niemals mit den Menschen hätten in Kontakt kommen dürfen.\pOhne zu übertreiben, wäre dies als das Ende der Menschen und Pokémon zu bezeichnenDOTS"
 
 
 .global str_0x96fa81
@@ -194,7 +193,7 @@ str_0x96f680:
 .global str_0x96f55c
 
 str_0x96f55c:
-	.autostring 35 2 "Ich kann euch ehrlich nicht sagen, was ihr seid.\pDeshalb sind die Chronen der Überzeugung, dass wenn man euch aus der Geschichte tilgen würde, die Dinge wieder ins Lot kämen.\pIch allerdings bin anderer Ansicht.\pIch denke nicht, dass euer Tod die Dinge wieder geraderücken kann.\pGanz im Gegenteil.\nIch vermute, dass es an euch liegt, die Zukunft, die eurer Welt droht, zu verhindern.\pHabt ihr das verstanden?\pIhr müsst den Diserakt, den Stein der Zeit, um jeden Preis beschützen.\pWenn er in die falschen Hände gerät, wird eure Welt in eine endlose Dunkelheit gestürzt DOTS"
+	.autostring 35 2 "Ich kann euch ehrlich nicht sagen, was ihr seid.\pDeshalb sind die Chronen der Überzeugung, dass wenn man euch aus der Geschichte tilgen würde, die Dinge wieder ins Lot kämen.\pIch allerdings bin anderer Ansicht.\pIch denke nicht, dass euer Tod die Dinge wieder geraderücken kann.\pGanz im Gegenteil.\nIch vermute, dass es an euch liegt, die Zukunft, die eurer Welt droht, zu verhindern.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDer Zeistein, der DiseraktDOTS\pDOTS DOTS DOTS\pVielleicht ist er der Auslöser für diese Katastrophe."
 
 .global str_0x96f427
 

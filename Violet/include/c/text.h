@@ -227,6 +227,19 @@ extern "C" {
     void tbox_free(u8 box_id);
 
     /**
+     * Frees a textbox
+     * @param box_id The id of the textbox
+     */
+    void tbox_free_2(u8 box_idx);
+
+    /**
+     * Flushes the tilest and border of a textbox.
+     * @param box_idx the box to flush
+     * @param tile the tile pattern to flush with
+     **/
+    void tbox_flush_all(u8 box_idx, u8 tile);
+
+    /**
      * Decrypts a string (i.e. buffers and constants)
      * @param dst Memory where to place the decrypted string at
      * @param src The undecrypted string
@@ -259,6 +272,37 @@ extern "C" {
      */
     void tbox_clear_bottom_line(u8 box_id);
 
+    /**
+     * Loads palette and tiles for a message textbox (i.e. with border style from options)
+     **/
+    void tbox_load_message_gfx_and_pal();
+
+    /**
+     * Prints a box (tiles and tilemap) that uses a normal frame.
+     * @param tbox_idx the box to print
+     * @param copy_to_vram if the data should be copied to vram or only be stored in the tbox buffer
+     **/
+    void tbox_print_std_frame(u8 tbox_idx, bool copy_to_vram);
+
+    /**
+     * Copies the data of a tbox to the vram.
+     * @param tbox_idx the box to copy the data of
+     * @param mode if the tileset and / or tilemap will be copied
+     **/
+    void tbox_copy_to_vram(u8 tbox_idx, u8 mode);
+
+    /**
+     * Adds a new text printer with certain parameters.
+     * @param tbox_idx the box to print in
+     * @param font the font to use
+     * @param text the text to print
+     * @param x_offset the horizontal offset
+     * @param y_offset the vertical offset
+     * @param speed the speed in which to print
+     * @param callback the callback for the printer after each char is printed
+     **/
+    void tbox_print_string_parametrized(u8 tbox_idx, u8 font, u8 *text, u16 x_offset, u16 y_offset, u8 speed, void (*callback)(void*, u16));
+    
     /**
      * Concatenates two strings (appends second to first string)
      * @param first the first string

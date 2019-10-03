@@ -199,5 +199,8 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x59 * 4))
                 .word ceometria_gym_get_number_waiting_rooms | 1
 
+.org (special_table + (0x5A * 4))
+                .word pokemon_has_type | 1
+
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1

@@ -7,22 +7,25 @@
 #include "prng.h"
 #include "debug.h"
 
-void generate_trash_item(u8 facing) {
+void trash_get_item() {
 
     u16 item = 0;
-    if (!check_trashflag(facing)) {
-        u32 hash = (u32)get_tile_hash_by_facing(facing, 97);
-        dprintf("Trash hash value is %d\n", hash);
-        if (!hash) {
-            //Leftovers
+    coordinate_t pos;
+    player_get_facing_position(&pos.x, &pos.y);
+
+    if (trash_checkflag(pos.x, pos.y, save1->bank, save1->map)) {
+        u32 r = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 97);
+        dprintf("Trash hash value is %d\n", r);
+        if (r == 0) {
+            // 1 / 97 chance for leftovers
             item = ITEM_UEBERRESTE;
-        } else if (hash < 8) {
-            //Rare berries
-            u32 berry_index = get_tile_hash_by_facing(facing, 7);
+        } else if (r < 10) {
+            // 9 / 97 chance for rare berries
+            u32 berry_index = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 7);
             item = (u16) (ITEM_LYDZIBEERE + berry_index);
-        } else if (hash < 20) {
-            //Common berries
-            u32 berry_index = get_tile_hash_by_facing(facing, 11);
+        } else if (r < 25) {
+            // 15 / 97 chance for common berries
+            u32 berry_index = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 11);
             item = (u16) (ITEM_AMRENABEERE + berry_index);
         }
     }
@@ -30,47 +33,31 @@ void generate_trash_item(u8 facing) {
 }
 
 void special_set_trashflag() {
-    set_trashflag((u8) (*var_access(0x800C)));
+    coordinate_t pos;
+    player_get_facing_position(&pos.x, &pos.y);
+    trash_setflag(pos.x, pos.y, save1->bank, save1->map);
 }
 
-bool check_trashflag(u8 facing) {
-
-    u32 hashflag = get_tile_hash_by_facing(facing, 127);
+bool trash_checkflag(s16 x, s16 y, u8 bank, u8 map_idx) {
+    u32 hashflag = tile_hash_by_position(x, y, bank, map_idx, 127);
     int mask = 1 << (hashflag & 7);
     int value = cmem.trash_flags[hashflag >> 3] & mask;
     return value != 0;
 }
 
-void set_trashflag(u8 facing) {
-    u32 hashflag = get_tile_hash_by_facing(facing, 127);
+void trash_setflag(s16 x, s16 y, u8 bank, u8 map_idx) {
+    u32 hashflag = tile_hash_by_position(x, y, bank, map_idx, 127);
     u8 mask = (u8) (1 << (hashflag & 7));
     cmem.trash_flags[hashflag >> 3] |= mask;
 }
 
-u32 get_tile_hash_by_facing(u8 facing, size_t m) {
-
-    s16 pos[2];
-    player_get_coordinates(&pos[0], &pos[1]);
-    switch (facing) {
-        case 1://down
-            pos[1]++;
-            break;
-        case 2://up
-            pos[1]--;
-            break;
-        case 3://left
-            pos[0]--;
-            break;
-        case 4:
-            pos[0]++;
-            break;
-    }
-    u32 seq[4];
-    seq[0] = (u32)(pos[0]);
-    seq[1] = (u32)(pos[1]);
-    seq[2] = (u32)(save1->map);
-    seq[3] = (u32)(save1->bank);
-    return tmp_hash(seq, 4) % m;
+u16 tile_hash_by_position(s16 x, s16 y, u8 bank, u8 map_idx, size_t m) {
+    u32 seq[4] = {
+        (u32)x, (u32)y, bank, map_idx,
+    };
+    u16 hash = (u16)tmp_hash(seq, 4);
+    dprintf("Hash value %x\n", hash);
+    return (u16)(hash % m);
 }
 
 
@@ -108,7 +95,7 @@ u32 dungeon_hash(int dungeon_id) {
 	u32 seq[1];
 	seq[0] = (u32)dungeon_id;
 	// Hash the dungeon_id to 0, ..., 126
-	return tmp_hash(seq, 1) % 127;
+	return (u16)tmp_hash(seq, 1) % 127;
 }
 
 bool dungeon_flag_check(int dungeon_id) {

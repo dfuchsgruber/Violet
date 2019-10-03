@@ -4,7 +4,8 @@
 #include "bios.h"
 #include "vars.h"
 #include "attack.h"
-
+#include "pokemon/basestat.h"
+#include "debug.h"
 
 void pokemon_team_remove(){
     int index = *var_access(0x8004);
@@ -38,4 +39,13 @@ u16 player_party_contains_species() {
       return i;
   }
   return 6;
+}
+
+bool pokemon_has_type() {
+    int index = *var_access(0x8004);
+    int type = *var_access(0x8005);
+    if (pokemon_get_attribute(player_pokemon + index, ATTRIBUTE_IS_EGG, 0)) return false;
+    int species = pokemon_get_attribute(player_pokemon + index, ATTRIBUTE_SPECIES, 0);
+    dprintf("Species %d, type %d\n");
+    return basestats[species].type1 == type || basestats[species].type2 == type;
 }

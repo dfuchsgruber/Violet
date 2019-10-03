@@ -532,6 +532,72 @@ wild_pokemon_data wild_pokemon[] = {
 		.rod = &wild_pokemon_route_6_clouds_rod,
 	},
 	{
+		.bank = 22, .map = 0,
+		.grass = &wild_pokemon_felsige_oednis_clouds_grass,
+	},
+	{
+		.bank = 7, .map = 0,
+		.grass = &wild_pokemon_silvania_clouds_grass,
+	},
+	{
+		.bank = 15, .map = 2,
+		.grass = &wild_pokemon_route_3_clouds_grass,
+	},
+	{
+		.bank = 1, .map = 2,
+		.grass = &wild_pokemon_silvania_wald_clouds_grass,
+	},
+	{
+		.bank = 23, .map = 0,
+		.grass = &wild_pokemon_route_8_clouds_grass,
+		.water = &wild_pokemon_route_6_clouds_water,
+		.rod = &wild_pokemon_route_6_clouds_rod,
+	},
+	{
+		.bank = 12, .map = 5,
+		.grass = &wild_pokemon_route_8_clouds_grass,
+	},
+	{
+		.bank = 13, .map = 4,
+		.grass = &wild_pokemon_route_9_clouds_grass,
+	},
+	{
+		.bank = 13, .map = 5,
+		.grass = &wild_pokemon_route_9_clouds_grass,
+	},
+	{
+		.bank = 6, .map = 6,
+		.grass = &wild_pokemon_route_9_clouds_grass,
+	},
+	{
+		.bank = 14, .map = 0,
+		.grass = &wild_pokemon_route_10_clouds_grass,
+	},
+	{
+		.bank = 24, .map = 0,
+		.grass = &wild_pokemon_kaskada_clouds_grass,
+		.water = &wild_pokemon_route_6_clouds_water,
+		.rod = &wild_pokemon_route_6_clouds_rod,
+	},
+	{
+		.bank = 25, .map = 0,
+		.grass = &wild_pokemon_route_11_clouds_grass,
+		.water = &wild_pokemon_route_6_clouds_water,
+		.rod = &wild_pokemon_route_6_clouds_rod,
+	},
+	{
+		.bank = 19, .map = 9,
+		.grass = &wild_pokemon_ceometria_clouds_grass,
+	},
+	{
+		.bank = 26, .map = 0,
+		.grass = &wild_pokemon_route_12_clouds_grass,
+	},
+	{
+		.bank = 26, .map = 1,
+		.grass = &wild_pokemon_route_12_clouds_grass,
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
 	},

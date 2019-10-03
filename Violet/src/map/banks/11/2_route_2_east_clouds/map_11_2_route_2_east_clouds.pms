@@ -247,7 +247,7 @@
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {
-			"connection_cnt": 2,
+			"connection_cnt": 3,
 			"connections": [
 				{
 					"direction": "NORTH",
@@ -262,6 +262,14 @@
 					"displacement": "19",
 					"bank": "5",
 					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "SOUTH",
+					"displacement": 0,
+					"bank": "25",
+					"map_idx": 0,
 					"field_A": 0,
 					"field_B": 0
 				}

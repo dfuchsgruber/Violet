@@ -32,6 +32,7 @@
 .include "patches/string.asm"
 .include "patches/color.asm"
 .include "patches/present.asm"
+.include "patches/start_menu.asm"
 
 //Memleak debug
 .org 0x0800296C

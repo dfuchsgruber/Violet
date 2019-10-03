@@ -11,69 +11,61 @@
 
 u8 *singpost_behavior_xBC(){
     //trigger script by block id (since we do not have enough behaviorbytes...)
-    s16 x, y;
-    u8 facing = player_get_facing();
-    player_get_coordinates(&x, &y);
-    x = (s16)(x + walking_directions[facing].x);
-    y = (s16)(y + walking_directions[facing].y);
-    u16 block_id = block_get_by_pos(x, y) & 0x3FF;
+    coordinate_t pos;
+    player_get_facing_position(&pos.x, &pos.y);
+    u16 block_id = block_get_by_pos(pos.x, pos.y) & 0x3FF;
     switch(block_id){
-        case 0x00F:
-            //mushroom
-            if (!get_tile_hash_by_facing(facing, 3)){
-                //1/4 chance that a mushroom yields something
-                u32 hash = get_tile_hash_by_facing(facing, 127);
-                u16 flag = (u16)(0xD80 + hash);
-                if(checkflag(flag))
-                    return NULL;
-                //mushroom can be found, we decide which one
-                *var_access(0x8004) = flag;
-                dprintf("Tile hash for mushroom type %d\n", get_tile_hash_by_facing(facing, 5));
-                if(get_tile_hash_by_facing(facing, 5)){
-                    //4/5 chance for mini mushroom
-                    *var_access(0x8005) = ITEM_MINIPILZ;
-                }else{
-                    *var_access(0x8005) = ITEM_RIESENPILZ;
+        case 0x2FA: // Mushroom in Ceometria tileset
+        case 0x00F: {
+            // Mushroom
+            int r = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 3);
+            dprintf("Mushroom has hash %d\n", r);
+            if (r == 0){
+                // 1/4 chance that a mushroom yields something
+                u16 flag = (u16)(0xD80 + tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 127));
+                dprintf("Mushroom uses flag %x\n", flag);
+                if(!checkflag(flag)) {
+                    *var_access(0x8004) = flag;
+                    if(tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 5) == 0){
+                        // 80% chance for mini mushroom
+                        *var_access(0x8005) = ITEM_MINIPILZ;
+                    } else {
+                        *var_access(0x8005) = ITEM_RIESENPILZ;
+                    }
+                    *var_access(0x8006) = 1;
+                    return ow_script_hidden_item_mushroom;
                 }
-                *var_access(0x8006) = 1;
-                if(!checkflag( TRAINER_TIPP_MUSHROOM)){
-                    setflag(TRAINER_TIPP_MUSHROOM);
-                    return script_hidden_item_trainer_tipp_mushroom;
-                }
-                
-                return script_hidden_item_add;
             }
-            break;
-        case 0x1E1:
-            //shell
-            if(!get_tile_hash_by_facing(facing, 5)){
+            return ow_script_hidden_item_mushroom_already_plucked;
+        }
+        case 0x1E1: {
+            // Shell
+            int r = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 3);
+            dprintf("Shell has hash %d\n", r);
+            if(r == 0){
                 //1/5 chance that shell yields something
-                u32 hash = get_tile_hash_by_facing(facing, 127);
-                u16 flag = (u16)(0xD80 + hash);
-                if(checkflag(flag))
-                    return NULL;
-                *var_access(0x8004) = flag;
-                //shell yields something, we decide on item
-                u32 v = get_tile_hash_by_facing(facing, 7);
-                if(v <= 1){
-                    //2/7 chance for heartscale
-                    *var_access(0x8005) = ITEM_HERZSCHUPPE;
-                }else if(v <= 4){
-                    //2/7 chance for big pearl
-                    *var_access(0x8005) = ITEM_RIESENPERLE;
-                }else{
-                    //3/7 chance for mini pearl
-                    *var_access(0x8005) = ITEM_PERLE;
+                u16 flag = (u16)(0xD80 + tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 127));
+                dprintf("Shell uses flag %x\n", flag);
+                if (checkflag(flag)) {
+                    *var_access(0x8004) = flag;
+                    //shell yields something, we decide on item
+                    u32 v = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 7);
+                    if (v < 1) {
+                        //1/7 chance for heartscale
+                        *var_access(0x8005) = ITEM_HERZSCHUPPE;
+                    } else if (v <= 2){
+                        //2/7 chance for big pearl
+                        *var_access(0x8005) = ITEM_RIESENPERLE;
+                    } else {
+                        //4/7 chance for mini pearl
+                        *var_access(0x8005) = ITEM_PERLE;
+                    }
+                    *var_access(0x8006) = 1;
+                    return ow_script_hidden_item_shell;
                 }
-                *var_access(0x8006) = 1;
-                if(!checkflag(TRAINER_TIPP_SHELL)){
-                    setflag(TRAINER_TIPP_SHELL);
-                    return script_hidden_item_trainer_tipp_shell;
-                }
-                return script_hidden_item_add;
             }
-            break;
-            
+            return ow_script_hidden_item_shell_already_found;
+        }
     }
     return NULL;
     

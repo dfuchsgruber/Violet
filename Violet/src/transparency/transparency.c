@@ -77,5 +77,4 @@ void transparency_off() {
         io_set(0x52, 0x0010);
     }
     clearflag(TRANS_PALETTE_FETCH);
-
 }

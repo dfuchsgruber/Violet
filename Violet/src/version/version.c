@@ -153,6 +153,9 @@ void version_upgrade_alpha_2_1_to_2_2() {
             }
         }
     }
+    // Hidden flag for ITEM_OVALER_STEIN
+    clearflag(47 + 1000);
+
     // Roamers
     roamer_reset_all();
     if (checkflag(ASCHHAIN_LAVADOS)) {

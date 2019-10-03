@@ -3,9 +3,9 @@
 		"footer": "map_footer_18_route_8",
 		"events": {
 			"person_cnt": 18,
-			"warp_cnt": 2,
+			"warp_cnt": 6,
 			"trigger_cnt": 1,
-			"signpost_cnt": 4,
+			"signpost_cnt": 5,
 			"persons": [
 				{
 					"target_index": "1",
@@ -138,8 +138,8 @@
 					"picture": "57",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "19",
-					"y": "51",
+					"x": "20",
+					"y": "50",
 					"level": "3",
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"behaviour_range": 0,
@@ -402,6 +402,38 @@
 					"target_warp_idx": "16",
 					"target_map": 0,
 					"target_bank": "1"
+				},
+				{
+					"x": "39",
+					"y": "36",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": "23"
+				},
+				{
+					"x": "40",
+					"y": "36",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": 0,
+					"target_bank": "23"
+				},
+				{
+					"x": "40",
+					"y": "37",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": 0,
+					"target_bank": "23"
+				},
+				{
+					"x": "39",
+					"y": "37",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": 0,
+					"target_bank": "23"
 				}
 			],
 			"triggers": [
@@ -484,6 +516,23 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_8_sign_1"
+					}
+				},
+				{
+					"x": "39",
+					"y": "39",
+					"level": 0,
+					"type": "7",
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_OVALER_STEIN",
+							"flag": "47",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
 					}
 				}
 			]

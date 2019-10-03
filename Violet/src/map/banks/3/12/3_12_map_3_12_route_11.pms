@@ -334,7 +334,7 @@
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_ROUTE",
-		"bike_usable": 0,
+		"bike_usable": "1",
 		"show_name": "SHOW",
 		"level": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"

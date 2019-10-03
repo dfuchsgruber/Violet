@@ -133,4 +133,16 @@ void overworld_free();
  **/
 void overworld_return_to();
 
+/**
+ * Checks if a safari is currently ongoing.
+ * @return if a safari is currently active
+ **/
+bool safari_is_active();
+
+/**
+ * Checks if the map idx is 0x40 and the bank 0 (TODO: what kind of map is this? maybe link?)
+ * @return if the current bank is 0 and the current map idx is 0x40
+ **/
+bool is_bank_x0_and_map_x40();
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

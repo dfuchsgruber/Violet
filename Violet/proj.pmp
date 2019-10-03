@@ -69,8 +69,13 @@
 				"MAP_ASCHHAIN"
 			],
 			"1": [
-				"map_silvania_wald_clouds",
+				"map_silvania_wald_flashback",
 				"src/map/banks/1/1/map_silvania_wald_clouds.pms",
+				"MAP_SILVANIA_WALD"
+			],
+			"2": [
+				"map_silvania_wald_clouds",
+				"src/map/banks/1/2/map_silvania_wald_clouds.pms",
 				"MAP_SILVANIA_WALD"
 			]
 		},
@@ -359,6 +364,11 @@
 			"4": [
 				"map_6_4_aktania_gengar_house",
 				"src/map/banks/6/4/map_6_4_aktania_gengar_house.pms",
+				"MAP_AKTANIA"
+			],
+			"6": [
+				"map_aktania_clouds",
+				"src/map/banks/6/6/map_aktania_clouds.pms",
 				"MAP_AKTANIA"
 			]
 		},
@@ -687,6 +697,16 @@
 				"map_12_4_laubdorf_indoor_2",
 				"src/map/banks/12/4/map_12_4_laubdorf_indoor_2.pms",
 				"MAP_LAUBDORF"
+			],
+			"5": [
+				"map_laubdorf_clouds",
+				"src/map/banks/12/5/map_laubdorf_clouds.pms",
+				"MAP_LAUBDORF"
+			],
+			"6": [
+				"map_laubdorf_inside_3",
+				"src/map/banks/12/6/map_laubdorf_inside_3.pms",
+				"MAP_LAUBDORF"
 			]
 		},
 		"13": {
@@ -708,6 +728,16 @@
 			"3": [
 				"map_13_3_route_9_cave_inside",
 				"src/map/banks/13/3/13_3_map_13_3_route_9_cave_inside.pms",
+				"MAP_ROUTE_9"
+			],
+			"4": [
+				"map_route_9_vertical_clouds",
+				"src/map/banks/13/4/map_route_9_vertical_clouds.pms",
+				"MAP_ROUTE_9"
+			],
+			"5": [
+				"map_route_9_horizontal_clouds",
+				"src/map/banks/13/5/map_route_9_horizontal_clouds.pms",
 				"MAP_ROUTE_9"
 			]
 		},
@@ -763,6 +793,11 @@
 				"map_19_8_ceometria_gym_leader_room",
 				"src/map/banks/19/8/map_19_8_ceometria_gym_leader_room.pms",
 				"MAP_CEOMETRIA"
+			],
+			"9": [
+				"map_ceometria_clouds",
+				"src/map/banks/19/9/map_ceometria_clouds.pms",
+				"MAP_CEOMETRIA"
 			]
 		},
 		"20": {
@@ -784,6 +819,46 @@
 				"map_felisge_oednis_clouds",
 				"src/map/banks/22/0/map_felisge_oednis_clouds.pms",
 				"MAP_FELSIGE_OEDNIS"
+			]
+		},
+		"23": {
+			"0": [
+				"map_route_8_clouds",
+				"src/map/banks/23/0/map_route_8_clouds.pms",
+				"MAP_ROUTE_8"
+			]
+		},
+		"24": {
+			"0": [
+				"map_kuestenberg_clouds",
+				"src/map/banks/24/0/map_kuestenberg_clouds.pms",
+				"MAP_KUESTENBERG"
+			]
+		},
+		"25": {
+			"0": [
+				"map_route_11_clouds",
+				"src/map/banks/25/0/map_route_11_clouds.pms",
+				"MAP_ROUTE_11"
+			]
+		},
+		"26": {
+			"0": [
+				"map_route_12_east_clouds",
+				"src/map/banks/26/0/map_route_12_east_clouds.pms",
+				"MAP_ROUTE_12"
+			],
+			"1": [
+				"map_route_12_west_clouds",
+				"src/map/banks/26/1/map_route_12_west_clouds.pms",
+				"MAP_ROUTE_12"
+			]
+		},
+		"27": {
+			"0": [
+				"map_haweiland_clouds",
+				"src/map/banks/27/0/map_haweiland_clouds.pms",
+				"MAP_HAWEILAND"
 			]
 		}
 	},
@@ -1304,13 +1379,61 @@
 			52,
 			"src/map/banks/7/0/map_footer_silvania_clouds.pms"
 		],
-		"map_footer_silvania_wald_clouds": [
-			53,
-			"src/map/banks/1/1/map_footer_silvania_wald_clouds.pms"
-		],
 		"map_footer_route_3_clouds": [
 			54,
 			"src/map/banks/15/2/map_footer_route_3_clouds.pms"
+		],
+		"map_footer_silvania_wald_flashback": [
+			53,
+			"src/map/banks/1/1/map_footer_silvania_wald_clouds.pms"
+		],
+		"map_footer_silvania_wald_clouds": [
+			55,
+			"src/map/banks/1/2/map_footer_silvania_wald_clouds.pms"
+		],
+		"map_footer_route_8_clouds": [
+			56,
+			"src/map/banks/23/0/map_footer_route_8_clouds.pms"
+		],
+		"map_footer_laubdorf_clouds": [
+			57,
+			"src/map/banks/12/5/map_footer_laubdorf_clouds.pms"
+		],
+		"map_footer_route_9_vertical_clouds": [
+			58,
+			"src/map/banks/13/4/map_footer_route_9_vertical_clouds.pms"
+		],
+		"map_footer_route_9_horizontal_clouds": [
+			59,
+			"src/map/banks/13/5/map_footer_route_9_horizontal_clouds.pms"
+		],
+		"map_footer_aktania_clouds": [
+			60,
+			"src/map/banks/6/6/map_footer_aktania_clouds.pms"
+		],
+		"map_footer_kuestenberg_clouds": [
+			61,
+			"src/map/banks/24/0/map_footer_kuestenberg_clouds.pms"
+		],
+		"map_footer_route_11_clouds": [
+			62,
+			"src/map/banks/25/0/map_footer_route_11_clouds.pms"
+		],
+		"map_footer_ceometria_clouds": [
+			63,
+			"src/map/banks/19/9/map_footer_ceometria_clouds.pms"
+		],
+		"map_footer_route_12_east_clouds": [
+			64,
+			"src/map/banks/26/0/map_footer_route_12_east_clouds.pms"
+		],
+		"map_footer_route_12_west_clouds": [
+			65,
+			"src/map/banks/26/1/map_footer_route_12_west_clouds.pms"
+		],
+		"map_footer_haweiland_clouds": [
+			66,
+			"src/map/banks/27/0/map_footer_haweiland_clouds.pms"
 		]
 	},
 	"tilesets_primary": {

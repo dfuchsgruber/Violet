@@ -177,6 +177,7 @@ typedef struct {
     u32 trainer_prng_state;
     trainer_pokemon_custom_item_custom_attacks dynamic_trainer_party[3];
     u8 roamer_last_encountered;
+    u8 start_menu_clock_oam_idxs[4];
     
 } floating_memory;
 

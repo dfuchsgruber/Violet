@@ -9,7 +9,7 @@ wild_pokemon_entry wild_pokemon_orina_city_clouds_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] = 
 		{.level_min = 23, .level_max = 27, .species = POKEMON_SCHWALBINI},
 	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
-		{.level_min = 23, .level_max = 27, .species = POKEMON_WABLU},
+		{.level_min = 23, .level_max = 27, .species = POKEMON_SMOGON},
 	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
 		{.level_min = 23, .level_max = 27, .species = POKEMON_KRAMURX},
 	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
@@ -21,7 +21,7 @@ wild_pokemon_entry wild_pokemon_orina_city_clouds_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] = 
 		{.level_min = 25, .level_max = 28, .species = POKEMON_SCHWALBINI},
 	[WILD_POKEMON_DENSITY_GRASS_8_4_PERCENT] = 
-		{.level_min = 26, .level_max = 29, .species = POKEMON_WABLU},
+		{.level_min = 26, .level_max = 29, .species = POKEMON_SMOGON},
 	[WILD_POKEMON_DENSITY_GRASS_9_4_PERCENT] = 
 		{.level_min = 26, .level_max = 29, .species = POKEMON_KRAMURX},
 	[WILD_POKEMON_DENSITY_GRASS_10_1_PERCENT] = 

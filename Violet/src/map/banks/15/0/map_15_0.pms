@@ -1166,7 +1166,7 @@
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": "ROUTE_3_ITEM_5",
+					"flag": "FLAG_ROUTE_3_ITEM_5",
 					"value": {
 						"item": "ITEM_X_ABWEHR",
 						"species": 0
@@ -1227,32 +1227,32 @@
 					"y": "32",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "2",
+					"target_bank": "15"
 				},
 				{
 					"x": "28",
 					"y": "32",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "1",
+					"target_map": "2",
+					"target_bank": "15"
 				},
 				{
 					"x": "28",
 					"y": "33",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "2",
+					"target_map": "2",
+					"target_bank": "15"
 				},
 				{
 					"x": "27",
 					"y": "33",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "3",
+					"target_map": "2",
+					"target_bank": "15"
 				}
 			],
 			"triggers": [

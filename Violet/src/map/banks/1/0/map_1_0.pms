@@ -963,32 +963,32 @@
 					"y": "10",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "2",
+					"target_bank": "1"
 				},
 				{
 					"x": "14",
 					"y": "10",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
-				},
-				{
-					"x": "13",
-					"y": "11",
-					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "1",
+					"target_map": "2",
+					"target_bank": "1"
 				},
 				{
 					"x": "14",
 					"y": "11",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "2",
+					"target_map": "2",
+					"target_bank": "1"
+				},
+				{
+					"x": "13",
+					"y": "11",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "2",
+					"target_bank": "1"
 				}
 			],
 			"triggers": [

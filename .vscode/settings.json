@@ -68,7 +68,20 @@
         "header.h": "c",
         "cloud.h": "c",
         "party.h": "c",
-        "wild_pokemon_densities.h": "c"
+        "wild_pokemon_densities.h": "c",
+        "start_menu.h": "c",
+        "rtc.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "fading.h": "c",
+        "string.h": "c",
+        "trash.h": "c",
+        "vector": "c",
+        "memory": "c",
+        "optional": "c",
+        "system_error": "c",
+        "thread": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_25_route_9",
 		"events": {
-			"person_cnt": 9,
-			"warp_cnt": 0,
+			"person_cnt": 10,
+			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -195,9 +195,63 @@
 						"item": 0,
 						"species": 0
 					}
+				},
+				{
+					"target_index": "10",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "31",
+					"y": "52",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_9_ITEM_4",
+					"value": {
+						"item": "ITEM_SUESSBONBON",
+						"species": 0
+					}
 				}
 			],
-			"warps": [],
+			"warps": [
+				{
+					"x": "27",
+					"y": "49",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "4",
+					"target_bank": "13"
+				},
+				{
+					"x": "28",
+					"y": "49",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "4",
+					"target_bank": "13"
+				},
+				{
+					"x": "28",
+					"y": "50",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "4",
+					"target_bank": "13"
+				},
+				{
+					"x": "27",
+					"y": "50",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "4",
+					"target_bank": "13"
+				}
+			],
 			"triggers": [],
 			"signposts": []
 		},

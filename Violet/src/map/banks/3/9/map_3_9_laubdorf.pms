@@ -3,9 +3,9 @@
 		"footer": "map_footer_23_laubdorf",
 		"events": {
 			"person_cnt": 15,
-			"warp_cnt": 5,
+			"warp_cnt": 6,
 			"trigger_cnt": 0,
-			"signpost_cnt": 2,
+			"signpost_cnt": 3,
 			"persons": [
 				{
 					"target_index": "1",
@@ -363,6 +363,14 @@
 					"target_warp_idx": 0,
 					"target_map": "4",
 					"target_bank": "12"
+				},
+				{
+					"x": "10",
+					"y": "25",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "6",
+					"target_bank": "12"
 				}
 			],
 			"triggers": [],
@@ -399,6 +407,23 @@
 							"chunk": 0
 						},
 						"script": "ow_script_laubdorf_sign_1"
+					}
+				},
+				{
+					"x": "8",
+					"y": "26",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_laubdorf_sign_2"
 					}
 				}
 			]

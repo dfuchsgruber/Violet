@@ -77,4 +77,9 @@ void vblank_handler_set(void (*f)());
  **/
 void game_context_update();
 
+/**
+ * Checks if the game state is "normal" or something like that, i.e. either a standard callback0 or a flag that must be set to bypass that.
+ **/
+bool sub_080bf8d8();
+
 #endif

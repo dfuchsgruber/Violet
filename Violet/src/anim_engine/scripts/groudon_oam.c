@@ -217,9 +217,7 @@ void groudon_anim_earthquake_cb(u8 self){
             io_set(0x14, (u16)(io_get(0x14) - dy_last));
             io_set(0x18, (u16)(io_get(0x18) - dy_last));
             io_set(0x10, (u16)(io_get(0x10) - dy_last));
-        }
-        
-            
+        } 
     }
 }
 
