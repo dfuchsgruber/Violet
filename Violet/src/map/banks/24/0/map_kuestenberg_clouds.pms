@@ -98,10 +98,10 @@
 		},
 		"levelscripts": "map_14_0_route_9_clouds_levelscripts",
 		"connections": {
-			"connection_cnt": 2,
+			"connection_cnt": 3,
 			"connections": [
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": "-4",
 					"bank": "14",
 					"map_idx": 0,
@@ -109,10 +109,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "SOUTH",
+					"direction": "MAP_CONNECTION_SOUTH",
 					"displacement": "0",
 					"bank": "8",
 					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "1",
+					"map_idx": "59",
 					"field_A": 0,
 					"field_B": 0
 				}
@@ -123,7 +131,7 @@
 		"namespace": "MAP_KUESTENBERG",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
-		"type": "MAP_TYPE_UNDERWATER",
+		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
 		"show_name": "DONT_SHOW",
 		"level": 0,

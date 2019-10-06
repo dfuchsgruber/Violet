@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_12",
 	"data": {
 		"border": [
 			[
@@ -1513,5 +1511,7 @@
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_12",
+	"type": "footer"
 }

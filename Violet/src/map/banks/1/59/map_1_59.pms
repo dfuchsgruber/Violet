@@ -566,10 +566,10 @@
 		},
 		"levelscripts": "lscr_0x16215f",
 		"connections": {
-			"connection_cnt": 2,
+			"connection_cnt": 3,
 			"connections": [
 				{
-					"direction": "SOUTH",
+					"direction": "MAP_CONNECTION_SOUTH",
 					"displacement": -16,
 					"bank": 3,
 					"field_A": 0,
@@ -577,10 +577,18 @@
 					"map_idx": 4
 				},
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": 0,
 					"bank": "3",
 					"map_idx": "11",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "24",
+					"map_idx": 0,
 					"field_A": 0,
 					"field_B": 0
 				}

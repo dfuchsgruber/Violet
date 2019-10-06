@@ -173,10 +173,10 @@
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {
-			"connection_cnt": 2,
+			"connection_cnt": 3,
 			"connections": [
 				{
-					"direction": "SOUTH",
+					"direction": "MAP_CONNECTION_SOUTH",
 					"displacement": "0",
 					"bank": "12",
 					"map_idx": "5",
@@ -184,10 +184,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "-3",
 					"bank": "13",
 					"map_idx": "5",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": "10",
 					"field_A": 0,
 					"field_B": 0
 				}
@@ -198,7 +206,7 @@
 		"namespace": "MAP_ROUTE_9",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
-		"type": "MAP_TYPE_UNDERWATER",
+		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
 		"show_name": "DONT_SHOW",
 		"level": "0",

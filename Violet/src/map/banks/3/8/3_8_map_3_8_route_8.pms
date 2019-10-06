@@ -539,13 +539,21 @@
 		},
 		"levelscripts": "map_3_8_route_3_levelscripts",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": "16",
 					"bank": "3",
 					"map_idx": "9",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "23",
+					"map_idx": "0",
 					"field_A": 0,
 					"field_B": 0
 				}

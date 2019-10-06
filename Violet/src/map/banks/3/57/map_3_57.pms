@@ -411,7 +411,7 @@
 			"connection_cnt": 1,
 			"connections": [
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": -3,
 					"bank": 3,
 					"field_A": 0,

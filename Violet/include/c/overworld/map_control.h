@@ -145,4 +145,10 @@ bool safari_is_active();
  **/
 bool is_bank_x0_and_map_x40();
 
+/**
+ * Checks if flash is usable on the current map.
+ * @param if flash is usable on the current map, i.e. the map is darkened
+ **/
+bool map_flash_usable();
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

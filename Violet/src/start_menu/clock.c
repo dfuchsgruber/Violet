@@ -126,7 +126,7 @@ bool start_menu_initilize() {
         case 3:
             if (safari_is_active()) {
                 start_menu_print_safari_balls();
-            } else {
+            } else if (!mapheader_virtual.flash_type) {
                 start_menu_print_clock();
             }
             break;
@@ -143,7 +143,7 @@ bool start_menu_initilize() {
                 start_menu_print_item_description(start_menu_item_descriptions[start_menu_state.items[start_menu_state.cursor]]);
             }
             tbox_copy_to_vram(box_idx, 1);
-            if (!safari_is_active()) {
+            if (!safari_is_active() && !mapheader_virtual.flash_type) {
                 for (int i = 0; i < 4; i++) {
                     oams[fmem.start_menu_clock_oam_idxs[i]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
                 }
@@ -156,7 +156,7 @@ bool start_menu_initilize() {
 }
 
 void start_menu_clear_additional_box() {
-    if (!safari_is_active()) {
+    if (!safari_is_active() && !mapheader_virtual.flash_type) {
         for (int i = 0; i < 4; i++) {
             oam_free(oams + fmem.start_menu_clock_oam_idxs[i]);
         }
@@ -167,7 +167,7 @@ void start_menu_clear_additional_box() {
 }
 
 void start_menu_call_save_and_clear_additional_box() {
-    if (!safari_is_active()) {
+    if (!safari_is_active() && !mapheader_virtual.flash_type) {
         for (int i = 0; i < 4; i++) {
             oam_free(oams + fmem.start_menu_clock_oam_idxs[i]);
         }

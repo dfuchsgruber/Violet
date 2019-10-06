@@ -415,10 +415,10 @@
 		},
 		"levelscripts": "map_3_13_ceometria_levelscripts",
 		"connections": {
-			"connection_cnt": 3,
+			"connection_cnt": 4,
 			"connections": [
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": "16",
 					"bank": "3",
 					"map_idx": "12",
@@ -426,7 +426,7 @@
 					"field_B": 0
 				},
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "6",
 					"bank": "3",
 					"map_idx": "14",
@@ -434,10 +434,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "WEST",
+					"direction": "MAP_CONNECTION_WEST",
 					"displacement": "-9",
 					"bank": "3",
 					"map_idx": "15",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "19",
+					"map_idx": "9",
 					"field_A": 0,
 					"field_B": 0
 				}

@@ -49,12 +49,11 @@
         u8 oam_habitat_head;
         u8 habitat_cursor_x;
         u8 habitat_cursor_y;
-        u8 habitat_oams_rarity[4]; // 3 for rod is not used
+        u8 habitat_oams_rarity[6]; // 3 for rod is not used
         bool habitat_cursor_is_moving;
         u8 habitat_fading_mode;
         u8 habitat_fading_index;
         u8 habitat_fading_countdown;
-        u8 habitat_oams_rod[3];
         u8 current_worldmap;
         u8 current_feature;
         bool habitat_found;

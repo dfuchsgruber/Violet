@@ -159,6 +159,7 @@ show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x20 ow_script_movs_0x8f52c0
 applymovement 0x1f ow_script_movs_0x8f52c4
 waitmovement 0x0
+setvar LASTTALKED 31
 trainerbattlecont 0x1 0x4a 0x0 str_0x8f523b str_0x8f527b ow_script_0x8f5cdf
 
 
@@ -166,6 +167,7 @@ trainerbattlecont 0x1 0x4a 0x0 str_0x8f523b str_0x8f527b ow_script_0x8f5cdf
 ow_script_0x8f5cdf:
 loadpointer 0x0 str_0x8f5f96
 callstd MSG
+setvar LASTTALKED 30
 trainerbattlecont 0x1 0x4b 0x0 str_0x8f5f21 str_0x8f5f57 ow_script_0x8fa888
 
 
@@ -204,6 +206,7 @@ waitmovement 0x0
 pause 0x20
 draw_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 setvar BATTLE_SONG_OVERRIDE MUS_KAMPF_GEGEN_ARENALEITER_HOENN
+setvar LASTTALKED 5
 trainerbattlecont 0x1 0x4c 0x0 str_0x8f5d92 str_0x8f5d31 ow_script_0x8fab2c
 
 

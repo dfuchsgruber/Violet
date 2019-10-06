@@ -153,5 +153,5 @@ void pokemon_party_menu_opt_outdoor_move(u8 callback_self) {
 
 bool map_type_enables_fly_or_teleport(u8 type) {
 	return (type == MAP_TYPE_ROUTE || type == MAP_TYPE_VILLAGE || type == MAP_TYPE_TYPE_06 ||
-			type == MAP_TYPE_CITY || type == MAP_TYPE_UNDERWATER);
+			type == MAP_TYPE_CITY || type == MAP_TYPE_CLOUD);
 }

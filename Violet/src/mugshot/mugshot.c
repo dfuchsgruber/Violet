@@ -90,14 +90,10 @@ void mugshot_create_oam(int side, int idx) {
 	if (weather == MAP_WEATHER_CLOUDY || weather == MAP_WEATHER_EXTREME_THUNDER ||
 			weather == MAP_WEATHER_THUNDER || weather == MAP_WEATHER_RAIN) {
 		//fade
-		u16 *dma3s = (u16*) 0x020375F8;
 		int i;
 		for (i = 0; i < 16; i++) {
-			u16 original = dma3s[i + (pal + 0x10)*0x10];
-			color_t co = {original};
 			color_t over = {0}; //black
-			color_t n = color_alpha_blend(co, over, 3);
-			dma3s[i + (pal + 0x10)*0x10] = n.value;
+			pals[i + 16 * (pal + 16)] = color_alpha_blend(pals[i + 16 * (pal + 16)], over, 3);
 		}
 	}
 	free(pal_buf);
@@ -111,9 +107,9 @@ void mugshot_create_oam(int side, int idx) {
 	oam_template *mugshot_template = malloc(sizeof (oam_template));
 	mugshot_template->tiles_tag = tag;
 	mugshot_template->pal_tag = tag;
-	if(!checkflag(0x806) && get_mapheader(save1->bank, save1->map)->flash_type){
+	if (map_flash_usable()){
 		mugshot_template->oam = &mugshot_sprite_prio0;
-	}else{
+	} else {
 		mugshot_template->oam = &mugshot_sprite;
 	}
 	mugshot_template->graphics = NULL;

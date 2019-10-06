@@ -719,7 +719,7 @@
 			"connection_cnt": 1,
 			"connections": [
 				{
-					"direction": "WEST",
+					"direction": "MAP_CONNECTION_WEST",
 					"displacement": "-6",
 					"bank": "3",
 					"map_idx": "13",

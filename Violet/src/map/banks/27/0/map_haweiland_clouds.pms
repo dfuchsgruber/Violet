@@ -119,13 +119,21 @@
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "-8",
 					"bank": "26",
 					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "27",
+					"map_idx": 0,
 					"field_A": 0,
 					"field_B": 0
 				}
@@ -136,7 +144,7 @@
 		"namespace": "MAP_HAWEILAND",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
-		"type": "MAP_TYPE_UNDERWATER",
+		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
 		"show_name": "DONT_SHOW",
 		"level": 0,

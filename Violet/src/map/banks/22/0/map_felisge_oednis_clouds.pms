@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_felsige_oednis_clouds",
 		"events": {
-			"person_cnt": 4,
-			"warp_cnt": 4,
+			"person_cnt": 3,
+			"warp_cnt": 0,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -69,72 +69,18 @@
 						"item": 0,
 						"species": 0
 					}
-				},
-				{
-					"target_index": "4",
-					"picture": "171",
-					"script_std": 0,
-					"field_3": 0,
-					"x": "15",
-					"y": "23",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_RECHTS",
-					"behaviour_range": "0",
-					"field_B": 0,
-					"is_trainer": "1",
-					"field_D": 0,
-					"alert_radius": "5",
-					"script": "ow_script_feslige_oednis_clouds_trainer_1",
-					"flag": 0,
-					"value": {
-						"item": 0,
-						"species": 0
-					}
 				}
 			],
-			"warps": [
-				{
-					"x": "4",
-					"y": "25",
-					"level": 0,
-					"target_warp_idx": "3",
-					"target_map": "74",
-					"target_bank": "3"
-				},
-				{
-					"x": "5",
-					"y": "25",
-					"level": 0,
-					"target_warp_idx": "4",
-					"target_map": "74",
-					"target_bank": "3"
-				},
-				{
-					"x": "5",
-					"y": "26",
-					"level": 0,
-					"target_warp_idx": "5",
-					"target_map": "74",
-					"target_bank": "3"
-				},
-				{
-					"x": "4",
-					"y": "26",
-					"level": 0,
-					"target_warp_idx": "6",
-					"target_map": "74",
-					"target_bank": "3"
-				}
-			],
+			"warps": [],
 			"triggers": [],
 			"signposts": []
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {
-			"connection_cnt": 2,
+			"connection_cnt": 3,
 			"connections": [
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "4",
 					"bank": "8",
 					"map_idx": "1",
@@ -142,10 +88,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "WEST",
-					"displacement": "-5",
-					"bank": "7",
-					"map_idx": 0,
+					"direction": "MAP_CONNECTION_WEST",
+					"displacement": "-1",
+					"bank": "22",
+					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": "21",
 					"field_A": 0,
 					"field_B": 0
 				}
@@ -156,7 +110,7 @@
 		"namespace": "MAP_FELSIGE_OEDNIS",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
-		"type": "MAP_TYPE_UNDERWATER",
+		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
 		"show_name": "DONT_SHOW",
 		"level": 0,

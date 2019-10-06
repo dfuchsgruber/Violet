@@ -425,15 +425,23 @@
 		},
 		"levelscripts": "lscr_map_3_7_route_2_east",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
-					"direction": "WEST",
+					"direction": "MAP_CONNECTION_WEST",
 					"displacement": -35,
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 41
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "11",
+					"map_idx": "2",
+					"field_A": 0,
+					"field_B": 0
 				}
 			]
 		},

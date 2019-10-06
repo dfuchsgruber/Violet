@@ -1150,8 +1150,17 @@
 		},
 		"levelscripts": "lscr_0x719d18",
 		"connections": {
-			"connection_cnt": 0,
-			"connections": []
+			"connection_cnt": 1,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "1",
+					"map_idx": "2",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
 		},
 		"music": "VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN",
 		"footer_idx": 117,

@@ -632,7 +632,7 @@
 					"y": "8",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
+					"target_map": "1",
 					"target_bank": "22"
 				},
 				{
@@ -640,7 +640,7 @@
 					"y": "8",
 					"level": 0,
 					"target_warp_idx": "1",
-					"target_map": 0,
+					"target_map": "1",
 					"target_bank": "22"
 				},
 				{
@@ -648,7 +648,7 @@
 					"y": "9",
 					"level": 0,
 					"target_warp_idx": "2",
-					"target_map": 0,
+					"target_map": "1",
 					"target_bank": "22"
 				},
 				{
@@ -656,7 +656,7 @@
 					"y": "9",
 					"level": 0,
 					"target_warp_idx": "3",
-					"target_map": 0,
+					"target_map": "1",
 					"target_bank": "22"
 				}
 			],
@@ -751,8 +751,17 @@
 		},
 		"levelscripts": "lscr_0x71a798",
 		"connections": {
-			"connection_cnt": 0,
-			"connections": []
+			"connection_cnt": 1,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "22",
+					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
 		},
 		"music": "MUS_ROUTE_24_25",
 		"footer_idx": 447,

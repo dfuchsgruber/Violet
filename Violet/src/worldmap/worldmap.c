@@ -4,6 +4,7 @@
 #include "worldmap.h"
 #include "map/header.h"
 #include "constants/map_types.h"
+#include "constants/map_connections.h"
 #include "debug.h"
 #include "math.h"
 #include "save.h"
@@ -138,7 +139,7 @@ worldmap_shape_t *worldmap_pattern_route_12[2] = {
 	&worldmap_shape_2x1_no_displacement, &worldmap_shape_route_12_east
 };
 
-worldmap_shape_t **worldmap0_namespace_patterns[] = {
+worldmap_shape_t **worldmap0_namespace_patterns[0xC5 - 0x58] = {
 	worldmap_pattern_1x1, // MAP_AMONIA
 	worldmap_pattern_1x1, // MAP_MERIANA_CITY
 	worldmap_pattern_1x1, // MAP_AKTANIA
@@ -163,7 +164,7 @@ worldmap_shape_t **worldmap0_namespace_patterns[] = {
 	worldmap_pattern_route_9, // MAP_ROUTE_9
 	worldmap_pattern_route_10, // MAP_ROUTE_10
 	worldmap_pattern_route_11, // MAP_ROUTE_11
-	worldmap_pattern_1x1, // MAP_ROUTE_12
+	worldmap_pattern_route_12, // MAP_ROUTE_12
 	worldmap_pattern_1x1, // MAP_ROUTE_13
 	worldmap_pattern_1x1, // MAP_ROUTE_14
 	worldmap_pattern_1x1, // MAP_ROUTE_15
@@ -250,7 +251,7 @@ worldmap_shape_t **worldmap0_namespace_patterns[] = {
 	worldmap_pattern_1x1, // MAP_PRISMANIA_EINK
 };
 
-coordinate_t worldmap0_namespace_position_assoc[] = {
+coordinate_t worldmap0_namespace_position_assoc[MAP_NAMESPACE_NONE - MAP_AMONIA] = {
 	{0x15, 0xb}, // MAP_AMONIA
 	{0x15, 0x8}, // MAP_MERIANA_CITY
 	{0x15, 0x0}, // MAP_AKTANIA
@@ -394,56 +395,77 @@ u8 worldmap_get_shape_idx(u8 bank, u8 map_idx) {
 
 void worldmap_locate_player() {
 	u8 bank = save1->bank;
-	u8 map = save1->map;
-	s16 x, y;
-	switch (get_mapheader(bank, map)->type) {
-	case MAP_TYPE_STD:
-	case MAP_TYPE_VILLAGE:
-	case MAP_TYPE_CITY:
-	case MAP_TYPE_ROUTE:
-	case MAP_TYPE_TYPE_06:
-		// x, y from save
-		x = save1->x_cam_orig;
-		y = save1->y_cam_orig;
-		worldmap_state->player_namespace = mapheader_virtual.map_namespace;
-		break;
-	case MAP_TYPE_BASEMENT:
-	case MAP_TYPE_TYPE_07:
-	case MAP_TYPE_INSIDE:
-	case MAP_TYPE_UNDERWATER:
-		// Load everything from last outdoor map
-		bank = save1->last_outdoor_map.bank;
-		map = save1->last_outdoor_map.map;
-		x = save1->last_outdoor_map.x;
-		y = save1->last_outdoor_map.y;
-		worldmap_state->player_namespace = get_mapheader(bank, map)->map_namespace;
-		break;
-	case MAP_TYPE_SECRET_BASE:
-		// Load everything from last_map
-		bank = save1->last_map.bank;
-		map = save1->last_map.map;
-		x = save1->last_map.x;
-		y = save1->last_map.y;
-		worldmap_state->player_namespace = get_mapheader(bank, map)->map_namespace;
-		break;
-	default:
-		derrf("Unkown map type %d\n", get_mapheader(bank, map)->type);
-		return;
+	u8 map_idx = save1->map;
+	s16 x = save1->x_cam_orig;
+	s16 y = save1->y_cam_orig;
+	map_header_t *header = get_mapheader(bank, map_idx);
+	int width = (int)(header->footer->width);
+	int height = (int)(header->footer->height);
+	int i;
+	bool resolved = false;
+	for (i = 0; i < 10 && !resolved; i++) {
+		switch(get_mapheader(bank, map_idx)->type) {
+			case MAP_TYPE_BASEMENT:
+			case MAP_TYPE_TYPE_07:
+			case MAP_TYPE_INSIDE:
+				// Resolve to the last outdoor map
+				bank = save1->last_outdoor_map.bank;
+				map_idx = save1->last_outdoor_map.map;
+				x = save1->last_outdoor_map.x;
+				y = save1->last_outdoor_map.y;
+				header = get_mapheader(bank, map_idx);
+				width = (int)(header->footer->width);
+				height = (int)(header->footer->height);
+				break;
+			case MAP_TYPE_SECRET_BASE:
+				// Resolve to last map
+				bank = save1->last_map.bank;
+				map_idx = save1->last_map.map;
+				x = save1->last_map.x;
+				y = save1->last_map.y;
+				header = get_mapheader(bank, map_idx);
+				width = (int)(header->footer->width);
+				height = (int)(header->footer->height);
+				break;
+			case MAP_TYPE_CLOUD: {
+				// Resolve to the underlying map
+				u8 ground_bank = 255;
+				u8 ground_map_idx = 255;
+				for (u32 i = 0; i < header->connections->count; i++) {
+					if (header->connections->connections[i].direction == MAP_CONNECTION_CLOUD_RETURN) {
+						ground_bank = header->connections->connections[i].bank;
+						ground_map_idx = header->connections->connections[i].map;
+						break;
+					}
+				}
+				if (ground_bank == 255 && ground_map_idx == 255) {
+					derrf("Map %d.%d has no ground pendant.\n", bank, map_idx);
+				}
+				bank = ground_bank;
+				map_idx = ground_map_idx;
+				header = get_mapheader(bank, map_idx);
+				// Keep x, y, width, height from the cloud map
+				break;
+			}
+			default:
+				resolved = true;
+				break; // Done resolving
+
+		}
 	}
-	map_header_t *header = get_mapheader(bank, map);
-	dprintf("Locating player on %d.%d at coordinates %d, %d\n", bank, map, x, y);
-	int map_width = (int)header->footer->width;
-	int map_height = (int)header->footer->height;
+	if (i == 10) {
+		derrf("Couldn't resolve worldmap location in 10 attempts.\n");
+	}
+	worldmap_state->player_namespace = get_mapheader(bank, map_idx)->map_namespace;
 	// Find the shape in the pattern of namespace
-	u8 shape_idx = worldmap_get_shape_idx(bank, map);
+	u8 shape_idx = worldmap_get_shape_idx(bank, map_idx);
 	worldmap_shape_t *shape = worldmap0_namespace_patterns[worldmap_state->player_namespace - 0x58]
 										 [shape_idx];
-
-	int segment_width = MAX(1, map_width / shape->width);
-	int segment_height = MAX(1, map_height / shape->height);
+	int segment_width = MAX(1, width / shape->width);
+	int segment_height = MAX(1, height / shape->height);
 	int segment_x = x / segment_width;
 	int segment_y = y / segment_height;
-	dprintf("Map width %d, height %d\n", map_width, map_height);
+	dprintf("Map width %d, height %d\n", width, height);
 	dprintf("Segment width %d, height %d\n", segment_width, segment_height);
 	dprintf("Segment x %d, y %d\n", segment_x, segment_y);
 	worldmap_state->cursor_x = (u16)(

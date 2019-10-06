@@ -13,13 +13,21 @@
 		},
 		"levelscripts": 0,
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "20",
 					"bank": "3",
 					"map_idx": "16",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "27",
+					"map_idx": 0,
 					"field_A": 0,
 					"field_B": 0
 				}

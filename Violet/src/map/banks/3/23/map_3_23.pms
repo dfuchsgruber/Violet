@@ -553,7 +553,7 @@
 			"connection_cnt": 3,
 			"connections": [
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"bank": 3,
 					"displacement": 6,
 					"field_A": 0,
@@ -561,7 +561,7 @@
 					"map_idx": 41
 				},
 				{
-					"direction": "WEST",
+					"direction": "MAP_CONNECTION_WEST",
 					"bank": 3,
 					"displacement": 0,
 					"field_A": 0,
@@ -569,7 +569,7 @@
 					"map_idx": 5
 				},
 				{
-					"direction": "DIVE",
+					"direction": "MAP_CONNECTION_CLOUD",
 					"bank": 17,
 					"displacement": 0,
 					"field_A": 0,

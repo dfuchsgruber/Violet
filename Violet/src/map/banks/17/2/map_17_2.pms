@@ -230,10 +230,10 @@
 		},
 		"levelscripts": "lscr_0x71df44",
 		"connections": {
-			"connection_cnt": 2,
+			"connection_cnt": 3,
 			"connections": [
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "-11",
 					"bank": "11",
 					"map_idx": "3",
@@ -241,10 +241,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "WEST",
+					"direction": "MAP_CONNECTION_WEST",
 					"displacement": "-20",
 					"bank": "9",
 					"map_idx": 0,
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": "23",
 					"field_A": 0,
 					"field_B": 0
 				}
@@ -255,7 +263,7 @@
 		"namespace": "MAP_ROUTE_5",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
-		"type": "MAP_TYPE_UNDERWATER",
+		"type": "MAP_TYPE_CLOUD",
 		"show_name": "DONT_SHOW",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",

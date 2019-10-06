@@ -247,10 +247,10 @@
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {
-			"connection_cnt": 3,
+			"connection_cnt": 4,
 			"connections": [
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": "-30",
 					"bank": "11",
 					"map_idx": "3",
@@ -258,7 +258,7 @@
 					"field_B": 0
 				},
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": "19",
 					"bank": "5",
 					"map_idx": "1",
@@ -266,10 +266,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "SOUTH",
+					"direction": "MAP_CONNECTION_SOUTH",
 					"displacement": 0,
 					"bank": "25",
 					"map_idx": 0,
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": "7",
 					"field_A": 0,
 					"field_B": 0
 				}
@@ -280,7 +288,7 @@
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
-		"type": "MAP_TYPE_UNDERWATER",
+		"type": "MAP_TYPE_CLOUD",
 		"show_name": "DONT_SHOW",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",

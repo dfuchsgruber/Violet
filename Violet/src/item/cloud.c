@@ -11,5 +11,5 @@ void cloud_force() {
 }
 
 bool map_is_cloud(){
-	return mapheader_virtual.type == MAP_TYPE_UNDERWATER;
+	return mapheader_virtual.type == MAP_TYPE_CLOUD;
 }

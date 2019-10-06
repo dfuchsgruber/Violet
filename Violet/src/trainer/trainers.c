@@ -695,7 +695,7 @@ trainer trainers[TRAINER_CNT] = {
       0xa,
       false
     }, //Encounter and gender
-    16, // sprite
+    26, // sprite
     LANGDEP(PSTRING("Harrenfeld"), PSTRING("Harrenfeld")),
     {
       ITEM_NONE,

@@ -1,13 +1,12 @@
 {
-	"type": "enum",
-	"values": [
-		"NONE",
-		"SOUTH",
-		"NORTH",
-		"WEST",
-		"EAST",
-		"DIVE",
-		"RETURN_FROM_DIVE"
-	],
-	"base": 0
+	"type": "dict",
+	"values": {
+		"MAP_CONNECTION_NONE" : 0,
+		"MAP_CONNECTION_SOUTH" : 1,
+		"MAP_CONNECTION_NORTH" : 2,
+		"MAP_CONNECTION_WEST" : 3,
+		"MAP_CONNECTION_EAST" : 4,
+		"MAP_CONNECTION_CLOUD" : 5,
+		"MAP_CONNECTION_CLOUD_RETURN" : 6
+	}
 }

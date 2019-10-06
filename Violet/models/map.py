@@ -111,6 +111,16 @@ header_type = agb.types.Structure([
     'events', 'connections', 'footer', 'footer_idx', 'namespace'
 ]))
 
+# Cloud map list
+bank_map_pair_type = agb.types.Structure([
+    ('bank', 'u8', 0),
+    ('map_idx', 'u8', 0),
+])
+
+cloud_maps_list_type = agb.types.UnboundedArrayType(
+    'bank_map_pair', {'bank' : 255, 'map_idx' : 255}
+)
+
 # Export new models
 
 models_to_export = {
@@ -132,5 +142,7 @@ models_to_export = {
     'event.signpost_item' : signpost_item_type,
     'connection.direction' : connection_direction_type,
     'connection.connection' : connection_type,
+    'bank_map_pair' : bank_map_pair_type,
+    'cloud_maps_list' : cloud_maps_list_type,
     'header' : header_type
 }

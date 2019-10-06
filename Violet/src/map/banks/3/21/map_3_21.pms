@@ -1028,8 +1028,17 @@
 		},
 		"levelscripts": "lscr_0x71a984",
 		"connections": {
-			"connection_cnt": 0,
-			"connections": []
+			"connection_cnt": 1,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "22",
+					"map_idx": 0,
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
 		},
 		"music": "MUS_DESERT",
 		"footer_idx": 91,

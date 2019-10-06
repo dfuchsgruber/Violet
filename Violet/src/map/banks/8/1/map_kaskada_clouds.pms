@@ -191,10 +191,10 @@
 		},
 		"levelscripts": "lscr_route_2_east_clouds",
 		"connections": {
-			"connection_cnt": 3,
+			"connection_cnt": 4,
 			"connections": [
 				{
-					"direction": "SOUTH",
+					"direction": "MAP_CONNECTION_SOUTH",
 					"displacement": "0",
 					"bank": "16",
 					"map_idx": 0,
@@ -202,7 +202,7 @@
 					"field_B": 0
 				},
 				{
-					"direction": "WEST",
+					"direction": "MAP_CONNECTION_WEST",
 					"displacement": "-4",
 					"bank": "22",
 					"map_idx": 0,
@@ -210,10 +210,18 @@
 					"field_B": 0
 				},
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": "0",
 					"bank": "24",
 					"map_idx": 0,
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": "4",
 					"field_A": 0,
 					"field_B": 0
 				}
@@ -224,7 +232,7 @@
 		"namespace": "MAP_KASKADA",
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
-		"type": "MAP_TYPE_UNDERWATER",
+		"type": "MAP_TYPE_CLOUD",
 		"bike_usable": "1",
 		"show_name": "DONT_SHOW",
 		"level": 0,

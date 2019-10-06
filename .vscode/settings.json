@@ -81,7 +81,9 @@
         "memory": "c",
         "optional": "c",
         "system_error": "c",
-        "thread": "c"
+        "thread": "c",
+        "map": "c",
+        "worldmap.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

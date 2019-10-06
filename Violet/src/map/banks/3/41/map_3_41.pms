@@ -1577,10 +1577,10 @@
 		},
 		"levelscripts": "lscr_0x726e98",
 		"connections": {
-			"connection_cnt": 4,
+			"connection_cnt": 5,
 			"connections": [
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": 6,
 					"bank": 15,
 					"field_A": 0,
@@ -1588,7 +1588,7 @@
 					"map_idx": 0
 				},
 				{
-					"direction": "WEST",
+					"direction": "MAP_CONNECTION_WEST",
 					"displacement": -6,
 					"bank": 3,
 					"field_A": 0,
@@ -1596,7 +1596,7 @@
 					"map_idx": 23
 				},
 				{
-					"direction": "EAST",
+					"direction": "MAP_CONNECTION_EAST",
 					"displacement": 35,
 					"bank": 3,
 					"field_A": 0,
@@ -1604,10 +1604,18 @@
 					"map_idx": 7
 				},
 				{
-					"direction": "SOUTH",
+					"direction": "MAP_CONNECTION_SOUTH",
 					"displacement": "14",
 					"bank": "3",
 					"map_idx": "12",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "11",
+					"map_idx": "3",
 					"field_A": 0,
 					"field_B": 0
 				}

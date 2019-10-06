@@ -277,15 +277,23 @@
 		},
 		"levelscripts": "lscr_0x71a510",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
-					"direction": "NORTH",
+					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": -1,
 					"bank": 3,
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 19
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "4",
+					"map_idx": "5",
+					"field_A": 0,
+					"field_B": 0
 				}
 			]
 		},

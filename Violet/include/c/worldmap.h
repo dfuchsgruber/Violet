@@ -12,6 +12,8 @@
 extern "C" {
 #endif
 #define ____ 0xC5
+#include "constants/map_namespaces.h"
+#include "tile/coordinate.h"
 
 #define NUM_FLIGHT_POSITONS 21
 
@@ -63,7 +65,7 @@ extern "C" {
         u8 flight_position_idx;
     } flight_position_association_t;
 
-    flight_position_association_t flight_position_associations[108];
+    flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
 
     int *worldmap_tilemaps[4];
     u8 *namespace_worldmap_associations;
@@ -120,6 +122,12 @@ extern "C" {
      * @return shape_idx the index of the shape in the pattern table of the namespace of the map
      */
     u8 worldmap_get_shape_idx(u8 bank, u8 map_idx);
+
+    // Patterns for all worldmap namespaces. Patterns are like mini-worldmaps for each namespace
+    worldmap_shape_t **worldmap0_namespace_patterns[MAP_NAMESPACE_NONE - MAP_AMONIA];
+
+    // Map from namespace -> position on the worldmap
+    coordinate_t worldmap0_namespace_position_assoc[MAP_NAMESPACE_NONE - MAP_AMONIA];
 
 #define WORLDMAP_FLAG_CHECK_INVALID 0
 #define WORLDMAP_FLAG_CHECK_NO_FLAG 1
