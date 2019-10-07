@@ -435,13 +435,13 @@ wild_pokemon_data wild_pokemon[] = {
 		.bank = 11, .map = 2,
 		.grass = &wild_pokemon_route_2_clouds_grass,
 		.water = &wild_pokemon_route_2_clouds_water,
-		.other = &wild_pokemon_route_2_clouds_rod,
+		.rod = &wild_pokemon_route_2_clouds_rod,
 	},
 	{
 		.bank = 11, .map = 3,
 		.grass = &wild_pokemon_route_2_clouds_grass,
 		.water = &wild_pokemon_route_2_clouds_water,
-		.other = &wild_pokemon_route_2_clouds_rod,
+		.rod = &wild_pokemon_route_2_clouds_rod,
 	},
 	{
 	    .bank = 3, .map = 8,

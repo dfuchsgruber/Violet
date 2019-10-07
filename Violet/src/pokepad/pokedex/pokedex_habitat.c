@@ -21,13 +21,15 @@
 #include "bios.h"
 #include "worldmap.h"
 #include "dma.h"
+#include "debug.h"
 
-extern const unsigned short gfx_pokedex_habitat_rarityTiles[];
-extern const unsigned short gfx_pokedex_habitat_rodTiles[];
+extern const unsigned short gfx_pokedex_habitat_rarity_outsideTiles[];
 extern const unsigned short gfx_pokedex_habitat_uiTiles[];
 extern const unsigned short gfx_pokedex_habitat_uiMap[];
 extern const unsigned short gfx_pokedex_habitat_uiPal[];
-extern const unsigned short gfx_pokedex_habitat_rarityPal[];
+extern const unsigned short gfx_pokedex_habitat_rarity_outsidePal[];
+extern const unsigned short gfx_pokedex_habitat_rarity_insidePal[];
+extern const unsigned short gfx_pokedex_habitat_rarity_cloudsPal[];
 extern const unsigned short gfx_pokedex_habitat_maskTiles[];
 extern const unsigned short gfx_pokedex_habitat_maskPal[];
 
@@ -45,10 +47,10 @@ bg_config pokedex_bg_habitat_configs [] = {
 
 tboxdata pokedex_habitat_tboxes [] = {
     {0, 6, 0, 24, 2, 15, 2}, //Title Line := 0x0
-    {0, 1, 4, 5, 2, 15, 50}, //Grass := 0x1
-    {0, 1, 8, 5, 2, 15, 60}, //Water := 0x2
-    {0, 1, 12, 5, 2, 15, 70}, //Rod := 0x3
-    {0, 1, 16, 5, 2, 15, 80}, //Radar := 0x4
+    {0, 1, 0, 5, 2, 15, 50}, //Grass := 0x1
+    {0, 1, 4, 5, 2, 15, 60}, //Water := 0x2
+    {0, 1, 8, 5, 2, 15, 70}, //Radar := 0x3
+    {0, 1, 12, 5, 2, 15, 80}, //Rod := 0x4
     {1, 6, 2, 15, 2, 13, 90}, //Namespace := 0x5 on BG 1
     {1, 9, 10, 20, 2, 13, 120}, //Not found := 0x6 on BG 1
     {0xFF, 0, 0, 0, 0, 0, 0},
@@ -73,23 +75,17 @@ graphic pokedex_habitat_female_graphic = {
 };
 
 graphic pokedex_habitat_rarity_graphic = {
-    &gfx_pokedex_habitat_rarityTiles,
+    &gfx_pokedex_habitat_rarity_outsideTiles,
     0x200,
     0xA016
 };
 
-graphic pokedex_habitat_rod_graphic = {
-    &gfx_pokedex_habitat_rodTiles,
-    0x200,
-    0xA017
-};
-
 sprite pokedex_habitat_cursor_sprite = {
-    0, 0x4000, 0x0, 0
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)
 };
 
 sprite pokedex_habitat_head_sprite = {
-    0, 0x4000, 0x400, 0
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(0)
 };
 
 gfx_frame pokedex_habitat_cursor_gfx_anim[] = {
@@ -122,11 +118,12 @@ gfx_frame pokedex_habitat_rarity_gfx_frame_3[] = {
     {0xFFFF, 0}
 };
 
+
 gfx_frame *pokedex_habitat_rarity_gfx_anim_table[] = {
     pokedex_habitat_rarity_gfx_frame_0,
     pokedex_habitat_rarity_gfx_frame_1,
     pokedex_habitat_rarity_gfx_frame_2,
-    pokedex_habitat_rarity_gfx_frame_3
+    pokedex_habitat_rarity_gfx_frame_3,
 };
 
 oam_template pokedex_habitat_cursor_template = {
@@ -149,7 +146,7 @@ oam_template pokedex_habitat_head_template = {
     oam_null_callback
 };
 
-oam_template pokedex_habitat_rarity_template = {
+oam_template pokedex_habitat_rarity_outside_template = {
     0xA016,
     0xA016,
     &pokedex_habitat_cursor_sprite,
@@ -159,14 +156,30 @@ oam_template pokedex_habitat_rarity_template = {
     oam_null_callback
 };
 
-oam_template pokedex_habitat_rod_template = {
-    0xA017,
+oam_template pokedex_habitat_rarity_inside_template = {
     0xA016,
+    0xA017,
     &pokedex_habitat_cursor_sprite,
     pokedex_habitat_rarity_gfx_anim_table,
     NULL,
     oam_rotscale_anim_table_null,
     oam_null_callback
+};
+
+oam_template pokedex_habitat_rarity_clouds_template = {
+    0xA016,
+    0xA018,
+    &pokedex_habitat_cursor_sprite,
+    pokedex_habitat_rarity_gfx_anim_table,
+    NULL,
+    oam_rotscale_anim_table_null,
+    oam_null_callback
+};
+
+static oam_template *pokedex_habitat_rarity_templates[3] = {
+    [HABITAT_OUTSIDE] = &pokedex_habitat_rarity_outside_template, 
+    [HABITAT_CAVE] = &pokedex_habitat_rarity_inside_template, 
+    [HABITAT_CLOUD] = &pokedex_habitat_rarity_clouds_template
 };
 
 tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
@@ -178,7 +191,6 @@ int *worldmap_tilemaps[4] = {
     (int*) 0x080C0564
 };
 
-u8 *namespace_worldmap_associations = (u8*) 0x083F12FC;
 
 void pokedex_habitat_draw_scanline(u16 colev) {
 	// Initialize the scanline
@@ -243,7 +255,6 @@ void pokedex_init_habitat() {
         lz77uncompwram(gfx_pokedex_habitat_uiMap, bg2map);
         lz77uncompvram(gfx_pokedex_habitat_maskTiles, (void*) 0x06000000);
 
-        pokedex_habitats_load_for_species(bg1map);
 
         //unpack the tilemap to 32 width
         for (i = 0; i < 20; i++) {
@@ -253,13 +264,14 @@ void pokedex_init_habitat() {
                 bg3map[i * 32 + j] = j < 30 ? gp_tmp[i * 30 + j] : 0;
             }
         }
+        pokedex_habitats_load_for_species(bg1map);
 
         //Tboxes
         tbox_sync_with_virtual_bg_and_init_all(pokedex_habitat_tboxes);
 
         tbox_flush_set(0, 0);
         tbox_tilemap_draw(0);
-        u8 str_title[] = LANGDEP(PSTRING("Fundorte v. "), PSTRING("Habitats of "));
+        u8 str_title[] = LANGDEP(PSTRING(" Fundorte v. "), PSTRING(" Habitats of "));
         u8 *title = strcpy(strbuf, str_title);
         title = strcat(title, pokemon_names[fmem.dex_mem->current_species]);
         tbox_print_string(0, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, strbuf);
@@ -278,12 +290,12 @@ void pokedex_init_habitat() {
 
         tbox_flush_set(3, 0);
         tbox_tilemap_draw(3);
-        u8 str_habitat_rod[] = LANGDEP(PSTRING(" Angel"), PSTRING(" Rod"));
+        u8 str_habitat_rod[] = LANGDEP(PSTRING(" Radar"), PSTRING(" Radar"));
         tbox_print_string(3, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_habitat_rod);
 
         tbox_flush_set(4, 0);
         tbox_tilemap_draw(4);
-        u8 str_habitat_radar[] = LANGDEP(PSTRING(" Radar"), PSTRING(" Radar"));
+        u8 str_habitat_radar[] = LANGDEP(PSTRING(" Angel"), PSTRING(" Rod"));
         tbox_print_string(4, 2, 0, 0, 0, 0, &pokedex_fontcolmap, 0, str_habitat_radar);
 
         //pal
@@ -291,7 +303,9 @@ void pokedex_init_habitat() {
         pal_decompress(gfx_pokedex_habitat_uiPal, 4 * 16, 32);
         pal_decompress(gfx_pokedex_habitat_maskPal, 5 * 16, 32);
         pal_copy((void*) 0x83EEAB2, (u16) ((16 + oam_allocate_palette(0xA014))*16), 30);
-        pal_decompress(gfx_pokedex_habitat_rarityPal, (u16) ((16 + oam_allocate_palette(0xA016))*16), 32);
+        pal_decompress(gfx_pokedex_habitat_rarity_outsidePal, (u16) ((16 + oam_allocate_palette(0xA016))*16), 32);
+        pal_decompress(gfx_pokedex_habitat_rarity_insidePal, (u16) ((16 + oam_allocate_palette(0xA017))*16), 32);
+        pal_decompress(gfx_pokedex_habitat_rarity_cloudsPal, (u16) ((16 + oam_allocate_palette(0xA018))*16), 32);
         //load_comp_pal_into_RAM(gfx_pokedex_habitat_rodPal, (u16)((16+allocate_obj_pal(0xA017))*16), 32);
         const void *head_pal = save2->player_is_female ? gfx_hiroine_headPal : gfx_hiro_headPal;
         pal_copy(head_pal, (u16) ((16 + oam_allocate_palette(0xA015))*16), 32);
@@ -306,21 +320,20 @@ void pokedex_init_habitat() {
         } else {
             oam_load_graphic(&pokedex_habitat_male_graphic);
         }
-        fmem.dex_mem->oam_habitat_head = oam_new_forward_search(&pokedex_habitat_head_template, origin_x, origin_y, 0);
+        fmem.dex_mem->oam_habitat_head = oam_new_forward_search(&pokedex_habitat_head_template, origin_x, origin_y, 1);
         oam_load_graphic(&pokedex_habitat_rarity_graphic);
-        oam_load_graphic(&pokedex_habitat_rod_graphic);
-
 
         for (i = 0; i < 6; i++) {
-            if (i == HABITAT_TYPE_ROD) {
-                fmem.dex_mem->habitat_oams_rarity[HABITAT_TYPE_ROD] = oam_new_forward_search(&pokedex_habitat_rod_template, (s16) (8 + 0 * 16), 118, 0);
-            } else if (i == HABITAT_TYPE_GOOD_ROD) {
-                fmem.dex_mem->habitat_oams_rarity[HABITAT_TYPE_GOOD_ROD] = oam_new_forward_search(&pokedex_habitat_rod_template, (s16) (8 + 1 * 16), 118, 0);
-            } else if (i == HABITAT_TYPE_SUPER_ROD) {
-                fmem.dex_mem->habitat_oams_rarity[HABITAT_TYPE_SUPER_ROD] = oam_new_forward_search(&pokedex_habitat_rod_template, (s16) (8 + 2 * 16), 118, 0);
-            } else {
-                fmem.dex_mem->habitat_oams_rarity[i] = oam_new_forward_search(&pokedex_habitat_rarity_template, 24, (s16) ((6 + 4 * i)*8 + 6), 0);
+            for (int j = 0; j < 3; j++) {
+                if (i >= HABITAT_TYPE_ROD) {
+                    fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
+                        pokedex_habitat_rarity_templates[j], (s16) (8 + j * 16), (s16)(120 + (i - HABITAT_TYPE_ROD) * 16), 0);
+                } else {
+                    fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
+                        pokedex_habitat_rarity_templates[j], (s16) (8 + j * 16), (s16) (16 + i * 32 + 6), 0);
+                }
             }
+            
         }
         oam_load_graphic(&pokedex_habitat_cursor_graphic);
         fmem.dex_mem->oam_habitat_cursor = oam_new_forward_search(&pokedex_habitat_cursor_template, origin_x, origin_y, 0);
@@ -434,7 +447,7 @@ void pokedex_habitat_callback_idle() {
 }
 
 void pokedex_habitats_load_for_species(u16 *bg1map) {
-    pokedex_habitat_pair *habitats = malloc(sizeof(pokedex_habitat_pair) * 6 * 22 * 15);
+    pokedex_habitat_pair *habitats = malloc(sizeof(pokedex_habitat_pair) * 6 * 22 * 15 * 7);
     fmem.dex_mem->habitats = habitats;
     int habitat_size = pokedex_get_habitats_of_species(habitats, fmem.dex_mem->current_species);
     fmem.dex_mem->habitat_size = habitat_size;
@@ -498,35 +511,24 @@ void pokedex_habitats_update() {
     pokedex_habitats_load_namespace();
     //update the rarity oams
     pokedex_habitat_pair *habitats = fmem.dex_mem->habitats;
+    dprintf("Habitats @%x\n", habitats);
     int cursor_x = fmem.dex_mem->habitat_cursor_x;
     int cursor_y = fmem.dex_mem->habitat_cursor_y;
     for (int habitat_type = 0; habitat_type < 6; habitat_type++) {
-        if (habitat_type == HABITAT_TYPE_ROD || habitat_type == HABITAT_TYPE_GOOD_ROD || habitat_type == HABITAT_TYPE_SUPER_ROD) {
-            // Rod oams don't show the probability icon: instead their animation frame corresponds to the rod type
-            u8 animation_idx = 3; // Show nothing
+        for (int map_type = 0; map_type < 3; map_type ++) {
+            u8 animation_idx = 3; // show nothing
             for (int i = 0; i < fmem.dex_mem->habitat_size; i++) {
-                if (habitats[i].worldmap_x == cursor_x && habitats[i].worldmap_y == cursor_y && habitats[i].type == habitat_type) {
-                    switch (habitat_type) {
-                        case HABITAT_TYPE_ROD: animation_idx = 0; break;
-                        case HABITAT_TYPE_GOOD_ROD: animation_idx = 1; break;
-                        case HABITAT_TYPE_SUPER_ROD: animation_idx = 2; break;
+                if (habitats[i].worldmap_x == cursor_x && habitats[i].worldmap_y == cursor_y && habitats[i].habitat_type == habitat_type &&
+                    habitats[i].map_type == map_type) {
+                        if (habitats[i].probability >= 50) animation_idx = 2;
+                        else if (habitats[i].probability >= 10) animation_idx = 1;
+                        else animation_idx = 0;
+                        break;
                     }
-                }
             }
-            oams[fmem.dex_mem->habitat_oams_rarity[habitat_type]].anim_number = animation_idx;
-            oam_gfx_anim_init(&oams[fmem.dex_mem->habitat_oams_rarity[habitat_type]], 0); //all rod oams take their animation
-        } else {
-            // "Normal" habitats show a probability icon
-            u8 animation_idx = 3;
-            for (int i = 0; i < fmem.dex_mem->habitat_size; i++) {
-                if (habitats[i].worldmap_x == cursor_x && habitats[i].worldmap_y == cursor_y && habitats[i].type == habitat_type) {
-                    if (habitats[i].probability >= 50) animation_idx = 2;
-                    else if (habitats[i].probability >= 10) animation_idx = 1;
-                    else animation_idx = 0;
-                }
-            }
-            oams[fmem.dex_mem->habitat_oams_rarity[habitat_type]].anim_number = animation_idx;
-            oam_gfx_anim_init(oams + fmem.dex_mem->habitat_oams_rarity[habitat_type], 0);
+            (void) animation_idx;
+            oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].anim_number = animation_idx;
+            oam_gfx_anim_init(oams + fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type], 0); //all rod oams take their animation
         }
     }
 }

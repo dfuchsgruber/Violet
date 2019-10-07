@@ -49,7 +49,7 @@
         u8 oam_habitat_head;
         u8 habitat_cursor_x;
         u8 habitat_cursor_y;
-        u8 habitat_oams_rarity[6]; // 3 for rod is not used
+        u8 habitat_oams_rarity[6][3]; // encounter_types x map_types
         bool habitat_cursor_is_moving;
         u8 habitat_fading_mode;
         u8 habitat_fading_index;

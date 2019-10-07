@@ -10,8 +10,8 @@
 
 #define HABITAT_TYPE_GRASS 0
 #define HABITAT_TYPE_WASSER 1
-#define HABITAT_TYPE_ROD 2
-#define HABITAT_TYPE_RADAR 3
+#define HABITAT_TYPE_RADAR 2
+#define HABITAT_TYPE_ROD 3
 #define HABITAT_TYPE_GOOD_ROD 4
 #define HABITAT_TYPE_SUPER_ROD 5
 
@@ -33,7 +33,8 @@ typedef struct {
         u8 worldmap_x;
         u8 worldmap_y;
         u8 probability;
-        u8 type; //0 grass, 1 water, 2 rod, 3 radar
+        u8 habitat_type;
+        u8 map_type;
     } pokedex_habitat_pair;
 
     void pokedex_habitat_callback_idle();
@@ -54,8 +55,9 @@ typedef struct {
      * @param size pointer to the number of elements in the habitat lsit
      * @param probability the probability (in %) of the pokemon to appear
      * @param habitat_type which kind of encounter the species appears in
+     * @param map_type the type of the map the encounter happens on
      **/
-    void pokedex_habitats_add(u8 bank, u8 map_idx, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type);
+    void pokedex_habitats_add(u8 bank, u8 map_idx, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type, int map_type);
 
     /** Adds a certain position to the habitat list.
      * @param x the x coordinate to add
@@ -64,9 +66,8 @@ typedef struct {
      * @param size pointer to the number of elements in the habitat lsit
      * @param probability the probability (in %) of the pokemon to appear
      * @param habitat_type which kind of encounter the species appears in
+     * @param map_type the type of the map the encounter happens on
      **/
-    void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type);
-
-    int pokedex_get_namespace_of_species_add_pair_if_not_present(pokedex_habitat_pair *dst, int cnt, u8 namespace, u8 propability, u8 type);
+    void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type, int map_type);
 
 #endif /* INCLUDE_C_POKEPAD_POKEDEX_HABITAT_H_ */
