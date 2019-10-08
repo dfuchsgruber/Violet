@@ -29,9 +29,6 @@
 .org 0x080C434C
     .word worldmap0_position_data
 
-.org 0x080C3EF4
-    .word worldmap0_namespace_position_assoc
-
 .org 0x080C43C4
     .word gfx_hiroine_headTiles
 

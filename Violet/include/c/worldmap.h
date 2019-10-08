@@ -115,19 +115,15 @@ extern "C" {
      */
     void worldmap_locate_player();
 
-    /**
-     * Returns the index in the pattern table for a certain map to locate the player.
-     * @param bank the bank of the map to locate
-     * @param map_idx the map index of the map to locate in the given bank
-     * @return shape_idx the index of the shape in the pattern table of the namespace of the map
-     */
-    u8 worldmap_get_shape_idx(u8 bank, u8 map_idx);
+    typedef struct {
+        u8 x;
+        u8 y;
+        u8 width; 
+        u8 height;
+    } worldmap_position_t;
 
-    // Patterns for all worldmap namespaces. Patterns are like mini-worldmaps for each namespace
-    worldmap_shape_t **worldmap0_namespace_patterns[MAP_NAMESPACE_NONE - MAP_AMONIA];
-
-    // Map from namespace -> position on the worldmap
-    coordinate_t worldmap0_namespace_position_assoc[MAP_NAMESPACE_NONE - MAP_AMONIA];
+    // Locates maps exactly on the worldmap
+    worldmap_position_t *worldmap_positions[256];
 
 #define WORLDMAP_FLAG_CHECK_INVALID 0
 #define WORLDMAP_FLAG_CHECK_NO_FLAG 1

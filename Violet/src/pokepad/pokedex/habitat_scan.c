@@ -28,13 +28,10 @@ void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int 
 void pokedex_habitats_add(u8 bank, u8 map_idx, pokedex_habitat_pair *dst, int *size, int probability, int habitat_type, int map_type) {
     dprintf("Size of habitats %d\n", *size);
     dprintf("Found species at %d.%d with m_type %d, h_type %d and probability of %d percent.\n", bank, map_idx, map_type, habitat_type, probability);
-    u8 shape_idx = worldmap_get_shape_idx(bank, map_idx);
-    u8 namespace = get_mapheader(bank, map_idx)->map_namespace;
-	worldmap_shape_t *shape = worldmap0_namespace_patterns[namespace - MAP_AMONIA][shape_idx];
-    for (int i = 0; i < shape->width; i++) {
-        for (int j = 0; j < shape->height; j++) {
-            pokedex_habitats_add_position(worldmap0_namespace_position_assoc[namespace - MAP_AMONIA].x + shape->x + i,
-                worldmap0_namespace_position_assoc[namespace - MAP_AMONIA].y + shape->y + j, dst, size, probability, habitat_type, map_type);
+    for (int i = 0; i < worldmap_positions[bank][map_idx].width; i++) {
+        for (int j = 0; j < worldmap_positions[bank][map_idx].height; j++) {
+            pokedex_habitats_add_position(worldmap_positions[bank][map_idx].x + i,
+                worldmap_positions[bank][map_idx].y + j, dst, size, probability, habitat_type, map_type);
         }
     }
 }

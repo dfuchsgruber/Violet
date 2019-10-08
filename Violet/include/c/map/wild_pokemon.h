@@ -35,6 +35,22 @@ typedef struct {
 
 } wild_pokemon_data;
 
+#define NUM_UNOWN_LETTERS_PER_MAP 4
+
+typedef struct {
+    u8 bank;
+    u8 map_idx;
+    u8 letters[NUM_UNOWN_LETTERS_PER_MAP];
+} wild_pokemon_unown_t;
+
+/**
+ * Returns a pointer to the NUM_UNOWN_LETTERS_PER_MAP letters that currently can appear on the current map.
+ * @return pointer to NUM_UNOWN_LETTERS_PER_MAP chars representing the letters or NULL
+ **/
+u8 *wild_pokemon_get_current_unown_letters();
+
+#define UNOWN_LETTER(char) (char - 'A')
+
 u8 wild_pokemon_disabled;
 
 extern wild_pokemon_data wild_pokemon[];
@@ -48,11 +64,11 @@ void wildbattle_start();
  * Tries to initialize a wildbattle by a habitat
  * @param habitat the habitat
  * @param type 0 for grass-like habitats, 1 for water-like habitats
- * @param icognito_letter the icognito letter to spawn (probably tho)
+ * @param consider_repel if repel should be considered when generating a battle
  * @return whether the initialization, i.e. the generation of a pokemon was successful
  */
 bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int type,
-		int icognoito_letter);
+		bool consider_repel);
 
 /**
  * Initializes the opponent's party with a wild pokemon
@@ -60,7 +76,7 @@ bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int type,
  * @param level level of the wild pokemon
  * @param icognito_letter the icognito letter to spawn (probably tho)
  */
-void wildbattle_initialize_pokemon(u16 species, u8 level, int icognoito_letter);
+void wild_pokemon_new(u16 species, u8 level, int icognoito_letter);
 /**
  * Gets the current wild_pokemon_data header or NULL if no data is availible
  */
@@ -133,6 +149,7 @@ u8 wild_pokemon_super_rod_pdf[5];
 
 u8 wild_pokemon_other_pdf[5];
 
+wild_pokemon_habitat wild_pokemon_unown_ruins_grass;
 wild_pokemon_habitat wild_pokemon_3_0_water;
 wild_pokemon_habitat wild_pokemon_3_0_rod;
 wild_pokemon_habitat wild_pokemon_3_1_water;

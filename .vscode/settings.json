@@ -83,7 +83,8 @@
         "system_error": "c",
         "thread": "c",
         "map": "c",
-        "worldmap.h": "c"
+        "worldmap.h": "c",
+        "sprites.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

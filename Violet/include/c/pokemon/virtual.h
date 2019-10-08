@@ -27,7 +27,8 @@ typedef union {
         u32 is_shiny : 1;
         u32 hidden_power_type : 5;
         u32 hidden_power_strength : 3;
-        u32 unused : 7;
+		u32 unown_letter : 5;
+        u32 unused : 2;
         u32 nature : 5;
         u32 form : 3;
     } fields;
@@ -453,5 +454,19 @@ bool pokemon_has_status_condition(pokemon *p, int party_idx, u32 status_mask);
  * @return if the pokemon has the status condition
  **/ 
 bool pokemon_remove_status_condition(pokemon *p, int party_idx, u32 status_mask, u8 battler_idx);
+
+/**
+ * Returns the letter index of a pokemon's pid.
+ * @param p the pid of the pokemon
+ * @return which kind of letter the pid resembles
+ **/
+int pokemon_unown_get_letter(pid_t p);
+
+/**
+ * Generates a pid that resembles a unown letter.
+ * @param letter the letter (< 28) to generate.
+ * @return a random pid with that letter.
+ **/
+pid_t pokemon_unown_generate_letter_pid(u32 letter);
 
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

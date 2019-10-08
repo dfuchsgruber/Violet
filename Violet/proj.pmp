@@ -670,6 +670,11 @@
 				"map_route_2_north_clouds",
 				"src/map/banks/11/3_route_2_north_clouds/map_route_2_north_clouds.pms",
 				"MAP_ROUTE_2"
+			],
+			"4": [
+				"map_route_2_cloud_ruins",
+				"src/map/banks/11/4/map_route_2_cloud_ruins.pms",
+				"MAP_ROUTE_2"
 			]
 		},
 		"12": {
@@ -1443,6 +1448,10 @@
 		"map_footer_felsige_oednis_west_clouds": [
 			67,
 			"src/map/banks/22/1/map_footer_felsige_oednis_west_clouds.pms"
+		],
+		"map_footer_route_2_cloud_ruins": [
+			68,
+			"src/map/banks/11/4/map_footer_route_2_cloud_ruins.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1486,7 +1495,8 @@
 		"maptileset_ceometria": "src/map/tileset/maptileset_ceometria.pms",
 		"maptileset_ceometria_gym": "src/map/tileset/maptileset_ceometria_gym.pms",
 		"maptileset_haweiland": "src/map/tileset/gfx_maptileset_haweiland.pms",
-		"maptileset_cloud_ruins": "src/map/tileset/maptileset_cloud_ruins.pms"
+		"maptileset_cloud_ruins": "src/map/tileset/maptileset_cloud_ruins.pms",
+		"maptileset_cloud_ruins_inside": "src/map/tileset/maptileset_cloud_ruins_inside.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1528,6 +1538,7 @@
 		"gfx_maptileset_ceometriaTiles": "asset/gfx/tileset/gfx_maptileset_ceometria.png",
 		"gfx_maptileset_ceometria_gymTiles": "asset/gfx/tileset/gfx_maptileset_ceometria_gym.png",
 		"gfx_maptileset_haweilandTiles": "asset/gfx/tileset/gfx_maptileset_haweiland.png",
-		"gfx_maptileset_cloud_ruinsTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins.png"
+		"gfx_maptileset_cloud_ruinsTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins.png",
+		"gfx_maptileset_cloud_ruins_insideTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_inside.png"
 	}
 }

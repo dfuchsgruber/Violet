@@ -2,7 +2,8 @@
 #include "oam.h"
 #include "pokemon/count.h"
 #include "pokemon/sprites.h"
-
+#include "pokemon/virtual.h"
+#include "constants/species.h"
 
 graphic pokemon_frontsprites[POKEMON_CNT] = {
     {gfx_pkmn_species_000_pokemon_pokemon_0_frontspriteTiles, 0x800, 0},

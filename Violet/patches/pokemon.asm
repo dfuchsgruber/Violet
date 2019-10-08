@@ -1113,3 +1113,41 @@ lsr r0, #0x1A
 	ldr r0, = roamer_last_encountered_set_not_present | 1
 	bx r0
 	.pool
+
+.org 0x08082a1c
+	ldr r1, = pokemon_unown_get_letter | 1
+	bx r1
+	.pool
+
+.org 0x080829ec
+	ldr r1, = pokemon_unown_generate_letter_pid | 1
+	bx r1
+	.pool
+
+.org 0x0800ec74
+	push {r1}
+	ldr r1, =fmem
+	str r0, [r1]
+	pop {r1}
+	ldr r0, =pokemon_get_frontsprite | 1
+	bx r0
+	.pool
+
+.org 0x0800f0b8
+	push {r1}
+	ldr r1, =fmem
+	str r0, [r1]
+	pop {r1}
+	ldr r0, =pokemon_get_frontsprite | 1
+	bx r0
+	.pool
+
+.org 0x08082960
+	ldr r3, =wild_pokemon_new | 1
+	bx r3
+	.pool
+
+.org 0x080970b0
+	ldr r1, =pokemon_unown_get_letter | 1
+	bx r1
+	.pool

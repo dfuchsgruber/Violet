@@ -239,8 +239,8 @@ void ev_menu_load_pokemon() {
 	u16 species;
 	if (is_egg) species = POKEMON_EGG;
 	else species = (u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
-	pokemon_load_gfx2(&pokemon_frontsprites[species], fmem.ev_menu_state->pokemon_sprite,
-			species, pid, true);
+	pokemon_load_gfx_by_graphic(&pokemon_frontsprites[species], fmem.ev_menu_state->pokemon_sprite,
+			species, pid);
 	oams[fmem.ev_menu_state->oam_pokepic_idx].flags |= OAM_FLAG_INVISIBLE;
 	memcpy(OAMCHARBASE(fmem.ev_menu_state->oam_pokepic_tile), fmem.ev_menu_state->pokemon_sprite,
 			0x800);

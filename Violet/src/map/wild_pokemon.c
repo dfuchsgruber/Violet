@@ -10,17 +10,20 @@
 #include "constants/vars.h"
 #include "overworld/script.h"
 #include "pokemon/roamer.h"
+#include "constants/flags.h"
+#include "flags.h"
+#include "constants/wild_pokemon_densities.h"
 
 extern u8 ow_script_trainerschool_wildbattle[];
 
 u16 map_wild_pokemon_get_current_table_id(){
-    u16 i = 0;
-    while(wild_pokemon[i].bank != 0xFF){
-        if(wild_pokemon[i].bank == save1->bank &&
-                wild_pokemon[i].map == save1->map)
-            return i;
-        i++;
-    }
+		if (!wild_pokemon_get_current_unown_letters() || true || checkflag(FLAG_UNOWN_ENABLED)) {
+			for (u16 i = 0; wild_pokemon[i].bank != 0xFF; i++){
+					if (wild_pokemon[i].bank == save1->bank &&
+									wild_pokemon[i].map == save1->map)
+							return i;
+			}
+		}
     return 0xFFFF;
 }
 
@@ -95,7 +98,7 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
     }
   }
 
-  if(!wildbattle_initialize_by_habitat(habitat, pdf_type, 1)) {
+  if(!wildbattle_initialize_by_habitat(habitat, pdf_type, true)) {
     wildbattle_increase_chance(habitat->frequency);
     return 0;
   }
@@ -110,7 +113,7 @@ int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
 }
 
 bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int pdf_type,
-		int icognito_letter) {
+		bool consider_repel) {
 	int idx = -1;
 	switch(pdf_type) {
 		case 0: {
@@ -131,15 +134,24 @@ bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int pdf_typ
 		}
 	}
 	u8 level = wildbattle_sample_level(&(habitat->data[idx]));
-	if (wildbattle_is_allowed_by_repel(level)) {
+	if (!consider_repel || wildbattle_is_allowed_by_repel(level)) {
 		if (*var_access(STORY_PROGRESS) < 8) {
 			return trainerschool_wildbattle_initialize_secondary_starter();
 		}
 
-		wildbattle_initialize_pokemon(habitat->data[idx].species, level, icognito_letter);
+		wild_pokemon_new(habitat->data[idx].species, level, rnd16() % NUM_UNOWN_LETTERS_PER_MAP);
 		return true;
 	}
 	return false;
+}
+
+void wild_pokemon_new(u16 species, u8 level, int unown_letter_idx) {
+		pokemon_clear_opponent_party();
+		pid_t p = pokemon_new_pid();
+		if (species == POKEMON_ICOGNITO) {
+			p = pokemon_unown_generate_letter_pid(wild_pokemon_get_current_unown_letters()[unown_letter_idx]);
+		}
+		pokemon_new(opponent_pokemon, species, level, POKEMON_NEW_RANDOM_IVS, true, p, false, 0);
 }
 
 int wildbattle_sample_from_pdf(u8 *pdf, int size) {
@@ -600,6 +612,9 @@ wild_pokemon_data wild_pokemon[] = {
 	{
 		.bank = 26, .map = 1,
 		.grass = &wild_pokemon_route_12_clouds_grass,
+	},
+	{
+			.bank = 11, .map = 4, .grass = &wild_pokemon_unown_ruins_grass
 	},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,

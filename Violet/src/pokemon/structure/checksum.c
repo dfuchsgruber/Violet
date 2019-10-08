@@ -16,6 +16,7 @@ pid_t pokemon_new_pid_by_prng(u16 (*rnd)()) {
 	pid_t p;
 	p.fields.ability = (u8)(rnd() & 1);
 	p.fields.form = 0;
+	p.fields.unown_letter = 0;
 	p.fields.gender_partial = (u8)(rnd() & 127);
 	p.fields.nature = (u8)((rnd() % 25) & 31);
 	p.fields.hidden_power_type = (u8)((rnd() % 18) & 31);

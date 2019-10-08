@@ -18,19 +18,18 @@
  * @param dst memory to place the gfx in
  * @param species the species to load
  * @param pid the pid of the pokemon (for Unown, Spinda)
- * @param is_frontsprite wether to load a front- or backsprite
  */
-void pokemon_load_gfx(graphic *g, void *dst, u16 species, pid_t pid, bool is_frontsprite);
+void pokemon_load_gfx_by_graphic(graphic *g, void *dst, u16 species, pid_t pid);
+
 
 /**
- * Loads the gfx of a pokemon. What is the difference between pokemon_load_gfx? Who knows...
- * @param g the graphic to load, should match the is_frontsprite parameter
- * @param dst memory to place the gfx in
- * @param species the species to load
- * @param pid the pid of the pokemon (for Unown, Spinda)
- * @param is_frontsprite wether to load a front- or backsprite
- */
-void pokemon_load_gfx2(graphic *g, void *dst, u16 species, pid_t pid, bool is_frontsprite);
+ * Draws the spinda pattern on a sprite.
+ * @param species the species of the pokemon to draw
+ * @param pid the pid of the pokemon (used for pattern drawing)
+ * @param dst where the gfx is located (uncompressed)
+ * @param load_frontsprite if a frontsprite is loaded
+ **/
+void pokemon_spinda_draw_pattern(u16 species,pid_t pid, void *dst,bool load_frontsprite);
 
 /**
  * Returns the palette that matches a pokemon.
