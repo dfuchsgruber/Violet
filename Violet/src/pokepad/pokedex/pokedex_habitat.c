@@ -23,15 +23,13 @@
 #include "dma.h"
 #include "debug.h"
 
-extern const unsigned short gfx_pokedex_habitat_rarity_outsideTiles[];
 extern const unsigned short gfx_pokedex_habitat_uiTiles[];
 extern const unsigned short gfx_pokedex_habitat_uiMap[];
 extern const unsigned short gfx_pokedex_habitat_uiPal[];
-extern const unsigned short gfx_pokedex_habitat_rarity_outsidePal[];
-extern const unsigned short gfx_pokedex_habitat_rarity_insidePal[];
-extern const unsigned short gfx_pokedex_habitat_rarity_cloudsPal[];
 extern const unsigned short gfx_pokedex_habitat_maskTiles[];
 extern const unsigned short gfx_pokedex_habitat_maskPal[];
+extern const unsigned short gfx_pokedex_habitat_type_iconsTiles[];
+extern const unsigned short gfx_pokedex_habitat_type_iconsPal[];
 
 extern const unsigned short gfx_hiro_headTiles[];
 extern const unsigned short gfx_hiroine_headTiles[];
@@ -74,9 +72,9 @@ graphic pokedex_habitat_female_graphic = {
     0xA015
 };
 
-graphic pokedex_habitat_rarity_graphic = {
-    &gfx_pokedex_habitat_rarity_outsideTiles,
-    0x200,
+graphic pokedex_habitat_type_graphic = {
+    &gfx_pokedex_habitat_type_iconsTiles,
+    0x80 * 9,
     0xA016
 };
 
@@ -98,32 +96,29 @@ gfx_frame *pokedex_habitat_cursor_gfx_anim_table[] = {
     pokedex_habitat_cursor_gfx_anim
 };
 
-gfx_frame pokedex_habitat_rarity_gfx_frame_0[] = {
-    {0, 0},
-    {0xFFFF, 0}
-};
-
-gfx_frame pokedex_habitat_rarity_gfx_frame_1[] = {
-    {4, 0},
-    {0xFFFF, 0}
-};
-
-gfx_frame pokedex_habitat_rarity_gfx_frame_2[] = {
-    {8, 0},
-    {0xFFFF, 0}
-};
-
-gfx_frame pokedex_habitat_rarity_gfx_frame_3[] = {
-    {12, 0},
-    {0xFFFF, 0}
+static gfx_frame pokedex_habitat_type_gfx_frames[] = {
+    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 4, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 8, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 12, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 16, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 20, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 24, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 28, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 32, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
 
-gfx_frame *pokedex_habitat_rarity_gfx_anim_table[] = {
-    pokedex_habitat_rarity_gfx_frame_0,
-    pokedex_habitat_rarity_gfx_frame_1,
-    pokedex_habitat_rarity_gfx_frame_2,
-    pokedex_habitat_rarity_gfx_frame_3,
+static gfx_frame *pokedex_habitat_type_gfx_anim_table[] = {
+    pokedex_habitat_type_gfx_frames,
+    pokedex_habitat_type_gfx_frames + 2,
+    pokedex_habitat_type_gfx_frames + 4,
+    pokedex_habitat_type_gfx_frames + 6,
+    pokedex_habitat_type_gfx_frames + 8,
+    pokedex_habitat_type_gfx_frames + 10,
+    pokedex_habitat_type_gfx_frames + 12,
+    pokedex_habitat_type_gfx_frames + 14,
+    pokedex_habitat_type_gfx_frames + 16,
 };
 
 oam_template pokedex_habitat_cursor_template = {
@@ -146,41 +141,16 @@ oam_template pokedex_habitat_head_template = {
     oam_null_callback
 };
 
-oam_template pokedex_habitat_rarity_outside_template = {
+static oam_template pokedex_habitat_type_template = {
     0xA016,
     0xA016,
     &pokedex_habitat_cursor_sprite,
-    pokedex_habitat_rarity_gfx_anim_table,
+    pokedex_habitat_type_gfx_anim_table,
     NULL,
     oam_rotscale_anim_table_null,
     oam_null_callback
 };
 
-oam_template pokedex_habitat_rarity_inside_template = {
-    0xA016,
-    0xA017,
-    &pokedex_habitat_cursor_sprite,
-    pokedex_habitat_rarity_gfx_anim_table,
-    NULL,
-    oam_rotscale_anim_table_null,
-    oam_null_callback
-};
-
-oam_template pokedex_habitat_rarity_clouds_template = {
-    0xA016,
-    0xA018,
-    &pokedex_habitat_cursor_sprite,
-    pokedex_habitat_rarity_gfx_anim_table,
-    NULL,
-    oam_rotscale_anim_table_null,
-    oam_null_callback
-};
-
-static oam_template *pokedex_habitat_rarity_templates[3] = {
-    [HABITAT_OUTSIDE] = &pokedex_habitat_rarity_outside_template, 
-    [HABITAT_CAVE] = &pokedex_habitat_rarity_inside_template, 
-    [HABITAT_CLOUD] = &pokedex_habitat_rarity_clouds_template
-};
 
 tbox_font_colormap pokedex_fontcolmap_namespace = {3, 2, 1, 0};
 
@@ -241,8 +211,14 @@ void pokedex_init_habitat() {
         bg_set_tilemap(2, bg2map);
         bg_set_tilemap(3, bg3map);
 
+        io_set(0x10, 0);
+        io_set(0x12, 0);
+        io_set(0x14, 0);
+        io_set(0x16, 0);
         io_set(0x18, 0);
+        io_set(0x1A, 0);
         io_set(0x1C, (u16) (-24));
+        io_set(0x1E, 0);
 
         dma0_reset_callback();
         pokedex_habitat_draw_scanline(0x1F0F);
@@ -303,10 +279,7 @@ void pokedex_init_habitat() {
         pal_decompress(gfx_pokedex_habitat_uiPal, 4 * 16, 32);
         pal_decompress(gfx_pokedex_habitat_maskPal, 5 * 16, 32);
         pal_copy((void*) 0x83EEAB2, (u16) ((16 + oam_allocate_palette(0xA014))*16), 30);
-        pal_decompress(gfx_pokedex_habitat_rarity_outsidePal, (u16) ((16 + oam_allocate_palette(0xA016))*16), 32);
-        pal_decompress(gfx_pokedex_habitat_rarity_insidePal, (u16) ((16 + oam_allocate_palette(0xA017))*16), 32);
-        pal_decompress(gfx_pokedex_habitat_rarity_cloudsPal, (u16) ((16 + oam_allocate_palette(0xA018))*16), 32);
-        //load_comp_pal_into_RAM(gfx_pokedex_habitat_rodPal, (u16)((16+allocate_obj_pal(0xA017))*16), 32);
+        pal_decompress(gfx_pokedex_habitat_type_iconsPal, (u16) ((16 + oam_allocate_palette(0xA016))*16), 32);
         const void *head_pal = save2->player_is_female ? gfx_hiroine_headPal : gfx_hiro_headPal;
         pal_copy(head_pal, (u16) ((16 + oam_allocate_palette(0xA015))*16), 32);
         pal_copy(tbox_palettes_transparency, 16 * 13, 32);
@@ -321,17 +294,18 @@ void pokedex_init_habitat() {
             oam_load_graphic(&pokedex_habitat_male_graphic);
         }
         fmem.dex_mem->oam_habitat_head = oam_new_forward_search(&pokedex_habitat_head_template, origin_x, origin_y, 1);
-        oam_load_graphic(&pokedex_habitat_rarity_graphic);
+        oam_load_graphic(&pokedex_habitat_type_graphic);
 
         for (i = 0; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
                 if (i >= HABITAT_TYPE_ROD) {
                     fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
-                        pokedex_habitat_rarity_templates[j], (s16) (8 + j * 16), (s16)(120 + (i - HABITAT_TYPE_ROD) * 16), 0);
+                        &pokedex_habitat_type_template, (s16) (8 + j * 16), (s16)(120 + (i - HABITAT_TYPE_ROD) * 16), 0);
                 } else {
                     fmem.dex_mem->habitat_oams_rarity[i][j] = oam_new_forward_search(
-                        pokedex_habitat_rarity_templates[j], (s16) (8 + j * 16), (s16) (16 + i * 32 + 6), 0);
+                        &pokedex_habitat_type_template, (s16) (8 + j * 16), (s16) (16 + i * 32 + 6), 0);
                 }
+                oams[fmem.dex_mem->habitat_oams_rarity[i][j]].flags |= OAM_FLAG_INVISIBLE;
             }
             
         }
@@ -516,20 +490,28 @@ void pokedex_habitats_update() {
     int cursor_y = fmem.dex_mem->habitat_cursor_y;
     for (int habitat_type = 0; habitat_type < 6; habitat_type++) {
         for (int map_type = 0; map_type < 3; map_type ++) {
-            u8 animation_idx = 3; // show nothing
+            int probability = 0;
             for (int i = 0; i < fmem.dex_mem->habitat_size; i++) {
                 if (habitats[i].worldmap_x == cursor_x && habitats[i].worldmap_y == cursor_y && habitats[i].habitat_type == habitat_type &&
                     habitats[i].map_type == map_type) {
-                        if (habitats[i].probability >= 50) animation_idx = 2;
-                        else if (habitats[i].probability >= 10) animation_idx = 1;
-                        else animation_idx = 0;
+                        probability = habitats[i].probability;
                         break;
-                    }
+                }
             }
-            (void) animation_idx;
-            oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].anim_number = animation_idx;
-            oam_gfx_anim_init(oams + fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type], 0); //all rod oams take their animation
+            if (probability) {
+                int animation_idx;
+                if (probability >= 50) animation_idx = 2;
+                else if (probability >= 10) animation_idx = 1;
+                else animation_idx = 0;
+                oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+                oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].anim_number = (u8)(3 * animation_idx + map_type);
+                oam_gfx_anim_init(oams + fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type], 0);
+            } else {
+                oams[fmem.dex_mem->habitat_oams_rarity[habitat_type][map_type]].flags |= OAM_FLAG_INVISIBLE;
+            }
         }
     }
+    (void) cursor_x;
+    (void) cursor_y;
 }
 
