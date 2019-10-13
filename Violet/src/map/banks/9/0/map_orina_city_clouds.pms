@@ -3,7 +3,7 @@
 		"footer": "map_footer_orina_city_clouds",
 		"events": {
 			"person_cnt": 8,
-			"warp_cnt": 4,
+			"warp_cnt": 6,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -208,6 +208,22 @@
 					"target_warp_idx": "14",
 					"target_map": "5",
 					"target_bank": "3"
+				},
+				{
+					"x": "23",
+					"y": "24",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "4",
+					"target_bank": "9"
+				},
+				{
+					"x": "24",
+					"y": "24",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "4",
+					"target_bank": "9"
 				}
 			],
 			"triggers": [],

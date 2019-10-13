@@ -84,7 +84,14 @@
         "thread": "c",
         "map": "c",
         "worldmap.h": "c",
-        "sprites.h": "c"
+        "sprites.h": "c",
+        "battle_bgs.h": "c",
+        "map_connections.h": "c",
+        "field_move.h": "c",
+        "field_moves.h": "c",
+        "data_structures.h": "c",
+        "block.h": "c",
+        "stdbool.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

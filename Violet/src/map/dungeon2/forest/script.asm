@@ -36,6 +36,19 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 
 ow_script_test:
+givepokemon POKEMON_ICOGNITO 12 0 0 0 0
+end
+
+lock
+setvar 0x8004 2
+special2 0x800D SPECIAL_PLAYER_PARTY_SPELLS_UNOWN_MESSAGE
+special SPECIAL_UNOWN_MESSAGE_PRINT
+waitstate
+special SPECIAL_UNOWN_MESSAGE_REMOVE
+release
+end
+
+
 sound 0xd1
 setanimation 0x0 0x47
 setanimation 0x1 0x1d

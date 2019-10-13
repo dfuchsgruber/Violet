@@ -732,7 +732,7 @@
 .byte 0x76
 .endm
 
-.macro cmd77 
+.macro braille_close 
 .byte 0x77
 .endm
 

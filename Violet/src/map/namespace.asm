@@ -370,7 +370,7 @@ map_namespaces:
 	.global str_mapnamespace_130
 
 	str_mapnamespace_130:
-		.string "Tunnelpfad"
+		.string "Antike Ruine"
 
 
 	.global str_mapnamespace_131

@@ -3,7 +3,7 @@
 		"footer": "map_footer_route_11_clouds",
 		"events": {
 			"person_cnt": 2,
-			"warp_cnt": 0,
+			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -50,7 +50,40 @@
 					}
 				}
 			],
-			"warps": [],
+			"warps": [
+				{
+					"x": "6",
+					"y": "30",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "12",
+					"target_bank": "3"
+				},
+				{
+					"x": "7",
+					"y": "30",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "12",
+					"target_bank": "3"
+				},
+				{
+					"x": "7",
+					"y": "31",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "12",
+					"target_bank": "3"
+				},
+				{
+					"x": "6",
+					"y": "31",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "12",
+					"target_bank": "3"
+				}
+			],
 			"triggers": [],
 			"signposts": []
 		},

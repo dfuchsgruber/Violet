@@ -3,7 +3,7 @@
 		"footer": "map_footer_laubdorf_clouds",
 		"events": {
 			"person_cnt": 3,
-			"warp_cnt": 0,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -71,7 +71,24 @@
 					}
 				}
 			],
-			"warps": [],
+			"warps": [
+				{
+					"x": "5",
+					"y": "20",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "7",
+					"target_bank": "12"
+				},
+				{
+					"x": "6",
+					"y": "20",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "7",
+					"target_bank": "12"
+				}
+			],
 			"triggers": [],
 			"signposts": []
 		},

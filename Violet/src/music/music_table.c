@@ -756,5 +756,7 @@ song song_table[] = {
   {mus_forest_cemetery, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 376 = (0x178)
   {mus_haweiland, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 377 = (0x179)
+  {mus_regi_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

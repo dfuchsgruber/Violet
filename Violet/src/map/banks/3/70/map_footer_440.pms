@@ -1,6 +1,4 @@
 {
-	"type": "footer",
-	"label": "map_footer_440",
 	"data": {
 		"border": [
 			[
@@ -25,7 +23,7 @@
 			]
 		],
 		"tileset_primary": "maptileset0",
-		"tileset_secondary": "maptileset15",
+		"tileset_secondary": "maptileset_cave",
 		"blocks": [
 			[
 				{
@@ -6513,5 +6511,7 @@
 		"border_width": 2,
 		"border_height": 2,
 		"field_1A": 0
-	}
+	},
+	"label": "map_footer_440",
+	"type": "footer"
 }

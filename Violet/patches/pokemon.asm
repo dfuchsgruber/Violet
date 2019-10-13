@@ -665,7 +665,10 @@
 .org 0x807470c
 	.word pokemon_altitude
 
-
+// Prevent pokemon from being flipped during summary
+.org 0x080440f4
+	mov r0, #1
+	bx lr
 
 
 .org 0x080746EC

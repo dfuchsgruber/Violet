@@ -7978,27 +7978,27 @@
 				},
 				{
 					"tile_idx": 656,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 9
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 657,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 9
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 672,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 9
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 673,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 9
+					"vertical_flip": 0
 				}
 			],
 			[

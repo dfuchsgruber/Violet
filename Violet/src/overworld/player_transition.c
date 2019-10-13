@@ -10,17 +10,19 @@
 #include "debug.h"
 #include "overworld/sprite.h"
 #include "oam.h"
+#include "superstate.h"
 
 void player_transition_water_to_land(u8 direction) {
     overworld_script_set_active();
     npc_stop_all_movements_but_players();
     save_set_player_non_surfing();
     // Adjust the player state depending if on a cloud map
+    player_state.state &= (u8)(~PLAYER_STATE_SURFING);
     if (map_is_cloud()) {
-        player_state.state &= (u8)(~PLAYER_STATE_SURFING | PLAYER_STATE_BIKING);
+        player_state.state |= PLAYER_STATE_BIKING;
         playsong1(MUS_CLOUDS, 8);
     } else {
-        player_state.state = (u8)(~PLAYER_STATE_SURFING | PLAYER_STATE_WALKING);
+        player_state.state |= PLAYER_STATE_WALKING;
         map_current_play_song_if_not_playing();
     }
     player_state.is_locked = 1;
@@ -32,8 +34,11 @@ void player_transition_water_to_land(u8 direction) {
 void player_transition_water_to_land_callback_update_npc(u8 self) {
     npc *n = npcs + player_state.npc_idx;
     if (npc_animation_finished(n)) {
-        npc_player_set_bike_state(2);
-        u8 picture = player_get_overworld_picture(map_is_cloud() ? OVERWORLD_PLAYER_PICTURE_CONTEXT_BIKING : OVERWORLD_PLAYER_PICTURE_CONTEXT_WALKING);
+        u8 picture = OVERWORLD_PLAYER_PICTURE_CONTEXT_WALKING;
+        if (map_is_cloud()) {
+            npc_player_set_bike_state(2);
+            picture = OVERWORLD_PLAYER_PICTURE_CONTEXT_BIKING;
+        }
         npc_update_picture(n, picture);
         npc_do_facing_move(n, npc_get_facing_movement_by_direction((u8)(big_callbacks[self].params[0])));
         player_state.is_locked = false;
@@ -41,6 +46,7 @@ void player_transition_water_to_land_callback_update_npc(u8 self) {
         npc_update_oam_delay_all();
         oam_clear_and_free_vram(oams + npcs[player_state.npc_idx].oam_surf);
         big_callback_delete(self);
+        game_context_update();
     }
 }
 

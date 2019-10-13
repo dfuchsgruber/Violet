@@ -17,12 +17,12 @@
 #include "constants/block_hm_usage.h"
 #include "debug.h"
 #include "oam.h"
-
+#include "constants/vars.h"
 
 
 
 void field_move_rock_climb_overworld() {
-	*var_access(0x800D) = pokemon_party_menu_get_current_index();
+	*var_access(LASTRESULT) = pokemon_party_menu_get_current_index();
 	overworld_script_init(ow_script_execute_rock_climb);
 }
 
@@ -41,7 +41,7 @@ bool rock_climb_block_is_climbable() {
 	return false;
 }
 
-bool field_move_rock_climb_init() {
+bool field_move_check_rock_climb() {
 	if (checkflag(FRBADGE_8) || true) {
 		// Check if there is a dungeon to enter
 		if (rock_climb_block_is_climbable()) {

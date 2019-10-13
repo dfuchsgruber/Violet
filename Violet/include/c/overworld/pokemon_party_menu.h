@@ -12,25 +12,27 @@
 #include "pokemon/virtual.h"
 
 typedef struct {
-    void *callback;
+    void (*callback)();
     u16 field_4;
     u16 field_6;
     u16 field_8;
     u16 field_A;
-    u8 box_id_question;
-    u8 box_id_options;
-    u8 box_id_description;
-    u8 opts[4];
-    u8 field_13;
-    u8 field_14;
-    u8 field_15;
-    u8 field_16;
-    u8 opt_cnt;
+    u8 tbox_idx_question;
+    u8 tbox_idx_options;
+    u8 tbox_idx_description;
+    u8 options[4];
+    u8 field_19;
+    u8 field_20;
+    u8 field_21;
+    u8 field_22;
+    u8 number_options;
+    u8 field_24[512];
+    u16 outdoor_move_idx;
 
-} pokemon_party_menu_opt_state_t;
+} pokemon_party_menu_options_state_t;
 
 typedef struct {
-    pokemon_party_menu_opt_state_t *opt_state;
+    pokemon_party_menu_options_state_t *options_state;
     void *callback;
 } pokemon_party_menu_state_t;
 

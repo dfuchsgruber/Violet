@@ -16,6 +16,7 @@ void pokedex_habitats_add_position(int x, int y, pokedex_habitat_pair *dst, int 
             return;
         }
     }
+    dprintf("Add habitat position (%d, %d)\n", x, y);
     dst[*size].worldmap_x = (u8)x;
     dst[*size].worldmap_y = (u8)y;
     dst[*size].probability = (u8)probability;

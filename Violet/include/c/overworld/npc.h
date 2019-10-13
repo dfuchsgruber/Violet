@@ -91,6 +91,8 @@ typedef struct {
 
 extern npc npcs[];
 extern player_state_t player_state;
+// Npc idx of the trainer to battle
+extern u8 trainer_npc_idx;
 
 /**
  * Checks if a tile is blocked for an npc in a given directions

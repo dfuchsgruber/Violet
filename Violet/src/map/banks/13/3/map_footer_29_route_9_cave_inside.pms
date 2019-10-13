@@ -1655,7 +1655,7 @@
 			]
 		],
 		"tileset_primary": "maptileset0",
-		"tileset_secondary": "maptileset15",
+		"tileset_secondary": "maptileset_cave",
 		"field_1A": 0
 	},
 	"label": "map_footer_29_route_9_cave_inside",

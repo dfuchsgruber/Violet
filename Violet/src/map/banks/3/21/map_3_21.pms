@@ -3,9 +3,9 @@
 		"footer": "map_footer_91",
 		"events": {
 			"person_cnt": 29,
-			"warp_cnt": 3,
+			"warp_cnt": 4,
 			"trigger_cnt": 4,
-			"signpost_cnt": 18,
+			"signpost_cnt": 21,
 			"persons": [
 				{
 					"target_index": 1,
@@ -669,6 +669,14 @@
 					"target_bank": 0,
 					"target_map": 5,
 					"target_warp_idx": 3
+				},
+				{
+					"x": "12",
+					"y": "6",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "0",
+					"target_bank": "28"
 				}
 			],
 			"triggers": [
@@ -1023,10 +1031,61 @@
 							"chunk": 0
 						}
 					}
+				},
+				{
+					"x": "11",
+					"y": "6",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_felsige_oednis_regirock_cave_entrance"
+					}
+				},
+				{
+					"x": "12",
+					"y": "6",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_felsige_oednis_regirock_cave_entrance"
+					}
+				},
+				{
+					"x": "13",
+					"y": "6",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_felsige_oednis_regirock_cave_entrance"
+					}
 				}
 			]
 		},
-		"levelscripts": "lscr_0x71a984",
+		"levelscripts": "levelscript_felsige_oednis",
 		"connections": {
 			"connection_cnt": 1,
 			"connections": [

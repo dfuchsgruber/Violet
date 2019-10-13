@@ -11,6 +11,8 @@
 #include "debug.h"
 #include "flags.h"
 #include "constants/flags.h"
+#include "map/header.h"
+#include "constants/map_connections.h"
 
 u16 roamer_species[NUM_ROAMERS] = {
     [ROAMER_ARKTOS] = POKEMON_ARKTOS,
@@ -18,25 +20,6 @@ u16 roamer_species[NUM_ROAMERS] = {
     [ROAMER_LAVADOS] = POKEMON_LAVADOS
 };
 
-roamer_map_t roamer_maps[NUM_ROAMER_MAPS] = {
-    // Route 1
-    {.bank = 3, .map_idx = 76, .adjacent_maps = {
-        {.bank = 11, .map_idx = 2}, // Route 2
-    }},
-    // Route 2
-    {.bank = 11, .map_idx = 2, .adjacent_maps = {
-        {.bank = 3, .map_idx = 76}, // Route 1,
-        {.bank = 17, .map_idx = 2}, // Route 5
-    }},
-    // Route 5
-    {.bank = 17, .map_idx = 2, .adjacent_maps  = {
-        {.bank = 11, .map_idx = 2}, // Route 2
-    }},
-    // Route 10
-    {.bank = 14, .map_idx = 0, .adjacent_maps = {
-    }},
-
-};
 
 
 void roamer_reset_all() {
@@ -55,6 +38,12 @@ void roamer_reset(int roamer_idx) {
     cmem.roamer_locations[roamer_idx].map_idx = 0;
 }
 
+int roamer_get_random_map() {
+    int i = 0;
+    while (cloud_maps[i].bank != 0xFF && cloud_maps[i].map_idx != 0xFF) i++;
+    return rnd16() % i;
+}
+
 void roamer_initialize(int roamer_idx) {
     pid_t pid = {0};
     pokemon_new(&opponent_pokemon[0], roamer_species[roamer_idx], ROAMER_LEVEL, POKEMON_NEW_RANDOM_IVS, false, pid, false, 0);
@@ -69,9 +58,10 @@ void roamer_initialize(int roamer_idx) {
     }
     roamer->status = 0;
     roamer->is_present = 1;
-    int roamer_map_idx = rnd16() % NUM_ROAMER_MAPS;
-    cmem.roamer_locations[roamer_idx].bank = roamer_maps[roamer_map_idx].bank;
-    cmem.roamer_locations[roamer_idx].map_idx = roamer_maps[roamer_map_idx].map_idx;
+
+    int roamer_map_idx = roamer_get_random_map();
+    cmem.roamer_locations[roamer_idx].bank = cloud_maps[roamer_map_idx].bank;
+    cmem.roamer_locations[roamer_idx].map_idx = cloud_maps[roamer_map_idx].map_idx;
 }
 
 void special_roamer_reset_and_initialize() {
@@ -97,9 +87,9 @@ void roamer_randomize_position(int roamer_idx) {
     if (cmem.roamers[roamer_idx].is_present) {
         u8 new_map_idx, new_bank;
         do {
-            int new_idx = rnd16() % NUM_ROAMER_MAPS;
-            new_bank = roamer_maps[new_idx].bank;
-            new_map_idx = roamer_maps[new_idx].map_idx;
+            int new_idx = roamer_get_random_map();
+            new_bank = cloud_maps[new_idx].bank;
+            new_map_idx = cloud_maps[new_idx].map_idx;
         } while (new_bank == cmem.roamer_locations[roamer_idx].bank && new_map_idx == cmem.roamer_locations[roamer_idx].map_idx);
         cmem.roamer_locations[roamer_idx].bank = new_bank;
         cmem.roamer_locations[roamer_idx].map_idx = new_map_idx;
@@ -121,33 +111,33 @@ void roamer_move_all() {
                 roamer_randomize_position(i);
                 dprintf("Roamer %d randomly changed their location\n", i);
             } else {
-                // Find the index in the roamer map table
-                u8 roamer_map_idx;
-                for (roamer_map_idx = 0; roamer_map_idx < NUM_ROAMER_MAPS; roamer_map_idx++) {
-                    if (cmem.roamer_locations[i].map_idx == roamer_maps[roamer_map_idx].map_idx &&
-                        cmem.roamer_locations[i].bank == roamer_maps[roamer_map_idx].bank) {
-                        break;
+                u8 bank = cmem.roamer_locations[i].bank;
+                u8 map_idx = cmem.roamer_locations[i].map_idx;
+                map_header_t *header = get_mapheader(bank, map_idx);
+                roamer_history_entry_t adjacent_maps[4];
+                int num_adjacent_maps = 0;
+                for (u32 j = 0; j < header->connections->count; j++) {
+                    switch (header->connections->connections[j].direction) {
+                        case MAP_CONNECTION_SOUTH:
+                        case MAP_CONNECTION_NORTH:
+                        case MAP_CONNECTION_WEST:
+                        case MAP_CONNECTION_EAST:
+                            if (num_adjacent_maps < 4) {
+                                adjacent_maps[num_adjacent_maps].bank = header->connections->connections[j].bank;
+                                adjacent_maps[num_adjacent_maps].map_idx = header->connections->connections[j].map;
+                                num_adjacent_maps++;
+                            }
+                            break;
                     }
                 }
-                if (roamer_map_idx >= NUM_ROAMER_MAPS) {
-                    derrf("Roamer location does not correspond to any roamer map.\n");
-                    return;
+                if (rnd16() % 8 > 0 && num_adjacent_maps > 0) {
+                    int new_idx = rnd16() % num_adjacent_maps;
+                    cmem.roamer_locations[i].bank = adjacent_maps[new_idx].bank;
+                    cmem.roamer_locations[i].map_idx = adjacent_maps[new_idx].map_idx;
+                    dprintf("Roamer %d moved to %d.%d\n", i, adjacent_maps[new_idx].bank, adjacent_maps[new_idx].map_idx);
+                } else {
+                    dprintf("Roamer %d stayed on %d.%d\n", i, cmem.roamer_locations[i].bank, cmem.roamer_locations[i].map_idx);
                 }
-                // Find an adjacent map_idx to reloacte the roamer
-                u8 new_bank;
-                u8 new_map_idx;
-                do {
-                    int new_idx = rnd16() % ROAMER_MAP_MAX_NUMBER_ADJACENT_MAPS;
-                    new_bank = roamer_maps[roamer_map_idx].adjacent_maps[new_idx].bank;
-                    new_map_idx = roamer_maps[roamer_map_idx].adjacent_maps[new_idx].map_idx;
-                    if (new_map_idx == 0 && new_bank == 0) {
-                        dprintf("Roamer %d stayed on map %d.%d\n", i, cmem.roamer_locations[i].bank, cmem.roamer_locations[i].map_idx);
-                        return;
-                    }
-                } while (new_map_idx == cmem.roamer_histories[i][2].map_idx && new_bank == cmem.roamer_histories[i][2].bank);
-                cmem.roamer_locations[i].bank = new_bank;
-                cmem.roamer_locations[i].map_idx = new_map_idx;
-                dprintf("Roamer %d moved to %d.%d\n", i, new_bank, new_map_idx);
             }
         }
     }

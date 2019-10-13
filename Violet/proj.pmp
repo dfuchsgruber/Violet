@@ -370,6 +370,11 @@
 				"map_aktania_clouds",
 				"src/map/banks/6/6/map_aktania_clouds.pms",
 				"MAP_AKTANIA"
+			],
+			"7": [
+				"map_aktania_cloud_ruins",
+				"src/map/banks/6/7/map_aktania_cloud_ruins.pms",
+				"MAP_AKTANIA"
 			]
 		},
 		"7": {
@@ -454,6 +459,11 @@
 				"map_kaskada_clouds",
 				"src/map/banks/8/1/map_kaskada_clouds.pms",
 				"MAP_KASKADA"
+			],
+			"2": [
+				"map_kaskada_cloud_ruins",
+				"src/map/banks/8/2/map_kaskada_cloud_ruins.pms",
+				"MAP_KASKADA"
 			]
 		},
 		"9": {
@@ -530,6 +540,11 @@
 			"2": [
 				"map_orina_city_inside_0",
 				"src/map/banks/9/2/map_orina_city_inside_0.pms",
+				"MAP_ORINA_CITY"
+			],
+			"4": [
+				"map_orina_city_cloud_ruins",
+				"src/map/banks/9/4/map_orina_city_cloud_ruins.pms",
 				"MAP_ORINA_CITY"
 			]
 		},
@@ -712,6 +727,11 @@
 				"map_laubdorf_inside_3",
 				"src/map/banks/12/6/map_laubdorf_inside_3.pms",
 				"MAP_LAUBDORF"
+			],
+			"7": [
+				"map_laubdorf_cloud_ruins",
+				"src/map/banks/12/7/map_laubdorf_cloud_ruins.pms",
+				"MAP_LAUBDORF"
 			]
 		},
 		"13": {
@@ -869,6 +889,18 @@
 				"map_haweiland_clouds",
 				"src/map/banks/27/0/map_haweiland_clouds.pms",
 				"MAP_HAWEILAND"
+			],
+			"1": [
+				"map_haweiland_cloud_ruins",
+				"src/map/banks/27/1/map_haweiland_cloud_ruins.pms",
+				"MAP_HAWEILAND"
+			]
+		},
+		"28": {
+			"0": [
+				"map_antike_ruine_regirock",
+				"src/map/banks/28/map_antike_ruine_regirock.pms",
+				"MAP_ANTIKE_RUINE"
 			]
 		}
 	},
@@ -1452,6 +1484,30 @@
 		"map_footer_route_2_cloud_ruins": [
 			68,
 			"src/map/banks/11/4/map_footer_route_2_cloud_ruins.pms"
+		],
+		"map_aktania_cloud_ruins_footer": [
+			69,
+			"src/map/banks/6/7/map_aktania_cloud_ruins_footer.pms"
+		],
+		"map_kaskada_cloud_ruins_footer": [
+			70,
+			"src/map/banks/8/2/map_kaskada_cloud_ruins_footer.pms"
+		],
+		"map_orina_city_cloud_ruins_footer": [
+			71,
+			"src/map/banks/9/4/map_orina_city_cloud_ruins_footer.pms"
+		],
+		"map_footer_laubdorf_cloud_ruins": [
+			72,
+			"src/map/banks/12/7/map_footer_laubdorf_cloud_ruins.pms"
+		],
+		"map_footer_haweiland_cloud_ruins": [
+			73,
+			"src/map/banks/27/1/map_footer_haweiland_cloud_ruins.pms"
+		],
+		"map_footer_antike_ruinen_regirock": [
+			74,
+			"src/map/banks/28/map_footer_antike_ruinen_regirock.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1475,7 +1531,6 @@
 		"maptileset26": "src/map/tileset/maptileset26.pms",
 		"maptileset245157": "src/map/tileset/maptileset245157.pms",
 		"maptileset16": "src/map/tileset/maptileset16.pms",
-		"maptileset15": "src/map/tileset/maptileset15.pms",
 		"maptileset282712": "src/map/tileset/maptileset282712.pms",
 		"maptileset278730": "src/map/tileset/maptileset278730.pms",
 		"maptileset29": "src/map/tileset/maptileset29.pms",
@@ -1496,7 +1551,8 @@
 		"maptileset_ceometria_gym": "src/map/tileset/maptileset_ceometria_gym.pms",
 		"maptileset_haweiland": "src/map/tileset/gfx_maptileset_haweiland.pms",
 		"maptileset_cloud_ruins": "src/map/tileset/maptileset_cloud_ruins.pms",
-		"maptileset_cloud_ruins_inside": "src/map/tileset/maptileset_cloud_ruins_inside.pms"
+		"maptileset_cloud_ruins_inside": "src/map/tileset/maptileset_cloud_ruins_inside.pms",
+		"maptileset_cave": "src/map/tileset/maptileset15.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",

@@ -3,7 +3,7 @@
 		"footer": "map_footer_haweiland_clouds",
 		"events": {
 			"person_cnt": 5,
-			"warp_cnt": 0,
+			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -113,7 +113,24 @@
 					}
 				}
 			],
-			"warps": [],
+			"warps": [
+				{
+					"x": "38",
+					"y": "24",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "1",
+					"target_bank": "27"
+				},
+				{
+					"x": "39",
+					"y": "24",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "1",
+					"target_bank": "27"
+				}
+			],
 			"triggers": [],
 			"signposts": []
 		},

@@ -13,6 +13,8 @@
 #include "data_structures.h"
 #include "vars.h"
 #include "agbmemory.h"
+#include "trainer/virtual.h"
+#include "constants/movements.h"
 
 void special_move_npc_to_player() {
     s16 pos[2];
@@ -28,38 +30,21 @@ void special_move_npc_to() {
     npc_move_to(target, x, y);
 }
 
-//static u8 facings[] = {0xFF, 0x1, 0x0, 0x3, 0x2};
 
 void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y) {
-
     u8 npc_id;
     if (npc_get_id_by_overworld_id(ow_id, save1->map, save1->bank, &npc_id))
         return;
-    *((u8*) 0x03004FC4) = npc_id;
-    /**
-    s16 x_from = npcs[npc_id].dest_x;
-    s16 y_from = npcs[npc_id].dest_y;
-     **/
-    u8 *dyn_move = (u8*) malloc(256); //dynamic space for movement list
-
+    trainer_npc_idx = npc_id;
+    u8 *dyn_move = (u8*) malloc(256); // dynamic space for movement list
     a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id]);
-    //dprintf("path is %x\n", dyn_move);
-    /**Now we generate a move list
-    int processed = 0;
-    processed += move_npc_to_player_movegen(horizontal_first ? x_from : y_from, horizontal_first ? dest_x : dest_y, dyn_move, horizontal_first, processed);
-    processed += move_npc_to_player_movegen(horizontal_first ? y_from : x_from, horizontal_first ? dest_y : dest_x, dyn_move, !horizontal_first, processed);
-     **/
-
     npc_apply_movement(ow_id, save1->map, save1->bank, dyn_move);
-
     u8 cb = big_callback_new(npc_move_to_freeing_callback, 10);
     big_callback_set_int(cb, 0, (int) dyn_move);
     big_callbacks[cb].params[2] = ow_id;
     big_callbacks[cb].params[3] = (u16) dest_x;
     big_callbacks[cb].params[4] = (u16) dest_y;
-
-
-    *((u16*) 0x20370B0) = ow_id;
+    npc_movement_target_person_idx = ow_id;
 }
 
 void npc_move_to_freeing_callback(u8 self) {
@@ -67,11 +52,53 @@ void npc_move_to_freeing_callback(u8 self) {
     u8 npc_id;
     if (npc_get_id_by_overworld_id((u8) big_callbacks[self].params[2], save1->map, save1->bank, &npc_id))
         return;
-
     if (npcs[npc_id].dest_x == (s16) (big_callbacks[self].params[3]) &&
             npcs[npc_id].dest_y == (s16) (big_callbacks[self].params[4])) {
-        //free((void*)big_callback_get_int(self, 0));
         big_callback_delete(self);
     }
 }
 
+void npc_move_camera_to() {
+    s16 x_destination = (s16) (*var_access(0x8004) + 7);
+    s16 y_destination = (s16) (*var_access(0x8005) + 7); 
+    u8 npc_idx = 0;
+    if (npc_get_id_by_overworld_id(0x7F, save1->map, save1->bank, &npc_idx))
+        return;
+    trainer_npc_idx = npc_idx;
+    s16 x = npcs[npc_idx].dest_x;
+    s16 y = npcs[npc_idx].dest_y;
+    int i = 0;
+    u8 *moves = (u8*) malloc(256); 
+
+    bool horizontal = ABS(x - x_destination) > ABS(y - y_destination);
+
+    while (x != x_destination || y != y_destination) {
+        if (horizontal) {
+            if (x_destination > x) {
+                moves[i++] = STEP_RIGHT;
+                x++;
+            } else {
+                moves[i++] = STEP_LEFT;
+                x--;
+            }
+            if (x == x_destination) horizontal = false;
+        } else if (!horizontal) {
+            if (y_destination > y) {
+                moves[i++] = STEP_DOWN;
+                y++;
+            } else {
+                moves[i++] = STEP_UP;
+                y--;
+            }
+            if (y == y_destination) horizontal = true;
+        }
+    }
+    moves[i++] = STOP;
+    npc_apply_movement(0x7F, save1->map, save1->bank, moves);
+    u8 cb = big_callback_new(npc_move_to_freeing_callback, 10);
+    big_callback_set_int(cb, 0, (int)moves);
+    big_callbacks[cb].params[2] = 0x7F;
+    big_callbacks[cb].params[3] = (u16) x_destination;
+    big_callbacks[cb].params[4] = (u16) y_destination;
+    npc_movement_target_person_idx = 0x7F;
+}

@@ -10,14 +10,16 @@
 #include "vars.h"
 
 
-void tile_init(map_footer_t *foot) {
+static color_t dns_color_light_yellow = {.rgb = {.red = 232 / 8, .green = 216 / 8, .blue = 104 / 8}};
+static color_t dns_color_light_yellow_dark = {.rgb = {.red = 216 / 8, .green = 168 / 8, .blue = 48 / 8}};
+static color_t dns_color_light_yellow_weak_dark = {.rgb = {.red = 248 / 8, .green = 200 / 8,
+    .blue = 112 / 8}};
+static color_t dns_color_light_yellow_light = {.rgb = {.red = 248 / 8, .green = 232 / 8,
+    .blue = 192 / 8}};
+static color_t dns_color_flame_yellow = {.rgb = {.red = 31, .green = 25, .blue = 7}};
+static color_t dns_color_flame_orange = {.rgb = {.red = 31, .green = 17, .blue = 7}};
 
-  color_t dns_color_light_yellow = {.rgb = {.red = 232 / 8, .green = 216 / 8, .blue = 104 / 8}};
-  color_t dns_color_light_yellow_dark = {.rgb = {.red = 216 / 8, .green = 168 / 8, .blue = 48 / 8}};
-  color_t dns_color_light_yellow_weak_dark = {.rgb = {.red = 248 / 8, .green = 200 / 8,
-      .blue = 112 / 8}};
-  color_t dns_color_light_yellow_light = {.rgb = {.red = 248 / 8, .green = 232 / 8,
-      .blue = 192 / 8}};
+void tile_init(map_footer_t *foot) {
 
     if (dns_on()) {
         if (foot->tileset1 == &maptileset0) {
@@ -26,10 +28,8 @@ void tile_init(map_footer_t *foot) {
             pal_restore[0x22] = dns_color_light_yellow;
             pal_restore[0x25] = dns_color_light_yellow_dark;
         } else if (foot->tileset1 == &maptileset_clouds) {
-            color_t col_flame_yellow = {.rgb = {.red = 31, .green = 25, .blue = 7}};
-            color_t col_flame_orange = {.rgb = {.red = 31, .green = 17, .blue = 7}};
-            pal_restore[2 * 16 + 14] = col_flame_yellow;
-            pal_restore[2 * 16 + 15] = col_flame_orange;
+            pal_restore[2 * 16 + 14] = dns_color_flame_yellow;
+            pal_restore[2 * 16 + 15] = dns_color_flame_orange;
         }
         if (foot->tileset2 == &maptileset245157) {
             //Orina City TS2
@@ -113,6 +113,9 @@ void tile_init(map_footer_t *foot) {
             pal_restore[9 * 16 + 13] = dns_color_light_yellow_dark;
             pal_restore[9 * 16 + 14] = dns_color_light_yellow;
             pal_restore[9 * 16 + 15] = dns_color_light_yellow_light;
+        } else if (foot->tileset2 == &maptileset_cloud_ruins) {
+            pal_restore[9 * 16 + 8] = dns_color_flame_orange;
+            pal_restore[9 * 16 + 8] = dns_color_flame_yellow;
         }
     }
 }

@@ -190,7 +190,7 @@
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "ROUTE_8_ITEM_2",
 					"value": {
 						"item": "ITEM_HYPERBALL",
 						"species": 0

@@ -233,6 +233,7 @@ void ev_menu_load_evs_and_ivs() {
 }
 
 void ev_menu_load_pokemon() {
+
 	pokemon *p = &player_pokemon[fmem.ev_menu_state->party_idx];
 	pid_t pid = {.value = (u32) pokemon_get_attribute(p,ATTRIBUTE_PID, 0)};
 	bool is_egg = pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0);

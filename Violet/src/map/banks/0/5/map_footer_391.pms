@@ -23,7 +23,7 @@
 			]
 		],
 		"tileset_primary": "maptileset0",
-		"tileset_secondary": "maptileset15",
+		"tileset_secondary": "maptileset_cave",
 		"blocks": [
 			[
 				{

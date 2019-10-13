@@ -58,11 +58,17 @@ int hashmap_remove(u32 key, hashmap *map);
 
 int hashmap_get(u32 key, hashmap *map);
 
+#define A_STAR_INITIAL_QUEUE_SIZE 100
+#define A_STAR_NUM_BUCKETS 39
+#define A_STAR_PREDECESSOR_NONE 0xABCDABCD
+
 int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker);
 
 int a_star_reconstruct(u8 *path, s16 dest_x, s16 dest_y, hashmap *nodes);
 
-int a_star_to_key(s16 x, s16 y);
+int a_star_coordinates_to_key(s16 x, s16 y);
+
+void a_star_key_to_coordinates(int key, s16 *x, s16 *y);
 
 bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *walker);
 

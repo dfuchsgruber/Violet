@@ -5,8 +5,6 @@
 #include "pokemon/virtual.h"
 
 #define NUM_ROAMERS 3
-#define NUM_ROAMER_MAPS 4
-#define ROAMER_MAP_MAX_NUMBER_ADJACENT_MAPS 2
 #define ROAMER_LEVEL 35
 
 typedef struct {
@@ -32,15 +30,15 @@ typedef struct {
     u8 map_idx;
 } roamer_history_entry_t;
 
-typedef struct {
-    u8 bank;
-    u8 map_idx;
-    roamer_history_entry_t adjacent_maps[ROAMER_MAP_MAX_NUMBER_ADJACENT_MAPS];
-} roamer_map_t;
+extern roamer_history_entry_t cloud_maps[];
 
-roamer_map_t roamer_maps[NUM_ROAMER_MAPS];
 u16 roamer_species[NUM_ROAMERS];
 
+/**
+ * Gets the index of a random cloud map to spawn a roamer on.
+ * @return the index of a random cloud map to access cloud_maps
+ */
+int roamer_get_random_map();
 
 /**
  * Resets all roamers

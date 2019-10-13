@@ -178,6 +178,7 @@ typedef struct {
     trainer_pokemon_custom_item_custom_attacks dynamic_trainer_party[3];
     u8 roamer_last_encountered;
     u8 start_menu_clock_oam_idxs[4];
+    u8 tbox_idx_braille;
     
 } floating_memory;
 

@@ -3,7 +3,7 @@
 		"footer": "map_footer_kaskada_clouds",
 		"events": {
 			"person_cnt": 6,
-			"warp_cnt": 4,
+			"warp_cnt": 6,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
 			"persons": [
@@ -166,6 +166,22 @@
 					"target_warp_idx": "13",
 					"target_map": "4",
 					"target_bank": "3"
+				},
+				{
+					"x": "30",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "2",
+					"target_bank": "8"
+				},
+				{
+					"x": "31",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "2",
+					"target_bank": "8"
 				}
 			],
 			"triggers": [],

@@ -7,16 +7,24 @@
 #include "io.h"
 #include "constants/specials.h"
 
-u16 transparency_disabling_special_ids [] = {
+
+
+static u16 transparency_disabling_special_ids [] = {
     0xF9, 0x190, 0xFD, 0xFE, SPECIAL_SELECT_PARTY_POKEMON, 0x2B, 0x2C, SPECIAL_DAYCARE_SELECT_PARTY_POKEMON,
-    SPECIAL_PARTY_POKEMON_SELECT_MOVE, SPECIAL_MOVE_TUTOR_SELECT_POKEMON, 0xFFFF};
-u8 transparency_disabling_command_ids [] = {0x2, 0x97, 0x5C, 0x5D, 0xB7, 0x29, 0x8E,
-    0x86, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E, 0x40, 0x41, 0x6B, 0x6C, 0xFF};
+    SPECIAL_PARTY_POKEMON_SELECT_MOVE, SPECIAL_MOVE_TUTOR_SELECT_POKEMON, SPECIAL_UNOWN_MESSAGE_PRINT, 
+    SPECIAL_WILD_BATTLE_LEGENDARY_INITIALIZE,
+    0xFFFF
+};
+
+u8 transparency_disabling_command_ids [] = {
+    0x2, 0x97, 0x5C, 0x5D, 0xB7, 0x29, 0x8E,
+    0x86, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E, 0x40, 0x41, 0x6B, 0x6C, 0x77, 0x78, 0xFF
+};
 
 void transparency_handler(u8 *command) {
     //dprintf("Story progress is %d\n", *var_access(0x4051));
     //dprintf("Transparency handler, cmd %x @ %x\n", *command, command);
-    if (*command != 0x27) { //waitstate bypasses the entire handle
+    if (*command != 0x27 && *command != 0x6d) { //waitstate bypasses the entire handle, also waitkeypress
         if (transparency_is_on()) {
             //We check if have a special that disables the transparency
             if (*command == 0x26 || *command == 0x25) {

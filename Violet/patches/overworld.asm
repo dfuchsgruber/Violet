@@ -116,7 +116,13 @@ overworld_pals equ 0x083A501C
 .org 0x08239EAC
     .word gfx_hiroine_throwPal
 
-.org 0x0815F914 + 4 * 0x97
+.org overworld_script_commands + 4 * 0x77
+    .word overworld_script_command_close_braille | 1
+
+.org overworld_script_commands + 4 * 0x78
+    .word overworld_script_command_braille | 1
+
+.org overworld_script_commands + 4 * 0x97
     .word script_cmd_x97_fadescreen | 1
 
 // Overworld script std strings
@@ -154,3 +160,21 @@ overworld_pals equ 0x083A501C
     ldr r1, = player_transition_water_to_land_callback_update_npc | 1
     bx r1
     .pool
+
+
+.org 0x08122A34
+    ldr r3, =pokemon_party_menu_options_build | 1
+    bx r3
+    .pool
+
+.org 0x8120FA8
+    .word pokemon_party_menu_options
+
+.org 0x8121FF0
+    .word pokemon_party_menu_options
+
+.org 0x8122D50
+    .word pokemon_party_menu_options
+
+.org 0x8122D80
+    .word pokemon_party_menu_options

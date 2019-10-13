@@ -17,7 +17,7 @@
 extern u8 ow_script_trainerschool_wildbattle[];
 
 u16 map_wild_pokemon_get_current_table_id(){
-		if (!wild_pokemon_get_current_unown_letters() || true || checkflag(FLAG_UNOWN_ENABLED)) {
+		if (!wild_pokemon_get_current_unown_letters() || checkflag(FLAG_UNOWN_ENABLED)) {
 			for (u16 i = 0; wild_pokemon[i].bank != 0xFF; i++){
 					if (wild_pokemon[i].bank == save1->bank &&
 									wild_pokemon[i].map == save1->map)
@@ -615,6 +615,21 @@ wild_pokemon_data wild_pokemon[] = {
 	},
 	{
 			.bank = 11, .map = 4, .grass = &wild_pokemon_unown_ruins_grass
+	},
+	{
+			.bank = 6, .map = 7, .grass = &wild_pokemon_unown_ruins_grass
+	},
+	{
+			.bank = 8, .map = 2, .grass = &wild_pokemon_unown_ruins_grass
+	},
+	{
+			.bank = 9, .map = 4, .grass = &wild_pokemon_unown_ruins_grass
+	},
+	{
+			.bank = 12, .map = 7, .grass = &wild_pokemon_unown_ruins_grass
+	},
+	{
+			.bank = 27, .map = 1, .grass = &wild_pokemon_unown_ruins_grass
 	},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,

@@ -17,6 +17,7 @@ map_3_8_route_3_levelscripts:
 ow_script_move_drampa:
 compare SEN_LONG_TRIGGER 1
 callif EQUAL move_drampa
+end
 
 move_drampa:
 movesprite2 0x1 0x15 0x6

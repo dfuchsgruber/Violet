@@ -160,7 +160,13 @@ battle_bg battle_bgs[29] = {
         gfx_battle_bg_haweilandMap,
         NULL, NULL,
         gfx_battle_bg_haweilandPal
-    }
+    },
+    [BATTLE_BG_CLOUD_RUINS] = {
+        gfx_battle_bg_cloud_ruinsTiles,
+        gfx_battle_bg_cloud_ruinsMap,
+        NULL, NULL,
+        gfx_battle_bg_cloud_ruinsPal,
+    },
 };
 
 
@@ -209,6 +215,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 	case BATTLE_BG_CAVE:
 	case BATTLE_BG_MOUNTAIN:
 	case BATTLE_BG_MUSEUM:
+    case BATTLE_BG_CLOUD_RUINS:
 		type = TYPE_GESTEIN;
 		break;
 	case BATTLE_BG_MILL:
@@ -267,7 +274,8 @@ u16 terrain_moves[] = {
     0, //captured
     ATTACK_SCHNABEL, //mill
     [BATTLE_BG_GRAVEYARD] = ATTACK_SPUKBALL,
-    [BATTLE_BG_HAWEILAND] = ATTACK_EIERBOMBE
+    [BATTLE_BG_HAWEILAND] = ATTACK_EIERBOMBE,
+    [BATTLE_BG_CLOUD_RUINS] = ATTACK_KRAFTRESERVE,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

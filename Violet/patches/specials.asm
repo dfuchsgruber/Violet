@@ -202,5 +202,20 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x5A * 4))
                 .word pokemon_has_type | 1
 
+.org (special_table + 91 * 4)
+                .word player_party_spells_unown_message | 1
+
+.org (special_table + 97 * 4)
+                .word overworld_unown_print_message | 1
+
+.org (special_table + 98 * 4)
+                .word overworld_unown_delete_message | 1
+
+.org (special_table + 99 * 4)
+                .word npc_move_camera_to | 1
+
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1
+
+.org special_table + 0x138 * 4
+                .word wild_battle_legendary_initialize | 1

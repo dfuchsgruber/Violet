@@ -12,6 +12,8 @@
 extern "C" {
 #endif
 
+    #define TBOX_FONT_STD 2
+    #define TBOX_FONT_BRAILLE 6
 
     typedef struct {
         u8 bg_id;
@@ -140,8 +142,8 @@ extern "C" {
      * @param print_charabase If 0 tileset is printed, if 0xFF only cached? (no idea honestly...)
      * @param str The string to print
      */
-    void tbox_print_string(u8 box_id, u8 font, u16 x, u16 y, u8 line_spacing_upper,
-        u8 line_spacing_lower, tbox_font_colormap* color_map, u8 speed, u8* str);
+    void tbox_print_string(u8 box_id, u8 font, u16 x, u16 y, u8 letter_spacing,
+        u8 line_spacing, tbox_font_colormap* color_map, u8 speed, u8* str);
 
     /**
      * Initializes multiple boxes on the virtual background

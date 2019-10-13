@@ -57,5 +57,7 @@
 	"levelscript_types" : "constants/levelscript_types.const",
 	"shader_states" : "constants/shader_states.const",
 	"pokemon_statuses" : "constants/pokemon_statuses.const",
-	"roamers" : "constants/roamers.const"
+	"roamers" : "constants/roamers.const",
+	"unown_messages" : "constants/unown_messages.const",
+	"field_moves" : "constants/field_moves.const"
 }

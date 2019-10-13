@@ -28,7 +28,7 @@
 #include "constants/map_types.h"
 
 extern tileset maptileset0;
-extern tileset maptileset15;
+extern tileset maptileset_cave;
 
 u16 dungeon2_cave_borders[4] = {0x291, 0x291, 0x291, 0x291};
 
@@ -60,7 +60,7 @@ map_footer_t *dungeon2_init_footer_cave(dungeon_generator2 *dg2){
     fmem.dmapfooter.width = (u32)dg2->width;
     fmem.dmapfooter.height = (u32)dg2->height;
     fmem.dmapfooter.tileset1 = &maptileset0;
-    fmem.dmapfooter.tileset2 = &maptileset15;
+    fmem.dmapfooter.tileset2 = &maptileset_cave;
     fmem.dmapfooter.border_blocks = dungeon2_cave_borders;
     fmem.dmapfooter.border_width = 2;
     fmem.dmapfooter.border_height = 2;

@@ -245,5 +245,17 @@ bool battle_is_double();
  */
 void battle_callback1();
 
+/**
+ * Initializes a battle.
+ * @param intro_type the intro type of the battle
+ * @param music the music to play during the battle
+ **/
+void battle_initialize(u8 intro_type, u16 music);
+
+/**
+ * Callback2 contiunation for wild  legendarybattles.
+ **/
+void battle_continuation_wild_legendary_battle_end();
+
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

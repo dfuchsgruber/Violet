@@ -148,6 +148,7 @@ extern const unsigned char mus_ceometria2[];
 extern const unsigned char mus_surfer[];
 extern const unsigned char mus_forest_cemetery[];
 extern const unsigned char mus_haweiland[];
+extern const unsigned char mus_regi_battle[];
 
 #endif	/* MUSIC_H */
 

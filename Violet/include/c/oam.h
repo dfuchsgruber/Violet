@@ -39,6 +39,9 @@
 
 #define ATTR2_PRIO(x) (x<<10)
 
+#define GRAPHIC_SIZE_4BPP(width, height) (width * height / 2)
+#define GRAPHIC_SIZE_8BPP(width, height) (width * height)
+
 struct oam_object;
 typedef struct oam_object oam_object;
 struct gfx_frame;
@@ -339,5 +342,12 @@ void oam_flip(oam_object *o, bool horizontal_flip, bool vertical_flip);
  * @param o the oam to clear
  **/
 void oam_clear_and_free_vram(oam_object *o);
+
+/**
+ * Allocates tiles for a oam graphic and copies it into vram.
+ * @param g the graphic to copy, the sprite is expected to be uncompressed
+ * @return t the tile where to graphic was copied to or 0xFFFF on failure
+ **/
+u16 oam_load_graphic_uncompressed(graphic *g);
 
 #endif

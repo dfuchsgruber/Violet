@@ -18,7 +18,7 @@ void field_move_secret_power_overworld() {
 	overworld_script_init(ow_script_dungeon_enter_field);
 }
 
-bool field_move_secret_power_init() {
+bool field_move_check_secret_power() {
 	if (checkflag(PLAYER_CAN_ENTER_DUNGEONS)) {
 		// Check if there is a dungeon to enter
 		if (dungeon_get_location_idx_player_is_facing() != -1) {
