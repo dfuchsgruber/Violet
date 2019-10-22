@@ -13,8 +13,7 @@ extern "C" {
 #endif
 
 #include "pokemon/virtual.h"
-
-#define ATTACK_CNT 413
+#include "constants/attacks.h"
 
     typedef struct{
         u8 effect;

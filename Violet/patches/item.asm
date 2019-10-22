@@ -4,6 +4,18 @@ item_resource equ 0x083D3BE8
 .org 0x0815F914 + (0x88*4)
     .word script_cmd_x88_pokemart3 | 1
 
+.org item_resource + 26 * 8
+    .word gfx_item_speziTiles
+    .word gfx_item_speziPal
+
+.org item_resource + 27 * 8
+    .word gfx_item_capri_sonneTiles
+    .word gfx_item_capri_sonnePal
+
+.org item_resource + 28 * 8
+    .word gfx_item_colaTiles
+    .word gfx_item_colaPal
+
 .org item_resource + 0x34 * 8
     .word gfx_item_magmaisiererTiles
     .word gfx_item_magmaisiererPal
@@ -124,6 +136,13 @@ item_resource equ 0x083D3BE8
     .word gfx_item_ovaler_steinTiles
     .word gfx_item_ovaler_steinPal
 
+.org item_resource + 0x101 * 8
+    .word gfx_item_koederTiles
+    .word gfx_item_koederPal
+
+.org item_resource + 0x102 * 8
+    .word gfx_item_goldener_koederTiles
+    .word gfx_item_goldener_koederPal
 
 //@Bike sound := 195
 .org 0x080A1402
@@ -277,3 +296,11 @@ item_resource equ 0x083D3BE8
 _bxr1:
 	bx r1
 	.pool
+
+.org 0x08082ac8
+    ldr r1, = fishing_create_pokemon | 1
+    bx r1 
+    .pool
+
+.org 0x0805d2fc
+    .word fishing_big_callback_bait | 1

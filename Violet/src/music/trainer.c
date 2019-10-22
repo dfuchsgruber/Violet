@@ -22,6 +22,8 @@ u16 trainer_get_encounter_song(u16 trainer_id) {
         return MUS_VIOLET_ENCOUNTER;
     } else if (trainers[trainer_id].trainerclass == TRAINERCLASS_REVOLUTIONAER) {
         return MUS_REVOLUTION;
+    } else if (trainers[trainer_id].trainerclass == TRAINERCLASS_PIRATE) {
+        return MUS_PIRATE;
     }
     //Get encounter music by field inside trainer and modulo
     return (u16) ((trainers[trainer_id].encounter_and_gender.encounter % 3) + 283);

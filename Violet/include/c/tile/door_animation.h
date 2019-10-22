@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_TILE_DOOR_ANIMATION_H_
 #define INCLUDE_C_TILE_DOOR_ANIMATION_H_
 
+#define DOOR_ANIM_TYPE_STANDARD 0
+#define DOOR_ANIM_TYPE_SLIDE 1
+
 typedef struct {
     u16 block;
     u8 type;

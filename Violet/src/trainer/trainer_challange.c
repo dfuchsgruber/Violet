@@ -11,27 +11,28 @@
 #include "flags.h"
 #include "vars.h"
 #include "constants/vars.h"
+#include "tile/coordinate.h"
 
 void special_player_facing() {
-    s16 coordinates [2];
-    player_get_coordinates(&coordinates[0], &coordinates[1]);
-    u8 pers_id = (u8) (*var_access(LASTTALKED)); //Get LASTTALKED
+    coordinate_t position;
+    player_get_coordinates(&position.x, &position.y);
+    u8 person_idx = (u8) (*var_access(LASTTALKED));
     u8 npc_id;
-    if (!npc_get_id_by_overworld_id(pers_id, save1->map, save1->bank, &npc_id)) {
+    if (!npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_id)) {
         s16 npc_x = npcs[npc_id].dest_x;
         s16 npc_y = npcs[npc_id].dest_y;
-        if (coordinates[0] < npc_x) {
-            //player has to face right
-            fmem.npc_facing_movements[0] = LOOK_RIGHT;
-        } else if (coordinates[0] > npc_x) {
-            //player has to face left
-            fmem.npc_facing_movements[0] = LOOK_LEFT;
-        } else if (coordinates[1] < npc_y) {
-            //player has to face down
-            fmem.npc_facing_movements[0] = LOOK_DOWN;
-        } else if (coordinates[1] > npc_y) {
-            //player has to face up
-            fmem.npc_facing_movements[0] = LOOK_UP;
+        if (ABS(position.x - npc_x) > ABS(position.y - npc_y)) {
+            if (position.x < npc_x) {
+                fmem.npc_facing_movements[0] = LOOK_RIGHT;
+            } else {
+                fmem.npc_facing_movements[0] = LOOK_LEFT;
+            } 
+        } else {
+            if (position.y < npc_y) {
+                fmem.npc_facing_movements[0] = LOOK_DOWN;
+            } else {
+                fmem.npc_facing_movements[0] = LOOK_UP;
+            }
         }
         fmem.npc_facing_movements[1] = STOP;
     } else {

@@ -5,6 +5,8 @@
 
 item_effect_t item_effect_potion = {.heal_hp = true, .hp = 20};
 
+item_effect_t item_effect_berry_juice = {.heal_hp = true, .hp = 75};
+
 item_effect_t item_effect_antidote = {.heal_poison = true};
 
 item_effect_t item_effect_burn_heal = {.heal_burn = true};
@@ -36,11 +38,11 @@ item_effect_t item_effect_revive = {.revives = true, .heal_hp = true, .hp = ITEM
 
 item_effect_t item_effect_max_revive = {.revives = true, .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL};
 
-item_effect_t item_effect_fresh_water = {.heal_hp = true, .hp = 50};
+item_effect_t item_effect_fresh_water = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
 
-item_effect_t item_effect_soda_pop = {.heal_hp = true, .hp = 60};
+item_effect_t item_effect_soda_pop = {.heal_pp = true, .heal_pp_one_move = true, .pp = 5};
 
-item_effect_t item_effect_lemonade = {.heal_hp = true, .hp = 80};
+item_effect_t item_effect_lemonade = {.heal_hp = true, .hp = 225};
 
 item_effect_t item_effect_moomoo_milk = {.heal_hp = true, .hp = 100};
 
@@ -253,9 +255,9 @@ item_effect_t *item_effects[] = {
     [ITEM_HYPERHEILER- ITEM_TRANK] = &item_effect_full_heal,
     [ITEM_BELEBER- ITEM_TRANK] = &item_effect_revive,
     [ITEM_TOP_BELEBER- ITEM_TRANK] = &item_effect_max_revive,
-    [ITEM_TAFELWASSER- ITEM_TRANK] = &item_effect_fresh_water,
-    [ITEM_SPRUDEL- ITEM_TRANK] = &item_effect_soda_pop,
-    [ITEM_LIMONADE- ITEM_TRANK] = &item_effect_lemonade,
+    [ITEM_CO_MIX- ITEM_TRANK] = &item_effect_fresh_water,
+    [ITEM_C_SAFT- ITEM_TRANK] = &item_effect_soda_pop,
+    [ITEM_C_SERUM- ITEM_TRANK] = &item_effect_lemonade,
     [ITEM_KUHMUH_MILCH- ITEM_TRANK] = &item_effect_moomoo_milk,
     [ITEM_ENERGIESTAUB- ITEM_TRANK] = &item_effect_energy_powder,
     [ITEM_KRAFTWURZEL- ITEM_TRANK] = &item_effect_energy_root,
@@ -269,7 +271,7 @@ item_effect_t *item_effects[] = {
     [ITEM_BLAUE_FLOETE- ITEM_TRANK] = &item_effect_awakening,
     [ITEM_GELBE_FLOETE- ITEM_TRANK] = &item_effect_yellow_flute,
     [ITEM_ROTE_FLOETE- ITEM_TRANK] = &item_effect_red_flute,
-    [ITEM_BEERENSAFT- ITEM_TRANK] = &item_effect_potion,
+    [ITEM_BEERENSAFT- ITEM_TRANK] = &item_effect_berry_juice,
     [ITEM_ZAUBERASCHE- ITEM_TRANK] = &item_effect_sacred_ash,
     [ITEM_KP_PLUS- ITEM_TRANK] = &item_effect_hp_up,
     [ITEM_PROTEIN- ITEM_TRANK] = &item_effect_protein,

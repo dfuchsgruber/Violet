@@ -9,6 +9,8 @@
 
 ow_script_haweiland_pirates_trigger:
     lockall
+    setvar LASTTALKED 5
+    special SPECIAL_COMPUTE_PLAYER_FACING
     playsong MUS_PIRATE 0
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0x3a
@@ -74,8 +76,9 @@ ow_script_haweiland_pirates_trigger:
     checksound
 
     pause 64
-    getplayerpos 0x8004 0x8005
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
+    setvar 0x8004 0xFF
+    special SPECIAL_PERSON_GET_POSITION
     special SPECIAL_OVERWORLD_VIEWPOINT_MOVE_TO
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK

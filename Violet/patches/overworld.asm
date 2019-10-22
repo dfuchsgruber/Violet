@@ -125,6 +125,9 @@ overworld_pals equ 0x083A501C
 .org overworld_script_commands + 4 * 0x97
     .word script_cmd_x97_fadescreen | 1
 
+.org overworld_script_commands + 4 * 0xA2
+    .word overworld_script_command_setmaptile | 1
+
 // Overworld script std strings
 .org 0x0806BE74
 	.word ow_script_string_stds

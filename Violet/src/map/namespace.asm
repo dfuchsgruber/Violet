@@ -178,7 +178,7 @@ map_namespaces:
 	.global str_mapnamespace_98
 
 	str_mapnamespace_98:
-		.string "Saffronia City"
+		.string "Haweiland"
 
 
 	.global str_mapnamespace_99

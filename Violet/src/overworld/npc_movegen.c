@@ -15,6 +15,7 @@
 #include "agbmemory.h"
 #include "trainer/virtual.h"
 #include "constants/movements.h"
+#include "debug.h"
 
 void special_move_npc_to_player() {
     s16 pos[2];
@@ -28,6 +29,16 @@ void special_move_npc_to() {
     s16 y = (s16) (*var_access(0x8006) + 7);
     u8 target = (u8) * var_access(0x8004);
     npc_move_to(target, x, y);
+}
+
+void overworld_person_get_position() {
+    u8 person_idx = (u8) (*var_access(0x8004));
+    u8 npc_id;
+    if (npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_id))
+        return;
+    *var_access(0x8004) = (u16)(npcs[npc_id].dest_x - 7);
+    *var_access(0x8005) = (u16)(npcs[npc_id].dest_y - 7);
+    dprintf("Player @(%d, %d)\n", *var_access(0x8004), *var_access(0x8005));
 }
 
 

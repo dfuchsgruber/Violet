@@ -1,4 +1,5 @@
 .include "overworld_script.s"
+.include "healingplaces.s"
 
 .global map_13_0_ceometria_pokestop_levelscripts
 
@@ -10,5 +11,5 @@ map_13_0_ceometria_pokestop_levelscripts:
 	.byte 0x0
 
 healing_place:
-    sethealingplace 9
+    sethealingplace HEALINGPLACE_CEOMETRIA
     end

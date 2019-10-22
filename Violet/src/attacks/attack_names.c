@@ -1,6 +1,8 @@
 #include "types.h"
 #include "language.h"
-u8 attack_names[][13] = {
+#include "constants/attacks.h"
+
+u8 attack_names[ATTACK_CNT][13] = {
 	LANGDEP(PSTRING("-"), PSTRING("-")),
 	LANGDEP(PSTRING("Pfund"), PSTRING("Pound")),
 	LANGDEP(PSTRING("Karateschlag"), PSTRING("Karate Chop")),
@@ -414,4 +416,5 @@ u8 attack_names[][13] = {
 	LANGDEP(PSTRING("Käfergebrumm"), PSTRING("Bug Buzz")),
 	LANGDEP(PSTRING("Tornado"), PSTRING("Tornado")),
 	LANGDEP(PSTRING("Königsschild"), PSTRING("King\'s Shield")),
+	LANGDEP(PSTRING("Runengleich"), PSTRING("Glyphmatch")),
 };

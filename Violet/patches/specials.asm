@@ -214,6 +214,12 @@ special_table equ 0x0815FCC0
 .org (special_table + 99 * 4)
                 .word npc_move_camera_to | 1
 
+.org (special_table + 100 * 4)
+                .word overworld_person_get_position | 1
+
+.org (special_table + 101 * 4)
+                .word fishing_start_after_bait_selection | 1
+
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1
 

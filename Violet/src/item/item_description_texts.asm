@@ -155,22 +155,22 @@
 		.string "Belebt ein Pokémon und füllt\ndie KP vollständig wieder auf."
 
 
-	.global str_item_desc_x1a_item_tafelwasser
+	.global str_item_desc_x1a_item_co_mix
 
-	str_item_desc_x1a_item_tafelwasser:
-		.string "Ein stilles Wasser mit hohem\nMineralienanteil, das die KP eines\nPokémon um 50 Punkte auffüllt."
-
-
-	.global str_item_desc_x1b_item_sprudel
-
-	str_item_desc_x1b_item_sprudel:
-		.string "Ein sprudelndes Mineralwasser,\ndas die KP eines Pokémon\num 60 Punkte auffüllt."
+	str_item_desc_x1a_item_co_mix:
+		.string "Ein Mischgetränk, das die KP\neines Pokémon um die Hälfte\ndes Maximalwertes auffüllt."
 
 
-	.global str_item_desc_x1c_item_limonade
+	.global str_item_desc_x1b_item_c_saft
 
-	str_item_desc_x1c_item_limonade:
-		.string "Ein süßes Getränk, das die KP eines\nPokémon um 80 Punkte auffüllt."
+	str_item_desc_x1b_item_c_saft:
+		.string "Ein süßer Saft, der die AP\naller Attacken eines Pokémon um\n5 Punkte auffüllt."
+
+
+	.global str_item_desc_x1c_item_c_serum
+
+	str_item_desc_x1c_item_c_serum:
+		.string "Ein super süßes Getränk, das\ndie KP eines Pokémon um 225\nPunkte auffüllt."
 
 
 	.global str_item_desc_x1d_item_kuhmuh_milch
@@ -266,7 +266,7 @@
 	.global str_item_desc_x2c_item_beerensaft
 
 	str_item_desc_x2c_item_beerensaft:
-		.string "Reiner Fruchtsaft, der die KP eines\nPokémon um 20 Punkte auffüllt."
+		.string "Reiner Fruchtsaft, der die KP eines\nPokémon um 75 Punkte auffüllt."
 
 
 	.global str_item_desc_x2d_item_zauberasche
@@ -1536,16 +1536,16 @@
 		.autostring 30 3 "Ein Item zum Tragen. Es bringt doppeltes Preisgeld, wenn der Träger am Kampf teilnimmt."
 
 
-	.global str_item_desc_x101_item_gruener_schal
+	.global str_item_desc_x101_item_koeder
 
-	str_item_desc_x101_item_gruener_schal:
-		.string "Ein Item, das ein Pokémon trägt,\num den Klug.-Wert im\nWettbewerb zu erhöhen."
+	str_item_desc_x101_item_koeder:
+		.string "Erhöht beim Angeln die Chance,\ndass starke Pokémon anbeißen."
 
 
-	.global str_item_desc_x102_item_gelber_schal
+	.global str_item_desc_x102_item_goldkoeder
 
-	str_item_desc_x102_item_gelber_schal:
-		.string "Ein Item, das ein Pokémon trägt,\num den Stärke-Wert im\nWettbewerb zu erhöhen."
+	str_item_desc_x102_item_goldkoeder:
+		.string "Erhöht beim Angeln drastisch\ndie Chance, dass starke Pokémon\nanbeißen."
 
 
 	.global str_item_desc_x103_item_eilrad
@@ -2375,20 +2375,20 @@
 	str_item_desc_x19_item_top_beleber:
 		.string "A medicine that revives a fainted\nPokémon, restoring HP fully."
 
-	.global str_item_desc_x1a_item_tafelwasser
+	.global str_item_desc_x1a_item_co_mix
 
-	str_item_desc_x1a_item_tafelwasser:
-		.string "Water with a high mineral content.\nIt restores the HP of one Pokémon\nby 50 points."
+	str_item_desc_x1a_item_co_mix:
+		.string "A mixed drink that\nrestores the HP by\nhalf its maximum amount."
 
-	.global str_item_desc_x1b_item_sprudel
+	.global str_item_desc_x1b_item_c_saft
 
-	str_item_desc_x1b_item_sprudel:
-		.string "A fizzy soda drink.\nIt restores the HP of one Pokémon\nby 60 points."
+	str_item_desc_x1b_item_c_saft:
+		.string "A juice that recovers\n5 pp of every move of\na Pokémon."
 
-	.global str_item_desc_x1c_item_limonade
+	.global str_item_desc_x1c_item_c_serum
 
-	str_item_desc_x1c_item_limonade:
-		.string "A very sweet drink.\nIt restores the HP of one Pokémon\nby 80 points."
+	str_item_desc_x1c_item_c_serum:
+		.string "A super-sweet serum that\nrecovers 225 HP of a\nPokémon."
 
 	.global str_item_desc_x1d_item_kuhmuh_milch
 
@@ -2468,7 +2468,7 @@
 	.global str_item_desc_x2c_item_beerensaft
 
 	str_item_desc_x2c_item_beerensaft:
-		.string "A 100% pure juice.\nIt restores the HP of one Pokémon\nby 20 points."
+		.string "A 100% pure juice.\nIt restores the HP of one Pokémon\nby 75 points."
 
 	.global str_item_desc_x2d_item_zauberasche
 
@@ -3530,15 +3530,15 @@
 	str_item_desc_x100_item_gluecksrauch:
 		.autostring 30 3 "An item to be held by a Pokémon.\nDoubles the price money received after a battle."
 
-	.global str_item_desc_x101_item_gruener_schal
+	.global str_item_desc_x101_item_koeder
 
-	str_item_desc_x101_item_gruener_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nSMart condition in Contests."
+	str_item_desc_x101_item_koeder:
+		.string "Increases the chance to find\nstrong Pokémon when fishing."
 
-	.global str_item_desc_x102_item_gelber_schal
+	.global str_item_desc_x102_item_goldkoeder
 
-	str_item_desc_x102_item_gelber_schal:
-		.string "An item to be held by a Pokémon.\nIt boosts the holding Pokémon’s\nTough condition in Contests."
+	str_item_desc_x102_item_goldkoeder:
+		.string "Drastically increases the\nchance of finding strong\nPokémon."
 
 	.global str_item_desc_x103_item_eilrad
 

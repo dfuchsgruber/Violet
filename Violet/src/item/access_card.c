@@ -32,8 +32,7 @@ void access_card_print_multichoice() {
     }
     if (displayed) {
         *var_access(DYN_MULTICHOICE_ITEM_CNT) = displayed;
-        void **script_state_pointers = (void**) 0x03000F14;
-        *script_state_pointers = d_elements;
+        overworld_script_state.pointer_banks[0] = (u8*)d_elements;
         if (multichoice(0, 0, 0, false)) {
             overworld_script_halt();
         }

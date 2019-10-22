@@ -233,6 +233,7 @@
     .word bsc_attack_effect_xe2 @0xe2
     .word 0x81dbaa6 @0xe3 kings shield
     .word bsc_attack_effect_sucker_punch @0xe4
+    .word bsc_attack_effect_glyph_match @0xe5
 
 
 bsc_attack_effect_xd5:
@@ -452,3 +453,9 @@ bsc_attack_effect_xe1_cont2:
 bsc_attack_effect_xe2:
     setbyte bsc_effect_to_apply 0x51
     goto bsc_attack_effect_hit
+
+bsc_attack_effect_glyph_match:
+    accuracycheck bsc_miss_pp_reduce 0x0
+    callasm attack_calculate_damage_from_target_name
+    goto bsc_attack_effect_after_accuracy_check
+

@@ -167,6 +167,12 @@ battle_bg battle_bgs[29] = {
         NULL, NULL,
         gfx_battle_bg_cloud_ruinsPal,
     },
+    [BATTLE_BG_CARGO_HALL] = {
+        gfx_battle_bg_cargo_hallTiles,
+        gfx_battle_bg_cargo_hallMap,
+        NULL, NULL,
+        gfx_battle_bg_cargo_hallPal
+    }
 };
 
 
@@ -239,6 +245,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 	case BATTLE_BG_EVOLUTION:
 	case BATTLE_BG_CAPTURE:
 	case BATTLE_BG_STREET:
+    case BATTLE_BG_CARGO_HALL:
 		type = TYPE_NORMAL;
 		break;
     case BATTLE_BG_GRAVEYARD:
@@ -276,6 +283,7 @@ u16 terrain_moves[] = {
     [BATTLE_BG_GRAVEYARD] = ATTACK_SPUKBALL,
     [BATTLE_BG_HAWEILAND] = ATTACK_EIERBOMBE,
     [BATTLE_BG_CLOUD_RUINS] = ATTACK_KRAFTRESERVE,
+    [BATTLE_BG_CARGO_HALL] = ATTACK_TRICKBETRUG
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

@@ -1,0 +1,402 @@
+{
+	"data": {
+		"footer": "map_footer_haweiland_cargo_hall",
+		"events": {
+			"person_cnt": 13,
+			"warp_cnt": 4,
+			"trigger_cnt": 4,
+			"signpost_cnt": 1,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "11",
+					"y": "27",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "4",
+					"script": "ow_script_haweiland_cargo_hall_trainer_0",
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "18",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
+					"behaviour_range": "5",
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "4",
+					"script": "ow_script_haweiland_cargo_hall_trainer_2",
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "21",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "3",
+					"script": "ow_script_haweiland_cargo_hall_trainer_3",
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "3",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_ITEM_1",
+					"value": {
+						"item": "ITEM_X_SPEZIAL",
+						"species": 0
+					}
+				},
+				{
+					"target_index": "5",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "4",
+					"y": "28",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_ITEM_0",
+					"value": {
+						"item": "ITEM_HYPERTRANK",
+						"species": 0
+					}
+				},
+				{
+					"target_index": "6",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "3",
+					"y": "21",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LAUFE_RUNTER__HOCH__RECHTS__LINKS",
+					"behaviour_range": "3",
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "4",
+					"script": "ow_script_haweiland_cargo_hall_trainer_1",
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "7",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "8",
+					"picture": "55",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "4",
+					"y": "4",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "9",
+					"picture": "67",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "5",
+					"y": "4",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "10",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_HAWEILAND_CARGO_HALL_DONE",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "11",
+					"picture": "59",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "23",
+					"y": "26",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_haweiland_cargo_hall_person_1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "12",
+					"picture": "59",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "11",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_haweiland_cargo_hall_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "13",
+					"picture": "59",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "3",
+					"y": "33",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_haweiland_cargo_hall_person_3",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "8",
+					"y": "35",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "17",
+					"target_bank": "3"
+				},
+				{
+					"x": "9",
+					"y": "35",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "17",
+					"target_bank": "3"
+				},
+				{
+					"x": "15",
+					"y": "35",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "17",
+					"target_bank": "3"
+				},
+				{
+					"x": "16",
+					"y": "35",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "17",
+					"target_bank": "3"
+				}
+			],
+			"triggers": [
+				{
+					"x": "8",
+					"y": "3",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x38",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_haweiland_cargo_hall_trigger"
+				},
+				{
+					"x": "8",
+					"y": "4",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x38",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_haweiland_cargo_hall_trigger"
+				},
+				{
+					"x": "8",
+					"y": "5",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x38",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_haweiland_cargo_hall_trigger"
+				},
+				{
+					"x": "8",
+					"y": "6",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x38",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_haweiland_cargo_hall_trigger"
+				}
+			],
+			"signposts": [
+				{
+					"x": "23",
+					"y": "33",
+					"level": 0,
+					"type": "7",
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": "ITEM_NUGGET",
+							"flag": "81",
+							"amount": "1",
+							"chunk": 0
+						},
+						"script": 0
+					}
+				}
+			]
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_HAWEILAND",
+		"footer_idx": 75,
+		"namespace": "MAP_HAWEILAND",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"show_name": "DONT_SHOW",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_haweiland_cargo_hall",
+	"type": "header"
+}

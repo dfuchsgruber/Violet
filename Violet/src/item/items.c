@@ -402,12 +402,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAFELWASSER
-		LANGDEP(PSTRING("Tafelwasser"), PSTRING("Fresh Water")),
+		LANGDEP(PSTRING("C.O.-Mix"), PSTRING("C.O.-Mix")),
 		0x1a, //index
-		200, //price
+		900, //price
 		0, //holding_effect_id
 		50, //holding_effect_param
-		str_item_desc_x1a_item_tafelwasser,
+		str_item_desc_x1a_item_co_mix,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
@@ -417,12 +417,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPRUDEL
-		LANGDEP(PSTRING("Sprudel"), PSTRING("Soda Pop")),
+		LANGDEP(PSTRING("C-Saft"), PSTRING("C-Juice")),
 		0x1b, //index
-		300, //price
+		1250, //price
 		0, //holding_effect_id
 		60, //holding_effect_param
-		str_item_desc_x1b_item_sprudel,
+		str_item_desc_x1b_item_c_saft,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
@@ -432,12 +432,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LIMONADE
-		LANGDEP(PSTRING("Limonade"), PSTRING("Lemonade")),
+		LANGDEP(PSTRING("C-Serum"), PSTRING("C-Serum")),
 		0x1c, //index
-		350, //price
+		1000, //price
 		0, //holding_effect_id
 		80, //holding_effect_param
-		str_item_desc_x1c_item_limonade,
+		str_item_desc_x1c_item_c_serum,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		1, //type
@@ -676,7 +676,7 @@ item items[] = {
 		0x2c, //index
 		100, //price
 		1, //holding_effect_id
-		20, //holding_effect_param
+		75, //holding_effect_param
 		str_item_desc_x2c_item_beerensaft,
 		0, //field_18
 		POCKET_ITEMS, //pocket
@@ -3866,13 +3866,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_GRUENER_SCHAL
-		LANGDEP(PSTRING("Grüner Schal"), PSTRING("Green Scarf")),
+		//ITEM_KOEDER
+		LANGDEP(PSTRING("Köder"), PSTRING("Bait")),
 		0x101, //index
-		100, //price
+		250, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x101_item_gruener_schal,
+		str_item_desc_x101_item_koeder,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3881,13 +3881,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_GELBER_SCHAL
-		LANGDEP(PSTRING("Gelber Schal"), PSTRING("Yellow Scarf")),
+		//ITEM_GOLDENER_KOEDER
+		LANGDEP(PSTRING("Goldköder"), PSTRING("Golden Bait")),
 		0x102, //index
-		100, //price
+		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x102_item_gelber_schal,
+		str_item_desc_x102_item_goldkoeder,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3896,10 +3896,10 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_EILRAD
+		//
 		LANGDEP(PSTRING("Eilrad"), PSTRING("Mach Bike")),
 		0x103, //index
-		0, //price
+		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x103_item_eilrad,

@@ -59,5 +59,6 @@
 	"pokemon_statuses" : "constants/pokemon_statuses.const",
 	"roamers" : "constants/roamers.const",
 	"unown_messages" : "constants/unown_messages.const",
-	"field_moves" : "constants/field_moves.const"
+	"field_moves" : "constants/field_moves.const",
+	"healingplaces" : "constants/healingplaces.s"
 }

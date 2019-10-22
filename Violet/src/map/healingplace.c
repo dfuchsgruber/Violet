@@ -1,6 +1,7 @@
 #include "types.h"
 #include "map/healing_place.h"
 #include "worldmap.h"
+#include "constants/healingplaces.h"
 
 /**
  * Note how broken the vanilla implementation of the healing place system is:
@@ -12,32 +13,44 @@
  */
 
 stru_healing_place healing_places[NUM_HEALING_PLACES] = {
-    {4, 0}, // Healing place 1
-    {5, 4}, // Healing place 2
-    {6, 5}, // Healing place 3
-    {7, 3}, // Healing place 4
-    {8, 0}, // Healing place 5
-    {9, 1}, // Healing place 6
-    {10, 12}, // Healing place 7
-	{12, 0}, // Healing place 8, Laubdorf,
-	{19, 0}, // Healing place 9, Ceometria
-    {0xFFFF, 0xFFFF}
+    [HEALINGPLACE_AMONIA - 1] = {4, 0}, 
+    [HEALINGPLACE_MERIANA_CITY - 1] = {5, 4}, 
+    [HEALINGPLACE_AKTANIA - 1] = {6, 5}, 
+    [HEALINGPLACE_SILVANIA_CITY - 1] = {7, 3}, 
+    [HEALINGPLACE_KASKADA - 1] = {8, 0}, 
+    [HEALINGPLACE_ORINA_CITY - 1] = {9, 1}, 
+    [HEALINGPLACE_INFERIOR - 1] = {10, 12}, 
+	[HEALINGPLACE_LAUBDORF - 1] = {12, 0}, 
+	[HEALINGPLACE_CEOMETRIA - 1] = {19, 0}, 
+	[HEALINGPLACE_HAWEILAND - 1] = {27, 3},
+    [NUM_HEALING_PLACES - 1] = {0xFFFF, 0xFFFF}
 };
 
 u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
-    1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0xFF
+    [HEALINGPLACE_AMONIA - 1] = 1,
+    [HEALINGPLACE_MERIANA_CITY - 1] = 1,
+    [HEALINGPLACE_AKTANIA - 1] = 3,
+    [HEALINGPLACE_SILVANIA_CITY - 1] = 1,
+    [HEALINGPLACE_KASKADA - 1] = 1,
+    [HEALINGPLACE_ORINA_CITY - 1] = 1,
+    [HEALINGPLACE_INFERIOR - 1] = 1,
+	[HEALINGPLACE_LAUBDORF - 1] = 1,
+	[HEALINGPLACE_CEOMETRIA - 1] = 1,
+	[HEALINGPLACE_HAWEILAND - 1] = 1,
+    [NUM_HEALING_PLACES - 1] = 0xFF
 };
 
 coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
-		{0x12, 0x6}, // Healing place 1
-		{0x7, 0x4}, // Healing place 2
-		{0x7, 0x4}, // Healing place 3
-		{0x7, 0x4}, // Healing place 4
-		{0x7, 0x4}, // Healing place 5
-		{0x7, 0x4}, // Healing place 6
-		{0x7, 0x4}, // Healing place 7
-		{0x7, 0x4}, // Healing place 8, Laubdorf
-		{0x7, 0x4}, // Healing place 9, Ceometria
-		{-1, -1}
+		[HEALINGPLACE_AMONIA - 1] = {0x12, 0x6}, 
+		[HEALINGPLACE_MERIANA_CITY - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_AKTANIA - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_SILVANIA_CITY - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_KASKADA - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_ORINA_CITY - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_INFERIOR - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_LAUBDORF - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_CEOMETRIA - 1] = {0x7, 0x4}, 
+		[HEALINGPLACE_HAWEILAND - 1] = {0x7, 0x4},
+		[NUM_HEALING_PLACES - 1] = {-1, -1}
 };
 

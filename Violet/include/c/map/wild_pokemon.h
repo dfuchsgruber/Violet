@@ -127,27 +127,42 @@ bool wildbattle_is_allowed_by_repel(u8 level);
 u8 wildbattle_sample_level(wild_pokemon_entry *entry);
 
 /**
+ * Samples an index in the rod table to be encountered.
+ * @param rod_type which rod is used (0 := rod, 1 := good rod, 2 := super rod)
+ * @return the index in the table
+ **/
+int wildbattle_sample_from_rod_pdf (u8 rod_type);
+
+/**
  * Initializes the wild battle encounter with the secondary starter (used for the trainer school)
  * @return if the pokemon will be encountered
  */
 bool trainerschool_wildbattle_initialize_secondary_starter();
+
+
+#define WILD_POKEMON_NUM_ENTRIES_GRASS 12
+#define WILD_POKEMON_NUM_ENTRIES_WATER 5
+#define WILD_POKEMON_NUM_ENTRIES_ROD 2
+#define WILD_POKEMON_NUM_ENTRIES_GOOD_ROD 3
+#define WILD_POKEMON_NUM_ENTRIES_SUPER_ROD 5
+#define WILD_POKEMON_NUM_ENTRIES_OTHER 5
 
 /*
  * Probability density functions for each type of encounter
  * in percent. (Encounters are actually hardwired with these values)
  */
 
-u8 wild_pokemon_grass_pdf[12];
+u8 wild_pokemon_grass_pdf[WILD_POKEMON_NUM_ENTRIES_GRASS];
 
-u8 wild_pokemon_water_pdf[5];
+u8 wild_pokemon_water_pdf[WILD_POKEMON_NUM_ENTRIES_WATER];
 
-u8 wild_pokemon_rod_pdf[2];
+u8 wild_pokemon_rod_pdf[WILD_POKEMON_NUM_ENTRIES_ROD];
 
-u8 wild_pokemon_good_rod_pdf[3];
+u8 wild_pokemon_good_rod_pdf[WILD_POKEMON_NUM_ENTRIES_GOOD_ROD];
 
-u8 wild_pokemon_super_rod_pdf[5];
+u8 wild_pokemon_super_rod_pdf[WILD_POKEMON_NUM_ENTRIES_SUPER_ROD];
 
-u8 wild_pokemon_other_pdf[5];
+u8 wild_pokemon_other_pdf[WILD_POKEMON_NUM_ENTRIES_OTHER];
 
 wild_pokemon_habitat wild_pokemon_unown_ruins_grass;
 wild_pokemon_habitat wild_pokemon_3_0_water;

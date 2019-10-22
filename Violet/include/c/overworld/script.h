@@ -8,12 +8,23 @@
 #ifndef INCLUDE_C_OVERWORLD_SCRIPT_H_
 #define INCLUDE_C_OVERWORLD_SCRIPT_H_
 
-typedef struct {
-	u8 unkown[0x8];
+#define OVERWORLD_SCRIPT_STATE_STOP 0
+#define OVERWORLD_SCRIPT_STATE_RUNNING 1
+#define OVERWORLD_SCRIPT_STATE_WAITING_FOR_CALLBACK 2
+
+typedef struct overworld_script_state_t overworld_script_state_t;
+
+typedef struct overworld_script_state_t {
+	u8 field_0;
+	u8 state;
+	u8 field_2;
+	u8 field_3;
+	bool (*callback)(); // Returns true when the handler is supposed to be waiting
 	u8 *script;
-	u8 unkown2[0x58];
-	u8 *pointer_banks[1]; // Might be there are more than one
-	// TODO (research the state)
+	u8 field_12[80];
+	bool (*commands)(overworld_script_state_t*);
+	bool (*last_command)(overworld_script_state_t*);
+	u8 *pointer_banks[4];
 } overworld_script_state_t;
 
 extern overworld_script_state_t overworld_script_state;
@@ -31,6 +42,13 @@ bool overworld_script_cmd_x86_pokemart(void *script_state);
  * @param script_state the overworld script state
  */
 int overworld_script_read_word(void *script_state);
+
+/**
+ * Reads a 16-bit hword from the current script offset.
+ * @param state the current script state
+ * @return the 16-bit hword located at the current offset
+ **/
+u16 overworld_script_read_hword(overworld_script_state_t *state);
 
 /**
  * Initializes an overworld script

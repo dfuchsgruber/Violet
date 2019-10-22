@@ -5884,5 +5884,74 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x134_haweiland_clouds_trainer_1,
     },
+    [0x135] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Jaden"),
+            PSTRING("Jaden")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x135_haweiland_cargo_hall_trainer_0,
+    },
+    [0x136] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Don Carlo"),
+            PSTRING("Don Carlo")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x136_haweiland_cargo_hall_trainer_1,
+    },
+    [0x137] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Marquez"),
+            PSTRING("Marquez")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x137_haweiland_cargo_hall_trainer_2,
+    },
+    [0x138] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Juan"),
+            PSTRING("Juan")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x138_haweiland_cargo_hall_trainer_3,
+    },
+    [0x139] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Pablo"),
+            PSTRING("Pablo")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x139_haweiland_cargo_hall_trainer_4,
+    },
+    [0x13a] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Enrico"),
+            PSTRING("Enrico")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x13a_haweiland_cargo_hall_trainer_5,
+    },
+    [0x13b] = {
+        .trainerclass = TRAINERCLASS_PKMN_TRAINER, .sprite = 0x39,.encounter_and_gender = {2, 1}, 
+        .name = LANGDEP(PSTRING("Maike"), PSTRING("May")), 
+        .pokemon_cnt = 4,
+        .uses_custom_moves = true, .uses_custom_items = true,
+        .items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER},
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+        .party = (trainer_pokemon*) trainer_party_x13b_haweiland_may
+    },
+    [0x13c] = {
+        .trainerclass = TRAINERCLASS_PKMN_TRAINER, .sprite = 0x39,.encounter_and_gender = {2, 1}, 
+        .name = LANGDEP(PSTRING("Maike"), PSTRING("May")), 
+        .pokemon_cnt = 4,
+        .uses_custom_moves = true, .uses_custom_items = true,
+        .items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER},
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+        .party = (trainer_pokemon*) trainer_party_x13c_haweiland_may
+    },
+    [0x13d] = {
+        .trainerclass = TRAINERCLASS_PKMN_TRAINER, .sprite = 0x39,.encounter_and_gender = {2, 1}, 
+        .name = LANGDEP(PSTRING("Maike"), PSTRING("May")), 
+        .pokemon_cnt = 4,
+        .uses_custom_moves = true, .uses_custom_items = true,
+        .items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER},
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+        .party = (trainer_pokemon*) trainer_party_x13d_haweiland_may
+    },
 };
 

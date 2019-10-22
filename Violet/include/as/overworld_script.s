@@ -831,9 +831,10 @@
 .word \mart
 .endm
 
-.macro pokemart3 mart
+.macro pokemart3 mart sell_default_items=1
 .byte 0x88
 .word \mart
+.byte \sell_default_items
 .endm
 
 .macro pokecasino var
@@ -968,11 +969,11 @@
 .hword \effect
 .endm
 
-.macro setmaptile x y block attribute
+.macro setmaptile x y block attribute level=0
 .byte 0xa2
 .hword \x
 .hword \y
-.hword \block
+.hword (\block | (\level << 10))
 .hword \attribute
 .endm
 

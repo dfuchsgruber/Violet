@@ -5,88 +5,98 @@
 #include "debug.h"
 #include "flags.h"
 #include "overworld/script.h"
+#include "constants/flags.h"
 
 
-mart_item mart_items_ball_std[] = {
-    {0x823, ITEM_HYPERBALL},
-    {0x821, ITEM_SUPERBALL},
-    {0x829, ITEM_POKEBALL},
+static mart_item mart_items_ball_std[] = {
+    {FRBADGE_5, ITEM_HYPERBALL},
+    {FRBADGE_2, ITEM_SUPERBALL},
+    {POKEDEX, ITEM_POKEBALL},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_potion_std[] = {
-    {0x825, ITEM_TOP_TRANK},
-    {0x823, ITEM_HYPERTRANK},
-    {0x821, ITEM_SUPERTRANK},
+
+static mart_item mart_item_potion_std[] = {
+    {FRBADGE_7, ITEM_TOP_TRANK},
+    {FRBADGE_5, ITEM_HYPERTRANK},
+    {FRBADGE_2, ITEM_SUPERTRANK},
     {0, ITEM_TRANK},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_full_restore[] = {
-    {0x827, ITEM_TOP_GENESUNG},
+
+static mart_item mart_item_full_restore[] = {
+    {FRBADGE_8, ITEM_TOP_GENESUNG},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_feuerheiler[] = {
-    {0x823, ITEM_HYPERHEILER},
+
+static mart_item mart_item_feuerheiler[] = {
+    {FRBADGE_4, ITEM_HYPERHEILER},
     {0, ITEM_FEUERHEILER},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_eisheiler[] = {
-    {0x823, ITEM_HYPERHEILER},
+
+static mart_item mart_item_eisheiler[] = {
+    {FRBADGE_4, ITEM_HYPERHEILER},
     {0, ITEM_EISHEILER},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_para_heiler[] = {
-    {0x823, ITEM_HYPERHEILER},
+
+static mart_item mart_item_para_heiler[] = {
+    {FRBADGE_4, ITEM_HYPERHEILER},
     {0, ITEM_PARA_HEILER},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_aufwecker[] = {
-    {0x823, ITEM_HYPERHEILER},
+
+static mart_item mart_item_aufwecker[] = {
+    {FRBADGE_4, ITEM_HYPERHEILER},
     {0, ITEM_AUFWECKER},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_gegengift[] = {
-    {0x823, ITEM_HYPERHEILER},
+
+static mart_item mart_item_gegengift[] = {
+    {FRBADGE_4, ITEM_HYPERHEILER},
     {0, ITEM_GEGENGIFT},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_repel_std[] = {
-    {0x823, ITEM_TOP_SCHUTZ},
-    {0x821, ITEM_SUPERSCHUTZ},
+
+static mart_item mart_item_repel_std[] = {
+    {FRBADGE_4, ITEM_TOP_SCHUTZ},
+    {FRBADGE_2, ITEM_SUPERSCHUTZ},
     {0, ITEM_SCHUTZ},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_fluchtseil[] = {
+
+static mart_item mart_item_fluchtseil[] = {
     {0, ITEM_FLUCHTSEIL},
     {0xFFFF, 0}
 };
 
-mart_item mart_item_beleber[] = {
-    {0x823, ITEM_BELEBER},
-    {0xFFFF, 0}
-};
 
-mart_item mart_item_ether[] = {
-    {0x948, ITEM_AETHER},
-    {0xFFFF, 0}
-};
-
-mart_item mart_item_elixier[] = {
-    {0x949, ITEM_ELIXIER},
+static mart_item mart_item_beleber[] = {
+    {FRBADGE_4, ITEM_BELEBER},
     {0xFFFF, 0}
 };
 
 
+static mart_item mart_item_ether[] = {
+    {MART_SELLS_ETHER, ITEM_AETHER},
+    {0xFFFF, 0}
+};
 
-mart_item *mart_items[] = {
+static mart_item mart_item_elixier[] = {
+    {MART_SELLS_ELIXIR, ITEM_ELIXIER},
+    {0xFFFF, 0}
+};
+
+static mart_item *mart_items[] = {
     mart_items_ball_std,
     mart_item_full_restore,
     mart_item_potion_std,
@@ -98,56 +108,39 @@ mart_item *mart_items[] = {
     mart_item_repel_std,
     mart_item_fluchtseil,
     mart_item_beleber,
+    mart_item_ether,
     mart_item_elixier,
     NULL
 };
 
+void pokemart_add_item(u16 item, int *item_cnt) {
+    if (*item_cnt >= 256) return;
+    for (int i = 0; i < *item_cnt; i++) {
+        if (fmem.dmart[i] == item) return; 
+    }
+    fmem.dmart[(*item_cnt)++] = item;
+}
 
-bool script_cmd_x88_pokemart3(void *script_state){
-    u16* additional_items = (u16*) overworld_script_read_word(script_state);
-    u16 *item_space = (fmem.dmart); //256 items is the maximum
-    int i = 0;
-    int j = 0;
-    int z;
-    while(mart_items[i]){
-        u16 to_add = 0;
-        for(z = 0; mart_items[i][z].item; z++){
-            if(!mart_items[i][z].flag || checkflag(mart_items[i][z].flag)){
-                to_add = mart_items[i][z].item;
-                break;
-            }
-        }
-        if(to_add){
-            //check if we can add this item to our list (maybe it is already there)
-            bool contained = false;
-            for(z = 0; z < j; z++){
-                if(item_space[z] == to_add){
-                    contained = true;
-                    break;
+
+bool script_cmd_x88_pokemart3(overworld_script_state_t *script_state){
+    u16* items = (u16*) overworld_script_read_word(script_state);
+    bool default_mart = *(script_state->script++);
+    int item_cnt = 0;
+    if (default_mart) {
+        for (int i = 0; mart_items[i] && item_cnt < 256; i++) {
+            for (int j = 0; mart_items[i][j].item; j++) {
+                if (!mart_items[i][j].flag || checkflag(mart_items[i][j].flag)) {
+                    pokemart_add_item(mart_items[i][j].item, &item_cnt);
+                    break; // Add only the best item of each "category" to the default mart
                 }
-            }
-            if(!contained){
-                item_space[j++] = to_add;
-            }
-        }
-        i++;
-    }
-    if(additional_items){
-        for(i = 0; additional_items[i]; i++){
-            bool contained = false;
-            for(z = 0; z < j; z++){
-                if(item_space[z] == additional_items[i]){
-                    contained = true;
-                    break;
-                }
-            }
-            if(!contained){
-                item_space[j++] = additional_items[i];
             }
         }
     }
-    item_space[j] = 0;
-    pokemart(item_space);
+    for (int i = 0; items[i] && item_cnt < 256; i++) {
+        pokemart_add_item(items[i], &item_cnt);
+    }
+
+    pokemart(fmem.dmart);
     mart_state.end_callback = overworld_script_resume;
     overworld_script_halt();
     return true;

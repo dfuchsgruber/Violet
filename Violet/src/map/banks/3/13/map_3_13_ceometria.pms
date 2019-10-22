@@ -458,7 +458,7 @@
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_CITY",
 		"bike_usable": "1",
-		"show_name": "SHOW",
+		"show_name": "SHOW_VILLAGE",
 		"level": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
 	},

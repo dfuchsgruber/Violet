@@ -14,7 +14,7 @@ stru_flight_position flight_positions[NUM_FLIGHT_POSITONS] = {
     {3, 6, 28, 17, 0}, // Inferior
     {3, 13, 0x13, 0x12, 0}, // Ceometria
     {3, 9, 0x12, 0x2b, 0}, // Laubdorf
-    {3, 8, 14, 12, 0}, // Unused
+    {3, 17, 0x1e, 0x15, 0}, // Haweiland
     {3, 10, 24, 39, 0},
     {15, 0, 47, 44, 0},
     {3, 28, 13, 21, 0},
@@ -39,7 +39,7 @@ flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - 
     [MAP_CEOMETRIA - MAP_AMONIA] = {.bank = 3, .map_idx = 7, .flight_position_idx = 8},
     [MAP_LAUBDORF - MAP_AMONIA] = {.bank = 3, .map_idx = 8, .flight_position_idx = 9},
     [MAP_INDIGO_PLATEAU - MAP_AMONIA] = {.bank = 3, .map_idx = 9, .flight_position_idx = 10},
-    [MAP_HAWEILAND - MAP_AMONIA] = {.bank = 3, .map_idx = 10, .flight_position_idx = 11},
+    [MAP_HAWEILAND - MAP_AMONIA] = {.bank = 3, .map_idx = 10, .flight_position_idx = 10},
     [MAP_NAMESPACE_99 - MAP_AMONIA] = {.bank = 3, .map_idx = 22, .flight_position_idx = 12},
     [MAP_NAMESPACE_100 - MAP_AMONIA] = {.bank = 3, .map_idx = 28, .flight_position_idx = 13},
     [MAP_ROUTE_1 - MAP_AMONIA] = {.bank = 3, .map_idx = 19, .flight_position_idx = 0},

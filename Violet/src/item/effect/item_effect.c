@@ -211,6 +211,12 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
             case ITEM_EFFECT_HEAL_HP_HALF:
                 hp_to_heal = MAX(1, pokemon_get_attribute(p, ATTRIBUTE_TOTAL_HP, 0) / 2);
                 break;
+            case ITEM_EFFECT_HEAL_HP_QUARTER:
+                hp_to_heal = MAX(1, pokemon_get_attribute(p, ATTRIBUTE_TOTAL_HP, 0) / 4);
+                break;
+            case ITEM_EFFECT_HEAL_HP_EIGHTH:
+                hp_to_heal = MAX(1, pokemon_get_attribute(p, ATTRIBUTE_TOTAL_HP, 0) / 8);
+                break;
             case ITEM_EFFECT_HEAL_HP_DYANMIC:
                 hp_to_heal = battle_scripting.heal_item_amount;
                 break;

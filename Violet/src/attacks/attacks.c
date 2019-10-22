@@ -6201,6 +6201,20 @@ attack attacks[ATTACK_CNT] = {
 		0x0, //Effect table
 		CATEGORY_STATUS,
 		0x0 //Padding
+	},
+	[ATTACK_RUNENGLEICH] = {
+		0xe5, //Effect-id (in table)
+		1, //Base Power
+		TYPE_PSYCHO,
+		95, //Accuracy
+		20, //PP
+		0, //Effect accuracy
+		SELECTED_TARGET,
+		0, //Priority
+		0,
+		0x0, //Effect table
+		CATEGORY_SPECIAL,
+		0x0 //Padding
 	}
     
 };

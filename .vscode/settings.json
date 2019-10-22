@@ -91,7 +91,9 @@
         "field_moves.h": "c",
         "data_structures.h": "c",
         "block.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "trainerclasses.h": "c",
+        "mart.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

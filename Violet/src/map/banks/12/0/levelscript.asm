@@ -1,4 +1,5 @@
 .include "overworld_script.s"
+.include "healingplaces.s"
 
 .global map_12_0_laubdorf_pokecenter_levelscripts
 
@@ -10,5 +11,5 @@ map_12_0_laubdorf_pokecenter_levelscripts:
 	.byte 0x0
 
 healing_place:
-    sethealingplace 8
+    sethealingplace HEALINGPLACE_LAUBDORF
     end

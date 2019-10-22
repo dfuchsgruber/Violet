@@ -32,6 +32,8 @@ u8 worldmap_lower_layer_check(u8 namespace) {
 		flag = WM_LAUBDORF; break;
 	case MAP_CEOMETRIA:
 		flag = WM_CEOMETRIA; break;
+	case MAP_HAWEILAND:
+		flag = WM_HAWEILAND; break;
 	case 0xC5:
 		return WORLDMAP_FLAG_CHECK_INVALID;
 	default: return WORLDMAP_FLAG_CHECK_NO_FLAG;
@@ -52,6 +54,8 @@ u8 worldmap_upper_layer_check(u8 namespace) {
 			flag = WM_ASCHHAIN; break;
 		case MAP_KUESTENBERG:
 			flag = WM_KUSTENBERG; break;
+		case MAP_WALDFRIEDHOF:
+			flag = WM_WALDFRIEDHOF; break;
 	case 0xC5:
 		return WORLDMAP_FLAG_CHECK_INVALID;
 	default: return WORLDMAP_FLAG_CHECK_NO_FLAG;

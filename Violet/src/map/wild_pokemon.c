@@ -117,15 +117,15 @@ bool wildbattle_initialize_by_habitat(wild_pokemon_habitat *habitat, int pdf_typ
 	int idx = -1;
 	switch(pdf_type) {
 		case 0: {
-			idx = wildbattle_sample_from_pdf(wild_pokemon_grass_pdf, 12);
+			idx = wildbattle_sample_from_pdf(wild_pokemon_grass_pdf, WILD_POKEMON_NUM_ENTRIES_GRASS);
 			break;
 		}
 		case 1: {
-			idx = wildbattle_sample_from_pdf(wild_pokemon_water_pdf, 5);
+			idx = wildbattle_sample_from_pdf(wild_pokemon_water_pdf, WILD_POKEMON_NUM_ENTRIES_WATER);
 			break;
 		}
 		case 2 : {
-			idx = wildbattle_sample_from_pdf(wild_pokemon_other_pdf, 5);
+			idx = wildbattle_sample_from_pdf(wild_pokemon_other_pdf, WILD_POKEMON_NUM_ENTRIES_OTHER);
 			break;
 		}
 		default : {
@@ -162,6 +162,23 @@ int wildbattle_sample_from_pdf(u8 *pdf, int size) {
 	}
 	derrf("Pdf @x, size %d does not sum up to 100\n", pdf, size);
 	return -1;
+}
+
+int wildbattle_sample_from_rod_pdf (u8 rod_type) {
+	u8 *pdf;;
+	int size;
+	switch (rod_type) {
+		default:
+		case 0: 
+			return wildbattle_sample_from_pdf(wild_pokemon_rod_pdf, WILD_POKEMON_NUM_ENTRIES_ROD);
+		case 1: 
+			return wildbattle_sample_from_pdf(wild_pokemon_good_rod_pdf, WILD_POKEMON_NUM_ENTRIES_GOOD_ROD) + 
+				WILD_POKEMON_NUM_ENTRIES_ROD;
+		case 2: 
+			return wildbattle_sample_from_pdf(wild_pokemon_super_rod_pdf, WILD_POKEMON_NUM_ENTRIES_SUPER_ROD) + 
+				WILD_POKEMON_NUM_ENTRIES_ROD + WILD_POKEMON_NUM_ENTRIES_GOOD_ROD;
+	}
+	return wildbattle_sample_from_pdf(pdf, size);
 }
 
 u8 wild_pokemon_grass_pdf[12] = { 20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1 };

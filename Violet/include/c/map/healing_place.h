@@ -10,8 +10,7 @@
 
 #include "save.h"
 #include "tile/coordinate.h"
-
-#define NUM_HEALING_PLACES 21
+#include "constants/healingplaces.h"
 
 typedef struct{
     u16 bank;

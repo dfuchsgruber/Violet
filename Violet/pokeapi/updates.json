@@ -1560,7 +1560,13 @@
 		"ability_1": null,
 		"hidden_ability": null,
 		"safari_rate": 0,
-		"dex_number": 202
+		"dex_number": 202,
+		"levelup_moves": [
+			[
+				"Runengleich",
+				1
+			]
+		]
 	},
 	"POKEMON_FROSDEDJE": {
 		"ability_0": "Hagelalarm",

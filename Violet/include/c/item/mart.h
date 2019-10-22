@@ -11,12 +11,12 @@
 typedef struct{
     u16 flag;
     u16 item;
-}mart_item;
+} mart_item;
 
 typedef struct{
     void (*end_callback)();
     u16 *item_list;
-}mart_state_t;
+} mart_state_t;
 
 
 extern mart_state_t mart_state;
