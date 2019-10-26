@@ -36,6 +36,16 @@ str_dungeon_forest_collapsing:
 .global ow_script_test
 
 ow_script_test:
+callasm special_initialize_pc_for_selection
+waitstate 
+end
+
+
+special 60
+waitstate
+end
+
+
 givepokemon POKEMON_ICOGNITO 12 0 0 0 0
 end
 

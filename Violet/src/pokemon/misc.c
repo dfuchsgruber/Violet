@@ -19,14 +19,14 @@ void pokemon_team_remove(){
 
 void pokemon_team_knows_hm(){
     int index = *var_access(0x8004);
-    *var_access(0x800D) = pokemon_knows_hm(&player_pokemon[index]);
+    *var_access(0x800D) = pokemon_knows_hm(&player_pokemon[index].box);
     
 }
 
-bool pokemon_knows_hm(pokemon *p){
+bool pokemon_knows_hm(box_pokemon *p){
     int i;
     for(i = 0; i < 4; i++){
-        if(attack_is_hidden_machine((u16)pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1+i), NULL)))
+        if(attack_is_hidden_machine((u16)box_pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1+i), NULL)))
             return true;
     }
     return false;

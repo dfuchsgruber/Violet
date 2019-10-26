@@ -4,6 +4,12 @@
 #include "stdbool.h"
 #include "stddef.h"
 
+#if defined(__GNUC__) && __GNUC__ >= 7
+ #define FALL_THROUGH __attribute__((fallthrough))
+#else
+ #define FALL_THROUGH ((void)0)
+#endif /* __GNUC__ >= 7 */
+
 #define LOW 0
 #define HIGH 1
 

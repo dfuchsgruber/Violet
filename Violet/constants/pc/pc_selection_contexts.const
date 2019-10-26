@@ -1,0 +1,9 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "PC_SELECTION_CONTEXT_ANY",
+        "PC_SELECTION_CONTEXT_CHOOSE_EGG",
+        "PC_SELECTION_CONTEXT_CHOOSE_WONDERTRADE"
+    ]
+}

@@ -60,5 +60,9 @@
 	"roamers" : "constants/roamers.const",
 	"unown_messages" : "constants/unown_messages.const",
 	"field_moves" : "constants/field_moves.const",
-	"healingplaces" : "constants/healingplaces.s"
+	"healingplaces" : "constants/healingplaces.s",
+	"pc_context_menu_items" : "constants/pc/pc_context_menu_items.const",
+	"pc_context_texts" : "constants/pc/pc_context_texts.const",
+	"pc_context_text_formats" : "constants/pc/pc_context_text_formats.const",
+	"pc_selection_contexts" : "constants/pc/pc_selection_contexts.const"
 }

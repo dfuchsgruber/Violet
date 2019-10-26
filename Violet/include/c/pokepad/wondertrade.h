@@ -128,14 +128,6 @@
      */
     void wondertrade_free_components();
 
-    // TODO
-    void (*ingame_trade_unkown_callback)();
-
-    /**
-     * TODO
-     */
-    void ingame_trade_unknown_func();
-
     /**
      * Initializes the ingame trade callback
      */

@@ -28,6 +28,8 @@
 #include "overworld/script.h"
 #include "dma.h"
 #include "data_structures.h"
+#include "pc.h"
+#include "debug.h"
 
 extern const unsigned short gfx_wondertrade_bg_upperTiles[];
 extern const unsigned short gfx_wondertrade_bg_upperMap[];
@@ -171,11 +173,11 @@ u16 wondertrade_select_pokemon() {
         case 3:
             if (r < 16)
                 table++;
-            __attribute__ ((fallthrough));
+            FALL_THROUGH;
         case 2:
             if (r < 64)
                 table++;
-            __attribute__ ((fallthrough));
+            FALL_THROUGH;
         case 1:
             if (r < 128)
                 table++;
@@ -222,16 +224,23 @@ void wondertrade_spawn_pokemon() {
 }
 
 bool wondertrade_can_pokemon_be_sent() {
-    u16 *result = (u16*) 0x020370C0;
-    if (pokemon_get_attribute(&player_pokemon[*result], ATTRIBUTE_IS_EGG, 0)) {
+    box_pokemon *p = pokemon_get_by_box(*var_access(0x8004), *var_access(0x8005));
+    if (box_pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0)) {
         return false;
     }
-    return !pokemon_knows_hm(&player_pokemon[*result]);
+    return !pokemon_knows_hm(p);
+}
+
+static void wondertrade_continuation_after_trade() {
+    // Reswap the player's first pokemon with the one on the box
+    memcpy(pokemon_get_by_box(*var_access(0x8000), *var_access(0x8001)), player_pokemon, sizeof(box_pokemon));
+    memcpy(player_pokemon, opponent_pokemon + 1, sizeof(pokemon));
+    map_reload_continuation_resume_script();
 }
 
 void wondertrade_callback_after_selection() {
     int from_outdoor = gp_stack_pop();
-    if (*var_access(0x8004) >= 6) {
+    if (*var_access(0x8006) == false) {
         if (from_outdoor) {
             callback1_set(map_reload);
         } else {
@@ -244,9 +253,16 @@ void wondertrade_callback_after_selection() {
                 (*var_access(WONDERTRADE_CNT))++;
             }
             *var_access(WONDERTRADE_STEPS_TO_ENABLE) = 0;
-            *var_access(0x8005) = *var_access(0x8004); //var8005 <- var8004
-            //now we initialize the ingame trade
-            ingame_trade_unkown_callback = ingame_trade_unknown_func;
+            *var_access(0x8000) = *var_access(0x8004);
+            *var_access(0x8001) = *var_access(0x8005);
+            *var_access(0x8004) = 0;
+            *var_access(0x8005) = 0;
+            // Temporarily swap out the first mon of the players party, as this will be traded away
+            memcpy(opponent_pokemon + 1, player_pokemon, sizeof(pokemon));
+            // Fetch the selected pokemon from the box
+            memcpy(player_pokemon, pokemon_get_by_box(*var_access(0x8000), *var_access(0x8001)), sizeof(box_pokemon));
+            pokemon_calculate_stats(player_pokemon);
+            map_reload_continuation = wondertrade_continuation_after_trade;
             callback1_set(ingame_trade_init_callback);
 
         } else {
@@ -273,9 +289,10 @@ void wondertrade_callback_init_selection() {
     if (!fading_is_active()) {
         fading_control.buffer_transfer_enabled = true;
         gp_stack_push(fmem.wtrade_mem->from_outdoor);
-        pokemon_party_menu_init(3, 0, 0xB, 0, 0,
-            sub_811FB5C, wondertrade_callback_after_selection);
         wondertrade_free_components();
+        pc_initialize(PC_MODE_SELECT);
+        *var_access(0x8006) = 0;
+        fmem.pc_selection_context = PC_SELECTION_CONTEXT_CHOOSE_WONDERTRADE;
     }
 }
 
@@ -463,10 +480,10 @@ void wondertrade_init_components() {
     switch (lvl) {
         case 3:
             displacement += 4;
-            __attribute__ ((fallthrough));
+            FALL_THROUGH;
         case 2:
             displacement += 4;
-            __attribute__ ((fallthrough));
+            FALL_THROUGH;
         case 1:
             displacement += 4;
             break;

@@ -16,12 +16,15 @@
 typedef struct {
   u8 from_outdoor;
   u8 cursor_idx;
+  u8 select_from_box;
   u8 oam_egg_idx;
   u8 oam_egg_icons_idx[3];
   u8 oam_egg_progress_bars_idx[3][2]; // Two progress bars per egg
   u8 oam_selection[2];
   u8 context_menu_callback_idx;
   u8 imported_party_idx;
+  u8 imported_box_idx;
+  u8 imported_box_slot;
   u8 hide_current_egg_icon; // If set, the current egg icon is hidden
   void (*idle_callback)(); // The idle callback to set after showing components
 } incubator_state_stru;

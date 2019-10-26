@@ -34,6 +34,7 @@
 #include "data_structures.h"
 #include "math.h"
 #include "constants/vars.h"
+#include "pc.h"
 
 sprite oam_sprite_incubator_egg = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64,
     .attr2 = ATTR2_PRIO(2)};
@@ -293,6 +294,7 @@ u8 str_incubator_into_party[] = LANGDEP(PSTRING("Ins Team"), PSTRING("Into Party
 u8 str_incubator_into_box[] = LANGDEP(PSTRING("Auf Box"), PSTRING("To Box"));
 u8 str_incubator_return[] = LANGDEP(PSTRING("Zurück"), PSTRING("Return"));
 u8 str_incubator_from_party[] = LANGDEP(PSTRING("Vom Team"), PSTRING("From Party"));
+u8 str_incubator_from_box[] = LANGDEP(PSTRING("Von Box"), PSTRING("From Box"));
 
 list_menu_item incubator_context_menu_items_egg[3] = {
     {str_incubator_into_party, 1},
@@ -300,9 +302,10 @@ list_menu_item incubator_context_menu_items_egg[3] = {
     {str_incubator_return, 3}
 };
 
-list_menu_item incubator_context_menu_items_empty[2] = {
+list_menu_item incubator_context_menu_items_empty[3] = {
     {str_incubator_from_party, 1},
-    {str_incubator_return, 2},
+    {str_incubator_from_box, 2},
+    {str_incubator_return, 3},
 };
 
 void incubator_callback_delete_message_and_reload_egg(u8 self) {
@@ -427,16 +430,33 @@ void incubator_callback_initialize_party_menu() {
   if (!fading_is_active()) {
     gp_stack_push(fmem.incubator_state->from_outdoor);
     gp_stack_push(fmem.incubator_state->cursor_idx);
+    gp_stack_push(false);
     incubator_free_components();
     pokemon_party_menu_init(3, 0, 0xB, 0, 0, sub_811FB5C,
         incubator_callback1_party_menu_continuation);
   }
 }
 
+static void incubator_callback_initialize_pc_selection() {
+  generic_callback1();
+  if (!fading_is_active()) {
+    io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG1_SECOND | IO_BLDCNT_OBJ_SECOND |
+      IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND | IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND);
+    io_set(IO_BLDALPHA, IO_BLDALPHA_EVA(16) | IO_BLDALPHA_EVB(0));
+    gp_stack_push(fmem.incubator_state->from_outdoor);
+    gp_stack_push(fmem.incubator_state->cursor_idx);
+    gp_stack_push(true);
+    incubator_free_components();
+    pc_initialize(PC_MODE_SELECT);
+    *var_access(0x8006) = 0x0;
+    fmem.pc_selection_context = PC_SELECTION_CONTEXT_CHOOSE_EGG;
+  }
+}
+
 void incubator_callback_context_menu_empty(u8 self) {
   int item = list_menu_process_input(fmem.incubator_state->context_menu_callback_idx);
   if (item == LIST_MENU_NOTHING_CHOSEN) return;
-  if (item == LIST_MENU_B_PRESSED || item == 2) {
+  if (item == LIST_MENU_B_PRESSED || item == 3) {
     play_sound(5);
     list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
     tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY, 0);
@@ -450,35 +470,64 @@ void incubator_callback_context_menu_empty(u8 self) {
     tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
     fadescreen_all(1, 0);
     callback1_set(incubator_callback_initialize_party_menu);
+  } else if (item == 2) {
+    list_menu_remove(fmem.incubator_state->context_menu_callback_idx, NULL, NULL);
+    tbox_flush_set(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY, 0);
+    tbox_border_flush(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
+    fadescreen_all(1, 0);
+    callback1_set(incubator_callback_initialize_pc_selection);
   }
+}
+
+static bool incubator_pokemon_can_be_imported(box_pokemon *p) {
+  return box_pokemon_get_attribute(p, ATTRIBUTE_SANITY_HAS_SPECIES, 0) &&
+    !box_pokemon_get_attribute(p, ATTRIBUTE_SANITY_IS_BAD_EGG, 0) &&
+    box_pokemon_get_attribute(p, ATTRIBUTE_SANITY_IS_EGG, 0);
 }
 
 void incubator_callback1_party_menu_continuation() {
   fmem.incubator_state = malloc_and_clear(sizeof(incubator_state_stru));
+  fmem.incubator_state->select_from_box = (u8) gp_stack_pop();
   fmem.incubator_state->cursor_idx = (u8) gp_stack_pop();
   fmem.incubator_state->from_outdoor = (u8) gp_stack_pop();
   fmem.incubator_state->idle_callback = generic_callback1;
   box_pokemon *target = &cmem.incubator_slots[fmem.incubator_state->cursor_idx];
-  u16 party_idx = *var_access(0x8004);
-  dprintf("Selected party idx %d\n", party_idx);
-  fmem.incubator_state->imported_party_idx = (u8) party_idx;
-  if (party_idx < 6 && pokemon_get_attribute(&player_pokemon[party_idx],
-      ATTRIBUTE_SANITY_HAS_SPECIES, 0) && !pokemon_get_attribute(&player_pokemon[party_idx],
-      ATTRIBUTE_SANITY_IS_BAD_EGG, 0) && pokemon_get_attribute(&player_pokemon[party_idx],
-      ATTRIBUTE_SANITY_IS_EGG, 0) && pokemon_get_attribute(&player_pokemon[party_idx],
-      ATTRIBUTE_IS_EGG, 0) && box_pokemon_get_attribute(target, ATTRIBUTE_SPECIES, 0) == 0) {
-    // Import the pokemon
-    memcpy(target, &player_pokemon[party_idx], sizeof(box_pokemon));
-    pokemon_clear(&player_pokemon[party_idx]);
-    player_pokemon_compact();
-    player_pokemon_recount_pokemon();
-    fmem.incubator_state->hide_current_egg_icon = true;
-  } else if (party_idx != 6 && party_idx != 7) {
-    // Tried to import an invalid pokemon
-    fmem.incubator_state->imported_party_idx = 255;
+  if (fmem.incubator_state->select_from_box) {
+    if (*var_access(0x8006)) {
+       u8 box_idx = (u8)(*var_access(0x8004));
+      u8 slot = (u8)(*var_access(0x8005));
+      dprintf("Selected from box %d, slot %d\n", box_idx, slot);
+      box_pokemon *p = pokemon_get_by_box(box_idx, slot);
+      if (incubator_pokemon_can_be_imported(p)) {
+        box_pokemon_copy(box_idx, slot, target);
+        dprintf("Imported %x to %x\n", p, target);
+        box_pokemon_clear_by_box_idx_and_slot(box_idx, slot);
+        fmem.incubator_state->hide_current_egg_icon = true;  
+      } else {
+        fmem.incubator_state->imported_party_idx = 255;
+      }
+    } else {
+      dprintf("Nothing selected from box\n");
+      fmem.incubator_state->imported_party_idx = 6; // Indicates B-press
+    }
+  } else {
+    u8 party_idx = (u8)*var_access(0x8004);
+    fmem.incubator_state->imported_party_idx = party_idx;
+    dprintf("Selected party idx %d\n", party_idx);
+    if (party_idx < 6 && incubator_pokemon_can_be_imported(&player_pokemon[party_idx].box)) {
+      memcpy(target, &player_pokemon[party_idx], sizeof(box_pokemon));
+      pokemon_clear(&player_pokemon[party_idx]);
+      player_pokemon_compact();
+      player_pokemon_recount_pokemon();
+      fmem.incubator_state->hide_current_egg_icon = true;  
+    } else if (party_idx != 6 && party_idx != 7) {
+      // A pokémon was selected from the party, but it seems not to be importable
+      fmem.incubator_state->imported_party_idx = 255;
+    }
   }
   incubator_initialize_ui();
   big_callback_new(incubator_callback_pokemon_imported, 0);
+  
 }
 
 void incubator_callback_pokemon_imported(u8 self) {
@@ -512,6 +561,7 @@ void incubator_callback_pokemon_imported(u8 self) {
       callback1_set(incubator_callback1_idle);
       big_callback_delete(self);
     }
+    
   }
 }
 
@@ -551,8 +601,8 @@ void incubator_callback1_idle() {
         big_callback_new(incubator_callback_context_menu_egg, 0);
         callback1_set(generic_callback1);
       } else {
-        gp_list_menu_template.item_cnt = 2;
-        gp_list_menu_template.max_items_showed = 2;
+        gp_list_menu_template.item_cnt = 3;
+        gp_list_menu_template.max_items_showed = 3;
         gp_list_menu_template.tbox_idx = INCUBATOR_TBOX_CONTEXT_MENU_EMPTY;
         gp_list_menu_template.items = incubator_context_menu_items_empty;
         tbox_tilemap_draw(INCUBATOR_TBOX_CONTEXT_MENU_EMPTY);
@@ -728,7 +778,7 @@ tboxdata incubator_tboxes[INCUBATOR_TBOX_CNT + 1] = {
       .start_tile = INCUBATOR_TBOX_START_TILE + 24},
   [INCUBATOR_TBOX_CONTEXT_MENU_EGG] = {.bg_id = 0, .x = 20, .y = 13, .w = 9, .h = 6, .pal = 14,
       .start_tile = INCUBATOR_TBOX_START_TILE + 40},
-  [INCUBATOR_TBOX_CONTEXT_MENU_EMPTY] = {.bg_id = 0, .x = 20, .y = 15, .w = 9, .h = 4, .pal = 14,
+  [INCUBATOR_TBOX_CONTEXT_MENU_EMPTY] = {.bg_id = 0, .x = 20, .y = 13, .w = 9, .h = 6, .pal = 14,
       .start_tile = INCUBATOR_TBOX_START_TILE + 40},
   [INCUBATOR_TBOX_MESSAGE] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 14,
       .start_tile = INCUBATOR_TBOX_START_TILE + 94},

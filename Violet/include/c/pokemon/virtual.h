@@ -336,7 +336,7 @@ u8 battler_load_ability_as_defender(pokemon *poke);
 void special_player_party_heal_index();
 void pokemon_team_remove();
 void pokemon_team_knows_hm();
-bool pokemon_knows_hm(pokemon *p);
+bool pokemon_knows_hm(box_pokemon *p);
 
 /**
  * Heals all pokemon in the player's party
@@ -469,4 +469,18 @@ int pokemon_unown_get_letter(pid_t p);
  **/
 pid_t pokemon_unown_generate_letter_pid(u32 letter);
 
+/**
+ * Clears a pokemon on the box.
+ * @param the box of the pokemon to clear
+ * @param slot the slot in the box to clear
+ **/
+void box_pokemon_clear_by_box_idx_and_slot(u8 box_idx, u8 slot);
+
+/**
+ * Copies the data of a pokemon on the box.
+ * @param box_idx the box of the pokemon to copy
+ * @param slot the slot in the box
+ * @param dst where to put the data
+ **/
+void box_pokemon_copy(u8 box_idx, u8 slot, box_pokemon *dst);
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

@@ -64,22 +64,18 @@ void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 defau
     if (egg_move_cnt) {
     	u16 *egg_moves = malloc(sizeof(u16) * (u32)egg_move_cnt);
     	memcpy(egg_moves, egg_moves_rom, sizeof(u16) * (u32)egg_move_cnt);
-		r = feature_generator();
-		dprintf("Returned egg moves %x for species %d of size %d\n", egg_moves, species, egg_move_cnt);
-		int attached = 0;
-		while (r < 64 && egg_move_cnt && attached < 4 && egg_move_cnt) {
-			//we attach a random egg move
-			int n = rng() % egg_move_cnt;
-			if (pokemon_append_attack(&opponent_pokemon[0], egg_moves[n]) == 0xFFFF) {
-				pokemon_rotate_and_push_attack(&opponent_pokemon[0], egg_moves[n]);
-			}
-			egg_moves[n] = egg_moves[--egg_move_cnt];
-			attached++;
-			r += 16;
-		}
-		free(egg_moves);
+      dprintf("Returned egg moves %x for species %d of size %d\n", egg_moves, species, egg_move_cnt);
+      for (int attached = 0; attached < 4 && egg_move_cnt > 0; attached++) {
+        //we attach a random egg move
+        if (feature_generator() >= 32) continue; 
+        int n = rng() % egg_move_cnt;
+        if (pokemon_append_attack(&opponent_pokemon[0], egg_moves[n]) == 0xFFFF) {
+          pokemon_rotate_and_push_attack(&opponent_pokemon[0], egg_moves[n]);
+        }
+        egg_moves[n] = egg_moves[--egg_move_cnt];
+      }
+      free(egg_moves);
     }
-
 
     //now we give the item
     r = feature_generator();

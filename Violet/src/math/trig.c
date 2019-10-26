@@ -74,14 +74,14 @@ FIXED FIXED_SIN(FIXED theta) {
   switch(quadrant_idx) {
     case 2:
       result = -1;
-      __attribute__ ((fallthrough));
+      FALL_THROUGH;
     case 0: {
       // First quadrant
       return result * sin_lut[lut_idx];
     }
     case 3: {
       result = -1;
-      __attribute__ ((fallthrough));
+      FALL_THROUGH;
     }
     case 1: {
       // Second quadrant

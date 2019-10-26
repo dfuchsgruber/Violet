@@ -18,6 +18,8 @@ typedef struct{
 
 extern stru_map_displ_cntrl map_displ_cntrl;
 
+extern void (*map_reload_continuation)();
+
 /**
  * Returns the state of an overworld flag (0 or != 0)
  * This is done by accessing 0x02037078 and masking the byte with the flag
@@ -150,5 +152,10 @@ bool is_bank_x0_and_map_x40();
  * @param if flash is usable on the current map, i.e. the map is darkened
  **/
 bool map_flash_usable();
+
+/**
+ * Continuation that is invoked by the map realod function itself and that continues a script.
+ **/
+void map_reload_continuation_resume_script();
 
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

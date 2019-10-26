@@ -45,7 +45,7 @@ typedef struct {
   u8 cursor_kind:2; // x40, x80
 } list_menu_template;
 
-struct ListMenu
+typedef struct list_menu
 {
     list_menu_template _template;
     u16 scroll_offset;
@@ -54,7 +54,24 @@ struct ListMenu
     u8 unk_1D;
     u8 callback_idx;
     u8 unk_1F;
-};
+} list_menu_t;
+
+typedef struct {
+  u8 x_offset;
+  u8 y_offset;
+  u8 cursor_idx;
+  u8 cursor_min;
+  u8 cursor_max;
+  u8 tbox_idx;
+  u8 font;
+  u8 field_7;
+  u8 line_height;
+  u8 field_9;
+  u8 field_10;
+  u8 field_11;
+} gp_list_menu_t;
+
+extern gp_list_menu_t gp_list_menu;
 
 extern list_menu_template gp_list_menu_template;
 
@@ -100,5 +117,10 @@ void list_menu_get_scroll_and_row(u8 list_menu_handler_callback_idx, u16 *scroll
  */
 void list_menu_remove(u8 list_menu_handler_callback_idx, u16 *scroll_offset, u16 *selected_row);
 
+/**
+ * Processes the input of the gp list menu and closes it upon selection (or B press).
+ * @return the result of processing the input
+ **/
+int gp_list_menu_process_input_and_close_on_selection();
 
 #endif /* INCLUDE_C_LIST_MENU_H_ */
