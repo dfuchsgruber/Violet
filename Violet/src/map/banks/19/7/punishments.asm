@@ -152,6 +152,7 @@ ow_script_ceometria_gym_punishment_room_npc_move_away:
     waitmovement 0
     hidesprite 1
 ow_script_ceometria_gym_punishment_nothing:
+    callasm ceometria_gym_update_scores
     setvar CEOMETRIA_GYM_PUNISHMENT_ROOM_TRIGGER 1
     releaseall
     end

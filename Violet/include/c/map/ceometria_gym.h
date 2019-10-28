@@ -15,6 +15,7 @@ enum ceometria_gym_room_types {
     CEOMETRIA_GYM_REDUCE_HP_ROOM = 8,
     CEOMETRIA_GYM_REDUCE_PP_ROOM = 9,
     CEOMETRIA_GYM_POISON_ROOM = 10,
+    NUM_CEOMETRIA_GYM_ROOM_TYPES,
 };
 
 enum ceometria_gym_person_types {
@@ -24,9 +25,18 @@ enum ceometria_gym_person_types {
     CEOMETRIA_GYM_TRAINER_BATTLE = 3
 };
 
+#define CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX 64
+#define CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX 64
+#define CEOMETRIA_GYM_PUNISHMENT_SCORE_ADD(x) cmem.ceometria_gym_state.punishment_score = (u8)MIN(cmem.ceometria_gym_state.punishment_score + (x), CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX)
+#define CEOMETRIA_GYM_NON_TRAINER_SCORE_ADD(x) cmem.ceometria_gym_state.non_trainer_score = (u8)MIN(cmem.ceometria_gym_state.non_trainer_score + (x), CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX)
+
+
 typedef struct {
     u32 rng_state;
-    u8 waiting_room_cnt;
+    u8 waiting_room_cnt : 4;
+    u8 last_room : 4;
+    u8 punishment_score; // Increases with punishments, makes healing rooms more likely
+    u8 non_trainer_score; // Increases with non-trainer rooms, makes trainers more likely
     u8 next_rooms[3];
     struct {
         u8 type : 2;

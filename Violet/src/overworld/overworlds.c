@@ -1594,7 +1594,7 @@ overworld_sprite *overworld_sprites[] = {
 
 overworld_sprite *overworld_get (u8 picture){
     if(picture >= 0xF0){
-		dprintf("Picture is %d\n", *var_access((u16)(0x4010+picture-0xF0)));
+		// dprintf("Picture is %d\n", *var_access((u16)(0x4010+picture-0xF0)));
         return overworld_sprites[*var_access((u16)(0x4010+picture-0xF0))];
     }
     return overworld_sprites[picture];

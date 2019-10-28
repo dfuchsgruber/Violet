@@ -3969,7 +3969,7 @@ item items[] = {
 		(void(*)(u8))0x80a1425, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		(void(*)(u8))0x1, //field_28
 	},{
 		//ITEM_SUPERANGEL
 		LANGDEP(PSTRING("Superangel"), PSTRING("Super Rod")),
@@ -3984,7 +3984,7 @@ item items[] = {
 		(void(*)(u8))0x80a1425, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
-		(void(*)(u8))0x0, //field_28
+		(void(*)(u8))0x2, //field_28
 	},{
 		//ITEM_BOOTSTICKET
 		LANGDEP(PSTRING("Bootsticket"), PSTRING("S.S. Ticket")),

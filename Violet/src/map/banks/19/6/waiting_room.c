@@ -38,6 +38,9 @@ void ceometria_gym_initialize() {
     // Seed the gym
     cmem.ceometria_gym_state.rng_state = (u32)(rnd16() | (rnd16() << 16));
     cmem.ceometria_gym_state.waiting_room_cnt = 0;
+    cmem.ceometria_gym_state.non_trainer_score = 0;
+    cmem.ceometria_gym_state.punishment_score = 0;
+    cmem.ceometria_gym_state.last_room = NUM_CEOMETRIA_GYM_ROOM_TYPES;
 }
 
 u8 ceometria_gym_overworld_pictures_male[] = {
@@ -48,15 +51,26 @@ u8 ceometria_gym_overworld_pictures_female[] = {
     23, 28, 35, 58
 };
 
+static u8 ceometria_gym_generate_room() {
+    u8 room = cmem.ceometria_gym_state.last_room;
+    // Try to sample a room differnt than the last room type
+    for (int attempts = 0; attempts < 8 && room == cmem.ceometria_gym_state.last_room; attempts++) {
+        if ((ceometria_gym_rnd() % CEOMETRIA_GYM_PUNISHMENT_SCORE_MAX) < cmem.ceometria_gym_state.non_trainer_score) {
+            room = CEOMETRIA_GYM_TRAINER_ROOM;
+        } else if ((ceometria_gym_rnd() % CEOMETRIA_GYM_NON_TRAINER_SCORE_MAX) < cmem.ceometria_gym_state.punishment_score) {
+            room = CEOMETRIA_GYM_HEALING_ROOM;
+        } else {
+            room = (u8)(ceometria_gym_rnd() % NUM_CEOMETRIA_GYM_ROOM_TYPES);
+        }
+    }
+    if (room == NUM_CEOMETRIA_GYM_ROOM_TYPES) derrf("Couldn't sample any room type.\n");
+    return room;
+}
+
 void ceometria_gym_next_waiting_room() {
     // Determine next rooms
     for (int room_idx = 0; room_idx < 3; room_idx++) {
-        // 1/3 of all rooms are trainer rooms
-        if (!(u16)ceometria_gym_rnd() % 3) {
-            cmem.ceometria_gym_state.next_rooms[room_idx] = CEOMETRIA_GYM_TRAINER_ROOM;
-        } else {
-            cmem.ceometria_gym_state.next_rooms[room_idx] = (u8)(ceometria_gym_rnd() % 11);
-        }
+        cmem.ceometria_gym_state.next_rooms[room_idx] = ceometria_gym_generate_room();
     }
     cmem.ceometria_gym_state.waiting_room_cnt++;
     // Create persons
