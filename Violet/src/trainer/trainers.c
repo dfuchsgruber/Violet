@@ -5953,5 +5953,15 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
         .party = (trainer_pokemon*) trainer_party_x13d_haweiland_may
     },
+		[0x13E] = {
+				.trainerclass = TRAINERCLASS_ARENALEITER, .sprite = 121,
+				.encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Teah"),
+						PSTRING("Teah")), .pokemon_cnt = 4,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+				.items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
+				.party = (trainer_pokemon*) trainer_party_ceometria_gym_leader,
+				.uses_custom_items = true, .uses_custom_moves = true
+		},
 };
 

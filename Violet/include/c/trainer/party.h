@@ -414,5 +414,6 @@ trainer_pokemon_default_item_default_attacks trainer_party_x13a_haweiland_cargo_
 trainer_pokemon_custom_item_custom_attacks trainer_party_x13b_haweiland_may[4];
 trainer_pokemon_custom_item_custom_attacks trainer_party_x13c_haweiland_may[4];
 trainer_pokemon_custom_item_custom_attacks trainer_party_x13d_haweiland_may[4];
+trainer_pokemon_custom_item_custom_attacks trainer_party_ceometria_gym_leader[4];
 
 #endif /* INCLUDE_C_TRAINER_PARTY_H_ */

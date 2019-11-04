@@ -22,6 +22,7 @@
 .global ow_script_haweiland_person_18
 .global ow_script_haweiland_person_19
 .global ow_script_haweiland_person_20
+.global ow_script_haweiland_person_21
 
 ow_script_haweiland_person_0:
     loadpointer 0 str_0
@@ -107,6 +108,10 @@ ow_script_haweiland_person_20:
     loadpointer 0 str_20
     callstd MSG_FACE
     end
+ow_script_haweiland_person_21:
+    loadpointer 0 str_21
+    callstd MSG_FACE
+    end
 
 
 
@@ -153,6 +158,8 @@ str_19:
     .autostring 34 2 "Ob du es mir glaubst oder nicht, ich hatte einmal ein Rendevouz mit Narzissa von den Top Vier genau hier an diesem Strand.\pObwohl das ewig her ist, komme ich noch täglich hier her, weil ich diese eine Nacht nicht vergessen kannDOTS"
 str_20:
     .autostring 34 2 "Es ist ein Unding, wie viele Menschen ihren Müll am Strand liegen lassen.\pSo verwahrlost dieser schöne Fleck mehr und mehrDOTS"
+str_21:
+    .autostring 34 2 "Meinst du, dass es im Ozean auch Monster gibt?\pIch denke, dass wir nicht sicher wissen können, was sich genau am Meeresgrund herumtreibtDOTS"
 .elseif LANG_EN
 
 str_0:
@@ -197,4 +204,6 @@ str_19:
     .autostring 34 2 "If you believe it or not, I once had a date with Narcissa of the elite four at this very beach.\pEven though it was ages ago, I still return here every day because I can't forget this one magical nightDOTS"
 str_20:
     .autostring 34 2 "It is quite intolerable how many people leave their waste at the beaches.\pAt this rate this beautiful place slowly becomes run downDOTS"
+str_21:
+    .autostring 34 2 "Do you think there are monsters on the bottom of the sea?\pI believe that we can't know what exactly dwells there in the deepsDOTS"
 .endif

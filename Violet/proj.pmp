@@ -244,6 +244,11 @@
 				"map_3_17_haweiland",
 				"src/map/banks/3/17/map_3_17_haweiland.pms",
 				"MAP_HAWEILAND"
+			],
+			"18": [
+				"map_route_7",
+				"src/map/banks/3/18/map_route_7.pms",
+				"MAP_ROUTE_7"
 			]
 		},
 		"4": {
@@ -823,6 +828,11 @@
 				"map_ceometria_clouds",
 				"src/map/banks/19/9/map_ceometria_clouds.pms",
 				"MAP_CEOMETRIA"
+			],
+			"10": [
+				"map_ceometria_gym_battle_field",
+				"src/map/banks/19/10/map_ceometria_gym_battle_field.pms",
+				"MAP_CEOMETRIA"
 			]
 		},
 		"20": {
@@ -939,7 +949,8 @@
 				"src/map/banks/29/0/map_haweiland_cargo_hall.pms",
 				"MAP_HAWEILAND"
 			]
-		}
+		},
+		"30": {}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -1553,6 +1564,14 @@
 		"map_footer_beach_house": [
 			76,
 			"src/map/banks/27/2/map_footer_beach_house.pms"
+		],
+		"map_footer_ceometria_gym_battle_field": [
+			77,
+			"src/map/banks/19/10/map_footer_ceometria_gym_battle_field.pms"
+		],
+		"map_footer_route_7": [
+			85,
+			"src/map/banks/3/18/map_footer_route_7.pms"
 		]
 	},
 	"tilesets_primary": {

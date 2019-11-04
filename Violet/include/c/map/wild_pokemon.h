@@ -282,5 +282,7 @@ wild_pokemon_habitat wild_pokemon_route_10_clouds_grass;
 wild_pokemon_habitat wild_pokemon_route_11_clouds_grass;
 wild_pokemon_habitat wild_pokemon_ceometria_clouds_grass;
 wild_pokemon_habitat wild_pokemon_route_12_clouds_grass;
+wild_pokemon_habitat wild_pokemon_route_12_west_water;
+wild_pokemon_habitat wild_pokemon_route_12_west_rod;
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

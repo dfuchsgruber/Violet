@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_MAP_EVENT_H_
 #define INCLUDE_C_MAP_EVENT_H_
 
+#include "types.h"
 #include "tile/coordinate.h"
 
 typedef struct map_event_person {
@@ -30,6 +31,8 @@ typedef struct map_event_person {
     u16 value;
 
 } map_event_person;
+
+#define MAP_EVENT_PERSON_VIEWPORT 0x7F
 
 typedef struct map_event_warp {
     s16 x;

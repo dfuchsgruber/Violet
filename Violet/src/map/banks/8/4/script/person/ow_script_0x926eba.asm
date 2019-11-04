@@ -7,8 +7,6 @@
 
 .global ow_script_0x926eba
 ow_script_0x926eba:
-compare KARMA_VALUE 0x7fff
-callif HIGHER ow_script_0x9270b8
 lock
 faceplayer
 loadpointer 0x0 str_0x926fde
@@ -114,20 +112,6 @@ release
 end
 
 
-.global ow_script_0x9270b8
-ow_script_0x9270b8:
-compare KARMA_VALUE 0xffc0
-gotoif LESS_OR_EQUAL ow_script_0x926f34
-return
-
-
-.global ow_script_0x926f34
-ow_script_0x926f34:
-loadpointer 0x0 str_0x926f3e
-callstd MSG_FACE
-end
-
-
 .ifdef LANG_GER
 .global str_0x926fde
 
@@ -182,12 +166,7 @@ str_0x1963a6:
 str_0x1963e0:
     .string "Oh, mhmDOTS\nDas ist eigentlich ein Ei!"
         
-        
-.global str_0x926f3e
 
-str_0x926f3e:
-    .string "DOTS\pDu scheinst nicht der Typ Mensch\nzu sein, der seinen Pokémon Namen\lgibt.\pSie sind nicht deine Freunde,\nsondern dienen dir bloß als\lWerkzeuge, nicht wahr?"
-        
         
 .elseif LANG_EN
 

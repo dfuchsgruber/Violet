@@ -5,10 +5,9 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "mugshot.s"
+.include "specials.s"
 
-
-.global ow_script_movs_0x92e99c
-ow_script_movs_0x92e99c:
+movs:
 .byte LOOK_UP
 .byte STOP
 
@@ -17,90 +16,48 @@ ow_script_movs_0x92e99c:
 ow_script_0x92de82:
 lock
 faceplayer
-loadpointer 0x0 str_0x92ea1b
+loadpointer 0x0 str_0
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x92e99f
+gotoif EQUAL no_story
 playsong MUS_DARK_QUEEN 0x0
-applymovement 0x800f ow_script_movs_0x92e99c
+applymovement LASTTALKED movs
 waitmovement 0x0
 setvar 0x8004 0x1
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
-loadpointer 0x0 str_0x92e752
+loadpointer 0x0 str_story
 callstd MSG
 setvar 0x8004 0x2
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
-goto ow_script_0x92eaa9
-
-
-.global ow_script_0x92eaa9
-ow_script_0x92eaa9:
 fadesong MUS_ROUTE_24_25
-compare KARMA_VALUE 0xff81
-gotoif EQUAL ow_script_0x92ded4
-loadpointer 0x0 str_0x92e6f1
+loadpointer 0x0 str_after
 callstd MSG_FACE
 end
 
-
-.global ow_script_0x92ded4
-ow_script_0x92ded4:
-faceplayer
-loadpointer 0x0 str_0x92df22
-callstd MSG
-loadpointer 0x0 str_0x92def0
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-release
-end
-
-
-.global ow_script_0x92e99f
-ow_script_0x92e99f:
-loadpointer 0x0 str_0x92e9aa
-callstd MSG
-release
-end
-
+no_story:
+    loadpointer 0 str_1
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
-.global str_0x92ea1b
-
-str_0x92ea1b:
-    .string "Oh, du nennst mich eine Hexe!\pHehehe!\pHehehe!\pDas ist wahr! Ich bin eine Hexe!\pIch kenne viele Hexengeschichten.\nSoll ich dir eine erzählen?"
-        
-        
-.global str_0x92e752
-
-str_0x92e752:
-    .string "Vor vielen Jahren, vor Äonen, als\ndie Legendären Pokemon die Welt\lkreierten, da existierte ein\lMensch mit der Ambition,\lunsterblich zu werden.\pSie war die dunkle Königin, die\nVerkörperung der Nacht, ein\lSchatten.\pIm Laufe der Zeit erwarb sie die\nFähigkeit, Seelen zu verschlingen,\lsie sich einzuverleiben und zu\lverbrauchen.\pBald regierte sie das ganze Land\nund war selbst den Schöpfern der\lWelt ebenbürtig.\pEines Tages aber gelang es einem\nTrainer, die finstere Königin zu\lversiegeln.\pSeit je her sind wir Hexen auf der\nSuche nach einem Weg, ihre\lunsterbliche Seele\lzurückzubringen."
-        
-        
-.global str_0x92e6f1
-
-str_0x92e6f1:
-    .string "Eine spannende Geschichte, nicht?\pEines steht jedenfalls fest, sie\nist irgendwo da draußenDOTS "
-        
-        
-.global str_0x92df22
-
-str_0x92df22:
-    .string "DOTS DOTS DOTS"
-        
-        
-.global str_0x92def0
-
-str_0x92def0:
-    .string "DOTS DOTS DOTS\pErkennst du mich nicht?\pDOTS DOTS DOTS"
-        
-        
-.global str_0x92e9aa
-
-str_0x92e9aa:
-    .string "Nah! Wie auch immer! Wir Hexen\nhaben eine uralte Geschichte und\lTraditionDOTS\pEs lohnt sich, darüber zu wissen."
-        
-        
+str_0:
+    .autostring 34 2 "Hehe!\pWer ich bin?\pEine Hexe natürlich, was sonst?\pMöchtest du eine spannende Geschichte hören?"
+str_1:
+    .autostring 34 2 "Wie auch immerDOTS\pSolltest du deine Meinung ändern, findest du mich hierDOTS"
+str_story:
+    .autostring 34 2 "Vor vielen Jahren herrschte eine dunkle Königin über diese Region, lange noch, bevor es die Top Vier überhaupt gab.\pSie war eine tyrannische, machtsüchtige Frau, und unfassbar mächtig.\pSie bändigte eigenhändig zahlreiche legendäre Pokémon und kein Mensch war im Stande, ihr Einhalt zu gebieten.\pEines Tages erklärte sie dann den Göttern unserer Welt den Krieg.\pLetztlich wurde sie für ihren Hochmut bestraft und vernichtet.\pEs heißt, dass ihr unsterblicher Geist noch immer umherirrt."
+str_after:
+    .autostring 34 2 "Viele Hexen sind auf der Suche nach dem Geist der dunklen Königin.\pSie gilt als die Mutter des Hexentums."
 .elseif LANG_EN
+str_0:
+    .autostring 34 2 "Hehe!\pWho I am?\pWhy, a witch of course, what else?\pDo you want to hear a compelling story?"
+str_1:
+    .autostring 34 2 "WhateverDOTS\pIf you change your mind you can find me right hereDOTS"
+str_story:
+    .autostring 34 2 "Many years ago a dark queen ruled over this region, long before the Elite Four even were thing.\pShe was a tyrant and her lust for power was without any limit.\pAbove all however, she was unmatched in power.\pShe tamed many legendary Pokémon on her own and nobody was able to stand up to her.\pSome day she declared war on the gods of this world.\pFor this grandeure she was punished in the end and utterly destroyed.\pIt is said that her spirit wanders arround in this world to this very day."
+str_after:
+    .autostring 34 2 "Many witches are still searching for the spirit of the dark queen.\pShe is considered to be the mother of witchcraft."
 
 .endif

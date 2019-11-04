@@ -6002,10 +6002,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -6020,34 +6038,16 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 794,
+					"palette_idx": 9,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 794,
+					"palette_idx": 9,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				}
 			],
 			[
@@ -6252,10 +6252,28 @@
 			],
 			[
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -6271,41 +6289,41 @@
 				},
 				{
 					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 793,
+					"palette_idx": 9,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				}
 			],
 			[
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
+				},
+				{
+					"tile_idx": 642,
+					"palette_idx": 7,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -6320,34 +6338,16 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"tile_idx": 793,
+					"palette_idx": 9,
+					"horizontal_flip": 1,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
+					"palette_idx": 0,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
-				},
-				{
-					"tile_idx": 0,
-					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 0
+					"vertical_flip": 0
 				}
 			],
 			[
@@ -20810,7 +20810,7 @@
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
-				"priority": 0,
+				"priority": "1",
 				"field_7": 0
 			},
 			{
@@ -20860,7 +20860,7 @@
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
-				"priority": 0,
+				"priority": "1",
 				"field_7": 0
 			},
 			{
@@ -20870,7 +20870,7 @@
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
-				"priority": 0,
+				"priority": "1",
 				"field_7": 0
 			},
 			{

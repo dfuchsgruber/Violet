@@ -6,33 +6,17 @@
 
 .global ow_script_0x93cb68
 ow_script_0x93cb68:
-compare KARMA_VALUE 0x7fff
-gotoif HIGHER ow_script_0x93d65f
-loadpointer 0x0 str_0x93d5fd
+loadpointer 0 str_0
 callstd MSG_FACE
 end
-
-
-.global ow_script_0x93d65f
-ow_script_0x93d65f:
-loadpointer 0x0 str_0x948bab
-callstd MSG_FACE
-end
-
 
 .ifdef LANG_GER
-.global str_0x93d5fd
-
-str_0x93d5fd:
-    .string "Ich habe gehört, dass Menschen,\ndie sich dem Himmel verbunden\lfühlen, auf Wolken reiten können."
-        
-        
-.global str_0x948bab
-
-str_0x948bab:
-    .string "Was machst du denn so einen\ngrimmigen Gesichtsausdruck?\lHat dir irgendetwas die Laune am\lLeben verdorben?"
-        
+str_0:
+    .autostring 34 2 "Seit einigen Jahren ist es in Mode, auf einer Wolke zu reiten.\pIch wünschte, ich besäße so eine Wolke."
         
 .elseif LANG_EN
+str_0:
+    .autostring 34 2 "Some years ago it became a trend to ride a cloud.\pI wish I had one of those."
+        
 
 .endif

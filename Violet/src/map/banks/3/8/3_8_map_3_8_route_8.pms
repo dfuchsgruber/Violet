@@ -559,7 +559,7 @@
 				}
 			]
 		},
-		"music": "MUS_ROUTE_1_AND_TUNNELPFAD",
+		"music": "MUS_ROUTE_8",
 		"footer_idx": 18,
 		"namespace": "MAP_ROUTE_8",
 		"flash_type": "FLASH_NONE",

@@ -3,11 +3,6 @@
 	ldr r2, =trainer_build_party | 1
 	bx r2
 	.pool
-
-.org 0x0802596C
-	ldr r0, =hook_price_money | 1
-	bx r0
-	.pool
 	
 	
 .org 0x080C6EC4

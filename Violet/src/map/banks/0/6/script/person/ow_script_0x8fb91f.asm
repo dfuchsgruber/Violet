@@ -81,76 +81,7 @@ special 0xE
 loadpointer 0x0 str_0x8fe5f1
 callstd MSG
 special 0xF
-setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 choice1
-multichoice 0x0 0x0 0x0 0x1
-setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8fe785
-loadpointer 0x0 str_0x8fe57c
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-
-applymovement 0xff ow_script_movs_0x8fe783
-waitmovement 0x0
-setvar 0x8005 0xf8
-special2 0x8005 0xc
-
-
-loadpointer 0x0 str_0x8fe51d
-callstd MSG_KEEPOPEN
-
-setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 choice2
-multichoice 0x0 0x0 0x0 0x1
-setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-copyvar 0x8006 LASTRESULT
-compare 0x8006 0x0
-callif EQUAL ow_script_0x9270fb
-compare 0x8006 0x1
-callif EQUAL ow_script_0x927370
-getplayerpos 0x8005 0x8004
-compare 0x8005 0x20
-callif EQUAL ow_script_0x8fe513
-compare 0x8005 0x21
-callif EQUAL ow_script_0x8fe518
-fanfare 0x13e
-@// Receive fossil
-loadpointer 0x0 str_0x8fe4dd
-callstd MSG_KEEPOPEN
-waitfanfare
-closeonkeypress
-compare 0x8005 0x20
-callif EQUAL ow_script_0x8fe4bb
-compare 0x8005 0x21
-callif EQUAL ow_script_0x8fe4cc
-
-loadpointer 0 str_maniac
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8fe47f
-callstd MSG
-special 0xF
-
-applymovement LASTTALKED ow_script_movs_0x8fe47c
-waitmovement 0x0
-sound 0x17
-compare 0x8005 0x20
-callif EQUAL ow_script_0x8fe518
-compare 0x8005 0x21
-callif EQUAL ow_script_0x8fe513
-
-loadpointer 0 str_maniac
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8fe443
-callstd MSG
-special 0xF
-goto ow_script_0x8fee78
-
-.align 4
-choice1:
-    .word str_fossil_choice_0, 0
-    .word str_fossil_choice_1, 0
+goto ow_script_0x8fe785
 
 .align 4
 choice2:
@@ -290,8 +221,6 @@ special 0xF
 
 applymovement 0xff ow_script_movs_0x8fe783
 waitmovement 0x0
-setvar 0x8005 0x8
-special2 0x8005 0xc
 
 loadpointer 0x0 str_0x8fe51d
 callstd MSG_KEEPOPEN
@@ -405,17 +334,6 @@ str_0x8fe57c:
 str_0x8fe51d:
     .autostring 35 2 "Welches der Fossilien möchtest du\nzuerst aufnehmen?"
         
-        
-.global str_fossil_choice_0
-
-str_fossil_choice_0:
-    .string "Ein Fossil abgeben"
-        
-        
-.global str_fossil_choice_1
-
-str_fossil_choice_1:
-    .string "Beide Fossilien behalten"
         
         
 .global str_fossil_choice_2

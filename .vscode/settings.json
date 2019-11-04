@@ -97,7 +97,8 @@
         "pc.h": "c",
         "pc_context_menu_items.h": "c",
         "list_menu.h": "c",
-        "pc_context_text_formats.h": "c"
+        "pc_context_text_formats.h": "c",
+        "event.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

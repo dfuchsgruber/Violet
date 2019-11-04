@@ -162,12 +162,6 @@ special 0xE
 loadpointer 0x0 str_0x8e0f79
 callstd MSG_KEEPOPEN
 special 0xF
-setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 meriana_revo_choice
-multichoice 0x0 0x0 0x0 0x1
-setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8e22eb
 
 
 loadpointer 0x0 str_0x8e0cdc
@@ -257,8 +251,6 @@ hidesprite 0x2c
 fadescreen 0x0
 setvar MERIANA_CITY_REVOLUTIONARY 3
 setflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
-setvar 0x8000 0x8
-special2 0x8000 0xc
 releaseall
 end
 
@@ -320,8 +312,6 @@ hidesprite 0x29
 fadescreen 0x0
 setvar MERIANA_CITY_REVOLUTIONARY 0x4
 setflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
-setvar 0x8000 0xfff2
-special2 0x8000 0xc
 releaseall
 end
 

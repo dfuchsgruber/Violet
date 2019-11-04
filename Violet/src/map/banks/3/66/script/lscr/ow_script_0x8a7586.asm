@@ -264,18 +264,7 @@ loadpointer 0x0 str_0x8a99f1
 show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 loadpointer 0x0 str_0x8a9950
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
-setvar DYN_MULTICHOICE_ITEM_CNT 0x2
-loadpointer 0x0 str_0x8a992f
-callstd MSG
-loadpointer 0x0 choice
-multichoice 0x0 0x0 0x0 0x1
-setvar DYN_MULTICHOICE_ITEM_CNT 0x0
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8a9640
-loadpointer 0x0 str_0x8a9771
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-setvar 0x8000 0xfe
-goto ow_script_0x8aac32
+goto ow_script_0x8a9640
 
 
 .align 4
@@ -300,7 +289,6 @@ ow_script_movs_0x8aafce:
 
 .global ow_script_0x8aac32
 ow_script_0x8aac32:
-special2 0x8000 0xc
 loadpointer 0x0 str_0x8ab043
 show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
 applymovement 0x2 ow_script_movs_0x8ab040
@@ -323,7 +311,6 @@ end
 ow_script_0x8a9640:
 loadpointer 0x0 str_0x8a965b
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-setvar 0x8000 0x2
 goto ow_script_0x8aac32
 
 

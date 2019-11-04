@@ -115,7 +115,6 @@ ow_script_movs_0x8d36f1:
 
 .global ow_script_0x8d3691
 ow_script_0x8d3691:
-special2 0x8006 0xc
 applymovement 0x36 ow_script_movs_0x8d36f5
 waitmovement 0x0
 loadpointer 0x0 str_6

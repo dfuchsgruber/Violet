@@ -13,7 +13,7 @@ end
 .global str_0x8f1e51
 
 str_0x8f1e51:
-    .string "Der Schwarze Devin, von den Top\nVier, hat darauf bestanden, die\lKontrolle über dieses Gebiet zu\lerhalten."
+    .autostring 34 2 "Zwar wird dieses Gebiet offiziell vom Pinken Faun regiertDOTS\pAber in Wirklichkeit zieht der Schwarze Devin hier die FädenDOTS"
         
         
 .elseif LANG_EN

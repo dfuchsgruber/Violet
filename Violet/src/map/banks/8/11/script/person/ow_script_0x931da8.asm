@@ -10,8 +10,6 @@
 ow_script_0x931da8:
 checkflag KASKADA_BLACKMARKET_SCHATTENGLAS
 gotoif EQUAL ow_script_0x931ddf
-compare KARMA_VALUE 0x7fff
-gotoif LESS_OR_EQUAL ow_script_0x931e91
 lock
 faceplayer
 setflag KASKADA_BLACKMARKET_SCHATTENGLAS
@@ -24,12 +22,6 @@ loadpointer 0x0 str_0x931e1e
 callstd MSG_FACE
 end
 
-
-.global ow_script_0x931e91
-ow_script_0x931e91:
-loadpointer 0x0 str_0x931e9b
-callstd MSG_FACE
-end
 
 
 .global ow_script_0x931ddf
@@ -50,12 +42,6 @@ str_0x931e57:
 
 str_0x931e1e:
     .string "Mit diesen Gläsern siehst du die\nWelt angenehm dunkel."
-        
-        
-.global str_0x931e9b
-
-str_0x931e9b:
-    .string "Nah, du bist viel zu freundlich\nfür einen Ort wie diesen, Kind."
         
         
 .global str_0x931de9
