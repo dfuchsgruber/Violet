@@ -1034,8 +1034,8 @@
 				{
 					"direction": "MAP_CONNECTION_NORTH",
 					"displacement": "48",
-					"bank": "3",
-					"map_idx": "18",
+					"bank": "29",
+					"map_idx": "1",
 					"field_A": 0,
 					"field_B": 0
 				}

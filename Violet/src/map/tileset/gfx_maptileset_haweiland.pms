@@ -14002,49 +14002,49 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 33,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 348,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 49,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 364,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 285,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 286,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 130,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 131,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
@@ -21747,21 +21747,21 @@
 				"behaviour": 0,
 				"hm_usage": 0,
 				"field_2": 0,
-				"battle_bg": 0,
+				"battle_bg": "BATTLE_BG_SHORE",
 				"encounter_type": 0,
 				"field_5": 0,
-				"priority": 0,
+				"priority": "1",
 				"field_7": 0
 			},
 			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"battle_bg": "0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"priority": "0x1",
-				"field_7": "0x0"
+				"behaviour": "0",
+				"hm_usage": "0",
+				"field_2": "0",
+				"battle_bg": "BATTLE_BG_SHORE",
+				"encounter_type": "0",
+				"field_5": "0",
+				"priority": "1",
+				"field_7": "0"
 			},
 			{
 				"behaviour": "0x21",
@@ -21870,7 +21870,7 @@
 				"battle_bg": "BATTLE_BG_SHORE",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"priority": "0x1",
+				"priority": "0",
 				"field_7": "0x0"
 			},
 			{
@@ -21900,7 +21900,7 @@
 				"battle_bg": "BATTLE_BG_SHORE",
 				"encounter_type": "0x0",
 				"field_5": "0x0",
-				"priority": "0x1",
+				"priority": "0",
 				"field_7": "0x0"
 			},
 			{
@@ -22410,7 +22410,7 @@
 				"battle_bg": 0,
 				"encounter_type": 0,
 				"field_5": 0,
-				"priority": 0,
+				"priority": "1",
 				"field_7": 0
 			},
 			{

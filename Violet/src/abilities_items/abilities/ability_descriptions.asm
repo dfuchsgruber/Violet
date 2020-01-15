@@ -126,6 +126,7 @@ ability_descriptions:
     .word str_ability_descr_0x79
     .word str_ability_descr_0x7a
     .word str_ability_descr_0x7b
+    .word str_ability_descr_0x7c
 
 @ // Define the strings
 
@@ -845,8 +846,11 @@ ability_descriptions:
 	str_ability_descr_0x7a: @// Glückspilz
 		.string "Volltreffer wahrscheinlicher."
 
-	str_ability_descr_0x7b: @// Prophezeihung
+	str_ability_descr_0x7b: @// Eschat
 		.string "St. Volltr., Fluchtw. und Gen."
+
+	str_ability_descr_0x7c: @// w/e
+		.string "nimm das her, du honk."
 
 
 .elseif LANG_EN
@@ -1451,6 +1455,9 @@ ability_descriptions:
 
 	str_ability_descr_0x7b: @// Prophezeihung
 		.string "Boosts crit. chance and evasion."
+
+	str_ability_descr_0x7c: @// w/e
+		.string "Use this..."
 
 .endif
 

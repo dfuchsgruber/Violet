@@ -509,7 +509,7 @@ str_0x8a9771:
 .global str_0x8ab043
 
 str_0x8ab043:
-    .autostring 35 2 "Das sind großartige Ziele, die ihr euch da gesetzt habt!\pIch bin mir sicher, dass ihr erreichen werdet, wovon ihr träumt!\pUnd nun will ich euch nicht weiter aufhalten."
+    .autostring 35 2 "Das sind großartige Ziele, die ihr euch da gesetzt habt!\pIch bin mir sicher, dass ihr erreichen werdet, wovon ihr träumt!\pUnd nun will ich euch nicht weiter aufhalten.\pAuch auf mich, wartet ein Traum.\pIch will nämlich derjenige sein, der die sagenumwobene Stadt Atlantea, die versunken sein soll, wiederentdeckt!"
         
 .global str_0x8aafd4
 

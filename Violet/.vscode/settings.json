@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.const": "json",
+        "*.pms": "json",
+        "types.h": "c",
+        "music.h": "c",
+        "party.h": "c",
+        "wild_pokemon.h": "c",
+        "sprites.h": "c",
+        "flags.h": "c",
+        "pokemon_attributes.h": "c",
+        "save.h": "c"
+    }
+}

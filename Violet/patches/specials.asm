@@ -217,6 +217,11 @@ special_table equ 0x0815FCC0
 .org (special_table + 101 * 4)
                 .word fishing_start_after_bait_selection | 1
 
+.org (special_table + 102 * 4)
+                .word route_7_secret_power_lab_count_missing_species | 1
+
+// Free up until <= 118
+
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1
 

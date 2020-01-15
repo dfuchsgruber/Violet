@@ -948,6 +948,31 @@
 				"map_haweiland_cargo_hall",
 				"src/map/banks/29/0/map_haweiland_cargo_hall.pms",
 				"MAP_HAWEILAND"
+			],
+			"1": [
+				"map_route_7_south",
+				"src/map/banks/29/1/map_route_7_south.pms",
+				"MAP_ROUTE_7"
+			],
+			"2": [
+				"map_route_7_castle",
+				"src/map/banks/29/2/map_route_7_castle.pms",
+				"MAP_ROUTE_7"
+			],
+			"3": [
+				"map_route_7_north",
+				"src/map/banks/29/3/map_route_7_north.pms",
+				"MAP_ROUTE_7"
+			],
+			"4": [
+				"map_route_7_secret_power_lab",
+				"src/map/banks/29/4/map_route_7_secret_power_lab.pms",
+				"MAP_ROUTE_7"
+			],
+			"5": [
+				"map_route_7_legendary_fishermans_house",
+				"src/map/banks/29/5/map_route_7_legendary_fishermans_house.pms",
+				"MAP_ROUTE_7"
 			]
 		},
 		"30": {}
@@ -1572,6 +1597,22 @@
 		"map_footer_route_7": [
 			85,
 			"src/map/banks/3/18/map_footer_route_7.pms"
+		],
+		"map_footer_route_7_south": [
+			86,
+			"src/map/banks/29/1/map_footer_route_7_south.pms"
+		],
+		"map_footer_route_7_castle": [
+			87,
+			"src/map/banks/29/2/map_footer_route_7_castle.pms"
+		],
+		"map_footer_route_7_north": [
+			88,
+			"src/map/banks/29/3/map_footer_route_7_north.pms"
+		],
+		"map_footer_route_7_secret_power_lab": [
+			90,
+			"src/map/banks/29/4/map_footer_route_7_secret_power_lab.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1618,7 +1659,8 @@
 		"maptileset_cloud_ruins_inside": "src/map/tileset/maptileset_cloud_ruins_inside.pms",
 		"maptileset_cave": "src/map/tileset/maptileset15.pms",
 		"maptileset_haweiland_cargo_hall": "src/map/tileset/maptileset_haweiland_cargo_hall.pms",
-		"maptileset_beach_house": "src/map/tileset/maptileset_beach_house.pms"
+		"maptileset_beach_house": "src/map/tileset/maptileset_beach_house.pms",
+		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1663,6 +1705,7 @@
 		"gfx_maptileset_cloud_ruinsTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins.png",
 		"gfx_maptileset_cloud_ruins_insideTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_inside.png",
 		"gfx_maptileset_haweiland_cargo_hallTiles": "asset/gfx/tileset/gfx_maptileset_haweiland_cargo_hall.png",
-		"gfx_maptileset_beach_houseTiles": "asset/gfx/tileset/gfx_maptileset_beach_house.png"
+		"gfx_maptileset_beach_houseTiles": "asset/gfx/tileset/gfx_maptileset_beach_house.png",
+		"gfx_maptileset_route_7Tiles": "asset/gfx/tileset/gfx_maptileset_route_7.png"
 	}
 }

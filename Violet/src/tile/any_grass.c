@@ -116,6 +116,7 @@ any_grass tile_any_grasses[ANY_GRASS_CNT] = {
     {18, 3, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
     {1, 30, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
     {0, 12, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
+    {29, 3, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
 	{0, 0, 0xBD, true, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
 	{3, 12, 0xBb, false, &any_grass_templates[ANY_GRASS_GRAVEYARD], &any_grass_pals[ANY_GRASS_GRAVEYARD], 
         any_grass_step, any_grass_player_step_null},
@@ -124,6 +125,10 @@ any_grass tile_any_grasses[ANY_GRASS_CNT] = {
 	{3, 15, 0xBb, false, &any_grass_templates[ANY_GRASS_GRAVEYARD], &any_grass_pals[ANY_GRASS_GRAVEYARD], 
         any_grass_step, any_grass_player_step_null},
 	{3, 16, 0xBb, false, &any_grass_templates[ANY_GRASS_HAWEILAND], &any_grass_pals[ANY_GRASS_HAWEILAND], 
+        any_grass_step, any_grass_player_step_null},
+	{3, 18, 0xBb, false, &any_grass_templates[ANY_GRASS_HAWEILAND], &any_grass_pals[ANY_GRASS_HAWEILAND], 
+        any_grass_step, any_grass_player_step_null},
+	{29, 1, 0xBb, false, &any_grass_templates[ANY_GRASS_HAWEILAND], &any_grass_pals[ANY_GRASS_HAWEILAND], 
         any_grass_step, any_grass_player_step_null},
     {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub, any_grass_player_step_null} 
 };

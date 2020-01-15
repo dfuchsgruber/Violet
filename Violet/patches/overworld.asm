@@ -38,20 +38,20 @@ overworld_pals equ 0x083A501C
 .org 0x80645B4
     .word npc_anims
 
-.org 0x0805BBD0
-    ldr r1, = npc_player_walk_tile_accessable_hook | 1
-    bx r1
+.org 0x0805ba06
+    ldr r0, =npc_player_initialize_step_movement_hook | 1
+    bx r0
     .pool
 
-.org 0x0805B9E4
-    ldr r1, = npc_player_init_move_hook | 1
+.org 0x0805bba8
+    push {r4, lr}
+    ldr r4, =npc_player_attempt_step | 1
+    bl blxr4_0805bba8
+    pop {r4}
+    pop {r1}
     bx r1
-    .pool
-
-
-.org 0x80BD3F4
-    ldr r1, = npc_player_init_bike_hook | 1
-    bx r1
+blxr4_0805bba8:
+    bx r4
     .pool
 
 //Bg alignment
@@ -181,3 +181,6 @@ overworld_pals equ 0x083A501C
 
 .org 0x8122D80
     .word pokemon_party_menu_options
+
+.org 0x080d0a04
+    .word ow_script_strength_use

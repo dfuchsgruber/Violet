@@ -15,6 +15,7 @@
 #include "dungeon/ocean.h"
 #include "save.h"
 #include "debug.h"
+#include "flags.h"
 
 void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generator2 *dg2) {
   int size = 0;
@@ -37,6 +38,28 @@ void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generato
         break;
       }
     }
+  }
+}
+
+void dungeon2_get_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation) {
+  if (checkflag(FRBADGE_5)) {
+    *mean = 37;
+    *std_deviation = 3;
+  } else if(checkflag(FRBADGE_4)) {
+    *mean = 32;
+    *std_deviation = 3;
+  } else if (checkflag(FRBADGE_3)) {
+    *mean = 26;
+    *std_deviation = 3;
+  } else if (checkflag(FRBADGE_2)) {
+    *mean = 16;
+    *std_deviation = 2;
+  } else if (checkflag(FRBADGE_1)) {
+    *mean = 10;
+    *std_deviation = 2;
+  } else {
+    *mean = 5;
+    *std_deviation = 1;
   }
 }
 

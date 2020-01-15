@@ -102,7 +102,7 @@ extern u8 trainer_npc_idx;
  * @param direction the direction the npc attempts to walk
  * @return the enumerated obstacle cause
  */
-u8 npc_is_tile_blocked(npc *n, s16 x, s16 y, u8 direction);
+u8 npc_get_collision(npc *n, s16 x, s16 y, u8 direction);
 
 /**
  * Checks if a npc sees the player
@@ -314,5 +314,23 @@ void player_transition_to_bike(u8 self);
  * @return if the current player state and position disables biking
  **/
 bool player_state_disables_bike();
+
+/**
+ * Attempts to transit from water to land, if the player is at a given position.
+ * @param x the x coordinate of the target block
+ * @param y the y coordinate of the target block
+ * @param direction the direction the player is attempting to transit in
+ * @return if a transition from water to land happened
+ **/
+bool npc_player_attempt_transition_water_to_land(s16 x,s16 y,u8 direction);
+
+/**
+ * Checks if a movable boulder npc is at a given position.
+ * @param x the x coordinate of the boulder
+ * @param y the y coordinate of the boulder
+ * @param direction the direction to move the boulder in
+ * @return if a movable boulder exists at this location
+ **/ 
+bool npc_is_movable_boulder_at(s16 x,s16 y,u8 direction);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

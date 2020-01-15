@@ -99,6 +99,8 @@ typedef struct saveblock2 {
     u32 money;
 } saveblock2;
 
+#define PLAYER_TID (u32)(save2->tid_0 + (save2->tid_1 << 8) + (save2->tid_2 << 16) + (save2->tid_3 << 24))
+
 typedef struct custom_memory {
     u8 flag_extension[0x80]; //additional 0x400 flags (0x900-0xD00)
     u8 pokedex_seen_extension[0x40]; //additional 512 flags

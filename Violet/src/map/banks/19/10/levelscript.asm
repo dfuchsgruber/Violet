@@ -89,7 +89,7 @@ str_defeat:
 str_after_battle:
     .autostring 34 2 "Es überrascht mich jetzt nicht mehr so sehr, dass ich deine Zukunft nicht vorhersehen kann.\pDeine Unbeugsamkeit ist überwältigend.\pSo einen spannenden Kampf hatte ich schon lange nicht mehr.\pDen Ruheorden hast du dir redlich verdient."
 str_tm:
-    .autostring 34 2 "Außerdem will ich mich persönlich dir gegenüber noch erkenntlich zeigen."
+    .autostring 34 2 "Damit kannst du die Vm Stärke außerhalb des Kampfes benutzen.\pPokémon werden dir nun bis Level 70 gehorchen.\pAußerdem will ich mich persönlich dir gegenüber noch erkenntlich zeigen."
 str_leave:
     .autostring 34 2 "Diese Tm enthält Spukball.\pDieser mächtige Angriff kann die Spezial Verteidigung des Gegners verringern, was bei einem weiteren Treffer umso mehr Schaden verursacht.\pFür Geist-Pokémon gibt es keinen nützlicheren Angriff.\pDu wirst jede Hilfe brauchen, wenn du bis ganz nach oben kommen willst.\pEs gibt noch viel, dass du nicht weißt.\pAber ich bin zuversichtlich, dass du die Herausforderungen, die vor dir liegen, bewältigen kannst.\pUnd hab ein Auge auf diese insesible Frau von Team Violet, die meinen wunderbaren Friedhof entweihen wollte.\pSolchen Leuten sollte man nicht zu viel Nachsicht zuteil werden lassen."
 str_receive_badge:
@@ -105,7 +105,7 @@ str_defeat:
 str_after_battle:
     .autostring 34 2 "Somehow it doesn't suprise me anymore that I couldn't forsee your future.\pYour stubborness is overwhelming.\pI haven't done such an intense battle in a long time.\pYou definitely earned yourself the Peace Badge."
 str_tm:
-    .autostring 34 2 "In addition to that I want to give you something as a personal gift."
+    .autostring 34 2 "With this you can use the Hm Strength outside a battle.\pPokémon up until level 70 will be obedient to you now.\pIn addition to that I want to give you something as a personal gift."
 str_leave:
     .autostring 34 2 "This Tm contains Shadow Ball.\pIt can lower the special defense of your foes which makes your successive hits even more devastating.\pThere is no attack more useful to ghost Pokémon.\pYou will need every help you can get if you want to climb the ladder.\pThere is yet a lot to learn.\pBut I am positive that you will be able to deal with the challanges that await you.\pAnd please, keep an eye on this indecent woman of Team Violet, which wanted to desecrate my precious graveyard.\pYou can't cut people like this to slack."
 str_receive_badge:

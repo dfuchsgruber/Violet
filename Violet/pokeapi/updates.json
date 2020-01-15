@@ -2213,8 +2213,41 @@
 		"species_link": "POKEMON_ZOBIRIS",
 		"dex_number": 0
 	},
-	"POKEMON_10d": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_TROPIUS": {
+		"basestats": {
+			"hp": 99,
+			"attack": 87,
+			"defense": 117,
+			"speed": 113,
+			"special-attack": 97,
+			"special-defense": 131
+		},
+		"type_0": "Pflanze",
+		"type_1": "Drache",
+		"exp_yield": 240,
+		"ability_0": "Temposchub",
+		"ability_1": null,
+		"hidden_ability": null,
+		"species_link": "POKEMON_TROPIUS",
+		"dex_number": 0,
+		"levelup_moves": [
+			[
+				"Windhose",
+				16
+			],
+			[
+				"Feuerodem",
+				26
+			],
+			[
+				"Drachenpuls",
+				33
+			],
+			[
+				"Wutanfall",
+				48
+			]
+		]
 	},
 	"POKEMON_10e": {
 		"species_link" : "POKEMON_POKEMON_0"

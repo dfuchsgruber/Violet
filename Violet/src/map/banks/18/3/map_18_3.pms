@@ -349,7 +349,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x1c1b8c",
+					"script": "ow_script_strength_boulder",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -371,7 +371,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x1c1b8c",
+					"script": "ow_script_strength_boulder",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -393,7 +393,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x1c1b8c",
+					"script": "ow_script_strength_boulder",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -785,7 +785,7 @@
 		},
 		"levelscripts": "lscr_0x71968c",
 		"connections": {
-			"connection_cnt": 1,
+			"connection_cnt": 2,
 			"connections": [
 				{
 					"direction": "MAP_CONNECTION_WEST",
@@ -794,6 +794,14 @@
 					"field_A": 0,
 					"field_B": 0,
 					"map_idx": 6
+				},
+				{
+					"direction": "MAP_CONNECTION_SOUTH",
+					"displacement": "15",
+					"bank": "29",
+					"map_idx": "3",
+					"field_A": 0,
+					"field_B": 0
 				}
 			]
 		},

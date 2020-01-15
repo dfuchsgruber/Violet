@@ -150,6 +150,8 @@ extern const unsigned char mus_forest_cemetery[];
 extern const unsigned char mus_haweiland[];
 extern const unsigned char mus_regi_battle[];
 extern const unsigned char mus_route_8[];
+extern const unsigned char mus_ardeal[];
+extern const unsigned char mus_lucius[];
 
 #endif	/* MUSIC_H */
 

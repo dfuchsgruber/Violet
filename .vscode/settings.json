@@ -98,7 +98,13 @@
         "pc_context_menu_items.h": "c",
         "list_menu.h": "c",
         "pc_context_text_formats.h": "c",
-        "event.h": "c"
+        "event.h": "c",
+        "operator.h": "c",
+        "*.cuh": "c",
+        "dungeon2.h": "c",
+        "diagonal_stair.h": "c",
+        "coordinate.h": "c",
+        "overworld_collisions.h": "c"
     },
     "python.pythonPath": "/home/dominik/.local/share/virtualenvs/Violet_Sources-xwW_j7NB/bin/python"
 }

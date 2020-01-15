@@ -540,7 +540,7 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     0x88,
     // POKEMON_ZOBIRISM
     0x88,
-    // POKEMON_10d
+    // POKEMON_tropius_mega
     0x188,
     // POKEMON_10e
     0x188,
@@ -1427,7 +1427,7 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     0x88,
     // POKEMON_ZOBIRISM
     0x288,
-    // POKEMON_10d
+    // POKEMON_tropius_mega
     0x688,
     // POKEMON_10e
     0x688,
@@ -2314,7 +2314,7 @@ u8 pokemon_altitude[POKEMON_CNT] = {
     0x0,
     // POKEMON_ZOBIRISM
     0x0,
-    // POKEMON_10d
+    // POKEMON_tropius_mega
     0x0,
     // POKEMON_10e
     0x0,

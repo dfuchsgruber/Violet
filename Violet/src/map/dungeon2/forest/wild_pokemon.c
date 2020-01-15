@@ -62,27 +62,12 @@ u16 dungeon_forest_wild_pokemon_super_rare[] = {
     POKEMON_HYPNO,
     POKEMON_MUNTIER,
     POKEMON_URSARING,
+    POKEMON_TENGULIST,
+    POKEMON_GIFLOR,
+    POKEMON_TROMBORK,
+    POKEMON_FLORGES,
     0xFFFF
 };
-
-void dungeon2_forest_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation) {
-  if(checkflag(FRBADGE_4)) {
-    *mean = 34;
-    *std_deviation = 3;
-  } else if (checkflag(FRBADGE_3)) {
-    *mean = 26;
-    *std_deviation = 3;
-  } else if (checkflag(FRBADGE_2)) {
-    *mean = 16;
-    *std_deviation = 2;
-  } else if (checkflag(FRBADGE_1)) {
-    *mean = 10;
-    *std_deviation = 2;
-  } else {
-    *mean = 5;
-    *std_deviation = 1;
-  }
-}
 
 
 
@@ -93,7 +78,7 @@ void dungeon2_set_encounter_forest() {
 
   u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
   u8 mean = 0, std_deviation = 0;
-  dungeon2_forest_wild_pokemon_level_distribution(&mean, &std_deviation);
+  dungeon2_get_wild_pokemon_level_distribution(&mean, &std_deviation);
   mean = (u8)(mean + std_deviation + std_deviation / 2); // High level for this pokemon
 
   int level = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(mean), FIXED_MUL(INT_TO_FIXED(std_deviation),
@@ -149,7 +134,7 @@ void dungeon2_init_wild_pokemon_forest(dungeon_generator2 *dg2) {
   u8 std_deviation = 0;
   u8 level_min = 0;
   u8 level_max = 0;
-  dungeon2_forest_wild_pokemon_level_distribution(&mean, &std_deviation);
+  dungeon2_get_wild_pokemon_level_distribution(&mean, &std_deviation);
 
   for(int i = 0; i < 12; i++) {
     dungeon2_wild_pokemon_sample_level_boundaries(&level_min, &level_max,

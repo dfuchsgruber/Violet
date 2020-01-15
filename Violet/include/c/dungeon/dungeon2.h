@@ -349,6 +349,13 @@ extern "C" {
     FIXED dungeon2_rnd_normal(dungeon_generator2 *dg2);
 
     /**
+     * Gets the statistics of the level distribution of a dungeon.
+     * @param mean the mean level of the wild pokemon gaussian
+     * @param std_deviation the standard deviation of the level of a wild pokemon
+     **/
+    void dungeon2_get_wild_pokemon_level_distribution(u8 *mean, u8 *std_deviation);
+
+    /**
      * Picks a number of distinct elements of src (terminated by 0xFFFF) and places them at dst
      */
     void dungeon2_pick_wild_pokemon(u16 *dst, int number, u16 *src, dungeon_generator2 *dg2);

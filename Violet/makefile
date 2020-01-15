@@ -27,7 +27,8 @@ MIDFLAGS=-V92
 CFLAGS=-c -std=c99 -mthumb -mthumb-interwork -mcpu=arm7tdmi -fno-inline -mlong-calls -march=armv4t -Wall -Werror -Wextra -Wconversion -O2 -Iinclude/c/ -D$(LANGUAGE)
 LDFLAGS=-z muldefs -Ilibm
 GRITFLAGS=-fh! -ftc
-WAVFLAGS=-c
+CRYFLAGS=-c
+WAVFLAGS=
 MAPTILESETGRITFLAGS=-gu32 -gzl -gB 4 -gt -m! -p!
 
 BLDPATH=bld
@@ -53,7 +54,8 @@ ASSRC2:= $(call rwildcard,src/,*.s)
 CSRC:= $(call rwildcard,src/,*.c)
 MIDSRC:=$(call rwildcard,asset/mus/,*.mid)
 GFXSRC:=$(call rwildcard,asset/gfx/,*.png)
-WAVSRC:=$(call rwildcard,asset/cry/,*.wav)
+CRYSRC:=$(call rwildcard,asset/cry,*.wav)
+WAVSRC:=$(call rwildcard,asset/sample,*.wav)
 
 
 SAMPLESRC:=$(call rwildcard,asset/sample/,*.bin)
@@ -73,6 +75,9 @@ MIDOBJS= $(MIDAS:%.s=%.o)
 GFXC= $(GFXSRC:%.png=$(BLDPATH)/%.c)
 GFXOBJS= $(GFXC:%.c=%.o)
 	
+CRYAS = $(CRYSRC:%.wav=$(BLDPATH)/%.s)
+CRYOBJS = $(CRYAS:%.s=%.o)
+
 WAVAS = $(WAVSRC:%.wav=$(BLDPATH)/%.s)
 WAVOBJS = $(WAVAS:%.s=%.o)
 
@@ -146,6 +151,14 @@ $(GFXOBJS): %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@
 	
 	
+$(CRYAS): $(BLDPATH)/%.s: %.wav
+	$(shell mkdir -p $(dir $(CRYAS)))
+	$(WAV2AGB) $< $@ $(CRYFLAGS)
+	
+$(CRYOBJS): %.o: %.s
+	$(shell mkdir -p $(dir $@))
+	$(AS) $(ASFLAGS) $< -o $@
+	
 $(WAVAS): $(BLDPATH)/%.s: %.wav
 	$(shell mkdir -p $(dir $(WAVAS)))
 	$(WAV2AGB) $< $@ $(WAVFLAGS)
@@ -184,9 +197,9 @@ $(BLDPATH)/asset/mus.o: $(MIDOBJS)
 	$(call build_list,$(BLDPATH)/midi.ld,$(MIDOBJS))
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/midi.ld --relocatable -o $(BLDPATH)/asset/mus.o
 
-$(BLDPATH)/asset.o: $(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS) $(BLDPATH)/asset/mus.o 
+$(BLDPATH)/asset.o: $(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS) $(BLDPATH)/asset/mus.o 
 #	Create a ld script
-	$(call build_list,$(BLDPATH)/asset.ld,$(GFXOBJS) $(WAVOBJS) $(SAMPLEOBJS))
+	$(call build_list,$(BLDPATH)/asset.ld,$(GFXOBJS) $(CRYOBJS) $(SAMPLEOBJS) $(WAVOBJS))
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/asset.ld --relocatable -o $(BLDPATH)/asset.o $(BLDPATH)/asset/mus.o 
 	
 $(BLDPATH)/map.o: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BLDPATH)/fata_morgana.o

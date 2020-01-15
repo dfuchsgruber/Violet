@@ -1229,18 +1229,18 @@ voicegroup002:
 		.byte	Cn3
 		.byte	0x0
 		.byte	0x0
-		.word	snd_stell_drum
+		.word	snd_steel_drum
 		.byte	0xFF, 0xEB, 0x67, 0xB2
 
 
 @**************** Voice 123 ****************@
 
-		.byte	0xc
-		.byte	0x3c
+		.byte	KeySplit
 		.byte	0x0
 		.byte	0x0
-		.word	0x0
-		.byte	0,2,6,0
+		.byte	0x0
+		.word	KeySplitHarpsichord
+		.word	snd_harpsichord_map
 
 
 @**************** Voice 124 ****************@

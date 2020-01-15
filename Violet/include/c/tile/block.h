@@ -67,6 +67,12 @@ typedef union union_block_data {
 
 extern coordinate_t walking_directions[];
 
+/** Moves a position in any direction.
+ * @param direction the direction in which to move in
+ * @param x x coordinate of the position
+ * @param y y coordinate of the position
+ **/
+void coordinates_apply_direction(int direction,short *x,short *y);
 
 /**
  * Redraws a single block in the map
@@ -175,6 +181,15 @@ bool player_can_use_surf_on_tile_faced();
  * @return if the player can use waterfall in his current state
  */
 bool player_can_use_waterfall_on_tile_faced();
+
+/**
+ * Checks if a movement triggers a legde. Does not consider if the tile "after" the ledge has collisions on its own.
+ * @param x the x position where the movement happens
+ * @param y the y position where the movement happens
+ * @param direction the direction in which to move
+ * @return if this movement triggers a ledge behaviour
+ **/
+bool block_ledge_triggered(s16 x,s16 y,u8 direction);
 
 
 #endif /* INCLUDE_C_TILE_BLOCK_H_ */

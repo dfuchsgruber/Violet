@@ -3598,7 +3598,7 @@ item items[] = {
 	},{
 		//ITEM_ITEM_EF
 		LANGDEP(PSTRING("Geowaznit"), PSTRING("Golemnite")),
-		0x0, //index
+		0xef, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
@@ -3611,13 +3611,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_F0
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
+		//ITEM_TROPIUSNIT
+		LANGDEP(PSTRING("Tropiusnit"), PSTRING("Tropiusnite")),
+		0xf0, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf0_item_item_f0,
+		str_item_desc_xf0_item_tropiusnit,
 		0, //field_18
 		POCKET_ITEMS, //pocket
 		4, //type
@@ -3897,16 +3897,16 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//
-		LANGDEP(PSTRING("Eilrad"), PSTRING("Mach Bike")),
+		LANGDEP(PSTRING("Leuchtköder"), PSTRING("Shining Bait")),
 		0x103, //index
-		1000, //price
+		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x103_item_eilrad,
-		257, //field_18
-		POCKET_KEY_ITEMS, //pocket
-		2, //type
-		(void(*)(u8))0x80a1319, //field_usage
+		str_item_desc_x103_item_leuchtkoeder,
+		0, //field_18
+		POCKET_ITEMS, //pocket
+		4, //type
+		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28

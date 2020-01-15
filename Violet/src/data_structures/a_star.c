@@ -132,6 +132,6 @@ bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *wa
     walker->facing.higher = (u8)(dir & 0xF);
     walker->from_x = from_x;
     walker->from_y = from_y;
-    u8 result = npc_is_tile_blocked(walker, dest_x, dest_y, dir);
+    u8 result = npc_get_collision(walker, dest_x, dest_y, dir);
     return !result;
 }

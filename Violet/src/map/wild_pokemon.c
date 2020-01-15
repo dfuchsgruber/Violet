@@ -384,13 +384,6 @@ wild_pokemon_data wild_pokemon[] = {
 		.rod = &wild_pokemon_route_5_clouds_rod,
 	},
 	{
-		.bank = 3, .map = 5,
-		.grass = NULL,
-		.water = &wild_pokemon_3_5_water,
-		.other = NULL,
-		.rod = &wild_pokemon_3_5_rod,
-	},
-	{
 		.bank = 3, .map = 24,
 		.grass = NULL,
 		.water = &wild_pokemon_3_24_water,
@@ -417,13 +410,6 @@ wild_pokemon_data wild_pokemon[] = {
 		.water = NULL,
 		.other = &wild_pokemon_1_30_other,
 		.rod = NULL,
-	},
-	{
-		.bank = 3, .map = 6,
-		.grass = NULL,
-		.water = &wild_pokemon_3_6_water,
-		.other = NULL,
-		.rod = &wild_pokemon_3_6_rod,
 	},
 	{
 		.bank = 0, .map = 12,
@@ -650,9 +636,25 @@ wild_pokemon_data wild_pokemon[] = {
 	},
 	{
 			.bank = 3, .map = 16, .water = &wild_pokemon_route_12_west_water, .rod = &wild_pokemon_route_12_west_rod,
+			.grass = &wild_pokemon_route_12_west_grass, .other = &wild_pokemon_route_12_west_other,
 	},
 	{
 			.bank = 3, .map = 17, .water = &wild_pokemon_route_12_west_water, .rod = &wild_pokemon_route_12_west_rod,
+	},
+	{
+			.bank = 29, .map = 3, .grass = &wild_pokemon_route_7_north_grass, .other = &wild_pokemon_route_7_north_other,
+	},
+	{
+			.bank = 29, .map = 2, .grass = &wild_pokemon_route_7_castle_grass, .other = &wild_pokemon_route_7_castle_other,
+			.water = &wild_pokemon_route_7_castle_water, .rod = &wild_pokemon_route_7_castle_rod,
+	},
+	{
+			.bank = 3, .map = 18, .grass = &wild_pokemon_route_7_grass, .other = &wild_pokemon_route_7_other,
+			.water = &wild_pokemon_route_7_castle_water, .rod = &wild_pokemon_route_7_castle_rod,
+	},
+	{
+			.bank = 29, .map = 1, .grass = &wild_pokemon_route_7_grass, .other = &wild_pokemon_route_7_other,
+			.water = &wild_pokemon_route_7_castle_water, .rod = &wild_pokemon_route_7_castle_rod,
 	},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,

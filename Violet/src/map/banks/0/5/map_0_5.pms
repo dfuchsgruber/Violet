@@ -97,7 +97,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x1c1b8c",
+					"script": "ow_script_strength_boulder",
 					"y": 27,
 					"target_index": 5,
 					"field_3": 0,
@@ -119,7 +119,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x1c1b8c",
+					"script": "ow_script_strength_boulder",
 					"y": 27,
 					"target_index": 6,
 					"field_3": 0,

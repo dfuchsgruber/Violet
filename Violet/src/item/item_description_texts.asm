@@ -1439,10 +1439,10 @@
 		.string "Wird er von einem Geowaz\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."
 
 
-	.global str_item_desc_xf0_item_item_f0
+	.global str_item_desc_xf0_item_tropiusnit
 
-	str_item_desc_xf0_item_item_f0:
-		.string " ????"
+	str_item_desc_xf0_item_tropiusnit:
+		.string " Wird er von einem Tropius\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."
 
 
 	.global str_item_desc_xf1_item_item_f1
@@ -1548,10 +1548,10 @@
 		.string "Erhöht beim Angeln drastisch\ndie Chance, dass starke Pokémon\nanbeißen."
 
 
-	.global str_item_desc_x103_item_eilrad
+	.global str_item_desc_x103_item_leuchtkoeder
 
-	str_item_desc_x103_item_eilrad:
-		.string "Klapprad, das doppelt so schnell\nist wie ein Fußgänger."
+	str_item_desc_x103_item_leuchtkoeder:
+		.string "Legendärer Köder, der\nbeim Angeln schillernde Pokémon\nanlockt."
 
 
 	.global str_item_desc_x104_item_muenzkorb
@@ -3445,10 +3445,10 @@
 	str_item_desc_xef_item_geowaznit:
 		.string "If held by a Golem in\nbattle it can perform\na mega evolution."
 
-	.global str_item_desc_xf0_item_item_f0
+	.global str_item_desc_xf0_item_tropiusnit
 
-	str_item_desc_xf0_item_item_f0:
-		.string "?????"
+	str_item_desc_xf0_item_tropiusnit:
+		.string "If held by a Tropius in\nbattle it can perform\na mega evolution."
 
 	.global str_item_desc_xf1_item_item_f1
 
@@ -3538,12 +3538,12 @@
 	.global str_item_desc_x102_item_goldkoeder
 
 	str_item_desc_x102_item_goldkoeder:
-		.string "Drastically increases the\nchance of finding strong\nPokémon."
+		.string "Drastically increases the\nchance of finding strong\nPokémon when fishing."
 
-	.global str_item_desc_x103_item_eilrad
+	.global str_item_desc_x103_item_leuchtkoeder
 
-	str_item_desc_x103_item_eilrad:
-		.string "A folding bicycle that is at least\ntwice as fast as walking."
+	str_item_desc_x103_item_leuchtkoeder:
+		.string "A legendary bait that\nis used to catch shiny\nPokémon when fishing."
 
 	.global str_item_desc_x104_item_muenzkorb
 

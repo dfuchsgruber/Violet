@@ -1,0 +1,16 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "COLLISION_NONE",
+        "COLLISION_OUTSIDE_RECTANGLE",
+        "COLLISION_IMPASSABLE",
+        "COLLISION_HEIGHT_MISMATCH",
+        "COLLISION_OTHER_NPC",
+        "COLLISION_STOP_SURFING",
+        "COLLISION_LEDGE",
+        "COLLISION_PUSHED_BOULDER",
+        "COLLISION_WARP",
+        "COLLISION_SIDEWAY_STAIRS"
+    ]
+}

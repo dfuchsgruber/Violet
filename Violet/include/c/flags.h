@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_FLAGS_H_
 #define INCLUDE_C_FLAGS_H_
 
+#include "constants/flags.h"
+
 /**
  * Sets a flag
  * @param The flag to set

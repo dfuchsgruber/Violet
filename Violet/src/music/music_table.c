@@ -760,5 +760,9 @@ song song_table[] = {
   {mus_regi_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 378 = (0x17A)
   {mus_route_8, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 379 = (0x17B)
+  {mus_ardeal, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 380 = (0x17C)
+  {mus_lucius, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

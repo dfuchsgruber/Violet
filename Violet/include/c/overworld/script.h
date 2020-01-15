@@ -27,6 +27,8 @@ typedef struct overworld_script_state_t {
 	u8 *pointer_banks[4];
 } overworld_script_state_t;
 
+u8 *ow_script_string_buffers[3];
+
 extern overworld_script_state_t overworld_script_state;
 
 extern u8 *overworld_script_virtual_ptr;

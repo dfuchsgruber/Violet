@@ -1738,3 +1738,136 @@ trainer_pokemon_custom_item_custom_attacks trainer_party_ceometria_gym_leader[4]
       0x0, false, false, 49, POKEMON_ZWIRRFINST, ITEM_UEBERRESTE,
       ATTACK_SCHATTENSTOSS, ATTACK_IRRLICHT, ATTACK_LEIDTEILER, ATTACK_ERDBEBEN),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x13f_route_7_trainer_0[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 33, POKEMON_GLUTEXO),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_FUKANO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x140_route_7_trainer_1[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 32, POKEMON_ONIX),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_MASCHOCK),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 33, POKEMON_GEOROK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x141_route_7_trainer_2[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_MAGNETON),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_VOLTENSO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x142_route_7_trainer_3[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 33, POKEMON_KANIVANHA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 34, POKEMON_QUABBEL),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_REMORAID),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x143_route_7_trainer_4[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 43, POKEMON_MACHOMEI),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x144_route_7_trainer_5[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_GERADAKS),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_SMOGMOG),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_KIRLIA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x145_route_7_trainer_6[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_ULTRIGARIA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_CHEVRUMM),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x146_route_7_trainer_7[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 36, POKEMON_SCHWALBOSS),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_DARTIGNIS),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x147_route_7_trainer_8[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_HUNDEMON),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x148_route_7_trainer_9[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_DODRI),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_KICKLEE),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x149_route_7_trainer_10[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_SANDAMER),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_MARILL),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_KRABBY),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x14a_route_7_trainer_11[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_STARMIE),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x14b_route_7_trainer_12[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_TYRACROC),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 41, POKEMON_NIDORINA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x14c_route_7_trainer_13[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_MASCHOCK),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_PELIPPER),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_MAGNETON),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x14d_route_7_trainer_14[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 41, POKEMON_TENTACHA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_QUABBEL),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x14e_route_7_trainer_15[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 43, POKEMON_TURTOK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x14f_route_7_trainer_16[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_GERADAKS),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_OWEI),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_PLUSLE),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x150_route_7_trainer_17[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_HUNDEMON),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_MAGNAYEN),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x151_route_7_trainer_18[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 41, POKEMON_PELIPPER),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 40, POKEMON_MASCHOCK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x152_route_7_trainer_19[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_WAILMER),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 41, POKEMON_QUABBEL),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_SEESKULL),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x153_route_7_trainer_20[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_AZUMARILL),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x154_route_7_trainer_21[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 37, POKEMON_MAGNETON),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_KADABRA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_SLEIMOK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x155_route_7_trainer_22[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 35, POKEMON_KANIVANHA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_GARADOS),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x156_route_7_trainer_23[2] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_QUABBEL),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_TENTACHA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x157_route_7_trainer_24[1] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 42, POKEMON_KREBUTACK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x158_route_7_trainer_25[3] = {
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_ENTORON),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 39, POKEMON_TENTACHA),
+  TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 38, POKEMON_TYRACROC),
+};

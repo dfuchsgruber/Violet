@@ -35,7 +35,8 @@
 	.global	KeySplitInstr66
 	.global	KeySplitInstr73
 	.global	KeySplitInstr105
-        .global KeySplitCello
+	.global KeySplitCello
+	.global KeySplitHarpsichord
 
 	.align	2
 
@@ -1124,6 +1125,44 @@ KeySplitCello:
 	.word	snd_cello_2
 	.byte	255, 255, 255, 180
 
+
+KeySplitHarpsichord:
+
+@**************** Voice 000 ****************@
+
+	.byte	DirectSound
+	.byte	Cn3 
+	.byte	0x00
+	.byte	0x00
+	.word	snd_harpsichord_a1
+	.byte	255, 249, 0, 226
+
+@**************** Voice 001 ****************@
+
+	.byte	DirectSound
+	.byte	Cn3 
+	.byte	0x00
+	.byte	0x00
+	.word	snd_harpsichord_e2
+	.byte	255, 249, 0, 226
+
+@**************** Voice 002 ****************@
+
+	.byte	DirectSound
+	.byte	Cn3 
+	.byte	0x00
+	.byte	0x00
+	.word	snd_harpsichord_c3
+	.byte	255, 249, 0, 226
+
+@**************** Voice 003 ****************@
+
+	.byte	DirectSound
+	.byte	Cn3 
+	.byte	0x00
+	.byte	0x00
+	.word	snd_harpsichord_c4
+	.byte	255, 249, 0, 226
 
 
 	.end
