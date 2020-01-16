@@ -48,5 +48,5 @@ wild_pokemon_entry wild_pokemon_3_19_other_entries[5] = {
 };
 
 wild_pokemon_habitat wild_pokemon_3_19_other = {
-	.frequency = 0, .data = wild_pokemon_3_19_other_entries
+	.frequency = 75, .data = wild_pokemon_3_19_other_entries
 };

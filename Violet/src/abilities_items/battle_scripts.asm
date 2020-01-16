@@ -1,5 +1,8 @@
 .include "battlescript.s"
 .include "constants/pokemon_stat_names.s"
+.include "constants/battle_statuses.s"
+.include "constants/abilities.s"
+.include "constants/battle_communication.s"
 
 .global bsc_wandlungskunst
 .global bsc_stance_change_to_attack
@@ -23,6 +26,8 @@
 .global bsc_hack
 .global bsc_fluffy
 .global bsc_eschat
+.global bsc_gegenwind
+.global bsc_gegenwind_end3
 
 bsc_wandlungskunst:
 printstring 0x184
@@ -156,7 +161,7 @@ waitmessage 0x40
 return
 
 bsc_turn_end_stat_change_success:
-cmd47
+setgraphicalstatchangevalues
 playanimation 0x1 0x1 0x2023FD4
 printfromtable 0x83FE534
 waitmessage 0x40
@@ -210,3 +215,34 @@ call bsc_turn_end_statchange
 setstatchange STAT_EVASION 1 0
 call bsc_turn_end_statchange
 end3
+
+bsc_gegenwind_end3:
+    call bsc_gegenwind_pause
+    end3
+bsc_gegenwind_pause:
+    pause 0x20
+bsc_gegenwind:
+    setbyte defending_battler 0 // Target for "Gegenwind"
+    setstatchange STAT_SPEED 2 1
+bsc_gegenwind_loop:
+    intimidate_try_get_target bsc_gegenwind_return
+    jumpifsecondarystatus BANK_TARGET STATUS2_SUBSTITUTE bsc_gegenwind_loop_increment
+    jumpifability BANK_TARGET NEUTRALTORSO gegenwind_failed
+    jumpifability BANK_TARGET PULVERRAUCH gegenwind_failed
+    statbuffchange STAT_BUF_IGNORE_PROTECT | STAT_BUF_CHANGE_FAILURE_CONTINUATION bsc_gegenwind_loop_increment
+    jumpifbyte GREATER_THAN battle_communication + BATTLE_COMMUNICATION_MULTISTRING_CHOOSER 1 bsc_gegenwind_loop_increment
+    setgraphicalstatchangevalues
+    playanimation BANK_TARGET ANIMATION_STAT_CHANGE ANIMATION_ARG_0
+    printstring 0x19B
+    waitmessage 0x40
+bsc_gegenwind_loop_increment:
+	addbyte defending_battler 1
+	goto bsc_gegenwind_loop
+bsc_gegenwind_return:
+    return
+gegenwind_failed:
+    pause 0x20
+    printstring 0xce
+    waitmessage 0x40
+    goto bsc_gegenwind_loop_increment
+

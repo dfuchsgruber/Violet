@@ -77,4 +77,5 @@ bool map_is_cloud();
  **/
 void map_current_play_song_if_not_playing();
 
+
 #endif /* INCLUDE_C_MAP_HEADER_H_ */

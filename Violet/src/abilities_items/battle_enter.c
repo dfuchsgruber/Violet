@@ -30,6 +30,10 @@ bool abilities_battle_enter(u8 ability, u8 index) {
 			|| battlers[index].stat_changes[STAT_SPECIAL_DEFENSE] > 0)) {
 		battlescript_init_and_interrupt_battle(bsc_tollwut);
 		return true;
+    } else if (ability == GEGENWIND && !battler_damage_taken[index].intimdated_foe) {
+        battler_statuses3[index] |= STATUS3_INTIMIDATE_POKES;
+        battler_damage_taken[index].intimdated_foe = 1;
+        return true;
     }
     return false;
     

@@ -850,7 +850,7 @@ ability_descriptions:
 		.string "St. Volltr., Fluchtw. und Gen."
 
 	str_ability_descr_0x7c: @// w/e
-		.string "nimm das her, du honk."
+		.string "Senkt geg. Init. stark."
 
 
 .elseif LANG_EN
@@ -1456,8 +1456,8 @@ ability_descriptions:
 	str_ability_descr_0x7b: @// Prophezeihung
 		.string "Boosts crit. chance and evasion."
 
-	str_ability_descr_0x7c: @// w/e
-		.string "Use this..."
+	str_ability_descr_0x7c: @// Gegenwind
+		.string "Lowers opp. Init. drastically."
 
 .endif
 

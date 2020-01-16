@@ -100,3 +100,8 @@ bhiddenabdone:
     ldr r0, =hook_pp_reduce | 1
     bx r0
     .pool
+
+.org 0x0801a084
+    .word battle_ability_case_intimidate1_hook
+.org 0x0801a088
+    .word battle_ability_case_intimidate2_hook

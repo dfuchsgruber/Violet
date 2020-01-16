@@ -1,5 +1,6 @@
 .include "overworld_script.s"
 .include "movements.s"
+.include "constants/flags.s"
 
 .global script_pokeradar
 .global script_pokeradar_battle
@@ -75,6 +76,7 @@ script_pokeradar_battle:
     dowildbattle
     fadescreen 1
     hidesprite 254
+    setflag POKERADAR_POKEMON_SPAWNED
     fadescreen 0
     releaseall
     end
@@ -148,6 +150,7 @@ script_pokeradar_flee_s:
     fadescreen 0
     loadpointer 0 str_pokepad_pokeradar_flee
     callstd 6
+    setflag POKERADAR_POKEMON_SPAWNED
     releaseall
     end
 

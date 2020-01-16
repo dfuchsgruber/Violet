@@ -9,6 +9,13 @@
         "sprites.h": "c",
         "flags.h": "c",
         "pokemon_attributes.h": "c",
-        "save.h": "c"
+        "save.h": "c",
+        "abilities.h": "c",
+        "battle_weathers.h": "c",
+        "state.h": "c",
+        "battler.h": "c",
+        "agbmemory.h": "c",
+        "debug.h": "c",
+        "person_behaviours.h": "c"
     }
 }

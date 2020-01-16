@@ -4,9 +4,6 @@
 .align 2
 .thumb
 
-.equ hailalarm, 0x5F
-
-
 .thumb_func
 ability_management_battle_enter:
 mov r1, r8

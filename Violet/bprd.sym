@@ -572,3 +572,7 @@ npc_player_attempt_transition_water_to_land = 0x0805bc60 | 1;
 block_ledge_triggered = 0x0805bcc8 | 1;
 npc_is_movable_boulder_at = 0x0805bcec | 1;
 coordinates_apply_direction = 0x08063a20 | 1;
+bsc_intimidate = 0x081dd5a6;
+bsc_intimidate_end3 = 0x081dd59d;
+warp_recent = 0x02031db4;
+person_delete_npc_if_present = 0x0805e4c8 | 1;

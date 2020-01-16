@@ -198,8 +198,8 @@ u8 tile_any_grass_init(coordinate_t *pos){
         }
         
     }
-    debug1(behavior);
-    err(ERR_UNKOWN_GRASS_ANIMATION);
+    // err(ERR_UNKOWN_GRASS_ANIMATION);
+    dprintf("No grass animation possible for behaviour %d on current map.\n", behavior);
     return 64;
 }
 

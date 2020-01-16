@@ -2225,7 +2225,7 @@
 		"type_0": "Pflanze",
 		"type_1": "Drache",
 		"exp_yield": 240,
-		"ability_0": "Temposchub",
+		"ability_0": "Gegenwind",
 		"ability_1": null,
 		"hidden_ability": null,
 		"species_link": "POKEMON_TROPIUS",

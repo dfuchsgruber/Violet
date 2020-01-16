@@ -33,6 +33,8 @@
 @@ Banks
 #define BANK_USER	1
 #define BANK_TARGET	0
+.equ BANK_TARGET, 0
+.equ BANK_USER, 1
 
 @@ Delay
 
@@ -42,11 +44,12 @@
 #define STRING_LOADER		0x0203C020
 
 @@ Compare operands
-.equ Equal, 0x0
-.equ Notequal, 0x1
-.equ Inferior, 0x2
-.equ Superior, 0x3
-.equ Anded, 0x4
+.equ EQUAL, 0x0
+.equ NOT_EQUAL, 0x1
+.equ GREATER_THAN, 0x2
+.equ LESS_THAN, 0x3
+.equ COMMON_BITS, 0x4
+.equ NO_COMMON_BITS, 0x5
 
 @@@@@@@@@@@@@@@@@ Macro
 
@@ -431,6 +434,10 @@
 .byte 0x44
 .endm
 
+.equ ANIMATION_STAT_CHANGE, 1
+.equ ANIMATION_ARG_0, (battle_scripting + 0x10)
+.equ ANIMATION_ARG_1, (battle_scripting + 0x11)
+
 .macro playanimation playanimation_bank playanimation_animation playanimation_word
 .byte 0x45
 .byte \playanimation_bank
@@ -445,7 +452,7 @@
 .word \cmd46_address2
 .endm
 
-.macro cmd47
+.macro setgraphicalstatchangevalues
 .byte 0x47
 .endm
 
@@ -763,10 +770,14 @@
 .byte 0x88
 .endm
 
-.macro statbuffchange statbuffchange_target statbuffchange_address
+.equ STAT_BUF_IGNORE_PROTECT, 0x20
+.equ STAT_BUF_CHANGE_FAILURE_CONTINUATION, 1
+
+
+.macro statbuffchange target:req failure_continuation:req
 .byte 0x89
-.byte \statbuffchange_target
-.word \statbuffchange_address
+.byte \target
+.word \failure_continuation
 .endm
 
 .macro normalisebuffs
@@ -1163,9 +1174,9 @@
 .word \setstealstatchange_address
 .endm
 
-.macro cmde1 cmde1_address
+.macro intimidate_try_get_target failure_continuation:req
 .byte 0xE1
-.word \cmde1_address
+.word \failure_continuation
 .endm
 
 .macro cmde2 cmde2_bank

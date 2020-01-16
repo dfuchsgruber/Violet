@@ -94,5 +94,5 @@ wild_pokemon_entry wild_pokemon_route_12_west_rod_entries[10] = {
 };
 
 wild_pokemon_habitat wild_pokemon_route_12_west_rod = {
-	.frequency = 0, .data = wild_pokemon_route_12_west_rod_entries
+	.frequency = 75, .data = wild_pokemon_route_12_west_rod_entries
 };

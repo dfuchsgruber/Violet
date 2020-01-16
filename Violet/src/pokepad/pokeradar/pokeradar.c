@@ -16,6 +16,8 @@
 #include "superstate.h"
 #include "flags.h"
 #include "overworld/script.h"
+#include "debug.h"
+#include "constants/person_behaviours.h"
 
 extern u8 script_pokeradar_battle[];
 
@@ -27,7 +29,7 @@ map_event_person pokeradar_map_event_person = {
     0, //x
     0, //y
     0, //level
-    2, //move arround
+    BEHAVIOUR_UMHERBLICKEN,
     0, //behaviour range
     0, 
     1, //is trainer -> yes;
@@ -184,7 +186,9 @@ bool pokeradar_step() {
     if (checkflag(POKERADAR_POKEMON_SPAWNED))
         return false;
     u16 steps = (*var_access(POKERADAR_ENEMY_STATE))++;
-    u16 r = rnd16() % 10;
+    int r = FIXED_TO_INT(FIXED_MUL(rnd_normal(), INT_TO_FIXED(3)) + INT_TO_FIXED(6)); // Normal distribution that peaks at 6 steps with a spread of 3 steps
+    r = MIN(10, MAX(2, r)); // A Pokémon stays for at least 2 steps without changing position and at most 10 steps
+    // dprintf("Pokeradar movement treshold is %d\n", r);
     if (steps > r) {
 
         //we either do a pos change (0,75) or a flee (0,25)

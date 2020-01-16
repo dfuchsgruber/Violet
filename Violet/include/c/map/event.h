@@ -94,5 +94,13 @@ map_event_person *map_get_person(u8 target_idx, u8 map_id, u8 bank);
  */
 u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank);
 
+/**
+ * Deletes the npc of a person and sets it flag if it is present.
+ * @param person_idx the person to delete
+ * @param map_idx the index of the map the person is on
+ * @param bank the bank of the map the person is on
+ **/
+void person_delete_npc_if_present(u8 person_idx, u8 map_idx, u8 bank);
+
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

@@ -132,7 +132,7 @@ typedef struct {
     u8 ai_item_flags[2];
     u16 choiced_move[4];
     u16 changed_items[4];
-    u8 intimidate_side;
+    u8 intimidate_battler_idx;
     u8 switch_in_items_count;
     u8 field_DA;
     u8 turn_side_tracker;

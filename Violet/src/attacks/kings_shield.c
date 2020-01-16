@@ -43,7 +43,7 @@ bool protect_attack_succeeds(){
                 STATUS2_ATTACK_CHARGED)) return true;
         if(attacks[active_attack].flags & MAKES_CONTACT)
             fmem.battle_custom_status[attacking_battler] |=
-                CUSTOM_STATUS_KINGS_SHIED_DROP;
+                CUSTOM_STATUS_KINGS_SHIELD_DROP;
         
     }else{
         //regular protect
@@ -61,7 +61,7 @@ bool protect_attack_succeeds(){
 
 void bsc_push_kings_shield_drop(){
     battler *attacker = &battlers[attacking_battler];
-    if((fmem.battle_custom_status[attacking_battler] & CUSTOM_STATUS_KINGS_SHIED_DROP)
+    if((fmem.battle_custom_status[attacking_battler] & CUSTOM_STATUS_KINGS_SHIELD_DROP)
         && attacker->stat_changes[1] > 0){
         if(attacker->stat_changes[1] == 1) attacker->stat_changes[1] = 0;
         else attacker->stat_changes[1] = (u8)(attacker->stat_changes[1]  - 2);

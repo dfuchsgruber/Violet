@@ -402,6 +402,7 @@ bsc_strings:
 .word str_battle_x198
 .word str_battle_x199
 .word str_battle_x19A
+.word str_battle_x19B
 
 @ // Define the strings
 
@@ -2790,6 +2791,11 @@ bsc_strings:
 
 		.string "STRINGè von\nABILITY_NAME_PLAYER lässt\les eine düstere Zukunft sehen."
 
+	.global str_battle_x19B
+
+	str_battle_x19B:
+		.string "STRINGè von\nABILITY_NAME_PLAYER vermindert\lInitiative von EFFECT_NAME\lstark!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -4778,6 +4784,10 @@ bsc_strings:
 	.global str_battle_x19A
 	str_battle_x19A:
 		.string "ABILITY_NAME_PLAYER's\nSTRINGè makes\lit see a dark future."
+
+	.global str_battle_x19B
+	str_battle_x19B:
+		.string "ABILITY_NAME_PLAYER’s STRINGè\ncuts EFFECT_NAME’s Initiative\ldrastically!"
 
 .endif
 

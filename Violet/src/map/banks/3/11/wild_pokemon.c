@@ -44,5 +44,5 @@ wild_pokemon_entry wild_pokemon_route_10_rod_entries[10] = {
 };
 
 wild_pokemon_habitat wild_pokemon_route_10_rod = {
-	.frequency = 0, .data = wild_pokemon_route_10_rod_entries
+	.frequency = 75, .data = wild_pokemon_route_10_rod_entries
 };

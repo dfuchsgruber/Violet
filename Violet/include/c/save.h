@@ -55,7 +55,9 @@ typedef struct saveblock1 {
     // 0x8e0
     map_event_person persons[64];
     // 0x20E0
-    u8 field_3808[7696];
+    u8 field_3808[288];
+    u8 tmp_vars_and_flags[32];
+    u8 field_4128[7376];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];
     // 0x2F80
@@ -189,6 +191,8 @@ extern saveblock1 *save1;
 extern saveblock2 *save2;
 extern custom_memory cmem;
 extern floating_memory fmem;
+
+extern warp_save_t warp_recent; // Recent map, bank and positions (i.e. when transitioning)
 
 #define SAVE_KEY_SPLASH_USED 0x1A
 #define SAVE_KEY_EGGS_HATCHED 0xD

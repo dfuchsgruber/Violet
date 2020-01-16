@@ -184,3 +184,8 @@ blxr4_0805bba8:
 
 .org 0x080d0a04
     .word ow_script_strength_use
+
+.org 0x0806e074
+    ldr r0, =map_reset_temporary_flags_and_vars | 1
+    bx r0
+    .pool

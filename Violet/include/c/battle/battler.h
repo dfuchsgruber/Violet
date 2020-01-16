@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include "types.h"
 #include "pokemon/virtual.h"
+#include "constants/battle_statuses.h"
 
 typedef struct battler {
     u16 species;
@@ -37,61 +38,6 @@ typedef struct battler {
     u32 status2;
     u32 tid;
 } battler;
-
-#define STATUS1_SLEEPING 7
-#define STATUS1_POISONED 8
-#define STATUS1_BURNED 16
-#define STATUS1_FROZEN 32
-#define STATUS1_PARALYZED 64
-#define STATUS1_BADLY_POISONED 0x80
-#define STATUS1_BADLY_POISONED_TURNS 0xF00
-#define STATUS1_POISONED_ANY (STATUS1_POISONED | STATUS1_BADLY_POISONED)
-#define STATUS1_ANY (STATUS1_SLEEPING | STATUS1_POISONED | STATUS1_BURNED | STATUS1_FROZEN | STATUS1_PARALYZED | STATUS1_BADLY_POISONED)
-
-#define STATUS2_CONFUSED 7
-#define STATUS2_FLINCHED 8
-#define STATUS2_UPROARED 0x70
-#define STATUS2_BIDE 0x300
-#define STATUS2_LOCK_CONFUSE 0xC00
-#define STATUS2_ATTACK_CHARGED 0x1000
-#define STATUS2_WRAPPED 0xE000
-#define STATUS2_INFATUATION 0xF0000
-#define STATUS2_FOCUS_ENERGY 0x00100000
-#define STATUS2_TRANSFORMED 0x00200000
-#define STATUS2_RECHARGE 0x00400000
-#define STATUS2_RAGE 0x00800000
-#define STATUS2_SUBSTITUTE 0x01000000
-#define STATUS2_DESTINY_BOND 0x02000000
-#define STATUS2_ESCAPE_PREVENTION 0x04000000
-#define STATUS2_NIGHTMARE 0x08000000
-#define STATUS2_CURSED 0x10000000
-#define STATUS2_FORESIGHT 0x20000000
-#define STATUS2_DEFENSE_CURL 0x40000000
-#define STATUS2_TORMENT 0x80000000
-
-#define STATUS3_LEECHSEED_BATTLER       0x3
-#define STATUS3_LEECHSEED               0x4
-#define STATUS3_ALWAYS_HITS             0x18    // two bits
-#define STATUS3_PERISH_SONG             0x20
-#define STATUS3_ON_AIR                  0x40
-#define STATUS3_UNDERGROUND             0x80
-#define STATUS3_MINIMIZED               0x100
-#define STATUS3_ROOTED                  0x400
-#define STATUS3_CHARGED_UP              0x200
-#define STATUS3_YAWN                    0x1800  // two bits
-#define STATUS3_IMPRISONED_OTHERS       0x2000
-#define STATUS3_GRUDGE                  0x4000
-#define STATUS3_CANT_SCORE_A_CRIT       0x8000
-#define STATUS3_MUDSPORT                0x10000
-#define STATUS3_WATERSPORT              0x20000
-#define STATUS3_UNDERWATER              0x40000
-#define STATUS3_INTIMIDATE_POKES        0x80000
-#define STATUS3_TRACE                   0x100000
-#define STATUS3_SEMI_INVULNERABLE       (STATUS3_UNDERGROUND | STATUS3_ON_AIR | STATUS3_UNDERWATER)
-
-#define CUSTOM_STATUS_AP_SPARER (1 << 0)
-#define CUSTOM_STATUS_KINGS_SHIELD (1 << 1)
-#define CUSTOM_STATUS_KINGS_SHIED_DROP (1 << 2)
 
 typedef struct battler_status{
     u32 protect : 1;

@@ -61,6 +61,7 @@ u8 map_wildbattle_init_seed(u32 triggers_wildbattle) {
 int map_wildbattle_init(bdata current, u16 behaviour_previous_tile) {
   if(wild_pokemon_disabled) return 0;
   if (*var_access(TRAINERSCHOOL_PROGRESS) <= 5) return 0; // Can not encounter until >= 6
+	if (!checkflag(POKERADAR_POKEMON_SPAWNED)) return 0; // Can not encounter while the radar has spawned a pokémon.
   wild_pokemon_data *wild_pokemon_header = map_wild_pokemon_get_current();
   u8 pdf_type;
   u32 triggers_wildbattle = block_get_field(current, BDATA_TRIGGERS_WILDBATTLE);
