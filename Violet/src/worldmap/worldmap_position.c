@@ -264,7 +264,13 @@ static worldmap_position_t worldmap_positions_bank_29[] = {
 	[2] = {.x = 13, .y = 8, .width = 1, .height = 1},
 	[3] = {.x = 13, .y = 7, .width = 1, .height = 1},
 	[4] = {.x = 13, .y = 7, .width = 1, .height = 1},
+	[5] = {.x = 13, .y = 11, .width = 1, .height = 1},
 };
+
+static worldmap_position_t worldmap_positions_bank_31[] = {
+	[0] = {.x = 13, .y = 8, .width = 1, .height = 1},
+};
+
 worldmap_position_t *worldmap_positions[256] = {
 	[0] = worldmap_positions_bank_0,
 	[1] = worldmap_positions_bank_1,
@@ -296,5 +302,6 @@ worldmap_position_t *worldmap_positions[256] = {
 	[27] = worldmap_positions_bank_27,
 	[28] = worldmap_positions_bank_28,
 	[29] = worldmap_positions_bank_29,
+	[31] = worldmap_positions_bank_31,
 };
 

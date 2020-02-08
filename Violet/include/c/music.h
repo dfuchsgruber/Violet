@@ -152,6 +152,7 @@ extern const unsigned char mus_regi_battle[];
 extern const unsigned char mus_route_8[];
 extern const unsigned char mus_ardeal[];
 extern const unsigned char mus_lucius[];
+extern const unsigned char mus_lucius_battle[];
 
 #endif	/* MUSIC_H */
 

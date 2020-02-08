@@ -1,0 +1,337 @@
+{
+	"data": {
+		"footer": "map_footer_ardeal_rooms",
+		"events": {
+			"person_cnt": 0,
+			"warp_cnt": 38,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [],
+			"warps": [
+				{
+					"x": "23",
+					"y": "34",
+					"level": 0,
+					"target_warp_idx": "6",
+					"target_map": "31",
+					"target_bank": 0
+				},
+				{
+					"x": "24",
+					"y": "34",
+					"level": 0,
+					"target_warp_idx": "7",
+					"target_map": "0",
+					"target_bank": "31"
+				},
+				{
+					"x": "4",
+					"y": "31",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "4",
+					"target_bank": "31"
+				},
+				{
+					"x": "4",
+					"y": "32",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "4",
+					"target_bank": "31"
+				},
+				{
+					"x": "4",
+					"y": "33",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "4",
+					"target_bank": "31"
+				},
+				{
+					"x": "45",
+					"y": "31",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "4",
+					"target_bank": "31"
+				},
+				{
+					"x": "45",
+					"y": "32",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "4",
+					"target_bank": "31"
+				},
+				{
+					"x": "45",
+					"y": "33",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": "4",
+					"target_bank": "31"
+				},
+				{
+					"x": "23",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "20",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "24",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "21",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "25",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "22",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "26",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "23",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "7",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "14",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "8",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "15",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "4",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "12",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "5",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "13",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "15",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "18",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "16",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "19",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "15",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "16",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "16",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "17",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "25",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "8",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "26",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "9",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "27",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "10",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "28",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "11",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "33",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "26",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "34",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "27",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "37",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "24",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "38",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "25",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "41",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "30",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "42",
+					"y": "28",
+					"level": 0,
+					"target_warp_idx": "31",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "48",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "28",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "49",
+					"y": "17",
+					"level": 0,
+					"target_warp_idx": "29",
+					"target_map": "3",
+					"target_bank": "31"
+				},
+				{
+					"x": "26",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "27",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "25",
+					"y": "34",
+					"level": 0,
+					"target_warp_idx": "8",
+					"target_map": 0,
+					"target_bank": "31"
+				},
+				{
+					"x": "26",
+					"y": "34",
+					"level": 0,
+					"target_warp_idx": "9",
+					"target_map": 0,
+					"target_bank": "31"
+				},
+				{
+					"x": "15",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "16",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_ARDEAL",
+		"footer_idx": 98,
+		"namespace": "MAP_ARDEAL",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": "0",
+		"show_name": "DONT_SHOW",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_ardeal_rooms",
+	"type": "header"
+}

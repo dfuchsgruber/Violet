@@ -358,7 +358,7 @@ map_namespaces:
 	.global str_mapnamespace_128
 
 	str_mapnamespace_128:
-		.string "Küstenberg"
+		.string "Schloss Ardeal"
 
 
 	.global str_mapnamespace_129

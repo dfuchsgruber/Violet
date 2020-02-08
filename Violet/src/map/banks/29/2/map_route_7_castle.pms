@@ -572,15 +572,15 @@
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": 0,
-					"target_bank": 0
+					"target_bank": "31"
 				},
 				{
 					"x": "46",
 					"y": "7",
 					"level": 0,
-					"target_warp_idx": 0,
+					"target_warp_idx": "1",
 					"target_map": 0,
-					"target_bank": 0
+					"target_bank": "31"
 				}
 			],
 			"triggers": [],

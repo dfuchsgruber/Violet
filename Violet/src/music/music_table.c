@@ -764,5 +764,7 @@ song song_table[] = {
   {mus_ardeal, SONG_TYPE_SONG, SONG_TYPE_SONG},
   // Song 380 = (0x17C)
   {mus_lucius, SONG_TYPE_SONG, SONG_TYPE_SONG},
+  // Song 381 = (0x17D)
+  {mus_lucius_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

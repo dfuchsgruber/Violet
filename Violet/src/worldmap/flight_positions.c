@@ -69,7 +69,7 @@ flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - 
     [MAP_ROUTE_25 - MAP_AMONIA] = {.bank = 3, .map_idx = 44, .flight_position_idx = 0},
     [MAP_SILVANIA_WALD - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
     [MAP_WALDFRIEDHOF - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
-    [MAP_NAMESPACE_128 - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
+    [MAP_ARDEAL - MAP_AMONIA] = {.bank = 31, .map_idx = 0, .flight_position_idx = 0},
     [MAP_ASCHHAIN - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
     [MAP_ANTIKE_RUINE - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},
     [MAP_WASSERPFAD - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .flight_position_idx = 0},

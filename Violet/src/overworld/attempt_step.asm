@@ -7,7 +7,9 @@
 
 npc_player_initialize_step_movement_hook:
     sub r0, r1, #5
-    cmp r0, #COLLISION_SIDEWAY_STAIRS
+    cmp r0, #(COLLISION_SIDEWAY_STAIRS - 5)
+
+
     beq end_func
 
     lsl r0, #0x18

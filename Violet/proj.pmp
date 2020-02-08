@@ -975,7 +975,39 @@
 				"MAP_ROUTE_7"
 			]
 		},
-		"30": {}
+		"30": {},
+		"31": {
+			"0": [
+				"map_ardeal_entrance",
+				"src/map/banks/31/0/map_ardeal_entrance.pms",
+				"MAP_ARDEAL"
+			],
+			"1": [
+				"map_ardeal_dining_room",
+				"src/map/banks/31/1/map_ardeal_dining_room.pms",
+				"MAP_ARDEAL"
+			],
+			"2": [
+				"map_ardeal_throne_room",
+				"src/map/banks/31/2/map_ardeal_throne_room.pms",
+				"MAP_ARDEAL"
+			],
+			"3": [
+				"map_ardeal_rooms",
+				"src/map/banks/31/3/map_ardeal_rooms.pms",
+				"MAP_ARDEAL"
+			],
+			"4": [
+				"map_ardeal_tower_entrance",
+				"src/map/banks/31/4/map_ardeal_tower_entrance.pms",
+				"MAP_ARDEAL"
+			],
+			"5": [
+				"map_ardeal_left_tower_0",
+				"src/map/banks/31/5/map_ardeal_left_tower_0.pms",
+				"MAP_ARDEAL"
+			]
+		}
 	},
 	"footers": {
 		"map_footer_395": [
@@ -1613,6 +1645,30 @@
 		"map_footer_route_7_secret_power_lab": [
 			90,
 			"src/map/banks/29/4/map_footer_route_7_secret_power_lab.pms"
+		],
+		"map_footer_ardeal_entrance": [
+			95,
+			"src/map/banks/31/0/map_footer_ardeal_entrance.pms"
+		],
+		"map_footer_ardeal_dining_room": [
+			96,
+			"src/map/banks/31/1/map_footer_ardeal_dining_room.pms"
+		],
+		"map_footer_ardeal_throne_room": [
+			97,
+			"src/map/banks/31/2/map_footer_ardeal_throne_room.pms"
+		],
+		"map_footer_ardeal_rooms": [
+			98,
+			"src/map/banks/31/3/map_footer_ardeal_footer.pms"
+		],
+		"map_footer_ardeal_tower_entrance": [
+			99,
+			"src/map/banks/31/4/map_footer_ardeal_tower_entrance.pms"
+		],
+		"map_footer_ardeal_tower": [
+			100,
+			"src/map/banks/31/5/map_footer_ardeal_tower.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1660,7 +1716,8 @@
 		"maptileset_cave": "src/map/tileset/maptileset15.pms",
 		"maptileset_haweiland_cargo_hall": "src/map/tileset/maptileset_haweiland_cargo_hall.pms",
 		"maptileset_beach_house": "src/map/tileset/maptileset_beach_house.pms",
-		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms"
+		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms",
+		"maptileset_ardeal": "src/map/tileset/maptileset_ardeal.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1706,6 +1763,7 @@
 		"gfx_maptileset_cloud_ruins_insideTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_inside.png",
 		"gfx_maptileset_haweiland_cargo_hallTiles": "asset/gfx/tileset/gfx_maptileset_haweiland_cargo_hall.png",
 		"gfx_maptileset_beach_houseTiles": "asset/gfx/tileset/gfx_maptileset_beach_house.png",
-		"gfx_maptileset_route_7Tiles": "asset/gfx/tileset/gfx_maptileset_route_7.png"
+		"gfx_maptileset_route_7Tiles": "asset/gfx/tileset/gfx_maptileset_route_7.png",
+		"gfx_maptileset_ardealTiles": "asset/gfx/tileset/gfx_maptileset_ardeal.png"
 	}
 }
