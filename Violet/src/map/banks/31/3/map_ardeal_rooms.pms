@@ -13,8 +13,8 @@
 					"y": "34",
 					"level": 0,
 					"target_warp_idx": "6",
-					"target_map": "31",
-					"target_bank": 0
+					"target_map": "0",
+					"target_bank": "31"
 				},
 				{
 					"x": "24",
@@ -269,16 +269,16 @@
 					"y": "7",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "11",
+					"target_bank": "31"
 				},
 				{
 					"x": "27",
 					"y": "7",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "1",
+					"target_map": "11",
+					"target_bank": "31"
 				},
 				{
 					"x": "25",
@@ -301,16 +301,16 @@
 					"y": "8",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "15",
+					"target_bank": "31"
 				},
 				{
 					"x": "16",
 					"y": "8",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "1",
+					"target_map": "15",
+					"target_bank": "31"
 				}
 			],
 			"triggers": [],

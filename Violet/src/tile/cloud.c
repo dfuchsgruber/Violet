@@ -79,17 +79,33 @@ static u16 cloud_dismountable_blocks[] = {
 	0xD8, 0xD9, 0xDA, 0xDB, 0xDC, 0xDD, 0xDE, 0xDF, 
 	0xE2, 0xEA, 0xF2, 0xE4, 0xE5, 0xCA, 0xCB, 0xCC, 
 	0xC6, 0xCE, 0xD6, 0xEC, 0xF4,
-	0xFF
+	0xFFFF,
 };
+
+static u16 cloud_ardeal_dismountable_blocks[] = {
+	0xFFFF,
+};
+
+
+static bool cloud_current_block_dismountable(u16 *blocks) {
+	position_t pos;
+	player_get_position(&pos);
+	u16 block = block_get_by_pos(pos.coordinates.x, pos.coordinates.y);
+	for (int i = 0; blocks[i] != 0xFFFF; i++) {
+		if (block == blocks[i]) return false;
+	}
+	return true;
+}
 
 bool cloud_not_dismountable() {
 	if (map_is_cloud() && !player_state_disables_bike()) {
-		// On cloud maps only on certain blocks the player can dismount
-		position_t pos;
-		player_get_position(&pos);
-		u16 block = block_get_by_pos(pos.coordinates.x, pos.coordinates.y);
-		for (int i = 0; cloud_dismountable_blocks[i] != 0xFF; i++) {
-			if (block == cloud_dismountable_blocks[i]) return false;
+		if (cloud_current_block_dismountable(cloud_dismountable_blocks)) {
+			// On cloud maps only on certain blocks the player can dismount
+			return true;
+		}
+		if (mapheader_virtual.footer->tileset2 == &maptileset_cloud_ardeal &&
+			cloud_current_block_dismountable(cloud_ardeal_dismountable_blocks)) {
+			return true;
 		}
 		return true;
 	}

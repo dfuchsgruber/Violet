@@ -973,6 +973,11 @@
 				"map_route_7_legendary_fishermans_house",
 				"src/map/banks/29/5/map_route_7_legendary_fishermans_house.pms",
 				"MAP_ROUTE_7"
+			],
+			"6": [
+				"map_route_7_clouds_castle",
+				"src/map/banks/29/6/map_route_7_clouds_castle.pms",
+				"MAP_ROUTE_7"
 			]
 		},
 		"30": {},
@@ -1005,6 +1010,66 @@
 			"5": [
 				"map_ardeal_left_tower_0",
 				"src/map/banks/31/5/map_ardeal_left_tower_0.pms",
+				"MAP_ARDEAL"
+			],
+			"6": [
+				"map_ardeal_left_tower_1",
+				"src/map/banks/31/6/map_ardeal_left_tower_1.pms",
+				"MAP_ARDEAL"
+			],
+			"7": [
+				"map_ardeal_left_tower_2",
+				"src/map/banks/31/7/map_ardeal_left_tower_2.pms",
+				"MAP_ARDEAL"
+			],
+			"8": [
+				"map_ardeal_right_tower_0",
+				"src/map/banks/31/8/map_ardeal_right_tower_0.pms",
+				"MAP_ARDEAL"
+			],
+			"9": [
+				"map_ardeal_right_tower_1",
+				"src/map/banks/31/9/map_ardeal_right_tower_1.pms",
+				"MAP_ARDEAL"
+			],
+			"10": [
+				"map_ardeal_right_tower_2",
+				"src/map/banks/31/10/map_ardeal_right_tower_2.pms",
+				"MAP_ARDEAL"
+			],
+			"11": [
+				"map_ardeal_center_tower_0",
+				"src/map/banks/31/11/map_ardeal_center_tower_0.pms",
+				"MAP_ARDEAL"
+			],
+			"12": [
+				"map_ardeal_center_tower_1",
+				"src/map/banks/31/12/map_ardeal_center_tower_1.pms",
+				"MAP_ARDEAL"
+			],
+			"13": [
+				"map_ardeal_center_tower_2",
+				"src/map/banks/31/13/map_ardeal_center_tower_2.pms",
+				"MAP_ARDEAL"
+			],
+			"14": [
+				"map_ardeal_center_tower_3",
+				"src/map/banks/31/14/map_ardeal_center_tower_3.pms",
+				"MAP_ARDEAL"
+			],
+			"15": [
+				"map_ardeal_dungeon_entrance",
+				"src/map/banks/31/15/map_ardeal_dungeon_entrance.pms",
+				"MAP_ARDEAL"
+			],
+			"16": [
+				"map_ardeal_dungeon",
+				"src/map/banks/31/16/map_ardeal_dungeon.pms",
+				"MAP_ARDEAL"
+			],
+			"17": [
+				"map_ardeal_clouds",
+				"src/map/banks/31/17/map_ardeal_clouds.pms",
 				"MAP_ARDEAL"
 			]
 		}
@@ -1669,6 +1734,18 @@
 		"map_footer_ardeal_tower": [
 			100,
 			"src/map/banks/31/5/map_footer_ardeal_tower.pms"
+		],
+		"map_footer_ardeal_dungeon": [
+			101,
+			"src/map/banks/31/16/map_footer_ardeal_dungeon.pms"
+		],
+		"map_footer_route_7_cloud_castle": [
+			102,
+			"src/map/banks/29/6/map_footer_route_7_cloud_castle.pms"
+		],
+		"map_footer_ardeal_clouds": [
+			103,
+			"src/map/banks/31/17/map_footer_ardeal_clouds.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1717,7 +1794,8 @@
 		"maptileset_haweiland_cargo_hall": "src/map/tileset/maptileset_haweiland_cargo_hall.pms",
 		"maptileset_beach_house": "src/map/tileset/maptileset_beach_house.pms",
 		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms",
-		"maptileset_ardeal": "src/map/tileset/maptileset_ardeal.pms"
+		"maptileset_ardeal": "src/map/tileset/maptileset_ardeal.pms",
+		"maptileset_cloud_ardeal": "src/map/tileset/maptileset_cloud_ardeal.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1764,6 +1842,7 @@
 		"gfx_maptileset_haweiland_cargo_hallTiles": "asset/gfx/tileset/gfx_maptileset_haweiland_cargo_hall.png",
 		"gfx_maptileset_beach_houseTiles": "asset/gfx/tileset/gfx_maptileset_beach_house.png",
 		"gfx_maptileset_route_7Tiles": "asset/gfx/tileset/gfx_maptileset_route_7.png",
-		"gfx_maptileset_ardealTiles": "asset/gfx/tileset/gfx_maptileset_ardeal.png"
+		"gfx_maptileset_ardealTiles": "asset/gfx/tileset/gfx_maptileset_ardeal.png",
+		"gfx_maptileset_cloud_ardealTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ardeal.png"
 	}
 }
