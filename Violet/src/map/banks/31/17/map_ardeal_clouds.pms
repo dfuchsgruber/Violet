@@ -2,11 +2,54 @@
 	"data": {
 		"footer": "map_footer_ardeal_clouds",
 		"events": {
-			"person_cnt": 0,
+			"person_cnt": 2,
 			"warp_cnt": 6,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
-			"persons": [],
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "10",
+					"y": "17",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ARDEAL_GOLDEN_KEY",
+					"value": {
+						"item": "ITEM_GOLDSCHLUESSEL",
+						"species": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "101",
+					"script_std": "PERSON_EGG",
+					"field_3": 0,
+					"x": "55",
+					"y": "17",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ARDEAL_EGG_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GRAMOKLES"
+					}
+				}
+			],
 			"warps": [
 				{
 					"x": "32",

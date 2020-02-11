@@ -6,6 +6,7 @@
 .align 4
 ae_script_darkqueen_fade_to:
 frame 0
+    pal_restore_force_current 0 512
     fadescreen 0 0 512 64 0 8
     endframe
 frame 64

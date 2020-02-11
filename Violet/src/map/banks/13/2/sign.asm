@@ -81,24 +81,24 @@ unlock_entrance:
 str_solved:
     .autostring 34 2 "Ein Bannsiegel wurde gebrochenDOTSDOTSDOTS"
 str_puzzle_started:
-    .autostring 34 2 "Eine finstere Aura naht heranDOTS"
+    .autostring 34 2 "Von diesem Ort scheint eine bösartige Energie auszugehenDOTS\pDiese Steinformation errinert anDOTS"
 str_new_connection:
-    .autostring 34 2 "Die Präsenz scheint stärker zu werdenDOTS"
+    .autostring 34 2 "Von diesem Ort scheint eine bösartige Energie auszugehenDOTS\pDiese Steinformation errinert anDOTS"
 str_unlock_entrance:
-    .autostring 34 2 "Das Siegel wurde gebrochen!"
+    .autostring 34 2 "Von diesem Ort scheint eine bösartige Energie auszugehenDOTS\pDiese Steinformation errinert anDOTS"
 str_failed:
-    .autostring 34 2 "Die Entität ist verschwundenDOTS"
+    .autostring 34 2 "Von diesem Ort scheint eine bösartige Energie auszugehenDOTS\pDiese Steinformation errinert anDOTS"
 
 .elseif LANG_EN
 str_solved:
     .autostring 34 2 "A binding seal was brokenDOTSDOTSDOTS"
 str_puzzle_started:
-    .autostring 34 2 "A dark aura is approachingDOTS"
+    .autostring 34 2 "An evil energy emerges from this placeDOTS\pThe formation of this rocks resemblesDOTS"
 str_new_connection:
-    .autostring 34 2 "The presence seems to be getting strongerDOTS"
+    .autostring 34 2 "An evil energy emerges from this placeDOTS\pThe formation of this rocks resemblesDOTS"
 str_unlock_entrance:
-    .autostring 34 2 "The seal has been broken!"
+    .autostring 34 2 "An evil energy emerges from this placeDOTS\pThe formation of this rocks resemblesDOTS"
 str_failed:
-    .autostring 34 2 "The entity vanishedDOTS"
+    .autostring 34 2 "An evil energy emerges from this placeDOTS\pThe formation of this rocks resemblesDOTS"
 
 .endif

@@ -2,11 +2,33 @@
 	"data": {
 		"footer": "map_footer_ardeal_rooms",
 		"events": {
-			"person_cnt": 0,
+			"person_cnt": 1,
 			"warp_cnt": 38,
 			"trigger_cnt": 0,
-			"signpost_cnt": 0,
-			"persons": [],
+			"signpost_cnt": 5,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "19",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ARDEAL_ITEM_2",
+					"value": {
+						"item": "ITEM_FLUCHTSEIL",
+						"species": 0
+					}
+				}
+			],
 			"warps": [
 				{
 					"x": "23",
@@ -314,9 +336,95 @@
 				}
 			],
 			"triggers": [],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "23",
+					"y": "28",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ardeal_rooms_door"
+					}
+				},
+				{
+					"x": "24",
+					"y": "28",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ardeal_rooms_door"
+					}
+				},
+				{
+					"x": "25",
+					"y": "28",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ardeal_rooms_door"
+					}
+				},
+				{
+					"x": "26",
+					"y": "28",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ardeal_rooms_door"
+					}
+				},
+				{
+					"x": "52",
+					"y": "9",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ardeal_rooms_switch"
+					}
+				}
+			]
 		},
-		"levelscripts": 0,
+		"levelscripts": "map_ardeal_rooms_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []
@@ -328,7 +436,7 @@
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": "0",
-		"show_name": "DONT_SHOW",
+		"show_name": "SHOW",
 		"level": 0,
 		"battle_style": "BATTLE_TYPE_RANDOM"
 	},

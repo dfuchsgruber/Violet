@@ -16,6 +16,8 @@
         "battler.h": "c",
         "agbmemory.h": "c",
         "debug.h": "c",
-        "person_behaviours.h": "c"
+        "person_behaviours.h": "c",
+        "bg.h": "c",
+        "wild_pokemon_densities.h": "c"
     }
 }

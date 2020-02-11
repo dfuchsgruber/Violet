@@ -4226,13 +4226,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_K1_SCHLUESSEL
-		LANGDEP(PSTRING("K1-Schlüssel"), PSTRING("RM. 1 Key")),
+		// ITEM_GOLDSCHLUESSEL
+		LANGDEP(PSTRING("Goldschlüssel"), PSTRING("Golden Key")),
 		0x119, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x119_item_k1_schluessel,
+		str_item_desc_x119_item_goldschluessel,
 		1, //field_18
 		POCKET_KEY_ITEMS, //pocket
 		4, //type

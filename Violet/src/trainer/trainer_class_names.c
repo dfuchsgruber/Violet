@@ -9,7 +9,7 @@ u8 trainer_class_names[][13] = {
 	LANGDEP(PSTRING("Ruinenmaniac"), PSTRING("Ruin Maniac")),
 	LANGDEP(PSTRING("Forscherin"), PSTRING("Interviewer")),
 	LANGDEP(PSTRING("Planscher"), PSTRING("Tuber")),
-	LANGDEP(PSTRING("Planscher"), PSTRING("Tuber")),
+	LANGDEP(PSTRING("Butler"), PSTRING("Butler")),
 	LANGDEP(PSTRING("Ass-Trainer"), PSTRING("Cooltrainer")),
 	LANGDEP(PSTRING("Hexe"), PSTRING("Hex Maniac")),
 	LANGDEP(PSTRING("Lady"), PSTRING("Lady")),

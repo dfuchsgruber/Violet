@@ -658,6 +658,9 @@ wild_pokemon_data wild_pokemon[] = {
 			.water = &wild_pokemon_route_7_castle_water, .rod = &wild_pokemon_route_7_castle_rod,
 	},
 	{
+			.bank = 31, .map = 16, .grass = &wild_pokemon_ardeal_dungeon_grass,
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
 	},

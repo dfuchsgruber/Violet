@@ -1680,10 +1680,10 @@
 		.string "Ein Meteorit, der im Mondberg\naufschlug. Ein sehr harter Klumpen."
 
 
-	.global str_item_desc_x119_item_k1_schluessel
+	.global str_item_desc_x119_item_goldschluessel
 
-	str_item_desc_x119_item_k1_schluessel:
-		.string "Der Schlüssel zur Kabine 1\nauf dem Schiffswrack. Er sieht\nalt und zerbrechlich aus."
+	str_item_desc_x119_item_goldschluessel:
+		.string "Ein goldener Schlüssel, der\ndas Tor zum Turm des Schlosses\nArdeal öffnet."
 
 
 	.global str_item_desc_x11a_item_k2_schluessel
@@ -3650,10 +3650,10 @@
 	str_item_desc_x118_item_meteorit:
 		.string "A meteorite that fell from space\nonto MT. Moon long ago.\nIt is very lumpy and hard."
 
-	.global str_item_desc_x119_item_k1_schluessel
+	.global str_item_desc_x119_item_goldschluessel
 
-	str_item_desc_x119_item_k1_schluessel:
-		.string "A key that opens the door to Room\n1 inside the Abandoned Ship.\nIt is old and looks easily broken."
+	str_item_desc_x119_item_goldschluessel:
+		.string "A key that opens the door to the\ntower of the castle Ardeal."
 
 	.global str_item_desc_x11a_item_k2_schluessel
 

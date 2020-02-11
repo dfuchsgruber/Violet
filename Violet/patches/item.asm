@@ -116,6 +116,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_spiritkernTiles
     .word gfx_item_spiritkernPal
 
+.org item_resource + 0x119 * 8
+    .word gfx_item_goldschluesselTiles
+    .word gfx_item_goldschluesselPal
+
 .org item_resource + 0x15D * 8
     .word gfx_item_zugangskarteTiles
     .word gfx_item_zugangskartePal

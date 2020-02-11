@@ -16,8 +16,8 @@
 #include "attack.h"
 #include "save.h"
 #include "map/tileset.h"
-#include "debug.h"
-
+#include "debug.h" 
+ 
 battle_bg battle_bgs[29] = {
     // Battle street
     {
@@ -172,7 +172,25 @@ battle_bg battle_bgs[29] = {
         gfx_battle_bg_cargo_hallMap,
         NULL, NULL,
         gfx_battle_bg_cargo_hallPal
-    }
+    },
+    [BATTLE_BG_ARDEAL_CLOUD] = {
+        gfx_battle_bg_ardeal_cloudTiles,
+        gfx_battle_bg_ardeal_cloudMap,
+        NULL, NULL,
+        gfx_battle_bg_ardeal_cloudPal,
+    },
+    [BATTLE_BG_ARDEAL] = {
+        gfx_battle_bg_ardealTiles,
+        gfx_battle_bg_ardealMap,
+        NULL, NULL,
+        gfx_battle_bg_ardealPal,
+    },
+    [BATTLE_BG_ARDEAL_DUNGEON] = {
+        gfx_battle_bg_ardeal_dungeonTiles,
+        gfx_battle_bg_ardeal_dungeonMap,
+        NULL, NULL,
+        gfx_battle_bg_ardeal_dungeonPal,
+    },
 };
 
 
@@ -226,6 +244,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 		break;
 	case BATTLE_BG_MILL:
 	case BATTLE_BG_CLOUD:
+    case BATTLE_BG_ARDEAL_CLOUD:
 		type = TYPE_FLUG;
 		break;
 	case BATTLE_BG_OCEAN:
@@ -250,6 +269,12 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 		break;
     case BATTLE_BG_GRAVEYARD:
         type = TYPE_GEIST;
+        break;
+    case BATTLE_BG_ARDEAL:
+        type = TYPE_PSYCHO;
+        break;
+    case BATTLE_BG_ARDEAL_DUNGEON:
+        type = TYPE_UNLICHT;
         break;
 	}
 	if (type == battlers[attacking_battler].type1 ||
@@ -283,7 +308,10 @@ u16 terrain_moves[] = {
     [BATTLE_BG_GRAVEYARD] = ATTACK_SPUKBALL,
     [BATTLE_BG_HAWEILAND] = ATTACK_EIERBOMBE,
     [BATTLE_BG_CLOUD_RUINS] = ATTACK_KRAFTRESERVE,
-    [BATTLE_BG_CARGO_HALL] = ATTACK_TRICKBETRUG
+    [BATTLE_BG_CARGO_HALL] = ATTACK_TRICKBETRUG,
+    [BATTLE_BG_ARDEAL_CLOUD] = ATTACK_WINDSCHNITT,
+    [BATTLE_BG_ARDEAL] = ATTACK_PSYCHOKINESE,
+    [BATTLE_BG_ARDEAL_DUNGEON] = ATTACK_FINSTERAURA,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){
