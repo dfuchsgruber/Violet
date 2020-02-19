@@ -147,13 +147,13 @@ u16 anim_engine_read_param(ae_memory*mem) {
 }
 
 u32 anim_engine_read_word(ae_memory* mem) {
-    u32 word = (u32)GET_MISALIGNED_32(mem->current_programm);
+    u32 word = (u32)UNALIGNED_32_GET(mem->current_programm);
     mem->current_programm += 4;
     return word;
 }
 
 u16 anim_engine_get_hword(ae_memory* mem) {
-    return (u16)GET_MISALIGNED_16(mem->current_programm);
+    return (u16)UNALIGNED_16_GET(mem->current_programm);
 }
 
 u16 anim_engine_read_hword(ae_memory*mem) {

@@ -18,11 +18,11 @@ typedef unsigned short int u16;
 typedef unsigned int u32;
 typedef unsigned long long int u64;
 
-typedef u8 MISALIGNED_32[4];
-typedef u8 MISALIGNED_16[4];
+typedef u8 UNALIGNED_16[2];
+typedef u8 UNALIGNED_32[4];
 
-#define GET_MISALIGNED_16(arr)((arr[0]) | (arr[1] << 8))
-#define GET_MISALIGNED_32(arr)((arr[0]) | (arr[1] << 8) | (arr[2] << 16) | (arr[3] << 24))
+#define UNALIGNED_16_GET(arr)((u16)((arr)[0] | ((arr)[1] << 8)))
+#define UNALIGNED_32_GET(arr)((int)((arr)[0] | ((arr)[1] << 8) | ((arr)[2] << 16) | ((arr)[3] << 24)))
 
 typedef signed char s8;
 typedef signed short int s16;

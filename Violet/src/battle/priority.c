@@ -19,6 +19,7 @@
 #include "constants/attack_categories.h"
 #include "prng.h"
 #include "constants/pokemon_types.h"
+#include "constants/battle/battle_actions.h"
 
 int battler_get_effective_speed(u8 battler_idx) {
 	u8 speed_multiplier = 1;
@@ -76,7 +77,7 @@ u8 priority_compare(u8 first_battler, u8 second_battler, bool ignore_moves) {
 	int speed_second = battler_get_effective_speed(second_battler);
 
 	u16 move_first = ATTACK_NONE;
-	if (battler_action_chosen[first_battler] == BATTLER_ACTION_MOVE && !ignore_moves) {
+	if (battler_action_chosen[first_battler] == BATTLE_ACTION_USE_MOVE && !ignore_moves) {
 		if (battler_statuses[first_battler].out_of_moves) move_first = ATTACK_VERZWEIFLER;
 		else {
 			u8 slot = battle_state->chosen_move_slots[first_battler];
@@ -84,7 +85,7 @@ u8 priority_compare(u8 first_battler, u8 second_battler, bool ignore_moves) {
 		}
 	}
 	u16 move_second = ATTACK_NONE;
-	if (battler_action_chosen[second_battler] == BATTLER_ACTION_MOVE && !ignore_moves) {
+	if (battler_action_chosen[second_battler] == BATTLE_ACTION_USE_MOVE && !ignore_moves) {
 		if (battler_statuses[second_battler].out_of_moves) move_second = ATTACK_VERZWEIFLER;
 		else {
 			u8 slot = battle_state->chosen_move_slots[second_battler];

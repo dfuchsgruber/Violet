@@ -21,6 +21,7 @@
 #include "trainer/party.h"
 #include "pokemon/roamer.h"
 #include "item/item_effect.h"
+#include "mega.h"
 
 #define GP_STACK_SIZE 16
 
@@ -184,7 +185,7 @@ typedef struct {
     u8 start_menu_clock_oam_idxs[4];
     u8 tbox_idx_braille;
     u8 pc_selection_context;
-    
+    mega_state_t mega_state;
 } floating_memory;
 
 extern saveblock1 *save1;

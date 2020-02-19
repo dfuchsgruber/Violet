@@ -46,7 +46,7 @@ ow_script_ardeal_dungeon_spiritomb:
 	setwildbattle POKEMON_KRYPPUK 45 0
 	checksound
 	cry POKEMON_KRYPPUK 2
-	setvar BATTLE_SONG_OVERRIDE MUS_DARK_QUEEN_BATTLE
+	setvar BATTLE_SONG_OVERRIDE MUS_DARK_QUEEN_BATTLE2
 	closeonkeypress
 	setflag FLAG_IN_BATTLE
 	dowildbattle

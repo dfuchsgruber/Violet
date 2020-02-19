@@ -749,6 +749,24 @@ extern const unsigned short gfx_ow_harrenfeld_5Tiles[];
 extern const unsigned short gfx_ow_harrenfeld_6Tiles[];
 extern const unsigned short gfx_ow_harrenfeld_7Tiles[];
 extern const unsigned short gfx_ow_harrenfeld_8Tiles[];
+extern const unsigned short gfx_ow_butler_0Tiles[];
+extern const unsigned short gfx_ow_butler_1Tiles[];
+extern const unsigned short gfx_ow_butler_2Tiles[];
+extern const unsigned short gfx_ow_butler_3Tiles[];
+extern const unsigned short gfx_ow_butler_4Tiles[];
+extern const unsigned short gfx_ow_butler_5Tiles[];
+extern const unsigned short gfx_ow_butler_6Tiles[];
+extern const unsigned short gfx_ow_butler_7Tiles[];
+extern const unsigned short gfx_ow_butler_8Tiles[];
+extern const unsigned short gfx_ow_lucius_0Tiles[];
+extern const unsigned short gfx_ow_lucius_1Tiles[];
+extern const unsigned short gfx_ow_lucius_2Tiles[];
+extern const unsigned short gfx_ow_lucius_3Tiles[];
+extern const unsigned short gfx_ow_lucius_4Tiles[];
+extern const unsigned short gfx_ow_lucius_5Tiles[];
+extern const unsigned short gfx_ow_lucius_6Tiles[];
+extern const unsigned short gfx_ow_lucius_7Tiles[];
+extern const unsigned short gfx_ow_lucius_8Tiles[];
 
 
 #define OVERWORLD_PLAYER_PICTURE_CONTEXT_WALKING 0

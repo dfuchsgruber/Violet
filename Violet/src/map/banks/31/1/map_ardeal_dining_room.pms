@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_ardeal_dining_room",
 		"events": {
-			"person_cnt": 1,
+			"person_cnt": 2,
 			"warp_cnt": 8,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -25,6 +25,27 @@
 					"flag": "FLAG_ARDEAL_ITEM_0",
 					"value": {
 						"item": "ITEM_UEBERRESTE",
+						"species": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "53",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "13",
+					"y": "12",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_ardeal_person_3",
+					"flag": 0,
+					"value": {
+						"item": 0,
 						"species": 0
 					}
 				}

@@ -234,6 +234,8 @@ extern u8 battle_effects[4]; // Probably there even more, 0x3 is the target effe
 extern u16 battle_dynamic_base_power;
 extern u16 battle_current_turn_seed; // Random state that is fixed for one turn
 
+extern u8 battle_general_buffers[4][512];
+
 /**
  * Checks if the battle is a double battle
  * @return whether the battle is a double battle

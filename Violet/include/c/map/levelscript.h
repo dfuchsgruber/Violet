@@ -11,7 +11,7 @@
 // Map levelscript header
 typedef struct {
     u8 type;
-    MISALIGNED_32 levelscript;
+    UNALIGNED_32 levelscript;
 } levelscript_header_t;
 
 

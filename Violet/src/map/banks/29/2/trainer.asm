@@ -7,6 +7,7 @@
 .global ow_script_route_7_trainer_6
 .global ow_script_route_7_trainer_7
 .global ow_script_route_7_trainer_8
+.global ow_script_route_7_trainer_9
 
 ow_script_route_7_trainer_3:
     trainerbattlestd 0x0 0x142 0 str_before_3 str_after_3
@@ -38,7 +39,11 @@ ow_script_route_7_trainer_8:
     loadpointer 0x0 str_after_8
     callstd MSG_FACE
     end
-
+ow_script_route_7_trainer_9:
+    trainerbattlestd 0x0 0x15b 0 str_before_9 str_after_9
+    loadpointer 0x0 str_after_9
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_before_3:
@@ -65,6 +70,10 @@ str_before_8:
     .autostring 34 2 "Ein junger Trainer, hat viel zu lernen.\pIch als alter Mann, kann dir folglich viel beibringen!"
 str_after_8:
     .autostring 34 2 "Andererseits, kann auch ein alter Trainer von einem aufstrebenden Talent lernen."
+str_before_9:
+    .autostring 34 2 "Geheimtür?\pIch weiß nichts von einer Geheimtür!"
+str_after_9:
+    .autostring 34 2 "Ich würde dir niemals verraten, dass man im Schloss eine Geheimtür öffnen kann!\pUnd der Schalter ist auch nicht in der Bibliothek versteckt!"
 
 .elseif LANG_EN
 str_before_3:
@@ -91,4 +100,9 @@ str_before_8:
     .autostring 34 2 "A young trainer has yet still much to learn.\pThus, I as an old man can teach you quite a lot."
 str_after_8:
     .autostring 34 2 "Then again, even an old trainer can learn something from a young talent."
+str_before_9:
+    .autostring 34 2 "A secret door?\pI know nothing about any secret doors!"
+str_after_9:
+    .autostring 34 2 "I would never tell you that there is a secret door hidden within the castle.\pAnd the secret switch also isn't hidden in the library!"
+
 .endif

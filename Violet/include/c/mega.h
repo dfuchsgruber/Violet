@@ -2,11 +2,41 @@
 #define H_MEGA
 
 
-#define MEGA_ICON_TAG 0x134F
-#define MEGA_CNT 6
 
 #include "battle/battler.h"
 #include "oam.h"
+
+#define MEGA_TRIGGER_TAG 0x134F
+#define REGENT_TRIGGER_TAG 0x1350
+
+typedef struct {
+    u8 marked_for_mega_evolution : 4; // Mark banks for executing a mega evolution
+    u8 mega_evolution_performed : 4; // Mark banks if they executed a mega evolution
+    u8 trigger_oam;
+    u8 trigger_oam_removing : 1; // If set, currently a trigger is being removed
+} mega_state_t;
+
+#define MEGA_EVOLUTION 0
+#define REGENT_EVOLUTION 1
+
+typedef struct {
+    u16 species;
+    u16 mega_item;
+    u16 mega_species;
+    u16 type;
+} mega_evolution_t;
+
+/** Gets the mega evolution a battler is able to perform.
+ * @param battler_idx the idx of the battler
+ * @return the mega evolution structure if any is possible
+ **/
+mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx);
+
+
+// ** OLD **
+
+#define MEGA_ICON_TAG 0x134F
+#define MEGA_CNT 6
 
 typedef struct mega_table_entry {
     u16 species;
@@ -48,5 +78,7 @@ void trigger_cb(u8 self);
 void mega_disable_blurr(u8 slot);
 
 u16 can_mega_evolve(battler *b);
+
+void mega_oam_trigger_callback(oam_object *self);
 
 #endif

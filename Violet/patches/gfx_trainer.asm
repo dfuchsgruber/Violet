@@ -95,4 +95,4 @@ trainergfx 121,gfx_trainer_igvaTiles, gfx_trainer_igvaPal
 trainergfx 26,gfx_trainer_harrenfeldTiles,gfx_trainer_harrenfeldPal
 trainergfx 25,gfx_trainer_pirateTiles,gfx_trainer_piratePal
 trainergfx 24,gfx_trainer_butlerTiles,gfx_trainer_butlerPal
-
+trainergfx 28,gfx_trainer_luciusTiles,gfx_trainer_luciusPal

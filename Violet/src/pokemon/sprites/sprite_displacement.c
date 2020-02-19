@@ -2315,7 +2315,7 @@ u8 pokemon_altitude[POKEMON_CNT] = {
     // POKEMON_ZOBIRISM
     0x0,
     // POKEMON_tropius_mega
-    0x0,
+    0xC,
     // POKEMON_10e
     0x0,
     // POKEMON_10f

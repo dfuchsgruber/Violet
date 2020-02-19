@@ -1,4 +1,4 @@
-@insert at 0x02E3D0 via bx_r0.bin
+@insert at 0x02E3D0 via bx_r0.bin (battle_controller_player_choose_action)
 
 @this code is responsible for spawning the icon for the mega selection
 

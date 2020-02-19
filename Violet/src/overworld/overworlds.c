@@ -1392,6 +1392,46 @@ overworld_sprite ow_harrenfeld = {
     oam_rotscale_anim_table_null
 };
 
+graphic overworld_sprite_butler_sprites [] = {
+    {&gfx_ow_butler_0Tiles, 0x100, 0},
+    {&gfx_ow_butler_1Tiles, 0x100, 0},
+    {&gfx_ow_butler_2Tiles, 0x100, 0},
+    {&gfx_ow_butler_3Tiles, 0x100, 0},
+    {&gfx_ow_butler_4Tiles, 0x100, 0},
+    {&gfx_ow_butler_5Tiles, 0x100, 0},
+    {&gfx_ow_butler_6Tiles, 0x100, 0},
+    {&gfx_ow_butler_7Tiles, 0x100, 0},
+    {&gfx_ow_butler_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_butler = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    &ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_butler_sprites,
+    oam_rotscale_anim_table_null
+};
+
+static graphic overworld_sprite_lucius [] = {
+    {&gfx_ow_lucius_0Tiles, 0x100, 0},
+    {&gfx_ow_lucius_1Tiles, 0x100, 0},
+    {&gfx_ow_lucius_2Tiles, 0x100, 0},
+    {&gfx_ow_lucius_3Tiles, 0x100, 0},
+    {&gfx_ow_lucius_4Tiles, 0x100, 0},
+    {&gfx_ow_lucius_5Tiles, 0x100, 0},
+    {&gfx_ow_lucius_6Tiles, 0x100, 0},
+    {&gfx_ow_lucius_7Tiles, 0x100, 0},
+    {&gfx_ow_lucius_8Tiles, 0x100, 0}
+};
+
+overworld_sprite ow_lucius = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0x15, 0x1, 0x0, 0x8,
+    &ow_final_oam_16_32, ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_lucius,
+    oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1452,7 +1492,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_violet_grunt_f,//(overworld_sprite*) 0x83a3f18,
 	(overworld_sprite*) 0x83a483c,
 	(overworld_sprite*) 0x83a3ed0,
-	(overworld_sprite*) 0x83a417c,
+	&ow_butler, // (overworld_sprite*) 0x83a417c,
 	(overworld_sprite*) 0x83a3fcc,
 	(overworld_sprite*) 0x83a3ff0,
 	(overworld_sprite*) 0x83a4158,
@@ -1474,7 +1514,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_harrenfeld, //(overworld_sprite*) 0x83a4374,
 	&ow_tann,//(overworld_sprite*) 0x83a4230,
 	&ow_rival, //(overworld_sprite*) 0x83a46f8,
-	(overworld_sprite*) 0x83a4668,
+	&ow_lucius, //(overworld_sprite*) 0x83a4668,
 	(overworld_sprite*) 0x83a46d4,
 	&ow_narcissa, //(overworld_sprite*) 0x83a4524,
 	(overworld_sprite*) 0x83a468c,

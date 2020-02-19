@@ -525,7 +525,13 @@
 		"genus" : {
 			"LANG_GER" : "Königskl.",
 			"LANG_EN" : "Kings Blade"
-		}
+		},
+		"levelup_moves": [
+			[
+				"Stahlstreich",
+				1
+			]
+		]
 	},
 	"POKEMON_ABRA": {
 		"ability_0": "Synchro",
@@ -1682,7 +1688,8 @@
 		"ability_1": null,
 		"hidden_ability": "Dunkle_magie",
 		"safari_rate": 0,
-		"dex_number": 223
+		"dex_number": 223,
+		"capture_rate" : 20
 	},
 	"POKEMON_TEDDIURSA": {
 		"ability_0": "Mitnahme",

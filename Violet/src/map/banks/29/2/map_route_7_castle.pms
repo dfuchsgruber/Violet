@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_route_7_castle",
 		"events": {
-			"person_cnt": 25,
+			"person_cnt": 26,
 			"warp_cnt": 6,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -526,6 +526,27 @@
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_route_7_person_7",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "26",
+					"picture": "53",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "53",
+					"y": "12",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_route_7_trainer_9",
 					"flag": 0,
 					"value": {
 						"item": 0,

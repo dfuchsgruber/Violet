@@ -7,6 +7,7 @@
 #include "trainer/party.h"
 #include "language.h"
 #include "save.h"
+#include "battle/state.h"
 
 trainer_pokemon_custom_item_custom_attacks maike_test[2];
 trainer trainers[TRAINER_CNT] = {
@@ -6146,5 +6147,51 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x158_route_7_trainer_25,
     },
-};
+    [0x159] = {
+        .trainerclass = TRAINERCLASS_BUTLER, .sprite = 24,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Alfred"),
+            PSTRING("Alfred")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x159_ardeal_trainer_0,
+    },
+    [0x15a] = {
+        .trainerclass = TRAINERCLASS_BUTLER, .sprite = 24,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Thomis"),
+            PSTRING("Thomis")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x15a_ardeal_trainer_1,
+    },
+    [0x15b] = {
+        .trainerclass = TRAINERCLASS_BUTLER, .sprite = 24,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Gerimas"),
+            PSTRING("Gerimas")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x15b_ardeal_trainer_2,
+    },
+    [0x15c] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 0x49,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Elite N."),
+            PSTRING("Elite N.")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x15c_ardeal_trainer_3,
+    },
+    [0x15d] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 0x4a,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Elite J."),
+            PSTRING("Elite J.")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x15d_ardeal_trainer_4,
+    },
+    [0x15e] = {
+        .trainerclass = TRAINERCLASS_VIOLET_VORS, .sprite = 28,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Lucius"),
+            PSTRING("Lucius")), .pokemon_cnt = 6,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+				.items = {ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
+				.party = (trainer_pokemon*) trainer_party_x15e_ardeal_lucius,
+				.uses_custom_items = true, .uses_custom_moves = true,
+        .battle_state = BATTLE_DOUBLE,
+    },
+}; 
 

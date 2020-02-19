@@ -136,6 +136,10 @@
 .global str_mug_narcissa
 	str_mug_narcissa:
 		.string "Narzissa"
+.global str_mug_lucius
+	str_mug_lucius:
+		.string "Lucius"
+
 
 
 .elseif LANG_EN
