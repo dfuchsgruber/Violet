@@ -26,6 +26,7 @@
         "mugshot.h": "c",
         "controller.h": "c",
         "mega.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "superstate.h": "c"
     }
 }

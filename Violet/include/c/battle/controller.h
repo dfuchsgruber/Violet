@@ -10,9 +10,30 @@
 void battle_controller_player_choose_action();
 
 /**
- * Battle controller callback that waits for the player to choose a move
+ * Battle controller callback that waits for the player to choose a move.
  **/
 void battle_controller_player_choose_move();
+
+/**
+ * Battle controller callback that waits for dma3 to finish and then continues to letting the player choose a move.
+ **/
+void battle_controller_player_choose_move_after_dma3();
+
+/**
+ * Battle controller callback that initializes choosing a move for the player.
+ **/
+void battle_controller_player_initialize_choose_move();
+
+/**
+ * Battle controller callback that waits for the player to switch moves.
+ **/
+void battle_controller_player_switch_moves();
+
+
+/** 
+ * Battler controller callback that waits for the player to choose a target.
+ **/
+void battle_controller_player_choose_target();
 
 /**
  * Taken from pokeemerald.
@@ -46,5 +67,7 @@ void battler_mark_for_controller_execution(u8 battler_idx);
 void battle_bounce_effect(u8 battler_idx, u8 target, u8, u8);
 
 u8 battle_selected_action[4];
+
+extern void (*battle_controllers[4])();
 
 #endif

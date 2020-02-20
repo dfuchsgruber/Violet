@@ -121,7 +121,7 @@ typedef struct oam_object {
     u32 *rotscale_table;
     oam_template *oam_template;
     u32 field18;
-    u32 *callback;
+    void (*callback)(oam_object*);
     s16 x;
     s16 y;
     s16 x2;

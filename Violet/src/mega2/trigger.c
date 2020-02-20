@@ -23,71 +23,81 @@ extern const unsigned gfx_mega_triggerPal[];
 extern const unsigned gfx_regent_triggerTiles[];
 extern const unsigned gfx_regent_triggerPal[];
 
-static void trigger_oam_remove() {
-    fmem.mega_state.trigger_oam_removing = 1;
-    oams[fmem.mega_state.trigger_oam].private[0] = 1;
-}
-
-static void trigger_callback(oam_object *self) {
-    u16 *state = self->private;
-    switch (*state) {
-        case 0: { // Show the trigger, i.e. move it upwards
-            if (self->y2 <= -32) {
-                *state = 2; // Idle state
-            } else {
-                self->y2 = (s16) MAX(-32, self->y2 - 4);
-            }
-            break;
-        }
-        case 1: { // Hide the trigger, i.e. move it downwards
-            if (self->y2 >= 0) {
-                fmem.mega_state.trigger_oam_removing = 0; // This oam has finished removing
-                oam_free(self);
-            } else {
-                fmem.mega_state.trigger_oam_removing = 1; // This oam is currently removing
-                self->y2 = (s16) MIN(0, self->y2 + 4);
-            }
-            break;
-        }
-    }
-    u8 clk = (u8)((self->private[1]++) & 63); // Period of 64
-    if (!fading_control.active) {
-        u8 alpha;
+static void trigger_callback_animation(oam_object *self) {
+    u8 clk = (u8)((self->private[2]++) & 63); // Period of 64
+    u8 battler_idx = (u8)(self->private[1]);
+    u8 alpha, animation_idx;
+    if (MEGA_STATE.marked_for_mega_evolution[battler_idx]) {
+        animation_idx = 1;
         if (clk <= 32) {
             alpha = clk;
         } else {
             alpha = (u8)(64 - clk);
         }
-        u8 pal_idx = (u8)((self->final_oam.attr2 >> 12) & 15);
-        color_t white = {.rgb = {.red = 31, .blue = 31, .green = 31}};
-        pal_blend((u16)(256 + 16 * pal_idx), 7, (u8)MIN(15, alpha / 2), white);
+    } else {
+        animation_idx = 0;
+        alpha = 0;
+    }
+    if (self->anim_number != animation_idx) {
+        self->anim_number = animation_idx;
+        oam_gfx_anim_init(self, 0);
+    }
+    
+    u8 pal_idx = (u8)((self->final_oam.attr2 >> 12) & 15);
+    color_t white = {.rgb = {.red = 31, .blue = 31, .green = 31}};
+    pal_blend((u16)(256 + 16 * pal_idx + 5), 12, (u8)MIN(15, alpha / 3), white);
+}
+
+static void mega_trigger_oam_callback(oam_object *self) {
+    trigger_callback_animation(self);
+    u16 *state = self->private;
+    u8 battler_idx = (u8)(self->private[1]);
+    if(!battler_get_available_mega_evolution(battler_idx)) {
+        *state = MEGA_TRIGGER_HIDE; // Whenever the active battler is not eligible to mega evolve, hide the trigger
+    }
+    switch (*state) {
+        case MEGA_TRIGGER_SHOW: { // Show the trigger, i.e. move it upwards
+            if (self->y2 <= -32) {
+                *state = MEGA_TRIGGER_IDLE;
+            } else {
+                self->y2 = (s16) MAX(-32, self->y2 - 4);
+            }
+            break;
+        }
+        case MEGA_TRIGGER_HIDE: { // Hide the trigger, i.e. move it downwards
+            if (self->y2 >= 0) {
+                *state = MEGA_TRIGGER_IDLE;
+                oam_free(self);
+            } else {
+                self->y2 = (s16) MIN(0, self->y2 + 4);
+            }
+            return;
+        }
+    }
+    // Check if the battle controller callback is suitable to show a mega icon
+    if (battle_controllers[battler_idx] != battle_controller_player_choose_move &&
+        battle_controllers[battler_idx] != battle_controller_player_choose_move_after_dma3 &&
+        battle_controllers[battler_idx] != battle_controller_player_initialize_choose_move &&
+        battle_controllers[battler_idx] != battle_controller_player_switch_moves) {
+        *state = MEGA_TRIGGER_HIDE;
     }
 }
 
-static void callback_marked_animation(u8 self) {
-    u8 clk = (u8)((big_callbacks[self].params[0]++) & 63); // Period of 64
-    for (u8 battler_idx = 0; battler_idx < battler_cnt; battler_idx++) {
-        u8 alpha = 0;
-        if (fmem.mega_state.marked_for_mega_evolution & (1 << battler_idx)) {
-            if (clk <= 32) {
-                alpha = clk;
-            } else {
-                alpha = (u8)(64 - clk);
-            }
-        }
-        // This overrides fading control, maybe there is a better way to indicate a mon is marked for mega evo?
-        u8 pal_idx = (u8)((oams[battler_oams[battler_idx]].final_oam.attr2 >> 12) & 15);
-        dprintf("Alpha for battler %d with pal_idx %d is %d\n", battler_idx, pal_idx, alpha);
-        color_t white = {.rgb = {.red = 31, .blue = 31, .green = 31}};
-        pal_blend((u16)(256 + 16 * pal_idx), 16, (u8)MIN(15, alpha / 2), white);
-    }
-}
+static gfx_frame trigger_gfx_anims[] = {
+    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
+    {.data = 64, .duration = 0}, {.data = GFX_ANIM_END},
+};
+
+static gfx_frame *trigger_gfx_anim_table[] = {
+    trigger_gfx_anims + 0,
+    trigger_gfx_anims + 2,
+};
 
 static sprite trigger_sprite = {ATTR0_MODE_SEMI_TRANSPARENT, ATTR1_SIZE_64_64, ATTR2_PRIO(1), 0};
 
 static graphic trigger_graphics[] = {
-    [MEGA_EVOLUTION] = {gfx_mega_triggerTiles, 0x800, MEGA_TRIGGER_TAG},
-    [REGENT_EVOLUTION] = {gfx_regent_triggerTiles, 0x800, REGENT_TRIGGER_TAG},
+    [MEGA_EVOLUTION] = {gfx_mega_triggerTiles, 0x1000, MEGA_TRIGGER_TAG},
+    [REGENT_EVOLUTION] = {gfx_regent_triggerTiles, 0x1000, REGENT_TRIGGER_TAG},
 };
 
 static oam_template trigger_templates[] = {
@@ -95,19 +105,19 @@ static oam_template trigger_templates[] = {
         MEGA_TRIGGER_TAG,
         MEGA_TRIGGER_TAG,
         &trigger_sprite,
-        oam_gfx_anim_table_null,
+        trigger_gfx_anim_table,
         NULL,
         oam_rotscale_anim_table_null,
-        trigger_callback
+        mega_trigger_oam_callback
     },
     [REGENT_EVOLUTION] = {
         REGENT_TRIGGER_TAG,
         REGENT_TRIGGER_TAG,
         &trigger_sprite,
-        oam_gfx_anim_table_null,
+        trigger_gfx_anim_table,
         NULL,
         oam_rotscale_anim_table_null,
-        trigger_callback
+        mega_trigger_oam_callback
     },
 };
 
@@ -121,15 +131,17 @@ static u16 trigger_tags[] = {
     [REGENT_EVOLUTION] = REGENT_TRIGGER_TAG,
 };
 
+/**
 // Wrapper for choosing an action. If the action is to use a move, show the mega trigger icon.
 void _battle_controller_player_choose_action() {
     if (super.keys_remapped.keys.A && battle_selected_action[active_battler] == 0) {
+        dprintf("Active battler %d\n", active_battler);
         mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(active_battler);
         if (mega_evolution) {
-            // Check if a trigger is currently being removed
-            if (fmem.mega_state.trigger_oam_removing) {
-                oams[fmem.mega_state.trigger_oam].private[0] = 0; // Change its state to appearing
-                fmem.mega_state.trigger_oam_removing = 0;
+            // Check if a trigger is already present
+            u8 trigger_oam = trigger_oam_present();
+            if (trigger_oam != 0x40) {
+                oams[trigger_oam].private[0] = 0; // Change its state to appearing
             } else {
                 u16 tag = trigger_tags[mega_evolution->type];
                 if (oam_palette_get_index(tag) == 0xFF) {
@@ -139,38 +151,79 @@ void _battle_controller_player_choose_action() {
                 if (oam_vram_get_tile(tag) == 0xFFFF) {
                     oam_load_graphic(trigger_graphics + mega_evolution->type);
                 }
-                fmem.mega_state.trigger_oam = oam_new_forward_search(trigger_templates + mega_evolution->type, 0x4C, 0x70, 0);
+                oam_new_forward_search(trigger_templates + mega_evolution->type, 0x4C, 0x70, 0);
             }
         }
     }
     battle_controller_player_choose_action();
 }
+**/
 
-// Wrapper for choosing a move. If B is pressed, the trigger is deleted. If L & R are pressed, the pokemon is marked for mega evolution.
-void _battle_controller_player_choose_move() {
-    if (battler_get_available_mega_evolution(active_battler)) {
-        if (super.keys_remapped.keys.B) {
-            if (fmem.mega_state.marked_for_mega_evolution & (1 << active_battler)) { // Unmark the battler for mega evolution 
-                fmem.mega_state.marked_for_mega_evolution = (u8)(
-                    (fmem.mega_state.marked_for_mega_evolution & ~(1 << active_battler)) & 15
-                );
-                u8 animation_cb_idx = big_callback_get_id(callback_marked_animation);
-                if (animation_cb_idx != 0xFF)
-                    big_callback_delete(animation_cb_idx);
-            } else { // Battler was not marked, thus remove the trigger only
-                trigger_oam_remove();
-            }
-        } else if (super.keys.keys.l && super.keys.keys.r &&
-                    !(fmem.mega_state.marked_for_mega_evolution & (1 << active_battler))) {
-            // Mark the battler for mega evolution and remove the trigger
-            fmem.mega_state.marked_for_mega_evolution = (u8)(
-                (fmem.mega_state.marked_for_mega_evolution | (1 << active_battler)) & 15
-            );
-            big_callback_new(callback_marked_animation, 31);
-            trigger_oam_remove();
-            play_sound(184);
+
+u8 mega_trigger_oam_idx_get(u8 battler_idx) {
+    for (u8 i = 0; i < 0x40; i++) {
+        if (oams[i].callback == mega_trigger_oam_callback && 
+        (battler_idx = 4 || oams[i].private[1] == battler_idx)) {
+            return i;
         }
-        // dprintf("Markings for mega 0x%x\n", fmem.mega_state.marked_for_mega_evolution);
     }
-    battle_controller_player_choose_move();
+    return 0x40;
+}
+
+void mega_trigger_new(u8 battler_idx) {
+    dprintf("Attempt spawning mega trigger for battler %d\n", battler_idx);
+    if (battle_flags & (BATTLE_SAFARI | BATTLE_TUTORIAL))
+        return;
+    // Check if the battler can perform mega evolution
+    mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
+    if (mega_evolution || MEGA_STATE.marked_for_mega_evolution[battler_idx]) {
+        u8 mega_trigger_oam = mega_trigger_oam_idx_get(battler_idx);
+        if (mega_trigger_oam >= 0x40) {
+            // Create a new mega trigger
+            u16 tag = trigger_tags[mega_evolution->type];
+            if (oam_palette_get_index(tag) == 0xFF) {
+                u8 pal_idx = oam_allocate_palette(tag);
+                pal_decompress(trigger_pals[mega_evolution->type], (u16)(256 + 16 * pal_idx), 32);
+            }
+            if (oam_vram_get_tile(tag) == 0xFFFF) {
+                oam_load_graphic(trigger_graphics + mega_evolution->type);
+            }
+            mega_trigger_oam = oam_new_forward_search(trigger_templates + mega_evolution->type, 0x4C, 0x70, 0);
+        }
+        oams[mega_trigger_oam].private[0] = MEGA_TRIGGER_SHOW;
+        oams[mega_trigger_oam].private[1] = battler_idx;
+    }
+}
+
+void mega_trigger_new_for_active_battler() {
+    mega_trigger_new(active_battler);
+}
+
+void _battle_controller_player_choose_move_hook(); // This function recovers the original functionality of the handler
+
+// Wraps the original handler. Don't change label to "battle_controller_player_choose_move", as the symbol is referrenced multiple times
+void _battle_controller_player_choose_move() {
+    if (super.keys_remapped.keys.B) {
+        // Unmark the battler for mega evolution
+        MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;
+    } else if (battler_get_available_mega_evolution(active_battler) && 
+            (super.keys_new.keys.l || super.keys_new.keys.r) && super.keys.keys.l && super.keys.keys.r) {
+        // Toggle marking
+        if (MEGA_STATE.marked_for_mega_evolution[active_battler]) {
+            MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;
+            play_sound(3);
+        } else {
+            MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
+            play_sound(2);
+        }
+    }
+    _battle_controller_player_choose_move_hook();
+}
+
+void battle_controller_player_choose_target_wrap() {
+    if (super.keys_remapped.keys.B) {
+        // When target selection is canceled, try spawning a new mega trigger
+        mega_trigger_new(active_battler);
+    }
+    battle_controller_player_choose_target();
 }

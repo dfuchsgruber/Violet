@@ -16,21 +16,23 @@ static mega_evolution_t mega_evolutions[] = {
     {0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF},
 };
 
+
+u8 battler_get_owner(u8 battler_idx) { 
+    // TODO: Co-op battles, multi-trainer battles
+    return (u8)battler_is_opponent(battler_idx);
+}
+
 mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {
-    if (!battler_is_opponent(battler_idx) && !checkflag(PLAYER_ABLE_TO_MEGA_EVOLVE))
+    u8 owner = battler_get_owner(battler_idx);
+    if (owner == 0 && !checkflag(PLAYER_ABLE_TO_MEGA_EVOLVE))
         return NULL;
-    u8 side = battler_get_position(battler_idx); // TODO: maybe adapt for multi-battles etc.
-    if (fmem.mega_state.mega_evolution_performed & (1 << side)) {
-        dprintf("Unable to perform mega on side %d\n", side);
+    if (MEGA_STATE.owner_mega_evolved[owner])
         return NULL;
+    // Check if any other battler with the same owner is marked for mega evolution
+    for (u8 i = 0; i < battler_cnt; i++) {
+        if (i != battler_idx && battler_get_owner(i) == owner && MEGA_STATE.marked_for_mega_evolution[i])
+            return NULL; 
     }
-    // Battlers with 0 pps can not perform a mega evolution
-    int pp_total = 0;
-    for (int i = 0; i < 4; i++) {
-        pp_total += battlers[battler_idx].current_pp[i];
-    }
-    if (pp_total <= 0)
-        return NULL;
     for (int i = 0; mega_evolutions[i].species != 0xFFFF; i++) {
         if (mega_evolutions[i].species == battlers[battler_idx].species && mega_evolutions[i].mega_item == battlers[battler_idx].item) {
             return mega_evolutions + i;

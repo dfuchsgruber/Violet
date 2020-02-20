@@ -9,12 +9,18 @@
 #define MEGA_TRIGGER_TAG 0x134F
 #define REGENT_TRIGGER_TAG 0x1350
 
+enum mega_trigger_state {
+    MEGA_TRIGGER_SHOW,
+    MEGA_TRIGGER_HIDE,
+    MEGA_TRIGGER_IDLE
+};
+
 typedef struct {
-    u8 marked_for_mega_evolution : 4; // Mark banks for executing a mega evolution
-    u8 mega_evolution_performed : 4; // Mark banks if they executed a mega evolution
-    u8 trigger_oam;
-    u8 trigger_oam_removing : 1; // If set, currently a trigger is being removed
+    u8 marked_for_mega_evolution[4];
+    u8 owner_mega_evolved[4]; // TODO: later 4 sides (for partners?)
 } mega_state_t;
+
+#define MEGA_STATE (fmem.mega_state)
 
 #define MEGA_EVOLUTION 0
 #define REGENT_EVOLUTION 1
@@ -26,11 +32,36 @@ typedef struct {
     u16 type;
 } mega_evolution_t;
 
+/**
+ * Returns the owner of a battler.
+ * @param battler_idx the battler to check ownership of
+ * @return the owner of the battler
+ **/
+u8 battler_get_owner(u8 battler_idx);
+
 /** Gets the mega evolution a battler is able to perform.
  * @param battler_idx the idx of the battler
  * @return the mega evolution structure if any is possible
  **/
 mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx);
+
+/** Gets the oam idx of a mega trigger that affects a certain battler.
+ * @param battler_idx the battler to affect. If 4 is given, any mega trigger will be found.
+ * @return the oam idx of the mega trigger or 0x40 if none is present
+ */
+u8 mega_trigger_oam_idx_get(u8 battler_idx);
+
+/**
+ * Creates a mega trigger for a battler if the battler can perform mega evolution by either
+ * spawning a new oam or recovering a mega trigger that is currently active (i.e. disappearing)
+ * @param battler_idx the battler to create a trigger for
+ **/
+void mega_trigger_new(u8 battler_idx);
+
+/**
+ * Wrapper for the input handler that lets the player select a move
+ **/
+void _battle_controller_player_choose_move();
 
 
 // ** OLD **
