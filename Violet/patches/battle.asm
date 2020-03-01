@@ -241,3 +241,16 @@ _blxr0:
 .org 0x082603a8
 	.word gfx_healthbar_player_single_battlePal
 
+.org 0x0802e0a6
+	ldr r2, =battle_allocate_hook | 1
+	bx r2
+	.pool
+
+.org 0x0802e198
+	ldr r0, =battle_free_hook | 1
+	bx r0
+	.pool
+
+.org 0x08034050
+	.word battle_animations
+	

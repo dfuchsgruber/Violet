@@ -989,7 +989,7 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     // POKEMON_ZOBIRISM
     0x2,
     // POKEMON_tropius_mega
-    0x0,
+    0x1,
     // POKEMON_10e
     0x0,
     // POKEMON_10f

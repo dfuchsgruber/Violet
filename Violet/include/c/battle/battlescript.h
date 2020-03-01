@@ -9,7 +9,6 @@
 #define INCLUDE_C_BATTLE_BATTLESCRIPT_H_
 
 extern u32 bsc_status_flags;
-extern u8 bsc_buffers[];
 extern u8 *bsc_offset;
 extern u8 bsc_effect_to_apply;
 
@@ -82,6 +81,7 @@ typedef struct  {
 
 extern battle_scripting_t battle_scripting;
 
+extern u16 bsc_last_used_item; // Used for the BSC_LAST_ITEM buffer
 
 
 /**
@@ -113,13 +113,6 @@ void battlescript_execute();
  * Pushes the next command to execute to the battle script callstack
  */
 void battlescript_callstack_push_next_command();
-
-/**
- * Removes a callback launched by the attack animation engine. Removes all references in the
- * attack animation engine as well
- * @param self the own callback id
- */
-void attack_anim_remove_big_callback(u8 self);
 
 /**
  * Initializes a battle script and interrupts the battle engine meanwhile

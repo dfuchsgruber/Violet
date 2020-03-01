@@ -63,7 +63,7 @@
 
 
 .org 0x08032bb4
-    ldr r0, = battle_controller_init_move_selection_hook | 1
+    ldr r0, = battle_controller_player_init_move_selection_hook | 1
     bx r0
     .pool
 
@@ -76,3 +76,45 @@
     .word battle_controller_player_choose_target_wrap | 1
 .org 0x0802eb44
     .word battle_controller_player_choose_target_wrap | 1
+
+.org 0x08038556
+    ldr r0, =battle_controller_opponent_choose_action_hook | 1
+    bx r0
+    .pool
+
+.org 0x0801554c
+    ldr r0, = battle_execute_action | 1
+    bx r0
+    .pool
+
+.org 0x08034912 // Replaces a call to nullsubs
+    ldrb r0, [r4] // Battler idx to set-up
+    bl _battle_create_mega_indicator
+    // break-statement
+    ldr r0, =0x080349ba | 1
+    bx r0 
+_battle_create_mega_indicator:
+    ldr r1, =battle_create_mega_indicator | 1
+    bx r1
+    .pool
+
+.org 0x08078026
+    bl _battle_create_mega_indicator
+    ldr r0, =0x08078068 | 1
+    bx r0 
+    .pool
+
+.org 0x0802C150
+ 	ldr r0, =hook_battlescript_command_item_swap | 1
+ 	bx r0
+ 	.pool
+ 	
+.org 0x08020FDC
+ 	ldr r0, =hook_battlescript_knock_off | 1
+ 	bx r0
+ 	.pool
+ 	
+.org 0x08020D44
+ 	ldr r0, =hook_battlescript_thief | 1
+ 	bx r0 
+ 	.pool

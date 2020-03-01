@@ -27,6 +27,19 @@
         "controller.h": "c",
         "mega.h": "c",
         "math.h": "c",
-        "superstate.h": "c"
+        "superstate.h": "c",
+        "battle_results.h": "c",
+        "battle_actions.h": "c",
+        "battle_string.h": "c",
+        "pokemon_party_menu.h": "c",
+        "battlescript.h": "c",
+        "string.h": "c",
+        "item.h": "c",
+        "item_hold_effects.h": "c",
+        "attack.h": "c",
+        "chrono": "c",
+        "bios.h": "c",
+        "memory.h": "c",
+        "functional": "c"
     }
 }

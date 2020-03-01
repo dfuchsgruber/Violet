@@ -5,7 +5,7 @@ attack_anim_stance_change:
 loadgraphic 0x27a9
 loadgraphic 0x2797
 enable_oam_as_target 0x3
-playsound_modulation_user_target_based 0xa4 0xc0
+playsound_with_pan 0xa4 0xc0
 nop3 0
 fade_into_background 0x2b
 wait

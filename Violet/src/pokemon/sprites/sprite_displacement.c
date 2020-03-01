@@ -541,7 +541,7 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_ZOBIRISM
     0x88,
     // POKEMON_tropius_mega
-    0x188,
+    0x87,
     // POKEMON_10e
     0x188,
     // POKEMON_10f

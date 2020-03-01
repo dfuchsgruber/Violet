@@ -118,6 +118,12 @@ int ggt(int a, int b);
  */
 int kgv(int a, int b);
 
-
+/**
+ * Sinusoid function from the bprd engine.
+ * @param
+ * @param
+ * @return
+ **/
+s16 sine (s16 x, s16 amplitude);
 
 #endif

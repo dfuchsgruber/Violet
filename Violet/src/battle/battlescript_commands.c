@@ -9,6 +9,8 @@
 #include "battle/state.h"
 #include "constants/species.h"
 #include "map/wild_pokemon.h"
+#include "battle/attack.h"
+#include "callbacks.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -22,22 +24,30 @@ int bsc_get_word(){
     bsc_offset += 4;
 }
 
+void battle_animation(u8 user, u8 target, u8 *animation) {
+    battle_animation_user = user;
+    battle_animation_target = target;
+    battle_animation_initialize(&animation, 0, false);
+    u8 cb = big_callback_new(battle_special_anim_clear_flags_when_finished, 10);
+    u8 battler_idx = user; // The battler that is being active
+    big_callbacks[cb].params[0] = battler_idx; 
+    battle_sprite_data->healthbox_info[battler_idx].special_anim_active = 1;
+}
 
+
+// Parameter structure animation user_type target_type 
 void bsc_cmd_custom_attack_anim(){
-    //Parameter structure
-    //Slot: 0=attacker, 1=defender
-    //Unkown: usually 1
-    //Animation Offset
-    bsc_get_byte(); //read the command id itself
-    u8 slot_user = bsc_get_byte();
-    u8 slot_target = bsc_get_byte();
-    u8 *anim = (u8*)bsc_get_word();
-    dprintf("User %d, Target %d, offset %d\n", slot_user, slot_target, anim);
-    slot_user = slot_user ? attacking_battler : defending_battler; //read the slot
-    slot_target = slot_target ? attacking_battler : defending_battler; //read the slot
-    call_attack_anim_by_offset(slot_user, slot_target, anim);
-    
-    
+    bsc_offset++;
+    u8 user = bsc_get_byte() ? attacking_battler : defending_battler;
+    u8 target = bsc_get_byte() ? attacking_battler : defending_battler;
+    u8 *animation = (u8*)bsc_get_word();
+    battle_animation(user, target, animation);
+}
+
+void bsc_cmd_wait_battle_animation() {
+    if (!battle_animation_running) {
+        bsc_offset++;
+    }
 }
 
 void bsc_cmd_callasm(){

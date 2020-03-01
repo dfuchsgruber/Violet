@@ -175,7 +175,7 @@ extern u8 defending_battler_ability;
 extern u8 active_battler;
 extern u8 battler_oams[];
 extern u8 battler_cnt;
-extern u8 battler_team_slots[4];
+extern u16 battler_party_idxs[4];
 extern u8 battler_attacking_order[];
 extern u32 battler_statuses3[4];
 extern u8 item_target_battler;
@@ -186,6 +186,7 @@ extern u8 battle_stat_change_multipliers[][2];
 
 #define STAT_CHANGE_APPLY_MULTIPLIER(value, stat)(((value) * battle_stat_change_multipliers[stat][STAT_CHANGE_MULTIPLIER_DIVIDEND]) / battle_stat_change_multipliers[stat][STAT_CHANGE_MULTIPLIER_DIVISOR])
 
+#define PARTNER(battler_idx) ((battler_idx) ^ 2)
 
 extern u8 battler_action_chosen[4];
 
@@ -210,6 +211,7 @@ bool battler_is_opponent(u8 index);
  */
 u8 battlers_alive(int side);
 
+
 /**
  * Gets the position of a battler.
  * @param battler_idx the index of the battler
@@ -229,5 +231,33 @@ int battler_get_effective_speed(u8 battler_idx);
  * @param party_idx which pokemon of the player party to load
  **/
 void battler_load_from_player_party(u8 battler_idx, u8 party_idx);
+
+/**
+ * Gets the trainer name of a battler.
+ * @param battler_idx the battler to get the trainer name of
+ * @dst where to put the name
+ **/
+void battler_get_trainer_name (u8 battler_idx, u8 *dst);
+
+/**
+ * Loads the gfx and palette of a battler, but does not apply the updates. Adjusts y-position of the sprite.
+ * @param battler_idx the battler to load
+ * @param load_battler if false, subsititue sprite will be loaded instead
+ * @param oam_idx the oam to load into
+ **/
+void battler_load_gfx(u8 battler_idx,u8 load_battler_gfx,u8 oam_idx);
+
+/**
+ * Updates the species and stats of a battler.
+ * @param battler_idx the battler to update.
+ * @param species the species to set.
+ **/
+void battler_form_change(u8 battler_idx, u16 species);
+
+/**
+ * Callback that loads the sprite of a battler to an oam (and removes it from BG2).
+ * @param self self-reference
+ **/
+void battle_animation_battler_gfx_to_oam(u8 self);
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

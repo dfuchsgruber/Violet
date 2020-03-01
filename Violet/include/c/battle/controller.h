@@ -48,6 +48,17 @@ void battle_controller_emit_get_pokemon_data(u8 buffer_idx, u8 request_idx, u8 b
  **/
 void battle_controller_emit_two_values(u8 buffer_idx, u8 arg1, u16 arg2);
 
+
+/**
+ * Emits an event to set the data of a battler.
+ * @param buffer_idx which battle buffer to use (0 or 1)
+ * @param request_idx Which controller event to request
+ * @param pokemon_idx the pokemon to set
+ * @param size how many bytes will be set
+ * @param data data to transfer
+ **/
+void battle_controller_emit_set_pokemon_data(u8 buffer_idx, u8 request_idx, u8 pokemon_idx, u8 size,void *data);
+
 /**
  * Marks a battler such that is executed by the battle controller.
  * @param battler_idx the battler to mark.
@@ -69,5 +80,16 @@ void battle_bounce_effect(u8 battler_idx, u8 target, u8, u8);
 u8 battle_selected_action[4];
 
 extern void (*battle_controllers[4])();
+
+
+u8 battle_buffer_transfer[256]; // General purpose buffer for transfering data
+
+/**
+ * Transfers data for battle (i.e. over the cable, if neccessary)
+ * @param buffer_idx whether to use bufferA or bufferB
+ * @param data the data to transmit
+ * @param size how many bytes to transmit
+ **/
+void battle_buffer_request_data_transfer(u8 buffer_idx, void *data, u8 size);
 
 #endif

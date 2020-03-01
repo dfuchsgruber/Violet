@@ -403,6 +403,10 @@ bsc_strings:
 .word str_battle_x199
 .word str_battle_x19A
 .word str_battle_x19B
+.word str_battle_x19C
+.word str_battle_x19D
+.word str_battle_x19E
+.word str_battle_x19F
 
 @ // Define the strings
 
@@ -536,7 +540,7 @@ bsc_strings:
 	.global str_battle_x21
 
 	str_battle_x21:
-		.string "ABILITY_NAME_PLAYER verhindert\neine Flucht mit STRINGè!\p"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX verhindert\neine Flucht mit BSC_SCR_ACTIVE_ABILITY!\p"
 
 
 	.global str_battle_x22
@@ -554,7 +558,7 @@ bsc_strings:
 	.global str_battle_x24
 
 	str_battle_x24:
-		.string "STRINGè von\nABILITY_NAME_PLAYER lässt\lDEFENDING_MON einschlafen!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX lässt\lDEFENDING_MON einschlafen!"
 
 
 	.global str_battle_x25
@@ -584,7 +588,7 @@ bsc_strings:
 	.global str_battle_x29
 
 	str_battle_x29:
-		.string "STRINGè von\nABILITY_NAME_PLAYER vergiftete\lDEFENDING_MON!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX vergiftete\lDEFENDING_MON!"
 
 
 	.global str_battle_x2a
@@ -620,7 +624,7 @@ bsc_strings:
 	.global str_battle_x2f
 
 	str_battle_x2f:
-		.string "STRINGè von\nABILITY_NAME_PLAYER verbrennt\lDEFENDING_MON!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX verbrennt\lDEFENDING_MON!"
 
 
 	.global str_battle_x30
@@ -638,7 +642,7 @@ bsc_strings:
 	.global str_battle_x32
 
 	str_battle_x32:
-		.string "DEFENDING_MON wurde durch\nSTRINGè von\lABILITY_NAME_PLAYER eingefroren!"
+		.string "DEFENDING_MON wurde durch\nBSC_SCR_ACTIVE_ABILITY von\lBSC_SCR_ACTIVE_NAME_WITH_PREFIX eingefroren!"
 
 
 	.global str_battle_x33
@@ -674,7 +678,7 @@ bsc_strings:
 	.global str_battle_x38
 
 	str_battle_x38:
-		.string "STRINGè von\nABILITY_NAME_PLAYER paralysierte\pDEFENDING_MON!\nEs greift eventuell nicht an!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX paralysierte\pDEFENDING_MON!\nEs greift eventuell nicht an!"
 
 
 	.global str_battle_x39
@@ -758,7 +762,7 @@ bsc_strings:
 	.global str_battle_x46
 
 	str_battle_x46:
-		.string "ATTACK_NAME hat sich in\nABILITY_NAME_PLAYER verliebt!"
+		.string "ATTACK_NAME hat sich in\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX verliebt!"
 
 
 	.global str_battle_x47
@@ -926,7 +930,7 @@ bsc_strings:
 	.global str_battle_x62
 
 	str_battle_x62:
-		.string "ABILITY_NAME_PLAYER wird durch\nWeissnebel geschützt!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX wird durch\nWeissnebel geschützt!"
 
 
 	.global str_battle_x63
@@ -992,7 +996,7 @@ bsc_strings:
 	.global str_battle_x6d
 
 	str_battle_x6d:
-		.string "Aufruhr von ABILITY_NAME_PLAYER\nhält es wach!"
+		.string "Aufruhr von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nhält es wach!"
 
 
 	.global str_battle_x6e
@@ -1232,7 +1236,7 @@ bsc_strings:
 	.global str_battle_x95
 
 	str_battle_x95:
-		.string "ABILITY_NAME_PLAYER wurde durch\nStachler verletzt!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX wurde durch\nStachler verletzt!"
 
 
 	.global str_battle_x96
@@ -1490,19 +1494,19 @@ bsc_strings:
 	.global str_battle_xc0
 
 	str_battle_xc0:
-		.string "EFFECT_NAME ÜBERNAHM\nAttacke von ABILITY_NAME_PLAYER!"
+		.string "EFFECT_NAME ÜBERNAHM\nAttacke von BSC_SCR_ACTIVE_NAME_WITH_PREFIX!"
 
 
 	.global str_battle_xc1
 
 	str_battle_xc1:
-		.string "STRINGè von\nABILITY_NAME_PLAYER lässt\les regnen!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX lässt\les regnen!"
 
 
 	.global str_battle_xc2
 
 	str_battle_xc2:
-		.string "STRINGè von\nABILITY_NAME_PLAYER erhöht\lseine Init.!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX erhöht\lseine Init.!"
 
 
 	.global str_battle_xc3
@@ -1568,13 +1572,13 @@ bsc_strings:
 	.global str_battle_xcd
 
 	str_battle_xcd:
-		.string "STRINGè von\nABILITY_NAME_PLAYER vermindert\lAngriff von EFFECT_NAME!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX vermindert\lAngriff von EFFECT_NAME!"
 
 
 	.global str_battle_xce
 
 	str_battle_xce:
-		.string "STRINGè von\nABILITY_NAME_PLAYER verhindert\lStatusveränderungen!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX verhindert\lStatusveränderungen!"
 
 
 	.global str_battle_xcf
@@ -1586,7 +1590,7 @@ bsc_strings:
 	.global str_battle_xd0
 
 	str_battle_xd0:
-		.string "Fährte von\nABILITY_NAME_PLAYER\perkennt PLAYER\nvon STRING !"
+		.string "Fährte von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX\perkennt PLAYER\nvon STRING !"
 
 
 	.global str_battle_xd1
@@ -2084,67 +2088,67 @@ bsc_strings:
 	.global str_battle_x123
 
 	str_battle_x123:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\lheilte die Paralyse!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX\lheilte die Paralyse!"
 
 
 	.global str_battle_x124
 
 	str_battle_x124:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\lheilte die Vergiftung!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX\lheilte die Vergiftung!"
 
 
 	.global str_battle_x125
 
 	str_battle_x125:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\lheilte die Verbrennung!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX\lheilte die Verbrennung!"
 
 
 	.global str_battle_x126
 
 	str_battle_x126:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER taute es auf!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX taute es auf!"
 
 
 	.global str_battle_x127
 
 	str_battle_x127:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER \lweckte es auf!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX \lweckte es auf!"
 
 
 	.global str_battle_x128
 
 	str_battle_x128:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\lhebt die Verwirrung auf!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX\lhebt die Verwirrung auf!"
 
 
 	.global str_battle_x129
 
 	str_battle_x129:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER \lheilte sein Problem mit STRING !"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX \lheilte sein Problem mit STRING !"
 
 
 	.global str_battle_x12a
 
 	str_battle_x12a:
-		.string "STATUS_NAME füllte\nKp von ABILITY_NAME_PLAYER auf!"
+		.string "STATUS_NAME füllte\nKp von BSC_SCR_ACTIVE_NAME_WITH_PREFIX auf!"
 
 
 	.global str_battle_x12b
 
 	str_battle_x12b:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER füllte AP von\lSTRING  auf!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX füllte AP von\lSTRING  auf!"
 
 
 	.global str_battle_x12c
 
 	str_battle_x12c:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\pstellte seine\nStatuswerte wieder her!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX\pstellte seine\nStatuswerte wieder her!"
 
 
 	.global str_battle_x12d
 
 	str_battle_x12d:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER\lfüllte einige KP auf!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX\lfüllte einige KP auf!"
 
 
 	.global str_battle_x12e
@@ -2186,13 +2190,13 @@ bsc_strings:
 	.global str_battle_x134
 
 	str_battle_x134:
-		.string "STRINGè von\nABILITY_NAME_PLAYER entfacht\leinen Sandsturm!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX entfacht\leinen Sandsturm!"
 
 
 	.global str_battle_x135
 
 	str_battle_x135:
-		.string "STRINGè von\nABILITY_NAME_PLAYER verhindert \lden Verlust von STRING !"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX verhindert \lden Verlust von STRING !"
 
 
 	.global str_battle_x136
@@ -2210,7 +2214,7 @@ bsc_strings:
 	.global str_battle_x138
 
 	str_battle_x138:
-		.string "STRINGè von\nABILITY_NAME_PLAYER heilt sein\lProblem mit STRING !"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX heilt sein\lProblem mit STRING !"
 
 
 	.global str_battle_x139
@@ -2222,7 +2226,7 @@ bsc_strings:
 	.global str_battle_x13a
 
 	str_battle_x13a:
-		.string "ABILITY_NAME_PLAYER\nverwandelt sich!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nverwandelt sich!"
 
 
 	.global str_battle_x13b
@@ -2282,19 +2286,19 @@ bsc_strings:
 	.global str_battle_x144
 
 	str_battle_x144:
-		.string "Für ABILITY_NAME_PLAYER war\nSTATUS_NAME STRING "
+		.string "Für BSC_SCR_ACTIVE_NAME_WITH_PREFIX war\nSTATUS_NAME STRING "
 
 
 	.global str_battle_x145
 
 	str_battle_x145:
-		.string "STATUS_NAME: STRING  von\nABILITY_NAME_PLAYER PLAYER"
+		.string "STATUS_NAME: STRING  von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX PLAYER"
 
 
 	.global str_battle_x146
 
 	str_battle_x146:
-		.string "ABILITY_NAME_PLAYER setzt\nSTATUS_NAME ein, um zu drängeln!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX setzt\nSTATUS_NAME ein, um zu drängeln!"
 
 
 	.global str_battle_x147
@@ -2324,7 +2328,7 @@ bsc_strings:
 	.global str_battle_x14b
 
 	str_battle_x14b:
-		.string "STRINGè von\nABILITY_NAME_PLAYER intensiviert\ldie Sonnenstrahlen!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX intensiviert\ldie Sonnenstrahlen!"
 
 
 	.global str_battle_x14c
@@ -2384,13 +2388,13 @@ bsc_strings:
 	.global str_battle_x155
 
 	str_battle_x155:
-		.string "STRINGç von\nEFFECT_NAME macht\pSTRING  von\nABILITY_NAME_PLAYER wirkungslos!"
+		.string "STRINGç von\nEFFECT_NAME macht\pSTRING  von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX wirkungslos!"
 
 
 	.global str_battle_x156
 
 	str_battle_x156:
-		.string "STATUS_NAME von\nABILITY_NAME_PLAYER normalisierte\lseine Statuswerte!"
+		.string "STATUS_NAME von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX normalisierte\lseine Statuswerte!"
 
 
 	.global str_battle_x157
@@ -2414,7 +2418,7 @@ bsc_strings:
 	.global str_battle_x15a
 
 	str_battle_x15a:
-		.string "STRINGè von\nABILITY_NAME_PLAYER machte\les wirkungslos!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX machte\les wirkungslos!"
 
 
 	.global str_battle_x15b
@@ -2438,7 +2442,7 @@ bsc_strings:
 	.global str_battle_x15e
 
 	str_battle_x15e:
-		.string "STRINGè von\nABILITY_NAME_PLAYER blockiert\lTYPE!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX blockiert\lTYPE!"
 
 
 	.global str_battle_x15f
@@ -2474,7 +2478,7 @@ bsc_strings:
 	.global str_battle_x164
 
 	str_battle_x164:
-		.string "STRINGè von\nABILITY_NAME_PLAYER heilt sein\lProblem mit STRING !"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX heilt sein\lProblem mit STRING !"
 
 
 	.global str_battle_x165
@@ -2510,7 +2514,7 @@ bsc_strings:
 	.global str_battle_x16a
 
 	str_battle_x16a:
-		.string "STRINGè von\nABILITY_NAME_PLAYER hat keine\lWirkung auf DEFENDING_MON!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX hat keine\lWirkung auf DEFENDING_MON!"
 
 
 	.global str_battle_x16b
@@ -2672,7 +2676,7 @@ bsc_strings:
 	.global str_battle_x185
 
 	str_battle_x185:
-		.string "STRINGè von\nABILITY_NAME_PLAYER steigert seinen\lAngr., senkt aber die\lVert."
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX steigert seinen\lAngr., senkt aber die\lVert."
 
 
 	.global str_battle_x186
@@ -2684,7 +2688,7 @@ bsc_strings:
 	.global str_battle_x187
 
 	str_battle_x187:
-		.string "STRINGè von ABILITY_NAME_PLAYER\nlässt es hageln!"
+		.string "BSC_SCR_ACTIVE_ABILITY von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nlässt es hageln!"
 
 
 	.global str_battle_x188
@@ -2696,13 +2700,13 @@ bsc_strings:
 	.global str_battle_x189
 
 	str_battle_x189:
-		.string "STRINGè von ABILITY_NAME_PLAYER\nsteigert seinen Angriff."
+		.string "BSC_SCR_ACTIVE_ABILITY von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nsteigert seinen Angriff."
 
 
 	.global str_battle_x18a
 
 	str_battle_x18a:
-		.string "ABILITY_NAME_PLAYER nutzt STRINGè,\nund verbraucht keine AP!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX nutzt BSC_SCR_ACTIVE_ABILITY,\nund verbraucht keine AP!"
 
 
 	.global str_battle_x18b
@@ -2732,7 +2736,7 @@ bsc_strings:
 	.global str_battle_x18f
 
 	str_battle_x18f:
-		.string "Die Kaiseraura von EFFECT_NAME\nschüchtert ABILITY_NAME_PLAYER ein!"
+		.string "Die Kaiseraura von EFFECT_NAME\nschüchtert BSC_SCR_ACTIVE_NAME_WITH_PREFIX ein!"
 
 
 	.global str_battle_x190
@@ -2756,13 +2760,13 @@ bsc_strings:
 	.global str_battle_x193
 
 	str_battle_x193:
-		.string "EFFECT_NAME wurde durch\nSTRINGね von\lATTACK_NAME verletzt!"
+		.string "BSC_DEF_NAME_WITH_PREFIX wurde durch\nBSC_ATK_ABILITY von\lBSC_ATK_NAME_WITH_PREFIX verletzt!"
 
 
 	.global str_battle_x194
 
 	str_battle_x194:
-		.string "ABILITY_NAME_PLAYER ist abgeprallt!\nSein Angriff sinkt stark!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX ist abgeprallt!\nSein Angriff sinkt stark!"
 
 
 	.global str_battle_x195
@@ -2789,12 +2793,29 @@ bsc_strings:
 	.global str_battle_x19A
 	str_battle_x19A:
 
-		.string "STRINGè von\nABILITY_NAME_PLAYER lässt\les eine düstere Zukunft sehen."
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX lässt\les eine düstere Zukunft sehen."
 
 	.global str_battle_x19B
 
 	str_battle_x19B:
-		.string "STRINGè von\nABILITY_NAME_PLAYER vermindert\lInitiative von EFFECT_NAME\lstark!"
+		.string "BSC_SCR_ACTIVE_ABILITY von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX vermindert\lInitiative von EFFECT_NAME\lstark!"
+
+	.global str_battle_x19C 
+	str_battle_x19C:
+		.string "BSC_LAST_ITEM von\nBSC_BUF0 reagiert auf\lBSC_BUF1 von BSC_COPY_BUFFER2!"
+
+	.global str_battle_x19D 
+	str_battle_x19D:
+		.string "BSC_BUF0 hat sich zu\nMega-BSC_COPY_BUFFER2 entwickelt!"
+
+	.global str_battle_x19E 
+	str_battle_x19E:
+		.string "BSC_LAST_ITEM lässt die Aura\nvon BSC_BUF0 pulsieren!"
+
+	.global str_battle_x19F 
+	str_battle_x19F:
+		.string "BSC_BUF0 hat sich zu\nseiner Kaiserform erhoben!"
+		
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -2905,7 +2926,7 @@ bsc_strings:
 	.global str_battle_x21
 
 	str_battle_x21:
-		.string "ABILITY_NAME_PLAYER prevents\nescape with STRINGè!\p"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX prevents\nescape with BSC_SCR_ACTIVE_ABILITY!\p"
 
 	.global str_battle_x22
 
@@ -2920,7 +2941,7 @@ bsc_strings:
 	.global str_battle_x24
 
 	str_battle_x24:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nmade DEFENDING_MON sleep!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nmade DEFENDING_MON sleep!"
 
 	.global str_battle_x25
 
@@ -2945,7 +2966,7 @@ bsc_strings:
 	.global str_battle_x29
 
 	str_battle_x29:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\npoisoned DEFENDING_MON!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\npoisoned DEFENDING_MON!"
 
 	.global str_battle_x2a
 
@@ -2975,7 +2996,7 @@ bsc_strings:
 	.global str_battle_x2f
 
 	str_battle_x2f:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nburned DEFENDING_MON!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nburned DEFENDING_MON!"
 
 	.global str_battle_x30
 
@@ -2990,7 +3011,7 @@ bsc_strings:
 	.global str_battle_x32
 
 	str_battle_x32:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nfroze DEFENDING_MON solid!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nfroze DEFENDING_MON solid!"
 
 	.global str_battle_x33
 
@@ -3020,7 +3041,7 @@ bsc_strings:
 	.global str_battle_x38
 
 	str_battle_x38:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nparalyzed DEFENDING_MON!\lIt may be unable to move!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nparalyzed DEFENDING_MON!\lIt may be unable to move!"
 
 	.global str_battle_x39
 
@@ -3090,7 +3111,7 @@ bsc_strings:
 	.global str_battle_x46
 
 	str_battle_x46:
-		.string "ATTACK_NAME is in love\nwith ABILITY_NAME_PLAYER!"
+		.string "ATTACK_NAME is in love\nwith BSC_SCR_ACTIVE_NAME_WITH_PREFIX!"
 
 	.global str_battle_x47
 
@@ -3230,7 +3251,7 @@ bsc_strings:
 	.global str_battle_x62
 
 	str_battle_x62:
-		.string "ABILITY_NAME_PLAYER is protected\nby Mist!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX is protected\nby Mist!"
 
 	.global str_battle_x63
 
@@ -3285,7 +3306,7 @@ bsc_strings:
 	.global str_battle_x6d
 
 	str_battle_x6d:
-		.string "But ABILITY_NAME_PLAYER’s Uproar\nkept it awake!"
+		.string "But BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s Uproar\nkept it awake!"
 
 	.global str_battle_x6e
 
@@ -3485,7 +3506,7 @@ bsc_strings:
 	.global str_battle_x95
 
 	str_battle_x95:
-		.string "ABILITY_NAME_PLAYER is hurt\nby Spikes!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX is hurt\nby Spikes!"
 
 	.global str_battle_x96
 
@@ -3700,17 +3721,17 @@ bsc_strings:
 	.global str_battle_xc0
 
 	str_battle_xc0:
-		.string "EFFECT_NAME sntached\nABILITY_NAME_PLAYER’s move!"
+		.string "EFFECT_NAME sntached\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX’s move!"
 
 	.global str_battle_xc1
 
 	str_battle_xc1:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nmade it rain!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nmade it rain!"
 
 	.global str_battle_xc2
 
 	str_battle_xc2:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nraised its Speed!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nraised its Speed!"
 
 	.global str_battle_xc3
 
@@ -3765,12 +3786,12 @@ bsc_strings:
 	.global str_battle_xcd
 
 	str_battle_xcd:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\ncuts EFFECT_NAME’s Attack!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\ncuts EFFECT_NAME’s Attack!"
 
 	.global str_battle_xce
 
 	str_battle_xce:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nprevents stat loss!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nprevents stat loss!"
 
 	.global str_battle_xcf
 
@@ -3780,7 +3801,7 @@ bsc_strings:
 	.global str_battle_xd0
 
 	str_battle_xd0:
-		.string "ABILITY_NAME_PLAYER traced\nSTRING ’s PLAYER!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX traced\nSTRING ’s PLAYER!"
 
 	.global str_battle_xd1
 
@@ -4195,57 +4216,57 @@ bsc_strings:
 	.global str_battle_x123
 
 	str_battle_x123:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\ncured paralysis!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\ncured paralysis!"
 
 	.global str_battle_x124
 
 	str_battle_x124:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\ncured poison!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\ncured poison!"
 
 	.global str_battle_x125
 
 	str_battle_x125:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nhealed its burn!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nhealed its burn!"
 
 	.global str_battle_x126
 
 	str_battle_x126:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\ndefrosted it!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\ndefrosted it!"
 
 	.global str_battle_x127
 
 	str_battle_x127:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nwoke it from its sleep!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nwoke it from its sleep!"
 
 	.global str_battle_x128
 
 	str_battle_x128:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nsnapped it out of confusion!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nsnapped it out of confusion!"
 
 	.global str_battle_x129
 
 	str_battle_x129:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\ncured its STRING  problem!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\ncured its STRING  problem!"
 
 	.global str_battle_x12a
 
 	str_battle_x12a:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nrestored health!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nrestored health!"
 
 	.global str_battle_x12b
 
 	str_battle_x12b:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nrestored STRING ’s PP!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nrestored STRING ’s PP!"
 
 	.global str_battle_x12c
 
 	str_battle_x12c:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nrestored its status!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nrestored its status!"
 
 	.global str_battle_x12d
 
 	str_battle_x12d:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nrestored its HP a little!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nrestored its HP a little!"
 
 	.global str_battle_x12e
 
@@ -4280,12 +4301,12 @@ bsc_strings:
 	.global str_battle_x134
 
 	str_battle_x134:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nwhipped up a sandstorm!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nwhipped up a sandstorm!"
 
 	.global str_battle_x135
 
 	str_battle_x135:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nprevents STRING  loss!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nprevents STRING  loss!"
 
 	.global str_battle_x136
 
@@ -4300,7 +4321,7 @@ bsc_strings:
 	.global str_battle_x138
 
 	str_battle_x138:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\ncured its STRING  problem!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\ncured its STRING  problem!"
 
 	.global str_battle_x139
 
@@ -4310,7 +4331,7 @@ bsc_strings:
 	.global str_battle_x13a
 
 	str_battle_x13a:
-		.string "ABILITY_NAME_PLAYER transformed!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX transformed!"
 
 	.global str_battle_x13b
 
@@ -4360,17 +4381,17 @@ bsc_strings:
 	.global str_battle_x144
 
 	str_battle_x144:
-		.string "For ABILITY_NAME_PLAYER,\nSTATUS_NAME STRING "
+		.string "For BSC_SCR_ACTIVE_NAME_WITH_PREFIX,\nSTATUS_NAME STRING "
 
 	.global str_battle_x145
 
 	str_battle_x145:
-		.string "Using STATUS_NAME, the STRING \nof ABILITY_NAME_PLAYER PLAYER"
+		.string "Using STATUS_NAME, the STRING \nof BSC_SCR_ACTIVE_NAME_WITH_PREFIX PLAYER"
 
 	.global str_battle_x146
 
 	str_battle_x146:
-		.string "ABILITY_NAME_PLAYER used\nSTATUS_NAME to hustle!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX used\nSTATUS_NAME to hustle!"
 
 	.global str_battle_x147
 
@@ -4395,7 +4416,7 @@ bsc_strings:
 	.global str_battle_x14b
 
 	str_battle_x14b:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nintensified the sun’s rays!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nintensified the sun’s rays!"
 
 	.global str_battle_x14c
 
@@ -4445,12 +4466,12 @@ bsc_strings:
 	.global str_battle_x155
 
 	str_battle_x155:
-		.string "EFFECT_NAME’s STRINGç\nprevented ABILITY_NAME_PLAYER’s\lSTRING  from working!"
+		.string "EFFECT_NAME’s STRINGç\nprevented BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s\lSTRING  from working!"
 
 	.global str_battle_x156
 
 	str_battle_x156:
-		.string "ABILITY_NAME_PLAYER’s STATUS_NAME\nnormalized its status!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s STATUS_NAME\nnormalized its status!"
 
 	.global str_battle_x157
 
@@ -4470,7 +4491,7 @@ bsc_strings:
 	.global str_battle_x15a
 
 	str_battle_x15a:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nmade it ineffective!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nmade it ineffective!"
 
 	.global str_battle_x15b
 
@@ -4490,7 +4511,7 @@ bsc_strings:
 	.global str_battle_x15e
 
 	str_battle_x15e:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nblocks TYPE!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nblocks TYPE!"
 
 	.global str_battle_x15f
 
@@ -4520,7 +4541,7 @@ bsc_strings:
 	.global str_battle_x164
 
 	str_battle_x164:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\ncured its STRING  problem!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\ncured its STRING  problem!"
 
 	.global str_battle_x165
 
@@ -4550,7 +4571,7 @@ bsc_strings:
 	.global str_battle_x16a
 
 	str_battle_x16a:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nhad no effect on DEFENDING_MON!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nhad no effect on DEFENDING_MON!"
 
 	.global str_battle_x16b
 
@@ -4685,7 +4706,7 @@ bsc_strings:
 	.global str_battle_x185
 
 	str_battle_x185:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\nmade its attack rise\lbut its defense drop!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\nmade its attack rise\lbut its defense drop!"
 
 	.global str_battle_x186
 
@@ -4695,7 +4716,7 @@ bsc_strings:
 	.global str_battle_x187
 
 	str_battle_x187:
-		.string "STRINGè’s ABILITY_NAME_PLAYER\nmade it hail!"
+		.string "BSC_SCR_ACTIVE_ABILITY’s BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nmade it hail!"
 
 	.global str_battle_x188
 
@@ -4705,12 +4726,12 @@ bsc_strings:
 	.global str_battle_x189
 
 	str_battle_x189:
-		.string "STRINGè’s ABILITY_NAME_PLAYER\nmade its attack rise!"
+		.string "BSC_SCR_ACTIVE_ABILITY’s BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nmade its attack rise!"
 
 	.global str_battle_x18a
 
 	str_battle_x18a:
-		.string "ABILITY_NAME_PLAYER uses STRINGè\nand saves pp!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX uses BSC_SCR_ACTIVE_ABILITY\nand saves pp!"
 
 	.global str_battle_x18b
 
@@ -4730,12 +4751,12 @@ bsc_strings:
 	.global str_battle_x18e
 
 	str_battle_x18e:
-		.string "ABILITY_NAME_PLAYER’s ability\nto have a lucid dream\lmade its Sp.Att. rise!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s ability\nto have a lucid dream\lmade its Sp.Att. rise!"
 
 	.global str_battle_x18f
 
 	str_battle_x18f:
-		.string "EFFECT_NAME’s Emperor’s-Aura\nintimedates ABILITY_NAME_PLAYER!"
+		.string "EFFECT_NAME’s Emperor’s-Aura\nintimedates BSC_SCR_ACTIVE_NAME_WITH_PREFIX!"
 
 	.global str_battle_x190
 
@@ -4760,7 +4781,7 @@ bsc_strings:
 	.global str_battle_x194
 
 	str_battle_x194:
-		.string "ABILITY_NAME_PLAYER bounced off!\nIts attack sharply droped!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX bounced off!\nIts attack sharply droped!"
 
 	.global str_battle_x195
 
@@ -4783,11 +4804,27 @@ bsc_strings:
 
 	.global str_battle_x19A
 	str_battle_x19A:
-		.string "ABILITY_NAME_PLAYER's\nSTRINGè makes\lit see a dark future."
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's\nBSC_SCR_ACTIVE_ABILITY makes\lit see a dark future."
 
 	.global str_battle_x19B
 	str_battle_x19B:
-		.string "ABILITY_NAME_PLAYER’s STRINGè\ncuts EFFECT_NAME’s Initiative\ldrastically!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX’s BSC_SCR_ACTIVE_ABILITY\ncuts EFFECT_NAME’s Initiative\ldrastically!"
+
+	.global str_battle_x19C
+	str_battle_x19C:
+		.string " von\nBSC_BUF0's BSC_LAST_ITEM\nreacts to BSC_COPY_BUFFER2's BSC_BUF1!"
+
+	.global str_battle_x19D 
+	str_battle_x19D:
+		.string "BSC_BUF0 evolved into\nMega BSC_COPY_BUFFER2!"
+
+	.global str_battle_x19E 
+	str_battle_x19E:
+		.string "BSC_LAST_ITEM makes\nBSC_BUF0's pulsate!"
+
+	.global str_battle_x19F 
+	str_battle_x19F:
+		.string "BSC_BUF0 has risen\nto its emperor form!"
 
 .endif
 

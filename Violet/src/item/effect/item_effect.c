@@ -365,7 +365,7 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
     if (super.in_battle) {
         active_battler = pokemon_party_menu_current_index;
         for (u8 i = battler_is_opponent(active_battler) ? 1 : 0; i < battler_cnt; i++) {
-            if (battler_team_slots[i] == party_idx) {
+            if (battler_party_idxs[i] == party_idx) {
                 battler_idx = i;
                 break;
             }

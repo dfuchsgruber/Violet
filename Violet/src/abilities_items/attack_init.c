@@ -20,6 +20,8 @@
 #include "constants/pokemon_attributes.h"
 #include "constants/attack_categories.h"
 #include "prng.h"
+#include "battle/battle_string.h"
+#include "battle/attack.h"
 
 extern u8 bsc_wandlungskunst[];
 extern u8 bsc_stance_change_to_attack[];
@@ -27,7 +29,7 @@ extern u8 bsc_stance_change_to_defense[];
 extern u8 bsc_ap_sparer[];
 
 void stance_change_change_species(u8 target, u16 species){
-    void *pokemon = get_pokemon_offset_by_index(target);
+    void *pokemon = (battler_is_opponent(target) ? opponent_pokemon : player_pokemon) + battler_party_idxs[target];
     pokemon_set_attribute(pokemon, ATTRIBUTE_SPECIES, &species);
     pokemon_calculate_stats(pokemon);
 
@@ -56,17 +58,13 @@ void attack_init_trigger_abilities(){
     battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case WANDLUNGSK:{
-            dprintf("Lauched ability 'Wandlungsk.'");
+            // dprintf("Lauched ability 'Wandlungsk.'");
             u8 attack_type = attacks[active_attack].type;
             if(attacker->type1 != attack_type || attacker->type2 != attack_type){
                 attacker->type1 = attack_type;
                 attacker->type2 = attack_type;
-                bsc_buffers[0] = 0xFD;
-                bsc_buffers[1] = 3;
-                bsc_buffers[2] = attack_type;
-                bsc_buffers[3] = 0xFF;
+                BSC_BUFFER_TYPE(bsc_string_buffer0, attack_type);
                 battlescript_callstack_push_next_command();
-                
                 bsc_offset = bsc_wandlungskunst;
             }
                 
@@ -79,9 +77,9 @@ void attack_init_trigger_abilities(){
                 stance_change_change_species(attacking_battler,
                         POKEMON_DURENGARDA);
                 battlescript_callstack_push_next_command();
-                attack_anim_user_index = attacking_battler;
-                attack_anim_target_index = attacking_battler;
-                dprintf("User index %d, target index %d\n", attacking_battler, attacking_battler);
+                battle_animation_user = attacking_battler;
+                battle_animation_target = attacking_battler;
+                // dprintf("User index %d, target index %d\n", attacking_battler, attacking_battler);
                 bsc_offset = bsc_stance_change_to_attack;
                 
             }else if(attacker->species == POKEMON_DURENGARDA &&
@@ -89,8 +87,8 @@ void attack_init_trigger_abilities(){
                 stance_change_change_species(attacking_battler,
                         POKEMON_DURENGARD);
                 battlescript_callstack_push_next_command();
-                attack_anim_user_index = attacking_battler;
-                attack_anim_target_index = attacking_battler;
+                battle_animation_user = attacking_battler;
+                battle_animation_target = attacking_battler;
                 dprintf("User index %d, target index %d\n", attacking_battler, 
                         attacking_battler);
                 bsc_offset = bsc_stance_change_to_defense;
@@ -103,11 +101,11 @@ void attack_init_trigger_abilities(){
                 attacker->custom_status |= CUSTOM_STATUS_AP_SPARER;
                 battlescript_callstack_push_next_command();
                 bsc_offset = bsc_ap_sparer;
-                dprintf("AP sparer triggered for attacker %d\n", 
-                        attacking_battler);
-                bsc_buffers[0] = 0xFD;
-                bsc_buffers[1] = 3;
-                bsc_buffers[3] = 0xFF;
+                // dprintf("AP sparer triggered for attacker %d\n", 
+                //        attacking_battler);
+                // bsc_string_buffer0[0] = 0xFD;
+                // bsc_string_buffer0[1] = 3;
+                // bsc_string_buffer0[3] = 0xFF;
             }
             break;
         }
@@ -116,17 +114,17 @@ void attack_init_trigger_abilities(){
 
 
 void attack_anim_stance_change_sprite_show(u8 self){
-    u8 target = attack_anim_target_index;
+    u8 target = battle_animation_target;
     u8 target_oam = battler_oams[target];
     oams[target_oam].final_oam.attr0 &= !ATTR0_OBJDISABLE;
     //dprintf("Stance change anim cb removing with %d tasks running.\n", *attack_anim_tasks_running);
-    attack_anim_remove_big_callback(self);
+    battle_animation_big_callback_delete(self);
     //dprintf("After Stance change anim cb removing with %d tasks running.\n", *attack_anim_tasks_running);
     
 }
 
 void attack_anim_stance_change_sprite_change(u8 self){
-    u8 target = attack_anim_target_index;
+    u8 target = battle_animation_target;
     dprintf("Sprite change for target %d\n.", target);
     u8 target_oam = battler_oams[target];
     
@@ -136,9 +134,9 @@ void attack_anim_stance_change_sprite_change(u8 self){
     oams[target_oam].final_oam.attr0 |= ATTR0_OBJDISABLE;
     
     battlescript_transform_load_graphic(target, target, 0);
-    mega_disable_blurr(target);
+    // mega_disable_blurr(target);
     
-    color_t oam_color = {.value = attack_anim_additional_animation[0]};
+    color_t oam_color = {.value = battle_animation_arguments[0]};
     u8 oam_pal = (u8)(oams[target_oam].final_oam.attr2 >> 12);
     pal_blend((u16)(oam_pal * 16 + 256), 16, 16, oam_color);
     
@@ -151,8 +149,8 @@ void attack_anim_stance_change_sprite_change(u8 self){
 
 void attack_anim_stance_change_pokemon_play_cry(u8 self){
     
-    u8 target = attack_anim_target_index;
+    u8 target = battle_animation_target;
     u16 species = battlers[target].species;
     pokemon_play_cry(species, 0);
-    attack_anim_remove_big_callback(self);
+    battle_animation_big_callback_delete(self);
 }

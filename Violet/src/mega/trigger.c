@@ -38,7 +38,7 @@ static void trigger_callback_animation(oam_object *self) {
         animation_idx = 0;
         alpha = 0;
     }
-    if (self->anim_number != animation_idx) {
+    if (self->anim_number != animation_idx && self->private[0] == MEGA_TRIGGER_IDLE) {
         self->anim_number = animation_idx;
         oam_gfx_anim_init(self, 0);
     }
@@ -131,34 +131,6 @@ static u16 trigger_tags[] = {
     [REGENT_EVOLUTION] = REGENT_TRIGGER_TAG,
 };
 
-/**
-// Wrapper for choosing an action. If the action is to use a move, show the mega trigger icon.
-void _battle_controller_player_choose_action() {
-    if (super.keys_remapped.keys.A && battle_selected_action[active_battler] == 0) {
-        dprintf("Active battler %d\n", active_battler);
-        mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(active_battler);
-        if (mega_evolution) {
-            // Check if a trigger is already present
-            u8 trigger_oam = trigger_oam_present();
-            if (trigger_oam != 0x40) {
-                oams[trigger_oam].private[0] = 0; // Change its state to appearing
-            } else {
-                u16 tag = trigger_tags[mega_evolution->type];
-                if (oam_palette_get_index(tag) == 0xFF) {
-                    u8 pal_idx = oam_allocate_palette(tag);
-                    pal_decompress(trigger_pals[mega_evolution->type], (u16)(256 + 16 * pal_idx), 32);
-                }
-                if (oam_vram_get_tile(tag) == 0xFFFF) {
-                    oam_load_graphic(trigger_graphics + mega_evolution->type);
-                }
-                oam_new_forward_search(trigger_templates + mega_evolution->type, 0x4C, 0x70, 0);
-            }
-        }
-    }
-    battle_controller_player_choose_action();
-}
-**/
-
 
 u8 mega_trigger_oam_idx_get(u8 battler_idx) {
     for (u8 i = 0; i < 0x40; i++) {
@@ -203,17 +175,17 @@ void _battle_controller_player_choose_move_hook(); // This function recovers the
 
 // Wraps the original handler. Don't change label to "battle_controller_player_choose_move", as the symbol is referrenced multiple times
 void _battle_controller_player_choose_move() {
+    mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(active_battler);
     if (super.keys_remapped.keys.B) {
         // Unmark the battler for mega evolution
         MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;
-    } else if (battler_get_available_mega_evolution(active_battler) && 
-            (super.keys_new.keys.l || super.keys_new.keys.r) && super.keys.keys.l && super.keys.keys.r) {
+    } else if (mega_evolution && (super.keys_new.keys.l || super.keys_new.keys.r) && super.keys.keys.l && super.keys.keys.r) {
         // Toggle marking
         if (MEGA_STATE.marked_for_mega_evolution[active_battler]) {
             MEGA_STATE.marked_for_mega_evolution[active_battler] = 0;
             play_sound(3);
         } else {
-            MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
+            MEGA_STATE.marked_for_mega_evolution[active_battler] = (u8) mega_evolution->type;
             play_sound(2);
         }
     }
@@ -226,4 +198,12 @@ void battle_controller_player_choose_target_wrap() {
         mega_trigger_new(active_battler);
     }
     battle_controller_player_choose_target();
+}
+
+// BIG TODO: How to transfer this via link cable?
+void battle_controller_opponent_trigger_mega_evolution() {
+    // TODO: Better AI? Currently opponent just always mega evolves!
+    if (battler_get_available_mega_evolution(active_battler)) {
+        MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
+    }
 }

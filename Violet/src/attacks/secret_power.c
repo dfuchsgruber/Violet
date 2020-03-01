@@ -120,5 +120,5 @@ void attack_anim_task_secret_power(u8 self) {
 	}
 	u8 *animation = attack_anims[attack];
 	attack_anim_script = animation;
-	attack_anim_remove_big_callback(self);
+	battle_animation_big_callback_delete(self);
 }

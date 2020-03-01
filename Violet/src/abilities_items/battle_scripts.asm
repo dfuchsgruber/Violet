@@ -37,7 +37,7 @@ return
 bsc_stance_change_to_attack:
 printstring 0x188
 waitmessage 1
-animation 1 1 attack_anim_stance_change
+battleanimation 1 1 attack_anim_stance_change
 pause 0x100
 printstring 0x18b
 waitmessage 0x40
@@ -46,7 +46,7 @@ return
 bsc_stance_change_to_defense:
 printstring 0x188
 waitmessage 1
-animation 1 1 attack_anim_stance_change
+battleanimation 1 1 attack_anim_stance_change
 pause 0x100
 printstring 0x18c
 waitmessage 0x40
@@ -59,7 +59,7 @@ return
 
 bsc_life_orb:
 callasm attack_done_prepeare_life_orb
-orword 0x2023DD0 0x100100
+orword bsc_status_flags 0x100100
 graphicalhpupdate 0x1
 datahpupdate 0x1
 printstring 0x183
@@ -99,10 +99,10 @@ waitmessage 0x40
 return
 
 bsc_extradorn:
-animation 1 0 0x81cbd12
+battleanimation 1 0 0x81cbd12
 pause 0x40
 callasm attack_done_prepeare_extradorn
-orword 0x2023DD0 0x100100
+orword bsc_status_flags 0x100100
 graphicalhpupdate 0x0
 datahpupdate 0x0
 printstring 0x193

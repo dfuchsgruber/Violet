@@ -341,6 +341,7 @@ extern "C" {
     extern u8 strbuf[];
     extern u8 buffer0[];
     extern u8 buffer1[];
+    extern u8 buffer2[];
     extern u8 str_types[][7];
     extern u8 str_types_long[][8];
 

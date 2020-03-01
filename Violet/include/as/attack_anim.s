@@ -10,11 +10,13 @@
 .endm
 
 
-.macro loadoam oam unkown additional
+.equ OAM_AT_USER, 0
+.equ OAM_AT_TARGET, 0x80
+.macro loadoam oam_template:req subpriority_and_flags:req parameter_count:req
 .byte 0x2
-.word \oam
-.byte \unkown
-.byte \additional
+.word \oam_template
+.byte \subpriority_and_flags
+.byte \parameter_count
 .endm
 
 
@@ -61,7 +63,8 @@
 .hword \sound
 .endm
 
-
+.equ OAM_ATTACKER, 0
+.equ OAM_TARGET, 1
 .macro enable_oam_as_target slot
 .byte 0xa
 .byte \slot
@@ -80,7 +83,7 @@
 .endm
 
 
-.macro resetbld 
+.macro resetbld
 .byte 0xd
 
 .endm
@@ -155,10 +158,10 @@
 .endm
 
 
-.macro playsound_modulation_user_target_based sound modulation
+.macro playsound_with_pan sound pan
 .byte 0x19
 .hword \sound
-.byte \modulation
+.byte \pan
 .endm
 
 
@@ -314,3 +317,76 @@
 .byte 0x2f
 
 .endm
+
+// *** META MACROS ***
+
+// Macro that creates a callback that loads the gfxs
+.macro load_custom_gfx graphic:req palette:req
+    loadcallback battle_animation_task_load_custom_gfx 10 4
+    .word \graphic
+    .word \palette
+.endm
+
+// Macro that fades a battler sprite on the bg
+.equ SPRITE_FADING_AFFECTS_BATTLE_BG, 1
+.equ SPRITE_FADING_AFFECTS_USER, 2
+.equ SPRITE_FADING_AFFECTS_TARGET, 4
+.equ SPRITE_FADING_AFFECTS_USER2, 8 // Which palettes does this address exactly?
+.equ SPRITE_FADING_AFFECTS_TARGET2, 16 // Which palettes does this address exactly?
+.equ SPRITE_FADING_AFFECTS_OAM_PAL0, 32 // ??
+.equ SPRITE_FADING_AFFECTS_OAM_PAL1, 64 // ??
+
+.macro fadebattler affects:req delay:req alpha_start:req alpha_finish:req color:req
+    loadoam battle_animation_oam_template_fadescreen_battler 2 5
+    .hword \affects
+    .hword \delay
+    .hword \alpha_start
+    .hword \alpha_finish
+    .hword \color
+.endm
+
+.equ SLOT_USER, 0
+.equ SLOT_TARGET, 1
+.equ SLOT_USER_PARTNER, 2
+.equ SLOT_TARGET_PARTNER, 3
+
+
+// Macro that applies earthquake effect (Horizontal shifting)
+.equ EARTHQUAKE_ALL_BATTLERS, 4
+.equ EARTHQUAKE_BG, 5
+.equ INTENSITY_MOVE_STRENGTH_DEPENDENT, 0
+.macro earthquakeeffect slot:req intensity:req duration:req
+    loadcallback battle_animation_earthquake 2 3
+    .hword \slot
+    .hword \intensity
+    .hword \duration
+.endm
+
+// Macro that fades everything but certain elements
+
+.equ FADEEXCLUDE_USER, 0
+.equ FADEEXCLUDE_TARGET, 1
+.equ FADEEXCLUDE_USER_AND_BG, 2
+.equ FADEEXCLUDE_TARGET_AND_BG, 3
+.equ FADEEXCLUDE_USER_AND_TARGET, 4
+.equ FADEEXCLUDE_NONE, 5
+.equ FADEEXCLUDE_USER_PARTNER_AND_BG, 6
+.equ FADEEXCLUDE_TARGET_PARTNER_AND_BG, 7
+.macro fadeexclude excludes:req delay:req alpha_start:req alpha_finish:req color:req
+    loadcallback battle_animation_fadescreen_exclude_battlers 5, 5
+    .hword \excludes
+    .hword \delay
+    .hword \alpha_start
+    .hword \alpha_finish
+    .hword \color
+.endm
+
+// Macro for cries
+
+.macro cry slot:req effect:req
+    loadcallback battle_animation_cry 2 2
+    .hword \slot
+    .hword \effect
+.endm
+
+

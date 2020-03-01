@@ -5547,10 +5547,10 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_MEGA_AMULETT
-		LANGDEP(PSTRING("Mega-Amulett"), PSTRING("Tea")),
+		LANGDEP(PSTRING("Mega-Amulett"), PSTRING("Mega-Locket")),
 		0x171, //index
 		0, //price
-		0, //holding_effect_id
+		HOLD_EFFECT_KEYSTONE, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x171_item_mega_amulett,
 		513, //field_18

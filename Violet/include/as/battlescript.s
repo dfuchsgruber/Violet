@@ -31,10 +31,16 @@
 #include <attack_names.h>
 
 @@ Banks
-#define BANK_USER	1
-#define BANK_TARGET	0
 .equ BANK_TARGET, 0
 .equ BANK_USER, 1
+.equ BANK_EFFECT_TARGET, 2
+.equ BANK_FAINTED, 3
+.equ BANK_SCRIPTING, 0xA
+.equ BANK_PLAYER_1, 0xB
+.equ BANK_OPPONENT_1, 0xC
+.equ BANK_PLAYER_2, 0xD
+.equ BANK_OPPONENT_2, 0xE
+
 
 @@ Delay
 
@@ -1277,7 +1283,7 @@
 .endm
 
 @// for slots: 1 translates to the slot of attacking battler, 0 of the defender
-.macro animation slot_user slot_target anim
+.macro battleanimation slot_user slot_target anim
 .byte 0xF8
 .byte \slot_user
 .byte \slot_target
@@ -1287,6 +1293,10 @@
 .macro callasm function
 .byte 0xF9
 .word \function
+.endm
+
+.macro waitbattleanimation
+.byte 0xFA
 .endm
 
 @// Meta macros

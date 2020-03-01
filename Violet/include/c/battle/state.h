@@ -224,6 +224,82 @@ typedef struct {
 	battlescript_stack_t *ai_script_stack;
 } battle_struct_t;
 
+
+typedef struct {
+    /*0x0*/ u16 invisible : 1; // 0x1
+            u16 sound_effect_low_hp : 1; // 0x2
+            u16 behind_substitute : 1; // 0x4
+            u16 flag_x8 : 1; // 0x8
+            u16 hp_number_no_bars : 1; // 0x10
+    /*0x2*/ u16 transformed_species;
+} battle_sprite_info_t;
+
+typedef struct {
+    u16 anim_parameter; // to fill up later
+    u8 field_2;
+    u8 field_3;
+    u8 field_4;
+    u8 field_5;
+    u8 field_6;
+    u8 field_7;
+    u8 ball_throw_state;
+    u8 field_9_x1 : 1;
+    u8 field_9_x2 : 1;
+    u8 field_9_x1C : 3;
+    u8 field_9_x20 : 1;
+    u8 field_9_x40 : 1;
+    u8 field_9_x80 : 1;
+    u8 field_A;
+    u8 field_B;
+    s16 field_C;
+    u8 field_E;
+    u8 field_F;
+} battle_animation_info_t;
+
+typedef struct {
+    u8 party_status_summary_shown : 1;
+    u8 healthbox_is_bouncing : 1;
+    u8 battler_is_bouncing : 1;
+    u8 ball_anim_active : 1; // 0x8
+    u8 status_anim_active : 1; // x10
+    u8 anim_from_table_active : 1; // x20
+    u8 special_anim_active : 1; //x40
+    u8 flag_x80 : 1;
+    u8 field_1_x1 : 1;
+    u8 field_1_x1E : 5;
+    u8 field_1_x40 : 1;
+    u8 field_1_x80 : 1;
+    u8 healthbox_bounce_sprite_idx;
+    u8 battler_bounce_sprite_idx;
+    u8 animation_state;
+    u8 field_5;
+    u8 matrix_number; // ??
+    u8 shadow_sprite_oam_idx;
+    u8 field_8;
+    u8 field_9;
+    u8 field_A;
+    u8 field_B;
+} battle_healthbox_info_t;
+
+typedef struct {
+    u8 healthbox_oam_idx;
+    s32 max_value;
+    s32 old_value;
+    s32 received_value;
+    s32 current_value;
+} battle_bar_info_t;
+
+typedef struct {
+    battle_sprite_info_t *sprite_info;
+    battle_healthbox_info_t *healthbox_info;
+    battle_animation_info_t *animation_info;
+    battle_bar_info_t *bar_info;
+} battle_sprite_data_t;
+
+extern battle_sprite_data_t *battle_sprite_data;
+
+extern u8 battle_healthbox_oams[4]; // Why is there a duplicate to the battle_sprite_data value?
+
 extern battle_struct_t *battle_struct;
 extern u32 battle_flags;
 extern battle_state_t *battle_state;
@@ -233,8 +309,15 @@ extern u16 battle_trainer_id;
 extern u8 battle_effects[4]; // Probably there even more, 0x3 is the target effect
 extern u16 battle_dynamic_base_power;
 extern u16 battle_current_turn_seed; // Random state that is fixed for one turn
+extern u8 battle_action_current_turn; // idx from 0 to battler_cnt, not indexing the battlers but rather the turns themselfes (i.e. battlers ordered by turn order)
+extern u8 battle_action;
+extern void (*battle_main_callback)();
 
-extern u8 battle_general_buffers[4][512];
+extern void (*battle_actions[])();
+extern void (*battle_end_turn_functions[])();
+
+extern u8 battle_general_buffers0[4][512];
+extern u8 battle_general_buffers1[4][512];
 
 /**
  * Checks if the battle is a double battle
@@ -258,6 +341,11 @@ void battle_initialize(u8 intro_type, u16 music);
  * Callback2 contiunation for wild  legendarybattles.
  **/
 void battle_continuation_wild_legendary_battle_end();
+
+/**
+ * Reverts altnerative forms (megas, regents, Aeghislash) in the player party
+ **/
+void battle_alternative_forms_revert();
 
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

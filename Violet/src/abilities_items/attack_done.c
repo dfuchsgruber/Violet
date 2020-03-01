@@ -14,6 +14,7 @@
 #include "constants/attack_flags.h"
 #include "math.h"
 #include "abilities.h"
+#include "battle/battle_string.h"
 
 void attack_done(u8 index){
     battler *attacker = &battlers[attacking_battler];
@@ -132,9 +133,10 @@ void attack_done_prepeare_curator(){
 }
 
 void attack_done_prepeare_extradorn(){
-    bsc_buffers[0] = 0xFD;
-    bsc_buffers[1] = 3;
-    bsc_buffers[3] = 0xFF;
+    // Do we need the buffer setup for types? I don't think so...
+    // bsc_string_buffer0[0] = 0xFD;
+    // bsc_string_buffer0[1] = 3;
+    // bsc_string_buffer0[3] = 0xFF;
     int damage = damage_caused / 8;
     if(damage <= 0) damage = 1;
     damage_to_apply = damage;
