@@ -449,14 +449,9 @@ u16 pokedex_order[POKEMON_CNT - 1] = {
 };
 
 u16 pokemon_get_display_number(u16 species) {
-    int i = 0;
-    while (megas[i].species != 0xFFFF) {
-        if (megas[i].target == species) {
-            species = megas[i].species;
-            break;
-        }
-        i++;
-    }
+    mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(species);
+	if (mega_evolution)
+		return mega_evolution->species;
     u16 id = pokedex_get_id(species);
     if (!pokedex_is_national() && id > 151)
         return 0xFFFF;

@@ -124,12 +124,7 @@ static void battle_animation_update_battler_callback_step(u8 self) {
     dprintf("Update state %d\n", *state);
     switch (*state) {
         case 0: {
-            mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(battlers[battler_idx].species);
-            if (!mega_evolution)
-                derrf("No mega evolution for battler %d at form change.\n", battler_idx);
             strcpy(buffer2, pokemon_names[battlers[battler_idx].species]);
-            if (mega_evolution->type == MEGA_EVOLUTION)
-                MEGA_STATE.owner_mega_evolved[battler_get_owner(battler_idx)] = 1;
             if (battle_sprite_data->sprite_info[battler_idx].behind_substitute)
                 *state = 5; // Don't update the sprite when behind a substitute...
             else {

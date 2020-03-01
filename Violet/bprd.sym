@@ -625,3 +625,5 @@ battle_animation_alpha_blending_callback = 0x080bab7c | 1;
 battle_healthbox_oams = 0x03004f40;
 sine = 0x08044d34 | 1;
 battle_healthbox_bounce_oam_at_damage_callback = 0x0804bed4 | 1;
+battle_animation_battle_bg_scrolling = 0x080bb918 | 1;
+battlescript_argument_to_battler_idx = 0x08016da8 | 1;

@@ -118,19 +118,10 @@ void pokedex_build_list() {
     fmem.dex_mem->list = list;
     int list_size = 0;
     u16 i;
-    int j;
     for (i = 0; i < POKEMON_CNT; i++) {
         //check if pokemon is a mega target
 
-        bool is_mega_target = !pokedex_get_id(i);
-        j = 0;
-        while (megas[j].species != 0xFFFF) {
-            if (megas[j].target == i) {
-                is_mega_target = true;
-                break;
-            }
-            j++;
-        }
+        bool is_mega_target = mega_evolution_get_by_mega_species((u16)i) != 0;
         for (int j = 0; j < LINKED_PKMN_CNT; j++) {
         	if (i == pokemon_linked[j]) {
         		is_mega_target = true;

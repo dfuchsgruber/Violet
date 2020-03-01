@@ -75,7 +75,7 @@ typedef struct {
     u8 field_52;
     u8 sent_in_battlers;
     u8 selection_script_finished[4];
-    u8 field_58[4];
+    u8 switch_out_party_idxs[4];
     u8 battler_to_switch_into[4];
     u8 field_60[4][3];
     u8 run_attempts;

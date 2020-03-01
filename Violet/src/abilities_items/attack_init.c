@@ -52,9 +52,6 @@ void stance_change_change_species(u8 target, u16 species){
 }
 
 void attack_init_trigger_abilities(){
-    
-
-    
     battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case WANDLUNGSK:{
@@ -79,16 +76,18 @@ void attack_init_trigger_abilities(){
                 battlescript_callstack_push_next_command();
                 battle_animation_user = attacking_battler;
                 battle_animation_target = attacking_battler;
+                battle_scripting.battler_idx = attacking_battler;
                 // dprintf("User index %d, target index %d\n", attacking_battler, attacking_battler);
                 bsc_offset = bsc_stance_change_to_attack;
                 
-            }else if(attacker->species == POKEMON_DURENGARDA &&
+            } else if(attacker->species == POKEMON_DURENGARDA &&
                     active_attack == ATTACK_KOENIGSSCHILD){
                 stance_change_change_species(attacking_battler,
                         POKEMON_DURENGARD);
                 battlescript_callstack_push_next_command();
                 battle_animation_user = attacking_battler;
                 battle_animation_target = attacking_battler;
+                battle_scripting.battler_idx = attacking_battler;
                 dprintf("User index %d, target index %d\n", attacking_battler, 
                         attacking_battler);
                 bsc_offset = bsc_stance_change_to_defense;
@@ -110,47 +109,4 @@ void attack_init_trigger_abilities(){
             break;
         }
     }
-}
-
-
-void attack_anim_stance_change_sprite_show(u8 self){
-    u8 target = battle_animation_target;
-    u8 target_oam = battler_oams[target];
-    oams[target_oam].final_oam.attr0 &= !ATTR0_OBJDISABLE;
-    //dprintf("Stance change anim cb removing with %d tasks running.\n", *attack_anim_tasks_running);
-    battle_animation_big_callback_delete(self);
-    //dprintf("After Stance change anim cb removing with %d tasks running.\n", *attack_anim_tasks_running);
-    
-}
-
-void attack_anim_stance_change_sprite_change(u8 self){
-    u8 target = battle_animation_target;
-    dprintf("Sprite change for target %d\n.", target);
-    u8 target_oam = battler_oams[target];
-    
-    //load_graphic_for_wandler(target, target, 0);
-    
-    //first move away the oam
-    oams[target_oam].final_oam.attr0 |= ATTR0_OBJDISABLE;
-    
-    battlescript_transform_load_graphic(target, target, 0);
-    // mega_disable_blurr(target);
-    
-    color_t oam_color = {.value = battle_animation_arguments[0]};
-    u8 oam_pal = (u8)(oams[target_oam].final_oam.attr2 >> 12);
-    pal_blend((u16)(oam_pal * 16 + 256), 16, 16, oam_color);
-    
-    big_callbacks[self].function = attack_anim_stance_change_sprite_show;
-    //err2(self, self);
-    
-}
-
-
-
-void attack_anim_stance_change_pokemon_play_cry(u8 self){
-    
-    u8 target = battle_animation_target;
-    u16 species = battlers[target].species;
-    pokemon_play_cry(species, 0);
-    battle_animation_big_callback_delete(self);
 }

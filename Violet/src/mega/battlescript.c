@@ -69,7 +69,8 @@ bool battle_execute_action_mega_evolution() {
                         bsc_last_used_item = mega_evolution->mega_item;
                         battle_scripting.battler_idx = battler_idx; // Target for non-buffer-strings (after species transform)
                         battler_form_change(battler_idx, mega_evolution->mega_species);
-                        dprintf("Battle form change for battler %d\n", battler_idx);
+                        if (mega_evolution->type == MEGA_EVOLUTION)
+                            MEGA_STATE.owner_mega_evolved[battler_get_owner(battler_idx)] = 1;
                         if (MEGA_STATE.marked_for_mega_evolution[battler_idx] == MEGA_EVOLUTION)
                             battlescript_init_and_interrupt_battle(battlescript_mega_evolution);
                         else if (MEGA_STATE.marked_for_mega_evolution[battler_idx] == REGENT_EVOLUTION) {

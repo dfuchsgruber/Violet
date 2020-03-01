@@ -14,6 +14,8 @@
 .global ow_script_test
 
 ow_script_test:
+
+
 trainerbattlecont 0x1 0x15e 0x0 str_a str_0x96f156 ow_script_0x96fbaa
 setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 givepokemon POKEMON_TROPIUS 80 ITEM_TROPIUSNIT 0 0 0

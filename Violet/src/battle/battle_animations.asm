@@ -32,5 +32,4 @@ battle_animations:
     .word 0x81da66c		@BATTLE_ANIM_SAFARI_REACTION
     .word battle_animation_mega_evolution
     .word battle_animation_regent_evolution
-    .word 0		        @BATTLE_ANIM_STANCE_CHANGE_TO_SWORD_FORM
-    .word 0		        @BATTLE_ANIM_STANCE_CHANGE_TO_SHIELD_FORM
+    .word battle_animation_stance_change

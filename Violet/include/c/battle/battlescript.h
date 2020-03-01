@@ -143,4 +143,11 @@ void battlescript_callstack_push(u8 *script);
  */
 int bsc_get_word();
 
+/**
+ * Gets the battler idx associated with a battlescript argument.
+ * @param arg the battle script argument
+ * @return the battler idx
+ **/
+u8 battlescript_argument_to_battler_idx(u8 arg);
+
 #endif /* INCLUDE_C_BATTLE_BATTLESCRIPT_H_ */

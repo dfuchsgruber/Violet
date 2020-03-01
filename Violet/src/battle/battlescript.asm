@@ -230,7 +230,7 @@ battle_script_cmds:
 	.word 0x802ca7d
 	.word 0x802cb01
 	.word 0x802cb7d
-	.word 0x802cc59
+	.word bsc_cmd_switch_out_abilites
 	.word 0x802ccd5
 	.word bsc_cmd_xE4_secret_power
 	.word bsc_cmd_mitnahme

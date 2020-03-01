@@ -11,6 +11,8 @@
 #include "map/wild_pokemon.h"
 #include "battle/attack.h"
 #include "callbacks.h"
+#include "constants/abilities.h"
+#include "battle/controller.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -85,5 +87,28 @@ void attack_calculate_damage_from_target_name() {
         }
     }
     dprintf("Damage for runengleich %d\n", battle_dynamic_base_power);
+}
 
+void bsc_cmd_switch_out_abilites() {
+    bsc_offset++;
+    active_battler = battlescript_argument_to_battler_idx(*bsc_offset);
+    bsc_offset++;
+    if (battlers[active_battler].ability == INNERE_KRAFT) {
+        battlers[active_battler].status1 = 0;
+        battle_controller_emit_set_pokemon_data(0, 0x28, (u8)int_bitmasks[battle_state->switch_out_party_idxs[active_battler]], 4, 
+            &battlers[active_battler].status1);
+        battler_mark_for_controller_execution(active_battler);
+    }
+    /** else if (battlers[active_battler].ability == 0xFF) { // TODO: This is code for a potential regenerator ability
+    
+        battlers[active_battler].current_hp = (u16) MIN(battlers[active_battler].max_hp, battlers[active_battler].current_hp +
+            battlers[active_battler].max_hp / 3);
+        battle_controller_emit_set_pokemon_data(0, ??, (u8)int_bitmasks[battle_state->switch_out_party_idxs[active_battler]], 4,
+            &battlers[active_battler].current_hp);
+        battler_mark_for_controller_execution(active_battler);
+        
+    }**/
+    if (battlers[active_battler].species == POKEMON_DURENGARDA) {
+        battler_form_change(active_battler, POKEMON_DURENGARD);
+    }
 }
