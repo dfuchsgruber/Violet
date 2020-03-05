@@ -9,6 +9,8 @@
 #define INCLUDE_C_POKEMON_VIRTUAL_H_
 
 #include "types.h"
+#include "constants/pokemon_attributes.h"
+#include "constants/species.h"
 
 typedef struct marking {
     u8 circle : 1;
@@ -44,6 +46,13 @@ typedef union {
 #define STATUS_CONDITION_BAD_POISON_COUNTER 0xF00
 #define STATUS_CONDITION_POISON_ANY (STATUS_CONDITION_POISON | STATUS_CONDITION_BAD_POISON)
 #define STATUS_CONDITION_ANY (STATUS_CONDITION_SLEEP | STATUS_CONDITION_POISON | STATUS_CONDITION_BURN | STATUS_CONDITION_FREEZE | STATUS_CONDITION_PARALYSIS | STATUS_CONDITION_BAD_POISON)
+
+#define POKEMON_IS_VIABLE(p) ((\
+	pokemon_get_attribute(p, ATTRIBUTE_CURRENT_HP, 0) != 0 && \
+	pokemon_get_attribute(p, ATTRIBUTE_SPECIES2, 0) != 0 && \
+	pokemon_get_attribute(p, ATTRIBUTE_SPECIES2, 0) != POKEMON_EGG && \
+	!pokemon_get_attribute(p, ATTRIBUTE_IS_EGG, 0)) \
+)
 
 typedef struct {
 	u16 species;

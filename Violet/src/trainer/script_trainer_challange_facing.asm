@@ -1,12 +1,27 @@
 .include "overworld_script.s"
+.include "constants/vars.s"
+.include "constants/movements.s"
+.include "constants/specials.s"
+.include "constants/ordinals.s"
 
-.global subscript_trainer_challange
+.global ow_script_trainerbattle_challange_spotted
+.global ow_script_trainerbattle_start_battle
 
 
-subscript_trainer_challange:
-    special 0x1A
+challange_loop:
+    closeonkeypress
+ow_script_trainerbattle_challange_spotted:
+    callasm trainer_get_current_npc_idx
+    special SPECIAL_TRAINER_PLAY_ENCOUNTER_MUSIC
+    special SPECIAL_TRAINER_APPROACH
+    waitstate
+    special SPECIAL_TRAINER_CHALLANGE_PLAYER_FACING
     waitmovement 0
-    special 0x34
+    special SPECIAL_TRAINER_SHOW_CHALLANGE_MESSAGE
     waitmsg
     waitkeypress
-    return
+    callasm trainer_approach_second
+    compare LASTRESULT 1
+    gotoif EQUAL challange_loop
+    goto 0x081a7c86 // start the battle
+

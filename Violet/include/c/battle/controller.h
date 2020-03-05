@@ -36,6 +36,19 @@ void battle_controller_player_switch_moves();
 void battle_controller_player_choose_target();
 
 /**
+ * Emits the pokemon chosen for switching.
+ * @param buffer_idx the buffer idx
+ * @param party_idx which pokemon to switch in
+ * @param param3
+ **/
+void battle_controller_opponent_emit_chosen_pokemon(u8 buffer_idx, u8 party_idx, u8 *param3);
+
+/**
+ * Marks the opponent battle controller's execution as finished.
+ **/
+void battle_controller_opponent_execution_finished();
+
+/**
  * Taken from pokeemerald.
  **/ 
 void battle_controller_emit_get_pokemon_data(u8 buffer_idx, u8 request_idx, u8 battler_idx);
@@ -58,6 +71,18 @@ void battle_controller_emit_two_values(u8 buffer_idx, u8 arg1, u16 arg2);
  * @param data data to transfer
  **/
 void battle_controller_emit_set_pokemon_data(u8 buffer_idx, u8 request_idx, u8 pokemon_idx, u8 size,void *data);
+
+/**
+ * Emits an event to draw the trainer picture of the active battler.
+ * @param buffer_idx the buffer to use (0 or 1)
+ **/
+void battle_controller_emit_draw_trainer_picture(u8 buffer_idx);
+
+/**
+ * Emits an event to make trainers throw out their balls.
+ * @param buffer_idx the buffer to use (0 or 1)
+ **/
+void battle_controller_emit_intro_trainer_ball_throw(u8 buffer_idx);
 
 /**
  * Marks a battler such that is executed by the battle controller.
@@ -91,5 +116,17 @@ u8 battle_buffer_transfer[256]; // General purpose buffer for transfering data
  * @param size how many bytes to transmit
  **/
 void battle_buffer_request_data_transfer(u8 buffer_idx, void *data, u8 size);
+
+/**
+ * Battle controller function that delays finishing the execution of a battler's buffer until field_9 of its healthbar has dropped to zero.
+ **/
+void sub_08035ae8();
+
+/**
+ * Initializes the general purpose oam template with the sprite data of a trainer gfx.
+ * @param sprite_idx the trainer sprite to load
+ * @param battler_position the bank into which the gfx was loaded.
+ **/
+void trainer_gfx_initialize_gp_oam_template(u8 sprite_idx, u8 battler_position);
 
 #endif

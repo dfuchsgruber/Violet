@@ -10,6 +10,8 @@
 
 #include "battle/battlescript.h"
 #include "item/item_effect.h"
+#include "pokemon/virtual.h"
+#include "constants/battle/battle_flags.h"
 
 #define BATTLE_DOUBLE 0x1
 #define BATTLE_LINK 0x2
@@ -27,6 +29,10 @@
 #define BATTLE_LEGENDARY 0x2000
 #define BATTLE_GHOST 0x8000
 #define BATTLE_FACTORY 0x80000
+
+#define BATTLE_TWO_TRAINERS 0x100000
+#define BATTLE_ALLY 0x200000
+
 #define BATTLE_31 0x80000000
 
 
@@ -347,5 +353,39 @@ void battle_continuation_wild_legendary_battle_end();
  **/
 void battle_alternative_forms_revert();
 
+/**
+ * Loads the party and index range that is available to the owner of a battler.
+ * @param battler_idx the battler to check
+ * @param first the first index available to the battler
+ * @param last the first index not available to the battler
+ * @return the party the indices refer to
+ **/
+pokemon *battler_load_party_range(u8 battler_idx, u8 *first, u8 *last);
+
+/**
+ * Checks if the current battle is a double multi battle.
+ * @return if the battle is a double multi battle.
+ **/
+bool battle_is_multi_double();
+
+/**
+ * Checks if the current battle is a tag battle, i.e. with ally.
+ * @return if the battle is a tag battle.
+ **/
+bool battle_is_tag();
+
+/**
+ * Checks if the current battle has two opponents, i.e. multi or against two trainers.
+ * @return if the battle has two opponents
+ **/
+bool battle_has_two_opponents();
+
+/**
+ * Switches the party order in a link multi battle.
+ * @param battler_idx the targeted battler that switches
+ * @param i first position
+ * @param j second position
+ **/
+void battle_link_multi_switch_party_order(u8 battler_idx, u8 i, u8 j);
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

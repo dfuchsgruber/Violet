@@ -47,3 +47,12 @@ int kgv(int a, int b){
     if(a == 0 || b == 0) return -1;
     return a / ggt(a, b) * b;
 }
+
+int msb_index(u32 value) {
+  int i = 0;
+  while(value != 0) {
+    value >>= 1;
+    i++;
+  }
+  return i - 1;
+}

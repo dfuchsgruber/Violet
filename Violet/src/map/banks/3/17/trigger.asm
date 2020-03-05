@@ -10,7 +10,7 @@
 ow_script_haweiland_pirates_trigger:
     lockall
     setvar LASTTALKED 5
-    special SPECIAL_COMPUTE_PLAYER_FACING
+    special SPECIAL_TRAINER_CHALLANGE_PLAYER_FACING
     playsong MUS_PIRATE 0
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     setvar 0x8004 0x3a

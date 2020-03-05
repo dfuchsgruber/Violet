@@ -74,12 +74,10 @@ void trainer_pokemon_new_default_item_default_attacks(pokemon *dst,
 	trainer_pokemon_new(dst, party->build);
 }
 
-int trainer_build_party(pokemon *dst_party, u16 trainer_id) {
+static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
 	if (trainer_id == 0x400) return 0; // No idea, but in vanilla they do it, so...
 	if (!(battle_flags & BATTLE_TOWER) && !(battle_flags & BATTLE_EREADER)
 			&& !(battle_flags & BATTLE_31) && (battle_flags & BATTLE_TRAINER)) {
-		// Build trainer
-		pokemon_clear_opponent_party();
 		// To generate a trainer consistent pid we use a pseudo rng
 		fmem.trainer_prng_state = trainer_id;
 		for (int i = 0; i < trainers[trainer_id].pokemon_cnt; i++) {
@@ -106,6 +104,18 @@ int trainer_build_party(pokemon *dst_party, u16 trainer_id) {
 		return trainers[trainer_id].pokemon_cnt;
 	}
 	return 0;
+}
+
+
+int trainer_party_setup() {
+	int num_pokemon_setup = 0;
+	if (battle_flags & BATTLE_TRAINER) {
+		pokemon_clear_opponent_party();	
+		num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon, trainer_vars.trainer_id);
+	}
+	if ((battle_flags & BATTLE_TWO_TRAINERS) && (battle_flags & BATTLE_TRAINER))
+		num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon + 3, fmem.trainer_varsB.trainer_id);
+	return num_pokemon_setup;
 }
 
 

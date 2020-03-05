@@ -83,7 +83,7 @@ battle_script_cmds:
 	.word 0x8023e5d
 	.word 0x8023ecd
 	.word 0x8024059
-	.word 0x8024111
+	.word bsc_cmd_x4f_jump_if_unable_to_switch
 	.word 0x8024371
 	.word 0x8024bcd
 	.word 0x8024dbd
@@ -147,7 +147,7 @@ battle_script_cmds:
 	.word 0x8028129
 	.word 0x8028169
 	.word 0x80281b5
-	.word 0x80282a5
+	.word bsc_cmd_x8f_random_switch_out
 	.word 0x802859d
 	.word 0x8028741
 	.word bsc_cmd_x92_setlightscreen

@@ -12,11 +12,6 @@
     bx r3
     .pool
 
-.org 0x08081AE8
-    ldr r1, =pokeradar_alert_pokemon | 1
-    bx r1
-    .pool
-
 //Pokedex
 
 .org 0x08104D5C

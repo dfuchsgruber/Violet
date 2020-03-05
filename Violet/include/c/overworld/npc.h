@@ -265,6 +265,12 @@ u8 player_get_facing();
 void npc_stop_all_movements_but_players();
 
 /**
+ * Stops the movements (i.e. freezes) all npcs but the player and a target npc.
+ * @param npc_idx the npc which is excluded from lockall
+ **/
+void npc_stop_all_movements_but_one(u8 npc_idx);
+
+/**
  * A callback that is executed when the player transits from water (surfing) to land (walking / biking).
  * @param self self-reference
  **/

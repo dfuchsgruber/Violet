@@ -103,6 +103,8 @@ typedef struct {
     void (*callback)(oam_object *self);
 } oam_template;
 
+extern oam_template gp_oam_template; // Multi-use oam template
+
 #define OAM_FLAG_ACTIVE 0x1
 #define OAM_FLAG_CENTERED 0x2
 #define OAM_FLAG_INVISIBLE 0x4
@@ -196,6 +198,12 @@ void oam_free_graphic_keep_tag(oam_object* oam);
  * @param oam The oam that holds the graphic to free
  */
 void oam_free_graphic(oam_object* oam);
+
+/**
+ * Frees the vram allocated for a gfx tag.
+ * @param tag the tag 
+ **/
+void oam_free_vram_by_tag (u16 tag);
 
 /**
  * Allocates an oam palette and places a tag in the oam palette allocation table

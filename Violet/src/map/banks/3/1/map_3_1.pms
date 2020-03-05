@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_79",
 		"events": {
-			"person_cnt": 39,
+			"person_cnt": 40,
 			"warp_cnt": 8,
 			"trigger_cnt": 9,
 			"signpost_cnt": 9,
@@ -823,17 +823,17 @@
 				},
 				{
 					"target_index": 87,
-					"picture": 5,
+					"picture": "55",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 90,
-					"y": 0,
+					"x": "68",
+					"y": "28",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
 					"behaviour_range": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": "ow_script_0x84ea41",
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": "ow_script_trainer1",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -860,6 +860,27 @@
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "77",
+					"picture": "33",
+					"script_std": "0",
+					"field_3": 0,
+					"x": "68",
+					"y": "32",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "3",
+					"script": "ow_script_trainer2",
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0

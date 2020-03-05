@@ -1,6 +1,8 @@
 #include "types.h"
 #include "language.h"
-u8 trainer_class_names[][13] = {
+#include "trainer/trainer.h"
+
+u8 trainer_class_names[TRAINER_CLASS_CNT][13] = {
 	LANGDEP(PSTRING("PKMN-Trainer"), PSTRING("PKMN Trainer")),
 	LANGDEP(PSTRING("PKMN-Trainer"), PSTRING("PKMN Trainer")),
 	LANGDEP(PSTRING("Polizist"), PSTRING("Aqua Leader")),

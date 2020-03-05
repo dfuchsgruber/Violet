@@ -9,9 +9,9 @@
 #define INCLUDE_C_TRAINER_TRAINER_H_
 
 #define TRAINER_CNT 0x2E8
+#define TRAINER_CLASS_CNT 107
 
 #include "trainer/party.h"
-#include "save.h"
 
 typedef struct {
     u8 uses_custom_moves : 1;
@@ -39,6 +39,7 @@ typedef struct {
 
 trainer trainers[TRAINER_CNT];
 
+u8 trainer_class_names[TRAINER_CLASS_CNT][13];
 
 /**
  * Checks the flag of a trainer
@@ -64,5 +65,31 @@ bool special_x36_check_loaded_trainerflag();
  * Special: Prepeares the player to face the trainer approaching
  */
 void special_prepeare_player_facing();
+
+/**
+ * Checks if the game state prohibits a trainerbattle.
+ * @return if a trainerbattle is prohibited.
+ **/
+bool trainerbattle_not_initializable();
+
+/**
+ * Checks if a trainer with a certain script wants to battle.
+ * @param script the trainerscript command
+ * @return if the trainerflag is set
+ **/
+bool npc_trainer_check_flag(u8 *script);
+
+/**
+ * Checks if the player is able to participate in a double battle.
+ * @return 0 if the player has two viable pokemon, 2 if the player is only one viable pokemon (don't ask me...)
+ **/
+int player_party_get_double_battle_viability();
+
+/**
+ * Initializes a trainerbattle if a trainer npc sees the player.
+ * @param npc_idx the npc to check
+ * @return how many trainers were found, i.e. 1 if a normal trainer was found, 2 if a double battle trainer was found, 0 else
+ **/
+int trainerbattle_initialize_by_npc_idx(u8 npc_idx);
 
 #endif /* INCLUDE_C_TRAINER_TRAINER_H_ */

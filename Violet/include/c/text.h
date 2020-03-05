@@ -338,6 +338,13 @@ extern "C" {
      */
     u8 *typetoa_long(u8 *dst, u8 type);
 
+    /**
+     * Transforms null pointers to an empty string.
+     * @param src the string to check
+     * @return if src was NULL, an empty string is returned. Otherwise, src is kept as is
+     **/
+    u8 *str_null_to_empty(u8 *src);
+
     extern u8 strbuf[];
     extern u8 buffer0[];
     extern u8 buffer1[];

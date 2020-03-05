@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_VARS_H_
 #define INCLUDE_C_VARS_H_
 
+#include "constants/vars.h"
+
 /**
  * Accesses a variable
  * @param var The variable to access

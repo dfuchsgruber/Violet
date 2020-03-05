@@ -1,6 +1,7 @@
 #include "types.h"
 #include "mega.h"
 #include "battle/battler.h"
+#include "battle/state.h"
 #include "constants/species.h"
 #include "constants/items.h"
 #include "flags.h"
@@ -51,15 +52,25 @@ static u16 trainer_get_keystone(u16 trainer_idx) {
 
 u16 battler_get_keystone(u8 battler_idx) {
     u16 keystone = 0;
-    if (battler_is_opponent(battler_idx)) {
-        // TODO: multiple trainers
-        keystone = trainer_get_keystone(trainer_vars.trainer_id);
-        if (keystone == 0 || keystone == 0xFFFF) {
-            keystone = *var_access(OPPONENT_MEGA_ITEM);
+    switch (battler_get_owner(battler_idx)) {
+        case OWNER_PLAYER: {
+            keystone = *var_access(PLAYER_MEGA_ITEM);
+            break;
         }
-    } else {
-        // TODO: ingame partner
-        keystone = *var_access(PLAYER_MEGA_ITEM);
+        case OWNER_TRAINER_A: {
+            keystone = trainer_get_keystone(trainer_vars.trainer_id);
+            if (keystone == 0xFFFF) keystone = *var_access(OPPONENT_MEGA_ITEM);
+            break;
+        }
+        case OWNER_ALLY: {
+            keystone = trainer_get_keystone(*var_access(VAR_ALLY));
+            break;
+        }
+        case OWNER_TRAINER_B: {
+            keystone = trainer_get_keystone(fmem.trainer_varsB.trainer_id);
+            if (keystone == 0xFFFF) keystone = *var_access(OPPONENT_MEGA_ITEM);
+            break;
+        }
     }
     if (keystone == 0 || keystone == 0xFFFF)
         return DEFAULT_KEYSTONE;
@@ -68,8 +79,13 @@ u16 battler_get_keystone(u8 battler_idx) {
 }
 
 u8 battler_get_owner(u8 battler_idx) { 
-    // TODO: Co-op battles, multi-trainer battles
-    return (u8)battler_is_opponent(battler_idx);
+    switch (battler_get_position(battler_idx)) {
+        case BATTLE_POSITION_PLAYER_LEFT: return OWNER_PLAYER;
+        case BATTLE_POSITION_OPPONENT_LEFT: return OWNER_TRAINER_A;
+        case BATTLE_POSITION_PLAYER_RIGHT: return battle_flags & BATTLE_ALLY ? OWNER_ALLY : OWNER_PLAYER;
+        case BATTLE_POSITION_OPPONENT_RIGHT: return battle_flags & BATTLE_TWO_TRAINERS ? OWNER_TRAINER_B : OWNER_TRAINER_A;
+    }
+    derrf("Cant get owner of battler %d, position %d\n", battler_idx, battler_get_position(battler_idx)); return 0xFF;
 }
 
 mega_evolution_t *battler_get_available_mega_evolution(u8 battler_idx) {

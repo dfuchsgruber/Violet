@@ -12,6 +12,25 @@
 
 
 .global ow_script_test
+.global ow_script_trainer1
+.global ow_script_trainer2
+
+
+ow_script_trainer1:
+	trainerbattlestd 0x0 0x15f 0 str_beforea str_aftera
+	end
+ow_script_trainer2:
+	trainerbattlestd 0x0 0x160 0 str_beforeb str_afterb
+	end
+
+str_beforea:
+	.string "Before A"
+str_aftera:
+	.string "After A"
+str_beforeb:
+	.string "Before B"
+str_afterb:
+	.string "After B"
 
 ow_script_test:
 

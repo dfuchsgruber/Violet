@@ -21,6 +21,7 @@
 #include "trainer/party.h"
 #include "pokemon/roamer.h"
 #include "item/item_effect.h"
+#include "trainer/virtual.h"
 
 #define GP_STACK_SIZE 16
 
@@ -185,6 +186,11 @@ typedef struct {
     u8 tbox_idx_braille;
     u8 pc_selection_context;
     void *mega_state;
+    u8 trainers_cnt; // How many trainers are approaching
+    u8 current_trainer;
+    u8 trainers_npc_idxs[2];
+    u8 *trainers_scripts[2];
+    trainer_variables trainer_varsB;
 } floating_memory;
 
 extern saveblock1 *save1;

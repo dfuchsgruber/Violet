@@ -150,4 +150,12 @@ int bsc_get_word();
  **/
 u8 battlescript_argument_to_battler_idx(u8 arg);
 
+/**
+ * Attempts to do a forced switch out and calls the proper subscript on failure.
+ * @return if the switch out was sucessful
+ **/
+bool battlescript_force_switch_out();
+
+void sub_08013ef0(u8 battler_idx);
+
 #endif /* INCLUDE_C_BATTLE_BATTLESCRIPT_H_ */

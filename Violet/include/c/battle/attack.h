@@ -98,4 +98,12 @@ extern u8 battle_animation_running;
 
 void battle_animation_oam_particle_emission_above_battler_callback (oam_object *self);
 
+/**
+ * Applies multipliers to a current multiplier for attack effectiveness.
+ * @param the type of the attack
+ * @param defender_type1 the first defender type
+ * @param defender_type2 the second defender type
+ **/
+void attack_apply_effectiveness_multiplier(u8 attacking_type, u8 defender_type1, u8 defender_type2, u8 *multiplier);
+
 #endif /* INCLUDE_C_BATTLE_ATTACK_H_ */

@@ -43,6 +43,12 @@ void playsong1(u16 song, u8 feature);
 void playsong2(u16 song);
 
 /**
+ * Uses the map song controller to play a song.
+ * @param song the song to play
+ **/
+void song_play_by_controller (u16 song);
+
+/**
  * Plays a song on fanfare player
  * @param song_id id of the song to play
  */
@@ -73,6 +79,7 @@ u16 map_get_song();
  */
 u16 trainer_get_encounter_song(u16 trainer_id);
 
+extern u8 mplay_info_background_music[]; // Todo: Reserach data type
 
 /**
  * Sets the song player volume

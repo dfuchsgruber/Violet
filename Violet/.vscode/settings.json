@@ -40,6 +40,16 @@
         "chrono": "c",
         "bios.h": "c",
         "memory.h": "c",
-        "functional": "c"
+        "functional": "c",
+        "trainer.h": "c",
+        "trainer_battle_types.h": "c",
+        "npc.h": "c",
+        "script.h": "c",
+        "basestat.h": "c",
+        "*.tcc": "c",
+        "random": "c",
+        "oam.h": "c",
+        "language.h": "c",
+        "vars.h": "c"
     }
 }

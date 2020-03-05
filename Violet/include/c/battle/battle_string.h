@@ -27,6 +27,14 @@ extern u8 bsc_string_buffer1[16];
 extern u8 bsc_string_buffer2[16];
 
 
+/**
+ * Decrypts one of the three battle buffers.
+ * @param src which buffer to decrypt
+ * @param dst where to write the decrypted string to
+ **/
+void battle_buffer_decrypt(u8 *src, u8 *dst);
+
+
 #define BSC_BUFFER_SPECIES(buffer, species) \
 { \
     buffer[0] = BSC_BUFFER_BEGIN; \

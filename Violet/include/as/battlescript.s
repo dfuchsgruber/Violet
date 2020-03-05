@@ -61,7 +61,7 @@
 
 @@ Super commands
 .macro calculatedamage
-.word 0x7060504
+.byte 7, 6, 5, 4
 .endm
 
 
@@ -522,9 +522,9 @@
 .byte \cmd52_bank
 .endm
 
-.macro cmd53 cmd53_bank
+.macro trainerslidein bank:req
 .byte 0x53
-.byte \cmd53_bank
+.byte \bank
 .endm
 
 .macro cmd54 cmd54_hword
@@ -573,8 +573,9 @@
 .byte \cmd5c_bank
 .endm
 
-.macro cmd5d
+.macro pricemoney failure_address:req
 .byte 0x5D
+.byte \failure_address
 .endm
 
 .macro cmd5e cmd5e_bank

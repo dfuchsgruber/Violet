@@ -13,6 +13,7 @@
 #include "pokemon/virtual.h"
 #include "constants/battle_statuses.h"
 
+
 typedef struct battler {
     u16 species;
     u16 stats[5];
@@ -168,6 +169,14 @@ extern u8 battlers_absent;
 
 #define DAMAGE_CAUSED ((battler_damage_taken[defending_battler].physical_damage != 0 || battler_damage_taken[defending_battler].special_damage != 0))
 
+
+#define BATTLER_CAN_SWITCH_OUT(i) (\
+    (battlers[i].status2 & (STATUS2_ESCAPE_PREVENTATION | STATUS2_WRAPPED)) == 0 && \
+    (battler_statuses3[i] & STATUS3_ROOTED) == 0 \
+)
+
+
+
 extern u8 attack_targets;
 extern u8 attacking_battler;
 extern u8 defending_battler;
@@ -186,11 +195,24 @@ extern u8 battle_stat_change_multipliers[][2];
 
 #define STAT_CHANGE_APPLY_MULTIPLIER(value, stat)(((value) * battle_stat_change_multipliers[stat][STAT_CHANGE_MULTIPLIER_DIVIDEND]) / battle_stat_change_multipliers[stat][STAT_CHANGE_MULTIPLIER_DIVISOR])
 
+#define OPPONENT(battler_idx) ((battler_idx) ^ 1)
 #define PARTNER(battler_idx) ((battler_idx) ^ 2)
+#define SIDE(battler_idx) ((battler_idx) & 1)
+
+#define BATTLE_SIDE_PLAYER 0
+#define BATTLE_SIDE_OPPONENT 1
+
+#define OWNER_PLAYER 0
+#define OWNER_ALLY 1
+#define OWNER_TRAINER_A 2
+#define OWNER_TRAINER_B 3
 
 extern u8 battler_action_chosen[4];
 
-
+#define BATTLE_POSITION_PLAYER_LEFT        0
+#define BATTLE_POSITION_OPPONENT_LEFT      1
+#define BATTLE_POSITION_PLAYER_RIGHT       2
+#define BATTLE_POSITION_OPPONENT_RIGHT     3
 
 /**
  * Checks if a battler is an opponent
@@ -259,5 +281,35 @@ void battler_form_change(u8 battler_idx, u16 species);
  * @param self self-reference
  **/
 void battle_animation_battler_gfx_to_oam(u8 self);
+
+/**
+ * Gets the multiplayer idx associated with a battler.
+ * @param battler_idx the battler
+ * @return the associated multiplayer idx
+ **/
+u8 battler_get_multiplayer_idx(u8 battler_idx);
+
+/**
+ * Checks if a link trainer is at the flank of the battle field.
+ * @param multiplayer_idx the link trainer to check
+ * @return if the trainer is at the flank (i.e. right side for player, left side for opp.)
+ **/
+bool link_trainer_is_at_flank(u8 multiplayer_idx);
+
+/**
+ * Loads the idxs of all battlers relative to a certain battler
+ * @param battler the battler to get idxs relative to
+ * @param partner partner of battler, if present (else battler)
+ * @param foe battler that opposes battler
+ * @param foe_partner battler that is the partner of opposing foe (if present, else foe)
+ **/
+void battler_get_partner_and_foes(u8 battler, u8 *partner, u8 *foe, u8 *foe_partner);
+
+/**
+ * Gets the relative priority the oam associated with a battler should be initialized with.
+ * @param battler_idx the battler to get the priority of
+ * @return the relative priority of the oam to create
+ **/
+u8 battler_oam_get_relative_priority(u8 battler_idx);
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

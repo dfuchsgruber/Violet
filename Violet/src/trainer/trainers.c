@@ -6193,5 +6193,20 @@ trainer trainers[TRAINER_CNT] = {
 				.uses_custom_items = true, .uses_custom_moves = true,
         .battle_state = BATTLE_DOUBLE,
     },
+    // TESTING FOR TRAINER DOUBLE BATTLES
+    [0x15f] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 0x4a,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Trainer A."),
+            PSTRING("Elite J.")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x15c_ardeal_trainer_3,
+    },
+    [0x160] = {
+        .trainerclass = TRAINERCLASS_CAMPER, .sprite = 0x33,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Trainer B."),
+            PSTRING("Elite J.")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x15a_ardeal_trainer_1,
+    },
 }; 
 

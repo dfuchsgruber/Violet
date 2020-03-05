@@ -126,4 +126,11 @@ int kgv(int a, int b);
  **/
 s16 sine (s16 x, s16 amplitude);
 
+/**
+ * Returns the index of the most significant bit, a.k.a calculates floor(log2(x))
+ * @param value the value to calculate the msb index of
+ * @return floor(log2(x))
+ **/
+int msb_index(u32 value);
+
 #endif

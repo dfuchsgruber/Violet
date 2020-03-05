@@ -1,13 +1,4 @@
 
-
-.org 0x080805A4
-ldr r1, =trainer_get_encounter_song | 1
-bl do_r1
-ldr r1, =0x08080617
-do_r1:
-bx r1
-.pool
-
 .org 0x08043ED4
 ldr r0, =battle_get_song | 1
 bx r0

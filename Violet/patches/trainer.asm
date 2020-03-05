@@ -1,6 +1,6 @@
 //trainer
 .org 0x08011264
-	ldr r2, =trainer_build_party | 1
+	ldr r2, =trainer_party_setup | 1
 	bx r2
 	.pool
 	
@@ -17,11 +17,6 @@
         do_r1_3:
         bx r1
         .pool
-
-
-.org 0x081A7C81
-        .byte 0x4
-        .word subscript_trainer_challange
 
 .org 0x800fb84
 	.word trainers
@@ -100,3 +95,27 @@
         bx r2
         .pool
 
+
+.org 0x0808018c
+	ldr r1, =trainer_configure_by_overworld_script | 1
+	bx r1
+	.pool
+
+.org 0x08081a94
+	ldr r0, =trigger_npc_spotting | 1
+	bx r0
+	.pool
+
+.org 0x08080634
+	ldr r0, =trainer_get_challange_message | 1
+	bx r0
+	.pool
+
+.org 0x080802d0
+	.word ow_script_trainerbattle_challange_spotted
+
+.org 0x08080584
+	ldr r0, =trainer_play_encounter_music | 1
+	bx r0
+	.pool
+ 

@@ -243,6 +243,7 @@ _blxr0:
 
 .org 0x0802e0a6
 	ldr r2, =battle_allocate_hook | 1
+_blxr2:
 	bx r2
 	.pool
 
@@ -253,4 +254,123 @@ _blxr0:
 
 .org 0x08034050
 	.word battle_animations
+
+.org 0x080803c0	
+	ldr r0, =battle_initialize_trainerbattle | 1
+	bx r0
+	.pool
+
+.org 0x08048ffc
+	ldr r0, =hook_battle_ui_render_pokeball_icons | 1
+	bx r0
+	.pool
+
+.org 0x0800d6ec
+	ldr r0, =battle_setup_party_idxs | 1
+	bx r0
+	.pool
 	
+.org 0x08039d3c
+	ldr r0, =battle_ai_get_pokemon_to_switch_into | 1
+	bx r0
+	.pool
+
+.org 0x08038644
+	ldr r0, =battle_controller_opponent_handle_choose_pokemon | 1
+	bx r0
+	.pool
+
+.org 0x08019b94
+	ldr r3, =battler_has_no_switching_targets | 1
+_blxr3:
+	bx r3
+	.pool
+
+.org 0x08037bd8 // Battle controller opponent handle draw trainer sprite (1)
+	ldr r0, =battle_controller_opponent_get_trainer_pic | 1
+	bl _blxr0
+	ldr r1, =0x08037c3a | 1
+	bx r1
+	.pool
+
+.org 0x08037c7e // Battle controller opponent handle draw trainer sprite (2)
+	mov r1, r4 // y
+	ldr r2, =battle_controller_opponent_create_trainer_pic_oam_hook | 1
+	bx r2
+	.pool
+
+.org 0x08037dac // Battle controller opponent handle draw trainer sprite sliding
+	ldr r0, =battle_controller_opponent_get_trainer_pic | 1
+	bl _blxr0
+	ldr r1, =0x08037e0e | 1
+	bx r1
+	.pool
+
+.org 0x0801327c
+	ldr r0, =battle_intro_draw_pokemon_or_trainer_sprite_hook | 1
+	bx r0
+	.pool
+
+
+.org 0x08013552
+	ldr r0, =battle_intro_try_second_trainer_ball_throw | 1
+	bl _blxr0
+	ldr r0, =0x08013578 | 1
+	bx r0
+	.pool
+
+.org 0x08038cf2
+	ldr r0, =battle_intro_trainer_pokemon_send_out_hook | 1
+	bx r0
+	.pool
+
+.org 0x08035da0
+	ldr r0, =battle_intro_trainer_pokemon_send_out_hook2 | 1
+	bx r0
+	.pool
+
+.org 0x08035b30
+	ldr r0, =sub_08035b30 | 1
+	bx r0
+	.pool
+
+.org 0x080d7b40 // Battle String Decryption: Support new characters
+	ldr r0, =battle_string_decrypt_additional_buffers_hook | 1
+	bx r0
+	.pool
+
+// Hooks for non-table battle-strings
+
+.org 0x080d7524 // bsc_string 0: Intro message
+	ldr r0, =battle_intro_buffer_message | 1
+	bl _blxr0
+	ldr r1, =0x080d799c | 1
+	bx r1
+	.pool
+
+
+.org 0x080d75d8 // bsc_string 1: Send out message
+	ldr r0, =battle_send_out_buffer_message | 1
+	bl _blxr0
+	ldr r1, =0x080d799c | 1
+	bx r1
+	.pool
+
+.org 0x080d7710 // bsc_string 3: Switch in message
+	ldr r0, =battle_switch_in_buffer_message | 1
+	bl _blxr0
+	ldr r1, =0x080d799c | 1
+	bx r1
+	.pool
+
+.org 0x080d7814 // bsc_string 5: battle end message
+	ldr r0, =battle_end_battle_buffer_message | 1
+	bl _blxr0
+	ldr r1, =0x080d799c | 1
+	bx r1
+	.pool
+
+// Battle-Script for winning against two trainers
+.org 0x081dca85
+	.byte 0x28 // goto
+	.word battlescript_trainer_battle_won

@@ -6,6 +6,7 @@
 #include "battle/battler.h"
 #include "save.h"
 #include "mega.h"
+#include "pokemon/virtual.h"
 
 // TODO: This function is currently unused. It is ought to be called by every battle_controller_xxx_handle_choose_move
 void battle_controller_emit_move_chosen(u8 buffer_idx, u8 chosen_move_idx, u8 target_battler_idx, u8 mega_evolution) {
@@ -50,3 +51,23 @@ void battle_execute_action() {
         battle_main_callback = battle_end_turn_functions[battle_result];
     }
 }
+
+
+void battle_setup_party_idxs() {
+    if (battle_flags & BATTLE_MULTI) return;
+    u8 sent_out_by_owner[4] = {4, 4, 4, 4};
+    u8 first = 0;
+    u8 last = 0;
+    for (u8 i = 0; i < battler_cnt; i++) {
+        pokemon *party = battler_load_party_range(i, &first, &last);
+        for(u8 j = first; j < last; j++) {
+            // Check if j is the battler already sent out by the same owner
+            if (POKEMON_IS_VIABLE(party + j) && sent_out_by_owner[battler_get_owner(i)] != j) {
+                battler_party_idxs[i] = j;
+                sent_out_by_owner[battler_get_owner(i)] = j;
+                break;
+            }
+        }
+    }
+}
+
