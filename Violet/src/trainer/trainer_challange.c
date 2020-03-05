@@ -17,6 +17,7 @@
 #include "debug.h"
 #include "music.h"
 #include "constants/songs.h"
+#include "battle/state.h"
 
 void special_player_facing() {
     coordinate_t position;
@@ -50,8 +51,8 @@ void special_player_facing() {
 
 bool special_x36_check_loaded_trainerflag() {
     switch (fmem.current_trainer) {
-        case 0: return checktrainerflag(trainer_vars.trainer_id);
-        case 1: return checktrainerflag(fmem.trainer_varsB.trainer_id);
+        case 0: return checkflag(trainer_get_flag());
+        case 1: return checkflag(trainerB_get_flag());
     }
     return true; // Don't battle
 }
@@ -63,10 +64,6 @@ u8 *trainer_get_challange_message() {
         case 1: msg = fmem.trainer_varsB.challange_text; break;
     }
     return str_null_to_empty(msg);
-}
-
-bool checktrainerflag(u16 trainer_id) {
-    return checkflag((u16) (trainer_id + 0x500));
 }
 
 static void trainer_variables_initialize_single_trainer(trainer_variables *vars) {
@@ -103,6 +100,7 @@ int trainerbattle_initialize_by_npc_idx(u8 npc_idx) {
             num_trainers = 1;
         }
         fmem.trainers_npc_idxs[fmem.trainers_cnt] = npc_idx;
+        dprintf("Register script %x for trainer %d\n", script, fmem.trainers_cnt);
         fmem.trainers_scripts[fmem.trainers_cnt] = script;
         fmem.trainers_cnt++;
         trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1)); 
@@ -137,7 +135,7 @@ bool trigger_npc_spotting() {
             fmem.trainers_scripts[fmem.current_trainer]);
         // Only configure the second trainer, but don't launch a script with it
         fmem.current_trainer = 1;
-        trainer_configure_by_overworld_script(fmem.trainers_scripts[fmem.current_trainer]);
+        trainer_configure_by_overworld_script(fmem.trainers_scripts[fmem.current_trainer] + 1);
         fmem.current_trainer = 0;
         return true;
     }
@@ -172,16 +170,30 @@ enum {
     LOAD_SCRIPT_OFFSET_AND_END,
 };
 
-trainerbattle_configuration trainerbattle_configuration_single_to_trainerB[] = {
-    {.dst = &trainer_vars.kind_of_battle, .command = LOAD_HWORD},
+static trainerbattle_configuration trainerbattle_configuration_single_to_trainerB[] = {
+    {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
     {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
     {.dst = &fmem.trainer_varsB.challange_text, .command = LOAD_WORD},
     {.dst = &fmem.trainer_varsB.defeat_text, .command = LOAD_WORD},
     {.dst = &fmem.trainer_varsB.victory_text, .command = CLEAR_WORD},
-    {.dst = &fmem.trainer_varsB.unable_to_battle_text, .command = CLEAR_WORD},
-    {.dst = &fmem.trainer_varsB.script_later, .command = CLEAR_WORD},
     {.dst = &fmem.trainer_varsB.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
+};
+
+static trainerbattle_configuration trainerbattle_configuration_two_trainers[] = {
+    {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
+    {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
+    {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
+    {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
+    {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
+    {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
+    {.dst = &fmem.trainer_varsB.defeat_text, .command = LOAD_WORD},
+    {.dst = &trainer_vars.victory_text, .command = CLEAR_WORD},
+    {.dst = &fmem.trainer_varsB.victory_text, .command = CLEAR_WORD},
+    {.dst = &trainer_vars.unable_to_battle_text, .command = CLEAR_WORD},
+    {.dst = &trainer_vars.script_later, .command = LOAD_WORD},
+    {.dst = &trainer_vars.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
+
 };
 
 void trainer_configuration_print(trainer_variables *v) {
@@ -233,15 +245,20 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             trainerbattle_configure(trainerbattle_configuration_losable, ow_script);
             trainerbattle_load_target_npc();
             return ow_script_trainerbattle_with_continuation;
+        case TRAINER_BATTLE_TWO_TRAINERS:
+            fmem.trainers_cnt = 2;
+            trainerbattle_configure(trainerbattle_configuration_two_trainers, ow_script);
+            trainerbattle_load_target_npc();
+            return ow_script_trainerbattle_double;
         case TRAINER_BATTLE_SINGLE:
         default: { // For spotted trainer double battles
             if (fmem.current_trainer == 0) { // Initialize trainerA 
-                dprintf("Configure trainerA\n");
+                dprintf("Configure trainerA @%x\n", ow_script);
                 trainerbattle_configure(trainerbattle_configuration_single, ow_script);  
                 // print_trainer_configuration(&trainer_vars);
                 trainerbattle_load_target_npc();
             } else { // Initialize trainerB
-                dprintf("Configure trainerB\n");
+                dprintf("Configure trainerB @%x\n", ow_script);
                 trainerbattle_configure(trainerbattle_configuration_single_to_trainerB, ow_script);
                 *var_access(VAR_SECOND_TRAINER) = fmem.trainer_varsB.trainer_id;
                 // print_trainer_configuration(&fmem.trainer_varsB);
@@ -276,4 +293,14 @@ void trainer_play_encounter_music() {
         }
         song_play_by_controller(music);
     }
+}
+
+u16 trainerB_get_flag() {
+    return (u16)(0x500 + fmem.trainer_varsB.trainer_id);
+}
+
+void trainer_set_flags() {
+    setflag(trainer_get_flag());
+    if (battle_flags & BATTLE_TWO_TRAINERS)
+        setflag(trainerB_get_flag());
 }

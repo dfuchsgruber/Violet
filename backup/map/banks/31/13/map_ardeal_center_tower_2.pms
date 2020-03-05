@@ -1,0 +1,87 @@
+{
+	"data": {
+		"footer": "map_footer_ardeal_tower",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 4,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "50",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "10",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "4",
+					"script": "ow_script_ardeal_trainer_2",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "6",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "12",
+					"target_bank": "31"
+				},
+				{
+					"x": "4",
+					"y": "6",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "12",
+					"target_bank": "31"
+				},
+				{
+					"x": "9",
+					"y": "6",
+					"level": 0,
+					"target_warp_idx": "0",
+					"target_map": "14",
+					"target_bank": "31"
+				},
+				{
+					"x": "10",
+					"y": "6",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "14",
+					"target_bank": "31"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_ARDEAL",
+		"footer_idx": 100,
+		"namespace": "MAP_ARDEAL",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": "0",
+		"show_name": "DONT_SHOW",
+		"level": "0",
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_ardeal_center_tower_2",
+	"type": "header"
+}

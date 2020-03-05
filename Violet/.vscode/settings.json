@@ -50,6 +50,8 @@
         "random": "c",
         "oam.h": "c",
         "language.h": "c",
-        "vars.h": "c"
+        "vars.h": "c",
+        "trainerclasses.h": "c",
+        "difficulties.h": "c"
     }
 }

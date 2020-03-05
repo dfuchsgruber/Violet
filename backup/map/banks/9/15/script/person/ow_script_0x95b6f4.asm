@@ -1,0 +1,21 @@
+.include "callstds.s"
+.include "overworld_script.s"
+
+
+.global ow_script_0x95b6f4
+ow_script_0x95b6f4:
+loadpointer 0x0 str_0x95c769
+callstd MSG_FACE
+end
+
+
+.ifdef LANG_GER
+.global str_0x95c769
+
+str_0x95c769:
+    .string "Ist dir der Name Lester ein\nBegriff?\pEr ist ein großer Unterstützer des\nFossilienprojekts der Laz.Corp."
+        
+        
+.elseif LANG_EN
+
+.endif

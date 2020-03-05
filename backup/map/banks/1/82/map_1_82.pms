@@ -1,0 +1,152 @@
+{
+	"data": {
+		"footer": "map_footer_155",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 5,
+			"trigger_cnt": 3,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"is_trainer": 1,
+					"script": "ow_script_0x864763",
+					"y": 9,
+					"target_index": 1,
+					"field_3": 0,
+					"picture": 49,
+					"flag": "INFERIOR_VIOLET_GRUNTS",
+					"x": 12,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 3,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"is_trainer": 0,
+					"script": "0",
+					"y": 18,
+					"target_index": 2,
+					"field_3": 0,
+					"picture": 86,
+					"flag": "PKMNMENU",
+					"x": 27,
+					"field_2": 0,
+					"level": 0,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
+					"behaviour_range": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"target_map": 81,
+					"y": 5,
+					"target_bank": 1,
+					"level": 0,
+					"x": 4,
+					"target_warp_idx": 1
+				},
+				{
+					"target_map": 12,
+					"y": 14,
+					"target_bank": 0,
+					"level": 0,
+					"x": 11,
+					"target_warp_idx": 0
+				},
+				{
+					"target_map": 12,
+					"y": 19,
+					"target_bank": 0,
+					"level": 0,
+					"x": 27,
+					"target_warp_idx": 1
+				},
+				{
+					"target_map": 13,
+					"y": 5,
+					"target_bank": 0,
+					"level": 0,
+					"x": 28,
+					"target_warp_idx": 0
+				},
+				{
+					"target_map": 82,
+					"y": 63,
+					"target_bank": 1,
+					"level": 0,
+					"x": 17,
+					"target_warp_idx": 5
+				}
+			],
+			"triggers": [
+				{
+					"value": 51,
+					"y": 11,
+					"level": 0,
+					"x": 28,
+					"script": "ow_script_0x966529",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"value": 51,
+					"y": 11,
+					"level": 0,
+					"x": 29,
+					"script": "ow_script_0x966529",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"value": 51,
+					"y": 11,
+					"level": 0,
+					"x": 30,
+					"script": "ow_script_0x966529",
+					"field_5": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				}
+			],
+			"signposts": []
+		},
+		"levelscripts": "lscr_0x71d848",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_KONEX_KLUB",
+		"footer_idx": 155,
+		"namespace": "MAP_VULCANO",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_STATIC_FOG",
+		"type": "MAP_TYPE_BASEMENT",
+		"show_name": "MAP_SHOW_NAME_7",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"bike_usable": "1",
+		"level": 0
+	},
+	"label": "map_1_82",
+	"type": "header"
+}

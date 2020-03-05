@@ -79,6 +79,18 @@ void battle_controller_emit_set_pokemon_data(u8 buffer_idx, u8 request_idx, u8 p
 void battle_controller_emit_draw_trainer_picture(u8 buffer_idx);
 
 /**
+ * Emits an event to slide out the trainer picture to the right.
+ * @param buffer_idx the buffer to use (0 or 1)
+ **/
+void battle_controller_emit_trainer_slide_out(u8 buffer_idx);
+
+/**
+ * Emits an event to slide in the trainer picture from the right.
+ * @param buffer_idx the buffer to use (0 or 1)
+ **/
+void battle_controller_emit_trainer_slide_in(u8 buffer_idx);
+
+/**
  * Emits an event to make trainers throw out their balls.
  * @param buffer_idx the buffer to use (0 or 1)
  **/

@@ -12,7 +12,7 @@
 #include "types.h"
 #include "pokemon/virtual.h"
 #include "constants/battle_statuses.h"
-
+#include "constants/battle/battle_positions.h"
 
 typedef struct battler {
     u16 species;
@@ -209,11 +209,6 @@ extern u8 battle_stat_change_multipliers[][2];
 
 extern u8 battler_action_chosen[4];
 
-#define BATTLE_POSITION_PLAYER_LEFT        0
-#define BATTLE_POSITION_OPPONENT_LEFT      1
-#define BATTLE_POSITION_PLAYER_RIGHT       2
-#define BATTLE_POSITION_OPPONENT_RIGHT     3
-
 /**
  * Checks if a battler is an opponent
  * @param index The battler index
@@ -240,6 +235,13 @@ u8 battlers_alive(int side);
  * @return position position of the battler
  */
 u8 battler_get_position(u8 battler_idx);
+
+/**
+ * Gets the idx of a battler at a certain position.
+ * @param position the position to get
+ * @return the battler idx
+ **/
+u8 battler_get_by_position(u8 position);
 
 /**
  * Gets the effective speed of a battler, considering paralysis, items, abilities, etc.

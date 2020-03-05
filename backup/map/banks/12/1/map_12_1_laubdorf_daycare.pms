@@ -1,0 +1,63 @@
+{
+	"data": {
+		"footer": "map_footer_24_laubdorf_daycare",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "35",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "5",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_laubdorf_daycare_inside",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "5",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "9",
+					"target_bank": "3"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_LAUBDORF",
+		"footer_idx": 24,
+		"namespace": "MAP_LAUBDORF",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"show_name": "DONT_SHOW",
+		"battle_style": 0,
+		"level": 0
+	},
+	"label": "map_12_1_laubdorf_daycare",
+	"type": "header"
+}

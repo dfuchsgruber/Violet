@@ -1,0 +1,121 @@
+{
+	"data": {
+		"footer": "map_footer_ardeal_dungeon",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 6,
+			"trigger_cnt": 0,
+			"signpost_cnt": 1,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "32",
+					"y": "15",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ARDEAL_ITEM_4",
+					"value": {
+						"item": "ITEM_TM41",
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "15",
+					"target_bank": "31"
+				},
+				{
+					"x": "4",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "15",
+					"target_bank": "31"
+				},
+				{
+					"x": "15",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "16",
+					"target_bank": "31"
+				},
+				{
+					"x": "16",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": "16",
+					"target_bank": "31"
+				},
+				{
+					"x": "36",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "16",
+					"target_bank": "31"
+				},
+				{
+					"x": "37",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "16",
+					"target_bank": "31"
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": "15",
+					"y": "8",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_ardeal_dungeon_spiritomb"
+					}
+				}
+			]
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_DARK_QUEEN",
+		"footer_idx": 101,
+		"namespace": "MAP_ARDEAL",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_CLOUDY",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": "0",
+		"show_name": "DONT_SHOW",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_ardeal_dungeon",
+	"type": "header"
+}

@@ -158,4 +158,8 @@ bool battlescript_force_switch_out();
 
 void sub_08013ef0(u8 battler_idx);
 
+
+// Multipliers for how much money is lost at losing a battle.
+extern u8 money_lost_multipliers_by_number_of_badges[9];
+
 #endif /* INCLUDE_C_BATTLE_BATTLESCRIPT_H_ */

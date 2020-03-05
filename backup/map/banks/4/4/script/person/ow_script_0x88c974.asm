@@ -1,0 +1,21 @@
+.include "callstds.s"
+.include "overworld_script.s"
+
+
+.global ow_script_0x88c974
+ow_script_0x88c974:
+loadpointer 0x0 str_0x8a08b0
+callstd MSG_FACE
+end
+
+
+.ifdef LANG_GER
+.global str_0x8a08b0
+
+str_0x8a08b0:
+    .string "Einst war ich ein glorreicher\nTrainer.\lAber nunDOTS\lNunDOTS bin ich ein alter GreisDOTS"
+        
+        
+.elseif LANG_EN
+
+.endif

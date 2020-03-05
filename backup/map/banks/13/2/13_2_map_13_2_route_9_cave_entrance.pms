@@ -1,0 +1,135 @@
+{
+	"data": {
+		"footer": "map_footer_27_route_9_cave_entrance",
+		"events": {
+			"person_cnt": 0,
+			"warp_cnt": 2,
+			"trigger_cnt": 0,
+			"signpost_cnt": 5,
+			"persons": [],
+			"warps": [
+				{
+					"x": "12",
+					"y": "18",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "0",
+					"target_bank": "13"
+				},
+				{
+					"x": "13",
+					"y": "5",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "3",
+					"target_bank": "13"
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": "8",
+					"y": "11",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_9_cave_stone_0"
+					}
+				},
+				{
+					"x": "12",
+					"y": "8",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_9_cave_stone_1"
+					}
+				},
+				{
+					"x": "16",
+					"y": "11",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_9_cave_stone_2"
+					}
+				},
+				{
+					"x": "14",
+					"y": "15",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_9_cave_stone_3"
+					}
+				},
+				{
+					"x": "10",
+					"y": "15",
+					"level": 0,
+					"type": 0,
+					"field_6": 0,
+					"field_7": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_9_cave_stone_4"
+					}
+				}
+			]
+		},
+		"levelscripts": "map_13_2_route_9_cave_levelscripts",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_DARK_QUEEN",
+		"footer_idx": 27,
+		"namespace": "MAP_ROUTE_9",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_BASEMENT",
+		"bike_usable": "1",
+		"show_name": "DONT_SHOW",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"level": 0
+	},
+	"label": "map_13_2_route_9_cave_entrance",
+	"type": "header"
+}

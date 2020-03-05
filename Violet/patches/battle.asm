@@ -311,6 +311,13 @@ _blxr3:
 	bx r0
 	.pool
 
+.org 0x08037da4 // For trainerslidein, chose the correct trainer picture
+	ldr r0, =battle_controller_opponent_get_trainer_pic | 1
+	bl _blxr0
+	ldr r1, =0x08037e0e | 1
+	bx r1
+	.pool
+
 
 .org 0x08013552
 	ldr r0, =battle_intro_try_second_trainer_ball_throw | 1
@@ -374,3 +381,8 @@ _blxr3:
 .org 0x081dca85
 	.byte 0x28 // goto
 	.word battlescript_trainer_battle_won
+
+.org 0x08054c24
+	ldr r0, =money_lost | 1
+	bx r0 
+	.pool

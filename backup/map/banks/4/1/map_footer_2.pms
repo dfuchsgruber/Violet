@@ -1,0 +1,1677 @@
+{
+	"data": {
+		"border": [
+			[
+				{
+					"block_idx": 8,
+					"level": 0
+				},
+				{
+					"block_idx": 8,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 8,
+					"level": 0
+				},
+				{
+					"block_idx": 8,
+					"level": 0
+				}
+			]
+		],
+		"tileset_primary": "maptileset12",
+		"tileset_secondary": "maptileset241959",
+		"blocks": [
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 16
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 16
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 807,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 799,
+					"level": 1
+				},
+				{
+					"block_idx": 649,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 646,
+					"level": 1
+				},
+				{
+					"block_idx": 647,
+					"level": 1
+				},
+				{
+					"block_idx": 776,
+					"level": 1
+				},
+				{
+					"block_idx": 777,
+					"level": 1
+				},
+				{
+					"block_idx": 778,
+					"level": 1
+				},
+				{
+					"block_idx": 651,
+					"level": 1
+				},
+				{
+					"block_idx": 659,
+					"level": 1
+				},
+				{
+					"block_idx": 797,
+					"level": 1
+				},
+				{
+					"block_idx": 656,
+					"level": 1
+				},
+				{
+					"block_idx": 657,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 654,
+					"level": 1
+				},
+				{
+					"block_idx": 648,
+					"level": 1
+				},
+				{
+					"block_idx": 784,
+					"level": 1
+				},
+				{
+					"block_idx": 785,
+					"level": 12
+				},
+				{
+					"block_idx": 786,
+					"level": 1
+				},
+				{
+					"block_idx": 667,
+					"level": 1
+				},
+				{
+					"block_idx": 668,
+					"level": 1
+				},
+				{
+					"block_idx": 655,
+					"level": 1
+				},
+				{
+					"block_idx": 798,
+					"level": 1
+				},
+				{
+					"block_idx": 657,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 662,
+					"level": 12
+				},
+				{
+					"block_idx": 663,
+					"level": 12
+				},
+				{
+					"block_idx": 708,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 708,
+					"level": 12
+				},
+				{
+					"block_idx": 675,
+					"level": 12
+				},
+				{
+					"block_idx": 676,
+					"level": 12
+				},
+				{
+					"block_idx": 805,
+					"level": 12
+				},
+				{
+					"block_idx": 806,
+					"level": 12
+				},
+				{
+					"block_idx": 657,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 812,
+					"level": 12
+				},
+				{
+					"block_idx": 813,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 708,
+					"level": 12
+				},
+				{
+					"block_idx": 792,
+					"level": 12
+				},
+				{
+					"block_idx": 793,
+					"level": 12
+				},
+				{
+					"block_idx": 794,
+					"level": 12
+				},
+				{
+					"block_idx": 657,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 780,
+					"level": 1
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 820,
+					"level": 1
+				},
+				{
+					"block_idx": 821,
+					"level": 1
+				},
+				{
+					"block_idx": 822,
+					"level": 1
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 800,
+					"level": 0
+				},
+				{
+					"block_idx": 801,
+					"level": 12
+				},
+				{
+					"block_idx": 802,
+					"level": 0
+				},
+				{
+					"block_idx": 781,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 803,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 729,
+					"level": 12
+				},
+				{
+					"block_idx": 730,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 0
+				},
+				{
+					"block_idx": 808,
+					"level": 16
+				},
+				{
+					"block_idx": 809,
+					"level": 1
+				},
+				{
+					"block_idx": 810,
+					"level": 16
+				},
+				{
+					"block_idx": 657,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 788,
+					"level": 1
+				},
+				{
+					"block_idx": 811,
+					"level": 1
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 737,
+					"level": 12
+				},
+				{
+					"block_idx": 738,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 696,
+					"level": 12
+				},
+				{
+					"block_idx": 816,
+					"level": 0
+				},
+				{
+					"block_idx": 817,
+					"level": 12
+				},
+				{
+					"block_idx": 818,
+					"level": 0
+				},
+				{
+					"block_idx": 789,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 0
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 1
+				},
+				{
+					"block_idx": 795,
+					"level": 12
+				}
+			]
+		],
+		"width": 20,
+		"height": 20,
+		"border_width": 2,
+		"border_height": 2,
+		"field_1A": 0
+	},
+	"label": "map_footer_2",
+	"type": "footer"
+}

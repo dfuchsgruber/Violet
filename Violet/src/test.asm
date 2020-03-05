@@ -34,8 +34,9 @@ str_afterb:
 
 ow_script_test:
 
-
-trainerbattlecont 0x1 0x15e 0x0 str_a str_0x96f156 ow_script_0x96fbaa
+trainerbattletwotrainers 0x15f 0x160 0 str_beforea str_aftera str_afterb cont
+trainerbattlecont 0x1 0x160 0x0 str_a str_0x96f156 cont
+cont:
 setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 givepokemon POKEMON_TROPIUS 80 ITEM_TROPIUSNIT 0 0 0
 end

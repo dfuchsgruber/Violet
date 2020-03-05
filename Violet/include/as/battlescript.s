@@ -575,7 +575,7 @@
 
 .macro pricemoney failure_address:req
 .byte 0x5D
-.byte \failure_address
+.word \failure_address
 .endm
 
 .macro cmd5e cmd5e_bank
@@ -1298,6 +1298,11 @@
 
 .macro waitbattleanimation
 .byte 0xFA
+.endm
+
+.macro trainerslideout bank:req
+.byte 0xFB
+.byte \bank
 .endm
 
 @// Meta macros

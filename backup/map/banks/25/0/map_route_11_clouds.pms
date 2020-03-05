@@ -1,0 +1,133 @@
+{
+	"data": {
+		"footer": "map_footer_route_11_clouds",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 4,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "57",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "16",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_route_11_trainer_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "58",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "10",
+					"y": "38",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_route_11_clouds_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "6",
+					"y": "30",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "12",
+					"target_bank": "3"
+				},
+				{
+					"x": "7",
+					"y": "30",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "12",
+					"target_bank": "3"
+				},
+				{
+					"x": "7",
+					"y": "31",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "12",
+					"target_bank": "3"
+				},
+				{
+					"x": "6",
+					"y": "31",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "12",
+					"target_bank": "3"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "lscr_route_2_east_clouds",
+		"connections": {
+			"connection_cnt": 3,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_NORTH",
+					"displacement": "0",
+					"bank": "11",
+					"map_idx": "2",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_SOUTH",
+					"displacement": "-21",
+					"bank": "19",
+					"map_idx": "9",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": "12",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": "MUS_CLOUDS",
+		"footer_idx": 62,
+		"namespace": "MAP_ROUTE_11",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_CLOUD",
+		"bike_usable": "1",
+		"show_name": "DONT_SHOW",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_route_11_clouds",
+	"type": "header"
+}

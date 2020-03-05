@@ -1,0 +1,75 @@
+{
+	"data": {
+		"footer": "map_footer_36_ceometria_gym_punishment_room",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 1,
+			"trigger_cnt": 1,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "0xF0",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "3",
+					"y": "4",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "16",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				}
+			],
+			"triggers": [
+				{
+					"x": "3",
+					"y": "3",
+					"level": 0,
+					"field_5": 0,
+					"var": "AKTANIA_FLASHBACK_LSCR_PLAYER_INVISIBLE",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_ceometria_gym_punishment_room_door"
+				}
+			],
+			"signposts": []
+		},
+		"levelscripts": "lscr_ceometria_gym_punishment_room",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_ARENA_AND_TOP_4_LOTTE",
+		"footer_idx": 36,
+		"namespace": "MAP_CEOMETRIA",
+		"flash_type": 0,
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"show_name": "DONT_SHOW",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_ARENA"
+	},
+	"label": "map_19_7_ceometria_gym_punishment_room",
+	"type": "header"
+}

@@ -239,4 +239,18 @@ void tmp_hash_new_seed();
  **/
 void save_set_player_non_surfing();
 
+/**
+ * Adds a certain amount of money to an encrypted variable.
+ * @param dst the encrypted destination where the money is to be added.
+ * @param value the amount to add.
+ **/
+void money_add(u32 *dst, u32 value);
+
+/**
+ * Gets the amount of money from an encrypted variable.
+ * @param dst the encrypted variable
+ * @return the amount of money
+ **/
+u32 money_get(u32 *dst);
+
 #endif

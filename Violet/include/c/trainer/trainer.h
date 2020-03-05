@@ -9,9 +9,9 @@
 #define INCLUDE_C_TRAINER_TRAINER_H_
 
 #define TRAINER_CNT 0x2E8
-#define TRAINER_CLASS_CNT 107
 
 #include "trainer/party.h"
+#include "constants/trainerclasses.h"
 
 typedef struct {
     u8 uses_custom_moves : 1;
@@ -39,7 +39,9 @@ typedef struct {
 
 trainer trainers[TRAINER_CNT];
 
-u8 trainer_class_names[TRAINER_CLASS_CNT][13];
+u8 trainer_class_names[TRAINERCLASS_CNT][13];
+
+u8 trainer_class_money_multipliers[TRAINERCLASS_CNT];
 
 /**
  * Checks the flag of a trainer
@@ -91,5 +93,11 @@ int player_party_get_double_battle_viability();
  * @return how many trainers were found, i.e. 1 if a normal trainer was found, 2 if a double battle trainer was found, 0 else
  **/
 int trainerbattle_initialize_by_npc_idx(u8 npc_idx);
+
+/**
+ * Gets the flag of the second opponent.
+ * @return trainerflag of the second opponent.
+ **/
+u16 trainerB_get_flag();
 
 #endif /* INCLUDE_C_TRAINER_TRAINER_H_ */

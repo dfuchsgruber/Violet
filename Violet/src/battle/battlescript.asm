@@ -87,7 +87,7 @@ battle_script_cmds:
 	.word 0x8024371
 	.word 0x8024bcd
 	.word 0x8024dbd
-	.word 0x8025061
+	.word bsc_cmd_trainerslidein
 	.word 0x80250a1
 	.word 0x80250dd
 	.word 0x8025119
@@ -97,7 +97,7 @@ battle_script_cmds:
 	.word 0x8025301
 	.word 0x8025665
 	.word 0x80257a1
-	.word 0x8025831
+	.word bsc_cmd_pricemoney
 	.word 0x80259f5
 	.word 0x8025aa9
 	.word 0x8025af9
@@ -252,7 +252,8 @@ battle_script_cmds:
 	.word 0x802df85
 	.word 0x802dfad
 	.word 0x802dfb9
-        .word bsc_cmd_custom_attack_anim
-        .word bsc_cmd_callasm
-		.word bsc_cmd_wait_battle_animation
+	.word bsc_cmd_custom_attack_anim
+	.word bsc_cmd_callasm
+	.word bsc_cmd_wait_battle_animation
+	.word bsc_cmd_trainerslideout
 

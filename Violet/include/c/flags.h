@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_FLAGS_H_
 #define INCLUDE_C_FLAGS_H_
 
+#include "types.h"
 #include "constants/flags.h"
 
 /**
@@ -42,5 +43,12 @@ bool checkflag(u16 flag);
  * @return offset of the byte containing the flag
  */
 u8 *flag_access(u16 flag);
+
+/**
+ * Calculates how many badges the player has unlocked.
+ * @return how many badges the player has
+ **/
+u8 badges_number_get();
+
 
 #endif /* INCLUDE_C_FLAGS_H_ */

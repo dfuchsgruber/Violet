@@ -1,0 +1,63 @@
+{
+	"data": {
+		"footer": "map_footer_29_route_9_cave_inside",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "9",
+					"y": "10",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_SPIRITKERN",
+					"value": {
+						"item": "ITEM_SPIRITKERN",
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "9",
+					"y": "13",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "2",
+					"target_bank": "13"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_DARK_QUEEN",
+		"footer_idx": 29,
+		"namespace": "MAP_ROUTE_9",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_BASEMENT",
+		"bike_usable": "1",
+		"show_name": "DONT_SHOW",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"level": 0
+	},
+	"label": "map_13_3_route_9_cave_inside",
+	"type": "header"
+}

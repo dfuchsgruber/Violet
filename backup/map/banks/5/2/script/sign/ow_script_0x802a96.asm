@@ -1,0 +1,21 @@
+.include "callstds.s"
+.include "overworld_script.s"
+
+
+.global ow_script_0x802a96
+ow_script_0x802a96:
+loadpointer 0x0 str_0x80eaf8
+callstd MSG_SIGN
+end
+
+
+.ifdef LANG_GER
+.global str_0x80eaf8
+
+str_0x80eaf8:
+    .string "Ein Bücherregal. Ich fasse es\nbesser nicht an."
+        
+        
+.elseif LANG_EN
+
+.endif

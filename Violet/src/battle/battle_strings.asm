@@ -408,6 +408,7 @@ bsc_strings:
 .word str_battle_x19E
 .word str_battle_x19F
 .word str_battle_x1A0
+.word str_battle_x1A1
 
 @ // Define the strings
 
@@ -2819,6 +2820,9 @@ bsc_strings:
 
 	str_battle_x1A0:
 		.string "Spieler besiegt\nBSC_TRAINER1_CLASS BSC_TRAINER1_NAME und\lBSC_TRAINER2_CLASS BSC_TRAINER2_NAME!\p"
+		
+	str_battle_x1A1:
+		.string "BSC_TRAINER2_LOSE_TEXT"
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -4831,6 +4835,9 @@ bsc_strings:
 	
 	str_battle_x1A0:
 		.string "Player defeats\nBSC_TRAINER1_CLASS BSC_TRAINER1_NAME and\lBSC_TRAINER2_CLASS BSC_TRAINER2_NAME!\p"
+
+	str_battle_x1A1:
+		.string "BSC_TRAINER2_LOSE_TEXT"
 
 .endif
 

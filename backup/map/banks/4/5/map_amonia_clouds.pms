@@ -1,0 +1,125 @@
+{
+	"data": {
+		"footer": "map_footer_amonia_clouds",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 4,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "170",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "12",
+					"y": "8",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_amonia_clouds_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "171",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "17",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_amonia_clouds_person_1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "23",
+					"y": "18",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": 0,
+					"target_bank": "3"
+				},
+				{
+					"x": "24",
+					"y": "18",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": 0,
+					"target_bank": "3"
+				},
+				{
+					"x": "24",
+					"y": "19",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": 0,
+					"target_bank": "3"
+				},
+				{
+					"x": "23",
+					"y": "19",
+					"level": 0,
+					"target_warp_idx": "6",
+					"target_map": 0,
+					"target_bank": "3"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "lscr_route_2_east_clouds",
+		"connections": {
+			"connection_cnt": 2,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_NORTH",
+					"displacement": "-5",
+					"bank": "3",
+					"map_idx": "76",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "3",
+					"map_idx": 0,
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": "MUS_CLOUDS",
+		"footer_idx": 48,
+		"namespace": "MAP_AMONIA",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_CLOUD",
+		"bike_usable": "1",
+		"show_name": "DONT_SHOW",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_amonia_clouds",
+	"type": "header"
+}

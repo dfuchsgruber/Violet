@@ -14,6 +14,14 @@
 #include "constants/abilities.h"
 #include "battle/controller.h"
 #include "prng.h"
+#include "constants/battle/battle_results.h"
+#include "trainer/trainer.h"
+#include "trainer/virtual.h"
+#include "save.h"
+#include "vars.h"
+#include "constants/difficulties.h"
+#include "battle/battle_string.h"
+#include "flags.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -158,5 +166,97 @@ void bsc_cmd_x8f_random_switch_out() {
         }
     } else {
         battlescript_force_switch_out();
+    }
+}
+
+void bsc_cmd_trainerslideout() {
+    active_battler = battler_get_by_position(bsc_offset[1]);
+    battle_controller_emit_trainer_slide_out(0);
+    battler_mark_for_controller_execution(active_battler);
+    bsc_offset += 2;    
+}
+
+void bsc_cmd_trainerslidein() {
+    active_battler = battler_get_by_position(bsc_offset[1]);
+    battle_controller_emit_trainer_slide_in(0);
+    battler_mark_for_controller_execution(active_battler);
+    bsc_offset += 2;    
+}
+
+
+static int trainer_pricemoney_get(u16 trainer_idx) {
+    // Calculate the average level of the trainer pokemon
+    int average_level = 0;
+    if (trainers[trainer_idx].uses_custom_items && trainers[trainer_idx].uses_custom_items) {
+        trainer_pokemon_custom_item_custom_attacks *party = (trainer_pokemon_custom_item_custom_attacks*) trainers[trainer_idx].party;
+        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
+            average_level += party[i].level;
+    } else if (trainers[trainer_idx].uses_custom_items) {
+        trainer_pokemon_custom_item_default_attacks *party = (trainer_pokemon_custom_item_default_attacks*) trainers[trainer_idx].party;
+        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
+            average_level += party[i].level;
+    } else if (trainers[trainer_idx].uses_custom_moves) {
+        trainer_pokemon_default_item_custom_attacks *party = (trainer_pokemon_default_item_custom_attacks*) trainers[trainer_idx].party;
+        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
+            average_level += party[i].level;
+    } else {
+        trainer_pokemon_default_item_default_attacks *party = (trainer_pokemon_default_item_default_attacks*) trainers[trainer_idx].party;
+        for (int i = 0; i < trainers[trainer_idx].pokemon_cnt; i++)
+            average_level += party[i].level;
+    }
+    average_level = MAX(1, 1000 * average_level / trainers[trainer_idx].pokemon_cnt); // Higher resultion by multplying with 1000
+    dprintf("Trainer %d has an average level of %d / 1000\n", trainer_idx, average_level);
+    int money = average_level * battle_state->money_multiplier * trainer_class_money_multipliers[trainers[trainer_idx].trainerclass] * 4;
+    dprintf("Trainer %d yields %d / 1000 money. Multiplier is %d, class multiplier is %d\n", trainer_idx, 
+        money, battle_state->money_multiplier, trainer_class_money_multipliers[trainers[trainer_idx].trainerclass]);
+    return money / 1000;
+}
+
+u32 money_lost() {
+    int average_player_level = 0, pokemon_cnt = 0;
+    for (int i = 0; i < 6; i++) {
+        if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SANITY_HAS_SPECIES, 0) && 
+            !pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SANITY_IS_EGG, 0)) {
+            average_player_level += pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_LEVEL, 0);
+            pokemon_cnt++;
+        }
+    }
+    if (pokemon_cnt) average_player_level = MAX(1, average_player_level * 1000 / pokemon_cnt);
+    else average_player_level = 1;
+    dprintf("Average player level is %d / 1000.\n", average_player_level);
+    int money = money_lost_multipliers_by_number_of_badges[badges_number_get()] * 4 * average_player_level;
+    switch (*var_access(DIFFICULTY)) {
+        case DIFFICULTY_VERY_EASY: money /= 2; break;
+        case DIFFICULTY_EASY: money -= money / 2; break;
+        case DIFFICULTY_HARD: money += money / 2; break;
+        case DIFFICULTY_VERY_HARD: money *= 2; break;
+    }
+    return MIN((u32)(money / 1000), money_get(&save1->money));
+}
+
+void bsc_cmd_pricemoney() {
+    int money = 0;
+    if (battle_result & BATTLE_RESULT_WON) {
+        // Cut on trainer-tower stuff...
+        money = trainer_pricemoney_get(trainer_vars.trainer_id);
+        if (battle_flags & BATTLE_TWO_TRAINERS)
+            money += trainer_pricemoney_get(fmem.trainer_varsB.trainer_id);
+        else if (battle_flags & BATTLE_DOUBLE)
+            money *= 2;
+        switch(*var_access(DIFFICULTY)) {
+            case DIFFICULTY_VERY_EASY: money *= 2; break;
+            case DIFFICULTY_EASY: money += money / 2; break;
+            case DIFFICULTY_HARD: money -= money / 2; break;
+            case DIFFICULTY_VERY_HARD: money /= 2; break;
+        }
+        money_add(&save1->money, (u32)money);
+    } else {
+        money = (int)money_lost();
+    }
+    BSC_BUFFER_NUMBER(bsc_string_buffer0, 5, money);
+    if (money == 0) {
+        bsc_offset = (u8*) UNALIGNED_32_GET(bsc_offset + 1);
+    } else {
+        bsc_offset += 5;
     }
 }
