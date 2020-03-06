@@ -11,6 +11,7 @@
 #include "trainer/trainer.h"
 #include "constants/difficulties.h"
 #include "debug.h"
+#include "battle/ai.h"
 
 void trainer_load_items_and_ai() {
 	memset(battle_struct->history, 0, sizeof(battle_history_t));

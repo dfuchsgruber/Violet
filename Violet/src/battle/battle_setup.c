@@ -4,12 +4,18 @@
 #include "trainer/virtual.h"
 #include "save.h"
 #include "overworld/script.h"
+#include "constants/trainer_battle_types.h"
 
 void battle_initialize_trainerbattle() {
     battle_flags = BATTLE_TRAINER;
     super.callbacks[2] = trainerbattle_continuation;
-    if (fmem.trainers_cnt == 2) {
+    if (fmem.trainers_cnt == 2 || trainer_vars.kind_of_battle == TRAINER_BATTLE_TWO_TRAINERS 
+        || trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_TWO_TRAINERS) {
         battle_flags |= BATTLE_DOUBLE | BATTLE_TWO_TRAINERS;
+    }
+    if (trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_ONE_TRAINER ||
+        trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_TWO_TRAINERS) {
+        battle_flags |= BATTLE_DOUBLE | BATTLE_ALLY;
     }
     // Note: The oak intro part was removed, we don't need it
     trainerbattle_start();

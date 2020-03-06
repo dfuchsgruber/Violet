@@ -188,6 +188,7 @@ extern u16 battler_party_idxs[4];
 extern u8 battler_attacking_order[];
 extern u32 battler_statuses3[4];
 extern u8 item_target_battler;
+extern u8 battler_positions[4];
 
 #define STAT_CHANGE_MULTIPLIER_DIVIDEND 0
 #define STAT_CHANGE_MULTIPLIER_DIVISOR 1

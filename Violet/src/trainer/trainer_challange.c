@@ -196,6 +196,34 @@ static trainerbattle_configuration trainerbattle_configuration_two_trainers[] = 
 
 };
 
+static trainerbattle_configuration trainerbattle_configuration_ally[] = {
+    {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
+    {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
+    {.dst = &fmem.ally_trainer_idx, .command = LOAD_HWORD},
+    {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
+    {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
+    {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
+    {.dst = &trainer_vars.victory_text, .command = CLEAR_WORD},
+    {.dst = &trainer_vars.unable_to_battle_text, .command = CLEAR_WORD},
+    {.dst = &trainer_vars.script_later, .command = LOAD_WORD},
+    {.dst = &trainer_vars.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
+};
+
+static trainerbattle_configuration trainerbattle_configuration_ally_two_trainers[] = {
+    {.dst = &trainer_vars.kind_of_battle, .command = LOAD_BYTE},
+    {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
+    {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
+    {.dst = &fmem.ally_trainer_idx, .command = LOAD_HWORD},
+    {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
+    {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
+    {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
+    {.dst = &fmem.trainer_varsB.defeat_text, .command = LOAD_WORD},
+    {.dst = &trainer_vars.victory_text, .command = CLEAR_WORD},
+    {.dst = &trainer_vars.unable_to_battle_text, .command = CLEAR_WORD},
+    {.dst = &trainer_vars.script_later, .command = LOAD_WORD},
+    {.dst = &trainer_vars.script_continue, .command = LOAD_SCRIPT_OFFSET_AND_END},
+};
+
 void trainer_configuration_print(trainer_variables *v) {
     dprintf("Trainer id %x\n", v->trainer_id);
     dprintf("Ow target %x\n", v->overworld_target);
@@ -246,9 +274,22 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             trainerbattle_load_target_npc();
             return ow_script_trainerbattle_with_continuation;
         case TRAINER_BATTLE_TWO_TRAINERS:
-            fmem.trainers_cnt = 2;
             trainerbattle_configure(trainerbattle_configuration_two_trainers, ow_script);
             trainerbattle_load_target_npc();
+            return ow_script_trainerbattle_double;
+        case TRAINER_BATTLE_ALLY_ONE_TRAINER:
+            trainerbattle_configure(trainerbattle_configuration_ally, ow_script);
+            trainerbattle_load_target_npc();
+            *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
+            dprintf("Ally is %d\n", *var_access(VAR_ALLY));
+            trainer_configuration_print(&trainer_vars);
+            return ow_script_trainerbattle_double;
+        case TRAINER_BATTLE_ALLY_TWO_TRAINERS:
+            trainerbattle_configure(trainerbattle_configuration_ally_two_trainers, ow_script);
+            trainerbattle_load_target_npc();
+            *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
+            dprintf("Ally is %d\n", *var_access(VAR_ALLY));
+            trainer_configuration_print(&trainer_vars);
             return ow_script_trainerbattle_double;
         case TRAINER_BATTLE_SINGLE:
         default: { // For spotted trainer double battles

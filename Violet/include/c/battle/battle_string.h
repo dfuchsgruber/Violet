@@ -34,6 +34,19 @@ extern u8 bsc_string_buffer2[16];
  **/
 void battle_buffer_decrypt(u8 *src, u8 *dst);
 
+/**
+ * Decrypts a battle string into the battle string buffer.
+ * @param src the battle string to decrypt
+ **/
+void battle_string_decrypt_into_battle_string_buffer(const u8 *src);
+
+/**
+ * Decrypts a battle string.
+ * @param src the string to decrypt
+ * @param dst where to write the string
+ **/
+void battle_string_decrypt(const u8 *src, u8 *dst);
+
 
 #define BSC_BUFFER_SPECIES(buffer, species) \
 { \

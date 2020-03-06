@@ -43,11 +43,6 @@ extern trainerbattle_configuration trainerbattle_configuration_losable[];
 extern trainer_variables trainer_vars;
 
 /**
- * Sets the trainer ai up.
- */
-void trainer_load_ai();
-
-/**
  * Reads an unaligned hword form the trainer build mini script
  * @param src the source to read from
  * @return the hword that was read

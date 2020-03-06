@@ -386,3 +386,15 @@ _blxr3:
 	ldr r0, =money_lost | 1
 	bx r0 
 	.pool
+
+.org 0x0800d4f0
+	ldr r0, =battle_controllers_setup_tag_battles | 1
+	bl _blxr0
+	ldr r0, =0x0800d6d8 | 1
+	bx r0
+	.pool
+
+.org 0x0802e2d4
+	ldr r0, =battle_controller_player_or_partner_execution_finished | 1
+	bx r0
+	.pool

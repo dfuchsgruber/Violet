@@ -599,6 +599,31 @@
 .word \continuation
 .endm
 
+.macro trainerbattleally trainer:req ally:req people:req str_challange:req str_defeat:req continuation:req
+.byte 0x5C
+.byte 11
+.hword \trainerA
+.hword \ally
+.hword \people
+.word \str_challange
+.word \str_defeat
+.word \continuation
+.endm
+
+
+.macro trainerbattleallytwotrainers trainerA:req trainerB:req ally:req people:req str_challange:req str_defeatA:req str_defeatB:req continuation:req
+.byte 0x5C
+.byte 12
+.hword \trainerA
+.hword \trainerB
+.hword \ally
+.hword \people
+.word \str_challange
+.word \str_defeatA
+.word \str_defeatB
+.word \continuation
+.endm
+
 .macro repeattrainerbattle 
 .byte 0x5d
 .endm

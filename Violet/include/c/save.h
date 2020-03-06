@@ -191,6 +191,7 @@ typedef struct {
     u8 trainers_npc_idxs[2];
     u8 *trainers_scripts[2];
     trainer_variables trainer_varsB;
+    u16 ally_trainer_idx;
 } floating_memory;
 
 extern saveblock1 *save1;

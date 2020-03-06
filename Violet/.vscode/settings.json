@@ -52,6 +52,7 @@
         "language.h": "c",
         "vars.h": "c",
         "trainerclasses.h": "c",
-        "difficulties.h": "c"
+        "difficulties.h": "c",
+        "attack_affects_whom_flags.h": "c"
     }
 }

@@ -18,6 +18,8 @@
 #include "language.h"
 #include "text.h"
 #include "pokemon/names.h"
+#include "vars.h"
+#include "trainer/trainer.h"
 
 extern u8 battlescript_mega_evolution[];
 extern u8 battlescript_regent_evolution[];
@@ -63,9 +65,33 @@ bool battle_execute_action_mega_evolution() {
                     // Perform a mega evolution
                     mega_evolution_t *mega_evolution = battler_get_available_mega_evolution(battler_idx);
                     if (mega_evolution) {
-                        BSC_BUFFER_BATTLER_NICKNAME_WITH_PREFIX(bsc_string_buffer0, battler_idx, (u8)(battler_party_idxs[battler_idx]))
-                        BSC_BUFFER_ITEM(bsc_string_buffer1, battler_get_keystone(battler_idx));
-                        battler_get_trainer_name(battler_idx, buffer2);
+                        // Find the trainer idx of the battler
+                        u16 trainer_idx = 0xFFFF;
+                        switch (battler_get_position(battler_idx)) {
+                            case BATTLE_POSITION_PLAYER_RIGHT:
+                                if (battle_flags & BATTLE_ALLY) {
+                                    trainer_idx = *var_access(VAR_ALLY);
+                                }
+                                break;
+                            case BATTLE_POSITION_OPPONENT_RIGHT:
+                                if (battle_flags & BATTLE_TWO_TRAINERS) {
+                                    trainer_idx = fmem.trainer_varsB.trainer_id;
+                                    break;
+                                }
+                                FALL_THROUGH;
+                            case BATTLE_POSITION_OPPONENT_LEFT:
+                                trainer_idx = trainer_vars.trainer_id;
+                                break;
+                        }
+                        dprintf("Trainer idx for the string is %d\n", trainer_idx);
+                        if (trainer_idx == 0xFFFF) { // Player
+                            bsc_string_buffer0[0] = 0xFF; // No trainer class
+                            strcpy(bsc_string_buffer1, save2->player_name);
+                        } else {
+                            u8 *dst = strcpy(bsc_string_buffer0, trainer_class_names[trainers[trainer_idx].trainerclass]);
+                            dst[0] = 0; dst[1] = 0xFF; // Spacing between two buffers
+                            strcpy(bsc_string_buffer1, trainers[trainer_idx].name);
+                        }
                         bsc_last_used_item = mega_evolution->mega_item;
                         battle_scripting.battler_idx = battler_idx; // Target for non-buffer-strings (after species transform)
                         battler_form_change(battler_idx, mega_evolution->mega_species);

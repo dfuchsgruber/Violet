@@ -2804,23 +2804,23 @@ bsc_strings:
 
 	.global str_battle_x19C 
 	str_battle_x19C:
-		.string "BSC_LAST_ITEM von\nBSC_BUF0 reagiert auf\lBSC_BUF1 von BSC_COPY_BUFFER2!"
+		.string "BSC_LAST_ITEM von\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX reagiert auf\lBSC_MEGA_KEYSTONE von BSC_BUF0BSC_BUF1!"
 
 	.global str_battle_x19D 
 	str_battle_x19D:
-		.string "BSC_BUF0 hat sich zu\nMega-BSC_COPY_BUFFER2 entwickelt!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX hat sich zu\nMega-BSC_MEGA_TARGET_SPECIES entwickelt!"
 
 	.global str_battle_x19E 
 	str_battle_x19E:
-		.string "BSC_LAST_ITEM lässt die Aura\nvon BSC_BUF0 pulsieren!"
+		.string "BSC_LAST_ITEM lässt die Aura\nvon BSC_SCR_ACTIVE_NAME_WITH_PREFIX pulsieren!"
 
 	.global str_battle_x19F 
 	str_battle_x19F:
-		.string "BSC_BUF0 hat sich zu\nseiner Kaiserform erhoben!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX hat sich zu\nseiner Kaiserform erhoben!"
 
 	str_battle_x1A0:
 		.string "Spieler besiegt\nBSC_TRAINER1_CLASS BSC_TRAINER1_NAME und\lBSC_TRAINER2_CLASS BSC_TRAINER2_NAME!\p"
-		
+		 
 	str_battle_x1A1:
 		.string "BSC_TRAINER2_LOSE_TEXT"
 
@@ -4819,19 +4819,19 @@ bsc_strings:
 
 	.global str_battle_x19C
 	str_battle_x19C:
-		.string " von\nBSC_BUF0's BSC_LAST_ITEM\nreacts to BSC_COPY_BUFFER2's BSC_BUF1!"
+		.string "BSC_LAST_ITEM of\nBSC_SCR_ACTIVE_NAME_WITH_PREFIX BSC_LAST_ITEM\lreacts to BSC_BUF0BSC_BUF1's BSC_MEGA_KEYSTONE!"
 
 	.global str_battle_x19D 
 	str_battle_x19D:
-		.string "BSC_BUF0 evolved into\nMega BSC_COPY_BUFFER2!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX evolved into\nMega BSC_MEGA_TARGET_SPECIES!"
 
 	.global str_battle_x19E 
 	str_battle_x19E:
-		.string "BSC_LAST_ITEM makes\nBSC_BUF0's pulsate!"
+		.string "BSC_LAST_ITEM makes\nthe aura of\lBSC_SCR_ACTIVE_NAME_WITH_PREFIX pulsate!"
 
 	.global str_battle_x19F 
 	str_battle_x19F:
-		.string "BSC_BUF0 has risen\nto its emperor form!"
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX has risen\nto its emperor form!"
 	
 	str_battle_x1A0:
 		.string "Player defeats\nBSC_TRAINER1_CLASS BSC_TRAINER1_NAME and\lBSC_TRAINER2_CLASS BSC_TRAINER2_NAME!\p"

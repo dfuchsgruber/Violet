@@ -9,6 +9,9 @@
 #include "vars.h"
 #include "debug.h"
 #include "constants/battle/battle_results.h"
+#include "mega.h"
+#include "item/item.h"
+#include "pokemon/names.h"
 
 static u8 str_multi_link_intro[] = LANGDEP(
     PSTRING("BSC_LINK_OPPONENT1_NAME und BSC_LINK_OPPONENT2_NAME\nmöchten kämpfen!"),
@@ -279,6 +282,10 @@ u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
             return trainer_class_names[trainers[*var_access(VAR_ALLY)].trainerclass];
         case 0x34: // Ally name
             return trainers[*var_access(VAR_ALLY)].name;
+        case 0x35: // Mega-Idx keystone
+            return items[battler_get_keystone(battle_scripting.battler_idx)].name;
+        case 0x36: // Mega Species
+            return pokemon_names[mega_evolution_get_by_mega_species(battlers[battle_scripting.battler_idx].species)->species];
         default:
             return NULL;
     }

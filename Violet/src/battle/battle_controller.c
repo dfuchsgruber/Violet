@@ -71,3 +71,35 @@ void battle_setup_party_idxs() {
     }
 }
 
+void battle_controller_set_to_partner() {
+    battle_controllers[active_battler] = battle_controller_partner_execute_command;
+}
+
+// Called for double battles without a link partner / opponent, set's up the proper battle controller
+void battle_controllers_setup_tag_battles() {
+    if (battle_flags & (BATTLE_DOUBLE) && battle_flags & (BATTLE_ALLY)) {
+        battler_positions[0] = 0;
+        battle_controllers[0] = battle_controller_set_to_player;
+        battler_positions[1] = 1;
+        battle_controllers[1] = battle_controller_set_to_partner;
+        battler_positions[2] = 2;
+        battle_controllers[2] = battle_controller_set_to_opponent;
+        battler_positions[3] = 3;
+        battle_controllers[3] = battle_controller_set_to_opponent;
+        battler_cnt = 4;
+    } else {
+        battler_positions[0] = 0;
+        battle_controllers[0] = battle_controller_set_to_player;
+        battler_positions[1] = 1;
+        battle_controllers[1] = battle_controller_set_to_player;
+        battler_positions[2] = 2;
+        battle_controllers[2] = battle_controller_set_to_opponent;
+        battler_positions[3] = 3;
+        battle_controllers[3] = battle_controller_set_to_opponent;
+        battler_cnt = 4;
+    }
+}
+
+void battle_controller_player_or_partner_execution_finished() {
+    
+}

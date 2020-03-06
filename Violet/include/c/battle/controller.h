@@ -4,6 +4,8 @@
 #include "types.h"
 #include "constants/battle/battle_actions.h"
 
+#define BATTLE_CONTROLLER_COMMAND_CNT 57
+
 /**
  * Battle controller callback that waits for the player to choose an action (move, item, switch, run)
  **/
@@ -47,6 +49,21 @@ void battle_controller_opponent_emit_chosen_pokemon(u8 buffer_idx, u8 party_idx,
  * Marks the opponent battle controller's execution as finished.
  **/
 void battle_controller_opponent_execution_finished();
+
+/**
+ * Executes the current command from the player battle controller.
+ **/
+void battle_controller_player_execute_command();
+
+/**
+ * Marks the partner's or player's execution as finished.
+ **/
+void battle_controller_player_or_partner_execution_finished();
+
+/**
+ * Executes the current command from the partner battle controller.
+ **/
+void battle_controller_partner_execute_command();
 
 /**
  * Taken from pokeemerald.
@@ -102,6 +119,40 @@ void battle_controller_emit_intro_trainer_ball_throw(u8 buffer_idx);
  **/
 void battler_mark_for_controller_execution(u8 battler_idx);
 
+/**
+ * Battle controller execution for the partner (ally) in a tag battle.
+ **/
+void battle_controller_partner_execute_command();
+
+/**
+ * Sets the battle controller of active_battler to the opponent
+ **/
+void battle_controller_set_to_opponent();
+/**
+ * Sets the battle controller of active_battler to the player
+ **/
+void battle_controller_set_to_player();
+
+/**
+ * Battle controller function for a ai partner to choose a move.
+ **/
+void battle_controller_partner_handle_choose_move();
+
+/**
+ * Battle controller function that overrides the move selection string printing.
+ **/
+void battle_controller_partner_handle_print_selection_string();
+
+/**
+ * Battle controller function for the ally to choose a action: Move, Item, Switching, ...
+ **/
+void battle_controller_partner_handle_choose_action();
+
+/**
+ * Battle controller function for the ally to choose a pokemon from their party.
+ **/
+void battle_controller_partner_handle_choose_pokemon();
+
 #define BOUNCE_EFFECT_BATTLER 0
 #define BOUNCE_EFFECT_HEALTHBAR 1
 
@@ -118,8 +169,24 @@ u8 battle_selected_action[4];
 
 extern void (*battle_controllers[4])();
 
+// Bitfield for each battler, if the battle controller command should be executed
+u32 battler_marked_for_controller_execution;
+
 
 u8 battle_buffer_transfer[256]; // General purpose buffer for transfering data
+
+/**
+ * Gets the player's multiplayer index.
+ **/
+u8 multiplayer_get_idx();
+
+/**
+ * Prepares transfering a battle buffer in a link battle.
+ * @param buffer_idx the buffer to transfer
+ * @param size how many bytes to transfer
+ * @param data the data to transfer
+ **/
+void battle_prepare_buffer_data_transfer_link(u8 buffer_idx, u16 size, void *data);
 
 /**
  * Transfers data for battle (i.e. over the cable, if neccessary)
