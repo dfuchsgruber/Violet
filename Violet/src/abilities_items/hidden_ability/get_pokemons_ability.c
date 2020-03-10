@@ -32,6 +32,6 @@ u8 battler_load_ability_as_defender(pokemon *poke) {
 }
 
 u8 battler_load_ability_as_defender_by_slot(u8 battler_slot){
-    pokemon *p = (battler_is_opponent(battler_slot) ? opponent_pokemon : player_pokemon) + battler_party_idxs[battler_slot];
+    pokemon *p = (battler_is_opponent(battler_slot) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(battler_slot);
     return battler_load_ability_as_defender(p);
 }

@@ -199,11 +199,3 @@ void battle_controller_player_choose_target_wrap() {
     }
     battle_controller_player_choose_target();
 }
-
-// BIG TODO: How to transfer this via link cable?
-void battle_controller_opponent_trigger_mega_evolution() {
-    // TODO: Better AI? Currently opponent just always mega evolves!
-    if (battler_get_available_mega_evolution(active_battler)) {
-        MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
-    }
-}

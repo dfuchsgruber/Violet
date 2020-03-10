@@ -34,7 +34,7 @@ str_afterb:
 
 ow_script_test:
 
-trainerbattleallytwotrainers 0x15f 0x160 0x140 0 str_beforea str_aftera str_afterb cont
+trainerbattleallytwotrainers 0x15f 0x160 0x161 0 str_beforea str_aftera str_afterb cont
 cont:
 loadpointer 0 str_a
 callstd MSG

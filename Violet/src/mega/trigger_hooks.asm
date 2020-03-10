@@ -32,24 +32,3 @@ battle_controller_player_init_move_selection_hook:
 _battle_selection_display_move_names:
     ldr r0, =battle_selection_display_move_names
     bx r0
-
-// Triggers mega evolution when opponent selects an action (that is a move)
-
-.global battle_controller_opponent_choose_action_hook
-
-.align 4
-.thumb
-.thumb_func
-battle_controller_opponent_choose_action_hook:
-    bl battle_controller_opponent_trigger_mega_evolution
-    // Recover original functionality
-    ldr r0, =defending_battler
-    ldrb r0, [r0]
-    lsl r0, #8
-    orr r4, r0
-    mov r0, #1
-    mov r1, #0xa // BATTLE_ACTION_MOVE_CHOOSEN
-    mov r2, r4
-    ldr r3, =0x08038564 | 1
-    bx r3
-    

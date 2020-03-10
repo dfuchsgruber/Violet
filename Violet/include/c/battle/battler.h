@@ -13,6 +13,7 @@
 #include "pokemon/virtual.h"
 #include "constants/battle_statuses.h"
 #include "constants/battle/battle_positions.h"
+#include "constants/pokemon_stat_names.h"
 
 typedef struct battler {
     u16 species;
@@ -166,6 +167,7 @@ extern battle_side_timer_stru battle_side_timers[2];
 extern battle_side_status_stru battle_side_statuses[2];
 extern battler_timer_stru battler_timers;
 extern u8 battlers_absent;
+extern u8 battler_in_party_menu;
 
 #define DAMAGE_CAUSED ((battler_damage_taken[defending_battler].physical_damage != 0 || battler_damage_taken[defending_battler].special_damage != 0))
 
@@ -184,11 +186,12 @@ extern u8 defending_battler_ability;
 extern u8 active_battler;
 extern u8 battler_oams[];
 extern u8 battler_cnt;
-extern u16 battler_party_idxs[4];
+// extern u16 battler_party_idxs[4]; Removed - instead use battler_idx_to_party_idx to account for reorderings...
 extern u8 battler_attacking_order[];
 extern u32 battler_statuses3[4];
 extern u8 item_target_battler;
 extern u8 battler_positions[4];
+extern u16 battler_last_landed_move[4];
 
 #define STAT_CHANGE_MULTIPLIER_DIVIDEND 0
 #define STAT_CHANGE_MULTIPLIER_DIVISOR 1
@@ -204,9 +207,16 @@ extern u8 battle_stat_change_multipliers[][2];
 #define BATTLE_SIDE_OPPONENT 1
 
 #define OWNER_PLAYER 0
-#define OWNER_ALLY 1
-#define OWNER_TRAINER_A 2
+#define OWNER_TRAINER_A 1
+#define OWNER_ALLY 2
 #define OWNER_TRAINER_B 3
+
+/**
+ * Returns the owner of a battler.
+ * @param battler_idx the battler to check ownership of
+ * @return the owner of the battler
+ **/
+u8 battler_get_owner(u8 battler_idx);
 
 extern u8 battler_action_chosen[4];
 
@@ -314,5 +324,25 @@ void battler_get_partner_and_foes(u8 battler, u8 *partner, u8 *foe, u8 *foe_part
  * @return the relative priority of the oam to create
  **/
 u8 battler_oam_get_relative_priority(u8 battler_idx);
+
+/**
+ * Clears fury cutter, destiny bond and grudge for a battler.
+ * @param battler_idx the battler to clear the statuses of
+ **/
+void battler_remove_fury_cutter_destiny_bond_grudge(u8 battler_idx);
+
+/**
+ * Gets the party idx of a battler, accounting for reorderings.
+ * @param battler_idx the battler idx
+ * @return party_idx of the battler, accounting for reorderings.
+ **/
+u8 battler_idx_to_party_idx(u8 battler_idx);
+
+/**
+ * Gets the trainer idx of a battler, or 0xFFFF, if not trainer is associated with the battler.
+ * @param battler_idx the battler
+ * @return the trainer using the battler
+ **/
+u16 trainer_idx_by_battler_idx(u8 battler_idx);
 
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

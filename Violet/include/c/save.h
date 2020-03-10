@@ -186,6 +186,8 @@ typedef struct {
     u8 tbox_idx_braille;
     u8 pc_selection_context;
     void *mega_state;
+    void *trainer_ai_state2;
+    void *battle_state2;
     u8 trainers_cnt; // How many trainers are approaching
     u8 current_trainer;
     u8 trainers_npc_idxs[2];

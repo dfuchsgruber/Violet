@@ -12,6 +12,7 @@
 #include "item/item_effect.h"
 #include "pokemon/virtual.h"
 #include "constants/battle/battle_flags.h"
+#include "save.h"
 
 #define BATTLE_DOUBLE 0x1
 #define BATTLE_LINK 0x2
@@ -26,7 +27,8 @@
 #define BATTLE_ROAMER 0x400
 #define BATTLE_EREADER 0x800
 #define BATTLE_12 0x1000
-#define BATTLE_LEGENDARY 0x2000
+#define BATTLE_WILD_SCRIPTED 0x2000
+#define BATTLE_LEGENDARY 0x4000
 #define BATTLE_GHOST 0x8000
 #define BATTLE_FACTORY 0x80000
 
@@ -60,22 +62,14 @@ typedef struct {
     u8 victory_song_idx;
     u8 dynamic_move_type;
     u8 wrapped_by[4];
-    u16 assist_possible_moves[5 * 4]; // 5 mons, each of them knowing 4 moves
-    u8 field_40;
-    u8 field_41;
-    u8 field_42;
-    u8 field_43;
-    u8 field_44;
-    u8 field_45;
-    u8 field_46;
-    u8 field_47;
-    u8 focus_punch_side;
+    u16 assist_possible_moves[6 * 4]; // 6 mons, each of them knowing 4 moves
+    u8 focus_punch_battler_idx;
     u8 battler_preventing_switchout;
     u8 money_multiplier;
     u8 saved_turn_action_number;
     u8 switch_in_abilities_counter;
     u8 fainted_actions_state;
-    u8 fainted_actions_side;
+    u8 fainted_actions_battler_idx;
     u8 field_4F;
     u16 experience;
     u8 field_52;
@@ -91,11 +85,10 @@ typedef struct {
     u8 safari_throw_count;
     u8 safari_escape_factor;
     u8 safari_catch_factor;
-    u8 field_7D;
-    u8 field_7E;
+    u8 link_battle_vs_oam_idxs[2];
     u8 form_to_change_into;
     u8 chosen_move_slots[4];
-    u8 state_id_after_selection_script[4];
+    u8 state_idx_after_selection_script[4];
     u8 field_88;
     u8 field_89;
     u8 field_8A;
@@ -103,35 +96,26 @@ typedef struct {
     u8 field_8C;
     u8 field_8D;
     u8 string_move_type;
-    u8 experience_getter_side;
+    u8 experience_getter_battler_idx;
     u8 field_90;
     u8 field_91;
-    u8 field_92;
-    u8 field_93;
+    //u8 __ai_mon_to_switch_into[2]; // Dont use that... only one per side...
+    u8 ai_switch_target_chosen; // Bitfield
+    u8 field_93; // Refactoring of the 2 bytes above
     u8 wally_battle_state;
     u8 wally_moves_state;
     u8 wally_wait_frames;
     u8 wally_move_frames;
-    u8 mirror_moves[8]; // ask gamefreak why they declared it that way
-    u8 field_A0;
-    u8 field_A1;
-    u8 field_A2;
-    u8 field_A3;
-    u8 field_A4;
-    u8 field_A5;
-    u8 field_A6;
-    u8 field_A7;
+    u8 mirror_moves[4 * 2 * 2]; // ask gamefreak why they declared it that way
     u16 hp_on_switch_out[2];
-    u32 saved_battle_types_flag;
-    u8 ability_preventing_switch_out;
+    u8 ability_preventing_swich_out;
     u8 hp_scale;
+    u16 saved_battle_type_flags;
+    void (*saved_callback)();
     u8 synchronize_move_effect;
-    u8 field_B3;
-    u8 field_B4;
-    u8 field_B5;
-    u8 field_B6;
-    u8 field_B7;
-    // void (*savedCallback)(void);
+    u8 multiplayer_idx;
+    u8 overworld_weather_done;
+    u8 attack_canceler_state;
     u16 items_consumed[4];
     u8 chosen_item[4]; // why is this an u8?
     u8 ai_item_type[2];
@@ -143,27 +127,27 @@ typedef struct {
     u8 field_DA;
     u8 turn_side_tracker;
     u8 fillerDC[0xDF-0xDC];
-    u8 field_DF;
-    u8 mirror_move_arrays[32];
+    u8 given_exp_mons;
+    u8 last_taken_move_from[4 * 4 * 2];
     u16 castform_palette[4][16];
-    u8 field_180;
-    u8 field_181;
-    u8 field_182;
-    u8 field_183;
-    enigma_berry_stru enigma_berry;
     u8 wish_perish_song_state;
     u8 wish_perish_song_battler;
-    u8 overworld_weather_done;
-    u8 attack_cancler_idx;
-    u8 field_1A4[96];
-    u8 field_204[104];
-    u8 field_26C[40];
-    u8 ai_battler_to_switch_into[4];
-    u8 field_298[8];
-    u8 field_2A0;
-    u8 field_2A1;
-    u8 field_2A2;
+    u8 field_182;
+    u8 field_183;
+    u8 field_184;
+    u8 field_185;
+    u8 field_186;
+    u8 field_187;
+    enigma_berry_stru enigma_berry;
+    u8 field_1A4[0x5C];
 } battle_state_t;
+
+typedef struct {
+    u16 items[4][4]; // 4 Items per owner (instead of only one for the AI) (the player one should be unused in theory...)
+    u8 num_items[4]; // How many items each owner
+} battle_state2_t;
+
+#define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
 
 typedef struct {
 	void (*callbacks[8])(void);
@@ -387,5 +371,10 @@ bool battle_has_two_opponents();
  * @param j second position
  **/
 void battle_link_multi_switch_party_order(u8 battler_idx, u8 i, u8 j);
+
+/**
+ * Action to execute when the turn is finished. Resets temporary variables. This is wrapped in battle_main.c by Violet
+ **/
+void battle_action_turn_finished();
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

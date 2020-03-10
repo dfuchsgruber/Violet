@@ -52,6 +52,7 @@ void battle_execute_action() {
     }
 }
 
+extern u16 battler_party_idxs[4];
 
 void battle_setup_party_idxs() {
     if (battle_flags & BATTLE_MULTI) return;

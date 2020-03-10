@@ -1,12 +1,9 @@
 #include "types.h"
 #include "battle/state.h"
 #include "battle/battler.h"
-#include "pokemon/basestat.h"
 #include "battle/attack.h"
 #include "math.h"
 #include "attack.h"
-#include "constants/abilities.h"
-#include "constants/pokemon_types.h"
 #include "prng.h"
 #include "debug.h"
 #include "battle/controller.h"
@@ -16,110 +13,98 @@
 #include "oam.h"
 #include "pokemon/sprites.h"
 #include "music.h"
+#include "battle/ai.h"
+#include "constants/attack_affects_whom_flags.h"
+#include "mega.h"
 
-static void attack_apply_effectiveness_multiplier_with_abilities(u8 attack_type, u8 defender_ability, u8 defender_type1, u8 defender_type2, 
-    u8 *multiplier) {
-    u8 old_multiplier = *multiplier;
-    attack_apply_effectiveness_multiplier(attack_type, defender_type1, defender_type2, multiplier);
-    if (attack_type == TYPE_BODEN && defender_ability == SCHWEBE) *multiplier = 0;
-    if (defender_ability == WUNDERWACHE && *multiplier <= old_multiplier) *multiplier = 0;
+void battle_controller_opponent_handle_choose_action() {
+    ai_setup(trainer_idx_by_battler_idx(active_battler));
+    battle_ai_choose_action();
+    battle_controller_opponent_execution_finished();
 }
 
-// How well does a mon resist the opponents battlers
-static int battle_ai_score_resists_foes(pokemon *p, u8 foe, u8 foe_partner) {
-    if (POKEMON_IS_VIABLE(p)) {
-        u8 multiplier1 = 8, multiplier2 = 8;
-        u16 species = (u16) pokemon_get_attribute(p, ATTRIBUTE_SPECIES, 0);
-        u8 ability = pokemon_get_ability(p);
-        u8 type1 = basestats[species].type1;
-        u8 type2 = basestats[species].type2;
-        if (!(battlers_absent & int_bitmasks[foe])) {
-            attack_apply_effectiveness_multiplier_with_abilities(battlers[foe].type1, ability, type1, type2, &multiplier1);
-            attack_apply_effectiveness_multiplier_with_abilities(battlers[foe].type2, ability, type1, type2, &multiplier1);
-        }
-        if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe) {
-            attack_apply_effectiveness_multiplier_with_abilities(battlers[foe_partner].type1, ability, type1, type2, &multiplier2);
-            attack_apply_effectiveness_multiplier_with_abilities(battlers[foe_partner].type2, ability, type1, type2, &multiplier2);
-        }
-        int score1 = 3 - msb_index(multiplier1); // Score in [-4, 4]
-        int score2 = 3 - msb_index(multiplier2); // Score in [-4, 4]
-        return (score1 + score2) * 32; // Final score in [-256, 256]
-    }
-    return 0;
+void battle_controller_opponent_handle_choose_item() {
+    u16 *item = BATTLE_STATE2->items[battler_get_owner(active_battler)] + TRAINER_AI_STATE2->chosen_item_idxs[active_battler];
+    dprintf("Emitting item %d\n", *item);
+    battle_controller_emit_one_value(1, *item);
+    *item = 0;
+    battle_controller_opponent_execution_finished();
 }
-
-// Checks how well a pokemon attacks opponent battlers. Considers only it's best move.
-static int battle_ai_score_attacks_foes(pokemon *p, u8 foe, u8 foe_partner) {
-    if (POKEMON_IS_VIABLE(p)) {
-        int best_score = 4;
-        // Check all moves
-        for (int i = 0; i < 4; i++) {
-            u8 multiplier1 = 4, multiplier2 = 4;
-            int attack = pokemon_get_attribute(p, (u8)(ATTRIBUTE_ATTACK1 + i), 0);
-            if (attack != 0 && pokemon_get_attribute(p, (u8)(ATTRIBUTE_PP1 + i), 0) > 0 && attacks[attack].base_power) {
-                if (!(battlers_absent & int_bitmasks[foe])) {
-                    attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe].type1, battlers[foe].type2, 
-                        battlers[foe].ability, &multiplier1);
-                }
-                if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe) {
-                    attack_apply_effectiveness_multiplier_with_abilities(attacks[attack].type, battlers[foe_partner].type1, 
-                        battlers[foe_partner].type2, battlers[foe_partner].ability, &multiplier2);
-                }
-                int score1 = msb_index(multiplier1) - 2; // Score in [-2, 2]
-                int score2 = msb_index(multiplier2) - 2; // Score in [-2, 2]
-                best_score = MAX(score1 + score2, best_score);
-            }
-
-        }
-        return 64 * best_score; // Final score in range [-256, 256]
-    }
-    return 0;
-}
-
-u8 battle_ai_get_pokemon_to_switch_into() {
-    if (battle_state->battler_to_switch_into[active_battler] != 6) {
-        // A pokemon to switch into was already selected
-        return battle_state->battler_to_switch_into[active_battler];
-    }
-    u8 first = 0, last = 0, partner = 0, foe = 0, foe_partner = 0;
-    battler_get_partner_and_foes(active_battler, &partner, &foe, &foe_partner);
-    pokemon *party = battler_load_party_range(active_battler, &first, &last);
-    int scores[6] = {0};
-    for (u8 i = first; i < last; i++) {
-        if (POKEMON_IS_VIABLE(party + i) && battler_party_idxs[active_battler] != i && battler_party_idxs[partner] != i) {
-            scores[i] += battle_ai_score_resists_foes(party + i, foe, foe_partner);
-            scores[i] += battle_ai_score_attacks_foes(party + i, foe, foe_partner);
-            dprintf("Switching target %d for battler %d has a score of %d\n", i, active_battler, scores[i]);
-        }
-    }
-    int best_score = INT_MIN;
-    u8 target = 6;
-    for (u8 i = first; i < last; i++) {
-        dprintf("Checking score for %d %d\n", i, POKEMON_IS_VIABLE(party + i));
-        if (POKEMON_IS_VIABLE(party + i) && battler_party_idxs[active_battler] != i && battler_party_idxs[partner] != i) {
-            if ((scores[i] > best_score) || (scores[i] == best_score && (rnd16() & 1) > 0)) {
-                best_score = scores[i];
-                target = i;
-            }
-        }
-    }
-    dprintf("Ai switches into target %d from battler %d, partner %d\n", target, active_battler, partner);
-    return target;
-}
-
 
 void battle_controller_opponent_handle_choose_pokemon() {
     u8 target_idx;
-    if (battle_state->battler_to_switch_into[battler_get_position(active_battler) >> 1] == 6) {
+    if (battle_state->ai_switch_target_chosen & int_bitmasks[active_battler]) {
+        target_idx = battle_state->battler_to_switch_into[active_battler];
+        battle_state->ai_switch_target_chosen &= (u8)(~int_bitmasks[active_battler]);
+    } else {
         target_idx = battle_ai_get_pokemon_to_switch_into();
         if (target_idx == 6)
             dprintf("No pokemon to switch into for battler %d\n", active_battler);
-    } else {
-        target_idx = battle_state->battler_to_switch_into[battler_get_position(active_battler) >> 1];
-        battle_state->battler_to_switch_into[battler_get_position(active_battler) >> 1] = 6;
     }
     battle_state->battler_to_switch_into[active_battler] = target_idx;
     battle_controller_opponent_emit_chosen_pokemon(1, target_idx, NULL);
+    battle_controller_opponent_execution_finished();
+}
+
+void battle_controller_opponent_handle_choose_move() {
+    if (battle_flags & (BATTLE_TRAINER | BATTLE_ROAMER | BATTLE_SAFARI)) {
+        ai_setup(trainer_idx_by_battler_idx(active_battler));
+        u8 move_idx = trainer_ai_choose_move_or_action();
+        trainer_ai_choosing_state_t *ai_state = (trainer_ai_choosing_state_t*) &battle_general_buffers0[active_battler][4];
+        switch (move_idx) {
+            case AI_CHOICE_FLEE: {
+                battle_controller_emit_two_values(1, BATTLE_ACTION_RUN, 0);
+                break;
+            }
+            case AI_CHOICE_WATCH: {
+                battle_controller_emit_two_values(1, BATTLE_ACTION_SAFARI_WATCH_CAREFULLY, 0);
+                break;
+            }
+            default: { // Move chosen
+                u8 affects = attacks[ai_state->moves[move_idx]].affects_whom;
+                if (affects & (TARGET_USER | TARGET_UNUSED)) {
+                    defending_battler = active_battler;
+                }
+                if (affects & TARGET_BOTH_FOES) {
+                    defending_battler = battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT);
+                    if (battlers_absent & int_bitmasks[defending_battler]) // If the left is absent, target the right one...
+                        defending_battler = battler_get_by_position(BATTLE_POSITION_PLAYER_RIGHT);
+                }
+                dprintf("The chosen target of the opponent was %d\n", defending_battler);
+                // TODO: battle_controller_emit_move_chosen instead for link compatibility?
+                battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
+
+                if (battle_flags & BATTLE_TRAINER) {
+                    if (battler_get_available_mega_evolution(active_battler)) {
+                        MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
+                    }
+                }
+                break;
+            }
+
+        }
+    } else {
+        // Choose random feasible move
+        u8 move_idx;
+        do {
+            move_idx = (u8)(rnd16() % 4);
+        } while (battlers[active_battler].moves[move_idx] == 0);
+        u8 affects = attacks[battlers[active_battler].moves[move_idx]].affects_whom;
+        if (affects & (TARGET_USER | TARGET_UNUSED)) {
+            defending_battler = active_battler;
+        } else if (affects & TARGET_BOTH_FOES) {
+            defending_battler = battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT);
+            if (battlers_absent & int_bitmasks[defending_battler]) // If the left is absent, target the right one...
+                defending_battler = battler_get_by_position(BATTLE_POSITION_PLAYER_RIGHT);
+        } else if (battle_flags & BATTLE_DOUBLE) {
+            defending_battler = (rnd16() & 1) ? battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT) : battler_get_by_position(BATTLE_POSITION_PLAYER_RIGHT);
+        } else {
+            defending_battler = battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT);
+        }
+        dprintf("The randomly chosen target of the opponent was %d\n", defending_battler);
+        battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
+
+    }
     battle_controller_opponent_execution_finished();
 }
 

@@ -1,6 +1,8 @@
 #include "types.h"
 #include "battle/state.h"
 #include "battle/battler.h"
+#include "debug.h"
+#include "overworld/pokemon_party_menu.h"
 
 pokemon *battler_load_party_range(u8 battler_idx, u8 *first, u8 *last) {
     if (battle_flags & BATTLE_MULTI) {
@@ -43,17 +45,28 @@ bool battle_has_two_opponents() {
     return (battle_flags & (BATTLE_TWO_TRAINERS | BATTLE_MULTI)) != 0 && (battle_flags & BATTLE_DOUBLE) != 0;
 }
 
+extern u16 battler_party_idxs[4];
+
+// In retrospective - this function is suuuuper unneccesary...
+u8 battler_idx_to_party_idx(u8 battler_idx) {
+    return (u8)battler_party_idxs[battler_idx];
+}
+
 bool battler_has_no_switching_targets(u8 battler_idx, u8 party_idx, u8 partner_party_idx) {
     if (!(battle_flags & BATTLE_DOUBLE)) return false;
     u8 first = 0, last = 0;
     pokemon *party = battler_load_party_range(battler_idx, &first, &last);
     if (party_idx == 6)
-        party_idx = (u8) battler_party_idxs[battler_idx];
+        party_idx = (u8) battler_idx_to_party_idx(battler_idx);
     if (partner_party_idx == 6)
-        party_idx = (u8) battler_party_idxs[PARTNER(battler_idx)];
+        partner_party_idx = (u8) battler_idx_to_party_idx(PARTNER(battler_idx));
+    dprintf("Battler %d has switching target?\nparty_idx %d, partner_party_idx %d\n", battler_idx, party_idx, partner_party_idx);
     for (int i = first; i < last; i++) {
-        if (POKEMON_IS_VIABLE(party + i) && i != party_idx && i != partner_party_idx)
+        if (POKEMON_IS_VIABLE(party + i) && i != party_idx && i != partner_party_idx) {
+            dprintf("Party idx %d is viable.\n", i);
             return false;
+        }
     }
+    dprintf("Battler %d has no swichting targets.\n", battler_idx);
     return true;
 }

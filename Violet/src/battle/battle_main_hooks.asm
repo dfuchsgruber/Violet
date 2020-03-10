@@ -73,3 +73,20 @@ battle_controller_opponent_create_trainer_pic_oam_hook:
     bl battle_controller_opponent_create_trainer_pic_oam
     ldr r1, = 0x08037c8e | 1
     bx r1
+
+.global battle_switch_in_clear_hook
+
+.align 2
+.thumb
+
+.thumb_func
+battle_switch_in_clear_hook:
+    bl battle_switch_in_clear_new
+    add sp, #0x1C
+    pop {r3, r4, r5}
+    mov r8, r3
+    mov r9, r4
+    mov r10, r5
+    pop {r4-r7}
+    pop {r0}
+    bx r0

@@ -59,7 +59,7 @@ static void indicator_callback (oam_object *self) {
         self->y = (s16)(healthbox->y - 2);
 
         // Calculate the length of the level string
-        pokemon *p = (battler_is_opponent(battler_idx) ? opponent_pokemon : player_pokemon) + battler_party_idxs[battler_idx];
+        pokemon *p = (battler_is_opponent(battler_idx) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(battler_idx);
         for (int level = pokemon_get_attribute(p, ATTRIBUTE_LEVEL, 0); level > 0; level /= 10)
             self->x = (s16)(self->x - 5);
 

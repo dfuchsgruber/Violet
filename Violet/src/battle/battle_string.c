@@ -268,6 +268,21 @@ u8 *battle_end_battle_buffer_message() {
 
 }
 
+u16 trainer_idx_by_owner(u8 owner) {
+    if (battle_flags & BATTLE_TRAINER) {
+        switch (owner) {
+            case OWNER_TRAINER_A: return trainer_vars.trainer_id;
+            case OWNER_TRAINER_B: return fmem.trainer_varsB.trainer_id;
+            case OWNER_ALLY: return fmem.ally_trainer_idx;
+        }
+    }
+    return 0;
+}
+
+u16 trainer_idx_by_battler_idx(u8 battler_idx) {
+    return trainer_idx_by_owner(battler_get_owner(battler_idx));
+}
+
 u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
     switch(buffer_idx) {
         case 0x31: // Trainer2 Class
@@ -286,6 +301,13 @@ u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
             return items[battler_get_keystone(battle_scripting.battler_idx)].name;
         case 0x36: // Mega Species
             return pokemon_names[mega_evolution_get_by_mega_species(battlers[battle_scripting.battler_idx].species)->species];
+        case 0x37: // Attacker trainer class name
+            return trainer_class_names[trainers[trainer_idx_by_battler_idx(attacking_battler)].trainerclass];
+        case 0x38:
+            if (battler_get_owner(attacking_battler) == OWNER_PLAYER)
+                return save2->player_name;
+            else
+                return trainers[trainer_idx_by_battler_idx(attacking_battler)].name;
         default:
             return NULL;
     }

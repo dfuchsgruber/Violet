@@ -49,6 +49,25 @@ extern "C" {
      */
     FIXED _prng_stdnormal(u32 *_seed);
 
+    /**
+     * Chooses with probabilities proportional to an array.
+     * @param p an (unnormalized) probability array, with the requirement that values >= 0
+     * @param p_size the size of the probability array
+     * @param rng a random number generator. If NULL is given, rnd16 is used
+     * @return an index in [0, size-1]
+    */
+    int choice(u32 *p, int p_size, u16 (*rng)());
+
+    /**
+     * Chooses with probabilties derived from a scoring array using a softmax function with temperature 20 / 1024
+     * @param logits the scores to draw from
+     * @param size the size of the scores array
+     * @param min the overall minimal possible score (not within the actual logits array, but the context the function is called in)
+     * @param min the overall maximal possible score (not within the actual logits array, but the context the function is called in)
+     * @param rng a random number generator. If NULL is given, rnd16 is used
+     * @return an index in [0, size-1]
+     **/
+    int softmax_choice(int *logits, int size, int min, int max, u16 (*rng)());
 
 
 #ifdef	__cplusplus

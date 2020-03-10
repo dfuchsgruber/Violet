@@ -22,6 +22,8 @@
 #include "constants/difficulties.h"
 #include "battle/battle_string.h"
 #include "flags.h"
+#include "overworld/pokemon_party_menu.h"
+#include "item/item_effect.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -130,7 +132,7 @@ void bsc_cmd_x4f_jump_if_unable_to_switch() {
     // Check if this battler can switch-out
     if (bsc_offset[1] & 0x80 || BATTLER_CAN_SWITCH_OUT(active_battler)){ // Check if there is any target for switching-out into
         for (u8 j = first; j < last; j++) {
-            if (POKEMON_IS_VIABLE(party + j) && battler_party_idxs[active_battler] != j && battler_party_idxs[partner] != j) {
+            if (POKEMON_IS_VIABLE(party + j) && battler_idx_to_party_idx(active_battler) != j && battler_idx_to_party_idx(partner) != j) {
                 bsc_offset = bsc_offset + 6;
                 return;
             }
@@ -147,7 +149,7 @@ void bsc_cmd_x8f_random_switch_out() {
         int num_valid_targets = 0;
         u8 valid_targets[6] = {0xFF};
         for (u8 j = first; j < last; j++) {
-            if (POKEMON_IS_VIABLE(party + j) && battler_party_idxs[defending_battler] != j && battler_party_idxs[partner] != j) {
+            if (POKEMON_IS_VIABLE(party + j) && battler_idx_to_party_idx(defending_battler) != j && battler_idx_to_party_idx(partner) != j) {
                 valid_targets[num_valid_targets++] = j;
             }
         }
@@ -259,4 +261,11 @@ void bsc_cmd_pricemoney() {
     } else {
         bsc_offset += 5;
     }
+}
+
+void bsc_cmd_opponent_use_item() {
+    battler_in_party_menu = attacking_battler;
+    pokemon *p = (battler_is_opponent(attacking_battler) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(attacking_battler);
+    item_effect(p, bsc_last_used_item, battler_idx_to_party_idx(attacking_battler), 0, true, false);
+    bsc_offset++;
 }

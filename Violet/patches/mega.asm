@@ -77,10 +77,6 @@
 .org 0x0802eb44
     .word battle_controller_player_choose_target_wrap | 1
 
-.org 0x08038556
-    ldr r0, =battle_controller_opponent_choose_action_hook | 1
-    bx r0
-    .pool
 
 .org 0x0801554c
     ldr r0, = battle_execute_action | 1

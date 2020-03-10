@@ -2,6 +2,7 @@
 #define H_ABILITIES
 
 #include "constants/ability_contexts.h"
+#include "constants/abilities.h"
 
 #define ABILITY_CNT 0x71
 
@@ -32,7 +33,7 @@ u8 ability_get(u16 species, u8 fields);
 u8 ability_execute(u8 state, u8 attacker, u8 attacker_ability, u8
     defender_ability, u16 active_attack);
 
-#define ABILITY_ON_TARGET_SIDE(battler_idx, ability)(ability_execute(ABILITY_CONTEXT_CHECK_TARGET_SIDE, battler, ability, 0, 0))
+#define ABILITY_ON_TARGET_SIDE(battler_idx, ability)(ability_execute(ABILITY_CONTEXT_CHECK_TARGET_SIDE, battler_idx, ability, 0, 0))
 #define ABILITY_PRESENT(ability)(ability_execute(ABILITY_CONTEXT_CHECK_PRESENT, 0, ability, 0, 0))
 #define ABILITY_PRESENT2(ability)(ability_execute(ABILITYEFFECT_FIELD_SPORT, 0, ability, 0, 0))
 

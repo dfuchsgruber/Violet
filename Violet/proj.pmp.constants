@@ -68,5 +68,6 @@
 	"overworld_collisions" : "constants/overworld/overworld_collisions.const",
 	"battle_animations": "constants/battle/battle_animations.const",
 	"trainer_battle_types" : "constants/trainer_battle_types.const",
-	"battle_flags" : "constants/battle/battle_flags.const"
+	"battle_flags" : "constants/battle/battle_flags.const",
+	"battle_ai_item_types" : "constants/battle/battle_ai_item_types.const"
 }

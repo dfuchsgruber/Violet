@@ -2402,7 +2402,7 @@ bsc_strings:
 	.global str_battle_x157
 
 	str_battle_x157:
-		.string "STATUS_NAME wird von\nSTRINGê STRINGë eingesetzt!"
+		.string "BSC_LAST_ITEM wird von\nBSC_ATK_TRAINER_CLASS BSC_ATK_TRAINER_NAME eingesetzt!"
 
 
 	.global str_battle_x158
@@ -4483,7 +4483,7 @@ bsc_strings:
 	.global str_battle_x157
 
 	str_battle_x157:
-		.string "STRINGê STRINGë\nused STATUS_NAME!"
+		.string "BSC_ATK_TRAINER_CLASS BSC_ATK_TRAINER_NAME used\nBSC_LAST_ITEM!"
 
 	.global str_battle_x158
 

@@ -106,4 +106,21 @@ void battle_animation_oam_particle_emission_above_battler_callback (oam_object *
  **/
 void attack_apply_effectiveness_multiplier(u8 attacking_type, u8 defender_type1, u8 defender_type2, u8 *multiplier);
 
+#define MOVE_LIMITATION_ZEROMOVE                (1 << 0)
+#define MOVE_LIMITATION_PP                      (1 << 1)
+#define MOVE_LIMITATION_DISABLED                (1 << 2)
+#define MOVE_LIMITATION_TORMENTED               (1 << 3)
+#define MOVE_LIMITATION_TAUNT                   (1 << 4)
+#define MOVE_LIMITATION_IMPRISON                (1 << 5)
+#define MOVE_LIMITATION_ALL 0xFF
+
+/**
+ * Gets the limtations on all moves of a battler.
+ * @param battler_idx the target battler
+ * @param current_limitations bitfield that indicates current move limitations
+ * @param check_limitations flags to which limitations to check
+ * @return limitations bitfield that indicates if a move is unusable
+ **/
+u8 battler_check_move_limitations(u8 battler_idx, u8 current_limitations, u8 check_limitations);
+
 #endif /* INCLUDE_C_BATTLE_ATTACK_H_ */

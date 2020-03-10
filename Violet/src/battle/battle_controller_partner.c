@@ -9,6 +9,7 @@
 #include "mega.h"
 #include "debug.h"
 #include "save.h"
+#include "overworld/pokemon_party_menu.h"
 
 // Just copy the player's battle controller essentially...
 void (*battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
@@ -33,7 +34,7 @@ void (*battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
     [0x12] = battle_controller_partner_handle_choose_action, //(void (*)(void))0x8032ad5,
     [0x13] = (void (*)(void))0x8032b49,
     [0x14] = battle_controller_partner_handle_choose_move,
-    [0x15] = (void (*)(void))0x8032bed,
+    [0x15] = battle_controller_partner_handle_choose_item, //(void (*)(void))0x8032bed,
     [0x16] = battle_controller_partner_handle_choose_pokemon, //(void (*)(void))0x8032c51,
     [0x17] = (void (*)(void))0x8032d29,
     [0x18] = (void (*)(void))0x8032d4d,
@@ -71,7 +72,6 @@ void (*battle_controller_partner[BATTLE_CONTROLLER_COMMAND_CNT])() = {
     [0x38] = (void (*)(void))0x80339c5,
 };
 
-
 // A shared execution finished function that either sets the controller to the player or the AI's control
 void battle_controller_player_or_partner_execution_finished() {
     if (battle_is_tag() && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
@@ -101,7 +101,7 @@ void battle_controller_partner_execute_command() {
 
 void battle_controller_partner_handle_choose_move() {
 
-    trainer_load_ai();
+    ai_setup(trainer_idx_by_battler_idx(active_battler));
     u8 move_idx = trainer_ai_choose_move_or_action();
     trainer_ai_choosing_state_t *ai_state = (trainer_ai_choosing_state_t*) &battle_general_buffers0[active_battler][4];
     switch (move_idx) {
@@ -125,17 +125,19 @@ void battle_controller_partner_handle_choose_move() {
             }
             dprintf("The chosen target of the partner was %d\n", defending_battler);
             // TODO: battle_controller_emit_move_chosen instead for link compatibility?
+
+            // Mega evolution
+            // dprintf("Mega evolution for partner %d: %x\n", active_battler, battler_get_available_mega_evolution(active_battler));
+            if (battler_get_available_mega_evolution(active_battler)) {
+                MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
+            }
+            battle_controller_player_or_partner_execution_finished();
+
             battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
             break;
         }
 
     }
-    // Mega evolution
-    // dprintf("Mega evolution for partner %d: %x\n", active_battler, battler_get_available_mega_evolution(active_battler));
-    if (battler_get_available_mega_evolution(active_battler)) {
-        MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
-    }
-    battle_controller_player_or_partner_execution_finished();
 }
 
 void battle_controller_partner_handle_print_selection_string() {
@@ -144,21 +146,33 @@ void battle_controller_partner_handle_print_selection_string() {
 
 
 void battle_controller_partner_handle_choose_action() {
-    trainer_ai_try_switch_or_choose_item();
+    ai_setup(trainer_idx_by_battler_idx(active_battler));
+    battle_ai_choose_action();
     battle_controller_player_or_partner_execution_finished();
 }
 
 void battle_controller_partner_handle_choose_pokemon() {
     u8 target_idx;
-    if (battle_state->battler_to_switch_into[battler_get_position(active_battler) >> 1] == 6) {
+    if (battle_state->battler_to_switch_into[active_battler] == 6) {
+        dprintf("Partner decides a suitable mon to switch into.\n");
         target_idx = battle_ai_get_pokemon_to_switch_into();
         if (target_idx == 6)
             dprintf("No pokemon to switch into (partner) for battler %d\n", active_battler);
     } else {
-        target_idx = battle_state->battler_to_switch_into[battler_get_position(active_battler) >> 1];
-        battle_state->battler_to_switch_into[battler_get_position(active_battler) >> 1] = 6;
+        target_idx = battle_state->battler_to_switch_into[active_battler];
     }
     battle_state->battler_to_switch_into[active_battler] = target_idx;
+    // The game assumes that the player selected from the menu, so the idx to emit has to be in "party menu" indices
+    //dprintf("Partner chose party idx %d (reordered %d)\n", target_idx, player_party_get_reordered_idx(target_idx));
+    //target_idx = player_party_get_reordered_idx(target_idx);
+    dprintf("Partner chose party idx %d\n", target_idx);
     battle_controller_opponent_emit_chosen_pokemon(1, target_idx, NULL);
+    battle_controller_player_or_partner_execution_finished();
+}
+
+void battle_controller_partner_handle_choose_item() {
+    u16 *item = BATTLE_STATE2->items[battler_get_owner(active_battler)] + TRAINER_AI_STATE2->chosen_item_idxs[active_battler];
+    battle_controller_emit_one_value(1, *item);
+    *item = 0;
     battle_controller_player_or_partner_execution_finished();
 }

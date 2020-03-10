@@ -8,6 +8,7 @@
 #include "language.h"
 #include "save.h"
 #include "battle/state.h"
+#include "battle/ai.h"
 
 trainer_pokemon_custom_item_custom_attacks maike_test[2];
 trainer trainers[TRAINER_CNT] = {
@@ -6200,6 +6201,7 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Elite J.")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x15c_ardeal_trainer_3,
+        .items = {ITEM_TRANK, ITEM_HYPERHEILER, 0, 0},
     },
     [0x160] = {
         .trainerclass = TRAINERCLASS_CAMPER, .sprite = 0x33,
@@ -6207,6 +6209,15 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Elite J.")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x15a_ardeal_trainer_1,
+        .items = {ITEM_X_ABWEHR, ITEM_MEGABLOCK, 0},
+    },
+    [0x161] = {
+        .trainerclass = TRAINERCLASS_AROMALADY, .sprite = 0x33,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Ally"),
+            PSTRING("Elite J.")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x155_route_7_trainer_22,
+        .items = {ITEM_TOP_GENESUNG, ITEM_MEGABLOCK, 0},
     },
 }; 
 

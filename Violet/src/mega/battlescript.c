@@ -25,7 +25,7 @@ extern u8 battlescript_mega_evolution[];
 extern u8 battlescript_regent_evolution[];
 
 void battler_update_after_form_change(u8 battler_idx) {
-    int party_idx = battler_party_idxs[battler_idx];
+    int party_idx = battler_idx_to_party_idx(battler_idx);
     pokemon *mon = !battler_is_opponent(battler_idx) ? player_pokemon + party_idx : opponent_pokemon + party_idx;
     u16 species = (u16) pokemon_get_attribute(mon, ATTRIBUTE_SPECIES, NULL);
     battlers[battler_idx].species = species;
@@ -39,7 +39,7 @@ void battler_update_after_form_change(u8 battler_idx) {
 }
 
 void battler_form_change(u8 battler_idx, u16 species) {
-    int party_idx = battler_party_idxs[battler_idx];
+    int party_idx = battler_idx_to_party_idx(battler_idx);
     pokemon *mon = !battler_is_opponent(battler_idx) ? player_pokemon + party_idx : opponent_pokemon + party_idx;
     dprintf("Mon is %x for battler %d\n", mon, battler_idx);
     pokemon_set_attribute(mon, ATTRIBUTE_SPECIES, &species);

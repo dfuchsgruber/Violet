@@ -53,6 +53,20 @@
         "vars.h": "c",
         "trainerclasses.h": "c",
         "difficulties.h": "c",
-        "attack_affects_whom_flags.h": "c"
+        "attack_affects_whom_flags.h": "c",
+        "ability_contexts.h": "c",
+        "prng.h": "c",
+        "wondertrade.h": "c",
+        "attacks.h": "c",
+        "ai.h": "c",
+        "attack_categories.h": "c",
+        "item_effect_types.h": "c",
+        "item_effects.h": "c",
+        "item_effect.h": "c",
+        "items.h": "c",
+        "battle_ai_item_types.h": "c",
+        "battle_positions.h": "c",
+        "pokemon_stat_names.h": "c",
+        "ressources.h": "c"
     }
 }

@@ -160,4 +160,6 @@ void pokemon_party_menu_return_callback();
  **/ 
 u8 player_party_get_reordered_idx(u8 party_idx);
 
+extern u8 pokemon_party_menu_order[3]; // 4 Bits per slot
+
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

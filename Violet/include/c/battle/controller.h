@@ -78,6 +78,13 @@ void battle_controller_emit_get_pokemon_data(u8 buffer_idx, u8 request_idx, u8 b
  **/
 void battle_controller_emit_two_values(u8 buffer_idx, u8 arg1, u16 arg2);
 
+/**
+ * Emits one return value for the battle controller.
+ * @param buffer_idx
+ * @param arg the value to emit
+ **/
+void battle_controller_emit_one_value(u8 buffer_idx, u16 arg);
+
 
 /**
  * Emits an event to set the data of a battler.
@@ -152,6 +159,11 @@ void battle_controller_partner_handle_choose_action();
  * Battle controller function for the ally to choose a pokemon from their party.
  **/
 void battle_controller_partner_handle_choose_pokemon();
+
+/**
+ * Battle controller function for the ally to choose an item to use (although it was predetermined already...)
+ **/
+void battle_controller_partner_handle_choose_item();
 
 #define BOUNCE_EFFECT_BATTLER 0
 #define BOUNCE_EFFECT_HEALTHBAR 1

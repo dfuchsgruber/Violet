@@ -121,7 +121,7 @@ battle_script_cmds:
 	.word 0x8026851
 	.word 0x8026895
 	.word 0x8026941
-	.word 0x80269f1
+	.word bsc_cmd_opponent_use_item
 	.word 0x8026a49
 	.word 0x8026f01
 	.word 0x802703d

@@ -29,7 +29,7 @@ extern u8 bsc_stance_change_to_defense[];
 extern u8 bsc_ap_sparer[];
 
 void stance_change_change_species(u8 target, u16 species){
-    void *pokemon = (battler_is_opponent(target) ? opponent_pokemon : player_pokemon) + battler_party_idxs[target];
+    void *pokemon = (battler_is_opponent(target) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(target);
     pokemon_set_attribute(pokemon, ATTRIBUTE_SPECIES, &species);
     pokemon_calculate_stats(pokemon);
 

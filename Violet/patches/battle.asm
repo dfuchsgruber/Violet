@@ -398,3 +398,35 @@ _blxr3:
 	ldr r0, =battle_controller_player_or_partner_execution_finished | 1
 	bx r0
 	.pool
+
+.org 0x080125d8
+	mov r1, #0 // Initialize the battle_state->ai_switch_target_chosen with zero
+
+
+.org 0x08012af0
+	ldr r0, =battle_switch_in_clear_hook | 1
+	bx r0
+	.pool
+
+.org 0x08038618
+	ldr r0, =battle_controller_opponent_handle_choose_item | 1
+	bx r0
+	.pool
+
+.org 0x08038494
+	ldr r0, =battle_controller_opponent_handle_choose_action | 1
+	bx r0
+	.pool
+
+.org 0x080384b0
+	ldr r0, =battle_controller_opponent_handle_choose_move | 1
+	bx r0
+	.pool
+
+.org 0x0801639c
+	ldr r0, =battle_action_use_item | 1
+	bx r0
+	.pool
+
+.org 0x0824ff8c
+	.word battle_action_turn_finished_wrapper | 1

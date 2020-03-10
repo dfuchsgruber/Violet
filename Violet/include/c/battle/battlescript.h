@@ -83,6 +83,9 @@ extern battle_scripting_t battle_scripting;
 
 extern u16 bsc_last_used_item; // Used for the BSC_LAST_ITEM buffer
 
+extern u8 *battlescripts_pokeball[0xD]; // Battle-Scripts for using different pokeballs...
+extern u8 *battlescripts_run_by_item[]; // Battle-Scripts for running using different items
+extern u8 *battlescripts_use_item[]; // Battle-Scripts for using different item types
 
 /**
  * Loads the graphic for the attack "transform"

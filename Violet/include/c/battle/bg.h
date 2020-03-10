@@ -25,6 +25,9 @@ typedef struct  {
 
 battle_bg battle_bgs[29];
 
+extern u16 battle_bg0_x;
+extern u16 battle_bg0_y;
+
 u8 battle_bg_get_id();
 
 // Battle bg

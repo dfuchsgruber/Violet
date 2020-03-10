@@ -47,12 +47,6 @@ typedef struct {
     u16 type;
 } mega_evolution_t;
 
-/**
- * Returns the owner of a battler.
- * @param battler_idx the battler to check ownership of
- * @return the owner of the battler
- **/
-u8 battler_get_owner(u8 battler_idx);
 
 /** Gets the mega evolution a battler is able to perform.
  * @param battler_idx the idx of the battler

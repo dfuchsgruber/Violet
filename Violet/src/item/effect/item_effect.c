@@ -179,7 +179,6 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
     (void) move_idx; (void) hold_effect; (void) item;
     bool effect_applied = false;
     if (effect->heal_hp) {
-        int hp_to_heal = effect->hp;
         int current_hp = pokemon_get_attribute(p, ATTRIBUTE_CURRENT_HP, 0);
         if (effect->revives) {
             if (current_hp == 0) {
@@ -204,7 +203,8 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
         }
         // Heal hp TODO
         int hp_difference = pokemon_get_attribute(p, ATTRIBUTE_TOTAL_HP, 0) - pokemon_get_attribute(p, ATTRIBUTE_CURRENT_HP, 0);
-        switch (hp_to_heal) {
+        int hp_to_heal;
+        switch (effect->hp) {
             case ITEM_EFFECT_HEAL_HP_ALL:
                 hp_to_heal = hp_difference;
                 break;
@@ -219,6 +219,9 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
                 break;
             case ITEM_EFFECT_HEAL_HP_DYANMIC:
                 hp_to_heal = battle_scripting.heal_item_amount;
+                break;
+            default:
+                hp_to_heal = 1;
                 break;
         }
         dprintf("Hp to heal %d\n", hp_to_heal);
@@ -364,8 +367,8 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
     u8 battler_idx = 4;
     if (super.in_battle) {
         active_battler = pokemon_party_menu_current_index;
-        for (u8 i = battler_is_opponent(active_battler) ? 1 : 0; i < battler_cnt; i++) {
-            if (battler_party_idxs[i] == party_idx) {
+        for (u8 i = 0; i < battler_cnt; i++) {
+            if (battler_is_opponent(i) == battler_is_opponent(active_battler) && party_idx == battler_idx_to_party_idx(i)) {
                 battler_idx = i;
                 break;
             }

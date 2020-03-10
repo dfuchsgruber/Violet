@@ -96,4 +96,21 @@ void battle_string_decrypt(const u8 *src, u8 *dst);
     buffer[8] = BSC_BUFFER_EOS;                                    \
 }
 
+#define BSC_BUFFER_STAT(buffer, stat) \
+{ \
+    buffer[0] = BSC_BUFFER_BEGIN; \
+    buffer[1] = BSC_BUFFER_DISPLAY_STAT; \
+    buffer[2] = stat; \
+    buffer[3] = BSC_BUFFER_EOS; \
+}
+
+#define BSC_BUFFER_STRING(buffer, string_idx) \
+{ \
+    buffer[0] = BSC_BUFFER_BEGIN; \
+    buffer[1] = BSC_BUFFER_DISPLAY_STRING; \
+    buffer[2] = (u8) (string_idx); \
+    buffer[3] = (u8)(string_idx >> 8); \
+    buffer[4] = BSC_BUFFER_EOS; \
+}
+
 #endif
