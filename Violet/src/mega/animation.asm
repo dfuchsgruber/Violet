@@ -91,6 +91,6 @@ battle_animation_regent_evolution:
     cry SLOT_USER 0
     waitstate
     disable_oam_as_target OAM_ATTACKER
-    loadoam battle_animation_mega_sparkle_template, OAM_AT_USER | 2, 0
+    loadoam battle_animation_regent_sparkle_template, OAM_AT_USER | 2, 0
     pause 60
     end

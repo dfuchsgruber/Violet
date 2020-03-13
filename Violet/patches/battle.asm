@@ -261,9 +261,15 @@ _blxr2:
 	.pool
 
 .org 0x08048ffc
-	ldr r0, =hook_battle_ui_render_pokeball_icons | 1
+	ldr r0, =hook_battle_ui_render_pokeball_icons_opponent | 1
 	bx r0
 	.pool
+
+.org 0x08048e8e
+	ldr r0, =hook_battle_ui_render_pokeball_icons_player | 1
+	bx r0
+	.pool
+
 
 .org 0x0800d6ec
 	ldr r0, =battle_setup_party_idxs | 1
@@ -326,6 +332,13 @@ _blxr3:
 	bx r0
 	.pool
 
+.org 0x080136dc
+	ldr r0, =battle_intro_try_partner_ball_throw | 1
+	bl _blxr0
+	ldr r0, =0x08013702 | 1
+	bx r0
+	.pool
+
 .org 0x08038cf2
 	ldr r0, =battle_intro_trainer_pokemon_send_out_hook | 1
 	bx r0
@@ -355,9 +368,15 @@ _blxr3:
 	bx r1
 	.pool
 
-
 .org 0x080d75d8 // bsc_string 1: Send out message
 	ldr r0, =battle_send_out_buffer_message | 1
+	bl _blxr0
+	ldr r1, =0x080d799c | 1
+	bx r1
+	.pool
+	
+org 0x080d7680 // bsc_string 2: Return to trainer message
+	ldr r0, =battle_string_return_pokemon_buffer_message | 1
 	bl _blxr0
 	ldr r1, =0x080d799c | 1
 	bx r1
@@ -430,3 +449,62 @@ _blxr3:
 
 .org 0x0824ff8c
 	.word battle_action_turn_finished_wrapper | 1
+
+.org 0x080443c4
+	ldr r0, =battle_get_partner_name | 1
+	bx r0
+	.pool
+
+.org 0x08127904
+	ldr r0, =pokemon_party_menu_layout_by_battle_type | 1
+	bx r0
+	.pool
+
+.org 0x08033418
+	ldr r0, =battle_controller_partner_intro_ball_throw_allocate_palette | 1
+	bl _blxr0
+	ldr r0, =0x08033454 | 1
+	bx r0
+	.pool
+
+.org 0x8033596
+	ldr r0, =battle_controller_partner_is_single_or_multi_or_tag_battle | 1
+	bl _blxr0
+	cmp r0, #0
+	beq 0x80335dc
+	b 0x080335ac
+	.pool
+
+.org 0x0802f9f0
+	ldr r0, =battle_controller_partner_is_single_or_multi_or_tag_battle | 1
+	bl _blxr0
+	cmp r0, #0
+	bne 0x0802fa5c
+	b 0x0802fa06
+	.pool
+
+.org 0x0802faf0
+	.word battle_controller_player_or_partner_wait_for_healthboxes | 1
+
+.org 0x0803217c
+	ldr r0, =battle_controller_player_handle_draw_trainer_picture | 1
+	bx r0 
+	.pool
+
+.org 0x0800fd5c
+	ldr r0, =battle_initialize_graphics_or_preview | 1
+	bl _blxr0
+	ldr r0, = 0x0800fda0 | 1 // We don't set game's context any more, because there is no help system
+	bx r0
+	.pool
+
+
+.org 0x08021c6c
+	ldr r0, =bsc_cmd_exp_gain_should_gain_exp | 1
+	bl _blxr0
+	cmp r0, #0
+	beq 0x08021c82
+	b 0x08021ca8
+	.pool
+
+

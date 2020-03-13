@@ -87,35 +87,6 @@ blxr4_0805bba8:
 .org 0x083A5CD0
     .word ow_hiro_fly_graphics
 
-//directly application for ow throwing sprites
-.org 0x082345E8
-    .word gfx_hiro_throwTiles
-    .halfword 0x800, 0
-    .word gfx_hiro_throwTiles + 0x800 
-    .halfword 0x800, 0
-    .word gfx_hiro_throwTiles + 0x1000
-    .halfword 0x800, 0
-    .word gfx_hiro_throwTiles + 0x1800
-    .halfword 0x800, 0
-    .word gfx_hiro_throwTiles + 0x2000
-    .halfword 0x800, 0
-    .word gfx_hiroine_throwTiles
-    .halfword 0x800, 0
-    .word gfx_hiroine_throwTiles + 0x800 
-    .halfword 0x800, 0
-    .word gfx_hiroine_throwTiles + 0x1000
-    .halfword 0x800, 0
-    .word gfx_hiroine_throwTiles + 0x1800
-    .halfword 0x800, 0
-    .word gfx_hiroine_throwTiles + 0x2000
-    .halfword 0x800, 0
-
-.org 0x08239EA4
-    .word gfx_hiro_throwPal
-
-.org 0x08239EAC
-    .word gfx_hiroine_throwPal
-
 .org overworld_script_commands + 4 * 0x77
     .word overworld_script_command_close_braille | 1
 
@@ -161,6 +132,7 @@ blxr4_0805bba8:
 
 .org 0x0805d240
     ldr r1, = player_transition_water_to_land_callback_update_npc | 1
+_blxr1:
     bx r1
     .pool
 
@@ -188,4 +160,13 @@ blxr4_0805bba8:
 .org 0x0806e074
     ldr r0, =map_reset_temporary_flags_and_vars | 1
     bx r0
+    .pool
+
+.org 0x08127b1e
+    mov r0, r5
+    ldr r1, =pokemon_party_menu_can_switch_into_index | 1
+    bl _blxr1
+    cmp r0, #0
+    bne 0x08127b58
+    b 0x08127b36
     .pool

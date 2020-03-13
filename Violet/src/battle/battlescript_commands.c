@@ -269,3 +269,10 @@ void bsc_cmd_opponent_use_item() {
     item_effect(p, bsc_last_used_item, battler_idx_to_party_idx(attacking_battler), 0, true, false);
     bsc_offset++;
 }
+
+
+bool bsc_cmd_exp_gain_should_gain_exp() {
+    u8 idx = battle_state->exp_getter_idx;
+    if (battle_is_tag() && (idx == 3 || idx == 4 || idx == 5)) return false;
+    return pokemon_get_attribute(player_pokemon + idx, ATTRIBUTE_LEVEL, 0) < 100;
+}

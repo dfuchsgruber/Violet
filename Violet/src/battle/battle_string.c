@@ -12,6 +12,8 @@
 #include "mega.h"
 #include "item/item.h"
 #include "pokemon/names.h"
+#include "battle/link.h"
+#include "battle/controller.h"
 
 static u8 str_multi_link_intro[] = LANGDEP(
     PSTRING("BSC_LINK_OPPONENT1_NAME und BSC_LINK_OPPONENT2_NAME\nmöchten kämpfen!"),
@@ -53,6 +55,11 @@ static u8 str_player_and_link_partner_send_out[] = LANGDEP(
     PSTRING("BSC_LINK_PARTNER_NAME sends out\nBSC_LINK_PLAYER_POKEMON2_NAME! Go! BSC_LINK_PLAYER_POKEMON1_NAME!")
 );
 
+static u8 str_player_and_partner_send_out[] = LANGDEP(
+    PSTRING("BSC_PARTNER_CLASS BSC_PARTNER_NAME schickt\nBSC_PLAYER_POKEMON2_NAME!\pLos! BSC_PLAYER_POKEMON1_NAME!"),
+    PSTRING("BSC_PARTNER_CLASS BSC_PARTNER_NAME sends out\nBSC_PLAYER_POKEMON2_NAME!\pGo! BSC_PLAYER_POKEMON1_NAME!")
+);
+
 static u8 str_link_opponent_send_out_single[] = LANGDEP(
     PSTRING("BSC_LINK_OPPONENT1_NAME schickt\nBSC_OPPONENT_POKEMON1_NAME in den Kampf!"),
     PSTRING("BSC_LINK_OPPONENT1_NAME sends out\nBSC_OPPONENT_POKEMON1_NAME into battle!")
@@ -81,6 +88,11 @@ static u8 str_link_opponent_sends_out_double[] = LANGDEP(
 static u8 str_single_trainer_sends_out_two[] = LANGDEP(
     PSTRING("BSC_OPPONENT_POKEMON1_NAME und BSC_OPPONENT_POKEMON2_NAME\nwerden von\pBSC_TRAINER1_CLASS BSC_TRAINER1_NAME\nin den Kampf geschickt!PAUSE\x3C"),
     PSTRING("BSC_OPPONENT_POKEMON1_NAME and BSC_OPPONENT_POKEMON2_NAME\nare sent out by\pBSC_TRAINER1_CLASS BSC_TRAINER1_NAME!PAUSE\x3C")
+);
+
+static u8 str_partner_switch_in[] = LANGDEP(
+    PSTRING("BSC_PARTNER_CLASS BSC_PARTNER_NAME schickt\nBSC_BUF0 in den Kampf!"),
+    PSTRING("BSC_PARTNER_CLASS BSC_PARTNER_NAME sends\nBSC_BUF0 into battle!")
 );
 
 static u8 str_player_switch_in_hp_scale_0[] = LANGDEP(
@@ -188,6 +200,51 @@ static u8 str_link_flee[] = LANGDEP(
     PSTRING("PLAY_SE\x11 BSC_LINK_OPPONENT1_NAME flees!")
 );
 
+static u8 str_return_hp_scale_0[] = LANGDEP(
+    PSTRING("BSC_BUF0, genug!\nKomm zurück!"),
+    PSTRING("BSC_BUF0, enough!\nCome back!")
+);
+
+static u8 str_return_hp_scale_1[] = LANGDEP(
+    PSTRING("BSC_BUF0, komm zurück!"),
+    PSTRING("BSC_BUF0, come back!")
+);
+
+static u8 str_return_hp_scale_2[] = LANGDEP(
+    PSTRING("BSC_BUF0, O.K.!\nKomm zurück!"),
+    PSTRING("BSC_BUF0, O.K.!\nCome back!")
+);
+
+static u8 str_return_hp_scale_3[] = LANGDEP(
+    PSTRING("BSC_BUF0, gut!\nKomm zurück!"),
+    PSTRING("BSC_BUF0, good!\nCome back!")
+);
+
+static u8 str_return_ally[] = LANGDEP(
+    PSTRING("BSC_PARTNER_CLASS BSC_PARTNER_NAME ruft\nBSC_BUF0 zurück!"),
+    PSTRING("BSC_PARTNER_CLASS BSC_PARTNER_NAME withdrew\nBSC_BUF0 back!")
+);
+
+static u8 str_return_link_trainer[] = LANGDEP(
+    PSTRING("BSC_LINK_OPPONENT1_NAME ruft\nBSC_BUF0 zurück!"),
+    PSTRING("BSC_LINK_OPPONENT1_NAME withdrew\nBSC_BUF0!")
+);
+
+static u8 str_return_multi_trainer[] = LANGDEP(
+    PSTRING("BSC_LINK_SCR_TRAINER_NAME ruft\nBSC_BUF0 zurück!"),
+    PSTRING("BSC_LINK_SCR_TRAINER_NAME withdrew\nBSC_BUF0!")
+);
+
+static u8 str_return_trainer[] = LANGDEP(
+    PSTRING("BSC_BUF0 wurde\nvon BSC_TRAINER1_CLASS BSC_TRAINER1_NAME\lzurückgerufen!"),
+    PSTRING("BSC_TRAINER1_CLASS BSC_TRAINER1_NAME\nwithdrew BSC_BUF0!")
+);
+
+static u8 str_return_second_trainer[] = LANGDEP(
+    PSTRING("BSC_BUF0 wurde\nvon BSC_TRAINER2_CLASS BSC_TRAINER2_NAME\lzurückgerufen!"),
+    PSTRING("BSC_TRAINER2_CLASS BSC_TRAINER2_NAME\nwithdrew BSC_BUF0!")
+);
+
 u8 *battle_intro_buffer_message() {
     if (battle_flags & BATTLE_TRAINER) {
         if (battle_flags & BATTLE_LINK) {
@@ -214,9 +271,27 @@ u8 *battle_send_out_buffer_message() {
     } else {
         if (battle_flags & BATTLE_DOUBLE) {
             if (battle_flags & BATTLE_MULTI) return str_player_and_link_partner_send_out;
+            else if (battle_flags & BATTLE_ALLY) return str_player_and_partner_send_out;
             else return str_player_send_out_double;
         } else return str_player_send_out_single;
     } 
+}
+
+u8 *battle_string_return_pokemon_buffer_message() {
+    if (battler_is_opponent(active_battler)) {
+        if (trainer_vars.trainer_id == 0x800) {
+            if (battle_flags & BATTLE_MULTI) return str_return_multi_trainer;
+            else return str_return_link_trainer;
+        } else if ((battle_flags & BATTLE_DOUBLE) && (battle_flags & BATTLE_TWO_TRAINERS) &&
+            battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) return str_return_second_trainer;
+        else return str_return_trainer;
+    } else {
+        if (battle_flags & BATTLE_ALLY) return str_return_ally;
+        else if (battle_state->hp_scale == 0) return str_return_hp_scale_0;
+        else if (battle_state->hp_scale == 1 || (battle_flags & BATTLE_DOUBLE)) return str_return_hp_scale_1;
+        else if (battle_state->hp_scale == 2) return str_return_hp_scale_2;
+        return str_return_hp_scale_3;
+    }
 }
 
 u8 *battle_switch_in_buffer_message() {
@@ -228,6 +303,9 @@ u8 *battle_switch_in_buffer_message() {
             battle_scripting.battler_idx == BATTLE_POSITION_OPPONENT_RIGHT) return str_second_opponent_switch_in;
         else return str_opponent_single_switch_in;
     } else {
+        if ((battle_flags & BATTLE_ALLY) && (battle_flags & BATTLE_DOUBLE) && 
+            battler_get_position(battle_scripting.battler_idx) == BATTLE_POSITION_PLAYER_RIGHT)
+                return str_partner_switch_in;
         if ((battle_flags & BATTLE_DOUBLE) || battle_state->hp_scale == 0) return str_player_switch_in_hp_scale_0;
         else if (battle_state->hp_scale == 1) return str_player_switch_in_hp_scale_1;
         else if (battle_state->hp_scale == 2) return str_player_switch_in_hp_scale_2;
@@ -313,3 +391,13 @@ u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
     }
 }
 
+static u8 str_partner_unknown[] = PSTRING("?????");
+
+u8 *battle_get_partner_name() {
+    if (battle_flags & BATTLE_ALLY) {
+        return trainers[*var_access(VAR_ALLY)].name;
+    } else if (battle_flags & (BATTLE_MULTI)) {
+        return link_players[PARTNER(link_players[multiplayer_get_idx()].battler_idx)].name;
+    }
+    return str_partner_unknown;
+}

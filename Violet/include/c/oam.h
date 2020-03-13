@@ -147,6 +147,14 @@ extern oam_object oams[];
 extern rotscale_frame *oam_rotscale_anim_table_null[];
 extern gfx_frame *oam_gfx_anim_table_null[];
 
+typedef struct { // Subject to change, I guess...
+  u8 y_offset;
+  u8 frames;
+  u8 field_2;
+  u8 field_3;
+} sprite_coordinates_t;
+
+
 extern u8 oam_rotscale_disabled;
 
 /**

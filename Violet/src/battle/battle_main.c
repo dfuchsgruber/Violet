@@ -15,19 +15,36 @@
 #include "battle/battle_string.h"
 #include "constants/pokemon_stat_names.h"
 #include "pokemon/virtual.h"
+#include "overworld/pokemon_party_menu.h"
+#include "overworld/map_control.h"
+#include "superstate.h"
+#include "fading.h"
+#include "trainer/trainer.h"
 
 void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
-    if ((battle_flags & BATTLE_TWO_TRAINERS) && active_battler == BATTLE_POSITION_OPPONENT_RIGHT) {
+    if ((battle_flags & BATTLE_TWO_TRAINERS) && battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
         battle_controller_emit_draw_trainer_picture(0);
         battler_mark_for_controller_execution(active_battler);
     }
-    // TODO: Ally battles
+    if ((battle_flags & BATTLE_ALLY) && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
+        battle_controller_emit_draw_trainer_picture(0);
+        battler_mark_for_controller_execution(active_battler);
+    }
 }
 
 void battle_intro_try_second_trainer_ball_throw() {
     if (battle_flags & (BATTLE_MULTI | BATTLE_TWO_TRAINERS) && 
             battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
         dprintf("Add second ball throw \n");
+        battle_controller_emit_intro_trainer_ball_throw(0);
+        battler_mark_for_controller_execution(active_battler);
+    }
+}
+
+void battle_intro_try_partner_ball_throw() {
+    if ((battle_flags & (BATTLE_MULTI | BATTLE_ALLY)) && 
+            battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT) {
+        dprintf("Add partner ball throw \n");
         battle_controller_emit_intro_trainer_ball_throw(0);
         battler_mark_for_controller_execution(active_battler);
     }
@@ -114,4 +131,51 @@ void battle_action_use_item() {
 void battle_action_turn_finished_wrapper() {
     battle_state->battler_to_switch_into[battler_attacking_order[battle_action_current_turn]] = 6;
     battle_action_turn_finished();
+}
+
+void battle_callback_partner_party_preview() {
+    generic_callback1();
+    switch (battle_communication[BATTLE_COMMUNICATION_MULTIUSE]) {
+        case 0: {
+            battle_state->saved_callback = super.saved_callback; // Backup for the saved callback...
+            BATTLE_STATE2->saved_battle_flags = battle_flags;
+            super.saved_callback = battle_callback_partner_party_preview; // Return to this callback once the preview is done
+            pokemon_party_menu_load_partner_party(player_pokemon + 3);
+            pokemon_party_menu_init(PARTY_MENU_TYPE_MULTI_SHOWCASE, PARTY_LAYOUT_MULTI_SHOWCASE, PARTY_ACTION_CHOOSE_MON, 0, 
+                PARTY_MSG_NONE, pokemon_party_menu_partner_party_slide_in_initialize, super.saved_callback);
+            battle_communication[BATTLE_COMMUNICATION_MULTIUSE]++;
+            break;
+        }
+        case 1: {
+            if (!fading_control.active) {
+                battle_flags = BATTLE_STATE2->saved_battle_flags;
+                super.saved_callback = battle_state->saved_callback;
+                super.callback1 = battle_graphics_initialize;
+                battle_communication[BATTLE_COMMUNICATION_MULTIUSE]++;
+            }
+            break;
+        }
+    }
+}
+
+void battle_initialize_graphics_or_preview() {
+    if (battle_is_tag() && fmem.ally_trainer_party_preview) {
+        battle_communication[BATTLE_COMMUNICATION_MULTIUSE] = 0;
+        callback1_set(battle_callback_partner_party_preview);
+    } else {
+        battle_graphics_initialize();
+    }
+}
+
+void battle_ally_save_and_setup_party() {
+    for (int i = 0; i < 3; i++)
+        cmem.ally_battle_selected_party_idxs[i] = player_party_selected_idxs[i];
+    player_save_party();
+    player_party_reduce_to_selection();
+    ally_party_setup();
+    player_pokemon_recount_pokemon();
+}
+
+bool battle_has_two_players() {
+    return battle_is_tag() || battle_is_multi_double();
 }

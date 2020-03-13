@@ -220,6 +220,9 @@ special_table equ 0x0815FCC0
 .org (special_table + 102 * 4)
                 .word route_7_secret_power_lab_count_missing_species | 1
 
+.org (special_table + 103 * 4)
+                .word battle_ally_save_and_setup_party | 1
+
 // Free up until <= 118
 
 .org (special_table + (0x129 * 4))

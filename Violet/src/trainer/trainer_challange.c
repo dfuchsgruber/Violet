@@ -201,6 +201,8 @@ static trainerbattle_configuration trainerbattle_configuration_ally[] = {
     {.dst = &trainer_vars.trainer_id, .command = LOAD_HWORD},
     {.dst = &fmem.ally_trainer_idx, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
+    {.dst = &fmem.ally_trainer_backsprite_idx, .command = LOAD_BYTE},
+    {.dst = &fmem.ally_trainer_party_preview, .command = LOAD_BYTE},
     {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.victory_text, .command = CLEAR_WORD},
@@ -215,6 +217,8 @@ static trainerbattle_configuration trainerbattle_configuration_ally_two_trainers
     {.dst = &fmem.trainer_varsB.trainer_id, .command = LOAD_HWORD},
     {.dst = &fmem.ally_trainer_idx, .command = LOAD_HWORD},
     {.dst = &trainer_vars.overworld_target, .command = LOAD_HWORD},
+    {.dst = &fmem.ally_trainer_backsprite_idx, .command = LOAD_BYTE},
+    {.dst = &fmem.ally_trainer_party_preview, .command = LOAD_BYTE},
     {.dst = &trainer_vars.challange_text, .command = LOAD_WORD},
     {.dst = &trainer_vars.defeat_text, .command = LOAD_WORD},
     {.dst = &fmem.trainer_varsB.defeat_text, .command = LOAD_WORD},
@@ -283,14 +287,14 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
             dprintf("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
-            return ow_script_trainerbattle_double;
+            return ow_script_trainerbattle_with_continuation; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_ALLY_TWO_TRAINERS:
             trainerbattle_configure(trainerbattle_configuration_ally_two_trainers, ow_script);
             trainerbattle_load_target_npc();
             *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
             dprintf("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
-            return ow_script_trainerbattle_double;
+            return ow_script_trainerbattle_with_continuation; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_SINGLE:
         default: { // For spotted trainer double battles
             if (fmem.current_trainer == 0) { // Initialize trainerA 

@@ -13,6 +13,7 @@
 #include "pokemon/virtual.h"
 #include "constants/battle/battle_flags.h"
 #include "save.h"
+#include "overworld/pokemon_party_menu.h"
 
 #define BATTLE_DOUBLE 0x1
 #define BATTLE_LINK 0x2
@@ -145,6 +146,7 @@ typedef struct {
 typedef struct {
     u16 items[4][4]; // 4 Items per owner (instead of only one for the AI) (the player one should be unused in theory...)
     u8 num_items[4]; // How many items each owner
+    u32 saved_battle_flags;
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
@@ -359,6 +361,12 @@ bool battle_is_multi_double();
 bool battle_is_tag();
 
 /**
+ * Checks if the current battle has two players (e.g. a partner)
+ * @return if in a link multi battle or having an allied partner
+ **/
+bool battle_has_two_players();
+
+/**
  * Checks if the current battle has two opponents, i.e. multi or against two trainers.
  * @return if the battle has two opponents
  **/
@@ -376,5 +384,15 @@ void battle_link_multi_switch_party_order(u8 battler_idx, u8 i, u8 j);
  * Action to execute when the turn is finished. Resets temporary variables. This is wrapped in battle_main.c by Violet
  **/
 void battle_action_turn_finished();
+
+/**
+ * Probably copies data to showcase the partner pokemon in the party menu.
+ **/
+void sub_08010848();
+
+/**
+ * Callback1 that does initialization (mostly graphics) for a battle.
+ **/
+void battle_graphics_initialize();
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

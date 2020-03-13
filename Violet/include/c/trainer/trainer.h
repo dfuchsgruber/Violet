@@ -12,6 +12,7 @@
 
 #include "trainer/party.h"
 #include "constants/trainerclasses.h"
+#include "oam.h"
 
 typedef struct {
     u8 uses_custom_moves : 1;
@@ -99,5 +100,17 @@ int trainerbattle_initialize_by_npc_idx(u8 npc_idx);
  * @return trainerflag of the second opponent.
  **/
 u16 trainerB_get_flag();
+
+
+/**
+ * Callback for trainer sprites.
+ * @param self self-reference
+ **/
+void oam_trainer_sprite_callback(oam_object *self);
+
+/**
+ * Sets up the ally's party to slots 3,4,5 of the player's party.
+ **/
+void ally_party_setup();
 
 #endif /* INCLUDE_C_TRAINER_TRAINER_H_ */

@@ -67,6 +67,18 @@
         "battle_ai_item_types.h": "c",
         "battle_positions.h": "c",
         "pokemon_stat_names.h": "c",
-        "ressources.h": "c"
+        "ressources.h": "c",
+        "link.h": "c",
+        "cry.h": "c",
+        "map_control.h": "c",
+        "songs.h": "c",
+        "fading.h": "c",
+        "callbacks.h": "c",
+        "backsprite.h": "c",
+        "array": "c",
+        "hash_map": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c"
     }
 }

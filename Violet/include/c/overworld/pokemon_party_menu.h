@@ -38,6 +38,29 @@ typedef struct {
 
 bool (*pokemon_party_menu_continuation)();
 
+
+typedef struct {
+    /*0x00*/ u16 species;
+    /*0x02*/ u16 item;
+    /*0x04*/ u8 nickname[11];
+    /*0x0F*/ u8 level;
+    /*0x10*/ u16 hp;
+    /*0x12*/ u16 max_hp;
+    /*0x14*/ u32 status;
+    /*0x18*/ pid_t pid;
+    /*0x1C*/ u8 gender;
+    /*0x1D*/ u8 language;
+    u16 padding;
+} pokemon_party_menu_partner_pokemon_t;
+
+extern pokemon_party_menu_partner_pokemon_t pokemon_party_menu_partner_party[3];
+
+/**
+ * Loads the partner party from a normal party.
+ * @param p the party from which to load the partner party
+ **/
+void pokemon_party_menu_load_partner_party (pokemon *p);
+
 extern pokemon_party_menu_state_t pokemon_party_menu_state;
 extern u8 pokemon_party_menu_current_index;
 extern u8 pokemon_party_menu_current_index2;
@@ -124,18 +147,90 @@ void pokemon_party_menu_print_question(u8 self);
  */
 void pokemon_party_menu_return_to();
 
+#define PARTY_LAYOUT_SINGLE          0
+#define PARTY_LAYOUT_DOUBLE          1
+#define PARTY_LAYOUT_MULTI           2
+#define PARTY_LAYOUT_MULTI_SHOWCASE  3  // The layout during the screen that appears just before a multi battle
+#define PARTY_LAYOUT_COUNT           4
+#define KEEP_PARTY_LAYOUT            0xFF
+
+#define PARTY_MENU_TYPE_FIELD                     0 
+#define PARTY_MENU_TYPE_IN_BATTLE                 1 
+#define PARTY_MENU_TYPE_CONTEST                   2 
+#define PARTY_MENU_TYPE_CHOOSE_MON                3 
+#define PARTY_MENU_TYPE_CHOOSE_HALF               4  // multi battles, eReader battles, and some battle facilities
+#define PARTY_MENU_TYPE_MULTI_SHOWCASE            5
+#define PARTY_MENU_TYPE_DAYCARE                   6 
+#define PARTY_MENU_TYPE_MOVE_RELEARNER            7 
+#define PARTY_MENU_TYPE_UNION_ROOM_REGISTER       8  // trading board
+#define PARTY_MENU_TYPE_UNION_ROOM_TRADE          9  // trading board
+#define PARTY_MENU_TYPE_SPIN_TRADE                10 // Unused beta for Gen IV's Spin Trade
+#define PARTY_MENU_TYPE_MINIGAME                  11
+
+#define PARTY_ACTION_CHOOSE_MON         0
+#define PARTY_ACTION_SEND_OUT           1
+#define PARTY_ACTION_CANT_SWITCH        2
+#define PARTY_ACTION_USE_ITEM           3
+#define PARTY_ACTION_ABILITY_PREVENTS   4
+#define PARTY_ACTION_GIVE_ITEM          5  
+#define PARTY_ACTION_GIVE_PC_ITEM       6
+#define PARTY_ACTION_GIVE_MAILBOX_MAIL  7
+#define PARTY_ACTION_SWITCH             8
+#define PARTY_ACTION_SWITCHING          9
+#define PARTY_ACTION_SOFTBOILED         10
+#define PARTY_ACTION_CHOOSE_AND_CLOSE   11
+#define PARTY_ACTION_MOVE_TUTOR         12
+#define PARTY_ACTION_MINIGAME           13
+#define PARTY_ACTION_REUSABLE_ITEM      14
+
+// IDs for DisplayPartyMenuStdMessage, to display the message at the bottom of the party menu
+#define PARTY_MSG_CHOOSE_MON                0
+#define PARTY_MSG_CHOOSE_MON_OR_CANCEL      1
+#define PARTY_MSG_CHOOSE_MON_AND_CONFIRM    2
+#define PARTY_MSG_MOVE_TO_WHERE             3 
+#define PARTY_MSG_TEACH_WHICH_MON           4
+#define PARTY_MSG_USE_ON_WHICH_MON          5
+#define PARTY_MSG_GIVE_TO_WHICH_MON         6
+#define PARTY_MSG_NOTHING_TO_CUT            7
+#define PARTY_MSG_CANT_SURF_HERE            8
+#define PARTY_MSG_ALREADY_SURFING           9
+#define PARTY_MSG_CURRENT_TOO_FAST          10
+#define PARTY_MSG_ENJOY_CYCLING             11
+#define PARTY_MSG_ALREADY_IN_USE            12
+#define PARTY_MSG_CANT_USE_HERE             13
+#define PARTY_MSG_NO_MON_FOR_BATTLE         14
+#define PARTY_MSG_CHOOSE_MON_2              15
+#define PARTY_MSG_NOT_ENOUGH_HP             16
+#define PARTY_MSG_THREE_MONS_ARE_NEEDED     17
+#define PARTY_MSG_TWO_MONS_ARE_NEEDED       18
+#define PARTY_MSG_MONS_CANT_BE_SAME         19
+#define PARTY_MSG_NO_SAME_HOLD_ITEMS        20
+#define PARTY_MSG_UNUSED                    21
+#define PARTY_MSG_DO_WHAT_WITH_MON          22
+#define PARTY_MSG_RESTORE_WHICH_MOVE        23
+#define PARTY_MSG_BOOST_PP_WHICH_MOVE       24
+#define PARTY_MSG_DO_WHAT_WITH_ITEM         25
+#define PARTY_MSG_DO_WHAT_WITH_MAIL         26
+#define PARTY_MSG_NONE                      127
+
 /**
  * Initializes the pokemon party menu
- * @param a TODO
- * @param b TODO
- * @param c TODO
- * @param d TODO
- * @param e TODO
+ * @param menu_type
+ * @param layout
+ * @param party_action
+ * @param keep_cursor_position if the cursor position is to be kept after returning
+ * @param message_idx which message to display
  * @param big_callback some big callback that is executed at some point (much descriptive, yes!)
  * @param return_callback the callback to execute when returning from the pokemon party menu
  */
-void pokemon_party_menu_init(u8 a, u8 b, u8 c, u8 d, u8 e, void (*big_callback)(u8),
+void pokemon_party_menu_init(u8 menu_type, u8 layout, u8 party_action, u8 keep_cursor_position, u8 message_idx, void (*big_callback)(u8),
     void (*return_callback)());
+
+/**
+ * Callback to initialize sliding the partner's party in the pokemon party preview.
+ * @param self self-reference
+ **/
+void pokemon_party_menu_partner_party_slide_in_initialize (u8 self);
 
 /**
  * Some callback function. Seems to fit well as big_callback parameter for pokemon_party_menu_init.

@@ -1,0 +1,13 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "TRAINER_BACKSPRITE_HIRO",
+        "TRAINER_BACKSPRITE_HIROINE",
+        "TRAINER_BACKSPRITE_BRENDAN",
+        "TRAINER_BACKSPRITE_MAY",
+        "TRAINER_BACKSPRITE_POKEDUDE",
+        "TRAINER_BACKSPRITE_OLD_MAN",
+        "TRAINER_BACKSPRITE_CNT"
+    ]
+}

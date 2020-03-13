@@ -96,3 +96,58 @@ trainergfx 26,gfx_trainer_harrenfeldTiles,gfx_trainer_harrenfeldPal
 trainergfx 25,gfx_trainer_pirateTiles,gfx_trainer_piratePal
 trainergfx 24,gfx_trainer_butlerTiles,gfx_trainer_butlerPal
 trainergfx 28,gfx_trainer_luciusTiles,gfx_trainer_luciusPal
+
+
+.org 0x0803f7a0
+    .word trainer_backsprite_templates
+
+.org 0x080334d4
+    .word trainer_backsprite_palettes
+.org 0x08034674
+    .word trainer_backsprite_palettes
+.org 0x080d704c
+    .word trainer_backsprite_palettes
+.org 0x080eb0e4
+    .word trainer_backsprite_palettes
+.org 0x08159124
+    .word trainer_backsprite_palettes
+
+.org 0x0803230c
+	.word trainer_backsprite_coordinates
+.org 0x08032474
+	.word trainer_backsprite_coordinates
+.org 0x08077d3a
+	.word trainer_backsprite_coordinates
+.org 0x08077d70
+	.word trainer_backsprite_coordinates
+.org 0x08077d9a
+	.word trainer_backsprite_coordinates
+.org 0x08077dfc
+	.word trainer_backsprite_coordinates
+.org 0x080d64c8
+	.word trainer_backsprite_coordinates
+.org 0x080ddcac
+	.word trainer_backsprite_coordinates
+.org 0x080ea0fc
+	.word trainer_backsprite_coordinates
+.org 0x080ea124
+	.word trainer_backsprite_coordinates
+.org 0x080ea1b8
+	.word trainer_backsprite_coordinates
+.org 0x080ea240
+	.word trainer_backsprite_coordinates
+.org 0x080ea268
+	.word trainer_backsprite_coordinates
+.org 0x080ea2fc
+	.word trainer_backsprite_coordinates
+.org 0x08158042
+	.word trainer_backsprite_coordinates
+.org 0x081580ac
+	.word trainer_backsprite_coordinates
+.org 0x08158232
+	.word trainer_backsprite_coordinates
+.org 0x081582c0
+	.word trainer_backsprite_coordinates
+
+.org 0x0803f7a4
+    .word trainer_backsprite_animations

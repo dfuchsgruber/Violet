@@ -50,7 +50,11 @@ typedef struct saveblock1 {
     u8 field_31;
     u16 current_footer_id;
     //0x34
-    u8 unknown_2_1[604];
+    u8 saved_party_count;
+    u8 field_35;
+    u8 field_36;
+    u8 field_37; // Probably 0x35 to 0x37 are padding
+    pokemon saved_party[6];
     u32 money;
     u8 unknown_2_2[1612];
     // 0x8e0
@@ -115,7 +119,8 @@ typedef struct custom_memory {
     u8 daycare_offspring_has_hidden_ability;
     u8 daycare_offspring_male; // Volbeat and Nidoran may alter their gender when breeding (y tho?)
     box_pokemon incubator_slots[3];
-    u8 unused[14];
+    u8 ally_battle_selected_party_idxs[3];
+    u8 unused[11];
     
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
@@ -194,6 +199,8 @@ typedef struct {
     u8 *trainers_scripts[2];
     trainer_variables trainer_varsB;
     u16 ally_trainer_idx;
+    u8 ally_trainer_backsprite_idx;
+    u8 ally_trainer_party_preview;
 } floating_memory;
 
 extern saveblock1 *save1;

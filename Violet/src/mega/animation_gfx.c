@@ -27,13 +27,13 @@ static graphic graphic_mega_sparkle = {
     .sprite = gfx_mega_sparkleTiles, .tag = MEGA_TAG, .size = 32 * 32 / 2,
 };
 static graphic graphic_regent_groudon_sparkle = {
-    .sprite = gfx_mega_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
+    .sprite = gfx_regent_groudon_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
 };
 static graphic graphic_regent_kyogre_sparkle = {
-    .sprite = gfx_mega_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
+    .sprite = gfx_regent_kyogre_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
 };
 static graphic graphic_regent_rayquaza_sparkle = {
-    .sprite = gfx_mega_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
+    .sprite = gfx_regent_rayquaza_sparkleTiles, .tag = REGENT_TAG, .size = 32 * 32 / 2,
 };
 static palette palette_mega_sparkle = {
     .pal = gfx_mega_sparklePal, .tag = MEGA_TAG,

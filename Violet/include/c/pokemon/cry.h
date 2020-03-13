@@ -21,6 +21,12 @@ pokemon_cry pokemon_cries_forward[POKEMON_CNT];
 pokemon_cry pokemon_cries_backward[POKEMON_CNT];
 
 /**
+ * Checks if a cry is playing and clears the cry songs.
+ * @return if a cry is playing.
+ **/
+bool cry_is_playing_or_clear_cry_songs();
+
+/**
  * Plays the cry of a pokemon
  * @param species The species to play the cry of
  * @param feature Feature for the cry

@@ -12,14 +12,7 @@
 #include "pokemon/count.h"
 #include "oam.h"
 
-typedef struct {
-    u8 y_offset;
-    u8 width : 4;
-    u8 height : 4;
-    u16 padding;
-} pokemon_coordinates_t;
-
-extern pokemon_coordinates_t trainer_sprite_coordinates[];
+extern sprite_coordinates_t trainer_sprite_coordinates[];
 
 /**
  * Loads the gfx of a trainer (graphic and palette) into the pokemon buffer of a battler's position.

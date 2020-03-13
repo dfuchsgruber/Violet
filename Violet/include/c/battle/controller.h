@@ -165,6 +165,27 @@ void battle_controller_partner_handle_choose_pokemon();
  **/
 void battle_controller_partner_handle_choose_item();
 
+/**
+ * Battle controller function for the partner to draw their trainer picture
+ **/
+void battle_controller_partner_handle_draw_trainer_picture();
+
+/**
+ * Battle controller function for the partner to handle exp. The partner simply doesn't gain exp...
+ **/
+void battle_controller_partner_handle_exp_update();
+
+/**
+ * Waits for *BOTH* healthboxes to be finished until the controller execution is continued.
+ **/
+void battle_controller_player_wait_for_healthboxes();
+
+/**
+ * Delays the finishing of the controller exeuction by field_9 of the healthbox_info of a battler.
+ **/
+void battle_controller_player_wait_for_healthbox_delay_and_finish_execution();
+
+
 #define BOUNCE_EFFECT_BATTLER 0
 #define BOUNCE_EFFECT_HEALTHBAR 1
 
@@ -219,5 +240,17 @@ void sub_08035ae8();
  * @param battler_position the bank into which the gfx was loaded.
  **/
 void trainer_gfx_initialize_gp_oam_template(u8 sprite_idx, u8 battler_position);
+
+/**
+ * Loads the backsprite palette of a trainer
+ * @param sprite_idx which backsprite to laod
+ * @param battler_position at which bank to load the sprite palette
+ **/
+void battle_trainer_load_backsprite_palette(u8 sprite_idx, u8 battler_position);
+
+/**
+ * Battle controller function that waits until the oam of the battler (can be the trainer also) has a null-callback.
+ **/
+void battle_controller_player_wait_for_oam();
 
 #endif

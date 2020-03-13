@@ -19,7 +19,6 @@
 #include "constants/trainer_builds.h"
 #include "debug.h"
 
-
 u16 trainer_pokemon_prng() {
 	return (u16)_prng_xorshift(&(fmem.trainer_prng_state));
 }
@@ -75,47 +74,61 @@ void trainer_pokemon_new_default_item_default_attacks(pokemon *dst,
 }
 
 static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
-	if (trainer_id == 0x400) return 0; // No idea, but in vanilla they do it, so...
-	if (!(battle_flags & BATTLE_TOWER) && !(battle_flags & BATTLE_EREADER)
-			&& !(battle_flags & BATTLE_31) && (battle_flags & BATTLE_TRAINER)) {
-		// To generate a trainer consistent pid we use a pseudo rng
-		fmem.trainer_prng_state = trainer_id;
-		for (int i = 0; i < trainers[trainer_id].pokemon_cnt; i++) {
-			if (trainers[trainer_id].uses_custom_items &&
-					trainers[trainer_id].uses_custom_moves) {
-				trainer_pokemon_custom_item_custom_attacks* party =
-						(trainer_pokemon_custom_item_custom_attacks*)trainers[trainer_id].party;
-				trainer_pokemon_new_custom_item_custom_attacks(&dst_party[i], &party[i]);
-			} else if (trainers[trainer_id].uses_custom_items) {
-				trainer_pokemon_custom_item_default_attacks* party =
-						(trainer_pokemon_custom_item_default_attacks*)trainers[trainer_id].party;
-				trainer_pokemon_new_custom_item_default_attacks(&dst_party[i], &party[i]);
-			} else if (trainers[trainer_id].uses_custom_moves) {
-				trainer_pokemon_default_item_custom_attacks* party =
-						(trainer_pokemon_default_item_custom_attacks*)trainers[trainer_id].party;
-				trainer_pokemon_new_default_item_custom_attacks(&dst_party[i], &party[i]);
-			} else {
-				trainer_pokemon_default_item_default_attacks* party =
-						(trainer_pokemon_default_item_default_attacks*)trainers[trainer_id].party;
-				trainer_pokemon_new_default_item_default_attacks(&dst_party[i], &party[i]);
-			}
+	// To generate a trainer consistent pid we use a pseudo rng
+	fmem.trainer_prng_state = trainer_id;
+	for (int i = 0; i < trainers[trainer_id].pokemon_cnt; i++) {
+		if (trainers[trainer_id].uses_custom_items &&
+				trainers[trainer_id].uses_custom_moves) {
+			trainer_pokemon_custom_item_custom_attacks* party =
+					(trainer_pokemon_custom_item_custom_attacks*)trainers[trainer_id].party;
+			trainer_pokemon_new_custom_item_custom_attacks(&dst_party[i], &party[i]);
+		} else if (trainers[trainer_id].uses_custom_items) {
+			trainer_pokemon_custom_item_default_attacks* party =
+					(trainer_pokemon_custom_item_default_attacks*)trainers[trainer_id].party;
+			trainer_pokemon_new_custom_item_default_attacks(&dst_party[i], &party[i]);
+		} else if (trainers[trainer_id].uses_custom_moves) {
+			trainer_pokemon_default_item_custom_attacks* party =
+					(trainer_pokemon_default_item_custom_attacks*)trainers[trainer_id].party;
+			trainer_pokemon_new_default_item_custom_attacks(&dst_party[i], &party[i]);
+		} else {
+			trainer_pokemon_default_item_default_attacks* party =
+					(trainer_pokemon_default_item_default_attacks*)trainers[trainer_id].party;
+			trainer_pokemon_new_default_item_default_attacks(&dst_party[i], &party[i]);
 		}
-		battle_flags |= trainers[trainer_id].battle_state;
-		return trainers[trainer_id].pokemon_cnt;
 	}
-	return 0;
+	battle_flags |= trainers[trainer_id].battle_state;
+	return trainers[trainer_id].pokemon_cnt;
+	
 }
 
 
 int trainer_party_setup() {
 	int num_pokemon_setup = 0;
-	if (battle_flags & BATTLE_TRAINER) {
-		pokemon_clear_opponent_party();	
-		num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon, trainer_vars.trainer_id);
+	if (!(battle_flags & BATTLE_TOWER) && !(battle_flags & BATTLE_EREADER)
+			&& !(battle_flags & BATTLE_31) && (battle_flags & BATTLE_TRAINER)) {
+		if (battle_flags & BATTLE_TRAINER) {
+			pokemon_clear_opponent_party();	
+			num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon, trainer_vars.trainer_id);
+		}
+		if ((battle_flags & BATTLE_TWO_TRAINERS) && (battle_flags & BATTLE_TRAINER))
+			num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon + 3, fmem.trainer_varsB.trainer_id);
 	}
-	if ((battle_flags & BATTLE_TWO_TRAINERS) && (battle_flags & BATTLE_TRAINER))
-		num_pokemon_setup += party_setup_by_trainer_idx(opponent_pokemon + 3, fmem.trainer_varsB.trainer_id);
 	return num_pokemon_setup;
+}
+
+void ally_party_setup() {
+	u16 trainer_idx = *var_access(VAR_ALLY);
+	memset(player_pokemon + 3, 0, 3 * sizeof(pokemon));
+	party_setup_by_trainer_idx(player_pokemon + 3, trainer_idx);
+	u32 tid = (u32)(trainer_pokemon_prng() % 100000);
+	// Change OT-name
+	fmem.trainer_prng_state = trainer_idx;
+	for (int i = 3; i < 6; i++) {
+		if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, 0) != 0) {
+			pokemon_set_attribute(player_pokemon + i, ATTRIBUTE_OT_NAME, trainers[trainer_idx].name);
+			pokemon_set_attribute(player_pokemon + i, ATTRIBUTE_TID, &tid);
+		}
+	}
 }
 
 

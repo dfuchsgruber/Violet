@@ -22,7 +22,13 @@ typedef union {
 } key;
 
 typedef struct superstate {
-    void *callbacks[7]; //3 :=vlbank, 4:=hblank
+    void (*callback0)();
+    void (*callback1)();
+    void (*saved_callback)();
+    void (*vblank_callback)();
+    void (*blank_callback)();
+    void (*vcount_callback)();
+    void (*serial_callback)();
     u32 wait;
     u32 *vblank_cnt_ptr;
     u32 local_vlbank_cnt;

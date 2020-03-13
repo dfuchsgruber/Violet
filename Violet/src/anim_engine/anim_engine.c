@@ -854,7 +854,7 @@ void ae_mapreloader() {
 
 void cmdx2C_mapreload() {
     fadescreen_all(1, 0);
-    super.callbacks[1] = ae_mapreloader;
+    super.callback1 = ae_mapreloader;
 }
 
 void cmdx2D_force_pals_to_black() {

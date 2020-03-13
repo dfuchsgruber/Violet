@@ -154,10 +154,26 @@ typedef struct pokemon {
     u16 special_defense;
 } pokemon;
 
+extern u8 player_party_selected_idxs[3]; // Idxs selected by special 0x29
 
 extern pokemon player_pokemon[];
 extern u8 player_pokemon_cnt;
 extern pokemon opponent_pokemon[];
+
+/** 
+ * Transfers the entire player party to the save block.
+ **/
+void player_save_party();
+
+/**
+ * Loads the entire player party from the save block.
+ **/
+void player_restore_party();
+
+/**
+ * Reduces the player party to the (up to) three selected pokemon in the selected order.
+ **/
+void player_party_reduce_to_selection();
 
 /**
  * Compactifies the player party, i.e. fills empty slots upwards. One should also update the
