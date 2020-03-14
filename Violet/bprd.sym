@@ -721,3 +721,5 @@ summary_selected_party_idx_apply_delta_in_multi_battles = 0x0813b428 | 1;
 trainer_backsprite_sprite = 0x0824eee8;
 trainer_backsprite_rotscale_anim_table = 0x08234798;
 trainer_backsprite_callback = 0x08012048 | 1;
+string_get_placeholder = 0x08009160 | 1;
+song_get_current = 0x080719cc | 1;

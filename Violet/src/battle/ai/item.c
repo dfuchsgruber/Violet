@@ -178,7 +178,7 @@ u8 battle_ai_should_use_item(int *score) {
                     item_score = 2 - (battlers[active_battler].current_hp * 4 / battlers[active_battler].max_hp);
                     AI_DEBUG_ITEMS("Healing hp item score %d\n", item_score);
                 } else {
-                    item_score = 0; // Do not waste healing items...
+                    item_score = -16; // Do not waste healing items...
                 }
                 break;
             }

@@ -6,6 +6,8 @@
 .include "overworld_script.s"
 .include "vars.s"
 .include "mugshot.s"
+.include "specials.s"
+.include "trainer_backsprites.s"
 
 .global ow_script_movs_0x8a71a0
 ow_script_movs_0x8a71a0:
@@ -144,21 +146,70 @@ applymovement 0xff ow_script_movs_0x8a7003
 waitmovement 0x0
 loadpointer 0x0 str_0x8a6b0d
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8a6ac8
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_FACE
-getplayerpos 0x8000 0x8001
-compare 0x8001 0x37
-callif EQUAL ow_script_0x8a6d2a
-compare 0x8001 0x38
-callif EQUAL ow_script_0x8a6d3d
-compare 0x8001 0x39
-callif EQUAL ow_script_0x8a6d50
-compare 0x8001 0x3a
-callif EQUAL ow_script_0x8a6d63
-loadpointer 0 str_violet_grunt
-setvar 0x8000 1
-special 0xE
-trainerbattlecont 0x1 0x8 0x0 str_0x8a69df str_0x8a6a97 ow_script_0x8a71a2
+    setvar 0x8004 0xFF
+    setvar 0x8005 0x13
+    setvar 0x8006 0x38
+    special SPECIAL_NPC_MOVE_TO
+    setvar 0x8004 0x52
+    setvar 0x8005 0x14
+    setvar 0x8006 0x39
+    special SPECIAL_NPC_MOVE_TO
+    waitmovement 0
+    applymovement 0xFF mov_face_right
+    applymovement 0x52 mov_face_right
+    waitmovement 0
+    
+select:
+    setvar SONG_OVERRIDE MUS_VIOLET_ENCOUNTER
+    setflag TRANS_DISABLE
+    clearflag TRANS_PALETTE_FETCH
+    loadpointer 0 str_select
+    callstd MSG_KEEPOPEN
+    special SPECIAL_SELECT_HALF_PARTY
+    waitstate
+    clearflag TRANS_DISABLE
+    compare LASTRESULT 0
+    gotoif EQUAL have_to_select
+    setvar SONG_OVERRIDE 0
+    compare STARTER_SELECTED 0
+    gotoif EQUAL plant_starter
+    compare STARTER_SELECTED 1
+    gotoif EQUAL fire_starter
+water_starter:
+    setvar VAR_ALLY 0x161
+    special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+    loadpointer 0 str_violet_grunt
+    setvar 0x8000 1
+    special 0xE
+    trainerbattleallytwotrainers 0x8 0x164 0x161 43 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
+
+
+fire_starter:
+    setvar VAR_ALLY 0x160
+    special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+    loadpointer 0 str_violet_grunt
+    setvar 0x8000 1
+    special 0xE
+    trainerbattleallytwotrainers 0x8 0x164 0x160 43 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
+
+
+plant_starter:
+    setvar VAR_ALLY 0x15F
+    special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+    loadpointer 0 str_violet_grunt
+    setvar 0x8000 1
+    special 0xE
+    trainerbattleallytwotrainers 0x8 0x164 0x15F 43 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df ow_script_0x8a71a2 str_after_second_grunt ow_script_0x8a71a2
+
+
+
+have_to_select:
+    loadpointer 0x0 str_have_to_select
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+goto select
+
+mov_face_right:
+    .byte LOOK_RIGHT, STOP
 
 .global ow_script_movs_0x8a7dbc
 ow_script_movs_0x8a7dbc:
@@ -182,36 +233,33 @@ ow_script_movs_0x8a74ff:
 .global ow_script_movs_0x8a73a5
 ow_script_movs_0x8a73a5:
 .byte STEP_RIGHT
-.byte STEP_UP
+.byte LOOK_UP
 .byte STOP
 
 
 .global ow_script_movs_0x8a73a1
 ow_script_movs_0x8a73a1:
 .byte STEP_RIGHT
-.byte STEP_RIGHT
 .byte STOP
 
 
 .global ow_script_0x8a71a2
 ow_script_0x8a71a2:
-sound 0xa
-applymovement 0x2b ow_script_movs_0x8a7dbc
-waitmovement 0x0
-checksound
-loadpointer 0x0 str_0x8a752d
-callstd MSG
-sound 0xa
-applymovement 0x2c ow_script_movs_0x8a7dbc
-waitmovement 0x0
-checksound
+loadpointer 0 str_violet_grunt
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8a7502
 callstd MSG
+special 0xF
 applymovement 0x2b ow_script_movs_0x8a74fc
 applymovement 0x2c ow_script_movs_0x8a74ff
 waitmovement 0x0
+loadpointer 0 str_violet_grunt
+setvar 0x8000 1
+special 0xE
 loadpointer 0x0 str_0x8a74d8
 callstd MSG
+special 0xF
 fadescreen 0x1
 call ow_script_0x8a91b8
 fadescreen 0x0
@@ -365,92 +413,106 @@ str_violet_grunt:
 .global str_0x8a7134
 
 str_0x8a7134:
-	.autostring 35 2 "Spiel hier nicht den Dummen!\pWenn du uns nicht verrätst, was wir wissen wollen, wirst du uns kennenlernen!"
+	.autostring 34 2 "Spiel hier nicht den Dummen!\pWenn du uns nicht verrätst, was wir wissen wollen, wirst du uns kennenlernen!"
         
         
 .global str_0x8a70a9
 
 str_0x8a70a9:
-    .autostring 35 2 "Ich habe es euch doch schon gesagt!\pIch bin zwar ein Archäologe, aber von einem Zeistein habe ich noch nie zuvor gehört!"
+    .autostring 34 2 "Ich habe es euch doch schon gesagt!\pIch bin zwar ein Archäologe, aber von einem Zeistein habe ich noch nie zuvor gehört!"
         
         
 .global str_0x8a7027
 
 str_0x8a7027:
-    .autostring 35 2 "Das kaufen wir dir aber nicht ab!\pDu willst es also wirklich darauf ankommen lassen?"
+    .autostring 34 2 "Das kaufen wir dir aber nicht ab!\pDu willst es also wirklich darauf ankommen lassen?"
         
         
 .global str_0x8a6f8a
 
 str_0x8a6f8a:
-    .autostring 35 2 "PLAYER!\pPerfektes Timing!\pDas Labor meines Vaters befindet sich hier und ich wollte ihm einen Besuch abstatten."
+    .autostring 34 2 "PLAYER!\pPerfektes Timing!\pDas Labor meines Vaters befindet sich hier und ich wollte ihm einen Besuch abstatten."
         
         
 .global str_0x8a6f16
 
 str_0x8a6f16:
-    .autostring 35 2 "Was ist denn hier los?\pWer sind diese Leute und was haben Sie mit meinem Vater zu schaffen?"
+    .autostring 34 2 "Was ist denn hier los?\pWer sind diese Leute und was haben Sie mit meinem Vater zu schaffen?"
         
         
 .global str_0x8a6bac
 
 str_0x8a6bac:
-    .autostring 35 2 "Lasst den Professor in Ruhe!"
+    .autostring 34 2 "Lasst den Professor in Ruhe!"
         
         
 .global str_0x8a6b82
 
 str_0x8a6b82:
-    .autostring 35 2 "RIVAL! PLAYER!\nIhr seid meine Retter in der Not!"
+    .autostring 34 2 "RIVAL! PLAYER!\nIhr seid meine Retter in der Not!"
         
         
 .global str_0x8a6bfa
 
 str_0x8a6bfa:
-	.autostring 35 2 "Dieses Kind schon wieder!\pHast du deine Lektion noch nicht gelernt, dich nicht mit uns anzulegen?\pDu wirst noch einsehen, dass man sich nicht in Angelegenheiten einmischen sollte, die einen nichts angehen!"
+	.autostring 34 2 "Dieses Kind schon wieder!\pHast du deine Lektion noch nicht gelernt, dich nicht mit uns anzulegen?\pDu wirst noch einsehen, dass man sich nicht in Angelegenheiten einmischen sollte, die einen nichts angehen!"
         
 .global str_0x8a6b0d
 
 str_0x8a6b0d:
-    .autostring 35 2 "Alles klar PLAYER!\pJeder von uns nimmt sich einen dieser Idioten vor.\pWer schneller fertig ist, bekommt den Dritten ab!"
+    .autostring 34 2 "Alles klar PLAYER!\nDiese erbärmlichen Typen erledigen wir gemeinsam, was sagst du?"
         
         
 .global str_0x8a6ac8
 
 str_0x8a6ac8:
-    .autostring 35 2 "Wir werden deinen Vater auf jeden Fall retten!"
+    .autostring 34 2 "Wir werden deinen Vater auf jeden Fall retten!"
         
         
 .global str_0x8a69df
 
 str_0x8a69df:
-    .autostring 35 2 "Du Rotzlöffel!\pJetzt wirst du aufgemischt!"
+    .autostring 34 2 "Du Rotzlöffel!\pJetzt wirst du aufgemischt!"
 .global str_0x8a6a97
 
 str_0x8a6a97:
-    .autostring 35 2 "DOTS DOTS DOTS\nDu kleiner RotzlöffelDOTS"
+    .autostring 34 2 "DOTS DOTS DOTS\nDu kleiner RotzlöffelDOTS"
 
 str_0x8a752d:
-    .autostring 35 2 "Das kann doch nicht sein, dass ich von so einem Balg besiegt werde!"
+    .autostring 34 2 "Das kann doch nicht sein, dass ich von so einem Balg besiegt werde!"
 
 
 .global str_0x8a7502
 
 str_0x8a7502:
-    .autostring 35 2 "Verdammt!\pDer Kleine hat mich überrumpelt!"
+    .autostring 34 2 "Verdammt!\pDer Kleine hat mich überrumpelt!"
 
 
 .global str_0x8a74d8
 
 str_0x8a74d8:
-    .autostring 35 2 "Wir sollten uns vom Acker machen!"
+    .autostring 34 2 "Wir sollten uns vom Acker machen!"
 
 
 .global str_0x8a73a9
 
 str_0x8a73a9:
-    .autostring 35 2 "RIVAL, PLAYERDOTS\pIhr seid wirklich genau richtig gekommen.\pWer weiß, was mir diese Schergen angetan hätten, wenn ihr nicht eingeschritten wärt.\pSie haben darauf bestanden, dass ich ihnen verrate, wo man einen gewissen Zeitstein findet.\pIch wollte ihnen klar machen, dass ich von einem solchen Zeitstein noch nie etwas gehört habe, aber diese Rüpel wollten nicht hören.\pAber lasst uns das nicht hier draußen besprechen, kommt doch mit in mein Labor."
+    .autostring 34 2 "RIVAL, PLAYERDOTS\pIhr seid wirklich genau richtig gekommen.\pWer weiß, was mir diese Schergen angetan hätten, wenn ihr nicht eingeschritten wärt.\pSie haben darauf bestanden, dass ich ihnen verrate, wo man einen gewissen Zeitstein findet.\pIch wollte ihnen klar machen, dass ich von einem solchen Zeitstein noch nie etwas gehört habe, aber diese Rüpel wollten nicht hören.\pAber lasst uns das nicht hier draußen besprechen, kommt doch mit in mein Labor."
         
+str_select:
+    .autostring 34 2 "Wähle die Pokémon aus, mit denen du kämpfen möchtest."
+
+str_have_to_select:
+    .autostring 34 2 "Hey PLAYER!\nDu kannst mich doch hier nicht so hängen lassen!\pEs geht hier um meinen Vater!"
+
+str_after_second_grunt:
+    .autostring 34 2 "Rin wird uns den Hintern aufreißenDOTS"
 .elseif LANG_EN
+str_select:
+    .autostring 34 2 "Select the Pokémon you want to battle with."
+str_have_to_select:
+    .autostring 34 2 "Hey PLAYER!\nYou can't let me down like that!\pThis is about my father!"
+str_after_second_grunt:
+    .autostring 34 2 "Rin is going to rip apart our buttsDOTS"
 
 .endif

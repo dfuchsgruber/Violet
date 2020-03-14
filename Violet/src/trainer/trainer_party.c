@@ -125,7 +125,7 @@ void ally_party_setup() {
 	fmem.trainer_prng_state = trainer_idx;
 	for (int i = 3; i < 6; i++) {
 		if (pokemon_get_attribute(player_pokemon + i, ATTRIBUTE_SPECIES, 0) != 0) {
-			pokemon_set_attribute(player_pokemon + i, ATTRIBUTE_OT_NAME, trainers[trainer_idx].name);
+			pokemon_set_attribute(player_pokemon + i, ATTRIBUTE_OT_NAME, trainer_get_name(trainer_idx));
 			pokemon_set_attribute(player_pokemon + i, ATTRIBUTE_TID, &tid);
 		}
 	}

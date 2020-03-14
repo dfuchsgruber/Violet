@@ -221,7 +221,7 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
                 hp_to_heal = battle_scripting.heal_item_amount;
                 break;
             default:
-                hp_to_heal = 1;
+                hp_to_heal = effect->hp;
                 break;
         }
         dprintf("Hp to heal %d\n", hp_to_heal);

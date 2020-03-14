@@ -10,7 +10,7 @@
 #include "map/footer.h"
 #include "agbmemory.h"
 #include "prng.h"
-
+#include "vars.h"
 map_connection_header_t dungeon2_connections = {0, NULL};
 
 levelscript_header_t dungeon2_lscr [] = {

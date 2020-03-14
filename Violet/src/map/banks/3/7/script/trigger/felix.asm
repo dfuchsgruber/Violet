@@ -17,7 +17,7 @@ show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 call ow_script_healing_sequence
 loadpointer 0 str_after_healing
 show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
-setvar 0x8004 0x36
+setvar 0x8004 0x3
 setvar 0x8005 0x7
 setvar 0x8006 0x19
 special 0x24

@@ -127,5 +127,8 @@ extern u8 ow_script_trainerbattle_rematch[];
 // Challange script that executes the continuation afterwards
 extern u8 ow_script_trainerbattle_with_continuation[];
 
+// Challange script for double battles, that omits checking if the player has two viable pokemon (for ally battles)
+extern u8 ow_script_trainerbattle_double_dont_check_enough_pokemon[];
+
 
 #endif /* INCLUDE_C_TRAINER_VIRTUAL_H_ */

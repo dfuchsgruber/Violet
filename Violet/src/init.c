@@ -12,6 +12,7 @@
 #include "constants/flags.h"
 #include "pokepad/incubator.h"
 #include "debug.h"
+#include "vars.h"
 
 void custom_memory_init() {
   int zero = 0;

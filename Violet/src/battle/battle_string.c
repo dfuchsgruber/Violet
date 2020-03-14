@@ -361,12 +361,20 @@ u16 trainer_idx_by_battler_idx(u8 battler_idx) {
     return trainer_idx_by_owner(battler_get_owner(battler_idx));
 }
 
+u8 *trainer_get_name(u16 trainer_idx) {
+    if (trainers[trainer_idx].trainerclass == TRAINERCLASS_RIVALE || trainers[trainer_idx].trainerclass == TRAINERCLASS_RIVALE2) {
+        return string_get_placeholder(6);
+    }
+    else
+        return trainers[trainer_idx].name;
+}
+
 u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
     switch(buffer_idx) {
         case 0x31: // Trainer2 Class
             return trainer_class_names[trainers[fmem.trainer_varsB.trainer_id].trainerclass];
         case 0x32 : // Trainer2 Name
-            return trainers[fmem.trainer_varsB.trainer_id].name;
+            return trainer_get_name(fmem.trainer_varsB.trainer_id);
         case 0x2E: // Trainer2 Lose Text
             return fmem.trainer_varsB.defeat_text; // Cut on trainer tower stuff...
         case 0x2F: // Trainer2 Win Text
@@ -374,7 +382,7 @@ u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
         case 0x33: // Ally class
             return trainer_class_names[trainers[*var_access(VAR_ALLY)].trainerclass];
         case 0x34: // Ally name
-            return trainers[*var_access(VAR_ALLY)].name;
+            return trainer_get_name(*var_access(VAR_ALLY));
         case 0x35: // Mega-Idx keystone
             return items[battler_get_keystone(battle_scripting.battler_idx)].name;
         case 0x36: // Mega Species
@@ -385,7 +393,7 @@ u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
             if (battler_get_owner(attacking_battler) == OWNER_PLAYER)
                 return save2->player_name;
             else
-                return trainers[trainer_idx_by_battler_idx(attacking_battler)].name;
+                return trainer_get_name(trainer_idx_by_battler_idx(attacking_battler));
         default:
             return NULL;
     }
@@ -395,7 +403,7 @@ static u8 str_partner_unknown[] = PSTRING("?????");
 
 u8 *battle_get_partner_name() {
     if (battle_flags & BATTLE_ALLY) {
-        return trainers[*var_access(VAR_ALLY)].name;
+        return trainer_get_name(*var_access(VAR_ALLY));
     } else if (battle_flags & (BATTLE_MULTI)) {
         return link_players[PARTNER(link_players[multiplayer_get_idx()].battler_idx)].name;
     }

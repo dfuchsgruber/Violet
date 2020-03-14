@@ -12,6 +12,9 @@
 #include "debug.h"
 #include "constants/battle_results.h"
 
+
+
+
 void battle_initialize_trainerbattle() {
     battle_flags = BATTLE_TRAINER;
     super.saved_callback = trainerbattle_continuation;
@@ -83,11 +86,17 @@ void ally_battle_revive_pokemon() {
 }
 
 
+void battle_end_actions() {
+    dprintf("Do battle end actions...\n");
+    battle_alternative_forms_revert();
+    ally_battle_restore_party();
+    ally_battle_revive_pokemon();
+}
+
+
 void battle_free_new() {
+    battle_end_actions();
     if (fmem.mega_state) {
-        battle_alternative_forms_revert(); // It's whack to have it here, but w/e
-        ally_battle_restore_party();
-        ally_battle_revive_pokemon();
         free(fmem.mega_state);
         fmem.mega_state = NULL;
     }

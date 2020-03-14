@@ -4,7 +4,7 @@
 #include "constants/trainer_ai_flags.h"
 #include "constants/items.h"
 #include "trainer/trainer.h"
-#include "trainer/party.h"
+#include "trainer/parties.h"
 #include "language.h"
 #include "save.h"
 #include "battle/state.h"
@@ -316,7 +316,7 @@ trainer trainers[TRAINER_CNT] = {
     0x0, // field_0_filler
     TRAINERCLASS_GENTLEMAN,
     {
-      0x3,
+      0x2,
       false
     }, //Encounter and gender
     0x17, // sprite
@@ -6194,30 +6194,56 @@ trainer trainers[TRAINER_CNT] = {
 				.uses_custom_items = true, .uses_custom_moves = true,
         .battle_state = BATTLE_DOUBLE,
     },
-    // TESTING FOR TRAINER DOUBLE BATTLES
     [0x15f] = {
-        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 0x4a,
-        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Trainer A."),
-            PSTRING("Elite J.")), .pokemon_cnt = 2,
-        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = (trainer_pokemon*) trainer_party_x15c_ardeal_trainer_3,
-        .items = {ITEM_TRANK, ITEM_HYPERHEILER, 0, 0},
+        .trainerclass = TRAINERCLASS_RIVALE, .sprite = 106,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Björn"),
+            PSTRING("Björn")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+        .party = (trainer_pokemon*) trainer_party_x15f_route_2_rival_plant_starter,
+				.uses_custom_items = true, .uses_custom_moves = true,
+        .items = {ITEM_TRANK, 0, 0, 0},
     },
     [0x160] = {
-        .trainerclass = TRAINERCLASS_CAMPER, .sprite = 0x33,
-        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Trainer B."),
-            PSTRING("Elite J.")), .pokemon_cnt = 3,
-        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = (trainer_pokemon*) trainer_party_x15a_ardeal_trainer_1,
-        .items = {ITEM_X_ABWEHR, ITEM_MEGABLOCK, 0},
+        .trainerclass = TRAINERCLASS_RIVALE, .sprite = 106,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Björn"),
+            PSTRING("Björn")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+        .party = (trainer_pokemon*) trainer_party_x160_route_2_rival_fire_starter,
+				.uses_custom_items = true, .uses_custom_moves = true,
+        .items = {ITEM_TRANK, 0, 0, 0},
     },
     [0x161] = {
-        .trainerclass = TRAINERCLASS_AROMALADY, .sprite = 0x33,
-        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Ally"),
-            PSTRING("Elite J.")), .pokemon_cnt = 2,
+        .trainerclass = TRAINERCLASS_RIVALE, .sprite = 106,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Björn"),
+            PSTRING("Björn")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+        .party = (trainer_pokemon*) trainer_party_x161_route_2_rival_water_starter,
+				.uses_custom_items = true, .uses_custom_moves = true,
+        .items = {ITEM_TRANK, 0, 0, 0},
+    },
+    [0x162] = {
+        .trainerclass = TRAINERCLASS_KAEFERSAMMLER, .sprite = 66,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Patt"),
+            PSTRING("Patt")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = (trainer_pokemon*) trainer_party_x155_route_7_trainer_22,
-        .items = {ITEM_TOP_GENESUNG, ITEM_MEGABLOCK, 0},
+        .party = (trainer_pokemon*) trainer_party_x162_route_2_east_trainer_0,
+    },
+    [0x163] = {
+        .trainerclass = TRAINERCLASS_ROCKER, .sprite = 17,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Erwin"),
+            PSTRING("Erwin")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x163_route_2_trainer_0,
+    },
+    [0x164] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 78,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Rüpel H."),
+            PSTRING("Grunt H.")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x164_route_2_grunt_second,
     },
 }; 
 

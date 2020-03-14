@@ -14,6 +14,10 @@ ow_script_movs_0x8e07eb:
 
 .global ow_script_0x8e1e30
 ow_script_0x8e1e30:
+	loadpointer 0 str_0
+	callstd MSG_FACE
+	end
+
 checkflag MERIANA_CITY_REVOLUTIONARIES
 gotoif LESS ow_script_0x8de301
 checkflag MERIANA_CITY_BLOCKING_REVOLUTIONARIES
@@ -109,6 +113,12 @@ str_0x8e1de2:
 str_0x8de430:
 	.autostring 35 2 "Selbst, wenn man einen der Übeltäter bei der Polizei bloßstellen könnte, würde man nichts erreichen.\pDie Polizei hat durch die Top Vier so gut wie jede BefugnisDOTS"
         
+str_0:
+	.autostring 34 2 "Über kurz oder lang, wird die Region von Anarchisten überrannt werden.\pDas System der Top Vier ist durch und durch korrupt.\pEs darf nicht überleben!"
 .elseif LANG_EN
+
+
+str_0:
+	.autostring 34 2 "Sooner or later this region will be overwhelmed by anarchists of all kind.\pThis system of the Elite Four is corrupted to its core.\pIt must not survive!"
 
 .endif

@@ -345,6 +345,20 @@ extern "C" {
      **/
     u8 *str_null_to_empty(u8 *src);
 
+    /**
+     * Gets a normal string placeholder (such as PLAYER, RIVAL, ...)
+     * @param placeholder which placeholder to get
+     * @return the string
+     **/
+    u8 *string_get_placeholder(u8 placeholder);
+
+    /**
+     * Gets the name of a trainer.
+     * @param trainer_idx the idx of the trainer to get the name of
+     * @return the name of the trainer
+     **/
+    u8 *trainer_get_name(u16 trainer_idx);
+
     extern u8 strbuf[];
     extern u8 buffer0[];
     extern u8 buffer1[];

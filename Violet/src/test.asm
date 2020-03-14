@@ -9,7 +9,7 @@
 .include "roamers.s"
 .include "specials.s"
 .include "movements.s"
-
+.include "trainer_backsprites.s"
 
 .global ow_script_test
 .global ow_script_trainer1
@@ -43,7 +43,7 @@ compare LASTRESULT 0
 gotoif EQUAL cont
 setvar VAR_ALLY 0x161
 special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
-trainerbattleallytwotrainers 0x15f 0x160 0x161 0 3 1 str_beforea str_aftera str_afterb cont
+trainerbattleallytwotrainers 0x15f 0x160 0x161 0 TRAINER_BACKSPRITE_RIVAL 1 str_beforea str_aftera str_afterb cont
 cont:
 loadpointer 0 str_a
 callstd MSG

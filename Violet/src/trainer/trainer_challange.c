@@ -287,14 +287,14 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
             dprintf("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
-            return ow_script_trainerbattle_with_continuation; // We don't check for double battles, as the ally always should have one pokemon...
+            return ow_script_trainerbattle_double_dont_check_enough_pokemon; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_ALLY_TWO_TRAINERS:
             trainerbattle_configure(trainerbattle_configuration_ally_two_trainers, ow_script);
             trainerbattle_load_target_npc();
             *var_access(VAR_ALLY) = fmem.ally_trainer_idx;
             dprintf("Ally is %d\n", *var_access(VAR_ALLY));
             trainer_configuration_print(&trainer_vars);
-            return ow_script_trainerbattle_with_continuation; // We don't check for double battles, as the ally always should have one pokemon...
+            return ow_script_trainerbattle_double_dont_check_enough_pokemon; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_SINGLE:
         default: { // For spotted trainer double battles
             if (fmem.current_trainer == 0) { // Initialize trainerA 
@@ -336,7 +336,8 @@ void trainer_play_encounter_music() {
             default:
                 music = (u16)((trainers[trainer_idx].encounter_and_gender.encounter % 3) + 283);
         }
-        song_play_by_controller(music);
+        if (song_get_current() != music)
+            song_play_by_controller(music);
     }
 }
 

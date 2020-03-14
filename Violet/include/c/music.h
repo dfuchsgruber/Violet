@@ -49,6 +49,12 @@ void playsong2(u16 song);
 void song_play_by_controller (u16 song);
 
 /**
+ * Gets the currently played song.
+ * @return the currently played song.
+ **/
+u16 song_get_current();
+
+/**
  * Plays a song on fanfare player
  * @param song_id id of the song to play
  */
