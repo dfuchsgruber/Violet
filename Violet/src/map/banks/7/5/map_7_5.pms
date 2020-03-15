@@ -146,7 +146,7 @@
 					"x": 3,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "0x403D"
+					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
 					"script": "ow_script_0x84e6f8",
@@ -157,7 +157,7 @@
 					"x": 6,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "0x403D"
+					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
 					"script": "ow_script_0x84e767",
@@ -168,7 +168,7 @@
 					"x": 11,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "0x403C"
+					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
 					"script": "ow_script_0x84e767",
@@ -179,18 +179,18 @@
 					"x": 7,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "0x403C"
+					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
 					"script": "ow_script_0x947bb1",
-					"value": 1,
+					"value": "0",
 					"y": 15,
 					"level": 0,
 					"field_5": 0,
 					"x": 12,
 					"field_A": 0,
 					"field_B": 0,
-					"var": "0x403E"
+					"var": "VAR_SILVANIA_GYM_GOLDEN_SWITCH"
 				}
 			],
 			"signposts": []

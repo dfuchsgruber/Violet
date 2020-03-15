@@ -67,6 +67,7 @@ end
 
 .global ow_script_0x846bee
 ow_script_0x846bee:
+special 0xF
 hidemoney 0x0 0x0
 loadpointer 0x0 str_0x812597
 callstd MSG_FACE

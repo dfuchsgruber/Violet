@@ -73,7 +73,6 @@ trainer_pokemon_default_item_default_attacks trainer_party_xb[] = {
 trainer_pokemon_default_item_default_attacks trainer_party_xc[] = {
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,9,POKEMON_SANDAN),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,9,POKEMON_PUPPANCE),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,10,POKEMON_VOLTILAMM)
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_xd[] = {
@@ -98,9 +97,8 @@ trainer_pokemon_default_item_default_attacks trainer_party_x10[] = {
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x11[] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,12,POKEMON_MACHOLLO),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,12,POKEMON_MEDITIE),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,14,POKEMON_MENKI)
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,9,POKEMON_MACHOLLO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,9,POKEMON_MEDITIE),
 };
 
 trainer_pokemon_default_item_default_attacks trainer_party_x12[] = {
@@ -1936,4 +1934,18 @@ trainer_pokemon_default_item_default_attacks trainer_party_x163_route_2_trainer_
 trainer_pokemon_default_item_default_attacks trainer_party_x164_route_2_grunt_second[2] = {
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 12, POKEMON_ZUBAT),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 11, POKEMON_TRAUMATO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x165_route_2_twins[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 13, POKEMON_MINUN),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 13, POKEMON_PLUSLE),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x166_route_2_trainer_1[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 11, POKEMON_DARTIRI),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 10, POKEMON_ZIGZACHS),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x167_route_3_trainer_0[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0, 0x0, false, false, 18, POKEMON_MACHOLLO),
 };

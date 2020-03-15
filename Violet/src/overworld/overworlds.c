@@ -7,6 +7,7 @@
 
 #include "types.h"
 #include "overworld/sprite.h"
+#include "oam.h"
 #include "vars.h"
 #include "debug.h"
 
@@ -261,15 +262,15 @@ overworld_sprite ow_mia = {
 };
 
 static graphic overworld_sprite_lester_sprites[] = {
-	{&gfx_ow_lester_0Tiles, 0x100, 0},
-	{&gfx_ow_lester_1Tiles, 0x100, 0},
-	{&gfx_ow_lester_2Tiles, 0x100, 0},
-	{&gfx_ow_lester_3Tiles, 0x100, 0},
-	{&gfx_ow_lester_4Tiles, 0x100, 0},
-	{&gfx_ow_lester_5Tiles, 0x100, 0},
-	{&gfx_ow_lester_6Tiles, 0x100, 0},
-	{&gfx_ow_lester_7Tiles, 0x100, 0},
-	{&gfx_ow_lester_8Tiles, 0x100, 0}
+	{gfx_ow_lesterTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lesterTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
 };
 
 overworld_sprite ow_lester = {

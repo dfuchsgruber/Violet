@@ -23,6 +23,8 @@ void special_player_facing() {
     coordinate_t position;
     player_get_coordinates(&position.x, &position.y);
     u8 person_idx = (u8) (*var_access(LASTTALKED));
+    if (person_idx == 0) // No target person chosen
+        return;
     u8 npc_id;
     if (!npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_id)) {
         dprintf("Target npc %d\n", npc_id);
@@ -280,7 +282,7 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
         case TRAINER_BATTLE_TWO_TRAINERS:
             trainerbattle_configure(trainerbattle_configuration_two_trainers, ow_script);
             trainerbattle_load_target_npc();
-            return ow_script_trainerbattle_double;
+            return ow_script_trainerbattle_double_dont_check_enough_pokemon; // Use special SPECIAL_CANT_DOUBLE_BATTLE before in your overworld script...
         case TRAINER_BATTLE_ALLY_ONE_TRAINER:
             trainerbattle_configure(trainerbattle_configuration_ally, ow_script);
             trainerbattle_load_target_npc();

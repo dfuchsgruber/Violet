@@ -52,6 +52,9 @@ int choice(u32 *p, int p_size, u16 (*rng)()) {
     u32 sum = 0;
     for (int i = 0; i < p_size; i++) sum += p[i];
     u32 r = (u32)((u32)(rng() | (rng() << 16)) % sum);
+    for (int i = 0; i < p_size; i++)
+        dprintf("Choice %d has value %x\n", i, p[i]);
+    dprintf("R value drawn: %x\n", r);
     for (int i = 0; i < p_size; i++) {
         if (p[i] > r) return i;
         r -= p[i];

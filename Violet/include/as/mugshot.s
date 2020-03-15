@@ -35,6 +35,7 @@
 
 .macro hide_mugshot
     call_hide_mugshot
+    waitstate
 .endm
 
 .macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0

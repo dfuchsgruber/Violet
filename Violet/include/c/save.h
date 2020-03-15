@@ -60,9 +60,9 @@ typedef struct saveblock1 {
     // 0x8e0
     map_event_person persons[64];
     // 0x20E0
-    u8 field_3808[288];
-    u8 tmp_vars_and_flags[32];
-    u8 field_4128[7376];
+    u8 flags[288];
+    u16 vars[256];
+    u8 field_4608[6896];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];
     // 0x2F80

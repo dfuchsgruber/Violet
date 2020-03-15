@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_110",
 		"events": {
-			"person_cnt": 49,
+			"person_cnt": 52,
 			"warp_cnt": 8,
 			"trigger_cnt": 4,
 			"signpost_cnt": 22,
@@ -34,8 +34,8 @@
 					"picture": 29,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 37,
-					"y": 21,
+					"x": "44",
+					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_IM_UHRZEIGERSINN",
 					"behaviour_range": 0,
@@ -52,7 +52,7 @@
 					}
 				},
 				{
-					"target_index": 7,
+					"target_index": "113",
 					"picture": 26,
 					"field_2": 0,
 					"field_3": 0,
@@ -122,13 +122,13 @@
 					"picture": 39,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 41,
-					"y": 34,
+					"x": "39",
+					"y": "34",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"behaviour_range": 0,
 					"is_trainer": 1,
-					"alert_radius": 1,
+					"alert_radius": "2",
 					"script": "ow_script_0x8a79e8",
 					"flag": "0x0",
 					"field_D": 0,
@@ -140,7 +140,7 @@
 					}
 				},
 				{
-					"target_index": 11,
+					"target_index": "112",
 					"picture": 54,
 					"field_2": 0,
 					"field_3": 0,
@@ -166,8 +166,8 @@
 					"picture": 27,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 23,
-					"y": 64,
+					"x": "38",
+					"y": "23",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"behaviour_range": 0,
@@ -976,7 +976,7 @@
 					}
 				},
 				{
-					"target_index": 76,
+					"target_index": "111",
 					"picture": "26",
 					"field_2": 0,
 					"field_3": 0,
@@ -1083,6 +1083,69 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_ELEKID"
+					}
+				},
+				{
+					"target_index": "114",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "38",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "1",
+					"script": "ow_script_route_2_trainer_2",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "116",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "39",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "1",
+					"script": "ow_script_route_2_trainer_2",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "115",
+					"picture": "18",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "42",
+					"y": "34",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "2",
+					"script": "ow_script_route_2_trainer_1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
 					}
 				}
 			],

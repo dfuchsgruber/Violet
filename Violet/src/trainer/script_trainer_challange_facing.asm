@@ -12,6 +12,7 @@ challange_loop:
     closeonkeypress
 ow_script_trainerbattle_challange_spotted:
     callasm trainer_get_current_npc_idx
+    lock
     special SPECIAL_TRAINER_PLAY_ENCOUNTER_MUSIC
     special SPECIAL_TRAINER_APPROACH
     waitstate
@@ -23,6 +24,7 @@ ow_script_trainerbattle_challange_spotted:
     callasm trainer_approach_second
     compare LASTRESULT 1
     gotoif EQUAL challange_loop
+    releaseall
     goto 0x081a7c86 // start the battle
 
 ow_script_trainerbattle_double_dont_check_enough_pokemon:

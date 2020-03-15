@@ -185,31 +185,55 @@ void special_mugshot_delete() {
 	u16 oam_id = fmem.mugshot_oam_id;
 	u8 delete_oam_cb_id = big_callback_new(mugshot_delete_oam, 0);
 	big_callbacks[delete_oam_cb_id].params[0] = oam_id;
+	big_callbacks[delete_oam_cb_id].params[1] = 0;
 	// Move the oam offscreen meanwhile
 	oams[oam_id].x2 = -64;
 
 	// Delete the text
 	u8 delete_tb_cb_id = big_callback_new(mugshot_delete_text, 0);
 	big_callbacks[delete_tb_cb_id].params[0] = fmem.mugshot_tb_id;
+	big_callbacks[delete_tb_cb_id].params[1] = 0;
+}
+
+void mugshot_wait_for_deletion(u8 self) {
+	if (big_callback_is_active(mugshot_delete_oam) || big_callback_is_active(mugshot_delete_text)) return;
+	overworld_script_resume();
+	big_callback_delete(self);
 }
 
 void mugshot_delete_oam(u8 self) {
-    u8 oam_id = (u8)big_callbacks[self].params[0];
-    free(oams[oam_id].oam_template->graphics);
-    free(oams[oam_id].oam_template);
-    oam_free(&oams[oam_id]);
-    big_callback_delete(self);
-
+	u16 *state = big_callbacks[self].params + 1;
+	switch(*state) {
+		case 0: {
+			u8 oam_id = (u8)big_callbacks[self].params[0];
+			free(oams[oam_id].oam_template->graphics);
+			free(oams[oam_id].oam_template);
+			oam_free(&oams[oam_id]);
+			++*state;
+			break;
+			}
+		default:
+			big_callbacks[self].function = mugshot_wait_for_deletion;
+			break;
+	}
 }
 
 void mugshot_delete_text(u8 self) {
-    u8 tb_id = (u8)big_callbacks[self].params[0];
-    tbox_flush_set(tb_id, 0);
-    tbox_flush_map(tb_id);
-    tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
-    if(!transparency_is_on()) tbox_border_flush(tb_id);
-    tbox_free(tb_id);
-    big_callback_delete(self);
+	u16 *state = big_callbacks[self].params + 1;
+	switch(*state) {
+		case 0: {
+			u8 tb_id = (u8)big_callbacks[self].params[0];
+			tbox_flush_set(tb_id, 0);
+			tbox_flush_map(tb_id);
+			tbox_sync(tb_id, TBOX_SYNC_MAP_AND_SET);
+			if(!transparency_is_on()) 
+				tbox_border_flush(tb_id);
+			tbox_free(tb_id);
+		}
+		default:
+			big_callbacks[self].function = mugshot_wait_for_deletion;
+			break;
+	}
 }
 
 void special_show_name() {
@@ -229,6 +253,7 @@ void special_delete_name() {
 	// Delete the text
 	u8 delete_tb_cb_id = big_callback_new(mugshot_delete_text, 0);
 	big_callbacks[delete_tb_cb_id].params[0] = fmem.mugshot_tb_id;
+	big_callbacks[delete_tb_cb_id].params[1] = 0;
 }
 
 

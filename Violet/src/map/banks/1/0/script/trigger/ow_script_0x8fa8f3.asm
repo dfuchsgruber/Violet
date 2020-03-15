@@ -7,7 +7,7 @@
 .include "overworld_script.s"
 .include "story_states.s"
 .include "mugshot.s"
-
+.include "specials.s"
 
 .global ow_script_movs_0x8037d4
 ow_script_movs_0x8037d4:
@@ -159,6 +159,15 @@ show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x20 ow_script_movs_0x8f52c0
 applymovement 0x1f ow_script_movs_0x8f52c4
 waitmovement 0x0
+special SPECIAL_CANT_DOUBLE_BATTLE
+compare LASTRESULT 0
+gotoif NOT_EQUAL cant_double_battle
+// Can double battle
+setvar LASTTALKED 0
+trainerbattletwotrainers 0x4a 0x4b 0 str_0x8f523b str_0x8f527b str_0x8f5f57 ow_script_0x8fa888
+end
+
+cant_double_battle:
 setvar LASTTALKED 31
 trainerbattlecont 0x1 0x4a 0x0 str_0x8f523b str_0x8f527b ow_script_0x8f5cdf
 
@@ -196,6 +205,8 @@ ow_script_movs_0x8f5eac:
 ow_script_0x8fa888:
 loadpointer 0x0 str_0x8f5edb
 callstd MSG
+
+after_two_grunts:
 loadpointer 0x0 str_0x8f5eb8
 show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
 applymovement 0x20 ow_script_movs_0x8f5eb0
@@ -391,7 +402,7 @@ return
 .global str_0x8f4c85
 
 str_0x8f4c85:
-	.autostring 35 2 "Wir werden sowieso aus Ihnen herausbekommen, was wir wissen wollen, Professor.\pErsparen Sie sich das und kooperieren Sie!"
+	.autostring 35 2 "Wir werden sowieso aus Ihnen herausbekommen, was wir wissen wollen, Professor.\pErsparen Sie sich alberene Ausreden und kooperieren Sie lieber gleich!"
         
         
 .global str_0x8f4c4b
@@ -403,58 +414,58 @@ str_0x8f4c4b:
 .global str_0x8f4b7b
 
 str_0x8f4b7b:
-	.autostring 35 2 "Sie haben kein Rückgrat, Professor Primus!\pHahaha!\pBrav von Ihnen!\nNun sagen Sie mir, was es mit dem Zeitstein und diesem seltsamen Schrein hier auf sich hat!"
+	.autostring 35 2 "Haha!\nSie haben absolut kein Rückgrat, Primus!\pHaha!\pSo gefällt mir das!\nNun sagen Sie mir, was es mit dem Zeitstein und diesem seltsamen Schrein hier auf sich hat!"
         
         
 .global str_0x8f4aee
 
 str_0x8f4aee:
-	.autostring 35 2 "Ich DOTS weiß nicht viel DOTS\pDer Zeitstein enthält das Herz der Zeit.\pDurch seine Energie bleibt der Fluss der Zeit erhalten DOTS"
+    .autostring 34 2 "Ich muss ehrlich sagen, dass ich ein Physiker bin, kein Historiker.\pDieser SchreinDOTS\pDOTSist uralt, ebenso wie seine Inschriften.\pIch kann sie nicht entziffernDOTS"
         
         
 .global str_0x8f4ab8
 
 str_0x8f4ab8:
-    .autostring 35 2 "Überaus spannend, Ihre Mythologiestunde, Professorchen!\pMich interessiert, wo ich diesen Zeitstein finden kann.\pDas wissen Sie doch auch, nicht?\pDie Inschriften auf dem Schrein DOTS DOTS DOTS\pJemand wie Sie müsste die Icognito-Zeichen doch lesen können!"
+    .autostring 35 2 "Sie fangen nun also doch mit Ausflüchten an?\pHabe ich mich nicht klar genug ausgedrückt?\pDenken Sie, dass ich nicht bereit wäre, Sie aus dem Weg zu räumen?"
         
         
 .global str_0x8f49f3
 
 str_0x8f49f3:
-    .autostring 35 2 "Ja schon DOTS DOTS DOTS\pAber ich habe seit dem Studium nichts mehr in dieser Sprache gelesen DOTS"
+    .autostring 35 2 "Nein!\pHalt, warten Sie, bitte!\pEs gibt noch eine zweite Inschrift, die nachträglich hinzugefügt wurde.\pSie ist in Icognito Zeichen geschrieben undDOTS\pIch müsste sie entziffern könnenDOTS"
         
         
 .global str_0x8f49c5
 
 str_0x8f49c5:
-    .autostring 35 2 "Ich denke nicht, dass ich Ihnen klar machen muss, was für Sie auf dem Spiel steht!\pSagen Sie mir, was auf dem Schrein geschrieben steht und zwar flott!"
+    .autostring 35 2 "Na also!\pIch wusste doch, dass Sie von Nutzen sein können.\pWie lautet diese Inschrift?"
         
         
 .global str_0x8f48ca
 
 str_0x8f48ca:
-	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDer Text handelt von einem Pokémon namens Celebi.\pEs hatte ursprünglich die Aufgabe, den Zeitstein zu bewachen.\pAber DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS da ist noch ein zweiter Text DOTS"
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDer Text handelt von einem Pokémon namens Celebi.\pEs war einst der Wächter des Zeitsteins, welcher das Zeitgefüge zusammenhält.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
 
 .global str_0x8f4823
 
 str_0x8f4823:
-    .autostring 35 2 "Ein zweiter Text?\nWie spannend!\pNa dann raus mit der Sprache, Professorchen!"
+    .autostring 35 2 "Sehr gut, sehr gut!\pLesen Sie weiter!"
         
 .global str_0x8f4755
 
 str_0x8f4755:
-    .autostring 35 2 "Die Zeichen scheinen erst vor einiger Zeit geschrieben worden zu sein DOTS\pLaut der Inschrift bewacht Celebi den Zeitstein nicht länger DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pStattdessen wurde der Zeitstein gespalten und den drei Wächtern Thetos anvertraut DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDas ist DOTS\nalles, denke ich DOTS"
+    .autostring 35 2 "Um einer drohenden Gefahr zu entgehen entschloss sich Celebi, den Zeitstein in drei Teile zu spaltenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pUnd jeden des der Fragmente von einem mächtigen antiken Pokémon bewachen zu lassenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch denke, das ist allesDOTS"
         
 .global str_0x8f46fc
 
 str_0x8f46fc:
-	.autostring 35 2 "Verdammt noch eins!\nDass die Dinge immer kompliziert werden müssen.\pNicht nur, dass der Stein gespalten wurde DOTS\pDOTS sondern er wird auch noch bewacht DOTS"
+	.autostring 35 2 "Gespalten?\nSind Sie sich da sicher?\pWenn Ihre Informationen sich als unwahr entpuppen solltenDOTS\pIch muss Ihnen Ihre Lage nicht ein weiteres Mal erklären, oder?"
         
         
 .global str_0x8f5a63
 
 str_0x8f5a63:
-    .autostring 35 2 "Ihr da!\nLasst den Professor in Frieden!"
+    .autostring 35 2 "Hey!\nLasst den Professor in Frieden!"
         
         
 .global str_0x8f59e8
@@ -466,33 +477,33 @@ str_0x8f59e8:
 .global str_0x8f59cf
 
 str_0x8f59cf:
-    .autostring 35 2 "Halt den Rand, Professorchen!"
+    .autostring 35 2 "Halt den Rand, Primus!"
         
         
 .global str_0x8f56b8
 
 str_0x8f56b8:
-	.autostring 35 2 "Was haben wir denn da?\pEin Kind, das sich in die Angelegenheiten von Team Violet einmischt.\pMein Name ist Rin und ich bin Kommandantin der zweiten Division von Team Violet.\pBist du dir sicher, dass du dich mit mir anlegen möchtest?\pWenn wir die Energie des Zeitsteins nutzbar gemacht haben, werden wir eine unendlich todbringende Waffe besitzen, um den Kontinent zu unterwerfen.\pSich unserer Organisation in den Weg zu stellen, kann übel ausgehen, Kindchen!"
+	.autostring 35 2 "Was haben wir denn da?\pEin Kind, das sich in die Angelegenheiten von Team Violet einmischt.\pMein Name ist Rin und ich bin Kommandantin der zweiten Division von Team Violet.\pBist du dir sicher, dass du dich mit mir anlegen möchtest?\pHast du etwa noch nicht von mir und meinen Taten gehört?"
         
 .global str_0x8f5628
 
 str_0x8f5628:
-	.autostring 35 2 "Mir ist völlig gleichgültig, wer Sie sind, oder was sie vorhaben.\pWenn Sie Menschen wie den Professor bedrängen, werde ich mich euch in den Weg stellen!"
+	.autostring 35 2 "Mir ist völlig gleichgültig, wer Sie sind oder was Sie im Schilde führen.\pIch werde Team Violet aufhalten!"
         
 .global str_0x8f5514
 
 str_0x8f5514:
-	.autostring 35 2 "Du hast Mum, Rotznase!\pAber du weißt nicht, was gut für dich ist.\pUnser Plan ist in vollem Gange.\pWir sind nicht aufzuhalten.\pJemand wie du ist meine Aufmerksamkeit nicht wert."
-        
+    .autostring 34 2 "Mut hast du ja, Rotznase!\pAber du weißt nicht, was gut für dich ist.\pUnser Plan ist in vollem Gange.\pIn naher Zukunft werden wir im Besitz einer so schrecklichen Waffe sein, dass jeder Mensch auf diesem Kontinent sich Team Violet zu fügen hat.\pEin Kind wie du, wird da nichts ausrichten können."
+
 .global str_0x8f5425
 
 str_0x8f5425:
-    .autostring 35 2 "Ich werde jeden von euch besiegen!\pUnd auch dir werde ich das Handwerk legen!"
+    .autostring 35 2 "Ich lasse mich nicht einschüchtern!"
 
 .global str_0x8f52c9
 
 str_0x8f52c9:
-    .autostring 35 2 "Genug jetzt!\pDummes Kind!\pIhr da, macht die Rotznase fertig!"
+    .autostring 35 2 "Genug jetzt!\pDummes Kind!\pIhr da, erledigt das Balg, und zwar pronto!"
         
 .global str_0x8f523b
 

@@ -267,11 +267,6 @@ show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
 goto ow_script_0x8a9640
 
 
-.align 4
-choice:
-    .word str_route_2_lab_choice_0, 0
-    .word str_route_2_lab_choice_1, 0
-
 .global ow_script_movs_0x8ab040
 ow_script_movs_0x8ab040:
 .byte FACE_DOWN
@@ -295,6 +290,23 @@ applymovement 0x2 ow_script_movs_0x8ab040
 waitmovement 0x0
 loadpointer 0x0 str_0x8aafd4
 show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+
+applymovement 1 ow_script_movs_0x8aa1b5
+waitmovement 0
+loadpointer 0 str_tann_end
+show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
+applymovement 2 ow_script_movs_0x8a9a49
+waitmovement 0
+loadpointer 0x0 str_elise_end
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+applymovement 1 ow_script_movs_0x8ab040
+applymovement 2 ow_script_movs_0x8ab040
+waitmovement 0
+
+loadpointer 0x0 str_elise_end2
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+
+
 applymovement 0x2 ow_script_movs_0x8aafce
 waitmovement 0x0
 goto ow_script_0x8ad21f
@@ -309,8 +321,6 @@ end
 
 .global ow_script_0x8a9640
 ow_script_0x8a9640:
-loadpointer 0x0 str_0x8a965b
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 goto ow_script_0x8aac32
 
 
@@ -335,210 +345,185 @@ ow_script_movs_0x8037d2:
 .global str_0x8a7f97
 
 str_0x8a7f97:
-	.autostring 35 2 "PLAYER und mein eigener Sohn!\pZwei frisch gebackene Trainer!\pUnd schon stark genug, diesen alten Herren aus einer misslichen Lage zu befreien.\pDiese Team Violet Rüpel werden zu einem echten Problem in Theto.\pIn letzter Zeit gehen sie immer agressiver gegen die Bürger vor.\pUnd was dieser Wirbel um einen Zeitstein bedeuten soll, kann ich mir auch nicht recht erklären.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWie dem auch sei.\nDa ihr nun endlich die Trainerschule und den alten Faun hinter euch gelassen habt, will ich euch auf dem Weg, den ihr nun bestreitet, unterstützen.\pElise, würdest du bitteDOTS"
-
+	.autostring 34 2 "PLAYER und mein eigener Sohn!\pZwei frisch gebackene Trainer!\pUnd schon stark genug, diesen alten Herren aus einer misslichen Lage zu befreien.\pDiese Team Violet Rüpel werden zu einem echten Problem in Theto.\pIn letzter Zeit gehen sie immer agressiver gegen die Bürger vor.\pUnd was dieser Wirbel um einen Zeitstein bedeuten soll, kann ich mir auch nicht recht erklären.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWie dem auch sei.\nDa ihr nun endlich die Trainerschule und den alten Faun hinter euch gelassen habt, will ich euch auf dem Weg, den ihr nun bestreitet, unterstützen.\pElise, würdest du bitteDOTS"
 .global str_0x8a7f3d
 
 str_0x8a7f3d:
-    .autostring 35 2 "Natürlich, Professor Tann.\pIch bin schon unterwegsDOTS"
+    .autostring 34 2 "Natürlich, Professor Tann.\pIch bin schon unterwegsDOTS"
         
         
 .global str_0x8a7e8d
 
 str_0x8a7e8d:
-	.autostring 35 2 "Darf ich vorstellen?\nMeine Assistentin Elise.\pSie ist die Tochte eines befreundeten Professors und selbst ein wahres Forschungass.\pSie forscht in der Laz.Corp an der Virtualisierung von Pokémon-Daten.\pScheinbar sind dazu auch die Ergebnisse meiner Forschung relevant.\pDOTS DOTS DOTS"
+	.autostring 34 2 "Darf ich vorstellen?\nMeine Assistentin Elise.\pSie ist die Tochte eines befreundeten Professors und selbst ein wahres Forschungass.\pSie forscht in der Laz.Corp an der Virtualisierung von Pokémon-Daten.\pScheinbar sind dazu auch die Ergebnisse meiner Forschung relevant.\pDOTS DOTS DOTS"
         
 .global str_0x8a7dbf
 
 str_0x8a7dbf:
-	.autostring 35 2 "Freut mich außerordentlich!\pIch sammle allerlei Daten, die für die Entwicklung des Poképads relevant sein könnten."
+	.autostring 34 2 "Freut mich außerordentlich!\pIch sammle allerlei Daten, um auch Pokémon auch in die virtuelle Welt zu bringen!\pDamit trage ich maßgeblich zur Entwicklung des Poképads bei!"
         
         
 .global str_0x8a7930
 
 str_0x8a7930:
-    .string "Ihr kennt das Poképad nicht?"
+    .autostring 34 2 "Ihr kennt das Poképad nicht?"
         
         
 .global str_0x8a78f1
 
 str_0x8a78f1:
-    .autostring 35 2 "Deswegen habe ich sie ja herbestellt."
+    .autostring 34 2 "Ist es denn überhaupt schon im Laden erhältlich?"
         
         
 .global str_0x8a7830
 
 str_0x8a7830:
-	.autostring 35 2 "Ach natürlich! Wie dumm von mir.\pDas Poképad ist der Höhepunkt unserer Technologie.\pEin Muss für jeden Trainer!\pMit einer Vielzahl an Apps, die man für das Poképad installieren kann, wird eine Trainerkarriere ohne es bald nicht mehr denkbar sein!"
+	.autostring 34 2 "Oh, natürlich!\nIch Dummerchen!\pDas Poképad ist ein Höhepunkt unserer modernen Technologie.\pEin Muss für jeden Trainer!\pMit einer Vielzahl an nützlichen Apps wird eine Trainerlaufbahn ohne dieses Gerät in naher Zukunft gar nicht mehr vorzustellen sein!"
 
 .global str_0x8a77ae
 
 str_0x8a77ae:
-    .autostring 35 2 "Ganz genau!\pUnd als Starthilfe will ich euch beiden jeweils eines dieser Geräte schenken."
+    .autostring 34 2 "Ganz richtig!\nEin beeindruckendes Ding!\pUnd als Starthilfe will ich euch beiden jeweils eines dieser Geräte schenken."
         
         
 .global str_0x8a7789
 
 str_0x8a7789:
-    .autostring 35 2 "Wirklich? Fantastisch, Papi!\nJuhu!"
+    .autostring 34 2 "Wirklich? Fantastisch, Papi!\nJuhu!"
         
         
 .global str_0x8a776a
 
 str_0x8a776a:
-    .autostring 35 2 "Vielen Dank, Professor Tann."
+    .autostring 34 2 "Vielen Dank, Professor Tann."
         
         
 .global str_0x8aa319
 
 str_0x8aa319:
-    .autostring 35 2 "PLAYER hat das Poképad erhalten!"
+    .autostring 34 2 "PLAYER hat das Poképad erhalten!"
         
         
 .global str_0x8a7751
 
 str_0x8a7751:
-    .autostring 35 2 "Danke, Elise!"
+    .autostring 34 2 "Danke, Elise!"
         
         
 .global str_0x8a76ee
 
 str_0x8a76ee:
-    .autostring 35 2 "Das ganze ist allerdings mit einer Bitte verbunden."
+    .autostring 34 2 "Das ganze ist allerdings mit einer Bitte verbunden."
         
         
 .global str_0x8aabee
 
 str_0x8aabee:
-    .autostring 35 2 "Och, du bist ein immer so ein Spielverderber, Papi!"
+    .autostring 34 2 "Och, du bist ein immer so ein Spielverderber, Papi!"
         
         
 .global str_0x8aa57d
 
 str_0x8aa57d:
-    .autostring 35 2 "Ich darf doch bitten!\pDein Vater macht dir ein Geschenk, also könntest du ruhig etwas mehr Dankbarkeit zeigen!"
+    .autostring 34 2 "Habe ich mich da verhört?\pDein Vater schenkt dir ein exklusives Gadget, da könntest du ruhig etwas dankbarer sein!"
         
         
 .global str_0x8aa381
 
 str_0x8aa381:
-	.autostring 35 2 "Haha!\pMein Sohn meint es doch gar nicht so, er ist nur immer etwas hitzköpfig.\pGanz genauso, wie ich es früher war.\pBei der Bitte handelt es sich um Folgendes:\pEin anderer Kollege von mir namens Eich sammelt Daten über die Pokémon auf unserer Welt.\pDazu entwickelte er den Pokédex, welcher Informationen über gesehene Pokémon aufzeichnet.\pNun hat die Laz.Corp die Funktionalität dieses Pokédex aber bereits Digitalisiert und eine App für das Poképad entwickelt, die Aufzeichnungen über gesehene Pokémon anfertigt.\pIch würde diese App gerne auf euren Poképads installieren und euch darum bitten, möglichst viele verschiedene Pokémonarten einzufangen und so Daten zu sammeln."
+	.autostring 34 2 "Haha!\pMein Sohn kann solche Dinge nicht immer wirklich gut zum Ausdruck bringen.\pGanz genauso, wie es bei mir der Fall ist.\pAber keine Sorge, meine Bitte ist mit einer Menge an Spaß verbunden!\pEs geht darum, dass ihr Elise helfen sollt, Daten über allerlei Arten von Pokémon zu sammeln.\pDie dafür entwickelte Pokédex-App speichert Informationen zu allen Pokémon, die ihr eingefangen habt.\pWenn euch also eine Spezies begegnet, die ihr interessant findet, dann zögert nicht, sie einzufangen!"
 
         
 .global str_0x8aa372
 
 str_0x8aa372:
-    .autostring 35 2 "Geht in Ordnung!\nDanke Papi!"
+    .autostring 34 2 "Geht in Ordnung, Papi!"
         
         
 .global str_0x8aa338
 
 str_0x8aa338:
-    .autostring 35 2 "Die Pokedex-App wurde auf dem Poképad installiert!"
+    .autostring 34 2 "Die Pokedex-App wurde auf dem Poképad installiert!"
         
         
 .global str_0x8aa305
 
 str_0x8aa305:
-    .autostring 35 2 "Dankesehr, Elise."
+    .autostring 34 2 "Dankesehr, Elise."
         
         
 .global str_0x8aa27f
 
 str_0x8aa27f:
-	.autostring 35 2 "Sehr schön!\pIch wusste, dass ich mich auf euch verlassen kann.\pIch nehme an, ihr beiden habt in der Trainerschule gelernt, wie man Pokémon fängt?"
+	.autostring 34 2 "Sehr schön!\pIch wusste, dass ich mich auf euch verlassen kann.\pIch nehme an, ihr beiden habt in der Trainerschule gelernt, wie man Pokémon fängt?"
         
 .global str_0x8aa22a
 
 str_0x8aa22a:
-    .autostring 35 2 "Natürlich Papi!\pHerr Faun hat uns alles beigebracht, was ein Trainer wissen muss!"
+    .autostring 34 2 "Natürlich Papi!\pHerr Faun hat uns alles beigebracht, was ein Trainer wissen muss!"
         
         
 .global str_0x8aa1b8
 
 str_0x8aa1b8:
-    .autostring 35 2 "Sprecht ihr von dem Faun?\pDem großen Trainer, der in der VergangenheitDOTS"
+    .autostring 34 2 "Euer Lehrer war der große Faun, der in der VergangenheitDOTS"
         
         
 .global str_0x8aa184
 
 str_0x8aa184:
-    .autostring 35 2 "Kennst du etwa noch einen anderen Faun?"
+    .autostring 34 2 "Haha!\nKennst du etwa noch einen anderen Faun, Elise?"
         
         
 .global str_0x8a9f82
 
 str_0x8a9f82:
-	.autostring 35 2 "Ihr müsst wissen, dass Faun eine wahre Trainerlegende ist.\pAber irgendwann im Leben kommt einmal der Punkt, an dem man etwas an die nächste Generation weitergeben will.\pDeswegen hat Faun seine Schule eröffnet, denke ich.\pUm aber wieder aufs Thema zurückzukommen.\pBitte versucht, viele verschiedene Pokémon einzufangen und so wertvolle Daten zu sammeln.\pDafür benötigt ihr natürlich Pokébälle und großzügig, wie ich bin, werde ich euch auch diese schenken."
+	.autostring 34 2 "Ihr müsst wissen, dass Faun eine wahre Trainerlegende gewesen ist.\pAber irgendwann im Leben kommt wohl einmal der Punkt, an dem man erkennt, dass es mehr gibt, als bloß Ruhm und Ansehen.\pDeswegen bildet er nun selbst eine neue Generation von Trainern aus.\pUnd ihr habt als seine Schützlinge sicherlich die besten Voraussetzungen zu einer erfolgreichen Trainerkarriere.\pUnd womit könnte man die besser starten, als ein paar Pokémon einzufangen?\pNatürlich benötigt ihr dafür Pokébälle, von denen ich euch freundlicherweise ein paar schenken will."
         
 .global str_0x8a9c83
 
 str_0x8a9c83:
-    .autostring 35 2 "RIVAL hat 5 Pokebälle erhalten!"
+    .autostring 34 2 "RIVAL hat 5 Pokebälle erhalten!"
         
         
 .global str_0x8a9a4c
 
 str_0x8a9a4c:
-    .autostring 35 2 "Hach, da werde ich wirklich nostalgisch, wenn ich euch beide ansehe.\pIch erinnere mich noch an meine Jugend!\pDas waren Zeiten, als die Top Vier das Land gerade eroberten.\pIch frage mich, wie eure Generation diese Welt bewegen wird!"
+    .autostring 34 2 "Hach!\nDa wird man ganz sentimental, wenn man euch beide so ansieht."
         
         
 .global str_0x8a99f1
 
 str_0x8a99f1:
-    .autostring 35 2 "Ich bin mir sicher, dass man von den beiden noch viel hören wird!"
+    .autostring 34 2 "Als Schüler von Faun wird man von euch viel erwarten!"
         
         
 .global str_0x8a9950
 
 str_0x8a9950:
-    .autostring 35 2 "Und wie man von mir hören wird!\pEs würde mich nicht überraschen, wenn ich eines Tages als Champion an der Spitze dieser Region stehe!"
+    .autostring 34 2 "Das kommt mir gerade recht!\pImmerhin werde ich der größte Trainer aller Zeiten werden!"
 
         
-.global str_0x8a992f
-
-str_0x8a992f:
-    .autostring 35 2 "(Was antwortest du?)"
-        
-        
-.global str_0x8a9771
-
-str_0x8a9771:
-	.autostring 35 2 "Auch ich werde mir in der Trainerwelt einen Namen machen.\pEines Tages werde ich auch die Top Vier selbst herausfordern!"
+str_0x8ad201:
+    .autostring 34 2 "PLAYER hat fünf\nPokébälle erhalten!"
         
 .global str_0x8ab043
 
 str_0x8ab043:
-    .autostring 35 2 "Das sind großartige Ziele, die ihr euch da gesetzt habt!\pIch bin mir sicher, dass ihr erreichen werdet, wovon ihr träumt!\pUnd nun will ich euch nicht weiter aufhalten.\pAuch auf mich, wartet ein Traum.\pIch will nämlich derjenige sein, der die sagenumwobene Stadt Atlantea, die versunken sein soll, wiederentdeckt!"
+    .autostring 34 2 "Es ist gut, große Träume zu haben!\pNur so kann man über sich hinauswachsen."
         
 .global str_0x8aafd4
 
 str_0x8aafd4:
-	.autostring 35 2 "Ich bin auch überzeugt, dass ihr das Zeug zu großen Trainer habt!"
-        
-        
-.global str_0x8a965b
+	.autostring 34 2 "RIVAL kommt wirklich ganz nach seinem Vater.\pProfessor Tanns Ziel ist es, die sagenumwobene versunkene Stadt Atlantea zu finden.\pJeder Archäologe träumt davon, aber die meisten sind sich darin einig, dass dieser Ort nicht einmal existiertDOTS"
 
-str_0x8a965b:
-    .autostring 35 2 "Mein oberstes Ziel ist es, den Menschen und Pokémon in dieser Region zu helfen.\pDaran werde ich alles setzten."
-        
-.global str_0x8ad201
+str_tann_end:
+    .autostring 34 2 "Unsinn, Elise!\pNur wenn man fest daran glaubt, dass die eigenen Ziele auch verwirklicht werden können, erreicht man Großes!\pUnd deshalb werde ich mich bald auf eine Expedition begeben."
 
-str_0x8ad201:
-    .string "PLAYER hat 5 Pokebälle\nerhalten!"
-        
-        
-.global str_route_2_lab_choice_0
-
-str_route_2_lab_choice_0:
-    .string "Den Menschen helfen"
-        
-        
-.global str_route_2_lab_choice_1
-
-str_route_2_lab_choice_1:
-    .string "Ruhm erringen"
-        
+str_elise_end:
+    .autostring 34 2 "Was soll man sagen, der Apfel fällt nicht weit vom StammDOTS"
+str_elise_end2:
+    .autostring 34 2 "Wie dem auch sei, wünsche auch ich euch beiden viel Erfolg auf eurer Reise.\pDas Trainerdasein ist nicht immer leicht, aber ich bin überzeugt, dass ihr das Zeug dazu habt!"    
         
 .elseif LANG_EN
 

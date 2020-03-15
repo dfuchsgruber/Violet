@@ -6,7 +6,8 @@
 #include "debug.h"
 
 void map_reset_temporary_flags_and_vars() {
-    memset(save1->tmp_vars_and_flags, 0, 32);
+    memset(save1->flags, 0, 4); // Flags 0 - 32
+    memset(save1->vars, 0, 16 * 2); // Vars 0 - 16
     clearflag(0x803);
     clearflag(0x804);
     clearflag(STRENGTH_USED);                   

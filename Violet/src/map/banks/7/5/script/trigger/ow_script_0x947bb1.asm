@@ -1,7 +1,7 @@
 .include "movements.s"
 .include "ordinals.s"
 .include "overworld_script.s"
-
+.include "vars.s"
 
 .global ow_script_movs_0x84ea62
 ow_script_movs_0x84ea62:
@@ -45,8 +45,6 @@ ow_script_movs_0x84ea73:
 
 .global ow_script_0x947bb1
 ow_script_0x947bb1:
-checkflag 0x13
-gotoif EQUAL ow_script_0x947c67
 lockall
 special 0x113
 applymovement 0x7f ow_script_movs_0x84ea62
@@ -69,11 +67,9 @@ special 0x8e
 applymovement 0x7f ow_script_movs_0x84ea73
 waitmovement 0x0
 special 0x114
-setvar 0x403D 0x2
-setvar 0x403E 0x1
-setvar 0x403C 0x2
+setvar VAR_SIVLANIA_GYM_SWITCH 2
+setvar VAR_SILVANIA_GYM_GOLDEN_SWITCH 1
 checksound
-setflag 0x13
 release
 end
 

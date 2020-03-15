@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_221",
 		"events": {
-			"person_cnt": 53,
+			"person_cnt": 54,
 			"warp_cnt": 10,
 			"trigger_cnt": 7,
 			"signpost_cnt": 9,
@@ -166,8 +166,8 @@
 					"picture": 42,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 20,
-					"y": 16,
+					"x": "20",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"behaviour_range": 0,
@@ -210,8 +210,8 @@
 					"picture": 61,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 26,
-					"y": 8,
+					"x": "29",
+					"y": "8",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_UNTEN__LINKS__RECHTS",
 					"behaviour_range": 0,
@@ -298,8 +298,8 @@
 					"picture": 23,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 16,
-					"y": 33,
+					"x": "16",
+					"y": "33",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_RUNDUM_GEGEN_DEN_UHRZEIGERSINN",
 					"behaviour_range": 0,
@@ -342,8 +342,8 @@
 					"picture": 22,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 35,
-					"y": 14,
+					"x": "35",
+					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"behaviour_range": 0,
@@ -449,7 +449,7 @@
 				},
 				{
 					"target_index": 31,
-					"picture": 48,
+					"picture": "42",
 					"field_2": 0,
 					"field_3": 0,
 					"x": 57,
@@ -1169,6 +1169,27 @@
 					"flag": "FLAG_ROUTE_3_ITEM_5",
 					"value": {
 						"item": "ITEM_X_ABWEHR",
+						"species": 0
+					}
+				},
+				{
+					"target_index": "86",
+					"picture": "54",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "39",
+					"y": "15",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_UNTEN_UND_LINKS",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "5",
+					"script": "ow_script_route_3_trainer_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
 						"species": 0
 					}
 				}

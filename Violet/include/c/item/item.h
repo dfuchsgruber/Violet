@@ -19,7 +19,8 @@ typedef struct {
     u8 holding_effect_id;
     u8 holding_effect_param;
     u8 *description_ptr;
-    u16 field_18;
+    u8 importance;
+    u8 exit_bag_on_use;
     u8 pocket;
     u8 type;
     void (*field_usage)(u8);

@@ -88,6 +88,11 @@
         .pool
 
 
+
+.org 0x080802d0
+	.word ow_script_trainerbattle_challange_spotted
+
+
 .org 0x0808018c
 	ldr r1, =trainer_configure_by_overworld_script | 1
 	bx r1
@@ -103,9 +108,6 @@
 	bx r0
 	.pool
 
-.org 0x080802d0
-	.word ow_script_trainerbattle_challange_spotted
-
 .org 0x08080584
 	ldr r0, =trainer_play_encounter_music | 1
 	bx r0
@@ -115,3 +117,5 @@
 	ldr r0, =trainer_set_flags | 1
 	bx r0
 	.pool
+/**
+**/

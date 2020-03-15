@@ -349,6 +349,7 @@ void battle_ai_should_switch_consider_battler_viablility(int *score, u8 target) 
 }
 
 u8 battle_ai_should_switch(int *score) {
+    if (!(battle_flags & BATTLE_TRAINER)) return 6;
     // Check if we need to switch into a pokemon that can deal with wonderguard
     if (!battle_ai_battler_can_switch_out(active_battler)) return 6;
     AI_DEBUG_SWITCHING("Battler %d eligible to switching\n", active_battler);

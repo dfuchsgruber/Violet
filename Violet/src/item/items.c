@@ -18,7 +18,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x0_item_none,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x0, //field_usage
@@ -33,7 +34,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x1_item_meisterball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		0, //type
 		(void(*)(u8))0x0, //field_usage
@@ -48,7 +50,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x2_item_hyperball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -63,7 +66,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3_item_superball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		2, //type
 		(void(*)(u8))0x0, //field_usage
@@ -78,7 +82,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x4_item_pokeball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		3, //type
 		(void(*)(u8))0x0, //field_usage
@@ -93,7 +98,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x5_item_safariball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		4, //type
 		(void(*)(u8))0x0, //field_usage
@@ -108,7 +114,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x6_item_netzball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		5, //type
 		(void(*)(u8))0x0, //field_usage
@@ -123,7 +130,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x7_item_tauchball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		6, //type
 		(void(*)(u8))0x0, //field_usage
@@ -138,7 +146,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x8_item_nestball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		7, //type
 		(void(*)(u8))0x0, //field_usage
@@ -153,7 +162,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x9_item_wiederball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		8, //type
 		(void(*)(u8))0x0, //field_usage
@@ -168,7 +178,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa_item_timerball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		9, //type
 		(void(*)(u8))0x0, //field_usage
@@ -183,7 +194,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xb_item_luxusball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		10, //type
 		(void(*)(u8))0x0, //field_usage
@@ -198,7 +210,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xc_item_premierball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
 		11, //type
 		(void(*)(u8))0x0, //field_usage
@@ -213,7 +226,8 @@ item items[] = {
 		0, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd_item_trank,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -228,7 +242,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe_item_gegengift,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -243,7 +258,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf_item_feuerheiler,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -258,7 +274,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x10_item_eisheiler,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -273,7 +290,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x11_item_aufwecker,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -288,7 +306,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x12_item_para_heiler,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -303,7 +322,8 @@ item items[] = {
 		0, //holding_effect_id
 		255, //holding_effect_param
 		str_item_desc_x13_item_top_genesung,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -318,7 +338,8 @@ item items[] = {
 		0, //holding_effect_id
 		255, //holding_effect_param
 		str_item_desc_x14_item_top_trank,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -333,7 +354,8 @@ item items[] = {
 		0, //holding_effect_id
 		200, //holding_effect_param
 		str_item_desc_x15_item_hypertrank,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -348,7 +370,8 @@ item items[] = {
 		0, //holding_effect_id
 		50, //holding_effect_param
 		str_item_desc_x16_item_supertrank,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -363,7 +386,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x17_item_hyperheiler,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -378,7 +402,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x18_item_beleber,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -393,7 +418,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x19_item_top_beleber,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -408,7 +434,8 @@ item items[] = {
 		0, //holding_effect_id
 		50, //holding_effect_param
 		str_item_desc_x1a_item_co_mix,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -423,7 +450,8 @@ item items[] = {
 		0, //holding_effect_id
 		60, //holding_effect_param
 		str_item_desc_x1b_item_c_saft,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -438,7 +466,8 @@ item items[] = {
 		0, //holding_effect_id
 		80, //holding_effect_param
 		str_item_desc_x1c_item_c_serum,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -453,7 +482,8 @@ item items[] = {
 		0, //holding_effect_id
 		100, //holding_effect_param
 		str_item_desc_x1d_item_kuhmuh_milch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -468,7 +498,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x1e_item_energiestaub,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -483,7 +514,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x1f_item_kraftwurzel,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -498,7 +530,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x20_item_heilpuder,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -513,7 +546,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x21_item_vitalkraut,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -528,7 +562,8 @@ item items[] = {
 		0, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_x22_item_aether,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
@@ -543,7 +578,8 @@ item items[] = {
 		0, //holding_effect_id
 		255, //holding_effect_param
 		str_item_desc_x23_item_top_aether,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
@@ -558,7 +594,8 @@ item items[] = {
 		0, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_x24_item_elixier,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
@@ -573,7 +610,8 @@ item items[] = {
 		0, //holding_effect_id
 		255, //holding_effect_param
 		str_item_desc_x25_item_top_elixier,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
@@ -588,7 +626,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x26_item_lavakeks,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -603,7 +642,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x27_item_blaue_floete,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -618,7 +658,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x28_item_gelbe_floete,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -633,7 +674,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x29_item_rote_floete,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -648,7 +690,8 @@ item items[] = {
 		0, //holding_effect_id
 		50, //holding_effect_param
 		str_item_desc_x2a_item_schw_floete,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
@@ -663,7 +706,8 @@ item items[] = {
 		0, //holding_effect_id
 		150, //holding_effect_param
 		str_item_desc_x2b_item_weisse_floete,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1b81, //field_usage
@@ -678,7 +722,8 @@ item items[] = {
 		1, //holding_effect_id
 		75, //holding_effect_param
 		str_item_desc_x2c_item_beerensaft,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -693,7 +738,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x2d_item_zauberasche,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1859, //field_usage
@@ -708,7 +754,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x2e_item_kuestensalz,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -723,7 +770,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x2f_item_kuestenschale,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -738,7 +786,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x30_item_purpurstueck,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -753,7 +802,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x31_item_indigostueck,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -768,7 +818,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x32_item_gelbstueck,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -783,7 +834,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x33_item_gruenstueck,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -798,7 +850,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x34_item_magmaisierer,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -813,7 +866,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x35_item_stromisierer,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -828,7 +882,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x36_item_schoenschuppe,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -843,7 +898,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x37_item_dubiosdisk,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -858,7 +914,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x38_item_duesterumhang,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -873,7 +930,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x39_item_schuetzer,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -888,7 +946,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3a_item_leben_orb,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -903,7 +962,8 @@ item items[] = {
 		HOLD_EFFECT_EVOLITE, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3b_item_evolith,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -918,7 +978,8 @@ item items[] = {
 		30, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_x3c_item_scharfzahn,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -933,7 +994,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3d_item_item_3d,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -948,7 +1010,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3e_item_item_3e,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -963,7 +1026,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x3f_item_kp_plus,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -978,7 +1042,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x40_item_protein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -993,7 +1058,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x41_item_eisen,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -1008,7 +1074,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x42_item_carbon,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -1023,7 +1090,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x43_item_kalzium,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -1038,7 +1106,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x44_item_sonderbonbon,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1821, //field_usage
@@ -1053,7 +1122,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x45_item_ap_plus,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
@@ -1068,7 +1138,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x46_item_zink,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -1083,7 +1154,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x47_item_ap_top,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1805, //field_usage
@@ -1098,7 +1170,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x48_item_goldbonbon,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a1821, //field_usage
@@ -1113,7 +1186,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x49_item_megablock,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1128,7 +1202,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x4a_item_angriffplus,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1143,7 +1218,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x4b_item_x_angriff,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1158,7 +1234,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x4c_item_x_abwehr,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1173,7 +1250,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x4d_item_x_tempo,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1188,7 +1266,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x4e_item_x_treffer,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1203,7 +1282,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x4f_item_x_spezial,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1218,7 +1298,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x50_item_pokepuppe,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1233,7 +1314,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x51_item_eneco_rute,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1248,7 +1330,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x52_item_suessbonbon,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -1263,7 +1346,8 @@ item items[] = {
 		0, //holding_effect_id
 		200, //holding_effect_param
 		str_item_desc_x53_item_superschutz,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
@@ -1278,7 +1362,8 @@ item items[] = {
 		0, //holding_effect_id
 		250, //holding_effect_param
 		str_item_desc_x54_item_top_schutz,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
@@ -1293,7 +1378,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x55_item_fluchtseil,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1c99, //field_usage
@@ -1308,7 +1394,8 @@ item items[] = {
 		0, //holding_effect_id
 		100, //holding_effect_param
 		str_item_desc_x56_item_schutz,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1a85, //field_usage
@@ -1323,7 +1410,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x57_item_item_57,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1338,7 +1426,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x58_item_item_58,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1353,7 +1442,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x59_item_item_59,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1368,7 +1458,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x5a_item_item_5a,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1383,7 +1474,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x5b_item_item_5b,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1398,7 +1490,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x5c_item_item_5c,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1413,7 +1506,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x5d_item_sonnenstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1428,7 +1522,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x5e_item_mondstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1443,7 +1538,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x5f_item_feuerstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1458,7 +1554,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x60_item_donnerstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1473,7 +1570,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x61_item_wasserstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1488,7 +1586,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x62_item_blattstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1503,7 +1602,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x63_item_linkkabel,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1518,7 +1618,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x64_item_finsterstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1533,7 +1634,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x65_item_leuchtstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1548,7 +1650,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x66_item_funkelstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x80a183d, //field_usage
@@ -1563,7 +1666,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x67_item_minipilz,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1578,7 +1682,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x68_item_riesenpilz,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1593,7 +1698,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x69_item_spv_orb_n,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1608,7 +1714,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x6a_item_perle,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1623,7 +1730,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x6b_item_riesenperle,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1638,7 +1746,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x6c_item_sternenstaub,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1653,7 +1762,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x6d_item_sternenstueck,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1668,7 +1778,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x6e_item_nugget,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1683,7 +1794,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x6f_item_herzschuppe,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1698,7 +1810,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x70_item_angr_orb_p,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1713,7 +1826,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x71_item_angr_orb_n,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1728,7 +1842,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x72_item_vert_orb_p,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1743,7 +1858,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x73_item_vert_orb_n,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1758,7 +1874,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x74_item_init_orb_p,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1773,7 +1890,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x75_item_init_orb_n,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1788,7 +1906,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x76_item_spa_orb_p,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1803,7 +1922,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x77_item_spa_orb_n,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1818,7 +1938,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x78_item_spv_orb_p,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		1, //type
 		(void(*)(u8))0x9008d01, //field_usage
@@ -1833,7 +1954,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x79_item_79,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -1848,7 +1970,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x7a_item_hafenbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1863,7 +1986,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x7b_item_glitzerbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1878,7 +2002,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x7c_item_eilbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1893,7 +2018,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x7d_item_waldbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1908,7 +2034,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x7e_item_wellenbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1923,7 +2050,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x7f_item_perlenbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1938,7 +2066,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x80_item_dunkelbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1953,7 +2082,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x81_item_tropenbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1968,7 +2098,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x82_item_traumbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1983,7 +2114,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x83_item_edelbrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -1998,7 +2130,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x84_item_retrobrief,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		0, //type
 		(void(*)(u8))0x80a12d5, //field_usage
@@ -2013,7 +2146,8 @@ item items[] = {
 		2, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x85_item_amrenabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2028,7 +2162,8 @@ item items[] = {
 		3, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x86_item_maronbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2043,7 +2178,8 @@ item items[] = {
 		4, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x87_item_pirsifbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2058,7 +2194,8 @@ item items[] = {
 		5, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x88_item_fragiabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2073,7 +2210,8 @@ item items[] = {
 		6, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x89_item_wilbirbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2088,7 +2226,8 @@ item items[] = {
 		7, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_x8a_item_jonagobeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))0x80a17e9, //field_usage
@@ -2103,7 +2242,8 @@ item items[] = {
 		1, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_x8b_item_sinelbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2118,7 +2258,8 @@ item items[] = {
 		8, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x8c_item_persimbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2133,7 +2274,8 @@ item items[] = {
 		9, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x8d_item_prunusbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2148,7 +2290,8 @@ item items[] = {
 		1, //holding_effect_id
 		30, //holding_effect_param
 		str_item_desc_x8e_item_tsitrubeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		1, //type
 		(void(*)(u8))item_field_by_effect_table, //field_usage
@@ -2163,7 +2306,8 @@ item items[] = {
 		10, //holding_effect_id
 		8, //holding_effect_param
 		str_item_desc_x8f_item_giefebeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2178,7 +2322,8 @@ item items[] = {
 		11, //holding_effect_id
 		8, //holding_effect_param
 		str_item_desc_x90_item_wikibeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2193,7 +2338,8 @@ item items[] = {
 		12, //holding_effect_id
 		8, //holding_effect_param
 		str_item_desc_x91_item_magobeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2208,7 +2354,8 @@ item items[] = {
 		13, //holding_effect_id
 		8, //holding_effect_param
 		str_item_desc_x92_item_gauvebeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2223,7 +2370,8 @@ item items[] = {
 		14, //holding_effect_id
 		8, //holding_effect_param
 		str_item_desc_x93_item_yapabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2238,7 +2386,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x94_item_himmihbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2253,7 +2402,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x95_item_morbbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2268,7 +2418,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x96_item_nanabbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2283,7 +2434,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x97_item_nirbebeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2298,7 +2450,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x98_item_sananabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2313,7 +2466,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x99_item_granabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2328,7 +2482,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x9a_item_setangbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2343,7 +2498,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x9b_item_qualotbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2358,7 +2514,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x9c_item_honmelbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2373,7 +2530,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x9d_item_labrusbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2388,7 +2546,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x9e_item_tamotbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2403,7 +2562,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x9f_item_saimbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2418,7 +2578,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa0_item_magostbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2433,7 +2594,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa1_item_rabutabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2448,7 +2610,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa2_item_tronzibeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2463,7 +2626,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa3_item_kiwanbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2478,7 +2642,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa4_item_pallmbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2493,7 +2658,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa5_item_wasmelbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2508,7 +2674,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa6_item_durinbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2523,7 +2690,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xa7_item_myrtilbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2538,7 +2706,8 @@ item items[] = {
 		15, //holding_effect_id
 		4, //holding_effect_param
 		str_item_desc_xa8_item_lydzibeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2553,7 +2722,8 @@ item items[] = {
 		16, //holding_effect_id
 		4, //holding_effect_param
 		str_item_desc_xa9_item_linganbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2568,7 +2738,8 @@ item items[] = {
 		17, //holding_effect_id
 		4, //holding_effect_param
 		str_item_desc_xaa_item_salkabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2583,7 +2754,8 @@ item items[] = {
 		18, //holding_effect_id
 		4, //holding_effect_param
 		str_item_desc_xab_item_tahaybeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2598,7 +2770,8 @@ item items[] = {
 		19, //holding_effect_id
 		4, //holding_effect_param
 		str_item_desc_xac_item_apikobeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2613,7 +2786,8 @@ item items[] = {
 		20, //holding_effect_id
 		4, //holding_effect_param
 		str_item_desc_xad_item_lansatbeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2628,7 +2802,8 @@ item items[] = {
 		21, //holding_effect_id
 		4, //holding_effect_param
 		str_item_desc_xae_item_krambobeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2643,7 +2818,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xaf_item_enigmabeere,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
 		4, //type
 		(void(*)(u8))0x80a2155, //field_usage
@@ -2658,7 +2834,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xb0_item_item_b0,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2673,7 +2850,8 @@ item items[] = {
 		29, //holding_effect_id
 		CHOICE_ITEM_SPECS, //holding_effect_param
 		str_item_desc_xb1_item_wahlglas,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2688,7 +2866,8 @@ item items[] = {
 		29, //holding_effect_id
 		CHOICE_ITEM_SCARF, //holding_effect_param
 		str_item_desc_xb2_item_wahlschal,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2703,7 +2882,8 @@ item items[] = {
 		22, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_xb3_item_blendpuder,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2718,7 +2898,8 @@ item items[] = {
 		23, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xb4_item_schlohkraut,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2733,7 +2914,8 @@ item items[] = {
 		24, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xb5_item_machoband,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2748,7 +2930,8 @@ item items[] = {
 		25, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xb6_item_ep_teiler,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2763,7 +2946,8 @@ item items[] = {
 		26, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xb7_item_flinkklaue,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2778,7 +2962,8 @@ item items[] = {
 		27, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xb8_item_sanftglocke,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2793,7 +2978,8 @@ item items[] = {
 		28, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xb9_item_mentalkraut,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2808,7 +2994,8 @@ item items[] = {
 		29, //holding_effect_id
 		CHOICE_ITEM_BAND, //holding_effect_param
 		str_item_desc_xba_item_wahlband,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2823,7 +3010,8 @@ item items[] = {
 		30, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_xbb_item_king_stein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2838,7 +3026,8 @@ item items[] = {
 		31, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_xbc_item_silberstaub,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2853,7 +3042,8 @@ item items[] = {
 		32, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_xbd_item_muenzamulett,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2868,7 +3058,8 @@ item items[] = {
 		33, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xbe_item_schutzband,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2883,7 +3074,8 @@ item items[] = {
 		34, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xbf_item_seelentau,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2898,7 +3090,8 @@ item items[] = {
 		35, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xc0_item_abysszahn,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2913,7 +3106,8 @@ item items[] = {
 		36, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xc1_item_abyssplatte,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2928,7 +3122,8 @@ item items[] = {
 		37, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xc2_item_rauchball,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2943,7 +3138,8 @@ item items[] = {
 		38, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xc3_item_ewigstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2958,7 +3154,8 @@ item items[] = {
 		39, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_xc4_item_fokus_band,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2973,7 +3170,8 @@ item items[] = {
 		40, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xc5_item_gluecks_ei,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -2988,7 +3186,8 @@ item items[] = {
 		41, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xc6_item_scope_linse,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3003,7 +3202,8 @@ item items[] = {
 		42, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_xc7_item_metallmantel,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3018,7 +3218,8 @@ item items[] = {
 		43, //holding_effect_id
 		10, //holding_effect_param
 		str_item_desc_xc8_item_ueberreste,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3033,7 +3234,8 @@ item items[] = {
 		44, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xc9_item_drachenhaut,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3048,7 +3250,8 @@ item items[] = {
 		45, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xca_item_kugelblitz,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3063,7 +3266,8 @@ item items[] = {
 		46, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xcb_item_pudersand,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3078,7 +3282,8 @@ item items[] = {
 		47, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xcc_item_granitstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3093,7 +3298,8 @@ item items[] = {
 		48, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xcd_item_wundersaat,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3108,7 +3314,8 @@ item items[] = {
 		49, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xce_item_schattenglas,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3123,7 +3330,8 @@ item items[] = {
 		50, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xcf_item_schwarzgurt,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3138,7 +3346,8 @@ item items[] = {
 		51, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd0_item_magnet,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3153,7 +3362,8 @@ item items[] = {
 		52, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd1_item_zauberwasser,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3168,7 +3378,8 @@ item items[] = {
 		53, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd2_item_hackattack,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3183,7 +3394,8 @@ item items[] = {
 		54, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd3_item_giftstich,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3198,7 +3410,8 @@ item items[] = {
 		55, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd4_item_ewiges_eis,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3213,7 +3426,8 @@ item items[] = {
 		56, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd5_item_bannsticker,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3228,7 +3442,8 @@ item items[] = {
 		57, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd6_item_kruemmloeffel,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3243,7 +3458,8 @@ item items[] = {
 		58, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd7_item_holzkohle,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3258,7 +3474,8 @@ item items[] = {
 		59, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd8_item_drachenzahn,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3273,7 +3490,8 @@ item items[] = {
 		60, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xd9_item_seidenschal,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3288,7 +3506,8 @@ item items[] = {
 		61, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xda_item_up_grade,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3303,7 +3522,8 @@ item items[] = {
 		62, //holding_effect_id
 		8, //holding_effect_param
 		str_item_desc_xdb_item_seegesang,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3318,7 +3538,8 @@ item items[] = {
 		52, //holding_effect_id
 		5, //holding_effect_param
 		str_item_desc_xdc_item_seerauch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3333,7 +3554,8 @@ item items[] = {
 		22, //holding_effect_id
 		5, //holding_effect_param
 		str_item_desc_xdd_item_laxrauch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3348,7 +3570,8 @@ item items[] = {
 		63, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xde_item_lucky_punch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3363,7 +3586,8 @@ item items[] = {
 		64, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xdf_item_metallstaub,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3378,7 +3602,8 @@ item items[] = {
 		65, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe0_item_kampfknochen,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3393,7 +3618,8 @@ item items[] = {
 		66, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe1_item_lauchstange,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3408,7 +3634,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe2_item_bisaflornit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3423,7 +3650,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe3_item_gluraknit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3438,7 +3666,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe4_item_turtoknit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3453,7 +3682,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe5_item_terrasornit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3468,7 +3698,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe6_item_zerbernit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3483,7 +3714,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe7_item_skullydranit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3498,7 +3730,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe8_item_aquananit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3513,7 +3746,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xe9_item_flamaranit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3528,7 +3762,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xea_item_blitzanit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3543,7 +3778,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xeb_item_ampharosnit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3558,7 +3794,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xec_item_gengarnit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3573,7 +3810,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xed_item_bibornit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3588,7 +3826,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xee_item_item_ee,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3603,7 +3842,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xef_item_geowaznit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3618,7 +3858,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf0_item_tropiusnit,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3633,7 +3874,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf1_item_item_f1,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3648,7 +3890,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf2_item_item_f2,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3663,7 +3906,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf3_item_item_f3,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3678,7 +3922,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf4_item_item_f4,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3693,7 +3938,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf5_item_item_f5,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3708,7 +3954,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf6_item_item_f6,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3723,7 +3970,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf7_item_item_f7,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3738,7 +3986,8 @@ item items[] = {
 		HOLD_EFFECT_FULL_INCENSE, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xf8_item_lahmrauch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3753,7 +4002,8 @@ item items[] = {
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_HAIL, //holding_effect_param
 		str_item_desc_xf9_item_eisbrocken,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3768,7 +4018,8 @@ item items[] = {
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_RAIN, //holding_effect_param
 		str_item_desc_xfa_item_nassbrocken,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3783,7 +4034,8 @@ item items[] = {
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_SANDSTORM, //holding_effect_param
 		str_item_desc_xfb_item_glattbrocken,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3798,7 +4050,8 @@ item items[] = {
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_SUN, //holding_effect_param
 		str_item_desc_xfc_item_heissbrocken,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3813,7 +4066,8 @@ item items[] = {
 		HOLD_EFFECT_LIGHT_CLAY, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xFD_item_lichtlehm,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3828,7 +4082,8 @@ item items[] = {
 		HOLD_EFFECT_ROCK_POWER, //holding_effect_id
 		20, //holding_effect_param
 		str_item_desc_xfe_item_steinrauch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3843,7 +4098,8 @@ item items[] = {
 		HOLD_EFFECT_REPEL, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_xff_item_scheuchrauch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3858,7 +4114,8 @@ item items[] = {
 		HOLD_EFFECT_DOUBLE_PRIZE, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x100_item_gluecksrauch,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3873,7 +4130,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x101_item_koeder,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3888,7 +4146,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x102_item_goldkoeder,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3903,7 +4162,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x103_item_leuchtkoeder,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -3918,7 +4178,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x104_item_muenzkorb,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a154d, //field_usage
@@ -3933,7 +4194,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x105_item_detektor,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1525, //field_usage
@@ -3948,7 +4210,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x106_item_angel,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
@@ -3963,7 +4226,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x107_item_profiangel,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
@@ -3978,7 +4242,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x108_item_superangel,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1425, //field_usage
@@ -3993,7 +4258,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x109_item_bootsticket,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4008,7 +4274,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x10a_item_wettb_karte,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4023,7 +4290,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x10b_item_item_10b,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4038,7 +4306,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x10c_item_wailmerkanne,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4053,7 +4322,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x10d_item_devon_waren,
-		2, //field_18
+		2, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4068,7 +4338,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x10e_item_aschetasche,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))item_ashbag_field, //field_usage
@@ -4083,7 +4354,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x10f_item_kelleroeffner,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4098,7 +4370,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x110_item_kunstrad,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
@@ -4113,7 +4386,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x111_item_box,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4128,7 +4402,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x112_item_brief,
-		2, //field_18
+		2, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4143,7 +4418,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x113_item_aeon_ticket,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4158,7 +4434,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x114_item_spiritkern,
-		2, //field_18
+		2, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4173,7 +4450,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x115_item_blaue_kugel,
-		2, //field_18
+		2, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4188,7 +4466,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x116_item_scanner,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4203,7 +4482,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x117_item_wuestenglas,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4218,7 +4498,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x118_item_meteorit,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4233,7 +4514,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x119_item_goldschluessel,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4248,7 +4530,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x11a_item_k2_schluessel,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4263,7 +4546,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x11b_item_k4_schluessel,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4278,7 +4562,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x11c_item_k6_schluessel,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4293,7 +4578,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x11d_item_l_schluessel,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4308,7 +4594,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x11e_item_wurzelfossil,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4323,7 +4610,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x11f_item_klauenfossil,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4338,7 +4626,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x120_item_devon_scope,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -4353,7 +4642,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x121_item_tm01,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4368,7 +4658,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x122_item_tm02,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4383,7 +4674,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x123_item_tm03,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4398,7 +4690,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x124_item_tm04,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4413,7 +4706,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x125_item_tm05,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4428,7 +4722,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x126_item_tm06,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4443,7 +4738,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x127_item_tm07,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4458,7 +4754,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x128_item_tm08,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4473,7 +4770,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x129_item_tm09,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4488,7 +4786,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x12a_item_tm10,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4503,7 +4802,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x12b_item_tm11,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4518,7 +4818,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x12c_item_tm12,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4533,7 +4834,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x12d_item_tm13,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4548,7 +4850,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x12e_item_tm14,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4563,7 +4866,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x12f_item_tm15,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4578,7 +4882,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x130_item_tm16,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4593,7 +4898,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x131_item_tm17,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4608,7 +4914,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x132_item_tm18,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4623,7 +4930,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x133_item_tm19,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4638,7 +4946,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x134_item_tm20,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4653,7 +4962,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x135_item_tm21,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4668,7 +4978,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x136_item_tm22,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4683,7 +4994,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x137_item_tm23,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4698,7 +5010,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x138_item_tm24,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4713,7 +5026,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x139_item_tm25,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4728,7 +5042,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x13a_item_tm26,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4743,7 +5058,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x13b_item_tm27,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4758,7 +5074,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x13c_item_tm28,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4773,7 +5090,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x13d_item_tm29,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4788,7 +5106,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x13e_item_tm30,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4803,7 +5122,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x13f_item_tm31,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4818,7 +5138,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x140_item_tm32,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4833,7 +5154,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x141_item_tm33,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4848,7 +5170,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x142_item_tm34,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4863,7 +5186,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x143_item_tm35,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4878,7 +5202,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x144_item_tm36,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4893,7 +5218,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x145_item_tm37,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4908,7 +5234,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x146_item_tm38,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4923,7 +5250,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x147_item_tm39,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4938,7 +5266,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x148_item_tm40,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4953,7 +5282,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x149_item_tm41,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4968,7 +5298,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x14a_item_tm42,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4983,7 +5314,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x14b_item_tm43,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -4998,7 +5330,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x14c_item_tm44,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5013,7 +5346,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x14d_item_tm45,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5028,7 +5362,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x14e_item_tm46,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5043,7 +5378,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x14f_item_tm47,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5058,7 +5394,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x150_item_tm48,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5073,7 +5410,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x151_item_tm49,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5088,7 +5426,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x152_item_tm50,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5103,7 +5442,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x153_item_vm01,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5118,7 +5458,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x154_item_vm02,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5133,7 +5474,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x155_item_vm03,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5148,7 +5490,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x156_item_vm04,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5163,7 +5506,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x157_item_vm05,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5178,7 +5522,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x158_item_vm06,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5193,7 +5538,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x159_item_vm07,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5208,7 +5554,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x15a_item_vm08,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
 		1, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5223,7 +5570,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x15b_item_item_15b,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5238,7 +5586,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x15c_item_item_15c,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5253,7 +5602,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x15d_item_eichs_paket,
-		2, //field_18
+		2, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5268,7 +5618,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x15e_item_pokefloete,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1659, //field_usage
@@ -5283,7 +5634,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x15f_item__oeffner,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5298,7 +5650,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x160_item_rad_coupon,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5313,7 +5666,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x161_item_pkmcorder,
-		2, //field_18
+		2, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x0, //field_usage
@@ -5328,7 +5682,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x162_item_altbernstein,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5343,7 +5698,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x163_item_tueroeffner,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5358,7 +5714,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x164_item_liftoeffner,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5373,7 +5730,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x165_item_helixfossil,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5388,7 +5746,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x166_item_domfossil,
-		0, //field_18
+		0, // Importance
+		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5403,7 +5762,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x167_item_silph_scope,
-		1, //field_18
+		1, // Importance
+		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5418,7 +5778,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x168_item_fahrrad,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1319, //field_usage
@@ -5433,7 +5794,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x169_item_karte,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1d4d, //field_usage
@@ -5448,7 +5810,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x16a_item_kampffahnder,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a1e89, //field_usage
@@ -5463,7 +5826,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x16b_item_ruhmesdatei,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1de5, //field_usage
@@ -5478,7 +5842,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x16c_item_vmtm_box,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a1875, //field_usage
@@ -5493,7 +5858,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x16d_item_beerentuete,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a190d, //field_usage
@@ -5508,7 +5874,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x16e_item_lehrkanal,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		2, //type
 		(void(*)(u8))0x80a19d9, //field_usage
@@ -5523,7 +5890,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x16f_item_tri_pass,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5538,7 +5906,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x170_item_bunt_pass,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5553,7 +5922,8 @@ item items[] = {
 		HOLD_EFFECT_KEYSTONE, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x171_item_mega_amulett,
-		513, //field_18
+		1, // Importance
+		0, // Exits Bag on
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5568,7 +5938,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x172_item_geheimticket,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5583,7 +5954,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x173_item_auroraticket,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5598,7 +5970,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x174_item_puderdoeschen,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a15d5, //field_usage
@@ -5613,7 +5986,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x175_item_rubin,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
@@ -5628,7 +6002,8 @@ item items[] = {
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_desc_x176_item_saphir,
-		257, //field_18
+		1, // Importance
+		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage

@@ -18,6 +18,7 @@
 #define AI_DEBUG_ITEMS(str, ...) ({if (AI_DEBUG_ITEMS_ON) dprintf(str, __VA_ARGS__);})
 
 u8 battle_ai_should_use_item(int *score) {
+    if (!(battle_flags & BATTLE_TRAINER)) return 4;
     u8 first = 0, last = 0, partner = 0, foe = 0, foe_partner = 0;
     battler_get_partner_and_foes(active_battler, &partner, &foe, &foe_partner);
     pokemon *party = battler_load_party_range(active_battler, &first, &last);

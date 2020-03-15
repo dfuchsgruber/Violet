@@ -357,7 +357,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    3, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -492,7 +492,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    3, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -1275,7 +1275,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    3, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -1329,7 +1329,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    4, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -1491,7 +1491,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    3, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -1869,7 +1869,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
     0x0, // field_1E
-    3, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -6244,6 +6244,28 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Grunt H.")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x164_route_2_grunt_second,
+    },
+    [0x165] = {
+        .trainerclass = TRAINERCLASS_ZWIL, .sprite = 127,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Amy u. Lea"),
+            PSTRING("Amy u. Lea")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x165_route_2_twins,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x166] = {
+        .trainerclass = TRAINERCLASS_TEENAGER, .sprite = 82,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Jeremy"),
+            PSTRING("Jeremy")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x166_route_2_trainer_1,
+    },
+    [0x167] = {
+        .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 0x69,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Guz"),
+            PSTRING("Guz")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x167_route_3_trainer_0
     },
 }; 
 
