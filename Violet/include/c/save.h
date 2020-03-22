@@ -163,7 +163,6 @@ typedef struct {
     u8 dma0_dump[4];
     int gp_stack_size;
     int gp_stack[GP_STACK_SIZE];
-    int battle_custom_status[4];
     u8 mugshot_oam_id;
     u8 mugshot_tb_id;
     multichoice_t dynamic_choice;
@@ -201,6 +200,7 @@ typedef struct {
     u16 ally_trainer_idx;
     u8 ally_trainer_backsprite_idx;
     u8 ally_trainer_party_preview;
+    u32 battle_handicaps;
 } floating_memory;
 
 extern saveblock1 *save1;

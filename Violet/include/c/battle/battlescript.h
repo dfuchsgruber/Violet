@@ -86,6 +86,7 @@ extern u16 bsc_last_used_item; // Used for the BSC_LAST_ITEM buffer
 extern u8 *battlescripts_pokeball[0xD]; // Battle-Scripts for using different pokeballs...
 extern u8 *battlescripts_run_by_item[]; // Battle-Scripts for running using different items
 extern u8 *battlescripts_use_item[]; // Battle-Scripts for using different item types
+extern u8 battlescript_apply_status1[]; // Battle-Script that applies a status1 condition (burn, posion, etc.). Uses battle communcitation and the MOVE_EFECT_BYTE
 
 /**
  * Loads the graphic for the attack "transform"

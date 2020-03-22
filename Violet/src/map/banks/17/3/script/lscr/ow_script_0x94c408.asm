@@ -43,7 +43,6 @@ addvar STORY_PROGRESS 0x1
 setvar 0x8004 0x4
 special 0x19
 waitstate
-pause 64
 loadpointer 0x0 str_0x94d69f
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 special 0x113

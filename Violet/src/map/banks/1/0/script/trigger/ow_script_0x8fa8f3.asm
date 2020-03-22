@@ -402,19 +402,19 @@ return
 .global str_0x8f4c85
 
 str_0x8f4c85:
-	.autostring 35 2 "Wir werden sowieso aus Ihnen herausbekommen, was wir wissen wollen, Professor.\pErsparen Sie sich alberene Ausreden und kooperieren Sie lieber gleich!"
+	.autostring 34 2 "Wir werden sowieso aus Ihnen herausbekommen, was wir wissen wollen, Professor.\pErsparen Sie sich alberene Ausreden und kooperieren Sie lieber gleich!"
         
         
 .global str_0x8f4c4b
 
 str_0x8f4c4b:
-	.autostring 35 2 "In Ordnung!\pDOTS DOTS DOTS\pIn Ordnung DOTS\nAber tun Sie mir bitte nichts DOTS"
+	.autostring 34 2 "In Ordnung!\pDOTS DOTS DOTS\pIn Ordnung DOTS\nAber tun Sie mir bitte nichts DOTS"
         
         
 .global str_0x8f4b7b
 
 str_0x8f4b7b:
-	.autostring 35 2 "Haha!\nSie haben absolut kein Rückgrat, Primus!\pHaha!\pSo gefällt mir das!\nNun sagen Sie mir, was es mit dem Zeitstein und diesem seltsamen Schrein hier auf sich hat!"
+	.autostring 34 2 "Haha!\nSie haben absolut kein Rückgrat, Primus!\pHaha!\pSo gefällt mir das!\nNun sagen Sie mir, was es mit dem Zeitstein und diesem seltsamen Schrein hier auf sich hat!"
         
         
 .global str_0x8f4aee
@@ -426,69 +426,69 @@ str_0x8f4aee:
 .global str_0x8f4ab8
 
 str_0x8f4ab8:
-    .autostring 35 2 "Sie fangen nun also doch mit Ausflüchten an?\pHabe ich mich nicht klar genug ausgedrückt?\pDenken Sie, dass ich nicht bereit wäre, Sie aus dem Weg zu räumen?"
+    .autostring 34 2 "Sie fangen nun also doch mit Ausflüchten an?\pHabe ich mich nicht klar genug ausgedrückt?\pDenken Sie, dass ich nicht bereit wäre, Sie aus dem Weg zu räumen?"
         
         
 .global str_0x8f49f3
 
 str_0x8f49f3:
-    .autostring 35 2 "Nein!\pHalt, warten Sie, bitte!\pEs gibt noch eine zweite Inschrift, die nachträglich hinzugefügt wurde.\pSie ist in Icognito Zeichen geschrieben undDOTS\pIch müsste sie entziffern könnenDOTS"
+    .autostring 34 2 "Nein!\pHalt, warten Sie, bitte!\pEs gibt noch eine zweite Inschrift, die nachträglich hinzugefügt wurde.\pSie ist in Icognito Zeichen geschrieben undDOTS\pIch müsste sie entziffern könnenDOTS"
         
         
 .global str_0x8f49c5
 
 str_0x8f49c5:
-    .autostring 35 2 "Na also!\pIch wusste doch, dass Sie von Nutzen sein können.\pWie lautet diese Inschrift?"
+    .autostring 34 2 "Na also!\pIch wusste doch, dass Sie von Nutzen sein können.\pWie lautet diese Inschrift?"
         
         
 .global str_0x8f48ca
 
 str_0x8f48ca:
-	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDer Text handelt von einem Pokémon namens Celebi.\pEs war einst der Wächter des Zeitsteins, welcher das Zeitgefüge zusammenhält.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
+	.autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDer Text handelt von einem Pokémon namens Celebi.\pEs war einst der Wächter des Zeitsteins, welcher das Zeitgefüge zusammenhält.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
 
 .global str_0x8f4823
 
 str_0x8f4823:
-    .autostring 35 2 "Sehr gut, sehr gut!\pLesen Sie weiter!"
+    .autostring 34 2 "Sehr gut, sehr gut!\pLesen Sie weiter!"
         
 .global str_0x8f4755
 
 str_0x8f4755:
-    .autostring 35 2 "Um einer drohenden Gefahr zu entgehen entschloss sich Celebi, den Zeitstein in drei Teile zu spaltenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pUnd jeden des der Fragmente von einem mächtigen antiken Pokémon bewachen zu lassenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch denke, das ist allesDOTS"
+    .autostring 34 2 "Um einer drohenden Gefahr zu entgehen entschloss sich Celebi, den Zeitstein in drei Teile zu spaltenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pUnd jeden des der Fragmente von einem mächtigen antiken Pokémon bewachen zu lassenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch denke, das ist allesDOTS"
         
 .global str_0x8f46fc
 
 str_0x8f46fc:
-	.autostring 35 2 "Gespalten?\nSind Sie sich da sicher?\pWenn Ihre Informationen sich als unwahr entpuppen solltenDOTS\pIch muss Ihnen Ihre Lage nicht ein weiteres Mal erklären, oder?"
+	.autostring 34 2 "Gespalten?\nSind Sie sich da sicher?\pWenn Ihre Informationen sich als unwahr entpuppen solltenDOTS\pIch muss Ihnen Ihre Lage nicht ein weiteres Mal erklären, oder?"
         
         
 .global str_0x8f5a63
 
 str_0x8f5a63:
-    .autostring 35 2 "Hey!\nLasst den Professor in Frieden!"
+    .autostring 34 2 "Hey!\nLasst den Professor in Frieden!"
         
         
 .global str_0x8f59e8
 
 str_0x8f59e8:
-    .autostring 35 2 "Arceus sei Dank!\nEin Trainer!\pBitte, hilf mir!\nDiese Frau DOTS\lDOTS ist eine Kommandantin von Team Violet.\pSie ist gefährlich!\pHilf mir!"
+    .autostring 34 2 "Arceus sei Dank!\nEin Trainer!\pBitte, hilf mir!\nDiese Frau DOTS\lDOTS ist eine Kommandantin von Team Violet.\pSie ist gefährlich!\pHilf mir!"
         
         
 .global str_0x8f59cf
 
 str_0x8f59cf:
-    .autostring 35 2 "Halt den Rand, Primus!"
+    .autostring 34 2 "Halt den Rand, Primus!"
         
         
 .global str_0x8f56b8
 
 str_0x8f56b8:
-	.autostring 35 2 "Was haben wir denn da?\pEin Kind, das sich in die Angelegenheiten von Team Violet einmischt.\pMein Name ist Rin und ich bin Kommandantin der zweiten Division von Team Violet.\pBist du dir sicher, dass du dich mit mir anlegen möchtest?\pHast du etwa noch nicht von mir und meinen Taten gehört?"
+	.autostring 34 2 "Was haben wir denn da?\pEin Kind, das sich in die Angelegenheiten von Team Violet einmischt.\pMein Name ist Rin und ich bin Kommandantin der zweiten Division von Team Violet.\pBist du dir sicher, dass du dich mit mir anlegen möchtest?\pHast du etwa noch nicht von mir und meinen Taten gehört?"
         
 .global str_0x8f5628
 
 str_0x8f5628:
-	.autostring 35 2 "Mir ist völlig gleichgültig, wer Sie sind oder was Sie im Schilde führen.\pIch werde Team Violet aufhalten!"
+	.autostring 34 2 "Mir ist völlig gleichgültig, wer Sie sind oder was Sie im Schilde führen.\pIch werde Team Violet aufhalten!"
         
 .global str_0x8f5514
 
@@ -498,155 +498,155 @@ str_0x8f5514:
 .global str_0x8f5425
 
 str_0x8f5425:
-    .autostring 35 2 "Ich lasse mich nicht einschüchtern!"
+    .autostring 34 2 "Ich lasse mich nicht einschüchtern!"
 
 .global str_0x8f52c9
 
 str_0x8f52c9:
-    .autostring 35 2 "Genug jetzt!\pDummes Kind!\pIhr da, erledigt das Balg, und zwar pronto!"
+    .autostring 34 2 "Genug jetzt!\pDummes Kind!\pIhr da, erledigt das Balg, und zwar pronto!"
         
 .global str_0x8f523b
 
 str_0x8f523b:
-    .autostring 35 2 "Du kannst mir schon fast leid tun.\pSich mit Rin anzulegen ist nie eine gute Idee!"
+    .autostring 34 2 "Du kannst mir schon fast leid tun.\pSich mit Rin anzulegen ist nie eine gute Idee!"
         
         
 .global str_0x8f527b
 
 str_0x8f527b:
-    .autostring 35 2 "Na und?\nDann habe ich eben verloren.\pGegen Rin wirst du ohnehin nicht gewinnen, du naives Balg!"
+    .autostring 34 2 "Na und?\nDann habe ich eben verloren.\pGegen Rin wirst du ohnehin nicht gewinnen, du naives Balg!"
         
         
 .global str_0x8f5f96
 
 str_0x8f5f96:
-    .autostring 35 2 "Ich DOTS DOTS\nDOTS es tut mir leid, Rin DOTS"
+    .autostring 34 2 "Ich DOTS DOTS\nDOTS es tut mir leid, Rin DOTS"
         
         
 .global str_0x8f5f21
 
 str_0x8f5f21:
-    .autostring 35 2 "Eines Tages werden wir über die Welt herrschen!\pUnd dafür werde ich bis zum bitteren Ende kämpfen!"
+    .autostring 34 2 "Eines Tages werden wir über die Welt herrschen!\pUnd dafür werde ich bis zum bitteren Ende kämpfen!"
         
         
 .global str_0x8f5f57
 
 str_0x8f5f57:
-    .autostring 35 2 "Du hast mehr auf dem Kasten, als es scheint.\pAber Rin ist eine Nummer zu groß für dich!"
+    .autostring 34 2 "Du hast mehr auf dem Kasten, als es scheint.\pAber Rin ist eine Nummer zu groß für dich!"
         
         
 .global str_0x8f5edb
 
 str_0x8f5edb:
-    .autostring 35 2 "Das Kind DOTS DOTS DOTS\nDOTS ist kein Anfänger DOTS"
+    .autostring 34 2 "Das Kind DOTS DOTS DOTS\nDOTS ist kein Anfänger DOTS"
         
         
 .global str_0x8f5eb8
 
 str_0x8f5eb8:
-    .autostring 35 2 "Ihr seid erbärmliche Gestalten!\pIch sollte euch in Mistrals Division verweisen.\pBeiseite, ihr Pappnasen!"
+    .autostring 34 2 "Ihr seid erbärmliche Gestalten!\pIch sollte euch in Mistrals Division verweisen.\pBeiseite, ihr Pappnasen!"
         
         
 .global str_0x8f5d92
 
 str_0x8f5d92:
-	.autostring 35 2 "Vielleicht bist du doch ein interessanter Gegner.\pAber du musst wissen, dass ich auch gegen ein Kind ohne Skrupel kämpfen werde.\pDu hättest diese Dinge den Erwachsenen überlassen sollen.\pJetzt bezahlst du den Preis für deinen Heldenmut!"
+	.autostring 34 2 "Vielleicht bist du doch ein interessanter Gegner.\pAber du musst wissen, dass ich auch gegen ein Kind ohne Skrupel kämpfen werde.\pDu hättest diese Dinge den Erwachsenen überlassen sollen.\pJetzt bezahlst du den Preis für deinen Heldenmut!"
         
 .global str_0x8f5d31
 
 str_0x8f5d31:
-    .autostring 35 2 "Ich DOTS DOTS DOTS\nDOTS wurde von einem Kind besiegt?"
+    .autostring 34 2 "Ich DOTS DOTS DOTS\nDOTS wurde von einem Kind besiegt?"
         
         
 .global str_0x8fa9e7
 
 str_0x8fa9e7:
-	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pIch habe dich wohl unterschätzt.\pDu bist ein ernstzunehmender Gegner.\pBeim unserem nächsten Aufeinandertreffen, werde ich mich nicht so überrumpeln lassen.\pWir haben ohnehin erfahren, was wir wissen wollten."
+	.autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pIch habe dich wohl unterschätzt.\pDu bist ein ernstzunehmender Gegner.\pBeim unserem nächsten Aufeinandertreffen, werde ich mich nicht so überrumpeln lassen.\pWir haben ohnehin erfahren, was wir wissen wollten."
         
 .global str_0x8f6cfb
 
 str_0x8f6cfb:
-    .autostring 35 2 "Wir ziehen ab, los!"
+    .autostring 34 2 "Wir ziehen ab, los!"
         
         
 .global str_0x8f6c09
 
 str_0x8f6c09:
-	.autostring 35 2 "Oh bei Arceus, ich danke dir!\pTausend Mal danke danke danke!\pIch bin gerettet.\pBereits seit Tagen halten mich diese Rüpel fest und schikanieren mich.\pIch dachte, es wäre aus mit mir."
+	.autostring 34 2 "Oh bei Arceus, ich danke dir!\pTausend Mal danke danke danke!\pIch bin gerettet.\pBereits seit Tagen halten mich diese Rüpel fest und schikanieren mich.\pIch dachte, es wäre aus mit mir."
         
         
 .global str_0x8f6be9
 
 str_0x8f6be9:
-    .autostring 35 2 "Papa! Papa!"
+    .autostring 34 2 "Papa! Papa!"
         
         
 .global str_0x8f6bb4
 
 str_0x8f6bb4:
-    .autostring 35 2 "Elise!\nWas tust du denn hier?"
+    .autostring 34 2 "Elise!\nWas tust du denn hier?"
         
         
 .global str_0x8f6b22
 
 str_0x8f6b22:
-	.autostring 35 2 "Ich habe mir solche Sorgen um dich gemacht.\pAls mir Professor Tann von deinem Verschwinden erzählt hat DOTS\pDOTS ich DOTS\nDOTS DOTS DOTS\pDOTS wäre vor Sorge fast umgekommen!"
+	.autostring 34 2 "Ich habe mir solche Sorgen um dich gemacht.\pAls mir Professor Tann von deinem Verschwinden erzählt hat DOTS\pDOTS ich DOTS\nDOTS DOTS DOTS\pDOTS wäre vor Sorge fast umgekommen!"
         
 .global str_0x8f6ae5
 
 str_0x8f6ae5:
-    .autostring 35 2 "Keine Sorge, ich bin jetzt wohlauf, mein Schatz!"
+    .autostring 34 2 "Keine Sorge, ich bin jetzt wohlauf, mein Schatz!"
         
         
 .global str_0x8f6a60
 
 str_0x8f6a60:
-    .autostring 35 2 "Und das alles dank meinem Retter hier.\pDieses Kind hat einen Kommandanten von Team Violet geschlagen!\pWie lautet eigentlich dein Name?"
+    .autostring 34 2 "Und das alles dank meinem Retter hier.\pDieses Kind hat einen Kommandanten von Team Violet geschlagen!\pWie lautet eigentlich dein Name?"
         
         
 .global str_0x8f68d7
 
 str_0x8f68d7:
-    .autostring 35 2 "Wirklich PLAYER?\nDas ist fantastisch!\pSich mit solchen Menschen anzulegen, erfordert Mut!\pDu verblüffst mich aufs Neue!\pDanke dir, PLAYER!\nVon ganzem Herzen danke, dass du meinen Vater gerettet hast!"
+    .autostring 34 2 "Wirklich PLAYER?\nDas ist fantastisch!\pSich mit solchen Menschen anzulegen, erfordert Mut!\pDu verblüffst mich aufs Neue!\pDanke dir, PLAYER!\nVon ganzem Herzen danke, dass du meinen Vater gerettet hast!"
         
 .global str_0x8f68a8
 
 str_0x8f68a8:
-    .autostring 35 2 "DOTS DOTS DOTS\nAllerdings DOTS"
+    .autostring 34 2 "DOTS DOTS DOTS\nAllerdings DOTS"
         
         
 .global str_0x8f6749
 
 str_0x8f6749:
-    .autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS scheinen diese Verbrecher es auf den Diserakt, auch Zeitstein genannt, abgesehen zu haben."
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pHaben diese Leute von Team Violet es auf den Diserakt abgesehen."
         
 .global str_0x8f6725
 
 str_0x8f6725:
-    .autostring 35 2 "Diserakt?\nWas ist das?"
+    .autostring 34 2 "Diserakt?\nWas ist das?"
         
         
 .global str_0x8f6626
 
 str_0x8f6626:
-    .autostring 35 2 "Der Diserakt ist ein Stein, von dem ich bislang geglaub habe, dass er nur in Legenden existiert.\pDas Herz der Zeit soll in ihm schlagen.\pUnd er beinhaltet eine imense Energiemenge, für den, der ihn nutzbar machen kann.\pUnd darauf scheint es Team Violet abgesehen zu haben."
+    .autostring 34 2 "Der Legende nach wird das Zeitgefüge vom Diserakt zusammengehalten.\pDie Leute haben ihn deshalb auch Zeitstein genannt.\pSolte er tatsächlich existierenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDie Energie, die er beinhaltet, wäre imens.\pDamit könnte man allerlei gefährliche Dinge anstellen."
 
 
 .global str_0x8f65b0
 
 str_0x8f65b0:
-    .autostring 35 2 "PLAYER DOTS\nWirst du Team Violet weiter verfolgen?"
+    .autostring 34 2 "PLAYER DOTS\nWirst du Team Violet weiter verfolgen?"
         
         
 .global str_0x8f64bc
 
 str_0x8f64bc:
-    .autostring 35 2 "Rin hat gedroht, mit der Energie des Zeitsteins eine zerstörerische Waffe zu erschaffen.\pWenn ihr das gelingt, wird Team Violet vielleicht die Herrschaft über Theto erlangen.\pDas werde ich nicht zulassen!"
+    .autostring 34 2 "Team Violet will die Energie des Diserakts vermutlich als Waffe benutzen.\pDas werde ich nicht zulassen!"
         
 .global str_0x8f6465
 
 str_0x8f6465:
-    .autostring 35 2 "Das hatte ich mir gedacht DOTS\pAber lass dir deinen Sieg über Rin nicht zu Kopf wachsen.\pDie Top Vier sollen sich dieser Bedrohung stellen, das ist ihre Aufgabe!\pIch habe zwar Vertrauen in deine Fähigkeiten, aber sei vorsichtig!\pEs scheint, als wäre mit Team Violet nicht zu spaßen DOTS"
+    .autostring 34 2 "Das hatte ich mir gedachtDOTS\pDu solltest dir deinen Sieg nicht zu Kopf steigen lassen, ja?\pSchließlich haben wir die Top Vier und die Polizei, um sich mit solchen verbrecherischen Organisationen zu befassen.\pSich mit solchen Leuten anzulegen, kann leicht ins Auge gehen.\pPass auf dich auf, PLAYER!"
 
 .elseif LANG_EN
 

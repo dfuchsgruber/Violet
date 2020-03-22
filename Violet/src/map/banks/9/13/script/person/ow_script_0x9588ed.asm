@@ -44,6 +44,7 @@ loadpointer 0x0 str_0x95839d
 show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 addvar STORY_PROGRESS 0x1
 setflag ORINA_CITY_MISTRALS_GRUNTS
+clearflag FLAG_ELISE_GONE
 fadescreen 0x1
 hidesprite 0x800f
 fadescreen 0x0

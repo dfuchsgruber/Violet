@@ -8,6 +8,11 @@
 
 .global ow_script_0x9559ed
 ow_script_0x9559ed:
+addvar STORY_PROGRESS 0x1
+end
+
+// Moved to the lab of the professor
+
 lockall
 clearflag PKMNMENU
 showsprite 0x27

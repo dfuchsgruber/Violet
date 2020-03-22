@@ -15,7 +15,7 @@ stru_flight_position flight_positions[NUM_FLIGHT_POSITONS] = {
     {3, 13, 0x13, 0x12, 0}, // Ceometria
     {3, 9, 0x12, 0x2b, 0}, // Laubdorf
     {3, 17, 0x1e, 0x15, 0}, // Haweiland
-    {3, 10, 24, 39, 0},
+    {3, 41, 0, 0, 0},
     {15, 0, 47, 44, 0},
     {3, 28, 13, 21, 0},
     {3, 12, 14, 6, 0},

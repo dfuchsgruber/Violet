@@ -75,7 +75,7 @@ script_trainer_tipp_dns:
 		.string "Trainer-Tipp!\nWenn du tieffliegende Wolken\lsiehst, kannst du auf deiner\lgewobenen Wolke emporsteigen!"
 
 	str_trainer_tipp_habitat:
-		.string "Trainer-Tipp!\nBezüglich der Habitats-Funktion\ldes Pokédex fallen Höhlen und\ldergleichen unter die\lKategorie Natur.\pUnter der Kategorie Angel\nstehen jeweils S für\lSuperangel, P für Profiangel\lund A für Angel."
+		.string "Trainer-Tipp!\nBezüglich der Habitats-Funktion\ldes Pokédex fallen Höhlen und\ldergleichen unter die\lKategorie Natur.\pPokémon, die geangelt werden, sind entsprechend des notwendingen Angeltyps kategorisiert.\pJe mehr Pokébälle eine Kategorie aufweist, desto besser muss die Angel sein."
 
 
 .elseif LANG_EN

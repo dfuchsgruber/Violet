@@ -1,6 +1,7 @@
 .include "mugshot_character.s"
 .include "mugshot_alignment.s"
 .include "callstds.s"
+.include "specials.s"
 
 .macro load_mugshot person alignment=MUGSHOT_LEFT mask_name=0
     setvar 0x8000 \alignment
@@ -14,11 +15,11 @@
 .endm
 
 .macro call_draw_mugshot
-    special 0x6
+    special SPECIAL_MUGSHOT_SHOW
 .endm
 
 .macro call_hide_mugshot
-    special 0x7
+    special SPECIAL_MUGSHOT_DELETE
 .endm
 
 .macro show_mugshot_message message_type=MSG
@@ -42,3 +43,13 @@
     load_mugshot \person \alignment \mask_name
     show_mugshot_message \message_type
 .endm
+
+.macro msgbox_with_name message:req name:req alignment=MUGSHOT_LEFT message_type=MSG
+    setvar 0x8000 \alignment
+    loadpointer 0 \name
+    special SPECIAL_NAME_SHOW
+    loadpointer 0 \message
+    callstd \message_type
+    special SPECIAL_NAME_DELETE
+    waitstate
+.endm 

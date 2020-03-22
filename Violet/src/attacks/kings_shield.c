@@ -10,6 +10,7 @@
 #include "constants/attack_flags.h"
 #include "constants/attack_categories.h"
 #include "constants/pokemon_types.h"
+#include "battle/communication.h"
 
 extern u8 bsc_kings_shield_drop[];
 
@@ -17,9 +18,8 @@ void bsc_command_setprotect_apply_kings_shield(){
     dprintf("Kings shield tried for battler %d\n", attacking_battler);
     if(attacks[active_attack].effect == 0xE3){
         dprintf("Kings shield triggered for battler %d\n", attacking_battler);
-        fmem.battle_custom_status[attacking_battler] |= CUSTOM_STATUS_KINGS_SHIELD;
-        u8 *x02023E82 = (u8*)0x02023E82;
-        *x02023E82 = 2;
+        BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_KINGS_SHIELD;
+        battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
         battler_statuses[attacking_battler].protect = true;
     }
 }
@@ -32,7 +32,7 @@ bool attack_is_protecting_move(u16 move){
 bool protect_attack_succeeds(){
     dprintf("Trying to apply protect state\n");
     battler *attacker = &battlers[attacking_battler];
-    if(fmem.battle_custom_status[defending_battler] & 
+    if(BATTLE_STATE2->status_custom[defending_battler] & 
         CUSTOM_STATUS_KINGS_SHIELD){
         dprintf("Defender %d is behind kings shield\n", defending_battler);
         //king shield protect, check if the move hits
@@ -42,7 +42,7 @@ bool protect_attack_succeeds(){
         if(attack_needs_charging(active_attack) && !(attacker->status2 &
                 STATUS2_ATTACK_CHARGED)) return true;
         if(attacks[active_attack].flags & MAKES_CONTACT)
-            fmem.battle_custom_status[attacking_battler] |=
+            BATTLE_STATE2->status_custom[attacking_battler] |=
                 CUSTOM_STATUS_KINGS_SHIELD_DROP;
         
     }else{
@@ -61,7 +61,7 @@ bool protect_attack_succeeds(){
 
 void bsc_push_kings_shield_drop(){
     battler *attacker = &battlers[attacking_battler];
-    if((fmem.battle_custom_status[attacking_battler] & CUSTOM_STATUS_KINGS_SHIELD_DROP)
+    if((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_KINGS_SHIELD_DROP)
         && attacker->stat_changes[1] > 0){
         if(attacker->stat_changes[1] == 1) attacker->stat_changes[1] = 0;
         else attacker->stat_changes[1] = (u8)(attacker->stat_changes[1]  - 2);

@@ -41,7 +41,7 @@ str_0x931867:
 .global str_0x931636
 
 str_0x931636:
-	.autostring 35 2 "PLAYER!\nWas treibst du denn an einem solchen Ort?\pHier treibt sich doch nur Gesindel und Abschaum herum.\pDOTS DOTS DOTS\nWas ich hier tue?\pÄhm DOTS DOTS DOTS\nDOTS DOTS DOTS\pEs ist nicht so, dass Supermagneten auf dem legalen Markt zu kostspielig wären DOTS DOTS\pDOTS so ist es gewiss nicht!\pIch DOTS DOTS DOTS\nbin nur zufällig hier DOTS\pDa fällt mir ein, dass ich einen wichtigen Termin habe.\pMeine Forschungen dudlen keinen Auschub.\pGrüß meine Tochter Elise von mir, PLAYER!"
+	.autostring 35 2 "PLAYER!\nWas treibst du denn an einem solchen Ort?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWarum ich hier bin?\nNun, das ist eine ausgezeichnete FrageDOTS\pSieh mal, es ist so, dass viele Dinge, die ich für meine Forschung benötige, nur hier zu finden sindDOTS\pAber bitte, das bleibt unter uns PLAYER, ja?\pIch habe einen Ruf zu verlieren.\pUnd was meine arme Elise von mir halten würde, wenn sie erfahren würde, dass ihr Vater sich Forschungsmittel an einem Ort wie diesem besorgt.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDu solltest dich hier nicht zu lange aufhalten, PLAYERDOTS"
         
 .elseif LANG_EN
 

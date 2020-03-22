@@ -11,7 +11,7 @@
 #include "battle/battler.h"
 #include "battle/battlescript.h"
 #include "battle/state.h"
-#include "constants/battle_bgs.h"
+#include "constants/battle/battle_bgs.h"
 #include "constants/pokemon_types.h"
 #include "attack.h"
 #include "save.h"

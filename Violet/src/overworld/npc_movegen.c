@@ -113,3 +113,11 @@ void npc_move_camera_to() {
     big_callbacks[cb].params[4] = (u16) y_destination;
     npc_movement_target_person_idx = 0x7F;
 }
+
+void overworld_target_npc_set_to_var() {
+    u8 person_idx = (u8)(*var_access(0x8004));
+    u8 npc_idx = 0;
+    if (npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_idx)) {
+        trainer_npc_idx = npc_idx;
+    }
+}

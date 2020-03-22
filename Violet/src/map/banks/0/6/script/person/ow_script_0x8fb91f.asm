@@ -249,6 +249,8 @@ callif EQUAL ow_script_0x8fe4bb
 compare 0x8005 0x21
 callif EQUAL ow_script_0x8fe4cc
 sound 0x17
+checksound
+pause 32
 compare 0x8005 0x20
 callif EQUAL ow_script_0x8fe518
 compare 0x8005 0x21

@@ -261,7 +261,7 @@ attack_anims:
 		.word 0x81d67fb @//attack_horter
 		.word 0x81d68b2 @//attack_entfessler
 		.word 0x81d69f5 @//attack_verzehrer
-		.word 0x81cf9f6 @//attack_hitzewelle
+		.word attack_animation_heat_wave @//attack_hitzewelle
 		.word 0x81cfaa6 @//attack_hagelsturm
 		.word 0x81cfade @//attack_folterknecht
 		.word 0x81d6d79 @//attack_schmeichler

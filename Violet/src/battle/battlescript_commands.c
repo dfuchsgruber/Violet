@@ -4,7 +4,7 @@
 #include "mega.h"
 #include "debug.h"
 #include "battle/bg.h"
-#include "constants/battle_bgs.h"
+#include "constants/battle/battle_bgs.h"
 #include "constants/pokemon_types.h"
 #include "battle/state.h"
 #include "constants/species.h"
@@ -24,6 +24,7 @@
 #include "flags.h"
 #include "overworld/pokemon_party_menu.h"
 #include "item/item_effect.h"
+#include "abilities.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -275,4 +276,10 @@ bool bsc_cmd_exp_gain_should_gain_exp() {
     u8 idx = battle_state->exp_getter_idx;
     if (battle_is_tag() && (idx == 3 || idx == 4 || idx == 5)) return false;
     return pokemon_get_attribute(player_pokemon + idx, ATTRIBUTE_LEVEL, 0) < 100;
+}
+
+bool bsc_cmd_switch_in_effects_check_ability_or_handicap() {
+    if (ability_execute(ABILITY_CONTEXT_ENTER, active_battler, 0, 0, 0)) return true;
+    if (battle_handicap_switch_in_effects(active_battler)) return true;
+    return false;
 }

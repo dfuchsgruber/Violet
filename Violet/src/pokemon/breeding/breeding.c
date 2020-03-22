@@ -254,7 +254,7 @@ bool box_pokemon_hatching_proceed(box_pokemon *egg, bool consider_zero_cycles,
   if (!box_pokemon_get_attribute(egg, ATTRIBUTE_IS_EGG, 0)) return false;
   if (box_pokemon_get_attribute(egg, ATTRIBUTE_SANITY_IS_BAD_EGG, 0)) return false;
   int cycles = box_pokemon_get_attribute(egg, ATTRIBUTE_HAPPINESS, 0);
-  dprintf("Proceed egg @%x with %d cycles\n", egg, cycles);
+  // dprintf("Proceed egg @%x with %d cycles\n", egg, cycles);
   if ((cycles == BREEDING_CYCLES_HATCH_IMMEDIATLEY && consider_immediate_hatching) ||
       (consider_zero_cycles && cycles == 0)) return true;
   if (cycles != BREEDING_CYCLES_HATCH_IMMEDIATLEY) cycles = MAX(0, cycles - proceed_cycles);

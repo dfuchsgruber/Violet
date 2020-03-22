@@ -1,10 +1,15 @@
+
+.include "overworld_script.s"
 .include "vars.s"
+.include "flags.s"
+.include "ordinals.s"
+.include "levelscript_types.s"
 
 .global lscr_0x718dc8
 
 lscr_0x718dc8:
 	.byte 0x2
-.word lscr_0x71a5df
+	.word lscr_0x71a5df
 	.byte 0x0
 
 

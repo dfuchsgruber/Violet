@@ -366,4 +366,11 @@ void oam_clear_and_free_vram(oam_object *o);
  **/
 u16 oam_load_graphic_uncompressed(graphic *g);
 
+/**
+ * Starts a certain gfx animation.
+ * @param o the oam to start the animation of
+ * @param anim_idx the animation to start
+ **/
+void oam_gfx_anim_start(oam_object *o, u8 anim_idx);
+
 #endif

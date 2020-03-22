@@ -183,6 +183,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
         case EVOLUTION_TRIGGER_ITEM2:
         case EVOLUTION_TRIGGER_ITEM_AND_REMOVE_HOLD_ITEM:
         {
+            dprintf("Item evolution with type %d\n", type);
             //Check for evolutions triggered by an item
             int i;
             for (i = 0; evolutions[i].method != EVOLUTION_METHOD_NONE; i++) {

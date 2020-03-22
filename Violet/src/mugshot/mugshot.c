@@ -212,9 +212,14 @@ void mugshot_delete_oam(u8 self) {
 			++*state;
 			break;
 			}
-		default:
-			big_callbacks[self].function = mugshot_wait_for_deletion;
+		default: {
+			if (!big_callback_is_active(mugshot_wait_for_deletion)) {
+				big_callbacks[self].function = mugshot_wait_for_deletion;
+			} else {
+				big_callback_delete(self);
+			}
 			break;
+		}
 	}
 }
 
@@ -230,9 +235,14 @@ void mugshot_delete_text(u8 self) {
 				tbox_border_flush(tb_id);
 			tbox_free(tb_id);
 		}
-		default:
-			big_callbacks[self].function = mugshot_wait_for_deletion;
+		default: {
+			if (!big_callback_is_active(mugshot_wait_for_deletion)) {
+				big_callbacks[self].function = mugshot_wait_for_deletion;
+			} else {
+				big_callback_delete(self);
+			}
 			break;
+		}
 	}
 }
 

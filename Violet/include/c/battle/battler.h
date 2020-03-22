@@ -11,7 +11,7 @@
 #include <stdbool.h>
 #include "types.h"
 #include "pokemon/virtual.h"
-#include "constants/battle_statuses.h"
+#include "constants/battle/battle_statuses.h"
 #include "constants/battle/battle_positions.h"
 #include "constants/pokemon_stat_names.h"
 

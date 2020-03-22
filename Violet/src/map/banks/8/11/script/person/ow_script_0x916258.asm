@@ -29,7 +29,7 @@ str_0x931d8f:
 .global str_0x931bb9
 
 str_0x931bb9:
-	.autostring 35 2 "PLAYER, dich hätte ich hier sicherlich nicht erwartet.\pDu fragst dich bestimmt, was ich hier treibe, nicht?\pDOTS DOTS DOTS\pWeißt du, dass dieser illegale Untergrundmarkt von einem Mitglied der Top Vier betrieben wird?\pDas klingt lächerlich, nicht?\pAber es ist wahr.\pMein Vater ist für diesen Untergrundmarkt verantwortlich.\pUnd genau deshalb, werde ich ihn zerstören.\pIch werde alles zerstören, was mein Vater sich aufgebaut hat.\pDas ist mein großes Ziel."
+	.autostring 34 2 "PLAYER!\nDu hast doch diesen lästigen Felix nicht auch mitgebracht, oder?\pIch war froh, ihn endlich abgeschüttelt zu haben.\pDOTS DOTS DOTS\pDich hätte ich hier nicht erwartet, wenn ich ehrlich bin.\pWeißt du, dieser Ort ist einer der Gründe, warum mein Vater zu Fall gebracht werden muss.\pEr unterhält diesen Schwarzmarkt.\pWenn du so willst, kontrolliert er die Geschehnisse hier.\pUnd er tut all das, obwohl er ein Mitglied der Top Vier ist.\pIch hoffe, dass du nicht wie Felix versuchen willst, mich aufzuhalten.\pIch habe meinen Entschluss gefasst.\pUnd ich werde mich von euch Nervensägen nicht davon abbringen lassen, meinen Vater zu stürzen.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
         
 .elseif LANG_EN
 

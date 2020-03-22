@@ -138,24 +138,24 @@ str_pirat:
 .global str_0x93386b
 
 str_0x93386b:
-	.autostring 35 2 "Das Leben als Pirat ist wirklich befreiend!\pNiemals wieder gehe ich zurück zu meinen Bürojob bei Laz.Corp!"
+	.autostring 34 2 "Ich habe mich noch nie so lebendig gefühlt in meinem ganzen Leben.\pAuf Blackbeards Schiff anzuheuern, war die beste Entscheidung meines Lebens."
         
         
 .global str_0x9337e5
 
 str_0x9337e5:
-	.autostring 35 2 "Oh ja!\nDas Leben auf See ist ein Abenteuer!\pUnd von dem Erlös, den wir hier für unsere gestohlenen Gegenstände und Pokémon einnehmen, lässt es sich sehr gut leben!"
+	.autostring 34 2 "Ein Beutefeldzug und schon Pirat durch und durch, was?\pLass es dir ja nicht zu gut gehen, wir haben noch einiges vor.\pKapitän Blackbeard plant, die Expidition von Professor Tann zu karpern.\pDas wird sicher ein Spaß!"
         
 .global str_0x933908
 
 str_0x933908:
-	.autostring 35 2 "Ahoi, Männer!\pWir stehen ich See!\pKapitän Blackbeard ist hier fertig!"
+	.autostring 34 2 "Ahoi, Männer!\pWir stehen ich See!\pWir sind hier fertig."
         
         
 .global str_0x9338d3
 
 str_0x9338d3:
-    .autostring 35 2 "Aye! Wir haben verstanden!\pAlle Mann an Board!"
+    .autostring 34 2 "Aye! Wir haben verstanden!\pAlle Mann an Board!"
         
         
 .elseif LANG_EN

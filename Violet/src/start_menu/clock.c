@@ -160,10 +160,10 @@ void start_menu_clear_additional_box() {
         for (int i = 0; i < 4; i++) {
             oam_free(oams + fmem.start_menu_clock_oam_idxs[i]);
         }
+        tbox_flush_all(start_menu_state.safari_tbox_idx, 0);
+        tbox_copy_to_vram(start_menu_state.safari_tbox_idx, 2);
+        tbox_free_2(start_menu_state.safari_tbox_idx);
     }
-    tbox_flush_all(start_menu_state.safari_tbox_idx, 0);
-    tbox_copy_to_vram(start_menu_state.safari_tbox_idx, 2);
-    tbox_free_2(start_menu_state.safari_tbox_idx);
 }
 
 void start_menu_call_save_and_clear_additional_box() {

@@ -14,6 +14,7 @@
 #include "constants/battle/battle_flags.h"
 #include "save.h"
 #include "overworld/pokemon_party_menu.h"
+#include "constants/battle/battle_statuses.h"
 
 #define BATTLE_DOUBLE 0x1
 #define BATTLE_LINK 0x2
@@ -147,6 +148,9 @@ typedef struct {
     u16 items[4][4]; // 4 Items per owner (instead of only one for the AI) (the player one should be unused in theory...)
     u8 num_items[4]; // How many items each owner
     u32 saved_battle_flags;
+    u8 handicap_introduced;
+    u8 switch_in_handicap_effects_cnt;
+    u32 status_custom[4];
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
@@ -394,5 +398,17 @@ void sub_08010848();
  * Callback1 that does initialization (mostly graphics) for a battle.
  **/
 void battle_graphics_initialize();
+
+/**
+ * Handles events that are triggered before the very first turn of the battle.
+ **/
+void battle_events_before_first_turn();
+
+/**
+ * Handles handicap effects triggered by a switch-in.
+ * @param battler_idx the battler to apply the effect to
+ * @return if any handicap effect was applicable
+ **/
+bool battle_handicap_switch_in_effects(u8 battler_idx);
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

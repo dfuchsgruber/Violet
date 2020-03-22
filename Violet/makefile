@@ -56,7 +56,7 @@ MIDSRC:=$(call rwildcard,asset/mus/,*.mid)
 GFXSRC:=$(call rwildcard,asset/gfx/,*.png)
 CRYSRC:=$(call rwildcard,asset/cry,*.wav)
 WAVSRC:=$(call rwildcard,asset/sample,*.wav)
-
+PATCHES:=$(call rwildcard,patches/,*.asm)
 
 SAMPLESRC:=$(call rwildcard,asset/sample/,*.bin)
 PYAGBSRC:=$(call rwildcard,src/,*.pms)
@@ -219,7 +219,7 @@ soundfont: $(BLDROM)
 	$(foreach vcg,000 001 002, \
 	$(SOUNDFONTRIPPER) $(BLDROM) $(BLDPATH)/soundfont/vcg$(vcg).sf2 $(PSG_DATA) $(GOLDENSUN_SYNTH) -mv12 $(shell grep "voicegroup$(vcg)" $(BLDPATH)/symbols | cut -d' ' -f1 | sed -e "s/.*/obase\=16\;ibase\=16\;&-8000000/" | bc | sed -e "s/^/0x/");)
 
-$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ)
+$(BLDROM): $(CONSTANTSHAS) $(CONSTANTSHC) $(BLDPATH)/asset.o $(BLDPATH)/map.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ) $(PATCHES)
 	@echo "Creating rom object..."
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym --relocatable -o $(BLDPATH)/linked.o $(BLDPATH)/map.o $(BLDPATH)/asset.o $(BLDPATH)/src.o $(EXPORTED_STATS_OBJ)
 	$(ARS) patches.asm -sym $(SYMBOLDUMP) -strequ bldrom $(BLDROM) -strequ base $(BASEROM)

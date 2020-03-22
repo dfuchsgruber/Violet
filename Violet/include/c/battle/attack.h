@@ -123,4 +123,24 @@ void attack_apply_effectiveness_multiplier(u8 attacking_type, u8 defender_type1,
  **/
 u8 battler_check_move_limitations(u8 battler_idx, u8 current_limitations, u8 check_limitations);
 
+/**
+ * Initializes a linear translation for the oam and executes the saved callback afterwards.
+ * The destination x, y pair is given at private[2], private[4], and the duration is given at private[0]
+ * @param self self-reference
+ **/
+void battle_animation_oam_callback_initialize_linear_translation(oam_object *self);
+
+/**
+ * Sets the continuation for an oam used in a battle animation.
+ * @param self the oam to set the continuation of
+ * @param continuation the function that is to be executed as continuation (e.g. for translations)
+ **/
+void battle_animation_set_continuation(oam_object *self, void (*continuation)(oam_object*));
+
+/**
+ * Deletes and frees all resources of an oam used in a battle animation.
+ * @param self the oam to free
+ **/
+void battle_animation_oam_delete(oam_object *self);
+
 #endif /* INCLUDE_C_BATTLE_ATTACK_H_ */

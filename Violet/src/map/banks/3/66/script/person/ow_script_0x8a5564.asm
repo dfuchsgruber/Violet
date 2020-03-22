@@ -4,18 +4,27 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "mugshot.s"
-
+.include "ordinals.s"
 
 .global ow_script_0x8a5564
 ow_script_0x8a5564:
 lock
 faceplayer
+checkflag FRBADGE_3
+gotoif EQUAL check_expedition
 checkflag WONDERTRADE
 gotoif EQUAL ow_script_0x8a5ccb
 call ow_script_0x8a7343
 release
 end
 
+check_expedition:
+    checkflag ROUTE_5_VIOLET_GRUNTS
+    gotoif EQUAL ow_script_0x8a7343
+    loadpointer 0 str_expedition
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+    release
+    end
 
 .global ow_script_0x8a7343
 ow_script_0x8a7343:
@@ -63,6 +72,8 @@ str_0x8ab119:
 str_0x8a7951:
     .autostring 35 2 "Bald schon werden alle Trainer dieser Welt den Wundertausch benutzen!\pDavon bin ich fest überzeugt!"
         
+str_expedition:
+    .autostring 34 2 "Professor Tann will dich sehen.\pEr begibt sich bald auf eine Expedition."
         
 .elseif LANG_EN
 

@@ -7,7 +7,6 @@
 #include "item/item.h"
 #include "constants/item_effect_types.h"
 #include "constants/items.h"
-#include "constants/item_effects.h"
 #include "constants/battle/battle_ai_item_types.h"
 #include "debug.h"
 #include "constants/abilities.h"

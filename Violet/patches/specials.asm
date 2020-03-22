@@ -223,6 +223,11 @@ special_table equ 0x0815FCC0
 .org (special_table + 103 * 4)
                 .word battle_ally_save_and_setup_party | 1
 
+.org (special_table + 104 * 4)
+                .word overworld_target_npc_set_to_var | 1
+.org (special_table + 105 * 4)
+                .word battle_handicap_set | 1
+
 // Free up until <= 118
 
 .org (special_table + (0x129 * 4))

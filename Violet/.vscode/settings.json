@@ -81,6 +81,12 @@
         "initializer_list": "c",
         "utility": "c",
         "text.h": "c",
-        "parties.h": "c"
+        "parties.h": "c",
+        "ev_menu.h": "c",
+        "pokemon_types.h": "c",
+        "battle_handicaps.h": "c",
+        "battle_statuses.h": "c",
+        "weather.h": "c",
+        "communication.h": "c"
     }
 }

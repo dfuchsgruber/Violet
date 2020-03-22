@@ -11,8 +11,27 @@ ow_script_0x93d59c:
 lock
 faceplayer
 buffernumber 0 WONDERTRADE_CNT
+loadpointer 0x0 str_0
+show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+fadescreen 1
+hidesprite LASTTALKED
+fadescreen 0
+release
+end
+
+
 draw_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
 loadpointer 0x0 str_0x949632
+
+
+
+.ifdef LANG_GER
+str_0:
+	.autostring 34 2 "Hallo PLAYER!\nSchön, dich zu sehen!\pIch muss dir noch einmal danken, dass du meinen Vater im Silvania-Wald vor Team Violet beschützt hast.\pIch begreife nicht, warum diese Leute ein Auge auf einen Physiker wie ihn geworfen haben.\pDOTS DOTS DOTS\pBenutzt du den Wundertausch auch?\pIch sehe, du hast bereits BUFFER_1 Pokémon getauscht.\pIst es nicht fantastisch, dass Trainer von überall durch diese App miteinander verbunden sind?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAber wie du dir bestimmt denken kannst, habe ich aus einem anderen Grund nach dir gesucht.\pProfessor Tann bricht bald auf eine Expedition auf und will dich und RIVAL davor noch einmal sehen.\pSei doch so nett, und besuche ihn in seinem Labor auf Route 2.\pBis dann, PLAYER!"
+.elseif LANG_EN
+.endif
+
+
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
 gotoif EQUAL ow_script_0x949573

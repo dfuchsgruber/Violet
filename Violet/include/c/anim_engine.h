@@ -49,7 +49,7 @@ typedef struct aetr_memory {
     u8 *destination;
     text_render_flags flags;
     u16 delay_timer;
-    u16 delay;
+    u16 speed;
     tbox_font_colormap *color_map;
     u8 boxid;
     u8 font;

@@ -25,7 +25,7 @@ ow_script_0x959351:
 lockall
 fadesong 0
 loadpointer 0x0 str_0x959e02
-show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT mask_name=1
 sound 0x15
 applymovement 0xff ow_script_movs_0x959dfe
 waitmovement 0x0
@@ -44,6 +44,11 @@ waitmovement 0x0
 applymovement 0xd ow_script_movs_0x959a08
 applymovement 0xe ow_script_movs_0x959a08
 waitmovement 0x0
+pause 16
+setvar 0x8004 3
+special SPECIAL_CUTSCENE_SHOW
+waitstate
+pause 32
 playsong MUS_MISTRAL 0x0
 loadpointer 0x0 str_0x959af2
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
@@ -58,6 +63,7 @@ setvar 0x8004 0xe
 special 0x1b
 waitmovement 0x0
 setvar LASTTALKED 0xe
+setvar SONG_OVERRIDE MUS_MISTRAL
 trainerbattlecont 0x1 0x91 0x0 str_0x959a4a str_0x959abd ow_script_0x959e29
 
 
@@ -69,7 +75,7 @@ ow_script_movs_0x959a0b:
 
 .global ow_script_0x959e29
 ow_script_0x959e29:
-playsong MUS_MISTRAL 0x0
+setvar SONG_OVERRIDE 0
 loadpointer 0x0 str_0x959a0e
 callstd MSG
 applymovement 0xff ow_script_movs_0x959a08
@@ -148,9 +154,8 @@ str_0x959e02:
         
         
 .global str_0x959af2
-
 str_0x959af2:
-	.autostring 35 2 "Hallo, PLAYER.\pWie überaus unglücklich, dass wir uns an diesem Ort wieder begegnen.\pJa, ich bin ein Kommandant von Team Violet.\pAlso bist du mein Feind.\pUnd dennoch DOTS DOTS DOTS\pWerde ich nicht gegen dich kämpfen.\pNoch nicht zumindest.\nDas Magmaherz, welches in dieser Vitrine hier nur verstaubt, wird mir die Macht geben, die ich benötige, um jeden besiegen zu können.\pEhe ich diese Macht aber besitze DOTS\pDOTS wirst du es mit meinen Untergeben aufnehmen müssen.\pAllerdings wirst du überrascht sein, wie mächtig die Mitglieder meiner Division sind."
+    .autostring 34 2 "Was für ein seltsames Gefühl!\pAls wäre unser Aufeinandertreffen vorherbestimmt.\pMein Name ist Mistral und ich bin der Kommandant der zweiten Division von Team Violet.\pDu musst wohl PLAYER sein, der Rin im Silvania-Wald besiegt hat.\pDu bist tatsächlich so faszinierend, wie ich es mir vorgestellt hatte.\pIch bin mir sicher, dass du hier bist, um zu verhindern, dass ich das Magmaherz aus diesem Museum stehle.\pAber dieses Artefakt ist nicht dafür gemacht, in einer Vitrine zu verstauben.\pEs beinhaltet eine imense Macht, die nur darauf wartet, freigesetzt zu werden.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch würde gerne an Ort und Stelle gegen dich kämpfen, PLAYERDOTS\pAber das muss noch etwas warten!\pStattdessen darfst du mit einer meiner Elite-Truppen vorlieb nehmen.\pZeig mir, ob du hältst, was dein Ruf verspricht!"
 
 
         
@@ -187,7 +192,7 @@ str_0x959981:
 .global str_0x959853
 
 str_0x959853:
-	.autostring 35 2 "Überaus schade, dass du das Magmaherz nicht beschützen konntest.\pAber gegen mich zu gewinnen, ist ein Ding der Unmöglichkeit.\pIch setze immer meinen Willen durch.\pTrotzdem will ich dir einen kleinen Sieg lassen DOTS\pIch werde das Museum unversehrt lassen.\pImmerhin konntest du einen Elitekämpfer aus meiner Division schlagen DOTS\pAllerdings DOTS\nDOTS werde ich dir bei unserer nächsten Begegnung mit ganzer Macht gegenübertreten."
+	.autostring 34 2 "Trotz deines Sieges scheinst du nun verloren zu haben.\pIst das nicht ironisch?\pBei unserem nächsten Treffen, PLAYERDOTS\pDa werde ich dir mit aller Macht entgegentreten.\pDann bekommst du deine Chance auf Rache!"
         
 .global str_0x9595b1
 

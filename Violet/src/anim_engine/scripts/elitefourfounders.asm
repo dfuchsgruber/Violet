@@ -6,8 +6,8 @@
 
 .align 4
 elite_four_founders:
+
 frame 0
-    
     fadescreen 0 0 512 128 0 16
     endframe
 
@@ -40,25 +40,25 @@ frame 130
     fadescreen 0 0 512 128 16 0
     endframe
 
-frame 358
+frame 300
     text_init 0x8000 0 4 15 30 4 14 4
     text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_0 0 0x10
     endframe
 
-frame 800
+frame 500
     text_event 0x8001 EVENT_PARAGRAPH
     endframe
 
-frame 1279
+frame 700
     text_event 0x8001 EVENT_ENDTEXT
     endframe
 
-frame 1280
+frame 701
     text_clear 0x8000
     fadescreen 0 0 16 32 0 12
     endframe
 
-frame 1312
+frame 764
     sound 6
     bg_scroll 1 0 256 0
     bg_override 1 gfx_faunfrontalMap 0x1000 0 COPYMAP
@@ -67,23 +67,23 @@ frame 1312
     bg_scroll 1 32 180 0
     endframe
 
-frame 1344
+frame 786
     bg_scroll 1 400 8 0
     text_init 0x8000 0 2 5 16 12 14 4
     text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_1 0 0x10
     endframe
 
-frame 1799
+frame 999
     text_event 0x8001 EVENT_ENDTEXT
     endframe
 
-frame 1800
+frame 1000
     text_clear 0x8000
     bg_scroll 1 32 0xFF38 0
     fadescreen 0 16 16 32 0 16
     endframe
 
-frame 1833
+frame 1064
     sound 6
     set_io_to_val 194 0x14
     bg_override 1 gfx_albusfrontalTiles 0x3000 0 COPYSET
@@ -93,29 +93,29 @@ frame 1833
     bg_scroll 1 32 0xFF4C 0
     endframe
 
-frame 1866
+frame 1086
     bg_scroll 1 400 0xFFF8 0
     text_init 0x8000 0 16 5 16 12 14 4
     text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_2 0 0x10
     endframe
 
-frame 2299
+frame 1299
     text_event 0x8001 EVENT_ENDTEXT
     endframe
 
-frame 2300
+frame 1300
     text_clear 0x8000
     bg_scroll 1 32 190 0
     fadescreen 0 16 16 32 0 16
     endframe
 
-frame 2400
+frame 1364
     text_init 0x8000 0 6 5 20 4 14 4
     text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_3 0 0x10
     endframe
 
 
-frame 2699
+frame 1499
     text_clear 0x8000
     set_io_to_val 256 0x14
     bg_override 1 gfx_luciusfrontalTiles 0x3000 0 COPYSET
@@ -123,59 +123,59 @@ frame 2699
     loadpal gfx_luciusfrontalPal 16 32 UNCOMP RESTORE
     endframe
 
-frame 2700
+frame 1500
     sound 6
     fadescreen 0 16 16 32 16 0
     set_io_to_val 0 0x14
     bg_scroll 1 999 0 0xFFeC
     endframe
 
-frame 2740
+frame 1564
     text_init 0x8000 0 2 3 10 14 14 4
     text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_4 0 0x10
     endframe
 
 
-frame 3100
+frame 1800
     text_init 0x8002 0 22 3 10 14 14 200
     text_render 0x8003 0x8002 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_5 0 0x10
     endframe
 
-frame 3699
+frame 2100
     text_event 0x8001 EVENT_ENDTEXT
     text_event 0x8003 EVENT_ENDTEXT
     endframe
 
-frame 3700
+frame 2164
     text_clear 0x8000
     text_clear 0x8000
     bg_scroll 1 32 0xFF00 0
     fadescreen 0 16 16 32 0 16
     endframe
 
-frame 3750
+frame 2200
     fadescreen 0 0 16 32 12 0
     endframe
 
-frame 3800
+frame 2264
     text_init 0x8000 0 4 15 30 4 14 4
     text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_anim_engine_elitefounders_6 0 0x10
     endframe
 
-frame 4150
+frame 2400
     text_event 0x8001 EVENT_PARAGRAPH
     endframe
 
-frame 4500
+frame 2600
     text_event 0x8001 EVENT_PARAGRAPH
     endframe
 
-frame 4800
+frame 2800
     text_event 0x8001 EVENT_PARAGRAPH
     endframe
 
 
-frame 5100
+frame 2900
     mapreload
     script_notify
     end

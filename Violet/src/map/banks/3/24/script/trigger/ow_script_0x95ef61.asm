@@ -58,23 +58,23 @@ trainerbattlecont 0x1 0xbc 0x0 str_0x95f326 str_0x95efd2 ow_script_0x95f001
 .global str_0x95f326
 
 str_0x95f326:
-	.autostring 35 2 "PLAYER!\nLange nicht gesehen, du altes Bummelz!\pDu bist wohl auf dem Weg nach Inferior, um dir den Vulkan-Orden zu ergattern?\pDa bin ich dir wohl schon zuvor gekommen.\pWollen wir doch mal sehen, ob überhaupt für diese Arena bereit bist!"
+	.autostring 34 2 "PLAYER!\nKeine Sorge, ich habe mich etwas abgeregt, seit Papa uns von seiner Expedition erzählt hat.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch habe wohl ein wenig überreagiert.\pNichts desto trotz war ich hinterher nicht nur deswegen sauer, sondern auch, weil ich eigentlich die Gelegenheit nutzen wollte, um dich zum Kampf herauszufordern.\pDas passiert mir aber kein zweites Mal!"
 
 .global str_0x95efd2
 
 str_0x95efd2:
-    .autostring 35 2 "Was?\nIch habe verloren?\pDu hast wirklich eine Glückssträhne, PLAYER!"
+    .autostring 34 2 "Was?\nIch habe verloren?\pDu hast wirklich eine Glückssträhne, PLAYER!"
         
         
 .global str_0x95f255
 
 str_0x95f255:
-	.autostring 35 2 "Alle Achtung, nicht schlecht gekämpft, PLAYER!\pWenn ich alles gegeben hätte, wäre das ganze natürlich anders ausgegangen.\pIch habe dich nämlich gewinnen lassen!\pJa, so ist das DOTS\pAuf jeden Fall wirst du so niemals den Vulkan-Orden bekommen.\pLass mich dir etwas helfen, PLAYER DOTS"
+	.autostring 34 2 "Alle Achtung, nicht schlecht gekämpft, PLAYER!\pWenn ich alles gegeben hätte, wäre das ganze natürlich anders ausgegangen.\pIch habe dich nämlich gewinnen lassen!\pJa, so ist das DOTS\pAuf jeden Fall wirst du so niemals den Vulkan-Orden bekommen.\pLass mich dir etwas helfen, PLAYER DOTS"
 
 .global str_0x95f051
 
 str_0x95f051:
-    .autostring 35 2 "Diese Versteckte Maschine enthält Surfer, die perfekte Waffe im Kampf gegen das Feuer.\pDu brauchst mir nicht zu danken, immerhin will ich ja, dass du auch weiterhin ein interessanter Gegner bleibst DOTS\pUnd beim nächsten Mal werde ich alles geben.\pDa kannst du jede Hilfe brauchen!\pMan sieht sich, PLAYER!"
+    .autostring 34 2 "Diese Versteckte Maschine enthält Surfer, die perfekte Waffe im Kampf gegen das Feuer.\pDu brauchst mir nicht zu danken, immerhin will ich ja, dass du auch weiterhin ein interessanter Gegner bleibst DOTS\pUnd beim nächsten Mal werde ich alles geben.\pDa kannst du jede Hilfe brauchen!\pMan sieht sich, PLAYER!"
         
         
 .elseif LANG_EN

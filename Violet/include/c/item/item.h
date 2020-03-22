@@ -121,6 +121,13 @@ bool item_check(u16 item, u16 quantity);
  **/
 void item_field_by_effect_table(u8 self);
 
+/**
+ * Gets the price of an item.
+ * @param item_idx the item to get the price of
+ * @return the item price
+ **/
+u16 item_get_price(u16 item_idx);
+
 u16 tm_hm_to_attack[58];
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

@@ -2706,7 +2706,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    3, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -2868,7 +2868,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    3, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -3003,7 +3003,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    4, // Pokemon Count
+    3, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -6266,6 +6266,77 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Guz")), .pokemon_cnt = 1,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x167_route_3_trainer_0
+    },
+    [0x168] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Sebastian"),
+            PSTRING("Sebastian")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x168_felsige_oednis_trainer_0,
+    },
+    [0x169] = {
+        .trainerclass = TRAINERCLASS_PKMN_TRAINER, .sprite = 0,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Felix"),
+            PSTRING("Felix")), .pokemon_cnt = 3,
+				.uses_custom_items = true, .uses_custom_moves = true,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+        .party = (trainer_pokemon*) trainer_party_x169_kuestenberg_felix,
+    },
+    [0x16A] = {
+        .trainerclass = TRAINERCLASS_REVOLUTIONAER, .sprite = 1,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Cornelius"),
+            PSTRING("Cornelius")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x16a_kuestenberg_revolutionaer,
+    },
+    [0x16B] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Jule u. Jan"),
+            PSTRING("Jule u. Jan")), .pokemon_cnt = 4,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+
+        .party = (trainer_pokemon*) trainer_party_x16b_route_4_trainer_couple,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x16C] = {
+        .trainerclass = TRAINERCLASS_POKEMANIAC, .sprite = 32,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Kristov"),
+            PSTRING("Kristov")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+
+        .party = (trainer_pokemon*) trainer_party_x16c_route_5_trainer_0,
+    },
+    [0x16D] = {
+        .trainerclass = TRAINERCLASS_ZWIL, .sprite = 127,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Eva u. Ella"),
+            PSTRING("Eva u. Ella")), .pokemon_cnt = 4,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x16d_route_5_twins,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x16E] = {
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Jutta"),
+            PSTRING("Jutta")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x16e_route_6_trainer_0,
+    },
+    [0x16F] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Bea u. Ben"),
+            PSTRING("Bea u. Ben")), .pokemon_cnt = 4,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x16f_route_6_couple,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x170] = { // For Testing
+        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Jutta"),
+            PSTRING("Jutta")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x50,
+        .battle_state = BATTLE_WITH_HANDICAP,
     },
 }; 
 

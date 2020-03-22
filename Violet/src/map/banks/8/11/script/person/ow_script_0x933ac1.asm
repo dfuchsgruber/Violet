@@ -6,209 +6,101 @@
 .include "mugshot.s"
 .include "specials.s"
 
+.global ow_script_black_market_igva_final
 
-.global ow_script_movs_0x933e11
-ow_script_movs_0x933e11:
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STOP
+ow_script_black_market_igva_final:
+	checkflag KASKADA_BLACKMARKET_PRIMUS
+	gotoif LESS not_done
+	checkflag KASKADA_BLACKMARKET_BLAISE
+	gotoif LESS not_done
+	checkflag KASKADA_BLACKMARET_BB_SHIP
+	gotoif LESS not_done
+	lock
+	faceplayer
+	loadpointer 0 str_0
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT message_type=MSG
+	clearflag PKMNMENU
+	showsprite 29
+	showsprite 30
+	showsprite 31
+	applymovement 29 mov_6u
+	applymovement 30 mov_6u
+	applymovement 31 mov_6u
+	loadpointer 0 str_1
+	show_mugshot MUGSHOT_ALBUS MUGSHOT_RIGHT message_type=MSG
+	waitmovement 0
+	sound 0x15
+	applymovement 31 mov_exclam
+	waitmovement 0
+	checksound
+	pause 16
+	loadpointer 0 str_2
+	show_mugshot MUGSHOT_ALBUS MUGSHOT_RIGHT message_type=MSG
+	loadpointer 0 str_3
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT message_type=MSG
+	loadpointer 0 str_4
+	show_mugshot MUGSHOT_ALBUS MUGSHOT_RIGHT message_type=MSG
+	loadpointer 0 str_5
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT message_type=MSG
+	loadpointer 0 str_6
+	show_mugshot MUGSHOT_ALBUS MUGSHOT_RIGHT message_type=MSG
+	loadpointer 0 str_7
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT message_type=MSG
+	loadpointer 0 str_8
+	show_mugshot MUGSHOT_ALBUS MUGSHOT_RIGHT message_type=MSG
+	applymovement 29 mov_6d
+	applymovement 30 mov_6d
+	applymovement 31 mov_6d
+	waitmovement 0
+	hidesprite 29
+	hidesprite 30
+	hidesprite 31
+	loadpointer 0 str_9
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT message_type=MSG
+	fadescreen 1
+	hidesprite 32
+	fadescreen 0
+	release
+	end
 
-
-.global ow_script_movs_0x933e0d
-ow_script_movs_0x933e0d:
-.byte FACE_DOWN
-.byte SAY_EXCLAM
-.byte STOP
-
-
-.global ow_script_movs_0x933c58
-ow_script_movs_0x933c58:
-.byte STEP_UP
-.byte STEP_UP
-.byte LOOK_LEFT
-.byte STOP
-
-
-.global ow_script_movs_0x933c5d
-ow_script_movs_0x933c5d:
-.byte LOOK_RIGHT
-.byte STOP
-
-
-.global ow_script_0x933ac1
-ow_script_0x933ac1:
-checkflag KASKADA_BLACKMARKET_PRIMUS
-gotoif LESS ow_script_0x933fe1
-checkflag KASKADA_BLACKMARKET_BLAISE
-gotoif LESS ow_script_0x933fe1
-checkflag KASKADA_BLACKMARET_BB_SHIP
-gotoif LESS ow_script_0x933fe1
-lock
-faceplayer
-loadpointer 0x0 str_0x933f08
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-showsprite 0x1d
-showsprite 0x1e
-showsprite 0x1f
-setflag PKMNMENU
-applymovement 0x1d ow_script_movs_0x933e11
-applymovement 0x1e ow_script_movs_0x933e11
-applymovement 0x1f ow_script_movs_0x933e11
-waitmovement 0x0
-sound 0x15
-applymovement 0xff ow_script_movs_0x933e0d
-waitmovement 0x0
-loadpointer 0x0 str_0x933c60
-show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
-applymovement 0x1d ow_script_movs_0x933c58
-waitmovement 0x0
-applymovement 0xff ow_script_movs_0x933c5d
-waitmovement 0x0
-goto ow_script_0x935a41
-
-
-.global ow_script_0x935a41
-ow_script_0x935a41:
-setflag BLACKOUT_BYPASS
-loadpointer 0 str_revolutionary
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x933bb4
-callstd MSG
-trainerbattlelosable 0x9 0x73 0x0 str_0x933c29 str_0x935b22
-goto ow_script_0x936ffe
-
-
-.global ow_script_movs_0x935b64
-ow_script_movs_0x935b64:
-.byte FACE_DOWN
-.byte STOP
-
-
-.global ow_script_movs_0x935c46
-ow_script_movs_0x935c46:
-.byte LOOK_UP
-.byte STOP
-
-
-.global ow_script_movs_0x937090
-ow_script_movs_0x937090:
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_LEFT
-.byte STEP_UP
-.byte STOP
-
-
-.global ow_script_0x936ffe
-ow_script_0x936ffe:
-special SPECIAL_HEAL
-clearflag BLACKOUT_BYPASS
-applymovement 0xff ow_script_movs_0x935b64
-waitmovement 0x0
-loadpointer 0x0 str_0x93661f
-show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
-applymovement 0xff ow_script_movs_0x935c46
-waitmovement 0x0
-loadpointer 0x0 str_0x9365b7
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-applymovement 0xff ow_script_movs_0x935b64
-waitmovement 0x0
-loadpointer 0x0 str_0x9362bd
-show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
-fadescreen 0x1
-hidesprite 0x1d
-hidesprite 0x1e
-hidesprite 0x1f
-fadescreen 0x0
-applymovement 0xff ow_script_movs_0x935c46
-waitmovement 0x0
-loadpointer 0x0 str_0x9360fc
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-applymovement 0x20 ow_script_movs_0x937090
-waitmovement 0x0
-hidesprite 0x20
-releaseall
-end
-
-
-.global ow_script_0x933fe1
-ow_script_0x933fe1:
-lock
-faceplayer
-loadpointer 0x0 str_0x9359bb
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-release
-end
+not_done:
+	loadpointer 0 str_not_done
+	show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT message_type=MSG_FACE
+	end
 
 
 .ifdef LANG_GER
+str_not_done:
+	.autostring 34 2 "PLAYER, du solltest dich hier noch ein wenig umsehen."
+str_0:
+	.autostring 34 2 "Es ist erschreckend, welche Dinge im Untergrund von Theto vor sich gehen, nicht?\pDie Pokémon-Liga ist längst ein Teil dieser verbrecherischen Welt geworden.\pUnd genau deshalbDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTSist es die Pflicht eines jeden Menschen, sich dagegen aufzulehnen.\pPLAYER, falls du es noch nicht bemerkt hast, ich bin ein Mitglied der Revolutionsbewegung.\pUnd irgendetwas sagt mir, dass du gut in unsere Reihen passen würdest.\pWas sagst du, willst du dich unserer Sache anschließen?"
+str_1:
+	.autostring 34 2 "Igva, wir brechen aufDOTS"
+str_2:
+	.autostring 34 2 "PLAYER, was treibst du an einem solchen Ort?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pEs war wohl Igva, die dich hierher geführt hat, nicht?"
+str_3:
+	.autostring 34 2 "PLAYER soll sich ein Bild von den Verhältnissen in dieser Region machen."
+str_4:
+	.autostring 34 2 "Igva, ich freue mich über deine Leidenschaft für unsere Sache.\pAber PLAYER sollte sich Zeit nehmen, sich zu entscheiden, auf wessen Seite er stehen möchte.\pDas letzte Mal, als du jemanden mit so viel Engagement angeworben hastDOTS\pDu weißt ja, wie das ausgegangen ist."
+str_5:
+	.autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS"
+str_6:
+	.autostring 34 2 "PLAYER.\nJetzt, wo du diesen Ort gesehen hast, ist dir vielleicht ein Stück klarer geworden, weshalb ich mich dazu entschlossen habe, die Pokémon-Liga zu zerschlagen.\pAber ich bleibe dabei, dich nicht zu einer Entscheidung zwingen zu wollen.\pDu bist noch jung und gerade erst ein Trainer geworden.\pDie Welt ist viel größer, beeindruckender und, ja, auch beängstigender, als du es dir jetzt noch vorstellen kannst.\pLass dich nicht von deinem Weg abbringen.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIgva, wir ziehen weiter."
+str_7:
+	.autostring 34 2 "Gib mir noch einen Moment mit PLAYER, bitte."
+str_8:
+	.autostring 34 2 "Ganz wie du möchtestDOTS"
+str_9:
+	.autostring 34 2 "PLAYER, ich will ganz offen zu dir sein.\pVor einiger Zeit traf ich jemanden, den ich wie dich für die Revolution gewinnen wollte.\pVielleicht bin ich in der Hinsicht etwas zu eifrigDOTS\pLetztlich muss wohl der Antrieb, sich dieser Sache anzuschließen, von einem selbst kommen.\pSolltest du also je das ehrliche Bedürfnis verspüren, etwas an den bestehenden Verhältnissen zu ändernDOTS\pDann werde ich dich jederzeit mit offenen Armen empfangen, PLAYER.\pIch will, dass du das weißt.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch hoffe, dass wir uns eines Tages wiedersehen, PLAYER!"
 
-str_revolutionary:
-	.string "Revolutionär"
-
-.global str_0x933f08
-
-str_0x933f08:
-	.autostring 35 2 "Siehst du, was für ein abgrund hier unterhalb dieser schönen Stadt liegt?\pHier floriert die Krimialität wie nirgends sonst.\pUnd all das wird von den Top Vier tolleriert.\pDieser Markt befindet sich unter der Obhut von Devin, einem Mitglied der Pokémon-Liga."
-        
-.global str_0x933c60
-
-str_0x933c60:
-	.autostring 35 2 "Igva und DOTS\nPLAYER!\pWie klein die Welt doch ist, dass ihr euch iher begegnet.\pAuch wenn ich jemanden wie PLAYER hier nicht erwartet hätte.\pIgva versucht wohl, dich auf unsere Seite zu bringen.\pDu solltest deine Entscheidung aber nicht überstürzen, PLAYER.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDu willst mich herausfordern?\pDenkst du denn, dass du es mit mir aufnehmen kannst?\pVersuch dich doch erst einmal an ihm hier, dann werden wir sehen, ob du für einen Kampf gegen mich bereit bist DOTS"
-
-        
-.global str_0x933bb4
-
-str_0x933bb4:
-	.autostring 35 2 "Ich werde alles tun, was in meiner Macht steht, um diese Welt zu einem besseren Ort zu machen."
-        
-        
-.global str_0x933c29
-
-str_0x933c29:
-    .autostring 35 2 "Vergebt mir, Albus DOTS\nIch war zu schwach DOTS"
-        
-        
-.global str_0x935b22
-
-str_0x935b22:
-    .string "Lord Albus, ich habe das Kind besiegt!"
-        
-        
-.global str_0x93661f
-
-str_0x93661f:
-	.autostring 35 2 "Du kämpfst nicht schlecht, PLAYER.\pAber bis du dich mit jemandem wie mir anlegen kannst, musst du noch viel an dir arbeiten.\pIch will dir einen Ratschlag mitgeben.\pDu solltest nicht leichtfertig Leute herausfordern, die dir offensichtlich überlegen sind.\pSo etwas kann schnell ins Auge gehen und nicht jeder ist dir so freundlich gesinnt, wie ich es bin.\pDOTS DOTS DOTS\pAußerdem DOTS\pWürde ich dich viel lieber in unseren Reihen begrüßen, anstatt mit dir zu kämpfen.\pMein Angebot, dich uns anzuschließen, steht noch immer."
-        
-.global str_0x9365b7
-
-str_0x9365b7:
-    .string "PLAYER! Schließe dich\nunserer Sache an!\pLord Albus wird dich unterweisen,\ndu wirst Großes bewirken!"
-        
-        
-.global str_0x9362bd
-
-str_0x9362bd:
-	.autostring 35 2 "Nichts überstürzen, Igva.\pIch will PLAYER nicht zu einer unüberlegten Narrheit zwingen.\pLass dir ruhig Zeit mit deiner Entscheidung.\pWenn es aber darauf ankommt, musst du ohne zu zögern hinter deinem Entschluss stehne können.\pBehalte das im Kopf, PLAYER."
-
-.global str_0x9360fc
-
-str_0x9360fc:
-	.autostring 35 2 "PLAYER DOTS\nSiehst du, was für ein großartiger Mensch Albus ist?\pEr hätte dich mit Leichtigkeit besiegen können, doch obwohl du ihn herausgefordert hast, hat er dich verschont.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch werde seinen Worten folge leisten und dich ziehen lassen.\pLass dein Herz dir sagen, auf wessen Seite du in diesem Konflikt stehen willst.\pWenn du noch mehr von der dunklen Seite Thetos sehen willst, solltest du Manus, den Arenaleiter von Meriana City herausfordern.\pAuf Wiedersehen, PLAYER."
-        
-.global str_0x9359bb
-
-str_0x9359bb:
-	.autostring 35 2 "PLAYER, sieh dich doch ruhig etwas um."
-        
 .elseif LANG_EN
 
 .endif
+
+mov_6u:
+	.byte STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STOP
+mov_6d:
+	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STOP
+
+mov_exclam:
+	.byte SAY_EXCLAM, STOP

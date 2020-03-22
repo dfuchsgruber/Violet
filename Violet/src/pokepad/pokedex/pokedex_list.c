@@ -17,6 +17,7 @@
 #include "language.h"
 #include "fading.h"
 #include "music.h"
+#include "debug.h"
 #include "agbmemory.h"
 
 bool pokedex_callback_list_mode_proceed() {
@@ -114,33 +115,33 @@ void pokedex_callback_list() {
 }
 
 void pokedex_build_list() {
-    pokedex_list_element *list = (pokedex_list_element*) malloc(POKEDEX_CNT * sizeof (pokedex_list_element));
+    pokedex_list_element *list = (pokedex_list_element*) malloc_and_clear(POKEDEX_CNT * sizeof (pokedex_list_element));
     fmem.dex_mem->list = list;
-    int list_size = 0;
-    u16 i;
-    for (i = 0; i < POKEMON_CNT; i++) {
-        //check if pokemon is a mega target
+    
 
-        bool is_mega_target = mega_evolution_get_by_mega_species((u16)i) != 0;
-        for (int j = 0; j < LINKED_PKMN_CNT; j++) {
-        	if (i == pokemon_linked[j]) {
-        		is_mega_target = true;
-        		break;
-        	}
-        }
-        if (!is_mega_target) {
-            //Add the pokemon to list with its dex number
-            list[list_size].species = i;
-            u16 dex_id = pokedex_get_id(i);
-            list[list_size].dex_id = dex_id;
-            list[list_size].seen = pokedex_operator_by_dex_id(dex_id, 0);
-            list[list_size].caught = pokedex_operator_by_dex_id(dex_id, 1);
-            list_size++;
+    int list_size = 0;
+    for (u16 i = 0; i < POKEMON_CNT; i++) {
+        // Get the pokedex number 
+        u16 dex_idx = pokedex_get_id(i);
+        if (dex_idx != 0) {
+            bool is_alternative_form = mega_evolution_get_by_mega_species((u16)i) != 0;
+            for (int j = 0; j < LINKED_PKMN_CNT; j++) {
+                if (i == pokemon_linked[j]) {
+                    is_alternative_form = true;
+                    break;
+                }
+            }
+            if (!is_alternative_form) {
+                list[list_size].species = i;
+                list[list_size].dex_id = dex_idx;
+                list[list_size].seen = pokedex_operator_by_dex_id(dex_idx, 0);
+                list[list_size].caught = pokedex_operator_by_dex_id(dex_idx, 1);
+                list_size++;
+            }
         }
     }
     if (list_size > POKEDEX_CNT) {
-        while (true) {
-        }//Debuging exit
+        derrf("Pokedex registers %d species, however only %d are allowed.\n", list_size, POKEDEX_CNT);
     }
 }
 

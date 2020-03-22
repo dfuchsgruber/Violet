@@ -6,6 +6,7 @@
  */
 #include "types.h"
 #include "constants/attacks.h"
+#include "constants/items.h"
 #include "item/item.h"
 
 u16 tm_hm_to_attack[58] = {
@@ -68,3 +69,32 @@ u16 tm_hm_to_attack[58] = {
 	 ATTACK_KASKADE,
 	 ATTACK_KRAXLER
 };
+
+bool item_is_tm(u16 item_idx) {
+	switch(item_idx) {
+		case ITEM_TM01 ... ITEM_TM50: return true;
+		default: return false;
+	}
+}
+
+bool item_is_hm(u16 item_idx) {
+	switch(item_idx) {
+		case ITEM_VM01:
+		case ITEM_VM02:
+		case ITEM_VM03:
+		case ITEM_VM04:
+		case ITEM_VM05:
+		case ITEM_VM06:
+		case ITEM_VM07:
+		case ITEM_VM08:
+			return true;
+		default:
+			return false;
+	}
+}
+
+bool item_is_sellable(u16 item_idx) {
+	if (item_get_price(item_idx) == 0) return false;
+	if (item_is_hm(item_idx) || item_is_tm(item_idx)) return false;
+	return true;
+}

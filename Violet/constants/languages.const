@@ -1,6 +1,6 @@
 {
 	"type" : "enum",
-	"base" : 0,
+	"base" : 1,
 	"values" : [
 		"LANGUAGE_JAPANESE",
 		"LANGUAGE_ENGLISH",

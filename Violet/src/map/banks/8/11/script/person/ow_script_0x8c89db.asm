@@ -11,6 +11,11 @@
 
 .global ow_script_0x8c89db
 ow_script_0x8c89db:
+    loadpointer 0 str_0
+    callstd MSG_FACE
+    end
+
+
 showmoney 0x0 0x0 0x0
 loadpointer 0x0 str_0x8c8907
 callstd MSG_KEEPOPEN
@@ -168,6 +173,9 @@ end
 
 .ifdef LANG_GER
 .global str_0x8c8907
+
+str_0:
+    .autostring 34 2 "Hallo!\nWir verkaufen hier seltene und starke Pokémon aus aller Welt.\pDie meisten von ihnen waren lange im Besitz eines Trainers und warten mit besten kämpferischen Fähigkeiten auf.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMoment, Kindchen!\pWas hast du hier zu suchen?\pVerschwinde!"
 
 str_0x8c8907:
     .string "Hallo! Du siehst aus wie ein\nTrainer, nicht?\pWie wäre es, dein Team mit ein\npaar exklusiven Pokémon\laufzustocken?\pIch verkaufe dir die seltensten\nExemplare zu einem Spottpreis!\pSieh dir mein Sortiment\nruhig an."

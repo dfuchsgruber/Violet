@@ -10,7 +10,7 @@
 #include "agbmemory.h"
 #include "constants/songs.h"
 #include "debug.h"
-#include "constants/battle_results.h"
+#include "constants/battle/battle_results.h"
 
 
 

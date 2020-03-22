@@ -449,7 +449,7 @@ void cmdx17_display_rendered_tbox(ae_memory*mem) {
         trmem->border_distance = border_distance;
         trmem->boxid = boxid;
         trmem->color_map = font_map;
-        trmem->delay = text_speed;
+        trmem->speed = text_speed;
         trmem->delay_timer = 0;
         trmem->destination = (u8*) 0x02021D18;
         trmem->display_flag = display_flag;
@@ -471,74 +471,74 @@ void anim_engine_text_renderer(anim_engine_task *t) {
         mem->delay_timer--;
         return;
     }
-    mem->delay_timer = mem->delay;
-    //read next char
-    u8 c = *(mem->source);
-    //dprintf("Anim engine texte renderer: Current char: 0x%x @0x%x\n", c, mem->source);
-    switch (c) {
-        case 0xFF:
-        {
-            //end of text, renderer despawn
-            if (!mem->flags.flags.pass_end) {
-                if (mem->flags.flags.end) {
-                    mem->flags.flags.end = 0;
-                } else {
-                    return; //no token for line break, so we wait
+    for (int i = 0; i < mem->speed; i++) {
+        u8 c = *(mem->source);
+        //dprintf("Anim engine texte renderer: Current char: 0x%x @0x%x\n", c, mem->source);
+        switch (c) {
+            case 0xFF:
+            {
+                //end of text, renderer despawn
+                if (!mem->flags.flags.pass_end) {
+                    if (mem->flags.flags.end) {
+                        mem->flags.flags.end = 0;
+                    } else {
+                        return; //no token for line break, so we wait
+                    }
                 }
+                //despawn
+                tbox_flush_set(mem->boxid, 0);
+                tbox_flush_map(mem->boxid);
+                tbox_free(mem->boxid);
+                bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
+                free(mem->o_text);
+                free(mem);
+                anim_engine_task_delete(t);
+                return;
             }
-            //despawn
-            tbox_flush_set(mem->boxid, 0);
-            tbox_flush_map(mem->boxid);
-            tbox_free(mem->boxid);
-            bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
-            free(mem->o_text);
-            free(mem);
-            anim_engine_task_delete(t);
-            return;
-        }
-        case 0xFB:
-        {
-            //new paragraph / box
-            if (!mem->flags.flags.pass_paragraph) {
-                if (mem->flags.flags.paragraph) {
-                    mem->flags.flags.paragraph = 0;
-                } else {
-                    
-                    return; //no token for new paragraph, so we wait
+            case 0xFB:
+            {
+                //new paragraph / box
+                if (!mem->flags.flags.pass_paragraph) {
+                    if (mem->flags.flags.paragraph) {
+                        mem->flags.flags.paragraph = 0;
+                    } else {
+                        
+                        return; //no token for new paragraph, so we wait
+                    }
                 }
+                mem->destination = strbuf; //reset of destination buffer, so next chars are append to front
+                tbox_flush_set(mem->boxid, 0);
+                tbox_tilemap_draw(mem->boxid);
+                //dprintf("Anim engine text renderer: Flushed tbox!\n");
+                break;
             }
-            mem->destination = strbuf; //reset of destination buffer, so next chars are append to front
-            tbox_flush_set(mem->boxid, 0);
-            tbox_tilemap_draw(mem->boxid);
-            //dprintf("Anim engine text renderer: Flushed tbox!\n");
-            break;
-        }
-        case 0xFE:
-        {
-            //linebreak
-            if (!(mem->flags.flags.pass_linebreak)) {
-                if (mem->flags.flags.linebreak) {
-                    mem->flags.flags.linebreak = 0;
-                } else {
-                    return; //no token for line break, so we wait
+            case 0xFE:
+            {
+                //linebreak
+                if (!(mem->flags.flags.pass_linebreak)) {
+                    if (mem->flags.flags.linebreak) {
+                        mem->flags.flags.linebreak = 0;
+                    } else {
+                        return; //no token for line break, so we wait
+                    }
                 }
+                FALL_THROUGH;
             }
-            FALL_THROUGH;
-        }
-        default:
-        {
-            //normal char append
-            *mem->destination++ = c;
-            *mem->destination = 0xFF;
+            default:
+            {
+                //normal char append
+                *mem->destination++ = c;
+                *mem->destination = 0xFF;
 
-            //draw the text
-            //tbox_flush(mem->boxid, 0);
-            tbox_print_string(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, strbuf);
-            bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
-            break;
+                //draw the text
+                //tbox_flush(mem->boxid, 0);
+                tbox_print_string(mem->boxid, mem->font, mem->unkown, mem->border_distance, mem->line_distance_u, mem->line_distance_l, mem->color_map, mem->display_flag, strbuf);
+                bg_copy_vram(mem->bg_id, bg_get_tilemap(mem->bg_id), 0x800, 0, 2);
+                break;
+            }
         }
+        mem->source++;
     }
-    mem->source++;
 }
 
 void cmdx18_rendered_tbox_event(ae_memory* mem) {

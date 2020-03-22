@@ -5,7 +5,7 @@
 #include "battle/state.h"
 #include "pokemon/evolution.h"
 #include "constants/abilities.h"
-#include "constants/battle_weathers.h"
+#include "constants/battle/battle_weathers.h"
 #include "constants/items.h"
 #include "constants/evolution_methods.h"
 #include "abilities.h"

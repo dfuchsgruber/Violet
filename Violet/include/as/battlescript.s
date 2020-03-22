@@ -163,11 +163,13 @@
 .byte 0x15
 .endm
 
-.macro seteffecttarget
+// old: seteffecttarget
+.macro seteffectprimary
 .byte 0x16
 .endm
 
-.macro seteffectuser
+// old: seteffectuser
+.macro seteffectsecondary
 .byte 0x17
 .endm
 

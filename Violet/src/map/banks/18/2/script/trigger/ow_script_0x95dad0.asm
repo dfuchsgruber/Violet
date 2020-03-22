@@ -14,6 +14,10 @@ ow_script_movs_0x95db3c:
 
 .global ow_script_0x95dad0
 ow_script_0x95dad0:
+addvar STORY_PROGRESS 0x1
+end
+
+// this stuff doesn't add anything to the story whatsoever, remove it therefore...
 lockall
 sound 0x9
 clearflag PKMNMENU

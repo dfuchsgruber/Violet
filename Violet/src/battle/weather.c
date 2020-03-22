@@ -14,7 +14,7 @@
 #include "constants/items.h"
 #include "item/item.h"
 #include "constants/item_hold_effects.h"
-#include "constants/battle_weathers.h"
+#include "constants/battle/battle_weathers.h"
 #include "constants/item_weather_rock_types.h"
 #include "battle/attack.h"
 #include "debug.h"

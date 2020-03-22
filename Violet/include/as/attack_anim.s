@@ -157,6 +157,7 @@
 .byte \id
 .endm
 
+.equ SOUND_PAN_ATTACKER, 0xC0
 
 .macro playsound_with_pan sound pan
 .byte 0x19
@@ -171,9 +172,9 @@
 .endm
 
 
-.macro sound_modulation param0 param1 param2 param3 param4
+.macro sound2 sound param1 param2 param3 param4
 .byte 0x1b
-.hword \param0
+.hword \sound
 .byte \param1
 .byte \param2
 .byte \param3
@@ -181,12 +182,12 @@
 .endm
 
 
-.macro playsound4 sound modulation param2 param3
+.macro loopsoundwithpan sound:req pan:req loop_frame:req number_of_loops:req
 .byte 0x1c
 .hword \sound
-.byte \modulation
-.byte \param2
-.byte \param3
+.byte \pan
+.byte \loop_frame
+.byte \number_of_loops
 .endm
 
 
@@ -331,8 +332,8 @@
 .equ SPRITE_FADING_AFFECTS_BATTLE_BG, 1
 .equ SPRITE_FADING_AFFECTS_USER, 2
 .equ SPRITE_FADING_AFFECTS_TARGET, 4
-.equ SPRITE_FADING_AFFECTS_USER2, 8 // Which palettes does this address exactly?
-.equ SPRITE_FADING_AFFECTS_TARGET2, 16 // Which palettes does this address exactly?
+.equ SPRITE_FADING_AFFECTS_USER_PARTNER, 8 // Which palettes does this address exactly?
+.equ SPRITE_FADING_AFFECTS_TARGET_PARTNER, 16 // Which palettes does this address exactly?
 .equ SPRITE_FADING_AFFECTS_OAM_PAL0, 32 // ??
 .equ SPRITE_FADING_AFFECTS_OAM_PAL1, 64 // ??
 
@@ -389,4 +390,9 @@
     .hword \effect
 .endm
 
+// Macro that blends the palette of a particle
+.macro particleblend pal_tag:req delay:req alpha_from:req alpha_to:req color:req
+    loadcallback battle_animation_blend_particle_callback 5, 5
+    .hword \pal_tag, \delay, \alpha_from, \alpha_to, \color
+.endm
 

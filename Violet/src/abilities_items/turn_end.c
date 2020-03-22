@@ -6,7 +6,7 @@
 #include "battle/weather.h"
 #include "battle/battlescript.h"
 #include "constants/abilities.h"
-#include "constants/battle_weathers.h"
+#include "constants/battle/battle_weathers.h"
 #include "debug.h"
 #include "abilities.h"
 #include "prng.h"

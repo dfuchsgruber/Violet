@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_82",
 		"events": {
-			"person_cnt": 36,
+			"person_cnt": 37,
 			"warp_cnt": 15,
 			"trigger_cnt": 1,
 			"signpost_cnt": 6,
@@ -11,7 +11,7 @@
 					"picture": 60,
 					"level": 0,
 					"target_index": 1,
-					"flag": "BLACK_MARKET_DONE",
+					"flag": "FLAG_HARRENFELD_KASKADA_DONE",
 					"field_3": 0,
 					"x": 29,
 					"alert_radius": 0,
@@ -33,7 +33,7 @@
 					"picture": 60,
 					"level": 0,
 					"target_index": 2,
-					"flag": "BLACK_MARKET_DONE",
+					"flag": "FLAG_HARRENFELD_KASKADA_DONE",
 					"field_3": 0,
 					"x": 30,
 					"alert_radius": 0,
@@ -780,7 +780,7 @@
 				{
 					"picture": 86,
 					"level": 0,
-					"target_index": 37,
+					"target_index": "36",
 					"flag": "KASKADA_IGVA",
 					"field_3": 0,
 					"x": 23,
@@ -794,6 +794,27 @@
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "37",
+					"picture": "70",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "29",
+					"y": "79",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_harrenfeld",
+					"flag": "BLACK_MARKET_DONE | 0x8000",
 					"value": {
 						"item": 0,
 						"species": 0

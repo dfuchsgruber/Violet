@@ -1,5 +1,5 @@
 #include "types.h"
-#include "constants/item_effects.h"
+#include "constants/item_effect_types.h"
 #include "item/custom.h"
 #include "item/item.h"
 #include "item/item_effect.h"
@@ -330,7 +330,12 @@ bool item_effect_execute_friendship(pokemon *p, u16 item, u8 battler_idx, u8 mov
 bool item_effect_execute_evolution(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
     item_effect_t *effect, bool calculate_heal_only, bool check_only) {
     (void) party_idx; (void) calculate_heal_only; (void) move_idx; (void) battler_idx; (void) hold_effect; (void) effect;
-    u16 target = pokemon_get_evolution(p, EVOLUTION_TRIGGER_ITEM, item);
+    u16 target;
+    if (check_only) {   
+        target = pokemon_get_evolution(p, EVOLUTION_TRIGGER_ITEM, item);
+    } else {
+        target = pokemon_get_evolution(p, EVOLUTION_TRIGGER_ITEM_AND_REMOVE_HOLD_ITEM, item);
+    }
     if (target) {
         if (!check_only) {
             pokemon_initialize_evolution(p, target, false, party_idx);

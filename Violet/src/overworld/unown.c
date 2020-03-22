@@ -49,10 +49,11 @@ bool player_party_spells_unown_message() {
     dprintf("Player party spells %d %d %d %d %d %d %d\n", party_message[0], party_message[1], party_message[2], 
         party_message[3], party_message[4], party_message[5], party_message[6]);
     party_message[j++] = 0xFF;
-    for (int i = 0; party_message[i] != 0xFF && message[i] != 0xFF; i++) {
+    int i;
+    for (i = 0; party_message[i] != 0xFF && message[i] != 0xFF; i++) {
         if (message[i] != party_message[i]) return false;
     }
-    return true;
+    return message[i] == party_message[i];
 }
 static sprite unown_message_oam_sprite = {.attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_64_64, .attr2 = ATTR2_PRIO(0)};
 

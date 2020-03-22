@@ -22,11 +22,15 @@
 #include "prng.h"
 #include "battle/battle_string.h"
 #include "battle/attack.h"
+#include "constants/battle/battle_handicaps.h"
+#include "constants/battle/battle_statuses.h"
+#include "constants/pokemon_types.h"
 
 extern u8 bsc_wandlungskunst[];
 extern u8 bsc_stance_change_to_attack[];
 extern u8 bsc_stance_change_to_defense[];
 extern u8 bsc_ap_sparer[];
+extern u8 battlescript_handicap_floating_rocks_apply[];
 
 void stance_change_change_species(u8 target, u16 species){
     void *pokemon = (battler_is_opponent(target) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(target);
@@ -52,6 +56,17 @@ void stance_change_change_species(u8 target, u16 species){
 }
 
 void attack_init_trigger_abilities(){
+    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
+    if (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS] && 
+        (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)
+        && battler_is_opponent(attacking_battler) != battler_is_opponent(defending_battler) && attacks[active_attack].base_power != 0) {
+            battle_animation_user = defending_battler;
+            battle_animation_target = defending_battler;
+            battle_scripting.battler_idx = defending_battler;
+            battlescript_callstack_push_next_command();
+            BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_FLOATING_ROCKS;
+            bsc_offset = battlescript_handicap_floating_rocks_apply;
+    }
     battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case WANDLUNGSK:{

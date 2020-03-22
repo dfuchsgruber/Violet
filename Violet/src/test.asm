@@ -10,6 +10,7 @@
 .include "specials.s"
 .include "movements.s"
 .include "trainer_backsprites.s"
+.include "battle/battle_handicaps.s"
 
 .global ow_script_test
 .global ow_script_trainer1
@@ -33,6 +34,17 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+//setvar 0x8004 BATTLE_HANDICAP_EXTREME_HEAT
+//special SPECIAL_BATTLE_HANDICAP_SET
+setvar 0x8004 BATTLE_HANDICAP_FLOATING_ROCKS
+special SPECIAL_BATTLE_HANDICAP_SET
+trainerbattlecont 0x1 0x170 0x0 str_a str_0x96f156 cont
+
+
+additem ITEM_SONDERBONBON 55
+additem ITEM_DUBIOSDISC 1
+end
+
 
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH

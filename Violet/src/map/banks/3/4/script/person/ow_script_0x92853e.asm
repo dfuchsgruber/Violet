@@ -8,44 +8,34 @@
 
 .global ow_script_0x92853e
 ow_script_0x92853e:
-lock
-faceplayer
-loadpointer 0x0 str_0x92ee2b
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x945ea6
-loadpointer 0x0 str_0x92ecf0
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-setflag KASKADA_BLACKMARKET_RECEIVED_PAROLE
-fadescreen 0x1
-hidesprite 0x800f
-fadescreen 0x0
-release
-end
+	lock
+	faceplayer
+	loadpointer 0 str_0
+	show_mugshot MUGSHOT_IGVA alignment=MUGSHOT_RIGHT message_type=MSG_YES_NO mask_name=1
+	compare LASTRESULT 0
+	gotoif EQUAL said_no
+	loadpointer 0 str_2
+	show_mugshot MUGSHOT_IGVA alignment=MUGSHOT_RIGHT message_type=MSG mask_name=1
+	setflag KASKADA_BLACKMARKET_RECEIVED_PAROLE
+	fadescreen 0x1
+	hidesprite 0x800f
+	fadescreen 0x0
+	release
+	end
 
-
-.global ow_script_0x945ea6
-ow_script_0x945ea6:
-loadpointer 0x0 str_0x92edce
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT MSG_FACE
-end
-
+said_no:
+	loadpointer 0 str_1
+	show_mugshot MUGSHOT_IGVA alignment=MUGSHOT_RIGHT message_type=MSG mask_name=1
+	release
+	end
+	
 
 .ifdef LANG_GER
-.global str_0x92ee2b
-
-str_0x92ee2b:
-	.autostring 35 2 "Nah, hallo!\nSo wie du mir aussiehst, könntest du doch glatt DOTS\pDOTS DOTS DOTS\pDu musst PLAYER sein, nicht?\pÜber dich kursieren schon spannende Gerüchte!\pStimmt es, dass du einen Kommandanten von Team Violet besiegt hast?\pWirklich interessant!\nDOTS DOTS DOTS\pSag mir einmal, was hältst du von der Revolution?\pWas hältst du von den Top Vier?\pWärst du bereit, einen Schritt weiterzugehen, und in die dunklen Geheimnisse dieser Region einzutauchen?"
-.global str_0x92ecf0
-
-str_0x92ecf0:
-	.autostring 35 2 "Ich wusste, dass du darauf eingehen würdest.\pKomm zum Klubhaus im Südosten der Stadt.\pDie geheime Eintrittsparole lautet QUOTE_STARTNachtschwarzQUOTE_END.\pDOTS DOTS DOTS\pWer ich bin?\nMein Name ist Igva!"
-
-.global str_0x92edce
-
-str_0x92edce:
-    .autostring 35 2 "Ich hätte dich anders eingeschätzt.\pKomm zu mir, wenn du deine Meinung geändert hast DOTS"
-        
+str_0:
+	.autostring 34 2 "Entschuldige bitte, falls ich dich damit überrumple.\pIch habe dich vorhin beobachtet, als du mit Albus, dem Anführer der Revolution gesprochen hast.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pEs muss seltsam wirken, aber ich möchte dir gerne etwas zeigen.\pWenn du Interesse hast, das wahre Gesicht dieser Region zu sehenDOTS\pNaja, was sagst du?"
+str_1:
+	.autostring 34 2 "OhDOTS\nNa gut, vielleicht habe ich mich getäuscht.\pWenn du es dir anders überlegst, ich werde noch eine Weile in der Gegend sein."
+str_2:
+	.autostring 34 2 "Ich wusste es!\nIrgendetwas hat mir gesagt, dass du die Art Mensch bist, die sich auch traut, hinter die glatte Fassade der Dinge zu sehen.\pDOTS DOTS DOTS\nIm Westen der Stadt gibt es ein Klubhaus, in das man nur mit einer Parole eintritt erhält.\pIch will nichts vorwegnehmen, aber du solltest dir dieses Klubhaus auf jeden Fall ansehen.\pWie war doch gleich dein Name?\pPLAYER?\nDOTS DOTS DOTS\pFreut mich sehr!\nIch bin übrigens Igva!\pWir sehen uns im Klubhaus, PLAYER!"
 .elseif LANG_EN
-
 .endif

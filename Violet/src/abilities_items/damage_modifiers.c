@@ -1,6 +1,7 @@
 #include "types.h"
 #include "battle/battler.h"
 #include "battle/attack.h"
+#include "battle/state.h"
 #include "constants/abilities.h"
 #include "constants/attacks.h"
 #include "constants/attack_results.h"
@@ -92,24 +93,11 @@ void apply_pre_damage_modifiers(){
             break;
         }   
     }
-    /**
-    switch(defender->item){
-        case ITEM_EVOLITH:{
-            bool defender_can_evolve = false;
-            int i;
-            for(i = 0; i < 5; i++){
-                if(pokemon_evolutions[defender->species][i].method !=
-                        EVOLUTION_METHOD_NONE){
-                    defender_can_evolve = true;
-                    break;
-                }
-            }
-            if(defender_can_evolve) 
-                damage_apply_multiplier(500);
-            break;
-        }
+    if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_FLOATING_ROCKS) {
+        dprintf("Reduce damage caused to rock type battler %d.\n", defending_battler);
+        BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
+        damage_apply_multiplier(500);
     }
-     **/
     battlescript_cmd_x06_apply_damage_modifiers();
     apply_final_damage_modifiers();
 }

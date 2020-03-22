@@ -13,7 +13,7 @@ void trash_get_item() {
     coordinate_t pos;
     player_get_facing_position(&pos.x, &pos.y);
 
-    if (trash_checkflag(pos.x, pos.y, save1->bank, save1->map)) {
+    if (!trash_checkflag(pos.x, pos.y, save1->bank, save1->map)) {
         u32 r = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 97);
         dprintf("Trash hash value is %d\n", r);
         if (r == 0) {

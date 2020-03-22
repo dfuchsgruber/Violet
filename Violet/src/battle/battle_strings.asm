@@ -409,6 +409,10 @@ bsc_strings:
 .word str_battle_x19F
 .word str_battle_x1A0
 .word str_battle_x1A1
+.word str_battle_x1A2
+.word str_battle_x1A3
+.word str_battle_x1A4
+.word str_battle_x1A5
 
 @ // Define the strings
 
@@ -2824,6 +2828,18 @@ bsc_strings:
 	str_battle_x1A1:
 		.string "BSC_TRAINER2_LOSE_TEXT"
 
+	str_battle_x1A2:
+		.string "Eine extreme Hitze liegt in der LuftDOTS"
+		
+	str_battle_x1A3:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX leidet unter der\nextremen HitzeDOTS"
+
+	str_battle_x1A4:
+		.string "Große Felsen schweben umherDOTS"
+
+	str_battle_x1A5:
+		.string "BSC_DEF_NAME_WITH_PREFIX wird von den\numherschwebenden Felsen beschützt!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -4838,6 +4854,18 @@ bsc_strings:
 
 	str_battle_x1A1:
 		.string "BSC_TRAINER2_LOSE_TEXT"
+
+	str_battle_x1A2:
+		.string "An extreme heat is in the airDOTS"
+
+	str_battle_x1A3:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX suffers \nfrom the severe heatDOTS"
+
+	str_battle_x1A4:
+		.string "Big rocks are floating arroundDOTS"
+
+	str_battle_x1A5:
+		.string "BSC_DEF_NAME_WITH_PREFIX is protected\nby the floating rocks!"
 
 .endif
 

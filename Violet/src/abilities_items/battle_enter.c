@@ -1,6 +1,6 @@
 #include "types.h"
 #include "constants/abilities.h"
-#include "constants/battle_weathers.h"
+#include "constants/battle/battle_weathers.h"
 #include "battle/state.h"
 #include "battle/weather.h"
 #include "battle/battlescript.h"

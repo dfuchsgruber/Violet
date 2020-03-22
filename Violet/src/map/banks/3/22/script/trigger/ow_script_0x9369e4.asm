@@ -8,6 +8,24 @@
 
 .global ow_script_0x9369e4
 ow_script_0x9369e4:
+addvar STORY_PROGRESS 1
+end
+ // This entire cutscene is to be moved, I suppose...
+
+setflag TRANS_DISABLE
+clearflag TRANS_PALETTE_FETCH
+setvar 0x8004 0x3
+special 0x19
+waitstate
+clearflag TRANS_DISABLE
+loadpointer 0x0 str_0x936ba2
+show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
+addvar STORY_PROGRESS 1
+end
+
+
+
+
 lockall
 clearflag PKMNMENU
 showsprite 0xb

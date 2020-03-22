@@ -70,5 +70,6 @@
 	"trainer_battle_types" : "constants/trainer_battle_types.const",
 	"battle_flags" : "constants/battle/battle_flags.const",
 	"battle_ai_item_types" : "constants/battle/battle_ai_item_types.const",
-	"trainer_backsprites" : "constants/trainer_backsprites.const"
+	"trainer_backsprites" : "constants/trainer_backsprites.const",
+	"battle_handicaps" : "constants/battle/battle_handicaps.const"
 }

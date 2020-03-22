@@ -4,6 +4,7 @@
 
 .align 4
 ae_script_mistral_yin_yang:
+
 frame 0
     fadescreen 0 0 512 16 0 16
     endframe

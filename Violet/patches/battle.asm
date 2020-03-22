@@ -508,3 +508,15 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	.pool
 
 
+.org 0x08013750
+	.word battle_introduce_handicap | 1
+.org 0x080137dc
+	.word battle_introduce_handicap | 1
+
+.org 0x08024f32
+	ldr r0, =bsc_cmd_switch_in_effects_check_ability_or_handicap | 1
+	bl _blxr0
+	cmp r0, #0
+	beq 0x08024f48
+	b 0x0802504a
+	.pool
