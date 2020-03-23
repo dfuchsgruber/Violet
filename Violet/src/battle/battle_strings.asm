@@ -413,6 +413,13 @@ bsc_strings:
 .word str_battle_x1A3
 .word str_battle_x1A4
 .word str_battle_x1A5
+.word str_battle_x1A6
+.word str_battle_x1A7
+.word str_battle_x1A8
+.word str_battle_x1A9
+.word str_battle_x1AA
+.word str_battle_x1AB
+.word str_battle_x1AC
 
 @ // Define the strings
 
@@ -2670,13 +2677,13 @@ bsc_strings:
 	.global str_battle_x183
 
 	str_battle_x183:
-		.string "ATTACK_NAME wurde von seinem\nLeben-Orb verletzt!"
+		.string "BSC_ATK_NAME_WITH_PREFIX wurde von seinem\nLeben-Orb verletzt!"
 
 
 	.global str_battle_x184
 
 	str_battle_x184:
-		.string "ATTACK_NAME wird\ndurch STRINGね\lzu einem STRING -Typ!"
+		.string "BSC_ATK_NAME_WITH_PREFIX wird\ndurch BSC_LAST_ABILITY\lzu einem STRING -Typ!"
 
 
 	.global str_battle_x185
@@ -2688,7 +2695,7 @@ bsc_strings:
 	.global str_battle_x186
 
 	str_battle_x186:
-		.string "ATTACK_NAME nutzt\nSTRINGね, um seine\lGenauigkeit zu steigern."
+		.string "BSC_ATK_NAME_WITH_PREFIX nutzt\nBSC_LAST_ABILITY, um seine\lGenauigkeit zu steigern."
 
 
 	.global str_battle_x187
@@ -2727,7 +2734,7 @@ bsc_strings:
 		.string "ABILITY_NAME_OPPONENT wechselt in\nseine Schildform!"
 
 
-	.global str_battle_x18d
+	.global str_battle_x18
 
 	str_battle_x18d:
 		.string "Robustheit wird wirksam!"
@@ -2778,23 +2785,23 @@ bsc_strings:
 	.global str_battle_x195
 
 	str_battle_x195:
-		.string "ATTACK_NAME konnte durch\nSTRINGね einige KP\lzurückgewinnen!"
+		.string "BSC_ATK_NAME_WITH_PREFIX konnte durch\nBSC_ATK_ABILITY einige KP\lzurückgewinnen!"
 
 
 	.global str_battle_x196
 
 	str_battle_x196:
-		.string "ATTACK_NAME verfällt in\nTollwut!"
+		.string "BSC_ATK_NAME_WITH_PREFIX verfällt in\nTollwut!"
 
 	str_battle_x197:
-		.string "ATTACK_NAME erntet\nLAST_ITEM!"
+		.string "BSC_ATK_NAME_WITH_PREFIX erntet\nBSC_LAST_ITEM!"
 
 	str_battle_x198:
-		.string "ATTACK_NAME nutzt einen\nHack und erhöht seine\lVolltrefferchance."
+		.string "BSC_ATK_NAME_WITH_PREFIX nutzt einen\nHack und erhöht seine\lVolltrefferchance."
 
 	.global str_battle_x199
 	str_battle_x199:
-		.string "Das fluffige Fell von\nDEFENDING_MON verlangsamt\lATTACKING_MON stark!"
+		.string "Das fluffige Fell von\nBSC_DEF_NAME_WITH_PREFIX verlangsamt\lBSC_ATK_NAME_WITH_PREFIX stark!"
 
 	.global str_battle_x19A
 	str_battle_x19A:
@@ -2839,6 +2846,27 @@ bsc_strings:
 
 	str_battle_x1A5:
 		.string "BSC_DEF_NAME_WITH_PREFIX wird von den\numherschwebenden Felsen beschützt!"
+
+	str_battle_x1A6:
+		.string "Große Wurzeln wuchern am BodenDOTS"
+
+	str_battle_x1A7:
+		.string "Die Wurzeln am Boden borhen sich\nin BSC_DEF_NAME_WITH_PREFIX!"
+
+	str_battle_x1A8:
+		.string "Es herrscht eine schauderhafte\nAtmosphäreDOTS"
+
+	str_battle_x1A9:
+		.string "BSC_ATK_NAME_WITH_PREFIX hat\nzu große Angst, um anzugreifen."
+
+	str_battle_x1AA:
+		.string "Zuschauer feuern die Kämpfer an!"
+
+	str_battle_x1AB:
+		.string "Die Menge tobt und jubelt!"
+
+	str_battle_x1AC:
+		.string "BSC_ATK_NAME_WITH_PREFIX kommt\nin Fahrt!"
 
 .elseif LANG_EN
 	.global str_battle_xc
@@ -4866,6 +4894,28 @@ bsc_strings:
 
 	str_battle_x1A5:
 		.string "BSC_DEF_NAME_WITH_PREFIX is protected\nby the floating rocks!"
+
+	str_battle_x1A6:
+		.string "Large roots are all over the groundDOTS"
+
+	str_battle_x1A7:
+		.string "The roots penetrate\nBSC_DEF_NAME_WITH_PREFIX!"
+
+	str_battle_x1A8:
+		.string "The atmosphere is frighteningDOTS"
+
+	str_battle_x1A9:
+		.string "BSC_ATK_NAME_WITH_PREFIX is\ntoo terrified to attack."
+
+	str_battle_x1AA:
+		.string "Spectators encourage the fighters!"
+
+	str_battle_x1AB:
+		.string "The crowd is raging!"
+
+	str_battle_x1AC:
+		.string "BSC_ATK_NAME_WITH_PREFIX gets going!"
+
 
 .endif
 

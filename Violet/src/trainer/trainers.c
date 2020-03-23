@@ -6335,7 +6335,7 @@ trainer trainers[TRAINER_CNT] = {
         .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Jutta"),
             PSTRING("Jutta")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = (trainer_pokemon*) trainer_party_x50,
+        .party = (trainer_pokemon*) trainer_party_x10e_route_12_trainer_18,
         .battle_state = BATTLE_WITH_HANDICAP,
     },
 }; 

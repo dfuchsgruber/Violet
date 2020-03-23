@@ -57,7 +57,7 @@ waitmessage 0x40
 return
 
 bsc_life_orb:
-callasm attack_done_prepeare_life_orb
+//callasm attack_done_prepeare_life_orb
 orword bsc_status_flags 0x100100
 graphicalhpupdate 0x1
 datahpupdate 0x1
@@ -68,21 +68,21 @@ return
 
 
 bsc_lernfaehig:
-callasm attack_done_prepeare_lernfaehig
-playanimation 0x1 0x1 0x2023FD4
+//callasm attack_done_prepeare_lernfaehig
+playanimation BANK_USER, 0x1, battle_scripting + 16
 printstring 0x186
 waitmessage 0x40
 return
 
 bsc_hochmut:
-callasm attack_done_prepeare_hochmut
-playanimation 0x1 0x1 0x2023FD4
+//callasm attack_done_prepeare_hochmut
+playanimation BANK_USER 0x1 battle_scripting + 16
 printstring 0x189
 waitmessage 0x40
 return
 
 bsc_lebensraeuber:
-callasm attack_done_prepeare_lebensraeuber
+//callasm attack_done_prepeare_lebensraeuber
 graphicalhpupdate 0x1
 datahpupdate 0x1
 printstring 0x133
@@ -90,7 +90,7 @@ waitmessage 0x40
 return
 
 bsc_curator:
-callasm attack_done_prepeare_curator
+//callasm attack_done_prepeare_curator
 graphicalhpupdate 0x1
 datahpupdate 0x1
 printstring 0x133
@@ -98,9 +98,9 @@ waitmessage 0x40
 return
 
 bsc_extradorn:
-battleanimation 1 0 0x81cbd12
+battleanimation 0 1 0x81cbd12
 pause 0x40
-callasm attack_done_prepeare_extradorn
+// callasm attack_done_prepeare_extradorn
 orword bsc_status_flags 0x100100
 graphicalhpupdate 0x0
 datahpupdate 0x0
@@ -111,7 +111,7 @@ return
 
 bsc_kings_shield_drop:
 callasm kings_shield_prepeare_drop
-playanimation 0x1 0x1 0x2023FD4
+playanimation BANK_USER 0x1 battle_scripting + 16
 printstring 0x194
 waitmessage 0x40
 return
@@ -161,7 +161,7 @@ return
 
 bsc_turn_end_stat_change_success:
 setgraphicalstatchangevalues
-playanimation 0x1 0x1 0x2023FD4
+playanimation BANK_USER 0x1 battle_scripting + 16
 printfromtable 0x83FE534
 waitmessage 0x40
 bsc_turn_end_stat_change_failure:
@@ -201,7 +201,7 @@ bsc_hack_fail:
 end3
 
 bsc_fluffy:
-playanimation 0x1 0x1 0x2023FD4
+playanimation BANK_USER 0x1 battle_scripting + 16
 printstring 0x199
 waitmessage 0x40
 return

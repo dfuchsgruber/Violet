@@ -8,12 +8,14 @@
 #include "constants/abilities.h"
 #include "constants/pokemon_types.h"
 #include "prng.h"
+#include "constants/battle/battle_handicaps.h"
+#include "constants/battle/battle_statuses.h"
 
 extern u8 bsc_flinch_aura[];
 extern u8 bsc_flinch_raura[];
 extern u8 bsc_flinch_baura[];
 extern u8 bsc_flinch_gaura[];
-
+extern u8 battlescript_handicap_terrifying_atmosphere_apply[];
 
 u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
     
@@ -29,16 +31,25 @@ u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
             return bsc_flinch_aura;
         }else if(defender_ability == R_KAISERAURA){
             if(attacks[used_attack].type == TYPE_WASSER){
+                if(battlers[attacking_battler].status2 & 0x1000){
+                    bsc_status_flags |= 0x800;
+                }
                 return bsc_flinch_raura;
             }
         }else if(defender_ability == B_KAISERAURA){
             if(attacks[used_attack].type == TYPE_FEUER){
+                if(battlers[attacking_battler].status2 & 0x1000){
+                    bsc_status_flags |= 0x800;
+                }
                 return bsc_flinch_baura;
             }
         }else if(defender_ability == G_KAISERAURA){
             if(attacks[used_attack].type == TYPE_WASSER ||
                     attacks[used_attack].type == TYPE_FEUER ||
                     attacks[used_attack].type == TYPE_PFLANZE){
+                if(battlers[attacking_battler].status2 & 0x1000){
+                    bsc_status_flags |= 0x800;
+                }
                 return bsc_flinch_gaura;
             }
         }
@@ -51,11 +62,21 @@ u8 *attack_negating_abilities(u8 defender_ability, u16 used_attack){
             
         }
         if(learmschutz_blockated_moves[i] != 0xFFFF){
+            if(battlers[attacking_battler].status2 & 0x1000){
+                bsc_status_flags |= 0x800;
+            }
             return (u8*)0x081DD704;
         }
     }
-    
-    
-    
+    // Check for handicap here, it's a bit hacky, but w/e
+    if ((fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE]) && battlers[defending_battler].type1 != TYPE_GEIST && 
+            battlers[defending_battler].type2 != TYPE_GEIST && (rnd16() % 3) == 0) {
+        if(battlers[attacking_battler].status2 & 0x1000){
+            bsc_status_flags |= 0x800;
+        }
+        battle_scripting.battler_idx = attacking_battler;
+        battle_scripting.animation_user = defending_battler;
+        return battlescript_handicap_terrifying_atmosphere_apply;
+    }
     return NULL;
 }

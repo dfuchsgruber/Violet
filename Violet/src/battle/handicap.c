@@ -12,9 +12,15 @@
 
 extern u8 battlescript_handicap_extreme_heat[];
 extern u8 battlescript_handicap_floating_rocks[];
+extern u8 battlescript_handicap_grassy_field[];
+extern u8 battlescript_handicap_terrifying_atmosphere[];
+extern u8 battlescript_handicap_arena_encouragement[];
 
 static u8 *battlescripts_handicap[32] = {
     [BATTLE_HANDICAP_FLOATING_ROCKS] = battlescript_handicap_floating_rocks,
+    [BATTLE_HANDICAP_GRASSY_FIELD] = battlescript_handicap_grassy_field,
+    [BATTLE_HANDICAP_ARENA_ENCOURAGEMENT] = battlescript_handicap_arena_encouragement,
+    [BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE] = battlescript_handicap_terrifying_atmosphere,
     [BATTLE_HANDICAP_EXTREME_HEAT] = battlescript_handicap_extreme_heat,
 };
 
@@ -27,8 +33,8 @@ void battle_introduce_handicap() {
             if (fmem.battle_handicaps & int_bitmasks[BATTLE_STATE2->handicap_introduced]) {
                 if (battlescripts_handicap[BATTLE_STATE2->handicap_introduced]) {
                     battlescript_init_and_interrupt_battle(battlescripts_handicap[BATTLE_STATE2->handicap_introduced]);
+                    script_initialized = true;
                 }
-                script_initialized = true;
             }
             BATTLE_STATE2->handicap_introduced++;
             if (script_initialized)
@@ -53,6 +59,7 @@ void battle_handicap_set() {
 }
 
 extern u8 battlescript_handicap_extreme_heat_apply[];
+extern u8 battlescript_handicap_grassy_field_apply[];
 
 bool battle_handicap_switch_in_effects(u8 battler_idx) {
     for (int i = 0; i < 32; i++) {
@@ -69,6 +76,18 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
                         battle_scripting.battler_idx = battler_idx;
                         battle_communication[BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE] = 0x43;
     	                battlescript_init_and_interrupt_battle(battlescript_handicap_extreme_heat_apply);
+                        return true;
+                    }
+                    break;
+                }
+                case BATTLE_HANDICAP_GRASSY_FIELD: {
+                    if (battlers[battler_idx].max_hp > 0 && !(battler_statuses3[battler_idx] & STATUS3_ROOTED) &&
+                        (battlers[battler_idx].type1 == TYPE_PFLANZE || battlers[battler_idx].type2 == TYPE_PFLANZE)) {
+                        battler_statuses3[battler_idx] |= STATUS3_ROOTED;
+                        attacking_battler = battler_idx;
+                        defending_battler = battler_idx; 
+                        battle_scripting.battler_idx = battler_idx;
+    	                battlescript_init_and_interrupt_battle(battlescript_handicap_grassy_field_apply);
                         return true;
                     }
                     break;

@@ -40,6 +40,12 @@ battle_animations:
     .word battle_animation_extreme_heat
     .word battle_animation_floating_rocks_introduction
     .word battle_animation_floating_rocks_protect
+    .word battle_animation_grassy_field_introduction
+    .word attack_animation_ingrain
+    .word battle_animation_terrifying_atmosphere_introduction
+    .word battle_animation_terrifying_atmosphere
+    .word battle_animation_arena_encourage_introduction
+    .word battle_animation_arena_encourage_introduction
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815
@@ -118,7 +124,6 @@ battle_animation_floating_rocks_protect:
     loadcallback battle_animation_metallic_shine 5, 3
         .hword 0, 0, 0 // Keep Palette-Effect, Use-Custom-Color, Custom Color
     waitstate
-
     //loadcallback battle_animation_battler_fade_to_invisible, 2, 1 // This thing may be buggy... the target bg is calculated using the attacker...
     //    .hword 3 // Delay
     //pause 100
@@ -128,3 +133,61 @@ battle_animation_floating_rocks_protect:
     //waitstate
     //disable_oam_as_target OAM_ATTACKER
     end
+
+battle_animation_grassy_field_introduction:
+    loadgraphic 0x27EF
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG | SPRITE_FADING_AFFECTS_USER | SPRITE_FADING_AFFECTS_TARGET | SPRITE_FADING_AFFECTS_USER_PARTNER | SPRITE_FADING_AFFECTS_TARGET_PARTNER, 2, 0, 6, 13293
+    waitstate
+    loadoam battle_animation_oam_template_root_arbitrary_position 2, 5
+        .hword 32, 72, -1, 0, 150
+    playsound_with_pan 0x94 0xC0
+    pause 10
+    loadoam battle_animation_oam_template_root_arbitrary_position 2, 5
+        .hword 120, 56, -1, 0, 130
+    playsound_with_pan 0x94 0xC0
+    pause 10
+    loadoam battle_animation_oam_template_root_arbitrary_position 2, 5
+        .hword 12, 96, -1, 0, 140
+    playsound_with_pan 0x94 0xC0
+    pause 10
+    loadoam battle_animation_oam_template_root_arbitrary_position 2, 5
+        .hword 220, 56, -1, 0, 140
+    playsound_with_pan 0x94 0xC0
+    waitstate
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG | SPRITE_FADING_AFFECTS_USER | SPRITE_FADING_AFFECTS_TARGET | SPRITE_FADING_AFFECTS_USER_PARTNER | SPRITE_FADING_AFFECTS_TARGET_PARTNER, 2, 6, 0, 13293
+    end
+
+battle_animation_terrifying_atmosphere_introduction:
+    fade_into_background 2
+    wait
+    loopsoundwithpan 193 SOUND_PAN_ATTACKER 28 3
+    pause 127
+    fade_into_battle_background
+    wait
+    end
+    
+battle_animation_terrifying_atmosphere:
+    fade_into_background 2
+    wait
+    loopsoundwithpan 205 SOUND_PAN_ATTACKER 16 2
+    loadcallback battle_animation_shake_in_place_callback, 2, 5
+        .hword 0, 2, 0, 10, 2 // battler_arg, dx, dy, num_shakes, delay
+    waitstate
+    pause 64
+    //enable_oam_as_target OAM_ANIMATION_TARGET
+    //loadcallback battle_animation_warp_target_callback, 2, 0
+    //waitstate
+    // disable_oam_as_target OAM_ANIMATION_TARGET
+    fade_into_battle_background
+    wait
+    end
+
+battle_animation_arena_encourage_introduction:
+    playsound_with_pan 216 SOUND_PAN_ATTACKER
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG, 4, 0, 6, 0
+    waitstate
+    pause 127
+    fadebattler SPRITE_FADING_AFFECTS_BATTLE_BG, 4, 6, 0, 0
+    waitstate
+    end
+    

@@ -16,10 +16,18 @@
         bx r0
         .pool
 
-.org 0x08023504
-        ldr r0, =hook_attack_done | 1
-        bx r0
-        .pool
+//.org 0x0801a83c
+//        ldr r0, =hook_battle_abilities_attack_done | 1
+//        bx r0
+//        .pool
+
+// Move end battle script command x49
+.org 0x08023b7a
+        // The original command would have incremented the bsc offset by 3, instead we go to state 18
+        mov r0, #18
+        strb r0, [r1, #0x14]
+        b 0x08023b82
+
 
 .org 0x0801E800
         ldr r0, =hook_attack_type | 1

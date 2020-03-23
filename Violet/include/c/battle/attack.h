@@ -143,4 +143,11 @@ void battle_animation_set_continuation(oam_object *self, void (*continuation)(oa
  **/
 void battle_animation_oam_delete(oam_object *self);
 
+/**
+ * Oam callback that flickers out the oam after private[2] frames 
+ * (flickering out starts 10 frames earlier, the sprite is gone after private[2] frames)
+ * @param self self-reference
+ **/
+void battle_animation_oam_callback_roots_flicker_out(oam_object *self);
+
 #endif /* INCLUDE_C_BATTLE_ATTACK_H_ */

@@ -943,8 +943,8 @@ item items[] = {
 		LANGDEP(PSTRING("Leben-Orb"), PSTRING("????????")),
 		0x3a, //index
 		200, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_LIFE_ORB, //holding_effect_id
+		10, //holding_effect_param
 		str_item_desc_x3a_item_leben_orb,
 		0, // Importance
 		0, // exits_bag_on_use

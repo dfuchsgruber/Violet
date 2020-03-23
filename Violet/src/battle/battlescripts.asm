@@ -60,3 +60,39 @@ battlescript_handicap_floating_rocks_apply:
     printstring 0x1a5
     playanimation BANK_TARGET BATTLE_ANIM_FLOATING_ROCKS 0
     return
+
+.global battlescript_handicap_grassy_field
+
+battlescript_handicap_grassy_field:
+    printstring 0x1a6
+    playanimation BANK_TARGET BATTLE_ANIM_GRASSY_FIELD_INTRODUCTION 0
+    end3
+
+.global battlescript_handicap_grassy_field_apply
+
+battlescript_handicap_grassy_field_apply:
+    printstring 0x1a7
+    playanimation BANK_TARGET BATTLE_ANIM_GRASSY_FIELD 0
+    end3
+
+.global battlescript_handicap_terrifying_atmosphere
+
+battlescript_handicap_terrifying_atmosphere:
+    printstring 0x1a8
+    playanimation BANK_TARGET BATTLE_ANIM_TERRIFYING_ATMOSPHERE_INTRODUCTION 0
+    end3
+
+.global battlescript_handicap_terrifying_atmosphere_apply
+
+battlescript_handicap_terrifying_atmosphere_apply:
+    ppreduce
+    printstring 0x1a9
+    playanimation BANK_USER BATTLE_ANIM_TERRIFYING_ATMOSPHERE 0
+    goto 0x81DABDE
+
+.global battlescript_handicap_arena_encouragement
+
+battlescript_handicap_arena_encouragement:
+    printstring 0x1aa
+    playanimation BANK_TARGET BATTLE_ANIM_ARENA_ENCOURAGEMENT_INTRODUCTION 0
+    end3

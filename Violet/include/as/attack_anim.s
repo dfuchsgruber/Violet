@@ -65,6 +65,8 @@
 
 .equ OAM_ATTACKER, 0
 .equ OAM_TARGET, 1
+.equ OAM_ANIMATION_USER, 2
+.equ OAM_ANIMATION_TARGET, 3
 .macro enable_oam_as_target slot
 .byte 0xa
 .byte \slot

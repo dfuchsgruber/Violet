@@ -58,7 +58,7 @@ typedef struct  {
     u8 charging_move_string_idx;
     u8 animation_arguments[2];
     u16 tripple_kick_power;
-    u8 field_0x14;
+    u8 attack_done_state;
     u8 battler_using_ability;
     u8 multihit_move_effect;
     u8 battler_idx;
@@ -134,6 +134,12 @@ void battlescript_cmd_x06_apply_damage_modifiers();
  * structure: 0xEA [offset_failed_to_recover : word]
  */
 void bsc_cmd_xEA_recycle_item();
+
+/**
+ * Battlescript command that step-by-step triggers events after a battle.
+ * In Violet, this function is wrapped...
+ **/
+void bsc_cmd_x49_attack_done();
 
 /**
  * Pushes a target script as return adress to the battlescript stack.

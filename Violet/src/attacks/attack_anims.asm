@@ -279,7 +279,7 @@ attack_anims:
 		.word 0x81d6e75 @//attack_rollentausch
 		.word 0x81d67b3 @//attack_wunschtraum
 		.word 0x81cfd62 @//attack_zuschuss
-		.word 0x81d5fa7 @//attack_verwurzler
+		.word attack_animation_ingrain @0x81d5fa7 @//attack_verwurzler
 		.word 0x81cfdd3 @//attack_kraftkoloss
 		.word 0x81d8b19 @//attack_magiemantel
 		.word 0x81cfe8e @//attack_aufbereitung

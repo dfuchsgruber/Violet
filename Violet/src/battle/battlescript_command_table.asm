@@ -77,7 +77,7 @@ battle_script_cmds:
 	.word 0x8022e79
 	.word 0x8022f45
 	.word 0x8022fa1
-	.word 0x8023195
+	.word bsc_cmd_x49_attack_done_new
 	.word 0x8023bbd
 	.word 0x8023e0d
 	.word 0x8023e5d

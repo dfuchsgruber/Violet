@@ -168,6 +168,7 @@ extern battle_side_status_stru battle_side_statuses[2];
 extern battler_timer_stru battler_timers;
 extern u8 battlers_absent;
 extern u8 battler_in_party_menu;
+extern u8 effect_battler;
 
 #define DAMAGE_CAUSED ((battler_damage_taken[defending_battler].physical_damage != 0 || battler_damage_taken[defending_battler].special_damage != 0))
 

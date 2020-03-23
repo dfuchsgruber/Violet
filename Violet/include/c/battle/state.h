@@ -151,6 +151,7 @@ typedef struct {
     u8 handicap_introduced;
     u8 switch_in_handicap_effects_cnt;
     u32 status_custom[4];
+    u8 attack_done_substate; // A substate that is used to trigger additional events for ending an attack with bsc cmd 0x49
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
