@@ -179,3 +179,34 @@ void battle_ally_save_and_setup_party() {
 bool battle_has_two_players() {
     return battle_is_tag() || battle_is_multi_double();
 }
+
+void battle_clear_temporary_custom_effects(bool clear_all){
+    if(clear_all){
+        int i;
+        for(i = 0; i < battler_cnt; i++){
+            BATTLE_STATE2->status_custom[i] = 0;
+        }
+    }
+}
+
+extern u8 battlescript_before_attack[];
+
+void battle_before_attack_effects() {
+    battlescript_callstack_push_next_command();
+    BATTLE_STATE2->before_attack_state = 0;
+    bsc_offset = battlescript_before_attack; // This script executes all effects before the battle...
+}
+
+bool battle_end_turn_effects() {
+    if (battle_end_turn_field_effects()) return true;
+    if (battle_handicap_end_turn_effects()) return true;
+    if (battle_end_turn_battler_effects()) return true;
+    return false;
+}
+
+void battle_end_turn_handle_battle_continues_wrapper() {
+    if (!battler_marked_for_controller_execution) {
+        battle_end_turn_handle_battle_continues();
+        BATTLE_STATE2->end_of_turn_handicap_effects_cnt = 0;
+    }
+}

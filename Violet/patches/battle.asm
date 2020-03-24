@@ -520,3 +520,28 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	beq 0x08024f48
 	b 0x0802504a
 	.pool
+
+
+.org 0x080162D0
+    ldr r2, =battle_hook_before_attack | 1
+    bx r2
+    .pool
+
+
+// Move end battle script command x49
+.org 0x08023b7a
+        // The original command would have incremented the bsc offset by 3, instead we go to state 18
+        mov r0, #18
+        strb r0, [r1, #0x14]
+        b 0x08023b82
+
+.org 0x08013b70
+	ldr r0, =battle_end_turn_effects | 1
+	bl _blxr0
+	cmp r0, #0
+	beq 0x08013b88
+	b 0x08013ca4
+	.pool
+
+.org 0x0824ff94
+	.word battle_end_turn_handle_battle_continues_wrapper | 1

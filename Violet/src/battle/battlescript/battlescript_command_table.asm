@@ -256,4 +256,5 @@ battle_script_cmds:
 	.word bsc_cmd_callasm
 	.word bsc_cmd_wait_battle_animation
 	.word bsc_cmd_trainerslideout
+	.word bsc_cmd_before_attack
 

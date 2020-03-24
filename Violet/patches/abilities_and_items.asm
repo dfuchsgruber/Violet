@@ -1,41 +1,27 @@
 
 //abilities and items
 .org 0x0801A378
-	ldr r0, =hook_turn_end | 1
+	ldr r0, =hook_battle_abilities_turn_end | 1
 	bx r0
 	.pool
 
 .org 0x0801A0C4
-        ldr r0, =ability_management_battle_enter | 1
+        ldr r0, =hook_battle_abilities_battle_enter | 1
         bx r0
         .pool
-
 
 .org 0x0801A584
-        ldr r0, =hook_attack_negating_abilities | 1
+        ldr r0, =hook_battle_abilities_attack_negating | 1
         bx r0
         .pool
 
-//.org 0x0801a83c
-//        ldr r0, =hook_battle_abilities_attack_done | 1
-//        bx r0
-//        .pool
-
-// Move end battle script command x49
-.org 0x08023b7a
-        // The original command would have incremented the bsc offset by 3, instead we go to state 18
-        mov r0, #18
-        strb r0, [r1, #0x14]
-        b 0x08023b82
-
-
 .org 0x0801E800
-        ldr r0, =hook_attack_type | 1
+        ldr r0, =hook_battle_abilities_attack_type | 1
         bx r0
         .pool
 
 .org 0x0801F5AC
-        ldr r0, =hook_sturdy | 1
+        ldr r0, =hook_battle_abilities_sturdy | 1
         bx r0
         .pool
 
@@ -99,13 +85,8 @@ bhiddenabdone:
     .pool
 
 
-.org 0x080162D0
-    ldr r2, =hook_attack_init | 1
-    bx r2
-    .pool
-
 .org 0x0801E2B8
-    ldr r0, =hook_pp_reduce | 1
+    ldr r0, =hook_battle_abilities_pp_reduce | 1
     bx r0
     .pool
 

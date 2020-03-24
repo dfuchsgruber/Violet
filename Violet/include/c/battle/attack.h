@@ -68,6 +68,7 @@ extern u8 battle_animation_delay;
 extern u8 battle_animation_user; 
 extern u8 battle_animation_target;
 extern u16 battle_animation_arguments[8];
+extern u16 battle_animation_move_power;
 
 /**
  * Loads the palette for an oam for a battle animation.

@@ -9,6 +9,11 @@
 #include "debug.h"
 #include "abilities.h"
 
+extern u8 bsc_eschat[];
+extern u8 bsc_hack[];
+extern u8 bsc_harvest[];
+extern u8 bsc_hagelalarm[];
+extern u8 bsc_tollwut[];
 
 bool abilities_battle_enter(u8 ability, u8 index) {
     dprintf("Battle enter for ability %d, index %d\n", ability, index);

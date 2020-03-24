@@ -45,7 +45,8 @@ battle_animations:
     .word battle_animation_terrifying_atmosphere_introduction
     .word battle_animation_terrifying_atmosphere
     .word battle_animation_arena_encourage_introduction
-    .word battle_animation_arena_encourage_introduction
+    .word attack_animation_encore
+    .word attack_animation_magnitude
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815

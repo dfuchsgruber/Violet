@@ -1,4 +1,5 @@
 .include "battlescript.s"
+.include "constants/battle_communication.s"
 
 .global attack_effects
 
@@ -237,11 +238,11 @@
 
 
 bsc_attack_effect_xd5:
-    setbyte bsc_effect_to_apply 0x58
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x58
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_xd6:
-    setbyte bsc_effect_to_apply 0x59
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x59
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_xd7:
@@ -253,7 +254,7 @@ bsc_attack_effect_xd7:
     attackanimation
     waitanimation
     missmessage
-    cmd5c 0x0
+    hitanimation BANK_TARGET
     waitstate
     graphicalhpupdate 0x0
     datahpupdate 0x0
@@ -261,9 +262,9 @@ bsc_attack_effect_xd7:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte bsc_effect_to_apply 0xE6
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xE6
     seteffectwithchancetarget
-    setbyte bsc_effect_to_apply 0x3
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x0
     setbyte 0x2023FD8 0x0
@@ -271,9 +272,9 @@ bsc_attack_effect_xd7:
     end
 
 bsc_attack_effect_xd8:
-    setbyte bsc_effect_to_apply 0x57
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x57
     seteffectwithchancetarget
-    setbyte bsc_effect_to_apply 0x5A
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x5A
     seteffectwithchancetarget
     goto bsc_attack_effect_hit
 
@@ -286,7 +287,7 @@ bsc_attack_effect_xd9:
     attackanimation
     waitanimation
     missmessage
-    cmd5c 0x0
+    hitanimation BANK_TARGET
     waitstate
     graphicalhpupdate 0x0
     datahpupdate 0x0
@@ -294,14 +295,14 @@ bsc_attack_effect_xd9:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte bsc_effect_to_apply 0xE6
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xE6
     seteffectwithchancetarget
-    setbyte bsc_effect_to_apply 0x3
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
     seteffectwithchancetarget
     goto bsc_faint_pokemon
 
 bsc_attack_effect_xda:
-    setbyte bsc_effect_to_apply 0x4
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x4
     goto bsc_effect_and_flinch
 
 bsc_effect_and_flinch:
@@ -313,7 +314,7 @@ bsc_effect_and_flinch:
     attackanimation
     waitanimation
     missmessage
-    cmd5c 0x0
+    hitanimation BANK_TARGET
     waitstate
     graphicalhpupdate 0x0
     datahpupdate 0x0
@@ -322,16 +323,16 @@ bsc_effect_and_flinch:
     resultmessage
     waitmessage 0x40
     seteffectwithchancetarget
-    setbyte bsc_effect_to_apply 0x8
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x8
     seteffectwithchancetarget
     goto bsc_faint_pokemon
 
 bsc_attack_effect_xdb:
-    setbyte bsc_effect_to_apply 0x5
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x5
     goto bsc_effect_and_flinch
 
 bsc_attack_effect_xdc:
-    setbyte bsc_effect_to_apply 0x3
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
     goto bsc_effect_and_flinch
 
 bsc_attack_effect_xdd:
@@ -343,7 +344,7 @@ bsc_attack_effect_xdd:
     attackanimation
     waitanimation
     missmessage
-    cmd5c 0x0
+    hitanimation BANK_TARGET
     waitstate
     graphicalhpupdate 0x0
     datahpupdate 0x0
@@ -370,7 +371,7 @@ bsc_attack_effect_xde:
     attackanimation
     waitanimation
     missmessage
-    cmd5c 0x0
+    hitanimation BANK_TARGET
     waitstate
     graphicalhpupdate 0x0
     datahpupdate 0x0
@@ -378,20 +379,20 @@ bsc_attack_effect_xde:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte bsc_effect_to_apply 0xD7
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xD7
     seteffectwithchancetarget
-    setbyte bsc_effect_to_apply 0xDA
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xDA
     seteffectwithchancetarget
     goto bsc_faint_pokemon
 
 bsc_attack_effect_xdf:
-    setbyte bsc_effect_to_apply 0x45
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x45
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_xe0:
     jumpifhalfword 0x1 0x2023D4A 0x39 bsc_attack_effect_xe0_cont
-    jumpifspecialstatusflag 0x0 0x40000 0x1 bsc_attack_effect_xe0_cont
-    orword 0x2023DD0 0x40000
+    jumpifstatus3 0x0 0x40000 0x1 bsc_attack_effect_xe0_cont
+    orword bsc_status_flags 0x40000
     setbyte 0x2023FD2 0x2
 bsc_attack_effect_xe0_cont:
     attackcanceler
@@ -402,7 +403,7 @@ bsc_attack_effect_xe0_cont:
     attackanimation
     waitanimation
     missmessage
-    cmd5c 0x0
+    hitanimation BANK_TARGET
     waitstate
     graphicalhpupdate 0x0
     datahpupdate 0x0
@@ -410,9 +411,9 @@ bsc_attack_effect_xe0_cont:
     waitmessage 0x40
     resultmessage
     waitmessage 0x40
-    setbyte bsc_effect_to_apply 0x4F
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x4F
     seteffectwithchancetarget
-    setbyte bsc_effect_to_apply 0x50
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x50
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x8000000
     setbyte 0x2023FD8 0x0
@@ -451,7 +452,7 @@ bsc_attack_effect_xe1_cont2:
     goto bsc_miss_pp_reduce
 
 bsc_attack_effect_xe2:
-    setbyte bsc_effect_to_apply 0x51
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x51
     goto bsc_attack_effect_hit
 
 bsc_attack_effect_glyph_match:

@@ -150,8 +150,10 @@ typedef struct {
     u32 saved_battle_flags;
     u8 handicap_introduced;
     u8 switch_in_handicap_effects_cnt;
+    u8 end_of_turn_handicap_effects_cnt;
     u32 status_custom[4];
     u8 attack_done_substate; // A substate that is used to trigger additional events for ending an attack with bsc cmd 0x49
+    u8 before_attack_state;
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
@@ -411,5 +413,46 @@ void battle_events_before_first_turn();
  * @return if any handicap effect was applicable
  **/
 bool battle_handicap_switch_in_effects(u8 battler_idx);
+
+/**
+ * Executes effects due to handicaps before an attack starts.
+ * @return if any effect, i.e. battlescript, was triggered
+ **/
+bool battle_handicap_before_attack_events();
+
+/**
+ * Executes new handicap effects after an attack was done.
+ * @param if any handicap effect, i.e. battlescript, was triggered.
+ **/
+bool battle_handicap_attack_done();
+
+/**
+ * Executes new item effects after an attack was done.
+ * @param if any item effect, i.e. battlescript, was triggered.
+ **/
+bool battle_items_attack_done_new();
+
+/**
+ * Executes handicap effects that trigger at the end of the turn.
+ * @return if any new handicap effect, i.e. battlescript was triggered.
+ **/
+bool battle_handicap_end_turn_effects();
+
+/**
+ * Executes field effects that trigger at the end of the turn (weather, light-screen, etc.)
+ * @return if any new field effect, i.e. battlescript was triggered.
+ **/
+bool battle_end_turn_field_effects();
+
+/**
+ * Executes effects per battler at the end of the turn (wrap, ingrain, curse, etc.)
+ * @return if any new effect, i.e. battlescript was triggered.
+ **/
+bool battle_end_turn_battler_effects();
+
+/**
+ * Function that handles the end of a turn when the battle continues, i.e. has not ended.
+ **/
+void battle_end_turn_handle_battle_continues();
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

@@ -21,6 +21,18 @@
 #include "item/item.h"
 #include "constants/item_hold_effects.h"
 
+
+extern u8 bsc_recoil[];
+extern u8 bsc_tollwut[];
+extern u8 bsc_tollwut_attack_boost[];
+extern u8 bsc_hagelalarm[];
+extern u8 bsc_lernfaehig[];
+extern u8 bsc_hochmut[];
+extern u8 bsc_lebensraeuber[];
+extern u8 bsc_curator[];
+extern u8 bsc_extradorn[];
+extern u8 bsc_fluffy[];
+
 static u16 curator_relevant_attacks[] = {
     ATTACK_GENESUNG, ATTACK_TAGEDIEB, ATTACK_SYNTHESE, ATTACK_MONDSCHEIN, ATTACK_ERHOLUNG, ATTACK_WUNSCHTRAUM,
     ATTACK_WEICHEI, ATTACK_AROMAKUR, ATTACK_VITALGLOCKE, ATTACK_MILCHGETRAENK
@@ -121,6 +133,10 @@ bool battle_abilities_attack_done_defender_new() {
     	    battle_scripting.battler_idx = attacking_battler;
             battle_scripting.animation_user = attacking_battler;
             battle_scripting.animation_targets = attacking_battler;
+            battle_animation_user = attacking_battler;
+            battle_animation_target = attacking_battler;
+            battle_scripting.animation_arguments[0] = 0xF;
+            battle_scripting.animation_arguments[1] = 0;
             effect_battler = attacking_battler;
             battlescript_callstack_push_next_command();
             bsc_offset = bsc_fluffy;
@@ -130,109 +146,4 @@ bool battle_abilities_attack_done_defender_new() {
     return false;
 }
 
-bool battle_items_attack_done_new() {
-    battler *attacker = battlers + attacking_battler;
-    bsc_last_used_item = attacker->item;
-    switch(item_get_hold_effect(attacker->item)) {
-        case HOLD_EFFECT_LIFE_ORB: {
-            if (attacker->current_hp &&
-            !(attack_result & (ATTACK_FAILED | ATTACK_MISSED |
-            ATTACK_NO_EFFECT)) && attacks[active_attack].base_power &&
-            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED){
-                damage_to_apply = MAX(1, attacker->max_hp / item_get_hold_effect_parameter(attacker->item));
-                battle_scripting.battler_idx = attacking_battler;
-                battle_scripting.animation_user = attacking_battler;
-                battle_scripting.animation_targets = attacking_battler;
-                battlescript_callstack_push_next_command();
-                bsc_offset = bsc_life_orb;
-                return true;
-            }
-            break;
-        }
-    }
-    return false;
-}
 
-bool battle_handicap_attack_done() {
-    battler *attacker = battlers + attacking_battler;
-    // Apply handicap rules, step by step, the current state is fmem.gp_value
-    if (BATTLE_STATE2->switch_in_handicap_effects_cnt == BATTLE_HANDICAP_ARENA_ENCOURAGEMENT && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_ARENA_ENCOURAGEMENT]) &&
-            !(attack_result & (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
-            attacks[active_attack].base_power &&
-            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED
-            && attacker->stat_changes[1] < 12 && 
-            (attacker->type1 == TYPE_KAMPF || attacker->type2 == TYPE_KAMPF) &&
-            attacks[active_attack].type == TYPE_KAMPF) {
-            attacker->stat_changes[1]++; // attack boost
-            battle_scripting.battler_idx = attacking_battler;
-            battle_scripting.animation_user = attacking_battler;
-            battle_scripting.animation_targets = attacking_battler;
-            effect_battler = attacking_battler;
-            battlescript_callstack_push_next_command();
-            bsc_offset = bsc_hochmut;
-            return true;
-    }
-    return false;
-}
-
-void bsc_cmd_x49_attack_done_new() {
-    if (battle_scripting.attack_done_state <= 17) {
-        bsc_cmd_x49_attack_done();
-    }
-    switch (battle_scripting.attack_done_state) {
-        case 0 ... 17: return; // The original function has not terminated 
-        case 18: { // We enter this case when the original function whould have terminated
-            //dprintf("Initialize new attack done effects.\n");
-            BATTLE_STATE2->attack_done_substate = 0;
-            BATTLE_STATE2->switch_in_handicap_effects_cnt = 0;
-            battle_scripting.attack_done_state++;
-            break;
-        }
-        case 19: {
-            // Yeah, this executes all new attack_done effects after all the other, but who cares tbh
-            bool effect = false;
-            while (!effect) {
-                //dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
-                switch(BATTLE_STATE2->attack_done_substate) {
-                    case 0: {
-                        if (battle_abilities_attack_done_attacker_new()) {
-                            effect = true;
-                        }
-                        BATTLE_STATE2->attack_done_substate++;
-                        break;
-                    }
-                    case 1: {
-                        if (battle_abilities_attack_done_defender_new()) {
-                            effect = true;
-                        }
-                        BATTLE_STATE2->attack_done_substate++;
-                        break;
-                    }
-                    case 2: {
-                        if (battle_items_attack_done_new()) {
-                            effect = true;
-                        }
-                        BATTLE_STATE2->attack_done_substate++;
-                        break;
-                    }
-                    case 3: {
-                    }
-                    case 4: {
-                        if (BATTLE_STATE2->switch_in_handicap_effects_cnt < 32) {
-                            if (battle_handicap_attack_done())
-                                effect = true;
-                            BATTLE_STATE2->switch_in_handicap_effects_cnt++; // Next step -> Next Check next handycap
-                        } else {
-                            BATTLE_STATE2->attack_done_substate++;
-                        }
-                        break;
-                    }
-                    default: { // Termination
-                        bsc_offset += 3;
-                        return;
-                    }
-                }
-            }
-        }
-    }
-}

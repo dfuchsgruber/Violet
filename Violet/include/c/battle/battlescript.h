@@ -125,6 +125,12 @@ void battlescript_callstack_push_next_command();
 void battlescript_init_and_interrupt_battle(u8 *bsc);
 
 /**
+ * Initializes a battlescript. The current battle callback is pushed.
+ * @param script the script to run. Scripts should be ended using end2.
+ **/
+void battlescript_init_and_push_current_callback(u8 *script);
+
+/**
  * Battle script command 0x6 applies the damage modifiers
  */
 void battlescript_cmd_x06_apply_damage_modifiers();

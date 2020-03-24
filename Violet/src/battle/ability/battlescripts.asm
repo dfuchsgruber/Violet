@@ -29,6 +29,11 @@
 .global bsc_eschat
 .global bsc_gegenwind
 .global bsc_gegenwind_end3
+.global bsc_flinch_aura
+.global bsc_flinch_raura
+.global bsc_flinch_baura
+.global bsc_flinch_gaura
+
 
 bsc_wandlungskunst:
 printstring 0x184
@@ -244,4 +249,36 @@ gegenwind_failed:
     printstring 0xce
     waitmessage 0x40
     goto bsc_gegenwind_loop_increment
+
+bsc_flinch_aura:
+    attackstring
+    ppreduce
+    pause 0x20
+    printstring 0x18F
+    waitmessage 0x40
+    goto 0x81DABDE
+
+bsc_flinch_raura:
+    attackstring
+    ppreduce
+    pause 0x20
+    printstring 0x190
+    waitmessage 0x40
+    goto 0x81DABDE
+
+bsc_flinch_baura:
+    attackstring
+    ppreduce
+    pause 0x20
+    printstring 0x191
+    waitmessage 0x40
+    goto 0x81DABDE
+
+bsc_flinch_gaura:
+    attackstring
+    ppreduce
+    pause 0x20
+    printstring 0x192
+    waitmessage 0x40
+    goto 0x81DABDE
 

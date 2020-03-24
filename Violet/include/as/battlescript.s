@@ -88,19 +88,19 @@
 .byte 4
 .endm
 
-.macro cmd5
+.macro damagecalc
 .byte 5
 .endm
 
-.macro cmd6
+.macro typecalc
 .byte 6
 .endm
 
-.macro cmd7
+.macro adjustnormaldamage
 .byte 7
 .endm
 
-.macro cmd8
+.macro adjustnormaldamage2
 .byte 8
 .endm
 
@@ -158,6 +158,8 @@
 .byte 0x14
 .word \printfromtable2_table
 .endm
+
+.equ MOVE_EFFECT_AFFECTS_USER, 0x40
 
 .macro seteffectwithchancetarget
 .byte 0x15
@@ -232,10 +234,10 @@
 .word \jumpifstat_address
 .endm
 
-.macro jumpifspecialstatusflag jumpifspecialstatusflag_bank jumpifspecialstatusflag_word_to_and jumpifspecialstatusflag_statut jumpifspecialstatusflag_address
+.macro jumpifstatus3 jumpifspecialstatusflag_bank status3 jumpifspecialstatusflag_statut jumpifspecialstatusflag_address
 .byte 0x21
 .byte \jumpifspecialstatusflag_bank
-.word \jumpifspecialstatusflag_word_to_and
+.word \status3
 .byte \jumpifspecialstatusflag_statut
 .word \jumpifspecialstatusflag_address
 .endm
@@ -257,7 +259,7 @@
 .word \gotoandsomething_address
 .endm
 
-.macro cmd25
+.macro movevaluescleanup
 .byte 0x25
 .endm
 
@@ -570,7 +572,7 @@
 .word \cmd5b_address
 .endm
 
-.macro cmd5c cmd5c_bank
+.macro hitanimation cmd5c_bank
 .byte 0x5C
 .byte \cmd5c_bank
 .endm
@@ -1306,6 +1308,11 @@
 .byte 0xFB
 .byte \bank
 .endm
+
+.macro beforeattack
+.byte 0xFC
+.endm
+
 
 @// Meta macros
 .macro setstatchange stat:req amount:req decrease:req

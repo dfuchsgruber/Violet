@@ -226,7 +226,7 @@ attack_anims:
 		.word 0x81cd527 @//attack_bodyguard
 		.word 0x81cd569 @//attack_leidteiler
 		.word 0x81d1a23 @//attack_laeuterfeuer
-		.word 0x81cf6e0 @//attack_intensitaet
+		.word attack_animation_magnitude @//attack_intensitaet
 		.word 0x81d4222 @//attack_wuchtschlag
 		.word 0x81d37ea @//attack_vielender
 		.word 0x81d1c3c @//attack_feuerodem
@@ -423,9 +423,9 @@ attack_anims:
 attack_script_tsunami:
         loadcallback 0x80ab479 0x2 0x1
         .hword 0x0
-        loadcallback 0x80b95a1 0x5 0x3
+        loadcallback battle_animation_earthquake 0x5 0x3
         .hword 0x5, 0xa, 0x32
-        loadcallback 0x80b95a1 0x5 0x3
+        loadcallback battle_animation_earthquake 0x5 0x3
         .hword 0x4, 0xa, 0x32
         playsound_with_pan 0xe3 0x0
         pause 0xa

@@ -2,6 +2,8 @@
 .include "constants/battle/battle_flags.s"
 .include "constants/battle/battle_positions.s"
 .include "battle/battle_animations.s"
+.include "constants/battle_communication.s"
+.include "constants/battle_statuses.s"
 
 .global battlescript_trainer_battle_won
 battlescript_trainer_battle_won:
@@ -96,3 +98,71 @@ battlescript_handicap_arena_encouragement:
     printstring 0x1aa
     playanimation BANK_TARGET BATTLE_ANIM_ARENA_ENCOURAGEMENT_INTRODUCTION 0
     end3
+
+.global battlescript_handicap_arena_encouragement_apply
+
+battlescript_handicap_arena_encouragement_apply:
+    printstring 0x1ab
+    playanimation BANK_USER BATTLE_ANIM_ARENA_ENCOURAGEMENT 0
+    printstring 0x1ac
+    waitmessage 40
+    setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0xF | MOVE_EFFECT_AFFECTS_USER
+    seteffectprimary
+    end3
+
+.global battlescript_handicap_groudon_magnitude
+
+battlescript_handicap_groudon_magnitude:
+    printstring 0x1ad
+    playanimation BANK_USER BATTLE_ANIM_GROUDON_MAGNITUDE 0
+    waitmessage 20
+    end3
+
+
+.global battlescript_handicap_groudon_magnitude_hit
+
+battlescript_handicap_groudon_magnitude_hit:
+    printstring 0x1ae
+    waitmessage 0x40
+    // Basically what happens is the magintude attack, skipping some things
+    selectnexttarget
+    callasm battle_handicap_groudon_calculate_damage
+    printstring 0x9a
+    waitmessage 0x40
+groudon_magnitude_loop:
+    movevaluescleanup
+    jumpifstatus3 BANK_TARGET STATUS3_UNDERGROUND 1 groudon_magnitude_not_underground
+    orword bsc_status_flags 0x20000
+    setbyte battle_scripting + 0xE, 2 // Multiplier is 2
+    goto groudon_magnitude_hit
+groudon_magnitude_not_underground:
+    bicword bsc_status_flags 0x20000
+    setbyte battle_scripting + 0xE, 1 // Multiplier is 2
+groudon_magnitude_hit:
+    // No accuracy or critcalc
+    damagecalc
+    typecalc
+    adjustnormaldamage
+    playanimation BANK_USER BATTLE_ANIM_GROUDON_MAGNITUDE 0 // Instead of attack animation
+    missmessage
+    hitanimation BANK_TARGET
+    waitstate
+    graphicalhpupdate BANK_TARGET
+    datahpupdate BANK_TARGET
+    critmessage
+    waitmessage 0x40
+    resultmessage
+    waitmessage 0x40
+    printstring 0xe3 // ""
+    waitmessage 1
+    faintpokemon BANK_TARGET, 0, 0
+    // No move done effects
+    jumpwhiletargetvalid groudon_magnitude_loop
+    end2
+
+.global battlescript_before_attack
+
+battlescript_before_attack: // Triggers effects before attack
+    beforeattack
+    return
+

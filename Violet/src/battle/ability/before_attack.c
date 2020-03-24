@@ -25,12 +25,12 @@
 #include "constants/battle/battle_handicaps.h"
 #include "constants/battle/battle_statuses.h"
 #include "constants/pokemon_types.h"
+#include "abilities.h"
 
 extern u8 bsc_wandlungskunst[];
 extern u8 bsc_stance_change_to_attack[];
 extern u8 bsc_stance_change_to_defense[];
 extern u8 bsc_ap_sparer[];
-extern u8 battlescript_handicap_floating_rocks_apply[];
 
 void stance_change_change_species(u8 target, u16 species){
     void *pokemon = (battler_is_opponent(target) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(target);
@@ -51,22 +51,10 @@ void stance_change_change_species(u8 target, u16 species){
     battlers[target].ability = pokemon_get_ability(pokemon);
     battlers[target].type1 = basestats[species].type1;
     battlers[target].type1 = basestats[species].type2;
-
-
 }
 
-void attack_init_trigger_abilities(){
-    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
-    if (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS] && 
-        (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)
-        && battler_is_opponent(attacking_battler) != battler_is_opponent(defending_battler) && attacks[active_attack].base_power != 0) {
-            battle_animation_user = defending_battler;
-            battle_animation_target = defending_battler;
-            battle_scripting.battler_idx = defending_battler;
-            battlescript_callstack_push_next_command();
-            BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_FLOATING_ROCKS;
-            bsc_offset = battlescript_handicap_floating_rocks_apply;
-    }
+bool battle_abilities_before_attack(){
+    
     battler *attacker = &battlers[attacking_battler];
     switch(attacker->ability){
         case WANDLUNGSK:{
@@ -78,8 +66,8 @@ void attack_init_trigger_abilities(){
                 BSC_BUFFER_TYPE(bsc_string_buffer0, attack_type);
                 battlescript_callstack_push_next_command();
                 bsc_offset = bsc_wandlungskunst;
+                return true;
             }
-                
             break;
         }
         case TAKTIKWECHS:{
@@ -94,6 +82,7 @@ void attack_init_trigger_abilities(){
                 battle_scripting.battler_idx = attacking_battler;
                 // dprintf("User index %d, target index %d\n", attacking_battler, attacking_battler);
                 bsc_offset = bsc_stance_change_to_attack;
+                return true;
                 
             } else if(attacker->species == POKEMON_DURENGARDA &&
                     active_attack == ATTACK_KOENIGSSCHILD){
@@ -106,22 +95,22 @@ void attack_init_trigger_abilities(){
                 dprintf("User index %d, target index %d\n", attacking_battler, 
                         attacking_battler);
                 bsc_offset = bsc_stance_change_to_defense;
+                return true;
             }
             break;
-            
         }
         case AP_SPARER:{
             if(rnd16() & 3){
                 attacker->custom_status |= CUSTOM_STATUS_AP_SPARER;
+                battle_animation_user = attacking_battler;
+                battle_animation_target = attacking_battler;
+                battle_scripting.battler_idx = attacking_battler;
                 battlescript_callstack_push_next_command();
                 bsc_offset = bsc_ap_sparer;
-                // dprintf("AP sparer triggered for attacker %d\n", 
-                //        attacking_battler);
-                // bsc_string_buffer0[0] = 0xFD;
-                // bsc_string_buffer0[1] = 3;
-                // bsc_string_buffer0[3] = 0xFF;
+                return true;
             }
             break;
         }
     }
+    return false;
 }

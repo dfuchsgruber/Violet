@@ -9,12 +9,19 @@
 #include "constants/pokemon_types.h"
 #include "battle/battlescript.h"
 #include "debug.h"
+#include "battle/attack.h"
+#include "attack.h"
+#include "constants/attack_results.h"
+#include "prng.h"
+#include "battle/battle_string.h"
+#include "constants/attacks.h"
 
 extern u8 battlescript_handicap_extreme_heat[];
 extern u8 battlescript_handicap_floating_rocks[];
 extern u8 battlescript_handicap_grassy_field[];
 extern u8 battlescript_handicap_terrifying_atmosphere[];
 extern u8 battlescript_handicap_arena_encouragement[];
+extern u8 battlescript_handicap_groudon_magnitude[];
 
 static u8 *battlescripts_handicap[32] = {
     [BATTLE_HANDICAP_FLOATING_ROCKS] = battlescript_handicap_floating_rocks,
@@ -22,6 +29,7 @@ static u8 *battlescripts_handicap[32] = {
     [BATTLE_HANDICAP_ARENA_ENCOURAGEMENT] = battlescript_handicap_arena_encouragement,
     [BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE] = battlescript_handicap_terrifying_atmosphere,
     [BATTLE_HANDICAP_EXTREME_HEAT] = battlescript_handicap_extreme_heat,
+    [BATTLE_HANDICAP_GROUDON_BATTLE] = battlescript_handicap_groudon_magnitude,
 };
 
 void battle_introduce_handicap() {
@@ -32,6 +40,10 @@ void battle_introduce_handicap() {
             bool script_initialized = false;
             if (fmem.battle_handicaps & int_bitmasks[BATTLE_STATE2->handicap_introduced]) {
                 if (battlescripts_handicap[BATTLE_STATE2->handicap_introduced]) {
+                    if (BATTLE_STATE2->handicap_introduced == BATTLE_HANDICAP_GROUDON_BATTLE) {
+                        battle_scripting.battler_idx = 1; // Opponent's battler 1
+                        battle_animation_move_power = 100;
+                    }
                     battlescript_init_and_interrupt_battle(battlescripts_handicap[BATTLE_STATE2->handicap_introduced]);
                     script_initialized = true;
                 }
@@ -94,6 +106,102 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
                 }
             }
         }
+    }
+    return false;
+}
+
+extern u8 battlescript_handicap_floating_rocks_apply[];
+
+bool battle_handicap_before_attack_events() {
+    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
+    if (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS] && 
+        (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)
+        && battler_is_opponent(attacking_battler) != battler_is_opponent(defending_battler) && attacks[active_attack].base_power != 0) {
+            battle_animation_user = defending_battler;
+            battle_animation_target = defending_battler;
+            battle_scripting.battler_idx = defending_battler;
+            battlescript_callstack_push_next_command();
+            BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_FLOATING_ROCKS;
+            bsc_offset = battlescript_handicap_floating_rocks_apply;
+            return true;
+    }
+    return false;
+}
+
+extern u8 battlescript_handicap_arena_encouragement_apply[];
+
+bool battle_handicap_attack_done() {
+    battler *attacker = battlers + attacking_battler;
+    // Apply handicap rules, step by step, the current state is fmem.gp_value
+    if (BATTLE_STATE2->switch_in_handicap_effects_cnt == BATTLE_HANDICAP_ARENA_ENCOURAGEMENT && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_ARENA_ENCOURAGEMENT]) &&
+            !(attack_result & (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) && 
+            attacks[active_attack].base_power &&
+            !battler_statuses[attacking_battler].hurt_in_confusion && DAMAGE_CAUSED
+            && attacker->stat_changes[1] < 12 && 
+            (attacker->type1 == TYPE_KAMPF || attacker->type2 == TYPE_KAMPF) &&
+            attacks[active_attack].type == TYPE_KAMPF){
+            //dprintf("Handicap attack done with attacker %d\n", attacking_battler);
+            attacker->stat_changes[1]++; // attack boost
+            battle_scripting.battler_idx = attacking_battler;
+            battle_scripting.animation_user = attacking_battler;
+            battle_scripting.animation_targets = attacking_battler;
+            battle_animation_user = attacking_battler;
+            battle_animation_target = attacking_battler;
+            effect_battler = attacking_battler;
+            battlescript_callstack_push_next_command();
+            bsc_offset = battlescript_handicap_arena_encouragement_apply;
+            return true;
+    }
+    return false;
+}
+
+static u8 magnitude_p[] = {
+    5, 10, 20, 30, 20, 10, 5
+};
+
+static u16 magnitude_power[] = {
+    10, 30, 50, 70, 90, 110, 150
+};
+
+void battle_handicap_groudon_calculate_damage() {
+    active_attack = ATTACK_INTENSITAET;
+    int r = rnd16() % 100;
+    int magnitude = -1;
+    for (u8 i = 0; i < ARRAY_COUNT(magnitude_p); i++) {
+        if (r < magnitude_p[i]) {
+            magnitude = i;
+            break;
+        }
+    }
+    // The lower Groudon's health, the higher the magnitude
+    int increase = (battlers[1].max_hp - battlers[1].current_hp) * 10 / battlers[1].max_hp;
+    magnitude = MIN(10, 4 + magnitude + increase);
+    battle_dynamic_base_power = magnitude_power[magnitude - 4];
+    // Find a target
+    for (defending_battler = 0; defending_battler < battler_cnt; defending_battler++) {
+        if (defending_battler != attacking_battler && !(battlers_absent & int_bitmasks[defending_battler])) break;
+    }
+    BSC_BUFFER_NUMBER(bsc_string_buffer0, 2, magnitude);
+}
+
+extern u8 battlescript_handicap_groudon_magnitude_hit[];
+
+bool battle_handicap_end_turn_effects() {
+    bool effect = false;
+    while (BATTLE_STATE2->end_of_turn_handicap_effects_cnt < 32) {
+        if (fmem.battle_handicaps & int_bitmasks[BATTLE_STATE2->end_of_turn_handicap_effects_cnt]) {
+            switch (BATTLE_STATE2->end_of_turn_handicap_effects_cnt) {
+                case BATTLE_HANDICAP_GROUDON_BATTLE: 
+                    attacking_battler = 1; // Groudon
+                    battle_scripting.battler_idx = attacking_battler;
+                    battlescript_init_and_push_current_callback(battlescript_handicap_groudon_magnitude_hit);
+                    effect = true;
+                    break;
+            }
+        }
+        BATTLE_STATE2->end_of_turn_handicap_effects_cnt++;
+        if (effect)
+            return true;
     }
     return false;
 }

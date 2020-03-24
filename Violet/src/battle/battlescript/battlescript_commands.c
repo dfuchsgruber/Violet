@@ -283,3 +283,89 @@ bool bsc_cmd_switch_in_effects_check_ability_or_handicap() {
     if (battle_handicap_switch_in_effects(active_battler)) return true;
     return false;
 }
+
+void bsc_cmd_before_attack() {
+    while(true) {
+        dprintf("Executing before attack events in state %d\n", BATTLE_STATE2->before_attack_state);
+        switch (BATTLE_STATE2->before_attack_state) {
+            case 0: { // Abilities
+                if (battle_abilities_before_attack())
+                    return;
+                BATTLE_STATE2->before_attack_state++;
+                break;
+            }
+            case 1: {
+                if (battle_handicap_before_attack_events())
+                    return;
+                BATTLE_STATE2->before_attack_state++;
+                break;
+            }
+            default:
+                bsc_offset++;
+                return;
+        }
+    }
+
+}
+
+void bsc_cmd_x49_attack_done_new() {
+    if (battle_scripting.attack_done_state <= 17) {
+        bsc_cmd_x49_attack_done();
+    }
+    switch (battle_scripting.attack_done_state) {
+        case 0 ... 17: return; // The original function has not terminated 
+        case 18: { // We enter this case when the original function whould have terminated
+            //dprintf("Initialize new attack done effects.\n");
+            BATTLE_STATE2->attack_done_substate = 0;
+            BATTLE_STATE2->switch_in_handicap_effects_cnt = 0;
+            battle_scripting.attack_done_state++;
+            break;
+        }
+        case 19: {
+            // Yeah, this executes all new attack_done effects after all the other, but who cares tbh
+            bool effect = false;
+            while (!effect) {
+                //dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
+                switch(BATTLE_STATE2->attack_done_substate) {
+                    case 0: {
+                        if (battle_abilities_attack_done_attacker_new()) {
+                            effect = true;
+                        }
+                        BATTLE_STATE2->attack_done_substate++;
+                        break;
+                    }
+                    case 1: {
+                        if (battle_abilities_attack_done_defender_new()) {
+                            effect = true;
+                        }
+                        BATTLE_STATE2->attack_done_substate++;
+                        break;
+                    }
+                    case 2: {
+                        if (battle_items_attack_done_new()) {
+                            effect = true;
+                        }
+                        BATTLE_STATE2->attack_done_substate++;
+                        break;
+                    }
+                    case 3: {
+                    }
+                    case 4: {
+                        if (BATTLE_STATE2->switch_in_handicap_effects_cnt < 32) {
+                            if (battle_handicap_attack_done())
+                                effect = true;
+                            BATTLE_STATE2->switch_in_handicap_effects_cnt++; // Next step -> Next Check next handycap
+                        } else {
+                            BATTLE_STATE2->attack_done_substate++;
+                        }
+                        break;
+                    }
+                    default: { // Termination
+                        bsc_offset += 3;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+}

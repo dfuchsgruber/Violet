@@ -420,6 +420,8 @@ bsc_strings:
 .word str_battle_x1AA
 .word str_battle_x1AB
 .word str_battle_x1AC
+.word str_battle_x1AD
+.word str_battle_x1AE
 
 @ // Define the strings
 
@@ -2868,6 +2870,12 @@ bsc_strings:
 	str_battle_x1AC:
 		.string "BSC_ATK_NAME_WITH_PREFIX kommt\nin Fahrt!"
 
+	str_battle_x1AD:
+		.string "Das Erwachen von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nlässt den Boden beben!"
+
+	str_battle_x1AE:
+		.string "Die Wut von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nlöst ein Erdbeben aus!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -4915,6 +4923,12 @@ bsc_strings:
 
 	str_battle_x1AC:
 		.string "BSC_ATK_NAME_WITH_PREFIX gets going!"
+
+	str_battle_x1AD:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's awakening\nmakes the ground shake!"
+
+	str_battle_x1AE:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's\nwrath causes an earthquake!"
 
 
 .endif
