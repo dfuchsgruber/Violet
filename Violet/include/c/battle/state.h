@@ -455,4 +455,9 @@ bool battle_end_turn_battler_effects();
  **/
 void battle_end_turn_handle_battle_continues();
 
+/**
+ * Clears all battle handicaps.
+ **/
+void battle_handicap_clear();
+
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

@@ -8,6 +8,8 @@
 .global ow_script_route_9_trainer_4
 .global ow_script_route_9_trainer_5
 .global ow_script_route_9_trainer_6
+.global ow_script_route_9_trainer_7
+.global ow_script_route_9_trainer_8
 
 ow_script_route_9_trainer_0:
     trainerbattlestd 0 0xcA 0 str_trainer0_challange str_trainer0_defeat
@@ -50,6 +52,16 @@ ow_script_route_9_trainer_6:
     loadpointer 0 str_trainer6_defeat
     callstd MSG_FACE
     end
+ow_script_route_9_trainer_7:
+    trainerbattlestd 0 0x174 0 str_trainer7_challange str_trainer7_defeat
+    loadpointer 0 str_trainer7_defeat
+    callstd MSG_FACE
+    end
+ow_script_route_9_trainer_8:
+    trainerbattlestd 0 0x175 0 str_trainer8_challange str_trainer8_defeat
+    loadpointer 0 str_trainer8_defeat
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_trainer0_challange:
@@ -80,6 +92,14 @@ str_trainer6_challange:
     .autostring 34 2 "Im Herzen bin ich ein Wasser-Pokémon.\pIch würde alles dafür geben, einmal den Grund der Meere zu sehen!"
 str_trainer6_defeat:
     .autostring 34 2 "Denkst du nicht, dass der Meeresgrund faszinierend ist?"
+str_trainer7_challange:
+    .autostring 34 2 "Ich bin die beste Schwimmerin der Welt.\pDu glaubst mir nicht?\nWarte ab!"
+str_trainer7_defeat:
+    .autostring 34 2 "Du bist kein Schwimmer!\pAlso kannst du mir den Titel der besten Schwimmerin auch nicht streitig machen!"
+str_trainer8_challange:
+    .autostring 34 2 "Warum ich Schwimmer geworden bin?\pSicherlich nicht wegen der schönen Schwimmerinen!"
+str_trainer8_defeat:
+    .autostring 34 2 "UffDOTS\nWelche Schwimmerin findet den einen Verlierer gut?"
 .elseif LANG_EN
 str_trainer0_challange:
     .autostring 34 2 "After all this swimming I don't have to worry about my summer body."

@@ -22,9 +22,9 @@
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": "FLAG_SPIRITKERN",
+					"flag": "FLAG_GEISTERSCHLUESSEL",
 					"value": {
-						"item": "ITEM_SPIRITKERN",
+						"item": "ITEM_GEISTERSCHLUESSEL",
 						"species": 0
 					}
 				}

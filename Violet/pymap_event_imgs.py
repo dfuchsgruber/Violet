@@ -42,7 +42,7 @@ picture_idx_to_png = {
     75 : 'asset/gfx/overworld/npcs/narcissa/gfx_ow_narcissa.png.display',
     78 : 'asset/gfx/overworld/npcs/revolutionary/gfx_ow_revolutionary_0.png',
     79 : 'asset/gfx/overworld/npcs/faun/gfx_ow_faun_0.png',
-    80 : 'asset/gfx/overworld/npcs/lester/gfx_ow_lester_0.png',
+    80 : 'asset/gfx/overworld/npcs/lester/gfx_ow_lester.png',
     81 : 'asset/gfx/overworld/npcs/mia/gfx_ow_mia_0.png',
     82 : 'asset/gfx/overworld/npcs/manus/gfx_ow_manus_0.png',
     83 : 'asset/gfx/overworld/npcs/teah/gfx_ow_teah.png.display',
@@ -88,6 +88,11 @@ picture_idx_to_png = {
     175 : "asset/gfx/overworld/npcs/drampa/gfx_ow_drampa.png.display"
 }
 
+# Images that hold an entire spritesheet
+spritesheet_images = {
+    80 : (16, 32)
+}
+
 class Event_to_image:
     """ Class to lazily load the images. """
     def __init__(self):
@@ -107,6 +112,9 @@ class Event_to_image:
             # Use the hard assignment table in order to provide images
             image, palette = agbimage.from_file(picture_idx_to_png[picture_idx])
             image = image.to_pil_image(palette.to_pil_palette(), transparent=0)
+            if picture_idx in spritesheet_images:
+                w, h = spritesheet_images[picture_idx]
+                image = image.crop((0, 0, w, h))
         else:
             # Use the rom to retrieve sprites
             if picture_idx in range(152):

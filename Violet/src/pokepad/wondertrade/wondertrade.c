@@ -183,6 +183,9 @@ u16 wondertrade_select_pokemon() {
                 table++;
             break;
     }
+    //dprintf("Table %d, mew flag %d\n", table, checkflag(WONDERTRADE_MEW_RECEIVED));
+    //if (table > 1 && !checkflag(WONDERTRADE_MEW_RECEIVED))
+    //   dprintf("Mew possible.\n");
     if (table > 1 && r < 2 && !checkflag(WONDERTRADE_MEW_RECEIVED)) {
         setflag(WONDERTRADE_MEW_RECEIVED);
         return POKEMON_MEW;

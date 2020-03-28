@@ -227,6 +227,8 @@ special_table equ 0x0815FCC0
                 .word overworld_target_npc_set_to_var | 1
 .org (special_table + 105 * 4)
                 .word battle_handicap_set | 1
+.org (special_table + 106 * 4)
+                .word battle_handicap_clear | 1
 
 // Free up until <= 118
 

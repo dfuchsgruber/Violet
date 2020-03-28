@@ -3,6 +3,8 @@
 .include "flags.s"
 .include "movements.s"
 .include "overworld_script.s"
+.include "specials.s"
+.include "battle/battle_handicaps.s"
 
 
 .global ow_script_movs_0x8310cc
@@ -52,6 +54,9 @@ waitmovement 0x0
 loadpointer 0 str_mia
 setvar 0x8000 1
 special 0xE
+special SPECIAL_BATTLE_HANDICAP_CLEAR
+setvar 0x8004 BATTLE_HANDICAP_GRASSY_FIELD
+special SPECIAL_BATTLE_HANDICAP_SET
 trainerbattlecont 0x1 0xb7 0x0 str_0x83114c str_0x8311a8 ow_script_0x83108d
 
 

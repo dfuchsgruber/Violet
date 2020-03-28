@@ -143,7 +143,9 @@ groudon_magnitude_hit:
     damagecalc
     typecalc
     adjustnormaldamage
-    playanimation BANK_USER BATTLE_ANIM_GROUDON_MAGNITUDE 0 // Instead of attack animation
+    // playanimation BANK_USER BATTLE_ANIM_GROUDON_MAGNITUDE 0 // Instead of attack animation
+    attackanimation
+    waitanimation
     missmessage
     hitanimation BANK_TARGET
     waitstate

@@ -87,6 +87,12 @@
         "battle_handicaps.h": "c",
         "battle_statuses.h": "c",
         "weather.h": "c",
-        "communication.h": "c"
+        "communication.h": "c",
+        "version.h": "c",
+        "trainer_builds.h": "c",
+        "battle_communication.h": "c",
+        "rtc.h": "c",
+        "io.h": "c",
+        "siirtc.h": "c"
     }
 }

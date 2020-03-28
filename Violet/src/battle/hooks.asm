@@ -82,7 +82,7 @@ battle_intro_draw_pokemon_or_trainer_sprite_hook:
 
 .thumb_func
 battle_intro_trainer_pokemon_send_out_hook:
-    bl battle_has_two_opponents
+    bl battle_controller_double_battle_should_send_out_only_one_pokemon
     cmp r0, #0
     beq ret_08038d30
 ret_08038cfe:
@@ -100,7 +100,7 @@ ret_08038d30:
 
 .thumb_func
 battle_intro_trainer_pokemon_send_out_hook2:
-    bl battle_has_two_opponents
+    bl battle_controller_double_battle_should_send_out_only_one_pokemon
     cmp r0, #0
     ldr r1, =0x08035da8 | 1
     bx r1
@@ -113,7 +113,7 @@ battle_intro_trainer_pokemon_send_out_hook2:
 
 .thumb_func
 battle_intro_trainer_pokemon_send_out_hook3:
-    bl battle_has_two_opponents
+    bl battle_controller_double_battle_should_send_out_only_one_pokemon
     cmp r0, #0
     beq ret_08013702
 ret_080136e8:
@@ -187,3 +187,4 @@ battle_hook_before_attack:
     pop {r4-r7}
     pop {r0}
     bx r0
+

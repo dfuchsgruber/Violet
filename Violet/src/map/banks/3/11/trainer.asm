@@ -9,6 +9,7 @@
 .global ow_script_route_10_trainer_5
 .global ow_script_route_10_trainer_6
 .global ow_script_route_10_trainer_7
+.global ow_script_route_10_trainer_8
 
 ow_script_route_10_trainer_0:
     trainerbattlestd 0 0xd8 0 str_trainer0_challange str_trainer0_defeat
@@ -58,6 +59,13 @@ ow_script_route_10_trainer_7:
     callstd MSG_FACE
     end
 
+ow_script_route_10_trainer_8:
+    trainerbattledouble 4 0x178 0 str_trainer8_challange str_trainer8_defeat str_trainer8_cant_battle
+    loadpointer 0 str_trainer8_defeat
+    callstd MSG_FACE
+    end
+
+
 .ifdef LANG_GER
 str_trainer0_challange:
     .autostring 34 2 "Sowohl im Wasser, aber auch an Land bin ich ein absoluter Star!"
@@ -91,6 +99,14 @@ str_trainer7_challange:
     .autostring 34 2 "Manus aus Meriana City trainiert oft tagelang auf einer abgelegenen Insel im Meer.\pWenn ich das auch mache, werde ich eines Tages so stark wie er!"
 str_trainer7_defeat:
     .autostring 34 2 "Meine Niederlage spornt mich nur noch mehr an!"
+str_trainer8_challange:
+    .autostring 34 2 "Gibt es eine Kraft, die stärker ist, als die Liebe?"
+str_trainer8_defeat:
+    .autostring 34 2 "Wenn man verliebt ist, kann man gar nicht wirklich verlieren!"
+str_trainer8_cant_battle:
+    .autostring 34 2 "Du willst kämpfen?\pAlleine hast du praktisch schon verlorenDOTS"
+
+
 .elseif LANG_EN
 str_trainer0_challange:
     .autostring 34 2 "In the water and but also on land I am an absolute star."

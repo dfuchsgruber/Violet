@@ -167,9 +167,6 @@ void battle_controller_partner_handle_choose_pokemon() {
         target_idx = battle_state->battler_to_switch_into[active_battler];
     }
     battle_state->battler_to_switch_into[active_battler] = target_idx;
-    // The game assumes that the player selected from the menu, so the idx to emit has to be in "party menu" indices
-    //dprintf("Partner chose party idx %d (reordered %d)\n", target_idx, player_party_get_reordered_idx(target_idx));
-    //target_idx = player_party_get_reordered_idx(target_idx);
     dprintf("Partner chose party idx %d\n", target_idx);
     battle_controller_opponent_emit_chosen_pokemon(1, target_idx, NULL);
     battle_controller_player_or_partner_execution_finished();

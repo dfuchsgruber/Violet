@@ -47,7 +47,7 @@ void bsc_cmd_x7D_setrain() {
 		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
 	} else {
 		battle_weather = BATTLE_WEATHER_RAIN;
-		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 4;
+		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
 		u16 item = battlers[attacking_battler].item;
 		u8 hold_effect = item_get_hold_effect(item);
 		u8 hold_effect_parameter = item_get_hold_effect_parameter(item);
@@ -69,7 +69,7 @@ void bsc_cmd_x95_setsandstorm() {
 		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
 	} else {
 		battle_weather = BATTLE_WEATHER_SANDSTORM;
-		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 4;
+		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 3;
 		u16 item = battlers[attacking_battler].item;
 		u8 hold_effect = item_get_hold_effect(item);
 		u8 hold_effect_parameter = item_get_hold_effect_parameter(item);
@@ -91,7 +91,7 @@ void bsc_cmd_xC8_sethail() {
 		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
 	} else {
 		battle_weather = BATTLE_WEATHER_HAIL;
-		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 4;
+		battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 5;
 		u16 item = battlers[attacking_battler].item;
 		u8 hold_effect = item_get_hold_effect(item);
 		u8 hold_effect_parameter = item_get_hold_effect_parameter(item);

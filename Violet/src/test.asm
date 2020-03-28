@@ -34,6 +34,15 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+
+setflag TRANS_DISABLE
+clearflag TRANS_PALETTE_FETCH
+special SPECIAL_SELECT_HALF_PARTY
+waitstate
+clearflag TRANS_DISABLE
+compare LASTRESULT 0
+gotoif EQUAL cont
+goto ow_script_0x971404
 //setvar 0x8004 BATTLE_HANDICAP_EXTREME_HEAT
 //setvar 0x8004 BATTLE_HANDICAP_FLOATING_ROCKS
 //setvar 0x8004 BATTLE_HANDICAP_GRASSY_FIELD

@@ -62,3 +62,8 @@
     ldr r1, =rnd_main_set_seed | 1
     bx r1
     .pool
+
+.org 0x08000418
+    ldr r0, =hook_main_initialize | 1
+    bx r0
+    .pool

@@ -95,7 +95,7 @@
 			"triggers": [],
 			"signposts": []
 		},
-		"levelscripts": "lscr_0x16a4fe",
+		"levelscripts": "levelscripts_aktania_gym",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

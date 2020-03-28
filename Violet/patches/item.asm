@@ -112,6 +112,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_wolkenherzTiles
     .word gfx_item_wolkenherzPal
 
+.org item_resource + 0x10F * 8
+    .word gfx_item_geisterschluesselTiles
+    .word gfx_item_geisterschluesselPal
+
 .org item_resource + 0x114 * 8
     .word gfx_item_spiritkernTiles
     .word gfx_item_spiritkernPal

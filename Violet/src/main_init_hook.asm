@@ -1,17 +1,11 @@
 .align 2
 .thumb
 
-.global rom_boot_clear_map_generated.asm
+.global hook_main_initialize
 
 
 .thumb_func
-rom_boot_clear_map_generated:
-
-ldr r0, =0x0203CEC4
-ldrb r1, [r0]
-lsr r1, #2
-lsl r1, #2
-strb r1, [r0]	@no map was generated so far
+hook_main_initialize:
 
 bl fmem_init
 

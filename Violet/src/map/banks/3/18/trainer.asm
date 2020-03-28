@@ -8,6 +8,8 @@
 .global ow_script_route_7_trainer_12
 .global ow_script_route_7_trainer_13
 .global ow_script_route_7_trainer_14
+.global ow_script_route_7_trainer_26
+.global ow_script_route_7_trainer_27
 
 ow_script_route_7_trainer_9:
     trainerbattlestd 0x0 0x148 0 str_before_0 str_after_0
@@ -39,6 +41,16 @@ ow_script_route_7_trainer_14:
     loadpointer 0x0 str_after_5
     callstd MSG_FACE
     end
+ow_script_route_7_trainer_26:
+    trainerbattlestd 0x0 0x17a 0 str_before_6 str_after_6
+    loadpointer 0x0 str_after_6
+    callstd MSG_FACE
+    end
+ow_script_route_7_trainer_27:
+    trainerbattlestd 0x0 0x17b 0 str_before_7 str_after_7
+    loadpointer 0x0 str_after_7
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_before_0:
@@ -65,6 +77,14 @@ str_before_5:
     .autostring 34 2 "Ob das Angeln nicht langweilig wird?\pLassen wir doch unsere Pokémon entscheiden!"
 str_after_5:
     .autostring 34 2 "Das ging ins AugeDOTS"
+str_before_6:
+    .autostring 34 2 "Es gibt keinen Augenblick, in dem meine Schönheit mehr strahlt, als im Kampf!"
+str_after_6:
+    .autostring 34 2 "Wiebitte?\nDu hast dich von meinem makellosen Äußeren nicht ablenken lassen?"
+str_before_7:
+    .autostring 34 2 "Hier ist alles so sandigDOTS\pIch bin wirklich schlecht gelaunt!"
+str_after_7:
+    .autostring 34 2 "Jetzt ist ist meine ganze Kleidung sandigDOTS"
 
 .elseif LANG_EN
 str_before_0:

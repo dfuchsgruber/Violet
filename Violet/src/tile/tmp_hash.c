@@ -123,14 +123,11 @@ void dungeon_flag_set(int dungeon_id) {
 
 
 void tmp_hash_update_seed() {
-    //cpuset(0, &(cmem.flag_extension[0x40]), CPUSET_WORD | CPUSET_FILL | 8);
-    
-    rtc_timestamp current_time;
+    timestamp_t current_time;
     time_read(&current_time);
-
-    int day_difference = (current_time.year * 365 + current_time.month * 30 + current_time.day) -
-            (cmem.a_gen_time.year * 365 + cmem.a_gen_time.month * 30 + cmem.a_gen_time.day);
-    if (day_difference >= 1) {
+    u64 seconds_current = timestamp_to_seconds(&current_time);
+    u64 seconds_update = (u64) (timestamp_to_seconds(&cmem.a_gen_time) + 24 * 60 * 60);
+    if (seconds_current >= seconds_update) {
         tmp_hash_new_seed();
         tmp_flags_reset();
     }

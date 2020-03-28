@@ -4347,13 +4347,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_KELLEROEFFNER
-		LANGDEP(PSTRING("Kelleröffner"), PSTRING("Basement Key")),
+		//ITEM_GEISTERSCHLUESSEL
+		LANGDEP(PSTRING("Geist-Schl."), PSTRING("Ghost Key")),
 		0x10f, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10f_item_kelleroeffner,
+		str_item_desc_x10f_item_geisterschluessel,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket

@@ -112,7 +112,7 @@ announce_expedition:
 	hidesprite 2
 	checksound
 	setflag ROUTE_5_VIOLET_GRUNTS
-	setflag MERIANA_CITY_ELISE_VISIBLE
+	clearflag MERIANA_CITY_ELISE_VISIBLE // makes her disappear
 	releaseall
 	end
 	

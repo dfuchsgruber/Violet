@@ -4620,10 +4620,10 @@ trainer trainers[TRAINER_CNT] = {
       ITEM_NONE,
       ITEM_NONE
     },
-    false, //Dual battle
+    BATTLE_WITH_HANDICAP | BATTLE_DOUBLE,
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE | TRAINER_AI_CONSIDER_PERECNTUAL_HP,
     0x0, // field_1E
-    1, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -4839,7 +4839,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    4, // Pokemon Count
+    3, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23
@@ -4899,7 +4899,7 @@ trainer trainers[TRAINER_CNT] = {
 		0x74,// sprite
 		LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
 		{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_NONE, ITEM_NONE},
-		false,//Dual battle
+		BATTLE_WITH_HANDICAP,
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
 		0x0,// field_1E
 		3,// Pokemon Count
@@ -4917,7 +4917,7 @@ trainer trainers[TRAINER_CNT] = {
 		0x75,// sprite
 		LANGDEP(PSTRING("Mia"), PSTRING("Mia")),
 		{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER},
-		false,//Dual battle
+		BATTLE_WITH_HANDICAP,
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
 		0x0,// field_1E
 		4,// Pokemon Count
@@ -4935,7 +4935,7 @@ trainer trainers[TRAINER_CNT] = {
 		0x76,// sprite
 		LANGDEP(PSTRING("Manus"), PSTRING("Manus")),
 		{ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_HYPERTRANK, ITEM_HYPERTRANK},
-		false,//Dual battle
+		BATTLE_WITH_HANDICAP,
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
 		0x0,// field_1E
 		4,// Pokemon Count
@@ -5095,7 +5095,8 @@ trainer trainers[TRAINER_CNT] = {
 				TRAINER_AI_SUPER_EFFECTIVE,
 				.items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_SUPERTRANK, ITEM_NONE},
 				.party = (trainer_pokemon*) trainer_party_xc4_inferior_gymleader,
-				.uses_custom_items = true, .uses_custom_moves = true
+				.uses_custom_items = true, .uses_custom_moves = true,
+        .battle_state = BATTLE_WITH_HANDICAP,
 		},
 		[0xc5] = {
 		    .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 16,
@@ -5963,7 +5964,8 @@ trainer trainers[TRAINER_CNT] = {
 				TRAINER_AI_SUPER_EFFECTIVE,
 				.items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_NONE},
 				.party = (trainer_pokemon*) trainer_party_ceometria_gym_leader,
-				.uses_custom_items = true, .uses_custom_moves = true
+				.uses_custom_items = true, .uses_custom_moves = true,
+        .battle_state = BATTLE_WITH_HANDICAP,
 		},
     [0x13F] = {
         .trainerclass = TRAINERCLASS_HITZKOPF, .sprite = 18,
@@ -6330,13 +6332,103 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x16f_route_6_couple,
         .battle_state = BATTLE_DOUBLE,
     },
-    [0x170] = { // For Testing
-        .trainerclass = TRAINERCLASS_KAEMPFERIN, .sprite = 48,
-        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Jutta"),
-            PSTRING("Jutta")), .pokemon_cnt = 3,
+		[0x170] = {
+				.trainerclass = TRAINERCLASS_ARENALEITER, .sprite = 121,
+				.encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Igva"),
+						PSTRING("Igva")), .pokemon_cnt = 3,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+				.items = {ITEM_HYPERTRANK, ITEM_HYPERTRANK, ITEM_SUPERTRANK, ITEM_NONE},
+				.party = (trainer_pokemon*) trainer_party_x170_volcano_igva_ally,
+				.uses_custom_items = true, .uses_custom_moves = true
+		},
+    [0x171] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 78,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Rüpel H."),
+            PSTRING("Grunt H.")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = (trainer_pokemon*) trainer_party_x10e_route_12_trainer_18,
-        .battle_state = BATTLE_WITH_HANDICAP,
+        .party = (trainer_pokemon*) trainer_party_x171_volcano_grunt_0,
+    },
+    [0x172] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 109,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Rüpel B."),
+            PSTRING("Grunt B.")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x172_volcano_grunt_1,
+    },
+    [0x173] = {
+        .trainerclass = TRAINERCLASS_TEAM_VIOLET, .sprite = 74,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Elite F."),
+            PSTRING("Elite F.")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x173_volcano_grunt_2,
+    },
+    [0x174] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMERIN, .sprite = 50,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Angela"),
+            PSTRING("Angela")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x174_route_9_swimmer_0
+    },
+    [0x175] = {
+        .trainerclass = TRAINERCLASS_SCHWIMMER, .sprite = 15,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Moby"),
+            PSTRING("Moby")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x175_route_9_swimmer_1,
+    },
+    [0x176] = {
+        .trainerclass = TRAINERCLASS_PSYCHO, .sprite = 21,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Albert"),
+            PSTRING("Albert")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x176_route_8_psycho_0
+    },
+    [0x177] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Max u. Mara"),
+            PSTRING("Max a. Mara")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x177_route_8_couple,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x178] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Leo u. Lisa"),
+            PSTRING("Leo a. Lisa")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x178_route_10_couple,
+        .battle_state = BATTLE_DOUBLE,
+    },
+    [0x179] = {
+        .trainerclass = TRAINERCLASS_ZWIL, .sprite = 127,
+        .encounter_and_gender = {0, 1}, .name = LANGDEP(PSTRING("Dany u. Daj"),
+            PSTRING("Dany a. Daj")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x179_route_7_twins,
+        .battle_state = BATTLE_DOUBLE,
+    },
+		[0x17a] = {
+				.trainerclass = TRAINERCLASS_SCHOENHEIT, .sprite = 0xC,
+				.encounter_and_gender = {1, 1}, .name = LANGDEP(PSTRING("Janaina"),
+						PSTRING("Janaina")), .pokemon_cnt = 2,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+				.party = (trainer_pokemon*) trainer_party_x17a_route_7_beatuy
+		},
+		[0x17b] = {
+				.trainerclass = TRAINERCLASS_PICKNICKER3, .sprite = 0x56,
+				.encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Engelbert"),
+						PSTRING("Engelbert")), .pokemon_cnt = 2,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+				.party = (trainer_pokemon*) trainer_party_x17b_route_7_picknicker
+		},
+    [0x17c] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Udo u. Irma"),
+            PSTRING("Udo a. Irma")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x17c_route_12_couple,
+        .battle_state = BATTLE_DOUBLE,
     },
 }; 
 

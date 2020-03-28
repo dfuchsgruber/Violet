@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_35_ceometria_gym_entrance",
 		"events": {
-			"person_cnt": 1,
+			"person_cnt": 2,
 			"warp_cnt": 2,
 			"trigger_cnt": 1,
 			"signpost_cnt": 0,
@@ -13,7 +13,7 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "2",
-					"y": "8",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"behaviour_range": 0,
@@ -22,6 +22,27 @@
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_ceometria_gym_entrance_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "91",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "5",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_ceometria_gym_referee",
 					"flag": 0,
 					"value": {
 						"item": 0,
@@ -62,7 +83,7 @@
 			],
 			"signposts": []
 		},
-		"levelscripts": "lscr_ceometria_gym_entrance",
+		"levelscripts": "levelscripts_ceometria_gym",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

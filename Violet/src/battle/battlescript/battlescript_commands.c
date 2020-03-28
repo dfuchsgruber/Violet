@@ -285,19 +285,24 @@ bool bsc_cmd_switch_in_effects_check_ability_or_handicap() {
 }
 
 void bsc_cmd_before_attack() {
-    while(true) {
+    bool effect = false;
+    while(!effect) {
         dprintf("Executing before attack events in state %d\n", BATTLE_STATE2->before_attack_state);
         switch (BATTLE_STATE2->before_attack_state) {
             case 0: { // Abilities
                 if (battle_abilities_before_attack())
-                    return;
+                    effect = true;
                 BATTLE_STATE2->before_attack_state++;
+                if (effect)
+                    return;
                 break;
             }
             case 1: {
                 if (battle_handicap_before_attack_events())
-                    return;
+                    effect = true;
                 BATTLE_STATE2->before_attack_state++;
+                if (effect)
+                    return;
                 break;
             }
             default:

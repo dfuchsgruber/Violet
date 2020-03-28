@@ -7,7 +7,9 @@
 .include "overworld_script.s"
 .include "story_states.s"
 .include "mugshot.s"
-
+.include "trainer_backsprites.s"
+.include "ordinals.s"
+.include "battle/battle_handicaps.s"
 
 .global ow_script_movs_0x96aa3b
 ow_script_movs_0x96aa3b:
@@ -186,42 +188,64 @@ ow_script_movs_0x96abad:
 
 .global ow_script_0x96acf2
 ow_script_0x96acf2:
-loadpointer 0x0 str_0x96eab0
-show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
-applymovement 0x2 ow_script_movs_0x96ace1
-waitmovement 0x0
-applymovement 0xff ow_script_movs_0x96acdb
-applymovement 0x1 ow_script_movs_0x96acde
-waitmovement 0x0
-loadpointer 0x0 str_0x96abb4
-show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-applymovement 0xff ow_script_movs_0x96aba6
-applymovement 0x1 ow_script_movs_0x96abad
-waitmovement 0x0
-settrainerflag 0xb0
-setvar LASTTALKED 0x3
-trainerbattlecont 0x1 0xb0 0x0 str_0x96ab03 str_0x96ab6d ow_script_0x96ae42
+    loadpointer 0x0 str_0x96eab0
+    show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
+    applymovement 0x2 ow_script_movs_0x96ace1
+    waitmovement 0x0
+    applymovement 0xff ow_script_movs_0x96acdb
+    applymovement 0x1 ow_script_movs_0x96acde
+    waitmovement 0x0
+    loadpointer 0x0 str_0x96abb4
+    show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
+    setvar SONG_OVERRIDE MUS_MISTRAL
+select:
+    setflag TRANS_DISABLE
+    clearflag TRANS_PALETTE_FETCH
+    loadpointer 0 str_select
+    callstd MSG_KEEPOPEN
+    special SPECIAL_SELECT_HALF_PARTY
+    waitstate
+    clearflag TRANS_DISABLE
+    compare LASTRESULT 0
+    gotoif EQUAL have_to_select
+    setvar SONG_OVERRIDE 0
+    applymovement 0xff ow_script_movs_0x96aba6
+    applymovement 0x1 ow_script_movs_0x96abad
+    waitmovement 0x0
+    settrainerflag 0xb0
+    setvar LASTTALKED 0x3
+    setvar VAR_ALLY 0x170
+    special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+    trainerbattleallytwotrainers 0xb0 0x171 0x170 3 TRAINER_BACKSPRITE_IGVA 1 str_0x96ab03 str_0x96ab6d str_after0 ow_script_0x96ae42
 
+have_to_select:
+    loadpointer 0 str_have_to_select
+    show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
+    goto select
 
 .global ow_script_0x96ae42
 ow_script_0x96ae42:
-applymovement 0xff ow_script_movs_0x96aba6
-applymovement 0x1 ow_script_movs_0x96abad
-waitmovement 0x0
-settrainerflag 0xb1
-setvar LASTTALKED 0x7
-trainerbattlecont 0x1 0xb1 0x0 str_0x96aa55 str_0x96aac6 ow_script_0x96eb83
+    applymovement 0xff ow_script_movs_0x96aba6
+    applymovement 0x1 ow_script_movs_0x96abad
+    waitmovement 0x0
+    settrainerflag 0xb1
+    setvar LASTTALKED 0x7
+    setvar VAR_ALLY 0x170
+    special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+    trainerbattleallytwotrainers 0xb1 0x172 0x170 7 TRAINER_BACKSPRITE_IGVA 0 str_0x96aa55 str_0x96aac6 str_after1 ow_script_0x96eb83
 
 
 .global ow_script_0x96eb83
 ow_script_0x96eb83:
-applymovement 0xff ow_script_movs_0x96aba6
-applymovement 0x1 ow_script_movs_0x96abad
-waitmovement 0x0
-settrainerflag 0xb2
-setvar LASTTALKED 0x5
-trainerbattlecont 0x1 0xb2 0x0 str_0x96a618 str_0x969f24 ow_script_0x969e71
-
+    applymovement 0xff ow_script_movs_0x96aba6
+    applymovement 0x1 ow_script_movs_0x96abad
+    waitmovement 0x0
+    settrainerflag 0xb2
+    setvar LASTTALKED 0x5
+    setvar VAR_ALLY 0x170
+    special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+    trainerbattleallytwotrainers 0xb2 0x173 0x170 5 TRAINER_BACKSPRITE_IGVA 0 str_0x96a618 str_0x969f24 str_after2 ow_script_0x969e71
+    //trainerbattlecont 0x1 0xb2 0x0 str_0x96a618 str_0x969f24 ow_script_0x969e71
 
 .global ow_script_movs_0x96ebaf
 ow_script_movs_0x96ebaf:
@@ -383,13 +407,17 @@ setvar LASTTALKED 0x2
 setvar BATTLE_SONG_OVERRIDE 0x16f
 goto ow_script_0x971404
 
-
 .global ow_script_0x971404
 ow_script_0x971404:
 special 0x114
 setvar SONG_OVERRIDE 0xffff
 draw_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
-trainerbattlecont 0x1 0xaa 0x0 str_0x96f0ee str_0x96f156 ow_script_0x96fbaa
+setvar VAR_ALLY 0x170
+special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
+special SPECIAL_BATTLE_HANDICAP_CLEAR
+setvar 0x8004 BATTLE_HANDICAP_GROUDON_BATTLE
+special SPECIAL_BATTLE_HANDICAP_SET
+trainerbattleally 0xaa 0x170 2 TRAINER_BACKSPRITE_IGVA 1 str_0x96f0ee str_0x96f156 ow_script_0x96fbaa
 
 
 .global ow_script_movs_0x96fba6
@@ -618,6 +646,12 @@ return
 
 
 .ifdef LANG_GER
+str_select:
+    .autostring 34 2 "Welche Pokémon möchtest du in den Kampf schicken?"
+
+str_have_to_select:
+    .autostring 34 2 "PLAYER!\nWir haben keine Zeit für solche Spielchen!\pWir müssen Mistral stoppen!"
+
 .global str_0x969e0b
 
 str_0x969e0b:
@@ -627,73 +661,78 @@ str_0x969e0b:
 .global str_0x96a758
 
 str_0x96a758:
-	.autostring 35 2 "Igva!\nMit dir hätte ich in tausend Jahren nicht gerechnet.\pBist du immernoch Mitglied bei diesen schwachsinningen Schwärmern von Revolutionären?\pEine Welt, in der Gerechtigkeit die oberste Maxime sein soll DOTS\pDOTS was für ein naiver Unfug DOTS"
+    .autostring 34 2 "Igva!\nMit dir hätte ich hier wirklich nicht gerechnet.\pBist du noch immer ein Mitglied bei den Revolutionären?\pDieser Bande von naiven Träumern beizutreten war reinste ZeitverschwendungDOTS"
 
 .global str_0x96a8cd
 
 str_0x96a8cd:
-	.autostring 35 2 "Unsere Bemühungen sind sicherlich kein Unfug!\pMit jemandem wie Albus an unserer Seite, wird es uns gelingen, die Welt zu einem besseren Ort zu machen.\pDu hast uns DOTS\nDOTS du hast mich im Stich gelassen, Mistral!\pUnd wofür?\nWas willst du mit diesen Verbrechern von Team Violet?\pIst dir bewusst, welche Ziele sie verfolgen?"
+    .autostring 34 2 "Und dann trittst du Team Violet bei?\pIst das etwa dein Verständnis von Gerechtigkeit?\pDie Revolution kämpft für eine freie und gerechte Welt.\pUnd was will Team Violet erreichen?\pIhr bringt der Welt nichts weiter als Leid und Chaos!"
 
         
 .global str_0x969d1d
 
 str_0x969d1d:
-	.autostring 35 2 "Ach Igva, ich vergesse immer wieder wie einfältig du doch bist!\pWeißt du nicht, dass meine eigenen Ziele für mich stets im Vordergrund stehen?\pTeam Violet bietet mir eine Möglichkeit, endlich die Macht der legendären Pokémon für mich nutzen zu können.\pDOTS DOTS DOTS\pSieh nur, Igva.\nDein neuer Begleiter ist eingetroffen!"
+    .autostring 34 2 "Ach Igva, ich vergesse immer wieder wie einfältig du doch bist.\pDu solltest mich gut genug kennen, um zu wissen, dass es mich nicht im Geringsten interessiert, welche Ziele Team Violet verfolgt.\pIch habe schon immer einzig in meinem Interesse gehandelt.\pUnd Team Violet bietet mir die Möglichkeit, eine Macht zu erlangen, die bisher kaum ein Mensch kontrollieren konnte.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pSieh nur Igva, hast du etwa einen neuen Begleiter?"
         
         
 .global str_0x969a22
 
 str_0x969a22:
-	.autostring 35 2 "Willkommen, PLAYER!\pIch habe dich erwartet!\pDass du hier mit meiner ehemaligen Partnerin eintriffst, hat mich aber überrascht.\pPass nur auf, das Mädchen wird schnell anhänglich.\pDu fragst dich sicherlich, warum ich meine gesamte Divison hierher gebracht habe, nicht?\pDu musst wissen, dass Team Violet hinter einem Artefakt namens Diserakt her ist.\pUrsprünglich sollte das Pokémon Celebi diesen Stein, in dem das Herz der Zeit schlägt, bewachen.\pAllerdings DOTS DOTS DOTS\pDOTS hat es diese Aufgabe in weiser Voraussicht weitaus stärkeren Wächtern anvertraut.\pDer Stein ist nun in drei Teile gespalten, und einer von ihnen befindet sich direkt hier, im Krater des Vulcanos."
+    .autostring 34 2 "Willkommen, PLAYER!\pIch hatte gehofft, dich hier anzutreffen.\pDu hast meine ehemalige Partnerin bei den Revolutionären wohl schon kennengelernt.\pSei bloß vorsichtig, PLAYER, denn das Mädchen wird schnell anhänglichDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDu fragst dich sicherlich, was mich an einen solchen Ort treibt, nicht?\pNun, wie du bestimmt schon weißt, verfolgt Team Violet das Ziel, die Macht des legendären Zeitsteins, des Diserakts zu erlangen.\pDafür müssen alle drei Fragmente dieses Steins zusamengeführt werden.\pUnd eines dieser Fragmente befindet sich direkt hier, im Krater des Volcanos."
 
-        
 .global str_0x96eab0
 
 str_0x96eab0:
-	.autostring 35 2 "Er ist wunderschön, nicht wahr?\pTeam Violet will die grenzenlose Energie, die der Stein liefern kann, verwenden, um eine vernichtende Waffe zu kreieren.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDoch wenn ich ehrlich sein soll DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pHabe ich daran kein Interesse.\pMich interessiert das Wesen, welches den Zeitstein bewacht!"
+    .autostring 34 2 "Ein atemberaubender Anblick, nicht wahr?\pMan kann die Energie, die vom Diserakt ausgeht, förmlich spüren.\pKein Wunder, warum Team Violet sich für den Zeitstein interessiertDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAber um ehrlich zu seinDOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pHabe ich es auf etwas anderes abgesehen.\pNämlich das Pokémon, das den Zeitstein bewacht!"
         
         
 .global str_0x96abb4
 
 str_0x96abb4:
-    .autostring 35 2 "PLAYER!\nWir dürfen das nicht geschehen lassen.\pDas Pokémon, das an diesem Ort schlummert DOTS\pEs ist eine grauenvolle Bestie.\pWenn Mistral sie erzürnt, befinden wir uns alle in höchster Gefahr!"
-        
-        
+    .autostring 34 2 "PLAYER!\nWir dürfen Mistral damit nicht durchkommen lassen.\pDas Wesen, das hier schlummert und den Zeitstein bewacht ist eine grauenvolle Bestie, die seit Urzeiten im Erdinneren schlummert.\pWenn Mistral sie erweckt, schweben wir alle in höchster Gefahr!\pWir müssen ihn gemeinsam aufhalten!"
+
 .global str_0x96ab03
 
 str_0x96ab03:
-    .autostring 35 2 "Mistral ist nicht aufzuhalten.\pDas Fragment des Zeitsteins wird uns zu den Herrschern der Welt\lerheben!"
+    .autostring 34 2 "Denkt ihr wirklich, dass ihr Mistral aufhalten könnt?\pWenn wir erst im Besitz des Zeitsteins sind, wird uns ganz Theto zu Füßen liegen!"
         
         
 .global str_0x96ab6d
 
 str_0x96ab6d:
-    .autostring 35 2 "Du kommst viel zu spät, um uns nun noch zu stoppen."
+    .autostring 34 2 "Ihr seid viel zu spät, um uns jetzt noch aufhalten zu können."
+
+str_after0:
+    .autostring 34 2 "Mistral wird unseren Plan umsetzten!"
         
         
 .global str_0x96aa55
 
 str_0x96aa55:
-    .autostring 35 2 "Mistral wird das vollenden, was Rin nicht gelungen ist.\pEr wird alle Teile des Diserakts vereinen und Team Violet wird aufsteigen!"
+    .autostring 34 2 "Mistral wird das gelingen, was Rin nicht geschafft hat!\pWir werden den Zeitstein in unsere Finger bekommen!"
         
         
 .global str_0x96aac6
 
 str_0x96aac6:
-    .autostring 35 2 "Stell dich ihm nicht in den Weg, Kindchen, wenn du an deinem Leben hängst."
+    .autostring 35 2 "Diese Niederlage ist völlig irrelevant für unseren PlanDOTS"
         
+str_after1:
+    .autostring 34 2 "Ihr solltet euch hier raushalten, wenn euch euer Leben lieb ist!"
         
 .global str_0x96a618
 
 str_0x96a618:
-	.autostring 35 2 "Bis hierher und nicht weiter!\pHier ist das Ende der Fahnenstange, du Rotznase!\pIch werde nicht erlauben, in Mistrals Pläne einzugreifen."
+	.autostring 35 2 "Bis hierher und nicht weiter, ihr Rotznasen.\pIch lasse euch nicht in Mistrals Pläne eingreifen!"
 
         
 .global str_0x969f24
 
 str_0x969f24:
-    .autostring 35 2 "Unmöglich!\nDu darfst Mistral nicht stoppen!"
-        
+    .autostring 35 2 "Unmöglich!\nIhr könnt Mistral nicht stoppen!"
+
+str_after2:
+    .autostring 34 2 "Selbst die Elite von Team Violet habt ihr besiegt?"
         
 .global str_0x96ae6e
 
@@ -704,37 +743,37 @@ str_0x96ae6e:
 .global str_0x96adf1
 
 str_0x96adf1:
-    .autostring 35 2 "Mistral, bitte!\pWenn ich dir je auch nur irgendetwas bedeutet habe, dann hör jetzt auf!\pEs ist noch nicht zu spät!\pMerkst du denn nicht, dass du von Machtsucht völlig zerfressen bist?"
+    .autostring 34 2 "Mistral, bitte!\pWenn dir unsere gemeinsame Zeit auch nur irgendetwas bedeutet hat, dann hör jetzt auf!\pEs ist noch nicht zu spät!\pErkennst du in deinem Wahn nicht, was du hier tust?"
         
         
 .global str_0x96ada6
 
 str_0x96ada6:
-    .autostring 35 2 "Du dummes Mädchen, halt endlich deinen Mund!\pDeine herzerwärmenden Ansprachen werden mich nicht von meinem Vorhaben abbringen."
+    .autostring 34 2 "Igva, sei endlich still!\pNichts was du sagst, kann mich jetzt noch von meinem Vorhaben abbringen!"
         
         
 .global str_0x96ad59
 
 str_0x96ad59:
-    .autostring 35 2 "Oh nein, der Wächter\nDOTS DOTS DOTS"
+    .autostring 35 2 "Oh nein, das Wächterpokémon\nDOTS DOTS DOTS"
         
         
 .global str_0x96a698
 
 str_0x96a698:
-    .autostring 35 2 "DOTS DOTS DOTS ist endlich aus seinem Schlaf erwacht!"
+    .autostring 35 2 "DOTS DOTS DOTS ist aus seinem Schlaf erwacht!"
         
         
 .global str_0x96ebfd
 
 str_0x96ebfd:
-    .autostring 35 2 "Das ist unser Ende!\pDas Monster wird jeden von uns vernichten DOTS"
+    .autostring 35 2 "Das ist unser Ende!\pEs wird jeden von uns erledigenDOTS"
         
         
 .global str_0x96b05d
 
 str_0x96b05d:
-	.autostring 35 2 "Komm her, Groudon!\pIch habe keine Angst vor dir!\pKomm zu mir, deinem neuen Gebieter!\pIch bin der Besitzer deiner Seele, des Magmeherzes!\pIch werde deine uralte Kraft erneut entfesseln!"
+    .autostring 34 2 "Komm zu mir, Groudon!\pIch fürchte mich nicht vor dir!\pDas Magmaherz macht mich zu deinem neuen Gebieter!\pIch werde deine uralte Kraft nach all den Jahren ein weiteres Mal entfesseln!"
         
 .global str_0x97138c
 
@@ -745,60 +784,60 @@ str_0x97138c:
 .global str_0x96f1be
 
 str_0x96f1be:
-	.autostring 35 2 "Dummes Mädchen!\nHast du es nicht begriffen?\pDuch das Magmaherz, das ich aus dem Museum von Orina City gestohlen habe, habe ich nun die Kontrolle über das legendäre Pokémon Groudon.\pUnd da es nun wieder mit seinem Herzen vereint ist, wird es sich in seine eigentliche Kaiserform erheben!\pHahaha!\nHahaha! Haha!\pIch bin unbesiegbar!\pIch werde alles und jeden verbrennen, der sich mir in den Weg stellt.\pDie Welt wird einen Terror erleben, wie es ihn bislang noch nie gegeben hat!\pHahaha!\nHahaha!\pAlso!\pPLAYER!\pEs ist nun endlich an der Zeit, dich herauszufordern!"
-        
+    .autostring 34 2 "Du bist wirklich schwer von Begriff, Igva!\pDas Magmaherz aus dem Museum von Orina City ermöglicht mir absolute Kontrolle über das antike Pokémon Groudon.\pUnd darüber hinaus erlangt es seine wahre Stärke als Herrscher über die Erde!\pIn seiner Kaiserform ist Groudon nicht zu stoppen!\pHaha!\nHahaha! Hahaha!\pIch bin unbesiegbar!"
+ 
 .global str_0x96f0ee
 
 str_0x96f0ee:
-    .autostring 35 2 "Betrachte es als Ehre, mein erstes Opfer zu werden.\pHahaha!\nHahaha!\pIch werde dich vernichten, PLAYER!\pSchreie! Schreie!\pBrenne!"
+    .autostring 34 2 "Denkt ihr wirklich, dass ihr eine Chance gegen Groudon habt?\pIch bewundere euren Heldenmut!\pAber alles, was er euch nun bringen wird, ist ein qualvolles Ende!\pIch werde jeden, der sich mir in den Weg stellt, vernichten!"
         
         
 .global str_0x96f156
 
 str_0x96f156:
-	.autostring 35 2 "DOTS Das ist vollkommen DOTS absurd!\pDu hast DOTS DOTS DOTS\pDu hast Groudon besiegt?\nIn seiner Kaiserform?"
+	.autostring 35 2 "DOTS Das ist vollkommen DOTS absurd!\pDu hast DOTS DOTS DOTS\pIhr habt Groudon besiegt?\nIn seiner Kaiserform?"
         
         
 .global str_0x9713b5
 
 str_0x9713b5:
-    .string "DOTS\nDOTS DOTS DOTS DOTS\pDas DOTS ist DOTS\nDOTS\pDOTS du hast Groudon besiegt?"
+    .string "DOTS\nDOTS DOTS DOTS DOTS\pDas DOTS ist DOTS\nDOTS\pDOTS ihr habt Groudon besiegt?"
         
         
 .global str_0x96fd16
 
 str_0x96fd16:
-    .autostring 35 2 "Wie kann das sein?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pGroudon entzieht sich meiner Kontrolle?"
+    .autostring 34 2 "Was?\nUnmöglich!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch verliere die Kontrolle über Groudon!"
         
         
 .global str_0x96fd4a
 
 str_0x96fd4a:
-    .autostring 35 2 "Unmöglich!\pEs wird alles in Schutt und Asche legen!\pWir müssen von hier weg!"
+    .autostring 34 2 "Es wird alles in Schutt und Asche legen!\pWir müssen sofort hier weg!"
         
         
 .global str_0x96fc90
 
 str_0x96fc90:
-    .autostring 35 2 "Wir werden es niemals rechtzeitig schaffen.\pDieser Ort wird unser Grab!\pWir werden lebendig verbrennen!"
+    .autostring 34 2 "Wir können es unmöglich rechtzeitig schaffen!\pDas hier istDOTS\nDOTSunser Untergang!"
         
         
 .global str_0x97300a
 
 str_0x97300a:
-    .autostring 35 2 "Ich verstehe nicht DOTS\pWieso DOTS DOTS DOTS\pIch darf noch nicht sterben!"
+    .autostring 35 2 "Ich verstehe nicht DOTS\pWieso DOTS DOTS DOTS\pIch kann nicht sterben!"
         
         
 .global str_0x972330
 
 str_0x972330:
-    .autostring 35 2 "Das ist das Ende!"
+    .autostring 35 2 "Das ist unser Ende!"
         
         
 .global str_0x972313
 
 str_0x972313:
-    .autostring 35 2 "Nein."
+    .autostring 35 2 "Ist das so?"
         
         
 .elseif LANG_EN

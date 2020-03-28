@@ -5,6 +5,8 @@
 .include "vars.s"
 .include "ordinals.s"
 .include "overworld_script.s"
+.include "specials.s"
+.include "battle/battle_handicaps.s"
 
 
 .global ow_script_movs_0x93cd29
@@ -99,6 +101,9 @@ waitmovement 0x0
 loadpointer 0 str_manus
 setvar 0x8000 0
 special 0xE
+special SPECIAL_BATTLE_HANDICAP_CLEAR
+setvar 0x8004 BATTLE_HANDICAP_ARENA_ENCOURAGEMENT
+special SPECIAL_BATTLE_HANDICAP_SET
 trainerbattlecont 0x1 0xb8 0x0 str_0x948a7f str_0x948b5a ow_script_0x94b868
 
 

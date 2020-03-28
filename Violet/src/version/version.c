@@ -36,8 +36,11 @@ void version_transfer(){
     while(*var_access(SGM_VER) != VERSION_LATEST){
         //transfer savegames to a higher version until we reach the latest
         switch(*var_access(SGM_VER)){
+            case VERSION_ALPHA_3_0:
+                // Latest
+                break;
         	case VERSION_ALPHA_2_2:
-				// Latest
+				version_upgrade_alpha_2_2_to_3_0();
 				break;
             case VERSION_ALPHA_2_1:
                 version_upgrade_alpha_2_1_to_2_2();
@@ -118,7 +121,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
     worldmap_flag_set(WM_ORINA_CITY);
     worldmap_flag_set(WM_AKTANIA);
 	// Pick time system that works
-	if (rtc_test()) {
+	if (!RtcInErrorousState()) {
 		*var_access(TIME_TYPE) = TIME_TYPE_RTC;
 	} else {
 		*var_access(TIME_TYPE) = TIME_TYPE_INGAME_CLOCK;
@@ -161,6 +164,11 @@ void version_upgrade_alpha_2_1_to_2_2() {
     if (checkflag(ASCHHAIN_LAVADOS)) {
         roamer_initialize(ROAMER_LAVADOS);
     }
+}
+
+void version_upgrade_alpha_2_2_to_3_0() {
+    *var_access(SGM_VER) = VERSION_ALPHA_3_0;
+    *var_access(VAR_GYM_TIPPS) = 3;
 }
 
 u16 version_is_latest(){

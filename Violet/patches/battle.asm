@@ -545,3 +545,31 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 
 .org 0x0824ff94
 	.word battle_end_turn_handle_battle_continues_wrapper | 1
+
+/** 
+.org 0x08012642
+	ldr r0, =hook_battle_initialize_absent_battlers | 1
+	bx r0
+	.pool
+
+.org 0x08075188
+	ldr r1, =battler_sprite_visible | 1
+	bx r1
+	.pool
+**/
+
+/**
+.org 0x08077c12
+	mov r0, r7 // Battler idx
+	ldr r1, =battler_sprite_visible | 1
+	bl _blxr1
+	b 0x08077c30
+	.pool
+
+.org 0x08078074
+	mov r0, r5 // Battler idx
+	ldr r1, =battler_sprite_visible | 1
+	bl _blxr1
+	b 0x08078088
+	.pool
+**/

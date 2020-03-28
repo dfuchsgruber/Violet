@@ -7,6 +7,8 @@
 .include "specials.s"
 .include "vars.s"
 .include "levelscript_types.s"
+.include "specials.s"
+.include "battle/battle_handicaps.s"
 
 .global levelscripts_ceometria_gym_arena
 
@@ -45,6 +47,9 @@ applymovement 0xff mov_player
 waitmovement 0x0
 special SPECIAL_OVERWORLD_VIEWPORT_LOCK
 draw_mugshot MUGSHOT_TEAH MUGSHOT_LEFT
+special SPECIAL_BATTLE_HANDICAP_CLEAR
+setvar 0x8004 BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE
+special SPECIAL_BATTLE_HANDICAP_SET
 trainerbattlecont 0x1 0x13E 0x0 str_challange str_defeat ow_script_after_battle
 ow_script_after_battle:
 loadpointer 0 str_after_battle

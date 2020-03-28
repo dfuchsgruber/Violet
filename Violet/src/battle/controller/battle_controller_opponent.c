@@ -75,9 +75,9 @@ void battle_controller_opponent_handle_choose_move() {
                 battle_controller_emit_two_values(1, BATTLE_ACTION_EXECUTE_SCRIPT, (u16)(move_idx | (defending_battler << 8)));
 
                 if (battle_flags & BATTLE_TRAINER) {
-                    if (battler_get_available_mega_evolution(active_battler)) {
-                        MEGA_STATE.marked_for_mega_evolution[active_battler] = 1;
-                    }
+                    mega_evolution_t *mega = battler_get_available_mega_evolution(active_battler);
+                    if (mega)
+                        MEGA_STATE.marked_for_mega_evolution[active_battler] = (u8)mega->type;
                 }
                 break;
             }
@@ -174,12 +174,14 @@ void sub_08035b30() {
                 battle_sprite_data->healthbox_info[PARTNER(active_battler)].field_1_x1 = 0;
                 oam_free_vram_by_tag(0x27F9);
                 oam_palette_free(0x27F9);
+                volume_set(mplay_info_background_music, 0xFFFF, 256);
             } else {
                 return;
             }
         } else if (battle_sprite_data->healthbox_info[active_battler].field_1_x1) { // Wait for field_1_x1 of one box
             // If for one box is waited and the current battler is the RIGHT side of the opponent, we free only if the other
             // opponent box has finished?
+
             if (battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
                 if (battle_sprite_data->healthbox_info[PARTNER(active_battler)].flag_x80 == 0 &&
                         battle_sprite_data->healthbox_info[PARTNER(active_battler)].field_1_x1 == 0) {

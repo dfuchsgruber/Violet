@@ -14,6 +14,7 @@
 #include "multichoice.h"
 #include "trainerschool_test.h"
 #include "rtc.h"
+#include "siirtc.h"
 #include "ev_menu.h"
 #include "pokemon/virtual.h"
 #include "pokemon/breeding.h"
@@ -124,9 +125,9 @@ typedef struct custom_memory {
     
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
-    rtc_timestamp a_gen_time;
+    timestamp_t a_gen_time;
     u32 tmp_hash_seed;
-    rtc_timestamp fossil_gen_time;
+    timestamp_t fossil_gen_time;
     u8 any_tmp_flags[16];
     map_event_person pokeradar_person;
     
@@ -146,7 +147,7 @@ typedef struct {
     int _hook_tmp_; // This variable is used to save r0 values while trying to hook something that uses r0-r3 already
     u8 dmap_header_initialized : 1;
     u8 dmap_blocks_initialized : 1;
-    u8 dmap_unused : 6;
+    u8 siirct_locked : 1;
     u8 battle_bg_index;
     u8 npc_facing_movements[2];
     pokepad_memory *pad_mem; // TODO: migrate pointers to the gp state
@@ -201,7 +202,13 @@ typedef struct {
     u8 ally_trainer_backsprite_idx;
     u8 ally_trainer_party_preview;
     u32 battle_handicaps;
+    u16 rtc_error_status;
+    SiiRtcInfo_t gp_rtc;
+    u8 rtc_probe_result;
+    u16 rtc_saved_interrupts;
 } floating_memory;
+
+
 
 extern saveblock1 *save1;
 extern saveblock2 *save2;

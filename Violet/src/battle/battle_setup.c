@@ -31,10 +31,6 @@ void battle_initialize_trainerbattle() {
     overworld_script_halt();
 }
 
-bool battle_has_two_opponents() {
-    return (battle_flags & (BATTLE_TWO_TRAINERS | BATTLE_MULTI)) > 0;
-}
-
 
 void battle_allocate_new() {
     fmem.mega_state = malloc_and_clear(sizeof(mega_state_t));
@@ -91,6 +87,7 @@ void battle_end_actions() {
     battle_alternative_forms_revert();
     ally_battle_restore_party();
     ally_battle_revive_pokemon();
+    battle_handicap_clear();
 }
 
 

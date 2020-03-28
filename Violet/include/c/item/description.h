@@ -279,7 +279,7 @@ extern u8 str_item_desc_x10b_item_item_10b[];
 extern u8 str_item_desc_x10c_item_wailmerkanne[];
 extern u8 str_item_desc_x10d_item_devon_waren[];
 extern u8 str_item_desc_x10e_item_aschetasche[];
-extern u8 str_item_desc_x10f_item_kelleroeffner[];
+extern u8 str_item_desc_x10f_item_geisterschluessel[];
 extern u8 str_item_desc_x110_item_kunstrad[];
 extern u8 str_item_desc_x111_item_box[];
 extern u8 str_item_desc_x112_item_brief[];

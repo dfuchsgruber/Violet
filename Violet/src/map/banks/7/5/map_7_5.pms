@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_12",
 		"events": {
-			"person_cnt": 5,
+			"person_cnt": 6,
 			"warp_cnt": 2,
 			"trigger_cnt": 5,
 			"signpost_cnt": 0,
@@ -116,6 +116,27 @@
 						"item": 0,
 						"species": 0
 					}
+				},
+				{
+					"target_index": "2",
+					"picture": "91",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "4",
+					"y": "16",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": 0,
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_silvania_gym_referee",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				}
 			],
 			"warps": [
@@ -195,7 +216,7 @@
 			],
 			"signposts": []
 		},
-		"levelscripts": "lscr_0x719894",
+		"levelscripts": "levelscripts_silvania_gym",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

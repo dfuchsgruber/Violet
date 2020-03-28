@@ -4,6 +4,8 @@
 .include "movements.s"
 .include "overworld_script.s"
 .include "mugshot.s"
+.include "specials.s"
+.include "battle/battle_handicaps.s"
 
 .global ow_script_inferior_gym_battle
 ow_script_inferior_gym_battle:
@@ -22,6 +24,9 @@ applymovement 0x2 mov_igva
 applymovement 0xff mov_player
 waitmovement 0x0
 draw_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
+special SPECIAL_BATTLE_HANDICAP_CLEAR
+setvar 0x8004 BATTLE_HANDICAP_EXTREME_HEAT
+special SPECIAL_BATTLE_HANDICAP_SET
 trainerbattlecont 0x1 0xc4 0x0 str_challange str_defeat ow_script_after_battle
 ow_script_after_battle:
 loadpointer 0 str_after_battle

@@ -16,10 +16,11 @@ extern "C" {
 #include "save.h"
 #include "pokemon/virtual.h"
 
+#define VERSION_ALPHA_3_0 4
 #define VERSION_ALPHA_2_2 3
 #define VERSION_ALPHA_2_1 2
 #define VERSION_ALPHA_2_0 1
-#define VERSION_LATEST VERSION_ALPHA_2_2
+#define VERSION_LATEST VERSION_ALPHA_3_0
     
 // Old pid structure (before 2.2)
 typedef union {
@@ -43,6 +44,7 @@ void version_alpha_2_2_fix_pid(box_pokemon *target);
     void version_upgrade_alpha_1_X_to_2_0();
     void version_upgrade_alpha_2_0_to_2_1();
     void version_upgrade_alpha_2_1_to_2_2();
+    void version_upgrade_alpha_2_2_to_3_0();
 
     /**
      * Transfers the pokedex flag from the order of alpha < 2.2 to the order of alpha >= 2.2

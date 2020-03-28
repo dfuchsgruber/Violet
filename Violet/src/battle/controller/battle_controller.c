@@ -100,7 +100,3 @@ void battle_controllers_setup_tag_battles() {
         battler_cnt = 4;
     }
 }
-
-void battle_controller_player_or_partner_execution_finished() {
-    
-}

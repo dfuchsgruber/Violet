@@ -6,6 +6,8 @@
 .global ow_script_route_8_trainer_2
 .global ow_script_route_8_trainer_3
 .global ow_script_route_8_trainer_4
+.global ow_script_route_8_trainer_5
+.global ow_script_route_8_trainer_6
 
 ow_script_route_8_trainer_0:
 trainerbattlestd 0 0xc5 0 str_trainer0_challange str_trainer0_defeat
@@ -37,6 +39,18 @@ loadpointer 0 str_trainer4_defeat
 callstd MSG_FACE
 end
 
+ow_script_route_8_trainer_5:
+trainerbattlestd 0 0x176 0 str_trainer5_challange str_trainer5_defeat
+loadpointer 0 str_trainer5_defeat
+callstd MSG_FACE
+end
+
+ow_script_route_8_trainer_6:
+trainerbattledouble 4 0x177 0 str_trainer6_challange str_trainer6_defeat str_trainer6_cant_battle
+loadpointer 0 str_trainer6_defeat
+callstd MSG_FACE
+end
+
 .ifdef LANG_GER
 str_trainer0_challange:
 	.autostring 34 2 "Starke Arme und Beine sind alles, was man zum Glück im Leben braucht!"
@@ -58,6 +72,16 @@ str_trainer4_challange:
 	.autostring 34 2 "Nur, wer seinen Geist völlig unter Kontrolle hat, kann zur Höchstform auflaufen!"
 str_trainer4_defeat:
 	.autostring 34 2 "Verrätst du mir deine Meditationstechnik?"
+str_trainer5_challange:
+	.autostring 34 2 "Die Willenskraft ist die stärkste Waffe eines Psycho-Trainers.\pIch werde es dir vorführen!"
+str_trainer5_defeat:
+	.autostring 34 2 "Dein Wille war stärker als der meineDOTS"
+str_trainer6_challange:
+	.autostring 34 2 "Mein Schatzi und ich werden dich mit der puren Kraft unserer Liebe besiegen!"
+str_trainer6_defeat:
+	.autostring 34 2 "Was?\nDu hast die Kraft unserer Liebe besiegt?"
+str_trainer6_cant_battle:
+	.autostring 34 2 "Du willst gegen die Kraft der Liebe antreten?\pMit nur einem Pokémon?"
 
 .elseif LANG_EN
 str_trainer0_challange:

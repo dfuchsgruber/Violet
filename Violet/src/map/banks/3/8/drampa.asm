@@ -37,7 +37,7 @@ mov_drampa_down:
 	.byte STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW
 	.byte STEP_DOWN_VERY_SLOW, STOP
 mov_say_exclam:
-	.byte SAY_EXCLAM, STOP
+	.byte LOOK_UP, SAY_EXCLAM, STOP
 
 ow_script_route_8_drampa:
 	special 0x188

@@ -13,12 +13,23 @@
 #include "pokepad/incubator.h"
 #include "debug.h"
 #include "vars.h"
+#include "rtc.h"
+#include "agbmemory.h"
+#include "data_structures.h"
 
 void custom_memory_init() {
-  int zero = 0;
-  cpuset(&zero, &cmem, CPUSET_FILL | CPUSET_WORD_SIZE(sizeof(custom_memory)) | CPUSET_WORD);
+  memset(&cmem, 0, sizeof(custom_memory));
   setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
   incubator_clear();
+}
+
+
+u8 *dma0_dump = ((floating_memory*) 0x0203CEC4)->dma0_dump;
+
+void fmem_init(){
+    memset(&fmem, 0, sizeof(fmem));
+    RtcInit();
+    gp_stack_init();
 }
 
 

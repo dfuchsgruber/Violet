@@ -17,6 +17,7 @@
 .global ow_script_route_12_trainer_18
 .global ow_script_route_12_trainer_19
 .global ow_script_route_12_trainer_20
+.global ow_script_route_12_trainer_21
 
 ow_script_route_12_trainer_5:
     trainerbattlestd 0 0x101 0 str_trainer0_challange str_trainer0_defeat
@@ -99,6 +100,11 @@ ow_script_route_12_trainer_20:
     loadpointer 0 str_trainer15_defeat
     callstd MSG_FACE
     end
+ow_script_route_12_trainer_21:
+    trainerbattledouble 4 0x17c 0 str_trainer16_challange str_trainer16_defeat str_trainer16_cant_battle
+    loadpointer 0 str_trainer16_defeat
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_trainer0_challange:
@@ -165,6 +171,12 @@ str_trainer15_challange:
     .autostring 34 2 "Eines Tages werde ich der größte Wasser-Pokémon Trainer aller Zeiten sein!"
 str_trainer15_defeat:
     .autostring 34 2 "Bis dahin muss ich wohl noch eine ganze Menge übenDOTS"
+str_trainer16_challange:
+    .autostring 34 2 "Mein Schatzi und ich verbringen hier unseren Sommerurlaub.\pWas fällt dir eigentlich ein, uns zu stören?"
+str_trainer16_defeat:
+    .autostring 34 2 "Schatzi, geht es dir gut?"
+str_trainer16_cant_battle:
+    .autostring 34 2 "Mein Schatzi und ich verbringen hier unseren Sommerurlaub.\pWir kämpfen nur als Team!"
 
 .elseif LANG_EN
 str_trainer0_challange:

@@ -5,7 +5,8 @@
 .include "vars.s"
 .include "overworld_script.s"
 .include "mugshot.s"
-
+.include "specials.s"
+.include "battle/battle_handicaps.s"
 
 .global ow_script_movs_0x897e33
 ow_script_movs_0x897e33:
@@ -48,6 +49,9 @@ applymovement 0x1 ow_script_movs_0x830940
 applymovement 0xff ow_script_movs_0x830943
 waitmovement 0x0
 draw_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
+special SPECIAL_BATTLE_HANDICAP_CLEAR
+setvar 0x8004 BATTLE_HANDICAP_FLOATING_ROCKS
+special SPECIAL_BATTLE_HANDICAP_SET
 trainerbattlecont 0x1 0xb6 0x0 str_0x8cafb5 str_0x8cb08b ow_script_0x8947e3
 
 

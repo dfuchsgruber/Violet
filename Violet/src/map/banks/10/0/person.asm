@@ -4,6 +4,26 @@
 .include "ordinals.s"
 .include "mugshot.s"
 
+.global ow_script_inferior_gym_referee
+
+ow_script_inferior_gym_referee:
+    checkflag FRBADGE_4
+    gotoif EQUAL gym_beaten
+    loadpointer 0 str_inferior_gym_referee
+    callstd MSG_FACE
+    end
+gym_beaten:
+    loadpointer 0 str_beaten
+    callstd MSG_FACE
+    end
+
+.ifdef LANG_GER
+str_beaten:
+    .autostring 34 2 "Es ist mir ein Rätsel, wie du in dieser Hitze kämpfen und sogar gewinnen konntestDOTS"
+.elseif LANG_EN
+.endif
+
+
 .global ow_script_inferior_gym_trainer_0
 ow_script_inferior_gym_trainer_0:
 trainerbattlestd 0 0xbf 0 str_trainer0_challange str_trainer0_defeat
@@ -153,4 +173,5 @@ str_igva_before_battle:
 
 str_igva_after_battle:
 	.autostring 34 2 "What will you do now, PLAYER?\pDo you want to stop Mistral?"
+
 .endif

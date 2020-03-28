@@ -70,3 +70,4 @@ bool battler_has_no_switching_targets(u8 battler_idx, u8 party_idx, u8 partner_p
     dprintf("Battler %d has no swichting targets.\n", battler_idx);
     return true;
 }
+

@@ -326,7 +326,8 @@ void trainer_play_encounter_music() {
         kind = fmem.trainer_varsB.kind_of_battle;
     }
     dprintf("Encounter for trainer %d\n", trainer_idx);
-    if (kind != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC && kind != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC) {
+    if (kind != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC && kind != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC &&
+        kind != TRAINER_BATTLE_ALLY_ONE_TRAINER) {
         u16 music;
         switch(trainers[trainer_idx].trainerclass) {
             case TRAINERCLASS_TEAM_VIOLET: 

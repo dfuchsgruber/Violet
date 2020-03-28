@@ -1,69 +1,102 @@
 
 
-#ifndef RTC
-#define RTC
+#ifndef GUARD_RTC_UTIL_H
+#define GUARD_RTC_UTIL_H
+
+#include "siirtc.h"
+
+#define RTC_INIT_ERROR         0x0001
+#define RTC_INIT_WARNING       0x0002
+
+#define RTC_ERR_12HOUR_CLOCK   0x0010
+#define RTC_ERR_POWER_FAILURE  0x0020
+#define RTC_ERR_INVALID_YEAR   0x0040
+#define RTC_ERR_INVALID_MONTH  0x0080
+#define RTC_ERR_INVALID_DAY    0x0100
+#define RTC_ERR_INVALID_HOUR   0x0200
+#define RTC_ERR_INVALID_MINUTE 0x0400
+#define RTC_ERR_INVALID_SECOND 0x0800
+
+#define RTC_ERR_FLAG_MASK      0x0FF0
+
+extern struct Time gLocalTime;
+
+void RtcDisableInterrupts(void);
+void RtcRestoreInterrupts(void);
+void RtcInit(void);
+bool RtcInErrorousState();
+u16 RtcGetErrorStatus(void);
+void RtcGetInfo(struct SiiRtcInfo *rtc);
+void RtcGetDateTime(struct SiiRtcInfo *rtc);
+void RtcGetStatus(struct SiiRtcInfo *rtc);
+void RtcGetRawInfo(struct SiiRtcInfo *rtc);
+u16 RtcCheckInfo(struct SiiRtcInfo *rtc);
+void RtcReset(void);
+bool is_leap_year(int year);
 
 
-// Define how many seconds one inamge second is equivalent to
-#define INGAME_CLOCK_SPEED_UP 6
-
-typedef struct rtc_timestamp {
-    u8 year;
-    u8 month;
-    u8 day;
-    u8 day_of_week;
-    u8 hour;
-    u8 minute;
-    u8 second;
-} rtc_timestamp;
-
-/**
- * Resets temporary flags that correspond to the current a-vector state
- */
-void tmp_flags_reset();
-
-typedef struct gpio {
-    u16 data;
-    u16 out;
-    u16 cntrl;
-
-} gpio;
 
 u8 ingame_clock_status;
 
-void rtc_read(rtc_timestamp *s);
-void rtc_send_byte(u8 byte);
-void gpio_set_data(bool sck, bool sio, bool cs);
-u8 rtc_read_byte();
-u16 special_time_get();
-void rtc_chip_wait();
-u8 to_dec(u8 value);
-u64 rtc_timestamp_to_seconds(rtc_timestamp *t);
-bool rtc_test();
+typedef struct {
+    u8 year; // [0, [
+    u8 month; // [1, 12]
+    u8 day; // [1, 31]
+    u8 hour; // [0, 59]
+    u8 minute; // [0, 59]
+    u8 second; // [0, 59]
+} timestamp_t;
+
 
 /**
- * Tests if the built-in time system is currently working.
- * @return if the built-in time system is working
- */
-bool time_test();
+ * Reads from the rtc.
+ * @param t where to store the time
+ **/
+void rtc_read(timestamp_t *t);
 
 /**
  * Gets the current game time (either rtc or built-in frame counter.)
  * @param s target timestamp to return the time at
  */
-void time_read(rtc_timestamp *s);
+void time_read(timestamp_t *s);
 
 /**
  * Gets the current game time from the ingame clock.
  * @param s target timestamp to return the time at
  */
-void time_ingame_clock_read(rtc_timestamp *s);
+void time_ingame_clock_read(timestamp_t *s);
 
 /**
  * Resets all time based events.
  */
 void time_reset_events();
 
-gpio gpios;
+/**
+ * Checks if the current time system (rtc or ingame time) works.
+ * @return if the current time system works.
+ **/
+bool time_test();
 
-#endif
+/**
+ * Calculates how many days have passed in a certain timestamp.
+ * @param t the timestamp
+ * @return how many days have passed in a timestamp
+ **/
+int timestamp_to_days(timestamp_t *t);
+
+/**
+ * Sets a timestamp to a certain amounts of days that have passed.
+ * @param days how many days have passed
+ * @param result the timestamp to initalize the year, month and day of
+ **/
+void days_to_timestamp(int days, timestamp_t *result);
+
+/**
+ * Calcualtes how many seconds a timestamp contains.
+ * @param t the timestamp
+ * @return how many seconds the timestamp contains
+ **/
+u64 timestamp_to_seconds(timestamp_t *t);
+
+#endif // GUARD_RTC_UTIL_H
+

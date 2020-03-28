@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_IO_H_
 #define INCLUDE_C_IO_H_
 
+#define IO_ADDRESS 0x04000000
+
 #define IO_DISPCNT 0x0
 #define IO_DISPCNT_BG_MODE(x) (x)
 #define IO_DISPCNT_CGB_MODE 8
@@ -58,6 +60,8 @@
 #define IO_WIN1H 0x42
 #define IO_WIN0V 0x44
 #define IO_WIN1V 0x46
+
+#define IO_IME (*(vu16*) (IO_ADDRESS + 0x208))
 
 
 

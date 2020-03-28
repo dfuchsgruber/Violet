@@ -150,29 +150,29 @@ str_0x971c05:
 .global str_0x953d08
 
 str_0x953d08:
-	.autostring 35 2 "Ein Mensch wäre dazu sicherlich nicht im Stande, ja.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWir befinden uns hier an einem Ort jenseits der Welt, die euch bekannt ist.\pDieses Reich trägt den Namen Arc.\pUm genauer zu sein, ihr befindet euch in meiner Festung, der Arc Skrim.\pDie Arc wird von Wesen, die sich Chronen nennen, bewohnt.\pWir Chronen existieren jenseits der Zeit, wie ihr sie kennt.\pFür uns sind Vergangenheit, Gegenwart und Zukunft völlig gehaltlose Begriffe."
+	.autostring 34 2 "Ganz richtig, ein gewöhnlicher im Mensch wäre dazu sicherlich nicht im Stande, ja.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pWir befinden uns hier an einem Ort jenseits eurer Welt, der Arc.\pDies hier ist meine Festung, die Arc Scrim."
 
 .global str_0x9718d8
 
 str_0x9718d8:
-	.autostring 35 2 "Verstehe ich das richtig?\pDu willst uns Glauben machen, dass du eine Art Gott bist?\pUnd selbst, wenn das der Wahrheit entsprechen sollte DOTS\pWieso hast du all das getan?\pWieso sind Mistral und ich hier?"
+	.autostring 34 2 "Was ist das hier für ein Ort?\pUnd wieso hast du uns hierher gebracht?\pWer bist du überhaupt?"
 
 
 .global str_0x9717c3
 
 str_0x9717c3:
-	.autostring 34 2 "Ihr habt viele Fragen.\pDas ist nur verständlich.\pEigentlich ist es nicht meine Absicht, euch über die Zusammenhänge ins Bild zu setzen.\pDoch sehe ich mich nun gezwungen, gegen die mir auferlegten Gesetze zu verstoßen, und euch zumindest ein wenig aufzuklären."
+	.autostring 34 2 "Ihr habt viele Fragen.\pDas ist nur verständlich.\pUnd auch, wenn es mir verboten wurde, mich euch zu zeigen, geschweigedenn euch mit den Geheimnissen der Arc vertraut zu machenDOTS\pDOTSbin ich der Auffassung, dass es an der Zeit ist, euch über gewisse Ereignisse ins Bild zu setzten."
+
 
 .global str_0x971424
 
 str_0x971424:
-	.autostring 34 2 "Die Aufgabe der Chronen ist es, dafür zu sorgen, dass die Geschichte einen Weg einschlägt, der vor langer Zeit vorgesehen wurde und dem sich eure Welt zu fügen hat.\pDoch durch gewisse Umstände ist es nun der Fall, dass eure Welt von diesem Schicksal abgekommen zu sein scheint.\pDie Folgen dieser Divergenz sind selbst den Chronen nicht völlig klar, denn der Verlauf dieser neuen Geschichte scheint nahezu im Dunkeln zu liegen.\pAls jedoch das Unglück von Aktania sich ereignete, und mit einem Meteor etwas auf eure Welt kam, das diese völlig zu vernichten im Stande ist, stand fest, dass die Dinge außer Kontrolle geraten warenDOTSDOTSDOTS"
+	.autostring 34 2 "Mein Name ist Rubys, und ich gehöre dem Volk der Chronen an.\pWir Chronen sind der imensen Aufgabe verschrieben, das Schicksal der Welt zu lenken.\pAus dem Verborgenen helfen wir dem Weltgeschehen auf seine vorbestimmte Bahn.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pUnd über Jahrhunderte hinweg wurden wir unserer Pflicht gerecht und wie Welt entwickelte sich exakt nach unserer Vorsehung.\pDoch vor kurzer Zeit änderten die Dinge sich drastisch.\pAus irgendeinem Grund begannen das Schicksal der Welt von unseren Plänen zu divergieren.\pIn zunehmendem Maße verloren wir Chronen die Kontrolle über das Weltgeschehen.\pSchließlich erreichte ein Meteor eure Welt und brachte eine Macht mit sich, die in der Lage ist, das Leben, wie ihr es kennt, für alle Zeit auszulöschen."
 
 .global str_0x96fd7a
 
 str_0x96fd7a:
-	.autostring 34 2 "Eure Zeitline bewegt sich auf eine Katastrophe vor, deren Ursache ich nicht völlig absehen kann.\pIch zeigte euch beiden bereits, auf welches Desaster sich eure Welt zu bewegt und welches schreckliche Schicksal ihr bevorsteht.\pEine Welt voller Dunkelheit, beherrscht von Wesen, die niemals mit den Menschen hätten in Kontakt kommen dürfen.\pOhne zu übertreiben, wäre dies als das Ende der Menschen und Pokémon zu bezeichnenDOTS"
-
+	.autostring 34 2 "Wie die Dinge stehen, scheint es, als würde eure Welt sich auf eine Katastrophe zubewegen.\pVergeblich habe ich versucht, euch beide dieser Tatsache bewusst werden zu lassen.\pDie Visionen, die ich euch gezeigt habe, sollten euch sowohl Vergangenheit als auch die bevorstehende Zukunft offenbaren.\pDas Wesen, das in dem Meteorit schlummerte, welcher vor eingigen Jahren bei Aktania eingeschlagen ist, das Wesen, das beinahe die ganze Stadt vernichtet hätteDOTS\pDieses Wesen wird eure Welt in einen Ort verwandeln, an dem weder Mensch noch Pokémon existieren dürfen.\pDie beiden Visionen sollten euch diese nahende Katastrophe zeigen und euch warnen."
 
 .global str_0x96fa81
 
@@ -182,7 +182,7 @@ str_0x96fa81:
 .global str_0x96f811
 
 str_0x96f811:
-	.autostring 35 2 "Das ist wohl die interessanteste aller Fragen.\pIch kann sie euch leider nicht beantworten.\pIhr beiden seid der Grund, weshalb die Chronen nicht mehr in der Lage sind, die Zeitlinie eurer Welt zu beeinflussen.\pWeil ihr existiert, können wir die Dinge nicht berichtigen."
+	.autostring 35 2 "Das ist wohl die interessanteste aller Fragen.\pIch kann sie euch leider nicht beantworten.\pIhr beiden seid der Grund, weshalb die Chronen nicht mehr in der Lage sind, die Zeitlinie eurer Welt zu beeinflussen.\pAllein weil ihr existiert, können wir die Dinge nicht berichtigen."
 
 .global str_0x96f680
 
@@ -198,7 +198,7 @@ str_0x96f55c:
 .global str_0x96f427
 
 str_0x96f427:
-	.autostring 35 2 "Das klingt ja alles höchst interessant.\pAber ich habe keine Lust, Teil irgendeines göttlichen Dramas zu sein.\pMich interessiert nicht, was mit unserer Welt passiert.\pHörst du Rubys?\pDu vernichtest mich lieber an Ort und Stelle.\pWenn du mich zurückschickst DOTS DOTS DOTS\pDOTS werde ich da weitermachen, wo ich aufgehört habe!"
+	.autostring 35 2 "Das klingt ja alles höchst interessant.\pAber ich habe keine Lust, Teil irgendeines göttlichen Dramas zu sein.\pSelbst wenn ich dieser aberwitzigen Geschichte auch nur einen Funken Bedeutung beimessen würdeDOTS\pMich interessiert nicht, was mit unserer Welt passiert.\pHörst du Rubys?\pDu vernichtest mich lieber an Ort und Stelle.\pWenn du mich zurückschickst DOTS DOTS DOTS\pDOTS werde ich da weitermachen, wo ich aufgehört habe!"
 
 
 .global str_0x96ef94
@@ -210,13 +210,12 @@ str_0x96ef94:
 .global str_0x96edc1
 
 str_0x96edc1:
-	.autostring 35 2 "Schweigt, alle beide!\pIch bin nicht länger in der Lage, eure Zeitlinie zu verstehen.\pDie Zukunft eurer Welt ist DOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS sie ist ungewiss.\pNie zuvor haben wir Chronen uns in einer solchen Lage befunden.\pIhr selbst müsst entscheiden, wie ihr mit der Situation umgehen wollt.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
+	.autostring 34 2 "Schweigt!\nAlle beide!\pEs stürzt mich beinahe in tiefste Verzweiflung, die Kontrolle über die Dinge in solchem Ausmaß verloren zu haben.\pEs ist ungewiss, welcher Weg in die Katastrophe führt und welche Handlungen sie verhindern.\pIch habe euch gegen den Willen der anderen Chronen hergeholt, damit ihr versteht, was auf dem Spiel steht.\pIch bin, wie ich bereits sagte, der festen Überzeugung, dass es an euch beiden liegt, die bevorstehende Zukunft zu verändern."
 
 .global str_0x96ef26
 
 str_0x96ef26:
 	.autostring 35 2 "Ich werde euch nun wieder in eure Welt zurückschicken."
-
 
 .global str_0x96ef5f
 

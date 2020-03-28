@@ -1620,10 +1620,10 @@
 		.string "Ein Säckchen zum Sammeln und\nAufbewahren von Vulkanasche."
 
 
-	.global str_item_desc_x10f_item_kelleroeffner
+	.global str_item_desc_x10f_item_geisterschluessel
 
-	str_item_desc_x10f_item_kelleroeffner:
-		.string "Schlüssel für Neu Malvenfroh,\ndas unter Malvenfroh City\nerrichtet wurde."
+	str_item_desc_x10f_item_geisterschluessel:
+		.string "Mysteriöser Schlüssel, der\näußerst alt wirkt."
 
 
 	.global str_item_desc_x110_item_kunstrad

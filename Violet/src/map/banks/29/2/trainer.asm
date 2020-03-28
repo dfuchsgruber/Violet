@@ -8,6 +8,7 @@
 .global ow_script_route_7_trainer_7
 .global ow_script_route_7_trainer_8
 .global ow_script_route_7_trainer_9
+.global ow_script_route_7_trainer_10
 
 ow_script_route_7_trainer_3:
     trainerbattlestd 0x0 0x142 0 str_before_3 str_after_3
@@ -44,6 +45,12 @@ ow_script_route_7_trainer_9:
     loadpointer 0x0 str_after_9
     callstd MSG_FACE
     end
+ow_script_route_7_trainer_10:
+    trainerbattledouble 4 0x179 0 str_before_10 str_after_10 str_cant_battle_10
+    loadpointer 0x0 str_after_10
+    callstd MSG_FACE
+    end
+
 
 .ifdef LANG_GER
 str_before_3:
@@ -74,6 +81,12 @@ str_before_9:
     .autostring 34 2 "Geheimtür?\pIch weiß nichts von einer Geheimtür!"
 str_after_9:
     .autostring 34 2 "Ich würde dir niemals verraten, dass man im Schloss eine Geheimtür öffnen kann!\pUnd der Schalter ist auch nicht in der Bibliothek versteckt!"
+str_before_10:
+    .autostring 34 2 "Die Kraft, die ein Zwillingspaar verbindet, ist nicht zu schlagen!"
+str_after_10:
+    .autostring 34 2 "Was?\nDu hast es geschafft, meine Schwester und mich zu entzweien?"
+str_cant_battle_10:
+    .autostring 34 2 "Wir kämpfen nur als Team!\nSonst macht das ganze doch keinen Spaß!"
 
 .elseif LANG_EN
 str_before_3:

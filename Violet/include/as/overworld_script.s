@@ -602,7 +602,7 @@
 .macro trainerbattleally trainer:req ally:req people:req backsprite:req party_preview:req str_challange:req str_defeat:req continuation:req
 .byte 0x5C
 .byte 11
-.hword \trainerA
+.hword \trainer
 .hword \ally
 .hword \people
 .byte \backsprite

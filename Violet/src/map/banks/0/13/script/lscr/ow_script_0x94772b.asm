@@ -34,6 +34,7 @@ setvar 0x8005 0x11
 setvar 0x8006 0x22
 special 0x24
 applymovement 0xc ow_script_movs_0x947948
+hidesprite 0xb
 draw_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 loadpointer 0x0 str_0x94794f
 callstd MSG_KEEPOPEN
@@ -46,11 +47,10 @@ setvar 0x8005 0x11
 setvar 0x8006 0x22
 special 0x24
 waitmovement 0x0
-hidesprite 0xb
 hidesprite 0xc
 addvar STORY_PROGRESS 0x1
 setvar SONG_OVERRIDE 0x0
-call ow_script_0x8f6d1b
+//call ow_script_0x8f6d1b
 playsong MUS_KONEX_KLUB 0x0
 releaseall
 end

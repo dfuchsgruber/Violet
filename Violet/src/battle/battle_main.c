@@ -180,6 +180,15 @@ bool battle_has_two_players() {
     return battle_is_tag() || battle_is_multi_double();
 }
 
+bool battle_has_two_opponents() {
+    return (battle_flags & (BATTLE_TWO_TRAINERS | BATTLE_MULTI)) > 0;
+}
+
+bool battle_controller_double_battle_should_send_out_only_one_pokemon() {
+    if (battle_has_two_opponents()) return true; // Each battler has their own controller, that only sends out one mon
+    return false;
+}
+
 void battle_clear_temporary_custom_effects(bool clear_all){
     if(clear_all){
         int i;
@@ -198,6 +207,10 @@ void battle_before_attack_effects() {
 }
 
 bool battle_end_turn_effects() {
+    // During any end of turn effect, a battler controlled by the ai may faint
+    // Therefore, we have to allow the ai to choose a new switch in target in any step
+    for (int i = 0; i < 4; i++)
+        battle_state->battler_to_switch_into[i] = 6;
     if (battle_end_turn_field_effects()) return true;
     if (battle_handicap_end_turn_effects()) return true;
     if (battle_end_turn_battler_effects()) return true;

@@ -202,6 +202,7 @@ int battle_ai_score_resists_foes(pokemon *p, u8 foe, u8 foe_partner) {
         u8 type1 = basestats[species].type1;
         u8 type2 = basestats[species].type2;
         int score = 0;
+        int weight = 0;
         if (!(battlers_absent & int_bitmasks[foe])) {
             multiplier = 4;
             battle_ai_attack_apply_effectiveness_multiplier_with_abilities(battlers[foe].type1, ability, type1, type2, &multiplier);
@@ -209,6 +210,7 @@ int battle_ai_score_resists_foes(pokemon *p, u8 foe, u8 foe_partner) {
             multiplier = 4;
             battle_ai_attack_apply_effectiveness_multiplier_with_abilities(battlers[foe].type2, ability, type1, type2, &multiplier);
             score += 2 - msb_index(multiplier);
+            weight++;
         }
         if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe) {
             multiplier = 4;
@@ -217,9 +219,10 @@ int battle_ai_score_resists_foes(pokemon *p, u8 foe, u8 foe_partner) {
             multiplier = 4;
             battle_ai_attack_apply_effectiveness_multiplier_with_abilities(battlers[foe_partner].type2, ability, type1, type2, &multiplier);
             score += 2 - msb_index(multiplier);
+            weight++;
         }
         // AI_DEBUG_SWITCHING("Defensive Score for %x with foes %d, %d: %d\n", p, foe, foe_partner, score);
-        return score; // [-16, 20] (20 is only reached when immune against all STABs of all foes...)
+        return score / weight; // [-8, 10] (20 is only reached when immune against all STABs of all foes...)
     }
     return 0;
 }
@@ -250,7 +253,10 @@ int battle_ai_score_attacks_foes(pokemon *p, u8 foe, u8 foe_partner) {
         }
         // AI_DEBUG_SWITCHING("Offensive Score for %x with foes %d, %d: %d\n", p, foe, foe_partner, 4 * (best_score_foe + best_score_foe_partner));
         // AI_DEBUG_SWITCHING("Best Score on foe %d, Best Score on foe's partner %d, total %d\n", best_score_foe, best_score_foe_partner,4 * (best_score_foe + best_score_foe_partner));
-        return 4 * (best_score_foe + best_score_foe_partner); // Score in range [-18, 16]
+        int weight = 0;
+        if (!(battlers_absent & int_bitmasks[foe])) weight++;
+        if (!(battlers_absent & int_bitmasks[foe_partner]) && foe_partner != foe) weight++;
+        return 4 * (best_score_foe + best_score_foe_partner) / weight; // Score in range [-9, 8]
     }
     return 0;
 }
@@ -345,7 +351,7 @@ void battle_ai_should_switch_consider_battler_viablility(int *score, u8 target) 
     // Switching in general is disfavored: Only if the target's viablity is at least 3 higher than the current mon's viablility
     // the swichting score will be >= 0. Also the target's viability needs to be positive (the current battler's viability is overestimated
     // by clamping with a zero value).
-    *score += viablility_target - MAX(0, viablility) - 7;
+    *score += viablility_target - MAX(0, viablility) - 5;
 }
 
 u8 battle_ai_should_switch(int *score) {

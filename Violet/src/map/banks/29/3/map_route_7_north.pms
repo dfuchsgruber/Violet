@@ -293,9 +293,9 @@
 					"x": "33",
 					"y": "47",
 					"level": 0,
-					"type": 0,
+					"type": "7",
 					"field_6": 0,
-					"field_7": "7",
+					"field_7": "0",
 					"value": {
 						"item": {
 							"item": "ITEM_SUESSBONBON",

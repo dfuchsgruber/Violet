@@ -10,14 +10,14 @@
 .include "difficulties.s"
 .include "ordinals.s"
 
-.equ REFEREE_PERSON_IDX, 2
-.equ REFEREE_X, 5
-.equ REFEREE_Y, 11
+.equ REFEREE_PERSON_IDX, 7
+.equ REFEREE_X, 20
+.equ REFEREE_Y, 37
 
-.global str_ceometria_gym_referee
-.global levelscripts_ceometria_gym
+.global str_inferior_gym_referee
+.global levelscripts_inferior_gym
 
-levelscripts_ceometria_gym:
+levelscripts_inferior_gym:
 	.byte LEVELSCRIPT_TYPE_ON_FRAME_TABLE
 .word lscr_referee
     .byte LEVELSCRIPT_TYPE_ON_TRANSITION
@@ -25,7 +25,7 @@ levelscripts_ceometria_gym:
 	.byte 0
 
 lscr_referee:
-	.hword VAR_GYM_TIPPS, 4
+	.hword VAR_GYM_TIPPS, 3
 	.word referee
 	.hword 0x0
 
@@ -36,7 +36,7 @@ referee:
     special SPECIAL_NPC_MOVE_TO_PLAYER
     waitmovement 0
     faceplayer
-    loadpointer 0 str_ceometria_gym_referee
+    loadpointer 0 str_inferior_gym_referee
     callstd MSG
     setvar 0x8004 REFEREE_PERSON_IDX
     setvar 0x8005 REFEREE_X
@@ -53,16 +53,21 @@ mov_fd:
     .byte LOOK_DOWN, STOP
 
 lscr_reset_trainerflags:
-    callasm ceometria_gym_initialize
-    checkflag FRBADGE_5
+    checkflag FRBADGE_4
     gotoif EQUAL dont_reset_trainerflags
     compare DIFFICULTY DIFFICULTY_NORMAL
     gotoif LESS dont_reset_trainerflags 
+    settrainerflag 0xbf
+    settrainerflag 0xc0
+    settrainerflag 0xc1
+    settrainerflag 0xc2
+    settrainerflag 0xc3
 dont_reset_trainerflags:
+    end
     end
 
 .ifdef LANG_GER
-str_ceometria_gym_referee:
-    .autostring 34 2 "Ich halte nicht viel von soetwas, aber alle Herausforderer dieser Arena schwören darauf, dass die Räume verhext sind.\pVielleicht können dir andere Trainer einen Hinweis darauf geben, welcher Weg der richtige ist?\pIn einer so düsteren und unheimlichen Umgebung zu kämpfen, ist weder für Trainer noch Pokémon leicht.\pDa können einem schonmal vor Angst die Knie schlotternDOTS"
+str_inferior_gym_referee:
+    .autostring 34 2 "Wahnsinn, ist es hier drinnen heiß, nicht wahr?\pWenn du Igva besiegen möchtest, musst du ganz schön hitzeresistent sein.\pDa können deine Pokémon auch schonmal das Brennen anfangenDOTS"
 .elseif LANG_EN
 .endif

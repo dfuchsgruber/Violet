@@ -66,8 +66,8 @@ static u8 str_link_opponent_send_out_single[] = LANGDEP(
 );
 
 static u8 str_trainer_sends_out_single[] = LANGDEP(
-    PSTRING("BSC_OPPONENT_POKEMON1_NAME schickt\nBSC_TRAINER1_CLASS BSC_TRAINER1_NAME in den Kampf!PAUSE\x3C"),
-    PSTRING("BSC_OPPONENT_POKEMON1_NAME sends out\nBSC_TRAINER1_CLASS BSC_TRAINER1_NAME into battle!PAUSE\x3C")
+    PSTRING("BSC_TRAINER1_CLASS BSC_TRAINER1_NAME schickt\nBSC_OPPONENT_POKEMON1_NAME in den Kampf!PAUSE\x3C"),
+    PSTRING("BSC_TRAINER1_CLASS BSC_TRAINER1_NAME sends out\nBSC_OPPONENT_POKEMON1_NAME into battle!PAUSE\x3C")
 );
 
 static u8 str_multi_sends_out[] = LANGDEP(
