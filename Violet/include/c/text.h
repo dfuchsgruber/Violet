@@ -131,6 +131,13 @@ extern "C" {
     } tbox_font_colormap;
 
     /**
+     * Checks if a printer is active for a certain box.
+     * @param box_idx the box to check
+     * @return if a text printer is active
+     **/
+    bool tbox_printer_is_active(u8 box_idx);
+
+    /**
      * Prints a string on a textbox
      * @param box_id Textbox id to print string on
      * @param font Font to print text in (usually 2)

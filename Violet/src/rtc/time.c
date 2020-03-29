@@ -1,5 +1,4 @@
 #include "types.h"
-#include "siirtc.h"
 #include "rtc.h"
 #include "vars.h"
 #include "constants/vars.h"
@@ -8,70 +7,10 @@
 #include "constants/time_types.h"
 #include "text.h"
 
-static const int days_per_month[12] =
-{
-    31,
-    28,
-    31,
-    30,
-    31,
-    30,
-    31,
-    31,
-    30,
-    31,
-    30,
-    31,
-};
-
-bool is_leap_year(int year) {
-	return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-}
-
-int timestamp_to_days(timestamp_t *t) {
-	int days = 0;
-	for (int i = 0; i < t->year; i++) {
-		days += 365;
-		if (is_leap_year(i)) days++;
-	}
-	for (int i = 0; i < t->month - 1; i++) {
-		days += days_per_month[i];
-		if (i > MONTH_FEB && is_leap_year(t->year))
-        	days++;
-	}
-	days += t->day - 1;
-	return days;
-}
-
-u64 timestamp_to_seconds(timestamp_t *t) {
-	int days = timestamp_to_days(t);
-	return (u64)(days * 24 * 60 * 60 + t->hour * 60 * 60 + t->minute * 60 + t->second * 60);
-}
-
-void days_to_timestamp(int days, timestamp_t *result) {
-	int years;
-	for (years = 0; ; years++) {
-		int days_in_year = 365 + is_leap_year(years);
-		if (days < days_in_year)
-			break;
-		days -= days_in_year;
-	}
-	int months;
-	for (months = 0; ; months++) {
-		if (days < days_per_month[months])
-			break;
-		days -= days_per_month[months];
-	}
-	result->year = (u8) years;
-	result->month = (u8) (months + 1); // 1-based
-	result->day = (u8)(days + 1); // 1-based
-}
-
-
 bool time_test() {
 	switch(*var_access(TIME_TYPE)) {
 	case TIME_TYPE_RTC:
-		return !RtcInErrorousState();;
+		return rtc_test();
 	case TIME_TYPE_INGAME_CLOCK:
 		return save2->hours_played != 999 || save2->minutes_played != 59;
 	default:
@@ -80,9 +19,7 @@ bool time_test() {
 	}
 }
 
-#define INGAME_CLOCK_SPEED_UP 5 // 1s ingame time equals 5 seconds on the ingame clock
-
-void time_ingame_clock_read(timestamp_t *s) {
+void time_ingame_clock_read(rtc_timestamp *s) {
 	int seconds_played = INGAME_CLOCK_SPEED_UP * save2->seconds_played;
 	s->second = (u8)(seconds_played % 60);
 	int minutes_played = (INGAME_CLOCK_SPEED_UP * save2->minutes_played) + (seconds_played / 60);
@@ -90,19 +27,24 @@ void time_ingame_clock_read(timestamp_t *s) {
 	int hours_played = (INGAME_CLOCK_SPEED_UP * save2->hours_played) + (minutes_played / 60);
 	s->hour = (u8)(hours_played % 24);
 	int days_played = hours_played / 24;
-	days_to_timestamp(days_played, s);
+	s->day = (u8)((days_played % 30) + 1);
+	int months_played = (u8)(days_played / 30);
+	s->month = (u8)((months_played % 12) + 1);
+	int years_played = months_played / 12;
+	s->year = (u8)(20 + years_played);
 }
 
 
-void time_read(timestamp_t *t) {
+void time_read(rtc_timestamp *s) {
 	switch (*var_access(TIME_TYPE)) {
 	case TIME_TYPE_RTC:
 		// Read from rtc
-		rtc_read(t);
+		rtc_read(s);
 		break;
+
 	case TIME_TYPE_INGAME_CLOCK:
 		// Read from the ingame clock
-		time_ingame_clock_read(t);
+		time_ingame_clock_read(s);
 		break;
 	default :
 		derrf("Unkown time type %d\n", *var_access(TIME_TYPE));
@@ -127,7 +69,7 @@ void time_reset_ingame_clock() {
 
 
 u16 special_time_get() {
-    timestamp_t stamp = {0};
+    rtc_timestamp stamp = {0, 0, 0, 0, 0, 0, 0};
     time_read(&stamp);
     switch (*var_access(0x8004)) {
 
@@ -138,7 +80,7 @@ u16 special_time_get() {
         case 2:
             return stamp.day;
         case 3:
-            return 0xFF;
+            return stamp.day_of_week;
         case 4:
             return stamp.hour;
         case 5:
@@ -146,12 +88,12 @@ u16 special_time_get() {
         case 6:
             return stamp.second;
         default:
-            return 0xFF;
+            return 0;
     }
 }
 
 void buffer_time() {
-    timestamp_t s = {0};
+    rtc_timestamp s = {0, 0, 0, 0, 0, 0, 0};
     time_read(&s);
 	itoa(buffer0, s.hour, 2, 2);
 	itoa(buffer1, s.minute, 2, 2);

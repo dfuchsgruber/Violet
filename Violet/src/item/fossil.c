@@ -75,9 +75,9 @@ void fossil_execute() {
 }
 
 u16 fossil_is_finished(){
-    timestamp_t t;
+    rtc_timestamp t;
     time_read(&t);
-    u64 seconds_current = timestamp_to_seconds(&t);
-    u64 seconds_finished = (u64)(timestamp_to_seconds(&cmem.fossil_gen_time) + 60 * 60);
+    u64 seconds_current = rtc_timestamp_to_seconds(&t);
+    u64 seconds_finished = (u64)(rtc_timestamp_to_seconds(&cmem.fossil_gen_time) + 60 * 60);
     return seconds_current >= seconds_finished;
 }

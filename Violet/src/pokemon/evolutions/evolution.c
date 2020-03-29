@@ -38,7 +38,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                     u8 friendship = (u8) pokemon_get_attribute(p, ATTRIBUTE_HAPPINESS, 0);
                     if (!time_test())
                         dprintf("A Pokemon that evolves at day has leveled up but your time seems to be turned off!\n");
-                    timestamp_t time = {
+                    rtc_timestamp time = {
                         0
                     };
                     time_read( & time);
@@ -51,7 +51,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                     u8 friendship = (u8) pokemon_get_attribute(p, ATTRIBUTE_HAPPINESS, 0);
                     if (!time_test())
                         dprintf("A Pokemon that evolves at night has leveled up but your time seems to be turned off!\n");
-                    timestamp_t time = {
+                    rtc_timestamp time = {
                         0
                     };
                     time_read( & time);
@@ -144,7 +144,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 {
                     if (!time_test())
                         dprintf("A Pokemon that evolves at night has leveled up but your RTC seems to be turned off!\n");
-                    timestamp_t time = {
+                    rtc_timestamp time = {
                         0
                     };
                     time_read( & time);
@@ -160,7 +160,7 @@ u16 pokemon_get_evolution(pokemon * p, u8 type, u16 arg) {
                 {
                     if (!time_test())
                         dprintf("A Pokemon that evolves at day has leveled up but your RTC seems to be turned off!\n");
-                    timestamp_t time = {
+                    rtc_timestamp time = {
                         0
                     };
                     time_read( & time);

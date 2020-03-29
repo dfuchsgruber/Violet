@@ -485,8 +485,38 @@
 @   delta x : hword
 @   delta y : hword
 
+@ Creates text and interrupts the script (and frame counter) until the text is finished (user interaction!)
+@ box_idx in which box to create the text, can be from var
+@ font which font to use
+@ x x offset relative to the box origin
+@ y y offset relative to the box origin
+@ letter_spacing spacing of letters
+@ line_spacing line spacing
+@ font_colmap font color map
+@ speed at which speed to print the text
+
+@ Speed is set according to the settings
+.equ TBOX_SPEED_FROM_SETTINGS, 0x80
+
+.macro tbox_and_interrupt box_idx:req font:req x:req y:req letter_spacing:req line_spacing:req font_colormap:req speed:req text:req proceed_boxes=1
+.byte 0x38
+.hword \box_idx
+.byte \font
+.hword \x
+.hword \y
+.byte \letter_spacing
+.byte \line_spacing
+.word \font_colormap
+.byte \speed
+.word \text
+.byte \proceed_boxes
+.endm
+
 
 @field for bg setup
 .macro bg_setup_cnfg id charbase mapbase size colmode priority
 .word \id | (\charbase << 2) | (\mapbase << 4) | (\size << 9) | (\colmode << 11) | (\priority << 12)
 .endm
+
+
+

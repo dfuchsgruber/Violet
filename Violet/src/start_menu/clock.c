@@ -51,7 +51,7 @@ static gfx_frame *start_menu_clock_7_segment_gfx_anim_table[] = {
 void start_menu_clock_oam_callback(oam_object *self) {
     if (self->private[0]-- == 0) {
         self->private[0] = 60; // Request the rtc time every 60 frames (~1 sec)
-        timestamp_t time;
+        rtc_timestamp time;
         time_read(&time);
         int digit = 8;
         switch (self->private[1]) {
@@ -68,8 +68,7 @@ void start_menu_clock_oam_callback(oam_object *self) {
                 digit = time.minute % 10;
                 break;
         }
-        self->anim_number = (u8)digit;
-        oam_gfx_anim_init(self, 0);
+        oam_gfx_anim_start(self, (u8)MIN(9, digit));
     }
 };
 

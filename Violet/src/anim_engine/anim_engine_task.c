@@ -81,19 +81,19 @@ anim_engine_task *anim_engine_task_new(int priority, void (*callback)(anim_engin
     }
     //Insert between root (root->priority <= priority) and next (either NULL or next->priority > priority)
     //dprintf("New task inserted between prev @%x, next @%x\n", root, next);
-    anim_engine_task *t = malloc_and_clear(sizeof(anim_engine_task) + size_var_space);
-    if(!t) return NULL;
+    anim_engine_task *t = malloc_and_clear(sizeof(anim_engine_task));
+    if(!t) 
+        return NULL;
+    if (size_var_space)
+        t->vars = malloc_and_clear(size_var_space);
     t->priority = priority;
     t->callback = callback;
-    if(size_var_space) t->vars = &t[1]; //Consecutive area after self is var space
-    else t->vars = NULL;
     t->id = id;
     t->prev = root;
     t->next = next;
     root->next = t;
     next->prev = t;
     return t;
-    
 }
 
 

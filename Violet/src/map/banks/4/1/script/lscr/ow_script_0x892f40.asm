@@ -148,29 +148,7 @@ str_difficulty_very_hard:
     .string "Sehr schwer"
         
         
-.global str_intro_0
 
-str_intro_0:
-    .string "DOTSKannst du mich hören?\nDOTS DOTS DOTS\nLass es mich dir zeigenDOTS\nSie kamen aus dem AllDOTS"
-        
-        
-.global str_intro_1
-
-str_intro_1:
-    .string "Sie kamen von weit herDOTS\nSie wollten die MenschenDOTS\nDOTSvernichtenDOTS"
-        
-        
-.global str_intro_2
-
-str_intro_2:
-    .string "Sie waren zum Äußersten bereitDOTS\nEin Kampf war unvermeidbarDOTS"
-        
-        
-.global str_intro_3
-
-str_intro_3:
-    .string "Und auch wenn sie besiegt wurdenDOTS\nWerden sie gestärkt wiederkehrenDOTS"
-        
         
 .global str_0x8cf12f
 

@@ -19,7 +19,9 @@ typedef struct ae_memory {
     u8 *current_programm;
     u8 link_numbers;
     u8 callback_id;
-    bool active;
+    u8 active : 1;
+    u8 paused : 1;
+    u8 num_printers_waited_for;
     u8 *links [8];
     u16 lframes [8];
     u16 vars[16];
@@ -143,6 +145,7 @@ void cmdx35_pal_restore_snapshot(ae_memory *mem);
 void cmdx36_load_obj_pal_from_struct(ae_memory *mem);
 void _obj_move_sine_trace(u8 self);
 void cmdx37_obj_move_trace(ae_memory *mem);
+void cmdx38_tbox_and_interrupt(ae_memory *mem);
 void ae_mapreloader();
 
 void anim_engine_yin_yang_fade_big_callback(u8 self);

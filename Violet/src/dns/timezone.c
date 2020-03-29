@@ -18,7 +18,7 @@ void callback_switch_timezone() {
 }
 
 void update_timezone() {
-    timestamp_t stamp = {0};
+    rtc_timestamp stamp = {0};
     time_read(&stamp);
 
     u8 bank = save1->bank;

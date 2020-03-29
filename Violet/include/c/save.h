@@ -14,7 +14,6 @@
 #include "multichoice.h"
 #include "trainerschool_test.h"
 #include "rtc.h"
-#include "siirtc.h"
 #include "ev_menu.h"
 #include "pokemon/virtual.h"
 #include "pokemon/breeding.h"
@@ -92,9 +91,12 @@ typedef struct saveblock2 {
     u8 milliseconds_played;
     u8 detector_state; //original key swtiching
     // 0x14
-    u8 tbox_style;
+    u8 text_speed : 3;
+    u8 tbox_style : 5;
     u8 sound_state : 1;
-    u8 unknown_2 : 7;
+    u8 battle_style : 1;
+    u8 battle_animations_off : 1;
+    u8 region_map_zoom : 1;
     u8 unknown_3[0x2];
     u8 unknown_4[0x4];
     pid_t icognito_pid;
@@ -125,9 +127,9 @@ typedef struct custom_memory {
     
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
-    timestamp_t a_gen_time;
+    rtc_timestamp a_gen_time;
     u32 tmp_hash_seed;
-    timestamp_t fossil_gen_time;
+    rtc_timestamp fossil_gen_time;
     u8 any_tmp_flags[16];
     map_event_person pokeradar_person;
     
@@ -202,10 +204,6 @@ typedef struct {
     u8 ally_trainer_backsprite_idx;
     u8 ally_trainer_party_preview;
     u32 battle_handicaps;
-    u16 rtc_error_status;
-    SiiRtcInfo_t gp_rtc;
-    u8 rtc_probe_result;
-    u16 rtc_saved_interrupts;
 } floating_memory;
 
 

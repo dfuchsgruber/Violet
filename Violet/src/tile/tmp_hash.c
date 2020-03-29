@@ -123,10 +123,10 @@ void dungeon_flag_set(int dungeon_id) {
 
 
 void tmp_hash_update_seed() {
-    timestamp_t current_time;
+    rtc_timestamp current_time;
     time_read(&current_time);
-    u64 seconds_current = timestamp_to_seconds(&current_time);
-    u64 seconds_update = (u64) (timestamp_to_seconds(&cmem.a_gen_time) + 24 * 60 * 60);
+    u64 seconds_current = rtc_timestamp_to_seconds(&current_time);
+    u64 seconds_update = (u64) (rtc_timestamp_to_seconds(&cmem.a_gen_time) + 24 * 60 * 60);
     if (seconds_current >= seconds_update) {
         tmp_hash_new_seed();
         tmp_flags_reset();

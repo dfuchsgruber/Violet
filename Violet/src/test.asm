@@ -34,6 +34,26 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+setvar 0x8004 12
+special 0x19
+waitstate
+clearflag MAP_BGN_AUTO_ALIGN_OFF
+waitstate //both waitstates are resolved in animation 12
+pause 0x20
+fadescreen 1
+setvar 0x8004 13
+special 0x19
+waitstate //now disable the bg aligment again
+setflag MAP_BGN_AUTO_ALIGN_OFF
+waitstate
+clearflag MAP_BGN_AUTO_ALIGN_OFF
+pause 0x80
+loadpointer 0x0 str_0x8cf12f
+callstd MSG_KEEPOPEN
+closeonkeypress
+end
+
+
 
 setflag TRANS_DISABLE
 clearflag TRANS_PALETTE_FETCH

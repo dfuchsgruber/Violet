@@ -28,7 +28,6 @@ u8 *dma0_dump = ((floating_memory*) 0x0203CEC4)->dma0_dump;
 
 void fmem_init(){
     memset(&fmem, 0, sizeof(fmem));
-    RtcInit();
     gp_stack_init();
 }
 

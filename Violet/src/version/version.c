@@ -121,7 +121,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
     worldmap_flag_set(WM_ORINA_CITY);
     worldmap_flag_set(WM_AKTANIA);
 	// Pick time system that works
-	if (!RtcInErrorousState()) {
+	if (rtc_test()) {
 		*var_access(TIME_TYPE) = TIME_TYPE_RTC;
 	} else {
 		*var_access(TIME_TYPE) = TIME_TYPE_INGAME_CLOCK;

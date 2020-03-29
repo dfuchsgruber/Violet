@@ -39,6 +39,7 @@ void init_anim_engine(u8 *script) {
     mem->current_programm = script;
     mem->callback_id = callback_id;
     mem->active = true;
+    mem->paused = false;
     mem->root = anim_engine_task_setup();
     
 }
@@ -46,7 +47,8 @@ void init_anim_engine(u8 *script) {
 void anim_engine_callback(u8 callback_id) {
     ae_memory* mem = (ae_memory*)big_callback_get_int(callback_id, 1);
     anim_engine_tasks_execute(mem->root);
-    
+    if (mem->paused) return;
+
     //programm read loop
     while (anim_engine_get_hword(mem) == (mem->current_frame) && mem->active) {
         //execution of the command with the related frame
@@ -54,6 +56,7 @@ void anim_engine_callback(u8 callback_id) {
         anim_engine_execute_frame(mem);
     }
     if (!(mem->active)) {
+        big_callback_delete(callback_id);
         free(mem);
         return;
     }
@@ -117,7 +120,8 @@ void anim_engine_execute_frame(ae_memory* mem) {
         cmdx34_setflag,
         cmdx35_pal_restore_snapshot,
         cmdx36_load_obj_pal_from_struct,
-        cmdx37_obj_move_trace
+        cmdx37_obj_move_trace,
+        cmdx38_tbox_and_interrupt,
     
     };
     u8 cmd_id = anim_engine_read_byte(mem);
@@ -381,6 +385,7 @@ void cmdx14_prepare_tbox(ae_memory*mem) {
         u8 boxid = tbox_new(&boxdata);
         tbox_flush_set(boxid, 0);
         tbox_tilemap_draw(boxid);
+        dprintf("Draw tilemap for box %d\n", boxid);
         mem->vars[target_var] = boxid;
     }
 
@@ -1085,4 +1090,44 @@ void cmdx37_obj_move_trace(ae_memory *mem){
             dprintf("Trace %d not specified\n", trace);
             err(ERR_GENERIC);
     }
+}
+
+struct cmd_x38_tbox_waiting_struct {
+    u8 tbox_idx;
+    u8 proceed_boxes;
+    ae_memory *script_state;
+};
+
+static void cmdx38_wait_for_tbox(anim_engine_task *self) {
+    struct cmd_x38_tbox_waiting_struct *waiting_struct = (struct cmd_x38_tbox_waiting_struct*)self->vars;
+    if (waiting_struct->proceed_boxes)
+        tbox_proceed();
+    if (!tbox_printer_is_active(waiting_struct->tbox_idx)) {
+        waiting_struct->script_state->paused = false;
+        anim_engine_task_delete(self);
+    }
+}
+
+void cmdx38_tbox_and_interrupt(ae_memory *mem) {
+    u8 tbox_idx = (u8) anim_engine_read_param(mem);
+    u8 font = anim_engine_read_byte(mem);
+    u16 x = anim_engine_read_hword(mem);
+    u16 y = anim_engine_read_hword(mem);
+    u8 letter_spacing = anim_engine_read_byte(mem);
+    u8 line_spacing = anim_engine_read_byte(mem);
+    tbox_font_colormap* font_colormap = (tbox_font_colormap*) anim_engine_read_word(mem);
+    u8 speed = (u8)anim_engine_read_byte(mem);
+    if (speed == 0x80) {
+        speed = tbox_get_set_speed();
+    }
+    string_decrypt(strbuf, (u8*) anim_engine_read_word(mem));
+    u8 proceed_boxes = anim_engine_read_byte(mem);
+    tbox_print_string(tbox_idx, font, x, y, letter_spacing, line_spacing, font_colormap, speed, strbuf);
+    anim_engine_task *t = anim_engine_task_new(127, cmdx38_wait_for_tbox, sizeof(struct cmd_x38_tbox_waiting_struct), mem->root);
+    struct cmd_x38_tbox_waiting_struct *waiting_struct = (struct cmd_x38_tbox_waiting_struct*)t->vars;
+    waiting_struct->tbox_idx = tbox_idx;
+    waiting_struct->script_state = mem;
+    waiting_struct->proceed_boxes = proceed_boxes;
+    mem->paused = true;
+    bg_copy_vram(tboxes[tbox_idx].boxdata.bg_id, bg_get_tilemap(tboxes[tbox_idx].boxdata.bg_id), 0x800, 0, BG_COPY_TILEMAP);
 }

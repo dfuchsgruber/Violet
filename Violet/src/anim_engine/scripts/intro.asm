@@ -34,14 +34,11 @@ frame 330
 
 frame 340
     text_init 0x8000 0 6 2 18 8 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_intro_0 0 0x10    
+    tbox_and_interrupt box_idx=0x8000 font=2 x=0 y=0 letter_spacing=0 line_spacing=0 font_colormap=fmap speed=TBOX_SPEED_FROM_SETTINGS text=str_intro_0
+    //text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_intro_0 0 0x10    
     endframe
 
-frame 1000
-    text_event 0x8001 EVENT_ENDTEXT
-    endframe
-
-frame 1001
+frame 341
     text_clear 0x8000
     obj_vram_load graphic_intro_meteor
     load_obj_pal 0xADE3 gfx_intro_meteorPal UNCOMP FORCE
@@ -49,12 +46,12 @@ frame 1001
     sound 158
     endframe
 
-frame 1065
+frame 400
     sound 171
     fadescreen 0x7FFF 0 512 2 0 16
     endframe
     
-frame 1076
+frame 409
     fadescreen 0x7FFF 0 512 4 16 0
     oam_despawn 0x8002
     spawn_big_cb anim_intro_earthquake 0 3
@@ -62,24 +59,24 @@ frame 1076
     endframe
     
 
-frame 1120
+frame 460
     text_init 0x8000 0 6 2 19 8 14 4
-    text_render 0x8001 0x8000 4 2 0 0 0 0 fmap DISPLAYALL str_intro_1 0 0x10    
+    tbox_and_interrupt box_idx=0x8000 font=2 x=0 y=0 letter_spacing=0 line_spacing=0 font_colormap=fmap speed=TBOX_SPEED_FROM_SETTINGS text=str_intro_1
     endframe
 
-frame 1700
+frame 461
     text_event 0x8001 EVENT_ENDTEXT
     endframe
 
-frame 1780
+frame 480
     fadescreen 0 0 512 16 0 16
     endframe
 
-frame 1796
+frame 498
     text_clear 0x8001
     endframe
 
-frame 1797
+frame 499
     bg_reset 0
     bg_setup 0 bgcnfgs 4
     bg_sync_and_show 0
@@ -101,8 +98,6 @@ frame 1797
     loadpal gfx_intro_cloudsPal 32 32 UNCOMP RESTORE
     spawn_big_cb anim_intro_waves_back_scroll 0 1
     .hword 0
-    
-
     load_obj_pal 0xADE8 gfx_intro_wavesPal UNCOMP RESTORE
     load_obj_pal 0xADE9 gfx_intro_waves_backPal UNCOMP RESTORE
     obj_vram_load graphic_intro_waves
@@ -112,30 +107,30 @@ frame 1797
     sound 76
     endframe
 
-frame 1798
+frame 500
     fadescreen 0 0 512 16 16 0
     endframe
 
 
-frame 1900
+frame 516
     sound 81
     fadescreen 0x7FFF 0 512 2 0 16
     endframe
 
-frame 1910
+frame 526
     fadescreen 0x7FFF 0 512 6 16 0
     endframe
 
-frame 2100
+frame 700
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
     endframe
 
-frame 2110
+frame 710
     fadescreen 0x7FFF 0 512 6 16 0
     endframe
 
-frame 2260
+frame 760
     sound 206
     set_io_to_val 0xFFB0 0x16
     set_io_to_val 0x1F3F 0x48 //WININ all into WIN0 and enable FX;
@@ -144,37 +139,37 @@ frame 2260
     bg_override 1 gfx_intro_beamMap 0x800 0 COPYMAP
     endframe
 
-frame 2268
+frame 768
     set_io_to_val 0xFFC4 0x16
     endframe
 
-frame 2276
+frame 776
     set_io_to_val 0xFFD8 0x16
     endframe
 
-frame 2284
+frame 784
     set_io_to_val 0xFFEC 0x16
     set_io_to_val 0x0604 0x52 //coefficients
     endframe
 
-frame 2292
+frame 792
     set_io_to_val 0 0x16
     set_io_to_val 0x0607 0x52 //coefficients
     endframe
 
-frame 2300
+frame 800
     set_io_to_val 0x0608 0x52 //coefficients
     endframe
 
-frame 2308
+frame 808
     set_io_to_val 0x060A 0x52 //coefficients
     endframe
 
-frame 2316
+frame 816
     set_io_to_val 0x060C 0x52 //coefficients
     endframe
     
-frame 2380
+frame 889
     obj_vram_load graphic_intro_deoxys_head
     obj_vram_load graphic_intro_deoxys_body
     obj_vram_load graphic_intro_deoxys_bottom
@@ -182,7 +177,7 @@ frame 2380
     load_obj_pal 0xADE4 gfx_intro_deoxys_headPal UNCOMP FORCE
     endframe
 
-frame 2381
+frame 890
     fade_obj_pal 0 0xADE4 0 16 1 0 16
     oam_new oam_template_intro_deoxys_arm_right 92 202 0 0x8005
     oam_new oam_template_intro_deoxys_arm_left 149 202 1 0x8006
@@ -196,35 +191,35 @@ frame 2381
     oam_move 0x8006 560 0 0xFF74 //-140
     endframe
     
-frame 2440
+frame 960
     sound 81
     endframe
 
-frame 3180
+frame 1100
     sound 80
     endframe
 
-frame 3300
+frame 1160
     text_init 0x8000 0 0 2 30 6 14 4
     tbox_flush 0x8000 0x11
-    text_render 0x8001 0x8000 4 2 32 8 0 0 fmap DISPLAYALL str_intro_2 0 0x10    
+    tbox_and_interrupt box_idx=0x8000 font=2 x=32 y=8 letter_spacing=0 line_spacing=0 font_colormap=fmap speed=TBOX_SPEED_FROM_SETTINGS text=str_intro_2
+    // text_render 0x8001 0x8000 4 2 32 8 0 0 fmap DISPLAYALL str_intro_2 0 0x10    
     endframe
 
-frame 3800
-    text_event 0x8001 EVENT_ENDTEXT
+frame 1161
     text_clear 0x8001
     endframe
 
-frame 3880
+frame 1200
     cry POKEMON_DEOXYS 0
     fade_obj_pal 0 0xADE4 15 1 64 16 0
     endframe
 
-frame 3950
+frame 1260
     pal_restore_force_current 0 512
     endframe
 
-frame 4000
+frame 1320
     oam_move 0x8004 32 0 0xFFF8 //-8
     oam_move 0x8003 32 0 4
     oam_move 0x8005 32 0 4
@@ -233,56 +228,45 @@ frame 4000
     endframe
 
 
-frame 4080
+frame 1400
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
     endframe
 
-frame 4090
+frame 1410
     fadescreen 0x7FFF 0 512 6 16 0
     endframe
 
-frame 4110
+frame 1510
     cry POKEMON_DEOXYS 0
     endframe
 
-frame 4120
+frame 1520
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
     endframe
 
-frame 4130
+frame 1530
     fadescreen 0x7FFF 0 512 6 16 0
     endframe
 
-frame 4180
+frame 1580
     text_init 0x8000 0 0 2 30 6 14 4
     tbox_flush 0x8000 0x11
-    text_render 0x8001 0x8000 4 2 32 8 0 0 fmap DISPLAYALL str_intro_3 0 0x10    
+    tbox_and_interrupt box_idx=0x8000 font=2 x=32 y=8 letter_spacing=0 line_spacing=0 font_colormap=fmap speed=TBOX_SPEED_FROM_SETTINGS text=str_intro_3
+    //text_render 0x8001 0x8000 4 2 32 8 0 0 fmap DISPLAYALL str_intro_3 0 0x10    
     endframe
 
-frame 4800
-    text_event 0x8001 EVENT_ENDTEXT
+frame 1581
     text_clear 0x8001
     endframe
 
-frame 4810
+frame 1600
     mapreload
     script_notify
     end
     endframe
 
-
-frame 9999
-    //here we have right coordinates 
-    oam_new oam_template_intro_deoxys_arm_right 92 110 0 0x8005
-    oam_new oam_template_intro_deoxys_arm_left 149 110 1 0x8006
-    oam_new oam_template_intro_deoxys_head 120 68 2 0x8002
-    oam_new oam_template_intro_deoxys_body 121 84 3 0x8003
-    oam_new oam_template_intro_deoxys_bottom 121 120 4 0x8004
-
-    //aggresivve proportions
-    endframe
 
 
 .align 4
@@ -296,3 +280,15 @@ bgcnfgs:
     bg_setup_cnfg 1 1 0x1D 0 0 1
     bg_setup_cnfg 2 3 0x1E 0 0 2
     bg_setup_cnfg 3 0 0x1F 0 0 3
+
+
+
+str_intro_0:
+    .string "DOTSKannst du mich hören?\nDOTS DOTS DOTS\nLass es mich dir zeigenDOTS\nSie kamen aus dem AllDOTSPAUSE_UNTIL_PRESS"
+str_intro_1:
+    .string "Sie kamen von weit herDOTS\nSie wollten die MenschenDOTS\nDOTSvernichtenDOTSPAUSE_UNTIL_PRESS"  
+str_intro_2:
+    .string "Sie waren zum Äußersten bereitDOTS\nEin Kampf war unvermeidbarDOTSPAUSE_UNTIL_PRESS"
+str_intro_3:
+    .string "Und auch wenn sie besiegt wurdenDOTS\nWerden sie gestärkt wiederkehrenDOTSPAUSE_UNTIL_PRESS"
+        

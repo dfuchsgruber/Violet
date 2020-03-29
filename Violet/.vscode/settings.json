@@ -93,6 +93,7 @@
         "battle_communication.h": "c",
         "rtc.h": "c",
         "io.h": "c",
-        "siirtc.h": "c"
+        "siirtc.h": "c",
+        "access_card.h": "c"
     }
 }

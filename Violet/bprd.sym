@@ -755,3 +755,4 @@ battle_animation_move_power = 0x02037eec;
 battle_end_turn_battler_effects = 0x080181dc | 1;
 battle_end_turn_field_effects = 0x08017a88 | 1;
 battle_end_turn_handle_battle_continues = 0x08013aa0 | 1;
+tbox_printer_is_active = 0x08002de4 | 1;
