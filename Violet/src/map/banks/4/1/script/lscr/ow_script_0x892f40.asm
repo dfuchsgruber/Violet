@@ -51,10 +51,7 @@ applymovement 0xFF mov_player_to_bed
 waitmovement 0
 setvar 0x8004 13
 special 0x19
-waitstate //now disable the bg aligment again
-setflag MAP_BGN_AUTO_ALIGN_OFF
-waitstate
-clearflag MAP_BGN_AUTO_ALIGN_OFF
+waitstate 
 pause 0x80
 draw_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_0x8cf12f

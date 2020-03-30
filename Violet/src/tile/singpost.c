@@ -40,16 +40,16 @@ u8 *singpost_behavior_xBC(){
         }
         case 0x1E1: {
             // Shell
-            int r = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 3);
+            int r = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 5);
             dprintf("Shell has hash %d\n", r);
             if(r == 0){
                 //1/5 chance that shell yields something
                 u16 flag = (u16)(0xD80 + tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 127));
                 dprintf("Shell uses flag %x\n", flag);
-                if (checkflag(flag)) {
+                if (!checkflag(flag)) {
                     *var_access(0x8004) = flag;
                     //shell yields something, we decide on item
-                    u32 v = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 7);
+                    u32 v = tile_hash_by_position(pos.x, pos.y, save1->bank, save1->map, 11);
                     if (v < 1) {
                         //1/7 chance for heartscale
                         *var_access(0x8005) = ITEM_HERZSCHUPPE;

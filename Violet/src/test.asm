@@ -34,9 +34,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-setvar 0x8004 12
+
+setvar 0x8004 18
 special 0x19
 waitstate
+end
+
 clearflag MAP_BGN_AUTO_ALIGN_OFF
 waitstate //both waitstates are resolved in animation 12
 pause 0x20

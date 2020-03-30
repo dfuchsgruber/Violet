@@ -165,21 +165,21 @@ mov_away:
 str_cant_heal:
     .autostring 34 2 "Wie mir scheint, bist du ein vom Glück gesegneter junger Trainer.\pAuf deinem Weg kann dir nichts widerfahren!"
 str_healing:
-    .autostring 34 2 "Du bist vom Glück gesegnet, junger Trainer!\pIch werde eines deiner pokémon wieder auf Vordermann bringen."
+    .autostring 34 2 "Du bist vom Glück gesegnet, junger Trainer!\pIch werde eines deiner Pokémon wieder auf Vordermann bringen."
 str_spare:
     .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pMan hat mich geschickt, dir zu schaden, aber dein Team ist bereits so mitgenommenDOTS\pIch werde dich verschonenDOTS\pDanke dem Schicksal für mein MitleidDOTS"
 str_poison:
-    .autostring 34 2 "Ich liebe alles was giftig ist!\pUnd auch deine pokémon werden davon eine Kostprobe erhalten!"
+    .autostring 34 2 "Ich liebe alles was giftig ist!\pUnd auch deine Pokémon werden davon eine Kostprobe erhalten!"
 str_bad_poison:
-    .autostring 34 2 "Ach, du unglückliches Kind!\nIch bin der GiftmischerDOTS\pUnd eines deiner pokémon erliegt nun meinem bösartigen TrankDOTS"
+    .autostring 34 2 "Ach, du unglückliches Kind!\nIch bin der GiftmischerDOTS\pUnd eines deiner Pokémon erliegt nun meinem bösartigen TrankDOTS"
 str_burn:
-    .autostring 34 2 "Hehe!\nIch bin der Zündler!\pUnd ich werde eines deiner pokémon in Brand stetzen!"
+    .autostring 34 2 "Hehe!\nIch bin der Zündler!\pUnd ich werde eines deiner Pokémon in Brand stetzen!"
 str_sleep:
-    .autostring 34 2 "Ich bin ein Hypnotiseur!\pIm Handumdrehen werde ich eines deiner pokémon schläfrig machenDOTS"
+    .autostring 34 2 "Ich bin ein Hypnotiseur!\pIm Handumdrehen werde ich eines deiner Pokémon schläfrig machenDOTS"
 str_freeze:
-    .autostring 34 2 "Mir DOTS ist DOTS so DOTS kalt DOTS\pUnd DOTS auch DOTS dein DOTS pokémon DOTS friert DOTS nun DOTS"
+    .autostring 34 2 "Mir DOTS ist DOTS so DOTS kalt DOTS\pUnd DOTS auch DOTS dein DOTS Pokémon DOTS friert DOTS nun DOTS"
 str_paralysis:
-    .autostring 34 2 "Kannst du die Statik in der Luft spüren?\pSie hat nun von einem deiner pokémon Besitz ergriffen!"
+    .autostring 34 2 "Kannst du die Statik in der Luft spüren?\pSie hat nun von einem deiner Pokémon Besitz ergriffen!"
 str_reduce_hp:
     .autostring 34 2 "Der Fluch, den ich über deine Pokémon spreche, wird sie aller Lebenskraft berauben!"
 str_reduce_pp:

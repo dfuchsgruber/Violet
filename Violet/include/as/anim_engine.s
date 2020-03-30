@@ -1,5 +1,7 @@
-.macro frame frameid
-.hword \frameid
+.macro frame number
+.endm
+
+.macro endframe
 .endm
 
 .equ COPYSET, 1
@@ -7,10 +9,6 @@
 
 .equ COPY, 0
 .equ UNCOMP, 1
-
-.macro endframe
-.byte 0xFF
-.endm
 
 @ends script (return on subscripts)
 .macro end
@@ -510,6 +508,13 @@
 .byte \speed
 .word \text
 .byte \proceed_boxes
+.endm
+
+@ Pauses the script for a certain amount of frames
+@ frames for how many frames to pause the script
+.macro pause frames:req
+.byte 0x39
+.word \frames
 .endm
 
 

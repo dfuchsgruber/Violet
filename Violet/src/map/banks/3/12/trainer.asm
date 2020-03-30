@@ -10,6 +10,7 @@
 .global ow_script_route_11_trainer_6
 .global ow_script_route_11_trainer_7
 .global ow_script_route_11_trainer_8
+.global ow_script_route_12_trainer_couple
 
 ow_script_route_11_trainer_0:
     trainerbattlestd 0 0xe1 0 str_trainer0_challange str_trainer0_defeat
@@ -56,6 +57,11 @@ ow_script_route_11_trainer_8:
     loadpointer 0 str_trainer8_defeat
     callstd MSG_FACE
     end
+ow_script_route_12_trainer_couple:
+    trainerbattledouble 4 0x17d 0 str_trainer9_challange str_trainer9_defeat str_cant_battle9
+    loadpointer 0 str_trainer9_defeat
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_trainer0_challange:
@@ -94,6 +100,12 @@ str_trainer8_challange:
     .autostring 34 2 "Die Pokémon, die hier beißen, sind verflucht.\pDa ist der Reiz beim Angeln gleich viel größer!"
 str_trainer8_defeat:
     .autostring 34 2 "Da hat mich wohl das Unglück der Pokémon verfolgtDOTS"
+str_trainer9_challange:
+    .autostring 34 2 "Mein Partner und ich haben unsere Pokémon gemeinsam trainiert!\pDas macht uns als Duo unschlagbar!"
+str_trainer9_defeat:
+    .autostring 34 2 "Hast du deine Pokémon etwa auch gemeinsam trainiert?"
+str_cant_battle9:
+    .autostring 34 2 "Unsere Pokémon sind es gewohnt, als Team zu kämpfen.\pAlleine treten wir nicht an!"
 .elseif LANG_EN
 str_trainer0_challange:
     .autostring 34 2 "A little bit more south is a cemeteray.\pSince it is very frightening there I will stay northDOTS"

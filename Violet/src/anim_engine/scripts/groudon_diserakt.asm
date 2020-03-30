@@ -4,18 +4,11 @@
 
 .align 4
 ae_script_groudon_diserakt:
-frame 0
-    
     fadescreen 0 0 512 64 0 16
-    endframe
-
-frame 64
+    pause 64
     maintain
     @dma3_reset
-    
-    endframe
-
-frame 65
+    pause 1
     oam_reset
     callback_reset
     bg_reset 0
@@ -30,39 +23,24 @@ frame 65
     bg_override 0 gfx_groudon_diserakt_frontMap 0x800 0 COPYMAP
     bg_override 1 gfx_groudon_magmaTiles 0x4000 0 COPYSET
     bg_override 1 gfx_groudon_magmaMap 0x800 0 COPYMAP
-
-
     loadpal gfx_groudon_magmaPal 16 32 UNCOMP RESTORE
     load_obj_pal 0xA0A1 gfx_groudon_diseraktPal UNCOMP RESTORE
-
     obj_vram_load graphic_groudon_diserakt
-
     oam_new oam_template_groudon_diserakt 108 100 0 0x8000
     set_io_to_val 10 0x10
-    endframe
-
-frame 66
-    
+    pause 1
     fadescreen 0 0 512 64 16 0
     spawn_big_cb groudon_bg_scroll_diserakt_cb 0 1
     .hword 0
-    endframe
-
-frame 130
+    pause 64
     spawn_big_cb groudon_anim_diserakt_cb 0 4
     .hword 0,0,0,0
-    endframe
-
-
-frame 820
+    pause 8 * 64
     setvar 0x8001 1
-    endframe
-
-frame 821
+    pause 1
     mapreload
     script_notify
     end
-    endframe
 
 .align 4
 bgcnfgs:

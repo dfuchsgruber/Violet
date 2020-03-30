@@ -221,7 +221,7 @@ str_narcissa_6:
 str_teah_8:
     .autostring 34 2 "EigenartigDOTS\pIch kann deine Zukunft nicht erkennen.\pEs ist, als besäßest du überhaupt kein Schicksal.\pWie interessant.\pIch bin wirklich neugierig, ob du deinem Ruf gerecht wirst, PLAYER.\pDu willst mich sicher in einem Kampf herausfordern, und diesem Wunsch werde ich nachkommen.\pIch erwarte dich in der Arena von Ceometria."
 str_narcissa_7:
-    .autostring 34 2 "Hab etwas Nachsicht mit Rin.\pEs ist nicht leicht, jemanden, der so brilliant und charismatisch ist, zur großen Schwester zu haben.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAllerdings bin ich vielleicht etwas nachlässig gewesen.\pVielleicht sollte ich doch einmal im Auge behalten, was meine Schwester vorhatDOTS\pIch bin gespannt auf unser nächstes Treffen, PLAYER.\pLass dir nur den Rat geben, dich nicht zu überschätzen!\pUm in meiner Liga mitzuspielen, bist du  noch viel zu schwach.\pAdieu!"
+    .autostring 34 2 "Hab etwas Nachsicht mit Rin.\pEs ist nicht leicht, jemanden, der so brilliant und charismatisch ist, zur großen Schwester zu haben.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAllerdings bin ich vielleicht etwas nachlässig gewesen.\pVielleicht sollte ich doch einmal im Auge behalten, was meine Schwester vorhatDOTS\pIch bin gespannt auf unser nächstes Treffen, PLAYER.\pLass dir nur den Rat geben, dich nicht zu überschätzen!\pUm in meiner Liga mitzuspielen, bist du noch viel zu schwach.\pAdieu!"
 
 .elseif LANG_EN
 str_teah_0:

@@ -8,19 +8,12 @@
 .global ae_script_aktania_sky
 
 ae_script_aktania_meteor:
-frame 0
     pal_restore_snapshot 1
     fadescreen 0 0 512 16 0 16
-    endframe
-
-
-frame 28
+    pause 32
     setflag MAP_BGN_AUTO_ALIGN_OFF 1
     setflag TILESET_ANIM_DISABLE 1
-    endframe
-    
-
-frame 29
+    pause 1
     song MUS_SPIELHALLE_VERSION_3 0
     oam_reset
     //callback_reset
@@ -29,9 +22,7 @@ frame 29
     bg_override 1 gfx_intro_spaceMap 0x800 0 COPYMAP
     loadpal gfx_intro_spacePal 0 32 UNCOMP RESTORE
     setflag MAP_BGN_AUTO_ALIGN_OFF 1
-    endframe
-
-frame 30
+    pause 1
     set_io_to_val 0 0x14
     set_io_to_val 0 0x16
     set_io_to_val 0 0x18
@@ -39,38 +30,22 @@ frame 30
     set_io_to_val 0 0x1C
     set_io_to_val 0 0x1E
     fadescreen 0 0 512 16 16 0
-    endframe
-
-
-//frame 1001
-frame 50
+    pause 1
     obj_vram_load graphic_intro_meteor
     load_obj_pal 0xADE3 gfx_intro_meteorPal UNCOMP FORCE
     oam_new oam_template_intro_meteor 130 170 0 0x8002
     sound 158
-    endframe
-
-//frame 1065
-frame 120
+    pause 24
     sound 171
     fadescreen 0x7FFF 0 512 2 0 16
-    endframe
-    
-//frame 1076
-frame 132
+    pause 64
     fadescreen 0x7FFF 0 512 4 16 0
     oam_despawn 0x8002
     spawn_big_cb anim_intro_earthquake 0 3
     .hword 0, 4, 0
-    endframe
-
-frame 182
+    pause 16
     fadescreen 0 0 512 16 0 16
-    endframe
-
-
-//frame 1797
-frame 199
+    pause 64
     bg_reset 0
     bg_setup 0 bgcnfgs 4
     bg_sync_and_show 0
@@ -92,8 +67,6 @@ frame 199
     loadpal gfx_intro_cloudsPal 32 32 UNCOMP RESTORE
     spawn_big_cb anim_intro_waves_back_scroll 0 1
     .hword 0
-    
-
     load_obj_pal 0xADE8 gfx_intro_wavesPal UNCOMP RESTORE
     load_obj_pal 0xADE9 gfx_intro_waves_backPal UNCOMP RESTORE
     obj_vram_load graphic_intro_waves
@@ -101,85 +74,48 @@ frame 199
     oam_new oam_template_intro_waves_front 160 128 0 0x8003
     oam_new oam_template_intro_waves_front 288 128 0 0x8004
     sound 76
-    endframe
-
-//frame 1798
-frame 200
+    pause 1
     fadescreen 0 0 512 16 16 0
-    endframe
-
-
-frame 300
+    pause 128
     sound 81
     fadescreen 0x7FFF 0 512 2 0 16
-    endframe
-
-//frame 1910
-frame 310
+    pause 8
     fadescreen 0x7FFF 0 512 6 16 0
-    endframe
-
-//frame 2100
-frame 500
+    pause 3 * 64
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
-    endframe
-
-//frame 2110
-frame 510
+    pause 10
     fadescreen 0x7FFF 0 512 6 16 0
-    endframe
-
-//frame 2260
-frame 560
+    pause 64
     sound 206
     set_io_to_val 0xFFB0 0x16
     set_io_to_val 0x1F3F 0x48 //WININ all into WIN0 and enable FX;
     set_io_to_val 0x3F43 0x50 //BG0, BG1 in 1st and other in 2nd
     set_io_to_val 0x0602 0x52 //coefficients
     bg_override 1 gfx_intro_beamMap 0x800 0 COPYMAP
-    endframe
-
-//frame 2268
-frame 568
+    pause 8
     set_io_to_val 0xFFC4 0x16
-    endframe
-
-frame 576
+    pause 8
     set_io_to_val 0xFFD8 0x16
-    endframe
-
-frame 584
+    pause 8
     set_io_to_val 0xFFEC 0x16
     set_io_to_val 0x0604 0x52 //coefficients
-    endframe
-
-frame 592
+    pause 8
     set_io_to_val 0 0x16
     set_io_to_val 0x0607 0x52 //coefficients
-    endframe
-
-frame 600
+    pause 8
     set_io_to_val 0x0608 0x52 //coefficients
-    endframe
-
-frame 608
+    pause 8
     set_io_to_val 0x060A 0x52 //coefficients
-    endframe
-
-frame 616
+    pause 8
     set_io_to_val 0x060C 0x52 //coefficients
-    endframe
-    
-frame 680
+    pause 64
     obj_vram_load graphic_intro_deoxys_head
     obj_vram_load graphic_intro_deoxys_body
     obj_vram_load graphic_intro_deoxys_bottom
     obj_vram_load graphic_intro_deoxys_arm
     load_obj_pal 0xADE4 gfx_intro_deoxys_headPal UNCOMP FORCE
-    endframe
-
-frame 681
+    pause 1
     fade_obj_pal 0 0xADE4 0 16 1 0 16
     oam_new oam_template_intro_deoxys_arm_right 92 202 0 0x8005
     oam_new oam_template_intro_deoxys_arm_left 149 202 1 0x8006
@@ -191,88 +127,52 @@ frame 681
     oam_move 0x8004 560 0 0xFF74 //-140
     oam_move 0x8005 560 0 0xFF74 //-140
     oam_move 0x8006 560 0 0xFF74 //-140
-    endframe
-    
-frame 740
+    pause 64
     sound 81
-    endframe
-
-frame 1480
+    pause 10 * 64
     sound 80
-    endframe
-
-frame 1600
-//frame 3880
+    pause 3 * 64
     cry POKEMON_DEOXYS 0
     fade_obj_pal 0 0xADE4 15 1 64 16 8
-    endframe
-
-
-
-frame 1700
+    pause 128
     fade_obj_pal 0 0xADE4 0 15 32 16 10
     oam_move 0x8004 32 0 0xFFF8 //-8
     oam_move 0x8003 32 0 4
     oam_move 0x8005 32 0 4
     oam_move 0x8006 32 0 4
     oam_move 0x8002 32 0 12
-    endframe
-
-frame 1750
+    pause 64
     pal_restore_force_current 0 512
-    endframe
-
-
-frame 1800
+    pause 64
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
-    endframe
-
-frame 1850
+    pause 64
     fadescreen 0x7FFF 0 512 6 16 0
-    endframe
-
-frame 1900
+    pause 64
     cry POKEMON_DEOXYS 0
-    endframe
-
-frame 1950
+    pause 64
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
-    endframe
-
-frame 1970
+    pause 32
     fadescreen 0x7FFF 0 512 6 16 0
-    endframe
-
-frame 2099
+    pause 128
     setflag MAP_BGN_AUTO_ALIGN_OFF 0
     setflag TILESET_ANIM_DISABLE 0 
-    endframe
-
-frame 2100
+    pause 1
     pal_restore_snapshot 0
     mapreload
     script_notify
     end
-    endframe
 
 
 
 ae_script_aktania_beam:
-frame 0
     pal_restore_snapshot 1
     fadescreen 0 0 512 16 0 16
-    endframe
-
-
-frame 28
+    pause 32
     setflag MAP_BGN_AUTO_ALIGN_OFF 1
     setflag TILESET_ANIM_DISABLE 1
-    endframe
-    
-
-frame 29
+    pause 1
     oam_reset
     //callback_reset
     maintain
@@ -299,63 +199,40 @@ frame 29
     bg_override 0 gfx_anim_dark_aktania_waves_frontMap 0x800 0 COPYMAP
     loadpal gfx_anim_dark_aktania_back_0Pal 0 32 UNCOMP RESTORE
     loadpal gfx_anim_dark_aktania_waves_backPal 16 32 UNCOMP RESTORE
-    endframe
-
-frame 30
+    pause 1
     bg_scroll 0 1000 0xF830 0
     bg_scroll 1 1000 0xFC18 0
     fadescreen 0 0 512 16 16 0
-    endframe
-
-frame 100
+    pause 2 * 64
     bg_scroll 0 0x28 0 0xFFD8
     bg_scroll 1 0x28 0 0xFFD8
     bg_scroll 2 0x28 0 0xFFD8
-    endframe
-
-frame 160
+    pause 64
     sound 100
-    endframe
-
-frame 168
+    pause 8
     bg_override 2 gfx_anim_dark_aktania_back_1Map 0x1000 0 COPYMAP
     bg_override 2 gfx_anim_dark_aktania_back_1Tiles 0x6000 0 COPYSET
-    endframe
-
-frame 176
+    pause 8
     bg_override 2 gfx_anim_dark_aktania_back_2Map 0x1000 0 COPYMAP
     bg_override 2 gfx_anim_dark_aktania_back_2Tiles 0x6000 0 COPYSET
-    endframe
-    
-frame 184
+    pause 8
     bg_override 2 gfx_anim_dark_aktania_back_3Map 0x1000 0 COPYMAP
     bg_override 2 gfx_anim_dark_aktania_back_3Tiles 0x6000 0 COPYSET
-    endframe
-
-frame 260
+    pause 96
     setflag MAP_BGN_AUTO_ALIGN_OFF 0
     setflag TILESET_ANIM_DISABLE 0
     pal_restore_snapshot 0
     mapreload
     script_notify
     end
-    endframe
     
-
 ae_script_aktania_sky:
-frame 0
     pal_restore_snapshot 1
     fadescreen 0 0 512 16 0 16
-    endframe
-
-
-frame 28
+    pause 32
     setflag MAP_BGN_AUTO_ALIGN_OFF 1
     setflag TILESET_ANIM_DISABLE 1
-    endframe
-    
-
-frame 29
+    pause 1
     oam_reset
     callback_reset
     maintain
@@ -405,57 +282,35 @@ frame 29
     oam_move 0x8001 128 24 0
     oam_move 0x8002 128 24 0
     oam_move 0x8003 128 0xFFE0 0
-
-    endframe
-
-
-frame 30
+    pause 1
     bg_scroll 2 128 0xFFF0 0
     bg_scroll 1 3000 1000 0
     bg_scroll 0 1000 1000 0
     fadescreen 0 0 512 16 16 0
-    endframe
-
-frame 32
+    pause 2
     oam_move_trace 0x8001 9999 SINE
         .byte YAXIS
         .hword 1, 64
     oam_move_trace 0x8002 9999 SINE
         .byte YAXIS
         .hword 1, 64
-    endframe
-
-//frame 2100
-frame 80
+    pause 64
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
-    endframe
-
-//frame 2110
-frame 90
+    pause 10
     fadescreen 0x7FFF 0 512 6 16 0
-    endframe
-
-//frame 2100
-frame 210
+    pause 3 * 64
     sound 80
     fadescreen 0x7FFF 0x0 512 2 0 16
-    endframe
-
-//frame 2110
-frame 220
+    pause 10
     fadescreen 0x7FFF 0 512 6 16 0
-    endframe
-
-frame 260
+    pause 64
     setflag MAP_BGN_AUTO_ALIGN_OFF 0
     setflag TILESET_ANIM_DISABLE 0
     pal_restore_snapshot 0
     mapreload
     script_notify
     end
-    endframe
-
 
 .align 4
 bgcnfgs:

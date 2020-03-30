@@ -16,61 +16,23 @@ typedef struct anim_engine_task{
 
 typedef struct ae_memory {
     u16 current_frame;
-    u8 *current_programm;
-    u8 link_numbers;
+    u8 *script;
     u8 callback_id;
     u8 active : 1;
     u8 paused : 1;
+    int delayed;
     u8 num_printers_waited_for;
-    u8 *links [8];
-    u16 lframes [8];
+    u8 stack_size;
+    u8 *stack[8];
     u16 vars[16];
     color_t *pal_restore_save;
-    anim_engine_task *root;
+    anim_engine_task *root; // Doubly-linked list, sorted by priority
 } ae_memory;
 
-typedef struct text_render_flags_s {
-    u8 linebreak : 1;
-    u8 paragraph : 1;
-    u8 end : 1;
-    u8 free : 1;
-    u8 pass_linebreak : 1;
-    u8 pass_paragraph : 1;
-    u8 pass_end : 1;
-    u8 pass_free : 1;
-} text_render_flags_s;
-
-typedef union text_render_flags {
-    u8 value;
-    text_render_flags_s flags;
-} text_render_flags;
-
-typedef struct aetr_memory {
-    u8 *o_text;
-    u8 *source;
-    u8 *destination;
-    text_render_flags flags;
-    u16 delay_timer;
-    u16 speed;
-    tbox_font_colormap *color_map;
-    u8 boxid;
-    u8 font;
-    u8 unkown;
-    u8 border_distance;
-    u8 line_distance_u;
-    u8 line_distance_l;
-    u8 display_flag;
-    u8 bg_id;
-
-} aetr_memory;
-
-typedef void (*ae_cmd)(ae_memory* mem);
-
-extern u8 **anim_script_table;
-
+extern u8 *ae_scripts[];
 
 void init_anim_engine_by_table();
-void init_anim_engine(u8 *script);
+void anim_engine_initiatlize(u8 *script);
 void anim_engine_callback(u8 callback_id);
 void anim_engine_execute_frame(ae_memory* mem);
 u8 anim_engine_read_byte(ae_memory* mem);
@@ -79,7 +41,6 @@ u32 anim_engine_read_word(ae_memory* mem);
 u16 anim_engine_read_hword(ae_memory* mem);
 u16 anim_engine_read_param(ae_memory* mem);
 //void anim_engine_tbox_renderer(u8 cbid);
-void anim_engine_text_renderer(anim_engine_task *t);
 void _obj_move_linear_trace(anim_engine_task *self);
 void anim_engine_fader(anim_engine_task *self);
 void callback_maintain();
@@ -146,6 +107,8 @@ void cmdx36_load_obj_pal_from_struct(ae_memory *mem);
 void _obj_move_sine_trace(u8 self);
 void cmdx37_obj_move_trace(ae_memory *mem);
 void cmdx38_tbox_and_interrupt(ae_memory *mem);
+void cmdx39_pause(ae_memory *mem);
+void cmd_nop(ae_memory *mem);
 void ae_mapreloader();
 
 void anim_engine_yin_yang_fade_big_callback(u8 self);

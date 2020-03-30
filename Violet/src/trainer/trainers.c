@@ -6430,5 +6430,13 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x17c_route_12_couple,
         .battle_state = BATTLE_DOUBLE,
     },
+    [0x17d] = {
+        .trainerclass = TRAINERCLASS_JUNGES_GLUECK, .sprite = 68,
+        .encounter_and_gender = {0, 0}, .name = LANGDEP(PSTRING("Ken u. Pia"),
+            PSTRING("Ken a. Pia")), .pokemon_cnt = 4,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x17d_route_11_couple,
+        .battle_state = BATTLE_DOUBLE,
+    },
 }; 
 

@@ -37,7 +37,7 @@ color_t dns_get_overlay(u8 shader_state) {
 u8 dns_get_alpha(u8 shader_state) {
     switch (shader_state) {
         case SHADER_NIGHT:
-            return 14;
+            return 16;
         case SHADER_MORNING:
             return 14;
         case SHADER_EVENING:

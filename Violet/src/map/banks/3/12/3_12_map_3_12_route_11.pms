@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_32_route_11",
 		"events": {
-			"person_cnt": 14,
+			"person_cnt": 16,
 			"warp_cnt": 4,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -33,10 +33,10 @@
 					"picture": "26",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "22",
-					"y": "27",
+					"x": "9",
+					"y": "51",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_AUF_UND_AB",
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"behaviour_range": "4",
 					"field_B": 0,
 					"is_trainer": "1",
@@ -75,8 +75,8 @@
 					"picture": "43",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "24",
-					"y": "46",
+					"x": "25",
+					"y": "44",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN2",
 					"behaviour_range": "3",
@@ -96,10 +96,10 @@
 					"picture": "58",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "7",
-					"y": "53",
+					"x": "6",
+					"y": "51",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
 					"behaviour_range": 0,
 					"field_B": 0,
 					"is_trainer": "1",
@@ -138,7 +138,7 @@
 					"picture": "44",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "13",
+					"x": "8",
 					"y": "72",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER2",
@@ -146,7 +146,7 @@
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
-					"alert_radius": "4",
+					"alert_radius": "6",
 					"script": "ow_script_route_11_trainer_6",
 					"flag": 0,
 					"value": {
@@ -159,15 +159,15 @@
 					"picture": "44",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "28",
-					"y": "59",
+					"x": "18",
+					"y": "72",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"behaviour_range": 0,
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
-					"alert_radius": "4",
+					"alert_radius": "6",
 					"script": "ow_script_route_11_trainer_7",
 					"flag": 0,
 					"value": {
@@ -300,6 +300,48 @@
 						"item": "ITEM_TAUCHBALL",
 						"species": 0
 					}
+				},
+				{
+					"target_index": "15",
+					"picture": "27",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "24",
+					"y": "30",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "1",
+					"script": "ow_script_route_12_trainer_couple",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "16",
+					"picture": "23",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "25",
+					"y": "30",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour_range": 0,
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "1",
+					"script": "ow_script_route_12_trainer_couple",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
 				}
 			],
 			"warps": [
@@ -320,7 +362,7 @@
 					"target_bank": "25"
 				},
 				{
-					"x": "13",
+					"x": "14",
 					"y": "59",
 					"level": 0,
 					"target_warp_idx": "3",
@@ -328,7 +370,7 @@
 					"target_bank": "25"
 				},
 				{
-					"x": "14",
+					"x": "13",
 					"y": "59",
 					"level": 0,
 					"target_warp_idx": "2",

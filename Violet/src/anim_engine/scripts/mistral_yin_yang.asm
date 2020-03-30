@@ -4,44 +4,25 @@
 
 .align 4
 ae_script_mistral_yin_yang:
-
-frame 0
     fadescreen 0 0 512 16 0 16
-    endframe
-
-frame 32
+    pause 32
     bg_override 0 gfx_yin_yangTiles 0x1000 0 1
     bg_override 0 gfx_yin_yangMap 0x800 0 2
     loadpal gfx_yin_yangPal 13*16 32 1 0
-    endframe
-
-frame 33
+    pause 1
     fadescreen 0 0 512 16 16 12
-    endframe
-
-frame 49
+    pause 16
     fadescreen 0 13*16 16 16 12 0
     sound 33
-    endframe
-
-
-frame 184
+    pause 128
     fadescreen 0 13*16 16 16 0 12
-    endframe
-
-frame 200
+    pause 16
     fadescreen 0 0 512 16 12 16
-    endframe
-
-frame 216
+    pause 16
     bg_clear_map 0 0x800
-    endframe
-
-frame 217
+    pause 1
     fadescreen 0 0 512 16 16 0
-    endframe
-
-frame 240
+    pause 18
     script_notify
     end
     endframe
