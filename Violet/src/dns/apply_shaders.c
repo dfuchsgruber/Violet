@@ -12,15 +12,15 @@
 color_t dns_get_overlay(u8 shader_state) {
     switch (shader_state) {
         case SHADER_NIGHT: {
-            color_t overlay = {.rgb = {.red = 6, .green = 8, .blue = 19}};
+            color_t overlay = {.rgb = {.red = 0x7D / 8, .green = 0x7D / 8, .blue = 0xE2 / 8}};
             return overlay;
         }
         case SHADER_MORNING: {
-            color_t overlay = {.rgb = {.red = 31, .green = 15, .blue = 25}};
+            color_t overlay = {.rgb = {.red = 0xE2 / 8, .green = 0xFA / 8, .blue = 0xD0 / 8}};
             return overlay;
         }
         case SHADER_EVENING: {
-            color_t overlay = {.rgb = {.red = 29, .green = 15, .blue = 10}};
+            color_t overlay = {.rgb = {.red = 0xE0 / 8, .green = 0xB5 / 8, .blue = 0xB5 / 8}};
             return overlay;
         }
         case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM: {
@@ -34,16 +34,17 @@ color_t dns_get_overlay(u8 shader_state) {
     }
 }
 
+
 u8 dns_get_alpha(u8 shader_state) {
     switch (shader_state) {
         case SHADER_NIGHT:
             return 16;
         case SHADER_MORNING:
-            return 14;
+            return 16;
         case SHADER_EVENING:
-            return 13;
+            return 16;
         case SHADER_CEOMETRIA_GYM_PUNISHMENT_ROOM:
-            return 11;
+            return 16;
         default:
             return 0;
     }
@@ -81,10 +82,12 @@ void pal_apply_shaders(u16 start_color, u16 number_colors) {
 }
 
 void dns_blend_colors(u16 start_col, u16 col_cnt, color_t overlay, u8 alpha) {
+    (void) alpha;
     if (dns_on()) {
         u16 end_col = (u16) (start_col + col_cnt);
         for (;start_col < end_col; start_col++) {
-            pal_restore[start_col] = color_blend_and_multiply(pal_restore[start_col], overlay, alpha);;
+            pal_restore[start_col] = color_multiply(pal_restore[start_col], overlay);
+            //pal_restore[start_col] = color_blend_and_multiply(pal_restore[start_col], overlay, alpha);;
         }
     }
 }

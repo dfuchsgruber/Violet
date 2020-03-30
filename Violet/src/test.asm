@@ -34,6 +34,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+loadpointer 0 str_a
+setvar 0x8000 0
+special 0xE
+settrainerflag 4
+trainerbattlecont 0x1 0x4 0x3 str_0x8a158f str_0x8a15bf ow_script_0x8a1433
+
 
 setvar 0x8004 18
 special 0x19

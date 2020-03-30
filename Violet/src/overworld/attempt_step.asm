@@ -2,16 +2,13 @@
 
 // This hook creates an edge case for creating the "blocked" sound when a collision is happening, if the collision type is a stair
 // Hook at 0x5ba06 via r0
-
+/**
 .global npc_player_initialize_step_movement_hook
 
 npc_player_initialize_step_movement_hook:
     sub r0, r1, #5
     cmp r0, #(COLLISION_SIDEWAY_STAIRS - 5)
-
-
-    beq end_func
-
+    beq collision_is_sideway_stairs
     lsl r0, #0x18
     lsr r0, #0x18
     cmp r0, #3
@@ -19,7 +16,7 @@ npc_player_initialize_step_movement_hook:
     ldr r0, =0x0805ba10 | 1
     bx r0
 
-end_func:
+collision_is_sideway_stairs:
     ldr r0, =0x0805baa4 | 1
     bx r0
-
+**/

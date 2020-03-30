@@ -45,6 +45,13 @@ u8 trainer_class_names[TRAINERCLASS_CNT][13];
 u8 trainer_class_money_multipliers[TRAINERCLASS_CNT];
 
 /**
+ * Configures a trainerbattle by parameters of an overworld script command.
+ * @param script the parameter list
+ * @return the challange script
+ **/
+u8 *trainer_configure_by_overworld_script(u8 *script);
+
+/**
  * Checks the flag of a trainer
  * @param trainer_id Id of the trainer
  * @return Weather the trainer was battled

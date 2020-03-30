@@ -38,10 +38,20 @@ overworld_pals equ 0x083A501C
 .org 0x80645B4
     .word npc_anims
 
-.org 0x0805ba06
-    ldr r0, =npc_player_initialize_step_movement_hook | 1
-    bx r0
+.org 0x0805b9d4
+    ldr r2, =npc_player_initialize_move_not_biking | 1
+    bx r2
     .pool
+
+.org 0x080bd3b4
+    ldr r2, = npc_player_initialize_move_on_bike | 1
+    bx r2
+    .pool
+
+//.org 0x0805ba06
+//    ldr r0, =npc_player_initialize_step_movement_hook | 1
+//    bx r0
+//    .pool
 
 .org 0x0805bba8
     push {r4, lr}
@@ -86,6 +96,9 @@ blxr4_0805bba8:
 
 .org 0x083A5CD0
     .word ow_hiro_fly_graphics
+
+.org overworld_script_commands + 4 * 0x5C
+    .word overworld_script_command_trainerbattle | 1
 
 .org overworld_script_commands + 4 * 0x77
     .word overworld_script_command_close_braille | 1

@@ -280,6 +280,7 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             trainerbattle_load_target_npc();
             return ow_script_trainerbattle_with_continuation;
         case TRAINER_BATTLE_TWO_TRAINERS:
+            fmem.trainers_cnt = 2;
             trainerbattle_configure(trainerbattle_configuration_two_trainers, ow_script);
             trainerbattle_load_target_npc();
             return ow_script_trainerbattle_double_dont_check_enough_pokemon; // Use special SPECIAL_CANT_DOUBLE_BATTLE before in your overworld script...
@@ -291,6 +292,7 @@ u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
             trainer_configuration_print(&trainer_vars);
             return ow_script_trainerbattle_double_dont_check_enough_pokemon; // We don't check for double battles, as the ally always should have one pokemon...
         case TRAINER_BATTLE_ALLY_TWO_TRAINERS:
+            fmem.trainers_cnt = 2;
             trainerbattle_configure(trainerbattle_configuration_ally_two_trainers, ow_script);
             trainerbattle_load_target_npc();
             *var_access(VAR_ALLY) = fmem.ally_trainer_idx;

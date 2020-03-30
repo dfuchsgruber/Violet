@@ -78,8 +78,8 @@ u8 npc_attempt_diagonal_move(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
             ncpy.dest_y++;
             result = npc_get_collision(&ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
             if (!result) {
-                result = COLLISION_SIDEWAY_STAIRS;
-                npc_player_set_state_and_execute_tile_anim(0xAC, 2);
+                result = COLLISION_SIDEWAY_STAIRS_SOUTH_WEST;
+                // npc_player_set_state_and_execute_tile_anim(0xAC, 2);
             }
 
         } else if (role_to == BEHAVIOR_SIDE_STAIR_WEST) { //Northwest ascending check
@@ -91,8 +91,8 @@ u8 npc_attempt_diagonal_move(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 ncpy.dest_y--;
                 result = npc_get_collision(&ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);
                 if (!result) {
-                    result = COLLISION_SIDEWAY_STAIRS;
-                    npc_player_set_state_and_execute_tile_anim(0xAD, 2);
+                    result = COLLISION_SIDEWAY_STAIRS_NORTH_WEST;
+                    // npc_player_set_state_and_execute_tile_anim(0xAD, 2);
                 }
             }
         }
@@ -104,8 +104,8 @@ u8 npc_attempt_diagonal_move(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
             ncpy.dest_y++;
             result = npc_get_collision(&ncpy, x_to_origin, (s16) (y_to_origin + 1), direction);
             if (!result) {
-                result = COLLISION_SIDEWAY_STAIRS;
-                npc_player_set_state_and_execute_tile_anim(0xAB, 2);
+                result = COLLISION_SIDEWAY_STAIRS_SOUTH_EAST;
+                // npc_player_set_state_and_execute_tile_anim(0xAB, 2);
             }
 
         } else if (role_to == BEHAVIOR_SIDE_STAIR_EAST) { //Northeast ascending check
@@ -117,13 +117,11 @@ u8 npc_attempt_diagonal_move(npc *n, s16 x_to_origin, s16 y_to_origin, u8 direct
                 ncpy.dest_y--;
                 result = npc_get_collision(&ncpy, x_to_origin, (s16) (y_to_origin - 1), direction);
                 if (!result) {
-                    result = COLLISION_SIDEWAY_STAIRS;
-                    npc_player_set_state_and_execute_tile_anim(0xAA, 2);
+                    result = COLLISION_SIDEWAY_STAIRS_NORTH_EAST;
+                    // npc_player_set_state_and_execute_tile_anim(0xAA, 2);
                 }
             }
         }
     }
-
-
     return result;
 }

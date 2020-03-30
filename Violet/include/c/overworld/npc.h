@@ -119,6 +119,14 @@ u8 npc_sees_player(npc *n);
  */
 bool npc_anim_stop(npc *n, oam_object *target);
 
+enum {
+    NPC_ANIM_SPEED_WALK_NORMAL = 0,
+    NPC_ANIM_SPEED_WALK_RUNNING = 1,
+    NPC_ANIM_SPEED_WALK_RIDING = 2,
+    NPC_ANIM_SPEED_WALK_VERY_FAST = 3,
+    NPC_ANIM_SPEED_WALK_SLIDE = 4
+};
+
 /***
  * Intializes the walking animation for a npc
  * @param n the npc instance
@@ -126,7 +134,7 @@ bool npc_anim_stop(npc *n, oam_object *target);
  * @param direction the direction to walk into
  * @param unkown TODO
  */
-void npc_anim_init_walk(npc *n, oam_object *target, u8 direction, u8 unkown);
+void npc_anim_init_walk(npc *n, oam_object *target, u8 direction, u8 speed);
 
 /**
  * Checks if the walking of a npc object is finished
@@ -338,5 +346,93 @@ bool npc_player_attempt_transition_water_to_land(s16 x,s16 y,u8 direction);
  * @return if a movable boulder exists at this location
  **/ 
 bool npc_is_movable_boulder_at(s16 x,s16 y,u8 direction);
+
+/**
+ * Checks what collision there is for the player to walk into a certain direction.
+ * @param direction the direction the player attempts to walk into
+ * @return collision which collision there is
+ **/
+u8 npc_player_collision(u8 direction);
+
+/**
+ * Checks what collision there is for the player to bike into a certain direction.
+ * @param direction the direction the player attempts to bike into
+ * @return collision which collision there is
+ **/
+u8 npc_player_collision_on_bike(u8 direction);
+
+/**
+ * Initializes a move for the player to jump over a block (ledges).
+ * @param direction the direction in which to jump.
+ **/
+void npc_player_init_move_jump(u8 direction);
+
+/**
+ * Initializes a move for the player to face a certain direction (warps).
+ * @param direction the direction in which to face.
+ **/
+void npc_player_init_move_face(u8 direction);
+
+/**
+ * Initializes a move for the player to walk in place and creates the blocked soundeffect.
+ * @param direction the direction in which to be blocked.
+ **/
+void npc_player_init_move_blocked(u8 direction);
+
+/**
+ * Initializes a move for the player to surf.
+ * @param direction the direction in which to be go.
+ **/
+void npc_player_init_move_surfing(u8 direction);
+
+/**
+ * Initializes the player sliding on the left foot
+ * @param direction the direction in which to slide in
+ **/
+void npc_player_init_move_sliding_on_left_foot(u8 direction);
+
+/**
+ * Initializes the player running.
+ * @param direction the direction in which to run in.
+ **/
+void npc_player_init_move_running(u8 direction);
+
+/**
+ * Initializes the player walking.
+ * @param direction the direction in which to walk in.
+ **/
+void npc_player_init_move_walking(u8 direction);
+
+/**
+ * Initializes the player slowly walking
+ * @param direction the direction in which to slowly walk in
+ **/
+void npc_player_init_move_walking_slow(u8 direction);
+
+/**
+ * Initializes the player biking into a direction
+ * @param direction the direction in which to bike in
+ **/
+void npc_player_init_move_bike(u8 direction);
+
+/**
+ * Initializes the player on the bike being blocked into a direction
+ * @param direction the direction in which attempted to bike in
+ **/
+void npc_player_init_move_bike_blocked(u8 direction);
+
+/**
+ * Checks if an npc is not allowed to run.
+ * @param behaviour the behaviour the npc is on
+ * @return if the npc is prevented to run
+ **/
+bool npc_can_not_run(u8 behaviour);
+
+/**
+ * Checks if the player npc is walking towards rock stairs (which slow the player down)
+ * @param direction in which direction the player npc walks
+ * @return if the tile it walks towards are rock stairs
+ **/
+bool npc_player_walking_towards_rock_stairs(u8 direction);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

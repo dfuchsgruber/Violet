@@ -43,11 +43,10 @@ ow_script_movs_0x8a136f:
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
+.byte STEP_NORTH_EAST
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_UP
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
@@ -98,12 +97,13 @@ ow_script_movs_0x8a133b:
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
+.byte STEP_NORTH_EAST
+
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
-.byte STEP_UP
-.byte STEP_RIGHT
+
 .byte STEP_RIGHT
 .byte STEP_RIGHT
 .byte STEP_RIGHT
