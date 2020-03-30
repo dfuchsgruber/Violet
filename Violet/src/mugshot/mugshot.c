@@ -212,6 +212,9 @@ void mugshot_delete_oam(u8 self) {
 			++*state;
 			break;
 			}
+		case 1:
+			++*state; // I frame delay
+			break;
 		default: {
 			if (!big_callback_is_active(mugshot_wait_for_deletion)) {
 				big_callbacks[self].function = mugshot_wait_for_deletion;

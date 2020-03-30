@@ -100,6 +100,18 @@ blxr4_0805bba8:
 .org overworld_script_commands + 4 * 0x5C
     .word overworld_script_command_trainerbattle | 1
 
+.org overworld_script_commands + 4 * 0x6E
+    .word script_cmd_x6E_yesnobox | 1
+
+.org overworld_script_commands + 4 * 0x6F
+    .word script_cmd_x6F_multichoice | 1
+
+.org overworld_script_commands + 4 * 0x70
+    .word script_cmd_x70_multichoice_with_default | 1
+
+.org overworld_script_commands + 4 * 0x71
+    .word script_cmd_x71_multichoice_grid | 1
+
 .org overworld_script_commands + 4 * 0x77
     .word overworld_script_command_close_braille | 1
 

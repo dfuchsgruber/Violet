@@ -90,6 +90,14 @@ void overworld_script_set_inactive();
 void overworld_script_init_muted(u8 *script);
 
 /**
+ * Shows a yes/no box and spawns a callback to process user input
+ * @param x unused
+ * @param y unused
+ * @return if the creation was sucessful
+ **/
+bool yesnobox(u8 x, u8 y);
+
+/**
  * Shows a multichoice and spawns callback to process user input
  * @param x the x coordinate for the choice (in tiles)
  * @param y the y coordiante for the choice (in tiles)
@@ -97,7 +105,29 @@ void overworld_script_init_muted(u8 *script);
  * @param forced_choice if the choice is forced (i.e. can not be aborted with B-press)
  * @return on success
  */
-bool multichoice(u8 x, u8 y, u8 choice, bool forced_choice);
+bool multichoice(u8 x, u8 y, u8 choice, u8 forced_choice);
+
+/**
+ * Shows a multichoice and spawns callback to process user input with the cursor at a default position
+ * @param x the x coordinate for the choice (in tiles)
+ * @param y the y coordiante for the choice (in tiles)
+ * @param choice the multichoice id
+ * @param forced_choice if the choice is forced (i.e. can not be aborted with B-press)
+ * @param default_item the idx of the default choice, where the cursor is initialized
+ * @return on success
+ */
+bool multichoice_with_default(u8 x, u8 y, u8 choice, u8 forced_choice, u8 default_item);
+
+/**
+ * Shows a multichoice and spawns callback to process user input with more than one column
+ * @param x the x coordinate for the choice (in tiles)
+ * @param y the y coordiante for the choice (in tiles)
+ * @param choice the multichoice id
+ * @param forced_choice if the choice is forced (i.e. can not be aborted with B-press)
+ * @param num_columns the number of columns
+ * @return on success
+ */
+bool multichoice_grid(u8 x, u8 y, u8 choice, u8 forced_choice, u8 num_columns);
 
 /**
  * Gives an egg to the player.

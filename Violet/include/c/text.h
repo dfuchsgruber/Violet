@@ -366,6 +366,43 @@ extern "C" {
      **/
     u8 *trainer_get_name(u16 trainer_idx);
 
+    /**
+     * Checks if the overworld textbox is a sign
+     * @return if the overworld textbox is a sign
+     **/
+    bool overworld_tbox_is_sign();
+
+
+    /**
+     * Loads gfx and palette of a signpost textbox
+     **/
+    void tbox_load_sign_gfx_and_pal();
+
+    enum {
+        TBOX_ATTRIBUTE_BG = 0,
+        TBOX_ATTRIBUTE_X,
+        TBOX_ATTRIBUTE_Y,
+        TBOX_ATTRIBUTE_WIDTH,
+        TBOX_ATTRIBUTE_HEIGHT,
+        TBOX_ATTRIBUTE_PAL,
+        TBOX_ATTRIBUTE_TILE,
+        TBOX_ATTRIBUTE_VIRTUAL_TILESET,
+    };
+
+    /**
+     * Gets an attribute of a textbox
+     * @param tbox_idx the textbox to get an attribute of
+     * @param attribute which attribute to get
+     **/
+    int tbox_get_attribute(u8 tbox_idx, u8 attribute);
+
+    /**
+     * Removes the task of the overworld textbox, if present.
+     **/
+    void overworld_tbox_remove_task();
+
+    extern u8 overworld_tbox_state;
+
     extern u8 strbuf[];
     extern u8 buffer0[];
     extern u8 buffer1[];

@@ -18,7 +18,7 @@ void transparency_on();
 void transparency_off();
 bool transparency_load_black_pal();
 
-const color_t tbox_palettes_transparency [10 * 16];
+const color_t tbox_palette_transparent[16];
 
 #endif	/* TRANSPARENCY_H */
 

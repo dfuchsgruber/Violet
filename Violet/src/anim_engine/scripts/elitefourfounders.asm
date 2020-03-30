@@ -26,6 +26,7 @@ ae_script_elite_four_founders:
     bg_override 1 gfx_faunfrontalTiles 0x3000 0 COPYSET
     bg_override 2 gfx_efounder_backgroundMap 0x800 0 COPYMAP
     loadpal gfx_efounder_backgroundPal 0 32 UNCOMP RESTORE
+    loadpal tbox_palette_transparent, 14 * 16, 32, COPY, RESTORE
     pause 1
     fadescreen 0 0 512 128 16 0
     pause 170

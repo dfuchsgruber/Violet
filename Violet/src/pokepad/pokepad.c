@@ -168,7 +168,7 @@ void pokepad_init_components() {
 
     //pal
     pal_decompress(gfx_pokepad_backgroundPal, 0, 32);
-    pal_copy(tbox_palettes_transparency, 15 * 16, 32);
+    pal_copy(tbox_palette_transparent, 15 * 16, 32);
 
     fmem.pad_mem->color_cb = big_callback_new(pokepad_callback_background_anim, 0);
     pal_set_all_to_black();

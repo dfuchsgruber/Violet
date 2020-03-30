@@ -94,6 +94,8 @@
         "rtc.h": "c",
         "io.h": "c",
         "siirtc.h": "c",
-        "access_card.h": "c"
+        "access_card.h": "c",
+        "color.h": "c",
+        "transparency.h": "c"
     }
 }

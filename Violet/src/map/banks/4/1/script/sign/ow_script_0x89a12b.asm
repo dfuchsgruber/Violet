@@ -17,7 +17,7 @@ setvar 0x8004 0x1
 special 0xd6
 sound 0x4
 loadpointer 0x0 str_0x1a8124
-callstd MSG_KEEPOPEN
+callstd MSG
 special 0xf9
 waitstate
 special 0x120

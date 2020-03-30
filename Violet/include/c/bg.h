@@ -146,6 +146,15 @@ extern "C" {
         bool is_tilemap);
 
     /**
+     * Copies a graphic to the tileset of a bg.
+     * @param bg_idx the bg 
+     * @param src the tiles to copy
+     * @param size how many bytes to copy
+     * @param offset where in the charbase to place the tiles
+     **/
+    void bg_load_tileset(u8 bg_idx, void *src, size_t size, u16 offset);
+
+    /**
      * General purpose free memory ?
      */
     extern u8 gp_tmp_buf[];

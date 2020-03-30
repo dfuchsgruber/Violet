@@ -6,58 +6,28 @@
 #include "overworld/map_control.h"
 #include "io.h"
 #include "constants/specials.h"
+#include "text.h"
+#include "bg.h"
+#include "debug.h"
 
-
-
-static u16 transparency_disabling_special_ids [] = {
-    0xF9, 0x190, 0xFD, 0xFE, SPECIAL_SELECT_PARTY_POKEMON, 0x2B, 0x2C, SPECIAL_DAYCARE_SELECT_PARTY_POKEMON,
-    SPECIAL_PARTY_POKEMON_SELECT_MOVE, SPECIAL_MOVE_TUTOR_SELECT_POKEMON, SPECIAL_UNOWN_MESSAGE_PRINT, 
-    SPECIAL_WILD_BATTLE_LEGENDARY_INITIALIZE,
-    0xFFFF
+const color_t tbox_palette_transparent [16] = {
+    {0x0},
+    {0x0},
+    {0x7FFF},
+    {0x0},
+    {0x7FFF},
+    {0x0},
+    {0x0},
+    {0x0},
+    {0x7FFF},
+    {0x0},
+    {0x0},
+    {0x0},
+    {0x0},
+    {0x0},
+    {0x0},
+    {0x0},
 };
-
-u8 transparency_disabling_command_ids [] = {
-    0x2, 0x97, 0x5C, 0x5D, 0xB7, 0x29, 0x8E,
-    0x86, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E, 0x40, 0x41, 0x6B, 0x6C, 0x77, 0x78, 0xFF
-};
-
-void transparency_handler(u8 *command) {
-    //dprintf("Story progress is %d\n", *var_access(0x4051));
-    //dprintf("Transparency handler, cmd %x @ %x\n", *command, command);
-    if (*command != 0x27 && *command != 0x6d) { //waitstate bypasses the entire handle, also waitkeypress
-        if (transparency_is_on()) {
-            //We check if have a special that disables the transparency
-            if (*command == 0x26 || *command == 0x25) {
-                //Now we set together the param
-                u16 special_id = (u16) (command[1] | (command[2] << 8));
-                int i;
-                for (i = 0; transparency_disabling_special_ids[i] != 0xFFFF; i++) {
-                    if (transparency_disabling_special_ids[i] == special_id) {
-                        transparency_off();
-                        return;
-                    }
-                }
-            } else {
-                //We check if the command itself disables the transparency
-                int i;
-                for (i = 0; transparency_disabling_command_ids[i] != 0xFF; i++) {
-                    if (transparency_disabling_command_ids[i] == *command) {
-                        transparency_off();
-                        return;
-                    }
-                }
-            }
-            transparency_on();
-        } else {
-            transparency_off();
-        }
-    }
-
-}
-
-bool transparency_load_black_pal() {
-    return checkflag(TRANS_PALETTE_FETCH);
-}
 
 bool transparency_is_on() {
     //dprintf("Transparency used by weather %d, bypassed %d\n", transparency_used_by_weather(), checkflag(FLAG_BYPASS_TRANSPARENCY));
@@ -72,7 +42,7 @@ bool transparency_used_by_weather() {
 void transparency_on() {
     if (transparency_used_by_weather())
         return;
-    setflag(TRANS_PALETTE_FETCH);
+    // setflag(TRANS_PALETTE_FETCH);
     io_set(0x48, 0x1F3F);
     io_set(0x50, 0x3F41);
     io_set(0x52, 0x060F);
@@ -84,5 +54,38 @@ void transparency_off() {
         io_set(0x50, 0x1E40);
         io_set(0x52, 0x0010);
     }
-    clearflag(TRANS_PALETTE_FETCH);
+    // clearflag(TRANS_PALETTE_FETCH);
+}
+
+
+extern void *gfx_text_std_borderTiles[];
+extern color_t gfx_text_std_borderPal[16];
+
+void tbox_frame_std_load_gfx_and_pal(u8 tbox_idx, u16 tile_offset, u16 color_idx) {
+    bg_load_tileset((u8)tbox_get_attribute(tbox_idx, TBOX_ATTRIBUTE_BG), gfx_text_std_borderTiles, 0x280, tile_offset);
+    pal_copy(gfx_text_std_borderPal, color_idx, 16 * sizeof(color_t));
+}
+
+void tbox_frame_transparent_load_gfx_and_pal() {
+    bg_load_tileset((u8)tbox_get_attribute(0, TBOX_ATTRIBUTE_BG), gfx_text_std_borderTiles, 0x280, 0x200);
+    pal_copy(tbox_palette_transparent, 15 * 16, 16 * sizeof(color_t));
+}
+
+void overworld_tbox_load_gfx() {
+    if (transparency_is_on()) {
+        transparency_on();
+        tbox_frame_transparent_load_gfx_and_pal();
+    } else if (overworld_tbox_is_sign()) {
+        tbox_load_sign_gfx_and_pal();
+    } else {
+        tbox_load_message_gfx_and_pal();
+    }
+}
+
+void overworld_tbox_delete() {
+    if (transparency_is_on())
+        transparency_off();
+    overworld_tbox_remove_task();
+    tbox_remove_dialog(0, 1);
+    overworld_tbox_state = 0;
 }

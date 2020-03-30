@@ -16,6 +16,7 @@ ae_script_intro:
     bg_override 1 gfx_intro_spaceTiles 0x2000 0 COPYSET
     bg_override 1 gfx_intro_spaceMap 0x800 0 COPYMAP
     loadpal gfx_intro_spacePal 0 32 UNCOMP RESTORE
+    loadpal tbox_palette_transparent, 14 * 16, 32, COPY, RESTORE
     pause 1
     set_io_to_val 0 0x14
     set_io_to_val 0 0x16

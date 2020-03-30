@@ -34,6 +34,11 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+clearflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
+showsprite 2
+goto ow_script_0x88abb8
+
+
 loadpointer 0 str_a
 setvar 0x8000 0
 special 0xE

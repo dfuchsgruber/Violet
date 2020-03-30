@@ -521,7 +521,7 @@ void ev_menu_callback_setup() {
         pal_copy(typechart_icon_pal, 16, 32);
         pal_decompress(gfx_ev_menu_hexagonPal, (u16)(256 + 16 * iv_hexagon_pal), 32);
         pal_decompress(gfx_ev_menu_hexagonPal, (u16)(256 + 16 * ev_hexagon_pal), 32);
-        pal_copy(tbox_palettes_transparency, 14 * 16, 32);
+        pal_copy(tbox_palette_transparent, 14 * 16, 32);
         pal_set_all_to_black();
 
         bg_virtual_sync(0);

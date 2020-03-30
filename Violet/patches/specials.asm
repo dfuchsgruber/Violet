@@ -90,10 +90,11 @@ special_table equ 0x0815FCC0
 .org (special_table + (0x30 *4))
         .word access_card_init_by_atrium | 1
         .pool
+/** 
 .org (special_table + (0x31 *4))
         .word transparency_load_black_box_pals | 1
         .pool
-
+*/
 .org (special_table +(0x36 *4))
         .word special_x36_check_loaded_trainerflag | 1
         .pool
