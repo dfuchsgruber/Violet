@@ -76,7 +76,7 @@ static u8 diagonal_biking_movement_idx_by_collision(u8 collision) {
     switch (collision) {
         case COLLISION_SIDEWAY_STAIRS_NORTH_EAST: return STEP_NORTH_EAST_RIDING;
         case COLLISION_SIDEWAY_STAIRS_SOUTH_EAST: return STEP_SOUTH_EAST_RIDING;
-        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST: return STEP_SOUTH_EAST_RIDING;
+        case COLLISION_SIDEWAY_STAIRS_SOUTH_WEST: return STEP_SOUTH_WEST_RIDING;
         case COLLISION_SIDEWAY_STAIRS_NORTH_WEST: return STEP_NORTH_WEST_RIDING;
         default: return 0;
     }

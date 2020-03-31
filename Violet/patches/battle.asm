@@ -149,12 +149,35 @@ blxr4:
     mov r0, #0x7F
     lsl r0, #0x18 //high number so all attacks are valid
 
-//fadeing intro of battle
-.org 0x0824EEB4
-    .word dma0_dump
 
+.org 0x080bc48c
+	push {r4, lr}
+	mov r4, #0 // Always use the slide function of terrain 0
+	ldr r0, = 0x080bc568 | 1
+	b 0x080bc4d4
+	.pool
+
+// Slide function of terrain 0: DMA0 sets BG3X, which we set to 0 for the entire scanline
+.org 0x080bc6f0
+	mov r0, #0
+.org 0x080bc71c
+	mov r0, #0
+
+
+//fadeing intro of battle
+//.org 0x0824EEB4
+//   .word dma0_dump
+
+
+/** 
 .org 0x0800FEB0
     .halfword 0x5050 //win0 settings
+*/
+
+//.org 0x080116d4
+//	b 0x080116f6
+
+
 
 .org 0x8014ba0
 	.word battle_script_cmds
