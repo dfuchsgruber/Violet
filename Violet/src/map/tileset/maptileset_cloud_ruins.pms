@@ -8,9 +8,14 @@
 		"palettes": [
 			[
 				{
-					"red": 0,
+					"red": 31,
 					"blue": 0,
 					"green": 0
+				},
+				{
+					"red": 31,
+					"blue": 31,
+					"green": 31
 				},
 				{
 					"red": 0,
@@ -18,49 +23,44 @@
 					"green": 0
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 1,
+					"blue": 1,
+					"green": 1
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 8,
+					"blue": 8,
+					"green": 8
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 12,
+					"blue": 12,
+					"green": 12
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 15,
+					"blue": 15,
+					"green": 14
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 18,
+					"blue": 19,
+					"green": 17
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 21,
+					"blue": 22,
+					"green": 20
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 23,
+					"blue": 23,
+					"green": 22
 				},
 				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
-				},
-				{
-					"red": 0,
-					"blue": 0,
-					"green": 0
+					"red": 27,
+					"blue": 28,
+					"green": 25
 				},
 				{
 					"red": 0,

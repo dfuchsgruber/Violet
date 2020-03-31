@@ -25,7 +25,7 @@
 #include "callbacks.h"
 #include "trainerschool_test.h"
 
-#define TEST_TIME (2 * 60 * 60) // 2 minutes?
+#define TEST_TIME (60 * 60) // 1 minutes?
 
 bg_config trainerschool_test_bg_configs[3] = {
     {0, 2, 31, 0, 0, 1}, //text on bg0
@@ -174,10 +174,10 @@ static void trainerschool_clock_callback(oam_object *self) {
         self->anim_number = anim_idx;
         oam_gfx_anim_init(self, 0);
     }
+    int frame = self->private[2]; // [0 to 63]
+    self->private[2] = (u16)((self->private[2] + 1) % 64);
     // If 90% of the time is used up, the timer will fade red
     if ((TRAINER_SCHOOL_TEST_STATE->timer * 10 / TEST_TIME) >= 9) {
-        int frame = self->private[2]; // [0 to 63]
-        self->private[2] = (u16)((self->private[2] + 1) % 64);
         (void)frame;
         if (!fading_control.active) {
             u8 alpha = (u8)MAX(0, 4 + sine((s16)(frame * 4), 4));
@@ -185,6 +185,7 @@ static void trainerschool_clock_callback(oam_object *self) {
             color_t col_red = {.rgb = {.red = 31, .blue = 0, .green = 0}};
             pal_alpha_blending((u16)(256 + 16 * pal_idx), 16, alpha, col_red);
         }
+        self->x2 = sine((s16)((frame % 16) * 16), 3);
     }
 }
 
