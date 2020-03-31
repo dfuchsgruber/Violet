@@ -8,6 +8,9 @@
 #ifndef TRAINERSCHOOL_TEST_H
 #define	TRAINERSCHOOL_TEST_H
 
+#include "types.h"
+#include "save.h"
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
@@ -23,12 +26,16 @@ extern "C" {
         u8 current_question;
         u8 cursor;
         u8 answer_oam;
-        u8 delay;
+        u16 delay;
         u8 frame;
+        u16 timer;
+        u8 finished;
     } trainerschool_test_memory;
 
 trainerschool_test_question trainerschool_test_questions [10];
 void trainerschool_test_idle();
+
+#define TRAINER_SCHOOL_TEST_STATE ((trainerschool_test_memory*)(fmem.gp_state))
 
 #ifdef	__cplusplus
 }

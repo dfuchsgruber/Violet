@@ -164,21 +164,6 @@ blxr4:
 	mov r0, #0
 
 
-//fadeing intro of battle
-//.org 0x0824EEB4
-//   .word dma0_dump
-
-
-/** 
-.org 0x0800FEB0
-    .halfword 0x5050 //win0 settings
-*/
-
-//.org 0x080116d4
-//	b 0x080116f6
-
-
-
 .org 0x8014ba0
 	.word battle_script_cmds
 

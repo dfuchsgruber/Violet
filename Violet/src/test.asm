@@ -34,6 +34,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+callasm trainerschool_exam_init
+
+loadpointer 0 str_a
+callstd MSG
+end
+
 clearflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
 showsprite 2
 goto ow_script_0x88abb8
