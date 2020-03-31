@@ -397,6 +397,52 @@ extern "C" {
     int tbox_get_attribute(u8 tbox_idx, u8 attribute);
 
     /**
+     * Blits pixels from a source bitmap to a textbox.
+     * @param tbox_idx the tbox to blit into
+     * @param src the source bitmap
+     * @param src_x upper_left x coordinate of the rectangle to copy in the source image
+     * @param src_y upper_left y coordinate of the rectangle to copy in the source image
+     * @param src_width width of the source image
+     * @param src_height height of the source image
+     * @param dst_x upper left x coordinate of where to put the bitmap in the tbox
+     * @param dst_y upper left y coordiante of where to put the bitmap in the tbox
+     * @param src_width width of the rectangle to copy
+     * @param src_height height of the rectangle to copy
+     **/
+    void tbox_blit(u8 tbox_idx, u8 *src, u16 src_x, u16 src_y, u16 src_width, u16 src_height, u16 dst_x,
+              u16 dst_y, u16 width, u16 height);
+    
+    /**
+     * Fills a rectangle of a textbox.
+     * @param box_idx the box to fill
+     * @param fill_value the value with which to fill (4-bit)
+     * @param x the x coordiante
+     * @param y the y coordiante
+     * @param width the width of the rectangle to fill
+     * @param height the height of the rectangle to fill
+     **/
+    void tbox_fill_rectangle(u8 box_idx, u8 fill_value, u16 x, u16 y, u16 width, u16 height);
+
+    #define BLIT_TRANSPARENT_COLOR_NONE 0xFF
+
+    /**
+     * Blits pixels from a source bitmap to a textbox, using an arbitrary color that is ignored (i.e. transparent).
+     * @param tbox_idx the tbox to blit into
+     * @param src the source bitmap
+     * @param src_x upper_left x coordinate of the rectangle to copy in the source image
+     * @param src_y upper_left y coordinate of the rectangle to copy in the source image
+     * @param src_width width of the source image
+     * @param src_height height of the source image
+     * @param dst_x upper left x coordinate of where to put the bitmap in the tbox
+     * @param dst_y upper left y coordiante of where to put the bitmap in the tbox
+     * @param src_width width of the rectangle to copy
+     * @param src_height height of the rectangle to copy
+     * @param transparent_color the color idx to ignore, i.e. have it transparent
+     **/
+    void tbox_blit_with_transparent_color(u8 tbox_idx, u8 *src, u16 src_x, u16 src_y, u16 src_width, u16 src_height, u16 dst_x,
+              u16 dst_y, u16 width, u16 height, u8 transparent_color);
+
+    /**
      * Removes the task of the overworld textbox, if present.
      **/
     void overworld_tbox_remove_task();

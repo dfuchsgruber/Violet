@@ -96,6 +96,7 @@
         "siirtc.h": "c",
         "access_card.h": "c",
         "color.h": "c",
-        "transparency.h": "c"
+        "transparency.h": "c",
+        "start_menu.h": "c"
     }
 }

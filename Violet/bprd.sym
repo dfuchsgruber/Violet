@@ -779,3 +779,6 @@ tbox_get_attribute = 0x080048d0 | 1;
 bg_load_tileset = 0x080017e0 | 1;
 overworld_tbox_remove_task = 0x08069410 | 1;
 overworld_tbox_state = 0x0203709c;
+tbox_blit = 0x08004170 | 1;
+tbox_fill_rectangle = 0x080042f8 | 1;
+tbox_blit_with_transparent_color = 0x08004230 | 1;

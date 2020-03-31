@@ -25,8 +25,8 @@ enum start_menu_clock_digit{
     START_MENU_CLOCK_HOURS_10, START_MENU_CLOCK_HOURS_1, START_MENU_CLOCK_MINUTES_10, START_MENU_CLOCK_MINUTES_1
 };
 
-extern int gfx_start_menu_7_segmentTiles[];
-extern int gfx_start_menu_7_segmentPal[];
+extern u8 gfx_start_menu_7_segmentTiles[];
+extern u8 gfx_start_menu_7_segmentPal[];
 
 /**
  * Closes the start menu
