@@ -1795,7 +1795,8 @@
 		"maptileset_beach_house": "src/map/tileset/maptileset_beach_house.pms",
 		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms",
 		"maptileset_ardeal": "src/map/tileset/maptileset_ardeal.pms",
-		"maptileset_cloud_ardeal": "src/map/tileset/maptileset_cloud_ardeal.pms"
+		"maptileset_cloud_ardeal": "src/map/tileset/maptileset_cloud_ardeal.pms",
+		"maptileset_cloud_dark_tower": "src/map/tileset/maptileset_cloud_dark_tower.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1843,6 +1844,7 @@
 		"gfx_maptileset_beach_houseTiles": "asset/gfx/tileset/gfx_maptileset_beach_house.png",
 		"gfx_maptileset_route_7Tiles": "asset/gfx/tileset/gfx_maptileset_route_7.png",
 		"gfx_maptileset_ardealTiles": "asset/gfx/tileset/gfx_maptileset_ardeal.png",
-		"gfx_maptileset_cloud_ardealTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ardeal.png"
+		"gfx_maptileset_cloud_ardealTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ardeal.png",
+		"gfx_maptileset_cloud_dark_towerTiles": "asset/gfx/tileset/gfx_maptileset_cloud_dark_tower.png"
 	}
 }
