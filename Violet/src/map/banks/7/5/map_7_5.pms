@@ -16,7 +16,7 @@
 					"field_3": 0,
 					"x": 13,
 					"picture": 39,
-					"script": "ow_script_0x81afdd",
+					"script": "ow_script_map_7_5_trainer_0",
 					"field_2": 0,
 					"y": 9,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
@@ -38,7 +38,7 @@
 					"field_3": 0,
 					"x": 4,
 					"picture": 81,
-					"script": "ow_script_0x830eb6",
+					"script": "ow_script_map_7_5_trainer_1",
 					"field_2": 0,
 					"y": 4,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
@@ -60,7 +60,7 @@
 					"field_3": 0,
 					"x": 12,
 					"picture": 22,
-					"script": "ow_script_0x81b238",
+					"script": "ow_script_map_7_5_trainer_2",
 					"field_2": 0,
 					"y": 12,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
@@ -82,7 +82,7 @@
 					"field_3": 0,
 					"x": 4,
 					"picture": 40,
-					"script": "ow_script_0x81b139",
+					"script": "ow_script_map_7_5_trainer_3",
 					"field_2": 0,
 					"y": 13,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
@@ -104,7 +104,7 @@
 					"field_3": 0,
 					"x": 8,
 					"picture": 18,
-					"script": "ow_script_0x81b0a3",
+					"script": "ow_script_map_7_5_trainer_4",
 					"field_2": 0,
 					"y": 7,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
@@ -159,7 +159,7 @@
 			],
 			"triggers": [
 				{
-					"script": "ow_script_0x84e6f8",
+					"script": "ow_script_map_7_5_trigger_0",
 					"value": 0,
 					"y": 11,
 					"level": 0,
@@ -170,7 +170,7 @@
 					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
-					"script": "ow_script_0x84e6f8",
+					"script": "ow_script_map_7_5_trigger_0",
 					"value": 0,
 					"y": 10,
 					"level": 0,
@@ -181,7 +181,7 @@
 					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
-					"script": "ow_script_0x84e767",
+					"script": "ow_script_map_7_5_trigger_1",
 					"value": 1,
 					"y": 10,
 					"level": 0,
@@ -192,7 +192,7 @@
 					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
-					"script": "ow_script_0x84e767",
+					"script": "ow_script_map_7_5_trigger_1",
 					"value": 1,
 					"y": 16,
 					"level": 0,
@@ -203,7 +203,7 @@
 					"var": "VAR_SIVLANIA_GYM_SWITCH"
 				},
 				{
-					"script": "ow_script_0x947bb1",
+					"script": "ow_script_map_7_5_trigger_2",
 					"value": "0",
 					"y": 15,
 					"level": 0,

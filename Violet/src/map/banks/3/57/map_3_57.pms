@@ -203,7 +203,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
-					"script": "ow_script_0x899c42",
+					"script": "ow_script_map_3_57_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -214,7 +214,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
-					"script": "ow_script_0x89bfa5",
+					"script": "ow_script_map_3_57_trigger_1",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -225,7 +225,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
-					"script": "ow_script_0x89bfa5",
+					"script": "ow_script_map_3_57_trigger_1",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -236,7 +236,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 4,
-					"script": "ow_script_0x89bfa5",
+					"script": "ow_script_map_3_57_trigger_1",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -361,7 +361,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x8f46c0",
+						"script": "ow_script_map_3_57_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",

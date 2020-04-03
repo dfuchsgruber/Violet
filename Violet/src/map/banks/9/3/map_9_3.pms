@@ -9,7 +9,7 @@
 			"persons": [
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x84b0b8",
+					"script": "ow_script_map_9_3_person_0",
 					"y": 8,
 					"target_index": 1,
 					"field_3": 0,
@@ -75,7 +75,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x95a67a",
+					"script": "ow_script_map_9_3_person_1",
 					"y": 5,
 					"target_index": 4,
 					"field_3": 0,
@@ -141,7 +141,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x84b0f7",
+					"script": "ow_script_map_9_3_person_2",
 					"y": 8,
 					"target_index": 7,
 					"field_3": 0,
@@ -163,7 +163,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x95a5ff",
+					"script": "ow_script_map_9_3_person_3",
 					"y": 9,
 					"target_index": 8,
 					"field_3": 0,
@@ -204,7 +204,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x95bdf4",
+						"script": "ow_script_map_9_3_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",

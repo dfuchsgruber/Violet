@@ -19,7 +19,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": "5",
-					"script": "ow_script_0x8a9625",
+					"script": "ow_script_map_3_41_trainer_0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -41,7 +41,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": 4,
-					"script": "ow_script_0x8a875c",
+					"script": "ow_script_map_3_41_trainer_1",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -63,7 +63,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": 4,
-					"script": "ow_script_0x8a683c",
+					"script": "ow_script_map_3_41_trainer_2",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -85,7 +85,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": 4,
-					"script": "ow_script_0x80f39f",
+					"script": "ow_script_map_3_41_trainer_3",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -107,7 +107,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": 4,
-					"script": "ow_script_0x80f348",
+					"script": "ow_script_map_3_41_trainer_4",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -129,7 +129,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": "2",
-					"script": "ow_script_0x8a79e8",
+					"script": "ow_script_map_3_41_trainer_5",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -151,7 +151,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": "5",
-					"script": "ow_script_0x8aa963",
+					"script": "ow_script_map_3_41_trainer_6",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -173,7 +173,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x803dab",
+					"script": "ow_script_map_3_41_trainer_7",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -239,7 +239,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": 5,
-					"script": "ow_script_0x8a89d3",
+					"script": "ow_script_map_3_41_trainer_8",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -261,7 +261,7 @@
 					"behaviour_range": 3,
 					"is_trainer": 1,
 					"alert_radius": "5",
-					"script": "ow_script_0x810950",
+					"script": "ow_script_map_3_41_trainer_9",
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
@@ -283,7 +283,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x844895",
+					"script": "ow_script_map_3_41_trainer_10",
 					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
@@ -459,7 +459,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810e25",
+					"script": "ow_script_map_3_41_trainer_11",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
@@ -481,7 +481,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810e25",
+					"script": "ow_script_map_3_41_trainer_11",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
@@ -503,7 +503,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810e25",
+					"script": "ow_script_map_3_41_trainer_11",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
@@ -525,7 +525,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810e25",
+					"script": "ow_script_map_3_41_trainer_11",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
@@ -547,7 +547,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810e25",
+					"script": "ow_script_map_3_41_trainer_11",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
@@ -569,7 +569,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x810e25",
+					"script": "ow_script_map_3_41_trainer_11",
 					"flag": "ROUTE_5_VIOLET_GRUNTS",
 					"field_D": 0,
 					"field_B": 0,
@@ -701,7 +701,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x1c1963",
+					"script": "ow_script_map_3_1_person_0",
 					"flag": "0x13",
 					"field_D": 0,
 					"field_B": 0,
@@ -723,7 +723,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x9270c4",
+					"script": "ow_script_map_3_41_trainer_12",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -745,7 +745,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 2,
-					"script": "ow_script_0x8a3c95",
+					"script": "ow_script_map_3_41_trainer_13",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -789,7 +789,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8fae7c",
+					"script": "ow_script_map_3_41_trainer_14",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -833,7 +833,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8ac1aa",
+					"script": "ow_script_map_3_41_trainer_15",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -855,7 +855,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x860960",
+					"script": "ow_script_map_3_41_trainer_16",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -899,7 +899,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8de68e",
+					"script": "ow_script_map_3_41_trainer_17",
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
@@ -921,7 +921,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8e1126",
+					"script": "ow_script_map_3_41_trainer_18",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -943,7 +943,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x92eca8",
+					"script": "ow_script_map_3_41_trainer_19",
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
@@ -1009,7 +1009,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8dca38",
+					"script": "ow_script_map_3_41_trainer_20",
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
@@ -1031,7 +1031,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8dc594",
+					"script": "ow_script_map_3_41_trainer_21",
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
@@ -1053,7 +1053,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x8dc44d",
+					"script": "ow_script_map_3_41_trainer_22",
 					"flag": "ROUTE_2_ALBUS",
 					"field_D": 0,
 					"field_B": 0,
@@ -1222,7 +1222,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 13,
-					"script": "ow_script_0x8a685c",
+					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -1233,7 +1233,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 13,
-					"script": "ow_script_0x8a685c",
+					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -1244,7 +1244,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 13,
-					"script": "ow_script_0x8a685c",
+					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -1255,7 +1255,7 @@
 					"level": 0,
 					"field_5": 0,
 					"value": 13,
-					"script": "ow_script_0x8a685c",
+					"script": "ow_script_map_3_41_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -1270,7 +1270,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x8104f8",
+						"script": "ow_script_map_3_41_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1287,7 +1287,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1304,7 +1304,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x86b31f",
+						"script": "ow_script_map_3_41_sign_2",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1321,7 +1321,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1338,7 +1338,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1355,7 +1355,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1372,7 +1372,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1389,7 +1389,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1406,7 +1406,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1423,7 +1423,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1440,7 +1440,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1457,7 +1457,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1474,7 +1474,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1491,7 +1491,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1508,7 +1508,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1525,7 +1525,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1542,7 +1542,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1559,7 +1559,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x87aac1",
+						"script": "ow_script_map_3_41_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",

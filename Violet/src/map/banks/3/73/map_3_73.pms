@@ -31,7 +31,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x800000",
+					"script": "ow_script_map_3_73_person_0",
 					"y": 37,
 					"target_index": 2,
 					"field_3": 0,

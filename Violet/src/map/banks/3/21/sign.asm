@@ -6,6 +6,10 @@
 .include "callstds.s"
 .include "unown_messages.s"
 .include "vars.s"
+.include "map_adjacency_types.s"
+.include "map_connections.s"
+.include "species.s"
+.include "items.s"
 
 .global ow_script_felsige_oednis_regirock_cave_entrance
 
@@ -54,4 +58,103 @@ str_0:
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "A cave entrance has appeared!"
+.endif
+
+.global ow_script_map_3_21_sign_1
+.global ow_script_map_3_21_sign_0
+.global ow_script_0x8ffcc2
+.global ow_script_0x926c09
+.global ow_script_0x8ffc8a
+.global ow_script_0x8ffcbb
+
+ow_script_map_3_21_sign_0:
+loadpointer 0x0 str_0x926b0a
+callstd MSG
+fadescreen 0x1
+fanfare 0x100
+waitfanfare
+fadescreen 0x0
+special SPECIAL_HEAL
+loadpointer 0x0 str_0x926b6d
+callstd MSG
+end
+
+
+.ifdef LANG_GER
+
+str_0x926b0a:
+    .string "Ein Brunnen! Das frische Wasser\nwird den erschöpften Pokémon\lhelfen."
+
+
+
+str_0x926b6d:
+    .string "Die Pokémon von PLAYER wurden\nvollständig geheilt."
+
+
+.elseif LANG_EN
+
+.endif
+
+
+ow_script_map_3_21_sign_1:
+loadpointer 0x0 str_0x926b9d
+callstd MSG_YES_NO
+compare LASTRESULT 0x0
+gotoif EQUAL ow_script_0x8ffcc2
+random 0x4
+compare LASTRESULT 0x1
+gotoif LESS_OR_EQUAL ow_script_0x926c09
+random 0x19
+compare LASTRESULT 0x1
+gotoif EQUAL ow_script_0x8ffc8a
+setwildbattle POKEMON_TUSKA 0x19 ITEM_NONE
+dowildbattle
+end
+
+
+ow_script_0x8ffc8a:
+random 0x3
+compare LASTRESULT 0x1
+callif EQUAL ow_script_0x8ffcbb
+setwildbattle POKEMON_NOKTUSKA 0x1e ITEM_NONE
+dowildbattle
+setvar NEXT_POKEMON_SHINY 0x0
+end
+
+
+ow_script_0x8ffcbb:
+setvar NEXT_POKEMON_SHINY 0x1
+return
+
+
+ow_script_0x926c09:
+loadpointer 0x0 str_0x926c53
+callstd MSG
+end
+
+
+ow_script_0x8ffcc2:
+loadpointer 0x0 str_0x926beb
+callstd MSG
+end
+
+
+.ifdef LANG_GER
+
+str_0x926b9d:
+    .string "Der Katkus schimmert golden in der\nWüstensonne. Möchtest du an ihm\lrütteln?"
+
+
+
+str_0x926c53:
+    .string "Nichts passiertDOTS"
+
+
+
+str_0x926beb:
+    .string "PLAYER lässt den Kaktus in\nRuhe."
+
+
+.elseif LANG_EN
+
 .endif

@@ -210,7 +210,7 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x1c1963",
+					"script": "ow_script_map_3_1_person_0",
 					"flag": "17",
 					"value": {
 						"item": 0,
@@ -231,7 +231,7 @@
 					"is_trainer": 0,
 					"field_D": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x1c1963",
+					"script": "ow_script_map_3_1_person_0",
 					"flag": "16",
 					"value": {
 						"item": 0,

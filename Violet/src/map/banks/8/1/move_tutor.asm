@@ -4,6 +4,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "move_tutor.s"
+.include "movements.s"
 
 .global ow_script_kaskada_clouds_move_tutor
 ow_script_kaskada_clouds_move_tutor:
@@ -20,7 +21,7 @@ ow_script_kaskada_clouds_move_tutor:
 
 
 can_pay:
-    applymovement LASTTALKED ow_script_movs_0x8f511a
+    applymovement LASTTALKED mov_exclam
     waitmovement 0x0
     lock
     faceplayer
@@ -50,6 +51,9 @@ abort:
     release
     end
 
+
+mov_exclam:
+    .byte SAY_EXCLAM, STOP
 
 .ifdef LANG_GER
 str_0:

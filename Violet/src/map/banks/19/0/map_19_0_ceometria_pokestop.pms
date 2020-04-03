@@ -19,7 +19,7 @@
 					"behaviour_range": 17,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x16b39f",
+					"script": "ow_script_map_9_1_person_0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -107,7 +107,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x803ed2",
+					"script": "ow_script_map_5_4_person_4",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -182,7 +182,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x95dfeb",
+						"script": "ow_script_map_9_1_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",

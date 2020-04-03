@@ -207,7 +207,7 @@
 				},
 				{
 					"is_trainer": 1,
-					"script": "ow_script_0x8c7eb6",
+					"script": "ow_script_map_0_7_trainer_0",
 					"y": 25,
 					"target_index": 11,
 					"field_3": 0,
@@ -229,7 +229,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x8c7f32",
+					"script": "ow_script_map_0_7_trainer_1",
 					"y": 10,
 					"target_index": 12,
 					"field_3": 0,

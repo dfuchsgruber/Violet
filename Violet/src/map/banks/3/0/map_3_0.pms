@@ -162,7 +162,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x878711",
+						"script": "ow_script_map_3_0_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -179,7 +179,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x80067e",
+						"script": "ow_script_map_3_0_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -196,7 +196,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x8002ec",
+						"script": "ow_script_map_3_0_sign_2",
 						"item": {
 							"item": "0",
 							"flag": "0",

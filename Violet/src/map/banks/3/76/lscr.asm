@@ -16,3 +16,10 @@ levelscript_player_set_on_cloud:
 	.hword MERIANA_ARENA_TRIGGER, 0x0
 	.word ow_script_set_player_on_cloud
 	.hword 0x0
+.include "overworld_script.s"
+.include "specials.s"
+
+
+ow_script_set_player_on_cloud:
+special SPECIAL_SET_PLAYER_ON_CLOUD
+end

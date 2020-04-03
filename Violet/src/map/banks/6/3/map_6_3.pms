@@ -9,7 +9,7 @@
 			"persons": [
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x87abfc",
+					"script": "ow_script_map_6_3_person_0",
 					"y": 5,
 					"target_index": 1,
 					"field_3": 0,

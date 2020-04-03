@@ -9,7 +9,7 @@
 			"persons": [
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x858de3",
+					"script": "ow_script_map_10_22_person_0",
 					"y": 5,
 					"target_index": 1,
 					"field_3": 0,
@@ -31,7 +31,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x86be14",
+					"script": "ow_script_map_10_22_person_1",
 					"y": 3,
 					"target_index": 2,
 					"field_3": 0,
@@ -53,7 +53,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x86bd41",
+					"script": "ow_script_map_10_22_person_2",
 					"y": 4,
 					"target_index": 3,
 					"field_3": 0,

@@ -19,7 +19,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": 4,
-					"script": "ow_script_0x810661",
+					"script": "ow_script_map_3_70_trainer_0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -41,7 +41,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 1,
 					"alert_radius": 4,
-					"script": "ow_script_0x80f4bf",
+					"script": "ow_script_map_3_70_trainer_1",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -63,7 +63,7 @@
 					"behaviour_range": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_0x838ccb",
+					"script": "ow_script_map_3_70_trainer_2",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -154,7 +154,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x83f981",
+						"script": "ow_script_map_3_70_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -171,7 +171,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x83f981",
+						"script": "ow_script_map_3_70_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",

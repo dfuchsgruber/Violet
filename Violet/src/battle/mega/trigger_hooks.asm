@@ -26,7 +26,7 @@ battle_controller_player_init_move_selection_hook:
     push {lr}
     bl mega_trigger_new_for_active_battler
     bl _battle_selection_display_move_names
-    ldr r0, =0x08032bba | 1
+    ldr r0, =0x08032bbc | 1
     bx r0
 
 _battle_selection_display_move_names:

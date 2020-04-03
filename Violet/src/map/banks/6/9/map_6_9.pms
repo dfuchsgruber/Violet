@@ -72,7 +72,7 @@
 					"y": 13,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x16a61b",
+						"script": "ow_script_map_6_9_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -89,7 +89,7 @@
 					"y": 13,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x16a61b",
+						"script": "ow_script_map_6_9_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",

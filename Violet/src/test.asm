@@ -36,10 +36,10 @@ str_afterb:
 ow_script_test:
 callasm trainerschool_exam_init
 
-loadpointer 0 str_a
+loadpointer 0 str_beforea
 callstd MSG
 end
-
+/** 
 clearflag AMONIA_RIVAL_INSIDE_PLAYER_HOUSE
 showsprite 2
 goto ow_script_0x88abb8
@@ -248,3 +248,4 @@ callasm debug_vars
 callasm debug_flags
 @ goto ow_script_dungeon2_enter_ocean
 end
+*/

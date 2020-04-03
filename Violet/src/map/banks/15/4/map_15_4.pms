@@ -9,7 +9,7 @@
 			"persons": [
 				{
 					"picture": 22,
-					"script": "ow_script_0x8d42fd",
+					"script": "ow_script_map_15_4_trainer_0",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
 					"flag": "0x0",
@@ -53,7 +53,7 @@
 				},
 				{
 					"picture": 26,
-					"script": "ow_script_0x8d4982",
+					"script": "ow_script_map_15_4_trainer_1",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
 					"flag": "0x0",

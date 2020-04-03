@@ -53,7 +53,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x95f8e4",
+					"script": "ow_script_map_1_30_person_0",
 					"y": 31,
 					"target_index": 3,
 					"field_3": 0,
@@ -75,7 +75,7 @@
 				},
 				{
 					"is_trainer": 1,
-					"script": "ow_script_0x95fb5e",
+					"script": "ow_script_map_1_30_trainer_0",
 					"y": 30,
 					"target_index": 4,
 					"field_3": 0,
@@ -97,7 +97,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x95f8ed",
+					"script": "ow_script_map_1_30_trainer_1",
 					"y": "19",
 					"target_index": 5,
 					"field_3": 0,
@@ -119,7 +119,7 @@
 				},
 				{
 					"is_trainer": 1,
-					"script": "ow_script_0x95ffe5",
+					"script": "ow_script_map_1_30_trainer_2",
 					"y": "15",
 					"target_index": 6,
 					"field_3": 0,
@@ -141,7 +141,7 @@
 				},
 				{
 					"is_trainer": 0,
-					"script": "ow_script_0x95fb87",
+					"script": "ow_script_map_1_30_trainer_3",
 					"y": 24,
 					"target_index": 7,
 					"field_3": 0,
@@ -163,7 +163,7 @@
 				},
 				{
 					"is_trainer": 1,
-					"script": "ow_script_0x961320",
+					"script": "ow_script_map_1_30_trainer_4",
 					"y": "15",
 					"target_index": 8,
 					"field_3": 0,
@@ -274,7 +274,7 @@
 					"y": 10,
 					"level": 0,
 					"x": 22,
-					"script": "ow_script_0x9630ae",
+					"script": "ow_script_map_1_30_trigger_0",
 					"field_5": 0,
 					"field_A": 0,
 					"field_B": 0,
@@ -285,7 +285,7 @@
 					"y": 10,
 					"level": 0,
 					"x": 23,
-					"script": "ow_script_0x9630ae",
+					"script": "ow_script_map_1_30_trigger_0",
 					"field_5": 0,
 					"field_A": 0,
 					"field_B": 0,
@@ -296,7 +296,7 @@
 					"y": 10,
 					"level": 0,
 					"x": 21,
-					"script": "ow_script_0x9630ae",
+					"script": "ow_script_map_1_30_trigger_0",
 					"field_5": 0,
 					"field_A": 0,
 					"field_B": 0,
@@ -312,7 +312,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x95fb7e",
+						"script": "ow_script_map_1_30_sign_0",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -329,7 +329,7 @@
 					"field_7": 0,
 					"type": 0,
 					"value": {
-						"script": "ow_script_0x86477a",
+						"script": "ow_script_map_1_30_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",

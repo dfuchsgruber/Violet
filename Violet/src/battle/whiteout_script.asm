@@ -9,7 +9,7 @@ ow_script_whiteout_mother:
 lockall
 applymovement 0x1 mov_look_down_delayed
 waitmovement 0x0
-loadpointer 0x0 str_0x89ba8d
+loadpointer 0x0 str_mother
 setvar 0x8000 0
 special 0xe
 loadpointer 0x0 str_mother_before
