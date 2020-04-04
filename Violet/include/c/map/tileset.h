@@ -74,6 +74,7 @@ extern tileset maptileset302795;
 extern tileset maptileset242637;
 extern tileset maptileset251828;
 extern tileset maptileset_laubdorf;
+extern tileset maptileset_ceometria;
 extern tileset maptileset_haweiland;
 extern tileset maptileset_clouds;
 extern tileset maptileset_cloud_ruins;

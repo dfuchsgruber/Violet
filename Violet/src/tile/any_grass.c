@@ -27,6 +27,8 @@ extern u32 gfx_graveyard_grassTiles[];
 extern color_t gfx_graveyard_grassPal[16];
 extern unsigned int gfx_grass_haweilandTiles[];
 extern color_t gfx_grass_haweilandPal[16];
+extern unsigned int gfx_grass_cloudTiles[];
+extern color_t gfx_grass_couldPal[16];
 
 extern gfx_frame *overworld_effect_gfx_anim_table_grass[];
 
@@ -58,10 +60,19 @@ graphic graveyard_grass_graphics[] = {
     {NULL, 0x80, 0}
 };
 
+graphic cloud_grass_graphics[] = {
+    {&gfx_grass_cloudTiles[0], 0x80, 0},
+    {&gfx_grass_cloudTiles[0x20], 0x80, 0},
+    {&gfx_grass_cloudTiles[0x40], 0x80, 0},
+    {&gfx_grass_cloudTiles[0x60], 0x80, 0},
+    {NULL, 0x80, 0}
+};
+
 palette any_grass_pals[] = {
     [ANY_GRASS_ASH] = {gfx_grass_ashPal, 0x1080, 0},
     [ANY_GRASS_GRAVEYARD] = {gfx_graveyard_grassPal, 0x1081, 0},
     [ANY_GRASS_HAWEILAND] = {gfx_grass_haweilandPal, 0x1082, 0},
+    [ANY_GRASS_CLOUD] = {gfx_grass_haweilandPal, 0x1083, 0},
 };
 
 oam_template any_grass_templates[] = {
@@ -71,6 +82,8 @@ oam_template any_grass_templates[] = {
     graveyard_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
     [ANY_GRASS_HAWEILAND] = {0xFFFF, 0x1082, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     haweiland_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
+    [ANY_GRASS_CLOUD] = {0xFFFF, 0x1083, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    cloud_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
 };
 
 gfx_frame rock_climb_gfx_anim[] = {
@@ -109,29 +122,27 @@ graphic shallow_water_graphics[] = {
     {&gfx_shallow_waterTiles[0x80], 0x80, 0},
 };
 
-any_grass tile_any_grasses[ANY_GRASS_CNT] = {
-    {0, 0, 2, true, (oam_template *)0x083A52E4, NULL, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
-    {0, 0, 3, true, (oam_template *)0x083A5800, NULL, any_grass_step, any_grass_player_step_null},
-    {3, 24, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
-    {18, 3, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
-    {1, 30, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
-    {0, 12, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
-    {29, 3, 0xBb, false, &any_grass_templates[ANY_GRASS_ASH], &any_grass_pals[ANY_GRASS_ASH], any_grass_step, ash_grass_player_step},
-	{0, 0, 0xBD, true, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
-	{3, 12, 0xBb, false, &any_grass_templates[ANY_GRASS_GRAVEYARD], &any_grass_pals[ANY_GRASS_GRAVEYARD], 
+
+any_grass any_grasses[] = {
+    {&maptileset0, 2, (oam_template *)0x083A52E4, NULL, any_grass_step, any_grass_player_step_null}, //Normal Grass, behavior 2 triggered by any map
+    {&maptileset0, 3, (oam_template *)0x083A5800, NULL, any_grass_step, any_grass_player_step_null},
+    {&maptileset0, 0xBD, &rock_climb_template, &rock_climb_pal, rock_climb_step, any_grass_player_step_null},
+    {&maptileset251828, 0xBB, any_grass_templates + ANY_GRASS_ASH, any_grass_pals + ANY_GRASS_ASH, any_grass_step, ash_grass_player_step},
+    {&maptileset_ceometria, 0xBB, any_grass_templates + ANY_GRASS_GRAVEYARD, any_grass_pals + ANY_GRASS_GRAVEYARD, 
         any_grass_step, any_grass_player_step_null},
-	{3, 14, 0xBb, false, &any_grass_templates[ANY_GRASS_GRAVEYARD], &any_grass_pals[ANY_GRASS_GRAVEYARD], 
+    {&maptileset_haweiland, 0xBB, any_grass_templates + ANY_GRASS_HAWEILAND, any_grass_pals + ANY_GRASS_HAWEILAND, 
         any_grass_step, any_grass_player_step_null},
-	{3, 15, 0xBb, false, &any_grass_templates[ANY_GRASS_GRAVEYARD], &any_grass_pals[ANY_GRASS_GRAVEYARD], 
-        any_grass_step, any_grass_player_step_null},
-	{3, 16, 0xBb, false, &any_grass_templates[ANY_GRASS_HAWEILAND], &any_grass_pals[ANY_GRASS_HAWEILAND], 
-        any_grass_step, any_grass_player_step_null},
-	{3, 18, 0xBb, false, &any_grass_templates[ANY_GRASS_HAWEILAND], &any_grass_pals[ANY_GRASS_HAWEILAND], 
-        any_grass_step, any_grass_player_step_null},
-	{29, 1, 0xBb, false, &any_grass_templates[ANY_GRASS_HAWEILAND], &any_grass_pals[ANY_GRASS_HAWEILAND], 
-        any_grass_step, any_grass_player_step_null},
-    {0xFF, 0xFF, 0xFF, false, NULL, NULL, nullsub, any_grass_player_step_null} 
 };
+
+any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour) {
+    for (size_t i = 0; i < ARRAY_COUNT(any_grasses); i++) {
+        if ((mapheader_virtual.footer->tileset1 == any_grasses[i].tileset || 
+            mapheader_virtual.footer->tileset2 == any_grasses[i].tileset)
+             && behaviour == any_grasses[i].triggered_by_behavior) 
+            return any_grasses + i;
+    }
+    return NULL;
+}
 
 void any_grass_step(){
     play_sound(0x15C);
@@ -168,37 +179,25 @@ u8 *any_grass_player_step_null(){
  * @return 
  */
 u8 tile_any_grass_init(coordinate_t *pos){
-    int i;
     s16 x = (s16)overworld_effect_state.x;
     s16 y = (s16)overworld_effect_state.y;
     u8 behavior = (u8)block_get_behaviour_by_pos(x, y);
-    for(i = 0; tile_any_grasses[i].bank != 0xFF || tile_any_grasses[i].map != 0xFF; i++){
-        if(tile_any_grasses[i].triggered_by_behavior == behavior &&(
-                (save1->bank == tile_any_grasses[i].bank && 
-                save1->map == tile_any_grasses[i].map )|| tile_any_grasses[i].apply_to_every_map)){
-            
-            if(tile_any_grasses[i].init_func)
-                tile_any_grasses[i].init_func();
-            
-            // Load appropriate palette if present
-            if(tile_any_grasses[i].pal){
-                u8 pal_idx = oam_palette_get_index(tile_any_grasses[i].pal->tag);
-                if(pal_idx == 0xFF) {
-                    pal_idx = oam_allocate_palette(tile_any_grasses[i].pal->tag);
-                    //derrf("Allocated new %d for tag %x and template wants %x\n", pal_idx, tile_any_grasses[i].pal->tag, tile_any_grasses[i].temp->pal_tag);
-                }
-                u16 color = (u16)(pal_idx * 16 + 256);
-                pal_copy(tile_any_grasses[i].pal->pal, color, 32);
-                pal_apply_shaders_by_oam_palette_idx(pal_idx);
-                pal_oam_apply_fading(pal_idx);
+    any_grass *g = any_grass_get_on_current_map_by_behaviour(behavior);
+    if (g) {
+        if (g->init_func) g->init_func();
+        // Initialize pal
+        if (g->pal) {
+            u8 pal_idx = oam_palette_get_index(g->pal->tag);
+            if(pal_idx == 0xFF) {
+                pal_idx = oam_allocate_palette(g->pal->tag);
             }
-            
-            //Instanciate appropriate template
-            return oam_new_backward_search(tile_any_grasses[i].temp, pos->x, pos->y, 0);
+            u16 color = (u16)(pal_idx * 16 + 256);
+            pal_copy(g->pal->pal, color, 32);
+            pal_apply_shaders_by_oam_palette_idx(pal_idx);
+            pal_oam_apply_fading(pal_idx);
         }
-        
+        return oam_new_backward_search(g->temp, pos->x, pos->y, 0);
     }
-    // err(ERR_UNKOWN_GRASS_ANIMATION);
     dprintf("No grass animation possible for behaviour %d on current map.\n", behavior);
     return 64;
 }

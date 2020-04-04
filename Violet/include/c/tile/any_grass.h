@@ -9,18 +9,19 @@
 #define INCLUDE_C_TILE_ANY_GRASS_H_
 
 #include "oam.h"
+#include "map/tileset.h"
 
-#define ANY_GRASS_CNT 15
 
-#define ANY_GRASS_ASH 0
-#define ANY_GRASS_GRAVEYARD 1
-#define ANY_GRASS_HAWEILAND 2
+enum {
+    ANY_GRASS_ASH,
+    ANY_GRASS_GRAVEYARD,
+    ANY_GRASS_HAWEILAND,
+    ANY_GRASS_CLOUD
+};
 
 typedef struct{
-    u8 bank;
-    u8 map;
+    tileset *tileset; // NULL if on all tilesets
     u8 triggered_by_behavior;
-    bool apply_to_every_map;
     oam_template *temp;
     palette *pal;
     void (*init_func)();
@@ -39,8 +40,12 @@ typedef struct {
 
 extern overworld_effect_state_t overworld_effect_state;
 
-any_grass tile_any_grasses[ANY_GRASS_CNT];
-
+/**
+ * Gets the grass effect triggered by stepping on a tile with a certain behaviour on the current map.
+ * @param behaviour the behaviour to step on
+ * @return the grass effect or NULL if none is associated
+ **/
+any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour);
 
 void rock_climb_step();
 void any_grass_step();
