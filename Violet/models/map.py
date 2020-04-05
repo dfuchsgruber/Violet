@@ -26,6 +26,11 @@ person_script_std_type = agb.types.UnionType({
 
 person_script_std_type_type = agb.types.ScalarType('u8', constant='person_script_stds')
 
+person_behaviour_range_type = agb.types.BitfieldType('u8', [
+    ('x', None, 4),
+    ('y', None, 4),
+])
+
 # Events
 person_type = agb.types.Structure([
     ('target_index', 'u8', 0),
@@ -36,10 +41,9 @@ person_type = agb.types.Structure([
     ('y', 's16', 0),
     ('level', 'u8', 0),
     ('behaviour', 'person_behaviour', 0),
-    ('behaviour_range', 'u8', 0),
+    ('behaviour_range', 'event.person.behaviour_range', 0),
     ('field_B', 'u8', 0),
-    ('is_trainer', 'u8', 0),
-    ('field_D', 'u8', 0),
+    ('is_trainer', 'u16', 0),
     ('alert_radius', 'u16', 0),
     ('script', 'ow_script_pointer', 0),
     ('flag', 'flag', 0),
@@ -72,7 +76,7 @@ tileset_behaviour_type = agb.types.BitfieldType('u32', [
     ('behaviour', None, 9),
     ('hm_usage', 'block_hm_usage', 5),
     ('field_2', None, 4),
-    ('battle_bg', 'battle_bgs', 6),
+    ('battle_bg', 'battle/battle_bgs', 6),
     ('encounter_type', None, 3),
     ('field_5', None, 2),
     ('priority', None, 2),
@@ -127,6 +131,7 @@ models_to_export = {
     'person_behaviour' : person_behaviour_type,
     'person_script_std' : person_script_std_type_type,
     'event.person.script_std' : person_script_std_type,
+    'event.person.behaviour_range' : person_behaviour_range_type,
     'flag' : flag_type,
     'var' : var_type,
     'song' : song_type,

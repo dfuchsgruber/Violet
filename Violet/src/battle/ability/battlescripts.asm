@@ -1,8 +1,8 @@
 .include "battlescript.s"
 .include "constants/pokemon_stat_names.s"
-.include "constants/battle_statuses.s"
+.include "constants/battle/battle_statuses.s"
 .include "constants/abilities.s"
-.include "constants/battle_communication.s"
+.include "constants/battle/battle_communication.s"
 .include "constants/battle/battle_animations.s"
 
 .global bsc_wandlungskunst

@@ -16,7 +16,7 @@ enum {
     ANY_GRASS_ASH,
     ANY_GRASS_GRAVEYARD,
     ANY_GRASS_HAWEILAND,
-    ANY_GRASS_CLOUD
+    ANY_GRASS_CLOUD,
 };
 
 typedef struct{

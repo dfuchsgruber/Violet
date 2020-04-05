@@ -6438,5 +6438,26 @@ trainer trainers[TRAINER_CNT] = {
         .party = (trainer_pokemon*) trainer_party_x17d_route_11_couple,
         .battle_state = BATTLE_DOUBLE,
     },
+    [0x17e] = {
+        .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Mariba"),
+            PSTRING("Mariba")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x17e_ceometria_clouds_witch_0,
+    },
+    [0x17f] = {
+        .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
+        .encounter_and_gender = {1, 0}, .name = LANGDEP(PSTRING("Waltraud"),
+            PSTRING("Waltraud")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x17f_ceometria_clouds_witch_1,
+    },
+    [0x180] = {
+        .trainerclass = TRAINERCLASS_RUINENMANIAC, .sprite = 0x4,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Paulus"),
+            PSTRING("Paulus")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x180_ceometria_clouds_ruin_maniac_0,
+    },
 }; 
 

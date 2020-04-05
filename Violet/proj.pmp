@@ -1072,6 +1072,13 @@
 				"src/map/banks/31/17/map_ardeal_clouds.pms",
 				"MAP_ARDEAL"
 			]
+		},
+		"32": {
+			"0": [
+				"map_dunkler_turm_eg",
+				"src/map/banks/32/0/map_dunkler_turm_eg.pms",
+				"MAP_DUNKLER_TURM"
+			]
 		}
 	},
 	"footers": {
@@ -1746,6 +1753,10 @@
 		"map_footer_ardeal_clouds": [
 			103,
 			"src/map/banks/31/17/map_footer_ardeal_clouds.pms"
+		],
+		"map_footer_dark_tower_eg": [
+			104,
+			"src/map/banks/32/map_footer_dark_tower_eg.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1796,7 +1807,8 @@
 		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms",
 		"maptileset_ardeal": "src/map/tileset/maptileset_ardeal.pms",
 		"maptileset_cloud_ardeal": "src/map/tileset/maptileset_cloud_ardeal.pms",
-		"maptileset_cloud_dark_tower": "src/map/tileset/maptileset_cloud_dark_tower.pms"
+		"maptileset_cloud_dark_tower": "src/map/tileset/maptileset_cloud_dark_tower.pms",
+		"maptileset_dunkler_turm": "src/map/tileset/maptileset_dunkler_turm.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1845,6 +1857,7 @@
 		"gfx_maptileset_route_7Tiles": "asset/gfx/tileset/gfx_maptileset_route_7.png",
 		"gfx_maptileset_ardealTiles": "asset/gfx/tileset/gfx_maptileset_ardeal.png",
 		"gfx_maptileset_cloud_ardealTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ardeal.png",
-		"gfx_maptileset_cloud_dark_towerTiles": "asset/gfx/tileset/gfx_maptileset_cloud_dark_tower.png"
+		"gfx_maptileset_cloud_dark_towerTiles": "asset/gfx/tileset/gfx_maptileset_cloud_dark_tower.png",
+		"gfx_maptileset_dunkler_turmTiles": "asset/gfx/tileset/gfx_maptileset_dunkler_turm.png"
 	}
 }

@@ -1,9 +1,9 @@
 .include "battlescript.s"
 .include "constants/battle/battle_flags.s"
 .include "constants/battle/battle_positions.s"
-.include "battle/battle_animations.s"
-.include "constants/battle_communication.s"
-.include "constants/battle_statuses.s"
+.include "constants/battle/battle_animations.s"
+.include "constants/battle/battle_communication.s"
+.include "constants/battle/battle_statuses.s"
 
 .global battlescript_trainer_battle_won
 battlescript_trainer_battle_won:

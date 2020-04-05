@@ -2079,3 +2079,19 @@ trainer_pokemon_default_item_default_attacks trainer_party_x17d_route_11_couple[
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_ENEKORO),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_VOLTENSO),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x17e_ceometria_clouds_witch_0[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36,POKEMON_TRAUNFUGIL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,36,POKEMON_ALPOLLO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x17f_ceometria_clouds_witch_1[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_ZWIRRLICHT),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_LICHTEL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,35,POKEMON_NEBULAK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x180_ceometria_clouds_ruin_maniac_0[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_DIGDA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_PUPPANCE),
+};

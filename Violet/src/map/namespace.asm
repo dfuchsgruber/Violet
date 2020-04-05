@@ -544,7 +544,7 @@ map_namespaces:
 	.global str_mapnamespace_159
 
 	str_mapnamespace_159:
-		.string "Ferienparadies"
+		.string "Dunkler Turm"
 
 
 	.global str_mapnamespace_160

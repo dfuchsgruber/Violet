@@ -6,7 +6,7 @@
 .include "movements.s"
 .include "species.s"
 .include "specials.s"
-.include "battle_results.s"
+.include "battle/battle_results.s"
 
 .global ow_script_route_8_trigger_drampa
 .global ow_script_route_8_drampa

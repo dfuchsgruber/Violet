@@ -1,7 +1,7 @@
 .include "overworld_script.s"
 .include "vars.s"
 .include "ordinals.s"
-.include "battle_results.s"
+.include "battle/battle_results.s"
 .include "specials.s"
 .include "flags.s"
 

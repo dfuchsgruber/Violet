@@ -20,11 +20,10 @@ typedef struct map_event_person {
     s16 y;
     u8 level;
     u8 behavior;
-    u8 behavior_range;
+    u8 behavior_range_x : 4;
+    u8 behavior_range_y : 4;
     u8 field_B;
-    u8 is_trainer : 1;
-    u8 padding : 7;
-    u8 field_D;
+    u16 trainer_type_and_strength_flag;
     u16 alert_radius;
     u8 *script;
     u16 flag;

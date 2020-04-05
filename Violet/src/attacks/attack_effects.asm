@@ -1,5 +1,5 @@
 .include "battlescript.s"
-.include "constants/battle_communication.s"
+.include "constants/battle/battle_communication.s"
 
 .global attack_effects
 

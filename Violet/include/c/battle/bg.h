@@ -23,7 +23,7 @@ typedef struct  {
     const void *map;
 } battle_anim_bg;
 
-battle_bg battle_bgs[29];
+battle_bg battle_bgs[256];
 
 extern u16 battle_bg0_x;
 extern u16 battle_bg0_y;
@@ -54,6 +54,7 @@ extern const unsigned short gfx_battle_bg_cargo_hallTiles[];
 extern const unsigned short gfx_battle_bg_ardeal_cloudTiles[];
 extern const unsigned short gfx_battle_bg_ardealTiles[];
 extern const unsigned short gfx_battle_bg_ardeal_dungeonTiles[];
+extern const unsigned short gfx_battle_bg_sky_islandTiles[];
 
 extern const unsigned short gfx_battle_bg_capturedPal[];
 extern const unsigned short gfx_battle_bg_cavePal[];
@@ -78,6 +79,7 @@ extern const unsigned short gfx_battle_bg_cargo_hallPal[];
 extern const unsigned short gfx_battle_bg_ardeal_cloudPal[];
 extern const unsigned short gfx_battle_bg_ardealPal[];
 extern const unsigned short gfx_battle_bg_ardeal_dungeonPal[];
+extern const unsigned short gfx_battle_bg_sky_islandPal[];
 
 extern const unsigned short gfx_battle_bg_capturedMap[];
 extern const unsigned short gfx_battle_bg_caveMap[];
@@ -102,6 +104,7 @@ extern const unsigned short gfx_battle_bg_cargo_hallMap[];
 extern const unsigned short gfx_battle_bg_ardeal_cloudMap[];
 extern const unsigned short gfx_battle_bg_ardealMap[];
 extern const unsigned short gfx_battle_bg_ardeal_dungeonMap[];
+extern const unsigned short gfx_battle_bg_sky_islandMap[];
 
 // Battle anim bg
 extern const unsigned short gfx_stance_changeTiles[];

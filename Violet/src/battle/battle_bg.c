@@ -18,7 +18,7 @@
 #include "map/tileset.h"
 #include "debug.h" 
  
-battle_bg battle_bgs[29] = {
+battle_bg battle_bgs[256] = {
     // Battle street
     {
         gfx_battle_bg_streetTiles,
@@ -191,6 +191,12 @@ battle_bg battle_bgs[29] = {
         NULL, NULL,
         gfx_battle_bg_ardeal_dungeonPal,
     },
+    [BATTLE_BG_SKY_ISLAND] = {
+        gfx_battle_bg_sky_islandTiles,
+        gfx_battle_bg_sky_islandMap,
+        NULL, NULL,
+        gfx_battle_bg_sky_islandPal,
+    },
 };
 
 
@@ -245,6 +251,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
 	case BATTLE_BG_MILL:
 	case BATTLE_BG_CLOUD:
     case BATTLE_BG_ARDEAL_CLOUD:
+    case BATTLE_BG_SKY_ISLAND:
 		type = TYPE_FLUG;
 		break;
 	case BATTLE_BG_OCEAN:
@@ -312,6 +319,7 @@ u16 terrain_moves[] = {
     [BATTLE_BG_ARDEAL_CLOUD] = ATTACK_WINDSCHNITT,
     [BATTLE_BG_ARDEAL] = ATTACK_PSYCHOKINESE,
     [BATTLE_BG_ARDEAL_DUNGEON] = ATTACK_FINSTERAURA,
+    [BATTLE_BG_SKY_ISLAND] = ATTACK_AERO_ASS,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

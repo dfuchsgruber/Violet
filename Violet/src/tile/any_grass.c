@@ -22,13 +22,15 @@ extern const unsigned int gfx_grass_ashTiles[];
 extern const unsigned short gfx_grass_ashPal[];
 extern unsigned int gfx_rock_climb_animTiles[];
 extern unsigned int gfx_rock_climb_animPal[];
+extern unsigned int gfx_rock_climb_sky_island_animTiles[];
+extern unsigned int gfx_rock_climb_sky_island_animPal[];
 extern u32 gfx_shallow_waterTiles[];
 extern u32 gfx_graveyard_grassTiles[];
 extern color_t gfx_graveyard_grassPal[16];
 extern unsigned int gfx_grass_haweilandTiles[];
 extern color_t gfx_grass_haweilandPal[16];
 extern unsigned int gfx_grass_cloudTiles[];
-extern color_t gfx_grass_couldPal[16];
+extern color_t gfx_grass_cloudPal[16];
 
 extern gfx_frame *overworld_effect_gfx_anim_table_grass[];
 
@@ -72,7 +74,7 @@ palette any_grass_pals[] = {
     [ANY_GRASS_ASH] = {gfx_grass_ashPal, 0x1080, 0},
     [ANY_GRASS_GRAVEYARD] = {gfx_graveyard_grassPal, 0x1081, 0},
     [ANY_GRASS_HAWEILAND] = {gfx_grass_haweilandPal, 0x1082, 0},
-    [ANY_GRASS_CLOUD] = {gfx_grass_haweilandPal, 0x1083, 0},
+    [ANY_GRASS_CLOUD] = {gfx_grass_cloudPal, 0x1083, 0},
 };
 
 oam_template any_grass_templates[] = {
@@ -110,8 +112,26 @@ oam_template rock_climb_template = {
 		oam_rotscale_anim_table_null, oam_null_callback
 };
 
+static graphic rock_climb_sky_island_graphics[] = {
+    {&gfx_rock_climb_sky_island_animTiles[0 * 16 * 16 / 8], 16 * 16 / 2, 0},
+    {&gfx_rock_climb_sky_island_animTiles[1 * 16 * 16 / 8], 16 * 16 / 2, 0},
+    {&gfx_rock_climb_sky_island_animTiles[2 * 16 * 16 / 8], 16 * 16 / 2, 0},
+    {&gfx_rock_climb_sky_island_animTiles[3 * 16 * 16 / 8], 16 * 16 / 2, 0},
+    {&gfx_rock_climb_sky_island_animTiles[4 * 16 * 16 / 8], 16 * 16 / 2, 0},
+    {NULL, 16 * 16 / 2, 0}
+};
+
+static oam_template rock_climb_sky_island_template = {
+		0xFFFF, 0x7732, &rock_climb_sprite, rock_climb_gfx_anim_table, rock_climb_sky_island_graphics,
+		oam_rotscale_anim_table_null, oam_null_callback
+};
+
 palette rock_climb_pal = {
 		gfx_rock_climb_animPal, 0x7731, 0
+};
+
+palette rock_climb_sky_island_pal = {
+		gfx_rock_climb_sky_island_animPal, 0x7732, 0
 };
 
 graphic shallow_water_graphics[] = {
@@ -132,6 +152,10 @@ any_grass any_grasses[] = {
         any_grass_step, any_grass_player_step_null},
     {&maptileset_haweiland, 0xBB, any_grass_templates + ANY_GRASS_HAWEILAND, any_grass_pals + ANY_GRASS_HAWEILAND, 
         any_grass_step, any_grass_player_step_null},
+    {&maptileset_clouds, 2, any_grass_templates + ANY_GRASS_CLOUD, any_grass_pals + ANY_GRASS_CLOUD, 
+        any_grass_step, any_grass_player_step_null},
+    {&maptileset_clouds, 0xBD, &rock_climb_sky_island_template, &rock_climb_sky_island_pal, 
+        rock_climb_step, any_grass_player_step_null},
 };
 
 any_grass *any_grass_get_on_current_map_by_behaviour(u8 behaviour) {
