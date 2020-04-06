@@ -307,9 +307,18 @@
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_ROUTE",
 		"bike_usable": "1",
-		"show_name": "SHOW",
 		"level": 0,
-		"battle_style": "BATTLE_TYPE_RANDOM"
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"flags": {
+			"allow_escape_rope": "1",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
 	},
 	"label": "map_3_15_route_12_east",
 	"type": "header"

@@ -295,5 +295,6 @@ wild_pokemon_habitat wild_pokemon_route_7_castle_rod;
 wild_pokemon_habitat wild_pokemon_route_7_grass;
 wild_pokemon_habitat wild_pokemon_route_7_other;
 wild_pokemon_habitat wild_pokemon_ardeal_dungeon_grass;
+wild_pokemon_habitat wild_pokemon_dark_tower;
 
 #endif /* INCLUDE_C_MAP_WILD_POKEMON_H_ */

@@ -81,9 +81,18 @@
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": "0",
-		"show_name": "DONT_SHOW",
 		"level": "0",
-		"battle_style": "BATTLE_TYPE_RANDOM"
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
 	},
 	"label": "map_ardeal_left_tower_0",
 	"type": "header"

@@ -115,10 +115,19 @@
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_OUTSIDE",
 		"type": "MAP_TYPE_INSIDE",
-		"show_name": "SHOW_VILLAGE",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",
-		"level": 0
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "1",
+			"show_name": "1",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
 	},
 	"label": "map_15_4",
 	"type": "header"

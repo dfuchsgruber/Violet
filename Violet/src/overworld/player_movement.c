@@ -90,7 +90,7 @@ static void npc_player_init_move_diagonal_biking(u8 collision) {
 
 void npc_player_initialize_move_not_biking(u8 direction, key keys) {
     u8 collision = npc_player_collision(direction);
-    dprintf("Non biking collision type %d\n", collision);
+    //dprintf("Non biking collision type %d\n", collision);
     switch (collision) {
         case COLLISION_NONE: {
             if (player_state.state & PLAYER_STATE_SURFING) {

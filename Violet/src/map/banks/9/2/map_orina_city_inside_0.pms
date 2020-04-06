@@ -97,9 +97,18 @@
 		"weather": 0,
 		"type": 0,
 		"bike_usable": 0,
-		"show_name": 0,
 		"level": 0,
-		"battle_style": 0
+		"battle_style": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
 	},
 	"label": "map_orina_city_inside_0",
 	"type": "header"

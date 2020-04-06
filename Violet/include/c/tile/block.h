@@ -52,6 +52,7 @@ typedef union union_block_data {
 
 #define FIELD_BEHAVIOR 0
 #define FIELD_HM_USAGE 1
+#define FIELD_BATTLE_BG 3
 
 // Coordinate displacements for walking directions
 
@@ -190,6 +191,12 @@ bool player_can_use_waterfall_on_tile_faced();
  * @return if this movement triggers a ledge behaviour
  **/
 bool block_ledge_triggered(s16 x,s16 y,u8 direction);
+
+/**
+ * Checks if the player is forced to be on a cloud.
+ * @return if the player is forced to be on a cloud
+ **/
+bool cloud_not_dismountable();
 
 
 #endif /* INCLUDE_C_TILE_BLOCK_H_ */

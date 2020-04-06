@@ -2095,3 +2095,19 @@ trainer_pokemon_default_item_default_attacks trainer_party_x180_ceometria_clouds
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,34,POKEMON_DIGDA),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,37,POKEMON_PUPPANCE),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x181_dark_tower_trainer_0[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,40,POKEMON_PARAGONI),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,41,POKEMON_BANETTE),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x182_dark_tower_trainer_1[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,39,POKEMON_NEBULAK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,38,POKEMON_ZOBIRIS),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,40,POKEMON_QUABBEL),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x183_dark_tower_trainer_2[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,41,POKEMON_ZWIRRKLOP),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,42,POKEMON_LATERNECTO),
+};

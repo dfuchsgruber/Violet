@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_dark_tower_floor_3",
 		"events": {
-			"person_cnt": 1,
+			"person_cnt": 2,
 			"warp_cnt": 9,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -25,6 +25,29 @@
 					"alert_radius": 0,
 					"script": "ow_script_strength_boulder",
 					"flag": "FLAG_DARK_TOWER_STRENGTH_RIGHT_F3",
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "58",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_UNTEN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": "ow_script_dark_tower_trainer_2",
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0
@@ -120,9 +143,18 @@
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",
 		"bike_usable": 0,
-		"show_name": "SHOW",
 		"level": 0,
-		"battle_style": 0
+		"battle_style": 0,
+		"flags": {
+			"allow_escape_rope": "1",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
 	},
 	"label": "map_dark_tower_floor_3",
 	"type": "header"

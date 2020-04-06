@@ -11,6 +11,8 @@
 #include "flags.h"
 #include "item/item.h"
 #include "overworld/map_control.h"
+#include "constants/battle/battle_bgs.h"
+#include "debug.h"
 
 u8 *cloud_trigger(bool back) {
     if (item_check(ITEM_FAHRRAD, 1)) {
@@ -102,6 +104,15 @@ static bool cloud_current_block_dismountable(u16 *blocks) {
 
 bool cloud_not_dismountable() {
 	if (map_is_cloud() && !player_state_disables_bike()) {
+		if (mapheader_virtual.footer->tileset1 == &maptileset_clouds) {
+			position_t pos;
+			player_get_position(&pos);
+			dprintf("Position is %d,%d, with battle bg %d\n", pos.coordinates.x, pos.coordinates.y, block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG));
+
+			if (block_get_field_by_pos(pos.coordinates.x, pos.coordinates.y, FIELD_BATTLE_BG) == BATTLE_BG_SKY_ISLAND) {
+				return false; // These are all land tiles, more or less...
+			}
+		}
 		if (cloud_current_block_dismountable(cloud_dismountable_blocks)) {
 			// On cloud maps only on certain blocks the player can dismount
 			return false;

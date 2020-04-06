@@ -65,10 +65,19 @@
 		"flash_type": "FLASH_NONE",
 		"weather": "MAP_WEATHER_INSIDE",
 		"type": "MAP_TYPE_INSIDE",
-		"show_name": "DONT_SHOW",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": 0,
-		"level": 0
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
 	},
 	"label": "map_8_4",
 	"type": "header"

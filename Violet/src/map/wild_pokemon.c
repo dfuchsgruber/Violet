@@ -660,6 +660,11 @@ wild_pokemon_data wild_pokemon[] = {
 	{
 			.bank = 31, .map = 16, .grass = &wild_pokemon_ardeal_dungeon_grass,
 	},
+	{.bank = 32, .map = 0, .grass = &wild_pokemon_dark_tower,},
+	{.bank = 32, .map = 1, .grass = &wild_pokemon_dark_tower,},
+	{.bank = 32, .map = 2, .grass = &wild_pokemon_dark_tower,},
+	{.bank = 32, .map = 3, .grass = &wild_pokemon_dark_tower,},
+	{.bank = 32, .map = 4, .grass = &wild_pokemon_dark_tower,},
 	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL

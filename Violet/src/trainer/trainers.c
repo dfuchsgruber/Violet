@@ -6459,5 +6459,26 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x180_ceometria_clouds_ruin_maniac_0,
     },
+    [0x181] = {
+        .trainerclass = TRAINERCLASS_EXORZISTIN, .sprite = 126,
+        .encounter_and_gender = {1, 1}, .name = LANGDEP(PSTRING("Karena"),
+            PSTRING("Karena")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x181_dark_tower_trainer_0,
+    },
+    [0x182] = {
+        .trainerclass = TRAINERCLASS_HEXE, .sprite = 10,
+        .encounter_and_gender = {1, 1}, .name = LANGDEP(PSTRING("Bianca"),
+            PSTRING("Bianca")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x182_dark_tower_trainer_1,
+    },
+    [0x183] = {
+        .trainerclass = TRAINERCLASS_EXORZISTIN, .sprite = 126,
+        .encounter_and_gender = {1, 1}, .name = LANGDEP(PSTRING("Amara"),
+            PSTRING("Amara")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x183_dark_tower_trainer_2,
+    },
 }; 
 
