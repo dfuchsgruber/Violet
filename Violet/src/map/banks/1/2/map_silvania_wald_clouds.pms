@@ -16,9 +16,12 @@
 					"y": "14",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
@@ -37,9 +40,12 @@
 					"y": "48",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
@@ -58,7 +64,10 @@
 					"y": "47",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN2",
-					"behaviour_range": "2",
+					"behaviour_range": {
+						"x": "2",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -79,7 +88,10 @@
 					"y": "17",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -100,9 +112,12 @@
 					"y": "29",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_silvania_wald_clouds_person_0",
@@ -121,9 +136,12 @@
 					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_silvania_wald_clouds_person_1",

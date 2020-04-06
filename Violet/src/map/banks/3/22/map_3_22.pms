@@ -16,8 +16,11 @@
 					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_RUNTER__LINKS__RECHTS__HOCH",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "ow_script_map_3_22_trainer_0",
 					"flag": "0x0",
@@ -38,8 +41,11 @@
 					"y": 18,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": "1",
 					"script": "ow_script_map_3_22_trainer_1",
 					"flag": "0x0",
@@ -60,8 +66,11 @@
 					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": "4",
 					"script": "ow_script_map_3_22_trainer_2",
 					"flag": "0x0",
@@ -82,8 +91,11 @@
 					"y": 20,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_OBEN__UNTEN__LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_22_trainer_3",
 					"flag": "0x0",
@@ -104,8 +116,11 @@
 					"y": "13",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_22_trainer_4",
 					"flag": "0x0",
@@ -126,8 +141,11 @@
 					"y": 32,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_22_trainer_5",
 					"flag": "0x0",
@@ -148,8 +166,11 @@
 					"y": "34",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_22_trainer_6",
 					"flag": "0x0",
@@ -170,8 +191,11 @@
 					"y": 13,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_1_person_0",
 					"flag": "0x12",
@@ -192,8 +216,11 @@
 					"y": 6,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_4_ITEM_0",
@@ -214,8 +241,11 @@
 					"y": 17,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_4_ITEM_1",
@@ -236,8 +266,11 @@
 					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_22_trainer_7",
 					"flag": "0",
@@ -258,8 +291,11 @@
 					"y": 13,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_22_trainer_8",
 					"flag": "0x0",
@@ -280,9 +316,12 @@
 					"y": "32",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
@@ -301,7 +340,10 @@
 					"y": "18",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -322,7 +364,10 @@
 					"y": "38",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_UNTEN_UND_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,

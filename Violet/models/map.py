@@ -23,6 +23,16 @@ person_script_std_type = agb.types.UnionType({
         'PERSON_EGG' : 'species',
     }.get(parents[-1]['script_std'], 'item')
 )
+map_flags_type = agb.types.BitfieldType('u8', [
+    ('allow_escape_rope', None, 1),
+    ('allow_run', None, 1),
+    ('show_name', None, 1),
+    ('flag_3', None, 1),
+    ('flag_4', None, 1),
+    ('flag_5', None, 1),
+    ('flag_6', None, 1),
+    ('flag_7', None, 1),
+])
 
 person_script_std_type_type = agb.types.ScalarType('u8', constant='person_script_stds')
 
@@ -108,7 +118,7 @@ header_type = agb.types.Structure([
     ('weather', 'map_weather', 0),
     ('type', 'map_type', 0),
     ('bike_usable', 'u8', 0),
-    ('show_name', 'map_show_name', 0),
+    ('flags', 'header.flags', 0),
     ('level', 's8', 0),
     ('battle_style', 'map_battle_style', 0)
 ], hidden_members=set([
@@ -136,6 +146,7 @@ models_to_export = {
     'var' : var_type,
     'song' : song_type,
     'tileset.behaviour' : tileset_behaviour_type,
+    'header.flags' : map_flags_type,
     'map_namespace' : namespace_type,
     'map_flash_type' : flash_type_type,
     'map_weather' : weather_type,

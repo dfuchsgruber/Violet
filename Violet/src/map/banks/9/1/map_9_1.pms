@@ -16,8 +16,11 @@
 					"y": 2,
 					"level": 3,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 17,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_9_1_person_0",
 					"flag": "0x0",
@@ -38,8 +41,11 @@
 					"y": 8,
 					"level": 3,
 					"behaviour": "BEHAVIOUR_GEHE_HIN_UND_HER",
-					"behaviour_range": 17,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_9_1_person_1",
 					"flag": "0x0",
@@ -60,8 +66,11 @@
 					"y": 5,
 					"level": 3,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 17,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_9_1_person_2",
 					"flag": "0x0",
@@ -82,8 +91,11 @@
 					"y": 5,
 					"level": 3,
 					"behaviour": "BEHAVIOUR_GEHE_AUF_UND_AB",
-					"behaviour_range": 17,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_9_1_person_3",
 					"flag": "0x0",
@@ -104,8 +116,11 @@
 					"y": 2,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_5_4_person_4",
 					"flag": "0x0",
@@ -126,8 +141,11 @@
 					"y": 5,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "0x0",
@@ -148,8 +166,11 @@
 					"y": 4,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_botogel",
 					"flag": 0,

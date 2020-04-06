@@ -16,9 +16,12 @@
 					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_ardeal_tower_center_3_person_0",
@@ -37,9 +40,12 @@
 					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_ardeal_tower_center_3_person_1",
@@ -58,9 +64,12 @@
 					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_ardeal_tower_center_3_person_4",
@@ -79,9 +88,12 @@
 					"y": "11",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_ardeal_tower_center_3_person_2",
@@ -100,9 +112,12 @@
 					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_ardeal_tower_center_3_person_3",

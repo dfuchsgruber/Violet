@@ -16,9 +16,12 @@
 					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_meriana_city_clouds_person_0",
@@ -37,9 +40,12 @@
 					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
@@ -58,9 +64,12 @@
 					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_meriana_city_clouds_person_1",
@@ -79,9 +88,12 @@
 					"y": "21",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
-					"behaviour_range": "5",
+					"behaviour_range": {
+						"x": "5",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_meriana_city_clouds_person_2",

@@ -16,7 +16,10 @@
 					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_AUF_UND_AB",
-					"behaviour_range": "2",
+					"behaviour_range": {
+						"x": "2",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -37,9 +40,12 @@
 					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_RECHTS__LINKS__HOCH__RUNTER2",
-					"behaviour_range": "4",
+					"behaviour_range": {
+						"x": "4",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": "5",
 					"script": "ow_script_route_9_horizontal_trainer_2",
@@ -58,7 +64,10 @@
 					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -79,9 +88,12 @@
 					"y": "31",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
@@ -100,7 +112,10 @@
 					"y": "22",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -121,7 +136,10 @@
 					"y": "8",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_RUNTER__RECHTS__LINKS__HOCH",
-					"behaviour_range": "5",
+					"behaviour_range": {
+						"x": "5",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -142,7 +160,10 @@
 					"y": "35",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
-					"behaviour_range": "3",
+					"behaviour_range": {
+						"x": "3",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -163,7 +184,10 @@
 					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_RUNDUM_IM_UHRZEIGERSINN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -184,9 +208,12 @@
 					"y": "21",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
@@ -205,9 +232,12 @@
 					"y": "4",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,

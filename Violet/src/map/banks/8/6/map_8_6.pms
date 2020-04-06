@@ -8,7 +8,7 @@
 			"signpost_cnt": 0,
 			"persons": [
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_8_6_person_0",
 					"y": 3,
 					"target_index": 1,
@@ -20,7 +20,10 @@
 					"level": 3,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
-					"behaviour_range": 17,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -30,7 +33,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_8_6_person_1",
 					"y": 5,
 					"target_index": 2,
@@ -42,7 +45,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,

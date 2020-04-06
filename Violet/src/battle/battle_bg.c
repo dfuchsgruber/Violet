@@ -16,7 +16,7 @@
 #include "attack.h"
 #include "save.h"
 #include "map/tileset.h"
-#include "debug.h" 
+#include "debug.h"  
  
 battle_bg battle_bgs[256] = {
     // Battle street
@@ -197,6 +197,12 @@ battle_bg battle_bgs[256] = {
         NULL, NULL,
         gfx_battle_bg_sky_islandPal,
     },
+    [BATTLE_BG_DARK_TOWER] = {
+        gfx_battle_bg_dark_towerTiles,
+        gfx_battle_bg_dark_towerMap,
+        NULL, NULL,
+        gfx_battle_bg_dark_towerPal,
+    },
 };
 
 
@@ -281,6 +287,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
         type = TYPE_PSYCHO;
         break;
     case BATTLE_BG_ARDEAL_DUNGEON:
+    case BATTLE_BG_DARK_TOWER:
         type = TYPE_UNLICHT;
         break;
 	}
@@ -320,6 +327,7 @@ u16 terrain_moves[] = {
     [BATTLE_BG_ARDEAL] = ATTACK_PSYCHOKINESE,
     [BATTLE_BG_ARDEAL_DUNGEON] = ATTACK_FINSTERAURA,
     [BATTLE_BG_SKY_ISLAND] = ATTACK_AERO_ASS,
+    [BATTLE_BG_DARK_TOWER] = ATTACK_FINSTERFAUST,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

@@ -16,8 +16,11 @@
 					"y": 22,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_JOGGEN_UNTEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_person_0",
 					"flag": "KUSTENBERG_DONE",
@@ -38,8 +41,11 @@
 					"y": 24,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": 2,
 					"script": "ow_script_map_1_59_trainer_0",
 					"flag": "KUSTENBERG_DONE",
@@ -60,8 +66,11 @@
 					"y": 33,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_UNTEN_UND_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": 2,
 					"script": "ow_script_map_1_59_trainer_1",
 					"flag": "KUSTENBERG_DONE",
@@ -82,8 +91,11 @@
 					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_JOGGEN_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_2",
 					"flag": "KUSTENBERG_DONE",
@@ -104,8 +116,11 @@
 					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_JOGGEN_RECHTS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_3",
 					"flag": "KUSTENBERG_DONE",
@@ -126,8 +141,11 @@
 					"y": 22,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_JOGGEN_UNTEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_4",
 					"flag": "KUSTENBERG_DONE",
@@ -148,8 +166,11 @@
 					"y": 23,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_JOGGEN_OBEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_5",
 					"flag": "KUSTENBERG_DONE",
@@ -170,8 +191,11 @@
 					"y": 23,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_JOGGEN_OBEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_kuestenberg_harrenfeld",
 					"flag": "KUSTENBERG_DONE",
@@ -192,8 +216,11 @@
 					"y": "29",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_6",
 					"flag": "KUSTENBERG_DONE",
@@ -214,7 +241,10 @@
 					"y": "17",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"is_trainer": "0",
 					"alert_radius": "0",
 					"script": "ow_script_map_1_59_trainer_7",
@@ -236,8 +266,11 @@
 					"y": 28,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "KUSTENBERG_DONE",
@@ -258,8 +291,11 @@
 					"y": 28,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "KUSTENBERG_DONE",
@@ -280,8 +316,11 @@
 					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "KUSTENBERG_DONE",
@@ -302,8 +341,11 @@
 					"y": 33,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_8",
 					"flag": "0x0",
@@ -324,8 +366,11 @@
 					"y": 35,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "KUSTENBERG_ITEM_0",
@@ -346,8 +391,11 @@
 					"y": 31,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_9",
 					"flag": "0x0",
@@ -368,8 +416,11 @@
 					"y": 35,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": 2,
 					"script": "ow_script_map_1_59_trainer_10",
 					"flag": "0x0",
@@ -390,8 +441,11 @@
 					"y": 21,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_11",
 					"flag": "0x0",
@@ -412,8 +466,11 @@
 					"y": "13",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_12",
 					"flag": "0x0",
@@ -434,8 +491,11 @@
 					"y": 27,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_13",
 					"flag": "0x0",
@@ -456,8 +516,11 @@
 					"y": 25,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_UNTEN_UND_RECHTS",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": 2,
 					"script": "ow_script_map_1_59_trainer_14",
 					"flag": "0x0",
@@ -478,8 +541,11 @@
 					"y": 44,
 					"level": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_1_59_trainer_15",
 					"flag": "0x0",
@@ -500,9 +566,12 @@
 					"y": "10",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,
@@ -521,9 +590,12 @@
 					"y": "13",
 					"level": 0,
 					"behaviour": 0,
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": 0,

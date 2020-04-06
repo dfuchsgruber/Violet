@@ -8,7 +8,7 @@
 			"signpost_cnt": 9,
 			"persons": [
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_0",
 					"y": 29,
 					"target_index": 1,
@@ -20,7 +20,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -30,7 +33,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_1",
 					"y": 28,
 					"target_index": 2,
@@ -42,7 +45,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -52,7 +58,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_2",
 					"y": 31,
 					"target_index": 3,
@@ -64,7 +70,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -74,7 +83,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_3",
 					"y": 27,
 					"target_index": 4,
@@ -86,7 +95,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -96,7 +108,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_4",
 					"y": 35,
 					"target_index": 5,
@@ -108,7 +120,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -118,7 +133,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_5",
 					"y": 37,
 					"target_index": 6,
@@ -130,7 +145,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_RUNDUM_GEGEN_DEN_UHRZEIGERSINN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -140,7 +158,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_6",
 					"y": 42,
 					"target_index": 7,
@@ -152,7 +170,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -162,7 +183,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_6",
 					"y": 42,
 					"target_index": 8,
@@ -174,7 +195,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -184,7 +208,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_7",
 					"y": "61",
 					"target_index": 9,
@@ -196,7 +220,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -206,7 +233,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_8",
 					"y": 46,
 					"target_index": 10,
@@ -218,7 +245,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -228,7 +258,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_9",
 					"y": 49,
 					"target_index": 11,
@@ -240,7 +270,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -250,7 +283,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_10",
 					"y": 49,
 					"target_index": 12,
@@ -262,7 +295,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -272,7 +308,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_11",
 					"y": 49,
 					"target_index": 13,
@@ -284,7 +320,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -294,7 +333,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_12",
 					"y": 49,
 					"target_index": 14,
@@ -306,7 +345,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -316,7 +358,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_13",
 					"y": 42,
 					"target_index": 15,
@@ -328,7 +370,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -338,7 +383,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_14",
 					"y": 44,
 					"target_index": 16,
@@ -350,7 +395,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -360,7 +408,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_15",
 					"y": 47,
 					"target_index": 17,
@@ -372,7 +420,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -382,7 +433,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_16",
 					"y": 38,
 					"target_index": 18,
@@ -394,7 +445,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -404,7 +458,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_17",
 					"y": 34,
 					"target_index": 19,
@@ -416,7 +470,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -426,7 +483,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_18",
 					"y": 31,
 					"target_index": 20,
@@ -438,7 +495,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -448,7 +508,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_19",
 					"y": 27,
 					"target_index": 21,
@@ -460,7 +520,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -470,7 +533,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_20",
 					"y": 25,
 					"target_index": 22,
@@ -482,7 +545,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -492,7 +558,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_21",
 					"y": 31,
 					"target_index": 23,
@@ -504,7 +570,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -514,7 +583,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_22",
 					"y": 26,
 					"target_index": 24,
@@ -526,7 +595,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -536,7 +608,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_23",
 					"y": 25,
 					"target_index": 25,
@@ -548,7 +620,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -558,7 +633,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_24",
 					"y": 20,
 					"target_index": 26,
@@ -570,7 +645,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -580,7 +658,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_25",
 					"y": 13,
 					"target_index": 27,
@@ -592,7 +670,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -602,7 +683,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_26",
 					"y": 12,
 					"target_index": 28,
@@ -614,7 +695,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -624,7 +708,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_27",
 					"y": 9,
 					"target_index": 29,
@@ -636,7 +720,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -646,7 +733,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_28",
 					"y": 11,
 					"target_index": 30,
@@ -658,7 +745,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -668,7 +758,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_29",
 					"y": 9,
 					"target_index": 31,
@@ -680,7 +770,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -690,7 +783,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_30",
 					"y": 8,
 					"target_index": 32,
@@ -702,7 +795,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -712,7 +808,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_31",
 					"y": 17,
 					"target_index": 33,
@@ -724,7 +820,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -734,7 +833,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_32",
 					"y": 19,
 					"target_index": 34,
@@ -746,7 +845,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -756,7 +858,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_33",
 					"y": 11,
 					"target_index": 35,
@@ -768,7 +870,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -778,7 +883,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_34",
 					"y": 10,
 					"target_index": 36,
@@ -790,7 +895,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -800,7 +908,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_35",
 					"y": 11,
 					"target_index": 37,
@@ -812,7 +920,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -822,7 +933,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "0",
 					"y": 3,
 					"target_index": 38,
@@ -834,7 +945,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -844,7 +958,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "0",
 					"y": 31,
 					"target_index": 39,
@@ -856,7 +970,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -866,7 +983,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_36",
 					"y": 30,
 					"target_index": 40,
@@ -878,7 +995,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -888,7 +1008,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_36",
 					"y": 31,
 					"target_index": 41,
@@ -900,7 +1020,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -910,7 +1033,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_36",
 					"y": 32,
 					"target_index": 42,
@@ -922,7 +1045,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -932,7 +1058,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_36",
 					"y": 33,
 					"target_index": 43,
@@ -944,7 +1070,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -954,7 +1083,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_36",
 					"y": 34,
 					"target_index": 44,
@@ -966,7 +1095,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -976,7 +1108,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_person_36",
 					"y": 35,
 					"target_index": 45,
@@ -988,7 +1120,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -998,7 +1133,7 @@
 					}
 				},
 				{
-					"is_trainer": 1,
+					"is_trainer": "1",
 					"script": "ow_script_map_3_5_trainer_0",
 					"y": "61",
 					"target_index": 46,
@@ -1010,7 +1145,10 @@
 					"level": 0,
 					"alert_radius": 2,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -1020,7 +1158,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_trainer_1",
 					"y": 40,
 					"target_index": 47,
@@ -1032,7 +1170,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -1042,7 +1183,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_trainer_2",
 					"y": 41,
 					"target_index": 48,
@@ -1054,7 +1195,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -1064,7 +1208,7 @@
 					}
 				},
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_3_5_trainer_3",
 					"y": "61",
 					"target_index": 49,
@@ -1076,7 +1220,10 @@
 					"level": 0,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_RECHTS",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,

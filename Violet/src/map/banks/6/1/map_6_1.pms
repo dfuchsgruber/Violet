@@ -15,9 +15,12 @@
 					"target_index": 1,
 					"x": 9,
 					"level": 3,
-					"behaviour_range": 17,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
 					"flag": "AKTANIA_LESTER_REGI_ROOM",
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"field_3": 0,
 					"script": "0",

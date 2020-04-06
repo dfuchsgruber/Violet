@@ -16,8 +16,11 @@
 					"y": 3,
 					"level": 3,
 					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
-					"behaviour_range": 17,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_clock_master",
 					"flag": 0,

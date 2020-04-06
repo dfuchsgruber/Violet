@@ -16,6 +16,7 @@
 #include "superstate.h"
 #include "flags.h"
 #include "constants/movements.h"
+#include "debug.h"
 
 int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5) {
     (void) param_5; // unused in fire red
@@ -38,6 +39,7 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
         }
     }
     if (collision == COLLISION_OTHER_NPC && npc_is_movable_boulder_at(x, y, direction)) {
+        dprintf("Collision with strength boulder.\n");
         return COLLISION_PUSHED_BOULDER;
     }
     return collision;
@@ -88,6 +90,7 @@ static void npc_player_init_move_diagonal_biking(u8 collision) {
 
 void npc_player_initialize_move_not_biking(u8 direction, key keys) {
     u8 collision = npc_player_collision(direction);
+    dprintf("Non biking collision type %d\n", collision);
     switch (collision) {
         case COLLISION_NONE: {
             if (player_state.state & PLAYER_STATE_SURFING) {
@@ -127,6 +130,8 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
                 npc_player_init_move_diagonal_walking(collision);
             return;
         }
+        case COLLISION_PUSHED_BOULDER:
+            return;
         default: {
             npc_player_init_move_blocked(direction);
             return;
@@ -137,6 +142,7 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
 void npc_player_initialize_move_on_bike(u8 direction) {
     // There is some biking stuff from RSE, which is cut in firered, I don't bother to copy a bunch of stuff that never gets executed
     u8 collision = npc_player_collision_on_bike(direction);
+    // dprintf("Biking collision type %d\n");
     switch (collision) {
         case COLLISION_LEDGE:
             npc_player_init_move_jump(direction);

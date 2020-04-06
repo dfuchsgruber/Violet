@@ -1078,6 +1078,26 @@
 				"map_dunkler_turm_eg",
 				"src/map/banks/32/0/map_dunkler_turm_eg.pms",
 				"MAP_DUNKLER_TURM"
+			],
+			"1": [
+				"map_dark_tower_floor_1",
+				"src/map/banks/32/1/map_dark_tower_floor_1.pms",
+				"MAP_DUNKLER_TURM"
+			],
+			"2": [
+				"map_dark_tower_floor_2",
+				"src/map/banks/32/2/map_dark_tower_floor_2.pms",
+				"MAP_DUNKLER_TURM"
+			],
+			"3": [
+				"map_dark_tower_floor_3",
+				"src/map/banks/32/3/map_dark_tower_floor_3.pms",
+				"MAP_DUNKLER_TURM"
+			],
+			"4": [
+				"map_dark_tower_top",
+				"src/map/banks/32/4/map_dark_tower_top.pms",
+				"MAP_DUNKLER_TURM"
 			]
 		}
 	},
@@ -1757,6 +1777,22 @@
 		"map_footer_dark_tower_eg": [
 			104,
 			"src/map/banks/32/map_footer_dark_tower_eg.pms"
+		],
+		"map_footer_dark_tower_floor_1": [
+			105,
+			"src/map/banks/32/1/map_dunkler_turm_floor_1.pms"
+		],
+		"map_footer_dark_tower_floor_2": [
+			106,
+			"src/map/banks/32/2/map_footer_dark_tower_floor_2.pms"
+		],
+		"map_footer_dark_tower_floor_3": [
+			107,
+			"src/map/banks/32/3/map_footer_dark_tower_floor_3.pms"
+		],
+		"mao_footer_dark_tower_top": [
+			108,
+			"src/map/banks/32/4/mao_footer_dark_tower_top.pms"
 		]
 	},
 	"tilesets_primary": {

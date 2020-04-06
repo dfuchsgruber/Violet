@@ -16,8 +16,11 @@
 					"y": "12",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 17,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "1",
 					"alert_radius": 2,
 					"script": "ow_script_route_5_clouds_trainer_0",
 					"flag": "0x0",
@@ -38,8 +41,11 @@
 					"y": "23",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_BLICKE_RUNDUM_IM_UHRZEIGERSINN",
-					"behaviour_range": 0,
-					"is_trainer": 1,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
 					"alert_radius": 2,
 					"script": "ow_script_route_5_clouds_trainer_1",
 					"flag": "0x0",
@@ -60,8 +66,11 @@
 					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_5_ITEM_2",
@@ -82,8 +91,11 @@
 					"y": "5",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
-					"behaviour_range": 0,
-					"is_trainer": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
 					"flag": "ROUTE_5_ITEM_3",
@@ -104,9 +116,12 @@
 					"y": "6",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_route_5_clouds_person_0",
@@ -125,7 +140,10 @@
 					"y": "29",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
-					"behaviour_range": "5",
+					"behaviour_range": {
+						"x": "5",
+						"y": "0"
+					},
 					"field_B": 0,
 					"is_trainer": "1",
 					"field_D": 0,
@@ -146,9 +164,12 @@
 					"y": "32",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
-					"behaviour_range": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
 					"field_B": 0,
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"field_D": 0,
 					"alert_radius": 0,
 					"script": "ow_script_route_5_clouds_person_1",

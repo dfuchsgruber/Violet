@@ -22,13 +22,11 @@ typedef struct map_event_person {
     u8 behavior;
     u8 behavior_range_x : 4;
     u8 behavior_range_y : 4;
-    u8 field_B;
     u16 trainer_type_and_strength_flag;
     u16 alert_radius;
     u8 *script;
     u16 flag;
     u16 value;
-
 } map_event_person;
 
 #define MAP_EVENT_PERSON_VIEWPORT 0x7F

@@ -22,23 +22,9 @@
 extern u8 script_pokeradar_battle[];
 
 map_event_person pokeradar_map_event_person = {
-    254, //scripts use this as target reference
-    155, //the picture to be displayed
-    0,
-    0,
-    0, //x
-    0, //y
-    0, //level
-    BEHAVIOUR_UMHERBLICKEN,
-    0, //behaviour range
-    0, 
-    1, //is trainer -> yes;
-    0, //padding is trainer;
-    0,
-    3, //sight range;
-    script_pokeradar_battle,
-    POKERADAR_POKEMON_SPAWNED,
-    0,
+    .target_index = 254, .overworld_index = 155, .behavior = BEHAVIOUR_UMHERBLICKEN,
+    .trainer_type_and_strength_flag = 1, .alert_radius = 3,
+    .flag = POKERADAR_POKEMON_SPAWNED, .script = script_pokeradar_battle,
 };
 
 bool pokeradar_determine_position(coordinate_t *result) {

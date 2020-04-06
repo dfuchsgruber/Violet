@@ -8,7 +8,7 @@
 			"signpost_cnt": 1,
 			"persons": [
 				{
-					"is_trainer": 0,
+					"is_trainer": "0",
 					"script": "ow_script_map_6_15_person_0",
 					"y": 10,
 					"target_index": 1,
@@ -20,7 +20,10 @@
 					"level": 3,
 					"alert_radius": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
-					"behaviour_range": 17,
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
