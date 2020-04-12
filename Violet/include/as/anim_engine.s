@@ -89,6 +89,12 @@
 .byte \bgid
 .endm
 
+@hides a bg
+.macro bg_hide bg_idx:req
+.byte 0xC
+.byte \bg_idx
+.endm
+
 @syncs bgcntrl with all bgs display configurations
 .macro bg_sync
 .byte 0xd
@@ -239,8 +245,8 @@
 .byte 0x19
 .hword \target
 .hword \duration
-.hword \dx
-.hword \dy
+.hword (\dx & 0xFFFF)
+.hword (\dy & 0xFFFF)
 .endm
 
 
@@ -249,6 +255,15 @@
 .byte 0x1A
 .word \func
 .byte \param_cnt
+.endm
+
+@ oam gfx anim start
+@ oam_idx : the oam to target (can be a var)
+@ animation_num : the animation to start
+.macro oam_gfx_anim_start oam_idx:req animation_num:req
+.byte 0x1C
+.hword \oam_idx
+.byte \animation_num
 .endm
 
 @loads a palette
@@ -348,8 +363,8 @@
 .byte 0x2B
 .byte \bgid
 .hword \duration
-.hword \hdelta
-.hword \vdelta
+.hword (\hdelta & 0xFFFF)
+.hword (\vdelta & 0xFFFF)
 .endm
 
 @mapreload
@@ -513,10 +528,20 @@
 @ Pauses the script for a certain amount of frames
 @ frames for how many frames to pause the script
 .macro pause frames:req
-.byte 0x39
+.byte 0x39 
 .word \frames
 .endm
 
+@ Deletes all internal tasks
+.macro anim_tasks_delete_all
+.byte 0x3A
+.endm
+
+
+.equ BG_SIZE_256x256, 0
+.equ BG_SIZE_512x256, 1
+.equ BG_SIZE_256x512, 2
+.equ BG_SIZE_512x512, 3
 
 @field for bg setup
 .macro bg_setup_cnfg id charbase mapbase size colmode priority

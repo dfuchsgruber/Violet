@@ -723,7 +723,8 @@ song song_table[] = {
 	//Song 359
 	{mus_queen_of_darkness_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 360
-	{mus_consuming_darkness, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	//{mus_consuming_darkness, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_dark_queen2, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 361
 	{mus_blackbeard, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	//Song 362

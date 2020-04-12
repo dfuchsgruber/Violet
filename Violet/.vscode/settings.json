@@ -99,6 +99,7 @@
         "transparency.h": "c",
         "start_menu.h": "c",
         "string": "c",
-        "tileset.h": "c"
+        "tileset.h": "c",
+        "anim_engine.h": "c"
     }
 }

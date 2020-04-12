@@ -108,6 +108,7 @@ void _obj_move_sine_trace(u8 self);
 void cmdx37_obj_move_trace(ae_memory *mem);
 void cmdx38_tbox_and_interrupt(ae_memory *mem);
 void cmdx39_pause(ae_memory *mem);
+void cmdx3A_task_delete_all(ae_memory *mem);
 void cmd_nop(ae_memory *mem);
 void ae_mapreloader();
 

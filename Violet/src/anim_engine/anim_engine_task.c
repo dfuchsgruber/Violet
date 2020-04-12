@@ -1,6 +1,7 @@
 #include "types.h"
 #include "anim_engine.h"
 #include "agbmemory.h"
+#include "debug.h"
 
 /**
  * Nullsub for anim tasks (root holds nullsub)
@@ -54,9 +55,9 @@ int anim_engine_task_delete(anim_engine_task *self){
  * @param root
  */
 void anim_engine_task_delete_all(anim_engine_task *root){
-    anim_engine_task *t = root->next; //Never drop root
-    while(t){
-        anim_engine_task_delete(t);
+    while(root->next){ // Never drop the root callback
+        dprintf("Deleting task %x\n", root->next->callback);
+        anim_engine_task_delete(root->next);
     }
 }
 

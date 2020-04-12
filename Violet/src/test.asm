@@ -34,6 +34,11 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setvar 0x8004 19
+	special SPECIAL_CUTSCENE_SHOW
+	waitstate
+	end
+
 callasm trainerschool_exam_init
 
 loadpointer 0 str_beforea

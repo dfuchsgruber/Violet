@@ -79,6 +79,7 @@ static void (*commands[])(ae_memory *) = {
         cmdx37_obj_move_trace,
         cmdx38_tbox_and_interrupt,
         cmdx39_pause,
+        cmdx3A_task_delete_all,
 };
 
 void init_anim_engine_by_table() {
@@ -418,12 +419,8 @@ void _obj_move_linear_trace(anim_engine_task *self) {
 void cmdx1B_gfx_anim_set(ae_memory* mem) {
     u16 oam_id = anim_engine_read_param(mem);
     u8 anim_id = anim_engine_read_byte(mem);
-
-    oam_object* oam = (oam_object*) (oam_id * 0x44 + 0x0202063c);
-    oam->anim_number = anim_id;
-    oam_gfx_anim_init(oam, 0);
-
-
+    oam_gfx_anim_start(oams + oam_id, anim_id);
+    oam_gfx_anim_init(oams + oam_id, 0);
 }
 
 void cmdx1C_rs_anim_set(ae_memory* mem) {
@@ -934,4 +931,8 @@ void cmdx38_tbox_and_interrupt(ae_memory *mem) {
 
 void cmdx39_pause(ae_memory *mem) {
     mem->delayed = (int)anim_engine_read_word(mem);
+}
+
+void cmdx3A_task_delete_all(ae_memory *mem) {
+    anim_engine_task_delete_all(mem->root);
 }

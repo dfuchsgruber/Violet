@@ -167,6 +167,7 @@ extern const unsigned char mus_ardeal[];
 extern const unsigned char mus_lucius[];
 extern const unsigned char mus_lucius_battle[];
 extern const unsigned char mus_dark_queen_battle2[];
+extern const unsigned char mus_dark_queen2[];
 
 #endif	/* MUSIC_H */
 
