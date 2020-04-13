@@ -46,16 +46,14 @@ ae_script_ardeal_tower:
     obj_vram_load ae_animation_ardeal_tower_lucius_graphic
     oam_new ae_animation_ardeal_tower_hiro_falling_oam_template 128 50 0 0x8000
     oam_new ae_animation_ardeal_tower_lucius_oam_template 112 52 0 0x8002
-
     bg_scroll 1, 4000, -250, 0
     pause 1
     fadescreen 0x7FFF 0 512 16 16 0
-    pause 16
-
-
+    pause 4
+    sound 121
+    pause 12
     oam_new ae_animation_ardeal_tower_slash_oam_template 120 50 0 0x8001
     pause 8
-
     oam_move 0x8000, 8, 32, -2
     pause 8
     oam_move 0x8000, 64, 4, 0
@@ -72,13 +70,18 @@ ae_script_ardeal_tower:
     loadpal gfx_ardeal_tower_hiro_falling1Pal, 0, 32, UNCOMP, RESTORE
     loadpal gfx_ardeal_tower_hiro_falling_bgPal, 16, 32, UNCOMP, RESTORE
     pause 1
-    bg_scroll 2, 1000, 0, -8000
+    bg_scroll 2, 1000, 0, 8000
     pause 1
     spawn_big_cb animation_ardeal_tower_falling_bg_animation, 5, 2
         .hword 0, 0 // Delay and frame
     pause 1
     fadescreen 0 0 512 16 16 0
+    sound 125
     pause 256
+    sound 126
+    pause 1
+    sound 37
+    pause 8
     bg_scroll 1, 16, 0, -256
     pause 96
     mapreload

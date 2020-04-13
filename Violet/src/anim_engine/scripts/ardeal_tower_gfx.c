@@ -93,6 +93,11 @@ extern u8 gfx_ardeal_tower_hiro_falling1Map[];
 extern u8 gfx_ardeal_tower_hiro_falling2Tiles[];
 extern u8 gfx_ardeal_tower_hiro_falling2Map[];
 
+extern u8 gfx_ardeal_tower_hiroine_falling1Tiles[];
+extern u8 gfx_ardeal_tower_hiroine_falling1Map[];
+extern u8 gfx_ardeal_tower_hiroine_falling2Tiles[];
+extern u8 gfx_ardeal_tower_hiroine_falling2Map[];
+
 #define BG_IDX 1
 
 void animation_ardeal_tower_falling_bg_animation(u8 self) {
@@ -104,9 +109,9 @@ void animation_ardeal_tower_falling_bg_animation(u8 self) {
     }
     *clk = 8;
     void *tileset_src; void *tilemap_src;
-    if (save2->player_is_female) {
-        tileset_src = *frame ? gfx_ardeal_tower_hiro_falling2Tiles : gfx_ardeal_tower_hiro_falling1Tiles;
-        tilemap_src = *frame ? gfx_ardeal_tower_hiro_falling2Map : gfx_ardeal_tower_hiro_falling1Map;
+    if (save2->player_is_female || true) {
+        tileset_src = *frame ? gfx_ardeal_tower_hiroine_falling2Tiles : gfx_ardeal_tower_hiroine_falling1Tiles;
+        tilemap_src = *frame ? gfx_ardeal_tower_hiroine_falling2Map : gfx_ardeal_tower_hiroine_falling1Map;
     } else {
         tileset_src = *frame ? gfx_ardeal_tower_hiro_falling2Tiles : gfx_ardeal_tower_hiro_falling1Tiles;
         tilemap_src = *frame ? gfx_ardeal_tower_hiro_falling2Map : gfx_ardeal_tower_hiro_falling1Map;
