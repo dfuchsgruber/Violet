@@ -379,7 +379,7 @@ void pokepad_show_components() {
 }
 
 bool pokepad_init_function_outdoor() {
-
+    if (!checkflag(POKEDEX)) return false;
     u8 *registered = (u8*) var_access(POKEPAD_SHORTCUTS); //we interpret the var offset as 2 bytes
     if (super.keys_new.keys.l && registered[0] != 0xFF) {
         if (pokepad_items[registered[0]].func) {

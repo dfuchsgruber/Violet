@@ -11,13 +11,13 @@
 #include "constants/songs.h"
 #include "debug.h"
 #include "constants/battle/battle_results.h"
-
+#include "battle/whiteout.h"
 
 
 
 void battle_initialize_trainerbattle() {
     battle_flags = BATTLE_TRAINER;
-    super.saved_callback = trainerbattle_continuation;
+    super.saved_callback = battle_trainerbattle_continuation;
     if (fmem.trainers_cnt == 2 || trainer_vars.kind_of_battle == TRAINER_BATTLE_TWO_TRAINERS 
         || trainer_vars.kind_of_battle == TRAINER_BATTLE_ALLY_TWO_TRAINERS) {
         battle_flags |= BATTLE_DOUBLE | BATTLE_TWO_TRAINERS;

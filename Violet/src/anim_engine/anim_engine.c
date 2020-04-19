@@ -20,6 +20,9 @@
 #include "fading.h"
 #include "dma.h"
 
+static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem);
+
+
 static void (*commands[])(ae_memory *) = {
         cmdx00_end,
         cmdx01_call,
@@ -80,6 +83,7 @@ static void (*commands[])(ae_memory *) = {
         cmdx38_tbox_and_interrupt,
         cmdx39_pause,
         cmdx3A_task_delete_all,
+        cmdx3B_loop_sound_with_pan_and_volume_decay,
 };
 
 void init_anim_engine_by_table() {
@@ -935,4 +939,49 @@ void cmdx39_pause(ae_memory *mem) {
 
 void cmdx3A_task_delete_all(ae_memory *mem) {
     anim_engine_task_delete_all(mem->root);
+}
+
+
+typedef struct {
+    u16 sound;
+    s8 pan;
+    s8 pan_increment;
+    u16 volume;
+    s16 volume_increment;
+    u8 num_loops;
+    u16 loop_duration;
+    u16 delay;
+} task_loop_sound_control;
+
+static void task_loop_sound_with_pan_and_volume(anim_engine_task *self) {
+    task_loop_sound_control *ctrl = (task_loop_sound_control*)self->vars;
+    if (ctrl->delay) {
+        ctrl->delay--;
+        return;
+    }
+    if (ctrl->num_loops <= 0) {
+        anim_engine_task_delete(self);
+        return;
+    }
+    ctrl->num_loops--;
+    ctrl->delay = ctrl->loop_duration;
+    mplay_sound_effect_0_and_1_play_with_pan(ctrl->sound, ctrl->pan);
+    volume_set(mplay_info_sound_effect_0, 0xFFFF, ctrl->volume);
+    volume_set(mplay_info_sound_effect_1, 0xFFFF, ctrl->volume);
+    ctrl->pan = (s8)(ctrl->pan + ctrl->pan_increment);
+    ctrl->volume = (u16)(ctrl->volume + ctrl->volume_increment);
+}
+
+
+static void cmdx3B_loop_sound_with_pan_and_volume_decay(ae_memory *mem) {
+    anim_engine_task *task = anim_engine_task_new(0, task_loop_sound_with_pan_and_volume, sizeof(task_loop_sound_control), mem->root);
+    task_loop_sound_control *ctrl = (task_loop_sound_control*)task->vars;
+    ctrl->sound = anim_engine_read_hword(mem);
+    ctrl->pan = (s8)anim_engine_read_byte(mem);
+    ctrl->pan_increment = (s8)anim_engine_read_byte(mem);
+    ctrl->volume = anim_engine_read_hword(mem);
+    ctrl->volume_increment = (s16)anim_engine_read_hword(mem);
+    ctrl->num_loops = anim_engine_read_byte(mem);
+    ctrl->loop_duration = anim_engine_read_hword(mem);
+    ctrl->delay = 0;
 }

@@ -56,9 +56,14 @@ u16 trainer_get_unaligned_hword(void *src);
 u16 trainer_get_flag();
 
 /**
+ * Sets trainer flags (for both A and B trainer)
+ **/
+void trainer_set_flags();
+
+/**
  * Continuation that is called after a trainerbattle ends
  */
-void trainerbattle_continuation();
+void battle_trainerbattle_continuation();
 
 /**
  * Configures all trainer variables

@@ -550,7 +550,7 @@ map_namespaces:
 	.global str_mapnamespace_160
 
 	str_mapnamespace_160:
-		.string "Wasserirrgarten"
+		.string "Schattenflut"
 
 
 	.global str_mapnamespace_161

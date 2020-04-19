@@ -140,6 +140,10 @@
 	str_mug_lucius:
 		.string "Lucius"
 
+.global str_mug_lucky
+	str_mug_lucky:
+		.string "Lucky"
+
 
 
 .elseif LANG_EN

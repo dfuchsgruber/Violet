@@ -6194,7 +6194,7 @@ trainer trainers[TRAINER_CNT] = {
 				.items = {ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
 				.party = (trainer_pokemon*) trainer_party_x15e_ardeal_lucius,
 				.uses_custom_items = true, .uses_custom_moves = true,
-        .battle_state = BATTLE_DOUBLE,
+        // .battle_state = BATTLE_DOUBLE,
     },
     [0x15f] = {
         .trainerclass = TRAINERCLASS_RIVALE, .sprite = 106,

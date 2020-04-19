@@ -7,7 +7,7 @@
 
 #include "types.h"
 #include "overworld/sprite.h"
-#include "oam.h"
+#include "oam.h" 
 #include "vars.h"
 #include "debug.h"
 
@@ -1433,6 +1433,26 @@ overworld_sprite ow_lucius = {
     oam_rotscale_anim_table_null
 };
 
+static graphic overworld_sprite_lucky[] = {
+	{gfx_ow_luckyTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_luckyTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+};
+
+overworld_sprite ow_lucky = {
+	0xffff, 0x1105, 0x11ff, 0x100,
+	16, 32, 0x14, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_32, ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_lucky, 
+	oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1629,6 +1649,7 @@ overworld_sprite *overworld_sprites[] = {
 //174 
         &ow_botogel,
         &ow_drampa,
+		&ow_lucky,
 
 };
 

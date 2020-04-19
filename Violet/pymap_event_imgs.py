@@ -85,12 +85,14 @@ picture_idx_to_png = {
     172 : "asset/gfx/overworld/npcs/diserakt/gfx_ow_diserakt_0.png",
     173 : "asset/gfx/overworld/npcs/rubys/gfx_ow_rubys_0.png",
     174 : "asset/gfx/overworld/npcs/botogel/gfx_ow_botogel_0.png",
-    175 : "asset/gfx/overworld/npcs/drampa/gfx_ow_drampa.png.display"
+    175 : "asset/gfx/overworld/npcs/drampa/gfx_ow_drampa.png.display",
+    176 : "asset/gfx/overworld/npcs/gfx_ow_lucky.png",
 }
 
 # Images that hold an entire spritesheet
 spritesheet_images = {
-    80 : (16, 32)
+    80 : (16, 32),
+    176 : (16, 32),
 }
 
 class Event_to_image:

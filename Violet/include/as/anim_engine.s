@@ -537,6 +537,18 @@
 .byte 0x3A
 .endm
 
+@ Plays a sound with changing pan and volume
+.macro loop_sound_with_pan_and_volume sound:req num_loops:req loop_duration:req pan=0 pan_increment=0 volume=256 volume_increment=0
+.byte 0x3B
+.hword \sound
+.byte (\pan & 0xFF)
+.byte (\pan_increment & 0xFF)
+.hword (\volume & 0xFFFF)
+.hword (\volume_increment & 0xFFFF)
+.byte \num_loops
+.hword \loop_duration
+.endm
+
 
 .equ BG_SIZE_256x256, 0
 .equ BG_SIZE_512x256, 1

@@ -315,7 +315,7 @@ void pokedex_entry_from_battle_cb(u8 self){
                 break;
             }
             case 2:{ //free all components
-                volume_set((void*) 0x030071F0, 0xFFFF, 0x100);
+                volume_set(mplay_info_background_music, 0xFFFF, 0x100);
                 free(bg_get_tilemap(0));
                 free(bg_get_tilemap(1));
                 free(bg_get_tilemap(2));
@@ -387,7 +387,7 @@ void pokedex_callback_entry_idle() {
         if (super.keys_new.keys.B) {
             play_sound(5);
             fadescreen_all(1, 0);
-            volume_set((void*) 0x030071F0, 0xFFFF, 0x100);
+            volume_set(mplay_info_background_music, 0xFFFF, 0x100);
             callback1_set(pokedex_callback_entry_back);
         } else if (super.keys_new.keys.start) {
             pokemon_play_cry(fmem.dex_mem->current_species, 0);

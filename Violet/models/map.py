@@ -83,7 +83,7 @@ signpost_item_type = agb.types.BitfieldType('u32', [
 # Behaviour for map tilesets
 
 tileset_behaviour_type = agb.types.BitfieldType('u32', [
-    ('behaviour', None, 9),
+    ('behaviour', 'block_behaviour', 9),
     ('hm_usage', 'block_hm_usage', 5),
     ('field_2', None, 4),
     ('battle_bg', 'battle/battle_bgs', 6),

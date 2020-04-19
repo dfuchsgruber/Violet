@@ -34,6 +34,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	// setvar BATTLE_SONG_OVERRIDE MUS_LUCIUS_BATTLE
+    trainerbattlelosable 0x9 0x15e 0x5 str_beforea str_beforeb
+	end
+
 	setvar 0x8004 19
 	special SPECIAL_CUTSCENE_SHOW
 	waitstate

@@ -290,7 +290,7 @@ receive_pokeballs:
 @ This state means you receive pokeballs from him
 lock
 faceplayer
-setflag BLACKOUT_BYPASS
+setflag FLAG_SCRIPTED_WILD_BATTLES_LOSABLE
 setflag CAUGHT_POKEDEX_DISABLE
 removeitem ITEM_POKEBALL 5
 loadpointer 0 str_player_receives_pokeballs

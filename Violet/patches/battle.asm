@@ -185,17 +185,13 @@ blxr4:
         bx r0
         .pool
 
-.org 0x08015778
-    ldr r0, =battle_whiteout_bypass | 1
-    bx r0
-    .pool
-
 .org 0x08080404
-    .word trainerbattle_store_possible_loss_in_lastresult | 1
+    .word battle_trainerbattle_continuation | 1
 
-.org 0x08080050
-    .word hook_battle_result
-    .word hook_battle_result
+.org 0x0807fb04
+	ldr r0, =battle_scripted_wild_battle_continuation | 1
+	bx r0
+	.pool
 
 .org 0x807f4a0
 	.word str_whiteout

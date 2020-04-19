@@ -45,25 +45,25 @@ gotoif EQUAL water_chosen
 end
 
 plant_chosen:
-trainerbattlelosable 0x9 0xb3 0x0 str_won str_lost
+trainerbattlelosable 0x9 0xb3 0x1 str_won str_lost
 goto after_battle
 
 fire_chosen:
-trainerbattlelosable 0x9 0xb4 0x0 str_won str_lost
+trainerbattlelosable 0x9 0xb4 0x1 str_won str_lost
 goto after_battle
 
 water_chosen:
-trainerbattlelosable 0x9 0xb5 0x0 str_won str_lost
+trainerbattlelosable 0x9 0xb5 0x1 str_won str_lost
 goto after_battle
 
 after_battle:
-compare LASTRESULT 0xFF
+compare LASTRESULT 1
 gotoif EQUAL lost_battle
 won_battle:
 loadpointer 0 str_after_battle_won
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 may_felix_battle:
-clearflag BLACKOUT_BYPASS
+clearflag FLAG_SCRIPTED_WILD_BATTLES_LOSABLE
 special 0x113
 applymovement 0x7f mov_cam_to_may_felix
 waitmovement 0x0

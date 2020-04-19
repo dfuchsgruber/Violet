@@ -759,6 +759,7 @@ extern const unsigned short gfx_ow_lucius_5Tiles[];
 extern const unsigned short gfx_ow_lucius_6Tiles[];
 extern const unsigned short gfx_ow_lucius_7Tiles[];
 extern const unsigned short gfx_ow_lucius_8Tiles[];
+extern const u8 gfx_ow_luckyTiles[];
 
 
 #define OVERWORLD_PLAYER_PICTURE_CONTEXT_WALKING 0

@@ -11,6 +11,10 @@ typedef struct{
 
 void script_halt_and_callback(ow_script_state *state, bool (*callback)());
 
+void ow_script_fadescreen_palette_backup() {
+    cpuset(pal_restore, pal_tmp, 0x4000100);
+}
+
 bool script_cmd_x97_fadescreen(ow_script_state *ow_state){
     //dprintf("Script state is %x\n", ow_state->script);
     u8 type = *(ow_state->script++);

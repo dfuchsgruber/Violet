@@ -5,6 +5,10 @@
 #include "bg.h"
 #include "save.h"
 #include "debug.h"
+#include "map/event.h"
+#include "overworld/map_control.h"
+#include "vars.h"
+#include "flags.h"
 
 #define HIRO_GFX 0x1337
 #define SLASH_GFX 0x1338
@@ -109,7 +113,7 @@ void animation_ardeal_tower_falling_bg_animation(u8 self) {
     }
     *clk = 8;
     void *tileset_src; void *tilemap_src;
-    if (save2->player_is_female || true) {
+    if (save2->player_is_female ) {
         tileset_src = *frame ? gfx_ardeal_tower_hiroine_falling2Tiles : gfx_ardeal_tower_hiroine_falling1Tiles;
         tilemap_src = *frame ? gfx_ardeal_tower_hiroine_falling2Map : gfx_ardeal_tower_hiroine_falling1Map;
     } else {
@@ -121,4 +125,33 @@ void animation_ardeal_tower_falling_bg_animation(u8 self) {
     lz77uncompwram(tilemap_src, bg_get_tilemap(BG_IDX));
     bg_copy_vram(BG_IDX, bg_get_tilemap(BG_IDX), 0x800, 0, BG_COPY_TILEMAP);
     *frame ^= 1;
+}
+
+
+#define WARP_BANK 3
+#define WARP_MAP_IDX 0
+#define WARP_WARP_IDX 0
+
+void animation_ardeal_tower_warp() {
+
+    ++*var_access(STORY_PROGRESS);
+    *var_access(SONG_OVERRIDE) = 0; // No song on entrance to bb's ship
+    // Pokémon, Poképad, Badges, Money are stolen from the player
+    // Remove badges
+    clearflag(FRBADGE_1);
+    clearflag(FRBADGE_2);
+    clearflag(FRBADGE_3);
+    clearflag(FRBADGE_4);
+    clearflag(FRBADGE_5);
+    // Set the player's party to stolen and remove the pokepad
+    setflag(FLAG_PLAYER_PARTY_STOLEN);
+    player_pokemon_recount_pokemon();
+    clearflag(PKMNMENU);
+    clearflag(POKEDEX);
+    // Player loses all money
+    money_set(&cmem.money_backup, money_get(&save1->money));
+    money_set(&save1->money, 0);
+	warp_setup_by_event(WARP_BANK, WARP_MAP_IDX, WARP_WARP_IDX);
+    warp_setup_muted_callback();
+    warp_enable_flags();
 }

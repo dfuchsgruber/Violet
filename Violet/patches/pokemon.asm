@@ -1154,3 +1154,9 @@ lsr r0, #0x1A
 	ldr r1, =pokemon_unown_get_letter | 1
 	bx r1
 	.pool
+
+
+.org 0x08040b3c
+	ldr r0, = player_pokemon_recount_pokemon | 1
+	bx r0 
+	.pool

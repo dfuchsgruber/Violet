@@ -7,6 +7,7 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "items.s"
+.include "battle/battle_results.s"
 
 .global lscr_0x719224
 .global ow_script_trainerschool_wildbattle
@@ -111,11 +112,12 @@ move_felix_and_blaise_before_pokemon_received:
 	return
 
 
+
 ow_script_trainerschool_wildbattle:
 dowildbattle
-compare LASTRESULT 0xff
+compare LASTRESULT BATTLE_RESULT_LOST
 gotoif EQUAL player_fainted
-compare LASTRESULT 0x7
+compare LASTRESULT BATTLE_RESULT_CAUGHT
 gotoif EQUAL caught_pkmn
 checkitem ITEM_POKEBALL 1
 compare LASTRESULT 0x1

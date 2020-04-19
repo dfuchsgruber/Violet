@@ -122,8 +122,8 @@ typedef struct custom_memory {
     u8 daycare_offspring_male; // Volbeat and Nidoran may alter their gender when breeding (y tho?)
     box_pokemon incubator_slots[3];
     u8 ally_battle_selected_party_idxs[3];
-    u8 unused[11];
-    
+    u8 unused[7];
+    u32 money_backup;
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
     rtc_timestamp a_gen_time;
@@ -265,5 +265,12 @@ void money_add(u32 *dst, u32 value);
  * @return the amount of money
  **/
 u32 money_get(u32 *dst);
+
+/**
+ * Sets the amount of money to an encrypted variable.
+ * @param dst where to put the value
+ * @param amount the amount to set
+ **/
+void money_set(u32 *dst, u32 amount);
 
 #endif

@@ -7,10 +7,10 @@
 .equ LUCIUS_GFX, 0x1339
 
 ae_script_ardeal_tower:
-    fadescreen 0x7FFF 0 512 8 0 16
-    pause 8
+    //fadescreen 0x7FFF 0 512 8 0 16
+    //pause 8
     maintain
-    pause 1
+    pause 64 // wait for music fadeout
     @ Reset
     oam_reset
     callback_reset
@@ -48,7 +48,7 @@ ae_script_ardeal_tower:
     oam_new ae_animation_ardeal_tower_lucius_oam_template 112 52 0 0x8002
     bg_scroll 1, 4000, -250, 0
     pause 1
-    fadescreen 0x7FFF 0 512 16 16 0
+    fadescreen 0 0 512 16 16 0
     pause 4
     sound 121
     pause 12
@@ -57,7 +57,10 @@ ae_script_ardeal_tower:
     oam_move 0x8000, 8, 32, -2
     pause 8
     oam_move 0x8000, 64, 4, 0
-    pause 48
+    pause 64
+    oam_move 0x8000, 16, 0, 160
+
+
     fadescreen 0 0 512 16 0 16
     pause 16
     bg_hide 0
@@ -83,9 +86,16 @@ ae_script_ardeal_tower:
     sound 37
     pause 8
     bg_scroll 1, 16, 0, -256
-    pause 96
-    mapreload
-    script_notify
+    pause 48
+    fadescreen 0 0 512 16 0 16
+    pause 16
+    sound 192
+    pause 8
+    loop_sound_with_pan_and_volume 119 8 8, volume=256, volume_increment=-32
+    pause 256
+    force_pals_to_black
+    pause 1
+    callasm animation_ardeal_tower_warp 0
     end
 
 .align 4

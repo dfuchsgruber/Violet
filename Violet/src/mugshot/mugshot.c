@@ -61,6 +61,7 @@ mugshot mugshots[] = {
 	[MUGSHOT_TEAH] = {&gfx_mug_teahTiles, &gfx_mug_teahPal, str_mug_teah},
 	[MUGSHOT_NARCISSA] = {&gfx_mug_narcissaTiles, &gfx_mug_narcissaPal, str_mug_narcissa},
 	[MUGSHOT_LUCIUS] = {&gfx_mug_luciusTiles, &gfx_mug_luciusPal, str_mug_lucius},
+	[MUGSHOT_LUCKY] = {&gfx_mug_luckyTiles, &gfx_mug_luckyPal, str_mug_lucky},
 };
 
 void tbox_clear_bottom_line(u8 box_id) {

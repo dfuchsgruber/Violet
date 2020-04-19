@@ -373,4 +373,12 @@ u16 oam_load_graphic_uncompressed(graphic *g);
  **/
 void oam_gfx_anim_start(oam_object *o, u8 anim_idx);
 
+
+/**
+ * Resets the oam attribute buffer.
+ * @param first the first oam to reset
+ * @param the last oam oam (exclusive) to reset
+ **/
+void oam_buffer_reset(u8 first, u8 last);
+
 #endif

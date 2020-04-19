@@ -29,6 +29,14 @@ typedef struct {
  */
 void play_sound(u16 sound_id);
 
+
+/**
+ * Uses the sound players 0 and 1 to play a sound and sets pan.
+ * @param sound the sound to play
+ * @param pan the pan
+ **/
+void mplay_sound_effect_0_and_1_play_with_pan(u16 sound, s8 pan);
+
 /**
  * Plays a song on the song player
  * @param song Id of the song to play
@@ -85,15 +93,19 @@ u16 map_get_song();
  */
 u16 trainer_get_encounter_song(u16 trainer_id);
 
-extern u8 mplay_info_background_music[]; // Todo: Reserach data type
+
+extern u8 mplay_info_background_music[0x40]; // Todo: Reserach data type
+extern u8 mplay_info_sound_effect_0[0x40];
+extern u8 mplay_info_sound_effect_1[0x40];
+extern u8 mplay_info_sound_effect_2[0x40];
 
 /**
  * Sets the song player volume
- * @param a TODO
- * @param b TODO
+ * @param song_controller which controller to use
+ * @param affects_tracks bitfield which tracks to affect
  * @param volume the volume to set
  */
-void volume_set(void *a, u16 b, u16 volume);
+void volume_set(void *song_controller, u16 affects_tracks, u16 volume);
 
 extern const unsigned char mus_rin_battle[];
 extern const unsigned char mus_encounter_violet[];

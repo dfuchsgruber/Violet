@@ -100,6 +100,9 @@
         "start_menu.h": "c",
         "string": "c",
         "tileset.h": "c",
-        "anim_engine.h": "c"
+        "anim_engine.h": "c",
+        "typeinfo": "c",
+        "whiteout.h": "c",
+        "healing_place.h": "c"
     }
 }

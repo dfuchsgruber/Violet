@@ -99,6 +99,10 @@ void apply_pre_damage_modifiers(){
         damage_apply_multiplier(500);
     }
     battlescript_cmd_x06_apply_damage_modifiers();
+    if ((battle_flags & BATTLE_TRAINER) && (trainer_vars.rival_flags & 4) && battler_is_opponent(defending_battler)) {
+        // When battling Lucius, you're not allowed to do any significant damage
+        damage_apply_multiplier(250);
+    }
     apply_final_damage_modifiers();
 }
 

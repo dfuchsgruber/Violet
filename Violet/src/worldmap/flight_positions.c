@@ -101,7 +101,7 @@ flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - 
     [MAP_SEVII_EILAND_8 - MAP_AMONIA] = {.bank = 3, .map_idx = 52, .flight_position_idx = 0},
     [MAP_SEVII_EILAND_9 - MAP_AMONIA] = {.bank = 3, .map_idx = 53, .flight_position_idx = 0},
     [MAP_DUNKLER_TURM - MAP_AMONIA] = {.bank = 3, .map_idx = 54, .flight_position_idx = 0},
-    [MAP_WASSERIRRGARTEN - MAP_AMONIA] = {.bank = 3, .map_idx = 55, .flight_position_idx = 0},
+    [MAP_SCHATTENFLUT - MAP_AMONIA] = {.bank = 3, .map_idx = 55, .flight_position_idx = 0},
     [MAP_EILAND_5_WEIDE - MAP_AMONIA] = {.bank = 3, .map_idx = 56, .flight_position_idx = 0},
     [MAP_TRAINERSCHULE - MAP_AMONIA] = {.bank = 3, .map_idx = 57, .flight_position_idx = 0},
     [MAP_FERN_EILAND - MAP_AMONIA] = {.bank = 3, .map_idx = 58, .flight_position_idx = 0},

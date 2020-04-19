@@ -85,6 +85,7 @@ ow_script_frame_table:
     show_mugshot MUGSHOT_HARRENFELD alignment=MUGSHOT_LEFT message_type=MSG mask_name=0
     sound 13
     applymovement 4 mov_lift_up
+    callasm ow_script_fadescreen_palette_backup
     fadescreen 2
     waitmovement 0
     checksound
@@ -129,9 +130,9 @@ after_choice:
     loadpointer 0 str_10
     callstd MSG_KEEPOPEN
 	setvar BATTLE_SONG_OVERRIDE MUS_LUCIUS_BATTLE
-    setflag BLACKOUT_BYPASS
-    trainerbattlelosable 0x9 0x15e 0x0 str_won str_lost
-    addvar STORY_PROGRESS 1
+    trainerbattlelosable 0x9 0x15e 0x5 str_won str_lost
+    @ Should never be reached, the rival flag 0x4 for lucius automatically triggers the "falling from the tower" cutscene
+    @ That warps the player to blackbeards ship
     releaseall
     end
 
