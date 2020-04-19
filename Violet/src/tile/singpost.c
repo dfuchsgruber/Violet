@@ -120,7 +120,7 @@ extern u8 ow_script_signpost_hidden_item[];
 u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
     map_event_signpost *sign = map_get_signpost_by_position(&mapheader_virtual, (s16)(position->coordinates.x - 7), (s16)(position->coordinates.y - 7), position->height);
     if (!sign) return NULL;
-    if (!checkflag(sign->flag)) return NULL;
+    if (sign->flag && !checkflag(sign->flag)) return NULL;
     if (!sign->value.script) return ow_script_signpost_null;
     switch(sign->type) {
         case SIGNPOST_SCRIPT_NORTH:
