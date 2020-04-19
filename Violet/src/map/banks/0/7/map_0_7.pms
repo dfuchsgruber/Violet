@@ -305,11 +305,9 @@
 			"signposts": [
 				{
 					"x": 32,
-					"field_6": 0,
 					"y": 14,
 					"level": 0,
-					"field_7": 0,
-					"type": 5,
+					"type": "SIGNPOST_5",
 					"value": {
 						"script": "0",
 						"item": {
@@ -318,15 +316,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 11,
-					"field_6": 0,
 					"y": 23,
 					"level": 0,
-					"field_7": 0,
-					"type": 5,
+					"type": "SIGNPOST_5",
 					"value": {
 						"script": "0",
 						"item": {
@@ -335,7 +332,8 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

@@ -13,6 +13,7 @@ weather_type = agb.types.ScalarType('u8', constant='map_weathers')
 types_type = agb.types.ScalarType('u8', constant='map_types')
 show_name_type = agb.types.ScalarType('u8', constant='map_show_name_types')
 battle_style_type = agb.types.ScalarType('u8', constant='map_battle_styles')
+signpost_type_type = agb.types.ScalarType('u8', constant='signpost_types')
 
 person_script_std_type = agb.types.UnionType({
         'item' : 'item',
@@ -80,6 +81,32 @@ signpost_item_type = agb.types.BitfieldType('u32', [
     ('chunk', None, 3)
 ])
 
+signpost_type = agb.types.Structure([
+    ('x', 's16', 0),
+    ('y', 's16', 0),
+    ('level', 'u8', 0),
+    ('type', 'signpost_type', 0),
+    ('flag', 'u16', 0),
+    ('value', 'event.signpost_value', 0)
+])
+
+
+signpost_value_type = agb.types.UnionType({
+        'item' : 'event.signpost_item',
+        'script' : 'ow_script_pointer'
+    },
+    lambda project, context, parents: {
+        "SIGNPOST_SCRIPT" : 'script',
+        "SIGNPOST_SCRIPT_NORTH" : 'script',
+        "SIGNPOST_SCRIPT_SOUTH" : 'script',
+        "SIGNPOST_SCRIPT_EAST" : 'script',
+        "SIGNPOST_SCRIPT_WEST" : 'script',
+        "SIGNPOST_5" : 'item',
+        "SIGNPOST_6" : 'item',
+        "SIGNPOST_HIDDEN_ITEM" : 'item'
+    }[parents[-1]['type']]
+)
+
 # Behaviour for map tilesets
 
 tileset_behaviour_type = agb.types.BitfieldType('u32', [
@@ -145,6 +172,7 @@ models_to_export = {
     'flag' : flag_type,
     'var' : var_type,
     'song' : song_type,
+    'signpost_type' : signpost_type_type,
     'tileset.behaviour' : tileset_behaviour_type,
     'header.flags' : map_flags_type,
     'map_namespace' : namespace_type,
@@ -156,6 +184,8 @@ models_to_export = {
     'event.person' : person_type,
     'event.trigger' : trigger_type,
     'event.signpost_item' : signpost_item_type,
+    'event.signpost_value' : signpost_value_type,
+    'event.signpost' : signpost_type,
     'connection.direction' : connection_direction_type,
     'connection.connection' : connection_type,
     'bank_map_pair' : bank_map_pair_type,

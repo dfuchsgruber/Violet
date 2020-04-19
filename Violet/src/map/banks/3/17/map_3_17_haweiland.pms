@@ -1073,9 +1073,7 @@
 					"x": "33",
 					"y": "20",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -1084,15 +1082,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_haweiland_sign_0"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "19",
 					"y": "41",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -1101,15 +1098,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_haweiland_sign_2"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "55",
 					"y": "15",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -1118,7 +1114,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_haweiland_sign_1"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

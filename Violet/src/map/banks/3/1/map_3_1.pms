@@ -1179,9 +1179,7 @@
 					"x": 67,
 					"y": 16,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_1_sign_0",
 						"item": {
@@ -1190,15 +1188,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 74,
 					"y": 14,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_1_sign_1",
 						"item": {
@@ -1207,15 +1204,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 10,
 					"y": 24,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_1_sign_2",
 						"item": {
@@ -1224,15 +1220,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 46,
 					"y": 9,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_1_sign_3",
 						"item": {
@@ -1241,15 +1236,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 66,
 					"y": 28,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_1_sign_4",
 						"item": {
@@ -1258,15 +1252,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 33,
 					"y": 13,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -1275,15 +1268,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 27,
 					"y": 23,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -1292,15 +1284,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "61",
 					"y": "9",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_BELEBER",
@@ -1309,15 +1300,14 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "52",
 					"y": "22",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_AETHER",
@@ -1326,7 +1316,8 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

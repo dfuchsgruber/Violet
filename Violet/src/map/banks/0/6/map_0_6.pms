@@ -543,11 +543,9 @@
 			"signposts": [
 				{
 					"x": 25,
-					"field_6": 0,
 					"y": 27,
 					"level": 0,
-					"field_7": 0,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -556,7 +554,8 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

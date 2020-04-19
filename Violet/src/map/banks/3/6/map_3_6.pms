@@ -353,10 +353,8 @@
 				{
 					"level": 0,
 					"x": 25,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 16,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_6_sign_0",
 						"item": {
@@ -365,15 +363,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 17,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 11,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_6_sign_1",
 						"item": {
@@ -382,15 +379,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 41,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 21,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_6_sign_2",
 						"item": {
@@ -399,15 +395,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 22,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 28,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -416,15 +411,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 23,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 20,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -433,7 +427,8 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

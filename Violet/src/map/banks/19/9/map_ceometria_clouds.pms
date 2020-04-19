@@ -240,9 +240,7 @@
 					"x": "39",
 					"y": "13",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_CARBON",
@@ -251,15 +249,14 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "33",
 					"y": "19",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -268,7 +265,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ceometria_clouds_dark_tower_door"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

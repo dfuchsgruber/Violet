@@ -641,11 +641,9 @@
 			"signposts": [
 				{
 					"x": 16,
-					"field_6": 0,
 					"y": 10,
 					"level": 0,
-					"field_7": 0,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -654,15 +652,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 67,
-					"field_6": 0,
 					"y": 37,
 					"level": 0,
-					"field_7": 0,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -671,15 +668,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "50",
-					"field_6": 0,
 					"y": "19",
 					"level": 0,
-					"field_7": 0,
-					"type": "7",
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -688,7 +684,8 @@
 							"amount": "1",
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

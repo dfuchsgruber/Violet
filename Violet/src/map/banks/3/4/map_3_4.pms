@@ -1071,10 +1071,8 @@
 				{
 					"level": 0,
 					"x": 28,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 76,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_4_sign_0",
 						"item": {
@@ -1083,15 +1081,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 27,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 50,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_4_sign_1",
 						"item": {
@@ -1100,15 +1097,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 54,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 67,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_4_sign_2",
 						"item": {
@@ -1117,15 +1113,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 53,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 66,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_4_sign_3",
 						"item": {
@@ -1134,15 +1129,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 54,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 19,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_4_sign_4",
 						"item": {
@@ -1151,15 +1145,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"level": 0,
 					"x": 39,
-					"field_6": 0,
-					"field_7": 0,
 					"y": 25,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_4_sign_5",
 						"item": {
@@ -1168,7 +1161,8 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

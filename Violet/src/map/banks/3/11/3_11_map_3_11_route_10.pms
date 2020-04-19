@@ -392,9 +392,7 @@
 					"x": "24",
 					"y": "22",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_TOP_BELEBER",
@@ -403,7 +401,8 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

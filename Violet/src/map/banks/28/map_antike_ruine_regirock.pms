@@ -64,9 +64,7 @@
 					"x": "8",
 					"y": "25",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -75,15 +73,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_antike_ruine_regirock_braille"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "9",
 					"y": "25",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -92,15 +89,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_antike_ruine_regirock_braille"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "10",
 					"y": "25",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -109,7 +105,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_antike_ruine_regirock_braille"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

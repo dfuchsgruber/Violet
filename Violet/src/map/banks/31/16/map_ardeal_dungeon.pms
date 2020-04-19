@@ -88,9 +88,7 @@
 					"x": "15",
 					"y": "8",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -99,7 +97,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ardeal_dungeon_spiritomb"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

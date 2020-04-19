@@ -232,9 +232,7 @@
 					"x": 12,
 					"y": 0,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_5_4_sign_0",
 						"item": {
@@ -243,15 +241,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 15,
 					"y": 5,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_5_4_sign_1",
 						"item": {
@@ -260,15 +257,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 15,
 					"y": 4,
 					"level": 0,
-					"field_6": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_botogel",
 						"item": {
@@ -277,7 +273,8 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

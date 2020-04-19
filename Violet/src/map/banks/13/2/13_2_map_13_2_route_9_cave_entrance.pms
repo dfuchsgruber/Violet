@@ -31,9 +31,7 @@
 					"x": "8",
 					"y": "11",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -42,15 +40,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_9_cave_stone_0"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "12",
 					"y": "8",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -59,15 +56,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_9_cave_stone_1"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "16",
 					"y": "11",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -76,15 +72,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_9_cave_stone_2"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "14",
 					"y": "15",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -93,15 +88,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_9_cave_stone_3"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "10",
 					"y": "15",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -110,7 +104,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_9_cave_stone_4"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

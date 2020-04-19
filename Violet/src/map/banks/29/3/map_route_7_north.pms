@@ -312,9 +312,7 @@
 					"x": "20",
 					"y": "34",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": "7",
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": "ITEM_HEILPUDER",
@@ -323,15 +321,14 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "33",
 					"y": "47",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": "0",
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_SUESSBONBON",
@@ -340,15 +337,14 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "18",
 					"y": "14",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": "7",
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -357,15 +353,14 @@
 							"chunk": "1"
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "26",
 					"y": "19",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -374,7 +369,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_7_sign_0"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

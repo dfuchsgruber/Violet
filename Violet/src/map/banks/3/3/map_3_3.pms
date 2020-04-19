@@ -461,9 +461,7 @@
 					"y": 20,
 					"level": 0,
 					"x": 13,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_3_sign_0",
 						"item": {
@@ -472,15 +470,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"y": 27,
 					"level": 0,
 					"x": 31,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_3_sign_1",
 						"item": {
@@ -489,15 +486,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"y": 25,
 					"level": 0,
 					"x": 7,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_3_sign_2",
 						"item": {
@@ -506,15 +502,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"y": 27,
 					"level": 0,
 					"x": 20,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_3_sign_3",
 						"item": {
@@ -523,15 +518,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"y": 9,
 					"level": 0,
 					"x": 29,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_3_sign_4",
 						"item": {
@@ -540,15 +534,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"y": 23,
 					"level": 0,
 					"x": 22,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -557,15 +550,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"y": 15,
 					"level": 0,
 					"x": 7,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 7,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"script": "0",
 						"item": {
@@ -574,15 +566,14 @@
 							"amount": 1,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"y": 26,
 					"level": 0,
 					"x": 29,
-					"field_7": 0,
-					"field_6": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_3_3_sign_5",
 						"item": {
@@ -591,7 +582,8 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

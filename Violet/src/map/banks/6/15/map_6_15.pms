@@ -47,11 +47,9 @@
 			"signposts": [
 				{
 					"x": 7,
-					"field_6": 0,
 					"y": 7,
 					"level": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_6_15_sign_0",
 						"item": {
@@ -60,7 +58,8 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

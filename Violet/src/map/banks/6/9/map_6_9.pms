@@ -71,12 +71,10 @@
 			"triggers": [],
 			"signposts": [
 				{
-					"field_6": 0,
-					"field_7": 0,
 					"level": 0,
 					"x": 4,
 					"y": 13,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_6_9_sign_0",
 						"item": {
@@ -85,15 +83,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
-					"field_6": 0,
-					"field_7": 0,
 					"level": 0,
 					"x": 8,
 					"y": 13,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_6_9_sign_0",
 						"item": {
@@ -102,7 +99,8 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

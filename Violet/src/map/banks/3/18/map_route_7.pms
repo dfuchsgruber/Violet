@@ -495,9 +495,7 @@
 					"x": "15",
 					"y": "16",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_GOLDKOEDER",
@@ -506,15 +504,14 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "36",
 					"y": "24",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_AP_PLUS",
@@ -523,7 +520,8 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

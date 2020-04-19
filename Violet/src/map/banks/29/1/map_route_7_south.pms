@@ -528,9 +528,7 @@
 					"x": "45",
 					"y": "29",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_GOLDBONBON",
@@ -539,15 +537,14 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "9",
 					"y": "38",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -556,15 +553,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_route_7_sign_1"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "16",
 					"y": "38",
 					"level": 0,
-					"type": "7",
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
 							"item": "ITEM_KOEDER",
@@ -573,7 +569,8 @@
 							"chunk": 0
 						},
 						"script": 0
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

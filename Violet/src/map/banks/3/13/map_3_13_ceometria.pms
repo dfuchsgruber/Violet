@@ -400,9 +400,7 @@
 					"x": "21",
 					"y": "18",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -411,15 +409,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ceometria_sign_town"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "41",
 					"y": "16",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -428,15 +425,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ceometria_sign_move_deleter"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "9",
 					"y": "40",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -445,7 +441,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ceometria_sign_arena"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

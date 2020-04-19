@@ -424,9 +424,7 @@
 					"x": "22",
 					"y": "42",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -435,15 +433,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_laubdorf_sign_0"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "28",
 					"y": "33",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -452,15 +449,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_laubdorf_sign_1"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "8",
 					"y": "26",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -469,7 +465,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_laubdorf_sign_2"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

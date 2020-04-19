@@ -72,11 +72,9 @@
 			"signposts": [
 				{
 					"x": 8,
-					"field_6": 0,
 					"y": 1,
 					"level": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_5_2_sign_1",
 						"item": {
@@ -85,15 +83,14 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": 9,
-					"field_6": 0,
 					"y": 1,
 					"level": 0,
-					"field_7": 0,
-					"type": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"script": "ow_script_map_5_2_sign_1",
 						"item": {
@@ -102,7 +99,8 @@
 							"amount": 0,
 							"chunk": 0
 						}
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},

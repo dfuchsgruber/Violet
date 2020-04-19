@@ -488,9 +488,7 @@
 					"x": "23",
 					"y": "28",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -499,15 +497,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ardeal_rooms_door"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "24",
 					"y": "28",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -516,15 +513,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ardeal_rooms_door"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "25",
 					"y": "28",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -533,15 +529,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ardeal_rooms_door"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "26",
 					"y": "28",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -550,15 +545,14 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ardeal_rooms_door"
-					}
+					},
+					"flag": "0"
 				},
 				{
 					"x": "52",
 					"y": "9",
 					"level": 0,
-					"type": 0,
-					"field_6": 0,
-					"field_7": 0,
+					"type": "SIGNPOST_SCRIPT",
 					"value": {
 						"item": {
 							"item": 0,
@@ -567,7 +561,8 @@
 							"chunk": 0
 						},
 						"script": "ow_script_ardeal_rooms_switch"
-					}
+					},
+					"flag": "0"
 				}
 			]
 		},
