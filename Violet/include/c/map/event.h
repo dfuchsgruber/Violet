@@ -10,6 +10,7 @@
 
 #include "types.h"
 #include "tile/coordinate.h"
+#include "tile/hidden_item.h"
 
 typedef struct map_event_person {
     u8 target_index; //scripts use this as target reference
@@ -57,9 +58,11 @@ typedef struct map_event_singpost { //TODO
     s16 y;
     u8 level;
     u8 type;
-    u8 field_6;
-    u8 field_7;
-    u8 *script;
+    u16 flag;
+    union {
+        u8 *script;
+        hidden_item_t hidden_item;
+    } value;
 } map_event_signpost;
 
 typedef struct map_events {
@@ -98,6 +101,15 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank);
  * @param bank the bank of the map the person is on
  **/
 void person_delete_npc_if_present(u8 person_idx, u8 map_idx, u8 bank);
+
+/**
+ * Gets the script type (pokecenter, etc.) of a signpost
+ * @param behaviour behaviour of the signpost
+ * @param direction in which direction the signspost was encountered
+ * @return the script type or 255 if None
+ **/
+u8 signpost_get_script_type(u8 behaviour, u8 direction);
+
 
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

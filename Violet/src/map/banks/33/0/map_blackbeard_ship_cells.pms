@@ -3,8 +3,8 @@
 		"footer": "map_footer_blackbeard_ship_cells",
 		"events": {
 			"person_cnt": 1,
-			"warp_cnt": 0,
-			"trigger_cnt": 0,
+			"warp_cnt": 5,
+			"trigger_cnt": 2,
 			"signpost_cnt": 0,
 			"persons": [
 				{
@@ -12,7 +12,7 @@
 					"picture": "176",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "12",
+					"x": "13",
 					"y": "4",
 					"level": 0,
 					"behaviour": 0,
@@ -31,26 +31,90 @@
 					}
 				}
 			],
-			"warps": [],
-			"triggers": [],
+			"warps": [
+				{
+					"x": "3",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "1",
+					"target_bank": "33"
+				},
+				{
+					"x": "4",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "1",
+					"target_bank": "33"
+				},
+				{
+					"x": "12",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "1",
+					"target_bank": "33"
+				},
+				{
+					"x": "13",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "1",
+					"target_bank": "33"
+				},
+				{
+					"x": "3",
+					"y": "5",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				}
+			],
+			"triggers": [
+				{
+					"x": "3",
+					"y": "8",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x3f",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_blackbeard_ship_cells_trigger"
+				},
+				{
+					"x": "4",
+					"y": "8",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "0x3f",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_blackbeard_ship_cells_trigger"
+				}
+			],
 			"signposts": []
 		},
-		"levelscripts": 0,
+		"levelscripts": "map_blackbeard_ship_cells_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": 0,
+		"music": "MUS_BBSHIP",
 		"footer_idx": 109,
 		"namespace": "MAP_SCHATTENFLUT",
-		"flash_type": 0,
-		"weather": 0,
-		"type": 0,
-		"bike_usable": 0,
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": "0",
 		"flags": {
 			"allow_escape_rope": 0,
 			"allow_run": 0,
-			"show_name": 0,
+			"show_name": "1",
 			"flag_3": 0,
 			"flag_4": 0,
 			"flag_5": 0,
@@ -58,7 +122,7 @@
 			"flag_7": 0
 		},
 		"level": 0,
-		"battle_style": 0
+		"battle_style": "BATTLE_TYPE_RANDOM"
 	},
 	"label": "map_blackbeard_ship_cells",
 	"type": "header"

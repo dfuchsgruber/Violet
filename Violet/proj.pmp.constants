@@ -72,5 +72,6 @@
 	"battle/battle_ai_item_types" : "constants/battle/battle_ai_item_types.const",
 	"trainer_backsprites" : "constants/trainer_backsprites.const",
 	"battle/battle_handicaps" : "constants/battle/battle_handicaps.const",
-	"block_behaviour" : "constants/block_behaviours.const"
+	"block_behaviour" : "constants/block_behaviour.const",
+	"signpost_types" : "constants/signpost_types.const"
 }

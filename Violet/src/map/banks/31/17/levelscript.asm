@@ -38,6 +38,9 @@ ow_script_warp:
 
 
 ow_script_frame_table:
+    callasm animation_ardeal_tower_warp
+    waitstate
+
     lockall
     fadesong 0
     pause 64

@@ -60,6 +60,16 @@ bool map_is_x40_x0();
 s8 map_get_warp_idx_by_position(map_header_t *map, position_t *position);
 
 /**
+ * Returns the signpost at a certain position.
+ * @param map at which map to find the signpost
+ * @param x the x coordinate, not +7 shifted
+ * @param y the y coordiante, not +7 shifted
+ * @param level the level on which the event is supposed to be on
+ * @return the event or NULL if none was found
+ **/
+map_event_signpost *map_get_signpost_by_position(map_header_t *map, s16 x, s16 y, u8 level);
+
+/**
  * Checks if a map type represents an outside map.
  * @param map_type the map type
  * @return if the map represents an outside map

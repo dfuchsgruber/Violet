@@ -72,7 +72,7 @@
 
 //hidden items
 .org 0x080CC604
-    ldr r2, =singpost_get_flag | 1
+    ldr r2, =hidden_item_get_field | 1
     bx r2
     .pool
 
@@ -142,3 +142,7 @@
 	bx r3
 	.pool
 
+.org 0x0806d048
+    ldr r3, =signpost_get_script | 1
+    bx r3
+    .pool

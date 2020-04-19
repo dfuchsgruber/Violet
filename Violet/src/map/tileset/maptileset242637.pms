@@ -653,7 +653,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x69",
+				"behaviour": "MB_WARP_DOOR",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -683,147 +683,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x60",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
+				"behaviour": "MB_CAVE_DOOR",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -933,7 +793,147 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x84",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_SIGNPOST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1393,7 +1393,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb3",
+				"behaviour": "MB_B3",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1403,7 +1403,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb3",
+				"behaviour": "MB_B3",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1513,7 +1513,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x6e",
+				"behaviour": "MB_DOWN_RIGHT_STAIR_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1913,7 +1913,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x64",
+				"behaviour": "MB_NORTH_ARROW_WARP",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -1973,7 +1973,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xf",
+				"behaviour": "MB_F",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -2633,7 +2633,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x4",
+				"behaviour": "MB_4",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -2813,7 +2813,7 @@
 				"battle_bg": "0x44"
 			},
 			{
-				"behaviour": "0x4f",
+				"behaviour": "MB_4F",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x4",
@@ -2823,7 +2823,7 @@
 				"battle_bg": "0x44"
 			},
 			{
-				"behaviour": "0x34",
+				"behaviour": "MB_IMPASSABLE_NORTHEAST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x4",
@@ -2833,7 +2833,7 @@
 				"battle_bg": "0xf4"
 			},
 			{
-				"behaviour": "0x34",
+				"behaviour": "MB_IMPASSABLE_NORTHEAST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x4",
@@ -2843,7 +2843,7 @@
 				"battle_bg": "0x44"
 			},
 			{
-				"behaviour": "0x44",
+				"behaviour": "MB_SLIDE_EAST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x4",
@@ -2853,7 +2853,7 @@
 				"battle_bg": "0x44"
 			},
 			{
-				"behaviour": "0x44",
+				"behaviour": "MB_SLIDE_EAST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x4",
@@ -2863,7 +2863,7 @@
 				"battle_bg": "0x44"
 			},
 			{
-				"behaviour": "0x4f",
+				"behaviour": "MB_4F",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x4",
@@ -2883,7 +2883,7 @@
 				"battle_bg": "0x3f"
 			},
 			{
-				"behaviour": "0xf",
+				"behaviour": "MB_F",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -2903,7 +2903,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x4f",
+				"behaviour": "MB_4F",
 				"hm_usage": "0x1a",
 				"field_2": "0x3",
 				"encounter_type": "0x0",
@@ -2913,7 +2913,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x44",
+				"behaviour": "MB_SLIDE_EAST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x0",
@@ -2923,7 +2923,7 @@
 				"battle_bg": "BATTLE_BG_MILL"
 			},
 			{
-				"behaviour": "0x44",
+				"behaviour": "MB_SLIDE_EAST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x0",
@@ -2933,7 +2933,7 @@
 				"battle_bg": "0xff"
 			},
 			{
-				"behaviour": "0x44",
+				"behaviour": "MB_SLIDE_EAST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x7",
@@ -2953,7 +2953,7 @@
 				"battle_bg": "0x44"
 			},
 			{
-				"behaviour": "0x3f",
+				"behaviour": "MB_JUMP_SOUTHWEST",
 				"hm_usage": "0x2",
 				"field_2": "0x1",
 				"encounter_type": "0x7",
@@ -3143,7 +3143,7 @@
 				"battle_bg": "0x11"
 			},
 			{
-				"behaviour": "0xef",
+				"behaviour": "MB_EF",
 				"hm_usage": "0x17",
 				"field_2": "0x3",
 				"encounter_type": "0x6",
@@ -3203,7 +3203,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x41",
+				"behaviour": "MB_WALK_WEST",
 				"hm_usage": "0xa",
 				"field_2": "0x0",
 				"encounter_type": "0x7",

@@ -28,7 +28,7 @@ hook_singpost_hidden_flag:
     bx r1 @return
 
 singpost_get_hidden_field:
-    ldr r2, =singpost_get_flag
+    ldr r2, =hidden_item_get_field
     bx r2
 
 

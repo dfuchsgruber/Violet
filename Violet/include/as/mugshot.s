@@ -20,6 +20,7 @@
 
 .macro call_hide_mugshot
     special SPECIAL_MUGSHOT_DELETE
+    waitstate
 .endm
 
 .macro show_mugshot_message message_type=MSG
@@ -36,7 +37,6 @@
 
 .macro hide_mugshot
     call_hide_mugshot
-    waitstate
 .endm
 
 .macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0

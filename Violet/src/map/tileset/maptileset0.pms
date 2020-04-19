@@ -32640,7 +32640,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x84",
+				"behaviour": "MB_SIGNPOST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -32650,17 +32650,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x84",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
+				"behaviour": "MB_SIGNPOST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -32706,7 +32696,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x0",
+				"priority": "0x1",
 				"battle_bg": "0"
 			},
 			{
@@ -32720,7 +32710,17 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb3",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B3",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -32730,7 +32730,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xbc",
+				"behaviour": "MB_BC",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -32740,7 +32740,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -32820,7 +32820,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0",
+				"behaviour": "0x0",
 				"hm_usage": "0",
 				"field_2": "0",
 				"encounter_type": "0",
@@ -32840,7 +32840,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -32850,7 +32850,7 @@
 				"battle_bg": "BATTLE_BG_GRASS"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -33280,7 +33280,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -33290,7 +33290,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -33440,7 +33440,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -33450,7 +33450,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x14",
+				"behaviour": "MB_14",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -33500,7 +33500,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -33660,7 +33660,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -33740,7 +33740,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -33820,7 +33820,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -33840,7 +33840,7 @@
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0x14",
+				"behaviour": "MB_14",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -33900,7 +33900,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -33920,7 +33920,7 @@
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0x14",
+				"behaviour": "MB_14",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -34180,7 +34180,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -34320,7 +34320,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34330,7 +34330,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x14",
+				"behaviour": "MB_14",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -34340,7 +34340,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x32",
+				"behaviour": "MB_IMPASSABLE_NORTH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34350,7 +34350,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x32",
+				"behaviour": "MB_IMPASSABLE_NORTH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34360,7 +34360,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x32",
+				"behaviour": "MB_IMPASSABLE_NORTH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34370,7 +34370,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x32",
+				"behaviour": "MB_IMPASSABLE_NORTH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34580,7 +34580,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -34590,7 +34590,7 @@
 				"battle_bg": "BATTLE_BG_GRASS"
 			},
 			{
-				"behaviour": "0x2",
+				"behaviour": "MB_TALL_GRASS",
 				"hm_usage": "0x1",
 				"field_2": "0x0",
 				"encounter_type": "0x1",
@@ -34620,7 +34620,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34630,7 +34630,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34740,7 +34740,7 @@
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0",
+				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34751,16 +34751,6 @@
 			},
 			{
 				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34796,6 +34786,16 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
 			},
@@ -34950,7 +34950,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0",
+				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34970,7 +34970,7 @@
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0",
+				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -34990,7 +34990,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xbd",
+				"behaviour": "MB_BD",
 				"hm_usage": "HM_USAGE_ROCK_CLIMB",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35200,7 +35200,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xbd",
+				"behaviour": "MB_BD",
 				"hm_usage": "HM_USAGE_ROCK_CLIMB",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35280,17 +35280,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0",
+				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35360,17 +35350,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0",
+				"behaviour": "0x0",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35386,351 +35366,11 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1",
+				"priority": "0x0",
 				"battle_bg": "0"
 			},
 			{
 				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x61",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x61",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x61",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x61",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb5",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb4",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb8",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb8",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb5",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb8",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb8",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb4",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb5",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb5",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35740,7 +35380,357 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb4",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_LADDER",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_LADDER",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_LADDER",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "MB_LADDER",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B5",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B4",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B8",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B8",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B5",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B8",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B8",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B4",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B5",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B5",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35750,7 +35740,17 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb4",
+				"behaviour": "MB_B4",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B4",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35800,7 +35800,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2a",
+				"behaviour": "MB_ROCK_STAIRS",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35810,7 +35810,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb5",
+				"behaviour": "MB_B5",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35820,7 +35820,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb4",
+				"behaviour": "MB_B4",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -35830,187 +35830,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x2a",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x2a",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x2a",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x2a",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_MOUNTAIN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x60",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x39",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x38",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x3b",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x3b",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x3b",
+				"behaviour": "MB_ROCK_STAIRS",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36047,10 +35867,40 @@
 				"field_5": "0x0",
 				"field_7": "0x0",
 				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_ROCK_STAIRS",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0x39",
+				"behaviour": "MB_ROCK_STAIRS",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36060,7 +35910,47 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x38",
+				"behaviour": "MB_ROCK_STAIRS",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_CAVE_DOOR",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36080,7 +35970,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_JUMP_WEST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36090,17 +35980,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x0",
+				"behaviour": "MB_JUMP_EAST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36110,7 +35990,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_JUMP_SOUTH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36120,7 +36000,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x0",
+				"behaviour": "MB_JUMP_SOUTH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36130,7 +36010,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x39",
+				"behaviour": "MB_JUMP_SOUTH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36138,416 +36018,6 @@
 				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x38",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x10",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
 				"behaviour": "0x0",
@@ -36580,7 +36050,47 @@
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_JUMP_WEST",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_JUMP_EAST",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36590,7 +36100,77 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_JUMP_WEST",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_JUMP_EAST",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36600,7 +36180,347 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36630,7 +36550,37 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_MOUNTAIN"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36640,7 +36590,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36650,7 +36600,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36660,7 +36610,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "0x0",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36670,7 +36620,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "0x0",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36680,7 +36630,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36690,7 +36640,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36700,7 +36650,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36710,7 +36660,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36720,7 +36670,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36730,7 +36680,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36740,7 +36690,57 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_POND"
+			},
+			{
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36750,7 +36750,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36760,7 +36760,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36770,7 +36770,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36780,7 +36780,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36790,7 +36790,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36800,7 +36800,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36810,7 +36810,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -36820,7 +36820,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36830,7 +36830,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36840,7 +36840,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36850,7 +36850,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36860,7 +36860,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36870,7 +36870,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36880,7 +36880,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36900,7 +36900,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36910,7 +36910,7 @@
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0x13",
+				"behaviour": "MB_WATERFALL",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36920,7 +36920,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36930,7 +36930,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36940,7 +36940,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36980,7 +36980,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -36990,7 +36990,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37000,7 +37000,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37010,7 +37010,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37020,7 +37020,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37150,7 +37150,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37190,7 +37190,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37200,7 +37200,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37210,7 +37210,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37270,7 +37270,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37280,7 +37280,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37290,7 +37290,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37300,7 +37300,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37310,7 +37310,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37320,7 +37320,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37350,7 +37350,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37360,7 +37360,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37370,7 +37370,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37380,7 +37380,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37390,7 +37390,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0xbc",
+				"behaviour": "MB_BC",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37400,7 +37400,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37410,7 +37410,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37420,7 +37420,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37430,7 +37430,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37440,7 +37440,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37450,7 +37450,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37460,7 +37460,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37470,7 +37470,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37480,7 +37480,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37490,7 +37490,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37500,7 +37500,7 @@
 				"battle_bg": "BATTLE_BG_SHORE"
 			},
 			{
-				"behaviour": "0x21",
+				"behaviour": "MB_SAND",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -37590,7 +37590,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37600,7 +37600,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37610,7 +37610,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37670,7 +37670,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37680,7 +37680,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -37690,7 +37690,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38400,7 +38400,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38410,7 +38410,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38560,7 +38560,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38570,7 +38570,7 @@
 				"battle_bg": "BATTLE_BG_POND"
 			},
 			{
-				"behaviour": "0x10",
+				"behaviour": "MB_POND_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38630,7 +38630,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "MB_B1",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -38650,7 +38650,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "MB_B1",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38710,7 +38710,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "MB_B1",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -38720,7 +38720,7 @@
 				"battle_bg": "BATTLE_BG_MOUNTAIN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38730,7 +38730,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0x15",
+				"behaviour": "MB_OCEAN_WATER",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38800,7 +38800,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0xb1",
+				"behaviour": "MB_B1",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38810,87 +38810,7 @@
 				"battle_bg": "BATTLE_BG_OCEAN"
 			},
 			{
-				"behaviour": "0xb1",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_OCEAN"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0x0",
-				"hm_usage": "0x0",
-				"field_2": "0x0",
-				"encounter_type": "0x0",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x0",
-				"battle_bg": "0"
-			},
-			{
-				"behaviour": "0xb1",
-				"hm_usage": "0x2",
-				"field_2": "0x0",
-				"encounter_type": "0x2",
-				"field_5": "0x0",
-				"field_7": "0x0",
-				"priority": "0x1",
-				"battle_bg": "BATTLE_BG_OCEAN"
-			},
-			{
-				"behaviour": "0xb1",
+				"behaviour": "MB_B1",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x2",
@@ -38916,11 +38836,91 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x0",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_B1",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_OCEAN"
+			},
+			{
+				"behaviour": "MB_B1",
+				"hm_usage": "0x2",
+				"field_2": "0x0",
+				"encounter_type": "0x2",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "BATTLE_BG_OCEAN"
+			},
+			{
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
 				"priority": "0x1",
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x69",
+				"behaviour": "0x0",
+				"hm_usage": "0x0",
+				"field_2": "0x0",
+				"encounter_type": "0x0",
+				"field_5": "0x0",
+				"field_7": "0x0",
+				"priority": "0x1",
+				"battle_bg": "0"
+			},
+			{
+				"behaviour": "MB_WARP_DOOR",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -38950,7 +38950,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x84",
+				"behaviour": "MB_SIGNPOST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -38960,7 +38960,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x84",
+				"behaviour": "MB_SIGNPOST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",
@@ -38970,7 +38970,7 @@
 				"battle_bg": "0"
 			},
 			{
-				"behaviour": "0x84",
+				"behaviour": "MB_SIGNPOST",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"encounter_type": "0x0",

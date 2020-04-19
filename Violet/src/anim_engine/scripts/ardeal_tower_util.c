@@ -128,14 +128,14 @@ void animation_ardeal_tower_falling_bg_animation(u8 self) {
 }
 
 
-#define WARP_BANK 3
+#define WARP_BANK 33
 #define WARP_MAP_IDX 0
-#define WARP_WARP_IDX 0
+#define WARP_WARP_IDX 4
 
 void animation_ardeal_tower_warp() {
 
     ++*var_access(STORY_PROGRESS);
-    *var_access(SONG_OVERRIDE) = 0; // No song on entrance to bb's ship
+    *var_access(SONG_OVERRIDE) = 0xFFFF; // No song on entrance to bb's ship
     // Pokémon, Poképad, Badges, Money are stolen from the player
     // Remove badges
     clearflag(FRBADGE_1);

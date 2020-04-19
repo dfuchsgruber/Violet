@@ -8,6 +8,7 @@
 #include "overworld/npc.h"
 #include "vars.h"
 #include "flags.h"
+#include "constants/signpost_types.h"
 
 u8 *singpost_behavior_xBC(){
     //trigger script by block id (since we do not have enough behaviorbytes...)
@@ -96,25 +97,59 @@ void _test_flags() {
 }
 
 
-u16 singpost_get_flag(hidden_item_t hidden_item, u8 field_id){
-    switch(field_id){
-        case 0:
-            //item id
+int hidden_item_get_field(hidden_item_t hidden_item, u8 field){
+    switch(field){
+        case HIDDEN_ITEM_IDX:
             return (u16)hidden_item.item;
-        case 1:
-            //hidden flag
+        case HIDDEN_FLAG:
             return hidden_flag_by_chunk((u8)hidden_item.flag, (u8)hidden_item.chunk);
-        case 2:
-            //cnt
+        case HIDDEN_COUNT:
             return (u8)hidden_item.amount;
-        case 3:
-            //detector disable
+        case HIDDEN_UNDERFOOT:
             return (u8)hidden_item.detector_disabled;
-        case 4:
-            //hidden chunk
+        case HIDDEN_CHUNK:
             return (u8)hidden_item.chunk;
         default:
             return 0;
     }
-    
+}
+
+extern u8 ow_script_signpost_null[];
+extern u8 ow_script_signpost_hidden_item[];
+
+u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
+    map_event_signpost *sign = map_get_signpost_by_position(&mapheader_virtual, (s16)(position->coordinates.x - 7), (s16)(position->coordinates.y - 7), position->height);
+    if (!sign) return NULL;
+    if (!checkflag(sign->flag)) return NULL;
+    if (!sign->value.script) return ow_script_signpost_null;
+    switch(sign->type) {
+        case SIGNPOST_SCRIPT_NORTH:
+            if (direction != DIR_UP) return NULL;
+            break;
+        case SIGNPOST_SCRIPT_SOUTH:
+            if (direction != DIR_DOWN) return NULL;
+            break;
+        case SIGNPOST_SCRIPT_EAST:
+            if (direction != DIR_RIGHT) return NULL;
+            break;
+        case SIGNPOST_SCRIPT_WEST:
+            if (direction != DIR_LEFT) return NULL;
+            break;
+        case SIGNPOST_5:
+        case SIGNPOST_6:
+        case SIGNPOST_HIDDEN_ITEM: {
+            if (hidden_item_get_field(sign->value.hidden_item, HIDDEN_UNDERFOOT)) return NULL;
+            *var_access(0x8004) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_ITEM_IDX);
+            *var_access(0x8005) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_FLAG);
+            *var_access(0x8006) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_COUNT);
+            if (checkflag(*var_access(0x8005))) return NULL;
+            *var_access(PLAYERFACING) = direction;
+            return ow_script_signpost_hidden_item;
+        }
+    }
+    // Signpost scripts
+    if (signpost_get_script_type(behaviour, direction) != 255)
+        overworld_tbox_set_sign();
+    *var_access(PLAYERFACING) = direction;
+    return sign->value.script;
 }

@@ -447,6 +447,11 @@ extern "C" {
      **/
     void overworld_tbox_remove_task();
 
+    /**
+     * Sets the sign flag for the overworld textbox, i.e. makes it such that it displayed in the style of sign
+     **/
+    void overworld_tbox_set_sign();
+
     extern u8 overworld_tbox_state;
 
     extern u8 strbuf[];

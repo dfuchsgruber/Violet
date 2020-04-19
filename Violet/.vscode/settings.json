@@ -103,6 +103,7 @@
         "anim_engine.h": "c",
         "typeinfo": "c",
         "whiteout.h": "c",
-        "healing_place.h": "c"
+        "healing_place.h": "c",
+        "signpost_types.h": "c"
     }
 }

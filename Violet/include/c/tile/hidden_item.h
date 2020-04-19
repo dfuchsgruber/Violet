@@ -8,6 +8,14 @@
 #ifndef INCLUDE_C_TILE_HIDDEN_ITEM_H_
 #define INCLUDE_C_TILE_HIDDEN_ITEM_H_
 
+enum hidden_item_field{
+    HIDDEN_ITEM_IDX = 0,
+    HIDDEN_FLAG = 1,
+    HIDDEN_COUNT = 2,
+    HIDDEN_UNDERFOOT = 3,
+    HIDDEN_CHUNK = 4
+};
+
 typedef struct {
     u32 item : 16;
     u32 flag : 8;
@@ -15,6 +23,14 @@ typedef struct {
     u32 detector_disabled : 1;
     u32 chunk : 3;
 } hidden_item_t;
+
+/**
+ * Gets the field of a hidden item
+ * @param hidden_item the hidden item structure
+ * @param field which field to get
+ * @return the field
+ **/
+int hidden_item_get_field(hidden_item_t hidden_item, u8 field);
 
 typedef struct {
     u8 bank;
