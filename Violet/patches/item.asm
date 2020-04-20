@@ -124,6 +124,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_goldschluesselTiles
     .word gfx_item_goldschluesselPal
 
+.org item_resource + 0x11A * 8
+    .word gfx_item_zellenschluesselTiles
+    .word gfx_item_zellenschluesselPal
+
 .org item_resource + 0x15D * 8
     .word gfx_item_zugangskarteTiles
     .word gfx_item_zugangskartePal

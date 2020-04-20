@@ -1857,7 +1857,7 @@
 				"battle_bg": "0x7c"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x4",
@@ -3027,7 +3027,7 @@
 				"battle_bg": "0xab"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x4",
@@ -3057,7 +3057,7 @@
 				"battle_bg": "0x7c"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x4",
@@ -3627,7 +3627,7 @@
 				"battle_bg": "0xab"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x4",
@@ -3707,7 +3707,7 @@
 				"battle_bg": "0x7c"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x4",
@@ -4307,7 +4307,7 @@
 				"battle_bg": "0x7c"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x2",
 				"field_2": "0x0",
 				"encounter_type": "0x4",

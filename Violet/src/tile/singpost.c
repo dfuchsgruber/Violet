@@ -139,10 +139,10 @@ u8 *signpost_get_script(position_t *position, u8 behaviour, u8 direction) {
         case SIGNPOST_6:
         case SIGNPOST_HIDDEN_ITEM: {
             if (hidden_item_get_field(sign->value.hidden_item, HIDDEN_UNDERFOOT)) return NULL;
-            *var_access(0x8004) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_ITEM_IDX);
-            *var_access(0x8005) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_FLAG);
+            *var_access(0x8005) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_ITEM_IDX);
+            *var_access(0x8004) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_FLAG);
             *var_access(0x8006) = (u16)hidden_item_get_field(sign->value.hidden_item, HIDDEN_COUNT);
-            if (checkflag(*var_access(0x8005))) return NULL;
+            if (checkflag(*var_access(0x8004))) return NULL;
             *var_access(PLAYERFACING) = direction;
             return ow_script_signpost_hidden_item;
         }

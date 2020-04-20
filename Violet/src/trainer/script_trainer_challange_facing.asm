@@ -1,12 +1,16 @@
 .include "overworld_script.s"
-.include "constants/vars.s"
-.include "constants/movements.s"
-.include "constants/specials.s"
-.include "constants/ordinals.s"
+.include "movements.s"
+.include "specials.s"
+.include "ordinals.s"
+.include "callstds.s"
+.include "flags.s"
+.include "vars.s"
 
 .global ow_script_trainerbattle_challange_spotted
 .global ow_script_trainerbattle_start_battle
 .global ow_script_trainerbattle_double_dont_check_enough_pokemon
+.global ow_script_trainerbattle_pirate_challange
+.global ow_script_trainerbattle_pirate_challange_after_approach
 
 challange_loop:
     closeonkeypress
@@ -44,3 +48,25 @@ ow_script_trainerbattle_double_dont_check_enough_pokemon:
     repeattrainerbattle
     endtrainerbattle
     end
+
+ow_script_trainerbattle_pirate_challange:
+    lock
+    sound 0x15
+    special SPECIAL_TRAINER_APPROACH
+    waitstate
+    special SPECIAL_TRAINER_CHALLANGE_PLAYER_FACING
+ow_script_trainerbattle_pirate_challange_after_approach:
+    loadpointer 0 str_0
+    callstd MSG
+    clearflag (FLAG_BBSHIP_PIRATE_IN_PLAYER_CELL | 0x8000) // Makes the pirate in the cell appear
+    setvar VAR_BBSHIP_THROWN_INTO_CELL 2
+    warp 33 0 4 0 0
+    waitstate
+    end
+
+.ifdef LANG_GER
+str_0:
+    .autostring 34 2 "Hey, was treibst du denn hier?\pDu solltest doch in deiner Zelle sein!\pDir werd ich helfen, du Rotzlöffel!"
+.elseif LANG_EN
+
+.endif

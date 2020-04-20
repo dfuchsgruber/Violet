@@ -4,6 +4,7 @@
 #include "trainer/virtual.h"
 #include "save.h"
 #include "overworld/npc.h"
+#include "overworld/script.h"
 #include "data_structures.h"
 #include "constants/flags.h"
 #include "constants/trainerclasses.h"
@@ -23,6 +24,7 @@ void special_player_facing() {
     coordinate_t position;
     player_get_coordinates(&position.x, &position.y);
     u8 person_idx = (u8) (*var_access(LASTTALKED));
+        dprintf("Lasttalked is %d\n", *var_access(LASTTALKED));
     if (person_idx == 0) // No target person chosen
         return;
     u8 npc_id;
@@ -110,6 +112,21 @@ int trainerbattle_initialize_by_npc_idx(u8 npc_idx) {
     return num_trainers;
 }
 
+extern u8 ow_script_trainerbattle_pirate_challange[];
+
+bool trainerbattle_pirate_alert(u8 npc_idx) {
+    if (!checkflag(FLAG_PLAYER_PARTY_STOLEN)) return false;
+    u8 distance = npc_sees_player(npcs + npc_idx);
+    if (distance) {
+        *var_access(LASTTALKED) = npcs[npc_idx].overworld_id;
+        dprintf("Lasttalked set to %d\n", *var_access(LASTTALKED));
+        trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1)); 
+        overworld_script_init(ow_script_trainerbattle_pirate_challange);
+        overworld_script_set_active();
+        return true;
+    }
+    return false;
+}
 
 bool trigger_npc_spotting() {
     if (trainerbattle_not_initializable())
@@ -119,6 +136,8 @@ bool trigger_npc_spotting() {
     for (u8 i = 0; i < 16; i++) {
         if ((npcs[i].flags.active & 1) && (npcs[i].trainer_trigger == 1 || npcs[i].trainer_trigger == 3)) {
             if (pokeradar_npc_alert(i))
+                return true;
+            if (trainerbattle_pirate_alert(i))
                 return true;
             int num = trainerbattle_initialize_by_npc_idx(i);
             if (num == 2) break; // The trainer is a double battle, i.e. don't search for other trainers
@@ -243,7 +262,10 @@ void trainer_configuration_print(trainer_variables *v) {
     dprintf("rival flag %x\n", v->rival_flags);
 }
 
+extern u8 ow_script_trainerbattle_pirate_challange_after_approach[];
+
 u8 *trainer_configure_by_overworld_script(u8 *ow_script) {
+    if (checkflag(FLAG_PLAYER_PARTY_STOLEN)) return ow_script_trainerbattle_pirate_challange_after_approach;
     trainer_variables_initialize();
     u8 kind = ow_script[0];
     switch (kind) {

@@ -17,6 +17,7 @@ static u8 door_animation_11_palettes[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static u8 door_animation_12_palettes[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static u8 door_animation_13_palettes[] = {10, 10, 10, 10, 10, 10, 10, 10};
 static u8 door_animation_haweiland_palettes[] = {10, 10, 10, 10, 10, 10, 10, 10};
+static u8 door_animation_blackbeard_ship_palettes[] = {7, 7, 7, 7, 7, 7, 7, 7};
 
 extern u32 gfx_tileset_door_anim_0Tiles[];
 extern u32 gfx_tileset_door_anim_1Tiles[];
@@ -33,6 +34,7 @@ extern u32 gfx_tileset_door_anim_11Tiles[];
 extern u32 gfx_tileset_door_anim_12Tiles[];
 extern u32 gfx_tileset_door_anim_13Tiles[];
 extern u32 gfx_tileset_haweiland_door_animTiles[];
+extern u32 gfx_maptileset_blackbeard_ship_door_animTiles[];
 
 door_animation door_animations[] = {
     {0x2AA, 0, 0, gfx_tileset_door_anim_0Tiles, door_animation_0_palettes},
@@ -50,6 +52,7 @@ door_animation door_animations[] = {
     {0x2DD, 0, 0, gfx_tileset_door_anim_12Tiles, door_animation_12_palettes},
     {0x34B, 0, 0, gfx_tileset_door_anim_13Tiles, door_animation_13_palettes},
     {.block = 0x2F2, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_tileset_haweiland_door_animTiles, .palette_map = door_animation_haweiland_palettes},
+    {.block = 0x2ca, .type = DOOR_ANIM_TYPE_STANDARD, .double_tiled = false, .gfx = gfx_maptileset_blackbeard_ship_door_animTiles, .palette_map = door_animation_blackbeard_ship_palettes},
     {0, 0, 0, 0, 0}
 };
 

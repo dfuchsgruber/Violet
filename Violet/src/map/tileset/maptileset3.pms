@@ -3253,7 +3253,7 @@
 				"battle_bg": "0x93"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x3",
 				"field_2": "0x0",
 				"encounter_type": "0x6",

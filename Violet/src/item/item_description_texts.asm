@@ -1686,10 +1686,10 @@
 		.string "Ein goldener Schlüssel, der\ndas Tor zum Turm des Schlosses\nArdeal öffnet."
 
 
-	.global str_item_desc_x11a_item_k2_schluessel
+	.global str_item_desc_x11a_item_zellenschluessel
 
-	str_item_desc_x11a_item_k2_schluessel:
-		.string "Der Schlüssel zur Kabine 2\nauf dem Schiffswrack. Er sieht\nalt und zerbrechlich aus."
+	str_item_desc_x11a_item_zellenschluessel:
+		.string "Ein Schlüsselbund für Zellen\nauf der Schattenflut."
 
 
 	.global str_item_desc_x11b_item_k4_schluessel
@@ -3655,10 +3655,10 @@
 	str_item_desc_x119_item_goldschluessel:
 		.string "A key that opens the door to the\ntower of the castle Ardeal."
 
-	.global str_item_desc_x11a_item_k2_schluessel
+	.global str_item_desc_x11a_item_zellenschluessel
 
-	str_item_desc_x11a_item_k2_schluessel:
-		.string "A key that opens the door to Room\n2 inside the Abandoned Ship.\nIt is old and looks easily broken."
+	str_item_desc_x11a_item_zellenschluessel:
+		.string "A key that unlocks\nthe cells on the Shadow Flood."
 
 	.global str_item_desc_x11b_item_k4_schluessel
 

@@ -290,7 +290,7 @@ extern u8 str_item_desc_x116_item_scanner[];
 extern u8 str_item_desc_x117_item_wuestenglas[];
 extern u8 str_item_desc_x118_item_meteorit[];
 extern u8 str_item_desc_x119_item_goldschluessel[];
-extern u8 str_item_desc_x11a_item_k2_schluessel[];
+extern u8 str_item_desc_x11a_item_zellenschluessel[];
 extern u8 str_item_desc_x11b_item_k4_schluessel[];
 extern u8 str_item_desc_x11c_item_k6_schluessel[];
 extern u8 str_item_desc_x11d_item_l_schluessel[];

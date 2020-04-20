@@ -21734,7 +21734,7 @@
 				"field_7": 0
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x0",
 				"field_2": "0x0",
 				"battle_bg": "0",

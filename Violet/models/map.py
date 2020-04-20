@@ -86,7 +86,7 @@ signpost_type = agb.types.Structure([
     ('y', 's16', 0),
     ('level', 'u8', 0),
     ('type', 'signpost_type', 0),
-    ('flag', 'u16', 0),
+    ('flag', 'flag', 0),
     ('value', 'event.signpost_value', 0)
 ])
 
@@ -96,6 +96,8 @@ signpost_value_type = agb.types.UnionType({
         'script' : 'ow_script_pointer'
     },
     lambda project, context, parents: {
+        "0" : 'script',
+        0 : 'script',
         "SIGNPOST_SCRIPT" : 'script',
         "SIGNPOST_SCRIPT_NORTH" : 'script',
         "SIGNPOST_SCRIPT_SOUTH" : 'script',

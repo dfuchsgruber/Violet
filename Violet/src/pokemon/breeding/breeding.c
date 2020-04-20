@@ -263,6 +263,8 @@ bool box_pokemon_hatching_proceed(box_pokemon *egg, bool consider_zero_cycles,
 }
 
 u8 daycare_proceed(daycare_stru *daycare) {
+	if (checkflag(FLAG_PLAYER_PARTY_STOLEN)) 
+		return false; // We don't want anything to hatch in a party that is stolen...
   int pokemon_in_daycare = 0;
   for (int i = 0; i < 2; i++) {
     if (box_pokemon_get_attribute(&daycare->pokemon[i].pokemon, ATTRIBUTE_SANITY_HAS_SPECIES, 0)) {

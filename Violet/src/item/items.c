@@ -4523,13 +4523,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_K2_SCHLUESSEL
-		LANGDEP(PSTRING("K2-Schlüssel"), PSTRING("RM. 2 Key")),
+		//ITEM_ZELLENSCHUESSEL
+		LANGDEP(PSTRING("Zellenschl."), PSTRING("Cell Keys")),
 		0x11a, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11a_item_k2_schluessel,
+		str_item_desc_x11a_item_zellenschluessel,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket

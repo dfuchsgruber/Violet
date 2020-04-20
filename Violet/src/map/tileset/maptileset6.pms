@@ -3543,7 +3543,7 @@
 				"battle_bg": "0x5f"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x11",
 				"field_2": "0x2",
 				"encounter_type": "0x2",
@@ -3583,7 +3583,7 @@
 				"battle_bg": "0x5d"
 			},
 			{
-				"behaviour": "MB_B3",
+				"behaviour": "MB_TRASH",
 				"hm_usage": "0x11",
 				"field_2": "0x2",
 				"encounter_type": "0x2",
