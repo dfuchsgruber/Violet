@@ -1110,6 +1110,11 @@
 				"map_blackbeard_ship_cells_floor",
 				"src/map/banks/33/1/map_blackbeard_ship_cells_floor.pms",
 				"MAP_SCHATTENFLUT"
+			],
+			"2": [
+				"map_blackbeard_ship_storage",
+				"src/map/banks/33/2/map_blackbeard_ship_storage.pms",
+				"MAP_SCHATTENFLUT"
 			]
 		}
 	},
@@ -1813,6 +1818,10 @@
 		"map_footer_blackbeard_ship_cells_floor": [
 			111,
 			"src/map/banks/33/1/map_footer_blackbeard_ship_cells_floor.pms"
+		],
+		"map_footer_blackbeard_ship_storage": [
+			112,
+			"src/map/banks/33/2/map_footer_blackbeard_ship_storage.pms"
 		]
 	},
 	"tilesets_primary": {

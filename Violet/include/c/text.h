@@ -452,6 +452,12 @@ extern "C" {
      **/
     void overworld_tbox_set_sign();
 
+    /**
+     * Loads the standard textbox palette to a certain color.
+     * @param offset to which color to load it at.
+     **/
+    void tbox_load_std_frame_palette_at(u16 offset);
+
     extern u8 overworld_tbox_state;
 
     extern u8 strbuf[];

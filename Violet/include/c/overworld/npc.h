@@ -435,4 +435,11 @@ bool npc_can_not_run(u8 behaviour);
  **/
 bool npc_player_walking_towards_rock_stairs(u8 direction);
 
+/**
+ * Sets the direction a npc is facing in.
+ * @param the target npc
+ * @param direction in which direction to face in
+ */
+void npc_set_facing(npc *n, u8 direction);
+
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

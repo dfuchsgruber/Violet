@@ -2,6 +2,7 @@
 .include "movements.s"
 .include "overworld_script.s"
 .include "specials.s"
+.include "mugshot.s"
 
 .global ow_script_whiteout_mother
 
@@ -22,6 +23,17 @@ songfadedefault
 releaseall
 end
 
+.global ow_script_whiteout_bbship
+
+ow_script_whiteout_bbship:
+	lockall
+	pause 32
+	loadpointer 0 str_player
+    show_mugshot MUGSHOT_PLAYER alignment=MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=0
+	special SPECIAL_HEAL
+	songfadedefault
+	releaseall
+	end
 
 .global ow_script_healing_sequence
 ow_script_healing_sequence:
@@ -85,9 +97,16 @@ str_joy_before:
 str_joy_after:
 	.autostring 35 2 "Deine Pokémon wurden vollständig geheilt.\pWir hoffen, du kommst groß raus!"
 
+str_player:
+	.autostring 34 2 "Puh, das war knappDOTS\pHier in meiner Zelle sollten die Piraten mich nicht vermuten.\pIch sollte mich hier nicht zu lange ausruhenDOTS"
+
 .global str_whiteout
 str_whiteout:
 	.string "PLAYER rannte zu einem Pokéstop\nund beschützte die\nerschöpften und besiegten\nPokémon vor weiterem SchadenDOTS\p"
+
+.global str_whiteout_bbship
+str_whiteout_bbship:
+	.string "PLAYER rannte zurück zur Zelle,\num seinen Pokémon eine Pause zu\ngönnen.\p"
 
 .elseif LANG_EN
 

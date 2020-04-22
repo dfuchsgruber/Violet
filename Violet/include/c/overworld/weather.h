@@ -55,4 +55,10 @@ bool overworld_weather_static_fog_is_pal_affected(u8 pal_idx);
  **/
 color_t overworld_weather_static_fog_get_overlay_color();
 
+/**
+ * Checks if any overworld fading effect is active (e.g. weather)
+ * @return if no overworld effect is active
+ **/
+bool overworld_fading_effect_finished();
+
 #endif

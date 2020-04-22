@@ -62,4 +62,9 @@ bool fadescreen_is_active();
  */
 void fadescreen(u32 affects, u8 p1, u8 p2, u8 p3, u16 color);
 
+/**
+ * Initializes a fadescreen ensuring zeros in the dma3 source.
+ **/
+void fadescreen_and_clear_dma3_source();
+
 #endif /* INCLUDE_C_FADING_H_ */

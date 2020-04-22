@@ -2619,7 +2619,7 @@ bsc_strings:
 	.global str_battle_x179
 
 	str_battle_x179:
-		.string "STRINGó fällt in Ohnmacht!SHADOWight"
+		.string "STRINGó fällt in Ohnmacht!"
 
 
 	.global str_battle_x17a

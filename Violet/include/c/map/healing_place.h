@@ -15,9 +15,9 @@
 typedef struct{
     u16 bank;
     u16 map;
-} stru_healing_place;
+} stru_healing_place_map;
 
-stru_healing_place healing_places[NUM_HEALING_PLACES];
+stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES];
 u8 healing_place_target_persons[NUM_HEALING_PLACES];
 coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES];
 

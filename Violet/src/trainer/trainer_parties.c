@@ -2107,7 +2107,37 @@ trainer_pokemon_default_item_default_attacks trainer_party_x182_dark_tower_train
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,40,POKEMON_QUABBEL),
 };
 
+
 trainer_pokemon_default_item_default_attacks trainer_party_x183_dark_tower_trainer_2[2] = {
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,41,POKEMON_ZWIRRKLOP),
-	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,42,POKEMON_LATERNECTO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,41,POKEMON_TRAUNFUGIL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,40,POKEMON_ZWIRRLICHT),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x184_bbship_storage_pirate_0[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_KREBSCORPS),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,45,POKEMON_KANIVANHA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x185_bbship_storage_pirate_1[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_TOHAIDO),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x186_bbship_storage_pirate_2[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_PERLU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_TYRACROC),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x187_bbship_storage_pirate_3[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,43,POKEMON_SEEMON),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,45,POKEMON_TENTACHA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x188_bbship_storage_pirate_4[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_LANTURN),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,42,POKEMON_QUABBEL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,43,POKEMON_SEEMOPS),
+};
+trainer_pokemon_default_item_default_attacks trainer_party_x189_bbship_storage_pirate_5[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_REMORAID),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_WAILMER),
 };

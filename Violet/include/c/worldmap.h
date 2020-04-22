@@ -14,6 +14,7 @@ extern "C" {
 #define ____ 0xC5
 #include "constants/map_namespaces.h"
 #include "tile/coordinate.h"
+#include "map/healing_place.h"
 
 #define NUM_FLIGHT_POSITONS 21
 
@@ -57,14 +58,15 @@ extern "C" {
 
     extern worldmap_state_t *worldmap_state;
 
-    stru_flight_position flight_positions[NUM_FLIGHT_POSITONS];
+    stru_flight_position flight_positions[NUM_HEALING_PLACES]; // Each flight position is associated with a healing place
 
     typedef struct {
         u8 bank;
         u8 map_idx;
-        u8 flight_position_idx;
+        u8 healing_place_idx;
     } flight_position_association_t;
-
+    
+    // Associates map namespaces with healing place idxs
     flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - MAP_AMONIA];
 
     int *worldmap_tilemaps[4];

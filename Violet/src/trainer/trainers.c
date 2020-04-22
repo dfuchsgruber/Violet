@@ -6480,5 +6480,46 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x183_dark_tower_trainer_2,
     },
+    [0x184] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Pip"),
+            PSTRING("Pip")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x184_bbship_storage_pirate_0,
+    },
+    [0x185] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Tarinbert"),
+            PSTRING("Tarinbert")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x185_bbship_storage_pirate_1,
+    },
+    [0x186] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Gimbard"),
+            PSTRING("Gimbard")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x186_bbship_storage_pirate_2,
+    },
+    [0x187] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Friedrich"),
+            PSTRING("Friedrich")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x187_bbship_storage_pirate_3,
+    },
+    [0x188] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Samuel"),
+            PSTRING("Samuel")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x188_bbship_storage_pirate_4,
+    },
+    [0x189] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Kurt"),
+            PSTRING("Kurt")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x189_bbship_storage_pirate_5,
+    },
 }; 
-

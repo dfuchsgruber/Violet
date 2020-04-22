@@ -10,6 +10,7 @@
 .include "songs.s"
 .include "ordinals.s"
 .include "movements.s"
+.include "healingplaces.s"
 
 .global map_blackbeard_ship_cells_levelscripts
 .global ow_script_blackbeard_ship_cells_open_player_cell
@@ -22,6 +23,8 @@ map_blackbeard_ship_cells_levelscripts:
 	.word lscr_frame_table
     .byte LEVELSCRIPT_TYPE_ON_LOAD
     .word setmaptile_script
+    .byte LEVELSCRIPT_TYPE_ON_TRANSITION
+    .word transition_script
 	.byte 0x0
 
 lscr_frame_table:
@@ -31,12 +34,19 @@ lscr_frame_table:
     .word ow_script_throw_into_cell
     .hword 0
 
+transition_script:
+    // It shouldn't be possible to return to this healingplace
+    // sethealingplace HEALINGPLACE_BBSHIP 
+    end
+
 ow_script_frame_table:
     lockall
     pause 64
     loadpointer 0 str_0
     show_mugshot MUGSHOT_PLAYER alignment=MUGSHOT_RIGHT message_type=MSG mask_name=0
     playsong MUS_BBSHIP 0
+    // After the ship is finished, it shouldn't be possible to return to this healingplace
+    sethealingplace HEALINGPLACE_BBSHIP // This healingplace is set once and never again
     addvar STORY_PROGRESS 1
     setvar SONG_OVERRIDE 0
     releaseall

@@ -61,10 +61,10 @@
     mov r0, #0
 
 .org 0x080BFF50
-    .word healing_places
+    .word healing_place_maps
 
 .org 0x080BFF74
-    .word healing_places
+    .word healing_place_maps
 
 .org 0x080BFFE4
     .word healing_place_target_persons

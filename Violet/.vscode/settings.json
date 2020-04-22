@@ -104,6 +104,8 @@
         "typeinfo": "c",
         "whiteout.h": "c",
         "healing_place.h": "c",
-        "signpost_types.h": "c"
+        "signpost_types.h": "c",
+        "healingplaces.h": "c",
+        "dma.h": "c"
     }
 }
