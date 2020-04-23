@@ -398,3 +398,8 @@
     .hword \pal_tag, \delay, \alpha_from, \alpha_to, \color
 .endm
 
+// Macro that blends palettes (instantaneously) in a cyclic fashin (multiple times), alternating between two different colors
+.macro fadebattlercyclic affects:req cycle_duration:req num_cycles:req color1:req alpha1:req color2:req alpha2:req
+    loadoam battle_animation_oam_template_cyclic_blending 10, 7
+    .hword \affects, \cycle_duration, \num_cycles, \color1, \alpha1, \color2, \alpha2
+.endm

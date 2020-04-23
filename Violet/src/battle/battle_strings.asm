@@ -422,6 +422,7 @@ bsc_strings:
 .word str_battle_x1AC
 .word str_battle_x1AD
 .word str_battle_x1AE
+.word str_battle_x1AF
 
 @ // Define the strings
 
@@ -2876,6 +2877,9 @@ bsc_strings:
 	str_battle_x1AE:
 		.string "Die Wut von BSC_SCR_ACTIVE_NAME_WITH_PREFIX\nlöst ein Erdbeben aus!"
 
+	str_battle_x1AF:
+		.string "BSC_LAST_MOVE entzündet BSC_LAST_ITEM\nvon BSC_DEF_NAME_WITH_PREFIX!"
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -4929,7 +4933,9 @@ bsc_strings:
 
 	str_battle_x1AE:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX's\nwrath causes an earthquake!"
-
+	
+	str_battle_x1AF:
+		.string "BSC_LAST_MOVE lights\nBSC_DEF_NAME_WITH_PREFIX's BSC_LAST_ITEM!"
 
 .endif
 

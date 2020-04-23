@@ -317,6 +317,12 @@ void bsc_cmd_x49_attack_done_new() {
     if (battle_scripting.attack_done_state <= 17) {
         bsc_cmd_x49_attack_done();
     }
+    // The args of x49 control which states shall be executed: Mode 1 executes only one distinct state
+    // Mode 2 executes states smaller than last_state
+    u8 mode = bsc_offset[1];
+    if (mode == 1) return; // Only one state was supposed to be executed whatsoever
+    u8 last_state = bsc_offset[2];
+    dprintf("mode is %d, arg is %d\n", mode, last_state);
     switch (battle_scripting.attack_done_state) {
         case 0 ... 17: return; // The original function has not terminated 
         case 18: { // We enter this case when the original function whould have terminated
@@ -328,35 +334,64 @@ void bsc_cmd_x49_attack_done_new() {
         }
         case 19: {
             // Yeah, this executes all new attack_done effects after all the other, but who cares tbh
+            // Just watch out to respect the limits of the original function
             bool effect = false;
             while (!effect) {
-                //dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
+                dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
                 switch(BATTLE_STATE2->attack_done_substate) {
                     case 0: {
-                        if (battle_abilities_attack_done_attacker_new()) {
-                            effect = true;
+                        if (mode != 2 || last_state > 5) { // State 5 is the original attacker abilities (i.e. synchronize)
+                            if (battle_abilities_attack_done_attacker_new()) {
+                                effect = true;
+                            }
                         }
                         BATTLE_STATE2->attack_done_substate++;
                         break;
                     }
                     case 1: {
-                        if (battle_abilities_attack_done_defender_new()) {
-                            effect = true;
+                        if (mode != 2 || last_state > 3) { // State 3 is the original defender abilities
+                            if (battle_abilities_attack_done_defender_new()) {
+                                effect = true;
+                            }
                         }
                         BATTLE_STATE2->attack_done_substate++;
                         break;
                     }
                     case 2: {
-                        if (battle_items_attack_done_new()) {
-                            effect = true;
+                        if (mode != 2 || last_state > 12) { // 12 is the kings-rock / shell-bell state
+                            if (battle_items_attack_done_new()) {
+                                effect = true;
+                            }
                         }
                         BATTLE_STATE2->attack_done_substate++;
                         break;
                     }
                     case 3: {
+                        if (mode != 2 || last_state > 11) { // 11 are battle items for all battlers
+                            if (battle_items_attack_done_defender()) {
+                                effect = true;
+                            }
+                        }
+                        BATTLE_STATE2->attack_done_substate++;
+                        break;
                     }
-                    case 4: {
-                        if (BATTLE_STATE2->switch_in_handicap_effects_cnt < 32) {
+                    case 4 : {
+                        if (mode != 2 || last_state > 16) { // Only if all effects will be executed, we consider gunpowder
+                            if (battle_items_gunpowder()) effect = true;
+                        }
+                        BATTLE_STATE2->attack_done_substate++;
+                        break;
+                    }
+                    case 5 : {
+                        if (mode != 2 || last_state > 16) { // Only if all effects will be executed, we consider life-orb
+                            if (battle_items_life_orb()) effect = true;
+                        }
+                        BATTLE_STATE2->attack_done_substate++;
+                        break;
+                    }
+                    case 6: {
+                        if ((mode != 2 || last_state > 16) 
+                            && BATTLE_STATE2->switch_in_handicap_effects_cnt < 32) { // Only when all attack-end effects are executed, we consider handicaps...
                             if (battle_handicap_attack_done())
                                 effect = true;
                             BATTLE_STATE2->switch_in_handicap_effects_cnt++; // Next step -> Next Check next handycap
@@ -365,6 +400,7 @@ void bsc_cmd_x49_attack_done_new() {
                         }
                         break;
                     }
+
                     default: { // Termination
                         bsc_offset += 3;
                         return;

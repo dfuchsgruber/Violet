@@ -9,6 +9,8 @@
 #include "debug.h"
 #include "constants/items.h"
 #include "battle/battlescript.h"
+#include "item/item.h"
+#include "constants/item_hold_effects.h"
 
 void apply_final_damage_modifiers(){
     battler *attacker = &battlers[attacking_battler];
@@ -87,11 +89,17 @@ void apply_pre_damage_modifiers(){
             break;
         }
     }
-    switch(attacker->item){
-        case ITEM_LEBEN_ORB:{
-            damage_apply_multiplier(1300);
-            break;
-        }   
+    if (attacker->item) {
+        switch (item_get_hold_effect(attacker->item))  {
+            case HOLD_EFFECT_LIFE_ORB:
+                damage_apply_multiplier(1300);
+                break;
+            case HOLD_EFFECT_GUN_POWDER:
+                if (active_attack == ATTACK_EXPLOSION || active_attack == ATTACK_FINALE) {
+                    damage_apply_multiplier(1000 + item_get_hold_effect_parameter(attacker->item) * 10);
+                }
+                break;
+        }
     }
     if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_FLOATING_ROCKS) {
         dprintf("Reduce damage caused to rock type battler %d.\n", defending_battler);

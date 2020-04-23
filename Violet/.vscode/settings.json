@@ -106,6 +106,7 @@
         "healing_place.h": "c",
         "signpost_types.h": "c",
         "healingplaces.h": "c",
-        "dma.h": "c"
+        "dma.h": "c",
+        "attack_results.h": "c"
     }
 }

@@ -160,6 +160,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_leuchtkoederTiles
     .word gfx_item_leuchtkoederPal
 
+.org item_resource + 0x15b * 8
+    .word gfx_item_gunpowderTiles
+    .word gfx_item_gunpowderPal
+
 //@Bike sound := 195
 .org 0x080A1402
     mov r0, #195

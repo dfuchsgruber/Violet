@@ -5563,13 +5563,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_15B
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_desc_x15b_item_item_15b,
+		//ITEM_SCHWARZPULVER
+		LANGDEP(PSTRING("Schwarzpulver"), PSTRING("Gun Powder")),
+		0x15b, //index
+		150, //price
+		HOLD_EFFECT_GUN_POWDER, //holding_effect_id
+		25, //holding_effect_param
+		str_item_desc_schwarzpulver,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

@@ -355,7 +355,7 @@ extern u8 str_item_desc_x157_item_vm05[];
 extern u8 str_item_desc_x158_item_vm06[];
 extern u8 str_item_desc_x159_item_vm07[];
 extern u8 str_item_desc_x15a_item_vm08[];
-extern u8 str_item_desc_x15b_item_item_15b[];
+extern u8 str_item_desc_schwarzpulver[];
 extern u8 str_item_desc_x15c_item_item_15c[];
 extern u8 str_item_desc_x15d_item_eichs_paket[];
 extern u8 str_item_desc_x15e_item_pokefloete[];

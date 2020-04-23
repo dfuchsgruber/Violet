@@ -2076,10 +2076,10 @@
 		.string "Erklimmt Felswände und\nverwirrt den Gegner\neventuell."
 
 
-	.global str_item_desc_x15b_item_item_15b
+	.global str_item_desc_schwarzpulver
 
-	str_item_desc_x15b_item_item_15b:
-		.string " ????"
+	str_item_desc_schwarzpulver:
+		.string "Intensifies explosions.\nHolder explodes when\nhit by fire."
 
 
 	.global str_item_desc_x15c_item_item_15c
@@ -3980,10 +3980,10 @@
 	str_item_desc_x15a_item_vm08:
 		.string "Climbs rock faces\nand possibly confuses\nthe opponent."
 
-	.global str_item_desc_x15b_item_item_15b
+	.global str_item_desc_schwarzpulver
 
-	str_item_desc_x15b_item_item_15b:
-		.string "?????"
+	str_item_desc_schwarzpulver:
+		.string "Verstärkt Explosionen. Träger\nexplodiert, wenn von\nFeuer getroffen."
 
 	.global str_item_desc_x15c_item_item_15c
 

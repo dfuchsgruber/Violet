@@ -61,16 +61,6 @@ printstring 0x18A
 waitmessage 0x40
 return
 
-bsc_life_orb:
-//callasm attack_done_prepeare_life_orb
-orword bsc_status_flags 0x100100
-graphicalhpupdate 0x1
-datahpupdate 0x1
-printstring 0x183
-waitmessage 0x40
-faintpokemon 0x1 0x0 0x8000000
-return
-
 
 bsc_lernfaehig:
 //callasm attack_done_prepeare_lernfaehig

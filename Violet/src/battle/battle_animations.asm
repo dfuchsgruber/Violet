@@ -47,6 +47,7 @@ battle_animations:
     .word battle_animation_arena_encourage_introduction
     .word attack_animation_encore
     .word attack_animation_magnitude
+    .word battle_animation_target_explodes
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815
@@ -192,3 +193,39 @@ battle_animation_arena_encourage_introduction:
     waitstate
     end
     
+battle_animation_target_explodes:
+    loadgraphic 0x27D6
+    loadcallback battle_animation_fade_battler 10, 5
+        .hword SPRITE_FADING_AFFECTS_TARGET, 1, 0, 9, 0x1F
+    loadcallback battle_animation_earthquake_on_battler_or_position 5, 5
+        .hword 8, 6, 0, 38, 1
+    call explosion_effect_on_target
+    call explosion_effect_on_target
+    waitstate
+    loadcallback battle_animation_fade_battler 10, 5
+        .hword SPRITE_FADING_AFFECTS_TARGET, 1, 9, 0, 0x1F
+    end
+
+explosion_effect_on_target:
+    playsound_with_pan 0xAA 0xC0
+    loadoam battle_animation_oam_template_explosion 3 | OAM_AT_TARGET, 4
+        .hword 0, 0, 0, 1
+    pause 6
+    playsound_with_pan 0xAA 0xC0
+    loadoam battle_animation_oam_template_explosion 3 | OAM_AT_TARGET, 4
+        .hword 24, -24, 0, 1
+    pause 6
+    playsound_with_pan 0xAA 0xC0
+    loadoam battle_animation_oam_template_explosion 3 | OAM_AT_TARGET, 4
+        .hword -16, 16, 0, 1
+    pause 6
+    return
+    playsound_with_pan 0xAA 0xC0
+    loadoam battle_animation_oam_template_explosion 3 | OAM_AT_TARGET, 4
+        .hword -24, -12, 0, 1
+    pause 6
+    playsound_with_pan 0xAA 0xC0
+    loadoam battle_animation_oam_template_explosion 3 | OAM_AT_TARGET, 4
+        .hword 16, 16, 0, 1
+    pause 6
+    return

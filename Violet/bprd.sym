@@ -802,3 +802,7 @@ whiteout_print_string = 0x0807f308 | 1;
 npc_set_facing = 0x0805f218 | 1;
 fadescreen_and_clear_dma3_source = 0x0807db64 | 1;
 overworld_fading_effect_finished = 0x0807e37c | 1;
+battle_animation_oam_template_cyclic_blending = 0x083e703c;
+battle_animation_fade_battler = 0x080ba8e4 | 1;
+battle_animation_earthquake_on_battler_or_position = 0x08098c20 | 1;
+battle_animation_oam_template_explosion = 0x083e3494;

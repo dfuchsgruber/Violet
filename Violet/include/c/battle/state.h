@@ -433,6 +433,24 @@ bool battle_handicap_attack_done();
 bool battle_items_attack_done_new();
 
 /**
+ * Executes the gunpowder battle item effect.
+ * @return if the effect was applicable
+ **/
+bool battle_items_gunpowder();
+
+/**
+ * Executes the life-orb battle item effect.
+ * @return if the effect was applicable
+ **/
+bool battle_items_life_orb();
+
+/**
+ * Executes new item effects after an attack was done, triggered by the defender's item.
+ * @return if any effect was triggered
+ **/
+bool battle_items_attack_done_defender();
+
+/**
  * Executes handicap effects that trigger at the end of the turn.
  * @return if any new handicap effect, i.e. battlescript was triggered.
  **/
