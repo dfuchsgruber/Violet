@@ -2149,6 +2149,12 @@ trainer_pokemon_default_item_default_attacks trainer_party_x18a_bbship_cells_pir
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_PERLU),
 };
 
+trainer_pokemon_default_item_default_attacks trainer_party_x18b_bbship_canon_room_pirate0[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_STERNDU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,43,POKEMON_WINGULL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_KINGLER),
+};
+
 trainer_pokemon_custom_item_custom_attacks trainer_party_test[2] = {
   TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(19,  TRAINER_BUILD_PHYSICAL_SWEEPER_ATTACK_PREFERENCE,
       0x0, true, false, 41, POKEMON_FIARO, ITEM_SCHWARZPULVER,

@@ -237,16 +237,16 @@
 					"y": "44",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "3",
+					"target_bank": "33"
 				},
 				{
 					"x": "11",
 					"y": "45",
 					"level": 0,
-					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_warp_idx": "1",
+					"target_map": "3",
+					"target_bank": "33"
 				},
 				{
 					"x": "37",

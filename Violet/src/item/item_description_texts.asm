@@ -2079,7 +2079,7 @@
 	.global str_item_desc_schwarzpulver
 
 	str_item_desc_schwarzpulver:
-		.string "Intensifies explosions.\nHolder explodes when\nhit by fire."
+		.string "Verstärkt Explosionen. Träger\nexplodiert, wenn von\nFeuer getroffen."
 
 
 	.global str_item_desc_x15c_item_item_15c
@@ -3983,7 +3983,7 @@
 	.global str_item_desc_schwarzpulver
 
 	str_item_desc_schwarzpulver:
-		.string "Verstärkt Explosionen. Träger\nexplodiert, wenn von\nFeuer getroffen."
+		.string "Intensifies explosions.\nHolder explodes when\nhit by fire."
 
 	.global str_item_desc_x15c_item_item_15c
 

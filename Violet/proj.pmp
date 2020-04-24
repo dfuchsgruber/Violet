@@ -1115,6 +1115,16 @@
 				"map_blackbeard_ship_storage",
 				"src/map/banks/33/2/map_blackbeard_ship_storage.pms",
 				"MAP_SCHATTENFLUT"
+			],
+			"3": [
+				"map_blackbeard_ship_canon_room",
+				"src/map/banks/33/3/map_blackbeard_ship_canon_room.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"4": [
+				"map_blackbeard_ship_deck",
+				"src/map/banks/33/4/map_blackbeard_ship_deck.pms",
+				"MAP_SCHATTENFLUT"
 			]
 		}
 	},
@@ -1822,6 +1832,14 @@
 		"map_footer_blackbeard_ship_storage": [
 			112,
 			"src/map/banks/33/2/map_footer_blackbeard_ship_storage.pms"
+		],
+		"map_footer_blackbeard_ship_canon_room": [
+			113,
+			"src/map/banks/33/3/map_footer_blackbeard_ship_canon_room.pms"
+		],
+		"map_footer_blackbeard_ship_deck": [
+			114,
+			"src/map/banks/33/4/map_footer_blackbeard_ship_deck.pms"
 		]
 	},
 	"tilesets_primary": {

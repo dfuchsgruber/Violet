@@ -6527,7 +6527,13 @@ trainer trainers[TRAINER_CNT] = {
         .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Willbert"),
             PSTRING("Willbert")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-				.uses_custom_items = true, .uses_custom_moves = true,
-        .party = (trainer_pokemon*) trainer_party_test //trainer_party_x18a_bbship_cells_pirate0
+        .party = (trainer_pokemon*) trainer_party_x18a_bbship_cells_pirate0
+    },
+    [0x18b] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Erkay"),
+            PSTRING("Erkay")), .pokemon_cnt = 3,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x18b_bbship_canon_room_pirate0,
     },
 }; 

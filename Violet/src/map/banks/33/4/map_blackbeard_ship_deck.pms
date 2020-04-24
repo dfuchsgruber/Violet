@@ -1,0 +1,82 @@
+{
+	"data": {
+		"footer": "map_footer_blackbeard_ship_deck",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 2,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": 0,
+					"picture": 0,
+					"script_std": 0,
+					"field_3": 0,
+					"x": "20",
+					"y": "42",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "24",
+					"y": "49",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "18",
+					"y": "45",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": 0,
+		"footer_idx": 114,
+		"namespace": "MAP_SCHATTENFLUT",
+		"flash_type": 0,
+		"weather": 0,
+		"type": 0,
+		"bike_usable": 0,
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_blackbeard_ship_deck",
+	"type": "header"
+}
