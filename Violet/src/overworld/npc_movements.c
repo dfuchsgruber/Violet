@@ -164,6 +164,19 @@ bool npc_anim_diag_sw_sliding_init(npc *n, oam_object *target) {
     return npc_anim_walk_is_finished(n, target);
 }
 
+bool npc_anim_walk_down_facing_up_init(npc *n, oam_object *target) {
+    npc_anim_init_walk(n, target, DIR_UP, NPC_ANIM_SPEED_WALK_NORMAL);
+    n->dest_y = (s16) (n->from_y + 1);
+    target->private[3] = DIR_DOWN;
+    return npc_anim_walk_is_finished(n, target);
+}
+
+bool (*npc_anim_walk_down_facing_up[])(npc *n, oam_object *target) = {
+    npc_anim_walk_down_facing_up_init, 
+    npc_anim_walk_is_finished, 
+    npc_anim_stop
+};
+
 bool(*npc_anim_diag_no_sliding_frames[0x3])(npc *n, oam_object *target) = {npc_anim_diag_ne_sliding_init, npc_anim_walk_is_finished, npc_anim_stop};
 
 bool(*npc_anim_diag_so_sliding_frames[0x3])(npc *n, oam_object *target) = {npc_anim_diag_se_sliding_init, npc_anim_walk_is_finished, npc_anim_stop};
@@ -172,7 +185,16 @@ bool(*npc_anim_diag_sw_sliding_frames[0x3])(npc *n, oam_object *target) = {npc_a
 
 bool(*npc_anim_diag_nw_sliding_frames[0x3])(npc *n, oam_object *target) = {npc_anim_diag_nw_sliding_init, npc_anim_walk_is_finished, npc_anim_stop};
 
+bool npc_anim_pause_32_init(npc *n, oam_object *target) {
+    npc_anim_pause_init(target, 32);
+    return npc_anim_pause_finished(n, target);
+}
 
+bool (*npc_anim_pause_32[])(npc *n, oam_object *target) = {
+    npc_anim_pause_32_init, 
+    npc_anim_pause_finished, 
+    npc_anim_stop
+};
 
 bool(**npc_anims[])(npc *n, oam_object *target) = {
     [FACE_DOWN] = (bool (**)(npc*, oam_object*)) 0x83a6728,
@@ -365,4 +387,6 @@ bool(**npc_anims[])(npc *n, oam_object *target) = {
     [STEP_SOUTH_EAST_SLIDING] = npc_anim_diag_so_sliding_frames,
     [STEP_SOUTH_WEST_SLIDING] = npc_anim_diag_sw_sliding_frames,
     [STEP_NORTH_WEST_SLIDING] = npc_anim_diag_nw_sliding_frames,
+    [STEP_WALK_DOWN_FACING_UP] = npc_anim_walk_down_facing_up,
+    [PAUSE_32] = npc_anim_pause_32,
 };

@@ -16,9 +16,12 @@
 #include "superstate.h"
 #include "flags.h"
 #include "constants/movements.h"
+#include "constants/block_behaviour.h"
 #include "debug.h"
 
+
 int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5) {
+    dprintf("Player z %d\n", player->height.current);
     (void) param_5; // unused in fire red
     int collision = npc_attempt_diagonal_move(player, x, y, direction);
     if (collision == COLLISION_HEIGHT_MISMATCH && npc_player_attempt_transition_water_to_land(x, y, direction)) {
@@ -41,6 +44,30 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
     if (collision == COLLISION_OTHER_NPC && npc_is_movable_boulder_at(x, y, direction)) {
         dprintf("Collision with strength boulder.\n");
         return COLLISION_PUSHED_BOULDER;
+    }
+    // Update the player's ladder state
+    switch (block_get_behaviour_by_pos(player->from_x, player->from_y)) {
+        case MB_CLIMBABLE_LADDER_BOTTOM: {
+            if (direction == DIR_UP)
+                setflag(FLAG_PLAYER_ON_LADDER);
+            else
+                clearflag(FLAG_PLAYER_ON_LADDER);
+            break;
+        }
+        case MB_CLIMBABLE_LADDER_TOP: {
+            if (direction == DIR_DOWN)
+                setflag(FLAG_PLAYER_ON_LADDER);
+            else
+                clearflag(FLAG_PLAYER_ON_LADDER);
+            break;
+        }
+    }
+    if (checkflag(FLAG_PLAYER_ON_LADDER)) {
+        if (collision == COLLISION_NONE && (direction == DIR_DOWN || direction == DIR_UP)) {
+            return COLLISION_LADDER;
+        } else {
+            return COLLISION_LADDER_BLOCKED;
+        }      
     }
     return collision;
 }
@@ -88,6 +115,13 @@ static void npc_player_init_move_diagonal_biking(u8 collision) {
     npc_player_set_state_and_execute_tile_anim(diagonal_biking_movement_idx_by_collision(collision), 2);
 }
 
+static void npc_player_init_move_ladder(u8 direction) {
+    if (direction == DIR_UP)
+        npc_player_set_state_and_execute_tile_anim(STEP_UP, 2);
+    else if (direction == DIR_DOWN)
+        npc_player_set_state_and_execute_tile_anim(STEP_WALK_DOWN_FACING_UP, 2);
+}
+
 void npc_player_initialize_move_not_biking(u8 direction, key keys) {
     u8 collision = npc_player_collision(direction);
     //dprintf("Non biking collision type %d\n", collision);
@@ -132,10 +166,23 @@ void npc_player_initialize_move_not_biking(u8 direction, key keys) {
         }
         case COLLISION_PUSHED_BOULDER:
             return;
+        case COLLISION_LADDER:
+            npc_player_init_move_ladder(direction);
+            return;
+        case COLLISION_LADDER_BLOCKED:
+            npc_player_sound_collision(direction);
+            npc_player_set_state_and_execute_tile_anim(PAUSE_32, 2);
+            return; 
         default: {
             npc_player_init_move_blocked(direction);
             return;
         }
+    }
+}
+
+void npc_player_turn_in_place(u8 direction) {
+    if (!checkflag(FLAG_PLAYER_ON_LADDER)) {
+        npc_player_set_facing(direction);
     }
 }
 
@@ -179,7 +226,7 @@ void player_transition_water_to_land(u8 direction) {
     // Adjust the player state depending if on a cloud map
     player_state.state &= (u8)(~PLAYER_STATE_SURFING);
     if (map_is_cloud()) {
-        player_state.state |= PLAYER_STATE_BIKING;
+        player_state.state |= PLAYER_STATE_MACH_BIKE;
         playsong1(MUS_CLOUDS, 8);
     } else {
         player_state.state |= PLAYER_STATE_WALKING;
@@ -207,5 +254,21 @@ void player_transition_water_to_land_callback_update_npc(u8 self) {
         oam_clear_and_free_vram(oams + npcs[player_state.npc_idx].oam_surf);
         big_callback_delete(self);
         game_context_update();
+    }
+}
+
+void player_npc_controll_on_ladder(u8 direction, key keys) {
+    if (direction != DIR_NONE) {
+        npc_player_initialize_move_not_biking(direction, keys);
+    }
+}
+
+void player_npc_move(u8 direction, key keys_new, key keys_held) {
+    if (checkflag(FLAG_PLAYER_ON_LADDER)) {
+        player_npc_controll_on_ladder(direction, keys_held);
+    } else if (player_state.state & (PLAYER_STATE_MACH_BIKE | PLAYER_STATE_ACRO_BIKE)) {
+        player_npc_controll_biking(direction, keys_new, keys_held);
+    } else {
+        player_npc_controll_not_biking(direction, keys_held);
     }
 }

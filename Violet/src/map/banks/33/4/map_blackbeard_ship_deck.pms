@@ -23,7 +23,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": 0,
+					"script": "ow_script_blackbeard_ship_deck_person0",
 					"flag": 0,
 					"value": {
 						"item": 0,
@@ -33,12 +33,12 @@
 			],
 			"warps": [
 				{
-					"x": "24",
-					"y": "49",
+					"x": "18",
+					"y": "44",
 					"level": 0,
 					"target_warp_idx": 0,
 					"target_map": 0,
-					"target_bank": 0
+					"target_bank": "33"
 				},
 				{
 					"x": "18",
@@ -57,12 +57,12 @@
 			"connection_cnt": 0,
 			"connections": []
 		},
-		"music": 0,
+		"music": "MUS_BBSHIP",
 		"footer_idx": 114,
 		"namespace": "MAP_SCHATTENFLUT",
-		"flash_type": 0,
-		"weather": 0,
-		"type": 0,
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_ROUTE",
 		"bike_usable": 0,
 		"flags": {
 			"allow_escape_rope": 0,
@@ -75,7 +75,7 @@
 			"flag_7": 0
 		},
 		"level": 0,
-		"battle_style": 0
+		"battle_style": "BATTLE_TYPE_RANDOM"
 	},
 	"label": "map_blackbeard_ship_deck",
 	"type": "header"

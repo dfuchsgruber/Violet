@@ -195,3 +195,14 @@ _blxr1:
     bne 0x08127b58
     b 0x08127b36
     .pool
+
+.org 0x0805b9c4
+    ldr r1, = npc_player_turn_in_place | 1
+    bx r1
+    .pool
+
+
+.org 0x0805b4d4
+    ldr r3, =player_npc_move | 1
+    bx r3
+    .pool

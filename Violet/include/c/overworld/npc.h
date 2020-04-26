@@ -9,6 +9,7 @@
 #define INCLUDE_C_OVERWORLD_NPC_H_
 
 #include "oam.h"
+#include "superstate.h"
 
 typedef struct npc {
 
@@ -74,7 +75,7 @@ typedef struct npc {
 
 typedef struct {
     u8 state;
-    u8 bike;
+    u8 field1;
     u8 running2;
     u8 tile_state;
     u8 oam_idx;
@@ -86,8 +87,11 @@ typedef struct {
 } player_state_t;
 
 #define PLAYER_STATE_WALKING 1
-#define PLAYER_STATE_BIKING 2
+#define PLAYER_STATE_MACH_BIKE 2
+#define PLAYER_STATE_ACRO_BIKE 4
 #define PLAYER_STATE_SURFING 8
+
+#define PLAYER_STATE_BIKING (PLAYER_STATE_MACH_BIKE | PLAYER_STATE_ACRO_BIKE)
 
 extern npc npcs[];
 extern player_state_t player_state;
@@ -110,6 +114,80 @@ u8 npc_get_collision(npc *n, s16 x, s16 y, u8 direction);
  * @param the enumerated obstacle cause
  */
 u8 npc_sees_player(npc *n);
+
+/**
+ * Initializes walking down slowly.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_walk_down_slowly_init(npc *n, oam_object *target);
+
+
+/**
+ * Initializes walking down in a direction.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_walk_slowly_init(npc *n, oam_object *target, u8 direction);
+
+/**
+ * Initializes walking down slowly.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_slow_walk_slowly_finished(npc *n, oam_object *target);
+
+
+/**
+ * Pauses for some frames.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_pause_init(oam_object *target, u16 frames);
+
+/**
+ * Checks if pausing for some frames has finished.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_pause_finished(npc *n, oam_object *target);
+
+/**
+ * Locks the facing of a npc
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_lock_facing(npc *n, oam_object *target);
+
+/**
+ * Unlocks the facing of a npc
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_unlock_facing(npc *n, oam_object *target);
+
+/**
+ * Makes a npc face downwards.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_face_down(npc *n, oam_object *target);
+
+/**
+ * Makes a npc face upwards.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @return whether the method was sucessfull
+ **/
+bool npc_anim_face_up(npc *n, oam_object *target);
 
 /**
  * Stops the animation of a npc instance
@@ -380,6 +458,12 @@ void npc_player_init_move_face(u8 direction);
 void npc_player_init_move_blocked(u8 direction);
 
 /**
+ * Plays the adequate sound effect for colliding into a certain direction.
+ * @param direction the direction to attempt to walk into.
+ **/
+void npc_player_sound_collision(u8 direction);
+
+/**
  * Initializes a move for the player to surf.
  * @param direction the direction in which to be go.
  **/
@@ -441,5 +525,27 @@ bool npc_player_walking_towards_rock_stairs(u8 direction);
  * @param direction in which direction to face in
  */
 void npc_set_facing(npc *n, u8 direction);
+
+
+/**
+ * Makes the player face into a direction.
+ * @param direction the direction to face into
+ **/
+void npc_player_set_facing(u8 direction);
+
+/**
+ * Controls the player npc using the input when on a bike.
+ * @param direction the direction to move into
+ * @param keys_new newly pressed keys (for acro bike)
+ * @param keys_held held keys
+ **/
+void player_npc_controll_biking(u8 direction, key keys_new, key keys_held);
+
+/**
+ * Controls the player npc using the input when not on a bike.
+ * @param direction the direction to move into
+ * @param keys_held held keys
+ **/
+void player_npc_controll_not_biking(u8 direction, key keys_held);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

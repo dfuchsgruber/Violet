@@ -14,4 +14,5 @@ void map_reset_temporary_flags_and_vars() {
     clearflag(FLAG_IN_BATTLE);
     clearflag(0x842);
     setflag(POKERADAR_POKEMON_SPAWNED);
+    clearflag(FLAG_PLAYER_ON_LADDER);
 }
