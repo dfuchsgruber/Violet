@@ -1,0 +1,329 @@
+{
+	"data": {
+		"width": 8,
+		"height": 9,
+		"border_width": 1,
+		"border_height": 1,
+		"border": [
+			[
+				{
+					"block_idx": 8,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 712,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 712,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 1012,
+					"level": 1
+				},
+				{
+					"block_idx": 660,
+					"level": 1
+				},
+				{
+					"block_idx": 660,
+					"level": 1
+				},
+				{
+					"block_idx": 660,
+					"level": 1
+				},
+				{
+					"block_idx": 1002,
+					"level": 1
+				},
+				{
+					"block_idx": 1003,
+					"level": 1
+				},
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 692,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 1017,
+					"level": 1
+				},
+				{
+					"block_idx": 1009,
+					"level": 20
+				},
+				{
+					"block_idx": 723,
+					"level": 20
+				},
+				{
+					"block_idx": 641,
+					"level": 20
+				},
+				{
+					"block_idx": 1018,
+					"level": 1
+				},
+				{
+					"block_idx": 1005,
+					"level": 1
+				},
+				{
+					"block_idx": 699,
+					"level": 1
+				},
+				{
+					"block_idx": 1007,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 775,
+					"level": 1
+				},
+				{
+					"block_idx": 1017,
+					"level": 1
+				},
+				{
+					"block_idx": 731,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 0
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 1009,
+					"level": 12
+				},
+				{
+					"block_idx": 775,
+					"level": 1
+				},
+				{
+					"block_idx": 1017,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 650,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 1009,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 691,
+					"level": 1
+				},
+				{
+					"block_idx": 692,
+					"level": 1
+				},
+				{
+					"block_idx": 649,
+					"level": 12
+				},
+				{
+					"block_idx": 775,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 675,
+					"level": 1
+				},
+				{
+					"block_idx": 650,
+					"level": 12
+				},
+				{
+					"block_idx": 1016,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 699,
+					"level": 1
+				},
+				{
+					"block_idx": 719,
+					"level": 1
+				},
+				{
+					"block_idx": 657,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 1013,
+					"level": 1
+				},
+				{
+					"block_idx": 1014,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 1010,
+					"level": 12
+				},
+				{
+					"block_idx": 1011,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 1004,
+					"level": 1
+				},
+				{
+					"block_idx": 1019,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 707,
+					"level": 12
+				},
+				{
+					"block_idx": 708,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 1004,
+					"level": 1
+				},
+				{
+					"block_idx": 1005,
+					"level": 1
+				}
+			]
+		],
+		"tileset_primary": "maptileset12",
+		"tileset_secondary": "maptileset_blackbeard_ship",
+		"field_1A": 0
+	},
+	"label": "map_footer_blackbeard_ship_treasure_room",
+	"type": "footer"
+}

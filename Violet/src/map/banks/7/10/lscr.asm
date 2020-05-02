@@ -94,6 +94,10 @@ trainerbattlecont 0x1 0xb7 0x0 str_0x83114c str_0x8311a8 ow_script_0x83108d
 
 
 ow_script_0x83108d:
+
+setvar 0x8004 1
+setvar 0x8005 2
+special SPECIAL_BUFFER_BADGE_NAME
 loadpointer 0 str_mia
 setvar 0x8000 1
 special 0xE
@@ -138,7 +142,7 @@ str_mia:
 	.string "Mia"
 
 str_0x8310dc:
-    .autostring 35 2 "Es beginnt nun der Kampf zwischen Mia und PLAYER um den Wald-Orden."
+    .autostring 35 2 "Es beginnt nun der Kampf zwischen Mia und PLAYER."
 
 
 
@@ -153,12 +157,12 @@ str_0x8311a8:
 
 
 str_0x8311c0:
-    .autostring 35 2 "Du kämpfst wirklich besser als die meisten Anfänger, denen ich bisher begegnet bin.\pDen Wald-Orden hast du dir auf jeden Fall verdient!"
+    .autostring 35 2 "Du kämpfst wirklich besser als die meisten Anfänger, denen ich bisher begegnet bin.\pDen BUFFER_3 hast du dir auf jeden Fall verdient!"
 
 
 
 str_0x8f2a1f:
-    .autostring 35 2 "PLAYER hat den Wald-Orden erhalten!"
+    .autostring 35 2 "PLAYER hat den BUFFER_3 erhalten!"
 
 
 

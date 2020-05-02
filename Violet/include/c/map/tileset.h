@@ -79,5 +79,6 @@ extern tileset maptileset_haweiland;
 extern tileset maptileset_clouds;
 extern tileset maptileset_cloud_ruins;
 extern tileset maptileset_cloud_ardeal;
+extern tileset maptileset_blackbeard_ship;
 
 #endif /* INCLUDE_C_MAP_TILESET_H_ */

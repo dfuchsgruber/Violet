@@ -15,7 +15,7 @@
 extern u8 bsc_heal[];
 extern u8 bsc_lucid[];
 extern u8 bsc_tollwut_attack_boost[];
-extern u8 bsc_recoil[];
+extern u8 bsc_ability_inflicts_damage[];
 extern u8 bsc_harvest[];
 
 
@@ -23,7 +23,7 @@ void turn_end_apply_recoil_dmg(battler *target){
     int dmg = target->max_hp / 8;
     if (dmg <= 0) dmg = 1;
     damage_to_apply = dmg;
-    battlescript_init_and_interrupt_battle(bsc_recoil);
+    battlescript_init_and_interrupt_battle(bsc_ability_inflicts_damage);
 }
 
 bool battle_abilities_turn_end(u8 ability, battler *target){

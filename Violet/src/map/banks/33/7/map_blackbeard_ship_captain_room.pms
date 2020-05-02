@@ -1,0 +1,82 @@
+{
+	"data": {
+		"footer": "map_footer_blackbeard_ship_captain_room",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 2,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "3",
+					"y": "4",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "9",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "4",
+					"target_bank": "33"
+				},
+				{
+					"x": "4",
+					"y": "9",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "4",
+					"target_bank": "33"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_BBSHIP",
+		"footer_idx": 118,
+		"namespace": "MAP_SCHATTENFLUT",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_blackbeard_ship_captain_room",
+	"type": "header"
+}

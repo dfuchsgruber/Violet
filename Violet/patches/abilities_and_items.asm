@@ -6,9 +6,9 @@
 	.pool
 
 .org 0x0801A0C4
-        ldr r0, =hook_battle_abilities_battle_enter | 1
-        bx r0
-        .pool
+       ldr r0, =hook_battle_abilities_battle_enter | 1
+      bx r0
+      .pool
 
 .org 0x0801A584
         ldr r0, =hook_battle_abilities_attack_negating | 1

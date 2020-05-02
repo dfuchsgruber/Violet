@@ -254,9 +254,9 @@
 .byte \cmd23_side_or_bank
 .endm
 
-.macro gotoandsomething gotoandsomething_address
+.macro atk24 address:req
 .byte 0x24
-.word \gotoandsomething_address
+.word \address
 .endm
 
 .macro movevaluescleanup

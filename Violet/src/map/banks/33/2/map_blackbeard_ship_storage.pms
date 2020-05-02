@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_blackbeard_ship_storage",
 		"events": {
-			"person_cnt": 9,
+			"person_cnt": 11,
 			"warp_cnt": 5,
 			"trigger_cnt": 2,
-			"signpost_cnt": 0,
+			"signpost_cnt": 1,
 			"persons": [
 				{
 					"target_index": "1",
@@ -213,6 +213,52 @@
 						"item": 0,
 						"species": 0
 					}
+				},
+				{
+					"target_index": "10",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "32",
+					"y": "36",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_BBSHIP_ITEM_8",
+					"value": {
+						"item": "ITEM_AETHER",
+						"species": 0
+					}
+				},
+				{
+					"target_index": "11",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "30",
+					"y": "21",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_BBSHIP_ITEM_9",
+					"value": {
+						"item": "ITEM_HYPERBALL",
+						"species": 0
+					}
 				}
 			],
 			"warps": [
@@ -253,8 +299,8 @@
 					"y": "32",
 					"level": 0,
 					"target_warp_idx": 0,
-					"target_map": 0,
-					"target_bank": 0
+					"target_map": "8",
+					"target_bank": "33"
 				}
 			],
 			"triggers": [
@@ -281,7 +327,24 @@
 					"script": "ow_script_blackbeard_ship_storage_trigger"
 				}
 			],
-			"signposts": []
+			"signposts": [
+				{
+					"x": "37",
+					"y": "32",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "FLAG_BBSHIP_TREASURE_ROOM_UNLOCKED",
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_storage_treasure_room_door"
+					}
+				}
+			]
 		},
 		"levelscripts": "map_blackbeard_ship_storage_levelscripts",
 		"connections": {

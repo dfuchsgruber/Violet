@@ -134,6 +134,10 @@ trainerbattlecont 0x1 0xb8 0x0 str_0x948a7f str_0x948b5a ow_script_0x94b868
 
 
 ow_script_0x94b868:
+setvar 0x8004 2
+setvar 0x8005 2
+special SPECIAL_BUFFER_BADGE_NAME
+
 loadpointer 0 str_manus
 setvar 0x8000 0
 special 0xE
@@ -363,16 +367,16 @@ str_0x948b5a:
 
 
 str_0x94907f:
-	.autostring 35 2 "Außerordentlich stark!\pDu hast einen verbissen Kampfstil!\pDas gefällt mir!\pDen Faust-Orden hast du dir redlich verdient!"
+	.autostring 35 2 "Außerordentlich stark!\pDu hast einen verbissen Kampfstil!\pDas gefällt mir!\pDen BUFFER_3 hast du dir redlich verdient!"
 
 
 str_0x949053:
-    .autostring 35 2 "PLAYER hat den Faust-Orden von Manus erhalten."
+    .autostring 35 2 "PLAYER hat den BUFFER_3 von Manus erhalten."
 
 
 
 str_0x948eb4:
-	.autostring 35 2 "Der Faust-Orden erlaubt es dir, die Versteckte Maschine Fliegen außerhalb des Kampfes einzusetzten.\pAußerdem gehorchen dir alle Pokémon bis Level 50.\pZudem möchte ich dir das hier überreichen."
+	.autostring 35 2 "Der BUFFER_3 erlaubt es dir, die Versteckte Maschine Fliegen außerhalb des Kampfes einzusetzten.\pAußerdem gehorchen dir alle Pokémon bis Level 50.\pZudem möchte ich dir das hier überreichen."
 
 
 

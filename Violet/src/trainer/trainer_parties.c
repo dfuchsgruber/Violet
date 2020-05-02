@@ -2155,6 +2155,69 @@ trainer_pokemon_default_item_default_attacks trainer_party_x18b_bbship_canon_roo
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_KINGLER),
 };
 
+trainer_pokemon_default_item_default_attacks trainer_party_x18c_bbship_cabin_pirate0[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,45,POKEMON_OCTILLERY),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_TENTACHA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x18d_bbship_cabin_pirate1[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,45,POKEMON_KANIVANHA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_QUABBEL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_SCHIGGY),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x18e_bbship_cabins_pirate0[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_BARSCHWA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_KRABBY),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_SEEJONG),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x18f_bbship_cabins_pirate1[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_SEEMON),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_PELIPPER),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x190_bbship_cabins_pirate2[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_KANIVANHA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_KREBSCORPS),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x191_bbship_cabins_pirate3[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,49,POKEMON_KREBUTACK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x192_bbship_deck_pirate0[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_LAMPI),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_STERNDU),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,45,POKEMON_TENTACHA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x193_bbship_deck_pirate1[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_QUABBEL),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_SCHILLOK),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x194_bbship_deck_pirate2[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_REMORAID),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,44,POKEMON_WAILMER),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x195_bbship_deck_pirate3[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,48,POKEMON_SAGANABYSS),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_AUSTOS),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x196_bbship_deck_pirate4[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,50,POKEMON_SKULLYDRA),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x197_bbship_deck_pirate5[4] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_WELSAR),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_AQUANA),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,48,POKEMON_APOQUALLYP),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_TENTOXA),
+};
+
 trainer_pokemon_custom_item_custom_attacks trainer_party_test[2] = {
   TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(19,  TRAINER_BUILD_PHYSICAL_SWEEPER_ATTACK_PREFERENCE,
       0x0, true, false, 41, POKEMON_FIARO, ITEM_SCHWARZPULVER,

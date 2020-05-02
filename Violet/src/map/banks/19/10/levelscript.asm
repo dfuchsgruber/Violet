@@ -52,6 +52,10 @@ setvar 0x8004 BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE
 special SPECIAL_BATTLE_HANDICAP_SET
 trainerbattlecont 0x1 0x13E 0x0 str_challange str_defeat ow_script_after_battle
 ow_script_after_battle:
+
+setvar 0x8004 4
+setvar 0x8005 2
+special SPECIAL_BUFFER_BADGE_NAME
 loadpointer 0 str_after_battle
 show_mugshot MUGSHOT_TEAH MUGSHOT_LEFT
 loadpointer 0x0 str_receive_badge
@@ -92,7 +96,7 @@ str_challange:
 str_defeat:
     .autostring 34 2 "Beeindruckend!\pIch begreife langsam, wieso du dich selbst dem Schicksal widersetzten kannst."
 str_after_battle:
-    .autostring 34 2 "Es überrascht mich jetzt nicht mehr so sehr, dass ich deine Zukunft nicht vorhersehen kann.\pDeine Unbeugsamkeit ist überwältigend.\pSo einen spannenden Kampf hatte ich schon lange nicht mehr.\pDen Ruheorden hast du dir redlich verdient."
+    .autostring 34 2 "Es überrascht mich jetzt nicht mehr so sehr, dass ich deine Zukunft nicht vorhersehen kann.\pDeine Unbeugsamkeit ist überwältigend.\pSo einen spannenden Kampf hatte ich schon lange nicht mehr.\pDen BUFFER_3 hast du dir redlich verdient."
 str_tm:
     .autostring 34 2 "Damit kannst du die Vm Stärke außerhalb des Kampfes benutzen.\pPokémon werden dir nun bis Level 70 gehorchen.\pAußerdem will ich mich persönlich dir gegenüber noch erkenntlich zeigen."
 str_leave:
@@ -108,7 +112,7 @@ str_challange:
 str_defeat:
     .autostring 34 2 "Impressive!\pSlowly I begin to realize why you can withstand destiny."
 str_after_battle:
-    .autostring 34 2 "Somehow it doesn't suprise me anymore that I couldn't forsee your future.\pYour stubborness is overwhelming.\pI haven't done such an intense battle in a long time.\pYou definitely earned yourself the Peace Badge."
+    .autostring 34 2 "Somehow it doesn't suprise me anymore that I couldn't forsee your future.\pYour stubborness is overwhelming.\pI haven't done such an intense battle in a long time.\pYou definitely earned yourself the BUFFER_3."
 str_tm:
     .autostring 34 2 "With this you can use the Hm Strength outside a battle.\pPokémon up until level 70 will be obedient to you now.\pIn addition to that I want to give you something as a personal gift."
 str_leave:

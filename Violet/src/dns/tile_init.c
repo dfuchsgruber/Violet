@@ -8,6 +8,7 @@
 #include "constants/vars.h"
 #include "constants/shader_states.h"
 #include "vars.h"
+#include "bios.h"
 
 
 static color_t dns_color_light_yellow = {.rgb = {.red = 232 / 8, .green = 216 / 8, .blue = 104 / 8}};
@@ -116,6 +117,9 @@ void tile_init(map_footer_t *foot) {
         } else if (foot->tileset2 == &maptileset_cloud_ruins) {
             pal_restore[9 * 16 + 8] = dns_color_flame_orange;
             pal_restore[9 * 16 + 8] = dns_color_flame_yellow;
+        } else if (foot->tileset2 == &maptileset_blackbeard_ship) {
+            // Copy the entire palette (yes, I "wasted" an entire palette for this effect)
+            cpuset(maptileset_blackbeard_ship.colors, pal_restore + 10 * 16, CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
         }
     }
 }

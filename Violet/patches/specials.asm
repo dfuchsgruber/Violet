@@ -231,6 +231,9 @@ special_table equ 0x0815FCC0
 .org (special_table + 106 * 4)
                 .word battle_handicap_clear | 1
 
+.org (special_table + 0x107 * 4)
+        .word special_buffer_badge_name | 1
+
 // Free up until <= 118
 
 .org (special_table + (0x129 * 4))

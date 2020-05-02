@@ -1125,6 +1125,26 @@
 				"map_blackbeard_ship_deck",
 				"src/map/banks/33/4/map_blackbeard_ship_deck.pms",
 				"MAP_SCHATTENFLUT"
+			],
+			"5": [
+				"map_blackbeard_ship_cabin",
+				"src/map/banks/33/5/map_blackbeard_ship_cabin.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"6": [
+				"map_blackbeard_ship_cabins",
+				"src/map/banks/33/6/map_blackbeard_ship_cabins.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"7": [
+				"map_blackbeard_ship_captain_room",
+				"src/map/banks/33/7/map_blackbeard_ship_captain_room.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"8": [
+				"map_blackbeard_ship_treasure_room",
+				"src/map/banks/33/8/map_blackbeard_ship_treasure_room.pms",
+				"MAP_SCHATTENFLUT"
 			]
 		}
 	},
@@ -1840,6 +1860,22 @@
 		"map_footer_blackbeard_ship_deck": [
 			114,
 			"src/map/banks/33/4/map_footer_blackbeard_ship_deck.pms"
+		],
+		"map_footer_blackbeard_ship_cabin": [
+			115,
+			"src/map/banks/33/5/map_footer_blackbeard_ship_cabin.pms"
+		],
+		"map_footer_blackbeard_ship_cabins": [
+			116,
+			"src/map/banks/33/6/map_footer_blackbeard_ship_cabins.pms"
+		],
+		"map_footer_blackbeard_ship_captain_room": [
+			118,
+			"src/map/banks/33/7/map_footer_blackbeard_ship_captain_room.pms"
+		],
+		"map_footer_blackbeard_ship_treasure_room": [
+			119,
+			"src/map/banks/33/8/map_footer_blackbeard_ship_treasure_room.pms"
 		]
 	},
 	"tilesets_primary": {

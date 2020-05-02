@@ -320,7 +320,9 @@ void bsc_cmd_x49_attack_done_new() {
     // The args of x49 control which states shall be executed: Mode 1 executes only one distinct state
     // Mode 2 executes states smaller than last_state
     u8 mode = bsc_offset[1];
-    if (mode == 1) return; // Only one state was supposed to be executed whatsoever
+    if (mode == 1) {
+        BATTLE_STATE2->attack_done_substate = 255; // Only one state was supposed to be executed whatsoever
+    }; 
     u8 last_state = bsc_offset[2];
     dprintf("mode is %d, arg is %d\n", mode, last_state);
     switch (battle_scripting.attack_done_state) {
@@ -400,7 +402,7 @@ void bsc_cmd_x49_attack_done_new() {
                         }
                         break;
                     }
-
+                    case 255:
                     default: { // Termination
                         bsc_offset += 3;
                         return;

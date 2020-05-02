@@ -7,12 +7,24 @@
 .include "ordinals.s"
 
 .global map_blackbeard_ship_storage_levelscripts
+.global ow_script_blackbeard_ship_storage_open_treasure_room
 .align 4
 
 map_blackbeard_ship_storage_levelscripts:
     .byte LEVELSCRIPT_TYPE_ON_TRANSITION
     .word transition_script
+    .byte LEVELSCRIPT_TYPE_ON_LOAD
+    .word setmaptile_script
 	.byte 0x0
+
+setmaptile_script:
+    checkflag FLAG_BBSHIP_CAPTAIN_ROOM_UNLOCKED
+    callif EQUAL ow_script_blackbeard_ship_storage_open_treasure_room
+    end
+
+ow_script_blackbeard_ship_storage_open_treasure_room:
+    setmaptile 0x25 0x20 0x2ca 1
+    return
 
 transition_script:
     checkflag FLAG_BBSHIP_LUCKY_IN_CELL

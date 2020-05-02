@@ -29,6 +29,10 @@ setvar 0x8004 BATTLE_HANDICAP_EXTREME_HEAT
 special SPECIAL_BATTLE_HANDICAP_SET
 trainerbattlecont 0x1 0xc4 0x0 str_challange str_defeat ow_script_after_battle
 ow_script_after_battle:
+
+setvar 0x8004 3
+setvar 0x8005 2
+special SPECIAL_BUFFER_BADGE_NAME
 loadpointer 0 str_after_battle
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
 loadpointer 0x0 str_receive_badge
@@ -57,15 +61,15 @@ end
 .ifdef LANG_GER
 
 str_referee:
-	.autostring 34 2 "Hiermit eröffne ich den Kampf zwischen PLAYER und Igva um den Vulkanorden!"
+	.autostring 34 2 "Hiermit eröffne ich den Kampf zwischen PLAYER und Igva!"
 str_challange:
 	.autostring 34 2 "Also PLAYER!\nIch werde dich nicht schonen.\pMeine Pokémon brennen darauf, es mit deinen aufzunehmen!\pJetzt wird es extra heiß!"
 str_defeat:
 	.autostring 34 2 "Wahnsinn!\pDu konntest selbst in der Hitze des Gefechts noch Ruhe bewahren."
 str_after_battle:
-	.autostring 34 2 "Es überrascht mich nun ganz und gar nicht mehr, dass du es selbst mit einem legendären Pokémon aufnehmen konntest.\pDu bist wirklich ein äußert talentierter Trainer.\pIch überreiche dir den Vulkanorden wirklich gerne!"
+	.autostring 34 2 "Es überrascht mich nun ganz und gar nicht mehr, dass du es selbst mit einem legendären Pokémon aufnehmen konntest.\pDu bist wirklich ein äußert talentierter Trainer.\pIch überreiche dir den BUFFER_3 wirklich gerne!"
 str_receive_badge:
-	.autostring 34 2 "PLAYER hat den Vulkanorden von Igva erhalten!"
+	.autostring 34 2 "PLAYER hat den BUFFER_3 von Igva erhalten!"
 str_tm:
 	.autostring 34 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Surfer außerhalb des Kampfes einzusetzten.\pAußerdem gehorchen dir getauschte Pokémon bis Level 60.\pAls Dankeschön für deine Hilfe vorhin, möchte ich dir außerdem noch das hier geben."
 str_leave:
@@ -74,15 +78,15 @@ str_leave:
 .elseif LANG_EN
 
 str_referee:
-	.autostring 34 2 "Hereby I announce the fight between Igva and PLAYER for the Vulcano Badge!"
+	.autostring 34 2 "Hereby I announce the fight between Igva and PLAYER!"
 str_challange:
 	.autostring 34 2 "Now PLAYER!\pI will not go easy on you.\pMy Pokémon are burning to fight yours!\pNow it's getting extra hot!"
 str_defeat:
 	.autostring 34 2 "Amazing!\pEven in the heat of the fight you stayed calm and cool."
 str_after_battle:
-	.autostring 34 2 "It doesn't suprise me at all now that you were able to defeat even a legendary Pokémon.\pYou are an extraordinarily talented trainer.\pWith much pleasure I will hand you over the Vulcano Badge!"
+	.autostring 34 2 "It doesn't suprise me at all now that you were able to defeat even a legendary Pokémon.\pYou are an extraordinarily talented trainer.\pWith much pleasure I will hand you over the BUFFER_3!"
 str_receive_badge:
-	.autostring 34 2 "PLAYER received the Vulcano Badge from Igva!"
+	.autostring 34 2 "PLAYER received the BUFFER_3 from Igva!"
 str_tm:
 	.autostring 34 2 "This badge allows you to use the Hidden Machine Surfer outside of a battle.\pFurthermore, traded Pokémon up to level 60 will obey you.\pAs an additional thank you I want to provide you with this as well."
 str_leave:

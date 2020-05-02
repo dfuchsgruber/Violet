@@ -3,13 +3,11 @@
 
 .global ow_script_blackbeard_ship_canon_room_trainer0
 
-
 ow_script_blackbeard_ship_canon_room_trainer0:
     trainerbattlestd 0 0x18b 0 str_before0 str_after0
     loadpointer 0 str_after0
     callstd MSG_FACE
     end
-
 
 .ifdef LANG_GER
 str_before0:

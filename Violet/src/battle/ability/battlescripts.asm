@@ -17,7 +17,7 @@
 .global bsc_extradorn
 .global bsc_kings_shield_drop
 .global bsc_hagelalarm
-.global bsc_recoil
+.global bsc_ability_inflicts_damage
 .global bsc_heal
 .global bsc_tollwut
 .global bsc_tollwut_attack_boost
@@ -119,13 +119,15 @@ playanimation 0x7 0xD 0x0
 call 0x81DD572
 end3
 
-bsc_recoil:
-printstring 0x182
-waitmessage 0x40
-orword 0x02023DD0 0x100
-graphicalhpupdate 1
-datahpupdate 1
-end3
+bsc_ability_inflicts_damage:
+    printstring 0x182
+    waitmessage 0x40
+    orword bsc_status_flags 0x100
+    graphicalhpupdate 1
+    datahpupdate 1
+    faintpokemon BANK_USER, 0, 0
+    atk24 .+4
+    end3
 
 bsc_heal:
 printstring 0x195

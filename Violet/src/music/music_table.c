@@ -771,7 +771,7 @@ song song_table[] = {
   {mus_dark_queen_battle2, SONG_TYPE_SONG, SONG_TYPE_SONG},
   //** TODO: Change to blackbeards ship
 	//Song 382 (=0x17F)
-	{mus_blackbeard, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	{mus_bbship, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 
 };

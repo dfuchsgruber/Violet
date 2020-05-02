@@ -61,6 +61,13 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
                 clearflag(FLAG_PLAYER_ON_LADDER);
             break;
         }
+        case MB_CLIMBABLE_LADDER_MIDPOINT: {
+            if (direction == DIR_UP || direction == DIR_DOWN)
+                setflag (FLAG_PLAYER_ON_LADDER);
+            else
+                clearflag(FLAG_PLAYER_ON_LADDER);
+            break;
+        }
     }
     if (checkflag(FLAG_PLAYER_ON_LADDER)) {
         if (collision == COLLISION_NONE && (direction == DIR_DOWN || direction == DIR_UP)) {

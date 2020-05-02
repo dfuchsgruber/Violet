@@ -180,6 +180,7 @@ extern const unsigned char mus_lucius[];
 extern const unsigned char mus_lucius_battle[];
 extern const unsigned char mus_dark_queen_battle2[];
 extern const unsigned char mus_dark_queen2[];
+extern const unsigned char mus_bbship[];
 
 #endif	/* MUSIC_H */
 

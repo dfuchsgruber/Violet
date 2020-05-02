@@ -82,6 +82,10 @@ trainerbattlecont 0x1 0xb6 0x0 str_0x8cafb5 str_0x8cb08b ow_script_0x8947e3
 
 
 ow_script_0x8947e3:
+
+setvar 0x8004 0
+setvar 0x8005 2
+special SPECIAL_BUFFER_BADGE_NAME
 loadpointer 0x0 str_0x8cb101
 show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 fanfare 0x104
@@ -120,11 +124,11 @@ str_0x8cb08b:
 
 
 str_0x8cb101:
-	.autostring 35 2 "Du hast hervorragend gekämpft!\pDen Antikorden hast du dir redlich verdient!"
+	.autostring 35 2 "Du hast hervorragend gekämpft!\pDen BUFFER_3 hast du dir redlich verdient!"
 
 
 str_0x897c8a:
-    .autostring 35 2 "PLAYER hat den Antikorden von Lester erhalten!"
+    .autostring 35 2 "PLAYER hat den BUFFER_3 von Lester erhalten!"
 
 
 
