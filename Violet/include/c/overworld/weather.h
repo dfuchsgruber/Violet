@@ -61,4 +61,10 @@ color_t overworld_weather_static_fog_get_overlay_color();
  **/
 bool overworld_fading_effect_finished();
 
+/**
+ * (Probably) a callback that handles overworld weather...
+ * @param self self-reference
+ **/
+void overworld_weather_callback(u8 self);
+
 #endif

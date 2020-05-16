@@ -150,6 +150,13 @@ void pal_apply_shaders_by_oam_palette_idx(u8 oam_pal_idx);
  **/
 void pal_alpha_blending(u16 start_color, u16 number_colors, u8 alpha, color_t overlay);
 
+
+enum {
+    GAMMA_NONE,
+    GAMMA_NORMAL,
+    GAMMA_ALTERNATIVE
+} gamma_types;
+
 /**
  * Applies a gamma shift to a set of colors using the pal_restore to create colors in pals.
  * @param pal_idx the first palatte that is affected by the gamma shift
@@ -157,6 +164,13 @@ void pal_alpha_blending(u16 start_color, u16 number_colors, u8 alpha, color_t ov
  * @param gamma the gamma value
  **/
 void pal_gamma_shift(u8 pal_idx, u8 number_pals, s8 gamma);
+
+/**
+ * Gets the gamma type of a palette.
+ * @param pal_idx the palette to check (0-31)
+ * @return the gamma type used for the palette (adaptive to dynamic overworlds)
+ **/
+u8 palette_get_gamma_type(u8 pal_idx);
 
 /**
  * Applies fading effects to the oam palette.

@@ -206,3 +206,177 @@ _blxr1:
     ldr r3, =player_npc_move | 1
     bx r3
     .pool
+
+
+
+// Dynamic overworld palettes
+
+/** 
+// Don't load palettes beforehand...
+.org 0x0805f5e8 // player_npc_load_reflection_palettes
+    bx lr
+
+.org 0x0805f658 // effect_load_reflection_palettes
+    bx lr
+
+.org 0x080db0e8
+    bx lr
+
+.org 0x080db144
+    bx lr
+
+.org 0x0805f092
+    b 0x0805f09e
+**/
+
+
+// Prevent auto-load of overworld palettes
+.org 0x0805fecc
+    ldr r1, =overworld_npc_palettes_initialize | 1
+    bx r1
+    .pool
+
+.org 0x0805f4b0
+    ldr r1, =overworld_npc_palette_load | 1
+    bx r1
+    .pool
+
+// When creating a new npc, don't force a palette to a slot. Instead properly allocate a palette
+.org 0x0805e5de
+    mov r0, r7 // oam template
+    ldr r1, =overworld_npc_load_palette_by_template | 1
+    bl _blxr1
+    b 0x0805e606
+    .pool
+.org 0x0805e618
+    lsl r0, #0 // nop: this replaces setting the template's pal tag to 0xFFFF (instead it associates with the previously allocated pal)
+.org 0x0805e6b0
+    b 0x0805e6c0 // Don't manually change the palette in the oam_attribute2 (let the engine do its job and find the allocated palette)
+
+// When creating a new npc via the createsprite command, do the same as above essentially.
+.org 0x0805ea40 // Nop's out the setting of the template's pal tag to 0xFFFF and allocates the palette
+    ldr r2, = hook_overworld_createsprite_load_npc_palette | 1
+    bx r2
+    .pool
+.org 0x0805eaae // Don't manually change the palette in the oam_attribute (let the engine do its job and find the allocated palette)
+    b 0x0805eac0
+.org 0x0805ead8 // Don't handle reflection palettes here...
+    b 0x0805eae4
+
+// I have no clue when this function is even called...
+.org 0x0805eeb4 // nops the setting 0xFFFF to the templates tag and also allocates the palette
+    mov r0, sp // oam template
+    ldr r1, =overworld_npc_load_palette_by_template | 1
+    bl _blxr1
+    mov r0, sp
+    b 0x0805eee0
+    .pool
+.org 0x0805ef76 // Dont force the slot into the oam attribute
+    b 0x0805ef86
+
+
+.org 0x0805eb78 // This nops the setting 0xFFFF to the templates tag for fame checker and allocates the palette
+    ldr r0, =hook_overworld_fame_checker_npc_palette | 1
+    bx r0
+    .pool
+.org 0x0805ebbe // Don't force the slot into the oam attribute
+    b 0x0805ebd0
+
+
+.org 0x080db078
+    ldr r2, =overworld_npc_load_reflection_palette | 1
+    bx r2
+    .pool
+
+.org 0x080db1dc
+    lsl r0, #0 // Don't update the palette of the reflection constantly...
+
+.org 0x0805e510
+    ldr r1, = npc_free_resources | 1
+    bx r1
+    .pool
+
+.org 0x080dc620
+    ldr r1, =overworld_effect_surfing_pokemon_setup_oam | 1
+    bl _blxr1
+    b 0x080dc650
+    .pool
+
+.org 0x0805f090 // Updating a sprite does not patch the palette, but instead allocates a palette if not present
+    mov r0, r6
+    mov r1, r4
+    ldr r2, =overworld_npc_update_palette | 1
+    bl blxr2
+    b 0x0805f0b2
+    .pool
+.org 0x0805f114
+    lsl r0, #0 // Don't set the palette slot
+
+.org 0x080870e0
+    push {r0}
+    ldr r1, =overworld_effect_fly_allocate_pal | 1
+    bl _blxr1
+    mov r2, r0
+    pop {r0}
+    b 0x080870fc
+    .pool
+
+.org 0x08086cbc
+    mov r0, r4
+    ldr r1, =overworld_effect_fly_allocate_pal | 1 // who would have thought that I could recycle this?
+    bl _blxr1
+    mov r2, r0
+    b 0x08086cce
+    .pool
+
+
+.org 0x080db400
+    ldr r0, =overworld_effect_shadow | 1
+    bx r0
+    .pool
+
+
+.org 0x080825c0
+    ldr r0, =overworld_effect_emotion_bubble_start | 1
+    bx r0
+    .pool
+
+.org 0x080db358
+    push {lr, r4}
+    ldr r4, =overworld_effect_show_warp_arrow | 1
+    bl blxr4_0805bba8
+    pop {r4}
+    pop {r0}
+    bx r0
+    .pool
+
+.org 0x0813f4bc
+    ldr r3, =itemfinder_create_arrow_sprite | 1
+    bx r3
+    .pool
+
+.org 0x0813f65c
+    ldr r0, =item_finder_create_star | 1
+    bx r0
+    .pool
+
+.org (oam_template_item_finder_arrow + 2)
+    .halfword 2000 // Pal tag
+
+.org 0x084658c0
+    .word gfx_item_finder_arrowTiles 
+
+.org 0x0813f49c
+    ldr r0, =item_finder_load_gfx_and_pal | 1
+    bx r0
+    .pool
+
+.org 0x0813f4ac
+    ldr r0, =item_finder_free_gfx_and_pal | 1
+    bx r0
+    .pool
+
+.org 0x0807a6ac
+    ldr r1, =overworld_weather_static_fog_palette_affected | 1
+    bx r1
+    .pool

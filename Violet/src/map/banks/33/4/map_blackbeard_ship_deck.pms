@@ -4,7 +4,7 @@
 		"events": {
 			"person_cnt": 25,
 			"warp_cnt": 4,
-			"trigger_cnt": 0,
+			"trigger_cnt": 1,
 			"signpost_cnt": 1,
 			"persons": [
 				{
@@ -15,7 +15,7 @@
 					"x": "20",
 					"y": "40",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -24,7 +24,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": "ow_script_blackbeard_ship_deck_person0",
-					"flag": 0,
+					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
 						"species": 0
@@ -47,7 +47,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
 						"species": 0
@@ -59,9 +59,9 @@
 					"script_std": 0,
 					"field_3": 0,
 					"x": "19",
-					"y": "41",
+					"y": "40",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -70,7 +70,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
 						"species": 0
@@ -84,7 +84,7 @@
 					"x": "20",
 					"y": "41",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -93,7 +93,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
 						"species": 0
@@ -617,7 +617,19 @@
 					"target_bank": "33"
 				}
 			],
-			"triggers": [],
+			"triggers": [
+				{
+					"x": "38",
+					"y": "26",
+					"level": 0,
+					"field_5": 0,
+					"var": 0,
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": 0
+				}
+			],
 			"signposts": [
 				{
 					"x": "72",
@@ -637,7 +649,7 @@
 				}
 			]
 		},
-		"levelscripts": 0,
+		"levelscripts": "map_blackbeard_ship_deck_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

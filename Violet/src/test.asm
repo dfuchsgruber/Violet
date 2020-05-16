@@ -34,6 +34,13 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setflag 0x820
+	setflag 0x821
+	setflag 0x822
+	setflag 0x823
+	setflag 0x824
+	end
+
 	// setvar BATTLE_SONG_OVERRIDE MUS_LUCIUS_BATTLE
     trainerbattlelosable 0x9 0x15e 0x5 str_beforea str_beforeb
 	end

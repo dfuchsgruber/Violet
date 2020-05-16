@@ -3,7 +3,7 @@
 		"footer": "map_footer_blackbeard_ship_cabin",
 		"events": {
 			"person_cnt": 3,
-			"warp_cnt": 12,
+			"warp_cnt": 13,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -95,7 +95,7 @@
 					"target_bank": "33"
 				},
 				{
-					"x": "2",
+					"x": "1",
 					"y": "22",
 					"level": 0,
 					"target_warp_idx": 0,
@@ -173,6 +173,14 @@
 					"target_warp_idx": "14",
 					"target_map": "6",
 					"target_bank": "33"
+				},
+				{
+					"x": "2",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "0",
+					"target_bank": "3"
 				}
 			],
 			"triggers": [],

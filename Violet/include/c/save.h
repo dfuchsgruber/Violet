@@ -21,6 +21,7 @@
 #include "pokemon/roamer.h"
 #include "item/item_effect.h"
 #include "trainer/virtual.h"
+#include "overworld/palette.h"
 
 #define GP_STACK_SIZE 16
 

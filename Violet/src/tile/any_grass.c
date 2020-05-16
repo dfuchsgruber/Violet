@@ -122,7 +122,7 @@ static graphic rock_climb_sky_island_graphics[] = {
 };
 
 static oam_template rock_climb_sky_island_template = {
-		0xFFFF, 0x7732, &rock_climb_sprite, rock_climb_gfx_anim_table, rock_climb_sky_island_graphics,
+		0xFFFF, 0x1084, &rock_climb_sprite, rock_climb_gfx_anim_table, rock_climb_sky_island_graphics,
 		oam_rotscale_anim_table_null, oam_null_callback
 };
 
@@ -226,3 +226,6 @@ u8 tile_any_grass_init(coordinate_t *pos){
     return 64;
 }
 
+bool tag_is_ground_effect(u16 tag) {
+    return tag >= 0x1000 && tag < 0x1100; // If we ever need other ground effect tags, we need to add them here...
+}

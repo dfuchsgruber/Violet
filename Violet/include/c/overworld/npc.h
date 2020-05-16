@@ -548,4 +548,13 @@ void player_npc_controll_biking(u8 direction, key keys_new, key keys_held);
  **/
 void player_npc_controll_not_biking(u8 direction, key keys_held);
 
+/**
+ * Gets the npc idx of a person on a certain map.
+ * @param person_idx the idx of the person to get
+ * @param bank the bank on which the person is
+ * @param map_idx the map on which the person is
+ * @return the npc_idx associated with the person or 16 on failure
+ **/
+u8 npc_get_by_person_idx(u8 person_idx, u8 bank, u8 map_idx);
+
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

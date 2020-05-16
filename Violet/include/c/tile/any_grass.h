@@ -58,4 +58,11 @@ u8 *any_grass_player_step_null();
  */
 void overworld_effect_oam_callback_grass(oam_object *self);
 
+/**
+ * Checks if a palette tag is associated with any ground effect
+ * @param tag the tag to check
+ * @return if the palette tag is associated with a ground effect
+ **/
+bool tag_is_ground_effect(u16 tag);
+
 #endif /* INCLUDE_C_TILE_ANY_GRASS_H_ */

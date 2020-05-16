@@ -6,6 +6,7 @@
 #include "bios.h"
 #include "dns.h"
 #include "debug.h"
+#include "tile/any_grass.h"
 
 color_t overworld_weather_static_fog_get_overlay_color() {
     color_t fog_overlay = {.rgb = {.red = 28, .green = 31, .blue = 28}};
@@ -13,6 +14,18 @@ color_t overworld_weather_static_fog_get_overlay_color() {
         fog_overlay = color_blend_and_multiply(fog_overlay, dns_get_overlay(pal_shaders), dns_get_alpha(pal_shaders));
     }
     return fog_overlay;
+}
+
+bool overworld_weather_static_fog_palette_affected(u8 pal_idx) {
+    // The vanilla system is kinda dumb... It enqueues pals that are affected but never dequeues them
+    // This is not suitable for a completely dynamic system. However we can assume that only ground effects
+    // will be affected 
+    if (pal_idx < 16)
+        return false;
+    u16 tag = oam_palette_get_tag((u8)(pal_idx - 16));
+    if (tag == 0xFFFF)
+        return false;
+    return tag_is_ground_effect(tag);
 }
 
 void pal_oam_apply_fading(u8 oam_pal_idx) {

@@ -49,7 +49,10 @@ typedef struct overworld_sprite {
     u16 size; //in bytes, e.g. for 32x16 := 0x100
     u16 width;
     u16 height;
-    u8 mirror_pal;
+    u8 palette_slot : 4;
+    u8 shadow_size : 2;
+    u8 inanimate : 1;
+    u8 disable_reflection : 1; // unused in violet
     u8 field_D;
     u8 field_E;
     u8 field_F;
@@ -771,5 +774,22 @@ extern const u8 gfx_ow_luckyTiles[];
  * @return the picture of the player
  **/
 u8 player_get_overworld_picture(u8 context);
+
+
+/**
+ * Finds the overworld_sprite structure of a picture idx.
+ * @param picture the picture of the overworld
+ * @return sprite the overworld_sprite structure
+ **/
+overworld_sprite *overworld_get(u16 picture);
+
+/**
+ * Translates map coordinates to coordinates for an oam.
+ * @param map_x the x on the map in blocks
+ * @param map_y the y on the map in blocks
+ * @param oam_x resulting oam x coordinate
+ * @param oam_y resulting oam y coordinate
+ **/
+void map_position_to_oam_position(s16 map_x, s16 map_y, s16 *oam_x, s16 *oam_y);
 
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */

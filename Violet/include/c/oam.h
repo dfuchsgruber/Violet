@@ -234,6 +234,13 @@ u16 oam_palette_get_tag(u8 pal_id);
 void oam_palette_free(u16 tag);
 
 /**
+ * Loads (and possibly allocates) a oam palette, if it is not already present.
+ * @param p the palettes struct, referring to an uncompressed color array
+ * @return the idx of the palette or 0xFF on failure
+ **/
+u8 oam_palette_load_if_not_present(palette *p);
+
+/**
  * Clears an oam object (but does not free resources held by the object).
  * @param oam The oam object to clear
  */

@@ -21,7 +21,7 @@
 
 
 int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5) {
-    dprintf("Player z %d\n", player->height.current);
+    // dprintf("Player z %d\n", player->height.current);
     (void) param_5; // unused in fire red
     int collision = npc_attempt_diagonal_move(player, x, y, direction);
     if (collision == COLLISION_HEIGHT_MISMATCH && npc_player_attempt_transition_water_to_land(x, y, direction)) {

@@ -107,6 +107,8 @@
         "signpost_types.h": "c",
         "healingplaces.h": "c",
         "dma.h": "c",
-        "attack_results.h": "c"
+        "attack_results.h": "c",
+        "palette.h": "c",
+        "any_grass.h": "c"
     }
 }
