@@ -337,8 +337,8 @@ _blxr1:
 
 
 .org 0x080825c0
-    ldr r0, =overworld_effect_emotion_bubble_start | 1
-    bx r0
+    ldr r3, =overworld_effect_emotion_bubble_start | 1
+    bx r3
     .pool
 
 .org 0x080db358
@@ -379,4 +379,30 @@ _blxr1:
 .org 0x0807a6ac
     ldr r1, =overworld_weather_static_fog_palette_affected | 1
     bx r1
+    .pool
+
+.org 0x0805e758
+    ldr r0, =hook_npc_create_by_person | 1
+    bx r0
+    .pool
+
+.org 0x0805e5d4
+    ldr r2, =hook_npc_create_by_npc | 1
+    bx r2
+    .pool
+
+.org 0x0805ee88
+    ldr r2, =hook_npc_create_by_npc2 | 1
+    bx r2
+    .pool
+
+.org 0x0805eea4
+    ldr r0, =hook_npc_create_oam_template | 1
+    bx r0
+    .pool
+
+
+.org 0x0805e960
+    ldr r3, =overworld_create_oam_template_by_person | 1
+    bx r3
     .pool

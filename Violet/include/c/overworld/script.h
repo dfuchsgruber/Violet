@@ -136,4 +136,10 @@ bool multichoice_grid(u8 x, u8 y, u8 choice, u8 forced_choice, u8 num_columns);
  */
 u16 overworld_script_giveegg(u16 species);
 
+/**
+ * Checks if an ow script is active (called script context 1 in poke*)
+ * @return if any script is active
+ **/
+bool ow_script_is_active();
+
 #endif /* INCLUDE_C_OVERWORLD_SCRIPT_H_ */

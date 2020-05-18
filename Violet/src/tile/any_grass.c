@@ -71,20 +71,22 @@ graphic cloud_grass_graphics[] = {
 };
 
 palette any_grass_pals[] = {
-    [ANY_GRASS_ASH] = {gfx_grass_ashPal, 0x1080, 0},
-    [ANY_GRASS_GRAVEYARD] = {gfx_graveyard_grassPal, 0x1081, 0},
-    [ANY_GRASS_HAWEILAND] = {gfx_grass_haweilandPal, 0x1082, 0},
-    [ANY_GRASS_CLOUD] = {gfx_grass_cloudPal, 0x1083, 0},
+    [ANY_GRASS_ASH] = {gfx_grass_ashPal, TAG_ANY_GRASS_ASH, 0},
+    [ANY_GRASS_GRAVEYARD] = {gfx_graveyard_grassPal, TAG_ANY_GRASS_GRAVEYARD, 0},
+    [ANY_GRASS_HAWEILAND] = {gfx_grass_haweilandPal, TAG_ANY_GRASS_HAWEILAND, 0},
+    [ANY_GRASS_CLOUD] = {gfx_grass_cloudPal, TAG_ANY_GRASS_CLOUD, 0},
 };
 
+
+
 oam_template any_grass_templates[] = {
-    [ANY_GRASS_ASH] = {0xFFFF, 0x1080, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    [ANY_GRASS_ASH] = {0xFFFF, TAG_ANY_GRASS_ASH, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     ash_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
-    [ANY_GRASS_GRAVEYARD] = {0xFFFF, 0x1081, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    [ANY_GRASS_GRAVEYARD] = {0xFFFF, TAG_ANY_GRASS_GRAVEYARD, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     graveyard_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
-    [ANY_GRASS_HAWEILAND] = {0xFFFF, 0x1082, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    [ANY_GRASS_HAWEILAND] = {0xFFFF, TAG_ANY_GRASS_HAWEILAND, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     haweiland_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
-    [ANY_GRASS_CLOUD] = {0xFFFF, 0x1083, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
+    [ANY_GRASS_CLOUD] = {0xFFFF, TAG_ANY_GRASS_CLOUD, &overworld_effect_grass_sprite, overworld_effect_gfx_anim_table_grass,
     cloud_grass_graphics, oam_rotscale_anim_table_null, overworld_effect_oam_callback_grass},
 };
 
@@ -108,7 +110,7 @@ sprite rock_climb_sprite = {
 };
 
 oam_template rock_climb_template = {
-		0xFFFF, 0x7731, &rock_climb_sprite, rock_climb_gfx_anim_table, rock_climb_graphics,
+		0xFFFF, TAG_ROCK_CLIMB, &rock_climb_sprite, rock_climb_gfx_anim_table, rock_climb_graphics,
 		oam_rotscale_anim_table_null, oam_null_callback
 };
 
@@ -127,11 +129,11 @@ static oam_template rock_climb_sky_island_template = {
 };
 
 palette rock_climb_pal = {
-		gfx_rock_climb_animPal, 0x7731, 0
+		gfx_rock_climb_animPal, TAG_ROCK_CLIMB, 0
 };
 
 palette rock_climb_sky_island_pal = {
-		gfx_rock_climb_sky_island_animPal, 0x7732, 0
+		gfx_rock_climb_sky_island_animPal, TAG_ROCK_CLIMB_SKY_ISLANG, 0
 };
 
 graphic shallow_water_graphics[] = {

@@ -109,6 +109,7 @@
         "dma.h": "c",
         "attack_results.h": "c",
         "palette.h": "c",
-        "any_grass.h": "c"
+        "any_grass.h": "c",
+        "event.h": "c"
     }
 }

@@ -659,7 +659,7 @@
 				},
 				{
 					"target_index": 38,
-					"picture": 0,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
 					"x": "71",
@@ -679,7 +679,7 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": "POKEMON_RELICANTH"
 					}
 				},
 				{

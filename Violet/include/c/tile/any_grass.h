@@ -19,6 +19,16 @@ enum {
     ANY_GRASS_CLOUD,
 };
 
+enum {
+    TAG_ANY_GRASS_ASH = 0x1080,
+    TAG_ANY_GRASS_GRAVEYARD,
+    TAG_ANY_GRASS_HAWEILAND,
+    TAG_ANY_GRASS_CLOUD,
+    TAG_ROCK_CLIMB,
+    TAG_ROCK_CLIMB_SKY_ISLANG,
+    TAG_PLAYER_PALETTE_VANILLA,
+} any_grass_tags;
+
 typedef struct{
     tileset *tileset; // NULL if on all tilesets
     u8 triggered_by_behavior;

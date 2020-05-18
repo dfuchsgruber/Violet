@@ -116,13 +116,27 @@ extern oam_template gp_oam_template; // Multi-use oam template
 #define OAM_FLAG_GFX_ROTSCALE_ANIM_END 0x2000
 #define OAM_FLAG_SPRITES 0x4000
 
+typedef struct {
+  u8 x;
+  u8 y;
+  u16 shape : 2;
+  u16 size : 2;
+  u16 tile_offset : 10;
+  u16 priority : 2;
+} subsprite;
+
+typedef struct {
+  u8 num_subsprites;
+  subsprite *subsprites;
+} subsprite_table;
+
 typedef struct oam_object {
     sprite final_oam;
     gfx_frame **animation_table;
     u32 *gfx_table;
     u32 *rotscale_table;
     oam_template *oam_template;
-    u32 field18;
+    subsprite_table *subsprites;
     void (*callback)(oam_object*);
     s16 x;
     s16 y;

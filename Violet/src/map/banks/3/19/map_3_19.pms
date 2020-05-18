@@ -238,7 +238,7 @@
 					"y": 8,
 					"target_index": 11,
 					"field_3": 0,
-					"picture": 101,
+					"picture": "101",
 					"flag": "ROUTE_1_EGG",
 					"x": 33,
 					"field_2": 0,

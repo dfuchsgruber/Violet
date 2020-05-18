@@ -557,4 +557,6 @@ void player_npc_controll_not_biking(u8 direction, key keys_held);
  **/
 u8 npc_get_by_person_idx(u8 person_idx, u8 bank, u8 map_idx);
 
+extern void (*npc_movements_oam_callbacks[])(oam_object*);
+
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

@@ -19,21 +19,24 @@
 #include "types.h"
 #include "oam.h"
 
-extern u8 ow_anim_standard_npc[];
-extern u8 ow_anim_ho_oh[];
-extern u8 ow_anim_hiro[];
-extern u8 ow_anim_hiro_sit[];
-extern u8 ow_anim_hiro_call[];
-extern u8 ow_anim_hiro_rod[];
-extern u8 ow_anim_hiro_call2[];
-extern u8 ow_anim_hiro_bike[];
-extern u8 ow_anim_none[];
+#define OVERWORLD_SPRITE_POKEMON_32_32 238
+#define OVERWORLD_SPRITE_POKEMON_64_64 239
 
-extern u8 ow_formation_16_32[];
-extern u8 ow_formation_128_64[];
-extern u8 ow_formation_32_32[];
-extern u8 ow_formation_64_64[];
-extern u8 ow_formation_16_16[];
+extern gfx_frame *ow_anim_standard_npc[];
+extern gfx_frame *ow_anim_ho_oh[];
+extern gfx_frame *ow_anim_hiro[];
+extern gfx_frame *ow_anim_hiro_sit[];
+extern gfx_frame *ow_anim_hiro_call[];
+extern gfx_frame *ow_anim_hiro_rod[];
+extern gfx_frame *ow_anim_hiro_call2[];
+extern gfx_frame *ow_anim_hiro_bike[];
+extern gfx_frame *ow_anim_none[];
+
+extern subsprite_table ow_formation_16_32;
+extern subsprite_table ow_formation_128_64;
+extern subsprite_table ow_formation_32_32;
+extern subsprite_table ow_formation_64_64;
+extern subsprite_table ow_formation_16_16;
 
 extern sprite ow_final_oam_16_32;
 extern sprite ow_final_oam_128_64;
@@ -57,8 +60,8 @@ typedef struct overworld_sprite {
     u8 field_E;
     u8 field_F;
     sprite *final_oam; //NSE := Pointer 1
-    void *formation; //NSE := Pointer 2
-    void *animation; //NSE := Anim Pointer
+    subsprite_table *subsprite_table; //NSE := Pointer 2
+    gfx_frame **gfx_animation; //NSE := Anim Pointer
     graphic *graphics; //NSE := equals Pointer 3
     rotscale_frame **rotscales; //No NSE equal
 } overworld_sprite;
@@ -791,5 +794,11 @@ overworld_sprite *overworld_get(u16 picture);
  * @param oam_y resulting oam y coordinate
  **/
 void map_position_to_oam_position(s16 map_x, s16 map_y, s16 *oam_x, s16 *oam_y);
+
+/**
+ * Callback that handles (probably) applymovement stuff and movements for an npc while a script is active
+ * @param self self-reference
+ **/
+void npc_oam_callback_script_active (oam_object *self);
 
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */
