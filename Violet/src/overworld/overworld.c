@@ -25,15 +25,15 @@ void map_reset_temporary_flags_and_vars() {
     clearflag(FLAG_PLAYER_ON_LADDER);
 }
 
-
-
 overworld_sprite *overworld_get_by_person(map_event_person *person) {
     if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_32_32) {
         dprintf("Reqeusting 32x32 mon overworld\n");
-        return overworld_get(170); // For testing: This is the deoxys sprite
+        return overworld_sprite_get_by_species(person->value);
+        // return overworld_get(170); // For testing: This is the deoxys sprite
     }
     if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_64_64) {
-        return overworld_get(OVERWORLD_SPRITE_POKEMON_64_64); // For testing: This is the groudon sprite
+        return overworld_sprite_get_by_species(person->value);
+        // return overworld_get(OVERWORLD_SPRITE_POKEMON_64_64); // For testing: This is the groudon sprite
     }
     dprintf("Falling back to default sprite showing %d\n", person->overworld_index);
     return overworld_get(person->overworld_index);
@@ -52,7 +52,7 @@ overworld_sprite *overworld_get_by_npc(npc *n) {
 
 static bool oam_palette_tag_is_npc_palette(u16 tag) {
     if (tag >= 0x1100 && tag < 0x1120) return true;
-    // TODO: adapt for dynamic overworlds some kind of check, if a palette belongs to a npc
+    if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) return true;
     return false;
 }
 
@@ -80,8 +80,9 @@ void overworld_npc_palettes_initialize(u8 mode) {
 }
 
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
-    // TODO: dynamic tags from a more efficient table?
-
+    if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
+        return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
+    }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
     if (idx != 0xFF) {
@@ -362,7 +363,7 @@ static void overworld_create_oam_template_by_overworld_sprite_with_callback(over
     template->pal_tag = sprite->pal_tag;
     template->oam = sprite->final_oam;
     template->animation = sprite->gfx_animation;
-    template->rotscale = sprite->rotscales;
+    template->rotscale = sprite->rotscale_animation;
     template->graphics = sprite->graphics;
     if (ow_script_is_active()) // We don't give a damn about this quest log stuff
         template->callback = npc_oam_callback_script_active;

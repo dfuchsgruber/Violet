@@ -110,6 +110,7 @@
         "attack_results.h": "c",
         "palette.h": "c",
         "any_grass.h": "c",
-        "event.h": "c"
+        "event.h": "c",
+        "movements.h": "c"
     }
 }

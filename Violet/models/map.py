@@ -22,6 +22,8 @@ person_script_std_type = agb.types.UnionType({
     lambda project, context, parents: {
         'PERSON_ITEM' : 'item',
         'PERSON_EGG' : 'species',
+        'PERSON_AGGRESSIVE_POKEMON' : 'species',
+        'PERSON_POKEMON' : 'species',
     }.get(parents[-1]['script_std'], 'item')
 )
 map_flags_type = agb.types.BitfieldType('u8', [

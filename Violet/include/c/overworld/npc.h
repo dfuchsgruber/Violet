@@ -115,6 +115,16 @@ u8 npc_get_collision(npc *n, s16 x, s16 y, u8 direction);
  */
 u8 npc_sees_player(npc *n);
 
+
+/**
+ * Makes a npc face into a direction.
+ * @param n the npc instance
+ * @param target the oam object associated with the npc
+ * @param direction the direciton in which to face 
+ * @return whether the animation has finished
+ **/
+bool npc_movement_animation_set_direction(npc *n, oam_object *target, u8 direction);
+
 /**
  * Initializes walking down slowly.
  * @param n the npc instance

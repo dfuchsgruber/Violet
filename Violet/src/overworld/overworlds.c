@@ -1440,7 +1440,7 @@ overworld_sprite ow_lucius = {
     oam_rotscale_anim_table_null
 };
 
-static graphic overworld_sprite_lucky[] = {
+graphic overworld_sprite_lucky[] = {
 	{gfx_ow_luckyTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_luckyTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
 	{gfx_ow_luckyTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
@@ -1458,6 +1458,20 @@ overworld_sprite ow_lucky = {
 	&ow_final_oam_16_32, &ow_formation_16_32,
 	ow_anim_standard_npc, overworld_sprite_lucky, 
 	oam_rotscale_anim_table_null
+};
+
+static overworld_sprite ow_pokemon_32_32 = {
+	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
+	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
+	.final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_pokemon_animations,
+	.graphics = overworld_sprite_lucky, .rotscale_animation = oam_rotscale_anim_table_null,
+};
+
+static overworld_sprite ow_pokemon_64_64 = {
+	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
+	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(64, 64), .width = 64, .height = 64,
+	.final_oam = &ow_final_oam_64_64, .subsprite_table = &ow_formation_64_64, .gfx_animation = ow_pokemon_animations,
+	.graphics = NULL, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
 //The overworld table
@@ -1659,8 +1673,8 @@ overworld_sprite *overworld_sprites[] = {
 		&ow_lucky,
 
 
-	[OVERWORLD_SPRITE_POKEMON_32_32] = &ow_deoxys_normal, // dummy with size 32x32
-	[OVERWORLD_SPRITE_POKEMON_64_64] = &ow_moltres, // dummy with size 64x64
+	[OVERWORLD_SPRITE_POKEMON_32_32] = &ow_pokemon_32_32, // dummy with size 32x32
+	[OVERWORLD_SPRITE_POKEMON_64_64] = &ow_pokemon_64_64, // dummy with size 64x64
 
 };
 

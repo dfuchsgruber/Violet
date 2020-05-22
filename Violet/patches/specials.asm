@@ -241,3 +241,4 @@ special_table equ 0x0815FCC0
 
 .org special_table + 0x138 * 4
                 .word wild_battle_legendary_initialize | 1
+

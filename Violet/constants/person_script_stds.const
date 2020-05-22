@@ -3,6 +3,8 @@
 	"values": {
 		"PERSON_SCRIPT": 0,
 		"PERSON_ITEM": 1,
-		"PERSON_EGG": 2
+		"PERSON_EGG": 2,
+		"PERSON_POKEMON" : 3,
+		"PERSON_AGGRESSIVE_POKEMON" : 4
 	}
 }
