@@ -1463,14 +1463,14 @@ overworld_sprite ow_lucky = {
 static overworld_sprite ow_pokemon_32_32 = {
 	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
-	.final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_pokemon_animations,
+	.final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
 	.graphics = overworld_sprite_lucky, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
 static overworld_sprite ow_pokemon_64_64 = {
 	.tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE,
 	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(64, 64), .width = 64, .height = 64,
-	.final_oam = &ow_final_oam_64_64, .subsprite_table = &ow_formation_64_64, .gfx_animation = ow_pokemon_animations,
+	.final_oam = &ow_final_oam_64_64, .subsprite_table = &ow_formation_64_64, .gfx_animation = ow_anim_standard_npc,
 	.graphics = NULL, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 

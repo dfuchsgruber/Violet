@@ -124,6 +124,11 @@ blxr4_0805bba8:
 .org overworld_script_commands + 4 * 0xA2
     .word overworld_script_command_setmaptile | 1
 
+.org 0x0809d3d4
+    ldr r3, =overworld_script_show_pokemon_picture | 1
+    bx r3
+    .pool
+
 // Overworld script std strings
 .org 0x0806BE74
 	.word ow_script_string_stds

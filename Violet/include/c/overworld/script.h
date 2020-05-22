@@ -142,4 +142,10 @@ u16 overworld_script_giveegg(u16 species);
  **/
 bool ow_script_is_active();
 
+/**
+ * Callback that shows a pokemon pic.
+ * @param self self-reference
+ **/
+void overworld_script_callback_show_pokemon_picture(u8 self);
+
 #endif /* INCLUDE_C_OVERWORLD_SCRIPT_H_ */

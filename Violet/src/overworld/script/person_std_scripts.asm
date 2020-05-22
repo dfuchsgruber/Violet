@@ -19,13 +19,11 @@ ow_script_person_pokemon:
 	lock
 	faceplayer
 	bufferpokemon 0 0x8000
-	cry 0x8000 0
 	showpokepic 0x8000 11 2
 	loadpointer 0 str_mon
 	callstd MSG_KEEPOPEN
 	waitcry
 	hidepokepic
-	
 	release
 	end
 

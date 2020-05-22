@@ -206,6 +206,14 @@ extern "C" {
      */
     void tbox_context_init_border_set_style(u8 box_id, u16 set_displace, u16 dst_color);
 
+
+    /**
+     * Loads gfx and palette of the standard border to a tbox.
+     * @param box_idx the tbox to load the border to
+     * @param copy_to_vram weather the loaded gfx is to be synched with vram by enqueuing a copy request
+     **/
+    void tbox_init_border_standard_style(u8 box_idx, bool copy_to_vram);
+
 #define TBOX_MESSAGE_BORDER_NUM_TILES 0x8
     /**
      * Initializes the border of a textbox to display messages with default style.
@@ -457,6 +465,16 @@ extern "C" {
      * @param offset to which color to load it at.
      **/
     void tbox_load_std_frame_palette_at(u16 offset);
+
+    /**
+     * Creates a new tbox on a given box measure.
+     * @param x upper left coordinate
+     * @param y upper left coordinate
+     * @param width the width of the box
+     * @param height the height of the box
+     * @return the idx of the tbox created
+     **/
+    u8 tbox_new_by_box(u8 x, u8 y, u8 width, u8 height);
 
     extern u8 overworld_tbox_state;
 

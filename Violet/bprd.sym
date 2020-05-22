@@ -837,3 +837,7 @@ npc_oam_callback_script_active = 0x08112530 | 1;
 npc_movements_oam_callbacks = 0x0839fa8c;
 gfx_npc_player_palette_vanilla = 0x0835B82C;
 npc_movement_animation_set_direction = 0x080645f4 | 1;
+overworld_script_callback_show_pokemon_picture = 0x0809d36c | 1;
+pokemon_oam_new = 0x080838d4 | 1;
+tbox_new_by_box = 0x0809d738 | 1;
+tbox_init_border_standard_style = 0x080f79e4 | 1;

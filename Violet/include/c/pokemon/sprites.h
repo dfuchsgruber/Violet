@@ -41,6 +41,15 @@ void pokemon_load_gfx_by_graphic(graphic *g, void *dst, u16 species, pid_t pid);
 void pokemon_spinda_draw_pattern(u16 species,pid_t pid, void *dst,bool load_frontsprite);
 
 /**
+ * Creates an oam with the sprite of a pokemon.
+ * @param species the species
+ * @param x horizontal position
+ * @param y vertical position
+ * @return the oam idx created
+ **/
+u8 pokemon_oam_new(u16 species, s16 x, s16 y);
+
+/**
  * Returns the palette that matches a pokemon.
  * @param p the pokemon to retrieve the palette of
  * @return pointer to the palette structure

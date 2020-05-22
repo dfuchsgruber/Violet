@@ -32,7 +32,6 @@ extern gfx_frame *ow_anim_hiro_rod[];
 extern gfx_frame *ow_anim_hiro_call2[];
 extern gfx_frame *ow_anim_hiro_bike[];
 extern gfx_frame *ow_anim_none[];
-gfx_frame *ow_pokemon_animations[20];
 
 extern subsprite_table ow_formation_16_32;
 extern subsprite_table ow_formation_128_64;
