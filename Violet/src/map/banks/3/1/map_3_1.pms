@@ -659,11 +659,11 @@
 				},
 				{
 					"target_index": 38,
-					"picture": "238",
+					"picture": "55",
 					"field_2": 0,
-					"field_3": 0,
-					"x": "67",
-					"y": "30",
+					"field_3": "33",
+					"x": "71",
+					"y": "29",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_HERUMGEHEN",
 					"behaviour_range": {
@@ -671,12 +671,12 @@
 						"y": "0"
 					},
 					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_person_pokemon",
-					"flag": 0,
+					"alert_radius": "1",
+					"script": "ow_script_test",
+					"flag": "0x1e",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_POKEMON",
+					"script_std": "PERSON_SCRIPT",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_MILOTIC"

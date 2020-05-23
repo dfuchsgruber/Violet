@@ -11,6 +11,7 @@
 .global ow_script_trainerbattle_double_dont_check_enough_pokemon
 .global ow_script_trainerbattle_pirate_challange
 .global ow_script_trainerbattle_pirate_challange_after_approach
+.global ow_script_aggressive_wild_pokemon_challange
 
 challange_loop:
     closeonkeypress
@@ -62,6 +63,15 @@ ow_script_trainerbattle_pirate_challange_after_approach:
     setvar VAR_BBSHIP_THROWN_INTO_CELL 2
     warp 33 0 4 0 0
     waitstate
+    end
+
+ow_script_aggressive_wild_pokemon_challange:
+    lock
+    sound 0x15
+    special SPECIAL_TRAINER_APPROACH
+    waitstate
+    special SPECIAL_TRAINER_CHALLANGE_PLAYER_FACING
+    goto ow_script_aggressive_wild_do_battle
     end
 
 .ifdef LANG_GER

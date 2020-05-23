@@ -12,6 +12,31 @@
 #include "color.h"
 #include "bios.h"
 #include "map/event.h"
+#include "prng.h"
+
+static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
+    switch (flag) {
+        case FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0:
+        case FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1:
+        case FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_2:
+        case FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_3:
+            return 100; // 0-3 spawn always
+        case FLAG_AGGRESIVE_WILD_SPAWN_75_PERCENT:
+            return 75;
+        case FLAG_AGGRESIVE_WILD_SPAWN_50_PERCENT:
+            return 50;
+        case FLAG_AGGRESIVE_WILD_SPAWN_25_PERCENT:
+            return 25;
+        case FLAG_AGGRESIVE_WILD_SPAWN_5_PERCENT:
+            return 5;
+    }
+    return 0;
+}
+
+static u16 aggresive_wild_pokemon_flags[] = {
+    FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0, FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1, FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_2, FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_3,
+    FLAG_AGGRESIVE_WILD_SPAWN_75_PERCENT, FLAG_AGGRESIVE_WILD_SPAWN_50_PERCENT, FLAG_AGGRESIVE_WILD_SPAWN_25_PERCENT, FLAG_AGGRESIVE_WILD_SPAWN_5_PERCENT
+};
 
 void map_reset_temporary_flags_and_vars() {
     memset(save1->flags, 0, 4); // Flags 0 - 32
@@ -23,6 +48,15 @@ void map_reset_temporary_flags_and_vars() {
     clearflag(0x842);
     setflag(POKERADAR_POKEMON_SPAWNED);
     clearflag(FLAG_PLAYER_ON_LADDER);
+    for (size_t i = 0; i < ARRAY_COUNT(aggresive_wild_pokemon_flags); i++) {
+        u16 flag = aggresive_wild_pokemon_flags[i];
+        if ((rnd16() % 100) < aggressive_wild_pokemon_get_spawn_rate(flag)) {
+            clearflag(flag);
+        } else {
+            setflag(flag);
+        }
+    }
+
 }
 
 overworld_sprite *overworld_get_by_person(map_event_person *person) {

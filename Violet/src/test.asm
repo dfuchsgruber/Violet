@@ -34,6 +34,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	warp 33 4 0 0 0
+	waitstate
+	end
 	setflag 0x820
 	setflag 0x821
 	setflag 0x822

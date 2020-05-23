@@ -555,6 +555,13 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 .org 0x0824ff94
 	.word battle_end_turn_handle_battle_continues_wrapper | 1
 
+.org 0x08013cd8
+	ldr r0, = battle_is_running_impossible | 1
+	bx r0
+	.pool
+
+
+
 /** 
 .org 0x08012642
 	ldr r0, =hook_battle_initialize_absent_battlers | 1
@@ -582,3 +589,4 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	b 0x08078088
 	.pool
 **/
+

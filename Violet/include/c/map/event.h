@@ -16,7 +16,7 @@ typedef struct map_event_person {
     u8 target_index; //scripts use this as target reference
     u8 overworld_index; //the picture to be displayed
     u8 script_std;
-    u8 field_3;
+    u8 argument;
     s16 x;
     s16 y;
     u8 level;

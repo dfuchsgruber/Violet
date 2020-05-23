@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_blackbeard_ship_cabin",
 		"events": {
-			"person_cnt": 3,
+			"person_cnt": 4,
 			"warp_cnt": 13,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -74,6 +74,29 @@
 					"value": {
 						"item": "ITEM_WASSERSTEIN",
 						"species": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "12",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_TYRACROC"
 					}
 				}
 			],

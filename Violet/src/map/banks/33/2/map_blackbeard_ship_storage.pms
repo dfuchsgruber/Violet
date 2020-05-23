@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_blackbeard_ship_storage",
 		"events": {
-			"person_cnt": 11,
+			"person_cnt": 13,
 			"warp_cnt": 5,
 			"trigger_cnt": 2,
 			"signpost_cnt": 1,
@@ -258,6 +258,52 @@
 					"value": {
 						"item": "ITEM_HYPERBALL",
 						"species": 0
+					}
+				},
+				{
+					"target_index": 0,
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "45",
+					"x": "39",
+					"y": "35",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
+					"behaviour_range": {
+						"x": "2",
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": "FLAG_BBSHIP_AGGRESIVE_MON_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MAGNAYEN"
+					}
+				},
+				{
+					"target_index": "13",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "12",
+					"y": "14",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_BLICKE_UNTEN__LINKS__RECHTS",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NIDORANM"
 					}
 				}
 			],

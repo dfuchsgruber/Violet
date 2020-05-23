@@ -330,6 +330,12 @@ bool battle_is_double();
 void battle_callback1();
 
 /**
+ * Gets the battle intro type.
+ * @return the intro type used for battling.
+ **/
+u8 battle_get_intro_type();
+
+/**
  * Initializes a battle.
  * @param intro_type the intro type of the battle
  * @param music the music to play during the battle

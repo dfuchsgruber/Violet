@@ -2,11 +2,35 @@
 	"data": {
 		"footer": "map_footer_blackbeard_ship_cells_floor",
 		"events": {
-			"person_cnt": 0,
+			"person_cnt": 1,
 			"warp_cnt": 7,
 			"trigger_cnt": 0,
 			"signpost_cnt": 1,
-			"persons": [],
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": "23",
+					"x": "7",
+					"y": "4",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": "5",
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FIFFYEN"
+					}
+				}
+			],
 			"warps": [
 				{
 					"x": "5",

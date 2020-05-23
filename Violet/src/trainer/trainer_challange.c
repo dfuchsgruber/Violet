@@ -19,6 +19,7 @@
 #include "music.h"
 #include "constants/songs.h"
 #include "battle/state.h"
+#include "constants/person_script_stds.h"
 
 void special_player_facing() {
     coordinate_t position;
@@ -119,9 +120,29 @@ bool trainerbattle_pirate_alert(u8 npc_idx) {
     u8 distance = npc_sees_player(npcs + npc_idx);
     if (distance) {
         *var_access(LASTTALKED) = npcs[npc_idx].overworld_id;
-        dprintf("Lasttalked set to %d\n", *var_access(LASTTALKED));
+        trainer_npc_idx = npc_idx;
         trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1)); 
         overworld_script_init(ow_script_trainerbattle_pirate_challange);
+        overworld_script_set_active();
+        return true;
+    }
+    return false;
+}
+
+extern u8 ow_script_aggressive_wild_pokemon_challange[];
+
+bool trainerbattle_aggressive_wild_pokemon_alert(u8 npc_idx) {
+    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    if (person->script_std != PERSON_AGGRESSIVE_POKEMON) return false;
+    if(checkflag(person->flag)) return false;
+    u8 distance = npc_sees_player(npcs + npc_idx);
+    if (distance) {
+        *var_access(LASTTALKED) = npcs[npc_idx].overworld_id;
+        *var_access(0x8000) = person->value;
+        *var_access(0x8001) = person->argument;
+        trainer_npc_idx = npc_idx;
+        trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1)); 
+        overworld_script_init(ow_script_aggressive_wild_pokemon_challange);
         overworld_script_set_active();
         return true;
     }
@@ -133,12 +154,19 @@ bool trigger_npc_spotting() {
         return false;
     fmem.trainers_cnt = 0;
     fmem.current_trainer = 0;
+
+    // First check for special "spottings", as we don't wany any of those to be mixed with a trainer challange
+    for (u8 i = 0; i < 16; i++) {
+        if (pokeradar_npc_alert(i))
+            return true;
+        if (trainerbattle_pirate_alert(i))
+            return true;
+        if (trainerbattle_aggressive_wild_pokemon_alert(i))
+            return true;
+    }
+
     for (u8 i = 0; i < 16; i++) {
         if ((npcs[i].flags.active & 1) && (npcs[i].trainer_trigger == 1 || npcs[i].trainer_trigger == 3)) {
-            if (pokeradar_npc_alert(i))
-                return true;
-            if (trainerbattle_pirate_alert(i))
-                return true;
             int num = trainerbattle_initialize_by_npc_idx(i);
             if (num == 2) break; // The trainer is a double battle, i.e. don't search for other trainers
             if (num == 0) continue;

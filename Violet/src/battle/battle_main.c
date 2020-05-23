@@ -20,6 +20,11 @@
 #include "superstate.h"
 #include "fading.h"
 #include "trainer/trainer.h"
+#include "constants/item_hold_effects.h"
+#include "constants/abilities.h"
+#include "constants/pokemon_types.h"
+#include "abilities.h"
+
 
 void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
     if ((battle_flags & BATTLE_TWO_TRAINERS) && battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
@@ -222,4 +227,48 @@ void battle_end_turn_handle_battle_continues_wrapper() {
         battle_end_turn_handle_battle_continues();
         BATTLE_STATE2->end_of_turn_handicap_effects_cnt = 0;
     }
+}
+
+u8 battle_is_running_impossible() {
+    u8 hold_effect = item_get_hold_effect(battlers[active_battler].item);
+    if (battlers[active_battler].item == ITEM_ENIGMABEERE)
+        hold_effect = enigma_berries[active_battler].hold_effect;
+    item_target_battler = active_battler;
+    if (hold_effect == HOLD_EFFECT_CAN_ALWAYS_RUN || (battle_flags & BATTLE_LINK) ||
+        battlers[active_battler].ability == ANGSTHASE)
+        return 0;
+    u8 side = battler_is_opponent(active_battler);
+    for (u8 i = 0; i < battler_cnt; i++) {
+        if (side != battler_is_opponent(i) && battlers[i].ability == WEGSPERRE) {
+            battle_scripting.battler_idx = i;
+            defending_battler_ability = battlers[i].ability;
+            battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
+            return 2;
+        }
+        if (side != battler_is_opponent(i) && battlers[i].ability == AUSWEGSLOS
+        && battlers[active_battler].ability != SCHWEBE && battlers[active_battler].type1 != TYPE_FLUG
+        && battlers[active_battler].type2 != TYPE_FLUG) {
+            battle_scripting.battler_idx = i;
+            defending_battler_ability = battlers[i].ability;
+            battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
+            return 2;
+        }
+    }
+    u8 i = ability_execute(ABILITY_CONTEXT_CHECK_FIELD_EXCEPT_CURRENT, active_battler, MAGNETFALLE, 0, 0);
+    if (i != 0 && (battlers[active_battler].type1 == TYPE_STAHL || battlers[active_battler].type2 == TYPE_STAHL)) {
+        battle_scripting.battler_idx = --i;
+        defending_battler_ability = battlers[i].ability;
+        battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 2;
+        return 2;
+    }
+    if (battlers[active_battler].status2 & (STATUS2_ESCAPE_PREVENTATION | STATUS2_WRAPPED) || 
+        (battler_statuses3[active_battler] & STATUS3_ROOTED)) {
+        battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
+        return 1;
+    }
+    if (battle_flags & (BATTLE_AGGRESSIVE_WILD)) {
+        battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
+        return 1;
+    }
+    return 0;
 }

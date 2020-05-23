@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_blackbeard_ship_cabins",
 		"events": {
-			"person_cnt": 14,
+			"person_cnt": 16,
 			"warp_cnt": 22,
 			"trigger_cnt": 0,
 			"signpost_cnt": 23,
@@ -327,6 +327,52 @@
 					"value": {
 						"item": "ITEM_SUPERSCHUTZ",
 						"species": 0
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "4",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN",
+					"behaviour_range": {
+						"x": "2",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHIGGY"
+					}
+				},
+				{
+					"target_index": "16",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "2",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN2",
+					"behaviour_range": {
+						"x": "2",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ENTON"
 					}
 				}
 			],

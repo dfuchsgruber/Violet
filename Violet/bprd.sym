@@ -841,3 +841,4 @@ overworld_script_callback_show_pokemon_picture = 0x0809d36c | 1;
 pokemon_oam_new = 0x080838d4 | 1;
 tbox_new_by_box = 0x0809d738 | 1;
 tbox_init_border_standard_style = 0x080f79e4 | 1;
+battle_get_intro_type = 0x0807fe98 | 1;
