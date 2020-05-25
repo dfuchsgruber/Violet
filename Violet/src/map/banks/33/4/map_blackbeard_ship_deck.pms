@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_blackbeard_ship_deck",
 		"events": {
-			"person_cnt": 37,
+			"person_cnt": 38,
 			"warp_cnt": 4,
 			"trigger_cnt": 1,
 			"signpost_cnt": 1,
@@ -15,7 +15,7 @@
 					"x": "20",
 					"y": "40",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -38,7 +38,7 @@
 					"x": "20",
 					"y": "37",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -61,7 +61,7 @@
 					"x": "19",
 					"y": "40",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -84,7 +84,7 @@
 					"x": "20",
 					"y": "41",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -104,10 +104,10 @@
 					"picture": "176",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "40",
-					"y": "26",
+					"x": "1",
+					"y": "0",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -130,7 +130,7 @@
 					"x": "44",
 					"y": "42",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -153,7 +153,7 @@
 					"x": "44",
 					"y": "45",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -176,7 +176,7 @@
 					"x": "25",
 					"y": "49",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_AUF_UND_AB",
+					"behaviour": "BEHAVIOUR_WALK_UP_AND_DOWN",
 					"behaviour_range": {
 						"x": 0,
 						"y": "5"
@@ -199,7 +199,7 @@
 					"x": "63",
 					"y": "27",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
 					"behaviour_range": {
 						"x": "8",
 						"y": "1"
@@ -222,7 +222,7 @@
 					"x": "69",
 					"y": "44",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_AUF_UND_AB",
+					"behaviour": "BEHAVIOUR_WALK_UP_AND_DOWN",
 					"behaviour_range": {
 						"x": 0,
 						"y": "3"
@@ -245,7 +245,7 @@
 					"x": "25",
 					"y": "33",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_UNTEN_UND_LINKS",
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -268,7 +268,7 @@
 					"x": "18",
 					"y": "48",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -291,7 +291,7 @@
 					"x": "17",
 					"y": "50",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_RECHTS",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -314,7 +314,7 @@
 					"x": "18",
 					"y": "51",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -337,7 +337,7 @@
 					"x": "9",
 					"y": "45",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -360,7 +360,7 @@
 					"x": "32",
 					"y": "38",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -383,7 +383,7 @@
 					"x": "39",
 					"y": "48",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
+					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": "4",
 						"y": 0
@@ -406,7 +406,7 @@
 					"x": "57",
 					"y": "41",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -429,7 +429,7 @@
 					"x": "56",
 					"y": "39",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -452,7 +452,7 @@
 					"x": "53",
 					"y": "44",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -475,7 +475,7 @@
 					"x": "16",
 					"y": "32",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -498,7 +498,7 @@
 					"x": "6",
 					"y": "46",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -521,7 +521,7 @@
 					"x": "61",
 					"y": "40",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -544,7 +544,7 @@
 					"x": "54",
 					"y": "32",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -567,7 +567,7 @@
 					"x": "53",
 					"y": "20",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -590,7 +590,7 @@
 					"x": "15",
 					"y": "29",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -613,7 +613,7 @@
 					"x": "34",
 					"y": "30",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
+					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": "7",
 						"y": 0
@@ -636,7 +636,7 @@
 					"x": "38",
 					"y": "22",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -659,7 +659,7 @@
 					"x": "37",
 					"y": "24",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -679,12 +679,12 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "43",
+					"x": "41",
 					"y": "29",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_WALK_RIGHT_AND_LEFT",
 					"behaviour_range": {
-						"x": 0,
+						"x": "8",
 						"y": 0
 					},
 					"field_B": 0,
@@ -705,7 +705,7 @@
 					"x": "7",
 					"y": "43",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_JOGGEN_LINKS",
+					"behaviour": "BEHAVIOUR_JOG_IN_PLACE_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -728,7 +728,7 @@
 					"x": "6",
 					"y": "44",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_AUF_DER_STELLE_GEHEN_LINKS",
+					"behaviour": "BEHAVIOUR_WALK_IN_PLACE_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -751,7 +751,7 @@
 					"x": "65",
 					"y": "14",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -774,7 +774,7 @@
 					"x": "14",
 					"y": "49",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -797,7 +797,7 @@
 					"x": "28",
 					"y": "45",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -817,10 +817,10 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "48",
-					"y": "36",
+					"x": "46",
+					"y": "37",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN2",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -840,10 +840,10 @@
 					"picture": "238",
 					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "55",
+					"x": "56",
 					"y": "41",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_RECHTS",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -856,6 +856,29 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_SCHILLOK"
+					}
+				},
+				{
+					"target_index": "38",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "55",
+					"y": "41",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_deck_person_with_treasure_room_keys",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0
 					}
 				}
 			],
@@ -895,8 +918,8 @@
 			],
 			"triggers": [
 				{
-					"x": "38",
-					"y": "26",
+					"x": "0",
+					"y": "1",
 					"level": 0,
 					"field_5": 0,
 					"var": 0,

@@ -2218,6 +2218,13 @@ trainer_pokemon_default_item_default_attacks trainer_party_x197_bbship_deck_pira
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_TENTOXA),
 };
 
+trainer_pokemon_default_item_default_attacks trainer_party_x198_bbship_deck_pirate6[4] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,46,POKEMON_GARADOS),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,48,POKEMON_TOHAIDO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_KREBUTACK),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,47,POKEMON_MAGNAYEN),
+};
+
 trainer_pokemon_custom_item_custom_attacks trainer_party_test[2] = {
   TRAINER_PARTY_CUSTOM_ITEM_CUSTOM_MOVES(19,  TRAINER_BUILD_PHYSICAL_SWEEPER_ATTACK_PREFERENCE,
       0x0, true, false, 41, POKEMON_FIARO, ITEM_SCHWARZPULVER,

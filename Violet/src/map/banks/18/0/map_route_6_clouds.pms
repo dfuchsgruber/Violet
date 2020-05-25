@@ -15,7 +15,7 @@
 					"x": "78",
 					"y": "15",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -39,7 +39,7 @@
 					"x": "67",
 					"y": "25",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_RUNDUM_GEGEN_DEN_UHRZEIGERSINN",
+					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -63,7 +63,7 @@
 					"x": "33",
 					"y": "28",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN2",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
 						"x": "2",
 						"y": "0"
@@ -87,7 +87,7 @@
 					"x": "66",
 					"y": "32",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -111,7 +111,7 @@
 					"x": "14",
 					"y": "22",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -135,7 +135,7 @@
 					"x": "47",
 					"y": "10",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -159,7 +159,7 @@
 					"x": "35",
 					"y": "5",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -183,7 +183,7 @@
 					"x": "64",
 					"y": "36",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"

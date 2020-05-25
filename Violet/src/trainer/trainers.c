@@ -6620,4 +6620,11 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x197_bbship_deck_pirate5,
     },
+    [0x198] = {
+        .trainerclass = TRAINERCLASS_PIRATE, .sprite = 25,
+        .encounter_and_gender = {2, 1}, .name = LANGDEP(PSTRING("Sigmar"),
+            PSTRING("Sigmar")), .pokemon_cnt = 4,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x198_bbship_deck_pirate6,
+    },
 }; 

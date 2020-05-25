@@ -15,7 +15,7 @@
 					"x": "11",
 					"y": "42",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -39,7 +39,7 @@
 					"x": "36",
 					"y": "35",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -63,7 +63,7 @@
 					"x": "56",
 					"y": "5",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_UNTEN__LINKS__RECHTS",
+					"behaviour": "BEHAVIOUR_FACE_DOWN_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -87,7 +87,7 @@
 					"x": "74",
 					"y": "38",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -111,7 +111,7 @@
 					"x": "16",
 					"y": "39",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"

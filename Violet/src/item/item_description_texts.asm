@@ -2106,10 +2106,11 @@
 		.string "Der Schlüssel zur Arena der\nZinnoberinsel. Er ist rot und\nreich verziert."
 
 
-	.global str_item_desc_x160_item_rad_coupon
+	.global str_item_desc_x160_alte_karte
 
-	str_item_desc_x160_item_rad_coupon:
-		.string "Gegen Vorlage dieses Gutscheins\nerhältst du im Fahrradladen in\nAzuria City ein Fahrrad."
+	str_item_desc_x160_alte_karte:
+		.string "Eine offenbar sehr alte\nSeekarte. Wohin sie einen wohl\nführt?"
+		// .string "Gegen Vorlage dieses Gutscheins\nerhältst du im Fahrradladen in\nAzuria City ein Fahrrad."
 
 
 	.global str_item_desc_x161_item_pkmcorder
@@ -4005,10 +4006,10 @@
 	str_item_desc_x15f_item__oeffner:
 		.string "The key to Cinnabar Island Gym’s\nfront door. It is colored red and\ndecorated."
 
-	.global str_item_desc_x160_item_rad_coupon
+	.global str_item_desc_x160_alte_karte
 
-	str_item_desc_x160_item_rad_coupon:
-		.string "Take this voucher to the Bike Shop\nin Cerulean City and exchange it\nfor a bicycle."
+	str_item_desc_x160_alte_karte:
+		.string "An appearently very old\nsea chart. Where would it lead\nyou?"
 
 	.global str_item_desc_x161_item_pkmcorder
 

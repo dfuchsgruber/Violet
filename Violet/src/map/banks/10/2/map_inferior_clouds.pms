@@ -15,7 +15,7 @@
 					"x": "19",
 					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -39,7 +39,7 @@
 					"x": "31",
 					"y": "22",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -63,7 +63,7 @@
 					"x": "6",
 					"y": "22",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"

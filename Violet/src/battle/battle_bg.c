@@ -14,7 +14,7 @@
 #include "constants/battle/battle_bgs.h"
 #include "constants/pokemon_types.h"
 #include "attack.h"
-#include "save.h"
+#include "save.h" 
 #include "map/tileset.h"
 #include "debug.h"  
  
@@ -203,6 +203,18 @@ battle_bg battle_bgs[256] = {
         NULL, NULL,
         gfx_battle_bg_dark_towerPal,
     },
+    [BATTLE_BG_BBSHIP_INSIDE] = {
+        gfx_battle_bg_bbship_insideTiles,
+        gfx_battle_bg_bbship_insideMap,
+        NULL, NULL,
+        gfx_battle_bg_bbship_insidePal,
+    },
+    [BATTLE_BG_BBSHIP_OUTSIDE] = {
+        gfx_battle_bg_bbship_outsideTiles,
+        gfx_battle_bg_bbship_outsideMap,
+        NULL, NULL,
+        gfx_battle_bg_bbship_outsidePal,
+    },
 };
 
 
@@ -233,6 +245,9 @@ u8 battle_bg_get_id(){
     // dprintf("bgid %d, ts2 %x, mtshaw %x\n", bg_id, &mapfooter_virtual.tileset2, &maptileset_haweiland);
     if (bg_id == BATTLE_BG_SHORE && mapheader_virtual.footer->tileset2 == &maptileset_haweiland) {
         bg_id = BATTLE_BG_HAWEILAND;
+    }
+    if (bg_id == BATTLE_BG_BBSHIP_INSIDE && save1->bank == 33 && save1->map == 4) {
+        bg_id = BATTLE_BG_BBSHIP_OUTSIDE;
     }
     return bg_id;
 }
@@ -290,6 +305,10 @@ void bsc_cmd_xEB_set_type_to_terrain() {
     case BATTLE_BG_DARK_TOWER:
         type = TYPE_UNLICHT;
         break;
+    case BATTLE_BG_BBSHIP_INSIDE:
+    case BATTLE_BG_BBSHIP_OUTSIDE:
+        type = TYPE_WASSER;
+        break;
 	}
 	if (type == battlers[attacking_battler].type1 ||
 			type == battlers[attacking_battler].type2) {
@@ -328,6 +347,8 @@ u16 terrain_moves[] = {
     [BATTLE_BG_ARDEAL_DUNGEON] = ATTACK_FINSTERAURA,
     [BATTLE_BG_SKY_ISLAND] = ATTACK_AERO_ASS,
     [BATTLE_BG_DARK_TOWER] = ATTACK_FINSTERFAUST,
+    [BATTLE_BG_BBSHIP_INSIDE] = ATTACK_SURFER,
+    [BATTLE_BG_BBSHIP_OUTSIDE] = ATTACK_SURFER,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

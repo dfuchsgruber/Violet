@@ -19,7 +19,7 @@
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -44,7 +44,7 @@
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -69,7 +69,7 @@
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"

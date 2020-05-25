@@ -22,7 +22,7 @@
 					"script": "ow_script_map_7_2_person_0",
 					"field_2": 0,
 					"y": 5,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"is_trainer": "0",
 					"field_D": 0,
 					"field_B": 0,

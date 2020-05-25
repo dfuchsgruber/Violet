@@ -2,6 +2,7 @@
 #include "overworld/sprite.h"
 #include "color.h"
 #include "constants/species.h"
+#include "debug.h"
 
 static palette ow_pokemon_pals[] = {
     [POKEMON_BISASAM] = {.pal = gfx_ow_bisasamPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISASAM},
@@ -7695,4 +7696,14 @@ overworld_sprite *overworld_sprite_get_by_species(u16 species) {
 
 palette *overworld_palette_get_by_species(u16 species) {
     return ow_pokemon_pals + species;
+}
+
+u8 overworld_get_sprite_idx_by_species(u16 species) {
+	overworld_sprite *sprite = overworld_sprite_get_by_species(species);
+	if (sprite->width == 32 && sprite->height == 32)
+		return OVERWORLD_SPRITE_POKEMON_32_32;
+	if (sprite->width == 64 && sprite->height == 64)
+		return OVERWORLD_SPRITE_POKEMON_64_64;
+	derrf("No overworld sprite idx associated with measures %d, %d\n", sprite->width, sprite->height);
+	return 0;
 }

@@ -15,7 +15,7 @@
 					"x": "27",
 					"y": "3",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -39,7 +39,7 @@
 					"x": "7",
 					"y": "13",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -63,7 +63,7 @@
 					"x": "28",
 					"y": "28",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -87,7 +87,7 @@
 					"x": "16",
 					"y": "16",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_RECHTS__RUNTER__HOCH__LINKS",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_DOWN_UP_LEFT",
 					"behaviour_range": {
 						"x": "3",
 						"y": "0"

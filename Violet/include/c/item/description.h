@@ -360,7 +360,7 @@ extern u8 str_item_desc_x15c_item_item_15c[];
 extern u8 str_item_desc_x15d_item_eichs_paket[];
 extern u8 str_item_desc_x15e_item_pokefloete[];
 extern u8 str_item_desc_x15f_item__oeffner[];
-extern u8 str_item_desc_x160_item_rad_coupon[];
+extern u8 str_item_desc_x160_alte_karte[];
 extern u8 str_item_desc_x161_item_pkmcorder[];
 extern u8 str_item_desc_x162_item_altbernstein[];
 extern u8 str_item_desc_x163_item_tueroeffner[];

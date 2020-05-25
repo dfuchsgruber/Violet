@@ -5644,12 +5644,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_RAD_COUPON
-		LANGDEP(PSTRING("Rad-Coupon"), PSTRING("Bike Voucher")),
+		LANGDEP(PSTRING("Alte Karte"), PSTRING("Old Map")),
 		0x160, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x160_item_rad_coupon,
+		str_item_desc_x160_alte_karte,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket

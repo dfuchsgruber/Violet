@@ -19,7 +19,7 @@
 					"field_2": 0,
 					"level": 3,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "1",
 						"y": "1"
@@ -44,7 +44,7 @@
 					"field_2": 0,
 					"level": 3,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "1",
 						"y": "5"
@@ -69,7 +69,7 @@
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_RUNTER__RECHTS__LINKS__HOCH",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_LEFT_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"

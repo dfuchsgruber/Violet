@@ -15,7 +15,7 @@
 					"x": "35",
 					"y": "26",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_AUF_UND_AB",
+					"behaviour": "BEHAVIOUR_WALK_UP_AND_DOWN",
 					"behaviour_range": {
 						"x": "3",
 						"y": "0"
@@ -39,7 +39,7 @@
 					"x": "37",
 					"y": "32",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -63,7 +63,7 @@
 					"x": "21",
 					"y": "26",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -87,7 +87,7 @@
 					"x": "40",
 					"y": "9",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -111,7 +111,7 @@
 					"x": "23",
 					"y": "12",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -135,7 +135,7 @@
 					"x": "13",
 					"y": "35",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_GEGEN_DEN_UHRZEIGERSINN2",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
 						"x": "3",
 						"y": "0"
@@ -159,7 +159,7 @@
 					"x": "8",
 					"y": "9",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_RECHTS__LINKS__HOCH__RUNTER2",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_LEFT_UP_DOWN",
 					"behaviour_range": {
 						"x": "5",
 						"y": "0"
@@ -183,7 +183,7 @@
 					"x": "28",
 					"y": "10",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_HOCH_UND_RUNTER",
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -207,7 +207,7 @@
 					"x": "36",
 					"y": "34",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -231,7 +231,7 @@
 					"x": "25",
 					"y": "23",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "3",
 						"y": "0"

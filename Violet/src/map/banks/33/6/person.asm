@@ -1,5 +1,6 @@
 .include "overworld_script.s"
 .include "callstds.s"
+.include "vars.s"
 
 .global ow_script_blackbeard_ship_cells_person0
 .global ow_script_blackbeard_ship_cells_person1
@@ -9,6 +10,7 @@
 .global ow_script_blackbeard_ship_cells_person5
 .global ow_script_blackbeard_ship_cells_person6
 .global ow_script_blackbeard_ship_cells_person7
+.global ow_script_blackbeard_ship_cells_captain_room_key
 
 ow_script_blackbeard_ship_cells_person0:
     loadpointer 0 str_0
@@ -43,6 +45,13 @@ ow_script_blackbeard_ship_cells_person7:
     callstd MSG_FACE
     end
 
+ow_script_blackbeard_ship_cells_captain_room_key:
+    fanfare 257
+    loadpointer 0 str_got_keys
+    callstd MSG
+    waitfanfare
+    hidesprite LASTTALKED
+    end
 
 .ifdef LANG_GER
 str_0:
@@ -61,5 +70,9 @@ str_6:
     .autostring 34 2 "Weißt du, was mir am meisten fehlt auf diesem Schiff?\pNaja, ich sag es mal so!\pHast du auch schon eine einzige Frau an Bord der Schattenflut gesehen?"
 str_7:
     .autostring 34 2 "Na sicher ist das hier auf der Schattenflut nicht der Komfort eines Kreuzfahrtschiffes.\pDafür kann man als Pirat tun und lassen, was man möchte.\pFür nichts auf der Welt würde ich diese Freiheit eintauschen!"
+str_got_keys:
+    .autostring 34 2 "PLAYER findet die Schlüssel zur Kabine des Kapitäns.\pSie werden dem Schlüsselbund hinzugefügt."
 .elseif LANG_EN
+str_got_keys:
+    .autostring 34 2 "PLAYER finds the keys to the captain's room.\pThey are added to the keychain."
 .endif

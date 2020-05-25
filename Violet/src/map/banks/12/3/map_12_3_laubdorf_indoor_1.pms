@@ -15,7 +15,7 @@
 					"x": "5",
 					"y": "5",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_RUNDUM_IM_UHRZEIGERSINN",
+					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
 					"behaviour_range": {
 						"x": "2",
 						"y": "0"

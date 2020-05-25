@@ -15,7 +15,7 @@
 					"field_3": 0,
 					"x": 34,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -40,7 +40,7 @@
 					"field_3": 0,
 					"x": "44",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_KEINE_BEWEGUNG",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -65,7 +65,7 @@
 					"field_3": 0,
 					"x": 27,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -90,7 +90,7 @@
 					"field_3": 0,
 					"x": 20,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -115,7 +115,7 @@
 					"field_3": 0,
 					"x": 19,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -140,7 +140,7 @@
 					"field_3": 0,
 					"x": 32,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -165,7 +165,7 @@
 					"field_3": 0,
 					"x": 34,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -190,7 +190,7 @@
 					"field_3": 0,
 					"x": 24,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -215,7 +215,7 @@
 					"field_3": 0,
 					"x": 21,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_OBEN",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -240,7 +240,7 @@
 					"field_3": 0,
 					"x": 21,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -265,7 +265,7 @@
 					"field_3": 0,
 					"x": 15,
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"

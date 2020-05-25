@@ -56,6 +56,8 @@ extern const unsigned short gfx_battle_bg_ardealTiles[];
 extern const unsigned short gfx_battle_bg_ardeal_dungeonTiles[];
 extern const unsigned short gfx_battle_bg_sky_islandTiles[];
 extern const unsigned short gfx_battle_bg_dark_towerTiles[];
+extern const unsigned short gfx_battle_bg_bbship_insideTiles[];
+extern const unsigned short gfx_battle_bg_bbship_outsideTiles[];
 
 extern const unsigned short gfx_battle_bg_capturedPal[];
 extern const unsigned short gfx_battle_bg_cavePal[];
@@ -82,6 +84,8 @@ extern const unsigned short gfx_battle_bg_ardealPal[];
 extern const unsigned short gfx_battle_bg_ardeal_dungeonPal[];
 extern const unsigned short gfx_battle_bg_sky_islandPal[];
 extern const unsigned short gfx_battle_bg_dark_towerPal[];
+extern const unsigned short gfx_battle_bg_bbship_insidePal[];
+extern const unsigned short gfx_battle_bg_bbship_outsidePal[];
 
 extern const unsigned short gfx_battle_bg_capturedMap[];
 extern const unsigned short gfx_battle_bg_caveMap[];
@@ -108,6 +112,8 @@ extern const unsigned short gfx_battle_bg_ardealMap[];
 extern const unsigned short gfx_battle_bg_ardeal_dungeonMap[];
 extern const unsigned short gfx_battle_bg_sky_islandMap[];
 extern const unsigned short gfx_battle_bg_dark_towerMap[];
+extern const unsigned short gfx_battle_bg_bbship_insideMap[];
+extern const unsigned short gfx_battle_bg_bbship_outsideMap[];
 
 // Battle anim bg
 extern const unsigned short gfx_stance_changeTiles[];

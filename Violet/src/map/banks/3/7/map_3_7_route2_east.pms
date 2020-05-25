@@ -15,7 +15,7 @@
 					"x": 73,
 					"y": 18,
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_UNTEN__LINKS__RECHTS",
+					"behaviour": "BEHAVIOUR_FACE_DOWN_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -40,7 +40,7 @@
 					"x": "51",
 					"y": "28",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_OBEN_UND_LINKS",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -65,7 +65,7 @@
 					"x": 12,
 					"y": 23,
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -90,7 +90,7 @@
 					"x": "29",
 					"y": "25",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_HOCH__LINKS__RECHTS__RUNTER",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_UP_LEFT_RIGHT_DOWN",
 					"behaviour_range": {
 						"x": "4",
 						"y": "4"
@@ -115,7 +115,7 @@
 					"x": 56,
 					"y": 33,
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -140,7 +140,7 @@
 					"x": 42,
 					"y": 6,
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -165,7 +165,7 @@
 					"x": 32,
 					"y": 13,
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -190,7 +190,7 @@
 					"x": 61,
 					"y": 30,
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -215,7 +215,7 @@
 					"x": "61",
 					"y": "0",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -240,7 +240,7 @@
 					"x": "64",
 					"y": "24",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_HERUMGEHEN",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -265,7 +265,7 @@
 					"x": 7,
 					"y": 26,
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -290,7 +290,7 @@
 					"x": 34,
 					"y": 31,
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -315,7 +315,7 @@
 					"x": 45,
 					"y": 21,
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -340,7 +340,7 @@
 					"x": "57",
 					"y": "17",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -364,7 +364,7 @@
 					"x": "51",
 					"y": "23",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"

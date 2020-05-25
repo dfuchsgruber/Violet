@@ -10,7 +10,7 @@
 				{
 					"y": 12,
 					"picture": 80,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_UNTEN",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"field_2": 0,
 					"target_index": 1,
 					"x": 9,

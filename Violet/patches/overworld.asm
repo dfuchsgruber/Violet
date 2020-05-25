@@ -213,28 +213,6 @@ _blxr1:
     .pool
 
 
-
-// Dynamic overworld palettes
-
-/** 
-// Don't load palettes beforehand...
-.org 0x0805f5e8 // player_npc_load_reflection_palettes
-    bx lr
-
-.org 0x0805f658 // effect_load_reflection_palettes
-    bx lr
-
-.org 0x080db0e8
-    bx lr
-
-.org 0x080db144
-    bx lr
-
-.org 0x0805f092
-    b 0x0805f09e
-**/
-
-
 // Prevent auto-load of overworld palettes
 .org 0x0805fecc
     ldr r1, =overworld_npc_palettes_initialize | 1

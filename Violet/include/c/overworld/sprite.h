@@ -84,6 +84,13 @@ palette *overworld_palette_get_by_species(u16 species);
  **/
 overworld_sprite *overworld_sprite_get_by_species(u16 species);
 
+/**
+ * Returns the overworld sprite idx that is to be used for a species.
+ * @param the species to find a suitable sprite for
+ * @return the overworld sprite idx to use for this species, e.g. in a person
+ **/
+u8 overworld_get_sprite_idx_by_species(u16 species);
+
 extern u8 gfx_ow_bisasamTiles[];
 extern color_t gfx_ow_bisasamPal[16];
 extern u8 gfx_ow_bisaknospTiles[];
@@ -1622,9 +1629,9 @@ overworld_sprite *overworld_get(u16 picture);
 void map_position_to_oam_position(s16 map_x, s16 map_y, s16 *oam_x, s16 *oam_y);
 
 /**
- * Callback that handles (probably) applymovement stuff and movements for an npc while a script is active
+ * Callback that handles (probably) applymovement stuff and movements for an npc while a script is not active
  * @param self self-reference
  **/
-void npc_oam_callback_script_active (oam_object *self);
+void npc_oam_callback_script_not_active (oam_object *self);
 
 #endif /* INCLUDE_C_OVERWORLD_SPRITE_H_ */

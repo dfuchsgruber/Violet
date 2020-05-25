@@ -164,6 +164,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_gunpowderTiles
     .word gfx_item_gunpowderPal
 
+.org item_resource + 0x160 * 8
+    .word gfx_item_alte_karteTiles
+    .word gfx_item_alte_kartePal
+
 //@Bike sound := 195
 .org 0x080A1402
     mov r0, #195

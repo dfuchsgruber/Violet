@@ -241,7 +241,7 @@ oam_object *overworld_effect_fly_allocate_pal(u8 oam_idx) { // Probably for fly.
 static const u16 overworld_effect_shadow_vertical_offsets[4] = {4, 4, 4, 16,};
 static const u8 overworld_effect_shadow_template_idxs[4] = {0, 1, 2, 3};
 
-extern palette gfx_npc_player_palette_vanilla;
+extern color_t gfx_npc_player_palette_vanilla[16];
 
 u32 overworld_effect_shadow(void) {
     u8 npc_idx = npc_get_by_person_idx((u8)(overworld_effect_state.x), (u8)(overworld_effect_state.y), (u8)(overworld_effect_state.height));
@@ -256,7 +256,7 @@ u32 overworld_effect_shadow(void) {
         o->private[3] = (u16)((ow->height / 2) - overworld_effect_shadow_vertical_offsets[ow->shadow_size]);
         palette pal = {0};
         pal.tag = TAG_PLAYER_PALETTE_VANILLA;
-        pal.pal = gfx_npc_player_palette_vanilla.pal;
+        pal.pal = gfx_npc_player_palette_vanilla;
         u8 pal_idx = oam_palette_load_if_not_present(&pal);
         o->final_oam.attr2 = (u16)((pal_idx << 12) | (o->final_oam.attr2 & ~(15 << 12)));
     }
@@ -399,10 +399,8 @@ static void overworld_create_oam_template_by_overworld_sprite_with_callback(over
     template->animation = sprite->gfx_animation;
     template->rotscale = sprite->rotscale_animation;
     template->graphics = sprite->graphics;
-    if (ow_script_is_active()) // We don't give a damn about this quest log stuff
-        template->callback = npc_oam_callback_script_active;
-    else
-        template->callback = npc_movements_oam_callbacks[movement_callback_idx];
+    // We don't give a damn about this quest log stuff
+    template->callback = npc_movements_oam_callbacks[movement_callback_idx];
     if (sprite->subsprite_table)
         *subsprites = sprite->subsprite_table;
 }

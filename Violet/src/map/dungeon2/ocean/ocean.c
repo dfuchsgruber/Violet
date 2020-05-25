@@ -26,6 +26,7 @@
 #include "tile/block.h"
 #include "data_structures.h"
 #include "constants/map_types.h"
+#include "overworld/sprite.h"
 
 extern tileset maptileset0;
 extern tileset maptileset_cave;
@@ -89,8 +90,9 @@ map_event_header_t *dungeon2_init_events_ocean(dungeon_generator2 *dg2){
     fmem.dpersons[0].x = (s16)(nodes[1][0]);
     fmem.dpersons[0].y = (s16)(nodes[1][1]);
     u16 species = *var_access(DUNGEON_OVERWORLD_SPECIES);
-    fmem.dpersons[0].overworld_index = (u8)(154 + basestats[species].form);
-    fmem.dpersons[0].behavior = BEHAVIOUR_HERUMGEHEN;
+    fmem.dpersons[0].overworld_index = overworld_get_sprite_idx_by_species(species);
+    fmem.dpersons[0].value = species;
+    fmem.dpersons[0].behavior = BEHAVIOUR_WANDER_AROUND;
     fmem.dpersons[0].target_index = 1;
     fmem.dpersons[0].script = ow_script_dungeon_encounter;
     fmem.dpersons[0].flag = 0x12;

@@ -111,6 +111,7 @@
         "palette.h": "c",
         "any_grass.h": "c",
         "event.h": "c",
-        "movements.h": "c"
+        "movements.h": "c",
+        "battle_bgs.h": "c"
     }
 }

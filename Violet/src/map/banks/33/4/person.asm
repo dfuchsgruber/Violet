@@ -1,6 +1,7 @@
 .include "overworld_script.s"
 .include "callstds.s"
-
+.include "flags.s"
+.include "ordinals.s"
 
 
 .global ow_script_blackbeard_ship_deck_person0
@@ -13,6 +14,7 @@
 .global ow_script_blackbeard_ship_deck_person7
 .global ow_script_blackbeard_ship_deck_person8
 .global ow_script_blackbeard_ship_deck_person9
+.global ow_script_blackbeard_ship_deck_person_with_treasure_room_keys
 
 ow_script_blackbeard_ship_deck_person0:
     loadpointer 0 str_0
@@ -55,6 +57,31 @@ ow_script_blackbeard_ship_deck_person9:
     callstd MSG_FACE
     end
 
+ow_script_blackbeard_ship_deck_person_with_treasure_room_keys:
+    checkflag FLAG_BBSHIP_KEY_TO_TREASURE_ROOM
+    gotoif EQUAL got_keys_already
+    lock
+    faceplayer
+    trainerbattlecont 1 0x198 0 str_before str_after key_cont
+key_cont:
+    lock
+    faceplayer
+    loadpointer 0 str_get_key
+    callstd MSG
+    fanfare 257
+    loadpointer 0 str_receive_key
+    callstd MSG
+    waitfanfare
+    setflag FLAG_BBSHIP_KEY_TO_TREASURE_ROOM
+    release
+    end
+
+got_keys_already:
+    loadpointer 0 str_got_key
+    callstd MSG_FACE
+    end
+
+
 .ifdef LANG_GER
 str_0:
     .autostring 34 2 "Mein Kartenglück scheint mich verlassen zu habenDOTS\pAber wie heißt es doch so schön?\pPech im Spiel, Glück inDOTS?"
@@ -76,7 +103,28 @@ str_8:
     .autostring 34 2 "Ein Pirat kriegt niemals den Hals voll.\pGanz egal, ob es um Essen, Schätze oder Raublust geht!"
 str_9:
     .autostring 34 2 "Seit Stunden kein Land in Sicht.\pIch hätte gerne einen Abstecher bei dieser seltsamen Burg auf Route 7 gemacht, aber der Kapitän meinte, dass wir uns von diesem Ort lieber fernhalten solltenDOTS"
+str_before:
+    .autostring 34 2 "Was?\nIch habe keinen Schlüssel!\pErst recht nicht den, für die Schatzkammer!\pVerstanden?\pDOTS DOTS\pDu bist immer noch da?\pKampflos werde ich dir den Schlüssel nicht überlassen!"
+str_after:
+    .autostring 34 2 "Auweia!\nDas gibt ÄrgerDOTS"
+str_get_key:
+    .autostring 34 2 "Zum ersten Mal vertraut man mir solche wichtigen Dinge an, und ich vermassel es gleich wiederDOTS\pNa gut, du kannst den Schlüssel haben."
+str_receive_key:
+    .autostring 34 2 "PLAYER erhält den Schlüssel zur Schatzkammer der Schattenflut.\pEr wird dem Schlüsselbund hinzugefügt."
+str_got_key:
+    .autostring 34 2 "Wenn der Kapitän herauskriegt, dass ich den Schlüssel zur Schatzkammer verloren habeDOTS"
 
 
 .elseif LANG_EN
+str_before:
+    .autostring 34 2 "What?\nI don't have any keys with me.\pAnd even if, it wouldn't be the keys to the treasure room.\pGot it?\pDOTS DOTS\nWhy, you're still here?\pI won't hand those keys over without a fight!"
+str_after:
+    .autostring 34 2 "Oh man, I'm in big troubleDOTS"
+str_get_key:
+    .autostring 34 2 "First time I am entrusted with something this important and I screw it up in an instantDOTS\pWell, you can have the keysDOTS"
+str_receive_key:
+    .autostring 34 2 "PLAYER received the keys to the treasure room.\pThey are added to the keychain."
+str_got_key:
+    .autostring 34 2 "When the captain finds out that I lost the keys to the treasure roomDOTS"
+
 .endif

@@ -32,9 +32,7 @@ script_pokeradar_s:
     hidesprite 254
     clearflag 0x917
     showsprite 254
-    lockall
     fadescreen 0
-    
     loadpointer 0 str_pokepad_pokeradar_found
     callstd 6
     releaseall
@@ -95,6 +93,7 @@ script_pokeradar_alert_s:
     end
 
 script_pokeradar_poschange_s:
+    lockall
     hidesprite 254
     clearflag 0x917
     showsprite 254
@@ -143,6 +142,7 @@ mov_x55:
 
 
 script_pokeradar_flee_s:
+    lockall
     cry 0x50EB 0
     fadescreen 1
     waitcry

@@ -15,7 +15,7 @@
 					"x": "11",
 					"y": "5",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_AUF_UND_AB",
+					"behaviour": "BEHAVIOUR_WALK_UP_AND_DOWN",
 					"behaviour_range": {
 						"x": "2",
 						"y": "0"
@@ -39,7 +39,7 @@
 					"x": "33",
 					"y": "14",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_RECHTS__LINKS__HOCH__RUNTER2",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_LEFT_UP_DOWN",
 					"behaviour_range": {
 						"x": "4",
 						"y": "0"
@@ -63,7 +63,7 @@
 					"x": "29",
 					"y": "6",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_NACH_LINKS",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -87,7 +87,7 @@
 					"x": "33",
 					"y": "31",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -111,7 +111,7 @@
 					"x": "23",
 					"y": "22",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_UMHERBLICKEN",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -135,7 +135,7 @@
 					"x": "53",
 					"y": "8",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_RUNTER__RECHTS__LINKS__HOCH",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_LEFT_UP",
 					"behaviour_range": {
 						"x": "5",
 						"y": "0"
@@ -159,7 +159,7 @@
 					"x": "21",
 					"y": "35",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LAUFE_HIN_UND_HER",
+					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
 					"behaviour_range": {
 						"x": "3",
 						"y": "0"
@@ -183,7 +183,7 @@
 					"x": "43",
 					"y": "37",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_BLICKE_RUNDUM_IM_UHRZEIGERSINN",
+					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -207,7 +207,7 @@
 					"x": "48",
 					"y": "21",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -231,7 +231,7 @@
 					"x": "34",
 					"y": "4",
 					"level": 0,
-					"behaviour": 0,
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
