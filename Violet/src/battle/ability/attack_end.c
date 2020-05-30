@@ -30,6 +30,7 @@ extern u8 bsc_lebensraeuber[];
 extern u8 bsc_curator[];
 extern u8 bsc_extradorn[];
 extern u8 bsc_fluffy[];
+extern u8 bsc_tintenschuss[];
 
 static u16 curator_relevant_attacks[] = {
     ATTACK_GENESUNG, ATTACK_TAGEDIEB, ATTACK_SYNTHESE, ATTACK_MONDSCHEIN, ATTACK_ERHOLUNG, ATTACK_WUNSCHTRAUM,
@@ -119,6 +120,7 @@ bool battle_abilities_attack_done_attacker_new() {
 bool battle_abilities_attack_done_defender_new() {
     battler *attacker = battlers + attacking_battler;
     battler *defender = battlers + defending_battler;
+    dprintf("Defender ability %d\n", defender->ability);
     defending_battler_ability = defender->ability;
     if(defender->ability == FLUFFIG && !(attack_result & (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
             (attacks[active_attack].flags & MAKES_CONTACT) && !battler_statuses[attacking_battler].hurt_in_confusion && 
@@ -126,20 +128,34 @@ bool battle_abilities_attack_done_defender_new() {
     	if (attacker->stat_changes[3] > 0) {
     		// Trigger fluffy
     		attacker->stat_changes[3] = (u8) MAX(0, attacker->stat_changes[3] - 2);
-    	    battle_scripting.animation_arguments[0] = 0x18;
+    	    battle_scripting.animation_arguments[0] = STAT_ANIM_MINUS2(STAT_SPEED);
     	    battle_scripting.animation_arguments[1] = 0;
     	    battle_scripting.battler_idx = attacking_battler;
             battle_scripting.animation_user = attacking_battler;
             battle_scripting.animation_targets = attacking_battler;
             battle_animation_user = attacking_battler;
             battle_animation_target = attacking_battler;
-            battle_scripting.animation_arguments[0] = 0xF;
-            battle_scripting.animation_arguments[1] = 0;
             effect_battler = attacking_battler;
             battlescript_callstack_push_next_command();
             bsc_offset = bsc_fluffy;
             return true;
     	}
+    } else if (defender->ability == TINTENSCHUSS && !(attack_result & (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)) &&
+            (attacks[active_attack].flags & MAKES_CONTACT) && !battler_statuses[attacking_battler].hurt_in_confusion && 
+            DAMAGE_CAUSED && attacker->stat_changes[STAT_ACCURACY] > 0) {
+            attacker->stat_changes[STAT_ACCURACY] = (u8) MAX(0, attacker->stat_changes[STAT_ACCURACY] - 2);
+            // battle_scripting.battler_idx = attacking_battler;
+            // battle_scripting.animation_user = attacking_battler;
+            // battle_scripting.animation_targets = defending_battler;
+            // battle_animation_user = defending_battler;
+            // battle_animation_target = attacking_battler;
+            dprintf("Attacking battler %d, defending battler %d\n", attacking_battler, defending_battler);
+            battle_scripting.animation_arguments[0] = STAT_ANIM_MINUS2(STAT_ACCURACY);
+            battle_scripting.animation_arguments[1] = 0;
+            // effect_battler = attacking_battler;
+            battlescript_callstack_push_next_command();
+            bsc_offset = bsc_tintenschuss;
+            return true;
     }
     return false;
 }

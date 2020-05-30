@@ -324,7 +324,7 @@ void bsc_cmd_x49_attack_done_new() {
         BATTLE_STATE2->attack_done_substate = 255; // Only one state was supposed to be executed whatsoever
     }; 
     u8 last_state = bsc_offset[2];
-    dprintf("mode is %d, arg is %d\n", mode, last_state);
+    // dprintf("mode is %d, arg is %d\n", mode, last_state);
     switch (battle_scripting.attack_done_state) {
         case 0 ... 17: return; // The original function has not terminated 
         case 18: { // We enter this case when the original function whould have terminated
@@ -339,7 +339,7 @@ void bsc_cmd_x49_attack_done_new() {
             // Just watch out to respect the limits of the original function
             bool effect = false;
             while (!effect) {
-                dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
+                // dprintf("Executing substate %d\n", BATTLE_STATE2->attack_done_substate);
                 switch(BATTLE_STATE2->attack_done_substate) {
                     case 0: {
                         if (mode != 2 || last_state > 5) { // State 5 is the original attacker abilities (i.e. synchronize)

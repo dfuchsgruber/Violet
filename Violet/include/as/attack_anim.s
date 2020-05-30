@@ -124,7 +124,7 @@
 .endm
 
 
-.macro jump subscript
+.macro goto subscript
 .byte 0x13
 .word \subscript
 .endm

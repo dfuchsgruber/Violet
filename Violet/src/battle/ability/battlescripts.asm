@@ -33,6 +33,7 @@
 .global bsc_flinch_raura
 .global bsc_flinch_baura
 .global bsc_flinch_gaura
+.global bsc_tintenschuss
 
 
 bsc_wandlungskunst:
@@ -198,10 +199,20 @@ bsc_hack_fail:
 end3
 
 bsc_fluffy:
-playanimation BANK_USER 0x1 battle_scripting + 16
-printstring 0x199
-waitmessage 0x40
-return
+    playanimation BANK_USER 0x1 battle_scripting + 16
+    printstring 0x199
+    waitmessage 0x40
+    return
+
+bsc_tintenschuss:
+    printstring 0x1b0
+    playanimation BANK_USER BATTLE_ANIM_INK_SHOT 0
+    playanimation BANK_USER 0x1 battle_scripting + 16
+    printstring 0x1b1
+    waitmessage 0x40
+    return
+
+
 
 bsc_eschat:
 printstring 0x19A

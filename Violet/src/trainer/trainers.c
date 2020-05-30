@@ -6627,4 +6627,15 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x198_bbship_deck_pirate6,
     },
+    [0x199] = {
+        .trainerclass = TRAINERCLASS_KAPITAEN, .sprite = 28,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Blackbeard"),
+            PSTRING("Blackbeard")), .pokemon_cnt = 5,
+				.ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS |  TRAINER_AI_VARIABILITY |
+				TRAINER_AI_SUPER_EFFECTIVE,
+				.items = {ITEM_HYPERTRANK, ITEM_HYPERHEILER, ITEM_HYPERTRANK, 0},
+				.party = (trainer_pokemon*) trainer_party_x199_bbship_blackbeard,
+				.uses_custom_items = true, .uses_custom_moves = true,
+        // .battle_state = BATTLE_DOUBLE,
+    }, 
 }; 

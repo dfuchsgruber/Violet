@@ -1,5 +1,6 @@
 #include "types.h"
 #include "music.h"
+#include "constants/songs.h"
 
 song song_table[] = {
 	//Song 0
@@ -772,6 +773,6 @@ song song_table[] = {
   //** TODO: Change to blackbeards ship
 	//Song 382 (=0x17F)
 	{mus_bbship, SONG_TYPE_SONG, SONG_TYPE_SONG},
-
+	[MUS_BB_BATTLE] = {mus_bb_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
 
 };

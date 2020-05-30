@@ -249,7 +249,7 @@ extern u8 str_item_desc_xed_item_bibornit[];
 extern u8 str_item_desc_xee_item_item_ee[];
 extern u8 str_item_desc_xef_item_geowaznit[];
 extern u8 str_item_desc_xf0_item_tropiusnit[];
-extern u8 str_item_desc_xf1_item_item_f1[];
+extern u8 str_item_desc_xf1_item_octillerynit[];
 extern u8 str_item_desc_xf2_item_item_f2[];
 extern u8 str_item_desc_xf3_item_item_f3[];
 extern u8 str_item_desc_xf4_item_item_f4[];

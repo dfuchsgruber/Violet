@@ -2236,28 +2236,23 @@
 		"ability_1": null,
 		"hidden_ability": null,
 		"species_link": "POKEMON_TROPIUS",
-		"dex_number": 0,
-		"levelup_moves": [
-			[
-				"Windhose",
-				16
-			],
-			[
-				"Feuerodem",
-				26
-			],
-			[
-				"Drachenpuls",
-				33
-			],
-			[
-				"Wutanfall",
-				48
-			]
-		]
+		"dex_number": 0
 	},
-	"POKEMON_10e": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_OCTILLERY": {
+		"basestats": {
+			"hp": 75,
+			"attack": 115,
+			"defense": 100,
+			"speed": 70,
+			"special-attack": 115,
+			"special-defense": 100
+		},
+		"exp_yield": 240,
+		"dex_number": 0,
+		"species_link" : "POKEMON_OCTILLERY",
+		"ability_0": "Tintenschuss",
+		"ability_1": null,
+		"hidden_ability" : "Tintenschuss"
 	},
 	"POKEMON_10f": {
 		"species_link" : "POKEMON_POKEMON_0"
@@ -4358,7 +4353,25 @@
 		"ability_1": null,
 		"hidden_ability": "Reiche_ernte",
 		"safari_rate": 0,
-		"dex_number": 344
+		"dex_number": 344,
+		"levelup_moves": [
+			[
+				"Windhose",
+				16
+			],
+			[
+				"Feuerodem",
+				26
+			],
+			[
+				"Drachenpuls",
+				33
+			],
+			[
+				"Wutanfall",
+				48
+			]
+		]
 	},
 	"POKEMON_KAUMALAT": {
 		"ability_0": "Sandschleier",

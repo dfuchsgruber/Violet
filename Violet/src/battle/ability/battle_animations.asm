@@ -33,6 +33,10 @@ battle_animation_stance_change:
     end
 
 
-
-
-
+.global battle_animation_ink_shot
+battle_animation_ink_shot:
+    // Prepeares the defending battler as user of the move, 
+    // the bsc command by default sets user and target to the value given 
+    // in the bsc command parameters
+    loadcallback battle_animation_set_user_to_defending_battler 5, 0
+    goto attack_animation_octazooka

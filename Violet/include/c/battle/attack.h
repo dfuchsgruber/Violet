@@ -70,6 +70,15 @@ extern u8 battle_animation_target;
 extern u16 battle_animation_arguments[8];
 extern u16 battle_animation_move_power;
 
+#define STAT_ANIM_PLUS1(stat)  (15 + stat - 1)
+#define STAT_ANIM_PLUS2(stat)  (39 + stat - 1)
+#define STAT_ANIM_MINUS1(stat)  ( 22 + stat - 1)
+#define STAT_ANIM_MINUS2(stat)  ( 46 + stat - 1)
+#define STAT_ANIM_MULTIPLE_PLUS1(stat)  ( 55 + stat - 1)
+#define STAT_ANIM_MULTIPLE_PLUS2(stat)  ( 56 + stat - 1)
+#define STAT_ANIM_MULTIPLE_MINUS1(stat)  ( 57 + stat - 1)
+#define STAT_ANIM_MULTIPLE_MINUS2(stat)  ( 58  + stat - 1)
+
 /**
  * Loads the palette for an oam for a battle animation.
  * @param p the palette to load

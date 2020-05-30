@@ -125,7 +125,8 @@
 		"SUPERSCHUETZE",
 		"GLUECKSPILZ",
 		"ESCHAT",
-		"GEGENWIND"
+		"GEGENWIND",
+		"TINTENSCHUSS"
 	],
 	"base": 0
 }

@@ -48,7 +48,8 @@ static void indicator_callback (oam_object *self) {
 
         // Mirror priority of healthbox
         self->final_oam.attr2 &= (u16)(~ATTR2_PRIO(3));
-        int healthbox_priority = (healthbox->final_oam.attr0 >> 10) & 3;
+        int healthbox_priority = (healthbox->final_oam.attr2 >> 10) & 3;
+        // dprintf("Healthbox prio %d\n", healthbox_priority);
         self->final_oam.attr2 |= (u16)ATTR2_PRIO(healthbox_priority);
 
         // Anchor indicator next to the "Lv." string

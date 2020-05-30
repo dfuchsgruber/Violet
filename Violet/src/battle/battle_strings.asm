@@ -423,6 +423,8 @@ bsc_strings:
 .word str_battle_x1AD
 .word str_battle_x1AE
 .word str_battle_x1AF
+.word str_battle_x1B0
+.word str_battle_x1B1
 
 @ // Define the strings
 
@@ -2880,6 +2882,13 @@ bsc_strings:
 	str_battle_x1AF:
 		.string "BSC_LAST_MOVE entzündet BSC_LAST_ITEM\nvon BSC_DEF_NAME_WITH_PREFIX!"
 
+	str_battle_x1B0:
+		.string "BSC_DEF_NAME_WITH_PREFIX sondert Tinte ab!"
+
+	str_battle_x1B1:
+		.string "Genauigkeit von BSC_ATK_NAME_WITH_PREFIX\nsinkt stark!"
+		
+
 .elseif LANG_EN
 	.global str_battle_xc
 
@@ -4936,6 +4945,12 @@ bsc_strings:
 	
 	str_battle_x1AF:
 		.string "BSC_LAST_MOVE lights\nBSC_DEF_NAME_WITH_PREFIX's BSC_LAST_ITEM!"
+
+	str_battle_x1B0:
+		.string "BSC_DEF_NAME_WITH_PREFIX shoots ink!"
+
+	str_battle_x1B1:
+		.string "BSC_ATK_NAME_WITH_PREFIX's\naccuracy drops harshly!"
 
 .endif
 

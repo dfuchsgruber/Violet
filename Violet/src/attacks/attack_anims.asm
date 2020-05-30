@@ -194,7 +194,7 @@ attack_anims:
 		.word 0x81d1350 @//attack_bauchtrommel
 		.word 0x81d3472 @//attack_matschbombe
 		.word 0x81d225a @//attack_lehmschelle
-		.word 0x81d4a4b @//attack_octazooka
+		.word attack_animation_octazooka @//attack_octazooka
 		.word 0x81d3793 @//attack_stachler
 		.word 0x81d5160 @//attack_blitzkanone
 		.word 0x81cf41d @//attack_gesichte

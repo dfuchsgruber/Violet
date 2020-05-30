@@ -1,4 +1,5 @@
 
+
 item_resource equ 0x083D3BE8
 
 .org 0x0815F914 + (0x88*4)
@@ -71,6 +72,18 @@ item_resource equ 0x083D3BE8
 .org item_resource + 0xED * 8
     .word gfx_item_bibornitTiles
     .word gfx_item_bibornitPal
+
+.org item_resource + 0xEF * 8
+    .word gfx_item_geowaznitTiles
+    .word gfx_item_geowaznitPal
+
+.org item_resource + 0xF0 * 8
+    .word gfx_item_tropiusnitTiles
+    .word gfx_item_tropiusnitPal
+
+.org item_resource + 0xF1 * 8
+    .word gfx_item_octillerynitTiles
+    .word gfx_item_octillerynitPal
 
 .org item_resource + 0xF8 * 8
     .word gfx_item_lahmrauchTiles

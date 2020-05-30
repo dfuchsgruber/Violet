@@ -274,7 +274,7 @@
     gfx_pkmn_species_267_pokemon_vipitism_iconTiles,
     gfx_pkmn_species_268_pokemon_zobirism_iconTiles,
     gfx_pkmn_species_269_pokemon_tropius_mega_iconTiles,
-    gfx_pkmn_species_270_pokemon_10e_iconTiles,
+    gfx_pkmn_species_270_pokemon_octillery_mega_iconTiles,
     gfx_pkmn_species_271_pokemon_10f_iconTiles,
     gfx_pkmn_species_272_pokemon_110_iconTiles,
     gfx_pkmn_species_273_pokemon_111_iconTiles,
@@ -990,7 +990,7 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x2,
     // POKEMON_tropius_mega
     0x1,
-    // POKEMON_10e
+    // pokemon_octillery_mega
     0x0,
     // POKEMON_10f
     0x0,

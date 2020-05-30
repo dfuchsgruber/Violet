@@ -351,7 +351,44 @@ void battle_ai_should_switch_consider_battler_viablility(int *score, u8 target) 
     // Switching in general is disfavored: Only if the target's viablity is at least 3 higher than the current mon's viablility
     // the swichting score will be >= 0. Also the target's viability needs to be positive (the current battler's viability is overestimated
     // by clamping with a zero value).
-    *score += viablility_target - MAX(0, viablility) - 5;
+    int delta_viabilities = viablility_target - MAX(0, viablility);
+    *score += delta_viabilities;
+}
+
+static int battle_ai_threat_score_by_level_difference(int level_difference) {
+    if (level_difference < 0) { // Higher leveled than foes -> no threat
+        return -(1 << (-level_difference / 5)) + 1; // For every 5 levels the foes are a factor 2 less threatining (if that makes sense...)
+    } else { // The foes are higher leveled -> threat
+        return (1 << (level_difference / 5)) - 1; // For every 5 levels the foes are a factor 2 more threatening
+    }
+}
+
+void battle_ai_should_switch_consider_foe_as_threat(int *score, u8 target) {
+    // TODO: maybe a more sophistacted method to let the ai rate how big of a threat a mon is
+    // For now: Just compare levels
+    u8 partner = 0, foe = 0, foe_partner = 0, first = 0, last = 0;
+    battler_get_partner_and_foes(active_battler, &partner, &foe, &foe_partner);
+    // Get the relative level differences of both foes w.r.t. the current battler and the target
+    int score_active_to_foes = INT_MIN, score_target_to_foes = INT_MIN;
+    pokemon *party = battler_load_party_range(active_battler, &first, &last);
+    if (!(battlers_absent & int_bitmasks[foe])) {
+        score_active_to_foes = MAX(score_active_to_foes, battlers[foe].level - battlers[active_battler].level);
+        score_target_to_foes = MAX(score_target_to_foes, battlers[foe].level - pokemon_get_attribute(party + target, ATTRIBUTE_LEVEL, 0));
+    }
+    if (!(battlers_absent & int_bitmasks[foe_partner])) {
+        score_active_to_foes = MAX(score_active_to_foes, battlers[foe_partner].level - battlers[active_battler].level);
+        score_target_to_foes = MAX(score_target_to_foes, battlers[foe_partner].level - pokemon_get_attribute(party + target, ATTRIBUTE_LEVEL, 0));
+    }
+    int threat_level_active = battle_ai_threat_score_by_level_difference(score_active_to_foes);
+    int threat_level_target = battle_ai_threat_score_by_level_difference(score_target_to_foes);
+    dprintf("The foes have a threat level of %d towards active mon (%d) and a level of %d towards target (%d)\n", threat_level_active, active_battler, threat_level_target, target);
+    if (threat_level_active <= 0) { // We don't generally want to switch if the foes are no threat level-wise
+        *score += threat_level_active;
+        return;
+    } else { // The foes might be threatening to the active battler, maybe they are less threatening to the target
+        *score += threat_level_active - threat_level_target; // If the target has a lesser threat level towards
+    }
+
 }
 
 u8 battle_ai_should_switch(int *score) {
@@ -377,10 +414,12 @@ u8 battle_ai_should_switch(int *score) {
     battle_ai_should_switch_if_perish_song(score);
     battle_ai_should_switch_stat_changes(score);
     battle_ai_should_switch_consider_battler_viablility(score, target);
+    battle_ai_should_switch_consider_foe_as_threat(score, target);
     // Does the trainer favor switching?
     *score += (int)((battle_ressources->ai->ai_flags >> 10) & 3);
-    AI_DEBUG_SWITCHING("Switching bias is %d\n", (battle_ressources->ai->ai_flags >> 10) & 3);
+    *score -= 6; // There is always a negative bias towards switching, as it costs a turn
+    AI_DEBUG_SWITCHING("Trainer specific switching bias is %d\n", (battle_ressources->ai->ai_flags >> 10) & 3);
     *score = MIN(16, MAX(-16, *score));
     AI_DEBUG_SWITCHING("Switching has a score of %d\n", *score);
-    return target;
+    return target; 
 }

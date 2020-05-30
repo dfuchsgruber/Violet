@@ -127,7 +127,7 @@ ability_descriptions:
     .word str_ability_descr_0x7a
     .word str_ability_descr_0x7b
     .word str_ability_descr_0x7c
-
+    .word str_ability_descr_0x7d
 @ // Define the strings
 
 .ifdef LANG_GER
@@ -849,8 +849,10 @@ ability_descriptions:
 	str_ability_descr_0x7b: @// Eschat
 		.string "St. Volltr., Fluchtw. und Gen."
 
-	str_ability_descr_0x7c: @// w/e
+	str_ability_descr_0x7c: @// Gegenwind
 		.string "Senkt geg. Init. stark."
+	str_ability_descr_0x7d: @// Tintenschuss
+		.string "Senkt geg. Genaug. bei Berührung."
 
 
 .elseif LANG_EN
@@ -1458,6 +1460,8 @@ ability_descriptions:
 
 	str_ability_descr_0x7c: @// Gegenwind
 		.string "Lowers opp. Init. drastically."
+	str_ability_descr_0x7d: @// Tintenschuss
+		.string "Lowers opp. Acc. when touched."
 
 .endif
 

@@ -127,4 +127,5 @@ u8 ability_names[][13] = {
 	LANGDEP(PSTRING("Glückspilz"), PSTRING("Super Luck")),
 	LANGDEP(PSTRING("Eschat"), PSTRING("Eschat")),
 	LANGDEP(PSTRING("Gegenwind"), PSTRING("Head Wind")),
+	LANGDEP(PSTRING("Tintenschuss"), PSTRING("Ink Shot")),
 };

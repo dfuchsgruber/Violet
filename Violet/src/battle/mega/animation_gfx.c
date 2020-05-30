@@ -176,3 +176,8 @@ void battle_animation_update_battler_callback (u8 self) {
         battle_animation_update_battler_callback_step(self);
     }
 }
+
+void battle_animation_set_user_to_defending_battler(u8 self) {
+    battle_animation_user = defending_battler;
+    battle_animation_big_callback_delete(self);
+}

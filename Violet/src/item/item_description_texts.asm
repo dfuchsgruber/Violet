@@ -1442,13 +1442,13 @@
 	.global str_item_desc_xf0_item_tropiusnit
 
 	str_item_desc_xf0_item_tropiusnit:
-		.string " Wird er von einem Tropius\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."
+		.string "Wird er von einem Tropius\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."
 
 
-	.global str_item_desc_xf1_item_item_f1
+	.global str_item_desc_xf1_item_octillerynit
 
-	str_item_desc_xf1_item_item_f1:
-		.string " ????"
+	str_item_desc_xf1_item_octillerynit:
+		.string "Wird er von einem Octillery\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."
 
 
 	.global str_item_desc_xf2_item_item_f2
@@ -3451,10 +3451,10 @@
 	str_item_desc_xf0_item_tropiusnit:
 		.string "If held by a Tropius in\nbattle it can perform\na mega evolution."
 
-	.global str_item_desc_xf1_item_item_f1
+	.global str_item_desc_xf1_item_octillerynit
 
-	str_item_desc_xf1_item_item_f1:
-		.string "?????"
+	str_item_desc_xf1_item_octillerynit:
+		.string "If held by an Octillery in\nbattle it can perform\na mega evolution."
 
 	.global str_item_desc_xf2_item_item_f2
 

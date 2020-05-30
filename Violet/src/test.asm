@@ -34,6 +34,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	givepokemon POKEMON_OCTILLERY 80 ITEM_OCTILLERYNIT 0 0 0
+	trainerbattlestd 0x0 0x199 0 str_beforea str_aftera
+	end
 	warp 33 4 0 0 0
 	waitstate
 	end

@@ -61,7 +61,7 @@ void map_reset_temporary_flags_and_vars() {
 
 overworld_sprite *overworld_get_by_person(map_event_person *person) {
     if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_32_32) {
-        dprintf("Reqeusting 32x32 mon overworld\n");
+        // dprintf("Reqeusting 32x32 mon overworld\n");
         return overworld_sprite_get_by_species(person->value);
         // return overworld_get(170); // For testing: This is the deoxys sprite
     }
@@ -69,15 +69,15 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
         return overworld_sprite_get_by_species(person->value);
         // return overworld_get(OVERWORLD_SPRITE_POKEMON_64_64); // For testing: This is the groudon sprite
     }
-    dprintf("Falling back to default sprite showing %d\n", person->overworld_index);
+    // dprintf("Falling back to default sprite showing %d\n", person->overworld_index);
     return overworld_get(person->overworld_index);
 }
 
 overworld_sprite *overworld_get_by_npc(npc *n) {
     map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
-    dprintf("Ow get by npc: npc is @0x%x\n", n);
-    if (person)
-        dprintf("Has person at 0x%x with sprite %d\n", person, person->overworld_index);
+    // dprintf("Ow get by npc: npc is @0x%x\n", n);
+    // if (person)
+        // dprintf("Has person at 0x%x with sprite %d\n", person, person->overworld_index);
     if (person)
         return overworld_get_by_person(person);
     else // Hiro and camera can not be found...
@@ -135,7 +135,7 @@ u8 overworld_npc_palette_load(u16 tag) {
 }
 
 void overworld_npc_load_palette_by_template(oam_template *template) {
-    dprintf("Find palette 0x%x via template\n", template->pal_tag);
+    // dprintf("Find palette 0x%x via template\n", template->pal_tag);
     if (template->pal_tag != 0xFFFF) {
         // dprintf("Loading oam pal from tag 0x%x\n", template->pal_tag);
         overworld_npc_palette_load(template->pal_tag);
@@ -213,7 +213,7 @@ void npc_free_resources(npc *n) {
     if (tag == 0x1200) // This tag is used by weather effects, we never can release this palette...
         return; 
     oam_palette_free(tag);
-    dprintf("Released palette %d with tag 0x%x\n", pal_idx, tag);
+    // dprintf("Released palette %d with tag 0x%x\n", pal_idx, tag);
 }
 
 
@@ -284,7 +284,7 @@ void overworld_effect_show_warp_arrow(u8 oam_idx, u8 direction, s16 x, s16 y) {
         map_position_to_oam_position((s16)x, (s16)y, &oam_x, &oam_y);
         o->x = (s16)(oam_x + 8);
         o->y = (s16)(oam_y + 8);
-        dprintf("Create arrow with screen coordinates. %d, %d", oam_x, oam_y);
+        // dprintf("Create arrow with screen coordinates. %d, %d", oam_x, oam_y);
         o->flags &= (u16)(~(OAM_FLAG_INVISIBLE));
         o->private[0] = (u16)x;
         o->private[1] = (u16)y;
@@ -297,7 +297,7 @@ void overworld_effect_show_warp_arrow(u8 oam_idx, u8 direction, s16 x, s16 y) {
 extern oam_template oam_template_item_finder_arrow;
 
 void itemfinder_create_arrow_sprite(u8 anim_idx, u8 direction) {
-    dprintf("Item finder create arrow in direction %d\n", direction);
+    // dprintf("Item finder create arrow in direction %d\n", direction);
     u8 oam_idx = oam_new_forward_search(&oam_template_item_finder_arrow, 120, 76, 0);
     oam_object *o = oams + oam_idx;
     oam_gfx_anim_start(o, anim_idx);
