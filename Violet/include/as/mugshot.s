@@ -1,17 +1,18 @@
 .include "mugshot_character.s"
 .include "mugshot_alignment.s"
+.include "mugshot_emotions.s"
 .include "callstds.s"
 .include "specials.s"
 
-.macro load_mugshot person alignment=MUGSHOT_LEFT mask_name=0
+.macro load_mugshot person alignment=MUGSHOT_LEFT mask_name=0 emotion=MUGSHOT_NORMAL
     setvar 0x8000 \alignment
     setvar 0x8001 \person
-
     .if \mask_name == 0x1
         setvar 0x8002 0x0
     .else
         setvar 0x8002 0x1
     .endif
+    setvar 0x8003 \emotion
 .endm
 
 .macro call_draw_mugshot
@@ -29,8 +30,8 @@
     call_hide_mugshot
 .endm
 
-.macro draw_mugshot person alignment=MUGSHOT_LEFT mask_name=0
-    load_mugshot \person \alignment \mask_name
+.macro draw_mugshot person alignment=MUGSHOT_LEFT mask_name=0 emotion=MUGSHOT_NORMAL
+    load_mugshot \person \alignment \mask_name \emotion
     call_draw_mugshot
 .endm
 
@@ -39,8 +40,8 @@
     call_hide_mugshot
 .endm
 
-.macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0
-    load_mugshot \person \alignment \mask_name
+.macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0 emotion=MUGSHOT_NORMAL
+    load_mugshot \person \alignment \mask_name \emotion
     show_mugshot_message \message_type
 .endm
 

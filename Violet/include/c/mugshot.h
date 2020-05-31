@@ -12,11 +12,12 @@
 extern "C" {
 #endif
 
-#include "stdbool.h"
+#include "types.h"
+#include "constants/mugshot_emotions.h"
 
     typedef struct mugshot {
-        const void *gfx;
-        const void *pal;
+        const void *gfx[MUGSHOT_EMOTION_COUNT]; // lz77 compressed
+        const void *pal; // lz77 compressed
         u8 *name;
     } mugshot;
 
@@ -24,8 +25,9 @@ extern "C" {
      * Creates the oam for a given mugshot and stores its idx in the floating memory
      * @param side side to display the mugshot (0 = left, 1 = right)
      * @param idx index of the mugshot to display
+     * @param emotion index of the emotion to display
      */
-    void mugshot_create_oam(int side, int idx);
+    void mugshot_create_oam(int side, int idx, int emotion);
 
     /**
      * Creates the text for a given mugshot and stores its idx in the floating memory

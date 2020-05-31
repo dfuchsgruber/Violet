@@ -73,5 +73,6 @@
 	"trainer_backsprites" : "constants/trainer_backsprites.const",
 	"battle/battle_handicaps" : "constants/battle/battle_handicaps.const",
 	"block_behaviour" : "constants/block_behaviour.const",
-	"signpost_types" : "constants/signpost_types.const"
+	"signpost_types" : "constants/signpost_types.const",
+	"mugshot_emotions" : "constants/mugshot_emotions.const"
 }

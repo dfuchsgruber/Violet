@@ -1,0 +1,16 @@
+{
+    "type": "enum",
+    "base": 0,
+    "values": [
+        "MUGSHOT_NORMAL",
+        "MUGSHOT_ANGRY",
+        "MUGSHOT_ANNOYED",
+        "MUGSHOT_HAPPY",
+        "MUGSHOT_HOPEFUL",
+        "MUGSHOT_SCARED",
+        "MUGSHOT_RUMINATIVE",
+        "MUGSHOT_SHOCKED",
+        "MUGSHOT_SAD",
+        "MUGSHOT_EMOTION_COUNT"
+    ]
+}

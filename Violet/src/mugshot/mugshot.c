@@ -22,46 +22,89 @@
 sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
 sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
 
-mugshot mugshots[] = {
-    {&gfx_mug_rinTiles, &gfx_mug_rinPal, str_mug_rin},
-    {NULL, NULL, NULL},
-    {&gfx_mug_mistralTiles, &gfx_mug_mistralPal, str_mug_mistral},
-    {NULL, NULL, NULL},
-    
-    {NULL, NULL, NULL},
-    {NULL, NULL, NULL},
-    {&gfx_mug_rivalTiles, &gfx_mug_rivalPal, str_mug_rival},
-    {&gfx_mug_brixTiles, &gfx_mug_brixPal, str_mug_brix},
-    
-    {&gfx_mug_mayTiles, &gfx_mug_mayPal, str_mug_may},
-    {&gfx_mug_felixTiles, &gfx_mug_felixPal, str_mug_felix},
-    {&gfx_mug_blaiseTiles, &gfx_mug_blaisePal, str_mug_blaise},
-    {&gfx_mug_tannTiles, &gfx_mug_tannPal, str_mug_tann},
-    
-    {&gfx_mug_hiroTiles, &gfx_mug_hiroPal, str_mug_hiro},
-    {&gfx_mug_lesterTiles, &gfx_mug_lesterPal, str_mug_lester},
-    {&gfx_mug_faunTiles, &gfx_mug_faunPal, str_mug_faun},
-    {&gfx_mug_eliseTiles, &gfx_mug_elisePal, str_mug_elise},
-    
-    {&gfx_mug_emerysTiles, &gfx_mug_emerysPal, str_mug_emerys},
-    {&gfx_mug_rubysTiles, &gfx_mug_rubysPal, str_mug_rubys},
-    {&gfx_mug_saphiraTiles, &gfx_mug_saphiraPal, str_mug_saphira},
-    {&gfx_mug_harrenfeldTiles, &gfx_mug_harrenfeldPal, str_mug_harrenfeld},
-    
-    {&gfx_mug_albusTiles, &gfx_mug_albusPal, str_mug_albus},
-    {&gfx_mug_faun_youngTiles, &gfx_mug_faun_youngPal, str_mug_faun},
-    {&gfx_pkmn_species_251_pokemon_celebi_frontspriteTiles, &gfx_pkmn_species_251_pokemon_celebi_frontspritePal, str_mug_celebi},
-    {&gfx_mug_larissaTiles, &gfx_mug_larissaPal, str_mug_larissa},
-    
-    {&gfx_mug_primusTiles, &gfx_mug_primusPal, str_mug_primus},
-    {&gfx_mug_igvaTiles, &gfx_mug_igvaPal, str_mug_igva},
-    {&gfx_mug_blackbeardTiles, &gfx_mug_blackbeardPal, str_mug_blackbeard},
-    {&gfx_mug_hiroineTiles, &gfx_mug_hiroinePal, str_mug_hiro},
 
-	[MUGSHOT_TEAH] = {&gfx_mug_teahTiles, &gfx_mug_teahPal, str_mug_teah},
-	[MUGSHOT_NARCISSA] = {&gfx_mug_narcissaTiles, &gfx_mug_narcissaPal, str_mug_narcissa},
-	[MUGSHOT_LUCIUS] = {&gfx_mug_luciusTiles, &gfx_mug_luciusPal, str_mug_lucius},
-	[MUGSHOT_LUCKY] = {&gfx_mug_luckyTiles, &gfx_mug_luckyPal, str_mug_lucky},
+mugshot mugshots[] = {
+    [MUGSHOT_RIN] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_rinTiles}, 
+		gfx_mug_rinPal, str_mug_rin},
+    [MUGSHOT_MISTRAL] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_mistralTiles}, 
+		gfx_mug_mistralPal, str_mug_mistral},
+    [MUGSHOT_RIVAL] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_rivalTiles}, 
+		gfx_mug_rivalPal, str_mug_rival},
+    [MUGSHOT_BRIX] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_brixTiles},
+		gfx_mug_brixPal, str_mug_brix},
+    [MUGSHOT_MAY] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_mayTiles}, 
+		gfx_mug_mayPal, str_mug_may},
+    [MUGSHOT_FELIX] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_felixTiles}, 
+		gfx_mug_felixPal, str_mug_felix},
+    [MUGSHOT_BLAISE] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_blaiseTiles}, gfx_mug_blaisePal, str_mug_blaise},
+    [MUGSHOT_TANN] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_tannTiles}, 
+		gfx_mug_tannPal, str_mug_tann},
+    [MUGSHOT_HIRO] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_hiroTiles},
+		gfx_mug_hiroPal, str_mug_hiro},
+    [MUGSHOT_LESTER] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_lesterTiles}, 
+		gfx_mug_lesterPal, str_mug_lester},
+    [MUGSHOT_FAUN] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_faunTiles}, 
+		gfx_mug_faunPal, str_mug_faun},
+    [MUGSHOT_ELISE] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_eliseTiles}, 
+		gfx_mug_elisePal, str_mug_elise},
+    [MUGSHOT_EMERYS] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_emerysTiles}, 
+		gfx_mug_emerysPal, str_mug_emerys},
+    [MUGSHOT_RUBYS] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_rubysTiles}, 
+		gfx_mug_rubysPal, str_mug_rubys},
+    [MUGSHOT_SAPHIRA] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_saphiraTiles}, 
+		gfx_mug_saphiraPal, str_mug_saphira},
+    [MUGSHOT_HARRENFELD] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_harrenfeldTiles}, 
+		gfx_mug_harrenfeldPal, str_mug_harrenfeld},
+    [MUGSHOT_ALBUS] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_albusTiles}, 
+		gfx_mug_albusPal, str_mug_albus},
+    [MUGSHOT_FAUN_YOUNG] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_faun_youngTiles}, 
+		gfx_mug_faun_youngPal, str_mug_faun},
+    [MUGSHOT_CELEBI] = {
+		{[MUGSHOT_NORMAL] = gfx_pkmn_species_251_pokemon_celebi_frontspriteTiles}, 
+		gfx_pkmn_species_251_pokemon_celebi_frontspritePal, str_mug_celebi},
+    [MUGSHOT_LARISSA] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_larissaTiles}, 
+		gfx_mug_larissaPal, str_mug_larissa},
+    [MUGSHOT_PRIMUS] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_primusTiles}, 
+		gfx_mug_primusPal, str_mug_primus},
+    [MUGSHOT_IGVA] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_igvaTiles}, 
+		gfx_mug_igvaPal, str_mug_igva},
+    [MUGSHOT_BLACKBEARD] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_blackbeardTiles}, 
+		gfx_mug_blackbeardPal, str_mug_blackbeard},
+    [MUGSHOT_HIROINE] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_hiroineTiles}, 
+		gfx_mug_hiroinePal, str_mug_hiro},
+	[MUGSHOT_TEAH] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_teahTiles}, 
+		gfx_mug_teahPal, str_mug_teah},
+	[MUGSHOT_NARCISSA] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_narcissaTiles}, 
+		gfx_mug_narcissaPal, str_mug_narcissa},
+	[MUGSHOT_LUCIUS] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_luciusTiles}, gfx_mug_luciusPal, str_mug_lucius},
+	[MUGSHOT_LUCKY] = {
+		{[MUGSHOT_NORMAL] = gfx_mug_luckyTiles}, gfx_mug_luckyPal, str_mug_lucky},
 };
 
 void tbox_clear_bottom_line(u8 box_id) {
@@ -74,39 +117,18 @@ void tbox_clear_bottom_line(u8 box_id) {
     }
 }
 
+static const void *mugshot_get_emotion_gfx(int idx, int emotion) {
+	if (mugshots[idx].gfx[emotion] == NULL) {
+		emotion = MUGSHOT_NORMAL;
+	}
+	return mugshots[idx].gfx[emotion];
+}
 
-void mugshot_create_oam(int side, int idx) {
+void mugshot_create_oam(int side, int idx, int emotion) {
     u16 tag = (u16) (MUGSHOT_BASE_TAG + idx);
-    // Create the graphic
-    graphic *mugshot_tmp_graphic = (graphic*) malloc(sizeof (graphic));
-	mugshot_tmp_graphic->sprite = mugshots[idx].gfx;
-	mugshot_tmp_graphic->size = 0x800;
-	mugshot_tmp_graphic->tag = tag;
-
-	// Load palette
-	u8 pal = oam_allocate_palette(tag);
-	u16 *pal_buf = (u16*) malloc(40);
-	lz77uncompwram(mugshots[idx].pal, pal_buf);
-	u8 weather = map_get_current_weather();
-	pal_copy(pal_buf, (u16) (0x100 + 16 * pal), 32);
-	if (weather == MAP_WEATHER_CLOUDY || weather == MAP_WEATHER_EXTREME_THUNDER ||
-			weather == MAP_WEATHER_THUNDER || weather == MAP_WEATHER_RAIN) {
-		//fade
-		int i;
-		for (i = 0; i < 16; i++) {
-			color_t over = {0}; //black
-			pals[i + 16 * (pal + 16)] = color_alpha_blend(pals[i + 16 * (pal + 16)], over, 3);
-		}
-	}
-	free(pal_buf);
-
-	// Allocate vram for the mugshot
-	if (oam_vram_allocation_table_get_index(tag) == 0xFF) {
-		oam_load_graphic(mugshot_tmp_graphic);
-	}
-
-	// Create a template
-	oam_template *mugshot_template = malloc(sizeof (oam_template));
+	
+	// Create an oam template for the mugshot
+	oam_template *mugshot_template = malloc(sizeof(oam_template));
 	mugshot_template->tiles_tag = tag;
 	mugshot_template->pal_tag = tag;
 	if (map_flash_usable()){
@@ -114,19 +136,33 @@ void mugshot_create_oam(int side, int idx) {
 	} else {
 		mugshot_template->oam = &mugshot_sprite;
 	}
-	mugshot_template->graphics = NULL;
-	mugshot_template->animation = (gfx_frame**) 0x08231Bc0;
-	mugshot_template->rotscale = (rotscale_frame**) 0x08231Bcc;
+	mugshot_template->animation = oam_gfx_anim_table_null;
+	mugshot_template->rotscale = oam_rotscale_anim_table_null;
 	mugshot_template->callback = oam_null_callback;
 
-	// Spawn the mugshot
-	s16 x = (s16) (0x20 + side * 0xB0);
-	fmem.mugshot_oam_id = oam_new_forward_search(mugshot_template, x, 0x50, 0);
+	if (oam_vram_allocation_table_get_index(tag) == 0xFF) {
+		// Allocate a graphic, that is released once the mugshot is destroyed
+		graphic *g = (graphic*) malloc(sizeof (graphic));
+		g->sprite = mugshot_get_emotion_gfx(idx, emotion);
+		g->size = GRAPHIC_SIZE_4BPP(64, 64);
+		g->tag = tag;	
+		oam_load_graphic(g);
+		mugshot_template->graphics = g;
+	} else {
+		mugshot_template->graphics = NULL;
+	}
+
+	// Load palette
+	if (oam_palette_get_index(tag) == 0xFF) {
+		u8 pal = oam_allocate_palette(tag);
+		pal_decompress(mugshots[idx].pal, (u16)(16 * (pal + 16)), 16 * sizeof(color_t));
+		pal_oam_apply_fading(pal);
+	}
+
+	fmem.mugshot_oam_id = oam_new_forward_search(mugshot_template, (s16) (32 + side * 176), 80, 0);
 }
 
 void mugshot_create_text(int side, u8 *text) {
-	dprintf("Create text %x\n", text);
-	// Decrypt buffers
 	string_decrypt(strbuf, text);
 	u8 width = string_get_width(2, strbuf, 0);
 	if(transparency_is_on()){
@@ -172,12 +208,13 @@ void special_mugshot_show() {
 	// Create the actual mugshot
   int side = *var_access(0x8000);
   int idx = *var_access(0x8001);
+  int emotion = *var_access(0x8003);
   if (idx == MUGSHOT_PLAYER) {
     idx = save2->player_is_female ? MUGSHOT_HIROINE : MUGSHOT_HIRO;
   }
 	int is_known = *var_access(0x8002);
 	u8 unknown_name[] = PSTRING("???");
-    mugshot_create_oam(side, idx);
+    mugshot_create_oam(side, idx, emotion);
 	mugshot_create_text(side, is_known ? mugshots[idx].name : unknown_name);
 }
 

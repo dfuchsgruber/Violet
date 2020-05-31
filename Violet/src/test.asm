@@ -38,8 +38,8 @@ ow_script_test:
 	// setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	// setvar BATTLE_BG_OVERRIDE BATTLE_BG_BBSHIP_OUTSIDE + 1
 	// givepokemon POKEMON_OCTILLERY 80 ITEM_OCTILLERYNIT 0 0 0
-	trainerbattlestd 0x0 0x199 0 str_beforea str_aftera
-	end
+	//trainerbattlestd 0x0 0x199 0 str_beforea str_aftera
+	// end
 	warp 33 4 0 0 0
 	waitstate
 	end
