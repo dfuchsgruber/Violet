@@ -193,7 +193,7 @@ $(BLDPATH)/$(basename $(MAPPROJ)).o: $(MAPPROJ)
 # Intermediate object files (large input lists are not supported by console)
 
 $(BLDPATH)/asset/mus.o: $(MIDOBJS)
-	@echo "Collecting midi objects..."
+	@echo "Linking midi objects..."
 	$(call build_list,$(BLDPATH)/midi.ld,$(MIDOBJS))
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/midi.ld --relocatable -o $(BLDPATH)/asset/mus.o
 
@@ -209,7 +209,7 @@ $(BLDPATH)/map.o: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BLDPATH)/fa
 	
 	
 $(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ)
-	@echo "Collecting src files..."
+	@echo "Linking src files..."
 	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ))
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/sources.ld --relocatable -o $(BLDPATH)/src.o
 		

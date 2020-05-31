@@ -13,6 +13,8 @@
 #include "bios.h"
 #include "map/event.h"
 #include "prng.h"
+#include "callbacks.h"
+#include "battle/whiteout.h"
 
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
@@ -167,7 +169,7 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
     overworld_sprite *sprite = overworld_get_by_npc(n);
     u16 tag = sprite->pal_tag;
     u16 reflection_tag = NPC_PAL_TAG_TO_REFLECTION_TAG(tag);
-    // dprintf("Try to set up reflection tag 0x%x for tag 0x%x\n", reflection_tag, tag);
+    dprintf("Try to set up reflection tag 0x%x for tag 0x%x\n", reflection_tag, tag);
     u8 pal_idx = oam_palette_get_index(reflection_tag);
     if (pal_idx != 0xFF) {
         oam->final_oam.attr2 = (u16)((pal_idx << 12) | (oam->final_oam.attr2 & ~(15 << 12)));
@@ -185,6 +187,12 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
     overworld_npc_reflection_brighten_palette(pal_idx);
     pal_apply_shaders_by_oam_palette_idx(pal_idx);
     pal_oam_apply_fading(pal_idx);
+    if (big_callback_is_active(whiteout_callback_print_text)){ // This causes issues somehow...
+        dprintf("Reflection palette while whiting out...\n");
+        int zero = 0;
+        cpuset(&zero, pals + 16 * (pal_idx + 16), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
+    }
+
     oam->final_oam.attr2 = (u16)((pal_idx << 12) | (oam->final_oam.attr2 & ~(15 << 12)));
     // dprintf("Created reflective pal at slot %d\n", pal_idx);
     // dprintf("Attribute2 is 0x%x\n", oam->final_oam.attr2);

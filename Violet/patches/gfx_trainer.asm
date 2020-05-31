@@ -96,6 +96,7 @@ trainergfx 26,gfx_trainer_harrenfeldTiles,gfx_trainer_harrenfeldPal
 trainergfx 25,gfx_trainer_pirateTiles,gfx_trainer_piratePal
 trainergfx 24,gfx_trainer_butlerTiles,gfx_trainer_butlerPal
 trainergfx 28,gfx_trainer_luciusTiles,gfx_trainer_luciusPal
+trainergfx 62,gfx_trainer_blackbeardTiles,gfx_trainer_blackbeardPal
 
 
 .org 0x0803f7a0

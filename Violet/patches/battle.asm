@@ -192,14 +192,9 @@ blxr4:
 	ldr r0, =battle_scripted_wild_battle_continuation | 1
 	bx r0
 	.pool
-
-//.org 0x807f4a0
-//	.word str_whiteout
-
-.org 0x0807f3c0
-	ldr r1, =whiteout_callback_print_text | 1
-	bx r1
-	.pool
+	
+.org 0x0807f57c
+	.word whiteout_callback_print_text | 1
 
 .org 0x080BFEA0
 	ldr r1, =whiteout_setup_warp | 1

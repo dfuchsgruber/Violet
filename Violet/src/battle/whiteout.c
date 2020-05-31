@@ -124,6 +124,7 @@ extern u8 ow_script_whiteout_mother[];
 
 void whiteout_callback_print_text(u8 self) {
 	u16 *state = big_callbacks[self].params + 0;
+	dprintf("Whiteout state %d\n", *state);
 	switch (*state) {
 		case 0: {
 			u8 tbox_idx = tbox_new(&tboxdata_whiteout_text);
