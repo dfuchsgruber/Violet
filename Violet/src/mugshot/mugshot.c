@@ -43,7 +43,8 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_felixTiles}, 
 		gfx_mug_felixPal, str_mug_felix},
     [MUGSHOT_BLAISE] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_blaiseTiles}, gfx_mug_blaisePal, str_mug_blaise},
+		{[MUGSHOT_NORMAL] = gfx_mug_blaiseTiles}, 
+		gfx_mug_blaisePal, str_mug_blaise},
     [MUGSHOT_TANN] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_tannTiles}, 
 		gfx_mug_tannPal, str_mug_tann},
@@ -90,7 +91,10 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_igvaTiles}, 
 		gfx_mug_igvaPal, str_mug_igva},
     [MUGSHOT_BLACKBEARD] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_blackbeardTiles}, 
+		{[MUGSHOT_NORMAL] = gfx_mug_blackbeardTiles,
+		[MUGSHOT_SHOCKED] = gfx_mug_blackbeard_shockedTiles,
+		[MUGSHOT_ANGRY] = gfx_mug_blackbeard_angryTiles,
+		[MUGSHOT_HAPPY] = gfx_mug_blackbeard_happyTiles}, 
 		gfx_mug_blackbeardPal, str_mug_blackbeard},
     [MUGSHOT_HIROINE] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_hiroineTiles}, 
@@ -104,7 +108,9 @@ mugshot mugshots[] = {
 	[MUGSHOT_LUCIUS] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_luciusTiles}, gfx_mug_luciusPal, str_mug_lucius},
 	[MUGSHOT_LUCKY] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_luckyTiles}, gfx_mug_luckyPal, str_mug_lucky},
+		{[MUGSHOT_NORMAL] = gfx_mug_luckyTiles,
+		[MUGSHOT_SCARED] = gfx_mug_lucky_scaredTiles,
+		[MUGSHOT_SHOCKED] = gfx_mug_lucky_shockedTiles}, gfx_mug_luckyPal, str_mug_lucky},
 };
 
 void tbox_clear_bottom_line(u8 box_id) {

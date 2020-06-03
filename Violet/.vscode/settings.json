@@ -113,6 +113,7 @@
         "event.h": "c",
         "movements.h": "c",
         "battle_bgs.h": "c",
-        "trainer_ai_flags.h": "c"
+        "trainer_ai_flags.h": "c",
+        "berry.h": "c"
     }
 }

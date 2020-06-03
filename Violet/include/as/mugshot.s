@@ -24,10 +24,12 @@
     waitstate
 .endm
 
-.macro show_mugshot_message message_type=MSG
+.macro show_mugshot_message message_type=MSG hide_mugshot=1
     call_draw_mugshot
     callstd \message_type
-    call_hide_mugshot
+    .if \hide_mugshot != 0
+        call_hide_mugshot
+    .endif
 .endm
 
 .macro draw_mugshot person alignment=MUGSHOT_LEFT mask_name=0 emotion=MUGSHOT_NORMAL
@@ -40,7 +42,7 @@
     call_hide_mugshot
 .endm
 
-.macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0 emotion=MUGSHOT_NORMAL
+.macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0 emotion=MUGSHOT_NORMAL hide_mugshot=1
     load_mugshot \person \alignment \mask_name \emotion
     show_mugshot_message \message_type
 .endm

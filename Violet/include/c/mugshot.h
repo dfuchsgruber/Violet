@@ -80,6 +80,9 @@ extern "C" {
     extern const unsigned short gfx_mug_igvaTiles[];
     extern const unsigned short gfx_mug_igvaPal[];
     extern const unsigned short gfx_mug_blackbeardTiles[];
+    extern const unsigned short gfx_mug_blackbeard_shockedTiles[];
+    extern const unsigned short gfx_mug_blackbeard_angryTiles[];
+    extern const unsigned short gfx_mug_blackbeard_happyTiles[];
     extern const unsigned short gfx_mug_blackbeardPal[];
     extern const unsigned short gfx_mug_rinTiles[];
     extern const unsigned short gfx_mug_rinPal[];
@@ -129,6 +132,8 @@ extern "C" {
     extern const unsigned short gfx_mug_luciusPal[];
     extern const unsigned short gfx_mug_luckyTiles[];
     extern const unsigned short gfx_mug_luckyPal[];
+    extern const unsigned short gfx_mug_lucky_scaredTiles[];
+    extern const unsigned short gfx_mug_lucky_shockedTiles[];
 
     extern u8 str_mug_mistral[];
     extern u8 str_mug_hiro[];

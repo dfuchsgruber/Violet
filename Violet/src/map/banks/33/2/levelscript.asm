@@ -33,4 +33,4 @@ transition_script:
     movesprite2 0x2 0x1c 0x20
     spritebehave 0x2 BEHAVIOUR_WALK_LEFT_AND_RIGHT
 roadblock:
-    end
+    end 

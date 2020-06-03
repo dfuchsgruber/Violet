@@ -539,6 +539,14 @@
 .word \str_defeat
 .endm
 
+.macro trainerbattlenointrotext trainer:req people:req str_defeat
+.byte 0x5c
+.byte 0x3 // kind
+.hword \trainer
+.hword \people
+.word \str_defeat
+.endm
+
 .macro trainerbattlecont kind trainer people str_challange str_defeat continuation
 .byte 0x5c
 .byte \kind

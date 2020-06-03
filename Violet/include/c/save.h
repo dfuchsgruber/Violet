@@ -22,6 +22,7 @@
 #include "item/item_effect.h"
 #include "trainer/virtual.h"
 #include "overworld/palette.h"
+#include "berry.h"
 
 #define GP_STACK_SIZE 16
 
@@ -62,7 +63,8 @@ typedef struct saveblock1 {
     // 0x20E0
     u8 flags[288];
     u16 vars[256];
-    u8 field_4608[6896];
+    u32 sav_keys[64]; // This is one of the whackest names for stuff I have so far... At one point this should be renamed to: game stat
+    u8 field_4864[6640];
     u16 mail_words[2][9]; // Might be there are more than 2 mails
     u8 unknown_4[620];
     // 0x2F80
