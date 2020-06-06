@@ -51,6 +51,29 @@ typedef struct {
 extern overworld_effect_state_t overworld_effect_state;
 
 /**
+ * Translates coordinates of the overworld effect into screen coordinates
+ * @param initial x coordinate
+ * @param initial y coordinate
+ * @param dx relative x coordinate
+ * @param dy relative y coordinate
+ **/
+void overworld_effect_ow_coordinates_to_screen_coordinates(s16 *x, s16 *y, s16 dx, s16 dy);
+
+/**
+ * Callback for overworld effects that are destroyed once their gfx animation has finished.
+ * Expects the type of gfx animation to be stored in private[0]
+ * @param self self-reference
+ **/
+void overworld_effect_oam_callback_wait_for_gfx_animation(oam_object *self);
+
+/**
+ * Deletes an overworld effect.
+ * @param o the oam the effect used
+ * @param effect_idx the effect that is to be deleted
+ **/
+void overworld_effect_delete(oam_object *o, u8 effect_idx);
+
+/**
  * Gets the grass effect triggered by stepping on a tile with a certain behaviour on the current map.
  * @param behaviour the behaviour to step on
  * @return the grass effect or NULL if none is associated

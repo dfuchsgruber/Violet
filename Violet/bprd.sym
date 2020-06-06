@@ -853,3 +853,6 @@ berry_pouch_callback_from_storage_pc = 0x0813e4ac | 1;
 berry_pouch_fade_and_continuation = 0x0813d8a4 | 1;
 berry_pouch_initialize = 0x0813cdec | 1;
 ambient_cry_proceed = 0x08056098 | 1;
+overworld_effect_ow_coordinates_to_screen_coordinates = 0x08063bc4 | 1;
+overworld_effect_oam_callback_wait_for_gfx_animation = 0x080dcf40 | 1;
+overworld_effect_delete = 0x0808363c | 1;

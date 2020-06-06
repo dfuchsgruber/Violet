@@ -394,3 +394,6 @@ _blxr1:
     ldr r1, = big_callback_time_based_events | 1
     bx r1
     .pool
+
+.org 0x081ddb1e // Overworld Effect Script for growth sparkle
+    .word overworld_effect_berry_tree_growth_sparkle | 1

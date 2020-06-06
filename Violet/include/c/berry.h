@@ -10,6 +10,7 @@
 
 #define OW_PAL_TAG_BERRY_BASE 0x2800
 #define NUM_OW_PAL_TAGS_BERRY 6
+#define TAG_BERRY_GROWTH_SPARKLE 0x2880
 
 #define ITEM_FIRST_BERRY ITEM_AMRENABEERE
 #define ITEM_IDX_TO_BERRY_IDX(item_idx) ((item_idx) - ITEM_FIRST_BERRY)
@@ -137,6 +138,9 @@ extern u8 gfx_ow_berry_lansatTiles[];
 extern u8 gfx_ow_berry_noneTiles[];
 extern u8 gfx_ow_berry_dirt_pileTiles[];
 extern u8 gfx_ow_berry_sproutTiles[];
+
+extern u8 gfx_berry_tree_growth_sparkleTiles[];
+extern color_t gfx_berry_tree_growth_sparklePal[16];
 
 extern color_t gfx_ow_berry_pal2Pal[16];
 extern color_t gfx_ow_berry_pal3Pal[16];

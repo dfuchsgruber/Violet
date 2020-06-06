@@ -13,11 +13,11 @@
 #include "fading.h"
 #include "overworld/pokemon_party_menu.h"
 #include "rtc.h"
+#include "tile/any_grass.h"
 
 u8 berry_tree_get_berry(u8 berry_tree_idx) {
     return cmem.berry_trees[berry_tree_idx].berry;
 }
- 
 
 static u8 berry_tree_initial_items[] = {
     [0] = ITEM_IDX_TO_BERRY_IDX(ITEM_LYDZIBEERE),
@@ -178,5 +178,53 @@ void berry_proceed() {
         u16 delta_minutes = (u16)ldelta_minutes;
         berry_proceed_minutes(delta_minutes);
         time_read(&fmem.berry_tree_time_last_update);
+    }
+}
+
+palette berry_tree_growth_sparkle_palette = {
+    .pal = gfx_berry_tree_growth_sparklePal, .tag = TAG_BERRY_GROWTH_SPARKLE
+};
+
+graphic berry_tree_growth_sparkle_graphics[] = {
+    [0] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
+    [1] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
+    [2] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
+    [3] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
+    [4] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
+    [5] = {.sprite = gfx_berry_tree_growth_sparkleTiles + 5 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = TAG_BERRY_GROWTH_SPARKLE},
+};
+
+gfx_frame berry_tree_growth_sparkle_gfx_animation[] = {
+    {.data = 0, .duration = 0}, {.data = 0, .duration = 8},  {.data = 1, .duration = 8}, {.data = 2, .duration = 8},
+    {.data = 3, .duration = 8},  {.data = 4, .duration = 8}, {.data = 5, .duration = 8}, {.data = GFX_ANIM_END, .duration = 0},
+};
+
+gfx_frame *berry_tree_growth_sparkle_gfx_animations[] = {berry_tree_growth_sparkle_gfx_animation};
+
+oam_template berry_tree_growth_sparkle_oam_template = {
+    .tiles_tag = 0xFFFF, .pal_tag = TAG_BERRY_GROWTH_SPARKLE, .oam = &ow_final_oam_16_16, .animation = berry_tree_growth_sparkle_gfx_animations,
+    .graphics = berry_tree_growth_sparkle_graphics, .rotscale = oam_rotscale_anim_table_null,
+    .callback = overworld_effect_oam_callback_wait_for_gfx_animation,
+};
+
+void overworld_effect_berry_tree_growth_sparkle() {
+    // Set up the x,y,z triplet for the berry tree
+    u8 person_idx = (u8)(*var_access(LASTTALKED));
+    u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
+    if (npc_idx >= 16) { // Should never happen
+        derrf("Overworld effect berry tree growth sparkle could not be located.\n");
+    }
+    overworld_effect_state.x = npcs[npc_idx].dest_x;
+    overworld_effect_state.y = npcs[npc_idx].dest_y;
+    overworld_effect_state.bg_priority = (oams[npcs[npc_idx].oam_id].final_oam.attr2 >> 10) & 3;
+
+    oam_palette_load_if_not_present(&berry_tree_growth_sparkle_palette);
+    overworld_effect_ow_coordinates_to_screen_coordinates((s16*)(&overworld_effect_state.x), (s16*)(&overworld_effect_state.y), 8, 4);
+    u8 oam_idx = oam_new_forward_search(&berry_tree_growth_sparkle_oam_template, (s16)(overworld_effect_state.x), (s16)(overworld_effect_state.y), (u8)(overworld_effect_state.bg_priority));
+    if (oam_idx < 0x40) {
+        oam_object *o = oams + oam_idx;
+        o->flags |= OAM_FLAG_CENTERED;
+        o->final_oam.attr2 = (u16)((o->final_oam.attr2 & (~ATTR2_PRIO(3))) | ATTR2_PRIO(overworld_effect_state.bg_priority & 3));
+        o->private[0] = 23;
     }
 }

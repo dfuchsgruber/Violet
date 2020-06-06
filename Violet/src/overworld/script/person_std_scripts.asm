@@ -77,6 +77,9 @@ ow_script_aggressive_wild_do_battle:
 	end
 
 ow_script_berry_tree:
+	doanimation 23
+	checkanimation 23
+
 	special2 LASTRESULT SPECIAL_BERRY_TREE_GET_STAGE
 	compare LASTRESULT BERRY_STAGE_NO_BERRY
 	gotoif EQUAL plant_berries
