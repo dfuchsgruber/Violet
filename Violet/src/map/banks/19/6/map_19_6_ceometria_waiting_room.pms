@@ -28,7 +28,8 @@
 					"flag": "16",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -52,7 +53,8 @@
 					"flag": "17",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -76,7 +78,8 @@
 					"flag": "18",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -100,7 +103,8 @@
 					"flag": "19",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				}
 			],

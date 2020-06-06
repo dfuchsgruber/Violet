@@ -6,6 +6,7 @@
 #include "debug.h"
 #include "constants/time_types.h"
 #include "text.h"
+#include "berry.h"
 
 bool time_test() {
 	switch(*var_access(TIME_TYPE)) {
@@ -56,6 +57,7 @@ void time_reset_events() {
     time_read(&(cmem.a_gen_time));
     // Reset the fossil gen time
     time_read(&(cmem.fossil_gen_time));
+	fmem.berry_tree_time_last_updated_initialized = 0;
 }
 
 void time_reset_ingame_clock() {
@@ -98,3 +100,27 @@ void buffer_time() {
 	itoa(buffer0, s.hour, 2, 2);
 	itoa(buffer1, s.minute, 2, 2);
 }
+
+void time_based_events_run() {
+	berry_proceed();
+}
+
+void time_based_events_proceed(u16 *vars) {
+	// After running time based events, wait 256 vblanks to switch into a waiting state, then wait another 0x1000 frames
+	switch(vars[0]) {
+		case 0: {
+			if (super.local_vlbank_cnt & 0x100) {
+				time_based_events_run();
+				vars[0] = 1; 
+			}
+			break;
+		}
+		case 1: 
+		default: {
+			if (!(super.local_vlbank_cnt & 0x100)) {
+				vars[0] = 0;
+			}
+		}
+	}
+}
+

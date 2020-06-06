@@ -27,7 +27,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -50,7 +51,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -73,7 +75,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -96,7 +99,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -119,7 +123,8 @@
 					"flag": "FLAG_BBSHIP_ITEM_0",
 					"value": {
 						"item": "ITEM_SUESSBONBON",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -142,7 +147,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_OCTILLERY"
+						"species": "POKEMON_OCTILLERY",
+						"berry_tree_idx": 0
 					}
 				}
 			],

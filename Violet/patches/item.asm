@@ -341,3 +341,6 @@ _bxr1:
 
 .org 0x0805d2fc
     .word fishing_big_callback_bait | 1
+
+.org 0x0813dc4c
+    .word berry_pouch_callbacks

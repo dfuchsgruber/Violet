@@ -8,6 +8,7 @@
 #include "overworld/palette.h"
 #include "tile/any_grass.h"
 #include "overworld/sprite.h"
+#include "overworld/map_control.h"
 #include "overworld/script.h"
 #include "color.h"
 #include "bios.h"
@@ -16,6 +17,7 @@
 #include "callbacks.h"
 #include "battle/whiteout.h"
 #include "berry.h"
+#include "rtc.h"
 
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
@@ -204,30 +206,38 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
     // dprintf("Attribute2 is 0x%x\n", oam->final_oam.attr2);
 }
 
-void npc_free_resources(npc *n) {
-    graphic tmp;
-    tmp.size = overworld_get_by_npc(n)->size;
-    oams[n->oam_id].gfx_table = (u32*)&tmp;
-    oam_clear_and_free_vram(oams + n->oam_id);
-
-    u8 pal_idx = (u8)((oams[n->oam_id].final_oam.attr2 >> 12) & 0xF);
-    // Check if any npcs are using the palette (it is assumed that n is already set to inactive!)
+void npc_free_palette_if_unused(u16 tag) {
+    if (tag == 0xFFFF || tag == 0x1200) // 0x1200 is the tag for weather effects, we mustn't release those
+        return;
+    u8 slot = oam_palette_get_index(tag);
+    if (slot == 0xFF)
+        return;
     for (int i = 0; i < 16; i++) {
         if (!npcs[i].flags.active) continue;
-        u8 oam_idx = npcs[i].oam_id;
-        if (((oams[oam_idx].final_oam.attr2 >> 12) & 0xF) == pal_idx)
+        oam_object *oam = oams + npcs[i].oam_id;
+        if (((oam->final_oam.attr2 >> 12) & 0xF) == slot)
             return; // This palette is still referenced by at least one npc
     }
-    // No other npc references this pal slot anymore, we can free the allocated palette slot
-    u16 tag = oam_palette_get_tag(pal_idx);
-    if (tag == 0xFFFF) {
-        dprintf("Warning! A npc was using pal %d, which however is not associated with any allocated tag. Bug?\n", pal_idx);
-        return;
-    }
+    
     if (tag == 0x1200) // This tag is used by weather effects, we never can release this palette...
         return; 
     oam_palette_free(tag);
     // dprintf("Released palette %d with tag 0x%x\n", pal_idx, tag);
+}
+
+void npc_free_palette_if_unused_by_slot(u8 slot) {
+    u16 tag = oam_palette_get_tag(slot);
+    if (tag == 0xFFFF) return;
+    npc_free_palette_if_unused(tag);
+}
+
+void npc_free_resources(npc *n) {
+    graphic tmp;
+    tmp.size = overworld_get_by_npc(n)->size;
+    oams[n->oam_id].gfx_table = &tmp;
+    oam_clear_and_free_vram(oams + n->oam_id);
+    u8 pal_idx = (u8)((oams[n->oam_id].final_oam.attr2 >> 12) & 0xF);
+    npc_free_palette_if_unused_by_slot(pal_idx);
 }
 
 
@@ -427,4 +437,11 @@ void overworld_create_oam_template_by_npc_with_movement_callback(npc *n, u16 mov
 void overworld_create_oam_template_by_person(map_event_person *person, oam_template *template, subsprite_table **subsprites) {
     overworld_sprite *sprite = overworld_get_by_person(person);
     overworld_create_oam_template_by_overworld_sprite_with_callback(sprite, person->behavior, template, subsprites);
+}
+
+void big_callback_time_based_events(u8 self) {
+    if (!ow_script_is_active()) {
+        ambient_cry_proceed(big_callbacks[self].params + 1, big_callbacks[self].params + 2);
+        time_based_events_proceed(big_callbacks[self].params + 0);
+    }
 }

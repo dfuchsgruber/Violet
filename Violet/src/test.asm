@@ -35,7 +35,7 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	callasm berry_trees_initialize
+	callasm berry_trees_initialize_all
 	end
 	// setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	// setvar BATTLE_BG_OVERRIDE BATTLE_BG_BBSHIP_OUTSIDE + 1

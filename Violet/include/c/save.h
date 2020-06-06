@@ -117,7 +117,8 @@ typedef struct saveblock2 {
 typedef struct {
     u8 berry;
     u8 stage : 3;
-    u8 yield : 2;
+    u8 yield : 3;
+    u8 picked_once : 1;
     u8 replanted : 1;
     u16 minutes_to_next_stage;
 } berry_tree;
@@ -150,7 +151,7 @@ typedef struct custom_memory {
     roamer_state_t roamers[NUM_ROAMERS];
     roamer_history_entry_t roamer_histories[NUM_ROAMERS][3];
     roamer_history_entry_t roamer_locations[NUM_ROAMERS];
-    berry_tree berry_trees[128];
+    berry_tree berry_trees[256];
 
 } custom_memory;
 
@@ -215,6 +216,8 @@ typedef struct {
     u8 ally_trainer_backsprite_idx;
     u8 ally_trainer_party_preview;
     u32 battle_handicaps;
+    rtc_timestamp berry_tree_time_last_update; // When were berry trees last updated?
+    u8 berry_tree_time_last_updated_initialized : 1;
 } floating_memory;
 
 

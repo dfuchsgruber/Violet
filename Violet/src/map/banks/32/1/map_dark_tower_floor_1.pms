@@ -27,7 +27,8 @@
 					"flag": "FLAG_DARK_TOWER_STRENGTH_LEFT_F1 | 0x8000",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -50,7 +51,8 @@
 					"flag": "FLAG_DARK_TOWER_STRENGTH_RIGHT_F1 | 0x8000",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -73,7 +75,8 @@
 					"flag": "FLAG_DARK_TOWER_ITEM_0",
 					"value": {
 						"item": "ITEM_MEGABLOCK",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -96,7 +99,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				}
 			],

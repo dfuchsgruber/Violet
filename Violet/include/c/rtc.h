@@ -70,6 +70,12 @@ void time_ingame_clock_read(rtc_timestamp *s);
  */
 void time_reset_events();
 
+/**
+ * Tries to proceed time based events
+ * @param vars space for local variables of the time based events (e.g. the ambient cry)
+ **/
+void time_based_events_proceed(u16 *vars);
+
 gpio gpios;
 
 #endif

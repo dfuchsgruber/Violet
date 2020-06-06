@@ -158,4 +158,12 @@ bool map_flash_usable();
  **/
 void map_reload_continuation_resume_script();
 
+
+/**
+ * Proceeds the ambient cries, i.e. it may, if the delay is finished, play an ambient cry
+ * @param state the state of the ambient cry
+ * @param delay the delay of the ambient cry
+ **/
+void ambient_cry_proceed(u16 *state, u16 *delay);
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

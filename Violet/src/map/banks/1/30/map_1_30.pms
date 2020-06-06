@@ -29,7 +29,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -54,7 +55,8 @@
 					"script_std": "PERSON_ITEM",
 					"value": {
 						"item": "ITEM_NUGGET",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -79,7 +81,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -104,7 +107,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -129,7 +133,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -154,7 +159,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -179,7 +185,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -204,7 +211,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -229,7 +237,8 @@
 					"script_std": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -254,7 +263,8 @@
 					"script_std": "PERSON_ITEM",
 					"value": {
 						"item": "ITEM_FEUERHEILER",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -279,7 +289,8 @@
 					"script_std": "PERSON_ITEM",
 					"value": {
 						"item": "ITEM_BELEBER",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				}
 			],

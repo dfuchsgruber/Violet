@@ -28,7 +28,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -52,7 +53,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -76,7 +78,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -100,7 +103,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -124,7 +128,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -148,7 +153,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -172,7 +178,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -196,7 +203,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -220,7 +228,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -244,7 +253,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -268,7 +278,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -292,7 +303,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -316,7 +328,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -340,7 +353,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -364,7 +378,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -388,7 +403,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -412,7 +428,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -436,7 +453,8 @@
 					"flag": "FLAG_ROUTE_7_ITEM_2",
 					"value": {
 						"item": "ITEM_EISEN",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -460,7 +478,8 @@
 					"flag": "FLAG_ROUTE_7_ITEM_3",
 					"value": {
 						"item": "ITEM_X_ANGRIFF",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -484,7 +503,8 @@
 					"flag": "FLAG_ROUTE_7_ITEM_4",
 					"value": {
 						"item": "ITEM_HYPERTRANK",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -508,7 +528,8 @@
 					"flag": "FLAG_ROUTE_7_EGG_1",
 					"value": {
 						"item": "0",
-						"species": "POKEMON_RIOLU"
+						"species": "POKEMON_RIOLU",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -532,7 +553,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -556,7 +578,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -580,7 +603,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -604,7 +628,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -628,7 +653,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -652,7 +678,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -676,7 +703,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				}
 			],

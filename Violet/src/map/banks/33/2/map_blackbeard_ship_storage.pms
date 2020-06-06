@@ -27,7 +27,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -50,7 +51,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -73,7 +75,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -96,7 +99,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -119,7 +123,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -142,7 +147,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -165,7 +171,8 @@
 					"flag": "FLAG_BBSHIP_LUCKY_IN_STORAGE",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -188,7 +195,8 @@
 					"flag": "FLAG_PLAYER_PARTY_STOLEN  | 0x8000",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -211,7 +219,8 @@
 					"flag": "FLAG_BBSHIP_LUCKY_IN_STORAGE",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -234,7 +243,8 @@
 					"flag": "FLAG_BBSHIP_ITEM_8",
 					"value": {
 						"item": "ITEM_AETHER",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -257,7 +267,8 @@
 					"flag": "FLAG_BBSHIP_ITEM_9",
 					"value": {
 						"item": "ITEM_HYPERBALL",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -280,7 +291,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_NIDORANM"
+						"species": "POKEMON_NIDORANM",
+						"berry_tree_idx": 0
 					}
 				}
 			],

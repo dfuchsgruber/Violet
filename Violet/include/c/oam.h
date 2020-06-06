@@ -133,7 +133,7 @@ typedef struct {
 typedef struct oam_object {
     sprite final_oam;
     gfx_frame **animation_table;
-    u32 *gfx_table;
+    graphic *gfx_table;
     u32 *rotscale_table;
     oam_template *oam_template;
     subsprite_table *subsprites;

@@ -389,3 +389,8 @@ _blxr1:
     ldr r3, =overworld_create_oam_template_by_person | 1
     bx r3
     .pool
+
+.org 0x0806e7a0
+    ldr r1, = big_callback_time_based_events | 1
+    bx r1
+    .pool

@@ -28,7 +28,8 @@
 					"flag": "FLAG_ARDEAL_ITEM_1",
 					"value": {
 						"item": "ITEM_MONDSTEIN",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				}
 			],

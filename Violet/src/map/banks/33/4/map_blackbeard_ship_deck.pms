@@ -27,7 +27,8 @@
 					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -50,7 +51,8 @@
 					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -73,7 +75,8 @@
 					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -96,7 +99,8 @@
 					"flag": "FLAG_BBSHIP_DECK_BLACKBEARD",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -119,7 +123,8 @@
 					"flag": "FLAG_BBSHIP_DECK_LUCKY2 | 0x8000",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -142,7 +147,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -165,7 +171,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -188,7 +195,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -211,7 +219,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -234,7 +243,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -257,7 +267,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -280,7 +291,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -303,7 +315,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -326,7 +339,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -349,7 +363,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -372,7 +387,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -395,7 +411,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -418,7 +435,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -441,7 +459,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -464,7 +483,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -487,7 +507,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -510,7 +531,8 @@
 					"flag": "FLAG_BBSHIP_ITEM_1",
 					"value": {
 						"item": "ITEM_HYPERTRANK",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -533,7 +555,8 @@
 					"flag": "FLAG_BBSHIP_ITEM_2",
 					"value": {
 						"item": "ITEM_FLUCHTSEIL",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -556,7 +579,8 @@
 					"flag": "FLAG_BBSHIP_ITEM_3",
 					"value": {
 						"item": "ITEM_HYPERHEILER",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -579,7 +603,8 @@
 					"flag": "FLAG_BBSHIP_ITEM_4",
 					"value": {
 						"item": "ITEM_X_SPEZIAL",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -602,7 +627,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WINGULL"
+						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -625,7 +651,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_PELIPPER"
+						"species": "POKEMON_PELIPPER",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -648,7 +675,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WINGULL"
+						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -671,7 +699,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WINGULL"
+						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -694,7 +723,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WINGULL"
+						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -717,7 +747,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_PELIPPER"
+						"species": "POKEMON_PELIPPER",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -740,7 +771,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_PELIPPER"
+						"species": "POKEMON_PELIPPER",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -763,7 +795,8 @@
 					"flag": "0",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WINGULL"
+						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -786,7 +819,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_KREBSCORPS"
+						"species": "POKEMON_KREBSCORPS",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -809,7 +843,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_KRABBY"
+						"species": "POKEMON_KRABBY",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -832,7 +867,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_WINGULL"
+						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -855,7 +891,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": "POKEMON_SCHILLOK"
+						"species": "POKEMON_SCHILLOK",
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -878,7 +915,8 @@
 					"flag": 0,
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				},
 				{
@@ -901,7 +939,8 @@
 					"flag": "FLAG_BBSHIP_DECK_LUCKY2 | 0x8000",
 					"value": {
 						"item": 0,
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				}
 			],

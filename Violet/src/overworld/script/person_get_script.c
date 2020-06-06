@@ -20,6 +20,7 @@ extern u8 ow_script_person_pokeball[];
 extern u8 ow_script_person_egg[];
 extern u8 ow_script_person_pokemon[];
 extern u8 ow_script_aggressive_wild[];
+extern u8 ow_script_berry_tree[];
 
 static u16 aggressive_wild_pokemon_feature_generator() {
 	return (u16)(rnd16() % 200);
@@ -60,6 +61,9 @@ u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 		*var_access(0x8000) = p->value;
 		*var_access(0x8001) = p->argument;
 		return ow_script_aggressive_wild;
+	case PERSON_BERRY_TREE:
+		*var_access(0x8000) = p->value;
+		return ow_script_berry_tree;
 	default:
 		return p->script;
 	}

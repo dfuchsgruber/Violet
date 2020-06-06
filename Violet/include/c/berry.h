@@ -13,6 +13,7 @@
 
 #define ITEM_FIRST_BERRY ITEM_AMRENABEERE
 #define ITEM_IDX_TO_BERRY_IDX(item_idx) ((item_idx) - ITEM_FIRST_BERRY)
+#define BERRY_IDX_TO_ITEM_IDX(berry_idx) ((berry_idx) + ITEM_FIRST_BERRY)
 
 typedef struct { // From pokeemerald
     /*0x00*/ u8 name[7];
@@ -31,7 +32,38 @@ typedef struct { // From pokeemerald
     /*0x1A*/ u8 smoothness;
 } berry;
 
-extern berry berries[];
+typedef struct {
+    void (*continuation)(void);
+    u16 indicator_offfset;
+    u8 indicator_callback_idx;
+    u8 num_list_menu_items;
+    u8 list_menu_max_showed;
+    u8 item_menu_icon_idx;
+    u8 __attribute__((aligned(4))) bg1map[0x800];
+    s16 data[4];
+} berry_pouch_state_t;
+
+/**
+ * Fades the berry pouch and loads the continuation. Resources are freed as well.
+ * @param self self-reference
+ **/
+void berry_pouch_fade_and_continuation(u8 self);
+
+/**
+ * Initializes the berry pouch menu.
+ * @param context in which context. Different contexts enables different behaviour
+ * @param continuation the continuation after the berry pouch is closed
+ * @param allow_select if select is allowed
+ **/
+void berry_pouch_initialize(u8 context, void (*continuation)(), u8 allow_select);
+
+
+/**
+ * Gets the information of a berry
+ * @param berry_idx the berry to get
+ * @return berry the information of the berry
+ **/
+berry *berry_get(u8 berry_idx);
 
 /**
  * Gets the overworld sprite of a berry tree.
@@ -60,6 +92,16 @@ u8 overworld_get_sprite_idx_by_berry_idx(u8 berry_idx);
  * @return the palette of the berry tree
  **/
 palette *overworld_palette_berry_get_by_tag(u16 tag);
+
+/**
+ * Tries proceeding the berry growth based on the ingame time
+ **/
+void berry_proceed();
+
+extern void berry_pouch_callback_context_menu(u8 self);
+extern void berry_pouch_callback_from_party_menu_give(u8 self);
+extern void berry_pouch_callback_from_storage_pc(u8 self);
+extern void berry_pouch_callback_from_mart_sell(u8 self);
 
 extern u8 gfx_ow_berry_cheriTiles[];
 extern u8 gfx_ow_berry_chestoTiles[];

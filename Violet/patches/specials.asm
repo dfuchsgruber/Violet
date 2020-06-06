@@ -231,8 +231,22 @@ special_table equ 0x0815FCC0
 .org (special_table + 106 * 4)
                 .word battle_handicap_clear | 1
 
-.org (special_table + 0x107 * 4)
+.org (special_table + 107 * 4)
         .word special_buffer_badge_name | 1
+
+.org (special_table + 108 * 4)
+        .word berry_tree_get_stage | 1
+.org (special_table + 109 * 4)
+        .word berry_tree_get_item | 1
+.org (special_table + 110 * 4)
+        .word berry_tree_get_yield | 1
+.org (special_table + 111 * 4)
+        .word berry_tree_update_gfx | 1
+.org (special_table + 112 * 4)
+        .word berry_pick | 1
+.org (special_table + 113 * 4)
+        .word berry_plant | 1
+
 
 // Free up until <= 118
 

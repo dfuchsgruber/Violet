@@ -19,6 +19,7 @@
 #include "types.h"
 #include "oam.h"
 #include "color.h"
+#include "overworld/npc.h"
 
 #define OVERWORLD_SPRITE_BERRY 237
 #define OVERWORLD_SPRITE_POKEMON_32_32 238
@@ -91,6 +92,19 @@ overworld_sprite *overworld_sprite_get_by_species(u16 species);
  * @return the overworld sprite idx to use for this species, e.g. in a person
  **/
 u8 overworld_get_sprite_idx_by_species(u16 species);
+
+/**
+ * Frees a npc palette if currently no active npc is using this palette.
+ * @param slot the palette to free
+ **/
+void npc_free_palette_if_unused_by_slot(u8 slot);
+
+/**
+ * Updates the palette of a npc by, if neccesary, also loading the palette
+ * @param npc the npc to update
+ * @param oam the oam object to update
+ **/
+void overworld_npc_update_palette(npc *n, oam_object *oam);
 
 extern u8 gfx_ow_bisasamTiles[];
 extern color_t gfx_ow_bisasamPal[16];

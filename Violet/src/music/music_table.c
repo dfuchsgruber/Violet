@@ -774,5 +774,6 @@ song song_table[] = {
 	//Song 382 (=0x17F)
 	{mus_bbship, SONG_TYPE_SONG, SONG_TYPE_SONG},
 	[MUS_BB_BATTLE] = {mus_bb_battle, SONG_TYPE_SONG, SONG_TYPE_SONG},
+	[SOUND_BERRY_PICKED] = {(void*) 0x86f3e50, SONG_TYPE_FANFARE, SONG_TYPE_FANFARE}, // TODO
 
 };

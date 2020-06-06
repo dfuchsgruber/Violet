@@ -114,6 +114,13 @@ void item_remove_from_pc(u16 item, u16 quantity);
  * @return if the player's bag contains the item(s)
  */
 bool item_check(u16 item, u16 quantity);
+/**
+ * Checks if the player's bag has room for item(s).
+ * @param item the item to check
+ * @param quantity the amount
+ * @return if the player's bag can hold this much items
+ **/
+bool item_has_room(u16 item, u16 quantity);
 
 /**
  * Item function for items that use an effect from the effect table.

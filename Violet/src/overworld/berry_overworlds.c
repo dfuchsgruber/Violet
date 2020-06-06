@@ -1297,7 +1297,7 @@ overworld_sprite overworld_berry_tree_dirt_pile = {
 
 static graphic overworld_gfxs_sprout[] = {
     [0] = {.sprite = gfx_ow_berry_sproutTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
-	[1] = {.sprite = gfx_ow_berry_sproutTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_berry_sproutTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
 overworld_sprite overworld_berry_tree_sprout = {
@@ -1310,7 +1310,7 @@ overworld_sprite overworld_berry_tree_sprout = {
 overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry_idx) {
 	u8 stage = cmem.berry_trees[berry_idx].stage;
 	u8 berry = cmem.berry_trees[berry_idx].berry;
-	dprintf("Requesting ow sprite for berry idx %d, in stage %d with berry %d\n", berry_idx, stage, berry);
+	//dprintf("Requesting ow sprite for berry idx %d, in stage %d with berry %d\n", berry_idx, stage, berry);
 	if (stage == BERRY_STAGE_NO_BERRY) {
 		return &overworld_berry_tree_none;
 	} else if (stage == BERRY_STAGE_DIRT_PILE)
@@ -1318,7 +1318,7 @@ overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry_idx) {
 	else if (stage == BERRY_STAGE_SPROUT)
 		return &overworld_berry_tree_sprout;
     overworld_sprite *r = &overworlds_berry_trees[berry][stage - BERRY_STAGE_TALLER];
-	dprintf("Is @0x%x\n", r);
+	//dprintf("Is @0x%x\n", r);
 	return r;
 }
 

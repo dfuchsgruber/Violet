@@ -28,7 +28,8 @@
 					"flag": "FLAG_GEISTERSCHLUESSEL",
 					"value": {
 						"item": "ITEM_GEISTERSCHLUESSEL",
-						"species": 0
+						"species": 0,
+						"berry_tree_idx": 0
 					}
 				}
 			],
