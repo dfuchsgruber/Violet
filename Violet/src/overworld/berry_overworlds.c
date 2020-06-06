@@ -5,6 +5,12 @@
 #include "berry.h"
 #include "debug.h"
 
+static gfx_frame gfx_animation_berry_idle[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 32}, {.data = 1, .duration = 32}, {.data = GFX_ANIM_JUMP, .duration = 0},
+};
+
+static gfx_frame *gfx_animations_berry_tree[9] = {gfx_animation_berry_idle};
+
 palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
     [2] = {.pal = gfx_ow_berry_pal2Pal, .tag = OW_PAL_TAG_BERRY_BASE + 2},
     [3] = {.pal = gfx_ow_berry_pal3Pal, .tag = OW_PAL_TAG_BERRY_BASE + 3},
@@ -12,7 +18,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
     [5] = {.pal = gfx_ow_berry_pal5Pal, .tag = OW_PAL_TAG_BERRY_BASE + 5},
 }; 
 
- graphic overworld_gfxs_cheri_berry[] = {
+static graphic overworld_gfxs_cheri_berry[] = {
 	[0] = {gfx_ow_berry_cheriTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_cheriTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_cheriTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -21,7 +27,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_cheriTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_chesto_berry[] = {
+static graphic overworld_gfxs_chesto_berry[] = {
 	[0] = {gfx_ow_berry_chestoTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_chestoTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_chestoTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -30,7 +36,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_chestoTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_pecha_berry[] = {
+static graphic overworld_gfxs_pecha_berry[] = {
 	[0] = {gfx_ow_berry_pechaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_pechaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_pechaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -39,7 +45,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_pechaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_rawst_berry[] = {
+static graphic overworld_gfxs_rawst_berry[] = {
 	[0] = {gfx_ow_berry_rawstTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_rawstTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_rawstTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -48,7 +54,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_rawstTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_aspear_berry[] = {
+static graphic overworld_gfxs_aspear_berry[] = {
 	[0] = {gfx_ow_berry_aspearTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_aspearTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_aspearTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -57,7 +63,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_aspearTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_leppa_berry[] = {
+static graphic overworld_gfxs_leppa_berry[] = {
 	[0] = {gfx_ow_berry_leppaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_leppaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_leppaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -66,7 +72,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_leppaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_oran_berry[] = {
+static graphic overworld_gfxs_oran_berry[] = {
 	[0] = {gfx_ow_berry_oranTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_oranTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_oranTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -75,7 +81,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_oranTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_persim_berry[] = {
+static graphic overworld_gfxs_persim_berry[] = {
 	[0] = {gfx_ow_berry_persimTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_persimTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_persimTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -84,7 +90,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_persimTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_lum_berry[] = {
+static graphic overworld_gfxs_lum_berry[] = {
 	[0] = {gfx_ow_berry_lumTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_lumTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_lumTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -93,7 +99,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_lumTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_sitrus_berry[] = {
+static graphic overworld_gfxs_sitrus_berry[] = {
 	[0] = {gfx_ow_berry_sitrusTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_sitrusTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_sitrusTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -102,7 +108,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_sitrusTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_figy_berry[] = {
+static graphic overworld_gfxs_figy_berry[] = {
 	[0] = {gfx_ow_berry_figyTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_figyTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_figyTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -111,7 +117,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_figyTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_wiki_berry[] = {
+static graphic overworld_gfxs_wiki_berry[] = {
 	[0] = {gfx_ow_berry_wikiTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_wikiTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_wikiTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -120,7 +126,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_wikiTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_mago_berry[] = {
+static graphic overworld_gfxs_mago_berry[] = {
 	[0] = {gfx_ow_berry_magoTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_magoTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_magoTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -129,7 +135,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_magoTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_aguav_berry[] = {
+static graphic overworld_gfxs_aguav_berry[] = {
 	[0] = {gfx_ow_berry_aguavTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_aguavTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_aguavTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -138,7 +144,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_aguavTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_iapapa_berry[] = {
+static graphic overworld_gfxs_iapapa_berry[] = {
 	[0] = {gfx_ow_berry_iapapaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_iapapaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_iapapaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -147,7 +153,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_iapapaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_razz_berry[] = {
+static graphic overworld_gfxs_razz_berry[] = {
 	[0] = {gfx_ow_berry_razzTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_razzTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_razzTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -156,7 +162,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_razzTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_bluk_berry[] = {
+static graphic overworld_gfxs_bluk_berry[] = {
 	[0] = {gfx_ow_berry_razzTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_razzTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_razzTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -165,7 +171,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_razzTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_nanab_berry[] = {
+static graphic overworld_gfxs_nanab_berry[] = {
 	[0] = {gfx_ow_berry_magoTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_magoTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_magoTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -174,7 +180,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_magoTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_wepear_berry[] = {
+static graphic overworld_gfxs_wepear_berry[] = {
 	[0] = {gfx_ow_berry_wepearTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_wepearTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_wepearTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -183,7 +189,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_wepearTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_pinap_berry[] = {
+static graphic overworld_gfxs_pinap_berry[] = {
 	[0] = {gfx_ow_berry_iapapaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_iapapaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_iapapaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -192,7 +198,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_iapapaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_pomeg_berry[] = {
+static graphic overworld_gfxs_pomeg_berry[] = {
 	[0] = {gfx_ow_berry_pomegTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_pomegTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_pomegTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -201,7 +207,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_pomegTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_kelpsy_berry[] = {
+static graphic overworld_gfxs_kelpsy_berry[] = {
 	[0] = {gfx_ow_berry_kelpsyTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_kelpsyTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_kelpsyTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -210,7 +216,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_kelpsyTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_qualot_berry[] = {
+static graphic overworld_gfxs_qualot_berry[] = {
 	[0] = {gfx_ow_berry_wepearTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_wepearTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_wepearTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -219,7 +225,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_wepearTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_hondew_berry[] = {
+static graphic overworld_gfxs_hondew_berry[] = {
 	[0] = {gfx_ow_berry_hondewTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_hondewTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_hondewTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -228,7 +234,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_hondewTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_grepa_berry[] = {
+static graphic overworld_gfxs_grepa_berry[] = {
 	[0] = {gfx_ow_berry_grepaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_grepaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_grepaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -237,7 +243,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_grepaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_tamato_berry[] = {
+static graphic overworld_gfxs_tamato_berry[] = {
 	[0] = {gfx_ow_berry_tamatoTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_tamatoTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_tamatoTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -246,7 +252,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_tamatoTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_cornn_berry[] = {
+static graphic overworld_gfxs_cornn_berry[] = {
 	[0] = {gfx_ow_berry_cornnTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_cornnTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_cornnTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -255,7 +261,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_cornnTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_magost_berry[] = {
+static graphic overworld_gfxs_magost_berry[] = {
 	[0] = {gfx_ow_berry_pomegTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_pomegTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_pomegTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -264,7 +270,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_pomegTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_rabuta_berry[] = {
+static graphic overworld_gfxs_rabuta_berry[] = {
 	[0] = {gfx_ow_berry_rabutaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_rabutaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_rabutaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -273,7 +279,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_rabutaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_nomel_berry[] = {
+static graphic overworld_gfxs_nomel_berry[] = {
 	[0] = {gfx_ow_berry_nomelTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_nomelTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_nomelTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -282,7 +288,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_nomelTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_spelon_berry[] = {
+static graphic overworld_gfxs_spelon_berry[] = {
 	[0] = {gfx_ow_berry_spelonTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_spelonTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_spelonTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -291,7 +297,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_spelonTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_pamtre_berry[] = {
+static graphic overworld_gfxs_pamtre_berry[] = {
 	[0] = {gfx_ow_berry_pamtreTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_pamtreTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_pamtreTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -300,7 +306,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_pamtreTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_watmel_berry[] = {
+static graphic overworld_gfxs_watmel_berry[] = {
 	[0] = {gfx_ow_berry_rabutaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_rabutaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_rabutaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -309,7 +315,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_rabutaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_durin_berry[] = {
+static graphic overworld_gfxs_durin_berry[] = {
 	[0] = {gfx_ow_berry_durinTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_durinTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_durinTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -318,7 +324,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_durinTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_belue_berry[] = {
+static graphic overworld_gfxs_belue_berry[] = {
 	[0] = {gfx_ow_berry_hondewTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_hondewTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_hondewTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -327,7 +333,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_hondewTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_liechi_berry[] = {
+static graphic overworld_gfxs_liechi_berry[] = {
 	[0] = {gfx_ow_berry_liechiTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_liechiTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_liechiTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -336,7 +342,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_liechiTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_ganlon_berry[] = {
+static graphic overworld_gfxs_ganlon_berry[] = {
 	[0] = {gfx_ow_berry_hondewTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_hondewTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_hondewTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -345,7 +351,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_hondewTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_salac_berry[] = {
+static graphic overworld_gfxs_salac_berry[] = {
 	[0] = {gfx_ow_berry_aguavTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_aguavTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_aguavTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -354,7 +360,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_aguavTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_petaya_berry[] = {
+static graphic overworld_gfxs_petaya_berry[] = {
 	[0] = {gfx_ow_berry_pomegTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_pomegTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_pomegTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -363,7 +369,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_pomegTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_apicot_berry[] = {
+static graphic overworld_gfxs_apicot_berry[] = {
 	[0] = {gfx_ow_berry_grepaTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_grepaTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_grepaTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -372,7 +378,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_grepaTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_lansat_berry[] = {
+static graphic overworld_gfxs_lansat_berry[] = {
 	[0] = {gfx_ow_berry_lansatTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_lansatTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_lansatTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -381,7 +387,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_lansatTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_starf_berry[] = {
+static graphic overworld_gfxs_starf_berry[] = {
 	[0] = {gfx_ow_berry_cornnTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_cornnTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_cornnTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -390,7 +396,7 @@ palette ow_berry_pals[NUM_OW_PAL_TAGS_BERRY] = {
 	[5] = {gfx_ow_berry_cornnTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
- graphic overworld_gfxs_enigma_berry[] = {
+static graphic overworld_gfxs_enigma_berry[] = {
 	[0] = {gfx_ow_berry_durinTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {gfx_ow_berry_durinTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[2] = {gfx_ow_berry_durinTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -405,19 +411,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_cheri_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_cheri_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_cheri_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -425,19 +431,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_chesto_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_chesto_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_chesto_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -445,19 +451,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pecha_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pecha_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pecha_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -465,19 +471,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_rawst_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_rawst_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_rawst_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -485,19 +491,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_aspear_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_aspear_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_aspear_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -505,19 +511,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_leppa_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_leppa_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_leppa_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -525,19 +531,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_oran_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_oran_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_oran_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -545,19 +551,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_persim_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_persim_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_persim_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -565,19 +571,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_lum_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_lum_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_lum_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -585,19 +591,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_sitrus_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_sitrus_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_sitrus_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -605,19 +611,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_figy_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_figy_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_figy_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -625,19 +631,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_wiki_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_wiki_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_wiki_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -645,19 +651,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_mago_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_mago_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_mago_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -665,19 +671,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_aguav_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_aguav_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_aguav_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -685,19 +691,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_iapapa_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_iapapa_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_iapapa_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -705,19 +711,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_razz_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_razz_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_razz_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -725,19 +731,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_bluk_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_bluk_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_bluk_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -745,19 +751,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_nanab_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_nanab_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_nanab_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -765,19 +771,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_wepear_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_wepear_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_wepear_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -785,19 +791,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pinap_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pinap_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pinap_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -805,19 +811,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pomeg_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pomeg_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pomeg_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -825,19 +831,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_kelpsy_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_kelpsy_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_kelpsy_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -845,19 +851,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_qualot_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_qualot_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_qualot_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -865,19 +871,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_hondew_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_hondew_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_hondew_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -885,19 +891,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_grepa_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_grepa_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_grepa_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -905,19 +911,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_tamato_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_tamato_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_tamato_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -925,19 +931,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_cornn_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_cornn_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_cornn_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -945,19 +951,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_magost_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_magost_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_magost_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -965,19 +971,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_rabuta_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_rabuta_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_rabuta_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -985,19 +991,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_nomel_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_nomel_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_nomel_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1005,19 +1011,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_spelon_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_spelon_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_spelon_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1025,19 +1031,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pamtre_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pamtre_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_pamtre_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1045,19 +1051,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_watmel_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_watmel_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_watmel_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1065,19 +1071,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_durin_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_durin_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_durin_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1085,19 +1091,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_belue_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_belue_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_belue_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1105,19 +1111,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_liechi_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_liechi_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_liechi_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1125,19 +1131,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_ganlon_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_ganlon_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 5,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_ganlon_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1145,19 +1151,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_salac_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_salac_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_salac_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1165,19 +1171,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_petaya_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_petaya_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_petaya_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1185,19 +1191,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_apicot_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_apicot_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_apicot_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1205,19 +1211,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_lansat_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_lansat_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_lansat_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1225,19 +1231,19 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_starf_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_starf_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 2,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_starf_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
@@ -1245,49 +1251,51 @@ overworld_sprite overworlds_berry_trees[][3] = {
 		[BERRY_STAGE_TALLER - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_enigma_berry + 0, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BLOSSOM - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_enigma_berry + 2, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 		[BERRY_STAGE_BERRIES - BERRY_STAGE_TALLER] = {
 		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
 			.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+			.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
 			.graphics = overworld_gfxs_enigma_berry + 4, .rotscale_animation = oam_rotscale_anim_table_null,
 		},
 	},
 };
 
- graphic overworld_gfxs_none[] = {
+static graphic overworld_gfxs_none[] = {
     [0] = {.sprite = gfx_ow_berry_noneTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_berry_noneTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
 overworld_sprite overworld_berry_tree_none = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
     .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
     .graphics = overworld_gfxs_none, .rotscale_animation = oam_rotscale_anim_table_null,
 	.inanimate = true,
 };
 
- graphic overworld_gfxs_dirt_pile[] = {
+static graphic overworld_gfxs_dirt_pile[] = {
     [0] = {.sprite = gfx_ow_berry_dirt_pileTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_berry_dirt_pileTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
 
 overworld_sprite overworld_berry_tree_dirt_pile = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
     .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
     .graphics = overworld_gfxs_dirt_pile, .rotscale_animation = oam_rotscale_anim_table_null,
 	.inanimate = true,
 };
 
- graphic overworld_gfxs_sprout[] = {
+static graphic overworld_gfxs_sprout[] = {
     [0] = {.sprite = gfx_ow_berry_sproutTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {.sprite = gfx_ow_berry_sproutTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 };
@@ -1295,7 +1303,7 @@ overworld_sprite overworld_berry_tree_dirt_pile = {
 overworld_sprite overworld_berry_tree_sprout = {
     .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 4,
     .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
-    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
     .graphics = overworld_gfxs_sprout, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 

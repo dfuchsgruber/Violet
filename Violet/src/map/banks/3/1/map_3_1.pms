@@ -512,8 +512,8 @@
 					"picture": 16,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 68,
-					"y": 37,
+					"x": "68",
+					"y": "30",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -662,8 +662,8 @@
 					"picture": "237",
 					"field_2": 0,
 					"field_3": "33",
-					"x": "71",
-					"y": "29",
+					"x": "68",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
