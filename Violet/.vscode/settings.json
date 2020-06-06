@@ -114,6 +114,7 @@
         "movements.h": "c",
         "battle_bgs.h": "c",
         "trainer_ai_flags.h": "c",
-        "berry.h": "c"
+        "berry.h": "c",
+        "berry_stages.h": "c"
     }
 }

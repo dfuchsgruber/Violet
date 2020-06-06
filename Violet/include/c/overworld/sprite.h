@@ -20,6 +20,7 @@
 #include "oam.h"
 #include "color.h"
 
+#define OVERWORLD_SPRITE_BERRY 237
 #define OVERWORLD_SPRITE_POKEMON_32_32 238
 #define OVERWORLD_SPRITE_POKEMON_64_64 239
 

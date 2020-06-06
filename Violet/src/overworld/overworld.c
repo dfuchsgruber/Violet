@@ -15,6 +15,7 @@
 #include "prng.h"
 #include "callbacks.h"
 #include "battle/whiteout.h"
+#include "berry.h"
 
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
@@ -66,11 +67,13 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
         // dprintf("Reqeusting 32x32 mon overworld\n");
         return overworld_sprite_get_by_species(person->value);
         // return overworld_get(170); // For testing: This is the deoxys sprite
-    }
-    if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_64_64) {
+    } else if (person->overworld_index == OVERWORLD_SPRITE_POKEMON_64_64) {
         return overworld_sprite_get_by_species(person->value);
         // return overworld_get(OVERWORLD_SPRITE_POKEMON_64_64); // For testing: This is the groudon sprite
+    } else if (person->overworld_index == OVERWORLD_SPRITE_BERRY) {
+        return overworld_sprite_get_by_berry_idx((u8)(person->value));
     }
+
     // dprintf("Falling back to default sprite showing %d\n", person->overworld_index);
     return overworld_get(person->overworld_index);
 }
@@ -118,6 +121,9 @@ void overworld_npc_palettes_initialize(u8 mode) {
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
+    }
+    if (tag >= OW_PAL_TAG_BERRY_BASE && tag < (OW_PAL_TAG_BERRY_BASE + NUM_OW_PAL_TAGS_BERRY)) {
+        return overworld_palette_berry_get_by_tag(tag);
     }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);

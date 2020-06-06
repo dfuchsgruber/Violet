@@ -35,6 +35,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm berry_trees_initialize
+	end
 	// setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	// setvar BATTLE_BG_OVERRIDE BATTLE_BG_BBSHIP_OUTSIDE + 1
 	// givepokemon POKEMON_OCTILLERY 80 ITEM_OCTILLERYNIT 0 0 0

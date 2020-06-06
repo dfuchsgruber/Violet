@@ -22,7 +22,6 @@
 #include "item/item_effect.h"
 #include "trainer/virtual.h"
 #include "overworld/palette.h"
-#include "berry.h"
 
 #define GP_STACK_SIZE 16
 
@@ -113,6 +112,16 @@ typedef struct saveblock2 {
 
 #define PLAYER_TID (u32)(save2->tid_0 + (save2->tid_1 << 8) + (save2->tid_2 << 16) + (save2->tid_3 << 24))
 
+
+
+typedef struct {
+    u8 berry;
+    u8 stage : 3;
+    u8 yield : 2;
+    u8 replanted : 1;
+    u16 minutes_to_next_stage;
+} berry_tree;
+
 typedef struct custom_memory {
     u8 flag_extension[0x80]; //additional 0x400 flags (0x900-0xD00)
     u8 pokedex_seen_extension[0x40]; //additional 512 flags
@@ -141,6 +150,7 @@ typedef struct custom_memory {
     roamer_state_t roamers[NUM_ROAMERS];
     roamer_history_entry_t roamer_histories[NUM_ROAMERS][3];
     roamer_history_entry_t roamer_locations[NUM_ROAMERS];
+    berry_tree berry_trees[128];
 
 } custom_memory;
 

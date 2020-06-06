@@ -10,6 +10,7 @@
 #include "oam.h" 
 #include "vars.h"
 #include "debug.h"
+#include "berry.h"
 
 static graphic overworld_sprite_deoxys_normal_sprites[] = {
 	{&gfx_ow_deoxys_normal_0Tiles, 0x200, 0},
@@ -1474,6 +1475,13 @@ static overworld_sprite ow_pokemon_64_64 = {
 	.graphics = NULL, .rotscale_animation = oam_rotscale_anim_table_null,
 };
 
+static overworld_sprite ow_berry_tree = {
+	.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE ,
+	.unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
+	.final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+	.graphics = NULL + 0, .rotscale_animation = oam_rotscale_anim_table_null,	
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1672,7 +1680,7 @@ overworld_sprite *overworld_sprites[] = {
         &ow_drampa,
 		&ow_lucky,
 
-
+	[OVERWORLD_SPRITE_BERRY] = &ow_berry_tree, // dummy
 	[OVERWORLD_SPRITE_POKEMON_32_32] = &ow_pokemon_32_32, // dummy with size 32x32
 	[OVERWORLD_SPRITE_POKEMON_64_64] = &ow_pokemon_64_64, // dummy with size 64x64
 

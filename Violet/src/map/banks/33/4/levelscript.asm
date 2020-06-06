@@ -110,7 +110,6 @@ ow_script_tann_plank:
     end
 
 ow_script_player_plank:
-    callasm debug_berries
     sound 0x15
     applymovement 0xFF mov_exclam
     waitmovement 0
