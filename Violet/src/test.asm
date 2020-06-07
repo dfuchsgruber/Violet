@@ -36,6 +36,7 @@ str_afterb:
 
 ow_script_test:
 	callasm berry_trees_initialize_all
+	additem ITEM_WUNDERSTAUB 5
 	end
 	// setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	// setvar BATTLE_BG_OVERRIDE BATTLE_BG_BBSHIP_OUTSIDE + 1

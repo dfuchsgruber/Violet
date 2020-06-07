@@ -14,6 +14,7 @@
 #include "overworld/pokemon_party_menu.h"
 #include "rtc.h"
 #include "tile/any_grass.h"
+#include "constants/sav_keys.h"
 
 u8 berry_tree_get_berry(u8 berry_tree_idx) {
     return cmem.berry_trees[berry_tree_idx].berry;
@@ -26,7 +27,15 @@ static u8 berry_tree_initial_items[] = {
 
 void berry_tree_calculate_yield(u8 berry_tree_idx) {
     berry *b = berry_get(cmem.berry_trees[berry_tree_idx].berry);
-    u8 yield = (u8)((rnd16() % (b->max_yield - b->min_yield)) + b->min_yield);
+    int yield = (rnd16() % (b->max_yield - b->min_yield + 1)) + b->min_yield;
+    // Additional yield for planting many berries
+    int num_berries_planted = save_get_key(SAV_KEY_PLANTED_BERRIES);
+    if ((rnd16() % 100) < num_berries_planted) {
+        yield++;
+        if (rnd16() % 3) {
+            yield += yield / 2;
+        }
+    }
     cmem.berry_trees[berry_tree_idx].yield = (u8)(yield & 7);
     // dprintf("Initialized berry tree %d with yield %d\n", berry_tree_idx, yield);
 }
@@ -62,7 +71,7 @@ u16 berry_tree_get_item() {
 }
 
 u16 berry_tree_get_yield() {
-    return (u16)BERRY_IDX_TO_ITEM_IDX(cmem.berry_trees[*var_access(0x8000)].yield);
+    return cmem.berry_trees[*var_access(0x8000)].yield;
 }
 
 void berry_tree_update_gfx() {
@@ -93,6 +102,8 @@ bool berry_pick() {
 }
 
 void berry_pouch_callback_plant_berry(u8 self) {
+    *var_access(LASTRESULT) = 1; // Berry planted
+    save_increment_key(SAV_KEY_PLANTED_BERRIES);
     item_remove(item_activated, 1);
     u8 berry_tree_idx = (u8)*var_access(0x8000);
     berry_tree_initialize(berry_tree_idx, (u8)ITEM_IDX_TO_BERRY_IDX(item_activated), BERRY_STAGE_DIRT_PILE);
@@ -110,6 +121,9 @@ void (*berry_pouch_callbacks[])(u8) = {
     [BERRY_POUCH_CONTEXT_PLANTING] = berry_pouch_callback_plant_berry,
 };
 
+
+
+
 void berry_plant_callback_initialize_berry_pouch(u8 self) {
     if (!fading_control.active) {
         berry_pouch_initialize(BERRY_POUCH_CONTEXT_PLANTING, map_reload, 0);
@@ -118,6 +132,7 @@ void berry_plant_callback_initialize_berry_pouch(u8 self) {
 }
 
 void berry_plant() {
+    *var_access(LASTRESULT) = 0; // No berry planted
     big_callback_new(berry_plant_callback_initialize_berry_pouch, 0);
     fadescreen_all(1, 0);
 }
@@ -134,6 +149,10 @@ bool berry_tree_grow(u8 berry_tree_idx) {
     tree->stage++;
     tree->minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
     return true;
+}
+
+bool special_berry_tree_grow() {
+    return berry_tree_grow((u8)*var_access(0x8000));
 }
 
 void berry_proceed_minutes(u16 minutes) {

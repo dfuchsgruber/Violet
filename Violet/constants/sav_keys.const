@@ -1,6 +1,7 @@
 {
     "type" : "dict",
     "values" : {
+        "SAV_KEY_PLANTED_BERRIES" : 3,
         "SAV_KEY_FISHING_ENCOUNTERS" : 12,
         "SAV_KEY_EGGS_HATCHED" : 13,
         "SAV_KEY_MAP_TRANSITIONS_INTO_RAIN" : 40,

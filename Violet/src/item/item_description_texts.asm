@@ -521,10 +521,10 @@
 		.string "Hält 100 Schritte lang schwache, \nwilde Pokémon ab."
 
 
-	.global str_item_desc_x57_item_item_57
+	.global str_item_desc_x57_item_kraftstaub
 
-	str_item_desc_x57_item_item_57:
-		.string " ????"
+	str_item_desc_x57_item_kraftstaub:
+		.string "Weißer Puder, der Beeren\nwachsen lässt."
 
 
 	.global str_item_desc_x58_item_item_58
@@ -2681,10 +2681,10 @@
 	str_item_desc_x56_item_schutz:
 		.string "Prevents weak wild Pokémon from\nappearing for 100 steps."
 
-	.global str_item_desc_x57_item_item_57
+	.global str_item_desc_x57_item_kraftstaub
 
-	str_item_desc_x57_item_item_57:
-		.string "?????"
+	str_item_desc_x57_item_kraftstaub:
+		.string "White powder that makes\ngrow."
 
 	.global str_item_desc_x58_item_item_58
 

@@ -37,6 +37,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_suessbonbonTiles
     .word gfx_item_suessbonbonPal
 
+.org item_resource + 0x57 * 8
+    .word gfx_item_wunderstaubTiles
+    .word gfx_item_wunderstaubPal
+
 .org item_resource + 0x64 * 8
     .word gfx_item_finstersteinTiles
     .word gfx_item_finstersteinPal

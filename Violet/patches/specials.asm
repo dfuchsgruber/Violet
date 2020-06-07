@@ -246,7 +246,8 @@ special_table equ 0x0815FCC0
         .word berry_pick | 1
 .org (special_table + 113 * 4)
         .word berry_plant | 1
-
+.org (special_table + 114 * 4)
+        .word special_berry_tree_grow | 1
 
 // Free up until <= 118
 

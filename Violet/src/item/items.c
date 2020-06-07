@@ -1403,13 +1403,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_57
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		// ITEM_KRAFTSTAUB
+		LANGDEP(PSTRING("Wunderstaub"), PSTRING("Wonder Powder")),
+		0x57, //index
+		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x57_item_item_57,
+		str_item_desc_x57_item_kraftstaub,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

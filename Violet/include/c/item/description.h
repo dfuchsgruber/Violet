@@ -95,7 +95,7 @@ extern u8 str_item_desc_x53_item_superschutz[];
 extern u8 str_item_desc_x54_item_top_schutz[];
 extern u8 str_item_desc_x55_item_fluchtseil[];
 extern u8 str_item_desc_x56_item_schutz[];
-extern u8 str_item_desc_x57_item_item_57[];
+extern u8 str_item_desc_x57_item_kraftstaub[];
 extern u8 str_item_desc_x58_item_item_58[];
 extern u8 str_item_desc_x59_item_item_59[];
 extern u8 str_item_desc_x5a_item_item_5a[];
