@@ -61,21 +61,14 @@ ow_script_aggressive_wild:
 	lock
 	faceplayer
 ow_script_aggressive_wild_do_battle:
-	bufferpokemon 0 0x8000
-	cry 0x8000 0
-	loadpointer 0 str_attacks
-	callstd MSG_KEEPOPEN
-	waitcry
-	callasm aggressive_wild_pokemon_new
-	setflag FLAG_IN_BATTLE
-	callasm battle_initialize_aggressive_wild
-	clearflag FLAG_IN_BATTLE
-	waitstate
-	fadescreen 1
-	hidesprite LASTTALKED
-	fadescreen 0
-	release
-	end
+	callasm aggressive_wild_setup_by_person
+	special2 LASTRESULT SPECIAL_AGGRESSIVE_WILD_GET_APPROACHING_SPECIES
+    bufferpokemon 0 LASTRESULT
+    cry LASTRESULT 0
+    loadpointer 0 str_aggressive_wild_challange
+    callstd MSG_KEEPOPEN
+    waitcry
+	goto ow_script_aggressive_wild_pokemon_start_battle
 
 
 ow_script_berry_tree:

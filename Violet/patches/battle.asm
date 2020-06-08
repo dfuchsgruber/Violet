@@ -555,6 +555,70 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	bx r0
 	.pool
 
+.org 0x0803265c
+	ldr r0, =battle_handle_successful_ball_throw | 1
+	bx r0
+	.pool
+
+.org 0x080326b0
+	ldr r0, =battle_handle_ball_throw | 1
+	bx r0
+	.pool
+
+.org 0x080ef83c
+	ldr r1, =hook_ball_throw_anim_callback_select_target | 1
+	bx r1
+	.pool
+
+.org 0x0802d3da
+	ldr r0, =hook_bsc_cmd_xEF_handleballthrow_select_target | 1
+	bx r0
+	.pool
+// bsc cmd xF0 give caught mon: Always target the defending_battler
+.org 0x0802d80c
+	.word defending_battler
+.org 0x0802d8e4
+	.word defending_battler
+.org 0x0802d7aa
+	lsl r0, #0 // Nop (i.e. dont OPPONENT(attacking_battler))
+.org 0x0802d7f0
+	lsl r0, #0 // As above
+.org 0x0802d83e
+	lsl r0, #0 // As above
+.org 0x0802d88c
+	mov r1, r0 // Instead of eor r1, r0 -> mov r1, r0
+
+// bsc cmd xF3 nickname caught mon: Always target the defending battler
+.org 0x0802de9c
+	.word defending_battler
+.org 0x0802defc
+	.word defending_battler
+
+.org 0x0802ddf0
+	lsl r0, #0 // Nop (i.e. dont OPPONENT(attacking_battler))
+.org 0x0802de1c
+	lsl r0, #0 // Nop (i.e. dont OPPONENT(attacking_battler))
+.org 0x0802de3c
+	lsl r0, #0 // Nop (i.e. dont OPPONENT(attacking_battler))
+.org 0x0802de5a
+	mov r4, r0 // Instead of eor r4, r0
+.org 0x0802dece
+	mov r0, r1 // Instead of eor r0, r1 with r0 = 1
+
+
+
+.org 0x0802d970
+	ldr r0, =hook_bsc_cmd_xF2_display_dex_entry | 1
+	bx r0
+	.pool
+
+.org 0x08021ca8
+	ldr r0, =bsc_cmd_x23_should_play_victory_music | 1
+	bl _blxr0
+	cmp r0, #0
+	beq 0x08021cd6
+	b 0x08021cc4
+	.pool
 
 
 /** 

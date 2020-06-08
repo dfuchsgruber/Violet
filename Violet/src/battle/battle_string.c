@@ -40,6 +40,11 @@ static u8 str_wild_intro[] = LANGDEP(
     PSTRING("A wild BSC_OPPONENT_POKEMON1_NAME appears!\p")
 );
 
+static u8 str_wild_double_intro[] = LANGDEP(
+    PSTRING("Ein wildes BSC_OPPONENT_POKEMON1_NAME und\nBSC_OPPONENT_POKEMON2_NAME erscheinen!\p"),
+    PSTRING("A wild BSC_OPPONENT_POKEMON1_NAME and\nBSC_OPPONENT_POKEMON2_NAME appear!\p")
+);
+
 static u8 str_player_send_out_single[] = LANGDEP(
     PSTRING("Los! BSC_PLAYER_POKEMON1_NAME!"),
     PSTRING("Go! BSC_PLAYER_POKEMON1_NAME!")
@@ -254,7 +259,12 @@ u8 *battle_intro_buffer_message() {
             if (battle_flags & BATTLE_TWO_TRAINERS) return str_single_double_trainer_intro;
             else return str_single_trainer_intro;
         }
-    } else return str_wild_intro; // Cut on the GHOST battle stuff...
+    } else {
+        if (battle_flags & BATTLE_DOUBLE)
+            return str_wild_double_intro;
+        else
+            return str_wild_intro; // Cut on the GHOST battle stuff...
+    }
 }
 
 u8 *battle_send_out_buffer_message() {
@@ -394,6 +404,10 @@ u8 *battle_string_decrypt_additional_buffers(u8 buffer_idx) {
                 return save2->player_name;
             else
                 return trainer_get_name(trainer_idx_by_battler_idx(attacking_battler));
+        case 0x39: {
+            return battlers[defending_battler].name;
+            
+        }
         default:
             return NULL;
     }

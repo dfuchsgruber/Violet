@@ -399,6 +399,7 @@ BSC_MEGA_KEYSTONE = FD 35
 BSC_MEGA_TARGET_SPECIES = FD 36
 BSC_ATK_TRAINER_CLASS = FD 37
 BSC_ATK_TRAINER_NAME = FD 38
+BSC_DEF_NAME = FD 39
 
 
 @ string placeholders ---- to be questioned though

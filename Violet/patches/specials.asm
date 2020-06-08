@@ -249,6 +249,10 @@ special_table equ 0x0815FCC0
 .org (special_table + 114 * 4)
         .word special_berry_tree_grow | 1
 
+.org (special_table + 115 * 4)
+        .word aggressive_wild_get_approaching_species | 1
+
+
 // Free up until <= 118
 
 .org (special_table + (0x129 * 4))

@@ -181,6 +181,11 @@ void battle_controller_partner_handle_exp_update();
 void battle_controller_player_wait_for_healthboxes();
 
 /**
+ * Marks the controller of the active battler as finished as soon as no animations are running for it.
+ **/
+void battle_controller_wait_for_animation();
+
+/**
  * Delays the finishing of the controller exeuction by field_9 of the healthbox_info of a battler.
  **/
 void battle_controller_player_wait_for_healthbox_delay_and_finish_execution();

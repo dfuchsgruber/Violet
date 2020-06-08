@@ -299,6 +299,8 @@ extern battle_sprite_data_t *battle_sprite_data;
 
 extern u8 battle_healthbox_oams[4]; // Why is there a duplicate to the battle_sprite_data value?
 
+extern u8 battle_animation_active;
+
 extern battle_struct_t *battle_struct;
 extern u32 battle_flags;
 extern battle_state_t *battle_state;

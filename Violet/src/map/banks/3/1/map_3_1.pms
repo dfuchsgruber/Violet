@@ -971,11 +971,11 @@
 				},
 				{
 					"target_index": 87,
-					"picture": "55",
+					"picture": "239",
 					"field_2": 0,
-					"field_3": 0,
-					"x": "91",
-					"y": "32",
+					"field_3": "37",
+					"x": "65",
+					"y": "28",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -985,13 +985,13 @@
 					"is_trainer": "1",
 					"alert_radius": "3",
 					"script": "ow_script_trainer1",
-					"flag": "0x0",
+					"flag": "16",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_SANDAMER",
 						"berry_tree_idx": 0
 					}
 				},
@@ -1023,11 +1023,11 @@
 				},
 				{
 					"target_index": "77",
-					"picture": "33",
-					"script_std": "0",
-					"field_3": 0,
-					"x": "91",
-					"y": "33",
+					"picture": "239",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "33",
+					"x": "65",
+					"y": "32",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -1039,10 +1039,10 @@
 					"field_D": 0,
 					"alert_radius": "3",
 					"script": "ow_script_test",
-					"flag": 0,
+					"flag": "17",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_ULTRIGARIA",
 						"berry_tree_idx": 0
 					}
 				}

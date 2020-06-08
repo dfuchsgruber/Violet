@@ -11,7 +11,9 @@
 .global ow_script_trainerbattle_double_dont_check_enough_pokemon
 .global ow_script_trainerbattle_pirate_challange
 .global ow_script_trainerbattle_pirate_challange_after_approach
-.global ow_script_aggressive_wild_pokemon_challange
+.global ow_script_aggresive_wild_spotted
+.global ow_script_aggressive_wild_pokemon_start_battle
+.global str_aggressive_wild_challange
 
 challange_loop:
     closeonkeypress
@@ -65,18 +67,44 @@ ow_script_trainerbattle_pirate_challange_after_approach:
     waitstate
     end
 
-ow_script_aggressive_wild_pokemon_challange:
+challange_loop_aggresive_wild:
+    closeonkeypress
+ow_script_aggresive_wild_spotted:
+    callasm trainer_get_current_npc_idx
     lock
-    sound 0x15
     special SPECIAL_TRAINER_APPROACH
     waitstate
     special SPECIAL_TRAINER_CHALLANGE_PLAYER_FACING
-    goto ow_script_aggressive_wild_do_battle
+    waitmovement 0
+    special2 LASTRESULT SPECIAL_AGGRESSIVE_WILD_GET_APPROACHING_SPECIES
+    bufferpokemon 0 LASTRESULT
+    cry LASTRESULT 0
+    loadpointer 0 str_aggressive_wild_challange
+    callstd MSG_KEEPOPEN
+    waitcry
+    callasm trainer_approach_second
+    compare LASTRESULT 1
+    gotoif EQUAL challange_loop_aggresive_wild
+    releaseall
+ow_script_aggressive_wild_pokemon_start_battle:
+    // Start the wild battle
+	setflag FLAG_IN_BATTLE
+	callasm battle_initialize_aggressive_wild
+	clearflag FLAG_IN_BATTLE
+	waitstate
+    fadescreen 1
+    callasm aggressive_wild_hidesprites_after_battle
+    fadescreen 0
+    releaseall
     end
+
+
 
 .ifdef LANG_GER
 str_0:
     .autostring 34 2 "Hey, was treibst du denn hier?\pDu solltest doch in deiner Zelle sein!\pDir werd ich helfen, du Rotzlöffel!"
+str_aggressive_wild_challange:
+    .autostring 34 2 "Test challange!"
 .elseif LANG_EN
 
 .endif

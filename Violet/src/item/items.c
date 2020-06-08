@@ -40,7 +40,7 @@ item items[] = {
 		0, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_HYPERBALL
@@ -56,7 +56,7 @@ item items[] = {
 		1, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SUPERBALL
@@ -72,7 +72,7 @@ item items[] = {
 		2, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_POKEBALL
@@ -88,7 +88,7 @@ item items[] = {
 		3, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SAFARIBALL
@@ -104,7 +104,7 @@ item items[] = {
 		4, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NETZBALL
@@ -120,7 +120,7 @@ item items[] = {
 		5, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TAUCHBALL
@@ -136,7 +136,7 @@ item items[] = {
 		6, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_NESTBALL
@@ -152,7 +152,7 @@ item items[] = {
 		7, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_WIEDERBALL
@@ -168,7 +168,7 @@ item items[] = {
 		8, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TIMERBALL
@@ -184,7 +184,7 @@ item items[] = {
 		9, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_LUXUSBALL
@@ -200,7 +200,7 @@ item items[] = {
 		10, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_PREMIERBALL
@@ -216,7 +216,7 @@ item items[] = {
 		11, //type
 		(void(*)(u8))0x0, //field_usage
 		(void(*)(u8))0x2, //battle_usage1
-		(void(*)(u8))0x80a1f09, //battle_usage2
+		item_pokeball_battle, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_TRANK

@@ -20,6 +20,7 @@
 #include "constants/songs.h"
 #include "battle/state.h"
 #include "constants/person_script_stds.h"
+#include "prng.h"
 
 void special_player_facing() {
     coordinate_t position;
@@ -129,14 +130,21 @@ bool trainerbattle_pirate_alert(u8 npc_idx) {
     return false;
 }
 
-extern u8 ow_script_aggressive_wild_pokemon_challange[];
+extern u8 ow_script_aggresive_wild_spotted[];
 
-bool trainerbattle_aggressive_wild_pokemon_alert(u8 npc_idx) {
+int trainerbattle_aggressive_wild_pokemon_alert(u8 npc_idx) {
     map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
-    if (person->script_std != PERSON_AGGRESSIVE_POKEMON) return false;
-    if(checkflag(person->flag)) return false;
+    if (person->script_std != PERSON_AGGRESSIVE_POKEMON) 
+        return 0;
+    if(checkflag(person->flag)) 
+        return 0;
     u8 distance = npc_sees_player(npcs + npc_idx);
     if (distance) {
+        fmem.trainers_npc_idxs[fmem.trainers_cnt] = npc_idx;
+        fmem.trainers_cnt++;
+        trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1));
+        return 1;
+        /**
         *var_access(LASTTALKED) = npcs[npc_idx].overworld_id;
         *var_access(0x8000) = person->value;
         *var_access(0x8001) = person->argument;
@@ -144,27 +152,72 @@ bool trainerbattle_aggressive_wild_pokemon_alert(u8 npc_idx) {
         trainer_npc_move_to_player(npcs + npc_idx, (u8)(distance - 1)); 
         overworld_script_init(ow_script_aggressive_wild_pokemon_challange);
         overworld_script_set_active();
+        return 1;
+        **/
+    }
+    return 0;
+}
+
+
+static u16 aggressive_wild_pokemon_feature_generator() {
+	return (u16)(rnd16() % 200);
+}
+
+void aggresive_wild_pokemon_create() {
+    for (int i = 0; i < fmem.trainers_cnt; i++) {
+        // Setup the wild mons
+        u8 npc_idx = fmem.trainers_npc_idxs[i];
+        map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+        pid_t pid = {0};
+        pokemon_spawn_by_seed_algorithm(opponent_pokemon + i, person->value, person->argument, 32, false, pid, false, 0, aggressive_wild_pokemon_feature_generator, NULL);
+    }
+}
+
+bool trigger_aggressive_wild_pokemons() {
+    fmem.trainers_cnt = 0;
+    fmem.current_trainer = 0;
+    for (u8 i = 0; i < 16; i++) {
+        if ((npcs[i].flags.active & 1) && (npcs[i].trainer_trigger == 1 || npcs[i].trainer_trigger == 3)) {
+            int num = trainerbattle_aggressive_wild_pokemon_alert(i);
+            if (num == 2) break; // The wild battle already is a double battle
+            if (num == 0) continue;
+            if (num == 1 && player_party_get_double_battle_viability()) break; // Don't search for other aggresive wild, player cant do a double battle
+        }
+    }
+    fmem.current_trainer = 0;
+    aggresive_wild_pokemon_create();
+    if (fmem.trainers_cnt > 0) {
+        overworld_script_init(ow_script_aggresive_wild_spotted);
+        overworld_script_set_active();
         return true;
     }
     return false;
 }
 
-bool trigger_npc_spotting() {
-    if (trainerbattle_not_initializable())
-        return false;
+u16 aggressive_wild_get_approaching_species() {
+    u8 npc_idx = fmem.trainers_npc_idxs[fmem.current_trainer];
+    map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    return person->value;
+}
+
+void aggressive_wild_hidesprites_after_battle() {
+    for (int i = 0; i < fmem.trainers_cnt; i++) {
+        u8 npc_idx = fmem.trainers_npc_idxs[i];
+        person_delete_npc_if_present(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    }
+}
+
+void aggressive_wild_setup_by_person() {
+    u8 npc_idx = npc_get_by_person_idx((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
+    fmem.trainers_cnt = 0;
+    fmem.trainers_npc_idxs[fmem.trainers_cnt] = npc_idx;
+    fmem.trainers_cnt++;
+    aggresive_wild_pokemon_create();
+}
+
+bool trigger_trainerbattles() {
     fmem.trainers_cnt = 0;
     fmem.current_trainer = 0;
-
-    // First check for special "spottings", as we don't wany any of those to be mixed with a trainer challange
-    for (u8 i = 0; i < 16; i++) {
-        if (pokeradar_npc_alert(i))
-            return true;
-        if (trainerbattle_pirate_alert(i))
-            return true;
-        if (trainerbattle_aggressive_wild_pokemon_alert(i))
-            return true;
-    }
-
     for (u8 i = 0; i < 16; i++) {
         if ((npcs[i].flags.active & 1) && (npcs[i].trainer_trigger == 1 || npcs[i].trainer_trigger == 3)) {
             int num = trainerbattle_initialize_by_npc_idx(i);
@@ -191,9 +244,32 @@ bool trigger_npc_spotting() {
     return false;
 }
 
+bool trigger_npc_spotting() {
+    if (trainerbattle_not_initializable())
+        return false;
+    fmem.trainers_cnt = 0;
+    fmem.current_trainer = 0;
+
+    // First check for special "spottings", as we don't wany any of those to be mixed with a trainer challange
+    for (u8 i = 0; i < 16; i++) {
+        if (pokeradar_npc_alert(i))
+            return true;
+        if (trainerbattle_pirate_alert(i))
+            return true;
+    }
+    if (trigger_aggressive_wild_pokemons())
+        return true;
+
+    if (trigger_trainerbattles())
+        return true;
+    
+    return false;
+}
+
 u8 trainer_get_current_npc_idx() {
     trainer_npc_idx = fmem.trainers_npc_idxs[fmem.current_trainer];
     *var_access(LASTTALKED) = npcs[trainer_npc_idx].overworld_id;
+    dprintf("Current npc idx is %d\n", trainer_npc_idx);
     return trainer_npc_idx;
 }
 

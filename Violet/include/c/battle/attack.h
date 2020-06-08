@@ -62,6 +62,15 @@ void battle_special_anim_clear_flags_when_finished(u8 self);
  **/
 void battle_animation_initialize(u8 **animations,u8 animation_idx, bool is_attack_anim);
 
+/**
+ * Initializes a special battle animation
+ * @param active the active battler
+ * @param attacking the attacking battler
+ * @param defending the defending battler
+ * @param idx which animation to show
+ **/
+void battle_animation_special(u8 active, u8 attacking, u8 defending, u8 idx);
+
 extern u8 *battle_animation_script;
 extern u8 battle_animation_number_active_tasks;
 extern u8 battle_animation_delay;
@@ -69,6 +78,7 @@ extern u8 battle_animation_user;
 extern u8 battle_animation_target;
 extern u16 battle_animation_arguments[8];
 extern u16 battle_animation_move_power;
+extern u8 battle_animation_active;
 
 #define STAT_ANIM_PLUS1(stat)  (15 + stat - 1)
 #define STAT_ANIM_PLUS2(stat)  (39 + stat - 1)

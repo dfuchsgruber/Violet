@@ -1961,32 +1961,32 @@ bsc_strings:
 
 	.global str_battle_x10b
 
-	str_battle_x10b:
-		.string "Toll!\nRIVAL wurde gefangen!UNKNOWN_APLAY_BGMぢÀ\p"
+	str_battle_x10b: 
+		.string "Toll!\nBSC_DEF_NAME wurde gefangen!UNKNOWN_APLAY_BGMぢÀ\p"
 
 
 	.global str_battle_x10c
 
 	str_battle_x10c:
-		.string "Toll!\nRIVAL wurde gefangen!UNKNOWN_APLAY_BGMぢÀPAUSE"
+		.string "Toll!\nBSC_DEF_NAME wurde gefangen!UNKNOWN_APLAY_BGMぢÀPAUSE"
 
 
 	.global str_battle_x10d
 
 	str_battle_x10d:
-		.string "Möchtest du dem RIVAL\neinen Spitznamen geben?"
+		.string "Möchtest du dem BSC_DEF_NAME\neinen Spitznamen geben?"
 
 
 	.global str_battle_x10e
 
 	str_battle_x10e:
-		.string "RIVAL wurde auf\nSTRINGú PC übertragen."
+		.string "BSC_DEF_NAME wurde auf\nSTRINGú PC übertragen."
 
 
 	.global str_battle_x10f
 
 	str_battle_x10f:
-		.string "Für RIVAL wurde ein Eintrag\nim Pokédex angelegt.\p"
+		.string "Für BSC_DEF_NAME wurde ein Eintrag\nim Pokédex angelegt.\p"
 
 
 	.global str_battle_x110
@@ -4168,27 +4168,27 @@ bsc_strings:
 	.global str_battle_x10b
 
 	str_battle_x10b:
-		.string "Gotcha!\nRIVAL was caught!UNKNOWN_APLAY_BGMぢÀ\p"
+		.string "Gotcha!\nBSC_DEF_NAME was caught!UNKNOWN_APLAY_BGMぢÀ\p"
 
 	.global str_battle_x10c
 
 	str_battle_x10c:
-		.string "Gotcha!\nRIVAL was caught!UNKNOWN_APLAY_BGMぢÀPAUSE"
+		.string "Gotcha!\nBSC_DEF_NAME was caught!UNKNOWN_APLAY_BGMぢÀPAUSE"
 
 	.global str_battle_x10d
 
 	str_battle_x10d:
-		.string "Give a nickname to the\ncaptured RIVAL?"
+		.string "Give a nickname to the\ncaptured BSC_DEF_NAME?"
 
 	.global str_battle_x10e
 
 	str_battle_x10e:
-		.string "RIVAL was sent to\nSTRINGú PC."
+		.string "BSC_DEF_NAME was sent to\nSTRINGú PC."
 
 	.global str_battle_x10f
 
 	str_battle_x10f:
-		.string "RIVAL’s data was\nadded to the Pokédex.\p"
+		.string "BSC_DEF_NAME’s data was\nadded to the Pokédex.\p"
 
 	.global str_battle_x110
 

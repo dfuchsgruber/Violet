@@ -508,4 +508,10 @@ void box_pokemon_clear_by_box_idx_and_slot(u8 box_idx, u8 slot);
  * @param dst where to put the data
  **/
 void box_pokemon_copy(u8 box_idx, u8 slot, box_pokemon *dst);
+
+/**
+ * Check if the player party and all boxes are full
+ * @return if the player party and all boxes are full
+ **/
+bool player_party_and_boxes_full();
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

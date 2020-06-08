@@ -135,6 +135,38 @@ void item_field_by_effect_table(u8 self);
  **/
 u16 item_get_price(u16 item_idx);
 
+/**
+ * Prints a string in the bag and continues with a contnmuation function.
+ * @param callback_idx self-reference
+ * @param font the font in which to print
+ * @param str the string to print
+ * @param continuation the continuation function after printing the string
+ **/
+void bag_print_string(u8 callback_idx, u8 font, u8 *str, void (*continuation)(u8));
+
+/**
+ * Callback function that continues the bag functionality after a context menu has been executed
+ * @param self self-reference
+ **/
+void bag_return_from_context_menu(u8 self);
+
+/**
+ * Initializes the animation for closing the bag, i.e. closing Win0
+ **/
+void bag_initialize_close_animation();
+
+/**
+ * Initializes fading to dark and then conitinues with the exit continuation of the bag
+ * @param self self-reference
+ **/
+void item_menu_fade_and_continue(u8 self);
+
+/**
+ * Battle function for pokéballs
+ * @param self self-reference
+ **/
+void item_pokeball_battle(u8 self);
+
 u16 tm_hm_to_attack[58];
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */
