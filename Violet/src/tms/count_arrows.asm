@@ -8,7 +8,7 @@ tm_count_arrows:
 ldrh r0, [r5, #0xA]	@item
 mov r6, r1
 mov r4, r2
-bl item_get_pocket
+bl _item_get_pocket
 cmp r0, #4
 bne skip_write
 
@@ -28,3 +28,7 @@ bx r0
 pokemart_spawn_counter_arrows:
 ldr r0, =0x809B7E1
 bx r0
+
+_item_get_pocket:
+    ldr r1, =item_get_pocket
+    bx r1

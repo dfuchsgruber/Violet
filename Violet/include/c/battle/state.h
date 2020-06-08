@@ -15,29 +15,7 @@
 #include "save.h"
 #include "overworld/pokemon_party_menu.h"
 #include "constants/battle/battle_statuses.h"
-
-#define BATTLE_DOUBLE 0x1
-#define BATTLE_LINK 0x2
-#define BATTLE_WILD 0x4
-#define BATTLE_TRAINER 0x8
-#define BATTLE_OAK 0x10
-#define BATTLE_5 0x20
-#define BATTLE_MULTI 0x40
-#define BATTLE_SAFARI 0x80
-#define BATTLE_TOWER 0x100
-#define BATTLE_TUTORIAL 0x200
-#define BATTLE_ROAMER 0x400
-#define BATTLE_EREADER 0x800
-#define BATTLE_12 0x1000
-#define BATTLE_WILD_SCRIPTED 0x2000
-#define BATTLE_LEGENDARY 0x4000
-#define BATTLE_GHOST 0x8000
-#define BATTLE_FACTORY 0x80000
-
-#define BATTLE_TWO_TRAINERS 0x100000
-#define BATTLE_ALLY 0x200000
-
-#define BATTLE_31 0x80000000
+#include "oam.h"
 
 
 typedef struct {
@@ -154,6 +132,7 @@ typedef struct {
     u32 status_custom[4];
     u8 attack_done_substate; // A substate that is used to trigger additional events for ending an attack with bsc cmd 0x49
     u8 before_attack_state;
+    u8 throwing_pokeball : 1; // If active, this indicates that one player action is to throw a pokeball. This is needed to prevent two of these actions in a double wild battle
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
@@ -313,6 +292,9 @@ extern u16 battle_current_turn_seed; // Random state that is fixed for one turn
 extern u8 battle_action_current_turn; // idx from 0 to battler_cnt, not indexing the battlers but rather the turns themselfes (i.e. battlers ordered by turn order)
 extern u8 battle_action;
 extern void (*battle_main_callback)();
+
+
+#define BATTLE_IS_WILD_DOUBLE ((battle_flags & BATTLE_DOUBLE) != 0 && (battle_flags & BATTLE_TRAINER) == 0)
 
 extern void (*battle_actions[])();
 extern void (*battle_end_turn_functions[])();
@@ -482,8 +464,20 @@ bool battle_end_turn_battler_effects();
 void battle_end_turn_handle_battle_continues();
 
 /**
+ * Callback for the sprite of a wild pokemon that moves it right
+ * @param self self-reference
+ **/
+void battle_wild_pokemon_oam_callback_move_to_right(oam_object *self);
+
+/**
  * Clears all battle handicaps.
  **/
 void battle_handicap_clear();
+
+/**
+ * Sets a healthbox sprite invisible.
+ * @param oam_idx the oam idx of the healthbox sprite
+ **/
+void battle_healthbox_set_invisible (u8 oam_idx);
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

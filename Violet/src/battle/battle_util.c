@@ -3,6 +3,8 @@
 #include "battle/battler.h"
 #include "debug.h"
 #include "overworld/pokemon_party_menu.h"
+#include "battle/attack.h"
+#include "constants/attacks.h"
 
 pokemon *battler_load_party_range(u8 battler_idx, u8 *first, u8 *last) {
     if (battle_flags & BATTLE_MULTI) {
@@ -71,3 +73,20 @@ bool battler_has_no_switching_targets(u8 battler_idx, u8 party_idx, u8 partner_p
     return true;
 }
 
+bool battler_is_alive(u8 battler_idx) {
+    if (battlers[battler_idx].current_hp <= 0) 
+        return false;
+    if (battler_idx >= battler_cnt)
+        return false;
+    if (battlers_absent & int_bitmasks[battler_idx])
+        return false;
+    return true;
+}
+
+bool battle_active_attack_should_do_animation() {
+    if (active_attack == ATTACK_DELEGATOR || active_attack == ATTACK_WANDLER) // Even with no animations, these ones are needed for the game to work
+        return true;
+    if (active_attack == ATTACK_TELEPORT && BATTLE_IS_WILD_DOUBLE && battler_is_opponent(attacking_battler) && battler_is_alive(PARTNER(attacking_battler)))
+        return true; // In a double battle against two wilds, the teleport animation is required if both of them are still alive
+    return (bsc_status_flags & 0x80) == 0; // 0x80: Animations inactive
+}

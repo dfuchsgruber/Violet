@@ -3,6 +3,7 @@
 .global hook_bsc_cmd_xEF_handleballthrow_select_target
 .global hook_ball_throw_anim_callback_select_target
 .global hook_bsc_cmd_xF2_display_dex_entry
+.global hook_battle_handle_action_selection_before_action_chosen
 
 .align 4
 .thumb
@@ -45,3 +46,23 @@ hook_bsc_cmd_xF2_display_dex_entry:
     mov r1, #ATTRIBUTE_SPECIES
     ldr r2, =0x0802d978 | 1
     bx r2
+
+.align 4
+.thumb
+
+.thumb_func
+hook_battle_handle_action_selection_before_action_chosen:
+    // This prevents the action on the right player mon in wild double battles if neccessary
+    bl battle_handle_turn_selection_actions_are_prevented
+    cmp r0, #0
+    bne action_prevented
+    // The mon can select an action, replace the code deleted by the hook
+    ldr r0, =battler_action_chosen
+    ldrb r1, [r0]
+    ldr r0, =battle_general_buffers1
+    ldrb r2, [r0, #1]
+    ldr r3, =0x08014148 | 1
+    bx r3
+action_prevented: // The player's right mon can't act
+    ldr r0, =0x08014bd2 | 1
+    bx r0

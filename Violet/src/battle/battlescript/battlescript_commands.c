@@ -412,3 +412,23 @@ void bsc_cmd_x49_attack_done_new() {
         }
     }
 }
+
+void bsc_teleport_set_outcome() {
+    active_battler = attacking_battler;
+    if (battler_is_opponent(active_battler) && battler_is_alive(PARTNER(active_battler))) {
+        dprintf("Setting teleport outcome s.t. the battle goes on.\n");
+        // Teleporting only "removes" the teleported mon, but the battle continues
+        battlers_absent |= (u8)int_bitmasks[active_battler];
+        bsc_status_flags |= BSC_STATUS_FLAG_FAINTED(active_battler);
+        battlers[active_battler].current_hp = 0;
+        pokemon_set_attribute(opponent_pokemon + battler_idx_to_party_idx(active_battler), ATTRIBUTE_CURRENT_HP, &battlers[active_battler].current_hp);
+        battle_healthbox_set_invisible(battle_healthbox_oams[active_battler]);
+        battle_clear_active_battler_data();
+    } else if (battler_is_opponent(active_battler)) {
+        dprintf("Setting teleport outcome s.t. the opponent fled.\n");
+        battle_result = BATTLE_RESULT_OPPONENT_TELEPORTED;
+    } else {
+        dprintf("Setting teleport outcome s.t. the player fled.\n");
+        battle_result = BATTLE_RESULT_PLAYER_TELEPORTED;
+    }
+}

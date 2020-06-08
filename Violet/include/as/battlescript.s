@@ -695,10 +695,14 @@
 .byte 0x75
 .endm
 
-.macro cmd76 cmd76_bank cmd76_byte
+.macro various battler:req case:req
 .byte 0x76
-.byte \cmd76_bank
-.byte \cmd76_byte
+.byte \battler
+.byte \case
+.endm
+
+.macro getifcantrunfrombattle battler:req
+various \battler, 2
 .endm
 
 .macro setprotect

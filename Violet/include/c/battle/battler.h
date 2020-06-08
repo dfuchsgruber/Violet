@@ -346,4 +346,16 @@ u8 battler_idx_to_party_idx(u8 battler_idx);
  **/
 u16 trainer_idx_by_battler_idx(u8 battler_idx);
 
+/**
+ * Checks if a battler is alive, or rather if it is present in the battle at all.
+ * @param battler_idx the battler to check
+ * @return if the battler is present in the battle
+ **/
+bool battler_is_alive(u8 battler_idx);
+
+/**
+ * Clears *all* battle releated data of the active battler, i.e. after fainting
+ **/
+void battle_clear_active_battler_data();
+
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

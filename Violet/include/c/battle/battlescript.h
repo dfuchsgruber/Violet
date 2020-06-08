@@ -8,6 +8,12 @@
 #ifndef INCLUDE_C_BATTLE_BATTLESCRIPT_H_
 #define INCLUDE_C_BATTLE_BATTLESCRIPT_H_
 
+#include "types.h"
+#include "constants/battle/bsc_status_flags.h"
+
+#define BSC_STATUS_FLAG_FAINTED(battler_idx) (int_bitmasks[battler_idx] << 0x1C)
+#define BSC_STATUS_FLAG_FAINTED2(battler_idx) (0x10000000 << battler_idx)
+
 extern u32 bsc_status_flags;
 extern u8 *bsc_offset;
 extern u8 bsc_effect_to_apply;

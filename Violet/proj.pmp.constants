@@ -75,5 +75,6 @@
 	"block_behaviour" : "constants/block_behaviour.const",
 	"signpost_types" : "constants/signpost_types.const",
 	"mugshot_emotions" : "constants/mugshot_emotions.const",
-	"berry_stages" : "constants/berry_stages.const"
+	"berry_stages" : "constants/berry_stages.const",
+	"battle/bsc_status_flags" : "constants/battle/bsc_status_flags.const"
 }

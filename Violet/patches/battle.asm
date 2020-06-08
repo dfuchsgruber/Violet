@@ -620,6 +620,38 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	b 0x08021cc4
 	.pool
 
+.org 0x08011ce8
+	ldr r1, =battle_wild_pokemon_oam_callback | 1
+	bx r1
+	.pool
+
+.org 0x08011d82
+	mov r0, r4
+	mov r1, #1
+	ldr r2, =battle_wild_pokemon_sprite_fade_palettes | 1
+	bl _blxr2
+	b 0x08011d94
+	.pool
+
+.org 0x08014140
+	ldr r0, = hook_battle_handle_action_selection_before_action_chosen | 1
+	bx r0
+	.pool
+
+.org 0x0801485c
+	ldr r0, =battle_handle_selection_actions_item_selected | 1
+	bl _blxr0
+	bl 0x08014bd2
+	.pool
+
+.org 0x0801f3d6
+	ldr r0, =battle_active_attack_should_do_animation | 1
+	bl _blxr0
+	ldr r3, [0x0801f414] // =active_attack
+	cmp r0, #0
+	bne 0x0801f424 // attack requires animations, even though they are turned off, so we show them
+	b 0x0801f3ee
+	.pool
 
 /** 
 .org 0x08012642

@@ -24,6 +24,7 @@
 #include "constants/abilities.h"
 #include "constants/pokemon_types.h"
 #include "abilities.h"
+#include "constants/item_pockets.h"
 
 
 void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
@@ -230,6 +231,12 @@ void battle_end_turn_handle_battle_continues_wrapper() {
 }
 
 u8 battle_is_running_impossible() {
+    if (BATTLE_IS_WILD_DOUBLE && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT
+        &&battler_is_alive(battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT))) { // The right mon can only run if it is "alone"
+        // Reason: We don't want the left mon to pick an action and then run with the right mon
+        battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
+        return 1;
+    }
     u8 hold_effect = item_get_hold_effect(battlers[active_battler].item);
     if (battlers[active_battler].item == ITEM_ENIGMABEERE)
         hold_effect = enigma_berries[active_battler].hold_effect;
@@ -266,9 +273,55 @@ u8 battle_is_running_impossible() {
         battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
         return 1;
     }
-    if (battle_flags & (BATTLE_AGGRESSIVE_WILD)) {
+    if ((battle_flags & (BATTLE_AGGRESSIVE_WILD)) && !battler_is_opponent(active_battler)) {
         battle_communication[BATTLE_COMMUNICATION_MULTISTRING_CHOOSER] = 0;
         return 1;
     }
     return 0;
+}
+
+void battle_wild_pokemon_sprite_fade_palettes(oam_object *oam, bool back) {
+    u8 battler_idx = (u8)oam->private[0];
+    int affects = 1 << (battler_idx + 16);
+    if (BATTLE_IS_WILD_DOUBLE) {
+        affects |= 1 << (PARTNER(battler_idx) + 16);
+    }
+    color_t c = {.rgb = {.red = 8, .green = 8, .blue = 8}};
+    dprintf("Fading with affects 0x%x, rgb 0x%x\n", affects, c.value);
+    fadescreen((u32)affects, 0, 10, back ? 0 : 10, c.value);
+}
+
+void battle_wild_pokemon_oam_callback(oam_object *self) {
+    self->callback = battle_wild_pokemon_oam_callback_move_to_right;
+    oam_gfx_anim_start_if_not_current(self, 0);
+    battle_wild_pokemon_sprite_fade_palettes(self, false);
+}
+
+bool battle_handle_turn_selection_actions_are_prevented() {
+    if (BATTLE_IS_WILD_DOUBLE && battler_get_position(active_battler) == BATTLE_POSITION_PLAYER_RIGHT &&
+        (battler_action_chosen[battler_get_by_position(BATTLE_POSITION_PLAYER_LEFT)] == BATTLE_ACTION_RUN || BATTLE_STATE2->throwing_pokeball)) {
+        // In a wild double battle, the right mon may not move if the left mon is running or throwing a pokeball
+        dprintf("Battler at position %d can't do any action.\n", battler_get_position(active_battler));
+        dprintf("Marked for pokeball throw %d\n", BATTLE_STATE2->throwing_pokeball);
+        if (BATTLE_STATE2->throwing_pokeball)
+            BATTLE_STATE2->throwing_pokeball = false;
+        battler_action_chosen[active_battler] = BATTLE_ACTION_NOTHING_FAINTED;
+        battle_communication[active_battler] = 3;
+        return true;
+    }
+    return false;
+}
+
+void battle_handle_selection_actions_item_selected() {
+    u16 item = UNALIGNED_16_GET(&battle_general_buffers1[active_battler][1]);
+    if (item != 0) {
+        item_activated = item;
+        if (item_get_pocket(item_activated) == POCKET_POKEBALLS) {
+            BATTLE_STATE2->throwing_pokeball = true; // Mark that this battler is throwing a pokéball, i.e. the right battler musn't do any action
+            dprintf("Battler at position %d marked for pokeball throw.\n", battler_get_position(active_battler));
+        }
+        battle_communication[active_battler]++;
+    } else {
+        battle_communication[active_battler] = 0; // Re-select an action
+    }
 }

@@ -2,7 +2,6 @@
 .thumb
 
 .global tm_sale
-.global item_get_pocket
 
 .equ text, 0x88FB174
 
@@ -11,7 +10,7 @@ tm_sale:
 lsl r0, r4, #0x10
 lsr r4, r0, #0x10
 mov r0, r4
-bl item_get_pocket
+bl _item_get_pocket
 cmp r0, #4
 bne no_mpocket
 
@@ -45,8 +44,8 @@ ldr r1, =0x0809A9E5
 bx r1
 
 .thumb_func
-item_get_pocket:
-ldr r1, =0x0809AABD
+_item_get_pocket:
+ldr r1, =item_get_pocket
 bx r1
 
 checkitem:

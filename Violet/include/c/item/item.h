@@ -167,6 +167,13 @@ void item_menu_fade_and_continue(u8 self);
  **/
 void item_pokeball_battle(u8 self);
 
+/**
+ * Gets the pocket of an item
+ * @param item the item to get the pocket of
+ * @return pocket the pocket of the item
+ **/
+u8 item_get_pocket(u16 item);
+
 u16 tm_hm_to_attack[58];
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

@@ -117,6 +117,7 @@
         "berry.h": "c",
         "berry_stages.h": "c",
         "incubator.h": "c",
-        "battle_animations.h": "c"
+        "battle_animations.h": "c",
+        "battle_flags.h": "c"
     }
 }

@@ -1,5 +1,6 @@
 .include "battlescript.s"
 .include "constants/battle/battle_communication.s"
+.include "constants/battle/battle_flags.s"
 
 .global attack_effects
 
@@ -158,7 +159,7 @@
     .word 0x81dbe5d @0x96
     .word 0x81dbe73 @0x97
     .word 0x81dbec9 @0x98
-    .word 0x81dbedd @0x99
+    .word bsc_attack_effect_teleport //0x81dbedd @0x99
     .word 0x81dbf1a @0x9a
     .word 0x81dbf71 @0x9b
     .word 0x81dc01c @0x9c
@@ -459,4 +460,19 @@ bsc_attack_effect_glyph_match:
     accuracycheck bsc_miss_pp_reduce 0x0
     callasm attack_calculate_damage_from_target_name
     goto bsc_attack_effect_after_accuracy_check
+
+bsc_attack_effect_teleport:
+    attackcanceler
+    attackstring
+    ppreduce
+    jumpifword COMMON_BITS, battle_flags, (BATTLE_TRAINER), battlescript_attack_failed_no_pp_reduce
+    getifcantrunfrombattle BANK_USER
+    jumpifbyte EQUAL, battle_communication, 1, battlescript_attack_failed_no_pp_reduce
+    jumpifbyte EQUAL, battle_communication, 2, battlescript_prevented_by_ability
+    attackanimation
+    waitanimation
+    printstring 0xA0
+    waitmessage 0x40
+    callasm bsc_teleport_set_outcome
+    goto battlescript_attack_end
 

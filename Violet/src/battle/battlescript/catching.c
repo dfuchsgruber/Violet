@@ -18,7 +18,6 @@ u8 bsc_cmd_xEF_determine_target_to_catch() {
             target = battler_get_by_position(BATTLE_POSITION_OPPONENT_RIGHT);
         }
     }
-    dprintf("Target to catch is battler %d\n", target);
     return target;
 }
 

@@ -394,6 +394,12 @@ u16 oam_load_graphic_uncompressed(graphic *g);
  **/
 void oam_gfx_anim_start(oam_object *o, u8 anim_idx);
 
+/**
+ * Starts a certain gfx animation, if the selected animation is not already running.
+ * @param o the oam to start the animation of
+ * @param anim_idx the animation to start
+ **/
+void oam_gfx_anim_start_if_not_current(oam_object *o, u8 anim_idx);
 
 /**
  * Resets the oam attribute buffer.
