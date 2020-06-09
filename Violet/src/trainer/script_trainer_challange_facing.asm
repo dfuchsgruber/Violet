@@ -104,7 +104,7 @@ ow_script_aggressive_wild_pokemon_start_battle:
 str_0:
     .autostring 34 2 "Hey, was treibst du denn hier?\pDu solltest doch in deiner Zelle sein!\pDir werd ich helfen, du Rotzlöffel!"
 str_aggressive_wild_challange:
-    .autostring 34 2 "Test challange!"
+    .autostring 34 2 "BUFFER_1!"
 .elseif LANG_EN
 
 .endif

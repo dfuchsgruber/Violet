@@ -3,7 +3,8 @@
 .include "constants/battle/battle_flags.s"
 
 .global attack_effects
-.global bsc_force_out_success
+.global bsc_roar_success_force_out
+.global bsc_roar_sucess_end_battle
 
 .align 4
     attack_effects:
@@ -485,13 +486,25 @@ bsc_attack_effect_roar:
     callasm bsc_roar_failure
     goto 0x081daf44 // continue in the original script
 
-bsc_force_out_success:
+bsc_roar_success_force_out:
+    call bsc_roar_animation
+    getswitchedmondata BANK_TARGET
+    switchindataupdate BANK_TARGET
+    switchinanim BANK_TARGET, 0
+    waitstate
+    printstring 0x154
+    switchineffects BANK_TARGET
+    goto battlescript_attack_end
+
+bsc_roar_sucess_end_battle:
+    call bsc_roar_animation
+    callasm bsc_teleport_set_outcome
+    finishaction
+
+bsc_roar_animation:
     attackanimation
     waitanimation
     switchoutabilities BANK_TARGET
     returntoball BANK_TARGET
     waitstate
-    jumpifword COMMON_BITS, battle_flags, BATTLE_TRAINER, battlescript_trainer_battle_force_out
-    callasm bsc_roar_wild_double_battle_jump_to_trainer_force_out
-    callasm bsc_teleport_set_outcome
-    finishaction
+    return

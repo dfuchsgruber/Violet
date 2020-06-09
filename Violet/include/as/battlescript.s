@@ -487,20 +487,20 @@
 .byte 0x4B
 .endm
 
-.macro switch1 switch1_bank
+.macro getswitchedmondata battler:req
 .byte 0x4C
-.byte \switch1_bank
+.byte \battler
 .endm
 
-.macro switch2 switch2_bank
+.macro switchindataupdate battler:req
 .byte 0x4D
-.byte \switch2_bank
+.byte \battler
 .endm
 
-.macro switch3 switch3_bank switch3_byte
+.macro switchinanim battler:req dontclearsubstituebit:req
 .byte 0x4E
-.byte \switch3_bank
-.byte \switch3_byte
+.byte \battler
+.byte \dontclearsubstituebit
 .endm
 
 .macro jumpifcannotswitch jumpifcannotswitch_bank jumpifcannotswitch_address
@@ -521,9 +521,9 @@
 .byte \cmd51_param2
 .endm
 
-.macro cmd52 cmd52_bank
+.macro switchineffects battler:req
 .byte 0x52
-.byte \cmd52_bank
+.byte \battler
 .endm
 
 .macro trainerslidein bank:req
