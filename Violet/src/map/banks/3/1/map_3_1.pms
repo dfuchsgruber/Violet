@@ -973,7 +973,7 @@
 					"target_index": 87,
 					"picture": "239",
 					"field_2": 0,
-					"field_3": "15",
+					"field_3": "2",
 					"x": "65",
 					"y": "28",
 					"level": 0,
@@ -991,7 +991,7 @@
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_ABRA",
+						"species": "POKEMON_ARKANI",
 						"berry_tree_idx": 0
 					}
 				},
@@ -1025,7 +1025,7 @@
 					"target_index": "77",
 					"picture": "239",
 					"script_std": "PERSON_AGGRESSIVE_POKEMON",
-					"field_3": "6",
+					"field_3": "7",
 					"x": "65",
 					"y": "32",
 					"level": 0,
@@ -1042,7 +1042,7 @@
 					"flag": "17",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_TRASLA",
+						"species": "POKEMON_VULPIX",
 						"berry_tree_idx": 0
 					}
 				}

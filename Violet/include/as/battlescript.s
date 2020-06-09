@@ -550,9 +550,9 @@
 .byte 0x57
 .endm
 
-.macro cmd58 cmd58_bank
+.macro returntoball battler:req
 .byte 0x58
-.byte \cmd58_bank
+.byte \battler
 .endm
 
 .macro checkiflearnmoveinbattle checkiflearnmoveinbattle_param1 checkiflearnmoveinbattle_param2 checkiflearnmoveinbattle_bank_maybe
@@ -1194,9 +1194,9 @@ various \battler, 2
 .word \failure_continuation
 .endm
 
-.macro cmde2 cmde2_bank
+.macro switchoutabilities battler:req
 .byte 0xE2
-.byte \cmde2_bank
+.byte \battler
 .endm
 
 .macro jumpiffainted jumpiffainted_bank jumpiffainted_address
@@ -1283,7 +1283,7 @@ various \battler, 2
 .byte 0xF5
 .endm
 
-.macro cmdf6
+.macro finishaction
 .byte 0xF6
 .endm
 

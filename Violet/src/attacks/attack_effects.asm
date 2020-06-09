@@ -3,6 +3,7 @@
 .include "constants/battle/battle_flags.s"
 
 .global attack_effects
+.global bsc_force_out_success
 
 .align 4
     attack_effects:
@@ -34,7 +35,7 @@
     .word 0x81daf02 @0x19
     .word 0x81daf13 @0x1a
     .word 0x81daf27 @0x1b
-    .word 0x81daf41 @0x1c
+    .word bsc_attack_effect_roar //0x81daf41 @0x1c
     .word 0x81daf69 @0x1d
     .word 0x81db02d @0x1e
     .word 0x81db042 @0x1f
@@ -476,3 +477,21 @@ bsc_attack_effect_teleport:
     callasm bsc_teleport_set_outcome
     goto battlescript_attack_end
 
+
+bsc_attack_effect_roar:
+	attackcanceler
+	attackstring
+	ppreduce
+    callasm bsc_roar_failure
+    goto 0x081daf44 // continue in the original script
+
+bsc_force_out_success:
+    attackanimation
+    waitanimation
+    switchoutabilities BANK_TARGET
+    returntoball BANK_TARGET
+    waitstate
+    jumpifword COMMON_BITS, battle_flags, BATTLE_TRAINER, battlescript_trainer_battle_force_out
+    callasm bsc_roar_wild_double_battle_jump_to_trainer_force_out
+    callasm bsc_teleport_set_outcome
+    finishaction

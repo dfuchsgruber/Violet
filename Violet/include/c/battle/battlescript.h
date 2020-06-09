@@ -93,7 +93,8 @@ extern u8 *battlescripts_pokeball[0xD]; // Battle-Scripts for using different po
 extern u8 *battlescripts_run_by_item[]; // Battle-Scripts for running using different items
 extern u8 *battlescripts_use_item[]; // Battle-Scripts for using different item types
 extern u8 battlescript_apply_status1[]; // Battle-Script that applies a status1 condition (burn, posion, etc.). Uses battle communcitation and the MOVE_EFECT_BYTE
-
+extern u8 battlescript_attack_failed_no_pp_reduce[]; // Prints the "but if failed" message and doesn't reduce pp, ends the move afterwards
+extern u8 battlescript_trainer_battle_force_out[]; // Forces a pokémon out in a trainerbattle, i.e. by roar, and lets the owner select a replacement
 /**
  * Loads the graphic for the attack "transform"
  * @param user_index battler index of the user

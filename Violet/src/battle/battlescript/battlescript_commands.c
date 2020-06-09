@@ -142,8 +142,22 @@ void bsc_cmd_x4f_jump_if_unable_to_switch() {
     bsc_offset = (u8*)UNALIGNED_32_GET(bsc_offset + 2);
 }
 
+bool bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle() {
+    dprintf("Roar conditions for wild double are met %d, %d\n", (BATTLE_IS_WILD_DOUBLE && battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler) &&
+            battler_is_alive(defending_battler) && battler_is_alive(PARTNER(defending_battler))) ,
+        (BATTLE_IS_WILD_DOUBLE && !battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler)));
+    return (BATTLE_IS_WILD_DOUBLE && battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler) &&
+            battler_is_alive(defending_battler) && battler_is_alive(PARTNER(defending_battler))) ||
+        (BATTLE_IS_WILD_DOUBLE && !battler_is_opponent(attacking_battler) && !battler_is_opponent(defending_battler));
+}
+
 void bsc_cmd_x8f_random_switch_out() {
-    if (battle_flags & BATTLE_TRAINER) { // Trainerbattle, check if the target trainer has other pokemons that are viable
+     if ((battle_flags & BATTLE_TRAINER) || bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle()) { 
+        // A new target is selectable in the following cases
+        // a) trainer battles
+        // b) wild double battles, when the wild pokemon attacks the player and both player mons are alive
+        // c) wild double battles, when the player attacks his partner
+        dprintf("Random switchout forced, select something.\n");
         u8 first = 6, last = 6, partner = 4, foe = 4, foe_partner = 4;
         pokemon *party = battler_load_party_range(defending_battler, &first, &last);
         battler_get_partner_and_foes(defending_battler, &partner, &foe, &foe_partner);
@@ -416,7 +430,7 @@ void bsc_cmd_x49_attack_done_new() {
 void bsc_teleport_set_outcome() {
     active_battler = attacking_battler;
     if (battler_is_opponent(active_battler) && battler_is_alive(PARTNER(active_battler))) {
-        dprintf("Setting teleport outcome s.t. the battle goes on.\n");
+        // dprintf("Setting teleport outcome s.t. the battle goes on.\n");
         // Teleporting only "removes" the teleported mon, but the battle continues
         battlers_absent |= (u8)int_bitmasks[active_battler];
         bsc_status_flags |= BSC_STATUS_FLAG_FAINTED(active_battler);
@@ -425,10 +439,30 @@ void bsc_teleport_set_outcome() {
         battle_healthbox_set_invisible(battle_healthbox_oams[active_battler]);
         battle_clear_active_battler_data();
     } else if (battler_is_opponent(active_battler)) {
-        dprintf("Setting teleport outcome s.t. the opponent fled.\n");
+        // dprintf("Setting teleport outcome s.t. the opponent fled.\n");
         battle_result = BATTLE_RESULT_OPPONENT_TELEPORTED;
     } else {
-        dprintf("Setting teleport outcome s.t. the player fled.\n");
+        // dprintf("Setting teleport outcome s.t. the player fled.\n");
         battle_result = BATTLE_RESULT_PLAYER_TELEPORTED;
+    }
+}
+
+void bsc_roar_failure() {
+    if (BATTLE_IS_WILD_DOUBLE) {
+        // dprintf("Roar failure in double wild battles.\n");
+        // Roar fails if a) player uses it against two wild mons b) a wild mon uses it against a wild mon
+        if (!battler_is_opponent(attacking_battler) && battler_is_opponent(defending_battler) && battler_is_alive(defending_battler) &&
+            battler_is_alive(PARTNER(defending_battler))) {
+            bsc_offset = battlescript_attack_failed_no_pp_reduce;
+        } else if (battler_is_opponent(attacking_battler) && battler_is_opponent(defending_battler)) {
+            bsc_offset = battlescript_attack_failed_no_pp_reduce;
+        }
+    }
+}
+
+// In wild double battles the player pokemon can be replaced
+void bsc_roar_wild_double_battle_jump_to_trainer_force_out() {
+    if (bsc_cmd_x8f_random_switch_out_replace_in_wild_double_battle()) {
+        bsc_offset = battlescript_trainer_battle_force_out;
     }
 }
