@@ -1317,6 +1317,9 @@ various \battler, 2
 .byte 0xFC
 .endm
 
+.macro itemdrop
+    .byte 0xFD
+.endm
 
 @// Meta macros
 .macro setstatchange stat:req amount:req decrease:req

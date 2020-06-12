@@ -27,6 +27,12 @@ void dma3_queue_proceed();
 void dma3_queue_add(void *src, void *dst, u16 size);
 
 /**
+ * Checks if the dma3 is busy copying stuff (probably into vram).
+ * @return if the dma3 is busy
+ **/
+bool dma3_busy();
+
+/**
  * Proceeds the state of the dma0
  */
 void dma0_proceed();

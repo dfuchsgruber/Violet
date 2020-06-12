@@ -358,4 +358,22 @@ bool battler_is_alive(u8 battler_idx);
  **/
 void battle_clear_active_battler_data();
 
+enum
+{
+    BATTLER_COORD_X,
+    BATTLER_COORD_Y,
+    BATTLER_COORD_X_2,
+    BATTLER_COORD_Y_PIC_OFFSET,
+    BATTLER_COORD_Y_PIC_OFFSET_DEFAULT,
+};
+
+/**
+ * Gets the position of a battler
+ * @param battler_idx the battler to get the position of
+ * @param type which coordinate to get
+ * @return the coordiante
+ **/
+u8 battler_get_coordinate(u8 battler_idx, u8 type);
+
+
 #endif /* INCLUDE_C_BATTLE_BATTLER_H_ */

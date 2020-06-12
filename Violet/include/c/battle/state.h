@@ -122,6 +122,7 @@ typedef struct {
     u8 field_1A4[0x5C];
 } battle_state_t;
 
+#define MAX_ITEMS_DROPPED_PER_BATTLER 4
 typedef struct {
     u16 items[4][4]; // 4 Items per owner (instead of only one for the AI) (the player one should be unused in theory...)
     u8 num_items[4]; // How many items each owner
@@ -133,6 +134,15 @@ typedef struct {
     u8 attack_done_substate; // A substate that is used to trigger additional events for ending an attack with bsc cmd 0x49
     u8 before_attack_state;
     u8 throwing_pokeball : 1; // If active, this indicates that one player action is to throw a pokeball. This is needed to prevent two of these actions in a double wild battle
+    u8 num_items_dropped[4]; // Items dropped per battler already
+    u16 items_dropped[4][MAX_ITEMS_DROPPED_PER_BATTLER];
+    u8 items_dropped_cnt[4][MAX_ITEMS_DROPPED_PER_BATTLER]; 
+    u8 items_dropped_oams[MAX_ITEMS_DROPPED_PER_BATTLER];
+    u8 items_dropped_done; // bitfield
+    u8 item_dropping_battler; 
+    u8 item_to_pickup; // Which index is currently picked up by the player
+    u8 item_dropping_state; // Assumed to be zero initialized in a battle
+    u8 item_dropping_summary_tbox_idx; 
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
@@ -292,7 +302,7 @@ extern u16 battle_current_turn_seed; // Random state that is fixed for one turn
 extern u8 battle_action_current_turn; // idx from 0 to battler_cnt, not indexing the battlers but rather the turns themselfes (i.e. battlers ordered by turn order)
 extern u8 battle_action;
 extern void (*battle_main_callback)();
-
+extern u16 battle_payday_money;
 
 #define BATTLE_IS_WILD_DOUBLE ((battle_flags & BATTLE_DOUBLE) != 0 && (battle_flags & BATTLE_TRAINER) == 0)
 
@@ -479,5 +489,22 @@ void battle_handicap_clear();
  * @param oam_idx the oam idx of the healthbox sprite
  **/
 void battle_healthbox_set_invisible (u8 oam_idx);
+
+
+#define BATTLE_GP_TBOX_IDX 12
+
+#define BATTLE_GP_TBOX_DRAW 0
+#define BATTLE_GP_TBOX_CLEAR 1
+#define BATTLE_GP_TBOX_BG_0 0
+#define BATTLE_GP_TBOX_BG_1 0x80
+/**
+ * Draws (or deletes) a general purpose battle tbox.
+ * @param x0 upper left x coordinate (in multiples of 8 pixels)
+ * @param y0 upper left y coordinate (in multiples of 8 pixels)
+ * @param x1 lower right x coordinate (exclusive) (in multiples of 8 pixels)
+ * @param y1 lower right y coordinate (exclusive) (in multiples of 8 pixels)
+ * @param mode on which bg to draw / delete the box
+ **/
+void battle_gp_tbox_draw(u8 x0, u8 y0, u8 x1, u8 y1, u8 mode);
 
 #endif /* INCLUDE_C_BATTLE_STATE_H_ */

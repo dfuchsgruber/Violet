@@ -30,6 +30,30 @@ _pricemoney:
     // Second trainer
     goto battlescript_payday_money_and_pickup
 
+.global battlescript_itemdrop
+.global battlescript_itemdrop_picked_up
+.global battlescript_itemdrop_picked_up_no_space
+
+battlescript_itemdrop:
+    printstring 0x1b2
+    playanimation BANK_SCRIPTING BATTLE_ANIM_ITEM_DROP 0
+    waitanimation
+    return
+
+battlescript_itemdrop_picked_up:
+    pause 8
+    printstring 0x1b3
+    waitmessage 0x40
+    return
+
+battlescript_itemdrop_picked_up_no_space:
+    pause 8
+    printstring 0x1b3
+    printstring 0x1b4
+    waitmessage 0x40
+    return
+
+
 .global battlescript_handicap_extreme_heat
 
 battlescript_handicap_extreme_heat:

@@ -149,7 +149,7 @@ battle_script_cmds:
 	.word 0x80281b5
 	.word bsc_cmd_x8f_random_switch_out
 	.word 0x802859d
-	.word 0x8028741
+	.word bsc_cmd_itemdrop_and_payday
 	.word bsc_cmd_x92_setlightscreen
 	.word 0x80288a1
 	.word 0x8028bf5

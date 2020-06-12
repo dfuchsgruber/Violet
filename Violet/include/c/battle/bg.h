@@ -8,6 +8,7 @@
 #ifndef INCLUDE_C_BATTLE_BG_H_
 #define INCLUDE_C_BATTLE_BG_H_
 
+#include "types.h"
 
 typedef struct battle_bg {
     const void *tileset;
@@ -27,6 +28,12 @@ battle_bg battle_bgs[256];
 
 extern u16 battle_bg0_x;
 extern u16 battle_bg0_y;
+extern u16 battle_bg1_x;
+extern u16 battle_bg1_y;
+extern u16 battle_bg2_x;
+extern u16 battle_bg2_y;
+extern u16 battle_bg3_x;
+extern u16 battle_bg3_y;
 
 u8 battle_bg_get_id();
 

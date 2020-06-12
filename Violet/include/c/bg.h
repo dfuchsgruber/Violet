@@ -159,6 +159,28 @@ extern "C" {
      */
     extern u8 gp_tmp_buf[];
 
+    enum
+    {
+        BG_ATTR_CHARBASEINDEX = 1,
+        BG_ATTR_MAPBASEINDEX = 2,
+        BG_ATTR_SCREENSIZE = 3,
+        BG_ATTR_PALETTEMODE = 4,
+        BG_ATTR_MOSAIC = 5,
+        BG_ATTR_WRAPAROUND = 6,
+        BG_ATTR_PRIORITY = 7,
+        BG_ATTR_MAPSIZE = 8,
+        BG_ATTR_BGTYPE = 9,
+        BG_ATTR_BASETILE = 10
+    };
+
+    /**
+     * Sets a bg attribute. Use bg_sync_display_and_show to apply the changes.
+     * @param bg_idx the bg to affect
+     * @param attribute which attribute to set
+     * @param value to which value to set the attribute
+     **/
+    void bg_set_attribute(u8 bg_idx, u8 attribute, u8 value);
+
 #ifdef	__cplusplus
 }
 #endif

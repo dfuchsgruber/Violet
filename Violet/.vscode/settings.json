@@ -118,6 +118,13 @@
         "berry_stages.h": "c",
         "incubator.h": "c",
         "battle_animations.h": "c",
-        "battle_flags.h": "c"
+        "battle_flags.h": "c",
+        "condition_variable": "c",
+        "list": "c",
+        "optional": "c",
+        "limits": "c",
+        "memory": "c",
+        "cstddef": "c",
+        "new": "c"
     }
 }

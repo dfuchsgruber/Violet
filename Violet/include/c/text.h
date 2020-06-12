@@ -301,6 +301,9 @@ extern "C" {
      **/
     void tbox_print_std_frame(u8 tbox_idx, bool copy_to_vram);
 
+    #define TBOX_COPY_TILEMAP 1
+    #define TBOX_COPY_TILESET 2
+
     /**
      * Copies the data of a tbox to the vram.
      * @param tbox_idx the box to copy the data of

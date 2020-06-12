@@ -83,6 +83,17 @@ void battle_string_decrypt(const u8 *src, u8 *dst);
     buffer[3] = BSC_BUFFER_EOS; \
 }
 
+#define BSC_BUFFER_HWORD(buffer, max_digits, number)  \
+{                                                               \
+    buffer[0] = BSC_BUFFER_BEGIN;                      \
+    buffer[1] = BSC_BUFFER_DISPLAY_NUMBER;                                 \
+    buffer[2] = 2;                                             \
+    buffer[3] = max_digits;                                     \
+    buffer[4] = (u8)(number);                                      \
+    buffer[5] = (u8)(number >> 8);                    \
+    buffer[6] = BSC_BUFFER_EOS;                                    \
+}
+
 #define BSC_BUFFER_NUMBER(buffer, max_digits, number)  \
 {                                                               \
     buffer[0] = BSC_BUFFER_BEGIN;                      \

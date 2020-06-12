@@ -49,6 +49,7 @@ battle_animations:
     .word attack_animation_magnitude
     .word battle_animation_target_explodes
     .word battle_animation_ink_shot
+    .word battle_animation_item_drop
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815
@@ -321,4 +322,9 @@ battle_animation_regent_evolution:
     disable_oam_as_target OAM_ATTACKER
     loadoam battle_animation_regent_sparkle_template, OAM_AT_USER | 2, 0
     pause 60
+    end
+
+battle_animation_item_drop:
+    loadcallback battle_animation_callback_create_item_sprite 2 0
+    waitstate
     end

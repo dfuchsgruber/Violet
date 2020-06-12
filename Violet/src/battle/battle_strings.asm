@@ -425,6 +425,9 @@ bsc_strings:
 .word str_battle_x1AF
 .word str_battle_x1B0
 .word str_battle_x1B1
+.word str_battle_x1B2
+.word str_battle_x1B3
+.word str_battle_x1B4
 
 @ // Define the strings
 
@@ -2887,6 +2890,15 @@ bsc_strings:
 
 	str_battle_x1B1:
 		.string "Genauigkeit von BSC_ATK_NAME_WITH_PREFIX\nsinkt stark!"
+
+	str_battle_x1B2:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX lässt Items fallen!"
+
+	str_battle_x1B3:
+		.string "BSC_PLAYER_NAME erhält BSC_LAST_ITEM!\p"
+
+	str_battle_x1B4:
+		.string "Zu schade!\nDein Beutel ist voll!"
 		
 
 .elseif LANG_EN
@@ -4951,6 +4963,15 @@ bsc_strings:
 
 	str_battle_x1B1:
 		.string "BSC_ATK_NAME_WITH_PREFIX's\naccuracy drops harshly!"
+
+	str_battle_x1B2:
+		.string "BSC_ACTIVE_NAME_WITH_PREFIX dropped items!"
+
+	str_battle_x1B3:
+		.string "BSC_PLAYER_NAME picks up BSC_LAST_ITEM!\p"
+
+	str_battle_x1B4:
+		.string "What a shame!\nYour bag is full!"
 
 .endif
 

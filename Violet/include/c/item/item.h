@@ -47,6 +47,20 @@ void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
 #define ITEM_HAS_TABLE_EFFECT(item) ((item) >= ITEM_TRANK && (item) <= (ITEM_ENIGMABEERE))
 
 /**
+ * Copies an items name
+ * @param item_idx which items name to copy
+ * @param dst where to copy the name to
+ **/
+void item_strcpy(u16 item_idx, u8 *dst);
+
+/**
+ * Gets the name of an item.
+ * @param item_idx the item to get the name of
+ * @return offset of the item's name
+ **/
+u8 *item_get_name(u16 item_idx);
+
+/**
  * Returns the holding effect parameter of an item.
  * @param item_id The item id
  * @return The effect parameter
@@ -175,5 +189,14 @@ void item_pokeball_battle(u8 self);
 u8 item_get_pocket(u16 item);
 
 u16 tm_hm_to_attack[58];
+
+/**
+ * Creates a new oam for an item with the standard template
+ * @param tiles_tag which tiles tag to associate with the oam
+ * @param pal_tag which pal tag to associate with the oam
+ * @param item_idx which item to show
+ * @return the oam idx
+ **/
+u8 item_oam_new(u16 tiles_tag, u16 pal_tag, u16 item_idx);
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */
