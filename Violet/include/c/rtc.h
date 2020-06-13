@@ -20,7 +20,7 @@ typedef struct rtc_timestamp {
 /**
  * Resets temporary flags that correspond to the current a-vector state
  */
-void tmp_flags_reset();
+void one_day_events_reset();
 
 typedef struct gpio {
     u16 data;

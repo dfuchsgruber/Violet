@@ -21,6 +21,7 @@
 #include "color.h"
 #include "overworld/npc.h"
 
+#define OVERWORLD_SPRITE_MISC 236
 #define OVERWORLD_SPRITE_BERRY 237
 #define OVERWORLD_SPRITE_POKEMON_32_32 238
 #define OVERWORLD_SPRITE_POKEMON_64_64 239
@@ -72,6 +73,9 @@ typedef struct overworld_sprite {
 
 #define OW_PAL_TAG_POKEMON_BASE 0x2000
 #define OW_PAL_TAG_POKEMON_END 0x2200
+#define OW_PAL_TAG_MUSHROOM 0x2E00
+#define OW_PAL_TAG_SHELL 0x2E01
+#define OW_PAL_TAG_END 0x3000
 
 /**
  * Returns the palette of an overworld species.
@@ -92,6 +96,40 @@ overworld_sprite *overworld_sprite_get_by_species(u16 species);
  * @return the overworld sprite idx to use for this species, e.g. in a person
  **/
 u8 overworld_get_sprite_idx_by_species(u16 species);
+
+/**
+ * Gets the overworld sprite associated with a npc
+ * @param npc the npc to get the sprite of
+ * @return the overworld sprite
+ **/
+overworld_sprite *overworld_get_by_npc(npc *n);
+
+/**
+ * Returns the overworld sprite of a mushroom
+ * @param mushroom_idx which mushroom to get
+ * @return the overworld sprite
+ **/
+overworld_sprite *overworld_sprite_get_by_mushroom_idx(u16 mushroom_idx);
+
+/**
+ * Returns the overworld palette of a mushroom
+ * @return the palette sprite
+ **/
+palette *overworld_palette_get_by_mushroom();
+
+/**
+ * Returns the overworld sprite of a shell
+ * @param mushroom_idx which shell to get
+ * @return the overworld sprite
+ **/
+overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx);
+
+/**
+ * Returns the overworld palette of a shell
+ * @return the palette sprite
+ **/
+palette *overworld_palette_get_by_shell();
+
 
 /**
  * Frees a npc palette if currently no active npc is using this palette.
@@ -1614,6 +1652,11 @@ extern const unsigned short gfx_ow_lucius_6Tiles[];
 extern const unsigned short gfx_ow_lucius_7Tiles[];
 extern const unsigned short gfx_ow_lucius_8Tiles[];
 extern const u8 gfx_ow_luckyTiles[];
+
+extern const u8 gfx_ow_mushroomTiles[];
+extern const color_t gfx_ow_mushroomPal[];
+extern const u8 gfx_ow_shellTiles[];
+extern const color_t gfx_ow_shellPal[];
 
 
 #define OVERWORLD_PLAYER_PICTURE_CONTEXT_WALKING 0

@@ -54,7 +54,7 @@ void time_read(rtc_timestamp *s) {
 
 void time_reset_events() {
 	// Reset the a_gen_time
-    time_read(&(cmem.a_gen_time));
+    time_read(&(cmem.daily_events_last_update));
     // Reset the fossil gen time
     time_read(&(cmem.fossil_gen_time));
 	fmem.berry_tree_time_last_updated_initialized = 0;
@@ -103,6 +103,7 @@ void buffer_time() {
 
 void time_based_events_run() {
 	berry_proceed();
+    daily_events_proceed();
 }
 
 void time_based_events_proceed(u16 *vars) {

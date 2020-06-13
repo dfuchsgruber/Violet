@@ -125,6 +125,7 @@
         "limits": "c",
         "memory": "c",
         "cstddef": "c",
-        "new": "c"
+        "new": "c",
+        "mushroom_and_shell.h": "c"
     }
 }

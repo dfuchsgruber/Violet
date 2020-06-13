@@ -16,11 +16,15 @@
 #include "rtc.h"
 #include "agbmemory.h"
 #include "data_structures.h"
+#include "berry.h"
+#include "mushroom_and_shell.h"
 
 void custom_memory_init() {
   memset(&cmem, 0, sizeof(custom_memory));
   setflag(POKERADAR_POKEMON_SPAWNED);  // set corresponds to a pokemon already spawned
   incubator_clear();
+  mushroom_and_shell_regrow();
+  berry_trees_initialize_all();
 }
 
 

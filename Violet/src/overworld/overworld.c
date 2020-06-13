@@ -18,6 +18,7 @@
 #include "battle/whiteout.h"
 #include "berry.h"
 #include "rtc.h"
+#include "constants/person_script_stds.h"
 
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
@@ -74,6 +75,14 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
         // return overworld_get(OVERWORLD_SPRITE_POKEMON_64_64); // For testing: This is the groudon sprite
     } else if (person->overworld_index == OVERWORLD_SPRITE_BERRY) {
         return overworld_sprite_get_by_berry_idx((u8)(person->value));
+    } else if (person->overworld_index == OVERWORLD_SPRITE_MISC) {
+        switch (person->script_std) {
+            case PERSON_MUSHROOM:
+                return overworld_sprite_get_by_mushroom_idx(person->value);
+            case PERSON_SHELL:
+                return overworld_sprite_get_by_shell_idx(person->value);
+        }
+
     }
 
     // dprintf("Falling back to default sprite showing %d\n", person->overworld_index);
@@ -93,7 +102,7 @@ overworld_sprite *overworld_get_by_npc(npc *n) {
 
 static bool oam_palette_tag_is_npc_palette(u16 tag) {
     if (tag >= 0x1100 && tag < 0x1120) return true;
-    if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) return true;
+    if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_END) return true;
     return false;
 }
 
@@ -127,6 +136,10 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_BERRY_BASE && tag < (OW_PAL_TAG_BERRY_BASE + NUM_OW_PAL_TAGS_BERRY)) {
         return overworld_palette_berry_get_by_tag(tag);
     }
+    if (tag == OW_PAL_TAG_MUSHROOM)
+        return overworld_palette_get_by_mushroom();
+    else if (tag == OW_PAL_TAG_SHELL)
+        return overworld_palette_get_by_shell();
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
     if (idx != 0xFF) {

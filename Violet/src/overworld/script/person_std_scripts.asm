@@ -8,6 +8,7 @@
 .include "berry_stages.s"
 .include "songs.s"
 .include "items.s"
+.include "mushroom_and_shell.s"
 
 .global ow_script_person_pokeball
 .global ow_script_person_egg
@@ -15,6 +16,8 @@
 .global ow_script_aggressive_wild
 .global ow_script_aggressive_wild_do_battle
 .global ow_script_berry_tree
+.global ow_script_mushroom
+.global ow_script_shell
 
 ow_script_person_pokeball:
 	callstd ITEM_FIND
@@ -190,7 +193,110 @@ no_room_for_berries:
 	callstd MSG
 	end
 
+ow_script_mushroom:
+	lockall
+	special2 LASTRESULT SPECIAL_MUSHROOM_GET_STAGE
+	compare LASTRESULT MUSHROOM_TYPE_PLUCKED
+	gotoif EQUAL mushroom_plucked
+	compare LASTRESULT MUSHROOM_TYPE_TINY_MUSHROOM
+	gotoif EQUAL mushroom_tiny
+	compare LASTRESULT MUSHROOM_TYPE_LARGE_MUSHROOM
+	gotoif EQUAL mushroom_large
+	releaseall
+	end
+mushroom_plucked:
+	loadpointer 0 str_mushroom_plucked
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
+mushroom_tiny:
+	setvar 0x8000 ITEM_MINIPILZ
+	goto mushroom_plucking
+mushroom_large:
+	setvar 0x8000 ITEM_RIESENPILZ
+mushroom_plucking:
+	bufferitem 0 0x8000
+	loadpointer 0 str_mushrooms_are_growing
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL dont_pluck_mushrooms
+	checkitemroom 0x8000 0x1
+	compare LASTRESULT 0
+	gotoif EQUAL no_room_for_mushroom
+	setvar 0x8001 1
+	callstd ITEM_OBTAIN
+	callasm mushroom_pluck
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	releaseall
+	end
+no_room_for_mushroom:
+	loadpointer 0 str_no_room_for_mushroom
+	callstd MSG_KEEPOPEN
+dont_pluck_mushrooms:
+	closeonkeypress
+	releaseall
+	end
 
+
+ow_script_shell:
+	lockall
+	special2 LASTRESULT SPECIAL_SHELL_GET_STAGE
+	compare LASTRESULT SHELL_TYPE_EMPTY
+	gotoif EQUAL shell_empty
+	compare LASTRESULT SHELL_TYPE_PEARL
+	gotoif EQUAL shell_pearl
+	compare LASTRESULT SHELL_TYPE_LARGE_PEARL
+	gotoif EQUAL shell_large_pearl
+	compare LASTRESULT SHELL_TYPE_HEART_SCALE
+	gotoif EQUAL shell_heart_scale
+	compare LASTRESULT SHELL_TYPE_SHOAL_SALT
+	gotoif EQUAL shell_shoal_salt
+	compare LASTRESULT SHELL_TYPE_SHOAL_SHELL
+	gotoif EQUAL shell_shoal_shell
+	releaseall
+	end
+shell_empty:
+	loadpointer 0 str_shell_empty
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
+shell_pearl:
+	setvar 0x8000 ITEM_PERLE
+	goto shell_opening
+shell_large_pearl:
+	setvar 0x8000 ITEM_RIESENPERLE
+	goto shell_opening
+shell_heart_scale:
+	setvar 0x8000 ITEM_HERZSCHUPPE
+	goto shell_opening
+shell_shoal_salt:
+	setvar 0x8000 ITEM_KUESTENSALZ
+	goto shell_opening
+shell_shoal_shell:
+	setvar 0x8000 ITEM_KUESTENSCHALE
+shell_opening:
+	bufferitem 0 0x8000
+	loadpointer 0 str_shell_to_be_opened
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL dont_open_shell
+	checkitemroom 0x8000 0x1
+	compare LASTRESULT 0
+	gotoif EQUAL no_room_for_shell
+	setvar 0x8001 1
+	callstd ITEM_OBTAIN
+	callasm shell_open
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	releaseall
+	end
+
+no_room_for_shell:
+	loadpointer 0 str_no_room_for_mushroom
+	callstd MSG_KEEPOPEN
+dont_open_shell:
+	closeonkeypress
+	releaseall
+	end
 
 .ifdef LANG_GER
 str_mon0:
@@ -235,6 +341,16 @@ str_fertilize:
 	.autostring 34 2 "PLAYER benutzt Wunderstaub."
 str_grown:
 	.autostring 34 2 "Die BUFFER_1n sind gewachsen!"
+str_mushroom_plucked:
+	.autostring 34 2 "Es scheint, als wären hier einmal Plize gewachsen, aber irgendwer muss sie gepflückt habenDOTS\pEs dauert wohl noch, bis wieder neue Pilze gewachsen sind."
+str_mushrooms_are_growing:
+	.autostring 34 2 "Dort wächst ein BUFFER_1!\pMöchtest du den BUFFER_1 pflücken?"
+str_no_room_for_mushroom:
+	.autostring 34 2 "Es scheint so, als hättest du dafür keinen Platz!"
+str_shell_empty:
+	.autostring 34 2 "Die Muschel wurde aufgebrochen und scheint leer zu sein.\pOb wohl bald eine neue Muschel angespült wird?"
+str_shell_to_be_opened:
+	.autostring 34 2 "Etwas funkelt im Inneren der Muschel!\pMöchtest du die Muschel aufbrechen?"
 .elseif LANG_EN
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"
@@ -246,4 +362,14 @@ str_mon3:
 	.autostring 34 2 "BUFFER_1!\nBUFFER_1?"
 str_attacks:
 	.autostring 34 2 "BUFFER_1 greift an!"
+str_mushroom_plucked:
+	.autostring 34 2 "It seems like mushrooms were growing here but somebody must have picked themDOTS\pIt probably takes some time until new mushrooms have grown."
+str_mushrooms_are_growing:
+	.autostring 34 2 "A BUFFER_1 is growing here!\pDo you want to pluck the BUFFER_1?"
+str_no_room_for_mushroom:
+	.autostring 34 2 "It seems like you don't have room for that!"
+str_shell_empty:
+	.autostring 34 2 "The shell has been broken open and seems to be empty inside.\pIf the tides will wash another one ashore?"
+str_shell_to_be_opened:
+	.autostring 34 2 "Something is sparkling inside the shell!\pDo you want to break the shell open?"
 .endif

@@ -157,6 +157,6 @@ void dungeon2_seed_init() {
 		derrf("No dungeon matches the current entrance for seed init\n");
 	}
 	u32 seq[1] = {(u32)dungeon_idx};
-	cmem.dg2.initial_seed = tmp_hash(seq, 1);
+	cmem.dg2.initial_seed = daily_events_hash(seq, 1);
 	dprintf("Setup seed to %d\n", cmem.dg2.initial_seed);
 }

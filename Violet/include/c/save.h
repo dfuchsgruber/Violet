@@ -139,8 +139,8 @@ typedef struct custom_memory {
     u32 money_backup;
     //trash memory (generall a vector memory)
     u8 trash_flags[16];
-    rtc_timestamp a_gen_time;
-    u32 tmp_hash_seed;
+    rtc_timestamp daily_events_last_update;
+    u32 daily_events_seed;
     rtc_timestamp fossil_gen_time;
     u8 any_tmp_flags[16];
     map_event_person pokeradar_person;
@@ -152,6 +152,20 @@ typedef struct custom_memory {
     roamer_history_entry_t roamer_histories[NUM_ROAMERS][3];
     roamer_history_entry_t roamer_locations[NUM_ROAMERS];
     berry_tree berry_trees[256];
+    u8 mushroom_flags[64];
+    u8 shell_flags[32];
+    
+    /**
+    struct {
+        u8 flags[64];
+        u8 is_large[64];
+    } mushrooms;
+    struct {
+        u8 flags[32];
+        u8 is_large[32];
+        u8 is_heart_scale[32];
+    } shells;
+    **/
 
 } custom_memory;
 
@@ -251,17 +265,17 @@ int save_get_key(u8 index);
  * @param size the size of the sequence
  * @return the hash value of the sequence with the current temporal seed
  */
-u32 tmp_hash(u32 seq[], size_t size);
+u32 daily_events_hash(u32 seq[], size_t size);
 
 /**
  * Updates the seed for the tmp hash system if the cycle (one day) has passed
  */
-void tmp_hash_update_seed();
+void daily_events_proceed();
 
 /**
  * Randomly generates a new seed for the tmp hash system
  */
-void tmp_hash_new_seed();
+void daily_events_new_seed();
 
 /**
  * Sets the surfing field in save1 to false

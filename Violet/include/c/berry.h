@@ -99,6 +99,11 @@ palette *overworld_palette_berry_get_by_tag(u16 tag);
  **/
 void berry_proceed();
 
+/**
+ * Initializes all berry trees.
+ **/
+void berry_trees_initialize_all();
+
 extern void berry_pouch_callback_context_menu(u8 self);
 extern void berry_pouch_callback_from_party_menu_give(u8 self);
 extern void berry_pouch_callback_from_storage_pc(u8 self);

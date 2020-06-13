@@ -13,7 +13,6 @@
 
 void callback_switch_timezone() {
     update_timezone();
-    tmp_hash_update_seed();
     callback1_set(overworld_return_to); //return to normal map reload
 }
 

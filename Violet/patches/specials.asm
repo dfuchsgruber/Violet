@@ -41,7 +41,7 @@ special_table equ 0x0815FCC0
 	.pool
 	
 .org (special_table +(0x18 * 4))
-	.word tmp_flags_reset | 1
+	.word daily_events_reset | 1
 	.pool
 
 .org (special_table +(0x19 *4))
@@ -251,6 +251,11 @@ special_table equ 0x0815FCC0
 
 .org (special_table + 115 * 4)
         .word aggressive_wild_get_approaching_species | 1
+
+.org (special_table + 116 * 4)
+        .word special_mushroom_get_stage | 1
+.org (special_table + 117 * 4)
+        .word special_shell_get_stage | 1
 
 
 // Free up until <= 118

@@ -3,6 +3,18 @@
 #include "flags.h"
 #include "debug.h"
 
+bool gp_flag_get(u16 flag, u8 *flags) {
+    return (flags[flag / 8] & (1 << (flag & 7))) != 0;
+}
+
+void gp_flag_set(u16 flag, u8 *flags) {
+    flags[flag / 8] = (u8)(flags[flag / 8] | (1 << (flag & 7)));
+}
+
+void gp_flag_clear(u16 flag, u8 *flags) {
+    flags[flag / 8] = (u8)(flags[flag / 8] & (~(1 << (flag & 7))));
+}
+
 u8 *flag_access_ext(u16 flag) {
     if(flag < 0xD00){
         int index = (flag - 0x900) / 8;

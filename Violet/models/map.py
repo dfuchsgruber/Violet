@@ -18,7 +18,7 @@ signpost_type_type = agb.types.ScalarType('u8', constant='signpost_types')
 person_script_std_type = agb.types.UnionType({
         'item' : 'item',
         'species' : 'species',
-        'berry_tree_idx' : 'u16'
+        'berry_tree_idx' : 'u16',
     },
     lambda project, context, parents: {
         'PERSON_ITEM' : 'item',
@@ -26,6 +26,8 @@ person_script_std_type = agb.types.UnionType({
         'PERSON_AGGRESSIVE_POKEMON' : 'species',
         'PERSON_POKEMON' : 'species',
         'PERSON_BERRY_TREE' : 'berry_tree_idx',
+        'PERSON_MUSHROOM' : 'berry_tree_idx',
+        'PERSON_SHELL' : 'berry_tree_idx',
     }.get(parents[-1]['script_std'], 'item')
 )
 map_flags_type = agb.types.BitfieldType('u8', [

@@ -20,6 +20,8 @@
 #include "tile/hidden_item.h"
 #include "pokemon/roamer.h"
 #include "constants/roamers.h"
+#include "berry.h"
+#include "mushroom_and_shell.h"
 
 void version_init(){
     *var_access(SGM_VER) = VERSION_LATEST;
@@ -69,7 +71,7 @@ void version_transfer(){
 void version_upgrade_alpha_1_X_to_2_0(){
     worldmap_flag_state_set(0x892);
     worldmap_flag_set(0x892);
-    tmp_hash_new_seed();
+    daily_events_new_seed();
     setflag(0x96B);
     //update entire player party
     int i;
@@ -127,6 +129,8 @@ void version_upgrade_alpha_2_1_to_2_2() {
 		*var_access(TIME_TYPE) = TIME_TYPE_INGAME_CLOCK;
 	}
 	time_reset_events();
+    berry_trees_initialize_all();
+    mushroom_and_shell_regrow();
 	// Reorder pokedex flags
 	version_transfer_pokedex();
 

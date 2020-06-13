@@ -51,4 +51,27 @@ u8 *flag_access(u16 flag);
 u8 badges_number_get();
 
 
+/**
+ * Gets a flag from a list of bytes
+ * @param flag the flag idx to get
+ * @param flags the bytes that store the flag
+ * @return if a flag is set
+ **/
+bool gp_flag_get(u16 flag, u8 *flags);
+
+/**
+ * Sets a flag in a list of bytes
+ * @param flag the flag idx to set
+ * @param flags the bytes that store the flag
+ **/
+void gp_flag_set(u16 flag, u8 *flags);
+
+/**
+ * Clears a flag in a list of bytes
+ * @param flag the flag idx to clear
+ * @param flags the bytes that store the flag
+ **/
+void gp_flag_clear(u16 flag, u8 *flags);
+
+
 #endif /* INCLUDE_C_FLAGS_H_ */

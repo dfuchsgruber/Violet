@@ -77,6 +77,7 @@ u16 berry_tree_get_yield() {
 void berry_tree_update_gfx() {
     u8 person_idx = (u8)(*var_access(LASTTALKED));
     u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
+    dprintf("Berry update, npc idx %d for person %d\n", person_idx, npc_idx);
     if (npc_idx < 16) {
         u8 oam_idx = npcs[npc_idx].oam_id;
         npcs[npc_idx].flags.active = 0; // Temporarily disable the npc such that the pal can be released
@@ -84,8 +85,8 @@ void berry_tree_update_gfx() {
         npc_free_palette_if_unused_by_slot(pal_idx_old);
         npcs[npc_idx].flags.active = 1; // Set the npc to active again
         overworld_npc_update_palette(npcs + npc_idx, oams + oam_idx);
-        map_event_person *person = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
-        overworld_sprite *ow = overworld_sprite_get_by_berry_idx((u8)(person->value));
+        overworld_sprite *ow = overworld_get_by_npc(npcs + npc_idx);
+        dprintf("Updated overworld sprite %d with @0x%x", person_idx, ow);
         oams[oam_idx].gfx_table = ow->graphics;
         oam_gfx_anim_start(oams + oam_idx, 0);
     }
