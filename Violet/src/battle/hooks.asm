@@ -188,3 +188,26 @@ battle_hook_before_attack:
     pop {r0}
     bx r0
 
+
+
+.global hook_battle_item_switch_in_effects
+
+.align 2
+.thumb
+
+@ insert at 0x0801bce4 as a pointer in a jump-table (i.e. without | 1)
+.thumb_func
+hook_battle_item_switch_in_effects:
+    bl battle_items_switch_in_effects
+    cmp r0, #0xFF
+    beq battle_items_effect_with_no_bsc_activated
+    cmp r0, #0
+    bne battle_items_switch_in_effect_activated
+    ldr r0, = 0x0801bcf8 | 1 // Resume to the original functions, i.e. amulett coin and white herb
+    bx r0
+
+battle_items_switch_in_effect_activated:
+    str r0, [sp, #0xC] // Return effect
+battle_items_effect_with_no_bsc_activated:
+    ldr r0, = 0x0801cf2a | 1 // End the function, but return 0 overall
+    bx r0

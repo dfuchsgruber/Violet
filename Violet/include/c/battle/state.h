@@ -122,6 +122,7 @@ typedef struct {
     u8 field_1A4[0x5C];
 } battle_state_t;
 
+
 #define MAX_ITEMS_DROPPED_PER_BATTLER 4
 typedef struct {
     u16 items[4][4]; // 4 Items per owner (instead of only one for the AI) (the player one should be unused in theory...)
@@ -140,9 +141,10 @@ typedef struct {
     u8 items_dropped_oams[MAX_ITEMS_DROPPED_PER_BATTLER];
     u8 items_dropped_done; // bitfield
     u8 item_dropping_battler; 
-    u8 item_to_pickup; // Which index is currently picked up by the player
     u8 item_dropping_state; // Assumed to be zero initialized in a battle
-    u8 item_dropping_summary_tbox_idx; 
+    u8 item_dropping_summary_tbox_idx;
+    u8 item_dropping_chance_increased_by_item : 1;
+    u8 item_dropping_chance_increased_by_ability : 1;
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)

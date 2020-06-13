@@ -181,6 +181,10 @@ item_resource equ 0x083D3BE8
     .word gfx_item_gunpowderTiles
     .word gfx_item_gunpowderPal
 
+.org item_resource + 0x15c * 8
+    .word gfx_item_vierblattTiles
+    .word gfx_item_vierblattPal
+
 .org item_resource + 0x160 * 8
     .word gfx_item_alte_karteTiles
     .word gfx_item_alte_kartePal
@@ -348,3 +352,6 @@ _bxr1:
 
 .org 0x0813dc4c
     .word berry_pouch_callbacks
+
+.org 0x0801bce4
+    .word hook_battle_item_switch_in_effects

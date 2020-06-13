@@ -16,30 +16,236 @@
 #include "dma.h"
 #include "superstate.h"
 #include "language.h"
+#include "prng.h"
+#include "constants/pokemon_types.h"
+#include "pokemon/basestat.h"
+#include "constants/pokemon_colors.h"
+#include "berry.h"
 
-bool battler_drop_item(u8 battler_idx, u16 *item, u8 *quantity) {
+static u32 standard_item_drop_rates[][2] = {
+    {ITEM_WUNDERSTAUB, 150},
+    {ITEM_SONDERBONBON, 1},
+    {ITEM_SUESSBONBON, 35},
+    {ITEM_BEERENSAFT, 60},
+    /**
+    {ITEM_POKEBALL, 75},
+    {ITEM_SUPERBALL, 30},
+    {ITEM_HYPERBALL, 5},
+    {ITEM_TRANK, 75},
+    {ITEM_FLUCHTSEIL, 50},
+    {ITEM_PARA_HEILER, 50},
+    {ITEM_GEGENGIFT, 50},
+    {ITEM_AUFWECKER, 50},
+    {ITEM_FEUERHEILER, 50},
+    {ITEM_EISHEILER, 50},
+    {ITEM_ENERGIESTAUB, 25},
+    {ITEM_KRAFTWURZEL, 10},
+    {ITEM_VITALKRAUT, 5},
+    {ITEM_HEILPUDER, 15},
+    {ITEM_SCHUTZ, 50},
+    {ITEM_SUPERSCHUTZ, 40},
+    {ITEM_TOP_SCHUTZ, 30},
+    **/
+};
 
-    // TODO
-    switch (BATTLE_STATE2->num_items_dropped[battler_idx]) {
-        case 0:
-            *item = ITEM_WUNDERSTAUB;
-            *quantity = 2;
-            return true;
-        case 1:
-            *item = ITEM_POKEBALL;
-            *quantity = 3;
-            return true;
-        case 3:
-            *item = ITEM_TRANK;
-            *quantity = 4;
-            return true;
-        case 2:
-            *item = ITEM_AMRENABEERE;
-            *quantity = 1;
-            return true;
-        default: 
-            return false;
+static u32 standard_item_count_rates[] = {[1] = 14, [2] = 4, [3] = 1};
+
+static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
+    u32 p[ARRAY_COUNT(standard_item_drop_rates)];
+    // Applying the level of the battler as offset: The higher the offset, the more "equal" all resulting probabilities will get
+    // i.e. the more likely rare items will get
+    u8 offset = battlers[battler_idx].level;
+    for (size_t i = 0; i < ARRAY_COUNT(standard_item_drop_rates); i++) {
+        p[i] = (u32)(standard_item_drop_rates[i][1] + offset);
     }
+    *item = (u16)(standard_item_drop_rates[choice(p, ARRAY_COUNT(p), NULL)][0]);
+    *cnt = (u8) choice(standard_item_count_rates, ARRAY_COUNT(standard_item_count_rates), NULL);
+    return true;
+}
+
+#define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) {p[p_size] = prob; items[p_size] = item; p_size++;}
+
+static u32 drop_type_item_count_rates[] = {[1] = 19, [2] = 1};
+
+static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
+    u32 p[16]; u16 items[16];
+    size_t p_size = 0;
+    if (battlers[battler_idx].type1 == TYPE_WASSER || battlers[battler_idx].type2 == TYPE_WASSER) {
+        P_ARRAY_ADD_ITEM(p, items, ITEM_PERLE, 50, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_HERZSCHUPPE, 25, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_RIESENPERLE, 5, p_size);
+    }
+    if (battlers[battler_idx].type1 == TYPE_PFLANZE || battlers[battler_idx].type2 == TYPE_PFLANZE ||
+        battlers[battler_idx].type1 == TYPE_KAEFER || battlers[battler_idx].type2 == TYPE_KAEFER) {
+        P_ARRAY_ADD_ITEM(p, items, ITEM_MINIPILZ, 70, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_RIESENPILZ, 50, p_size);
+    }
+    if (battlers[battler_idx].type1 == TYPE_GESTEIN || battlers[battler_idx].type2 == TYPE_GESTEIN ||
+        battlers[battler_idx].type1 == TYPE_BODEN || battlers[battler_idx].type2 == TYPE_BODEN ||
+        battlers[battler_idx].type1 == TYPE_FEE || battlers[battler_idx].type2 == TYPE_FEE) {
+        P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTAUB, 40, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTUECK, 40, p_size);
+    }
+    if (p_size > 0) {
+        *dst_item = items[choice(p, p_size, NULL)];
+        *dst_cnt = (u8)choice(drop_type_item_count_rates, ARRAY_COUNT(drop_type_item_count_rates), NULL);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+static u32 drop_color_item_count_rates[] = {[1] = 19, [2] = 1};
+
+static bool drop_color_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
+    int color = basestats[battlers[battler_idx].species].color_flip_field & 0x7F;
+    u32 p[16]; u16 items[16];
+    size_t p_size = 0;
+    if (color == POKEMON_COLOR_BLAU) P_ARRAY_ADD_ITEM(p, items, ITEM_INDIGOSTUECK, 1, p_size)
+    else if (color == POKEMON_COLOR_ROT) P_ARRAY_ADD_ITEM(p, items, ITEM_PURPURSTUECK, 1, p_size)
+    else if (color == POKEMON_COLOR_GELB) P_ARRAY_ADD_ITEM(p, items, ITEM_GELBSTUECK, 1, p_size)
+    else if (color == POKEMON_COLOR_GRUEN) P_ARRAY_ADD_ITEM(p, items, ITEM_GRUENSTUECK, 1, p_size)
+    if (p_size > 0) {
+        *dst_item = items[choice(p, p_size, NULL)];
+        *dst_cnt = (u8)choice(drop_color_item_count_rates, ARRAY_COUNT(drop_color_item_count_rates), NULL);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+static bool drop_species_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
+    u16 species = battlers[battler_idx].species;
+    u32 p[16]; u16 items[16];
+    size_t p_size = 0;
+    if (basestats[species].common_item) P_ARRAY_ADD_ITEM(p, items, basestats[species].common_item, 50, p_size)
+    if (basestats[species].rare_item) P_ARRAY_ADD_ITEM(p, items, basestats[species].rare_item, 1, p_size)
+     if (p_size > 0) {
+        *dst_item = items[choice(p, p_size, NULL)];
+        *dst_cnt = 1;
+        return true;
+    } else {
+        return false;
+    }
+}
+
+static u32 berry_dropping_probabilities[] = {
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_AMRENABEERE)] = 10,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MARONBEERE)] = 10,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE)] = 10,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_FRAGIABEERE)] = 10,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_WILBIRBEERE)] = 10,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_JONAGOBEERE)] = 4,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE)] = 10,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PERSIMBEERE)] = 10,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PRUNUSBEERE)] = 1,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TSITRUBEERE)] = 7,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_GIEFEBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_WIKIBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_GAUVEBEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_YAPABEERE)] = 5,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_HIMMIHBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MORBBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_NANABBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_NIRBEBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SANANABEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_GRANABEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SETANGBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_QUALOTBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_HONMELBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LABRUSBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TAMOTBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOSTBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_RABUTABEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TRONZIBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_KIWANBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_PALLMBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_WASMELBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_DURINBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_MYRTILBEERE)] = 6,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LYDZIBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LINGANBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_SALKABEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_TAHAYBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_APIKOBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_LANSATBEERE)] = 2,
+    [ITEM_IDX_TO_BERRY_IDX(ITEM_KRAMBOBEERE)] = 1,
+};
+
+
+static u32 drop_berry_item_count_rates[] = {[1] = 13, [2] = 4, [3] = 2, [4] = 1};
+
+static bool drop_berry_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
+    (void) battler_idx;
+    *dst_item = (u16)(BERRY_IDX_TO_ITEM_IDX(choice(berry_dropping_probabilities, ARRAY_COUNT(berry_dropping_probabilities), NULL)));
+    *dst_cnt = (u8)choice(drop_berry_item_count_rates, ARRAY_COUNT(drop_berry_item_count_rates), NULL);
+    return true;
+}
+
+enum {
+    DROP_STANDARD_ITEM = 0,
+    DROP_TYPE_ITEM,
+    DROP_COLOR_ITEM,
+    DROP_SPECIES_ITEM,
+    DROP_BERRY_ITEM,
+};
+
+static bool (*dropping_functions[])(u8, u16*, u8*) = {
+    [DROP_STANDARD_ITEM] = drop_standard_item,
+    [DROP_TYPE_ITEM] = drop_type_item,
+    [DROP_COLOR_ITEM] = drop_color_item,
+    [DROP_SPECIES_ITEM] = drop_species_item,
+    [DROP_BERRY_ITEM] = drop_berry_item,
+};
+
+static u32 dropping_type_probabilities[] = {
+    [DROP_STANDARD_ITEM] = 10,
+    [DROP_TYPE_ITEM] = 4,
+    [DROP_COLOR_ITEM] = 3,
+    [DROP_SPECIES_ITEM] = 1,
+    [DROP_BERRY_ITEM] = 0, // For now, we don't drop any berries
+};
+
+void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
+    u32 p[ARRAY_COUNT(dropping_type_probabilities)];
+    u16 items[ARRAY_COUNT(dropping_type_probabilities)];
+    u8 cnts[ARRAY_COUNT(dropping_type_probabilities)];
+    size_t p_size = 0;
+    for (size_t i = 0; i < ARRAY_COUNT(dropping_type_probabilities); i++) {
+        u16 item = 0; u8 cnt = 0; 
+        if (dropping_functions[i](battler_idx, &item, &cnt)) {
+            p[p_size] = dropping_type_probabilities[i];
+            items[p_size] = item;
+            cnts[p_size] = cnt;
+            p_size++;
+        }
+    }
+    size_t idx = choice(p, p_size, NULL);
+    *dst_item = items[idx];
+    *dst_cnt = cnts[idx];
+}
+
+bool battler_drop_next_item(u8 battler_idx, u16 *item, u8 *cnt) {
+    u32 p[2] = {
+        [0] = (u32)(1 + (1 << BATTLE_STATE2->num_items_dropped[battler_idx])),
+        [1] = 1,
+    };
+    if (battle_flags & BATTLE_AGGRESSIVE_WILD)
+        p[1]++;
+    if (battle_flags & BATTLE_DOUBLE)
+        p[1]++;
+    if (BATTLE_STATE2->item_dropping_chance_increased_by_item)
+        p[1]++;
+    if (BATTLE_STATE2->item_dropping_chance_increased_by_ability)
+        p[1]++;
+    if (choice(p, ARRAY_COUNT(p), NULL) != 0) {
+        battler_drop_item(battler_idx, item, cnt);
+        return true;
+    }
+    return false;
 }
 
 static void battle_item_drop_compact(u8 battler_idx) {
@@ -47,11 +253,13 @@ static void battle_item_drop_compact(u8 battler_idx) {
         u16 item = BATTLE_STATE2->items_dropped[battler_idx][i];
         for (int j = i + 1; j < BATTLE_STATE2->num_items_dropped[battler_idx]; j++) {
             if (BATTLE_STATE2->items_dropped[battler_idx][j] == item) {
+                dprintf("compactifying items at slot %d and %d\n", i, j);
                 // Aggregate the same items
                 BATTLE_STATE2->items_dropped_cnt[battler_idx][i] = (u8) (BATTLE_STATE2->items_dropped_cnt[battler_idx][i] + 
                     BATTLE_STATE2->items_dropped_cnt[battler_idx][j]);
                 // Remove the aggregated item by swapping with the last one and reducing the list length
-                BATTLE_STATE2->items_dropped[battler_idx][j] = BATTLE_STATE2->items_dropped[battler_idx][--BATTLE_STATE2->num_items_dropped[battler_idx]];
+                BATTLE_STATE2->num_items_dropped[battler_idx]--;
+                BATTLE_STATE2->items_dropped[battler_idx][j] = BATTLE_STATE2->items_dropped[battler_idx][BATTLE_STATE2->num_items_dropped[battler_idx]];
             }
         }
     }
@@ -78,31 +286,33 @@ enum {
 static tbox_font_colormap item_drop_summary_fontcolmap = { .background = 0xE, .body = 0xD, .edge = 0xF};
 
 static u8 battle_item_drop_summary_tbox_new() {
-    int height = 2 * BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler] + 2;
+    int height = 2 * BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler];
     tboxdata template = {0};
-    tbox_data_new(&template, 1, 14, 9, 15, (u8)height, 5, 0x100); // Basically re-uses all the tiles of the "standard" gp battle tbox, which is too small
+    tbox_data_new(&template, 1, 14, (u8)(13 - height), 15, (u8)height, 5, 0x100); // Basically re-uses all the tiles of the "standard" gp battle tbox, which is too small
     return tbox_new(&template);
 }
 
 static void battle_item_drop_draw_summary_text() {
     // TODO
-    u8 title[] = LANGDEP(PSTRING("Items erhalten:"), PSTRING("Items received"));
-    tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 0, 0, 0, 0, &item_drop_summary_fontcolmap, 0xFF, title);
     for (int i = 0; i < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]; i++) {
         u16 item = BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][i];
         u8 cnt = BATTLE_STATE2->items_dropped_cnt[BATTLE_STATE2->item_dropping_battler][i];
-        tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 8, (u16)(16 + (16 * i)), 0, 0, 
-            &item_drop_summary_fontcolmap, 0xFF, item_get_name(item));
-        if (item_has_room(item, cnt)) {
-            itoa(strbuf, cnt, ITOA_PAD_SPACES, 2);
-            u8 str_cnt[] = PSTRING("x");
-            strcat(strbuf, str_cnt);
-        } else {
+        if (!item_has_room(item, cnt))
+            cnt = 0;
+        itoa(strbuf, cnt, ITOA_NO_PADDING, 1);
+        u8 str_x[] = PSTRING("x ");
+        strcat(strbuf, str_x);
+        strcat(strbuf, item_get_name(item));
+
+        tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 0, (u16)((16 * i)), 0, 0, 
+            &item_drop_summary_fontcolmap, 0xFF, strbuf);
+
+        if (!item_has_room(item, cnt)) {
             u8 str_full[] = LANGDEP(PSTRING("voll"), PSTRING("full"));
             strcpy(strbuf, str_full);
+            tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 96, (u16)((16 * i)), 0, 0, 
+                &item_drop_summary_fontcolmap, 0xFF, strbuf);
         }
-        tbox_print_string(BATTLE_STATE2->item_dropping_summary_tbox_idx, 2, 96, (u16)(16 + (16 * i)), 0, 0, 
-            &item_drop_summary_fontcolmap, 0xFF, strbuf);
     }
 }
 
@@ -137,7 +347,7 @@ void bsc_cmd_itemdrop_and_payday() {
                     u16 item = 0;
                     u8 cnt = 0;
                     do {
-                        if (battler_drop_item(i, &item, &cnt)) {
+                        if (battler_drop_next_item(i, &item, &cnt)) {
                             BATTLE_STATE2->items_dropped[i][BATTLE_STATE2->num_items_dropped[i]] = item;
                             BATTLE_STATE2->items_dropped_cnt[i][BATTLE_STATE2->num_items_dropped[i]] = cnt;
                             BATTLE_STATE2->num_items_dropped[i]++;
@@ -183,7 +393,6 @@ void bsc_cmd_itemdrop_and_payday() {
                         battle_scripting.battler_idx = BATTLE_STATE2->item_dropping_battler;
                         battlescript_callstack_push_next_command();
                         bsc_offset = battlescript_itemdrop;
-                        BATTLE_STATE2->item_to_pickup = 0;
                         BATTLE_STATE2->item_dropping_state = SUMMARY_INIT;
                         return;
                     }
@@ -225,7 +434,8 @@ void bsc_cmd_itemdrop_and_payday() {
             break;
         }
         case SUMMARY_WAIT_FOR_INPUT: {
-            if (super.keys_new.value) { // Any key press is ok...
+            
+            if (!big_callback_is_active(fanfare_callback_wait) && super.keys_new.value) { // Any key press is ok...
                 play_sound(5);
                 tbox_flush_all(BATTLE_STATE2->item_dropping_summary_tbox_idx, 0);
                 // item_drop_summary_battle_gp_tbox_draw(BATTLE_GP_TBOX_BG_1 | BATTLE_GP_TBOX_CLEAR);
@@ -234,12 +444,10 @@ void bsc_cmd_itemdrop_and_payday() {
             break;
         }
         case SUMMARY_CLEAR: {
-            if (!big_callback_is_active(fanfare_callback_wait)) {
-                tbox_flush_map(BATTLE_STATE2->item_dropping_summary_tbox_idx);
-                tbox_copy_to_vram(BATTLE_STATE2->item_dropping_summary_tbox_idx, TBOX_COPY_TILEMAP);
-                BATTLE_STATE2->item_dropping_state++;
-                break; 
-            }
+            tbox_flush_map(BATTLE_STATE2->item_dropping_summary_tbox_idx);
+            tbox_copy_to_vram(BATTLE_STATE2->item_dropping_summary_tbox_idx, TBOX_COPY_TILEMAP);
+            BATTLE_STATE2->item_dropping_state++;
+            break; 
         }
         case SUMMARY_DONE: {
             if (!dma3_busy()) {
@@ -375,7 +583,8 @@ void battle_animation_callback_create_item_sprite(u8 self) {
     switch (*state) {
         case 0: { // Allocate resources
             for (u8 i = 0; i < BATTLE_STATE2->num_items_dropped[BATTLE_STATE2->item_dropping_battler]; i++) {
-                u8 oam_idx = item_oam_new((u16)(0x56A0 + i), (u16)(0x56A0 + i), BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][i]);
+                u16 tag = (u16)(0x56A0 + MAX_ITEMS_DROPPED_PER_BATTLER * BATTLE_STATE2->item_dropping_battler + i);
+                u8 oam_idx = item_oam_new(tag, tag, BATTLE_STATE2->items_dropped[BATTLE_STATE2->item_dropping_battler][i]);
                 BATTLE_STATE2->items_dropped_oams[i] = oam_idx;
                 oams[oam_idx].x = (s16)(battler_get_coordinate(battle_scripting.battler_idx, BATTLER_COORD_X_2) + item_dropping_animation_offsets[i].x);
                 oams[oam_idx].y = (s16)(battler_get_coordinate(battle_scripting.battler_idx, BATTLER_COORD_Y) - 8 + item_dropping_animation_offsets[i].y);

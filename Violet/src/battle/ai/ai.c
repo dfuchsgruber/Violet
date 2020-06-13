@@ -19,7 +19,7 @@ void battle_ai_choose_action() {
     dprintf("*** AI ACTION CHOOSING (battler %d) ***\n", active_battler);
     int scores[3] = {0};
     u8 actions[3] = {0};
-    int num_actions = 0;
+    size_t num_actions = 0;
 
     // A move is always a valid action
     actions[0] = ACTION_MOVE;
@@ -36,12 +36,12 @@ void battle_ai_choose_action() {
     }
 
     // Normalize scores to [-16, 16]
-    for (int i = 0; i < num_actions; i++) {
+    for (size_t i = 0; i < num_actions; i++) {
         scores[i] = MIN(16, MAX(-16, scores[i]));
         dprintf("Score for action %d is %d\n", actions[i], scores[i]);
     }
     // Select an action
-    int chosen_action = softmax_choice(scores, num_actions, -16, 16, NULL);
+    size_t chosen_action = softmax_choice(scores, num_actions, -16, 16, NULL);
     switch (actions[chosen_action]) {
         case ACTION_ITEM: {
             dprintf("Use item.\n");

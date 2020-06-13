@@ -2082,10 +2082,10 @@
 		.string "Verstärkt Explosionen. Träger\nexplodiert, wenn von\nFeuer getroffen."
 
 
-	.global str_item_desc_x15c_item_item_15c
+	.global str_item_desc_x15c_item_four_leaf
 
-	str_item_desc_x15c_item_item_15c:
-		.string " ????"
+	str_item_desc_x15c_item_four_leaf:
+		.string "Erhöht die Chance, dass wilde\nPokémon Items fallen lassen,\nwenn es getragen wird."
 
 
 	.global str_item_desc_x15d_item_eichs_paket
@@ -3986,10 +3986,10 @@
 	str_item_desc_schwarzpulver:
 		.string "Intensifies explosions.\nHolder explodes when\nhit by fire."
 
-	.global str_item_desc_x15c_item_item_15c
+	.global str_item_desc_x15c_item_four_leaf
 
-	str_item_desc_x15c_item_item_15c:
-		.string "?????"
+	str_item_desc_x15c_item_four_leaf:
+		.string "Increases the chance of\nwild pokémon dropping\nitems when held."
 
 	.global str_item_desc_x15d_item_eichs_paket
 

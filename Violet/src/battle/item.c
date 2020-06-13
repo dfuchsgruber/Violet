@@ -11,6 +11,19 @@
 
 extern u8 bsc_life_orb[];
 
+
+u8 battle_items_switch_in_effects() { // Return 0 if no effect was used, 0xFF if an effect was used, but no bsc was triggered and a suitable effect type else
+    u8 hold_effect = item_get_hold_effect(bsc_last_used_item);
+    u8 hold_effect_parameter = item_get_hold_effect_parameter(bsc_last_used_item);
+    dprintf("Item switch in effect, hold effect %d with parameter %d\n", hold_effect, hold_effect_parameter);
+    switch(hold_effect) {
+        case HOLD_EFFECT_FOUR_LEAF:
+            BATTLE_STATE2->item_dropping_chance_increased_by_item = 1;
+            return 0xFF;
+    }
+    return 0;
+}
+
 bool battle_items_attack_done_new() {
     return false;
 }

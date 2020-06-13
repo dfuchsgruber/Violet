@@ -5579,13 +5579,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_15C
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
-		0, //holding_effect_id
+		// ITEM_VIERBLATT
+		LANGDEP(PSTRING("Vierblatt"), PSTRING("Four Leaf")),
+		0x15c, //index
+		500, //price
+		HOLD_EFFECT_FOUR_LEAF, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x15c_item_item_15c,
+		str_item_desc_x15c_item_four_leaf,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

@@ -175,9 +175,9 @@ static u16 groudon_magnitude_magnitude_power[] = {
 
 void battle_handicap_groudon_calculate_damage() {
     active_attack = ATTACK_INTENSITAET;
-    int magnitude = choice(magnitude_p, ARRAY_COUNT(magnitude_p), NULL) + 4;
+    size_t magnitude = choice(magnitude_p, ARRAY_COUNT(magnitude_p), NULL) + 4;
     // The lower Groudon's health, the higher the magnitude
-    int increase = (battlers[1].max_hp - battlers[1].current_hp) * 4 / battlers[1].max_hp;
+    size_t increase = (size_t)((battlers[1].max_hp - battlers[1].current_hp) * 4 / battlers[1].max_hp);
     dprintf("Magnitude %d, increase %d, total %d\n", magnitude, increase, MIN(10, magnitude + increase));
     magnitude = MIN(10, magnitude + increase);
     battle_dynamic_base_power = groudon_magnitude_magnitude_power[magnitude - 4];

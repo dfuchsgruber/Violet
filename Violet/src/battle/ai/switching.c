@@ -312,7 +312,7 @@ u8 battle_ai_get_pokemon_to_switch_into() {
     pokemon *party = battler_load_party_range(active_battler, &first, &last);
     int scores[6] = {0};
     u8 targets[6] = {0};
-    int num_viable_targets = 0;
+    size_t num_viable_targets = 0;
 
     for (u8 i = first; i < last; i++) {
         if (AI_CAN_SWITCH_INTO(i, party, active_battler, partner)) {
