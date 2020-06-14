@@ -82,7 +82,7 @@ void battle_action_use_item() {
             switch (item_get_effect_type(bsc_last_used_item)) {
                 case ITEM_EFFECT_HEAL_HP:
                     bsc_offset = battlescripts_use_item[2];
-                    break;
+                    break; 
                 case ITEM_EFFECT_HEAL_BURN:
                 case ITEM_EFFECT_HEAL_FREEZE:
                 case ITEM_EFFECT_HEAL_POISON:
@@ -131,6 +131,23 @@ void battle_action_use_item() {
         }
     }
     battle_action = BATTLE_ACTION_EXECUTE_SCRIPT;
+}
+
+extern u8 battlescript_introduce_aggresive_battler[];
+
+void battle_aggresive_battlers_introduce() {
+    if (battle_flags & BATTLE_AGGRESSIVE_WILD) {
+        while (BATTLE_STATE2->aggresive_battler_idx < battler_cnt) {
+            active_battler = BATTLE_STATE2->aggresive_battler_idx;
+            BATTLE_STATE2->aggresive_battler_idx++;
+            if (battler_is_opponent(active_battler)) {
+                attacking_battler = defending_battler = battle_scripting.battler_idx = active_battler;
+                battlescript_init_and_interrupt_battle(battlescript_introduce_aggresive_battler);
+                return;
+            }
+        }
+    }
+    battle_main_callback = battle_events_before_first_turn;
 }
 
 // Wrapper that clears the selected switching targets for battlers (so that they are not forced to switch into what was previously chosen)

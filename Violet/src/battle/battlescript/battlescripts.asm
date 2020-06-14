@@ -192,3 +192,12 @@ battlescript_before_attack: // Triggers effects before attack
     beforeattack
     return
 
+
+.global battlescript_introduce_aggresive_battler
+
+battlescript_introduce_aggresive_battler:
+    printstring 0x1b5
+    playanimation BANK_USER BATTLE_ANIM_POKEMON_IS_AGGRESIVE 0
+    waitmessage 0x40
+    waitanimation
+    end3

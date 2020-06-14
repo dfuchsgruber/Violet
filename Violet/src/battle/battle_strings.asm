@@ -428,6 +428,7 @@ bsc_strings:
 .word str_battle_x1B2
 .word str_battle_x1B3
 .word str_battle_x1B4
+.word str_battle_x1B5
 
 @ // Define the strings
 
@@ -2899,6 +2900,9 @@ bsc_strings:
 
 	str_battle_x1B4:
 		.string "Zu schade!\nDein Beutel ist voll!"
+
+	str_battle_x1B5:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX wirkt gereizt!"
 		
 
 .elseif LANG_EN
@@ -4972,6 +4976,9 @@ bsc_strings:
 
 	str_battle_x1B4:
 		.string "What a shame!\nYour bag is full!"
+
+	str_battle_x1B5:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX seems to be irritated!"
 
 .endif
 

@@ -47,7 +47,7 @@ void battle_introduce_handicap() {
                     battlescript_init_and_interrupt_battle(battlescripts_handicap[BATTLE_STATE2->handicap_introduced]);
                     script_initialized = true;
                 }
-            }
+            } 
             BATTLE_STATE2->handicap_introduced++;
             if (script_initialized)
                 return;
@@ -63,7 +63,7 @@ void battle_introduce_handicap() {
             return;
     }
 
-    battle_main_callback = battle_events_before_first_turn;
+    battle_main_callback = battle_aggresive_battlers_introduce;
 }
 
 void battle_handicap_set() {

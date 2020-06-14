@@ -31,7 +31,7 @@ battle_animations:
     .word 0x81da51a		@BATTLE_ANIM_MON_SCARED
     .word 0x81da591		@BATTLE_ANIM_GHOST_GET_OUT
     .word 0x81da60b		@BATTLE_ANIM_SILPH_SCOPED
-    .word 0x81da624		@BATTLE_ANIM_ROCK_THROW
+    .word 0x81da624		@BATTLE_ANIM_ROCK_THROW 
     .word 0x81da66c		@BATTLE_ANIM_SAFARI_REACTION
     .word battle_animation_mega_evolution
     .word battle_animation_regent_evolution
@@ -50,6 +50,7 @@ battle_animations:
     .word battle_animation_target_explodes
     .word battle_animation_ink_shot
     .word battle_animation_item_drop
+    .word battle_animation_mon_is_aggresive
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815
@@ -326,5 +327,23 @@ battle_animation_regent_evolution:
 
 battle_animation_item_drop:
     loadcallback battle_animation_callback_create_item_sprite 2 0
+    waitstate
+    end
+
+battle_animation_mon_is_aggresive:
+    loadgraphic 0x2767
+    fadebattler SPRITE_FADING_AFFECTS_USER, 2, 0, 10, 31
+    waitstate
+
+    loadoam battle_animation_oam_template_anger, 2 | OAM_AT_USER, 3
+        .hword 1, -20, -28
+    playsound_with_pan 0xBB, 0x3F 
+    waitstate
+    pause 12
+    loadoam battle_animation_oam_template_anger, 2 | OAM_AT_USER, 3
+        .hword 1, 20, -28
+    playsound_with_pan 0xBB, 0x3F
+    waitstate 
+    fadebattler SPRITE_FADING_AFFECTS_USER, 2, 10, 0, 31
     waitstate
     end

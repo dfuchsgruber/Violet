@@ -145,6 +145,7 @@ typedef struct {
     u8 item_dropping_summary_tbox_idx;
     u8 item_dropping_chance_increased_by_item : 1;
     u8 item_dropping_chance_increased_by_ability : 1;
+    u8 aggresive_battler_idx; 
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
@@ -408,6 +409,11 @@ void battle_graphics_initialize();
  * Handles events that are triggered before the very first turn of the battle.
  **/
 void battle_events_before_first_turn();
+
+/**
+ * Introduces all aggresive battlers at the first turn. This is done after handicaps were introduced.
+ **/
+void battle_aggresive_battlers_introduce();
 
 /**
  * Handles handicap effects triggered by a switch-in.
