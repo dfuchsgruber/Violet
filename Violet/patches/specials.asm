@@ -248,17 +248,17 @@ special_table equ 0x0815FCC0
         .word berry_plant | 1
 .org (special_table + 114 * 4)
         .word special_berry_tree_grow | 1
-
 .org (special_table + 115 * 4)
         .word aggressive_wild_get_approaching_species | 1
-
 .org (special_table + 116 * 4)
         .word special_mushroom_get_stage | 1
 .org (special_table + 117 * 4)
         .word special_shell_get_stage | 1
-
-
-// Free up until <= 118
+.org (special_table + 118 * 4)
+        .word mushroom_get_encounter | 1
+.org (special_table + 134 * 4)
+        .word shell_get_encounter | 1
+// 134 >= free up to <= 140
 
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1

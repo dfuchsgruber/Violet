@@ -223,6 +223,9 @@ mushroom_plucking:
 	checkitemroom 0x8000 0x1
 	compare LASTRESULT 0
 	gotoif EQUAL no_room_for_mushroom
+	special2 0x8004 SPECIAL_SHELL_GET_ENCOUNTER
+	compare 0x8004 0
+	callif NOT_EQUAL misc_encounter
 	setvar 0x8001 1
 	callstd ITEM_OBTAIN
 	callasm mushroom_pluck
@@ -237,6 +240,23 @@ dont_pluck_mushrooms:
 	releaseall
 	end
 
+misc_encounter:
+	sound 0x15
+	cry 0x8004 0
+	callasm special_misc_encounter_overworld_new
+	applymovement 0xFF mov_exclam
+	waitmovement 0
+	checksound
+	waitcry
+	callasm misc_encounter_setup
+	setflag FLAG_IN_BATTLE
+	callasm battle_initialize_misc_ecounter
+	clearflag FLAG_IN_BATTLE
+	waitstate
+	return
+
+mov_exclam:
+	.byte SAY_EXCLAM, STOP
 
 ow_script_shell:
 	lockall
@@ -253,6 +273,8 @@ ow_script_shell:
 	gotoif EQUAL shell_shoal_salt
 	compare LASTRESULT SHELL_TYPE_SHOAL_SHELL
 	gotoif EQUAL shell_shoal_shell
+	compare LASTRESULT SHELL_TYPE_ENCOUNTER
+	gotoif EQUAL shell_encounter
 	releaseall
 	end
 shell_empty:
@@ -280,6 +302,7 @@ shell_opening:
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
 	gotoif EQUAL dont_open_shell
+	bufferitem 0 0x8000
 	checkitemroom 0x8000 0x1
 	compare LASTRESULT 0
 	gotoif EQUAL no_room_for_shell
@@ -289,7 +312,22 @@ shell_opening:
 	special SPECIAL_BERRY_TREE_UPDATE_GFX
 	releaseall
 	end
-
+shell_encounter:
+	loadpointer 0 str_shell_to_be_opened
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL dont_open_shell
+	special2 0x8004 SPECIAL_SHELL_GET_ENCOUNTER
+	compare 0x8004 0
+	callif NOT_EQUAL misc_encounter
+	callasm shell_open
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	bufferpokemon 0 0x8004
+	loadpointer 0 str_pokemon_was_hiding_in_shell
+	callstd MSG_KEEPOPEN
+	releaseall
+	end
+	
 no_room_for_shell:
 	loadpointer 0 str_no_room_for_mushroom
 	callstd MSG_KEEPOPEN
@@ -351,6 +389,8 @@ str_shell_empty:
 	.autostring 34 2 "Die Muschel wurde aufgebrochen und scheint leer zu sein.\pOb wohl bald eine neue Muschel angespült wird?"
 str_shell_to_be_opened:
 	.autostring 34 2 "Etwas funkelt im Inneren der Muschel!\pMöchtest du die Muschel aufbrechen?"
+str_pokemon_was_hiding_in_shell:
+	.autostring 34 2 "Ein BUFFER_1 hatte sich in der Muschel versteckt!"
 .elseif LANG_EN
 str_mon0:
 	.autostring 34 2 "BUFFER_1! BUFFER_1!"
@@ -372,4 +412,6 @@ str_shell_empty:
 	.autostring 34 2 "The shell has been broken open and seems to be empty inside.\pIf the tides will wash another one ashore?"
 str_shell_to_be_opened:
 	.autostring 34 2 "Something is sparkling inside the shell!\pDo you want to break the shell open?"
+str_pokemon_was_hiding_in_shell:
+	.autostring 34 2 "A BUFFER_1 was hiding inside the shell!"
 .endif

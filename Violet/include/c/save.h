@@ -232,6 +232,7 @@ typedef struct {
     u32 battle_handicaps;
     rtc_timestamp berry_tree_time_last_update; // When were berry trees last updated?
     u8 berry_tree_time_last_updated_initialized : 1;
+    u32 gp_rng;
 } floating_memory;
 
 

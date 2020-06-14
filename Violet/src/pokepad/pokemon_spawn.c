@@ -26,11 +26,16 @@ void pokemon_spawn_by_algorithm_generate_ivs(int *ivs, u8 default_iv, u16(*featu
     }
 }
 
+static u16 default_feature_generator() {
+  return (u16)(rnd16() & 511);
+}
+
 void pokemon_spawn_by_seed_algorithm(pokemon *p, u16 species, u8 level, u8 default_iv,
     bool pid_determined, pid_t pid, bool tid_determined, u32 tid, u16(*feature_generator)(),
 	u16(*rng)()) {
 
 	if (!rng) rng = rnd16;  // default rng
+  if (!feature_generator) feature_generator = default_feature_generator; // Why use the seed algorithm then in the first place?
 
     //first we random a pid
     if (!pid_determined)

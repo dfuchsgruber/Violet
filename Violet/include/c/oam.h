@@ -142,8 +142,8 @@ typedef struct oam_object {
     s16 y;
     s16 x2;
     s16 y2;
-    u8 x_centre;
-    u8 y_centre;
+    s8 x_centre;
+    s8 y_centre;
     u8 anim_number;
     u8 anim_frame;
     u8 anim_delay;
@@ -170,6 +170,13 @@ typedef struct { // Subject to change, I guess...
 
 
 extern u8 oam_rotscale_disabled;
+
+/**
+ * Sets the subsprite table of an oam
+ * @param o the oam to set the table of
+ * @param subsprites the subsprite table to set
+ **/
+void oam_set_subsprite_table(oam_object *o, const subsprite_table *subsprites);
 
 /**
  * Allocates an rotation-scale group in the OAM RAM

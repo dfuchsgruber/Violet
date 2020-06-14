@@ -1,5 +1,6 @@
 #include "types.h"
 #include "overworld/sprite.h"
+#include "overworld/script.h"
 #include "color.h"
 #include "constants/items.h"
 #include "save.h"
@@ -9,6 +10,8 @@
 #include "agbmemory.h"
 #include "prng.h"
 #include "mushroom_and_shell.h"
+#include "math.h"
+#include "music.h"
 
 static gfx_frame gfx_animation_mushroom_idle[] = {
 	{.data = 0, .duration = 0}, {.data = 0, .duration = 32}, {.data = 1, .duration = 32}, {.data = GFX_ANIM_JUMP, .duration = 0},
@@ -117,4 +120,42 @@ palette *overworld_palette_get_by_mushroom() {
 
 palette *overworld_palette_get_by_shell() {
     return &overworld_shell_palette;
+}
+
+#define DROPPING_DY 12
+#define DROPPING_DT 24
+
+ void misc_counter_overworld_oam_callback(oam_object *self) {
+    u16 *frame = self->private + 7;
+    if (*frame > DROPPING_DT) {
+        self->y2 = 0;
+        overworld_script_resume();
+        self->callback = oam_null_callback;
+        return;
+    } else if (*frame == 0) {
+    }
+    // Sine for jumping
+    FIXED t = INT_TO_FIXED(*frame);
+    FIXED y = FIXED_SIN(FIXED_DIV(t, INT_TO_FIXED(DROPPING_DT  * 2)));
+    y = FIXED_MUL(INT_TO_FIXED(DROPPING_DY), y);
+    self->y2 = (s16)(-FIXED_TO_INT(y));
+    ++*frame;
+}
+
+void special_misc_encounter_overworld_new() {
+    coordinate_t faced_position = {0};
+    position_t player_position = {0};
+    player_get_facing_position(&faced_position.x, &faced_position.y);
+    u8 direction = direction_get_opposite(player_get_facing());
+    player_get_position(&player_position);
+    u8 height = player_position.height;
+    u16 species = *var_access(0x8004);
+    map_event_person person = {0};
+    person.overworld_index = overworld_get_sprite_idx_by_species(species);
+    person.value = species;
+    faced_position.x = (s16)(faced_position.x - 7);
+    faced_position.y = (s16)(faced_position.y - 7);
+    u8 oam_idx = overworld_create_oam_by_person(&person, 0, faced_position.x, faced_position.y, height, direction);
+    oams[oam_idx].private[7] = 0;
+    oams[oam_idx].callback = misc_counter_overworld_oam_callback;
 }

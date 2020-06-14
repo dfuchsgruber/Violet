@@ -29,6 +29,24 @@ extern "C" {
     FIXED rnd_normal();
 
     /**
+     * General purpose, seedable rng.
+     * @return a random number in [0, 0x1000[
+     **/
+    u16 gp_rnd16();
+
+    /**
+     * Provides a random fixed point number ~ N(0, 1) from the general purpose (seedable) rng
+     * @return x ~ N(0, 1)
+     */
+    FIXED gp_rnd_normal();
+
+    /**
+     * Seeds the general purpose rng.
+     * @param seed the set to set
+     **/
+    void gp_rng_seed(u32 seed);
+
+    /**
      * Sets the seed of the main rng module
      * @param seed
      * @return 

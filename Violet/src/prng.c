@@ -7,6 +7,8 @@
 #include "math.h"
 #include "agbmemory.h"
 #include "debug.h"
+#include "save.h"
+#include "debug.h"
 
 void rnd_init(){
     u16 timer = *(u16*)0x04000104;
@@ -24,6 +26,18 @@ u16 rnd16(){
 
 FIXED rnd_normal() {
     return _prng_stdnormal(&_main_rnd);
+}
+
+u16 gp_rnd16() {
+    return (u16)(_prng_xorshift(&fmem.gp_rng));
+}
+
+void gp_rng_seed(u32 seed) {
+    fmem.gp_rng = seed;
+}
+
+FIXED gp_rnd_normal() {
+    return _prng_stdnormal(&fmem.gp_rng);
 }
 
 void rnd_main_set_seed(u32 seed){
@@ -53,8 +67,8 @@ size_t choice(u32 *p, size_t p_size, u16 (*rng)()) {
     for (size_t i = 0; i < p_size; i++) sum += p[i];
     u32 r = (u32)((u32)(rng() | (rng() << 16)) % sum);
     for (size_t i = 0; i < p_size; i++)
-        dprintf("Choice %d has value %x\n", i, p[i]);
-    dprintf("R value drawn: %x (upper bound = %x)\n", r, sum);
+        // dprintf("Choice %d has value %x\n", i, p[i]);
+    // dprintf("R value drawn: %x (upper bound = %x)\n", r, sum);
     for (size_t i = 0; i < p_size; i++) {
         if (p[i] > r) return i;
         r -= p[i];

@@ -25,8 +25,8 @@
 static u32 standard_item_drop_rates[][2] = {
     {ITEM_WUNDERSTAUB, 150},
     {ITEM_SONDERBONBON, 1},
-    {ITEM_SUESSBONBON, 35},
-    {ITEM_BEERENSAFT, 60},
+    {ITEM_SUESSBONBON, 10},
+    {ITEM_BEERENSAFT, 25},
     /**
     {ITEM_POKEBALL, 75},
     {ITEM_SUPERBALL, 30},
@@ -48,7 +48,7 @@ static u32 standard_item_drop_rates[][2] = {
     **/
 };
 
-static u32 standard_item_count_rates[] = {[1] = 14, [2] = 4, [3] = 1};
+static u32 standard_item_count_rates[] = {[1] = 19, [2] = 4, [3] = 1};
 
 static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
     u32 p[ARRAY_COUNT(standard_item_drop_rates)];

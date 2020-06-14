@@ -567,6 +567,20 @@ void player_npc_controll_not_biking(u8 direction, key keys_held);
  **/
 u8 npc_get_by_person_idx(u8 person_idx, u8 map_idx, u8 bank);
 
+/**
+ * Gets the animation of an oam by the direction its facing
+ * @param facing the direction
+ * @return the animation idx
+ **/
+u8 npc_get_animation_idx_by_facing(u8 facing);
+
+/**
+ * Returns the direction opposite of another
+ * @param direciton the direction to get the opposite of
+ * @return the opposite direction
+ **/
+u8 direction_get_opposite(u8 direction);
+
 extern void (*npc_movements_oam_callbacks[])(oam_object*);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

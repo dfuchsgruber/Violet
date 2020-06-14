@@ -35,6 +35,15 @@ void battle_initialize_aggressive_wild() {
 	overworld_script_halt();
 }
 
+void battle_initialize_misc_ecounter() {
+	super.saved_callback = battle_continuation_wild_legendary_battle_end;
+	battle_flags = BATTLE_AGGRESSIVE_WILD | BATTLE_LEGENDARY;
+	battle_initialize(battle_get_intro_type(), 0);
+	save_increment_key(8);
+	save_increment_key(9);
+	overworld_script_halt();
+}
+
 u8 *person_get_script(u8 target_idx, u8 map_id, u8 bank) {
 	map_event_person *p = map_get_person(target_idx, map_id, bank);
 	switch(p->script_std) {

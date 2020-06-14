@@ -452,6 +452,36 @@ void overworld_create_oam_template_by_person(map_event_person *person, oam_templ
     overworld_create_oam_template_by_overworld_sprite_with_callback(sprite, person->behavior, template, subsprites);
 }
 
+u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y, u8 z, u8 direction) {
+    overworld_sprite *ow = overworld_get_by_person(person);
+    oam_template template = {0};
+    subsprite_table *subsprites = NULL;
+    overworld_create_oam_template_by_person(person, &template, &subsprites);
+    x = (s16)(x + 7);
+    y = (s16)(y + 7);
+    overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 16);
+    overworld_npc_load_palette_by_template(&template);
+    u8 oam_idx = oam_new_backward_search(&template, x, y, 0);
+    if (oam_idx < 64) {
+        oam_object *o = oams + oam_idx;
+        o->x_centre = (s8)(-(ow->width >> 1));
+        o->y_centre = (s8)(-(ow->height >> 1));
+        o->y = (s16)(o->y + o->y_centre);
+        o->flags |= OAM_FLAG_CENTERED;
+        o->private[0] = a1;
+        o->private[1] = z;
+        if (subsprites) {
+            oam_set_subsprite_table(o, subsprites);
+            o->sprite_mode = 2;
+        }
+        oam_set_priority_by_height(o, z);
+        oam_set_subpriority_by_height(o, z, 1);
+        oam_gfx_anim_start(o, npc_get_animation_idx_by_facing(direction));
+    }
+    return oam_idx;
+}
+
+
 void big_callback_time_based_events(u8 self) {
     if (!ow_script_is_active()) {
         ambient_cry_proceed(big_callbacks[self].params + 1, big_callbacks[self].params + 2);

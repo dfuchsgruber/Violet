@@ -89,7 +89,7 @@ ow_script_aggresive_wild_spotted:
 ow_script_aggressive_wild_pokemon_start_battle:
     // Start the wild battle
 	setflag FLAG_IN_BATTLE
-	callasm battle_initialize_aggressive_wild
+	callasm battle_initialize_aggressive_wild 
 	clearflag FLAG_IN_BATTLE
 	waitstate
     fadescreen 1

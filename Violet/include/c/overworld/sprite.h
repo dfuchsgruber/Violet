@@ -20,6 +20,7 @@
 #include "oam.h"
 #include "color.h"
 #include "overworld/npc.h"
+#include "map/event.h"
 
 #define OVERWORLD_SPRITE_MISC 236
 #define OVERWORLD_SPRITE_BERRY 237
@@ -130,7 +131,6 @@ overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx);
  **/
 palette *overworld_palette_get_by_shell();
 
-
 /**
  * Frees a npc palette if currently no active npc is using this palette.
  * @param slot the palette to free
@@ -143,6 +143,33 @@ void npc_free_palette_if_unused_by_slot(u8 slot);
  * @param oam the oam object to update
  **/
 void overworld_npc_update_palette(npc *n, oam_object *oam);
+
+/**
+ * Sets the priority of the oam (oam attribute) according to the oams height
+ * @param o the oam to set the height of
+ * @param height the height
+ **/
+void oam_set_priority_by_height(oam_object *o, u8 height);
+
+/**
+ * Sets the subspriority (relative to other oams of the same priority) of an oam according to a height
+ * @param o the oam to set the subpriority of
+ * @param height the height
+ * @param relative_priority priority relative to oams of the same height (simply an offset to the subpriority)
+ **/
+void oam_set_subpriority_by_height(oam_object *o, u8 height, u8 relative_priority);
+
+/**
+ * Creates a oam that would correspond to a person, but doesn't intialize any npc for it
+ * @param person the person associated (mainyl used to determine the graphic shown)
+ * @param a1 t.b.d.
+ * @param x the x coordinate (in blocks)
+ * @param y the y coordinate (in blocks)
+ * @param z the height
+ * @param direction in which direction the oam should face
+ * @return oam_idx the idx of the oam created
+ **/
+u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y, u8 z, u8 direction);
 
 extern u8 gfx_ow_bisasamTiles[];
 extern color_t gfx_ow_bisasamPal[16];
