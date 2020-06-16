@@ -4412,7 +4412,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_AEON_TICKET
-		LANGDEP(PSTRING("äon-Ticket"), PSTRING("Eon Ticket")),
+		LANGDEP(PSTRING("Äon-Ticket"), PSTRING("Eon Ticket")),
 		0x113, //index
 		0, //price
 		0, //holding_effect_id

@@ -35,6 +35,10 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm crafting_ui_initialize
+	waitstate
+	end
+
 	callasm berry_trees_initialize_all
 	additem ITEM_WUNDERSTAUB 5
 	end

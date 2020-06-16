@@ -28,9 +28,10 @@ void dma3_queue_add(void *src, void *dst, u16 size);
 
 /**
  * Checks if the dma3 is busy copying stuff (probably into vram).
+ * @param idx if to wait for any specific request. if -1 is passed, we wait for any request
  * @return if the dma3 is busy
  **/
-bool dma3_busy();
+bool dma3_busy(s16 idx);
 
 /**
  * Proceeds the state of the dma0

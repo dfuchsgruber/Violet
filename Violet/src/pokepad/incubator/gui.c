@@ -153,7 +153,7 @@ list_menu_template incubator_context_menu_template = {
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = incubator_context_menu_item_print_callback,
     .item_cnt = 255, .max_items_showed = 255, .tbox_idx = 255,
-    .header_x = 0, .item_x = 8, .cursor_x = 0, .up_text_x = 0, .cursor_pal = 2, .fill_value = 1,
+    .header_x = 0, .item_x = 8, .cursor_x = 0, .up_text_y = 0, .cursor_pal = 2, .fill_value = 1,
     .cursor_shadow_color = 3, .letter_spacing = 1, .item_vertical_padding = 2, .scroll_multiple = 0,
     .font = 2
 };
@@ -333,7 +333,7 @@ void incubator_callback_wait_for_egg_icon_animation(u8 self) {
     oam_rotscale_anim_init(&oams[fmem.incubator_state->oam_egg_icons_idx[slot]], 0);
     big_callback_delete(self);
   }
-}
+} 
 
 void incubator_remove_egg_from_ui(int slot) {
   oam_rotscale_anim_init(&oams[fmem.incubator_state->oam_egg_icons_idx[slot]], 1);

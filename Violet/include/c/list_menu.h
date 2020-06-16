@@ -34,7 +34,7 @@ typedef struct {
   u8 header_x;
   u8 item_x;
   u8 cursor_x;
-  u8 up_text_x:4; // x1, x2, x4, x8 = xF
+  u8 up_text_y:4; // x1, x2, x4, x8 = xF
   u8 cursor_pal:4; // x10, x20, x40, x80 = xF0
   u8 fill_value:4; // x1, x2, x4, x8 = xF
   u8 cursor_shadow_color:4; // x10, x20, x40, x80 = xF0

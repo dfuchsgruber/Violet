@@ -148,7 +148,7 @@ list_menu_template river_puzzle_list_template_yes_no = {
     .cursor_moved_callback = list_menu_generic_cursor_callback,
     .item_print_callback = incubator_context_menu_item_print_callback,
     .item_cnt = 2, .max_items_showed = 2, .tbox_idx = RIVER_PUZZLE_TBOX_LIST,
-    .header_x = 0, .item_x = 8, .cursor_x = 0, .up_text_x = 0, .cursor_pal = 2, .fill_value = 1,
+    .header_x = 0, .item_x = 8, .cursor_x = 0, .up_text_y = 0, .cursor_pal = 2, .fill_value = 1,
     .cursor_shadow_color = 3, .letter_spacing = 1, .item_vertical_padding = 2, .scroll_multiple = 0,
     .font = 2
 };

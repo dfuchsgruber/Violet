@@ -685,7 +685,7 @@
 				},
 				{
 					"target_index": "38",
-					"picture": "236",
+					"picture": "22",
 					"field_2": 0,
 					"field_3": "33",
 					"x": "71",
@@ -702,7 +702,7 @@
 					"flag": "0x1e",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_SHELL",
+					"script_std": "PERSON_SCRIPT",
 					"value": {
 						"item": 0,
 						"species": "0",

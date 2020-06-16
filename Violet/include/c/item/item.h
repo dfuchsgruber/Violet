@@ -74,6 +74,13 @@ u8 item_get_hold_effect_parameter(u16 item_id);
 u8 item_get_hold_effect(u16 item_id);
 
 /**
+ * Returns the description effect of an item.
+ * @param item_id The item idx
+ * @return The description
+ */
+u8 *item_get_description(u16 item_idx);
+
+/**
  * Select the target of an item effect
  * @param self the own callback id
  */
@@ -198,5 +205,20 @@ u16 tm_hm_to_attack[58];
  * @return the oam idx
  **/
 u8 item_oam_new(u16 tiles_tag, u16 pal_tag, u16 item_idx);
+
+/**
+ * Gets the gfx or pal of an item
+ * @param item the item to get the resource of
+ * @param get_palette a bool indicating if the palette should be retrieved
+ * @return the resource
+ **/
+u8 *item_get_resource(u16 item, u8 get_palette);
+
+/**
+ * Checks how many copies of an item the bag has
+ * @param item_idx the item to check
+ * @return count the number of copies of this item in the bag
+ **/
+u16 item_get_count(u16 item_idx);
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

@@ -155,6 +155,29 @@ extern "C" {
     void bg_load_tileset(u8 bg_idx, void *src, size_t size, u16 offset);
 
     /**
+     * Fills a bg's virtual tilemap with a tile
+     * @param bg_idx the bg to fill
+     * @param tile with which tile to fill
+     * @param x upper left x coordiante
+     * @param y upper left y coordinate
+     * @param w width of the rectangle to fill
+     * @param h height of the rectangle to fill
+     * @param pal the palette idx each tile is associated with
+     **/
+    void bg_fill_map_with_rectangle(u8 bg_idx, u16 tile, u8 x, u8 y, u8 w, u8 h, u8 pal);
+
+    /**
+     * Copies data to a rectangle on a bg
+     * @param bg_idx to which bg to copy to
+     * @param src the data to copy
+     * @param x upper left x coordinate of the rectangle
+     * @param y upper left y coordiante of the rectangle
+     * @param w width of the rectangle
+     * @param h height of the rectangle
+     **/
+    void bg_copy_rectangle(u8 bg_idx, const u16 *src, u8 x, u8 y, u8 w, u8 h);
+
+    /**
      * General purpose free memory ?
      */
     extern u8 gp_tmp_buf[];

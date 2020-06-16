@@ -443,6 +443,27 @@ NAME_END = FC 00
 TEXT_DELAY = FC 08 23
 TEXT_DELAY_LONG = FC 08 32
 
+\x00 = 00
+\x01 = 01
+\x02 = 02
+\x03 = 03
+\x04 = 04
+\x05 = 05
+\x06 = 06
+\x07 = 07
+\x08 = 08
+\x09 = 09
+\x0A = 0A
+\x0B = 0B
+\x0C = 0C
+\x0D = 0D
+\x0E = 0E
+\x0F = 0F
+
+TEXT_SET_FG = FC 01 @ followed by the color idx
+TEXT_SET_BG = FC 02 @ followed by the color idx
+TEXT_SET_SHADOW = FC 03 @ followed by the color idx
+
 COLOR = FC 01 @ use a color listed below right after
 HIGHLIGHT = FC 02 @ same as fc 01
 SHADOW = FC 03 @ same as fc 01

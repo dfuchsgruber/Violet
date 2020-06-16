@@ -126,6 +126,11 @@
         "memory": "c",
         "cstddef": "c",
         "new": "c",
-        "mushroom_and_shell.h": "c"
+        "mushroom_and_shell.h": "c",
+        "crafting.h": "c",
+        "crafting_ingredient_types.h": "c",
+        "system_error": "c",
+        "*.cuh": "c",
+        "list_menu.h": "c"
     }
 }

@@ -428,7 +428,7 @@ void bsc_cmd_itemdrop_and_payday() {
             break;
         }
         case SUMMARY_WAIT_FOR_DMA3: {
-            if (!dma3_busy())
+            if (!dma3_busy(-1))
                 battle_bg1_y = 0;
                 BATTLE_STATE2->item_dropping_state++;
             break;
@@ -450,7 +450,7 @@ void bsc_cmd_itemdrop_and_payday() {
             break; 
         }
         case SUMMARY_DONE: {
-            if (!dma3_busy()) {
+            if (!dma3_busy(-1)) {
                 tbox_free(BATTLE_STATE2->item_dropping_summary_tbox_idx);
                 bg_set_attribute(0, BG_ATTR_PRIORITY, 0);
                 bg_set_attribute(1, BG_ATTR_PRIORITY, 1);
