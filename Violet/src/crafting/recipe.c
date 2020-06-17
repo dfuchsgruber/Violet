@@ -108,3 +108,13 @@ bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient) {
     }
     return false;
 }
+
+bool recipe_requirements_fulfilled(crafting_recipe *r) {
+    for (u8 i = 0; i < ARRAY_COUNT(r->ingredients); i++) {
+        if (r->ingredients[i].count > 0) {
+            if (!ingredient_requirements_fulfilled(r->ingredients + i))
+                return false;
+        }
+    }
+    return true;
+}

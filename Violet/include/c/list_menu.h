@@ -123,4 +123,10 @@ void list_menu_remove(u8 list_menu_handler_callback_idx, u16 *scroll_offset, u16
  **/
 int gp_list_menu_process_input_and_close_on_selection();
 
+/**
+ * Prints (i.e. redraws) a list menu
+ * @param callback_idx the callback of the list menu
+ **/
+void list_menu_print(u8 callback_idx);
+
 #endif /* INCLUDE_C_LIST_MENU_H_ */

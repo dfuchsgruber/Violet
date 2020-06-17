@@ -131,6 +131,12 @@
         "crafting_ingredient_types.h": "c",
         "system_error": "c",
         "*.cuh": "c",
-        "list_menu.h": "c"
+        "list_menu.h": "c",
+        "ratio": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "istream": "c",
+        "ostream": "c",
+        "sstream": "c"
     }
 }

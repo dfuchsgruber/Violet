@@ -36,6 +36,9 @@
 #include "vars.h"
 #include "flags.h"
 
+static void crafting_ui_switch_type_callback1();
+static void crafting_ui_arrow_oam_callback(oam_object *self);
+
 static bg_config crafting_ui_bg_configs[4] = {
     {.bg_id = 0, .char_base = 0, .map_base = 28, .size = 0, .color_mode = 0, .priority = 0},
     {.bg_id = 1, .char_base = 1, .map_base = 29, .size = 0, .color_mode = 0, .priority = 1},
@@ -57,9 +60,10 @@ static u8 str_recipe[] = LANGDEP(PSTRING("Rezept"), PSTRING("Recipe"));
 static u8 str_textcolor_red[] = PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
 static u8 str_textcolor_black[] = PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
 
-enum {TBOX_TYPE, TBOX_RECIPE, TBOX_DESCRIPTION, TBOX_INGREDIENTS, TBOX_LIST_MENU, TBOX_CNT,};
+enum {TBOX_MESSAGE, TBOX_TYPE, TBOX_RECIPE, TBOX_DESCRIPTION, TBOX_INGREDIENTS, TBOX_LIST_MENU, TBOX_CNT,};
 
 static tboxdata ui_tboxes[] = {
+    [TBOX_MESSAGE] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 14, .start_tile = 1},
     [TBOX_TYPE] = {.bg_id = 1, .x = 0, .y = 0, .w = 13, .h = 2, .pal = 15, .start_tile = 1},
     [TBOX_RECIPE] = {.bg_id = 1, .x = 19, .y = 0, .w = 5, .h = 2, .pal = 15, .start_tile = 1 + (2 * 13)},
     [TBOX_DESCRIPTION] = {.bg_id = 1, .x = 5, .y = 14, .w = 24, .h = 6, .pal = 15, .start_tile = 1 + (2 * 13) + (5 * 2)},
@@ -70,12 +74,79 @@ static tboxdata ui_tboxes[] = {
     [TBOX_CNT] = {.bg_id = 0xFF},
 };
 
+static palette crafting_ui_palette_arrow = {
+    .pal = gfx_crafting_menu_arrowPal, .tag = CRAFTING_ARROW_TAG
+};
+
+static graphic crafting_ui_graphic_arrow = {
+    .sprite = gfx_crafting_menu_arrowTiles, .tag = CRAFTING_ARROW_TAG, .size = 2 * GRAPHIC_SIZE_4BPP(16, 16)
+};
+
+static sprite crafting_ui_sprite_arrow = {
+    .attr0 = ATTR0_SHAPE_SQUARE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1)
+};
+
+
+static gfx_frame crafting_ui_gfx_animation_arrow0[] = {{.data = 0, .duration = 0}, {.data = GFX_ANIM_END}};
+static gfx_frame crafting_ui_gfx_animation_arrow1[] = {{.data = 4, .duration = 0}, {.data = GFX_ANIM_END}};
+
+static gfx_frame *crafting_ui_gfx_animations_arrow[] = {
+    [0] = crafting_ui_gfx_animation_arrow0, [1] = crafting_ui_gfx_animation_arrow1
+};
+
+static oam_template crafting_ui_oam_template_arrow = {
+    .tiles_tag = CRAFTING_ARROW_TAG, .pal_tag = CRAFTING_ARROW_TAG, .oam = &crafting_ui_sprite_arrow,
+    .animation = crafting_ui_gfx_animations_arrow, .graphics = NULL, .rotscale = oam_rotscale_anim_table_null,
+    .callback = crafting_ui_arrow_oam_callback,
+};
+
+enum {
+    ARROW_LEFT = 0, ARROW_RIGHT, ARROW_UP, ARROW_DOWN,
+};
+
+#define ARROW_PERIOD 32
+#define ARROW_AMPLITUDE 2
+
+static void crafting_ui_arrow_oam_callback(oam_object *self) {
+    FIXED t = INT_TO_FIXED(self->private[1]++);
+    int s = FIXED_TO_INT(FIXED_MUL(INT_TO_FIXED(ARROW_AMPLITUDE), FIXED_SIN(FIXED_DIV(t, INT_TO_FIXED(ARROW_PERIOD)))));
+    bool visible = true;
+    switch (self->private[0]) {
+        case ARROW_LEFT:
+            oam_gfx_anim_start_if_not_current(self, 0);
+            self->x2 = (s16)(-s);
+            visible = CRAFTING_UI_STATE->type > 0;
+            break;
+        case ARROW_RIGHT:
+            oam_gfx_anim_start_if_not_current(self, 0);
+            self->flags |= OAM_FLAG_HFLIP;
+            self->x2 = (s16)(s);
+            visible = CRAFTING_UI_STATE->type < (CRAFTING_TYPE_CNT - 1);
+            break;
+        case ARROW_UP:
+            oam_gfx_anim_start_if_not_current(self, 1);
+            self->y2 = (s16)(-s);
+            break;
+        case ARROW_DOWN:
+            oam_gfx_anim_start_if_not_current(self, 1);
+            self->flags |= OAM_FLAG_VFLIP;
+            self->y2 = (s16)(s);
+            break;
+    }
+    if (visible) {
+        self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
+    } else {
+        self->flags |= OAM_FLAG_INVISIBLE;
+    }
+}
+
+
 static tbox_font_colormap fontcolmap_white_letters = {0, 1, 2, 3};
 static tbox_font_colormap fontcolmap_black_letters = {0, 2, 3, 1};
 
 static crafting_recipe *crafting_ui_get_current_recipe() {
     u8 type = CRAFTING_UI_STATE->type;
-    u8 idx = CRAFTING_UI_STATE->current_recipe_idx[type];
+    u8 idx = CRAFTING_UI_STATE->current_recipe_idx;
     if (idx == 0xFF || idx >= CRAFTING_UI_STATE->num_crafting_recipies[type])
         return NULL;
     else
@@ -149,6 +220,8 @@ static void crafting_ui_update_item_oams() {
             }
         }
         crafting_ui_update_item_oam(oams + CRAFTING_UI_STATE->oam_item, recipe->item);
+    } else {
+        crafting_ui_update_item_oam(oams + CRAFTING_UI_STATE->oam_item, ITEM_CNT);
     }
 }
 
@@ -161,8 +234,8 @@ static void crafting_ui_show_oams() {
                 oams[CRAFTING_UI_STATE->oams_ingredients[i]].flags &= (u16)(~OAM_FLAG_INVISIBLE);
             }
         }
-        oams[CRAFTING_UI_STATE->oam_item].flags &= (u16)(~OAM_FLAG_INVISIBLE);
     }
+    oams[CRAFTING_UI_STATE->oam_item].flags &= (u16)(~OAM_FLAG_INVISIBLE);
 }
 
 static void crafting_ui_hide_oams() {
@@ -277,6 +350,7 @@ static void crafting_ui_update_recipe_callback1() {
             break;
         }
         case 2: {
+            crafting_ui_update_item_oams();
             // Redraw the tilemaps and show them
             tbox_tilemap_draw(TBOX_INGREDIENTS);
             tbox_tilemap_draw(TBOX_DESCRIPTION);
@@ -286,11 +360,6 @@ static void crafting_ui_update_recipe_callback1() {
             break;
         }
         case 3: {
-            // Also update the oams, probably we don't need an extra frame for this, but w/e
-            crafting_ui_update_item_oams();
-            break;
-        }
-        case 4: {
             crafting_ui_show_oams();
             callback1_set(generic_callback1);
             return;
@@ -299,27 +368,94 @@ static void crafting_ui_update_recipe_callback1() {
     CRAFTING_UI_STATE->setup_state++;
 }
 
+static void crafting_ui_synchronize_current_recipe_with_list_menu_cursor() {
+    if (CRAFTING_UI_STATE->recipe_selection_list_menu_callback == 0xFF)
+        return; // No list menu available...
+    u8 type = CRAFTING_UI_STATE->type;
+    int idx = CRAFTING_UI_STATE->list_menu_items[type][
+        CRAFTING_UI_STATE->list_menu_cursor_positions[type] + CRAFTING_UI_STATE->list_menu_cursor_above[type]].idx - 1; 
+    CRAFTING_UI_STATE->current_recipe_idx = (u8) idx;
+}
+
 static void crafting_ui_update_visible_recipe_if_necessary() {
     if (CRAFTING_UI_STATE->recipe_selection_list_menu_callback == 0xFF)
         return; // No list menu available...
     u8 type = CRAFTING_UI_STATE->type;
-    u16 cursor = 0, items_above = 0;
-    list_menu_get_scroll_and_row(CRAFTING_UI_STATE->recipe_selection_list_menu_callback, &cursor, &items_above);
-    int idx = CRAFTING_UI_STATE->list_menu_items[type][cursor + items_above].idx - 1; // We defined those indices to be 1-based
-    if (idx != CRAFTING_UI_STATE->current_recipe_idx[type]) {
-        CRAFTING_UI_STATE->current_recipe_idx[type] = (u8) idx;
+    list_menu_get_scroll_and_row(CRAFTING_UI_STATE->recipe_selection_list_menu_callback, 
+        CRAFTING_UI_STATE->list_menu_cursor_positions + type, CRAFTING_UI_STATE->list_menu_cursor_above + type);
+    // We defined those indices to be 1-based
+    int idx = CRAFTING_UI_STATE->list_menu_items[type][
+        CRAFTING_UI_STATE->list_menu_cursor_positions[type] + CRAFTING_UI_STATE->list_menu_cursor_above[type]].idx - 1; 
+    if (idx != CRAFTING_UI_STATE->current_recipe_idx) {
+        crafting_ui_synchronize_current_recipe_with_list_menu_cursor();
         CRAFTING_UI_STATE->setup_state = 0;
         // Update everything
         callback1_set(crafting_ui_update_recipe_callback1);
     }
 }
 
+static void crafting_ui_big_callback_nullsub(u8 self) {
+    (void)self;
+}
+
+static void crafting_ui_message_big_callback1() {
+    // Suspends bascially everything but the message callback
+    if (fading_is_active() || dma3_busy(-1))
+        return;
+    u8 cb_idx = CRAFTING_UI_STATE->message_callback;
+    big_callbacks[cb_idx].function(cb_idx);
+}
+
+
+static void crafting_ui_print_message(u8 *message, void (*continuation)(u8)) {
+    tbox_flush_set(TBOX_MESSAGE, 0);
+    tbox_tilemap_draw(TBOX_MESSAGE);
+    CRAFTING_UI_STATE->message_callback = big_callback_new(crafting_ui_big_callback_nullsub, 0);
+    tbox_print_string_and_continue(CRAFTING_UI_STATE->message_callback, TBOX_MESSAGE, 256, 15, 2, tbox_get_set_speed(), message, continuation);
+    callback1_set(crafting_ui_message_big_callback1);
+}
+
+static void crafting_ui_message_continuation_delete_message_and_return_to_selection(u8 self) {
+    tbox_remove_dialog(TBOX_MESSAGE, true);
+    // bg_virtual_sync(ui_tboxes[TBOX_MESSAGE].bg_id);
+    callback1_set(generic_callback1);
+    big_callback_delete(self);
+}
+
+static u8 str_cant_craft[] = LANGDEP(
+    PSTRING("Du kannst dieses Item nicht herstellen,\nweil du nicht alle Zutaten besitzt."),
+    PSTRING("You can't craft this item, because you\ndont posess all ingredients.")
+);
+
 static void crafting_ui_idle(u8 self) {
     (void)self;
     if (fading_is_active() || dma3_busy(-1))
         return;
     crafting_ui_update_visible_recipe_if_necessary();
-    list_menu_process_input(CRAFTING_UI_STATE->recipe_selection_list_menu_callback);
+    if (super.keys_new.keys.right && CRAFTING_UI_STATE->type < (CRAFTING_TYPE_CNT - 1)) {
+        play_sound(5);
+        CRAFTING_UI_STATE->type_to_switch_to = (u8) (CRAFTING_UI_STATE->type + 1);
+        CRAFTING_UI_STATE->setup_state = 0;
+        callback1_set(crafting_ui_switch_type_callback1);
+        return;
+    } else if (super.keys_new.keys.left && CRAFTING_UI_STATE->type > 0) {
+        play_sound(5);
+        CRAFTING_UI_STATE->type_to_switch_to = (u8) (CRAFTING_UI_STATE->type -1);
+        CRAFTING_UI_STATE->setup_state = 0;
+        callback1_set(crafting_ui_switch_type_callback1);
+        return;
+    }
+
+    int idx = list_menu_process_input(CRAFTING_UI_STATE->recipe_selection_list_menu_callback);
+    if (idx == LIST_MENU_B_PRESSED || idx >= CRAFTING_UI_STATE->num_crafting_recipies[CRAFTING_UI_STATE->type]) {
+        // TODO: Exit
+    } else if (idx != LIST_MENU_NOTHING_CHOSEN) { // A recipe was selected
+        crafting_recipe *recipe = crafting_ui_get_current_recipe();
+        if (!recipe_requirements_fulfilled(recipe)) {
+            // Print the string that the player doesn't have all ingredients. Suspend all callbacks other than that
+            crafting_ui_print_message(str_cant_craft, crafting_ui_message_continuation_delete_message_and_return_to_selection);
+        }
+    }
 }
 
 static void crafting_ui_setup_list_menu() {
@@ -327,10 +463,63 @@ static void crafting_ui_setup_list_menu() {
     u8 type = CRAFTING_UI_STATE->type;
     CRAFTING_UI_STATE->recipe_selection_list_menu_template.item_cnt = (u16)(CRAFTING_UI_STATE->num_crafting_recipies[type] + 1); 
     CRAFTING_UI_STATE->recipe_selection_list_menu_template.items = CRAFTING_UI_STATE->list_menu_items[type];
-    CRAFTING_UI_STATE->recipe_selection_list_menu_callback = list_menu_new(&CRAFTING_UI_STATE->recipe_selection_list_menu_template, 0, 0);
+    CRAFTING_UI_STATE->recipe_selection_list_menu_callback = list_menu_new(&CRAFTING_UI_STATE->recipe_selection_list_menu_template, 
+        CRAFTING_UI_STATE->list_menu_cursor_positions[type], CRAFTING_UI_STATE->list_menu_cursor_above[type]);
+    crafting_ui_synchronize_current_recipe_with_list_menu_cursor();
     if (!big_callback_is_active(crafting_ui_idle)) {
         big_callback_new(crafting_ui_idle, 0);
     }
+}
+
+static void crafting_ui_switch_type_callback1() {
+    oam_anim_proceed();
+    oam_proceed();
+    if (dma3_busy(-1))
+        return;
+    dprintf("Updating in state %d\n", CRAFTING_UI_STATE->setup_state);
+    switch (CRAFTING_UI_STATE->setup_state) {
+        case 0: {
+            bg_hide(ui_tboxes[TBOX_INGREDIENTS].bg_id); // Hides the bg
+            bg_display_sync();
+            crafting_ui_hide_oams();
+            break;
+        }
+        case 1: {
+            // Kill the list menu
+            u8 type_old = CRAFTING_UI_STATE->type;
+            list_menu_remove(CRAFTING_UI_STATE->recipe_selection_list_menu_callback, 
+                CRAFTING_UI_STATE->list_menu_cursor_positions + type_old, CRAFTING_UI_STATE->list_menu_cursor_above + type_old);
+            if (big_callback_is_active(crafting_ui_idle))
+                big_callback_delete(big_callback_get_id(crafting_ui_idle));
+            // Flush all texts
+            break;
+        }
+        case 2: {
+            CRAFTING_UI_STATE->type = CRAFTING_UI_STATE->type_to_switch_to;
+            crafting_ui_setup_list_menu();
+            break;
+        }
+        case 3: {
+            crafting_ui_update_tbox_type();
+            crafting_ui_update_ingredient_texts();
+            crafting_ui_update_description();
+            break;
+        }
+        case 4: {
+            crafting_ui_update_item_oams();
+            crafting_ui_update_ingredient_boxes();
+            bg_virtual_sync(2);
+            break;
+        }
+        case 5: {
+            crafting_ui_show_oams();
+            bg_update_and_show(ui_tboxes[TBOX_INGREDIENTS].bg_id);
+            bg_display_sync();
+            callback1_set(generic_callback1);
+            return;
+        }
+    }
+    CRAFTING_UI_STATE->setup_state++;
 }
 
 void crafting_ui_free() {
@@ -342,6 +531,17 @@ void crafting_ui_free() {
         free(CRAFTING_UI_STATE->recipies[type]);
     }
     free(CRAFTING_UI_STATE);
+}
+
+static s16 crafting_ui_arrow_positions[][2] = {
+    [ARROW_DOWN] = {48, 112}, [ARROW_UP] = {48, 20}, [ARROW_LEFT] = {12, 8}, [ARROW_RIGHT] = {86, 8},
+};
+
+static void crafting_ui_setup_arrows() {
+    for (u8 i = 0; i < 4; i++) {
+        u8 oam_idx = oam_new_forward_search(&crafting_ui_oam_template_arrow, crafting_ui_arrow_positions[i][0], crafting_ui_arrow_positions[i][1], (u8)i);
+        oams[oam_idx].private[0] = i;
+    }
 }
 
 static void crafting_ui_setup() {
@@ -402,6 +602,7 @@ static void crafting_ui_setup() {
             lz77uncompvram(gfx_crafting_menu_bg3Tiles, CHARBASE(3));
             lz77uncompvram(gfx_crafting_menu_bg2Tiles, CHARBASE(2));
             lz77uncompwram(gfx_crafting_menu_bg3Map, bg_get_tilemap(3));
+            oam_load_graphic(&crafting_ui_graphic_arrow);
             bg_fill_map_with_rectangle(2, gfx_crafting_menu_bg2Map[ARRAY_COUNT(gfx_crafting_menu_bg2Map) - 1][0], 0, 0, 32, 32, 1);
             CRAFTING_UI_STATE->setup_state++;
             break;
@@ -435,7 +636,9 @@ static void crafting_ui_setup() {
         case 7: {
             pal_decompress(gfx_crafting_menu_bg3Pal, 0, sizeof(color_t) * 16);
             pal_decompress(gfx_crafting_menu_bg2Pal, 16, sizeof(color_t) * 16);
-            tbox_message_init(TBOX_TYPE, 480, 15 * 16);
+            oam_palette_load_if_not_present(&crafting_ui_palette_arrow);
+            tbox_message_init(TBOX_MESSAGE, 256, 15 * 16);
+            tbox_context_init_border_set_style(TBOX_MESSAGE, 256 + 20, 14 * 16);
             // pal_copy(tbox_palette_transparent, 14 * 16, 32);
             pal_set_all_to_black();
             CRAFTING_UI_STATE->setup_state++;
@@ -464,6 +667,7 @@ static void crafting_ui_setup() {
                     oams[oam_idx].y = 15 * 8 + 4 + 18;
                 }
             }
+            crafting_ui_setup_arrows();
             crafting_ui_hide_oams();
             crafting_ui_update_item_oams();
             pal_set_all_to_black();
@@ -499,8 +703,7 @@ static void crafting_ui_setup() {
 void crafting_ui_initialize() {
     fmem.gp_state = malloc_and_clear(sizeof(crafting_ui_state));
     CRAFTING_UI_STATE->recipe_selection_list_menu_callback = 0xFF;
-    for (u8 i = 0; i < ARRAY_COUNT(CRAFTING_UI_STATE->current_recipe_idx); i++)
-        CRAFTING_UI_STATE->current_recipe_idx[i] = 0;
+    CRAFTING_UI_STATE->current_recipe_idx = 0;
     callback1_set(crafting_ui_setup);
     vblank_handler_set(generic_vblank_handler);
 

@@ -180,6 +180,15 @@ extern "C" {
         u8 border_palette, u8 font, u8 speed, const u8 *text, void (*continuation)(u8));
 
     /**
+     * Uses a big callback to display a text on tbox 0 and bg0. Also loads the gfx beforehand to tile 256 and the pal to slot 15.
+     * @param callback_idx the callback to use
+     * @param font the font
+     * @param str the text to display
+     * @param continuation the function the callback executes once the text has been printed
+     **/ 
+    void tbox_load_gfx_and_print_string_on_bg0_and_continue(u8 callback_idx, u8 font, u8 *str, void (*continuation)(u8));
+
+    /**
      * Removes a dialog textbox.
      * @param tbox_idx the index of the textbox
      * @param copy_to_vram if the changes shall trigger a vram copy request
