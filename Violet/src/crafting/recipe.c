@@ -70,7 +70,7 @@ static crafting_recipe crafting_recipies_mints[] = {};
 static crafting_recipe crafting_recipies_nutrients[] = {};
 
 
-size_t crafting_get_num_recipies_by_type(u8 type) {
+size_t crafting_get_num_recipies_by_type(u16 type) {
     switch (type) {
         case CRAFTING_HEALING: return ARRAY_COUNT(crafting_recipies_healing);
         case CRAFTING_POKEBALLS: return ARRAY_COUNT(crafting_recipies_pokeballs);
@@ -82,7 +82,7 @@ size_t crafting_get_num_recipies_by_type(u8 type) {
     }
 }
 
-crafting_recipe *crafting_recipies_get_by_type(u8 type) {
+crafting_recipe *crafting_recipies_get_by_type(u16 type) {
     switch (type) {
         case CRAFTING_HEALING: return crafting_recipies_healing;
         case CRAFTING_POKEBALLS: return crafting_recipies_pokeballs;

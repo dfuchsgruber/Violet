@@ -37,9 +37,9 @@ typedef struct {
 
 typedef struct {
     u8 setup_state;
-    u8 type;
     u8 current_recipe_idx; // Which recipe is currently visible
-    u8 type_to_switch_to; // To which type to switch to
+    u16 type;
+    u16 type_to_switch_to; // To which type to switch to
     u8 oams_ingredients[MAX_NUM_INGREDIENTS];
     crafting_recipe *recipies[CRAFTING_TYPE_CNT]; // A list of all available recipies
     u8 num_crafting_recipies[CRAFTING_TYPE_CNT]; // How many of each category are available
@@ -50,6 +50,8 @@ typedef struct {
     u16 list_menu_cursor_above[CRAFTING_TYPE_CNT]; // Remember where the cursor was for each category
     u8 oam_item;
     u8 message_callback;
+    u8 callback_scroll_indicators_up_down;
+    u8 callback_scroll_indicators_left_right;
 
 } crafting_ui_state;
 
@@ -59,14 +61,14 @@ typedef struct {
  * @param type the category of crafting items to check
  * @return size the number of recipies in this category
  **/
-size_t crafting_get_num_recipies_by_type(u8 type);
+size_t crafting_get_num_recipies_by_type(u16 type);
 
 /**
  * Gets all recipies for a certain category
  * @param type the category of crafting items to get
  * @return recipies all recipies associated with this category
  **/
-crafting_recipe *crafting_recipies_get_by_type(u8 type);
+crafting_recipe *crafting_recipies_get_by_type(u16 type);
 
 /**
  * Checks if the player's bag fulfils the requirements of a single ingredient
@@ -91,7 +93,5 @@ extern const u8 gfx_crafting_menu_bg3Pal[];
 extern const u8 gfx_crafting_menu_bg2Tiles[];
 extern const u16 gfx_crafting_menu_bg2Map[56 / 8][136 / 8];
 extern const u8 gfx_crafting_menu_bg2Pal[];
-extern const u8 gfx_crafting_menu_arrowTiles[];
-extern const color_t gfx_crafting_menu_arrowPal[16]; // Uncompressed
 
 #endif
