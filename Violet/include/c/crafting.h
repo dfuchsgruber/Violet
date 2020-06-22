@@ -8,7 +8,6 @@
 
 #define MAX_NUM_INGREDIENTS 4
 #define CRAFTING_OAM_BASE_TAG 0x1534
-#define CRAFTING_ARROW_TAG 0x1533
 
 enum {
     CRAFTING_HEALING,
@@ -52,9 +51,9 @@ typedef struct {
     u8 message_callback;
     u8 callback_scroll_indicators_up_down;
     u8 callback_scroll_indicators_left_right;
+    void (*exit_continuation)();
 
 } crafting_ui_state;
-
 
 /**
  * Gets how many recipies there are in total per category
@@ -86,12 +85,63 @@ bool recipe_requirements_fulfilled(crafting_recipe *r);
 
 #define CRAFTING_UI_STATE ((crafting_ui_state*)fmem.gp_state)
 
+#define CAULDRON_ITEM_BASE_TAG 0x1111
+#define CAULDRON_LIGHT_TAG 0x7663
 
+typedef struct {
+    u16 frame;
+    u8 state;
+    crafting_recipe recipe;
+    s16 bg_horizontal_scrolling[4];
+    s16 bg_vertical_scrolling[4];
+    s16 bg_horizontal_origin;
+    s16 bg_vertical_origin;
+    u8 oams_lights[3];
+    u8 oams_items[4];
+    u8 lights_color_state;
+    u8 lights_number_active;
+    u8 shaking_intensity;
+    void (*step_callback)(u16);
+} cauldron_scene_state;
+
+typedef struct {
+    s16 dx;
+    s16 dy;
+    u16 dt;
+} cauldron_item_linear_translation;
+
+typedef struct {
+    cauldron_item_linear_translation *pieces;
+    size_t count;
+} cauldron_item_piecewise_linear_trajectory;
+
+#define CAULDRON_SCENE_STATE ((cauldron_scene_state*)fmem.gp_state)
+
+/**
+ * Initializes the cauldron scene with a recipe. Assumes that the screen is already faded and the previous scene has freed its additional allocated memory
+ * @param recipe with which recipe the cauldron scene is initializes
+ **/
+void cauldron_scene_initialize(crafting_recipe *recipe);
+
+
+// Crafting UI gfx
 extern const u8 gfx_crafting_menu_bg3Tiles[];
 extern const u8 gfx_crafting_menu_bg3Map[];
 extern const u8 gfx_crafting_menu_bg3Pal[];
 extern const u8 gfx_crafting_menu_bg2Tiles[];
 extern const u16 gfx_crafting_menu_bg2Map[56 / 8][136 / 8];
 extern const u8 gfx_crafting_menu_bg2Pal[];
+
+// Cauldron scene gfx
+extern const u8 gfx_crafting_cauldronTiles[]; // 8bpp
+extern const u8 gfx_crafting_cauldronMap[];
+extern const u8 gfx_crafting_cauldronPal[]; // up to 256 colors
+extern const u8 gfx_crafting_cauldron_overlayTiles[];
+extern const u8 gfx_crafting_cauldron_overlayMap[];
+extern const u8 gfx_crafting_cauldron_topTiles[];
+extern const u8 gfx_crafting_cauldron_topMap[];
+extern const u8 gfx_crafting_cauldron_lightsTiles[]; // 6 oam graphics of shape 32x32, 0-2 for the center, 3-5 for the left (and right if flipped)
+extern const u8 gfx_crafting_cauldron_lightsPal[];
+
 
 #endif

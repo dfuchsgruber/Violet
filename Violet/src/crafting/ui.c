@@ -20,6 +20,7 @@
 #include "bios.h"
 #include "music.h"
 #include "overworld/map_control.h"
+#include "overworld/script.h"
 #include "overworld/pokemon_party_menu.h"
 #include "fading.h"
 #include "text.h"
@@ -38,6 +39,9 @@
 #include "menu_indicators.h"
 
 static void crafting_ui_switch_type_callback1();
+static void crafting_ui_free();
+static void crafting_ui_process_list_menu(u8 self);
+static void crafting_ui_setup_list_menu();
 
 static bg_config crafting_ui_bg_configs[4] = {
     {.bg_id = 0, .char_base = 0, .map_base = 28, .size = 0, .color_mode = 0, .priority = 0},
@@ -74,6 +78,9 @@ static tboxdata ui_tboxes[] = {
     [TBOX_CNT] = {.bg_id = 0xFF},
 };
 
+static tboxdata ui_yes_no_box = {
+    .bg_id = 0, .x = 21, .y = 9, .w = 6, .h = 4, .pal = 14, .start_tile = 1 + 15 * 26,
+};
 
 static tbox_font_colormap fontcolmap_white_letters = {0, 1, 2, 3};
 static tbox_font_colormap fontcolmap_black_letters = {0, 2, 3, 1};
@@ -280,6 +287,26 @@ static void crafting_ui_setup_scroll_indicators() {
 
 static void crafting_ui_remove_scroll_indicators() {
     scroll_indicator_delete(CRAFTING_UI_STATE->callback_scroll_indicators_up_down);
+    CRAFTING_UI_STATE->callback_scroll_indicators_up_down = 0xFF;
+}
+
+static void crafting_ui_free_and_return_to_overworld() {
+    crafting_ui_free();
+    map_reload();
+    overworld_script_resume();
+}
+
+static void crafting_ui_exit_and_continue_callback1() {
+    fading_proceed();
+    if (!fading_is_active()) {
+        CRAFTING_UI_STATE->exit_continuation();
+    }
+}
+
+static void crafting_ui_exit_and_return_to_overworld() {
+    CRAFTING_UI_STATE->exit_continuation = crafting_ui_free_and_return_to_overworld;
+    fadescreen_all(1, 0);
+    callback1_set(crafting_ui_exit_and_continue_callback1);
 }
 
 static void crafting_ui_update_recipe_callback1() {
@@ -347,11 +374,9 @@ static void crafting_ui_update_visible_recipe_if_necessary() {
     }
 }
 
-static void crafting_ui_big_callback_nullsub(u8 self) {
-    (void)self;
-}
-
 static void crafting_ui_message_big_callback1() {
+    generic_callback1();
+    return; // Test this out
     tbox_proceed();
     oam_proceed();
     // Suspends bascially everything but the message callback
@@ -361,13 +386,22 @@ static void crafting_ui_message_big_callback1() {
     big_callbacks[cb_idx].function(cb_idx);
 }
 
+static void crafting_ui_list_menu_remove() {
+    if (CRAFTING_UI_STATE->recipe_selection_list_menu_callback != 0xFF) {
+        list_menu_remove(CRAFTING_UI_STATE->recipe_selection_list_menu_callback, 
+            CRAFTING_UI_STATE->list_menu_cursor_positions + CRAFTING_UI_STATE->type, CRAFTING_UI_STATE->list_menu_cursor_above + CRAFTING_UI_STATE->type);
+        CRAFTING_UI_STATE->recipe_selection_list_menu_callback = 0xFF;
+    }
+    while (big_callback_is_active(crafting_ui_process_list_menu))
+        big_callback_delete(big_callback_get_id(crafting_ui_process_list_menu));
+}
 
-static void crafting_ui_print_message(u8 *message, void (*continuation)(u8)) {
+static void crafting_ui_print_message(u8 callback_idx, u8 *message, void (*continuation)(u8)) {
     tbox_flush_set(TBOX_MESSAGE, 0);
     tbox_tilemap_draw(TBOX_MESSAGE);
-    CRAFTING_UI_STATE->message_callback = big_callback_new(crafting_ui_big_callback_nullsub, 0);
-    tbox_print_string_and_continue(CRAFTING_UI_STATE->message_callback, TBOX_MESSAGE, 256, 15, 2, tbox_get_set_speed(), message, continuation);
+    tbox_print_string_and_continue(callback_idx, TBOX_MESSAGE, 256, 15, 2, tbox_get_set_speed(), message, continuation);
     callback1_set(crafting_ui_message_big_callback1);
+    crafting_ui_list_menu_remove();
 }
 
 static void crafting_ui_message_continuation_delete_message_and_return_to_selection(u8 self) {
@@ -377,15 +411,53 @@ static void crafting_ui_message_continuation_delete_message_and_return_to_select
         // bg_virtual_sync(ui_tboxes[TBOX_MESSAGE].bg_id);
         callback1_set(generic_callback1);
         big_callback_delete(self);
+        crafting_ui_setup_list_menu();
     }
 }
 
+static void crafting_ui_initialize_cauldron_scene() {
+    crafting_recipe recipe = *crafting_ui_get_current_recipe();
+    crafting_ui_free();
+    cauldron_scene_initialize(&recipe);
+}
+
+static void crafting_ui_process_yes_no_start_crafting(u8 self) {
+    int idx = gp_list_menu_process_input_and_close_on_selection();
+    switch (idx) {
+        case 0: // Recipe will be crafted
+            CRAFTING_UI_STATE->exit_continuation = crafting_ui_initialize_cauldron_scene;
+            fadescreen_all(1, 0);
+            callback1_set(crafting_ui_exit_and_continue_callback1);
+            break;
+            FALL_THROUGH;
+        case -1: // Why is that not the standard values for the list menu input??
+        case 1:
+            callback1_set(generic_callback1);
+            tbox_remove_dialog(TBOX_MESSAGE, true);
+            big_callback_delete(self);
+            crafting_ui_setup_list_menu();
+            break;
+        case -2:
+            return;
+    }
+}
+
+static void crafting_ui_message_continuation_yes_no_box(u8 self) {
+    gp_list_menu_yes_no_new(&ui_yes_no_box, 2, 0, 2, 256 + 20, 14, 1);
+    big_callbacks[self].function = crafting_ui_process_yes_no_start_crafting;
+}
+
 static u8 str_cant_craft[] = LANGDEP(
-    PSTRING("Du kannst dieses Item nicht herstellen,\nweil du nicht alle Zutaten besitzt."),
+    PSTRING("Du hast nicht die nötigen Zutaten,\num dieses Item herzustellen."),
     PSTRING("You can't craft this item, because you\ndont posess all ingredients.")
 );
 
-static void crafting_ui_idle(u8 self) {
+static u8 str_ask_crafting[] = LANGDEP(
+    PSTRING("Möchtest du BUFFER_1\nherstellen?"),
+    PSTRING("Do you want to craft\nBUFFER_1?")
+);
+
+static void crafting_ui_process_list_menu(u8 self) {
     (void)self;
     if (fading_is_active() || dma3_busy(-1))
         return;
@@ -406,16 +478,17 @@ static void crafting_ui_idle(u8 self) {
 
     int idx = list_menu_process_input(CRAFTING_UI_STATE->recipe_selection_list_menu_callback);
     if (idx == LIST_MENU_B_PRESSED || idx > CRAFTING_UI_STATE->num_crafting_recipies[CRAFTING_UI_STATE->type]) {
-        // TODO: Exit
+        crafting_ui_exit_and_return_to_overworld();
     } else if (idx != LIST_MENU_NOTHING_CHOSEN) { // A recipe was selected
         crafting_recipe *recipe = crafting_ui_get_current_recipe();
         if (recipe) {
             if (!recipe_requirements_fulfilled(recipe)) {
             play_sound(5);
             // Print the string that the player doesn't have all ingredients. Suspend all callbacks other than that
-            crafting_ui_print_message(str_cant_craft, crafting_ui_message_continuation_delete_message_and_return_to_selection);
+            crafting_ui_print_message(self, str_cant_craft, crafting_ui_message_continuation_delete_message_and_return_to_selection);
             } else {
-                dprintf("Could do recipe.\n");
+                strcpy(buffer0, item_get_name(recipe->item));
+                crafting_ui_print_message(self, str_ask_crafting, crafting_ui_message_continuation_yes_no_box);
             }  
         }
     }
@@ -429,15 +502,16 @@ static void crafting_ui_setup_list_menu() {
     CRAFTING_UI_STATE->recipe_selection_list_menu_callback = list_menu_new(&CRAFTING_UI_STATE->recipe_selection_list_menu_template, 
         CRAFTING_UI_STATE->list_menu_cursor_positions[type], CRAFTING_UI_STATE->list_menu_cursor_above[type]);
     crafting_ui_synchronize_current_recipe_with_list_menu_cursor();
-    if (!big_callback_is_active(crafting_ui_idle)) {
-        big_callback_new(crafting_ui_idle, 0);
+    if (!big_callback_is_active(crafting_ui_process_list_menu)) {
+        big_callback_new(crafting_ui_process_list_menu, 0);
     }
 }
 
 static void crafting_ui_switch_type_callback1() {
     oam_anim_proceed();
     oam_proceed();
-    if (dma3_busy(-1))
+    fading_proceed();
+    if (fading_is_active() || dma3_busy(-1))
         return;
     dprintf("Updating in state %d\n", CRAFTING_UI_STATE->setup_state);
     switch (CRAFTING_UI_STATE->setup_state) {
@@ -449,13 +523,7 @@ static void crafting_ui_switch_type_callback1() {
             break;
         }
         case 1: {
-            // Kill the list menu
-            u16 type_old = CRAFTING_UI_STATE->type;
-            list_menu_remove(CRAFTING_UI_STATE->recipe_selection_list_menu_callback, 
-                CRAFTING_UI_STATE->list_menu_cursor_positions + type_old, CRAFTING_UI_STATE->list_menu_cursor_above + type_old);
-            if (big_callback_is_active(crafting_ui_idle))
-                big_callback_delete(big_callback_get_id(crafting_ui_idle));
-            // Flush all texts
+            crafting_ui_list_menu_remove();
             break;
         }
         case 2: {
@@ -487,7 +555,12 @@ static void crafting_ui_switch_type_callback1() {
     CRAFTING_UI_STATE->setup_state++;
 }
 
-void crafting_ui_free() {
+static void crafting_ui_free() {
+    if (CRAFTING_UI_STATE->callback_scroll_indicators_left_right != 0xFF)
+        scroll_indicator_delete(CRAFTING_UI_STATE->callback_scroll_indicators_left_right);
+    if (CRAFTING_UI_STATE->callback_scroll_indicators_up_down != 0xFF)
+        scroll_indicator_delete(CRAFTING_UI_STATE->callback_scroll_indicators_up_down);
+    crafting_ui_list_menu_remove();
     free(bg_get_tilemap(0));
     free(bg_get_tilemap(1));
     free(bg_get_tilemap(2));
@@ -497,7 +570,6 @@ void crafting_ui_free() {
     }
     free(CRAFTING_UI_STATE);
 }
-
 
 
 static void crafting_ui_setup() {
@@ -668,13 +740,13 @@ static void crafting_ui_setup() {
     }
 }
 
-
-
 void crafting_ui_initialize() {
     fmem.gp_state = malloc_and_clear(sizeof(crafting_ui_state));
     CRAFTING_UI_STATE->recipe_selection_list_menu_callback = 0xFF;
+    CRAFTING_UI_STATE->callback_scroll_indicators_left_right = 0xFF;
+    CRAFTING_UI_STATE->callback_scroll_indicators_up_down = 0xFF;
     CRAFTING_UI_STATE->current_recipe_idx = 0;
     callback1_set(crafting_ui_setup);
     vblank_handler_set(generic_vblank_handler);
-
+    fadescreen_all(1, 0);
 }

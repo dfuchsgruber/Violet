@@ -129,4 +129,16 @@ int gp_list_menu_process_input_and_close_on_selection();
  **/
 void list_menu_print(u8 callback_idx);
 
+/**
+ * Prints a yes/no box on the gp list template.
+ * @param tbox the box to create
+ * @param font the font to use
+ * @param x x coordinate of the text
+ * @param y y coordiante of the text
+ * @param base_tile base tile of the border frame
+ * @param pal the palette of the border frame
+ * @param border_base_tile where to initially place the cursor
+ **/
+void gp_list_menu_yes_no_new(tboxdata *tbox, u8 font, u8 x, u8 y, u16 border_base_tile, u8 pal, u8 initial_cursor_position);
+
 #endif /* INCLUDE_C_LIST_MENU_H_ */

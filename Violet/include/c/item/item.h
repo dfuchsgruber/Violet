@@ -11,6 +11,7 @@
 
 #include "constants/items.h"
 #include "item/item_effect.h"
+#include "oam.h"
 
 typedef struct {
     u8 name[14];
@@ -205,6 +206,16 @@ u16 tm_hm_to_attack[58];
  * @return the oam idx
  **/
 u8 item_oam_new(u16 tiles_tag, u16 pal_tag, u16 item_idx);
+
+/**
+ * Creates a new oam for an item using a template. Tile and Pal tag are set due to the function's arguments.
+ * @param template the oam template used to create the oams
+ * @param tiles_tag which tiles tag to associate with the oam
+ * @param pal_tag which pal tag to associate with the oam
+ * @param item_idx which item to show
+ * @return the oam idx
+ **/
+u8 item_oam_new_by_template(const oam_template *template, u16 tiles_tag, u16 pal_tag, u16 item_idx);
 
 /**
  * Gets the gfx or pal of an item

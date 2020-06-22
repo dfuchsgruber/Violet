@@ -87,6 +87,14 @@ extern "C" {
      **/
     size_t softmax_choice(int *logits, size_t size, int min, int max, u16 (*rng)());
 
+    /**
+     * Shuffles an array
+     * @param array the array to shuffle
+     * @param size the size of the array
+     * @param rng the rng to use, if NULL rnd16 is used
+     **/
+    void shuffle(size_t *array, size_t size, u16 (*rng)());
+
 
 #ifdef	__cplusplus
 }

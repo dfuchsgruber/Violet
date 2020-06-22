@@ -8,7 +8,7 @@ static crafting_recipe crafting_recipies_healing[] = {
     {
         .item = ITEM_MEISTERBALL, 
         .ingredients = {
-            [0] = {.item = ITEM_AMRENABEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_MINIPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_WUNDERSTAUB, .count = 4, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
         }
