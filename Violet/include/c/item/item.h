@@ -19,7 +19,7 @@ typedef struct {
     u16 price;
     u8 holding_effect_id;
     u8 holding_effect_param;
-    u8 *description_ptr;
+    u8 *description;
     u8 importance;
     u8 exit_bag_on_use;
     u8 pocket;

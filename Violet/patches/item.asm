@@ -4,6 +4,10 @@
 .org 0x0815F914 + (0x88*4)
     .word script_cmd_x88_pokemart3 | 1
 
+.org 0x0809a988
+    ldr r1, =item_idx_saniztize | 1
+    bx r1
+    .pool
 
 //@Bike sound := 195
 .org 0x080A1402

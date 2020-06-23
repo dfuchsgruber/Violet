@@ -1,6 +1,7 @@
 	
 #include "types.h"
 #include "item/item.h"
+#include "constants/pokemon_types.h"
 #include "constants/item_pockets.h"
 #include "constants/item_hold_effects.h"
 #include "constants/item_weather_rock_types.h"
@@ -1508,6 +1509,78 @@ static u8 str_item_rubin_description[] = LANGDEP(
 static u8 str_item_saphir_description[] = LANGDEP(
 	PSTRING("Ein ausgesprochen schönes Juwel,\ndas blau schimmert. Es\nsymbolisiert Ehrlichkeit."),
 	PSTRING("An exquisitely beautiful gem that\nhas a blue glow.\nIt symbolizes honesty.")
+);
+static u8 str_normaljuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Normal\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Normal attacks\nonce.")
+);
+static u8 str_kampfjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Kampf\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Kampf attacks\nonce.")
+);
+static u8 str_flugjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Flug\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Flug attacks\nonce.")
+);
+static u8 str_giftjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Gift\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Gift attacks\nonce.")
+);
+static u8 str_bodenjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Boden\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Boden attacks\nonce.")
+);
+static u8 str_gesteinjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Gestein\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Gestein attacks\nonce.")
+);
+static u8 str_kaeferjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Kaefer\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Kaefer attacks\nonce.")
+);
+static u8 str_geistjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Geist\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Geist attacks\nonce.")
+);
+static u8 str_stahljuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Stahl\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Stahl attacks\nonce.")
+);
+static u8 str_feejuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Fee\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Fee attacks\nonce.")
+);
+static u8 str_feuerjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Feuer\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Feuer attacks\nonce.")
+);
+static u8 str_wasserjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Wasser\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Wasser attacks\nonce.")
+);
+static u8 str_pflanzejuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Pflanze\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Pflanze attacks\nonce.")
+);
+static u8 str_elektrojuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Elektro\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Elektro attacks\nonce.")
+);
+static u8 str_psychojuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Psycho\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Psycho attacks\nonce.")
+);
+static u8 str_eisjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Eis\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Eis attacks\nonce.")
+);
+static u8 str_drachejuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Drache\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Drache attacks\nonce.")
+);
+static u8 str_unlichtjuwel_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Unlicht\nAngriffe."),
+	PSTRING("An item to be held by a Pokémon.\nBoosts Unlicht attacks\nonce.")
 );
 
 
@@ -7513,4 +7586,136 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},
+	[ITEM_NORMALJUWEL] = {
+		.name = LANGDEP(PSTRING("Normaljuwel"), PSTRING("Normalgem")),
+		.index = 0x178, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_NORMAL,
+		.description = str_normaljuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_KAMPFJUWEL] = {
+		.name = LANGDEP(PSTRING("Kampfjuwel"), PSTRING("Kampfgem")),
+		.index = 0x179, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_KAMPF,
+		.description = str_kampfjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_FLUGJUWEL] = {
+		.name = LANGDEP(PSTRING("Flugjuwel"), PSTRING("Fluggem")),
+		.index = 0x17a, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_FLUG,
+		.description = str_flugjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_GIFTJUWEL] = {
+		.name = LANGDEP(PSTRING("Giftjuwel"), PSTRING("Giftgem")),
+		.index = 0x17b, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_GIFT,
+		.description = str_giftjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_BODENJUWEL] = {
+		.name = LANGDEP(PSTRING("Bodenjuwel"), PSTRING("Bodengem")),
+		.index = 0x17c, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_BODEN,
+		.description = str_bodenjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_GESTEINJUWEL] = {
+		.name = LANGDEP(PSTRING("Gesteinjuwel"), PSTRING("Gesteingem")),
+		.index = 0x17d, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_GESTEIN,
+		.description = str_gesteinjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_KAEFERJUWEL] = {
+		.name = LANGDEP(PSTRING("Kaeferjuwel"), PSTRING("Kaefergem")),
+		.index = 0x17e, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_KAEFER,
+		.description = str_kaeferjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_GEISTJUWEL] = {
+		.name = LANGDEP(PSTRING("Geistjuwel"), PSTRING("Geistgem")),
+		.index = 0x17f, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_GEIST,
+		.description = str_geistjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_STAHLJUWEL] = {
+		.name = LANGDEP(PSTRING("Stahljuwel"), PSTRING("Stahlgem")),
+		.index = 0x180, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_STAHL,
+		.description = str_stahljuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_FEEJUWEL] = {
+		.name = LANGDEP(PSTRING("Feejuwel"), PSTRING("Feegem")),
+		.index = 0x181, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_FEE,
+		.description = str_feejuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_FEUERJUWEL] = {
+		.name = LANGDEP(PSTRING("Feuerjuwel"), PSTRING("Feuergem")),
+		.index = 0x182, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_FEUER,
+		.description = str_feuerjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_WASSERJUWEL] = {
+		.name = LANGDEP(PSTRING("Wasserjuwel"), PSTRING("Wassergem")),
+		.index = 0x183, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_WASSER,
+		.description = str_wasserjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_PFLANZEJUWEL] = {
+		.name = LANGDEP(PSTRING("Pflanzejuwel"), PSTRING("Pflanzegem")),
+		.index = 0x184, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_PFLANZE,
+		.description = str_pflanzejuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_ELEKTROJUWEL] = {
+		.name = LANGDEP(PSTRING("Elektrojuwel"), PSTRING("Elektrogem")),
+		.index = 0x185, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_ELEKTRO,
+		.description = str_elektrojuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_PSYCHOJUWEL] = {
+		.name = LANGDEP(PSTRING("Psychojuwel"), PSTRING("Psychogem")),
+		.index = 0x186, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_PSYCHO,
+		.description = str_psychojuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_EISJUWEL] = {
+		.name = LANGDEP(PSTRING("Eisjuwel"), PSTRING("Eisgem")),
+		.index = 0x187, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_EIS,
+		.description = str_eisjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_DRACOJUWEL] = {
+		.name = LANGDEP(PSTRING("Drachejuwel"), PSTRING("Drachegem")),
+		.index = 0x0, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_DRACHE,
+		.description = str_drachejuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_UNLICHTJUWEL] = {
+		.name = LANGDEP(PSTRING("Unlichtjuwel"), PSTRING("Unlichtgem")),
+		.index = 0x189, .price = 200,
+		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_UNLICHT,
+		.description = str_unlichtjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
 };
+
+u16 item_idx_saniztize(u16 item_idx) {
+	if (item_idx >= ITEM_CNT)
+		return ITEM_NONE;
+	return item_idx;
+}

@@ -123,7 +123,17 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
     },
 
 };
-static crafting_recipe crafting_recipies_jewels[] = {};
+static crafting_recipe crafting_recipies_jewels[] = {
+    // stub
+    {
+        .item = ITEM_FLUGJUWEL, 
+        .ingredients = {
+            [0] = {.item = ITEM_GEISTJUWEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_FEEJUWEL, .count = 4, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },
+};
 static crafting_recipe crafting_recipies_evolution[] = {};
 static crafting_recipe crafting_recipies_mints[] = {};
 static crafting_recipe crafting_recipies_nutrients[] = {};
