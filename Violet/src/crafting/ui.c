@@ -162,7 +162,7 @@ static void crafting_ui_update_item_oams() {
         }
         crafting_ui_update_item_oam(oams + CRAFTING_UI_STATE->oam_item, recipe->item);
     } else {
-        crafting_ui_update_item_oam(oams + CRAFTING_UI_STATE->oam_item, ITEM_CNT);
+        crafting_ui_update_item_oam(oams + CRAFTING_UI_STATE->oam_item, ITEM_NA);
     }
 }
 

@@ -137,6 +137,7 @@
         "type_traits": "c",
         "istream": "c",
         "ostream": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "custom.h": "c"
     }
 }

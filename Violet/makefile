@@ -142,6 +142,7 @@ $(MIDOBJS): %.o: %.s
 	$(AS) $(ASFLAGS) $< -o $@	
 	
 $(GFXC): $(BLDPATH)/%.c: %.png
+	@echo "$<"
 	$(shell mkdir -p $(dir $(GFXC)))
 	$(GRIT) $< $(GRITFLAGS) -ff $(basename $<).grit -o $@ 
 	
