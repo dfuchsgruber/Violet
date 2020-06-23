@@ -56,6 +56,15 @@ typedef struct {
 } crafting_ui_state;
 
 /**
+ * Reinitializes the ui state.
+ * @param type which recipe type to initialize it with
+ * @param list_menu_cursor_positions where the cursors where put
+ * @param list_menu_curosr_above items above the cursor
+ **/
+void crafting_ui_reinitialize(u16 type, u16 list_menu_cursor_positions[CRAFTING_TYPE_CNT], u16 list_menu_cursor_above[CRAFTING_TYPE_CNT]);
+
+
+/**
  * Gets how many recipies there are in total per category
  * @param type the category of crafting items to check
  * @return size the number of recipies in this category
@@ -83,6 +92,13 @@ bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient);
  **/
 bool recipe_requirements_fulfilled(crafting_recipe *r);
 
+/**
+ * Uses a crafting recipe, i.e. deletes the ingredients and adds the target item
+ * @param r the recipe to use
+ * @return if the recipe was used sucessfully (fails when requirements are not met or no room)
+ **/
+bool recipe_use(crafting_recipe *r);
+
 #define CRAFTING_UI_STATE ((crafting_ui_state*)fmem.gp_state)
 
 #define CAULDRON_ITEM_BASE_TAG 0x1111
@@ -102,26 +118,21 @@ typedef struct {
     u8 lights_number_active;
     u8 shaking_intensity;
     void (*step_callback)(u16);
+    struct {
+        u16 type;
+        u16 list_menu_cursor_positions[CRAFTING_TYPE_CNT]; // Remember where the cursor was for each category
+        u16 list_menu_cursor_above[CRAFTING_TYPE_CNT]; // Remember where the cursor was for each category
+    } saved_ui_state; // For reinitialization
 } cauldron_scene_state;
-
-typedef struct {
-    s16 dx;
-    s16 dy;
-    u16 dt;
-} cauldron_item_linear_translation;
-
-typedef struct {
-    cauldron_item_linear_translation *pieces;
-    size_t count;
-} cauldron_item_piecewise_linear_trajectory;
 
 #define CAULDRON_SCENE_STATE ((cauldron_scene_state*)fmem.gp_state)
 
 /**
  * Initializes the cauldron scene with a recipe. Assumes that the screen is already faded and the previous scene has freed its additional allocated memory
  * @param recipe with which recipe the cauldron scene is initializes
+ * @param ui_state form which ui the cauldron is initialized, this is needed to backup the cursor positions
  **/
-void cauldron_scene_initialize(crafting_recipe *recipe);
+void cauldron_scene_initialize(crafting_recipe *recipe, crafting_ui_state *ui_state);
 
 
 // Crafting UI gfx

@@ -22,6 +22,11 @@ extern int damage_caused;
 extern u16 move_power;
 extern u16 moves_used[4];
 
+#define BATTLE_ANIMATION_OAM_BASE 10000
+
+extern graphic battle_animation_graphics[];
+extern palette battle_animation_palettes[];
+
 /**
  * Probably associates a battler with an attack, and finds the target(s)...
  *

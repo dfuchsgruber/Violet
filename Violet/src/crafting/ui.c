@@ -417,8 +417,9 @@ static void crafting_ui_message_continuation_delete_message_and_return_to_select
 
 static void crafting_ui_initialize_cauldron_scene() {
     crafting_recipe recipe = *crafting_ui_get_current_recipe();
+    crafting_ui_state tmp = *CRAFTING_UI_STATE;
     crafting_ui_free();
-    cauldron_scene_initialize(&recipe);
+    cauldron_scene_initialize(&recipe, &tmp);
 }
 
 static void crafting_ui_process_yes_no_start_crafting(u8 self) {
@@ -452,6 +453,11 @@ static u8 str_cant_craft[] = LANGDEP(
     PSTRING("You can't craft this item, because you\ndont posess all ingredients.")
 );
 
+static u8 str_no_room[] = LANGDEP(
+    PSTRING("Du hast nicht den nötigen Platz\nim Beutel dafür!"),
+    PSTRING("Your bag doesn't have the necessary\nspace for that!")
+);
+
 static u8 str_ask_crafting[] = LANGDEP(
     PSTRING("Möchtest du BUFFER_1\nherstellen?"),
     PSTRING("Do you want to craft\nBUFFER_1?")
@@ -483,10 +489,13 @@ static void crafting_ui_process_list_menu(u8 self) {
         crafting_recipe *recipe = crafting_ui_get_current_recipe();
         if (recipe) {
             if (!recipe_requirements_fulfilled(recipe)) {
-            play_sound(5);
-            // Print the string that the player doesn't have all ingredients. Suspend all callbacks other than that
-            crafting_ui_print_message(self, str_cant_craft, crafting_ui_message_continuation_delete_message_and_return_to_selection);
-            } else {
+                play_sound(5);
+                // Print the string that the player doesn't have all ingredients. Suspend all callbacks other than that
+                crafting_ui_print_message(self, str_cant_craft, crafting_ui_message_continuation_delete_message_and_return_to_selection);
+            } else if (!item_has_room(recipe->item, 1)) {
+                crafting_ui_print_message(self, str_no_room, crafting_ui_message_continuation_delete_message_and_return_to_selection);
+            }
+            else {
                 strcpy(buffer0, item_get_name(recipe->item));
                 crafting_ui_print_message(self, str_ask_crafting, crafting_ui_message_continuation_yes_no_box);
             }  
@@ -748,5 +757,14 @@ void crafting_ui_initialize() {
     CRAFTING_UI_STATE->current_recipe_idx = 0;
     callback1_set(crafting_ui_setup);
     vblank_handler_set(generic_vblank_handler);
-    fadescreen_all(1, 0);
+}
+
+void crafting_ui_reinitialize(u16 type, u16 list_menu_cursor_positions[CRAFTING_TYPE_CNT], u16 list_menu_cursor_above[CRAFTING_TYPE_CNT]) {
+    crafting_ui_initialize();
+    (void) list_menu_cursor_positions;
+    (void) list_menu_cursor_above;
+    (void) type;
+    CRAFTING_UI_STATE->type = type;
+    memcpy(CRAFTING_UI_STATE->list_menu_cursor_positions, list_menu_cursor_positions, sizeof(CRAFTING_UI_STATE->list_menu_cursor_positions));
+    memcpy(CRAFTING_UI_STATE->list_menu_cursor_above, list_menu_cursor_above, sizeof(CRAFTING_UI_STATE->list_menu_cursor_above));
 }
