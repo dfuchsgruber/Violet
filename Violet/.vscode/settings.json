@@ -138,6 +138,7 @@
         "istream": "c",
         "ostream": "c",
         "sstream": "c",
-        "custom.h": "c"
+        "custom.h": "c",
+        "description.h": "c"
     }
 }

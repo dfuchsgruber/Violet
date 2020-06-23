@@ -1,13 +1,1515 @@
 	
 #include "types.h"
 #include "item/item.h"
-#include "item/description.h"
 #include "constants/item_pockets.h"
 #include "constants/item_hold_effects.h"
 #include "constants/item_weather_rock_types.h"
 #include "language.h"
 #include "constants/items.h"
 #include "item/custom.h"
+
+
+static u8 str_item_none_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_meisterball_description[] = LANGDEP(
+	PSTRING("Der Ball mit bester Erfolgsquote.\nFängt jedes Pokémon garantiert."),
+	PSTRING("The best Ball with the ultimate\nperformance. It will catch any wild\nPokémon without fail.")
+);
+static u8 str_item_hyperball_description[] = LANGDEP(
+	PSTRING("Ein Ball mit hoher Erfolgsquote.\nDem Superball in allen\nPunkten überlegen."),
+	PSTRING("A very high-grade Ball that offers\na higher Pokémon catch rate than\na Great Ball.")
+);
+static u8 str_item_superball_description[] = LANGDEP(
+	PSTRING("Ein Ball mit guter Erfolgsquote.\nDem Pokéball in allen\nPunkten überlegen."),
+	PSTRING("A good, quality Ball that offers\na higher Pokémon catch rate than\na standard Poké Ball.")
+);
+static u8 str_item_pokeball_description[] = LANGDEP(
+	PSTRING("Damit fängst du wilde Pokémon.\nDas Design ähnelt einer\nKapsel."),
+	PSTRING("A Ball thrown to catch a wild\nPokémon. It is designed in a\ncapsule style.")
+);
+static u8 str_item_safariball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der nur in der Safari-\nZone eingesetzt wird. Er besticht\ndurch sein Tarnfarbenmuster."),
+	PSTRING("A special Ball that is used only in\nthe Safari Zone. It is finished in\na camouflage pattern.")
+);
+static u8 str_item_netzball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der Pokémon der\nElementklassen Wasser\nund Käfer besser fängt."),
+	PSTRING("A somewhat different Ball that\nworks especially well on Water- and\nBug-type Pokémon.")
+);
+static u8 str_item_tauchball_description[] = LANGDEP(
+	PSTRING("Ein Ball, mit dem sich\nPokémon vom Meeresgrund\nbesser fangen lassen."),
+	PSTRING("A somewhat different Ball that\nworks especially well on Pokémon\ndeep in the sea.")
+);
+static u8 str_item_nestball_description[] = LANGDEP(
+	PSTRING("Ein Ball, dessen Erfolgsquote\nbesonders bei schwächeren\nPokémon sehr hoch ist."),
+	PSTRING("A somewhat different Ball that\nworks especially well on weaker\nPokémon.")
+);
+static u8 str_item_wiederball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der für bereits\ngefangene Pokémon besser\ngeeignet ist."),
+	PSTRING("A somewhat different Ball that\nworks especially well on Pokémon\ncaught before.")
+);
+static u8 str_item_timerball_description[] = LANGDEP(
+	PSTRING("Ein Ball, der mit zunehmender\nKampfdauer effektiver wird."),
+	PSTRING("A somewhat different Ball that\nbecomes progressively better the\nmore turns there are in a battle.")
+);
+static u8 str_item_luxusball_description[] = LANGDEP(
+	PSTRING("Ein behaglicher Ball, der\nPokémon veranlasst, nach\ndem Fang freundlicher zu werden."),
+	PSTRING("A comfortable Ball that makes a\ncaptured wild Pokémon quickly grow\nfriendly.")
+);
+static u8 str_item_premierball_description[] = LANGDEP(
+	PSTRING("Ein seltener Ball, der als\nReminiszenz an irgendein\nEreignis hergestellt wurde."),
+	PSTRING("A rare Ball that has been\nspecially made to commemorate an\nevent of some sort.")
+);
+static u8 str_item_trank_description[] = LANGDEP(
+	PSTRING("Die KP eines Pokémon\nwerden um 20 Punkte aufgefüllt."),
+	PSTRING("A spray-type wound medicine.\nIt restores the HP of one Pokémon\nby 20 points.")
+);
+static u8 str_item_gegengift_description[] = LANGDEP(
+	PSTRING("Heilt Vergiftungen bei Pokémon."),
+	PSTRING("A spray-type medicine.\nIt heals one Pokémon from a\npoisoning.")
+);
+static u8 str_item_feuerheiler_description[] = LANGDEP(
+	PSTRING("Heilt Verbrennungen bei Pokémon."),
+	PSTRING("A spray-type medicine.\nIt heals one Pokémon of a burn.")
+);
+static u8 str_item_eisheiler_description[] = LANGDEP(
+	PSTRING("Taut ein eingefrorenes\nPokémon wieder auf."),
+	PSTRING("A spray-type medicine.\nIt defrosts a frozen Pokémon.")
+);
+static u8 str_item_aufwecker_description[] = LANGDEP(
+	PSTRING("Weckt ein schlafendes\nPokémon wieder auf."),
+	PSTRING("A spray-type medicine.\nIt awakens a sleeping Pokémon.")
+);
+static u8 str_item_para_heiler_description[] = LANGDEP(
+	PSTRING("Heilt Paralyse bei Pokémon."),
+	PSTRING("A spray-type medicine.\nIt heals one Pokémon from\nparalysis.")
+);
+static u8 str_item_top_genesung_description[] = LANGDEP(
+	PSTRING("Stellt gesamte KP und Status\neines Pokémon wieder her."),
+	PSTRING("A medicine that fully restores the\nHP and heals any status problems\nof one Pokémon.")
+);
+static u8 str_item_top_trank_description[] = LANGDEP(
+	PSTRING("Füllt die KP eines Pokémon\nvollständig auf."),
+	PSTRING("A spray-type wound medicine.\nIt fully restores the HP of one\nPokémon.")
+);
+static u8 str_item_hypertrank_description[] = LANGDEP(
+	PSTRING("Füllt die KP eines Pokémon um\n200 Punkte auf."),
+	PSTRING("A spray-type wound medicine.\nIt restores the HP of one Pokémon\nby 200 points.")
+);
+static u8 str_item_supertrank_description[] = LANGDEP(
+	PSTRING("Füllt die KP eines Pokémon um\n50 Punkte auf."),
+	PSTRING("A spray-type wound medicine.\nIt restores the HP of one Pokémon\nby 50 points.")
+);
+static u8 str_item_hyperheiler_description[] = LANGDEP(
+	PSTRING("Beseitigt alle Statusprobleme\neines Pokémon."),
+	PSTRING("A spray-type medicine.\nIt heals all the status problems of\none Pokémon.")
+);
+static u8 str_item_beleber_description[] = LANGDEP(
+	PSTRING("Belebt ein Pokémon und füllt\ndessen KP zur Hälfte wieder auf."),
+	PSTRING("A medicine that revives a fainted\nPokémon, restoring HP by half the\nmaximum amount.")
+);
+static u8 str_item_top_beleber_description[] = LANGDEP(
+	PSTRING("Belebt ein Pokémon und füllt\ndie KP vollständig wieder auf."),
+	PSTRING("A medicine that revives a fainted\nPokémon, restoring HP fully.")
+);
+static u8 str_item_co_mix_description[] = LANGDEP(
+	PSTRING("Ein Mischgetränk, das die KP\neines Pokémon um die Hälfte\ndes Maximalwertes auffüllt."),
+	PSTRING("A mixed drink that\nrestores the HP by\nhalf its maximum amount.")
+);
+static u8 str_item_c_saft_description[] = LANGDEP(
+	PSTRING("Ein süßer Saft, der die AP\naller Attacken eines Pokémon um\n5 Punkte auffüllt."),
+	PSTRING("A juice that recovers\n5 pp of every move of\na Pokémon.")
+);
+static u8 str_item_c_serum_description[] = LANGDEP(
+	PSTRING("Ein super süßes Getränk, das\ndie KP eines Pokémon um 225\nPunkte auffüllt."),
+	PSTRING("A super-sweet serum that\nrecovers 225 HP of a\nPokémon.")
+);
+static u8 str_item_kuhmuh_milch_description[] = LANGDEP(
+	PSTRING("Vitaminreiche Milch, welche die KP\neines Pokémon um\n100 Punkte auffüllt."),
+	PSTRING("Highly nutritious milk.\nIt restores the HP of one Pokémon\nby 100 points.")
+);
+static u8 str_item_energiestaub_description[] = LANGDEP(
+	PSTRING("Ein bitteres Pulver, das die KP\neines Pokémon um\n50 Punkte auffüllt."),
+	PSTRING("A very bitter medicine powder.\nIt restores the HP of one Pokémon\nby 50 points.")
+);
+static u8 str_item_kraftwurzel_description[] = LANGDEP(
+	PSTRING("Eine bittere Wurzel, welche die KP\neines Pokémon um\n200 Punkte auffüllt."),
+	PSTRING("A very bitter root.\nIt restores the HP of one Pokémon\nby 200 points.")
+);
+static u8 str_item_heilpuder_description[] = LANGDEP(
+	PSTRING("Ein bitteres Pulver, das alle\nStatusprobleme eines Pokémon \nbeseitigt."),
+	PSTRING("A very bitter medicine powder.\nIt heals all the status problems of\none Pokémon.")
+);
+static u8 str_item_vitalkraut_description[] = LANGDEP(
+	PSTRING("Ein bitteres Kraut, das besiegte\nPokémon belebt und die KP\nvollständig auffüllt."),
+	PSTRING("A very bitter medicinal herb.\nIt revives a fainted Pokémon,\nrestoring HP fully.")
+);
+static u8 str_item_aether_description[] = LANGDEP(
+	PSTRING("Füllt AP einer ausgewählten Attacke\neines Pokémon um 10 Punkte auf."),
+	PSTRING("Restores a selected move’s PP by\n10 points for one Pokémon.")
+);
+static u8 str_item_top_aether_description[] = LANGDEP(
+	PSTRING("Füllt AP einer ausgewählten Attacke\neines Pokémon vollständig auf."),
+	PSTRING("Fully restores a selected move’s PP\nfor one Pokémon.")
+);
+static u8 str_item_elixier_description[] = LANGDEP(
+	PSTRING("Füllt alle AP aller Attacken eines\nPokémon um 10 Punkte auf."),
+	PSTRING("Restores the PP of all moves for\none Pokémon by 10 points each.")
+);
+static u8 str_item_top_elixier_description[] = LANGDEP(
+	PSTRING("Füllt alle AP aller Attacken eines\nPokémon vollständig auf."),
+	PSTRING("Fully restores the PP of all moves\nfor one Pokémon.")
+);
+static u8 str_item_lavakeks_description[] = LANGDEP(
+	PSTRING("Eine Spezialität aus Bad\nLavastadt, die alle\nStatusprobleme eines Pokémon heilt."),
+	PSTRING("Lavaridge Town’s local specialty.\nIt heals all the status problems of\none Pokémon.")
+);
+static u8 str_item_blaue_floete_description[] = LANGDEP(
+	PSTRING("Eine blaue, gläserne Flöte, die\nschlafende Pokémon aufweckt."),
+	PSTRING("A blue glass flute that awakens\na sleeping Pokémon.")
+);
+static u8 str_item_gelbe_floete_description[] = LANGDEP(
+	PSTRING("Eine gelbe, gläserne Flöte, die\nverwirrte Pokémon heilt."),
+	PSTRING("A yellow glass flute that snaps one\nPokémon out of confusion.")
+);
+static u8 str_item_rote_floete_description[] = LANGDEP(
+	PSTRING("Eine rote, gläserne Flöte, die\nPokémon von Anziehung heilt."),
+	PSTRING("A red glass flute that snaps one\nPokémon out of infatuation.")
+);
+static u8 str_item_schw_floete_description[] = LANGDEP(
+	PSTRING("Eine schwarze, gläserne Flöte, die\nwilde Pokémon vom Angriff\nabhalten kann."),
+	PSTRING("A black glass flute.\nWhen blown, it makes wild Pokémon\nless likely to appear.")
+);
+static u8 str_item_weisse_floete_description[] = LANGDEP(
+	PSTRING("Eine durchsichtige, gläserne Flöte,\ndie wilde Pokémon anziehen kann."),
+	PSTRING("A white glass flute.\nWhen blown, it makes wild Pokémon\nmore likely to appear.")
+);
+static u8 str_item_beerensaft_description[] = LANGDEP(
+	PSTRING("Reiner Fruchtsaft, der die KP eines\nPokémon um 75 Punkte auffüllt."),
+	PSTRING("A 100% pure juice.\nIt restores the HP of one Pokémon\nby 75 points.")
+);
+static u8 str_item_zauberasche_description[] = LANGDEP(
+	PSTRING("Belebt und erfrischt alle besiegten\nPokémon und füllt deren KP\nvollständig wieder auf."),
+	PSTRING("Revives all fainted Pokémon,\nrestoring HP fully.")
+);
+static u8 str_item_kuestensalz_description[] = LANGDEP(
+	PSTRING("Salz, das sich tief in der Küsten-\nHöhle befand. Es ist extrem salzig!"),
+	PSTRING("Pure salt obtained from deep inside\nthe Shoal Cave. It is extremely\nsalty.")
+);
+static u8 str_item_kuestenschale_description[] = LANGDEP(
+	PSTRING("Eine schöne Muschelschale, die\nsich in der Küstenhöhle befand.\nSie ist blau und weiß gestreift."),
+	PSTRING("A pretty seashell found deep inside\nthe Shoal Cave. It is striped in\nblue and white.")
+);
+static u8 str_item_purpurstueck_description[] = LANGDEP(
+	PSTRING("Eine rote Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small red shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_indigostueck_description[] = LANGDEP(
+	PSTRING("Eine blaue Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small blue shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_gelbstueck_description[] = LANGDEP(
+	PSTRING("Eine gelbe Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small yellow shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_gruenstueck_description[] = LANGDEP(
+	PSTRING("Eine grüne Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small green shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_magmaisierer_description[] = LANGDEP(
+	PSTRING("Eine Schachtel voller Magmaenergie.\nDas Lieblingsstück eines\nbestimmten Pokémon."),
+	PSTRING("?????")
+);
+static u8 str_item_stromisierer_description[] = LANGDEP(
+	PSTRING("Ein Item, das Elektek zur\nEntwicklung benötigt."),
+	PSTRING("?????")
+);
+static u8 str_item_schoenschuppe_description[] = LANGDEP(
+	PSTRING("Ein Item, das Barschwa zur\nEntwicklung benötigt."),
+	PSTRING("?????")
+);
+static u8 str_item_dubiosdisc_description[] = LANGDEP(
+	PSTRING("Ein Item, das Porygon2 zur\nEntwicklung benötigt."),
+	PSTRING("?????")
+);
+static u8 str_item_duesterumhang_description[] = LANGDEP(
+	PSTRING("Ein Item, das Zwirrklop zur\nEntwicklung benötigt."),
+	PSTRING("?????")
+);
+static u8 str_item_schuetzer_description[] = LANGDEP(
+	PSTRING("Ein Item, das Rizeros zur\nEntwicklung benötigt."),
+	PSTRING("?????")
+);
+static u8 str_item_leben_orb_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen.\nVerstärkt Attacken, aber jede\nAttacke kostet KP."),
+	PSTRING("?????")
+);
+static u8 str_item_evolith_description[] = LANGDEP(
+	PSTRING("Ein mysteriöser Klumpen, der Vert.\nund Sp.Vert. von Pokémon steigert,\ndie sich noch entwickeln können."),
+	PSTRING("?????")
+);
+static u8 str_item_scharfzahn_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen. Verursacht der\nTräger Schaden, erschrickt der\nGegner eventuell."),
+	PSTRING("An item to hold. If the user\ncauses damage the target may\nflinch.")
+);
+static u8 str_item_ovaler_stein_description[] = LANGDEP(
+	PSTRING("Dieeser besondere, eiförmige Stein\nhilft manchen Pokémon bei ihrer\nEvolution."),
+	PSTRING("This special, oval rock helps\nsome Pokémon with their evolution.")
+);
+static u8 str_item_item_3e_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_kp_plus_description[] = LANGDEP(
+	PSTRING("Ein gehaltvolles Getränk, das die\nKp-Anzeige eines Pokémon erhöht."),
+	PSTRING("A nutritious drink for Pokémon.\nIt raises the base HP of one\nPokémon.")
+);
+static u8 str_item_protein_description[] = LANGDEP(
+	PSTRING("Ein gehaltvolles Getränk, das den\nAngr.-Wert eines Pokémon hebt."),
+	PSTRING("A nutritious drink for Pokémon.\nIt raises the base Attack stat of\none Pokémon.")
+);
+static u8 str_item_eisen_description[] = LANGDEP(
+	PSTRING("Ein gehaltvolles Getränk, das den\nVert.-Wert eines Pokémon hebt."),
+	PSTRING("A nutritious drink for Pokémon.\nIt raises the base Defense stat of\none Pokémon.")
+);
+static u8 str_item_carbon_description[] = LANGDEP(
+	PSTRING("Ein gehaltvolles Getränk, das den\nInit.-Wert eines Pokémon hebt."),
+	PSTRING("A nutritious drink for POKéMON.\nIt raises the base Speed stat of\none POKéMON.")
+);
+static u8 str_item_kalzium_description[] = LANGDEP(
+	PSTRING("Ein gehaltvolles Getränk, das den\nSp. Ang.-Wert eines Pokémon\nhebt."),
+	PSTRING("A nutritious drink for Pokémon.\nIt raises the base SP. Atk stat\nof one Pokémon.")
+);
+static u8 str_item_sonderbonbon_description[] = LANGDEP(
+	PSTRING("Ein energiereiches Bonbon, das\nden Level eines Pokémon um\neins anhebt."),
+	PSTRING("A candy that is packed with energy.\nIt raises the level of a Pokémon\nby one.")
+);
+static u8 str_item_ap_plus_description[] = LANGDEP(
+	PSTRING("Hebt die maximale Anzahl der AP\neiner Attacke eines Pokémon."),
+	PSTRING("Slightly raises the maximum PP of\na selected move for one Pokémon.")
+);
+static u8 str_item_zink_description[] = LANGDEP(
+	PSTRING("Ein gehaltvolles Getränk, das den\nSp. Ver.-Wert eines Pokémon\nhebt."),
+	PSTRING("A nutritious drink for Pokémon.\nIt raises the base SP. Def stat\nof one Pokémon.")
+);
+static u8 str_item_ap_top_description[] = LANGDEP(
+	PSTRING("Maximiert die Anzahl der AP\neiner Attacke eines Pokémon."),
+	PSTRING("Raises the PP of a selected move\nto its maximum level for one\nPokémon.")
+);
+static u8 str_item_goldbonbon_description[] = LANGDEP(
+	PSTRING("Ein besonderes Bonbon, das\nden Level eines Pokémon um\nbis zu drei anhebt."),
+	PSTRING("A special candy. It raises\nthe level of a Pokémon by up to\nthree.")
+);
+static u8 str_item_megablock_description[] = LANGDEP(
+	PSTRING("Eine mögliche Statusänderung der\nPokémon im Team wird für\nfünf Runden verhindert."),
+	PSTRING("An item that prevents stat reduction\namong party Pokémon for five turns\nafter use.")
+);
+static u8 str_item_angriffplus_description[] = LANGDEP(
+	PSTRING("Hebt die Volltrefferquote des PKMN\nim Kampf. Die Wirkung wird mit\ndem Tausch des Pokémon beendet."),
+	PSTRING("Raises the critical-hit ratio of\nPokémon in battle. Wears off if the\nPokémon is withdrawn.")
+);
+static u8 str_item_x_angriff_description[] = LANGDEP(
+	PSTRING("Hebt den Angr.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."),
+	PSTRING("Raises the Attack stat of Pokémon\nin battle. Wears off if the Pokémon\nis withdrawn.")
+);
+static u8 str_item_x_abwehr_description[] = LANGDEP(
+	PSTRING("Hebt den Vert.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."),
+	PSTRING("Raises the Defense stat of Pokémon\nin battle. Wears off if the Pokémon\nis withdrawn.")
+);
+static u8 str_item_x_tempo_description[] = LANGDEP(
+	PSTRING("Hebt den Init.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."),
+	PSTRING("Raises the Speed stat of POKéMON\nin battle. Wears off if the POKéMON\nis withdrawn.")
+);
+static u8 str_item_x_treffer_description[] = LANGDEP(
+	PSTRING("Hebt die Genauigkeit eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."),
+	PSTRING("Raises the accuracy stat of\nPokémon in battle. Wears off if the\nPokémon is withdrawn.")
+);
+static u8 str_item_x_spezial_description[] = LANGDEP(
+	PSTRING("Hebt den SP. Ang.-Wert eines PKMN\nim Kampf. Die Wirkung wird mit dem\nTausch des Pokémon beendet."),
+	PSTRING("Raises the SP. Atk stat of\nPokémon in battle. Wears off if the\nPokémon is withdrawn.")
+);
+static u8 str_item_pokepuppe_description[] = LANGDEP(
+	PSTRING("Eine hübsche Puppe. Sie ermöglicht\ndie Flucht im Kampf gegen wilde\nPokémon."),
+	PSTRING("An attractive doll.\nUse it to flee from any battle with\na wild Pokémon.")
+);
+static u8 str_item_eneco_rute_description[] = LANGDEP(
+	PSTRING("Ein tolles Item. Fliehe damit aus\njedem Kampf mit einem wilden\nPokémon."),
+	PSTRING("An attractive item.\nUse it to flee from any battle with\na wild Pokémon.")
+);
+static u8 str_item_suessbonbon_description[] = LANGDEP(
+	PSTRING("Ein zuckersüßes Bonbon, das\nein Pokémon zutraulicher\nmacht."),
+	PSTRING("A very sweet candy that\nmakes a Pokémon happier.")
+);
+static u8 str_item_superschutz_description[] = LANGDEP(
+	PSTRING("Hält 200 Schritte lang schwache, \nwilde Pokémon ab."),
+	PSTRING("Prevents weak wild Pokémon from\nappearing for 200 steps.")
+);
+static u8 str_item_top_schutz_description[] = LANGDEP(
+	PSTRING("Hält 250 Schritte lang schwache, \nwilde Pokémon ab."),
+	PSTRING("Prevents weak wild Pokémon from\nappearing for 250 steps.")
+);
+static u8 str_item_fluchtseil_description[] = LANGDEP(
+	PSTRING("Ein langes, festes Seil, das die\nsofortige Flucht aus Höhlen oder\nÄhnlichem ermöglicht."),
+	PSTRING("A long, durable rope.\nUse it to escape instantly from a\ncave or a dungeon.")
+);
+static u8 str_item_schutz_description[] = LANGDEP(
+	PSTRING("Hält 100 Schritte lang schwache, \nwilde Pokémon ab."),
+	PSTRING("Prevents weak wild Pokémon from\nappearing for 100 steps.")
+);
+static u8 str_item_wunderstaub_description[] = LANGDEP(
+	PSTRING("Weißer Puder, der Beeren\nwachsen lässt."),
+	PSTRING("White powder that makes\ngrow.")
+);
+static u8 str_item_item_58_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_59_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_5a_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_5b_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_5c_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_sonnenstein_description[] = LANGDEP(
+	PSTRING("Dieser spezielle Stein löst bei be-\nstimmten Pokémon die Entwicklung\naus. Er ist rot wie die Sonne."),
+	PSTRING("A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is as red as the sun.")
+);
+static u8 str_item_mondstein_description[] = LANGDEP(
+	PSTRING("Dieser spezielle Stein löst bei be-\nstimmten Pokémon die Entwicklung\naus. Er ist schwarz wie die Nacht."),
+	PSTRING("A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is as black as the night sky.")
+);
+static u8 str_item_feuerstein_description[] = LANGDEP(
+	PSTRING("Dieser spezielle Stein löst bei\nbestimmten Pokémon die\nEntwicklung aus. Er ist orange."),
+	PSTRING("A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is colored orange.")
+);
+static u8 str_item_donnerstein_description[] = LANGDEP(
+	PSTRING("Dieser spezielle Stein löst bei be-\nstimmten Pokémon die Entwicklung\naus. Er hat ein Blitzmuster."),
+	PSTRING("A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt has a thunderbolt pattern.")
+);
+static u8 str_item_wasserstein_description[] = LANGDEP(
+	PSTRING("Dieser spezielle Stein löst bei\nbestimmten Pokémon die\nEntwicklung aus. Er ist hellblau."),
+	PSTRING("A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt is a clear light blue.")
+);
+static u8 str_item_blattstein_description[] = LANGDEP(
+	PSTRING("Dieser spezielle Stein löst bei be-\nstimmten Pokémon die Entwicklung\naus. Er hat ein Blattmuster."),
+	PSTRING("A peculiar stone that makes certain\nspecies of Pokémon evolve.\nIt has a leaf pattern.")
+);
+static u8 str_item_linkkabel_description[] = LANGDEP(
+	PSTRING("Eine Box, die einen Pokémon Tausch\nsimuliert. Manche Pokémon benötigen\nein Item zum Tragen."),
+	PSTRING("?????")
+);
+static u8 str_item_finsterstein_description[] = LANGDEP(
+	PSTRING("Dieser besondere, düstere\nStein hilft manchen Pokémon\nbei ihrer Evolution."),
+	PSTRING("?????")
+);
+static u8 str_item_leuchtstein_description[] = LANGDEP(
+	PSTRING("Dieser besondere, hell leuchtende\nStein hilft manchen Pokémon\nbei ihrer Evolution."),
+	PSTRING("?????")
+);
+static u8 str_item_funkelstein_description[] = LANGDEP(
+	PSTRING("Dieser besondere, funkelnde\nStein hilft manchen Pokémon\nbei ihrer Evolution."),
+	PSTRING("?????")
+);
+static u8 str_item_minipilz_description[] = LANGDEP(
+	PSTRING("Ein kleiner und seltener Pilz, der \nseine Liebhaber hat."),
+	PSTRING("A small and rare mushroom.\nIt is quite popular among certain\npeople.")
+);
+static u8 str_item_riesenpilz_description[] = LANGDEP(
+	PSTRING("Ein großer und seltener Pilz, der \nseine Liebhaber hat."),
+	PSTRING("A large and rare mushroom.\nIt is very popular among certain\npeople.")
+);
+static u8 str_item_spv_orb_n_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_perle_description[] = LANGDEP(
+	PSTRING("Eine relativ kleine Perle, die in\nschönem Silber funkelt. Sie ist von\ngeringem Wert."),
+	PSTRING("A relatively small pearl that\nsparkles in a pretty silver color.\nIt can be sold cheaply.")
+);
+static u8 str_item_riesenperle_description[] = LANGDEP(
+	PSTRING("Eine relativ große Perle, die in\nschönem Silber funkelt. Sie ist von\nhohem Wert."),
+	PSTRING("A quite-large pearl that sparkles\nin a pretty silver color.\nIt can be sold at a high price.")
+);
+static u8 str_item_sternenstaub_description[] = LANGDEP(
+	PSTRING("Schöner, roter Sand, der sich\nseidenweich anfühlt. Er ist von\nhohem Wert."),
+	PSTRING("A pretty red sand with a loose,\nsilky feel.\nIt can be sold at a high price.")
+);
+static u8 str_item_sternenstueck_description[] = LANGDEP(
+	PSTRING("Ein schöner, roter Edelstein,\nder einen hohen Preis erzielen kann."),
+	PSTRING("A shard of a pretty gem that\nsparkles in a red color.\nIt can be sold at a high price.")
+);
+static u8 str_item_nugget_description[] = LANGDEP(
+	PSTRING("Ein Nugget aus purem Gold, das\neinen schimmernden Glanz besitzt. \nEs ist von großem Wert."),
+	PSTRING("A nugget of pure gold that gives\noff a lustrous gleam.\nIt can be sold at a high price.")
+);
+static u8 str_item_herzschuppe_description[] = LANGDEP(
+	PSTRING("Eine hübsche, herzförmige, sehr\nseltene Schuppe. Sie erstrahlt in\nden Farben des Regenbogens."),
+	PSTRING("A pretty, heart-shaped scale that\nis extremely rare. It glows faintly\nin the colors of a rainbow.")
+);
+static u8 str_item_angr_orb_p_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_angr_orb_n_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_vert_orb_p_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_vert_orb_n_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_init_orb_p_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_init_orb_n_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_spa_orb_p_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_spa_orb_n_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_spv_orb_p_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_79_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Zigzachs-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nZigzagoon print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_hafenbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Wingull-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nWingull print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_glitzerbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Pikachu-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nPikachu print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_eilbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Magnetilo-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nMagnemite print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_waldbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Bummelz-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nSlakoth print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_wellenbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Wailmer-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nWailmer print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_perlenbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief, der von einem Pokémon\ngetragen werden kann und als\nAufdruck den Träger hat."),
+	PSTRING("A piece of Mail to be held by a\nPokémon. It will bear the print of\nthe Pokémon holding it.")
+);
+static u8 str_item_dunkelbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Zwirrlicht-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nDuskull print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_tropenbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit Blubella-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
+	PSTRING("A piece of Mail featuring a cute\nBellossom print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_traumbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief, der von einem Pokémon\ngetragen werden kann und als\nAufdruck den Träger hat."),
+	PSTRING("A piece of Mail to be held by a\nPokémon. It will bear the print of\nthe Pokémon holding it.")
+);
+static u8 str_item_edelbrief_description[] = LANGDEP(
+	PSTRING("Ein Brief mit einem bezaubernden,\nextravaganten Aufdruck. Er kann\nvon einem Pokémon getragen werden."),
+	PSTRING("A piece of Mail featuring a\ngorgeous, extravagant print.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_retrobrief_description[] = LANGDEP(
+	PSTRING("Brief mit dem Aufdruck dreier\nniedlicher, possierlicher\nPokémon-Gesichter."),
+	PSTRING("A piece of Mail featuring a print\nof three cute Pokémon.\nIt is to be held by a Pokémon.")
+);
+static u8 str_item_amrenabeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) bewirkt im Kampf\nSelbstheilung bei Paralyse."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to heal paralysis.")
+);
+static u8 str_item_maronbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) weckt schlafendes\nPokémon im Kampf."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to wake up.")
+);
+static u8 str_item_pirsifbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) bewirkt im Kampf\nSelbstheilung bei Vergiftung."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to cure poison.")
+);
+static u8 str_item_fragiabeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) bewirkt im Kampf\nSelbstheilung bei Verbrennung."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to heal a burn.")
+);
+static u8 str_item_wilbirbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) bewirkt im Kampf\nSelbstheilung bei Frost."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle for defrosting.")
+);
+static u8 str_item_jonagobeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt AP im Kampf um\n10 Punkte auf."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to restore 10 PP.")
+);
+static u8 str_item_sinelbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt KP im Kampf um\n10 Punkte auf."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to restore 10 HP.")
+);
+static u8 str_item_persimbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) bewirkt im Kampf\nSelbstheilung bei Verwirrung."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to lift confusion.")
+);
+static u8 str_item_prunusbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) bewirkt im Kampf\nSelbstheilung bei Statusproblem."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to heal any problem.")
+);
+static u8 str_item_tsitrubeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt KP im Kampf um\n30 Punkte auf."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to restore 30 HP.")
+);
+static u8 str_item_giefebeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."),
+	PSTRING("A hold item that restores HP but\nmay cause confusion when used.")
+);
+static u8 str_item_wikibeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."),
+	PSTRING("A hold item that restores HP but\nmay cause confusion when used.")
+);
+static u8 str_item_magobeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."),
+	PSTRING("A hold item that restores HP but\nmay cause confusion when used.")
+);
+static u8 str_item_gauvebeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."),
+	PSTRING("A hold item that restores HP but\nmay cause confusion when used.")
+);
+static u8 str_item_yapabeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."),
+	PSTRING("A hold item that restores HP but\nmay cause confusion when used.")
+);
+static u8 str_item_himmihbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_morbbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_nanabbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_nirbebeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_sananabeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_granabeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_setangbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_qualotbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_honmelbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_labrusbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_tamotbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_saimbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_magostbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_rabutabeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_tronzibeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_kiwanbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_pallmbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_wasmelbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_durinbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_myrtilbeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_lydzibeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) hebt Angr.-Wert\nin einer Notlage."),
+	PSTRING("When held by a Pokémon, it raises\nthe Attack stat in a pinch.")
+);
+static u8 str_item_linganbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) hebt Vert.-Wert\nin einer Notlage."),
+	PSTRING("When held by a Pokémon, it raises\nthe Defense stat in a pinch.")
+);
+static u8 str_item_salkabeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) hebt Init.-Wert\nin einer Notlage."),
+	PSTRING("When held by a POKéMON, it raises\nthe Speed stat in a pinch.")
+);
+static u8 str_item_tahaybeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) hebt SP. Ang.-Wert\nin einer Notlage."),
+	PSTRING("When held by a Pokémon, it raises\nthe SP. Atk stat in a pinch.")
+);
+static u8 str_item_apikobeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) hebt SP. Ver.-Wert\nin einer Notlage."),
+	PSTRING("When held by a Pokémon, it raises\nthe SP. Def stat in a pinch.")
+);
+static u8 str_item_lansatbeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) hebt Volltrefferquote\nin einer Notlage."),
+	PSTRING("When held by a Pokémon, it raises\nthe critical-hit ratio in a pinch.")
+);
+static u8 str_item_krambobeere_description[] = LANGDEP(
+	PSTRING("Item (Tragen) hebt einen Statuswert\nin einer Notlage."),
+	PSTRING("When held by a Pokémon, it sharply\nraises one stat in a pinch.")
+);
+static u8 str_item_enigmabeere_description[] = LANGDEP(
+	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
+	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+);
+static u8 str_item_item_b0_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_wahlglas_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_wahlschal_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_blendpuder_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nsenkt die Genauigkeit des Gegners."),
+	PSTRING("An item to be held by a Pokémon.\nIt casts a tricky glare that lowers\nthe opponent’s accuracy.")
+);
+static u8 str_item_schlohkraut_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt jede Statusveränderung auf."),
+	PSTRING("An item to be held by a Pokémon.\nIt restores any lowered stat in\nbattle. It can be used only once.")
+);
+static u8 str_item_machoband_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfördert Wachstum, aber senkt Init."),
+	PSTRING("An item to be held by a POKéMON.\nIt promotes strong growth but\nlowers Speed while it is held.")
+);
+static u8 str_item_ep_teiler_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nteilt die Kampf-E.-Punkte."),
+	PSTRING("An item to be held by a Pokémon.\nThe holder gets a share of Exp.\npoints without having to battle.")
+);
+static u8 str_item_flinkklaue_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt die Erstschlagquote."),
+	PSTRING("An item to be held by a Pokémon.\nA light and sharp claw. The holder\nmay be able to strike first.")
+);
+static u8 str_item_sanftglocke_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nbesänftigt und fördert Sympathie."),
+	PSTRING("An item to be held by a Pokémon.\nA bell with a comforting chime that\nmakes the holder calm and friendly.")
+);
+static u8 str_item_mentalkraut_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nerlöst Pokémon von Anziehung."),
+	PSTRING("An item to be held by a Pokémon.\nIt snaps the holder out of\ninfatuation. It can be used once.")
+);
+static u8 str_item_wahlband_description[] = LANGDEP(
+	PSTRING("Ein Item, das ein Pokémon tragen\nkann. Es stärkt eine Attacke. Aber\nnur diese ist einsetzbar."),
+	PSTRING("An item to be held by a Pokémon.\nIt powers up one move, which\nbecomes the only usable one.")
+);
+static u8 str_item_king_stein_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nkann Gegner zurückweichen lassen."),
+	PSTRING("An item to be held by a Pokémon.\nIt may cause the foe to flinch\nupon taking damage.")
+);
+static u8 str_item_silberstaub_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverbessert Käfer-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA shiny silver powder that boosts\nthe power of Bug-type moves.")
+);
+static u8 str_item_muenzamulett_description[] = LANGDEP(
+	PSTRING("Ein Item, das ein Pokémon trägt\nund das doppeltes Preisgeld bringt,\nwenn der Träger am Kampf teilnimmt."),
+	PSTRING("An item to be held by a Pokémon.\nIt doubles the battle money if the\nholding Pokémon takes part.")
+);
+static u8 str_item_schutzband_description[] = LANGDEP(
+	PSTRING("Ein Item, das ein Pokémon trägt. Es\nkann wilde Pokémon abhalten, wenn\nder Träger an erster Stelle steht."),
+	PSTRING("An item to be held by a Pokémon.\nIt repels wild Pokémon if the\nholder is first in the party.")
+);
+static u8 str_item_seelentau_description[] = LANGDEP(
+	PSTRING("Ein Item, das von Latios oder\nLatias getragen werden kann. Es\nhebt SP. Ang. & SP. Ver."),
+	PSTRING("An orb to be held by a Latios or\nLatias. It raises the SP. Atk\nand SP. Def stats.")
+);
+static u8 str_item_abysszahn_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt SP. Ang. für Perlu!"),
+	PSTRING("An item to be held by a Pokémon.\nA fang that gleams a sharp silver.\nIt raises the SP. Atk stat.")
+);
+static u8 str_item_abyssplatte_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nhebt SP. Ver. für Perlu!"),
+	PSTRING("An item to be held by a Pokémon.\nA scale that shines a faint pink.\nIt raises the SP. Def stat.")
+);
+static u8 str_item_rauchball_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann.\nFluchtgarantie vor wilden Pokémon."),
+	PSTRING("An item to be held by a Pokémon.\nThe holding Pokémon can flee from\nany wild Pokémon for sure.")
+);
+static u8 str_item_ewigstein_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nbewirkt Entwicklungsstopp."),
+	PSTRING("An item to be held by a Pokémon.\nThe holding Pokémon is prevented\nfrom evolving.")
+);
+static u8 str_item_fokus_band_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nkann manchmal ein K.O. verhindern."),
+	PSTRING("An item to be held by a Pokémon.\nThe holding Pokémon may endure an\nattack, leaving just 1 HP.")
+);
+static u8 str_item_gluecks_ei_description[] = LANGDEP(
+	PSTRING("Ein Item, das ein Pokémon\nträgt, um Extra-E.-Punkte\nim Kampf zu erhalten."),
+	PSTRING("An item to be held by a Pokémon.\nAn egg filled with happiness that\nearns extra Exp. points in battle.")
+);
+static u8 str_item_scope_linse_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nerhöht die Volltrefferquote."),
+	PSTRING("An item to be held by a Pokémon.\nA lens that boosts the critical-hit\nratio of the holding Pokémon.")
+);
+static u8 str_item_metallmantel_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Stahl-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA special metallic film that boosts\nthe power of Steel-type moves.")
+);
+static u8 str_item_ueberreste_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfüllt im Kampf stetig KP auf."),
+	PSTRING("An item to be held by a Pokémon.\nThe holding Pokémon gradually\nregains HP during battle.")
+);
+static u8 str_item_drachenhaut_description[] = LANGDEP(
+	PSTRING("Seltsame Haut zum Tragen\nfür Pokémon der Elementklasse\nDrache."),
+	PSTRING("A thick and tough scale.\nA Dragon-type Pokémon may be\nholding it.")
+);
+static u8 str_item_kugelblitz_description[] = LANGDEP(
+	PSTRING("Ein Item, das von Pikachu\ngetragen werden kann. Es erhöht\nseinen SP. Ang.-Wert."),
+	PSTRING("An orb to be held by a Pikachu\nthat raises the SP. Atk stat.\nTouching it may cause a shock.")
+);
+static u8 str_item_pudersand_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Boden-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA loose, silky sand that boosts the\npower of Ground-type moves.")
+);
+static u8 str_item_granitstein_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Gestein-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nAn unbreakable stone that boosts\nthe power of Rock-type moves.")
+);
+static u8 str_item_wundersaat_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Pflanzen-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA seed imbued with life that boosts\nthe power of Grass-type moves.")
+);
+static u8 str_item_schattenglas_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Unlicht-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA shady-looking pair of glasses\nthat boosts Dark-type moves.")
+);
+static u8 str_item_schwarzgurt_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Kampf-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA belt that boosts determination\nand Fighting-type moves.")
+);
+static u8 str_item_magnet_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Elektro-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA powerful magnet that boosts the\npower of Electric-type moves.")
+);
+static u8 str_item_zauberwasser_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Wasser-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA teardrop-shaped gem that boosts\nthe power of Water-type moves.")
+);
+static u8 str_item_hackattack_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Flug-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA long, sharp beak that boosts the\npower of Flying-type moves.")
+);
+static u8 str_item_giftstich_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Gift-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA small, poisonous barb that boosts\nthe power of Poison-type moves.")
+);
+static u8 str_item_ewiges_eis_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Eis-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA piece of ice that repels heat\nand boosts Ice-type moves.")
+);
+static u8 str_item_bannsticker_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Geist-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA sinister, eerie tag that boosts\nGhost-type moves.")
+);
+static u8 str_item_kruemmloeffel_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Psycho-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA spoon imbued with telekinetic\npower boosts Psychic-type moves.")
+);
+static u8 str_item_holzkohle_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Feuer-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA combustible fuel that boosts the\npower of Fire-type moves.")
+);
+static u8 str_item_drachenzahn_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Drache-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA hard and sharp fang that boosts\nthe power of Dragon-type moves.")
+);
+static u8 str_item_seidenschal_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Normal-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nA sumptuous scarf that boosts the\npower of Normal-type moves.")
+);
+static u8 str_item_up_grade_description[] = LANGDEP(
+	PSTRING("Ein Softwareupdate für das\nvirtuelle Pokémon Porygon."),
+	PSTRING("A transparent device filled with all\nsorts of data.\nIt is made by Silph Co.")
+);
+static u8 str_item_seegesang_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nfüllt im Kampf stetig KP auf."),
+	PSTRING("An item to be held by a Pokémon.\nThe holding Pokémon regains some\nHP upon striking the foe.")
+);
+static u8 str_item_seerauch_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nverstärkt Wasser-Attacken."),
+	PSTRING("An item to be held by a Pokémon.\nIt slightly boosts the power of\nWater-type moves.")
+);
+static u8 str_item_laxrauch_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nsenkt Genauigkeit des Gegners."),
+	PSTRING("An item to be held by a Pokémon.\nIts tricky aroma slightly reduces\nthe foe’s accuracy.")
+);
+static u8 str_item_lucky_punch_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nerhöht Chaneiras Volltrefferquote."),
+	PSTRING("A glove to be held by a Chansey.\nIt raises Chansey’s critical-hit\nratio.")
+);
+static u8 str_item_metallstaub_description[] = LANGDEP(
+	PSTRING("Ein Item, das einem Pokémon zum\nTragen gegeben werden kann. Es\nerhöht den Vert.-Wert von Ditto."),
+	PSTRING("A fine, hard powder to be held by\na Ditto.\nIt raises Ditto’s Defense stat.")
+);
+static u8 str_item_kampfknochen_description[] = LANGDEP(
+	PSTRING("Ein harter Knochen, der den Angr.-\nWert von Tragosso oder Knogga\nerhöht, wenn sie ihn tragen."),
+	PSTRING("A hard bone of some sort to be\nheld by a Cubone or Marowak.\nIt raises the Attack stat.")
+);
+static u8 str_item_lauchstange_description[] = LANGDEP(
+	PSTRING("Diese Lauchstange erhöht die\nVolltrefferquote, wenn Porenta\nsie trägt."),
+	PSTRING("A stick of leek to be held by a\nFarfetch’D. It raises Farfetch’D’s\ncritical-hit ratio.")
+);
+static u8 str_item_bisaflornit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Bisaflor\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("?????")
+);
+static u8 str_item_gluraknit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Glurak\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("?????")
+);
+static u8 str_item_turtoknit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Turtok\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("?????")
+);
+static u8 str_item_terrasornit_description[] = LANGDEP(
+	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Terasorus könnte man\nmittels des Mega-Amuletts..."),
+	PSTRING("?????")
+);
+static u8 str_item_zerbernit_description[] = LANGDEP(
+	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Zerbertres könnte man\nmittels des Mega-Amuletts..."),
+	PSTRING("?????")
+);
+static u8 str_item_skullydranit_description[] = LANGDEP(
+	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Skullydra könnte man\nmittels des Mega-Amuletts..."),
+	PSTRING("?????")
+);
+static u8 str_item_aquananit_description[] = LANGDEP(
+	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Aquana könnte man\nmittels des Mega-Amuletts..."),
+	PSTRING("?????")
+);
+static u8 str_item_flamaranit_description[] = LANGDEP(
+	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Flamara könnte man\nmittels des Mega-Amuletts..."),
+	PSTRING("?????")
+);
+static u8 str_item_blitzanit_description[] = LANGDEP(
+	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Blitza könnte man\nmittels des Mega-Amuletts..."),
+	PSTRING("?????")
+);
+static u8 str_item_ampharosnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Ampharos\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("?????")
+);
+static u8 str_item_gengarnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Gengar\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("?????")
+);
+static u8 str_item_bibornit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Bibor\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("?????")
+);
+static u8 str_item_magmaherz_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_geowaznit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Geowaz\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by a Golem in\nbattle it can perform\na mega evolution.")
+);
+static u8 str_item_tropiusnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Tropius\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by a Tropius in\nbattle it can perform\na mega evolution.")
+);
+static u8 str_item_octillerynit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Octillery\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by an Octillery in\nbattle it can perform\na mega evolution.")
+);
+static u8 str_item_item_f2_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_f3_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_f4_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_f5_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_f6_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_item_f7_description[] = LANGDEP(
+	PSTRING(" ????"),
+	PSTRING("?????")
+);
+static u8 str_item_lahmrauch_description[] = LANGDEP(
+	PSTRING("Ein Item, das den Träger\nstets später angreifen lässt."),
+	PSTRING("An item to be held by a Pokémon\nto make it attack last.")
+);
+static u8 str_item_eisbrocken_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen, das die\nDauer von Hagelsturm verlängert."),
+	PSTRING("An item to be held by a Pokémon.\nIt extends the duration of hail.")
+);
+static u8 str_item_nassbrocken_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen, das die\nDauer von Regentanz verlängert."),
+	PSTRING("An item to be held by a Pokémon.\nIt extends the duration of rain.")
+);
+static u8 str_item_glattbrocken_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen, das die\nDauer von Sandsturm verlängert."),
+	PSTRING("An item to be held by a Pokémon.\nIt extends the duration of sandstrom.")
+);
+static u8 str_item_heissbrocken_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen, das die\nDauer von Sonnentag verlängert."),
+	PSTRING("An item to be held by a Pokémon.\nIt extends the duration of sunshine.")
+);
+static u8 str_item_lichtlehm_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen. Verlängert\ndie Dauer von Lichtschild und\nReflektor."),
+	PSTRING("An item to be held by a Pokémon.\nExtends the duration of Light Screen\nand Reflect.")
+);
+static u8 str_item_steinrauch_description[] = LANGDEP(
+	PSTRING("Ein Item zum Tragen, welches\nGestein Attacken verstärkt."),
+	PSTRING("An item to be held by a Pokémon.\pIt boosts Rock type attacks.")
+);
+static u8 str_item_scheuchrauch_description[] = LANGDEP(
+	PSTRING("Ein Item, das ein Pokémon trägt. Es\nkann wilde Pokémon abhalten, wenn\nder Träger an erster Stelle steht."),
+	PSTRING("An item to be held by a Pokémon.\pIt mitigates wild encounters.")
+);
+static u8 str_item_gluecksrauch_description[] = LANGDEP(
+	PSTRING("Wird es im Kampf getragen, geben\nTrainer mehr Preisgeld."),
+	PSTRING("An item to be held by a Pokémon.\pDoubles the price money reward.")
+);
+static u8 str_item_koeder_description[] = LANGDEP(
+	PSTRING("Erhöht beim Angeln die Chance,\ndass starke Pokémon anbeißen."),
+	PSTRING("Increases the chance to find\nstrong Pokémon when fishing.")
+);
+static u8 str_item_goldkoeder_description[] = LANGDEP(
+	PSTRING("Erhöht beim Angeln drastisch\ndie Chance, dass starke Pokémon\nanbeißen."),
+	PSTRING("Drastically increases the\nchance of finding strong\nPokémon when fishing.")
+);
+static u8 str_item_leuchtkoeder_description[] = LANGDEP(
+	PSTRING("Legendärer Köder, der\nbeim Angeln schillernde Pokémon\nanlockt."),
+	PSTRING("A legendary bait that\nis used to catch shiny\nPokémon when fishing.")
+);
+static u8 str_item_muenzkorb_description[] = LANGDEP(
+	PSTRING("Im Korb finden bis zu 9999\nMünzen für die Spielhalle\nPlatz."),
+	PSTRING("A case for holding Coins obtained\nat the Game Corner.\nIt holds up to 9,999 Coins.")
+);
+static u8 str_item_detektor_description[] = LANGDEP(
+	PSTRING("Ein Gerät, das verborgene Items\nvia Schallwellen ortet."),
+	PSTRING("A device used for finding items.\nIf there is a hidden item nearby\nwhen it is used, it emits a signal.")
+);
+static u8 str_item_angel_description[] = LANGDEP(
+	PSTRING("Damit kannst du in jedem Gewässer\nnach Pokémon angeln."),
+	PSTRING("An old and beat-up fishing rod.\nUse it by any body of water to \nfish for wild Pokémon.")
+);
+static u8 str_item_profiangel_description[] = LANGDEP(
+	PSTRING("Eine recht gute Angel, um Pokémon\nzu fangen."),
+	PSTRING("A new, good-quality fishing rod.\nUse it by any body of water to \nfish for wild Pokémon.")
+);
+static u8 str_item_superangel_description[] = LANGDEP(
+	PSTRING("Eine wundervoll gefertigte Angel.\nDie beste Angel, um nach\nPokémon zu fischen."),
+	PSTRING("An awesome, high-tech fishing rod.\nUse it by any body of water to fish\nfor wild Pokémon.")
+);
+static u8 str_item_bootsticket_description[] = LANGDEP(
+	PSTRING("Ein Ticket, um auf der M.S. Anne\nzu fahren. Eine Zeichnung der\nFähre ist auf dem Ticket zu sehen."),
+	PSTRING("The ticket required for sailing on\nthe ferry S.S. Anne.\nIt has a drawing of a ship on it.")
+);
+static u8 str_item_wettb_karte_description[] = LANGDEP(
+	PSTRING("Ausweis zur Teilnahme an Pokémon-\nWettbewerben. Die Zeichnung\neines Bandes ist aufgedruckt."),
+	PSTRING("The pass required for entering\nPokémon Contests. It has a\ndrawing of an award ribbon on it.")
+);
+static u8 str_item_item_10b_description[] = LANGDEP(
+	PSTRING("Ein antikes Relikt, das zwar aus\nStein ist, sich aber weich anfühlt."),
+	PSTRING("?????")
+);
+static u8 str_item_wailmerkanne_description[] = LANGDEP(
+	PSTRING("Ein Gegenstand zum Gießen von\nPflanzen, wie beispielsweise Beeren."),
+	PSTRING("A nifty watering pail.\nUse it to promote strong growth in\nBerries planted in soft soil.")
+);
+static u8 str_item_devon_waren_description[] = LANGDEP(
+	PSTRING("Ein Päckchen, das Maschinenteile\nder Devon Corp. enthält."),
+	PSTRING("A package that contains mechanical\nparts of some sort made by the\nDevon Corporation.")
+);
+static u8 str_item_aschetasche_description[] = LANGDEP(
+	PSTRING("Ein Säckchen zum Sammeln und\nAufbewahren von Vulkanasche."),
+	PSTRING("A sack used to collect volcanic\nash automatically during walks\nover deep ash.")
+);
+static u8 str_item_geisterschluessel_description[] = LANGDEP(
+	PSTRING("Mysteriöser Schlüssel, der\näußerst alt wirkt."),
+	PSTRING("The key to New Mauville, which\nwas constructed beneath Mauville\nCity.")
+);
+static u8 str_item_kunstrad_description[] = LANGDEP(
+	PSTRING("Dieses Klapprad ermöglicht Sprünge\nund Wheelies."),
+	PSTRING("A folding bicycle that is capable\nof stunts like jumps and wheelies.")
+);
+static u8 str_item_box_description[] = LANGDEP(
+	PSTRING("Box für , die im Beerenmixer\nhergestellt werden. Wird sie ge-\nschüttelt, spendet sie einen Riegel."),
+	PSTRING("A case for holding Pokéblocks made\nwith a Berry Blender. It releases\none Pokéblock when shaken.")
+);
+static u8 str_item_brief_description[] = LANGDEP(
+	PSTRING("Ein äußerst wichtiger Brief an Troy,\nvom Präsidenten der Devon Corp."),
+	PSTRING("An extremely important letter to\nSteven from the President of the\nDevon Corporation.")
+);
+static u8 str_item_aeon_ticket_description[] = LANGDEP(
+	PSTRING("Das Bootsticket zu einer fernen\nInsel im Süden. Eine Zeichnung\nder Insel ist aufgedruckt."),
+	PSTRING("The ticket required for sailing on a\nferry to a distant southern island.\nIt features a drawing of an island.")
+);
+static u8 str_item_spiritkern_description[] = LANGDEP(
+	PSTRING("Ein merkwürdiger Gesteinsbrocken,\numgeben von etwas Bösem."),
+	PSTRING("An orb that glows red.\nIt is said to contain an incredible\npower from ancient times.")
+);
+static u8 str_item_blaue_kugel_description[] = LANGDEP(
+	PSTRING("Eine blau glühende Kugel, die eine\nuralte Macht bergen soll."),
+	PSTRING("An orb that glows blue.\nIt is said to contain an incredible\npower from ancient times.")
+);
+static u8 str_item_scanner_description[] = LANGDEP(
+	PSTRING("Ein Gerät, mit dem man im Wasser\nnach Lebewesen sucht. Seine\nBedienung ist schwierig."),
+	PSTRING("A device used to search for\nlife-forms in water.\nIt looks too difficult to use.")
+);
+static u8 str_item_wuestenglas_description[] = LANGDEP(
+	PSTRING("Eine Schutzbrille, die es Trainern\nermöglicht, selbst bei Sandstürmen\nWüsten zu durchqueren."),
+	PSTRING("A pair of protective goggles.\nThey enable a Trainer to travel\nthrough even desert sandstorms.")
+);
+static u8 str_item_meteorit_description[] = LANGDEP(
+	PSTRING("Ein Meteorit, der im Mondberg\naufschlug. Ein sehr harter Klumpen."),
+	PSTRING("A meteorite that fell from space\nonto MT. Moon long ago.\nIt is very lumpy and hard.")
+);
+static u8 str_item_goldschluessel_description[] = LANGDEP(
+	PSTRING("Ein goldener Schlüssel, der\ndas Tor zum Turm des Schlosses\nArdeal öffnet."),
+	PSTRING("A key that opens the door to the\ntower of the castle Ardeal.")
+);
+static u8 str_item_zellenschluessel_description[] = LANGDEP(
+	PSTRING("Ein Schlüsselbund für Zellen\nauf der Schattenflut."),
+	PSTRING("A key that unlocks\nthe cells on the Shadow Flood.")
+);
+static u8 str_item_k4_schluessel_description[] = LANGDEP(
+	PSTRING("Der Schlüssel zur Kabine 4\nauf dem Schiffswrack. Er sieht\nalt und zerbrechlich aus."),
+	PSTRING("A key that opens the door to Room\n4 inside the Abandoned Ship.\nIt is old and looks easily broken.")
+);
+static u8 str_item_k6_schluessel_description[] = LANGDEP(
+	PSTRING("Der Schlüssel zur Kabine 6\nauf dem Schiffswrack. Er sieht\nalt und zerbrechlich aus."),
+	PSTRING("A key that opens the door to Room\n6 inside the Abandoned Ship.\nIt is old and looks easily broken.")
+);
+static u8 str_item_l_schluessel_description[] = LANGDEP(
+	PSTRING("Der Schlüssel zum Lagerraum im\nSchiffswrack. Er sieht alt und\nzerbrechlich aus."),
+	PSTRING("A key that opens the storage hold\ninside the Abandoned Ship.\nIt is old and looks easily broken.")
+);
+static u8 str_item_wurzelfossil_description[] = LANGDEP(
+	PSTRING("Das Fossil eines uralten Pokémon,\ndas in der Tiefsee lebte. Es sieht\nwie eine Pflanzenwurzel aus."),
+	PSTRING("A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a plant root.")
+);
+static u8 str_item_klauenfossil_description[] = LANGDEP(
+	PSTRING("Das Fossil eines uralten Pokémon,\ndas in der Tiefsee lebte. Es sieht\nwie eine Klaue aus."),
+	PSTRING("A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a claw.")
+);
+static u8 str_item_devon_scope_description[] = LANGDEP(
+	PSTRING("Ein Gerät der Devon Corp., \ndas unsichtbare Pokémon\nentlarvt."),
+	PSTRING("A scope that signals the presence\nof any unseeable Pokémon.\nIt is made by the Devon Corp.")
+);
+static u8 str_item_tm01_description[] = LANGDEP(
+	PSTRING(" ngriff, der zu-\nletzt erfolgt. Der\nAnwender schreckt\nevtl. zurück."),
+	PSTRING("An attack that is\nexecuted last.\nThe user flinches\nif hit beforehand.")
+);
+static u8 str_item_tm02_description[] = LANGDEP(
+	PSTRING("Der Gegner wird mit\nriesigen, scharfen\nKlauen stark\nverletzt."),
+	PSTRING("Sharp, huge claws\nhook and slash the\nfoe quickly and\nwith great power.")
+);
+static u8 str_item_tm03_description[] = LANGDEP(
+	PSTRING(" ngriff mit Wasser-\nwelle, die den\nGegner evtl.\nverwirren kann."),
+	PSTRING("An attack with a\npulsing blast of\nwater. It may also\nconfuse the foe.")
+);
+static u8 str_item_tm04_description[] = LANGDEP(
+	PSTRING("Erhöht SP. Ang.\nund SP. Ver.\ndurch\nKonzentration."),
+	PSTRING("The user focuses\nits mind to raise\nthe SP. Atk and\nSP. Def stats.")
+);
+static u8 str_item_tm05_description[] = LANGDEP(
+	PSTRING("Verjagt den Gegner\nund beendet den\nKampf in der\nWildnis."),
+	PSTRING("The foe is made to\nswitch out with an\nally. In the wild,\nthe battle ends.")
+);
+static u8 str_item_tm06_description[] = LANGDEP(
+	PSTRING(" ergiftet den\nGegner mit\neinem potenten\nToxin."),
+	PSTRING("A move that badly\npoisons the foe.\nIts poison damage\nworsens every turn.")
+);
+static u8 str_item_tm07_description[] = LANGDEP(
+	PSTRING("Hagelsturm für 5\nRunden. Schadet\nallen, außer\nEis-Pokémon."),
+	PSTRING("A hailstorm lasting\nfive turns damages\nall Pokémon except\nthe Ice-type.")
+);
+static u8 str_item_tm08_description[] = LANGDEP(
+	PSTRING("Pumpt den Körper\nauf, um den Angr.\nund die Vert. \nzu erhöhen."),
+	PSTRING("The user bulks up\nits body to boost\nboth its Attack and\nDefense stats.")
+);
+static u8 str_item_tm09_description[] = LANGDEP(
+	PSTRING("Verschießt 2 bis 5\nSamen gleichzeitig\nauf den Gegner."),
+	PSTRING("The user shoots\nseeds at the foe.\nTwo to five seeds\nare shot at once.")
+);
+static u8 str_item_tm10_description[] = LANGDEP(
+	PSTRING("Die Wirkung und\nElementklasse der\nAttacke hängt\nvom Benutzer ab."),
+	PSTRING("An attack that\nvaries in type and\nintensity depending\non the user.")
+);
+static u8 str_item_tm11_description[] = LANGDEP(
+	PSTRING(" rhöht Stärke\nvon Feuer-\nAttacken 5\nRunden lang."),
+	PSTRING("The sun blazes for\nfive turns, powering\nup Fire-type\nmoves.")
+);
+static u8 str_item_tm12_description[] = LANGDEP(
+	PSTRING("Legt den Gegner\nrein. Er benutzt\nnur noch Angriffe."),
+	PSTRING("The foe is taunted\ninto a rage that\nallows it to use\nonly attack moves.")
+);
+static u8 str_item_tm13_description[] = LANGDEP(
+	PSTRING(" er Gegner wird von\neinem Eisstrahl\ngetroffen und\nfriert evtl. ein."),
+	PSTRING("The foe is struck\nwith an icy beam.\nIt may freeze the\nfoe solid.")
+);
+static u8 str_item_tm14_description[] = LANGDEP(
+	PSTRING("Ein Schneesturm,\nder den Gegner\neinfrieren kann,\nwütet."),
+	PSTRING("The foe is blasted\nwith a blizzard.\nIt may freeze the\nfoe solid.")
+);
+static u8 str_item_tm15_description[] = LANGDEP(
+	PSTRING("Starke Attacke, die\nden Angreifer\nzwingt, eine Runde\nauszusetzen."),
+	PSTRING("A severely damaging\nattack that makes\nthe user rest on\nthe next turn.")
+);
+static u8 str_item_tm16_description[] = LANGDEP(
+	PSTRING("Erzeugt Lichtwand\nund senkt Schaden\ndurch SP. Ang.\nfür 5 Runden."),
+	PSTRING("A wall of light\ncuts damage from\nSP. Atk attacks\nfor five turns.")
+);
+static u8 str_item_tm17_description[] = LANGDEP(
+	PSTRING("Anwender weicht\njeder Attacke aus.\nScheitert evtl. bei\nWiederholung."),
+	PSTRING("Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.")
+);
+static u8 str_item_tm18_description[] = LANGDEP(
+	PSTRING("Erhöht Stärke\nvon Wasser-\nAttacken 5 \nRunden lang."),
+	PSTRING("A heavy rain falls\nfor five turns,\npowering up Water-\ntype moves.")
+);
+static u8 str_item_tm19_description[] = LANGDEP(
+	PSTRING(" tarke Attacke!\nAbsorbiert die\nHälfte des ange-\nrichteten Schadens."),
+	PSTRING("A harsh attack that\nabsorbs half the\ndamage it inflicted\nto restore HP.")
+);
+static u8 str_item_tm20_description[] = LANGDEP(
+	PSTRING(" eam d. Anwenders\nist 5 Runden vor\nStatusproblemen\ngeschützt."),
+	PSTRING("It protects the\nuser’s party from\nall status problems\nfor five turns.")
+);
+static u8 str_item_tm21_description[] = LANGDEP(
+	PSTRING("Die Attacke ist\nstärker bei\nverhassten\nTRAINERn."),
+	PSTRING("This attack move\ngrows more powerful\nthe less the user\nlikes its Trainer.")
+);
+static u8 str_item_tm22_description[] = LANGDEP(
+	PSTRING("Absorbiert Licht in\nder 1. Runde.\nIn Runde 2\nerfolgt der Angriff."),
+	PSTRING("A 2-turn move that\nblasts the foe with\nabsorbed energy in\nthe 2nd turn.")
+);
+static u8 str_item_tm23_description[] = LANGDEP(
+	PSTRING("Attacke mit hartem\nEisenschweif.\nSenkt evtl. den\nVert.-Wert."),
+	PSTRING("An attack with a\nsteel-hard tail.\nIt may lower the\nfoe’s Defense stat.")
+);
+static u8 str_item_tm24_description[] = LANGDEP(
+	PSTRING("Eine starke\nElektro-Attacke,\ndie den Gegner\nevtl. paralysiert."),
+	PSTRING("A strong electrical\nattack that may\nalso leave the foe\nparalyzed.")
+);
+static u8 str_item_tm25_description[] = LANGDEP(
+	PSTRING("Eine verheerende\nElektro-Attacke,\ndie den Gegner\nevtl. paralysiert."),
+	PSTRING("A brutal lightning\nattack that may\nalso leave the foe\nparalyzed.")
+);
+static u8 str_item_tm26_description[] = LANGDEP(
+	PSTRING("Ein mächtiges\nBeben, das außer\nfliegende Gegner\nalle trifft."),
+	PSTRING("An earthquake that\nstrikes all Pokémon\nin battle excluding\nthe user.")
+);
+static u8 str_item_tm27_description[] = LANGDEP(
+	PSTRING("Angriff, dessen\nKraft bei Freund-\nschaft zum Trai-\nner größer wird."),
+	PSTRING("This attack move\ngrows more powerful\nthe more the user\nlikes its Trainer.")
+);
+static u8 str_item_tm28_description[] = LANGDEP(
+	PSTRING("1. Runde eingrab-\nen und 2. an-\ngreifen. Flucht\naus Höhlen möglich."),
+	PSTRING("An attack that hits\non the 2nd turn.\nCan also be used\nto exit dungeons.")
+);
+static u8 str_item_tm29_description[] = LANGDEP(
+	PSTRING("Starke Psycho-\nAttacke, die evtl.\ndie SP. Ver.\nsenkt."),
+	PSTRING("A strong telekinetic\nattack. It may also\nlower the foe’s\nSP. Def stat.")
+);
+static u8 str_item_tm30_description[] = LANGDEP(
+	PSTRING("Bewirft Gegner mit\ngruseligem Ball\nund senkt evtl.\ndie SP. Ver."),
+	PSTRING("A shadowy blob is\nhurled at the foe.\nMay also lower the\nfoe’s SP. Def.")
+);
+static u8 str_item_tm31_description[] = LANGDEP(
+	PSTRING("Durchbricht Barri-\neren wie Licht-\nschild und\nReflektor."),
+	PSTRING("An attack that also\nbreaks any barrier\nlike Light Screen\nand Reflect.")
+);
+static u8 str_item_tm32_description[] = LANGDEP(
+	PSTRING("Erzeugt Eben-\nbilder, um \nFluchtwert\nzu erhöhen."),
+	PSTRING("The user creates\nillusory copies of\nitself to raise its\nevasiveness.")
+);
+static u8 str_item_tm33_description[] = LANGDEP(
+	PSTRING("Lichtwand, die\n5 Runden leicht\nvor physischen\nAngriffen schützt."),
+	PSTRING("A wall of light\ncuts damage from\nphysical attacks\nfor five turns.")
+);
+static u8 str_item_tm34_description[] = LANGDEP(
+	PSTRING("Angriff mit schnel-\nlem Elektro-Schlag.\nAusweichen nicht\nmöglich."),
+	PSTRING("A rapid jolt of\nelectricity strikes\nthe foe. It can’t\nbe evaded.")
+);
+static u8 str_item_tm35_description[] = LANGDEP(
+	PSTRING("Starke Feuer-\nAttacke, die evtl.\nden Gegner\nverbrennt."),
+	PSTRING("The foe is scorched\nwith intense flames.\nThe foe may suffer\na burn.")
+);
+static u8 str_item_tm36_description[] = LANGDEP(
+	PSTRING("Gegner wird mit \ndreckigem Schlamm\nbeworfen,\nvergiftet ihn evtl."),
+	PSTRING("Filthy sludge is\nhurled at the foe.\nIt may poison the\ntarget.")
+);
+static u8 str_item_tm37_description[] = LANGDEP(
+	PSTRING("Sandsturm für 5\nRunden. Kein Ef-\nfekt bei Gestein,\nBoden und Stahl."),
+	PSTRING("A 5-turn sandstorm\nthat damages all\ntypes except Rock,\nGround, and Steel.")
+);
+static u8 str_item_tm38_description[] = LANGDEP(
+	PSTRING("Feuersbrunst, die\nalles versengt.\nVerbrennt den\nGegner evtl."),
+	PSTRING("The foe is hit with\nan intense flame.\nIt may leave the\ntarget with a burn.")
+);
+static u8 str_item_tm39_description[] = LANGDEP(
+	PSTRING("Angriff mit Felsen.\nBei Erfolg wird\nder Init.-Wert des\nGegners gesenkt."),
+	PSTRING("Boulders are hurled\nat the foe. It also\nlowers the foe’s\nSpeed if it hits.")
+);
+static u8 str_item_tm40_description[] = LANGDEP(
+	PSTRING("Eine extrem\nschnelle und\nunausweichbare\nAttacke."),
+	PSTRING("An extremely fast\nattack against one\ntarget. It can’t be\nevaded.")
+);
+static u8 str_item_tm41_description[] = LANGDEP(
+	PSTRING("Erzürnt Gegner, um\nwiederholten Ein-\nsatz derselben Att.\nzu verhindern."),
+	PSTRING("It enrages the foe,\nmaking it incapable\nof using the same\nmove successively.")
+);
+static u8 str_item_tm42_description[] = LANGDEP(
+	PSTRING("Erhöht Angr. nach\nVerbrennung,\nParalyse oder\nVergiftung."),
+	PSTRING("An attack that is\nboosted if user is\nburned, poisoned,\nor paralyzed.")
+);
+static u8 str_item_tm43_description[] = LANGDEP(
+	PSTRING(" ngriff, der ab-\nhängig vom Ort\nnoch einen\nZusatzeffekt hat."),
+	PSTRING("An attack that may\nhave an additional\neffect that varies\nwith the terrain.")
+);
+static u8 str_item_tm44_description[] = LANGDEP(
+	PSTRING("Anwender schläft 2\nRunden, um KP\nund Status voll\nzu erneuern."),
+	PSTRING("The user sleeps for\ntwo turns to fully\nrestore HP and heal\nany status problem.")
+);
+static u8 str_item_tm45_description[] = LANGDEP(
+	PSTRING("Angriff des anderen\nGeschlechts\nunwahrscheinlich."),
+	PSTRING("If it is the other\ngender, the foe is\nmade infatuated and\nunlikely to attack.")
+);
+static u8 str_item_tm46_description[] = LANGDEP(
+	PSTRING("Das vom Gegner\ngehaltene Item\nkann gestohlen\nwerden."),
+	PSTRING("An attack that may\ntake the foe’s held\nitem if the user\nisn’t holding one.")
+);
+static u8 str_item_tm47_description[] = LANGDEP(
+	PSTRING("Trifft den Gegner\nmit Stahlflügeln.\nAnwenders Vert.\nsteigt evtl."),
+	PSTRING("The foe is hit with\nwings of steel.\nIt may also raise\nthe user’s Defense.")
+);
+static u8 str_item_tm48_description[] = LANGDEP(
+	PSTRING("Anwender tauscht\nSpezialfähigkeit mit\ngegnerischem\nPokémon."),
+	PSTRING("The user employs\nits psychic power\nto swap abilities\nwith the foe.")
+);
+static u8 str_item_tm49_description[] = LANGDEP(
+	PSTRING("Raubt den Effekt\nder gegn. heilenden\noder Status ver-\nändernden Attacke."),
+	PSTRING("Steals the effects\nof the foe’s\nhealing or status-\nchanging move.")
+);
+static u8 str_item_tm50_description[] = LANGDEP(
+	PSTRING("Angriff mit voller\nKraft, der den SP.\nAng. d. Anwenders \ndeutlich senkt."),
+	PSTRING("An intense attack\nthat also sharply\nreduces the user’s\nSP. Atk stat.")
+);
+static u8 str_item_vm01_description[] = LANGDEP(
+	PSTRING("Ein Basisangriff.\nDamit können\nkleine Bäume\ngefällt werden."),
+	PSTRING("A basic attack.\nIt can be used to\ncut down thin trees\nand grass.")
+);
+static u8 str_item_vm02_description[] = LANGDEP(
+	PSTRING("Sttigt in der 1.\nRunde empor und\ntrifft den Gegner\nin Runde 2."),
+	PSTRING("A 2-turn move that\nhits on the 2nd\nturn. Use it to fly\nto any known town.")
+);
+static u8 str_item_vm03_description[] = LANGDEP(
+	PSTRING("Eine Welle bricht\nüber den Gegner\nherein. Surfen\ndamit möglich."),
+	PSTRING("A big wave crashes\ndown on the foe.\nCan also be used\nfor crossing water.")
+);
+static u8 str_item_vm04_description[] = LANGDEP(
+	PSTRING("Gegner wird extrem\nstark getroffen. \nVerschieben von\nFelsen möglich."),
+	PSTRING("The foe is slugged\nat maximum power.\nCan also be used\nto move boulders.")
+);
+static u8 str_item_vm05_description[] = LANGDEP(
+	PSTRING("Erzeugt helles\nLicht, das nie\nverfehlt."),
+	PSTRING("A blast of light\nthat cuts the foe’s\naccuracy. It also\nilluminates caves.")
+);
+static u8 str_item_vm06_description[] = LANGDEP(
+	PSTRING("Zertrümmernder An-\ngriff, auch bei\nSteinen. Senkt evtl.\ndie Vert."),
+	PSTRING("An attack that may\nalso cut Defense.\nIt can also smash\ncracked boulders.")
+);
+static u8 str_item_vm07_description[] = LANGDEP(
+	PSTRING("Eine mächtige\nAttacke. Wasser-\nfälle können damit\nerklommen werden."),
+	PSTRING("A powerful charge\nattack. It can also\nbe used to climb\na waterfall.")
+);
+static u8 str_item_vm08_description[] = LANGDEP(
+	PSTRING("Erklimmt Felswände und\nverwirrt den Gegner\neventuell."),
+	PSTRING("Climbs rock faces\nand possibly confuses\nthe opponent.")
+);
+static u8 str_item_schwarzpulver_description[] = LANGDEP(
+	PSTRING("Verstärkt Explosionen. Träger\nexplodiert, wenn von\nFeuer getroffen."),
+	PSTRING("Boosts explosions. Holder explodes\nthemselves when hit by\nfire.")
+);
+static u8 str_item_vierblatt_description[] = LANGDEP(
+	PSTRING("Erhöht die Chance, dass wilde\nPokémon Items fallen lassen,\nwenn es getragen wird."),
+	PSTRING("Increases the chance of\nwild pokémon dropping\nitems when held.")
+);
+static u8 str_item_zugangskarte_description[] = LANGDEP(
+	PSTRING("Eine hochentwickelte Zugangs-\nKarte zum Gebäude der Laz.Corp."),
+	PSTRING("A parcel to be delivered to Prof.\nOak from Viridian City’s Pokémon\nMart.")
+);
+static u8 str_item_pokefloete_description[] = LANGDEP(
+	PSTRING("Eine Flöte, deren lieblicher Klang\njedes schlafende Pokémon\nsofort aufweckt."),
+	PSTRING("A flute that is said to instantly\nawaken any Pokémon. It has a\nlovely tone.")
+);
+static u8 str_item__oeffner_description[] = LANGDEP(
+	PSTRING("Der Schlüssel zur Arena der\nZinnoberinsel. Er ist rot und\nreich verziert."),
+	PSTRING("The key to Cinnabar Island Gym’s\nfront door. It is colored red and\ndecorated.")
+);
+static u8 str_item_alte_karte_description[] = LANGDEP(
+	PSTRING("Eine offenbar sehr alte\nSeekarte. Wohin sie einen wohl\nführt?"),
+	PSTRING("An appearently very old\nsea chart. Where would it lead\nyou?")
+);
+static u8 str_item_pkmcorder_description[] = LANGDEP(
+	PSTRING("Ein Kameragadget mit Wi-fi Empfang.\nEr kann sogar in Höhlen Bilder\nsenden.\n"),
+	PSTRING("A set of false teeth lost by the\nSafari Zone’s Warden. It makes his\nsmile sparkle.")
+);
+static u8 str_item_altbernstein_description[] = LANGDEP(
+	PSTRING("Ein Stück Bernstein, in dem die Gene\neines antiken Pokémon enthalten\nsind. Es ist durchsichtig!"),
+	PSTRING("A piece of amber that contains\nthe genes of an ancient Pokémon.\nIt is clear with a reddish tint.")
+);
+static u8 str_item_tueroeffner_description[] = LANGDEP(
+	PSTRING("Eine Art Schlüsselkarte, mit der die\nTüren im Hauptsitz der Silph\nCo. in Saffronia geöffnet werden."),
+	PSTRING("A card-type key that unlocks doors\nin Silph Co.’s Head Office in\nSaffron City.")
+);
+static u8 str_item_liftoeffner_description[] = LANGDEP(
+	PSTRING("Ein Schlüssel, mit dem der Aufzug\nim Versteck von Team Rocket\naktiviert wird."),
+	PSTRING("A key that operates the elevator\nin Team Rocket’s Hideout.\nIt bears the Team Rocket logo.")
+);
+static u8 str_item_helixfossil_description[] = LANGDEP(
+	PSTRING("Ein Fossil eines antiken\nPokémon, das am Meeresgrund\nlebte. Es sieht wie ein Panzer aus."),
+	PSTRING("A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a seashell.")
+);
+static u8 str_item_domfossil_description[] = LANGDEP(
+	PSTRING("Ein Fossil eines antiken\nPokémon, das am Meeresgrund\nlebte. Es sieht wie ein Panzer aus."),
+	PSTRING("A fossil of an ancient, seafloor-\ndwelling Pokémon. It appears to be\npart of a shell.")
+);
+static u8 str_item_silph_scope_description[] = LANGDEP(
+	PSTRING("Eine Linse, mit der unsichtbare PKMN\nsichtbar werden. Sie wurde von\nder Silph Co. hergestellt."),
+	PSTRING("A scope that makes unseeable\nPokémon visible.\nIt is made by Silph Co.")
+);
+static u8 str_item_fahrrad_description[] = LANGDEP(
+	PSTRING("Eine gewobene Wolke von watte-\nartier Konsistenz. Sie schwebt in\nBodennähe und kann Menschen tragen."),
+	PSTRING("A folding bicycle that allows\nfaster movement than the Running\nShoes.")
+);
+static u8 str_item_karte_description[] = LANGDEP(
+	PSTRING("Eine praktische Karte, die jederzeit\naufgerufen werden kann. Dein aktu-\neller Standort wird auch angezeigt."),
+	PSTRING("A very convenient map that can be\nviewed anytime. It even shows your \npresent location.")
+);
+static u8 str_item_kampffahnder_description[] = LANGDEP(
+	PSTRING("Ein Gerät, das rückkampfwillige\nTrainer ausfindig macht. Die\nBatterie lädt sich beim Reisen auf."),
+	PSTRING("A device that indicates Trainers\nwho want to battle. The battery\ncharges while traveling.")
+);
+static u8 str_item_ruhmesdatei_description[] = LANGDEP(
+	PSTRING("Ein Gerät, das dir Infos über\nwichtige Personen, die dir\nbegegnet sind, ins Gedächtnis ruft."),
+	PSTRING("A device that enables you to\nrecall what you’ve heard and seen\nabout famous people.")
+);
+static u8 str_item_vmtm_box_description[] = LANGDEP(
+	PSTRING("Eine Box, in der Vms und Tms\naufbewahrt werden. Sie ist in\ndeinen Beutel integriert."),
+	PSTRING("A case that holds TMs and HMs.\nIt is attached to the Bag’s\ncompartment for important items.")
+);
+static u8 str_item_beerentuete_description[] = LANGDEP(
+	PSTRING("Eine Tüte, in der Beeren\naufbewahrt werden. Sie ist in\ndeinen Beutel integriert."),
+	PSTRING("A pouch for carrying Berries.\nIt is attached to the Bag’s\ncompartment for important items.")
+);
+static u8 str_item_lehrkanal_description[] = LANGDEP(
+	PSTRING("Eine Sendung, die dem Anfänger-\nTrainer mit nützlichen Tipps\nzur Seite steht."),
+	PSTRING("A television set that is tuned to\na program with useful tips for\nnovice Trainers.")
+);
+static u8 str_item_tri_pass_description[] = LANGDEP(
+	PSTRING("Ein Pass für die Fähren zwischen\nEiland Eins, Zwei und Drei. Es\nsind drei Inseln aufgedruckt."),
+	PSTRING("A pass for ferries between One,\nTwo, and Three Island.\nIt has a drawing of three islands.")
+);
+static u8 str_item_bunt_pass_description[] = LANGDEP(
+	PSTRING("Ein Pass für die Fähren zwischen\nOrania und den Sevii Eilanden.\nEs ist ein Regenbogen aufgedruckt."),
+	PSTRING("A pass for ferries between\nVermilion and the Sevii Islands.\nIt features a drawing of a rainbow.")
+);
+static u8 str_item_mega_amulett_description[] = LANGDEP(
+	PSTRING("Ein goldenes Amulett, in das ein\nEdelstein eingesetzt ist. Es\nscheint von innen zu leuchten."),
+	PSTRING("An aromatic tea prepared by an old\nlady. It will slake even the worst\nthirst.")
+);
+static u8 str_item_geheimticket_description[] = LANGDEP(
+	PSTRING("Eine Fahrkarte für das Schiff zum\nNabelfelsen. Sie leuchtet\ngeheimnisvoll."),
+	PSTRING("A ticket required to board the ship\nto Navel Rock.\nIt glows with a mystic light.")
+);
+static u8 str_item_auroraticket_description[] = LANGDEP(
+	PSTRING("Eine Fahrkarte für das Schiff zur\nEntstehungsinsel. Sie\nleuchtet wundervoll."),
+	PSTRING("A ticket required to board the ship\nto Birth Island.\nIt glows beautifully.")
+);
+static u8 str_item_puderdoeschen_description[] = LANGDEP(
+	PSTRING("Ein Glas, um Beerenpuder,\nder mit der Beerenmühle\nhergestellt wurde, aufzubewahren."),
+	PSTRING("A jar for storing Berry Powder\nmade using a Berry Crusher.")
+);
+static u8 str_item_rubin_description[] = LANGDEP(
+	PSTRING("Ein ausgesprochen schönes Juwel,\ndas rötlich schimmert. Es\nsymbolisiert Leidenschaft."),
+	PSTRING("An exquisitely beautiful gem that\nhas a red glow.\nIt symbolizes passion.")
+);
+static u8 str_item_saphir_description[] = LANGDEP(
+	PSTRING("Ein ausgesprochen schönes Juwel,\ndas blau schimmert. Es\nsymbolisiert Ehrlichkeit."),
+	PSTRING("An exquisitely beautiful gem that\nhas a blue glow.\nIt symbolizes honesty.")
+);
+
 
 item items[] = {
 	{
@@ -17,7 +1519,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x0_item_none,
+		str_item_none_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -33,7 +1535,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x1_item_meisterball,
+		str_item_meisterball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -49,7 +1551,7 @@ item items[] = {
 		1200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x2_item_hyperball,
+		str_item_hyperball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -65,7 +1567,7 @@ item items[] = {
 		600, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x3_item_superball,
+		str_item_superball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -81,7 +1583,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x4_item_pokeball,
+		str_item_pokeball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -97,7 +1599,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x5_item_safariball,
+		str_item_safariball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -113,7 +1615,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x6_item_netzball,
+		str_item_netzball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -129,7 +1631,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x7_item_tauchball,
+		str_item_tauchball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -145,7 +1647,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x8_item_nestball,
+		str_item_nestball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -161,7 +1663,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x9_item_wiederball,
+		str_item_wiederball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -177,7 +1679,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa_item_timerball,
+		str_item_timerball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -193,7 +1695,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xb_item_luxusball,
+		str_item_luxusball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -209,7 +1711,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xc_item_premierball,
+		str_item_premierball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_POKEBALLS, //pocket
@@ -225,7 +1727,7 @@ item items[] = {
 		300, //price
 		0, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd_item_trank,
+		str_item_trank_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -241,7 +1743,7 @@ item items[] = {
 		250, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe_item_gegengift,
+		str_item_gegengift_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -257,7 +1759,7 @@ item items[] = {
 		250, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf_item_feuerheiler,
+		str_item_feuerheiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -273,7 +1775,7 @@ item items[] = {
 		250, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10_item_eisheiler,
+		str_item_eisheiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -289,7 +1791,7 @@ item items[] = {
 		250, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11_item_aufwecker,
+		str_item_aufwecker_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -305,7 +1807,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x12_item_para_heiler,
+		str_item_para_heiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -321,7 +1823,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		255, //holding_effect_param
-		str_item_desc_x13_item_top_genesung,
+		str_item_top_genesung_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -337,7 +1839,7 @@ item items[] = {
 		2500, //price
 		0, //holding_effect_id
 		255, //holding_effect_param
-		str_item_desc_x14_item_top_trank,
+		str_item_top_trank_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -353,7 +1855,7 @@ item items[] = {
 		1200, //price
 		0, //holding_effect_id
 		200, //holding_effect_param
-		str_item_desc_x15_item_hypertrank,
+		str_item_hypertrank_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -369,7 +1871,7 @@ item items[] = {
 		700, //price
 		0, //holding_effect_id
 		50, //holding_effect_param
-		str_item_desc_x16_item_supertrank,
+		str_item_supertrank_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -385,7 +1887,7 @@ item items[] = {
 		600, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x17_item_hyperheiler,
+		str_item_hyperheiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -401,7 +1903,7 @@ item items[] = {
 		1500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x18_item_beleber,
+		str_item_beleber_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -417,7 +1919,7 @@ item items[] = {
 		4000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x19_item_top_beleber,
+		str_item_top_beleber_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -433,7 +1935,7 @@ item items[] = {
 		900, //price
 		0, //holding_effect_id
 		50, //holding_effect_param
-		str_item_desc_x1a_item_co_mix,
+		str_item_co_mix_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -449,7 +1951,7 @@ item items[] = {
 		1250, //price
 		0, //holding_effect_id
 		60, //holding_effect_param
-		str_item_desc_x1b_item_c_saft,
+		str_item_c_saft_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -465,7 +1967,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		80, //holding_effect_param
-		str_item_desc_x1c_item_c_serum,
+		str_item_c_serum_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -481,7 +1983,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		100, //holding_effect_param
-		str_item_desc_x1d_item_kuhmuh_milch,
+		str_item_kuhmuh_milch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -497,7 +1999,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x1e_item_energiestaub,
+		str_item_energiestaub_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -513,7 +2015,7 @@ item items[] = {
 		800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x1f_item_kraftwurzel,
+		str_item_kraftwurzel_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -529,7 +2031,7 @@ item items[] = {
 		450, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x20_item_heilpuder,
+		str_item_heilpuder_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -545,7 +2047,7 @@ item items[] = {
 		2800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x21_item_vitalkraut,
+		str_item_vitalkraut_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -561,7 +2063,7 @@ item items[] = {
 		1200, //price
 		0, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_x22_item_aether,
+		str_item_aether_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -577,7 +2079,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		255, //holding_effect_param
-		str_item_desc_x23_item_top_aether,
+		str_item_top_aether_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -593,7 +2095,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_x24_item_elixier,
+		str_item_elixier_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -609,7 +2111,7 @@ item items[] = {
 		4500, //price
 		0, //holding_effect_id
 		255, //holding_effect_param
-		str_item_desc_x25_item_top_elixier,
+		str_item_top_elixier_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -625,7 +2127,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x26_item_lavakeks,
+		str_item_lavakeks_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -641,7 +2143,7 @@ item items[] = {
 		100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x27_item_blaue_floete,
+		str_item_blaue_floete_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -657,7 +2159,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x28_item_gelbe_floete,
+		str_item_gelbe_floete_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -673,7 +2175,7 @@ item items[] = {
 		300, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x29_item_rote_floete,
+		str_item_rote_floete_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -689,7 +2191,7 @@ item items[] = {
 		400, //price
 		0, //holding_effect_id
 		50, //holding_effect_param
-		str_item_desc_x2a_item_schw_floete,
+		str_item_schw_floete_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -705,7 +2207,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		150, //holding_effect_param
-		str_item_desc_x2b_item_weisse_floete,
+		str_item_weisse_floete_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -721,7 +2223,7 @@ item items[] = {
 		100, //price
 		1, //holding_effect_id
 		75, //holding_effect_param
-		str_item_desc_x2c_item_beerensaft,
+		str_item_beerensaft_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -737,7 +2239,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x2d_item_zauberasche,
+		str_item_zauberasche_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -753,7 +2255,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x2e_item_kuestensalz,
+		str_item_kuestensalz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -769,7 +2271,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x2f_item_kuestenschale,
+		str_item_kuestenschale_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -785,7 +2287,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x30_item_purpurstueck,
+		str_item_purpurstueck_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -801,7 +2303,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x31_item_indigostueck,
+		str_item_indigostueck_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -817,7 +2319,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x32_item_gelbstueck,
+		str_item_gelbstueck_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -833,7 +2335,7 @@ item items[] = {
 		200, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x33_item_gruenstueck,
+		str_item_gruenstueck_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -849,7 +2351,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x34_item_magmaisierer,
+		str_item_magmaisierer_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -865,7 +2367,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x35_item_stromisierer,
+		str_item_stromisierer_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -881,7 +2383,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x36_item_schoenschuppe,
+		str_item_schoenschuppe_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -897,7 +2399,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x37_item_dubiosdisk,
+		str_item_dubiosdisc_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -913,7 +2415,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x38_item_duesterumhang,
+		str_item_duesterumhang_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -929,7 +2431,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x39_item_schuetzer,
+		str_item_schuetzer_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -945,7 +2447,7 @@ item items[] = {
 		200, //price
 		HOLD_EFFECT_LIFE_ORB, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_x3a_item_leben_orb,
+		str_item_leben_orb_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -961,7 +2463,7 @@ item items[] = {
 		200, //price
 		HOLD_EFFECT_EVOLITE, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x3b_item_evolith,
+		str_item_evolith_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -977,7 +2479,7 @@ item items[] = {
 		0, //price
 		30, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_x3c_item_scharfzahn,
+		str_item_scharfzahn_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -993,7 +2495,7 @@ item items[] = {
 		6000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x3d_item_item_3d,
+		str_item_ovaler_stein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1009,7 +2511,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x3e_item_item_3e,
+		str_item_item_3e_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1025,7 +2527,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x3f_item_kp_plus,
+		str_item_kp_plus_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1041,7 +2543,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x40_item_protein,
+		str_item_protein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1057,7 +2559,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x41_item_eisen,
+		str_item_eisen_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1073,7 +2575,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x42_item_carbon,
+		str_item_carbon_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1089,7 +2591,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x43_item_kalzium,
+		str_item_kalzium_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1105,7 +2607,7 @@ item items[] = {
 		4800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x44_item_sonderbonbon,
+		str_item_sonderbonbon_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1121,7 +2623,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x45_item_ap_plus,
+		str_item_ap_plus_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1137,7 +2639,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x46_item_zink,
+		str_item_zink_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1153,7 +2655,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x47_item_ap_top,
+		str_item_ap_top_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1169,7 +2671,7 @@ item items[] = {
 		14400, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x48_item_goldbonbon,
+		str_item_goldbonbon_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1185,7 +2687,7 @@ item items[] = {
 		700, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x49_item_megablock,
+		str_item_megablock_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1201,7 +2703,7 @@ item items[] = {
 		650, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x4a_item_angriffplus,
+		str_item_angriffplus_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1217,7 +2719,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x4b_item_x_angriff,
+		str_item_x_angriff_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1233,7 +2735,7 @@ item items[] = {
 		550, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x4c_item_x_abwehr,
+		str_item_x_abwehr_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1249,7 +2751,7 @@ item items[] = {
 		350, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x4d_item_x_tempo,
+		str_item_x_tempo_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1265,7 +2767,7 @@ item items[] = {
 		950, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x4e_item_x_treffer,
+		str_item_x_treffer_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1281,7 +2783,7 @@ item items[] = {
 		350, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x4f_item_x_spezial,
+		str_item_x_spezial_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1297,7 +2799,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x50_item_pokepuppe,
+		str_item_pokepuppe_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1313,7 +2815,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x51_item_eneco_rute,
+		str_item_eneco_rute_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1329,7 +2831,7 @@ item items[] = {
 		2800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x52_item_suessbonbon,
+		str_item_suessbonbon_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1345,7 +2847,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		200, //holding_effect_param
-		str_item_desc_x53_item_superschutz,
+		str_item_superschutz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1361,7 +2863,7 @@ item items[] = {
 		700, //price
 		0, //holding_effect_id
 		250, //holding_effect_param
-		str_item_desc_x54_item_top_schutz,
+		str_item_top_schutz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1377,7 +2879,7 @@ item items[] = {
 		550, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x55_item_fluchtseil,
+		str_item_fluchtseil_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1393,7 +2895,7 @@ item items[] = {
 		350, //price
 		0, //holding_effect_id
 		100, //holding_effect_param
-		str_item_desc_x56_item_schutz,
+		str_item_schutz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1409,7 +2911,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x57_item_kraftstaub,
+		str_item_wunderstaub_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1425,7 +2927,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x58_item_item_58,
+		str_item_item_58_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1441,7 +2943,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x59_item_item_59,
+		str_item_item_59_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1457,7 +2959,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x5a_item_item_5a,
+		str_item_item_5a_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1473,7 +2975,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x5b_item_item_5b,
+		str_item_item_5b_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1489,7 +2991,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x5c_item_item_5c,
+		str_item_item_5c_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1505,7 +3007,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x5d_item_sonnenstein,
+		str_item_sonnenstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1521,7 +3023,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x5e_item_mondstein,
+		str_item_mondstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1537,7 +3039,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x5f_item_feuerstein,
+		str_item_feuerstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1553,7 +3055,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x60_item_donnerstein,
+		str_item_donnerstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1569,7 +3071,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x61_item_wasserstein,
+		str_item_wasserstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1585,7 +3087,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x62_item_blattstein,
+		str_item_blattstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1601,7 +3103,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x63_item_linkkabel,
+		str_item_linkkabel_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1617,7 +3119,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x64_item_finsterstein,
+		str_item_finsterstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1633,7 +3135,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x65_item_leuchtstein,
+		str_item_leuchtstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1649,7 +3151,7 @@ item items[] = {
 		2100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x66_item_funkelstein,
+		str_item_funkelstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1665,7 +3167,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x67_item_minipilz,
+		str_item_minipilz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1681,7 +3183,7 @@ item items[] = {
 		5000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x68_item_riesenpilz,
+		str_item_riesenpilz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1697,7 +3199,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x69_item_spv_orb_n,
+		str_item_spv_orb_n_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1713,7 +3215,7 @@ item items[] = {
 		1400, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x6a_item_perle,
+		str_item_perle_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1729,7 +3231,7 @@ item items[] = {
 		7500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x6b_item_riesenperle,
+		str_item_riesenperle_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1745,7 +3247,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x6c_item_sternenstaub,
+		str_item_sternenstaub_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1761,7 +3263,7 @@ item items[] = {
 		9800, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x6d_item_sternenstueck,
+		str_item_sternenstueck_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1777,7 +3279,7 @@ item items[] = {
 		10000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x6e_item_nugget,
+		str_item_nugget_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1793,7 +3295,7 @@ item items[] = {
 		100, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x6f_item_herzschuppe,
+		str_item_herzschuppe_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1809,7 +3311,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x70_item_angr_orb_p,
+		str_item_angr_orb_p_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1825,7 +3327,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x71_item_angr_orb_n,
+		str_item_angr_orb_n_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1841,7 +3343,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x72_item_vert_orb_p,
+		str_item_vert_orb_p_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1857,7 +3359,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x73_item_vert_orb_n,
+		str_item_vert_orb_n_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1873,7 +3375,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x74_item_init_orb_p,
+		str_item_init_orb_p_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1889,7 +3391,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x75_item_init_orb_n,
+		str_item_init_orb_n_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1905,7 +3407,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x76_item_spa_orb_p,
+		str_item_spa_orb_p_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1921,7 +3423,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x77_item_spa_orb_n,
+		str_item_spa_orb_n_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1937,7 +3439,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x78_item_spv_orb_p,
+		str_item_spv_orb_p_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1953,7 +3455,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x79_item_79,
+		str_item_79_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1969,7 +3471,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x7a_item_hafenbrief,
+		str_item_hafenbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -1985,7 +3487,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x7b_item_glitzerbrief,
+		str_item_glitzerbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2001,7 +3503,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x7c_item_eilbrief,
+		str_item_eilbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2017,7 +3519,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x7d_item_waldbrief,
+		str_item_waldbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2033,7 +3535,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x7e_item_wellenbrief,
+		str_item_wellenbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2049,7 +3551,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x7f_item_perlenbrief,
+		str_item_perlenbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2065,7 +3567,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x80_item_dunkelbrief,
+		str_item_dunkelbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2081,7 +3583,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x81_item_tropenbrief,
+		str_item_tropenbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2097,7 +3599,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x82_item_traumbrief,
+		str_item_traumbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2113,7 +3615,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x83_item_edelbrief,
+		str_item_edelbrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2129,7 +3631,7 @@ item items[] = {
 		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x84_item_retrobrief,
+		str_item_retrobrief_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2145,7 +3647,7 @@ item items[] = {
 		20, //price
 		2, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x85_item_amrenabeere,
+		str_item_amrenabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2161,7 +3663,7 @@ item items[] = {
 		20, //price
 		3, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x86_item_maronbeere,
+		str_item_maronbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2177,7 +3679,7 @@ item items[] = {
 		20, //price
 		4, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x87_item_pirsifbeere,
+		str_item_pirsifbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2193,7 +3695,7 @@ item items[] = {
 		20, //price
 		5, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x88_item_fragiabeere,
+		str_item_fragiabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2209,7 +3711,7 @@ item items[] = {
 		20, //price
 		6, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x89_item_wilbirbeere,
+		str_item_wilbirbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2225,7 +3727,7 @@ item items[] = {
 		20, //price
 		7, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_x8a_item_jonagobeere,
+		str_item_jonagobeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2241,7 +3743,7 @@ item items[] = {
 		20, //price
 		1, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_x8b_item_sinelbeere,
+		str_item_sinelbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2257,7 +3759,7 @@ item items[] = {
 		20, //price
 		8, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x8c_item_persimbeere,
+		str_item_persimbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2273,7 +3775,7 @@ item items[] = {
 		20, //price
 		9, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x8d_item_prunusbeere,
+		str_item_prunusbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2289,7 +3791,7 @@ item items[] = {
 		20, //price
 		1, //holding_effect_id
 		30, //holding_effect_param
-		str_item_desc_x8e_item_tsitrubeere,
+		str_item_tsitrubeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2305,7 +3807,7 @@ item items[] = {
 		20, //price
 		10, //holding_effect_id
 		8, //holding_effect_param
-		str_item_desc_x8f_item_giefebeere,
+		str_item_giefebeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2321,7 +3823,7 @@ item items[] = {
 		20, //price
 		11, //holding_effect_id
 		8, //holding_effect_param
-		str_item_desc_x90_item_wikibeere,
+		str_item_wikibeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2337,7 +3839,7 @@ item items[] = {
 		20, //price
 		12, //holding_effect_id
 		8, //holding_effect_param
-		str_item_desc_x91_item_magobeere,
+		str_item_magobeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2353,7 +3855,7 @@ item items[] = {
 		20, //price
 		13, //holding_effect_id
 		8, //holding_effect_param
-		str_item_desc_x92_item_gauvebeere,
+		str_item_gauvebeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2369,7 +3871,7 @@ item items[] = {
 		20, //price
 		14, //holding_effect_id
 		8, //holding_effect_param
-		str_item_desc_x93_item_yapabeere,
+		str_item_yapabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2385,7 +3887,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x94_item_himmihbeere,
+		str_item_himmihbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2401,7 +3903,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x95_item_morbbeere,
+		str_item_morbbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2417,7 +3919,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x96_item_nanabbeere,
+		str_item_nanabbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2433,7 +3935,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x97_item_nirbebeere,
+		str_item_nirbebeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2449,7 +3951,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x98_item_sananabeere,
+		str_item_sananabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2465,7 +3967,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x99_item_granabeere,
+		str_item_granabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2481,7 +3983,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x9a_item_setangbeere,
+		str_item_setangbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2497,7 +3999,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x9b_item_qualotbeere,
+		str_item_qualotbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2513,7 +4015,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x9c_item_honmelbeere,
+		str_item_honmelbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2529,7 +4031,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x9d_item_labrusbeere,
+		str_item_labrusbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2545,7 +4047,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x9e_item_tamotbeere,
+		str_item_tamotbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2561,7 +4063,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x9f_item_saimbeere,
+		str_item_saimbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2577,7 +4079,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa0_item_magostbeere,
+		str_item_magostbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2593,7 +4095,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa1_item_rabutabeere,
+		str_item_rabutabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2609,7 +4111,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa2_item_tronzibeere,
+		str_item_tronzibeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2625,7 +4127,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa3_item_kiwanbeere,
+		str_item_kiwanbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2641,7 +4143,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa4_item_pallmbeere,
+		str_item_pallmbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2657,7 +4159,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa5_item_wasmelbeere,
+		str_item_wasmelbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2673,7 +4175,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa6_item_durinbeere,
+		str_item_durinbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2689,7 +4191,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xa7_item_myrtilbeere,
+		str_item_myrtilbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2705,7 +4207,7 @@ item items[] = {
 		20, //price
 		15, //holding_effect_id
 		4, //holding_effect_param
-		str_item_desc_xa8_item_lydzibeere,
+		str_item_lydzibeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2721,7 +4223,7 @@ item items[] = {
 		20, //price
 		16, //holding_effect_id
 		4, //holding_effect_param
-		str_item_desc_xa9_item_linganbeere,
+		str_item_linganbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2737,7 +4239,7 @@ item items[] = {
 		20, //price
 		17, //holding_effect_id
 		4, //holding_effect_param
-		str_item_desc_xaa_item_salkabeere,
+		str_item_salkabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2753,7 +4255,7 @@ item items[] = {
 		20, //price
 		18, //holding_effect_id
 		4, //holding_effect_param
-		str_item_desc_xab_item_tahaybeere,
+		str_item_tahaybeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2769,7 +4271,7 @@ item items[] = {
 		20, //price
 		19, //holding_effect_id
 		4, //holding_effect_param
-		str_item_desc_xac_item_apikobeere,
+		str_item_apikobeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2785,7 +4287,7 @@ item items[] = {
 		20, //price
 		20, //holding_effect_id
 		4, //holding_effect_param
-		str_item_desc_xad_item_lansatbeere,
+		str_item_lansatbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2801,7 +4303,7 @@ item items[] = {
 		20, //price
 		21, //holding_effect_id
 		4, //holding_effect_param
-		str_item_desc_xae_item_krambobeere,
+		str_item_krambobeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2817,7 +4319,7 @@ item items[] = {
 		20, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xaf_item_enigmabeere,
+		str_item_enigmabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_BERRIES, //pocket
@@ -2833,7 +4335,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xb0_item_item_b0,
+		str_item_item_b0_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2849,7 +4351,7 @@ item items[] = {
 		100, //price
 		29, //holding_effect_id
 		CHOICE_ITEM_SPECS, //holding_effect_param
-		str_item_desc_xb1_item_wahlglas,
+		str_item_wahlglas_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2865,7 +4367,7 @@ item items[] = {
 		100, //price
 		29, //holding_effect_id
 		CHOICE_ITEM_SCARF, //holding_effect_param
-		str_item_desc_xb2_item_wahlschal,
+		str_item_wahlschal_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2881,7 +4383,7 @@ item items[] = {
 		10, //price
 		22, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_xb3_item_blendpuder,
+		str_item_blendpuder_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2897,7 +4399,7 @@ item items[] = {
 		100, //price
 		23, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xb4_item_schlohkraut,
+		str_item_schlohkraut_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2913,7 +4415,7 @@ item items[] = {
 		3000, //price
 		24, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xb5_item_machoband,
+		str_item_machoband_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2929,7 +4431,7 @@ item items[] = {
 		3000, //price
 		25, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xb6_item_ep_teiler,
+		str_item_ep_teiler_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2945,7 +4447,7 @@ item items[] = {
 		100, //price
 		26, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xb7_item_flinkklaue,
+		str_item_flinkklaue_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2961,7 +4463,7 @@ item items[] = {
 		100, //price
 		27, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xb8_item_sanftglocke,
+		str_item_sanftglocke_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2977,7 +4479,7 @@ item items[] = {
 		100, //price
 		28, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xb9_item_mentalkraut,
+		str_item_mentalkraut_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -2993,7 +4495,7 @@ item items[] = {
 		100, //price
 		29, //holding_effect_id
 		CHOICE_ITEM_BAND, //holding_effect_param
-		str_item_desc_xba_item_wahlband,
+		str_item_wahlband_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3009,7 +4511,7 @@ item items[] = {
 		100, //price
 		30, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_xbb_item_king_stein,
+		str_item_king_stein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3025,7 +4527,7 @@ item items[] = {
 		100, //price
 		31, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_xbc_item_silberstaub,
+		str_item_silberstaub_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3041,7 +4543,7 @@ item items[] = {
 		100, //price
 		32, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_xbd_item_muenzamulett,
+		str_item_muenzamulett_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3057,7 +4559,7 @@ item items[] = {
 		200, //price
 		33, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xbe_item_schutzband,
+		str_item_schutzband_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3073,7 +4575,7 @@ item items[] = {
 		200, //price
 		34, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xbf_item_seelentau,
+		str_item_seelentau_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3089,7 +4591,7 @@ item items[] = {
 		200, //price
 		35, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xc0_item_abysszahn,
+		str_item_abysszahn_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3105,7 +4607,7 @@ item items[] = {
 		200, //price
 		36, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xc1_item_abyssplatte,
+		str_item_abyssplatte_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3121,7 +4623,7 @@ item items[] = {
 		200, //price
 		37, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xc2_item_rauchball,
+		str_item_rauchball_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3137,7 +4639,7 @@ item items[] = {
 		200, //price
 		38, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xc3_item_ewigstein,
+		str_item_ewigstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3153,7 +4655,7 @@ item items[] = {
 		200, //price
 		39, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_xc4_item_fokus_band,
+		str_item_fokus_band_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3169,7 +4671,7 @@ item items[] = {
 		200, //price
 		40, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xc5_item_gluecks_ei,
+		str_item_gluecks_ei_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3185,7 +4687,7 @@ item items[] = {
 		200, //price
 		41, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xc6_item_scope_linse,
+		str_item_scope_linse_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3201,7 +4703,7 @@ item items[] = {
 		100, //price
 		42, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_xc7_item_metallmantel,
+		str_item_metallmantel_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3217,7 +4719,7 @@ item items[] = {
 		200, //price
 		43, //holding_effect_id
 		10, //holding_effect_param
-		str_item_desc_xc8_item_ueberreste,
+		str_item_ueberreste_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3233,7 +4735,7 @@ item items[] = {
 		2100, //price
 		44, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xc9_item_drachenhaut,
+		str_item_drachenhaut_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3249,7 +4751,7 @@ item items[] = {
 		100, //price
 		45, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xca_item_kugelblitz,
+		str_item_kugelblitz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3265,7 +4767,7 @@ item items[] = {
 		100, //price
 		46, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xcb_item_pudersand,
+		str_item_pudersand_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3281,7 +4783,7 @@ item items[] = {
 		100, //price
 		47, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xcc_item_granitstein,
+		str_item_granitstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3297,7 +4799,7 @@ item items[] = {
 		100, //price
 		48, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xcd_item_wundersaat,
+		str_item_wundersaat_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3313,7 +4815,7 @@ item items[] = {
 		100, //price
 		49, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xce_item_schattenglas,
+		str_item_schattenglas_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3329,7 +4831,7 @@ item items[] = {
 		100, //price
 		50, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xcf_item_schwarzgurt,
+		str_item_schwarzgurt_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3345,7 +4847,7 @@ item items[] = {
 		100, //price
 		51, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd0_item_magnet,
+		str_item_magnet_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3361,7 +4863,7 @@ item items[] = {
 		100, //price
 		52, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd1_item_zauberwasser,
+		str_item_zauberwasser_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3377,7 +4879,7 @@ item items[] = {
 		100, //price
 		53, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd2_item_hackattack,
+		str_item_hackattack_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3393,7 +4895,7 @@ item items[] = {
 		100, //price
 		54, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd3_item_giftstich,
+		str_item_giftstich_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3409,7 +4911,7 @@ item items[] = {
 		100, //price
 		55, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd4_item_ewiges_eis,
+		str_item_ewiges_eis_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3425,7 +4927,7 @@ item items[] = {
 		100, //price
 		56, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd5_item_bannsticker,
+		str_item_bannsticker_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3441,7 +4943,7 @@ item items[] = {
 		100, //price
 		57, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd6_item_kruemmloeffel,
+		str_item_kruemmloeffel_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3457,7 +4959,7 @@ item items[] = {
 		9800, //price
 		58, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd7_item_holzkohle,
+		str_item_holzkohle_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3473,7 +4975,7 @@ item items[] = {
 		100, //price
 		59, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd8_item_drachenzahn,
+		str_item_drachenzahn_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3489,7 +4991,7 @@ item items[] = {
 		100, //price
 		60, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xd9_item_seidenschal,
+		str_item_seidenschal_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3505,7 +5007,7 @@ item items[] = {
 		2100, //price
 		61, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xda_item_up_grade,
+		str_item_up_grade_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3521,7 +5023,7 @@ item items[] = {
 		200, //price
 		62, //holding_effect_id
 		8, //holding_effect_param
-		str_item_desc_xdb_item_seegesang,
+		str_item_seegesang_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3537,7 +5039,7 @@ item items[] = {
 		9600, //price
 		52, //holding_effect_id
 		5, //holding_effect_param
-		str_item_desc_xdc_item_seerauch,
+		str_item_seerauch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3553,7 +5055,7 @@ item items[] = {
 		9600, //price
 		22, //holding_effect_id
 		5, //holding_effect_param
-		str_item_desc_xdd_item_laxrauch,
+		str_item_laxrauch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3569,7 +5071,7 @@ item items[] = {
 		10, //price
 		63, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xde_item_lucky_punch,
+		str_item_lucky_punch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3585,7 +5087,7 @@ item items[] = {
 		10, //price
 		64, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xdf_item_metallstaub,
+		str_item_metallstaub_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3601,7 +5103,7 @@ item items[] = {
 		500, //price
 		65, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe0_item_kampfknochen,
+		str_item_kampfknochen_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3617,7 +5119,7 @@ item items[] = {
 		200, //price
 		66, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe1_item_lauchstange,
+		str_item_lauchstange_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3633,7 +5135,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe2_item_bisaflornit,
+		str_item_bisaflornit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3649,7 +5151,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe3_item_gluraknit,
+		str_item_gluraknit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3665,7 +5167,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe4_item_turtoknit,
+		str_item_turtoknit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3681,7 +5183,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe5_item_terrasornit,
+		str_item_terrasornit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3697,7 +5199,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe6_item_zerbernit,
+		str_item_zerbernit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3713,7 +5215,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe7_item_skullydranit,
+		str_item_skullydranit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3729,7 +5231,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe8_item_aquananit,
+		str_item_aquananit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3745,7 +5247,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xe9_item_flamaranit,
+		str_item_flamaranit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3761,7 +5263,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xea_item_blitzanit,
+		str_item_blitzanit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3777,7 +5279,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xeb_item_ampharosnit,
+		str_item_ampharosnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3793,7 +5295,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xec_item_gengarnit,
+		str_item_gengarnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3809,7 +5311,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xed_item_bibornit,
+		str_item_bibornit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3825,7 +5327,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xee_item_item_ee,
+		str_item_magmaherz_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3841,7 +5343,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xef_item_geowaznit,
+		str_item_geowaznit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3857,7 +5359,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf0_item_tropiusnit,
+		str_item_tropiusnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3873,7 +5375,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf1_item_octillerynit,
+		str_item_octillerynit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3889,7 +5391,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf2_item_item_f2,
+		str_item_item_f2_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3905,7 +5407,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf3_item_item_f3,
+		str_item_item_f3_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3921,7 +5423,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf4_item_item_f4,
+		str_item_item_f4_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3937,7 +5439,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf5_item_item_f5,
+		str_item_item_f5_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3953,7 +5455,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf6_item_item_f6,
+		str_item_item_f6_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3969,7 +5471,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf7_item_item_f7,
+		str_item_item_f7_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -3985,7 +5487,7 @@ item items[] = {
 		5000, //price
 		HOLD_EFFECT_FULL_INCENSE, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xf8_item_lahmrauch,
+		str_item_lahmrauch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4001,7 +5503,7 @@ item items[] = {
 		200, //price
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_HAIL, //holding_effect_param
-		str_item_desc_xf9_item_eisbrocken,
+		str_item_eisbrocken_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4017,7 +5519,7 @@ item items[] = {
 		200, //price
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_RAIN, //holding_effect_param
-		str_item_desc_xfa_item_nassbrocken,
+		str_item_nassbrocken_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4033,7 +5535,7 @@ item items[] = {
 		200, //price
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_SANDSTORM, //holding_effect_param
-		str_item_desc_xfb_item_glattbrocken,
+		str_item_glattbrocken_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4049,7 +5551,7 @@ item items[] = {
 		200, //price
 		HOLD_EFFECT_WEATHER_ROCK, //holding_effect_id
 		WEATHER_ROCK_SUN, //holding_effect_param
-		str_item_desc_xfc_item_heissbrocken,
+		str_item_heissbrocken_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4065,7 +5567,7 @@ item items[] = {
 		200, //price
 		HOLD_EFFECT_LIGHT_CLAY, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xFD_item_lichtlehm,
+		str_item_lichtlehm_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4081,7 +5583,7 @@ item items[] = {
 		9600, //price
 		HOLD_EFFECT_ROCK_POWER, //holding_effect_id
 		20, //holding_effect_param
-		str_item_desc_xfe_item_steinrauch,
+		str_item_steinrauch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4097,7 +5599,7 @@ item items[] = {
 		9600, //price
 		HOLD_EFFECT_REPEL, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_xff_item_scheuchrauch,
+		str_item_scheuchrauch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4113,7 +5615,7 @@ item items[] = {
 		9600, //price
 		HOLD_EFFECT_DOUBLE_PRIZE, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x100_item_gluecksrauch,
+		str_item_gluecksrauch_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4129,7 +5631,7 @@ item items[] = {
 		250, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x101_item_koeder,
+		str_item_koeder_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4145,7 +5647,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x102_item_goldkoeder,
+		str_item_goldkoeder_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4161,7 +5663,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x103_item_leuchtkoeder,
+		str_item_leuchtkoeder_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -4177,7 +5679,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x104_item_muenzkorb,
+		str_item_muenzkorb_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4193,7 +5695,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x105_item_detektor,
+		str_item_detektor_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4209,7 +5711,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x106_item_angel,
+		str_item_angel_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4225,7 +5727,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x107_item_profiangel,
+		str_item_profiangel_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4241,7 +5743,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x108_item_superangel,
+		str_item_superangel_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4257,7 +5759,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x109_item_bootsticket,
+		str_item_bootsticket_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4273,7 +5775,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10a_item_wettb_karte,
+		str_item_wettb_karte_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4289,7 +5791,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10b_item_item_10b,
+		str_item_item_10b_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4305,7 +5807,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10c_item_wailmerkanne,
+		str_item_wailmerkanne_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4321,7 +5823,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10d_item_devon_waren,
+		str_item_devon_waren_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4337,7 +5839,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10e_item_aschetasche,
+		str_item_aschetasche_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4353,7 +5855,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x10f_item_geisterschluessel,
+		str_item_geisterschluessel_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4369,7 +5871,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x110_item_kunstrad,
+		str_item_kunstrad_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4385,7 +5887,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x111_item_box,
+		str_item_box_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4401,7 +5903,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x112_item_brief,
+		str_item_brief_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4417,7 +5919,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x113_item_aeon_ticket,
+		str_item_aeon_ticket_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4433,7 +5935,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x114_item_spiritkern,
+		str_item_spiritkern_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4449,7 +5951,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x115_item_blaue_kugel,
+		str_item_blaue_kugel_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4465,7 +5967,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x116_item_scanner,
+		str_item_scanner_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4481,7 +5983,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x117_item_wuestenglas,
+		str_item_wuestenglas_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4497,7 +5999,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x118_item_meteorit,
+		str_item_meteorit_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4513,7 +6015,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x119_item_goldschluessel,
+		str_item_goldschluessel_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4529,7 +6031,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11a_item_zellenschluessel,
+		str_item_zellenschluessel_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4545,7 +6047,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11b_item_k4_schluessel,
+		str_item_k4_schluessel_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4561,7 +6063,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11c_item_k6_schluessel,
+		str_item_k6_schluessel_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4577,7 +6079,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11d_item_l_schluessel,
+		str_item_l_schluessel_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4593,7 +6095,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11e_item_wurzelfossil,
+		str_item_wurzelfossil_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4609,7 +6111,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x11f_item_klauenfossil,
+		str_item_klauenfossil_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4625,7 +6127,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x120_item_devon_scope,
+		str_item_devon_scope_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -4641,7 +6143,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x121_item_tm01,
+		str_item_tm01_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4657,7 +6159,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x122_item_tm02,
+		str_item_tm02_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4673,7 +6175,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x123_item_tm03,
+		str_item_tm03_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4689,7 +6191,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x124_item_tm04,
+		str_item_tm04_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4705,7 +6207,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x125_item_tm05,
+		str_item_tm05_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4721,7 +6223,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x126_item_tm06,
+		str_item_tm06_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4737,7 +6239,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x127_item_tm07,
+		str_item_tm07_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4753,7 +6255,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x128_item_tm08,
+		str_item_tm08_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4769,7 +6271,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x129_item_tm09,
+		str_item_tm09_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4785,7 +6287,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x12a_item_tm10,
+		str_item_tm10_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4801,7 +6303,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x12b_item_tm11,
+		str_item_tm11_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4817,7 +6319,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x12c_item_tm12,
+		str_item_tm12_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4833,7 +6335,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x12d_item_tm13,
+		str_item_tm13_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4849,7 +6351,7 @@ item items[] = {
 		5500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x12e_item_tm14,
+		str_item_tm14_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4865,7 +6367,7 @@ item items[] = {
 		7500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x12f_item_tm15,
+		str_item_tm15_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4881,7 +6383,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x130_item_tm16,
+		str_item_tm16_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4897,7 +6399,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x131_item_tm17,
+		str_item_tm17_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4913,7 +6415,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x132_item_tm18,
+		str_item_tm18_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4929,7 +6431,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x133_item_tm19,
+		str_item_tm19_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4945,7 +6447,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x134_item_tm20,
+		str_item_tm20_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4961,7 +6463,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x135_item_tm21,
+		str_item_tm21_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4977,7 +6479,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x136_item_tm22,
+		str_item_tm22_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -4993,7 +6495,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x137_item_tm23,
+		str_item_tm23_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5009,7 +6511,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x138_item_tm24,
+		str_item_tm24_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5025,7 +6527,7 @@ item items[] = {
 		5500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x139_item_tm25,
+		str_item_tm25_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5041,7 +6543,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x13a_item_tm26,
+		str_item_tm26_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5057,7 +6559,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x13b_item_tm27,
+		str_item_tm27_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5073,7 +6575,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x13c_item_tm28,
+		str_item_tm28_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5089,7 +6591,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x13d_item_tm29,
+		str_item_tm29_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5105,7 +6607,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x13e_item_tm30,
+		str_item_tm30_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5121,7 +6623,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x13f_item_tm31,
+		str_item_tm31_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5137,7 +6639,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x140_item_tm32,
+		str_item_tm32_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5153,7 +6655,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x141_item_tm33,
+		str_item_tm33_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5169,7 +6671,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x142_item_tm34,
+		str_item_tm34_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5185,7 +6687,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x143_item_tm35,
+		str_item_tm35_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5201,7 +6703,7 @@ item items[] = {
 		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x144_item_tm36,
+		str_item_tm36_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5217,7 +6719,7 @@ item items[] = {
 		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x145_item_tm37,
+		str_item_tm37_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5233,7 +6735,7 @@ item items[] = {
 		5500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x146_item_tm38,
+		str_item_tm38_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5249,7 +6751,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x147_item_tm39,
+		str_item_tm39_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5265,7 +6767,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x148_item_tm40,
+		str_item_tm40_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5281,7 +6783,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x149_item_tm41,
+		str_item_tm41_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5297,7 +6799,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x14a_item_tm42,
+		str_item_tm42_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5313,7 +6815,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x14b_item_tm43,
+		str_item_tm43_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5329,7 +6831,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x14c_item_tm44,
+		str_item_tm44_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5345,7 +6847,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x14d_item_tm45,
+		str_item_tm45_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5361,7 +6863,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x14e_item_tm46,
+		str_item_tm46_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5377,7 +6879,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x14f_item_tm47,
+		str_item_tm47_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5393,7 +6895,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x150_item_tm48,
+		str_item_tm48_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5409,7 +6911,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x151_item_tm49,
+		str_item_tm49_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5425,7 +6927,7 @@ item items[] = {
 		3000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x152_item_tm50,
+		str_item_tm50_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5441,7 +6943,7 @@ item items[] = {
 		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x153_item_vm01,
+		str_item_vm01_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5457,7 +6959,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x154_item_vm02,
+		str_item_vm02_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5473,7 +6975,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x155_item_vm03,
+		str_item_vm03_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5489,7 +6991,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x156_item_vm04,
+		str_item_vm04_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5505,7 +7007,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x157_item_vm05,
+		str_item_vm05_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5521,7 +7023,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x158_item_vm06,
+		str_item_vm06_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5537,7 +7039,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x159_item_vm07,
+		str_item_vm07_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5553,7 +7055,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x15a_item_vm08,
+		str_item_vm08_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_TM_HM, //pocket
@@ -5569,7 +7071,7 @@ item items[] = {
 		150, //price
 		HOLD_EFFECT_GUN_POWDER, //holding_effect_id
 		25, //holding_effect_param
-		str_item_desc_schwarzpulver,
+		str_item_schwarzpulver_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -5585,7 +7087,7 @@ item items[] = {
 		500, //price
 		HOLD_EFFECT_FOUR_LEAF, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x15c_item_four_leaf,
+		str_item_vierblatt_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -5601,7 +7103,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x15d_item_eichs_paket,
+		str_item_zugangskarte_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5617,7 +7119,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x15e_item_pokefloete,
+		str_item_pokefloete_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5633,7 +7135,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x15f_item__oeffner,
+		str_item__oeffner_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5649,7 +7151,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x160_alte_karte,
+		str_item_alte_karte_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5665,7 +7167,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x161_item_pkmcorder,
+		str_item_pkmcorder_description,
 		2, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5681,7 +7183,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x162_item_altbernstein,
+		str_item_altbernstein_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -5697,7 +7199,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x163_item_tueroeffner,
+		str_item_tueroeffner_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5713,7 +7215,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x164_item_liftoeffner,
+		str_item_liftoeffner_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5729,7 +7231,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x165_item_helixfossil,
+		str_item_helixfossil_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -5745,7 +7247,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x166_item_domfossil,
+		str_item_domfossil_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
@@ -5761,7 +7263,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x167_item_silph_scope,
+		str_item_silph_scope_description,
 		1, // Importance
 		0, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5777,7 +7279,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x168_item_fahrrad,
+		str_item_fahrrad_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5793,7 +7295,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x169_item_karte,
+		str_item_karte_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5809,7 +7311,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x16a_item_kampffahnder,
+		str_item_kampffahnder_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5825,7 +7327,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x16b_item_ruhmesdatei,
+		str_item_ruhmesdatei_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5841,7 +7343,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x16c_item_vmtm_box,
+		str_item_vmtm_box_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5857,7 +7359,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x16d_item_beerentuete,
+		str_item_beerentuete_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5873,7 +7375,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x16e_item_lehrkanal,
+		str_item_lehrkanal_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5889,7 +7391,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x16f_item_tri_pass,
+		str_item_tri_pass_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5905,7 +7407,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x170_item_bunt_pass,
+		str_item_bunt_pass_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5921,7 +7423,7 @@ item items[] = {
 		0, //price
 		HOLD_EFFECT_KEYSTONE, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x171_item_mega_amulett,
+		str_item_mega_amulett_description,
 		1, // Importance
 		0, // Exits Bag on
 		POCKET_KEY_ITEMS, //pocket
@@ -5937,7 +7439,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x172_item_geheimticket,
+		str_item_geheimticket_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5953,7 +7455,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x173_item_auroraticket,
+		str_item_auroraticket_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5969,7 +7471,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x174_item_puderdoeschen,
+		str_item_puderdoeschen_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -5985,7 +7487,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x175_item_rubin,
+		str_item_rubin_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
@@ -6001,7 +7503,7 @@ item items[] = {
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_desc_x176_item_saphir,
+		str_item_saphir_description,
 		1, // Importance
 		1, // exits_bag_on_use
 		POCKET_KEY_ITEMS, //pocket
