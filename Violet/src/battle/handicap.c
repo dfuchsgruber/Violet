@@ -121,7 +121,7 @@ extern u8 battlescript_handicap_floating_rocks_apply[];
 bool battle_handicap_before_attack_events() {
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
         return false;
-    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
+    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~(CUSTOM_STATUS_FLOATING_ROCKS | CUSTOM_STATUS_GEM_USED));
     if (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS] && 
         (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)
         && battler_is_opponent(attacking_battler) != battler_is_opponent(defending_battler) && attacks[active_attack].base_power != 0) {

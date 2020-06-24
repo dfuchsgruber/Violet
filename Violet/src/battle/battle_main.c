@@ -224,6 +224,7 @@ void battle_clear_temporary_custom_effects(bool clear_all){
 extern u8 battlescript_before_attack[];
 
 void battle_before_attack_effects() {
+    BATTLE_STATE2->status_custom[attacking_battler] = 0;
     battlescript_callstack_push_next_command();
     BATTLE_STATE2->before_attack_state = 0;
     bsc_offset = battlescript_before_attack; // This script executes all effects before the battle...

@@ -106,6 +106,11 @@ void apply_pre_damage_modifiers(){
         BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
         damage_apply_multiplier(500);
     }
+    if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_GEM_USED) {
+        dprintf("Gem increased damage for battler %d.\n", defending_battler);
+        BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
+        damage_apply_multiplier(1500);
+    }
     battlescript_cmd_x06_apply_damage_modifiers();
     if ((battle_flags & BATTLE_TRAINER) && (trainer_vars.rival_flags & 4) && battler_is_opponent(defending_battler)) {
         // When battling Lucius, you're not allowed to do any significant damage

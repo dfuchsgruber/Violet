@@ -429,6 +429,7 @@ bsc_strings:
 .word str_battle_x1B3
 .word str_battle_x1B4
 .word str_battle_x1B5
+.word str_battle_x1B6
 
 @ // Define the strings
 
@@ -2903,6 +2904,9 @@ bsc_strings:
 
 	str_battle_x1B5:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX wirkt gereizt!"
+
+	str_battle_x1B6:
+		.string "BSC_CURRENT_MOVE wird durch\nBSC_LAST_ITEM verstärkt!"
 		
 
 .elseif LANG_EN
@@ -4979,6 +4983,9 @@ bsc_strings:
 
 	str_battle_x1B5:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX seems to be irritated!"
+
+	str_battle_x1B6:
+		.string "BSC_CURRENT_MOVE is boosted\nby BSC_LAST_ITEM!"
 
 .endif
 

@@ -16,7 +16,7 @@
 #include "overworld/pokemon_party_menu.h"
 #include "constants/battle/battle_statuses.h"
 #include "oam.h"
-
+#include "attack.h"
 
 typedef struct {
 	u8 name[7];
@@ -122,6 +122,15 @@ typedef struct {
     u8 field_1A4[0x5C];
 } battle_state_t;
 
+extern battle_state_t *battle_state;
+
+#define GET_MOVE_TYPE(move, var)                             \
+{                                                            \
+    if (battle_state->dynamic_move_type)                     \
+        var = battle_state->dynamic_move_type & 0x3F;        \
+    else                                                     \
+        var = attacks[move].type;                            \
+}
 
 #define MAX_ITEMS_DROPPED_PER_BATTLER 4
 typedef struct {
@@ -295,7 +304,6 @@ extern u8 battle_animation_active;
 
 extern battle_struct_t *battle_struct;
 extern u32 battle_flags;
-extern battle_state_t *battle_state;
 extern u8 battle_trainer_kind;
 extern u8 battle_result;
 extern u16 battle_trainer_id;
@@ -475,6 +483,12 @@ bool battle_end_turn_field_effects();
  * @return if any new effect, i.e. battlescript was triggered.
  **/
 bool battle_end_turn_battler_effects();
+
+/**
+ * Executes battle item effects before an attack
+ * @return if any effect, i.e. battlescript was triggered
+ **/
+bool battle_item_before_attack();
 
 /**
  * Function that handles the end of a turn when the battle continues, i.e. has not ended.

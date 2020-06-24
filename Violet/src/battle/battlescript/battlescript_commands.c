@@ -334,6 +334,14 @@ void bsc_cmd_before_attack() {
                     return;
                 break;
             }
+            case 2: {
+                if (battle_item_before_attack())
+                    effect = true;
+                BATTLE_STATE2->before_attack_state++;
+                if (effect)
+                    return;
+                break;
+            }
             default:
                 bsc_offset++;
                 return;
@@ -460,5 +468,15 @@ void bsc_teleport_set_outcome() {
     } else {
         dprintf("Setting teleport outcome s.t. the player fled.\n");
         battle_result = BATTLE_RESULT_PLAYER_TELEPORTED;
+    }
+}
+
+extern u8 battlescript_gem_used[];
+
+void bsc_command_after_x07_adjustnormaldamage() {
+    if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
+        && !(attack_result & ATTACK_NO_EFFECT) && battlers[attacking_battler].item != 0) {
+        battlescript_callstack_push_next_command();
+        bsc_offset = battlescript_gem_used;
     }
 }

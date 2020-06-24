@@ -35,6 +35,11 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setvar 0x8000 ITEM_BODENJUWEL
+	setvar 0x8001 2
+	callstd ITEM_FIND
+	additem ITEM_BODENJUWEL 3
+	end
 	callasm crafting_ui_initialize
 	waitstate
 	end

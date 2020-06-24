@@ -652,6 +652,11 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	bne 0x0801f424 // attack requires animations, even though they are turned off, so we show them
 	b 0x0801f3ee
 	.pool
+
+.org 0x0801f220
+	ldr r0, =hook_bsc_cmd_x07_adjustnormal_damage | 1
+	bx r0
+	.pool
 /** 
 .org 0x08012642
 	ldr r0, =hook_battle_initialize_absent_battlers | 1

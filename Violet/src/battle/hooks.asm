@@ -211,3 +211,12 @@ battle_items_switch_in_effect_activated:
 battle_items_effect_with_no_bsc_activated:
     ldr r0, = 0x0801cf2a | 1 // End the function, but return 0 overall
     bx r0
+
+.global hook_bsc_cmd_x07_adjustnormal_damage
+
+hook_bsc_cmd_x07_adjustnormal_damage:
+    bl bsc_command_after_x07_adjustnormaldamage
+    pop {r4-r7}
+    pop {r0}
+    bx r0
+

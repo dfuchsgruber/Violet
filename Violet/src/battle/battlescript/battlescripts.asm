@@ -201,3 +201,12 @@ battlescript_introduce_aggresive_battler:
     waitmessage 0x40
     waitanimation
     end3
+
+.global battlescript_gem_used
+
+battlescript_gem_used:
+    playanimation BANK_USER BATTLE_ANIM_ITEM_EFFECT 0
+    printstring 0x1b6
+    waitmessage 0x40
+    removeitem BANK_USER
+    return

@@ -9,7 +9,10 @@
 #define INCLUDE_C_BATTLE_ATTACK_H_
 
 #include "attack.h"
+#include "constants/attack_results.h"
 #include "oam.h"
+
+#define ATTACK_NO_EFFECT (ATTACK_MISSED | ATTACK_NO_EFFECT | ATTACK_FAILED)
 
 extern u16 active_attack;
 extern u8 active_attack_slot;
