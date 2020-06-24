@@ -1,5 +1,7 @@
-.org 0x08098aa0
-    .word item_gfx_pairs
+.org 0x08098a78
+    ldr r2, =item_get_resource | 1
+    bx r2
+    .pool
 
 .org 0x0815F914 + (0x88*4)
     .word script_cmd_x88_pokemart3 | 1

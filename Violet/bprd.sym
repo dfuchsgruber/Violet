@@ -899,7 +899,6 @@ battle_animation_oam_template_anger = 0x083e3404;
 bg_fill_map_with_rectangle = 0x08002564 | 1;
 bg_copy_rectangle = 0x08002134 | 1;
 item_get_description = 0x0809aa50 | 1;
-item_get_resource = 0x08098a78 | 1;
 item_get_count = 0x0809a8c0 | 1;
 list_menu_print = 0x081071fc | 1;
 tbox_load_gfx_and_print_string_on_bg0_and_continue = 0x080f7a9c | 1;

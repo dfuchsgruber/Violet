@@ -223,7 +223,7 @@ u8 item_oam_new_by_template(const oam_template *template, u16 tiles_tag, u16 pal
  * @param get_palette a bool indicating if the palette should be retrieved
  * @return the resource
  **/
-u8 *item_get_resource(u16 item, u8 get_palette);
+const u8 *item_get_resource(u16 item, u8 get_palette);
 
 /**
  * Checks how many copies of an item the bag has

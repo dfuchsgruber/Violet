@@ -131,7 +131,7 @@ static void crafting_ui_update_description() {
 
 static void crafting_ui_update_item_oam(oam_object *oam, u16 item_new) {
     int tile = oam->final_oam.attr2 & 1023;
-    u8 *gfx = item_get_resource(item_new, false);
+    const u8 *gfx = item_get_resource(item_new, false);
     lz77uncompwram(gfx, gp_tmp_buf);
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
@@ -140,7 +140,7 @@ static void crafting_ui_update_item_oam(oam_object *oam, u16 item_new) {
         }
     }
     u8 pal_idx = (oam->final_oam.attr2 >> 12) & 0xF;
-    u8 *pal = item_get_resource(item_new, true);
+    const u8 *pal = item_get_resource(item_new, true);
     pal_decompress(pal, (u16)(256 + 16 * pal_idx), sizeof(color_t) * 16);
 }
 

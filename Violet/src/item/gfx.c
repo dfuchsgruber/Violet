@@ -1,7 +1,7 @@
 #include "types.h"
 #include "item/item.h"
 
-item_gfx_pair item_gfx_pairs[] = {
+static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_NONE] = { .gfx = gfx_item_noneTiles, .pal = gfx_item_nonePal },
     [ITEM_MEISTERBALL] = { .gfx = gfx_item_meisterballTiles, .pal = gfx_item_meisterballPal },
     [ITEM_HYPERBALL] = { .gfx = gfx_item_hyperballTiles, .pal = gfx_item_hyperballPal },
@@ -397,3 +397,13 @@ item_gfx_pair item_gfx_pairs[] = {
     [ITEM_DRACOJUWEL] = { .gfx = gfx_item_dracojuwelTiles, .pal = gfx_item_dracojuwelPal },
     [ITEM_UNLICHTJUWEL] = { .gfx = gfx_item_unlichtjuwelTiles, .pal = gfx_item_unlichtjuwelPal },
 };
+
+const u8 *item_get_resource(u16 item_idx, u8 get_palette) {
+    if (item_idx >= ITEM_CNT) 
+        item_idx = 0;
+    if (get_palette)
+        return item_gfx_pairs[item_idx].pal;
+    else
+        return item_gfx_pairs[item_idx].gfx;
+
+}
