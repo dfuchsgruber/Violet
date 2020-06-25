@@ -1,5 +1,6 @@
 .include "overworld_script.s"
 .include "flags.s"
+.include "constants/block_behaviour.s"
 @0806D154 via r0
 
 .align 2
@@ -39,6 +40,8 @@ beq trigger_dungeon_entry
 cmp r4, #0xBD
 beq trigger_rock_climb
 
+cmp r4, #MB_CRAFTING_CAULDRON
+beq trigger_crafting_cauldron
 
 ret:
 ldr r0, =0x0806D15F
@@ -75,6 +78,10 @@ b exec_trigger_cloud
 trigger_dungeon_entry:
 ldr r0, =ow_script_dungeon_enter
 b ret_s
+
+trigger_crafting_cauldron:
+    ldr r0, =ow_script_crafting_cauldron
+    b ret_s
 
 trigger_rock_climb:
 ldr r0, =ow_script_rock_climb

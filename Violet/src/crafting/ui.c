@@ -57,6 +57,7 @@ static u8 str_category[CRAFTING_TYPE_CNT][11] = {
     [CRAFTING_EVOLUTION] = LANGDEP(PSTRING("Evolution"), PSTRING("Evolution")),
     [CRAFTING_MINTS] = LANGDEP(PSTRING("Minze"), PSTRING("Mints")),
     [CRAFTING_NUTRIENTS] = LANGDEP(PSTRING("Vitamine"), PSTRING("Nutrients")),
+    [CRAFTING_BATTLE] = LANGDEP(PSTRING("Kampf"), PSTRING("Battle")),
 };
 
 static u8 str_recipe[] = LANGDEP(PSTRING("Rezept"), PSTRING("Recipe"));
@@ -239,6 +240,8 @@ static void crafting_ui_setup_recipies_and_list_menu_items() {
         size_t recipe_cnt = crafting_get_num_recipies_by_type(type);
         CRAFTING_UI_STATE->recipies[type] = malloc_and_clear(sizeof(crafting_recipe) * recipe_cnt);
         CRAFTING_UI_STATE->list_menu_items[type] = malloc_and_clear(sizeof(list_menu_item) * (recipe_cnt + 1));
+        dprintf("Allocated recipies @%x, list_menu_items @%x\n", CRAFTING_UI_STATE->recipies[type], CRAFTING_UI_STATE->list_menu_items[type]);
+
         for (u8 idx = 0; idx < recipe_cnt; idx++) {
             if (recipies[idx].flag == 0 || recipies[idx].flag == 0xFFFF || checkflag(recipies[idx].flag)) {
                 u8 recipe_idx = CRAFTING_UI_STATE->num_crafting_recipies[type]++;
@@ -508,6 +511,7 @@ static void crafting_ui_setup_list_menu() {
     u16 type = CRAFTING_UI_STATE->type;
     CRAFTING_UI_STATE->recipe_selection_list_menu_template.item_cnt = (u16)(CRAFTING_UI_STATE->num_crafting_recipies[type] + 1); 
     CRAFTING_UI_STATE->recipe_selection_list_menu_template.items = CRAFTING_UI_STATE->list_menu_items[type];
+    dprintf("Set up list menu for type %d with cursor @%d and %d above.\n", type, CRAFTING_UI_STATE->list_menu_cursor_positions[type], CRAFTING_UI_STATE->list_menu_cursor_above[type]);
     CRAFTING_UI_STATE->recipe_selection_list_menu_callback = list_menu_new(&CRAFTING_UI_STATE->recipe_selection_list_menu_template, 
         CRAFTING_UI_STATE->list_menu_cursor_positions[type], CRAFTING_UI_STATE->list_menu_cursor_above[type]);
     crafting_ui_synchronize_current_recipe_with_list_menu_cursor();
@@ -522,7 +526,7 @@ static void crafting_ui_switch_type_callback1() {
     fading_proceed();
     if (fading_is_active() || dma3_busy(-1))
         return;
-    dprintf("Updating in state %d\n", CRAFTING_UI_STATE->setup_state);
+    // dprintf("Updating in state %d\n", CRAFTING_UI_STATE->setup_state);
     switch (CRAFTING_UI_STATE->setup_state) {
         case 0: {
             bg_hide(ui_tboxes[TBOX_INGREDIENTS].bg_id); // Hides the bg
@@ -576,6 +580,7 @@ static void crafting_ui_free() {
     free(bg_get_tilemap(3));
     for (u16 type = 0; type < CRAFTING_TYPE_CNT; type++) {
         free(CRAFTING_UI_STATE->recipies[type]);
+        free(CRAFTING_UI_STATE->list_menu_items[type]);
     }
     free(CRAFTING_UI_STATE);
 }
@@ -598,12 +603,14 @@ static void crafting_ui_setup() {
             break;
         }
         case 1: {
-            overworld_free();
+            if (CRAFTING_UI_STATE->initialized_from_overworld)
+                overworld_free();
+            else
+                tbox_free_all();
             big_callback_delete_all();
             oam_reset();
             oam_palette_allocation_reset();
             dma0_reset_callback();
-            tbox_free_all();
             CRAFTING_UI_STATE->setup_state++;
             break;
         }
@@ -755,16 +762,19 @@ void crafting_ui_initialize() {
     CRAFTING_UI_STATE->callback_scroll_indicators_left_right = 0xFF;
     CRAFTING_UI_STATE->callback_scroll_indicators_up_down = 0xFF;
     CRAFTING_UI_STATE->current_recipe_idx = 0;
+    CRAFTING_UI_STATE->initialized_from_overworld = true;
     callback1_set(crafting_ui_setup);
     vblank_handler_set(generic_vblank_handler);
 }
 
 void crafting_ui_reinitialize(u16 type, u16 list_menu_cursor_positions[CRAFTING_TYPE_CNT], u16 list_menu_cursor_above[CRAFTING_TYPE_CNT]) {
     crafting_ui_initialize();
+    CRAFTING_UI_STATE->initialized_from_overworld = false;
     (void) list_menu_cursor_positions;
     (void) list_menu_cursor_above;
     (void) type;
+    return;
     CRAFTING_UI_STATE->type = type;
-    memcpy(CRAFTING_UI_STATE->list_menu_cursor_positions, list_menu_cursor_positions, sizeof(CRAFTING_UI_STATE->list_menu_cursor_positions));
-    memcpy(CRAFTING_UI_STATE->list_menu_cursor_above, list_menu_cursor_above, sizeof(CRAFTING_UI_STATE->list_menu_cursor_above));
+    memcpy(CRAFTING_UI_STATE->list_menu_cursor_positions, list_menu_cursor_positions, 0);//sizeof(CRAFTING_UI_STATE->list_menu_cursor_positions));
+    memcpy(CRAFTING_UI_STATE->list_menu_cursor_above, list_menu_cursor_above, 0);// sizeof(CRAFTING_UI_STATE->list_menu_cursor_above));
 }

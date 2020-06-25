@@ -2,6 +2,7 @@
 #include "stdbool.h"
 #include "constants/items.h"
 #include "pokemon/virtual.h"
+#include "pokemon/basestat.h"
 #include "callbacks.h"
 #include "item/custom.h"
 #include "constants/pokemon_attributes.h"
@@ -17,9 +18,10 @@ void item_field_nature_stone(u8 self) {
     item_select_target_pokemon(self);
 }
 
+
 u8 str_nature_stone_sucess[] = LANGDEP(
-    PSTRING("Das Wesen von BUFFER_1 hat\nsich geändert.PAUSE_UNTIL_PRESS"),
-    PSTRING("BUFFER_1\'s nature has\nchanged.PAUSE_UNTIL_PRESS"));
+    PSTRING("BUFFER_1 hat jetzt\ndas Wesen BUFFER_2.PAUSE_UNTIL_PRESS"),
+    PSTRING("BUFFER_1\'s nature has\nchanged to BUFFER_2.PAUSE_UNTIL_PRESS"));
 
 void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure)(u8)) {
 
@@ -77,10 +79,11 @@ void item_nature_stone(u8 self, void (*item_field_usage_on_poke_callback_failure
         new_positive = current_positive;
     }
     if (possible) {
-        play_sound(114);
+        play_sound(258);
         //Now we compute the new nature
         u32 new_nature = (u32) (new_positive * 5 + new_negative);
         poke_pid.fields.nature = new_nature & 0x1F;
+        strcpy(buffer1, pokemon_nature_strings[new_nature]);
         pokemon_set_attribute(&player_pokemon[pokemon_party_menu_current_index],
         		ATTRIBUTE_PID, &poke_pid);
         pokemon_calculate_stats(&player_pokemon[pokemon_party_menu_current_index]);

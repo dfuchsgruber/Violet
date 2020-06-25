@@ -11,6 +11,7 @@
 
 enum {
     CRAFTING_HEALING,
+    CRAFTING_BATTLE,
     CRAFTING_POKEBALLS,
     CRAFTING_JEWELS,
     CRAFTING_EVOLUTION,
@@ -52,6 +53,7 @@ typedef struct {
     u8 callback_scroll_indicators_up_down;
     u8 callback_scroll_indicators_left_right;
     void (*exit_continuation)();
+    u8 initialized_from_overworld;
 
 } crafting_ui_state;
 

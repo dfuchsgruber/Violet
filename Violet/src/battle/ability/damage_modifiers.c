@@ -106,10 +106,15 @@ void apply_pre_damage_modifiers(){
         BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_FLOATING_ROCKS);
         damage_apply_multiplier(500);
     }
-    if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_GEM_USED) {
-        dprintf("Gem increased damage for battler %d.\n", defending_battler);
-        BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
+    if (BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED) {
+        dprintf("Gem increased damage for battler %d.\n", attacking_battler);
+        BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~CUSTOM_STATUS_GEM_USED);
         damage_apply_multiplier(1500);
+    }
+    if (BATTLE_STATE2->status_custom[defending_battler] & CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY) {
+        dprintf("Berry decreased damage for battler %d.\n", defending_battler);
+        BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY);
+        damage_apply_multiplier(500);
     }
     battlescript_cmd_x06_apply_damage_modifiers();
     if ((battle_flags & BATTLE_TRAINER) && (trainer_vars.rival_flags & 4) && battler_is_opponent(defending_battler)) {

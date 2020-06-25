@@ -80,9 +80,7 @@ bool battle_items_gunpowder() {
     return false;
 }
 
-extern u8 battlescript_gem_used[];
-
-bool battle_item_before_attack() {
+bool battle_item_before_attack_attacker() {
     active_battler = attacking_battler;
     switch (item_get_hold_effect(battlers[attacking_battler].item)) {
         case HOLD_EFFECT_GEM: {
@@ -90,10 +88,30 @@ bool battle_item_before_attack() {
             GET_MOVE_TYPE(active_attack, move_type);
             if (move_type == item_get_hold_effect_parameter(battlers[attacking_battler].item) &&
                 attacks[active_attack].base_power > 0) {
-                BATTLE_STATE2->status_custom[active_battler] |= CUSTOM_STATUS_GEM_USED;
+                BATTLE_STATE2->status_custom[attacking_battler] |= CUSTOM_STATUS_GEM_USED;
             }
             break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)
         }
     }
     return false;
+}
+
+
+bool battle_item_before_attack_defender() {
+    return false;
+    /**
+    active_battler = defending_battler;
+    switch (item_get_hold_effect(battlers[defending_battler].item)) {
+        case HOLD_EFFECT_TYPE_BERRY: {
+            u8 move_type;
+            GET_MOVE_TYPE(active_attack, move_type);
+            if (move_type == item_get_hold_effect_parameter(battlers[defending_battler].item) &&
+                attacks[active_attack].base_power > 0 && (attack_result & ATTACK_SUPER_EFFECTIVE)) {
+                BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
+            }
+            break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)
+        }
+    }
+    return false;
+    **/
 }

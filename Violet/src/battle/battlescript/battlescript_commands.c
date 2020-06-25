@@ -25,6 +25,9 @@
 #include "overworld/pokemon_party_menu.h"
 #include "item/item_effect.h"
 #include "abilities.h"
+#include "item/item.h"
+#include "attack.h"
+#include "constants/item_hold_effects.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -314,6 +317,7 @@ bool bsc_cmd_switch_in_effects_check_ability_or_handicap() {
 }
 
 void bsc_cmd_before_attack() {
+    BATTLE_STATE2->status_custom[attacking_battler] &= (u32)(~(CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY | CUSTOM_STATUS_GEM_USED));
     bool effect = false;
     while(!effect) {
         dprintf("Executing before attack events in state %d\n", BATTLE_STATE2->before_attack_state);
@@ -335,12 +339,21 @@ void bsc_cmd_before_attack() {
                 break;
             }
             case 2: {
-                if (battle_item_before_attack())
+                if (battle_item_before_attack_attacker())
                     effect = true;
                 BATTLE_STATE2->before_attack_state++;
                 if (effect)
                     return;
                 break;
+            }
+            case 3: {
+                if (battle_item_before_attack_defender())
+                    effect = true;
+                BATTLE_STATE2->before_attack_state++;
+                if (effect)
+                    return;
+                break;
+
             }
             default:
                 bsc_offset++;
@@ -472,11 +485,28 @@ void bsc_teleport_set_outcome() {
 }
 
 extern u8 battlescript_gem_used[];
+extern u8 battlescript_weakened_by_berry[];
 
 void bsc_command_after_x07_adjustnormaldamage() {
     if ((BATTLE_STATE2->status_custom[attacking_battler] & CUSTOM_STATUS_GEM_USED)
         && !(attack_result & ATTACK_NO_EFFECT) && battlers[attacking_battler].item != 0) {
+        bsc_last_used_item = battlers[attacking_battler].item;
         battlescript_callstack_push_next_command();
         bsc_offset = battlescript_gem_used;
     }
+    switch(item_get_hold_effect(battlers[defending_battler].item)) {
+        case HOLD_EFFECT_TYPE_BERRY: {
+            u8 attack_type;
+            GET_MOVE_TYPE(active_attack, attack_type);
+            if (!(attack_result & ATTACK_NO_EFFECT) && (attack_result & ATTACK_SUPER_EFFECTIVE) && attacks[active_attack].base_power > 0 &&
+                attack_type == item_get_hold_effect_parameter(battlers[defending_battler].item)) {
+                bsc_last_used_item = battlers[defending_battler].item;
+                BATTLE_STATE2->status_custom[defending_battler] |= CUSTOM_STATUS_ATTACK_WEAKENED_BY_BERRY;
+                battlescript_callstack_push_next_command();
+                bsc_offset = battlescript_weakened_by_berry;
+            }
+            break;
+        }
+    }
 }
+

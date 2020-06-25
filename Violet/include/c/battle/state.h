@@ -485,10 +485,16 @@ bool battle_end_turn_field_effects();
 bool battle_end_turn_battler_effects();
 
 /**
- * Executes battle item effects before an attack
+ * Executes battle item effects of the attacker before an attack
  * @return if any effect, i.e. battlescript was triggered
  **/
-bool battle_item_before_attack();
+bool battle_item_before_attack_attacker();
+
+/**
+ * Executes battle item effects of the defender before an attack
+ * @return if any effect, i.e. battlescript was triggered
+ **/
+bool battle_item_before_attack_defender();
 
 /**
  * Function that handles the end of a turn when the battle continues, i.e. has not ended.

@@ -210,3 +210,12 @@ battlescript_gem_used:
     waitmessage 0x40
     removeitem BANK_USER
     return
+
+.global battlescript_weakened_by_berry
+
+battlescript_weakened_by_berry:
+    playanimation BANK_TARGET BATTLE_ANIM_ITEM_EFFECT 0
+    printstring 0x1b7
+    waitmessage 0x40
+    removeitem BANK_TARGET
+    return

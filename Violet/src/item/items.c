@@ -113,7 +113,7 @@ static u8 str_item_beleber_description[] = LANGDEP(
 static u8 str_item_top_beleber_description[] = LANGDEP(
 	PSTRING("Belebt ein Pokémon und füllt\ndie KP vollständig wieder auf."),
 	PSTRING("A medicine that revives a fainted\nPokémon, restoring HP fully.")
-);
+); 
 static u8 str_item_co_mix_description[] = LANGDEP(
 	PSTRING("Ein Mischgetränk, das die KP\neines Pokémon um die Hälfte\ndes Maximalwertes auffüllt."),
 	PSTRING("A mixed drink that\nrestores the HP by\nhalf its maximum amount.")
@@ -431,8 +431,8 @@ static u8 str_item_riesenpilz_description[] = LANGDEP(
 	PSTRING("A large and rare mushroom.\nIt is very popular among certain\npeople.")
 );
 static u8 str_item_spv_orb_n_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das die\nspezielle Verteidigung eines\nPokémon langasmer steigen lässt."),
+	PSTRING("A bitter herb that makes the special\ndefense of a Pokémon grow slower.")
 );
 static u8 str_item_perle_description[] = LANGDEP(
 	PSTRING("Eine relativ kleine Perle, die in\nschönem Silber funkelt. Sie ist von\ngeringem Wert."),
@@ -459,40 +459,40 @@ static u8 str_item_herzschuppe_description[] = LANGDEP(
 	PSTRING("A pretty, heart-shaped scale that\nis extremely rare. It glows faintly\nin the colors of a rainbow.")
 );
 static u8 str_item_angr_orb_p_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das den Angriff\neines Pokémon schneller steigen\nlässt."),
+	PSTRING("A bitter herb that makes the\nattack of a Pokémon grow faster.")
 );
 static u8 str_item_angr_orb_n_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das den Angriff\neines Pokémon langsamer steigen\nlässt."),
+	PSTRING("A bitter herb that makes the\nattackof a Pokémon grow slower.")
 );
 static u8 str_item_vert_orb_p_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das die \nVerteidigung eines Pokémon\nschneller steigen lässt."),
+	PSTRING("A bitter herb that makes the\ndefense of a Pokémon grow faster.")
 );
 static u8 str_item_vert_orb_n_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das die \nVerteidigung eines Pokémon\nlangsamer steigen lässt."),
+	PSTRING("A bitter herb that makes the\ndefense of a Pokémon grow slower.")
 );
 static u8 str_item_init_orb_p_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das die Initiative\neines Pokémon schneller steigen\nlässt."),
+	PSTRING("A bitter herb that makes the speed\nof a Pokémon grow faster.")
 );
 static u8 str_item_init_orb_n_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das die Initiative\neines Pokémon langsamer steigen\nlässt."),
+	PSTRING("A bitter herb that makes the speed\nof a Pokémon grow slower.")
 );
 static u8 str_item_spa_orb_p_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das den\nspeziellen Angriff eines Pokémon\nschneller steigen lässt."),
+	PSTRING("A bitter herb that makes the special\nattack of a Pokémon grow faster.")
 );
 static u8 str_item_spa_orb_n_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das den\nspeziellen Angriff eines Pokémon\nlangsamer steigen lässt."),
+	PSTRING("A bitter herb that makes the special\nattack of a Pokémon grow slower.")
 );
 static u8 str_item_spv_orb_p_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+	PSTRING("Bitteres Kraut, das die\nspezielle Verteidigung eines\nPokémon schneller steigen lässt."),
+	PSTRING("A bitter herb that makes the special\ndefense of a Pokémon grow faster.")
 );
 static u8 str_item_79_description[] = LANGDEP(
 	PSTRING("Ein Brief mit Zigzachs-Aufdruck.\nEr kann von einem Pokémon\ngetragen werden."),
@@ -603,76 +603,76 @@ static u8 str_item_yapabeere_description[] = LANGDEP(
 	PSTRING("A hold item that restores HP but\nmay cause confusion when used.")
 );
 static u8 str_item_himmihbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nNormal Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Normal\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_morbbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nKampf Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Kampf\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_nanabbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nFlug Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Flug\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_nirbebeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nGift Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Gift\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_sananabeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nBoden Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Boden\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_granabeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nGestein Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Gestein\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_setangbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nKaefer Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Kaefer\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_qualotbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nGeist Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Geist\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_honmelbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nStahl Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Stahl\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_labrusbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nFee Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Fee\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_tamotbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nFeuer Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Feuer\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_saimbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nWasser Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Wasser\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_magostbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nPflanze Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Pflanze\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_rabutabeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nElektro Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Elektro\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_tronzibeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nPsycho Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Psycho\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_kiwanbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nEis Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Eis\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_pallmbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nDrache Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Drache\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_wasmelbeere_description[] = LANGDEP(
-	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
-	PSTRING("Can be ground up into a powder as\nan ingredient for medicine.")
+	PSTRING("Schwächt gegnerische sehr effektive\nUnlicht Angriffe, wenn es\ngetragen wird."),
+	PSTRING("Weakens very effective Unlicht\nattacks of opponents when\nbeing hold.")
 );
 static u8 str_item_durinbeere_description[] = LANGDEP(
 	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),
@@ -3267,7 +3267,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPV_ORB_N
-		LANGDEP(PSTRING("Spv Orb (n)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Wirrminze"), PSTRING("Weird Mint")),
 		0x69, //index
 		0, //price
 		0, //holding_effect_id
@@ -3379,7 +3379,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGR_ORB_P
-		LANGDEP(PSTRING("Angr. Orb (p)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Wutminze"), PSTRING("Aggro Mint")),
 		0x70, //index
 		0, //price
 		0, //holding_effect_id
@@ -3395,7 +3395,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ANGR_ORB_N
-		LANGDEP(PSTRING("Angr. Orb (n)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Ruheminze"), PSTRING("Calm Mint")),
 		0x71, //index
 		0, //price
 		0, //holding_effect_id
@@ -3411,7 +3411,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VERT_ORB_P
-		LANGDEP(PSTRING("Vert. Orb (p)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Eisenminze"), PSTRING("Iron Mint")),
 		0x72, //index
 		0, //price
 		0, //holding_effect_id
@@ -3427,7 +3427,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_VERT_ORB_N
-		LANGDEP(PSTRING("Vert. Orb (n)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Fragilminze"), PSTRING("Fragile Mint")),
 		0x73, //index
 		0, //price
 		0, //holding_effect_id
@@ -3443,7 +3443,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_INIT_ORB_P
-		LANGDEP(PSTRING("Init. Orb (p)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Mobilminze"), PSTRING("Mobile Mint")),
 		0x74, //index
 		0, //price
 		0, //holding_effect_id
@@ -3459,7 +3459,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_INIT_ORB_N
-		LANGDEP(PSTRING("Init. Orb (n)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Schwerminze"), PSTRING("Heavy Mint")),
 		0x75, //index
 		0, //price
 		0, //holding_effect_id
@@ -3475,7 +3475,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPA_ORB_P
-		LANGDEP(PSTRING("Spa. Orb (p)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Fokusminze"), PSTRING("Focus Mint")),
 		0x76, //index
 		0, //price
 		0, //holding_effect_id
@@ -3491,7 +3491,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPA_ORB_N
-		LANGDEP(PSTRING("Spa. Orb (n)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Achtlosminze"), PSTRING("Careless Mint")),
 		0x77, //index
 		0, //price
 		0, //holding_effect_id
@@ -3507,7 +3507,7 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_SPV_ORB_P
-		LANGDEP(PSTRING("Spv Orb (p)"), PSTRING("????????")),
+		LANGDEP(PSTRING("Gedankenminze"), PSTRING("Mind Mint")),
 		0x78, //index
 		0, //price
 		0, //holding_effect_id
@@ -3958,8 +3958,8 @@ item items[] = {
 		LANGDEP(PSTRING("Himmihbeere"), PSTRING("Razz Berry")),
 		0x94, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_NORMAL, //holding_effect_param
 		str_item_himmihbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -3974,8 +3974,8 @@ item items[] = {
 		LANGDEP(PSTRING("Morbbeere"), PSTRING("Bluk Berry")),
 		0x95, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_KAMPF, //holding_effect_param
 		str_item_morbbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -3990,8 +3990,8 @@ item items[] = {
 		LANGDEP(PSTRING("Nanabbeere"), PSTRING("Nanab Berry")),
 		0x96, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_FLUG, //holding_effect_param
 		str_item_nanabbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4006,8 +4006,8 @@ item items[] = {
 		LANGDEP(PSTRING("Nirbebeere"), PSTRING("Wepear Berry")),
 		0x97, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_GIFT, //holding_effect_param
 		str_item_nirbebeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4022,8 +4022,8 @@ item items[] = {
 		LANGDEP(PSTRING("Sananabeere"), PSTRING("Pinap Berry")),
 		0x98, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_BODEN, //holding_effect_param
 		str_item_sananabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4038,8 +4038,8 @@ item items[] = {
 		LANGDEP(PSTRING("Granabeere"), PSTRING("Pomeg Berry")),
 		0x99, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_GESTEIN, //holding_effect_param
 		str_item_granabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4054,8 +4054,8 @@ item items[] = {
 		LANGDEP(PSTRING("Setangbeere"), PSTRING("Kelpsy Berry")),
 		0x9a, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_KAEFER, //holding_effect_param
 		str_item_setangbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4070,8 +4070,8 @@ item items[] = {
 		LANGDEP(PSTRING("Qualotbeere"), PSTRING("Qualot Berry")),
 		0x9b, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_GEIST, //holding_effect_param
 		str_item_qualotbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4086,8 +4086,8 @@ item items[] = {
 		LANGDEP(PSTRING("Honmelbeere"), PSTRING("Hondew Berry")),
 		0x9c, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_STAHL, //holding_effect_param
 		str_item_honmelbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4102,8 +4102,8 @@ item items[] = {
 		LANGDEP(PSTRING("Labrusbeere"), PSTRING("Grepa Berry")),
 		0x9d, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_FEE, //holding_effect_param
 		str_item_labrusbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4118,8 +4118,8 @@ item items[] = {
 		LANGDEP(PSTRING("Tamotbeere"), PSTRING("Tamato Berry")),
 		0x9e, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_FEUER, //holding_effect_param
 		str_item_tamotbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4134,8 +4134,8 @@ item items[] = {
 		LANGDEP(PSTRING("Saimbeere"), PSTRING("Cornn Berry")),
 		0x9f, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_WASSER, //holding_effect_param
 		str_item_saimbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4150,8 +4150,8 @@ item items[] = {
 		LANGDEP(PSTRING("Magostbeere"), PSTRING("Magost Berry")),
 		0xa0, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_PFLANZE, //holding_effect_param
 		str_item_magostbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4166,8 +4166,8 @@ item items[] = {
 		LANGDEP(PSTRING("Rabutabeere"), PSTRING("Rabuta Berry")),
 		0xa1, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_ELEKTRO, //holding_effect_param
 		str_item_rabutabeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4182,8 +4182,8 @@ item items[] = {
 		LANGDEP(PSTRING("Tronzibeere"), PSTRING("Nomel Berry")),
 		0xa2, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_PSYCHO, //holding_effect_param
 		str_item_tronzibeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4198,8 +4198,8 @@ item items[] = {
 		LANGDEP(PSTRING("Kiwanbeere"), PSTRING("Spelon Berry")),
 		0xa3, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_EIS, //holding_effect_param
 		str_item_kiwanbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4214,8 +4214,8 @@ item items[] = {
 		LANGDEP(PSTRING("Pallmbeere"), PSTRING("Pamtre Berry")),
 		0xa4, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		HOLD_EFFECT_TYPE_BERRY, //holding_effect_id
+		TYPE_DRACHE, //holding_effect_param
 		str_item_pallmbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -4230,8 +4230,8 @@ item items[] = {
 		LANGDEP(PSTRING("Wasmelbeere"), PSTRING("Watmel Berry")),
 		0xa5, //index
 		20, //price
-		0, //holding_effect_id
-		0, //holding_effect_param
+		TYPE_UNLICHT, //holding_effect_id
+		TYPE_DRACHE, //holding_effect_param
 		str_item_wasmelbeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -7588,7 +7588,7 @@ item items[] = {
 	},
 	[ITEM_NORMALJUWEL] = {
 		.name = LANGDEP(PSTRING("Normaljuwel"), PSTRING("Normalgem")),
-		.index = 0x178, .price = 200,
+		.index = 0x178, .price = 200, 
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_NORMAL,
 		.description = str_normaljuwel_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,

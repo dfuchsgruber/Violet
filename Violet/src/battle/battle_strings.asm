@@ -430,6 +430,7 @@ bsc_strings:
 .word str_battle_x1B4
 .word str_battle_x1B5
 .word str_battle_x1B6
+.word str_battle_x1B7
 
 @ // Define the strings
 
@@ -2907,6 +2908,9 @@ bsc_strings:
 
 	str_battle_x1B6:
 		.string "BSC_CURRENT_MOVE wird durch\nBSC_LAST_ITEM verstärkt!"
+
+	str_battle_x1B7:
+		.string "BSC_CURRENT_MOVE wird durch\nBSC_LAST_ITEM geschwächt!"
 		
 
 .elseif LANG_EN
@@ -4986,6 +4990,9 @@ bsc_strings:
 
 	str_battle_x1B6:
 		.string "BSC_CURRENT_MOVE is boosted\nby BSC_LAST_ITEM!"
+
+	str_battle_x1B7:
+		.string "BSC_CURRENT_MOVE is weakened\nby BSC_LAST_ITEM!"
 
 .endif
 
