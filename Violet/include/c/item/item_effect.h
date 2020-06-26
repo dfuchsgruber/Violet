@@ -6,6 +6,7 @@
 #include "pokemon/virtual.h"
 
 #define NUMBER_ITEM_EFFECT_FUNCTIONS 9
+#define EFFECT_RESET_EVS 127
 
 typedef struct {
     // 0x0

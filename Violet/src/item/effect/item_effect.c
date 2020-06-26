@@ -135,14 +135,32 @@ bool item_effect_execute_ev_increase(pokemon *p, u16 item, u8 battler_idx, u8 mo
                             [STAT_SPECIAL_DEFENSE] = effect->increase_ev_special_defense};
     bool effect_applied = false;
     for (int i = 0; i < 6; i++) {
-        int potential_ev = pokemon_get_potential_ev(p, i);
-        if (increase_evs[i] && potential_ev < 255) {
-            if (!check_only) {
-                potential_ev += effect->evs[i];
-                pokemon_set_potential_ev(p, i, (u8)(MIN(255, potential_ev)));
+        if (increase_evs[i]) {
+            switch (effect->evs[i]) {
+                case EFFECT_RESET_EVS: {
+                    if (pokemon_get_effective_ev(p, i) > 0) {
+                        if (!check_only) {
+                            pokemon_set_effective_ev(p, i, 0);
+                        }
+                        effect_applied = true;
+                    }
+                    break;
+                }
+                default:{
+                    int potential_ev = pokemon_get_potential_ev(p, i);
+                    if (potential_ev < 255) {
+                        if (!check_only) {
+                            potential_ev += effect->evs[i];
+                            pokemon_set_potential_ev(p, i, (u8)(MIN(255, potential_ev)));
+                        }
+                        effect_applied = true;
+                    }
+                    break;
+                }
             }
-            effect_applied = true;
         }
+
+        
     }
     return effect_applied;  
 }

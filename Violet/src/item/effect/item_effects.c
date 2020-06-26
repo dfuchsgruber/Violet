@@ -241,6 +241,17 @@ item_effect_t item_effect_sweet_candy = {
     .friendship_low = 25, .friendship_mid = 15, .friendship_high = 5,
 };
 
+static item_effect_t item_effect_null_syrup = {
+    .increase_ev_hp = true, .increase_ev_attack = true, .increase_ev_defense = true,
+    .increase_ev_speed = true, .increase_ev_special_defense = true, .increase_ev_special_attack = true,
+    .increase_friendship_mid = true, .increase_friendship_high = true,
+    .friendship_low = 5, .friendship_mid = 3, .friendship_high = 2,
+    .evs = {
+        [STAT_HP] = EFFECT_RESET_EVS, [STAT_ATTACK] = EFFECT_RESET_EVS, [STAT_DEFENSE] = EFFECT_RESET_EVS,
+        [STAT_SPEED] = EFFECT_RESET_EVS, [STAT_SPECIAL_ATTACK] = EFFECT_RESET_EVS, [STAT_SPECIAL_DEFENSE] = EFFECT_RESET_EVS,
+    }
+};
+
 item_effect_t *item_effects[] = {
     [ITEM_TRANK- ITEM_TRANK] = &item_effect_potion,
     [ITEM_GEGENGIFT- ITEM_TRANK] = &item_effect_antidote,
@@ -301,6 +312,7 @@ item_effect_t *item_effects[] = {
     [ITEM_FINSTERSTEIN- ITEM_TRANK] = &item_effect_evolution_stone,
     [ITEM_LEUCHTSTEIN- ITEM_TRANK] = &item_effect_evolution_stone,
     [ITEM_FUNKELSTEIN- ITEM_TRANK] = &item_effect_evolution_stone,
+    [ITEM_NULLSAFT - ITEM_TRANK] = &item_effect_null_syrup,
     [ITEM_SINELBEERE- ITEM_TRANK] = &item_effect_oran_berry,
     [ITEM_TSITRUBEERE- ITEM_TRANK] = &item_effect_sitrus_berry,
     [ITEM_AMRENABEERE- ITEM_TRANK] = &item_effect_paralyze_heal,

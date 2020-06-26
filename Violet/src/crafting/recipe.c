@@ -358,6 +358,13 @@ static crafting_recipe crafting_recipies_nutrients[] = {
             [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
+        .item = ITEM_NULLSAFT, 
+        .ingredients = {
+            [0] = {.item = ITEM_KUESTENSALZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_KUESTENSALZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },{
         .item = ITEM_AP_PLUS, 
         .ingredients = {
             [0] = {.item = ITEM_JONAGOBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},

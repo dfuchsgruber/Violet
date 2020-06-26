@@ -151,6 +151,12 @@ bool item_has_room(u16 item, u16 quantity);
 void item_field_by_effect_table(u8 self);
 
 /**
+ * Item field function for null syrup.
+ * @param self self-reference
+ **/
+void item_field_null_syrup(u8 self);
+
+/**
  * Gets the price of an item.
  * @param item_idx the item to get the price of
  * @return the item price
@@ -413,8 +419,8 @@ extern const u8 gfx_item_schutzTiles[];
 extern const u8 gfx_item_schutzPal[];
 extern const u8 gfx_item_wunderstaubTiles[];
 extern const u8 gfx_item_wunderstaubPal[];
-extern const u8 gfx_item_item_58Tiles[];
-extern const u8 gfx_item_item_58Pal[];
+extern const u8 gfx_item_nullsaftTiles[];
+extern const u8 gfx_item_nullsaftPal[];
 extern const u8 gfx_item_item_59Tiles[];
 extern const u8 gfx_item_item_59Pal[];
 extern const u8 gfx_item_item_5aTiles[];

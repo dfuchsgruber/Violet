@@ -362,9 +362,9 @@ static u8 str_item_wunderstaub_description[] = LANGDEP(
 	PSTRING("Weißer Puder, der Beeren\nwachsen lässt."),
 	PSTRING("White powder that makes\ngrow.")
 );
-static u8 str_item_item_58_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_nullsaft_description[] = LANGDEP(
+	PSTRING("Geschmackloser Saft, der alle\nverteilten Fleiß-Punkte zurücksetzt."),
+	PSTRING("Tasteless juice that resets\nall distributed effort values.")
 );
 static u8 str_item_item_59_description[] = LANGDEP(
 	PSTRING(" ????"),
@@ -2994,18 +2994,18 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_ITEM_58
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		//ITEM_NULLSAFT
+		LANGDEP(PSTRING("Nullsaft"), PSTRING("Null Syrup")),
+		0x58, //index
+		10000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_58_description,
+		str_item_nullsaft_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
+		1, //type
+		item_field_null_syrup, //field_usage
 		(void(*)(u8))0x0, //battle_usage1
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
@@ -5499,7 +5499,7 @@ item items[] = {
 		str_item_item_f4_description,
 		0, // Importance
 		0, // exits_bag_on_use
-		POCKET_ITEMS, //pocket
+		POCKET_ITEMS, //pocket 
 		4, //type
 		(void(*)(u8))0x80a2325, //field_usage
 		(void(*)(u8))0x0, //battle_usage1

@@ -908,3 +908,4 @@ gp_list_menu_yes_no_new = 0x08110010 | 1;
 battle_animation_graphics = 0x083aca54;
 battle_animation_palettes = 0x083ad35c;
 pokemon_nature_strings = 0x08464f24;
+str_item_has_no_effect = 0x08416824;
