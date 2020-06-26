@@ -251,3 +251,45 @@ u16 pokemon_get_basis_stage (u16 species) {
 	// No pokemon evolves into this one
 	return species;
 }
+
+static size_t pokemon_get_evolution_item_line_dfs(u16 species, u16 *items, size_t max_size, size_t depth) {
+    if (depth > 2) {
+        dprintf("Scanning for all items in a evolution line for species %d reached a depth greater than 2.\n", species);
+        return 0;
+    }
+    dprintf("Evolution item DFS for species %d at depth %d, items %x, max_items %d\n", species, depth, items, max_size);
+    size_t cnt = 0; // count how  many items were already added
+    pokemon_evolution *evolutions = pokemon_evolutions[species];
+    if (evolutions) {
+        for (int j = 0; evolutions[j].method != EVOLUTION_METHOD_NONE && cnt < max_size && j < 20; j++) { // j < 20 is a safety condition, a pokémon should not have more than 20 successors (i.e. mons it evolves into)
+            if (evolutions[j].method == EVOLUTION_METHOD_TRADE_HOLD_ITEM || evolutions[j].method == EVOLUTION_METHOD_HOLD_ITEM ||
+                evolutions[j].method == EVOLUTION_METHOD_LINK_CABLE_AND_ITEM || evolutions[j].method == EVOLUTION_METHOD_HOLD_ITEM_AND_NIGHT ||
+                evolutions[j].method == EVOLUTION_METHOD_HOLD_ITEM_AND_DAY) {
+                items[cnt++] = evolutions[j].condition;
+            }
+            // DFS on evolution targets, if we can collect more items
+            if (cnt < max_size) {
+                cnt += pokemon_get_evolution_item_line_dfs(evolutions[j].target, items + cnt, max_size - cnt, depth + 1);
+            }
+        }
+    }
+    dprintf("Evolution item DFS for species %d at depth %d found %d items.\n", species, depth, cnt);
+    return cnt;
+}
+
+
+size_t pokemon_get_evolution_item_line(u16 species, u16 *items, size_t max_size) {
+    dprintf("Basis stage of %d\n ", species);
+    species = pokemon_get_basis_stage(species);
+    dprintf("Is %d\n", species);
+    // Unfold the dfs tree of this species, we assume no cycles and therefore don't save visited nodes
+    return pokemon_get_evolution_item_line_dfs(species, items, max_size, 0);
+}
+
+void pokemon_get_evolution_item_line_test() {
+    u16 items[10];
+    size_t cnt = pokemon_get_evolution_item_line(POKEMON_PORYGON2, items, ARRAY_COUNT(items));
+    for (size_t i = 0; i < cnt; i++) {
+        dprintf("Item %d is %d\n", i, items[i]);
+    }
+}

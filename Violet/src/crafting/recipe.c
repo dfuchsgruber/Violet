@@ -200,7 +200,6 @@ static crafting_recipe crafting_recipies_jewels[] = {
         }
     }
 };
-
 static crafting_recipe crafting_recipies_pokeballs[] = {
     {
         .item = ITEM_TAUCHBALL, 
@@ -240,7 +239,71 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
         }
     },
 };
-static crafting_recipe crafting_recipies_evolution[] = {};
+static crafting_recipe crafting_recipies_evolution[] = {
+    {
+        .item = ITEM_BLATTSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_GRUENSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_WASSERSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_INDIGOSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_FEUERSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_PURPURSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_DONNERSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_GELBSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_SONNENSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_SOLARSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_MONDSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_LUNARSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_FINSTERSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_DUESTERSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_LEUCHTSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_LICHTSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_FUNKELSTEIN, 
+        .ingredients = {
+            [0] = {.item = ITEM_GLITZERSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },{
+        .item = ITEM_LINKKABEL, 
+        .ingredients = {
+            [0] = {.item = ITEM_STERNENSTUECK, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_PERLE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [3] = {.count = 50, .type = CRAFTING_INGREDIENT_ASH},
+        }
+    },
+};
 static crafting_recipe crafting_recipies_mints[] = {
     {
         .item = ITEM_ANGR_ORB_P, 
@@ -398,7 +461,6 @@ static crafting_recipe crafting_recipies_nutrients[] = {
         }
     }
 };
-
 static crafting_recipe crafting_recipies_battle[] = {
     {
         .item = ITEM_X_ANGRIFF, 

@@ -396,6 +396,11 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_EISJUWEL] = { .gfx = gfx_item_eisjuwelTiles, .pal = gfx_item_eisjuwelPal },
     [ITEM_DRACOJUWEL] = { .gfx = gfx_item_dracojuwelTiles, .pal = gfx_item_dracojuwelPal },
     [ITEM_UNLICHTJUWEL] = { .gfx = gfx_item_unlichtjuwelTiles, .pal = gfx_item_unlichtjuwelPal },
+    [ITEM_SOLARSTUECK] = {.gfx = gfx_item_solarstueckTiles, .pal = gfx_item_solarstueckPal},
+    [ITEM_LUNARSTUECK] = {.gfx = gfx_item_lunarstueckTiles, .pal = gfx_item_lunarstueckPal},
+    [ITEM_DUESTERSTUECK] = {.gfx = gfx_item_duesterstueckTiles, .pal = gfx_item_duesterstueckPal},
+    [ITEM_GLITZERSTUECK] = {.gfx = gfx_item_glitzerstueckTiles, .pal = gfx_item_glitzerstueckPal},
+    [ITEM_LICHTSTUECK] = {.gfx = gfx_item_lichtstueckTiles, .pal = gfx_item_lichtstueckPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

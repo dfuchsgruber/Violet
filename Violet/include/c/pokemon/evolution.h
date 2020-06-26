@@ -27,6 +27,14 @@ typedef struct {
 extern pokemon_evolution *pokemon_evolutions[POKEMON_CNT];
 
 /**
+ * Uses a limited-depth dfs to find all items occuring anywhere in the evolution line of a pokemon
+ * @param species the species to check: dfs is initialized from its base stage
+ * @param items where to collect all items
+ * @param max_size the maximal number of items to collect
+ **/
+size_t pokemon_get_evolution_item_line(u16 species, u16 *items, size_t max_size);
+
+/**
  * Gets the basis stage of a species
  * @param species the species to get the basis stage of
  * @return the basis stage species

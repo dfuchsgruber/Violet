@@ -30,6 +30,8 @@ evolution_argument_map_type = agb.types.Structure([
     ('map_idx', 'u8', 0)
 ])
 
+evolution_argument_pokemon_type_type = agb.types.ScalarType('u16', constant='pokemon_types')
+
 evolutions_type = agb.types.FixedSizeArrayType(
     'evolution.entries_pointer',
     lambda project, context: len(project.constants['species'])
@@ -73,7 +75,7 @@ evolution_argument_union_type = agb.types.UnionType(
         'item' : 'item', # Item type is defined in basestats models
         'move' : 'move', # Move type is defined in basestats models
         'map' : 'evolution.argument.map',
-        'pokemon_type' : 'basestats.pokemon_type'
+        'pokemon_type' : 'evolution.argument.pokemon_type'
     },
     evolution_argument_get_type
 )
@@ -84,6 +86,7 @@ models_to_export = {
     'evolution.method' : evolution_method_type,
     'evolution.argument' : evolution_argument_union_type,
     'evolution.argument.map' : evolution_argument_map_type,
+    'evolution.argument.pokemon_type' : evolution_argument_pokemon_type_type,
     'evolution.entry' : evolution_entry_type,
     'evolution.entries' : evolution_entries_type,
     'evolution.entries_pointer' : evolution_entries_pointer_type,

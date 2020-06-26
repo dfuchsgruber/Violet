@@ -1582,6 +1582,26 @@ static u8 str_unlichtjuwel_description[] = LANGDEP(
 	PSTRING("Ein Item zum Tragen.\nVerstärkt einmalig Unlicht\nAngriffe."),
 	PSTRING("An item to be held by a Pokémon.\nBoosts Unlicht attacks\nonce.")
 );
+static u8 str_item_solarstueck_description[] = LANGDEP(
+	PSTRING("Eine orangene Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small orange shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_lunarstueck_description[] = LANGDEP(
+	PSTRING("Eine graue Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small grey shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_duesterstueck_description[] = LANGDEP(
+	PSTRING("Eine dunkle Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small dark shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_glitzerstueck_description[] = LANGDEP(
+	PSTRING("Eine funkelnde Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small sparkling shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_lichtstueck_description[] = LANGDEP(
+	PSTRING("Eine leuchtende Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
+	PSTRING("A small shining shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
 
 
 item items[] = {
@@ -7710,6 +7730,36 @@ item items[] = {
 		.index = 0x189, .price = 200,
 		.holding_effect_id = HOLD_EFFECT_GEM, .holding_effect_param = TYPE_UNLICHT,
 		.description = str_unlichtjuwel_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_LUNARSTUECK] = {
+		.name = LANGDEP(PSTRING("Lunarstueck"), PSTRING("Lunar Piece")),
+		.index = 0x18a, .price = 200,
+		.description = str_item_lunarstueck_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_SOLARSTUECK] = {
+		.name = LANGDEP(PSTRING("Solarstueck"), PSTRING("Solar Piece")),
+		.index = 0x18b, .price = 200,
+		.description = str_item_solarstueck_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_DUESTERSTUECK] = {
+		.name = LANGDEP(PSTRING("Düsterstuck"), PSTRING("Dusk Piece")),
+		.index = 0x18c, .price = 200,
+		.description = str_item_duesterstueck_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_GLITZERSTUECK] = {
+		.name = LANGDEP(PSTRING("Glitzerstueck"), PSTRING("Sparkle Piece")),
+		.index = 0x18c, .price = 200,
+		.description = str_item_glitzerstueck_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_LICHTSTUECK] = {
+		.name = LANGDEP(PSTRING("Lichtstueck"), PSTRING("Light Piece")),
+		.index = 0x18c, .price = 200,
+		.description = str_item_lichtstueck_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
 	},
 };

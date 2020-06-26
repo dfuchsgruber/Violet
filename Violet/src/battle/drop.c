@@ -21,11 +21,10 @@
 #include "pokemon/basestat.h"
 #include "constants/pokemon_colors.h"
 #include "berry.h"
+#include "pokemon/evolution.h"
 
 static u32 standard_item_drop_rates[][2] = {
     {ITEM_WUNDERSTAUB, 150},
-    {ITEM_SONDERBONBON, 1},
-    {ITEM_SUESSBONBON, 10},
     {ITEM_BEERENSAFT, 25},
     /**
     {ITEM_POKEBALL, 75},
@@ -63,6 +62,26 @@ static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
     return true;
 }
 
+static u32 standard_item_rare_drop_rates[][2] = {
+    {ITEM_SONDERBONBON, 1},
+    {ITEM_SUESSBONBON, 99},
+};
+
+static u32 standard_item_rare_count_rates[] = {[1] = 45, [2] = 5};
+
+static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
+    u32 p[ARRAY_COUNT(standard_item_rare_drop_rates)];
+    // Applying the level of the battler as offset: The higher the offset, the more "equal" all resulting probabilities will get
+    // i.e. the more likely rare items will get
+    u8 offset = battlers[battler_idx].level;
+    for (size_t i = 0; i < ARRAY_COUNT(standard_item_rare_drop_rates); i++) {
+        p[i] = (u32)(standard_item_rare_drop_rates[i][1] + offset);
+    }
+    *item = (u16)(standard_item_rare_drop_rates[choice(p, ARRAY_COUNT(p), NULL)][0]);
+    *cnt = (u8) choice(standard_item_rare_count_rates, ARRAY_COUNT(standard_item_count_rates), NULL);
+    return true;
+}
+
 #define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) {p[p_size] = prob; items[p_size] = item; p_size++;}
 
 static u32 drop_type_item_count_rates[] = {[1] = 19, [2] = 1};
@@ -86,6 +105,12 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
         P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTAUB, 40, p_size);
         P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTUECK, 40, p_size);
     }
+    for (u16 i = ITEM_NORMALJUWEL; i <= ITEM_UNLICHTJUWEL; i++) {
+        if (battlers[battler_idx].type1 == item_get_hold_effect_parameter(i) ||
+            battlers[battler_idx].type2 == item_get_hold_effect_parameter(i)) {
+            P_ARRAY_ADD_ITEM(p, items, i, 1, p_size);
+        }
+    }
     if (p_size > 0) {
         *dst_item = items[choice(p, p_size, NULL)];
         *dst_cnt = (u8)choice(drop_type_item_count_rates, ARRAY_COUNT(drop_type_item_count_rates), NULL);
@@ -102,10 +127,35 @@ static bool drop_color_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     int color = basestats[battlers[battler_idx].species].color_flip_field & 0x7F;
     u32 p[16]; u16 items[16];
     size_t p_size = 0;
-    if (color == POKEMON_COLOR_BLAU) P_ARRAY_ADD_ITEM(p, items, ITEM_INDIGOSTUECK, 1, p_size)
-    else if (color == POKEMON_COLOR_ROT) P_ARRAY_ADD_ITEM(p, items, ITEM_PURPURSTUECK, 1, p_size)
-    else if (color == POKEMON_COLOR_GELB) P_ARRAY_ADD_ITEM(p, items, ITEM_GELBSTUECK, 1, p_size)
-    else if (color == POKEMON_COLOR_GRUEN) P_ARRAY_ADD_ITEM(p, items, ITEM_GRUENSTUECK, 1, p_size)
+    switch(color) {
+        case POKEMON_COLOR_BLAU:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_INDIGOSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_ROT:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_PURPURSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_GELB:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_GELBSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_GRUEN:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_GRUENSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_SCHWARZ:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_DUESTERSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_WEISS:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_LICHTSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_BRAUN:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_SOLARSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_GRAU:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_LUNARSTUECK, 1, p_size);
+            break;
+        case POKEMON_COLOR_ROSA:
+            P_ARRAY_ADD_ITEM(p, items, ITEM_GLITZERSTUECK, 1, p_size);
+            break;
+    }
     if (p_size > 0) {
         *dst_item = items[choice(p, p_size, NULL)];
         *dst_cnt = (u8)choice(drop_color_item_count_rates, ARRAY_COUNT(drop_color_item_count_rates), NULL);
@@ -185,28 +235,47 @@ static bool drop_berry_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     return true;
 }
 
+static bool drop_evolution_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
+    u16 species = battlers[battler_idx].species;
+    u16 items[16];
+    size_t num_items = pokemon_get_evolution_item_line(species, items, ARRAY_COUNT(items));
+    if (num_items == 0)
+        return false;
+    size_t p[16] = {1};
+    *dst_item = items[choice(p, num_items, NULL)];
+    *dst_cnt = 1;
+    return true;
+}
+
+
 enum {
     DROP_STANDARD_ITEM = 0,
+    DROP_RARE_ITEM,
     DROP_TYPE_ITEM,
     DROP_COLOR_ITEM,
     DROP_SPECIES_ITEM,
     DROP_BERRY_ITEM,
+    DROP_EVOLUTION_ITEM,
 };
 
 static bool (*dropping_functions[])(u8, u16*, u8*) = {
     [DROP_STANDARD_ITEM] = drop_standard_item,
+    [DROP_RARE_ITEM] = drop_rare_item,
     [DROP_TYPE_ITEM] = drop_type_item,
     [DROP_COLOR_ITEM] = drop_color_item,
     [DROP_SPECIES_ITEM] = drop_species_item,
     [DROP_BERRY_ITEM] = drop_berry_item,
+    [DROP_EVOLUTION_ITEM] = drop_evolution_item,
 };
 
 static u32 dropping_type_probabilities[] = {
     [DROP_STANDARD_ITEM] = 10,
-    [DROP_TYPE_ITEM] = 4,
+    [DROP_RARE_ITEM] = 3,
+    [DROP_TYPE_ITEM] = 2,
     [DROP_COLOR_ITEM] = 3,
     [DROP_SPECIES_ITEM] = 1,
     [DROP_BERRY_ITEM] = 0, // For now, we don't drop any berries
+    [DROP_EVOLUTION_ITEM] = 1,
 };
 
 void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {

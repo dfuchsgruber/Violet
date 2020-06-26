@@ -35,6 +35,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm pokemon_get_evolution_item_line_test
+	end
 	setvar 0x8000 ITEM_NULLSAFT
 	setvar 0x8001 5
 	callstd ITEM_FIND

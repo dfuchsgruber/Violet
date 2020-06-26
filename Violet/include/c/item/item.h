@@ -1031,6 +1031,15 @@ extern const u8 gfx_item_unlichtjuwelTiles[];
 extern const u8 gfx_item_unlichtjuwelPal[];
 extern const u8 gfx_item_wasserjuwelTiles[];
 extern const u8 gfx_item_wasserjuwelPal[];
-
+extern const u8 gfx_item_solarstueckTiles[];
+extern const u8 gfx_item_solarstueckPal[];
+extern const u8 gfx_item_lunarstueckTiles[];
+extern const u8 gfx_item_lunarstueckPal[];
+extern const u8 gfx_item_duesterstueckTiles[];
+extern const u8 gfx_item_duesterstueckPal[];
+extern const u8 gfx_item_glitzerstueckTiles[];
+extern const u8 gfx_item_glitzerstueckPal[];
+extern const u8 gfx_item_lichtstueckTiles[];
+extern const u8 gfx_item_lichtstueckPal[];
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */
