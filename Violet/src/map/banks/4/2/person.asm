@@ -12,9 +12,8 @@ end
 .ifdef LANG_GER
 
 str_0x881901:
-    .string "Oh, hallo PLAYER! Wie geht es dir?\nDOTS\lFreut mich! Grüße doch bitte deine\lMutter von mir."
-
-
+    .autostring 34 2 "Oh, hallo PLAYER!\pWie geht es dir heute?\pDas ist gut zu hören!\nGrüß doch bitte deine Mutter von mir."
 .elseif LANG_EN
-
+str_0x881901:
+    .autostring 32 2 "Oh, hello there, PLAYER!\pHow are you today?\pThat's great to hear!"
 .endif

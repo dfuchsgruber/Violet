@@ -1,5 +1,5 @@
 #include "types.h"
-#include "mugshot.h"
+#include "mugshot.h" 
 #include "oam.h"
 #include "callbacks.h"
 #include "color.h"
@@ -49,8 +49,17 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_tannTiles}, 
 		gfx_mug_tannPal, str_mug_tann},
     [MUGSHOT_HIRO] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_hiroTiles},
-		gfx_mug_hiroPal, str_mug_hiro},
+			{
+				[MUGSHOT_NORMAL] = gfx_mug_hiroTiles,
+				[MUGSHOT_HAPPY] = gfx_mug_hiro_happyTiles,
+				[MUGSHOT_SAD] = gfx_mug_hiro_sadTiles,
+				[MUGSHOT_SCARED] = gfx_mug_hiro_scaredTiles,
+				[MUGSHOT_ANGRY] = gfx_mug_hiro_angryTiles,
+				[MUGSHOT_SHOCKED] = gfx_mug_hiro_shockedTiles,
+				[MUGSHOT_RUMINATIVE] = gfx_mug_hiro_thoughtfulTiles,
+			},
+			gfx_mug_hiroPal, str_mug_hiro
+		},
     [MUGSHOT_LESTER] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_lesterTiles}, 
 		gfx_mug_lesterPal, str_mug_lester},
@@ -97,8 +106,17 @@ mugshot mugshots[] = {
 		[MUGSHOT_HAPPY] = gfx_mug_blackbeard_happyTiles}, 
 		gfx_mug_blackbeardPal, str_mug_blackbeard},
     [MUGSHOT_HIROINE] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_hiroineTiles}, 
-		gfx_mug_hiroinePal, str_mug_hiro},
+			{
+				[MUGSHOT_NORMAL] = gfx_mug_hiroineTiles,
+				[MUGSHOT_HAPPY] = gfx_mug_hiroine_happyTiles,
+				[MUGSHOT_SAD] = gfx_mug_hiroine_sadTiles,
+				[MUGSHOT_SCARED] = gfx_mug_hiroine_scaredTiles,
+				[MUGSHOT_ANGRY] = gfx_mug_hiroine_angryTiles,
+				[MUGSHOT_SHOCKED] = gfx_mug_hiroine_shockedTiles,
+				[MUGSHOT_RUMINATIVE] = gfx_mug_hiroine_thoughtfulTiles,
+			},
+			gfx_mug_hiroinePal, str_mug_hiro
+		},
 	[MUGSHOT_TEAH] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_teahTiles}, 
 		gfx_mug_teahPal, str_mug_teah},

@@ -118,7 +118,7 @@ map_namespaces:
 	.global str_mapnamespace_88
 
 	str_mapnamespace_88:
-		.string "Amonia"
+		.string "Anemonia"
 
 
 	.global str_mapnamespace_89

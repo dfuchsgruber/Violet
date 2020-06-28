@@ -14,7 +14,7 @@ end
 .ifdef LANG_GER
 
 str_0x80062f:
-    .string "Amonia - Das Dorf der Ruhe"
+    .string "Anemonia"
 
 
 .elseif LANG_EN
@@ -31,7 +31,7 @@ end
 .ifdef LANG_GER
 
 str_0x800688:
-    .string "PLAYERs Hausツ"
+    .string "PLAYERs Haus"
 
 
 .elseif LANG_EN

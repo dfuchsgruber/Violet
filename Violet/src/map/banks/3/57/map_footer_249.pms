@@ -23,7 +23,7 @@
 			]
 		],
 		"tileset_primary": "maptileset0",
-		"tileset_secondary": "maptileset1",
+		"tileset_secondary": "maptileset_trainerschool",
 		"blocks": [
 			[
 				{

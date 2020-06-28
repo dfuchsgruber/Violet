@@ -12,7 +12,7 @@
 #include "debug.h"
 
 dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
-    {3, 0, 0x12, 0xC, DTYPE_FOREST}, // Anomia
+    {3, 0, 0x25, 0xd, DTYPE_FOREST}, // Anomia
     {3, 19, 0x2, 0x28, DTYPE_FOREST}, // Route 1
     {3, 19, 0x24, 0x1E, DTYPE_FOREST},
     {3, 19, 0x1F, 0x6, DTYPE_FOREST},

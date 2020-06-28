@@ -381,50 +381,50 @@ static crafting_recipe crafting_recipies_nutrients[] = {
     {
         .item = ITEM_KP_PLUS, 
         .ingredients = {
-            [0] = {.item = ITEM_MEGABLOCK, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_MEGABLOCK, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_PROTEIN, 
         .ingredients = {
-            [0] = {.item = ITEM_X_ANGRIFF, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_X_ANGRIFF, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_EISEN, 
         .ingredients = {
-            [0] = {.item = ITEM_X_ABWEHR, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_X_ABWEHR, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_CARBON, 
         .ingredients = {
-            [0] = {.item = ITEM_X_TEMPO, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_X_TEMPO, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_KALZIUM, 
         .ingredients = {
-            [0] = {.item = ITEM_X_SPEZIAL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_X_SPEZIAL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_ZINK, 
         .ingredients = {
-            [0] = {.item = ITEM_X_SPEZIAL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_X_SPEZIAL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_NULLSAFT, 
         .ingredients = {
-            [0] = {.item = ITEM_KUESTENSALZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_KUESTENSALZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_KUESTENSALZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_KUESTENSALZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
@@ -450,8 +450,8 @@ static crafting_recipe crafting_recipies_nutrients[] = {
     },{
         .item = ITEM_SUESSBONBON, 
         .ingredients = {
-            [0] = {.item = ITEM_WUNDERSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_STERNENSTAUB, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_WUNDERSTAUB, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_SINELBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_GOLDBONBON, 

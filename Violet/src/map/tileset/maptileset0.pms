@@ -32586,7 +32586,7 @@
 				"encounter_type": "0x0",
 				"field_5": "0x0",
 				"field_7": "0x0",
-				"priority": "0x1",
+				"priority": "1",
 				"battle_bg": "0"
 			},
 			{
