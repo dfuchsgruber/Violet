@@ -21,11 +21,10 @@ end
 .ifdef LANG_GER
 
 str_0x8000b2:
-    .string "Das sieht aus wie ein Shooter. Ich\nlasse besser die Finger davon, da\lSpiele ab 18 nicht für mich\lgeeignet sind. Ich würde sonst\lAmokläufer werden, denn das lässt\lsich nicht vermeiden, bei\lShooterspielen ab 18!"
-
-
+    .autostring 34 2 "Ich bin viel zu alt für Computerspiele.\pAuf mich wartet da draußen die echte Welt!"
 .elseif LANG_EN
-
+str_0x8000b2:
+    .autostring 34 2 "I am way too old for computer games.\pOutside the real world is waiting for me!"
 .endif
 
 
@@ -56,13 +55,11 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x1a8124:
-    .string "PLAYER schaltet den PC ein."
-
-
+    .string "PLAYER schaltet den Pc ein."
 .elseif LANG_EN
-
+str_0x1a8124:
+    .string "PLAYER turns on the Pc."
 .endif
 
 ow_script_debugger:

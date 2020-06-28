@@ -24,11 +24,10 @@ static void trainer_load_items(u16 trainer_idx, u16 *items, u8 *num_items, bool 
 	}
 	if (load_additional_items) {
 		switch(*var_access(DIFFICULTY)) {
-			case DIFFICULTY_HARD:
-			case DIFFICULTY_VERY_HARD: {
+			case DIFFICULTY_HARD: {
 				u16 additional_item = ITEM_TRANK;
 				int num_additional_items = 1;
-				if (checkflag(FRBADGE_6) || *var_access(DIFFICULTY) == DIFFICULTY_VERY_HARD) {
+				if (checkflag(FRBADGE_6)) {
 					additional_item = ITEM_TOP_GENESUNG;
 					num_additional_items = 4;
 				} else if (checkflag(FRBADGE_4)) {
@@ -62,8 +61,7 @@ void trainer_load_items_and_ai() {
 		if (battle_flags & BATTLE_TWO_TRAINERS)
 			trainer_load_items(fmem.trainer_varsB.trainer_id, BATTLE_STATE2->items[OWNER_TRAINER_B], BATTLE_STATE2->num_items + OWNER_TRAINER_B, true);
 		if (battle_flags & BATTLE_ALLY)
-			trainer_load_items(*var_access(VAR_ALLY), BATTLE_STATE2->items[OWNER_ALLY], BATTLE_STATE2->num_items + OWNER_ALLY, 
-				*var_access(DIFFICULTY) != DIFFICULTY_HARD && *var_access(DIFFICULTY) != DIFFICULTY_VERY_HARD);
+			trainer_load_items(*var_access(VAR_ALLY), BATTLE_STATE2->items[OWNER_ALLY], BATTLE_STATE2->num_items + OWNER_ALLY, true);
 	}
 }
 

@@ -40,21 +40,17 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8a0c83:
-    .string "PLAYER! Deine Pokémon sehen sehr\nmüde aus. Setz dich doch zu mir\lund ruhe dich eine Weile aus."
-
-
-
+    .autostring 34 2 "PLAYER, du und deine Pokémon sehen sehr müde aus.\pSetz dich doch eine Weile zu mir und ruh dich etwas aus!"
 str_0x8a0c66:
-    .string "Pass gut auf dich auf, PLAYER."
-
-
-
+    .autostring 34 2 "Na also, du siehst schon wieder viel besser aus!\pPass auf dich auf, Liebling!"
 str_0x8a11ed:
-    .string "PLAYER, beeil dich lieber.\nRIVAL wird nicht gerne warten\lgelassen."
-
-
+    .autostring 34 2 "PLAYER, beeil dich lieber.\nRIVAL wird nicht gerne warten gelassen."
 .elseif LANG_EN
-
+str_0x8a0c83:
+    .autostring 34 2 "PLAYER, both you and your Pokémon look tired.\pTake moment and rest here with me, honey!"
+str_0x8a0c66:
+    .autostring 34 2 "See, you look a lot better now.\pTake care of yourself, honey!"
+str_0x8a11ed:
+    .autostring 34 2 "PLAYER, you better hurry up.\pRIVAL doesn't like waiting at all."
 .endif

@@ -44,7 +44,12 @@
 
 .macro show_mugshot person alignment=MUGSHOT_LEFT message_type=MSG mask_name=0 emotion=MUGSHOT_NORMAL hide_mugshot=1
     load_mugshot \person \alignment \mask_name \emotion
-    show_mugshot_message \message_type
+    show_mugshot_message message_type=\message_type hide_mugshot=\hide_mugshot
+.endm
+
+.macro update_mugshot_emotion emotion:req
+    setvar 0x8000 \emotion
+    callasm mugshot_update
 .endm
 
 .macro msgbox_with_name message:req name:req alignment=MUGSHOT_LEFT message_type=MSG

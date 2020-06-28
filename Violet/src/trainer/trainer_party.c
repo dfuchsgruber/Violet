@@ -136,8 +136,7 @@ void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 	pid_t pid = {.value = (u32)pokemon_get_attribute(poke, 0, 0)};
 	u8 ev_difficulty = 0; // EVs that are applied due to difficulty
 	switch(*var_access(DIFFICULTY)) {
-		case DIFFICULTY_HARD: ev_difficulty = 7; break; // 28 EVs on each stat
-		case DIFFICULTY_VERY_HARD: ev_difficulty = 21; break; // 84 EVs on each stat
+		case DIFFICULTY_HARD: ev_difficulty = 21; break; // 84 EVs on each stat
 		}
 	if (field.bitfield.build_idx == TRAINER_BUILD_NONE) {
 		// Distribute evs according to difficulty

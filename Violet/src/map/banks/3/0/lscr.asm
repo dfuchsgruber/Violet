@@ -64,9 +64,8 @@ end
 .ifdef LANG_GER
 
 str_0x899e90:
-    .string "Na los! Wir sind sowieso schon\nviel zu spät! Beeilung!"
-
-
+    .autostring 34 2 "Na los jetzt, was hat denn da so lange gedauert?\pWenn Faun uns wegen dir die Hölle heiß macht, kannst du was erleben, PLAYER!"
 .elseif LANG_EN
-
+str_0x899e90:
+    .autostring 34 2 "Come on already, what did you take so long in there?\pIf Faun gives us hell you can bet I will do the same to you, PLAYER!"
 .endif

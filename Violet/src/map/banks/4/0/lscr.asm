@@ -157,28 +157,24 @@ end
 
 str_mother:
     .string "Mutter"
-
-
-
 str_0x89ba97:
-    .string "Guten Morgen PLAYER.\pDu hast wieder einmal verschlafen!\pUnd ausgerechnet heute, wo doch\ndeine Abschlussprüfung in der\lTrainerschule ansteht.\pBeeil dich lieber, RIVAL\nwird jeden Moment -"
-
-
-
+	.autostring 34 2 "Guten Morgen, PLAYER!\pWie kannst du denn ausgerechnet heute verschlafen?\pDie Abschlussprüfung in der Trainerschule darfst du auf keinen Fall verpassen.\pFür Frühstück ist jetzt keine Zeit mehr, RIVAL wird jeden Moment -"
 str_0x947c6c:
-    .string "PLAYER, du Schlafmütze!\pDie Prüfung beginnt gleich\nund du bist noch gar nicht\lrichtig aus den Federn gekommen!\pWenn wir zu spät\nkommen, wird uns Faun eine\lordentliche Standpauke halten und\lwir wissen ja, wie er sein kannDOTS\pAlso los! Komm in die Gänge!\pIch gebe dir eine halbe Minute!"
-
-
-
+    .autostring 34 2 "PLAYER, das ist doch nicht zu fassen!\pDie Prüfung geht gleich los und du bist gerade erst aus den Federn!\pWenn wir zu spät kommen, dürfen wir uns vom alten Faun was anhören.\pUnd da würde ich lieber drauf verzichten!\pAlso gib Gas!\nWir sehen uns gleich draußen!\pBloß nicht trödeln!\nLos, los!"
 str_0x89ad96:
-    .string "Was für ein AuftrittDOTS"
-
-
-
+    .autostring 34 2 "Typsich RIVALDOTS"
 str_0x89ad05:
-    .string "RIVAL hatte schon immer etwas von\neinem Hitzkopf an sichDOTS\pDu solltest ihn lieber nicht\nwarten lassen, befürchte ich.\pUnd natürlich viel\nGlück bei deiner Prüfung, Liebling!"
-
-
+    .autostring 34 2 "RIVAL ist eben ein Hitzkopf.\pDu lässt ihn lieber nicht warten, PLAYER.\pIch wünsche dir alles Gute für deine Prüfung, Liebling!"
 .elseif LANG_EN
 
+str_mother:
+    .string "Mom"
+str_0x89ba97:
+	.autostring 34 2 "Good morning, PLAYER!\pHow could you possibly oversleep on this day?\pYour can't miss your finals in the Trainerschool!\pYou won't have time for breakfest I fear, RIVAl will be here any moment -"
+str_0x947c6c:
+    .autostring 34 2 "PLAYER, I can't believe it!\pThe exam is starting any moment now and you are just out of bed!\pIf we are late the old Faun will give us a good telling of.\pAnd if you ask me I'd rather avoid that.\pSo hurry up now!\pWe meet outside in one minute!\pDon't you dare to linger around here!\pGo, go!"
+str_0x89ad96:
+    .autostring 34 2 "That's so like RIVALDOTS"
+str_0x89ad05:
+    .autostring 34 2 "RIVAL has always been kind of a hothead.\pYou probably shouldn't make him wait, PLAYER.\pI wish you all the best for your exam, honey!"
 .endif

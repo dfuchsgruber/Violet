@@ -195,6 +195,7 @@ typedef struct {
     int gp_stack[GP_STACK_SIZE];
     u8 mugshot_oam_id;
     u8 mugshot_tb_id;
+    u8 mugshot_active : 1;
     multichoice_t dynamic_choice;
     u16 tile_anim_clks_0[8];
     u16 tile_anim_clks_1[8];

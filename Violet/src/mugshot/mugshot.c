@@ -16,6 +16,7 @@
 #include "overworld/script.h"
 #include "language.h"
 #include "constants/mugshot_character.h"
+#include "bg.h"
 
 #define MUGSHOT_BASE_TAG 0x1340
 
@@ -31,19 +32,52 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_mistralTiles}, 
 		gfx_mug_mistralPal, str_mug_mistral},
     [MUGSHOT_RIVAL] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_rivalTiles}, 
+			{
+				[MUGSHOT_NORMAL] = gfx_mug_rivalTiles,
+				[MUGSHOT_HAPPY] = gfx_mug_rival_happyTiles,
+				[MUGSHOT_SAD] = gfx_mug_rival_sadTiles,
+				[MUGSHOT_SCARED] = gfx_mug_rival_scaredTiles,
+				[MUGSHOT_ANGRY] = gfx_mug_rival_angryTiles,
+				[MUGSHOT_SHOCKED] = gfx_mug_rival_shockedTiles,
+				[MUGSHOT_RUMINATIVE] = gfx_mug_rival_thoughtfulTiles,
+			}, 
 		gfx_mug_rivalPal, str_mug_rival},
     [MUGSHOT_BRIX] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_brixTiles},
 		gfx_mug_brixPal, str_mug_brix},
     [MUGSHOT_MAY] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_mayTiles}, 
-		gfx_mug_mayPal, str_mug_may},
+			{
+					[MUGSHOT_NORMAL] = gfx_mug_mayTiles,
+					[MUGSHOT_HAPPY] = gfx_mug_may_happyTiles,
+					[MUGSHOT_SAD] = gfx_mug_may_sadTiles,
+					[MUGSHOT_SCARED] = gfx_mug_may_scaredTiles,
+					[MUGSHOT_ANGRY] = gfx_mug_may_angryTiles,
+					[MUGSHOT_SHOCKED] = gfx_mug_may_shockedTiles,
+					[MUGSHOT_RUMINATIVE] = gfx_mug_may_thoughtfulTiles,
+					[MUGSHOT_EVIL] = gfx_mug_may_evilTiles,
+				},
+			gfx_mug_mayPal, str_mug_may},
     [MUGSHOT_FELIX] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_felixTiles}, 
+			{
+				[MUGSHOT_NORMAL] = gfx_mug_felixTiles,
+				[MUGSHOT_HAPPY] = gfx_mug_felix_happyTiles,
+				[MUGSHOT_SAD] = gfx_mug_felix_sadTiles,
+				[MUGSHOT_SCARED] = gfx_mug_felix_scaredTiles,
+				[MUGSHOT_ANGRY] = gfx_mug_felix_angryTiles,
+				[MUGSHOT_SHOCKED] = gfx_mug_felix_shockedTiles,
+				[MUGSHOT_RUMINATIVE] = gfx_mug_felix_thoughtfulTiles,
+			},  
 		gfx_mug_felixPal, str_mug_felix},
     [MUGSHOT_BLAISE] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_blaiseTiles}, 
+			{
+				[MUGSHOT_NORMAL] = gfx_mug_blaiseTiles,
+				[MUGSHOT_HAPPY] = gfx_mug_blaise_happyTiles,
+				[MUGSHOT_SAD] = gfx_mug_blaise_sadTiles,
+				[MUGSHOT_SCARED] = gfx_mug_blaise_scaredTiles,
+				[MUGSHOT_ANGRY] = gfx_mug_blaise_angryTiles,
+				[MUGSHOT_SHOCKED] = gfx_mug_blaise_shockedTiles,
+				[MUGSHOT_RUMINATIVE] = gfx_mug_blaise_thoughtfulTiles,
+			},  
 		gfx_mug_blaisePal, str_mug_blaise},
     [MUGSHOT_TANN] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_tannTiles}, 
@@ -182,8 +216,8 @@ void mugshot_create_oam(int side, int idx, int emotion) {
 		pal_decompress(mugshots[idx].pal, (u16)(16 * (pal + 16)), 16 * sizeof(color_t));
 		pal_oam_apply_fading(pal);
 	}
-
 	fmem.mugshot_oam_id = oam_new_forward_search(mugshot_template, (s16) (32 + side * 176), 80, 0);
+	fmem.mugshot_active = 1;
 }
 
 void mugshot_create_text(int side, u8 *text) {
@@ -213,6 +247,17 @@ void mugshot_create_text(int side, u8 *text) {
 		tbox_font_colormap fontcolmap = {1, 2, 1, 3};
 		tbox_print_string(box_id, 2, 16, 0, 0, 0, &fontcolmap, 0, strbuf);
 		fmem.mugshot_tb_id = box_id;
+	}
+}
+
+void mugshot_update() {
+	if (fmem.mugshot_active) {
+		u16 tag = oams[fmem.mugshot_oam_id].oam_template->tiles_tag;
+		int mugshot_idx = tag - MUGSHOT_BASE_TAG;
+		int emotion = *var_access(0x8000);
+		const u8 *gfx = mugshot_get_emotion_gfx(mugshot_idx, emotion);
+		u16 base_tile = oams[fmem.mugshot_oam_id].base_tile;
+		lz77uncompvram(gfx, OAMCHARBASE(base_tile));
 	}
 }
 
@@ -278,6 +323,7 @@ void mugshot_delete_oam(u8 self) {
 			++*state; // I frame delay
 			break;
 		default: {
+			fmem.mugshot_active = 0;
 			if (!big_callback_is_active(mugshot_wait_for_deletion)) {
 				big_callbacks[self].function = mugshot_wait_for_deletion;
 			} else {

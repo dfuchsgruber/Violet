@@ -261,10 +261,8 @@ u32 money_lost() {
     dprintf("Average player level is %d / 1000.\n", average_player_level);
     int money = money_lost_multipliers_by_number_of_badges[badges_number_get()] * 4 * average_player_level;
     switch (*var_access(DIFFICULTY)) {
-        case DIFFICULTY_VERY_EASY: money /= 2; break;
         case DIFFICULTY_EASY: money -= money / 2; break;
         case DIFFICULTY_HARD: money += money / 2; break;
-        case DIFFICULTY_VERY_HARD: money *= 2; break;
     }
     return MIN((u32)(money / 1000), money_get(&save1->money));
 }
@@ -279,10 +277,8 @@ void bsc_cmd_pricemoney() {
         else if (battle_flags & BATTLE_DOUBLE)
             money *= 2;
         switch(*var_access(DIFFICULTY)) {
-            case DIFFICULTY_VERY_EASY: money *= 2; break;
             case DIFFICULTY_EASY: money += money / 2; break;
-            case DIFFICULTY_HARD: money -= money / 2; break;
-            case DIFFICULTY_VERY_HARD: money /= 2; break;
+            case DIFFICULTY_HARD: money /= 2; break;
         }
         money_add(&save1->money, (u32)money);
     } else {

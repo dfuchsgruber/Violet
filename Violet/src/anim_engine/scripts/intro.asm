@@ -197,13 +197,23 @@ bgcnfgs:
     bg_setup_cnfg 3 0 0x1F 0 0 3
 
 
-
-str_intro_0:
-    .string "DOTSKannst du mich hören?\nDOTS DOTS DOTS\nLass es mich dir zeigenDOTS\nSie kamen aus dem AllDOTSPAUSE_UNTIL_PRESS"
-str_intro_1:
-    .string "Sie kamen von weit herDOTS\nSie wollten die MenschenDOTS\nDOTSvernichtenDOTSPAUSE_UNTIL_PRESS"  
-str_intro_2:
-    .string "Sie waren zum Äußersten bereitDOTS\nEin Kampf war unvermeidbarDOTSPAUSE_UNTIL_PRESS"
-str_intro_3:
-    .string "Und auch wenn sie besiegt wurdenDOTS\nWerden sie gestärkt wiederkehrenDOTSPAUSE_UNTIL_PRESS"
+.ifdef LANG_GER
+    str_intro_0:
+        .string "Kannst du mich hören?\nDOTS DOTS DOTS\nLass es mich dir zeigen!\nEs kam von weit herDOTSPAUSE_UNTIL_PRESS"
+    str_intro_1:
+        .string "Mit einem Meteoriten fiel\nes herab auf die Erde mit\ndem Ziel, Lebensraum\nzu finden.PAUSE_UNTIL_PRESS"
+    str_intro_2:
+        .string "Es war bereit, Mensch und\nPokémon zu vernichten.PAUSE_UNTIL_PRESS"
+    str_intro_3:
+        .string "Und bald wird diese Gefahr\nwiederkehrenDOTSPAUSE_UNTIL_PRESS"
         
+.elseif LANG_GER
+    str_intro_0:
+        .string "Can you hear me?\nDOTS DOTS DOTS\pLet me show it to you!\pIt came from far awayDOTS DOTS DOTS"
+    str_intro_1:
+        .string "With a meteorite it fell\ndown to earth and wanted\nto find a place to live.PAUSE_UNTIL_PRESS"
+    str_intro_2:
+        .string "It was willing to destroy\nboth men and Pokémon."
+    str_intro_3:
+        .string "And soon this danger will\nreturn once againDOTSPAUSE_UNTIL_PRESS"
+.endif        

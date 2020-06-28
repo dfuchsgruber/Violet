@@ -91,7 +91,7 @@ special 0x19
 waitstate
 loadpointer 0x0 str_0x89553b
 callstd MSG_KEEPOPEN
-setvar DYN_MULTICHOICE_ITEM_CNT 0x5
+setvar DYN_MULTICHOICE_ITEM_CNT 3
 loadpointer 0x0 difficulty_choices
 multichoice2 0x3 0x1 0x0 0x2 0x1
 copyvar DIFFICULTY LASTRESULT
@@ -110,8 +110,13 @@ setvar 0x8004 13
 special 0x19
 waitstate
 pause 0x80
-draw_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 loadpointer 0x0 str_after_dream
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_KEEPOPEN hide_mugshot=0
+update_mugshot_emotion MUGSHOT_RUMINATIVE
+loadpointer 0x0 str_after_dream2
+callstd MSG_KEEPOPEN
+update_mugshot_emotion MUGSHOT_NORMAL
+loadpointer 0x0 str_after_dream3
 callstd MSG_KEEPOPEN
 closeonkeypress
 hide_mugshot
@@ -154,52 +159,43 @@ mov_player_to_bed:
 
 .align 4
 difficulty_choices:
-    .word str_difficulty_very_easy, 0
     .word str_difficulty_easy, 0
     .word str_difficulty_normal, 0
     .word str_difficulty_hard, 0
-    .word str_difficulty_very_hard, 0
 
 
 
 .ifdef LANG_GER
 
 str_0x89553b:
-    .string "Wähle zunächst den\nSchwierigkeitsgrad aus, in dem du\ldas Spiel spielen möchtest.\pAchtung: Diese Entscheidung ist\nendgültig.\pDu kannst sie während\ndes Spielverlaufs nicht ändern!"
-
-
-
-str_difficulty_very_easy:
-    .string "Sehr einfach"
-
-
-
+    .autostring 34 2 "Wähle zunächst den Schwierigkeitsgrad aus, in dem du das Spiel spielen möchtest.\pDiese Entscheidung ist endgültig und kann später nicht wieder verändert werden."
 str_difficulty_easy:
     .string "Einfach"
-
-
-
 str_difficulty_normal:
     .string "Normal"
-
-
-
 str_difficulty_hard:
     .string "Schwer"
-
-
-
-str_difficulty_very_hard:
-    .string "Sehr schwer"
-
-
-
-
-
 str_after_dream:
-    .string "Was für ein seltsamer TraumDOTS\nEr hat sich so real angefühlt!\pDOTSund was er wohl zu bedeuten\nhatte?\pUnd wessen Stimme hat zu mir\ngesprochen?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch sollte mir darüber nicht zu\nviel Kopfzerbrechen bereiten, wo\ldoch heute der große Tag ist.\pUnd ich bin vermutlich schon viel\nzu spät!"
-
-
+    .autostring 34 2 "Was für ein seltsamer TraumDOTS\nEr hat sich so real angefühlt!"
+str_after_dream2:
+    .autostring 34 2 "Was er wohl zu bedeuten hatte?\pIrgendeine Stimme hat zu mir gesprochen, aber ich habe sie nicht erkanntDOTS"
+str_after_dream3:
+    .autostring 34 2 "Aber ich sollte mir gerade heute darüber nicht den Kopf zerbrechen!\pImmerhin steht meine Abschlussprüfung an!\pUnd ich bin vermutlich schon viel zu spät dran."
 .elseif LANG_EN
+
+str_0x89553b:
+    .autostring 34 2  "First, select the difficulty in which you want to play the game.\pNote that this decision is final and can't be changed later on."
+str_difficulty_easy:
+    .string "Easy"
+str_difficulty_normal:
+    .string "Normal"
+str_difficulty_hard:
+    .string "Hard"
+str_after_dream:
+    .autostring 34 2 "What a weird dramDOTS\pIt felt so real!"
+str_after_dream2:
+    .autostring 34 2 "I wonder what it meaning might have been.\pSome kind of voice seemed to be speaking to me but I didn't recognize it at all!"
+str_after_dream3:
+    .autostring 34 2 "But I should not let myself get distracted by something like this now.\pMy finals are today and I am probably late already!"
 
 .endif

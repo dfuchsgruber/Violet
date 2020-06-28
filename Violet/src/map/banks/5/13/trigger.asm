@@ -7,6 +7,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "difficulties.s"
 
 .global ow_script_0x93d02f
 .global ow_script_0x93d210
@@ -62,12 +63,12 @@ applymovement 0xff ow_script_movs_0x93cd2c
 waitmovement 0x0
 checkflag FRBADGE_3
 gotoif EQUAL ow_script_0x93cadd
-compare DIFFICULTY 0x2
-callif LESS ow_script_0x93cbc4
-compare DIFFICULTY 0x2
+compare DIFFICULTY DIFFICULTY_EASY
+callif EQUAL ow_script_0x93cbc4
+compare DIFFICULTY DIFFICULTY_NORMAL
 callif EQUAL ow_script_0x93cbd1
-compare DIFFICULTY 0x2
-callif HIGHER ow_script_0x93cbde
+compare DIFFICULTY DIFFICULTY_HARD
+callif EQUAL ow_script_0x93cbde
 loadpointer 0x0 str_0x93cbff
 callstd MSG_YES_NO
 compare LASTRESULT 0x0
