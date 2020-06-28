@@ -220,6 +220,7 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
 }
 
 void npc_free_palette_if_unused(u16 tag) {
+    dprintf("Attempting to free npc palette 0x%x\n", tag);
     if (tag == 0xFFFF || tag == 0x1200) // 0x1200 is the tag for weather effects, we mustn't release those
         return;
     u8 slot = oam_palette_get_index(tag);
@@ -228,8 +229,9 @@ void npc_free_palette_if_unused(u16 tag) {
     for (int i = 0; i < 16; i++) {
         if (!npcs[i].flags.active) continue;
         oam_object *oam = oams + npcs[i].oam_id;
-        if (((oam->final_oam.attr2 >> 12) & 0xF) == slot)
+        if (((oam->final_oam.attr2 >> 12) & 0xF) == slot) {
             return; // This palette is still referenced by at least one npc
+        }
     }
     
     if (tag == 0x1200) // This tag is used by weather effects, we never can release this palette...
@@ -248,8 +250,8 @@ void npc_free_resources(npc *n) {
     graphic tmp;
     tmp.size = overworld_get_by_npc(n)->size;
     oams[n->oam_id].gfx_table = &tmp;
-    oam_clear_and_free_vram(oams + n->oam_id);
     u8 pal_idx = (u8)((oams[n->oam_id].final_oam.attr2 >> 12) & 0xF);
+    oam_clear_and_free_vram(oams + n->oam_id);
     npc_free_palette_if_unused_by_slot(pal_idx);
 }
 
