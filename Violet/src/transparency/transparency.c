@@ -9,6 +9,7 @@
 #include "text.h"
 #include "bg.h"
 #include "debug.h"
+#include "callbacks.h"
 
 const color_t tbox_palette_transparent [16] = {
     {0x0},
@@ -54,7 +55,6 @@ void transparency_off() {
         io_set(0x50, 0x1E40);
         io_set(0x52, 0x0010);
     }
-    // clearflag(TRANS_PALETTE_FETCH);
 }
 
 
@@ -82,10 +82,19 @@ void overworld_tbox_load_gfx() {
     }
 }
 
-void overworld_tbox_delete() {
+/**
+static void callback_transparency_disable(u8 self){
     if (transparency_is_on())
         transparency_off();
+    big_callback_delete(self);
+}
+**/
+
+void overworld_tbox_delete() {
+    //big_callback_new(callback_transparency_disable, 0); // 1 frame later
     overworld_tbox_remove_task();
     tbox_remove_dialog(0, 1);
     overworld_tbox_state = 0;
+    if (transparency_is_on())
+        transparency_off();
 }
