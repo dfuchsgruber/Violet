@@ -191,7 +191,7 @@
 				},
 				{
 					"is_trainer": "0",
-					"script": "ow_script_map_3_19_trainer_4",
+					"script": "0",
 					"y": 3,
 					"target_index": "8",
 					"field_3": 0,
@@ -648,7 +648,7 @@
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_19_sign_0",
+						"script": "0",
 						"item": {
 							"item": "0",
 							"flag": "0",

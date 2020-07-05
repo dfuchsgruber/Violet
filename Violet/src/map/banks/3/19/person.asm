@@ -22,12 +22,11 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x804215:
-    .string "Ich bin kein Trainer. Da ich kein\nPokémon besitze, können wir auch\lnicht kämpfen."
-
-
+    .autostring 34 2 "Du willst gegen mich kämpfen?\pTja, Pech gehabt.\nIch habe gar kein Pokémon!"
 .elseif LANG_EN
+str_0x804215:
+    .autostring 34 2 "You want to challange me?\pWell, I don't even have a Pokémon, so that's that."
 
 .endif
 
@@ -40,18 +39,15 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8040c2:
-    .string "Wenn sich die Blicke zweier Trainer\ntreffen, kommt es unweigerlich zu\leinem Kampf. Los!"
-
-
-
+    .autostring 34 2 "Du siehst aus, als hättest du noch nicht viel Erfahrung.\pLeichte Beute für mich!"
 str_0x804122:
-    .string "Verliert ein Trainer gegen einen\nanderen, so muss er ihm Preisgeld\lgeben. Das sind die Regeln!"
-
-
+    .autostring 34 2 "Du bist stärker, als du aussiehst."
 .elseif LANG_EN
-
+str_0x8040c2:
+    .autostring 34 2 "You look like a rookie, right?\pEasy prey for me!"
+str_0x804122:
+    .autostring 34 2 "You're stronger than one might think."
 .endif
 
 
@@ -65,16 +61,15 @@ end
 .ifdef LANG_GER
 
 str_0x804181:
-    .string "Mit einem Pokeball kannst du wilde\nPokémon fangen, sodass sie dir\lgehorchen. Toll nicht?"
-
-
-
+    .autostring 34 2 "Ich besiege hier andauernd irgendwelche Schulkinder, die glauben, sie wären unschlagbar.\pAlso sieh dich vor!"
 str_0x8041dd:
-    .string "Ich habe mein Pokémon auch mit\neinem Pokeball gefangen."
-
-
+    .autostring 34 2 "Na gut, ich schätze, du bist tatsächlich nicht allzu schwach."
 .elseif LANG_EN
 
+str_0x804181:
+    .autostring 34 2 "Every day I defeat this little brats who come out of school and think they are invincible!"
+str_0x8041dd:
+    .autostring 34 2 "Ok, ok, I suppose you are not that weak then."
 .endif
 
 
@@ -87,11 +82,10 @@ end
 .ifdef LANG_GER
 
 str_0x8a0b9e:
-    .string "Hier im hohen Gras tauchen auf\nverschiedenen Routen verschiedene\lPokémon auf. Man kann sich also\lnie sicher sein, alle Pokémon\lgesehen zu haben. Spannend, nicht?"
-
-
+    .autostring 34 2 "Ich versuche, jedes verschiedene Pokémon, das mir begegnet, einzufangen.\pAuf die Weise lernt man sehr viel, musst du wissen."
 .elseif LANG_EN
-
+str_0x8a0b9e:
+    .autostring 34 2 "I try to catch every single Pokémon I encounter.\pThis way I can learn so much, believe it or not."
 .endif
 
 
@@ -105,65 +99,16 @@ end
 .ifdef LANG_GER
 
 str_0x8a09e3:
-    .string "Ein Trainer hat stets viele Tränke\nbei sich, wenn er gut ausgerüstet\lsein will."
-
-
-
+    .autostring 34 2 "Ich habe mir einen Trank gekauft, um mein Pokémon im Kampf wieder aufpeppeln zu können.\pDu hast also gar keine Chance!"
 str_0x8a0a35:
-    .string "Doch die Ausrüstung eines Trainers\nist natürlich nicht alles."
-
-
+    .autostring 34 2 "Scheint so, als hättest du die bessere Ausrüstung gehabt."
 .elseif LANG_EN
-
+str_0x8a09e3:
+    .autostring 34 2 "I bought a poition to strengthen my Pokémon in battle.\pThat means you don't stand a chance!"
+str_0x8a0a35:
+    .autostring 34 2 "Seems like you were better equipped after all."
 .endif
 
 
 ow_script_map_1_59_trainer_1:
-trainerbattlestd 0x0 0x6c 0x0 str_0x927db0 str_0x927d4e
-loadpointer 0x0 str_0x927d4e
-callstd MSG_FACE
 end
-
-
-.ifdef LANG_GER
-
-str_0x927db0:
-    .string "Hey, du da!\nDu kannst da nicht lang, unser\lAnführer hat dort zu tun.\pEr wird die Welt zu einem besseren\nOrt machen, weswegen ich dich\lnicht passieren lassen kann."
-
-
-
-str_0x927d4e:
-    .string "Wieso widersetzt du dich dem\nRecht, dem Frieden? Träumst du\lnicht auch von einer besseren\lWelt?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_0x8dce51:
-setvar 0x8000 POKEMON_ENECO
-call ow_script_find_egg
-end
-
-
-
-ow_script_map_3_19_trainer_4:
-lockall
-trainerbattlecont 0x1 0x2b7 0x0 str_0x8f610c str_0x8f610c ow_script_0x8f6111
-
-
-ow_script_0x8f6111:
-releaseall
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f610c:
-    .string "hi"
-
-
-.elseif LANG_EN
-
-.endif

@@ -106,7 +106,7 @@ trainer trainers[TRAINER_CNT] = {
     0xd, // sprite
     LANGDEP(PSTRING("Holger"), PSTRING("Holger")),
     {
-      ITEM_NONE,
+      ITEM_TRANK,
       ITEM_NONE,
       ITEM_NONE,
       ITEM_NONE

@@ -269,7 +269,7 @@ static bool (*dropping_functions[])(u8, u16*, u8*) = {
 };
 
 static u32 dropping_type_probabilities[] = {
-    [DROP_STANDARD_ITEM] = 10,
+    [DROP_STANDARD_ITEM] = 16,
     [DROP_RARE_ITEM] = 3,
     [DROP_TYPE_ITEM] = 2,
     [DROP_COLOR_ITEM] = 3,

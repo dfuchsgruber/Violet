@@ -54,11 +54,10 @@ end
 .ifdef LANG_GER
 
 str_0x89bf76:
-    .string "Wo bleibst du denn?!\nBeeilung!"
-
-
+    .autostring 34 2 "Wo bleibst du denn?\nBeeilung!"
 .elseif LANG_EN
-
+str_0x89bf76:
+    .autostring 34 2 "Where have you been?\pHurry up!"
 .endif
 
 
@@ -87,9 +86,9 @@ end
 .ifdef LANG_GER
 
 str_0x8a0956:
-    .string "Die Trainerschule liegt westlich\nvon Route 1. Ich sollte mich\lbeeilen, sonst verpasse ich noch\ldie Prüfungen!"
-
-
+    .autostring 34 2 "Die Trainerschule liegt westlich von hier.\pIch sollte mich beeilen, wenn ich die Prüfung nicht verpassen will."
 .elseif LANG_EN
 
+str_0x8a0956:
+    .autostring 34 2 "The trainerschool is west from here.\pI should hurry up if I don't want to be late."
 .endif

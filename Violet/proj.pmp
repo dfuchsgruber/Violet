@@ -1929,7 +1929,8 @@
 		"maptileset_cloud_dark_tower": "src/map/tileset/maptileset_cloud_dark_tower.pms",
 		"maptileset_dunkler_turm": "src/map/tileset/maptileset_dunkler_turm.pms",
 		"maptileset_blackbeard_ship": "src/map/tileset/maptileset_blackbeard_ship.pms",
-		"maptileset_trainerschool": "src/map/tileset/maptileset_trainerschool.pms"
+		"maptileset_trainerschool": "src/map/tileset/maptileset_trainerschool.pms",
+		"maptileset_meriana_city": "src/map/tileset/maptileset_meriana_city.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -1981,6 +1982,7 @@
 		"gfx_maptileset_cloud_dark_towerTiles": "asset/gfx/tileset/gfx_maptileset_cloud_dark_tower.png",
 		"gfx_maptileset_dunkler_turmTiles": "asset/gfx/tileset/gfx_maptileset_dunkler_turm.png",
 		"gfx_maptileset_blackbeard_shipTiles": "asset/gfx/tileset/gfx_maptileset_blackbeard_ship.png",
-		"gfx_maptileset_trainerschoolTiles": "asset/gfx/tileset/gfx_maptileset_trainerschool.png"
+		"gfx_maptileset_trainerschoolTiles": "asset/gfx/tileset/gfx_maptileset_trainerschool.png",
+		"gfx_maptileset_meriana_cityTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city.png"
 	}
 }
