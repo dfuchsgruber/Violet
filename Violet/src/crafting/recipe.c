@@ -424,7 +424,7 @@ static crafting_recipe crafting_recipies_nutrients[] = {
         .item = ITEM_NULLSAFT, 
         .ingredients = {
             [0] = {.item = ITEM_KUESTENSALZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_KUESTENSALZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_KUESTENSCHALE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{

@@ -82,7 +82,6 @@ overworld_sprite *overworld_get_by_person(map_event_person *person) {
             case PERSON_SHELL:
                 return overworld_sprite_get_by_shell_idx(person->value);
         }
-
     }
 
     // dprintf("Falling back to default sprite showing %d\n", person->overworld_index);

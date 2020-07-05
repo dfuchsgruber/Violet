@@ -122,12 +122,10 @@ gotoif EQUAL caught_pkmn
 checkitem ITEM_POKEBALL 1
 compare LASTRESULT 0x1
 gotoif LESS wasted_balls
-draw_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 4 mov_face_up
 waitmovement 0
 loadpointer 0 str_whatya_doin
-callstd MSG
-hide_mugshot
+show_mugshot MUGSHOT_FAUN alignment=MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_ANGRY
 releaseall
 end
 
@@ -181,7 +179,7 @@ pause 64
 loadpointer 0 str_well_done_rival
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_rival_says_was_easy
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY
 applymovement 3 mov_rival_back
 waitmovement 0
 applymovement 0x4 mov_face_down
@@ -190,7 +188,7 @@ waitmovement 0
 loadpointer 0 str_mays_turn
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_may_insecure
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_SHOCKED
 applymovement 5 mov_may_to_faun
 waitmovement 0
 loadpointer 0 str_give_may_balls
@@ -201,9 +199,8 @@ applymovement 0x4 mov_face_up
 applymovement 0x5 mov_into_grass
 waitmovement 0
 pause 40
-draw_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
 loadpointer 0x0 str_may_screams
-callstd MSG_KEEPOPEN
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_KEEPOPEN emotion=MUGSHOT_SCARED
 sound 10
 applymovement 0x5 mov_double_jump
 waitmovement 0
@@ -213,12 +210,11 @@ applymovement 0x5 mov_double_jump
 waitmovement 0
 checksound
 closeonkeypress
-hide_mugshot
 pause 64
 loadpointer 0 str_may_done
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0x0 str_may_glad
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY
 applymovement 5 mov_may_back
 waitmovement 0
 applymovement 0x4 mov_face_down
@@ -238,7 +234,7 @@ wasted_balls:
 applymovement 4 mov_face_up
 waitmovement 0
 loadpointer 0 str_wasted
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 subvar TRAINERSCHOOL_PROGRESS 1
 releaseall
 end
@@ -271,7 +267,7 @@ end
 
 wasted_balls_and_lost:
 loadpointer 0 str_wasted_balls_and_lost
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 copyvarifnotzero 0x8000 ITEM_POKEBALL
 copyvarifnotzero 0x8001 5
 callstd ITEM_OBTAIN
@@ -326,56 +322,72 @@ mov_face_down:
 .ifdef LANG_GER
 
 str_whatya_doin:
-	.autostring 35 2 "Was treibst du denn da, PLAYER?\pDu sollst das Pokémon einfangen! Gleich noch einmal!"
-
+	.autostring 35 2 "Was treibst du denn da, PLAYER?\pDu sollst das Pokémon einfangen!\pGleich noch einmal!"
 str_fainted:
-	.autostring 35 2 "Das war ja eine schwache Vorstellung!\pIch bringe deine Pokémon wieder auf Vordermann, und du versuchst es erneut!"
-
+	.autostring 35 2 "Das war ja eine schwache Vorstellung!\pIch bringe deine Pokémon wieder auf Vordermann, und du versuchst es nochmal!"
 str_healed:
-	.autostring 35 2 "So, dein Pokémon ist wieder bei Kräften.\pEnttäusche mich kein zweites Mal, PLAYER!"
-
+	.autostring 35 2 "So, dein Pokémon ist wieder bei Kräften.\pReiß dich zusammen, PLAYER!"
 str_wasted:
-	.autostring 35 2 "Du hast alle Pokébälle aufgebraucht?\pEine Schande ist das!\nKomm zu mir, ich werde dir ein paar neue geben."
-
+	.autostring 35 2 "Du hast alle Pokébälle aufgebraucht?\pDas darf ja nicht sein!\pIch werde dir, ausnahmsweise, ein paar neue geben.\pHalt dich ran!"
 str_wasted_balls_and_lost:
-	.autostring 35 2 "Und deine Pokébälle hast du auch aufgebraucht?\pDas ist unerhört! Ich gebe dir ein paar neue und du siehst zu, dass du dich besser anstellst!"
-
+	.autostring 35 2 "Und deine Pokébälle hast du auch aufgebraucht?\pDas ist ja wirklich erbärmlich!\pIch gebe dir ein paar neue und du kriegst das Ganze in den Griff!"
 str_caught:
-	.autostring 35 2 "Sehr gut gemacht, PLAYER!\pZurück mit dir in die Reihe!"
-
+	.autostring 35 2 "Gut gemacht, PLAYER!\pZurück mit dir in die Reihe!"
 str_call_rival:
-	.autostring 35 2 "Als nächstes bist du an der Reihe, RIVAL.\pKomm zu mir, ich werde dir Pokébälle aushändigen."
-
+	.autostring 35 2 "Als nächstes bist du an der Reihe, RIVAL.\pKomm zu mir, ich werde dir Pokébälle geben."
 str_rival_says_easy:
 	.autostring 35 2 "Immer her damit!\nDas wird ein Kinderspiel!"
-
 str_well_done_rival:
-	.autostring 35 2 "Gut gemacht, RIVAL!\pSo muss das sein. Komm zurück in die Reihe."
-
+	.autostring 35 2 "Alles klar, RIVAL!\pGenauso will ich das sehen.\pKomm zurück in die Reihe."
 str_rival_says_was_easy:
-	.autostring 35 2 "Wie ich gesagt habe:\nEin Kinderspiel!"
-
+	.autostring 35 2 "Ob das Ganze hier so leicht bleibt?"
 str_mays_turn:
-	.autostring 35 2 "Fein! Dann fehlst du nur noch du, Maike!\pKomm zu mir!"
-
+	.autostring 35 2 "Ausgezeichnet.\pFehlst nur noch du, Maike!"
 str_may_insecure:
-	.autostring 35 2 "Uh, ähm - okay!\nIch komme schonDOTS"
-
+	.autostring 35 2 "Uff, ähm, ja, ich komme!"
 str_give_may_balls:
 	.autostring 35 2 "Auch du erhältst von mir fünf Pokébälle.\pGib dein Bestes!"
-
 str_may_screams:
 	.autostring 35 2 "Whaaa!"
-
 str_may_done:
 	.autostring 35 2 "Sehr gut gemacht, Maike!\pBravo!\nZurück mit dir in die Reihe."
-
 str_may_glad:
-	.autostring 35 2 "Ta-Tatsächlich?\nHabe ich es geschafft?\pSuper! Das hätte ich ehrlich nicht gedachtDOTS"
-
+	.autostring 35 2 "Ta-Tatsächlich?\nHabe ich es geschafft?\pSuper!\nDas hätte ich ehrlich nicht gedachtDOTS"
 str_catching_test_done:
-	.autostring 35 2 "Ausgezeichnet!\nDamit hättet ihr diesen Teil der Prüfung schon einmal hinter euch.\pNun müsst ihr noch euer Kampfgeschick auf die Probe stellen, indem ihr gegeneinander antretet.\pPLAYER, RIVAL! Ihr bildet das erste Gegnerpaar.\pMaike und Felix das zweite.\pFindet euch auf dem Kampfplatz zusammen, wir beginnen unverzüglich."
-
+	.autostring 35 2 "Perfekt!\nHätten wir das auch geschafft!\pJetzt müsst ihr noch euer Kampfgeschick beweisen.\pPLAYER, du kämpfst gegen RIVAL.\pUnd Felix wird gegen Maike antreten."
 .elseif LANG_EN
-
+str_whatya_doin:
+	.autostring 34 2 "What the hell are you doing, PLAYER!\pYou are supposed to catch that Pokémon!\pTry again!"
+str_fainted:
+	.autostring 34 2 "Well, that was a poor performance.\pI will help your Pokémon and you try it right away!"
+str_healed:
+	.autostring 35 2 "Ok, your Pokémon is ready to battle.\pGet your stuff together, PLAYER!"
+str_wasted:
+	.autostring 34 2 "You used up all of the Pokéballs?\pThat's insane!\pJust once, I will give you another five.\pBut this time you better get it done!"
+str_wasted_balls_and_lost:
+	.autostring 35 2 "And you also used up all of your Pokéballs?\pThat's dreadful!\pI will give you another five and don't you dare to dissapoint me again!"
+str_caught:
+	.autostring 35 2 "Well done, PLAYER!\pGet back in line."
+str_call_rival:
+	.autostring 35 2 "You're next, RIVAL.\pI will give you some Pokéballs."
+str_rival_says_easy:
+	.autostring 35 2 "Keep them coming!\pThat's gonna be a piece of cake!"
+str_well_done_rival:
+	.autostring 35 2 "Very well, that's how you do it.\pGet back in line."
+str_rival_says_was_easy:
+	.autostring 35 2 "Too easy, right?"
+str_mays_turn:
+	.autostring 35 2 "Ok.\nNow its just you, May!"
+str_may_insecure:
+	.autostring 35 2 "Uh, er, yes, coming!"
+str_give_may_balls:
+	.autostring 35 2 "Five Pokéballs, here you go.\pGive it your best!"
+str_may_screams:
+	.autostring 35 2 "Whaaa!"
+str_may_done:
+	.autostring 35 2 "Very well done, May!\pBravo!\nYou can get back in line."
+str_may_glad:
+	.autostring 35 2 "R-Really?\nI did it?\pWow!\nI would have never thought that I could do it!"
+str_catching_test_done:
+	.autostring 35 2 "Splendid.\nThat's that.\pNow you will have to prove your abilities in a battle.\pPLAYER, you will fight against RIVAL.\pFelix, your opponent will be May."
 .endif

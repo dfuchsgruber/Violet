@@ -64,7 +64,7 @@ applymovement 0x9 mov_shout
 applymovement 0xFF mov_look_left
 waitmovement 0x0
 loadpointer 0x0 lock_classroom_str
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 return
 
 ow_script_trainerschool_lock_down:
@@ -86,39 +86,34 @@ waitmovement 0
 releaseall
 end
 
-
-
 mov_left:
 	.byte STEP_LEFT, STOP
-
 mov_down:
 	.byte STEP_DOWN, STOP
-
 mov_up:
 	.byte STEP_UP, STOP
-
 mov_look_left:
 	.byte LOOK_LEFT
 	.byte STOP
-
 mov_shout:
 	.byte LOOK_RIGHT
 	.byte SAY_EXCLAM
 	.byte STOP
 
-
 .ifdef LANG_GER
 str:
-    .autostring 35 2 "Ich sollte besser schnell\nin unser Klassenzimmer.\pFaun wird ohnehin schon rasend seinDOTS"
-
+    .autostring 35 2 "Ich sollte besser schnell in unser Klassenzimmer."
 str2:
-	.autostring 35 2 "Ich gehe besser auf den HofDOTS\nDer Feldtest fängt sicher gleich an."
-
+	.autostring 35 2 "Ich gehe besser auf den HofDOTS\pDer Feldtest fängt sicher gleich an."
 lock_classroom_str:
 	.autostring 34 2 "PLAYER!\nDu willst dich doch nicht etwa drücken?\pSetz' dich gefälligst hin!"
-
 .elseif LANG_EN
-
+str:
+    .autostring 35 2 "I should hurry up and go to the classroom."
+str2:
+	.autostring 35 2 "I better go to the schoolyard.\pThe field exam will start at any moment."
+lock_classroom_str:
+	.autostring 34 2 "PLAYER!\nYou're not trying to weasel out, are ya?\pUnbelievable!\nTake a seat before I come and get you!"
 .endif
 
 
@@ -237,11 +232,15 @@ return
 .ifdef LANG_GER
 
 str_hurry_m:
-    .autostring 35 2 "Du bist noch nicht draußen?\nWirklich immer am Trödeln, unser PLAYER!"
-
+	.autostring 34 2 "Immer noch nicht drauen?\pHeut hast du es wirklich mit dem Trödeln, PLAYER!"
 str_hurry_f:
-    .autostring 35 2 "Du bist noch nicht draußen?\nWirklich immer am Trödeln, unsere PLAYER!"
+	.autostring 34 2 "Immer noch nicht drauen?\pHeut hast du es wirklich mit dem Trödeln, PLAYER!"
 
 .elseif LANG_EN
+
+str_hurry_m:
+	.autostring 34 2 "Still in here?\pYou really are taking your time today, PLAYER!"
+str_hurry_f:
+	.autostring 34 2 "Still in here?\pYou really are taking your time today, PLAYER!"
 
 .endif

@@ -76,7 +76,7 @@ void mushroom_and_shell_regrow() {
     memset(cmem.shell_flags, 0, ARRAY_COUNT(cmem.shell_flags));
 }
 
-static u32 mushroom_encounters[] = {[POKEMON_KNILZ] = 1, [POKEMON_WAUMPEL] = 1, [POKEMON_SAMURZEL] = 1, [POKEMON_MYRAPLA] = 1, [POKEMON_KNOFENSA] = 1, [0] = 8};
+static u32 mushroom_encounters[] = {[POKEMON_KNILZ] = 1, [POKEMON_WAUMPEL] = 1, [POKEMON_SAMURZEL] = 1, [POKEMON_MYRAPLA] = 1, [POKEMON_KNOFENSA] = 1, [0] = 6};
 
 u16 mushroom_get_encounter() {
     map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);

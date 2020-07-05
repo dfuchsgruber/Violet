@@ -61,16 +61,21 @@ compare LASTRESULT 1
 gotoif EQUAL lost_battle
 won_battle:
 loadpointer 0 str_after_battle_won
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
 may_felix_battle:
 clearflag FLAG_SCRIPTED_WILD_BATTLES_LOSABLE
 special 0x113
 applymovement 0x7f mov_cam_to_may_felix
 waitmovement 0x0
 loadpointer 0 str_may_lost
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_SAD
 loadpointer 0 str_felix_won
-show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY hide_mugshot=0
+update_mugshot_emotion MUGSHOT_NORMAL
+loadpointer 0 str_felix_won2
+callstd MSG_KEEPOPEN
+closeonkeypress
+hide_mugshot
 applymovement 0x7F mov_cam_back
 waitmovement 0
 special 0x114
@@ -143,46 +148,64 @@ mov_face_right:
 	.ifdef LANG_GER
 
 str_announce_battle:
-	.autostring 35 2 "Nun denn, ihr Bälger!\pZeit für den wahren Härtetest. Ihr tretet nun in einem Kampf gegeneinander an.\pWenn ihr diese Prüfung bestehen wollt, gebt alles!"
-
+	.autostring 34 2 "Also dann, ihr Gören!\pEs geht ans Eingemachte!\pIhr tretet jetzt im Kampf gegeneinander an.\pWenn ihr diese Prüfung bestehen wollt, gebt ihr besser alles!"
 str_rival_challange:
-	.autostring 35 2 "PLAYER! Das ist der Tag, von dem wir geträumt haben!\pWir beide gegenüber in einem Pokémon-Kampf.\pIch werde dir eine Lektion erteilen!"
-
+	.autostring 35 2 "Man PLAYER!\nWie lange ich auf diesen Moment gewartet habe!\pKeine leeren Sticheleien mehr!\pJetzt sehen wir, wer der Bessere ist!"
 str_won:
-	.autostring 35 2 "Moment! Das kann nicht sein! Du hast geschummelt, ich will nochmal!"
-
+	.autostring 35 2 "Moment!\nDas kann nicht sein!\pDu hast geschummelt, ich will nochmal!"
 str_lost:
-	.autostring 35 2 "Tja, ich bin dir immer einen Schritt voraus!"
-
+	.autostring 35 2 "Bist du davon überrascht?"
 str_after_battle_won:
-	.autostring 35 2 "Das war ein einfacher Ausrutscher! Nichts weiter!\pIch bin der bessere Trainer von uns beiden, PLAYER. Das wissen wir wohl beide!"
-
+	.autostring 35 2 "Anfängerglück!\pIch war nicht ganz bei der Sache.\pAber ich gönne dir den Sieg natürlich.\pImmerhin wird es dein einziger gegen mich sein!"
 str_after_battle_lost:
-	.autostring 35 2 "Dass ich der bessere Trainer von uns beiden bin, wissen wir wohl beide, PLAYER.\pAber du hast dich gut geschlagen."
-
+	.autostring 35 2 "Hah!\nHab ich dir nicht gesagt, dass ich der bessere Trainer bin?\pMach dir nichts draus, gegen mich zu verlieren ist keine Schande!"
 str_may_lost:
-	.autostring 35 2 "I-Ich habe verlorenDOTS\pIch bin eine Schande für diese SchuleDOTS"
-
+	.autostring 35 2 "Ich wusste esDOTS\pIch tauge einfach nicht zum TrainerDOTS"
 str_felix_won:
-	.autostring 35 2 "Rede doch keinen Unsinn, Maike!\pDu hast gut gekämpft! Du brauchst nur etwas mehr Vertrauen in dich und deine Pokémon!"
-
+	.autostring 35 2 "Willst du nach einer Niederlage etwa schon aufgeben?"
+str_felix_won2:
+	.autostring 35 2 "Das würde Opi gar nicht gefallen!\pDu hast dich doch nicht schlecht geschlagen, Maike!"
 str_announce_end:
-	.autostring 35 2 "Ausgezeichnet! Damit sind wir auch schon am Ende der Prüfung angelangt.\pReiht euch wieder auf, dann teile ich euch eure Ergebnisse mit!"
-
+	.autostring 35 2 "Sehr gut.\pDas war's auch schon!\pEin Kinderspiel, was?\pIch werde euch die Ergebnisse mitteilen!"
 str_final_call_felix:
 	.autostring 35 2 "Felix, du bist wieder als Erster an der Reihe.\pKomm zu mir, Junge!"
-
 str_award_felix:
-	.autostring 35 2 "Im schriftlichen Test konntest du sieben Fragen richtig beantwortenDOTS\pAusgezeichnet!\pEin Pokémon zu fangen hat dir keine Probleme bereitet und deinen Kampf hast du gewonnen.\pGlückwunsch, du hast es geschafft, Bursche!\pAb heute darfst du dich einen Trainer nennen!"
-
+	.autostring 35 2 "Der schriftliche Test war keine Meisterleistung, aber du hast deinen Kampf gewonnen.\pDas sollte reichen, was?\pLass dir das aber nicht zu Kopf steigen!"
 str_felix_awarded:
-	.autostring 35 2 "Hihi! Danke, Opi - ähm, Herr Faun!\pDu warst wirklich ein großartiger Lehrer!"
-
+	.autostring 35 2 "Hihi!\nDanke, Opi!\pÄhm, ich meine natürlich Herr Faun!"
 str_final_call_player:
 	.autostring 35 2 "Machen wir mit dir weiter, PLAYER!\pAngetreten!"
 
 .elseif LANG_EN
 
+str_announce_battle:
+	.autostring 34 2 "Well you brats!\pNow we get down to buisness!\pYou will battle each other!\pIf you plan to pass this exam I suggest you give it all!"
+str_rival_challange:
+	.autostring 35 2 "Hey, PLAYER!\pCan you imagine how long I have waited for this moment?\pNo empty banter anymore!\pNow we will find out who really is the better trainer!"
+str_won:
+	.autostring 35 2 "Wait a second!\nThat can't be!\pYou cheated!\nLet's repeat the fightDOTS"
+str_lost:
+	.autostring 35 2 "Are you really suprised?"
+str_after_battle_won:
+	.autostring 34 2 "Beginners luck!\pI just didn't focus that much.\pBut I will give you that victory, since it will be your only one against me!"
+str_after_battle_lost:
+	.autostring 35 2 "Hah!\nDidn't I tell you I'd win?\pDon't take it too seriously, losing against me is nothing be ashamed of!"
+str_may_lost:
+	.autostring 35 2 "Ich knew itDOTS\pI am just not good enough to be a trainerDOTS"
+str_felix_won:
+	.autostring 35 2 "Do you really want to give up after a single defeat?"
+str_felix_won2:
+	.autostring 35 2 "Grandpa surely wouldn't like that!\pYou didn't do bad at all, May!"
+str_announce_end:
+	.autostring 35 2 "Very well.\nThat's it!\pPiece of cake, right?\pI will give you the results now."
+str_final_call_felix:
+	.autostring 35 2 "Felix, you're first again.\pCome here, boy."
+str_award_felix:
+	.autostring 35 2 "Well, the written test wasn't that great, but you won your battle.\pI suppose that is sufficient.\pBut don't let that get to your head!"
+str_felix_awarded:
+	.autostring 35 2 "Hihi!\nThanks, grandpa!\pOh, I mean Mr. Faun, of course!"
+str_final_call_player:
+	.autostring 35 2 "Let's continue with you, PLAYER!"
 .endif
 
 ow_script_trainerschool_lock_grass:
@@ -231,17 +254,17 @@ faun_not_arrived:
 
 receive_pkmn:
 	loadpointer 0 str_receive_pkmn
-	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 	return
 
 receive_pokeballs:
 	loadpointer 0 str_receive_pkmn
-	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 	return
 
 fight_wild_pokemon:
 	loadpointer 0 str_fight_wild_pokemon
-	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+	show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 	return
 
 mov_up:
@@ -252,10 +275,10 @@ mov_down:
 
 .ifdef LANG_GER
 str:
-    .autostring 35 2 "Ich sollte mich nicht zu weit von hier entfernen, Faun wird jeden Moment kommenDOTS"
+    .autostring 35 2 "Ich sollte nicht zuweit weggehen, Faun wird jeden Moment hier seinDOTS"
 
 str_receive_pkmn:
-	.autostring 35 2 "Wo willst du denn hin, PLAYER! Komm gefälligst hierher!"
+	.autostring 35 2 "Wo willst du denn hin, PLAYER!\pKomm gefälligst hierher!"
 
 str_fight_wild_pokemon:
 	.autostring 35 2 "Was ist los, PLAYER?\nFürchtest du dich etwa vor den wilden Pokémon?\pMach' keinen Unsinn und komm her!"
@@ -264,6 +287,17 @@ str_trainerschool_say_goodbye:
 	.autostring 35 2 "Ich sollte mich von meinen Mitschülern verabschieden."
 
 .elseif LANG_EN
+str:
+    .autostring 35 2 "I shouldn't go too far away, Faun will be here any momentDOTS"
+
+str_receive_pkmn:
+	.autostring 35 2 "Where are you going, PLAYER?\pGet yourself right here!"
+
+str_fight_wild_pokemon:
+	.autostring 35 2 "What's the deal, PLAYER?\pAfraid of the wild Pokémon?\pStop this nonsense and come here!"
+
+str_trainerschool_say_goodbye:
+	.autostring 35 2 "I should say goodbye to my classmates."
 
 .endif
 
@@ -311,15 +345,12 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x89bfed:
-    .string "Na los! Die Schule hat längst\nangefangen. Faun wird uns Feuer\lunterm Hintern machen, wenn wir\luns nicht bald blicken lassen."
-
-
+	.autostring 34 2 "Na los!\nWas dauert da denn so lange?\pDie Prüfung hat bestimmt schon angefangen!\pFaun wird uns Feuer unterm Hintern machen, wenn wir uns nicht bald blicken lassen!"
 .elseif LANG_EN
-
+str_0x89bfed:
+	.autostring 34 2 "Come on!\nWhat's taking you so long?\pThe exam most likely has already started and Faun won't like us coming late at all!"
 .endif
-
 
 ow_script_map_3_57_trigger_1:
 lockall

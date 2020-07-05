@@ -30,7 +30,7 @@ ow_script_0x89c150:
 @ Move rival to his place
 lockall
 loadpointer 0x0 str_rival_to_player
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANNOYED
 applymovement 0x1 mov_rival_to_place
 waitmovement 0
 applymovement 0xFF mov_step_up
@@ -40,23 +40,23 @@ releaseall
 end
 
 mov_rival_to_place:
-.byte STEP_UP
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_UP
-.byte STEP_UP
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
+.byte STEP_UP_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_UP_FAST
+.byte STEP_UP_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
+.byte STEP_LEFT_FAST
 .byte LOOK_UP
 .byte STOP
 
@@ -291,23 +291,42 @@ mov_x:
 .ifdef LANG_GER
 
 str_rival_to_player:
-	.autostring 35 2 "PLAYER! Wir sind schon viel zu spät! Wenn ich wegen deiner Trödelei die Abschlussprüfung in den Sand setzte, dannDOTS!\pBeeilung jetzt!"
+	.autostring 35 2 "PLAYER!\nWir sind schon viel zu spät!\pWenn ich wegen deiner Trödelei die Abschlussprüfung in den Sand setzte, dann setzt's wasDOTS\pBeeilung jetzt!"
 
 str_faun_to_player:
-	.autostring 35 2 "PLAYER!\pDa bist du ja endlich!\nHehe! Ich hatte schon befürchtet,\ldu und RIVAL würdet kneifen!\pNimm PlatzDOTS"
+	.autostring 35 2 "PLAYER!\pDa bist du ja endlich!\pIch hatte schon befürchtet, RIVAL und du würden keifen!"
 
 str_faun_announce:
-	.autostring 35 2 "So ihr Bälger!\nHeute ist es so weit und ihr werdet nach meiner harten Ausbildung zu echten Trainern!\pZuerst werde ich euer Wissen in einer schriftlichen Prüfung abfragen.\pDann geht es nach draußen, wo ihr einen Feldtest bestehen müsst.\pIch bin mir sicher, dass ihr alle das nicht vergeigen werdet!\pIch teile nun die Fragebögen aus.\pKeinen Mucks will ich dabei hören!"
+	.autostring 34 2 "So, ihr Rotzlöffel!\pHeute ist hoffentlich euer letzter Tag in dieser Schule.\pJetzt müsst ihr beweisen, dass ihr das Zeug zu Trainern habt.\pZuerst werde ich euer Wissen in einer schriftlichen Prüfung abfragen.\pDanach werdet ihr draußen einen Feldtest bestehen müssen.\pGlaubt ja nicht, dass ich euch in dieser Prüfung irgendetwas schenke!\pIch teile jetzt die Fragebögen aus.\pWer auch nur einen Laut von sich gibt, ist schon durchgefallen!"
 
 str_exam_begins:
-	.autostring 35 2 "Na dann! Viel Glück\pIhr werdet es brauchenDOTS\nHehe!"
+	.autostring 35 2 "Viel Glück, ihr Bälger!\pIhr werdet es brauchen, hehe!"
 
 str_exam_over:
-	.autostring 35 2 "Gut, das wars!\nStifte weg!\pDas war ein kleiner Vorgeschmack auf das Trainer-Dasein!\pKeine Bange, der Feldtest macht ein Stück mehr Spaß!"
+	.autostring 34 2 "Gut, das wars!\pStifte weg!\pEin netter kleiner Vorgeschmack auf das Trainer-Dasein, was?\pKeine Bange, der Feldtest macht ein Stückchen mehr Spaß!"
 
 str_after_exam:
-	.autostring 35 2 "Sehr schön!\nIch werde mir eure Antworten ansehen und ihr könnt erst einmal durchschnaufen.\pWir treffen uns auf dem Hof, wo der Feldtest stattfindet.\pDas wird ein Spaß werden, meint ihr nicht auch?"
+	.autostring 35 2 "Sehr gut!\pIch werde mir eure Antworten ansehen.\pIhr könnt erst einmal durchschnaufen.\pWir treffen uns gleich draußen auf dem Hof, verstanden?\pUnd ja nicht trödeln!"
 
 .elseif LANG_EN
+
+
+str_rival_to_player:
+	.autostring 35 2 "PLAYER!\nWe are way too late anyways!\pIf I mess up this exam because of you, I will whip you up!"
+
+str_faun_to_player:
+	.autostring 35 2 "PLAYER!\pThere you are!\pI almost thought RIVAL and you would duck out!"
+
+str_faun_announce:
+	.autostring 34 2 "Well, brats!\pToday hopefully is your last day in this school.\pNow you will have to prove that you have what makes a trainer.\pFirst I will test your knowledge in a written exam.\pAfterwards we will do a field examination outside.\pDon't you think I will give you anything for free in this test.\pI will now distribute the papers, if anybody makes any noise they will fail immediatly, got that?"
+
+str_exam_begins:
+	.autostring 35 2 "Good luck, brats!\pYou will need it, hehe!"
+
+str_exam_over:
+	.autostring 34 2 "That's it!\pPut the pens down!\pA little impression of what's to come once you are trainer.\pNo worries, the field exam will make little bit more fun!"
+
+str_after_exam:
+	.autostring 35 2 "Great!\pI will now have look at your answers.\pYou can now take a little time to breathe.\pWe will meet outside in a moment, ok?\pAnd don't you dare to stroll!"
 
 .endif

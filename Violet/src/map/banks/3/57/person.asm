@@ -44,12 +44,16 @@ end
 
 .ifdef LANG_GER
 str_before_faun_appeared:
-	.autostring 35 2 "Wirklich eine Unverschämtheit, dass uns der Knacker nach diesem Test auch noch warten lässtDOTS\pMein Vater hätte mich nie auf diese Schule schicken dürfenDOTS"
-
+	.autostring 35 2 "Ich kann es wirklich kaum erwarten, diesen Kindergarten hier hinter mir zu lassen.\pDiesen ganzen Unsinn habe ich meinem Vater zu verdankenDOTS"
 str_has_received_pkmn:
-	.autostring 35 2 "Scheint, als hätte diese Schule doch ihr Gutes.\pEin solches Pokémon sieht man nicht alle TageDOTS"
+	.autostring 35 2 "So wenig ich für den altne Knacker übrig habeDOTS\pDas Pokémon, das er mir gegeben hat, ist nicht von schlechten Eltern!"
 
 .elseif LANG_EN
+str_before_faun_appeared:
+	.autostring 35 2 "I really can't wait to leave this kindergarden behind.\pAll this nonsense is only because of my fatherDOTS"
+str_has_received_pkmn:
+	.autostring 35 2 "I don't particularly like this old geezerDOTS\pBut the Pokémon he gave me really isn't all that bad!"
+
 
 .endif
 
@@ -72,8 +76,11 @@ faceplayer
 buffernumber 0 TRAINERSCHOOL_CORRECT_ANSWERS
 loadpointer 0 str_results_player
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+loadpointer 0 str_passed
 fanfare 0x13E
+callstd MSG_KEEPOPEN
 waitfanfare
+closeonkeypress
 loadpointer 0 str_player_back
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 setvar 0x8004 0xFF
@@ -87,31 +94,31 @@ waitmovement 0
 applymovement 3 mov_result_rival_to_faun
 waitmovement 0
 loadpointer 0 str_rival_results
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
 loadpointer 0 str_results_rival2
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 fanfare 0x13E
 waitfanfare
 loadpointer 0 str_rival_glad
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY
 applymovement 3 mov_result_rival_back
 waitmovement 0
 loadpointer 0 str_call_may
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_insecure
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
 applymovement 5 mov_result_may_to_faun
 waitmovement 0
 loadpointer 0 str_results_may
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_understands
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_SAD
 loadpointer 0 str_results_may2
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 fanfare 0x13E
 waitfanfare
 loadpointer 0 str_may_glad
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED
 applymovement 5 mov_result_may_back
 waitmovement 0
 loadpointer 0 str_final_talk
@@ -134,7 +141,7 @@ end
 
 battle_faun:
 loadpointer 0 str_battle_faun
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_FACE emotion=MUGSHOT_ANGRY
 end
 
 receive_pkmn:
@@ -174,7 +181,7 @@ pause 32
 applymovement 0x3 mov_dinplace
 waitmovement 0
 loadpointer 0 str_rival_says_thanks
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY
 applymovement 0x3 mov_rival_back
 waitmovement 0
 
@@ -182,7 +189,7 @@ waitmovement 0
 loadpointer 0 str_may_picks
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_disappointed
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_SAD
 applymovement 0x5 mov_may_to_faun
 waitmovement 0
 pause 32
@@ -191,7 +198,7 @@ waitmovement 0
 loadpointer 0 str_may_received_pkmn
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 loadpointer 0 str_may_dots
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_SAD
 applymovement 0x5 mov_may_back
 waitmovement 0
 
@@ -227,9 +234,9 @@ applymovement 0x5 mov_left_exclam
 applymovement 0x7 mov_right_exclam
 waitmovement 0
 loadpointer 0 str_call_blaise_again
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 loadpointer 0 str_blaise_leaves
-show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
+show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
 applymovement 0x3 mov_face_down
 applymovement 0xFF mov_face_down
 applymovement 0x5 mov_face_down
@@ -241,17 +248,21 @@ hidesprite 0x6
 checksound
 pause 32
 loadpointer 0 str_faun_angry_at_blaise
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
-pause 40
-fadesong MUS_TRAINERSCHOOL
-
-@ Continue with field test
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 applymovement 0x3 mov_face_up
 applymovement 0xFF mov_face_up
 applymovement 0x5 mov_face_up
 applymovement 0x7 mov_face_up
 loadpointer 0 str_continue_with_field_test
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY hide_mugshot=0
+update_mugshot_emotion MUGSHOT_NORMAL
+loadpointer 0 str_continue_with_field_test2
+callstd MSG_KEEPOPEN
+closeonkeypress
+hide_mugshot
+@ Continue with field test
+pause 40
+fadesong MUS_TRAINERSCHOOL
 @ Felix catches his pkmn
 loadpointer 0 str_felix_starts_test
 show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
@@ -274,7 +285,7 @@ applymovement 0x7 mov_double_jump
 waitmovement 0
 checksound
 loadpointer 0 str_felix_done_catching
-show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY
 loadpointer 0 str_faun_admires_felix
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 applymovement 0x4 mov_face_down
@@ -338,7 +349,7 @@ mov_felix_catching_back:
 	.byte STEP_DOWN, STEP_DOWN, STEP_RIGHT, STEP_DOWN, LOOK_UP, STOP
 
 mov_double_jump:
-	.byte JUMP_IN_PLACE_FACE_UP, STOP
+	.byte JUMP_IN_PLACE_FACE_UP, PAUSE_32, STOP
 
 mov_felix_into_grass:
 	.byte STEP_LEFT, STEP_UP, STEP_UP, STOP
@@ -403,121 +414,166 @@ mov_may_back:
 .ifdef LANG_GER
 
 str_show_player_pkmn:
-	.autostring 35 2 "Also PLAYER, bleiben noch drei Pokémon, aus denen du wählen kannst. Triff deine Entscheidung mit Bedacht!"
-
+	.autostring 35 2 "Also PLAYER, bleiben noch drei Pokémon, aus denen du wählen kannst.\pTriff deine Entscheidung mit Bedacht!"
 str_player_received_b1:
     .string "PLAYER hat ein BUFFER_1\nerhalten!"
-
 str_player_received_pkmn:
-	.autostring 35 2 "Ah, ein BUFFER_1,\neine sehr gute Wahl!\pNun aber zurück mit dir in die Reihe!"
-
+	.autostring 35 2 "BUFFER_1!\nEine sehr gute Wahl!\pNun aber zurück mit dir in die Reihe!"
 str_rival_picks:
-	.autostring 35 2 "So, RIVAL, jetzt ist es an der Zeit für dich, zu wählen!"
-
+	.autostring 35 2 "So, RIVAL, jetzt darfst du dir ein Pokémon aussuchen!"
 str_rival_says_thanks:
-	.autostring 35 2 "Dieses Pokémon ist perfekt. Damit werde ich unschlagbar sein!"
-
+	.autostring 35 2 "Dieses Pokémon ist perfekt.\pDamit werde ich unschlagbar sein!"
 str_may_picks:
-	.autostring 35 2 "Nun denn, Maike, zuletzt bist du an der Reihe."
-
+	.autostring 35 2 "Also, Maike, jetzt bist auch du noch an der Reihe."
 str_may_disappointed:
-	.autostring 35 2 "Dass auch ausgerechnet ich das letzte Pokémon bekommen mussDOTS"
-
+	.autostring 35 2 "Mir bleibt ja nur noch dieses eine hierDOTS"
 str_may_received_pkmn:
 	.autostring 35 2 "Ich hoffe, dass du mit deinem Pokemon zufrieden bist."
-
 str_may_dots:
 	.autostring 35 2 "DOTS\nSicher, Herr Faun!"
-
 str_to_tall_grass:
-	.autostring 35 2 "Dann hätten wir das erledigt!\pBeginnen wir mit dem ersten Feldtest. Folgt mir zum hohen Gras."
-
+	.autostring 35 2 "Dann hätten wir das erledigt!\pBeginnen wir mit dem Feldtest.\pFolgt mir zum hohen Gras!"
 str_tall_grass:
-	.autostring 35 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen. Ihr habt alle gelernt, wie das funktioniert. Ich erwarte, dass ihr das ohne Mühe auf die Reihe bekommt!\pBlaise, du beginnst."
-
+	.autostring 35 2 "Im ersten Teil der Feldprüfung werdet ihr ein wildes Pokémon einfangen\pIch erwarte von euch, dass ihr das mühelos bewältigt!\pBlaise, du bist als erstes an der Reihe!"
 str_call_blaise:
-	.autostring 35 2 "Blaise, na wird's bald?\pBeweg dich hierher, du kleiner Rotzlöffel!"
-
+	.autostring 35 2 "Blaise?\nNa wird's bald?\pBeweg deinen Hintern hierher, du kleiner Rotzlöffel!"
 str_blaise_refuses:
-	.autostring 35 2 "Nein, ich denke eher nicht."
-
+	.autostring 35 2 "Ich verzichte, danke."
 str_call_blaise_again:
-	.autostring 35 2 "Wie bitte? Du undankbares Gör! Was glaubst du denn, wer du bist? Meinst du, dein Vater wird es gerne hören, dass du mir Ungehorsam leistest?"
-
+	.autostring 35 2 "Wie bitte?\pWas denkst du denn, wer du glaubst zu sein, du Göre!\pWas meinst du, wie dein Vater reagieren wird, wenn er hiervon erfährt?"
 str_blaise_leaves:
-	.autostring 35 2 "Es ist mir herzlich egal, was mein Vater denkt. Ich habe beschlossen, mich nicht länger von ihm kontrollieren zu lassen. Also ist mir Ihre Abschlussprüfung ebenfalls gleichgültig. Natürlich danke ich Ihnen auch, für das Pokémon, das Sie mir anvertraut haben. Allerdings halte ich nichts von dieser Schule oder anderen Institutionen, in denen mein Vater seine Finger im Spiel hat.\pIn diesem Sinne, lebt wohl!"
-
+	.autostring 35 2 "Ich habe beschlossen, dass mir das egal ist.\pIch lasse mich nicht länger herumkommandieren.\pWeder von Ihnen noch von meinem Vater.\pIch habe lange genug meine Zeit mit diesem Unsinn hier verschwendet.\pDamit ist jetzt Schluss."
 str_faun_angry_at_blaise:
-	.autostring 35 2 "Dieser verdammte Bengel! Devin wird außer sich sein!"
-
+	.autostring 35 2 "Dieser verdammte Bengel!\pWas fällt ihm einDOTS"
 str_continue_with_field_test:
-	.autostring 35 2 "DOTS DOTS\nSein Vater wird dem Jungen schon noch Vernunft beibringen.\pLassen wir uns aber von diesem Vorfall nicht irritieren.\pFelix, dann beginnst du eben die Prüfung."
-
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDas wird ein Nachspiel habenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
+str_continue_with_field_test2:
+	.autostring 34 2 "Lassen wir uns davon nicht beirrenDOTS\pDann machst du eben den Anfang, Felix."
 str_felix_starts_test:
-	.autostring 35 2 "Jawohl, Opi -\nÄhmDOTS Herr Faun!"
-
+	.autostring 35 2 "Jawohl, Opi -\nÄhmDOTS, ich meine natürlich, Herr Faun!"
 str_hand_felix_balls:
 	.autostring 35 2 "Du erhältst von mir fünf Pokébälle.\pVersuche, ein Pokémon mit ihnen einzufangen."
-
 str_felix_done_catching:
 	.autostring 35 2 "Geschafft!"
-
 str_faun_admires_felix:
-	.autostring 35 2 "Sehr gut, Kleiner! So will ich das sehen!\pZurück mit dir in die Reihe!"
-
+	.autostring 35 2 "Sehr gut, Kleiner!\nSo will ich das sehen!\pZurück mit dir in die Reihe!"
 str_faun_calls_player:
 	.autostring 35 2 "PLAYER, jetzt musst du dein Können unter Beweis stellen.\pKomm her zu mir."
-
 str_player_receives_pokeballs:
-	.autostring 35 2 "PLAYER, du erhältst jetzt von mir fünf Pokébälle.\pVersuche auch du, das Pokémon einzufangen!"
-
+	.autostring 35 2 "PLAYER, du erhältst jetzt von mir fünf Pokébälle.\pVersuche, das Pokémon einzufangen!"
 str_pokeball_obtention_message:
 	.autostring 35 2 "Fünf Pokébälle erhalten."
-
 str_player_has_to_catch:
-	.autostring 35 2 "PLAYER! Begib dich endlich ins hohe Gras!"
-
+	.autostring 35 2 "PLAYER!\nAb mit dir ins hohe Gras!"
 str_battle_faun:
 	.autostring 35 2 "Was treibst du denn da, PLAYER?\pAb mit dir auf deine Position!"
-
 str_results_player:
-	.autostring 35 2 "Na, wollen wir doch mal sehen, PLAYER!\pDie theoretische Prüfung hast du mit BUFFER_1 korrekten Antworten absolviert.\pDu konntest ein Pokémon fangen und hast dich im Kampf bewiesen!\pAuch dir darf ich gratulieren, Kind!\pDu bist nun ein echter Trainer!"
-
+	.autostring 35 2 "Na, wollen wir doch mal sehen, PLAYER!\pIn der theoretischen Prüfung waren BUFFER_1 deiner Antworten richtig.\pUnd beim Feldtest hast du dich auch nicht übel angestellt.\pIch würde sagen, dass das ausreicht."
+str_passed:
+	.autostring 34 2 "Herzlichen Glückwunsch, du hast die Prüfung bestanden!"
 str_player_back:
 	.autostring 35 2 "Reihe dich wieder ein, PLAYER.\pAls nächstes ist RIVAL dran!"
-
 str_rival_results:
 	.autostring 35 2 "Diese Spannung ist ja kaum auszuhalten!"
-
 str_results_rival2:
-	.autostring 35 2 "Im schriftlichen Test hast du keine einzige Frage richtig beantwortetDOTS\pDafür warst du ein echtes Naturtalent im Umgang mit Pokémon.\pWeder Kämpfen noch Fangen haben dir Schwierigkeiten bereitet.\pWeil du dein kümmerliches Wissen offenbar recht gut mit Fertigkeiten ausgleichen kannst, bin ich gewillt, auch dir zu gratulieren.\pAuch du darfst dich reinsten Gewissens einen Trainer nennen!"
-
+	.autostring 35 2 "Im schriftlichen Test hast du keine einzige Frage richtig beantwortetDOTS\pDafür warst du ein echtes Naturtalent im Umgang mit Pokémon.\pWeder Kämpfen noch Fangen haben dir Schwierigkeiten bereitet.\pWeil du dein kümmerliches Wissen offenbar recht gut mit praktischen Fertigkeiten ausgleichen kannst, lasse ich ausnahmsweise auch dich bestehen.\pWas sagst du dazu, RIVAL?"
 str_rival_glad:
-	.autostring 35 2 "Alles andere hätte mich auch überrascht!\pDanke, Herr Faun!"
-
+	.autostring 35 2 "Toll!\nAlles andere hätte mich auch überrascht!\pDanke, Herr Faun!"
 str_call_may:
-	.autostring 35 2 "Also dann! Zum Schluss bist du an der Reihe, Maike.\pKomm zu mir!"
-
+	.autostring 35 2 "Also dann!\nZum Schluss bist du an der Reihe, Maike.\pKomm zu mir!"
 str_may_insecure:
 	.autostring 35 2 "O-Ojee!"
-
 str_results_may:
-	.autostring 35 2 "Nun gut.\nIm schriftlichen Test hast du immerhin drei Fragen richtig beantworten können.\pIm Feldtest hast du dich nicht schlecht geschlagen, aber du bist nicht besonders sicher im Umgang mit Pokémon.\pMaike! Wenn du als Trainer bestehen willst, musst du Vertrauen in dich und deine Pokémon finden."
-
+	.autostring 35 2 "Gut, gut.\nDer schriftliche Test war auch bei dir eher durchwachsen.\pUnd auch der Feldtest war keine überragende Leistung."
 str_may_understands:
-	.autostring 35 2 "I-Ich verstehe, Herr FaunDOTS\pEs t-tut mir leid."
-
+	.autostring 35 2 "Ich verstehe, Herr FaunDOTS\pEs tut mir leid."
 str_results_may2:
-	.autostring 35 2 "Ich bin aber überzeugt, dass du das Zeug hast, ein erfolgreicher Pokémon-Trainer zu sein.\pImmerhin warst du meine Schülerin.\pDaher darf ich auch dir gratulieren, du hast deine Prüfungen bestanden!"
-
+	.autostring 35 2 "Ich weiß, dass du das Zeug zum Trainer hast, Maike.\pAnderenfalls hätte ich dich niemals an meiner Schule aufgenommen.\pAber du musst endlich anfangen, selbst an dich zu glauben.\pWie sollen deine Pokémon sonst hinter dir stehen?\pAlles in allem, Mädchen, werde ich aber auch dich nicht durchfallen lassen.\pIch denke, es tut dir ganz gut, nicht mehr nur die Schulbank zu drücken, sondern da draußen in der echten Welt Erfahrungen zu sammeln."
 str_may_glad:
-	.autostring 35 2 "W-Wirklich?\nDas ist fantastisch!\pJetzt werde ich meinen Freund aus Hoenn einholen können!"
-
+	.autostring 35 2 "Wirklich?\nDas ist fantastisch!\pIch habe doch tatsächlich bestandenDOTS"
 str_final_talk:
-	.autostring 35 2 "Hach! Wie die Zeit an einem vorbeifliegt!\pFür mich seid ihr noch immer die kleinen Rotzlöffel, die leichtsinnig ins hohe Gras gerannt wären, hätte man sie nicht davon abgehalten.\pAber nunDOTS\nSeid ihr zu fähigen Trainern herangewachsen.\pIch könnte nicht zufriedener mit euch sein. Allerdings ist dies erst der Anfang, ihr Bälger!\pWenn ihr diese Schule heute verlasst, werdet ihr auf euch allein gestellt sein.\pWobei auch das nicht ganz zutrifft, denn ihr habt nun eure Pokémon als Partner an eurer Seite.\pWisst diesen besonderen Bund zwischen Trainer und Pokémon zu schätzen, Kinder!\pIch bin überzeugt, dass ihr es weit bringen könnt.\pMacht mich stolz, euer Lehrer gewesen zu sein!\pIn diesem Sinne, viel Erfolg auf eurer Reise, Kinder!"
-
+	.autostring 35 2 "Ähm, gutDOTS\pWie ihr vielleicht bemerkt habt, bin ich kein Mann großer Worte.\pUnd ich werde euch sicher keine Abschiedsrede halten, ihr Gören, verstanden?\pAber ich würde euch nicht hier abgehen lassen, wenn ich nicht davon überzeugt wäre, dass ihr da draußen bestehen könnt.\pJetzt beginnt für euch ein ganz neues Kapitel.\pUnd auch wenn da draußen viele Gefahren auf euch warten, wird es doch vor allem ein Riesenspaß werden, da bin ich mir sicher!\pEnttäuscht mich ja nicht, verstanden?\pSonst redet man noch schlecht von meiner SchuleDOTS\pLebt wohl, Kinder!"
 .elseif LANG_EN
 
+	.autostring 35 2 "Ok PLAYER, three Pokémon to choose from remain.\pTake your time to pick one of them!"
+str_player_received_b1:
+    .string "PLAYER received a\nBUFFER_1!"
+str_player_received_pkmn:
+	.autostring 35 2 "BUFFER_1!\nAn excellent choice.\pGet back in line!"
+str_rival_picks:
+	.autostring 35 2 "Now, RIVAL, its your turn to chose!"
+str_rival_says_thanks:
+	.autostring 35 2 "This Pokémon is just perfect.\pNo one will be able to defeat me now!"
+str_may_picks:
+	.autostring 35 2 "Ok May, finally you may also choose a Pokémon."
+str_may_disappointed:
+	.autostring 35 2 "Well, this is the only one left, right?"
+str_may_received_pkmn:
+	.autostring 35 2 "I hope you're satisfied with that Pokémon, May."
+str_may_dots:
+	.autostring 35 2 "DOTS\nOf course, Mr. Faun!"
+str_to_tall_grass:
+	.autostring 35 2 "Ok, that's that.\pLet's start with the field test.\pFollow me to the tall grass."
+str_tall_grass:
+	.autostring 35 2 "In this first part of your examination you will catch a wild Pokémon.\pI except all of you to get that done without any problems whatsoever.\pBlaise, you may start."
+str_call_blaise:
+	.autostring 35 2 "Blaise?\nDid I stutter?\pMove it and come here!"
+str_blaise_refuses:
+	.autostring 35 2 "No, I don't think I will."
+str_call_blaise_again:
+	.autostring 35 2 "Come again?\pDarn spoiled brat!\pWho do you think you are?\pCan you imagine how your father will react if he hears about that?"
+str_blaise_leaves:
+	.autostring 35 2 "I just decided that I don't care anymore.\pI won't be pushed arround anymore, neither by you nor by my father.\pI wasted enough time with this nonsense here already.\pBut that ends now."
+str_faun_angry_at_blaise:
+	.autostring 35 2 "Unbelievable!\nWhat an idiot!\pWhat audacity!"
+str_continue_with_field_test:
+	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pThat's gonna have consequencesDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
+str_continue_with_field_test2:
+	.autostring 34 2 "Anyways, let's not get distracted by that little, er, incident.\pThen you will be the first one to take the test, Felix."
+str_felix_starts_test:
+	.autostring 35 2 "Sure, grandpa -\nerDOTS, I mean Mr. Faun!"
+str_hand_felix_balls:
+	.autostring 35 2 "You will get some Pokéballs.\pTry to catch the wild Pokémon!"
+str_felix_done_catching:
+	.autostring 35 2 "Done!"
+str_faun_admires_felix:
+	.autostring 35 2 "Well done, little one!\pThat's how I like to see it!\pGet back in line!"
+str_faun_calls_player:
+	.autostring 35 2 "PLAYER, its your turn to prove your abilities now.\pCome here!"
+str_player_receives_pokeballs:
+	.autostring 35 2 "PLAYER, you will get five Pokéballs from my with which you will try to capture that wild Pokémon, ok?"
+str_pokeball_obtention_message:
+	.autostring 35 2 "PLAYER received five Pokéballs!"
+str_player_has_to_catch:
+	.autostring 35 2 "PLAYER!\nGo into the tall grass!"
+str_battle_faun:
+	.autostring 35 2 "What are you doing, PLAYER!\pGet into battle position!"
+str_results_player:
+	.autostring 35 2 "Let's see, PLAYER.\pIn the written test you got BUFFER_1 answers right.\pYour performance in the practical part also was quite convincing.\pI'd say that's sufficient."
+str_passed:
+	.autostring 34 2 "Congratulations, you passed the exam!"
+str_player_back:
+	.autostring 35 2 "Back in line with you, PLAYER.\pRIVAL, you're up next."
+str_rival_results:
+	.autostring 35 2 "The tension!"
+str_results_rival2:
+	.autostring 35 2 "You didn't get a single question right in the written test, RIVAL.\pRegardless your pracitical abilities dealing with Pokémon really were impressive.\pNeither catching nor battling did give you any difficulties whatsoever.\pBecause you compesated your poor knowledge with an impressive overall skillset, I'd be willing to make an exception and also let you pass.\pWhat do you think?"
+str_rival_glad:
+	.autostring 35 2 "Nice!\nEverything else would have been a suprise to me!\pThank you, Mr. Faun!"
+str_call_may:
+	.autostring 35 2 "Ok then.\nLastly it's your turn, May.\pPlease come to me."
+str_may_insecure:
+	.autostring 35 2 "H-Here goesDOTS"
+str_results_may:
+	.autostring 35 2 "Well, well.\pThe written test wasn't that great for you either.\pAnd also the practical part wasn't that impressive."
+str_may_understands:
+	.autostring 35 2 "In understand, Mr. Faun.\pI am sorryDOTS"
+str_results_may2:
+	.autostring 35 2 "But I know that you got what is needed to become a successful trainer, May!\pOtherwise I wouldn't have made you my pupil!\pYou have to start believing in yourself!\pHow can you expect your Pokémon to trust in you, when youself can't even do it?\pHaving said that, girl, I won't let you fail this exam.\pI think it will do you more good to finally leave the school and instead gather hands-on experience out there in the real world."
+str_may_glad:
+	.autostring 35 2 "Really?\nThat's fantastic!\pI really did itDOTS"
+str_final_talk:
+	.autostring 35 2 "Er, ok.\nAs you might have noticed I am not a man of many words.\pAnd I won't give any sort of goodbye-speech to you brats, got that?\pBut I wouldn't let you graduate if I wasn't convinced that all of you were able to succed out there.\pNow a new chapter begins for every single one of you.\pAnd even though there are many dangers out there waiting for you, I positive that it will more than everything be so much fun!\pDon't you dare to dissapoint me though!\pOtherwise people might talk bad about my school.\pGoodbye, you brats!"
 .endif
 
 ow_script_trainerschool_felix_outside:
@@ -598,24 +654,31 @@ end
 
 .ifdef LANG_GER
 str_before_faun_appeared_felix:
-	.autostring 35 2 "Opi ist manchmal schon ein seltsamer KauzDOTS\pAber vielleicht ist er gerade deshalb ein guter Lehrer!"
-
+	.autostring 35 2 "Jetzt können wir Opi beweisen, aus welchem Holz wir geschnitzt sind, PLAYER!\pImmerhin hatten wir einen ausgezeichneten Lehrer, nicht wahr?"
 str_has_received_pkmn_felix:
-	.autostring 35 2 "Opi ist oft sehr streng, aber dafür ein herzensguter Mensch!\pEr ist sogar bereit, uns seine seltensten Pokémon anzuvertrauen!"
-
+	.autostring 35 2 "Opi mag zwar ein strenger Lehrer sein.\pAber dass er uns so seltene Pokémon anvertraut, zeigt doch eigentlich auch, wie viel er von uns hält, oder?"
 str_catch_pkmn_felix:
-	.autostring 35 2 "Keine Sorge, PLAYER.\nEs ist wirklich kinderleicht! Nur keine Scheu!"
-
+	.autostring 35 2 "Keine Sorge, PLAYER.\nEs ist wirklich kinderleicht!"
 str_battle_felix:
-	.autostring 35 2 "Lass uns unser Bestes geben, PLAYER.\pMehr können wir ohnehin nicht tun."
-
+	.autostring 35 2 "Lass uns unser Bestes geben, PLAYER!"
 str_results_felix:
-	.autostring 35 2 "Ich bin ja so glücklich!\nOpi ist sicherlich stolz auf mich!"
-
+	.autostring 35 2 "Ich bin ja so glücklich!\nOpi ist bestimmt stolz auf mich!"
 str_goodbye_felix:
-	.autostring 35 2 "Da sind wir, PLAYER!\pWas tun wir nun?\nHast du Pläne?\pIch denke, ich werde mich auf die Suche nach Blaise machen.\pEr mag zwar wie ein Idiot wirken, aber im Grunde ist auch er nur Opfer der Tyrannei seines Vaters.\pWas solche Menschen brauchen, sind Freunde, die trotz allem zu ihnen stehen.\pFreundschaft! Das ist es, worauf es ankommt.\pMeinst du nicht auch, PLAYER?\pVielleicht werden wir uns wieder begegnen. Ich freue mich schon darauf!"
+	.autostring 35 2 "Großartig, was?\pJetzt sind wir alle also Trainer!\pIch kann mir vorstellen, dass du es jetzt auf die Arena-Orden abgesehen hast.\pDa will ich dich auch gar nicht aufhalten.\pIch für meinen Teil denke aber, dass ich mich irgendwo nützlich machen will.\pAnderen Menschen helfen, und soDOTS\pWeißt du, das ist doch das, was einen Trainer ausmacht, oder?\pUnd ich bin mir sicher, dass unser Abschied heute bloß vorrübergehend ist.\pBis wir uns wiedersehen, wünsche ich dir alles Gute, PLAYER!\pPass auf dich auf!"
 
 .elseif LANG_EN
+str_before_faun_appeared_felix:
+	.autostring 35 2 "Now we can show grandpa what we're made of, PLAYER!\pAfter all we had an excellent teacher, right?"
+str_has_received_pkmn_felix:
+	.autostring 35 2 "Grandpa may be a strict teacher.\pBut the fact that he entrusted us with these rare Pokémon shows that he has a lot of faith in us, doesn't it?"
+str_catch_pkmn_felix:
+	.autostring 35 2 "No worries, PLAYER!\pIt's super easy!"
+str_battle_felix:
+	.autostring 35 2 "Let's try our bests, PLAYER!"
+str_results_felix:
+	.autostring 35 2 "I am just so happy!\pGrandpa surely is proud of me!"
+str_goodbye_felix:
+	.autostring 35 2 "Great, right?\pNow everyone of us is a trainer!\pI can imagine that you will be going after the gym badges, right?\pI surely won't try to stop you, PLAYER.\pBut for my part, I think I want to make my self useful.\pHelp other people, you know?\pI guess that's what makes a good trainer.\pAnd I am certain that our goodbye is nothing permanent.\pUntil we meet each other again I wish you all the best, PLAYER!\pTake care of yourself!"
 
 .endif
 
@@ -676,7 +739,7 @@ gotoif EQUAL felix_already_appeared
 lock
 faceplayer
 loadpointer 0 str_make_both_appear
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT emotion=MUGSHOT_SAD
 sound 0x9
 checksound
 showsprite 0x7
@@ -705,32 +768,32 @@ mov_1u:
 
 felix_already_appeared:
 loadpointer 0 str_after_both_appeared_2
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_SAD
 releaseall
 end
 
 will_receive_pkmn_may:
 loadpointer 0 str_will_receive_pkmn_may
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_SAD
 applymovement 0x5 mov_face_down
 waitmovement 0
 end
 
 catch_pkmn_may:
 loadpointer 0 str_catch_pkmn_may
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_SAD
 applymovement 0x5 mov_face_up
 waitmovement 0
 end
 
 battle_may:
 loadpointer 0 str_battle_may
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_SAD
 end
 
 results_may:
 loadpointer 0 str_results_may3
-show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_HAPPY
 applymovement 0x5 mov_face_up
 waitmovement 0
 end
@@ -739,30 +802,38 @@ end
 
 .ifdef LANG_GER
 str_make_both_appear:
-	.autostring 35 2 "Oh, hallo PLAYERDOTS\nIch bin immer noch am Boden zerstört wegen dieses schriftlichen TestsDOTS\pWeißt du, mein Freund aus Hoenn, er ist so ein talentierter Trainer und ich bin dagegenDOTS"
-
+	.autostring 35 2 "Bist du wegen des schriftlichen Tests auch so niedergeschlagen, PLAYER?\pIch glaube wirklich, dass ich durchgefallen bin, egal, wie ich mich hier jetzt schlageDOTS"
 str_after_both_appeared:
-	.autostring 35 2 "Also sind jetzt auch Felix und Blaise auf dem Hof, fehlt nur noch Herr FaunDOTS"
-
+	.autostring 35 2 "Ah, da sind auch schon Felix und Blaise.\pFehlt also nur noch Herr FaunDOTS"
 str_after_both_appeared_2:
-	.autostring 35 2 "Wenn ich diesen Test heute vergeige, kann ich meinem Freund nicht mehr unter die Augen tretenDOTS"
-
+	.autostring 35 2 "Es würde mich nicht wundern, wenn ich als einzige den Test heute vergeigeDOTS"
 str_will_receive_pkmn_may:
-	.autostring 35 2 "Ich bin schon ganz gespannt, welches Pokémon ich bekomme!\pIch will ein so starker Trainer werden, wie mein Freund aus Hoenn."
-
+	.autostring 35 2 "Welches Pokémon ich wohl kriege?\pVermutlich ist das sowieso egal, wenn ich den Test nicht besteheDOTS"
 str_catch_pkmn_may:
-	.autostring 35 2 "Dass man mir das letzte Pokémon einfach aufzwingt, gefällt mir nicht, PLAYER.\pVielleicht kann ich ja ein anderes Pokémon einfangen, das mir gefälltDOTS"
-
+	.autostring 35 2 "Es war sicherlich Absicht, dass man mir das letzte Pokémon gibt.\pEiner Niete wie mir will man natürlich kein starkes Pokémon anvertrauenDOTS"
 str_battle_may:
-	.autostring 35 2 "AchDOTS ich will eigentlich gar nicht kämpfenDOTS\pWeißt du, PLAYER, ich traue mir das ganze Trainer-Sein ehrlich gesagt noch nicht zuDOTS"
-
+	.autostring 35 2 "Ich habe wirklich Muffensausen vor diesen KampfDOTS\pIch glaube nicht, dass ich Felix besiegen kann.\pImmerhin ist er ja auch der Enkel von Herr FaunDOTS"
 str_results_may3:
-	.autostring 35 2 "Ich bin sehr nervösDOTS\pImmerhin konnte ich Felix nicht besiegen.\pIch hoffe nur, dass ich nicht durch die Prüfung gefallen bin!"
-
+	.autostring 35 2 "Ich habe gegen Felix verlorenDOTS"
 str_goodbye_may:
-	.autostring 35 2 "PLAYERDOTS\nIch bin glücklich und ängstlich zugleich.\pDer Schatten meines Freundes aus Hoenn reicht sehr weitDOTS\pOb ich jemals mit ihm auf Augenhöhe sein werde?\pIch frage mich, ob ich dem gewachsen bin, was vor mir liegt.\pAber ich muss mein Leben allein bewältigen, meinst du nicht, PLAYER?\pJa, Verantwortung, die muss ich jetzt übernehmen.\pWir werden uns sicher wiedersehen.\pLebe wohl, bis dahin, PLAYER!"
-
+	.autostring 35 2 "Ich hätte wirklich nicht gedacht, dass ich den Test bestehe, PLAYER!\pAber es freut mich, ehrlich.\pVielleicht ist das jetzt ein Wendepunkt in meinem Leben.\pIch werde mir wirklich Mühe geben.\pHoffentlich wird aus mir ja doch ein anständiger Pokémon-Trainer!"
 .elseif LANG_EN
+str_make_both_appear:
+	.autostring 35 2 "Did that written exam also make you somewhat depressed, PLAYER?\pI just really don't think that I can pass anymore, no matter how the field test goesDOTS"
+str_after_both_appeared:
+	.autostring 35 2 "Ah, there are Felix and Blaise.\pI guess now we only have to wait for Mr. FaunDOTS"
+str_after_both_appeared_2:
+	.autostring 35 2 "I wouldn't be suprised if I was the only one to fail today's examDOTS"
+str_will_receive_pkmn_may:
+	.autostring 35 2 "I wonder which Pokémon I will get.\pProbably it doesn't really matter when I fail the testDOTS"
+str_catch_pkmn_may:
+	.autostring 35 2 "They gave me the last Pokémon on purpose, I guess.\pDoesn't make much sense to let a wimp have a strong Pokémon, right?"
+str_battle_may:
+	.autostring 35 2 "I am almost dying of fear right now.\pI don't believe I can defeat Felix.\pHe is the grandson of Mr. Faun after all."
+str_results_may3:
+	.autostring 35 2 "I lost to FelixDOTS"
+str_goodbye_may:
+	.autostring 35 2 "I really didn't think I'd make it, PLAYER!\pBut I am happy, honestly!\pMaybe that's a turning point in my life.\pI definitely will try my best.\pHopefully I can become a somewhat competent Pokémon-Trainer. in my life.\pI definitely will try my best.\pHopefully I can become a somewhat competent Pokémon-Trainer."
 
 .endif
 
@@ -812,7 +883,7 @@ pause 32
 applymovement 6 mov_dinplace
 waitmovement 0
 loadpointer 0 str_blaise_received_pkmn
-show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
+show_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED
 applymovement 6 mov_blaise_back
 waitmovement 0
 
@@ -831,11 +902,11 @@ sound 0x15
 applymovement 4 mov_double_exclam
 waitmovement 4
 loadpointer 0 str_angry_at_felix
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 loadpointer 0 str_felix_apologize
-show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
+show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
 loadpointer 0 str_after_felix
-show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
+show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT emotion=MUGSHOT_ANGRY
 applymovement 7 mov_felix_back
 waitmovement 0
 
@@ -847,25 +918,18 @@ end
 
 mov_felix_back:
 	.byte STEP_LEFT, STEP_UP, LOOK_DOWN, STOP
-
 mov_felix_to_faun:
 	.byte STEP_DOWN, STEP_RIGHT, LOOK_DOWN, STOP
-
 mov_blaise_back:
 	.byte STEP_UP, LOOK_DOWN, STOP
-
 mov_smile:
 	.byte SAY_SMILE, STOP
-
 mov_1d:
 	.byte STEP_DOWN, STOP
-
 mov_2l_2d:
 	.byte STEP_LEFT, STEP_LEFT, STEP_DOWN, STEP_DOWN, STOP
-
 mov_exclam:
 	.byte LOOK_DOWN, SAY_EXCLAM, STOP
-
 mov_double_exclam:
 	.byte SAY_DOUBLE_EXCLAM, STOP
 
@@ -873,36 +937,45 @@ mov_double_exclam:
 .ifdef LANG_GER
 str_faun_appears:
 	.autostring 35 2 "So, ihr Grünschnäbel!\pJetzt wird es ernst, wir beginnen mit dem Feldtest.\pAlle in einer Reihe aufstellen!"
-
 str_faun_announces_pkmn:
-	.autostring 35 2 "Der Feldtest setzt sich aus zwei Komponenten zusammen.\pZuerst müsst ihr ein wildes Pokémon einfangen.\pIm Anschluss werdet ihr dann gegeneinander im Kampf antreten.\pZuallererst aber erhaltet ihr von mir ein Pokémon, das euch fortan unterstützen wird. Es ist von nun an euer wichtigster Partner und Freund, den ihr zu respektieren habt."
-
+	.autostring 35 2 "Der Feldtest besteht aus zwei Teilen.\pZuerst werdet ihr ein Pokémon einfangen, dann werdet ihr gegeinander kämpfen.\pAber zuallererst braucht ihr natürlich ein Pokémon, oder?"
 str_call_blaise2:
-	.autostring 35 2 "Blaise, du bist der Erste.\pKomm nach vorne und wähle eines der Pokémon, die ich mitgebracht habe."
-
+	.autostring 35 2 "Blaise, du bist der Erste.\pKomm her und nimm dir eines der Pokémon, die ich mitgebracht habe."
 str_blaise_received_pkmn:
-	.autostring 35 2 "Ich bin wirklich überrascht, dass man uns so seltene Examplare anvertrautDOTS"
-
+	.autostring 35 2 "Unglaublich, dass man uns so seltene Pokémon anvertrautDOTS"
 str_call_felix:
 	.autostring 35 2 "Als nächstes bist du an der Reihe, Felix.\pKomm zu mir und such dir ein Pokémon aus, Kleiner!"
-
 str_felix_received_pkmn:
 	.autostring 35 2 "Alles klar, Opi!\nIch wähle dieses hier!"
-
 str_angry_at_felix:
-	.autostring 35 2 "Ich habe dir schon tausendmal gesagt, dass du mich hier Herr Faun zu nennen hast, Rotzlöffel!"
-
+	.autostring 35 2 "Ich habe dir schon tausendmal gesagt, dass du mich in der Schule Herr Faun zu nennen hast, du Rotzlöffel!"
 str_felix_apologize:
-	.autostring 35 2 "ÄhmDOTS Tut mir wirklich leid, Herr Faun! Ehrlich!"
-
+	.autostring 35 2 "ÄhmDOTS\nTut mir wirklich leid, Herr Faun!\pEhrlich!"
 str_after_felix:
-	.autostring 35 2 "Schon gut, schon gutDOTS\pZurück mit dir in die Reihe, Felix!"
-
+	.autostring 35 2 "GrrDOTS\nZurück mit dir in die Reihe, Felix!"
 str_call_player:
 	.autostring 35 2 "Nun denn, PLAYER, komm zu mir!"
-
 .elseif LANG_EN
-
+str_faun_appears:
+	.autostring 35 2 "Ok, fledgelings.\pNow we are getting serious.\nThe field examiation will now begin.\pGet in line!"
+str_faun_announces_pkmn:
+	.autostring 35 2 "The field test consists of two parts.\pFirst, you will catch a Pokémon and then you will battle one another.\pBut before that you obviously need a Pokémon, right?"
+str_call_blaise2:
+	.autostring 35 2 "Blaise, you're first.\pCome here and take one of these Pokémon that I brought for you."
+str_blaise_received_pkmn:
+	.autostring 35 2 "Incredible, that you give us such rare PokémonDOTS"
+str_call_felix:
+	.autostring 35 2 "You're next, Felix.\pCome here and choose a Pokémon, little one!"
+str_felix_received_pkmn:
+	.autostring 35 2 "Alright, grandpa!\pI'll take that one!"
+str_angry_at_felix:
+	.autostring 35 2 "I told you a thousand times that you are supposed to call me Mr. Faun in school, you brat!"
+str_felix_apologize:
+	.autostring 35 2 "ErDOTS\nI am really sorry, Mr. Faun!\pI mean it!"
+str_after_felix:
+	.autostring 35 2 "GrrDOTS\nGet back in line!"
+str_call_player:
+	.autostring 35 2 "Now then, PLAYER, your turn!"
 .endif
 
 ow_script_trainerschool_rival_outside:
@@ -966,14 +1039,14 @@ end
 
 will_receive_pkmn_rival:
 loadpointer 0 str_will_receive_pkmn_rival
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_ANNOYED
 applymovement 0x3 mov_face_down
 waitmovement 0
 end
 
 catch_pokemon_rival:
 loadpointer 0 str_catch_pkmn_rival
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_ANNOYED
 applymovement 0x3 mov_face_up
 waitmovement 0
 end
@@ -981,7 +1054,7 @@ end
 
 rival_battle:
 loadpointer 0 str_battle_rival
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_ANNOYED
 end
 
 rival_results:
@@ -995,7 +1068,7 @@ rival_goodbye:
 lock
 faceplayer
 loadpointer 0 str_goodbye_rival
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_HAPPY
 setvar 0x8004 3
 setvar 0x8005 0x28
 getplayerpos 0x8005 0x8006
@@ -1022,30 +1095,38 @@ return
 
 .ifdef LANG_GER
 str_make_may_appear:
-	.autostring 35 2 "PLAYER, da bist du ja!\nMal ehrlich, dieser Test war doch lachhaft, oder?\pWer soll auf solche Fragen denn antworten könnenDOTS"
-
+	.autostring 35 2 "PLAYER, da bist du ja!\nMal ehrlich, dieser Test war doch seltsam, oder?\pWer soll auf solche Fragen denn antworten könnenDOTS"
 str_after_may_appeared:
-	.autostring 35 2 "Sieh mal, da ist Maike.\pWie es ihr wohl in dem Test ergangen ist?"
-
+	.autostring 35 2 "Sieh mal, da ist Maike.\pWie es ihr wohl nach dem Test geht?"
 str_after_may_appeared_2:
 	.autostring 35 2 "Wo bleibt denn nun Faun?\nIch bin schon ganz heiß auf diesen Feldtest!"
-
 str_will_receive_pkmn_rival:
-	.autostring 35 2 "PLAYER! Auf jetzt!\pIch habe nicht den ganzen Tag Zeit, auf deine Entscheidung zu warten. Ich will auch ein Pokémon haben!"
-
+	.autostring 35 2 "PLAYER!\nMach jetzt!\pIch habe nicht den ganzen Tag Zeit, auf deine Entscheidung zu warten.\pIch will auch ein Pokémon haben!"
 str_catch_pkmn_rival:
-	.autostring 35 2 "Du brauchst für alles eine Ewigkeit!\pLos, mach schon! Fang das Pokémon ein!"
-
+	.autostring 35 2 "Du brauchst für alles eine Ewigkeit!\pLos, mach schon!\nFang das Pokémon ein!"
 str_battle_rival:
-	.autostring 35 2 "Na los, PLAYER!\nWorauf wartest du? Ab mit dir auf deine Position und dann zeige ich dir einmal, was mein Talent alles bewirken kann!"
-
+	.autostring 35 2 "Na los, PLAYER!\nWorauf wartest du?\pIch bin schon ganz heiß drauf, gegen dich zu kämpfen!"
 str_results_rival:
 	.autostring 35 2 "Viel Glück, PLAYER!\nDu wirst es brauchen!"
-
 str_goodbye_rival:
-	.autostring 35 2 "Endlich, PLAYER! Es ist soweit! Wir sind beide Trainer!\pNun können wir endlich unseren Traum leben! Die Welt ist ein einziges Abenteuer, das wir nun endlich bestreiten dürfen!\pBist du nicht auch aufgeregt?\pNatürlich werde ich dir immer ein wenig voraus sein, das ist dir wohl klar, oder?\pWenn du mich einholen willst, solltest du dich beeilen!"
-
+	.autostring 35 2 "Also, PLAYER!\nJetzt sind wir beide Trainer, hu?\pDu weißt was das heißt, oder?\pJetzt kann uns nichts mehr aufhalten.\pWenn du mich einholen willst, solltest du dich besser ranhalten!"
 .elseif LANG_EN
+str_make_may_appear:
+	.autostring 35 2 "PLAYER, there you are.\pLet's be honest, that exam was weird, wasn't it?\pI mean, who could have answered these questions?"
+str_after_may_appeared:
+	.autostring 35 2 "Look, that's May.\pI wonder how she's doing after that testDOTS"
+str_after_may_appeared_2:
+	.autostring 35 2 "Where the heck is Faun?\pI want to do the field test!"
+str_will_receive_pkmn_rival:
+	.autostring 35 2 "PLAYER!\nHurry up!\pI don't have all day to wait for your decision.\pI also want to have Pokémon!"
+str_catch_pkmn_rival:
+	.autostring 35 2 "You always need for ever, PLAYER!\pHurry up, catch that Pokémon!"
+str_battle_rival:
+	.autostring 35 2 "Come on, PLAYER!\pWhat are you waiting for?\pI can't wait to battle you!"
+str_results_rival:
+	.autostring 35 2 "Good luck, PLAYER!\pYou will need it!"
+str_goodbye_rival:
+	.autostring 35 2 "So, PLAYER!\nNow the two of as are trainers, huh?\pYou know what that means, right?\pNow we can't be stopped!\pTry catching up to me if you can!"
 
 .endif
 

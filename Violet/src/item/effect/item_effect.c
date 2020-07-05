@@ -215,6 +215,8 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
                     }
                 }
                 effect_applied = true;
+            } else {
+                return false;
             }
         } else if (current_hp == 0) { // Can't heal a fainted pokémon without revive effect
             return false;

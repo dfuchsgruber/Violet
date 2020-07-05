@@ -102,7 +102,6 @@ void whiteout_setup_warp(warp_save_t *target) {
 }
 
 static int healingplace_get_current() {
-	return HEALINGPLACE_BBSHIP;
 	for (int i = 1; i <= NUM_HEALING_PLACES; i++) {
 		stru_flight_position *position = flightposition_by_id(i);
 		if (save1->healingplace.bank == position->bank && save1->healingplace.map == position->map &&

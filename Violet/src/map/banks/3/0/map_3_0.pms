@@ -64,8 +64,8 @@
 					"picture": "23",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "35",
-					"y": "6",
+					"x": "32",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -280,7 +280,7 @@
 				{
 					"target_index": "12",
 					"picture": "237",
-					"script_std": 0,
+					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "33",
 					"y": "8",
@@ -304,7 +304,7 @@
 				{
 					"target_index": "13",
 					"picture": "237",
-					"script_std": 0,
+					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "34",
 					"y": "8",

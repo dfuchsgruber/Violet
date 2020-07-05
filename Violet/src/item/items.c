@@ -603,76 +603,76 @@ static u8 str_item_yapabeere_description[] = LANGDEP(
 	PSTRING("A hold item that restores HP but\nmay cause confusion when used.")
 );
 static u8 str_item_himmihbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nNormal Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Normal\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nNormal Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Normal\nwhen being hold.")
 );
 static u8 str_item_morbbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nKampf Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Kampf\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nKampf Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Kampf\nwhen being hold.")
 );
 static u8 str_item_nanabbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nFlug Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Flug\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nFlug Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Flug\nwhen being hold.")
 );
 static u8 str_item_nirbebeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nGift Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Gift\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nGift Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Gift\nwhen being hold.")
 );
 static u8 str_item_sananabeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nBoden Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Boden\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nBoden Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Boden\nwhen being hold.")
 );
 static u8 str_item_granabeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nGestein Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Gestein\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nGestein Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Gestein\nwhen being hold.")
 );
 static u8 str_item_setangbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nKaefer Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Kaefer\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nKaefer Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Kaefer\nwhen being hold.")
 );
 static u8 str_item_qualotbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nGeist Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Geist\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nGeist Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Geist\nwhen being hold.")
 );
 static u8 str_item_honmelbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nStahl Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Stahl\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nStahl Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Stahl\nwhen being hold.")
 );
 static u8 str_item_labrusbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nFee Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Fee\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nFee Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Fee\nwhen being hold.")
 );
 static u8 str_item_tamotbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nFeuer Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Feuer\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nFeuer Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Feuer\nwhen being hold.")
 );
 static u8 str_item_saimbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nWasser Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Wasser\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nWasser Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Wasser\nwhen being hold.")
 );
 static u8 str_item_magostbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nPflanze Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Pflanze\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nPflanze Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Pflanze\nwhen being hold.")
 );
 static u8 str_item_rabutabeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nElektro Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Elektro\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nElektro Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Elektro\nwhen being hold.")
 );
 static u8 str_item_tronzibeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nPsycho Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Psycho\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nPsycho Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Psycho\nwhen being hold.")
 );
 static u8 str_item_kiwanbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nEis Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Eis\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nEis Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Eis\nwhen being hold.")
 );
 static u8 str_item_pallmbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nDrache Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Drache\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nDrache Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Drache\nwhen being hold.")
 );
 static u8 str_item_wasmelbeere_description[] = LANGDEP(
-	PSTRING("Schwächt gegnerische sehr effektive\nUnlicht Angriffe, wenn es\ngetragen wird."),
-	PSTRING("Weakens very effective Unlicht\nattacks of opponents when\nbeing hold.")
+	PSTRING("Schwächt gegnerische sehr effektive\nUnlicht Angriffe (Tragen)."),
+	PSTRING("Weakens very effective Unlicht\nwhen being hold.")
 );
 static u8 str_item_durinbeere_description[] = LANGDEP(
 	PSTRING("Kann zu einem Pulver gemahlen\nwerden, um Medizin herzustellen."),

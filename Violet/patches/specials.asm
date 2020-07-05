@@ -256,8 +256,6 @@ special_table equ 0x0815FCC0
         .word special_shell_get_stage | 1
 .org (special_table + 118 * 4)
         .word mushroom_get_encounter | 1
-.org (special_table + 134 * 4)
-        .word shell_get_encounter | 1
 // 134 >= free up to <= 140
 
 .org (special_table + (0x129 * 4))

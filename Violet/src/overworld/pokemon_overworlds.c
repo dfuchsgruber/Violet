@@ -5,6 +5,7 @@
 #include "debug.h"
 
 static palette ow_pokemon_pals[] = {
+    [0] = {.pal = gfx_ow_bisasamPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISASAM},
     [POKEMON_BISASAM] = {.pal = gfx_ow_bisasamPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISASAM},
     [POKEMON_BISAKNOSP] = {.pal = gfx_ow_bisaknospPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISAKNOSP},
     [POKEMON_BISAFLOR] = {.pal = gfx_ow_bisaflorPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BISAFLOR},

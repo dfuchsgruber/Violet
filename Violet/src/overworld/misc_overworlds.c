@@ -23,9 +23,9 @@ static gfx_frame gfx_animation_shell_idle[] = {
     {.data = GFX_ANIM_JUMP, .duration = 0},
 };
 
-static gfx_frame *gfx_animations_mushroom[1] = {gfx_animation_mushroom_idle};
+static gfx_frame *gfx_animations_mushroom[5] = {gfx_animation_mushroom_idle};
 
-static gfx_frame *gfx_animations_shell[1] = {gfx_animation_shell_idle};
+static gfx_frame *gfx_animations_shell[5] = {gfx_animation_shell_idle};
 
 static graphic overworld_gfx_mushrooms[] = {
 	[0] = {gfx_ow_mushroomTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16), .tag = 0},

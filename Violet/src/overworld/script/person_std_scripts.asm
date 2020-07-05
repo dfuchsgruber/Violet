@@ -212,7 +212,7 @@ mushroom_plucked:
 mushroom_tiny:
 	setvar 0x8000 ITEM_MINIPILZ
 	goto mushroom_plucking
-mushroom_large:
+mushroom_large: 
 	setvar 0x8000 ITEM_RIESENPILZ
 mushroom_plucking:
 	bufferitem 0 0x8000
@@ -223,7 +223,7 @@ mushroom_plucking:
 	checkitemroom 0x8000 0x1
 	compare LASTRESULT 0
 	gotoif EQUAL no_room_for_mushroom
-	special2 0x8004 SPECIAL_SHELL_GET_ENCOUNTER
+	special2 0x8004 SPECIAL_MUSHROOM_GET_ENCOUNTER
 	compare 0x8004 0
 	callif NOT_EQUAL misc_encounter
 	setvar 0x8001 1

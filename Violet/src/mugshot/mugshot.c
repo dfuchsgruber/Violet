@@ -40,6 +40,7 @@ mugshot mugshots[] = {
 				[MUGSHOT_ANGRY] = gfx_mug_rival_angryTiles,
 				[MUGSHOT_SHOCKED] = gfx_mug_rival_shockedTiles,
 				[MUGSHOT_RUMINATIVE] = gfx_mug_rival_thoughtfulTiles,
+				[MUGSHOT_ANNOYED] = gfx_mug_rival_annoyedTiles,
 			}, 
 		gfx_mug_rivalPal, str_mug_rival},
     [MUGSHOT_BRIX] = {
@@ -55,6 +56,7 @@ mugshot mugshots[] = {
 					[MUGSHOT_SHOCKED] = gfx_mug_may_shockedTiles,
 					[MUGSHOT_RUMINATIVE] = gfx_mug_may_thoughtfulTiles,
 					[MUGSHOT_EVIL] = gfx_mug_may_evilTiles,
+					[MUGSHOT_ANNOYED] = gfx_mug_may_annoyedTiles,
 				},
 			gfx_mug_mayPal, str_mug_may},
     [MUGSHOT_FELIX] = {
@@ -66,6 +68,7 @@ mugshot mugshots[] = {
 				[MUGSHOT_ANGRY] = gfx_mug_felix_angryTiles,
 				[MUGSHOT_SHOCKED] = gfx_mug_felix_shockedTiles,
 				[MUGSHOT_RUMINATIVE] = gfx_mug_felix_thoughtfulTiles,
+				[MUGSHOT_ANNOYED] = gfx_mug_felix_annoyedTiles,
 			},  
 		gfx_mug_felixPal, str_mug_felix},
     [MUGSHOT_BLAISE] = {
@@ -77,6 +80,7 @@ mugshot mugshots[] = {
 				[MUGSHOT_ANGRY] = gfx_mug_blaise_angryTiles,
 				[MUGSHOT_SHOCKED] = gfx_mug_blaise_shockedTiles,
 				[MUGSHOT_RUMINATIVE] = gfx_mug_blaise_thoughtfulTiles,
+				[MUGSHOT_ANNOYED] = gfx_mug_blaise_annoyedTiles,
 			},  
 		gfx_mug_blaisePal, str_mug_blaise},
     [MUGSHOT_TANN] = {
@@ -91,6 +95,7 @@ mugshot mugshots[] = {
 				[MUGSHOT_ANGRY] = gfx_mug_hiro_angryTiles,
 				[MUGSHOT_SHOCKED] = gfx_mug_hiro_shockedTiles,
 				[MUGSHOT_RUMINATIVE] = gfx_mug_hiro_thoughtfulTiles,
+				[MUGSHOT_ANNOYED] = gfx_mug_hiro_annoyedTiles,
 			},
 			gfx_mug_hiroPal, str_mug_hiro
 		},
@@ -98,7 +103,12 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_lesterTiles}, 
 		gfx_mug_lesterPal, str_mug_lester},
     [MUGSHOT_FAUN] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_faunTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_faunTiles,
+			[MUGSHOT_ANGRY] = gfx_mug_faun_angryTiles,
+			[MUGSHOT_SERIOUS] = gfx_mug_faun_seriousTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_faun_shockedTiles,
+			}, 
 		gfx_mug_faunPal, str_mug_faun},
     [MUGSHOT_ELISE] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_eliseTiles}, 
@@ -148,6 +158,7 @@ mugshot mugshots[] = {
 				[MUGSHOT_ANGRY] = gfx_mug_hiroine_angryTiles,
 				[MUGSHOT_SHOCKED] = gfx_mug_hiroine_shockedTiles,
 				[MUGSHOT_RUMINATIVE] = gfx_mug_hiroine_thoughtfulTiles,
+				[MUGSHOT_ANNOYED] = gfx_mug_hiroine_annoyedTiles,
 			},
 			gfx_mug_hiroinePal, str_mug_hiro
 		},

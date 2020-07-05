@@ -125,14 +125,14 @@ u8 *str_trainerschool_test_question_5_answers[] = {
 };
 
 u8 str_trainerschool_test_question_6[] = LANGDEP(
-    PSTRING("Welches der\nfolgenden Items\nexistiert nicht?"),
-    PSTRING("Which of the\nfollowing items\ndoes not exist?"));
+    PSTRING("Was ist Fauns\nLieblingsfarbe?"),
+    PSTRING("Name Faun's\nfavourite color!"));
 u8 str_trainerschool_test_question_6_answer_0[] = LANGDEP(
-    PSTRING("Giefebeere"), PSTRING("Figy Berry"));
+    PSTRING("Pink"), PSTRING("Pink"));
 u8 str_trainerschool_test_question_6_answer_1[] = LANGDEP(
-    PSTRING("Lucky-Punch"), PSTRING("Lucky Punch"));
+    PSTRING("Braun"), PSTRING("Brown"));
 u8 str_trainerschool_test_question_6_answer_2[] = LANGDEP(
-    PSTRING("Rotstück"), PSTRING("Purple Shard"));
+    PSTRING("Zitrusgelb"), PSTRING("Citrus Yellow"));
 
 u8 *str_trainerschool_test_question_6_answers[] = {
     str_trainerschool_test_question_6_answer_0,
@@ -217,7 +217,7 @@ trainerschool_test_question trainerschool_test_questions [] = {
         5, 0, str_trainerschool_test_question_5, 
                 str_trainerschool_test_question_5_answers
     },{
-        3, 2, str_trainerschool_test_question_6, 
+        3, 0, str_trainerschool_test_question_6, 
                 str_trainerschool_test_question_6_answers
     },{
         4, 3, str_trainerschool_test_question_7, 

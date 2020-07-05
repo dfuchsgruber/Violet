@@ -95,6 +95,7 @@ spritesheet_images = {
     176 : (16, 32),
 }
 
+
 class Event_to_image:
     """ Class to lazily load the images. """
     def __init__(self):
@@ -110,7 +111,23 @@ class Event_to_image:
             return None
 
         if picture_idx in (238, 239): # Pokemon Overworlds
-            picture_idx = str(event['value']['species'])[8:].lower() # Use the species as idx instead of a numerical value
+            species = str(event['value']['species'])[8:].lower() # Use the species as idx instead of a numerical value
+            path = 'asset/gfx/overworld/pokemon/gfx_ow_' + species + '.png'
+            if picture_idx == 238:
+                box = ((0, 2 * 32, 32, 3 * 32))
+            elif picture_idx == 239:
+                box = ((0, 2 * 64, 64, 3 * 64))
+            picture_idx = path
+        elif picture_idx == 236: # Misc overworlds
+            script_std = event['script_std']
+            box = ((0, 16, 16, 32))
+            if script_std == 'PERSON_MUSHROOM':
+                path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_mushroom.png')
+            elif script_std == 'PERSON_SHELL':
+                path = os.path.join('asset', 'gfx', 'overworld', 'misc', 'gfx_ow_shell.png')
+            else:
+                return None
+            picture_idx = path
         if picture_idx in self.images and self.images[picture_idx] is not None:
             image = self.images[picture_idx]
         elif picture_idx in picture_idx_to_png:
@@ -121,14 +138,12 @@ class Event_to_image:
                 w, h = spritesheet_images[picture_idx]
                 image = image.crop((0, 0, w, h))
         elif isinstance(picture_idx, str):
-            species = picture_idx
-            path = 'asset/gfx/overworld/pokemon/gfx_ow_' + species + '.png'
+            path = picture_idx
             if not os.path.exists(path):
                 return None
             image, palette = agbimage.from_file(path)
             image = image.to_pil_image(palette.to_pil_palette(), transparent=0)
-            w, h = image.size
-            image = image.crop((0, 2 * w, w, 3 * w))
+            image = image.crop(box)
         else:
             # Use the rom to retrieve sprites
             if picture_idx in range(152):

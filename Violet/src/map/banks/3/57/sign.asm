@@ -13,8 +13,8 @@ end
 
 str_0x8f46ca:
     .string "Trainerschule\nSchulleiter: Faun"
-
-
 .elseif LANG_EN
 
+str_0x8f46ca:
+    .string "Trainerschool\nHeadmaster: Faun"
 .endif

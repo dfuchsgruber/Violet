@@ -170,7 +170,7 @@ static bool drop_species_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u32 p[16]; u16 items[16];
     size_t p_size = 0;
     if (basestats[species].common_item) P_ARRAY_ADD_ITEM(p, items, basestats[species].common_item, 50, p_size)
-    if (basestats[species].rare_item) P_ARRAY_ADD_ITEM(p, items, basestats[species].rare_item, 1, p_size)
+    if (basestats[species].rare_item) P_ARRAY_ADD_ITEM(p, items, basestats[species].rare_item, 5, p_size)
      if (p_size > 0) {
         *dst_item = items[choice(p, p_size, NULL)];
         *dst_cnt = 1;
@@ -402,7 +402,11 @@ void bsc_cmd_itemdrop_and_payday() {
                 BSC_BUFFER_HWORD(bsc_string_buffer0, 5, amount);
                 battlescript_callstack_push_next_command();
                 bsc_offset = battlescript_print_payday_money;
-                return;
+            }
+            if (battle_flags & BATTLE_TRAINER) {
+                BATTLE_STATE2->item_dropping_state = SUMMARY_DONE;
+            } else {
+                BATTLE_STATE2->item_dropping_state = DROPPING_INIT;
             }
             break;
         }

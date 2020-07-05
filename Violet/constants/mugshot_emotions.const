@@ -12,6 +12,7 @@
         "MUGSHOT_SHOCKED",
         "MUGSHOT_SAD",
         "MUGSHOT_EVIL",
+        "MUGSHOT_SERIOUS",
         "MUGSHOT_EMOTION_COUNT"
     ]
 }
