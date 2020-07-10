@@ -68,3 +68,8 @@
 
 .org 0x080BFFE4
     .word healing_place_target_persons
+
+.org 0x0805a9b4
+    ldr r3, = map_draw_block_to_bg | 1
+    bx r3
+    .pool

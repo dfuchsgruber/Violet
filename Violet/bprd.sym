@@ -909,3 +909,6 @@ battle_animation_graphics = 0x083aca54;
 battle_animation_palettes = 0x083ad35c;
 pokemon_nature_strings = 0x08464f24;
 str_item_has_no_effect = 0x08416824;
+overworld_bg1_tilemap = 0x03004f64;
+overworld_bg2_tilemap = 0x03004f68;
+overworld_bg3_tilemap = 0x03004f6c;

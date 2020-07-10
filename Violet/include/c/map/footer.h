@@ -36,4 +36,8 @@ void tile_init(map_footer_t *foot);
 
 void map_delta_to_map_tile(map_footer_t *foot, u16 map_tile_id, s16 x_relative, s16 y_relative);
 
+u16 *overworld_bg1_tilemap;
+u16 *overworld_bg2_tilemap;
+u16 *overworld_bg3_tilemap;
+
 #endif /* INCLUDE_C_MAP_FOOTER_H_ */
