@@ -170,6 +170,9 @@ cloud_maps_list_type = agb.types.UnboundedArrayType(
     'bank_map_pair', {'bank' : 255, 'map_idx' : 255}
 )
 
+# 3-layer blocks (containing 3*4 = 12 tiles in total)
+block_tilemap_type = agb.types.FixedSizeArrayType('block', lambda *args: 12)
+
 # Export new models
 
 models_to_export = {
@@ -198,5 +201,6 @@ models_to_export = {
     'connection.connection' : connection_type,
     'bank_map_pair' : bank_map_pair_type,
     'cloud_maps_list' : cloud_maps_list_type,
+    'tileset.block_tilemap' : block_tilemap_type,
     'header' : header_type
 }

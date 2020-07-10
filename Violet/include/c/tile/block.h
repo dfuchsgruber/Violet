@@ -80,7 +80,7 @@ void coordinates_apply_direction(int direction,short *x,short *y);
  * @param x the AM x coordiante + 7 (camera origin relative)
  * @param y the AM y coordinate + 7 (camera origin relative)
  */
-void map_draw_block(s16 x, s16 y);
+void map_redraw_block_at_position(s16 x, s16 y);
 
 /**
  * Returns the player position

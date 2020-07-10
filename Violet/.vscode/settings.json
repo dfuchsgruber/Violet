@@ -140,6 +140,7 @@
         "sstream": "c",
         "custom.h": "c",
         "description.h": "c",
-        "footer.h": "c"
+        "footer.h": "c",
+        "fata_morgana.h": "c"
     }
 }

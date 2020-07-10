@@ -34,7 +34,14 @@ map_footer_t *get_mapfooter();
 
 void tile_init(map_footer_t *foot);
 
-void map_delta_to_map_tile(map_footer_t *foot, u16 map_tile_id, s16 x_relative, s16 y_relative);
+/**
+ * Draws a block onto the bg and schedules a vram copy for bg1-bg3.
+ * @param f the footer to use
+ * @param offset at which offset to put the block
+ * @param x the x coordiante in the map
+ * @param y the y coordinate in the map
+ **/
+void map_draw_block_at_position(map_footer_t *f, u16 offset, s16 x, s16 y);
 
 u16 *overworld_bg1_tilemap;
 u16 *overworld_bg2_tilemap;

@@ -73,3 +73,17 @@
     ldr r3, = map_draw_block_to_bg | 1
     bx r3
     .pool
+
+.org 0x0805a948
+    push {r4, lr}
+    ldr r4, =map_draw_block_at_position | 1
+    bl blxr4
+    pop {r4}
+    pop {r0}
+    bx r0
+    .pool
+
+.org 0x0805a91c
+    ldr r3, =map_draw_door_at | 1
+    bx r3
+    .pool

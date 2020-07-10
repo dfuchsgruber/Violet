@@ -47,24 +47,12 @@ void do_fata_morgana(){
                 else frame = 3;
                 block_set_by_pos((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1],
                         morgana_anims[anim_index].blocks[frame] | morgana_anims[anim_index].walkfield);
-                map_draw_block((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1]);
+                map_redraw_block_at_position((s16)fata_morgana_blocks[i][0], (s16)fata_morgana_blocks[i][1]);
             }
             i++;
         }
     }
 }
 
-void map_draw_block(s16 x, s16 y){
-    int i = 2 * (x - save1->x_cam_orig);
-    int j = 2 * (y - save1->y_cam_orig);
-    if(i >= 0 && i < 0x20 && j >= 0 && j < 0x20){
-        int x_tile = map_displ_cntrl.x_start + i;
-        int y_tile = map_displ_cntrl.y_start + j;
-        if(x_tile >= 0x20) x_tile -= 0x20;
-        if(y_tile >= 0x20) y_tile -= 0x20;
-        map_delta_to_map_tile(mapheader_virtual.footer, (u16)(0x20 * y_tile + x_tile),
-                x, y);
-    }
-}
 
 

@@ -166,4 +166,13 @@ void map_reload_continuation_resume_script();
  **/
 void ambient_cry_proceed(u16 *state, u16 *delay);
 
+/**
+ * Gets the offset in the tilemap buffers of the overworld using a position and the camera state
+ * @param c the camera state
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @return -1 on failure, otherwise the offset in the bg tilemaps
+ **/
+int map_position_to_bg_tilemap_offset(stru_map_displ_cntrl *c, s16 x, s16 y);
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */
