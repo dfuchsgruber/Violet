@@ -194,8 +194,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 15,
-					"y": 10,
+					"x": "65",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -272,8 +272,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 39,
-					"y": 37,
+					"x": "41",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1328,8 +1328,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "61",
-					"y": "9",
+					"x": "64",
+					"y": "21",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
