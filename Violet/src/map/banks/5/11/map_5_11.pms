@@ -5,7 +5,7 @@
 			"person_cnt": 2,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
-			"signpost_cnt": 2,
+			"signpost_cnt": 0,
 			"persons": [
 				{
 					"is_trainer": "0",
@@ -13,7 +13,7 @@
 					"y": 5,
 					"target_index": 1,
 					"field_3": 0,
-					"picture": 33,
+					"picture": "32",
 					"flag": "0x0",
 					"x": 9,
 					"field_2": 0,
@@ -71,42 +71,9 @@
 				}
 			],
 			"triggers": [],
-			"signposts": [
-				{
-					"x": 8,
-					"y": 1,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_5_2_sign_1",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 9,
-					"y": 1,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_5_2_sign_1",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				}
-			]
+			"signposts": []
 		},
-		"levelscripts": "lscr_0x71a260",
+		"levelscripts": "0",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

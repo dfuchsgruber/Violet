@@ -46,7 +46,7 @@ copyvarifnotzero 0x8000 ITEM_BEERENSAFT
 copyvarifnotzero 0x8001 5
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x87f3c1
+gotoif EQUAL ow_script_no_room_for_giveitem
 loadpointer 0x0 str_0x8dec8a
 callstd MSG
 setflag SILVANIA_BERRY_JUICE

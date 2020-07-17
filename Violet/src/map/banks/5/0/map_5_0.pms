@@ -47,7 +47,7 @@
 			"triggers": [],
 			"signposts": []
 		},
-		"levelscripts": "lscr_0x169e05",
+		"levelscripts": "0",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

@@ -14,11 +14,9 @@ end
 .ifdef LANG_GER
 
 str_0x80062f:
-    .string "Anemonia"
-
-
+    .autostring 34 2 "Anemonia\pIdylle verborgen im Schilfgras."
 .elseif LANG_EN
-
+    .autostring 34 2 "Anemonia\pIdyll hidden in the reeds."
 .endif
 
 
@@ -29,13 +27,11 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x800688:
     .string "PLAYERs Haus"
-
-
 .elseif LANG_EN
-
+str_0x800688:
+    .string "PLAYERs house"
 .endif
 
 
@@ -46,11 +42,8 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x87aafc:
     .string "RIVALs Haus"
-
-
 .elseif LANG_EN
-
+    .string "RIVALs house"
 .endif

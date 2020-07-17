@@ -2256,3 +2256,8 @@ trainer_pokemon_custom_item_custom_attacks trainer_party_test[2] = {
       0x0, false, false, 40, POKEMON_GLURAK, ITEM_SCHLOHKRAUT,
       ATTACK_HITZEKOLLER, ATTACK_WINDSCHNITT, ATTACK_SOLARSTRAHL, ATTACK_SONNENTAG),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x19a_meriana_city_blackbelt_in_front_of_gym[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,5,POKEMON_MACHOLLO),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,5,POKEMON_MENKI),
+};

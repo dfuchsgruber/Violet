@@ -2,10 +2,10 @@
 	"data": {
 		"footer": "map_footer_434_indoor_layout_2",
 		"events": {
-			"person_cnt": 6,
+			"person_cnt": 7,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
-			"signpost_cnt": 3,
+			"signpost_cnt": 0,
 			"persons": [
 				{
 					"is_trainer": "0",
@@ -140,12 +140,12 @@
 				{
 					"is_trainer": "0",
 					"script": "ow_script_map_5_12_person_5",
-					"y": 12,
+					"y": "12",
 					"target_index": 6,
 					"field_3": 0,
 					"picture": 17,
 					"flag": "0x0",
-					"x": 14,
+					"x": "14",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -162,6 +162,30 @@
 						"species": 0,
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "7",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "15",
+					"y": "12",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FLABEBE",
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
@@ -175,58 +199,9 @@
 				}
 			],
 			"triggers": [],
-			"signposts": [
-				{
-					"x": 8,
-					"y": 6,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_5_2_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 8,
-					"y": 1,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_5_2_sign_1",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 9,
-					"y": 1,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_5_2_sign_1",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				}
-			]
+			"signposts": []
 		},
-		"levelscripts": "lscr_0x71a22c",
+		"levelscripts": "0",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

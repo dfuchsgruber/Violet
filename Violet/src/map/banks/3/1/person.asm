@@ -14,738 +14,331 @@
 .include "species.s"
 .include "items.s"
 
-.global ow_script_0x1c1afb
-.global ow_script_map_3_1_person_9
-.global ow_script_0x1c19c6
-.global ow_script_map_3_1_person_5
-.global ow_script_0x8a1a57
-.global ow_script_0x1c19d7
-.global ow_script_map_3_1_person_4
-.global ow_script_map_3_22_trainer_8
-.global ow_script_map_3_1_person_7
-.global ow_script_map_3_1_person_6
-.global ow_script_map_3_1_person_1
-.global ow_script_map_3_1_person_17
-.global ow_script_map_3_1_person_8
-.global ow_script_map_3_1_person_12
-.global ow_script_map_3_1_person_3
-.global ow_script_map_3_1_person_15
-.global ow_script_0x949573
-.global ow_script_map_1_81_trainer_4
-.global ow_script_map_3_1_person_0
-.global ow_script_0x8f5cd8
-.global ow_script_0x1c1b04
-.global ow_script_0x1c1af7
-.global ow_script_0x1aa912
-.global ow_script_0x8a28fd
-.global ow_script_0x9455d9
-.global ow_script_map_3_1_person_2
-.global ow_script_0x1c19e1
-.global ow_script_0x8faec2
-.global ow_script_0x1c1ad9
-.global ow_script_map_3_1_person_14
-.global ow_script_map_3_1_person_16
-.global ow_script_0x87f3c1
-.global ow_script_0x9455e4
-.global ow_script_map_3_1_person_13
-.global ow_script_map_3_1_person_11
-.global ow_script_map_3_1_person_10
-.global ow_script_0x93d5e1
-.global move_tutor_item_check
-.global ow_script_move_tutor_do
-.global ow_script_move_tutor_pay_items
-.global str_move_tutor_pay_items
-
-
-ow_script_map_3_1_person_0:
-special 0x187
-compare LASTRESULT 0x2
-gotoif EQUAL ow_script_0x1aa912
-lockall
-checkflag FRBADGE_2
-gotoif LESS ow_script_0x1c19d7
-checkattack ATTACK_ZERSCHNEIDER
-compare LASTRESULT 0x6
-gotoif EQUAL ow_script_0x1c19d7
-setanimation 0x0 0x800d
-bufferpartypokemon 0x0 0x800d
-bufferattack 0x1 ATTACK_ZERSCHNEIDER
-loadpointer 0x0 str_0x1c19e4
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x1c19e1
-loadpointer 0x0 str_0x1c1a37
-callstd MSG_KEEPOPEN
-closeonkeypress
-doanimation 0x2
-nop
-waitstate
-goto ow_script_0x1c19c6
-
-
-ow_script_movs_0x1c19d5:
-.byte 0x69
-.byte STOP
-
-
-ow_script_0x1c19c6:
-applymovement 0x800f ow_script_movs_0x1c19d5
-waitmovement 0x0
-hidesprite 0x800f
-releaseall
-end
-
-
-ow_script_0x1c19e1:
-closeonkeypress
-releaseall
-end
-
-
-ow_script_0x1c19d7:
-loadpointer 0x0 str_0x1c1a48
-callstd MSG_SIGN
-releaseall
-end
-
-
-.ifdef LANG_GER
-
-str_0x1c19e4:
-    .string "Du kannst den Zerschneider hier\neinsetzen!\pMöchtest du den Zerschneider\neinsetzen?"
-
-
-
-str_0x1c1a48:
-    .string "Der Zerschneider kann hier\neingesetzt werden."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_1_81_trainer_4:
-special 0x187
-compare LASTRESULT 0x2
-gotoif EQUAL ow_script_0x1aa912
-lockall
-checkflag FRBADGE_6
-gotoif LESS ow_script_0x1c1afb
-checkattack ATTACK_ZERTRUEMMERER
-compare LASTRESULT 0x6
-gotoif EQUAL ow_script_0x1c1afb
-setanimation 0x0 0x800d
-bufferpartypokemon 0x0 0x800d
-bufferattack 0x1 ATTACK_ZERTRUEMMERER
-loadpointer 0x0 str_0x1c1b07
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x1c1b04
-loadpointer 0x0 str_0x1c1a37
-callstd MSG_KEEPOPEN
-closeonkeypress
-doanimation 0x25
-nop
-waitstate
-goto ow_script_0x1c1ad9
-
-
-ow_script_movs_0x1c1af9:
-.byte 0x68
-.byte STOP
-
-
-ow_script_0x1c1ad9:
-applymovement 0x800f ow_script_movs_0x1c1af9
-waitmovement 0x0
-hidesprite 0x800f
-special 0xab
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x1c1af7
-waitstate
-releaseall
-end
-
-
-ow_script_0x1c1af7:
-releaseall
-end
-
-
-ow_script_0x1c1b04:
-closeonkeypress
-releaseall
-end
-
-
-ow_script_0x1c1afb:
-loadpointer 0x0 str_0x1c1b4a
-callstd MSG_SIGN
-end
-
-
-ow_script_0x1aa912:
-release
-end
-
-
-.ifdef LANG_GER
-
-str_0x1c1b07:
-    .string "Dieser Fels ist zerbrechlich. Soll\nZERTRÜMMERER eingesetzt werden?"
-
-
-
-str_0x1c1a37:
-    .string "BUFFER_1 setzt\nBUFFER_2 ein."
-
-
-
-str_0x1c1b4a:
-    .string "Ein großer Felsen. Ein Pokémon\nkönnte ihn vielleicht zertrümmern."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_22_trainer_8:
-givepokemon POKEMON_BISAFLOR 0xa ITEM_NONE 0x0 0x0 0x0
-end
-
-
-ow_script_map_3_1_person_7:
-lock
-faceplayer
-checkflag MERIANA_CITY_BLACK_BELT
-gotoif EQUAL ow_script_0x8a28fd
-loadpointer 0x0 str_0x8a29c0
-callstd MSG_KEEPOPEN
-copyvarifnotzero 0x8000 ITEM_SCHWARZGURT
-copyvarifnotzero 0x8001 1
-callstd ITEM_OBTAIN
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x87f3c1
-loadpointer 0x0 str_0x8a2922
-callstd MSG_KEEPOPEN
-closeonkeypress
-release
-setflag MERIANA_CITY_BLACK_BELT
-end
-
-
-ow_script_0x87f3c1:
-lock
-faceplayer
-loadpointer 0x0 str_0x87f3ce
-callstd MSG
-release
-end
-
-
-ow_script_0x8a28fd:
-loadpointer 0x0 str_0x8a2907
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a29c0:
-    .string "Hjaaa! Huuu! Baaa! Kara!\nDiese Kampftechnik habe ich eigens\lentwickelt. Eines Tages werde ich\lsogar Manus damit übertrumpfen!\lDOTS\lHier, nimm das und trainiere deine\lPokémon selbst so wie ich es tue!"
-
-
-
-str_0x8a2922:
-    .string "Das Item Schwarzgurt verstärkt\nalle Kampf-Angriffe eines\lPokémon. Damit werden seine\lSchläge und Tritte noch viel\leffektiver sein!\lHjaaa! Huuu! Baa! Kara!"
-
-
-
-str_0x87f3ce:
-    .string "Sieht so aus, als hättest du für\nBUFFER_2 keinen Platz!\pKomm wieder, wenn du das Item\naufnehmen kannst."
-
-
-
-str_0x8a2907:
-    .string "Hjaaa! Huuu! Baaa! Kara!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_4:
-loadpointer 0x0 str_0x8a1f57
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a1f57:
-    .string "QUOTE_STARTDie Stadt der BergeQUOTE_END, nennt man\nMeriana City mancherorts. Es\lheißt, dass hier der Arenaleiter\lKamillo aus Hoenn ausgebildet\lwurde. Seit dem zieht dieser Ort\lviele Kampf-Trainer an."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_2:
-loadpointer 0x0 str_0x8a200c
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a200c:
-    .string "Dieser Tunnel soll nach Route 2\nführen, aber ich fürchte mich vor\lHöhlen."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_3:
-loadpointer 0x0 str_0x8a2078
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a2078:
-    .string "Versteckte Maschienen ermöglichen\noft den Ort zu sonst\lunzugänglichen Arealen. Manchmal\lfindet man dort tolle Items."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_14:
-loadpointer 0x0 str_0x8a20ee
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a20ee:
-    .string "Mit der versteckten Maschiene\nZertrümmerer kann man diese Felsen\lzerschmetternDOTS Jedoch muss der\lTrainer auch die nötige\lQualifikation besitzen, meine ich."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_8:
-loadpointer 0x0 str_0x8a27bc
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a27bc:
-    .string "Der Wassertunnel verbindet Meriana\nCity mit Kaskada, der Stadt des\lWassers. Von dort aus erhält auch\ldieser Ort hier seine Versorgung\lmit frischem Wasser."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_6:
-loadpointer 0x0 str_0x8a2858
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a2858:
-    .string "Der Wassertunnel ist eingstürzt.\nDer Arenaleiter Manus\larbeitet derzeit an seiner\lReperatur, bitte gedulde dich."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_5:
-loadpointer 0x0 str_0x8a2a88
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a2a88:
-    .string "Der Wundertausch ist ein\nausgefallenes System. So kann\ljeder Trainer an die\lverschiedensten Pokémon gelangen.\lSpannend, was?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_11:
-loadpointer 0x0 str_0x8a2b06
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a2b06:
-    .string "Es heißt, die Kampf-Angriffe von\nManus\' Pokémon könnten Felsen\lzertrümmern. Ob das wohl wahr ist?"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_9:
-loadpointer 0x0 str_0x8a2b69
-callstd MSG
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a2b69:
-    .string "Wenn ich so über die Kronen der\nBäume blicke, werde ich ganz\lmelancholisch. Als kleines Mädchen\lhaben ich und mein Pokémon gerne\lim Unterholz gespieltDOTS"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_13:
-loadpointer 0x0 str_0x8f6ed0
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f6ed0:
-    .string "Es heißt, dass in Theto einst das\nZeit-Pokémon das Herz der Zeit\lverborgen hat. Solange es schlägt,\lbleibt die Zeit im Fluss."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_12:
-loadpointer 0x0 str_0x8a2c84
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a2c84:
-    .string "Ich trainiere hier so lange, bis\nich in der Lage bin, es mit Manus\laufzunehmen."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_10:
-loadpointer 0x0 str_0x8a2cd5
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8a2cd5:
-    .string "Route 1 liegt direkt am Fuße des\nWassergebirges. Nördlich von hier,\lüber den Wassertunnel, erreicht\lman die Stadt Kaskada."
-
-
-.elseif LANG_EN
-
-.endif
-
-ow_script_map_3_1_person_1:
-loadpointer 0x0 str_0x94568f
-callstd MSG_FACE
-call move_tutor_item_check
-gotoif EQUAL ow_script_0x8faec2
-end
-
-
-say_exclam:
-.byte SAY_EXCLAM
-.byte STOP
-
-
-ow_script_0x8faec2:
-applymovement 0x800f say_exclam
-waitmovement 0x0
-loadpointer 0x0 str_0x945eb7
-callstd MSG_YES_NO
-compare LASTRESULT 0x1
-gotoif LESS ow_script_0x8a1a57
-loadpointer 0x0 str_0x8a1be6
-callstd MSG
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-setvar 0x8005 MOVE_TUTOR_STEINHAGEL
-call ow_script_move_tutor_do
-clearflag TRANS_DISABLE
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8a1a57
-call ow_script_move_tutor_pay_items
-loadpointer 0x0 str_move_tutor_pay_items
-callstd MSG
-end
-
-
-ow_script_move_tutor_pay_items:
-setvar 0x8000 ITEM_RIESENPILZ
-setvar 0x8001 0x1
-checkitem ITEM_MINIPILZ 0x3
-compare LASTRESULT 0x1
-gotoif LESS ow_script_0x9455d9
-setvar 0x8000 ITEM_MINIPILZ
-setvar 0x8001 0x3
-removeitem ITEM_MINIPILZ 0x3
-goto ow_script_0x9455e4
-
-
-ow_script_0x9455e4:
-bufferitem 0x0 0x8000
-buffernumber 0x1 0x8001
-return
-
-
-ow_script_0x9455d9:
-removeitem ITEM_RIESENPILZ 0x1
-goto ow_script_0x9455e4
-
-
-ow_script_0x8a1a57:
-loadpointer 0x0 str_0x945830
-callstd MSG
-end
-
-
-ow_script_move_tutor_do:
-special SPECIAL_MOVE_TUTOR_SELECT_POKEMON
-waitstate
-lock
-faceplayer
-return
-
-
-move_tutor_item_check:
-setvar 0x8000 ITEM_MINIPILZ
-setvar 0x8001 0x3
-checkitem ITEM_MINIPILZ 0x3
-compare LASTRESULT 0x1
-gotoif EQUAL buffer_move_tutor_item
-setvar 0x8000 ITEM_RIESENPILZ
-setvar 0x8001 0x1
-checkitem ITEM_RIESENPILZ 0x1
-compare LASTRESULT 0x1
-gotoif EQUAL buffer_move_tutor_item
-setvar LASTRESULT 0x0
-item_check_return:
-return
-
-
-buffer_move_tutor_item:
-bufferitem 0x0 0x8000
-buffernumber 0x1 0x8001
-setvar LASTRESULT 0x1
-goto item_check_return
-
-
-.ifdef LANG_GER
-
-str_0x94568f:
-    .string "Hyaa! Hajajaja!\nIn vielen Jahren des harten\lTraining habe ich meine\lKampftechnik so sehr verfeinert,\ldass ich Steine regnen lassen\lkann!\pSoll ich einem deiner Pokémon den\nSteinhagel beibringen?\pDann will ich einen Riesenpilz\noder drei Minipilze als\lGegenleistung!"
-
-
-
-str_0x945eb7:
-    .string "Hyaa! Vortrefflich!\nDu hast BUFFER_2-mal BUFFER_1\lbei dir!\lAls Gegenleistung bringe ich einem\ldeiner Pokémon Steinhagel bei!\lWas sagst du dazu?"
-
-
-
-str_0x8a1be6:
-    .string "Schön, schön!\nWelches deiner Pokémon soll\lSteinhagel lernen?"
-
-
-str_move_tutor_pay_items:
-    .string "PLAYER übergibt\nBUFFER_2-mal BUFFER_1."
-
-
-
-str_0x945830:
-    .string "Hyaa! Wie schade!\pWenn ich einem deiner Pokémon\nSteinhagel beibringen soll, dann\lkomm mit 3 Minipilzen oder einem\lRiesenpilz wieder!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_meriana_dummy:
-givepokemon POKEMON_EVOLI 0x5 0 0 0 0
-givepokemon POKEMON_NINCADA 0x19 0 0 0 0
-givepokemon POKEMON_SKORGLA 0x23 0 0 0 0
-givepokemon POKEMON_PORYGON2 0x1e ITEM_DUBIOSDISC 0x0 0x0 0x0
-
-copyvarifnotzero 0x8000 ITEM_FUNKELSTEIN
-copyvarifnotzero 0x8001 1
-callstd ITEM_OBTAIN
-
-copyvarifnotzero 0x8000 ITEM_WASSERSTEIN
-copyvarifnotzero 0x8001 1
-callstd ITEM_OBTAIN
-
-copyvarifnotzero 0x8000 ITEM_SONDERBONBON
-copyvarifnotzero 0x8001 99
-callstd ITEM_OBTAIN
-
-copyvarifnotzero 0x8000 ITEM_LINKKABEL
-copyvarifnotzero 0x8001 99
-callstd ITEM_OBTAIN
-
-
-
-end
-
-
-ow_script_map_3_1_person_16:
-loadpointer 0x0 str_0x8de4c9
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8de4c9:
-    .string "Brüder und Schwestern, lasst uns\nkämpfen für eine Welt ohne\lUngerechtigkeit und Unterdrückung!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_15:
-special 0x3b
-playsong MUS_KAMPF_GEGEN_ARENALEITER_HOENN 0x0
-trainerbattlecont 0x1 0x88 0x0 str_0x8f5cda str_0x8f5cda ow_script_0x8f5cd8
-
-
-ow_script_0x8f5cd8:
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f5cda:
-    .string "t"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_1_person_17:
-lock
-faceplayer
-buffernumber 0 WONDERTRADE_CNT
-loadpointer 0x0 str_0
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-fadescreen 1
-hidesprite LASTTALKED
-fadescreen 0
-release
-end
-
-
-draw_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-loadpointer 0x0 str_0x949632
-
-
+.global ow_script_map_bluetenbach_person_0
+.global ow_script_map_bluetenbach_person_1
+.global ow_script_map_bluetenbach_person_2
+.global ow_script_map_bluetenbach_person_3
+.global ow_script_map_bluetenbach_person_4
+.global ow_script_map_bluetenbach_person_5
+.global ow_script_map_bluetenbach_person_6
+.global ow_script_map_bluetenbach_person_7
+.global ow_script_map_bluetenbach_person_8
+.global ow_script_map_bluetenbach_person_9
+.global ow_script_map_bluetenbach_person_10
+.global ow_script_map_bluetenbach_person_11
+.global ow_script_map_bluetenbach_person_12
+.global ow_script_map_bluetenbach_person_13
+.global ow_script_map_bluetenbach_person_14
+.global ow_script_map_bluetenbach_person_15
+.global ow_script_map_bluetenbach_person_16
+.global ow_script_map_bluetenbach_person_17
+.global ow_script_map_bluetenbach_person_18
+.global ow_script_map_bluetenbach_person_19
+.global ow_script_map_bluetenbach_person_20
+.global ow_script_map_bluetenbach_trainer_0
+.global ow_script_map_bluetenbach_move_tutor_rock_slide
+.global ow_script_map_bluetenbach_elise
+.global ow_script_map_bluetenbach_black_belt_gift
+
+ow_script_map_bluetenbach_person_0:
+    loadpointer 0 str_0
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_1:
+    loadpointer 0 str_1
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_2:
+    loadpointer 0 str_2
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_3:
+    loadpointer 0 str_3
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_4:
+    loadpointer 0 str_4
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_5:
+    loadpointer 0 str_5
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_6:
+    loadpointer 0 str_6
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_7:
+    loadpointer 0 str_7
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_8:
+    loadpointer 0 str_8
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_9:
+    loadpointer 0 str_9
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_10:
+    loadpointer 0 str_10
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_11:
+    loadpointer 0 str_11
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_12:
+    loadpointer 0 str_12
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_13:
+    loadpointer 0 str_13
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_14:
+    loadpointer 0 str_14
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_15:
+    loadpointer 0 str_15
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_16:
+    loadpointer 0 str_16
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_17:
+    loadpointer 0 str_17
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_18:
+    loadpointer 0 str_18
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_19:
+    loadpointer 0 str_19
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_person_20:
+    loadpointer 0 str_20
+    callstd MSG_FACE
+    end
+ow_script_map_bluetenbach_trainer_0:
+    trainerbattlecont 1 0x19A 17 str_before0 str_after0 trainer0_later
+trainer0_later:
+    loadpointer 0 str_later0
+    callstd MSG_FACE
+    end
 
 .ifdef LANG_GER
 str_0:
-	.autostring 34 2 "Hallo PLAYER!\nSchön, dich zu sehen!\pIch muss dir noch einmal danken, dass du meinen Vater im Silvania-Wald vor Team Violet beschützt hast.\pIch begreife nicht, warum diese Leute ein Auge auf einen Physiker wie ihn geworfen haben.\pDOTS DOTS DOTS\pBenutzt du den Wundertausch auch?\pIch sehe, du hast bereits BUFFER_1 Pokémon getauscht.\pIst es nicht fantastisch, dass Trainer von überall durch diese App miteinander verbunden sind?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pAber wie du dir bestimmt denken kannst, habe ich aus einem anderen Grund nach dir gesucht.\pProfessor Tann bricht bald auf eine Expedition auf und will dich und RIVAL davor noch einmal sehen.\pSei doch so nett, und besuche ihn in seinem Labor auf Route 2.\pBis dann, PLAYER!"
+    .autostring 34 2 "Blütenbach ist ein Ort voll Tradition.\pSeit Jahrzehnten finden sich hier Kämpfer ein, um gegeinander anzutreten."
+str_1:
+    .autostring 34 2 "Für manche ist dieses Dorf ein Pilgerzentrum des Kampfes.\pAber laden die Kirschblüten nicht viel mehr dazu ein, Frieden zu suchen?"
+str_2:
+    .autostring 34 2 "Von hier oben kann bis nach Anemoia herabblicken.\pDas ist wirklich ein schöner Fleck Land."
+str_3:
+    .autostring 34 2 "Mein Bruder hat mir mein Funkelstück geklaut!\pDem werde ich es zeigen!"
+str_4:
+    .autostring 34 2 "Ich habe meine Schwester überhaupt nichts weggenommen!\pDiese Zicke soll mich in Ruhe lassen!"
+str_5:
+    .autostring 34 2 "Selbst an einem so schönen Ort wie diesem vergeht kein Tag, an dem meine Kinder nicht streitenDOTS"
+str_6:
+    .autostring 34 2 "Für viele Wanderer stellt diese Region einen großen Reiz dar.\pIch bin den ganzen Weg von der Felsigen Ödnis hierher gekommen, und das nur zu Fuß!"
+str_7:
+    .autostring 34 2 "Jeder Schwarzgurt, der sich einen Namen gemacht hat, trainierte in Blütenbach.\pDer Arenaleiter Manuel ist selbst eine Koryphähe des Faustkampfes!"
+str_8:
+    .autostring 34 2 "Viele meinen, ein Schwarzgurt wäre nur auf rohe Kraft und Stärke bedacht.\pWenn mir der Arenaleiter Manuel eines beigebracht hat, dann das die wahre Stärke im Geist liegt.\pNur wer gesammelt und fokussiert kämpft, kann bestehen!"
+str_9:
+    .autostring 34 2 "Es ist schon faszinierend, dass das Wasser, das von hier bis nach Anemonia ließt, direkt aus dem Meer kommtDOTS\pErstaunlich, wie offenbar schon unscheinbare Kleinigkeiten zusammenhängen, oder?"
+str_10:
+    .autostring 34 2 "Ich mag nicht wie ein Schwarzgurt aussehen, aber ich verehre den Arenaleiter Manuel dennoch sehr.\pAls ich noch ein Kind war, habe ich mit angesehen, wie er die Steine, auf denen wir in diesem Moment stehen, aus dem Berg mit bloßen Händen herausgeschlagen hat.\pDas hat starken Eindruck hinterlassen."
+str_11:
+    .autostring 34 2 "Um mich zu beeindrucken hat mein Freund sogar den Arenaleiter herausgefordert.\pDas ist zwar nicht unbedingt gut für ihn ausgegangen, aber als ich ihn wieder gesund gepflegt habe, sind wir uns dann doch näher gekommen.\pMan könnte also sagen, dass sein Plan doch in gewisser Weise aufgegangen ist."
+str_12:
+    .autostring 34 2 "Ich habe Jahre gebraucht, den Mut aufzubringen, meiner Freundin meine Gefühle zu gestehen.\pUnd dann hat es noch zwei weitere gebraucht, ehe ich ihr Herz erobert hatte.\pAber all diese Strapazen würde ich, ohne zu zögern, wieder auf mich nehmen."
+str_13:
+    .autostring 34 2 "Mein Pokémon ist diesen Baum hinaugeklettert.\pJetzt traut es sich aber nicht mehr herunterDOTS"
+str_14:
+    .autostring 34 2 "Viele wissen das nicht mehr, aber der Pinke Faun ist in diesem Dorf aufgewachsen.\pIch glaube sogar, dass die Kirschblüten hier ihm zu seinem Namen verholfen haben.\pWer hätte gedacht, dass aus so einem netten Jungen ein so berühmter Trainer werden könnte?"
+str_15:
+    .autostring 34 2 "Dieses Jahr werde ich mich an Fauns Trainerschule einschreiben.\pAlso muss ich in Form kommen.\pIch habe gehört, dass Faun überaus streng mit seinen Schülern ist und ich will einen guten ersten Eindruck machen!"
+str_16:
+    .autostring 34 2 "Mein Bruder wurde war Matrose, ehe der Pirat Blackbeard ihn ums Eck gebracht hat.\pJetzt trainiere ich hier, um irgendwann Rache für ihn zu nehmen!\pErst, wenn ich, wie Manuel, in der Lage bin, Stein mit bloßen Händen zu zertrümmern, werde ich eine Chance gegen Blackbeard haben."
+str_17:
+    .autostring 34 2 "Kannst du dir vorstellen, mit welchen Vorurteilen man hier zu kämpfen hat, wenn man etwas dicker ist?\pSchließlich wimmelt es in diesem Dorf ja nur so von Muskelprotzen."
+str_18:
+    .autostring 34 2 "Der Wassertunnel gilt als der sicherste Weg, um schnell nach Kaskada zu gelangen.\pTrotzdem stürzt er ab und an ein.\pDa kommt der unser Arenaleiter, Manuel, ins Spiel.\pEr räumt die Brocken einfach so weg.\pUnglaublich, wie stark er ist, nicht?"
+str_19:
+    .autostring 34 2 "Als ich Manuel das erste Mal herausgefordert habe, hat er sich die Augen verbunden, nur um mich zu verhöhnen.\pUnd trotzdem hat er mit mir den Boden aufgewischt.\pEin solcher Kämpfer ist nur zu bewundern."
+str_20:
+    .autostring 34 2 "Ich bin auf der Suche nach seltenen Käfer-Pokémon.\pAber an diesem Ort scheint sich diese Art von Pokémon nicht gerade zu tummeln.\pWohin das Auge blickt, diese furchteinflößenden Kampf-PokemonDOTS"
+str_before0:
+    .autostring 34 2 "Du bist wohl hier, um den Arenaleiter Manuel herauszufordern, was?\pAber du bist noch ein Grünschnabel.\pDu würdest in dieser Arena keine Sekunde überstehen.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDu glaubst mir nicht?\pNa, dann zeig mir doch, was du auf dem Kasten hast!"
+str_after0:
+    .autostring 34 2 "Gar nicht mal übelDOTS\pFür einen Anfänger natürlich."
+str_later0:
+    .autostring 34 2 "Pech gehabt!\nDer Arenaleiter ist gerade nicht im Haus, also kannst du trotzdem nicht hinein.\pManuel ist damit beschäftigt, den unlängst eingestürzten Wassertunnel zu räumen."
 .elseif LANG_EN
+str_0:
+    .autostring 34 2 "Petal Creek is a place full of tradition.\pFor decaded strong people from all around the world come together here in order to challange one another."
+str_1:
+    .autostring 34 2 "For some fighters this village is a center of pilgrimage.\pBut don't these cherry trees much rather invite one to seek out peace?"
+str_2:
+    .autostring 34 2 "From up here you can see all the way to Anemoia.\pThis really is a beautiful piece of land."
+str_3:
+    .autostring 34 2 "My brother took my Sparkle Piece!\pJust wait until I get him!"
+str_4:
+    .autostring 34 2 "I didn't take anything from my sister!\pThis she-goat needs to leave me alone!"
+str_5:
+    .autostring 34 2 "Even at a place as beautiful as this there isn't a single day on which my children wouldn't fight each otherDOTS"
+str_6:
+    .autostring 34 2 "For many hikers this region is very tempting.\pI for example walked all the way from the Rocky Wastelands by foot!"
+str_7:
+    .autostring 34 2 "Every black belt that made a name of themselves once trained in Petal Creek.\pThis town's gym leader Manuel himself is a tycoon when it comes to close combat!"
+str_8:
+    .autostring 34 2 "Many think a black belt only ever is concerned with raw power and strength.\pBut if the gym leader Manuel taught me one thing, it is that true strength originates in ones mind.\pOnly one who is focused may be victorious in the end!"
+str_9:
+    .autostring 34 2 "It really is fascinating that the water that reaches even Anemonia from here directly comes from the oceanDOTS\pIt really is astounding how even seemingly meaningless things are connected in such ways, don't you think so?"
+str_10:
+    .autostring 34 2 "I may not look like a black belt, but I really do think very highly of the gym leader Manuel.\pWhen I was a child, I saw him break the rocks we are standing on right now out of a mountain side with just his bare hands.\pThat made a lasting impression on me, I guess."
+str_11:
+    .autostring 34 2 "To impress me, my boyfriend even picked a fight with the gym leader Manuel.\pYou can't really say that things went all to well for him, obviously.\pThen again, only when I took care of him afterwards we two got closer to each other.\pSo I guess you could say that my boyfriend's plan kinda worked out for him, right?"
+str_12:
+    .autostring 34 2 "It took me years to finally confess my feelings to my girlfriend.\pAnd only years later I finally was able to win her heart.\pBut even considering all these struggles I wouldn't hesitate to do it all again."
+str_13:
+    .autostring 34 2 "My Pokémon just climbed this tree.\pNow it is too afraid to come down againDOTS"
+str_14:
+    .autostring 34 2 "Many may not rembember that, but actually the Pink Faun grew up in this village.\pI think that the cherry trees here might have even helped him to his name.\pWho would have thought that such a nice little boy could become a trainer this famous?"
+str_15:
+    .autostring 34 2 "This year I will register at Faun's trainerschool.\pThat is why I have to get in shape.\pI have heard that Faun is very strict with his disciples.\pThat's why I want to make a good first impression!"
+str_16:
+    .autostring 34 2 "My brother was a sailor until the pirate Blackbeard got the best of him.\pNow I have to train here until I am strong enough to take my revenge for him.\pOnly when I am able to smash rocks with my bare hands, just like Manuel, I will stand a chance against Blackbeard."
+str_17:
+    .autostring 34 2 "Can you even image what it is being bigger at a place like this?\pThere is so many muscular guys here, that I can't help but feeling awfulDOTS"
+str_18:
+    .autostring 34 2 "The water tunnel is said to be the safest way to get to Cascada from here.\pNonetheless it just collapses from time to time.\pThat's when our gym leader, Manuel, comes into play.\pHe just carries all the boulders away.\pIncredible how strong this guy is, right?"
+str_19:
+    .autostring 34 2 "When I challanged Manuel the first time, he blindfolded himself just to taunt me.\pRegardless of his blindness I was utterly defeated by him.\pYou can't help but to admire a fighter like that."
+str_20:
+    .autostring 34 2 "I am looking for Bug-type Pokémon.\pBut it appears that this kind of Pokémon doesn't rellay live here.\pWherever you look, there is just one of those frightening Fighting-type PokémonDOTS"
+str_before0:
+    .autostring 34 2 "Let me guessDOTS\pYou are here to challange the gym leader Manuel, right?\pBut you are but a rookie!\pYou wouldn't last a mere second in this gym.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDon't believe me, eh?\pThen show me what you are made of, kiddo!"
+str_after0:
+    .autostring 34 2 "Not even half badDOTS\pFor a rookie, that isDOTS"
+str_later0:
+    .autostring 34 2 "Well, joke's on you!\pThe gym leader is not here right now, so you can't enter anyway.\pManuel is busy clearing the recently collapsed water tunnel."
+
 .endif
 
+ow_script_map_bluetenbach_black_belt_gift:
+    lock
+    faceplayer
+    checkflag MERIANA_CITY_BLACK_BELT
+    gotoif EQUAL after_receiving_black_belt
+    loadpointer 0x0 str_intro_black_belt
+    callstd MSG_KEEPOPEN
+    copyvarifnotzero 0x8000 ITEM_SCHWARZGURT
+    copyvarifnotzero 0x8001 1
+    callstd ITEM_OBTAIN
+    compare LASTRESULT 0x0
+    gotoif EQUAL ow_script_no_room_for_giveitem
+    loadpointer 0x0 str_after_receiving_black_belt
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    release
+    setflag MERIANA_CITY_BLACK_BELT
+    end
 
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x949573
-setvar BATTLE_SONG_OVERRIDE 0x165
-trainerbattlecont 0x1 0x84 0x0 str_0x94948c str_0x949515 ow_script_0x93d5e1
-
-
-ow_script_0x93d5e1:
-loadpointer 0x0 str_0x94918c
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-fadescreen 0x1
-hidesprite 0x800f
-setflag ROUTE_5_VIOLET_GRUNTS
-fadescreen 0x0
-release
-end
-
-
-ow_script_0x949573:
-loadpointer 0x0 str_0x949581
-callstd MSG
-hide_mugshot
-release
-end
+after_receiving_black_belt:
+    loadpointer 0x0 str_after_receiving_black_belt
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER
 
-str_0x949632:
-	.autostring 35 2 "Oh, hallo PLAYER!\nEntschuldige, ich wollte dich nicht überrumpeln.\pBenutzt du auch die Wundertausch-App?\pIch sehe, du hast ihn bereits BUFFER_1 mal verwendet.\pDas freut mich!\pIch habe mich zuletzt selbst auch am Kämpfen versucht.\pNa was sagst du, hättest du Lust auf einen Kampf?"
-
-
-
-str_0x94948c:
-	.autostring 35 2 "Meine Pokémon habe ich allesamt aus dem Wundertausch erhalten.\pWollen wir doch einmal sehen, wie ich mich so schlage."
-
-
-str_0x949515:
-    .autostring 35 2 "Das überrascht mich nicht.\nMir hätte eigentlich klar sein sollen, dass ein Anfänger wie ich keine Chance hat."
-
-
-
-str_0x94918c:
-	.autostring 35 2 "Du kämpfst wirklich auserordentlich gut, PLAYER.\pWas meinst du, wie habe ich mich geschlagen?\pVielleicht wird das Kämpfen ja zu meinem neuen Hobby.\pDie viele Forschung kann schon auch einmal recht trocken werden DOTS\pWo wir gerade beim Thema sind.\pDie Laz.Corp, das Unternehmen, bei dem ich beschäftigt bin, hat ein komplett virtuelles Pokémon erschaffen.\pDas dürfte dich interessieren, nicht?\pEs wird auch für deine Pokédex-App interessante Daten liefern.\pDer Hauptsitz der Laz.Corp liegt in Orina City, westlich von Route 2, wo das Labor von Professor Tann ist.\pKomm mich doch dort einmal besuchen.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pVon mir hast du das mit dem virtuellen Pokémon aber nicht erfahren, ja?"
-
-
-
-str_0x949581:
-	.autostring 35 2 "Oh, ich verstehe schon.\pDu willst deinen erschöpften Pokémon sicherlich eine Pause gönnen.\pAber ein nein akzeptiere ich als Antwort nicht!\pKomm wieder, wenn du dich erholt hast.\pSolltest du mich schlagen, verrate ich dir auch ein interessantes Geheimnis!"
-
-
+str_intro_black_belt:
+    .autostring 34 2 "Hyjaaa!\nKa! Pow! Haja!\pIch bin unbesiegbar!\pUnd weißt du, woran das liegt?\pNa, an meinem Kampfgurt, natürlich!\pDu glaubst mir nicht?\pIch werde es dir beweisen.\pNimm diesen Schwarzgurt!"
+str_after_receiving_black_belt:
+    .autostring 34 2 "Der Schwarzgurt verstärkt die Kampf-Angriffe eines Pokémon, wenn es ihn trägt.\pDamit sitzt jeder Schlag, garantiert!"
 .elseif LANG_EN
+str_intro_black_belt:
+    .autostring 34 2 "Hjyaaa!\nKa! Pow! Haja!\pI am invincible!\pAnd do you know why that is?\pWell, because of my belt, of course!\pYou don't believe me?\pI will prove it to you!\pTake this Black Belt!"
+str_after_receiving_black_belt:
+    .autostring 34 2 "The Black Belt makes Fighting-Type attacks stronger when being held by a Pokémon.\pEvery move will be a hit, I am not gonna lie!"
+.endif
 
+ow_script_map_bluetenbach_move_tutor_rock_slide:
+    loadpointer 0x0 str_move_tutor_intro
+    callstd MSG_FACE
+    call move_tutor_item_check
+    gotoif EQUAL has_mushrooms
+    end
+
+has_mushrooms:
+    applymovement 0x800f say_exclam
+    waitmovement 0x0
+    loadpointer 0x0 str_ask_move_tutor
+    callstd MSG_YES_NO
+    compare LASTRESULT 0x1
+    gotoif LESS move_tutor_abort
+    loadpointer 0x0 str_which_should_learn
+    callstd MSG
+    setvar 0x8005 MOVE_TUTOR_STEINHAGEL
+    call ow_script_move_tutor_do
+    compare LASTRESULT 0x0
+    gotoif EQUAL move_tutor_abort
+    call ow_script_move_tutor_pay_items
+    loadpointer 0x0 str_move_tutor_pay_items
+    callstd MSG
+    end
+
+move_tutor_abort:
+    loadpointer 0x0 str_move_tutor_abort
+    callstd MSG
+    end
+
+say_exclam:
+    .byte SAY_EXCLAM, STOP
+
+.ifdef LANG_GER
+str_move_tutor_intro:
+    .autostring 34 2 "Viele Jahre habe ich die verschiedensten Höhlen erkundet.\pIch habe viele Kampffertigkeiten erworben.\pMeine Pokémon sind nun sogar dazu im Stande, Steine hageln zu lassen.\pWenn du mir entweder einen Riesenpilz oder drei Minipilze gibst, kann ich diese Technik einem deiner Pokémon beibringen."
+str_ask_move_tutor:
+    .autostring 34 2 "Ha!\nAusgezeichnet!\pDu hast BUFFER_2-mal BUFFER_1 bei dir!\pAls Gegenleistung bringe ich einem deiner Pokémon Steinhagel bei.\pWas sagst du dazu?"
+str_which_should_learn:
+    .autostring 34 2 "Gute Wahl!\pWelches Pokémon soll Steinhagel lernen?"
+str_move_tutor_abort:
+    .autostring 34 2 "Wie schade!\pSolltest du einem deiner Pokémon Steinhagel beibringen wollen, weißt du ja, wo ich zu finden bin."
+.elseif LANG_EN
+str_move_tutor_intro:
+    .autostring 34 2 "Many years I have spend exploring many caves!\pI learned many battle techniques while wandering arround the world.\pNow, my Pokémon are even able to make rocks fall down on foes.\pIf you want me to teach this to one of your Pokémon, bring me either one Large Mushroom or three Tiny Mushrooms."
+str_ask_move_tutor:
+    .autostring 34 2 "Ha!\nSplendid!\pYou brought me BUFFER_2-times BUFFER_1!\pIn return I can teach one of your Pokémon the move Rock Slide.\pWhat do you think?"
+str_which_should_learn:
+    .autostring 34 2 "Good choice!\pWhich Pokémon should learn Rock Slide?"
+str_move_tutor_abort:
+    .autostring 34 2 "What a shame!\pIf you want me to teach one of your Pokémon Rock Slide, I will just be right here."
+.endif
+
+ow_script_map_bluetenbach_elise:
+    lock
+    faceplayer
+    buffernumber 0 WONDERTRADE_CNT
+    loadpointer 0x0 str_elise
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
+    fadescreen 1
+    hidesprite LASTTALKED
+    fadescreen 0
+    release
+    end
+
+.ifdef LANG_GER
+str_elise:
+	.autostring 34 2 "Hallo PLAYER!\nSchön, dich zu sehen!\pIch muss dir wirklich noch einmal danken, dass du im Silvania-Wald meinen Vater vor Team Violet gerettet hast.\pEs will mir nicht in den Kopf gehen, dass solche Leute es auf meinen Vater abgesehen habenDOTS\pAber ich bin aus einem ganz anderen Grund hier.\pProfessor Tann schickt mich, weil er dir und RIVAL etwas verkünden möchte.\pEigentlich sollte ich es nicht verraten, aber er wird sich auf eine sehr gefährliche Expedition begeben und will euch beide zuvor noch einmal sehen.\pAm Besten besuchst du uns in Professor Tanns Labor auf Route 2.\pBis dann, PLAYER!"
+.elseif LANG_EN
+str_elise:
+    .autostring 34 2 "Hello PLAYER!\pNice to see you!\nHow are you doing?\pI really have to thank you again for saving my father in the Silvania-Forest from Team Violet.\pIt just doesn't make sense to me why people like these are after my dad.\pBut actually I am here for a completely different reason.\pProfessor Fir sends me because he wants to tell something to you and RIVAL.\pTo be honest I was told not to spoil it, but the professor is going on a very dangerous expedition and before he wants to see you guys once more.\pBest you visit him in the Professor's lab on Route 2.\pSee you, PLAYER!"
 .endif

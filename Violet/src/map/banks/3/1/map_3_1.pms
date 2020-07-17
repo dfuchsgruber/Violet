@@ -2,28 +2,28 @@
 	"data": {
 		"footer": "map_footer_79",
 		"events": {
-			"person_cnt": 40,
+			"person_cnt": 48,
 			"warp_cnt": 8,
-			"trigger_cnt": 9,
-			"signpost_cnt": 9,
+			"trigger_cnt": 2,
+			"signpost_cnt": 6,
 			"persons": [
 				{
 					"target_index": 1,
 					"picture": 27,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "72",
-					"y": "29",
+					"x": "73",
+					"y": "30",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_EXPLANATION_IN_FRONT_OF_POKESTOP_DOOR",
+					"script": "ow_script_map_bluetenbach_person_0",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -35,13 +35,13 @@
 				},
 				{
 					"target_index": 2,
-					"picture": 27,
+					"picture": "54",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "72",
-					"y": "30",
+					"x": "70",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -61,21 +61,21 @@
 				},
 				{
 					"target_index": 3,
-					"picture": 49,
+					"picture": "27",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 22,
-					"y": 25,
+					"x": "45",
+					"y": "14",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_VIOLET_GRUNTS",
+					"script": "ow_script_map_bluetenbach_person_17",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -87,11 +87,11 @@
 				},
 				{
 					"target_index": 4,
-					"picture": 50,
+					"picture": "22",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 22,
-					"y": 24,
+					"x": "42",
+					"y": "27",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -100,8 +100,8 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_VIOLET_GRUNTS",
+					"script": "ow_script_map_bluetenbach_person_9",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -116,8 +116,8 @@
 					"picture": 106,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 23,
-					"y": 19,
+					"x": "8",
+					"y": "23",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -127,7 +127,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "1 | 0x8000",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -138,7 +138,7 @@
 					}
 				},
 				{
-					"target_index": 9,
+					"target_index": "6",
 					"picture": 96,
 					"field_2": 0,
 					"field_3": 0,
@@ -152,7 +152,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_81_trainer_4",
+					"script": "ow_script_rock_smash",
 					"flag": "0x15",
 					"field_D": 0,
 					"field_B": 0,
@@ -164,7 +164,7 @@
 					}
 				},
 				{
-					"target_index": 16,
+					"target_index": "7",
 					"picture": 96,
 					"field_2": 0,
 					"field_3": 0,
@@ -178,7 +178,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_81_trainer_4",
+					"script": "ow_script_rock_smash",
 					"flag": "0x1e",
 					"field_D": 0,
 					"field_B": 0,
@@ -190,7 +190,7 @@
 					}
 				},
 				{
-					"target_index": 17,
+					"target_index": "8",
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
@@ -216,7 +216,7 @@
 					}
 				},
 				{
-					"target_index": 18,
+					"target_index": "9",
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
@@ -242,12 +242,12 @@
 					}
 				},
 				{
-					"target_index": 21,
+					"target_index": "10",
 					"picture": 95,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 42,
-					"y": 35,
+					"x": "22",
+					"y": "37",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -256,7 +256,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_0",
+					"script": "ow_script_cut_tree",
 					"flag": "0x1f",
 					"field_D": 0,
 					"field_B": 0,
@@ -268,12 +268,12 @@
 					}
 				},
 				{
-					"target_index": 22,
+					"target_index": "11",
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "41",
-					"y": "37",
+					"x": "30",
+					"y": "39",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -294,12 +294,12 @@
 					}
 				},
 				{
-					"target_index": 23,
+					"target_index": "12",
 					"picture": 54,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 37,
-					"y": 13,
+					"x": "35",
+					"y": "8",
 					"level": 3,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -308,7 +308,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_1",
+					"script": "ow_script_map_bluetenbach_person_16",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -320,21 +320,21 @@
 					}
 				},
 				{
-					"target_index": 24,
+					"target_index": "13",
 					"picture": 17,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 15,
-					"y": 24,
+					"x": "15",
+					"y": "23",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_2",
+					"script": "ow_script_map_bluetenbach_person_13",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -346,7 +346,7 @@
 					}
 				},
 				{
-					"target_index": 25,
+					"target_index": "14",
 					"picture": 52,
 					"field_2": 0,
 					"field_3": 0,
@@ -360,7 +360,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_3",
+					"script": "ow_script_map_bluetenbach_person_20",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -372,12 +372,12 @@
 					}
 				},
 				{
-					"target_index": 26,
-					"picture": 22,
+					"target_index": "15",
+					"picture": "19",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 34,
-					"y": 24,
+					"x": "33",
+					"y": "25",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -386,7 +386,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_4",
+					"script": "ow_script_map_bluetenbach_person_10",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -398,12 +398,12 @@
 					}
 				},
 				{
-					"target_index": 27,
+					"target_index": "16",
 					"picture": 23,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 42,
-					"y": 20,
+					"x": "56",
+					"y": "24",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -412,7 +412,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_5",
+					"script": "ow_script_map_bluetenbach_person_5",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -424,12 +424,12 @@
 					}
 				},
 				{
-					"target_index": 28,
-					"picture": 56,
+					"target_index": "17",
+					"picture": "54",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 44,
-					"y": 9,
+					"x": "74",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
@@ -438,7 +438,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_6",
+					"script": "ow_script_map_bluetenbach_trainer_0",
 					"flag": "MERIANA_CITY_HIKER_BLOCKING_ROUTE_4",
 					"field_D": 0,
 					"field_B": 0,
@@ -450,21 +450,21 @@
 					}
 				},
 				{
-					"target_index": 29,
+					"target_index": "18",
 					"picture": 54,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 37,
-					"y": 23,
+					"x": "24",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_7",
+					"script": "ow_script_map_bluetenbach_black_belt_gift",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -476,21 +476,21 @@
 					}
 				},
 				{
-					"target_index": 30,
+					"target_index": "19",
 					"picture": 18,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 32,
-					"y": 12,
+					"x": "35",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
 					"behaviour_range": {
-						"x": "0",
+						"x": "8",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_8",
+					"script": "ow_script_map_bluetenbach_person_15",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -502,12 +502,12 @@
 					}
 				},
 				{
-					"target_index": 31,
+					"target_index": "20",
 					"picture": 35,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 57,
-					"y": 34,
+					"x": "59",
+					"y": "33",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -516,7 +516,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_9",
+					"script": "ow_script_map_bluetenbach_person_2",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -528,21 +528,21 @@
 					}
 				},
 				{
-					"target_index": 32,
+					"target_index": "21",
 					"picture": 16,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "68",
-					"y": "30",
+					"x": "55",
+					"y": "26",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
 					"behaviour_range": {
-						"x": "0",
-						"y": "0"
+						"x": "2",
+						"y": "2"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_10",
+					"script": "ow_script_map_bluetenbach_person_4",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -554,7 +554,7 @@
 					}
 				},
 				{
-					"target_index": 33,
+					"target_index": "22",
 					"picture": 56,
 					"field_2": 0,
 					"field_3": 0,
@@ -568,7 +568,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_11",
+					"script": "ow_script_map_bluetenbach_person_6",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -580,38 +580,12 @@
 					}
 				},
 				{
-					"target_index": 34,
+					"target_index": "23",
 					"picture": 54,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 76,
-					"y": 22,
-					"level": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_12",
-					"flag": "0x0",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 35,
-					"picture": 61,
-					"field_2": 0,
-					"field_3": 0,
-					"x": 60,
-					"y": 22,
+					"x": "67",
+					"y": "20",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -620,7 +594,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_13",
+					"script": "ow_script_map_bluetenbach_person_7",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -632,7 +606,33 @@
 					}
 				},
 				{
-					"target_index": 36,
+					"target_index": "24",
+					"picture": 61,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "65",
+					"y": "27",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_person_1",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "25",
 					"picture": 35,
 					"field_2": 0,
 					"field_3": 0,
@@ -646,7 +646,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_14",
+					"script": "ow_script_map_bluetenbach_person_14",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -658,363 +658,527 @@
 					}
 				},
 				{
-					"target_index": 37,
-					"picture": 0,
-					"field_2": 0,
-					"field_3": 0,
-					"x": 87,
-					"y": 44,
-					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_15",
-					"flag": "0x0",
-					"field_D": 0,
-					"field_B": 0,
+					"target_index": "26",
+					"picture": "54",
 					"script_std": 0,
+					"field_3": 0,
+					"x": "35",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_person_19",
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "27",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "16",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_NIDORINA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "28",
+					"picture": "26",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "24",
+					"y": "26",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_person_12",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "29",
+					"picture": "29",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "23",
+					"y": "26",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_person_11",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "30",
+					"picture": "95",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "23",
+					"y": "36",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_cut_tree",
+					"flag": "0x16",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "31",
+					"picture": "101",
+					"script_std": "PERSON_EGG",
+					"field_3": 0,
+					"x": "25",
+					"y": "38",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_MERIANA_CITY_EGG",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MEDITIE",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "32",
+					"picture": "236",
+					"script_std": "PERSON_MUSHROOM",
+					"field_3": 0,
+					"x": "18",
+					"y": "30",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "1"
+					}
+				},
+				{
+					"target_index": "33",
+					"picture": "17",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "57",
+					"y": "26",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
+					"behaviour_range": {
+						"x": "2",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_person_3",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "34",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "23",
+					"y": "8",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MENKI",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "35",
+					"picture": "30",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "53",
+					"y": "12",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_person_18",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "36",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "5",
+					"y": "13",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MASCHOCK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "37",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "13",
+					"y": "12",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_GEOROK",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "38",
-					"picture": "22",
-					"field_2": 0,
-					"field_3": "33",
-					"x": "71",
-					"y": "29",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": "1",
-					"script": "ow_script_test",
-					"flag": "0x1e",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": "PERSON_SCRIPT",
-					"value": {
-						"item": 0,
-						"species": "0",
-						"berry_tree_idx": "1"
-					}
-				},
-				{
-					"target_index": 39,
-					"picture": 60,
-					"field_2": 0,
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
 					"field_3": 0,
-					"x": "5",
-					"y": "37",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_POLICEMAN_AND_DUDE",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 40,
-					"picture": 26,
-					"field_2": 0,
-					"field_3": 0,
-					"x": "6",
-					"y": "37",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_POLICEMAN_AND_DUDE",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 41,
-					"picture": 78,
-					"field_2": 0,
-					"field_3": 0,
-					"x": "1",
-					"y": "41",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_REVOLUTIONARIES",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 42,
-					"picture": 60,
-					"field_2": 0,
-					"field_3": 0,
-					"x": "2",
-					"y": "41",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_REVOLUTIONARIES",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 43,
-					"picture": 78,
-					"field_2": 0,
-					"field_3": 0,
-					"x": "1",
-					"y": "42",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "MERIANA_CITY_REVOLUTIONARIES",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 44,
-					"picture": 26,
-					"field_2": 0,
-					"field_3": 0,
-					"x": 48,
-					"y": 32,
-					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "PKMNMENU",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 45,
-					"picture": 60,
-					"field_2": 0,
-					"field_3": 0,
-					"x": 48,
-					"y": 31,
-					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "PKMNMENU",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 46,
-					"picture": 78,
-					"field_2": 0,
-					"field_3": 0,
-					"x": "7",
-					"y": "36",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_16",
-					"flag": "MERIANA_CITY_BLOCKING_REVOLUTIONARIES",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 47,
-					"picture": 78,
-					"field_2": 0,
-					"field_3": 0,
-					"x": "7",
-					"y": "37",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_16",
-					"flag": "MERIANA_CITY_BLOCKING_REVOLUTIONARIES",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 48,
-					"picture": 78,
-					"field_2": 0,
-					"field_3": 0,
-					"x": "7",
-					"y": "38",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_16",
-					"flag": "MERIANA_CITY_BLOCKING_REVOLUTIONARIES",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 87,
-					"picture": "239",
-					"field_2": 0,
-					"field_3": "2",
-					"x": "65",
-					"y": "28",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "1",
-					"alert_radius": "3",
-					"script": "ow_script_trainer1",
-					"flag": "16",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": "PERSON_AGGRESSIVE_POKEMON",
-					"value": {
-						"item": 0,
-						"species": "POKEMON_ARKANI",
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 51,
-					"picture": 105,
-					"field_2": 0,
-					"field_3": 0,
-					"x": 69,
-					"y": 19,
+					"x": "10",
+					"y": "19",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
-						"x": "0",
-						"y": "0"
+						"x": 0,
+						"y": 0
 					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_17",
-					"flag": "MERIANA_CITY_ELISE_VISIBLE | 0x8000",
-					"field_D": 0,
 					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KLEINSTEIN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "39",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "27",
+					"y": "4",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_RABAUZ",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "40",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "38",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MACHOLLO",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "41",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "50",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_RASAFF",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "42",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "57",
+					"y": "4",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KLEINSTEIN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "43",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "56",
+					"y": "17",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_STARALILI",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "44",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "80",
+					"y": "29",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "4"
+					}
+				},
+				{
+					"target_index": "45",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "79",
+					"y": "29",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "5"
+					}
+				},
+				{
+					"target_index": "46",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "78",
+					"y": "29",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "6"
+					}
+				},
+				{
+					"target_index": "47",
+					"picture": "56",
 					"script_std": 0,
+					"field_3": 0,
+					"x": "13",
+					"y": "16",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_move_tutor_rock_slide",
+					"flag": 0,
 					"value": {
 						"item": 0,
 						"species": 0,
@@ -1022,51 +1186,50 @@
 					}
 				},
 				{
-					"target_index": "77",
-					"picture": "239",
-					"script_std": "PERSON_AGGRESSIVE_POKEMON",
-					"field_3": "7",
-					"x": "65",
-					"y": "32",
+					"target_index": "48",
+					"picture": "105",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "74",
+					"y": "12",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
-						"x": "0",
-						"y": "0"
+						"x": 0,
+						"y": 0
 					},
 					"field_B": 0,
-					"is_trainer": "1",
-					"field_D": 0,
-					"alert_radius": "3",
-					"script": "ow_script_test",
-					"flag": "17",
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_map_bluetenbach_elise",
+					"flag": "MERIANA_CITY_ELISE_VISIBLE | 0x8000",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_VULPIX",
+						"species": 0,
 						"berry_tree_idx": 0
 					}
 				}
 			],
 			"warps": [
 				{
-					"x": 46,
-					"y": 20,
+					"x": "62",
+					"y": "22",
 					"level": 0,
 					"target_bank": 5,
 					"target_map": 2,
 					"target_warp_idx": 0
 				},
 				{
-					"x": 51,
-					"y": 27,
+					"x": "35",
+					"y": "17",
 					"level": 0,
 					"target_bank": 5,
 					"target_map": 0,
 					"target_warp_idx": 0
 				},
 				{
-					"x": 74,
-					"y": 14,
+					"x": "74",
+					"y": "8",
 					"level": 0,
 					"target_bank": 5,
 					"target_map": 13,
@@ -1081,32 +1244,32 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": 44,
-					"y": 8,
+					"x": "51",
+					"y": "8",
 					"level": 0,
 					"target_bank": 16,
 					"target_map": 3,
 					"target_warp_idx": 2
 				},
 				{
-					"x": 8,
-					"y": 23,
+					"x": "8",
+					"y": "23",
 					"level": 0,
 					"target_bank": 3,
 					"target_map": 70,
 					"target_warp_idx": 0
 				},
 				{
-					"x": 61,
-					"y": 17,
+					"x": "61",
+					"y": "13",
 					"level": 0,
 					"target_bank": 5,
 					"target_map": 11,
 					"target_warp_idx": 0
 				},
 				{
-					"x": 63,
-					"y": 25,
+					"x": "51",
+					"y": "22",
 					"level": 0,
 					"target_bank": 5,
 					"target_map": 12,
@@ -1115,109 +1278,32 @@
 			],
 			"triggers": [
 				{
-					"x": 67,
-					"y": 33,
+					"x": "11",
+					"y": "25",
 					"level": 0,
 					"field_5": 0,
-					"value": 8,
-					"script": "ow_script_map_3_1_trigger_0",
+					"value": "8",
+					"script": "ow_script_map_3_1_trigger_larissa",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 66,
-					"y": 33,
+					"x": "11",
+					"y": "26",
 					"level": 0,
 					"field_5": 0,
-					"value": 8,
-					"script": "ow_script_map_3_1_trigger_0",
+					"value": "8",
+					"script": "ow_script_map_3_1_trigger_larissa",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 25,
-					"y": 25,
-					"level": 0,
-					"field_5": 0,
-					"value": 11,
-					"script": "ow_script_map_3_1_trigger_1",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 25,
-					"y": 26,
-					"level": 0,
-					"field_5": 0,
-					"value": 11,
-					"script": "ow_script_map_3_1_trigger_1",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": "46",
-					"y": "18",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_map_3_1_trigger_2",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "MERIANA_CITY_REVOLUTIONARY"
-				},
-				{
-					"x": "47",
-					"y": "18",
-					"level": 0,
-					"field_5": 0,
-					"value": 0,
-					"script": "ow_script_map_3_1_trigger_2",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "MERIANA_CITY_REVOLUTIONARY"
-				},
-				{
-					"x": "40",
-					"y": "27",
-					"level": 0,
-					"field_5": 0,
-					"value": 2,
-					"script": "ow_script_map_3_1_trigger_3",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "MERIANA_CITY_REVOLUTIONARY"
-				},
-				{
-					"x": "40",
-					"y": "28",
-					"level": 0,
-					"field_5": 0,
-					"value": 2,
-					"script": "ow_script_map_3_1_trigger_3",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "MERIANA_CITY_REVOLUTIONARY"
-				},
-				{
-					"x": "40",
-					"y": "29",
-					"level": 0,
-					"field_5": 0,
-					"value": 2,
-					"script": "ow_script_map_3_1_trigger_3",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "MERIANA_CITY_REVOLUTIONARY"
 				}
 			],
 			"signposts": [
 				{
-					"x": 67,
-					"y": 16,
+					"x": "77",
+					"y": "12",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1232,24 +1318,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 74,
-					"y": 14,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_3_1_sign_1",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 10,
-					"y": 24,
+					"x": "10",
+					"y": "24",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
@@ -1264,12 +1334,12 @@
 					"flag": "0"
 				},
 				{
-					"x": 46,
-					"y": 9,
+					"x": "69",
+					"y": "28",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {
-						"script": "ow_script_map_3_1_sign_3",
+						"script": "ow_script_map_3_1_sign_1",
 						"item": {
 							"item": "0",
 							"flag": "0",
@@ -1280,40 +1350,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 66,
-					"y": 28,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_3_1_sign_4",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 33,
-					"y": 13,
-					"level": 0,
-					"type": "SIGNPOST_HIDDEN_ITEM",
-					"value": {
-						"script": "0",
-						"item": {
-							"item": "ITEM_FLUCHTSEIL",
-							"flag": 8,
-							"amount": 1,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 27,
-					"y": 23,
+					"x": "45",
+					"y": "5",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1328,13 +1366,13 @@
 					"flag": "0"
 				},
 				{
-					"x": "64",
-					"y": "21",
+					"x": "10",
+					"y": "14",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
-							"item": "ITEM_BELEBER",
+							"item": "ITEM_FLUCHTSEIL",
 							"flag": "65",
 							"amount": "1",
 							"chunk": 0
@@ -1344,13 +1382,13 @@
 					"flag": "0"
 				},
 				{
-					"x": "52",
-					"y": "22",
+					"x": "55",
+					"y": "33",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
 						"item": {
-							"item": "ITEM_AETHER",
+							"item": "ITEM_SUPERTRANK",
 							"flag": "2",
 							"amount": "1",
 							"chunk": 0
@@ -1361,7 +1399,7 @@
 				}
 			]
 		},
-		"levelscripts": "lscr_0x721034",
+		"levelscripts": "map_meriana_city_levelscripts",
 		"connections": {
 			"connection_cnt": 3,
 			"connections": [

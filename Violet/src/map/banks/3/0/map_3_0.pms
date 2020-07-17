@@ -269,7 +269,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_0",
+					"script": "ow_script_cut_tree",
 					"flag": "16",
 					"value": {
 						"item": 0,
@@ -341,7 +341,7 @@
 					"field_B": 0,
 					"is_trainer": 0,
 					"alert_radius": 0,
-					"script": "ow_script_map_3_1_person_0",
+					"script": "ow_script_cut_tree",
 					"flag": "17",
 					"value": {
 						"item": 0,

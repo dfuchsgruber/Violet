@@ -32,7 +32,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
     {3, 23, 0x20, 0x11, DTYPE_FOREST},
     {3, 23, 0x20, 0x1E, DTYPE_FOREST},
 
-    {3, 1, 0x20, 0x8, DTYPE_CAVE}, // Meriana City
+    {3, 1, 0x39, 0x6, DTYPE_CAVE}, // Meriana City
     {3, 74, 0x2E, 0x4, DTYPE_CAVE}, // Feslige Odenis
     {1, 59, 0x18, 0x1A, DTYPE_CAVE}, // Kuestenberg
     {3, 57, 0x34, 0x1F, DTYPE_FOREST}, // Trainerschule
@@ -42,7 +42,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 	{3, 74, 0x2F, 0x14, DTYPE_CAVE}, // Felsige Odenis
 	{3, 4, 0x35, 0x3, DTYPE_CAVE}, // Kaskada
 
-	{3, 1, 0x43, 0x6, DTYPE_CAVE}, // Meriana City
+	{3, 1, 0xb, 0xd, DTYPE_CAVE}, // Meriana City
 	{3, 41, 0x12, 0x54, DTYPE_OCEAN}, // Route 2
 	{3, 41, 0x37, 0x22, DTYPE_CAVE},
 	{3, 7, 0x4, 0x17, DTYPE_CAVE},

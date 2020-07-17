@@ -672,7 +672,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_1_81_trainer_4",
+					"script": "ow_script_rock_smash",
 					"flag": "0x15",
 					"field_D": 0,
 					"field_B": 0,

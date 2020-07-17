@@ -79,9 +79,6 @@ goto ow_script_0x1a9429
 
 
 ow_script_0x1a9429:
-special 0x187
-compare LASTRESULT 0x2
-gotoif EQUAL ow_script_0x1aa912
 preparemsg str_0x1a8188
 waitmsg
 multichoice 0x13 0x8 0x0 0x2
@@ -247,243 +244,33 @@ end
 
 str_0x880f63:
     .string "Es gibt in jeder Stadt einen\nPokéstop. Ich hörte, dass in allen\lPokéstops das Sortiment zwar\lgleich ist, aber laufend erweitert\lwird."
-
-
 .elseif LANG_EN
-
 .endif
 
 
 ow_script_map_5_4_person_5:
-goto ow_script_0x8d05cb
-
-
-ow_script_mart0x88d39e:
-.hword ITEM_HYPERBALL
-.hword ITEM_NETZBALL
-.hword ITEM_TAUCHBALL
-.hword ITEM_NESTBALL
-.hword ITEM_WIEDERBALL
-.hword ITEM_TIMERBALL
-.hword ITEM_LUXUSBALL
-.hword ITEM_PREMIERBALL
-.hword ITEM_TOP_GENESUNG
-.hword ITEM_TOP_TRANK
-.hword ITEM_HYPERTRANK
-.hword ITEM_HYPERHEILER
-.hword ITEM_BELEBER
-.hword ITEM_TOP_BELEBER
-.hword ITEM_SCHUTZ
-.hword ITEM_FLUCHTSEIL
-.hword ITEM_ENECO_RUTE
-.hword ITEM_ELIXIER
-.hword ITEM_TOP_ELIXIER
-.hword ITEM_NONE
-
-
-ow_script_0x8d05cb:
 setflag TRANS_DISABLE
 lock
 faceplayer
 preparemsg str_mart_ask
 waitmsg
-checkflag POKEDEX
-gotoif LESS ow_script_0x88d278
-checkflag FRBADGE_1
-gotoif LESS ow_script_0x88d283
-checkflag FRBADGE_2
-gotoif LESS ow_script_0x88d28e
-checkflag FRBADGE_3
-gotoif LESS ow_script_0x88d299
-checkflag FRBADGE_4
-gotoif LESS ow_script_0x88d2a4
-checkflag FRBADGE_5
-gotoif LESS ow_script_0x88d2af
-checkflag FRBADGE_6
-gotoif LESS ow_script_0x88d2ba
-checkflag FRBADGE_7
-gotoif LESS ow_script_0x88d2c5
-checkflag FRBADGE_8
-gotoif LESS ow_script_0x88d2d0
-pokemart ow_script_mart0x88d39e
-goto ow_script_0x88d2db
-
-
-ow_script_0x88d2db:
-goto ow_script_0x8d0696
-
-
-ow_script_0x8d0696:
+pokemart3 mart
 loadpointer 0x0 str_mart_exit
 callstd MSG_KEEPOPEN
-clearflag TRANS_DISABLE
 release
 end
 
-
-ow_script_mart0x88d379:
-.hword ITEM_HYPERBALL
-.hword ITEM_NETZBALL
-.hword ITEM_TAUCHBALL
-.hword ITEM_NESTBALL
-.hword ITEM_WIEDERBALL
-.hword ITEM_TIMERBALL
-.hword ITEM_LUXUSBALL
-.hword ITEM_PREMIERBALL
-.hword ITEM_TOP_GENESUNG
-.hword ITEM_TOP_TRANK
-.hword ITEM_HYPERTRANK
-.hword ITEM_HYPERHEILER
-.hword ITEM_BELEBER
-.hword ITEM_SCHUTZ
-.hword ITEM_FLUCHTSEIL
-.hword ITEM_ENECO_RUTE
-.hword ITEM_ELIXIER
-.hword ITEM_NONE
-
-
-ow_script_0x88d2d0:
-pokemart ow_script_mart0x88d379
-goto ow_script_0x88d2db
-
-
-ow_script_mart0x88d352:
-.hword ITEM_SUPERBALL
-.hword ITEM_HYPERBALL
-.hword ITEM_HYPERTRANK
-.hword ITEM_SUPERTRANK
-.hword ITEM_TOP_TRANK
-.hword ITEM_GEGENGIFT
-.hword ITEM_FEUERHEILER
-.hword ITEM_EISHEILER
-.hword ITEM_AUFWECKER
-.hword ITEM_PARA_HEILER
-.hword ITEM_HYPERHEILER
-.hword ITEM_BELEBER
-.hword ITEM_AETHER
-.hword ITEM_TOP_AETHER
-.hword ITEM_FLUCHTSEIL
-.hword ITEM_SCHUTZ
-.hword ITEM_SUPERSCHUTZ
-.hword ITEM_TOP_SCHUTZ
-.hword ITEM_NONE
-
-
-ow_script_0x88d2c5:
-pokemart ow_script_mart0x88d352
-goto ow_script_0x88d2db
-
-
-ow_script_mart0x88d32b:
-.hword ITEM_POKEBALL
-.hword ITEM_SUPERBALL
-.hword ITEM_HYPERBALL
-.hword ITEM_TRANK
-.hword ITEM_HYPERTRANK
-.hword ITEM_SUPERTRANK
-.hword ITEM_GEGENGIFT
-.hword ITEM_FEUERHEILER
-.hword ITEM_EISHEILER
-.hword ITEM_AUFWECKER
-.hword ITEM_PARA_HEILER
-.hword ITEM_HYPERHEILER
-.hword ITEM_BELEBER
-.hword ITEM_AETHER
-.hword ITEM_FLUCHTSEIL
-.hword ITEM_SCHUTZ
-.hword ITEM_SUPERSCHUTZ
-.hword ITEM_TOP_SCHUTZ
-.hword ITEM_NONE
-
-
-ow_script_0x88d2ba:
-pokemart ow_script_mart0x88d32b
-goto ow_script_0x88d2db
-
-
-ow_script_0x88d2af:
-pokemart ow_script_mart0x88d32b
-goto ow_script_0x88d2db
-
-
-ow_script_0x88d2a4:
-pokemart ow_script_mart0x88d32b
-goto ow_script_0x88d2db
-
-
-ow_script_mart0x88d30e:
-.hword ITEM_POKEBALL
-.hword ITEM_SUPERBALL
-.hword ITEM_TRANK
-.hword ITEM_SUPERTRANK
-.hword ITEM_GEGENGIFT
-.hword ITEM_FEUERHEILER
-.hword ITEM_EISHEILER
-.hword ITEM_AUFWECKER
-.hword ITEM_PARA_HEILER
-.hword ITEM_AETHER
-.hword ITEM_FLUCHTSEIL
-.hword ITEM_SCHUTZ
-.hword ITEM_SUPERSCHUTZ
-.hword ITEM_NONE
-
-
-ow_script_0x88d299:
-pokemart ow_script_mart0x88d30e
-goto ow_script_0x88d2db
-
-
-ow_script_0x88d28e:
-pokemart ow_script_mart0x88d30e
-goto ow_script_0x88d2db
-
-
-ow_script_mart0x88d2f9:
-.hword ITEM_POKEBALL
-.hword ITEM_TRANK
-.hword ITEM_GEGENGIFT
-.hword ITEM_FEUERHEILER
-.hword ITEM_EISHEILER
-.hword ITEM_AUFWECKER
-.hword ITEM_PARA_HEILER
-.hword ITEM_FLUCHTSEIL
-.hword ITEM_SCHUTZ
-.hword ITEM_NONE
-
-
-ow_script_0x88d283:
-pokemart ow_script_mart0x88d2f9
-goto ow_script_0x88d2db
-
-
-ow_script_mart0x88d2e6:
-.hword ITEM_TRANK
-.hword ITEM_GEGENGIFT
-.hword ITEM_FEUERHEILER
-.hword ITEM_EISHEILER
-.hword ITEM_AUFWECKER
-.hword ITEM_PARA_HEILER
-.hword ITEM_FLUCHTSEIL
-.hword ITEM_SCHUTZ
-.hword ITEM_NONE
-
-
-ow_script_0x88d278:
-pokemart ow_script_mart0x88d2e6
-goto ow_script_0x88d2db
-
+mart:
+    .hword 0
 
 .ifdef LANG_GER
-
 str_mart_ask:
-    .string "Hallo!\nKann ich dir behilflich sein?"
-
-
-
+    .autostring 34 2 "Hallo!\nKann ich dir behilflich sein?"
 str_mart_exit:
-    .string "Bitte komm bald wieder!"
-
-
+    .autostring 34 2 "Bitte komm bald wieder!"
 .elseif LANG_EN
-
+str_mart_ask:
+    .autostring 34 2 "Hello!\nHow can I help you?"
+str_mart_exit:
+    .autostring 34 2 "Have a nice day!"
 .endif

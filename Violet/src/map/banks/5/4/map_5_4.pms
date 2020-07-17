@@ -286,7 +286,7 @@
 				}
 			]
 		},
-		"levelscripts": "lscr_0x71a210",
+		"levelscripts": "map_meriana_city_pokestop_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

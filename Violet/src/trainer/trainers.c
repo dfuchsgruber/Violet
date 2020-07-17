@@ -6637,5 +6637,12 @@ trainer trainers[TRAINER_CNT] = {
 				.party = (trainer_pokemon*) trainer_party_x199_bbship_blackbeard,
 				.uses_custom_items = true, .uses_custom_moves = true,
         // .battle_state = BATTLE_DOUBLE,
+    },
+    [0x19A] = {
+        .trainerclass = TRAINERCLASS_SCHWARZGURT, .sprite = 0x69,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Marco"),
+            PSTRING("Marco")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x19a_meriana_city_blackbelt_in_front_of_gym,
     }, 
 }; 

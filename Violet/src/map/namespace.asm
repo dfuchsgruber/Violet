@@ -124,7 +124,7 @@ map_namespaces:
 	.global str_mapnamespace_89
 
 	str_mapnamespace_89:
-		.string "Meriana City"
+		.string "Blütenbach"
 
 
 	.global str_mapnamespace_90

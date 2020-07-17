@@ -135,7 +135,10 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_pkmn_species_251_pokemon_celebi_frontspriteTiles}, 
 		gfx_pkmn_species_251_pokemon_celebi_frontspritePal, str_mug_celebi},
     [MUGSHOT_LARISSA] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_larissaTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_larissaTiles,
+			[MUGSHOT_HAPPY] = gfx_mug_larissa_happyTiles,
+			}, 
 		gfx_mug_larissaPal, str_mug_larissa},
     [MUGSHOT_PRIMUS] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_primusTiles}, 

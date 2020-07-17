@@ -55,7 +55,7 @@ copyvarifnotzero 0x8000 ITEM_ZAUBERWASSER
 copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x87f3c1
+gotoif EQUAL ow_script_no_room_for_giveitem
 loadpointer 0x0 str_0x87f4bb
 callstd MSG
 setflag KADKADA_ZAUBERWASSER
