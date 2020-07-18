@@ -5,7 +5,7 @@
 			"person_cnt": 8,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
-			"signpost_cnt": 3,
+			"signpost_cnt": 0,
 			"persons": [
 				{
 					"target_index": 1,
@@ -22,7 +22,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_5_4_person_0",
+					"script": "ow_script_nurse_joy",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -38,10 +38,10 @@
 					"picture": 61,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 1,
-					"y": 4,
+					"x": "4",
+					"y": "6",
 					"level": 3,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "1",
 						"y": "1"
@@ -64,8 +64,8 @@
 					"picture": 19,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 4,
-					"y": 7,
+					"x": "11",
+					"y": "4",
 					"level": 3,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -90,8 +90,8 @@
 					"picture": 18,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 2,
-					"y": 3,
+					"x": "2",
+					"y": "3",
 					"level": 3,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -113,7 +113,7 @@
 				},
 				{
 					"target_index": 5,
-					"picture": 117,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
 					"x": 8,
@@ -126,14 +126,14 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_5_4_person_4",
+					"script": "0",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_CHANEIRA",
 						"berry_tree_idx": 0
 					}
 				},
@@ -152,7 +152,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_5_4_person_5",
+					"script": "ow_script_pokemart",
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
@@ -164,34 +164,8 @@
 					}
 				},
 				{
-					"target_index": 7,
-					"picture": 27,
-					"field_2": 0,
-					"field_3": 0,
-					"x": 7,
-					"y": 7,
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
-					"behaviour_range": {
-						"x": "0",
-						"y": "0"
-					},
-					"is_trainer": "0",
-					"alert_radius": 0,
-					"script": "0",
-					"flag": "PKMNMENU",
-					"field_D": 0,
-					"field_B": 0,
-					"script_std": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": 0,
-					"picture": 174,
+					"target_index": "7",
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
 					"x": 16,
@@ -208,10 +182,34 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON_NPC",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_BOTOGEL",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "8",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "3",
+					"y": "6",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FIFFYEN",
 						"berry_tree_idx": 0
 					}
 				}
@@ -235,56 +233,7 @@
 				}
 			],
 			"triggers": [],
-			"signposts": [
-				{
-					"x": 12,
-					"y": 0,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_5_4_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 15,
-					"y": 5,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_5_4_sign_1",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"x": 15,
-					"y": 4,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_botogel",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				}
-			]
+			"signposts": []
 		},
 		"levelscripts": "map_meriana_city_pokestop_levelscripts",
 		"connections": {

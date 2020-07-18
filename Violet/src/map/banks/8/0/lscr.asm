@@ -5,7 +5,7 @@ lscr_0x16b05b:
 	.byte 0x3
 .word ow_script_0x16b066
 	.byte 0x5
-.word ow_script_0x1bf89b
+.word ow_script_init_union_room
 	.byte 0x0
 
 

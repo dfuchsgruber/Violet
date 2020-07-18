@@ -32,7 +32,7 @@ end
 .ifdef LANG_GER
 
 str_0x936da7:
-    .string "Bis vor kurzem war der\nWassertunnel eingestürzt.\pArenaleiter Manus aus Meriana City\nhat ihn wieder errichtet."
+    .string "Bis vor kurzem war der\nWassertunnel eingestürzt.\pArenaleiter Manus aus Blütenbach\nhat ihn wieder errichtet."
 
 
 .elseif LANG_EN
@@ -118,7 +118,7 @@ end
 .ifdef LANG_GER
 
 str_0x936e16:
-    .string "Die Arena von Meriana City ist\neine Pilgerstätte für Kämpfer.\lIch bin auf direktem Weg dorthin!"
+    .string "Die Arena von Blütenbach ist\neine Pilgerstätte für Kämpfer.\lIch bin auf direktem Weg dorthin!"
 
 
 
@@ -186,7 +186,7 @@ str_0x937767:
 
 
 str_0x9377c1:
-    .string "Ich sollte mein Glück am Fluss\nnach Meriana City probieren."
+    .string "Ich sollte mein Glück am Fluss\nnach Blütenbach probieren."
 
 
 .elseif LANG_EN

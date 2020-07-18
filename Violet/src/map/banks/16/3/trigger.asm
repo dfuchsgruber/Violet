@@ -171,7 +171,7 @@ mov_exclam:
 .ifdef LANG_GER
 
 str_0x93c76b:
-	.autostring 34 2 "Du bist wohl Manus, der Arenaleiter von Meriana City, nicht?"
+	.autostring 34 2 "Du bist wohl Manus, der Arenaleiter von Blütenbach, nicht?"
 
 str_manus:
 	.string "Manus"
@@ -228,7 +228,7 @@ str_0x93be4c:
 	.autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS"
 
 str_last:
-	.autostring 34 2 "Du bist ja nicht im Geringsten eingeschüchtert!\pHaha!\nDas gefällt mir!\pDie meisten Menschen sind bei meinem Anblick verängstigt!\pAber du hast echten Mumm!\nDa vergessen wir doch, dass du mich gerade so dreist belauscht hast!\pIch bin nämlich eine Kämpfernatur!\pUnd in dir, da sehe ich eine Menge Kampfgeist!\pMein Name ist Manus, und ich bin der Arenaleiter von Meriana City.\pIch war einige Zeit lang damit beschäftigt, diesen Tunnel freizuräumen.\pEin Erdbeben hatte ihn verschüttet.\pUnd das mit bloßer Muskelkraft!\pHaha!\nKomm in meine Arena und fordere mich zu einem Kampf heraus.\pIch bin gespannt, ob deine Fähigkeiten deinem Auftreten gerecht werden, Kindchen!"
+	.autostring 34 2 "Du bist ja nicht im Geringsten eingeschüchtert!\pHaha!\nDas gefällt mir!\pDie meisten Menschen sind bei meinem Anblick verängstigt!\pAber du hast echten Mumm!\nDa vergessen wir doch, dass du mich gerade so dreist belauscht hast!\pIch bin nämlich eine Kämpfernatur!\pUnd in dir, da sehe ich eine Menge Kampfgeist!\pMein Name ist Manus, und ich bin der Arenaleiter von Blütenbach.\pIch war einige Zeit lang damit beschäftigt, diesen Tunnel freizuräumen.\pEin Erdbeben hatte ihn verschüttet.\pUnd das mit bloßer Muskelkraft!\pHaha!\nKomm in meine Arena und fordere mich zu einem Kampf heraus.\pIch bin gespannt, ob deine Fähigkeiten deinem Auftreten gerecht werden, Kindchen!"
 
 
 .elseif LANG_EN

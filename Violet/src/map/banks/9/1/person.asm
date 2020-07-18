@@ -3,16 +3,7 @@
 
 .global ow_script_map_9_1_person_2
 .global ow_script_map_9_1_person_1
-.global ow_script_map_9_1_person_0
 .global ow_script_map_9_1_person_3
-
-ow_script_map_9_1_person_0:
-lock
-faceplayer
-call ow_script_0x1a9429
-release
-end
-
 
 ow_script_map_9_1_person_1:
 loadpointer 0x0 str_0x196800

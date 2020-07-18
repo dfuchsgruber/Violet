@@ -260,7 +260,7 @@ end
 .ifdef LANG_GER
 
 str_0x93155a:
-	.autostring 35 2 "Sei gegrüßt!\pMeine Wenigkeit verkauft leistungsfähige Supermagneten.\pDOTS DOTS DOTS\pDu weißt wohl gar nicht, von was ich spreche, was?"
+	.autostring 35 2 "Sei gegrßt!\pMeine Wenigkeit verkauft leistungsfähige Supermagneten.\pDOTS DOTS DOTS\pDu weißt wohl gar nicht, von was ich spreche, was?"
 
 .elseif LANG_EN
 
@@ -576,7 +576,7 @@ end
 .ifdef LANG_GER
 
 str_0x931aaa:
-    .string "Manus, aus Meriana City, verkehrt\ndes Öfteren hier.\pWas er hier treibt? Keinen blassen\nSchimmer.\pLegal ist es auf jeden Fall nicht!"
+    .string "Manus, aus Blütenbach, verkehrt\ndes Öfteren hier.\pWas er hier treibt? Keinen blassen\nSchimmer.\pLegal ist es auf jeden Fall nicht!"
 
 
 .elseif LANG_EN

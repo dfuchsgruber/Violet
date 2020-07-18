@@ -2,16 +2,9 @@
 .include "overworld_script.s"
 
 .global ow_script_map_7_3_person_1
-.global ow_script_map_7_3_person_0
 .global ow_script_map_7_3_person_3
 .global ow_script_map_7_3_person_2
 
-ow_script_map_7_3_person_0:
-lock
-faceplayer
-call ow_script_0x1a9429
-release
-end
 
 
 ow_script_map_7_3_person_1:

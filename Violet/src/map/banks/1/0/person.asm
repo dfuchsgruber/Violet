@@ -61,7 +61,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f4305:
-    .string "Du schon wieder! Du hast mich und\nmeine Pokémon in Meriana City\lschon besiegtDOTS\lHier, nimm das und lass mich\lgefälligst in Ruhe!"
+    .string "Du schon wieder! Du hast mich und\nmeine Pokémon in Blütenbach\lschon besiegtDOTS\lHier, nimm das und lass mich\lgefälligst in Ruhe!"
 
 
 

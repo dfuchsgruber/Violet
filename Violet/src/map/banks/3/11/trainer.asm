@@ -96,7 +96,7 @@ str_trainer6_challange:
 str_trainer6_defeat:
     .autostring 34 2 "Hast du schon einmal darüber nachgedacht, selbst zum Triathleten zu werden?"
 str_trainer7_challange:
-    .autostring 34 2 "Manus aus Meriana City trainiert oft tagelang auf einer abgelegenen Insel im Meer.\pWenn ich das auch mache, werde ich eines Tages so stark wie er!"
+    .autostring 34 2 "Manus aus Blütenbach trainiert oft tagelang auf einer abgelegenen Insel im Meer.\pWenn ich das auch mache, werde ich eines Tages so stark wie er!"
 str_trainer7_defeat:
     .autostring 34 2 "Meine Niederlage spornt mich nur noch mehr an!"
 str_trainer8_challange:
@@ -137,7 +137,7 @@ str_trainer6_challange:
 str_trainer6_defeat:
     .autostring 34 2 "Did you ever think about becoming a triathlete yourself?"
 str_trainer7_challange:
-    .autostring 34 2 "Manus from Meriana City often trains on islands like these for days.\pIf I do the same, I will become as strong as him."
+    .autostring 34 2 "Manus from Blütenbach often trains on islands like these for days.\pIf I do the same, I will become as strong as him."
 str_trainer7_defeat:
     .autostring 34 2 "My defeat only encourages me further!"
 .endif

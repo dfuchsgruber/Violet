@@ -9,17 +9,11 @@ map_meriana_city_pokestop_levelscripts:
 	.byte LEVELSCRIPT_TYPE_ON_TRANSITION
 .word ow_script_0x16a237
 	.byte 0x5
-.word ow_script_0x1bf89b
+.word ow_script_init_union_room
 	.byte 0x0
 
-.global ow_script_0x16a237
-.global ow_script_0x1bf89b
-
 ow_script_0x16a237:
-sethealingplace HEALINGPLACE_MERIANA_CITY
+	sethealingplace HEALINGPLACE_MERIANA_CITY
 end
 
 
-ow_script_0x1bf89b:
-special 0x182
-end

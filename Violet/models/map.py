@@ -28,6 +28,7 @@ person_script_std_type = agb.types.UnionType({
         'PERSON_BERRY_TREE' : 'berry_tree_idx',
         'PERSON_MUSHROOM' : 'berry_tree_idx',
         'PERSON_SHELL' : 'berry_tree_idx',
+        'PERSON_POKEMON_NPC' : 'species',
     }.get(parents[-1]['script_std'], 'item')
 )
 map_flags_type = agb.types.BitfieldType('u8', [

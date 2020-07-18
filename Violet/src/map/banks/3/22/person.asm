@@ -21,7 +21,7 @@ end
 .ifdef LANG_GER
 
 str_0x935b6f:
-    .string "Südwärts gelangst du über den\nWasserpfad nach Meriana City.\pDort trainiert der größte aller\nKämpfer, Manus!"
+    .string "Südwärts gelangst du über den\nWasserpfad nach Blütenbach.\pDort trainiert der größte aller\nKämpfer, Manus!"
 
 
 
@@ -149,7 +149,7 @@ str_0x93690c:
 
 
 str_0x9368a9:
-    .string "Wenn sich meine Niederlage erst\nherumgesprochen hatDOTS\pAlle werden sie in Meriana City\nangelnDOTS"
+    .string "Wenn sich meine Niederlage erst\nherumgesprochen hatDOTS\pAlle werden sie in Blütenbach\nangelnDOTS"
 
 
 .elseif LANG_EN
