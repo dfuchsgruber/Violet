@@ -143,6 +143,8 @@
         "footer.h": "c",
         "fata_morgana.h": "c",
         "algorithm": "c",
-        "menu_indicators.h": "c"
+        "menu_indicators.h": "c",
+        "header.h": "c",
+        "block.h": "c"
     }
 }

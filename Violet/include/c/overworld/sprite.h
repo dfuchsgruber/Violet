@@ -171,6 +171,17 @@ void oam_set_subpriority_by_height(oam_object *o, u8 height, u8 relative_priorit
  **/
 u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y, u8 z, u8 direction);
 
+/**
+ * Creates an oam for a given overworld npc, but assigns a custom callback to it.
+ * @param n the npc to base the oam on
+ * @param callback the callback for the sprite
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @param subpriority priority relative to other oams on this layer
+ * @return the idx of the oam or 64 on failure
+ **/
+u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object*), s16 x, s16 y, u8 subpriority);
+
 extern u8 gfx_ow_bisasamTiles[];
 extern color_t gfx_ow_bisasamPal[16];
 extern u8 gfx_ow_bisaknospTiles[];

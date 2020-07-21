@@ -16,12 +16,14 @@
 ow_script_pokemart:
     lock
     faceplayer
+    setflag TRANS_DISABLE
     preparemsg str_mart_ask
     waitmsg
     pokemart3 mart
     loadpointer 0x0 str_mart_exit
     callstd MSG_KEEPOPEN
     release
+    clearflag TRANS_DISABLE
     end
 
 mart:

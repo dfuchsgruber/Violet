@@ -914,3 +914,7 @@ overworld_bg3_tilemap = 0x03004f6c;
 map_position_to_bg_tilemap_offset = 0x0805aae8 | 1;
 map_redraw_block_at_position = 0x0805a8e8 | 1;
 quantity_adjust_by_key_input = 0x080bfa18 | 1;
+pokemart_bg1_tilemap = 0x02039958;
+pokemart_bg3_tilemap = 0x0203995c;
+pokemart_bg2_tilemap = 0x02039960;
+pokemart_viewport_npcs = 0x020398b4;

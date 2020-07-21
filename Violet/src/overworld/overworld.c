@@ -482,6 +482,20 @@ u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y,
     return oam_idx;
 }
 
+u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object*), s16 x, s16 y, u8 subpriority) {
+    oam_template template;
+    subsprite_table *subsprites;
+    overworld_create_oam_template_by_npc_with_movement_callback(n, 0, &template, &subsprites);
+    template.callback = callback;
+    overworld_npc_load_palette_by_template(&template);
+    u8 oam_idx = oam_new_backward_search(&template, x, y, subpriority);
+    if (oam_idx < 64 && subsprites != NULL) {
+        oam_set_subsprite_table(oams + oam_idx, subsprites);
+        oams[oam_idx].sprite_mode = 2;
+    }
+    return oam_idx;
+}
+
 
 void big_callback_time_based_events(u8 self) {
     if (!ow_script_is_active()) {

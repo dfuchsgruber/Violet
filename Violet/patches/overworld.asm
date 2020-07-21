@@ -397,3 +397,13 @@ _blxr1:
 
 .org 0x081ddb1e // Overworld Effect Script for growth sparkle
     .word overworld_effect_berry_tree_growth_sparkle | 1
+
+.org 0x0809b85c
+    ldr r0, =pokemart_draw_overworld_bgs | 1
+    bx r0
+    .pool
+
+.org 0x0809bb24
+    ldr r0, =pokemart_create_npc_oams | 1
+    bx r0
+    .pool
