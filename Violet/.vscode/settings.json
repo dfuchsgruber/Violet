@@ -141,6 +141,8 @@
         "custom.h": "c",
         "description.h": "c",
         "footer.h": "c",
-        "fata_morgana.h": "c"
+        "fata_morgana.h": "c",
+        "algorithm": "c",
+        "menu_indicators.h": "c"
     }
 }

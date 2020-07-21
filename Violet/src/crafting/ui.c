@@ -37,6 +37,7 @@
 #include "vars.h"
 #include "flags.h"
 #include "menu_indicators.h"
+#include "menu_util.h"
 
 static void crafting_ui_switch_type_callback1();
 static void crafting_ui_free();
@@ -65,7 +66,7 @@ static u8 str_recipe[] = LANGDEP(PSTRING("Rezept"), PSTRING("Recipe"));
 static u8 str_textcolor_red[] = PSTRING("TEXT_SET_FG\x04TEXT_SET_SHADOW\x05");
 static u8 str_textcolor_black[] = PSTRING("TEXT_SET_FG\x02TEXT_SET_SHADOW\x03");
 
-enum {TBOX_MESSAGE, TBOX_TYPE, TBOX_RECIPE, TBOX_DESCRIPTION, TBOX_INGREDIENTS, TBOX_LIST_MENU, TBOX_CNT,};
+enum {TBOX_MESSAGE, TBOX_TYPE, TBOX_RECIPE, TBOX_DESCRIPTION, TBOX_INGREDIENTS, TBOX_LIST_MENU, TBOX_POSSESION, TBOX_CRAFTING_CNT, TBOX_CNT,};
 
 static tboxdata ui_tboxes[] = {
     [TBOX_MESSAGE] = {.bg_id = 0, .x = 2, .y = 15, .w = 26, .h = 4, .pal = 14, .start_tile = 1},
@@ -76,6 +77,8 @@ static tboxdata ui_tboxes[] = {
         .start_tile = 1 + (2 * 13) + (5 * 2) + (6 * 24)},
     [TBOX_LIST_MENU] = {.bg_id = 1, .x = 1, .y = 3, .w = 11, .h = 11, .pal = 14, 
         .start_tile = 1 + (2 * 13) + (5 * 2) + (6 * 24) + (14 * 3 * MAX_NUM_INGREDIENTS)},
+    [TBOX_CRAFTING_CNT] = {.bg_id = 0, .x = 24, .y = 9, .w = 5, .h = 4, .pal = 14, .start_tile = 1 + 26 * 4,},
+    [TBOX_POSSESION] = {.bg_id = 0, .x = 1, .y = 11, .w = 8, .h = 2, .pal = 14, .start_tile = 1 + 26 * 4 + 5 * 4,},
     [TBOX_CNT] = {.bg_id = 0xFF},
 };
 
@@ -195,7 +198,7 @@ static void crafting_ui_update_ingredient_texts() {
     if (recipe) {
         for (size_t i = 0; i < MAX_NUM_INGREDIENTS; i++) {
             if (recipe->ingredients[i].count > 0) {
-                bool requirements_fulfilled = ingredient_requirements_fulfilled(recipe->ingredients + i);
+                bool requirements_fulfilled = ingredient_requirements_fulfilled(recipe->ingredients + i, 1);
                 u16 y = (u16)(5 + 24 * i);
                 u8 *name;
                 int required, posessed;
@@ -272,7 +275,6 @@ static list_menu_template recipe_selection_list_menu_template = {
     .font = 2
 };
 
-
 static void crafting_ui_setup_scroll_indicators() {
     scroll_indicator_template crafting_ui_scroll_indicator_template_up_down = {
         .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 6 * 8, .arrow0_y = 20,
@@ -288,9 +290,42 @@ static void crafting_ui_setup_scroll_indicators() {
     scroll_indicator_set_oam_priority(CRAFTING_UI_STATE->callback_scroll_indicators_up_down, 1, 1);
 }
 
+static void crafting_ui_setup_scroll_indicators_left_right() {
+    scroll_indicator_template crafting_ui_scroll_indicator_template_left_right = {
+        .arrow0_type = SCROLL_ARROW_LEFT, .arrow0_x = 12, .arrow0_y = 8,
+        .arrow1_type = SCROLL_ARROW_RIGHT, .arrow1_x = 84, .arrow1_y = 8,
+        .arrow0_threshold = 0, 
+        .arrow1_threshold = CRAFTING_TYPE_CNT - 1,
+        .tiles_tag = 112,
+        .pal_tag = 112,
+    };
+    CRAFTING_UI_STATE->callback_scroll_indicators_left_right = scroll_indicator_new(&crafting_ui_scroll_indicator_template_left_right,
+    &CRAFTING_UI_STATE->type);
+    scroll_indicator_set_oam_priority(CRAFTING_UI_STATE->callback_scroll_indicators_left_right, 1, 1);
+}
+
+static void crafting_ui_setup_quantity_selection_scroll_indicators() {
+    scroll_indicator_template crafting_ui_scroll_indicator_template_up_down = {
+        .arrow0_type = SCROLL_ARROW_UP, .arrow0_x = 27 * 8 - 4, .arrow0_y = 8 * 9,
+        .arrow1_type = SCROLL_ARROW_DOWN, .arrow1_x = 27 * 8 - 4, .arrow1_y = 8 * 13,
+        .arrow0_threshold = 0xFFFF, 
+        .arrow1_threshold = (u16) (CRAFTING_UI_STATE->max_quantity + 2),
+        .tiles_tag = 111,
+        .pal_tag = 111,
+    };
+    CRAFTING_UI_STATE->callback_scroll_indicators_up_down = scroll_indicator_new(&crafting_ui_scroll_indicator_template_up_down,
+        &CRAFTING_UI_STATE->quantity);
+    scroll_indicator_set_oam_priority(CRAFTING_UI_STATE->callback_scroll_indicators_up_down, 0, 0);
+}
+
 static void crafting_ui_remove_scroll_indicators() {
     scroll_indicator_delete(CRAFTING_UI_STATE->callback_scroll_indicators_up_down);
     CRAFTING_UI_STATE->callback_scroll_indicators_up_down = 0xFF;
+}
+
+static void crafting_ui_remove_scroll_indicators_left_right() {
+    scroll_indicator_delete(CRAFTING_UI_STATE->callback_scroll_indicators_left_right);
+    CRAFTING_UI_STATE->callback_scroll_indicators_left_right = 0xFF;
 }
 
 static void crafting_ui_free_and_return_to_overworld() {
@@ -429,16 +464,19 @@ static void crafting_ui_process_yes_no_start_crafting(u8 self) {
     int idx = gp_list_menu_process_input_and_close_on_selection();
     switch (idx) {
         case 0: // Recipe will be crafted
+            CRAFTING_UI_STATE->quantity = 1; 
             CRAFTING_UI_STATE->exit_continuation = crafting_ui_initialize_cauldron_scene;
             fadescreen_all(1, 0);
             callback1_set(crafting_ui_exit_and_continue_callback1);
+            big_callback_delete(self);
             break;
-            FALL_THROUGH;
         case -1: // Why is that not the standard values for the list menu input??
         case 1:
             callback1_set(generic_callback1);
             tbox_remove_dialog(TBOX_MESSAGE, true);
             big_callback_delete(self);
+            crafting_ui_setup_scroll_indicators();
+            crafting_ui_setup_scroll_indicators_left_right();
             crafting_ui_setup_list_menu();
             break;
         case -2:
@@ -449,6 +487,69 @@ static void crafting_ui_process_yes_no_start_crafting(u8 self) {
 static void crafting_ui_message_continuation_yes_no_box(u8 self) {
     gp_list_menu_yes_no_new(&ui_yes_no_box, 2, 0, 2, 256 + 20, 14, 1);
     big_callbacks[self].function = crafting_ui_process_yes_no_start_crafting;
+}
+
+static void crafting_ui_print_quantity_to_craft() {
+    tbox_flush_set(TBOX_CRAFTING_CNT, 0x11);
+    u8 str_cross[] = PSTRING("x");
+    strcpy(strbuf, str_cross);
+    u8 str_number[4] = {0xFF};
+    itoa(str_number, CRAFTING_UI_STATE->quantity, ITOA_PAD_ZEROS, 2);
+    strcat(strbuf, str_number);
+    tbox_print_string(TBOX_CRAFTING_CNT, 1, 
+        (u16) ((ui_tboxes[TBOX_CRAFTING_CNT].w * 8 - string_get_width(1, strbuf, 0)) / 2), 
+        8, 0, 0, &fontcolmap_black_letters, 0, strbuf);
+}
+
+static u8 str_possesion[] = LANGDEP(
+    PSTRING("Besitz: "),
+    PSTRING("Posession:")
+);
+
+static void crafting_ui_handle_count_selection(u8 self) {
+    if (quantity_adjust_by_key_input(&CRAFTING_UI_STATE->quantity, CRAFTING_UI_STATE->max_quantity)) {
+        crafting_ui_print_quantity_to_craft();
+        bg_virtual_sync(0);
+    }
+    if (super.keys_new.keys.A) {
+        CRAFTING_UI_STATE->exit_continuation = crafting_ui_initialize_cauldron_scene;
+        fadescreen_all(1, 0);
+        callback1_set(crafting_ui_exit_and_continue_callback1);
+        big_callback_delete(self);
+    } else if (super.keys_new.keys.B) {
+        callback1_set(generic_callback1);
+        crafting_ui_remove_scroll_indicators();
+        crafting_ui_setup_scroll_indicators();
+        crafting_ui_setup_scroll_indicators_left_right();
+        tbox_flush_map(TBOX_CRAFTING_CNT);
+        tbox_flush_map(TBOX_POSSESION);
+        tbox_border_flush(TBOX_CRAFTING_CNT);
+        tbox_border_flush(TBOX_POSSESION);
+        bg_virtual_sync(0);
+        tbox_remove_dialog(TBOX_MESSAGE, true);
+        big_callback_delete(self);
+        crafting_ui_setup_list_menu();
+    }
+}
+
+static void crafting_ui_message_continuation_prompt_count(u8 self) {
+    tbox_flush_set(TBOX_POSSESION, 0x11);
+    CRAFTING_UI_STATE->max_quantity = (u8)MIN(99, recipe_max_count_with_requirements_fulfilled(crafting_ui_get_current_recipe()));
+    CRAFTING_UI_STATE->quantity = 1;
+    crafting_ui_print_quantity_to_craft();
+    tbox_print_string(TBOX_POSSESION, 2, 0, 0, 0, 0, &fontcolmap_black_letters, 0xFF, str_possesion);
+    itoa(strbuf, item_get_count(crafting_ui_get_current_recipe()->item), ITOA_PAD_SPACES, 3);
+    tbox_print_string(TBOX_POSSESION, 1, 40, 0, 0, 0, &fontcolmap_black_letters, 0, strbuf);
+    tbox_message_init_border(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13 * 16);
+    tbox_border_draw(TBOX_CRAFTING_CNT, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
+    tbox_border_draw(TBOX_POSSESION, 1 + 26 * 4 + 5 * 4 + 8 * 2, 13);
+    tbox_tilemap_draw(TBOX_CRAFTING_CNT);
+    tbox_tilemap_draw(TBOX_POSSESION);
+    if (CRAFTING_UI_STATE->max_quantity > 1) {
+        crafting_ui_setup_quantity_selection_scroll_indicators();
+    }
+    bg_virtual_sync(0);
+    big_callbacks[self].function = crafting_ui_handle_count_selection;
 }
 
 static u8 str_cant_craft[] = LANGDEP(
@@ -464,6 +565,11 @@ static u8 str_no_room[] = LANGDEP(
 static u8 str_ask_crafting[] = LANGDEP(
     PSTRING("Möchtest du BUFFER_1\nherstellen?"),
     PSTRING("Do you want to craft\nBUFFER_1?")
+); 
+
+static u8 str_ask_crafting_cnt[] = LANGDEP(
+    PSTRING("Wie oft willst du\nBUFFER_1 herstellen?"),
+    PSTRING("How many times do you want to\ncraft BUFFER_1?")
 );
 
 static void crafting_ui_process_list_menu(u8 self) {
@@ -491,17 +597,23 @@ static void crafting_ui_process_list_menu(u8 self) {
     } else if (idx != LIST_MENU_NOTHING_CHOSEN) { // A recipe was selected
         crafting_recipe *recipe = crafting_ui_get_current_recipe();
         if (recipe) {
-            if (!recipe_requirements_fulfilled(recipe)) {
+            if (!recipe_requirements_fulfilled(recipe, 1)) {
                 play_sound(5);
                 // Print the string that the player doesn't have all ingredients. Suspend all callbacks other than that
                 crafting_ui_print_message(self, str_cant_craft, crafting_ui_message_continuation_delete_message_and_return_to_selection);
             } else if (!item_has_room(recipe->item, 1)) {
                 crafting_ui_print_message(self, str_no_room, crafting_ui_message_continuation_delete_message_and_return_to_selection);
-            }
-            else {
+            } else if (recipe_max_count_with_requirements_fulfilled(crafting_ui_get_current_recipe()) > 1){
+                crafting_ui_remove_scroll_indicators();
+                crafting_ui_remove_scroll_indicators_left_right();
+                strcpy(buffer0, item_get_name(recipe->item));
+                crafting_ui_print_message(self, str_ask_crafting_cnt, crafting_ui_message_continuation_prompt_count);
+            } else {
+                crafting_ui_remove_scroll_indicators();
+                crafting_ui_remove_scroll_indicators_left_right();
                 strcpy(buffer0, item_get_name(recipe->item));
                 crafting_ui_print_message(self, str_ask_crafting, crafting_ui_message_continuation_yes_no_box);
-            }  
+            }
         }
     }
 }
@@ -696,18 +808,7 @@ static void crafting_ui_setup() {
         }
         case 9: {
             crafting_ui_setup_scroll_indicators();
-            // Set the left-right indicators up only once, they never get destroyed
-            scroll_indicator_template crafting_ui_scroll_indicator_template_left_right = {
-                .arrow0_type = SCROLL_ARROW_LEFT, .arrow0_x = 12, .arrow0_y = 8,
-                .arrow1_type = SCROLL_ARROW_RIGHT, .arrow1_x = 84, .arrow1_y = 8,
-                .arrow0_threshold = 0, 
-                .arrow1_threshold = CRAFTING_TYPE_CNT - 1,
-                .tiles_tag = 112,
-                .pal_tag = 112,
-            };
-            CRAFTING_UI_STATE->callback_scroll_indicators_left_right = scroll_indicator_new(&crafting_ui_scroll_indicator_template_left_right,
-            &CRAFTING_UI_STATE->type);
-            scroll_indicator_set_oam_priority(CRAFTING_UI_STATE->callback_scroll_indicators_left_right, 1, 1);
+            crafting_ui_setup_scroll_indicators_left_right();
             CRAFTING_UI_STATE->setup_state++;
             break;
         }

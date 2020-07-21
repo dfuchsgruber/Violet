@@ -2,6 +2,7 @@
 #include "crafting.h"
 #include "item/item.h"
 #include "vars.h"
+#include "debug.h"
 
 static crafting_recipe crafting_recipies_healing[] = {
     {
@@ -527,41 +528,63 @@ crafting_recipe *crafting_recipies_get_by_type(u16 type) {
     }
 }
 
-bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient) {
-    if (ingredient->count == 0)
+bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient, u16 count) {
+    count = (u16)(count * ingredient->count);
+    if (count == 0)
         return true;
     switch (ingredient->type) {
         case CRAFTING_INGREDIENT_ITEM: {
-            return item_check(ingredient->item, ingredient->count);
+            return item_check(ingredient->item, count);
         }
         case CRAFTING_INGREDIENT_ASH: {
             u16 ash = *var_access(ASH);
-            return ash >= (ingredient->count * CRAFTING_INGREDIENT_ASH_MULTIPLIER);
+            return ash >= (count * CRAFTING_INGREDIENT_ASH_MULTIPLIER);
         }
     }
     return false;
 }
 
-bool recipe_requirements_fulfilled(crafting_recipe *r) {
+bool recipe_requirements_fulfilled(crafting_recipe *r, u16 count) {
     for (u8 i = 0; i < ARRAY_COUNT(r->ingredients); i++) {
         if (r->ingredients[i].count > 0) {
-            if (!ingredient_requirements_fulfilled(r->ingredients + i))
+            if (!ingredient_requirements_fulfilled(r->ingredients + i, count))
                 return false;
         }
     }
     return true;
 }
 
-bool recipe_use(crafting_recipe *r) {
-    if (recipe_requirements_fulfilled(r) && item_has_room(r->item, 1)) {
+u16 recipe_max_count_with_requirements_fulfilled(crafting_recipe *r) {
+    int max_count = INT_MAX;
+    for (u8 i = 0; i < ARRAY_COUNT(r->ingredients); i++) {
+        crafting_ingredient *ingredient = r->ingredients + i;
+        if (ingredient->count > 0) {
+            switch (ingredient->type) {
+                case CRAFTING_INGREDIENT_ITEM: {
+                    max_count = MIN(max_count, item_get_count(ingredient->item) / ingredient->count);
+                    break;
+                }
+                case CRAFTING_INGREDIENT_ASH: {
+                    max_count = MIN(max_count, *var_access(ASH) / (ingredient->count * CRAFTING_INGREDIENT_ASH_MULTIPLIER));
+                    break;
+                }
+            } 
+            dprintf("After ingredient %d with item %d the max count is %d\n", i, ingredient->item, max_count);
+        }
+    }
+    return (u16) max_count;
+}
+
+bool recipe_use(crafting_recipe *r, u16 count) {
+    if (recipe_requirements_fulfilled(r, count) && item_has_room(r->item, count)) {
         for (u8 i = 0; i < ARRAY_COUNT(r->ingredients); i++) {
             if (r->ingredients[i].type == CRAFTING_INGREDIENT_ASH) {
-                *var_access(ASH) = (u16)(*var_access(ASH) - r->ingredients[i].count * CRAFTING_INGREDIENT_ASH_MULTIPLIER);
+                *var_access(ASH) = (u16)(*var_access(ASH) - r->ingredients[i].count * CRAFTING_INGREDIENT_ASH_MULTIPLIER * count);
             } else if (r->ingredients[i].count > 0) {
-                item_remove(r->ingredients[i].item, r->ingredients[i].count);
+                item_remove(r->ingredients[i].item, (u16)(r->ingredients[i].count * count));
             }
         }
-        item_add(r->item, 1);
+        item_add(r->item, count);
         return true;
     }
     return false;

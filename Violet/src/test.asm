@@ -35,6 +35,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_TSITRUBEERE 99
+	additem ITEM_TSITRUBEERE 99
+	additem ITEM_TSITRUBEERE 99
+	additem ITEM_TSITRUBEERE 99
+	additem ITEM_TSITRUBEERE 99
+	additem ITEM_TSITRUBEERE 99
 	callasm pokemon_get_evolution_item_line_test
 	end
 	setvar 0x8000 ITEM_NULLSAFT

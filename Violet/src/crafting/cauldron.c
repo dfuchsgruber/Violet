@@ -18,6 +18,7 @@
 #include "language.h"
 #include "overworld/map_control.h"
 #include "overworld/script.h"
+#include "text.h"
 
 static void cauldron_scene_step1_create_dropping_item(u16 frame);
 
@@ -291,8 +292,8 @@ static void cauldron_scene_big_callback_null(u8 self) {
 }
 
 static u8 str_crafted[] = LANGDEP(
-    PSTRING("PLAYER hat\nBUFFER_1 hergestellt!"),
-    PSTRING("PLAYER crafted\nBUFFER_1!")
+    PSTRING("PLAYER hat BUFFER_2x BUFFER_1\nhergestellt!"),
+    PSTRING("PLAYER crafted BUFFER_2x BUFFER_1!")
 );
 
 static void cauldron_free_and_return_to_overworld() {
@@ -315,7 +316,7 @@ static void cauldron_scene_end_on_keypress(u8 self) {
         big_callback_delete(self);
         play_sound(5);
         fadescreen_all(1, 0);
-        recipe_use(&CAULDRON_SCENE_STATE->recipe);
+        recipe_use(&CAULDRON_SCENE_STATE->recipe, CAULDRON_SCENE_STATE->count);
         callback1_set(cauldron_free_and_return_to_overworld);
     }
 }
@@ -326,6 +327,7 @@ static void cauldron_scene_step9_success_string(u16 frame) {
     tbox_flush_set(0, 0);
     tbox_tilemap_draw(0);
     u8 cb_idx = big_callback_new(cauldron_scene_big_callback_null, 0);
+    itoa(buffer1, CAULDRON_SCENE_STATE->count, ITOA_NO_PADDING, 3);
     string_decrypt(strbuf, str_crafted);
     tbox_print_string_and_continue(cb_idx, 0, 1 + 26 * 4, 15, 2, tbox_get_set_speed(), strbuf, cauldron_scene_end_on_keypress);
     CAULDRON_SCENE_STATE->bg_vertical_scrolling[0] = (s16)(-CAULDRON_SCENE_STATE->bg_vertical_origin);
@@ -578,6 +580,7 @@ void cauldron_scene_initialize(crafting_recipe *recipe, crafting_ui_state *ui_st
         CAULDRON_SCENE_STATE->oams_items[i] = 0x40;
     }
     CAULDRON_SCENE_STATE->recipe = *recipe;
+    CAULDRON_SCENE_STATE->count = ui_state->quantity;
     CAULDRON_SCENE_STATE->saved_ui_state.type = ui_state->type;
     memcpy(CAULDRON_SCENE_STATE->saved_ui_state.list_menu_cursor_positions, ui_state->list_menu_cursor_positions, sizeof(ui_state->list_menu_cursor_positions));
     memcpy(CAULDRON_SCENE_STATE->saved_ui_state.list_menu_cursor_above, ui_state->list_menu_cursor_above, sizeof(ui_state->list_menu_cursor_above));

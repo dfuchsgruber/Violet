@@ -54,6 +54,8 @@ typedef struct {
     u8 callback_scroll_indicators_left_right;
     void (*exit_continuation)();
     u8 initialized_from_overworld;
+    u16 max_quantity; // How exemplars many can be crafted at max
+    u16 quantity; // How many exemplars will be crafted currently
 
 } crafting_ui_state;
 
@@ -83,23 +85,33 @@ crafting_recipe *crafting_recipies_get_by_type(u16 type);
 /**
  * Checks if the player's bag fulfils the requirements of a single ingredient
  * @param ingredient the ingredient to check
+ * @param count how many exemplars to craft
  * @return if the player has this ingredient, bascially
  **/
-bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient);
+bool ingredient_requirements_fulfilled(crafting_ingredient *ingredient, u16 count);
 
 /**
  * Checks if the player's bag fulfils the requirements of a recipe
  * @param recipe the recipe to check
+ * @param count how many exemplars to craft
  * @return if the player has all ingredients, bascially
  **/
-bool recipe_requirements_fulfilled(crafting_recipe *r);
+bool recipe_requirements_fulfilled(crafting_recipe *r, u16 count);
 
 /**
  * Uses a crafting recipe, i.e. deletes the ingredients and adds the target item
  * @param r the recipe to use
+ * @param count how many exemplars to craft
  * @return if the recipe was used sucessfully (fails when requirements are not met or no room)
  **/
-bool recipe_use(crafting_recipe *r);
+bool recipe_use(crafting_recipe *r, u16 count);
+
+/**
+ * Checks how many exemplars of a recipe can be crafted at most with the igredients in the bag
+ * @param r the recipe to check
+ * @return how many exemplars can be crafted at most
+ **/
+u16 recipe_max_count_with_requirements_fulfilled(crafting_recipe *r);
 
 #define CRAFTING_UI_STATE ((crafting_ui_state*)fmem.gp_state)
 
@@ -110,6 +122,7 @@ typedef struct {
     u16 frame;
     u8 state;
     crafting_recipe recipe;
+    u16 count;
     s16 bg_horizontal_scrolling[4];
     s16 bg_vertical_scrolling[4];
     s16 bg_horizontal_origin;
