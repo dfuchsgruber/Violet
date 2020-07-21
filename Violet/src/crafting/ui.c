@@ -319,11 +319,15 @@ static void crafting_ui_setup_quantity_selection_scroll_indicators() {
 }
 
 static void crafting_ui_remove_scroll_indicators() {
+    if (CRAFTING_UI_STATE->callback_scroll_indicators_up_down == 0xFF)
+        return;
     scroll_indicator_delete(CRAFTING_UI_STATE->callback_scroll_indicators_up_down);
     CRAFTING_UI_STATE->callback_scroll_indicators_up_down = 0xFF;
 }
 
 static void crafting_ui_remove_scroll_indicators_left_right() {
+    if (CRAFTING_UI_STATE->callback_scroll_indicators_left_right == 0xFF)
+        return;
     scroll_indicator_delete(CRAFTING_UI_STATE->callback_scroll_indicators_left_right);
     CRAFTING_UI_STATE->callback_scroll_indicators_left_right = 0xFF;
 }
