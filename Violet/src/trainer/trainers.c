@@ -6644,5 +6644,12 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Marco")), .pokemon_cnt = 2,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x19a_meriana_city_blackbelt_in_front_of_gym,
+    },
+    [0x19B] = {
+        .trainerclass = TRAINERCLASS_STREBER, .sprite = 0x1d,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Sicilion"),
+            PSTRING("Sicilion")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x19b_route_2_streber,
     }, 
 }; 

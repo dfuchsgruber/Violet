@@ -75,26 +75,29 @@ u8 *present_get_matching_md(u8 *md){
 }
 
 void present_query_closure(){
-    
-    // The input is the inputed string extended by this arbitrary salt
-    u8 input[SHA3_INLEN] = {
-        224, 36, 30, 106, 254, 80, 213, 241, 25, 136, 35, 3, 132, 229, 10, 248, 
-        166, 138, 11, 177, 77, 6, 255, 203, 229, 77, 4, 199, 170, 186, 33, 88 
-    };
-    strcpy(input, buffer0);
-    u8 md[SHA3_MDLEN] = {0};
-    sha3(input, md);
-    for (int i = 0; i < SHA3_MDLEN; i++) {
-    	dprintf("Input md[%d]: %d\n", i, md[i]);
-    }
-    
-    
-    u8 *script = present_get_matching_md(md);
-    if(script){
-        overworld_script_virtual_ptr = script;
-        *var_access(0x800D) = 1;
-    }else{
-        *var_access(0x800D) = 0;
+    if (buffer0[0] == 0xFF) {
+        *var_access(0x800D) = 0xFF;
+    } else {        
+        // The input is the inputed string extended by this arbitrary salt
+        u8 input[SHA3_INLEN] = {
+            224, 36, 30, 106, 254, 80, 213, 241, 25, 136, 35, 3, 132, 229, 10, 248, 
+            166, 138, 11, 177, 77, 6, 255, 203, 229, 77, 4, 199, 170, 186, 33, 88 
+        };
+        strcpy(input, buffer0);
+        u8 md[SHA3_MDLEN] = {0};
+        sha3(input, md);
+        for (int i = 0; i < SHA3_MDLEN; i++) {
+            dprintf("Input md[%d]: %d\n", i, md[i]);
+        }
+        
+        
+        u8 *script = present_get_matching_md(md);
+        if(script){
+            overworld_script_virtual_ptr = script;
+            *var_access(0x800D) = 1;
+        }else{
+            *var_access(0x800D) = 0;
+        }
     }
     
     void (*std_closure_and_map_reload)() = (void(*)())(0x08056900 | 1);

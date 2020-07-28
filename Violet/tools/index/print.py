@@ -58,7 +58,17 @@ def print_hidden_index(items):
                 index += f'{location}\t'
             index += '\n'
     return index
-            
+
+def print_berry_index(berries):
+    """ Prints a readable version of the berry index. """
+    index = 'Berry Tree Locations\n'
+    for flag, locations in enumerate(berries['flag_to_map']):
+        index += f'\t{flag}\t:\t{locations}\n'
+    index += '\n\nBerrys by flags\n'
+    for berry, flags in berries['berry_to_flag'].items():
+        index += '\t' + berry + ' : ' + ', '.join(map(str, flags)) + '\n'
+    return index
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Creates an index pickle for all species habitats.')
     parser.add_argument('pickle', help='The pickle to output in readable format')
@@ -67,6 +77,7 @@ if __name__ == '__main__':
     group.add_argument('--habitats', dest='index_type', action='store_const', const='habitats', help='Output the index for habitats')
     group.add_argument('--items', dest='index_type', action='store_const', const='items', help='Output the index for items')
     group.add_argument('--hidden', dest='index_type', action='store_const', const='hidden', help='Output the index for hidden flags')
+    group.add_argument('--berries', dest='index_type', action='store_const', const='berries', help='Output the index for berries')
     args = parser.parse_args()
 
     with open(args.pickle, 'rb') as f:
@@ -77,6 +88,8 @@ if __name__ == '__main__':
         readable = print_item_index(index)
     elif args.index_type == 'hidden':
         readable = print_hidden_index(index)
+    elif args.index_type == 'berries':
+        readable = print_berry_index(index)
     with open(args.output, 'w+') as f:
         f.write(readable)
     

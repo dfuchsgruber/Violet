@@ -2261,3 +2261,7 @@ trainer_pokemon_default_item_default_attacks trainer_party_x19a_meriana_city_bla
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,5,POKEMON_MACHOLLO),
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,5,POKEMON_MENKI),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x19b_route_2_streber[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,6,POKEMON_SLEIMA),
+};

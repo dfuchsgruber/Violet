@@ -55,6 +55,7 @@ no_place_in_boxes:
 	end
 
 
+
 .ifdef LANG_GER
 
 	.global str_present_0

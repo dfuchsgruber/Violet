@@ -20,7 +20,7 @@ u8 berry_tree_get_berry(u8 berry_tree_idx) {
     return cmem.berry_trees[berry_tree_idx].berry;
 }
 
-static u8 berry_tree_initial_items[] = {
+u8 berry_tree_initial_items[256] = {
     [0] = ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE),
     [1] = ITEM_IDX_TO_BERRY_IDX(ITEM_SAIMBEERE),
     [2] = ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE),
@@ -62,8 +62,8 @@ void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
 
 void berry_trees_initialize_all() {
     memset(cmem.berry_trees, 0, sizeof(cmem.berry_trees));
-    for (u8 i = 0; i < ARRAY_COUNT(berry_tree_initial_items); i++) {
-        berry_tree_initialize(i, berry_tree_initial_items[i], BERRY_STAGE_BERRIES);
+    for (size_t i = 0; i < ARRAY_COUNT(berry_tree_initial_items); i++) {
+        berry_tree_initialize((u8)i, berry_tree_initial_items[i], BERRY_STAGE_BERRIES);
     }
 }
 

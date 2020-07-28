@@ -176,6 +176,8 @@ query:
     lock
     compare LASTRESULT 1
     gotoif EQUAL receive_present
+    compare LASTRESULT 0xFF
+    gotoif EQUAL empty_query
     cry POKEMON_BOTOGEL 0
     loadpointer 0 str_ow_script_botogel_0
     callstd 4
@@ -191,6 +193,10 @@ receive_present:
     callstd 4
     waitcry
     jumpram
+    end
+
+empty_query:
+    release
     end
 
 introduce:

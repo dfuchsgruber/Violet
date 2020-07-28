@@ -7,7 +7,6 @@
 .global ow_script_set_nickname
     ow_script_set_nickname:
     setflag TRANS_DISABLE
-    clearflag TRANS_PALETTE_FETCH
     call set_nickname
     closeonkeypress
     clearflag TRANS_DISABLE

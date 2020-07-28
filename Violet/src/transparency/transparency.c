@@ -76,8 +76,10 @@ void overworld_tbox_load_gfx() {
         transparency_on();
         tbox_frame_transparent_load_gfx_and_pal();
     } else if (overworld_tbox_is_sign()) {
+        transparency_off();
         tbox_load_sign_gfx_and_pal();
     } else {
+        transparency_off();
         tbox_load_message_gfx_and_pal();
     }
 }

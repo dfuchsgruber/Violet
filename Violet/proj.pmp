@@ -695,6 +695,11 @@
 				"map_route_2_cloud_ruins",
 				"src/map/banks/11/4/map_route_2_cloud_ruins.pms",
 				"MAP_ROUTE_2"
+			],
+			"5": [
+				"map_route_2_cave_2",
+				"src/map/banks/11/5/map_route_2_cave_2.pms",
+				"MAP_ROUTE_2"
 			]
 		},
 		"12": {
@@ -1876,6 +1881,10 @@
 		"map_footer_blackbeard_ship_treasure_room": [
 			119,
 			"src/map/banks/33/8/map_footer_blackbeard_ship_treasure_room.pms"
+		],
+		"map_footer_route_2_cave2": [
+			120,
+			"src/map/banks/11/5/map_footer_route_2_cave2.pms"
 		]
 	},
 	"tilesets_primary": {
