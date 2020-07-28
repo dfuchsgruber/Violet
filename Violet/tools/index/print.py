@@ -69,6 +69,22 @@ def print_berry_index(berries):
         index += '\t' + berry + ' : ' + ', '.join(map(str, flags)) + '\n'
     return index
 
+def print_misc_person_index(misc):
+    """ Prints a readable version of the index of misc persons (mushrooms, shells etc.) """
+    index = ''
+    for misc_name, misc_table in (
+        ('Mushrooms', misc['mushroom_flag_to_map']),
+        ('Shells', misc['shell_flag_to_map']),
+    ):
+        index += f'{misc_name}:\n'
+        if len(misc_table.keys()) == 0:
+            continue
+        for idx in range(max(misc_table.keys()) + 1):
+            index += '\t' + str(idx) + '\t : ' + ', '.join(map(str, misc_table.get(idx, []))) + '\n'
+        index += '\n\n'
+    return index
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Creates an index pickle for all species habitats.')
     parser.add_argument('pickle', help='The pickle to output in readable format')
@@ -78,6 +94,7 @@ if __name__ == '__main__':
     group.add_argument('--items', dest='index_type', action='store_const', const='items', help='Output the index for items')
     group.add_argument('--hidden', dest='index_type', action='store_const', const='hidden', help='Output the index for hidden flags')
     group.add_argument('--berries', dest='index_type', action='store_const', const='berries', help='Output the index for berries')
+    group.add_argument('--misc', dest='index_type', action='store_const', const='misc', help='Output the index for misc persons (mushrooms, shells, ...)')
     args = parser.parse_args()
 
     with open(args.pickle, 'rb') as f:
@@ -90,6 +107,8 @@ if __name__ == '__main__':
         readable = print_hidden_index(index)
     elif args.index_type == 'berries':
         readable = print_berry_index(index)
+    elif args.index_type == 'misc':
+        readable = print_misc_person_index(index)
     with open(args.output, 'w+') as f:
         f.write(readable)
     
