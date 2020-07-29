@@ -272,7 +272,14 @@ ow_script_map_8_11_person_4:
     callstd MSG_FACE
     end
 
+.ifdef LANG_GER
 
+str_01:
+    .autostring 34 2 "Hallo!\nWir verkaufen hier seltene und starke Pokémon aus aller Welt.\pDie meisten von ihnen waren lange im Besitz eines Trainers und warten mit besten kämpferischen Fähigkeiten auf.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMoment, Kindchen!\pWas hast du hier zu suchen?\pVerschwinde!"
+.elseif LANG_EN
+.endif
+
+/** 
 showmoney 0x0 0x0 0x0
 loadpointer 0x0 str_0x8c8907
 callstd MSG_KEEPOPEN
@@ -493,7 +500,7 @@ str_0x8c8793:
 .elseif LANG_EN
 
 .endif
-
+*/
 
 ow_script_map_8_11_person_8:
 loadpointer 0 str_02

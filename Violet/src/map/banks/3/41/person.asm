@@ -15,7 +15,6 @@
 .global ow_script_map_3_41_trainer_20
 .global ow_script_map_3_7_route_2_east_trainer_0
 .global ow_script_0x8dc94e
-.global ow_script_0x880ba0
 .global ow_script_0x1aba6e
 .global ow_script_map_3_41_trainer_10
 .global ow_script_map_3_41_trainer_11
@@ -25,9 +24,7 @@
 .global ow_script_0x8305a5
 .global ow_script_map_3_41_trainer_9
 .global ow_script_0x877bed
-.global ow_script_0x880be5
 .global ow_script_0x1aba89
-.global ow_script_0x947e82
 .global ow_script_0x1abacd
 .global ow_script_map_3_41_trainer_3
 .global ow_script_0x8ac1e8
@@ -56,7 +53,6 @@
 .global ow_script_map_3_41_trainer_16
 .global ow_script_map_3_41_trainer_22
 .global ow_script_0x1abaa2
-.global ow_script_0x880b86
 .global ow_script_map_3_41_trainer_4
 .global ow_script_map_3_41_trainer_18
 .global ow_script_map_3_7_route_2_east_trainer_2
@@ -85,11 +81,10 @@ end
 .ifdef LANG_GER
 
 str_0x80f654:
-    .string "In dem Haus dort oben wohnt\nProfessor Tann. Du solltest ihn\lunbedingt mal besuchen!"
-
-
+    .autostring 34 2 "Dort drüben hat Professor Tann sein Labor.\pEr ist ein sehr berühmter Archäologe.\pAls er einmal behauptet hat, er wolle sogar die versunkene Stadt Atlantea finden, war ich schwer beeindruckt!"
 .elseif LANG_EN
-
+str_0x80f654:
+    .autostring 34 2 "Over there, Professor Fig has his laboratory.\pHe is a well renown archeologist.\pWhen he once claimed to even discover the sunken city Atlantea I was most impressed."
 .endif
 
 
@@ -103,15 +98,14 @@ end
 .ifdef LANG_GER
 
 str_0x80f360:
-    .string "Sieh mal, was ich mir für Käfer\ngefangen habe!"
-
-
-
+    .autostring 34 2 "Ich habe mir eine ganze Reihe starker Käfer-Pokémon gefangen!\pDie machen dich platt!"
 str_0x80f391:
-    .string "Meine Käfer!!"
-
-
+    .autostring 34 2 "Meine armen Käfer!\nSie konnten nichts ausrichtenDOTS"
 .elseif LANG_EN
+str_0x80f360:
+    .autostring 34 2 "I caught myself many Bug-type Pokémon.\pThey will demolish your party!"
+str_0x80f391:
+    .autostring 34 2 "My poor bugs.\nThey couldn't do a thing against your PokémonDOTS"
 
 .endif
 
@@ -126,15 +120,15 @@ end
 .ifdef LANG_GER
 
 str_0x80f3b7:
-    .string "Als Lady lehne ich keine\nHerausforderung ab! Benimm dich\laber gut!"
-
-
-
+    .autostring 34 2 "Ich bin eine vornehme Lady.\pEs würde sich nicht geziemen, meine Herausforderung abzulehnen."
 str_0x80f40b:
-    .string "Du hast dich nicht gut\nbenommen!"
-
+    .autostring 34 2 "Wie ungehobelt dein Kampfstil doch ist!"
 
 .elseif LANG_EN
+str_0x80f3b7:
+    .autostring 34 2 "I am a well-educated lady.\pIt wouldn't be appropriate to decline my challange."
+str_0x80f40b:
+    .autostring 34 2 "You're fighting style is way too rude!"
 
 .endif
 
@@ -149,16 +143,15 @@ end
 .ifdef LANG_GER
 
 str_0x810968:
-    .string "Ich fühle, was andere fühlenDOTS"
-
-
-
+    .autostring 34 2 "Ich kann Gedanken lesen, weißt du?\pDamit hast du keine Chance gegen mich zu gewinnen!"
 str_0x810989:
-    .string "Ich fühleDOTS"
-
-
+    .autostring 34 2 "Wie?\nIch kann deine Gedanken nicht hören?"
 .elseif LANG_EN
 
+str_0x810968:
+    .autostring 34 2 "I can read your mind, you know?\pSo you are pretty much without the slightest chance!"
+str_0x810989:
+    .autostring 34 2 "How?\nI can't hear your thoughts?"
 .endif
 
 
@@ -172,111 +165,16 @@ end
 
 
 .ifdef LANG_GER
-
 str_violet_grunt:
 	.string "Team Violet Rüpel"
-
 str_0x810ec2:
-    .string "Hey! Verschwinde du Balg!"
-
-
+    .autostring 34 2 "Hey, was willst du von mir?\pDas hier geht dich nichts an!\pZieh Leine!"
 .elseif LANG_EN
-
+str_violet_grunt:
+	.string "Team Violet Grunt"
+str_0x810ec2:
+    .autostring 34 2 "Hey, what do you want?\pThis is none of your buisiness!\pGet lost!"
 .endif
-
-
-ow_script_0x8304ac:
-goto ow_script_0x877bed
-
-
-ow_script_0x877bed:
-lock
-faceplayer
-loadpointer 0x0 str_0x8305dd
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8305ae
-showmoney 0x0 0x0 0x0
-loadpointer 0x0 str_0x83069c
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x8305a5
-countpokemon
-compare LASTRESULT 0x6
-gotoif EQUAL ow_script_0x830543
-sound 0x41
-paymoney 0xfa 0x0
-updatemoney 0x0 0x0 0x0
-checksound
-fanfare 0x13e
-loadpointer 0x0 str_0x8305b9
-callstd MSG_KEEPOPEN
-waitfanfare
-closeonkeypress
-givepokemon POKEMON_NINCADA 0x5 ITEM_NONE 0x0 0x0 0x0
-bufferpokemon 0x0 POKEMON_NINCADA
-hidemoney 0x0 0x0
-loadpointer 0x0 str_0x830520
-callstd MSG
-release
-end
-
-
-ow_script_0x830543:
-hidemoney 0x0 0x0
-loadpointer 0x0 str_0x830551
-callstd MSG
-release
-end
-
-
-ow_script_0x8305a5:
-hidemoney 0x0 0x0
-goto ow_script_0x8305ae
-
-
-ow_script_0x8305ae:
-loadpointer 0x0 str_0x8306cd
-callstd MSG
-release
-end
-
-
-.ifdef LANG_GER
-
-str_0x8305dd:
-    .string "Hallo und herzlich willkommen!\nIch bin der Käferhändler. Heute\lhabe ich ganz frische Ware\lreinbekommen, Nincada, soweit das\lAuge reicht. Du möchtest nicht\lzufällig eines kaufen?"
-
-
-
-str_0x83069c:
-    .string "Das Stück kostet 250POKEDOLLAR. Willst du\nzuschlagen?"
-
-
-
-str_0x8305b9:
-    .string "PLAYER hat ein Nincada erhalten. "
-
-
-
-str_0x830520:
-    .string "Danke! Viel Spaß mit dem Nincada!"
-
-
-
-str_0x830551:
-    .string "Sorry, du hast bereits 6 Pokémon in\ndeinem Team. Komm wieder wenn du\lPlatz hast."
-
-
-
-str_0x8306cd:
-    .string "Das ist eine sehr schlechte\nEntscheidung, aber gut, ich kann\ldich daran nicht hindern."
-
-
-.elseif LANG_EN
-
-.endif
-
 
 ow_script_map_3_41_trainer_10:
 lock
@@ -287,15 +185,15 @@ loadpointer 0x0 str_0x8448cd
 callstd MSG_FACE
 copyvarifnotzero 0x8000 ITEM_FLINKKLAUE
 copyvarifnotzero 0x8001 1
-lock
 callstd ITEM_OBTAIN
 lock
+compare LASTRESULT 0x0
+gotoif EQUAL ow_script_no_room_for_giveitem
 setflag FLAG_ROUTE_2_QUICKCLAW
 loadpointer 0x0 str_0x844937
 callstd MSG_FACE
 release
 end
-
 
 ow_script_0x8448c2:
 loadpointer 0x0 str_0x844937
@@ -305,78 +203,24 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8448cd:
-    .string "Oh sieh mal, was ich dort auf dem\nBoden gefunden habe! Eine\lmerkwürdige KlaueDOTS Willst du sie\lhaben?"
-
-
-
+    .autostring 34 2 "Sieh mal, was ich hier auf dem Boden gefunden habe!\pEine Art Klaue oder soDOTS"
 str_0x844937:
-    .string "Sie sieht wirklich ziemlich\nmerkwürdig aus, nicht?"
-
-
+    .autostring 34 2 "Die Flinkklaue sieht wirklich sehr merkwürdig aus, meinst du nicht?"
 .elseif LANG_EN
-
+str_0x8448cd:
+    .autostring 34 2 "Look what I just found on the ground.\pIt's some kind of claw or something like itDOTS"
+str_0x844937:
+    .autostring 34 2 "The Quick Claw really looks funny, doesn't it?"
 .endif
 
 
 ow_script_map_3_41_trainer_16:
-setflag TRANS_DISABLE
-showpokepic POKEMON_GLUMANDA 0x0 0x0
-clearflag TRANS_DISABLE
-end
-
+    end
 
 ow_script_movs_0x8f5c79:
 .byte SAY_EXCLAM
 .byte STOP
-
-
-ow_script_0x87f942:
-lock
-faceplayer
-loadpointer 0x0 str_0x8f6003
-callstd MSG
-sound 0x15
-applymovement 0x800f ow_script_movs_0x8f5c79
-waitmovement 0x0
-loadpointer 0x0 str_0x8f5bee
-callstd MSG_KEEPOPEN
-copyvarifnotzero 0x8000 ITEM_BELEBER
-copyvarifnotzero 0x8001 1
-callstd ITEM_OBTAIN
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_no_room_for_giveitem
-lock
-faceplayer
-loadpointer 0x0 str_0x8f5bc3
-callstd MSG
-fadescreen 0x1
-hidesprite 0x800f
-fadescreen 0x0
-release
-end
-
-
-.ifdef LANG_GER
-
-str_0x8f6003:
-    .string "Oh, du bist doch der liebe Junge,\nder mich vor dieser bösen Frau\lbeschützt hat.\pOhne dich hätte ich mein liebes\nVoltilamm nicht mehr."
-
-
-
-str_0x8f5bee:
-    .string "Du hast ein Item gefunden, das ich\nverloren habe? Vielen Dank, aber\ldu kannst es gerne behalten, alles\lwas ich will, ist mein Voltilamm."
-
-
-
-str_0x8f5bc3:
-    .string "Komm Voltilamm, wir gehen spielen!\nHihi!"
-
-
-.elseif LANG_EN
-
-.endif
 
 
 ow_script_map_3_41_trainer_13:
@@ -388,11 +232,9 @@ end
 .ifdef LANG_GER
 
 str_0x8a538f:
-    .string "Viele Leute nennen Route 2 auch\ndie Birkenstraße. Ich muss wohl\lnicht erklären, wieso, oder?"
-
-
+    .autostring 34 2 "Man nennt Route 2 auch den Birkenpfad.\pIch muss dir wohl nicht erst erklären, wieso, oder?"
 .elseif LANG_EN
-
+    .autostring 34 2 "Some people call Route 2 the Birch Path.\pI don't have to explain to you why that is, do I?"
 .endif
 
 
@@ -406,15 +248,15 @@ end
 .ifdef LANG_GER
 
 str_0x8a8910:
-    .string "Ein Kampf ist im Grunde wie Strom.\nUnd wir Trainer stehen dabei\lgehörig unter Spannung!"
-
-
-
+    .autostring 34 2 "Ein Kampf ist wie ein starker Strom!\pUnd wir Trainer stehen dabei gehörig unter Spannung!"
 str_0x8a896a:
-    .string "Oh je. Ich glaube, da hab ich wohl\neinen Kurzschluss verursachtDOTS"
-
-
+    .autostring 34 2 "Oh je!\nIch glaube, das war ein Kurzschulss!"
 .elseif LANG_EN
+
+str_0x8a8910:
+    .autostring 34 2 "A battle is just like a strong current.\pAnd we trainers are electrized by it!"
+str_0x8a896a:
+    .autostring 34 2 "Oh man!\nI think that was a short circuit!"
 
 .endif
 
@@ -425,20 +267,18 @@ loadpointer 0x0 str_0x8a959f
 callstd MSG_FACE
 end
 
-
 .ifdef LANG_GER
 
 str_0x8a9536:
-    .string "Unsere Sitten verkommen, die\nJugend verliert den Respekt. Bist\ldu auch eine solche rüpelhafte\lGestalt?"
-
-
-
+    .autostring 34 2 "Es ist unfassbar, wie wenig Manieren die jungen Trainer doch heutzutage haben!\pDu bist da nicht anders!"
 str_0x8a959f:
-    .string "Ohne Zweifel leben in dir\nSittlichkeit und Anstand weiter.\lPass gut auf dich auf, Bursche."
-
-
+    .autostring 34 2 "Nah, vielleicht bist du doch nicht so übel, Kindchen."
 .elseif LANG_EN
 
+str_0x8a9536:
+    .autostring 34 2 "It really is unbelievable how ill-mannered young trainers are these days!\pAnd you are just like them!"
+str_0x8a959f:
+    .autostring 34 2 "Nah, maybe you aren't that bad, kiddo."
 .endif
 
 
@@ -452,16 +292,15 @@ end
 .ifdef LANG_GER
 
 str_0x8a9ca1:
-    .string "Was entspannt mehr als ein\nPicknick in der Sonne?\pEin Kampf natürlich!"
-
-
-
+    .autostring 34 2 "Gibt es etwas Entspannenderes als ein Picknick im Sonnenschein?\pSicher doch!\nEinen Kampf!"
 str_0x8a95fb:
-    .string "Mir bleibt immerhin noch das\nPicknicken!"
-
-
+    .autostring 34 2 "Dann bleibt mir jetzt nur noch das Picknick."
 .elseif LANG_EN
 
+str_0x8a9ca1:
+    .autostring 34 2 "Is there anything more relaxing than camping under the sun?\pSure there is!\nA battle!"
+str_0x8a95fb:
+    .autostring 34 2 "Well, camping it is then."
 .endif
 
 
@@ -475,15 +314,14 @@ end
 .ifdef LANG_GER
 
 str_0x8a9ce9:
-    .string "Ich bin eine Grazie. Meine\nSchönheit kann blenden. Sieh mich\lan und lass mich dein Herz\lergreifen!"
-
-
-
+    .autostring 34 2 "Ich habe noch keinen Kampf verloren.\pMeine Schönheit hat meine Gegner geradezu geblendet!"
 str_0x8a9d56:
-    .string "Du kannst meiner Schönheit\nwiderstehen?"
-
-
+    .autostring 34 2 "Wie?\nDu konntest meiner Schönheit widerstehen?"
 .elseif LANG_EN
+str_0x8a9ce9:
+    .autostring 34 2 "I never lost a single battle.\pMy beatuy always blinded all my opponents!"
+str_0x8a9d56:
+    .autostring 34 2 "What?\nYou could withstand my beatuy?"
 
 .endif
 
@@ -496,18 +334,16 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8aa83e:
-    .string "Ich trainiere sehr hart, um eines\nTages Mitglied in Manus Arena\lwerden zu können. Meine Schläge\lmussen schnell und stark sein,\lmeine Tritte brauchen Wucht!\pIch zeige dir, wie man kämpft!"
-
-
-
+    .autostring 34 2 "Eines Tages werde ich für Manuel in seiner Arena arbeiten!\pMeinst du, meine Schläge sind schon stark genug?"
 str_0x8aa8fb:
-    .string "Großartige Kampftechnik! Hast du\nschonmal darüber nachgedacht, dich\lselbst dafür zu bewerben?"
-
-
+    .autostring 34 2 "Wow!\nGroßartig, deine Kampftechnik!\pManuel wäre sicher beeindruckt!"
 .elseif LANG_EN
 
+str_0x8aa83e:
+    .autostring 34 2 "One day I will work in Manuel's gym!\pDo you think my punches are strong enough yet?"
+str_0x8aa8fb:
+    .autostring 34 2 "Wow!\nAmazing, your technique is incredible!\pManuel would surely be impressed by you!"
 .endif
 
 
@@ -521,16 +357,15 @@ end
 .ifdef LANG_GER
 
 str_0x8aaad4:
-    .string "Als Ranger muss man stets den\nÜberblick behalten. Wir trainieren\ldie verschiedensten Pokémon, um\lfür jede Situation gewappnet zu\lsein. In der Vielfalt liegt die\lStärke!"
-
-
-
+    .autostring 34 2 "Ein Ranger muss auf alle Situationen vorbereitet sein.\pEin vielfältiges Team ist da ein absolutes Muss!"
 str_0x8aab7f:
-    .string "Achte darauf, möglichst viele\nverschiedene Typen in deinem\lPokémon-Team unterzubringen."
-
-
+    .autostring 34 2 "Nicht schlecht!\nDu solltest trotzdem daran arbeiten, dein Team vielfältig zu gestalten!"
 .elseif LANG_EN
 
+str_0x8aaad4:
+    .autostring 34 2 "A ranger needs to be prepeared for all situations.\pA diverse team is an absolute neccisity!"
+str_0x8aab7f:
+    .autostring 34 2 "Not half bad!\nNonetheless you should work on diversifying your team!"
 .endif
 
 
@@ -544,16 +379,15 @@ end
 .ifdef LANG_GER
 
 str_0x8a9d7f:
-    .string "Was ist berauschender als der\nKlang eines Baches oder der Duft\lvon frischem Laub?"
-
-
-
+    .autostring 34 2 "Gibt es etwas berauschenderes, als das Knirschen des Herbstlaubes unter den Füßen?"
 str_0x8aaf13:
-    .string "Natur und Mensch sind keine\nFeinde, sondern brauchen einander.\pMerk dir das. Bitte."
-
-
+    .autostring 34 2 "Die Geräuschkulisse der Natur hat mich zu sehr abgelenktDOTS"
 .elseif LANG_EN
 
+str_0x8a9d7f:
+    .autostring 34 2 "Is there anything more exhilarating than that crunching sound of leaves under your feet?"
+str_0x8aaf13:
+    .autostring 34 2 "The sounds of natur distracted me too muchDOTS"
 .endif
 
 
@@ -567,176 +401,51 @@ end
 .ifdef LANG_GER
 
 str_0x8ab8e2:
-    .string "Mein Konkurent dort drüben meint,\ner würde es in Manus Arena\lschaffen. Dabei bin ich es, der\ldiesen Posten ergattern wird! Sieh\ldir nur an, wie viel ich trainiert\lhabe!"
-
-
-
+    .autostring 34 2 "Ich bin extrem stark!\pIch habe sogar einmal Manuel aus Blütenbach herausgefordert!\pDu hast keine Chance!"
 str_0x8abf92:
-    .string "Dann muss ich wohl noch härter an\nmir und meinen Pokémon arbeiten!"
-
-
+    .autostring 34 2 "Unmöglich!\nDu bist sehr stark!"
 .elseif LANG_EN
 
-.endif
-
-
-ow_script_map_3_41_trainer_15:
-pause 0x20
-goto ow_script_0x8cb3c8
-
-
-ow_script_0x8cb3c8:
-checkflag POKERADAR_POKEMON_SPAWNED
-gotoif LESS ow_script_0x8ac1e8
-goto ow_script_0x8ac281
-
-
-ow_script_0x8ac281:
-fadescreen 0x1
-sound 0x27
-checksound
-sound 0x27
-checksound
-sound 0x27
-checksound
-callasm 0x919a201
-compare POKERADAR_EMENY_SPECIES 0xffff
-gotoif EQUAL ow_script_0x8ac33f
-callasm 0x9199e31
-compare 0x8002 0x0
-gotoif EQUAL ow_script_0x8ac33f
-callasm 0x9199de1
-hidesprite 0xfe
-showsprite 0xfe
-clearflag POKERADAR_POKEMON_SPAWNED
-fadescreen 0x0
-callasm 0x9199c01
-cry 0x8000 0x0
-call ow_script_0x8ac217
-waitcry
-loadpointer 0x0 str_0x8ac2ec
-callstd MSG
-setvar POKERADAR_ENEMY_STATE 0x0
-end
-
-
-ow_script_0x8ac217:
-random 0x4
-addvar LASTRESULT 0x52
-singlemovement 0xfe 0x800d
-waitmovement 0x0
-singlemovement 0xfe 0x800d
-waitmovement 0x0
-singlemovement 0xfe 0x63
-waitmovement 0x0
-return
-
-
-ow_script_0x8ac33f:
-fadescreen 0x0
-loadpointer 0x0 str_0x8ac34b
-callstd MSG
-end
-
-
-ow_script_0x8ac1e8:
-loadpointer 0x0 str_0x8ac381
-callstd MSG
-end
-
-
-.ifdef LANG_GER
-
-str_0x8ac2ec:
-    .string "Ein Pokémon scheint hier in der\nNähe zu sein! Lass dich nicht von\lihm erwischen!"
-
-
-
-str_0x8ac34b:
-    .string "Der Pokeradar konnte keine Pokémon\nausfindig machen."
-
-
-
-str_0x8ac381:
-    .string "Aber der Pokeradar hat doch schon\nein Pokémon entdeckt!"
-
-
-.elseif LANG_EN
-
+str_0x8ab8e2:
+    .autostring 34 2 "I am extremely strong.\pI once even challanged Manuel of Petal Creek to a battle!\pYou have no chance!"
+str_0x8abf92:
+    .autostring 34 2 "Impossible!\pYou are very strong indeed!"
 .endif
 
 
 ow_script_map_3_41_trainer_22:
-loadpointer 0x0 str_0x8de6b0
-callstd MSG_FACE
-end
-
+    loadpointer 0 str_revo
+    special 0xE
+    loadpointer 0x0 str_0x8de6b0
+    callstd MSG_FACE
+    special 0xF
+    end
 
 .ifdef LANG_GER
-
+str_revo:
+    .string "Revolutionär"
 str_0x8de6b0:
-    .string "Krieg den Top Vier, Krieg dem\nChampion! Friede dem Volk!"
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_41_trainer_21:
-loadpointer 0x0 str_0x8dea32
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8dea32:
-    .string "Wende dich gegen deine\nUnterdrücker, Junge! Sei kein\lSklave der Top Vier!"
-
+    .autostring 34 2 "Unser Anführer nimmt sich am Strand einen Moment Zeit für sich.\pWir warten hier solange auf ihn."
 
 .elseif LANG_EN
-
+str_revo:
+    .string "Revolutionary"
+str_0x8de6b0:
+    .autostring 34 2 "Our leader takes some time for himself at the beach.\pWe will wait here for him."
 .endif
-
-
-ow_script_map_3_41_trainer_20:
-loadpointer 0x0 str_0x8de6ea
-callstd MSG_FACE
-end
-
-
-.ifdef LANG_GER
-
-str_0x8de6ea:
-    .string "Jeder korrupte Polizist soll\nbezahlen für seine Taten!"
-
-
-.elseif LANG_EN
-
-.endif
-
-ow_script_0x8dce6c:
-setvar 0x8000 POKEMON_BARSCHWA
-goto ow_script_find_egg
-end
-
-
 
 ow_script_map_3_41_trainer_17:
 loadpointer 0x0 str_0x8e6508
 callstd MSG_FACE
 end
 
-
 .ifdef LANG_GER
 
 str_0x8e6508:
-    .string "Südlich von hier liegt Ceometria,\ndie Insel der Toten.\pWann immer ein Trainer einen\nVerlust betrauern muss, besucht er\ldiesen OrtDOTS"
-
-
+    .autostring 34 2 "Südlich von hier liegt Ceometria, die Stadt der Toten.\pAm Waldfriedhof dort betrauern Trainer ihre verstorbenen Pokémon."
 .elseif LANG_EN
-
+str_0x8e6508:
+    .autostring 34 2 "Going south from here you will eventually reach Ceometria, the town of the dead.\pAt the Forest Cemetery there, trainers pay tribute to the Pokémon they lost."
 .endif
 
 
@@ -750,16 +459,15 @@ end
 .ifdef LANG_GER
 
 str_0x8e658b:
-    .string "Was hältst du von der\nRevolutionsbewegung? Ich finde ja,\lsie hat in einigen Punkten\ldurchaus Recht!"
-
-
-
+    .autostring 34 2 "Ich bin tierisch genervt!\pDiese Revolutionäre in ihren grünen Kapuzen wollten mich überreden, bei ihnen mitzumachen!\pWas für ein Unfug!\pKomm mir du jetzt nicht auch noch blöd!"
 str_0x8e65f1:
-    .string "Vielleicht schließe ich mich den\nRevolutionären an!"
-
-
+    .autostring 34 2 "Ergh\nHeute geht mir alles auf den SenkelDOTS"
 .elseif LANG_EN
 
+str_0x8e658b:
+    .autostring 34 2 "I am really annoyed!\pThese revolutionaries with their green hoodies tried to convince me to join them!\pWhat a nonsense!\pYou better don't annoy me more now!"
+str_0x8e65f1:
+    .autostring 34 2 "Ergh\nToday everything just sucksDOTS"
 .endif
 
 
@@ -772,11 +480,10 @@ end
 .ifdef LANG_GER
 
 str_0x8e6626:
-    .string "Manchmal findet man hier einige\nGeist Pokémon, die sich von\lCeometria, der Stadt der Toten,\ldie südlich liegt, hierher verirrt\lhaben."
-
-
+    .autostring 34 2 "Von Zeit zu Zeit irren einige Geist-Pokémon hier umher.\pSie kommen wohl aus Ceometria, südlich von hier."
 .elseif LANG_EN
-
+str_0x8e6626:
+    .autostring 34 2 "From time to time some Ghost-type Pokémon wander arround here.\pThey probably come from Ceometria."
 .endif
 
 
@@ -829,12 +536,10 @@ compare LASTRESULT 0x6
 gotoif LESS ow_script_0x8fb0c5
 goto ow_script_0x8dc43a
 
-
 ow_script_0x8dc43a:
 loadpointer 0x0 str_0x8dc8dd
 callstd MSG_FACE
 end
-
 
 ow_script_0x8fb0c5:
 fanfare 0x13e
@@ -843,122 +548,16 @@ faceplayer
 loadpointer 0x0 str_0x87ae8d
 callstd MSG_KEEPOPEN
 waitfanfare
-givepokemon POKEMON_BIBOR 0xc ITEM_BIBORNIT 0x0 0x0 0x0
+givepokemon POKEMON_BIBOR 0xc 0 0x0 0x0 0x0
+compare LASTRESULT 0x2
+gotoif EQUAL ow_script_0x8dc43a
 bufferpokemon 0x0 POKEMON_BIBOR
 bufferpokemon 0x1 POKEMON_BIBOR
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-call ow_script_0x947e82
-clearflag TRANS_DISABLE
+call ow_script_set_nickname
 loadpointer 0x0 str_0x8dcd2f
 callstd MSG_FACE
 setflag BIBOR_QUEST_BIBOR_RECEIVED
 end
-
-
-ow_script_0x947e82:
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x880b86
-compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x880ba0
-compare LASTRESULT 0x2
-gotoif EQUAL ow_script_0x880be5
-end
-
-
-ow_script_0x880be5:
-textcolor 0x3
-loadpointer 0x0 str_0x1a8bc9
-callstd MSG_KEEPOPEN
-setvar LASTRESULT 0xff
-return
-
-
-ow_script_0x880ba0:
-call ow_script_0x880bd9
-loadpointer 0x0 str_set_nickname
-callstd MSG_YES_NO
-compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x880bcd
-return
-
-
-ow_script_0x880bcd:
-call show_box_nickname_form
-call ow_script_0x1aba6e
-return
-
-
-ow_script_0x1aba6e:
-bufferboxname 0x0 0x4037
-checkflag 0x834
-callif LESS ow_script_0x1aba89
-checkflag 0x834
-callif EQUAL ow_script_0x1abab4
-return
-
-
-ow_script_0x1abab4:
-special2 0x800d 0x165
-compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x1abacd
-loadpointer 0x0 str_0x1a8ac7
-callstd MSG_KEEPOPEN
-return
-
-
-ow_script_0x1abacd:
-special2 0x800d 0x18a
-bufferboxname 0x2 0x800d
-loadpointer 0x0 str_0x1a8b4b
-callstd MSG_KEEPOPEN
-return
-
-
-ow_script_0x1aba89:
-special2 0x800d 0x165
-compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x1abaa2
-loadpointer 0x0 str_0x1a8a83
-callstd MSG_KEEPOPEN
-return
-
-
-ow_script_0x1abaa2:
-special2 0x800d 0x18a
-bufferboxname 0x2 0x800d
-loadpointer 0x0 str_0x1a8b08
-callstd MSG_KEEPOPEN
-return
-
-
-ow_script_0x880bd9:
-return
-
-
-ow_script_0x880b86:
-goto ow_script_0x8c8acf
-
-
-ow_script_0x8c8acf:
-loadpointer 0x0 str_set_nickname
-callstd MSG_YES_NO
-compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x931332
-clearflag TRANS_DISABLE
-return
-
-
-ow_script_0x931332:
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-countpokemon
-subvar LASTRESULT 0x1
-copyvar 0x8004 LASTRESULT
-fadescreen 0x1
-special 0x9e
-waitstate
-return
 
 
 ow_script_0x8fb076:
@@ -1006,101 +605,62 @@ end
 .ifdef LANG_GER
 
 str_0x8dcaa4:
-    .string "Der Rüpel ist wohl nach Norden\ngerannt, in Richtung Route 3!"
-
-
-
+    .autostring 34 2 "Wenn ich mich nicht täusche, ist der Rüpel nach Norden, in Richtung Route 3 geflohen!"
 str_0x8dca59:
-    .string "Oh, du hast meine Bibor\nzurückgebracht! Vielen, vielen\lDank!"
-
-
-
+    .autostring 34 2 "Du hast mir mein Bibor wiedergebracht!\pWahnsinn!\nDankesehr!"
 str_0x8dc421:
-    .string "PLAYER übergibt die Bibor!"
-
-
-
+    .autostring 34 2 "PLAYER übergibt Bibor!"
 str_0x8dc9a6:
-    .string "Was ist das? Sieht so aus, als\nwolle eines der Bibor bei dir\lbleiben. Willst du das Bibor in\ldein Team aufnehmen?"
-
-
-
+    .autostring 34 2 "Was ist das?\pEs sieht so aus, als wolle das Bibor bei dir bleiben.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pEs wäre bei dir sicherlich in guten Händen.\pWas sagst du?\nWillst du Bibor in dein Team aufnehmen?"
 str_0x8fb02d:
-    .string "Das ist aber schade! Komm wieder,\nwenn du es dir anders überlegt\lhast."
-
-
-
+    .autostring 34 2 "Das ist natürlich enttäuschend.\pAber ich bin mir sicher, dass das Bibor, wenn du deine Meinung ändern solltest, jederzeit gerne an deiner Seite kämpfen würde."
 str_0x8dc8dd:
-    .string "Sieht so aus, als hättest du nicht\ngenug Platz in deinem Team.\pKomm wieder, wenn du Platz in\ndeinem Team hast."
-
-
-
+    .autostring 34 2 "Sieht so aus, als hättest du keinen Platz, um das Bibor aufzunehmen!\pKomm wieder, wenn du Platz geschaffen hast!"
 str_0x87ae8d:
-    .string "PLAYER hat Bibor erhalten!"
-
-
-
+    .autostring 34 2 "PLAYER hat Bibor erhalten!"
 str_0x8dcd2f:
-    .string "Kümmere dich gut um Bibor!"
-
-
-
-@ ToDo: Investigate sentences containing the word "PC"
-str_0x1a8bc9:
-    .string "Es ist kein Platz mehr für Pokémon\nvorhanden!\pDie Pokémon Boxen sind voll und\nes kann kein Pokémon mehr\labgelegt werden!"
-
-
-
-str_0x1a8ac7:
-    .string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
-
-
-
-str_0x1a8b4b:
-    .string "Box QUOTEBUFFER_3QUOTE\nauf dem PC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
-
-
-
-str_0x1a8a83:
-    .string "BUFFER_2 wurde auf den PC\nübertragen.\pEs wurde in Box\nQUOTEBUFFER_1QUOTE abgelegt."
-
-
-
-str_0x1a8b08:
-    .string "Box QUOTEBUFFER_3QUOTE\nauf dem PC ist voll.\pBUFFER_2 wurde in Box\nQUOTEBUFFER_1QUOTE übertragen."
-
-
-
+    .autostring 34 2 "Kümmere dich gut um Bibor!"
 str_0x8dcba5:
-    .string "Oh, du siehst aus wie ein Trainer!\nEiner dieser Schurken von Team\lViolet hat mich kurzerhand aller\lmeiner gezüchteten Bibor beraubt.\pIch selbst bin kein Trainer, wärst\ndu also so freundlichen, sie mir\lwiederzuholen?"
-
-
-
+    .autostring 34 2 "Du bist ein Trainer, oder?\pEben waren diese Schurken von Team Violet hier und haben mir kurzerhand mein Bibor gestohlen.\pIch habe das Bibor selbst großgezogen.\pIch habe es gekannt, als es noch ein Hornliu war.\pBitte, ich kann gegen diese Ganoven nichts ausrichten.\pWürdest du mir mein Bibor wieder zurückholen?"
 str_0x8dcb0a:
-    .string "Wie überaus rühmlich von dir! Ich\nbin auf deine Hilfe angewiesen!"
-
-
-
+    .autostring 34 2 "Ja wirklich?\nWie überhaus großherzig von dir!"
 str_0x8dcb58:
-    .string "Wie jammerschade! Was soll ich\ndenn als Imker nun tun, so ganz\lohne Bibor?"
-
-
-
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pNein, das verstehe ich natürlich.\pMein armes BiborDOTS"
 str_0x8fcddd:
-    .string "Bist du gekommen, um das Bibor in\ndein Team aufzunehmen?"
-
-
-
+    .autostring 34 2 "Bist du gekommen, um Bibor in dein Team aufzunehmen?"
 str_0x8dc958:
-    .string "Das ist aber schade! Solltest du\ndeine Meinung ändern, komm einfach\lzu mir."
-
-
-
+    .autostring 34 2 "Na gut!\nAber wenn du deine Meinung geändert hast, kannst du dir sicher sein, dass Bibor und ich hier auf dich warten werden."
 str_0x8dcd4c:
-    .string "Ich möchte dir vielmals danken,\ndass du mir meine Bibor\lzurückgebracht hast.\pSie sind mein ganzer Stolz, musst\ndu wissen!"
-
-
+    .autostring 34 2 "Ich bin dir unendlich dankbar dafür, dass du mein Bibor aus den Fängen von Team Violet befreit hast.\pIch weiß gar nicht, wie ich diese Schuld jemals begleichen sollteDOTS"
 .elseif LANG_EN
+str_0x8dcaa4:
+    .autostring 34 2 "If I am not mistaken, the grunt fled to Route 3, north of here!"
+str_0x8dca59:
+    .autostring 34 2 "You brought my Beedrill back!\pThank you so much!"
+str_0x8dc421:
+    .autostring 34 2 "PLAYER hands over the Beedrill"
+str_0x8dc9a6:
+    .autostring 34 2 "What's that?\pIt looks like the Beedrill wants to stay with you.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIt would be in good hands for sureDOTS\pWhat do you think?\pDo you want to take the Beedrill into your party?"
+str_0x8fb02d:
+    .autostring 34 2 "Thats disappointing.\pBut I am sure, if you ever change your mind, the Beedrill would be very happy to fight at your side"
+str_0x8dc8dd:
+    .autostring 34 2 "Looks like you don't have room to get the Beedrill!\pCome back once you made room for it!"
+str_0x87ae8d:
+    .autostring 34 2 "PLAYER received Beedrill!"
+str_0x8dcd2f:
+    .autostring 34 2 "Take good care of Beedrill!"
+str_0x8dcba5:
+    .autostring 34 2 "You are a trainer, right?\pJust now, these grunts of Team Violet were here and stole my precious Beedrill!\pI raised that one myself.\pI have known it ever since it was a Weedle.\pKnowing it's now with people like these breaks my heart.\pPlease, I can't do anything against these grunts.\pCould you, maybe, get back my Beedrill?"
+str_0x8dcb0a:
+    .autostring 34 2 "Really?\pThat's amazing!\pThank you so much!"
+str_0x8dcb58:
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pOh, I understand, really.\pMy poor BeedrillDOTS"
+str_0x8fcddd:
+    .autostring 34 2 "Did you come to take the Beedrill into your party?"
+str_0x8dc958:
+    .autostring 34 2 "Alright!\pIf you change your mind, be sure that I and Beedrill will be waiting here for you!"
+str_0x8dcd4c:
+    .autostring 34 2 "I am infintely thankful to you for saving my Beedrill!\pI really don't know how to repay that debt everDOTS"
 
 .endif
 
@@ -1133,21 +693,18 @@ end
 .ifdef LANG_GER
 
 str_0x8abe1c:
-    .string "Acht lange Jahre habe ich für die\nLaz.Corp geschuftet. Acht lange\lJahre habe ich mich der\lEntwicklung von Software gewidmet.\lAcht lange Jahre habe ich\lkaltherzig Pokémon ausgebeutet,\lnur des Fortschritt wegens.\lJetzt endlich habe ich meine\lFehler eingesehen. Es ist falsch,\lPokémon für kommerzielle Zwecke\lauszunutzen.\lHier, nimm das. Ich habe dafür\lkeine Verwendung mehr."
-
-
-
+    .autostring 34 2 "Viele lange Jahre habe ich für Professor Primus in der Laz. Corp gearbeitet.\pUnd wofür?\nEr wirft mich einfach so raus!\pAber bei meinem Abgang habe ich etwas mitgehen lassen!\pIch lasse mich nicht einfach so abspeisen.\pNur habe ich dafür überhaupt keine Verwendung.\pVielleicht kannst du es ja gebrauchen?"
 str_0x8ab77f:
-    .string "Das Linkkabel simuliert einen\nechten Pokémon Tausch, sodass\ljene, die sich erst im Tausch\lentwickeln, auf diese Weise zu\lihrer Evolution gelangen können.\lIst es nicht grotesk, wozu unsere\lTechnik fähig ist? Pokémon zur\lEvolution zwingen? DOTS\lAber nicht mit mirDOTS Soll die\lLaz.Corp doch machen, was sie für\lrichtig hält. Ich halte mich da ab\ljetzt raus!"
-
-
-
+    .autostring 34 2 "Das Linkkabel simuliert einen Pokémon-Tausch.\pManche Pokémon entwickeln sich auf diese Weise."
 str_0x8ab6bf:
-    .string "Mein Boss wollte, dass ich ein\nRaum-Zeit-Portal konstruiere, dass\ldie Lebensenergie von Pokémon als\lEnergiequelle nutztDOTS Ab diesem\lPunkt war mir klar, dass es so\lnicht weitergehen kannDOTS"
-
-
+    .autostring 34 2 "Professor Primus Forschung an einem Raum-Zeit-Portal ist einfach blanker Wahnsinn.\pIch musste ihm meine Bedenken mitteilen.\pAber er ist grausam und hat mich einfach rausgeschmissenDOTS"
 .elseif LANG_EN
-
+str_0x8abe1c:
+    .autostring 34 2 "I spent so many years working for Professor Primus at the Laz. Corp.\pAnd for what?\pThey just fire me!\pBut when I left I took something from them.\pI won't just silently disappear!\pUnfortunately, I don't have any use for it.\pMaybe you want to have it?"    
+str_0x8ab77f:
+    .autostring 34 2 "The link cable simulates a Pokémon trade.\pSome Pokémon evolve that way."
+str_0x8ab6bf:
+    .autostring 34 2 "Professor Primus' research on a space-time-portal is just insanity.\pI had to tell them my objections!\pBut Primus is just too cruel.\pHe instantly fired me for thatDOTS"
 .endif
 
 
@@ -1159,12 +716,9 @@ ow_script_movs_0x8dea30:
 ow_script_map_3_41_trainer_19:
 lock
 faceplayer
-draw_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
+draw_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT mask_name=1
 loadpointer 0x0 str_0x8e225d
 callstd MSG_KEEPOPEN
-multichoice 8 8 0 1
-compare LASTRESULT 0x1
-gotoif EQUAL ow_script_0x947e76
 closeonkeypress
 hide_mugshot
 special 0x113
@@ -1175,13 +729,13 @@ fadesong MUS_REVOLUTION
 applymovement 0x800f ow_script_movs_0x8dea30
 waitmovement 0x0
 loadpointer 0x0 str_0x8e1e69
-show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT mask_name=1
 applymovement 0x7F mov_cam_back
 waitmovement 0
 special 0x114
 faceplayer
 loadpointer 0x0 str_0x8de830
-show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT
+show_mugshot MUGSHOT_ALBUS MUGSHOT_LEFT mask_name=1
 fadescreen 0x1
 hidesprite 0x800f
 fadescreen 0x0
@@ -1189,12 +743,6 @@ fadesong MUS_ROUTE_24_25
 release
 end
 
-
-ow_script_0x947e76:
-loadpointer 0x0 str_0x9312b4
-callstd MSG_FACE
-hide_mugshot
-end
 
 mov_cam:
 	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STOP
@@ -1206,27 +754,18 @@ mov_cam_back:
 .ifdef LANG_GER
 
 str_0x8e225d:
-	.autostring 35 2 "Hallo, junger Trainer.\pBist du auch gekommen, um den Blick aufs Meer zu genießen?\pHast du vielleicht die Zeit, ein wenig dem Schwachsinn eines alten Mannes zu lauschen?"
-
-
+    .autostring 34 2 "Hallo, mein Kind.\pBeim Blick auf das Meer, werde ich immer ganz sentimentalDOTS"
 str_0x8e1e69:
-	.autostring 35 2 "Weißt du, wie das Regierungssystem in Theto entstanden ist?\pVor einiger Zeit taten sich drei äußerst starke Trainer zusammen und begannen den Kontinent gewaltsam zu erobern.\pEs dauerte nicht lange, da hatten sie die Herrschaft über Theto errungen.\pZwischenzeitlich hatten sich aber einige andere Trainer dem Trio angeschlossen, sodass der Kontinent schließlich unter den Stärksten von ihnen aufgeteilt wurde.\pAn ihrer Spitze stand der mächtigste Trainer, der sich fortan Champion nannte.\pTheto selbst unterteilte man in vier Gebiete, jedes von einem enorm mächtigen Trainer regiert, dessen Aufgabe es war, der Region Schutz zu bieten.\pDiese vier Trainer nennen wir heute die Top Vier und zusammen mit dem Champion bilden sie die Pokémon-Liga.\pSpäter installierte man Instiutionen wie die Landespolizei, die als Arm der Top Vier für Recht und Ordnung sorgen sollten.\pDoch im Laufe der Zeit DOTS DOTS DOTS\pAls neue Trainertalente die Posten der Top Vier besetzten, geriet das System langsam aber sicher außer Kontrolle.\pKorruption und Machtgier sowie Konflikte unter den Top Vier brachten den Bürgern viel Leid.\pDie Missstände in Theto werden von Tag zu Tag untragbarerDOTS DOTS\pUnd darum haben die Menschen irgendwann begonnen, gegen die Top Vier aufzubegehren.\pAus diesem Aufbegehren enstand schließlich die Revolutionsbewegung."
-
-
-
+	.autostring 34 2 "Ich erinnere mich dann immer an die guten alten Zeiten zurück.\pBevor Korruption und Machthunger diese Region zerstört haben.\pDamals, als die Trainer nichts als das Kämpfen im Sinn hatten.\pAls niemand möglichst viel Kontrolle über etwas erlangen wollte.\pAberDOTS DOTS DOTS\nDOTS DOTS DOTS\pDiese Zeiten sind vorbei, nicht?"
 str_0x8de830:
-	.autostring 35 2 "Wir alle müssen irgendwann entscheiden, wem wir unsere Treue leisten.\pDen Top Vier, deren Stärke der Region Stabilität sichert, oder den Bürgern, die ihn bewohnen.\pEgal, wie du dich entscheidest, Kind, lass es eine Entscheidung des Gewissens sein.\pDOTS DOTS DOTS\pNun habe ich aber genug sinniert, ich lasse dich nun wieder in Ruhe.\pVielleicht begnenen wir uns noch einmal, das kann man nie wissen."
-
-
-str_0x9312b4:
-    .autostring 35 2 "DOTS DOTS DOTS\pDas kann ich dir natürlich nicht verübeln.\pGeh nur, ich werde es einem Kind schon nachsehenDOTS"
-
-
+	.autostring 34 2 "Entschuldige bitte.\pIch muss dir sehr seltsam vorkommen.\pDas Geschwafel eines alten Mannes kann ein Kind nicht beeindrucken.\pAber ich sehe dir an, dass du kein gewöhnlicher Trainer bist.\pWenn ich Recht behalte, dann werden wir uns sicherlich wiedersehen.\pVielleicht, in einem ganz anderen Licht!"
 .elseif LANG_EN
 
-.endif
+str_0x8e225d:
+    .autostring 34 2 "Hello, little one.\pWhen looking at the ocean, I just get very sentimalDOTS"
+str_0x8e1e69:
+	.autostring 34 2 "I remember the good old times then.\pBefore corruption and the hunger for power ruined this region entirely.\pBack then, when trainers only ever cared for battling.\pAnd no one wanted to get control over anything.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pBut these times are long gone, eh?"
+str_0x8de830:
+	.autostring 34 2 "I am very sorry.\pI must seem very weird to you.\pAn old man's speech won't impress a child.\pBut I can see that you are no ordinary child at all.\pAnd if I am right, we will most likely meet again.\pProbably, under completely different circumstances."
 
-ow_script_0x93d5cd:
-setvar 0x8000 POKEMON_ELEKID
-call ow_script_find_egg
-end
+.endif

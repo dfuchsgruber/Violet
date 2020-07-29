@@ -4683,10 +4683,10 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 223,
-					"horizontal_flip": 1,
-					"vertical_flip": 0,
-					"palette_idx": 8
+					"tile_idx": 701,
+					"palette_idx": 8,
+					"horizontal_flip": 0,
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,
@@ -4751,10 +4751,10 @@
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 223,
+					"tile_idx": 702,
+					"palette_idx": 8,
 					"horizontal_flip": 0,
-					"vertical_flip": 0,
-					"palette_idx": 8
+					"vertical_flip": 0
 				},
 				{
 					"tile_idx": 0,

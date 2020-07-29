@@ -1,8 +1,19 @@
-.include "overworld_script.s"
-.include "vars.s"
-.include "flags.s"
-.include "callstds.s"
 .include "ordinals.s"
+.include "vars.s"
+.include "attacks.s"
+.include "move_tutor.s"
+.include "movements.s"
+.include "map_adjacency_types.s"
+.include "specials.s"
+.include "callstds.s"
+.include "songs.s"
+.include "mugshot.s"
+.include "flags.s"
+.include "map_connections.s"
+.include "overworld_script.s"
+.include "species.s"
+.include "items.s"
+
 
 .global ow_script_set_nickname
     ow_script_set_nickname:

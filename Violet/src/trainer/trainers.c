@@ -222,7 +222,7 @@ trainer trainers[TRAINER_CNT] = {
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
     0x0, // field_1E
-    4, // Pokemon Count
+    2, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23

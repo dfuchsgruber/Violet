@@ -4,6 +4,15 @@
 .include "mugshot.s"
 .include "overworld_script.s"
 
+
+.global ow_script_route_2_felix
+
+ow_script_route_2_felix:
+	addvar STORY_PROGRESS 1
+	releaseall
+	end
+
+/** 
 .global ow_script_route_2_felix
 
 ow_script_route_2_felix:
@@ -40,3 +49,5 @@ str_after_healing:
 .elseif LANG_EN
 
 .endif
+
+*/
