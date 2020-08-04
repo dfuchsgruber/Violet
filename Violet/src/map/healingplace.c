@@ -27,6 +27,7 @@ stru_flight_position flight_positions[NUM_HEALING_PLACES] = {
     [HEALINGPLACE_LAUBDORF - 1] = {3, 9, 0x12, 0x2b, 0}, // Laubdorf
     [HEALINGPLACE_HAWEILAND - 1] = {3, 17, 0x1e, 0x15, 0}, // Haweiland
     [HEALINGPLACE_BBSHIP - 1] = {33, 0, 3, 5, 0}, // Shouldn't be able to fly there though...
+    [HEALINGPLACE_TANNS_LAB - 1] = {3, 41, 0x14, 0x37, 0}, // Tann's Lab
     [NUM_HEALING_PLACES - 1] = {0xFF, 0xFF, 0, 0, 0}
 };
 
@@ -52,6 +53,7 @@ stru_healing_place_map healing_place_maps[NUM_HEALING_PLACES] = {
 	[HEALINGPLACE_CEOMETRIA - 1] = {19, 0}, 
 	[HEALINGPLACE_HAWEILAND - 1] = {27, 3},
     [HEALINGPLACE_BBSHIP - 1] = {33, 0},
+    [HEALINGPLACE_TANNS_LAB - 1] = {3, 66},
     [NUM_HEALING_PLACES - 1] = {0xFFFF, 0xFFFF}
 };
 
@@ -67,6 +69,7 @@ u8 healing_place_target_persons[NUM_HEALING_PLACES] = {
 	[HEALINGPLACE_CEOMETRIA - 1] = 1,
 	[HEALINGPLACE_HAWEILAND - 1] = 1,
     [HEALINGPLACE_BBSHIP - 1] = 0xFF,
+    [HEALINGPLACE_TANNS_LAB - 1] = 1,
     [NUM_HEALING_PLACES - 1] = 0xFF
 };
 
@@ -82,6 +85,7 @@ coordinate_t healing_place_target_coordinates[NUM_HEALING_PLACES] = {
 		[HEALINGPLACE_CEOMETRIA - 1] = {0x7, 0x4}, 
 		[HEALINGPLACE_HAWEILAND - 1] = {0x7, 0x4},
         [HEALINGPLACE_BBSHIP - 1] = {3, 5},
+        [HEALINGPLACE_TANNS_LAB - 1] = {7, 6},
 		[NUM_HEALING_PLACES - 1] = {-1, -1}
 };
 

@@ -64,8 +64,8 @@
 					"picture": 69,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 12,
-					"y": 23,
+					"x": "5",
+					"y": "2",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -90,12 +90,12 @@
 					"picture": 54,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "29",
-					"y": "25",
+					"x": "27",
+					"y": "27",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_UP_LEFT_RIGHT_DOWN",
 					"behaviour_range": {
-						"x": "4",
+						"x": "6",
 						"y": "4"
 					},
 					"is_trainer": "1",
@@ -132,7 +132,7 @@
 					"field_B": 0,
 					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": "ITEM_AETHER",
+						"item": "ITEM_FLUCHTSEIL",
 						"species": 0,
 						"berry_tree_idx": 0
 					}

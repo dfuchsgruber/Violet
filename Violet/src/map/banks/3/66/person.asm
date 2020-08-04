@@ -21,9 +21,9 @@ ow_script_map_3_66_person_0:
 	gotoif EQUAL check_expedition1
 expedition_announced:
 	loadpointer 0x0 str_0x843a47
-	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
+	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED
 	call ow_script_healing_sequence
-	playsong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY 0x0
+	// playsong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY 0x0
 	loadpointer 0x0 str_0x843aba
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT MSG_FACE
 	releaseall
@@ -155,34 +155,36 @@ str_8:
 str_9:
 	.autostring 34 2 "Du erreichst Orina City über Route 5, welche sich westlich von hier befindet.\pDu solltest mich auf jeden Fall in der Laz. Corp besuchen kommen, PLAYER!\pDas virtuelle Pokémon wird dich ganz sicher begeistern!"
 
-
 str_0x843a47:
-	.autostring 35 2 "Du und deine Pokémon sehen ja schrecklich erschöpft aus!\pSetz dich doch erst einmal eine Weile hin und ruh dich aus!"
-
-
-
+	.autostring 35 2 "Du und deine Pokémon sehen ja schrecklich erschöpft aus!\pSetz dich doch noch einmal eine Weile hin und ruh dich aus!"
 str_0x843aba:
 	.autostring 35 2 "Na siehst du?\pDu und deine Pokémon sehen schon wieder ganz fit aus!"
 
 
 .elseif LANG_EN
 
+str_0x843a47:
+	.autostring 34 2 "You and your Pokémon look terribly exhausted!\pTake a set and get some rest, what do you think?"
+str_0x843aba:
+	.autostring 34 2 "See?\pYou and your Pokémon are look quite fit again!"
+
 .endif
 
 
 ow_script_map_3_66_person_2:
 loadpointer 0x0 str_0x8a679f
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT MSG_FACE emotion=MUGSHOT_HAPPY
 end
 
 
 .ifdef LANG_GER
 
 str_0x8a679f:
-	.autostring 35 2 "Ich werde ganz sicher mehr Pokémon in meiner Pokédex-app registrieren, als du!"
-
+	.autostring 35 2 "Ich werde ganz sicher mehr Pokémon in meiner Pokédex-App registrieren als du!"
 .elseif LANG_EN
 
+str_0x8a679f:
+	.autostring 35 2 "Ich will definitely register way more Pokémon in my Pokédex-App than you!"
 .endif
 
 ow_script_map_3_66_person_1:
@@ -229,24 +231,28 @@ end
 .ifdef LANG_GER
 
 str_0x8aac71:
-	.autostring 35 2 "Ohje, PLAYER!\nBeinahe hätte ich vergessen, dass auch ich für euch noch ein Geschenk habe.\pSeit einiger Zeit widme ich mich nämlich einem System, das helfen soll, Trainer von überall miteinander zu verbinden.\pDieses System heißt Wundertausch und das Ganze ist, um ehrlich zu sein, unglaublich aufregend!\pMan bietet eines seiner Pokémon zum Tausch an.\pDann wird es an einen Trainer irgendwo auf der Welt versandt und man erhält dessen verschicktes Pokémon.\pMan weiß nie, wen dein Pokémon erreicht!\pSpannend nicht?\pIch werde die Wundertausch-App auf deinem Poképad installieren."
-
-
-str_0x8aa801:
+	.autostring 34 2 "Ach, PLAYER!\pIch hätte beinahe vergessen, dass auch ich für euch ein Geschenk habe.\pVor einiger Zeit habe ich ein System entwickelt, dass es Trainern erleichtert, Pokémon miteinander zu tauschen.\pIch habe das ganze Wundertausch genannt und um ehrlich zu sein, ich finde, dass es eine meiner besseren Ideen ist.\pMan bietet eines seiner Pokémon zum Tausch an.\pDann wird es einem zufälligen Trainer irgendwo auf der Welt zugesandt und man im Gegenzug eines seiner Pokémon.\pDas Aufregende dabei ist, dass man nie genau weiß, welches Pokémon man erhält.\pWenn du dieses System nutzt, wird es dir sicherlich noch viel leichter fallen, Daten für den Pokédex zu sammeln.\pIch werde jetzt die Wundertausch-App auf deinem Poképad installieren!"
+	str_0x8aa801:
     .autostring 35 2 "Elise hat die Wundertausch-App auf dem Pokepad installiert!"
-
-
-
 str_0x8ab119:
-	.autostring 35 2 "Eine Sache noch.\pJe öfter du den Wundertausch benutzt, desto höher steigt dein Level.\pMit einem hohen Wundertausch-Level kannst du mit anderen erfahrenen Trainern tauschen, sodass du häufiger seltene Pokémon mit besonderen Fähigkeiten erhältst.\pDadurch lohnt es sich für jeden, die App häufig zu benutzen und die Menschen der Welt zu verbinden.\pDas ist mein großer Traum.\pIch würde mich freuen, wenn du mir hilfst, ihn zu verwirklichen und den Wundertausch oft benutzt."
-
-
+	.autostring 35 2 "Eine Sache noch.\pJe öfter du den Wundertausch benutzt, desto höher steigt dein Level.\pMit einem hohen Wundertausch-Level kannst du mit anderen erfahrenen Trainern tauschen, sodass du häufiger seltene Pokémon mit besonderen Fähigkeiten erhältst.\pBesonders ambitionierte Trainer sollten meine App also sehr häufig benutzen!"
 str_0x8a7951:
-    .autostring 35 2 "Bald schon werden alle Trainer dieser Welt den Wundertausch benutzen!\pDavon bin ich fest überzeugt!"
-
+    .autostring 35 2 "Hallo PLAYER!\pWie geht es dir?\pSammelst du auch fleißig Daten für den Pokédex?"
 str_expedition2:
     .autostring 34 2 "Professor Tann will dich sehen.\pEr begibt sich bald auf eine Expedition."
 
 .elseif LANG_EN
+
+
+str_0x8aac71:
+	.autostring 34 2 "Oh PLAYER, I almost forgot!\pI also have a present for you!\pSome while ago I developed a system that enables trainers from arround the world to trade Pokémon with one another.\pI called the system Wondertrade and to be quite honest, I think it's one of my better ideas.\pYou offer one of your Pokémon for trading.\pThen it will be sent to a random trainer somewhere else and in return you get one of their Pokémon.\pThe most exciting part about it all is that you can never quite know what kind of Pokémon you will be given.\pIf you make use of this system, it will get a lot easier to collect data for the Pokédex.\pI will just install the Wondertrade-App on your Poképad!"
+	str_0x8aa801:
+    .autostring 35 2 "Elise installed the Wondertrade-App on the Poképad."
+str_0x8ab119:
+	.autostring 34 2 "Just one thing.\pThe more you use the Wondertrade, the higher your level will go.\pWith a high Wondertrade-Level you will be more likely to trade with other experienced trainers and receive more rare and skilled Pokémon.\pIsn't that a great incentive for more ambitious trainers to use the Wondertrade-System very frequently?"
+str_0x8a7951:
+    .autostring 35 2 "Hello PLAYER!\pHow are you?\pAre you collecting data for the Pokédex?"
+str_expedition2:
+    .autostring 34 2 "Professor Fig want's to see you.\pHe will be going on an expedition soon!"
 
 .endif

@@ -14,44 +14,12 @@
 .global ow_script_0x8a6d2a
 .global ow_script_0x8a7011
 .global ow_script_0x8a6d3d
-.global ow_script_0x8a91b8
 .global ow_script_0x8a71a2
 .global ow_script_map_3_41_trigger_0
-ow_script_movs_0x8a71a0:
+
+mov_say_exclam:
 .byte SAY_EXCLAM
 .byte STOP
-
-
-ow_script_movs_0x8a7199:
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STOP
-
-
-ow_script_movs_0x8a7020:
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STOP
-
-
-ow_script_movs_0x8a7006:
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_DOWN
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STOP
-
 
 ow_script_movs_0x8a7003:
 .byte LOOK_LEFT
@@ -63,7 +31,7 @@ ow_script_movs_0x8a69da:
 .byte STOP
 
 
-ow_script_movs_0x8a6ac4:
+mov_face_left_and_exclam:
 .byte LOOK_LEFT
 .byte SAY_EXCLAM
 .byte STOP
@@ -73,101 +41,73 @@ ow_script_map_3_41_trigger_0:
 lockall
 playsong MUS_VIOLET_ENCOUNTER 0x0
 sound 0x15
-applymovement 0xff ow_script_movs_0x8a71a0
+waitmovement 0
+applymovement 0xFF mov_face_right
+waitmovement 0
+applymovement 0xff mov_say_exclam
 waitmovement 0x0
 checksound
-special 0x113
-applymovement 0x7f ow_script_movs_0x8a7199
-waitmovement 0x0
-
-loadpointer 0 str_violet_grunt
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8a7134
-callstd MSG
-special 0xF
-
+msgbox_with_name str_0x8a7134 str_violet_grunt
 loadpointer 0x0 str_0x8a70a9
-show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
-
-loadpointer 0 str_violet_grunt
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8a7027
-callstd MSG
-special 0xF
-
-applymovement 0x7f ow_script_movs_0x8a7020
-waitmovement 0x0
-special 0x114
+show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
+msgbox_with_name str_0x8a7027 str_violet_grunt
+pause 16
 showsprite 0x52
 setflag PKMNMENU
-getplayerpos 0x8000 0x8001
-compare 0x8001 0x37
-callif HIGHER ow_script_0x8a7011
-compare 0x8001 0x38
-callif HIGHER ow_script_0x8a7011
-compare 0x8001 0x39
-callif HIGHER ow_script_0x8a7011
-applymovement 0x52 ow_script_movs_0x8a7006
-waitmovement 0x0
-applymovement 0xff ow_script_movs_0x8a7003
-waitmovement 0x0
+sound 0x15
+applymovement 0xFF mov_face_left_and_exclam
+waitmovement 0
+setvar 0x8004 0x52
+special SPECIAL_NPC_MOVE_TO_PLAYER
+waitmovement 0
+applymovement 0x52 mov_face_right
+waitmovement 0
 loadpointer 0x0 str_0x8a6f8a
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 sound 0x15
-applymovement 0x52 ow_script_movs_0x8a71a0
+applymovement 0x52 mov_say_exclam
 waitmovement 0x0
 checksound
 loadpointer 0x0 str_0x8a6f16
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED
 applymovement 0xff ow_script_movs_0x8a69da
 waitmovement 0x0
 loadpointer 0x0 str_0x8a6bac
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT MSG_FACE
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 sound 0x15
-applymovement 0x2b ow_script_movs_0x8a6ac4
-applymovement 0x2c ow_script_movs_0x8a6ac4
-applymovement 0x2d ow_script_movs_0x8a6ac4
-applymovement 0x2e ow_script_movs_0x8a6ac4
+applymovement 0x2b mov_face_left_and_exclam
+applymovement 0x2c mov_face_left_and_exclam
+applymovement 0x2d mov_face_left_and_exclam
+applymovement 0x2e mov_face_left_and_exclam
 waitmovement 0x0
 checksound
 loadpointer 0x0 str_0x8a6b82
-show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
+show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
 
 loadpointer 0 str_violet_grunt
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8a6bfa
-callstd MSG
-special 0xF
-
-applymovement 0xff ow_script_movs_0x8a7003
+msgbox_with_name str_0x8a6bfa str_violet_grunt
+applymovement 0x52 ow_script_movs_0x8a69da
 waitmovement 0x0
 loadpointer 0x0 str_0x8a6b0d
-show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
     setvar 0x8004 0xFF
     setvar 0x8005 0x13
-    setvar 0x8006 0x38
+    setvar 0x8006 0x39
     special SPECIAL_NPC_MOVE_TO
     setvar 0x8004 0x52
-    setvar 0x8005 0x14
-    setvar 0x8006 0x39
+    setvar 0x8005 0x12
+    setvar 0x8006 0x38
     special SPECIAL_NPC_MOVE_TO
     waitmovement 0
     applymovement 0xFF mov_face_right
     applymovement 0x52 mov_face_right
     waitmovement 0
-
 select:
     setvar SONG_OVERRIDE MUS_VIOLET_ENCOUNTER
-    setflag TRANS_DISABLE
-    clearflag TRANS_PALETTE_FETCH
     loadpointer 0 str_select
     callstd MSG_KEEPOPEN
     special SPECIAL_SELECT_HALF_PARTY
     waitstate
-    clearflag TRANS_DISABLE
     compare LASTRESULT 0
     gotoif EQUAL have_to_select
     setvar SONG_OVERRIDE 0
@@ -180,8 +120,8 @@ water_starter:
     special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
     loadpointer 0 str_violet_grunt
     setvar 0x8000 1
-    special 0xE
-    trainerbattleallytwotrainers 0x8 0x164 0x161 43 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
+    special SPECIAL_NAME_SHOW
+    trainerbattleallytwotrainers 0x8 0x164 0x161 44 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
 
 
 fire_starter:
@@ -189,8 +129,8 @@ fire_starter:
     special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
     loadpointer 0 str_violet_grunt
     setvar 0x8000 1
-    special 0xE
-    trainerbattleallytwotrainers 0x8 0x164 0x160 43 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
+    special SPECIAL_NAME_SHOW
+    trainerbattleallytwotrainers 0x8 0x164 0x160 44 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df str_0x8a6a97 str_after_second_grunt ow_script_0x8a71a2
 
 
 plant_starter:
@@ -198,14 +138,11 @@ plant_starter:
     special SPECIAL_ALLY_BATTLE_SAVE_AND_SETUP_PARTY
     loadpointer 0 str_violet_grunt
     setvar 0x8000 1
-    special 0xE
-    trainerbattleallytwotrainers 0x8 0x164 0x15F 43 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df ow_script_0x8a71a2 str_after_second_grunt ow_script_0x8a71a2
-
-
-
+    special SPECIAL_NAME_SHOW
+    trainerbattleallytwotrainers 0x8 0x164 0x15F 44 TRAINER_BACKSPRITE_RIVAL 1 str_0x8a69df ow_script_0x8a71a2 str_after_second_grunt ow_script_0x8a71a2
 have_to_select:
     loadpointer 0x0 str_have_to_select
-    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
 goto select
 
 mov_face_right:
@@ -239,26 +176,19 @@ ow_script_movs_0x8a73a1:
 
 
 ow_script_0x8a71a2:
-loadpointer 0 str_violet_grunt
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8a7502
-callstd MSG
-special 0xF
+msgbox_with_name str_0x8a7502 str_violet_grunt
 applymovement 0x2b ow_script_movs_0x8a74fc
 applymovement 0x2c ow_script_movs_0x8a74ff
 waitmovement 0x0
-loadpointer 0 str_violet_grunt
-setvar 0x8000 1
-special 0xE
-loadpointer 0x0 str_0x8a74d8
-callstd MSG
-special 0xF
+msgbox_with_name str_0x8a74d8 str_violet_grunt
 fadescreen 0x1
-call ow_script_0x8a91b8
+hidesprite 0x2c
+hidesprite 0x2b
+hidesprite 0x2e
+pause 0x60
 fadescreen 0x0
-applymovement 0x52 ow_script_movs_0x8a73a5
-applymovement 0xff ow_script_movs_0x8a73a1
+applymovement 0xff ow_script_movs_0x8a73a5
+applymovement 0x52 ow_script_movs_0x8a73a1
 waitmovement 0x0
 loadpointer 0x0 str_0x8a73a9
 show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
@@ -267,12 +197,6 @@ warp 0x3 0x42 0x0 0x0 0x0
 end
 
 
-ow_script_0x8a91b8:
-hidesprite 0x2c
-hidesprite 0x2b
-hidesprite 0x2e
-pause 0x60
-return
 
 
 ow_script_movs_0x8a6d84:
@@ -388,90 +312,79 @@ return
 
 str_violet_grunt:
 	.string "Team Violet Rüpel"
-
-
 str_0x8a7134:
-	.autostring 34 2 "Spiel hier nicht den Dummen!\pWenn du uns nicht verrätst, was wir wissen wollen, wirst du uns kennenlernen!"
-
-
-
+	.autostring 34 2 "Wird's bald, Professor?\pWir werden schon aus dir rauskriegen, was wir wissen möchten.\pDarauf kannst du dich verlassen!"
 str_0x8a70a9:
-    .autostring 34 2 "Ich habe es euch doch schon gesagt!\pIch bin zwar ein Archäologe, aber von einem Zeistein habe ich noch nie zuvor gehört!"
-
-
-
+    .autostring 34 2 "Ihr seid völlig verrückt!\pWarum interessiert ihr euch für solche Märchen?"
 str_0x8a7027:
-    .autostring 34 2 "Das kaufen wir dir aber nicht ab!\pDu willst es also wirklich darauf ankommen lassen?"
-
-
-
+    .autostring 34 2 "Was hat dich das zu interessieren?\pDu brauchst nur zu wissen, dass wir den Zeitstein haben wollen.\pUnd deshalb wirst du uns sagen, wo wir ihn finden können, verstanden?"
 str_0x8a6f8a:
     .autostring 34 2 "PLAYER!\pPerfektes Timing!\pDas Labor meines Vaters befindet sich hier und ich wollte ihm einen Besuch abstatten."
-
-
-
 str_0x8a6f16:
     .autostring 34 2 "Was ist denn hier los?\pWer sind diese Leute und was haben Sie mit meinem Vater zu schaffen?"
-
-
-
 str_0x8a6bac:
     .autostring 34 2 "Lasst den Professor in Ruhe!"
-
-
-
 str_0x8a6b82:
-    .autostring 34 2 "RIVAL! PLAYER!\nIhr seid meine Retter in der Not!"
-
-
-
+    .autostring 34 2 "RIVAL! PLAYER!\pHilfe!\nDiese Leute hier wollen mich nicht in Ruhe lassen!"
 str_0x8a6bfa:
-	.autostring 34 2 "Dieses Kind schon wieder!\pHast du deine Lektion noch nicht gelernt, dich nicht mit uns anzulegen?\pDu wirst noch einsehen, dass man sich nicht in Angelegenheiten einmischen sollte, die einen nichts angehen!"
-
-
+	.autostring 34 2 "Zwei Kinder, was?\nDas soll uns Angst einjagen?\pDer Professor muss doch nichts weiter tun, als uns das zu verraten, was wir wissen wollen, dann ist dieser ganze Unsinn hier schnell wieder vorbei.\pMischt euch gefälligst nicht in unsere Angelegenheiten ein, ihr Gören!"
 str_0x8a6b0d:
     .autostring 34 2 "Alles klar PLAYER!\nDiese erbärmlichen Typen erledigen wir gemeinsam, was sagst du?"
-
-
-
 str_0x8a6ac8:
-    .autostring 34 2 "Wir werden deinen Vater auf jeden Fall retten!"
-
-
-
+    .autostring 34 2 "Wir werden deinem Vater auf jeden Fall helfen, RIVAL."
 str_0x8a69df:
-    .autostring 34 2 "Du Rotzlöffel!\pJetzt wirst du aufgemischt!"
-
+    .autostring 34 2 "Ihr traut euch was!\pWisst ihr nicht, mit wem ihr euch hier anlegt?"
 str_0x8a6a97:
-    .autostring 34 2 "DOTS DOTS DOTS\nDu kleiner RotzlöffelDOTS"
-
+    .autostring 34 2 "DOTS DOTS DOTS\nDu kleine Rotzgöre!"
 str_0x8a752d:
-    .autostring 34 2 "Das kann doch nicht sein, dass ich von so einem Balg besiegt werde!"
-
-
-
+    .autostring 34 2 "Das kann doch nicht sein, dass mich ein Kind fertig machtDOTS"
 str_0x8a7502:
     .autostring 34 2 "Verdammt!\pDer Kleine hat mich überrumpelt!"
-
-
-
 str_0x8a74d8:
     .autostring 34 2 "Wir sollten uns vom Acker machen!"
-
-
-
 str_0x8a73a9:
-    .autostring 34 2 "RIVAL, PLAYERDOTS\pIhr seid wirklich genau richtig gekommen.\pWer weiß, was mir diese Schergen angetan hätten, wenn ihr nicht eingeschritten wärt.\pSie haben darauf bestanden, dass ich ihnen verrate, wo man einen gewissen Zeitstein findet.\pIch wollte ihnen klar machen, dass ich von einem solchen Zeitstein noch nie etwas gehört habe, aber diese Rüpel wollten nicht hören.\pAber lasst uns das nicht hier draußen besprechen, kommt doch mit in mein Labor."
-
+    .autostring 34 2 "RIVAL, PLAYER!\pIhr seid wirklich genau im richtigen Moment gekommen.\pDiese Typen sind wie aus dem Nichts aufgetaucht.\pTeam Violet nennen sie sich, glaube ich.\pIch habe schon ein paar mal von ihnen gehört, aber dass diese Schurken einmal vor meiner Tür stehen, hätte ich mir nicht träumen lassenDOTS\pAber wir sollten das nicht hier draußen besprechen, kommt doch herein in mein Labor!"
 str_select:
     .autostring 34 2 "Wähle die Pokémon aus, mit denen du kämpfen möchtest."
-
 str_have_to_select:
     .autostring 34 2 "Hey PLAYER!\nDu kannst mich doch hier nicht so hängen lassen!\pEs geht hier um meinen Vater!"
-
 str_after_second_grunt:
-    .autostring 34 2 "Rin wird uns den Hintern aufreißenDOTS"
+    .autostring 34 2 "Oh nein, da wird Rin uns den Hintern aufreißenDOTS"
 .elseif LANG_EN
+str_violet_grunt:
+	.string "Team Violet Grunt"
+str_0x8a7134:
+	.autostring 34 2 "Come on, Professor!\pWe will get you to talk anyway, you can bet on that!"
+str_0x8a70a9:
+    .autostring 34 2 "You are totally crazy?\pWhat do people like you care about such fairytales?"
+str_0x8a7027:
+    .autostring 34 2 "What do you care?\pYou just need to know, that we want to get the Time Stone.\pAnd that's why you'll tell us where to find it, got it?"
+str_0x8a6f8a:
+    .autostring 34 2 "PLAYER!\pPerfect Timing!\pMy dad's lab is arround the corner and I wanted to pay him a visit!\pCome join me!"
+str_0x8a6f16:
+    .autostring 34 2 "What's going on here?\pWho are these people and what do they have to do with my dad?"
+str_0x8a6bac:
+    .autostring 34 2 "Leave the professor alone!"
+str_0x8a6b82:
+    .autostring 34 2 "RIVAL! PLAYER!\pHelp!\pThese guys just won't leave me alone!"
+str_0x8a6bfa:
+    .autostring 34 2 "Two children, eh?\nThat's supposed to scare us, eh?\pThe professor just has to tell us what we want to know and all of this will be over soon.\pDon't put your noses in affairs that are none of your business, you brats!"
+str_0x8a6b0d:
+    .autostring 34 2 "Alright, PLAYER!\pWe will teach these pityful guys a lesson, what do you say?"
+str_0x8a6ac8:
+    .autostring 34 2 "We will definitely help your father, RIVAL!"
+str_0x8a69df:
+    .autostring 34 2 "Didn't you listen to us?\pDo you even know who you are dealing with?"
+str_0x8a6a97:
+    .autostring 34 2 "DOTS DOTS DOTS\nYou little brat!"
+str_0x8a752d:
+    .autostring 34 2 "That can't beDOTs\nI lost to a childDOTS"
+str_0x8a7502:
+    .autostring 34 2 "Damn!\pThat little one just caught me on suprise!"
+str_0x8a74d8:
+    .autostring 34 2 "We should get away now, guys!"
+str_0x8a73a9:
+    .autostring 34 2 "RIVAL, PLAYER!\pYou really just came the very right moment!\pThese guys just came out of nothing.\pTeam Violet is what they call themselves, I think.\pI heard about them a few times, but I would have never imagined encountering them just before the door of my lab.\pBut we shouldn't discuss these affairs outside, right?\pCome in, guys!"
 str_select:
     .autostring 34 2 "Select the Pokémon you want to battle with."
 str_have_to_select:

@@ -84,7 +84,15 @@ mugshot mugshots[] = {
 			},  
 		gfx_mug_blaisePal, str_mug_blaise},
     [MUGSHOT_TANN] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_tannTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_tannTiles,
+			[MUGSHOT_SCARED] = gfx_mug_tann_scaredTiles,
+			[MUGSHOT_HAPPY] = gfx_mug_tann_happyTiles,
+			[MUGSHOT_RUMINATIVE] = gfx_mug_tann_thoughtfulTiles,
+			[MUGSHOT_ANNOYED] = gfx_mug_tann_annoyedTiles,
+			[MUGSHOT_ANGRY] = gfx_mug_tann_angryTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_tann_shockedTiles,
+		}, 
 		gfx_mug_tannPal, str_mug_tann},
     [MUGSHOT_HIRO] = {
 			{
@@ -111,7 +119,13 @@ mugshot mugshots[] = {
 			}, 
 		gfx_mug_faunPal, str_mug_faun},
     [MUGSHOT_ELISE] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_eliseTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_eliseTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_elise_shockedTiles,
+			[MUGSHOT_ANGRY] = gfx_mug_elise_angryTiles,
+			[MUGSHOT_SCARED] = gfx_mug_elise_scaredTiles,
+			[MUGSHOT_ANNOYED] = gfx_mug_elise_annoyedTiles,
+			}, 
 		gfx_mug_elisePal, str_mug_elise},
     [MUGSHOT_EMERYS] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_emerysTiles}, 
@@ -213,6 +227,7 @@ void mugshot_create_oam(int side, int idx, int emotion) {
 	mugshot_template->callback = oam_null_callback;
 
 	if (oam_vram_allocation_table_get_index(tag) == 0xFF) {
+		dprintf("Allocated new mugshot vram\n");
 		// Allocate a graphic, that is released once the mugshot is destroyed
 		graphic *g = (graphic*) malloc(sizeof (graphic));
 		g->sprite = mugshot_get_emotion_gfx(idx, emotion);

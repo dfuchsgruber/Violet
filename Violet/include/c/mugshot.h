@@ -144,6 +144,12 @@ extern "C" {
     extern const unsigned short gfx_mug_blaise_thoughtfulTiles[];
     extern const unsigned short gfx_mug_blaisePal[];
     extern const unsigned short gfx_mug_tannTiles[];
+    extern const unsigned short gfx_mug_tann_happyTiles[];
+    extern const unsigned short gfx_mug_tann_scaredTiles[];
+    extern const unsigned short gfx_mug_tann_thoughtfulTiles[];
+    extern const unsigned short gfx_mug_tann_annoyedTiles[];
+    extern const unsigned short gfx_mug_tann_angryTiles[];
+    extern const unsigned short gfx_mug_tann_shockedTiles[];
     extern const unsigned short gfx_mug_tannPal[];
     extern const unsigned short gfx_mug_faunTiles[];
     extern const unsigned short gfx_mug_faun_angryTiles[];
@@ -151,6 +157,10 @@ extern "C" {
     extern const unsigned short gfx_mug_faun_shockedTiles[];
     extern const unsigned short gfx_mug_faunPal[];
     extern const unsigned short gfx_mug_eliseTiles[];
+    extern const unsigned short gfx_mug_elise_angryTiles[];
+    extern const unsigned short gfx_mug_elise_shockedTiles[];
+    extern const unsigned short gfx_mug_elise_scaredTiles[];
+    extern const unsigned short gfx_mug_elise_annoyedTiles[];
     extern const unsigned short gfx_mug_elisePal[];
     extern const unsigned short gfx_mug_emerysTiles[];
     extern const unsigned short gfx_mug_emerysPal[];
