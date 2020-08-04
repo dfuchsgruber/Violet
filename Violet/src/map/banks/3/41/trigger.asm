@@ -52,20 +52,20 @@ loadpointer 0x0 str_0x8a70a9
 show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
 msgbox_with_name str_0x8a7027 str_violet_grunt
 pause 16
-showsprite 0x52
+showsprite 37
 setflag PKMNMENU
 sound 0x15
 applymovement 0xFF mov_face_left_and_exclam
 waitmovement 0
-setvar 0x8004 0x52
+setvar 0x8004 37
 special SPECIAL_NPC_MOVE_TO_PLAYER
 waitmovement 0
-applymovement 0x52 mov_face_right
+applymovement 37 mov_face_right
 waitmovement 0
 loadpointer 0x0 str_0x8a6f8a
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 sound 0x15
-applymovement 0x52 mov_say_exclam
+applymovement 37 mov_say_exclam
 waitmovement 0x0
 checksound
 loadpointer 0x0 str_0x8a6f16
@@ -75,10 +75,10 @@ waitmovement 0x0
 loadpointer 0x0 str_0x8a6bac
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 sound 0x15
-applymovement 0x2b mov_face_left_and_exclam
-applymovement 0x2c mov_face_left_and_exclam
-applymovement 0x2d mov_face_left_and_exclam
-applymovement 0x2e mov_face_left_and_exclam
+applymovement 28 mov_face_left_and_exclam
+applymovement 29 mov_face_left_and_exclam
+applymovement 30 mov_face_left_and_exclam
+applymovement 31 mov_face_left_and_exclam
 waitmovement 0x0
 checksound
 loadpointer 0x0 str_0x8a6b82
@@ -86,7 +86,7 @@ show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT emotion=MUGSHOT_SCARED
 
 loadpointer 0 str_violet_grunt
 msgbox_with_name str_0x8a6bfa str_violet_grunt
-applymovement 0x52 ow_script_movs_0x8a69da
+applymovement 37 ow_script_movs_0x8a69da
 waitmovement 0x0
 loadpointer 0x0 str_0x8a6b0d
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
@@ -94,13 +94,13 @@ show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
     setvar 0x8005 0x13
     setvar 0x8006 0x39
     special SPECIAL_NPC_MOVE_TO
-    setvar 0x8004 0x52
+    setvar 0x8004 37
     setvar 0x8005 0x12
     setvar 0x8006 0x38
     special SPECIAL_NPC_MOVE_TO
     waitmovement 0
     applymovement 0xFF mov_face_right
-    applymovement 0x52 mov_face_right
+    applymovement 37 mov_face_right
     waitmovement 0
 select:
     setvar SONG_OVERRIDE MUS_VIOLET_ENCOUNTER
@@ -177,18 +177,18 @@ ow_script_movs_0x8a73a1:
 
 ow_script_0x8a71a2:
 msgbox_with_name str_0x8a7502 str_violet_grunt
-applymovement 0x2b ow_script_movs_0x8a74fc
-applymovement 0x2c ow_script_movs_0x8a74ff
+applymovement 28 ow_script_movs_0x8a74fc
+applymovement 29 ow_script_movs_0x8a74ff
 waitmovement 0x0
 msgbox_with_name str_0x8a74d8 str_violet_grunt
 fadescreen 0x1
-hidesprite 0x2c
-hidesprite 0x2b
-hidesprite 0x2e
+hidesprite 29
+hidesprite 28
+hidesprite 31
 pause 0x60
 fadescreen 0x0
 applymovement 0xff ow_script_movs_0x8a73a5
-applymovement 0x52 ow_script_movs_0x8a73a1
+applymovement 37 ow_script_movs_0x8a73a1
 waitmovement 0x0
 loadpointer 0x0 str_0x8a73a9
 show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
@@ -218,7 +218,7 @@ ow_script_movs_0x8a6d8d:
 
 ow_script_0x8a6d63:
 applymovement 0xff ow_script_movs_0x8a6d84
-applymovement 0x52 ow_script_movs_0x8a6d8d
+applymovement 37 ow_script_movs_0x8a6d8d
 waitmovement 0x0
 return
 
@@ -242,7 +242,7 @@ ow_script_movs_0x8a6d8c:
 
 ow_script_0x8a6d50:
 applymovement 0xff ow_script_movs_0x8a6d7f
-applymovement 0x52 ow_script_movs_0x8a6d8c
+applymovement 37 ow_script_movs_0x8a6d8c
 waitmovement 0x0
 return
 
@@ -266,7 +266,7 @@ ow_script_movs_0x8a6d8b:
 
 ow_script_0x8a6d3d:
 applymovement 0xff ow_script_movs_0x8a6d7b
-applymovement 0x52 ow_script_movs_0x8a6d8b
+applymovement 37 ow_script_movs_0x8a6d8b
 waitmovement 0x0
 return
 
@@ -292,7 +292,7 @@ ow_script_movs_0x8a6d8a:
 
 ow_script_0x8a6d2a:
 applymovement 0xff ow_script_movs_0x8a6d76
-applymovement 0x52 ow_script_movs_0x8a6d8a
+applymovement 37 ow_script_movs_0x8a6d8a
 waitmovement 0x0
 return
 
@@ -303,7 +303,7 @@ ow_script_movs_0x8a701d:
 
 
 ow_script_0x8a7011:
-applymovement 0x52 ow_script_movs_0x8a701d
+applymovement 37 ow_script_movs_0x8a701d
 waitmovement 0x0
 return
 

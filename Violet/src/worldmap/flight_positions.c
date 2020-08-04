@@ -47,7 +47,7 @@ flight_position_association_t flight_position_associations[MAP_NAMESPACE_NONE - 
     [MAP_ARDEAL - MAP_AMONIA] = {.bank = 31, .map_idx = 0, .healing_place_idx = 0},
     [MAP_ASCHHAIN - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},
     [MAP_ANTIKE_RUINE - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},
-    [MAP_WASSERPFAD - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},
+    [MAP_TANNS_LABOR - MAP_AMONIA] = {.bank = 3, .map_idx = 41, .healing_place_idx = HEALINGPLACE_TANNS_LAB},
     [MAP_SIEGESSTRASSE - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},
     [MAP_ROCKET_HQ - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},
     [MAP_NAMESPACE_134 - MAP_AMONIA] = {.bank = 3, .map_idx = 0, .healing_place_idx = 0},

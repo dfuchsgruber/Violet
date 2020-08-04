@@ -35,6 +35,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	clearflag FRBADGE_3
+	end
+	additem ITEM_VM02 1
+	givepokemon POKEMON_STARALILI 5 0 0 0 0
+	end
+
 	additem ITEM_TSITRUBEERE 99
 	additem ITEM_TSITRUBEERE 99
 	additem ITEM_TSITRUBEERE 99

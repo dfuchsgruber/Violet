@@ -22,6 +22,7 @@ lscr_0x718dc8:
 
 script_set_healingplace:
 	sethealingplace HEALINGPLACE_TANNS_LAB
+    setworldmapflag WM_TANNS_LAB
 end
 
 

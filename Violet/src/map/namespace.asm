@@ -376,7 +376,7 @@ map_namespaces:
 	.global str_mapnamespace_131
 
 	str_mapnamespace_131:
-		.string "Wasserpfad"
+		.string "Tanns Labor"
 
 
 	.global str_mapnamespace_132
