@@ -94,7 +94,7 @@ CONSTANTSHC=$(CONSTANTS:%.const=include/c/%.h)
 OPENPAREN := (
 CLOSEPAREN := )
 
-include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/cloud_maps/makefile
+include pokeapi/makefile tools/fata_morgana/makefile tools/index/makefile tools/cloud_maps/makefile tools/worldmap/makefile
 
 define build_list
 	$(file >$(1),INPUT$(OPENPAREN))
@@ -209,9 +209,9 @@ $(BLDPATH)/map.o: $(PYAGBOBJS) $(BLDPATH)/$(basename $(MAPPROJ)).o $(BLDPATH)/fa
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/map.ld --relocatable -o $(BLDPATH)/map.o $(BLDPATH)/fata_morgana.o 
 	
 	
-$(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ)
+$(BLDPATH)/src.o: $(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS)
 	@echo "Linking src files..."
-	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ))
+	$(call build_list,$(BLDPATH)/sources.ld,$(ASOBJS1) $(ASOBJS2) $(COBJS) $(CLOUD_MAPS_OBJ) $(WORLDMAPOBJS))
 	$(LD) $(LDFLAGS) -T linker.ld -T bprd.sym -T $(BLDPATH)/sources.ld --relocatable -o $(BLDPATH)/src.o
 		
 	
