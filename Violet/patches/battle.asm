@@ -685,3 +685,19 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	.pool
 **/
 
+.org 0x0807fee4
+	ldr r0, =battle_trainer_get_transition_type | 1
+	bx r0
+	.pool
+	
+.org 0x080d0b90
+	.word battle_transition_phase_1_callbacks
+
+.org 0x080d0bc8
+	.word battle_transition_phase_1_callbacks
+
+.org 0x080d0c00
+	.word battle_transition_phase_2_callbacks
+	
+.org 0x080d0c30
+	.word battle_transition_phase_2_callbacks

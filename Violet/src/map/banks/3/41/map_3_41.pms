@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_110",
 		"events": {
-			"person_cnt": 61,
+			"person_cnt": 64,
 			"warp_cnt": 8,
 			"trigger_cnt": 5,
 			"signpost_cnt": 8,
@@ -217,39 +217,39 @@
 				},
 				{
 					"target_index": "9",
-					"picture": 54,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "70",
-					"y": "24",
+					"x": "45",
+					"y": "58",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_UP_LEFT_RIGHT",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "1",
-					"alert_radius": 3,
+					"is_trainer": "0",
+					"alert_radius": "0",
 					"script": 0,
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_BLUBELLA",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "10",
-					"picture": 61,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "70",
-					"y": "22",
+					"x": "55",
+					"y": "55",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -260,10 +260,10 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_BIBOR",
 						"berry_tree_idx": 0
 					}
 				},
@@ -428,8 +428,8 @@
 					"picture": 92,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "42",
-					"y": "58",
+					"x": "48",
+					"y": "68",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -503,13 +503,13 @@
 				},
 				{
 					"target_index": "20",
-					"picture": 92,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "70",
-					"y": "25",
+					"x": "44",
+					"y": "68",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -517,13 +517,13 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "TRAINERSCHOOL_FAUN_INSIDE",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": "PERSON_ITEM",
+					"script_std": "PERSON_POKEMON",
 					"value": {
-						"item": "ITEM_TRANK",
-						"species": 0,
+						"item": "0",
+						"species": "POKEMON_FLORGES",
 						"berry_tree_idx": 0
 					}
 				},
@@ -558,8 +558,8 @@
 					"picture": 50,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 3,
-					"y": 16,
+					"x": "3",
+					"y": "16",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
@@ -662,8 +662,8 @@
 					"picture": 50,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 1,
-					"y": 12,
+					"x": "2",
+					"y": "11",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -685,13 +685,13 @@
 				},
 				{
 					"target_index": "27",
-					"picture": 20,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "70",
-					"y": "23",
+					"x": "50",
+					"y": "62",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -702,10 +702,10 @@
 					"flag": 0,
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_BIBOR",
 						"berry_tree_idx": 0
 					}
 				},
@@ -971,39 +971,39 @@
 				},
 				{
 					"target_index": "38",
-					"picture": "0",
+					"picture": "238",
 					"field_2": 1,
-					"field_3": 0,
-					"x": "21",
-					"y": "55",
+					"field_3": "9",
+					"x": "40",
+					"y": "66",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
-					"is_trainer": "0",
-					"alert_radius": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
 					"script": "ow_script_test",
-					"flag": "0x0",
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_75_PERCENT",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_FRIZELBLIZ",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "39",
-					"picture": 58,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 3,
-					"y": 69,
+					"x": "34",
+					"y": "78",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -1014,10 +1014,10 @@
 					"flag": "0x0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_NACHTARA",
 						"berry_tree_idx": 0
 					}
 				},
@@ -1205,11 +1205,11 @@
 				},
 				{
 					"target_index": "47",
-					"picture": 78,
+					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "4",
-					"y": "84",
+					"x": "29",
+					"y": "51",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1218,24 +1218,24 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_41_trainer_22",
-					"flag": "ROUTE_2_ALBUS",
+					"script": "0",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_KRAMSHEF",
 						"berry_tree_idx": 0
 					}
 				},
 				{
 					"target_index": "48",
-					"picture": 78,
+					"picture": "239",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "5",
-					"y": "84",
+					"x": "23",
+					"y": "52",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1244,14 +1244,14 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "ow_script_map_3_41_trainer_22",
-					"flag": "ROUTE_2_ALBUS",
+					"script": "0",
+					"flag": "0",
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_KRAMURX",
 						"berry_tree_idx": 0
 					}
 				},
@@ -1570,6 +1570,78 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "1"
+					}
+				},
+				{
+					"target_index": "62",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "43",
+					"y": "61",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_BIBOR",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "63",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "43",
+					"y": "54",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_BIBOR",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "64",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "51",
+					"y": "53",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_BIBOR",
+						"berry_tree_idx": 0
 					}
 				}
 			],

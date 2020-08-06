@@ -514,4 +514,11 @@ void box_pokemon_copy(u8 box_idx, u8 slot, box_pokemon *dst);
  * @return if the player party and all boxes are full
  **/
 bool player_party_and_boxes_full();
+
+/**
+ * Adds the level of the first num pokemon's level in the player party.
+ * @param num how many viable pokemon to consider
+ * @return the sum of their level
+ **/
+u16 player_pokemon_get_total_level(u8 num);
 #endif /* INCLUDE_C_POKEMON_VIRTUAL_H_ */

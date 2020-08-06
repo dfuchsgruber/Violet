@@ -111,6 +111,14 @@ void trainerbattle_load_target_npc();
 void trainerbattle_start();
 
 /**
+ * Gets the sum of a trainer's party's first num pokemon's level.
+ * @param trainer_idx the trainer
+ * @param num how many mons to consider
+ * @return total sum of the levels
+ **/
+u8 trainer_pokemon_get_total_level(u16 trainer_idx, u8 num);
+
+/**
  * Gets the idx of the rematch trainer associated with a trainer.
  * @param trainer_idx the trainer idx to check
  * @return the assoicated rematch trainer idx
@@ -134,6 +142,5 @@ extern u8 ow_script_trainerbattle_with_continuation[];
 
 // Challange script for double battles, that omits checking if the player has two viable pokemon (for ally battles)
 extern u8 ow_script_trainerbattle_double_dont_check_enough_pokemon[];
-
 
 #endif /* INCLUDE_C_TRAINER_VIRTUAL_H_ */

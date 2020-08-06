@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_4",
 		"events": {
-			"person_cnt": 1,
+			"person_cnt": 5,
 			"warp_cnt": 2,
 			"trigger_cnt": 0,
 			"signpost_cnt": 2,
@@ -12,8 +12,8 @@
 					"picture": "236",
 					"script_std": "PERSON_MUSHROOM",
 					"field_3": 0,
-					"x": "15",
-					"y": "9",
+					"x": "8",
+					"y": "7",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -30,6 +30,102 @@
 						"species": 0,
 						"berry_tree_idx": "2"
 					}
+				},
+				{
+					"target_index": "2",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "6",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_RASAFF",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "15",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KNILZ",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "2",
+					"y": "12",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KLEINSTEIN",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "5",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "19",
+					"y": "10",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SANDAN",
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
@@ -42,8 +138,8 @@
 					"target_warp_idx": 2
 				},
 				{
-					"x": 9,
-					"y": 9,
+					"x": "10",
+					"y": "9",
 					"level": 0,
 					"target_bank": 11,
 					"target_map": 0,
@@ -53,8 +149,8 @@
 			"triggers": [],
 			"signposts": [
 				{
-					"x": 12,
-					"y": 9,
+					"x": "14",
+					"y": "9",
 					"level": 0,
 					"type": "SIGNPOST_SCRIPT",
 					"value": {

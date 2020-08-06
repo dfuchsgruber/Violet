@@ -145,6 +145,7 @@
         "algorithm": "c",
         "menu_indicators.h": "c",
         "header.h": "c",
-        "block.h": "c"
+        "block.h": "c",
+        "transition.h": "c"
     }
 }
