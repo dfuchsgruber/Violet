@@ -3135,7 +3135,7 @@
 			]
 		],
 		"tileset_primary": "maptileset0",
-		"tileset_secondary": "maptileset_cave",
+		"tileset_secondary": "maptileset_cave_old",
 		"field_1A": 0
 	},
 	"label": "map_footer_antike_ruinen_regirock",

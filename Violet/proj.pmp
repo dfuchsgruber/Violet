@@ -1891,7 +1891,8 @@
 		"maptileset0": "src/map/tileset/maptileset0.pms",
 		"maptileset12": "src/map/tileset/maptileset12.pms",
 		"maptileset_ceometria_additional_blocks": "src/map/tileset/maptileset_ceometria_additional_blocks.pms",
-		"maptileset_clouds": "src/map/tileset/maptileset_clouds.pms"
+		"maptileset_clouds": "src/map/tileset/maptileset_clouds.pms",
+		"maptileset_cave": "src/map/tileset/maptileset_cave.pms"
 	},
 	"tilesets_secondary": {
 		"maptileset45": "src/map/tileset/maptileset45.pms",
@@ -1929,7 +1930,6 @@
 		"maptileset_haweiland": "src/map/tileset/gfx_maptileset_haweiland.pms",
 		"maptileset_cloud_ruins": "src/map/tileset/maptileset_cloud_ruins.pms",
 		"maptileset_cloud_ruins_inside": "src/map/tileset/maptileset_cloud_ruins_inside.pms",
-		"maptileset_cave": "src/map/tileset/maptileset15.pms",
 		"maptileset_haweiland_cargo_hall": "src/map/tileset/maptileset_haweiland_cargo_hall.pms",
 		"maptileset_beach_house": "src/map/tileset/maptileset_beach_house.pms",
 		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms",
@@ -1939,12 +1939,14 @@
 		"maptileset_dunkler_turm": "src/map/tileset/maptileset_dunkler_turm.pms",
 		"maptileset_blackbeard_ship": "src/map/tileset/maptileset_blackbeard_ship.pms",
 		"maptileset_trainerschool": "src/map/tileset/maptileset_trainerschool.pms",
-		"maptileset_meriana_city": "src/map/tileset/maptileset_meriana_city.pms"
+		"maptileset_meriana_city": "src/map/tileset/maptileset_meriana_city.pms",
+		"maptileset_cave_old": "src/map/tileset/maptileset15.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
 		"gfx_maptileset0Tiles": "asset/gfx/tileset/gfx_maptileset0.png",
-		"gfx_maptileset_cloudsTiles": "asset/gfx/tileset/gfx_maptileset_clouds.png"
+		"gfx_maptileset_cloudsTiles": "asset/gfx/tileset/gfx_maptileset_clouds.png",
+		"gfx_maptileset_caveTiles": "asset/gfx/tileset/gfx_maptileset_cave.png"
 	},
 	"gfxs_secondary": {
 		"gfx_maptileset302795Tiles": "asset/gfx/tileset/gfx_maptileset302795.png",
