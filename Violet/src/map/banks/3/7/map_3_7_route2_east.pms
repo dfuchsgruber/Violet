@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_5",
 		"events": {
-			"person_cnt": 20,
+			"person_cnt": 27,
 			"warp_cnt": 9,
 			"trigger_cnt": 3,
 			"signpost_cnt": 1,
@@ -512,6 +512,174 @@
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "21",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "8",
+					"x": "37",
+					"y": "26",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_50_PERCENT",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MENKI",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "22",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "8",
+					"x": "41",
+					"y": "42",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
+					"behaviour_range": {
+						"x": "8",
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KRABBY",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "23",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "64",
+					"y": "16",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHWALBINI",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "24",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "16",
+					"y": "39",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KRAMURX",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "25",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "18",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KNOFENSA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "26",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "80",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MASCHOCK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "27",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "35",
+					"x": "13",
+					"y": "50",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_DOWN_RIGHT",
+					"behaviour_range": {
+						"x": "3",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_TENTOXA",
 						"berry_tree_idx": 0
 					}
 				}
