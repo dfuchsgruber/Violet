@@ -215,6 +215,12 @@ battle_bg battle_bgs[256] = {
         NULL, NULL,
         gfx_battle_bg_bbship_outsidePal,
     },
+    [BATTLE_BG_CAVE_WATER] = {
+        gfx_battle_bg_cave_waterTiles,
+        gfx_battle_bg_cave_waterMap,
+        NULL, NULL,
+        gfx_battle_bg_cave_waterPal,
+    }
 };
 
 
@@ -307,6 +313,7 @@ void bsc_cmd_xEB_set_type_to_terrain() {
         break;
     case BATTLE_BG_BBSHIP_INSIDE:
     case BATTLE_BG_BBSHIP_OUTSIDE:
+    case BATTLE_BG_CAVE_WATER:
         type = TYPE_WASSER;
         break;
 	}
@@ -349,6 +356,7 @@ u16 terrain_moves[] = {
     [BATTLE_BG_DARK_TOWER] = ATTACK_FINSTERFAUST,
     [BATTLE_BG_BBSHIP_INSIDE] = ATTACK_SURFER,
     [BATTLE_BG_BBSHIP_OUTSIDE] = ATTACK_SURFER,
+    [BATTLE_BG_CAVE_WATER] = ATTACK_SURFER,
 };
 
 void bsc_cmd_xCC_set_terrain_based_move(){

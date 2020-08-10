@@ -10,18 +10,19 @@
 #include "superstate.h"
 #include "color.h"
 #include "bios.h"
+#include "debug.h"
 
 static void battle_transition_phase_2_team_violet (u8 self);
 static void battle_transition_phase_2_revolutionary (u8 self);
 
 static u8 trainer_transitions_weak_opponent[] = {
-    BATTLE_TRANSITION_SLIDING_POKEBALLS, BATTLE_TRANSITION_BLACK_DOODLES,
-    BATTLE_TRANSITION_HORIZONTAL_CORRUGATE, BATTLE_TRANSITION_BIG_POKEBALL,
+    BATTLE_TRANSITION_SLIDING_POKEBALLS, BATTLE_TRANSITION_HORIZONTAL_CORRUGATE,
+    BATTLE_TRANSITION_BLUR, BATTLE_TRANSITION_DISTORTED_WAVE,
 };
 
 static u8 trainer_transitions_strong_opponent[] = {
-    BATTLE_TRANSITION_BLUR, BATTLE_TRANSITION_GRID_SQUARES,
-    BATTLE_TRANSITION_DISTORTED_WAVE, BATTLE_TRANSITION_FULLSCREEN_WAVE,
+    BATTLE_TRANSITION_BLACK_DOODLES, BATTLE_TRANSITION_BIG_POKEBALL,
+    BATTLE_TRANSITION_GRID_SQUARES, BATTLE_TRANSITION_FULLSCREEN_WAVE,
 };
 
 static bool battle_has_any_trainer_class(u8 trainerclass) {
@@ -40,6 +41,7 @@ u8 battle_trainer_get_transition_type() {
         return BATTLE_TRANSITION_REVOLUTIONARY;
 
     u8 transition_type = battle_transition_type_get_by_map();
+    dprintf("Trainer transition type is %d\n", transition_type);
     int player_total_level;
     int opponent_total_level;
     if (fmem.trainers_cnt > 1) {

@@ -39,9 +39,9 @@
 					"x": 13,
 					"y": 14,
 					"level": 0,
-					"target_bank": 3,
-					"target_map": 41,
-					"target_warp_idx": 3
+					"target_bank": "3",
+					"target_map": "41",
+					"target_warp_idx": "3"
 				},
 				{
 					"x": 13,

@@ -666,6 +666,19 @@ wild_pokemon_data wild_pokemon[] = {
 	{.bank = 32, .map = 3, .grass = &wild_pokemon_dark_tower,},
 	{.bank = 32, .map = 4, .grass = &wild_pokemon_dark_tower,},
 	{
+		.bank = 11, .map = 5,
+		.grass = &wild_pokemon_3_70_grass,
+		.water = &wild_pokemon_route_2_cave_water,
+		.other = NULL,
+		.rod = &wild_pokemon_route_2_cave_rod,
+	},{
+		.bank = 11, .map = 6,
+		.grass = &wild_pokemon_3_70_grass,
+		.water = &wild_pokemon_route_2_cave_water,
+		.other = NULL,
+		.rod = &wild_pokemon_route_2_cave_rod,
+	},
+	{
 	    .bank = 0xFF, .map = 0xFF, .field_2 = 0xFF, .field_3 = 0xFF,
 	    .grass = NULL, .water = NULL, .other = NULL, .rod = NULL
 	},

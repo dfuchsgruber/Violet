@@ -35,7 +35,13 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
-	clearflag FRBADGE_3
+
+	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	givepokemon POKEMON_RASAFF 20 ITEM_RASAFFNIT 0 0 0
+	end
+
+	setflag FRBADGE_4
+	additem ITEM_VM03 1
 	end
 	additem ITEM_VM02 1
 	givepokemon POKEMON_STARALILI 5 0 0 0 0

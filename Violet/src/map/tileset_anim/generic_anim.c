@@ -10,8 +10,7 @@
 u16 generic_tileset_anim_get_clk(tileset_animation_header *anim_header){
     if(anim_header->cnt == 0) return 640 * 9;
     int clk_cycle = anim_header->animations[0].cycle * anim_header->animations[0].speed;
-    int i;
-    for(i = 0; i < anim_header->cnt; i++)
+    for(size_t i = 0; i < anim_header->cnt; i++)
         clk_cycle = kgv(clk_cycle, anim_header->animations[i].cycle *
                 anim_header->animations[i].speed);
     if(clk_cycle > 0xFFFF){
@@ -36,8 +35,7 @@ void generic_tileset_anim_proceed(tileset_animation *anim, u16 clk){
 
 void generic_tileset_anim_proceed_all(tileset_animation_header *anim_header,
         u16 clk){
-    int i;
-    for(i = 0; i < anim_header->cnt; i++)
+    for(size_t i = 0; i < anim_header->cnt; i++)
         generic_tileset_anim_proceed(&anim_header->animations[i], clk);
     
 }

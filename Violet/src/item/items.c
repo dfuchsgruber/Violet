@@ -978,9 +978,9 @@ static u8 str_item_octillerynit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Octillery\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("If held by an Octillery in\nbattle it can perform\na mega evolution.")
 );
-static u8 str_item_item_f2_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_rasaffnit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Rasaff\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+	PSTRING("If held by an Primeape in\nbattle it can perform\na mega evolution.")
 );
 static u8 str_item_item_f3_description[] = LANGDEP(
 	PSTRING(" ????"),
@@ -5479,12 +5479,12 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_F2
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
+		LANGDEP(PSTRING("Rasaffnit"), PSTRING("Primenite")),
+		0xf2, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_f2_description,
+		str_item_rasaffnit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

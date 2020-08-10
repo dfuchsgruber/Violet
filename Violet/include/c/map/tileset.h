@@ -38,7 +38,7 @@ typedef struct {
 } tileset_animation;
 
 typedef struct {
-    int cnt;
+    size_t cnt;
     tileset_animation *animations;
 } tileset_animation_header;
 

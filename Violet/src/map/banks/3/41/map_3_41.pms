@@ -1674,8 +1674,8 @@
 					"x": 55,
 					"y": 67,
 					"level": 0,
-					"target_bank": 3,
-					"target_map": 75,
+					"target_bank": "3",
+					"target_map": "75",
 					"target_warp_idx": 0
 				},
 				{

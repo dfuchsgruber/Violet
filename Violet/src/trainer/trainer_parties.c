@@ -2265,3 +2265,16 @@ trainer_pokemon_default_item_default_attacks trainer_party_x19a_meriana_city_bla
 trainer_pokemon_default_item_default_attacks trainer_party_x19b_route_2_streber[1] = {
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,6,POKEMON_SLEIMA),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x19c_route_2_cave_hiker[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,9,POKEMON_ONIX),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x19d_route_2_cave_school_kid[2] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,8,POKEMON_FLABEBE),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,8,POKEMON_MARILL),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x19e_route_2_cave_teenager[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,9, POKEMON_FUKANO),
+};

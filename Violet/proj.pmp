@@ -700,6 +700,11 @@
 				"map_route_2_cave_2",
 				"src/map/banks/11/5/map_route_2_cave_2.pms",
 				"MAP_ROUTE_2"
+			],
+			"6": [
+				"map_route_2_cave_connection",
+				"src/map/banks/11/6/map_route_2_cave_connection.pms",
+				"MAP_ROUTE_2"
 			]
 		},
 		"12": {
@@ -1885,6 +1890,10 @@
 		"map_footer_route_2_cave2": [
 			120,
 			"src/map/banks/11/5/map_footer_route_2_cave2.pms"
+		],
+		"map_footer_route_2_cave_connection": [
+			121,
+			"src/map/banks/11/6/map_footer_route_2_cave_connection.pms"
 		]
 	},
 	"tilesets_primary": {

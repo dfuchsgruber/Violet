@@ -2254,8 +2254,21 @@
 		"ability_1": null,
 		"hidden_ability" : "Tintenschuss"
 	},
-	"POKEMON_10f": {
-		"species_link" : "POKEMON_POKEMON_0"
+	"POKEMON_MEGA_RASAFF": {
+		"basestats": {
+			"hp": 65,
+			"attack": 140,
+			"defense": 80,
+			"speed": 115,
+			"special-attack": 60,
+			"special-defense": 80
+		},
+		"exp_yield": 240,
+		"dex_number": 0,
+		"ability_0": "Hochmut",
+		"ability_1": null,
+		"hidden_ability" : "Hochmut",
+		"species_link" : "POKEMON_RASAFF"
 	},
 	"POKEMON_110": {
 		"species_link" : "POKEMON_POKEMON_0"

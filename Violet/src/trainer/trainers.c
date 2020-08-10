@@ -6651,5 +6651,26 @@ trainer trainers[TRAINER_CNT] = {
             PSTRING("Sicilion")), .pokemon_cnt = 1,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x19b_route_2_streber,
-    }, 
+    },
+    [0x19C] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Harold"),
+            PSTRING("Harold")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x19c_route_2_cave_hiker,
+    },
+    [0x19d] = {
+        .trainerclass = TRAINERCLASS_SCHULKIND, .sprite = 0x1e,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Felicitas"),
+            PSTRING("Felicitas")), .pokemon_cnt = 2,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x19d_route_2_cave_school_kid,
+    },
+    [0x19e] = {
+        .trainerclass = TRAINERCLASS_TEENAGER, .sprite = 0x52,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Fynn"),
+            PSTRING("Fynn")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x19e_route_2_cave_teenager,
+    },
 }; 

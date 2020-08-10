@@ -88,7 +88,8 @@ bool start_menu_initilize() {
                 start_menu_print_item_description(start_menu_item_descriptions[start_menu_state.items[start_menu_state.cursor]]);
             }
             tbox_copy_to_vram(box_idx, 1);
-            big_callback_new(start_menu_clock_callback, 50);
+            if (!safari_is_active() && !mapheader_virtual.flash_type)
+                big_callback_new(start_menu_clock_callback, 50);
             return true;
         }
     }
