@@ -431,6 +431,8 @@ bsc_strings:
 .word str_battle_x1B5
 .word str_battle_x1B6
 .word str_battle_x1B7
+.word str_battle_x1B8
+.word str_battle_x1B9
 
 @ // Define the strings
 
@@ -2911,6 +2913,12 @@ bsc_strings:
 
 	str_battle_x1B7:
 		.string "BSC_CURRENT_MOVE wird durch\nBSC_LAST_ITEM geschwächt!"
+
+	str_battle_x1B8:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX wird nicht\nmehr durch Goldapfel geschützt."
+
+	str_battle_x1B9:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX erleidet bis\nzum Ende des Zuges weniger Schaden."
 		
 
 .elseif LANG_EN
@@ -4993,6 +5001,12 @@ bsc_strings:
 
 	str_battle_x1B7:
 		.string "BSC_CURRENT_MOVE is weakened\nby BSC_LAST_ITEM!"
+
+	str_battle_x1B8:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX isn't protected\nby the Golden Apple anymore."
+
+	str_battle_x1B9:
+		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX takes less\ndamage until the end of the turn."
 
 .endif
 

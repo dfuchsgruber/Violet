@@ -190,7 +190,7 @@
 		"footer_idx": 120,
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": "DARK_FLASH_USABLE",
-		"weather": "MAP_WEATHER_INSIDE",
+		"weather": "MAP_WEATHER_CLOUDY",
 		"type": "MAP_TYPE_BASEMENT",
 		"bike_usable": "1",
 		"flags": {

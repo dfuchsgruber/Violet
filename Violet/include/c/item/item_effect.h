@@ -5,7 +5,7 @@
 #include "constants/items.h"
 #include "pokemon/virtual.h"
 
-#define NUMBER_ITEM_EFFECT_FUNCTIONS 9
+#define NUMBER_ITEM_EFFECT_FUNCTIONS 10
 #define EFFECT_RESET_EVS 127
 
 typedef struct {
@@ -48,7 +48,8 @@ typedef struct {
     u8 increase_friendship_mid : 1;
     u8 increase_friendship_high : 1;
     // 0x6 - Arguments
-    u8 level;
+    u8 level : 7;
+    u8 golden_apple : 1;
     s8 evs[6];
     u8 hp;
     u8 pp;
@@ -63,6 +64,7 @@ typedef struct {
 #define ITEM_EFFECT_HEAL_HP_DYANMIC 253
 #define ITEM_EFFECT_HEAL_HP_QUARTER 252
 #define ITEM_EFFECT_HEAL_HP_EIGHTH 251
+#define ITEM_EFFECT_HEAL_HP_PERCENTAGE 250
 #define ITEM_EFFECT_PP_ALL 127
 
 item_effect_t *item_effects[ITEM_ENIGMABEERE - ITEM_TRANK];

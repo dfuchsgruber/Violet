@@ -473,10 +473,20 @@
 .byte \playstatchangeanimation_byte
 .endm
 
-.macro cmd49 cmd49_byte1 cmd49_byte2
+// Contrived macro: 
+// Executes certain effects after an attack
+// Either all are excecuted, or just one is or all up to some case (inclusive)
+.equ ATTACK_END_MODE_ALL, 0
+.equ ATTACK_END_MODE_ONE_CASE, 1
+.equ ATTACK_END_MODE_UP_TO, 2
+
+.macro attack_end mode:req last_case=0 first_case=255
+.if \first_case != 255
+    setbyte battle_scripting + 20, \first_case
+.endif
 .byte 0x49
-.byte \cmd49_byte1
-.byte \cmd49_byte2
+.byte \mode
+.byte \last_case
 .endm
 
 .macro damagecalc2

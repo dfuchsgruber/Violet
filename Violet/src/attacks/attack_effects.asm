@@ -270,8 +270,7 @@ bsc_attack_effect_xd7:
     setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x3
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x0
-    setbyte 0x2023FD8 0x0
-    cmd49 0x0 0x0
+    attack_end ATTACK_END_MODE_ALL first_case=0
     end
 
 bsc_attack_effect_xd8:
@@ -419,8 +418,7 @@ bsc_attack_effect_xe0_cont:
     setbyte battle_communication + BATTLE_COMMUNICATION_MOVE_EFFECT_BYTE, 0x50
     seteffectwithchancetarget
     faintpokemon 0x0 0x0 0x8000000
-    setbyte 0x2023FD8 0x0
-    cmd49 0x0 0x0
+    attack_end ATTACK_END_MODE_ALL first_case=0
     end
 
 bsc_attack_effect_xe1:

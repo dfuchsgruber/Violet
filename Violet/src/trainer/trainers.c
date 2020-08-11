@@ -6673,4 +6673,14 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x19e_route_2_cave_teenager,
     },
+    [0x19f] = {
+        .trainerclass = TRAINERCLASS_TEENAGER, .sprite = 0x52,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Fynn"),
+            PSTRING("Fynn")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x16,
+        .items = {
+          [0] = ITEM_GOLDAPFEL,
+        }
+    },
 }; 

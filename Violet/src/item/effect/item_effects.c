@@ -252,6 +252,14 @@ static item_effect_t item_effect_null_syrup = {
     }
 };
 
+static item_effect_t item_effect_golden_apple = {
+    .heal_poison = true, .heal_burn = true, .heal_freeze = true, .heal_sleep = true,
+    .heal_paralysis = true, .heal_confusion = true, .heal_infatuation = true,
+    .heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_ALL, .golden_apple = true,
+};
+
+item_effect_t item_effect_apple = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
+
 item_effect_t *item_effects[] = {
     [ITEM_TRANK- ITEM_TRANK] = &item_effect_potion,
     [ITEM_GEGENGIFT- ITEM_TRANK] = &item_effect_antidote,
@@ -329,4 +337,6 @@ item_effect_t *item_effects[] = {
     [ITEM_HONMELBEERE- ITEM_TRANK] = &item_effect_hondrew_berry,
     [ITEM_LABRUSBEERE- ITEM_TRANK] = &item_effect_grepy_berry,
     [ITEM_TAMOTBEERE- ITEM_TRANK] = &item_effect_tomato_berry,
+    [ITEM_APFEL- ITEM_TRANK] = &item_effect_apple,
+    [ITEM_GOLDAPFEL- ITEM_TRANK] = &item_effect_golden_apple,
 };

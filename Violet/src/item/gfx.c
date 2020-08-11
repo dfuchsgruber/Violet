@@ -91,8 +91,8 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_SCHUTZ] = { .gfx = gfx_item_schutzTiles, .pal = gfx_item_schutzPal },
     [ITEM_WUNDERSTAUB] = { .gfx = gfx_item_wunderstaubTiles, .pal = gfx_item_wunderstaubPal },
     [ITEM_NULLSAFT ] = { .gfx = gfx_item_nullsaftTiles, .pal = gfx_item_nullsaftPal },
-    [ITEM_ITEM_59] = { .gfx = gfx_item_item_59Tiles, .pal = gfx_item_item_59Pal },
-    [ITEM_ITEM_5A] = { .gfx = gfx_item_item_5aTiles, .pal = gfx_item_item_5aPal },
+    [ITEM_APFEL] = {.gfx = gfx_item_apfelTiles, .pal = gfx_item_apfelPal},
+    [ITEM_GOLDAPFEL] = {.gfx = gfx_item_goldapfelTiles, .pal = gfx_item_goldapfelPal},
     [ITEM_ITEM_5B] = { .gfx = gfx_item_item_5bTiles, .pal = gfx_item_item_5bPal },
     [ITEM_ITEM_5C] = { .gfx = gfx_item_item_5cTiles, .pal = gfx_item_item_5cPal },
     [ITEM_SONNENSTEIN] = { .gfx = gfx_item_sonnensteinTiles, .pal = gfx_item_sonnensteinPal },
@@ -401,6 +401,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_DUESTERSTUECK] = {.gfx = gfx_item_duesterstueckTiles, .pal = gfx_item_duesterstueckPal},
     [ITEM_GLITZERSTUECK] = {.gfx = gfx_item_glitzerstueckTiles, .pal = gfx_item_glitzerstueckPal},
     [ITEM_LICHTSTUECK] = {.gfx = gfx_item_lichtstueckTiles, .pal = gfx_item_lichtstueckPal},
+    [ITEM_MININUGGET] = {.gfx = gfx_item_mininuggetTiles, .pal = gfx_item_mininuggetPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

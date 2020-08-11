@@ -1041,5 +1041,11 @@ extern const u8 gfx_item_glitzerstueckTiles[];
 extern const u8 gfx_item_glitzerstueckPal[];
 extern const u8 gfx_item_lichtstueckTiles[];
 extern const u8 gfx_item_lichtstueckPal[];
+extern const u8 gfx_item_mininuggetTiles[];
+extern const u8 gfx_item_mininuggetPal[];
+extern const u8 gfx_item_apfelTiles[];
+extern const u8 gfx_item_apfelPal[];
+extern const u8 gfx_item_goldapfelTiles[];
+extern const u8 gfx_item_goldapfelPal[];
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

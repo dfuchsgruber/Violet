@@ -701,3 +701,11 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	
 .org 0x080d0c30
 	.word battle_transition_phase_2_callbacks
+
+.org 0x081ddda2
+	.byte 0x28 // Goto
+	.word battlescript_item_opponent_used_hp_heal_or_full_restore_closure
+
+.org 0x081ddd73
+	.byte 0x28 // Goto
+	.word battlescript_item_player_used

@@ -294,6 +294,7 @@ void bsc_cmd_pricemoney() {
 
 void bsc_cmd_opponent_use_item() {
     battler_in_party_menu = attacking_battler;
+    dprintf("Bsc opp use item for attacking battler %d\n", attacking_battler);
     pokemon *p = (battler_is_opponent(attacking_battler) ? opponent_pokemon : player_pokemon) + battler_idx_to_party_idx(attacking_battler);
     item_effect(p, bsc_last_used_item, battler_idx_to_party_idx(attacking_battler), 0, true, false);
     bsc_offset++;
@@ -358,7 +359,7 @@ void bsc_cmd_before_attack() {
     }
 
 }
-
+ 
 void bsc_cmd_x49_attack_done_new() {
     if (battle_scripting.attack_done_state <= 17) {
         bsc_cmd_x49_attack_done();

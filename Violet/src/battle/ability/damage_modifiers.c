@@ -89,6 +89,9 @@ void apply_pre_damage_modifiers(){
             break;
         }
     }
+    if (BATTLE_STATE2->status_custom_persistent[defending_battler] & CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION) {
+        damage_apply_multiplier(500);
+    }
     if (attacker->item) {
         switch (item_get_hold_effect(attacker->item))  {
             case HOLD_EFFECT_LIFE_ORB:

@@ -35,6 +35,13 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	trainerbattlestd 0x0 0x19f 0 str_beforea str_aftera
+	end
+	clearflag PLAYER_ABLE_TO_MEGA_EVOLVE
+	additem ITEM_APFEL 1
+	additem ITEM_GOLDAPFEL 1
+	additem ITEM_MININUGGET 1
+	end
 
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	givepokemon POKEMON_RASAFF 20 ITEM_RASAFFNIT 0 0 0

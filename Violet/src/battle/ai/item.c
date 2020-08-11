@@ -12,9 +12,25 @@
 #include "constants/abilities.h"
 #include "constants/attacks.h"
 #include "battle/ressources.h"
+#include "constants/battle/battle_ai_item_flags.h"
 
 #define AI_DEBUG_ITEMS_ON true
 #define AI_DEBUG_ITEMS(str, ...) ({if (AI_DEBUG_ITEMS_ON) dprintf(str, __VA_ARGS__);})
+
+static u8 ai_get_item_type(u16 item, item_effect_t *effect) {
+    if (item == ITEM_TOP_GENESUNG || item == ITEM_GOLDAPFEL)
+        return AI_ITEM_FULL_RESTORE;
+    else if (effect->heal_hp)
+        return AI_ITEM_HEAL_HP;
+    else if (effect->heal_confusion || effect->heal_freeze || effect->heal_burn || effect->heal_paralysis || effect->heal_poison || effect->heal_sleep)
+        return AI_ITEM_CURE_CONDITION;
+    else if (effect->x_accuracy || effect->x_attack || effect->x_defense || effect->x_special_attack || effect->x_speed || effect->increase_critical_ratio)
+        return AI_ITEM_X_STAT;
+    else if (effect->creates_mist )
+        return AI_ITEM_GUARD_SPECS;
+    else
+        return AI_ITEM_NOT_RECOGNIZABLE;
+}
 
 u8 battle_ai_should_use_item(int *score) {
     if (!(battle_flags & BATTLE_TRAINER)) return 4;
@@ -43,6 +59,9 @@ u8 battle_ai_should_use_item(int *score) {
     AI_DEBUG_ITEMS("Viable Mons %d, Party Size %d, Num Items %d, Total Items %d\n", num_viable_pokemon, party_size, num_items, BATTLE_STATE2->num_items[owner]);
     AI_DEBUG_ITEMS("Bias towards items %d for owner %d\n", *score, owner);
 
+    // Types and flags for each item, to communicate that the correct script is triggered
+    u8 ai_item_types[4];
+    u8 ai_item_flags[4];
 
     // Check if the item is eligible anyways
     u8 item_idx_to_choose = 4;
@@ -52,8 +71,10 @@ u8 battle_ai_should_use_item(int *score) {
         u16 item = BATTLE_STATE2->items[owner][i];
         if (item == 0 || item < ITEM_TRANK) continue;
         item_effect_t *effect = item_effects[item - ITEM_TRANK];
+        ai_item_types[i] = ai_get_item_type(item, effect);
+        ai_item_flags[i] = 0;
         int item_score = 0;
-        if (item == ITEM_TOP_GENESUNG) goto check_heal_hp;
+        if (item == ITEM_TOP_GENESUNG || item == ITEM_GOLDAPFEL) goto check_heal_hp;
         switch (item_get_effect_type(item)) {
             case ITEM_EFFECT_X_ITEM: {
                 int stat_change_current = 6;
@@ -61,24 +82,30 @@ u8 battle_ai_should_use_item(int *score) {
                 if (effect->x_attack) {
                     stat_change_current = battlers[active_battler].stat_changes[STAT_ATTACK];
                     increase = effect->x_attack;
+                    ai_item_flags[i] |= AI_ITEM_FLAG_X_ATTACK;
                 } else if (effect->x_defense) {
                     stat_change_current = battlers[active_battler].stat_changes[STAT_DEFENSE];
                     increase = effect->x_defense;
+                    ai_item_flags[i] |= AI_ITEM_FLAG_X_DEFENSE;
                 } else if (effect->x_speed) {
                     stat_change_current = battlers[active_battler].stat_changes[STAT_SPEED];
                     increase = effect->x_speed;
+                    ai_item_flags[i] |= AI_ITEM_FLAG_X_SPEED;
                 } else if (effect->x_special_attack) {
                     stat_change_current = battlers[active_battler].stat_changes[STAT_SPECIAL_ATTACK];
                     increase = effect->x_special_attack;
+                    ai_item_flags[i] |= AI_ITEM_FLAG_X_SPECIAL_ATTACK;
                 } else if (effect->x_accuracy) {
                     stat_change_current = battlers[active_battler].stat_changes[STAT_ACCURACY];
                     increase = effect->x_accuracy;
+                    ai_item_flags[i] |= AI_ITEM_FLAG_X_ACCURACY;
                 } else if (effect->creates_mist && battle_side_timers[battler_is_opponent(active_battler)].mist_turns == 0) {
                     item_score = battle_ai_switch_weight_scores(party + battler_idx_to_party_idx(active_battler), 0, 5);
                     break;
                 } else if (effect->increase_critical_ratio && !(battlers[active_battler].status2 & STATUS2_FOCUS_ENERGY)) {
                     item_score = battle_ai_switch_weight_scores(party + battler_idx_to_party_idx(active_battler), 5, 0);
                     break;
+                    ai_item_flags[i] |= AI_ITEM_FLAG_HIGH_CRITICAL_RATIO;
                 }
                 if (stat_change_current + increase >= 12) 
                     increase = 12 - stat_change_current;
@@ -105,6 +132,7 @@ u8 battle_ai_should_use_item(int *score) {
                 if (battlers[active_battler].ability == GIFTWAHN) continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
+                ai_item_flags[i] |= AI_ITEM_FLAG_POISON;
                 break;
             }
             case ITEM_EFFECT_HEAL_SLEEP: {
@@ -121,6 +149,7 @@ u8 battle_ai_should_use_item(int *score) {
                 if (can_sleep_talk) continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS || battlers[attacking_battler].ability == FRUEHWECKER)
                     item_score /= 2;
+                ai_item_flags[i] |= AI_ITEM_FLAG_SLEEP;
                 break;
             }
             case ITEM_EFFECT_HEAL_BURN: {
@@ -132,6 +161,7 @@ u8 battle_ai_should_use_item(int *score) {
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
                 break;
+                ai_item_flags[i] |= AI_ITEM_FLAG_BURN;
             }
             case ITEM_EFFECT_HEAL_FREEZE: {
             check_freeze:
@@ -140,6 +170,7 @@ u8 battle_ai_should_use_item(int *score) {
                 } else continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
+                ai_item_flags[i] |= AI_ITEM_FLAG_FREEZE;
                 break;
             } case ITEM_EFFECT_HEAL_PARALYSIS: {
             check_paralysis:
@@ -148,12 +179,14 @@ u8 battle_ai_should_use_item(int *score) {
                 } else continue;
                 if (battlers[active_battler].ability == NOTSCHUTZ || battlers[attacking_battler].ability == EXPIDERMIS)
                     item_score /= 2;
+                ai_item_flags[i] |= AI_ITEM_FLAG_PARALYSIS;
                 break;
             } case ITEM_EFFECT_HEAL_CONFUSION: {
             check_confusion:
                 if (battlers[active_battler].status2 & STATUS2_CONFUSED) {
                     item_score = 4;
                 } else continue;
+                ai_item_flags[i] |= AI_ITEM_FLAG_CONFUSION;
                 break;
             } case ITEM_EFFECT_HEAL_INFATUATION: {
             check_infatuation:
@@ -193,6 +226,9 @@ u8 battle_ai_should_use_item(int *score) {
         AI_DEBUG_ITEMS("Chose item idx %d (is %d) with an item score of %d\n", item_idx_to_choose, BATTLE_STATE2->items[owner][item_idx_to_choose], best_item_score);
         *score += best_item_score;
         *score += (int)((battle_ressources->ai->ai_flags >> 12) & 3);
+        // Setting ai item type and flags is not used anymore, as the proper reaction script is triggered in battle_main.c : battle_action_use_item
+        battle_state->ai_item_type[active_battler >> 1] = ai_item_types[item_idx_to_choose];
+        battle_state->ai_item_flags[active_battler >> 1] = ai_item_flags[item_idx_to_choose];
         AI_DEBUG_ITEMS("Item bias is %d\n", (battle_ressources->ai->ai_flags >> 12) & 3);
     }
     *score = MIN(16, MAX(-16, *score));

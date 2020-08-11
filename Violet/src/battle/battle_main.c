@@ -75,7 +75,7 @@ void battle_action_use_item() {
         item_effect_t *effect = item_effects[bsc_last_used_item - ITEM_TRANK];
         u8 first = 0, last = 0;
         pokemon *p = battler_load_party_range(attacking_battler, &first, &last) + battler_idx_to_party_idx(attacking_battler);
-        if (bsc_last_used_item == ITEM_TOP_GENESUNG) {
+        if (bsc_last_used_item == ITEM_TOP_GENESUNG || bsc_last_used_item == ITEM_GOLDAPFEL) {
             bsc_offset = battlescripts_use_item[1];
         } else {
             dprintf("Item has effect %d\n", item_get_effect_type(bsc_last_used_item));
@@ -230,6 +230,38 @@ void battle_before_attack_effects() {
     bsc_offset = battlescript_before_attack; // This script executes all effects before the battle...
 }
 
+extern u8 battlescript_golden_apple_protection_weared_off[];
+
+static bool battle_end_turn_golden_apple_effects() {
+    bool effect = false;
+    for (; BATTLE_STATE2->golden_apple_battler_idx < battler_cnt; ++BATTLE_STATE2->golden_apple_battler_idx) {
+        active_battler = BATTLE_STATE2->golden_apple_battler_idx;
+        dprintf("Golden apple battler %d, status %d\n", active_battler, BATTLE_STATE2->status_custom_persistent[active_battler]);
+        if (BATTLE_STATE2->status_custom_persistent[active_battler] & CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION) {
+            BATTLE_STATE2->status_custom_persistent[active_battler] &= (u32)(~CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION);
+            battle_scripting.battler_idx = active_battler;
+            attacking_battler = active_battler;
+            // Probably showing the sequence is redundant...
+            // battlescript_init_and_push_current_callback(battlescript_golden_apple_protection_weared_off);
+            // effect = true;
+            break;
+        }
+    }
+    return effect;
+}
+
+extern u8 battlescript_golden_apple_protection_active[];
+
+void battle_golden_apple_print_protection() {
+    dprintf("Golden apple check for battler %d, status 0x%x\n", attacking_battler, BATTLE_STATE2->status_custom_persistent[attacking_battler]);
+    if (BATTLE_STATE2->status_custom_persistent[attacking_battler] & CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION) {
+        battle_scripting.battler_idx = attacking_battler;
+        active_battler = attacking_battler;
+        battlescript_callstack_push_next_command();
+        bsc_offset = battlescript_golden_apple_protection_active;
+    }
+}
+
 bool battle_end_turn_effects() {
     // During any end of turn effect, a battler controlled by the ai may faint
     // Therefore, we have to allow the ai to choose a new switch in target in any step
@@ -238,6 +270,7 @@ bool battle_end_turn_effects() {
     if (battle_end_turn_field_effects()) return true;
     if (battle_handicap_end_turn_effects()) return true;
     if (battle_end_turn_battler_effects()) return true;
+    if (battle_end_turn_golden_apple_effects()) return true;
     return false;
 }
 
@@ -245,6 +278,7 @@ void battle_end_turn_handle_battle_continues_wrapper() {
     if (!battler_marked_for_controller_execution) {
         battle_end_turn_handle_battle_continues();
         BATTLE_STATE2->end_of_turn_handicap_effects_cnt = 0;
+        BATTLE_STATE2->golden_apple_battler_idx = 0;
     }
 }
 

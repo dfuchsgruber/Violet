@@ -51,6 +51,7 @@ battle_animations:
     .word battle_animation_ink_shot
     .word battle_animation_item_drop
     .word battle_animation_mon_is_aggresive
+    .word battle_animation_barrier
 
 battle_animation_extreme_heat_introduction:
     loadgraphic 0x2815

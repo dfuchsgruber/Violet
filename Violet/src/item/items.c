@@ -366,13 +366,13 @@ static u8 str_item_nullsaft_description[] = LANGDEP(
 	PSTRING("Geschmackloser Saft, der alle\nverteilten Fleiß-Punkte zurücksetzt."),
 	PSTRING("Tasteless juice that resets\nall distributed effort values.")
 );
-static u8 str_item_item_59_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_apfel_description[] = LANGDEP(
+	PSTRING("Ein saftiger roter Apfel, der\n50% der Kp wiederherstellt."),
+	PSTRING("A juicy red apple that restores\n50% of a Pokémon's Hp.")
 );
-static u8 str_item_item_5a_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_goldapfel_description[] = LANGDEP(
+	PSTRING("Ein goldener Apfel, der ein\nPokémon vollständig heilt und dessen\nVerteidigung temporär erhöht."),
+	PSTRING("A golden apple that fully heals\na Pokémon and raises its\ndefenses temporarily.")
 );
 static u8 str_item_item_5b_description[] = LANGDEP(
 	PSTRING(" ????"),
@@ -1601,6 +1601,10 @@ static u8 str_item_glitzerstueck_description[] = LANGDEP(
 static u8 str_item_lichtstueck_description[] = LANGDEP(
 	PSTRING("Eine leuchtende Scherbe eines antiken\nWerkzeugs, das vor langer Zeit\nangefertigt wurde."),
 	PSTRING("A small shining shard.\nIt appears to be from some sort of\na tool made long ago.")
+);
+static u8 str_item_mininugget_description[] = LANGDEP(
+	PSTRING("Eine kleiner Klumpen aus Gold.\nEr kann zu einem hohen Preis\nverkauft werden."),
+	PSTRING("A small nugget made of pure\ngold. It can be sold for\na high price.")
 );
 
 
@@ -3031,35 +3035,35 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_59
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		LANGDEP(PSTRING("Apfel"), PSTRING("Apfel")),
+		ITEM_APFEL, //index
+		50, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_59_description,
+		str_item_apfel_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0x0, //battle_usage2
+		1, //type
+		(void(*)(u8))item_field_by_effect_table, //field_usage
+		(void(*)(u8))0x1, //battle_usage1
+		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_5A
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		LANGDEP(PSTRING("Goldapfel"), PSTRING("Goldapfel")),
+		ITEM_GOLDAPFEL, //index
+		2000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_item_5a_description,
+		str_item_goldapfel_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0x0, //battle_usage2
+		1, //type
+		(void(*)(u8))item_field_by_effect_table, //field_usage
+		(void(*)(u8))0x1, //battle_usage1
+		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_5B
@@ -7752,14 +7756,20 @@ item items[] = {
 	},
 	[ITEM_GLITZERSTUECK] = {
 		.name = LANGDEP(PSTRING("Glitzerstueck"), PSTRING("Sparkle Piece")),
-		.index = 0x18c, .price = 200,
+		.index = 0x18d, .price = 200,
 		.description = str_item_glitzerstueck_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
 	},
 	[ITEM_LICHTSTUECK] = {
 		.name = LANGDEP(PSTRING("Lichtstueck"), PSTRING("Light Piece")),
-		.index = 0x18c, .price = 200,
+		.index = 0x18e, .price = 200,
 		.description = str_item_lichtstueck_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_MININUGGET] = {
+		.name = LANGDEP(PSTRING("Mininugget"), PSTRING("Mini Nugget")),
+		.index = ITEM_MININUGGET, .price = 500,
+		.description = str_item_mininugget_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
 	},
 };

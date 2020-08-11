@@ -128,11 +128,11 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_ROUTE_2_CAVE_EGG_0",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_ONIX",
-						"berry_tree_idx": 0
+						"berry_tree_idx": "0"
 					}
 				},
 				{

@@ -60,8 +60,8 @@
 					"picture": 0,
 					"script_std": 0,
 					"field_3": 0,
-					"x": "20",
-					"y": "18",
+					"x": "0",
+					"y": "0",
 					"level": 0,
 					"behaviour": 0,
 					"behaviour_range": {
@@ -118,7 +118,7 @@
 		"footer_idx": 121,
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": 0,
-		"weather": "MAP_WEATHER_INSIDE",
+		"weather": "MAP_WEATHER_CLOUDY",
 		"type": "MAP_TYPE_BASEMENT",
 		"bike_usable": "1",
 		"flags": {

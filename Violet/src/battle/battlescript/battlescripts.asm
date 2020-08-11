@@ -219,3 +219,36 @@ battlescript_weakened_by_berry:
     waitmessage 0x40
     removeitem BANK_TARGET
     return
+
+.global battlescript_golden_apple_protection_weared_off
+
+battlescript_golden_apple_protection_weared_off:
+    playanimation BANK_USER BATTLE_ANIM_GOLDEN_APPLE_BARRIER 0
+    printstring 0x1b8
+    waitmessage 0x40
+    end2
+
+.global battlescript_golden_apple_protection_active
+
+battlescript_golden_apple_protection_active:
+    playanimation BANK_USER BATTLE_ANIM_GOLDEN_APPLE_BARRIER 0
+    printstring 0x1b9
+    waitmessage 0x40
+    end2
+
+
+.global battlescript_item_player_used
+
+battlescript_item_player_used:
+    callasm battle_golden_apple_print_protection
+    attack_end ATTACK_END_MODE_ONE_CASE first_case=15
+    end
+
+.global battlescript_item_opponent_used_hp_heal_or_full_restore_closure
+
+battlescript_item_opponent_used_hp_heal_or_full_restore_closure: // Just a closure of 0x081ddd7d
+    callasm battle_golden_apple_print_protection
+    attack_end ATTACK_END_MODE_ONE_CASE first_case=15
+    finishaction
+
+

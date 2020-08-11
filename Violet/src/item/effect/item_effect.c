@@ -240,6 +240,9 @@ bool item_effect_execute_hp_heal(pokemon *p, u16 item, u8 battler_idx, u8 move_i
             case ITEM_EFFECT_HEAL_HP_DYANMIC:
                 hp_to_heal = battle_scripting.heal_item_amount;
                 break;
+            case ITEM_EFFECT_HEAL_HP_PERCENTAGE:
+                hp_to_heal = MAX(1, pokemon_get_attribute(p, ATTRIBUTE_TOTAL_HP, 0) * effect->hp / 100);
+                break;
             default:
                 hp_to_heal = effect->hp;
                 break;
@@ -365,6 +368,19 @@ bool item_effect_execute_evolution(pokemon *p, u16 item, u8 battler_idx, u8 move
     return false;
 }
 
+bool item_effect_execute_golden_apple(pokemon *p, u16 item, u8 battler_idx, u8 move_idx, u8 party_idx, u8 hold_effect, 
+    item_effect_t *effect, bool calculate_heal_only, bool check_only) {
+    (void)p; (void)item; (void)move_idx; (void)party_idx; (void)hold_effect; (void) calculate_heal_only;
+    if (effect->golden_apple && battler_idx < 4) {
+        if (!check_only) 
+            BATTLE_STATE2->status_custom_persistent[battler_idx] |= CUSTOM_STATUS_PERSISTENT_GOLDEN_APPLE_PROTECTION;
+        dprintf("Golden Apple protection battler %d, status is %x\n", battler_idx, BATTLE_STATE2->status_custom_persistent[battler_idx]);
+        return true;
+    }
+    return false;
+}
+  
+
 bool (*item_effect_functions[NUMBER_ITEM_EFFECT_FUNCTIONS])(pokemon*, u16, u8, u8, u8, u8, item_effect_t*, bool, bool) = {
     item_effect_execute_battle_effects,
     item_effect_execute_level_up,
@@ -375,6 +391,7 @@ bool (*item_effect_functions[NUMBER_ITEM_EFFECT_FUNCTIONS])(pokemon*, u16, u8, u
     item_effect_execute_pp_heal,
     item_effect_execute_friendship,
     item_effect_execute_evolution,
+    item_effect_execute_golden_apple,
 };
 
 
@@ -386,18 +403,20 @@ bool item_effect(pokemon *p, u16 item, u8 party_idx, u8 move_idx, bool calculate
     if (item == ITEM_ENIGMABEERE) {
         hold_effect = item_get_hold_effect(held_item);
     }
-    item_target_battler = pokemon_party_menu_current_index;
+    item_target_battler = battler_in_party_menu;
 
     // Find the battler idx that is targeted for inbattle items
     u8 battler_idx = 4;
     if (super.in_battle) {
-        active_battler = pokemon_party_menu_current_index;
+        active_battler = battler_in_party_menu;
+        dprintf("Item effect for active battler %d\n", active_battler);
         for (u8 i = 0; i < battler_cnt; i++) {
             if (battler_is_opponent(i) == battler_is_opponent(active_battler) && party_idx == battler_idx_to_party_idx(i)) {
                 battler_idx = i;
                 break;
             }
         }
+        dprintf("Found battler %d with party slot %d\n", battler_idx, party_idx);
     } else {
         active_battler = 0;
     }

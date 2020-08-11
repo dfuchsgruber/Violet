@@ -140,7 +140,8 @@ typedef struct {
     u8 handicap_introduced;
     u8 switch_in_handicap_effects_cnt;
     u8 end_of_turn_handicap_effects_cnt;
-    u32 status_custom[4];
+    u32 status_custom[4]; // Cleared before an attack
+    u32 status_custom_persistent[4]; // Not cleared before an attack
     u8 attack_done_substate; // A substate that is used to trigger additional events for ending an attack with bsc cmd 0x49
     u8 before_attack_state;
     u8 throwing_pokeball : 1; // If active, this indicates that one player action is to throw a pokeball. This is needed to prevent two of these actions in a double wild battle
@@ -155,6 +156,7 @@ typedef struct {
     u8 item_dropping_chance_increased_by_item : 1;
     u8 item_dropping_chance_increased_by_ability : 1;
     u8 aggresive_battler_idx; 
+    u8 golden_apple_battler_idx;
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)
