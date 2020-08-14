@@ -57,11 +57,11 @@ wild_pokemon_entry wild_pokemon_15_0_other_entries[5] = {
 	[WILD_POKEMON_DENSITY_OTHER_1_25_PERCENT] = 
 		{.level_min = 10, .level_max = 14, .species = POKEMON_CLAVION},
 	[WILD_POKEMON_DENSITY_OTHER_2_20_PERCENT] = 
-		{.level_min = 10, .level_max = 14, .species = POKEMON_SCHLURP},
+		{.level_min = 10, .level_max = 14, .species = POKEMON_MAEHIKEL},
 	[WILD_POKEMON_DENSITY_OTHER_3_15_PERCENT] = 
 		{.level_min = 12, .level_max = 14, .species = POKEMON_MOGELBAUM},
 	[WILD_POKEMON_DENSITY_OTHER_4_10_PERCENT] = 
-		{.level_min = 14, .level_max = 16, .species = POKEMON_CLAVION},
+		{.level_min = 14, .level_max = 16, .species = POKEMON_MILTANK},
 };
 
 wild_pokemon_habitat wild_pokemon_15_0_other = {

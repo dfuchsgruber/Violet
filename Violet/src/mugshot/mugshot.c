@@ -152,6 +152,8 @@ mugshot mugshots[] = {
 		{
 			[MUGSHOT_NORMAL] = gfx_mug_larissaTiles,
 			[MUGSHOT_HAPPY] = gfx_mug_larissa_happyTiles,
+			[MUGSHOT_ANGRY] = gfx_mug_larissa_angryTiles,
+			[MUGSHOT_RUMINATIVE] = gfx_mug_larissa_thoughtfulTiles,
 			}, 
 		gfx_mug_larissaPal, str_mug_larissa},
     [MUGSHOT_PRIMUS] = {

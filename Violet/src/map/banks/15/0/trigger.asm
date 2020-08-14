@@ -11,7 +11,6 @@
 .global ow_script_0x8d3f43
 .global ow_script_map_15_0_trigger_0
 .global ow_script_0x8e22e1
-.global ow_script_0x8bf102
 .global ow_script_0x8d402a
 .global ow_script_0x8bf01f
 .global ow_script_0x8d3f37
@@ -26,15 +25,15 @@
 .global ow_script_0x8d3f4d
 .global ow_script_0x8d4033
 .global ow_script_0x8bf0a0
-.global ow_script_0x8bf12d
 
 ow_script_0x8f7174:
-//copyvarifnotzero 0x8000 ITEM_SONDERBONBON
-//copyvarifnotzero 0x8001 ITEM_FINSTERSTEIN
-//callstd ITEM_OBTAIN
 end
 
 ow_script_map_15_0_trigger_1:
+addvar STORY_PROGRESS 1
+end
+
+/**
 setvar LASTTALKED 0x36
 goto ow_script_0x8d35c7
 
@@ -256,129 +255,234 @@ str_police2:
     .autostring 34 2 "Alright, junior comissioner Harrenfield!"
 
 .endif
+ */
 
+
+mov_exclam:
+    .byte SAY_EXCLAM, STOP
+mov_fu:
+    .byte LOOK_UP, STOP
+mov_cam_down:
+    .byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STOP
+mov_cam_up:
+    .byte STEP_UP, STEP_UP, STEP_UP, STEP_UP, STEP_UP, STOP
+mov_fd:
+    .byte LOOK_DOWN, STOP
+mov_fl:
+    .byte LOOK_LEFT, STOP
+mov_fr:
+    .byte LOOK_RIGHT, STOP
+mov_say_smile:
+    .byte SAY_SMILE, STOP
+mov_exclam_and_fu:
+    .byte LOOK_UP, SAY_EXCLAM, STOP
+mov_1u:
+    .byte STEP_UP, STOP
+mov_1r_fu:
+    .byte STEP_RIGHT, LOOK_UP, STOP
+
+.equ PERSON_MAY, 12
+.equ PERSON_LARISSA, 60
 
 ow_script_map_15_0_trigger_0:
-lockall
-sound 0x15
-applymovement 0x48 ow_script_movs_0x8fbc24
-waitmovement 0x0
-goto ow_script_0x8bf01f
+    lockall
+    sound 0x15
+    applymovement 0xFF mov_fu
+    applymovement PERSON_MAY mov_exclam
+    waitmovement 0x0
 
+    loadpointer 0x0 str_may_0
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG
+    setvar 0x8004 PERSON_MAY
+    setvar LASTTALKED PERSON_MAY
+    special SPECIAL_NPC_MOVE_TO_PLAYER
+    waitmovement 0x0
 
-ow_script_movs_0x8fbc24:
-.byte SAY_EXCLAM
-.byte STOP
+    faceplayer
+    loadpointer 0x0 str_may_1
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0
+    update_mugshot_emotion MUGSHOT_SAD
+    loadpointer 0 str_may_2
+    callstd MSG_KEEPOPEN
+    multichoice 8 8 0 1
+    compare LASTRESULT 1
+    gotoif EQUAL said_no
+accept_challange:
+    update_mugshot_emotion MUGSHOT_NORMAL
+    ow_script_0x8bf0c1:
+    compare STARTER_SELECTED 0x0
+    gotoif EQUAL starter_plant
+    compare STARTER_SELECTED 0x1
+    gotoif EQUAL starter_fire
+starter_water:
+    trainerbattlecont 0x1 0x2b 0x0 str_may_before str_may_after may_later
+starter_fire:
+    trainerbattlecont 0x1 0x2a 0x0 str_may_before str_may_after may_later
+starter_plant:
+    trainerbattlecont 0x1 0x29 0x0 str_may_before str_may_after may_later
 
+may_later:
+    loadpointer 0 str_may_4
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_SAD
+    pause 24
+    loadpointer 0 str_larissa_1
+    show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_HAPPY
+    sound 0x15
+    applymovement 0xFF mov_exclam_and_fu
+    applymovement PERSON_MAY mov_exclam_and_fu
+    waitmovement 0
+    checksound
+    pause 16
+    special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
+    applymovement 0xFF mov_1u
+    applymovement PERSON_MAY mov_1r_fu
+    applymovement 0x7F mov_cam_up
+    waitmovement 0
+    pause 16
+    applymovement 0x7F mov_cam_down
+    setvar 0x8004 PERSON_LARISSA
+    special SPECIAL_NPC_MOVE_TO_PLAYER
+    waitmovement 0
+    setvar LASTTALKED PERSON_LARISSA
+    faceplayer
+    special SPECIAL_OVERWORLD_VIEWPORT_LOCK
+    loadpointer 0 str_larissa_2
+    show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG
+    applymovement PERSON_MAY mov_fl
+    waitmovement 0
+    loadpointer 0 str_may_5
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_ANNOYED
+    applymovement PERSON_MAY mov_fu
+    waitmovement 0
+    loadpointer 0 str_larissa_3
+    show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG
+    loadpointer 0 str_may_6
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_SAD
+    loadpointer 0 str_may_7
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_ANGRY
+    loadpointer 0 str_larissa_4
+    show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0 emotion=MUGSHOT_ANGRY
+    update_mugshot_emotion MUGSHOT_NORMAL
+    loadpointer 0 str_larissa_5
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    loadpointer 0 str_larissa_6
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
+    pause 16
+    fanfare 0x13E
+    loadpointer 0 str_karte
+    callstd MSG_KEEPOPEN
+    waitfanfare
+    pause 16
+    loadpointer 0 str_larissa_7
+    show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0 emotion=MUGSHOT_NORMAL
+    update_mugshot_emotion MUGSHOT_HAPPY
+    loadpointer 0 str_larissa_8
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
+    pause 32
+    sound 0x15
+    applymovement PERSON_LARISSA mov_say_smile
+    waitmovement 0
+    checksound
+    loadpointer 0 str_larissa_9
+    show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG hide_mugshot=1 emotion=MUGSHOT_HAPPY
+    pause 16
+    setvar 0x8004 PERSON_LARISSA
+    setvar 0x8005 0x2d
+    setvar 0x8006 0x3f
+    special SPECIAL_NPC_MOVE_TO
+    waitmovement 0
+    applymovement 0xFF mov_fd
+    applymovement PERSON_MAY mov_fd
+    waitmovement 0
+    applymovement PERSON_LARISSA mov_cam_down
+    waitmovement 0
+    hidesprite PERSON_LARISSA
+    pause 32
+    applymovement 0xFF mov_fr
+    applymovement PERSON_MAY mov_fl
+    waitmovement 0
+    loadpointer 0 str_may_8
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY hide_mugshot=0
+    update_mugshot_emotion MUGSHOT_ANNOYED
+    loadpointer 0 str_may_9
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_NORMAL
+    loadpointer 0 str_may_10
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
+    applymovement PERSON_MAY mov_cam_up
+    waitmovement 0
+    hidesprite PERSON_MAY
+    addvar STORY_PROGRESS 1
+    releaseall
+    end    
 
-ow_script_0x8bf01f:
-loadpointer 0x0 str_0x8bf724
-show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-setvar 0x8004 0x48
-setvar LASTTALKED 0x48
-special 0x1b
-waitmovement 0x0
-faceplayer
-draw_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-loadpointer 0x0 str_0x8bf610
-callstd MSG_KEEPOPEN
-multichoice 8 8 0 1
-hide_mugshot
-compare LASTRESULT 0x1
-callif EQUAL ow_script_0x8bf0a0
-goto ow_script_0x8bf0c1
-
-
-ow_script_0x8bf0c1:
-compare STARTER_SELECTED 0x0
-gotoif EQUAL ow_script_0x8bf102
-compare STARTER_SELECTED 0x1
-gotoif EQUAL ow_script_0x8bf12d
-draw_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-trainerbattlecont 0x1 0x2b 0x0 str_0x8bf5bc str_0x8bf5d1 ow_script_0x8bf158
-
-
-ow_script_0x8bf158:
-loadpointer 0x0 str_0x8bf3f9
-show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-additem ITEM_KARTE 0x1
-fanfare 0x13e
-loadpointer 0x0 str_0x8bf3dc
-callstd MSG_KEEPOPEN
-waitfanfare
-closeonkeypress
-loadpointer 0x0 str_0x8bf2f0
-show_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-fadescreen 0x1
-hidesprite 0x48
-fadescreen 0x0
-goto ow_script_0x8fb459
-
-
-ow_script_0x8fb459:
-addvar STORY_PROGRESS 0x1
-releaseall
-end
-
-
-ow_script_0x8bf12d:
-draw_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-trainerbattlecont 0x1 0x2a 0x0 str_0x8bf5bc str_0x8bf5d1 ow_script_0x8bf158
-
-
-ow_script_0x8bf102:
-draw_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-trainerbattlecont 0x1 0x29 0x0 str_0x8bf5bc str_0x8bf5d1 ow_script_0x8bf158
-
-
-ow_script_0x8bf0a0:
-draw_mugshot MUGSHOT_MAY MUGSHOT_LEFT
-loop:
-loadpointer 0x0 str_0x8bf745
-callstd MSG_KEEPOPEN
-multichoice 8 8 0 1
-compare LASTRESULT 0x1
-gotoif EQUAL loop
-goto ow_script_0x8bf0c1
+said_no:
+    update_mugshot_emotion MUGSHOT_SHOCKED
+    loadpointer 0 str_may_decline
+    callstd MSG_KEEPOPEN
+    multichoice 8 8 0 1
+    compare LASTRESULT 1
+    gotoif EQUAL said_no
+    goto accept_challange
 
 
 .ifdef LANG_GER
 
-str_0x8bf724:
+str_may_0:
     .string "PLAYER!"
-
-
-
-str_0x8bf610:
-	.autostring 35 2 "Bist du etwa auf dem Weg nach Silvania?\pDa wirst du dich etwas gedulden müssen, denn aus der Farm im Norden sind die Voltilamm entlaufen und blockieren den Weg.\pDOTS DOTS DOTS\pAber weißt duDOTS\pDOTSwir könnten doch solangeDOTS\pDOTS einen Kampf austragen, meinst du nicht?"
-
-
-str_0x8bf5bc:
-    .autostring 35 2 "Vielleicht bin ich ja diesmal stark genug, einen schwierigen Kampf zu gewinnenDOTS"
-
-
-
-str_0x8bf5d1:
-    .autostring 35 2 "DOTS DOTS DOTS\nErneut eine NiederlageDOTS"
-
-
-
-str_0x8bf3f9:
-    .autostring 35 2 "Irgendwie hatte ich schon erwartet, dass du mich besiegst, PLAYERDOTS\pIch bin einfach ein lausiger TrainerDOTS DOTS DOTS\pAnstatt hier zu warten, bis die Farmer ihre Voltilamm wieder eingefangen haben, könntest du einen Abstecher in Aktania machen.\pDie Leute von der Farm betreiben einen Flugservice, sodass du die Insel leicht erreichen kannst.\pSieh dir am besten auf dieser Karte an, wohin sie dich bringen."
-
-
-str_0x8bf3dc:
-    .autostring 35 2 "PLAYER erhält eine Karte."
-
-
-
-str_0x8bf2f0:
-    .autostring 35 2 "Aktania liegt nördlich von hier.\pMit dem Flugservice der Farmer solltest du die Insel sehr schnell erreichen.\pDort befindet sich auch eine Arena, die du herausfordern kannst.\pIch traue mir das allerdings nach meiner Niederlage nicht mehr zuDOTS\pIch weiß wirklich nicht, ob ich das Zeug zum Trainer habe, PLAYERDOTS\pUnd ich will meinen Freund aus Hoenn nicht enttäuschen, weißt duDOTS DOTS DOTS\pDer Druck istDOTS DOTS DOTS\pEgal, lassen wir dasDOTS\pDOTS DOTS DOTS\pEs war schön, dich wiederzusehen, PLAYER.\pHalt die Ohren steif!"
-
-
-
-str_0x8bf745:
-	.autostring 35 2 "PLAYERDOTS DOTS DOTS\pBitte, dieser Kampf könnte mir ein bisschen Selbstvertrauen verschaffenDOTS\pUnd das kann ich sehr gut gebrauchenDOTS"
+str_may_1:
+    .autostring 34 2 "Es ist wirklich schön, dich endlich wiederzusehen.\pSeit wir die Trainerschule abgeschlossen haben, ist einiges passiert, was?\pDu bist bestimmt sehr stark geworden!"
+str_may_2:
+    .autostring 34 2 "Ich habe wirklich hart an mir gearbeitet, PLAYER.\pIch habe viel trainiert, um endlich zu dir und all den anderen aufzuholen.\pIch würde gerne gegen dich kämpfen, was sagst du, PLAYER?"
+str_may_decline:
+    .autostring 34 2 "Was, wirklich?\pEs würde mir wirklich viel bedeuten, wenn du gegen mich antreten könntest, PLAYER.\pWas sagst du?"
+str_may_before:
+    .autostring 35 2 "Jetzt muss ich mich beweisen!\pIch werde alles geben und dir zeigen, dass auch ich das Zeug zum Trainer habe!"
+str_may_after:
+    .autostring 35 2 "DOTS DOTS DOTS\nEine NiederlageDOTS"
+str_may_3:
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pTrotz meiner harten Arbeit habe ich gegen dich verlorenDOTS"
+str_may_4:
+    .autostring 34 2 "Es bleibt wohl alles so, wie es immer gewesen ist, was?\pEgal wie sehr ich mich auch anstrenge, ich werde niemals zu RIVAL oder dir aufholen können.\pIch habe einfach nicht das gewisse Etwas, das einen großartigen Trainer ausmacht, schätze ich."
+str_larissa_1:
+    .autostring 34 2 "Bravo!\nBravissimo!"
+str_larissa_2:
+    .autostring 34 2 "Ihr beiden habt wirklich fantastisch gekämpft.\pIch wusste doch gleich, als ich dich in Blütenbach getroffen habe, PLAYER, dass du Talent besitzt.\pUnd du, Mädchen, solltest dich nicht selbst so fertig machen, nur weil du einen Kampf verloren hast.\pNiederlagen gehören zum Alltag eines Trainers.\pNur aus ihnen lernen wir und können besser werden.\pNoch dazu hast du dich sehr gut geschlagen.\pUnd ich weiß, wovon ich rede."
+str_may_5:
+    .autostring 34 2 "Wer ist das, PLAYER?\pKennst du die Frau?"
+str_larissa_3:
+    .autostring 34 2 "Natürlich, wie unhöflich von mir.\pMein Name ist Larissa und dein Freund PLAYER und ich sind uns erst vor Kurzem ganz zufällig in Blütenbach begegnet.\pIch wusste damals gleich, dass er das Zeug zum Trainer hat.\pUnd du, Kleine, hättest auch Potential, wenn du etwas mehr an deine eigenen Fähigkeiten glauben würdest!"
+str_may_6:
+    .autostring 34 2 "Wer's glaubtDOTS"
+str_may_7:
+    .autostring 34 2 "Ich habe meine schwierigen Kämpfe immer in den Sand gesetzt.\pWas willst du schon davon wissen, wer das Zeug zum Trainer hat und wer nicht?"
+str_larissa_4:
+    .autostring 34 2 "Du solltest mir nicht widersprechen, Kindchen, ja?\pMach dich nicht schlechter, als du bist!"
+str_larissa_5:
+    .autostring 34 2 "Wenn du ein wenig Selbstvertrauen brauchst, solltest du dich auf machen, die Arenaleiter dieser Region herauszuforden.\pAn ihnen müssen sich Trainer messen.\pUnd weißt du, Mädchen, da wirst auch du bemerken, dass in dir mehr steckt, als du vielleicht gerade glaubst."
+str_larissa_6:
+    .autostring 34 2 "Silvania liegt zum Beispiel ganz in der Nähe, da könnt ihr Mara herausfordern.\pAllerdingsDOTS\pDen Farmern hier sind einige Pokémon ausgebüchst und es könnte etwas dauern, bis sie ihre Voltilamm-Herde wieder zusammengescheucht haben.\pWarum versucht ihr nicht stattdessen nach Aktania zu gelangen?"
+str_karte:
+    .autostring 34 2 "PLAYER hat eine Karte erhalten."
+str_larissa_7:
+    .autostring 34 2 "Hier habt ihr beide eine Karte.\pWie ihr sehen könnt, liegt Aktania weit im Norden.\pUm dorthinzugelangen müsst ihr irgendwie das Meer passieren."
+str_larissa_8:
+    .autostring 34 2 "Aber keine Sorge, das ist kinderleicht.\pIch lasse euch den Spaß, es selbst herauszufinden!"
+str_larissa_9:
+    .autostring 34 2 "Es ist wirklich eine riesige Freude, euch beiden so zuzusehen, wo mir doch in letzter Zeit so langweilig war.\pLasst euch von mir nicht weiter aufhalten, ja?"
+str_may_8:
+    .autostring 34 2 "Diese Frau hat wirklich Nerven!"
+str_may_9:
+    .autostring 34 2 "Uns einfach so zu belehren und uns dann Anweisungen zu erteilen.\pWirklich unfassbar!"
+str_may_10:
+    .autostring 34 2 "Aber irgendwie hat mir das, was sie gesagt hat, schon ein wenig geholfenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pVielleicht sollten wir ja wirklich versuchen, irgendwie diese seltsame Stadt zu erreichen, von der Larissa gesprochen hat.\pAktania, war der Name, richtig?\pAm Besten sehen wir uns hier etwas um, PLAYER."
 
 .elseif LANG_EN
 

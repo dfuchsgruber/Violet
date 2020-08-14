@@ -257,4 +257,9 @@ u8 player_party_get_reordered_idx(u8 party_idx);
 
 extern u8 pokemon_party_menu_order[3]; // 4 Bits per slot
 
+/**
+ * Contiuation for the party menu that returns to the bag.
+ **/
+void party_menu_continuation_return_to_bag();
+
 #endif /* INCLUDE_C_OVERWORLD_POKEMON_PARTY_MENU_H_ */

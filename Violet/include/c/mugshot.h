@@ -178,6 +178,8 @@ extern "C" {
     extern const unsigned short gfx_pkmn_species_251_pokemon_celebi_frontspritePal[];
     extern const unsigned short gfx_mug_larissaTiles[];
     extern const unsigned short gfx_mug_larissa_happyTiles[];
+    extern const unsigned short gfx_mug_larissa_angryTiles[];
+    extern const unsigned short gfx_mug_larissa_thoughtfulTiles[];
     extern const unsigned short gfx_mug_larissaPal[];
     extern const unsigned short gfx_mug_primusTiles[];
     extern const unsigned short gfx_mug_primusPal[];

@@ -93,7 +93,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_NULLSAFT ] = { .gfx = gfx_item_nullsaftTiles, .pal = gfx_item_nullsaftPal },
     [ITEM_APFEL] = {.gfx = gfx_item_apfelTiles, .pal = gfx_item_apfelPal},
     [ITEM_GOLDAPFEL] = {.gfx = gfx_item_goldapfelTiles, .pal = gfx_item_goldapfelPal},
-    [ITEM_ITEM_5B] = { .gfx = gfx_item_item_5bTiles, .pal = gfx_item_item_5bPal },
+    [ITEM_BITTERKRAUT] = { .gfx = gfx_item_bitterkrautTiles, .pal = gfx_item_bitterkrautPal },
     [ITEM_ITEM_5C] = { .gfx = gfx_item_item_5cTiles, .pal = gfx_item_item_5cPal },
     [ITEM_SONNENSTEIN] = { .gfx = gfx_item_sonnensteinTiles, .pal = gfx_item_sonnensteinPal },
     [ITEM_MONDSTEIN] = { .gfx = gfx_item_mondsteinTiles, .pal = gfx_item_mondsteinPal },
@@ -402,6 +402,8 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_GLITZERSTUECK] = {.gfx = gfx_item_glitzerstueckTiles, .pal = gfx_item_glitzerstueckPal},
     [ITEM_LICHTSTUECK] = {.gfx = gfx_item_lichtstueckTiles, .pal = gfx_item_lichtstueckPal},
     [ITEM_MININUGGET] = {.gfx = gfx_item_mininuggetTiles, .pal = gfx_item_mininuggetPal},
+    [ITEM_QUARZSTAUB] = { .gfx = gfx_item_quarzstaubTiles, .pal = gfx_item_quarzstaubPal },
+    [ITEM_ENERGIEQUARZ] = { .gfx = gfx_item_energiequarzTiles, .pal = gfx_item_energiequarzPal },
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

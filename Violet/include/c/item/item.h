@@ -238,6 +238,25 @@ const u8 *item_get_resource(u16 item, u8 get_palette);
  **/
 u16 item_get_count(u16 item_idx);
 
+/**
+ * Fades to a scene that fits the item to use (either overworld or party menu) and executes the item callback there.
+ * @param self self-reference
+ **/
+void item_field_fade_to_scene_and_execute_callback(u8 self);
+
+/**
+ * Item callback for executing rare candy.
+ * @param self self-reference
+ * @param failure_continuation where to continue in case of a failure
+ **/
+void item_callback_rare_candy(u8 self, void (*failure_continuation)(u8));
+
+/**
+ * Field effect callback for the gold candy.
+ * @param self self-reference
+ **/
+void item_gold_candy_field_effect(u8 self);
+
 typedef struct {
     const u8 *gfx;
     const u8 *pal;
@@ -425,8 +444,8 @@ extern const u8 gfx_item_item_59Tiles[];
 extern const u8 gfx_item_item_59Pal[];
 extern const u8 gfx_item_item_5aTiles[];
 extern const u8 gfx_item_item_5aPal[];
-extern const u8 gfx_item_item_5bTiles[];
-extern const u8 gfx_item_item_5bPal[];
+extern const u8 gfx_item_bitterkrautTiles[];
+extern const u8 gfx_item_bitterkrautPal[];
 extern const u8 gfx_item_item_5cTiles[];
 extern const u8 gfx_item_item_5cPal[];
 extern const u8 gfx_item_sonnensteinTiles[];
@@ -1047,5 +1066,9 @@ extern const u8 gfx_item_apfelTiles[];
 extern const u8 gfx_item_apfelPal[];
 extern const u8 gfx_item_goldapfelTiles[];
 extern const u8 gfx_item_goldapfelPal[];
+extern const u8 gfx_item_quarzstaubTiles[];
+extern const u8 gfx_item_quarzstaubPal[];
+extern const u8 gfx_item_energiequarzTiles[];
+extern const u8 gfx_item_energiequarzPal[];
 
 #endif /* INCLUDE_C_ITEM_ITEM_H_ */

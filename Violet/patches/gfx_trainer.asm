@@ -82,6 +82,11 @@ trainerpals equ 0x082398EC
 .org trainerpals + 8 * 136
     .word gfx_trainer_hiroinePal
 
+.org trainersprites + 8 * 28
+    .word gfx_trainer_chefTiles
+.org trainerpals + 8 * 28
+    .word gfx_trainer_chefTiles
+
 
 trainergfx 0,gfx_trainer_polizistTiles,gfx_trainer_polizistPal
 trainergfx 27,gfx_trainer_rinTiles,gfx_trainer_rinPal

@@ -407,3 +407,8 @@ _blxr1:
     ldr r0, =pokemart_create_npc_oams | 1
     bx r0
     .pool
+
+.org 0x080a00ac
+    ldr r3, = money_draw | 1
+    bx r3
+    .pool

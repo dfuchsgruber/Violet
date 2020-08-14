@@ -34,6 +34,8 @@ u8 berry_tree_initial_items[256] = {
     [10] = ITEM_IDX_TO_BERRY_IDX(ITEM_GIEFEBEERE),
     [11] = ITEM_IDX_TO_BERRY_IDX(ITEM_WIKIBEERE),
     [12] = ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOBEERE),
+    [13] = ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE),
+    [14] = ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE),
 };
 
 void berry_tree_calculate_yield(u8 berry_tree_idx) {

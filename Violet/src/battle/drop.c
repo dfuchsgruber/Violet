@@ -24,8 +24,10 @@
 #include "pokemon/evolution.h"
 
 static u32 standard_item_drop_rates[][2] = {
-    {ITEM_WUNDERSTAUB, 150},
-    {ITEM_BEERENSAFT, 25},
+    {ITEM_BITTERKRAUT, 100},
+    {ITEM_QUARZSTAUB, 75},
+    {ITEM_WUNDERSTAUB, 100},
+    {ITEM_APFEL, 20},
     /**
     {ITEM_POKEBALL, 75},
     {ITEM_SUPERBALL, 30},
@@ -63,11 +65,11 @@ static bool drop_standard_item(u8 battler_idx, u16 *item, u8 *cnt) {
 }
 
 static u32 standard_item_rare_drop_rates[][2] = {
-    {ITEM_SONDERBONBON, 1},
-    {ITEM_SUESSBONBON, 99},
+    {ITEM_ENERGIEQUARZ, 1},
+    {ITEM_MININUGGET, 5},
 };
 
-static u32 standard_item_rare_count_rates[] = {[1] = 45, [2] = 5};
+static u32 standard_item_rare_count_rates[] = {[1] = 1};
 
 static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
     u32 p[ARRAY_COUNT(standard_item_rare_drop_rates)];
@@ -84,7 +86,7 @@ static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
 
 #define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) {p[p_size] = prob; items[p_size] = item; p_size++;}
 
-static u32 drop_type_item_count_rates[] = {[1] = 19, [2] = 1};
+static u32 drop_type_item_count_rates[] = {1};
 
 static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u32 p[16]; u16 items[16];
@@ -103,14 +105,16 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
         battlers[battler_idx].type1 == TYPE_BODEN || battlers[battler_idx].type2 == TYPE_BODEN ||
         battlers[battler_idx].type1 == TYPE_FEE || battlers[battler_idx].type2 == TYPE_FEE) {
         P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTAUB, 40, p_size);
-        P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTUECK, 40, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTUECK, 5, p_size);
     }
+    /**
     for (u16 i = ITEM_NORMALJUWEL; i <= ITEM_UNLICHTJUWEL; i++) {
         if (battlers[battler_idx].type1 == item_get_hold_effect_parameter(i) ||
             battlers[battler_idx].type2 == item_get_hold_effect_parameter(i)) {
             P_ARRAY_ADD_ITEM(p, items, i, 1, p_size);
         }
     }
+    **/
     if (p_size > 0) {
         *dst_item = items[choice(p, p_size, NULL)];
         *dst_cnt = (u8)choice(drop_type_item_count_rates, ARRAY_COUNT(drop_type_item_count_rates), NULL);
@@ -121,7 +125,7 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
 }
 
 
-static u32 drop_color_item_count_rates[] = {[1] = 19, [2] = 1};
+static u32 drop_color_item_count_rates[] = {[1] = 1};
 
 static bool drop_color_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     int color = basestats[battlers[battler_idx].species].color_flip_field & 0x7F;
@@ -269,11 +273,11 @@ static bool (*dropping_functions[])(u8, u16*, u8*) = {
 };
 
 static u32 dropping_type_probabilities[] = {
-    [DROP_STANDARD_ITEM] = 16,
+    [DROP_STANDARD_ITEM] = 30,
     [DROP_RARE_ITEM] = 3,
-    [DROP_TYPE_ITEM] = 2,
-    [DROP_COLOR_ITEM] = 3,
-    [DROP_SPECIES_ITEM] = 1,
+    [DROP_TYPE_ITEM] = 5,
+    [DROP_COLOR_ITEM] = 5,
+    [DROP_SPECIES_ITEM] = 3,
     [DROP_BERRY_ITEM] = 0, // For now, we don't drop any berries
     [DROP_EVOLUTION_ITEM] = 1,
 };
@@ -286,6 +290,7 @@ void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     for (size_t i = 0; i < ARRAY_COUNT(dropping_type_probabilities); i++) {
         u16 item = 0; u8 cnt = 0; 
         if (dropping_functions[i](battler_idx, &item, &cnt)) {
+            dprintf("Type %d made item %d droppable (absolute mass %d)\n", i, item, dropping_type_probabilities[i]);
             p[p_size] = dropping_type_probabilities[i];
             items[p_size] = item;
             cnts[p_size] = cnt;
@@ -293,6 +298,7 @@ void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
         }
     }
     size_t idx = choice(p, p_size, NULL);
+
     *dst_item = items[idx];
     *dst_cnt = cnts[idx];
 }
@@ -300,7 +306,7 @@ void battler_drop_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
 bool battler_drop_next_item(u8 battler_idx, u16 *item, u8 *cnt) {
     u32 p[2] = {
         [0] = (u32)(1 + (1 << BATTLE_STATE2->num_items_dropped[battler_idx])),
-        [1] = 1,
+        [1] = 2,
     };
     if (battle_flags & BATTLE_AGGRESSIVE_WILD)
         p[1]++;

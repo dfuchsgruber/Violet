@@ -260,6 +260,8 @@ static item_effect_t item_effect_golden_apple = {
 
 item_effect_t item_effect_apple = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_HALF};
 
+item_effect_t item_effect_bitter_herb = {.heal_hp = true, .hp = 1};
+
 item_effect_t *item_effects[] = {
     [ITEM_TRANK- ITEM_TRANK] = &item_effect_potion,
     [ITEM_GEGENGIFT- ITEM_TRANK] = &item_effect_antidote,
@@ -339,4 +341,5 @@ item_effect_t *item_effects[] = {
     [ITEM_TAMOTBEERE- ITEM_TRANK] = &item_effect_tomato_berry,
     [ITEM_APFEL- ITEM_TRANK] = &item_effect_apple,
     [ITEM_GOLDAPFEL- ITEM_TRANK] = &item_effect_golden_apple,
+    [ITEM_BITTERKRAUT - ITEM_TRANK] = &item_effect_bitter_herb,
 };

@@ -3,44 +3,50 @@
 #include "item/item.h"
 #include "vars.h"
 #include "debug.h"
+#include "flags.h"
 
 static crafting_recipe crafting_recipies_healing[] = {
     {
         .item = ITEM_TRANK, 
         .ingredients = {
-            [0] = {.item = ITEM_SINELBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_SUPERTRANK, 
         .ingredients = {
-            [0] = {.item = ITEM_TSITRUBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_HYPERTRANK, 
         .ingredients = {
-            [0] = {.item = ITEM_SINELBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_TSITRUBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_TSITRUBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FRBADGE_2,
     },{
         .item = ITEM_TOP_TRANK, 
         .ingredients = {
-            [0] = {.item = ITEM_SINELBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_TSITRUBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FRBADGE_4,
     },{
         .item = ITEM_TOP_GENESUNG, 
         .ingredients = {
-            [0] = {.item = ITEM_SINELBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_TSITRUBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_PRUNUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_HYPERHEILER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FRBADGE_5,
     },{
         .item = ITEM_TOP_GENESUNG, 
         .ingredients = {
-            [0] = {.item = ITEM_SINELBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_TSITRUBEERE, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_PRUNUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FRBADGE_5,
     },{
         .item = ITEM_HYPERHEILER, 
         .ingredients = {
@@ -52,153 +58,205 @@ static crafting_recipe crafting_recipies_healing[] = {
     },{
         .item = ITEM_BELEBER, 
         .ingredients = {
-            [0] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_WUNDERSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_TSITRUBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [3] = {.item = ITEM_PRUNUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_HYPERHEILER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FRBADGE_2,
+    },{
+        .item = ITEM_BELEBER, 
+        .ingredients = {
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_APFEL, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_PRUNUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FRBADGE_1,
     },{
         .item = ITEM_TOP_BELEBER, 
         .ingredients = {
-            [0] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_WUNDERSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_ELIXIER, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [3] = {.item = ITEM_BELEBER, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [3] = {.item = ITEM_BELEBER, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FRBADGE_1,
     },{
         .item = ITEM_SEEGESANG,
         .ingredients = {
             [0] = {.item = ITEM_KUESTENSALZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_KUESTENSCHALE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
         }
+    },{
+        .item = ITEM_GOLDAPFEL,
+        .ingredients = {
+            [0] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        }
     }
 };
 static crafting_recipe crafting_recipies_jewels[] = {
     {
+        .item = ITEM_NUGGET, 
+        .ingredients = {
+            [0] = {.item = ITEM_MININUGGET, .count = 7, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },{
+        .item = ITEM_STERNENSTUECK, 
+        .ingredients = {
+            [0] = {.item = ITEM_STERNENSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },{
+        .item = ITEM_ENERGIEQUARZ, 
+        .ingredients = {
+            [0] = {.item = ITEM_QUARZSTAUB, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        }
+    },
+    {
         .item = ITEM_NORMALJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_HIMMIHBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_HIMMIHBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_KAMPFJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_MORBBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
+            [0] = {.item = ITEM_MORBBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     
     },{
         .item = ITEM_FLUGJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_NANABBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_NANABBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_GIFTJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_NIRBEBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_NIRBEBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_BODENJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_SANANABEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_SANANABEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_GESTEINJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_GRANABEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_GRANABEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_KAEFERJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_SETANGBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_SETANGBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_GEISTJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_QUALOTBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_QUALOTBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_STAHLJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_HONMELBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_HONMELBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_FEEJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_LABRUSBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_LABRUSBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_FEUERJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_TAMOTBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_TAMOTBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_WASSERJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_SAIMBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_SAIMBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_PFLANZEJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_MAGOSTBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_MAGOSTBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_ELEKTROJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_RABUTABEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_RABUTABEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_PSYCHOJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_TRONZIBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_TRONZIBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_EISJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_KIWANBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_KIWANBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_DRACOJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_PALLMBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
-    
+            [0] = {.item = ITEM_PALLMBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     },{
         .item = ITEM_UNLICHTJUWEL, 
         .ingredients = {
-            [0] = {.item = ITEM_WASMELBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
-        }
+            [0] = {.item = ITEM_WASMELBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 10, .type = CRAFTING_INGREDIENT_ASH},
+        },
+        .flag = FLAG_JEWEL_RECIPIES,
     }
 };
 static crafting_recipe crafting_recipies_pokeballs[] = {
@@ -223,7 +281,7 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
     },{
         .item = ITEM_WIEDERBALL, 
         .ingredients = {
-            [0] = {.item = ITEM_BEERENSAFT, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_APFEL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_POKEBALL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
@@ -235,7 +293,7 @@ static crafting_recipe crafting_recipies_pokeballs[] = {
     },{
         .item = ITEM_LUXUSBALL, 
         .ingredients = {
-            [0] = {.item = ITEM_SUESSBONBON, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_SUESSBONBON, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_POKEBALL, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },
@@ -245,64 +303,74 @@ static crafting_recipe crafting_recipies_evolution[] = {
         .item = ITEM_BLATTSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_GRUENSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_WASSERSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_INDIGOSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_FEUERSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_PURPURSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_DONNERSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_GELBSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_SONNENSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_SOLARSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_MONDSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_LUNARSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_FINSTERSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_DUESTERSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_LEUCHTSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_LICHTSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_FUNKELSTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_GLITZERSTUECK, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.count = 20, .type = CRAFTING_INGREDIENT_ASH},
         }
     },{
         .item = ITEM_LINKKABEL, 
         .ingredients = {
             [0] = {.item = ITEM_STERNENSTUECK, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_NUGGET, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_PERLE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [3] = {.count = 50, .type = CRAFTING_INGREDIENT_ASH},
-        }
+        },
+        .flag = FLAG_LINK_CABLE_RECIPE,
     },
 };
 static crafting_recipe crafting_recipies_mints[] = {
@@ -310,156 +378,177 @@ static crafting_recipe crafting_recipies_mints[] = {
         .item = ITEM_ANGR_ORB_P, 
         .ingredients = {
             [0] = {.item = ITEM_LYDZIBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_ANGR_ORB_N, 
         .ingredients = {
             [0] = {.item = ITEM_GIEFEBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_VERT_ORB_P, 
         .ingredients = {
             [0] = {.item = ITEM_LINGANBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_VERT_ORB_N, 
         .ingredients = {
             [0] = {.item = ITEM_YAPABEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_INIT_ORB_P, 
         .ingredients = {
             [0] = {.item = ITEM_SALKABEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_INIT_ORB_N, 
         .ingredients = {
             [0] = {.item = ITEM_MAGOBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_SPA_ORB_P, 
         .ingredients = {
             [0] = {.item = ITEM_TAHAYBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_SPA_ORB_N, 
         .ingredients = {
             [0] = {.item = ITEM_WIKIBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_SPV_ORB_P, 
         .ingredients = {
             [0] = {.item = ITEM_APIKOBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },{
         .item = ITEM_SPV_ORB_N, 
         .ingredients = {
             [0] = {.item = ITEM_GAUVEBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_BITTERKRAUT, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
             [2] = {.item = ITEM_MINIPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_MINTS_RECIPIES,
     },
 };
 static crafting_recipe crafting_recipies_nutrients[] = {
     {
         .item = ITEM_KP_PLUS, 
         .ingredients = {
-            [0] = {.item = ITEM_MEGABLOCK, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_APFEL, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_NUTRIENT_RECIPIES,
     },{
         .item = ITEM_PROTEIN, 
         .ingredients = {
             [0] = {.item = ITEM_X_ANGRIFF, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_NUTRIENT_RECIPIES,
     },{
         .item = ITEM_EISEN, 
         .ingredients = {
             [0] = {.item = ITEM_X_ABWEHR, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_NUTRIENT_RECIPIES,
     },{
         .item = ITEM_CARBON, 
         .ingredients = {
             [0] = {.item = ITEM_X_TEMPO, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_NUTRIENT_RECIPIES,
     },{
         .item = ITEM_KALZIUM, 
         .ingredients = {
             [0] = {.item = ITEM_X_SPEZIAL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_NUTRIENT_RECIPIES,
     },{
         .item = ITEM_ZINK, 
         .ingredients = {
             [0] = {.item = ITEM_X_SPEZIAL, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_RIESENPILZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [2] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_NUTRIENT_RECIPIES,
     },{
         .item = ITEM_NULLSAFT, 
         .ingredients = {
-            [0] = {.item = ITEM_KUESTENSALZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_KUESTENSCHALE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_KUESTENSALZ, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_KUESTENSCHALE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_NULLSAFT_RECIPE,
     },{
         .item = ITEM_AP_PLUS, 
         .ingredients = {
             [0] = {.item = ITEM_JONAGOBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_MINIPILZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 10, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [1] = {.item = ITEM_MINIPILZ, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_ENERGIEQUARZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_PP_ITEM_RECIPE,
     },{
         .item = ITEM_AP_TOP, 
         .ingredients = {
-            [0] = {.item = ITEM_JONAGOBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_RIESENPILZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-            [2] = {.item = ITEM_BEERENSAFT, .count = 25, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_JONAGOBEERE, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_RIESENPILZ, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [2] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_PP_ITEM_RECIPE,
     },{
         .item = ITEM_SONDERBONBON, 
         .ingredients = {
-            [0] = {.item = ITEM_WUNDERSTAUB, .count = 25, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_STERNENSTAUB, .count = 5, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 15, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_ENERGIEQUARZ, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+        },
+        .flag = FLAG_RARE_CANDY_RECIPE,
     },{
         .item = ITEM_SUESSBONBON, 
         .ingredients = {
-            [1] = {.item = ITEM_WUNDERSTAUB, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [0] = {.item = ITEM_SINELBEERE, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
+            [0] = {.item = ITEM_BITTERKRAUT, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_GOLDBONBON, 
         .ingredients = {
             [0] = {.item = ITEM_SONDERBONBON, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
             [1] = {.item = ITEM_NUGGET, .count = 3, .type = CRAFTING_INGREDIENT_ITEM},
-        }
+        },
+        .flag = FLAG_GOLD_CANDY_RECIPE,
     }
 };
 static crafting_recipe crafting_recipies_battle[] = {
@@ -467,37 +556,37 @@ static crafting_recipe crafting_recipies_battle[] = {
         .item = ITEM_X_ANGRIFF, 
         .ingredients = {
             [0] = {.item = ITEM_LYDZIBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_X_ABWEHR, 
         .ingredients = {
             [0] = {.item = ITEM_LINGANBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_X_TEMPO, 
         .ingredients = {
             [0] = {.item = ITEM_SALKABEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_X_SPEZIAL, 
         .ingredients = {
             [0] = {.item = ITEM_TAHAYBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_MEGABLOCK, 
         .ingredients = {
             [0] = {.item = ITEM_KRAMBOBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },{
         .item = ITEM_ANGRIFFPLUS, 
         .ingredients = {
             [0] = {.item = ITEM_LANSATBEERE, .count = 1, .type = CRAFTING_INGREDIENT_ITEM},
-            [1] = {.item = ITEM_BEERENSAFT, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
+            [1] = {.item = ITEM_QUARZSTAUB, .count = 2, .type = CRAFTING_INGREDIENT_ITEM},
         }
     },
 };

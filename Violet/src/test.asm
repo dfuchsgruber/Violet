@@ -35,6 +35,12 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	additem ITEM_SONDERBONBON 1
+	additem ITEM_GOLDBONBON 99
+	additem ITEM_BITTERKRAUT 1
+	additem ITEM_QUARZSTAUB 1
+	additem ITEM_ENERGIEQUARZ 1
+	end
 	trainerbattlestd 0x0 0x19f 0 str_beforea str_aftera
 	end
 	clearflag PLAYER_ABLE_TO_MEGA_EVOLVE

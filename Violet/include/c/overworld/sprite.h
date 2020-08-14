@@ -1690,6 +1690,7 @@ extern const unsigned short gfx_ow_lucius_6Tiles[];
 extern const unsigned short gfx_ow_lucius_7Tiles[];
 extern const unsigned short gfx_ow_lucius_8Tiles[];
 extern const u8 gfx_ow_luckyTiles[];
+extern const u8 gfx_ow_chefTiles[];
 
 extern const u8 gfx_ow_mushroomTiles[];
 extern const color_t gfx_ow_mushroomPal[];

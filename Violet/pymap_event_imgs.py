@@ -87,12 +87,14 @@ picture_idx_to_png = {
     174 : "asset/gfx/overworld/npcs/botogel/gfx_ow_botogel_0.png",
     175 : "asset/gfx/overworld/npcs/drampa/gfx_ow_drampa.png.display",
     176 : "asset/gfx/overworld/npcs/gfx_ow_lucky.png",
+    177 : "asset/gfx/overworld/npcs/gfx_ow_chef.png",
 }
 
 # Images that hold an entire spritesheet
 spritesheet_images = {
     80 : (16, 32),
     176 : (16, 32),
+    177 : (16, 32),
 }
 
 

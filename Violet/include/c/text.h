@@ -488,6 +488,15 @@ extern "C" {
      **/
     u8 tbox_new_by_box(u8 x, u8 y, u8 width, u8 height);
 
+    /**
+     * Prints money into a tbox
+     * @param tbox_idx in which box to draw the money
+     * @param start_tile first tile to use
+     * @param pal_idx which palette to use
+     * @param amount the amount to print
+     **/
+    void tbox_print_money(u8 tbox_idx, u16 start_tile, u8 pal_idx, u32 amount);
+
     extern u8 overworld_tbox_state;
 
     extern u8 strbuf[];

@@ -1489,6 +1489,28 @@ static overworld_sprite ow_misc_16_16 = {
 	.graphics = NULL + 0, .rotscale_animation = oam_rotscale_anim_table_null,	
 };
 
+graphic overworld_sprite_chef[] = {
+	{gfx_ow_chefTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+	{gfx_ow_chefTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), GRAPHIC_SIZE_4BPP(16, 32), 0},
+};
+
+overworld_sprite ow_chef = {
+    0xFFFF, 0x1100 + 6, 0x11FF, 0x100,
+    16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
+    &ow_final_oam_16_32, &ow_formation_16_32,
+    ow_anim_standard_npc, overworld_sprite_chef,
+    oam_rotscale_anim_table_null
+};
+
+
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1686,6 +1708,8 @@ overworld_sprite *overworld_sprites[] = {
         &ow_botogel,
         &ow_drampa,
 		&ow_lucky,
+		&ow_chef,
+
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,
 	[OVERWORLD_SPRITE_BERRY] = &ow_berry_tree, // dummy
 	[OVERWORLD_SPRITE_POKEMON_32_32] = &ow_pokemon_32_32, // dummy with size 32x32

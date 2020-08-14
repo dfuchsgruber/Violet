@@ -371,12 +371,12 @@ static u8 str_item_apfel_description[] = LANGDEP(
 	PSTRING("A juicy red apple that restores\n50% of a Pokémon's Hp.")
 );
 static u8 str_item_goldapfel_description[] = LANGDEP(
-	PSTRING("Ein goldener Apfel, der ein\nPokémon vollständig heilt und dessen\nVerteidigung temporär erhöht."),
+	PSTRING("Ein goldener Apfel, der ein\nPokémon vollständig heilt und\ndie Verteidigung temporär erhöht."),
 	PSTRING("A golden apple that fully heals\na Pokémon and raises its\ndefenses temporarily.")
 );
-static u8 str_item_item_5b_description[] = LANGDEP(
-	PSTRING(" ????"),
-	PSTRING("?????")
+static u8 str_item_bitterkraut_description[] = LANGDEP(
+	PSTRING("Bitteres Kraut, das unverarbeitet\nnur einen einzigen Kraftpunkt\nwiederherstellt."),
+	PSTRING("A bitter herb that, if not being\nprocessed, only restores a single HP.")
 );
 static u8 str_item_item_5c_description[] = LANGDEP(
 	PSTRING(" ????"),
@@ -1605,6 +1605,14 @@ static u8 str_item_lichtstueck_description[] = LANGDEP(
 static u8 str_item_mininugget_description[] = LANGDEP(
 	PSTRING("Eine kleiner Klumpen aus Gold.\nEr kann zu einem hohen Preis\nverkauft werden."),
 	PSTRING("A small nugget made of pure\ngold. It can be sold for\na high price.")
+);
+static u8 str_item_quarzstaub_description[] = LANGDEP(
+	PSTRING("Seltsamer feiner Puder, der\nim Sonnenlicht hell funkelt."),
+	PSTRING("Strange fine-grained powder\nthat shines brightly in the sunlight.")
+);
+static u8 str_item_energiequarz_description[] = LANGDEP(
+	PSTRING("Ein weißer Quarzstein, von\ndem eine starke Energie\nauszugehen scheint."),
+	PSTRING("A white quartz stone that seems\nto emit a very strong energy.")
 );
 
 
@@ -3067,19 +3075,19 @@ item items[] = {
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_5B
-		LANGDEP(PSTRING("????????"), PSTRING("????????")),
-		0x0, //index
-		0, //price
+		LANGDEP(PSTRING("Bitterkraut"), PSTRING("Bitter Herb")),
+		ITEM_BITTERKRAUT, //index
+		50, //price
 		0, //holding_effect_id
-		0, //holding_effect_param
-		str_item_item_5b_description,
+		1, //holding_effect_param
+		str_item_bitterkraut_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket
-		4, //type
-		(void(*)(u8))0x80a2325, //field_usage
-		(void(*)(u8))0x0, //battle_usage1
-		(void(*)(u8))0x0, //battle_usage2
+		1, //type
+		(void(*)(u8))item_field_by_effect_table, //field_usage
+		(void(*)(u8))0x1, //battle_usage1
+		(void(*)(u8))0x80a20a9, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
 		//ITEM_ITEM_5C
@@ -3341,7 +3349,7 @@ item items[] = {
 		//ITEM_STERNENSTAUB
 		LANGDEP(PSTRING("Sternenstaub"), PSTRING("Stardust")),
 		0x6c, //index
-		2000, //price
+		1000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_sternenstaub_description,
@@ -3357,7 +3365,7 @@ item items[] = {
 		//ITEM_STERNENSTUECK
 		LANGDEP(PSTRING("Sternenstück"), PSTRING("Star Piece")),
 		0x6d, //index
-		9800, //price
+		10000, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_sternenstueck_description,
@@ -7770,6 +7778,18 @@ item items[] = {
 		.name = LANGDEP(PSTRING("Mininugget"), PSTRING("Mini Nugget")),
 		.index = ITEM_MININUGGET, .price = 500,
 		.description = str_item_mininugget_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_QUARZSTAUB] = {
+		.name = LANGDEP(PSTRING("Quarzstaub"), PSTRING("Quartz Dust")),
+		.index = ITEM_QUARZSTAUB, .price = 50,
+		.description = str_item_quarzstaub_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_ENERGIEQUARZ] = {
+		.name = LANGDEP(PSTRING("Energiequarz"), PSTRING("Energy Quartz")),
+		.index = ITEM_ENERGIEQUARZ, .price = 1000,
+		.description = str_item_energiequarz_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
 	},
 };
