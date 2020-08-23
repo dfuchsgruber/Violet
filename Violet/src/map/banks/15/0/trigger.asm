@@ -468,11 +468,11 @@ str_larissa_4:
 str_larissa_5:
     .autostring 34 2 "Wenn du ein wenig Selbstvertrauen brauchst, solltest du dich auf machen, die Arenaleiter dieser Region herauszuforden.\pAn ihnen müssen sich Trainer messen.\pUnd weißt du, Mädchen, da wirst auch du bemerken, dass in dir mehr steckt, als du vielleicht gerade glaubst."
 str_larissa_6:
-    .autostring 34 2 "Silvania liegt zum Beispiel ganz in der Nähe, da könnt ihr Mara herausfordern.\pAllerdingsDOTS\pDen Farmern hier sind einige Pokémon ausgebüchst und es könnte etwas dauern, bis sie ihre Voltilamm-Herde wieder zusammengescheucht haben.\pWarum versucht ihr nicht stattdessen nach Aktania zu gelangen?"
+    .autostring 34 2 "Silvania liegt zum Beispiel ganz in der Nähe, da könnt ihr Mara herausfordern.\pAllerdingsDOTS\pDen Farmern hier sind einige Pokémon ausgebüchst und es könnte etwas dauern, bis sie ihre Voltilamm-Herde wieder zusammengescheucht haben.\pWarum versucht ihr nicht stattdessen nach Bruchfels zu gelangen?"
 str_karte:
     .autostring 34 2 "PLAYER hat eine Karte erhalten."
 str_larissa_7:
-    .autostring 34 2 "Hier habt ihr beide eine Karte.\pWie ihr sehen könnt, liegt Aktania weit im Norden.\pUm dorthinzugelangen müsst ihr irgendwie das Meer passieren."
+    .autostring 34 2 "Hier habt ihr beide eine Karte.\pWie ihr sehen könnt, liegt Bruchfels weit im Norden.\pUm dorthinzugelangen müsst ihr irgendwie das Meer passieren."
 str_larissa_8:
     .autostring 34 2 "Aber keine Sorge, das ist kinderleicht.\pIch lasse euch den Spaß, es selbst herauszufinden!"
 str_larissa_9:
@@ -482,7 +482,7 @@ str_may_8:
 str_may_9:
     .autostring 34 2 "Uns einfach so zu belehren und uns dann Anweisungen zu erteilen.\pWirklich unfassbar!"
 str_may_10:
-    .autostring 34 2 "Aber irgendwie hat mir das, was sie gesagt hat, schon ein wenig geholfenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pVielleicht sollten wir ja wirklich versuchen, irgendwie diese seltsame Stadt zu erreichen, von der Larissa gesprochen hat.\pAktania, war der Name, richtig?\pAm Besten sehen wir uns hier etwas um, PLAYER."
+    .autostring 34 2 "Aber irgendwie hat mir das, was sie gesagt hat, schon ein wenig geholfenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pVielleicht sollten wir ja wirklich versuchen, irgendwie diese seltsame Stadt zu erreichen, von der Larissa gesprochen hat.\pBruchfels, war der Name, richtig?\pAm Besten sehen wir uns hier etwas um, PLAYER."
 
 .elseif LANG_EN
 

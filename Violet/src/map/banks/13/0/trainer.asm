@@ -58,7 +58,7 @@ str_trainer0_challange:
 str_trainer0_defeat:
     .autostring 34 2 "Halte dich lieber nah am Ufer.\pIrgendetwas ist hier in der GegendDOTS"
 str_trainer1_challange:
-    .autostring 34 2 "In der Nähe von Aktania beißen die Pokémon sehr schlecht.\pEs ist wirklich eine Tragödie, was dort vorgefallen ist."
+    .autostring 34 2 "In der Nähe von Bruchfels beißen die Pokémon sehr schlecht.\pEs ist wirklich eine Tragödie, was dort vorgefallen ist."
 str_trainer1_defeat:
     .autostring 34 2 "Ich kannte Lesters Vater.\pEr ist bei dem Unglück damals ums Leben gekommenDOTS"
 str_trainer2_challange:
@@ -88,7 +88,7 @@ str_trainer0_challange:
 str_trainer0_defeat:
     .autostring 34 2 "Stay close to the shore.\pSomething is nearbyDOTS"
 str_trainer1_challange:
-    .autostring 34 2 "Nearby Aktania the Pokémon don't bite well at all.\pIt really is a tragedy what happend there."
+    .autostring 34 2 "Nearby Bruchfels the Pokémon don't bite well at all.\pIt really is a tragedy what happend there."
 str_trainer1_defeat:
     .autostring 34 2 "I knew Lester's father.\pHe lost his live during the catastrophy back then."
 str_trainer2_challange:

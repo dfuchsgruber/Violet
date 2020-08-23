@@ -197,7 +197,7 @@ str_0x971424:
 
 
 str_0x96fd7a:
-	.autostring 34 2 "Wie die Dinge stehen, scheint es, als würde eure Welt sich auf eine Katastrophe zubewegen.\pVergeblich habe ich versucht, euch beide dieser Tatsache bewusst werden zu lassen.\pDie Visionen, die ich euch gezeigt habe, sollten euch sowohl Vergangenheit als auch die bevorstehende Zukunft offenbaren.\pDas Wesen, das in dem Meteorit schlummerte, welcher vor eingigen Jahren bei Aktania eingeschlagen ist, das Wesen, das beinahe die ganze Stadt vernichtet hätteDOTS\pDieses Wesen wird eure Welt in einen Ort verwandeln, an dem weder Mensch noch Pokémon existieren dürfen.\pDie beiden Visionen sollten euch diese nahende Katastrophe zeigen und euch warnen."
+	.autostring 34 2 "Wie die Dinge stehen, scheint es, als würde eure Welt sich auf eine Katastrophe zubewegen.\pVergeblich habe ich versucht, euch beide dieser Tatsache bewusst werden zu lassen.\pDie Visionen, die ich euch gezeigt habe, sollten euch sowohl Vergangenheit als auch die bevorstehende Zukunft offenbaren.\pDas Wesen, das in dem Meteorit schlummerte, welcher vor eingigen Jahren bei Bruchfels eingeschlagen ist, das Wesen, das beinahe die ganze Stadt vernichtet hätteDOTS\pDieses Wesen wird eure Welt in einen Ort verwandeln, an dem weder Mensch noch Pokémon existieren dürfen.\pDie beiden Visionen sollten euch diese nahende Katastrophe zeigen und euch warnen."
 
 
 str_0x96fa81:

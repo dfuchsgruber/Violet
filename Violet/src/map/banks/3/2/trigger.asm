@@ -44,7 +44,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c0738:
-	.autostring 35 2 "Oh, wieder ein neues Gesicht in dieser Stadt.\pDas geschieht in letzter Zeit ungewöhnlich häufig.\pDOTS DOTS DOTS\nEntschuldige, ich habe mich noch gar nicht vorgestellt.\pMein Name ist Lester und ich bin der Arenaleiter dieser DOTS DOTS DOTS\pdieser Überreste einer einst wundervollen Stadt.\pNun ist diese Insel ein trostloser Ort, aber es ist mein Vermächtnis, über Aktania zu wachen.\pIch vermute, dass ein Trainer wie du mich herausfordern möchte.\pSollte dies der Fall sein, komm in den Tempel im Osten der Stadt.\pDort können wir einen Kampf austragen, solltest du darauf aus sein.\pUnd vielleicht kannst du diesem Ort ja doch etwas abgewinnen und deinen Aufenthalt zumindest ein wenig genießen."
+	.autostring 35 2 "Oh, wieder ein neues Gesicht in dieser Stadt.\pDas geschieht in letzter Zeit ungewöhnlich häufig.\pDOTS DOTS DOTS\nEntschuldige, ich habe mich noch gar nicht vorgestellt.\pMein Name ist Lester und ich bin der Arenaleiter dieser DOTS DOTS DOTS\pdieser Überreste einer einst wundervollen Stadt.\pNun ist diese Insel ein trostloser Ort, aber es ist mein Vermächtnis, über Bruchfels zu wachen.\pIch vermute, dass ein Trainer wie du mich herausfordern möchte.\pSollte dies der Fall sein, komm in den Tempel im Osten der Stadt.\pDort können wir einen Kampf austragen, solltest du darauf aus sein.\pUnd vielleicht kannst du diesem Ort ja doch etwas abgewinnen und deinen Aufenthalt zumindest ein wenig genießen."
 
 
 .elseif LANG_EN

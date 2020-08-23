@@ -95,13 +95,13 @@ goto after_paying
 .ifdef LANG_GER
 
 str_no_money:
-	.autostring 35 2 "Oh, wie unglücklich!\pScheint mir, als hättest du nicht genügend GeldDOTS\pIch bin aber kein Unmensch und werde dich trotzdem nach Aktania fliegen!"
+	.autostring 35 2 "Oh, wie unglücklich!\pScheint mir, als hättest du nicht genügend GeldDOTS\pIch bin aber kein Unmensch und werde dich trotzdem nach Bruchfels fliegen!"
 
 str_rick:
 	.string "Rick"
 
 str_0x8bfba9:
-    .autostring 35 2 "Hallo, junger Trainer!\pMein Bruder Nick und ich betreiben diese Farm hier.\pWir züchten Pokémon aller Art, darunter auch Vogelpokémon.\pWenn du wilslt, bringt dich mein Staraptor von hier nach Aktania.\pKlingt spannend, nicht?\pUnd das ganze kostet dich gerade einmal 150 POKEDOLLAR.\pWas sagst du?\nWillst du den Service in Anspruch nehmen?"
+    .autostring 35 2 "Hallo, junger Trainer!\pMein Bruder Nick und ich betreiben diese Farm hier.\pWir züchten Pokémon aller Art, darunter auch Vogelpokémon.\pWenn du wilslt, bringt dich mein Staraptor von hier nach Bruchfels.\pKlingt spannend, nicht?\pUnd das ganze kostet dich gerade einmal 150 POKEDOLLAR.\pWas sagst du?\nWillst du den Service in Anspruch nehmen?"
 
 
 
@@ -117,7 +117,7 @@ str_0x812509:
 
 
 str_0x81f8d2:
-    .autostring 35 2 "DankeschönDOTS\pKomm bitte mit, mein Staraptor wird dich jetzt nach Aktania fliegen."
+    .autostring 35 2 "DankeschönDOTS\pKomm bitte mit, mein Staraptor wird dich jetzt nach Bruchfels fliegen."
 
 
 str_0x812597:

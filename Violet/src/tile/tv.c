@@ -31,7 +31,7 @@ u8 *get_tv_text() {
         return str_tv_primus; //Nachrichten: Primus entfuehrt
     }
     if (story_prog < 0x1D) {
-        return str_tv_aktania; //History-Doku: Atkania Reportage
+        return str_tv_aktania; //History-Doku: Bruchfels Reportage
     }
     if (story_prog < 0x22){
         return str_tv_albus;
@@ -107,14 +107,14 @@ u8 str_tv_primus[] = LANGDEP(
 		);
 
 u8 str_tv_aktania[] = LANGDEP(
-		PSTRING("DOTSEs läuft eine History-Doku:\pErzähler: Das Verhängnis von\nAktania, eine "
+		PSTRING("DOTSEs läuft eine History-Doku:\pErzähler: Das Verhängnis von\nBruchfels, eine "
 				"Tragödie, die den\lganzen Kontinent ergriffen hat.\pAls ein Meteorit aus dem all "
-				"vor\nder Küste des einstigen\lFerienparadises Aktania einschlug,\lsollte sich das "
+				"vor\nder Küste des einstigen\lFerienparadises Bruchfels einschlug,\lsollte sich das "
 				"Leben auf der\lInsel für immer verändern.\pViele Menschen fielen der\nKatastrophe "
 				"zum Opfer, so auch der\lArenaleiter der Stadt, Harren.\pDer zuständige Regent von "
 				"den Top\nVier kommentierte das Unglück wie\lfolgt:\pHarren war ein großer Mann, "
 				"sein\nTod ist bedauernswert. Ich hätte\lmir niemand besseren als\lArenaleiter von "
-				"Aktania wünschen\lkönnen und so bin ich zumindest\lerleichtert, dass die Aufgabe "
+				"Bruchfels wünschen\lkönnen und so bin ich zumindest\lerleichtert, dass die Aufgabe "
 				"nun\lseinem Sohn Lester zuteil wird."
 				),
 		PSTRING("Not translated yet.")

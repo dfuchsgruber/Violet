@@ -130,7 +130,7 @@ map_namespaces:
 	.global str_mapnamespace_90
 
 	str_mapnamespace_90:
-		.string "Aktania"
+		.string "Bruchfels"
 
 
 	.global str_mapnamespace_91

@@ -507,12 +507,12 @@ str_0x8d7eab:
 
 
 str_0x8d7e03:
-	.autostring 35 2 "Und diese Stadt DOTS\pSie sieht aus, wie DOTS\pDOTS DOTS DOTS\pDOTS wie Aktania!"
+	.autostring 35 2 "Und diese Stadt DOTS\pSie sieht aus, wie DOTS\pDOTS DOTS DOTS\pDOTS wie Bruchfels!"
 
 
 
 str_0x8d8100:
-    .autostring 35 2 "Und das ist der Tempel!\pDas hier ist tatsächlich Aktania!"
+    .autostring 35 2 "Und das ist der Tempel!\pDas hier ist tatsächlich Bruchfels!"
 
 
 
@@ -525,7 +525,7 @@ str_0x8d803f:
 
 
 str_0x8d7fa0:
-	.autostring 35 2 "Ich werde dir nicht erlauben, die Stadt, die bereits viele Generationen vor mir beschützt haben, zu zerstören!\pIch werde dir die antiken Kräfte, über die ich wache, entgegensetzen!\pDOTS DOTS DOTS\pIch beschwöre die Wächter Aktanias!"
+	.autostring 35 2 "Ich werde dir nicht erlauben, die Stadt, die bereits viele Generationen vor mir beschützt haben, zu zerstören!\pIch werde dir die antiken Kräfte, über die ich wache, entgegensetzen!\pDOTS DOTS DOTS\pIch beschwöre die Wächter Bruchfelss!"
 
 
 str_0x8dc40d:

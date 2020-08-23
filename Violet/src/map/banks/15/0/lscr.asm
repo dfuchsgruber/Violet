@@ -90,7 +90,7 @@ str_0x92ec17:
 	.autostring 35 2 "Was ist das für ein seltsames Gefühl?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMir wird schwarz DOTS DOTS DOTS\nvor den AugenDOTS DOTS DOTS"
 
 str_0x92eb38:
-    .autostring 35 2 "Was bei Arceus war das denn?\pEs hat sich so ähnlich angefühlt, wie mein Traum vor KurzemDOTS\pOb da ein Zusammenhang besteht?\pUnd was ich da gesehen habeDOTS DOTS DOTS\pWar das die Katastrophe, die für die Zerstörung Aktanias verantwortlich ist?\pWas war das für ein seltsames Pokémon?\pUnd ist es mit dem Meteoriten hierher gelangt?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pZu viele FragenDOTS DOTS DOTS\pIch kann mir noch keinen Reim darauf machenDOTS DOTS DOTS"
+    .autostring 35 2 "Was bei Arceus war das denn?\pEs hat sich so ähnlich angefühlt, wie mein Traum vor KurzemDOTS\pOb da ein Zusammenhang besteht?\pUnd was ich da gesehen habeDOTS DOTS DOTS\pWar das die Katastrophe, die für die Zerstörung Bruchfelss verantwortlich ist?\pWas war das für ein seltsames Pokémon?\pUnd ist es mit dem Meteoriten hierher gelangt?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pZu viele FragenDOTS DOTS DOTS\pIch kann mir noch keinen Reim darauf machenDOTS DOTS DOTS"
 
 .elseif LANG_EN
 

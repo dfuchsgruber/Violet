@@ -129,7 +129,7 @@ str_4:
 str_5:
     .autostring 34 2 "Selbst im Urlaub muss man sich fit haltenDOTS\pDeswegen laufe ich jeden Tag am Strand entlang!"
 str_6:
-    .autostring 34 2 "Seit vor einigen Jahren in Aktania das große Unglück passiert ist, kommen die Leute nach Haweiland, um Urlaub zu machen.\pNarcissa von den Top Vier, die dieses Gebiet kontrolliert, ist darüber sehr froh, auch wenn sie das niemals zugeben würde."
+    .autostring 34 2 "Seit vor einigen Jahren in Bruchfels das große Unglück passiert ist, kommen die Leute nach Haweiland, um Urlaub zu machen.\pNarcissa von den Top Vier, die dieses Gebiet kontrolliert, ist darüber sehr froh, auch wenn sie das niemals zugeben würde."
 str_7:
     .autostring 34 2 "Es gibt kein schöneres Geräusch, als das sanfte Rauschen von WellenDOTS"
 str_8:
@@ -175,7 +175,7 @@ str_4:
 str_5:
     .autostring 34 2 "Even on vacation you have to stay in shape.\pThat's why I run along the beach every day!"
 str_6:
-    .autostring 34 2 "Ever since some years ago in Aktania the great incident occured, people come to Haweiland when they want to go on vacation.\pNarcissa of the elite four is very fond of that even though she never would amit it."
+    .autostring 34 2 "Ever since some years ago in Bruchfels the great incident occured, people come to Haweiland when they want to go on vacation.\pNarcissa of the elite four is very fond of that even though she never would amit it."
 str_7:
     .autostring 34 2 "There is no sound more sweet than that of gently rolling wavesDOTS"
 str_8:
