@@ -38,7 +38,9 @@ void mushroom_pluck() {
 }
 
 u16 special_shell_get_stage() {
-    return shell_get_stage(map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank)->value);
+    u16 stage = shell_get_stage(map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank)->value);
+    dprintf("Shell stage is %d\n", stage);
+    return stage;
 }
 
 static u32 shell_rates[] = {[SHELL_TYPE_HEART_SCALE] = 1, [SHELL_TYPE_PEARL] = 6, [SHELL_TYPE_LARGE_PEARL] = 2, [SHELL_TYPE_ENCOUNTER] = 10};
@@ -93,7 +95,9 @@ u16 shell_get_encounter() {
     u16 shell_idx = p->value;
     u32 seq[1] = {shell_idx};
     gp_rng_seed(daily_events_hash(seq, ARRAY_COUNT(seq)));
-    return (u16)choice(shell_encounters, ARRAY_COUNT(shell_encounters), gp_rnd16);
+    u16 species = (u16)choice(shell_encounters, ARRAY_COUNT(shell_encounters), gp_rnd16);
+    dprintf("Shell encounter %d\n", species);
+    return species;
 }
 
 static u16 misc_feature_generator() {

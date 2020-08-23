@@ -293,7 +293,7 @@
 				},
 				{
 					"direction": "MAP_CONNECTION_EAST",
-					"displacement": "-6",
+					"displacement": "-26",
 					"bank": "3",
 					"map_idx": "2",
 					"field_A": 0,

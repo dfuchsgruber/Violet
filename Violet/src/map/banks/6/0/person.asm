@@ -15,8 +15,8 @@ end
 
 .ifdef LANG_GER
 str:
-	.autostring 34 2 "Lester ist ein guter Junge.\pSein Vater wäre sicher stolz, zu sehen, wie er auf das Vermächtnis seiner Familie aufpasst."
+	.autostring 34 2 "Es ist deprimierend, was aus diesem einst so schönen Ort geworden istDOTS\pBruchfels ist nur noch ein Schatten seines früheren GlanzesDOTS"
 .elseif LANG_EN
 str:
-	.autostring 34 2 "Lester is a good boy.\pHis father would be proud to see him care for the heritage of his family."
+	.autostring 34 2 "It's depressing what became of this once so beautiful placeDOTS\pBrokenrock is all but a shadow of its former gloryDOTS"
 .endif

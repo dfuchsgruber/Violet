@@ -4,6 +4,8 @@
 .global ow_script_map_6_3_person_0
 
 ow_script_map_6_3_person_0:
+end
+/**
 loadpointer 0x0 str_0x89a7c6
 callstd MSG_FACE
 end
@@ -18,3 +20,4 @@ str_0x89a7c6:
 .elseif LANG_EN
 
 .endif
+ */

@@ -86,7 +86,7 @@ static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
 
 #define P_ARRAY_ADD_ITEM(p, items, item, prob, p_size) {p[p_size] = prob; items[p_size] = item; p_size++;}
 
-static u32 drop_type_item_count_rates[] = {1};
+static u32 drop_type_item_count_rates[] = {0, 1};
 
 static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     u32 p[16]; u16 items[16];

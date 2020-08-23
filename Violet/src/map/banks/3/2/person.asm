@@ -28,6 +28,19 @@
 .global ow_script_map_3_2_person_9
 .global ow_script_0x89bda0
 .global ow_script_map_3_2_person_4
+.global ow_script_map_3_2_person_20
+
+ow_script_map_3_2_person_20:
+    loadpointer 0x0 str_20
+    callstd MSG_FACE
+    end
+
+.ifdef LANG_GER
+str_20:
+    .autostring 34 2 "Es ist wirklich ein JammerDOTS\pLester hätte diese Stadt sicherlich wieder aufbauen könnenDOTS\pAber seit er seinen Vater verloren hat, tut er rein gar nichts mehr.\pEr ist immerzu verdrossen und melancholisch.\pEr weigert sich, darüber hinwegzukommen und dieser Stadt zu einem Neuanfang zu verhelfen."
+    .autostring 34 2 "Als ich einmal in einer Muschel nach einer Perle gesucht habe, hat mich ganz plötzlich ein Pokémon angegriffen.\pDas hat mich ganz schön erschreckt!"
+.elseif LANG_EN
+.endif
 
 ow_script_map_3_2_person_6:
 loadpointer 0x0 str_0x8cb3d6
@@ -38,7 +51,7 @@ end
 .ifdef LANG_GER
 
 str_0x8cb3d6:
-    .string "Wusstest du, dass sich in Muscheln\nwertvolle Perlen verstecken\lkönnen?"
+    .autostring 34 2 "Als ich einmal in einer Muschel nach einer Perle gesucht habe, hat mich ganz plötzlich ein Pokémon angegriffen.\pDas hat mich ganz schön erschreckt!"
 
 
 .elseif LANG_EN
@@ -97,20 +110,12 @@ end
 str_0x8127cb:
     .autostring 35 2 "Willst du wieder zurück nach Route 3?"
 
-
-
 str_0x8dc0e4:
     .autostring 35 2 "Mein Staraptor wird dich jetzt zurückbringen."
-
 str_rick:
 	.string "Rick"
-
-
-
 str_0x8127fe:
     .autostring 35 2 "Solltest du deine Meinung ändern, weißt du ja, wo du mich findest."
-
-
 .elseif LANG_EN
 
 .endif
@@ -135,11 +140,8 @@ end
 .ifdef LANG_GER
 
 str_0x847089:
-    .string "Einst war dieser Ort ein\nFerienparadies. Jeden Tag\lSonnenschein und Schwärme von\lWingull an den Stränden."
-
-
+    .autostring 34 2 "Wer könnte heute noch glauben, dass Bruchfels einmal ein Ferienparadies gewesen ist?\pSonnenschein und viele glückliche Menschen und Pokémon.\pDiese Tage sind längst vorüberDOTS"
 .elseif LANG_EN
-
 .endif
 
 
@@ -152,8 +154,7 @@ end
 .ifdef LANG_GER
 
 str_0x8470f4:
-    .string "Früher einmal lebten ich und meine\nFamilie gemeinsam auf dieser\lInsel. Nachdem der Meteor jedoch\leingeschlagen hat, sind mein Sohn\lund meine Enkel nach Kaskada\lgezogen."
-
+    .autostring 34 2 "Früher habe ich hier zusammen mit meiner Familie gelebt.\pSeit dem Meteoriteneinschlag allerdings sind meine Kinder und Enkel nach Kaskada gezogen."
 
 .elseif LANG_EN
 
@@ -169,9 +170,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c0c34:
-    .string "Man hat mir gesagt, dass es viele\nWingulls zu sehen gebe, auf dieser\lregnerischen Insel.\pOb man mich vereppelt hat? Das\neinzige weit und breit sind\lschwarze Wolken über uns und keine\lVögel!"
-
-
+    .autostring 34 2 "Ein Freund hat mir gesagt, dass Bruchfels ein sehr beliebter Nistplatz für Wingull ist.\pAber außer dunklen Regenwolken kann ich weit und breit nichts sehenDOTS"
 .elseif LANG_EN
 
 .endif
@@ -184,13 +183,9 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8c0eba:
-    .string "Einst war Harren Bürgermeister\ndieser Stadt. Er und seine Gestein\lPokémon waren eine Berühmtheit.\pNach dem Meteoriteneinschlag aber\nübernahm sein Sohn Lester das Amt\ldes Bürgermeisters und\lArenaleiters."
-
-
+    .autostring 34 2 "Die Einwohner von Bruchfels sind unserem ehemaligen Bürgermeister Harald auf ewig dankbar.\pImmerhin hat er sich selbstlos aufgeopfert, um diese Insel vor der totalen Zerstörung zu bewahren."
 .elseif LANG_EN
-
 .endif
 
 
@@ -203,9 +198,7 @@ end
 .ifdef LANG_GER
 
 str_0x88034f:
-    .string "Graben und Minen sind meine\nLeidenschaft! Ich werde bald hier\ldamit beginnen! Warts ab!"
-
-
+    .autostring 34 2 "Bevor Bruchfels zu einem beliebten Freizeitparadies wurde, haben die Menschen hier nach seltenem Gestein gegraben.\pIch frage mich, ob man wohl in diesen Felswänden noch etwas davon finden kannDOTS"
 .elseif LANG_EN
 
 .endif
@@ -220,7 +213,7 @@ end
 .ifdef LANG_GER
 
 str_0x8cb5ae:
-    .string "Was würde ich nur für einen\nRegenschirm gebenDOTS"
+    .autostring 34 2 "Dass ich bei diesem Wetter keinen Regenschrim mitgenommen habeDOTS\pNa gut, es regnet hier fast jeden Tag seit dem großen UnglückDOTS"
 
 
 .elseif LANG_EN
@@ -237,7 +230,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c0f86:
-    .string "Wenn ich ein Pokémon hätte, das\nSurfer beherrscht, dann könnte ich\lauf ihm gen Westen reiten!"
+    .autostring 34 2 "Wenn eines meiner Pokémon Surfer beherrschen würde, könnte ich von hier aus auf den Wellen bis nach Laubdorf reiten!"
 
 
 .elseif LANG_EN
@@ -254,7 +247,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c0ff2:
-    .string "Aktania, die Insel der ewigen\nSonne!\lDOTS\pKaum zu glauben, dass dieser Ort\nmal ein Strandresort war, oder?"
+    .autostring 34 2 "Bruchfels, die Stadt, die in der Sonne badet!\pKaum zu glauben, dass das einmal der Leitsruch dieser Insel gewesen sein soll, was?"
 
 
 .elseif LANG_EN
@@ -271,8 +264,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c105d:
-    .string "Nick und Rick nutzen Vögel, um\nhierher zu gelangen. Ihre\lStaraptor sind so gut trainiert,\ldass sie selbst durch die\lGewitterstürme fliegen können."
-
+    .autostring 34 2 "Die Vogelzüchter von Route 3 sind hart im Nehmen.\pIhre Staraptor fliegen Trainer sogar durch die Gewitterstürme hierher."
 
 .elseif LANG_EN
 
@@ -316,23 +308,16 @@ end
 .ifdef LANG_GER
 
 str_0x8c16a7:
-    .string "Angeln! Immer zu das Angeln!\nIch liebe es!\lFindest du nicht auch, dass Angeln\lein toller Sport ist?"
-
-
+    .autostring 34 2 "Der Angelsport ist allen anderen Sportarten überlegen.\pDa stimmst du mir doch zu, oder?"
 
 str_0x8c1201:
-    .string "Du weißt, worauf es im ankommt!\nHier, nimm das."
-
-
+    .autostring 34 2 "Du weißt, worauf es im ankommt!\nHier, nimm das."
 
 str_0x8c1179:
-    .string "Wirf einfach den Köder ins Wasser,\nund warte bis etwas anbeißt.\lDie interessantesten Wasserpokemon\lbeißen an verschiedensten Orte an."
-
-
+    .autostring 34 2 "Einfach einen Köder ins Wasser werfen und hoffen, dass etwas anbeißt!\pUnd die Leidenschaft nicht vergessen, darauf kommt es an beim Angeln!"
 
 str_0x8c1638:
-    .string "Du bist ein Ignorant! Das Angeln\nist das einzig Wahre. Komm wieder,\lwenn du deine Einstellung geändert\lhast!"
-
+    .autostring 34 2 "Du hast doch keinen blassen Schimmer!\pGeh mir aus den Augen, wenn du den Angelsport nicht zu würdigen weißt!"
 
 .elseif LANG_EN
 
@@ -347,18 +332,23 @@ ow_script_movs_0x8ca7be:
 
 
 ow_script_map_3_2_person_12:
-loadpointer 0x0 str_0x8ca6c5
-show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT MSG_FACE
-applymovement 0x800f ow_script_movs_0x8ca7be
-waitmovement 0x0
-hidesprite 0x800f
-end
+    checkflag FRBADGE_1
+    gotoif 1 badge_done
+    loadpointer 0x0 str_may_1
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT MSG_FACE
+    end
 
+badge_done:
+    loadpointer 0 str_may_2
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT MSG_FACE
+    end
 
 .ifdef LANG_GER
 
-str_0x8ca6c5:
-	.autostring 35 2 "Sehr schön, du bist also gekommen.\pIch bin von echtem Kampfgeist fasnziniert.\pVor vielen Jahrhunderten hat man in diesem Tempel den Golem-Pokémon gehuldigt.\pSeit dem Vorfall vor einiger Zeit ist von den einst beeindruckenden Kunstwerken nicht mehr viel zu sehen.\pDaher habe ich im Untergrund eine Kampfarena ausgehoben.\pDort werden wirst du mich herausfordern!"
+str_may_1:
+	.autostring 34 2 "Hey PLAYER!\nDu hast also auch hergefunden!\pDiese Stadt ist doch etwas sehr trostlos, findest du nicht?\pIch frage mich, was hier passiert ist, dass alles so verwüstet aussiehtDOTS\pWarum uns Larissa wohl hergeschickt hat?"
+str_may_2:
+    .autostring 34 2 "Du hast einen Arenakampf gewonnen, PLAYER?\pDas ist fantastischDOTS\pDeswegen sollten wir also herkommenDOTS\pIch weiß aber nicht, ob ich mich so einer Herausfoderung gewachsen fühleDOTS"
 
 .elseif LANG_EN
 
