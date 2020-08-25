@@ -35,7 +35,16 @@ extern "C" {
         u8 attacker;
         u8 defender;
         u8 multiplicator;
-    }type_effectiveness;
+    } type_effectiveness;
+
+    extern type_effectiveness type_effectivenesses[];
+
+    /**
+     * Multiplies the overall damage with a multiplier and updates the attack result, i.e. if a move was effective.
+     * That is, if 2.0 (20) is passed, the move will be called "super effective", etc.
+     * @param multiplier fixed point decimal multiplier: e.g. 20 -> 2.0
+     */
+    void battle_add_damage_multiplier_and_update_attack_result(u8 multiplier);
     
     attack attacks[ATTACK_CNT];
     /**

@@ -6687,4 +6687,20 @@ trainer trainers[TRAINER_CNT] = {
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
         .party = (trainer_pokemon*) trainer_party_x1a0_bruchfels_gym_trainer2,
     },
+    [0x1A1] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_ARENALEITER, .encounter_and_gender = {1, 0} , .sprite = 0x74,
+      .name = LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
+      .items = {ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_NONE, ITEM_NONE},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = BATTLE_WITH_HANDICAP, .pokemon_cnt = 4, .party = (trainer_pokemon*)trainer_party_x1a1_lester_difficulty_normal,
+	  },
+    [0x1A2] = {
+      .uses_custom_moves = true, .uses_custom_items = true,
+      .trainerclass = TRAINERCLASS_ARENALEITER, .encounter_and_gender = {1, 0} , .sprite = 0x74,
+      .name = LANGDEP(PSTRING("Lester"), PSTRING("Lester")),
+      .items = {ITEM_GOLDAPFEL, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG, ITEM_TOP_GENESUNG},
+      .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
+      .battle_state = BATTLE_WITH_HANDICAP, .pokemon_cnt = 4, .party = (trainer_pokemon*) trainer_party_x1a2_lester_difficulty_hard,
+	  },
 }; 

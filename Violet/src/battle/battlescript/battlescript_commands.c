@@ -28,6 +28,7 @@
 #include "item/item.h"
 #include "attack.h"
 #include "constants/item_hold_effects.h"
+#include "constants/battle/battle_handicaps.h"
 
 u8 bsc_get_byte(){
     u8 result = *bsc_offset;
@@ -503,6 +504,33 @@ void bsc_command_after_x07_adjustnormaldamage() {
                 bsc_offset = battlescript_weakened_by_berry;
             }
             break;
+        }
+    }
+}
+
+void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
+    bool no_weakness = false;
+    if ((battle_flags & BATTLE_WITH_HANDICAP) && (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS]) &&
+        (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)) {
+            no_weakness = true;
+        } 
+    for (int i = 0; type_effectivenesses[i].attacker != 0xFF; i++) {
+        if (type_effectivenesses[i].attacker == 0xFE) {
+            // If the defender is in foresight, ignore entries after the "marker" 0xFE
+            if (battlers[defending_battler].status2 & STATUS2_FORESIGHT)
+                break;
+        } else if (type_effectivenesses[i].attacker == move_type) {
+            // Type 1
+            if (battlers[defending_battler].type1 == type_effectivenesses[i].defender) {
+                if (!(type_effectivenesses[i].multiplicator == 20 && no_weakness))
+                    battle_add_damage_multiplier_and_update_attack_result(type_effectivenesses[i].multiplicator);
+            }
+            // Type 2
+            if (battlers[defending_battler].type2 == type_effectivenesses[i].defender &&
+                battlers[defending_battler].type2 != battlers[defending_battler].type1) {
+                if (!(type_effectivenesses[i].multiplicator == 20 && no_weakness))
+                    battle_add_damage_multiplier_and_update_attack_result(type_effectivenesses[i].multiplicator);
+            }
         }
     }
 }

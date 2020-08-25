@@ -100,8 +100,8 @@ size_t softmax_choice(int *logits, size_t size, int min, int max, u16 (*rng)()) 
 
 void shuffle(size_t *array, size_t size, u16 (*rng)()) {
     if (rng == NULL) rng = rnd16;
-    for (size_t i = 0; i < size - 2; i++) {
-        size_t j = (rnd16() % (size - i)) + i;
+    for (size_t i = size - 1; i > 0; i--) {
+        size_t j = rng() % (i + 1);
         size_t tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;

@@ -119,9 +119,11 @@ bool battle_handicap_switch_in_effects(u8 battler_idx) {
 extern u8 battlescript_handicap_floating_rocks_apply[];
 
 bool battle_handicap_before_attack_events() {
+    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~(CUSTOM_STATUS_FLOATING_ROCKS));
     if (!(battle_flags & BATTLE_WITH_HANDICAP)) 
         return false;
-    BATTLE_STATE2->status_custom[defending_battler] &= (u32)(~(CUSTOM_STATUS_FLOATING_ROCKS));
+    /** 
+     * This is not the effect of floating rocks anymore: Instead of lowering all damage, rock type mons have no weakness now
     if (fmem.battle_handicaps & int_bitmasks[BATTLE_HANDICAP_FLOATING_ROCKS] && 
         (battlers[defending_battler].type1 == TYPE_GESTEIN || battlers[defending_battler].type2 == TYPE_GESTEIN)
         && battler_is_opponent(attacking_battler) != battler_is_opponent(defending_battler) && attacks[active_attack].base_power != 0) {
@@ -133,6 +135,7 @@ bool battle_handicap_before_attack_events() {
             bsc_offset = battlescript_handicap_floating_rocks_apply;
             return true;
     }
+    **/
     return false;
 }
 

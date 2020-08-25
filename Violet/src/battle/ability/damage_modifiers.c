@@ -11,6 +11,7 @@
 #include "battle/battlescript.h"
 #include "item/item.h"
 #include "constants/item_hold_effects.h"
+#include "constants/battle/battle_handicaps.h"
 
 void apply_final_damage_modifiers(){
     battler *attacker = &battlers[attacking_battler];

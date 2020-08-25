@@ -73,27 +73,34 @@ void trainer_pokemon_new_default_item_default_attacks(pokemon *dst,
 	trainer_pokemon_new(dst, party->build);
 }
 
+
 static int party_setup_by_trainer_idx(pokemon *dst_party, u16 trainer_id) {
 	// To generate a trainer consistent pid we use a pseudo rng
 	fmem.trainer_prng_state = trainer_id;
-	for (int i = 0; i < trainers[trainer_id].pokemon_cnt; i++) {
+	size_t idxs[6] = {0, 1, 2, 3, 4, 5};
+	if (*var_access(DIFFICULTY) == DIFFICULTY_HARD) {  // Shuffle
+		shuffle(idxs, trainers[trainer_id].pokemon_cnt, NULL);
+	}
+	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++)
+		dprintf("Shuffled team order %d : %d\n", j, idxs[j]);
+	for (int j = 0; j < trainers[trainer_id].pokemon_cnt; j++) {
 		if (trainers[trainer_id].uses_custom_items &&
 				trainers[trainer_id].uses_custom_moves) {
 			trainer_pokemon_custom_item_custom_attacks* party =
 					(trainer_pokemon_custom_item_custom_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_custom_item_custom_attacks(&dst_party[i], &party[i]);
+			trainer_pokemon_new_custom_item_custom_attacks(&dst_party[j], &party[idxs[j]]);
 		} else if (trainers[trainer_id].uses_custom_items) {
 			trainer_pokemon_custom_item_default_attacks* party =
 					(trainer_pokemon_custom_item_default_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_custom_item_default_attacks(&dst_party[i], &party[i]);
+			trainer_pokemon_new_custom_item_default_attacks(&dst_party[j], &party[idxs[j]]);
 		} else if (trainers[trainer_id].uses_custom_moves) {
 			trainer_pokemon_default_item_custom_attacks* party =
 					(trainer_pokemon_default_item_custom_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_default_item_custom_attacks(&dst_party[i], &party[i]);
+			trainer_pokemon_new_default_item_custom_attacks(&dst_party[j], &party[idxs[j]]);
 		} else {
 			trainer_pokemon_default_item_default_attacks* party =
 					(trainer_pokemon_default_item_default_attacks*)trainers[trainer_id].party;
-			trainer_pokemon_new_default_item_default_attacks(&dst_party[i], &party[i]);
+			trainer_pokemon_new_default_item_default_attacks(&dst_party[j], &party[idxs[j]]);
 		}
 	}
 	battle_flags |= trainers[trainer_id].battle_state;

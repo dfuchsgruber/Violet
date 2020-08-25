@@ -37,6 +37,8 @@ lscr_0x8f5129:
 .include "flags.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "difficulties.s"
+.include "ordinals.s"
 
 .global ow_script_0x8947e3
 .global ow_script_0x8f5b84
@@ -80,8 +82,17 @@ draw_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 special SPECIAL_BATTLE_HANDICAP_CLEAR
 setvar 0x8004 BATTLE_HANDICAP_FLOATING_ROCKS
 special SPECIAL_BATTLE_HANDICAP_SET
+compare DIFFICULTY DIFFICULTY_NORMAL
+gotoif EQUAL battle_difficulty_normal
+compare DIFFICULTY DIFFICULTY_HARD
+gotoif EQUAL battle_difficulty_hard
+@ DIFFICULTY_NORMAL : 
 trainerbattlecont 0x1 0xb6 0x0 str_0x8cafb5 str_0x8cb08b ow_script_0x8947e3
 
+battle_difficulty_normal:
+	trainerbattlecont 0x1 0x1a1 0x0 str_0x8cafb5 str_0x8cb08b ow_script_0x8947e3
+battle_difficulty_hard:
+	trainerbattlecont 0x1 0x1a2 0x0 str_0x8cafb5 str_0x8cb08b ow_script_0x8947e3
 
 ow_script_0x8947e3:
 
@@ -113,21 +124,18 @@ end
 
 str_0x8cae89:
 	.autostring 35 2 "Es beginnt nun der Kampf zwischen Lester und PLAYER um den Antikorden.\pIch erwarte einen fairen Kampf!"
-
 str_0x8cafb5:
-	.autostring 35 2 "Auch wenn du mir sympatisch bist, werde ich mich nicht zurückhalten.\pMeine Gestein-Pokémon werden dich das fürchten lehren!"
+	.autostring 35 2 "Meine Stadt mag in Trümmern liegen, aber mein Kampfgeist ist weiterhin ungebrochen!\pZeig mir, was du auf dem Kasten hast!"
 str_0x8cb08b:
     .autostring 35 2 "Beeindruckend gekämpft!\pSelbst meine felsenharten Gestein-Pokémon konnten dir nichts entgegensetzen."
-
 str_0x8cb101:
 	.autostring 35 2 "Du hast hervorragend gekämpft!\pDen BUFFER_3 hast du dir redlich verdient!"
 str_0x897c8a:
     .autostring 35 2 "PLAYER hat den BUFFER_3 von Lester erhalten!"
-
 str_0x8cb1cc:
 	.autostring 35 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Blitz außerhalb des Kampfes zu nutzen.\pZudem gehorchen dir getauschte Pokémon bis Level 30.\pDOTS DOTS DOTS\pDarüber hinaus will ich dir noch etwas als Symbol meiner persönlichen Wertschätzung überreichen.\pDu hast diesen Kampf mit großer Würde bestritten."
 str_0x8cb281:
-	.autostring 35 2 "Diese Technische Maschine enthält die Attacke Felsgrab.\pSie ist eine meiner Lieblingsattacken, weil sie den Gegner schadet und gleichzeitig verlangsamt.\pEin idealer Angriff für langsamere Pokémon, wie etwa meine Gestein-Typen.\pIch hoffe, sie wird dir auf deiner Reise nützen.\pBegleite mich nun bitte aus der Untergrund-Arena."
+	.autostring 35 2 "Diese Technische Maschine enthält die Attacke Felsgrab.\pSie ist eine meiner Lieblingsattacken, weil sie den Gegner schadet und gleichzeitig verlangsamt.\pEin idealer Angriff für langsamere Pokémon, wie etwa meine Gestein-Typen.\pIch hoffe, sie wird dir auf deiner Reise nützen.\pBegleite mich nun bitte aus der Untergrund-Arena hinaus."
 
 .elseif LANG_EN
 

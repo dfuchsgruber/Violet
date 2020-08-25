@@ -966,3 +966,4 @@ npc_movement_callback_is_active = 0x080975a4 | 1;
 npc_get_strength_flag = 0x0805fcd8 | 1;
 person_set_position = 0x080550f8 | 1;
 person_set_behaviour = 0x08055134 | 1;
+battle_add_damage_multiplier_and_update_attack_result = 0x0801e6f4 | 1;

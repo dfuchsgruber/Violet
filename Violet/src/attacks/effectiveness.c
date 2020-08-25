@@ -1,6 +1,9 @@
 #include "types.h"
 #include "attack.h"
 #include "constants/pokemon_types.h"
+#include "battle/state.h"
+#include "battle/battler.h"
+#include "constants/battle/battle_handicaps.h"
 
 type_effectiveness type_effectivenesses[] = {
     {TYPE_NORMAL, TYPE_GESTEIN, 5},

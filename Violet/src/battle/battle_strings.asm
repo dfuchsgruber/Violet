@@ -2855,7 +2855,7 @@ bsc_strings:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX leidet unter der\nextremen HitzeDOTS"
 
 	str_battle_x1A4:
-		.string "Große Felsen schweben umherDOTS"
+		.string "Große Felsen schweben umherDOTS\pGestein-Pokémon haben keine Schwäche!"
 
 	str_battle_x1A5:
 		.string "BSC_DEF_NAME_WITH_PREFIX wird von den\numherschwebenden Felsen beschützt!"
@@ -4943,7 +4943,7 @@ bsc_strings:
 		.string "BSC_SCR_ACTIVE_NAME_WITH_PREFIX suffers \nfrom the severe heatDOTS"
 
 	str_battle_x1A4:
-		.string "Big rocks are floating arroundDOTS"
+		.string "Big rocks are floating arroundDOTS\pRock-type Pokémon have no weakness!"
 
 	str_battle_x1A5:
 		.string "BSC_DEF_NAME_WITH_PREFIX is protected\nby the floating rocks!"

@@ -4,8 +4,8 @@
 .org 0x08107DE0
     .word gfx_typechartPal
 
-.org 0x801e8c8
-	.word type_effectivenesses
+//.org 0x801e8c8 @ Replaced with bsc_cmd_x06 in battlescript.c
+//	.word type_effectivenesses
 
 .org 0x801ea08
 	.word type_effectivenesses
