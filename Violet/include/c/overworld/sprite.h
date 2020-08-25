@@ -22,6 +22,7 @@
 #include "overworld/npc.h"
 #include "map/event.h"
 
+#define OVERWORLD_SPRITE_STRENGTH_BOULDER 97
 #define OVERWORLD_SPRITE_MISC 236
 #define OVERWORLD_SPRITE_BERRY 237
 #define OVERWORLD_SPRITE_POKEMON_32_32 238
@@ -76,6 +77,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_POKEMON_END 0x2200
 #define OW_PAL_TAG_MUSHROOM 0x2E00
 #define OW_PAL_TAG_SHELL 0x2E01
+#define OW_PAL_TAG_BOULDER_GYM_PUZZLE 0x2E02
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -132,6 +134,20 @@ overworld_sprite *overworld_sprite_get_by_shell_idx(u16 shell_idx);
 palette *overworld_palette_get_by_shell();
 
 /**
+ * Gets the sprite of a boulder.
+ * @param person_script_std person's script std that indicates the boulder picture
+ * @param value flags of the person
+ * @return the overworld sprite
+ **/
+overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_script_std, u16 value);
+
+/**
+ * Returns the overworld palette of the first gym's puzzle boulders
+ * @return the palette
+ **/
+palette *overworld_palette_get_gym_puzzle_boulder();
+
+/**
  * Frees a npc palette if currently no active npc is using this palette.
  * @param slot the palette to free
  **/
@@ -181,6 +197,22 @@ u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y,
  * @return the idx of the oam or 64 on failure
  **/
 u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object*), s16 x, s16 y, u8 subpriority);
+
+/**
+ * Starts the boulder push animation and pushes the boulder
+ * @param npc_idx the npc to move
+ * @param direction in which direction
+ **/
+void boulder_animation_start(u8 npc_idx, u8 direction);
+
+/**
+ * Attempts to do a boulder push
+ * @param x x coordinate of the boulder
+ * @param y y coordinate of the boulder
+ * @param direction in which direction to push the boulder
+ * @return if the boulder push attempt was sucessful, i.e. if a boulder push animation was triggered
+ **/
+bool boulder_push_attempt(s16 x, s16 y, u8 direction);
 
 extern u8 gfx_ow_bisasamTiles[];
 extern color_t gfx_ow_bisasamPal[16];
@@ -1696,7 +1728,10 @@ extern const u8 gfx_ow_mushroomTiles[];
 extern const color_t gfx_ow_mushroomPal[];
 extern const u8 gfx_ow_shellTiles[];
 extern const color_t gfx_ow_shellPal[];
+extern const u8 gfx_ow_boulder_gym_puzzleTiles[];
+extern const color_t gfx_ow_boulder_gym_puzzlePal[];
 
+extern overworld_sprite overworld_sprite_strength_boulder;
 
 #define OVERWORLD_PLAYER_PICTURE_CONTEXT_WALKING 0
 #define OVERWORLD_PLAYER_PICTURE_CONTEXT_BIKING 1

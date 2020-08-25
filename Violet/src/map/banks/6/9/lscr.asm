@@ -26,6 +26,8 @@ lscr_0x8f5129:
 	.hword STORY_PROGRESS, 0x13
 	.word ow_script_0x89472b
 	.hword 0x0
+
+
 .include "battle/battle_handicaps.s"
 .include "vars.s"
 .include "movements.s"
@@ -112,30 +114,18 @@ end
 str_0x8cae89:
 	.autostring 35 2 "Es beginnt nun der Kampf zwischen Lester und PLAYER um den Antikorden.\pIch erwarte einen fairen Kampf!"
 
-
-
 str_0x8cafb5:
 	.autostring 35 2 "Auch wenn du mir sympatisch bist, werde ich mich nicht zurückhalten.\pMeine Gestein-Pokémon werden dich das fürchten lehren!"
-
-
 str_0x8cb08b:
     .autostring 35 2 "Beeindruckend gekämpft!\pSelbst meine felsenharten Gestein-Pokémon konnten dir nichts entgegensetzen."
 
-
-
 str_0x8cb101:
 	.autostring 35 2 "Du hast hervorragend gekämpft!\pDen BUFFER_3 hast du dir redlich verdient!"
-
-
 str_0x897c8a:
     .autostring 35 2 "PLAYER hat den BUFFER_3 von Lester erhalten!"
 
-
-
 str_0x8cb1cc:
-	.autostring 35 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Blitz außerhalb des Kampfes zu nutzen.\pZudem gehorchen dir getauschte Pokémon bis Level 30.\pDOTS DOTS DOTS\pDarüber hinaus will ich dir noch etwas als Symbol meiner persönlichen Wertschätzung überreichen."
-
-
+	.autostring 35 2 "Dieser Orden erlaubt es dir, die Versteckte Maschine Blitz außerhalb des Kampfes zu nutzen.\pZudem gehorchen dir getauschte Pokémon bis Level 30.\pDOTS DOTS DOTS\pDarüber hinaus will ich dir noch etwas als Symbol meiner persönlichen Wertschätzung überreichen.\pDu hast diesen Kampf mit großer Würde bestritten."
 str_0x8cb281:
 	.autostring 35 2 "Diese Technische Maschine enthält die Attacke Felsgrab.\pSie ist eine meiner Lieblingsattacken, weil sie den Gegner schadet und gleichzeitig verlangsamt.\pEin idealer Angriff für langsamere Pokémon, wie etwa meine Gestein-Typen.\pIch hoffe, sie wird dir auf deiner Reise nützen.\pBegleite mich nun bitte aus der Untergrund-Arena."
 

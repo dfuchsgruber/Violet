@@ -72,8 +72,7 @@ end
 .ifdef LANG_GER
 
 str_0x8cade0:
-    .string "Dieser Ort ist heilig. Niemand\ndarf ihn je betreten, der nicht\lseinen Eid gegenüber den Wächtern\lgeschworen hat.\pDOTS\nBeeilen wir uns."
-
+	.autostring 34 2 "In diesem Raum huldigen wir den antiken Wächtern.\pAllein ihnen und der Aufopferung meines Vaters wegen existiert Bruchfels überhaupt noch.\pSchreite bitte würdevoll voran, solange wir in diesen Hallen sind."
 
 .elseif LANG_EN
 

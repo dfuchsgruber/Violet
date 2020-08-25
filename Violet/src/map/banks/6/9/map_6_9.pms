@@ -5,7 +5,7 @@
 			"person_cnt": 2,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
-			"signpost_cnt": 2,
+			"signpost_cnt": 0,
 			"persons": [
 				{
 					"is_trainer": "0",
@@ -71,40 +71,7 @@
 				}
 			],
 			"triggers": [],
-			"signposts": [
-				{
-					"level": 0,
-					"x": 4,
-					"y": 13,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_6_9_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				},
-				{
-					"level": 0,
-					"x": 8,
-					"y": 13,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_6_9_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				}
-			]
+			"signposts": []
 		},
 		"levelscripts": "lscr_0x8f511d",
 		"connections": {

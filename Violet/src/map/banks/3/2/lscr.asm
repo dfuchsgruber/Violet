@@ -1,28 +1,30 @@
 
-.global lscr_0x718de8
-
-lscr_0x718de8:
-	.byte 0x1
-.word ow_script_0x88b2c5
-	.byte 0x3
-.word ow_script_0x811515
-	.byte 0x0
-
-
 
 
 .include "overworld_script.s"
 .include "ordinals.s"
 .include "flags.s"
+.include "levelscript_types.s"
+.include "difficulties.s"
+.include "vars.s"
 
-.global ow_script_0x88b2c5
-.global ow_script_0x811515
-.global ow_script_0x8f6fce
+.global lscr_0x718de8
 
-ow_script_0x811515:
-setworldmapflag WM_AKTANIA
-end
+lscr_0x718de8:
+    .byte LEVELSCRIPT_TYPE_ON_TRANSITION
+    .word lscr_reset_gym_trainerflag
+	.byte 0x0
+
+lscr_reset_gym_trainerflag:
+	setworldmapflag WM_AKTANIA
+    checkflag FRBADGE_1
+    gotoif EQUAL dont_reset_trainerflags
+    compare DIFFICULTY DIFFICULTY_NORMAL
+    gotoif LESS dont_reset_trainerflags 
+    settrainerflag 0x12
+    settrainerflag 0x19f
+    settrainerflag 0x1a0
+	dont_reset_trainerflags:
+	end
 
 
-ow_script_0x88b2c5:
-end

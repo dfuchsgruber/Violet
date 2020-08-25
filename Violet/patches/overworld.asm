@@ -412,3 +412,8 @@ _blxr1:
     ldr r3, = money_draw | 1
     bx r3
     .pool
+
+.org 0x0806dd8c
+    ldr r1, =npc_boulder_fall_trough_hole_and_update_person_coordinates | 1
+    bx r1
+    .pool

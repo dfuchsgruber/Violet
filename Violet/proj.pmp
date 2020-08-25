@@ -380,6 +380,16 @@
 				"map_aktania_cloud_ruins",
 				"src/map/banks/6/7/map_aktania_cloud_ruins.pms",
 				"MAP_AKTANIA"
+			],
+			"8": [
+				"map_bruchfels_gym_room_1",
+				"src/map/banks/6/8/map_bruchfels_gym_room_1.pms",
+				"MAP_AKTANIA"
+			],
+			"10": [
+				"map_bruchfels_gym_leader_room",
+				"src/map/banks/6/10/map_bruchfels_gym_leader_room.pms",
+				"MAP_AKTANIA"
 			]
 		},
 		"7": {
@@ -1894,6 +1904,14 @@
 		"map_footer_route_2_cave_connection": [
 			121,
 			"src/map/banks/11/6/map_footer_route_2_cave_connection.pms"
+		],
+		"map_footer_bruchfels_gym_room_1": [
+			122,
+			"src/map/banks/6/8/map_footer_bruchfels_gym_room_1.pms"
+		],
+		"map_footer_bruchfels_gym_leader_room": [
+			123,
+			"src/map/banks/6/10/map_footer_bruchfels_gym_leader_room.pms"
 		]
 	},
 	"tilesets_primary": {

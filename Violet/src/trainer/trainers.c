@@ -6675,12 +6675,16 @@ trainer trainers[TRAINER_CNT] = {
     },
     [0x19f] = {
         .trainerclass = TRAINERCLASS_TEENAGER, .sprite = 0x52,
-        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Fynn"),
-            PSTRING("Fynn")), .pokemon_cnt = 1,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Paimon"),
+            PSTRING("Paimon")), .pokemon_cnt = 3,
         .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
-        .party = (trainer_pokemon*) trainer_party_x16,
-        .items = {
-          [0] = ITEM_GOLDAPFEL,
-        }
+        .party = (trainer_pokemon*) trainer_party_x19f_bruchfels_gym_trainer1,
+    },
+    [0x1A0] = {
+        .trainerclass = TRAINERCLASS_WANDERER, .sprite = 0x43,
+        .encounter_and_gender = {2, 0}, .name = LANGDEP(PSTRING("Memet"),
+            PSTRING("Memet")), .pokemon_cnt = 1,
+        .ai = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS,
+        .party = (trainer_pokemon*) trainer_party_x1a0_bruchfels_gym_trainer2,
     },
 }; 

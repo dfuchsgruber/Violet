@@ -93,7 +93,9 @@ typedef struct {
 
 #define PLAYER_STATE_BIKING (PLAYER_STATE_MACH_BIKE | PLAYER_STATE_ACRO_BIKE)
 
-extern npc npcs[];
+#define NUM_NPCS 16
+
+extern npc npcs[NUM_NPCS];
 extern player_state_t player_state;
 // Npc idx of the trainer to battle
 extern u8 trainer_npc_idx;
@@ -332,6 +334,32 @@ bool npc_get_id_by_overworld_id(u8 overworld_id, u8 map, u8 bank, u8 *result);
  * @param moves the list of movements, terminated by 254
  */
 void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, u8 *moves);
+
+/**
+ * Checks if a callback for applymovement is active with that npc
+ * @param overworld_id the overworld id to look for
+ * @param map the map id to look on
+ * @param bank the map bank to look on
+ * @return whether a movement callback is active
+ **/
+bool npc_movement_callback_is_active(u8 overworld_id, u8 map, u8 bank);
+
+/**
+ * Executes a single movement for an npc
+ * @param n the npc
+ * @param move the movement to execute
+ * @return if the movement has finished
+ **/
+bool npc_apply_movement_execute_movement(npc *n, u8 move);
+
+/**
+ * Gets the flag to clear for a strength boulder npc
+ * @param overworld_idx the overworld id to look for
+ * @param map_idx the map_idx the map idx
+ * @param bank the map bank to look on
+ * @return the strength flag to clear
+ **/
+u16 npc_get_strength_flag(u8 overworld_idx, u8 map_idx, u8 bank);
 
 // Person idx that is targeted by npc_apply_movement
 u8 npc_movement_target_person_idx;
@@ -582,5 +610,13 @@ u8 npc_get_animation_idx_by_facing(u8 facing);
 u8 direction_get_opposite(u8 direction);
 
 extern void (*npc_movements_oam_callbacks[])(oam_object*);
+
+/**
+ * Gets the an npc at a position
+ * @param x the x coordinate
+ * @param y the y coordinate
+ * @return npc_idx the idx of the npc at this position. If None, returns NUM_NPCS.
+ **/
+u8 npc_get_by_position(s16 x, s16);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

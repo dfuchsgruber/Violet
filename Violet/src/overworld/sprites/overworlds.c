@@ -1619,7 +1619,7 @@ overworld_sprite *overworld_sprites[] = {
 	(overworld_sprite*) 0x83a4818,
 	(overworld_sprite*) 0x83a4308,
 	(overworld_sprite*) 0x83a43e0,
-	(overworld_sprite*) 0x83a4404,
+	&overworld_sprite_strength_boulder,
 	(overworld_sprite*) 0x83a4884,
 	(overworld_sprite*) 0x83a48a8,
 //100

@@ -2278,3 +2278,13 @@ trainer_pokemon_default_item_default_attacks trainer_party_x19d_route_2_cave_sch
 trainer_pokemon_default_item_default_attacks trainer_party_x19e_route_2_cave_teenager[1] = {
 	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,9, POKEMON_FUKANO),
 };
+
+trainer_pokemon_default_item_default_attacks trainer_party_x19f_bruchfels_gym_trainer1[3] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,15, POKEMON_KLEINSTEIN),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,14, POKEMON_ONIX),
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,13, POKEMON_MOBAI),
+};
+
+trainer_pokemon_default_item_default_attacks trainer_party_x1a0_bruchfels_gym_trainer2[1] = {
+	TRAINER_PARTY_DEFAULT_ITEM_DEFAULT_MOVES(0x0, 0x0,0x0,false,false,17, POKEMON_RIHORN),
+};

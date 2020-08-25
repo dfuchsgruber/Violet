@@ -35,6 +35,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	clearflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_0_SOLVED
+	end
 	additem ITEM_SONDERBONBON 1
 	additem ITEM_GOLDBONBON 99
 	additem ITEM_BITTERKRAUT 1

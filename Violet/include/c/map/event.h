@@ -110,6 +110,19 @@ void person_delete_npc_if_present(u8 person_idx, u8 map_idx, u8 bank);
  **/
 u8 signpost_get_script_type(u8 behaviour, u8 direction);
 
+/**
+ * Sets the position of a person.
+ * @param person_idx the idx of the person
+ * @param x the x coordinate
+ * @param y the y coordinate
+ **/
+void person_set_position(u8 person_idx, s16 x, s16 y);
 
+/**
+ * Sets the position of a person.
+ * @param person_idx the idx of the person
+ * @param behaviour the behaviour to set
+ **/
+void person_set_behaviour(u8 person_idx, u8 behaviour);
 
 #endif /* INCLUDE_C_MAP_EVENT_H_ */

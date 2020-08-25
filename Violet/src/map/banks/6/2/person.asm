@@ -73,7 +73,7 @@ end
 
 .ifdef LANG_GER
 str_0x8cab11:
-    .autostring 34 2 "Gute Arbeit!\nManus zu besiegen, ist kein Leichtes!\pDass du an seiner harten Verteidigungslinie vorbeigekommen bist, zeugt von deinem Talent, Kindchen!"
+    .autostring 34 2 "Gute Arbeit!\nLester zu besiegen, ist kein Leichtes!\pDass du an seiner harten Verteidigungslinie vorbeigekommen bist, zeugt von deinem Talent, Kindchen!"
 
 
 .elseif LANG_EN
@@ -91,12 +91,9 @@ end
 .ifdef LANG_GER
 
 str_0x8cac8d:
-    .string "In diesem Tempel fühle ich mich\nmeinen Gestein-Pokémon sehr nahe.\lIch bin Lester dankbar für diesen\lOrt und werde ihn verteidigen!"
-
-
-
+    .autostring 34 2 "In diesem Tempel fühle ich mich meinen Gestein-Pokémon sehr verbunden.\pWir werden dich zerschmettern!"
 str_0x8cad12:
-    .string "Lester erwartet dich bereits. Du\nkannst es sicherlich mit ihm\laufnehmen, aber ob du gewinnen\lwirst, ist eine andere SacheDOTS"
+    .autostring 34 2 "Wir sind wie Staub zerbröseltDOTS\pDu bist ganz stark, Kindchen!"
 
 
 .elseif LANG_EN

@@ -41,7 +41,7 @@ int npc_player_attempt_step(npc *player, s16 x, s16 y, u8 direction, int param_5
             return COLLISION_IMPASSABLE; // There are no special collision events like boulder pushing along ledges
         }
     }
-    if (collision == COLLISION_OTHER_NPC && npc_is_movable_boulder_at(x, y, direction)) {
+    if (collision == COLLISION_OTHER_NPC && boulder_push_attempt(x, y, direction)) {
         dprintf("Collision with strength boulder.\n");
         return COLLISION_PUSHED_BOULDER;
     }

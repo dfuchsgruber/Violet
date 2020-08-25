@@ -14,11 +14,18 @@
 .global levelscripts_aktania_gym
 
 levelscripts_aktania_gym:
-	.byte LEVELSCRIPT_TYPE_ON_FRAME_TABLE
-.word lscr_referee
+    .byte LEVELSCRIPT_TYPE_ON_LOAD
+    .word lscr_setmaptile
+    .byte LEVELSCRIPT_TYPE_ON_FRAME_TABLE
+    .word lscr_referee
     .byte LEVELSCRIPT_TYPE_ON_TRANSITION
-.word lscr_reset_trainerflags
+    .word lscr_move_boulders
 	.byte 0
+
+lscr_setmaptile:
+    checkflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_0_SOLVED
+    callif EQUAL ow_script_bruchfels_gym_puzzle_room_0_open_door
+    end
 
 lscr_referee:
 	.hword VAR_GYM_TIPPS, 0x0
@@ -42,17 +49,18 @@ mov_1lfd:
 mov_1rfd:
     .byte STEP_RIGHT, LOOK_DOWN, STOP
 
-lscr_reset_trainerflags:
-    checkflag FRBADGE_1
-    gotoif EQUAL dont_reset_trainerflags
-    compare DIFFICULTY DIFFICULTY_NORMAL
-    gotoif LESS dont_reset_trainerflags 
-    settrainerflag 0x12
-dont_reset_trainerflags:
+lscr_move_boulders:
+    checkflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_0_SOLVED
+    gotoif NOT_EQUAL dont_move_boulders
+    movesprite2 4 0x7 0x8
+    movesprite2 5 0x3 0x4
+    movesprite2 6 0xb 0x4
+    movesprite2 7 0x7 0x6
+dont_move_boulders:
     end
 
 .ifdef LANG_GER
 str_aktania_gym_referee:
-    .autostring 34 2 "Hey! Du siehst aus, als wärst du noch nicht lange ein Trainer.\pDeswegen will ich dir ein paar Ratschläge erteilen, damit du auf das, was dich hier erwartet, vorbereitet bist.\pIn dieser Arena wird mit Gestein-Pokémon gekämpft.\pDie können ordentlich einstecken, sind aber gegen einige Typen sehr anfällig.\pDeswegen hat der Arenaleiter Manus Maßnahmen ergriffen, sich gegen effektive Angriffe zu wappnen!\pViel Glück!"
+    .autostring 34 2 "Hey! Du siehst aus, als wärst du noch nicht lange ein Trainer.\pDeswegen will ich dir ein paar Ratschläge erteilen, damit du auf das, was dich hier erwartet, vorbereitet bist.\pIn dieser Arena wird mit Gestein-Pokémon gekämpft.\pDie können ordentlich einstecken, sind aber gegen einige Typen sehr anfällig.\pDeswegen hat der Arenaleiter Lester Maßnahmen ergriffen, sich gegen effektive Angriffe zu wappnen!\pViel Glück!"
 .elseif LANG_EN
 .endif

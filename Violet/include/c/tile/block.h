@@ -165,6 +165,13 @@ bool behaviour_is_surf_strong_stream(u8 behaviour);
 bool behaviour_is_waterfall(u8 behaviour);
 
 /**
+ * Checks if a tile's behaviour is that of a non-animated door, i.e. cave entrance
+ * @param behaviour the behaviour byte to check
+ * @return if the tile behaviour is a non animated door
+ **/
+bool behaviour_is_non_animated_warp(u8 behaviour);
+
+/**
  * Checks if at least one pokemon of the player has surf
  * @return if at least one pokemon of the player has surf
  */

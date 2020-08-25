@@ -37,7 +37,7 @@
 			"warps": [
 				{
 					"y": 13,
-					"target_map": 2,
+					"target_map": "10",
 					"x": 9,
 					"level": 0,
 					"target_bank": 6,
@@ -45,7 +45,7 @@
 				},
 				{
 					"y": 13,
-					"target_map": 2,
+					"target_map": "10",
 					"x": 8,
 					"level": 0,
 					"target_bank": 6,
