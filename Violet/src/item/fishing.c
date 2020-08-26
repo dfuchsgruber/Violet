@@ -23,6 +23,7 @@
 static u16 fishing_rng_no_bait() {
     u32 state = (u32)gp_stack_pop();
     u16 r = (u16)_prng_xorshift(&state);
+    dprintf("No bait r 0x%x\n", r);
     gp_stack_push((int)state);
     return (u16)(r % (512 - MIN(save_get_key(SAV_KEY_FISHING_ENCOUNTERS), 256)));
 }
@@ -55,6 +56,7 @@ u16 fishing_create_pokemon(wild_pokemon_habitat *habitat, u8 rod_type) {
     pid_t pid = {.value = 0};
     // Seed the fishing feature rng
     u32 seed = (u32)((rnd16() << 16) | rnd16());
+    dprintf("Gp stack has size %d\n", fmem.gp_stack_size);
     gp_stack_push((int)seed);
     if (checkflag(FLAG_FISHING_SHINING_BAIT_USED)) {
         pokemon_spawn_by_seed_algorithm(opponent_pokemon, species, (u8)(MIN(level + 8, 100)), 

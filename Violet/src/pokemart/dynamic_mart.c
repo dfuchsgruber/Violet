@@ -113,9 +113,9 @@ static mart_item *mart_items[] = {
     NULL
 };
 
-void pokemart_add_item(u16 item, int *item_cnt) {
-    if (*item_cnt >= 256) return;
-    for (int i = 0; i < *item_cnt; i++) {
+void pokemart_add_item(u16 item, size_t *item_cnt) {
+    if (*item_cnt >= ARRAY_COUNT(fmem.dmart)) return;
+    for (size_t i = 0; i < *item_cnt; i++) {
         if (fmem.dmart[i] == item) return; 
     }
     fmem.dmart[(*item_cnt)++] = item;
@@ -123,11 +123,11 @@ void pokemart_add_item(u16 item, int *item_cnt) {
 
 
 bool script_cmd_x88_pokemart3(overworld_script_state_t *script_state){
-    u16* items = (u16*) overworld_script_read_word(script_state);
+    u8* items = (u8*) overworld_script_read_word(script_state);
     bool default_mart = *(script_state->script++);
-    int item_cnt = 0;
+    size_t item_cnt = 0;
     if (default_mart) {
-        for (int i = 0; mart_items[i] && item_cnt < 256; i++) {
+        for (int i = 0; mart_items[i] && item_cnt < ARRAY_COUNT(fmem.dmart); i++) {
             for (int j = 0; mart_items[i][j].item; j++) {
                 if (!mart_items[i][j].flag || checkflag(mart_items[i][j].flag)) {
                     pokemart_add_item(mart_items[i][j].item, &item_cnt);
@@ -136,8 +136,9 @@ bool script_cmd_x88_pokemart3(overworld_script_state_t *script_state){
             }
         }
     }
-    for (int i = 0; items[i] && item_cnt < 256; i++) {
-        pokemart_add_item(items[i], &item_cnt);
+    for (size_t i = 0; UNALIGNED_16_GET(items + 2 * i) && item_cnt < ARRAY_COUNT(fmem.dmart); i++) {
+        dprintf("Reading additional item %d\n", UNALIGNED_16_GET(items + 2 * i));
+        pokemart_add_item(UNALIGNED_16_GET(items + 2 * i), &item_cnt);
     }
 
     pokemart(fmem.dmart);
