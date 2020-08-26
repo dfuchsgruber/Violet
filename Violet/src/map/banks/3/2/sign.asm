@@ -13,18 +13,16 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8ca664:
     .autostring 34 2 "Bruchtal Arena.\pArenaleiter: Lester."
-
-
 .elseif LANG_EN
-
 .endif
 
 
 ow_script_map_3_2_sign_3:
-end
+    loadpointer 0 str_lester_house
+    callstd MSG_SIGN
+    end
 
 
 ow_script_map_3_2_sign_0:
@@ -36,6 +34,8 @@ end
 .ifdef LANG_GER
 str_0x8cee15:
     .autostring 34 2 "Bruchfels, die Stadt des ewigen SonnenscheinsDOTS\pDer Text ist durchgestrichenDOTS"
+str_lester_house:
+    .autostring 34 2 "Lesters Haus"
 .elseif LANG_EN
 
 .endif

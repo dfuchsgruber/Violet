@@ -5,7 +5,7 @@
 			"person_cnt": 31,
 			"warp_cnt": 15,
 			"trigger_cnt": 3,
-			"signpost_cnt": 4,
+			"signpost_cnt": 5,
 			"persons": [
 				{
 					"target_index": 1,
@@ -476,8 +476,8 @@
 					}
 				},
 				{
-					"target_index": 20,
-					"picture": 0,
+					"target_index": "19",
+					"picture": "93",
 					"field_2": 0,
 					"field_3": 0,
 					"x": "59",
@@ -1011,6 +1011,22 @@
 						}
 					},
 					"flag": "0"
+				},
+				{
+					"x": "68",
+					"y": "30",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT_NORTH",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_map_3_2_sign_3"
+					}
 				}
 			]
 		},

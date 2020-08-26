@@ -1509,7 +1509,36 @@ overworld_sprite ow_chef = {
     oam_rotscale_anim_table_null
 };
 
+static gfx_frame gfx_animation_mega_stone[] = {
+	{.data = 0, .duration = 0}, {.data = 0, .duration = 12}, {.data = 1, .duration = 12}, 
+    {.data = 2, .duration = 12}, {.data = 3, .duration = 12}, {.data = 4, .duration = 12},
+    {.data = GFX_ANIM_JUMP, .duration = 0},
+};
 
+static gfx_frame *gfx_animations_mega_stone[1] = {gfx_animation_mega_stone};
+
+graphic overworld_gfxs_mega_stone[] = {
+	{gfx_ow_mega_stoneTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_mega_stoneTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_mega_stoneTiles + 2 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_mega_stoneTiles + 3 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+	{gfx_ow_mega_stoneTiles + 4 * GRAPHIC_SIZE_4BPP(16, 16), GRAPHIC_SIZE_4BPP(16, 16), 0},
+};
+
+overworld_sprite ow_mega_stone = {
+		.tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_MEGA_STONE,
+        .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 16), .width = 16, .height = 16,
+        .final_oam = &ow_final_oam_16_16, .subsprite_table = &ow_formation_16_16, .gfx_animation = gfx_animations_mega_stone,
+        .graphics = overworld_gfxs_mega_stone, .rotscale_animation = oam_rotscale_anim_table_null,
+};
+
+static palette overworld_mega_stone_palette = {
+	.pal = gfx_ow_mega_stonePal, .tag = OW_PAL_TAG_MEGA_STONE,
+};
+
+palette *overworld_palette_get_mega_stone() {
+	return &overworld_mega_stone_palette;
+}
 
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
@@ -1615,7 +1644,7 @@ overworld_sprite *overworld_sprites[] = {
 	&ow_rin,
 	(overworld_sprite*) 0x83a41a0,
 	(overworld_sprite*) 0x83a420c,
-	(overworld_sprite*) 0x83a47f4,
+	&ow_mega_stone, // (overworld_sprite*) 0x83a47f4,
 	(overworld_sprite*) 0x83a4818,
 	(overworld_sprite*) 0x83a4308,
 	(overworld_sprite*) 0x83a43e0,

@@ -164,6 +164,7 @@ static u16 aggressive_wild_pokemon_feature_generator() {
 }
 
 void aggresive_wild_pokemon_create() {
+    pokemon_clear_opponent_party();
     for (int i = 0; i < fmem.trainers_cnt; i++) {
         // Setup the wild mons
         u8 npc_idx = fmem.trainers_npc_idxs[i];

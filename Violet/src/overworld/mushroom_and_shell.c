@@ -105,6 +105,7 @@ static u16 misc_feature_generator() {
 }
 
 void misc_encounter_setup() {
+    pokemon_clear_opponent_party();
     u16 species = *var_access(0x8004);
     map_event_person *p = map_get_person((u8)(*var_access(LASTTALKED)), save1->map, save1->bank);
     u32 seq[1] = {p->value};

@@ -50,6 +50,7 @@ picture_idx_to_png = {
     88 : 'asset/gfx/overworld/npcs/mother/gfx_ow_mother_0.png',
     89 : 'asset/gfx/overworld/npcs/blaise/gfx_ow_blaise_0.png',
     90 : 'asset/gfx/overworld/npcs/rin/gfx_ow_rin_0.png',
+    93 : 'asset/gfx/overworld/npcs/gfx_ow_mega_stone.png',
     101 : 'asset/gfx/overworld/npcs/egg/gfx_ow_egg_0.png',
     103 : 'asset/gfx/overworld/npcs/faun_young/gfx_ow_faun_young_0.png',
     105 : 'asset/gfx/overworld/npcs/elise/gfx_ow_elise_0.png',
@@ -93,6 +94,7 @@ picture_idx_to_png = {
 # Images that hold an entire spritesheet
 spritesheet_images = {
     80 : (16, 32),
+    93 : (16, 16),
     176 : (16, 32),
     177 : (16, 32),
 }

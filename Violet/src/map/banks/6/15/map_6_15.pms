@@ -5,31 +5,31 @@
 			"person_cnt": 1,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
-			"signpost_cnt": 1,
+			"signpost_cnt": 0,
 			"persons": [
 				{
 					"is_trainer": "0",
-					"script": "ow_script_map_6_15_person_0",
-					"y": 10,
+					"script": "0",
+					"y": "7",
 					"target_index": 1,
 					"field_3": 0,
-					"picture": 56,
+					"picture": "93",
 					"flag": "0x0",
-					"x": 4,
+					"x": "7",
 					"field_2": 0,
-					"level": 3,
+					"level": "0",
 					"alert_radius": 0,
-					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
-						"x": "1",
-						"y": "1"
+						"x": "0",
+						"y": "0"
 					},
 					"field_D": 0,
 					"field_B": 0,
-					"script_std": 0,
+					"script_std": "PERSON_ITEM",
 					"value": {
-						"item": 0,
-						"species": 0,
+						"item": "ITEM_GEOWAZNIT",
+						"species": "0",
 						"berry_tree_idx": 0
 					}
 				}
@@ -45,24 +45,7 @@
 				}
 			],
 			"triggers": [],
-			"signposts": [
-				{
-					"x": 7,
-					"y": 7,
-					"level": 0,
-					"type": "SIGNPOST_SCRIPT",
-					"value": {
-						"script": "ow_script_map_6_15_sign_0",
-						"item": {
-							"item": "0",
-							"flag": "0",
-							"amount": 0,
-							"chunk": 0
-						}
-					},
-					"flag": "0"
-				}
-			]
+			"signposts": []
 		},
 		"levelscripts": "lscr_0x71bffc",
 		"connections": {

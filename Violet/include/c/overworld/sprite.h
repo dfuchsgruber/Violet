@@ -78,6 +78,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_MUSHROOM 0x2E00
 #define OW_PAL_TAG_SHELL 0x2E01
 #define OW_PAL_TAG_BOULDER_GYM_PUZZLE 0x2E02
+#define OW_PAL_TAG_MEGA_STONE 0x2E03
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -146,6 +147,12 @@ overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_sc
  * @return the palette
  **/
 palette *overworld_palette_get_gym_puzzle_boulder();
+
+/**
+ * Returns the overworld palette of the mega stone npc
+ * @return the palette
+ **/
+palette *overworld_palette_get_mega_stone();
 
 /**
  * Frees a npc palette if currently no active npc is using this palette.
@@ -1723,6 +1730,7 @@ extern const unsigned short gfx_ow_lucius_7Tiles[];
 extern const unsigned short gfx_ow_lucius_8Tiles[];
 extern const u8 gfx_ow_luckyTiles[];
 extern const u8 gfx_ow_chefTiles[];
+extern const u8 gfx_ow_mega_stoneTiles[];
 
 extern const u8 gfx_ow_mushroomTiles[];
 extern const color_t gfx_ow_mushroomPal[];
@@ -1730,6 +1738,7 @@ extern const u8 gfx_ow_shellTiles[];
 extern const color_t gfx_ow_shellPal[];
 extern const u8 gfx_ow_boulder_gym_puzzleTiles[];
 extern const color_t gfx_ow_boulder_gym_puzzlePal[];
+extern const color_t gfx_ow_mega_stonePal[];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

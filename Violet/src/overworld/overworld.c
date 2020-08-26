@@ -142,6 +142,8 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         return overworld_palette_get_by_shell();
     else if (tag == OW_PAL_TAG_BOULDER_GYM_PUZZLE)
         return overworld_palette_get_gym_puzzle_boulder();
+    else if (tag == OW_PAL_TAG_MEGA_STONE)
+        return overworld_palette_get_mega_stone();
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
     if (idx != 0xFF) {
