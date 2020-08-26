@@ -390,6 +390,11 @@
 				"map_bruchfels_gym_leader_room",
 				"src/map/banks/6/10/map_bruchfels_gym_leader_room.pms",
 				"MAP_AKTANIA"
+			],
+			"11": [
+				"map_bruchfels_crypt",
+				"src/map/banks/6/11/map_bruchfels_grave.pms",
+				"MAP_AKTANIA"
 			]
 		},
 		"7": {
@@ -1912,6 +1917,10 @@
 		"map_footer_bruchfels_gym_leader_room": [
 			123,
 			"src/map/banks/6/10/map_footer_bruchfels_gym_leader_room.pms"
+		],
+		"map_footer_bruchfels_grave": [
+			124,
+			"src/map/banks/6/11/map_footer_bruchfels_grave.pms"
 		]
 	},
 	"tilesets_primary": {
@@ -1968,7 +1977,9 @@
 		"maptileset_blackbeard_ship": "src/map/tileset/maptileset_blackbeard_ship.pms",
 		"maptileset_trainerschool": "src/map/tileset/maptileset_trainerschool.pms",
 		"maptileset_meriana_city": "src/map/tileset/maptileset_meriana_city.pms",
-		"maptileset_cave_old": "src/map/tileset/maptileset15.pms"
+		"maptileset_cave_old": "src/map/tileset/maptileset15.pms",
+		"maptileset_bruchfels": "src/map/tileset/maptileset_bruchfels.pms",
+		"maptileset_bruchfels_crypt": "src/map/tileset/maptileset_bruchfels_crypt.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2022,6 +2033,7 @@
 		"gfx_maptileset_dunkler_turmTiles": "asset/gfx/tileset/gfx_maptileset_dunkler_turm.png",
 		"gfx_maptileset_blackbeard_shipTiles": "asset/gfx/tileset/gfx_maptileset_blackbeard_ship.png",
 		"gfx_maptileset_trainerschoolTiles": "asset/gfx/tileset/gfx_maptileset_trainerschool.png",
-		"gfx_maptileset_meriana_cityTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city.png"
+		"gfx_maptileset_meriana_cityTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city.png",
+		"gfx_maptileset_bruchfels_cryptTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_crypt.png"
 	}
 }

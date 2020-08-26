@@ -782,7 +782,7 @@
 					"is_trainer": "1",
 					"alert_radius": "0",
 					"script": 0,
-					"flag": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_STERNDU",
@@ -816,11 +816,11 @@
 					"target_warp_idx": 0
 				},
 				{
-					"x": "34",
-					"y": "41",
+					"x": "60",
+					"y": "35",
 					"level": 0,
 					"target_bank": 6,
-					"target_map": 3,
+					"target_map": "11",
 					"target_warp_idx": 0
 				},
 				{
