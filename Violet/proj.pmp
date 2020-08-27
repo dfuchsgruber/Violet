@@ -1979,7 +1979,8 @@
 		"maptileset_meriana_city": "src/map/tileset/maptileset_meriana_city.pms",
 		"maptileset_cave_old": "src/map/tileset/maptileset15.pms",
 		"maptileset_bruchfels": "src/map/tileset/maptileset_bruchfels.pms",
-		"maptileset_bruchfels_crypt": "src/map/tileset/maptileset_bruchfels_crypt.pms"
+		"maptileset_bruchfels_crypt": "src/map/tileset/maptileset_bruchfels_crypt.pms",
+		"maptileset_bruchfels_past": "src/map/tileset/maptileset_bruchfels_past.pms"
 	},
 	"gfxs_primary": {
 		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
@@ -2034,6 +2035,7 @@
 		"gfx_maptileset_blackbeard_shipTiles": "asset/gfx/tileset/gfx_maptileset_blackbeard_ship.png",
 		"gfx_maptileset_trainerschoolTiles": "asset/gfx/tileset/gfx_maptileset_trainerschool.png",
 		"gfx_maptileset_meriana_cityTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city.png",
-		"gfx_maptileset_bruchfels_cryptTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_crypt.png"
+		"gfx_maptileset_bruchfels_cryptTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_crypt.png",
+		"gfx_maptileset_bruchfels_pastTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_past.png"
 	}
 }

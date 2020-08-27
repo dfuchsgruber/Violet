@@ -16,7 +16,7 @@ lscr_0x8f5100:
 .global lscr_0x719b77
 
 lscr_0x719b77:
-	.hword STORY_PROGRESS, 0x14
+	.hword STORY_PROGRESS, 0x14 
 	.word ow_script_0x8d3195
 	.hword 0x0
 .include "vars.s"

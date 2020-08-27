@@ -473,85 +473,38 @@ return
 
 str_0x8d79cd:
 	.autostring 35 2 "DOTS DOTS DOTS\pWas geschieht hier?\pIch sehe diese Bilder vor meinem inneren Auge, aber die Vision ist klar und deutlich DOTS"
-
-
-
 str_0x8d79fe:
     .autostring 35 2 "War das ein Erdbeben?"
-
-
-
 str_0x8d7bbb:
     .autostring 35 2 "Da ist wieder dieser Meteorit und das Wesen, das sich auf ihm befunden hat DOTS"
-
-
-
 str_0x8d7b5b:
     .autostring 35 2 "Ist diese Wesen ein DOTS\pDOTS DOTS DOTS\pDOTS Pokémon?"
-
-
-
 str_0x8d7ae9:
     .autostring 35 2 "Es wirkt aggressiv DOTS"
-
-
-
 str_0x8d7ed8:
     .autostring 35 2 "Die Menschen!\pSie sind alle verschwunden!\pDOTS DOTS DOTS\pIst dieses Pokémon dafür verantwortlich?"
-
-
-
 str_0x8d7eab:
     .autostring 35 2 "Dieses Pokémon muss aufgehalten werden!"
-
-
-
 str_0x8d7e03:
 	.autostring 35 2 "Und diese Stadt DOTS\pSie sieht aus, wie DOTS\pDOTS DOTS DOTS\pDOTS wie Bruchfels!"
-
-
-
 str_0x8d8100:
     .autostring 35 2 "Und das ist der Tempel!\pDas hier ist tatsächlich Bruchfels!"
-
-
-
 str_0x8d80ca:
     .autostring 35 2 "Und auch Lester scheint im Tempel zu sein DOTS"
-
-
 str_0x8d803f:
 	.autostring 35 2 "Was um alles in der Welt geht hier vor sich?\pWas ist das für ein Ding?"
-
-
 str_0x8d7fa0:
 	.autostring 35 2 "Ich werde dir nicht erlauben, die Stadt, die bereits viele Generationen vor mir beschützt haben, zu zerstören!\pIch werde dir die antiken Kräfte, über die ich wache, entgegensetzen!\pDOTS DOTS DOTS\pIch beschwöre die Wächter Bruchfelss!"
-
-
 str_0x8dc40d:
     .autostring 35 2 "DOTS Was geht hier vor? DOTS"
-
-
-
 str_0x8dc39d:
 	.autostring 35 2 "Wächter des Gesteins, ich rufe dich herbei!\pLeihe mir deine Kraft, Regirock!"
-
-
-
 str_0x8dc346:
 	.autostring 35 2 "Zeige dich, Wächter des ewigen Eises!\pLeihe mir deine Kraft, Regice!"
-
-
-
 str_0x8dc2ea:
     .autostring 35 2 "Ich beschwöre dich, unverwüstliches Metall!\pLehe mir deine Kraft, Registeel!"
-
-
-
 str_0x8e195c:
     .autostring 35 2 "Ihr drei Wächter dieser Stadt, die ihr schon Jahrhundertelang diesen Ort beschützt habt!\pErfüllt eure Pflicht und vertreibt den Angreifer!"
-
-
 .elseif LANG_EN
 
 .endif

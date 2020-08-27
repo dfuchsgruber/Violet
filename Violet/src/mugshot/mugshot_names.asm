@@ -144,6 +144,9 @@
 	str_mug_lucky:
 		.string "Lucky"
 
+.global str_mug_roman
+	str_mug_roman:
+		.string "Roman"
 
 
 .elseif LANG_EN
