@@ -37,7 +37,7 @@ str_afterb:
 ow_script_test:
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	givepokemon POKEMON_ALTARIA 50 ITEM_ALTARIANIT 0 0 0
-	trainerbattlestd 0x0 0x199 0 str_beforea str_aftera
+	trainerbattlestd 0x0 0x300 0 str_beforea str_aftera
 	end
 	clearflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_0_SOLVED
 	end
@@ -47,7 +47,7 @@ ow_script_test:
 	additem ITEM_QUARZSTAUB 1
 	additem ITEM_ENERGIEQUARZ 1
 	end
-	trainerbattlestd 0x0 0x19f 0 str_beforea str_aftera
+	trainerbattlestd 0x0 0x300 0 str_beforea str_aftera
 	end
 	clearflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	additem ITEM_APFEL 1

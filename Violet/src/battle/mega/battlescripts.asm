@@ -7,6 +7,7 @@
 battlescript_mega_evolution:
     printstring 0x19C
     waitmessage 0x40
+    healthboxstatusupdate BANK_SCRIPTING
     playanimation BANK_SCRIPTING BATTLE_ANIM_MEGA_EVOLUTION 0
     // battleanimation 0 0 battle_animation_mega_evolution
     // waitbattleanimation
@@ -17,6 +18,7 @@ battlescript_mega_evolution:
 battlescript_regent_evolution:
     printstring 0x19E
     waitmessage 0x40
+    healthboxstatusupdate BANK_SCRIPTING
     playanimation BANK_SCRIPTING BATTLE_ANIM_REGENT_EVOLUTION 0
     // battleanimation 0 0 battle_animation_regent_evolution
     // waitbattleanimation

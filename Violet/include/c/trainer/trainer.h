@@ -8,7 +8,7 @@
 #ifndef INCLUDE_C_TRAINER_TRAINER_H_
 #define INCLUDE_C_TRAINER_TRAINER_H_
 
-#define TRAINER_CNT 0x2E8
+#define TRAINER_CNT 0x301
 
 #include "trainer/party.h"
 #include "constants/trainerclasses.h"

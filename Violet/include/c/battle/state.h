@@ -520,6 +520,13 @@ void battle_handicap_clear();
  **/
 void battle_healthbox_set_invisible (u8 oam_idx);
 
+/**
+ * Gets some healthbox gfx tile.
+ * @param tile the tile to get
+ * @return pointer to the gfx
+ **/
+u8 *battle_healthbox_get_gfx(u8 tile);
+
 
 #define BATTLE_GP_TBOX_IDX 12
 

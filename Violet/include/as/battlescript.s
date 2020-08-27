@@ -866,9 +866,9 @@ various \battler, 2
 .word \tryinfatuatetarget_address
 .endm
 
-.macro cmd98 cmd98_byte
+.macro healthboxstatusupdate bank:req
 .byte 0x98
-.byte \cmd98_byte
+.byte \bank
 .endm
 
 .macro setmisteffect

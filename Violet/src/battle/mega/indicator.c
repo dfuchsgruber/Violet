@@ -9,6 +9,7 @@
 #include "battle/gfx_effects.h"
 #include "constants/pokemon_attributes.h"
 
+/**
 extern const u8 gfx_mega_indicatorTiles[];
 extern const u8 gfx_mega_indicatorPal[];
 
@@ -93,8 +94,12 @@ static oam_template indicator_template = {
     .oam = &indicator_sprite, .animation = indicator_gfx_animations,
     .graphics = NULL, .rotscale = oam_rotscale_anim_table_null, .callback = indicator_callback,
 };
+**/
 
 void battle_create_mega_indicator(u8 battler_idx) {
+    (void) battler_idx;
+    return;
+    /**
     // Setup gfx
     if (oam_vram_allocation_table_get_index(MEGA_INDICATOR_TAG) == 0xFF)
         oam_load_graphic(&indicator_graphic);
@@ -104,4 +109,5 @@ void battle_create_mega_indicator(u8 battler_idx) {
     }
     u8 oam_idx = oam_new_backward_search(&indicator_template, -8, -8, 0);
     oams[oam_idx].private[0] = battler_idx;
+    **/
 }

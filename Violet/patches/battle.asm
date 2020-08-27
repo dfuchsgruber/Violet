@@ -716,3 +716,8 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	bl _blxr1
 	b 0x0801e958
 	.pool
+
+.org 0x0804983c
+	ldr r2, =battle_healthbox_add_pokeball_and_mega_indicator | 1
+	bx r2
+	.pool
