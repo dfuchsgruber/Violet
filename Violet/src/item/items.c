@@ -946,8 +946,8 @@ static u8 str_item_flamaranit_description[] = LANGDEP(
 	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Flamara könnte man\nmittels des Mega-Amuletts..."),
 	PSTRING("?????")
 );
-static u8 str_item_blitzanit_description[] = LANGDEP(
-	PSTRING("Einer der seltenen Mega-Steine.\nGetragen von Blitza könnte man\nmittels des Mega-Amuletts..."),
+static u8 str_item_altarianit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Altaria\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("?????")
 );
 static u8 str_item_ampharosnit_description[] = LANGDEP(
@@ -5362,13 +5362,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_BLITZANIT
-		LANGDEP(PSTRING("Blitzanit"), PSTRING("????????")),
+		//ITEM_altarianit
+		LANGDEP(PSTRING("Altarianit"), PSTRING("????????")),
 		0xea, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_blitzanit_description,
+		str_item_altarianit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

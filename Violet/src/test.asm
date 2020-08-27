@@ -36,7 +36,7 @@ str_afterb:
 
 ow_script_test:
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
-	givepokemon POKEMON_BANETTE 20 ITEM_BANETTENIT 0 0 0
+	givepokemon POKEMON_ALTARIA 50 ITEM_ALTARIANIT 0 0 0
 	trainerbattlestd 0x0 0x199 0 str_beforea str_aftera
 	end
 	clearflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_0_SOLVED
