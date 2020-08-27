@@ -78,9 +78,9 @@ void version_upgrade_alpha_1_X_to_2_0(){
     for(i = 0; i < pokemon_get_number_in_party(); i++){
         pokemon_calculate_stats(&player_pokemon[i]);
     }
-    //Give Gengarnite if chance was missed in 1.X
+    //Give Banettenit if chance was missed in 1.X
     if(checkflag(0x90A)){
-        item_add(ITEM_GENGARNIT, 1);
+        item_add(ITEM_BANETTENIT, 1);
     }
     *var_access(SGM_VER) = VERSION_ALPHA_2_0;
 }

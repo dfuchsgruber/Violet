@@ -1,5 +1,6 @@
 #include "types.h"
 #include "item/item.h"
+#include "item/gfx.h"
 
 static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_NONE] = { .gfx = gfx_item_noneTiles, .pal = gfx_item_nonePal },
@@ -238,7 +239,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_FLAMARANIT] = { .gfx = gfx_item_flamaranitTiles, .pal = gfx_item_flamaranitPal },
     [ITEM_BLITZANIT] = { .gfx = gfx_item_blitzanitTiles, .pal = gfx_item_blitzanitPal },
     [ITEM_AMPHAROSNIT] = { .gfx = gfx_item_ampharosnitTiles, .pal = gfx_item_ampharosnitPal },
-    [ITEM_GENGARNIT] = { .gfx = gfx_item_gengarnitTiles, .pal = gfx_item_gengarnitPal },
+    [ITEM_BANETTENIT] = { .gfx = gfx_item_banettenitTiles, .pal = gfx_item_banettenitPal },
     [ITEM_BIBORNIT] = { .gfx = gfx_item_bibornitTiles, .pal = gfx_item_bibornitPal },
     [ITEM_MAGMAHERZ] = { .gfx = gfx_item_magmaherzTiles, .pal = gfx_item_magmaherzPal },
     [ITEM_GEOWAZNIT] = { .gfx = gfx_item_geowaznitTiles, .pal = gfx_item_geowaznitPal },

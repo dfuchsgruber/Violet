@@ -954,8 +954,8 @@ static u8 str_item_ampharosnit_description[] = LANGDEP(
 	PSTRING("Wird er von einem Ampharos\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("?????")
 );
-static u8 str_item_gengarnit_description[] = LANGDEP(
-	PSTRING("Wird er von einem Gengar\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
+static u8 str_item_banettenit_description[] = LANGDEP(
+	PSTRING("Wird er von einem Banette\ngetragen, kann es im Kampf eine\nMega-Entwicklung durchführen."),
 	PSTRING("?????")
 );
 static u8 str_item_bibornit_description[] = LANGDEP(
@@ -5394,13 +5394,13 @@ item items[] = {
 		(void(*)(u8))0x0, //battle_usage2
 		(void(*)(u8))0x0, //field_28
 	},{
-		//ITEM_GENGARNIT
-		LANGDEP(PSTRING("Gengarnit"), PSTRING("????????")),
+		//ITEM_banettenit
+		LANGDEP(PSTRING("Banetteonit"), PSTRING("????????")),
 		0xec, //index
 		0, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
-		str_item_gengarnit_description,
+		str_item_banettenit_description,
 		0, // Importance
 		0, // exits_bag_on_use
 		POCKET_ITEMS, //pocket

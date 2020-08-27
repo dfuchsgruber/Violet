@@ -266,7 +266,7 @@
     gfx_pkmn_species_259_pokemon_game_iconTiles,
     gfx_pkmn_species_260_pokemon_turtokm_iconTiles,
     gfx_pkmn_species_261_pokemon_ampharaosm_iconTiles,
-    gfx_pkmn_species_262_pokemon_gengarm_iconTiles,
+    gfx_pkmn_species_262_pokemon_banette_mega_iconTiles,
     gfx_pkmn_species_263_pokemon_biborm_iconTiles,
     gfx_pkmn_species_264_pokemon_altariam_iconTiles,
     gfx_pkmn_species_265_pokemon_geowazm_iconTiles,
@@ -974,8 +974,8 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x2,
     // POKEMON_AMPHARAOSM
     0x1,
-    // POKEMON_GENGARM
-    0x2,
+    // POKEMON_BANETTE_MEGA
+    0x0,
     // POKEMON_BIBORM
     0x0,
     // POKEMON_ALTARIAM

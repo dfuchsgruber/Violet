@@ -2094,22 +2094,22 @@
 		"species_link": "POKEMON_AMPHAROS",
 		"dex_number": 0
 	},
-	"POKEMON_GENGARM": {
+	"POKEMON_MEGA_BANETTE": {
 		"basestats": {
-			"hp": 60,
-			"attack": 65,
-			"defense": 80,
-			"speed": 130,
-			"special-attack": 170,
-			"special-defense": 95
+			"hp": 64,
+			"attack": 165,
+			"defense": 75,
+			"speed": 75,
+			"special-attack": 93,
+			"special-defense": 83
 		},
 		"type_0": "Geist",
-		"type_1": "Gift",
+		"type_1": "Geist",
 		"exp_yield": 240,
-		"ability_0": "Wegsperre",
+		"ability_0": "Strolch",
 		"ability_1": null,
 		"hidden_ability": null,
-		"species_link": "POKEMON_GENGAR",
+		"species_link": "POKEMON_BANETTE",
 		"dex_number": 0
 	},
 	"POKEMON_BIBORM": {
