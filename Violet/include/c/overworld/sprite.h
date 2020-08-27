@@ -23,6 +23,7 @@
 #include "map/event.h"
 
 #define OVERWORLD_SPRITE_STRENGTH_BOULDER 97
+#define OVERWORLD_SPRITE_ROMAN 179
 #define OVERWORLD_SPRITE_MISC 236
 #define OVERWORLD_SPRITE_BERRY 237
 #define OVERWORLD_SPRITE_POKEMON_32_32 238
@@ -79,6 +80,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_SHELL 0x2E01
 #define OW_PAL_TAG_BOULDER_GYM_PUZZLE 0x2E02
 #define OW_PAL_TAG_MEGA_STONE 0x2E03
+#define OW_PAL_TAG_ROMAN 0x2E04
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -1731,6 +1733,8 @@ extern const unsigned short gfx_ow_lucius_8Tiles[];
 extern const u8 gfx_ow_luckyTiles[];
 extern const u8 gfx_ow_chefTiles[];
 extern const u8 gfx_ow_mega_stoneTiles[];
+extern const u8 gfx_ow_lester_youngTiles[];
+extern const u8 gfx_ow_romanTiles[];
 
 extern const u8 gfx_ow_mushroomTiles[];
 extern const color_t gfx_ow_mushroomPal[];
@@ -1739,6 +1743,7 @@ extern const color_t gfx_ow_shellPal[];
 extern const u8 gfx_ow_boulder_gym_puzzleTiles[];
 extern const color_t gfx_ow_boulder_gym_puzzlePal[];
 extern const color_t gfx_ow_mega_stonePal[];
+extern const color_t gfx_ow_romanPal[];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

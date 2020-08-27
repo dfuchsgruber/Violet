@@ -1540,6 +1540,48 @@ palette *overworld_palette_get_mega_stone() {
 	return &overworld_mega_stone_palette;
 }
 
+static graphic overworld_sprite_lester_young_sprites[] = {
+	{gfx_ow_lester_youngTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_lester_youngTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+};
+
+overworld_sprite ow_lester_young = {
+	0xffff, 0x1106, 0x11ff, 0x100,
+	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_32, &ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_lester_young_sprites, 
+	oam_rotscale_anim_table_null
+};
+
+
+
+static graphic overworld_sprite_roman_sprites[] = {
+	{gfx_ow_romanTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 1 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 2 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 3 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 4 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 5 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 6 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 7 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+	{gfx_ow_romanTiles + 8 * GRAPHIC_SIZE_4BPP(16, 32), 0x100, 0},
+};
+
+overworld_sprite ow_roman = {
+	0xffff, OW_PAL_TAG_ROMAN, 0x11ff, 0x100,
+	16, 32, 0, 1, 0, 0, 0x1, 0x0, 0x8,
+	&ow_final_oam_16_32, &ow_formation_16_32,
+	ow_anim_standard_npc, overworld_sprite_roman_sprites, 
+	oam_rotscale_anim_table_null
+};
+
 //The overworld table
 overworld_sprite *overworld_sprites[] = {
     	&ow_hiro,
@@ -1738,6 +1780,9 @@ overworld_sprite *overworld_sprites[] = {
         &ow_drampa,
 		&ow_lucky,
 		&ow_chef,
+// 178
+		&ow_lester_young,
+		&ow_roman,
 
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,
 	[OVERWORLD_SPRITE_BERRY] = &ow_berry_tree, // dummy

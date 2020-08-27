@@ -129,6 +129,10 @@ void overworld_npc_palettes_initialize(u8 mode) {
     oam_palette_allocation_reset();
 }
 
+static palette overworld_palette_roman = {
+    .pal = gfx_ow_romanPal, .tag = OW_PAL_TAG_ROMAN,
+};
+
 static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_POKEMON_BASE && tag < OW_PAL_TAG_POKEMON_END) {
         return overworld_palette_get_by_species((u16)(tag - OW_PAL_TAG_POKEMON_BASE));
@@ -144,6 +148,8 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
         return overworld_palette_get_gym_puzzle_boulder();
     else if (tag == OW_PAL_TAG_MEGA_STONE)
         return overworld_palette_get_mega_stone();
+    else if (tag == OW_PAL_TAG_ROMAN)
+        return &overworld_palette_roman;
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
     if (idx != 0xFF) {

@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_444",
 		"events": {
-			"person_cnt": 18,
+			"person_cnt": 19,
 			"warp_cnt": 0,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -247,7 +247,7 @@
 					"y": "6",
 					"target_index": 10,
 					"field_3": 0,
-					"picture": 80,
+					"picture": "179",
 					"flag": "PKMNMENU",
 					"x": "8",
 					"field_2": 0,
@@ -458,6 +458,30 @@
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WINGULL",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "19",
+					"picture": "178",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "9",
+					"y": "6",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
 						"berry_tree_idx": 0
 					}
 				}
