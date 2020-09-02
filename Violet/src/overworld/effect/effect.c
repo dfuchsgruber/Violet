@@ -47,9 +47,10 @@ static oam_template overworld_effect_explosion_oam_template = {
 
 void overworld_effect_explosion() {
     s16 x = (s16)(overworld_effect_state.x + 7);
-    s16 y = (s16)(overworld_effect_state.y + 5);
+    s16 y = (s16)(overworld_effect_state.y + 7);
     overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
     u8 oam_idx = oam_new_backward_search(&overworld_effect_explosion_oam_template, x, y , 0);
+    oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oam_gfx_anim_start(oams + oam_idx, 0);
 }
 

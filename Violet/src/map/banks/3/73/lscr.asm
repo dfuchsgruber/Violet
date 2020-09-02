@@ -119,6 +119,11 @@ ow_script_movs_0x8d7b4e:
 mov_fd:
 	.byte LOOK_DOWN, STOP
 
+mov_2u_slow:
+	.byte STEP_UP_SLOW, STEP_UP_SLOW, STOP
+mov_6u_slow:
+	.byte STEP_UP_SLOW, STEP_UP_SLOW, STEP_UP_SLOW, STEP_UP_SLOW, STEP_UP_SLOW, STEP_UP_SLOW, STOP
+
 setvar 0x8004 0x4
 setvar 0x8005 0x22
 special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
@@ -211,6 +216,8 @@ setvar 0x8005 0x3b
 special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
 sound 170
 checkanimation OVERWORLD_EFFECT_EXPLOSION
+// First find all paths, and execute them at the same time.
+// Therefore: Block movements, run A* and then unblock to run all computed paths
 special SPECIAL_NPC_PATHFINDING_BLOCK_MOVEMENTS
 npc_move_to 1 0x8 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
 npc_move_to 2 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
@@ -220,18 +227,29 @@ npc_move_to 5 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
 npc_move_to 17 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
 special SPECIAL_NPC_PATHFINDING_UNBLOCK_MOVEMENTS
 pause 1
+applymovement 0xFF mov_2u_slow
+applymovement 11 mov_6u_slow
+
 setvar 0x8004 0x9
 setvar 0x8005 0x3a
 special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
 sound 170
 checkanimation OVERWORLD_EFFECT_EXPLOSION
-
 setvar 0x8004 0x8
 setvar 0x8005 0x39
 special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
 sound 170
-checkanimation OVERWORLD_EFFECT_EXPLOSION
-pause 64
+call ow_script_earthquake
+setvar 0x8004 0x6
+setvar 0x8005 0x34
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+pause 8
+setvar 0x8004 0xc
+setvar 0x8005 0x36
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+waitmovement 0
 releaseall
 end
 
