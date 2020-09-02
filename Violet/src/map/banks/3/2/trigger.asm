@@ -4,6 +4,7 @@
 .include "mugshot.s"
 .include "flags.s"
 .include "overworld_script.s"
+.include "pathfinding.s"
 
 .global ow_script_map_3_2_trigger_0
 
@@ -26,9 +27,7 @@ lockall
 clearflag PKMNMENU
 showsprite 0x6
 setvar LASTTALKED 0x6
-setvar 0x8004 0x6
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0x6
 faceplayer
 loadpointer 0x0 str_0x8c0738
 show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT

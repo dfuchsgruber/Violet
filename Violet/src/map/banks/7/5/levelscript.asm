@@ -9,6 +9,7 @@
 .include "levelscript_types.s"
 .include "difficulties.s"
 .include "ordinals.s"
+.include "pathfinding.s"
 
 .global str_silvania_gym_referee
 .global levelscripts_silvania_gym
@@ -29,16 +30,11 @@ referee:
     lockall
     setvar 0x8004 2
     special SPECIAL_SET_TARGET_NPC_TO_VAR
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 2
     faceplayer
     loadpointer 0 str_silvania_gym_referee
     callstd MSG
-    setvar 0x8004 2
-    setvar 0x8005 0x4
-    setvar 0x8006 0x10
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 2 0x4 0x10
     applymovement 2 mov_fd
     waitmovement 0
     addvar VAR_GYM_TIPPS 1

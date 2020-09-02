@@ -4,6 +4,7 @@
 .include "mugshot.s"
 .include "flags.s"
 .include "overworld_script.s"
+.include "pathfinding.s"
 
 .global ow_script_map_18_2_trigger_0
 
@@ -22,9 +23,7 @@ sound 0x9
 clearflag PKMNMENU
 showsprite 0x1
 pause 0x20
-setvar 0x8004 0x1
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 1
 faceplayer
 draw_mugshot MUGSHOT_BLAISE MUGSHOT_RIGHT
 loadpointer 0x0 str_0x95dbb7
@@ -34,11 +33,7 @@ callstd MSG_KEEPOPEN
 loadpointer 0x0 str_0x95db3f
 callstd MSG
 hide_mugshot
-setvar 0x8004 0x1
-setvar 0x8005 0x13
-setvar 0x8006 0x10
-special 0x24
-waitmovement 0x0
+npc_move_to 1 0x13 0x10
 applymovement 0x1 ow_script_movs_0x95db3c
 waitmovement 0x0
 pause 0x10

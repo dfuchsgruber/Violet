@@ -9,6 +9,7 @@
 .include "ordinals.s"
 .include "movements.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_bbship_captain_room_lucky
 .global ow_script_bbship_captain_room_map
@@ -23,9 +24,7 @@ ow_script_bbship_captain_room_map:
 	callstd ITEM_FIND
     applymovement 0xFF mov_fr
     waitmovement 0
-    setvar 0x8004 2
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 2
     applymovement 2 mov_fl
     waitmovement 0
     loadpointer 0 str_1

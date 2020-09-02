@@ -5,6 +5,7 @@
 .include "mugshot.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "pathfinding.s"
 
 .global ow_script_0x93395a
 .global ow_script_map_8_11_trigger_0
@@ -14,15 +15,11 @@
 ow_script_map_8_11_trigger_0:
 lockall
 showsprite 0xc
-setvar 0x8004 0xc
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0xC
 faceplayer
 loadpointer 0x0 str_0x93144c
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-setvar 0x8005 0x1b
-setvar 0x8006 0x2b
-special 0x24
+npc_move_to 0xc 0x1b 0x2b waitmovement=0
 goto ow_script_0x93154e
 
 

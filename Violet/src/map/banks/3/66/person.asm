@@ -8,6 +8,7 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_map_3_66_person_0
 .global ow_script_map_3_66_person_2
@@ -76,11 +77,7 @@ announce_expedition:
 	faceplayer
 	loadpointer 0 str_7
 	show_mugshot MUGSHOT_TANN MUGSHOT_RIGHT
-	setvar 0x8004 1
-	setvar 0x8005 7
-	setvar 0x8006 0xb
-	special SPECIAL_NPC_MOVE_TO
-	waitmovement 0
+	npc_move_to 1 0x7 0xB
 	applymovement 1 mov_fd
 	waitmovement 0
 	pause 16
@@ -90,11 +87,8 @@ announce_expedition:
 	fadesong MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY
 	pause 64
 	setvar 0x8004 2
-	setvar 0x8005 7
-	setvar 0x8006 5
 	special SPECIAL_SET_TARGET_NPC_TO_VAR
-	special SPECIAL_NPC_MOVE_TO
-	waitmovement 0
+	npc_move_to 2 0x7 0x5
 	lock
 	faceplayer
 	loadpointer 0 str_8
@@ -104,11 +98,7 @@ announce_expedition:
 	callstd ITEM_OBTAIN
 	loadpointer 0 str_9
 	show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-	setvar 0x8004 2
-	setvar 0x8005 7
-	setvar 0x8006 0xb
-	special SPECIAL_NPC_MOVE_TO
-	waitmovement 0
+	npc_move_to 2 0x7 0xB
 	applymovement 2 mov_fd
 	waitmovement 0
 	pause 16

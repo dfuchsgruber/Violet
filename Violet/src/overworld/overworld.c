@@ -6,7 +6,7 @@
 #include "debug.h"
 #include "oam.h"
 #include "overworld/palette.h"
-#include "tile/any_grass.h"
+#include "overworld/effect.h"
 #include "overworld/sprite.h"
 #include "overworld/map_control.h"
 #include "overworld/script.h"
@@ -512,5 +512,17 @@ void big_callback_time_based_events(u8 self) {
     if (!ow_script_is_active()) {
         ambient_cry_proceed(big_callbacks[self].params + 1, big_callbacks[self].params + 2);
         time_based_events_proceed(big_callbacks[self].params + 0);
+    }
+}
+
+void player_npc_set_invisible() {
+    //
+    u8 npc_idx = npc_get_by_person_idx(0xFF, save1->map, save1->bank);
+    if (npc_idx < NUM_NPCS) {
+        npcs[npc_idx].flags.invisible = 1;
+        npcs[npc_idx].flags.jump_landing_ground_effect_disabled = 1;
+        npcs[npc_idx].flags.covering_ground_effects_disabled = 1;
+        npcs[npc_idx].flags.trigger_ground_effects_on_move = 0;
+        npcs[npc_idx].flags.trigger_ground_effects_on_stop = 0;
     }
 }

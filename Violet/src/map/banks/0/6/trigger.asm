@@ -6,6 +6,7 @@
 .include "overworld_script.s"
 .include "mugshot.s"
 .include "specials.s"
+.include "pathfinding.s"
 
 .global ow_script_felix_and_blaise_felsige_oednis
 
@@ -19,11 +20,9 @@ ow_script_felix_and_blaise_felsige_oednis:
     show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
     loadpointer 0 str_3
     show_mugshot MUGSHOT_BLAISE MUGSHOT_LEFT
-    setvar 0x8004 19
-    setvar 0x8005 0x1C
-    setvar 0x8006 0x5
-    hidesprite 19
-    special SPECIAL_NPC_MOVE_TO
+    npc_move_to 19 0x1C 0x5
+    // hidesprite 19
+
     loadpointer 0 str_4
     show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
     waitmovement 0
@@ -42,11 +41,7 @@ ow_script_felix_and_blaise_felsige_oednis:
     checksound
     loadpointer 0 str_6
     show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
-    setvar 0x8004 18
-    setvar 0x8005 0x1C
-    setvar 0x8006 0x4
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 18 0x1C 0x4
     hidesprite 18
     addvar STORY_PROGRESS 1
     releaseall

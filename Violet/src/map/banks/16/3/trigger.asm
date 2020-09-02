@@ -5,6 +5,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "pathfinding.s"
 
 .global ow_script_map_16_3_trigger_1
 .global ow_script_map_16_3_trigger_0
@@ -124,9 +125,7 @@ special 0xF
 applymovement 0x7f ow_script_movs_0x93be44
 waitmovement 0x0
 special 0x114
-setvar 0x8004 0x16
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0x16
 faceplayer
 
 loadpointer 0 str_manus
@@ -150,11 +149,7 @@ loadpointer 0x0 str_last
 callstd MSG
 special 0xF
 
-setvar 0x8004 0x16
-setvar 0x8005 0x18
-setvar 0x8006 0x4b
-special 0x24
-waitmovement 0x0
+npc_move_to 0x16 0x18 0x4b
 applymovement 0x16 ow_script_movs_0x93be49
 waitmovement 0x0
 sound 0x9

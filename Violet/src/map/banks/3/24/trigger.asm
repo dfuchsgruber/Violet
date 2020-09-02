@@ -6,6 +6,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_0x95f001
 .global ow_script_0x95efaa
@@ -18,9 +19,7 @@ clearflag PKMNMENU
 showsprite 0x3
 setflag PKMNMENU
 playsong MUS_RIVALE_ERSCHEINT_GARY 0x0
-setvar 0x8004 0x3
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0x3
 faceplayer
 draw_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT
 compare STARTER_SELECTED 0x0

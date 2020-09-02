@@ -7,6 +7,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_0x8d3f43
 .global ow_script_map_15_0_trigger_0
@@ -62,9 +63,7 @@ showsprite 0x33
 showsprite 0x34
 showsprite 0x35
 showsprite 0x36
-setvar 0x8004 0x36
-special 0x1B
-waitmovement 0
+npc_move_to_player 2 0x36
 setvar LASTTALKED 0x36
 faceplayer
 
@@ -295,8 +294,7 @@ ow_script_map_15_0_trigger_0:
     show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG
     setvar 0x8004 PERSON_MAY
     setvar LASTTALKED PERSON_MAY
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0x0
+    npc_move_to_player PERSON_MAY
 
     faceplayer
     loadpointer 0x0 str_may_1
@@ -340,9 +338,7 @@ may_later:
     waitmovement 0
     pause 16
     applymovement 0x7F mov_cam_down
-    setvar 0x8004 PERSON_LARISSA
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player PERSON_LARISSA
     setvar LASTTALKED PERSON_LARISSA
     faceplayer
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK
@@ -391,11 +387,7 @@ may_later:
     loadpointer 0 str_larissa_9
     show_mugshot MUGSHOT_LARISSA MUGSHOT_LEFT message_type=MSG hide_mugshot=1 emotion=MUGSHOT_HAPPY
     pause 16
-    setvar 0x8004 PERSON_LARISSA
-    setvar 0x8005 0x2d
-    setvar 0x8006 0x3f
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to PERSON_LARISSA 0x2D 0x3F
     applymovement 0xFF mov_fd
     applymovement PERSON_MAY mov_fd
     waitmovement 0

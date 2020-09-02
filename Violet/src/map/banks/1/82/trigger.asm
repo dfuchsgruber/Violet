@@ -4,6 +4,7 @@
 .include "mugshot.s"
 .include "flags.s"
 .include "overworld_script.s"
+.include "pathfinding.s"
 
 .global ow_script_map_1_82_trigger_0
 
@@ -19,9 +20,7 @@ lockall
 clearflag PKMNMENU
 showsprite 0x2
 setvar LASTTALKED 0x2
-setvar 0x8004 0x2
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 2
 faceplayer
 loadpointer 0x0 str_0x9665c5
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
@@ -30,11 +29,7 @@ call ow_script_healing_sequence
 
 loadpointer 0x0 str_0x96659a
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-setvar 0x8004 0x2
-setvar 0x8005 0x1c
-setvar 0x8006 0x5
-special 0x24
-waitmovement 0x0
+npc_move_to 2 0x1C 0x5
 sound 0x9
 hidesprite 0x800f
 checksound

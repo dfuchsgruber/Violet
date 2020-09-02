@@ -32,6 +32,7 @@ lscr_0x84e9b8:
 .include "songs.s"
 .include "mugshot.s"
 .include "overworld_script.s"
+.include "pathfinding.s"
 
 .global ow_script_0x812c75
 .global ow_script_0x8f6d1b
@@ -62,10 +63,7 @@ waitmovement 0x0
 loadpointer 0x0 str_0x9479c7
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 pause 0x1
-setvar 0x8004 0xb
-setvar 0x8005 0x11
-setvar 0x8006 0x22
-special 0x24
+npc_move_to 0xb 0x11 0x22
 applymovement 0xc ow_script_movs_0x947948
 hidesprite 0xb
 draw_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
@@ -75,11 +73,7 @@ waitmovement 0
 hide_mugshot
 loadpointer 0x0 str_0x9477c9
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-setvar 0x8004 0xc
-setvar 0x8005 0x11
-setvar 0x8006 0x22
-special 0x24
-waitmovement 0x0
+npc_move_to 0xC 0x11 0x22
 hidesprite 0xc
 addvar STORY_PROGRESS 0x1
 setvar SONG_OVERRIDE 0x0

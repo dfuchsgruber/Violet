@@ -3,6 +3,7 @@
 .include "mugshot.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "pathfinding.s"
 
 .global ow_script_map_3_6_trigger_0
 
@@ -11,18 +12,12 @@ lockall
 clearflag PKMNMENU
 showsprite 0x1
 setvar LASTTALKED 0x1
-setvar 0x8004 0x1
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 1
 faceplayer
 loadpointer 0x0 str_0x963705
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-setvar 0x8004 0x1
-setvar 0x8005 0x22
-setvar 0x8006 0x19
-special 0x24
-waitmovement 0x0
-hidesprite 0x800f
+npc_move_to 1 0x22 0x19
+hidesprite LASTTALKED
 setflag PKMNMENU
 addvar STORY_PROGRESS 0x1
 setworldmapflag WM_INFERIOR

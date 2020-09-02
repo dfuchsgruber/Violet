@@ -10,6 +10,7 @@
 .include "flags.s"
 .include "species.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_0x8c8786
 .global ow_script_0x8a5444
@@ -526,18 +527,14 @@ ow_script_map_8_11_person_10:
 loadpointer 0x0 str_0x931867
 show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 sound 0x15
-applymovement 0x800f ow_script_movs_0x8c8e03
+applymovement LASTTALKED ow_script_movs_0x8c8e03
 waitmovement 0x0
 faceplayer
 loadpointer 0x0 str_0x931636
 show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
 lockall
-setvar 0x8004 0xe
-setvar 0x8005 0x1c
-setvar 0x8006 0x2a
-special 0x24
-waitmovement 0x0
-hidesprite 0x800f
+npc_move_to 0xe 0x1c 0x2a
+hidesprite LASTTALKED
 releaseall
 end
 

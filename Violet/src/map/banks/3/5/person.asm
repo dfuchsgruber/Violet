@@ -7,6 +7,7 @@
 .include "overworld_script.s"
 .include "species.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_map_3_5_person_16
 .global ow_script_0x95a390
@@ -126,9 +127,7 @@ special 0xF
 hidemoney 0x0 0x0
 lockall
 copyvar 0x8004 LASTTALKED
-setvar 0x8005 0x1a
-setvar 0x8006 0x2e
-special 0x24
+npc_move_to LASTTALKED 0x1a 0x2e waitmovement=0
 pause 0x30
 fadescreen 0x1
 waitmovement 0x0
@@ -140,8 +139,7 @@ loadpointer 0x0 str_0x959fdb
 callstd MSG
 special 0xF
 
-copyvar 0x8004 LASTTALKED
-special 0x1b
+npc_move_to_player LASTTALKED waitmovement=0
 fadescreen 0x0
 waitmovement 0x0
 faceplayer

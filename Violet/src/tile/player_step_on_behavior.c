@@ -1,5 +1,5 @@
 #include "types.h"
-#include "tile/any_grass.h"
+#include "overworld/effect.h"
 #include "save.h"
 #include "overworld/npc.h"
 #include "callbacks.h"

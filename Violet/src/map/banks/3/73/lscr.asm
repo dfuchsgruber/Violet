@@ -1,4 +1,16 @@
 .include "vars.s"
+.include "movements.s"
+.include "songs.s"
+.include "callstds.s"
+.include "mugshot.s"
+.include "flags.s"
+.include "overworld_script.s"
+.include "species.s"
+.include "specials.s"
+.include "person_behaviours.s"
+.include "map_weathers.s"
+.include "overworld/overworld_effects.s"
+.include "pathfinding.s"
 
 .global lscr_0x89f109
 
@@ -26,14 +38,7 @@ lscr_0x8f4e6f:
 	.hword STORY_PROGRESS, 0x15
 	.word ow_script_0x8d7960
 	.hword 0x0
-.include "vars.s"
-.include "movements.s"
-.include "songs.s"
-.include "callstds.s"
-.include "mugshot.s"
-.include "flags.s"
-.include "overworld_script.s"
-.include "species.s"
+
 
 .global ow_script_0x8e1584
 .global ow_script_0x8d7f2e
@@ -42,23 +47,28 @@ lscr_0x8f4e6f:
 .global ow_script_0x8e1a27
 .global ow_script_0x8d9328
 .global ow_script_0x8d7d8a
-.global ow_script_0x8d7a10
+.global ow_script_earthquake
 .global ow_script_0x8d7960
 
 ow_script_0x814a4c:
-spriteinvisible 0xff 0x3 0x49
+callasm player_npc_set_invisible
+// spriteinvisible 0xff 0x3 0x49
 end
 
 
 ow_script_movs_0x8d79c9:
-.byte FACE_DOWN
-.byte SAY_EXCLAM
-.byte STOP
+	.byte FACE_DOWN
+	.byte SAY_EXCLAM
+	.byte STOP
+
+mov_cam_down1:
+	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN
+	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN
+	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN
+	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN
+	.byte STEP_DOWN, STEP_DOWN, STEP_DOWN, STEP_DOWN, STOP
 
 ow_script_movs_0x8d7ba7:
-.byte STEP_DOWN_FAST
-.byte STEP_DOWN_FAST
-.byte STEP_DOWN_FAST
 .byte STEP_DOWN_FAST
 .byte STEP_DOWN_FAST
 .byte STEP_DOWN_FAST
@@ -87,8 +97,7 @@ ow_script_movs_0x8d7e90:
 .byte STEP_UP_SLOW
 .byte STEP_UP_SLOW
 .byte STEP_UP_SLOW
-.byte STEP_UP_SLOW
-.byte STEP_UP_SLOW
+.byte STEP_UP
 .byte STEP_UP
 .byte STEP_UP
 .byte STEP_UP
@@ -105,69 +114,130 @@ ow_script_movs_0x8d7b4e:
 .byte STEP_UP_SLOW
 .byte STEP_UP_SLOW
 .byte STEP_UP_SLOW
-.byte STEP_UP_SLOW
-.byte STEP_UP_SLOW
 .byte STOP
 
+mov_fd:
+	.byte LOOK_DOWN, STOP
+
+setvar 0x8004 0x4
+setvar 0x8005 0x22
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+checkanimation OVERWORLD_EFFECT_EXPLOSION
+setvar 0x8004 0x5
+setvar 0x8005 0x23
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+checkanimation OVERWORLD_EFFECT_EXPLOSION
 
 
 ow_script_0x8d7960:
 
+setvar STORY_PROGRESS 0x14
 loadpointer 0x0 str_0x8d79cd
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
+applymovement 0xFF mov_cam_down1
+waitmovement 0
+loadpointer 0 str_player2
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_RUMINATIVE
 lockall
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x15
 applymovement 0x1 ow_script_movs_0x8d79c9
 applymovement 0x2 ow_script_movs_0x8d79c9
 applymovement 0x3 ow_script_movs_0x8d79c9
 applymovement 0x4 ow_script_movs_0x8d79c9
 applymovement 0x5 ow_script_movs_0x8d79c9
+applymovement 16 mov_fd
+applymovement 17 mov_fd
 waitmovement 0x0
-lockall
+spritebehave 1 BEHAVIOUR_FACE_DOWN
+spritebehave 2 BEHAVIOUR_FACE_DOWN
+spritebehave 3 BEHAVIOUR_FACE_DOWN
+spritebehave 4 BEHAVIOUR_FACE_DOWN
+spritebehave 5 BEHAVIOUR_FACE_DOWN
+spritebehave 16 BEHAVIOUR_FACE_DOWN
+spritebehave 17 BEHAVIOUR_FACE_DOWN
+setweather MAP_WEATHER_EXTREME_THUNDER
+releaseall
 checksound
 pause 0x24
 loadpointer 0x0 str_0x8d79fe
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-
-
-setvar STORY_PROGRESS 0x14
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED
+// Meteorite Cutscene
 setvar 0x8004 0x10
 special 0x19
 waitstate
-clearflag TRANS_DISABLE
-
-lockall
 loadpointer 0x0 str_0x8d7bbb
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-special 0x113
-applymovement 0x7f ow_script_movs_0x8d7ba7
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED
+applymovement 0xFF ow_script_movs_0x8d7ba7
 waitmovement 0x0
 playsong MUS_DEOXYS_ERSCHEINT 0x0
 cry POKEMON_DEOXYS 0x0
 waitcry
-call ow_script_0x8d7a10
+call ow_script_earthquake
 loadpointer 0x0 str_0x8d7b5b
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED
 cry POKEMON_DEOXYS 0x0
 waitcry
 cry POKEMON_DEOXYS 0x0
 waitcry
-applymovement 0x7f ow_script_movs_0x8d7e90
-applymovement 0x9 ow_script_movs_0x8d7b4e
+applymovement 0xFF ow_script_movs_0x8d7e90
+applymovement 11 ow_script_movs_0x8d7b4e
 waitmovement 0x0
 cry POKEMON_DEOXYS 0x0
 waitcry
-call ow_script_0x8d7a10
+call ow_script_earthquake
 call ow_script_0x8d7b1f
 call ow_script_0x8d7b1f
 loadpointer 0x0 str_0x8d7ae9
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
+show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_SHOCKED
 cry POKEMON_DEOXYS 0x0
 waitcry
-call ow_script_0x8d7a10
+call ow_script_earthquake
+// Explosions
+setvar 0x8004 0x5
+setvar 0x8005 0x39
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+checkanimation OVERWORLD_EFFECT_EXPLOSION
+setvar 0x8004 0xd
+setvar 0x8005 0x3a
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+checkanimation OVERWORLD_EFFECT_EXPLOSION
+setvar 0x8004 0x7
+setvar 0x8005 0x3b
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+checkanimation OVERWORLD_EFFECT_EXPLOSION
+special SPECIAL_NPC_PATHFINDING_BLOCK_MOVEMENTS
+npc_move_to 1 0x8 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
+npc_move_to 2 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
+npc_move_to 3 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
+npc_move_to 4 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
+npc_move_to 5 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
+npc_move_to 17 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
+special SPECIAL_NPC_PATHFINDING_UNBLOCK_MOVEMENTS
+pause 1
+setvar 0x8004 0x9
+setvar 0x8005 0x3a
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+checkanimation OVERWORLD_EFFECT_EXPLOSION
+
+setvar 0x8004 0x8
+setvar 0x8005 0x39
+special SPECIAL_OVERWORLD_EFFECT_EXPLOSION
+sound 170
+checkanimation OVERWORLD_EFFECT_EXPLOSION
+pause 64
+releaseall
+end
+
+
+
+
 sound 0x50
 // Execute one proper fadescreen in order to flood pal_restore with correct shaders
 // after anim engine with sepia effect and the modified fadescreen system this is needed tho
@@ -176,7 +246,7 @@ fadescreen 0x2
 checksound
 sound 0x50
 fadescreen 0x2
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x50
 fadescreen 0x3
 hidesprite 0x1
@@ -225,7 +295,7 @@ ow_script_0x8d7d8a:
 loadpointer 0x0 str_0x8d7ed8
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 waitcry
 loadpointer 0x0 str_0x8d7eab
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
@@ -239,7 +309,7 @@ waitmovement 0x0
 loadpointer 0x0 str_0x8d7e03
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 goto ow_script_0x8d7f2e
 
 
@@ -313,19 +383,19 @@ ow_script_movs_0x8dc3fb:
 .byte STOP
 
 ow_script_0x8d9328:
-special 0x114
+special SPECIAL_OVERWORLD_VIEWPORT_LOCK
 setvar 0x8004 0x11
-special 0x19
+special SPECIAL_CUTSCENE_SHOW
 waitstate
 showsprite 0x13
 clearflag PKMNMENU
 setweather 0x5
 doweather
-call ow_script_0x8d7a10
+call ow_script_earthquake
 loadpointer 0x0 str_0x8dc40d
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-special 0x114
-special 0x113
+special SPECIAL_OVERWORLD_VIEWPORT_LOCK
+special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
 applymovement 0x7f ow_script_movs_0x8dc3fb
 waitmovement 0x0
 sound 0x50
@@ -335,7 +405,7 @@ loadpointer 0x0 str_0x8dc39d
 show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 sound 0x50
 fadescreen 0x2
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x50
 fadescreen 0x2
 cry POKEMON_REGIROCK 0x0
@@ -346,14 +416,14 @@ sound 0x50
 fadescreen 0x3
 showsprite 0x6
 fadescreen 0x2
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x50
 fadescreen 0x2
 loadpointer 0x0 str_0x8dc346
 show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 sound 0x50
 fadescreen 0x2
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x50
 fadescreen 0x2
 cry POKEMON_REGICE 0x0
@@ -364,14 +434,14 @@ sound 0x50
 fadescreen 0x3
 showsprite 0xf
 fadescreen 0x2
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x50
 fadescreen 0x2
 loadpointer 0x0 str_0x8dc2ea
 show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 sound 0x50
 fadescreen 0x2
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x50
 fadescreen 0x2
 cry POKEMON_REGISTEEL 0x0
@@ -382,7 +452,7 @@ sound 0x50
 fadescreen 0x3
 showsprite 0x8
 fadescreen 0x2
-call ow_script_0x8d7a10
+call ow_script_earthquake
 goto ow_script_0x8e1584
 
 
@@ -399,7 +469,7 @@ waitcry
 sound 0x80
 applymovement 0x13 ow_script_movs_0x8e1959
 waitmovement 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x80
 applymovement 0x6 ow_script_movs_0x8e1959
 applymovement 0x8 ow_script_movs_0x8e1959
@@ -424,13 +494,13 @@ waitstate
 clearflag TRANS_DISABLE
 pause 0x1
 cry POKEMON_DEOXYS 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 waitcry
 cry POKEMON_REGISTEEL 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 waitcry
-call ow_script_0x8d7a10
-call ow_script_0x8d7a10
+call ow_script_earthquake
+call ow_script_earthquake
 cry POKEMON_DEOXYS 0x0
 waitcry
 fadescreen 0x1
@@ -441,15 +511,15 @@ warpmuted 0xf 0x0 0xff 0x2e 0x2c
 end
 
 
-ow_script_0x8d7a10:
-setvar 0x8004 0x4
-setvar 0x8005 0x5
-setvar 0x8006 0x14
-setvar 0x8007 0x4
-special 0x136
-waitstate
-lockall
-return
+ow_script_earthquake:
+	setvar 0x8004 0x4
+	setvar 0x8005 0x5
+	setvar 0x8006 0x14
+	setvar 0x8007 0x4
+	special 0x136
+	waitstate
+	lockall
+	return
 
 
 ow_script_movs_0x8d7b4b:
@@ -472,13 +542,15 @@ return
 .ifdef LANG_GER
 
 str_0x8d79cd:
-	.autostring 35 2 "DOTS DOTS DOTS\pWas geschieht hier?\pIch sehe diese Bilder vor meinem inneren Auge, aber die Vision ist klar und deutlich DOTS"
+	.autostring 35 2 "DOTS DOTS DOTS\pWas geschieht hier?\pBilde ich mir das ein?\pWo bin ich und wie bin ich hierhergekommen?"
+str_player2:
+	.autostring 34 2 "Dieser Ort erinnert mich an BurchfelsDOTS"
 str_0x8d79fe:
     .autostring 35 2 "War das ein Erdbeben?"
 str_0x8d7bbb:
-    .autostring 35 2 "Da ist wieder dieser Meteorit und das Wesen, das sich auf ihm befunden hat DOTS"
+    .autostring 35 2 "Das ist der Meteorit aus meinem Traum!\pIst er hier eingeschlagen?\pUnd was ist das für ein Wesen, das mit ihm gekommen ist?"
 str_0x8d7b5b:
-    .autostring 35 2 "Ist diese Wesen ein DOTS\pDOTS DOTS DOTS\pDOTS Pokémon?"
+    .autostring 35 2 "Ist das einDOTS\nDOTSPokémon?"
 str_0x8d7ae9:
     .autostring 35 2 "Es wirkt aggressiv DOTS"
 str_0x8d7ed8:

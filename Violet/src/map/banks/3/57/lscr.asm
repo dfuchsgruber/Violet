@@ -8,6 +8,7 @@
 .include "flags.s"
 .include "items.s"
 .include "battle/battle_results.s"
+.include "pathfinding.s"
 
 .global lscr_0x719224
 .global ow_script_trainerschool_wildbattle
@@ -145,11 +146,7 @@ applymovement 4 mov_face_up
 waitmovement 0
 loadpointer 0 str_caught
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
-setvar 0x8004 0xFF
-setvar 0x8005 0x22
-setvar 0x8006 0x10
-special 0x24
-waitmovement 0
+npc_move_to 0xFF 0x22 0x10
 applymovement 4 mov_face_down
 applymovement 0xFF mov_face_up
 waitmovement 0
@@ -247,11 +244,7 @@ loadpointer 0 str_fainted
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 releaseall
 @ Heal player
-setvar 0x8004 0xFF
-setvar 0x8005 0x22
-setvar 0x8006 0xE
-special 0x24
-waitmovement 0
+npc_move_to 0xFF 0x22 0xE
 applymovement 0xFF mov_face_right
 applymovement 0x4 mov_face_left
 waitmovement 0

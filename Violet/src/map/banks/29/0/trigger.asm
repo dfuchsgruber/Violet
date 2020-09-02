@@ -6,6 +6,7 @@
 .include "movements.s"
 .include "flags.s"
 .include "ordinals.s"
+.include "pathfinding.s"
 
 .global ow_script_haweiland_cargo_hall_trigger
 
@@ -65,15 +66,9 @@ ow_script_haweiland_cargo_hall_trigger:
 cont_both:
 
     setvar LASTTALKED 10
-    setvar 0x8004 10
-    setvar 0x8005 0x5
-    setvar 0x8006 0x3
-    special SPECIAL_NPC_MOVE_TO
+    npc_move_to 10 0x5 0x3 waitmovement=0
     setvar LASTTALKED 7
-    setvar 0x8004 7
-    setvar 0x8005 0x5
-    setvar 0x8006 0x5
-    special SPECIAL_NPC_MOVE_TO
+    npc_move_to 7 0x5 0x5 waitmovement=0
     waitmovement 0
     applymovement 7 mov_face_up
     waitmovement 0
@@ -85,34 +80,22 @@ cont_both:
 cant_double_battle:
 
     setvar LASTTALKED 10
-    setvar 0x8004 10
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 10
     settrainerflag 0x139
     trainerbattlecont 0x1 0x139 0x0 str_challange_0 str_defeat_0 cont_0
 cont_0:
     setvar LASTTALKED 10
-    setvar 0x8004 10
-    setvar 0x8005 0x5
-    setvar 0x8006 0x3
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 10 0x5 0x3
     applymovement LASTTALKED mov_face_down
     waitmovement 0
 
     setvar LASTTALKED 7
-    setvar 0x8004 7
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 7
     settrainerflag 0x13a
     trainerbattlecont 0x1 0x13a 0x0 str_challange_1 str_defeat_1 cont_1
 cont_1:
     setvar LASTTALKED 7
-    setvar 0x8004 7
-    setvar 0x8005 0x5
-    setvar 0x8006 0x5
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 7 0x5 0x5
     applymovement LASTTALKED mov_face_up
     waitmovement 0
     goto after_conts
@@ -138,9 +121,7 @@ after_conts:
     fadesong MUS_HAWEILAND
 
     setvar LASTTALKED 8
-    setvar 0x8004 8
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 8
 
     loadpointer 0 str_assistant
     setvar 0x8000 0

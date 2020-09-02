@@ -6,6 +6,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "pathfinding.s"
 
 .global ow_script_0x958ba3
 .global ow_script_map_9_16_trigger_0
@@ -171,12 +172,8 @@ clearflag PKMNMENU
 showsprite 0xd
 showsprite 0xe
 setflag PKMNMENU
-setvar 0x8004 0xd
-special 0x1b
-setvar 0x8004 0xe
-setvar 0x8005 0x9
-setvar 0x8006 0x8
-special 0x24
+npc_move_to_player 0xd waitmovement=0
+npc_move_to 0xe 0x9 0x8 waitmovement=0
 waitmovement 0x0
 applymovement 0xd ow_script_movs_0x959a08
 applymovement 0xe ow_script_movs_0x959a08
@@ -189,16 +186,10 @@ pause 32
 playsong MUS_MISTRAL 0x0
 loadpointer 0x0 str_0x959af2
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
-setvar 0x8004 0xd
-setvar 0x8005 0x9
-setvar 0x8006 0x4
-special 0x24
-waitmovement 0x0
+npc_move_to 0xd 0x9 0x4
 applymovement 0xd ow_script_movs_0x959a08
 waitmovement 0x0
-setvar 0x8004 0xe
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0xe
 setvar LASTTALKED 0xe
 setvar SONG_OVERRIDE MUS_MISTRAL
 trainerbattlecont 0x1 0x91 0x0 str_0x959a4a str_0x959abd ow_script_0x959e29
@@ -229,9 +220,7 @@ special 0x8e
 pause 0x1c
 loadpointer 0x0 str_0x959981
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
-setvar 0x8004 0xd
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0xd
 faceplayer
 loadpointer 0x0 str_0x959853
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
@@ -248,9 +237,7 @@ fadesong MUS_AZURIA_CITY_AND_FEUERHOHLE_AND_FUCHSANIA_CITY
 fadescreen 0x0
 clearflag PKMNMENU
 showsprite 0xf
-setvar 0x8004 0xf
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0xf
 faceplayer
 
 loadpointer 0 str_director

@@ -6,7 +6,7 @@
 #include "bios.h"
 #include "dns.h"
 #include "debug.h"
-#include "tile/any_grass.h"
+#include "overworld/effect.h"
 
 color_t overworld_weather_static_fog_get_overlay_color() {
     color_t fog_overlay = {.rgb = {.red = 28, .green = 31, .blue = 28}};

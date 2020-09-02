@@ -8,24 +8,46 @@
 #ifndef INCLUDE_C_OVERWORLD_NPC_H_
 #define INCLUDE_C_OVERWORLD_NPC_H_
 
+#include "types.h"
 #include "oam.h"
 #include "superstate.h"
+#include "constants/overworld/npc_pathfinding_speeds.h"
 
 typedef struct npc {
 
     struct {
-        u8 active : 1;
-        u8 in_motion : 1;
-        u8 is_obstacle : 1;
-        u8 is_obstacle_2 : 1;
-        u8 flag_4 : 1;
-        u8 flag_5 : 1;
-        u8 flag_6 : 1;
-        u8 reset : 1;
+        // 0x0
+        u32 active : 1;
+        u32 in_motion : 1;
+        u32 trigger_ground_effects_on_move : 1;
+        u32 trigger_ground_effects_on_stop : 1;
+        u32 covering_ground_effects_disabled : 1;
+        u32 landing_jump : 1;
+        u32 held_movement_active : 1;
+        u32 held_movement_finished : 1;
+        // 0x1
+        u32 frozen : 1;
+        u32 direction_locked : 1;
+        u32 animation_disabled : 1;
+        u32 animation_enabled : 1;
+        u32 inanimate : 1;
+        u32 invisible : 1;
+        u32 is_offscreen : 1;
+        u32 is_camera_viewport : 1;
+        // 0x2
+        u32 is_player : 1;
+        u32 has_reflection : 1;
+        u32 in_short_grass : 1;
+        u32 in_shallow_flowing_water : 1;
+        u32 in_sand_pile : 1;
+        u32 in_hot_springs : 1;
+        u32 has_shadow : 1;
+        u32 saved_oam_animation_paused : 1;
+        // 0x3
+        u32 saved_oam_rotscale_animation_paused : 1;
+        u32 jump_landing_ground_effect_disabled : 1;
+        u32 fixed_priority : 1;
     } flags;
-    u8 visual_cntrl;
-    u8 field_2;
-    u8 field_3;
 
     u8 oam_id;
     u8 sprite;
@@ -291,7 +313,7 @@ u8 block_triggers_diagnoal_move(npc *n, s16 x_to_origin, s16 y_to_origin, u8 dir
  * @param dest_x the x coordinate to move to
  * @param dest_y the y coordinate to move to
  */
-void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y);
+void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y, u8 speed);
 
 /**
  * A big callback function to free the resources allocated by npc_move_to
@@ -340,9 +362,9 @@ void npc_apply_movement(u8 overworld_id, u8 map, u8 bank, u8 *moves);
  * @param overworld_id the overworld id to look for
  * @param map the map id to look on
  * @param bank the map bank to look on
- * @return whether a movement callback is active
+ * @return whether a movement is finished
  **/
-bool npc_movement_callback_is_active(u8 overworld_id, u8 map, u8 bank);
+bool npc_movement_callback_is_finished(u8 overworld_id, u8 map, u8 bank);
 
 /**
  * Executes a single movement for an npc

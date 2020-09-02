@@ -5,6 +5,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_map_3_5_trigger_0
 .global ow_script_map_3_5_trigger_1
@@ -16,9 +17,7 @@ ow_script_movs_0x95590a:
 
 ow_script_map_3_5_trigger_0:
 lockall
-setvar 0x8004 0x26
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0x26
 faceplayer
 
 loadpointer 0 str_police
@@ -30,11 +29,7 @@ special 0xf
 
 applymovement 0xff ow_script_movs_0x95590a
 waitmovement 0x0
-setvar 0x8004 0x26
-setvar 0x8005 0x24
-setvar 0x8006 0x2
-special 0x24
-waitmovement 0x0
+npc_move_to 0x26 0x24 0x2
 releaseall
 end
 
@@ -61,9 +56,7 @@ end
 lockall
 clearflag PKMNMENU
 showsprite 0x27
-setvar 0x8004 0x27
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0x27
 faceplayer
 loadpointer 0x0 str_0x955b31
 show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT MSG_KEEPOPEN
@@ -72,11 +65,7 @@ copyvarifnotzero 0x8001 1
 callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x955a4c
 show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-setvar 0x8004 0x27
-setvar 0x8005 0x3c
-setvar 0x8006 0x1f
-special 0x24
-waitmovement 0x0
+npc_move_to 0x27 0x3c 0x1f
 hidesprite 0x27
 addvar STORY_PROGRESS 0x1
 releaseall

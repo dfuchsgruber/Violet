@@ -13,7 +13,7 @@
 #include "fading.h"
 #include "overworld/pokemon_party_menu.h"
 #include "rtc.h"
-#include "tile/any_grass.h"
+#include "overworld/effect.h"
 #include "constants/sav_keys.h"
 
 u8 berry_tree_get_berry(u8 berry_tree_idx) {

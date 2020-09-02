@@ -10,6 +10,7 @@
 .include "ordinals.s"
 .include "movements.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_blackbeard_ship_storage_trigger
 
@@ -27,18 +28,12 @@ ow_script_blackbeard_ship_storage_trigger:
     waitmovement 0
     checksound
     pause 16
-    setvar 0x8004 7
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 7
     applymovement 7 mov_fl
     waitmovement 0
     loadpointer 0 str_1
     show_mugshot MUGSHOT_LUCKY alignment=MUGSHOT_RIGHT message_type=MSG mask_name=0
-    setvar 0x8004 7
-    setvar 0x8005 0x1d
-    setvar 0x8006 0x12
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 7 0x1d 0x12
     hidesprite 7
     addvar STORY_PROGRESS 1
     releaseall

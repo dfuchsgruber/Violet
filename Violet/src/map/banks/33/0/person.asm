@@ -4,6 +4,7 @@
 .include "movements.s"
 .include "specials.s"
 .include "ordinals.s"
+.include "pathfinding.s"
 
 .global ow_script_blackbeard_ship_cells_lucky
 
@@ -12,11 +13,7 @@ ow_script_blackbeard_ship_cells_lucky:
     faceplayer
     loadpointer 0 str_0
     show_mugshot MUGSHOT_LUCKY alignment=MUGSHOT_RIGHT message_type=MSG mask_name=0
-    setvar 0x8004 1
-    setvar 0x8005 0xB
-    setvar 0x8006 0x8
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 1 0xB 0x8
     pause 16
     sound 9
     hidesprite 1

@@ -8,6 +8,7 @@
 .include "specials.s"
 .include "songs.s"
 .include "trainer_backsprites.s"
+.include "pathfinding.s"
 
 .global ow_script_0x93a667
 .global ow_script_0x92d67a
@@ -27,21 +28,13 @@ ow_script_kuestenberg_event:
     waitmovement 0
     checksound
     pause 32
-    setvar 0x8004 13
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 13
     applymovement 13 mov_fd
     waitmovement 0
     loadpointer 0 str_0
     show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT
-    setvar 0x8004 13
-    setvar 0x8005 0x1F
-    setvar 0x8006 0xE
-    special SPECIAL_NPC_MOVE_TO
-    setvar 0x8004 0xFF
-    setvar 0x8005 0x1F
-    setvar 0x8006 0xF
-    special SPECIAL_NPC_MOVE_TO
+    npc_move_to 13 0x1F 0xE waitmovement=0
+    npc_move_to 0xFF 0x1F 0xF waitmovement=0
     waitmovement 0
     applymovement 0xFF mov_fl
     applymovement 13 mov_fl

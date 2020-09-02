@@ -9,6 +9,7 @@
 .include "specials.s"
 .include "songs.s"
 .include "movements.s"
+.include "pathfinding.s"
 
 .global map_ardeal_entrance_levelscripts
 
@@ -53,9 +54,7 @@ ow_script_frame_table:
     checksound
     loadpointer 0 str_2
     show_mugshot MUGSHOT_HARRENFELD alignment=MUGSHOT_RIGHT message_type=MSG mask_name=0
-    setvar 0x8004 5
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 5
     loadpointer 0 str_3
     show_mugshot MUGSHOT_HARRENFELD alignment=MUGSHOT_RIGHT message_type=MSG mask_name=0
     applymovement 5 mov_away

@@ -9,6 +9,7 @@
 .include "levelscript_types.s"
 .include "difficulties.s"
 .include "ordinals.s"
+.include "pathfinding.s"
 
 .equ REFEREE_PERSON_IDX, 7
 .equ REFEREE_X, 20
@@ -33,16 +34,11 @@ referee:
     lockall
     setvar 0x8004 REFEREE_PERSON_IDX
     special SPECIAL_SET_TARGET_NPC_TO_VAR
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player REFEREE_PERSON_IDX
     faceplayer
     loadpointer 0 str_inferior_gym_referee
     callstd MSG
-    setvar 0x8004 REFEREE_PERSON_IDX
-    setvar 0x8005 REFEREE_X
-    setvar 0x8006 REFEREE_Y
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to REFEREE_PERSON_IDX REFEREE_X REFEREE_Y
     applymovement REFEREE_PERSON_IDX mov_fd
     waitmovement 0
     addvar VAR_GYM_TIPPS 1

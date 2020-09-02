@@ -3,6 +3,7 @@
 .include "callstds.s"
 .include "mugshot.s"
 .include "overworld_script.s"
+.include "pathfinding.s"
 
 
 .global ow_script_route_2_felix
@@ -17,9 +18,7 @@ ow_script_route_2_felix:
 
 ow_script_route_2_felix:
 lockall
-setvar 0x8004 0x3
-special 0x1B
-waitmovement 0
+npc_move_to_player 3
 setvar LASTTALKED 0x3
 faceplayer
 loadpointer 0 str_hello
@@ -27,11 +26,7 @@ show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
 call ow_script_healing_sequence
 loadpointer 0 str_after_healing
 show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
-setvar 0x8004 0x3
-setvar 0x8005 0x7
-setvar 0x8006 0x19
-special 0x24
-waitmovement 0
+npc_move_to 3 0x7 0x19
 hidesprite 3
 addvar STORY_PROGRESS 1
 releaseall

@@ -10,6 +10,7 @@
 .include "songs.s"
 .include "ordinals.s"
 .include "movements.s"
+.include "pathfinding.s"
 
 
 .global map_blackbeard_ship_captain_room_levelscripts
@@ -34,18 +35,12 @@ ow_script_lucky:
     waitmovement 0
     checksound
     pause 16
-    setvar 0x8004 2
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 2
     applymovement 2 mov_fd
     waitmovement 0
     loadpointer 0 str_0
     show_mugshot MUGSHOT_LUCKY alignment=MUGSHOT_RIGHT message_type=MSG mask_name=0
-    setvar 0x8004 2
-    setvar 0x8005 6
-    setvar 0x8006 7
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 2 6 7
     applymovement 2 mov_fr
     waitmovement 0
     addvar STORY_PROGRESS 1

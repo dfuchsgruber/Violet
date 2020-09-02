@@ -299,7 +299,7 @@ pause 0x40
 call ow_script_0x96ebb2
 loadpointer 0x0 str_0x96ad59
 show_mugshot MUGSHOT_IGVA MUGSHOT_LEFT
-call ow_script_0x8d7a10
+call ow_script_earthquake
 loadpointer 0x0 str_0x96a698
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
 goto ow_script_0x96ebc4
@@ -488,7 +488,7 @@ ow_script_movs_0x972fe0:
 ow_script_0x96fbaa:
 loadpointer 0x0 str_0x9713b5
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
-call ow_script_0x8d7a10
+call ow_script_earthquake
 fadescreen 0x3
 cry POKEMON_GROUDON 0x0
 clearflag INFERIOR_VIOLET_GRUNTS | 0x8000
@@ -615,7 +615,7 @@ return
 ow_script_0x96b124:
 applymovement 0x7f ow_script_movs_0x96b13c
 applymovement 0xa ow_script_movs_0x96b13c
-call ow_script_0x8d7a10
+call ow_script_earthquake
 pause 0x10
 return
 
@@ -625,7 +625,7 @@ sound 0x21
 setvar 0x8004 0x1
 special 0x19
 waitstate
-call ow_script_0x8d7a10
+call ow_script_earthquake
 return
 
 

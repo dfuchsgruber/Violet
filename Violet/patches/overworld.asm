@@ -100,6 +100,9 @@ blxr4_0805bba8:
 .org overworld_script_commands + 4 * 0x5C
     .word overworld_script_command_trainerbattle | 1
 
+.org overworld_script_commands + 4 * 0x65
+    .word overworld_script_command_spritebehave | 1
+
 .org overworld_script_commands + 4 * 0x6E
     .word script_cmd_x6E_yesnobox | 1
 
@@ -417,3 +420,6 @@ _blxr1:
     ldr r1, =npc_boulder_fall_trough_hole_and_update_person_coordinates | 1
     bx r1
     .pool
+
+.org 0x080833e8
+    .word overworld_effects

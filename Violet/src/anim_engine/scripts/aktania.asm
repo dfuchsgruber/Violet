@@ -30,12 +30,12 @@ ae_script_aktania_meteor:
     set_io_to_val 0 0x1C
     set_io_to_val 0 0x1E
     fadescreen 0 0 512 16 16 0
-    pause 1
+    pause 48
     obj_vram_load graphic_intro_meteor
     load_obj_pal 0xADE3 gfx_intro_meteorPal UNCOMP FORCE
     oam_new oam_template_intro_meteor 130 170 0 0x8002
     sound 158
-    pause 24
+    pause 64
     sound 171
     fadescreen 0x7FFF 0 512 2 0 16
     pause 64
@@ -43,7 +43,7 @@ ae_script_aktania_meteor:
     oam_despawn 0x8002
     spawn_big_cb anim_intro_earthquake 0 3
     .hword 0, 4, 0
-    pause 16
+    pause 48
     fadescreen 0 0 512 16 0 16
     pause 64
     bg_reset 0

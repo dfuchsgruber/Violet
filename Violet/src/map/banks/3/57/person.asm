@@ -7,6 +7,7 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_trainerschool_rival_outside
 .global ow_script_trainerschool_faun_outside
@@ -83,11 +84,7 @@ waitfanfare
 closeonkeypress
 loadpointer 0 str_player_back
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
-setvar 0x8004 0xFF
-setvar 0x8005 0x29
-setvar 0x8006 0x11
-special 0x24
-waitmovement 0
+npc_move_to 0xFF 0x29 0x11
 applymovement 0xFF mov_face_up
 applymovement 4 mov_face_down
 waitmovement 0
@@ -165,11 +162,7 @@ special 0x16F
 
 loadpointer 0 str_player_received_pkmn
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
-setvar 0x8004 0xFF
-setvar 0x8005 0x27
-setvar 0x8006 0x12
-special 0x24
-waitmovement 0
+npc_move_to 0xFF 0x27 0x12
 applymovement 0xFF mov_face_down
 waitmovement 0
 
@@ -598,11 +591,7 @@ lock
 faceplayer
 loadpointer 0 str_goodbye_felix
 show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT
-setvar 0x8004 7
-setvar 0x8005 0x29
-setvar 0x8006 0x14
-special 0x24
-waitmovement 0
+npc_move_to 7 0x29 0x14
 applymovement 5 mov_face_down
 waitmovement 0
 sound 9
@@ -717,11 +706,7 @@ lock
 faceplayer
 loadpointer 0 str_goodbye_may
 show_mugshot MUGSHOT_MAY MUGSHOT_RIGHT
-setvar 0x8004 5
-setvar 0x8005 0x29
-setvar 0x8006 0x14
-special 0x24
-waitmovement 0
+npc_move_to 5 0x29 0x14
 applymovement 5 mov_face_down
 waitmovement 0
 sound 9
@@ -858,11 +843,7 @@ show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 @ Move npcs into a row
 applymovement 3 mov_2l_2d
 applymovement 5 mov_1d
-setvar 0x8004 0xFF
-setvar 0x8005 0x27
-setvar 0x8006 0x12
-special 0x24
-waitmovement 0x0
+npc_move_to 0xFF 0x27 0x12
 applymovement 0x3 mov_face_down
 applymovement 0x5 mov_face_down
 applymovement 0xFF mov_face_down
@@ -1021,11 +1002,7 @@ applymovement 0xFF mov_face_right
 waitmovement 0
 
 @ Move may to 0x2A, 0x12
-setvar 0x8004 0x5
-setvar 0x8005 0x2A
-setvar 0x8006 0x11
-special 0x24
-waitmovement 0x0
+npc_move_to 0x5 0x2A 0x11
 applymovement 0x5 mov_face_left
 waitmovement 0
 release
@@ -1075,7 +1052,8 @@ getplayerpos 0x8005 0x8006
 compare 0x8006 0x12
 callif EQUAL rearrange_coordinate
 setvar 0x8006 0x14
-special 0x24
+setvar 0x8007 A_STAR_SPEED_NORMAL
+special SPECIAL_NPC_MOVE_TO
 waitmovement 0
 applymovement 3 mov_face_down
 waitmovement 0

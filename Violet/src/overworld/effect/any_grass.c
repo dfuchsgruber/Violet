@@ -1,7 +1,7 @@
 #include "types.h"
 #include "callbacks.h"
 #include "save.h"
-#include "tile/any_grass.h"
+#include "overworld/effect.h"
 #include "constants/flags.h"
 #include "constants/vars.h"
 #include "debug.h"

@@ -8,6 +8,7 @@
 #include "stdbool.h"
 #include "math.h"
 #include "overworld/npc.h"
+#include "overworld/script.h"
 #include "save.h"
 #include "callbacks.h"
 #include "data_structures.h"
@@ -21,14 +22,16 @@ void special_move_npc_to_player() {
     s16 pos[2];
     player_get_facing_position(&pos[0], &pos[1]);
     u8 target = (u8) * var_access(0x8004);
-    npc_move_to(target, pos[0], pos[1]);
+    u8 speed = (u8)*var_access(0x8005);
+    npc_move_to(target, pos[0], pos[1], speed);
 }
 
 void special_move_npc_to() {
     s16 x = (s16) (*var_access(0x8005) + 7);
     s16 y = (s16) (*var_access(0x8006) + 7);
+    u8 speed = (u8) *var_access(0x8007);
     u8 target = (u8) * var_access(0x8004);
-    npc_move_to(target, x, y);
+    npc_move_to(target, x, y, speed);
 }
 
 void overworld_person_get_position() {
@@ -41,33 +44,58 @@ void overworld_person_get_position() {
     dprintf("Player @(%d, %d)\n", *var_access(0x8004), *var_access(0x8005));
 }
 
+void npc_move_to_block_movements() {
+    fmem.pathfinding_npc_movements_waiting = true;
+}
 
-void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y) {
+void npc_move_to_unblock_movements() {
+    fmem.pathfinding_npc_movements_waiting = false;
+}
+
+void npc_move_to_freeing_callback(u8 self) {
+    u8 person_idx = (u8) big_callbacks[self].params[2];
+    if (npc_movement_callback_is_finished(person_idx, save1->map, save1->bank)) {
+        big_callback_delete(self);
+    }
+}
+
+static void npc_move_to_do_moves(u8 self) {
+    if (!fmem.pathfinding_npc_movements_waiting) {
+        u8 *moves = (u8*)big_callback_get_int(self, 0);
+        u8 person_idx = (u8)big_callbacks[self].params[2];
+        npc_apply_movement(person_idx, save1->map, save1->bank, moves);
+        npc_movement_target_person_idx = person_idx;
+        big_callbacks[self].function = npc_move_to_freeing_callback;
+    }
+}
+
+static void npc_move_to_wait_for_a_star(u8 self) {
+    u8 a_star = (u8)big_callbacks[self].params[6];
+    bool a_star_finished = big_callbacks[a_star].params[0];
+    if (a_star_finished) {
+        overworld_script_resume(); // Calculation of current path finished
+        big_callback_delete(a_star);
+        big_callbacks[self].function = npc_move_to_do_moves;
+        big_callbacks[self].function(self);
+    }
+}
+
+void npc_move_to(u8 ow_id, s16 dest_x, s16 dest_y, u8 speed) {
     u8 npc_id;
     if (npc_get_id_by_overworld_id(ow_id, save1->map, save1->bank, &npc_id))
         return;
     trainer_npc_idx = npc_id;
     u8 *dyn_move = (u8*) malloc(256); // dynamic space for movement list
-    a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id]);
-    npc_apply_movement(ow_id, save1->map, save1->bank, dyn_move);
-    u8 cb = big_callback_new(npc_move_to_freeing_callback, 10);
+    u8 a_star = a_star_compute_path(dyn_move, dest_x, dest_y, &npcs[npc_id], speed, A_STAR_STEPS_PER_FRAME);
+    u8 cb = big_callback_new(npc_move_to_wait_for_a_star, 10);
     big_callback_set_int(cb, 0, (int) dyn_move);
     big_callbacks[cb].params[2] = ow_id;
     big_callbacks[cb].params[3] = (u16) dest_x;
     big_callbacks[cb].params[4] = (u16) dest_y;
-    npc_movement_target_person_idx = ow_id;
+    big_callbacks[cb].params[5] = 0;
+    big_callbacks[cb].params[6] = a_star;
 }
 
-void npc_move_to_freeing_callback(u8 self) {
-    big_callbacks[self].params[5]++;
-    u8 npc_id;
-    if (npc_get_id_by_overworld_id((u8) big_callbacks[self].params[2], save1->map, save1->bank, &npc_id))
-        return;
-    if (npcs[npc_id].dest_x == (s16) (big_callbacks[self].params[3]) &&
-            npcs[npc_id].dest_y == (s16) (big_callbacks[self].params[4])) {
-        big_callback_delete(self);
-    }
-}
 
 void npc_move_camera_to() {
     s16 x_destination = (s16) (*var_access(0x8004) + 7);

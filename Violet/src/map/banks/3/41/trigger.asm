@@ -8,6 +8,7 @@
 .include "ordinals.s"
 .include "overworld_script.s"
 .include "flags.s"
+.include "pathfinding.s"
 
 .global ow_script_0x8a6d50
 .global ow_script_0x8a6d63
@@ -57,9 +58,7 @@ setflag PKMNMENU
 sound 0x15
 applymovement 0xFF mov_face_left_and_exclam
 waitmovement 0
-setvar 0x8004 37
-special SPECIAL_NPC_MOVE_TO_PLAYER
-waitmovement 0
+npc_move_to_player 37
 applymovement 37 mov_face_right
 waitmovement 0
 loadpointer 0x0 str_0x8a6f8a
@@ -90,14 +89,8 @@ applymovement 37 ow_script_movs_0x8a69da
 waitmovement 0x0
 loadpointer 0x0 str_0x8a6b0d
 show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY
-    setvar 0x8004 0xFF
-    setvar 0x8005 0x13
-    setvar 0x8006 0x39
-    special SPECIAL_NPC_MOVE_TO
-    setvar 0x8004 37
-    setvar 0x8005 0x12
-    setvar 0x8006 0x38
-    special SPECIAL_NPC_MOVE_TO
+    npc_move_to 0xFF 0x13 0x39 waitmovement=0
+    npc_move_to 37 0x12 0x38 waitmovement=0
     waitmovement 0
     applymovement 0xFF mov_face_right
     applymovement 37 mov_face_right

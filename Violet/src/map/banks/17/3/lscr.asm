@@ -85,7 +85,7 @@ loadpointer 0x0 str_0x94d210
 show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT MSG_KEEPOPEN
 loadpointer 0x0 str_0x94d09a
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT MSG_KEEPOPEN
-call ow_script_0x8d7a10
+call ow_script_earthquake
 sound 0x15
 applymovement 0x1 ow_script_movs_0x94c547
 applymovement 0x2 ow_script_movs_0x94c547
@@ -96,19 +96,19 @@ waitcry
 loadpointer 0x0 str_0x94c54b
 show_mugshot MUGSHOT_LARISSA MUGSHOT_RIGHT MSG_KEEPOPEN
 cry POKEMON_DEOXYS 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 cry POKEMON_DEOXYS 0x0
 special 0x113
 applymovement 0x7f ow_script_movs_0x94c542
 waitmovement 0x0
 special 0x114
 cry POKEMON_DEOXYS 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 cry POKEMON_DEOXYS 0x0
 loadpointer 0x0 str_0x94c524
 show_mugshot MUGSHOT_FAUN MUGSHOT_LEFT
 cry POKEMON_DEOXYS 0x0
-call ow_script_0x8d7a10
+call ow_script_earthquake
 fadescreen 0x1
 sound 0x64
 checksound

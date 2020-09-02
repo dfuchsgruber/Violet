@@ -176,6 +176,7 @@ typedef struct {
     int _hook_tmp_; // This variable is used to save r0 values while trying to hook something that uses r0-r3 already
     u8 dmap_header_initialized : 1;
     u8 dmap_blocks_initialized : 1;
+    u8 pathfinding_npc_movements_waiting : 1;
     u8 siirct_locked : 1;
     u8 battle_bg_index;
     u8 npc_facing_movements[2];

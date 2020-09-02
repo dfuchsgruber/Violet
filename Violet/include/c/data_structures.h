@@ -8,7 +8,9 @@
 #ifndef BIN_HEAP_H
 #define	BIN_HEAP_H
 
+#include "types.h"
 #include "overworld/npc.h"
+#include "constants/overworld/npc_pathfinding_speeds.h"
 
 typedef struct {
     u32 key;
@@ -58,17 +60,37 @@ int hashmap_remove(u32 key, hashmap *map);
 
 int hashmap_get(u32 key, hashmap *map);
 
-#define A_STAR_INITIAL_QUEUE_SIZE 100
+#define A_STAR_INITIAL_QUEUE_SIZE 256
 #define A_STAR_NUM_BUCKETS 39
 #define A_STAR_PREDECESSOR_NONE 0xABCDABCD
+#define A_STAR_COST_SCALING 0x10000
+#define A_STAR_STEPS_PER_FRAME 4
 
-int a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker);
+typedef union {
+    struct {
+        int x : 14;
+        int y : 14;
+        int heading : 4; 
+    } state;
+    int value;
+} a_star_key;
 
-int a_star_reconstruct(u8 *path, s16 dest_x, s16 dest_y, hashmap *nodes);
+typedef struct {
+    hashmap *g;
+    hashmap *closed;
+    hashmap *predecessor;
+    dyn_arr *queue;
+    u8 *path;
+    npc original_walker;
+    s16 x_destination;
+    s16 y_destination;
+    u8 speed;
+    int steps_per_frame;
+} a_star_state;
 
-int a_star_coordinates_to_key(s16 x, s16 y);
+u8 a_star_compute_path(u8 *path, s16 to_x, s16 to_y, npc *original_walker, u8 speed, int steps_per_frame);
 
-void a_star_key_to_coordinates(int key, s16 *x, s16 *y);
+int a_star_reconstruct(u8 *path, a_star_key destination, hashmap *nodes, u8 speed);
 
 bool a_star_is_connected(s16 dest_x, s16 dest_y, s16 from_x, s16 from_y, npc *walker);
 

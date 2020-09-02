@@ -6,6 +6,7 @@
 .include "movements.s"
 .include "specials.s"
 .include "songs.s"
+.include "pathfinding.s"
 
 .global ow_script_forest_cemetery_rin_event
 
@@ -27,11 +28,7 @@ ow_script_forest_cemetery_rin_event:
     loadpointer 0 str_rin_2
     show_mugshot MUGSHOT_RIN alignment=MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=0
     closeonkeypress
-    setvar 0x8004 0xFF
-    setvar 0x8005 0x3D
-    setvar 0x8006 0x8
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 0xFF 0x3D 0x8
     applymovement 0xFF mov_face_up
     waitmovement 0
     loadpointer 0 str_teah_2
@@ -90,11 +87,7 @@ ow_script_forest_cemetery_rin_event:
     applymovement 0xFF mov_face_down
     applymovement 27 mov_face_down
     waitmovement 0
-    setvar 0x8004 25
-    setvar 0x8005 0x3c
-    setvar 0x8006 0xf
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 25 0x3C 0xf
     hidesprite 23
     hidesprite 24
     hidesprite 25
@@ -130,11 +123,7 @@ ow_script_forest_cemetery_rin_event:
     applymovement 0xff mov_face_down
     applymovement 27 mov_face_down
     waitmovement 0
-    setvar 0x8004 26
-    setvar 0x8005 0x3d
-    setvar 0x8006 0xf
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 26 0x3D 0xF
     hidesprite 26
     pause 40
     applymovement 0xFF mov_face_left
@@ -142,11 +131,7 @@ ow_script_forest_cemetery_rin_event:
     waitmovement 0
     loadpointer 0 str_narcissa_7
     show_mugshot MUGSHOT_NARCISSA alignment=MUGSHOT_RIGHT message_type=MSG mask_name=0
-    setvar 0x8004 27
-    setvar 0x8005 0x3c
-    setvar 0x8006 0xf
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 27 0x3C 0xF
     hidesprite 27
     setflag FLAG_FOREST_CEMETERY_DONE
     addvar STORY_PROGRESS 1

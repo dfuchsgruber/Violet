@@ -8,6 +8,7 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "pathfinding.s"
 
 .global ow_script_map_3_1_trigger_larissa
 
@@ -20,9 +21,7 @@ ow_script_map_3_1_trigger_larissa:
     clearflag (1 | 0x8000)
     showsprite 5
     checksound
-    setvar 0x8004 5
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0
+    npc_move_to_player 5
     applymovement 5 mov_fr
     waitmovement 0
     loadpointer 0 str_0
@@ -42,11 +41,7 @@ ow_script_map_3_1_trigger_larissa:
     callstd MSG_KEEPOPEN
     closeonkeypress
     hide_mugshot
-    setvar 0x8004 5
-    setvar 0x8005 0x14
-    setvar 0x8006 0x1a
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0
+    npc_move_to 5 0x14 0x1a
     hidesprite 5
     setvar STORY_PROGRESS 12
     releaseall

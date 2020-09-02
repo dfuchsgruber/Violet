@@ -6,13 +6,12 @@
 .include "flags.s"
 .include "ordinals.s"
 .include "vars.s"
+.include "pathfinding.s"
 
 .global ow_script_ceometria_trigger_0
 
 ow_script_ceometria_trigger_0:
-    setvar 0x8004 12
-    special SPECIAL_NPC_MOVE_TO_PLAYER
-    waitmovement 0x0
+    npc_move_to_player 12
     applymovement 12 mov_face_left
     waitmovement 0
     compare STORY_PROGRESS 0x3a
@@ -21,10 +20,7 @@ ow_script_ceometria_trigger_0:
     gotoif 0 block
     loadpointer 0 str_let_through
     callstd MSG
-    setvar 0x8004 12
-    setvar 0x8005 0x36
-    setvar 0x8006 0x10
-    special SPECIAL_NPC_MOVE_TO
+    npc_move_to 12 0x36 0x10
     addvar CEOMETRIA_CAN_ENTER_FOREST_CEMETERY 1
     releaseall
     end
@@ -33,11 +29,7 @@ ow_script_ceometria_trigger_0:
 block:
     loadpointer 0 str_block
     callstd MSG
-    setvar 0x8004 12
-    setvar 0x8005 0x36
-    setvar 0x8006 0x10
-    special SPECIAL_NPC_MOVE_TO
-    waitmovement 0x0
+    npc_move_to 12 0x36 0x10
     applymovement 0xFF mov_step_left
     waitmovement 0
     releaseall

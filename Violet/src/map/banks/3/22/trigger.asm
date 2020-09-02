@@ -4,6 +4,7 @@
 .include "mugshot.s"
 .include "flags.s"
 .include "overworld_script.s"
+.include "pathfinding.s"
 
 .global ow_script_0x937675
 .global ow_script_0x936d7a
@@ -32,9 +33,7 @@ end
 lockall
 clearflag PKMNMENU
 showsprite 0xb
-setvar 0x8004 0xb
-special 0x1b
-waitmovement 0x0
+npc_move_to_player 0xb
 faceplayer
 fadesong 0
 loadpointer 0x0 str_0x936bf6
@@ -70,11 +69,7 @@ goto ow_script_0x936d7a
 ow_script_0x936d7a:
 loadpointer 0x0 str_0x937369
 show_mugshot MUGSHOT_MISTRAL MUGSHOT_LEFT
-setvar 0x8004 0xb
-setvar 0x8005 0xf
-setvar 0x8006 0x16
-special 0x24
-waitmovement 0x0
+npc_move_to 0xb 0xf 0x16
 hidesprite 0xb
 goto ow_script_0x937675
 

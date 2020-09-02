@@ -260,6 +260,12 @@ special_table equ 0x0815FCC0
 
 .org (special_table + 134 * 4)
         .word shell_get_encounter | 1
+.org (special_table + 135 * 4)
+        .word special_overworld_effect_explosion | 1
+.org (special_table + 136 * 4)
+        .word npc_move_to_block_movements | 1
+.org (special_table + 137 * 4)
+        .word npc_move_to_unblock_movements | 1
 
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1
