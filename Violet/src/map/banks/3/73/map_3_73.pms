@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_444",
 		"events": {
-			"person_cnt": 19,
+			"person_cnt": 21,
 			"warp_cnt": 1,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
@@ -140,7 +140,7 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": "12",
+					"y": "10",
 					"target_index": 6,
 					"field_3": 0,
 					"picture": "238",
@@ -166,12 +166,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": "11",
+					"y": "10",
 					"target_index": "7",
 					"field_3": 0,
 					"picture": "238",
 					"flag": "5 | 0x8000",
-					"x": "8",
+					"x": "10",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -192,12 +192,12 @@
 				{
 					"is_trainer": "0",
 					"script": "0",
-					"y": "12",
+					"y": "9",
 					"target_index": 8,
 					"field_3": 0,
 					"picture": "238",
 					"flag": "5 | 0x8000",
-					"x": "10",
+					"x": "8",
 					"field_2": 0,
 					"level": 0,
 					"alert_radius": 0,
@@ -248,7 +248,7 @@
 					"target_index": 10,
 					"field_3": 0,
 					"picture": "179",
-					"flag": "3 | 0x8000",
+					"flag": "3",
 					"x": "8",
 					"field_2": 0,
 					"level": 0,
@@ -358,7 +358,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "10",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_KOKOWEI",
@@ -382,7 +382,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "10",
 					"value": {
 						"item": 0,
 						"species": 0,
@@ -454,7 +454,7 @@
 					"is_trainer": 0,
 					"alert_radius": 0,
 					"script": 0,
-					"flag": 0,
+					"flag": "11",
 					"value": {
 						"item": 0,
 						"species": "POKEMON_WINGULL",
@@ -482,6 +482,54 @@
 					"value": {
 						"item": 0,
 						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "20",
+					"picture": "92",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "8",
+					"y": "8",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "11 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "21",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "8",
+					"y": "9",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "12 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_RIHORNIOR",
 						"berry_tree_idx": 0
 					}
 				}

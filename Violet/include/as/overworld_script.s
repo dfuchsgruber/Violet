@@ -992,9 +992,9 @@
 .hword \animid
 .endm
 
-.macro setanimation animid var
+.macro setanimation arg_idx var
 .byte 0x9d
-.byte \animid
+.byte \arg_idx
 .hword \var
 .endm
 

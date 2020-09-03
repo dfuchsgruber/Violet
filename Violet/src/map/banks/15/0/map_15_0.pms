@@ -165,7 +165,7 @@
 				},
 				{
 					"target_index": "7",
-					"picture": "239",
+					"picture": "237",
 					"field_2": 0,
 					"field_3": 0,
 					"x": "10",
@@ -1000,8 +1000,8 @@
 					"picture": 28,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 47,
-					"y": 48,
+					"x": "48",
+					"y": "48",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1231,7 +1231,7 @@
 				},
 				{
 					"target_index": "48",
-					"picture": 92,
+					"picture": "93",
 					"field_2": 0,
 					"field_3": 0,
 					"x": 60,

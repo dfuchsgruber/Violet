@@ -194,10 +194,15 @@ mugshot mugshots[] = {
 		[MUGSHOT_SCARED] = gfx_mug_lucky_scaredTiles,
 		[MUGSHOT_SHOCKED] = gfx_mug_lucky_shockedTiles}, gfx_mug_luckyPal, str_mug_lucky},
 	[MUGSHOT_LESTER_YOUNG] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_lester_youngTiles}, gfx_mug_lester_youngPal, str_mug_lester
+		{[MUGSHOT_NORMAL] = gfx_mug_lester_youngTiles,
+		[MUGSHOT_SHOCKED] = gfx_mug_lester_young_shockedTiles,
+		[MUGSHOT_SAD] = gfx_mug_lester_young_sadTiles,
+		}, gfx_mug_lester_youngPal, str_mug_lester
 	},
 	[MUGSHOT_ROMAN] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_romanTiles}, gfx_mug_romanPal, str_mug_roman
+		{[MUGSHOT_NORMAL] = gfx_mug_romanTiles,
+		[MUGSHOT_HAPPY] = gfx_mug_roman_happyTiles
+		}, gfx_mug_romanPal, str_mug_roman
 	},
 	
 };

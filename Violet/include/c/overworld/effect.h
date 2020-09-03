@@ -185,5 +185,7 @@ extern const u8 overworld_effect_script_move_deoxys_rock[];
 extern const u8 overworld_effect_script_unk_44[];
 extern const u8 overworld_effect_script_unk_45[];
 extern const u8 overworld_effect_script_explosion[];
+extern const u8 overworld_effect_script_npc_transparent_flicker[];
+extern const u8 overworld_effect_script_npc_transparent_fade[];
 
 #endif

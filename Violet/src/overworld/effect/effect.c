@@ -3,6 +3,11 @@
 #include "overworld/sprite.h"
 #include "overworld/effect.h"
 #include "vars.h"
+#include "io.h"
+#include "callbacks.h"
+#include "save.h"
+#include "math.h"
+#include "debug.h"
 
 /**
 graphic overworld_effect_explosion_graphic = {
@@ -48,7 +53,7 @@ static oam_template overworld_effect_explosion_oam_template = {
 void overworld_effect_explosion() {
     s16 x = (s16)(overworld_effect_state.x + 7);
     s16 y = (s16)(overworld_effect_state.y + 7);
-    overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 0);
+    overworld_effect_ow_coordinates_to_screen_coordinates(&x, &y, 8, 8);
     u8 oam_idx = oam_new_backward_search(&overworld_effect_explosion_oam_template, x, y , 0);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oam_gfx_anim_start(oams + oam_idx, 0);
@@ -58,6 +63,91 @@ void special_overworld_effect_explosion() {
     overworld_effect_state.x = *var_access(0x8004);
     overworld_effect_state.y = *var_access(0x8005);
     overworld_effect_new(OVERWORLD_EFFECT_EXPLOSION);
+}
+
+static void overworld_effect_npc_transparent_flicker_big_callback(u8 self) {
+    u8 person_idx = (u8)big_callbacks[self].params[0];
+    u16 amplitude = big_callbacks[self].params[1];
+    u16 period = big_callbacks[self].params[2];
+    u16 *frame = big_callbacks[self].params + 3;
+    u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
+    if (npc_idx < NUM_NPCS) {
+        if (*frame <= period) {
+            FIXED t = FIXED_DIV(INT_TO_FIXED(*frame), INT_TO_FIXED(2 * period));
+            int y = FIXED_TO_INT(FIXED_MUL(FIXED_SIN(t), INT_TO_FIXED(amplitude)));
+            io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31 - y) | IO_BLDALPHA_EVB(y)));
+            dprintf("Set eva to %d, evb to %d\n", 31 - y, y);
+            ++*frame;
+            return;
+        } else {
+            oams[npcs[npc_idx].oam_id].final_oam.attr0 &= (u16)(~ATTR0_MODE_SEMI_TRANSPARENT);
+        }
+    }
+
+    big_callback_delete(self);
+    overworld_effect_remove_from_active_list(OVERWORLD_EFFECT_NPC_TRANSPARENT_FLICKER);
+}
+
+void overworld_effect_npc_transparent_flicker() {
+    u8 person_idx = (u8)overworld_effect_state.x;
+    u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
+    u8 amplitude = (u8)overworld_effect_state.y;
+    u8 half_period = (u8)overworld_effect_state.height;
+    u8 cb_idx = big_callback_new(overworld_effect_npc_transparent_flicker_big_callback, 1);
+    big_callbacks[cb_idx].params[0] = person_idx;
+    big_callbacks[cb_idx].params[1] = amplitude;
+    big_callbacks[cb_idx].params[2] = half_period;
+    io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND | 
+        IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BACKDROP_SECOND | 
+        IO_BLDCNT_OBJ_FIRST);
+    io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31) | IO_BLDALPHA_EVB(0)));
+    oams[npcs[npc_idx].oam_id].final_oam.attr0 |= ATTR0_MODE_SEMI_TRANSPARENT;
+}
+
+static void overworld_effect_npc_transparent_fade_big_callback(u8 self) {
+    u8 person_idx = (u8)big_callbacks[self].params[0];
+    u16 from = big_callbacks[self].params[1];
+    u16 to = big_callbacks[self].params[2];
+    u16 duration = big_callbacks[self].params[3];
+    u16 *frame = big_callbacks[self].params + 4;
+    u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
+    if (npc_idx < NUM_NPCS) {
+        if (*frame <= duration) {
+            FIXED dx = INT_TO_FIXED(duration);
+            FIXED dy = INT_TO_FIXED(to - from);
+            FIXED m = FIXED_DIV(dy, dx);
+            int y = FIXED_TO_INT(FIXED_ADD(INT_TO_FIXED(from), FIXED_MUL(m, INT_TO_FIXED(*frame))));
+            io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31 - y) | IO_BLDALPHA_EVB(y)));
+            dprintf("Set eva to %d, evb to %d\n", 31 - y, y);
+            if (31 <= y) {
+                oams[npcs[npc_idx].oam_id].flags |= OAM_FLAG_INVISIBLE;
+            } else {
+                oams[npcs[npc_idx].oam_id].flags &= (u16)(~OAM_FLAG_INVISIBLE);
+            }
+            ++*frame;
+            return;
+        }
+    }
+    big_callback_delete(self);
+    overworld_effect_remove_from_active_list(OVERWORLD_EFFECT_NPC_TRANSPARENT_FADE);
+}
+
+void overworld_effect_npc_transparent_fade() {
+    u8 person_idx = (u8)overworld_effect_state.x;
+    u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
+    u8 from = (u8)overworld_effect_state.y;
+    u8 to = (u8)overworld_effect_state.height;
+    u8 duration = (u8)overworld_effect_state.bg_priority;
+    u8 cb_idx = big_callback_new(overworld_effect_npc_transparent_fade_big_callback, 1);
+    big_callbacks[cb_idx].params[0] = person_idx;
+    big_callbacks[cb_idx].params[1] = from;
+    big_callbacks[cb_idx].params[2] = to;
+    big_callbacks[cb_idx].params[3] = duration;
+    io_set(IO_BLDCNT, IO_BLDCNT_ALPHA_BLENDING | IO_BLDCNT_BG0_SECOND | IO_BLDCNT_BG1_SECOND | 
+        IO_BLDCNT_BG2_SECOND | IO_BLDCNT_BG3_SECOND | IO_BLDCNT_BACKDROP_SECOND | 
+        IO_BLDCNT_OBJ_FIRST);
+    io_set(IO_BLDALPHA, (u16)(IO_BLDALPHA_EVA(31) | IO_BLDALPHA_EVB(0)));
+    oams[npcs[npc_idx].oam_id].final_oam.attr0 |= ATTR0_MODE_SEMI_TRANSPARENT;
 }
 
 const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
@@ -132,4 +222,6 @@ const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_UNK_44] = overworld_effect_script_unk_44,
     [OVERWORLD_EFFECT_UNK_45] = overworld_effect_script_unk_45,
     [OVERWORLD_EFFECT_EXPLOSION] = overworld_effect_script_explosion,
+    [OVERWORLD_EFFECT_NPC_TRANSPARENT_FLICKER] = overworld_effect_script_npc_transparent_flicker,
+    [OVERWORLD_EFFECT_NPC_TRANSPARENT_FADE] = overworld_effect_script_npc_transparent_fade,
 };
