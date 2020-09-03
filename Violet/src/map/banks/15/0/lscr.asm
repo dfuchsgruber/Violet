@@ -6,6 +6,7 @@
 .include "flags.s"
 .include "person_behaviours.s"
 .include "movements.s"
+.include "specials.s"
 
 .global lscr_0x8f5100
 .global ow_script_0x8d3195
@@ -76,6 +77,7 @@ checksound
 callasm cmdx2D_force_pals_to_black
 setvar STORY_PROGRESS 0x15
 // writebytetooffset 0x2 0x2036e28
+setflag FLAG_DONT_SHOW_MAP_NAME_POPUP
 warpmuted 0x3 0x49 0xff 0x8 0x24
 waitstate
 end
@@ -101,12 +103,13 @@ callstd MSG
 applymovement 39 mov_6d
 waitmovement 0
 spritebehave 39 BEHAVIOUR_WANDER_AROUND
-movesprite 39 0x30 0x30
 movesprite2 39 0x30 0x30
 pause 16
 loadpointer 0x0 str_7
 show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT emotion=MUGSHOT_RUMINATIVE
 addvar STORY_PROGRESS 0x2
+clearflag FLAG_DONT_SHOW_MAP_NAME_POPUP
+special SPECIAL_MAP_TRANSITION_SHOW_NAMESPACE
 releaseall
 end
 

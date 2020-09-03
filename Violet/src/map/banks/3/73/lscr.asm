@@ -229,10 +229,14 @@ ow_script_0x8d7960:
 	special SPECIAL_NPC_PATHFINDING_BLOCK_MOVEMENTS
 	// Explosions to "cover" the frames needed to find all paths
 	explosion 0x5 0x39
+	setmaptile 0x5 0x39 0x29c 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	npc_move_to 1 0x8 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
 	npc_move_to 2 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
 	checkanimation OVERWORLD_EFFECT_EXPLOSION
 	explosion 0xd 0x3a
+	setmaptile 0xd 0x39 0x29a 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	npc_move_to 3 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
 	npc_move_to 4 0x9 0x32 speed=A_STAR_SPEED_FAST waitmovement=0
 	checkanimation OVERWORLD_EFFECT_EXPLOSION
@@ -246,13 +250,19 @@ ow_script_0x8d7960:
 	applymovement 11 mov_6u_slow
 
 	explosion 0x9 0x3a
+	setmaptile 0x9 0x3a 0x293 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	checkanimation OVERWORLD_EFFECT_EXPLOSION
 	explosion 0x8 0x39
+	setmaptile 0x8 0x39 0x29a 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	waitmovement 11
 	call ow_script_earthquake
 	explosion 0x6 0x34
 	pause 8
 	explosion 0xc 0x36
+	setmaptile 0xc 0x36 0x295 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	pause 32
 	cry POKEMON_DEOXYS 0
 	waitcry
@@ -325,16 +335,28 @@ ow_script_0x8d7960:
 	waitcry
 	pause 32
 	explosion 0x7 0x18
+	setmaptile 0x7 0x18 0x1cd 0
+	setmaptile 0x8 0x18 0x297 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	pause 48
 	explosion 0xb 0x19 
+	setmaptile 0xb 0x19 0x1cd 0
+	setmaptile 0xa 0x19 0x296 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	waitmovement 0
 	call ow_script_earthquake
 	applymovement 11 mov_15u_slow
 	applymovement 0xFF mov_15u_slow
 	pause 104
 	explosion 0xb 0x17 
+	setmaptile 0xb 0x17 0x1cd 0
+	setmaptile 0xa 0x17 0x296 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	pause 48
 	explosion 0x7 0x13
+	setmaptile 0x7 0x13 0xf6 0
+	setmaptile 0x8 0x13 0x29e 0
+	special SPECIAL_MAP_UPDATE_BLOCKS
 	pause 16
 	explosion 0xc 0xf
 	pause 64
@@ -557,8 +579,6 @@ ow_script_0x8d7960:
 	cry POKEMON_REGISTEEL 0x0
 	call ow_script_earthquake
 	waitcry
-	call ow_script_earthquake
-	call ow_script_earthquake
 	cry POKEMON_DEOXYS 0x0
 	waitcry
 	fadescreen 0x1

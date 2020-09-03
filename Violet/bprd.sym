@@ -1041,3 +1041,4 @@ overworld_effect_script_move_deoxys_rock = 0x81ddc36;
 overworld_effect_script_unk_44 = 0x81ddc3c;
 overworld_effect_script_unk_45 = 0x81ddc42;
 overworld_effect_remove_from_active_list = 0x08083760 | 1;
+map_transition_show_namespace = 0x08098228 | 1;

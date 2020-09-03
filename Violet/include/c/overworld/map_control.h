@@ -175,4 +175,10 @@ void ambient_cry_proceed(u16 *state, u16 *delay);
  **/
 int map_position_to_bg_tilemap_offset(stru_map_displ_cntrl *c, s16 x, s16 y);
 
+/**
+ * Shows the name of the map namespace as popup.
+ * @param pal_into_restore If the palette is to be saved into the restore buffer
+ **/
+void map_transition_show_namespace(bool pal_into_restore);
+
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */
