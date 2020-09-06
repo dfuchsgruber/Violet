@@ -35,6 +35,8 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	clearflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_1_SOLVED
+	end
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE
 	givepokemon POKEMON_ALTARIA 50 ITEM_ALTARIANIT 0 0 0
 	trainerbattlestd 0x0 0x300 0 str_beforea str_aftera

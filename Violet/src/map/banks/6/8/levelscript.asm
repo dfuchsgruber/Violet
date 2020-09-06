@@ -9,6 +9,7 @@
 .include "levelscript_types.s"
 .include "difficulties.s"
 .include "ordinals.s"
+.include "person_behaviours.s"
 
 .global levelscripts_bruchfels_gym_room_1
 
@@ -27,8 +28,11 @@ lscr_setmaptile:
 lscr_move_boulders:
     checkflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_1_SOLVED
     gotoif NOT_EQUAL dont_move_boulders
-    movesprite2 1 0x5 0x6
-    movesprite2 3 0x7 0x6
-    movesprite2 4 0xe 0x5
+    movesprite2 1 0x1 0x5
+    spritebehave 1 BEHAVIOUR_FACE_LEFT
+    movesprite2 3 0x5 0x5
+    spritebehave 3 BEHAVIOUR_FACE_UP
+    movesprite2 2 2 9
+    spritebehave 2 BEHAVIOUR_FACE_LEFT
 dont_move_boulders:
     end

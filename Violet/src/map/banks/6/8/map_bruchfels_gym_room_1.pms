@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_bruchfels_gym_room_1",
 		"events": {
-			"person_cnt": 6,
+			"person_cnt": 5,
 			"warp_cnt": 2,
-			"trigger_cnt": 8,
+			"trigger_cnt": 6,
 			"signpost_cnt": 0,
 			"persons": [
 				{
@@ -12,7 +12,7 @@
 					"picture": "97",
 					"script_std": "PERSON_PUZZLE_BOULDER",
 					"field_3": 0,
-					"x": "2",
+					"x": "3",
 					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
@@ -36,10 +36,10 @@
 					"picture": "97",
 					"script_std": "PERSON_PUZZLE_BOULDER",
 					"field_3": 0,
-					"x": "14",
-					"y": "15",
+					"x": "10",
+					"y": "7",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -60,32 +60,8 @@
 					"picture": "97",
 					"script_std": "PERSON_PUZZLE_BOULDER",
 					"field_3": 0,
-					"x": "9",
-					"y": "6",
-					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_DOWN",
-					"behaviour_range": {
-						"x": 0,
-						"y": 0
-					},
-					"field_B": 0,
-					"is_trainer": 0,
-					"alert_radius": 0,
-					"script": 0,
-					"flag": 0,
-					"value": {
-						"item": 0,
-						"species": 0,
-						"berry_tree_idx": 0
-					}
-				},
-				{
-					"target_index": "4",
-					"picture": "97",
-					"script_std": "PERSON_PUZZLE_BOULDER",
-					"field_3": 0,
-					"x": "15",
-					"y": "11",
+					"x": "10",
+					"y": "13",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -104,12 +80,12 @@
 					}
 				},
 				{
-					"target_index": "5",
+					"target_index": "4",
 					"picture": "18",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "8",
-					"y": "7",
+					"x": "9",
+					"y": "8",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_ROTATE_COUNTERCLOCKWISE",
 					"behaviour_range": {
@@ -128,21 +104,21 @@
 					}
 				},
 				{
-					"target_index": "6",
+					"target_index": "5",
 					"picture": "56",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "9",
-					"y": "13",
+					"x": "7",
+					"y": "6",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_LEFT",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
 					},
 					"field_B": 0,
 					"is_trainer": "1",
-					"alert_radius": "1",
+					"alert_radius": "2",
 					"script": "ow_script_map_bruchfels_gym_trainer_2",
 					"flag": 0,
 					"value": {
@@ -154,7 +130,7 @@
 			],
 			"warps": [
 				{
-					"x": "8",
+					"x": "6",
 					"y": "16",
 					"level": 0,
 					"target_warp_idx": "1",
@@ -162,7 +138,7 @@
 					"target_bank": "6"
 				},
 				{
-					"x": "8",
+					"x": "6",
 					"y": "2",
 					"level": 0,
 					"target_warp_idx": 0,
@@ -172,8 +148,8 @@
 			],
 			"triggers": [
 				{
-					"x": "2",
-					"y": "4",
+					"x": "3",
+					"y": "5",
 					"level": 0,
 					"field_5": 0,
 					"var": "0x4001",
@@ -183,29 +159,7 @@
 					"script": "ow_script_bruchfels_gym_puzzle_flip_boulders_vertically"
 				},
 				{
-					"x": "5",
-					"y": "6",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4001",
-					"value": "99",
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_bruchfels_gym_puzzle_room_1_switch"
-				},
-				{
-					"x": "7",
-					"y": "6",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4001",
-					"value": "99",
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_bruchfels_gym_puzzle_room_1_switch"
-				},
-				{
-					"x": "14",
+					"x": "1",
 					"y": "5",
 					"level": 0,
 					"field_5": 0,
@@ -216,8 +170,30 @@
 					"script": "ow_script_bruchfels_gym_puzzle_room_1_switch"
 				},
 				{
-					"x": "7",
-					"y": "8",
+					"x": "2",
+					"y": "9",
+					"level": 0,
+					"field_5": 0,
+					"var": "0x4001",
+					"value": "99",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_bruchfels_gym_puzzle_room_1_switch"
+				},
+				{
+					"x": "5",
+					"y": "5",
+					"level": 0,
+					"field_5": 0,
+					"var": "0x4001",
+					"value": "99",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_bruchfels_gym_puzzle_room_1_switch"
+				},
+				{
+					"x": "10",
+					"y": "9",
 					"level": 0,
 					"field_5": 0,
 					"var": "0x4001",
@@ -227,8 +203,8 @@
 					"script": "ow_script_bruchfels_gym_puzzle_rotate_boulders"
 				},
 				{
-					"x": "9",
-					"y": "8",
+					"x": "8",
+					"y": "9",
 					"level": 0,
 					"field_5": 0,
 					"var": "0x4001",
@@ -236,28 +212,6 @@
 					"field_A": 0,
 					"field_B": 0,
 					"script": "ow_script_bruchfels_gym_puzzle_rotate_boulders"
-				},
-				{
-					"x": "15",
-					"y": "8",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4001",
-					"value": "99",
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_bruchfels_gym_puzzle_flip_boulders_horizontally"
-				},
-				{
-					"x": "13",
-					"y": "8",
-					"level": 0,
-					"field_5": 0,
-					"var": "0x4001",
-					"value": "99",
-					"field_A": 0,
-					"field_B": 0,
-					"script": "ow_script_bruchfels_gym_puzzle_flip_boulders_horizontally"
 				}
 			],
 			"signposts": []
