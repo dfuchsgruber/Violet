@@ -12,8 +12,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "55",
-					"y": "45",
+					"x": "53",
+					"y": "40",
 					"level": 5,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -55,7 +55,7 @@
 					"script_std": "PERSON_POKEMON",
 					"value": {
 						"item": 0,
-						"species": "POKEMON_STARAVIA",
+						"species": "POKEMON_WABLU",
 						"berry_tree_idx": 0
 					}
 				},
@@ -662,8 +662,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 32,
-					"y": 56,
+					"x": "32",
+					"y": "56",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -688,8 +688,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 30,
-					"y": 56,
+					"x": "30",
+					"y": "56",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -740,8 +740,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 30,
-					"y": 52,
+					"x": "30",
+					"y": "52",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -766,8 +766,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 30,
-					"y": 54,
+					"x": "30",
+					"y": "54",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -792,8 +792,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 31,
-					"y": 55,
+					"x": "31",
+					"y": "55",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -844,8 +844,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 29,
-					"y": 51,
+					"x": "29",
+					"y": "51",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -870,8 +870,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "52",
-					"y": "49",
+					"x": "55",
+					"y": "38",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -896,8 +896,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "58",
-					"y": "49",
+					"x": "51",
+					"y": "41",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -974,8 +974,8 @@
 					"picture": "238",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 31,
-					"y": 53,
+					"x": "31",
+					"y": "53",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
@@ -1052,8 +1052,8 @@
 					"picture": 60,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "3",
-					"y": "61",
+					"x": "0",
+					"y": "62",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1078,8 +1078,8 @@
 					"picture": 60,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "1",
-					"y": "61",
+					"x": "0",
+					"y": "60",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1104,8 +1104,8 @@
 					"picture": 60,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "2",
-					"y": "61",
+					"x": "0",
+					"y": "59",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1156,8 +1156,8 @@
 					"picture": "70",
 					"field_2": 0,
 					"field_3": 0,
-					"x": "1",
-					"y": "60",
+					"x": "0",
+					"y": "63",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -1234,8 +1234,8 @@
 					"picture": "93",
 					"field_2": 0,
 					"field_3": 0,
-					"x": 60,
-					"y": 39,
+					"x": "60",
+					"y": "53",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -1749,8 +1749,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "21",
-					"y": "51",
+					"x": "22",
+					"y": "52",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1781,8 +1781,8 @@
 					"flag": "0"
 				},
 				{
-					"x": 54,
-					"y": 30,
+					"x": "54",
+					"y": "30",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {
@@ -1845,8 +1845,8 @@
 					"flag": "0"
 				},
 				{
-					"x": "53",
-					"y": "53",
+					"x": "47",
+					"y": "20",
 					"level": 0,
 					"type": "SIGNPOST_HIDDEN_ITEM",
 					"value": {

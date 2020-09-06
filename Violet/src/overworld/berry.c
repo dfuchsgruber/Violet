@@ -203,6 +203,10 @@ void berry_proceed() {
     u64 lseconds_last_update = rtc_timestamp_to_seconds(&fmem.berry_tree_time_last_update);
     u64 lseconds_current = rtc_timestamp_to_seconds(&time);
     if (lseconds_current < lseconds_last_update) {
+        dprintf("Timestamp of last update is %d.%d.%d clock time: %d:%d (%d s)\n", fmem.berry_tree_time_last_update.day, fmem.berry_tree_time_last_update.month, fmem.berry_tree_time_last_update.year,
+            fmem.berry_tree_time_last_update.hour, fmem.berry_tree_time_last_update.minute, fmem.berry_tree_time_last_update.second);
+        dprintf("Timestamp current is %d.%d.%d clock time: %d:%d (%d s)\n", time.day, time.month, time.year,
+            time.hour, time.minute, time.second);
         dprintf("Warning: The current time is before the last berry tree update, this most likely is a bug...\n");
         return;
     }

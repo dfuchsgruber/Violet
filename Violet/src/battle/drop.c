@@ -80,7 +80,7 @@ static bool drop_rare_item(u8 battler_idx, u16 *item, u8 *cnt) {
         p[i] = (u32)(standard_item_rare_drop_rates[i][1] + offset);
     }
     *item = (u16)(standard_item_rare_drop_rates[choice(p, ARRAY_COUNT(p), NULL)][0]);
-    *cnt = (u8) choice(standard_item_rare_count_rates, ARRAY_COUNT(standard_item_count_rates), NULL);
+    *cnt = (u8) choice(standard_item_rare_count_rates, ARRAY_COUNT(standard_item_rare_count_rates), NULL);
     return true;
 }
 
@@ -99,13 +99,13 @@ static bool drop_type_item(u8 battler_idx, u16 *dst_item, u8 *dst_cnt) {
     if (battlers[battler_idx].type1 == TYPE_PFLANZE || battlers[battler_idx].type2 == TYPE_PFLANZE ||
         battlers[battler_idx].type1 == TYPE_KAEFER || battlers[battler_idx].type2 == TYPE_KAEFER) {
         P_ARRAY_ADD_ITEM(p, items, ITEM_MINIPILZ, 70, p_size);
-        P_ARRAY_ADD_ITEM(p, items, ITEM_RIESENPILZ, 50, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_RIESENPILZ, 10, p_size);
     }
     if (battlers[battler_idx].type1 == TYPE_GESTEIN || battlers[battler_idx].type2 == TYPE_GESTEIN ||
         battlers[battler_idx].type1 == TYPE_BODEN || battlers[battler_idx].type2 == TYPE_BODEN ||
         battlers[battler_idx].type1 == TYPE_FEE || battlers[battler_idx].type2 == TYPE_FEE) {
         P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTAUB, 40, p_size);
-        P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTUECK, 5, p_size);
+        P_ARRAY_ADD_ITEM(p, items, ITEM_STERNENSTUECK, 2, p_size);
     }
     /**
     for (u16 i = ITEM_NORMALJUWEL; i <= ITEM_UNLICHTJUWEL; i++) {
@@ -274,10 +274,10 @@ static bool (*dropping_functions[])(u8, u16*, u8*) = {
 
 static u32 dropping_type_probabilities[] = {
     [DROP_STANDARD_ITEM] = 30,
-    [DROP_RARE_ITEM] = 3,
-    [DROP_TYPE_ITEM] = 5,
-    [DROP_COLOR_ITEM] = 5,
-    [DROP_SPECIES_ITEM] = 3,
+    [DROP_RARE_ITEM] = 2,
+    [DROP_TYPE_ITEM] = 3,
+    [DROP_COLOR_ITEM] = 3,
+    [DROP_SPECIES_ITEM] = 2,
     [DROP_BERRY_ITEM] = 0, // For now, we don't drop any berries
     [DROP_EVOLUTION_ITEM] = 1,
 };

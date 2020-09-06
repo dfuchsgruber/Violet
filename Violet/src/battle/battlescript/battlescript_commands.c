@@ -534,4 +534,3 @@ void bsc_command_x06_typecalc_scan_effectiveness_table(u8 move_type) {
         }
     }
 }
-

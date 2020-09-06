@@ -47,16 +47,16 @@ spritebehave 39 BEHAVIOUR_FACE_UP
 dont_move_woman:
 movesprite2 0x6 0x1c 0x31
 spritebehave 0x6 BEHAVIOUR_LOOK_AROUND
-movesprite2 25 0x23 0x2b
-movesprite2 26 0x27 0x29
-movesprite2 27 0x2c 0x26
-movesprite2 28 0x34 0x29
-movesprite2 29 0x36 0x2e
-movesprite2 30 0x35 0x32
-movesprite2 31 0x38 0x34
-movesprite2 32 0x1f 0x2e
-movesprite2 33 0x34 0x27
-movesprite2 38 0x26 0x28
+movesprite2 25 38 8
+movesprite2 26 35 37
+movesprite2 27 34 41
+movesprite2 28 41 52
+movesprite2 29 55 40
+movesprite2 30 43 38
+movesprite2 31 43 40
+movesprite2 32 40 41
+movesprite2 33 36 45
+movesprite2 38 30 45
 return
 
 

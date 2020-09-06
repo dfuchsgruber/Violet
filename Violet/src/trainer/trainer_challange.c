@@ -253,6 +253,7 @@ bool trigger_npc_spotting() {
 
     // First check for special "spottings", as we don't wany any of those to be mixed with a trainer challange
     for (u8 i = 0; i < 16; i++) {
+        if (!npcs[i].flags.active) continue;
         if (pokeradar_npc_alert(i))
             return true;
         if (trainerbattle_pirate_alert(i))
