@@ -140,18 +140,14 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     if (tag >= OW_PAL_TAG_BERRY_BASE && tag < (OW_PAL_TAG_BERRY_BASE + NUM_OW_PAL_TAGS_BERRY)) {
         return overworld_palette_berry_get_by_tag(tag);
     }
-    if (tag == OW_PAL_TAG_MUSHROOM)
-        return overworld_palette_get_by_mushroom();
-    else if (tag == OW_PAL_TAG_SHELL)
-        return overworld_palette_get_by_shell();
-    else if (tag == OW_PAL_TAG_BOULDER_GYM_PUZZLE)
-        return overworld_palette_get_gym_puzzle_boulder();
-    else if (tag == OW_PAL_TAG_BOULDER_HAY_BALE)
-        return overworld_palette_get_hay_bale_boulder();
-    else if (tag == OW_PAL_TAG_MEGA_STONE)
-        return overworld_palette_get_mega_stone();
-    else if (tag == OW_PAL_TAG_ROMAN)
-        return &overworld_palette_roman;
+    switch (tag) {
+        case OW_PAL_TAG_MUSHROOM: return overworld_palette_get_by_mushroom();
+        case OW_PAL_TAG_SHELL: return overworld_palette_get_by_shell();
+        case OW_PAL_TAG_BOULDER_GYM_PUZZLE: return overworld_palette_get_gym_puzzle_boulder();
+        case OW_PAL_TAG_BOULDER_HAY_BALE: return overworld_palette_get_hay_bale_boulder();
+        case OW_PAL_TAG_ROMAN: return &overworld_palette_roman;
+        case OW_PAL_TAG_MEGA_STONE: return overworld_palette_get_mega_stone();
+    }
     u8 idx = overworld_npc_palette_get_idx(tag);
     // dprintf("Tag 0x%x is at idx %d in pal-table.\n", tag, idx);
     if (idx != 0xFF) {

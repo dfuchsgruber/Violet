@@ -32,19 +32,11 @@ str_0x8d43b9:
 .endif
 
 ow_script_map_15_5_trainer_1:
-checkflag ROUTE_3_MILL_SAVED_ALTARIA_EGG
-gotoif LESS ow_script_0x8d48b1
-loadpointer 0x0 str_0x8d48e6
-callstd MSG
-end
-
-
-ow_script_0x8d48b1:
-setvar NEXT_POKEMON_SHINY 0x1
-setvar 0x8000 POKEMON_WABLU
-call ow_script_find_egg
-setvar NEXT_POKEMON_SHINY 0x0
-end
+    checkflag ROUTE_3_MILL_SAVED_ALTARIA_EGG
+    gotoif NOT_EQUAL ow_script_map_15_5_trigger_0
+    loadpointer 0x0 str_0x8d48e6
+    callstd MSG_FACE
+    end
 
 
 .ifdef LANG_GER

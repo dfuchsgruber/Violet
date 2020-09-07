@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_443",
 		"events": {
-			"person_cnt": 5,
-			"warp_cnt": 2,
+			"person_cnt": 6,
+			"warp_cnt": 5,
 			"trigger_cnt": 1,
 			"signpost_cnt": 0,
 			"persons": [
@@ -12,8 +12,8 @@
 					"picture": 52,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 9,
-					"y": 6,
+					"x": "9",
+					"y": "15",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_UP",
 					"behaviour_range": {
@@ -22,7 +22,7 @@
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
+					"script": "ow_script_map_15_5_trigger_0",
 					"flag": "ROUTE_3_MILL_THIEF",
 					"field_D": 0,
 					"field_B": 0,
@@ -90,8 +90,8 @@
 					"picture": 101,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 9,
-					"y": 4,
+					"x": "9",
+					"y": "14",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_NONE",
 					"behaviour_range": {
@@ -125,10 +125,34 @@
 						"y": 0
 					},
 					"field_B": 0,
-					"is_trainer": "FLAG_ROUTE_3_MILL_HAY_BALE | 0x8000",
+					"is_trainer": "FLAG_ROUTE_3_MILL_HAY_BALE_2 | 0x8000",
 					"alert_radius": 0,
 					"script": 0,
-					"flag": "FLAG_ROUTE_3_MILL_HAY_BALE",
+					"flag": "FLAG_ROUTE_3_MILL_HAY_BALE_2",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "6",
+					"picture": "97",
+					"script_std": "PERSON_HAY_BALE",
+					"field_3": 0,
+					"x": "15",
+					"y": "8",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "FLAG_ROUTE_3_MILL_HAY_BALE_1 | 0x8000",
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_3_MILL_HAY_BALE_1",
 					"value": {
 						"item": 0,
 						"species": 0,
@@ -138,26 +162,50 @@
 			],
 			"warps": [
 				{
-					"x": 9,
-					"y": 17,
+					"x": "9",
+					"y": "5",
 					"level": 0,
 					"target_bank": 15,
 					"target_map": 4,
 					"target_warp_idx": 1
 				},
 				{
-					"x": "9",
-					"y": "15",
+					"x": "12",
+					"y": "14",
 					"level": 0,
 					"target_warp_idx": "2",
+					"target_map": "4",
+					"target_bank": "15"
+				},
+				{
+					"x": "13",
+					"y": "14",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "4",
+					"target_bank": "15"
+				},
+				{
+					"x": "5",
+					"y": "5",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "4",
+					"target_bank": "15"
+				},
+				{
+					"x": "6",
+					"y": "5",
+					"level": 0,
+					"target_warp_idx": "4",
 					"target_map": "4",
 					"target_bank": "15"
 				}
 			],
 			"triggers": [
 				{
-					"x": 8,
-					"y": 6,
+					"x": "9",
+					"y": "13",
 					"level": 0,
 					"field_5": 0,
 					"value": 0,
