@@ -2,8 +2,8 @@
 	"data": {
 		"footer": "map_footer_429",
 		"events": {
-			"person_cnt": 3,
-			"warp_cnt": 2,
+			"person_cnt": 4,
+			"warp_cnt": 3,
 			"trigger_cnt": 0,
 			"signpost_cnt": 0,
 			"persons": [
@@ -39,11 +39,11 @@
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"flag": "ROUTE_3_MILL_ITEM_0",
-					"y": 8,
+					"y": "6",
 					"is_trainer": "0",
 					"field_3": 0,
 					"target_index": 2,
-					"x": 2,
+					"x": "1",
 					"field_2": 0,
 					"alert_radius": 0,
 					"behaviour_range": {
@@ -84,6 +84,30 @@
 						"species": 0,
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "4",
+					"picture": "93",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "16",
+					"y": "5",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_3_ALTARIANIT",
+					"value": {
+						"item": "ITEM_ALTARIANIT",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
@@ -102,12 +126,20 @@
 					"target_bank": 15,
 					"target_map": 5,
 					"target_warp_idx": 0
+				},
+				{
+					"x": "11",
+					"y": "14",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
 				}
 			],
 			"triggers": [],
 			"signposts": []
 		},
-		"levelscripts": "lscr_0x720a74",
+		"levelscripts": "route_3_eg_levelscripts",
 		"connections": {
 			"connection_cnt": 0,
 			"connections": []

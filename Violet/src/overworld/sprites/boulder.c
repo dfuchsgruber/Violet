@@ -65,6 +65,29 @@ palette overworld_boulder_gym_puzzle_palette = {
     .pal = gfx_ow_boulder_gym_puzzlePal, .tag = OW_PAL_TAG_BOULDER_GYM_PUZZLE,
 };
 
+static graphic overworld_gfx_boulder_hay_bale[] = {
+    [0] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [1] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [2] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [3] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [4] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [5] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [6] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [7] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+    [8] = {gfx_ow_boulder_hayTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0,},
+};
+
+overworld_sprite overworld_boulder_hay_bale = {
+    .tiles_tag= 0xFFFF, .pal_tag = OW_PAL_TAG_BOULDER_HAY_BALE,
+    .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
+    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = ow_anim_standard_npc,
+    .graphics = overworld_gfx_boulder_hay_bale, .rotscale_animation = oam_rotscale_anim_table_null, .inanimate = true,
+};
+
+palette overworld_boulder_hay_bale_palette = {
+    .pal = gfx_ow_boulder_hayPal, .tag = OW_PAL_TAG_BOULDER_HAY_BALE,
+};
+
 overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_script_std, u16 value) {
     switch (person_script_std) {
         case PERSON_PUZZLE_BOULDER:
@@ -72,6 +95,8 @@ overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_sc
                 return &overworld_boulder_gym_puzzle_bidirectional;
             else
                 return &overworld_boulder_gym_puzzle_unidirectional;
+        case PERSON_HAY_BALE:
+            return &overworld_boulder_hay_bale;
         default:
             return &overworld_sprite_strength_boulder;
     }
@@ -79,6 +104,10 @@ overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_sc
 
 palette *overworld_palette_get_gym_puzzle_boulder() {
     return &overworld_boulder_gym_puzzle_palette;
+}
+
+palette *overworld_palette_get_hay_bale_boulder() {
+    return &overworld_boulder_hay_bale_palette;
 }
 
 static u32 gym_puzzle_boulder_get_pushable_directions(u8 npc_idx) {

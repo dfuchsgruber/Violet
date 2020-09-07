@@ -35,6 +35,9 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	setflag FRBADGE_5
+	additem ITEM_VM04 1
+	end
 	clearflag FLAG_BRUCHFELS_GYM_PUZZLE_ROOM_1_SOLVED
 	end
 	setflag PLAYER_ABLE_TO_MEGA_EVOLVE

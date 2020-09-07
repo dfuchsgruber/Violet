@@ -81,6 +81,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_BOULDER_GYM_PUZZLE 0x2E02
 #define OW_PAL_TAG_MEGA_STONE 0x2E03
 #define OW_PAL_TAG_ROMAN 0x2E04
+#define OW_PAL_TAG_BOULDER_HAY_BALE 0x2E05
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -149,6 +150,12 @@ overworld_sprite *overworld_sprite_get_by_boulder_person_script_std(u8 person_sc
  * @return the palette
  **/
 palette *overworld_palette_get_gym_puzzle_boulder();
+
+/**
+ * Returns the overworld palette of the hay bale boulders for Route 3's mill.
+ * @return the palette
+ **/
+palette *overworld_palette_get_hay_bale_boulder();
 
 /**
  * Returns the overworld palette of the mega stone npc
@@ -1741,9 +1748,11 @@ extern const color_t gfx_ow_mushroomPal[];
 extern const u8 gfx_ow_shellTiles[];
 extern const color_t gfx_ow_shellPal[];
 extern const u8 gfx_ow_boulder_gym_puzzleTiles[];
+extern const u8 gfx_ow_boulder_hayTiles[];
 extern const color_t gfx_ow_boulder_gym_puzzlePal[];
 extern const color_t gfx_ow_mega_stonePal[];
 extern const color_t gfx_ow_romanPal[];
+extern const color_t gfx_ow_boulder_hayPal[];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

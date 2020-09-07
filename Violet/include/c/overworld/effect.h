@@ -108,6 +108,16 @@ void overworld_effect_oam_callback_grass(oam_object *self);
  **/
 bool tag_is_ground_effect(u16 tag);
 
+/**
+ * Checks if a set of coordinates is outside the camera view.
+ * @param x the x coordinate (7 shifted)
+ * @param y the y coordinate (7 shifted)
+ * @param width the width of the oam in pixels
+ * @param height the height of the oam in pixels
+ * @return if the oam is outside the camera view
+ **/
+bool overworld_effect_is_oam_outside_camera_view(s16 x, s16 y, int width, int height);
+
 
 #define GFX_TAG_OVERWORLD_EFFECT_EXPLOSION 0x1773
 

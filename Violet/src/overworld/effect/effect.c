@@ -150,6 +150,14 @@ void overworld_effect_npc_transparent_fade() {
     oams[npcs[npc_idx].oam_id].final_oam.attr0 |= ATTR0_MODE_SEMI_TRANSPARENT;
 }
 
+bool overworld_effect_is_oam_outside_camera_view(s16 x, s16 y, int width, int height) {
+    int left = save1->x_cam_orig + 7 - 7 - (width / 16);
+    int right = save1->x_cam_orig + 7 + 7 + (width / 16);
+    int top = save1->y_cam_orig + 7 - 5 - (height / 16);
+    int bottom = save1->y_cam_orig + 7 + 5 + (height / 16);
+    return x < left || x > right || y < top || y > bottom;
+}
+
 const u8 *overworld_effects[NUM_OVERWORLD_EFFECTS] = {
     [OVERWORLD_EFFECT_EXCLAMATION_MARK_ICON] = overworld_effect_script_exclamation_mark_icon,
     [OVERWORLD_EFFECT_USE_CUT_ON_GRASS] = overworld_effect_script_use_cut_on_grass,

@@ -14724,25 +14724,25 @@
 			],
 			[
 				{
-					"tile_idx": 0,
+					"tile_idx": 128,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 128,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 128,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
 				},
 				{
-					"tile_idx": 0,
+					"tile_idx": 128,
 					"horizontal_flip": 0,
 					"vertical_flip": 0,
 					"palette_idx": 0
@@ -32758,7 +32758,7 @@
 		"gfx_compressed": 1,
 		"field_2": 0,
 		"field_3": 0,
-		"animation_initialize": "0",
+		"animation_initialize": "tileset_route_3_animation_initialize",
 		"palette_displaced": 0
 	},
 	"label": "maptileset3",
