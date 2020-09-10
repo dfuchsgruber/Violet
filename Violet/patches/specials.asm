@@ -269,6 +269,8 @@ special_table equ 0x0815FCC0
         .word npc_move_to_unblock_movements | 1
 .org (special_table + 138 * 4)
         .word special_map_transition_show_namespace | 1
+.org (special_table + 139 * 4)
+        .word composter_initialize | 1
 
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1

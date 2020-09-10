@@ -34,7 +34,7 @@ str_beforeb:
 str_afterb:
 	.string "After B"
 
-ow_script_test:
+ow_script_test: 
 	callasm composter_initialize
 	waitstate
 	loadpointer 0 str_beforea

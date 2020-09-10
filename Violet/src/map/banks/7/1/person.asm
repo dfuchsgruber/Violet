@@ -6,6 +6,8 @@
 .include "map_connections.s"
 .include "overworld_script.s"
 .include "items.s"
+.include "ordinals.s"
+.include "specials.s"
 
 .global ow_script_map_7_1_person_1
 .global ow_script_0x8deb07
@@ -92,61 +94,40 @@ str_0x8decc8:
 .endif
 
 
-ow_script_mart0x71d78d:
-.hword ITEM_AMRENABEERE
-.hword ITEM_MARONBEERE
-.hword ITEM_PIRSIFBEERE
-.hword ITEM_FRAGIABEERE
-.hword ITEM_WILBIRBEERE
-.hword ITEM_SINELBEERE
-.hword ITEM_PERSIMBEERE
-.hword ITEM_NONE
 
 
 ow_script_map_7_1_person_2:
-loadpointer 0x0 str_0x721f5f
-callstd MSG_YES_NO
-compare LASTRESULT 0x0
-gotoif EQUAL ow_script_0x71d7cf
-setflag TRANS_DISABLE
-clearflag TRANS_PALETTE_FETCH
-preparemsg str_0x71d79e
-waitmsg
-pokemart ow_script_mart0x71d78d
-loadpointer 0x0 str_0x71d3f1
-callstd MSG_KEEPOPEN
-closeonkeypress
-clearflag TRANS_DISABLE
-end
-
-
-ow_script_0x71d7cf:
-loadpointer 0x0 str_0x721ed1
-callstd MSG
-end
+    checkflag FLAG_COMPOSTER
+    gotoif EQUAL composter_received
+    loadpointer 0 str_2_1
+    callstd MSG_KEEPOPEN
+    setflag FLAG_COMPOSTER
+composter_received:
+    loadpointer 0 str_2_0
+    callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL dont_compost
+    loadpointer 0 str_2_3
+    callstd MSG_KEEPOPEN
+    special SPECIAL_COMPOSTER
+    waitstate
+    pause 16
+dont_compost:
+    loadpointer 0 str_2_2
+    callstd MSG_KEEPOPEN
+    release
+    end
 
 
 .ifdef LANG_GER
-
-str_0x721f5f:
-    .string "Hallo! Ich bin der Beerenverkäufer\nvon Theto. Wie mein Name schon\lsagt, verkaufe ich Beeren. Willst\ldu ein paar Beeren kaufen?"
-
-
-
-str_0x71d79e:
-    .string "Such dir etwas aus, mein Sortiment\nist riesig!"
-
-
-
-str_0x71d3f1:
-    .string "Danke für deinen Einkauf. Beehre\nmich bald wieder!"
-
-
-
-str_0x721ed1:
-    .string "Wirklich? Das ist schade, denn\nBeeren können genauso nützlich sein\lwie Tränke oder Pokebälle. Komm\lwieder, wenn du Beeren kaufen\lwillst."
-
-
+str_2_1:
+    .autostring 34 2 "Hallo, junger Trainer!\pIn diesem Haus dreht sich alles um die Gärtnerei!\pIch kann dir helfen, mit Mulch die Erträge deiner gepflanzten Beeren noch zu steigern!\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pHuh?\nWas Mulch denn überhaupt ist?\pGut, dass du fragst!\pIndem man alte Beeren kompostiert, kann man Mulch gewinnen, den man auf unbepflanzten Beerenfeldern ausbringen kann.\pWenn du dann ein neuen Beerenstrauch anpflanzst, wird dieser viel ertragreicher sein.\pToll, nicht wahr?\pUnd ich kann dir helfen, Mulch aus Beeren herzustellen."
+str_2_0:
+    .autostring 34 2 "Möchtest du Beeren zu Mulch kompostieren?"
+str_2_2:
+    .autostring 34 2 "Wenn du Mulch herstellen willst, komm einfach zu mir."
+str_2_3:
+    .autostring 34 2 "Welche Beeren möchtest du zu Mulch kompostieren?"
 .elseif LANG_EN
 
 .endif
