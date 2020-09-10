@@ -405,6 +405,7 @@ static item_gfx_pair item_gfx_pairs[] = {
     [ITEM_MININUGGET] = {.gfx = gfx_item_mininuggetTiles, .pal = gfx_item_mininuggetPal},
     [ITEM_QUARZSTAUB] = { .gfx = gfx_item_quarzstaubTiles, .pal = gfx_item_quarzstaubPal },
     [ITEM_ENERGIEQUARZ] = { .gfx = gfx_item_energiequarzTiles, .pal = gfx_item_energiequarzPal },
+    [ITEM_MULCH] = {.gfx = gfx_item_mulchTiles, .pal = gfx_item_mulchPal},
 };
 
 const u8 *item_get_resource(u16 item_idx, u8 get_palette) {

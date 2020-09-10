@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_81",
 		"events": {
-			"person_cnt": 16,
+			"person_cnt": 19,
 			"warp_cnt": 15,
 			"trigger_cnt": 0,
 			"signpost_cnt": 8,
@@ -415,6 +415,78 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "12"
+					}
+				},
+				{
+					"target_index": "17",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "51",
+					"y": "15",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "16"
+					}
+				},
+				{
+					"target_index": "18",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "52",
+					"y": "15",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "15"
+					}
+				},
+				{
+					"target_index": "19",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "51",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_DUFLOR",
+						"berry_tree_idx": 0
 					}
 				}
 			],

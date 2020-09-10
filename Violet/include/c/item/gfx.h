@@ -812,5 +812,7 @@ extern const u8 gfx_item_quarzstaubTiles[];
 extern const u8 gfx_item_quarzstaubPal[];
 extern const u8 gfx_item_energiequarzTiles[];
 extern const u8 gfx_item_energiequarzPal[];
+extern const u8 gfx_item_mulchTiles[];
+extern const u8 gfx_item_mulchPal[];
 
 #endif

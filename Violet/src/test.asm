@@ -35,6 +35,11 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	callasm composter_initialize
+	waitstate
+	loadpointer 0 str_beforea
+	callstd MSG
+	end
 	setflag FRBADGE_5
 	additem ITEM_VM04 1
 	end

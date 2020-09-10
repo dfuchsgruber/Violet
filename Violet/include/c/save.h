@@ -115,7 +115,8 @@ typedef struct saveblock2 {
 
 
 typedef struct {
-    u8 berry;
+    u8 berry : 7;
+    u8 fertilized : 1;
     u8 stage : 3;
     u8 yield : 3;
     u8 picked_once : 1;

@@ -9,6 +9,7 @@
 #include "constants/pokemon_types.h"
 #include "debug.h"
 #include "battle/controller.h"
+#include "item/item_effect.h"
 
 extern u8 bsc_life_orb[];
 
@@ -92,6 +93,35 @@ bool battle_item_before_attack_attacker() {
             }
             break; // Didn't trigger a battle script, that is done by command 0x7 (i.e. the hook at its end) (this takes care of multi-turn moves)
         }
+    }
+    return false;
+}
+
+extern u8 battlescript_battle_item_hold_effect_restore_hp[];
+
+bool battle_item_restore_hp(u8 battler_idx, u8 move_turn, int hold_effect_parameter) {
+    if (battlers[battler_idx].current_hp <= battlers[battler_idx].max_hp / 2 && !move_turn) {
+        switch (hold_effect_parameter) {
+            case ITEM_EFFECT_HEAL_HP_ALL:
+                hold_effect_parameter = battlers[battler_idx].max_hp;
+                break;
+            case ITEM_EFFECT_HEAL_HP_HALF:
+                hold_effect_parameter = battlers[battler_idx].max_hp / 2;
+                break;
+            case ITEM_EFFECT_HEAL_HP_QUARTER:
+                hold_effect_parameter = battlers[battler_idx].max_hp / 4;
+                break;
+            case ITEM_EFFECT_HEAL_HP_EIGHTH:
+                hold_effect_parameter = battlers[battler_idx].max_hp / 8;
+                break;
+        }
+        damage_to_apply = hold_effect_parameter;
+        if (battlers[battler_idx].current_hp + damage_to_apply > battlers[battler_idx].max_hp) {
+            damage_to_apply = battlers[battler_idx].max_hp - battlers[battler_idx].current_hp;
+        }
+        damage_to_apply *= -1;
+        battlescript_init_and_push_current_callback(battlescript_battle_item_hold_effect_restore_hp);
+        return true;
     }
     return false;
 }

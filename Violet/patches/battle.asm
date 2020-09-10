@@ -721,3 +721,16 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 	ldr r2, =battle_healthbox_add_pokeball_and_mega_indicator | 1
 	bx r2
 	.pool
+
+.org 0x0801be64
+	mov r0, r7 // Battler Idx
+	mov r1, r6 // Move Turn
+	mov r2, r9 // Hold Effect Parameter
+	ldr r3, =battle_item_restore_hp | 1
+	bl _blxr3
+	cmp r0, #0
+	beq battle_item_restore_hp_break
+	bl 0x0801c202
+battle_item_restore_hp_break: 
+	bl 0x0801c8d6 // Break
+	.pool

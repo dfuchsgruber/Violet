@@ -190,7 +190,7 @@ item_effect_t item_effect_evolution_stone = {.trigger_evolution = true};
 
 item_effect_t item_effect_oran_berry = {.heal_hp = true, .hp = 10};
 
-item_effect_t item_effect_sitrus_berry = {.heal_hp = true, .hp = 30};
+item_effect_t item_effect_sitrus_berry = {.heal_hp = true, .hp = ITEM_EFFECT_HEAL_HP_QUARTER};
 
 item_effect_t item_effect_pomeg_berry = {
     .increase_ev_hp = true, .evs = {[STAT_HP] = -10}, .increase_friendship_low = true,

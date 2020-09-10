@@ -36,6 +36,8 @@ u8 berry_tree_initial_items[256] = {
     [12] = ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOBEERE),
     [13] = ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE),
     [14] = ITEM_IDX_TO_BERRY_IDX(ITEM_SINELBEERE),
+    [15] = ITEM_IDX_TO_BERRY_IDX(ITEM_MAGOSTBEERE),
+    [16] = ITEM_IDX_TO_BERRY_IDX(ITEM_PIRSIFBEERE),
 };
 
 void berry_tree_calculate_yield(u8 berry_tree_idx) {
@@ -46,8 +48,11 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
     if ((rnd16() % 100) < num_berries_planted) {
         yield++;
         if (rnd16() % 3) {
-            yield += yield / 2;
+            yield += MAX(1, yield / 2);
         }
+    }
+    if (cmem.berry_trees[berry_tree_idx].fertilized) {
+        yield += MAX(1, yield / 2);
     }
     cmem.berry_trees[berry_tree_idx].yield = (u8)(yield & 7);
     // dprintf("Initialized berry tree %d with yield %d\n", berry_tree_idx, yield);
@@ -61,7 +66,7 @@ u16 berry_get_stage_duration(u8 berry_tree_idx) {
 
 
 void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
-    cmem.berry_trees[berry_tree_idx].berry = berry_idx;
+    cmem.berry_trees[berry_tree_idx].berry = (u8)(berry_idx & 127);
     cmem.berry_trees[berry_tree_idx].stage = (u8)(stage & 7);
     berry_tree_calculate_yield(berry_tree_idx);
     cmem.berry_trees[berry_tree_idx].minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
@@ -112,6 +117,7 @@ bool berry_pick() {
     item_add(item_idx, count);
     cmem.berry_trees[*var_access(0x8000)].picked_once = 1;
     cmem.berry_trees[*var_access(0x8000)].stage = BERRY_STAGE_NO_BERRY;
+    cmem.berry_trees[*var_access(0x8000)].fertilized = 0;
     return true;
 }
 

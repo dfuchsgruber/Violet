@@ -579,8 +579,8 @@ static u8 str_item_prunusbeere_description[] = LANGDEP(
 	PSTRING("When held by a Pokémon, it will be\nused in battle to heal any problem.")
 );
 static u8 str_item_tsitrubeere_description[] = LANGDEP(
-	PSTRING("Item (Tragen) füllt KP im Kampf um\n30 Punkte auf."),
-	PSTRING("When held by a Pokémon, it will be\nused in battle to restore 30 HP.")
+	PSTRING("Item (Tragen) füllt KP im Kampf um\nein Viertel des Maximalwerts auf."),
+	PSTRING("When held by a Pokémon, it will be\nused in battle to restore a\nquarter of the Pokémons maximum HP.")
 );
 static u8 str_item_giefebeere_description[] = LANGDEP(
 	PSTRING("Item (Tragen) füllt im Kampf KP\nauf, bewirkt aber evtl. Verwirrung."),
@@ -1614,7 +1614,10 @@ static u8 str_item_energiequarz_description[] = LANGDEP(
 	PSTRING("Ein weißer Quarzstein, von\ndem eine starke Energie\nauszugehen scheint."),
 	PSTRING("A white quartz stone that seems\nto emit a very strong energy.")
 );
-
+static u8 str_item_mulch_description[] = LANGDEP(
+	PSTRING("Aus Beeren gewonnener Dünger,\nder Beerensträucher ertragreicher\nwerden lässt."),
+	PSTRING("Fertilizer obtained from berries\nthat increases the yield of\nberry trees.")
+);
 
 item items[] = {
 	{
@@ -3894,8 +3897,8 @@ item items[] = {
 		LANGDEP(PSTRING("Tsitrubeere"), PSTRING("Sitrus Berry")),
 		0x8e, //index
 		20, //price
-		1, //holding_effect_id
-		30, //holding_effect_param
+		HOLD_EFFECT_RESTORE_HP, //holding_effect_id
+		ITEM_EFFECT_HEAL_HP_QUARTER, //holding_effect_param
 		str_item_tsitrubeere_description,
 		0, // Importance
 		0, // exits_bag_on_use
@@ -7790,6 +7793,12 @@ item items[] = {
 		.name = LANGDEP(PSTRING("Energiequarz"), PSTRING("Energy Quartz")),
 		.index = ITEM_ENERGIEQUARZ, .price = 1000,
 		.description = str_item_energiequarz_description, .pocket = POCKET_ITEMS, .type = 4,
+		.field_usage = (void(*)(u8))0x80a2325,
+	},
+	[ITEM_MULCH] = {
+		.name = LANGDEP(PSTRING("Mulch"), PSTRING("Mulch")),
+		.index = ITEM_MULCH, .price = 100,
+		.description = str_item_mulch_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
 	},
 };

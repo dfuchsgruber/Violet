@@ -177,3 +177,29 @@ _bxr1:
 
 .org 0x0801bce4
     .word hook_battle_item_switch_in_effects
+
+.org 0x0813dd18
+    ldr r0, =berry_pouch_get_context_menu_options_standard_hook | 1
+    bx r0 
+    .pool
+    
+.org 0x0813dfc8
+    ldr r0, =berry_pouch_toss_hook_print_string_how_many | 1
+    bx r0
+    .pool
+
+.org 0x0813e020
+    ldr r0, =berry_pouch_toss_hook_get_string_confirm_quantity_to_toss | 1
+    bx r0
+    .pool
+
+.org 0x08465430
+    .word berry_pouch_toss_or_compost_confirmed | 1
+
+.org 0x08465460
+    .word berry_pouch_context_menu_option_compost_text
+    .word berry_pouch_context_menu_option_toss
+
+.org 0x0813dc4c
+    .word berry_pouch_actions
+
