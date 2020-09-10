@@ -116,6 +116,7 @@ void version_upgrade_alpha_2_1_to_2_2() {
     clearflag(POKEDEX_FEATURE_1);
     clearflag(POKEDEX_FEATURE_2);
     clearflag(ROUTE_6_ITEM_1); // Changed to "Heißbrocken", make it obtainable
+    setflag(FLAG_SILVANIA_GYM_OPEN);
     if (checkflag(FLAG_DAYCARE_EGG_SPAWNED)) setflag(KADKADA_ZAUBERWASSER);
     clearflag(FLAG_DAYCARE_EGG_SPAWNED);
     worldmap_flag_state_set(WM_ORINA_CITY);

@@ -12,6 +12,7 @@
 #include "debug.h"
 
 dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
+	/*
     {3, 0, 0x25, 0xd, DTYPE_FOREST}, // Anomia
     {3, 19, 0x2, 0x28, DTYPE_FOREST}, // Route 1
     {3, 19, 0x24, 0x1E, DTYPE_FOREST},
@@ -23,7 +24,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
     {3, 41, 0x7, 0x8, DTYPE_FOREST},
 
     {15, 0, 0x9, 0x2C, DTYPE_FOREST}, // Route 3
-    {3, 3, 0x17, 0xE, DTYPE_FOREST}, // Silvania,
+    {3, 3, 0x17, 0xE, DTYPE_FOREST}, // Kranzdorf,
     {3, 74, 0x13, 0x4, DTYPE_FOREST}, // Feslige Oednis
     {3, 74, 0x8, 0x10, DTYPE_FOREST},
 
@@ -38,7 +39,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
     {3, 57, 0x34, 0x1F, DTYPE_FOREST}, // Trainerschule
 
     {3, 41, 0x2C, 0x14, DTYPE_CAVE}, // Route 2,
-    {1, 0, 0x23, 0x2A, DTYPE_FOREST}, // Silvania Wald
+    {1, 0, 0x23, 0x2A, DTYPE_FOREST}, // Kranzdorf Wald
 	{3, 74, 0x2F, 0x14, DTYPE_CAVE}, // Felsige Odenis
 	{3, 4, 0x35, 0x3, DTYPE_CAVE}, // Kaskada
 
@@ -61,7 +62,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
 	{3, 11, 0x23, 0x1C, DTYPE_OCEAN},
 	{3, 11, 0x25, 0x6, DTYPE_OCEAN},
 	{3, 11, 0x22, 0x39, DTYPE_OCEAN},
-
+	*/
     // TODO
 };
 

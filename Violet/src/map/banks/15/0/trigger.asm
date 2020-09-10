@@ -199,7 +199,7 @@ return
 .ifdef LANG_GER
 
 str_0:
-    .autostring 34 2 "Hey du da!\nStehen geblieben!\pIch lasse euch von Team Violet keinen Fuß nach Silvania setzen!"
+    .autostring 34 2 "Hey du da!\nStehen geblieben!\pIch lasse euch von Team Violet keinen Fuß nach Kranzdorf setzen!"
 str_1:
     .autostring 34 2 "Uff!\nIch habe mich von einem Team Violet Rüpel überrumpeln lassenDOTS"
 str_police:
@@ -221,13 +221,13 @@ str_player_no:
 str_harrenfeld_no:
     .autostring 34 2 "Was?\nDOTS DOTS DOTS\pMit dieser Antwort habe nich nun wirklich nicht gerechnetDOTS\pAber ich verstehe schon!\pIch kann es dir nicht übel nehmen.\pDie Kommandanten von Team Violet sind wirklich angsteinflößende Trainer und es bedarf mutigen Menschen, sie zu stoppen.\pImmerhin ist es ja auch gerade meine Pflicht, diesen Gesetzlosen entgegenzutreten."
 str_6:
-    .autostring 34 2 "Alles klar!\nAuf nach Silvania!\pRin von Team Violet muss gestoppt werden!\pWir dürfen keine Zeit verlieren!"
+    .autostring 34 2 "Alles klar!\nAuf nach Kranzdorf!\pRin von Team Violet muss gestoppt werden!\pWir dürfen keine Zeit verlieren!"
 str_police2:
     .autostring 34 2 "Verstanden, Junior-Kommissar Harrenfeld!"
 
 .elseif LANG_EN
 str_0:
-    .autostring 34 2 "Hey you!\nHalt immediately!\pI won't let you Team Violet guys set a foot into Silvania!"
+    .autostring 34 2 "Hey you!\nHalt immediately!\pI won't let you Team Violet guys set a foot into Kranzdorf!"
 str_1:
     .autostring 34 2 "Yikes!\nI have been defeated by one of those Violet guysDOTS"
 str_police:
@@ -249,7 +249,7 @@ str_player_no:
 str_harrenfeld_no:
     .autostring 34 2 "What?\nDOTS DOTS DOTS\pI did not expect this answer.\pBut I do understand.\pI have to admit that you are right.\pThe commanders of Team Violet really are fearsome trainers and it demands a bold and brave man to stop them.\pFurthermore, it even is my very duty to put a hold to the crimes of those people."
 str_6:
-    .autostring 34 2 "All set!\nLet's go to Silvania!\pRin of Team Violet has to be stopped.\pWe mustn't lose any more time!"
+    .autostring 34 2 "All set!\nLet's go to Kranzdorf!\pRin of Team Violet has to be stopped.\pWe mustn't lose any more time!"
 str_police2:
     .autostring 34 2 "Alright, junior comissioner Harrenfield!"
 
@@ -460,7 +460,7 @@ str_larissa_4:
 str_larissa_5:
     .autostring 34 2 "Wenn du ein wenig Selbstvertrauen brauchst, solltest du dich auf machen, die Arenaleiter dieser Region herauszuforden.\pAn ihnen müssen sich Trainer messen.\pUnd weißt du, Mädchen, da wirst auch du bemerken, dass in dir mehr steckt, als du vielleicht gerade glaubst."
 str_larissa_6:
-    .autostring 34 2 "Silvania liegt zum Beispiel ganz in der Nähe, da könnt ihr Mara herausfordern.\pAllerdingsDOTS\pDen Farmern hier sind einige Pokémon ausgebüchst und es könnte etwas dauern, bis sie ihre Voltilamm-Herde wieder zusammengescheucht haben.\pWarum versucht ihr nicht stattdessen nach Bruchfels zu gelangen?"
+    .autostring 34 2 "Kranzdorf liegt zum Beispiel ganz in der Nähe, da könnt ihr Rosalie herausfordern.\pAllerdingsDOTS\pDen Farmern hier sind einige Pokémon ausgebüchst und es könnte etwas dauern, bis sie ihre Voltilamm-Herde wieder zusammengescheucht haben.\pWarum versucht ihr nicht stattdessen nach Bruchfels zu gelangen?"
 str_karte:
     .autostring 34 2 "PLAYER hat eine Karte erhalten."
 str_larissa_7:

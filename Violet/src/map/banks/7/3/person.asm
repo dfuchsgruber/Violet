@@ -57,7 +57,7 @@ end
 .ifdef LANG_GER
 
 str_0x81c244:
-    .string "Ich liebe es einen Spaziergang\ndurch den Silvania-Wald zu machen.\lDort sind immer diese leuchtenden\lSteine!"
+    .string "Ich liebe es einen Spaziergang\ndurch den Kranzdorf-Wald zu machen.\lDort sind immer diese leuchtenden\lSteine!"
 
 
 .elseif LANG_EN

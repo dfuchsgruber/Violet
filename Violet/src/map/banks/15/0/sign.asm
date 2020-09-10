@@ -14,7 +14,7 @@ end
 .ifdef LANG_GER
 
 str_0x8c7d34:
-    .string "Östlich: Silvania-Wald"
+    .string "Östlich: Kranzdorf-Wald"
 
 
 .elseif LANG_EN

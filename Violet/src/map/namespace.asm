@@ -136,7 +136,7 @@ map_namespaces:
 	.global str_mapnamespace_91
 
 	str_mapnamespace_91:
-		.string "Silvania"
+		.string "Kranzdorf"
 
 
 	.global str_mapnamespace_92
@@ -346,7 +346,7 @@ map_namespaces:
 	.global str_mapnamespace_126
 
 	str_mapnamespace_126:
-		.string "Silvania-Wald"
+		.string "Kranzdorf-Wald"
 
 
 	.global str_mapnamespace_127

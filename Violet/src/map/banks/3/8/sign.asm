@@ -15,13 +15,13 @@ ow_script_route_8_sign_1:
 
 .ifdef LANG_GER
 str_sign_0:
-	.autostring 34 2 "Route 8\nUP_ARROWLaubdorf\lDOWN_ARROWSilvania-Wald"
+	.autostring 34 2 "Route 8\nUP_ARROWLaubdorf\lDOWN_ARROWKranzdorf-Wald"
 str_sign_1:
 	.autostring 34 2 "Hügel der Gelassenheit"
 
 .elseif LANG_EN
 str_sign_0:
-	.autostring 34 2 "Route 8\nUP_ARROWLeafvillage\lDOWN_ARROWSilvania-Forest"
+	.autostring 34 2 "Route 8\nUP_ARROWLeafvillage\lDOWN_ARROWKranzdorf-Forest"
 str_sign_1:
 	.autostring 34 2 "Placid Hill"
 

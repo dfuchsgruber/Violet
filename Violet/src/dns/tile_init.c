@@ -85,7 +85,7 @@ void tile_init(map_footer_t *foot) {
             pal_restore[10*16+10] = dns_color_light_yellow;
             pal_restore[10*16+12] = dns_color_light_yellow_dark;
         } else if (foot->tileset2 == &maptileset302795) {
-            //Silvania
+            //Kranzdorf
             pal_restore[8*16+2] = dns_color_light_yellow_dark;
             pal_restore[8*16+11] = dns_color_light_yellow;
         } else if (foot->tileset2 == &maptileset242637) {

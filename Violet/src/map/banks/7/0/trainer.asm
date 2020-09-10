@@ -13,12 +13,12 @@ ow_script_silvania_clouds_trainer_0:
 
 .ifdef LANG_GER
 str_trainer0_challange:
-    .autostring 34 2 "Die Waldluft von Silvania reicht bis hier hinauf.\pDas heißtDOTS DOTS DOTS\pIch bin unschlagbar!"
+    .autostring 34 2 "Die Waldluft von Kranzdorf reicht bis hier hinauf.\pDas heißtDOTS DOTS DOTS\pIch bin unschlagbar!"
 str_trainer0_defeat:
     .autostring 34 2 "Ach, ich habe ganz vergessen, dass wir die gleiche Luft atmenDOTS"
 .elseif LANG_EN
 str_trainer0_challange:
-    .autostring 34 2 "The forest air of Silvania is also up here.\pThat meansDOTS DOTS DOTS\pI am invincible!"
+    .autostring 34 2 "The forest air of Kranzdorf is also up here.\pThat meansDOTS DOTS DOTS\pI am invincible!"
 str_trainer0_defeat:
     .autostring 34 2 "Oh, seems like I forgot that we breathe the same airDOTS"
 .endif

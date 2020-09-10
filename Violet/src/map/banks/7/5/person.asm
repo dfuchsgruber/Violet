@@ -26,7 +26,7 @@ gym_beaten:
 
 .ifdef LANG_GER
 str_beaten:
-    .autostring 34 2 "Wahnsinn!\nDu hast Mia tatsächlich besiegt.\pIch hab dir das natürlich die ganze Zeit über zugetrautDOTS"
+    .autostring 34 2 "Wahnsinn!\nDu hast Rosalie tatsächlich besiegt.\pIch hab dir das natürlich die ganze Zeit über zugetrautDOTS"
 .elseif LANG_EN
 .endif
 
@@ -40,12 +40,12 @@ end
 .ifdef LANG_GER
 
 str_0x81aff5:
-    .string "Mia legt großen Wert auf\nNatürlichkeit. Deswegen ist in der\lArena auch alles aus natürlichen\lRohstoffen hergestellt."
+    .string "Rosalie legt großen Wert auf\nNatürlichkeit. Deswegen ist in der\lArena auch alles aus natürlichen\lRohstoffen hergestellt."
 
 
 
 str_0x81b06e:
-    .string "Sogar die Wände sind aus Holz aus\ndem Silvania-Wald."
+    .string "Sogar die Wände sind aus Holz aus\ndem Kranzdorf-Wald."
 
 
 .elseif LANG_EN
@@ -114,7 +114,7 @@ str_0x81b250:
 
 
 str_0x81b289:
-    .string "Erzähl es nicht Mia, aber manchmal\nesse ich diese Beeren, wenn ich\lhungrig werde."
+    .string "Erzähl es nicht Rosalie, aber manchmal\nesse ich diese Beeren, wenn ich\lhungrig werde."
 
 
 .elseif LANG_EN
@@ -163,7 +163,7 @@ end
 .ifdef LANG_GER
 
 str_mia:
-	.string "Mia"
+	.string "Rosalie"
 
 
 str_0x8f078d:

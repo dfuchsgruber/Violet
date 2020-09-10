@@ -275,7 +275,7 @@ str_0x959e02:
 
 
 str_0x959af2:
-    .autostring 34 2 "Was für ein seltsames Gefühl!\pAls wäre unser Aufeinandertreffen vorherbestimmt.\pMein Name ist Mistral und ich bin der Kommandant der zweiten Division von Team Violet.\pDu musst wohl PLAYER sein, der Rin im Silvania-Wald besiegt hat.\pDu bist tatsächlich so faszinierend, wie ich es mir vorgestellt hatte.\pIch bin mir sicher, dass du hier bist, um zu verhindern, dass ich das Magmaherz aus diesem Museum stehle.\pAber dieses Artefakt ist nicht dafür gemacht, in einer Vitrine zu verstauben.\pEs beinhaltet eine imense Macht, die nur darauf wartet, freigesetzt zu werden.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch würde gerne an Ort und Stelle gegen dich kämpfen, PLAYERDOTS\pAber das muss noch etwas warten!\pStattdessen darfst du mit einer meiner Elite-Truppen vorlieb nehmen.\pZeig mir, ob du hältst, was dein Ruf verspricht!"
+    .autostring 34 2 "Was für ein seltsames Gefühl!\pAls wäre unser Aufeinandertreffen vorherbestimmt.\pMein Name ist Mistral und ich bin der Kommandant der zweiten Division von Team Violet.\pDu musst wohl PLAYER sein, der Rin im Kranzdorf-Wald besiegt hat.\pDu bist tatsächlich so faszinierend, wie ich es mir vorgestellt hatte.\pIch bin mir sicher, dass du hier bist, um zu verhindern, dass ich das Magmaherz aus diesem Museum stehle.\pAber dieses Artefakt ist nicht dafür gemacht, in einer Vitrine zu verstauben.\pEs beinhaltet eine imense Macht, die nur darauf wartet, freigesetzt zu werden.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch würde gerne an Ort und Stelle gegen dich kämpfen, PLAYERDOTS\pAber das muss noch etwas warten!\pStattdessen darfst du mit einer meiner Elite-Truppen vorlieb nehmen.\pZeig mir, ob du hältst, was dein Ruf verspricht!"
 
 
 

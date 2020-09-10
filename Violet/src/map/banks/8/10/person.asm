@@ -13,7 +13,7 @@ end
 .ifdef LANG_GER
 
 str_0x9277cd:
-    .string "Ich habe eine besondere Beziehung\nzu Pflanzen. Ich verstehe sie, ich\lweiß, ich kann mich in sie\lhineinfühlen.\pVielleicht sollte ich nach\nSilvania ziehen. Das Dorf wurde in\lder Lichtung eines Waldes\lerrichtet."
+    .string "Ich habe eine besondere Beziehung\nzu Pflanzen. Ich verstehe sie, ich\lweiß, ich kann mich in sie\lhineinfühlen.\pVielleicht sollte ich nach\nKranzdorf ziehen. Das Dorf wurde in\lder Lichtung eines Waldes\lerrichtet."
 
 
 .elseif LANG_EN

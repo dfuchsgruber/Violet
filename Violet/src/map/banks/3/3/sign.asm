@@ -20,7 +20,7 @@ end
 .ifdef LANG_GER
 
 str_0x8deaae:
-    .string "Arena von Silvania\pTyp: Pflanze\nLeiter: Mia"
+    .string "Arena von Kranzdorf\pTyp: Pflanze\nLeiter: Rosalie"
 
 
 .elseif LANG_EN
@@ -37,7 +37,7 @@ end
 .ifdef LANG_GER
 
 str_0x81af29:
-    .string "Silvania\pDie Stadt der Natur"
+    .string "Kranzdorf\pDie Stadt der Natur"
 
 
 .elseif LANG_EN
@@ -54,7 +54,7 @@ end
 .ifdef LANG_GER
 
 str_0x8de313:
-    .string "Haus von Mia"
+    .string "Haus von Rosalie"
 
 
 .elseif LANG_EN
@@ -71,7 +71,7 @@ end
 .ifdef LANG_GER
 
 str_0x8de321:
-    .string "Beerenladen"
+    .string "Freunde der Natur"
 
 
 .elseif LANG_EN
@@ -88,7 +88,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f5caa:
-    .string "Silvania Wald"
+    .string "Kranzdorf Wald"
 
 
 .elseif LANG_EN
@@ -113,7 +113,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f615e:
-    .string "Die Tür der Silvania-Arena ist aus\nedlem Holz gefertigt."
+    .string "Die Tür der Kranzdorf-Arena ist aus\nedlem Holz gefertigt."
 
 
 

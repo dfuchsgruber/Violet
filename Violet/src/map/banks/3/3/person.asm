@@ -24,7 +24,7 @@ end
 .ifdef LANG_GER
 
 str_0x81aafa:
-    .string "Ich trainere mein Pokémon um Mia\nherauszufordern."
+    .string "Ich trainere mein Pokémon um Rosalie\nherauszufordern."
 
 
 .elseif LANG_EN
@@ -41,7 +41,7 @@ end
 .ifdef LANG_GER
 
 str_0x81ab2c:
-    .string "Diese Stadt wurde im Wald errichtet\nund sie ist fast nur aus Holz\lgebaut. Umweldfreundlich, oder?"
+    .autostring 34 2 "Kranzdorf wurde in der Lichtung eines Waldes erbaut.\pAlles hier ist durchströmt vom Geist der Natur."
 
 
 .elseif LANG_EN
@@ -58,7 +58,7 @@ end
 .ifdef LANG_GER
 
 str_0x81ab8e:
-    .string "Ich bin hierhergekommen, um die\nWaldluft zu genießen. Anordnung\lmeines Hausarztes."
+    .autostring 34 2 "Mein Hausarzt hat mir verordnet, hier einen Urlaub zu machen.\pIch muss sagen, dass die Waldluft mir sehr gut tut."
 
 
 .elseif LANG_EN
@@ -75,56 +75,12 @@ end
 .ifdef LANG_GER
 
 str_0x8e1ba8:
-    .string "Silvania wurde in einer Lichtung\ndes Silvania-Waldes von den\lErkundern dieser Region errichtet.\pIm Wald selbst haben sie auch\neinen Schrein gebaut, um dem darin\lwohnenden Zeitpokemon zu huldigen."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_3_person_4:
-cry POKEMON_PIKACHU 0x0
-loadpointer 0x0 str_0x817948
-callstd MSG_FACE
-waitcry
-end
-
-
-.ifdef LANG_GER
-
-str_0x817948:
-    .string "Pikachuuu!!!"
-
+    .autostring 34 2 "Der Zeitwald hat schon immer etwas Mysteriöses an sich gehabt.\pKennst du schon den geweihten Schrein, der sich dort befindet?"
 
 .elseif LANG_EN
 
 .endif
 
-@ ToDo: Investigate the letter-casing
-
-ow_script_map_3_3_person_5:
-loadpointer 0x0 str_0x818ef3
-callstd MSG
-setflag FRBADGE_2
-end
-
-
-.ifdef LANG_GER
-
-str_0x818ef3:
-    .string "Hihi."
-
-
-.elseif LANG_EN
-
-.endif
-
-
-ow_script_map_3_3_person_6:
-clearflag FRBADGE_2
-sound 0x10
-end
 
 
 ow_script_map_3_3_person_7:
@@ -136,7 +92,7 @@ end
 .ifdef LANG_GER
 
 str_0x8df298:
-    .string "Mia, die Arenaleiterin dieser\nStadt, kümmert sich um den\lSilvania-Wald."
+    .autostring 34 2 "Rosalie, die Arenaleiterin dieses Dorfes hat ihr Leben diesem Wald gewidmet.\pMan merkt ihr die Leidenschaft für die Natur sehr an, finde ich."
 
 
 .elseif LANG_EN
@@ -153,8 +109,7 @@ end
 .ifdef LANG_GER
 
 str_0x8e0932:
-    .string "Der amtierende Champion soll\näußert bescheiden sein. Niemand\lweiß, wer er oder sie istDOTS"
-
+    .autostring 34 2 "Hast du es mitbekommen?\pDer alte Champion Lucius wurde besiegt!\pIch habe gehört, dass es ein Mädchen gewesen sein sollDOTS"
 
 .elseif LANG_EN
 

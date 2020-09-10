@@ -60,6 +60,6 @@ dont_reset_trainerflags:
 
 .ifdef LANG_GER
 str_silvania_gym_referee:
-    .autostring 34 2 "Nanu!\nDu willst schon wieder einen Arenaleiter herausfordern?\pSei gewarnt, Mia mag zwar wie ein Engel wirken, verwandelt sich aber auf dem Kampffeld in ein Teufelchen!\pIhre Pflanzen-Pokémon sind widerspenstig und nicht kleinzukriegen.\pUnd in dieser Arena wächst und gedeit praktisch alles.\pNur ein schneller und effektiver Angriff kann dir hier zum Sieg verhelfen!"
+    .autostring 34 2 "Nanu!\nDu willst schon wieder einen Arenaleiter herausfordern?\pSei gewarnt, Rosalie mag zwar wie ein Engel wirken, verwandelt sich aber auf dem Kampffeld in ein Teufelchen!\pIhre Pflanzen-Pokémon sind widerspenstig und nicht kleinzukriegen.\pUnd in dieser Arena wächst und gedeit praktisch alles.\pNur ein schneller und effektiver Angriff kann dir hier zum Sieg verhelfen!"
 .elseif LANG_EN
 .endif

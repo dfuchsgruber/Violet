@@ -185,7 +185,7 @@ trainer trainers[TRAINER_CNT] = {
       true
     }, //Encounter and gender
     0x4e, // sprite
-    LANGDEP(PSTRING("Rüpel B."), PSTRING("Rüpel B.")),
+    LANGDEP(PSTRING("Rpel B."), PSTRING("Rüpel B.")),
     {
       ITEM_NONE,
       ITEM_NONE,
@@ -1535,7 +1535,7 @@ trainer trainers[TRAINER_CNT] = {
       true
     }, //Encounter and gender
     0x3b, // sprite
-    LANGDEP(PSTRING("Maraa"), PSTRING("Maraa")),
+    LANGDEP(PSTRING("Mara"), PSTRING("Mara")),
     {
       ITEM_NONE,
       ITEM_NONE,
@@ -4915,7 +4915,7 @@ trainer trainers[TRAINER_CNT] = {
 		TRAINERCLASS_ARENALEITER,
 		{0x1, true},//Encounter and gender
 		0x75,// sprite
-		LANGDEP(PSTRING("Mia"), PSTRING("Mia")),
+		LANGDEP(PSTRING("Rosalie"), PSTRING("Rosalie")),
 		{ITEM_SUPERTRANK, ITEM_SUPERTRANK, ITEM_HYPERTRANK, ITEM_HYPERHEILER},
 		BATTLE_WITH_HANDICAP,
 		TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,

@@ -508,7 +508,7 @@ str_0x91fed1:
 
 
 str_0x91fcc4:
-	.autostring 35 2 "Hey du!\pIch kenne dich aus dem Silvania-Wald!\pWas willst du denn von mir?\pKannst du denn nicht verstehen, warum ich mich Team Violet angeschlossen habe?\pDavor war ich bloß Teil des Abschaums der Gesellschaft.\pEin niemand!\pAber jetzt bin ich Teil von etwas Großem.\pUnd dafür kämpfe ich mit meinem ganzen Herzen!"
+	.autostring 35 2 "Hey du!\pIch kenne dich aus dem Kranzdorf-Wald!\pWas willst du denn von mir?\pKannst du denn nicht verstehen, warum ich mich Team Violet angeschlossen habe?\pDavor war ich bloß Teil des Abschaums der Gesellschaft.\pEin niemand!\pAber jetzt bin ich Teil von etwas Großem.\pUnd dafür kämpfe ich mit meinem ganzen Herzen!"
 
 
 str_violet_grunt_choice_0:

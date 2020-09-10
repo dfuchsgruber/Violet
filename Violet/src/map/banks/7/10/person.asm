@@ -27,12 +27,12 @@ end
 .ifdef LANG_GER
 
 str_0x81b37f:
-    .string "Hallo! Lass mich raten, du willst\neinige Tipps für die Arena?\lNun, diese Arena spezialisiert sich\lauf Plfanzen Pokémon. Der Leiter\lMia benutzt sie eindrucksvoll. Am\lbesten kannst du ihr mit Flug oder\lFeuer Pokémon begegnen."
+    .string "Hallo! Lass mich raten, du willst\neinige Tipps für die Arena?\lNun, diese Arena spezialisiert sich\lauf Plfanzen Pokémon. Der Leiter\lRosalie benutzt sie eindrucksvoll. Am\lbesten kannst du ihr mit Flug oder\lFeuer Pokémon begegnen."
 
 
 
 str_0x81b354:
-    .string "Ich wusste, dass du Mia schlagen\nkannst."
+    .string "Ich wusste, dass du Rosalie schlagen\nkannst."
 
 
 .elseif LANG_EN
@@ -77,7 +77,7 @@ end
 .ifdef LANG_GER
 
 str_0x81b548:
-    .string "Oh! Ein Herausforderer! NunDOTS\nIch bin Mia, die Arenaleiterin der\lSilvania Arena. Ich habe mich auf\lPflanzenpokemon spezialisiert! Lass\lmich sehen, was du meiner Stärke\lentgegenzusetzten kannst!"
+    .string "Oh! Ein Herausforderer! NunDOTS\nIch bin Rosalie, die Arenaleiterin der\lKranzdorf Arena. Ich habe mich auf\lPflanzenpokemon spezialisiert! Lass\lmich sehen, was du meiner Stärke\lentgegenzusetzten kannst!"
 
 
 
@@ -92,7 +92,7 @@ str_0x81b6b4:
 
 
 str_0x81b747:
-    .string "PLAYER erhält den Wiesenorden von\nMia.ぁß ñ¡ÁÁ"
+    .string "PLAYER erhält den Wiesenorden von\nRosalie.ぁß ñÁÁ"
 
 
 

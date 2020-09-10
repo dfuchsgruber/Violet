@@ -70,7 +70,7 @@ end
 .ifdef LANG_GER
 
 str_0x81a262:
-    .string "Von Silvania kommt man in den\nZeitwald. Wieso er Zeitwald heißt?\lKeine Ahnung."
+    .string "Von Kranzdorf kommt man in den\nZeitwald. Wieso er Zeitwald heißt?\lKeine Ahnung."
 
 
 .elseif LANG_EN
@@ -133,7 +133,7 @@ end
 .ifdef LANG_GER
 
 str_0x8471be:
-    .string "Mia aus Silvania kommt oft hierher\nund überwacht die Vegetation. Ohne\lsie würde die Umwelt hier\lzusammenbrechen."
+    .string "Rosalie aus Kranzdorf kommt oft hierher\nund überwacht die Vegetation. Ohne\lsie würde die Umwelt hier\lzusammenbrechen."
 
 
 .elseif LANG_EN

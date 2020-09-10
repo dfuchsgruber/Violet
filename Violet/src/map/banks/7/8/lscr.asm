@@ -267,7 +267,7 @@ end
 .ifdef LANG_GER
 
 str_mia:
-	.string "Mia"
+	.string "Rosalie"
 
 
 str_0x8eca2e:
@@ -281,7 +281,7 @@ str_0x8eca11:
 
 
 str_0x8ec9d0:
-	.autostring 35 2 "Das ist Mia, die Arenaleiterin von Silvania."
+	.autostring 35 2 "Das ist Rosalie, die Arenaleiterin von Kranzdorf."
 
 
 
@@ -314,7 +314,7 @@ str_0x8ec6df:
 
 
 str_0x87e807:
-	.autostring 35 2 "Ist Primus nicht für seine Forschung bezüglich der Raumzeit bekannt?\pDOTS DOTS DOTS\pDas würde zumindest einen Sinn ergeben.\pIm Silvania-Wald lebt ein Pokémon, das in der Lage ist, die Zeit zu manipulieren DOTS\pIch bin ihm in meinen jungen Tagen selbst einmal begegnet DOTS"
+	.autostring 35 2 "Ist Primus nicht für seine Forschung bezüglich der Raumzeit bekannt?\pDOTS DOTS DOTS\pDas würde zumindest einen Sinn ergeben.\pIm Kranzdorf-Wald lebt ein Pokémon, das in der Lage ist, die Zeit zu manipulieren DOTS\pIch bin ihm in meinen jungen Tagen selbst einmal begegnet DOTS"
 
 
 str_0x8f28b9:
@@ -355,7 +355,7 @@ str_0x8f0b3b:
 
 
 str_0x8f0ad6:
-    .autostring 35 2 "Es tut mir leid, Mia DOTS\pAber um den Revolutionsanführer aufzuhalten, bedarf es eines Top Vier Mitglieds.\pUnd ich hoffe, die Sache friedlich lösen zu können.\pIch vertraue dir und PLAYER die Lage an."
+    .autostring 35 2 "Es tut mir leid, Rosalie DOTS\pAber um den Revolutionsanführer aufzuhalten, bedarf es eines Top Vier Mitglieds.\pUnd ich hoffe, die Sache friedlich lösen zu können.\pIch vertraue dir und PLAYER die Lage an."
 
 
 
@@ -370,11 +370,11 @@ str_0x8f0a11:
 
 
 str_0x8f0984:
-	.autostring 35 2 "Das ist gar nicht gut.\pEin Kommandant von Team Violet DOTS\pDas sind gefährliche Leute!\pDOTS DOTS DOTS\pAber wir haben wohl keine Wahl, was?\pWenn du im Silvania-Wald zurecht kommen willst, wirst du das hier benötigen."
+	.autostring 35 2 "Das ist gar nicht gut.\pEin Kommandant von Team Violet DOTS\pDas sind gefährliche Leute!\pDOTS DOTS DOTS\pAber wir haben wohl keine Wahl, was?\pWenn du im Kranzdorf-Wald zurecht kommen willst, wirst du das hier benötigen."
 
 
 str_0x8c7f7a:
-    .autostring 35 2 "Mia übergibt PLAYER\nZerschneider!"
+    .autostring 35 2 "Rosalie übergibt PLAYER\nZerschneider!"
 
 
 

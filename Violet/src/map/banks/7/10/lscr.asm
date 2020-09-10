@@ -139,10 +139,10 @@ end
 .ifdef LANG_GER
 
 str_mia:
-	.string "Mia"
+	.string "Rosalie"
 
 str_0x8310dc:
-    .autostring 35 2 "Es beginnt nun der Kampf zwischen Mia und PLAYER."
+    .autostring 35 2 "Es beginnt nun der Kampf zwischen Rosalie und PLAYER."
 
 
 
@@ -172,7 +172,7 @@ str_0x8f36ad:
 
 
 str_0x8f3750:
-    .autostring 35 2 "Diese Technische Maschine enthält Gigasauger.\pSie fügt dem Gegner Schaden zu und regeneriert die eigenen KP.\pVielleicht kannst du sie im Kampf gegen Team Violet einsetzten.\pWir sollten jetzt aber keine Zeit mehr verlieren.\pAuf in den Silvania-Wald DOTS"
+    .autostring 35 2 "Diese Technische Maschine enthält Gigasauger.\pSie fügt dem Gegner Schaden zu und regeneriert die eigenen KP.\pVielleicht kannst du sie im Kampf gegen Team Violet einsetzten.\pWir sollten jetzt aber keine Zeit mehr verlieren.\pAuf in den Kranzdorf-Wald DOTS"
 
 .elseif LANG_EN
 
