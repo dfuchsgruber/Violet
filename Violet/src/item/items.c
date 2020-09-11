@@ -7798,8 +7798,8 @@ item items[] = {
 	[ITEM_MULCH] = {
 		.name = LANGDEP(PSTRING("Mulch"), PSTRING("Mulch")),
 		.index = ITEM_MULCH, .price = 100,
-		.description = str_item_mulch_description, .pocket = POCKET_ITEMS, .type = 4,
-		.field_usage = (void(*)(u8))0x80a2325,
+		.description = str_item_mulch_description, .pocket = POCKET_ITEMS, .type = 2,
+		.field_usage = item_effect_mulch,
 	},
 };
 

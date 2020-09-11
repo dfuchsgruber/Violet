@@ -100,6 +100,14 @@ palette *overworld_palette_berry_get_by_tag(u16 tag);
 void berry_proceed();
 
 /**
+ * Initializes a berry tree, but keeps its fertilization state.
+ * @param berry_tree_idx which berry tree to initialize
+ * @param berry_idx with which berry to initialize
+ * @param stage at which stage
+ **/
+void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage);
+
+/**
  * Initializes all berry trees.
  **/
 void berry_trees_initialize_all();
@@ -141,6 +149,7 @@ extern u8 gfx_ow_berry_liechiTiles[];
 extern u8 gfx_ow_berry_lansatTiles[];
 
 extern u8 gfx_ow_berry_noneTiles[];
+extern u8 gfx_ow_berry_none_fertilizedTiles[];
 extern u8 gfx_ow_berry_dirt_pileTiles[];
 extern u8 gfx_ow_berry_sproutTiles[];
 

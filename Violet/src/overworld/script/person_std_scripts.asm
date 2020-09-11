@@ -16,6 +16,7 @@
 .global ow_script_aggressive_wild
 .global ow_script_aggressive_wild_do_battle
 .global ow_script_berry_tree
+.global ow_script_fertilize_berry_tree
 .global ow_script_mushroom
 .global ow_script_shell
 
@@ -94,7 +95,37 @@ ow_script_berry_tree:
 	gotoif EQUAL harvest_berries
 	end
 
+ow_script_fertilize_berry_tree:
+	special SPECIAL_BERRY_TREE_SET_FERTILIZED
+	special SPECIAL_BERRY_TREE_UPDATE_GFX
+	sound 23
+	checksound
+	pause 24
+	removeitem ITEM_MULCH 1
+	return
+
 plant_berries:
+	// Display fertilization state of ground
+	special2 LASTRESULT SPECIAL_BERRY_TREE_IS_FERTILIZED
+	compare LASTRESULT 1
+	gotoif EQUAL ground_fertilized
+	loadpointer 0 str_ground_not_fertilized
+	callstd MSG_KEEPOPEN
+	checkitem ITEM_MULCH 1
+	compare LASTRESULT 1
+	gotoif NOT_EQUAL ask_planting // no mulch to fertilize
+	loadpointer 0 str_ask_fertilize
+	callstd MSG_YES_NO
+	compare LASTRESULT 0
+	gotoif EQUAL ask_planting // don't want to fertilize
+	closeonkeypress
+	checksound
+	// Fertilize
+	call ow_script_fertilize_berry_tree
+ground_fertilized:
+	loadpointer 0 str_ground_fertilized
+	callstd MSG_KEEPOPEN
+ask_planting:
 	loadpointer 0 str_want_to_plant
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
@@ -108,36 +139,36 @@ dirt_pile:
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
-	gotoif 1 ask_fertilize
+	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
 sprout:
 	loadpointer 0 str_sprout
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
-	gotoif 1 ask_fertilize
+	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
 taller:
 	loadpointer 0 str_taller
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
-	gotoif 1 ask_fertilize
+	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
 blossom:
 	loadpointer 0 str_blossom
 	callstd MSG_KEEPOPEN
 	checkitem ITEM_WUNDERSTAUB 1
 	compare LASTRESULT 0x1
-	gotoif 1 ask_fertilize
+	gotoif 1 ask_use_wonder_dust
 	goto dont_harvest
-ask_fertilize:
-	loadpointer 0 str_ask_fertilize
+ask_use_wonder_dust:
+	loadpointer 0 str_ask_wonder_dust
 	callstd MSG_YES_NO
 	compare LASTRESULT 0
 	gotoif EQUAL dont_harvest
 	removeitem ITEM_WUNDERSTAUB 1
-	loadpointer 0 str_fertilize
+	loadpointer 0 str_use_wonder_dust
 	callstd MSG_KEEPOPEN
 	special SPECIAL_BERRY_TREE_GROW
 	special SPECIAL_BERRY_TREE_UPDATE_GFX
@@ -363,8 +394,14 @@ str_ground_muddy:
 	.autostring 34 2 "Der Boden ist wieder weich und lehmig."
 str_no_room_for_berries:
 	.autostring 34 2 "Es scheint so, als hättest du keinen Platz für weitere Beeren!"
+str_ground_not_fertilized:
+	.autostring 34 2 "Der Boden ist weich und lehmig."
+str_ground_fertilized:
+	.autostring 34 2 "Der Boden ist mit Mulch gedüngt."
+str_ask_fertilize:
+	.autostring 34 2 "Möchtest du ihn mit Mulch düngen?"
 str_want_to_plant:
-	.autostring 34 2 "Der Boden ist weich und lehmig.\pMöchtest du eine Beere pflanzen?"
+	.autostring 34 2 "Möchtest du eine Beere pflanzen?"
 str_dirt_pile:
 	.autostring 34 2 "Hier wurde eine BUFFER_1 angepflanzt."
 str_sprout:
@@ -373,9 +410,9 @@ str_taller:
 	.autostring 34 2 "Die BUFFER_1n scheinen gut zu gedeihen!"
 str_blossom:
 	.autostring 34 2 "Die BUFFER_1n stehen in voller Blüte!"
-str_ask_fertilize:
+str_ask_wonder_dust:
 	.autostring 34 2 "Möchtest du Wunderstaub benutzen, um die BUFFER_1n wachsen zu lassen?"
-str_fertilize:
+str_use_wonder_dust:
 	.autostring 34 2 "PLAYER benutzt Wunderstaub."
 str_grown:
 	.autostring 34 2 "Die BUFFER_1n sind gewachsen!"

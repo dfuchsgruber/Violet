@@ -3488,7 +3488,7 @@
 				},
 				{
 					"block_idx": 112,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 734,
@@ -3508,7 +3508,7 @@
 				},
 				{
 					"block_idx": 112,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 1,
@@ -4600,7 +4600,7 @@
 				},
 				{
 					"block_idx": 1,
-					"level": 1
+					"level": 12
 				},
 				{
 					"block_idx": 1,
@@ -4616,7 +4616,7 @@
 				},
 				{
 					"block_idx": 114,
-					"level": 12
+					"level": 1
 				},
 				{
 					"block_idx": 748,
@@ -4636,7 +4636,7 @@
 				},
 				{
 					"block_idx": 114,
-					"level": 4
+					"level": 1
 				},
 				{
 					"block_idx": 364,

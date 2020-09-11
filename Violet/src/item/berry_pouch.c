@@ -14,6 +14,10 @@
 #include "text.h"
 #include "superstate.h"
 #include "music.h"
+#include "constants/berry_pouch_contexts.h"
+#include "vars.h"
+#include "constants/sav_keys.h"
+#include "overworld/pokemon_party_menu.h"
 
 static u8 context_menu_options_standard[4] = {
     BERRY_POUCH_CONTEXT_MENU_ACTION_USE,
@@ -25,6 +29,28 @@ static u8 context_menu_options_standard[4] = {
 static u8 context_menu_options_composter[2] = {
     BERRY_POUCH_CONTEXT_MENU_ACTION_COMPOST,
     BERRY_POUCH_CONTEXT_MENU_ACTION_EXIT,
+};
+
+
+void berry_pouch_callback_plant_berry(u8 self) {
+    *var_access(LASTRESULT) = 1; // Berry planted
+    save_increment_key(SAV_KEY_PLANTED_BERRIES);
+    item_remove(item_activated, 1);
+    u8 berry_tree_idx = (u8)*var_access(0x8000);
+    berry_tree_initialize(berry_tree_idx, (u8)ITEM_IDX_TO_BERRY_IDX(item_activated), BERRY_STAGE_DIRT_PILE);
+    cmem.berry_trees[berry_tree_idx].replanted = 1;
+    big_callbacks[self].function = berry_pouch_fade_and_continuation;
+}
+
+void (*berry_pouch_callbacks[])(u8) = {
+    [BERRY_POUCH_CONTEXT_FROM_OVERWORLD] = berry_pouch_callback_context_menu,
+    [BERRY_POUCH_CONTEXT_FROM_PARTY_MENU_GIVE] = berry_pouch_callback_from_party_menu_give,
+    [BERRY_POUCH_CONTEXT_FROM_MART_SELL] = berry_pouch_callback_from_mart_sell,
+    [BERRY_POUCH_CONTEXT_FROM_STORAGE_PC] = berry_pouch_callback_from_storage_pc,
+    [BERRY_POUCH_CONTEXT_FROM_BATTLE] = berry_pouch_callback_context_menu,
+    [BERRY_POUCH_CONTEXT_FROM_BERRY_CRUSH] = 0,
+    [BERRY_POUCH_CONTEXT_PLANTING] = berry_pouch_callback_plant_berry,
+    [BERRY_POUCH_CONTEXT_COMPOSTING] = berry_pouch_callback_context_menu,
 };
 
 /*
@@ -165,7 +191,7 @@ u8 str_berry_pouch_how_many_to_compost[] = LANGDEP(
 extern u8 str_berry_pouch_how_many_to_toss[];
 
 void berry_pouch_toss_print_string_how_many(u8 self) {
-    if (berry_pouch_state2.type == BERRY_POUCH_COMPOSTER) {
+    if (berry_pouch_state2.type == BERRY_POUCH_CONTEXT_COMPOSTING) {
         berry_pouch_initialize_toss_quantity_selection(self, str_berry_pouch_how_many_to_compost);
     } else {
         berry_pouch_initialize_toss_quantity_selection(self, str_berry_pouch_how_many_to_toss);
@@ -180,7 +206,7 @@ u8 str_berry_pouch_how_confirm_quantity_to_compost[] = LANGDEP(
 extern u8 str_berry_pouch_confirm_quantity_to_toss[];
 
 void berry_pouch_toss_get_string_confirm_quantity_to_toss() {
-    if (berry_pouch_state2.type == BERRY_POUCH_COMPOSTER) {
+    if (berry_pouch_state2.type == BERRY_POUCH_CONTEXT_COMPOSTING) {
         string_decrypt(strbuf, str_berry_pouch_how_confirm_quantity_to_compost);
     } else {
         string_decrypt(strbuf, str_berry_pouch_confirm_quantity_to_toss);
@@ -213,7 +239,7 @@ u8 str_berry_pouch_no_room_for_mulch[] = LANGDEP(
 );
 
 void berry_pouch_toss_or_compost_confirmed(u8 self) {
-    if (berry_pouch_state2.type == BERRY_POUCH_COMPOSTER) {
+    if (berry_pouch_state2.type == BERRY_POUCH_CONTEXT_COMPOSTING) {
         if (!item_has_room(ITEM_MULCH, big_callbacks[self].params[8])) {
             // TODO
             strcpy(buffer2, item_get_name(ITEM_MULCH));
@@ -280,18 +306,9 @@ void berry_pouch_context_menu_option_compost(u8 self) {
 };
 */
 
-void (*berry_pouch_actions[])(u8) = {
-    [BERRY_POUCH_FROMFIELD] = berry_pouch_action_standard_context_menu,
-    [BERRY_POUCH_FROMPARTYGIVE] = berry_pouch_action_give_berry,
-    [BERRY_POUCH_FROMMARTSELL] = berry_pouch_action_sell,
-    [BERRY_POUCH_FROMPOKEMONSTORAGEPC] = berry_pouch_action_give_berry_from_pc,
-    [BERRY_POUCH_NA] = berry_pouch_action_standard_context_menu,
-    [BERRY_POUCH_COMPOSTER] = berry_pouch_action_standard_context_menu,
-};
-
 
 void berry_pouch_get_context_menu_options_standard() {
-    if (berry_pouch_state2.type == BERRY_POUCH_COMPOSTER) {
+    if (berry_pouch_state2.type == BERRY_POUCH_CONTEXT_COMPOSTING) {
         berry_pouch_context_menu_options = context_menu_options_composter;
         berry_pouch_context_menu_options_count = ARRAY_COUNT(context_menu_options_composter);
     } else {
@@ -303,7 +320,7 @@ void berry_pouch_get_context_menu_options_standard() {
 static void composter_big_callback_free_overworld_and_initialize(u8 self) {
     if (!fading_is_active()) {
         overworld_free();
-        berry_pouch_initialize(BERRY_POUCH_COMPOSTER, map_reload, true);
+        berry_pouch_initialize(BERRY_POUCH_CONTEXT_COMPOSTING, map_reload, true);
         overworld_script_resume();
         big_callback_delete(self);
     }

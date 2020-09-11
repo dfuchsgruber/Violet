@@ -51,9 +51,12 @@ void berry_tree_calculate_yield(u8 berry_tree_idx) {
             yield += MAX(1, yield / 2);
         }
     }
+    dprintf("Unfertilized yield is %d\n", yield);
     if (cmem.berry_trees[berry_tree_idx].fertilized) {
-        yield += MAX(1, yield / 2);
+        yield += MAX(1, 3 * yield / 2);
+        dprintf("Fertilized yield is %d\n", yield);
     }
+    yield = MIN(7, yield);
     cmem.berry_trees[berry_tree_idx].yield = (u8)(yield & 7);
     // dprintf("Initialized berry tree %d with yield %d\n", berry_tree_idx, yield);
 }
@@ -68,7 +71,8 @@ u16 berry_get_stage_duration(u8 berry_tree_idx) {
 void berry_tree_initialize(u8 berry_tree_idx, u8 berry_idx, u8 stage) {
     cmem.berry_trees[berry_tree_idx].berry = (u8)(berry_idx & 127);
     cmem.berry_trees[berry_tree_idx].stage = (u8)(stage & 7);
-    berry_tree_calculate_yield(berry_tree_idx);
+    // berry_tree_calculate_yield(berry_tree_idx);
+    cmem.berry_trees[berry_tree_idx].yield = 0; // Only when blossoming, the yield is determined
     cmem.berry_trees[berry_tree_idx].minutes_to_next_stage = berry_get_stage_duration(berry_tree_idx);
 }
 
@@ -113,6 +117,7 @@ void berry_tree_update_gfx() {
 bool berry_pick() {
     u16 item_idx = (u16)(BERRY_IDX_TO_ITEM_IDX(cmem.berry_trees[*var_access(0x8000)].berry));
     u8 count = cmem.berry_trees[*var_access(0x8000)].yield;
+    dprintf("Picked %d times %d\n", count, item_idx);
     if (!item_has_room(item_idx, count)) return false;
     item_add(item_idx, count);
     cmem.berry_trees[*var_access(0x8000)].picked_once = 1;
@@ -121,28 +126,13 @@ bool berry_pick() {
     return true;
 }
 
-void berry_pouch_callback_plant_berry(u8 self) {
-    *var_access(LASTRESULT) = 1; // Berry planted
-    save_increment_key(SAV_KEY_PLANTED_BERRIES);
-    item_remove(item_activated, 1);
-    u8 berry_tree_idx = (u8)*var_access(0x8000);
-    berry_tree_initialize(berry_tree_idx, (u8)ITEM_IDX_TO_BERRY_IDX(item_activated), BERRY_STAGE_DIRT_PILE);
-    cmem.berry_trees[berry_tree_idx].replanted = 1;
-    big_callbacks[self].function = berry_pouch_fade_and_continuation;
+bool berry_is_fertilized() {
+    return cmem.berry_trees[*var_access(0x8000)].fertilized;
 }
 
-void (*berry_pouch_callbacks[])(u8) = {
-    [BERRY_POUCH_CONTEXT_FROM_OVERWORLD] = berry_pouch_callback_context_menu,
-    [BERRY_POUCH_CONTEXT_FROM_PARTY_MENU_GIVE] = berry_pouch_callback_from_party_menu_give,
-    [BERRY_POUCH_CONTEXT_FROM_MART_SELL] = berry_pouch_callback_from_mart_sell,
-    [BERRY_POUCH_CONTEXT_FROM_STORAGE_PC] = berry_pouch_callback_from_storage_pc,
-    [BERRY_POUCH_CONTEXT_FROM_BATTLE] = berry_pouch_callback_context_menu,
-    [BERRY_POUCH_CONTEXT_FROM_BERRY_CRUSH] = 0,
-    [BERRY_POUCH_CONTEXT_PLANTING] = berry_pouch_callback_plant_berry,
-};
-
-
-
+void berry_fertilize() {
+    cmem.berry_trees[*var_access(0x8000)].fertilized = true;
+}
 
 void berry_plant_callback_initialize_berry_pouch(u8 self) {
     if (!fading_control.active) {

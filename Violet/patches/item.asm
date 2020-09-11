@@ -200,6 +200,3 @@ _bxr1:
     .word berry_pouch_context_menu_option_compost_text
     .word berry_pouch_context_menu_option_toss
 
-.org 0x0813dc4c
-    .word berry_pouch_actions
-

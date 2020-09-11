@@ -45,6 +45,8 @@ item_hold_effect_type_boosts[ITEM_HOLD_EFFECT_TYPE_BOOSTS_SIZE];
 
 void (*item_callback_after_pokemon_selected)(u8, void (*)(u8));
 
+void (*item_use_continuation)(u8);
+
 #define ITEM_HAS_TABLE_EFFECT(item) ((item) >= ITEM_TRANK && (item) <= (ITEM_ENIGMABEERE))
 
 /**
@@ -256,6 +258,25 @@ void item_callback_rare_candy(u8 self, void (*failure_continuation)(u8));
  * @param self self-reference
  **/
 void item_gold_candy_field_effect(u8 self);
+
+/**
+ * Closes the bag and returns to the overworld, where a continuation is executed
+ * @param self self-reference
+ **/
+void item_close_bag_and_return_to_overworld(u8 self);
+
+/**
+ * Prints the string that an item can not be used currently (oak says that)
+ * @param self self-reference
+ * @param from_overworld if the item was used in the overworld (or in the bag)
+ **/
+void item_print_string_can_not_be_used_by_oak(u8 self, u8 from_overworld);
+
+/**
+ * Item effect for mulch
+ * @param self self-reference
+ **/
+void item_effect_mulch(u8 self);
 
 typedef struct {
     const u8 *gfx;

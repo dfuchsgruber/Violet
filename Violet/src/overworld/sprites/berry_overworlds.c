@@ -1282,6 +1282,19 @@ overworld_sprite overworld_berry_tree_none = {
 	.inanimate = true,
 };
 
+static graphic overworld_gfxs_none_fertilized[] = {
+    [0] = {.sprite = gfx_ow_berry_none_fertilizedTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+	[1] = {.sprite = gfx_ow_berry_none_fertilizedTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
+};
+
+overworld_sprite overworld_berry_tree_none_fertilized = {
+    .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_BERRY_BASE + 3,
+    .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(16, 32), .width = 16, .height = 32,
+    .final_oam = &ow_final_oam_16_32, .subsprite_table = &ow_formation_16_32, .gfx_animation = gfx_animations_berry_tree,
+    .graphics = overworld_gfxs_none_fertilized, .rotscale_animation = oam_rotscale_anim_table_null,
+	.inanimate = true,
+};
+
 static graphic overworld_gfxs_dirt_pile[] = {
     [0] = {.sprite = gfx_ow_berry_dirt_pileTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
 	[1] = {.sprite = gfx_ow_berry_dirt_pileTiles + 0 * GRAPHIC_SIZE_4BPP(16, 32), .size = GRAPHIC_SIZE_4BPP(16, 32), .tag = 0},
@@ -1312,7 +1325,10 @@ overworld_sprite *overworld_sprite_get_by_berry_idx(u8 berry_idx) {
 	u8 berry = cmem.berry_trees[berry_idx].berry;
 	//dprintf("Requesting ow sprite for berry idx %d, in stage %d with berry %d\n", berry_idx, stage, berry);
 	if (stage == BERRY_STAGE_NO_BERRY) {
-		return &overworld_berry_tree_none;
+		if (cmem.berry_trees[berry_idx].fertilized)
+			return &overworld_berry_tree_none_fertilized;
+		else 
+			return &overworld_berry_tree_none;
 	} else if (stage == BERRY_STAGE_DIRT_PILE)
         return &overworld_berry_tree_dirt_pile;
 	else if (stage == BERRY_STAGE_SPROUT)

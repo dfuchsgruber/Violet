@@ -257,7 +257,6 @@ special_table equ 0x0815FCC0
 .org (special_table + 118 * 4)
         .word mushroom_get_encounter | 1
 
-// 134 >= free up to <= 140
 
 .org (special_table + 134 * 4)
         .word shell_get_encounter | 1
@@ -271,6 +270,12 @@ special_table equ 0x0815FCC0
         .word special_map_transition_show_namespace | 1
 .org (special_table + 139 * 4)
         .word composter_initialize | 1
+.org (special_table + 140 * 4)
+        .word berry_is_fertilized | 1
+.org (special_table + 143 * 4)
+        .word berry_fertilize | 1
+
+// free from >= 143 to <= 146
 
 .org (special_table + (0x129 * 4))
                 .word special_roamer_reset_and_initialize | 1
