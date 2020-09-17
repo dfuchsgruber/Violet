@@ -8,6 +8,8 @@ extern const u8 gfx_tileset_route_3_millTiles[];
 extern const u8 gfx_tileset_route_3_millPal[];
 
 #define ROUTE_3_MILL_TAG 0x888
+#define ROUTE_3_BANK 15
+#define ROUTE_3_MAP 0
 #define ROUTE_3_X 0x2D + 7 
 #define ROUTE_3_Y 0x7 + 7 
 
@@ -28,6 +30,10 @@ static sprite route_3_mill_final_oam = {
 };
 
 static void oam_callback_route_3_mill(oam_object *self) {
+    if (save1->bank != ROUTE_3_BANK || save1->map != ROUTE_3_MAP) {
+        oam_free(self);
+        return;
+    }
     // Since the sprite is centered, use half the circle 
     if (overworld_effect_is_oam_outside_camera_view(ROUTE_3_X, ROUTE_3_Y, 91 / 2, 91 / 2)) {
         self->flags |= OAM_FLAG_INVISIBLE;

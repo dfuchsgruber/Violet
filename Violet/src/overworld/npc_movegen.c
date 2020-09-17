@@ -145,7 +145,56 @@ void npc_move_camera_to() {
 void overworld_target_npc_set_to_var() {
     u8 person_idx = (u8)(*var_access(0x8004));
     u8 npc_idx = 0;
-    if (npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_idx)) {
+    if (!npc_get_id_by_overworld_id(person_idx, save1->map, save1->bank, &npc_idx)) {
         trainer_npc_idx = npc_idx;
     }
+}
+
+static void overworld_person_face_to_person(u8 person_idx_facing, u8 person_idx_target) {
+    u8 npc_idx_facing;
+    if (npc_get_id_by_overworld_id(person_idx_facing, save1->map, save1->bank, &npc_idx_facing))
+        return; // No match found, person can't face
+    // Get the target position
+    s16 target_x = 0;
+    s16 target_y = 0;
+    u8 npc_target;
+    u8 target_direction = DIR_NONE;
+    if (!npc_get_id_by_overworld_id(person_idx_target, save1->map, save1->bank, &npc_target)) {
+        target_x = npcs[npc_target].dest_x;
+        target_y = npcs[npc_target].dest_y;
+        target_direction = npcs[npc_target].facing.lower;
+    } else { // Get the position from map event
+        map_event_person *person_target = map_get_person(person_idx_target, save1->map, save1->bank);
+        target_x = (s16)(person_target->x + 7);
+        target_y = (s16)(person_target->y + 7);
+    }
+    int dx = npcs[npc_idx_facing].dest_x - target_x;
+    int dy = npcs[npc_idx_facing].dest_y - target_y;
+    dprintf("Distance from %d to %d is dx %d dy %d\n", person_idx_facing, person_idx_target, dx, dy);
+    bool horizontal = true;
+    if (ABS(dy) > ABS(dx)) {
+        horizontal = false;
+    } else if (ABS(dy) == ABS(dx)) {
+        // Prefer the direction the target is facing in
+        if (target_direction == DIR_UP || target_direction == DIR_DOWN)
+            horizontal = false;
+    }
+    if (horizontal) {
+            if (dx >= 0)
+                fmem.npc_facing_movements[0] = LOOK_LEFT;
+            else
+                fmem.npc_facing_movements[0] = LOOK_RIGHT;
+        } else {
+            if (dy >= 0)
+                fmem.npc_facing_movements[0] = LOOK_UP;
+            else
+                fmem.npc_facing_movements[0] = LOOK_DOWN;
+        }
+        fmem.npc_facing_movements[1] = STOP;
+        npc_apply_movement(person_idx_facing, save1->map, save1->bank, fmem.npc_facing_movements);
+        npc_movement_target_person_idx = person_idx_facing;
+}
+
+void special_overworld_person_face_to_person() {
+    overworld_person_face_to_person((u8)(*var_access(0x8004)), (u8)(*var_access(0x8005)));
 }

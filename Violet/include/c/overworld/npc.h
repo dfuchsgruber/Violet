@@ -344,7 +344,7 @@ u8 *npc_get_script(u8 npc_id);
  * @param map the map id to look on
  * @param bank the map bank to look on
  * @param result offset to store the npc id if found
- * @return whether the overworld was found in the npc state
+ * @return if the npc search was unsucessful, i.e. return value of true indicates failure
  */
 bool npc_get_id_by_overworld_id(u8 overworld_id, u8 map, u8 bank, u8 *result);
 

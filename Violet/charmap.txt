@@ -440,8 +440,9 @@ NAME_END = FC 00
 
 @ more text functions
 
-TEXT_DELAY = FC 08 23
+TEXT_DELAY_SHORT = FC 08 23
 TEXT_DELAY_LONG = FC 08 32
+TEXT_DELAY = FC 08
 
 \x00 = 00
 \x01 = 01

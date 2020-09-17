@@ -82,10 +82,6 @@ trainerpals equ 0x082398EC
 .org trainerpals + 8 * 136
     .word gfx_trainer_hiroinePal
 
-.org trainersprites + 8 * 28
-    .word gfx_trainer_chefTiles
-.org trainerpals + 8 * 28
-    .word gfx_trainer_chefTiles
 
 
 trainergfx 0,gfx_trainer_polizistTiles,gfx_trainer_polizistPal
@@ -102,7 +98,7 @@ trainergfx 25,gfx_trainer_pirateTiles,gfx_trainer_piratePal
 trainergfx 24,gfx_trainer_butlerTiles,gfx_trainer_butlerPal
 trainergfx 28,gfx_trainer_luciusTiles,gfx_trainer_luciusPal
 trainergfx 62,gfx_trainer_blackbeardTiles,gfx_trainer_blackbeardPal
-
+trainergfx 75,gfx_trainer_chefTiles,gfx_trainer_chefPal
 
 .org 0x0803f7a0
     .word trainer_backsprite_templates

@@ -274,6 +274,8 @@ special_table equ 0x0815FCC0
         .word berry_is_fertilized | 1
 .org (special_table + 143 * 4)
         .word berry_fertilize | 1
+.org (special_table + 144 * 4)
+        .word special_overworld_person_face_to_person | 1
 
 // free from >= 143 to <= 146
 

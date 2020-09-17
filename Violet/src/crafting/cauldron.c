@@ -432,8 +432,8 @@ static void cauldron_scene_step4_close_cauldron(u16 frame) {
 
 static void cauldron_scene_step2_wait_dropping_item(u16 frame) {
     if (frame == 32) {
-        if (CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].item || 
-            CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].type == CRAFTING_INGREDIENT_ASH) {
+        if (CAULDRON_SCENE_STATE->state < MAX_NUM_INGREDIENTS && (CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].item || 
+            CAULDRON_SCENE_STATE->recipe.ingredients[CAULDRON_SCENE_STATE->state].type == CRAFTING_INGREDIENT_ASH)) {
             cauldron_scene_next_step(cauldron_scene_step1_create_dropping_item);
         } else {
             bg_sync_display_and_show(2);
