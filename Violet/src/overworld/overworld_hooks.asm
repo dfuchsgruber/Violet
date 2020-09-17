@@ -3,6 +3,7 @@
 .global hook_npc_create_by_person
 .global hook_npc_create_by_npc
 .global hook_npc_create_by_npc2
+.global hook_npc_create_by_npc2_create_rage_oam
 .global hook_npc_create_oam_template
 
 .align 4
@@ -64,6 +65,24 @@ hook_npc_create_by_npc2:
     ldr r1, = 0x0805ee90 | 1
     bx r1
     
+.align 4
+.thumb
+
+.thumb_func
+// Creating rage sprites when reloading the map
+hook_npc_create_by_npc2_create_rage_oam:
+    mov r0, r8
+    bl overworld_create_rage_if_needed
+    add sp, #0x24
+    pop {r3-r5}
+    mov r8, r3
+    mov r9, r4
+    mov r10, r5
+    pop {r4-r7}
+    pop {r0}
+    bx r0 
+
+
 .align 4
 .thumb
 

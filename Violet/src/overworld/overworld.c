@@ -10,6 +10,7 @@
 #include "overworld/sprite.h"
 #include "overworld/map_control.h"
 #include "overworld/script.h"
+#include "overworld/npc.h"
 #include "color.h"
 #include "bios.h"
 #include "map/event.h"
@@ -255,6 +256,9 @@ void npc_free_palette_if_unused_by_slot(u8 slot) {
 }
 
 void npc_free_resources(npc *n) {
+    if (n->flags.has_rage_sprite) {
+        npc_delete_rage_sprite(n->oam_surf);
+    }
     graphic tmp;
     tmp.size = overworld_get_by_npc(n)->size;
     oams[n->oam_id].gfx_table = &tmp;
@@ -462,6 +466,115 @@ void overworld_create_oam_template_by_person(map_event_person *person, oam_templ
     overworld_create_oam_template_by_overworld_sprite_with_callback(sprite, person->behavior, template, subsprites);
 }
 
+static graphic graphics_rage[] = {
+    {gfx_ow_rageTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
+};
+
+static gfx_frame gfx_animation_rage[] = {
+    {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
+};
+
+static gfx_frame *gfx_animations_rage[] = {gfx_animation_rage};
+
+static rotscale_frame rotscale_animation_rage_grow[] = {
+    {.affine = {.affine_x_value = 16, .affine_y_value = 16, .rotation = 0, .duration = 0}},
+    {.affine = {.affine_x_value = 256 / 16, .affine_y_value = 256 / 16, .rotation = 0, .duration = 15}},
+    {.affine = {.affine_x_value = 0, .affine_y_value = 0, .rotation = 0, .duration = 11}},
+    {.affine = {.affine_x_value = -256 / 16, .affine_y_value = -256 / 16, .rotation = 0, .duration = 14}},
+    {.command = {.command = ROTSCALE_ANIM_END}},
+};
+
+static rotscale_frame rotscale_animation_rage_idle[] = {
+    {.affine = {.affine_x_value = 256, .affine_y_value = 256, .rotation = 0, .duration = 0}},
+    {.command = {.command = ROTSCALE_ANIM_END}},
+};
+
+static rotscale_frame *rotscale_animations_rage[] = {
+    [0] = rotscale_animation_rage_idle,
+    [1] = rotscale_animation_rage_grow,
+};
+
+static sprite sprite_rage = {
+    .attr0 = ATTR0_SHAPE_SQUARE | ATTR0_ROTSCALE, .attr1 = ATTR1_SIZE_16_16, .attr2 = ATTR2_PRIO(1),
+};
+
+static void oam_callback_rage(oam_object *self) {
+    u8 npc_idx = (u8)self->private[0];
+    // Since the sprite is centered, use half the circle 
+    if (overworld_effect_is_oam_outside_camera_view(npcs[npc_idx].dest_x, npcs[npc_idx].dest_y, 16, 16)) {
+        self->flags |= OAM_FLAG_INVISIBLE;
+    } else {
+        self->flags &= (u16)(~OAM_FLAG_INVISIBLE);
+        self->x = oams[npcs[npc_idx].oam_id].x; // A bit hacky, but w/e
+        self->y = oams[npcs[npc_idx].oam_id].y;
+        u16 *position = self->private + 1;
+        u16 *frame = self->private + 2;
+        if (++*frame >= 16 + 16 + 8) {
+            *frame = 0;
+            *position = (u16)(*position ^ 1);
+            oam_rotscale_anim_init(self, 1);
+            if (*position) {
+                self->x2 = -3;
+                self->y2 = -5;
+            } else {
+                self->x2 = 2;
+                self->y2 = -2;
+            }
+        }
+        /**
+        map_position_to_oam_position(npcs[npc_idx].dest_x, npcs[npc_idx].dest_y, &self->x, &self->y);
+        // Center at block
+        self->x = (s16)(self->x + 8);
+        self->y = (s16)(self->y + 8);
+        **/
+    }
+}
+
+static oam_template oam_template_rage = {
+    .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_RAGE_SIGN, .oam = &sprite_rage,
+    .animation = gfx_animations_rage, .graphics = graphics_rage,
+    .rotscale = rotscale_animations_rage, .callback = oam_callback_rage,
+};
+
+static palette palette_rage = {.pal = gfx_ow_ragePal, .tag = OW_PAL_TAG_RAGE_SIGN};
+
+static bool npc_rage_sprite_active() {
+    for (u8 i = 0; i < NUM_NPCS; i++) {
+        if (npcs[i].flags.active && npcs[i].flags.has_rage_sprite)
+            return true;
+    }
+    return false;
+}
+
+void npc_delete_rage_sprite(u8 oam_idx) {
+    oam_free_graphic(oams + oam_idx);
+    if (!npc_rage_sprite_active()) {
+        dprintf("Rage effect sprite palette freed, not in use anymore.\n");
+        oam_palette_free(OW_PAL_TAG_RAGE_SIGN);
+    }
+    oam_rotscale_free(oams + oam_idx);
+    oam_clear_and_free_vram(oams + oam_idx);
+}
+
+u8 overworld_create_rage_sprite(u8 npc_idx) {
+    dprintf("Create rage sprite for person %d\n", npcs[npc_idx].overworld_id);
+    oam_palette_load_if_not_present(&palette_rage);
+    u8 oam_idx = oam_new_backward_search(&oam_template_rage, 0, 0, 0);
+    if (oam_idx < 64) {
+        oam_object *o = oams + oam_idx;
+        o->x_centre = -8;
+        o->y_centre = -8;
+        o->y = (s16)(o->y + o->y_centre);
+        o->flags |= OAM_FLAG_CENTERED;
+        o->private[0] = npc_idx;
+        u8 z = npcs[npc_idx].height.current;
+        oam_set_priority_by_height(o, z);
+        oam_set_subpriority_by_height(o, z, 0);
+        o->callback(o);
+    }   
+    return oam_idx;
+}
+
 u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y, u8 z, u8 direction) {
     overworld_sprite *ow = overworld_get_by_person(person);
     oam_template template = {0};
@@ -491,6 +604,35 @@ u8 overworld_create_oam_by_person(map_event_person *person, u8 a1, s16 x, s16 y,
     return oam_idx;
 }
 
+u8 overworld_create_npc_and_oam_by_person(map_event_person *person, u8 map, u8 bank, s16 cam_x, s16 cam_y) {
+    oam_template template;
+    subsprite_table *subsprite_tables = NULL;
+    graphic g;
+    overworld_sprite *ow = overworld_get_by_person(person);
+    overworld_create_oam_template_by_person(person, &template, &subsprite_tables);
+    g.size = ow->size;
+    template.graphics = &g;
+    u8 npc_idx = npc_create_with_oam_by_person(person, &template, map, bank, cam_x, cam_y);
+    if (npc_idx >= NUM_NPCS) 
+        return NUM_NPCS;
+    oams[npcs[npc_idx].oam_id].gfx_table = ow->graphics;
+    if (subsprite_tables)
+        oam_set_subsprite_table(oams + npcs[npc_idx].oam_id, subsprite_tables);
+    if (person->script_std == PERSON_AGGRESSIVE_POKEMON) {
+        npcs[npc_idx].flags.has_rage_sprite = 1;
+        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx);
+    }
+    return npc_idx;
+}
+
+void overworld_create_rage_if_needed(u8 npc_idx) {
+    map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
+    if (p && p->script_std == PERSON_AGGRESSIVE_POKEMON) {
+        npcs[npc_idx].flags.has_rage_sprite = 1;
+        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx);
+    }
+}
+
 u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object*), s16 x, s16 y, u8 subpriority) {
     oam_template template;
     subsprite_table *subsprites;
@@ -501,6 +643,11 @@ u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object
     if (oam_idx < 64 && subsprites != NULL) {
         oam_set_subsprite_table(oams + oam_idx, subsprites);
         oams[oam_idx].sprite_mode = 2;
+        map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
+        if (person->script_std == PERSON_AGGRESSIVE_POKEMON) {
+            n->flags.has_rage_sprite = 1;
+            n->oam_surf = overworld_create_rage_sprite(npc_get_by_person_idx(n->overworld_id, n->map, n->bank)); 
+        }
     }
     return oam_idx;
 }

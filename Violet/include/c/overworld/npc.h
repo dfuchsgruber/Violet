@@ -12,6 +12,7 @@
 #include "oam.h"
 #include "superstate.h"
 #include "constants/overworld/npc_pathfinding_speeds.h"
+#include "map/event.h"
 
 typedef struct npc {
 
@@ -47,6 +48,7 @@ typedef struct npc {
         u32 saved_oam_rotscale_animation_paused : 1;
         u32 jump_landing_ground_effect_disabled : 1;
         u32 fixed_priority : 1;
+        u32 has_rage_sprite : 1;
     } flags;
 
     u8 oam_id;
@@ -640,5 +642,17 @@ extern void (*npc_movements_oam_callbacks[])(oam_object*);
  * @return npc_idx the idx of the npc at this position. If None, returns NUM_NPCS.
  **/
 u8 npc_get_by_position(s16 x, s16);
+
+/**
+ * Tries to create a new npc from a person and its oam as well
+ * @param person the person from which to create the npc from
+ * @param template the oam template for the oam
+ * @param map_idx the map idx of the person
+ * @param bank the bank of the person
+ * @param camera_x the x of the camera
+ * @param camery_y the y of the camera
+ * @return npc_idx the idx of the npc created or NUM_NPCS on failure
+ **/
+u8 npc_create_with_oam_by_person(map_event_person *person, oam_template *template, u8 map_idx, u8 bank, s16 camera_x, s16 camera_y);
 
 #endif /* INCLUDE_C_OVERWORLD_NPC_H_ */

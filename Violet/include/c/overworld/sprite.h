@@ -82,6 +82,7 @@ typedef struct overworld_sprite {
 #define OW_PAL_TAG_MEGA_STONE 0x2E03
 #define OW_PAL_TAG_ROMAN 0x2E04
 #define OW_PAL_TAG_BOULDER_HAY_BALE 0x2E05
+#define OW_PAL_TAG_RAGE_SIGN 0x2E06
 #define OW_PAL_TAG_END 0x3000
 
 /**
@@ -229,6 +230,12 @@ void boulder_animation_start(u8 npc_idx, u8 direction);
  * @return if the boulder push attempt was sucessful, i.e. if a boulder push animation was triggered
  **/
 bool boulder_push_attempt(s16 x, s16 y, u8 direction);
+
+/**
+ * Deletes a rage effect sprite of an npc and frees resources that are not held by other rage effect sprites
+ * @param oam_idx the oam to free
+ **/
+void npc_delete_rage_sprite(u8 oam_idx);
 
 extern u8 gfx_ow_bisasamTiles[];
 extern color_t gfx_ow_bisasamPal[16];
@@ -1742,6 +1749,7 @@ extern const u8 gfx_ow_chefTiles[];
 extern const u8 gfx_ow_mega_stoneTiles[];
 extern const u8 gfx_ow_lester_youngTiles[];
 extern const u8 gfx_ow_romanTiles[];
+extern const u8 gfx_ow_rageTiles[];
 
 extern const u8 gfx_ow_mushroomTiles[];
 extern const color_t gfx_ow_mushroomPal[];
@@ -1753,6 +1761,7 @@ extern const color_t gfx_ow_boulder_gym_puzzlePal[];
 extern const color_t gfx_ow_mega_stonePal[];
 extern const color_t gfx_ow_romanPal[];
 extern const color_t gfx_ow_boulder_hayPal[];
+extern const color_t gfx_ow_ragePal[];
 
 extern overworld_sprite overworld_sprite_strength_boulder;
 

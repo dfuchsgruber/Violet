@@ -382,6 +382,11 @@ _blxr1:
     bx r2
     .pool
 
+.org 0x0805efce
+    ldr r0, =hook_npc_create_by_npc2_create_rage_oam |1
+    bx r0
+    .pool
+
 .org 0x0805eea4
     ldr r0, =hook_npc_create_oam_template | 1
     bx r0
@@ -423,3 +428,19 @@ _blxr1:
 
 .org 0x080833e8
     .word overworld_effects
+
+.org 0x0805e72c
+    push {r4-r5, lr}
+    sub sp, #4
+    ldr r5, [sp, #0x10] // y
+    str r5, [sp]
+    ldr r4, =overworld_create_npc_and_oam_by_person |1
+    bl _blxr4
+    add sp, #4
+    pop {r4-r5}
+    pop {r1}
+    bx r1
+_blxr4:
+    bx r4
+    .pool
+

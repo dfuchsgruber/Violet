@@ -1068,3 +1068,4 @@ berry_pouch_return_to_main = 0x0813dc50 | 1;
 item_close_bag_and_return_to_overworld = 0x080a1128 | 1;
 item_use_continuation = 0x02039998 | 1;
 item_print_string_can_not_be_used_by_oak = 0x080a11fc | 1;
+npc_create_with_oam_by_person = 0x0805e590 | 1;
