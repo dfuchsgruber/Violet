@@ -20,6 +20,8 @@
 #include "berry.h"
 #include "rtc.h"
 #include "constants/person_script_stds.h"
+#include "math.h"
+#include "vars.h"
 
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
@@ -467,14 +469,19 @@ void overworld_create_oam_template_by_person(map_event_person *person, oam_templ
 }
 
 static graphic graphics_rage[] = {
-    {gfx_ow_rageTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
+    [RAGE_SPRITE_RAGE] = {gfx_ow_rageTiles + 0 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
+    [RAGE_SPRITE_QUESTION_MARK] = {gfx_ow_rageTiles + 1 * GRAPHIC_SIZE_4BPP(16, 16), .size = GRAPHIC_SIZE_4BPP(16, 16)},
 };
 
 static gfx_frame gfx_animation_rage[] = {
     {.data = 0, .duration = 0}, {.data = GFX_ANIM_END},
 };
 
-static gfx_frame *gfx_animations_rage[] = {gfx_animation_rage};
+static gfx_frame gfx_animation_question_mark[] = {
+    {.data = 1, .duration = 0}, {.data = GFX_ANIM_END},
+};
+
+static gfx_frame *gfx_animations_rage[] = {gfx_animation_rage, gfx_animation_question_mark};
 
 static rotscale_frame rotscale_animation_rage_grow[] = {
     {.affine = {.affine_x_value = 16, .affine_y_value = 16, .rotation = 0, .duration = 0}},
@@ -509,24 +516,26 @@ static void oam_callback_rage(oam_object *self) {
         self->y = oams[npcs[npc_idx].oam_id].y;
         u16 *position = self->private + 1;
         u16 *frame = self->private + 2;
-        if (++*frame >= 16 + 16 + 8) {
-            *frame = 0;
-            *position = (u16)(*position ^ 1);
-            oam_rotscale_anim_init(self, 1);
-            if (*position) {
-                self->x2 = -3;
-                self->y2 = -5;
-            } else {
-                self->x2 = 2;
-                self->y2 = -2;
-            }
+        switch (self->private[3]) {
+            case RAGE_SPRITE_RAGE:
+                if (++*frame >= 16 + 16 + 8) {
+                    *frame = 0;
+                    *position = (u16)(*position ^ 1);
+                    oam_rotscale_anim_init(self, 1);
+                    if (*position) {
+                        self->x2 = -3;
+                        self->y2 = -5;
+                    } else {
+                        self->x2 = 2;
+                        self->y2 = -2;
+                    }
+                }
+                break;
+            case RAGE_SPRITE_QUESTION_MARK:
+                self->y2 = (s16) (FIXED_TO_INT(FIXED_MUL(INT_TO_FIXED(2), FIXED_SIN(FIXED_DIV(INT_TO_FIXED(*frame), INT_TO_FIXED(64))))) - 12);
+                *frame = (u16)((*frame + 1) % 64);
+                break;
         }
-        /**
-        map_position_to_oam_position(npcs[npc_idx].dest_x, npcs[npc_idx].dest_y, &self->x, &self->y);
-        // Center at block
-        self->x = (s16)(self->x + 8);
-        self->y = (s16)(self->y + 8);
-        **/
     }
 }
 
@@ -556,7 +565,16 @@ void npc_delete_rage_sprite(u8 oam_idx) {
     oam_clear_and_free_vram(oams + oam_idx);
 }
 
-u8 overworld_create_rage_sprite(u8 npc_idx) {
+void special_delete_rage_sprite() {
+    u8 person_idx = (u8)*var_access(0x8004);
+    u8 npc_idx = npc_get_by_person_idx(person_idx, save1->map, save1->bank);
+    if (npc_idx < NUM_NPCS && npcs[npc_idx].flags.has_rage_sprite) {
+        npc_delete_rage_sprite(npcs[npc_idx].oam_surf);
+        npcs[npc_idx].flags.has_rage_sprite = 0;
+    }
+}
+
+u8 overworld_create_rage_sprite(u8 npc_idx, u8 type) {
     dprintf("Create rage sprite for person %d\n", npcs[npc_idx].overworld_id);
     oam_palette_load_if_not_present(&palette_rage);
     u8 oam_idx = oam_new_backward_search(&oam_template_rage, 0, 0, 0);
@@ -567,9 +585,11 @@ u8 overworld_create_rage_sprite(u8 npc_idx) {
         o->y = (s16)(o->y + o->y_centre);
         o->flags |= OAM_FLAG_CENTERED;
         o->private[0] = npc_idx;
+        o->private[3] = type;
         u8 z = npcs[npc_idx].height.current;
         oam_set_priority_by_height(o, z);
         oam_set_subpriority_by_height(o, z, 0);
+        oam_gfx_anim_start(o, type);
         o->callback(o);
     }   
     return oam_idx;
@@ -620,7 +640,10 @@ u8 overworld_create_npc_and_oam_by_person(map_event_person *person, u8 map, u8 b
         oam_set_subsprite_table(oams + npcs[npc_idx].oam_id, subsprite_tables);
     if (person->script_std == PERSON_AGGRESSIVE_POKEMON) {
         npcs[npc_idx].flags.has_rage_sprite = 1;
-        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx);
+        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx, RAGE_SPRITE_RAGE);
+    } else if (npcs[npc_idx].overworld_id == 254) {
+        npcs[npc_idx].flags.has_rage_sprite = 1;
+        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx, RAGE_SPRITE_QUESTION_MARK);
     }
     return npc_idx;
 }
@@ -629,7 +652,10 @@ void overworld_create_rage_if_needed(u8 npc_idx) {
     map_event_person *p = map_get_person(npcs[npc_idx].overworld_id, npcs[npc_idx].map, npcs[npc_idx].bank);
     if (p && p->script_std == PERSON_AGGRESSIVE_POKEMON) {
         npcs[npc_idx].flags.has_rage_sprite = 1;
-        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx);
+        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx, RAGE_SPRITE_RAGE);
+    } else if (npcs[npc_idx].overworld_id == 254) {
+        npcs[npc_idx].flags.has_rage_sprite = 1;
+        npcs[npc_idx].oam_surf = overworld_create_rage_sprite(npc_idx, RAGE_SPRITE_QUESTION_MARK);
     }
 }
 
@@ -643,11 +669,7 @@ u8 overworld_create_oam_with_callback_by_npc(npc *n, void (*callback)(oam_object
     if (oam_idx < 64 && subsprites != NULL) {
         oam_set_subsprite_table(oams + oam_idx, subsprites);
         oams[oam_idx].sprite_mode = 2;
-        map_event_person *person = map_get_person(n->overworld_id, n->map, n->bank);
-        if (person->script_std == PERSON_AGGRESSIVE_POKEMON) {
-            n->flags.has_rage_sprite = 1;
-            n->oam_surf = overworld_create_rage_sprite(npc_get_by_person_idx(n->overworld_id, n->map, n->bank)); 
-        }
+        overworld_create_rage_if_needed(npc_get_by_person_idx(n->overworld_id, n->map, n->bank));
     }
     return oam_idx;
 }

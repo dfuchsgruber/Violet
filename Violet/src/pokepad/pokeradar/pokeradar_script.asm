@@ -1,6 +1,7 @@
 .include "overworld_script.s"
 .include "movements.s"
 .include "constants/flags.s"
+.include "specials.s"
 
 .global script_pokeradar
 .global script_pokeradar_battle
@@ -82,6 +83,8 @@ script_pokeradar_battle:
 script_pokeradar_alert_s:
     
     sound 0x15
+    setvar 0x8004 254
+    special SPECIAL_NPC_DELETE_RAGE_SPRITE
     applymovement 254 script_pokeradar_movement_alert
     waitmovement 0
     loadpointer 0 str_pokepad_pokeradar_alert

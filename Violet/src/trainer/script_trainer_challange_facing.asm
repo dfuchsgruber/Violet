@@ -71,6 +71,8 @@ challange_loop_aggresive_wild:
     closeonkeypress
 ow_script_aggresive_wild_spotted:
     callasm trainer_get_current_npc_idx
+    copyvar 0x8004 LASTTALKED
+    special SPECIAL_NPC_DELETE_RAGE_SPRITE
     lock
     special SPECIAL_TRAINER_APPROACH
     waitstate

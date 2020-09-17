@@ -231,6 +231,11 @@ void boulder_animation_start(u8 npc_idx, u8 direction);
  **/
 bool boulder_push_attempt(s16 x, s16 y, u8 direction);
 
+enum {
+    RAGE_SPRITE_RAGE,
+    RAGE_SPRITE_QUESTION_MARK,
+};
+
 /**
  * Deletes a rage effect sprite of an npc and frees resources that are not held by other rage effect sprites
  * @param oam_idx the oam to free
