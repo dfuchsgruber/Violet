@@ -734,3 +734,9 @@ org 0x080d7680 // bsc_string 2: Return to trainer message
 battle_item_restore_hp_break: 
 	bl 0x0801c8d6 // Break
 	.pool
+
+.org 0x081dde8c	+ 28 * 4
+	.word battle_ai_script_consider_fleeing
+
+.org 0x083f4dfc + 0x52 * 4
+	.word battle_ai_script_command_random_flee | 1

@@ -157,6 +157,8 @@ typedef struct {
     u8 item_dropping_chance_increased_by_ability : 1;
     u8 aggresive_battler_idx; 
     u8 golden_apple_battler_idx;
+    u32 fleeing_rng_seed;
+    u32 fleeing_rng;
 } battle_state2_t;
 
 #define BATTLE_STATE2 ((battle_state2_t*)fmem.battle_state2)

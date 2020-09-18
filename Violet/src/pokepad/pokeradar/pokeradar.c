@@ -19,6 +19,7 @@
 #include "debug.h"
 #include "constants/person_behaviours.h"
 #include "overworld/sprite.h"
+#include "battle/state.h"
 
 extern u8 script_pokeradar_battle[];
 
@@ -169,6 +170,15 @@ void pokeradar_spawn_pokemon() {
     pid_t p = {.value = 0};
     pokemon_spawn_by_seed_algorithm(&opponent_pokemon[0], species, level, 32, false, p,
         false, 0, pokeradar_next_seed, NULL);
+}
+
+void battle_initialize_pokeradar() {
+	super.saved_callback = battle_continuation_wild_legendary_battle_end;
+	battle_flags = BATTLE_FLEEING_WILD | BATTLE_LEGENDARY;
+	battle_initialize(battle_get_intro_type(), 0);
+	save_increment_key(8);
+	save_increment_key(9);
+	overworld_script_halt();
 }
 
 bool pokeradar_step() {

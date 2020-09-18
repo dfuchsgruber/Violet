@@ -72,7 +72,11 @@ script_pokeradar_battle:
     cry 0x50EB 0
     waitcry
     special 0x13
-    dowildbattle
+	setflag FLAG_IN_BATTLE
+	callasm battle_initialize_pokeradar
+    //dowildbattle
+	clearflag FLAG_IN_BATTLE
+	waitstate
     fadescreen 1
     hidesprite 254
     setflag POKERADAR_POKEMON_SPAWNED

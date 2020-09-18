@@ -10,6 +10,8 @@
 #include "trainer/trainer.h"
 #include "battle/attack.h"
 #include "constants/trainer_ai_flags.h"
+#include "vars.h"
+#include "constants/difficulties.h"
 
 enum {
     ACTION_SWITCH = 1, ACTION_ITEM, ACTION_MOVE
@@ -69,8 +71,10 @@ void battle_ai_choose_action() {
 }
 
 void ai_setup(u16 trainer_idx) {
+    dprintf("AI is setup for trainer %d.\n", trainer_idx);
     ai_thinking_state_t *ai = battle_ressources->ai;
     memset(ai, 0, sizeof(ai_thinking_state_t));
+    BATTLE_STATE2->fleeing_rng_seed = (u32)(rnd16() | (rnd16() << 16));
     u8 move_limitations = battler_check_move_limitations(active_battler, 0, MOVE_LIMITATION_ALL);
     for (int i = 0; i < 4; i++) {
         if (move_limitations & int_bitmasks[i])
@@ -96,7 +100,14 @@ void ai_setup(u16 trainer_idx) {
         ai->ai_flags = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS;
     } else if (battle_flags & BATTLE_LEGENDARY) {
         ai->ai_flags = TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE;
-    } else {
+    } else if (battle_flags & BATTLE_TRAINER) {
         ai->ai_flags = trainers[trainer_idx].ai;
     }
+    if (battle_flags & BATTLE_FLEEING_WILD) {
+        ai->ai_flags |= TRAINER_AI_CONSIDER_FLEEING;
+    }
+    if (*var_access(DIFFICULTY) == DIFFICULTY_HARD && !(battle_flags & (BATTLE_LEGENDARY | BATTLE_WILD_SCRIPTED))) {
+        ai->ai_flags |= TRAINER_AI_CONSIDER_FLEEING; // Normal wild encounters might flee in hard mode
+    }
+    dprintf("AI flags 0x%x, battle flags 0x%x\n", ai->ai_flags, battle_flags);
 }

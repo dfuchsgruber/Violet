@@ -41,6 +41,8 @@ typedef struct {
     u8 chosen_item_idxs[4];
 } trainer_ai_state2_t;
 
+extern u8 *battle_ai_script;
+
 #define TRAINER_AI_STATE2 ((trainer_ai_state2_t*)fmem.trainer_ai_state2)
 
 

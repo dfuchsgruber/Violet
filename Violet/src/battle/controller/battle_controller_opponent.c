@@ -47,7 +47,7 @@ void battle_controller_opponent_handle_choose_pokemon() {
 }
 
 void battle_controller_opponent_handle_choose_move() {
-    if (battle_flags & (BATTLE_TRAINER | BATTLE_ROAMER | BATTLE_SAFARI)) {
+    if (battle_flags & (BATTLE_TRAINER | BATTLE_ROAMER | BATTLE_SAFARI | BATTLE_FLEEING_WILD)) {
         ai_setup(trainer_idx_by_battler_idx(active_battler));
         u8 move_idx = trainer_ai_choose_move_or_action();
         trainer_ai_choosing_state_t *ai_state = (trainer_ai_choosing_state_t*) &battle_general_buffers0[active_battler][4];
