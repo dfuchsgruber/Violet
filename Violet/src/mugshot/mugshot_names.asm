@@ -148,6 +148,9 @@
 	str_mug_roman:
 		.string "Roman"
 
+.global str_mug_rosalie
+	str_mug_rosalie:
+		.string "Rosalie"
 
 .elseif LANG_EN
 .endif

@@ -9,7 +9,7 @@
 #include "transparency.h"
 #include "constants/map_weathers.h"
 #include "vars.h"
-#include "flags.h"
+#include "flags.h" 
 #include "bios.h"
 #include "agbmemory.h"
 #include "overworld/map_control.h"
@@ -203,6 +203,13 @@ mugshot mugshots[] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_romanTiles,
 		[MUGSHOT_HAPPY] = gfx_mug_roman_happyTiles
 		}, gfx_mug_romanPal, str_mug_roman
+	},
+	[MUGSHOT_ROSALIE] = {
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_rosalieTiles,
+		},
+		gfx_mug_rosaliePal,
+		str_mug_rosalie,
 	},
 	
 };

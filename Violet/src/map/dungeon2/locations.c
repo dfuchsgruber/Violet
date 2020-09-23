@@ -39,7 +39,7 @@ dungeon_location dungeon_locations[NUM_DUNGEON_LOCATIONS] = {
     {3, 57, 0x34, 0x1F, DTYPE_FOREST}, // Trainerschule
 
     {3, 41, 0x2C, 0x14, DTYPE_CAVE}, // Route 2,
-    {1, 0, 0x23, 0x2A, DTYPE_FOREST}, // Kranzdorf Wald
+    {1, 0, 0x23, 0x2A, DTYPE_FOREST}, // Kranzwald
 	{3, 74, 0x2F, 0x14, DTYPE_CAVE}, // Felsige Odenis
 	{3, 4, 0x35, 0x3, DTYPE_CAVE}, // Kaskada
 

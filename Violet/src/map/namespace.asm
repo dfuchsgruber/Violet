@@ -346,7 +346,7 @@ map_namespaces:
 	.global str_mapnamespace_126
 
 	str_mapnamespace_126:
-		.string "Kranzdorf-Wald"
+		.string "Kranzwald"
 
 
 	.global str_mapnamespace_127

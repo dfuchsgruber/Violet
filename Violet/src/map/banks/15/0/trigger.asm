@@ -257,6 +257,11 @@ str_police2:
  */
 
 
+ow_script_map_15_0_trigger_0:
+    addvar STORY_PROGRESS 1
+    end
+
+/* 
 mov_exclam:
     .byte SAY_EXCLAM, STOP
 mov_fu:
@@ -479,3 +484,4 @@ str_may_10:
 .elseif LANG_EN
 
 .endif
+*/

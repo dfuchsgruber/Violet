@@ -7,7 +7,9 @@
 .include "overworld_script.s"
 .include "species.s"
 .include "items.s"
+.include "pathfinding.s"
 
+.global ow_script_bruchfels_may_2
 .global ow_script_map_3_2_person_0
 .global ow_script_0x8127f3
 .global ow_script_map_3_2_person_8
@@ -332,26 +334,76 @@ ow_script_movs_0x8ca7be:
 
 
 ow_script_map_3_2_person_12:
-    checkflag FRBADGE_1
-    gotoif 1 badge_done
-    loadpointer 0x0 str_may_1
-    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT MSG_FACE
+    lock
+    faceplayer
+    loadpointer 0 str_may_1
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0
+    update_mugshot_emotion MUGSHOT_SAD
+    loadpointer 0 str_may_2
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_ANGRY
+    loadpointer 0 str_may_3
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    npc_move_to 17 0x26 0x7
+    applymovement 17 mov_fu
+    waitmovement 0
+    pause 48
+    loadpointer 0 str_may_4
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SCARED
+    closeonkeypress
+    npc_move_to 17 0x26 0x10 speed=A_STAR_SPEED_FAST
+    hidesprite 17
+    clearflag (FLAG_BRUCHFELS_MAY_2 | 0x8000)
+    release
     end
 
-badge_done:
-    loadpointer 0 str_may_2
-    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT MSG_FACE
-    end
+
+mov_fu:
+    .byte LOOK_UP, STOP
 
 .ifdef LANG_GER
 
 str_may_1:
-	.autostring 34 2 "Hey PLAYER!\nDu hast also auch hergefunden!\pDiese Stadt ist doch etwas sehr trostlos, findest du nicht?\pIch frage mich, was hier passiert ist, dass alles so verwüstet aussiehtDOTS\pWarum uns Larissa wohl hergeschickt hat?"
+    .autostring 34 2 "Oh, PLAYER!\pHast du also auch hierhergefunden!\pDiese Stadt ist doch etwas sehr trostlos, findest du nicht?\pIch frage mich, was hier passiert ist.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT"
 str_may_2:
-    .autostring 34 2 "Du hast einen Arenakampf gewonnen, PLAYER?\pDas ist fantastischDOTS\pDeswegen sollten wir also herkommenDOTS\pIch weiß aber nicht, ob ich mich so einer Herausfoderung gewachsen fühleDOTS"
-
+    .autostring 34 2 "Wir sind hier, um den Arenaleiter dieser Stadt herauszufordern, nicht wahr?\pA-AberDOTS\pIch weiß nicht, ob ich dem ganzen schon gewachsen bin.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT"
+str_may_3:
+    .autostring 34 2 "Nein!\pIch muss mich zusammenreißen!\pIch kann das schaffen!"
+str_may_4:
+    .autostring 34 2 "UrghDOTS\nNein, das ist zu viel für mich!\pIch bin noch nicht bereitDOTS"
 .elseif LANG_EN
 
+.endif
+
+ow_script_bruchfels_may_2:
+    lock
+    loadpointer 0 str_may_5
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SAD
+    closeonkeypress
+    faceplayer
+    pause 32
+    loadpointer 0 str_may_6
+    show_mugshot MUGSHOT_MAY MUGSHOT_LEFT message_type=MSG_KEEPOPEN hide_mugshot=0
+    loadpointer 0 str_may_7
+    update_mugshot_emotion MUGSHOT_HAPPY
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    npc_move_to 32 0x2f 0x2a
+    hidesprite 32
+    release
+    end
+
+.ifdef LANG_GER
+str_may_5:
+    .autostring 34 2 "PLAYERDOTS\pDu musst sicherlich ganz schlecht von mir denkenDOTS\pIch bin zu feige, mich einer Pokémon-Arena zu stellenDOTS\pUnd das will ich auch gar nicht bestreitenDOTS"
+str_may_6:
+    .autostring 34 2 "Aber für mich sind die Dinge eben nicht so einfach.\pJemand wie du oder RIVALDOTS\pEuch gelingt alles auf AnhiebDOTS\pIch dagegen muss mit vielen Niederlagen zurechtkommenDOTS\pWeißt du.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT.TEXT_DELAY_SHORT\pIch werde das schon irgendwie hinkriegen, denke ichDOTS\pAber ich kann mit deinem Tempo einfach nicht mithalten.\pIch hoffe, du verstehst dasDOTS"
+str_may_7:
+    .autostring 34 2 "Mach dir um mich keine Sorgen, PLAYER.\pWenn ich mich bereit fühle, werde auch ich den Arenaleiter hier herausfordern!\pDas verspreche ich dir!"
+.elseif LANG_EN
 .endif
 
 

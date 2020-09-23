@@ -219,7 +219,7 @@ str_0x8e1843:
 
 
 str_0x8e18b9:
-    .string "Ich sollte zurück in den\nKranzdorf-Wald gehen."
+    .string "Ich sollte zurück in den\nKranzwald gehen."
 
 
 .elseif LANG_EN
@@ -546,7 +546,7 @@ str_0x8e687b:
 
 
 str_0x8e6906:
-    .string "Vielleicht bleibe ich lieber hier,\nin der Nähe des Kranzdorf-Waldes."
+    .string "Vielleicht bleibe ich lieber hier,\nin der Nähe des Kranzwaldes."
 
 
 .elseif LANG_EN
@@ -701,7 +701,7 @@ str_faun14:
 .ifdef LANG_GER
 
 str_0x8ec458:
-	.autostring 35 2 "PLAYER!\nIch habe alle Hände voll zu tun.\pMan hat Albus, den Anführer der Revolutionsbewegung hier gesichtet.\pDie Revolutionäre sind die wohl gefährlichste Gruppe unserer Zeit.\pWenn es ihnen gelingt, die Regierung zu stürzen, versinkt der Kontinent im Chaos.\pNoch dazu belagert eine Kommandantin dieser Violet Punks den Kranzdorf-Wald.\pDOTS DOTS DOTS\nIch kann mich nicht beiden Problemen gleichzeitig widmen DOTS"
+	.autostring 35 2 "PLAYER!\nIch habe alle Hände voll zu tun.\pMan hat Albus, den Anführer der Revolutionsbewegung hier gesichtet.\pDie Revolutionäre sind die wohl gefährlichste Gruppe unserer Zeit.\pWenn es ihnen gelingt, die Regierung zu stürzen, versinkt der Kontinent im Chaos.\pNoch dazu belagert eine Kommandantin dieser Violet Punks den Kranzwald.\pDOTS DOTS DOTS\nIch kann mich nicht beiden Problemen gleichzeitig widmen DOTS"
 
 
 str_0x8e8f9d:
@@ -734,7 +734,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f461a:
-    .string "Ich muss hier so lange Wache\nhalten, bis Rin ihre Mission im\lKranzdorf-Wald erledigt hat!"
+    .string "Ich muss hier so lange Wache\nhalten, bis Rin ihre Mission im\lKranzwald erledigt hat!"
 
 
 

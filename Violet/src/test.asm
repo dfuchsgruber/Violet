@@ -35,6 +35,22 @@ str_afterb:
 	.string "After B"
 
 ow_script_test: 
+	setvar STORY_PROGRESS 0x1c
+	end
+	settrainerflag 0x29
+	settrainerflag 0x2a
+	settrainerflag 0x2b
+	setvar STORY_PROGRESS 16
+	clearflag ROUTE_3_MAY
+	end
+
+
+	setflag FLAG_SILVANIA_FOREST_ENTRANCE
+	setflag FLAG_SILVANIA_CUT_TREE
+	clearflag FRBADGE_5
+	end
+
+
 	callasm composter_initialize
 	waitstate
 	loadpointer 0 str_beforea

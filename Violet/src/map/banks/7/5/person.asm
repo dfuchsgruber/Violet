@@ -45,7 +45,7 @@ str_0x81aff5:
 
 
 str_0x81b06e:
-    .string "Sogar die Wände sind aus Holz aus\ndem Kranzdorf-Wald."
+    .string "Sogar die Wände sind aus Holz aus\ndem Kranzwald."
 
 
 .elseif LANG_EN

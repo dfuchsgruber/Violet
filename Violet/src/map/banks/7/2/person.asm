@@ -12,7 +12,7 @@ end
 .ifdef LANG_GER
 
 str_0x8df230:
-    .string "Einer Legende nach ruht im\nKranzdorf-Wald ein Pokémon, das\ldurch die Zeit reisen kann.\pSpannend, nicht?"
+    .string "Einer Legende nach ruht im\nKranzwald ein Pokémon, das\ldurch die Zeit reisen kann.\pSpannend, nicht?"
 
 
 .elseif LANG_EN

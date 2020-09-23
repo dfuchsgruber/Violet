@@ -88,7 +88,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f5caa:
-    .string "Kranzdorf Wald"
+    .string "Kranzwald"
 
 
 .elseif LANG_EN

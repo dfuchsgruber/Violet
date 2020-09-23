@@ -431,11 +431,11 @@ str_tall_grass:
 str_call_blaise:
 	.autostring 35 2 "Blaise?\nNa wird's bald?\pBeweg deinen Hintern hierher, du kleiner Rotzlöffel!"
 str_blaise_refuses:
-	.autostring 35 2 "Ich verzichte, danke."
+	.autostring 35 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pNein."
 str_call_blaise_again:
-	.autostring 35 2 "Wie bitte?\pWas denkst du denn, wer du glaubst zu sein, du Göre!\pWas meinst du, wie dein Vater reagieren wird, wenn er hiervon erfährt?"
+	.autostring 35 2 "Wie bitte?\pIch hoffe, ich habe mich da verhört!"
 str_blaise_leaves:
-	.autostring 35 2 "Ich habe beschlossen, dass mir das egal ist.\pIch lasse mich nicht länger herumkommandieren.\pWeder von Ihnen noch von meinem Vater.\pIch habe lange genug meine Zeit mit diesem Unsinn hier verschwendet.\pDamit ist jetzt Schluss."
+	.autostring 35 2 "Nein, Sie haben ganz richtig gehört.\pIch habe viel zu lange meine Zeit mit diesen Unsinn verschwendet.\pDamit ist jetzt Schluss.\pIch lasse mich nicht länger einschüchtern.\pLeben Sie wohl, Herr Faun!"
 str_faun_angry_at_blaise:
 	.autostring 35 2 "Dieser verdammte Bengel!\pWas fällt ihm einDOTS"
 str_continue_with_field_test:
@@ -477,17 +477,16 @@ str_call_may:
 str_may_insecure:
 	.autostring 35 2 "O-Ojee!"
 str_results_may:
-	.autostring 35 2 "Gut, gut.\nDer schriftliche Test war auch bei dir eher durchwachsen.\pUnd auch der Feldtest war keine überragende Leistung."
+	.autostring 35 2 "Gut, gut.\nDer schriftliche Test war auch bei dir eher durchwachsen.\pUnd auch der Feldtest war nicht gerade überzeugendDOTS"
 str_may_understands:
 	.autostring 35 2 "Ich verstehe, Herr FaunDOTS\pEs tut mir leid."
 str_results_may2:
-	.autostring 35 2 "Ich weiß, dass du das Zeug zum Trainer hast, Maike.\pAnderenfalls hätte ich dich niemals an meiner Schule aufgenommen.\pAber du musst endlich anfangen, selbst an dich zu glauben.\pWie sollen deine Pokémon sonst hinter dir stehen?\pAlles in allem, Mädchen, werde ich aber auch dich nicht durchfallen lassen.\pIch denke, es tut dir ganz gut, nicht mehr nur die Schulbank zu drücken, sondern da draußen in der echten Welt Erfahrungen zu sammeln."
+	.autostring 35 2 "Ich weiß, dass du das Zeug zum Trainer hast, Maike.\pSonst wärst du in meiner Schule gar nicht so weit gekommenDOTS\pAber du stehst dir selbst im Weg, MädchenDOTS\pDOTS DOTS DOTs\nDOTS DOTS DOTS\pIch denke, es tut dir ganz gut, nicht mehr nur die Schulbank zu drücken, sondern da draußen in der echten Welt Erfahrungen zu sammeln.\pAlso lasse ich auch dich bestehenDOTS"
 str_may_glad:
 	.autostring 35 2 "Wirklich?\nDas ist fantastisch!\pIch habe doch tatsächlich bestandenDOTS"
 str_final_talk:
-	.autostring 35 2 "Ähm, gutDOTS\pWie ihr vielleicht bemerkt habt, bin ich kein Mann großer Worte.\pUnd ich werde euch sicher keine Abschiedsrede halten, ihr Gören, verstanden?\pAber ich würde euch nicht hier abgehen lassen, wenn ich nicht davon überzeugt wäre, dass ihr da draußen bestehen könnt.\pJetzt beginnt für euch ein ganz neues Kapitel.\pUnd auch wenn da draußen viele Gefahren auf euch warten, wird es doch vor allem ein Riesenspaß werden, da bin ich mir sicher!\pEnttäuscht mich ja nicht, verstanden?\pSonst redet man noch schlecht von meiner SchuleDOTS\pLebt wohl, Kinder!"
+	.autostring 34 2 "Also gut.\pIhr kriegt von mir sicher keine Abschiedsrede zu hören.\pAber ihr seid jetzt Absolventen meiner Schule.\pAlso verhaltet euch auch so.\pGebt euch Mühe, wenn ihr da draußen kämpft.\pUnd gebt aufeinander Acht, ja?\pIhr seid eine Gemeinschaft und habt füreinander einzustehen.\pSelbst für diesen Bengel Blaise.\pMerkt euch das, ja?\pLebt wohl, ihr Rotznasen!"
 .elseif LANG_EN
-
 	.autostring 35 2 "Ok PLAYER, three Pokémon to choose from remain.\pTake your time to pick one of them!"
 str_player_received_b1:
     .string "PLAYER received a\nBUFFER_1!"
@@ -512,13 +511,13 @@ str_tall_grass:
 str_call_blaise:
 	.autostring 35 2 "Blaise?\nDid I stutter?\pMove it and come here!"
 str_blaise_refuses:
-	.autostring 35 2 "No, I don't think I will."
+	.autostring 35 2 "DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT DOTSTEXT_DELAY_SHORT\pNo, I don't think I will."
 str_call_blaise_again:
 	.autostring 35 2 "Come again?\pDarn spoiled brat!\pWho do you think you are?\pCan you imagine how your father will react if he hears about that?"
 str_blaise_leaves:
-	.autostring 35 2 "I just decided that I don't care anymore.\pI won't be pushed arround anymore, neither by you nor by my father.\pI wasted enough time with this nonsense here already.\pBut that ends now."
+	.autostring 34 2 "No you understood me correctly.\pI wasted enough time with all of this nonesense already.\pI have had enough.\pI won't be intimedated anymore.\pFarewell, Mr. Faun!"
 str_faun_angry_at_blaise:
-	.autostring 35 2 "Unbelievable!\nWhat an idiot!\pWhat audacity!"
+	.autostring 35 2 "Unbelievable!\nWhat an idiot!\pHis audacity!"
 str_continue_with_field_test:
 	.autostring 35 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pThat's gonna have consequencesDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
 str_continue_with_field_test2:
@@ -562,11 +561,12 @@ str_results_may:
 str_may_understands:
 	.autostring 35 2 "In understand, Mr. Faun.\pI am sorryDOTS"
 str_results_may2:
-	.autostring 35 2 "But I know that you got what is needed to become a successful trainer, May!\pOtherwise I wouldn't have made you my pupil!\pYou have to start believing in yourself!\pHow can you expect your Pokémon to trust in you, when youself can't even do it?\pHaving said that, girl, I won't let you fail this exam.\pI think it will do you more good to finally leave the school and instead gather hands-on experience out there in the real world."
+	.autostring 34 2 "But I know that you got what it takes to become a successful trainer.\ppOtherwise you wouldn't have come as far in my school.\pBut often than not you are standing in your way, girl.\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pHaving said that, girl, I won't let you fail this exam.\pI think it will do you more good to finally leave the school and instead gather hands-on experience out there in the real world."
 str_may_glad:
 	.autostring 35 2 "Really?\nThat's fantastic!\pI really did itDOTS"
 str_final_talk:
-	.autostring 35 2 "Er, ok.\nAs you might have noticed I am not a man of many words.\pAnd I won't give any sort of goodbye-speech to you brats, got that?\pBut I wouldn't let you graduate if I wasn't convinced that all of you were able to succed out there.\pNow a new chapter begins for every single one of you.\pAnd even though there are many dangers out there waiting for you, I positive that it will more than everything be so much fun!\pDon't you dare to dissapoint me though!\pOtherwise people might talk bad about my school.\pGoodbye, you brats!"
+	.autostring 34 2 "Er, ok.\pYou won't hear some kind of speech from me.\pBut now you graduated from my school.\pSo you better behave accordingly.\pAlways give your very best when fighting out there.\pAnd take care of one another.\pEven of that brat Blaise.\pRemember that, ok?\pFarewell, you little brats!"
+
 .endif
 
 ow_script_trainerschool_felix_outside:
@@ -643,9 +643,9 @@ end
 
 .ifdef LANG_GER
 str_before_faun_appeared_felix:
-	.autostring 35 2 "Jetzt können wir Opi beweisen, aus welchem Holz wir geschnitzt sind, PLAYER!\pImmerhin hatten wir einen ausgezeichneten Lehrer, nicht wahr?"
+	.autostring 35 2 "Jetzt können wir Opi beweisen, aus welchem Holz wir geschnitzt sind, PLAYER!"
 str_has_received_pkmn_felix:
-	.autostring 35 2 "Opi mag zwar ein strenger Lehrer sein.\pAber dass er uns so seltene Pokémon anvertraut, zeigt doch eigentlich auch, wie viel er von uns hält, oder?"
+	.autostring 35 2 "Was für seltene Pokémon Opi uns anvertraut hat!\pIst das nicht toll?"
 str_catch_pkmn_felix:
 	.autostring 35 2 "Keine Sorge, PLAYER.\nEs ist wirklich kinderleicht!"
 str_battle_felix:
@@ -653,8 +653,7 @@ str_battle_felix:
 str_results_felix:
 	.autostring 35 2 "Ich bin ja so glücklich!\nOpi ist bestimmt stolz auf mich!"
 str_goodbye_felix:
-	.autostring 35 2 "Großartig, was?\pJetzt sind wir alle also Trainer!\pIch kann mir vorstellen, dass du es jetzt auf die Arena-Orden abgesehen hast.\pDa will ich dich auch gar nicht aufhalten.\pIch für meinen Teil denke aber, dass ich mich irgendwo nützlich machen will.\pAnderen Menschen helfen, und soDOTS\pWeißt du, das ist doch das, was einen Trainer ausmacht, oder?\pUnd ich bin mir sicher, dass unser Abschied heute bloß vorrübergehend ist.\pBis wir uns wiedersehen, wünsche ich dir alles Gute, PLAYER!\pPass auf dich auf!"
-
+	.autostring 35 2 "Großartig, was?\pJetzt sind wir alle also Trainer!\pHast du schon Pläne?\pIch will am Liebsten wie Opi irgendetwas Sinnvolles tunDOTS\pWeißt du, was ich meine?\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pMir wird schon was einfallen!\pMach's gut, PLAYER!"
 .elseif LANG_EN
 str_before_faun_appeared_felix:
 	.autostring 35 2 "Now we can show grandpa what we're made of, PLAYER!\pAfter all we had an excellent teacher, right?"
@@ -1087,7 +1086,7 @@ str_battle_rival:
 str_results_rival:
 	.autostring 35 2 "Viel Glück, PLAYER!\nDu wirst es brauchen!"
 str_goodbye_rival:
-	.autostring 35 2 "Also, PLAYER!\nJetzt sind wir beide Trainer, hu?\pDu weißt was das heißt, oder?\pJetzt kann uns nichts mehr aufhalten.\pWenn du mich einholen willst, solltest du dich besser ranhalten!"
+	.autostring 35 2 "Also, PLAYER!\nJetzt sind wir beide Trainer, hu?\pDu weißt was das heißt, oder?\pJetzt kann uns nichts mehr aufhalten.\pIch werde der größte Trainer der Welt sein!\pWenn du mich einholen willst, solltest du dich besser ranhalten!"
 .elseif LANG_EN
 str_make_may_appear:
 	.autostring 35 2 "PLAYER, there you are.\pLet's be honest, that exam was weird, wasn't it?\pI mean, who could have answered these questions?"

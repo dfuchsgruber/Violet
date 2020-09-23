@@ -13,6 +13,10 @@
 .global ow_script_map_3_1_trigger_larissa
 
 ow_script_map_3_1_trigger_larissa:
+    setvar STORY_PROGRESS 12
+    end
+
+/* 
     lockall
     applymovement 0xFF mov_fl
     waitmovement 0
@@ -73,3 +77,4 @@ str_2:
 str_3:
     .autostring 34 2 "It must seem weird to you that I just approached you like this.\pBut I have been traveling through this region for some time now in order to get to know the people that live here.\pAnd there was something quite fascinating about you.\pYou have this sparkle in your eye that one usually only great trainers have.\pMaybe, there is a bright future ahead of you?\pIn this case I am sure we will meet again.\pPLAYER!\nI will remember your name!\pGood bye!"
 .endif
+*/

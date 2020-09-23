@@ -3272,7 +3272,7 @@ item items[] = {
 		//ITEM_MINIPILZ
 		LANGDEP(PSTRING("Minipilz"), PSTRING("Tinymushroom")),
 		0x67, //index
-		500, //price
+		250, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_minipilz_description,
@@ -3288,7 +3288,7 @@ item items[] = {
 		//ITEM_RIESENPILZ
 		LANGDEP(PSTRING("Riesenpilz"), PSTRING("Big Mushroom")),
 		0x68, //index
-		5000, //price
+		500, //price
 		0, //holding_effect_id
 		0, //holding_effect_param
 		str_item_riesenpilz_description,
@@ -7779,7 +7779,7 @@ item items[] = {
 	},
 	[ITEM_MININUGGET] = {
 		.name = LANGDEP(PSTRING("Mininugget"), PSTRING("Mini Nugget")),
-		.index = ITEM_MININUGGET, .price = 500,
+		.index = ITEM_MININUGGET, .price = 1000,
 		.description = str_item_mininugget_description, .pocket = POCKET_ITEMS, .type = 4,
 		.field_usage = (void(*)(u8))0x80a2325,
 	},

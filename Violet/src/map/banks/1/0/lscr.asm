@@ -171,7 +171,7 @@ end
 .ifdef LANG_GER
 
 str_0x8ed116:
-	.autostring 35 2 "Vor einer halben Ewigkeit, als ich selbst noch ein Anfänger war, machte ich mich auf, nach dem legendären Pokémon Celebi zu suchen.\pIch hatte gehört, dass es im Kranzdorf-Wald leben soll DOTS"
+	.autostring 35 2 "Vor einer halben Ewigkeit, als ich selbst noch ein Anfänger war, machte ich mich auf, nach dem legendären Pokémon Celebi zu suchen.\pIch hatte gehört, dass es im Kranzwald leben soll DOTS"
 
 
 str_0x8ed0b8:

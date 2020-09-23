@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_80",
 		"events": {
-			"person_cnt": 31,
+			"person_cnt": 32,
 			"warp_cnt": 15,
 			"trigger_cnt": 3,
 			"signpost_cnt": 5,
@@ -429,7 +429,7 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "38",
-					"y": "29",
+					"y": "9",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
@@ -439,7 +439,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "ow_script_map_3_2_person_12",
-					"flag": "FRBADGE_2",
+					"flag": "FLAG_BRUCHFELS_MAY_1",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -788,6 +788,30 @@
 						"species": "POKEMON_STERNDU",
 						"berry_tree_idx": 0
 					}
+				},
+				{
+					"target_index": "32",
+					"picture": "15",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "47",
+					"y": "34",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_bruchfels_may_2",
+					"flag": "FLAG_BRUCHFELS_MAY_2 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
 				}
 			],
 			"warps": [
@@ -914,8 +938,8 @@
 			],
 			"triggers": [
 				{
-					"x": 29,
-					"y": 21,
+					"x": "29",
+					"y": "12",
 					"level": 0,
 					"field_5": 0,
 					"value": 17,
@@ -925,8 +949,8 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 29,
-					"y": 22,
+					"x": "29",
+					"y": "13",
 					"level": 0,
 					"field_5": 0,
 					"value": 17,
@@ -936,8 +960,8 @@
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 29,
-					"y": 23,
+					"x": "29",
+					"y": "11",
 					"level": 0,
 					"field_5": 0,
 					"value": 17,

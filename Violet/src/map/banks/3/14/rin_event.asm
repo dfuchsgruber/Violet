@@ -200,7 +200,7 @@ str_narcissa_5:
 str_player_0:
     .autostring 34 2 "Mein Name ist PLAYER und ich habe Rin bereits zuvor besiegt."
 str_teah_7:
-    .autostring 34 2 "Du bist das Kind, das Rin im Kranzdorf-Wald besiegt hat?\pStimmt es, dass du einen Kampf gegen das legendäre Pokémon Groudon bestritten hast?\pMerkwürdig, dass ich deine Ankunft nicht kommen gesehen habeDOTS"
+    .autostring 34 2 "Du bist das Kind, das Rin im Kranzwald besiegt hat?\pStimmt es, dass du einen Kampf gegen das legendäre Pokémon Groudon bestritten hast?\pMerkwürdig, dass ich deine Ankunft nicht kommen gesehen habeDOTS"
 str_narcissa_6:
     .autostring 34 2 "PLAYER also!\pJa, diesen Namen habe ich in letzter Zeit häufiger gehört.\pDu bist ein Schüler vom alten Faun, nicht wahr?\pDu sorgst für reichlich aufsehen.\pJemand mit deiner Ausstrahlung könnte es weit bringen!"
 str_teah_8:

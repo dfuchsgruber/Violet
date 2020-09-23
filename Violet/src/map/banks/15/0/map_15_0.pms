@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_221",
 		"events": {
-			"person_cnt": 60,
+			"person_cnt": 61,
 			"warp_cnt": 10,
-			"trigger_cnt": 7,
+			"trigger_cnt": 4,
 			"signpost_cnt": 9,
 			"persons": [
 				{
@@ -299,16 +299,16 @@
 					"field_2": 0,
 					"field_3": 0,
 					"x": "45",
-					"y": "59",
+					"y": "56",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
 					},
 					"is_trainer": "0",
 					"alert_radius": 0,
-					"script": "0",
+					"script": "ow_script_route_3_may",
 					"flag": "ROUTE_3_MAY",
 					"field_D": 0,
 					"field_B": 0,
@@ -584,8 +584,8 @@
 					"picture": 26,
 					"field_2": 0,
 					"field_3": 0,
-					"x": 46,
-					"y": 51,
+					"x": "36",
+					"y": "53",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_WANDER_AROUND",
 					"behaviour_range": {
@@ -1534,10 +1534,34 @@
 					"picture": "106",
 					"script_std": 0,
 					"field_3": 0,
-					"x": "45",
-					"y": "55",
+					"x": "42",
+					"y": "53",
 					"level": 0,
 					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "12 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "61",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "46",
+					"y": "44",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
 					"behaviour_range": {
 						"x": 0,
 						"y": 0
@@ -1549,7 +1573,7 @@
 					"flag": "ROUTE_3_MAY",
 					"value": {
 						"item": 0,
-						"species": 0,
+						"species": "POKEMON_STARALILI",
 						"berry_tree_idx": 0
 					}
 				}
@@ -1638,28 +1662,6 @@
 			],
 			"triggers": [
 				{
-					"x": 44,
-					"y": 62,
-					"level": 0,
-					"field_5": 0,
-					"value": 16,
-					"script": "ow_script_map_15_0_trigger_0",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 46,
-					"y": 62,
-					"level": 0,
-					"field_5": 0,
-					"value": 16,
-					"script": "ow_script_map_15_0_trigger_0",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
 					"x": 13,
 					"y": 50,
 					"level": 0,
@@ -1677,17 +1679,6 @@
 					"field_5": 0,
 					"value": 22,
 					"script": "ow_script_map_15_0_trigger_1",
-					"field_A": 0,
-					"field_B": 0,
-					"var": "STORY_PROGRESS"
-				},
-				{
-					"x": 45,
-					"y": 62,
-					"level": 0,
-					"field_5": 0,
-					"value": 16,
-					"script": "ow_script_map_15_0_trigger_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
@@ -1717,8 +1708,8 @@
 			],
 			"signposts": [
 				{
-					"x": 49,
-					"y": 44,
+					"x": "49",
+					"y": "44",
 					"level": 0,
 					"type": "SIGNPOST_5",
 					"value": {
@@ -1726,7 +1717,7 @@
 						"item": {
 							"item": "ITEM_KUHMUH_MILCH",
 							"flag": 14,
-							"amount": 5,
+							"amount": "1",
 							"chunk": 0
 						}
 					},
@@ -1742,7 +1733,7 @@
 						"item": {
 							"item": "ITEM_KUHMUH_MILCH",
 							"flag": 15,
-							"amount": 5,
+							"amount": "1",
 							"chunk": 0
 						}
 					},

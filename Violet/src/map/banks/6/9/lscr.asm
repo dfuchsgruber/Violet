@@ -113,6 +113,8 @@ callstd ITEM_OBTAIN
 loadpointer 0x0 str_0x8cb281
 show_mugshot MUGSHOT_LESTER MUGSHOT_LEFT
 setflag FRBADGE_1
+setflag FLAG_BRUCHFELS_MAY_1
+setflag FLAG_BRUCHFELS_MAY_2 | 0x8000
 setvar STORY_PROGRESS 0x14
 warpmuted 0x3 0x2 0x4 0x2d 0x22
 release
