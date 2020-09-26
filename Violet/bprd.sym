@@ -459,7 +459,6 @@ overworld_return_to = 0x08056828 | 1;
 overworld_weather = 0x02037f34;
 overworld_weather_static_fog_add_affected_pal_idx = 0x0807a678 | 1;
 pal_alpha_blending = 0x08045178 | 1;
-pal_gamma_shift = 0x0807a1f8 | 1;
 overworld_weather_static_fog_is_pal_affected = 0x0807a6ac | 1;
 hidden_item_respawnable = 0x084790c0;
 pokemon_new_and_set_ivs = 0x0803de68 | 1;

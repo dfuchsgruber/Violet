@@ -8,6 +8,80 @@
 #include "debug.h"
 #include "overworld/effect.h"
 
+void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
+    u8 current_pal_idx;
+    u16 pal_offset;
+    u8 *gamma_table;
+    u16 i;
+
+    if (gamma_idx > 0) {
+        gamma_idx--;
+        pal_offset = (u16)(start_pal_idx * 16);
+        num_pals = (u8)(num_pals + start_pal_idx);
+        current_pal_idx = start_pal_idx;
+        // Loop through the speficied palette range and apply necessary gamma shifts to the colors.
+        while (current_pal_idx < num_pals) {
+            if (palette_get_gamma_type(current_pal_idx) == GAMMA_NONE) {
+                // No palette change.
+                cpufastset(pal_restore + pal_offset, pals + pal_offset, CPUFASTSET_COPY | CPUFASTSET_SIZE(16 * sizeof(u16)));
+                pal_offset = (u16)(pal_offset + 16);
+            }
+            else {
+                if (palette_get_gamma_type(current_pal_idx) == GAMMA_ALTERNATIVE || current_pal_idx - 16 == overworld_weather.alternative_gamma_oam_pal_idx)
+                    gamma_table = overworld_weather.alternative_gamma_shifts[gamma_idx];
+                else
+                    gamma_table = overworld_weather.gamma_shifts[gamma_idx];
+
+                for (i = 0; i < 16; i++) {
+                    // Apply gamma shift to the original color.
+                    color_t col = pal_restore[pal_offset];
+                    color_t shifted = {.rgb = {.red = (u8)(gamma_table[col.rgb.red] & 31), .green = (u8)(gamma_table[col.rgb.green] & 31),
+                     .blue = (u8)(gamma_table[col.rgb.blue] & 31)}};
+                    pals[pal_offset++] = shifted;
+                }
+            }
+            current_pal_idx++;
+        }
+    }
+    else if (gamma_idx < 0)
+    {
+
+        gamma_idx = (s8)(-gamma_idx - 1);
+        pal_offset = (u16)(start_pal_idx * 16);
+        num_pals = (u8)(num_pals + start_pal_idx);
+        current_pal_idx = start_pal_idx;
+        
+        cpufastset(pal_restore + pal_offset, pals + pal_offset, CPUFASTSET_COPY | CPUFASTSET_SIZE(16 * sizeof(u16)));
+        while (current_pal_idx < num_pals) {
+            if (palette_get_gamma_type(current_pal_idx) == GAMMA_NONE) {
+                // No palette change.
+                pal_offset = (u8)(pal_offset + 16);
+            }
+            else {
+                for (i = 0; i < 16; i++)
+                {
+                    pals[pal_offset] = drought_colors[gamma_idx][DROUGHT_COLOR_INDEX(pal_restore[pal_offset].value)];
+                    pal_offset++;
+                }
+            }
+            current_pal_idx++;
+        }
+    }
+    else
+    {
+        // No palette blending.
+        cpufastset(pal_restore + start_pal_idx * 16, pals + start_pal_idx * 16, CPUFASTSET_COPY | CPUFASTSET_SIZE((u32)(num_pals) * 16 * sizeof(u16)));
+    }
+}
+
+bool overworld_weather_drought_load_palettes() {
+    if (overworld_weather.load_drought_pals_index < 32) {
+        overworld_weather.load_drought_pals_index = 32;
+        overworld_weather.load_drought_pals_offset = 32;
+    }
+    return false;
+}
+
 color_t overworld_weather_static_fog_get_overlay_color() {
     color_t fog_overlay = {.rgb = {.red = 28, .green = 31, .blue = 28}};
     if (dns_on()) {

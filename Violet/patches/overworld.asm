@@ -444,3 +444,7 @@ _blxr4:
     bx r4
     .pool
 
+.org 0x0807ab78
+    ldr r0, =overworld_weather_drought_load_palettes | 1
+    bx r0
+    .pool

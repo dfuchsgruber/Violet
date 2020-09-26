@@ -32,3 +32,8 @@
     bl blxr1 // Should call palette_get_gamma_type
 .org 0x0807a4d0
     .word palette_get_gamma_type | 1 // target for ldr r0, = ... at 0x0807a4a8
+
+.org 0x0807a1f8
+    ldr r3, =pal_gamma_shift | 1
+    bx r3
+    .pool

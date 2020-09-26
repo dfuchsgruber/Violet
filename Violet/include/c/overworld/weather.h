@@ -3,6 +3,7 @@
 
 #include "types.h"
 #include "color.h"
+#include "oam.h"
 
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_CHANGING_WEATHER 0
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN 1
@@ -11,12 +12,43 @@
 
 #define OVERWORLD_WEATHER_STATIC_FOG_PALETTE_BLENDING_ALPHA 12
 
+#define MAX_RAIN_SPRITES             24
+#define NUM_CLOUD_SPRITES            3
+#define NUM_FOG_HORIZONTAL_SPRITES   20
+#define NUM_ASH_SPRITES              20
+#define NUM_FOG_DIAGONAL_SPRITES     20
+#define NUM_SANDSTORM_SPRITES        20
+#define NUM_SWIRL_SANDSTORM_SPRITES  5
+
+#define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
+
+color_t drought_colors[6][0x1000];
+
 typedef struct {
-    u8 unknown[1728];
+    union
+    {
+        struct
+        {
+            struct oam_object *rainSprites[MAX_RAIN_SPRITES];
+            struct oam_object *snowflakeSprites[101];
+            struct oam_object *cloudSprites[NUM_CLOUD_SPRITES];
+        } s1;
+        struct
+        {
+            u8 filler0[0xA0];
+            struct oam_object *fogHSprites[NUM_FOG_HORIZONTAL_SPRITES];
+            struct oam_object *ashSprites[NUM_ASH_SPRITES];
+            struct oam_object *fogDSprites[NUM_FOG_DIAGONAL_SPRITES];
+            struct oam_object *sandstormSprites1[NUM_SANDSTORM_SPRITES];
+            struct oam_object *sandstormSprites2[NUM_SWIRL_SANDSTORM_SPRITES];
+        } s2;
+    } sprites;
+    u8 gamma_shifts[19][32];
+    u8 alternative_gamma_shifts[19][32];
     s8 gamma;
-    u8 field_1729;
-    u8 field_1730;
-    u8 field_1731;
+    s8 gamma_target_idx;
+    u8 gamma_step_delay;
+    u8 gamma_step_frame;
     color_t fadescreen_target_color;
     u8 pal_processing_state;
     u8 fadescreen_cnt;
@@ -29,9 +61,50 @@ typedef struct {
     u8 current_weather;
     u8 next_weather;
     u8 weather_gfx_loaded;
-    u8 unknown2[33];
+    u8 weather_change_done;
+    u8 alternative_gamma_oam_pal_idx;
+    u8 unknown2[31];
     u8 static_fog_affected_pal_idxs[6]; // These palettes correspond to fog oams and have a different filter
     u8 static_fot_number_affected_pal_idxs;
+    u8 fog_h_oam_created;
+    u16 ash_base_oam_x;
+    u16 unknown_6FE;
+    u8 ash_oams_created;
+    u32 sandstorm_x_offset;
+    u32 sandstorm_y_offset;
+    u8 filler_70C[2];
+    u16 sandstorm_base_oam_x;
+    u16 sandstorm_y;
+    u16 sandstorm_wave_idx;
+    u16 sandstorm_num_waves;
+    u8 sandstorm_oams_created;
+    u8 sandstorm_swirl_oams_created;
+    u16 fog_d_base_sprites_x;
+    u16 fog_d_y;
+    u16 fog_d_x_scroll;
+    u16 fog_d_y_scroll;
+    u16 fog_d_x_offset;
+    u16 fog_d_y_offset;
+    u8 fog_d_sprites_created;
+    u16 bubbles_delay_cnt;
+    u16 bubbles_delay_idx;
+    u16 bubbles_coordinates_idx;
+    u16 num_bubbles_sprites;
+    u8 bubbles_oams_created;
+    u16 blend_eva_from;
+    u16 blend_evb_from;
+    u16 blend_eva_to;
+    u16 blend_evb_to;
+    u8 blend_update_cnt;
+    u8 blend_frame_cnt;
+    u8 blend_delay;
+    s16 unknown_73C;
+    s16 unknown_73E;
+    s16 unknown_740;
+    s16 unknown_742;
+    u8 filler_744[0xD-4];
+    s8 load_drought_pals_index;
+    u8 load_drought_pals_offset;
 } overworld_weather_stru;
 
 extern overworld_weather_stru overworld_weather;
