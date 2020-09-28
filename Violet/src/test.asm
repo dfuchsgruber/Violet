@@ -12,6 +12,7 @@
 .include "trainer_backsprites.s"
 .include "battle/battle_handicaps.s"
 .include "battle/battle_bgs.s"
+.include "map_weathers.s"
 
 .global ow_script_test
 .global ow_script_trainer1
@@ -34,7 +35,10 @@ str_beforeb:
 str_afterb:
 	.string "After B"
 
-ow_script_test: 
+ow_script_test:
+	setweather MAP_WEATHER_BURNING_TREES
+	doweather
+	end
 	setvar STORY_PROGRESS 0x1c
 	end
 	settrainerflag 0x29

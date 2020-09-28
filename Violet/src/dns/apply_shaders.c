@@ -7,7 +7,8 @@
 #include "constants/shader_states.h"
 #include "vars.h"
 #include "save.h"
-
+#include "constants/map_weathers.h"
+#include "debug.h"
 
 color_t dns_get_overlay(u8 shader_state) {
     switch (shader_state) {
@@ -50,7 +51,26 @@ u8 dns_get_alpha(u8 shader_state) {
     }
 }
 
+static void pal_apply_weather_shaders(u16 start_color, u16 number_colors) {
+    dprintf("Weather based shader for weather %d\n", save1->map_weather);
+    // Weather based shaders
+    switch (save1->map_weather) {
+        case MAP_WEATHER_BURNING_TREES: {
+            color_t overlay = {.rgb = {.red = 31, .blue = 12, .green = 11}};
+            dns_blend_colors(start_color, number_colors, overlay, 16);
+            for (u16 i = start_color; i < start_color + number_colors; i++)  
+                pal_restore[i] = color_multiply(pal_restore[i], overlay);
+            break;
+        }
+        default:
+            return;
+    }
+    cpuset(&pal_restore[start_color], &pals[start_color], CPUSET_HALFWORD | CPUSET_COPY | CPUSET_HALFWORD_SIZE(number_colors * sizeof(color_t)));
+    // pal_apply_greyscale(&pal_restore[start_color], number_colors);
+}
+
 void pal_apply_shaders(u16 start_color, u16 number_colors) {
+    pal_apply_weather_shaders(start_color, number_colors);
     // Default shaders
     switch (pal_shaders) {
         case SHADER_GREYSCALE:
@@ -91,6 +111,7 @@ void dns_blend_colors(u16 start_col, u16 col_cnt, color_t overlay, u8 alpha) {
         }
     }
 }
+
 
 void pal_apply_shaders_by_palette_idx(u8 pal_idx, u8 number_palettes) {
     pal_apply_shaders((u16)(pal_idx * 16), (u16)(number_palettes * 16));

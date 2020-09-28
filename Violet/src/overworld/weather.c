@@ -8,6 +8,26 @@
 #include "debug.h"
 #include "overworld/effect.h"
 
+weather_callbacks_t weather_callbacks[] = {
+    [MAP_WEATHER_INSIDE] = {.initialize_variables = weather_inside_initialize_variables, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all, .closure = weather_inside_closure },
+    [MAP_WEATHER_SUNNY_WITH_CLOUD_REFLECTION] = {.initialize_variables = weather_sunny_with_cloud_reflection_initialize_variables, .main = weather_sunny_with_cloud_reflection_main, .initialize_all = weather_sunny_with_cloud_reflection_initialize_all, .closure = weather_sunny_with_cloud_reflection_closure },
+    [MAP_WEATHER_OUTSIDE] = {.initialize_variables = weather_outside_initialize_variables, .main = weather_outside_main, .initialize_all = weather_outside_initialize_all, .closure = weather_outside_closure },
+    [MAP_WEATHER_RAIN] = {.initialize_variables = weather_rain_initialize_variables, .main = weather_rain_main, .initialize_all = weather_rain_initialize_all, .closure = weather_rain_closure },
+    [MAP_WEATHER_SNOW] = {.initialize_variables = weather_snow_initialize_variables, .main = weather_snow_main, .initialize_all = weather_snow_initialize_all, .closure = weather_snow_closure },
+    [MAP_WEATHER_THUNDER] = {.initialize_variables = weather_thunder_initialize_variables, .main = weather_thunder_main, .initialize_all = weather_thunder_initialize_all, .closure = weather_thunder_closure },
+    [MAP_WEATHER_STATIC_FOG] = {.initialize_variables = weather_static_fog_initialize_variables, .main = weather_static_fog_main, .initialize_all = weather_static_fog_initialize_all, .closure = weather_static_fog_closure },
+    [MAP_WEATHER_ASH] = {.initialize_variables = weather_ash_initialize_variables, .main = weather_ash_main, .initialize_all = weather_ash_initialize_all, .closure = weather_ash_closure },
+    [MAP_WEATHER_SANDSTORM] = {.initialize_variables = weather_sandstorm_initialize_variables, .main = weather_sandstorm_main, .initialize_all = weather_sandstorm_initialize_all, .closure = weather_sandstorm_closure },
+    [MAP_WEATHER_DYNAMIC_FOG] = {.initialize_variables = weather_dynamic_fog_initialize_variables, .main = weather_dynamic_fog_main, .initialize_all = weather_dynamic_fog_initialize_all, .closure = weather_dynamic_fog_closure },
+    [MAP_WEATHER_DENSE_FOG] = {.initialize_variables = weather_dense_fog_initialize_variables, .main = weather_dense_fog_main, .initialize_all = weather_dense_fog_initialize_all, .closure = weather_dense_fog_closure },
+    [MAP_WEATHER_CLOUDY] = {.initialize_variables = weather_cloudy_initialize_variables, .main = weather_cloudy_main, .initialize_all = weather_cloudy_initialize_all, .closure = weather_cloudy_closure },
+    [MAP_WEATHER_EXTREME_SUN] = {.initialize_variables = weather_extreme_sun_initialize_variables, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all, .closure = weather_extreme_sun_closure },
+    [MAP_WEATHER_EXTREME_THUNDER] = {.initialize_variables = weather_extreme_thunder_initialize_variables, .main = weather_extreme_thunder_main, .initialize_all = weather_extreme_thunder_initialize_all, .closure = weather_extreme_thunder_closure },
+    [MAP_WEATHER_UNDERWATER] = {.initialize_variables = weather_underwater_initialize_variables, .main = weather_underwater_main, .initialize_all = weather_underwater_initialize_all, .closure = weather_underwater_closure },
+    [MAP_WEATHER_WEATHER_0F] = {.initialize_variables = weather_weather_0f_initialize_variables, .main = weather_weather_0f_main, .initialize_all = weather_weather_0f_initialize_all, .closure = weather_weather_0f_closure },
+    [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_extreme_sun_initialize_variables, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all, .closure = weather_extreme_sun_closure },// {.initialize_variables = weather_inside_initialize_variables, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all, .closure = weather_inside_closure },
+};
+
 void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
     u8 current_pal_idx;
     u16 pal_offset;
@@ -103,7 +123,7 @@ bool overworld_weather_static_fog_palette_affected(u8 pal_idx) {
 }
 
 void pal_oam_apply_fading(u8 oam_pal_idx) {
-    // dprintf("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
+    dprintf("Pal idx %d, pr state %d, Shader state %d\n", oam_pal_idx, overworld_weather.pal_processing_state, pal_shaders);
     u8 pal_idx = (u8)(oam_pal_idx + 16);
     if (overworld_weather.pal_processing_state == OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN) {
         if (overworld_weather.field_1738) {

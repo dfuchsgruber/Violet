@@ -4,6 +4,7 @@
 #include "types.h"
 #include "color.h"
 #include "oam.h"
+#include "constants/map_weathers.h"
 
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_CHANGING_WEATHER 0
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN 1
@@ -139,5 +140,77 @@ bool overworld_fading_effect_finished();
  * @param self self-reference
  **/
 void overworld_weather_callback(u8 self);
+
+typedef struct {
+    void (*initialize_variables)();
+    void (*main)();
+    void (*initialize_all)();
+    bool (*closure)();
+} weather_callbacks_t;
+
+void weather_inside_initialize_variables();
+void weather_inside_main();
+void weather_inside_initialize_all();
+bool weather_inside_closure();
+void weather_sunny_with_cloud_reflection_initialize_variables();
+void weather_sunny_with_cloud_reflection_main();
+void weather_sunny_with_cloud_reflection_initialize_all();
+bool weather_sunny_with_cloud_reflection_closure();
+void weather_outside_initialize_variables();
+void weather_outside_main();
+void weather_outside_initialize_all();
+bool weather_outside_closure();
+void weather_rain_initialize_variables();
+void weather_rain_main();
+void weather_rain_initialize_all();
+bool weather_rain_closure();
+void weather_snow_initialize_variables();
+void weather_snow_main();
+void weather_snow_initialize_all();
+bool weather_snow_closure();
+void weather_thunder_initialize_variables();
+void weather_thunder_main();
+void weather_thunder_initialize_all();
+bool weather_thunder_closure();
+void weather_static_fog_initialize_variables();
+void weather_static_fog_main();
+void weather_static_fog_initialize_all();
+bool weather_static_fog_closure();
+void weather_ash_initialize_variables();
+void weather_ash_main();
+void weather_ash_initialize_all();
+bool weather_ash_closure();
+void weather_sandstorm_initialize_variables();
+void weather_sandstorm_main();
+void weather_sandstorm_initialize_all();
+bool weather_sandstorm_closure();
+void weather_dynamic_fog_initialize_variables();
+void weather_dynamic_fog_main();
+void weather_dynamic_fog_initialize_all();
+bool weather_dynamic_fog_closure();
+void weather_dense_fog_initialize_variables();
+void weather_dense_fog_main();
+void weather_dense_fog_initialize_all();
+bool weather_dense_fog_closure();
+void weather_cloudy_initialize_variables();
+void weather_cloudy_main();
+void weather_cloudy_initialize_all();
+bool weather_cloudy_closure();
+void weather_extreme_sun_initialize_variables();
+void weather_extreme_sun_main();
+void weather_extreme_sun_initialize_all();
+bool weather_extreme_sun_closure();
+void weather_extreme_thunder_initialize_variables();
+void weather_extreme_thunder_main();
+void weather_extreme_thunder_initialize_all();
+bool weather_extreme_thunder_closure();
+void weather_underwater_initialize_variables();
+void weather_underwater_main();
+void weather_underwater_initialize_all();
+bool weather_underwater_closure();
+void weather_weather_0f_initialize_variables();
+void weather_weather_0f_main();
+void weather_weather_0f_initialize_all();
+bool weather_weather_0f_closure();
 
 #endif

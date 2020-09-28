@@ -163,7 +163,9 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
 u8 overworld_npc_palette_load(u16 tag) {
     palette *pal = overworld_npc_palette_get_by_tag(tag);
     if (pal) {
-        return oam_palette_load_if_not_present(pal);
+        u8 oam_pal_idx =  oam_palette_load_if_not_present(pal);
+        pal_apply_shaders_by_oam_palette_idx(oam_pal_idx);
+        return oam_pal_idx;
     }
     return 0xFF;
 }

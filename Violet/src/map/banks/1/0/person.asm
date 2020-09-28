@@ -57,20 +57,12 @@ fadescreen 0x0
 release
 end
 
-
 .ifdef LANG_GER
-
 str_0x8f4305:
-    .string "Du schon wieder! Du hast mich und\nmeine Pokémon in Blütenbach\lschon besiegtDOTS\lHier, nimm das und lass mich\lgefälligst in Ruhe!"
-
-
-
+    .autostring 34 2 "Du schon wieder!\pHast mich auf Route 2 ganz schön blamiert, als ich Professor Tann hopsnehmen wollteDOTS\pAber der Fehler passiert mir kein zweites Mal.\pNimm das hier und lass mich gefälligst in Ruhe, ja?"
 str_0x8ef5ca:
-    .string "Buhu! Ich wollte doch nur etwas\nbewirkenDOTS"
-
-
+    .autostring 34 2 "Unfassbar, dass ich mich von einem Kind so demütigen lasseDOTS"
 .elseif LANG_EN
-
 .endif
 
 
@@ -83,9 +75,7 @@ end
 .ifdef LANG_GER
 
 str_0x8ef577:
-    .string "Freddies Musik soll einer Legende\nnach sogar legendäre Pokémon\lvernichten können."
-
-
+    .autostring 34 2 "Hier im Kranzwald funkelt alles so schön.\pIch frage mich, woher dieses Glitzern kommt."
 .elseif LANG_EN
 
 .endif
@@ -98,13 +88,9 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8ef678:
-    .string "Ich bin hierher gekommen, um dem\nlegendären Zeitpokemon zu\lbegegnen. Wo es sich wohl\lversteckt?"
-
-
+    .autostring 34 2 "Wusstest du, dass es hier einen Schrein geben soll?\pMan hat ihn errichtet, um einem Pokémon zu huldigen, das durch die Zeit reisen kann."
 .elseif LANG_EN
-
 .endif
 
 
@@ -118,14 +104,9 @@ end
 .ifdef LANG_GER
 
 str_0x88ae2e:
-    .string "Ich will nicht in die Schule\ngehen! Unterricht ist so öde!"
-
-
-
+    .autostring 34 2 "Ich gehe nicht mehr in die Schule!\pDer Unterricht ist so öde!"
 str_0x8e6b0e:
-    .string "In der Schule hätte ich bestimmt\ngelernt, dich zu besiegen!"
-
-
+    .autostring 34 2 "Meinst du, ich hätte in der Schule gelernt, wie ich dich besiege?"
 .elseif LANG_EN
 
 .endif
@@ -140,15 +121,11 @@ end
 
 .ifdef LANG_GER
 
+
 str_0x8f2a42:
-    .string "Nenn mich einen Spielverderber,\naber wenn ich etwas nicht gut\lfinde, sollte es verboten werden.\lMeine Moralvorstellungen sollten\ldas Maß aller Dinge sein."
-
-
-
+    .autostring 34 2 "Wenn ich etwas nicht gut finde, dann sollte man es verbieten.\pUnd ich dulde keinen Widerspruch!"
 str_0x8f2adf:
-    .string "Dein Kampfstil gehört verboten!"
-
-
+    .autostring 34 2 "So wie du kämpfstDOTS\pDas sollte verboten werden!"
 .elseif LANG_EN
 
 .endif
@@ -161,13 +138,9 @@ end
 
 
 .ifdef LANG_GER
-
 str_0x8f2b00:
-    .string "Viele sind der Meinung, es gäbe\nverschiedene Zeitlinien.\lCelebi, das Zeitpokemon, soll\ljedoch über ihnen existieren und\lsie alle kennen."
-
-
+    .autostring 34 2 "Es soll hier ein Pokémon geben, das durch die Zeit reisen kann.\pEs kennt also sowohl die Vergangenheit als auch die Zukunft.\pEs wäre sicher spannend, auch solche Fähigkeiten zu besitzen, nicht?"
 .elseif LANG_EN
-
 .endif
 
 
@@ -180,9 +153,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f384c:
-    .string "Vor einiger Zeit gab es großen\nAufruhr in Theto, als ein junges\lTrainertalent den Champion\lentthront hat.\lNiemand weiß so recht, wo der\lbesiegte Champion geblieben istDOTS"
-
-
+    .autostring 34 2 "Hast du auch mitbekommen, dass der Champion von einem Kind besiegt worden sein soll?\pIch frage mich, ob dieses Kind jetzt unser neuer Champion istDOTS"
 .elseif LANG_EN
 
 .endif
@@ -198,14 +169,9 @@ end
 .ifdef LANG_GER
 
 str_0x8ef778:
-    .string "Manche mögen Käferpokemon für\nschwach halten, ich aber sage, sie\lbergen riesiges Potenzial!"
-
-
-
+    .autostring 34 2 "Käfer-Pokémon sollen schwach sein?\pVon wegen!\nIch werde dir zeigen, welches Potenzial sie haben!"
 str_0x8ef878:
-    .string "Dein Sieg ist kein Beweis für die\nSchwäche der Käfer-Pokémon!"
-
-
+    .autostring 34 2 "Das beweist gar nichts!\pKäfer-Pokémon sind sehr stark!"
 .elseif LANG_EN
 
 .endif
@@ -220,8 +186,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f38f8:
-    .string "Die Revolutionsbewegung fordert\nFreiheit und ein Ende der\lKorruption.\lKeine schlechten Forderungen, wenn\lman bedenkt, wie sich die Welt\lentwickelt hatDOTS"
-
+    .autostring 34 2 "Hast du von der Revolutionsbewegung gehört?\pSie kleiden sich in grüne Mäntel und kämpfen gegen Korruption und Unterdrückung.\pWenn man bedenkt, wie sich die Welt entwickelt hat, sind das doch gar keine schlechten Ziele, oder?"
 
 .elseif LANG_EN
 
@@ -237,9 +202,7 @@ end
 .ifdef LANG_GER
 
 str_0x8ef978:
-    .string "Team Violet rekrutiert in der\nganzen Region Mitglieder. Sie\lversprechen einem, Teil von etwas\lgroßem, bedeutendem zu sein."
-
-
+    .autostring 34 2 "Diese Team Violet Punks werben überall in der Region Mitglieder an.\pDie haben was ganz Großes vor, sag ich dir."
 .elseif LANG_EN
 
 .endif
@@ -254,9 +217,7 @@ end
 .ifdef LANG_GER
 
 str_0x8ecc17:
-    .string "Der westliche Teil Thetos wird vom\nältesten der Top Vier regiert."
-
-
+    .autostring 34 2 "Der Westen von Theto wird vom Pinken Faun regiert.\pEr war auch einer der drei Gründer dieser Regierung.\pJetzt soll er aber auch irgendwo in einer Schule unterrichten, habe ich gehört."
 .elseif LANG_EN
 
 .endif
@@ -271,11 +232,8 @@ end
 .ifdef LANG_GER
 
 str_0x8f4254:
-    .string "Wenn man immer weiter westwärts\nläuft, erreicht man irgendwann\leine Wüstenregion.\pNur einige Wegstunden entfernt\naber erreicht man Kaskada, die\lStadt der reinen Wasserquellen."
-
-
+    .autostring 34 2 "Der Kranzwald strozt nur so vor Lebenskraft, was?\pAber wenn man weiter westwärts läuft, erreicht man eine staubtrockene Wüste.\pIrrsinnigerweise ist Kaskada, die Stadt der Wasserfälle, nicht weit von dort."
 .elseif LANG_EN
-
 .endif
 
 
@@ -289,14 +247,9 @@ end
 .ifdef LANG_GER
 
 str_0x8f2b8a:
-    .string "Wir von Team Violet sind daran\ninteressiert, die Welt in einen\lbesseren Ort zu verwandeln.\lMit einem Krieg werden wir Frieden\lstiften!"
-
-
-
+    .autostring 34 2 "All die Jahre hat man mich erniedrigt.\pJetzt werde ich es der Welt heimzahlen!\pTeam Violet wird diese Region unterwerfen und du Rotzlöffel kannst nicht dagegen tun!"
 str_0x8f3993:
-    .string "Du wirst uns nicht aufhalten\nkönnen, der ewige Frieden wird\lkommen!"
-
-
+    .autostring 34 2 "Dein Sieg bedeutet gar nichts.\pWenn wir unser Ziel erst erreicht haben, kann uns keiner mehr aufhalten."
 .elseif LANG_EN
 
 .endif
@@ -312,13 +265,9 @@ end
 .ifdef LANG_GER
 
 str_0x8efa78:
-    .string "Ich muss in der Region für Ordnung\nund Sicherheit sorgen. Freiwillige\lRanger sind im Gegensatz zur\lPolizei nicht korrupt."
-
-
-
+    .autostring 34 2 "Seit der ehemalige Champion gestürzt wurde, schafft es die Polizei nicht mehr, für Recht und Ordnung zu sorgen.\pDa kommen wir Ranger ins Spiel!"
 str_0x8efb78:
-    .string "Team Violet ist sowohl der Polizei\nals auch den Rangern ein Dorn im\lAuge!"
-
+    .autostring 34 2 "Du bist stark!\pWillst du nicht auch ein Ranger werden?"
 
 .elseif LANG_EN
 
@@ -335,13 +284,9 @@ end
 .ifdef LANG_GER
 
 str_0x8efc78:
-    .string "Die Welt ist ein grauenvoller Ort.\nWir werden sie unter einen ewigen\lFrieden bringen!"
-
-
-
+    .autostring 34 2 "He, du!\pDu kannst hier nicht durch!\pUnsere Kommandantin hat hier etwas Wichtiges zu erledigen!"
 str_0x8f0916:
-    .string "Niemand kann sich gegen den\nFrieden selbst wehren, auch du\lnicht!"
-
+    .autostring 34 2 "Mach dich auf was gefasst!\pUnserer Kommandantin bist du lange nicht gewachsen!"
 
 .elseif LANG_EN
 
@@ -358,12 +303,10 @@ end
 .ifdef LANG_GER
 
 str_0x8f4388:
-    .string "In diesem Wald kann man Pokémon\ndes Typs Flug exzellent\ltrainieren!"
-
-
+    .autostring 34 2 "Ich habe meine Flug-Pokémon hier lange trainiert!\pWir machen kurzen Prozess mit allen Käfer- und Pflanzen-Pokémon!"
 
 str_0x8f43ce:
-    .string "Huch, du bist ein stärkerer Gegner\nals die wilden Pokémon in diesem\lWald."
+    .autostring 34 2 "Uff\nFür solche Gegner sind meine Pokémon nicht stark genugDOTS"
 
 
 .elseif LANG_EN
@@ -380,11 +323,8 @@ end
 .ifdef LANG_GER
 
 str_0x8f4419:
-    .string "Es heißt, dass es einen Stein\ngeben soll, der das Herz der Zeit\lrepräsentiert. Seine Energie soll\lgrenzenlos sein."
-
-
+    .autostring 34 2 "In diesem Wald hat man das Gefühl, dass die Zeit langsamer vergeht.\pWenn man meint, hier bloß einige Stunden verbracht zu haben, ist draußen bereits der ganze Tag vorbei.\pIch frage mich, ob das bloß Einbildung istDOTS"
 .elseif LANG_EN
-
 .endif
 
 
@@ -398,14 +338,9 @@ end
 .ifdef LANG_GER
 
 str_0x8f448d:
-    .string "Unsere Gesellschaft beutet den\nEinzelnen aus. Korruption und\lVerzweiflung sind die Folge.\lWir kreieren eine Welt, in der es\lFrieden gibt."
-
-
-
+    .autostring 34 2 "Du hältst mich wohl für einen Rowdy, was?\pAber eines Tages werden wir die Kontrolle über diese Region haben.\pUnd dann sehen wir ja, wer die Gesetzlosen sind!"
 str_0x8f4519:
-    .string "Wir sind Teil des großen Plans,\nund du wirst uns nicht aufhalten!"
-
-
+    .autostring 34 2 "Nenn mich ruhig einen Schurken!\pWenn wir unser Ziel erreichen, werden wir die Helden sein und du bist der Verbrecher, Kindchen!"
 .elseif LANG_EN
 
 .endif
@@ -420,9 +355,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f455c:
-    .string "Ich suche hier nach Knilz, einem\nPilz-Pokémon. Ob ich es finden\lkann?"
-
-
+    .autostring 34 2 "Ich suche hier nach dem Pokémon Knilz.\pMan Vater liebt dieses Pokémon und ich will ihm eines zeigen!"
 .elseif LANG_EN
 
 .endif
@@ -437,8 +370,7 @@ end
 .ifdef LANG_GER
 
 str_0x8f45a3:
-    .string "Wenn eines meiner Pokémon die\nAttacke Surfer beherrschen würde,\lkönnte ich diesen Fluss nach\lKaskada hinaufschwimmen."
-
+    .autostring 34 2 "Warst du schon in Laubdorf?\pDort gibt es eine Pokémon-Pension.\pDie Leute da sind so nett!"
 
 .elseif LANG_EN
 
@@ -455,12 +387,9 @@ end
 .ifdef LANG_GER
 
 str_0x8ef8b7:
-    .string "Ich kämpfe für Frieden und\nOrdnung! Und mein Kampf ist nobel!"
-
-
-
+    .autostring 34 2 "Unser Projekt wird Team Violet zur mächtigsten Gruppe der Welt machen.\pDa lasse ich ein Kind doch nicht unsere Pläne durchkreuzen!"
 str_0x8efbc3:
-    .string "Als Herrscher der Welt bringen wir\ndie Ordnung!"
+    .autostring 34 2 "Meine Niederlage macht auch keinen Unterschied mehrDOTS\pDu kannst uns nicht aufhalten!"
 
 
 .elseif LANG_EN

@@ -448,3 +448,15 @@ _blxr4:
     ldr r0, =overworld_weather_drought_load_palettes | 1
     bx r0
     .pool
+
+.org 0x8079cb8
+    .word weather_callbacks
+.org 0x8079d64
+    .word weather_callbacks
+.org 0x8079dd4
+    .word weather_callbacks
+.org 0x8079e14
+    .word weather_callbacks
+
+.org 0x0807b130
+    bx lr // The function does not translate a weather: u8 map_get_weather(u8 weather) {return weather;}
