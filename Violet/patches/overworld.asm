@@ -460,3 +460,8 @@ _blxr4:
 
 .org 0x0807b130
     bx lr // The function does not translate a weather: u8 map_get_weather(u8 weather) {return weather;}
+
+.org 0x08079f60
+    ldr r0, =overworld_weather_update_gamma_shift_and_filter | 1
+    bx r0
+    .pool

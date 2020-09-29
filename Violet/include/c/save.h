@@ -238,6 +238,15 @@ typedef struct {
     u32 gp_rng;
     u8 gold_candy_active : 1;
     u8 gold_candy_levels_remaining : 7;
+    struct {
+        color_t previous_filter;
+        color_t current_filter;
+        color_t target_filter;
+        u8 filter_transition_step; // 16 Blending steps
+        u8 filter_transition_delay;
+        u8 filter_transition_delay_counter;
+    } weather;
+
 } floating_memory;
 
 

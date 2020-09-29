@@ -33,6 +33,10 @@ u8 *dma0_dump = ((floating_memory*) 0x0203CEC4)->dma0_dump;
 void fmem_init(){
     memset(&fmem, 0, sizeof(fmem));
     gp_stack_init();
+    color_t white = {.rgb = {31, 31, 31}};
+    fmem.weather.current_filter = white;
+    fmem.weather.previous_filter = white;
+    fmem.weather.target_filter = white;
 }
 
 

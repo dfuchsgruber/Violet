@@ -51,6 +51,7 @@ u8 dns_get_alpha(u8 shader_state) {
     }
 }
 
+/*
 static void pal_apply_weather_shaders(u16 start_color, u16 number_colors) {
     dprintf("Weather based shader for weather %d\n", save1->map_weather);
     // Weather based shaders
@@ -68,9 +69,10 @@ static void pal_apply_weather_shaders(u16 start_color, u16 number_colors) {
     cpuset(&pal_restore[start_color], &pals[start_color], CPUSET_HALFWORD | CPUSET_COPY | CPUSET_HALFWORD_SIZE(number_colors * sizeof(color_t)));
     // pal_apply_greyscale(&pal_restore[start_color], number_colors);
 }
+*/
 
 void pal_apply_shaders(u16 start_color, u16 number_colors) {
-    pal_apply_weather_shaders(start_color, number_colors);
+    // pal_apply_weather_shaders(start_color, number_colors);
     // Default shaders
     switch (pal_shaders) {
         case SHADER_GREYSCALE:

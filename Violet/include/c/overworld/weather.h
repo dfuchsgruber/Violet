@@ -5,6 +5,7 @@
 #include "color.h"
 #include "oam.h"
 #include "constants/map_weathers.h"
+#include "debug.h"
 
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_CHANGING_WEATHER 0
 #define OVERWORLD_WEATHER_PAL_PROCESSING_STATE_FADING_IN 1
@@ -24,6 +25,19 @@
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
 color_t drought_colors[6][0x1000];
+
+// Ugly macro to initialize blending parameters for all weather functions "conveniently"
+
+#define WEATHER_FUNCTION_WITH_BLEND(weather_func)        \
+    void weather_func##_with_blend() {        \
+        color_t white = {.rgb = {31, 31, 31}};                      \
+        dprintf("Going to white from previous 0x%x, current 0x%x\n", fmem.weather.previous_filter, fmem.weather.current_filter); \
+        fmem.weather.target_filter = white; \
+        fmem.weather.filter_transition_step = 0; \
+        fmem.weather.filter_transition_delay = 0; \
+        fmem.weather.filter_transition_delay_counter = 0;\
+        weather_func(); \
+    }
 
 typedef struct {
     union
@@ -47,7 +61,7 @@ typedef struct {
     u8 gamma_shifts[19][32];
     u8 alternative_gamma_shifts[19][32];
     s8 gamma;
-    s8 gamma_target_idx;
+    s8 gamma_to; // Target gamma for the next weather
     u8 gamma_step_delay;
     u8 gamma_step_frame;
     color_t fadescreen_target_color;
