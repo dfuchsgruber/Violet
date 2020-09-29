@@ -39,6 +39,21 @@ void map_reload();
 void map_reload_no_fading();
 
 /**
+ * Standard callback1 for the overworld
+ **/
+void overworld_callback1();
+
+/**
+ * Callback1 for overworld that only proceeds overworld tasks and doesn't set vblank callbacks according to fading state
+ **/
+void overworld_callback1_proceed_only();
+
+/**
+ * Callback function that proceeds standard overworld tasks
+ **/
+void overworld_proceed();
+
+/**
  * Sets up the data for warping the player
  * @param bank the target map bank
  * @param map the target map id

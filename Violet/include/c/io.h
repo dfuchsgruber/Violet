@@ -61,6 +61,9 @@
 #define IO_WIN0V 0x44
 #define IO_WIN1V 0x46
 
+#define IO_DMA_BASE 0x040000B0
+#define IO_DMA_REGS(num) (IO_DMA_BASE + 12 * num)
+
 #define IO_IME (*(vu16*) (IO_ADDRESS + 0x208))
 
 

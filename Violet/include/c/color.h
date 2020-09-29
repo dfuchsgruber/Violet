@@ -1,7 +1,10 @@
+
+#ifndef H_COLOR
+#define H_COLOR
+
 #include "types.h"
 
-#ifndef COLOR
-#define COLOR
+#define PALS 0x05000000
 
 typedef struct {
     u16 red : 5;
@@ -177,5 +180,8 @@ u8 palette_get_gamma_type(u8 pal_idx);
  * @param oam_pal_idx the oam palette idx to affect
  **/
 void pal_oam_apply_fading(u8 oam_pal_idx);
+
+// If a buffer transfer using the dma3 is requested
+extern u32 palette_proceed_dma_transfer_requested;
 
 #endif

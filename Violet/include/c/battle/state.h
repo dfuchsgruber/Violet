@@ -339,6 +339,11 @@ bool battle_is_double();
 void battle_callback1();
 
 /**
+ * Callback1 that ends a pokedude battle
+ **/
+void battle_pokedude_callback_end();
+
+/**
  * Gets the battle intro type.
  * @return the intro type used for battling.
  **/

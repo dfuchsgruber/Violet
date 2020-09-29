@@ -7,6 +7,7 @@
 #include "constants/time_types.h"
 #include "text.h"
 #include "berry.h"
+#include "dns.h"
 
 bool time_test() {
 	switch(*var_access(TIME_TYPE)) {
@@ -104,6 +105,7 @@ void buffer_time() {
 void time_based_events_run() {
 	berry_proceed();
     daily_events_proceed();
+	update_timezone();
 }
 
 void time_based_events_proceed(u16 *vars) {

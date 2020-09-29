@@ -25,7 +25,10 @@
 #include "constants/pokemon_types.h"
 #include "abilities.h"
 #include "constants/item_pockets.h"
-
+#include "callbacks.h"
+#include "constants/battle/battle_results.h"
+#include "vars.h"
+#include "dns.h"
 
 void battle_intro_draw_pokemon_or_trainer_sprite_draw_second_trainer() {
     if ((battle_flags & BATTLE_TWO_TRAINERS) && battler_get_position(active_battler) == BATTLE_POSITION_OPPONENT_RIGHT) {
@@ -154,6 +157,21 @@ void battle_aggresive_battlers_introduce() {
 void battle_action_turn_finished_wrapper() {
     battle_state->battler_to_switch_into[battler_attacking_order[battle_action_current_turn]] = 6;
     battle_action_turn_finished();
+}
+
+void battle_callback1() {
+    oam_anim_proceed();
+    oam_proceed();
+    tbox_proceed();
+    fading_proceed();
+    big_callback_proceed();
+    pal_filters_apply();
+    if (super.keys_inv.keys.B && (battle_flags & BATTLE_POKEDUDE)) {
+        *var_access(LASTRESULT) = battle_result = BATTLE_RESULT_DRAW;
+        fading_control_reset();
+        fadescreen(0xFFFFFFFF, 0, 0, 16, 0); 
+        callback1_set(battle_pokedude_callback_end);
+    }
 }
 
 void battle_callback_partner_party_preview() {

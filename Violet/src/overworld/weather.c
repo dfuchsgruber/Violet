@@ -104,9 +104,11 @@ bool overworld_weather_drought_load_palettes() {
 
 color_t overworld_weather_static_fog_get_overlay_color() {
     color_t fog_overlay = {.rgb = {.red = 28, .green = 31, .blue = 28}};
+    /*
     if (dns_on()) {
         fog_overlay = color_blend_and_multiply(fog_overlay, dns_get_overlay(pal_shaders), dns_get_alpha(pal_shaders));
     }
+    */
     return fog_overlay;
 }
 

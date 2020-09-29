@@ -7,6 +7,25 @@
 #define CEOMETRIA_GYM_PUNISHMENT_ROOM_BANK 19
 #define CEOMETRIA_GYM_PUNISHMENT_ROOM_MAP_IDX 7
 
+enum {
+    DAYTIME_DAY = 0,
+    DAYTIME_MORNING,
+    DAYTIME_EVENING,
+    DAYTIME_NIGHT,
+}; 
+
+enum {
+    PAL_FILTER_NONE = 0,
+    PAL_FILTER_ALPHA_BLENDING,
+    PAL_FILTER_COLOR_MULTIPLIY,
+    PAL_FILTER_SUBTRACTION,
+};
+
+/**
+ * Applies dns and weather filters to the filtered palset
+ **/
+void pal_filters_apply();
+
 /**
  * Returns the color that is as alpha blending filter depending on a shader state.
  * @param shader_state the shader state
@@ -44,4 +63,5 @@ bool is_inside_map(u8 bank, u8 map);
 bool dns_on();
 
 extern u8 pal_shaders;
+
 #endif

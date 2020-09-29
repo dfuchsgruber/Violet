@@ -290,7 +290,7 @@ void wondertrade_callback_after_selection() {
 void wondertrade_callback_init_selection() {
     generic_callback1();
     if (!fading_is_active()) {
-        fading_control.buffer_transfer_enabled = true;
+        fading_control.buffer_transfer_disabled = true;
         gp_stack_push(fmem.wtrade_mem->from_outdoor);
         wondertrade_free_components();
         pc_initialize(PC_MODE_SELECT);

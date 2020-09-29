@@ -8,6 +8,9 @@
 #ifndef INCLUDE_C_DMA_H_
 #define INCLUDE_C_DMA_H_
 
+#include "types.h"
+#include "io.h"
+
 /**
  * Resets the dma3 controller
  */
@@ -58,6 +61,25 @@ typedef union {
 	int int_value;
 } dma0_scanline_flipflop_t;
 
+#define DMA_SET(num, src, dest, count, control) 			\
+{                                                 			\
+    vu32 *io_regs = (vu32 *)IO_DMA_REGS(num); 				\
+    io_regs[0] = (vu32)(src);                     			\
+    io_regs[1] = (vu32)(dest);                    			\
+    io_regs[2] = (vu32)(DMA_SIZE(count) | (u32)control);   	    \
+    io_regs[2];                                   			\
+}
+
+#define DMA_COPY(num, src, dest, size, bit)                                             							 	\
+    DMA_SET(num,                                                                          							\
+           src,                                                                             							\
+           dest,																										\
+		   (size)/(bit/8),                                                                          					\
+           (DMA_ENABLE | DMA_TIMING_IMMIDIATLY | DMA_TRANSFER_TYPE_##bit##_BIT | DMA_SRC_INCREMENT | DMA_DST_INCREMENT))
+
+#define DMA_COPY_16(num, src, dest, size) DMA_COPY(num, src, dest, size, 16)
+#define DMA_COPY_32(num, src, dest, size) DMA_COPY(num, src, dest, size, 32)
+
 #define DMA_ENABLE (1 << 31)
 #define DMA_INTERRUPT_REQ (1 << 30)
 #define DMA_TIMING_IMMIDIATLY (0 << 28)
@@ -65,8 +87,8 @@ typedef union {
 #define DMA_TIMING_HBLANK (2 << 28)
 #define DMA_TIMING_SPECIAL (3 << 28)
 #define DMA_DRQ_FROM_GAME_PAK (1 << 27)
-#define DMA_TRANSFER_TYPE_HWORD (0 << 26)
-#define DMA_TRANSFER_TYPE_WORD (1 << 26)
+#define DMA_TRANSFER_TYPE_16_BIT (0 << 26)
+#define DMA_TRANSFER_TYPE_32_BIT (1 << 26)
 #define DMA_REPEAT (1 << 25)
 #define DMA_SRC_INCREMENT (0 << 23)
 #define DMA_SRC_DECREMENT (1 << 23)

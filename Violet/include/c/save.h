@@ -22,6 +22,7 @@
 #include "item/item_effect.h"
 #include "trainer/virtual.h"
 #include "overworld/palette.h"
+#include "color.h"
 
 #define GP_STACK_SIZE 16
 
@@ -238,6 +239,13 @@ typedef struct {
     u32 gp_rng;
     u8 gold_candy_active : 1;
     u8 gold_candy_levels_remaining : 7;
+    color_t pals_filtered[32][16];
+    color_t dns_filter;
+    color_t weather_filter;
+    u8 dns_alpha : 5;
+    u8 dns_filter_mode : 3; // If true, color multiply is used, else alpha blending
+    u8 weather_alpha : 5;
+    u8 weather_filter_mode : 3; // If true, color multiply is used, else alpha blending 
 } floating_memory;
 
 

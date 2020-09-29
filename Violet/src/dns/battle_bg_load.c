@@ -13,5 +13,5 @@ void battle_bg_load(u8 bg_id) {
     lz77uncompvram(battle_bgs[bg_id].tileset, (void*) 0x6008000);
     lz77uncompvram(battle_bgs[bg_id].tilemap, (void*) 0x600D000);
     pal_decompress(battle_bgs[bg_id].pal, 0x20, 0x60);
-    pal_apply_shaders(0x20, 0x30);
+    // pal_apply_shaders(0x20, 0x30);
 }

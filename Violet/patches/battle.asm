@@ -740,3 +740,8 @@ battle_item_restore_hp_break:
 
 .org 0x083f4dfc + 0x52 * 4
 	.word battle_ai_script_command_random_flee | 1
+
+.org 0x08011084
+	ldr r0, = battle_callback1 | 1
+	bx r0
+	.pool
