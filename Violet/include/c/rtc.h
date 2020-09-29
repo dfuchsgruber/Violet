@@ -5,7 +5,7 @@
 
 
 // Define how many seconds one inamge second is equivalent to
-#define INGAME_CLOCK_SPEED_UP 60
+#define INGAME_CLOCK_SPEED_UP 6
 
 typedef struct rtc_timestamp {
     u8 year;

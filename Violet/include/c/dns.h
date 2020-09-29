@@ -14,6 +14,11 @@ enum {
     DAYTIME_NIGHT,
 }; 
 
+/**
+ * Gets the current daytime (even if the dns is inactive)
+ **/
+u8 dns_get_daytime();
+
 enum {
     PAL_FILTER_NONE = 0,
     PAL_FILTER_ALPHA_BLENDING,

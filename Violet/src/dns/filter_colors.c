@@ -94,8 +94,8 @@ void pal_filters_apply() {
             break;
         case PAL_FILTER_COLOR_MULTIPLIY:
             dprintf("Color multiplictation due to dns, affects 0x%x, filter color is 0x%x\n", affected_pals, fmem.dns_filter);
-            // pal_filter_color_multiply(affected_pals, fmem.dns_filter);
-            filter_used = false;
+            pal_filter_color_multiply(affected_pals, fmem.dns_filter);
+            filter_used = true;
             break;
         case PAL_FILTER_SUBTRACTION:
             pal_filter_color_subtract(affected_pals, fmem.dns_filter);

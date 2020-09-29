@@ -51,6 +51,12 @@ static u8 dns_filters[] = {
     [24] = DAYTIME_NIGHT,
 };
 
+u8 dns_get_daytime() {
+    rtc_timestamp stamp = {0};
+    time_read(&stamp);
+    return dns_filters[stamp.hour];
+}
+
 static color_t dns_get_color() {
     rtc_timestamp stamp = {0};
     time_read(&stamp);
