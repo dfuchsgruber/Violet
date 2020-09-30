@@ -1949,7 +1949,7 @@
 		"footer_idx": 110,
 		"namespace": "MAP_ROUTE_2",
 		"flash_type": "FLASH_NONE",
-		"weather": "MAP_WEATHER_OUTSIDE",
+		"weather": "MAP_WEATHER_STATIC_FOG",
 		"type": "MAP_TYPE_ROUTE",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",

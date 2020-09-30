@@ -1138,3 +1138,4 @@ palette_proceed_dma_transfer_requested = 0x02037ac8;
 fading_update_blending = 0x08071380 | 1;
 fading_control_reset = 0x080709e8 | 1;
 battle_pokedude_callback_end = 0x08011140 | 1;
+overworld_weather_fade_in = 0x08079fe8 | 1;

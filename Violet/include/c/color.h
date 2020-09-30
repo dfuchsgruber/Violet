@@ -45,6 +45,9 @@ extern color_t pal_backup[512];
  */
 color_t color_alpha_blend(color_t original, color_t overlay, u8 alpha);
 
+#define COLOR_MULTIPLY_IDENTITY 0x7FFF
+#define COLOR_MULTIPLY_ZERO 0
+
 /**
  * Performs color multiplication to blend colors into one another
  * @param original Base color

@@ -56,9 +56,9 @@ color_t color_multiply(color_t original, color_t overlay) {
     );
     #else
     // Preserve rgb(31, 31, 31) as identity element, rgb(0, 0, 0) is preserved as zero-element by definition
-    if (original.value == 0x7FFF) 
+    if (original.value == COLOR_MULTIPLY_IDENTITY) 
         return overlay;
-    if (overlay.value == 0x7FFF) 
+    if (overlay.value == COLOR_MULTIPLY_IDENTITY) 
         return original; 
     u16 value = (u16)(
         ((original.rgb.red * overlay.rgb.red / 32) << 0) |

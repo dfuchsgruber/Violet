@@ -245,7 +245,14 @@ typedef struct {
     u8 dns_alpha : 5;
     u8 dns_filter_mode : 3; // If true, color multiply is used, else alpha blending
     u8 weather_alpha : 5;
-    u8 weather_filter_mode : 3; // If true, color multiply is used, else alpha blending 
+    u8 weather_filter_mode : 3; // If true, color multiply is used, else alpha blending
+    color_t weather_previous_filter;
+    color_t weather_next_filter;
+    u8 weather_filter_transition_delay;
+    u8 weather_filter_transition_delay_counter;
+    u8 weather_filter_transition_idx;
+    u8 weather_filter_transition_num_steps;
+
 } floating_memory;
 
 

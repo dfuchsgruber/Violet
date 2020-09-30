@@ -7,27 +7,114 @@
 #include "dns.h"
 #include "debug.h"
 #include "overworld/effect.h"
+#include "save.h"
+
+WEATHER_FUNCTION_WITH_BLEND(weather_inside_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_inside_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_sunny_with_cloud_reflection_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_sunny_with_cloud_reflection_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_outside_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_outside_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_rain_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_rain_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_snow_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_snow_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_thunder_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_thunder_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_ash_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_ash_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_sandstorm_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_sandstorm_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_dynamic_fog_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_dynamic_fog_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_dense_fog_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_dense_fog_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_cloudy_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_cloudy_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_extreme_sun_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_extreme_sun_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_extreme_thunder_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_extreme_thunder_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_underwater_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_underwater_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_weather_0f_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_weather_0f_initialize_all);
+
+#define CEMETERY_BANK 3
+#define CEMETERY_MAP 14
+
+static bool is_cemetery_map() {
+    return save1->bank == CEMETERY_BANK && save1->map == CEMETERY_MAP;
+}
+
+static color_t weather_fog_cemetery_filter = {.rgb = {.red = 15, .green = 15, .blue = 28}};
+
+static void weather_static_fog_initialize_blend() {
+    fmem.weather_filter_transition_idx = 0; 
+    fmem.weather_filter_transition_delay_counter = 0;
+    if (is_cemetery_map()) {
+        fmem.weather_filter_transition_delay = 0; 
+        fmem.weather_filter_transition_num_steps = 64;
+        fmem.weather_next_filter = weather_fog_cemetery_filter; 
+        fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
+    } else {
+        fmem.weather_filter_transition_delay = 0; 
+        fmem.weather_filter_transition_num_steps = 0;
+        fmem.weather_next_filter.value = COLOR_MULTIPLY_IDENTITY; 
+        fmem.weather_filter_mode = PAL_FILTER_NONE;
+    }
+}
+
+void weather_static_fog_initialize_variables_with_blend() {
+    weather_static_fog_initialize_blend();                    
+    weather_static_fog_initialize_variables();
+}
+
+void weather_static_fog_initialize_all_with_blend() {
+    weather_static_fog_initialize_blend();                    
+    weather_static_fog_initialize_all();
+}
+
+static color_t weather_burning_trees_filter = {.rgb = {.red = 31, .blue = 12, .green = 11}};
+
+static void weather_burning_trees_initialize_blend() {
+    fmem.weather_next_filter = weather_burning_trees_filter; 
+    fmem.weather_filter_transition_idx = 0; 
+    fmem.weather_filter_transition_delay = 0; 
+    fmem.weather_filter_transition_delay_counter = 0;
+    fmem.weather_filter_transition_num_steps = 16;
+    fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
+}
+
+void weather_burning_trees_initialize_variables_with_blend() {
+    weather_burning_trees_initialize_blend();                    
+    weather_extreme_sun_initialize_variables();
+}
+
+void weather_burning_trees_initialize_all_with_blend() {
+    weather_burning_trees_initialize_blend();                    
+    weather_extreme_sun_initialize_all();
+}
 
 weather_callbacks_t weather_callbacks[] = {
-    [MAP_WEATHER_INSIDE] = {.initialize_variables = weather_inside_initialize_variables, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all, .closure = weather_inside_closure },
-    [MAP_WEATHER_SUNNY_WITH_CLOUD_REFLECTION] = {.initialize_variables = weather_sunny_with_cloud_reflection_initialize_variables, .main = weather_sunny_with_cloud_reflection_main, .initialize_all = weather_sunny_with_cloud_reflection_initialize_all, .closure = weather_sunny_with_cloud_reflection_closure },
-    [MAP_WEATHER_OUTSIDE] = {.initialize_variables = weather_outside_initialize_variables, .main = weather_outside_main, .initialize_all = weather_outside_initialize_all, .closure = weather_outside_closure },
-    [MAP_WEATHER_RAIN] = {.initialize_variables = weather_rain_initialize_variables, .main = weather_rain_main, .initialize_all = weather_rain_initialize_all, .closure = weather_rain_closure },
-    [MAP_WEATHER_SNOW] = {.initialize_variables = weather_snow_initialize_variables, .main = weather_snow_main, .initialize_all = weather_snow_initialize_all, .closure = weather_snow_closure },
-    [MAP_WEATHER_THUNDER] = {.initialize_variables = weather_thunder_initialize_variables, .main = weather_thunder_main, .initialize_all = weather_thunder_initialize_all, .closure = weather_thunder_closure },
-    [MAP_WEATHER_STATIC_FOG] = {.initialize_variables = weather_static_fog_initialize_variables, .main = weather_static_fog_main, .initialize_all = weather_static_fog_initialize_all, .closure = weather_static_fog_closure },
-    [MAP_WEATHER_ASH] = {.initialize_variables = weather_ash_initialize_variables, .main = weather_ash_main, .initialize_all = weather_ash_initialize_all, .closure = weather_ash_closure },
-    [MAP_WEATHER_SANDSTORM] = {.initialize_variables = weather_sandstorm_initialize_variables, .main = weather_sandstorm_main, .initialize_all = weather_sandstorm_initialize_all, .closure = weather_sandstorm_closure },
-    [MAP_WEATHER_DYNAMIC_FOG] = {.initialize_variables = weather_dynamic_fog_initialize_variables, .main = weather_dynamic_fog_main, .initialize_all = weather_dynamic_fog_initialize_all, .closure = weather_dynamic_fog_closure },
-    [MAP_WEATHER_DENSE_FOG] = {.initialize_variables = weather_dense_fog_initialize_variables, .main = weather_dense_fog_main, .initialize_all = weather_dense_fog_initialize_all, .closure = weather_dense_fog_closure },
-    [MAP_WEATHER_CLOUDY] = {.initialize_variables = weather_cloudy_initialize_variables, .main = weather_cloudy_main, .initialize_all = weather_cloudy_initialize_all, .closure = weather_cloudy_closure },
-    [MAP_WEATHER_EXTREME_SUN] = {.initialize_variables = weather_extreme_sun_initialize_variables, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all, .closure = weather_extreme_sun_closure },
-    [MAP_WEATHER_EXTREME_THUNDER] = {.initialize_variables = weather_extreme_thunder_initialize_variables, .main = weather_extreme_thunder_main, .initialize_all = weather_extreme_thunder_initialize_all, .closure = weather_extreme_thunder_closure },
-    [MAP_WEATHER_UNDERWATER] = {.initialize_variables = weather_underwater_initialize_variables, .main = weather_underwater_main, .initialize_all = weather_underwater_initialize_all, .closure = weather_underwater_closure },
-    [MAP_WEATHER_WEATHER_0F] = {.initialize_variables = weather_weather_0f_initialize_variables, .main = weather_weather_0f_main, .initialize_all = weather_weather_0f_initialize_all, .closure = weather_weather_0f_closure },
-    [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_extreme_sun_initialize_variables, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all, .closure = weather_extreme_sun_closure },// {.initialize_variables = weather_inside_initialize_variables, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all, .closure = weather_inside_closure },
+    [MAP_WEATHER_INSIDE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure },
+    [MAP_WEATHER_SUNNY_WITH_CLOUD_REFLECTION] = {.initialize_variables = weather_sunny_with_cloud_reflection_initialize_variables_with_blend, .main = weather_sunny_with_cloud_reflection_main, .initialize_all = weather_sunny_with_cloud_reflection_initialize_all_with_blend, .closure = weather_sunny_with_cloud_reflection_closure },
+    [MAP_WEATHER_OUTSIDE] = {.initialize_variables = weather_outside_initialize_variables_with_blend, .main = weather_outside_main, .initialize_all = weather_outside_initialize_all_with_blend, .closure = weather_outside_closure },
+    [MAP_WEATHER_RAIN] = {.initialize_variables = weather_rain_initialize_variables_with_blend, .main = weather_rain_main, .initialize_all = weather_rain_initialize_all_with_blend, .closure = weather_rain_closure },
+    [MAP_WEATHER_SNOW] = {.initialize_variables = weather_snow_initialize_variables_with_blend, .main = weather_snow_main, .initialize_all = weather_snow_initialize_all_with_blend, .closure = weather_snow_closure },
+    [MAP_WEATHER_THUNDER] = {.initialize_variables = weather_thunder_initialize_variables_with_blend, .main = weather_thunder_main, .initialize_all = weather_thunder_initialize_all_with_blend, .closure = weather_thunder_closure },
+    [MAP_WEATHER_STATIC_FOG] = {.initialize_variables = weather_static_fog_initialize_variables_with_blend, .main = weather_static_fog_main, .initialize_all = weather_static_fog_initialize_all_with_blend, .closure = weather_static_fog_closure },
+    [MAP_WEATHER_ASH] = {.initialize_variables = weather_ash_initialize_variables_with_blend, .main = weather_ash_main, .initialize_all = weather_ash_initialize_all_with_blend, .closure = weather_ash_closure },
+    [MAP_WEATHER_SANDSTORM] = {.initialize_variables = weather_sandstorm_initialize_variables_with_blend, .main = weather_sandstorm_main, .initialize_all = weather_sandstorm_initialize_all_with_blend, .closure = weather_sandstorm_closure },
+    [MAP_WEATHER_DYNAMIC_FOG] = {.initialize_variables = weather_dynamic_fog_initialize_variables_with_blend, .main = weather_dynamic_fog_main, .initialize_all = weather_dynamic_fog_initialize_all_with_blend, .closure = weather_dynamic_fog_closure },
+    [MAP_WEATHER_DENSE_FOG] = {.initialize_variables = weather_dense_fog_initialize_variables_with_blend, .main = weather_dense_fog_main, .initialize_all = weather_dense_fog_initialize_all_with_blend, .closure = weather_dense_fog_closure },
+    [MAP_WEATHER_CLOUDY] = {.initialize_variables = weather_cloudy_initialize_variables_with_blend, .main = weather_cloudy_main, .initialize_all = weather_cloudy_initialize_all_with_blend, .closure = weather_cloudy_closure },
+    [MAP_WEATHER_EXTREME_SUN] = {.initialize_variables = weather_extreme_sun_initialize_variables_with_blend, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all_with_blend, .closure = weather_extreme_sun_closure },
+    [MAP_WEATHER_EXTREME_THUNDER] = {.initialize_variables = weather_extreme_thunder_initialize_variables_with_blend, .main = weather_extreme_thunder_main, .initialize_all = weather_extreme_thunder_initialize_all_with_blend, .closure = weather_extreme_thunder_closure },
+    [MAP_WEATHER_UNDERWATER] = {.initialize_variables = weather_underwater_initialize_variables_with_blend, .main = weather_underwater_main, .initialize_all = weather_underwater_initialize_all_with_blend, .closure = weather_underwater_closure },
+    [MAP_WEATHER_WEATHER_0F] = {.initialize_variables = weather_weather_0f_initialize_variables_with_blend, .main = weather_weather_0f_main, .initialize_all = weather_weather_0f_initialize_all_with_blend, .closure = weather_weather_0f_closure },
+    [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_burning_trees_initialize_variables_with_blend, .main = weather_extreme_sun_main, .initialize_all = weather_burning_trees_initialize_all_with_blend, .closure = weather_extreme_sun_closure },// {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure },
 };
-
 void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
     u8 current_pal_idx;
     u16 pal_offset;
@@ -165,4 +252,81 @@ void overworld_weather_static_fog_pal_blend(u8 alpha, color_t overlay) {
             pal_alpha_blending((u16)(pal_idx * 16), 16, alpha, overlay);
         }
     }
+}
+
+static bool overworld_weather_update_gamma_shift() {
+    if (overworld_weather.gamma == overworld_weather.gamma_to)
+        return false;
+    if (++overworld_weather.gamma_step_frame >= overworld_weather.gamma_step_delay) {
+        overworld_weather.gamma_step_frame = 0;
+        if (overworld_weather.gamma < overworld_weather.gamma_to)
+            overworld_weather.gamma++;
+        else
+            overworld_weather.gamma--;
+    }
+    return true;
+}
+
+
+static bool overworld_weather_update_blend() {
+    dprintf("Updating weather blend from 0x%x to 0x%x, currently in step %d\n", fmem.weather_filter, fmem.weather_next_filter, fmem.weather_filter_transition_idx);
+    if (fmem.weather_filter.value == fmem.weather_next_filter.value) {
+        fmem.weather_filter_transition_idx = 0; // Reset transition idx, probably not needed, as we code init functions to do that themselves
+        return false;
+    }
+    if (++fmem.weather_filter_transition_delay_counter > fmem.weather_filter_transition_delay) {
+        fmem.weather_filter_transition_delay_counter = 0;
+        fmem.weather_filter_transition_idx++;
+        u8 frame = fmem.weather_filter_transition_idx;
+        u8 num_frames = fmem.weather_filter_transition_num_steps;
+
+        // Calculate the new overlay
+        color_t mixed = {
+            .rgb = {
+                .red = (u8)((fmem.weather_filter.rgb.red + frame * (fmem.weather_next_filter.rgb.red - fmem.weather_filter.rgb.red) / num_frames) & 31),
+                .green = (u8)((fmem.weather_filter.rgb.green + frame * (fmem.weather_next_filter.rgb.green - fmem.weather_filter.rgb.green) / num_frames) & 31),
+                .blue = (u8)((fmem.weather_filter.rgb.blue + frame * (fmem.weather_next_filter.rgb.blue - fmem.weather_filter.rgb.blue) / num_frames) & 31),
+            }
+        };
+        fmem.weather_filter = mixed;
+    }
+    return true;
+}
+
+void overworld_weather_update_gamma_shift_and_filter() {
+    dprintf("updating blend and gamma\n");
+    if (!overworld_weather_update_gamma_shift() && !overworld_weather_update_blend()) {
+        overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
+    } else {
+        pal_gamma_shift(0, 32, overworld_weather.gamma);
+    }
+}
+
+void overworld_weather_fade_in_with_filter() {
+    switch (overworld_weather.current_weather) {
+        case MAP_WEATHER_BURNING_TREES:
+            fmem.weather_filter = weather_burning_trees_filter;
+            fmem.weather_next_filter = weather_burning_trees_filter;
+            fmem.weather_previous_filter = weather_burning_trees_filter;
+            fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
+            break;
+        case MAP_WEATHER_STATIC_FOG:
+            if (is_cemetery_map()) {
+                fmem.weather_filter = weather_fog_cemetery_filter;
+                fmem.weather_next_filter = weather_fog_cemetery_filter;
+                fmem.weather_previous_filter = weather_fog_cemetery_filter;
+                fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
+                break;
+            }
+            FALL_THROUGH;
+        default: {
+            color_t identity = {.value = COLOR_MULTIPLY_IDENTITY};
+            fmem.weather_filter = identity;
+            fmem.weather_next_filter = identity;
+            fmem.weather_previous_filter = identity;
+            fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
+            break;
+        }
+    }
+    overworld_weather_fade_in();
 }

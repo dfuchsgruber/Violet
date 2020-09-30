@@ -36,7 +36,7 @@ void pal_proceed() {
     }
 }
 
-static void pal_filter_alpha_blend(u32 affected_palettes, color_t over, u8 alpha) {
+void pal_filter_alpha_blend(u32 affected_palettes, color_t over, u8 alpha) {
     for (int pal_idx = 0; pal_idx < 32; pal_idx++) {
             if (affected_palettes & int_bitmasks[pal_idx]) {
                 for (int i = 0; i < 16; i++) {
@@ -49,10 +49,12 @@ static void pal_filter_alpha_blend(u32 affected_palettes, color_t over, u8 alpha
 }
 
 static void pal_filter_color_multiply(u32 affected_palettes, color_t over) {
+    if (over.value == 0x7FFF)
+        return;
     for (int pal_idx = 0; pal_idx < 32; pal_idx++) {
             if (affected_palettes & int_bitmasks[pal_idx]) {
                 for (int i = 0; i < 16; i++) {
-                fmem.pals_filtered[pal_idx][i] = color_multiply(pals[16 * pal_idx + i], over);
+                fmem.pals_filtered[pal_idx][i] = color_multiply(pals[ 16 * pal_idx + i], over);
             }
         } else {
             cpuset(pals + 16 * pal_idx, fmem.pals_filtered[pal_idx], CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
@@ -60,7 +62,7 @@ static void pal_filter_color_multiply(u32 affected_palettes, color_t over) {
     }
 }
 
-static void pal_filter_color_subtract(u32 affected_palettes, color_t over) {
+void pal_filter_color_subtract(u32 affected_palettes, color_t over) {
     for (int pal_idx = 0; pal_idx < 32; pal_idx++) {
             if (affected_palettes & int_bitmasks[pal_idx]) {
                 for (int i = 0; i < 16; i++) {
@@ -86,39 +88,35 @@ static u32 battle_affected_pals = 0; // No filters in battle
 void pal_filters_apply() {
 
     u32 affected_pals = super.in_battle ? battle_affected_pals : overworld_affected_pals;
-    bool filter_used = false;
+
+    // Aggregate filters, so we only need to apply them once
+    bool color_multiplication = false;
+    color_t multiplication_filter = {.value = COLOR_MULTIPLY_IDENTITY};
+
     switch (fmem.dns_filter_mode) {
-        case PAL_FILTER_ALPHA_BLENDING:
-            pal_filter_alpha_blend(affected_pals, fmem.dns_filter, fmem.dns_alpha);
-            filter_used = true;
+        case PAL_FILTER_COLOR_MULTIPLIY: {
+            // dprintf("Color multiplictation due to dns, affects 0x%x, filter color is 0x%x\n", affected_pals, fmem.dns_filter);
+            if (fmem.dns_filter.value != COLOR_MULTIPLY_IDENTITY) {
+                multiplication_filter = color_multiply(multiplication_filter, fmem.dns_filter);
+                color_multiplication = true;
+            }
             break;
-        case PAL_FILTER_COLOR_MULTIPLIY:
-            dprintf("Color multiplictation due to dns, affects 0x%x, filter color is 0x%x\n", affected_pals, fmem.dns_filter);
-            pal_filter_color_multiply(affected_pals, fmem.dns_filter);
-            filter_used = true;
-            break;
-        case PAL_FILTER_SUBTRACTION:
-            pal_filter_color_subtract(affected_pals, fmem.dns_filter);
-            filter_used = true;
-            break;
+        }
     }
     switch (fmem.weather_filter_mode) {
-        case PAL_FILTER_ALPHA_BLENDING:
-            pal_filter_alpha_blend(affected_pals, fmem.weather_filter, fmem.weather_alpha);
-            filter_used = true;
+        case PAL_FILTER_COLOR_MULTIPLIY: {
+            if (fmem.weather_filter.value != COLOR_MULTIPLY_IDENTITY) {
+                multiplication_filter = color_multiply(multiplication_filter, fmem.weather_filter);
+                color_multiplication = true;
+            }
             break;
-        case PAL_FILTER_COLOR_MULTIPLIY:
-            pal_filter_color_multiply(affected_pals, fmem.weather_filter);
-            filter_used = true;
-            break;
-        case PAL_FILTER_SUBTRACTION:
-            pal_filter_color_subtract(affected_pals, fmem.weather_filter);
-            filter_used = true;
-            break;
+        }
     }
-    if (!filter_used) // We still need to sync the filtered buffer
+    if (color_multiplication) {
+        pal_filter_color_multiply(affected_pals, multiplication_filter);
+    } else {
         cpuset(pals, fmem.pals_filtered, CPUSET_HALFWORD | CPUSET_COPY | CPUSET_HALFWORD_SIZE(32 * 16 * sizeof(color_t)));
-
+    }
 }
 
 /*

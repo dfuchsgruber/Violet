@@ -25,6 +25,20 @@
 
 color_t drought_colors[6][0x1000];
 
+// Ugly macro to initialize blending parameters for all weather functions "conveniently"
+
+#define WEATHER_FUNCTION_WITH_BLEND(weather_func)        \
+    void weather_func##_with_blend() {        \
+        color_t white = {.rgb = {31, 31, 31}};                      \
+        dprintf("Going to white from previous 0x%x, next 0x%x\n", fmem.weather_previous_filter, fmem.weather_next_filter); \
+        fmem.weather_next_filter = white; \
+        fmem.weather_filter_transition_idx = 0; \
+        fmem.weather_filter_transition_delay_counter = 0; \
+        fmem.weather_filter_transition_delay = 0; \
+        fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY; \
+        weather_func(); \
+    }
+
 typedef struct {
     union
     {
@@ -47,7 +61,7 @@ typedef struct {
     u8 gamma_shifts[19][32];
     u8 alternative_gamma_shifts[19][32];
     s8 gamma;
-    s8 gamma_target_idx;
+    s8 gamma_to; // Target gamma for the next weather
     u8 gamma_step_delay;
     u8 gamma_step_frame;
     color_t fadescreen_target_color;
@@ -140,6 +154,12 @@ bool overworld_fading_effect_finished();
  * @param self self-reference
  **/
 void overworld_weather_callback(u8 self);
+
+/**
+ * Callback for palette processing while the screen is fading in.
+ * Sets-up gamma values and applies the correct gamma shift
+ **/
+void overworld_weather_fade_in();
 
 typedef struct {
     void (*initialize_variables)();
