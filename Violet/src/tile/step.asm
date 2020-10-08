@@ -76,7 +76,7 @@ mov r1, r4
 ldr r0, =0x02036DFC
 ldr r0, [r0, #4]	@loading some maps dat
 
-bl check_detector
+// bl check_detector, causes to much lagging for now
 mov r0, #0
 mov r1, r0	@result of decetor_check_in_r4
 mov r0, r4

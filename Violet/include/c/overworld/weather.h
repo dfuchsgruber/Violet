@@ -28,14 +28,8 @@ color_t drought_colors[6][0x1000];
 // Ugly macro to initialize blending parameters for all weather functions "conveniently"
 
 #define WEATHER_FUNCTION_WITH_BLEND(weather_func)        \
-    void weather_func##_with_blend() {        \
-        color_t white = {.rgb = {31, 31, 31}};                      \
-        dprintf("Going to white from previous 0x%x, next 0x%x\n", fmem.weather_previous_filter, fmem.weather_next_filter); \
-        fmem.weather_next_filter = white; \
-        fmem.weather_filter_transition_idx = 0; \
-        fmem.weather_filter_transition_delay_counter = 0; \
-        fmem.weather_filter_transition_delay = 0; \
-        fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY; \
+    void weather_func##_with_blend() { \
+        fmem.weather_blend_active = 0; \
         weather_func(); \
     }
 

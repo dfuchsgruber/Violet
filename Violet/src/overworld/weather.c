@@ -50,18 +50,11 @@ static bool is_cemetery_map() {
 static color_t weather_fog_cemetery_filter = {.rgb = {.red = 15, .green = 15, .blue = 28}};
 
 static void weather_static_fog_initialize_blend() {
-    fmem.weather_filter_transition_idx = 0; 
-    fmem.weather_filter_transition_delay_counter = 0;
     if (is_cemetery_map()) {
-        fmem.weather_filter_transition_delay = 0; 
-        fmem.weather_filter_transition_num_steps = 64;
-        fmem.weather_next_filter = weather_fog_cemetery_filter; 
-        fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
+        fmem.weather_blend = weather_fog_cemetery_filter;
+        fmem.weather_blend_active = 1;
     } else {
-        fmem.weather_filter_transition_delay = 0; 
-        fmem.weather_filter_transition_num_steps = 0;
-        fmem.weather_next_filter.value = COLOR_MULTIPLY_IDENTITY; 
-        fmem.weather_filter_mode = PAL_FILTER_NONE;
+        fmem.weather_blend_active = 0;
     }
 }
 
@@ -78,12 +71,8 @@ void weather_static_fog_initialize_all_with_blend() {
 static color_t weather_burning_trees_filter = {.rgb = {.red = 31, .blue = 12, .green = 11}};
 
 static void weather_burning_trees_initialize_blend() {
-    fmem.weather_next_filter = weather_burning_trees_filter; 
-    fmem.weather_filter_transition_idx = 0; 
-    fmem.weather_filter_transition_delay = 0; 
-    fmem.weather_filter_transition_delay_counter = 0;
-    fmem.weather_filter_transition_num_steps = 16;
-    fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
+    fmem.weather_blend = weather_burning_trees_filter;
+    fmem.weather_blend_active = 1;
 }
 
 void weather_burning_trees_initialize_variables_with_blend() {
@@ -269,29 +258,8 @@ static bool overworld_weather_update_gamma_shift() {
 
 
 static bool overworld_weather_update_blend() {
-    dprintf("Updating weather blend from 0x%x to 0x%x, currently in step %d\n", fmem.weather_filter, fmem.weather_next_filter, fmem.weather_filter_transition_idx);
-    if (fmem.weather_filter.value == fmem.weather_next_filter.value) {
-        fmem.weather_filter_transition_idx = 0; // Reset transition idx, probably not needed, as we code init functions to do that themselves
-        return false;
-    }
-    if (++fmem.weather_filter_transition_delay_counter > fmem.weather_filter_transition_delay) {
-        fmem.weather_filter_transition_delay_counter = 0;
-        fmem.weather_filter_transition_idx++;
-        u8 frame = fmem.weather_filter_transition_idx;
-        u8 num_frames = fmem.weather_filter_transition_num_steps;
-
-        // Calculate the new overlay
-        color_t mixed = {
-            .rgb = {
-                .red = (u8)((fmem.weather_filter.rgb.red + frame * (fmem.weather_next_filter.rgb.red - fmem.weather_filter.rgb.red) / num_frames) & 31),
-                .green = (u8)((fmem.weather_filter.rgb.green + frame * (fmem.weather_next_filter.rgb.green - fmem.weather_filter.rgb.green) / num_frames) & 31),
-                .blue = (u8)((fmem.weather_filter.rgb.blue + frame * (fmem.weather_next_filter.rgb.blue - fmem.weather_filter.rgb.blue) / num_frames) & 31),
-            }
-        };
-        fmem.weather_filter = mixed;
-    }
-    return true;
-}
+    return false; // No continuous blending so far
+};
 
 void overworld_weather_update_gamma_shift_and_filter() {
     dprintf("updating blend and gamma\n");
@@ -303,30 +271,6 @@ void overworld_weather_update_gamma_shift_and_filter() {
 }
 
 void overworld_weather_fade_in_with_filter() {
-    switch (overworld_weather.current_weather) {
-        case MAP_WEATHER_BURNING_TREES:
-            fmem.weather_filter = weather_burning_trees_filter;
-            fmem.weather_next_filter = weather_burning_trees_filter;
-            fmem.weather_previous_filter = weather_burning_trees_filter;
-            fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
-            break;
-        case MAP_WEATHER_STATIC_FOG:
-            if (is_cemetery_map()) {
-                fmem.weather_filter = weather_fog_cemetery_filter;
-                fmem.weather_next_filter = weather_fog_cemetery_filter;
-                fmem.weather_previous_filter = weather_fog_cemetery_filter;
-                fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
-                break;
-            }
-            FALL_THROUGH;
-        default: {
-            color_t identity = {.value = COLOR_MULTIPLY_IDENTITY};
-            fmem.weather_filter = identity;
-            fmem.weather_next_filter = identity;
-            fmem.weather_previous_filter = identity;
-            fmem.weather_filter_mode = PAL_FILTER_COLOR_MULTIPLIY;
-            break;
-        }
-    }
+    // Not implemented currently
     overworld_weather_fade_in();
 }

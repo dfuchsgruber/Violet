@@ -239,6 +239,9 @@ typedef struct {
     u32 gp_rng;
     u8 gold_candy_active : 1;
     u8 gold_candy_levels_remaining : 7;
+    color_t weather_blend;
+    u8 weather_blend_active : 1;
+    /*
     color_t pals_filtered[32][16];
     color_t dns_filter;
     color_t weather_filter;
@@ -252,6 +255,7 @@ typedef struct {
     u8 weather_filter_transition_delay_counter;
     u8 weather_filter_transition_idx;
     u8 weather_filter_transition_num_steps;
+    */
 
 } floating_memory;
 

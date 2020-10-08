@@ -165,7 +165,7 @@ void battle_callback1() {
     tbox_proceed();
     fading_proceed();
     big_callback_proceed();
-    pal_filters_apply();
+    // pal_filters_apply();
     if (super.keys_inv.keys.B && (battle_flags & BATTLE_POKEDUDE)) {
         *var_access(LASTRESULT) = battle_result = BATTLE_RESULT_DRAW;
         fading_control_reset();

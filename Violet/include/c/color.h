@@ -48,22 +48,40 @@ color_t color_alpha_blend(color_t original, color_t overlay, u8 alpha);
 #define COLOR_MULTIPLY_IDENTITY 0x7FFF
 #define COLOR_MULTIPLY_ZERO 0
 
-/**
- * Performs color multiplication to blend colors into one another
- * @param original Base color
- * @param overlay Target color
- * @return The blended color
- */
-color_t color_multiply(color_t original, color_t overlay);
+u8 color_multiplication_lut[32][32];
+
+#define COLOR_MULTIPLY_ACCURATE_LUT 1
+
+static inline color_t color_multiply(color_t original, color_t overlay) {
+    #if COLOR_MULTIPLY_ACCURATE_LUT
+    u16 value = (u16) (
+        (color_multiplication_lut[original.rgb.red][overlay.rgb.red] << 0) | 
+        (color_multiplication_lut[original.rgb.green][overlay.rgb.green] << 5) | 
+        (color_multiplication_lut[original.rgb.blue][overlay.rgb.blue] << 10)
+    );
+    #else
+    // Preserve rgb(31, 31, 31) as identity element, rgb(0, 0, 0) is preserved as zero-element by definition
+    if (original.value == COLOR_MULTIPLY_IDENTITY) 
+        return overlay;
+    if (overlay.value == COLOR_MULTIPLY_IDENTITY) 
+        return original; 
+    u16 value = (u16)(
+        ((original.rgb.red * overlay.rgb.red / 32) << 0) |
+        ((original.rgb.green * overlay.rgb.green / 32) << 5) |
+        ((original.rgb.blue * overlay.rgb.blue / 32) << 10)
+    );
+    #endif
+    color_t c = {.value = value};
+    return c;
+}
 
 /**
- * Performs color alpha blending and multiplication both
- * @param original Base color
- * @param overlay Target color
- * @param alpha Alpha channel intensity
- * @return The blended color
- */
-color_t color_blend_and_multiply(color_t original, color_t overlay, u8 alpha);
+ * Does color multiplication to pals
+ * @param start_color the first color to multiply
+ * @param number_colors how many colors to multiply
+ * @param filter the filter to multiply with
+ **/
+void pal_color_multiply(u16 start_color, u16 number_colors, color_t filter);
 
 /**
  * Transforms a color into grayscale

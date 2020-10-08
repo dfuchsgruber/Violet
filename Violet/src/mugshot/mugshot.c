@@ -25,9 +25,11 @@ sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
 
 
 mugshot mugshots[] = {
-    [MUGSHOT_RIN] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_rinTiles}, 
-		gfx_mug_rinPal, str_mug_rin},
+    [MUGSHOT_RIN] = {{
+			[MUGSHOT_NORMAL] = gfx_mug_rinTiles,
+			[MUGSHOT_SHOCKED] = gfx_mug_rin_shockedTiles, 
+			[MUGSHOT_ANGRY] = gfx_mug_rin_angryTiles, 
+		}, gfx_mug_rinPal, str_mug_rin},
     [MUGSHOT_MISTRAL] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_mistralTiles}, 
 		gfx_mug_mistralPal, str_mug_mistral},
@@ -124,6 +126,7 @@ mugshot mugshots[] = {
 			[MUGSHOT_SHOCKED] = gfx_mug_elise_shockedTiles,
 			[MUGSHOT_ANGRY] = gfx_mug_elise_angryTiles,
 			[MUGSHOT_SCARED] = gfx_mug_elise_scaredTiles,
+			[MUGSHOT_SAD] = gfx_mug_elise_sadTiles,
 			[MUGSHOT_ANNOYED] = gfx_mug_elise_annoyedTiles,
 			}, 
 		gfx_mug_elisePal, str_mug_elise},
@@ -157,7 +160,10 @@ mugshot mugshots[] = {
 			}, 
 		gfx_mug_larissaPal, str_mug_larissa},
     [MUGSHOT_PRIMUS] = {
-		{[MUGSHOT_NORMAL] = gfx_mug_primusTiles}, 
+		{
+			[MUGSHOT_NORMAL] = gfx_mug_primusTiles,
+			[MUGSHOT_SCARED] = gfx_mug_primus_scaredTiles,
+		}, 
 		gfx_mug_primusPal, str_mug_primus},
     [MUGSHOT_IGVA] = {
 		{[MUGSHOT_NORMAL] = gfx_mug_igvaTiles}, 

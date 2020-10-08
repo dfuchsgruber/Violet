@@ -8,6 +8,380 @@
 .include "flags.s"
 .include "overworld_script.s"
 .include "story_states.s"
+.include "species.s"
+.include "map_weathers.s"
+.include "pathfinding.s"
+.include "person_behaviours.s"
+
+.global ow_script_silvania_forest_rin_0
+
+ow_script_silvania_forest_rin_0:
+    lockall
+    playsong MUS_VIOLET_ENCOUNTER 0
+    special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
+    applymovement 0x7F mov_2r
+    waitmovement 0
+    loadpointer 0 str_0
+    show_mugshot MUGSHOT_ELISE MUGSHOT_LEFT emotion=MUGSHOT_SAD message_type=MSG_KEEPOPEN
+    loadpointer 0 str_1
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=1
+    loadpointer 0 str_2
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_3
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=1 hide_mugshot=0
+    loadpointer 0 str_4
+    update_mugshot_emotion MUGSHOT_ANGRY
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    clearflag (FLAG_SILVANIA_FOREST_SEQUENCE_1_NPCS | 0x8000)
+    showsprite 42
+    showsprite 43
+    applymovement 42 mov_felix_to
+    applymovement 43 mov_felix_to
+    waitmovement 0
+    applymovement 36 mov_fl
+    applymovement 41 mov_fl
+    applymovement 0xFF mov_fl
+    loadpointer 0 str_5
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_6
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT message_type=MSG_KEEPOPEN hide_mugshot=0
+    applymovement 41 mov_fr
+    loadpointer 0 str_7
+    callstd MSG_KEEPOPEN
+    loadpointer 0 str_8
+    update_mugshot_emotion MUGSHOT_RUMINATIVE
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
+    applymovement 36 mov_fr
+    loadpointer 0 str_9
+    show_mugshot MUGSHOT_ELISE MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY
+    applymovement 0xFF mov_fr
+    loadpointer 0 str_10
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=1
+    loadpointer 0 str_11
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SCARED
+    applymovement 5 mov_fr
+    waitmovement 0
+    loadpointer 0 str_11_2 
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT message_type=MSG_KEEPOPEN mask_name=1 emotion=MUGSHOT_SHOCKED hide_mugshot=0
+    loadpointer 0 str_12
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    applymovement 5 mov_fl
+    waitmovement 0
+    loadpointer 0 str_13
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    loadpointer 0 str_14
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY 
+    loadpointer 0 str_15
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT message_type=MSG mask_name=1
+    // Show Seviper
+	pause 32
+	setflag 13
+	showsprite 44
+	sound 15
+	fadescreen 3
+	hidesprite 44
+	setflag 14
+	showsprite 45
+	fadescreen 2
+    cry POKEMON_VIPITIS 0
+	checksound
+    waitcry
+    pause 16
+    loadpointer 0 str_16
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT message_type=MSG mask_name=1
+    applymovement 45 mov_fu
+    waitmovement 0
+    cry POKEMON_VIPITIS 0
+    waitcry
+    sound 137
+    setweather MAP_WEATHER_BURNING_TREES
+    doweather
+    checksound
+    setmaptile 0x32 0x11 0x377 1
+    special SPECIAL_MAP_UPDATE_BLOCKS
+    checksound
+    pause 32
+    applymovement 45 mov_fl
+    waitmovement 0 
+    pause 32
+    setmaptile 0x31 0x11 0x376 1
+    special SPECIAL_MAP_UPDATE_BLOCKS
+    loadpointer 0 str_17
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG emotion=MUGSHOT_SCARED
+    sound 15
+    fadescreen 3
+    hidesprite 45
+    fadescreen 2
+    checksound
+    pause 32
+    loadpointer 0 str_18
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT message_type=MSG mask_name=1
+    applymovement 5 mov_rin_leads
+    waitmovement 0
+    setmaptile 0x31 0xf 0x387 1
+    special SPECIAL_MAP_UPDATE_BLOCKS
+    applymovement 5 mov_7r
+    applymovement 30 mov_7r
+    applymovement 31 mov_7r
+    applymovement 32 mov_7r
+    waitmovement 0
+    hidesprite 5
+    hidesprite 30
+    hidesprite 31
+    applymovement 0x7F mov_2l
+    waitmovement 0
+    special SPECIAL_OVERWORLD_VIEWPORT_LOCK
+    setflag FLAG_SILVANIA_FOREST_BURNING
+    setmaptile 0x2f 0xf 0x387 1
+    special SPECIAL_MAP_UPDATE_BLOCKS
+    pause 32
+    applymovement 0xFF mov_fl
+    applymovement 36 mov_fl
+    applymovement 41 mov_fl
+    loadpointer 0 str_19
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT emotion=MUGSHOT_SCARED message_type=MSG_KEEPOPEN
+    loadpointer 0 str_20
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT emotion=MUGSHOT_SCARED message_type=MSG_KEEPOPEN
+    call ow_script_silvania_forest_setmaptiles_burning_trees
+    special SPECIAL_MAP_UPDATE_BLOCKS
+    loadpointer 0 str_21
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY message_type=MSG_KEEPOPEN
+    loadpointer 0 str_22
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT emotion=MUGSHOT_ANGRY message_type=MSG
+    sound 0x15
+    applymovement 42 mov_fu
+    waitmovement 0
+    applymovement 0xFF mov_exclam
+    applymovement 36 mov_exclam
+    applymovement 41 mov_exclam
+    applymovement 42 mov_exclam
+    waitmovement 0
+    checksound
+    pause 32
+    loadpointer 0 str_23
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_24
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_25
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_26
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_27
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT message_type=MSG_KEEPOPEN hide_mugshot=0
+    applymovement 41 mov_fd
+    applymovement 36 mov_fu
+    applymovement 42 mov_fr
+    applymovement 43 mov_fr
+    applymovement 0xFF mov_fr
+    waitmovement 0
+    loadpointer 0 str_28
+    callstd MSG
+    hide_mugshot
+    applymovement 41 mov_rival_run_right
+    loadpointer 0 str_29
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT hide_mugshot=0 message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANNOYED
+    waitmovement 41
+    hidesprite 41
+    closeonkeypress
+    hide_mugshot
+    pause 64
+    applymovement 0xFF mov_fl
+    applymovement 36 mov_fr
+    applymovement 41 mov_fr
+    waitmovement 0
+    loadpointer 0 str_30
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANNOYED hide_mugshot=0
+    applymovement 35 mov_fl
+    applymovement 36 mov_fl
+    applymovement 41 mov_fl
+    loadpointer 0 str_31
+    waitmovement 0
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    hide_mugshot
+    closeonkeypress
+    applymovement 42 mov_fu
+    applymovement 43 mov_fd
+    waitmovement 0
+    loadpointer 0 str_32
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_33
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG
+    npc_move_to 42 0x2d 0x13 waitmovement=0
+    waitmovement 0
+    applymovement 42 mov_fu
+    
+    // Show Ludicullo
+	clearflag (17 | 0x8000)
+	showsprite 46
+	sound 15
+	fadescreen 3
+	hidesprite 46
+	showsprite 49
+	fadescreen 2
+    cry POKEMON_KAPPALORES 0
+	checksound
+    waitcry
+    pause 32
+
+
+    npc_move_to 43 0x31 0x14 waitmovement=0
+    waitmovement 0
+    applymovement 43 mov_fu
+    waitmovement 0
+    // Show Lickitung
+	clearflag (18 | 0x8000)
+	showsprite 47
+	sound 15
+	fadescreen 3
+	hidesprite 47
+	showsprite 48
+	fadescreen 2
+    cry POKEMON_SCHLURP 0
+	checksound
+    waitcry
+
+
+    pause 32
+    loadpointer 0 str_34
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_LEFT message_type=MSG
+    pause 16
+    sound 117
+    pause 8
+    setflag FLAG_SILVANIA_FOREST_HYDRO_PUMP_0
+    sound 117
+    pause 8
+    sound 117
+    checksound
+    pause 32
+    loadpointer 0 str_34
+    show_mugshot MUGSHOT_FELIX MUGSHOT_LEFT message_type=MSG
+    pause 16
+    sound 117
+    pause 8
+    setflag FLAG_SILVANIA_FOREST_HYDRO_PUMP_1
+    sound 117
+    pause 8
+    sound 117
+    checksound
+    pause 32
+    applymovement 0xFF mov_fr
+    waitmovement 0
+    applymovement 36 mov_fl
+    waitmovement 0
+    loadpointer 0 str_36
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT emotion=MUGSHOT_SAD message_type=MSG
+    releaseall
+    addvar STORY_PROGRESS 1
+	movesprite 42 0x2d 0x13
+	movesprite 43 0x31 0x14
+	//spritebehave 42 BEHAVIOUR_FACE_UP
+	//spritebehave 43 BEHAVIOUR_FACE_UP
+	//spritebehave 36 BEHAVIOUR_LOOK_AROUND
+    end
+
+move_player_down:
+    applymovement 0xFF mov_1d
+    return
+
+mov_felix_to:
+    .byte STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STOP
+mov_rin_leads:
+    .byte STEP_DOWN, STEP_RIGHT, STEP_RIGHT, STEP_RIGHT, STEP_UP, STOP
+mov_rival_run_right:
+    .byte STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STEP_RIGHT_FAST, STOP
+
+
+
+.ifdef LANG_GER
+str_0:
+    .autostring 34 2 "B-Bitte!\pLassen Sie meinen Vater gehen!"
+str_1:
+    .autostring 34 2 "Ihn gehen lassen?\pDas ist zu komisch.\pWas denkst du, was hier vor sich geht, du dummes Mädchen?"
+str_2:
+    .autostring 34 2 "Jetzt reicht es mir, du Schnepfe!\pDu lässt sofort den Professor in Ruhe!"
+str_3:
+    .autostring 34 2 "Da bekomme ich es aber mit der Angst zu tun!\pEin kleiner Rotzbengel will mir drohen.\pGlaub ja nicht, dass ich ein Problem damit hätte, ein Kind fertig zu machen."
+str_4:
+    .autostring 34 2 "Professor Primus und ich haben hier etwas zu erledigen.\pUnd ich kann es gar nicht ausstehen, wenn mir jemand versucht, bei meinen Angelegenheiten dumm zu kommen.\pVerstanden, Kindchen?\pZieh' Leine!"
+str_5:
+    .autostring 34 2 "Was ist hier denn los?\pSind wir etwa zu spät?"
+str_6:
+    .autostring 34 2 "Nein, ihr kommt gerade rechtzeitig."
+str_7:
+    .autostring 34 2 "Ich hab den Kommandanten von Team Violet gefunden, nachdem wir gesucht habenDOTS"
+str_8:
+    .autostring 34 2 "Oder wohl eherDOTSTEXT_DELAY_SHORT\pDie Kommandantin."
+str_9:
+    .autostring 34 2 "Und diese Frau hat meinen Vater entführt!"
+str_10:
+    .autostring 34 2 "Entführt?\pDas ist ja zum Schießen!\pDenkst du Göre etwa, dass-"
+str_11:
+    .autostring 34 2 "B-Bitte, helft mir!\pDiese fürchterliche Frau hetzt mich schon seit Tagen durch die Region!\pI-Ich glaube, sie wird mir etwas antunDOTS"
+str_11_2:
+    .autostring 34 2 "Huh?"
+str_12:
+    .autostring 34 2 "Ach, halt den Rand, Primus!"
+str_13:
+    .autostring 34 2 "Und was diesen Kindergarten hier anbelangtDOTS\pWas glaub ihr Gören, was ihr tut?\pIhr mischt euch in Dinge ein, die euch nichts angehen!\pWenn ihr nicht sofot abschwirrt, mach ich euch die Hölle heiß, ihr Bälger!"
+str_14:
+    .autostring 34 2 "Wie kann man nur so mit Kindern reden?\pLassen Sie sofot den Professor gehen und verschwinden Sie aus meinem Wald!"
+str_15:
+    .autostring 34 2 "Na sieh einer an, du bist doch die Arenaleiterin von Kranzdorf, oder?\pSoll mir deine kleine Rasselbande hier etwa Angst machen?\pDu sorgst dich so sehr um deinen geliebten Wald, was?"
+str_16:
+    .autostring 34 2 "Vipitis!\nFlammewurf, los!"
+str_17:
+    .autostring 34 2 "M-Mein Wald!\pNein!\nMein schöner Wald!"
+str_18:
+    .autostring 34 2 "Das hast du jetzt davon, mir dumm zu kommen.\pViel Spaß dabei, deinen ach so schönen Wald zu retten!"
+str_19:
+    .autostring 34 2 "Oh nein!\pWas wird denn jetzt aus meinem Vater?"
+str_20:
+    .autostring 34 2 "Und der Kranzwald steht in FlammenDOTS"
+str_21:
+    .autostring 34 2 "Diese verfluchte Hexe!\pWas fällt ihr ein!\pErst meinen und jetzt Elises Vater!"
+str_22:
+    .autostring 34 2 "Hey Leute!\pJetzt reißt euch mal zusammen!"
+str_23:
+    .autostring 34 2 "Wenn wir jetzt den Kopf in den Sand stecken, kommen wir auch nicht weiter."
+str_24:
+    .autostring 34 2 "Felix hat RechtDOTS"
+str_25:
+    .autostring 34 2 "Wir werden diese Kommandantin auf keinen Fall damit durchkommen lassen.\pAber wir können auch den Wald nicht einfach abbrennen lassen.\pAlso machen wir es so.\pRosalie und ich versuchen hier, das Feuer in den Griff zu kriegen.\pRIVAL und PLAYER, ihr beiden gebt dieser Kommandantin eins auf den Deckel und befreit Professor Primus."
+str_26:
+    .autostring 34 2 "Das hört sich nach einem guten Plan-"
+str_27:
+    .autostring 34 2 "Alles klar!\pDer zeig ich schon, wo's lang geht!"
+str_28:
+    .autostring 34 2 "Deinen Vater habe ich im Handumdrehen wieder befreit!"
+str_29:
+    .autostring 34 2 "Jetzt warte doch mal, RIVALDOTS"
+str_30:
+    .autostring 34 2 "Immer das gleiche mit ihmDOTS"
+str_31:
+    .autostring 34 2 "Aber der Plan steht!\pRosalie und ich versuchen, das Feuer in den Griff zu bekommen.\pUnd du PLAYER unterstützt RIVAL.\pWenn er alleine gegen sie antritt, könnte das ins Auge gehenDOTS"
+str_32:
+    .autostring 34 2 "Mit der Hilfe unserer Pokémon können wir vielleicht etwas gegen die Flammen ausrichten.\pAm Besten setzen wir starke Wasser-Angriffe ein."
+str_33:
+    .autostring 34 2 "Das klingt vernünftig.\pLass uns keine Zeit verlieren!"
+str_34:
+    .autostring 34 2 "Und los, Aquawelle!"
+str_35:
+    .autostring 34 2 "Alles klar Schlurp, gehen wir's an!"
+str_36:
+    .autostring 34 2 "Bitte PLAYER, beeil dich!\pWer weiß, was diese Frau meinem Vater antut!"
+.elseif
+.endif
+
+
+
 
 .global ow_script_0x8fa888
 .global ow_script_map_1_0_trigger_0

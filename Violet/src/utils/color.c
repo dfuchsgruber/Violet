@@ -45,32 +45,6 @@ u8 color_multiplication_lut[32][32] = {
     [31] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, },
 };
 
-#define COLOR_MULTIPLY_ACCURATE_LUT 1
-
-color_t color_multiply(color_t original, color_t overlay) {
-    #if COLOR_MULTIPLY_ACCURATE_LUT
-    u16 value = (u16) (
-        (color_multiplication_lut[original.rgb.red][overlay.rgb.red] << 0) | 
-        (color_multiplication_lut[original.rgb.green][overlay.rgb.green] << 5) | 
-        (color_multiplication_lut[original.rgb.blue][overlay.rgb.blue] << 10)
-    );
-    #else
-    // Preserve rgb(31, 31, 31) as identity element, rgb(0, 0, 0) is preserved as zero-element by definition
-    if (original.value == COLOR_MULTIPLY_IDENTITY) 
-        return overlay;
-    if (overlay.value == COLOR_MULTIPLY_IDENTITY) 
-        return original; 
-    u16 value = (u16)(
-        ((original.rgb.red * overlay.rgb.red / 32) << 0) |
-        ((original.rgb.green * overlay.rgb.green / 32) << 5) |
-        ((original.rgb.blue * overlay.rgb.blue / 32) << 10)
-    );
-    #endif
-    color_t c = {.value = value};
-    return c;
-}
-
-
 color_t color_blend_and_multiply(color_t original, color_t overlay, u8 alpha) {
 
     color_t white = {0x7FFF};

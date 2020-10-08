@@ -2,9 +2,9 @@
 	"data": {
 		"footer": "map_footer_117",
 		"events": {
-			"person_cnt": 40,
+			"person_cnt": 49,
 			"warp_cnt": 21,
-			"trigger_cnt": 3,
+			"trigger_cnt": 4,
 			"signpost_cnt": 7,
 			"persons": [
 				{
@@ -116,10 +116,10 @@
 					"picture": 90,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "54",
-					"y": "19",
+					"x": "51",
+					"y": "20",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -127,7 +127,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "SILVANIA_FOREST_RIN",
+					"flag": "FLAG_SILVANIA_FOREST_SEQUENCE_1_NPCS",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -766,10 +766,10 @@
 					"picture": 47,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "54",
+					"x": "52",
 					"y": "20",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -777,7 +777,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "SILVANIA_FOREST_RIN",
+					"flag": "FLAG_SILVANIA_FOREST_SEQUENCE_1_NPCS",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -792,10 +792,10 @@
 					"picture": 50,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "55",
+					"x": "53",
 					"y": "20",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -803,7 +803,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "SILVANIA_FOREST_RIN",
+					"flag": "FLAG_SILVANIA_FOREST_SEQUENCE_1_NPCS",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -818,10 +818,10 @@
 					"picture": 49,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "55",
+					"x": "52",
 					"y": "19",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -829,7 +829,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "SILVANIA_FOREST_RIN",
+					"flag": "FLAG_SILVANIA_FOREST_SEQUENCE_1_NPCS",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -922,10 +922,10 @@
 					"picture": 105,
 					"field_2": 0,
 					"field_3": 0,
-					"x": "51",
-					"y": "20",
+					"x": "48",
+					"y": "21",
 					"level": 0,
-					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
 					"behaviour_range": {
 						"x": "0",
 						"y": "0"
@@ -933,7 +933,7 @@
 					"is_trainer": "0",
 					"alert_radius": 0,
 					"script": "0",
-					"flag": "PKMNMENU",
+					"flag": "SILVANIA_FOREST_RIN",
 					"field_D": 0,
 					"field_B": 0,
 					"script_std": 0,
@@ -1038,6 +1038,222 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "13"
+					}
+				},
+				{
+					"target_index": "41",
+					"picture": "72",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "48",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_SILVANIA_FOREST_SEQUENCE_1_NPCS",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "42",
+					"picture": "81",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "39",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_SILVANIA_FOREST_BURNING  | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "43",
+					"picture": "70",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "39",
+					"y": "18",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_SILVANIA_FOREST_BURNING  | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "44",
+					"picture": "92",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "50",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "13  | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "45",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "50",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "14  | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_VIPITIS",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "46",
+					"picture": "92",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "45",
+					"y": "18",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "17 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "47",
+					"picture": "92",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "49",
+					"y": "19",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "18 | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "48",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NPC",
+					"field_3": 0,
+					"x": "49",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_SILVANIA_FOREST_BURNING | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHLURP",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "49",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON_NPC",
+					"field_3": 0,
+					"x": "45",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_SILVANIA_FOREST_BURNING | 0x8000",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KAPPALORES",
+						"berry_tree_idx": 0
 					}
 				}
 			],
@@ -1213,37 +1429,48 @@
 			],
 			"triggers": [
 				{
-					"x": 46,
-					"y": 20,
+					"x": "47",
+					"y": "21",
 					"level": 0,
 					"field_5": 0,
 					"value": 28,
-					"script": "ow_script_map_1_0_trigger_0",
+					"script": "ow_script_silvania_forest_rin_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 46,
-					"y": 19,
+					"x": "47",
+					"y": "20",
 					"level": 0,
 					"field_5": 0,
 					"value": 28,
-					"script": "ow_script_map_1_0_trigger_0",
+					"script": "ow_script_silvania_forest_rin_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
 				},
 				{
-					"x": 46,
-					"y": 18,
+					"x": "47",
+					"y": "19",
 					"level": 0,
 					"field_5": 0,
 					"value": 28,
-					"script": "ow_script_map_1_0_trigger_0",
+					"script": "ow_script_silvania_forest_rin_0",
 					"field_A": 0,
 					"field_B": 0,
 					"var": "STORY_PROGRESS"
+				},
+				{
+					"x": "47",
+					"y": "22",
+					"level": 0,
+					"field_5": 0,
+					"var": "STORY_PROGRESS",
+					"value": "28",
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_silvania_forest_rin_0"
 				}
 			],
 			"signposts": [
@@ -1387,7 +1614,7 @@
 		"footer_idx": 117,
 		"namespace": "MAP_SILVANIA_WALD",
 		"flash_type": "FLASH_NONE",
-		"weather": "MAP_WEATHER_BURNING_TREES",
+		"weather": "MAP_WEATHER_CLOUDY",
 		"type": "MAP_TYPE_ROUTE",
 		"battle_style": "BATTLE_TYPE_RANDOM",
 		"bike_usable": "1",

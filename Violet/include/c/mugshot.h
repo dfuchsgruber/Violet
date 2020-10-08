@@ -101,6 +101,8 @@ extern "C" {
     extern const unsigned short gfx_mug_blackbeard_happyTiles[];
     extern const unsigned short gfx_mug_blackbeardPal[];
     extern const unsigned short gfx_mug_rinTiles[];
+    extern const unsigned short gfx_mug_rin_angryTiles[];
+    extern const unsigned short gfx_mug_rin_shockedTiles[];
     extern const unsigned short gfx_mug_rinPal[];
     extern const unsigned short gfx_mug_rivalTiles[];
     extern const unsigned short gfx_mug_rival_angryTiles[];
@@ -161,6 +163,7 @@ extern "C" {
     extern const unsigned short gfx_mug_elise_shockedTiles[];
     extern const unsigned short gfx_mug_elise_scaredTiles[];
     extern const unsigned short gfx_mug_elise_annoyedTiles[];
+    extern const unsigned short gfx_mug_elise_sadTiles[];
     extern const unsigned short gfx_mug_elisePal[];
     extern const unsigned short gfx_mug_emerysTiles[];
     extern const unsigned short gfx_mug_emerysPal[];
@@ -182,6 +185,7 @@ extern "C" {
     extern const unsigned short gfx_mug_larissa_thoughtfulTiles[];
     extern const unsigned short gfx_mug_larissaPal[];
     extern const unsigned short gfx_mug_primusTiles[];
+    extern const unsigned short gfx_mug_primus_scaredTiles[];
     extern const unsigned short gfx_mug_primusPal[];
     extern const unsigned short gfx_mug_teahTiles[];
     extern const unsigned short gfx_mug_teahPal[];

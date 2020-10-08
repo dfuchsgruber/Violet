@@ -22,11 +22,11 @@ bool time_test() {
 }
 
 void time_ingame_clock_read(rtc_timestamp *s) {
-	int seconds_played = 10 * INGAME_CLOCK_SPEED_UP * save2->seconds_played;
+	int seconds_played = INGAME_CLOCK_SPEED_UP * save2->seconds_played;
 	s->second = (u8)(seconds_played % 60);
-	int minutes_played = (10 *INGAME_CLOCK_SPEED_UP * save2->minutes_played) + (seconds_played / 60);
+	int minutes_played = (INGAME_CLOCK_SPEED_UP * save2->minutes_played) + (seconds_played / 60);
 	s->minute = (u8)(minutes_played % 60);
-	int hours_played = (10 *INGAME_CLOCK_SPEED_UP * save2->hours_played) + (minutes_played / 60) + 12;
+	int hours_played = (INGAME_CLOCK_SPEED_UP * save2->hours_played) + (minutes_played / 60) + 12;
 	s->hour = (u8)(hours_played % 24);
 	int days_played = hours_played / 24;
 	s->day = (u8)((days_played % 30) + 1);
