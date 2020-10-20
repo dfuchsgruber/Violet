@@ -8,6 +8,8 @@
 #ifndef INCLUDE_C_OVERWORLD_MAP_CONTROL_H_
 #define INCLUDE_C_OVERWORLD_MAP_CONTROL_H_
 
+#include "constants/map_types.h"
+
 
 typedef struct{
     u8 x_start_pixel;
@@ -17,6 +19,11 @@ typedef struct{
 } stru_map_displ_cntrl;
 
 extern stru_map_displ_cntrl map_displ_cntrl;
+
+/**
+ * Initialize map blocks (executes mapscripts for blocks as well)
+ **/
+void map_blocks_initialize();
 
 extern void (*map_reload_continuation)();
 
@@ -200,5 +207,25 @@ int map_position_to_bg_tilemap_offset(stru_map_displ_cntrl *c, s16 x, s16 y);
  * @param pal_into_restore If the palette is to be saved into the restore buffer
  **/
 void map_transition_show_namespace(bool pal_into_restore);
+
+/**
+ * Gets the type of the previous map
+ * @return type of the previous map
+ **/
+u8 map_previous_get_type();
+
+/**
+ * Gets the type of the current map (i.e. map to transition to)
+ * @return type of the current map
+ **/
+u8 map_current_get_type();
+
+/**
+ * Gets if a transition is using an exit from a dark indoor place (e.g. caves)
+ * @param previous_type the previous map type
+ * @param current_type the current type, i.e. the type to transition to
+ * @return if the transition is an exit
+ **/
+bool map_transition_is_exit(u8 previous_type, u8 current_type);
 
 #endif /* INCLUDE_C_OVERWORLD_MAP_CONTROL_H_ */

@@ -33,7 +33,7 @@ static void start_menu_clock_update() {
     time_read(&time);
     int digits[4] = {time.hour / 10, time.hour % 10, time.minute / 10, time.minute % 10};
     for (int i = 0; i < 4; i++) {
-        dprintf("Digits[%d] = %d, offset: %x\n", i, digits[i], gfx_start_menu_7_segmentTiles + GRAPHIC_SIZE_4BPP(16, 16) * digits[i]);
+        //dprintf("Digits[%d] = %d, offset: %x\n", i, digits[i], gfx_start_menu_7_segmentTiles + GRAPHIC_SIZE_4BPP(16, 16) * digits[i]);
         tbox_blit(start_menu_state.safari_tbox_idx, gfx_start_menu_7_segmentTiles, 0, (u16)(16 * digits[i]), 16, 160, clock_digit_x_positions[i], 16, 10, 16);
     }
     tbox_print_string_parametrized(start_menu_state.safari_tbox_idx, 2, start_menu_clock_colon, 21, 18, 0, NULL);

@@ -468,3 +468,21 @@ _blxr4:
 
 .org 0x083c2b00
     .word overworld_weather_fade_in_with_filter | 1
+
+.org 0x0807a100
+    ldr r0, =overworld_weather_fade_in_rain_and_clouds | 1
+    bx r0
+    .pool
+
+.org 0x0807dabc
+    mov r0, #1
+    ldr r1, =overworld_fadescreen | 1
+    bx r1
+    .pool
+
+.org 0x0807db7c
+    // There is some stuff going on with the region map, we don't care about that for now
+    mov r0, #0 
+    ldr r1, =overworld_fadescreen | 1
+    bx r1
+    .pool

@@ -406,11 +406,11 @@ str_prof_response:
 str_rival_2:
     .autostring 34 2 "Huh?"
 str_prof_response2:
-    .autostring 34 2 "Na, das ist eine uralte Legende unter Archäologen, wenn man so will.\pEtwa so sagenumwoben wie die legendäre Stadt Atlantea, die vor Jahrhunderten versunken istDOTS\pAber ob dieser Zeitstein überhaupt existiertDOTS DOTS DOTS"
+    .autostring 34 2 "Na, das ist eine uralte Legende unter Archäologen, wenn man so will.\pFast so spannend wie die legendäre Stadt Atlantea, die vor Jahrhunderten versunken istDOTS\pAber ob dieser Zeitstein überhaupt existiertDOTS DOTS DOTS"
 str_prof_response3:
-    .autostring 34 2 "Na, sagen wir es so!\pEs gibt nicht viele Archäologen, die daran glauben!"
+    .autostring 34 2 "Na, sagen wir es so!\pEs gibt nicht viele ernsthafte Forscher, die daran glauben!"
 str_prof_response4:
-    .autostring 34 2 "Aber ich frage mich schon, wie diese Leute überhaupt dazu kommen, mich deswegen zu bedrängenDOTS"
+    .autostring 34 2 "Aber ich frage mich schon, wie diese Leute überhaupt dazu kommen, mich deswegen zu bedrängenDOTS\pGerade erst vor einigen Tagen hat sich mein Kollege, Professor Primus danach erkundigt.\pUnd jetzt tauchen diese Violet Leute aufDOTS"
 str_elise_silcene:
     .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS"
 str_0x8a7f97_3:

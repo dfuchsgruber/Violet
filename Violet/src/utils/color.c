@@ -1,5 +1,6 @@
 #include "types.h"
 #include "color.h"
+#include "bios.h"
 
 color_t color_alpha_blend(color_t original, color_t overlay, u8 alpha) {
     int r = original.rgb.red + ((alpha * (overlay.rgb.red - original.rgb.red)) >> 4);
@@ -64,4 +65,8 @@ color_t color_to_grayscale(color_t original) {
     u16 value = (u16) (l | (l << 5) | (l << 10));
     color_t new = {value};
     return new;
+}
+
+void pal_tmp_synchronize_with_pal_restore() {
+    cpuset(pal_restore, pal_tmp, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(32 * 16 * sizeof(color_t)));
 }

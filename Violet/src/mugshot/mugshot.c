@@ -18,7 +18,6 @@
 #include "constants/mugshot_character.h"
 #include "bg.h"
 
-#define MUGSHOT_BASE_TAG 0x1340
 
 sprite mugshot_sprite = {0, 0xC000,  ATTR2_PRIO(1), 0};
 sprite mugshot_sprite_prio0 = {0, 0xC000, ATTR2_PRIO(0), 0};
@@ -43,6 +42,7 @@ mugshot mugshots[] = {
 				[MUGSHOT_SHOCKED] = gfx_mug_rival_shockedTiles,
 				[MUGSHOT_RUMINATIVE] = gfx_mug_rival_thoughtfulTiles,
 				[MUGSHOT_ANNOYED] = gfx_mug_rival_annoyedTiles,
+				[MUGSHOT_BEATEN] = gfx_mug_rival_beatenTiles,
 			}, 
 		gfx_mug_rivalPal, str_mug_rival},
     [MUGSHOT_BRIX] = {
@@ -128,6 +128,7 @@ mugshot mugshots[] = {
 			[MUGSHOT_SCARED] = gfx_mug_elise_scaredTiles,
 			[MUGSHOT_SAD] = gfx_mug_elise_sadTiles,
 			[MUGSHOT_ANNOYED] = gfx_mug_elise_annoyedTiles,
+			[MUGSHOT_RUMINATIVE] = gfx_mug_elise_thoughtfulTiles,
 			}, 
 		gfx_mug_elisePal, str_mug_elise},
     [MUGSHOT_EMERYS] = {
@@ -163,6 +164,7 @@ mugshot mugshots[] = {
 		{
 			[MUGSHOT_NORMAL] = gfx_mug_primusTiles,
 			[MUGSHOT_SCARED] = gfx_mug_primus_scaredTiles,
+			[MUGSHOT_RUMINATIVE] = gfx_mug_primus_thoughtfulTiles,
 		}, 
 		gfx_mug_primusPal, str_mug_primus},
     [MUGSHOT_IGVA] = {

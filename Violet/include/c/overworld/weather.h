@@ -25,11 +25,11 @@
 
 color_t drought_colors[6][0x1000];
 
-// Ugly macro to initialize blending parameters for all weather functions "conveniently"
+// Ugly macro to create wrappers that initialize the weather filters
 
 #define WEATHER_FUNCTION_WITH_BLEND(weather_func)        \
     void weather_func##_with_blend() { \
-        fmem.weather_blend_active = 0; \
+        weather_set_filter(save1->map_weather); \
         weather_func(); \
     }
 
@@ -154,6 +154,12 @@ void overworld_weather_callback(u8 self);
  * Sets-up gamma values and applies the correct gamma shift
  **/
 void overworld_weather_fade_in();
+
+/**
+ * Sets the map filters according to a weather
+ * @param weather the weather according to which to set filters
+ **/
+void weather_set_filter(u8 weather);
 
 typedef struct {
     void (*initialize_variables)();

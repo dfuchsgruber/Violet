@@ -1187,6 +1187,7 @@ extern const unsigned short gfx_ow_rival_5Tiles[];
 extern const unsigned short gfx_ow_rival_6Tiles[];
 extern const unsigned short gfx_ow_rival_7Tiles[];
 extern const unsigned short gfx_ow_rival_8Tiles[];
+extern const unsigned short gfx_ow_rival_beatenTiles[];
 extern const unsigned short gfx_ow_tann_0Tiles[];
 extern const unsigned short gfx_ow_tann_1Tiles[];
 extern const unsigned short gfx_ow_tann_2Tiles[];

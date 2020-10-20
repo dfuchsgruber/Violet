@@ -1,10 +1,3 @@
-/* 
- * File:   overworlds.c
- * Author: Domi
- *
- * Created on 26. Juni 2016, 21:14
- */
-
 #include "types.h"
 #include "overworld/sprite.h"
 #include "oam.h" 
@@ -347,6 +340,27 @@ overworld_sprite ow_rival = {
 	ow_anim_standard_npc, overworld_sprite_rival_sprites, 
 	oam_rotscale_anim_table_null
 };
+
+static graphic overworld_sprite_rival_beaten_sprites[] = {
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+	{&gfx_ow_rival_beatenTiles, GRAPHIC_SIZE_4BPP(32, 32), 0},
+};
+
+overworld_sprite ow_rival_beaten = {
+	0xFFFF, 0x1103, 0x11ff, GRAPHIC_SIZE_4BPP(32, 32),
+	32, 32, 0, 1, 1, 0, 0x1, 0x0, 0x0,
+	&ow_final_oam_32_32, &ow_formation_32_32,
+	ow_anim_standard_npc, overworld_sprite_rival_beaten_sprites, 
+	oam_rotscale_anim_table_null
+};
+
 static graphic overworld_sprite_tann_sprites[] = {
 	{&gfx_ow_tann_0Tiles, 0x100, 0},
 	{&gfx_ow_tann_1Tiles, 0x100, 0},
@@ -1783,6 +1797,7 @@ overworld_sprite *overworld_sprites[] = {
 // 178
 		&ow_lester_young,
 		&ow_roman,
+		&ow_rival_beaten,
 
 	[OVERWORLD_SPRITE_MISC] = &ow_misc_16_16,
 	[OVERWORLD_SPRITE_BERRY] = &ow_berry_tree, // dummy

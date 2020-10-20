@@ -18,6 +18,7 @@
 ow_script_silvania_forest_rin_0:
     lockall
     playsong MUS_VIOLET_ENCOUNTER 0
+    playsong2 MUS_VIOLET_ENCOUNTER
     special SPECIAL_OVERWORLD_VIEWPORT_UNLOCK
     applymovement 0x7F mov_2r
     waitmovement 0
@@ -101,11 +102,16 @@ ow_script_silvania_forest_rin_0:
     cry POKEMON_VIPITIS 0
     waitcry
     sound 137
-    setweather MAP_WEATHER_BURNING_TREES
+    setweather MAP_WEATHER_OUTSIDE
     doweather
-    checksound
+    pause 32 // Remove the darkening effect
+    
+    callasm weather_burning_trees_update_pal_restore_and_tmp
+    pause 1
+    fadescreen 2
     setmaptile 0x32 0x11 0x377 1
     special SPECIAL_MAP_UPDATE_BLOCKS
+
     checksound
     pause 32
     applymovement 45 mov_fl
@@ -135,6 +141,7 @@ ow_script_silvania_forest_rin_0:
     hidesprite 5
     hidesprite 30
     hidesprite 31
+    hidesprite 32
     applymovement 0x7F mov_2l
     waitmovement 0
     special SPECIAL_OVERWORLD_VIEWPORT_LOCK
@@ -145,6 +152,8 @@ ow_script_silvania_forest_rin_0:
     applymovement 0xFF mov_fl
     applymovement 36 mov_fl
     applymovement 41 mov_fl
+    setweather MAP_WEATHER_BURNING_TREES
+    doweather
     loadpointer 0 str_19
     show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT emotion=MUGSHOT_SCARED message_type=MSG_KEEPOPEN
     loadpointer 0 str_20
@@ -225,6 +234,7 @@ ow_script_silvania_forest_rin_0:
 	fadescreen 3
 	hidesprite 46
 	showsprite 49
+    special SPECIAL_PAL_TMP_SYNCHRONIZE_WITH_PAL_RESTORE // prepeare for fading back, there now is a new pal
 	fadescreen 2
     cry POKEMON_KAPPALORES 0
 	checksound
@@ -243,6 +253,7 @@ ow_script_silvania_forest_rin_0:
 	fadescreen 3
 	hidesprite 47
 	showsprite 48
+    special SPECIAL_PAL_TMP_SYNCHRONIZE_WITH_PAL_RESTORE // prepeare for fading back, there now is a new pal
 	fadescreen 2
     cry POKEMON_SCHLURP 0
 	checksound
@@ -282,9 +293,11 @@ ow_script_silvania_forest_rin_0:
     addvar STORY_PROGRESS 1
 	movesprite 42 0x2d 0x13
 	movesprite 43 0x31 0x14
-	//spritebehave 42 BEHAVIOUR_FACE_UP
-	//spritebehave 43 BEHAVIOUR_FACE_UP
-	//spritebehave 36 BEHAVIOUR_LOOK_AROUND
+	movesprite2 42 0x2d 0x13
+	movesprite2 43 0x31 0x14
+	spritebehave 42 BEHAVIOUR_FACE_UP
+	spritebehave 43 BEHAVIOUR_FACE_UP
+    releaseall
     end
 
 move_player_down:
@@ -380,580 +393,382 @@ str_36:
 .elseif
 .endif
 
-
-
-
-.global ow_script_0x8fa888
-.global ow_script_map_1_0_trigger_0
-.global ow_script_0x8f5aa3
-.global ow_script_0x8f5a94
-.global ow_script_0x8f5cdf
-.global ow_script_0x8fab2c
-.global ow_script_0x8f5143
-ow_script_movs_0x8037d4:
-.byte LOOK_RIGHT
-.byte STOP
-
-
-ow_script_movs_0x8f4d2c:
-.byte STEP_RIGHT
-.byte STOP
-
-
-ow_script_movs_0x8f4b78:
-.byte LOOK_UP
-.byte STOP
-
-
-ow_script_movs_0x8f4ab5:
-.byte LOOK_LEFT
-.byte STOP
-
-
-ow_script_map_1_0_trigger_0:
-lockall
-applymovement 0xff ow_script_movs_0x8037d4
-waitmovement 0x0
-settrainerflag 0x4a
-settrainerflag 0x4b
-settrainerflag 0x4c
-lockall
-playsong MUS_VIOLET_ENCOUNTER 0x0
-setvar SONG_OVERRIDE MUS_VIOLET_ENCOUNTER
-special 0x113
-applymovement 0x7f ow_script_movs_0x8f4d2c
-waitmovement 0x0
-special 0x114
-loadpointer 0x0 str_0x8f4c85
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8f4c4b
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f4b7b
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-applymovement 0x1e ow_script_movs_0x8f4b78
-waitmovement 0x0
-pause 0x38
-loadpointer 0x0 str_0x8f4aee
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f4ab8
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-applymovement 0x1e ow_script_movs_0x8f4ab5
-waitmovement 0x0
-loadpointer 0x0 str_0x8f49f3
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f49c5
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8f48ca
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f4823
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8f4755
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f46fc
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-goto ow_script_0x8f5143
-
-
-ow_script_movs_0x8f5a91:
-.byte STEP_RIGHT
-.byte STOP
-
-
-ow_script_movs_0x8f5a8d:
-.byte LOOK_LEFT
-.byte SAY_EXCLAM
-.byte STOP
-
-
-ow_script_movs_0x8f505f:
-.byte LOOK_RIGHT
-.byte STOP
-
-
-ow_script_movs_0x8f5140:
-.byte LOOK_LEFT
-.byte STOP
-
-
-ow_script_movs_0x8f52c0:
-.byte STEP_DOWN
-.byte LOOK_LEFT
-.byte STOP
-
-
-ow_script_movs_0x8f52c4:
-.byte STEP_LEFT
-.byte STEP_DOWN
-.byte STEP_LEFT
-.byte STOP
-
-
-ow_script_0x8f5143:
-getplayerpos 0x8000 0x8001
-compare 0x8001 0x12
-callif EQUAL ow_script_0x8f5a94
-compare 0x8001 0x14
-callif EQUAL ow_script_0x8f5aa3
-applymovement 0xff ow_script_movs_0x8f5a91
-waitmovement 0x0
-sound 0x15
-applymovement 0x1e ow_script_movs_0x8f5a8d
-applymovement 0x1f ow_script_movs_0x8f5a8d
-applymovement 0x20 ow_script_movs_0x8f5a8d
-applymovement 0x5 ow_script_movs_0x8f5a8d
-draw_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f5a63
-callstd MSG
-waitmovement 0x0
-hide_mugshot
-loadpointer 0x0 str_0x8f59e8
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-applymovement 0x5 ow_script_movs_0x8f505f
-waitmovement 0x0
-draw_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8f59cf
-callstd MSG
-applymovement 0x5 ow_script_movs_0x8f5140
-loadpointer 0x0 str_0x8f56b8
-callstd MSG
-hide_mugshot
-loadpointer 0x0 str_0x8f5628
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f5514
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8f5425
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f52c9
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-applymovement 0x20 ow_script_movs_0x8f52c0
-applymovement 0x1f ow_script_movs_0x8f52c4
-waitmovement 0x0
-special SPECIAL_CANT_DOUBLE_BATTLE
-compare LASTRESULT 0
-gotoif NOT_EQUAL cant_double_battle
-// Can double battle
-setvar LASTTALKED 0
-trainerbattletwotrainers 0x4a 0x4b 0 str_0x8f523b str_0x8f527b str_0x8f5f57 ow_script_0x8fa888
-end
-
-cant_double_battle:
-setvar LASTTALKED 31
-trainerbattlecont 0x1 0x4a 0x0 str_0x8f523b str_0x8f527b ow_script_0x8f5cdf
-
-
-ow_script_0x8f5cdf:
-loadpointer 0x0 str_0x8f5f96
-callstd MSG
-setvar LASTTALKED 30
-trainerbattlecont 0x1 0x4b 0x0 str_0x8f5f21 str_0x8f5f57 ow_script_0x8fa888
-
-
-ow_script_movs_0x8f5eb0:
-.byte STEP_UP
-.byte FACE_DOWN
-.byte STOP
-
-
-ow_script_movs_0x8f5eb4:
-.byte LOOK_UP
-.byte LOOK_UP
-.byte STOP
-
-
-ow_script_movs_0x8f5eac:
-.byte STEP_DOWN
-.byte STEP_LEFT
-.byte STOP
-
-
-ow_script_0x8fa888:
-loadpointer 0x0 str_0x8f5edb
-callstd MSG
-
-after_two_grunts:
-loadpointer 0x0 str_0x8f5eb8
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-applymovement 0x20 ow_script_movs_0x8f5eb0
-applymovement 0x1f ow_script_movs_0x8f5eb4
-waitmovement 0x0
-applymovement 0x5 ow_script_movs_0x8f5eac
-waitmovement 0x0
-pause 0x20
-draw_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-setvar BATTLE_SONG_OVERRIDE MUS_KAMPF_GEGEN_ARENALEITER_HOENN
-setvar LASTTALKED 5
-trainerbattlecont 0x1 0x4c 0x0 str_0x8f5d92 str_0x8f5d31 ow_script_0x8fab2c
-
-
-ow_script_movs_0x8f6d19:
-.byte LOOK_RIGHT
-.byte STOP
-
-
-ow_script_movs_0x8f6d16:
-.byte LOOK_UP_DELAYED
-.byte LOOK_DOWN_DELAYED
-.byte STOP
-
-
-ow_script_movs_0x8f6cf5:
-.byte STEP_DOWN
-.byte STEP_LEFT
-.byte STEP_LEFT
-.byte STOP
-
-
-ow_script_movs_0x8f6c01:
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_RIGHT
-.byte STEP_RIGHT_FAST
-.byte STOP
-
-
-ow_script_movs_0x8f6bfe:
-.byte SAY_EXCLAM
-.byte STOP
-
-
-ow_script_movs_0x8f6be5:
-.byte STEP_UP_FAST
-.byte LOOK_LEFT
-.byte STOP
-
-
-ow_script_movs_0x8f6a5d:
-.byte LOOK_UP
-.byte STOP
-
-
-ow_script_movs_0x8f6ae2:
-.byte FACE_DOWN
-.byte STOP
-
-
-ow_script_movs_0x8f68a4:
-.byte LOOK_RIGHT
-.byte SAY_QUESTION
-.byte STOP
-
-
-ow_script_0x8fab2c:
-setvar SONG_OVERRIDE 0
-applymovement 0xff ow_script_movs_0x8f6d19
-waitmovement 0x0
-clearflag TRANS_DISABLE
-loadpointer 0x0 str_0x8fa9e7
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-applymovement 0x5 ow_script_movs_0x8f6d16
-waitmovement 0x0
-loadpointer 0x0 str_0x8f6cfb
-show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT
-fadescreen 0x1
-hidesprite 0x5
-hidesprite 0x1f
-hidesprite 0x20
-hidesprite 0xd
-hidesprite 0x9
-hidesprite 0x6
-hidesprite 0xf
-fadescreen 0x0
-playsong VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN 0
-applymovement 0x1e ow_script_movs_0x8f6cf5
-waitmovement 0x0
-loadpointer 0x0 str_0x8f6c09
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-clearflag PKMNMENU
-showsprite 0x24
-applymovement 0x24 ow_script_movs_0x8f6c01
-waitmovement 0x0
-sound 0x15
-applymovement 0x24 ow_script_movs_0x8f6bfe
-waitmovement 0x0
-loadpointer 0x0 str_0x8f6be9
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-applymovement 0x1e ow_script_movs_0x8f6be5
-waitmovement 0x0
-applymovement 0xff ow_script_movs_0x8f6a5d
-waitmovement 0x0
-loadpointer 0x0 str_0x8f6bb4
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f6b22
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-draw_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f6ae5
-callstd MSG
-applymovement 0x1e ow_script_movs_0x8f6ae2
-waitmovement 0x0
-loadpointer 0x0 str_0x8f6a60
-callstd MSG
-hide_mugshot
-applymovement 0x24 ow_script_movs_0x8f6ae2
-waitmovement 0x0
-loadpointer 0x0 str_0x8f68d7
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-draw_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f68a8
-callstd MSG_KEEPOPEN
-sound 0x15
-applymovement 0x24 ow_script_movs_0x8f68a4
-applymovement 0xff ow_script_movs_0x8f68a4
-waitmovement 0x0
-loadpointer 0x0 str_0x8f6749
-callstd MSG
-hide_mugshot
-loadpointer 0x0 str_0x8f6725
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8f6626
-show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT MSG_KEEPOPEN
-applymovement 0x24 ow_script_movs_0x8f6ae2
-applymovement 0xff ow_script_movs_0x8f6a5d
-waitmovement 0x0
-loadpointer 0x0 str_0x8f65b0
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-loadpointer 0x0 str_0x8f64bc
-show_mugshot MUGSHOT_PLAYER MUGSHOT_LEFT
-loadpointer 0x0 str_0x8f6465
-show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT
-fadescreen 0x1
-hidesprite 0x24
-hidesprite 0x1e
-fadescreen 0x0
-addvar STORY_PROGRESS 0x1
-setvar STORY_STATE STORY_STATE_SILVANIA_FOREST_CLEAR
-releaseall
-end
-
-
-ow_script_movs_0x8f5aaf:
-.byte STEP_UP
-.byte STOP
-
-
-ow_script_0x8f5aa3:
-applymovement 0xff ow_script_movs_0x8f5aaf
-waitmovement 0x0
-return
-
-
-ow_script_movs_0x8f5aa0:
-.byte STEP_DOWN
-.byte STOP
-
-
-ow_script_0x8f5a94:
-applymovement 0xff ow_script_movs_0x8f5aa0
-waitmovement 0x0
-return
-
+.global ow_script_silvania_forest_rin_1
+
+ow_script_silvania_forest_rin_1:
+    lockall
+    loadpointer 0 str_37
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY message_type=MSG_KEEPOPEN mask_name=1
+    loadpointer 0 str_38
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_LEFT message_type=MSG_KEEPOPEN
+    closeonkeypress
+    setvar 0x8004 2
+    special SPECIAL_SET_TARGET_NPC_TO_VAR
+    faceplayer
+    setvar 0x8004 1
+    special SPECIAL_SET_TARGET_NPC_TO_VAR
+    faceplayer
+    sound 0x15
+    applymovement 1 mov_exclam
+    applymovement 2 mov_exclam
+    waitmovement 0
+    checksound
+    loadpointer 0 str_39
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT emotion=MUGSHOT_ANGRY message_type=MSG_KEEPOPEN hide_mugshot=0 mask_name=1
+    update_mugshot_emotion MUGSHOT_NORMAL
+    applymovement 1 mov_fr
+    waitmovement 0
+    loadpointer 0 str_40
+    callstd MSG_KEEPOPEN
+    setvar 0x8004 1
+    special SPECIAL_SET_TARGET_NPC_TO_VAR
+    faceplayer
+    setvar BATTLE_SONG_OVERRIDE MUS_KAMPF_GEGEN_ARENALEITER_HOENN
+    setvar LASTTALKED 1
+    trainerbattlecont 0x1 0x4c 0x0 str_41 str_42 rin_battle_cont
+    hide_mugshot
+rin_battle_cont:
+    setvar BATTLE_SONG_OVERRIDE 0
+    loadpointer 0 str_43
+    show_mugshot MUGSHOT_RIN MUGSHOT_RIGHT emotion=MUGSHOT_SHOCKED message_type=MSG_KEEPOPEN hide_mugshot=0
+    update_mugshot_emotion MUGSHOT_NORMAL
+    loadpointer 0 str_44
+    callstd MSG_KEEPOPEN
+    update_mugshot_emotion MUGSHOT_ANGRY
+    loadpointer 0 str_45
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    npc_move_to 1 0x41 0x13
+    fadescreen 1
+    hidesprite 50
+    hidesprite 51
+    hidesprite 1
+    setflag SILVANIA_FOREST_RIN
+    fadesong VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN
+    playsong2 VERTANIA_WALD_AND_BEERENFORST_AND_MUSTERBUSCHWALD_AND_DIGDAS_HOHLE_AND_SEESCHAUMINSELN
+    fadescreen 0
+    setvar 0x8004 2
+    special SPECIAL_SET_TARGET_NPC_TO_VAR
+    faceplayer
+    loadpointer 0 str_46
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG
+    // Show Elise
+    clearflag (19 | 0x8000)
+    showsprite 55
+    applymovement 55 mov_4u
+    waitmovement 0
+    sound 0x15
+    applymovement 55 mov_exclam
+    waitmovement 0
+    loadpointer 0 str_47
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SHOCKED
+    npc_move_to 2 0x41 0xc
+    applymovement 2 mov_fd
+    applymovement 0xFF mov_fd
+    waitmovement 0
+    loadpointer 0 str_48
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG
+    applymovement 2 mov_fu
+    waitmovement 0
+    loadpointer 0 str_49
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SAD
+    clearflag (20 | 0x8000)
+    clearflag (21 | 0x8000)
+    showsprite 53
+    showsprite 54
+    applymovement 53 mov_4u
+    applymovement 54 mov_4u
+    waitmovement 0
+    loadpointer 0 str_50
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG
+    sound 0x15
+    applymovement 54 mov_exclam
+    waitmovement 0
+    checksound
+    applymovement 54 mov_3u_fast
+    waitmovement 0
+    applymovement 0xFF mov_fr
+    waitmovement 0
+    loadpointer 0 str_51
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SHOCKED
+    pause 64
+    loadpointer 0 str_52
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SHOCKED
+    pause 32
+    loadpointer 0 str_53
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_BEATEN
+    loadpointer 0 str_54
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SHOCKED
+    loadpointer 0 str_55
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_BEATEN
+    loadpointer 0 str_56
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANGRY hide_mugshot=0
+    update_mugshot_emotion MUGSHOT_NORMAL
+    loadpointer 0 str_57
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    pause 32
+    clearflag (22 | 0x8000)
+    hidesprite 52
+    showsprite 56
+    pause 32
+    loadpointer 0 str_58
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_BEATEN
+    pause 32
+    applymovement 0xFF mov_fd
+    applymovement 56 mov_fd
+    applymovement 54 mov_fd
+    loadpointer 0 str_59
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SHOCKED
+    applymovement 53 mov_u_and_look_arround
+    waitmovement 0
+    loadpointer 0 str_60
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SAD
+    applymovement 54 mov_fl
+    waitmovement 0
+    pause 32
+    loadpointer 0 str_61
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SCARED
+    loadpointer 0 str_62
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SAD
+    pause 32
+    sound 80
+    checksound
+    pause 32
+    sound 0x15
+    applymovement 53 mov_exclam
+    applymovement 54 mov_exclam
+    waitmovement 0
+    checksound
+    loadpointer 0 str_63
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_SHOCKED
+    pause 32
+    sound 80
+    checksound
+    pause 32
+    clearflag FLAG_SILVANIA_FOREST_BURNING
+    clearflag FLAG_SILVANIA_FOREST_HYDRO_PUMP_0
+    clearflag FLAG_SILVANIA_FOREST_HYDRO_PUMP_1
+    setweather MAP_WEATHER_RAIN
+    pause 64
+    loadpointer 0 str_64
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG emotion=MUGSHOT_HAPPY
+    pause 32
+    callasm silvania_forest_white_blend_map_reload
+    pause 256
+    setvar VAR_MAP_TRANSITION_FADING_DELAY 0 // Set by the asm function to 8 for a smoother transition effect
+    loadpointer 0 str_65
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_HAPPY
+    loadpointer 0 str_66
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_RUMINATIVE
+    applymovement 54 mov_fd
+    loadpointer 0 str_67
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_HAPPY
+    loadpointer 0 str_68
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_69
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_ANNOYED
+    applymovement 54 mov_fr
+    loadpointer 0 str_70
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SHOCKED hide_mugshot=0
+    applymovement 54 mov_fl
+    applymovement 0xFF mov_fr
+    waitmovement 0
+    loadpointer 0 str_71
+    update_mugshot_emotion MUGSHOT_NORMAL
+    callstd MSG_KEEPOPEN
+    applymovement 54 mov_fr
+    loadpointer 0 str_72
+    callstd MSG_KEEPOPEN
+    closeonkeypress
+    hide_mugshot
+    applymovement 53 mov_1l
+    waitmovement 0
+    applymovement 53 mov_fr
+    waitmovement 0
+    applymovement 54 mov_4d
+    applymovement 56 mov_4d_very_slow
+    waitmovement 54
+    applymovement 54 mov_fu
+    waitmovement 56
+    applymovement 54 mov_3d
+    applymovement 56 mov_3d_very_slow
+    waitmovement 56
+    hidesprite 54
+    hidesprite 56
+    applymovement 0xFF mov_fd
+    waitmovement 0
+    setvar 0x8004 53
+    special SPECIAL_SET_TARGET_NPC_TO_VAR
+    faceplayer
+    loadpointer 0 str_73
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG
+    applymovement 53 mov_1r
+    waitmovement 0
+    applymovement 53 mov_6d
+    waitmovement 0
+    hidesprite 53
+    applymovement 55 mov_1r
+    waitmovement 0
+    applymovement 55 mov_1u
+    waitmovement 0
+    loadpointer 0 str_74
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_75
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    applymovement 55 mov_fl
+    waitmovement 0
+    loadpointer 0 str_76
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_RUMINATIVE
+    applymovement 2 mov_fr
+    waitmovement 0
+    loadpointer 0 str_77
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_78
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_RUMINATIVE
+    loadpointer 0 str_79
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_80
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_RUMINATIVE
+    loadpointer 0 str_81
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN emotion=MUGSHOT_SCARED
+    applymovement 55 mov_fu
+    waitmovement 0
+    loadpointer 0 str_82
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    applymovement 55 mov_fl
+    waitmovement 0
+    loadpointer 0 str_83
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_84
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    applymovement 2 mov_fu
+    applymovement 55 mov_fu
+    waitmovement 0
+    loadpointer 0 str_85
+    show_mugshot MUGSHOT_PRIMUS MUGSHOT_RIGHT message_type=MSG_KEEPOPEN
+    loadpointer 0 str_86
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG
+    applymovement 2 mov_6d
+    applymovement 55 mov_6d
+    waitmovement 0
+    hidesprite 2
+    hidesprite 55
+    setflag SILVANIA_FOREST_RIN
+    releaseall
+    end
+
+mov_4d_very_slow:
+    .byte STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW, STOP
+mov_3d_very_slow:
+    .byte STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW, STEP_DOWN_VERY_SLOW, STOP
+mov_3u_fast:
+    .byte STEP_UP_FAST, STEP_UP_FAST, STEP_UP_FAST, LOOK_RIGHT, STOP
+mov_u_and_look_arround:
+    .byte STEP_UP, STEP_UP, STEP_UP, PAUSE_16, PAUSE_16, LOOK_RIGHT_DELAYED, PAUSE_16, PAUSE_16, LOOK_LEFT_DELAYED, PAUSE_16, PAUSE_16, LOOK_UP_DELAYED, STOP
 
 .ifdef LANG_GER
-
-str_0x8f4c85:
-	.autostring 34 2 "Wir werden sowieso aus Ihnen herausbekommen, was wir wissen wollen, Professor.\pErsparen Sie sich alberene Ausreden und kooperieren Sie lieber gleich!"
-
-
-
-str_0x8f4c4b:
-	.autostring 34 2 "In Ordnung!\pDOTS DOTS DOTS\pIn Ordnung DOTS\nAber tun Sie mir bitte nichts DOTS"
-
-
-
-str_0x8f4b7b:
-	.autostring 34 2 "Haha!\nSie haben absolut kein Rückgrat, Primus!\pHaha!\pSo gefällt mir das!\nNun sagen Sie mir, was es mit dem Zeitstein und diesem seltsamen Schrein hier auf sich hat!"
-
-
-
-str_0x8f4aee:
-    .autostring 34 2 "Ich muss ehrlich sagen, dass ich ein Physiker bin, kein Historiker.\pDieser SchreinDOTS\pDOTSist uralt, ebenso wie seine Inschriften.\pIch kann sie nicht entziffernDOTS"
-
-
-
-str_0x8f4ab8:
-    .autostring 34 2 "Sie fangen nun also doch mit Ausflüchten an?\pHabe ich mich nicht klar genug ausgedrückt?\pDenken Sie, dass ich nicht bereit wäre, Sie aus dem Weg zu räumen?"
-
-
-
-str_0x8f49f3:
-    .autostring 34 2 "Nein!\pHalt, warten Sie, bitte!\pEs gibt noch eine zweite Inschrift, die nachträglich hinzugefügt wurde.\pSie ist in Icognito Zeichen geschrieben undDOTS\pIch müsste sie entziffern könnenDOTS"
-
-
-
-str_0x8f49c5:
-    .autostring 34 2 "Na also!\pIch wusste doch, dass Sie von Nutzen sein können.\pWie lautet diese Inschrift?"
-
-
-
-str_0x8f48ca:
-	.autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDer Text handelt von einem Pokémon namens Celebi.\pEs war einst der Wächter des Zeitsteins, welcher das Zeitgefüge zusammenhält.\pDOTS DOTS DOTS\nDOTS DOTS DOTS"
-
-
-str_0x8f4823:
-    .autostring 34 2 "Sehr gut, sehr gut!\pLesen Sie weiter!"
-
-
-str_0x8f4755:
-    .autostring 34 2 "Um einer drohenden Gefahr zu entgehen entschloss sich Celebi, den Zeitstein in drei Teile zu spaltenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pUnd jeden des der Fragmente von einem mächtigen antiken Pokémon bewachen zu lassenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pIch denke, das ist allesDOTS"
-
-
-str_0x8f46fc:
-	.autostring 34 2 "Gespalten?\nSind Sie sich da sicher?\pWenn Ihre Informationen sich als unwahr entpuppen solltenDOTS\pIch muss Ihnen Ihre Lage nicht ein weiteres Mal erklären, oder?"
-
-
-
-str_0x8f5a63:
-    .autostring 34 2 "Hey!\nLasst den Professor in Frieden!"
-
-
-
-str_0x8f59e8:
-    .autostring 34 2 "Arceus sei Dank!\nEin Trainer!\pBitte, hilf mir!\nDiese Frau DOTS\lDOTS ist eine Kommandantin von Team Violet.\pSie ist gefährlich!\pHilf mir!"
-
-
-
-str_0x8f59cf:
-    .autostring 34 2 "Halt den Rand, Primus!"
-
-
-
-str_0x8f56b8:
-	.autostring 34 2 "Was haben wir denn da?\pEin Kind, das sich in die Angelegenheiten von Team Violet einmischt.\pMein Name ist Rin und ich bin Kommandantin der zweiten Division von Team Violet.\pBist du dir sicher, dass du dich mit mir anlegen möchtest?\pHast du etwa noch nicht von mir und meinen Taten gehört?"
-
-
-str_0x8f5628:
-	.autostring 34 2 "Mir ist völlig gleichgültig, wer Sie sind oder was Sie im Schilde führen.\pIch werde Team Violet aufhalten!"
-
-
-str_0x8f5514:
-    .autostring 34 2 "Mut hast du ja, Rotznase!\pAber du weißt nicht, was gut für dich ist.\pUnser Plan ist in vollem Gange.\pIn naher Zukunft werden wir im Besitz einer so schrecklichen Waffe sein, dass jeder Mensch auf diesem Kontinent sich Team Violet zu fügen hat.\pEin Kind wie du, wird da nichts ausrichten können."
-
-
-str_0x8f5425:
-    .autostring 34 2 "Ich lasse mich nicht einschüchtern!"
-
-
-str_0x8f52c9:
-    .autostring 34 2 "Genug jetzt!\pDummes Kind!\pIhr da, erledigt das Balg, und zwar pronto!"
-
-
-str_0x8f523b:
-    .autostring 34 2 "Du kannst mir schon fast leid tun.\pSich mit Rin anzulegen ist nie eine gute Idee!"
-
-
-
-str_0x8f527b:
-    .autostring 34 2 "Na und?\nDann habe ich eben verloren.\pGegen Rin wirst du ohnehin nicht gewinnen, du naives Balg!"
-
-
-
-str_0x8f5f96:
-    .autostring 34 2 "Ich DOTS DOTS\nDOTS es tut mir leid, Rin DOTS"
-
-
-
-str_0x8f5f21:
-    .autostring 34 2 "Eines Tages werden wir über die Welt herrschen!\pUnd dafür werde ich bis zum bitteren Ende kämpfen!"
-
-
-
-str_0x8f5f57:
-    .autostring 34 2 "Du hast mehr auf dem Kasten, als es scheint.\pAber Rin ist eine Nummer zu groß für dich!"
-
-
-
-str_0x8f5edb:
-    .autostring 34 2 "Das Kind DOTS DOTS DOTS\nDOTS ist kein Anfänger DOTS"
-
-
-
-str_0x8f5eb8:
-    .autostring 34 2 "Ihr seid erbärmliche Gestalten!\pIch sollte euch in Mistrals Division verweisen.\pBeiseite, ihr Pappnasen!"
-
-
-
-str_0x8f5d92:
-	.autostring 34 2 "Vielleicht bist du doch ein interessanter Gegner.\pAber du musst wissen, dass ich auch gegen ein Kind ohne Skrupel kämpfen werde.\pDu hättest diese Dinge den Erwachsenen überlassen sollen.\pJetzt bezahlst du den Preis für deinen Heldenmut!"
-
-
-str_0x8f5d31:
-    .autostring 34 2 "Ich DOTS DOTS DOTS\nDOTS wurde von einem Kind besiegt?"
-
-
-
-str_0x8fa9e7:
-	.autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pIch habe dich wohl unterschätzt.\pDu bist ein ernstzunehmender Gegner.\pBeim unserem nächsten Aufeinandertreffen, werde ich mich nicht so überrumpeln lassen.\pWir haben ohnehin erfahren, was wir wissen wollten."
-
-
-str_0x8f6cfb:
-    .autostring 34 2 "Wir ziehen ab, los!"
-
-
-
-str_0x8f6c09:
-	.autostring 34 2 "Oh bei Arceus, ich danke dir!\pTausend Mal danke danke danke!\pIch bin gerettet.\pBereits seit Tagen halten mich diese Rüpel fest und schikanieren mich.\pIch dachte, es wäre aus mit mir."
-
-
-
-str_0x8f6be9:
-    .autostring 34 2 "Papa! Papa!"
-
-
-
-str_0x8f6bb4:
-    .autostring 34 2 "Elise!\nWas tust du denn hier?"
-
-
-
-str_0x8f6b22:
-	.autostring 34 2 "Ich habe mir solche Sorgen um dich gemacht.\pAls mir Professor Tann von deinem Verschwinden erzählt hat DOTS\pDOTS ich DOTS\nDOTS DOTS DOTS\pDOTS wäre vor Sorge fast umgekommen!"
-
-
-str_0x8f6ae5:
-    .autostring 34 2 "Keine Sorge, ich bin jetzt wohlauf, mein Schatz!"
-
-
-
-str_0x8f6a60:
-    .autostring 34 2 "Und das alles dank meinem Retter hier.\pDieses Kind hat einen Kommandanten von Team Violet geschlagen!\pWie lautet eigentlich dein Name?"
-
-
-
-str_0x8f68d7:
-    .autostring 34 2 "Wirklich PLAYER?\nDas ist fantastisch!\pSich mit solchen Menschen anzulegen, erfordert Mut!\pDu verblüffst mich aufs Neue!\pDanke dir, PLAYER!\nVon ganzem Herzen danke, dass du meinen Vater gerettet hast!"
-
-
-str_0x8f68a8:
-    .autostring 34 2 "DOTS DOTS DOTS\nAllerdings DOTS"
-
-
-
-str_0x8f6749:
-    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pHaben diese Leute von Team Violet es auf den Diserakt abgesehen."
-
-
-str_0x8f6725:
-    .autostring 34 2 "Diserakt?\nWas ist das?"
-
-
-
-str_0x8f6626:
-    .autostring 34 2 "Der Legende nach wird das Zeitgefüge vom Diserakt zusammengehalten.\pDie Leute haben ihn deshalb auch Zeitstein genannt.\pSolte er tatsächlich existierenDOTS\pDOTS DOTS DOTS\nDOTS DOTS DOTS\pDie Energie, die er beinhaltet, wäre imens.\pDamit könnte man allerlei gefährliche Dinge anstellen."
-
-
-
-str_0x8f65b0:
-    .autostring 34 2 "PLAYER DOTS\nWirst du Team Violet weiter verfolgen?"
-
-
-
-str_0x8f64bc:
-    .autostring 34 2 "Team Violet will die Energie des Diserakts vermutlich als Waffe benutzen.\pDas werde ich nicht zulassen!"
-
-
-str_0x8f6465:
-    .autostring 34 2 "Das hatte ich mir gedachtDOTS\pDu solltest dir deinen Sieg nicht zu Kopf steigen lassen, ja?\pSchließlich haben wir die Top Vier und die Polizei, um sich mit solchen verbrecherischen Organisationen zu befassen.\pSich mit solchen Leuten anzulegen, kann leicht ins Auge gehen.\pPass auf dich auf, PLAYER!"
-
+str_37:
+    .autostring 34 2 "Was soll das heißen, der Stein ist nicht hier?\pIst das nicht der Zeitwald?\pWo sollte der verfluchte Stein denn sonst sein?"
+str_38:
+    .autostring 34 2 "Beruhige dich.\pWenn der Text, die in diesen Schrein graviert ist, der Wahrheit entspricht, macht das die Unternehmung zwar komplizierter, aber nicht unmöglich.\pDer Tesserakt-"
+str_39:
+    .autostring 34 2 "Du schon wieder!"
+str_40:
+    .autostring 34 2 "Deinem kleinen Freund hier hab ich schon gezeigt, was es bedeutet, sich mit uns anzulegen."
+str_41:
+    .autostring 34 2 "Ihr Gören fangt an mir gewaltig auf die Nerven zu gehen.\pUnd ich habe hier leider auch nicht das gefunden, was ich gehofft hatte.\pPech für dich, Kindchen!\pMit Rin, einer Kommandantin von Team Violet, sollte man sich nicht anlegen!\pJetzt werde ich meinen ganzen Frust an dir auslassen!"
+str_42:
+    .autostring 34 2 "U-Unmöglich!\pIch habe mich von einem Kind besiegen lassen?"
+str_43:
+    .autostring 34 2 "Wie lächerlich!\pSo eine Demütigung, von einem Kind besiegt zu werden."
+str_44:
+    .autostring 34 2 "Aber was soll's?\pDas, wonach ich auf der Suche bin, finde ich in diesem Wald sowieso nicht."
+str_45:
+    .autostring 34 2 "Wage es ja nicht, mir noch einmal in die Quere zu kommen, verstanden?"
+str_46:
+    .autostring 34 2 "Vielen Dank, dass du mich vor dieser Frau gerettet hast!\pIch weiß wirklich nicht, was ich ohne deine Hilfe getan hätteDOTS"
+str_47:
+    .autostring 34 2 "Papa!\pGeht es dir gut?"
+str_48:
+    .autostring 34 2 "Elise!\pBin ich froh, dich zu sehen, Kleines!\pDank der Hilfe von PLAYER geht es mir gut.\pEr hat diese schreckliche Frau vertrieben!"
+str_49:
+    .autostring 34 2 "Ist das wahr, PLAYER?\pIch kann dir wirklich nicht genug dankenDOTS"
+str_50:
+    .autostring 34 2 "Sehr gut, das Feuer hätten wir erledigt-"
+str_51:
+    .autostring 34 2 "Hey, RIVAL!\pIst bei dir alles in Ordnung?"
+str_52:
+    .autostring 34 2 "RIVAL!\pJetzt sag doch was!\pRIVAL, hey!"
+str_53:
+    .autostring 34 2 "DOTS DOTS DOTSTEXT_DELAY_SHORT\nDOTS DOTS DOTSTEXT_DELAY_SHORT\pIchDOTSTEXT_DELAY_SHORT\nDOTS DOTS DOTSTEXT_DELAY_SHORT"
+str_54:
+    .autostring 34 2 "W-Was ist denn passiert?\pWer hat dich so zugerichtet?"
+str_55:
+    .autostring 34 2 "DieseDOTS\nDOTSKommandantin ist verflixt stark DOTS"
+str_56:
+    .autostring 34 2 "Dann ist sie dafür verantwortlich!"
+str_57:
+    .autostring 34 2 "KommDOTS\pIch helfe dir hoch, RIVAL."
+str_58:
+    .autostring 34 2 "D-DankeDOTS\nDOTS DOTS DOTS"
+str_59:
+    .autostring 34 2 "Es sieht so aus, als hätte diese schreckliche Frau auch hier den Wald in Brand gesteckt!"
+str_60:
+    .autostring 34 2 "Und um ehrlich zu sein, haben sich die Flammen viel zu stark ausgebreitet, als dass wir mit unseren Pokémon noch etwas ausrichten könntenDOTS"
+str_61:
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS\pDas sieht nicht gut ausDOTS"
+str_62:
+    .autostring 34 2 "Was sollen wir den jetzt bloß machen?"
+str_63:
+    .autostring 34 2 "Ist das etwa?"
+str_64:
+    .autostring 34 2 "Regen!\nDas ist Regen!\pEs fängt an zu regnen!"
+str_65:
+    .autostring 34 2 "Der Regen löscht das Feuer im Wald!"
+str_66:
+    .autostring 34 2 "Was für ein seltsamer ZufallDOTS"
+str_67:
+    .autostring 34 2 "Damit hat sich die Sache mit dem Feuer erledigt!\pDas ist doch fantastisch, oder nicht, Rosalie?"
+str_68:
+    .autostring 34 2 "Ja, du hast Recht.\pEs ist fast so, als hätte die Natur selbst den Waldbrand gelöschtDOTS"
+str_69:
+    .autostring 34 2 "DOTS DOTS DOTS"
+str_70:
+    .autostring 34 2 "Und jetzt sehen wir, dass wir dich wieder auf die Beine bringen, RIVAL!\pIch bringe dich zum nächsten Pokéstop!"
+str_71:
+    .autostring 34 2 "PLAYER!\nDanke für deine Hilfe!\pOhne dich hätten wir diese Kommandantin vielleicht gar nicht stoppen können.\pUnd auch wenn sie uns letztlich durch die Lappen gegangen istDOTS\pKonnten wir immerhin den Wald beschützen.\pUnd früher oder später kriegen wir diese Team Violet Leute schon noch klein!"
+str_72:
+    .autostring 34 2 "Komm mit, RIVAL.\pJetzt werden wir dir und deinen Pokémon erst einmal etwas Erhohlung verschaffen."
+str_73:
+    .autostring 34 2 "PLAYER!\pAuch ich muss mich bei dir bedanken.\pDu hast diese grässliche Frau vertrieben.\pDer Wald und ich stehen tief in deiner Schuld.\pDu und deine Pokémon haben mich schwer beeindruckt.\pJetzt, wo sich die Lage beruhigt hat, willst du mich sicher zu einem Arenakampf herausfordern.\pDiese Herausforderung nehme ich nur allzu gerne an.\pKomm in meine Arena und zeige mir, wie du eine Team Violet Kommandantin besiegt hast."
+str_74:
+    .autostring 34 2 "Du hast vermutlich genug von den ganzen Danksagungen, aber natürlich müssen auch mein Vater und ich uns bei dir bedanken.\pWer weiß, was meinem Papa passiert wäre, wenn du nicht gewesen wärst!"
+str_75:
+    .autostring 34 2 "Dem ist nichts hinzuzufgen.\pDu hast mich wirklich aus einer misslichen Lage befreit."
+str_76:
+    .autostring 34 2 "Weißt du, PapaDOTS\pIch frage mich, was diese Kommandantin eigentlich von dir gewollt hatDOTS"
+str_77:
+    .autostring 34 2 "Nun, ähmDOTS\pNaja, sie hat wohl geglaubt, dass ich ihr helfen kann, den Zeitstein hier ausfinding zu machenDOTS"
+str_78:
+    .autostring 34 2 "Was soll denn das sein, dieser Zeitstein?"
+str_79:
+    .autostring 34 2 "Das ist gar nicht so einfach zu erklären.\pZumal dieser Zeitstein vermutlich nicht einmal existiertDOTS\pDer Legende nach handelt es sich dabei um ein Objekt, das außerhalb der Zeit existiert und dadurch Vergangenheit, Gegenwart und Zukunft miteinander gewissermaßen verbindet."
+str_80:
+    .autostring 34 2 "Das hört sich wirklich absurd an.\pWie eines der Märchen, die du mir früher immer vorgelesen hast.\pUnd wie kommen diese Leute überhaupt auf den Gedanken, dass du etwas über irgendeinen sagenumwobenen Stein wissen könntest?\pWäre es nicht viel logischer, anzunehmen, dass zum Beispiel Professor Tann etwas darüber weiß?"
+str_81:
+    .autostring 34 2 "Ä-Äh!\nNaja!\pIch nehme an, dass sich diese Leute auch an Professor Tann gewendet haben?"
+str_82:
+    .autostring 34 2 "Richtig!\pErinnerst du dich, PLAYER?\pDeswegen haben sie vermutlich Professor Tann in seinem Labor angegriffen!"
+str_83:
+    .autostring 34 2 "Wir Forscher sollten in diesen Zeiten besonders vorsichtig sein, meinst du nicht auch, Papa?"
+str_84:
+    .autostring 34 2 "Da hast du sicher nicht Unrecht, Elise."
+str_85:
+    .autostring 34 2 "PLAYER!\nWir wollen dich wirklich nicht länger mit unserem Gerede aufhalten.\pDanke für alles.\pUnd so dankbar ich dir auch für meine Rettung bin, solltest du dich in Zukunft nicht so leichtfertig in Gefahr begeben, ja?\pDu hast ja gesehen, was mit deinem Freund passiert istDOTS\pPass auf dich auf, PLAYER!"
+str_86:
+    .autostring 34 2 "Mach's gut, PLAYER!"
 .elseif LANG_EN
-
 .endif

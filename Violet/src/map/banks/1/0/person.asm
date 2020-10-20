@@ -6,7 +6,17 @@
 .include "overworld_script.s"
 .include "flags.s"
 .include "items.s"
+.include "mugshot.s"
+.include "species.s"
 
+.global ow_script_silvania_forest_rival_beaten
+.global ow_script_silvania_forest_grunt_1
+.global ow_script_silvania_forest_grunt_2
+.global ow_script_silvania_forest_felix
+.global ow_script_silvania_forest_rosalie
+.global ow_script_silvania_forest_elise
+.global ow_script_silvania_forest_lickitung
+.global ow_script_silvania_forest_ludicullo
 .global ow_script_map_1_0_trainer_0
 .global ow_script_map_1_0_trainer_3
 .global ow_script_map_1_0_trainer_12
@@ -410,4 +420,70 @@ str_0:
 .elseif LANG_EN
 str_0:
     .autostring 34 2 "From time to time I feel like the time in this forest would stand stillDOTS"
+.endif
+
+ow_script_silvania_forest_felix:
+    loadpointer 0 str_felix
+    show_mugshot MUGSHOT_FELIX MUGSHOT_RIGHT message_type=MSG_FACE
+    applymovement LASTTALKED mov_fu
+    waitmovement 0
+    end
+ow_script_silvania_forest_rosalie:
+    loadpointer 0 str_rosalie
+    show_mugshot MUGSHOT_ROSALIE MUGSHOT_RIGHT message_type=MSG_FACE emotion=MUGSHOT_SAD
+    applymovement LASTTALKED mov_fu
+    waitmovement 0
+    end
+ow_script_silvania_forest_elise:
+    loadpointer 0 str_elise
+    show_mugshot MUGSHOT_ELISE MUGSHOT_RIGHT message_type=MSG_FACE emotion=MUGSHOT_SAD
+    end
+ow_script_silvania_forest_ludicullo:
+    bufferpokemon 0 POKEMON_KAPPALORES
+ow_script_extinguish:
+    loadpointer 0 str_extinguish
+    callstd MSG
+    end
+ow_script_silvania_forest_lickitung:
+    bufferpokemon 0 POKEMON_SCHLURP
+    goto ow_script_extinguish
+
+ow_script_silvania_forest_grunt_1:
+    trainerbattlestd 0x0 0x4a 0x0 str_grunt_before_1 str_grunt_after_1
+    loadpointer 0x0 str_grunt_after_1
+    callstd MSG_FACE
+    end
+
+ow_script_silvania_forest_grunt_2:
+    trainerbattlestd 0x0 0x4b 0x0 str_grunt_before_2 str_grunt_after_2
+    loadpointer 0x0 str_grunt_after_2
+    callstd MSG_FACE
+    end
+
+ow_script_silvania_forest_rival_beaten:
+    loadpointer 0 str_rival_beaten
+    show_mugshot MUGSHOT_RIVAL MUGSHOT_RIGHT message_type=MSG_FACE emotion=MUGSHOT_BEATEN
+    end
+
+
+.ifdef LANG_GER
+str_felix:
+    .autostring 34 2 "PLAYER!\pBeeil dich und hilf RIVAL dabei, diese Kommandantin aufzuhalten.\pRosalie und ich halten das Feuer in Schach!"
+str_rosalie:
+    .autostring 34 2 "Mein schöner Wald!\pIch darf nicht zulassen, dass er niederbrennt!"
+str_elise:
+    .autostring 34 2 "Ich habe solche Angst um meinen Vater!\pWas diese Frau ihm alles antun könnteDOTS"
+str_extinguish:
+    .autostring 34 2 "Das BUFFER_1 benutzt Aquawelle, um die Flammen zu löschen."
+str_grunt_before_1:
+    .autostring 34 2 "Schon immer haben Leute wie wir den Kürzeren gezogen.\pAber jetzt wehren wir uns endlich!"
+str_grunt_after_1:
+    .autostring 34 2 "Deine Überheblichkeit kannst du dir sparen!\pDein dämliches Grinsen wird dir schon noch vergehen!"
+str_grunt_before_2:
+    .autostring 34 2 "Wenn unser Plan aufgeht, liegt uns die Region ruckzuck zu Füßen.\pDa lasse ich dich nicht dazwischen funken!"
+str_grunt_after_2:
+    .autostring 34 2 "Wenigstens konnte ich ein wenig Zeit kaufenDOTS"
+str_rival_beaten:
+    .autostring 34 2 "DOTS DOTS DOTS\nDOTS DOTS DOTS"
+.elseif LANG_EN
 .endif

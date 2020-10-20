@@ -278,6 +278,8 @@ special_table equ 0x0815FCC0
         .word special_overworld_person_face_to_person | 1
 .org (special_table + 145 * 4)
         .word special_delete_rage_sprite | 1
+.org (special_table + 146 * 4)
+        .word pal_tmp_synchronize_with_pal_restore | 1
 
 // free from >= 143 to <= 146
 

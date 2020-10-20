@@ -43,10 +43,9 @@ typedef struct saveblock1 {
     warp_save_t last_map; // ????
     warp_save_t healingplace;
     warp_save_t last_outdoor_map;
-    u8 player_is_surfing;
-    u8 field_45;
+    u16 map_music_override; // Cleared when entering a new map
     u8 map_weather;
-    u8 dynamic_weather_idx;
+    u8 map_weather_cycle_idx; // Used on Route 119 initially, maybe we can have our own weather cycles in the jungle areas?
     u8 flash_circle_size;
     u8 field_31;
     u16 current_footer_id;
@@ -241,6 +240,7 @@ typedef struct {
     u8 gold_candy_levels_remaining : 7;
     color_t weather_blend;
     u8 weather_blend_active : 1;
+    u8 weather_blend_delay;
     /*
     color_t pals_filtered[32][16];
     color_t dns_filter;

@@ -35,7 +35,7 @@ static bool battle_has_any_trainer_class(u8 trainerclass) {
 }
 
 u8 battle_trainer_get_transition_type() {
-    if (battle_has_any_trainer_class(TRAINERCLASS_TEAM_VIOLET))
+    if (battle_has_any_trainer_class(TRAINERCLASS_TEAM_VIOLET) || battle_has_any_trainer_class(TRAINERCLASS_VIOLET_VORS))
         return BATTLE_TRANSITION_TEAM_VIOLET;
     if (battle_has_any_trainer_class(TRAINERCLASS_REVOLUTIONAER))
         return BATTLE_TRANSITION_REVOLUTIONARY;

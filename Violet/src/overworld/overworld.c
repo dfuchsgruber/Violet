@@ -22,6 +22,7 @@
 #include "constants/person_script_stds.h"
 #include "math.h"
 #include "vars.h"
+#include "mugshot.h"
 
 static u8 aggressive_wild_pokemon_get_spawn_rate(u16 flag) {
     switch (flag) {
@@ -118,10 +119,12 @@ u8 palette_get_gamma_type(u8 pal_idx) {
     u16 tag = oam_palette_get_tag((u8)(pal_idx - 16));
     if (tag == 0xFFFF)
         return GAMMA_NONE;
-    if (NPC_PAL_TAG_IS_REFLECTION_TAG(tag))
-        return GAMMA_NORMAL;
-    if (oam_palette_tag_is_npc_palette(tag))
+    else if (NPC_PAL_TAG_IS_REFLECTION_TAG(tag))
         return GAMMA_ALTERNATIVE;
+    else if (oam_palette_tag_is_npc_palette(tag))
+        return GAMMA_ALTERNATIVE;
+    else if (IS_MUGSHOT_PAL_TAG(tag))
+        return GAMMA_NONE;
     else
         return GAMMA_NORMAL;
 }
@@ -159,16 +162,23 @@ static palette *overworld_npc_palette_get_by_tag(u16 tag) {
     return NULL;
 }
 
+u8 oam_palette_load_if_not_present_and_apply_shaders(palette *pal) {
+    if (!pal)
+        return 0xFF;
+    u8 oam_pal_idx = oam_palette_get_index(pal->tag);
+    if (oam_pal_idx == 0xFF) {
+        oam_pal_idx =  oam_palette_load_if_not_present(pal); 
+        pal_apply_shaders_by_oam_palette_idx(oam_pal_idx);
+        dprintf("Applied blend to oam palette with tag 0x%x (pal_idx %d)\n", pal->tag, oam_pal_idx);
+    }
+    return oam_pal_idx;
+}
 
 u8 overworld_npc_palette_load(u16 tag) {
+    dprintf("Loading oam palette for tag 0x%x\n", tag);
     palette *pal = overworld_npc_palette_get_by_tag(tag);
     if (pal) {
-        u8 oam_pal_idx = oam_palette_get_index(pal->tag);
-        if (oam_pal_idx == 0xFF) {
-            oam_pal_idx =  oam_palette_load_if_not_present(pal);
-            pal_apply_shaders_by_oam_palette_idx(oam_pal_idx);
-        }
-        return oam_pal_idx;
+       return oam_palette_load_if_not_present_and_apply_shaders(pal); 
     }
     return 0xFF;
 }
@@ -218,18 +228,23 @@ void overworld_npc_load_reflection_palette(npc *n, oam_object *oam) {
         return; // The original palette doesn't exist...
     palette reflection_palette = *pal;
     reflection_palette.tag = reflection_tag;
-    pal_idx = oam_palette_load_if_not_present(&reflection_palette);
+    pal_idx = oam_palette_get_index(reflection_palette.tag);
+    if (pal_idx == 0xFF) {
+        dprintf("Reflection palette apply shaders and brighten.\n");
+        pal_idx = oam_palette_load_if_not_present_and_apply_shaders(&reflection_palette); 
+        dprintf("Reflection palette before brightening, color idx 3: 0x%x\n", pal_restore[256 + 16 * pal_idx + 3]);
+        overworld_npc_reflection_brighten_palette(pal_idx);
+        dprintf("Reflection palette after brightening, color idx 3: 0x%x\n", pal_restore[256 + 16 * pal_idx + 3]);
+    }
     // pal_alpha_blending((u16)(256 + 16 * pal_idx), 16, 6, reflection_blue_channel);
     // cpuset(pals + 256 + 16 * pal_idx, pal_restore + 256 + 16 * pal_idx, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
-    overworld_npc_reflection_brighten_palette(pal_idx);
-    pal_apply_shaders_by_oam_palette_idx(pal_idx);
     pal_oam_apply_fading(pal_idx);
     if (big_callback_is_active(whiteout_callback_print_text)){ // This causes issues somehow...
         dprintf("Reflection palette while whiting out...\n");
         int zero = 0;
         cpuset(&zero, pals + 16 * (pal_idx + 16), CPUSET_FILL | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(16 * sizeof(color_t)));
     }
-
+    dprintf("Reflection palette set up done.\n");
     oam->final_oam.attr2 = (u16)((pal_idx << 12) | (oam->final_oam.attr2 & ~(15 << 12)));
     // dprintf("Created reflective pal at slot %d\n", pal_idx);
     // dprintf("Attribute2 is 0x%x\n", oam->final_oam.attr2);
@@ -315,7 +330,7 @@ u32 overworld_effect_shadow(void) {
         palette pal = {0};
         pal.tag = TAG_PLAYER_PALETTE_VANILLA;
         pal.pal = gfx_npc_player_palette_vanilla;
-        u8 pal_idx = oam_palette_load_if_not_present(&pal);
+        u8 pal_idx = oam_palette_load_if_not_present_and_apply_shaders(&pal);
         o->final_oam.attr2 = (u16)((pal_idx << 12) | (o->final_oam.attr2 & ~(15 << 12)));
     }
     return 0;
@@ -441,7 +456,7 @@ static palette palette_item_finder_arrow = {
 
 void item_finder_load_gfx_and_pal() {
     oam_load_graphic_uncompressed(&graphic_item_finder_arrow);
-    oam_palette_load_if_not_present(&palette_item_finder_arrow);
+    oam_palette_load_if_not_present_and_apply_shaders(&palette_item_finder_arrow);
 }
 
 void item_finder_free_gfx_and_pal() {
@@ -581,7 +596,7 @@ void special_delete_rage_sprite() {
 
 u8 overworld_create_rage_sprite(u8 npc_idx, u8 type) {
     dprintf("Create rage sprite for person %d\n", npcs[npc_idx].overworld_id);
-    oam_palette_load_if_not_present(&palette_rage);
+    oam_palette_load_if_not_present_and_apply_shaders(&palette_rage);
     u8 oam_idx = oam_new_backward_search(&oam_template_rage, 0, 0, 0);
     if (oam_idx < 64) {
         oam_object *o = oams + oam_idx;

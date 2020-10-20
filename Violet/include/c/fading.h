@@ -46,12 +46,19 @@ void fading_control_reset();
  */
 bool fading_is_active();
 
+enum {
+    FADE_FROM_BLACK = 0,
+    FADE_TO_BLACK = 1,
+    FADE_FROM_WHITE = 2,
+    FADE_TO_WHITE = 3,
+};
+
 /**
  * Initilaizes fadescreen.
  * @param type Fadescreen type
- * @param unkown TODO
+ * @param delay delay per tinting step
  */
-void fadescreen_all(u8 type, u8 unkown);
+void fadescreen_all(u8 type, u8 delay);
 
 /**
  * Executes the next frame of the fading

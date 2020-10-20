@@ -90,7 +90,8 @@ picture_idx_to_png = {
     176 : "asset/gfx/overworld/npcs/gfx_ow_lucky.png",
     177 : "asset/gfx/overworld/npcs/gfx_ow_chef.png",
     178 : "asset/gfx/overworld/npcs/gfx_ow_lester_young.png",
-    179 : "asset/gfx/overworld/npcs/gfx_ow_roman.png"
+    179 : "asset/gfx/overworld/npcs/gfx_ow_roman.png",
+    180 : "asset/gfx/overworld/npcs/rival/gfx_ow_rival_beaten.png",
 }
 
 # Images that hold an entire spritesheet
@@ -101,6 +102,7 @@ spritesheet_images = {
     177 : (16, 32),
     178 : (16, 32),
     179 : (16, 32),
+    180 : (32, 16),
 }
 
 

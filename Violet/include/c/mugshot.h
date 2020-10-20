@@ -12,8 +12,13 @@
 extern "C" {
 #endif
 
+
+#define MUGSHOT_BASE_TAG 0x1340
+#define IS_MUGSHOT_PAL_TAG(tag)((tag >= MUGSHOT_BASE_TAG) && (tag < MUGSHOT_BASE_TAG + 0xC0))
+
 #include "types.h"
 #include "constants/mugshot_emotions.h"
+#include "constants/mugshot_character.h"
 
     typedef struct mugshot {
         const void *gfx[MUGSHOT_EMOTION_COUNT]; // lz77 compressed
@@ -112,6 +117,7 @@ extern "C" {
     extern const unsigned short gfx_mug_rival_scaredTiles[];
     extern const unsigned short gfx_mug_rival_shockedTiles[];
     extern const unsigned short gfx_mug_rival_thoughtfulTiles[];
+    extern const unsigned short gfx_mug_rival_beatenTiles[];
     extern const unsigned short gfx_mug_rivalPal[];
     extern const unsigned short gfx_mug_brixTiles[];
     extern const unsigned short gfx_mug_brixPal[];
@@ -164,6 +170,7 @@ extern "C" {
     extern const unsigned short gfx_mug_elise_scaredTiles[];
     extern const unsigned short gfx_mug_elise_annoyedTiles[];
     extern const unsigned short gfx_mug_elise_sadTiles[];
+    extern const unsigned short gfx_mug_elise_thoughtfulTiles[];
     extern const unsigned short gfx_mug_elisePal[];
     extern const unsigned short gfx_mug_emerysTiles[];
     extern const unsigned short gfx_mug_emerysPal[];
@@ -186,6 +193,7 @@ extern "C" {
     extern const unsigned short gfx_mug_larissaPal[];
     extern const unsigned short gfx_mug_primusTiles[];
     extern const unsigned short gfx_mug_primus_scaredTiles[];
+    extern const unsigned short gfx_mug_primus_thoughtfulTiles[];
     extern const unsigned short gfx_mug_primusPal[];
     extern const unsigned short gfx_mug_teahTiles[];
     extern const unsigned short gfx_mug_teahPal[];

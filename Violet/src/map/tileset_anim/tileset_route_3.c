@@ -57,6 +57,7 @@ static oam_template route_3_mill_oam_template = {
 void tileset_route_3_animation_initialize() {
     u8 pal_idx = oam_allocate_palette(ROUTE_3_MILL_TAG);
     pal_decompress(gfx_tileset_route_3_millPal, (u16)(256 + 16 * pal_idx), 16 * sizeof(color_t));
+    pal_apply_shaders_by_oam_palette_idx(pal_idx);
     oam_load_graphic(&route_3_mill_graphic);
     u8 oam_idx = oam_new_forward_search(&route_3_mill_oam_template, 0, 0, 1);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;

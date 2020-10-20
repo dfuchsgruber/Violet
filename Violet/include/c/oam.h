@@ -262,6 +262,12 @@ void oam_palette_free(u16 tag);
 u8 oam_palette_load_if_not_present(palette *p);
 
 /**
+ * Loads (and possibly allocates) a oam palette, if it is not already present and applies shaders if and only if it was not present.
+ * @param p the palettes struct, referring to an uncompressed color array
+ * @return the idx of the palette or 0xFF on failure
+ **/
+u8 oam_palette_load_if_not_present_and_apply_shaders(palette *p);
+/**
  * Clears an oam object (but does not free resources held by the object).
  * @param oam The oam object to clear
  */

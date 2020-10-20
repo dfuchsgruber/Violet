@@ -5,6 +5,7 @@
 #include "oam.h"
 #include "save.h"
 #include "flags.h"
+#include "debug.h"
 
 #define SILVANIA_FOREST_BANK 1
 #define SILVANIA_FOREST_MAP 0
@@ -38,7 +39,7 @@ static u16 hydro_pump_flags[] = {
 };
 
 
-static sprite route_3_mill_final_oam = {
+static sprite hydro_pump_final_oam = {
     .attr0 = ATTR0_SHAPE_VERTICAL,
     .attr1 = ATTR1_SIZE_16_32,
     .attr2 = ATTR2_PRIO(2),
@@ -65,7 +66,7 @@ static void hydro_pump_oam_callback(oam_object *self) {
 
 static oam_template hydro_pump_template = {
     .tiles_tag = SILVANIA_FOREST_HYDRO_PUMP_TAG, .pal_tag = SILVANIA_FOREST_HYDRO_PUMP_TAG,
-    .oam = &route_3_mill_final_oam,
+    .oam = &hydro_pump_final_oam,
     .animation = hydro_pump_animations,
     .rotscale = oam_rotscale_anim_table_null,
     .callback = hydro_pump_oam_callback,
@@ -73,10 +74,12 @@ static oam_template hydro_pump_template = {
 
 static void hydro_pumps_initialize() {
   u8 pal_idx = oam_allocate_palette(SILVANIA_FOREST_HYDRO_PUMP_TAG);
+  // dprintf("Applying shaders to hydro pump sprites\n");
   pal_decompress(gfx_silvania_forest_hydro_pumpsPal, (u16)(256 + 16 * pal_idx), 16 * sizeof(color_t));
+  pal_apply_shaders_by_oam_palette_idx(pal_idx);
   oam_load_graphic(&hydro_pump_graphic);
   for (u8 idx = 0; idx < ARRAY_COUNT(hydro_pump_locations); idx++) {
-    u8 oam_idx = oam_new_forward_search(&hydro_pump_template, 0, 0, 0x3F);
+    u8 oam_idx = oam_new_backward_search(&hydro_pump_template, 0, 0, 255);
     oams[oam_idx].flags |= OAM_FLAG_CENTERED;
     oams[oam_idx].private[0] = idx;
     oams[oam_idx].callback(oams + oam_idx);

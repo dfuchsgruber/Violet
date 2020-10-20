@@ -2077,15 +2077,15 @@ trainer trainers[TRAINER_CNT] = {
     0x1b, // sprite
     LANGDEP(PSTRING("Rin"), PSTRING("Rin")),
     {
-      ITEM_NONE,
-      ITEM_NONE,
+      ITEM_HYPERTRANK,
+      ITEM_HYPERHEILER,
       ITEM_NONE,
       ITEM_NONE
     },
     false, //Dual battle
     TRAINER_AI_NO_EFFECTLESS_OR_NEGATIVE_EFFECTS | TRAINER_AI_VARIABILITY | TRAINER_AI_SUPER_EFFECTIVE,
     0x0, // field_1E
-    3, // Pokemon Count
+    4, // Pokemon Count
     0x0, // field_21
     0x0, // field_22
     0x0, // field_23

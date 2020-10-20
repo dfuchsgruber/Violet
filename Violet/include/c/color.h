@@ -125,6 +125,11 @@ void pal_proceed();
 void pal_set_all_to_black();
 
 /**
+ * Sets all colors in `pals` to white (color = .rgb(31, 31, 31))
+ **/
+void pal_set_all_to_white();
+
+/**
  * Updates the pal_backup buffer with the values form pal_restore
  * @param start_color the first color to update
  * @param number_colors how many colors should be updated
@@ -188,6 +193,16 @@ enum {
  * @param gamma the gamma value
  **/
 void pal_gamma_shift(u8 pal_idx, u8 number_pals, s8 gamma);
+
+/**
+ * Applies a gamma shift to a set of colors using the pal_restore to create colors in pals. Also applies alpha blending.
+ * @param pal_idx the first palatte that is affected by the gamma shift
+ * @param number_pals the number of consecutive palettes affected by the gamma shift
+ * @param gamma the gamma value
+ * @param alpha the value of alpha blending
+ * @param blending the filter to blend over the pals
+ **/
+void pal_gamma_shift_with_blend(u8 pal_idx, u8 number_pals, s8 gamma, u8 alpha, color_t blending);
 
 /**
  * Gets the gamma type of a palette.

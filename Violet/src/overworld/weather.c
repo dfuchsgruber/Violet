@@ -8,6 +8,10 @@
 #include "debug.h"
 #include "overworld/effect.h"
 #include "save.h"
+#include "overworld/script.h"
+#include "callbacks.h"
+#include "agbmemory.h"
+#include "vars.h"
 
 WEATHER_FUNCTION_WITH_BLEND(weather_inside_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_inside_initialize_all);
@@ -39,6 +43,8 @@ WEATHER_FUNCTION_WITH_BLEND(weather_underwater_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_underwater_initialize_all);
 WEATHER_FUNCTION_WITH_BLEND(weather_weather_0f_initialize_variables);
 WEATHER_FUNCTION_WITH_BLEND(weather_weather_0f_initialize_all);
+WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_variables);
+WEATHER_FUNCTION_WITH_BLEND(weather_static_fog_initialize_all);
 
 #define CEMETERY_BANK 3
 #define CEMETERY_MAP 14
@@ -47,43 +53,42 @@ static bool is_cemetery_map() {
     return save1->bank == CEMETERY_BANK && save1->map == CEMETERY_MAP;
 }
 
+static color_t weather_burning_trees_filter = {.rgb = {.red = 31, .blue = 16, .green = 15}};
 static color_t weather_fog_cemetery_filter = {.rgb = {.red = 15, .green = 15, .blue = 28}};
 
-static void weather_static_fog_initialize_blend() {
-    if (is_cemetery_map()) {
-        fmem.weather_blend = weather_fog_cemetery_filter;
-        fmem.weather_blend_active = 1;
-    } else {
-        fmem.weather_blend_active = 0;
+void weather_set_filter(u8 weather) {
+    dprintf("Weather filter set according to weather %d\n", weather);
+    switch (weather) {
+        case MAP_WEATHER_BURNING_TREES:
+            fmem.weather_blend_active = 1;
+            fmem.weather_blend = weather_burning_trees_filter;
+            break;
+        case MAP_WEATHER_STATIC_FOG:
+            if (is_cemetery_map()) {
+                fmem.weather_blend_active = 1;
+                fmem.weather_blend = weather_fog_cemetery_filter;
+            } else {
+                fmem.weather_blend_active = 0;
+            }
+            break;
+        default:
+            fmem.weather_blend_active = 0;
+            break;
     }
 }
 
-void weather_static_fog_initialize_variables_with_blend() {
-    weather_static_fog_initialize_blend();                    
-    weather_static_fog_initialize_variables();
+void weather_burning_trees_update_pal_restore_and_tmp() {
+    weather_set_filter(MAP_WEATHER_BURNING_TREES);
+    for (u8 pal_idx = 0; pal_idx < 32; pal_idx++) {
+        u8 gamma_type = palette_get_gamma_type(pal_idx);
+        if (gamma_type != GAMMA_NONE) {
+            pal_color_multiply((u16)(16 * pal_idx), 16, fmem.weather_blend);
+            dprintf("blending pal %d\n", pal_idx);
+        }
+    }
+    cpuset(pal_restore, pal_tmp, CPUSET_COPY | CPUSET_HALFWORD | CPUSET_HALFWORD_SIZE(32 * 16 * sizeof(color_t)));
 }
 
-void weather_static_fog_initialize_all_with_blend() {
-    weather_static_fog_initialize_blend();                    
-    weather_static_fog_initialize_all();
-}
-
-static color_t weather_burning_trees_filter = {.rgb = {.red = 31, .blue = 12, .green = 11}};
-
-static void weather_burning_trees_initialize_blend() {
-    fmem.weather_blend = weather_burning_trees_filter;
-    fmem.weather_blend_active = 1;
-}
-
-void weather_burning_trees_initialize_variables_with_blend() {
-    weather_burning_trees_initialize_blend();                    
-    weather_extreme_sun_initialize_variables();
-}
-
-void weather_burning_trees_initialize_all_with_blend() {
-    weather_burning_trees_initialize_blend();                    
-    weather_extreme_sun_initialize_all();
-}
 
 weather_callbacks_t weather_callbacks[] = {
     [MAP_WEATHER_INSIDE] = {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure },
@@ -102,8 +107,9 @@ weather_callbacks_t weather_callbacks[] = {
     [MAP_WEATHER_EXTREME_THUNDER] = {.initialize_variables = weather_extreme_thunder_initialize_variables_with_blend, .main = weather_extreme_thunder_main, .initialize_all = weather_extreme_thunder_initialize_all_with_blend, .closure = weather_extreme_thunder_closure },
     [MAP_WEATHER_UNDERWATER] = {.initialize_variables = weather_underwater_initialize_variables_with_blend, .main = weather_underwater_main, .initialize_all = weather_underwater_initialize_all_with_blend, .closure = weather_underwater_closure },
     [MAP_WEATHER_WEATHER_0F] = {.initialize_variables = weather_weather_0f_initialize_variables_with_blend, .main = weather_weather_0f_main, .initialize_all = weather_weather_0f_initialize_all_with_blend, .closure = weather_weather_0f_closure },
-    [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_burning_trees_initialize_variables_with_blend, .main = weather_extreme_sun_main, .initialize_all = weather_burning_trees_initialize_all_with_blend, .closure = weather_extreme_sun_closure },// {.initialize_variables = weather_inside_initialize_variables_with_blend, .main = weather_inside_main, .initialize_all = weather_inside_initialize_all_with_blend, .closure = weather_inside_closure },
+    [MAP_WEATHER_BURNING_TREES] = {.initialize_variables = weather_extreme_sun_initialize_variables_with_blend, .main = weather_extreme_sun_main, .initialize_all = weather_extreme_sun_initialize_all_with_blend, .closure = weather_extreme_sun_closure },
 };
+
 void pal_gamma_shift(u8 start_pal_idx, u8 num_pals, s8 gamma_idx) {
     u8 current_pal_idx;
     u16 pal_offset;
@@ -219,7 +225,8 @@ void pal_oam_apply_fading(u8 oam_pal_idx) {
         pal_alpha_blending((u16)(pal_idx * 16), 16, fading_control.target_alpha, overlay);
     } else {
         if (overworld_weather.current_weather != MAP_WEATHER_STATIC_FOG) {
-            pal_gamma_shift(pal_idx, 1, overworld_weather.gamma);
+            if (palette_get_gamma_type(pal_idx) == GAMMA_NORMAL)
+                pal_gamma_shift(pal_idx, 1, overworld_weather.gamma);
         } else {
             pal_alpha_blending((u16)(pal_idx * 16), 16, OVERWORLD_WEATHER_STATIC_FOG_PALETTE_BLENDING_ALPHA, 
                 overworld_weather_static_fog_get_overlay_color());
@@ -262,7 +269,7 @@ static bool overworld_weather_update_blend() {
 };
 
 void overworld_weather_update_gamma_shift_and_filter() {
-    dprintf("updating blend and gamma\n");
+    // dprintf("updating blend and gamma\n");
     if (!overworld_weather_update_gamma_shift() && !overworld_weather_update_blend()) {
         overworld_weather.pal_processing_state = OVERWORLD_WEATHER_PAL_PROCESSING_STATE_IDLE;
     } else {
@@ -273,4 +280,29 @@ void overworld_weather_update_gamma_shift_and_filter() {
 void overworld_weather_fade_in_with_filter() {
     // Not implemented currently
     overworld_weather_fade_in();
+}
+
+bool overworld_weather_fade_in_rain_and_clouds() {
+    dprintf("Fade in rain etc. with fadescreen cnt %d (delay %d of %d)\n", overworld_weather.fadescreen_cnt, fmem.weather_blend_delay, *var_access(VAR_MAP_TRANSITION_FADING_DELAY));
+    if (overworld_weather.fadescreen_cnt == 16)
+        return false;
+    // Consider a slower fading also for weather effects
+    int delay = *var_access(VAR_MAP_TRANSITION_FADING_DELAY);
+    if (fmem.weather_blend_delay >= delay) {
+        dprintf("Delay overcome.\n");
+        fmem.weather_blend_delay = 0;
+    } else {
+        fmem.weather_blend_delay++;
+        return true;
+    }
+    if (++overworld_weather.fadescreen_cnt >= 16) {
+        dprintf("Fix gamma shift.\n");
+        pal_gamma_shift(0, 32, 3);
+        overworld_weather.fadescreen_cnt = 16;
+        return false;
+    } else {
+        dprintf("New gamma & blend with alpha %d.\n", (u8)(16 - overworld_weather.fadescreen_cnt));
+        pal_gamma_shift_with_blend(0, 32, 3, (u8)(16 - overworld_weather.fadescreen_cnt), overworld_weather.fadescreen_target_color);
+        return true;
+    }
 }

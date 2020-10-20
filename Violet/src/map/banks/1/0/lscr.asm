@@ -10,6 +10,7 @@
 .include "songs.s"
 .include "person_behaviours.s"
 .include "ordinals.s"
+.include "map_weathers.s"
 
 .global lscr_0x719d18
 .global ow_script_silvania_forest_setmaptiles_burning_trees
@@ -24,15 +25,24 @@ lsrc_setwmflag_and_movesprites:
 	setworldmapflag WM_SILVANIA_FOREST
 	checkflag FLAG_SILVANIA_FOREST_BURNING
 	callif EQUAL forest_burning_move_sprites
+	checkflag SILVANIA_FOREST_RIN
+	callif EQUAL forest_set_rain
 	end
 
 forest_burning_move_sprites:
 	playsong2 MUS_VIOLET_ENCOUNTER
+	setweather MAP_WEATHER_BURNING_TREES
 	movesprite2 42 0x2d 0x13
 	movesprite2 43 0x31 0x14
 	spritebehave 42 BEHAVIOUR_FACE_UP
 	spritebehave 43 BEHAVIOUR_FACE_UP
 	spritebehave 36 BEHAVIOUR_LOOK_AROUND
+	return
+forest_set_rain:
+	checkflag FRBADGE_2
+	gotoif EQUAL not_raining_anymore
+	setweather MAP_WEATHER_RAIN
+not_raining_anymore:
 	return
 
 

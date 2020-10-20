@@ -36,6 +36,14 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	settrainerflag 4
+	trainerbattlecont 0x1 0x4 0x3 str_beforea str_aftera cont
+cont:
+	sound 15
+	checksound
+	end
+
+
 	setweather MAP_WEATHER_BURNING_TREES
 	doweather
 	end

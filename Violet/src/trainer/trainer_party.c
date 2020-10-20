@@ -183,6 +183,8 @@ void trainer_pokemon_new(pokemon *poke, union union_build_field field) {
 		// Apply the ability bit to the pokemon
 		int ability = field.bitfield.ability > 0;
 		pokemon_set_attribute(poke, ATTRIBUTE_ABILITY, &ability);
+		
+		dprintf("Building pokemon species %d with ability bit %d -> ability is %d\n", pokemon_get_attribute(poke, ATTRIBUTE_SPECIES, 0), ability, pokemon_get_ability(poke));
 	}
 	pid.fields.is_shiny = field.bitfield.is_shiny > 0;
 	pokemon_set_attribute(poke, ATTRIBUTE_PID, &pid);

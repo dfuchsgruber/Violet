@@ -123,7 +123,7 @@ trainer_pokemon_default_item_default_attacks trainer_party_x48[2];
 trainer_pokemon_default_item_default_attacks trainer_party_x49[2];
 trainer_pokemon_default_item_default_attacks trainer_party_x4a[2];
 trainer_pokemon_default_item_default_attacks trainer_party_x4b[2];
-trainer_pokemon_custom_item_custom_attacks trainer_party_x4c[3];
+trainer_pokemon_custom_item_custom_attacks trainer_party_x4c[4];
 trainer_pokemon_default_item_default_attacks trainer_party_x4d[2];
 trainer_pokemon_default_item_default_attacks trainer_party_x4e[1];
 trainer_pokemon_default_item_default_attacks trainer_party_x4f[2];
