@@ -1,0 +1,140 @@
+{
+	"data": {
+		"footer": "map_footer_blackbeard_ship_cells_floor",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 7,
+			"trigger_cnt": 0,
+			"signpost_cnt": 1,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": "23",
+					"x": "7",
+					"y": "4",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": "5",
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_FIFFYEN",
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "5",
+					"y": "2",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": "33"
+				},
+				{
+					"x": "9",
+					"y": "2",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": 0,
+					"target_bank": "33"
+				},
+				{
+					"x": "13",
+					"y": "2",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": 0,
+					"target_bank": "33"
+				},
+				{
+					"x": "15",
+					"y": "3",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "2",
+					"target_bank": "33"
+				},
+				{
+					"x": "15",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "2",
+					"target_bank": "33"
+				},
+				{
+					"x": "3",
+					"y": "3",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "3",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "5",
+					"target_bank": "33"
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": "9",
+					"y": "2",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": "FLAG_BBSHIP_LUCKYS_CELL_UNLOCKED",
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cells_floor_lucky_door"
+					}
+				}
+			]
+		},
+		"levelscripts": "map_blackbeard_ship_cells_floor_levelscripts",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_BBSHIP",
+		"footer_idx": 111,
+		"namespace": "MAP_SCHATTENFLUT",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": "0",
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_blackbeard_ship_cells_floor",
+	"type": "header"
+}

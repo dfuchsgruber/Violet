@@ -1,0 +1,1258 @@
+{
+	"data": {
+		"footer": "map_footer_82",
+		"events": {
+			"person_cnt": 37,
+			"warp_cnt": 15,
+			"trigger_cnt": 1,
+			"signpost_cnt": 6,
+			"persons": [
+				{
+					"picture": 60,
+					"level": 0,
+					"target_index": 1,
+					"flag": "FLAG_HARRENFELD_KASKADA_DONE",
+					"field_3": 0,
+					"x": 29,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_0",
+					"y": 81,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 60,
+					"level": 0,
+					"target_index": 2,
+					"flag": "FLAG_HARRENFELD_KASKADA_DONE",
+					"field_3": 0,
+					"x": 30,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_1",
+					"y": 81,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 69,
+					"level": 0,
+					"target_index": 3,
+					"flag": "KASKADA_FELIX",
+					"field_3": 0,
+					"x": 24,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "0",
+					"y": 69,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 23,
+					"level": 0,
+					"target_index": 4,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 23,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_2",
+					"y": 61,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 27,
+					"level": 0,
+					"target_index": 5,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 14,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_3",
+					"y": 51,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 29,
+					"level": 0,
+					"target_index": 6,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 10,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "0",
+					"y": 49,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 26,
+					"level": 0,
+					"target_index": 7,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 18,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "0",
+					"y": 44,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 18,
+					"level": 0,
+					"target_index": 8,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 8,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "0",
+					"y": 38,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 24,
+					"level": 0,
+					"target_index": 9,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 17,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "0",
+					"y": 32,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 35,
+					"level": 0,
+					"target_index": 10,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 16,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_4",
+					"y": 51,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 19,
+					"level": 0,
+					"target_index": 11,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 9,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_5",
+					"y": 59,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 24,
+					"level": 0,
+					"target_index": 12,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 7,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_6",
+					"y": 64,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 30,
+					"level": 0,
+					"target_index": 13,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 16,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_7",
+					"y": 37,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 20,
+					"level": 0,
+					"target_index": 14,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 22,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_8",
+					"y": 47,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 17,
+					"level": 0,
+					"target_index": 15,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 28,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_9",
+					"y": 52,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 41,
+					"level": 0,
+					"target_index": 16,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 29,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_10",
+					"y": 33,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 32,
+					"level": 0,
+					"target_index": 17,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 29,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_11",
+					"y": 42,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 52,
+					"level": 0,
+					"target_index": 18,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 32,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_12",
+					"y": 28,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 18,
+					"level": 0,
+					"target_index": 19,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 36,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_13",
+					"y": 39,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 22,
+					"level": 0,
+					"target_index": 20,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 37,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_14",
+					"y": 39,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 48,
+					"level": 0,
+					"target_index": 21,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 43,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_15",
+					"y": 34,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 26,
+					"level": 0,
+					"target_index": 22,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 47,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_16",
+					"y": 42,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 57,
+					"level": 0,
+					"target_index": 23,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 42,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_17",
+					"y": 26,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 32,
+					"level": 0,
+					"target_index": 24,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 49,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_18",
+					"y": 26,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 29,
+					"level": 0,
+					"target_index": 25,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 55,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_19",
+					"y": 21,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 18,
+					"level": 0,
+					"target_index": 26,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 54,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_20",
+					"y": 49,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 55,
+					"level": 0,
+					"target_index": 27,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 45,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_21",
+					"y": 34,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 35,
+					"level": 0,
+					"target_index": 28,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 56,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_22",
+					"y": 30,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 58,
+					"level": 0,
+					"target_index": 29,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 54,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_23",
+					"y": 40,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 78,
+					"level": 0,
+					"target_index": 30,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 55,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_24",
+					"y": 70,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 27,
+					"level": 0,
+					"target_index": 31,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 58,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_25",
+					"y": 66,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 78,
+					"level": 0,
+					"target_index": 32,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 56,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_26",
+					"y": 56,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 16,
+					"level": 0,
+					"target_index": 33,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 37,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_27",
+					"y": 51,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 92,
+					"level": 0,
+					"target_index": 34,
+					"flag": "KASKADA_ITEM_0",
+					"field_3": 0,
+					"x": 9,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "0",
+					"y": 74,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_HYPERBALL",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 32,
+					"level": 0,
+					"target_index": 35,
+					"flag": "0x0",
+					"field_3": 0,
+					"x": 45,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_28",
+					"y": 64,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 86,
+					"level": 0,
+					"target_index": "36",
+					"flag": "KASKADA_IGVA",
+					"field_3": 0,
+					"x": 23,
+					"alert_radius": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"script": "ow_script_map_3_4_person_29",
+					"y": 53,
+					"field_2": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "37",
+					"picture": "70",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "29",
+					"y": "79",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kaskada_harrenfeld",
+					"flag": "BLACK_MARKET_DONE | 0x8000",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"level": 0,
+					"target_bank": 0,
+					"y": 61,
+					"target_map": 0,
+					"x": 16,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 8,
+					"y": 34,
+					"target_map": 7,
+					"x": 36,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 8,
+					"y": 34,
+					"target_map": 6,
+					"x": 24,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 8,
+					"y": 25,
+					"target_map": 4,
+					"x": 36,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 8,
+					"y": 35,
+					"target_map": 9,
+					"x": 51,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 8,
+					"y": 50,
+					"target_map": 0,
+					"x": 31,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 0,
+					"y": 75,
+					"target_map": 7,
+					"x": 30,
+					"target_warp_idx": 1
+				},
+				{
+					"level": 0,
+					"target_bank": 8,
+					"y": 25,
+					"target_map": 8,
+					"x": 51,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 8,
+					"y": 50,
+					"target_map": 10,
+					"x": 43,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 0,
+					"y": 67,
+					"target_map": 0,
+					"x": 53,
+					"target_warp_idx": 0
+				},
+				{
+					"level": 0,
+					"target_bank": 15,
+					"y": 53,
+					"target_map": 0,
+					"x": 56,
+					"target_warp_idx": 0
+				},
+				{
+					"x": "43",
+					"y": "63",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "1",
+					"target_bank": "8"
+				},
+				{
+					"x": "44",
+					"y": "63",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "1",
+					"target_bank": "8"
+				},
+				{
+					"x": "44",
+					"y": "64",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "1",
+					"target_bank": "8"
+				},
+				{
+					"x": "43",
+					"y": "64",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "1",
+					"target_bank": "8"
+				}
+			],
+			"triggers": [
+				{
+					"level": 0,
+					"script": "ow_script_map_3_4_trigger_0",
+					"y": 71,
+					"value": 31,
+					"field_5": 0,
+					"x": 24,
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				}
+			],
+			"signposts": [
+				{
+					"level": 0,
+					"x": 28,
+					"y": 76,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"script": "ow_script_map_3_4_sign_0",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					},
+					"flag": "0"
+				},
+				{
+					"level": 0,
+					"x": 27,
+					"y": 50,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"script": "ow_script_map_3_4_sign_1",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					},
+					"flag": "0"
+				},
+				{
+					"level": 0,
+					"x": 54,
+					"y": 67,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"script": "ow_script_map_3_4_sign_2",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					},
+					"flag": "0"
+				},
+				{
+					"level": 0,
+					"x": 53,
+					"y": 66,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"script": "ow_script_map_3_4_sign_3",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					},
+					"flag": "0"
+				},
+				{
+					"level": 0,
+					"x": 54,
+					"y": 19,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"script": "ow_script_map_3_4_sign_4",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					},
+					"flag": "0"
+				},
+				{
+					"level": 0,
+					"x": 39,
+					"y": 25,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"script": "ow_script_map_3_4_sign_5",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					},
+					"flag": "0"
+				}
+			]
+		},
+		"levelscripts": "lscr_0x726f28",
+		"connections": {
+			"connection_cnt": 3,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_NORTH",
+					"displacement": 16,
+					"bank": 1,
+					"field_A": 0,
+					"field_B": 0,
+					"map_idx": 59
+				},
+				{
+					"direction": "MAP_CONNECTION_SOUTH",
+					"displacement": 8,
+					"bank": 3,
+					"field_A": 0,
+					"field_B": 0,
+					"map_idx": 22
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "8",
+					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": "KASKADA_BATTLE",
+		"footer_idx": 82,
+		"namespace": "MAP_KASKADA",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_VILLAGE",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"bike_usable": "1",
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "1",
+			"show_name": "1",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_3_4",
+	"type": "header"
+}

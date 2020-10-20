@@ -1,0 +1,185 @@
+{
+	"data": {
+		"footer": "map_footer_429",
+		"events": {
+			"person_cnt": 4,
+			"warp_cnt": 5,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"picture": 22,
+					"script": "ow_script_map_15_4_trainer_0",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"flag": "0x0",
+					"y": 12,
+					"is_trainer": "1",
+					"field_3": 0,
+					"target_index": 1,
+					"x": 3,
+					"field_2": 0,
+					"alert_radius": 2,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 92,
+					"script": "0",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"flag": "ROUTE_3_MILL_ITEM_0",
+					"y": "6",
+					"is_trainer": "0",
+					"field_3": 0,
+					"target_index": 2,
+					"x": "1",
+					"field_2": 0,
+					"alert_radius": 0,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_SUPERBALL",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"picture": 26,
+					"script": "ow_script_map_15_4_trainer_1",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"flag": "0x0",
+					"y": 6,
+					"is_trainer": "1",
+					"field_3": 0,
+					"target_index": 3,
+					"x": 6,
+					"field_2": 0,
+					"alert_radius": 2,
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "93",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "16",
+					"y": "5",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_3_ALTARIANIT",
+					"value": {
+						"item": "ITEM_ALTARIANIT",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"level": 0,
+					"x": 9,
+					"y": 17,
+					"target_bank": 15,
+					"target_map": 0,
+					"target_warp_idx": 2
+				},
+				{
+					"level": 0,
+					"x": 9,
+					"y": 4,
+					"target_bank": 15,
+					"target_map": 5,
+					"target_warp_idx": 0
+				},
+				{
+					"x": "11",
+					"y": "14",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "5",
+					"y": "5",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				},
+				{
+					"x": "6",
+					"y": "5",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "route_3_eg_levelscripts",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_VERTANIA_CITY_AND_MARMORIA_CITY_AND_SAFFRONIA_CITY",
+		"footer_idx": 429,
+		"namespace": "MAP_ROUTE_3",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"bike_usable": "1",
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "1",
+			"show_name": "1",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_15_4",
+	"type": "header"
+}

@@ -1,0 +1,29 @@
+{
+    "type" : "dict",
+    "values" : {
+        "BATTLE_DOUBLE": 1,
+        "BATTLE_LINK": 2,
+        "BATTLE_WILD": 4,
+        "BATTLE_TRAINER": 8,
+        "BATTLE_OAK": 16,
+        "BATTLE_5": 32,
+        "BATTLE_MULTI": 64,
+        "BATTLE_SAFARI": 128,
+        "BATTLE_TOWER": 256,
+        "BATTLE_TUTORIAL": 512,
+        "BATTLE_ROAMER": 1024,
+        "BATTLE_EREADER": 2048,
+        "BATTLE_12": 4096,
+        "BATTLE_WILD_SCRIPTED": 8192,
+        "BATTLE_LEGENDARY" : 16384,
+        "BATTLE_GHOST": 32768,
+        "BATTLE_POKEDUDE" : 65536,
+        "BATTLE_FACTORY": 524288,
+        "BATTLE_TWO_TRAINERS": 1048576,
+        "BATTLE_ALLY": 2097152,
+        "BATTLE_WITH_HANDICAP" : 4194304,
+        "BATTLE_AGGRESSIVE_WILD" : 8388608,
+        "BATTLE_FLEEING_WILD" : 16777216,
+        "BATTLE_31" : 2147483648
+    }
+}

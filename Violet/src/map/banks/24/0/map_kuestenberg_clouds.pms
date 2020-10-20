@@ -1,0 +1,167 @@
+{
+	"data": {
+		"footer": "map_footer_kuestenberg_clouds",
+		"events": {
+			"person_cnt": 4,
+			"warp_cnt": 0,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "27",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_KUESTENBERG_CLOUDS_ITEM_0",
+					"value": {
+						"item": "ITEM_WASSERSTEIN",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "59",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "7",
+					"y": "13",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kuestenberg_clouds_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "171",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "28",
+					"y": "28",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_kuestenberg_clouds_person_1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "44",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "16",
+					"y": "16",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_RIGHT_DOWN_UP_LEFT",
+					"behaviour_range": {
+						"x": "3",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "4",
+					"script": "ow_script_kuestenberg_trainer_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "map_14_0_route_9_clouds_levelscripts",
+		"connections": {
+			"connection_cnt": 3,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_NORTH",
+					"displacement": "-4",
+					"bank": "14",
+					"map_idx": 0,
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_SOUTH",
+					"displacement": "0",
+					"bank": "8",
+					"map_idx": "1",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": "1",
+					"map_idx": "59",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": "MUS_CLOUDS",
+		"footer_idx": 61,
+		"namespace": "MAP_KUESTENBERG",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_CLOUD",
+		"bike_usable": "1",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_kuestenberg_clouds",
+	"type": "header"
+}

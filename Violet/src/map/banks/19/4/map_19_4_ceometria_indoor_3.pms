@@ -1,0 +1,101 @@
+{
+	"data": {
+		"footer": "map_footer_418_indoor_layout_16",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "23",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "1",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_ceometria_indoor_3_person_1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "25",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "7",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "3",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_ceometria_indoor_3_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "6",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "13",
+					"target_bank": "3"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": 0,
+		"footer_idx": 418,
+		"namespace": "MAP_CEOMETRIA",
+		"flash_type": 0,
+		"weather": 0,
+		"type": 0,
+		"bike_usable": 0,
+		"level": 0,
+		"battle_style": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_19_4_ceometria_indoor_3",
+	"type": "header"
+}

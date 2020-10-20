@@ -1,0 +1,14 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "SIGNPOST_SCRIPT",
+        "SIGNPOST_SCRIPT_NORTH",
+        "SIGNPOST_SCRIPT_SOUTH",
+        "SIGNPOST_SCRIPT_EAST",
+        "SIGNPOST_SCRIPT_WEST",
+        "SIGNPOST_5",
+        "SIGNPOST_6",
+        "SIGNPOST_HIDDEN_ITEM"
+    ]
+}

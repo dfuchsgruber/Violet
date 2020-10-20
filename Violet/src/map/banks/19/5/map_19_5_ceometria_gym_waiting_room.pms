@@ -1,0 +1,121 @@
+{
+	"data": {
+		"footer": "map_footer_35_ceometria_gym_entrance",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 2,
+			"trigger_cnt": 1,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "32",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "2",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_ceometria_gym_entrance_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "91",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "5",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_ceometria_gym_referee",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "12",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "13",
+					"target_bank": "3"
+				},
+				{
+					"x": "3",
+					"y": "3",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": 0,
+					"target_bank": 0
+				}
+			],
+			"triggers": [
+				{
+					"x": "3",
+					"y": "3",
+					"level": 0,
+					"field_5": 0,
+					"var": "AKTANIA_FLASHBACK_LSCR_PLAYER_INVISIBLE",
+					"value": 0,
+					"field_A": 0,
+					"field_B": 0,
+					"script": "ow_script_ceometria_gym_entrance_door"
+				}
+			],
+			"signposts": []
+		},
+		"levelscripts": "levelscripts_ceometria_gym",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_ARENA_AND_TOP_4_LOTTE",
+		"footer_idx": 35,
+		"namespace": "MAP_CEOMETRIA",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_ARENA",
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_19_5_ceometria_gym_entrance",
+	"type": "header"
+}

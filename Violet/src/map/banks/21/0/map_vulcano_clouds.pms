@@ -1,0 +1,117 @@
+{
+	"data": {
+		"footer": "map_footer_vulcano_clouds",
+		"events": {
+			"person_cnt": 1,
+			"warp_cnt": 4,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "170",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "5",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_vulcano_clouds_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "4",
+					"y": "2",
+					"level": 0,
+					"target_warp_idx": "3",
+					"target_map": "12",
+					"target_bank": "0"
+				},
+				{
+					"x": "5",
+					"y": "2",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "12",
+					"target_bank": 0
+				},
+				{
+					"x": "5",
+					"y": "3",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": "12",
+					"target_bank": 0
+				},
+				{
+					"x": "4",
+					"y": "3",
+					"level": 0,
+					"target_warp_idx": "6",
+					"target_map": "12",
+					"target_bank": 0
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "lscr_route_2_east_clouds",
+		"connections": {
+			"connection_cnt": 2,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_SOUTH",
+					"displacement": "-2",
+					"bank": "10",
+					"map_idx": "2",
+					"field_A": 0,
+					"field_B": 0
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD_RETURN",
+					"displacement": 0,
+					"bank": 0,
+					"map_idx": "12",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": "MUS_CLOUDS",
+		"footer_idx": 46,
+		"namespace": "MAP_VULCANO",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_ASH",
+		"type": "MAP_TYPE_CLOUD",
+		"bike_usable": "1",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_vulcano_clouds",
+	"type": "header"
+}

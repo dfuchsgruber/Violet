@@ -1,0 +1,11 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "PC_MODE_WITHDRAW",
+        "PC_MODE_DEPOSIT",
+        "PC_MODE_MOVE_POKEMON",
+        "PC_MODE_MOVE_ITEMS",
+        "PC_MODE_SELECT"
+    ]
+}

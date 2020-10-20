@@ -1,0 +1,10 @@
+.venv/
+.vscode/
+Documents/
+nbproject/
+Violet/
+.gitattributes
+.gitignore
+Pipfile
+Pipfile.lock
+README.md

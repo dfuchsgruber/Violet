@@ -1,0 +1,16 @@
+{
+	"type": "dict",
+	"values": {
+		"PERSON_SCRIPT": 0,
+		"PERSON_ITEM": 1,
+		"PERSON_EGG": 2,
+		"PERSON_POKEMON" : 3,
+		"PERSON_AGGRESSIVE_POKEMON" : 4,
+		"PERSON_BERRY_TREE" : 5,
+		"PERSON_MUSHROOM" : 6,
+		"PERSON_SHELL" : 7,
+		"PERSON_POKEMON_NPC" : 8,
+		"PERSON_PUZZLE_BOULDER" : 9,
+		"PERSON_HAY_BALE" : 10
+	}
+}

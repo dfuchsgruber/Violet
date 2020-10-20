@@ -1,0 +1,10 @@
+{
+	"type" : "enum",
+	"base" : 0,
+	"values" : [
+		"WEATHER_ROCK_RAIN",
+		"WEATHER_ROCK_SUN",
+		"WEATHER_ROCK_HAIL",
+		"WEATHER_ROCK_SANDSTORM"
+	]
+}

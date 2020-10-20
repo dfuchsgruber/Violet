@@ -1,0 +1,15 @@
+{
+    "type" : "dict",
+    "values" : {
+        "MUSHROOM_TYPE_PLUCKED" : 0,
+        "MUSHROOM_TYPE_TINY_MUSHROOM" : 1,
+        "MUSHROOM_TYPE_LARGE_MUSHROOM" : 2,
+        "SHELL_TYPE_EMPTY" : 0,
+        "SHELL_TYPE_PEARL" : 1,
+        "SHELL_TYPE_LARGE_PEARL" : 2,
+        "SHELL_TYPE_HEART_SCALE" : 3,
+        "SHELL_TYPE_SHOAL_SALT" : 4,
+        "SHELL_TYPE_SHOAL_SHELL" : 5,
+        "SHELL_TYPE_ENCOUNTER" : 6
+    }
+}

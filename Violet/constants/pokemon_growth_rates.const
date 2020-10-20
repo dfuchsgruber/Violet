@@ -1,0 +1,12 @@
+{
+	"type": "enum",
+	"values": [
+		"GROWTH_RATE_MEDIUM",
+		"GROWTH_RATE_SLOW_THEN_VERY_FAST",
+		"GROWTH_RATE_FAST_THEN_VERY_SLOW",
+		"GROWTH_RATE_MEDIUM_SLOW",
+		"GROWTH_RATE_FAST",
+		"GROWTH_RATE_SLOW"
+	],
+	"base": 0
+}

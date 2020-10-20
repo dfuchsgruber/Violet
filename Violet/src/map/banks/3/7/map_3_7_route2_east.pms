@@ -1,0 +1,875 @@
+{
+	"data": {
+		"footer": "map_footer_5",
+		"events": {
+			"person_cnt": 27,
+			"warp_cnt": 11,
+			"trigger_cnt": 3,
+			"signpost_cnt": 1,
+			"persons": [
+				{
+					"target_index": 1,
+					"picture": 18,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 73,
+					"y": 18,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN_LEFT_AND_RIGHT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
+					"alert_radius": 5,
+					"script": "ow_script_map_3_7_route_2_east_trainer_0",
+					"flag": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 2,
+					"picture": 61,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "51",
+					"y": "28",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "1",
+					"alert_radius": 4,
+					"script": "ow_script_map_3_7_route_2_east_trainer_1",
+					"flag": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 3,
+					"picture": 69,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "5",
+					"y": "2",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "ROUTE_2_FELIX",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 4,
+					"picture": 54,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "27",
+					"y": "27",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_UP_LEFT_RIGHT_DOWN",
+					"behaviour_range": {
+						"x": "6",
+						"y": "4"
+					},
+					"is_trainer": "1",
+					"alert_radius": 3,
+					"script": "ow_script_map_3_7_route_2_east_trainer_2",
+					"flag": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 5,
+					"picture": 92,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "22",
+					"y": "39",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "ROUTE_2_EAST_ITEM_0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_FLUCHTSEIL",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 6,
+					"picture": 101,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "43",
+					"y": "6",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "ROUTE_2_EAST_EGG_0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_EGG",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_PHANPY",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 7,
+					"picture": 41,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 32,
+					"y": 13,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_route_2_east_npc_2",
+					"flag": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 8,
+					"picture": 92,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "41",
+					"y": "23",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "ROUTE_2_EAST_ITEM_1",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_TRANK",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 9,
+					"picture": 55,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "61",
+					"y": "0",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "SECRET_POWER_LAB_ACCESS",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 10,
+					"picture": 27,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "64",
+					"y": "24",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_route_2_east_npc_0",
+					"flag": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 11,
+					"picture": 19,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 7,
+					"y": 26,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_route_2_east_npc_1",
+					"flag": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 12,
+					"picture": 92,
+					"field_2": 0,
+					"field_3": 0,
+					"x": "82",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "ROUTE_2_EAST_ITEM_2",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_SCHUTZ",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 13,
+					"picture": 92,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 45,
+					"y": 21,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "ROUTE_2_EAST_ITEM_3",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_ITEM",
+					"value": {
+						"item": "ITEM_AP_PLUS",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "14",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "53",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_2_EAST_ITEM_4",
+					"value": {
+						"item": "ITEM_SONNENSTEIN",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "20",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "51",
+					"y": "23",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"field_D": 0,
+					"alert_radius": "4",
+					"script": "ow_script_route_2_east_trainer_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "16",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "42",
+					"y": "38",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "7"
+					}
+				},
+				{
+					"target_index": "17",
+					"picture": "237",
+					"script_std": "PERSON_BERRY_TREE",
+					"field_3": 0,
+					"x": "43",
+					"y": "38",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "8"
+					}
+				},
+				{
+					"target_index": "18",
+					"picture": "236",
+					"script_std": "PERSON_MUSHROOM",
+					"field_3": 0,
+					"x": "15",
+					"y": "18",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "0",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "3"
+					}
+				},
+				{
+					"target_index": "19",
+					"picture": "236",
+					"script_std": "PERSON_MUSHROOM",
+					"field_3": 0,
+					"x": "55",
+					"y": "31",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": "4"
+					}
+				},
+				{
+					"target_index": "20",
+					"picture": "236",
+					"script_std": "PERSON_SHELL",
+					"field_3": 0,
+					"x": "16",
+					"y": "47",
+					"level": 0,
+					"behaviour": 0,
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "21",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "8",
+					"x": "37",
+					"y": "26",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_ROTATE_CLOCKWISE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_50_PERCENT",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MENKI",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "22",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "8",
+					"x": "41",
+					"y": "42",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_LEFT_AND_RIGHT",
+					"behaviour_range": {
+						"x": "8",
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KRABBY",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "23",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "64",
+					"y": "16",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHWALBINI",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "24",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "16",
+					"y": "39",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KRAMURX",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "25",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "18",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_KNOFENSA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "26",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "80",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MASCHOCK",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "27",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": "35",
+					"x": "13",
+					"y": "50",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_UP_DOWN_RIGHT",
+					"behaviour_range": {
+						"x": "3",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_TENTOXA",
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": 77,
+					"y": 12,
+					"level": 0,
+					"target_bank": 3,
+					"target_map": 70,
+					"target_warp_idx": 1
+				},
+				{
+					"x": "49",
+					"y": "8",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 0
+				},
+				{
+					"x": "50",
+					"y": "8",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 1
+				},
+				{
+					"x": "50",
+					"y": "9",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 2
+				},
+				{
+					"x": "49",
+					"y": "9",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 3
+				},
+				{
+					"x": "58",
+					"y": "31",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 4
+				},
+				{
+					"x": "59",
+					"y": "31",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 5
+				},
+				{
+					"x": "59",
+					"y": "32",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 6
+				},
+				{
+					"x": "58",
+					"y": "32",
+					"level": 0,
+					"target_bank": 11,
+					"target_map": 2,
+					"target_warp_idx": 7
+				},
+				{
+					"x": "26",
+					"y": "38",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "5",
+					"target_bank": "11"
+				},
+				{
+					"x": "53",
+					"y": "40",
+					"level": 0,
+					"target_warp_idx": "1",
+					"target_map": "6",
+					"target_bank": "11"
+				}
+			],
+			"triggers": [
+				{
+					"x": 16,
+					"y": 21,
+					"level": 0,
+					"field_5": 0,
+					"value": 12,
+					"script": "ow_script_route_2_felix",
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"x": 16,
+					"y": 22,
+					"level": 0,
+					"field_5": 0,
+					"value": 12,
+					"script": "ow_script_route_2_felix",
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				},
+				{
+					"x": 16,
+					"y": 23,
+					"level": 0,
+					"field_5": 0,
+					"value": 12,
+					"script": "ow_script_route_2_felix",
+					"field_A": 0,
+					"field_B": 0,
+					"var": "STORY_PROGRESS"
+				}
+			],
+			"signposts": [
+				{
+					"x": 79,
+					"y": 14,
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"script": "ow_script_map_3_7_route_2_east_sign_0",
+						"item": {
+							"item": "0",
+							"flag": "0",
+							"amount": 0,
+							"chunk": 0
+						}
+					},
+					"flag": "0"
+				}
+			]
+		},
+		"levelscripts": "lscr_map_3_7_route_2_east",
+		"connections": {
+			"connection_cnt": 2,
+			"connections": [
+				{
+					"direction": "MAP_CONNECTION_WEST",
+					"displacement": -35,
+					"bank": 3,
+					"field_A": 0,
+					"field_B": 0,
+					"map_idx": 41
+				},
+				{
+					"direction": "MAP_CONNECTION_CLOUD",
+					"displacement": 0,
+					"bank": "11",
+					"map_idx": "2",
+					"field_A": 0,
+					"field_B": 0
+				}
+			]
+		},
+		"music": "MUS_ROUTE_24_25",
+		"footer_idx": 5,
+		"namespace": "MAP_ROUTE_2",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_OUTSIDE",
+		"type": "MAP_TYPE_ROUTE",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"bike_usable": "1",
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "1",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_3_7_route_2_east",
+	"type": "header"
+}

@@ -1,0 +1,12 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "BATTLE_HANDICAP_FLOATING_ROCKS",
+        "BATTLE_HANDICAP_GRASSY_FIELD",
+        "BATTLE_HANDICAP_ARENA_ENCOURAGEMENT",
+        "BATTLE_HANDICAP_EXTREME_HEAT",
+        "BATTLE_HANDICAP_TERRIFYING_ATMOSPHERE",
+        "BATTLE_HANDICAP_GROUDON_BATTLE"
+    ]
+}

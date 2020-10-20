@@ -1,6 +1,6 @@
 # Constants
-include/c/constants*
-include/as/constants*
+Violet/include/c/constants
+Violet/include/as/constants/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -11,7 +11,6 @@ __pycache__
 .cproject
 .project
 .ipynb_checkpoints/
-*.ipynb
 
 
 # C extensions
@@ -63,8 +62,15 @@ docs/_build/
 
 # Build Results
 bld/
+pkl/
 
 # Resources
 psg_data.raw
 goldensun_synth.raw
 base/
+
+# Virtual Environments
+.venv/
+
+# VSCode stuff
+ipch/ 

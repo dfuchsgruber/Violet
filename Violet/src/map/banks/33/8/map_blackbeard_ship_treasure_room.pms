@@ -1,0 +1,155 @@
+{
+	"data": {
+		"footer": "map_footer_blackbeard_ship_treasure_room",
+		"events": {
+			"person_cnt": 4,
+			"warp_cnt": 2,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "0",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_BBSHIP_ITEM_12",
+					"value": {
+						"item": "ITEM_TOP_BELEBER",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "1",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_BBSHIP_ITEM_11",
+					"value": {
+						"item": "ITEM_LINKKABEL",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "5",
+					"y": "4",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": "FLAG_BBSHIP_ITEM_10",
+					"value": {
+						"item": "ITEM_NUGGET",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": 0,
+					"x": "2",
+					"y": "8",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": "FLAG_BBSHIP_AGGRESIVE_MON_0",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MAGNAYEN",
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "2",
+					"target_bank": "33"
+				},
+				{
+					"x": "4",
+					"y": "8",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "2",
+					"target_bank": "33"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_BBSHIP",
+		"footer_idx": 119,
+		"namespace": "MAP_SCHATTENFLUT",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_blackbeard_ship_treasure_room",
+	"type": "header"
+}

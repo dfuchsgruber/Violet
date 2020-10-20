@@ -1,0 +1,211 @@
+{
+	"data": {
+		"footer": "map_footer_route_2_cave2",
+		"events": {
+			"person_cnt": 6,
+			"warp_cnt": 3,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "22",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "32",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "ow_script_route_2_cave_trainer_1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": "18",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "36",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "ow_script_route_2_cave_trainer_2",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "56",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "0",
+					"y": "0",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "15",
+					"y": "11",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_RASAFFNIT",
+					"value": {
+						"item": "ITEM_RASAFFNIT",
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "5",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "15",
+					"y": "24",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_ROUTE_2_CAVE_ITEM_0",
+					"value": {
+						"item": "ITEM_FLUCHTSEIL",
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "6",
+					"picture": "27",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "16",
+					"y": "40",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_route_2_cave_person_0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "22",
+					"y": "50",
+					"level": 0,
+					"target_warp_idx": "9",
+					"target_map": "7",
+					"target_bank": "3"
+				},
+				{
+					"x": "21",
+					"y": "34",
+					"level": 0,
+					"target_warp_idx": "0",
+					"target_map": "75",
+					"target_bank": "3"
+				},
+				{
+					"x": "23",
+					"y": "18",
+					"level": 0,
+					"target_warp_idx": 0,
+					"target_map": "6",
+					"target_bank": "11"
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_GLUTBERG_AND_EISKASKADENHOHLE_AND_WANDELHOHLE_AND_VERLORENE_HOHLE_AND_NABELFELS",
+		"footer_idx": 120,
+		"namespace": "MAP_ROUTE_2",
+		"flash_type": "DARK_FLASH_USABLE",
+		"weather": "MAP_WEATHER_CLOUDY",
+		"type": "MAP_TYPE_BASEMENT",
+		"bike_usable": "1",
+		"flags": {
+			"allow_escape_rope": "1",
+			"allow_run": "1",
+			"show_name": "0",
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": 0
+	},
+	"label": "map_route_2_cave_2",
+	"type": "header"
+}

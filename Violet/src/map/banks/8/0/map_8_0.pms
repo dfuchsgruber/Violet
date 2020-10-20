@@ -1,0 +1,233 @@
+{
+	"data": {
+		"footer": "map_footer_8_pokestop",
+		"events": {
+			"person_cnt": 7,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": 1,
+					"picture": 64,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 7,
+					"y": 2,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_nurse_joy",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 2,
+					"picture": 61,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 9,
+					"y": 4,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_map_8_0_person_1",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 4,
+					"picture": 18,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 2,
+					"y": 4,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_map_8_0_person_2",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 5,
+					"picture": 30,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 14,
+					"y": 6,
+					"level": 3,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "1",
+						"y": "1"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_map_8_0_person_3",
+					"flag": "0x9d",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 5,
+					"picture": "238",
+					"field_2": 0,
+					"field_3": 0,
+					"x": 8,
+					"y": 2,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_POKEMON",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_CHANEIRA",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 6,
+					"picture": 68,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 16,
+					"y": 5,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_pokemart",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "7",
+					"picture": "238",
+					"field_2": 0,
+					"field_3": 0,
+					"x": 16,
+					"y": 4,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "ow_script_botogel",
+					"flag": 0,
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": "PERSON_POKEMON_NPC",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_BOTOGEL",
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": 7,
+					"y": 8,
+					"level": 3,
+					"target_bank": 3,
+					"target_map": 4,
+					"target_warp_idx": 5
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "lscr_0x16b05b",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_POKEMON_CENTER_AND_POKEMON_MARKT_AND_LINK_ZENTRALE",
+		"footer_idx": 8,
+		"namespace": "MAP_KASKADA",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"bike_usable": 0,
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_8_0",
+	"type": "header"
+}

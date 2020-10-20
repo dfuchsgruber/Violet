@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"beautifulsoup4" = "*"
+"html5lib" = "*"
+pyagb = {git = "https://github.com/WodkaRHR/pyagb.git",ref = "58653c2236c2ee9d60044c7761c3ea1b9dec1560"}
+
+[dev-packages]
+pylint = "*"
+
+[requires]
+python_version = "3.7.3"

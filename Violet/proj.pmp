@@ -1,0 +1,2041 @@
+{
+	"headers": {
+		"0": {
+			"7": [
+				"map_0_7",
+				"src/map/banks/0/7/map_0_7.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"12": [
+				"map_0_12",
+				"src/map/banks/0/12/map_0_12.pms",
+				"MAP_VULCANO"
+			],
+			"5": [
+				"map_0_5",
+				"src/map/banks/0/5/map_0_5.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"6": [
+				"map_0_6",
+				"src/map/banks/0/6/map_0_6.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"13": [
+				"map_0_13",
+				"src/map/banks/0/13/map_0_13.pms",
+				"MAP_VULCANO"
+			]
+		},
+		"1": {
+			"0": [
+				"map_1_0",
+				"src/map/banks/1/0/map_1_0.pms",
+				"MAP_SILVANIA_WALD"
+			],
+			"81": [
+				"map_1_81",
+				"src/map/banks/1/81/map_1_81.pms",
+				"MAP_VULCANO"
+			],
+			"82": [
+				"map_1_82",
+				"src/map/banks/1/82/map_1_82.pms",
+				"MAP_VULCANO"
+			],
+			"126": [
+				"map_1_126",
+				"src/map/banks/1/126/map_1_126.pms",
+				"MAP_VULCANO"
+			],
+			"59": [
+				"map_1_59",
+				"src/map/banks/1/59/map_1_59.pms",
+				"MAP_KUESTENBERG"
+			],
+			"125": [
+				"map_1_125",
+				"src/map/banks/1/125/map_1_125.pms",
+				"MAP_ASCHHAIN"
+			],
+			"30": [
+				"map_1_30",
+				"src/map/banks/1/30/map_1_30.pms",
+				"MAP_ASCHHAIN"
+			],
+			"31": [
+				"map_1_31",
+				"src/map/banks/1/31/map_1_31.pms",
+				"MAP_ASCHHAIN"
+			],
+			"1": [
+				"map_silvania_wald_flashback",
+				"src/map/banks/1/1/map_silvania_wald_clouds.pms",
+				"MAP_SILVANIA_WALD"
+			],
+			"2": [
+				"map_silvania_wald_clouds",
+				"src/map/banks/1/2/map_silvania_wald_clouds.pms",
+				"MAP_SILVANIA_WALD"
+			]
+		},
+		"3": {
+			"0": [
+				"map_3_0",
+				"src/map/banks/3/0/map_3_0.pms",
+				"MAP_AMONIA"
+			],
+			"1": [
+				"map_3_1",
+				"src/map/banks/3/1/map_3_1.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"2": [
+				"map_3_2",
+				"src/map/banks/3/2/map_3_2.pms",
+				"MAP_AKTANIA"
+			],
+			"67": [
+				"map_3_67",
+				"src/map/banks/3/67/map_3_67.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"4": [
+				"map_3_4",
+				"src/map/banks/3/4/map_3_4.pms",
+				"MAP_KASKADA"
+			],
+			"5": [
+				"map_3_5",
+				"src/map/banks/3/5/map_3_5.pms",
+				"MAP_ORINA_CITY"
+			],
+			"6": [
+				"map_3_6",
+				"src/map/banks/3/6/map_3_6.pms",
+				"MAP_INFERIOR"
+			],
+			"72": [
+				"map_3_72",
+				"src/map/banks/3/72/map_3_72.pms",
+				"MAP_TRAINERSCHULE"
+			],
+			"73": [
+				"map_3_73",
+				"src/map/banks/3/73/map_3_73.pms",
+				"MAP_AKTANIA"
+			],
+			"74": [
+				"map_3_74",
+				"src/map/banks/3/74/map_3_74.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"75": [
+				"map_3_75",
+				"src/map/banks/3/75/map_3_75.pms",
+				"MAP_ROUTE_2"
+			],
+			"76": [
+				"map_3_76",
+				"src/map/banks/3/76/map_3_76.pms",
+				"MAP_ROUTE_1"
+			],
+			"66": [
+				"map_3_66",
+				"src/map/banks/3/66/map_3_66.pms",
+				"MAP_TANNS_LABOR"
+			],
+			"3": [
+				"map_3_3",
+				"src/map/banks/3/3/map_3_3.pms",
+				"MAP_SILVANIA"
+			],
+			"21": [
+				"map_3_21",
+				"src/map/banks/3/21/map_3_21.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"22": [
+				"map_3_22",
+				"src/map/banks/3/22/map_3_22.pms",
+				"MAP_ROUTE_4"
+			],
+			"23": [
+				"map_3_23",
+				"src/map/banks/3/23/map_3_23.pms",
+				"MAP_ROUTE_5"
+			],
+			"24": [
+				"map_3_24",
+				"src/map/banks/3/24/map_3_24.pms",
+				"MAP_ROUTE_6"
+			],
+			"70": [
+				"map_3_70",
+				"src/map/banks/3/70/map_3_70.pms",
+				"MAP_ROUTE_2"
+			],
+			"41": [
+				"map_3_41",
+				"src/map/banks/3/41/map_3_41.pms",
+				"MAP_ROUTE_2"
+			],
+			"19": [
+				"map_3_19",
+				"src/map/banks/3/19/map_3_19.pms",
+				"MAP_ROUTE_1"
+			],
+			"57": [
+				"map_3_57",
+				"src/map/banks/3/57/map_3_57.pms",
+				"MAP_TRAINERSCHULE"
+			],
+			"7": [
+				"map_3_7_route_2_east",
+				"src/map/banks/3/7/map_3_7_route2_east.pms",
+				"MAP_ROUTE_2"
+			],
+			"8": [
+				"map_3_8_route_8",
+				"src/map/banks/3/8/3_8_map_3_8_route_8.pms",
+				"MAP_ROUTE_8"
+			],
+			"9": [
+				"map_3_9_laubdorf",
+				"src/map/banks/3/9/map_3_9_laubdorf.pms",
+				"MAP_LAUBDORF"
+			],
+			"10": [
+				"map_3_10_route_9_vertical",
+				"src/map/banks/12/4/3_10_map_3_10_route_9.pms",
+				"MAP_ROUTE_9"
+			],
+			"11": [
+				"map_3_11_route_10",
+				"src/map/banks/3/11/3_11_map_3_11_route_10.pms",
+				"MAP_ROUTE_10"
+			],
+			"12": [
+				"map_3_12_route_11",
+				"src/map/banks/3/12/3_12_map_3_12_route_11.pms",
+				"MAP_ROUTE_11"
+			],
+			"13": [
+				"map_3_13_ceometria",
+				"src/map/banks/3/13/map_3_13_ceometria.pms",
+				"MAP_CEOMETRIA"
+			],
+			"14": [
+				"map_3_14_forest_cemetery",
+				"src/map/banks/3/14/map_3_14_forest_cemetery.pms",
+				"MAP_WALDFRIEDHOF"
+			],
+			"15": [
+				"map_3_15_route_12_east",
+				"src/map/banks/3/15/map_3_15_route_12.pms",
+				"MAP_ROUTE_12"
+			],
+			"16": [
+				"map_3_16_route_12_west",
+				"src/map/banks/3/16/map_3_16_route_12_west.pms",
+				"MAP_ROUTE_12"
+			],
+			"17": [
+				"map_3_17_haweiland",
+				"src/map/banks/3/17/map_3_17_haweiland.pms",
+				"MAP_HAWEILAND"
+			],
+			"18": [
+				"map_route_7",
+				"src/map/banks/3/18/map_route_7.pms",
+				"MAP_ROUTE_7"
+			]
+		},
+		"4": {
+			"0": [
+				"map_4_0",
+				"src/map/banks/4/0/map_4_0.pms",
+				"MAP_AMONIA"
+			],
+			"1": [
+				"map_4_1",
+				"src/map/banks/4/1/map_4_1.pms",
+				"MAP_AMONIA"
+			],
+			"2": [
+				"map_4_2",
+				"src/map/banks/4/2/map_4_2.pms",
+				"MAP_AMONIA"
+			],
+			"4": [
+				"map_4_4",
+				"src/map/banks/4/4/map_4_4.pms",
+				"MAP_AMONIA"
+			],
+			"3": [
+				"map_4_3_debug",
+				"src/map/banks/4/3/map_4_3_debug.pms",
+				"MAP_AMONIA"
+			],
+			"5": [
+				"map_amonia_clouds",
+				"src/map/banks/4/5/map_amonia_clouds.pms",
+				"MAP_AMONIA"
+			]
+		},
+		"5": {
+			"0": [
+				"map_5_0",
+				"src/map/banks/5/0/map_5_0.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"2": [
+				"map_5_2",
+				"src/map/banks/5/2/map_5_2.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"4": [
+				"map_5_4",
+				"src/map/banks/5/4/map_5_4.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"11": [
+				"map_5_11",
+				"src/map/banks/5/11/map_5_11.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"12": [
+				"map_5_12",
+				"src/map/banks/5/12/map_5_12.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"13": [
+				"map_5_13",
+				"src/map/banks/5/13/map_5_13.pms",
+				"MAP_MERIANA_CITY"
+			],
+			"1": [
+				"map_meriana_city_clouds",
+				"src/map/banks/5/1/map_meriana_city_clouds.pms",
+				"MAP_MERIANA_CITY"
+			]
+		},
+		"6": {
+			"0": [
+				"map_6_0",
+				"src/map/banks/6/0/map_6_0.pms",
+				"MAP_AKTANIA"
+			],
+			"1": [
+				"map_6_1",
+				"src/map/banks/6/1/map_6_1.pms",
+				"MAP_AKTANIA"
+			],
+			"2": [
+				"map_6_2",
+				"src/map/banks/6/2/map_6_2.pms",
+				"MAP_AKTANIA"
+			],
+			"3": [
+				"map_6_3",
+				"src/map/banks/6/3/map_6_3.pms",
+				"MAP_AKTANIA"
+			],
+			"5": [
+				"map_6_5",
+				"src/map/banks/6/5/map_6_5.pms",
+				"MAP_AKTANIA"
+			],
+			"9": [
+				"map_6_9",
+				"src/map/banks/6/9/map_6_9.pms",
+				"MAP_AKTANIA"
+			],
+			"13": [
+				"map_6_13",
+				"src/map/banks/6/13/map_6_13.pms",
+				"MAP_AKTANIA"
+			],
+			"14": [
+				"map_6_14",
+				"src/map/banks/6/14/map_6_14.pms",
+				"MAP_AKTANIA"
+			],
+			"15": [
+				"map_6_15",
+				"src/map/banks/6/15/map_6_15.pms",
+				"MAP_AKTANIA"
+			],
+			"4": [
+				"map_6_4_aktania_gengar_house",
+				"src/map/banks/6/4/map_6_4_aktania_gengar_house.pms",
+				"MAP_AKTANIA"
+			],
+			"6": [
+				"map_aktania_clouds",
+				"src/map/banks/6/6/map_aktania_clouds.pms",
+				"MAP_AKTANIA"
+			],
+			"7": [
+				"map_aktania_cloud_ruins",
+				"src/map/banks/6/7/map_aktania_cloud_ruins.pms",
+				"MAP_AKTANIA"
+			],
+			"8": [
+				"map_bruchfels_gym_room_1",
+				"src/map/banks/6/8/map_bruchfels_gym_room_1.pms",
+				"MAP_AKTANIA"
+			],
+			"10": [
+				"map_bruchfels_gym_leader_room",
+				"src/map/banks/6/10/map_bruchfels_gym_leader_room.pms",
+				"MAP_AKTANIA"
+			],
+			"11": [
+				"map_bruchfels_crypt",
+				"src/map/banks/6/11/map_bruchfels_grave.pms",
+				"MAP_AKTANIA"
+			]
+		},
+		"7": {
+			"1": [
+				"map_7_1",
+				"src/map/banks/7/1/map_7_1.pms",
+				"MAP_SILVANIA"
+			],
+			"2": [
+				"map_7_2",
+				"src/map/banks/7/2/map_7_2.pms",
+				"MAP_SILVANIA"
+			],
+			"3": [
+				"map_7_3",
+				"src/map/banks/7/3/map_7_3.pms",
+				"MAP_SILVANIA"
+			],
+			"5": [
+				"map_7_5",
+				"src/map/banks/7/5/map_7_5.pms",
+				"MAP_SILVANIA"
+			],
+			"8": [
+				"map_7_8",
+				"src/map/banks/7/8/map_7_8.pms",
+				"MAP_SILVANIA"
+			],
+			"10": [
+				"map_7_10",
+				"src/map/banks/7/10/map_7_10.pms",
+				"MAP_SILVANIA"
+			],
+			"0": [
+				"map_silvania_clouds",
+				"src/map/banks/7/0/map_silvania_clouds.pms",
+				"MAP_SILVANIA"
+			]
+		},
+		"8": {
+			"0": [
+				"map_8_0",
+				"src/map/banks/8/0/map_8_0.pms",
+				"MAP_KASKADA"
+			],
+			"4": [
+				"map_8_4",
+				"src/map/banks/8/4/map_8_4.pms",
+				"MAP_KASKADA"
+			],
+			"6": [
+				"map_8_6",
+				"src/map/banks/8/6/map_8_6.pms",
+				"MAP_KASKADA"
+			],
+			"7": [
+				"map_8_7",
+				"src/map/banks/8/7/map_8_7.pms",
+				"MAP_KASKADA"
+			],
+			"8": [
+				"map_8_8",
+				"src/map/banks/8/8/map_8_8.pms",
+				"MAP_KASKADA"
+			],
+			"9": [
+				"map_8_9",
+				"src/map/banks/8/9/map_8_9.pms",
+				"MAP_KASKADA"
+			],
+			"10": [
+				"map_8_10",
+				"src/map/banks/8/10/map_8_10.pms",
+				"MAP_KASKADA"
+			],
+			"11": [
+				"map_8_11",
+				"src/map/banks/8/11/map_8_11.pms",
+				"MAP_KASKADA"
+			],
+			"1": [
+				"map_kaskada_clouds",
+				"src/map/banks/8/1/map_kaskada_clouds.pms",
+				"MAP_KASKADA"
+			],
+			"2": [
+				"map_kaskada_cloud_ruins",
+				"src/map/banks/8/2/map_kaskada_cloud_ruins.pms",
+				"MAP_KASKADA"
+			]
+		},
+		"9": {
+			"1": [
+				"map_9_1",
+				"src/map/banks/9/1/map_9_1.pms",
+				"MAP_ORINA_CITY"
+			],
+			"3": [
+				"map_9_3",
+				"src/map/banks/9/3/map_9_3.pms",
+				"MAP_ORINA_CITY"
+			],
+			"9": [
+				"map_9_9",
+				"src/map/banks/9/9/map_9_9.pms",
+				"MAP_ORINA_CITY"
+			],
+			"10": [
+				"map_9_10",
+				"src/map/banks/9/10/map_9_10.pms",
+				"MAP_ORINA_CITY"
+			],
+			"11": [
+				"map_9_11",
+				"src/map/banks/9/11/map_9_11.pms",
+				"MAP_ORINA_CITY"
+			],
+			"12": [
+				"map_9_12",
+				"src/map/banks/9/12/map_9_12.pms",
+				"MAP_ORINA_CITY"
+			],
+			"13": [
+				"map_9_13",
+				"src/map/banks/9/13/map_9_13.pms",
+				"MAP_ORINA_CITY"
+			],
+			"14": [
+				"map_9_14",
+				"src/map/banks/9/14/map_9_14.pms",
+				"MAP_ORINA_CITY"
+			],
+			"15": [
+				"map_9_15",
+				"src/map/banks/9/15/map_9_15.pms",
+				"MAP_ORINA_CITY"
+			],
+			"16": [
+				"map_9_16",
+				"src/map/banks/9/16/map_9_16.pms",
+				"MAP_ORINA_CITY"
+			],
+			"17": [
+				"map_9_17",
+				"src/map/banks/9/17/map_9_17.pms",
+				"MAP_ORINA_CITY"
+			],
+			"18": [
+				"map_9_18",
+				"src/map/banks/9/18/map_9_18.pms",
+				"MAP_ORINA_CITY"
+			],
+			"19": [
+				"map_9_19_laz_corp_secret_power_lab",
+				"src/map/banks/9/19/map_9_19_laz_corp_secret_power_lab.pms",
+				"MAP_ORINA_CITY"
+			],
+			"0": [
+				"map_orina_city_clouds",
+				"src/map/banks/9/0/map_orina_city_clouds.pms",
+				"MAP_ORINA_CITY"
+			],
+			"2": [
+				"map_orina_city_inside_0",
+				"src/map/banks/9/2/map_orina_city_inside_0.pms",
+				"MAP_ORINA_CITY"
+			],
+			"4": [
+				"map_orina_city_cloud_ruins",
+				"src/map/banks/9/4/map_orina_city_cloud_ruins.pms",
+				"MAP_ORINA_CITY"
+			]
+		},
+		"10": {
+			"16": [
+				"map_10_16",
+				"src/map/banks/10/16/map_10_16.pms",
+				"MAP_INFERIOR"
+			],
+			"12": [
+				"map_10_12",
+				"src/map/banks/10/12/map_10_12.pms",
+				"MAP_INFERIOR"
+			],
+			"20": [
+				"map_10_20",
+				"src/map/banks/10/20/map_10_20.pms",
+				"MAP_INFERIOR"
+			],
+			"22": [
+				"map_10_22",
+				"src/map/banks/10/22/map_10_22.pms",
+				"MAP_INFERIOR"
+			],
+			"0": [
+				"map_10_0_inferior_gym",
+				"src/map/banks/10/0/map_10_0_inferior_gym.pms",
+				"MAP_INFERIOR"
+			],
+			"1": [
+				"map_10_1_inferior_gym_arena",
+				"src/map/banks/10/1/map_10_1_inferior_gym_arena.pms",
+				"MAP_INFERIOR"
+			],
+			"2": [
+				"map_inferior_clouds",
+				"src/map/banks/10/2/map_inferior_clouds.pms",
+				"MAP_INFERIOR"
+			]
+		},
+		"15": {
+			"0": [
+				"map_15_0",
+				"src/map/banks/15/0/map_15_0.pms",
+				"MAP_ROUTE_3"
+			],
+			"1": [
+				"map_15_1",
+				"src/map/banks/15/1/map_15_1.pms",
+				"MAP_ROUTE_3"
+			],
+			"4": [
+				"map_15_4",
+				"src/map/banks/15/4/map_15_4.pms",
+				"MAP_ROUTE_3"
+			],
+			"5": [
+				"map_15_5",
+				"src/map/banks/15/5/map_15_5.pms",
+				"MAP_ROUTE_3"
+			],
+			"2": [
+				"map_route_3_clouds",
+				"src/map/banks/15/2/map_route_3_clouds.pms",
+				"MAP_ROUTE_3"
+			]
+		},
+		"16": {
+			"3": [
+				"map_16_3",
+				"src/map/banks/16/3/map_16_3.pms",
+				"MAP_ROUTE_4"
+			],
+			"4": [
+				"map_16_4",
+				"src/map/banks/16/4/map_16_4.pms",
+				"MAP_ROUTE_4"
+			],
+			"0": [
+				"map_route_4_clouds",
+				"src/map/banks/16/0/map_route_4_clouds.pms",
+				"MAP_ROUTE_4"
+			]
+		},
+		"17": {
+			"2": [
+				"map_17_2",
+				"src/map/banks/17/2/map_17_2.pms",
+				"MAP_ROUTE_5"
+			],
+			"3": [
+				"map_17_3",
+				"src/map/banks/17/3/map_17_3.pms",
+				"MAP_ROUTE_5"
+			]
+		},
+		"18": {
+			"2": [
+				"map_18_2",
+				"src/map/banks/18/2/map_18_2.pms",
+				"MAP_ROUTE_6"
+			],
+			"3": [
+				"map_18_3",
+				"src/map/banks/18/3/map_18_3.pms",
+				"MAP_ROUTE_6"
+			],
+			"0": [
+				"map_route_6_clouds",
+				"src/map/banks/18/0/map_route_6_clouds.pms",
+				"MAP_ROUTE_6"
+			]
+		},
+		"2": {
+			"33": [
+				"mapheader_2_33",
+				"src/map/banks/2/33/map_2_33.pms",
+				"MAP_ARC_SCRIM"
+			]
+		},
+		"11": {
+			"0": [
+				"map_11_0_clock_master_house",
+				"src/map/banks/11/0_clock_master_house/map_11_0_clock_master_house.pms",
+				"MAP_ROUTE_2"
+			],
+			"1": [
+				"map_11_1_clock_master_path",
+				"src/map/banks/11/1_clock_master_path/map_11_1_clock_master_path.pms",
+				"MAP_ROUTE_2"
+			],
+			"2": [
+				"map_11_2_route_2_east_clouds",
+				"src/map/banks/11/2_route_2_east_clouds/map_11_2_route_2_east_clouds.pms",
+				"MAP_ROUTE_2"
+			],
+			"3": [
+				"map_route_2_north_clouds",
+				"src/map/banks/11/3_route_2_north_clouds/map_route_2_north_clouds.pms",
+				"MAP_ROUTE_2"
+			],
+			"4": [
+				"map_route_2_cloud_ruins",
+				"src/map/banks/11/4/map_route_2_cloud_ruins.pms",
+				"MAP_ROUTE_2"
+			],
+			"5": [
+				"map_route_2_cave_2",
+				"src/map/banks/11/5/map_route_2_cave_2.pms",
+				"MAP_ROUTE_2"
+			],
+			"6": [
+				"map_route_2_cave_connection",
+				"src/map/banks/11/6/map_route_2_cave_connection.pms",
+				"MAP_ROUTE_2"
+			]
+		},
+		"12": {
+			"0": [
+				"map_12_0_laubdorf_pokemon_center",
+				"src/map/banks/12/0/map_12_0_laubdorf_pokemon_center.pms",
+				"MAP_LAUBDORF"
+			],
+			"1": [
+				"map_12_1_laubdorf_daycare",
+				"src/map/banks/12/1/map_12_1_laubdorf_daycare.pms",
+				"MAP_LAUBDORF"
+			],
+			"2": [
+				"map_12_2_laubdorf_indoor_0",
+				"src/map/banks/12/2/map_12_2_laubdorf_indoor_0.pms",
+				"MAP_LAUBDORF"
+			],
+			"3": [
+				"map_12_3_laubdorf_indoor_1",
+				"src/map/banks/12/3/map_12_3_laubdorf_indoor_1.pms",
+				"MAP_LAUBDORF"
+			],
+			"4": [
+				"map_12_4_laubdorf_indoor_2",
+				"src/map/banks/12/4/map_12_4_laubdorf_indoor_2.pms",
+				"MAP_LAUBDORF"
+			],
+			"5": [
+				"map_laubdorf_clouds",
+				"src/map/banks/12/5/map_laubdorf_clouds.pms",
+				"MAP_LAUBDORF"
+			],
+			"6": [
+				"map_laubdorf_inside_3",
+				"src/map/banks/12/6/map_laubdorf_inside_3.pms",
+				"MAP_LAUBDORF"
+			],
+			"7": [
+				"map_laubdorf_cloud_ruins",
+				"src/map/banks/12/7/map_laubdorf_cloud_ruins.pms",
+				"MAP_LAUBDORF"
+			]
+		},
+		"13": {
+			"0": [
+				"map_13_0_route_9_horizontal",
+				"src/map/banks/13/0/map_13_0_route_9_horizontal.pms",
+				"MAP_ROUTE_9"
+			],
+			"1": [
+				"map_13_1_route_9_house",
+				"src/map/banks/13/1/13_1_map_13_1_route_9_house.pms",
+				"MAP_ROUTE_9"
+			],
+			"2": [
+				"map_13_2_route_9_cave_entrance",
+				"src/map/banks/13/2/13_2_map_13_2_route_9_cave_entrance.pms",
+				"MAP_ROUTE_9"
+			],
+			"3": [
+				"map_13_3_route_9_cave_inside",
+				"src/map/banks/13/3/13_3_map_13_3_route_9_cave_inside.pms",
+				"MAP_ROUTE_9"
+			],
+			"4": [
+				"map_route_9_vertical_clouds",
+				"src/map/banks/13/4/map_route_9_vertical_clouds.pms",
+				"MAP_ROUTE_9"
+			],
+			"5": [
+				"map_route_9_horizontal_clouds",
+				"src/map/banks/13/5/map_route_9_horizontal_clouds.pms",
+				"MAP_ROUTE_9"
+			]
+		},
+		"14": {
+			"0": [
+				"map_14_0_route_10_clouds",
+				"src/map/banks/14/0/map_14_0_route_10_clouds.pms",
+				"MAP_ROUTE_10"
+			]
+		},
+		"19": {
+			"0": [
+				"map_19_0_ceometria_pokestop",
+				"src/map/banks/19/0/map_19_0_ceometria_pokestop.pms",
+				"MAP_CEOMETRIA"
+			],
+			"1": [
+				"map_19_1_ceometria_indoor_0",
+				"src/map/banks/19/1/map_19_1_ceometria_indoor_0.pms",
+				"MAP_CEOMETRIA"
+			],
+			"2": [
+				"map_19_2_ceometria_indoor_1",
+				"src/map/banks/19/2/map_19_2_ceometria_indoor_1.pms",
+				"MAP_CEOMETRIA"
+			],
+			"3": [
+				"map_19_3_ceometria_indoor_2",
+				"src/map/banks/19/3/map_19_3_ceometria_indoor_2.pms",
+				"MAP_CEOMETRIA"
+			],
+			"4": [
+				"map_19_4_ceometria_indoor_3",
+				"src/map/banks/19/4/map_19_4_ceometria_indoor_3.pms",
+				"MAP_CEOMETRIA"
+			],
+			"5": [
+				"map_19_5_ceometria_gym_entrance",
+				"src/map/banks/19/5/map_19_5_ceometria_gym_waiting_room.pms",
+				"MAP_CEOMETRIA"
+			],
+			"6": [
+				"map_19_6_ceometria_waiting_room",
+				"src/map/banks/19/6/map_19_6_ceometria_waiting_room.pms",
+				"MAP_CEOMETRIA"
+			],
+			"7": [
+				"map_19_7_ceometria_gym_punishment_room",
+				"src/map/banks/19/7/map_19_7_ceometria_gym_punishment_room.pms",
+				"MAP_CEOMETRIA"
+			],
+			"8": [
+				"map_19_8_ceometria_gym_leader_room",
+				"src/map/banks/19/8/map_19_8_ceometria_gym_leader_room.pms",
+				"MAP_CEOMETRIA"
+			],
+			"9": [
+				"map_ceometria_clouds",
+				"src/map/banks/19/9/map_ceometria_clouds.pms",
+				"MAP_CEOMETRIA"
+			],
+			"10": [
+				"map_ceometria_gym_battle_field",
+				"src/map/banks/19/10/map_ceometria_gym_battle_field.pms",
+				"MAP_CEOMETRIA"
+			]
+		},
+		"20": {
+			"0": [
+				"map_20_0_forest_cemetery_teahs_house",
+				"src/map/banks/20/0/map_20_0_forest_cemetery_teahs_house.pms",
+				"MAP_WALDFRIEDHOF"
+			]
+		},
+		"21": {
+			"0": [
+				"map_vulcano_clouds",
+				"src/map/banks/21/0/map_vulcano_clouds.pms",
+				"MAP_VULCANO"
+			]
+		},
+		"22": {
+			"0": [
+				"map_felisge_oednis_clouds",
+				"src/map/banks/22/0/map_felisge_oednis_clouds.pms",
+				"MAP_FELSIGE_OEDNIS"
+			],
+			"1": [
+				"map_felsige_oednis_west_clouds",
+				"src/map/banks/22/1/map_felsige_oednis_west_clouds.pms",
+				"MAP_FELSIGE_OEDNIS"
+			]
+		},
+		"23": {
+			"0": [
+				"map_route_8_clouds",
+				"src/map/banks/23/0/map_route_8_clouds.pms",
+				"MAP_ROUTE_8"
+			]
+		},
+		"24": {
+			"0": [
+				"map_kuestenberg_clouds",
+				"src/map/banks/24/0/map_kuestenberg_clouds.pms",
+				"MAP_KUESTENBERG"
+			]
+		},
+		"25": {
+			"0": [
+				"map_route_11_clouds",
+				"src/map/banks/25/0/map_route_11_clouds.pms",
+				"MAP_ROUTE_11"
+			]
+		},
+		"26": {
+			"0": [
+				"map_route_12_east_clouds",
+				"src/map/banks/26/0/map_route_12_east_clouds.pms",
+				"MAP_ROUTE_12"
+			],
+			"1": [
+				"map_route_12_west_clouds",
+				"src/map/banks/26/1/map_route_12_west_clouds.pms",
+				"MAP_ROUTE_12"
+			]
+		},
+		"27": {
+			"0": [
+				"map_haweiland_clouds",
+				"src/map/banks/27/0/map_haweiland_clouds.pms",
+				"MAP_HAWEILAND"
+			],
+			"1": [
+				"map_haweiland_cloud_ruins",
+				"src/map/banks/27/1/map_haweiland_cloud_ruins.pms",
+				"MAP_HAWEILAND"
+			],
+			"2": [
+				"map_beach_house",
+				"src/map/banks/27/2/map_beach_house.pms",
+				"MAP_HAWEILAND"
+			],
+			"3": [
+				"map_haweiland_pokestop",
+				"src/map/banks/27/3/map_haweiland_pokestop.pms",
+				"MAP_HAWEILAND"
+			],
+			"4": [
+				"map_haweiland_indoor_0",
+				"src/map/banks/27/4/map_haweiland_indoor_0.pms",
+				"MAP_HAWEILAND"
+			],
+			"5": [
+				"map_haweiland_indoor_1",
+				"src/map/banks/27/5/map_haweiland_indoor_1.pms",
+				"MAP_HAWEILAND"
+			],
+			"6": [
+				"map_haweiland_indoor_2",
+				"src/map/banks/27/6/map_haweiland_indoor_2.pms",
+				"MAP_HAWEILAND"
+			],
+			"7": [
+				"map_haweiland_indoor_3",
+				"src/map/banks/27/7/map_haweiland_indoor_3.pms",
+				"MAP_HAWEILAND"
+			]
+		},
+		"28": {
+			"0": [
+				"map_antike_ruine_regirock",
+				"src/map/banks/28/map_antike_ruine_regirock.pms",
+				"MAP_ANTIKE_RUINE"
+			]
+		},
+		"29": {
+			"0": [
+				"map_haweiland_cargo_hall",
+				"src/map/banks/29/0/map_haweiland_cargo_hall.pms",
+				"MAP_HAWEILAND"
+			],
+			"1": [
+				"map_route_7_south",
+				"src/map/banks/29/1/map_route_7_south.pms",
+				"MAP_ROUTE_7"
+			],
+			"2": [
+				"map_route_7_castle",
+				"src/map/banks/29/2/map_route_7_castle.pms",
+				"MAP_ROUTE_7"
+			],
+			"3": [
+				"map_route_7_north",
+				"src/map/banks/29/3/map_route_7_north.pms",
+				"MAP_ROUTE_7"
+			],
+			"4": [
+				"map_route_7_secret_power_lab",
+				"src/map/banks/29/4/map_route_7_secret_power_lab.pms",
+				"MAP_ROUTE_7"
+			],
+			"5": [
+				"map_route_7_legendary_fishermans_house",
+				"src/map/banks/29/5/map_route_7_legendary_fishermans_house.pms",
+				"MAP_ROUTE_7"
+			],
+			"6": [
+				"map_route_7_clouds_castle",
+				"src/map/banks/29/6/map_route_7_clouds_castle.pms",
+				"MAP_ROUTE_7"
+			]
+		},
+		"30": {},
+		"31": {
+			"0": [
+				"map_ardeal_entrance",
+				"src/map/banks/31/0/map_ardeal_entrance.pms",
+				"MAP_ARDEAL"
+			],
+			"1": [
+				"map_ardeal_dining_room",
+				"src/map/banks/31/1/map_ardeal_dining_room.pms",
+				"MAP_ARDEAL"
+			],
+			"2": [
+				"map_ardeal_throne_room",
+				"src/map/banks/31/2/map_ardeal_throne_room.pms",
+				"MAP_ARDEAL"
+			],
+			"3": [
+				"map_ardeal_rooms",
+				"src/map/banks/31/3/map_ardeal_rooms.pms",
+				"MAP_ARDEAL"
+			],
+			"4": [
+				"map_ardeal_tower_entrance",
+				"src/map/banks/31/4/map_ardeal_tower_entrance.pms",
+				"MAP_ARDEAL"
+			],
+			"5": [
+				"map_ardeal_left_tower_0",
+				"src/map/banks/31/5/map_ardeal_left_tower_0.pms",
+				"MAP_ARDEAL"
+			],
+			"6": [
+				"map_ardeal_left_tower_1",
+				"src/map/banks/31/6/map_ardeal_left_tower_1.pms",
+				"MAP_ARDEAL"
+			],
+			"7": [
+				"map_ardeal_left_tower_2",
+				"src/map/banks/31/7/map_ardeal_left_tower_2.pms",
+				"MAP_ARDEAL"
+			],
+			"8": [
+				"map_ardeal_right_tower_0",
+				"src/map/banks/31/8/map_ardeal_right_tower_0.pms",
+				"MAP_ARDEAL"
+			],
+			"9": [
+				"map_ardeal_right_tower_1",
+				"src/map/banks/31/9/map_ardeal_right_tower_1.pms",
+				"MAP_ARDEAL"
+			],
+			"10": [
+				"map_ardeal_right_tower_2",
+				"src/map/banks/31/10/map_ardeal_right_tower_2.pms",
+				"MAP_ARDEAL"
+			],
+			"11": [
+				"map_ardeal_center_tower_0",
+				"src/map/banks/31/11/map_ardeal_center_tower_0.pms",
+				"MAP_ARDEAL"
+			],
+			"12": [
+				"map_ardeal_center_tower_1",
+				"src/map/banks/31/12/map_ardeal_center_tower_1.pms",
+				"MAP_ARDEAL"
+			],
+			"13": [
+				"map_ardeal_center_tower_2",
+				"src/map/banks/31/13/map_ardeal_center_tower_2.pms",
+				"MAP_ARDEAL"
+			],
+			"14": [
+				"map_ardeal_center_tower_3",
+				"src/map/banks/31/14/map_ardeal_center_tower_3.pms",
+				"MAP_ARDEAL"
+			],
+			"15": [
+				"map_ardeal_dungeon_entrance",
+				"src/map/banks/31/15/map_ardeal_dungeon_entrance.pms",
+				"MAP_ARDEAL"
+			],
+			"16": [
+				"map_ardeal_dungeon",
+				"src/map/banks/31/16/map_ardeal_dungeon.pms",
+				"MAP_ARDEAL"
+			],
+			"17": [
+				"map_ardeal_clouds",
+				"src/map/banks/31/17/map_ardeal_clouds.pms",
+				"MAP_ARDEAL"
+			]
+		},
+		"32": {
+			"0": [
+				"map_dunkler_turm_eg",
+				"src/map/banks/32/0/map_dunkler_turm_eg.pms",
+				"MAP_DUNKLER_TURM"
+			],
+			"1": [
+				"map_dark_tower_floor_1",
+				"src/map/banks/32/1/map_dark_tower_floor_1.pms",
+				"MAP_DUNKLER_TURM"
+			],
+			"2": [
+				"map_dark_tower_floor_2",
+				"src/map/banks/32/2/map_dark_tower_floor_2.pms",
+				"MAP_DUNKLER_TURM"
+			],
+			"3": [
+				"map_dark_tower_floor_3",
+				"src/map/banks/32/3/map_dark_tower_floor_3.pms",
+				"MAP_DUNKLER_TURM"
+			],
+			"4": [
+				"map_dark_tower_top",
+				"src/map/banks/32/4/map_dark_tower_top.pms",
+				"MAP_DUNKLER_TURM"
+			]
+		},
+		"33": {
+			"0": [
+				"map_blackbeard_ship_cells",
+				"src/map/banks/33/0/map_blackbeard_ship_cells.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"1": [
+				"map_blackbeard_ship_cells_floor",
+				"src/map/banks/33/1/map_blackbeard_ship_cells_floor.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"2": [
+				"map_blackbeard_ship_storage",
+				"src/map/banks/33/2/map_blackbeard_ship_storage.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"3": [
+				"map_blackbeard_ship_canon_room",
+				"src/map/banks/33/3/map_blackbeard_ship_canon_room.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"4": [
+				"map_blackbeard_ship_deck",
+				"src/map/banks/33/4/map_blackbeard_ship_deck.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"5": [
+				"map_blackbeard_ship_cabin",
+				"src/map/banks/33/5/map_blackbeard_ship_cabin.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"6": [
+				"map_blackbeard_ship_cabins",
+				"src/map/banks/33/6/map_blackbeard_ship_cabins.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"7": [
+				"map_blackbeard_ship_captain_room",
+				"src/map/banks/33/7/map_blackbeard_ship_captain_room.pms",
+				"MAP_SCHATTENFLUT"
+			],
+			"8": [
+				"map_blackbeard_ship_treasure_room",
+				"src/map/banks/33/8/map_blackbeard_ship_treasure_room.pms",
+				"MAP_SCHATTENFLUT"
+			]
+		}
+	},
+	"footers": {
+		"map_footer_395": [
+			395,
+			"src/map/banks/0/7/map_footer_395.pms"
+		],
+		"map_footer_472": [
+			472,
+			"src/map/banks/0/12/map_footer_472.pms"
+		],
+		"map_footer_391": [
+			391,
+			"src/map/banks/0/5/map_footer_391.pms"
+		],
+		"map_footer_392": [
+			392,
+			"src/map/banks/0/6/map_footer_392.pms"
+		],
+		"map_footer_473": [
+			473,
+			"src/map/banks/0/13/map_footer_473.pms"
+		],
+		"map_footer_117": [
+			117,
+			"src/map/banks/1/0/map_footer_117.pms"
+		],
+		"map_footer_154": [
+			154,
+			"src/map/banks/1/81/map_footer_154.pms"
+		],
+		"map_footer_155": [
+			155,
+			"src/map/banks/1/82/map_footer_155.pms"
+		],
+		"map_footer_470": [
+			470,
+			"src/map/banks/1/126/map_footer_470.pms"
+		],
+		"map_footer_143": [
+			143,
+			"src/map/banks/1/59/map_footer_143.pms"
+		],
+		"map_footer_468": [
+			468,
+			"src/map/banks/1/125/map_footer_468.pms"
+		],
+		"map_footer_172": [
+			172,
+			"src/map/banks/1/30/map_footer_172.pms"
+		],
+		"map_footer_174": [
+			174,
+			"src/map/banks/1/31/map_footer_174.pms"
+		],
+		"map_footer_78": [
+			78,
+			"src/map/banks/3/0/map_footer_78.pms"
+		],
+		"map_footer_79": [
+			79,
+			"src/map/banks/3/1/map_footer_79.pms"
+		],
+		"map_footer_80": [
+			80,
+			"src/map/banks/3/2/map_footer_80.pms"
+		],
+		"map_footer_386": [
+			386,
+			"src/map/banks/3/67/map_footer_386.pms"
+		],
+		"map_footer_82": [
+			82,
+			"src/map/banks/3/4/map_footer_82.pms"
+		],
+		"map_footer_83": [
+			83,
+			"src/map/banks/3/5/map_footer_83.pms"
+		],
+		"map_footer_84": [
+			84,
+			"src/map/banks/3/6/map_footer_84.pms"
+		],
+		"map_footer_442": [
+			442,
+			"src/map/banks/3/72/map_footer_442.pms"
+		],
+		"map_footer_444": [
+			444,
+			"src/map/banks/3/73/map_footer_444.pms"
+		],
+		"map_footer_447": [
+			447,
+			"src/map/banks/3/74/map_footer_447.pms"
+		],
+		"map_footer_448": [
+			448,
+			"src/map/banks/3/75/map_footer_448.pms"
+		],
+		"map_footer_459": [
+			459,
+			"src/map/banks/3/76/map_footer_459.pms"
+		],
+		"map_footer_384": [
+			384,
+			"src/map/banks/3/66/map_footer_384.pms"
+		],
+		"map_footer_81": [
+			81,
+			"src/map/banks/3/3/map_footer_81.pms"
+		],
+		"map_footer_91": [
+			91,
+			"src/map/banks/3/21/map_footer_91.pms"
+		],
+		"map_footer_92": [
+			92,
+			"src/map/banks/3/22/map_footer_92.pms"
+		],
+		"map_footer_93": [
+			93,
+			"src/map/banks/3/23/map_footer_93.pms"
+		],
+		"map_footer_94": [
+			94,
+			"src/map/banks/3/24/map_footer_94.pms"
+		],
+		"map_footer_440": [
+			440,
+			"src/map/banks/3/70/map_footer_440.pms"
+		],
+		"map_footer_110": [
+			110,
+			"src/map/banks/3/41/map_footer_110.pms"
+		],
+		"map_footer_89": [
+			89,
+			"src/map/banks/3/19/map_footer_89.pms"
+		],
+		"map_footer_249": [
+			249,
+			"src/map/banks/3/57/map_footer_249.pms"
+		],
+		"map_footer_5": [
+			5,
+			"src/map/banks/3/7/map_footer_5.pms"
+		],
+		"map_footer_1": [
+			1,
+			"src/map/banks/4/0/map_footer_1.pms"
+		],
+		"map_footer_2": [
+			2,
+			"src/map/banks/4/1/map_footer_2.pms"
+		],
+		"map_footer_3": [
+			3,
+			"src/map/banks/4/2/map_footer_3.pms"
+		],
+		"map_footer_456": [
+			456,
+			"src/map/banks/5/13/map_footer_456.pms"
+		],
+		"map_footer_181": [
+			181,
+			"src/map/banks/6/1/map_footer_181.pms"
+		],
+		"map_footer_28": [
+			28,
+			"src/map/banks/6/2/map_footer_28.pms"
+		],
+		"map_footer_393": [
+			393,
+			"src/map/banks/6/9/map_footer_393.pms"
+		],
+		"map_footer_445": [
+			445,
+			"src/map/banks/6/15/map_footer_445.pms"
+		],
+		"map_footer_182": [
+			182,
+			"src/map/banks/7/1/map_footer_182.pms"
+		],
+		"map_footer_12": [
+			12,
+			"src/map/banks/7/5/map_footer_12.pms"
+		],
+		"map_footer_394": [
+			394,
+			"src/map/banks/7/10/map_footer_394.pms"
+		],
+		"map_footer_453": [
+			453,
+			"src/map/banks/8/11/map_footer_453.pms"
+		],
+		"map_footer_273": [
+			273,
+			"src/map/banks/9/3/map_footer_273.pms"
+		],
+		"map_footer_460": [
+			460,
+			"src/map/banks/9/13/map_footer_460.pms"
+		],
+		"map_footer_461": [
+			461,
+			"src/map/banks/9/14/map_footer_461.pms"
+		],
+		"map_footer_462": [
+			462,
+			"src/map/banks/9/15/map_footer_462.pms"
+		],
+		"map_footer_463": [
+			463,
+			"src/map/banks/9/16/map_footer_463.pms"
+		],
+		"map_footer_464": [
+			464,
+			"src/map/banks/9/17/map_footer_464.pms"
+		],
+		"map_footer_14": [
+			14,
+			"src/map/banks/9/19/map_footer_14.pms"
+		],
+		"map_footer_15": [
+			15,
+			"src/map/banks/10/16/map_footer_15.pms"
+		],
+		"map_footer_221": [
+			221,
+			"src/map/banks/15/0/map_footer_221.pms"
+		],
+		"map_footer_7": [
+			7,
+			"src/map/banks/15/1/map_footer_7.pms"
+		],
+		"map_footer_429": [
+			429,
+			"src/map/banks/15/4/map_footer_429.pms"
+		],
+		"map_footer_443": [
+			443,
+			"src/map/banks/15/5/map_footer_443.pms"
+		],
+		"map_footer_454": [
+			454,
+			"src/map/banks/16/3/map_footer_454.pms"
+		],
+		"map_footer_455": [
+			455,
+			"src/map/banks/16/4/map_footer_455.pms"
+		],
+		"map_footer_13": [
+			13,
+			"src/map/banks/17/2/map_footer_13.pms"
+		],
+		"map_footer_458": [
+			458,
+			"src/map/banks/17/3/map_footer_458.pms"
+		],
+		"map_footer_466": [
+			466,
+			"src/map/banks/18/2/map_footer_466.pms"
+		],
+		"map_footer_467": [
+			467,
+			"src/map/banks/18/3/map_footer_467.pms"
+		],
+		"map_footer_363": [
+			363,
+			"src/map/banks/2/33/map_footer_363.pms"
+		],
+		"map_footer_4": [
+			4,
+			"src/map/banks/11/1_clock_master_path/map_footer_4.pms"
+		],
+		"map_footer_11": [
+			11,
+			"src/map/banks/11/2_route_2_east_clouds/map_footer_11.pms"
+		],
+		"map_footer_16_inferior_gym": [
+			16,
+			"src/map/banks/10/0/map_footer_16_inferior_gym.pms"
+		],
+		"map_footer_17_inferior_gym_arena": [
+			17,
+			"src/map/banks/10/1/map_footer_17_inferior_gym_arena.pms"
+		],
+		"map_footer_18_route_8": [
+			18,
+			"src/map/banks/3/8/map_footer_18_route_8.pms"
+		],
+		"map_footer_20_debug": [
+			20,
+			"src/map/banks/4/3/map_footer_20_debug.pms"
+		],
+		"map_footer_22_river_puzzle": [
+			22,
+			"src/map/banks/3/8/map_footer_22_river_puzzle.pms"
+		],
+		"map_footer_23_laubdorf": [
+			23,
+			"src/map/banks/3/9/map_footer_23_laubdorf.pms"
+		],
+		"map_footer_24_laubdorf_daycare": [
+			24,
+			"src/map/banks/12/1/map_footer_24_laubdorf_daycare.pms"
+		],
+		"map_footer_25_route_9": [
+			25,
+			"src/map/banks/3/10/map_3_10_route_9.pms"
+		],
+		"map_footer_26_route_9_horizontal": [
+			26,
+			"src/map/banks/13/0/map_footer_26_route_9_horizontal.pms"
+		],
+		"map_footer_27_route_9_cave_entrance": [
+			27,
+			"src/map/banks/13/2/map_footer_27_route_9_cave_entrance.pms"
+		],
+		"map_footer_29_route_9_cave_inside": [
+			29,
+			"src/map/banks/13/3/map_footer_29_route_9_cave_inside.pms"
+		],
+		"map_footer_30_route_10": [
+			30,
+			"src/map/banks/3/11/map_footer_30_route_10.pms"
+		],
+		"map_footer_31_route_10_clouds": [
+			31,
+			"src/map/banks/14/0/map_footer_31_route_10_clouds.pms"
+		],
+		"map_footer_32_route_11": [
+			32,
+			"src/map/banks/3/12/map_footer_32_route_11.pms"
+		],
+		"map_footer_33_ceometria": [
+			33,
+			"src/map/banks/3/13/map_footer_33_ceometria.pms"
+		],
+		"map_footer_276_indoor_layout_0": [
+			276,
+			"src/map/banks/5/0/map_footer_276.pms"
+		],
+		"map_footer_266_indoor_layout_two_levels_0": [
+			266,
+			"src/map/banks/5/2/map_footer_266.pms"
+		],
+		"map_footer_433_indoor_layout_1": [
+			433,
+			"src/map/banks/5/11/map_footer_433.pms"
+		],
+		"map_footer_434_indoor_layout_2": [
+			434,
+			"src/map/banks/5/12/map_footer_434.pms"
+		],
+		"map_footer_432_indoor_layout_3": [
+			432,
+			"src/map/banks/4/4/map_footer_432.pms"
+		],
+		"map_footer_180_indoor_layout_4": [
+			180,
+			"src/map/banks/6/0/map_footer_180.pms"
+		],
+		"map_footer_10_indoor_layout_5": [
+			10,
+			"src/map/banks/6/3/map_footer_10.pms"
+		],
+		"map_footer_indoor_layout_6": [
+			19,
+			"src/map/banks/6/4/map_footer_19_aktania_gengar_house.pms"
+		],
+		"map_footer_437_indoor_layout_7": [
+			437,
+			"src/map/banks/6/13/map_footer_437.pms"
+		],
+		"map_footer_439_indoor_layout_8": [
+			439,
+			"src/map/banks/6/14/map_footer_439.pms"
+		],
+		"map_footer_6_indoor_layout_9": [
+			6,
+			"src/map/banks/7/8/map_footer_6.pms"
+		],
+		"map_footer_8_pokestop": [
+			8,
+			"src/map/banks/10/12/map_footer_8.pms"
+		],
+		"map_footer_21_indoor_layout_10": [
+			21,
+			"src/map/banks/8/4/map_footer_21.pms"
+		],
+		"map_footer_396_indoor_layout_11": [
+			396,
+			"src/map/banks/8/6/map_footer_396.pms"
+		],
+		"map_footer_397_indoor_layout_12": [
+			397,
+			"src/map/banks/8/7/map_footer_397.pms"
+		],
+		"map_footer_398_indoor_layout_13": [
+			398,
+			"src/map/banks/8/8/map_footer_398.pms"
+		],
+		"map_footer_451_indoor_layout_14": [
+			451,
+			"src/map/banks/8/9/map_footer_451.pms"
+		],
+		"map_footer_452_indoor_layout_15": [
+			452,
+			"src/map/banks/8/10/map_footer_452.pms"
+		],
+		"map_footer_411_indoor_layout_two_levels_1": [
+			411,
+			"src/map/banks/9/9/map_footer_411.pms"
+		],
+		"map_footer_412_indoor_layout_two_levels_2": [
+			412,
+			"src/map/banks/9/10/map_footer_412.pms"
+		],
+		"map_footer_413_indoor_layout_two_levels_3": [
+			413,
+			"src/map/banks/9/11/map_footer_413.pms"
+		],
+		"map_footer_414_indoor_layout_two_levels_4": [
+			414,
+			"src/map/banks/9/12/map_footer_414.pms"
+		],
+		"map_footer_465_indoor_layout_two_levels_5": [
+			465,
+			"src/map/banks/9/18/map_footer_465.pms"
+		],
+		"map_footer_418_indoor_layout_16": [
+			418,
+			"src/map/banks/10/20/map_footer_418.pms"
+		],
+		"map_footer_469_indoor_layout_17": [
+			469,
+			"src/map/banks/10/22/map_footer_469.pms"
+		],
+		"map_footer_9_indoor_layout_18": [
+			9,
+			"src/map/banks/11/0_clock_master_house/map_footer_9.pms"
+		],
+		"map_footer_34_forest_cemetery": [
+			34,
+			"src/map/banks/3/14/map_footer_34_forest_cemetery.pms"
+		],
+		"map_footer_36_ceometria_gym_punishment_room": [
+			36,
+			"src/map/banks/19/7/map_footer_36_ceometria_gym_punishment_room.pms"
+		],
+		"map_footer_35_ceometria_gym_entrance": [
+			35,
+			"src/map/banks/19/5/map_footer_35_ceometria_gym_waiting_room.pms"
+		],
+		"map_footer_37_ceometria_gym_leader_room": [
+			37,
+			"src/map/banks/19/8/map_footer_34_ceometria_gym_leader_room.pms"
+		],
+		"map_footer_38_ceometria_gym_waiting_room": [
+			38,
+			"src/map/banks/19/6/map_footer_38_ceometria_gym_waiting_room.pms"
+		],
+		"map_footer_39_route_12": [
+			39,
+			"src/map/banks/3/15/map_footer_39_route_12.pms"
+		],
+		"map_footer_40_route_12_west": [
+			40,
+			"src/map/banks/3/16/map_footer_40_route_12_west.pms"
+		],
+		"map_footer_41_haweiland": [
+			41,
+			"src/map/banks/3/17/map_footer_41_haweiland.pms"
+		],
+		"map_footer_route_2_clouds_north": [
+			42,
+			"src/map/banks/11/3_route_2_north_clouds/map_footer_route_2_clouds_north.pms"
+		],
+		"map_footer_orina_city_clouds": [
+			43,
+			"src/map/banks/9/0/map_footer_orina_city_clouds.pms"
+		],
+		"map_footer_route_6_clouds": [
+			44,
+			"src/map/banks/18/0/map_footer_route_6_clouds.pms"
+		],
+		"map_footer_inferior_clouds": [
+			45,
+			"src/map/banks/10/2/map_footer_inferior_clouds.pms"
+		],
+		"map_footer_vulcano_clouds": [
+			46,
+			"src/map/banks/21/0/map_footer_vulcano_clouds.pms"
+		],
+		"map_footer_meriana_city_clouds": [
+			47,
+			"src/map/banks/5/1/map_footer_meriana_city_clouds.pms"
+		],
+		"map_footer_amonia_clouds": [
+			48,
+			"src/map/banks/4/5/map_footer_amonia_clouds.pms"
+		],
+		"map_footer_route_4_clouds": [
+			49,
+			"src/map/banks/16/0/map_footer_route_4_clouds.pms"
+		],
+		"map_footer_kaskada_clouds": [
+			50,
+			"src/map/banks/8/1/map_footer_kaskada_clouds.pms"
+		],
+		"map_footer_felsige_oednis_clouds": [
+			51,
+			"src/map/banks/22/0/map_footer_felsige_oednis_clouds.pms"
+		],
+		"map_footer_silvania_clouds": [
+			52,
+			"src/map/banks/7/0/map_footer_silvania_clouds.pms"
+		],
+		"map_footer_route_3_clouds": [
+			54,
+			"src/map/banks/15/2/map_footer_route_3_clouds.pms"
+		],
+		"map_footer_silvania_wald_flashback": [
+			53,
+			"src/map/banks/1/1/map_footer_silvania_wald_clouds.pms"
+		],
+		"map_footer_silvania_wald_clouds": [
+			55,
+			"src/map/banks/1/2/map_footer_silvania_wald_clouds.pms"
+		],
+		"map_footer_route_8_clouds": [
+			56,
+			"src/map/banks/23/0/map_footer_route_8_clouds.pms"
+		],
+		"map_footer_laubdorf_clouds": [
+			57,
+			"src/map/banks/12/5/map_footer_laubdorf_clouds.pms"
+		],
+		"map_footer_route_9_vertical_clouds": [
+			58,
+			"src/map/banks/13/4/map_footer_route_9_vertical_clouds.pms"
+		],
+		"map_footer_route_9_horizontal_clouds": [
+			59,
+			"src/map/banks/13/5/map_footer_route_9_horizontal_clouds.pms"
+		],
+		"map_footer_aktania_clouds": [
+			60,
+			"src/map/banks/6/6/map_footer_aktania_clouds.pms"
+		],
+		"map_footer_kuestenberg_clouds": [
+			61,
+			"src/map/banks/24/0/map_footer_kuestenberg_clouds.pms"
+		],
+		"map_footer_route_11_clouds": [
+			62,
+			"src/map/banks/25/0/map_footer_route_11_clouds.pms"
+		],
+		"map_footer_ceometria_clouds": [
+			63,
+			"src/map/banks/19/9/map_footer_ceometria_clouds.pms"
+		],
+		"map_footer_route_12_east_clouds": [
+			64,
+			"src/map/banks/26/0/map_footer_route_12_east_clouds.pms"
+		],
+		"map_footer_route_12_west_clouds": [
+			65,
+			"src/map/banks/26/1/map_footer_route_12_west_clouds.pms"
+		],
+		"map_footer_haweiland_clouds": [
+			66,
+			"src/map/banks/27/0/map_footer_haweiland_clouds.pms"
+		],
+		"map_footer_felsige_oednis_west_clouds": [
+			67,
+			"src/map/banks/22/1/map_footer_felsige_oednis_west_clouds.pms"
+		],
+		"map_footer_route_2_cloud_ruins": [
+			68,
+			"src/map/banks/11/4/map_footer_route_2_cloud_ruins.pms"
+		],
+		"map_aktania_cloud_ruins_footer": [
+			69,
+			"src/map/banks/6/7/map_aktania_cloud_ruins_footer.pms"
+		],
+		"map_kaskada_cloud_ruins_footer": [
+			70,
+			"src/map/banks/8/2/map_kaskada_cloud_ruins_footer.pms"
+		],
+		"map_orina_city_cloud_ruins_footer": [
+			71,
+			"src/map/banks/9/4/map_orina_city_cloud_ruins_footer.pms"
+		],
+		"map_footer_laubdorf_cloud_ruins": [
+			72,
+			"src/map/banks/12/7/map_footer_laubdorf_cloud_ruins.pms"
+		],
+		"map_footer_haweiland_cloud_ruins": [
+			73,
+			"src/map/banks/27/1/map_footer_haweiland_cloud_ruins.pms"
+		],
+		"map_footer_antike_ruinen_regirock": [
+			74,
+			"src/map/banks/28/map_footer_antike_ruinen_regirock.pms"
+		],
+		"map_footer_haweiland_cargo_hall": [
+			75,
+			"src/map/banks/29/map_footer_haweiland_cargo_hall.pms"
+		],
+		"map_footer_beach_house": [
+			76,
+			"src/map/banks/27/2/map_footer_beach_house.pms"
+		],
+		"map_footer_ceometria_gym_battle_field": [
+			77,
+			"src/map/banks/19/10/map_footer_ceometria_gym_battle_field.pms"
+		],
+		"map_footer_route_7": [
+			85,
+			"src/map/banks/3/18/map_footer_route_7.pms"
+		],
+		"map_footer_route_7_south": [
+			86,
+			"src/map/banks/29/1/map_footer_route_7_south.pms"
+		],
+		"map_footer_route_7_castle": [
+			87,
+			"src/map/banks/29/2/map_footer_route_7_castle.pms"
+		],
+		"map_footer_route_7_north": [
+			88,
+			"src/map/banks/29/3/map_footer_route_7_north.pms"
+		],
+		"map_footer_route_7_secret_power_lab": [
+			90,
+			"src/map/banks/29/4/map_footer_route_7_secret_power_lab.pms"
+		],
+		"map_footer_ardeal_entrance": [
+			95,
+			"src/map/banks/31/0/map_footer_ardeal_entrance.pms"
+		],
+		"map_footer_ardeal_dining_room": [
+			96,
+			"src/map/banks/31/1/map_footer_ardeal_dining_room.pms"
+		],
+		"map_footer_ardeal_throne_room": [
+			97,
+			"src/map/banks/31/2/map_footer_ardeal_throne_room.pms"
+		],
+		"map_footer_ardeal_rooms": [
+			98,
+			"src/map/banks/31/3/map_footer_ardeal_footer.pms"
+		],
+		"map_footer_ardeal_tower_entrance": [
+			99,
+			"src/map/banks/31/4/map_footer_ardeal_tower_entrance.pms"
+		],
+		"map_footer_ardeal_tower": [
+			100,
+			"src/map/banks/31/5/map_footer_ardeal_tower.pms"
+		],
+		"map_footer_ardeal_dungeon": [
+			101,
+			"src/map/banks/31/16/map_footer_ardeal_dungeon.pms"
+		],
+		"map_footer_route_7_cloud_castle": [
+			102,
+			"src/map/banks/29/6/map_footer_route_7_cloud_castle.pms"
+		],
+		"map_footer_ardeal_clouds": [
+			103,
+			"src/map/banks/31/17/map_footer_ardeal_clouds.pms"
+		],
+		"map_footer_dark_tower_eg": [
+			104,
+			"src/map/banks/32/map_footer_dark_tower_eg.pms"
+		],
+		"map_footer_dark_tower_floor_1": [
+			105,
+			"src/map/banks/32/1/map_dunkler_turm_floor_1.pms"
+		],
+		"map_footer_dark_tower_floor_2": [
+			106,
+			"src/map/banks/32/2/map_footer_dark_tower_floor_2.pms"
+		],
+		"map_footer_dark_tower_floor_3": [
+			107,
+			"src/map/banks/32/3/map_footer_dark_tower_floor_3.pms"
+		],
+		"mao_footer_dark_tower_top": [
+			108,
+			"src/map/banks/32/4/mao_footer_dark_tower_top.pms"
+		],
+		"map_footer_blackbeard_ship_cells": [
+			109,
+			"src/map/banks/33/map_footer_blackbeard_ship_cells.pms"
+		],
+		"map_footer_blackbeard_ship_cells_floor": [
+			111,
+			"src/map/banks/33/1/map_footer_blackbeard_ship_cells_floor.pms"
+		],
+		"map_footer_blackbeard_ship_storage": [
+			112,
+			"src/map/banks/33/2/map_footer_blackbeard_ship_storage.pms"
+		],
+		"map_footer_blackbeard_ship_canon_room": [
+			113,
+			"src/map/banks/33/3/map_footer_blackbeard_ship_canon_room.pms"
+		],
+		"map_footer_blackbeard_ship_deck": [
+			114,
+			"src/map/banks/33/4/map_footer_blackbeard_ship_deck.pms"
+		],
+		"map_footer_blackbeard_ship_cabin": [
+			115,
+			"src/map/banks/33/5/map_footer_blackbeard_ship_cabin.pms"
+		],
+		"map_footer_blackbeard_ship_cabins": [
+			116,
+			"src/map/banks/33/6/map_footer_blackbeard_ship_cabins.pms"
+		],
+		"map_footer_blackbeard_ship_captain_room": [
+			118,
+			"src/map/banks/33/7/map_footer_blackbeard_ship_captain_room.pms"
+		],
+		"map_footer_blackbeard_ship_treasure_room": [
+			119,
+			"src/map/banks/33/8/map_footer_blackbeard_ship_treasure_room.pms"
+		],
+		"map_footer_route_2_cave2": [
+			120,
+			"src/map/banks/11/5/map_footer_route_2_cave2.pms"
+		],
+		"map_footer_route_2_cave_connection": [
+			121,
+			"src/map/banks/11/6/map_footer_route_2_cave_connection.pms"
+		],
+		"map_footer_bruchfels_gym_room_1": [
+			122,
+			"src/map/banks/6/8/map_footer_bruchfels_gym_room_1.pms"
+		],
+		"map_footer_bruchfels_gym_leader_room": [
+			123,
+			"src/map/banks/6/10/map_footer_bruchfels_gym_leader_room.pms"
+		],
+		"map_footer_bruchfels_grave": [
+			124,
+			"src/map/banks/6/11/map_footer_bruchfels_grave.pms"
+		]
+	},
+	"tilesets_primary": {
+		"maptileset0": "src/map/tileset/maptileset0.pms",
+		"maptileset12": "src/map/tileset/maptileset12.pms",
+		"maptileset_ceometria_additional_blocks": "src/map/tileset/maptileset_ceometria_additional_blocks.pms",
+		"maptileset_clouds": "src/map/tileset/maptileset_clouds.pms",
+		"maptileset_cave": "src/map/tileset/maptileset_cave.pms",
+		"maptileset0_aktania": "src/map/tileset/maptileset0_aktania.pms"
+	},
+	"tilesets_secondary": {
+		"maptileset45": "src/map/tileset/maptileset45.pms",
+		"maptileset4": "src/map/tileset/maptileset4.pms",
+		"maptileset13": "src/map/tileset/maptileset13.pms",
+		"maptileset235200": "src/map/tileset/maptileset235200.pms",
+		"maptileset241959": "src/map/tileset/maptileset241959.pms",
+		"maptileset294571": "src/map/tileset/maptileset294571.pms",
+		"maptileset14": "src/map/tileset/maptileset14.pms",
+		"maptileset252576": "src/map/tileset/maptileset252576.pms",
+		"maptileset258462": "src/map/tileset/maptileset258462.pms",
+		"maptileset291108": "src/map/tileset/maptileset291108.pms",
+		"maptileset1": "src/map/tileset/maptileset1.pms",
+		"maptileset26": "src/map/tileset/maptileset26.pms",
+		"maptileset245157": "src/map/tileset/maptileset245157.pms",
+		"maptileset16": "src/map/tileset/maptileset16.pms",
+		"maptileset282712": "src/map/tileset/maptileset282712.pms",
+		"maptileset278730": "src/map/tileset/maptileset278730.pms",
+		"maptileset29": "src/map/tileset/maptileset29.pms",
+		"maptileset278413": "src/map/tileset/maptileset278413.pms",
+		"maptileset6": "src/map/tileset/maptileset6.pms",
+		"maptileset19": "src/map/tileset/maptileset19.pms",
+		"maptileset249598": "src/map/tileset/maptileset249598.pms",
+		"maptileset302795": "src/map/tileset/maptileset302795.pms",
+		"maptileset251828": "src/map/tileset/maptileset251828.pms",
+		"maptileset242637": "src/map/tileset/maptileset242637.pms",
+		"maptileset17": "src/map/tileset/maptileset17.pms",
+		"maptileset3": "src/map/tileset/maptileset3.pms",
+		"maptileset2": "src/map/tileset/maptileset2.pms",
+		"maptileset60": "src/map/tileset/maptileset60.pms",
+		"maptileset_inferior_gym": "src/map/tileset/maptileset_inferior_gym.pms",
+		"maptileset_laubdorf": "src/map/tileset/maptileset_laubdorf.pms",
+		"maptileset_ceometria": "src/map/tileset/maptileset_ceometria.pms",
+		"maptileset_ceometria_gym": "src/map/tileset/maptileset_ceometria_gym.pms",
+		"maptileset_haweiland": "src/map/tileset/gfx_maptileset_haweiland.pms",
+		"maptileset_cloud_ruins": "src/map/tileset/maptileset_cloud_ruins.pms",
+		"maptileset_cloud_ruins_inside": "src/map/tileset/maptileset_cloud_ruins_inside.pms",
+		"maptileset_haweiland_cargo_hall": "src/map/tileset/maptileset_haweiland_cargo_hall.pms",
+		"maptileset_beach_house": "src/map/tileset/maptileset_beach_house.pms",
+		"maptileset_route_7": "src/map/tileset/maptileset_route_7.pms",
+		"maptileset_ardeal": "src/map/tileset/maptileset_ardeal.pms",
+		"maptileset_cloud_ardeal": "src/map/tileset/maptileset_cloud_ardeal.pms",
+		"maptileset_cloud_dark_tower": "src/map/tileset/maptileset_cloud_dark_tower.pms",
+		"maptileset_dunkler_turm": "src/map/tileset/maptileset_dunkler_turm.pms",
+		"maptileset_blackbeard_ship": "src/map/tileset/maptileset_blackbeard_ship.pms",
+		"maptileset_trainerschool": "src/map/tileset/maptileset_trainerschool.pms",
+		"maptileset_meriana_city": "src/map/tileset/maptileset_meriana_city.pms",
+		"maptileset_cave_old": "src/map/tileset/maptileset15.pms",
+		"maptileset_bruchfels": "src/map/tileset/maptileset_bruchfels.pms",
+		"maptileset_bruchfels_crypt": "src/map/tileset/maptileset_bruchfels_crypt.pms",
+		"maptileset_bruchfels_past": "src/map/tileset/maptileset_bruchfels_past.pms"
+	},
+	"gfxs_primary": {
+		"gfx_maptileset12Tiles": "asset/gfx/tileset/gfx_maptileset12.png",
+		"gfx_maptileset0Tiles": "asset/gfx/tileset/gfx_maptileset0.png",
+		"gfx_maptileset_cloudsTiles": "asset/gfx/tileset/gfx_maptileset_clouds.png",
+		"gfx_maptileset_caveTiles": "asset/gfx/tileset/gfx_maptileset_cave.png"
+	},
+	"gfxs_secondary": {
+		"gfx_maptileset302795Tiles": "asset/gfx/tileset/gfx_maptileset302795.png",
+		"gfx_maptileset45Tiles": "asset/gfx/tileset/gfx_maptileset45.png",
+		"gfx_maptileset245157Tiles": "asset/gfx/tileset/gfx_maptileset245157.png",
+		"gfx_maptileset19Tiles": "asset/gfx/tileset/gfx_maptileset19.png",
+		"gfx_maptileset16Tiles": "asset/gfx/tileset/gfx_maptileset16.png",
+		"gfx_maptileset242637Tiles": "asset/gfx/tileset/gfx_maptileset242637.png",
+		"gfx_maptileset241959Tiles": "asset/gfx/tileset/gfx_maptileset241959.png",
+		"gfx_maptileset29Tiles": "asset/gfx/tileset/gfx_maptileset29.png",
+		"gfx_maptileset282712Tiles": "asset/gfx/tileset/gfx_maptileset282712.png",
+		"gfx_maptileset15Tiles": "asset/gfx/tileset/gfx_maptileset15.png",
+		"gfx_maptileset251828Tiles": "asset/gfx/tileset/gfx_maptileset251828.png",
+		"gfx_maptileset3Tiles": "asset/gfx/tileset/gfx_maptileset3.png",
+		"gfx_maptileset258462Tiles": "asset/gfx/tileset/gfx_maptileset258462.png",
+		"gfx_maptileset294571Tiles": "asset/gfx/tileset/gfx_maptileset294571.png",
+		"gfx_maptileset249598Tiles": "asset/gfx/tileset/gfx_maptileset249598.png",
+		"gfx_maptileset235200Tiles": "asset/gfx/tileset/gfx_maptileset235200.png",
+		"gfx_maptileset278413Tiles": "asset/gfx/tileset/gfx_maptileset278413.png",
+		"gfx_maptileset14Tiles": "asset/gfx/tileset/gfx_maptileset14.png",
+		"gfx_maptileset4Tiles": "asset/gfx/tileset/gfx_maptileset4.png",
+		"gfx_maptileset17Tiles": "asset/gfx/tileset/gfx_maptileset17.png",
+		"gfx_maptileset6Tiles": "asset/gfx/tileset/gfx_maptileset6.png",
+		"gfx_maptileset278730Tiles": "asset/gfx/tileset/gfx_maptileset278730.png",
+		"gfx_maptileset1Tiles": "asset/gfx/tileset/gfx_maptileset1.png",
+		"gfx_maptileset252576Tiles": "asset/gfx/tileset/gfx_maptileset252576.png",
+		"gfx_maptileset2Tiles": "asset/gfx/tileset/gfx_maptileset2.png",
+		"gfx_maptileset291108Tiles": "asset/gfx/tileset/gfx_maptileset291108.png",
+		"gfx_maptileset26Tiles": "asset/gfx/tileset/gfx_maptileset26.png",
+		"gfx_maptileset13Tiles": "asset/gfx/tileset/gfx_maptileset13.png",
+		"gfx_maptileset60Tiles": "asset/gfx/tileset/gfx_maptileset60.png",
+		"gfx_maptileset_inferior_gymTiles": "asset/gfx/tileset/gfx_maptileset_inferior_gym.png",
+		"gfx_maptileset_laubdorfTiles": "asset/gfx/tileset/gfx_maptileset_laubdorf.png",
+		"gfx_maptileset_ceometriaTiles": "asset/gfx/tileset/gfx_maptileset_ceometria.png",
+		"gfx_maptileset_ceometria_gymTiles": "asset/gfx/tileset/gfx_maptileset_ceometria_gym.png",
+		"gfx_maptileset_haweilandTiles": "asset/gfx/tileset/gfx_maptileset_haweiland.png",
+		"gfx_maptileset_cloud_ruinsTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins.png",
+		"gfx_maptileset_cloud_ruins_insideTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ruins_inside.png",
+		"gfx_maptileset_haweiland_cargo_hallTiles": "asset/gfx/tileset/gfx_maptileset_haweiland_cargo_hall.png",
+		"gfx_maptileset_beach_houseTiles": "asset/gfx/tileset/gfx_maptileset_beach_house.png",
+		"gfx_maptileset_route_7Tiles": "asset/gfx/tileset/gfx_maptileset_route_7.png",
+		"gfx_maptileset_ardealTiles": "asset/gfx/tileset/gfx_maptileset_ardeal.png",
+		"gfx_maptileset_cloud_ardealTiles": "asset/gfx/tileset/gfx_maptileset_cloud_ardeal.png",
+		"gfx_maptileset_cloud_dark_towerTiles": "asset/gfx/tileset/gfx_maptileset_cloud_dark_tower.png",
+		"gfx_maptileset_dunkler_turmTiles": "asset/gfx/tileset/gfx_maptileset_dunkler_turm.png",
+		"gfx_maptileset_blackbeard_shipTiles": "asset/gfx/tileset/gfx_maptileset_blackbeard_ship.png",
+		"gfx_maptileset_trainerschoolTiles": "asset/gfx/tileset/gfx_maptileset_trainerschool.png",
+		"gfx_maptileset_meriana_cityTiles": "asset/gfx/tileset/gfx_maptileset_meriana_city.png",
+		"gfx_maptileset_bruchfels_cryptTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_crypt.png",
+		"gfx_maptileset_bruchfels_pastTiles": "asset/gfx/tileset/gfx_maptileset_bruchfels_past.png"
+	}
+}

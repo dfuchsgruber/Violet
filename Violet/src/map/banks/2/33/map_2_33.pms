@@ -1,0 +1,103 @@
+{
+	"data": {
+		"footer": "map_footer_363",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 1,
+			"trigger_cnt": 0,
+			"signpost_cnt": 0,
+			"persons": [
+				{
+					"target_index": 1,
+					"picture": 173,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 3,
+					"y": 3,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 2,
+					"picture": 168,
+					"field_2": 0,
+					"field_3": 0,
+					"x": 4,
+					"y": 6,
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"is_trainer": "0",
+					"alert_radius": 0,
+					"script": "0",
+					"flag": "0x0",
+					"field_D": 0,
+					"field_B": 0,
+					"script_std": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": 3,
+					"y": 6,
+					"level": 0,
+					"target_bank": 0,
+					"target_map": 0,
+					"target_warp_idx": 0
+				}
+			],
+			"triggers": [],
+			"signposts": []
+		},
+		"levelscripts": "lscr_0x71cbcc",
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_PUNKTLOCH_AND_TANIBOSCHLUSSEL_AND_ICOGNITO_KAMMERN",
+		"footer_idx": 363,
+		"namespace": "MAP_ARC_SCRIM",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_STATIC_FOG",
+		"type": "MAP_TYPE_INSIDE",
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"bike_usable": 0,
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "mapheader_2_33",
+	"type": "header"
+}

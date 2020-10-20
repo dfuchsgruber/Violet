@@ -1,0 +1,363 @@
+{
+	"data": {
+		"width": 8,
+		"height": 10,
+		"border_width": 1,
+		"border_height": 1,
+		"border": [
+			[
+				{
+					"block_idx": 8,
+					"level": 0
+				}
+			]
+		],
+		"blocks": [
+			[
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				},
+				{
+					"block_idx": 644,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 712,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 670,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				},
+				{
+					"block_idx": 712,
+					"level": 1
+				},
+				{
+					"block_idx": 652,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 764,
+					"level": 1
+				},
+				{
+					"block_idx": 767,
+					"level": 1
+				},
+				{
+					"block_idx": 660,
+					"level": 1
+				},
+				{
+					"block_idx": 678,
+					"level": 1
+				},
+				{
+					"block_idx": 660,
+					"level": 1
+				},
+				{
+					"block_idx": 688,
+					"level": 1
+				},
+				{
+					"block_idx": 689,
+					"level": 1
+				},
+				{
+					"block_idx": 690,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 667,
+					"level": 1
+				},
+				{
+					"block_idx": 731,
+					"level": 12
+				},
+				{
+					"block_idx": 757,
+					"level": 12
+				},
+				{
+					"block_idx": 648,
+					"level": 12
+				},
+				{
+					"block_idx": 759,
+					"level": 1
+				},
+				{
+					"block_idx": 696,
+					"level": 1
+				},
+				{
+					"block_idx": 697,
+					"level": 1
+				},
+				{
+					"block_idx": 698,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 675,
+					"level": 1
+				},
+				{
+					"block_idx": 685,
+					"level": 12
+				},
+				{
+					"block_idx": 801,
+					"level": 12
+				},
+				{
+					"block_idx": 687,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 728,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 667,
+					"level": 1
+				},
+				{
+					"block_idx": 792,
+					"level": 1
+				},
+				{
+					"block_idx": 1001,
+					"level": 1
+				},
+				{
+					"block_idx": 1008,
+					"level": 1
+				},
+				{
+					"block_idx": 765,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 658,
+					"level": 1
+				},
+				{
+					"block_idx": 693,
+					"level": 1
+				},
+				{
+					"block_idx": 694,
+					"level": 1
+				},
+				{
+					"block_idx": 695,
+					"level": 1
+				},
+				{
+					"block_idx": 765,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 1009,
+					"level": 12
+				}
+			],
+			[
+				{
+					"block_idx": 648,
+					"level": 12
+				},
+				{
+					"block_idx": 648,
+					"level": 12
+				},
+				{
+					"block_idx": 648,
+					"level": 12
+				},
+				{
+					"block_idx": 648,
+					"level": 12
+				},
+				{
+					"block_idx": 773,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 1009,
+					"level": 12
+				},
+				{
+					"block_idx": 1006,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 691,
+					"level": 12
+				},
+				{
+					"block_idx": 692,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 1017,
+					"level": 1
+				},
+				{
+					"block_idx": 675,
+					"level": 1
+				}
+			],
+			[
+				{
+					"block_idx": 699,
+					"level": 1
+				},
+				{
+					"block_idx": 700,
+					"level": 1
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 707,
+					"level": 12
+				},
+				{
+					"block_idx": 708,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 641,
+					"level": 12
+				},
+				{
+					"block_idx": 657,
+					"level": 1
+				}
+			]
+		],
+		"tileset_primary": "maptileset12",
+		"tileset_secondary": "maptileset_blackbeard_ship",
+		"field_1A": 0
+	},
+	"label": "map_footer_blackbeard_ship_captain_room",
+	"type": "footer"
+}

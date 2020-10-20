@@ -1,0 +1,8 @@
+{
+    "type": "enum",
+    "base": 0,
+    "values": [
+        "MUGSHOT_LEFT",
+        "MUGSHOT_RIGHT"
+    ]
+}

@@ -1,0 +1,75 @@
+{
+	"data": {
+		"footer": "map_footer_route_2_cloud_ruins",
+		"events": {
+			"person_cnt": 0,
+			"warp_cnt": 2,
+			"trigger_cnt": 0,
+			"signpost_cnt": 1,
+			"persons": [],
+			"warps": [
+				{
+					"x": "9",
+					"y": "16",
+					"level": 0,
+					"target_warp_idx": "8",
+					"target_map": "2",
+					"target_bank": "11"
+				},
+				{
+					"x": "10",
+					"y": "16",
+					"level": 0,
+					"target_warp_idx": "9",
+					"target_map": "2",
+					"target_bank": "11"
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": "15",
+					"y": "14",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_route_2_ruins_sign"
+					},
+					"flag": "0"
+				}
+			]
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_GLYPHS",
+		"footer_idx": 68,
+		"namespace": "MAP_ROUTE_2",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_BASEMENT",
+		"bike_usable": "0",
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_route_2_cloud_ruins",
+	"type": "header"
+}

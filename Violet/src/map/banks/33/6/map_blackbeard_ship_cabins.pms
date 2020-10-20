@@ -1,0 +1,996 @@
+{
+	"data": {
+		"footer": "map_footer_blackbeard_ship_cabins",
+		"events": {
+			"person_cnt": 17,
+			"warp_cnt": 22,
+			"trigger_cnt": 0,
+			"signpost_cnt": 23,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "40",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": 0,
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "43",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person2",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "3",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "39",
+					"y": "18",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "4",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "7",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "ow_script_blackbeard_ship_cells_trainer0",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "5",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "18",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person4",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "6",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "19",
+					"y": "22",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_UP",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person3",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "7",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "15",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person5",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "8",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "1",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_DOWN_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person6",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "9",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "14",
+					"y": "5",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WANDER_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_person7",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "10",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "4",
+					"script": "ow_script_blackbeard_ship_cells_trainer3",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "11",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "0",
+					"y": "7",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "5",
+					"script": "ow_script_blackbeard_ship_cells_trainer2",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "12",
+					"picture": "153",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "28",
+					"y": "17",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": "ow_script_blackbeard_ship_cells_trainer1",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "13",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "14",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_BBSHIP_ITEM_5",
+					"value": {
+						"item": "ITEM_NETZBALL",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "14",
+					"picture": "92",
+					"script_std": "PERSON_ITEM",
+					"field_3": 0,
+					"x": "0",
+					"y": "20",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": "FLAG_BBSHIP_ITEM_6",
+					"value": {
+						"item": "ITEM_SUPERSCHUTZ",
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "15",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "4",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
+					"behaviour_range": {
+						"x": "2",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_SCHIGGY",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "16",
+					"picture": "238",
+					"script_std": "PERSON_POKEMON",
+					"field_3": 0,
+					"x": "2",
+					"y": "19",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+					"behaviour_range": {
+						"x": "2",
+						"y": "2"
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": 0,
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "POKEMON_ENTON",
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "17",
+					"picture": "92",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "27",
+					"y": "3",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_LOOK_AROUND",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": 0,
+					"alert_radius": 0,
+					"script": "ow_script_blackbeard_ship_cells_captain_room_key",
+					"flag": "FLAG_BBSHIP_KEY_TO_CAPTAIN_ROOM",
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [
+				{
+					"x": "3",
+					"y": "23",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "4",
+					"y": "23",
+					"level": 0,
+					"target_warp_idx": "4",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "15",
+					"y": "23",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "16",
+					"y": "23",
+					"level": 0,
+					"target_warp_idx": "5",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "31",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": "6",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "32",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": "6",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "41",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": "7",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "42",
+					"y": "22",
+					"level": 0,
+					"target_warp_idx": "7",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "3",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "8",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "4",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "8",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "13",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "9",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "14",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "9",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "26",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "10",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "27",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "10",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "37",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "11",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "38",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "11",
+					"target_map": "5",
+					"target_bank": "33"
+				},
+				{
+					"x": "38",
+					"y": "3",
+					"level": 0,
+					"target_warp_idx": "18",
+					"target_map": "6",
+					"target_bank": "33"
+				},
+				{
+					"x": "38",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "19",
+					"target_map": "6",
+					"target_bank": "33"
+				},
+				{
+					"x": "51",
+					"y": "3",
+					"level": 0,
+					"target_warp_idx": "17",
+					"target_map": "6",
+					"target_bank": "33"
+				},
+				{
+					"x": "51",
+					"y": "4",
+					"level": 0,
+					"target_warp_idx": "16",
+					"target_map": "6",
+					"target_bank": "33"
+				},
+				{
+					"x": "54",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "4",
+					"target_bank": "33"
+				},
+				{
+					"x": "55",
+					"y": "7",
+					"level": 0,
+					"target_warp_idx": "2",
+					"target_map": "4",
+					"target_bank": "33"
+				}
+			],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": "5",
+					"y": "3",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "6",
+					"y": "4",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "5",
+					"y": "4",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "7",
+					"y": "4",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "10",
+					"y": "4",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "11",
+					"y": "4",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "12",
+					"y": "4",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "0",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "1",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "2",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "2",
+					"y": "17",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "5",
+					"y": "17",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "5",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "6",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "7",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "12",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "13",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "14",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "14",
+					"y": "17",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "17",
+					"y": "17",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "17",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "18",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				},
+				{
+					"x": "19",
+					"y": "18",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"flag": 0,
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_blackbeard_ship_cabins_hammock"
+					}
+				}
+			]
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_BBSHIP",
+		"footer_idx": 116,
+		"namespace": "MAP_SCHATTENFLUT",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"flags": {
+			"allow_escape_rope": 0,
+			"allow_run": 0,
+			"show_name": 0,
+			"flag_3": 0,
+			"flag_4": 0,
+			"flag_5": 0,
+			"flag_6": 0,
+			"flag_7": 0
+		},
+		"level": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM"
+	},
+	"label": "map_blackbeard_ship_cabins",
+	"type": "header"
+}

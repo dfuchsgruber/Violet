@@ -1,0 +1,109 @@
+{
+	"data": {
+		"footer": "map_footer_20_debug",
+		"events": {
+			"person_cnt": 2,
+			"warp_cnt": 0,
+			"trigger_cnt": 0,
+			"signpost_cnt": 1,
+			"persons": [
+				{
+					"target_index": "1",
+					"picture": "41",
+					"script_std": 0,
+					"field_3": 0,
+					"x": "6",
+					"y": "10",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_battle_test",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": 0,
+						"berry_tree_idx": 0
+					}
+				},
+				{
+					"target_index": "2",
+					"picture": 0,
+					"script_std": 0,
+					"field_3": 0,
+					"x": "5",
+					"y": "10",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_NONE",
+					"behaviour_range": {
+						"x": "0",
+						"y": "0"
+					},
+					"field_B": 0,
+					"is_trainer": "0",
+					"field_D": 0,
+					"alert_radius": 0,
+					"script": "ow_script_mugshot_test",
+					"flag": 0,
+					"value": {
+						"item": 0,
+						"species": "0",
+						"berry_tree_idx": 0
+					}
+				}
+			],
+			"warps": [],
+			"triggers": [],
+			"signposts": [
+				{
+					"x": "9",
+					"y": "10",
+					"level": 0,
+					"type": "SIGNPOST_SCRIPT",
+					"value": {
+						"item": {
+							"item": 0,
+							"flag": 0,
+							"amount": 0,
+							"chunk": 0
+						},
+						"script": "ow_script_stop_debugger"
+					},
+					"flag": "0"
+				}
+			]
+		},
+		"levelscripts": 0,
+		"connections": {
+			"connection_cnt": 0,
+			"connections": []
+		},
+		"music": "MUS_SPIELHALLE",
+		"footer_idx": 20,
+		"namespace": "MAP_AMONIA",
+		"flash_type": "FLASH_NONE",
+		"weather": "MAP_WEATHER_INSIDE",
+		"type": "MAP_TYPE_INSIDE",
+		"bike_usable": 0,
+		"battle_style": "BATTLE_TYPE_RANDOM",
+		"level": 0,
+		"flags": {
+			"allow_escape_rope": "0",
+			"allow_run": "0",
+			"show_name": "0",
+			"flag_3": "0",
+			"flag_4": "0",
+			"flag_5": "0",
+			"flag_6": "0",
+			"flag_7": "0"
+		}
+	},
+	"label": "map_4_3_debug",
+	"type": "header"
+}

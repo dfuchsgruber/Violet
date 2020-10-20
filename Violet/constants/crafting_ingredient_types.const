@@ -1,0 +1,8 @@
+{
+    "type" : "enum",
+    "base" : 0,
+    "values" : [
+        "CRAFTING_INGREDIENT_ITEM",
+        "CRAFTING_INGREDIENT_ASH"
+    ]
+}

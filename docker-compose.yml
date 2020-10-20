@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  buildbot:
+    build:
+      context: .
+      dockerfile: .docker/buildbot.Dockerfile
+    volumes:
+      - .:/usr/local/violet

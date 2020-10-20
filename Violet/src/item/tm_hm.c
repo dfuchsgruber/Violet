@@ -1,0 +1,100 @@
+/*
+ * tm_hm.c
+ *
+ *  Created on: Oct 1, 2018
+ *      Author: dominik
+ */
+#include "types.h"
+#include "constants/attacks.h"
+#include "constants/items.h"
+#include "item/item.h"
+
+u16 tm_hm_to_attack[58] = {
+	 ATTACK_POWER_PUNCH,
+	 ATTACK_DRACHENKLAUE,
+	 ATTACK_AQUAWELLE,
+	 ATTACK_GEDANKENGUT,
+	 ATTACK_BRUELLER,
+	 ATTACK_TOXIN,
+	 ATTACK_HAGELSTURM,
+	 ATTACK_PROTZER,
+	 ATTACK_KUGELSAAT,
+	 ATTACK_KRAFTRESERVE,
+	 ATTACK_SONNENTAG,
+	 ATTACK_VERHOEHNER,
+	 ATTACK_EISSTRAHL,
+	 ATTACK_BLIZZARD,
+	 ATTACK_HYPERSTRAHL,
+	 ATTACK_LICHTSCHILD,
+	 ATTACK_SCHUTZSCHILD,
+	 ATTACK_REGENTANZ,
+	 ATTACK_GIGASAUGER,
+	 ATTACK_BODYGUARD,
+	 ATTACK_FRUSTRATION,
+	 ATTACK_SOLARSTRAHL,
+	 ATTACK_EISENSCHWEIF,
+	 ATTACK_DONNERBLITZ,
+	 ATTACK_DONNER,
+	 ATTACK_ERDBEBEN,
+	 ATTACK_RUECKKEHR,
+	 ATTACK_SCHAUFLER,
+	 ATTACK_PSYCHOKINESE,
+	 ATTACK_SPUKBALL,
+	 ATTACK_DURCHBRUCH,
+	 ATTACK_DOPPELTEAM,
+	 ATTACK_REFLEKTOR,
+	 ATTACK_SCHOCKWELLE,
+	 ATTACK_FLAMMENWURF,
+	 ATTACK_MATSCHBOMBE,
+	 ATTACK_SANDSTURM,
+	 ATTACK_FEUERSTURM,
+	 ATTACK_FELSGRAB,
+	 ATTACK_AERO_ASS,
+	 ATTACK_FOLTERKNECHT,
+	 ATTACK_FASSADE,
+	 ATTACK_GEHEIMPOWER,
+	 ATTACK_ERHOLUNG,
+	 ATTACK_ANZIEHUNG,
+	 ATTACK_RAUB,
+	 ATTACK_STAHLFLUEGEL,
+	 ATTACK_WERTEWECHSEL,
+	 ATTACK_UEBERNAHME,
+	 ATTACK_HITZEKOLLER,
+	 ATTACK_ZERSCHNEIDER,
+	 ATTACK_FLIEGEN,
+	 ATTACK_SURFER,
+	 ATTACK_STAERKE,
+	 ATTACK_BLITZ,
+	 ATTACK_ZERTRUEMMERER,
+	 ATTACK_KASKADE,
+	 ATTACK_KRAXLER
+};
+
+bool item_is_tm(u16 item_idx) {
+	switch(item_idx) {
+		case ITEM_TM01 ... ITEM_TM50: return true;
+		default: return false;
+	}
+}
+
+bool item_is_hm(u16 item_idx) {
+	switch(item_idx) {
+		case ITEM_VM01:
+		case ITEM_VM02:
+		case ITEM_VM03:
+		case ITEM_VM04:
+		case ITEM_VM05:
+		case ITEM_VM06:
+		case ITEM_VM07:
+		case ITEM_VM08:
+			return true;
+		default:
+			return false;
+	}
+}
+
+bool item_is_sellable(u16 item_idx) {
+	if (item_get_price(item_idx) == 0) return false;
+	if (item_is_hm(item_idx) || item_is_tm(item_idx)) return false;
+	return true;
+}
