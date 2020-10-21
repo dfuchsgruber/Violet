@@ -56,7 +56,7 @@ u16 pokedex_habitat_gras_page_12[2] = {
 };
 // Habitat gras, page 13
 u16 pokedex_habitat_gras_page_13[4] = {
-    POKEMON_TRAUMATO, POKEMON_HYPNO, POKEMON_SCHLUPPUCK, POKEMON_SCHLUKWECH
+    POKEMON_TRAUMATO, POKEMON_HYPNO, POKEMON_MOLUNK, POKEMON_AMFIRA
 };
 // Habitat gras, page 14
 u16 pokedex_habitat_gras_page_14[2] = {
@@ -79,8 +79,8 @@ u16 pokedex_habitat_gras_page_18[2] = {
     POKEMON_SENGO, POKEMON_VIPITIS
 };
 // Habitat gras, page 19
-u16 pokedex_habitat_gras_page_19[2] = {
-    POKEMON_PLUSLE, POKEMON_MINUN
+u16 pokedex_habitat_gras_page_19[1] = {
+    POKEMON_ROTOM,
 };
 // Habitat gras, page 20
 u16 pokedex_habitat_gras_page_20[2] = {
@@ -166,7 +166,7 @@ u16 pokedex_habitat_wald_page_5[4] = {
 };
 // Habitat wald, page 6
 u16 pokedex_habitat_wald_page_6[3] = {
-    POKEMON_MAGNEZONE, POKEMON_PIKACHU, POKEMON_RAICHU
+    POKEMON_PICHU, POKEMON_PIKACHU, POKEMON_RAICHU
 };
 // Habitat wald, page 7
 u16 pokedex_habitat_wald_page_7[3] = {
@@ -589,8 +589,8 @@ u16 pokedex_habitat_wildnis_page_1[4] = {
     POKEMON_SANDAN, POKEMON_SANDAMER, POKEMON_RIHORN, POKEMON_RIZEROS
 };
 // Habitat wildnis, page 2
-u16 pokedex_habitat_wildnis_page_2[2] = {
-    POKEMON_MAGNETILO, POKEMON_MAGNETON
+u16 pokedex_habitat_wildnis_page_2[3] = {
+    POKEMON_MAGNETILO, POKEMON_MAGNETON, POKEMON_MAGNEZONE
 };
 // Habitat wildnis, page 3
 u16 pokedex_habitat_wildnis_page_3[4] = {

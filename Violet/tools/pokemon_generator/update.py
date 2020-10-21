@@ -94,7 +94,9 @@ if __name__ == '__main__':
         stats[idx] = stat
 
     # Create move sets for each species
-    for stat in stats:
+    for idx, stat in enumerate(stats):
+        if stat is None:
+            print(idx)
         if not 'accessible_moves' in stat:
             stat['accessible_moves'] = set()
         stat['tm_compatiblilty'] = [

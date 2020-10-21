@@ -2,7 +2,7 @@
 	"data": {
 		"footer": "map_footer_18_route_8",
 		"events": {
-			"person_cnt": 27,
+			"person_cnt": 28,
 			"warp_cnt": 6,
 			"trigger_cnt": 1,
 			"signpost_cnt": 5,
@@ -581,8 +581,8 @@
 					}
 				},
 				{
-					"target_index": "28",
-					"picture": "238",
+					"target_index": "24",
+					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "39",
@@ -606,7 +606,7 @@
 				},
 				{
 					"target_index": "25",
-					"picture": "238",
+					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "40",
@@ -630,7 +630,7 @@
 				},
 				{
 					"target_index": "26",
-					"picture": "238",
+					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
 					"field_3": 0,
 					"x": "21",
@@ -654,9 +654,9 @@
 				},
 				{
 					"target_index": "27",
-					"picture": "238",
+					"picture": "237",
 					"script_std": "PERSON_BERRY_TREE",
-					"field_3": 0,
+					"field_3": "20",
 					"x": "22",
 					"y": "32",
 					"level": 0,
@@ -674,6 +674,30 @@
 						"item": 0,
 						"species": 0,
 						"berry_tree_idx": "18"
+					}
+				},
+				{
+					"target_index": "28",
+					"picture": "238",
+					"script_std": "PERSON_AGGRESSIVE_POKEMON",
+					"field_3": 0,
+					"x": "33",
+					"y": "42",
+					"level": 0,
+					"behaviour": "BEHAVIOUR_FACE_LEFT_AND_RIGHT",
+					"behaviour_range": {
+						"x": 0,
+						"y": 0
+					},
+					"field_B": 0,
+					"is_trainer": "1",
+					"alert_radius": "3",
+					"script": 0,
+					"flag": "FLAG_AGGRESIVE_WILD_SPAWN_ALWAYS_1",
+					"value": {
+						"item": 0,
+						"species": "POKEMON_MOBAI",
+						"berry_tree_idx": 0
 					}
 				}
 			],

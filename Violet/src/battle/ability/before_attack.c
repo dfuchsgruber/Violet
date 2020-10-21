@@ -75,7 +75,7 @@ bool battle_abilities_before_attack(){
                     (attacks[active_attack].category == CATEGORY_PHYSICAL || 
                     (attacks[active_attack].category == CATEGORY_SPECIAL))){
                 stance_change_change_species(attacking_battler,
-                        POKEMON_DURENGARDA);
+                        POKEMON_DURENGARD_OFFENSIVE);
                 battlescript_callstack_push_next_command();
                 battle_animation_user = attacking_battler;
                 battle_animation_target = attacking_battler;
@@ -84,7 +84,7 @@ bool battle_abilities_before_attack(){
                 bsc_offset = bsc_stance_change_to_attack;
                 return true;
                 
-            } else if(attacker->species == POKEMON_DURENGARDA &&
+            } else if(attacker->species == POKEMON_DURENGARD_OFFENSIVE &&
                     active_attack == ATTACK_KOENIGSSCHILD){
                 stance_change_change_species(attacking_battler,
                         POKEMON_DURENGARD);

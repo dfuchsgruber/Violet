@@ -47,10 +47,14 @@ def get_resource(url, cache=None):
     response : dict
         The json response.
     """
+    if url.endswith('/'):
+        url = url[:-1]
     # Try to get the resource from the cache
     if cache is not None:
         if url in cache:
             return cache[url]
+        elif url + '/' in cache:
+            return cache[url + '/']
     response = requests.get(url)
     response.raise_for_status()
     resource = response.json()
@@ -218,7 +222,7 @@ if __name__ == '__main__':
             pokemon = {}
         
             # Process the species information
-            pokemon_species = get_resource(get_url('pokemon-species', idx), cache=cache)
+            pokemon_species = get_resource(get_url('pokemon-species', idx)[:-1], cache=cache)
 
             pokemon['name'] = {lang : get_name(pokemon_species, language=value) for lang, value in language.languages.items()}
             egg_groups = [
@@ -344,9 +348,9 @@ if __name__ == '__main__':
         
         pokemons.append(pokemon)
 
-    # Save the cache instance
-    if args.cache:
-        pokeapi_cache.save_cache(cache)
+        # Save the cache instance
+        if args.cache:
+            pokeapi_cache.save_cache(cache)
     
     # Output the pokemon
     with open(args.output, 'wb') as f:

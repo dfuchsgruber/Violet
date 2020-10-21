@@ -124,7 +124,7 @@ void bsc_cmd_switch_out_abilites() {
         battler_mark_for_controller_execution(active_battler);
         
     }**/
-    if (battlers[active_battler].species == POKEMON_DURENGARDA) {
+    if (battlers[active_battler].species == POKEMON_DURENGARD_OFFENSIVE) {
         battler_form_change(active_battler, POKEMON_DURENGARD);
     }
 }

@@ -507,15 +507,15 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_CELEBI
     0x766,
     // POKEMON_BISAFLORM
-    0x588,
+    0,
     // POKEMON_GLURAKM
-    0x88,
+    0,
     // POKEMON_AQUANAM
-    0x188,
+    0,
     // POKEMON_BLITZAM
-    0x188,
+    0,
     // POKEMON_FLAMARM
-    0x88,
+    0,
     // POKEMON_DURENGARDA
     0x88,
     // POKEMON_IN
@@ -709,9 +709,9 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_GROINK
     0x287,
     // POKEMON_PLUSLE
-    0x376,
+    0,
     // POKEMON_MINUN
-    0x476,
+    0,
     // POKEMON_FLUNKIFER
     0x687,
     // POKEMON_MEDITIE
@@ -737,9 +737,9 @@ u32 pokemon_player_y[POKEMON_CNT] = {
     // POKEMON_LETARKING
     0x686,
     // POKEMON_SCHLUPPUCK
-    0x966,
+    0,
     // POKEMON_SCHLUKWECH
-    0x277,
+    0,
     // POKEMON_TROPIUS
     0x87,
     // POKEMON_KAUMALAT
@@ -1596,9 +1596,9 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     // POKEMON_GROINK
     0x477,
     // POKEMON_PLUSLE
-    0x956,
+    0,
     // POKEMON_MINUN
-    0x966,
+    0,
     // POKEMON_FLUNKIFER
     0x876,
     // POKEMON_MEDITIE
@@ -1624,9 +1624,9 @@ u32 pokemon_enemy_y[POKEMON_CNT] = {
     // POKEMON_LETARKING
     0x886,
     // POKEMON_SCHLUPPUCK
-    0xc55,
+    0,
     // POKEMON_SCHLUKWECH
-    0x666,
+    0,
     // POKEMON_TROPIUS
     0x88,
     // POKEMON_KAUMALAT

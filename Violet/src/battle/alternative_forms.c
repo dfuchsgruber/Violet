@@ -12,7 +12,7 @@ void battle_alternative_forms_revert() {
         mega_evolution_t *mega_evolution = mega_evolution_get_by_mega_species(species);
         if (mega_evolution) {
             species = mega_evolution->species;
-        } else if (species == POKEMON_DURENGARDA) {
+        } else if (species == POKEMON_DURENGARD_OFFENSIVE) {
             species = POKEMON_DURENGARD;
         } else {
             continue;

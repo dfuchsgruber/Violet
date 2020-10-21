@@ -114,6 +114,10 @@ extern u8 cry_780[];
 extern u8 cry_440[];
 extern u8 cry_438[];
 extern u8 cry_433[];
+extern u8 cry_172[];
+extern u8 cry_479[];
+extern u8 cry_757[];
+extern u8 cry_758[];
 
 
 #endif /* INCLUDE_C_POKEMON_CRY_H_ */

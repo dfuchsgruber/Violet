@@ -334,7 +334,11 @@
 		"ability_1": null,
 		"hidden_ability": "Solarkraft",
 		"safari_rate": 0,
-		"dex_number": 24
+		"dex_number": 24,
+		"dex_entry" : {
+			"LANG_GER" : "Man sagt, es k\u00f6nne bis zu 1.000 Jahre alt werden. Mit mystischen Kr\u00e4ften kontrolliert es das Feuer und br\u00e4t sich damit seine Beute.",
+			"LANG_EN" : ""
+		}
 	},
 	"POKEMON_PUMMELUFF": {
 		"ability_0": "Charmebolzen",
@@ -722,7 +726,11 @@
 		"ability_1": null,
 		"hidden_ability": "Barriere",
 		"safari_rate": 0,
-		"dex_number": 70
+		"dex_number": 70,
+		"dex_entry" : {
+			"LANG_GER" : "Unter seinem hellblauen Pelz liegt eine dicke und feste Haut. Es ist bei frostigen -40 Grad noch aktiv.",
+			"LANG_EN" : ""
+		}
 	},
 	"POKEMON_JUGONG": {
 		"ability_0": "Speckschicht",
@@ -1944,103 +1952,39 @@
 		"safari_rate": 0,
 		"dex_number": 251
 	},
-	"POKEMON_CELEBI": {
+	"POKEMON_CELEBI": { 
 		"ability_0": "Innere_kraft",
 		"ability_1": null,
 		"hidden_ability": "Innere_kraft",
 		"safari_rate": 0,
 		"dex_number": 252
 	},
-	"POKEMON_BISAFLORM": {
-		"basestats": {
-			"hp": 80,
-			"attack": 100,
-			"defense": 123,
-			"speed": 80,
-			"special-attack": 122,
-			"special-defense": 120
-		},
-		"type_0": "Pflanze",
-		"type_1": "Gift",
-		"exp_yield": 255,
-		"ability_0": "Speckschicht",
-		"ability_1": "Speckschicht",
-		"hidden_ability": null,
-		"species_link": "POKEMON_BISAFLOR",
-		"dex_number": 0
-	},
-	"POKEMON_GLURAKM": {
-		"basestats": {
-			"hp": 78,
-			"attack": 145,
-			"defense": 111,
-			"speed": 100,
-			"special-attack": 130,
-			"special-defense": 85
-		},
-		"type_0": "Feuer",
-		"type_1": "Drache",
-		"exp_yield": 255,
-		"ability_0": "Schwebe",
-		"ability_1": "Schwebe",
-		"hidden_ability": null,
-		"species_link": "POKEMON_GLURAK",
-		"dex_number": 0
-	},
-	"POKEMON_AQUANAM": {
-		"basestats": {
-			"hp": 130,
-			"attack": 65,
-			"defense": 95,
-			"speed": 80,
-			"special-attack": 125,
-			"special-defense": 115
-		},
-		"type_0": "Wasser",
-		"type_1": "Eis",
-		"exp_yield": 140,
-		"ability_0": "Regengenuss",
-		"ability_1": null,
-		"hidden_ability": null,
-		"species_link": "POKEMON_AQUANA",
-		"dex_number": 0
-	},
-	"POKEMON_BLITZAM": {
-		"basestats": {
-			"hp": 65,
-			"attack": 65,
-			"defense": 60,
-			"speed": 145,
-			"special-attack": 135,
-			"special-defense": 95
-		},
+	"POKEMON_ROTOM_HEAT": {
+		"species_link" : "POKEMON_ROTOM",
 		"type_0": "Elektro",
-		"type_1": "Fee",
-		"exp_yield": 255,
-		"ability_0": "Temposchub",
-		"ability_1": null,
-		"hidden_ability": null,
-		"species_link": "POKEMON_BLITZA",
-		"dex_number": 0
+		"type_1": "Feuer"
 	},
-	"POKEMON_FLAMARM": {
-		"basestats": {
-			"hp": 65,
-			"attack": 145,
-			"defense": 100,
-			"speed": 90,
-			"special-attack": 95,
-			"special-defense": 110
-		},
-		"type_0": "Feuer",
-		"type_1": "Stahl",
-		"exp_yield": 240,
-		"ability_0": "Magnetfalle",
-		"ability_1": null,
-		"species_link": "POKEMON_FLAMARA",
-		"dex_number": 0
+	"POKEMON_ROTOM_WASH": {
+		"species_link" : "POKEMON_ROTOM",
+		"type_0": "Elektro",
+		"type_1": "Wasser"
 	},
-	"POKEMON_DURENGARDA": {
+	"POKEMON_ROTOM_FORST": {
+		"species_link" : "POKEMON_ROTOM",
+		"type_0": "Elektro",
+		"type_1": "Eis"
+	},
+	"POKEMON_ROTOM_WIND": {
+		"species_link" : "POKEMON_ROTOM",
+		"type_0": "Elektro",
+		"type_1": "Flug"
+	},
+	"POKEMON_ROTOM_GRASS": {
+		"species_link" : "POKEMON_ROTOM",
+		"type_0": "Elektro",
+		"type_1": "Pflanze"
+	},
+	"POKEMON_DURENGARD_OFFENSIVE": {
 		"basestats": {
 			"hp": 60,
 			"attack": 150,
@@ -2052,7 +1996,7 @@
 		"species_link": "POKEMON_DURENGARD",
 		"dex_number": 0
 	},
-	"POKEMON_IN": {
+	"POKEMON_IN" : {
 		"species_link" : "POKEMON_POKEMON_0"
 	},
 	"POKEMON_GAME": {
@@ -4146,7 +4090,11 @@
 		"ability_1": null,
 		"hidden_ability": "Barriere",
 		"safari_rate": 0,
-		"dex_number": 313
+		"dex_number": 313,
+		"dex_entry" : {
+			"LANG_GER" : "In seinem K\u00f6rper flie\u00dft 1 200 Grad hei\u00dfes Magma. Nach Einsatz einer Feuer-Attacke schrumpft sein H\u00f6cker.",
+			"LANG_EN" : ""
+ 		}
 	},
 	"POKEMON_CAMERUPT": {
 		"ability_0": "Magmapanzer",
@@ -4195,7 +4143,11 @@
 		"ability_1": null,
 		"hidden_ability": "Ap_sparer",
 		"safari_rate": 0,
-		"dex_number": 320
+		"dex_number": 320,
+		"dex_entry" : {
+			"LANG_GER" : "Schneppke kann nur in besonders kalten Gebieten leben. Selbst bei -100 Grad hopst es munter umher.",
+			"LANG_EN" : ""
+		}
 	},
 	"POKEMON_FIRNONTOR": {
 		"ability_0": "Konzentrator",
@@ -4239,17 +4191,17 @@
 		"safari_rate": 0,
 		"dex_number": 328
 	},
-	"POKEMON_PLUSLE": {
-		"ability_0": "Plus",
+	"POKEMON_PICHU": {
+		"ability_0": "Statik",
 		"ability_1": null,
 		"hidden_ability": "Blitzfaenger",
 		"safari_rate": 0,
 		"dex_number": 329
 	},
-	"POKEMON_MINUN": {
-		"ability_0": "Minus",
+	"POKEMON_ROTOM": {
+		"ability_0": "Schwebe",
 		"ability_1": null,
-		"hidden_ability": "Voltabsorber",
+		"hidden_ability": null,
 		"safari_rate": 0,
 		"dex_number": 330
 	},
@@ -4347,17 +4299,17 @@
 		"safari_rate": 0,
 		"dex_number": 341
 	},
-	"POKEMON_SCHLUPPUCK": {
-		"ability_0": "Kloakensosse",
-		"ability_1": "Wertehalter",
-		"hidden_ability": "Aufwertung",
+	"POKEMON_MOLUNK": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": null,
 		"safari_rate": 0,
 		"dex_number": 342
 	},
-	"POKEMON_SCHLUKWECH": {
-		"ability_0": "Kloakensosse",
-		"ability_1": "Wertehalter",
-		"hidden_ability": "Aufwertung",
+	"POKEMON_AMFIRA": {
+		"ability_0": "Doesigkeit",
+		"ability_1": null,
+		"hidden_ability": null,
 		"safari_rate": 0,
 		"dex_number": 343
 	},
@@ -4618,7 +4570,11 @@
 		"ability_1": null,
 		"hidden_ability": "Robustheit",
 		"safari_rate": 0,
-		"dex_number": 378
+		"dex_number": 378,
+		"dex_entry" : {
+			"LANG_GER" : "Sein K\u00f6rper besteht aus Eis aus der Eiszeit. Es kontrolliert gefrorene Luft, die -200 Grad kalt ist.",
+			"LANG_EN" : ""
+		}
 	},
 	"POKEMON_REGISTEEL": {
 		"ability_0": "Neutraltorso",

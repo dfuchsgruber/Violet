@@ -36,6 +36,16 @@ str_afterb:
 	.string "After B"
 
 ow_script_test:
+	givepokemon POKEMON_MOLUNK 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_AMFIRA 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_PICHU 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_ROTOM 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_ROTOM_HEAT 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_ROTOM_WASH 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_ROTOM_FORST 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_ROTOM_GRASS 50 ITEM_ALTARIANIT 0 0 0
+	givepokemon POKEMON_ROTOM_WIND 50 ITEM_ALTARIANIT 0 0 0
+	end
 	settrainerflag 4
 	trainerbattlecont 0x1 0x4 0x3 str_beforea str_aftera cont
 cont:

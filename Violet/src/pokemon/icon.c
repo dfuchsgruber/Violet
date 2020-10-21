@@ -256,11 +256,11 @@
     gfx_pkmn_species_249_pokemon_lugia_iconTiles,
     gfx_pkmn_species_250_pokemon_ho_oh_iconTiles,
     gfx_pkmn_species_251_pokemon_celebi_iconTiles,
-    gfx_pkmn_species_252_pokemon_bisaflorm_iconTiles,
-    gfx_pkmn_species_253_pokemon_glurakm_iconTiles,
-    gfx_pkmn_species_254_pokemon_aquanam_iconTiles,
-    gfx_pkmn_species_255_pokemon_blitzam_iconTiles,
-    gfx_pkmn_species_256_pokemon_flamarm_iconTiles,
+    gfx_pkmn_rotom_heat_iconTiles,
+    gfx_pkmn_rotom_wash_iconTiles,
+    gfx_pkmn_rotom_frost_iconTiles,
+    gfx_pkmn_rotom_fan_iconTiles,
+    gfx_pkmn_rotom_mow_iconTiles,
     gfx_pkmn_species_257_pokemon_durengarda_iconTiles,
     gfx_pkmn_species_258_pokemon_in_iconTiles,
     gfx_pkmn_species_259_pokemon_game_iconTiles,
@@ -357,8 +357,8 @@
     gfx_pkmn_species_350_pokemon_azurill_iconTiles,
     gfx_pkmn_species_351_pokemon_spoink_iconTiles,
     gfx_pkmn_species_352_pokemon_groink_iconTiles,
-    gfx_pkmn_species_353_pokemon_plusle_iconTiles,
-    gfx_pkmn_species_354_pokemon_minun_iconTiles,
+    gfx_pkmn_pichu_iconTiles,
+    gfx_pkmn_rotom_iconTiles,
     gfx_pkmn_species_355_pokemon_flunkifer_iconTiles,
     gfx_pkmn_species_356_pokemon_meditie_iconTiles,
     gfx_pkmn_species_357_pokemon_meditalis_iconTiles,
@@ -371,8 +371,8 @@
     gfx_pkmn_species_364_pokemon_bummelz_iconTiles,
     gfx_pkmn_species_365_pokemon_muntier_iconTiles,
     gfx_pkmn_species_366_pokemon_letarking_iconTiles,
-    gfx_pkmn_species_367_pokemon_schluppuck_iconTiles,
-    gfx_pkmn_species_368_pokemon_schlukwech_iconTiles,
+    gfx_pkmn_molunk_iconTiles,
+    gfx_pkmn_amfira_iconTiles,
     gfx_pkmn_species_369_pokemon_tropius_iconTiles,
     gfx_pkmn_species_370_pokemon_kaumalat_iconTiles,
     gfx_pkmn_species_371_pokemon_knarksel_iconTiles,
@@ -954,17 +954,17 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x1,
     // POKEMON_CELEBI
     0x1,
-    // POKEMON_BISAFLORM
+    // POKEMON_ROTOM_HEAT
     0x0,
-    // POKEMON_GLURAKM
+    // POKEMON_ROTOM_WASH
     0x0,
-    // POKEMON_AQUANAM
+    // POKEMON_ROTOM_FORST
     0x0,
-    // POKEMON_BLITZAM
+    // POKEMON_ROTOM_WIND
     0x0,
-    // POKEMON_FLAMARM
+    // POKEMON_ROTOM_GRASS
     0x0,
-    // POKEMON_DURENGARDA
+    // POKEMON_DURENGARD_OFFENSIVE
     0x2,
     // POKEMON_IN
     0x1,
@@ -1156,9 +1156,9 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x0,
     // POKEMON_GROINK
     0x2,
-    // POKEMON_PLUSLE
-    0x0,
-    // POKEMON_MINUN
+    // POKEMON_PICHU
+    0x1,
+    // POKEMON_ROTOM
     0x0,
     // POKEMON_FLUNKIFER
     0x2,
@@ -1184,10 +1184,10 @@ u8 pokemon_icon_usage[POKEMON_CNT] = {
     0x2,
     // POKEMON_LETARKING
     0x1,
-    // POKEMON_SCHLUPPUCK
-    0x1,
-    // POKEMON_SCHLUKWECH
-    0x2,
+    // POKEMON_MOLUNK
+    0x0,
+    // POKEMON_AMFIRA
+    0x0,
     // POKEMON_TROPIUS
     0x1,
     // POKEMON_KAUMALAT

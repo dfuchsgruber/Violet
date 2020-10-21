@@ -5,17 +5,17 @@
 
 wild_pokemon_entry wild_pokemon_3_23_grass_entries[12] = {
 	[WILD_POKEMON_DENSITY_GRASS_0_20_PERCENT] = 
-		{.level_min = 23, .level_max = 26, .species = POKEMON_MINUN},
+		{.level_min = 23, .level_max = 26, .species = POKEMON_SCHWALBINI},
 	[WILD_POKEMON_DENSITY_GRASS_1_20_PERCENT] = 
-		{.level_min = 23, .level_max = 26, .species = POKEMON_PLUSLE},
+		{.level_min = 23, .level_max = 26, .species = POKEMON_WABLU},
 	[WILD_POKEMON_DENSITY_GRASS_2_10_PERCENT] = 
 		{.level_min = 23, .level_max = 26, .species = POKEMON_MEDITIE},
 	[WILD_POKEMON_DENSITY_GRASS_3_10_PERCENT] = 
 		{.level_min = 23, .level_max = 26, .species = POKEMON_WABLU},
 	[WILD_POKEMON_DENSITY_GRASS_4_10_PERCENT] = 
-		{.level_min = 23, .level_max = 26, .species = POKEMON_MINUN},
+		{.level_min = 23, .level_max = 26, .species = POKEMON_WABLU},
 	[WILD_POKEMON_DENSITY_GRASS_5_10_PERCENT] = 
-		{.level_min = 23, .level_max = 26, .species = POKEMON_PLUSLE},
+		{.level_min = 23, .level_max = 26, .species = POKEMON_RESLADERO},
 	[WILD_POKEMON_DENSITY_GRASS_6_5_PERCENT] = 
 		{.level_min = 24, .level_max = 26, .species = POKEMON_MEDITIE},
 	[WILD_POKEMON_DENSITY_GRASS_7_5_PERCENT] = 

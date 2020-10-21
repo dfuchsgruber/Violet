@@ -256,7 +256,7 @@ static palette ow_pokemon_pals[] = {
     [POKEMON_LUGIA] = {.pal = gfx_ow_lugiaPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_LUGIA},
     [POKEMON_HO_OH] = {.pal = gfx_ow_ho_ohPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_HO_OH},
     [POKEMON_CELEBI] = {.pal = gfx_ow_celebiPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_CELEBI},
-    [POKEMON_DURENGARDA] = {.pal = gfx_ow_durengardaPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_DURENGARDA},
+    [POKEMON_DURENGARD_OFFENSIVE] = {.pal = gfx_ow_durengardaPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_DURENGARD_OFFENSIVE},
     [POKEMON_FIFFYEN] = {.pal = gfx_ow_fiffyenPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_FIFFYEN},
     [POKEMON_MAGNAYEN] = {.pal = gfx_ow_magnayenPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MAGNAYEN},
     [POKEMON_ZIGZACHS] = {.pal = gfx_ow_zigzachsPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ZIGZACHS},
@@ -324,8 +324,8 @@ static palette ow_pokemon_pals[] = {
     [POKEMON_AZURILL] = {.pal = gfx_ow_azurillPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_AZURILL},
     [POKEMON_SPOINK] = {.pal = gfx_ow_spoinkPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_SPOINK},
     [POKEMON_GROINK] = {.pal = gfx_ow_groinkPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_GROINK},
-    [POKEMON_PLUSLE] = {.pal = gfx_ow_pluslePal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_PLUSLE},
-    [POKEMON_MINUN] = {.pal = gfx_ow_minunPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MINUN},
+    [POKEMON_PICHU] = {.pal = gfx_ow_pluslePal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_PICHU},
+    [POKEMON_ROTOM] = {.pal = gfx_ow_minunPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM},
     [POKEMON_FLUNKIFER] = {.pal = gfx_ow_flunkiferPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_FLUNKIFER},
     [POKEMON_MEDITIE] = {.pal = gfx_ow_meditiePal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MEDITIE},
     [POKEMON_MEDITALIS] = {.pal = gfx_ow_meditalisPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MEDITALIS},
@@ -338,8 +338,8 @@ static palette ow_pokemon_pals[] = {
     [POKEMON_BUMMELZ] = {.pal = gfx_ow_bummelzPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_BUMMELZ},
     [POKEMON_MUNTIER] = {.pal = gfx_ow_muntierPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MUNTIER},
     [POKEMON_LETARKING] = {.pal = gfx_ow_letarkingPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_LETARKING},
-    [POKEMON_SCHLUPPUCK] = {.pal = gfx_ow_schluppuckPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_SCHLUPPUCK},
-    [POKEMON_SCHLUKWECH] = {.pal = gfx_ow_schlukwechPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_SCHLUKWECH},
+    [POKEMON_MOLUNK] = {.pal = gfx_ow_schluppuckPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MOLUNK},
+    [POKEMON_AMFIRA] = {.pal = gfx_ow_schlukwechPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_AMFIRA},
     [POKEMON_TROPIUS] = {.pal = gfx_ow_tropiusPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_TROPIUS},
     [POKEMON_KAUMALAT] = {.pal = gfx_ow_kaumalatPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_KAUMALAT},
     [POKEMON_KNARKSEL] = {.pal = gfx_ow_knarkselPal, .tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_KNARKSEL},
@@ -6764,8 +6764,8 @@ static overworld_sprite overworlds_pokemon[] = {
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_celebi, .rotscale_animation = oam_rotscale_anim_table_null,
     },
-    [POKEMON_DURENGARDA] = {
-        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_DURENGARDA,
+    [POKEMON_DURENGARD_OFFENSIVE] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_DURENGARD_OFFENSIVE,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_durengarda, .rotscale_animation = oam_rotscale_anim_table_null,
@@ -7172,14 +7172,14 @@ static overworld_sprite overworlds_pokemon[] = {
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_groink, .rotscale_animation = oam_rotscale_anim_table_null,
     },
-    [POKEMON_PLUSLE] = {
-        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_PLUSLE,
+    [POKEMON_PICHU] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_PICHU,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_plusle, .rotscale_animation = oam_rotscale_anim_table_null,
     },
-    [POKEMON_MINUN] = {
-        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MINUN,
+    [POKEMON_ROTOM] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_ROTOM,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_minun, .rotscale_animation = oam_rotscale_anim_table_null,
@@ -7256,14 +7256,14 @@ static overworld_sprite overworlds_pokemon[] = {
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_letarking, .rotscale_animation = oam_rotscale_anim_table_null,
     },
-    [POKEMON_SCHLUPPUCK] = {
-        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_SCHLUPPUCK,
+    [POKEMON_MOLUNK] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_MOLUNK,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_schluppuck, .rotscale_animation = oam_rotscale_anim_table_null,
     },
-    [POKEMON_SCHLUKWECH] = {
-        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_SCHLUKWECH,
+    [POKEMON_AMFIRA] = {
+        .tiles_tag = 0xFFFF, .pal_tag = OW_PAL_TAG_POKEMON_BASE + POKEMON_AMFIRA,
         .unknown = 0x11FF, .size = GRAPHIC_SIZE_4BPP(32, 32), .width = 32, .height = 32,
         .final_oam = &ow_final_oam_32_32, .subsprite_table = &ow_formation_32_32, .gfx_animation = ow_anim_standard_npc,
         .graphics = overworld_gfxs_schlukwech, .rotscale_animation = oam_rotscale_anim_table_null,
